@@ -1,0 +1,3 @@
+{% for kontakt in kontakty %}
+    <h1>Helloo World dla {{ kontakt.imie }}, który ma urodziny {{ kontakt.data_urodzenia|date:"Y-m-d" }}</h1>
+{% endfor %}

@@ -1,0 +1,9 @@
+pep8
+pyflakes
+pylint
+Sphinx
+ipython
+coverage
+django
+requests
+lxml
