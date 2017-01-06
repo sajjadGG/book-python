@@ -26,6 +26,10 @@ Spis Treści
    wstep/podstawy-skladni.rst
    wstep/virtualenv.rst
 
+
+Podstawy
+========
+
 .. toctree::
    :maxdepth: 3
    :numbered:
@@ -50,6 +54,8 @@ Spis Treści
    podstawy/dobre-praktyki.rst
    podstawy/zadania.rst
 
+Średniozaawansowany
+===================
 
 .. toctree::
    :maxdepth: 3
@@ -68,6 +74,8 @@ Spis Treści
    sredniozaawansowany/programowanie-gui.rst
    sredniozaawansowany/introspection.rst
 
+Zaawansowany
+============
 
 .. toctree::
    :maxdepth: 3
@@ -85,6 +93,8 @@ Spis Treści
    zaawansowany/c-extensions.rst
    zaawansowany/zadania.rst
 
+Załączniki
+==========
 
 .. toctree::
    :maxdepth: 3
@@ -99,6 +109,8 @@ Spis Treści
    zalaczniki/ksiazki.rst
    zalaczniki/python-wat.rst
 
+Receptury
+=========
 
 .. toctree::
    :maxdepth: 3
