@@ -12,8 +12,8 @@ Author
 :linkedin: `https://linkedin.com/in/mattharasymczuk <https://linkedin.com/in/mattharasymczuk>`_
 
 
-Spis Treści
-===========
+Wstęp
+=====
 
 .. toctree::
    :maxdepth: 3
