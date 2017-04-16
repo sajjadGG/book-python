@@ -8,6 +8,21 @@ Konstruowanie wyrażeń
 Wyciąganie parametrów (zmiennych)
 =================================
 
+.. code-block:: python
+
+    def sprwadzie_ciagow():
+        REGEX_IMIE_I_NAZWISKO = r"(?P<first_name>\w+) (?P<last_name>\w+)"
+
+        imie_i_nazwisko = re.compile(REGEX_IMIE_I_NAZWISKO)
+        m = imie_i_nazwisko.match('Malcolm Reynolds')
+
+        m.group('first_name')
+        'Malcolm'
+        m.group('last_name')
+        'Reynolds'
+        m.group()
+        'Malcolm Reynolds'
+
 Najczęściej wykorzystywane funkcje
 ==================================
 

@@ -42,3 +42,4 @@ Metody obiektu
 
     a = dir(addr)
     print('Listowanie za pomocą dir():\n"{}\n\n"'.format(a))
+

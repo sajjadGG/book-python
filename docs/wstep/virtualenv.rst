@@ -5,17 +5,11 @@ Virtualenv
 Tworzenie wirtualnego środowiska
 ================================
 
-Wraz z wersją Python 3.3 do języka został dodany ten genialny moduł. Aplikacja ta odpowiada na problem zarządzania zależnościami na Twojej maszynie. Dzięki użyciu Virtualenv (po włączeniu jako standard zwany ``pyvenv``. Mamy możliwość do tworzenia tzw. wirtualnych środowisk Pythona. Środowisko to zawiera w sobie plik wykonywalny języka oraz wszystkie potrzebne biblioteki wewnętrzne i zewnętrzne. Takie środowiska możemy tworzyć per projekt i nie musimy martwić się, że Projekt A wymaga np. Django w wersji 1.8 a Projekt B w 1.9.
+Wraz z wersją Python 3.3 do języka został dodany ten genialny moduł. Aplikacja ta odpowiada na problem zarządzania zależnościami na Twojej maszynie. Dzięki użyciu Virtualenv (po włączeniu jako standard zwany ``venv``. Mamy możliwość do tworzenia tzw. wirtualnych środowisk Pythona. Środowisko to zawiera w sobie plik wykonywalny języka oraz wszystkie potrzebne biblioteki wewnętrzne i zewnętrzne. Takie środowiska możemy tworzyć per projekt i nie musimy martwić się, że Projekt A wymaga np. Django w wersji 1.10 a Projekt B w 1.11.
 
 Tworzenie takiego środowiska jest bardzo łatwe i szybkie:
 
 .. code:: bash
-
-    pyvenv .virtualenv
-
-lub na Windowsie:
-
-.. code:: bat
 
     python3 -m venv .virtualenv
 
@@ -33,6 +27,41 @@ lub na Windowsie:
 .. code:: bat
 
     .virtualenv\bin\activate.bat
+
+Dobra praktyka
+==============
+
+Dobrą praktyką jest trzymanie wirtualnych środowisk w jednym katalogu, np. ``~/.virtualenvs/``, dzięki temu łatwo będzie wyłączyć ten katalog z tworzenia kopii zapasowych w systemie (ang. backup).
+
+Tworząc nowe środowisko nazwij je tak jak projekt, np. ``python3 -m venv ~/.virtualenvs/moj-projekt``.
+
+Polecam dodać poniższe linijki do ``~/.virtualenvs/moj-projekt/bin/activate``:
+
+.. code-block:: bash
+
+    project_name='Moj projekt'
+
+    red='\[\033[00;31m\]'
+    green='\[\033[00;32m\]'
+    blue='\[\033[00;36m\]'
+    white='\[\033[00;39m\]'
+
+    export PS1="\n${blue}${project_name}> ${white}"
+
+Dodaj poniższą linikję do ``~/.profile``:
+
+.. code-block:: bash
+
+    alias work='source ~/.virtualenvs/$(basename $PWD)/bin/activate'
+
+Później aby aktywować środowisko wystarczy przejść do katalogu z projektem i wpisać w terminalu:
+
+.. code-block:: bash
+
+    $ work
+
+To powinno automatycznie uruchomić virtualenv i załadować wszystkie zależności.
+
 
 Pakiety i zależności
 ====================

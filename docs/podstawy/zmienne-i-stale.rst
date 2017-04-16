@@ -10,19 +10,24 @@ Deklarowanie zmiennych
 
 .. code-block:: python
 
-    moja_zmienna = 10
-    moja_zmienna = 'przykladowy tekst'
+    my_variable = 10
+    my_variable = 'ehlo world'
 
 Deklarowanie stałych
 --------------------
 
 .. code-block:: python
 
-    MOJA_STALA = 10
-    MOJA_STALA = 'przykladowy tekst'
+    MY_CONSTANT = 10
+    MY_CONSTANT = 'ehlo world'
 
 Różnica między stałymi i zmiennymi
 ----------------------------------
+
+Jedyną różnicą jest konwencja nazewnicza:
+
+* stałe zapisujemy dużymi literami
+* zmienne zapisujemy małymi literami
 
 Zasięg widoczności
 ------------------
@@ -41,9 +46,11 @@ Jednym z najbardziej podstawowych typów danych jest ``int``.
 
 .. code-block:: python
 
-    age = 10
+    >>> age = 10
+
     >>> int(10)
     10
+
     >>> int(10.0)
     10
 
@@ -58,14 +65,19 @@ Podobnie jak pozostałe typy ``float()`` jest funkcją, która konwertuje swój 
 
     >>> float(10)
     10.0
+
     >>> float('+1.23')
     1.23
+
     >>> float('   -12345\n')
     -12345.0
+
     >>> float('1e-003')
     0.001
+
     >>> float('+1E6')
     1000000.0
+
     >>> float('-Infinity')
     -inf
 
@@ -78,6 +90,7 @@ Podobnie jak pozostałe typy ``float()`` jest funkcją, która konwertuje swój 
 
     >>> complex('1+2j')
     (1+2j)
+
     >>> complex('1 + 2j')
     Traceback (most recent call last):
       File "<stdin>", line 1, in <module>
@@ -94,11 +107,17 @@ Obiekt typu ``str`` przechowuje łańcuch znaków. ``str()`` jest także funkcj�
 
 .. code-block:: python
 
-    name1 = 'Matt'
-    name2 = "Matt"
-    name3 = """
-    Matt
-    """
+    >>> name1 = 'Matt'
+    'Matt'
+
+    >>> name2 = "Matt"
+    'Matt'
+
+    >>> print("""
+    ... Matt
+    ... """)
+    '\nMatt\n'
+
     >>> str(10)
     '10'
 
@@ -123,8 +142,8 @@ Niemutowalność
 Ważną cechą ciągów znakowych jest tzw. niemutowalność. Gdy wykonujemy operację na stringu tworzona jest jego nowa kopia.
 
 
-Różnica między ' a "
---------------------
+Pojedynczy czy podwójny cudzysłów
+---------------------------------
 
 Python nie rozróżnia czy stosujemy pojedyncze znaki cudzysłowiu czy podwójne.
 Ważne jest aby wybrać jedną konwencję i się jej konsekwentnie trzymać.
@@ -175,8 +194,8 @@ Logiczne typy danych
 
 Obiekt typu ``bool`` może przyjąć dwie wartości logiczne:
 
-* True
-* False
+* ``True``
+* ``False``
 
 Zwróć uwagę na wielkość liter!
 
@@ -185,8 +204,20 @@ Zwróć uwagę na wielkość liter!
 ``None`` - Wartość pusta
 ------------------------
 
-Złożone typy danych
-===================
+Ważne: nie jest to wartość ``False`` ani ``0``.
+Wyobraź sobie, że masz bazę danych z użytkownikami.
+Gdy użytkownik nie poda wieku, to jest to wartość ``None``.
+
+.. code-block:: python
+
+    wiek = None
+
+    if not wiek:
+        print('użytkownik nie podał wieku')
+
+
+Zbiory
+======
 
 ``tuple`` - Krotka
 ------------------
@@ -196,19 +227,39 @@ Złożone typy danych
     a = (1, 2, 3)
     a = tuple(1, 2, 3)
 
-    def co_ci_dalem(a, b):
-        return (a, b)
+.. code-block:: python
 
-    a = co_ci_dalem(10, 20)
+    >>> def return_arguments(a, b):
+    ...    return (a, b)
 
-    print(a)
+    >>> out = return_arguments(10, 20)
+    >>> print(out)
+    (10, 20)
 
 
 ``list`` - Lista
 ----------------
 
+.. code-block:: python
+
+    my_list = []
+    my_list = list()
+    my_list = [1, 2, None, False, 'hej']
+
+.. code-block:: python
+
+    >>> my_list = [1, 2, None, False, 'hej']
+    >>> my_list[2]
+    None
+
 ``set`` - Zbiór
 ---------------
+
+.. code-block:: python
+
+    >>> a = set([1, 3, 1])
+    >>> a
+    {1, 3}
 
 ``dict`` - Słownik
 ------------------
@@ -223,42 +274,34 @@ Złożone typy danych
 
     print(my_data['nazwisko'])
 
-.. code-block:: python
-
-    student = {'imie': 'Matt', 'nazwisko': 'H'}
-    print(student)
-
-    # will rise an exception 'KeyError'
-    for ocena in student['oceny']:
-        print(ocena)
-
-    # will return None
-    for ocena in student.get('oceny'):
-        print(ocena)
-
-    # will return empty list
-    for ocena in student.get('oceny', []):
-        print(ocena)
-
-    try:
-        oceny = student['oceny']
-    except KeyError:
-        student['oceny'] = []
-        oceny = []
-
-    print(oceny)
-    print(student)
-
-
-
 Dobieranie się do wartości elementów
 ====================================
 
 ``[...]`` i ``.get(...)``
 -------------------------
 
-Rozszerzone typy danych
-=======================
+.. code-block:: python
+
+    >>> dane = {'imie': 'Jan', 'nazwisko': 'Kowalski'}
+
+    >>> dane['nazwisko']
+    'Kowalski'
+
+    >>> dane.get('nazwisko')
+    'Kowalski'
+
+    >>> dane['wiek']
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    KeyError: 'wiek'
+
+    >>> dane.get('wiek')
+
+    >>> dane.get('wiek', 'n/d')
+    'n/d'
+
+Złożone typy danych
+===================
 
 Lista słowników
 ---------------
@@ -273,7 +316,6 @@ Lista słowników
         {'imie': 'Grzegorz', 'programuje w': ['python', 'java', 'c/c++']},
     ]
 
-
     dane = studenci[0]['nazwisko']
     dane = studenci[0].get('nazwisko', 'n/d')
     dane = '\n'.join(studenci[4].get('programuje w'))
@@ -282,13 +324,29 @@ Lista słowników
 Listy wielowymiarowe
 --------------------
 
-Drzewa
-------
+.. code-block:: python
+
+    array = [
+        [0, 1, 2],
+        [1, 2, 3],
+    ]
+
+Mieszane typy
+-------------
+
+.. code-block:: python
+
+    array = [
+        [0, 1, 2],
+        (1, 2, 3),
+        set([1, 3, 1]),
+        {'imie': 'Jan', 'nazwisko': 'Kowalski'}
+    ]
 
 Jak inicjować poszczególne typy?
 ================================
 
-- ``dict()`` czy ``{}``
 - ``list()`` czy ``[]``
 - ``tuple()`` czy ``()``
+- ``dict()`` czy ``{}``
 - ``set()`` czy ``{}``

@@ -5,13 +5,57 @@ Biblioteka standardowa
 ``datetime``
 ============
 
+Tworzenie obiektu ``date`` i ``datetime``
+-----------------------------------------
+
 .. code-block:: python
 
     import datetime
 
-    datetime.datetime.now()
-    datetime.date.today()
+    now = datetime.datetime.now()
+    today = datetime.date.today()
+
+    date = datetime.date(2017, 12, 15)
+    dt = datetime.datetime(2017, 12, 15, 20, 13, 33)
+    midnight = datetime.datetime(2017, 12, 15)
+
+
+Różne formaty dat
+-----------------
+* '15.12.2017'
+* '15/12/2017'
+* '15 grudnia 2017'
+* '15 grudzień 2017'
+* '12/15/17'
+* 'December 15, 2017'
+* '2017-12-15'
+
+.. code-block:: python
+
+    import datetime
+
+    now = datetime.datetime.now()
+    now.strftime('%A, %B %d, %I:%M %p')
+
+    print(f'{now:%Y-%m-%d}')
+
+Przesunięcia czasu (dodawanie i odejmowanie)
+--------------------------------------------
+
+.. code-block:: python
+
+    import datetime
+
     datetime.datetime.now() - datetime.timedelta(hours=3)
+    datetime.date(2017, 12, 15) - datetime.timedelta(days=3)
+
+Strefy czasowe
+--------------
+
+.. code-block:: python
+
+    import datetime
+
     datetime.datetime.now().replace(tzinfo=datetime.timezone.utc)
 
 ``time``
@@ -30,6 +74,21 @@ Biblioteka standardowa
     os.path.join
     os.path.abspath
     os.path.dirname
+
+.. code-block:: python
+
+    import os
+
+    for element in os.scandir('/etc'):
+        print(element.name)
+
+    script = os.path.basename(__file__)
+    PWD = os.path.basename(os.getcwd())
+
+    path = os.path.join(PWD, script)
+
+    print(path)
+
 
 ``sys``
 =======

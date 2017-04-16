@@ -12,14 +12,16 @@ W Pythonie mamy możliwość wykorzystania interpretera REPL, przykład poniże
 
 .. code:: bash
 
-    $ python3
+    $ python
 
-    Python 3.5.1 (default, Dec  7 2015, 21:59:10)
-    [GCC 4.2.1 Compatible Apple LLVM 7.0.0 (clang-700.1.76)] on darwin
+    Python 3.6.0 (default, Dec 24 2016, 08:01:42)
+    [GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.42.1)] on darwin
     Type "help", "copyright", "credits" or "license" for more information.
 
     >>> print('Hello World!')
     Hello World!
+
+Zwróć uwagę na wersję Pythona. Jeżeli po wpisaniu polecenia ``python`` uruchomi się wersja 2.x, możesz spróbować polecenia ``python3``
 
 Powyższy przykład ilustruje moment wpisania polecenia ``python``, standardowy tekst informujący o wersji i kompilacji języka oraz znak zachęty ``>>>`` (ang. prompt). Polecenia wpisujemy po tym znaku a ich wynik wyświetla się poniżej (i nie zawiera wcięcia). Dalej w materiałach będziemy posługiwali się już samym znakiem zachęty.
 
@@ -132,7 +134,7 @@ W Pythonie mamy kilka sposobów komentowania. Najprostszym z nich jest komentowa
 
 .. code-block:: python
 
-    >>> #na ekranie otrzymamy: Hello World!
+    >>> # na ekranie otrzymamy: Hello World!
     ... print('Hello World!')
     Hello Wold!
 
@@ -146,7 +148,7 @@ Kolejnym sposobem jest komentowanie inline tzn. w linijce. Tego typu komentarze 
 
 .. code-block:: python
 
-    >>> print('Hello Wold!') #na ekranie otrzymamy: Hello World!
+    >>> print('Hello Wold!') # na ekranie otrzymamy: Hello World!
     Hello Wold!
 
 

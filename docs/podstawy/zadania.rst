@@ -2,6 +2,43 @@
 Zadania
 *******
 
+Przeliczanie temperatury
+========================
+
+:Nazwa skryptu: ``bin/temperatura.py``
+:Uruchamianie: ``python bin/temperatura.py``
+
+:Zadanie:
+    Woda zamarza przy 32 stopniach Fahrenheita, a wrze przy 212 stopniach Fahrenheita. Napisz program, który wyświetli tabelę przeliczeń stopni Celsjusza na stopnie Fahrenheita w zakresie od –20 do +40 stopni Celsjusza (co 5 stopni). Pamiętaj o wyświetlaniu znaku plus/minus przy temperaturze. Oczywiście napisz testy do rozwiązania.
+
+:Podpowiedź:
+    * Fahrenheit to Celsius: (°F - 32) / 1.8 = °C
+    * Celsius to Fahrenheit: (°C * 1.8) + 32 = °F
+
+
+Przeliczanie odległości
+=======================
+
+:Nazwa skryptu: ``bin/odleglosci.py``
+:Uruchamianie: ``python bin/odleglosci.py``
+
+:Zadanie:
+    Napisz program który przekonwertuje odległości (podane w metrach) i zwróci ``dict``, zgodnie z szablonem:
+
+    .. code-block:: python
+
+        {
+            'kilometers': int(),
+            'miles': float(),
+            'nautical miles': float(),
+        }
+
+:Podpowiedź:
+    * 1000 m = 1 km
+    * 1608 m = 1 mila
+    * 1852 m = 1 mila morska
+
+
 Powielanie napisów
 ==================
 
@@ -122,20 +159,6 @@ Lotto
     * Czym sa liczby pseudolosowe?
     * Czy da się stworzyć program czysto losowy?
     * Dlaczego?
-
-
-Przeliczanie temperatury
-========================
-
-:Nazwa skryptu: ``bin/temperatura.py``
-:Uruchamianie: ``python bin/temperatura.py``
-
-:Zadanie:
-    Woda zamarza przy 32 stopniach Fahrenheita, a wrze przy 212 stopniach Fahrenheita. Napisz program, który wyświetli tabelę przeliczeń stopni Celsjusza na stopnie Fahrenheita w zakresie od –20 do +40 stopni Celsjusza (co 5 stopni). Pamiętaj o wyświetlaniu znaku plus/minus przy temperaturze. Oczywiście napisz testy do rozwiązania.
-
-:Podpowiedź:
-    * Fahrenheit to Celsius: (°F - 32) / 1.8 = °C
-    * Celsius to Fahrenheit: (°C * 1.8) + 32 = °F
 
 
 Pole trójkąta

@@ -172,6 +172,20 @@ Przykładowe zastosowanie
         def __str__(self):
             return '{first_name} {last_name}'.format(**self.__dict__)
 
+.. code-block:: python
+
+    def create_or_update():
+        return True, [
+            {'id': 1, 'imie': 'matt', 'nazwisko': 'harasymczuk'},
+            {'id': 2, 'imie': 'matt', 'nazwisko': 'asd'},
+        ], 10, str('asd')
+
+
+    czy_utworzone, *args  = create_or_update()
+
+    print(czy_utworzone)
+
+
 Lambda - funkcje anonimowe
 ==========================
 
