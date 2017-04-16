@@ -22,7 +22,7 @@ extensions = [
 
 templates_path = ['_templates']
 source_suffix = '.rst'
-master_doc = 'docs/index'
+master_doc = 'index'
 project = 'Python Workshop'
 copyright = '2015-2017, Matt Harasymczuk'
 author = 'Matt Harasymczuk'
