@@ -67,3 +67,26 @@ Własny iterator
 
     for figura in prostokaty:
         print(figura)
+
+Przykład
+========
+
+.. code-block:: python
+
+    def parzyste_f4():
+        for x in range(0, 30):
+            if x % 2 == 0:
+                yield float(x)
+
+
+    print(parzyste_f4())
+    a = parzyste_f4()
+
+    print('next1', a.__next__())
+    print('next2', a.__next__())
+    print('next3', a.__next__())
+    print('next4', a.__next__())
+
+
+    for liczba in parzyste_f4():
+        print(liczba)

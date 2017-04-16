@@ -73,6 +73,7 @@ Podstawy
    sredniozaawansowany/django.rst
    sredniozaawansowany/programowanie-gui.rst
    sredniozaawansowany/introspection.rst
+   sredniozaawansowany/zadania.rst
 
 Zaawansowany
 ============
@@ -83,6 +84,7 @@ Zaawansowany
    :caption: Zaawansowany
    :name: zaawansowany
 
+   zaawansowany/decorator.rst
    zaawansowany/generatory.rst
    zaawansowany/iteratory.rst
    zaawansowany/system-operacyjny.rst
@@ -119,3 +121,4 @@ Receptury
    :name: receptury
 
    receptury/ldap-expiring-passwords.rst
+   receptury/github-api.rst

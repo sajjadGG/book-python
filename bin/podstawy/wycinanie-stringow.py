@@ -25,7 +25,6 @@ def ostatnie_trzy_litery(text):
 
 if __name__ == '__main__':
     import doctest
-
     doctest.testmod()
 
 

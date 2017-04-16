@@ -5,6 +5,59 @@ Wyjątki
 Po co są wyjątki?
 =================
 
+Podnoszenie wyjątków
+====================
+
+.. code-block:: python
+
+    def bar():
+        raise NameError
+
+    if __name__ == '__main__':
+        bar()
+
+Tworzenie własnych wyjątków
+===========================
+
+.. code-block:: python
+
+    class CtgDoesNotExistsError(ArithmeticError):
+        strerror = 'Cotangens dla kąta 90 nie istnieje'
+        errno = 10
+
+    def ctg(deg):
+
+        if deg == 90:
+            raise CtgDoesNotExistsError
+
+        return "wylicz cotangens kąta"
+
+Przechwytywanie wyjątków
+========================
+
+* ``try``
+* ``except``
+* ``else``
+* ``finally``
+
+.. code-block:: python
+
+    def bar():
+        raise NameError
+
+
+    def foo():
+        try:
+            bar()
+        except NameError:
+            print('Błąd nazwy zlapany')
+        except SyntaxError:
+            print('Błąd składni zlapany')
+
+
+    if __name__ == '__main__':
+        foo()
+
 Najpopularniejsze wyjątki
 =========================
 
@@ -34,13 +87,6 @@ Najpopularniejsze wyjątki
 | TypeError           | Raised when an operation or function is applied to an object of inappropriate type. The associated value is a string giving details about the type mismatch.                                                                                                                                        |
 +---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Przechwytywanie wyjątków
-========================
-
-* ``try``
-* ``except``
-* ``else``
-* ``finally``
 
 Hierarchia wyjątków
 ===================
@@ -110,3 +156,43 @@ Hierarchia wyjątków
                +-- UnicodeWarning
                +-- BytesWarning
                +-- ResourceWarning
+
+Przykład wyjątków przy czytaniu plików
+======================================
+
+.. code-block:: python
+
+    import logging
+    log = logging.getLogger(__name__)
+
+    log.info('Rozpoczynam program')
+
+    try:
+
+        log.debug('Próbuję odczytać plik')
+
+        with open(FILENAME, 'w') as file:
+            content = file.read()
+            print(content)
+
+        log.debug('Plik odczytany i zamknięty')
+
+    except PermissionError as e:
+        log.error(e)
+        print(e.strerror)
+
+    except OSError as e:
+        log.error(e)
+        print(e.strerror)
+
+    except Exception as e:
+        log.error(e)
+        print(e.strerror)
+
+    else:
+        log.info('Operacje na pliku zakończyły się powodzeniem')
+
+    finally:
+        log.debug('Zakończenie pracy nad plikiem')
+
+    log.info('Kończymy program')

@@ -18,3 +18,34 @@ Niezwykle użytecznym sposobem komentowania są tzw. doctesty. W wielolinijkowym
         return a + b
 
 Wykorzystując taki zapis natychmiast widzimy co dzieje się w danym rozwiązaniu. Doctesty bardzo przydają się przede wszystkim do zastosowań wykorzystujących wyrażenia regularne, których zrozumienie zapisu często wymaga chwili zastanowienia.
+
+.. code-block:: python
+
+    def ehlo_world():
+        """
+        >>> ehlo_world()
+        'ehlo world'
+        """
+        napis = 'ehlo world'
+        return napis
+
+    if __name__ == '__main__':
+        import doctest
+        doctest.testmod()
+
+.. code-block:: python
+
+    WIEK_PELNOLETNOSCI = 21
+
+
+    def pelnoletni(wiek):
+        """
+        >>> pelnoletni(2)
+        False
+        >>> pelnoletni(30)
+        True
+        """
+        if wiek < WIEK_PELNOLETNOSCI:
+            return False
+        else:
+            return True

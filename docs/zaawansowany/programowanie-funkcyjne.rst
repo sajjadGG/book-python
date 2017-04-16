@@ -33,58 +33,6 @@ closure
             return x + y
         return g
 
-decorator
----------
-
-* Modify arguments
-* Modify returned value
-* Do things before call
-* Do things after call
-* Avoid calling
-* Modify global state
-* Metadata
-
-.. code-block:: python
-
-    def my_decorator(f):
-        def wrapper(*args, **kwargs):
-            return f(*args, **kwargs)
-        return wrapper
-
-    # usage
-
-    @my_decorator
-    def func(x):
-        return x
-
-.. code-block:: python
-
-    import os
-    import logging
-
-
-    def if_file_exists(function):
-
-        def check(filename):
-            if os.path.exists(filename):
-                function(filename)
-            else:
-                logging.error('File "%(filename)s" does not exists, will not execute!', locals())
-
-        return check
-
-
-    @if_file_exists
-    def print_file(filename):
-        with open(filename) as file:
-            content = file.read()
-            print(content)
-
-
-    if __name__ == '__main__':
-        print_file('/etc/passwd')
-        print_file('/tmp/passwd')
-
 
 złożenia funkcji
 ----------------
@@ -101,6 +49,30 @@ złożenia funkcji
 
     map(inkrementuj, lista)
     map(lambda y: 1 + y, l)
+
+
+.. code-block:: python
+
+    def kwadrat(x):
+        return pow(x, 2)
+
+    potegi1 = map(kwadrat, dane)
+    potegi2 = map(lambda x: pow(x, 2), dane)
+
+    print(list(potegi1))
+
+.. code-block:: python
+
+    import datetime
+
+    def opoznienie(przesuniecie):
+        delay = pow(przesuniecie, 2)
+        return datetime.datetime.now() + datetime.timedelta(seconds=delay)
+
+    czasy = map(opoznienie, dane)
+
+    print(list(czasy))
+
 
 
 ``zip()``
@@ -143,6 +115,23 @@ złożenia funkcji
     dorosli = filter(osoba_pelnoletnia, OSOBY)
     print(list(dorosli))
 
+
+.. code-block:: python
+
+    def parzysta(liczba):
+        if liczba % 2 == 0:
+            return True
+        else:
+            return False
+
+
+    dane = range(0, 30)
+
+    parzyste1 = filter(parzysta, dane)
+    parzyste2 = filter(lambda x: x % 2 == 0, dane)
+    parzyste3 = filter(lambda x: not x % 2, dane)
+
+    print(list(parzyste3))
 
 
 ``all()``

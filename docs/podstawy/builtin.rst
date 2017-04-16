@@ -7,27 +7,122 @@ Słowa kluczowe
 
 ``pass``
 --------
+.. code-block:: python
+
+    class User:
+        pass
+
 
 ``continue``
 ------------
 
+.. code-block:: python
+
+    >>> for number in range(0, 30):
+    ...     if number % 5:
+    ...         continue
+    ...     print(number)
+    0
+    5
+    10
+    15
+    20
+    25
+
+Kod po słowie ``continue`` nie zostanie wykonany. Przydatne podczas debugowania i testowania kodu.
+
+.. code-block:: python
+
+    for i in range(1, 30):
+        print(i)
+        continue
+
+        if not i % 4:
+            print('podzielny przez 4')
+        else:
+            print('asdasd')
+
+
 ``break``
 ---------
+
+.. code-block:: python
+
+    >>> for number in range(0, 30):
+    ...     if number % 5:
+    ...         break
+    ...     print(number)
+    0
+
+.. code-block:: python
+
+    def foo1():
+        return True
+
+    def foo2():
+        return None
+
+    def foo3():
+        return 'bar'
+
+    def foo4():
+        return [10, 20]
+
+    def foo5():
+        return foo1
+
+    def foo6():
+        pass
+
+    def foo7():
+        return 10, 20, 30, 5, 'a'
+
+    def foo8():
+        return {'imie': 'Matt', 'nazwisko': 'Harasymczuk'}
+
+    def foo9():
+        return [
+            {'imie': 'Matt', 'nazwisko': 'Harasymczuk'},
+            {'imie': 'Matt', 'nazwisko': 'Harasymczuk'},
+            {'imie': 'Matt', 'nazwisko': 'Harasymczuk'}]
+
+
+    if __name__ == '__main__':
+
+        napiece, natezenie, *args = foo7()
+
+        napiecie, *_ = foo7()
+        print(_)
 
 ``return``
 ----------
 
-``sorted``
-----------
+.. code-block:: python
 
-``range``
----------
+    >>> def sum(a, b):
+    ...     return a + b
+    ...
+    >>> sum(2, 3)
+    5
 
-``isinstance()``
-----------------
+Kod funkcji po słowie kluczowym ``return`` nie będzie wykonywany!
+
+.. code-block:: python
+
+    >>> def sum(a, b):
+    ...     return a + b
+    ...     print('Total is', a + b)
+    ...
+    >>> sum(2, 3)
+    5
+
 
 ``__file__``
 ------------
+
+.. code-block:: python
+
+    >>> print(__file__)
 
 ``__name__``
 ------------
@@ -43,6 +138,168 @@ Słowa kluczowe
 
     log = logging.getLogger(__name__)
 
+
+Funkcje wbudowane
+=================
+
+
+``print()``
+-----------
+
+.. code-block:: python
+
+    print('ehlo world')
+    print('ehlo', 'world')
+    print('ehlo', 'world', sep=';')
+
+``sorted()``
+------------
+``sorted()`` to operator niemutowalny (nie zmienia kolejności elementów w liście).
+
+.. code-block:: python
+
+    >>> numbers = [3, 1, 2]
+    >>> sorted(numbers)
+    [1, 2, 3]
+    >>> print(numbers)
+    [3, 1, 2]
+
+``.sort()`` to operator zmieniający listę (mutujący).
+
+.. code-block:: python
+
+    >>> numbers = [3, 1, 2]
+    >>> numbers.sort()
+    >>> print(numbers)
+    [1, 2, 3]
+
+
+``range()``
+-----------
+
+.. code-block:: python
+
+    >>> numbers_generator = range(0, 30)
+    >>> print(numbers_generator)
+    range(0, 30)
+
+    >>> numbers = list(numbers_generator)
+    >>> print(numbers)
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+
+
+``isinstance()``
+----------------
+
+.. code-block:: python
+
+    >>> isinstance(10, int)
+    True
+
+    >>> isinstance(10, float)
+    False
+
+``min()``
+---------
+
+.. code-block:: python
+
+    >>> numbers = [1, 2, 3, 4, 5]
+    >>> min(numbers)
+    1
+    >>> min(3, 1, 5)
+    1
+
+``max()``
+---------
+
+.. code-block:: python
+
+    >>> numbers = [1, 2, 3, 4, 5]
+    >>> max(numbers)
+    5
+    >>> max(3, 1, 5)
+    5
+
+``len()``
+---------
+
+.. code-block:: python
+
+    >>> numbers = [1, 2, 3, 4, 5]
+    >>> len(numbers)
+    5
+
+``input()``
+-----------
+
+.. code-block:: python
+
+    >>> name = input()
+    Matt
+    >>> print(name)
+    'Matt'
+
+Pamiętaj o dodaniu dwukropka i spacji, aby tekst się nie zlewał.
+
+.. code-block:: python
+
+    >>> name = input('Type your name: ')
+    Type your name: Matt
+    >>> print(name)
+    'Matt'
+
+Czasami trzeba oczyścić dane, np. usuwając zbędne spacje na początku i końcu ciągu znaków podanego przez użytkownika.
+
+ .. code-block:: python
+
+    >>> name = input('Type your name: ')
+    Type your name:         Matt
+    >>> print(name.strip())
+    'Matt'
+
+``bin()``
+---------
+Argument must be integer.
+
+.. code-block:: python
+
+    >>> bin(3)
+    '0b11'
+
+    >>> bin(-3)
+    '-0b11'
+
+``hex()``
+---------
+
+.. code-block:: python
+
+    >>> hex(99)
+    '0x63'
+
+``oct()``
+---------
+
+.. code-block:: python
+
+    >>> oct(23)
+    '0o27'
+
+``ord()``
+---------
+.. code-block:: python
+
+    >>> ord('a')
+    97
+
+``chr()``
+---------
+
+.. code-block:: python
+
+    >>> chr(97)
+    'a'
 
 Wszystkie funkcje wbudowane
 ===========================
@@ -65,20 +322,3 @@ Wszystkie funkcje wbudowane
     `complex()`      `hasattr()`     `max()`             `round()`
     `delattr()`      `hash()`        `memoryview()`      `set()`
     ===============  ==============  ==================  ============  ================
-
-
-Funkcje wbudowane
-=================
-
-``min()``
----------
-
-``max()``
----------
-
-``len()``
----------
-
-``input()``
------------
-

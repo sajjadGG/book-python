@@ -14,6 +14,20 @@ Poziomy logowania
 Korzystanie z ``logging``
 =========================
 
+Konfiguracja logowania
+----------------------
+
+.. code-block:: python
+
+    import logging
+
+    logging.basicConfig(level=logging.DEBUG)
+    logging.basicConfig(format='[%(asctime).19s] [%(levelname)s] %(message)s')
+
+    log = logging.getLogger()
+
+
+
 .. code-block:: python
 
     logging.critical('Błąd krytyczny, kończę.')
@@ -22,16 +36,25 @@ Korzystanie z ``logging``
     logging.info('Będę coś robił')
     logging.debug('Robię to tak')
 
-
-Konfiguracja logowania
-======================
+Logowanie zdarzeń
+-----------------
 
 .. code-block:: python
 
     import logging
+    log = logging.getLogger(__name__)
 
-    logging.basicConfig(level=logging.DEBUG)
-    logging.basicConfig(format='[%(asctime).19s] [%(levelname)s] %(message)s')
+    >>> def sum(a, b):
+    ...     log.debug('Function `sum()` executed with: %s', locals())
+    ...     value = a + b
+    ...     log.debug(f'Will produce "{value}" as result')
+    ...     return value
+    ...
+    >>> sum(1, 2)
+    Function `sum()` executed with: {'b': 2, 'a': 1}
+    Will produce "3" as result
+    3
+
 
 Konfiguracja formatowania logów
 ===============================
@@ -113,3 +136,5 @@ Konfiguracja formatowania logów
 +-------------------------+-----------------------------------------------+
 | ``%(threadName)s``      | Thread name (if available).                   |
 +-------------------------+-----------------------------------------------+
+
+

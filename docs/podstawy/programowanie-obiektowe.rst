@@ -9,14 +9,41 @@ Paradygmat Obiektowy
 Dziedziczenie
 -------------
 
+.. code-block:: python
+
+    class Pojazd:
+        marka = None
+        kierowca = None
+        kola = 4
+
+    class Samochod(Pojazd):
+        marka = None
+        kierowca = {'imie': 'Matt', 'nazwisko': 'Harasymczuk'}
+
+    class Motor(Pojazd):
+        marka = 'honda'
+        kola = 2
+
 Wielodziedziczenie
 ------------------
 
+.. code-block:: python
+
+    class Pojazd:
+        marka = None
+
+    class Samochod(Pojazd):
+        marka = None
+        kierowca = {'imie': 'Matt', 'nazwisko': 'Harasymczuk'}
+
+    class Jeep(Samochod):
+        marka = 'jeep'
+
+    class Star(Samochod):
+        marka = 'star'
+
 Kompozycja
 ----------
-
-Dziedziczenie czy kompozycja?
------------------------------
 
 .. code-block:: python
 
@@ -58,10 +85,14 @@ Dziedziczenie czy kompozycja?
         kola = 2
 
 
-
     c = Cabrio()
     c.wlacz_swiatla()
 
+
+Dziedziczenie czy kompozycja?
+-----------------------------
+
+* Kompozycja ponad dziedziczenie!
 
 Polimorfizm
 -----------
@@ -69,20 +100,17 @@ Polimorfizm
 .. code-block:: python
 
     >>> class Pojazd:
-    >>>    def zatrab(self):
-    >>>        raise NotImplementedError
-    >>>
-    >>>
+    ...    def zatrab(self):
+    ...        raise NotImplementedError
+    ...
     >>> class Motor(Pojazd):
-    >>>     def zatrab(self):
-    >>>         print('bip')
-    >>>
-    >>>
+    ...     def zatrab(self):
+    ...         print('bip')
+    ...
     >>> class Samochod(Pojazd):
-    >>>     def zatrab(self):
-    >>>         print('biiiip')
-    >>>
-    >>>
+    ...     def zatrab(self):
+    ...         print('biiiip')
+    ...
     >>> obj = Motor()
     >>> obj.zatrab()
     >>>
@@ -93,12 +121,21 @@ Polimorfizm
 Klasy abstrakcyjne
 ------------------
 
-
 Składnia
 ========
 
 Klasy
 -----
+
+.. code-block:: python
+
+    class Samochod:
+        def __init__(self, marka, kola=4):
+            self.marka = marka
+            self.kola = kola
+
+    auto = Samochod(marka='mercedes', kola=3)
+    print(auto.kola)
 
 Metody
 ------
@@ -114,6 +151,24 @@ Konstruktor
 
 ``super()``
 -----------
+
+.. code-block:: python
+
+    class Human:
+        def __init__(name='human')
+            self.name = name
+
+        def my_name(self):
+            print(self.name)
+
+    class Man(Human):
+        def __init__(name='man')
+            self.name = name
+
+        def my_parent(self):
+            name = super().name
+            print(name)
+
 
 ``@property`` i ``@x.setter``
 -----------------------------
@@ -142,6 +197,23 @@ Konstruktor
 
 ``__str__()`` i ``__repr__()``
 ------------------------------
+
+.. code-block:: python
+
+    class Samochod:
+        def __init__(self, marka, kola=4):
+            self.marka = marka
+            self.kola = kola
+
+        def __str__(self):
+            return f'Marka: {self.marka} i ma {self.kola} koła'
+
+            # For Python < 3.6
+            # return 'Marka: {marka} i ma {kola} koła'.format(**self.__dict__)
+
+
+    auto = Samochod(marka='mercedes', kola=3)
+    print(str(auto))
 
 Metaclass
 ---------

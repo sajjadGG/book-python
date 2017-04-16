@@ -73,3 +73,5 @@ Obsługa wyjątków
 
     except PermissionError:
         print('Brak uprawnien')
+
+

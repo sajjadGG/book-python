@@ -16,6 +16,8 @@ Deklarowanie zmiennych
 Deklarowanie stałych
 --------------------
 
+.. code-block:: python
+
     MOJA_STALA = 10
     MOJA_STALA = 'przykladowy tekst'
 
@@ -37,6 +39,13 @@ Numeryczne typy danych
 Jednym z najbardziej podstawowych typów danych jest ``int``.
 ``int()`` jest funkcją wbudowaną, która zamieni swój argument na liczbę całkowitą.
 
+.. code-block:: python
+
+    age = 10
+    >>> int(10)
+    10
+    >>> int(10.0)
+    10
 
 ``float`` - Liczba zmiennoprzecinkowa
 -------------------------------------
@@ -47,6 +56,8 @@ Podobnie jak pozostałe typy ``float()`` jest funkcją, która konwertuje swój 
 
 .. code-block:: python
 
+    >>> float(10)
+    10.0
     >>> float('+1.23')
     1.23
     >>> float('   -12345\n')
@@ -57,7 +68,6 @@ Podobnie jak pozostałe typy ``float()`` jest funkcją, która konwertuje swój 
     1000000.0
     >>> float('-Infinity')
     -inf
-
 
 ``complex`` - liczba zespolona
 ------------------------------
@@ -81,6 +91,31 @@ Tekstowe typy danych
 ---------------------
 
 Obiekt typu ``str`` przechowuje łańcuch znaków. ``str()`` jest także funkcją, która zwraca ciąg znaków z argumentu.
+
+.. code-block:: python
+
+    name1 = 'Matt'
+    name2 = "Matt"
+    name3 = """
+    Matt
+    """
+    >>> str(10)
+    '10'
+
+Escape'owanie znaków
+--------------------
+.. code-block:: python
+
+    """
+    \xac
+    \u7723
+    \n
+    \b
+    \r
+    \t
+    \'
+    """
+
 
 Niemutowalność
 --------------
@@ -106,12 +141,31 @@ Operacje na stringach
 * ``replace()``
 * Wycinanie części stringów
 
-Konwersja stringów
-------------------
+.. code-block:: python
 
-* ``bin()``
-* ``hex()``
-* ``oct()``
+    >>> text = "Lorem ipsum"
+
+    >>> text[2]
+    'r'
+
+    >>> text[:2]
+    'Lo'
+
+    >>> text[0:3]
+    'Lor'
+
+    >>> text[-3]
+    's'
+
+    >>> text[-3:]
+    'sum'
+
+    >>> text[-3:-1]
+    'su'
+
+    >>> text[:-2]
+    'Lorem ips'
+
 
 Logiczne typy danych
 ====================
@@ -137,6 +191,19 @@ Złożone typy danych
 ``tuple`` - Krotka
 ------------------
 
+.. code-block:: python
+
+    a = (1, 2, 3)
+    a = tuple(1, 2, 3)
+
+    def co_ci_dalem(a, b):
+        return (a, b)
+
+    a = co_ci_dalem(10, 20)
+
+    print(a)
+
+
 ``list`` - Lista
 ----------------
 
@@ -146,17 +213,71 @@ Złożone typy danych
 ``dict`` - Słownik
 ------------------
 
-Dobieranie się do wartości elementów
-------------------------------------
+.. code-block:: python
 
-``[0]`` i ``.get(0)``
----------------------
+    my_data = {
+        "imie": "Mateusz",
+        "nazwisko": 'Harasymczuk',
+        'wiek': 10,
+    }
+
+    print(my_data['nazwisko'])
+
+.. code-block:: python
+
+    student = {'imie': 'Matt', 'nazwisko': 'H'}
+    print(student)
+
+    # will rise an exception 'KeyError'
+    for ocena in student['oceny']:
+        print(ocena)
+
+    # will return None
+    for ocena in student.get('oceny'):
+        print(ocena)
+
+    # will return empty list
+    for ocena in student.get('oceny', []):
+        print(ocena)
+
+    try:
+        oceny = student['oceny']
+    except KeyError:
+        student['oceny'] = []
+        oceny = []
+
+    print(oceny)
+    print(student)
+
+
+
+Dobieranie się do wartości elementów
+====================================
+
+``[...]`` i ``.get(...)``
+-------------------------
 
 Rozszerzone typy danych
 =======================
 
 Lista słowników
 ---------------
+
+.. code-block:: python
+
+    studenci = [
+        {'imie': 'Mateusz'},
+        {'imie': 'Angelika', 'nazwisko': 'Nowak'},
+        {'imie': 'Dawid', 'nazwisko': 'Kowalski'},
+        {'imie': 'Piotr', 'nazwisko': None},
+        {'imie': 'Grzegorz', 'programuje w': ['python', 'java', 'c/c++']},
+    ]
+
+
+    dane = studenci[0]['nazwisko']
+    dane = studenci[0].get('nazwisko', 'n/d')
+    dane = '\n'.join(studenci[4].get('programuje w'))
+    print(dane)
 
 Listy wielowymiarowe
 --------------------

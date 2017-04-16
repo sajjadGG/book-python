@@ -1,10 +1,23 @@
+************
 Serializacja
-============
+************
 
 ``pickle``
-----------
+==========
 
 .. code-block:: python
+
+    >>> PYTHON = [
+    ...     Osoba,
+    ...     make_datetime(now),
+    ...     str(now),
+    ...     now.__str__(),
+    ...     '%s' % now,
+    ...     '{}'.format(now),
+    ...     {'imię': 'Mattół', 'nazwisko': 'Harasymczuk'},
+    ...     (10, 20, 30),
+    ...     (1,)
+    ]
 
     >>> import pickle
 
@@ -19,25 +32,149 @@ Serializacja
 
 
 ``json``
---------
+========
+
+Serializacja
+------------
 
 .. code-block:: python
 
     >>> import json
-
     >>> json.loads()
 
 Problem z rzutowaniem daty na JSON:
 
 .. code-block:: python
 
+    >>> import json
+    >>> import datetime
+
+    >>> DATA = {'now': datetime.datetime.now()}
+
+    >>> print(DATA)
+    {'now': datetime.datetime(2017, 4, 15, 20, 5, 18, 64511)}
+
     >>> json.JSONEncoder.default = lambda self,obj: ('{:%Y-%m-%dT%H:%M:%S.%fZ}'.format(obj) if isinstance(obj, datetime.datetime) else None)
 
-    >>> json.dumps()
+    >>> json.dumps(DATA)
+    '{"now": "2017-04-15T20:05:18.064511Z"}'
+
+.. code-block:: python
+
+    import datetime
+    import json
+
+    class DatetimeEncoder(json.JSONEncoder):
+        def default(self, obj):
+            try:
+                return super(DatetimeEncoder, obj).default(obj)
+            except TypeError:
+                return '{:%Y-%m-%dT%H:%M:%S.%fZ}'.format(obj)
+
+
+    json.dumps(data, cls=DatetimeEncoder)
+
+
+Deserializacja
+--------------
+
+.. code-block:: python
+
+
+    >>> DATA = '["2016-10-26T14:41:51.020", "2016-10-26 14:41:51.020673", "2016-10-26 14:41:51.020673", "2016-10-26 14:41:51.020673", "2016-10-26 14:41:51.020673", {"nazwisko": "Harasymczuk", "imi\u0119": "Matt\u00f3ł"}, [10, 20, 30], [1]]'
+
+    >>> import json
+    >>> json.loads(DATA)
+
+
+.. code-block:: python
+
+    import datetime
+    import json
+
+    DATA = '{"survey":{"datetime":"2016-12-27T16:46:02.640Z", "email":"asd@asd.pl"}, "events":[{"datetime":"2016-12-27T16:46:02.640Z", "action":"click"}], "datetime":"2016-12-27T16:46:02.640Z"}'
+
+    class DatetimeDecoder(json.JSONDecoder):
+        def __init__(self):
+                json.JSONDecoder.__init__(self, object_hook=self.convert_datetime)
+
+        def convert_datetime(slef, args):
+            for key, value in args.items():
+                if key == 'datetime':
+                    args[key] = datetime.datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%fZ').replace(tzinfo=datetime.timezone.utc)
+            return args
+
+
+    out = json.loads(DATA, cls=DatetimeDecoder)
+    print(out)
+
+.. code-block:: python
+
+    import datetime
+    import json
+
+    DATA = '{"survey":{"datetime":"2016-12-27T16:46:02.640Z", "email":"asd@asd.pl"}, "events":[{"datetime":"2016-12-27T16:46:02.640Z", "action":"click"}], "datetime":"2016-12-27T16:46:02.640Z"}'
+
+    def datetime_decoder(obj):
+        for key, value in obj.items():
+            if key == 'datetime':
+               obj[key] = datetime.datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%fZ').replace(tzinfo=datetime.timezone.utc)
+        return obj
+
+
+    out = json.loads(DATA, object_hook=datetime_decoder)
+    print(out)
+
+
+.. code-block:: python
+
+    import datetime
+    import json
+
+    DATA = '{"survey":{"datetime":"2016-12-27T16:46:02.640Z", "email":"asd@asd.pl"}, "events":[{"datetime":"2016-12-27T16:46:02.640Z", "action":"click"}], "datetime":"2016-12-27T16:46:02.640Z"}'
+
+    json.JSONEncoder.default = lambda self,obj: ('{:%Y-%m-%dT%H:%M:%S.%fZ}'.format(obj) if isinstance(obj, datetime.datetime) else None)
+
+
+    def _(obj):
+        if isinstance(obj, datetime.datetime):
+            # return '{:%Y-%m-%dT%H:%M:%S.%fZ}'.format(obj)
+            return obj.isoformat()
+        else:
+            return None
+
+
+
+    d = json.dumps(DATA)
+    print(d)
+
+
+.. code-block:: python
+
+    import datetime
+    import json
+
+    DATA = '{"survey":{"datetime":"2016-12-27T16:46:02.640Z", "email":"asd@asd.pl"}, "events":[{"datetime":"2016-12-27T16:46:02.640Z", "action":"click"}], "datetime":"2016-12-27T16:46:02.640Z"}'
+
+
+    def make_datetime(string):
+        """
+        >>> make_datetime('2013-10-21T13:28:06.419Z')
+        datetime.datetime(2013, 10, 21, 13, 28, 6, 419000, tzinfo=datetime.timezone.utc)
+        """
+        return datetime.datetime.strptime(string, '%Y-%m-%dT%H:%M:%S.%fZ').replace(
+            tzinfo=datetime.timezone.utc)
+
+
+    data = json.loads(DATA)
+
+    for key, value in data.items():
+        for element in value:
+            element['timestamp'] = make_datetime(element['timestamp'])
 
 
 ``csv``
--------
+=======
 
 .. code-block:: python
 
@@ -71,7 +208,7 @@ Problem z rzutowaniem daty na JSON:
 
 
 xml
----
+===
 
 .. code:: xml
 
@@ -130,7 +267,7 @@ xml
 
 
 xslt
-----
+====
 
 .. code-block:: python
 

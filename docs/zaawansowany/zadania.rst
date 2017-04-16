@@ -2,6 +2,22 @@
 Zadania
 *******
 
+
+``map()``, ``filter()`` i ``lambda``
+====================================
+
+:Nazwa skryptu: ``bin/funkcyjne.py``
+:Uruchamianie: ``python bin/funkcyjne.py``
+
+:Zadanie 1:
+    Używając generatora zbuduj listę zawierającą wszystkie liczby podzielne przez 3 z zakresu od 1 do 33.
+
+:Zadanie 2:
+    * Używając funkcji ``filter()`` usuń z niej wszystkie liczby parzyste
+    * Używając wyrażenia ``lambda`` i funkcji ``map()`` podnieś wszystkie elementy tak otrzymanej listy do sześcianu
+    * Odpowiednio używając funkcji ``sum()``  i ``len()`` oblicz średnią arytmetyczną z elementów tak otrzymanej listy.
+
+
 REST API
 ========
 
@@ -92,7 +108,13 @@ Mini Botnet
 
 Stwórz program, który otworzy socket na porcie na localhoście podanym przez użytkownika z linii poleceń (wykorzystaj ``argparse``) i będzie nasłuchiwał połączeń. Zweryfikuj za pomocą ``telnet`` albo ``netcat`` czy program odpowiada. Następnie napisz w pythonie klienta, który będzie wysyłał polecenia do tamtego programu.
 
-Uwaga, nigdy nie rób tego na produkcji bez tzw. sanityzacji parametrów, np. lista zaufanych hostów, możliwe polecenia!
+:Uwaga:
+    * nigdy nie rób tego na produkcji bez tzw. sanityzacji parametrów, np. lista zaufanych hostów, możliwe polecenia!
+    * pliki nazwij:
+
+        * ``victim.py`` - ofiara
+        * ``attacker-ping-server.py`` - serwer przyjmujący
+        * ``attacker-execute-client.py``
 
 * zrób aby przetwarzanie requestów było nieblokujące, tzn. otwieraj wątek dla każdego zapytania
 * program wykona polecenie za pomocą ``eval``, które przyszło z zapytania
@@ -108,3 +130,11 @@ Uwaga, nigdy nie rób tego na produkcji bez tzw. sanityzacji parametrów, np. li
     * ``subprocess.Popen``
     * użyj ``os.path.join`` do łączenia sciezki i nazwy pliku
 
+
+Panel administracyjny dla Botnetu
+=================================
+
+Za pomocą ``Django`` stwórz panel administracyjny dla botnetu:
+
+* Wyszukiwanie aktywnych hostów
+* `command`
