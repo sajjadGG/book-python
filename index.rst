@@ -10,7 +10,7 @@ Author
 :www: `http://www.astrotech.io <http://astrotech.io>`_
 :facebook: `https://facebook.com/matt.harasymczuk <https://facebook.com/matt.harasymczuk>`_
 :linkedin: `https://linkedin.com/in/mattharasymczuk <https://linkedin.com/in/mattharasymczuk>`_
-:slideshare: `https://www.slideshare.net/astrotech/presentations`_
+:slideshare: `https://www.slideshare.net/astrotech/presentations <https://www.slideshare.net/astrotech/presentations>`_
 
 
 Wstęp
