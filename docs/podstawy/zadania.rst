@@ -2,6 +2,26 @@
 Zadania
 *******
 
+Zmienne i typy
+==============
+
+:Nazwa skryptu: ``bin/zmienne.py``
+:Uruchamianie: ``python bin/zmienne.py``
+
+:Zadanie:
+    Napisz program, który poprosi użytkownika o imie i ładnie go przywita.
+
+
+Zmienne i wczytywanie ciągu od użytkownika
+==========================================
+
+:Nazwa skryptu: ``bin/pelnoletnosc.py``
+:Uruchamianie: ``python bin/pelnoletnosc.py``
+
+:Zadanie:
+    Napisz program, który poprosi użytkownika o wiek i wyświetli wartość. Następnie sprawdzi pełnoletność i wyświetli informację czy osoba jest "dorosła" czy "niepełnoletnia".
+
+
 Przeliczanie temperatury
 ========================
 
