@@ -15,6 +15,12 @@ Pętla ``for``
     for x in range(0, 30):
         print(f'Value is: {x}')
 
+.. code-block:: python
+
+    for x in range(0, 30, 5):
+        print(f'Value is: {x}')
+
+
 Pętla ``while``
 ---------------
 
