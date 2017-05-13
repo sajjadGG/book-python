@@ -25,6 +25,28 @@ Zmienne i wczytywanie ciągu od użytkownika
 :Zadanie:
     Napisz program, który poprosi użytkownika o wiek i wyświetli wartość. Następnie sprawdzi pełnoletność i wyświetli informację czy osoba jest "dorosła" czy "niepełnoletnia".
 
+Powielanie napisów
+==================
+
+:Nazwa skryptu: ``bin/zadanie1-powielanie-napisow.py``
+:Uruchamianie: ``python bin/zadanie1-powielanie-napisow.py``
+
+:Zadanie 1:
+    Napisz program, który wczyta od użytkownika pewien napis, a następnie wyświetli 30 kopii tego napisu, każda w osobnej linii.
+
+:Zadanie 2:
+    Napisz trzy wersje tego programu:
+
+    * wykorzystując ``range()``
+    * wykorzystując pętlę ``while``
+    * wykorzystując właściwości mnożenia stringów
+
+:Zadanie 3:
+    Napisz doctest do takiej funkcji.
+
+:Podpowiedź:
+    * ``print('ciag znakow' * 30)``
+
 
 Przeliczanie temperatury
 ========================
@@ -62,29 +84,6 @@ Przeliczanie odległości
     * 1000 m = 1 km
     * 1608 m = 1 mila
     * 1852 m = 1 mila morska
-
-
-Powielanie napisów
-==================
-
-:Nazwa skryptu: ``bin/zadanie1-powielanie-napisow.py``
-:Uruchamianie: ``python bin/zadanie1-powielanie-napisow.py``
-
-:Zadanie 1:
-    Napisz program, który wczyta od użytkownika pewien napis, a następnie wyświetli 30 kopii tego napisu, każda w osobnej linii.
-
-:Zadanie 2:
-    Napisz trzy wersje tego programu:
-
-    * wykorzystując ``range()``
-    * wykorzystując pętlę ``while``
-    * wykorzystując właściwości mnożenia stringów
-
-:Zadanie 3:
-    Napisz doctest do takiej funkcji.
-
-:Podpowiedź:
-    * ``print('ciag znakow' * 30)``
 
 
 Parzystość
