@@ -10,8 +10,10 @@ Niezwykle użytecznym sposobem komentowania są tzw. doctesty. W wielolinijkowym
 
         >>> sumowanie_liczb(1, 2)
         3
+
         >>> sumowanie_liczb(-1, 1)
         0
+
         >>> sumowanie_liczb(0, 0)
         0
         """
@@ -42,6 +44,7 @@ Wykorzystując taki zapis natychmiast widzimy co dzieje się w danym rozwiązan
         """
         >>> pelnoletni(2)
         False
+
         >>> pelnoletni(30)
         True
         """
@@ -49,3 +52,31 @@ Wykorzystując taki zapis natychmiast widzimy co dzieje się w danym rozwiązan
             return False
         else:
             return True
+
+
+.. code-block:: python
+
+    def wyswietl(tekst):
+        """
+        >>> wyswietl('hej')
+        hej
+
+        >>> wyswietl('hej hej')
+        hej hej
+        """
+        print(tekst)
+
+
+.. code-block:: python
+
+    def wyswietl(tekst):
+        """
+        >>> wyswietl('hej')
+        hej
+        hej
+        hej
+        hej
+        hej
+        <BLANKLINE>
+        """
+        print(f'{tekst}\n' * 5)

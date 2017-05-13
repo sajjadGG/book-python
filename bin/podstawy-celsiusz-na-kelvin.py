@@ -7,16 +7,20 @@ def przelicz_celsius_na_kelvin(temperatura):
     """
     >>> przelicz_celsius_na_kelvin(1)
     274.15
+
     >>> przelicz_celsius_na_kelvin(0)
     273.15
+
     >>> przelicz_celsius_na_kelvin(-300)
     Traceback (most recent call last):
         ...
     ValueError: Nie może być mniejsze niż minimalna temperatura
+
     >>> przelicz_celsius_na_kelvin('jeden')
     Traceback (most recent call last):
         ...
     ValueError: Temperatura musi być float
+
     >>> przelicz_celsius_na_kelvin([1.0, 1, 0])
     Traceback (most recent call last):
         ...
