@@ -10,6 +10,10 @@ Wybitnie użyteczne pętla ``for``
     for x in [1, 3, 4, 2]:
         print(f'Value is: {x}')
 
+.. code-block:: python
+
+    for x in range(0, 30):
+        print(f'Value is: {x}')
 
 ``while``
 ---------
