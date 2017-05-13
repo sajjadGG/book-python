@@ -111,14 +111,16 @@ Przykład z życia
 
 .. warning:: Kod podatny jest na SQL Injection. W praktyce skorzystaj z funkcji ``prepare``.
 
-sql_query = f"""
+.. code-block:: python
 
-    SELECT id, username, email
-    FROM users
-    WHERE 'username' = '{username}'
-    AND 'password' = '{password}'
+    sql_query = f"""
 
-"""
+        SELECT id, username, email
+        FROM users
+        WHERE 'username' = '{username}'
+        AND 'password' = '{password}'
+
+    """
 
 
 Więcej informacji

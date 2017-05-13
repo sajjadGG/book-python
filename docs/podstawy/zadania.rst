@@ -13,7 +13,7 @@ Zmienne i typy
 
 :Podpowiedź:
     * Użyj podawania stringów po przecinku ``print(str, str)``
-    * Użyj f-string formatting z Python >= 3.6
+    * Użyj f-string formatting dla Python >= 3.6
 
 
 Zmienne i wczytywanie ciągu od użytkownika
