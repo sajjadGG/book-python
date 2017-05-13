@@ -38,6 +38,7 @@ Przeliczanie temperatury
 :Podpowiedź:
     * Fahrenheit to Celsius: (°F - 32) / 1.8 = °C
     * Celsius to Fahrenheit: (°C * 1.8) + 32 = °F
+    * skorzystaj z funkcji ``range()``
 
 
 Przeliczanie odległości
