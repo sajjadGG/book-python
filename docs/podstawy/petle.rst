@@ -2,8 +2,8 @@ Pętle
 =====
 
 
-Wybitnie użyteczne pętla ``for``
---------------------------------
+Pętla ``for``
+-------------
 
 .. code-block:: python
 
@@ -15,8 +15,8 @@ Wybitnie użyteczne pętla ``for``
     for x in range(0, 30):
         print(f'Value is: {x}')
 
-``while``
----------
+Pętla ``while``
+---------------
 
 .. code-block:: python
 
