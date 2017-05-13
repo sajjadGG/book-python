@@ -11,6 +11,10 @@ Zmienne i typy
 :Zadanie:
     Napisz program, który poprosi użytkownika o imie i ładnie go przywita.
 
+:Podpowiedź:
+    * Użyj podawania stringów po przecinku ``print(str, str)``
+    * Użyj f-string formatting z Python >= 3.6
+
 
 Zmienne i wczytywanie ciągu od użytkownika
 ==========================================
