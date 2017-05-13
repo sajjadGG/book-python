@@ -39,13 +39,10 @@ Powielanie napisów
 
     * wykorzystując ``range()``
     * wykorzystując pętlę ``while``
-    * wykorzystując właściwości mnożenia stringów
+    * wykorzystując właściwości mnożenia stringów ``print('ciag znakow' * 30)``
 
 :Zadanie 3:
     Napisz doctest do takiej funkcji.
-
-:Podpowiedź:
-    * ``print('ciag znakow' * 30)``
 
 
 Przeliczanie temperatury
