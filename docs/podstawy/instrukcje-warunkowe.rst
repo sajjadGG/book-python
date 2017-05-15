@@ -60,6 +60,15 @@ Instrukcje warunkowe
      else:
          print('You have set your name')
 
+
+.. code-block:: python
+
+    if name is None:
+         print('Name is not set')
+     else:
+         print('You have set your name')
+
+
 ``switch`` statement?
 ---------------------
 * Why ``switch`` is bad practise?

@@ -28,18 +28,18 @@ Zmienne i wczytywanie ciągu od użytkownika
 Powielanie napisów
 ==================
 
-:Nazwa skryptu: ``bin/zadanie1-powielanie-napisow.py``
-:Uruchamianie: ``python bin/zadanie1-powielanie-napisow.py``
+:Nazwa skryptu: ``bin/powielanie-napisow.py``
+:Uruchamianie: ``python bin/powielanie-napisow.py``
 
 :Zadanie 1:
-    Napisz program, który wczyta od użytkownika pewien napis, a następnie wyświetli 30 kopii tego napisu, każda w osobnej linii.
+    Napisz program, który wczyta od użytkownika pewien napis, a następnie wyświetli 5 kopii tego napisu, każda w osobnej linii.
 
 :Zadanie 2:
     Napisz trzy wersje tego programu:
 
     * wykorzystując ``range()``
     * wykorzystując pętlę ``while``
-    * wykorzystując właściwości mnożenia stringów ``print('ciag znakow' * 30)``
+    * wykorzystując właściwości mnożenia stringów ``print('ciag znakow' * 5)``
 
 :Zadanie 3:
     Napisz doctest do takiej funkcji.
@@ -51,8 +51,14 @@ Przeliczanie temperatury
 :Nazwa skryptu: ``bin/temperatura.py``
 :Uruchamianie: ``python bin/temperatura.py``
 
-:Zadanie:
+:Zadanie 1:
     Woda zamarza przy 32 stopniach Fahrenheita, a wrze przy 212 stopniach Fahrenheita. Napisz program, który wyświetli tabelę przeliczeń stopni Celsjusza na stopnie Fahrenheita w zakresie od –20 do +40 stopni Celsjusza (co 5 stopni). Pamiętaj o wyświetlaniu znaku plus/minus przy temperaturze. Oczywiście napisz testy do rozwiązania.
+
+:Zadanie 2:
+    Zrób aby znak plus lub minus był zawsze wyświetlany.
+
+:Zadanie *:
+    Zrób aby tabelka była stałej szerokości.
 
 :Podpowiedź:
     * Fahrenheit to Celsius: (°F - 32) / 1.8 = °C
@@ -86,8 +92,8 @@ Przeliczanie odległości
 Parzystość
 ==========
 
-:Nazwa skryptu: ``bin/zadanie2-parzystosc.py``
-:Uruchamianie: ``python bin/zadanie2-parzystosc.py``
+:Nazwa skryptu: ``bin/parzystosc.py``
+:Uruchamianie: ``python bin/parzystosc.py``
 
 :Zadanie:
     * napisz program, który wczyta od użytkownika ciąg znaków
@@ -103,8 +109,8 @@ Parzystość
 Liczby całkowite
 ================
 
-:Nazwa skryptu: ``bin/zadanie3-calkowite.py``
-:Uruchamianie: ``python bin/zadanie3-calkowite.py``
+:Nazwa skryptu: ``bin/calkowite.py``
+:Uruchamianie: ``python bin/calkowite.py``
 
 :Zadanie:
     Napisz program, który wczyta od użytkownika liczbę i wyświetli informację, czy jest to liczba całkowita, czy niecałkowita.
