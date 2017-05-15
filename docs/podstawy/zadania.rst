@@ -162,7 +162,11 @@ Wyrazy
 :Uruchamianie: ``python bin/podzial-wyrazow.py``
 
 :Zadanie:
-    Napisz program, który wczyta od użytkownika pewien tekst, a następnie podzieli go na zdania (zakładamy, że jednoznacznie kropka rozdziela zdania) i dla każdego zdania wyświetli ile jest w nim wyrazów (zakładamy, że spacja oddziela wyrazy w zdaniu).
+    Napisz program, który na podstawie paragrafu tekstu "Lorem Ipsum" podzieli go na zdania () i dla każdego zdania wyświetli ile jest w nim wyrazów.
+
+:Założenia:
+    * kropka rozdziela zdania
+    * spacja oddziela wyrazy w zdaniu
 
 :Podpowiedź:
 
@@ -225,10 +229,11 @@ Konwersja liczby na zapis słowny
 :Uruchamianie: ``python bin/konwersja-liczby.py``
 
 :Zadanie 1:
-    Napisz program "numer.py``", który zamieni wprowadzony przez użytkownika ciąg cyfr na formę tekstową:
+    Napisz program ``numer.py``, który zamieni wprowadzony przez użytkownika ciąg cyfr na formę tekstową:
 
     * znaki nie będące cyframi mają być ignorowane
     * konwertujemy cyfry, nie liczby, a zatem:
+
       * 911 to "dziewięć jeden jeden"
       * 1100 to "jeden jeden zero zero"
 

@@ -54,46 +54,6 @@ Kod po słowie ``continue`` nie zostanie wykonany. Przydatne podczas debugowania
     ...     print(number)
     0
 
-.. code-block:: python
-
-    def foo1():
-        return True
-
-    def foo2():
-        return None
-
-    def foo3():
-        return 'bar'
-
-    def foo4():
-        return [10, 20]
-
-    def foo5():
-        return foo1
-
-    def foo6():
-        pass
-
-    def foo7():
-        return 10, 20, 30, 5, 'a'
-
-    def foo8():
-        return {'imie': 'Matt', 'nazwisko': 'Harasymczuk'}
-
-    def foo9():
-        return [
-            {'imie': 'Matt', 'nazwisko': 'Harasymczuk'},
-            {'imie': 'Matt', 'nazwisko': 'Harasymczuk'},
-            {'imie': 'Matt', 'nazwisko': 'Harasymczuk'}]
-
-
-    if __name__ == '__main__':
-
-        napiece, natezenie, *args = foo7()
-
-        napiecie, *_ = foo7()
-        print(_)
-
 ``return``
 ----------
 
@@ -198,6 +158,9 @@ Funkcje wbudowane
 
     >>> isinstance(10, float)
     False
+
+    >>> isinstance(10, (int, float))
+    True
 
 ``min()``
 ---------
