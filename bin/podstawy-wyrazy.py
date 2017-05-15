@@ -1,40 +1,8 @@
-#tekst = input('Wprowadź tekst: ')
-tekst = 'Hej Matt. Mam nadzieję, że wszystko u Ciebie dobrze. Co tam.'
+TEKST = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
 
-tekst_podzielony = tekst.split('.')
-print(tekst_podzielony)
-
-for zdanie in tekst_podzielony:
+for zdanie in TEKST.split('.'):
     wyrazy = zdanie.split()
+
     if wyrazy:
         ile = len(wyrazy)
         print(ile, wyrazy)
-
-
-import sys
-sys.exit()
-
-
-
-
-
-tekst_podzielony = str.split(tekst, '.')
-print(tekst_podzielony)
-
-
-class Osoba:
-    imie = 'Matt'
-    nazwisko = 'Harasymczuk'
-
-    def przedstaw_sie(self):
-        print(self.nazwisko)
-
-
-matt = Osoba()
-matt.przedstaw_sie()
-
-angie = Osoba()
-angie.nazwisko = 'Jan'
-
-
-Osoba.przedstaw_sie(angie)
