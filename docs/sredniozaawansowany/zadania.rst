@@ -17,6 +17,18 @@ Z twojego systemu operacyjnego wyciągnij plik ``/etc/hosts`` i przedstaw go w f
 :Uwaga:
     * Zwróć uwagę na uprawnienia do odczytu pliku
     * System Windows również posiada ten plik (``C:/Windows/System32/drivers/etc/hosts``)
+    * Gdyby w Twoim systemie nie było pliku, skorzystaj z szablonu poniżej:
+
+.. code-block:: text
+
+    ##
+    # Host Database
+    ##
+    127.0.0.1	    localhost
+    127.0.0.1	    localhost
+    10.13.37.1	    facebook.com google.com microsoft.com
+    255.255.255.255	broadcasthost
+    ::1             localhost
 
 Parsowanie ``/etc/passwd``
 ==========================
@@ -29,6 +41,8 @@ The ``/etc/passwd`` file is a colon-separated file that contains the following i
 - Full name of the user (GECOS)
 - User home directory
 - Login shell
+
+Gdyby w Twoim systemie nie było pliku, skorzystaj z szablonu poniżej:
 
 .. code-block:: text
 
