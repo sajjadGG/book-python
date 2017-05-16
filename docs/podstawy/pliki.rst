@@ -113,10 +113,10 @@ Z twojego systemu operacyjnego wyciągnij plik ``/etc/hosts`` i przedstaw go w f
     ##
     # Host Database
     ##
-    127.0.0.1	    localhost
-    127.0.0.1	    localhost
-    10.13.37.1	    facebook.com google.com microsoft.com
-    255.255.255.255	broadcasthost
+    127.0.0.1       localhost
+    127.0.0.1       localhost
+    10.13.37.1      facebook.com google.com microsoft.com
+    255.255.255.255 broadcasthost
     ::1             localhost
 
 Parsowanie ``/etc/passwd``
