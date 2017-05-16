@@ -39,8 +39,11 @@ Serializacja
 
 .. code-block:: python
 
+    >>> DATA = {'first_name': 'Matt', 'last_name': 'Harasymczuk'}
+
     >>> import json
-    >>> json.loads()
+    >>> json.dumps(DATA)
+    '{"first_name": "Matt", "last_name": "Harasymczuk"}'
 
 Problem z rzutowaniem daty na JSON:
 
@@ -79,7 +82,6 @@ Deserializacja
 --------------
 
 .. code-block:: python
-
 
     >>> DATA = '["2016-10-26T14:41:51.020", "2016-10-26 14:41:51.020673", "2016-10-26 14:41:51.020673", "2016-10-26 14:41:51.020673", "2016-10-26 14:41:51.020673", {"nazwisko": "Harasymczuk", "imi\u0119": "Matt\u00f3ł"}, [10, 20, 30], [1]]'
 
