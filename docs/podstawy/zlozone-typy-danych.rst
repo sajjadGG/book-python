@@ -38,6 +38,26 @@ Zbiory
     >>> my_list[2]
     None
 
+.. code-block:: python
+
+    ## Performance - Method concatenates strings using + in a loop
+    def make_html1(lista):
+        html = '<table>'
+
+        for element in lista:
+            html += '<tr><td>%s</td></tr>' % element
+        html += '</table>'
+
+        return html
+
+    ## Problem solved
+    def make_html2(lista):
+        html = ['<table>']
+        for element in lista:
+            html.append('<tr><td>%s</td></tr>' % element)
+        html.append('</table>')
+        return '\r\n'.join(html)
+
 ``set`` - Zbiór
 ---------------
 
