@@ -97,13 +97,15 @@ Parsowanie ``/etc/passwd``
 :Zadanie:
     * Sparsuj plik ``/etc/passwd`` i przedstaw go w formacie listy dictów:
 
-- User name
-- Encrypted password
-- User ID number (UID)
-- User's group ID number (GID)
-- Full name of the user (GECOS)
-- User home directory
-- Login shell
+    - User name
+    - Encrypted password
+    - User ID number (UID)
+    - User's group ID number (GID)
+    - Full name of the user (GECOS)
+    - User home directory
+    - Login shell
+
+    * Zwróć username, uid oraz grupy użytkowników, których UID jest mniejszy niż 50.
 
 Gdyby w Twoim systemie nie było pliku, skorzystaj z szablonu poniżej:
 
