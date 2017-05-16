@@ -39,21 +39,21 @@ Podstawy
 
    docs/podstawy/zmienne-i-stale.rst
    docs/podstawy/zlozone-typy-danych.rst
-
    docs/podstawy/instrukcje-warunkowe.rst
    docs/podstawy/petle.rst
    docs/podstawy/funkcje.rst
+
+   docs/podstawy/print-formatting.rst
    docs/podstawy/doctests.rst
    docs/podstawy/builtin.rst
    docs/podstawy/operatory.rst
-   docs/podstawy/print-formatting.rst
-
    docs/podstawy/pliki.rst
    docs/podstawy/logging.rst
 
-   docs/podstawy/programowanie-obiektowe.rst
    docs/podstawy/serializacja.rst
    docs/podstawy/wyjatki.rst
+
+   docs/podstawy/programowanie-obiektowe.rst
 
    docs/podstawy/dobre-praktyki.rst
    docs/podstawy/zadania.rst

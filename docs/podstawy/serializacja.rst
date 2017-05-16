@@ -306,33 +306,32 @@ Książka adresowa
 :Uruchamianie: ``python bin/ksiazka-adresowa.py``
 
 :Zadanie:
-    Napisz książkę adresową, która będzie zapisywała dane do pliku w formacie json.
+    Bardzo często wykorzystywanym typem pliku jest CSV, czyli wartości oddzielone przecinkami. Zamień format pliku na ten typ. Zrób tak, aby dane trafiły do odpowiednich kolumn nawet po przesortowaniu. Użyj ``csv.DictWriter()``. Wszystkie pola muszą być zawsze w cudzysłowiach i oddzielone średnikami.
+
     Każdy z użytkowników jest reprezentowany przez:
 
-    * imię
-    * nazwisko
-    * telefon
-    * adres
-
-     * ulica
-     * miasto
-     * kod_pocztowy
-     * wojewodztwo
-     * panstwo
+        * imię
+        * nazwisko
+        * telefon
+        * ulica
+        * miasto
+        * kod_pocztowy
+        * wojewodztwo
+        * panstwo
 
     Wszystkie dane w książce muszą być reprezentowane przez typy proste.
 
 :Zadanie 2:
-    Bardzo często wykorzystywanym typem pliku jest CSV, czyli wartości oddzielone przecinkami. Zamień format pliku na ten typ. Zrób tak, aby dane trafiły do odpowiednich kolumn nawet po przesortowaniu. Użyj ``csv.DictWriter()``. Wszystkie pola muszą być zawsze w cudzysłowiach i oddzielone średnikami.
+    Zmodyfikuj aby można było wpisywać wiele adresów. Dlaczego CSV nie może zapisać wielu adresów dla jednego rekordu?
 
 :Zadanie 3:
-    Zmodyfikuj program aby wykorzystywał klasy do reprezentowania wpisów w książce. Które podejście jest lepsze?
+    Napisz książkę adresową, która będzie zapisywała dane do pliku w formacie JSON.
 
 :Zadanie 4:
-    Teraz wykorzystaj plik bazy danych sqlite aby trzymać informacje w tabeli. Które podejście jest lepsze?
+    Zmodyfikuj program aby wykorzystywał klasy do reprezentowania wpisów w książce. Które podejście jest lepsze?
 
 :Zadanie 5:
-    Zmodyfikuj aby można było wpisywać wiele adresów.
+    Teraz wykorzystaj plik bazy danych SQLite aby trzymać informacje w tabeli. Które podejście jest lepsze?
 
 :Zadanie 6:
     Wykorzystaj Django do stworzenia takiego modelu i wygeneruj panel administracyjny. Trudne?
