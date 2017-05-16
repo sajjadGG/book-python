@@ -201,7 +201,7 @@ Deserializacja
 
     >>> with open('filename.csv', 'w') as csvfile:
     ...    fieldnames = data[0].keys()
-    ...    writer = csv.DictWriter(csvfile, fieldnames=fieldnames, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL)
+    ...    writer = csv.DictWriter(csvfile, fieldnames=fieldnames, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL, lineterminator='\n')
     ...    writer.writeheader()
     ...
     ...    for row in data:
