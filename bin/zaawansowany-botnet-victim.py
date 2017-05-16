@@ -52,8 +52,7 @@ class Executor(socketserver.BaseRequestHandler):
             try:
                 output, errors = proc.communicate(timeout=timeout)
             except subprocess.TimeoutExpired:
-                log.error(
-                    'Timeout %s exceeded for command: %s' % (timeout, command))
+                log.error('Timeout %s exceeded for command: %s' % (timeout, command))
                 return proc.kill()
 
             if errors:

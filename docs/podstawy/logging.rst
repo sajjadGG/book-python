@@ -26,7 +26,17 @@ Konfiguracja logowania
 
     log = logging.getLogger()
 
+.. code-block:: python
 
+    import logging
+
+    logging.basicConfig(
+        level=logging.DEBUG,
+        filename='/tmp/python.log',
+        format='"%(asctime).19s", "%(levelname)s", "%(message)s"'
+    )
+
+    logging.warning('hej')
 
 .. code-block:: python
 

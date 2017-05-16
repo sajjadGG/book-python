@@ -2,7 +2,7 @@
 Print formatting
 ****************
 
-Konkatanacja stringów
+Konkatenacja stringów
 =====================
 
 Operator ``+``
@@ -76,6 +76,20 @@ Metoda ``.format()``
             wiek=wiek))
 
     print('{wiek} ma {imie} lat'.format(**locals()))
+
+    print('Hej mam na imie {} i mam {} lat'.format(imie, wiek))
+
+    >>> print('Hej mam na imie {0} i mam {1} lat'.format(imie, wiek))
+    Hej mam na imie Piotr i mam 10 lat
+
+    >>> print('Hej mam na imie {1} i mam {0} lat'.format(imie, wiek))
+    Hej mam na imie 10 i mam Piotr lat
+
+    >>> print('Hej mam na imie {1:.3} i mam {0:.3} lat'.format(float(wiek), imie))
+    Hej mam na imie Pio i mam 10.0 lat
+
+    >>> print('Hej mam na imie {1:.3} i mam {0:10.3} lat'.format(float(wiek), imie))
+    Hej mam na imie Pio i mam       10.0 lat
 
 
 f-strings - Python >= 3.6

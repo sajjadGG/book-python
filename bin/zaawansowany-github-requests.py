@@ -25,6 +25,7 @@ issues = []
 
 for msg in messages:
     issue = re.findall(r'#([0-9]+)', msg, flags=re.MULTILINE)
+
     if issue:
         issues.extend(issue)
 

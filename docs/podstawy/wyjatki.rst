@@ -196,3 +196,17 @@ Przykład wyjątków przy czytaniu plików
         log.debug('Zakończenie pracy nad plikiem')
 
     log.info('Kończymy program')
+
+
+Korzystanie z ``warnings``
+
+.. code-block:: python
+
+    import warnings
+
+    def sumuj(a, b):
+        warnings.warn('Nie stosuj tego', PendingDeprecationWarning)
+        return a + b
+
+
+    sumuj(1, 2)
