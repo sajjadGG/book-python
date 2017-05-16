@@ -135,6 +135,17 @@ Escape'owanie znaków
     \'
     """
 
+Znaki przed stringiem
+---------------------
+
+.. code-block:: python
+
+    u'zażółć gęślą jaźń'
+    r'(?P<foo>)\n' # escapes does not matters
+    r'C:\Users\Admin\Desktop\foobar.txt'
+    f'hello {first_name}, how are you?'
+    b'this is text'
+
 
 Niemutowalność
 --------------
@@ -350,3 +361,83 @@ Jak inicjować poszczególne typy?
 - ``tuple()`` czy ``()``
 - ``dict()`` czy ``{}``
 - ``set()`` czy ``{}``
+
+
+Zadania kontrolne
+=================
+
+Zmienne i typy
+--------------
+
+:Nazwa skryptu: ``bin/zmienne.py``
+:Uruchamianie: ``python bin/zmienne.py``
+
+:Zadanie:
+    Napisz program, który poprosi użytkownika o imie i ładnie go przywita.
+
+:Podpowiedź:
+    * Użyj podawania stringów po przecinku ``print(str, str)``
+    * Użyj f-string formatting dla Python >= 3.6
+
+
+Zmienne i wczytywanie ciągu od użytkownika
+------------------------------------------
+
+:Nazwa skryptu: ``bin/pelnoletnosc.py``
+:Uruchamianie: ``python bin/pelnoletnosc.py``
+
+:Zadanie:
+    Napisz program, który poprosi użytkownika o wiek i wyświetli wartość. Następnie sprawdzi pełnoletność i wyświetli informację czy osoba jest "dorosła" czy "niepełnoletnia".
+
+
+Liczby całkowite
+----------------
+
+:Nazwa skryptu: ``bin/calkowite.py``
+:Uruchamianie: ``python bin/calkowite.py``
+
+:Zadanie:
+    Napisz program, który wczyta od użytkownika liczbę i wyświetli informację, czy jest to liczba całkowita, czy niecałkowita.
+
+:Podpowiedź:
+    Liczba całkowita to taka, której część dziesiętna nie występuje (``int``) lub jest równa zero ``float``.
+
+Wyrazy
+------
+
+:Nazwa skryptu: ``bin/podzial-wyrazow.py``
+:Uruchamianie: ``python bin/podzial-wyrazow.py``
+
+:Zadanie:
+    Napisz program, który na podstawie paragrafu tekstu "Lorem Ipsum" podzieli go na zdania () i dla każdego zdania wyświetli ile jest w nim wyrazów.
+
+:Założenia:
+    * kropka rozdziela zdania
+    * spacja oddziela wyrazy w zdaniu
+
+:Podpowiedź:
+
+    * ``str.split()``
+    * ``len()``
+
+Przeliczanie odległości
+-----------------------
+
+:Nazwa skryptu: ``bin/odleglosci.py``
+:Uruchamianie: ``python bin/odleglosci.py``
+
+:Zadanie:
+    Napisz program który przekonwertuje odległości (podane w metrach) i zwróci ``dict``, zgodnie z szablonem:
+
+    .. code-block:: python
+
+        {
+            'kilometers': int(),
+            'miles': float(),
+            'nautical miles': float(),
+        }
+
+:Podpowiedź:
+    * 1000 m = 1 km
+    * 1608 m = 1 mila
+    * 1852 m = 1 mila morska

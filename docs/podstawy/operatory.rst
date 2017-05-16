@@ -86,3 +86,23 @@ Kolejność operatorów
 * ``+=``
 * ``in`` i ``not in``
 
+
+
+Zadania kontrolne
+=================
+
+Parzystość
+----------
+
+:Nazwa skryptu: ``bin/parzystosc.py``
+:Uruchamianie: ``python bin/parzystosc.py``
+
+:Zadanie:
+    * napisz program, który wczyta od użytkownika ciąg znaków
+    * zweryfikuje czy wprowadzony ciąg jest liczbą (``int`` lub ``float``)
+    * sprawdzi czy jest to liczba parzysta, czy nieparzysta
+
+:Podpowiedź:
+    * Liczba parzysta, to taka, która po podzieleniu przez dwa nie ma reszty
+    * Użyj dzielenia modulo ``%`` lub ``divmod()``
+    * Zwróć uwagę, że operator ``%`` działa modulo tylko na ``int`` oraz na ``float``. Przy ``str`` ma zupełnie inne znaczenie.

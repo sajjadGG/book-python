@@ -292,3 +292,50 @@ xslt
 
     print(result_tree)
 
+
+
+Zadania kontrolne
+=================
+
+Książka adresowa
+----------------
+
+:Nazwa skryptu: ``bin/ksiazka-adresowa.py``
+:Uruchamianie: ``python bin/ksiazka-adresowa.py``
+
+:Zadanie:
+    Napisz książkę adresową, która będzie zapisywała dane do pliku w formacie json.
+    Każdy z użytkowników jest reprezentowany przez:
+
+    * imię
+    * nazwisko
+    * telefon
+    * adres
+
+     * ulica
+     * miasto
+     * kod_pocztowy
+     * wojewodztwo
+     * panstwo
+
+    Wszystkie dane w książce muszą być reprezentowane przez typy proste.
+
+:Zadanie 2:
+    Bardzo często wykorzystywanym typem pliku jest CSV, czyli wartości oddzielone przecinkami. Zamień format pliku na ten typ. Zrób tak, aby dane trafiły do odpowiednich kolumn nawet po przesortowaniu. Użyj ``csv.DictWriter()``. Wszystkie pola muszą być zawsze w cudzysłowiach i oddzielone średnikami.
+
+:Zadanie 3:
+    Zmodyfikuj aby można było wpisywać wiele adresów.
+
+:Zadanie 4:
+    Zmodyfikuj program aby wykorzystywał klasy do reprezentowania wpisów w książce. Które podejście jest lepsze?
+
+:Zadanie 5:
+    Teraz wykorzystaj plik bazy danych sqlite aby trzymać informacje w tabeli. Które podejście jest lepsze?
+
+:Zadanie 6:
+    Wykorzystaj Django do stworzenia takiego modelu i wygeneruj panel administracyjny. Trudne?
+
+:Pytanie:
+    * Które podejście było najłatwiejsze?
+    * W jakim formacie najlepiej przechowywać dane?
+    * Które podejście jest najlepsze dla innych programistów, a które dla użytkowników?

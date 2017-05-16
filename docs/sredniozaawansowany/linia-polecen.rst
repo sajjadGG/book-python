@@ -152,3 +152,26 @@ Przykład
     args = parser.parse_args()
     print(args)
 
+
+
+Zadania kontrolne
+=================
+
+Wyliczanie średniej dla parametrów
+----------------------------------
+
+:Nazwa skryptu: ``bin/srednia.py``
+:Uruchamianie: ``python bin/srednia.py``
+
+:Zadanie 1:
+    Zdefiniuj funkcję ``avg()``, która dla dowolnej liczby parametrów zwróci ich średnią arytmetyczną (lub 0 dla 0 parametrów).
+
+:Zadanie 2:
+    Dowolna liczba parametrów podanych z linii poleceń.
+
+:Podpowiedź:
+    * ``getopt``
+    * ``argparse``
+    * ``docopt``
+
+:Uruchamianie: ``python bin/srednia.py 5 10 100 32 -90 27.5``

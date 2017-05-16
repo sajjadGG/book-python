@@ -127,3 +127,46 @@ Więcej informacji
 =================
 
 * https://pyformat.info - Formatowanie stringów w Python
+
+
+Zadania kontrolne
+=================
+
+Powielanie napisów
+------------------
+
+:Nazwa skryptu: ``bin/powielanie-napisow.py``
+:Uruchamianie: ``python bin/powielanie-napisow.py``
+
+:Zadanie 1:
+    Napisz program, który wczyta od użytkownika pewien napis, a następnie wyświetli 5 kopii tego napisu, każda w osobnej linii.
+
+:Zadanie 2:
+    Napisz trzy wersje tego programu:
+
+    * wykorzystując ``range()``
+    * wykorzystując pętlę ``while``
+    * wykorzystując właściwości mnożenia stringów ``print('ciag znakow' * 5)``
+
+:Zadanie 3:
+    Napisz doctest do takiej funkcji.
+
+Przeliczanie temperatury
+------------------------
+
+:Nazwa skryptu: ``bin/temperatura.py``
+:Uruchamianie: ``python bin/temperatura.py``
+
+:Zadanie 1:
+    Woda zamarza przy 32 stopniach Fahrenheita, a wrze przy 212 stopniach Fahrenheita. Napisz program, który wyświetli tabelę przeliczeń stopni Celsjusza na stopnie Fahrenheita w zakresie od –20 do +40 stopni Celsjusza (co 5 stopni). Pamiętaj o wyświetlaniu znaku plus/minus przy temperaturze. Oczywiście napisz testy do rozwiązania.
+
+:Zadanie 2:
+    Zrób aby znak plus lub minus był zawsze wyświetlany.
+
+:Zadanie *:
+    Zrób aby tabelka była stałej szerokości.
+
+:Podpowiedź:
+    * Fahrenheit to Celsius: (°F - 32) / 1.8 = °C
+    * Celsius to Fahrenheit: (°C * 1.8) + 32 = °F
+    * skorzystaj z funkcji ``range()``

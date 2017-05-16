@@ -97,3 +97,32 @@ Instrukcje warunkowe
 
     choices = {'a': 1, 'b': 2}
     result = choices.get(key, 'default')
+
+
+Zadania kontrolne
+=================
+
+Dzienniczek ucznia
+------------------
+
+:Nazwa skryptu: ``bin/oceny.py``
+:Uruchamianie: ``python bin/oceny.py``
+
+:Zadanie:
+    Napisz program, który wczytuje od użytkownika kolejne oceny i:
+
+    * sprawdza czy wprowadzona ocena jest na liście dopuszczalnych na wydziale ocen
+    * jeżeli ocena jest na liście dopuszczalnych na wydziale ocen, dodaje ją do dzienniczka
+    * jeżeli wpisano cyfrę nie znjadującą się na liście dopuszczalnych ocen, wyświetl informację i zakończ wpisywanie
+    * wyświetla wyliczoną dla dzienniczka ocen średnią arytmetyczną
+    * jeżeli wciśnięto sam Enter, oznacza to koniec wpisywania do dzienniczka
+    * wykorzystaj moduł statistics do wyliczania średniej
+
+:Warunek:
+    * Zastosuj akademicką skalę ocen ``[2, 3, 3.5, 4, 4.5, 5]``
+
+:Podpowiedź:
+    * dla ułatwienia wszystkie oceny mogą być typu ``float``
+    * ``len()`` ``sum()``
+    * ``in``
+    * ``import statistics`` ``statistics.mean()``

@@ -79,3 +79,20 @@ Przykład
     email_poprawny('+matt@astrotech.io')
     email_poprawny('matt+@astrotech.io')
     email_poprawny('mattastrotech@.io')
+
+
+Zadania kontrolne
+=================
+
+Walidacja PESEL
+---------------
+
+Za pomocą wyrażeń regularnych sprawdź:
+
+* czy pesel jest poprawny
+* jaka jest data urodzenia? (podaj obiekt ``datetime.date``
+* płeć użytkownika który podał PESEL
+
+:Z gwiazdką:
+    * sprawdź walidację numerów PESEL dla osób urodzonych po 2000 roku.
+    * sprawdź sumę kontrolną
