@@ -144,10 +144,10 @@ https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
 
 Several additional directives not required by the C89 standard are included for
 convenience. These parameters all correspond to ISO 8601 date values. These
-may not be available on all platforms when used with the `strftime`
+may not be available on all platforms when used with the ``strftime``
 method. The ISO 8601 year and ISO 8601 week directives are not interchangeable
-with the year and week number directives above. Calling `strptime` with
-incomplete or ambiguous ISO 8601 directives will raise a `ValueError`.
+with the year and week number directives above. Calling ``strptime`` with
+incomplete or ambiguous ISO 8601 directives will raise a ``ValueError``.
 
 +-----------+--------------------------------+------------------------+
 | Directive | Meaning                        | Example                |
@@ -206,6 +206,8 @@ Zadanie kontrolne
     * Uwzględnij strefy czasowe.
     * Co to za daty, które podał użytkownik?
 
+:Podpowiedź:
+    * wykorzystaj ``try`` i ``except`` przy ``strptime``
 
 ``time``
 ========
