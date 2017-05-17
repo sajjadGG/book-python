@@ -191,14 +191,15 @@ Zadanie kontrolne
 -----------------
 
 :Zadanie:
-    Zaczytaj datę podaną przez użytkownika wykorzystując ``input()``. Użytkownik podaje datę w formacie amerykańskim, na przykład:
+    Użytkownik poda wykorzystując ``input()`` dwie następujące daty w formacie jak poniżej:
 
         - 'April 12, 1961 6:07 AM'
-        - 'July 21, 1969 2:56:15 AM UTC'
+        - '07/21/69 2:56:15 AM UTC'
 
-    * Przedstaw datę jako objekt ``datetime``. I wyświetl go w formacie ISO.
+    * Przedstaw daty jako objekt ``datetime``. I wyświetl je w formacie ISO.
     * Odejmij obie daty od siebie. Ile czasu minęło między wydarzeniami?
-    * Do dzisiejszej dodaj ten sam czas ile wyszło Ci w poprzednim zadaniu. Wyświetl datę (bez czasu).
+    * Do dzisiejszej dodaj ten sam czas ile wyszło Ci w poprzednim zadaniu.
+    * Wyświetl datę (bez czasu). Ile będziesz miał wtedy lat?
 
 :Zadanie z gwiazdką:
     * Uwzględnij strefy czasowe.
