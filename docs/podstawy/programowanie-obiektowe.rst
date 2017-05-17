@@ -410,6 +410,6 @@ Książka adresowa
                 Adres(ulica='...', miasto='...'),
                 Adres(ulica='...', miasto='...'),
             ]),
-            Kontakt(imie='Jan', nazwisko='Kowalski'),
-            Kontakt(imie='Jose', nazwisko='Jimenez', adresy=[]),
+            Kontakt(imie='Al', nazwisko='Shepard'),
+            Kontakt(imie='José', nazwisko='Jiménez', adresy=[]),
         ]
