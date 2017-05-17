@@ -396,9 +396,13 @@ Książka adresowa
     Użytkownik może mieć wiele adresów.
 
 :Zadanie 2:
-    Napisz książkę adresową, która będzie zapisywała dane do pliku w formacie Pickle.
+    * Klasa osoba powinna wykorzystywać domyślne argumenty w ``__init__``.
+    * Klasa adres powinna mieć zmienną liczbę argumentów za pomocą ``**kwargs`` z domyślnymi wartościami.
 
 :Zadanie 3:
+    Napisz książkę adresową, która będzie zapisywała dane do pliku w formacie Pickle.
+
+:Zadanie 4:
     Napisz książkę adresową, która będzie zapisywała dane do pliku w formacie JSON.
 
 :Podpowiedź:
