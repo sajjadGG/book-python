@@ -197,7 +197,7 @@ Zadanie kontrolne
         - '07/21/69 2:56:15 AM UTC'
 
     * Przedstaw daty jako objekt ``datetime``. I wyświetl je w formacie ISO.
-    * Odejmij obie daty od siebie. Ile czasu minęło między wydarzeniami?
+    * Odejmij obie daty od siebie. Ile lat i miesięcy minęło między wydarzeniami?
     * Do dzisiejszej dodaj ten sam czas ile wyszło Ci w poprzednim zadaniu.
     * Wyświetl samą datę (bez czasu).
     * Ile będziesz miał wtedy lat?
