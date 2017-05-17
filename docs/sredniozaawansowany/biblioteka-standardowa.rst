@@ -201,6 +201,7 @@ Zadanie kontrolne
     * Do dzisiejszej dodaj ten sam czas ile wyszło Ci w poprzednim zadaniu. Wyświetl datę (bez czasu).
 
 :Zadanie z gwiazdką:
+    * Uwzględnij strefy czasowe.
     * Co to za daty, które podał użytkownik?
 
 
