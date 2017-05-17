@@ -304,8 +304,8 @@ Konstruktor
 ``@staticmethod``
 -----------------
 
-``__str__()`` i ``__repr__()``
-------------------------------
+``__str__()``
+-------------
 
 .. code-block:: python
 
@@ -322,7 +322,29 @@ Konstruktor
 
 
     auto = Samochod(marka='mercedes', kola=3)
-    print(str(auto))
+    print(auto)
+
+``__repr__()``
+--------------
+.. code-block:: python
+
+    class Samochod:
+        def __init__(self, marka, kola=4):
+            self.marka = marka
+            self.kola = kola
+
+        def __repr__(self):
+            return f'Marka: {self.marka} i ma {self.kola} koła'
+
+
+    auta = [
+        Samochod(marka='mercedes', kola=3),
+        Samochod(marka='maluch', kola=4),
+        Samochod(marka='fiat', kola=4),
+    ]
+
+    print(auta)
+
 
 Metaclass
 ---------
