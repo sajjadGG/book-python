@@ -89,6 +89,54 @@ Kompozycja
     c.wlacz_swiatla()
 
 
+.. code-block:: python
+
+
+    class OtwieralnyDach:
+        def otworz_dach(self):
+            pass
+
+        def zamknij_dach(self):
+            pass
+
+
+    class Trabi:
+        def zatrab(self):
+            raise NotImplementedError
+
+
+
+    class Pojazd:
+        kola = None
+
+
+    class Samochod(Pojazd):
+        kola = 4
+
+
+    class Motor(Pojazd, Trabi):
+        kola = 2
+
+        def zatrab(self):
+            print('biip')
+
+
+    class Cabriolet(Samochod, OtwieralnyDach, Trabi):
+        def zatrab(self):
+            print('tru tu tu tu')
+
+
+    class Mercedes(Samochod, OtwieralnyDach, Trabi):
+        pass
+
+
+    class Maluch(Samochod, Trabi):
+        pass
+
+
+
+
+
 Dziedziczenie czy kompozycja?
 -----------------------------
 
@@ -137,6 +185,7 @@ Klasy
     auto = Samochod(marka='mercedes', kola=3)
     print(auto.kola)
 
+
 Metody
 ------
 
@@ -146,8 +195,68 @@ Metody
 Pola klasy
 ----------
 
+.. code-block:: python
+
+    import logging
+
+
+    class Samochod:
+        kola = 4
+        marka = None
+
+        def set_marka(self, marka):
+            logging.warning('Ustawiamy marke')
+            self.marka = marka
+
+        def get_marka(self):
+            return self.marka
+
+
+    mercedes = Samochod()
+    mercedes.set_marka('Mercedes')
+    print(mercedes.get_marka())
+
+
+    maluch = Samochod()
+    maluch.marka = 'Maluch'
+    print(maluch.marka)
+
+
+    maluch = Samochod(marka='Maluch')
+    print(maluch.marka)
+
+
 Konstruktor
 -----------
+
+.. code-block:: python
+
+    import logging
+
+
+    class Samochod:
+        kierowca = None
+
+        def __init__(self, marka, kola=4):
+            logging.warning('inicjalizujemy obiekt %s', marka)
+            self.marka = marka
+            self.kola = kola
+
+
+    sam1 = Samochod(marka='Maluch')
+    print(sam1.marka)
+    print(sam1.kola)
+
+    print(dir(sam1))
+    print(sam1.__dict__)
+
+
+    sam2 = Samochod(marka='Merc')
+    print(sam2.marka)
+    print(sam2.kola)
+
+
+
 
 ``super()``
 -----------
@@ -258,3 +367,34 @@ Co powinno być w klasie a co nie?
 
 Klasa per plik?
 ---------------
+
+
+Zadania kontrolne
+=================
+
+Książka adresowa
+----------------
+
+:Nazwa skryptu: ``bin/ksiazka-adresowa.py``
+:Uruchamianie: ``python bin/ksiazka-adresowa.py``
+
+:Zadanie:
+    Zmień swój kod zadania z książką adresową, aby każdy z użytkowników był reprezentowany przez:
+
+        * imię
+        * nazwisko
+        * telefon
+        * ulica:
+
+            * miasto
+            * kod_pocztowy
+            * wojewodztwo
+            * panstwo
+
+    Wszystkie dane w książce muszą być reprezentowane przez klasy.
+
+:Zadanie 3:
+    Napisz książkę adresową, która będzie zapisywała dane do pliku w formacie JSON.
+
+:Zadanie 4:
+    Zmodyfikuj program aby wykorzystywał klasy do reprezentowania wpisów w książce. Które podejście jest lepsze?
