@@ -77,6 +77,48 @@ Problem z rzutowaniem daty na JSON:
 
     json.dumps(data, cls=DatetimeEncoder)
 
+.. code-block:: python
+
+    import json
+
+    class Adress:
+        def __init__(self, miasto):
+            self.miasto = miasto
+
+        def __str__(self):
+            return f'{self.miasto}'
+
+
+    class Osoba:
+        def __init__(self, imie, nazwisko):
+            self.imie = imie
+            self.nazwisko = nazwisko
+            self.adres = [Adress('Warszawa')]
+
+        def __str__(self):
+            return f'{self.imie}'
+
+
+    class OsobaEncoder(json.JSONEncoder):
+        def default(self, obj):
+            try:
+                return super().default(obj)
+            except TypeError:
+                print(obj)
+                return obj.__dict__
+
+
+
+
+    matt = Osoba(imie='Matt', nazwisko='...')
+
+
+    lista = [
+        matt,
+    ]
+
+    out = json.dumps(lista, cls=OsobaEncoder)
+
 
 Deserializacja
 --------------
