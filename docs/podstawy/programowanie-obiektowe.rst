@@ -378,7 +378,7 @@ Książka adresowa
 :Nazwa skryptu: ``bin/ksiazka-adresowa.py``
 :Uruchamianie: ``python bin/ksiazka-adresowa.py``
 
-:Zadanie:
+:Zadanie 1:
     Zmień swój kod zadania z książką adresową, aby każdy z użytkowników był reprezentowany przez:
 
         * imię
@@ -392,9 +392,10 @@ Książka adresowa
             * panstwo
 
     Wszystkie dane w książce muszą być reprezentowane przez klasy.
+    Użytkownik może mieć wiele adresów.
+
+:Zadanie 2:
+    Napisz książkę adresową, która będzie zapisywała dane do pliku w formacie Pickle.
 
 :Zadanie 3:
     Napisz książkę adresową, która będzie zapisywała dane do pliku w formacie JSON.
-
-:Zadanie 4:
-    Zmodyfikuj program aby wykorzystywał klasy do reprezentowania wpisów w książce. Które podejście jest lepsze?
