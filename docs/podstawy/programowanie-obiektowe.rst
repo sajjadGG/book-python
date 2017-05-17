@@ -384,8 +384,9 @@ Książka adresowa
         * imię
         * nazwisko
         * telefon
-        * ulica:
+        * adres:
 
+            * ulica
             * miasto
             * kod_pocztowy
             * wojewodztwo
