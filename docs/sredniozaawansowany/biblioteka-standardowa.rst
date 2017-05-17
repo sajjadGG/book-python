@@ -193,8 +193,8 @@ Zadanie kontrolne
 :Zadanie:
     Zaczytaj datę podaną przez użytkownika wykorzystując ``input()``. Użytkownik podaje datę w formacie amerykańskim, na przykład:
 
-        'April 12, 1961 6:07 AM'
-        'July 21, 1969 2:56:15 AM UTC'
+        - 'April 12, 1961 6:07 AM'
+        - 'July 21, 1969 2:56:15 AM UTC'
 
     * Przedstaw datę jako objekt ``datetime``. I wyświetl go w formacie ISO.
     * Odejmij obie daty od siebie. Ile czasu minęło między wydarzeniami?
