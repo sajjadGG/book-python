@@ -199,7 +199,8 @@ Zadanie kontrolne
     * Przedstaw daty jako objekt ``datetime``. I wyświetl je w formacie ISO.
     * Odejmij obie daty od siebie. Ile czasu minęło między wydarzeniami?
     * Do dzisiejszej dodaj ten sam czas ile wyszło Ci w poprzednim zadaniu.
-    * Wyświetl datę (bez czasu). Ile będziesz miał wtedy lat?
+    * Wyświetl samą datę (bez czasu).
+    * Ile będziesz miał wtedy lat?
 
 :Zadanie z gwiazdką:
     * Uwzględnij strefy czasowe.
