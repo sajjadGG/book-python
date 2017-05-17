@@ -1,4 +1,4 @@
-_scratchpad.py
+bin/_scratchpad.py
 *.pyc
 *.icloud
 .coverage/
