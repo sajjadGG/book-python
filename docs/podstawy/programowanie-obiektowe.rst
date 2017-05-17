@@ -387,6 +387,28 @@ Private, public? konwencja ``_`` i ``__``
 Co powinno być w klasie a co nie?
 ---------------------------------
 
+.. code-block:: python
+
+    class Osoba:
+        wiek = 10
+
+        def __init__(self, imie):
+            self.imie = imie
+
+        @staticmethod
+        def powiedz_hello():
+            print('hello')
+
+
+    Osoba.powiedz_hello()
+    print(Osoba.wiek)
+
+
+    o = Osoba(imie='Matt')
+    o.powiedz_hello()
+    print(Osoba.wiek)
+
+
 Klasa per plik?
 ---------------
 

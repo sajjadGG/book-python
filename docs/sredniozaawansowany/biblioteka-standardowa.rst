@@ -5,6 +5,8 @@ Biblioteka standardowa
 ``datetime``
 ============
 
+* `Computerophile Time & Time Zones <https://www.youtube.com/watch?v=-5wpm-gesOY>`_
+
 Tworzenie obiektu ``date`` i ``datetime``
 -----------------------------------------
 
@@ -184,6 +186,23 @@ Strefy czasowe
     import datetime
 
     datetime.datetime.now().replace(tzinfo=datetime.timezone.utc)
+
+Zadanie kontrolne
+-----------------
+
+:Zadanie:
+    Zaczytaj datę podaną przez użytkownika wykorzystując ``input()``. Użytkownik podaje datę w formacie amerykańskim, na przykład:
+
+        'April 12, 1961 6:07 AM'
+        'July 21, 1969 2:56:15 AM UTC'
+
+    * Przedstaw datę jako objekt ``datetime``. I wyświetl go w formacie ISO.
+    * Odejmij obie daty od siebie. Ile czasu minęło między wydarzeniami?
+    * Do dzisiejszej dodaj ten sam czas ile wyszło Ci w poprzednim zadaniu. Wyświetl datę (bez czasu).
+
+:Zadanie z gwiazdką:
+    * Co to za daty, które podał użytkownik?
+
 
 ``time``
 ========
