@@ -423,10 +423,10 @@ Książka adresowa
     * Klasa adres powinna mieć zmienną liczbę argumentów za pomocą ``**kwargs`` z domyślnymi wartościami.
 
 :Zadanie 3:
-    Napisz książkę adresową, która będzie zapisywała dane do pliku w formacie Pickle.
+    Napisz książkę adresową, która będzie zapisywała a później odczyta i sparsuje dane do pliku w formacie Pickle.
 
 :Zadanie 4:
-    Napisz książkę adresową, która będzie zapisywała dane do pliku w formacie JSON.
+    Napisz książkę adresową, która będzie zapisywała a później odczyta i sparsuje dane do pliku w formacie JSON.
 
 :Podpowiedź:
     .. code-block:: python
@@ -440,3 +440,6 @@ Książka adresowa
             Kontakt(imie='Al', nazwisko='Shepard'),
             Kontakt(imie='José', nazwisko='Jiménez', adresy=[]),
         ]
+
+    * Dane w formacie Pickle muszą być zapisane do pliku binarnie
+    * ``pickle.loads()`` przyjmuje uchwyt do pliku, a nie jego zawartość

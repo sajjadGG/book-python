@@ -67,6 +67,34 @@ Zbiory
     >>> a
     {1, 3}
 
+Przykład trochę bardziej zaawansowany:
+
+.. code-block:: python
+
+    class Adres:
+        def __init__(self, miasto):
+            self.miasto = miasto
+
+
+    Adres(miasto='...')
+
+
+    {}
+    {'klucz': 'wartość'}
+    {'klucz', 'wartość'}
+    {'klucz'}
+    print({Adres(miasto='...'), Adres(miasto='...')})
+
+    a = Adres(miasto='...')
+    print({a, a})
+
+
+
+    print(dict(foo='bar'))
+
+
+
+
 ``dict`` - Słownik
 ------------------
 
