@@ -414,8 +414,9 @@ Książka adresowa
             * wojewodztwo
             * panstwo
 
-    Wszystkie dane w książce muszą być reprezentowane przez klasy.
-    Użytkownik może mieć wiele adresów.
+    * Wszystkie dane w książce muszą być reprezentowane przez klasy.
+    * Użytkownik może mieć wiele adresów.
+    * Zrób tak, aby się ładnie wyświetlało. Zarówno dla jednego wyniku (``print(adres)``, ``print(osoba)`` jak i dla wszystkich w książce ``print(ksiazka_adresowa)``.
 
 :Zadanie 2:
     * Klasa osoba powinna wykorzystywać domyślne argumenty w ``__init__``.
