@@ -379,12 +379,12 @@ Książka adresowa
 :Uruchamianie: ``python bin/ksiazka-adresowa.py``
 
 :Zadanie 1:
-    Zmień swój kod zadania z książką adresową, aby każdy z użytkowników był reprezentowany przez:
+    Zmień swój kod zadania z książką adresową, aby każdy z kontaktów był reprezentowany przez:
 
         * imię
         * nazwisko
         * telefon
-        * adres:
+        * adresy:
 
             * ulica
             * miasto
@@ -400,3 +400,16 @@ Książka adresowa
 
 :Zadanie 3:
     Napisz książkę adresową, która będzie zapisywała dane do pliku w formacie JSON.
+
+:Podpowiedź:
+    .. code-block:: python
+
+        ksiazka_adresowa = [
+            Kontakt(imie='Matt', nazwisko='Harasymczuk', adresy=[
+                Adres(ulica='...', miasto='...'),
+                Adres(ulica='...', miasto='...'),
+                Adres(ulica='...', miasto='...'),
+            ]),
+            Kontakt(imie='Jan', nazwisko='Kowalski'),
+            Kontakt(imie='Jose', nazwisko='Jimenez', adresy=[]),
+        ]
