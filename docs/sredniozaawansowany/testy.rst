@@ -11,12 +11,15 @@ Doctest
         """
         >>> km_na_metry(1)
         1000
+
         >>> km_na_metry(0)
         0
+
         >>> km_na_metry(-1)
         Traceback (most recent call last):
             ...
         ValueError
+
         >>> km_na_metry('adas')
         Traceback (most recent call last):
             ...
@@ -41,16 +44,20 @@ Doctest
         """
         >>> przelicz_celsius_na_kelvin(1)
         274.15
+
         >>> przelicz_celsius_na_kelvin(0)
         273.15
+
         >>> przelicz_celsius_na_kelvin(-300)
         Traceback (most recent call last):
             ...
         ValueError: Nie może być mniejsze niż minimalna temperatura
+
         >>> przelicz_celsius_na_kelvin('jeden')
         Traceback (most recent call last):
             ...
         ValueError: Temperatura musi być float
+
         >>> przelicz_celsius_na_kelvin([1.0, 1, 0])
         Traceback (most recent call last):
             ...
@@ -73,7 +80,7 @@ Doctest
 Unit Test
 =========
 
-.. code-block:: python3
+.. code-block:: python
 
     import unittest
 

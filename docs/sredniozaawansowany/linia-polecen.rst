@@ -186,4 +186,4 @@ Wyliczanie średniej dla parametrów
     * ``argparse``
     * ``docopt``
 
-:Uruchamianie: ``python bin/srednia.py 5 10 100 32 -90 27.5``
+:Uruchamianie: ``python bin/srednia.py --numbers 5 10 100 32 -90 27.5``
