@@ -141,3 +141,7 @@ Mock
 
 Stub
 ====
+
+Wykorzystanie debuggera w IDE
+=============================
+

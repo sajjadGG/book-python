@@ -1,8 +1,9 @@
+********************
 Instrukcje warunkowe
-====================
+********************
 
 ``if`` ... ``elif`` ... ``else``
---------------------------------
+================================
 
 .. code-block:: python
 
@@ -36,7 +37,7 @@ Instrukcje warunkowe
 
 
 ``not``, ``in``, ``is``
------------------------
+=======================
 
 .. code-block:: python
 
@@ -70,7 +71,7 @@ Instrukcje warunkowe
 
 
 ``switch`` statement?
----------------------
+=====================
 * Why ``switch`` is bad practise?
 
 .. code-block:: python
