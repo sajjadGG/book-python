@@ -61,13 +61,7 @@ Wyniki
 .. code-block:: python
 
     for row in c.execute('SELECT * FROM stocks ORDER BY price'):
-            print row
-
-    (u'2006-01-05', u'BUY', u'RHAT', 100, 35.14)
-    (u'2006-03-28', u'BUY', u'IBM', 1000, 45.0)
-    (u'2006-04-06', u'SELL', u'IBM', 500, 53.0)
-    (u'2006-04-05', u'BUY', u'MSFT', 1000, 72.0)for row in c.execute('SELECT * FROM stocks ORDER BY price'):
-            print row
+        print(row)
 
     (u'2006-01-05', u'BUY', u'RHAT', 100, 35.14)
     (u'2006-03-28', u'BUY', u'IBM', 1000, 45.0)
@@ -83,6 +77,7 @@ Wyniki
 
     cur = con.cursor()
     cur.execute("select 'John' as name, 42 as age")
+
     for row in cur:
         assert row[0] == row["name"]
         assert row["name"] == row["nAmE"]
@@ -108,13 +103,13 @@ Typy i konwertery
     cur.execute("insert into test(d, ts) values (?, ?)", (today, now))
     cur.execute("select d, ts from test")
     row = cur.fetchone()
-    print today, "=>", row[0], type(row[0])
-    print now, "=>", row[1], type(row[1])
+    print(today, "=>", row[0], type(row[0]))
+    print(now, "=>", row[1], type(row[1]))
 
     cur.execute('select current_date as "d [date]", current_timestamp as "ts [timestamp]"')
     row = cur.fetchone()
-    print "current_date", row[0], type(row[0])
-    print "current_timestamp", row[1], type(row[1])
+    print("current_date", row[0], type(row[0]))
+    print("current_timestamp", row[1], type(row[1]))
 
 Context manager
 ---------------
@@ -136,7 +131,7 @@ Context manager
         with con:
             con.execute("insert into person(firstname) values (?)", ("Joe",))
     except sqlite3.IntegrityError:
-        print "couldn't add Joe twice"
+        print("couldn't add Joe twice")
 
 
 ``pyMySQL``
