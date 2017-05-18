@@ -120,8 +120,11 @@ Standard WSGI
 ``suds``
 --------
 
-Google App Engine
+Frameworki webowe
 =================
+
+Google App Engine
+-----------------
 
 ``django``
 ----------
@@ -135,8 +138,41 @@ Google App Engine
 ``tornado``
 -----------
 
+Utils
+=====
+
 ``atlassian-python-api``
 ------------------------
+
+* https://github.com/AstroTech/atlassian-python-api
+
+.. code-block:: python
+
+    from atlassian import Confluence
+    from atlassian import Jira
+
+
+    jira = Jira(
+        url='http://localhost:8080',
+        username='admin',
+        password='admin')
+
+    confluence = Confluence(
+        url='http://localhost:8090',
+        username='admin',
+        password='admin')
+
+
+    JQL = 'project = DEMO AND status NOT IN (Closed, Resolved) ORDER BY issuekey'
+    data = jira.jql(JQL)
+
+    status = confluence.create_page(
+        space='DEMO',
+        title='This is the title',
+        body=f'This is the body. You can use <strong>HTML tags</strong>!<div>{data}</div>')
+
+    print(status)
+
 
 ``fabric``
 ----------

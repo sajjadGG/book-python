@@ -28,6 +28,25 @@ List comprehension
 
     [x*x for x in range(0, 30) if x % 2]
 
+.. code-block:: python
+
+    >>> osoba = {'username': 'wykladowca1', 'czy_wykladowca': True}
+
+    >>> out = {wartosc: klucz for klucz, wartosc in osoba.items()}
+
+    >>> print(out)
+    {'wykladowca1': 'username', True: 'czy_wykladowca'}
+
+    >>> type(out)
+    <class 'dict'>
+
+    >>> out = {wartosc for klucz, wartosc in osoba.items()}
+
+    >>> print(out)
+    {'wykladowca1', True}
+
+    >>> type(out)
+    <class 'set'>
 
 Generator expressions
 =====================
@@ -41,6 +60,49 @@ Generator expressions
 
 Operator ``yield``
 ==================
+
+.. code-block:: python
+
+    osoby_w_klasie = [
+        {'username': 'wykladowca1', 'czy_wykladowca': True},
+        {'username': 'uczen1', 'czy_wykladowca': False},
+        {'username': 'uczen2', 'czy_wykladowca': False},
+        {'username': 'uczen3', 'czy_wykladowca': False},
+    ]
+
+
+    def uczestnicy_kursu_lista():
+        uczniowie = []
+
+        for osoba in osoby_w_klasie:
+            if not osoba.get('czy_wykladowca'):
+                uczen = osoba.get('username')
+                uczniowie.append(uczen)
+
+        return uczniowie
+
+
+    for uczestnik in uczestnicy_kursu_lista():
+        print('certyfikat dla', uczestnik)
+
+.. code-block:: python
+
+    osoby_w_klasie = [
+        {'username': 'wykladowca1', 'czy_wykladowca': True},
+        {'username': 'uczen1', 'czy_wykladowca': False},
+        {'username': 'uczen2', 'czy_wykladowca': False},
+        {'username': 'uczen3', 'czy_wykladowca': False},
+    ]
+
+    def uczestnicy_kursu_yield():
+        for osoba in osoby_w_klasie:
+            if not osoba.get('czy_wykladowca'):
+                yield osoba.get('username')
+
+
+    for uczestnik in uczestnicy_kursu_yield():
+        print('certyfikat dla', uczestnik)
+
 
 .. code-block:: python
 

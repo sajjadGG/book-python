@@ -75,8 +75,6 @@ Obsługa wyjątków
         print('Brak uprawnien')
 
 
-
-
 Zadania kontrolne
 =================
 

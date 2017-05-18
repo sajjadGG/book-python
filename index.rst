@@ -72,7 +72,7 @@ Podstawy
    docs/sredniozaawansowany/linia-polecen.rst
    docs/sredniozaawansowany/modularyzacja.rst
    docs/sredniozaawansowany/regex.rst
-   docs/sredniozaawansowany/testy.rst
+   docs/sredniozaawansowany/testy-i-jakosc.rst
    docs/sredniozaawansowany/bazy-danych.rst
 
    docs/sredniozaawansowany/tworzenie-dokumentacji.rst
