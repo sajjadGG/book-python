@@ -29,6 +29,17 @@ Define how a single command-line argument should be parsed. Each parameter has i
 
     import argparse
 
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--numbers', nargs='*', default=[1, 2.5, 3.0], type=float)
+    script_arguments = parser.parse_args()
+
+    print(script_arguments)
+
+
+.. code-block:: python
+
+    import argparse
+
     parser = argparse.ArgumentParser(
         prog='PROGRAM NAME',
         description='A foo that bars',
@@ -56,7 +67,8 @@ Define how a single command-line argument should be parsed. Each parameter has i
     parser.add_argument('--input', default='input.csv', type=argparse.FileType('r'))
     parser.add_argument('--output', default='output.c', type=argparse.FileType('w'))
 
-    script = parser.parse_args()
+    script_arguments = parser.parse_args()
+    print(script_arguments)
 
 
 .. code-block:: python
