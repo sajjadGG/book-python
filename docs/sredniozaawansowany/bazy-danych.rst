@@ -150,3 +150,23 @@ Context manager
 
 ``SQLAlchemy``
 ==============
+
+
+Zadania kontrolne
+=================
+
+Ksiażka adresowa
+----------------
+
+:Zadanie:
+    Skrypt z książką adresową z poprzednich zadań przepisz tak, aby wykorzystywał bazę danych do składowania informacji.
+
+Passwd
+------
+
+:Zadanie:
+    Skrypt z książką adresową z poprzednich zadań przepisz tak, aby wykorzystywał bazę danych do składowania informacji:
+
+        * Wykorzystaj ``cursor``
+        * Dane powinny być zwracane dane w postaci listy ``dict``
+        * Do wpisywania danych wykorzystaj konstrukcję ``prepare``
