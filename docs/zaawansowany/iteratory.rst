@@ -58,7 +58,7 @@ Własny iterator
         def push(self, figura):
             self.lista.append(figura)
 
-        def next(self):
+        def __next__(self):
             self.aktualny_elemtent += 1
             return self.lista[self.aktualny_elemtent]
 
@@ -90,3 +90,12 @@ Przykład
 
     for liczba in parzyste_f4():
         print(liczba)
+
+Zadania kontrolne
+=================
+
+Książka adresowa
+----------------
+
+:Zadanie:
+    * spraw aby można było iterować w książce adresowej z poprzednich zadań po adresach użytkownika.
