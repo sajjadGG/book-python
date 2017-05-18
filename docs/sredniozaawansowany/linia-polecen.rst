@@ -34,7 +34,7 @@ Define how a single command-line argument should be parsed. Each parameter has i
     script_arguments = parser.parse_args()
 
     print(script_arguments)
-
+    print(script_arguments.numbers)
 
 .. code-block:: python
 
