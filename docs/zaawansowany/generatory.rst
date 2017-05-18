@@ -28,26 +28,6 @@ List comprehension
 
     [x*x for x in range(0, 30) if x % 2]
 
-.. code-block:: python
-
-    >>> osoba = {'username': 'wykladowca1', 'czy_wykladowca': True}
-
-    >>> out = {wartosc: klucz for klucz, wartosc in osoba.items()}
-
-    >>> print(out)
-    {'wykladowca1': 'username', True: 'czy_wykladowca'}
-
-    >>> type(out)
-    <class 'dict'>
-
-    >>> out = {wartosc for klucz, wartosc in osoba.items()}
-
-    >>> print(out)
-    {'wykladowca1', True}
-
-    >>> type(out)
-    <class 'set'>
-
 Generator expressions
 =====================
 
@@ -148,8 +128,11 @@ Reużywalność
     print(list(nieparzyste_generator))
     print(list(nieparzyste_generator))
 
-Przykład
-========
+Przykłady
+=========
+
+Przykładowe inicjalizacje generatorów
+-------------------------------------
 
 .. code-block:: python
 
@@ -162,6 +145,33 @@ Przykład
 
     print(x for x in range(0, 30))
 
+Zamiana klucz wartość oraz generowanie ``dict`` i ``set``
+---------------------------------------------------------
+
+.. code-block:: python
+
+    >>> osoba = {'username': 'wykladowca1', 'czy_wykladowca': True}
+
+    >>> out = {wartosc: klucz for klucz, wartosc in osoba.items()}
+
+    >>> print(out)
+    {'wykladowca1': 'username', True: 'czy_wykladowca'}
+
+    >>> type(out)
+    <class 'dict'>
+
+    >>> out = {wartosc for klucz, wartosc in osoba.items()}
+
+    >>> print(out)
+    {'wykladowca1', True}
+
+    >>> type(out)
+    <class 'set'>
+
+Filtrowanie wyników na liście dictów
+------------------------------------
+
+.. code-block:: python
 
     ADDRESS_BOOK = [
         {'imie': 'Matt',
@@ -185,12 +195,11 @@ Przykład
     print(osoby)
 
 
-Przykład 2
-==========
+Zaawansowane wykorzystanie `List Comprehension`
+-----------------------------------------------
 
 .. code-block:: python
 
-    # List Comprehension
     def parzyste_f1(x):
         if x % 2 == 0:
             return True
@@ -219,8 +228,11 @@ Przykład 2
 
     a = range(0, 30)
 
+Zaawansowane wykorzystanie `Generator Expressions`
+--------------------------------------------------
 
-    # Generator Expressions
+.. code-block:: python
+
     liczby = (x for x in range(0, 30))
     parzyste1 = (x for x in range(0, 30) if x % 2 == 0)
 
