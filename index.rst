@@ -73,6 +73,8 @@ Podstawy
    docs/sredniozaawansowany/modularyzacja.rst
    docs/sredniozaawansowany/regex.rst
    docs/sredniozaawansowany/testy.rst
+   docs/sredniozaawansowany/bazy-danych.rst
+
    docs/sredniozaawansowany/tworzenie-dokumentacji.rst
    docs/sredniozaawansowany/django.rst
    docs/sredniozaawansowany/programowanie-gui.rst

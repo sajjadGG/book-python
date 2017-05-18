@@ -144,22 +144,6 @@ Google App Engine
 ``BeautifulSoup``
 -----------------
 
-
-Bazy danych
-===========
-
-``pyMySQL``
------------
-
-``psycopg2``
-------------
-
-``pymongo``
------------
-
-``SQLAlchemy``
---------------
-
 Inne
 ====
 
