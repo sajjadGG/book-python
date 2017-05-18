@@ -236,3 +236,13 @@ Przykład 2
     xxx(2)
 
     parzyste2 = (x for x in range(0, a) if x % 2 == 0)
+
+
+Zadania kontrolne
+=================
+
+``yield`` i ``/etc/passwd``
+---------------------------
+
+:Zadanie:
+    * Przepisz program parsujący plik ``/etc/passwd`` aby wykorzystywał słówko kluczowe ``yield``.
