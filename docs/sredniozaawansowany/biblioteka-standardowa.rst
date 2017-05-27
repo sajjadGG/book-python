@@ -48,8 +48,7 @@ https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
 | Directive | Meaning                        | Example                |
 +===========+================================+========================+
 | ``%a``    | Weekday as locale's            | Sun, Mon, ..., Sat     |
-|           | abbreviated name.              |  (en_US);              |
-|           |                                | So, Mo, ..., Sa (de_DE)|
+|           | abbreviated name.              |                        |
 +-----------+--------------------------------+------------------------+
 | ``%A``    | Weekday as locale's full name. | Sunday, Monday, ...,   |
 |           |                                |  Saturday (en_US);     |

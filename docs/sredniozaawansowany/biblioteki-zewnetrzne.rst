@@ -18,6 +18,12 @@ Do zastosowań naukowych
 ``pybrain``
 -----------
 
+``pymc3``
+---------
+
+``jupyter``
+-----------
+
 
 Wspierających programowanie sieciowe
 ====================================
