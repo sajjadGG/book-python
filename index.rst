@@ -95,6 +95,7 @@ Zaawansowany
     docs/zaawansowany/iteratory.rst
     docs/zaawansowany/system-operacyjny.rst
     docs/zaawansowany/watki-i-procesy.rst
+    docs/zaawansowany/concurrency.rst
     docs/zaawansowany/programowanie-funkcyjne.rst
     docs/zaawansowany/programowanie-sieciowe.rst
     docs/zaawansowany/wzorce-projektowe.rst
