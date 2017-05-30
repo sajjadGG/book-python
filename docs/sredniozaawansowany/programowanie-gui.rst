@@ -2,6 +2,22 @@
 Projektowanie GUI
 *****************
 
+Graphical User Interfaces with Tkinter
+======================================
+
+* Introduction to Tkinter
+* Creating Dialogs with Tkinter
+
+    * Creating a Dialog-style Application
+    * Creating Application Dialogs
+
+* Creating Main Window Applications with Tkinter
+
+    * Creating a Main Window
+    * Creating Menus
+    * Creating a Status Bar with Indicators
+
+
 Biblioteka Tkinter
 ==================
 

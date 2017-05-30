@@ -9,6 +9,18 @@ Concurrency
 * Twisted, Tornado
 * Curio, Trio
 
+* High-Level Concurrency
+========================
+* CPU-bound Concurrency
+
+    * Using Queues and Multiprocessing
+    * Using Futures and Multiprocessing
+
+* I/O-bound Concurrency
+
+    * Using Queues and Threading
+    * Using Futures and Threading
+
 Coroutine
 =========
 The word "coroutine", like the word "generator", is used for two different (though related) concepts:
