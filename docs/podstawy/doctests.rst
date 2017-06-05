@@ -80,3 +80,25 @@ Wykorzystując taki zapis natychmiast widzimy co dzieje się w danym rozwiązan
         <BLANKLINE>
         """
         print(f'{tekst}\n' * 5)
+
+
+.. code-block:: python
+
+    def sumowanie_liczb(a, b):
+        """Funkcja sumuje dwie liczby podane jako argumenty:
+
+        >>> sumowanie_liczb(1, 2)
+        3
+
+        >>> sumowanie_liczb(-1, 1)
+        0
+
+        >>> sumowanie_liczb(0, 0)
+        0
+
+        >>> sumowanie_liczb([1, 2])
+        Traceback (most recent call last):
+            ...
+        TypeError: sumowanie_liczb() missing 1 required positional argument: 'b'
+        """
+        return a + b

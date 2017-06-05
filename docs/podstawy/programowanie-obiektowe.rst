@@ -412,15 +412,54 @@ Co powinno być w klasie a co nie?
 Klasa per plik?
 ---------------
 
+Przykłady praktyczne
+====================
+
+.. code-block:: python
+
+    >>> class Osoba:
+    ...    nazwisko = 'Harasymczuk'
+    ...
+    ...    def __init__(self, imie):
+    ...        self.imie = imie
+
+    >>> o1 = Osoba('Matt')
+    >>> o2 = Osoba('Maciej')
+
+
+    >>> print(o1.nazwisko)
+    Harasymczuk
+
+    >>> print(o2.nazwisko)
+    Harasymczuk
+
+
+
+    >>>o1.nazwisko = 'XYZ'
+
+    >>> print(o1.nazwisko)
+    XYZ
+
+    >>> print(o2.nazwisko)
+    Harasymczuk
+
+
+
+    >>> Osoba.nazwisko = 'ABC'
+
+    >>> print(o1.nazwisko)
+    XYZ
+
+    >>> print(o2.nazwisko)
+    ABC
+
+
 
 Zadania kontrolne
 =================
 
 Książka adresowa
 ----------------
-
-:Nazwa skryptu: ``bin/ksiazka-adresowa.py``
-:Uruchamianie: ``python bin/ksiazka-adresowa.py``
 
 :Zadanie 1:
     Zmień swój kod zadania z książką adresową, aby każdy z kontaktów był reprezentowany przez:
