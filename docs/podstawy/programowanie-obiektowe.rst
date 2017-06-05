@@ -490,17 +490,18 @@ Książka adresowa
     Napisz książkę adresową, która będzie zapisywała a później odczyta i sparsuje dane do pliku w formacie JSON.
 
 :Podpowiedź:
+    * Dane w formacie Pickle muszą być zapisane do pliku binarnie
+    * ``pickle.loads()`` przyjmuje uchwyt do pliku, a nie jego zawartość
+
     .. code-block:: python
 
         ksiazka_adresowa = [
-            Kontakt(imie='Matt', nazwisko='Harasymczuk', adresy=[
+            Kontakt(imie='Max', nazwisko='Peck', adresy=[
                 Adres(ulica='...', miasto='...'),
                 Adres(ulica='...', miasto='...'),
                 Adres(ulica='...', miasto='...'),
             ]),
-            Kontakt(imie='Al', nazwisko='Shepard'),
-            Kontakt(imie='José', nazwisko='Jiménez', adresy=[]),
+            Kontakt(imie='José', nazwisko='Jiménez'),
+            Kontakt(imie='Ivan', nazwisko='Ivanovic', adresy=[]),
         ]
 
-    * Dane w formacie Pickle muszą być zapisane do pliku binarnie
-    * ``pickle.loads()`` przyjmuje uchwyt do pliku, a nie jego zawartość
