@@ -208,18 +208,18 @@ Pamiętaj o dodaniu dwukropka i spacji, aby tekst się nie zlewał.
 .. code-block:: python
 
     >>> name = input('Type your name: ')
-    Type your name: Matt
+    Type your name: José
     >>> print(name)
-    'Matt'
+    'José'
 
 Czasami trzeba oczyścić dane, np. usuwając zbędne spacje na początku i końcu ciągu znaków podanego przez użytkownika.
 
  .. code-block:: python
 
     >>> name = input('Type your name: ')
-    Type your name:         Matt
+    Type your name:         Ivan
     >>> print(name.strip())
-    'Matt'
+    'Ivan'
 
 ``bin()``
 ---------

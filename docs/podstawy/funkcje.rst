@@ -85,7 +85,7 @@ Zwracanie wartości prostych
         return 10, 20, 30, 5, 'a'
 
     def foo8():
-        return {'imie': 'Matt', 'nazwisko': 'Harasymczuk'}
+        return {'imie': 'Ivan', 'nazwisko': 'Ivanovic'}
 
 
 Zwracanie typów złożonych
@@ -95,9 +95,9 @@ Zwracanie typów złożonych
 
     def foo9():
         return [
-            {'imie': 'Matt', 'nazwisko': 'Harasymczuk'},
-            {'imie': 'Matt', 'nazwisko': 'Harasymczuk'},
-            {'imie': 'Matt', 'nazwisko': 'Harasymczuk'}]
+            {'imie': 'Max', 'nazwisko': 'Peck'},
+            {'imie': 'Ivan', 'nazwisko': 'Ivanovic'},
+            {'imie': 'José', 'nazwisko': 'Jiménez'}]
 
 Rozpakowywanie wartości zwracanych
 ----------------------------------
@@ -166,8 +166,8 @@ Przykładowe zastosowanie
 .. code-block:: python
 
     class Osoba:
-        first_name = 'Matt'
-        last_name = 'Harasymczuk'
+        first_name = 'Max'
+        last_name = 'Peck'
 
         def __str__(self):
             return '{first_name} {last_name}'.format(**self.__dict__)
@@ -176,8 +176,8 @@ Przykładowe zastosowanie
 
     def create_or_update():
         return True, [
-            {'id': 1, 'imie': 'matt', 'nazwisko': 'harasymczuk'},
-            {'id': 2, 'imie': 'matt', 'nazwisko': 'asd'},
+            {'id': 1, 'imie': 'Ivan', 'nazwisko': 'Ivanovic'},
+            {'id': 2, 'imie': 'José', 'nazwisko': 'Jiménez'},
         ], 10, str('asd')
 
 

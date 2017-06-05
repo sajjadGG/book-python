@@ -15,7 +15,7 @@ Instrukcje warunkowe
 
 .. code-block:: python
 
-    if name != 'Agata':
+    if name != 'José Jiménez':
          print('this is false')
      else:
          print('this is true')

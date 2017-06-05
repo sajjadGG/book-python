@@ -502,6 +502,6 @@ Książka adresowa
                 Adres(ulica='...', miasto='...'),
             ]),
             Kontakt(imie='José', nazwisko='Jiménez'),
-            Kontakt(imie='Ivan', nazwisko='Ivanovic', adresy=[]),
+            Kontakt(imie='Иван', nazwisko='Иванович', adresy=[]),
         ]
 

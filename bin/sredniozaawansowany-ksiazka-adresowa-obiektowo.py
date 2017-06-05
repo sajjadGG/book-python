@@ -34,12 +34,12 @@ class Adres:
 
 
 ksiazka_adresowa = [
-    Kontakt(imie='Matt', nazwisko='Harasymczuk', adresy=[
+    Kontakt(imie='Max', nazwisko='Peck', adresy=[
         Adres(ulica='ulica1', miasto='miasto1'),
         Adres(ulica='ulica2', miasto=''),
         Adres(ulica='ulica3'),
     ]),
-    Kontakt(imie='Al', nazwisko='Shepard'),
+    Kontakt(imie='Ivan', nazwisko='Ivanovic'),
     Kontakt(imie='José', nazwisko='Jiménez', adresy=[]),
 ]
 
