@@ -105,12 +105,7 @@ Zadania kontrolne
 
 Dzienniczek ucznia
 ------------------
-
-:Nazwa skryptu: ``bin/oceny.py``
-:Uruchamianie: ``python bin/oceny.py``
-
-:Zadanie:
-    Napisz program, który wczytuje od użytkownika kolejne oceny i:
+Napisz program, który wczytuje od użytkownika kolejne oceny i:
 
     * sprawdza czy wprowadzona ocena jest na liście dopuszczalnych na wydziale ocen
     * jeżeli ocena jest na liście dopuszczalnych na wydziale ocen, dodaje ją do dzienniczka

@@ -191,12 +191,7 @@ Zadania kontrolne
 
 Wyrazy
 ------
-
-:Nazwa skryptu: ``bin/podzial-wyrazow.py``
-:Uruchamianie: ``python bin/podzial-wyrazow.py``
-
-:Zadanie:
-    Napisz program, który na podstawie paragrafu tekstu "Lorem Ipsum" podzieli go na zdania () i dla każdego zdania wyświetli ile jest w nim wyrazów.
+Napisz program, który na podstawie paragrafu tekstu "Lorem Ipsum" podzieli go na zdania () i dla każdego zdania wyświetli ile jest w nim wyrazów.
 
 :Założenia:
     * kropka rozdziela zdania
@@ -209,20 +204,15 @@ Wyrazy
 
 Przeliczanie odległości
 -----------------------
+Napisz program który przekonwertuje odległości (podane w metrach) i zwróci ``dict``, zgodnie z szablonem:
 
-:Nazwa skryptu: ``bin/odleglosci.py``
-:Uruchamianie: ``python bin/odleglosci.py``
+.. code-block:: python
 
-:Zadanie:
-    Napisz program który przekonwertuje odległości (podane w metrach) i zwróci ``dict``, zgodnie z szablonem:
-
-    .. code-block:: python
-
-        {
-            'kilometers': int(),
-            'miles': float(),
-            'nautical miles': float(),
-        }
+    {
+        'kilometers': int(),
+        'miles': float(),
+        'nautical miles': float(),
+    }
 
 :Podpowiedź:
     * 1000 m = 1 km

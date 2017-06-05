@@ -4,21 +4,11 @@ Zadania
 
 Przeliczenia trygonometryczne
 =============================
-
-:Nazwa skryptu: ``bin/trygonometria.py``
-:Uruchamianie: ``python bin/trygonometria.py``
-
-:Zadanie:
-    Napisz program, który wczyta od użytkownika wielkość kąta w stopniach i wyświetli wartość czterech podstawowych funkcji trygonometrycznych (sin, cos, tg, ctg) o ile dla danego kąta jest to możliwe.
+Napisz program, który wczyta od użytkownika wielkość kąta w stopniach i wyświetli wartość czterech podstawowych funkcji trygonometrycznych (sin, cos, tg, ctg) o ile dla danego kąta jest to możliwe.
 
 Lotto
 =====
-
-:Nazwa skryptu: ``bin/lotto.py``
-:Uruchamianie: ``python bin/lotto.py``
-
-:Zadanie:
-    Napisz program, który wyświetli 6 losowych i nie powtarzających się liczb z zakresu od 1 do 49.
+Napisz program, który wyświetli 6 losowych i nie powtarzających się liczb z zakresu od 1 do 49.
 
 :Podpowiedź:
     * ``random.randrange()``
@@ -32,19 +22,10 @@ Lotto
 
 Pole trójkąta
 =============
-
-:Nazwa skryptu: ``bin/pole-trojkata.py``
-:Uruchamianie: ``python bin/pole-trojkata.py``
-
-:Zadanie:
-    Napisz program, który obliczy pole trójkąta, pod warunkiem że użytkownik poda wysokość i długość podstawy tego trójkąta. Uwzględnij, że wysokość i długość podstawy mogą być liczbami niecałkowitymi. Wykorzystaj doctest do przetestowania funckji.
+Napisz program, który obliczy pole trójkąta, pod warunkiem że użytkownik poda wysokość i długość podstawy tego trójkąta. Uwzględnij, że wysokość i długość podstawy mogą być liczbami niecałkowitymi. Wykorzystaj doctest do przetestowania funckji.
 
 Konwersja liczby na zapis słowny
 ================================
-
-:Nazwa skryptu: ``bin/konwersja-liczby.py``
-:Uruchamianie: ``python bin/konwersja-liczby.py``
-
 :Zadanie 1:
     Napisz program ``numer.py``, który zamieni wprowadzony przez użytkownika ciąg cyfr na formę tekstową:
 
@@ -74,10 +55,6 @@ Konwersja liczby na zapis słowny
 
 Rzymskie
 ========
-
-:Nazwa skryptu: ``bin/rzymskie.py``
-:Uruchamianie: ``python bin/rzymskie.py``
-
 :Zadanie 1:
     Napisz program, który przeliczy wprowadzoną liczbę rzymską na jej postać dziesiętną.
 

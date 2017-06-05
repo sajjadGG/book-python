@@ -343,25 +343,20 @@ Zadania kontrolne
 
 Książka adresowa
 ----------------
+Bardzo często wykorzystywanym typem pliku jest CSV, czyli wartości oddzielone przecinkami. Zamień format pliku na ten typ. Zrób tak, aby dane trafiły do odpowiednich kolumn nawet po przesortowaniu. Użyj ``csv.DictWriter()``. Wszystkie pola muszą być zawsze w cudzysłowiach i oddzielone średnikami.
 
-:Nazwa skryptu: ``bin/ksiazka-adresowa.py``
-:Uruchamianie: ``python bin/ksiazka-adresowa.py``
+Każdy z użytkowników jest reprezentowany przez:
 
-:Zadanie:
-    Bardzo często wykorzystywanym typem pliku jest CSV, czyli wartości oddzielone przecinkami. Zamień format pliku na ten typ. Zrób tak, aby dane trafiły do odpowiednich kolumn nawet po przesortowaniu. Użyj ``csv.DictWriter()``. Wszystkie pola muszą być zawsze w cudzysłowiach i oddzielone średnikami.
+    * imię
+    * nazwisko
+    * telefon
+    * ulica
+    * miasto
+    * kod_pocztowy
+    * wojewodztwo
+    * panstwo
 
-    Każdy z użytkowników jest reprezentowany przez:
-
-        * imię
-        * nazwisko
-        * telefon
-        * ulica
-        * miasto
-        * kod_pocztowy
-        * wojewodztwo
-        * panstwo
-
-    Wszystkie dane w książce muszą być reprezentowane przez typy proste.
+Wszystkie dane w książce muszą być reprezentowane przez typy proste.
 
 :Zadanie 2:
     Zmodyfikuj aby można było wpisywać wiele adresów. Dlaczego CSV nie może zapisać wielu adresów dla jednego rekordu?

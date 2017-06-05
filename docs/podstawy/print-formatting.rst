@@ -149,9 +149,6 @@ Zadania kontrolne
 Powielanie napisów
 ------------------
 
-:Nazwa skryptu: ``bin/powielanie-napisow.py``
-:Uruchamianie: ``python bin/powielanie-napisow.py``
-
 :Zadanie 1:
     Napisz program, który wczyta od użytkownika pewien napis, a następnie wyświetli 5 kopii tego napisu, każda w osobnej linii.
 
@@ -167,9 +164,6 @@ Powielanie napisów
 
 Przeliczanie temperatury
 ------------------------
-
-:Nazwa skryptu: ``bin/temperatura.py``
-:Uruchamianie: ``python bin/temperatura.py``
 
 :Zadanie 1:
     Woda zamarza przy 32 stopniach Fahrenheita, a wrze przy 212 stopniach Fahrenheita. Napisz program, który wyświetli tabelę przeliczeń stopni Celsjusza na stopnie Fahrenheita w zakresie od –20 do +40 stopni Celsjusza (co 5 stopni). Pamiętaj o wyświetlaniu znaku plus/minus przy temperaturze. Oczywiście napisz testy do rozwiązania.

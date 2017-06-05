@@ -94,9 +94,6 @@ Zadania kontrolne
 Parzystość
 ----------
 
-:Nazwa skryptu: ``bin/parzystosc.py``
-:Uruchamianie: ``python bin/parzystosc.py``
-
 :Zadanie:
     * napisz program, który wczyta od użytkownika ciąg znaków
     * zweryfikuje czy wprowadzony ciąg jest liczbą (``int`` lub ``float``)

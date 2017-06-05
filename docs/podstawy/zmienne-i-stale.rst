@@ -273,6 +273,28 @@ Przykłady praktyczne
     >>> what = (10,)
     <class 'tuple'>
 
+.. code-block:: python
+
+    >>> what = {}
+    <class 'dict'>
+
+    >>> what = {'id'}
+    <class 'set'>
+
+    >>> what = {'id': 1}
+    <class 'dict'>
+
+
+    >>> a = {}
+
+    >>> isinstance(a, dict)
+    True
+
+    >>> isinstance(a, set)
+    False
+
+    >>> isinstance(a, (set, dict))
+    True
 
 
 Zadania kontrolne
@@ -280,12 +302,7 @@ Zadania kontrolne
 
 Zmienne i typy
 --------------
-
-:Nazwa skryptu: ``bin/zmienne.py``
-:Uruchamianie: ``python bin/zmienne.py``
-
-:Zadanie:
-    Napisz program, który poprosi użytkownika o imie i ładnie go przywita.
+Napisz program, który poprosi użytkownika o imie i ładnie go przywita.
 
 :Podpowiedź:
     * Użyj podawania stringów po przecinku ``print(str, str)``
@@ -294,22 +311,12 @@ Zmienne i typy
 
 Zmienne i wczytywanie ciągu od użytkownika
 ------------------------------------------
-
-:Nazwa skryptu: ``bin/pelnoletnosc.py``
-:Uruchamianie: ``python bin/pelnoletnosc.py``
-
-:Zadanie:
-    Napisz program, który poprosi użytkownika o wiek i wyświetli wartość. Następnie sprawdzi pełnoletność i wyświetli informację czy osoba jest "dorosła" czy "niepełnoletnia".
+Napisz program, który poprosi użytkownika o wiek i wyświetli wartość. Następnie sprawdzi pełnoletność i wyświetli informację czy osoba jest "dorosła" czy "niepełnoletnia".
 
 
 Liczby całkowite
 ----------------
-
-:Nazwa skryptu: ``bin/calkowite.py``
-:Uruchamianie: ``python bin/calkowite.py``
-
-:Zadanie:
-    Napisz program, który wczyta od użytkownika liczbę i wyświetli informację, czy jest to liczba całkowita, czy niecałkowita.
+Napisz program, który wczyta od użytkownika liczbę i wyświetli informację, czy jest to liczba całkowita, czy niecałkowita.
 
 :Podpowiedź:
     Liczba całkowita to taka, której część dziesiętna nie występuje (``int``) lub jest równa zero ``float``.

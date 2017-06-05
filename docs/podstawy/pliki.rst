@@ -80,10 +80,6 @@ Zadania kontrolne
 
 Zawartość zadanego pliku
 ------------------------
-
-:Nazwa skryptu: ``bin/zawartosc-pliku.py``
-:Uruchamianie: ``python bin/zawartosc-pliku.py``
-
 :Zadanie 1:
     Napisz program, który wyświetli na ekranie zawartość pliku o nazwie podanej przez użytkownika.
 
@@ -92,8 +88,7 @@ Zawartość zadanego pliku
 
 Parsowanie ``/etc/passwd``
 --------------------------
-:Zadanie:
-    * Sparsuj plik ``/etc/passwd`` i przedstaw go w formacie listy dictów:
+* Sparsuj plik ``/etc/passwd`` i przedstaw go w formacie listy dictów:
 
         - User name
         - Encrypted password
@@ -103,7 +98,7 @@ Parsowanie ``/etc/passwd``
         - User home directory
         - Login shell
 
-    * Zwróć username, uid oraz grupy użytkowników, których UID jest mniejszy niż 50.
+* Zwróć username, uid oraz grupy użytkowników, których UID jest mniejszy niż 50.
 
 Gdyby w Twoim systemie nie było pliku, skorzystaj z szablonu poniżej:
 
@@ -149,7 +144,6 @@ Gdyby w Twoim systemie nie było pliku, skorzystaj z szablonu poniżej:
 
 Parsowanie ``/etc/hosts``
 -------------------------
-
 Z twojego systemu operacyjnego wyciągnij plik ``/etc/hosts`` i przedstaw go w formie listy dictów jak w przykładzie poniżej:
 
 .. code-block:: python
