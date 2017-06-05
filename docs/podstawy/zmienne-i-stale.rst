@@ -228,6 +228,52 @@ Gdy użytkownik nie poda wieku, to jest to wartość ``None``.
     if not wiek:
         print('użytkownik nie podał wieku')
 
+Przykłady praktyczne
+====================
+
+.. note:: Dla każdego z poniższych przykładów wykonano funkcję ``type(what)`` i wynik pokazano poniżej. Dla czytelności przykładu pominięto tę linijkę.
+
+.. code-block:: python
+
+    >>> what = 'foo'
+    <class 'str'>
+
+    >>> what = 'foo',
+    <class 'tuple'>
+
+    >>> what = ('foo')
+    <class 'str'>
+
+    >>> what = ('foo',)
+    <class 'tuple'>
+
+.. code-block:: python
+
+    >>> what = 10
+    <class 'int'>
+
+    >>> what = 10.5
+    <class 'float'>
+
+    >>> what = .5
+    <class 'float'>
+
+    >>> what = 10.
+    <class 'float'>
+
+    >>> what = 10,
+    <class 'tuple'>
+
+    >>> what = 10, 20
+    <class 'tuple'>
+
+    >>> what = (10, 20)
+    <class 'tuple'>
+
+    >>> what = (10,)
+    <class 'tuple'>
+
+
 
 Zadania kontrolne
 =================
