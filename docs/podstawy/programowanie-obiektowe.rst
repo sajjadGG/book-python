@@ -264,14 +264,15 @@ Konstruktor
 .. code-block:: python
 
     class Human:
-        def __init__(name='human')
+        def __init__(self, name='human'):
             self.name = name
 
         def my_name(self):
             print(self.name)
 
+
     class Man(Human):
-        def __init__(name='man')
+        def __init__(self, name='man'):
             self.name = name
 
         def my_parent(self):

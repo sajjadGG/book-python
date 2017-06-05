@@ -101,7 +101,6 @@ Zaawansowany
     docs/zaawansowany/programowanie-sieciowe.rst
     docs/zaawansowany/wzorce-projektowe.rst
     docs/zaawansowany/c-extensions.rst
-    docs/zaawansowany/zadania.rst
 
 W zastosowaniach naukowych
 ==========================

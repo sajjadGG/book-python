@@ -253,3 +253,29 @@ IPC - komunikacja międzyprocesowa
 
 Zamykanie procesów
 ------------------
+
+Zadania kontrolne
+=================
+
+Wielowątkowość
+--------------
+
+* Stwórz kolejkę ``queue`` do której dodasz różne polecenia systemowe do wykonania, np. ``['/bin/ls /etc/', '/bin/echo "test"', '/bin/sleep 2']``.
+* Następnie przygotuj trzy wątki workerów, które będą wykonywały polecenia z kolejki.
+* Wątki powinny być uruchamiane jako ``subprocess`` w systemie operacyjnym z timeoutem równym ``PROCESSING_TIMEOUT = 2.0`` sekundy
+* Ilość poleceń może się zwiększać w miarę wykonywania zadania.
+* Wątki powinny być uśpione za pomocą ``Timer`` przez 5.0 sekund, a następnie ruszyć do roboty.
+* Wątki mają być uruchomione w tle (ang. ``daemon``)
+* Użyj logowania za pomocą biblioteki ``logging`` tak aby przy wyświetlaniu wyników widoczny był identyfikator procesu i wątku
+* Napisz testy do workerów i kolejki
+
+:Podpowiedź:
+    .. code-block:: python
+
+        import subprocess
+        import shlex
+
+        cmd = 'ls -la'
+
+        with Popen(shlex.split(cmd), stdout=PIPE) as proc:
+            log.write(proc.stdout.read())

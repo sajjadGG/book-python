@@ -139,3 +139,15 @@ złożenia funkcji
 
 ``any()``
 ---------
+
+
+Zadania kontrolne
+=================
+
+``map()``, ``filter()`` i ``lambda``
+------------------------------------
+Używając generatora zbuduj listę zawierającą wszystkie liczby podzielne przez 3 z zakresu od 1 do 33:
+
+* Używając funkcji ``filter()`` usuń z niej wszystkie liczby parzyste
+* Używając wyrażenia ``lambda`` i funkcji ``map()`` podnieś wszystkie elementy tak otrzymanej listy do sześcianu
+* Odpowiednio używając funkcji ``sum()``  i ``len()`` oblicz średnią arytmetyczną z elementów tak otrzymanej listy.

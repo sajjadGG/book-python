@@ -5,9 +5,6 @@ Zadania
 Zbalansowanie nawiasów
 ======================
 
-:Nazwa skryptu: ``bin/zbalansowanie-nawiasow.py``
-:Uruchamianie: ``python bin/zbalansowanie-nawiasow.py``
-
 :Zadanie 1:
     Napisz kod który sprawdzi zbalansowanie nawiasów, tzn. czy ilość otwieranych nawiasów jest równa ilości nawiasów zamykanych. Zwórć uwagę, że mogą być cztery typy nawiasów:
 
