@@ -25,7 +25,6 @@ Wstęp
     docs/wstep/o-jezyku-python.rst
     docs/wstep/instalacja.rst
     docs/wstep/podstawy-skladni.rst
-    docs/wstep/virtualenv.rst
 
 
 Podstawy
@@ -67,11 +66,13 @@ Podstawy
     :caption: Średniozaawansowany
     :name: średniozaawansowany
 
+    docs/sredniozaawansowany/virtualenv.rst
     docs/sredniozaawansowany/biblioteka-standardowa.rst
     docs/sredniozaawansowany/biblioteki-zewnetrzne.rst
     docs/sredniozaawansowany/linia-polecen.rst
     docs/sredniozaawansowany/modularyzacja.rst
     docs/sredniozaawansowany/regex.rst
+    docs/sredniozaawansowany/type-hinting.rst
     docs/sredniozaawansowany/testy-i-jakosc.rst
     docs/sredniozaawansowany/bazy-danych.rst
 
