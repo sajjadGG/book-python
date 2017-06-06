@@ -38,20 +38,22 @@ Podstawy
 
     docs/podstawy/zmienne-i-stale.rst
     docs/podstawy/zlozone-typy-danych.rst
+    docs/podstawy/operatory.rst
+
     docs/podstawy/instrukcje-warunkowe.rst
     docs/podstawy/petle.rst
+
     docs/podstawy/funkcje.rst
+    docs/podstawy/builtin.rst
 
     docs/podstawy/print-formatting.rst
     docs/podstawy/doctests.rst
-    docs/podstawy/builtin.rst
-    docs/podstawy/operatory.rst
     docs/podstawy/pliki.rst
 
     docs/podstawy/programowanie-obiektowe.rst
     docs/podstawy/wyjatki.rst
-
     docs/podstawy/dobre-praktyki.rst
+
     docs/podstawy/zadania.rst
 
 Średniozaawansowany
@@ -71,10 +73,10 @@ Podstawy
 
     docs/sredniozaawansowany/biblioteka-standardowa.rst
     docs/sredniozaawansowany/biblioteki-zewnetrzne.rst
+    docs/sredniozaawansowany/system-operacyjny.rst
     docs/sredniozaawansowany/linia-polecen.rst
     docs/sredniozaawansowany/modularyzacja.rst
     docs/sredniozaawansowany/regex.rst
-    docs/sredniozaawansowany/type-hinting.rst
     docs/sredniozaawansowany/testy-i-jakosc.rst
     docs/sredniozaawansowany/bazy-danych.rst
 
@@ -82,6 +84,7 @@ Podstawy
     docs/sredniozaawansowany/django.rst
     docs/sredniozaawansowany/programowanie-gui.rst
     docs/sredniozaawansowany/introspection.rst
+
     docs/sredniozaawansowany/zadania.rst
 
 Zaawansowany
@@ -93,10 +96,10 @@ Zaawansowany
     :caption: Zaawansowany
     :name: zaawansowany
 
+    docs/zaawansowany/type-hinting.rst
     docs/zaawansowany/decorator.rst
     docs/zaawansowany/generatory.rst
     docs/zaawansowany/iteratory.rst
-    docs/zaawansowany/system-operacyjny.rst
     docs/zaawansowany/watki-i-procesy.rst
     docs/zaawansowany/concurrency.rst
     docs/zaawansowany/programowanie-funkcyjne.rst
