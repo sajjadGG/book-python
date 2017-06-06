@@ -255,20 +255,42 @@ Strefy czasowe
 
     datetime.datetime.now().replace(tzinfo=datetime.timezone.utc)
 
+
+``pytz``
+========
+
+.. code-block:: python
+
+    >>> from datetime import datetime, timedelta
+    >>> from pytz import timezone
+    >>> import pytz
+
+    >>> utc = pytz.utc
+    >>> utc.zone
+    'UTC'
+    >>> eastern = timezone('US/Eastern')
+    >>> eastern.zone
+    'US/Eastern'
+    >>> amsterdam = timezone('Europe/Amsterdam')
+    >>> fmt = '%Y-%m-%d %H:%M:%S %Z%z'
+
+
+
 Zadanie kontrolne
------------------
+=================
 
-:Zadanie:
-    Użytkownik poda wykorzystując ``input()`` dwie następujące daty w formacie jak poniżej:
+Manipulacja datami
+------------------
+Użytkownik poda wykorzystując ``input()`` dwie następujące daty w formacie jak poniżej:
 
-        - 'April 12, 1961 6:07 AM'
-        - '07/21/69 2:56:15 AM UTC'
+    - 'April 12, 1961 6:07 AM'
+    - '07/21/69 2:56:15 AM UTC'
 
-    * Przedstaw daty jako objekt ``datetime``. I wyświetl je w formacie ISO.
-    * Odejmij obie daty od siebie. Ile lat i miesięcy minęło między wydarzeniami?
-    * Do dzisiejszej dodaj ten sam czas ile wyszło Ci w poprzednim zadaniu.
-    * Wyświetl samą datę (bez czasu).
-    * Ile będziesz miał wtedy lat?
+* Przedstaw daty jako objekt ``datetime``. I wyświetl je w formacie ISO.
+* Odejmij obie daty od siebie. Ile lat i miesięcy minęło między wydarzeniami?
+* Do dzisiejszej dodaj ten sam czas ile wyszło Ci w poprzednim zadaniu.
+* Wyświetl samą datę (bez czasu).
+* Ile będziesz miał wtedy lat?
 
 :Zadanie z gwiazdką:
     * Uwzględnij strefy czasowe.

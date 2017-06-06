@@ -2,54 +2,15 @@
 Biblioteki zewnętrzne
 *********************
 
-
-Do zastosowań naukowych
-=======================
-
-``num.py``
-----------
-
-``sci.py``
-----------
-
-``pandas``
-----------
-
-``pybrain``
------------
-
-``pymc3``
----------
-
-``jupyter``
------------
-
 Inne
 ====
 
-``py2app`` i ``py2exe``
------------------------
+Python Executable
+-----------------
 
 * https://py2app.readthedocs.io/
 * http://www.py2exe.org/
-
-``pytz``
---------
-
-.. code-block:: python
-
-    >>> from datetime import datetime, timedelta
-    >>> from pytz import timezone
-    >>> import pytz
-
-    >>> utc = pytz.utc
-    >>> utc.zone
-    'UTC'
-    >>> eastern = timezone('US/Eastern')
-    >>> eastern.zone
-    'US/Eastern'
-    >>> amsterdam = timezone('Europe/Amsterdam')
-    >>> fmt = '%Y-%m-%d %H:%M:%S %Z%z'
+* http://www.pyinstaller.org/
 
 
 

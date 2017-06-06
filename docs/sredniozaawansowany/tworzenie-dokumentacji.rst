@@ -50,5 +50,13 @@ make html
 make singlehtml
 ~~~~~~~~~~~~~~~
 
+make pdf
+~~~~~~~~
+
 toctree
 -------
+
+Read the docs
+=============
+
+* http://readthedocs.org
