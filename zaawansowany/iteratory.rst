@@ -59,11 +59,20 @@ Własny iterator
             self.lista.append(figura)
 
         def __next__(self):
-            self.aktualny_elemtent += 1
-            return self.lista[self.aktualny_elemtent]
+            try:
+                element = self.lista[self.aktualny_elemtent]
+                self.aktualny_elemtent += 1
+                return element
+            except IndexError:
+                raise StopIteration
+
 
     prostokaty = ListaFigurGeometrycznych()
-    prostokaty.push('kwadrat', 'prostokat')
+
+    prostokaty.push('kwadrat')
+    prostokaty.push('prostokat')
+    prostokaty.push('trojkat')
+
 
     for figura in prostokaty:
         print(figura)
