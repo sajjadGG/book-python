@@ -24,182 +24,34 @@ Do zastosowań naukowych
 ``jupyter``
 -----------
 
-
-Wspierających programowanie sieciowe
-====================================
-
-Standard WSGI
--------------
-
-``requests``
-------------
-
-.. code-block:: python
-
-    >>> import requests
-
-    >>> requests.put('http://httpbin.org/put', data = {'key':'value'})
-    >>> requests.delete('http://httpbin.org/delete')
-    >>> requests.head('http://httpbin.org/get')
-    >>> requests.options('http://httpbin.org/get')
-
-.. code-block:: python
-
-    >>> payload = {'key1': 'value1', 'key2': 'value2'}
-    >>> r = requests.get('http://httpbin.org/get', params=payload)
-    >>> print(r.url)
-    http://httpbin.org/get?key2=value2&key1=value1
-
-    >>> payload = {'key1': 'value1', 'key2': ['value2', 'value3']}
-    >>> r = requests.get('http://httpbin.org/get', params=payload)
-    >>> print(r.url)
-    http://httpbin.org/get?key1=value1&key2=value2&key2=value3
-
-.. code-block:: python
-
-    >>> import requests
-
-    >>> r = requests.get('https://api.github.com/user', auth=('user', 'pass'))
-    >>> r.status_code
-    200
-    >>> r.headers['content-type']
-    'application/json; charset=utf8'
-    >>> r.encoding
-    'utf-8'
-    >>> r.text
-    u'{"type":"User"...'
-    >>> r.json()
-    {u'private_gists': 419, u'total_private_repos': 77, ...}
-
-.. code-block:: python
-
-    >>> url = 'https://api.github.com/some/endpoint'
-    >>> headers = {'user-agent': 'my-app/0.0.1'}
-
-    >>> r = requests.get(url, headers=headers)
-
-.. code-block:: python
-
-    >>> payload = {'key1': 'value1', 'key2': 'value2'}
-
-    >>> r = requests.post("http://httpbin.org/post", data=payload)
-    >>> print(r.text)
-    {
-      ...
-      "form": {
-        "key2": "value2",
-        "key1": "value1"
-      },
-      ...
-    }
-
-.. code-block:: python
-
-    >>> r = requests.head('http://github.com', allow_redirects=True)
-
-    >>> r.url
-    'https://github.com/'
-
-    >>> r.history
-    [<Response [301]>]
-
-.. code-block:: python
-
-    >>> import json
-
-    >>> url = 'https://api.github.com/some/endpoint'
-    >>> payload = {'some': 'data'}
-
-    >>> r = requests.post(url, data=json.dumps(payload))
-
-.. code-block:: python
-
-    >>> url = 'https://api.github.com/some/endpoint'
-    >>> payload = {'some': 'data'}
-
-    >>> r = requests.post(url, json=payload)
-
-* http://docs.python-requests.org/en/master/user/quickstart/#json-response-content
-* http://docs.python-requests.org/en/master/dev/contributing/#kenneth-reitz-s-code-style
-
-
-``suds``
---------
-
-Frameworki webowe
-=================
-
-Google App Engine
------------------
-
-``django``
-----------
-
-``flask``
----------
-
-``webapp2``
------------
-
-``tornado``
------------
-
-Utils
-=====
-
-``atlassian-python-api``
-------------------------
-
-* https://github.com/AstroTech/atlassian-python-api
-
-.. code-block:: python
-
-    from atlassian import Confluence
-    from atlassian import Jira
-
-
-    jira = Jira(
-        url='http://localhost:8080',
-        username='admin',
-        password='admin')
-
-    confluence = Confluence(
-        url='http://localhost:8090',
-        username='admin',
-        password='admin')
-
-
-    JQL = 'project = DEMO AND status NOT IN (Closed, Resolved) ORDER BY issuekey'
-    data = jira.jql(JQL)
-
-    status = confluence.create_page(
-        space='DEMO',
-        title='This is the title',
-        body=f'This is the body. You can use <strong>HTML tags</strong>!<div>{data}</div>')
-
-    print(status)
-
-
-``fabric``
-----------
-
-``BeautifulSoup``
------------------
-
 Inne
 ====
 
-``py2app``
-----------
+``py2app`` i ``py2exe``
+-----------------------
 
-``docopt``
-----------
-
-``Jinja2``
-----------
+* https://py2app.readthedocs.io/
+* http://www.py2exe.org/
 
 ``pytz``
 --------
+
+.. code-block:: python
+
+    >>> from datetime import datetime, timedelta
+    >>> from pytz import timezone
+    >>> import pytz
+
+    >>> utc = pytz.utc
+    >>> utc.zone
+    'UTC'
+    >>> eastern = timezone('US/Eastern')
+    >>> eastern.zone
+    'US/Eastern'
+    >>> amsterdam = timezone('Europe/Amsterdam')
+    >>> fmt = '%Y-%m-%d %H:%M:%S %Z%z'
+
+
 
 ``ldap3``
 ---------

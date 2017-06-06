@@ -8,84 +8,29 @@ Socket
 Otwieranie połączeń
 -------------------
 
+Protokoły
+---------
+
 Nasłuchiwanie
 -------------
 
 Przekazywanie informacji
 ------------------------
 
-Prosty serwer HTTP
-==================
-
 Biblioteki sieciowe
 ===================
-
-``httplib``
------------
-
-``urllib``
-----------
 
 ``smtp``
 --------
 
-``HTML Scrapping``
-==================
+Automatyzacja pracy
+===================
 
-* ``BeautifulSoup``
+``fabric``
+----------
 
-
-Zadania kontrolne
-=================
-
-
-REST API
---------
-
-Używając biblioteki standardowej w Pythonie zaciągnij informacje o repozytoriach użytkownika Django na https://github.com
-
-* w przeglądarce internetowej wygeneruj w swoim profilu token https://github.com/settings/tokens
-
-* Następnie z przeglądnij listę z poziomu Pythona i znajdź URL dla repozytorium ``django``.
-
-.. code-block:: python
-
-    "name": "django",
-    "full_name": "django/django",
-
-    # wyszukaj "commits_url": ???
-
-* Przeglądnij to repozytorium i jego listę commitów.
-* Podaj datę i opis ostatniego commita
-* Znajdź numery ID ticketów (``Fixed #...``) z issue trackera, które zostały rozwiązane w ostatnim miesiącu
-* Spróbuj skorzystać zamiast biblioteki standardowej z pakietu ``requests``
-
-.. code:: REST
-
-    https://api.github.com/
-
-    GET /orgs/django/repos
-    GET /repos/dajngo/django/commits
-
-
-.. code:: shell
-
-    curl https://api.github.com/orgs/django/repos
-
-
-.. code-block:: python
-
-    >>> auth = b'username:token'
-    >>> headers={
-    ...     'Authorization': 'Basic {}'.format(base64.b64encode(auth).decode('ascii')),
-    ...     'User-Agent': 'Python HTTP',
-    ...}
-
-    # ...
-
-    >>> body = resp.read().decode()
-    >>> data = json.loads(body)
-
+* http://www.fabfile.org/
+* https://pypi.python.org/pypi/Fabric3
 
 Mini Botnet
 -----------
