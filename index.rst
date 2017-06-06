@@ -47,12 +47,9 @@ Podstawy
     docs/podstawy/builtin.rst
     docs/podstawy/operatory.rst
     docs/podstawy/pliki.rst
-    docs/podstawy/logging.rst
-
-    docs/podstawy/serializacja.rst
-    docs/podstawy/wyjatki.rst
 
     docs/podstawy/programowanie-obiektowe.rst
+    docs/podstawy/wyjatki.rst
 
     docs/podstawy/dobre-praktyki.rst
     docs/podstawy/zadania.rst
@@ -67,6 +64,11 @@ Podstawy
     :name: średniozaawansowany
 
     docs/sredniozaawansowany/virtualenv.rst
+
+    docs/sredniozaawansowany/datetime.rst
+    docs/sredniozaawansowany/logging.rst
+    docs/sredniozaawansowany/serializacja.rst
+
     docs/sredniozaawansowany/biblioteka-standardowa.rst
     docs/sredniozaawansowany/biblioteki-zewnetrzne.rst
     docs/sredniozaawansowany/linia-polecen.rst

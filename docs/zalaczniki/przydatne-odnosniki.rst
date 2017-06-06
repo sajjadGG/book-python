@@ -37,10 +37,13 @@ Humor IT
 Inne
 ====
 Poniższe materiały i linki pochodzą z:
+
 * http://www.wykop.pl/wpis/9876900/python-naukaprogramowania-programowanie-wstep-pod-/
 
 
-2. Video (i inne):
+Video (i inne)
+--------------
+
 Screencasty / kursy video potrafią sporo pomóc, nie korzystaj wyłącznie z nich, to po prostu kolejna pomoc naukowa.
 
 * http://shop.oreilly.com/product/110000448.do - Dobra seria filmów dla bardzo początkujących, świetny materiał do oglądania na zmianę z czytaniem pierwszej książki i eksperymentowaniem z pierwszymi programami.
@@ -50,7 +53,8 @@ Screencasty / kursy video potrafią sporo pomóc, nie korzystaj wyłącznie z ni
 * http://shop.oreilly.com/product/110000667.do - wstęp do algorytmów z użyciem pythona, należy uważać - prezenter pisze sporo kodu który jest uważany za nie-pythoniczny
 
 * http://www.pluralsight.com/tag/python - wiele godnych uwagi serii screencastów ( między innymi uczących podstawowego i zaawansowanego pythona, pisania aplikacji GUI w Qt), ale najważniejsza z nich:
-http://www.pluralsight.com/courses/python-developers-toolkit - to bardzo krótka seria uczący najważniejszych i niemal niezbędnych każdemu programiście pythona narzędzi
+
+* http://www.pluralsight.com/courses/python-developers-toolkit - to bardzo krótka seria uczący najważniejszych i niemal niezbędnych każdemu programiście pythona narzędzi
 
 Filmy z ostatnich konferencji (dużo tego, każdy znajdzie coś dla siebie):
 
@@ -66,7 +70,8 @@ Filmy z ostatnich konferencji (dużo tego, każdy znajdzie coś dla siebie):
 
 * http://www.codecademy.com/en/tracks/python - to interaktywny kurs pythona w przeglądarcę, nie trzeba nic instalować, wystarczy wykonywać polecenia. Jest całkiem w porządku, ale nie polecam go jako “jedynego” źródła wiedzy o Pythonie, oraz (ostatnio gdy sprawdzałem) nie wspierał Pythona 3.
 
-3. Wyzwania i potyczki
+Wyzwania i potyczki
+-------------------
 
 * TO SUPER WAŻNE żebyś podczas czytania i oglądania programował i nie kopiował gotowego kodu z paczek źródłowych do książek tylko ręcznie pisał, starając się zrozumieć co piszesz. Musisz eksperymentować, wprowadzać własne zmiany, pisać własne projekty i realizować własne pomysły.
 

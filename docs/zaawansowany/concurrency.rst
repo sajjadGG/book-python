@@ -9,25 +9,27 @@ Concurrency
 * Twisted, Tornado
 * Curio, Trio
 
-* High-Level Concurrency
-========================
-* CPU-bound Concurrency
+High-Level Concurrency
+======================
+
+* CPU-bound Concurrency:
 
     * Using Queues and Multiprocessing
     * Using Futures and Multiprocessing
 
-* I/O-bound Concurrency
+* I/O-bound Concurrency:
 
     * Using Queues and Threading
     * Using Futures and Threading
 
 Coroutine
 =========
+
 The word "coroutine", like the word "generator", is used for two different (though related) concepts:
 
-    - The function that defines a coroutine (a function definition using async def or decorated with ``@asyncio.coroutine``). If disambiguation is needed we will call this a coroutine function (``iscoroutinefunction()`` returns ``True``).
+- The function that defines a coroutine (a function definition using async def or decorated with ``@asyncio.coroutine``). If disambiguation is needed we will call this a coroutine function (``iscoroutinefunction()`` returns ``True``).
 
-    - The object obtained by calling a coroutine function. This object represents a computation or an I/O operation (usually a combination) that will complete eventually. If disambiguation is needed we will call it a coroutine object (``iscoroutine()`` returns ``True``).
+- The object obtained by calling a coroutine function. This object represents a computation or an I/O operation (usually a combination) that will complete eventually. If disambiguation is needed we will call it a coroutine object (``iscoroutine()`` returns ``True``).
 
 ``Asyncio``
 ===========
