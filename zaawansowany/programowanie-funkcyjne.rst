@@ -1,8 +1,9 @@
+***********************
 Programowanie funkcyjne
-=======================
+***********************
 
 lambda
-------
+======
 
 .. code-block:: python
 
@@ -24,7 +25,7 @@ lambda
 
 
 closure
--------
+=======
 
 .. code-block:: python
 
@@ -35,7 +36,7 @@ closure
 
 
 złożenia funkcji
-----------------
+================
 
 ``map()``
 ---------
@@ -72,8 +73,6 @@ złożenia funkcji
     czasy = map(opoznienie, dane)
 
     print(list(czasy))
-
-
 
 ``zip()``
 ---------
