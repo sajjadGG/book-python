@@ -20,6 +20,21 @@ Pętla ``for``
     for x in range(0, 30, 5):
         print(f'Value is: {x}')
 
+.. code-block:: python
+
+    for key, value in [(0, 0), (1, 1), (1, 2)]:
+        print(f'{key} -> {value}')
+
+.. code-block:: python
+
+    slownik = {'x': 1, 'y': 2}
+
+    for key in slownik:
+        print(slownik.get(key))
+
+    for key, value in slownik.items():
+        print(key, value)
+
 
 Pętla ``while``
 ---------------

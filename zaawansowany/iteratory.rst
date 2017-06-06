@@ -5,6 +5,7 @@ Iteratory
 Czym jest iterator?
 ===================
 
+* ``__iter__()``
 * ``__next__()``
 * ``raise StopIteration``
 
@@ -67,14 +68,14 @@ Własny iterator
                 raise StopIteration
 
 
-    prostokaty = ListaFigurGeometrycznych()
+    figury = ListaFigurGeometrycznych()
 
-    prostokaty.push('kwadrat')
-    prostokaty.push('prostokat')
-    prostokaty.push('trojkat')
+    figury.push('kwadrat')
+    figury.push('prostokat')
+    figury.push('trojkat')
 
 
-    for figura in prostokaty:
+    for figura in figury:
         print(figura)
 
 Przykład

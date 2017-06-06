@@ -221,13 +221,13 @@ Scope
 Special Variables
 ~~~~~~~~~~~~~~~~~
 
-* __file__
-* __name__
-* __builtins__
-* __doc__
-* __loader__
-* __spec__
-* __package__
+* ``__file__``
+* ``__name__``
+* ``__builtins__``
+* ``__doc__``
+* ``__loader__``
+* ``__spec__``
+* ``__package__``
 
 Moduły
 ~~~~~~
