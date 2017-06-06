@@ -22,9 +22,9 @@ Wstęp
     :caption: Wstęp
     :name: Wstęp
 
-    docs/wstep/o-jezyku-python.rst
-    docs/wstep/instalacja.rst
-    docs/wstep/podstawy-skladni.rst
+    wstep/o-jezyku-python.rst
+    wstep/instalacja.rst
+    wstep/podstawy-skladni.rst
 
 
 Podstawy
@@ -36,25 +36,26 @@ Podstawy
     :caption: Podstawy
     :name: podstawy
 
-    docs/podstawy/zmienne-i-stale.rst
-    docs/podstawy/zlozone-typy-danych.rst
-    docs/podstawy/operatory.rst
+    podstawy/zmienne-i-stale.rst
+    podstawy/zlozone-typy-danych.rst
+    podstawy/operatory.rst
 
-    docs/podstawy/instrukcje-warunkowe.rst
-    docs/podstawy/petle.rst
+    podstawy/instrukcje-warunkowe.rst
+    podstawy/petle.rst
 
-    docs/podstawy/funkcje.rst
-    docs/podstawy/builtin.rst
+    podstawy/funkcje.rst
+    podstawy/builtin.rst
 
-    docs/podstawy/print-formatting.rst
-    docs/podstawy/doctests.rst
-    docs/podstawy/pliki.rst
+    podstawy/print-formatting.rst
+    podstawy/doctests.rst
 
-    docs/podstawy/programowanie-obiektowe.rst
-    docs/podstawy/wyjatki.rst
-    docs/podstawy/dobre-praktyki.rst
+    podstawy/programowanie-obiektowe.rst
+    podstawy/wyjatki.rst
 
-    docs/podstawy/zadania.rst
+    podstawy/pliki.rst
+
+    podstawy/dobre-praktyki.rst
+    podstawy/zadania.rst
 
 Średniozaawansowany
 ===================
@@ -65,27 +66,28 @@ Podstawy
     :caption: Średniozaawansowany
     :name: średniozaawansowany
 
-    docs/sredniozaawansowany/virtualenv.rst
+    sredniozaawansowany/virtualenv.rst
 
-    docs/sredniozaawansowany/datetime.rst
-    docs/sredniozaawansowany/logging.rst
-    docs/sredniozaawansowany/serializacja.rst
+    sredniozaawansowany/datetime.rst
+    sredniozaawansowany/logging.rst
+    sredniozaawansowany/serializacja.rst
+    sredniozaawansowany/introspection.rst
 
-    docs/sredniozaawansowany/biblioteka-standardowa.rst
-    docs/sredniozaawansowany/biblioteki-zewnetrzne.rst
-    docs/sredniozaawansowany/system-operacyjny.rst
-    docs/sredniozaawansowany/linia-polecen.rst
-    docs/sredniozaawansowany/modularyzacja.rst
-    docs/sredniozaawansowany/regex.rst
-    docs/sredniozaawansowany/testy-i-jakosc.rst
-    docs/sredniozaawansowany/bazy-danych.rst
+    sredniozaawansowany/biblioteka-standardowa.rst
+    sredniozaawansowany/biblioteki-zewnetrzne.rst
+    sredniozaawansowany/system-operacyjny.rst
+    sredniozaawansowany/linia-polecen.rst
+    sredniozaawansowany/modularyzacja.rst
+    sredniozaawansowany/regex.rst
+    sredniozaawansowany/bazy-danych.rst
 
-    docs/sredniozaawansowany/tworzenie-dokumentacji.rst
-    docs/sredniozaawansowany/django.rst
-    docs/sredniozaawansowany/programowanie-gui.rst
-    docs/sredniozaawansowany/introspection.rst
+    sredniozaawansowany/testy-i-jakosc.rst
 
-    docs/sredniozaawansowany/zadania.rst
+    sredniozaawansowany/tworzenie-dokumentacji.rst
+    sredniozaawansowany/django.rst
+    sredniozaawansowany/programowanie-gui.rst
+
+    sredniozaawansowany/zadania.rst
 
 Zaawansowany
 ============
@@ -96,16 +98,22 @@ Zaawansowany
     :caption: Zaawansowany
     :name: zaawansowany
 
-    docs/zaawansowany/type-hinting.rst
-    docs/zaawansowany/decorator.rst
-    docs/zaawansowany/generatory.rst
-    docs/zaawansowany/iteratory.rst
-    docs/zaawansowany/watki-i-procesy.rst
-    docs/zaawansowany/concurrency.rst
-    docs/zaawansowany/programowanie-funkcyjne.rst
-    docs/zaawansowany/programowanie-sieciowe.rst
-    docs/zaawansowany/wzorce-projektowe.rst
-    docs/zaawansowany/c-extensions.rst
+    zaawansowany/type-hinting.rst
+
+    zaawansowany/programowanie-http.rst
+    zaawansowany/programowanie-sieciowe.rst
+
+    zaawansowany/generatory.rst
+    zaawansowany/iteratory.rst
+
+    zaawansowany/watki-i-procesy.rst
+    zaawansowany/concurrency.rst
+
+    zaawansowany/programowanie-funkcyjne.rst
+    zaawansowany/decorator.rst
+
+    zaawansowany/wzorce-projektowe.rst
+    zaawansowany/c-extensions.rst
 
 W zastosowaniach naukowych
 ==========================
@@ -116,7 +124,7 @@ W zastosowaniach naukowych
     :caption: W zastosowaniach naukowych
     :name: scientific
 
-    docs/scientific/biblioteki.rst
+    scientific/biblioteki.rst
 
 Machine Learning
 ================
@@ -127,12 +135,12 @@ Machine Learning
     :caption: Machine Learning
     :name: machine-learning
 
-    docs/machine-learning/wprowadzenie-do-statystyki.rst
-    docs/machine-learning/linear-regression.rst
-    docs/machine-learning/logistics-regression.rst
-    docs/machine-learning/neural-network.rst
-    docs/machine-learning/bayes.rst
-    docs/machine-learning/przydatne-odnosniki.rst
+    machine-learning/wprowadzenie-do-statystyki.rst
+    machine-learning/linear-regression.rst
+    machine-learning/logistics-regression.rst
+    machine-learning/neural-network.rst
+    machine-learning/bayes.rst
+    machine-learning/przydatne-odnosniki.rst
 
 Załączniki
 ==========
@@ -143,12 +151,12 @@ Załączniki
     :caption: Załączniki
     :name: zalaczniki
 
-    docs/zalaczniki/przydatne-odnosniki.rst
-    docs/zalaczniki/python-2vs3.rst
-    docs/zalaczniki/wybor-ide.rst
-    docs/zalaczniki/ekosystem-narzedziowy.rst
-    docs/zalaczniki/ksiazki.rst
-    docs/zalaczniki/python-wat.rst
+    zalaczniki/przydatne-odnosniki.rst
+    zalaczniki/python-2vs3.rst
+    zalaczniki/wybor-ide.rst
+    zalaczniki/ekosystem-narzedziowy.rst
+    zalaczniki/ksiazki.rst
+    zalaczniki/python-wat.rst
 
 Receptury
 =========
@@ -159,5 +167,5 @@ Receptury
     :caption: Receptury
     :name: receptury
 
-    docs/receptury/ldap-expiring-passwords.rst
-    docs/receptury/github-api.rst
+    receptury/ldap-expiring-passwords.rst
+    receptury/github-api.rst

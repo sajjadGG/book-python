@@ -14,7 +14,7 @@ The /etc/passwd file is a colon-separated file that contains the following infor
 import sys
 
 
-FILENAME = '../../tmp/etc-passwd.txt'
+FILENAME = '../../_tmp/etc-passwd.txt'
 
 
 def passwd1():

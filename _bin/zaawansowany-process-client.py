@@ -12,7 +12,7 @@ from __init__ import Prostokat
 logging.basicConfig(
     level=logging.DEBUG,
     format='[%(asctime).19s] %(levelname)-9s %(name)10s: %(message)s',
-    #filename='/tmp/processes.log'
+    #filename='/_tmp/processes.log'
 )
 
 log = logging.getLogger('client')

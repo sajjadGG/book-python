@@ -116,9 +116,12 @@ Biblioteki zewnętrzne
 HTML Scrapping i ``BeautifulSoup``
 ----------------------------------
 
-* ``pip install beautifulsoup4``
+.. code-block:: console
+
+    $ pip install beautifulsoup4
 
 .. code-block:: python
+
     html_doc = """
     <html><head><title>The Dormouse's story</title></head>
     <body>
@@ -312,9 +315,9 @@ Używając biblioteki standardowej w Pythonie zaciągnij informacje o repozytori
     GET /repos/dajngo/django/commits
 
 
-.. code:: shell
+.. code:: console
 
-    curl https://api.github.com/orgs/django/repos
+    $ curl https://api.github.com/orgs/django/repos
 
 
 .. code-block:: python

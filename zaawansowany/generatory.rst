@@ -37,6 +37,20 @@ Generator expressions
 
     (x*x for x in range(0, 30) if x % 2)
 
+List comprehension vs. Generator expressions
+============================================
+
+.. code-block:: python
+
+    nieparzyste_list_comp = [x*x for x in range(0, 30) if x % 2]
+    print(nieparzyste_list_comp)
+    print(nieparzyste_list_comp)
+
+    print('------')
+
+    nieparzyste_generator = (x*x for x in range(0, 30) if x % 2)
+    print(list(nieparzyste_generator))
+    print(list(nieparzyste_generator))
 
 Operator ``yield``
 ==================
@@ -112,21 +126,6 @@ Operator ``yield``
 
     uczestnicy_kursu = [osoba.get('username') for osoba in osoby_w_klasie if not osoba['czy_wykladowca']]
     pprint(uczestnicy_kursu)
-
-Reużywalność
-============
-
-.. code-block:: python
-
-    nieparzyste_list_comp = [x*x for x in range(0, 30) if x % 2]
-    print(nieparzyste_list_comp)
-    print(nieparzyste_list_comp)
-
-    print('------')
-
-    nieparzyste_generator = (x*x for x in range(0, 30) if x % 2)
-    print(list(nieparzyste_generator))
-    print(list(nieparzyste_generator))
 
 Przykłady
 =========

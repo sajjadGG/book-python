@@ -16,7 +16,7 @@ def make_key(key, k):
         return '{}_{}'.format(key, k)
 
 
-with open('../../tmp/fixtures-flat.json') as file:
+with open('../../_tmp/fixtures-flat.json') as file:
     content = file.read()
 
 
@@ -32,7 +32,7 @@ for key, value in json.loads(content).items():
         flat_data.append(slownik)
 
 
-with open('../tmp/fixtures-flat.csv', 'w') as file:
+with open('../_tmp/fixtures-flat.csv', 'w') as file:
     writer = csv.DictWriter(file, fieldnames, quoting=csv.QUOTE_ALL, delimiter=';', quotechar='"')
     writer.writeheader()
 
@@ -40,5 +40,5 @@ with open('../tmp/fixtures-flat.csv', 'w') as file:
         writer.writerow(row)
 
 
-with open('../tmp/fixtures-flat.csv') as file:
+with open('../_tmp/fixtures-flat.csv') as file:
     print(file.read())

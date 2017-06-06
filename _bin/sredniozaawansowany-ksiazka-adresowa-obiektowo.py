@@ -2,7 +2,7 @@ import json
 import logging
 import pickle
 
-KSIAZKA_ADRESOWA_PICKLE = '/tmp/ksiazka-adresowa.pickle'
+KSIAZKA_ADRESOWA_PICKLE = '/_tmp/ksiazka-adresowa.pickle'
 
 log = logging.getLogger(__name__)
 logging.basicConfig(level=logging.DEBUG)
@@ -75,11 +75,11 @@ class JSONObjectDecoder(json.JSONDecoder):
             return Kontakt(**dictionary)
 
 
-with open('/tmp/ksiazka-adresowa.json', 'w') as file:
+with open('/_tmp/ksiazka-adresowa.json', 'w') as file:
     serialized = json.dumps(ksiazka_adresowa, cls=JSONObjectEncoder)
     file.write(serialized)
 
 
-with open('/tmp/ksiazka-adresowa.json', 'r') as file:
+with open('/_tmp/ksiazka-adresowa.json', 'r') as file:
     unserialized = json.loads(file.read(), cls=JSONObjectDecoder)
     log.debug(f'JSON: {unserialized}')

@@ -19,7 +19,7 @@ Podpowiedź:
 - print('ciag znakow' * 30)
 """
 
-#!/usr/bin/env python3
+#!/usr/_bin/env python3
 
 ciag_znakow = input('Podaj ciag znakow: ')
 

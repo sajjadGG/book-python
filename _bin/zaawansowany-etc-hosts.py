@@ -20,7 +20,7 @@
 """
 
 
-FILENAME = '../../tmp/etc-hosts'
+FILENAME = '../../_tmp/etc-hosts'
 hosts = []
 
 

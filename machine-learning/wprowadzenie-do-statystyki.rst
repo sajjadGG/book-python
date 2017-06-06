@@ -17,7 +17,7 @@ Rozkłady
 * nadzieje
 * siły
 
-.. figure:: /img/statistics-distributions.jpg
+.. figure:: /_img/statistics-distributions.jpg
     :scale: 50%
     :align: center
 

@@ -20,12 +20,12 @@ ADDRESS_BOOK = [{
 }]
 
 
-with open('/tmp/ksiazka-adresowa.json', 'w') as file:
+with open('/_tmp/ksiazka-adresowa.json', 'w') as file:
     log.debug('Zapisujemy ksiażkę w formacie JSON')
     file.write(json.dumps(ADDRESS_BOOK))
 
 
-with open('/tmp/ksiazka-adresowa.csv', 'w') as file:
+with open('/_tmp/ksiazka-adresowa.csv', 'w') as file:
     log.debug('Zapisujemy książkę w formacie CSV')
     writer = csv.DictWriter(file, quoting=csv.QUOTE_ALL, fieldnames=sorted(ADDRESS_BOOK[0].keys()))
     writer.writeheader()

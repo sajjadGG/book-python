@@ -6,7 +6,7 @@ from pprint import pprint
 
 HOST = "localhost"
 PORT = 1337
-XML_CMD_FILE = '../../../tmp/botnet-commands.xml'
+XML_CMD_FILE = '../../../_tmp/botnet-commands.xml'
 
 
 logging.basicConfig(
