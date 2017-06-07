@@ -45,12 +45,12 @@ Tworzenie wątków
 
 
     def hello():
-        print("hello, world")
+        print('Timer Thread')
 
     t = Timer(5.0, hello)
     t.start()
 
-    print('hej')
+    print('Main Thread')
 
 Synchronizacja wątków
 ---------------------
@@ -61,72 +61,68 @@ Synchronizacja wątków
     import threading
     import time
 
-    exitFlag = 0
 
+    class MyThread(threading.Thread):
 
-    class myThread (threading.Thread):
-
-        def __init__(self, threadID, name, q):
-            threading.Thread.__init__(self)
-            self.threadID = threadID
-            self.name = name
-            self.q = q
+        def __init__(self, thread_name, work_queue):
+            self.thread_name = thread_name
+            self.work_queue = work_queue
+            super().__init__()
 
         def run(self):
-            print("Starting %s" % self.name)
-            process_data(self.name, self.q)
-            print("Exiting %s" % self.name)
+            print(f'Starting {self.thread_name}')
+
+            while not exit_flag:
+                lock.acquire()
+
+                if not work_queue.empty():
+                    data = work_queue.get()
+                    lock.release()
+
+                    # Release Queue before processing
+                    print(f'{self.thread_name} processing {data}')
+                else:
+                    lock.release()
+
+                time.sleep(2)
+
+            print(f'Exiting {self.thread_name}')
 
 
-    def process_data(threadName, q):
-        while not exitFlag:
-            queueLock.acquire()
-
-            if not workQueue.empty():
-                data = q.get()
-                queueLock.release()
-                print("%s processing %s" % (threadName, data))
-            else:
-                queueLock.release()
-
-            time.sleep(1)
-
-
-    threadList = ["Thread-1", "Thread-2", "Thread-3"]
-    nameList = ["One", "Two", "Three", "Four", "Five"]
-    queueLock = threading.Lock()
-    workQueue = queue.Queue(10)
-    threads = []
-    threadID = 1
+    exit_flag = 0
+    lock = threading.Lock()
+    work_queue = queue.Queue()
+    running_threads = []
 
 
     # Create new threads
-    for tName in threadList:
-        thread = myThread(threadID, tName, workQueue)
+    for name in ['Thread-1', 'Thread-2', 'Thread-3']:
+        thread = MyThread(name, work_queue)
         thread.start()
-        threads.append(thread)
-        threadID += 1
+        running_threads.append(thread)
 
 
     # Fill the queue
-    queueLock.acquire()
-    for word in nameList:
-        workQueue.put(word)
-    queueLock.release()
+    lock.acquire()
+    for word in ['One', 'Two', 'Three', 'Four', 'Five']:
+        work_queue.put(word)
+    lock.release()
 
 
     # Wait for queue to empty
-    while not workQueue.empty():
+    while not work_queue.empty():
         pass
 
+
     # Notify threads it's time to exit
-    exitFlag = 1
+    exit_flag = 1
+
 
     # Wait for all threads to complete
-    for t in threads:
-        t.join()
+    for thread in running_threads:
+        thread.join()
 
-    print("Exiting Main Thread")
+    print(f'Exiting Main Thread')
 
 
 Zamykanie wątków
@@ -142,7 +138,7 @@ Workery
     import threading
 
 
-    kolejka = queue.Queue()
+    work_queue = queue.Queue()
 
 
     class Worker(threading.Thread):
@@ -151,29 +147,29 @@ Workery
         def run(self):
             while True:
                 # Remove and return an item from the queue.
-                job = kolejka.get()
+                job = work_queue.get()
 
                 # Execute work
                 logging.warning('Will do the work: %s' % job)
 
                 # Indicate that a formerly enqueued task is complete.
-                kolejka.task_done()
+                work_queue.task_done()
 
 
-    def spawn_workers(number_of_workers):
-        for i in range(number_of_workers):
+    def spawn_worker(how_many):
+         for i in range(how_many):
             Worker().start()
 
 
     if __name__ == '__main__':
-        spawn_workers(3)
+        spawn_worker(3)
 
         # Zapełnij kolejkę
         for todo in ['ping', 'ls -la', 'echo "hello world"', 'cat /etc/passwd']:
-            kolejka.put(todo)
+            work_queue.put(todo)
 
         # wait to complete all tasks
-        kolejka.join()
+        work_queue.join()
 
 
 
@@ -293,5 +289,5 @@ Wielowątkowość
 
         cmd = 'ls -la'
 
-        with Popen(shlex.split(cmd), stdout=PIPE) as proc:
+        with subprocess.Popen(shlex.split(cmd), stdout=PIPE) as proc:
             log.write(proc.stdout.read())

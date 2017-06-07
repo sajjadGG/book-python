@@ -50,3 +50,30 @@ Python WAT?!
     >>> for x in a:
     ...    print(x)
     hello
+
+
+.. code-block:: python
+
+    >>> a = [1, 3, 2, 5]
+    >>> x = a
+
+    >>> print(x)
+    [1, 3, 2, 5]
+
+    >>> print(a)
+    [1, 3, 2, 5]
+
+    x.append(9)
+
+    >>> print(x)
+    [1, 3, 2, 5, 9]
+
+    >>> print(a)
+    [1, 3, 2, 5, 9]
+
+.. code-block:: python
+
+    >>> a = [1, 3, 2, 5]
+    >>> x = a
+
+    >>> x = a.copy()

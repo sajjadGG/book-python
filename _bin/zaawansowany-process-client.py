@@ -3,7 +3,6 @@
 
 from multiprocessing.connection import Client
 import logging
-
 import pickle
 
 from __init__ import Prostokat
