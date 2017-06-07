@@ -5,6 +5,8 @@ System Operacyjny
 ``os``
 ======
 
+Najczęściej wykorzystuje się:
+
 .. code-block:: python
 
     import os
@@ -62,6 +64,8 @@ System Operacyjny
 ``sys``
 =======
 
+Najczęściej wykorzystuje się:
+
 .. code-block:: python
 
     import sys
@@ -80,6 +84,8 @@ System Operacyjny
 ``subprocess``
 ==============
 
+Najczęściej wykorzystuje się:
+
 .. code-block:: python
 
     import subprocess
@@ -87,6 +93,22 @@ System Operacyjny
     subprocess.call('clear')
     subprocess.Popen()
     subprocess.run()
+
+
+``subprocess.Popen()``
+----------------------
+.. code-block:: python
+
+    subprocess.Popen(args, bufsize=-1, executable=None, stdin=None, stdout=None, stderr=None, preexec_fn=None, close_fds=True,  shell=False, cwd=None, env=None, universal_newlines=False, startupinfo=None, creationflags=0, restore_signals=True, start_new_session=False, pass_fds=(), *, encoding=None, errors=None)
+
+``subprocess.run()``
+--------------------
+
+* New in Python 3.5
+
+.. code-block:: python
+
+    subprocess.run(args, *, stdin=None, input=None, stdout=None, stderr=None, shell=False, timeout=None, check=False, encoding=None, errors=None)
 
 ``shell=True``
 --------------
@@ -116,6 +138,20 @@ Uruchamianie poleceń
 
 .. code-block:: python
 
+    >>> subprocess.run(["ls", "-l"])  # doesn't capture output
+    CompletedProcess(args=['ls', '-l'], returncode=0)
+
+    >>> subprocess.run("exit 1", shell=True, check=True)
+    Traceback (most recent call last):
+      ...
+    subprocess.CalledProcessError: Command 'exit 1' returned non-zero exit status 1
+
+    >>> subprocess.run(["ls", "-l", "/dev/null"], stdout=subprocess.PIPE)
+    CompletedProcess(args=['ls', '-l', '/dev/null'], returncode=0,
+    stdout=b'crw-rw-rw- 1 root root 1, 3 Jan 23 16:23 /dev/null\n')
+
+.. code-block:: python
+
     import subprocess
     import shlex
 
@@ -127,8 +163,6 @@ Uruchamianie poleceń
 
 Timeout dla wykonywania poleceń
 -------------------------------
-
-* ``subprocess.run()`` - New in Python 3.5
 
 .. code-block:: python
 
