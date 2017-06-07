@@ -285,14 +285,12 @@ Zadania kontrolne
 
 Tworzenie bazy danych i proste zapytania
 ----------------------------------------
-:Zadanie:
-    Skrypt z książką adresową z poprzednich zadań przepisz tak, aby wykorzystywał bazę danych do składowania informacji.
+Skrypt z książką adresową z poprzednich zadań przepisz tak, aby wykorzystywał bazę danych do składowania informacji.
 
 Bardziej zaawansowane operacje na bazie
 ---------------------------------------
-:Zadanie:
-    Skrypt z książką adresową z poprzednich zadań przepisz tak, aby wykorzystywał bazę danych do składowania informacji:
+Skrypt z książką adresową z poprzednich zadań przepisz tak, aby wykorzystywał bazę danych do składowania informacji:
 
-        * Wykorzystaj ``cursor``
-        * Dane powinny być zwracane dane w postaci listy ``dict``
-        * Do wpisywania danych wykorzystaj konstrukcję ``PreparedStatement``
+* Wykorzystaj ``cursor``
+* Dane powinny być zwracane dane w postaci listy ``dict``
+* Do wpisywania danych wykorzystaj konstrukcję ``PreparedStatement`` wykorzystując ``dict`` jako argument
