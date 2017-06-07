@@ -2,21 +2,6 @@
 Biblioteka standardowa
 **********************
 
-``memoize``
-===========
-
-``httplib``
-===========
-
-``urllib``
-==========
-
-``socket``
-==========
-
-``tempfile``
-============
-
 ``io``
 ======
 
@@ -25,12 +10,6 @@ Biblioteka standardowa
     import io
 
     io.StringIO
-
-``functools``
-=============
-
-``itertools``
-=============
 
 ``math``
 ========

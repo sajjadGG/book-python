@@ -78,6 +78,10 @@ Własny iterator
     for figura in figury:
         print(figura)
 
+
+``itertools``
+=============
+
 Przykład
 ========
 
