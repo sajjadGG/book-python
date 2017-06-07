@@ -156,10 +156,3 @@ Biblioteki standardowe w 2 i 3
 Httplib w 2 i 3
 ---------------
 
-Python 3.5 i deklaracja typów
-=============================
-
-.. code-block:: python
-
-    def suma(a: int, b: int) -> int:
-        return a + b

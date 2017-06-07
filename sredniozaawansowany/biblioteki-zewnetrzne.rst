@@ -12,7 +12,46 @@ Python Executable
 * http://www.py2exe.org/
 * http://www.pyinstaller.org/
 
+Allegro Tipboard
+----------------
 
+* http://allegro.tech/tipboard/
+* https://github.com/allegro/tipboard
+
+Tipboard is a system for creating dashboards, written in JavaScript and Python. Its widgets ('tiles' in Tipboard's terminology) are completely separated from data sources, which provides great flexibility and relatively high degree of possible customizations.
+
+Because of its intended target (displaying various data and statistics in your office), it is optimized for larger screens.
+
+Similar projects: Geckoboard, Dashing.
+
+.. code-block:: console
+
+    $ pip install tipboard
+    $ tipboard create_project my_test_dashboard
+    $ tipboard runserver
+
+
+Allegro Ralph
+-------------
+
+* http://allegro.tech/ralph/
+* https://github.com/allegro/ralph
+
+Ralph is full-featured Asset Management, DCIM and CMDB system for data center and back office.
+
+Features:
+
+- keep track of assets purchases and their life cycle
+- generate flexible and accurate cost reports
+- integrate with change management process using JIRA integration
+
+It is an Open Source project provided on Apache v2.0 License.
+
+Live demo:
+
+- http://ralph-demo.allegro.tech/
+- login: ralph
+- password: ralph
 
 ``ldap3``
 ---------
@@ -25,10 +64,10 @@ Python Executable
     from ldap3 import Server, Connection, SEARCH_SCOPE_WHOLE_SUBTREE
 
 
-    USER = "myusername"
-    PASS = "mypassword"
-    BASEDN = "OU=Users,DC=local"
-    SERVER = Server("127.0.0.1", port=389)
+    USER = 'myusername'
+    PASS = 'mypassword'
+    BASEDN = 'OU=Users,DC=local'
+    SERVER = Server('127.0.0.1', port=389)
     ATTRIBUTES = ['mail', 'pwdLastSet']
 
 
@@ -92,5 +131,5 @@ Python Executable
             pprint(user)
 
 
-    if __name__ == "__main__":
+    if __name__ == '__main__':
         print_users_with_expiring_password()

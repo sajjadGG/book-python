@@ -7,12 +7,16 @@ Python WAT?!
     >>> 999 + 1 is 1000
     False
 
+    >>> 1000 is 1000
+    True
+
     >>> 1 + 1 is 2
     True
 
     >>> 2.2 * 3.0 == 3.3 * 2.0
     False
 
+.. code-block:: python
 
     >>> a = ('hello', 'word')
     >>> a = ('hello')
