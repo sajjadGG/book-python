@@ -174,6 +174,9 @@ Timeout dla wykonywania poleceń
     except subprocess.TimeoutExpired:
         print('process ran too long')
 
+Przechwytywanie outputu
+-----------------------
+
 .. code-block:: python
 
     def run(command, timeout=15, clear=True):
@@ -192,7 +195,6 @@ Timeout dla wykonywania poleceń
         if result.stderr:
             log.warning(f'\n\n{result.stderr}')
         return result
-
 
 Parsowanie i sanityzacja argumentów
 -----------------------------------
@@ -262,6 +264,9 @@ Rekursywne przechodzenie i wykonywanie poleceń
 Napisz skrypt, który przeszuka rekurencyjnie wszystkie katalogi na pulpicie w Twoim systemie operacyjnym i jeżeli znajdzie plik README (z dowolnym rozszerzeinem) to wyświetli jego zawartość za pomocą polecenia ``cat`` (macOS, Linux) lub ``type`` (Windows).
 
 Jeżeli skrypt nie znajdzie pliku README, to ma rzucić informację ``logging.critical()`` i wyjść z kodem błędu ``1``.
+
+:Podpowiedź:
+    * Gdyby był problem ze znalezieniem pliku, a ścieżka jest poprawna to zastosuj ``shell=True``
 
 Tree
 ----
