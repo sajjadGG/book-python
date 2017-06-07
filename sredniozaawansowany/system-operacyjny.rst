@@ -201,6 +201,38 @@ Parsowanie i sanityzacja argumentów
 Zadanie kontrolne
 =================
 
+Rekursywne przechodzenie i wykonywanie poleceń
+----------------------------------------------
 Napisz skrypt, który przeszuka rekurencyjnie wszystkie katalogi na pulpicie w Twoim systemie operacyjnym i jeżeli znajdzie plik README (z dowolnym rozszerzeinem) to wyświetli jego zawartość za pomocą polecenia ``cat`` (macOS, Linux) lub ``type`` (Windows).
 
 Jeżeli skrypt nie znajdzie pliku README, to ma wyjść z kodem błędu
+
+Tree
+----
+Za pomocą znaków unicode: "┣━", "┗━" , "┃  " wygeneruj wynik przypominający wynik polecenia ``tree``.
+
+
+.. code-block:: text
+
+    root:.
+    [.]
+    ┣━[.idea]
+    ┃  ┣━[scopes]
+    ┃  ┃  ┗━scope_settings.xml
+    ┃  ┣━.name
+    ┃  ┣━Demo.iml
+    ┃  ┣━encodings.xml
+    ┃  ┣━misc.xml
+    ┃  ┣━modules.xml
+    ┃  ┣━vcs.xml
+    ┃  ┗━workspace.xml
+    ┣━[test1]
+    ┃  ┗━test1.txt
+    ┣━[test2]
+    ┃  ┣━[test2-2]
+    ┃  ┃  ┗━[test2-3]
+    ┃  ┃      ┣━test2
+    ┃  ┃      ┗━test2-3-1
+    ┃  ┗━test2
+    ┣━folder_tree_maker.py
+    ┗━tree.py
