@@ -70,3 +70,13 @@ Przykład
     if __name__ == '__main__':
         print_file('/etc/passwd')
         print_file('/tmp/passwd')
+
+Zadania kontrolne
+=================
+
+Prosty dekorator
+----------------
+* Program przechodzi przez pliki i katalogi wykorzystując ``os.walk``.
+* Stwórz funkcję, która wypisuje na ekranie nazwę pliku lub katalogu.
+* Stwórz dekorator do funkcji, który przed wyświetleniem jej na ekranie podmieni ścieżkę na bezwzględną (``path`` + ``filename``).
+

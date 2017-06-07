@@ -40,6 +40,30 @@ Protocol
 * ``__aiter__``, ``__anext__``
 * ``__aenter__``, ``__aexit__``
 
+.. code-block:: python
+
+    class Reader:
+        async def readline(self):
+            ...
+
+        def __aiter__(self):
+            return self
+
+        async def __anext__(self):
+            val = await self.readline()
+            if val == b'':
+                raise StopAsyncIteration
+            return val
+
+.. code-block:: python
+
+    class AsyncContextManager:
+        async def __aenter__(self):
+            await log('entering context')
+
+        async def __aexit__(self, exc_type, exc, tb):
+            await log('exiting context')
+
 Low-level API
 -------------
 - callbacks

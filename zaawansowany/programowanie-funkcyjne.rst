@@ -24,7 +24,7 @@ lambda
 
 
 
-closure
+Closure
 =======
 
 .. code-block:: python
@@ -34,6 +34,8 @@ closure
             return x + y
         return g
 
+Monady
+======
 
 złożenia funkcji
 ================
