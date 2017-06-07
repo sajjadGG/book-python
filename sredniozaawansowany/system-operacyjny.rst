@@ -88,6 +88,28 @@ System Operacyjny
     subprocess.Popen()
     subprocess.run()
 
+``shell=True``
+--------------
+
+.. code-block:: python
+
+    >>> import subprocess
+
+    >>> subprocess.call('echo $HOME')
+    Traceback (most recent call last):
+    ...
+    OSError: [Errno 2] No such file or directory
+
+
+    >>> import subprocess
+    >>> subprocess.call('echo $HOME', shell=True)
+    /Users/matt
+    0
+
+Setting the shell argument to a true value causes subprocess to spawn an intermediate shell process, and tell it to run the command. In other words, using an intermediate shell means that variables, glob patterns, and other special shell features in the command string are processed before the command is run. Here, in the example, ``$HOME`` was processed before the echo command. Actually, this is the case of command with shell expansion while the command ``ls -l`` considered as a simple command.
+
+.. note:: source: `Subprocess Module <https://stackoverflow.com/a/36299483/228517>`
+
 
 Uruchamianie poleceń
 --------------------
