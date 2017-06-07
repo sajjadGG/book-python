@@ -5,7 +5,7 @@ C Extensions
 C Types
 =======
 
-.. code:: C
+.. code-block:: C
 
     #include <stdio.h>
 
@@ -58,7 +58,7 @@ C Modules
 Python 3
 --------
 
-.. code:: C
+.. code-block:: C
 
     #include <Python.h>
 
@@ -103,7 +103,7 @@ Python 3
 Python 2
 --------
 
-.. code:: C
+.. code-block:: C
 
     #include <Python.h>
 
@@ -164,7 +164,7 @@ Python 2
         description = 'Ehlo World!',
         ext_modules = [module])
 
-.. code:: console
+.. code-block:: console
 
     $ python setup.py build
 
