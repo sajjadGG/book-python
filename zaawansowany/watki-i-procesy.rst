@@ -2,22 +2,36 @@
 Kolejki, wątki i procesy
 ************************
 
-Kolejki
-=======
+Kolejki - Queue
+===============
 
-Queue
------
+FIFO
+----
 
-PriorityQueue:
+LIFO (stack)
+------------
 
-.. code-block:: python
+Network Queue
+-------------
 
-    __all__ = ['Empty', 'Full', 'Queue', 'PriorityQueue', 'LifoQueue']
+* Synchronizacja
+* Routing
 
+Priority Queue
+--------------
 
+* Priorytetyzacja
+* Wywłaszczenie
 
 Wątki a procesy
 ===============
+
+* Czym się różnią wątki od procesów?
+* Ile wątków może być w ramach procesów?
+* Jak komunikować się między wątkami?
+* Jak komunikować się między procesami?
+* Ile może być wątków na procesorze czterordzeniowym (z i bez Hyper Threading)?
+* Ile może być procesów na procesorze czterordzeniowym (z i bez Hyper Threading)?
 
 Wątki
 =====

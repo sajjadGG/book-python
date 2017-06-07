@@ -17,14 +17,17 @@ Cursor
 ------
 .. code-block:: python
 
-    c = conn.cursor()
+    cur = conn.cursor()
 
     # Create table
-    c.execute('''CREATE TABLE stocks
+    cur.execute('''CREATE TABLE stocks
                  (date text, trans text, symbol text, qty real, price real)''')
 
     # Insert a row of data
-    c.execute("INSERT INTO stocks VALUES ('2006-01-05','BUY','RHAT',100,35.14)")
+    cur.execute("INSERT INTO stocks VALUES ('2006-01-05','BUY','RHAT',100,35.14)")
+
+    # And this is the named style:
+    cur.execute("select * from stocks where trans=:trans and symbol=:symbol", {"symbol": 'RHAT', "trans": 'BUY'})
 
     # Save (commit) the changes
     conn.commit()
@@ -292,4 +295,4 @@ Bardziej zaawansowane operacje na bazie
 
         * Wykorzystaj ``cursor``
         * Dane powinny być zwracane dane w postaci listy ``dict``
-        * Do wpisywania danych wykorzystaj konstrukcję ``prepare``
+        * Do wpisywania danych wykorzystaj konstrukcję ``PreparedStatement``
