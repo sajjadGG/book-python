@@ -25,10 +25,11 @@ C Types
         return num;
     }
 
-.. code:: shell
+.. code:: console
 
-    gcc -fPIC -c -o hello-ctypes.o hello-ctypes.c -I/usr/local/Cellar/python3/3.5.2/Frameworks/Python.framework/Versions/3.5/include/python3.5m/
-    gcc -shared hello-ctypes.o -o hello-ctypes.so
+    $ gcc -fPIC -c -o hello-ctypes.o hello-ctypes.c -I/usr/local/Cellar/python3/3.5.2/Frameworks/Python.framework/Versions/3.5/include/python3.5m/
+
+    $ gcc -shared hello-ctypes.o -o hello-ctypes.so
 
 .. code-block:: python
 
@@ -163,11 +164,13 @@ Python 2
         description = 'Ehlo World!',
         ext_modules = [module])
 
-.. code:: shell
+.. code:: console
 
-    python setup.py build
-    cd build/lib*
-    python
+    $ python setup.py build
+
+    $ cd build/lib*
+
+    $ python
 
 .. code-block:: python
 

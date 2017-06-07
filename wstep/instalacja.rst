@@ -70,15 +70,15 @@ Jeżeli posiadasz OS X to Python powinien być domyślnie zainstalowany na Twoim
 
 Sama instalacja brew sprowadza do uruchomienia polecenia wyglądającego jak następujące:
 
-.. code:: bash
+.. code:: console
 
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 Następnie po instalacji:
 
-.. code:: bash
+.. code:: console
 
-    brew install python3
+    $ brew install python3
 
 I już możemy cieszyć się najnowszym Pythonem.
 

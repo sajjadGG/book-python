@@ -19,19 +19,19 @@ Code Quality
     * Comes with a comprehensive test suite.
 
 :Installation:
-    .. code:: bash
+    .. code:: console
 
-        pip install pep8
-        pip install --upgrade pep8
-        pip uninstall pep8
+        $ pip install pep8
+        $ pip install --upgrade pep8
+        $ pip uninstall pep8
 
 :Usage:
-    .. code:: bash
+    .. code:: console
 
-        pep8 FILENAME.py
-        pep8 DIRECTORY/
-        pep8 --statistics -qq DIRECTORY/
-        pep8 --show-source --show-pep8 FILENAME.py
+        $ pep8 FILENAME.py
+        $ pep8 DIRECTORY/
+        $ pep8 --statistics -qq DIRECTORY/
+        $ pep8 --show-source --show-pep8 FILENAME.py
 
 :Config:
     ``setup.cfg``
@@ -62,17 +62,17 @@ Code Quality
     Pylint is a Python source code analyzer which looks for programming errors, helps enforcing a coding standard and sniffs for some code smells (as defined in Martin Fowler’s Refactoring book). Pylint has many rules enabled by default, way too much to silence them all on a minimally sized program. It’s highly configurable and handle pragmas to control it from within your code. Additionally, it is possible to write plugins to add your own checks.
 
 :Install:
-    .. code:: bash
+    .. code:: console
 
-        pip install pylint
-        pip install --upgrade pylint
-        pip uninstall pylint
+        $ pip install pylint
+        $ pip install --upgrade pylint
+        $ pip uninstall pylint
 
 :Usage:
-    .. code:: bash
+    .. code:: console
 
-        pylint DIRECTORY/
-        pylint FILENAME.py
+        $ pylint DIRECTORY/
+        $ pylint FILENAME.py
 
 :More information:
     * https://pypi.python.org/pypi/pylint/
@@ -85,17 +85,17 @@ Code Quality
     A simple program which checks Python source files for errors. Pyflakes analyzes programs and detects various errors. It works by parsing the source file, not importing it, so it is safe to use on modules with side effects. It’s also much faster.
 
 :Install:
-    .. code:: shell
+    .. code:: console
 
-        pip install pyflakes
-        pip install --upgrade pyflakes
-        pip uninstall pyflakes
+        $ pip install pyflakes
+        $ pip install --upgrade pyflakes
+        $ pip uninstall pyflakes
 
 :Usage:
-    .. code:: bash
+    .. code:: console
 
-        pyflakes DIRECTORY/
-        python -m pyflakes DIRECTORY/
+        $ pyflakes DIRECTORY/
+        $ python -m pyflakes DIRECTORY/
 
 :More information:
     * https://pypi.python.org/pypi/pyflakes
@@ -108,17 +108,17 @@ Code Quality
     Coverage.py measures code coverage, typically during test execution. It uses the code analysis tools and tracing hooks provided in the Python standard library to determine which lines are executable, and which have been executed.
 
 :Install:
-    .. code:: bash
+    .. code:: console
 
-        pip install coverage
-        pip install --upgrade coverage
-        pip uninstall coverage
+        $ pip install coverage
+        $ pip install --upgrade coverage
+        $ pip uninstall coverage
 
 :Usage:
-    .. code:: bash
+    .. code:: console
 
-        coverage run FILENAME.py
-        coverage report -m
+        $ coverage run FILENAME.py
+        $ coverage report -m
 
 :More information:
     * https://pypi.python.org/pypi/coverage
@@ -129,9 +129,9 @@ Code Quality
 ------------
 
 :Usage:
-    .. code:: bash
+    .. code:: console
 
-        python -m unittest FILENAME.py
+        $ python -m unittest FILENAME.py
 
 
 Automation and Releases
@@ -141,11 +141,11 @@ Fabric
 ------
 
 :Install:
-    .. code:: bash
+    .. code:: console
 
-        pip install fabric
-        pip install --upgrade fabric
-        pip uninstall fabric
+        $ pip install fabric
+        $ pip install --upgrade fabric
+        $ pip uninstall fabric
 
 Testy Mutacyjne
 ===============

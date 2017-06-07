@@ -10,7 +10,7 @@ W lekcjach programowania utarło się, że zawsze zaczynamy od już przysłowiow
 
 W Pythonie mamy możliwość wykorzystania interpretera REPL, przykład poniżej oraz stworzenia skryptu, który wykonamy z linii poleceń.
 
-.. code:: bash
+.. code:: console
 
     $ python
 
@@ -27,7 +27,7 @@ Powyższy przykład ilustruje moment wpisania polecenia ``python``, standardowy 
 
 Drugim sposobem jest stworzenie skryptu posiadającego następujące linie. Ta metoda przydaje nam się gdy nasze programy zaczną rosnąć na więcej niż jedną dwie linijki. Warto zwrócić uwagę na pierwszą linię, na tzw. shebang ``#!`` i następujące po nim polecenie. To jest deklaracja programu, którego kod źródłowy znajduje się poniżej. Linijka ta jest opcjonalna, ale dla zachowania poprawności i warto w naszych skryptach coś takiego zadeklarować. Już po pierwszej linii widzimy, że skrypt będzie zinterpretowany jako kod źródłowy trzeciej wersji Pythona.
 
-.. code:: bash
+.. code:: python
 
     #!/usr/bin/env python3
 

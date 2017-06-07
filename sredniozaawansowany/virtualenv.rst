@@ -9,18 +9,18 @@ Wraz z wersją Python 3.3 do języka został dodany ten genialny moduł. Aplika
 
 Tworzenie takiego środowiska jest bardzo łatwe i szybkie:
 
-.. code:: bash
+.. code:: console
 
-    python3 -m venv .virtualenv
+    $ python3 -m venv .virtualenv
 
 Aktywacja i korzystanie ze środowiska
 =====================================
 
 I po chwili w pojawi się katalog .virtualenv ze środowiskiem. Następnie za każdym razem kiedy będziesz chciał pracować wykorzystując to środowisko będzie konieczna jego aktywacja:
 
-.. code:: bash
+.. code:: console
 
-    source .virtualenv/bin/activate
+    $ source .virtualenv/bin/activate
 
 lub na Windowsie:
 
@@ -56,7 +56,7 @@ Dodaj poniższą linikję do ``~/.profile``:
 
 Później aby aktywować środowisko wystarczy przejść do katalogu z projektem i wpisać w terminalu:
 
-.. code-block:: bash
+.. code-block:: console
 
     $ work
 
@@ -73,9 +73,9 @@ Każda instalacja pakietów oraz bibliotek wykona się w środowisku. Skrypt kt�
 
 Aby zainstalować jakieś nowe paczki należy użyć polecenia ``pip``. Od wersji Python 3.4 ``pip`` jest zainstalowany domyślnie.
 
-.. code:: bash
+.. code:: console
 
-    pip install pep8
+    $ pip install pep8
 
 lub na Windows:
 
@@ -88,9 +88,9 @@ Lista zainstalowanych paczek
 
 Aby zobaczyć zainstalowane paczki, użyj polecenia ``pip freeze``. Przekierowując wynik tego polecenia do pliku ``requirements.txt`` stworzysz listę zależności wraz z wersjami, które są niezbędne dla uruchomienia Twojego programu.
 
-.. code:: bash
+.. code:: console
 
-    pip freeze > requirements.txt
+    $ pip freeze > requirements.txt
 
 lub na Windows:
 

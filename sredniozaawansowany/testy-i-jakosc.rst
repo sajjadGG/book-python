@@ -325,13 +325,13 @@ For a nicer presentation, use ``coverage html`` to get annotated HTML listings d
 PEP8
 ----
 
-.. code-block:: shell
+.. code-block:: console
 
-    pip install pep8
+    $ pip install pep8
 
-    pep8 my_program.py
+    $ pep8 my_program.py
 
-    pep8 my_module/
+    $ pep8 my_module/
 
 setup.cfg
 ~~~~~~~~~
