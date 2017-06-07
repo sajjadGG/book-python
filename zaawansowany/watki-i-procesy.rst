@@ -8,9 +8,11 @@ Kolejki
 Queue
 -----
 
-PriorityQueue
+PriorityQueue:
 
-__all__ = ['Empty', 'Full', 'Queue', 'PriorityQueue', 'LifoQueue']
+.. code-block:: python
+
+    __all__ = ['Empty', 'Full', 'Queue', 'PriorityQueue', 'LifoQueue']
 
 
 
