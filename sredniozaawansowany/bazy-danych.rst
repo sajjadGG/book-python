@@ -137,11 +137,141 @@ Context manager
 ``pyMySQL``
 ===========
 
+.. code-block:: console
+
+    $ pip install PyMySQL
+
+.. code-block:: sql
+
+    CREATE TABLE `users` (
+        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `email` varchar(255) COLLATE utf8_bin NOT NULL,
+        `password` varchar(255) COLLATE utf8_bin NOT NULL,
+        PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin
+    AUTO_INCREMENT=1 ;
+
+.. code-block:: python
+
+    import pymysql.cursors
+
+    # Connect to the database
+    connection = pymysql.connect(host='localhost',
+                                 user='user',
+                                 password='passwd',
+                                 db='db',
+                                 charset='utf8mb4',
+                                 cursorclass=pymysql.cursors.DictCursor)
+
+    try:
+        with connection.cursor() as cursor:
+            # Create a new record
+            sql = "INSERT INTO `users` (`email`, `password`) VALUES (%s, %s)"
+            cursor.execute(sql, ('webmaster@python.org', 'very-secret'))
+
+        # connection is not autocommit by default. So you must commit to save
+        # your changes.
+        connection.commit()
+
+        with connection.cursor() as cursor:
+            # Read a single record
+            sql = "SELECT `id`, `password` FROM `users` WHERE `email`=%s"
+            cursor.execute(sql, ('webmaster@python.org',))
+            result = cursor.fetchone()
+            print(result)
+    finally:
+        connection.close()
+
+
 ``psycopg2``
 ============
 
+* http://initd.org/psycopg/
+* http://initd.org/psycopg/docs/usage.html
+
+.. code-block:: console
+
+    $ pip install psycopg2
+
+.. code-block:: python
+
+    >>> import psycopg2
+
+    # Connect to an existing database
+    >>> conn = psycopg2.connect("dbname=test user=postgres")
+
+    # Open a cursor to perform database operations
+    >>> cur = conn.cursor()
+
+    # Execute a command: this creates a new table
+    >>> cur.execute("CREATE TABLE test (id serial PRIMARY KEY, num integer, data varchar);")
+
+    # Pass data to fill a query placeholders and let Psycopg perform
+    # the correct conversion (no more SQL injections!)
+    >>> cur.execute("INSERT INTO test (num, data) VALUES (%s, %s)",
+    ...      (100, "abc'def"))
+
+    # Query the database and obtain data as Python objects
+    >>> cur.execute("SELECT * FROM test;")
+    >>> cur.fetchone()
+    (1, 100, "abc'def")
+
+    # Make the changes to the database persistent
+    >>> conn.commit()
+
+    # Close communication with the database
+    >>> cur.close()
+    >>> conn.close()
+
+.. code-block:: python
+
+    conn = psycopg2.connect(DSN)
+
+    with conn:
+        with conn.cursor() as curs:
+            curs.execute(SQL1)
+
+    with conn:
+        with conn.cursor() as curs:
+            curs.execute(SQL2)
+
+    conn.close()
+
+
 ``pymongo``
 ===========
+
+* http://api.mongodb.com/python/current/tutorial.html
+
+.. code-block:: console
+
+    $ python -m pip install pymongo
+
+.. code-block:: python
+
+    >>> from pymongo import MongoClient
+
+    >>> client = MongoClient('mongodb://localhost:27017/')
+    >>> db = client.test_database
+
+    >>> import datetime
+    >>> post = {"author": "Mike",
+    ...         "text": "My first blog post!",
+    ...         "tags": ["mongodb", "python", "pymongo"],
+    ...         "date": datetime.datetime.utcnow()}
+
+    >>> posts = db.posts
+    >>> post_id = posts.insert_one(post).inserted_id
+    >>> post_id
+    ObjectId('...')
+
+.. code-block:: python
+
+    >>> for post in posts.find():
+    ...   pprint.pprint(post)
+
+    >>> for post in posts.find({"author": "Mike"}):
+    ...   pprint.pprint(post)
 
 ``SQLAlchemy``
 ==============
@@ -150,15 +280,13 @@ Context manager
 Zadania kontrolne
 =================
 
-Ksiażka adresowa
-----------------
-
+Tworzenie bazy danych i proste zapytania
+----------------------------------------
 :Zadanie:
     Skrypt z książką adresową z poprzednich zadań przepisz tak, aby wykorzystywał bazę danych do składowania informacji.
 
-Passwd
-------
-
+Bardziej zaawansowane operacje na bazie
+---------------------------------------
 :Zadanie:
     Skrypt z książką adresową z poprzednich zadań przepisz tak, aby wykorzystywał bazę danych do składowania informacji:
 
