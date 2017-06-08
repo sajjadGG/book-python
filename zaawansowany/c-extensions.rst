@@ -47,6 +47,16 @@ Argumenty
 * ``ctypes.c_char_p``
 * ``ctypes.POINTER(ctypes.c_double)``
 
+.. code-block:: python
+
+    lib.my_function.argtypes = [
+        ctypes.c_char_p,
+        ctypes.c_int,
+        ctypes.POINTER(ctypes.c_double),
+    ]
+
+    lib.my_function.restype = ctypes.c_char_p
+
 Przykład - typy proste
 ----------------------
 
