@@ -2,26 +2,50 @@
 Programowanie funkcyjne
 ***********************
 
-lambda
-======
+Rekurencja
+==========
+
+* warunek zakończenia
+* maksymalna ilość zagłębień
 
 .. code-block:: python
 
-    def czy_parzysta(x):
+    def factorial(n):
+        if n == 0:
+            return 1
+        else:
+            return n * factorial(n-1)
+
+Lambda - funkcje anonimowe
+==========================
+
+.. code-block:: python
+
+    lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
+    def parzystosc(x):
         if x % 2 == 0:
             return True
         else:
             return False
 
-    parzyste = filter(czy_parzysta, liczby)
 
+    parzyste1 = filter(lambda x: x % 2 == 0, lista)
+    parzyste2 = filter(parzystosc, lista)
 
-    foo = lambda x: x*x
-    print(foo(10))
+    print(list(parzyste1))
+    print(list(parzyste2))
 
-    liczby = [1, 2, 3, 4]
-    parzyste = filter(lambda x: x % 2 == 0, liczby)
+.. code-block:: python
 
+    class Osoba:
+        pass
+
+    o = Osoba()
+    o.say_hello = lambda: print('hello')
+
+    o.say_hello()
 
 
 Closure
@@ -204,12 +228,12 @@ Equivalent to:
 
 .. code-block:: python
 
-    def fact(n):
-        if not hasattr(fact, 'mem'):
-            fact.mem = {1: 1}
-        if not n in fact.mem:
-            fact.mem[n] = n * fact(n - 1)
-        return fact.mem[n]
+    def factorial(n):
+        if not hasattr(factorial, 'mem'):
+            factorial.mem = {1: 1}
+        if not n in factorial.mem:
+            factorial.mem[n] = n * factorial(n - 1)
+        return factorial.mem[n]
 
 .. code-block:: python
 
@@ -246,3 +270,21 @@ Używając generatora zbuduj listę zawierającą wszystkie liczby podzielne prz
 * Używając funkcji ``filter()`` usuń z niej wszystkie liczby parzyste
 * Używając wyrażenia ``lambda`` i funkcji ``map()`` podnieś wszystkie elementy tak otrzymanej listy do sześcianu
 * Odpowiednio używając funkcji ``sum()``  i ``len()`` oblicz średnią arytmetyczną z elementów tak otrzymanej listy.
+
+Zbalansowanie nawiasów
+----------------------
+Napisz kod, który za pomocą rekurencji sprawdzi zbalansowanie nawiasów, tzn. czy ilość otwieranych nawiasów jest równa ilości nawiasów zamykanych. Zwórć uwagę, że mogą być cztery typy nawiasów:
+
+* okrągłe: ``(`` i ``)``
+* kwadratowe: ``[`` i ``]``
+* klamrowe ``{`` i ``}``
+* trójkątne ``<`` i ``>``
+
+.. code-block:: python
+
+    >>> zbalansowanie_nawiasow("() [] () ([]()[])")
+    True
+
+    >>> zbalansowanie_nawiasow("( (] ([)]")
+    False
+

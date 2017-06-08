@@ -45,6 +45,7 @@ Podstawy
 
     podstawy/funkcje.rst
     podstawy/builtin.rst
+    podstawy/matematyka.rst
 
     podstawy/print-formatting.rst
     podstawy/doctests.rst
@@ -55,7 +56,6 @@ Podstawy
     podstawy/pliki.rst
 
     podstawy/dobre-praktyki.rst
-    podstawy/zadania.rst
 
 Średniozaawansowany
 ===================
@@ -86,8 +86,6 @@ Podstawy
     sredniozaawansowany/tworzenie-dokumentacji.rst
     sredniozaawansowany/django.rst
     sredniozaawansowany/programowanie-gui.rst
-
-    sredniozaawansowany/zadania.rst
 
 Zaawansowany
 ============

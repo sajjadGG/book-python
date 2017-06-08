@@ -186,23 +186,38 @@ Przykładowe zastosowanie
     print(czy_utworzone)
 
 
-Lambda - funkcje anonimowe
-==========================
+Zadania kontrolne
+=================
+
+Konwersja liczby na zapis słowny
+--------------------------------
+Napisz program ``numer.py``, który zamieni wprowadzony przez użytkownika ciąg cyfr na formę tekstową:
+
+* znaki nie będące cyframi mają być ignorowane
+* konwertujemy cyfry, nie liczby, a zatem:
+
+  * 911 to "dziewięć jeden jeden"
+  * 1100 to "jeden jeden zero zero"
+
+* Napisz testy sprawdzające przypadki brzegowe.
 
 .. code-block:: python
 
-    lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    >>> int_to_str(999)
+    'dziewiećset dziewięćdziesiąt dziewięć'
+    >>> int_to_str(127.32)
+    'sto dwadzieścia siedem i trzydzieści dwa setne'
+
+:Zakres:
+    * 6 cyfr przed przecinkiem
+    * 5 cyfr po przecinku
 
 
-    def parzystosc(x):
-        if x % 2 == 0:
-            return True
-        else:
-            return False
+Rzymskie
+--------
+:Zadanie 1:
+    Napisz program, który przeliczy wprowadzoną liczbę rzymską na jej postać dziesiętną.
 
+:Zadanie 2:
+    Zrób drugą funkcję, która dokona procesu odwrotnego.
 
-    parzyste1 = filter(lambda x: x % 2 == 0, lista)
-    parzyste2 = filter(parzystosc, lista)
-
-    print(list(parzyste1))
-    print(list(parzyste2))
