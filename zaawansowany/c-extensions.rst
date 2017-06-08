@@ -88,7 +88,7 @@ Przykład - typy proste
     lib.ehlo()
 
     lib.greeting.argtypes = [ctypes.c_char_p]
-    name = ctypes.create_string_buffer('Matt'.encode())
+    name = ctypes.create_string_buffer('Matt'.encode('ASCII'))
     lib.greeting(name)
 
     lib.number(10)
@@ -116,6 +116,32 @@ Wywołania funkcji
 
 
     lib.printf("I'm C printf() function called from Python")
+
+Overflow
+--------
+
+.. code-block:: C
+
+    #include <stdio.h>
+
+    void wypisz_liczbe(int liczba) {
+        printf("Liczba to: %d", liczba);
+    }
+
+.. code-block:: python
+
+    >>> import ctypes
+    >>> lib = ctypes.CDLL('biblioteka.so')
+
+    >>> lib.wypisz_liczbe(10 ** 10)
+    Liczba to: 1410065408
+
+    >>> lib.wypisz_liczbe(10 ** 30)
+    Traceback (most recent call last):
+        File "main.py", line 6, in <module>
+            lib.wypisz_liczbe(10 ** 30)
+    ctypes.ArgumentError: argument 1: <class 'OverflowError'>: int too long to convert
+
 
 C Modules
 =========
