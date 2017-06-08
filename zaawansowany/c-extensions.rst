@@ -27,8 +27,8 @@ C Types
 
 .. code:: console
 
-    $ gcc -fPIC -c -o hello-ctypes.o hello-ctypes.c -I/usr/local/Cellar/python3/3.6.1/Frameworks/Python.framework/Versions/3.6/include/python3.6m/
-
+    $ include_dir='-I/usr/local/Cellar/python3/3.6.1/Frameworks/Python.framework/Versions/3.6/include/python3.6m/'
+    $ gcc -fPIC -c -o hello-ctypes.o hello-ctypes.c ${include_dir}
     $ gcc -shared hello-ctypes.o -o hello-ctypes.so
 
 .. code-block:: python
