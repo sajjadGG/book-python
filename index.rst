@@ -66,14 +66,11 @@ Podstawy
     :caption: Średniozaawansowany
     :name: średniozaawansowany
 
-    sredniozaawansowany/virtualenv.rst
-
     sredniozaawansowany/datetime.rst
     sredniozaawansowany/logging.rst
     sredniozaawansowany/serializacja.rst
     sredniozaawansowany/introspection.rst
 
-    sredniozaawansowany/biblioteka-standardowa.rst
     sredniozaawansowany/biblioteki-zewnetrzne.rst
     sredniozaawansowany/system-operacyjny.rst
     sredniozaawansowany/linia-polecen.rst
@@ -96,6 +93,7 @@ Zaawansowany
     :caption: Zaawansowany
     :name: zaawansowany
 
+    sredniozaawansowany/virtualenv.rst
     zaawansowany/type-annotation.rst
 
     zaawansowany/programowanie-http.rst
@@ -105,6 +103,7 @@ Zaawansowany
     zaawansowany/iterators.rst
     zaawansowany/context-managers.rst
     zaawansowany/decorators.rst
+    zaawansowany/collections.rst
 
     zaawansowany/watki-i-procesy.rst
     zaawansowany/concurrency.rst

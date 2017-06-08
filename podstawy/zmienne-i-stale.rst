@@ -198,6 +198,16 @@ Wycinanie części stringów
     >>> text[:-2]
     'Lorem ips'
 
+``io``
+------
+
+.. code-block:: python
+
+    import io
+
+    io.StringIO
+
+
 
 Logiczne typy danych
 ====================

@@ -167,7 +167,7 @@ Timeout dla wykonywania poleceń
 .. code-block:: python
 
     import subprocess
-    cmd = ['ping', 'www.nasa.gov']
+    cmd = ['ping', 'nasa.gov']
 
     try:
         subprocess.run(cmd, timeout=5)
