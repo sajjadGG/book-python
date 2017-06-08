@@ -23,12 +23,12 @@ Instrukcje warunkowe
 
 .. code-block:: python
 
-    if name == 'Agata':
-        print('Your name is Agata')
-    elif name == 'Borys':
-        print('Your name is Borys')
+    if name == 'José Jiménez':
+         print('My name José Jiménez')
+    elif name == 'Max Peck':
+        print('Your name is Max Peck')
     else:
-         print('Your name is neither Boris nor Agata')
+         print('Your name is neither José Jiménez nor Max Peck')
 
 .. code-block:: python
 
@@ -41,18 +41,18 @@ Instrukcje warunkowe
 
 .. code-block:: python
 
-    if name in ['Agata', 'Boris']:
-        print('Your name is Agata or Boris')
+    if name in ['José Jiménez', 'Max Peck']:
+        print('Your name is José Jiménez or Max Peck')
     else:
-         print('Your name is neither Boris nor Agata')
+         print('Your name is neither José Jiménez nor Max Peck')
 
 
 .. code-block:: python
 
-    if not name == 'Agata':
-         print('this is false')
+    if not name == 'José Jiménez':
+         print('Not José')
      else:
-         print('this is true')
+         print('My name José Jiménez')
 
 .. code-block:: python
 
@@ -76,12 +76,12 @@ Instrukcje warunkowe
 
 .. code-block:: python
 
-    if name == 'Agata':
-        print('Your name is Agata')
-    elif name == 'Borys':
-        print('Your name is Borys')
-    elif name == 'Matt':
-        print('Your name is Borys')
+    if name == 'José Jiménez':
+        print('My name José Jiménez')
+    elif name == 'Ivan Ivanovic':
+        print('Your name is Ivan Ivanovic')
+    elif name == 'Max Peck':
+        print('Your name is Max Peck')
     else:
          print('Your name is other')
 
@@ -121,4 +121,4 @@ Napisz program, który wczytuje od użytkownika kolejne oceny i:
     * dla ułatwienia wszystkie oceny mogą być typu ``float``
     * ``len()`` ``sum()``
     * ``in``
-    * ``import statistics`` ``statistics.mean()``
+    * ``statistics.mean()``

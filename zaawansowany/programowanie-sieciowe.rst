@@ -40,7 +40,7 @@ Mini Botnet
 
 Stwórz program, który otworzy socket na porcie na localhoście podanym przez użytkownika z linii poleceń (wykorzystaj ``argparse``) i będzie nasłuchiwał połączeń. Zweryfikuj za pomocą ``telnet`` albo ``netcat`` czy program odpowiada. Następnie napisz w pythonie klienta, który będzie wysyłał polecenia do tamtego programu.
 
-* port na którym nasłuchuje maszyna ofiary powinien być losowo wybierany i przesyłany w komunikacie *ping*.
+* port na którym nasłuchuje maszyna ofiary powinien być losowo wybierany (od 1025-65535 [dlaczego taki zakres?]) i przesyłany w komunikacie *ping*.
 * przychodzące pingi, ich data, host i port źródłowy zapisać w bazie ``sqlite3`` na hoście attackera
 * przetwarzanie requestów jest nieblokujące, tzn. otwieraj wątek dla każdego zapytania
 * wykonaj polecenie za pomocą ``eval`` w systemie operacyjnym i zwróć klientowi odpowiedź
