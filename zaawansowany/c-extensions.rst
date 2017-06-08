@@ -5,6 +5,39 @@ C Extensions
 C Types
 =======
 
+Kompilacja
+----------
+.. code:: console
+
+    $ include_dir='-I/usr/local/Cellar/python3/3.6.1/Frameworks/Python.framework/Versions/3.6/include/python3.6m/'
+    $ gcc -fPIC -c -o hello-ctypes.o hello-ctypes.c ${include_dir}
+    $ gcc -shared hello-ctypes.o -o hello-ctypes.so
+
+Przykład - Rekurencja
+---------------------
+.. code-block:: C
+
+    long factorial(long n) {
+        if (n == 0)
+            return 1;
+
+        return (n * factorial(n - 1));
+    }
+
+.. code-block:: python
+
+    >>> import ctypes
+    >>> lib = ctypes.CDLL('hello-ctypes.so')
+
+    >>> lib.factorial(16)
+    2004189184
+
+    >>> lib.factorial(17)
+    -288522240
+
+Przykład - typy proste
+----------------------
+
 .. code-block:: C
 
     #include <stdio.h>
@@ -25,12 +58,6 @@ C Types
         return num;
     }
 
-.. code:: console
-
-    $ include_dir='-I/usr/local/Cellar/python3/3.6.1/Frameworks/Python.framework/Versions/3.6/include/python3.6m/'
-    $ gcc -fPIC -c -o hello-ctypes.o hello-ctypes.c ${include_dir}
-    $ gcc -shared hello-ctypes.o -o hello-ctypes.so
-
 .. code-block:: python
 
     import ctypes
@@ -50,6 +77,31 @@ C Types
 
     i = ehlo.myint(15)
     print(i)
+
+
+Arguments
+---------
+
+* ``ctypes.POINTER(ctypes.c_double)``
+* ``ctypes.c_int``
+* ``ctypes.c_char_p``
+
+Wywołania funkcji
+-----------------
+
+
+.. code-block:: python
+
+    import sys
+    import ctypes
+
+    if sys.platform == 'darwin':
+       lib = ctypes.CDLL('/usr/lib/libc.dylib')
+    else:
+        lib = ctypes.CDLL('/usr/lib/libc.so')
+
+    lib.printf("I'm C printf() function called from Python")
+
 
 
 C Modules

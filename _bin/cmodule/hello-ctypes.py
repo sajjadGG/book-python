@@ -2,14 +2,29 @@
 
 import ctypes
 
-_hello = ctypes.CDLL('hello-ctypes.so')
-_hello.say_hello.argtypes = [ctypes.c_char_p]
+lib = ctypes.CDLL('hello-ctypes.so')
+
+print('-' * 30)
 
 name = 'Jose Jimenez'.encode('ASCII')
 buffer = ctypes.create_string_buffer(name)
-greeting = _hello.say_hello(buffer)
+lib.say_hello.argtypes = [ctypes.c_char_p]
+greeting = lib.say_hello(buffer)
 print(greeting)
 
-time = _hello.what_time()
+print('-' * 30)
+
+print('Factorial:')
+print(lib.factorial(16))
+print(lib.factorial(17))
+
+print('-' * 30)
+
+time = lib.what_time()
 print(time)
+
+print('-' * 30)
+
+lib = ctypes.CDLL('/usr/lib/libc.dylib')
+lib.printf("I'm C printf() function called from Python")
 
