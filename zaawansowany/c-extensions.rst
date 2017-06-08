@@ -2,6 +2,9 @@
 C Extensions
 ************
 
+* biblioteka ``ctypes``
+* C Modules
+
 C Types
 =======
 
@@ -10,8 +13,8 @@ Kompilacja
 .. code:: console
 
     $ include_dir='-I/usr/local/Cellar/python3/3.6.1/Frameworks/Python.framework/Versions/3.6/include/python3.6m/'
-    $ gcc -fPIC -c -o hello-ctypes.o hello-ctypes.c ${include_dir}
-    $ gcc -shared hello-ctypes.o -o hello-ctypes.so
+    $ gcc -fPIC -c -o mylib-ctypes.o mylib-ctypes.c ${include_dir}
+    $ gcc -shared mylib-ctypes.o -o mylib-ctypes.so
 
 Przykład - Rekurencja
 ---------------------
@@ -27,7 +30,7 @@ Przykład - Rekurencja
 .. code-block:: python
 
     >>> import ctypes
-    >>> lib = ctypes.CDLL('hello-ctypes.so')
+    >>> lib = ctypes.CDLL('mylib-ctypes.so')
 
     >>> lib.factorial(16)
     2004189184
@@ -61,15 +64,14 @@ Przykład - typy proste
         printf("My number %d\n", num);
     }
 
-    int myint(int num) {
+    int return_int(int num) {
         return num;
     }
 
 .. code-block:: python
 
     import ctypes
-
-    lib = ctypes.CDLL('hello-ctypes.so')
+    lib = ctypes.CDLL('mylib-ctypes.so')
 
     lib.ehlo()
 
@@ -81,8 +83,7 @@ Przykład - typy proste
 
     print(dir(lib))
 
-
-    i = lib.myint(15)
+    i = lib.return_int(15)
     print(i)
 
 Wywołania funkcji
@@ -93,10 +94,14 @@ Wywołania funkcji
     import sys
     import ctypes
 
+
     if sys.platform == 'darwin':
        lib = ctypes.CDLL('/usr/lib/libc.dylib')
+    elif sys.platform == 'win32':
+        lib = ctypes.CDLL('/usr/lib/libc.dll')
     else:
         lib = ctypes.CDLL('/usr/lib/libc.so')
+
 
     lib.printf("I'm C printf() function called from Python")
 
