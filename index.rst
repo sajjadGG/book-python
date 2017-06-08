@@ -96,19 +96,20 @@ Zaawansowany
     :caption: Zaawansowany
     :name: zaawansowany
 
-    zaawansowany/type-hinting.rst
+    zaawansowany/type-annotation.rst
 
     zaawansowany/programowanie-http.rst
     zaawansowany/programowanie-sieciowe.rst
 
-    zaawansowany/generatory.rst
-    zaawansowany/iteratory.rst
+    zaawansowany/generators.rst
+    zaawansowany/iterators.rst
+    zaawansowany/context-managers.rst
+    zaawansowany/decorators.rst
 
     zaawansowany/watki-i-procesy.rst
     zaawansowany/concurrency.rst
 
     zaawansowany/programowanie-funkcyjne.rst
-    zaawansowany/decorator.rst
 
     zaawansowany/wzorce-projektowe.rst
     zaawansowany/c-extensions.rst
@@ -152,7 +153,6 @@ Załączniki
     zalaczniki/przydatne-odnosniki.rst
     zalaczniki/python-2vs3.rst
     zalaczniki/wybor-ide.rst
-    zalaczniki/ekosystem-narzedziowy.rst
     zalaczniki/ksiazki.rst
     zalaczniki/python-wat.rst
 
