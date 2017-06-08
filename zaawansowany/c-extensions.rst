@@ -176,3 +176,14 @@ Python 2
 
     import hello
     hello.say_hello('José Jiménez')
+
+Zadania kontrolne
+=================
+
+C Types
+-------
+Wykorzystując C Types wyświetl na ekranie datę i czas, za pomocą funkcji zdefiniowanej w C ``<time.h>``
+
+C Modules
+---------
+Wykorzystując C Modules wyświetl na ekranie datę i czas, za pomocą funkcji zdefiniowanej w C ``<time.h>``
