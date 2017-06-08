@@ -41,9 +41,11 @@ Przykład - Rekurencja
 Argumenty
 ---------
 
-* ``ctypes.POINTER(ctypes.c_double)``
+* ``ctypes.c_double``
 * ``ctypes.c_int``
+* ``ctypes.c_char``
 * ``ctypes.c_char_p``
+* ``ctypes.POINTER(ctypes.c_double)``
 
 Przykład - typy proste
 ----------------------
