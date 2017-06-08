@@ -37,6 +37,12 @@ Mini Botnet
 
 Stwórz program, który otworzy socket na porcie na localhoście podanym przez użytkownika z linii poleceń (wykorzystaj ``argparse``) i będzie nasłuchiwał połączeń. Zweryfikuj za pomocą ``telnet`` albo ``netcat`` czy program odpowiada. Następnie napisz w pythonie klienta, który będzie wysyłał polecenia do tamtego programu.
 
+Pliki nazwij:
+
+* ``victim.py`` - ofiara
+* ``attacker-ping-server.py`` - serwer przyjmujący
+* ``attacker-execute-client.py``
+
 .. figure:: /_img/botnet.png
     :scale: 50%
     :align: center
@@ -45,11 +51,6 @@ Stwórz program, który otworzy socket na porcie na localhoście podanym przez u
 
 :Uwaga:
     * nigdy nie rób tego na produkcji bez tzw. sanityzacji parametrów, np. lista zaufanych hostów, możliwe polecenia!
-    * pliki nazwij:
-
-        * ``victim.py`` - ofiara
-        * ``attacker-ping-server.py`` - serwer przyjmujący
-        * ``attacker-execute-client.py``
 
 * zrób aby przetwarzanie requestów było nieblokujące, tzn. otwieraj wątek dla każdego zapytania
 * program wykona polecenie za pomocą ``eval``, które przyszło z zapytania
