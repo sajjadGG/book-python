@@ -101,8 +101,8 @@ Przykład trochę bardziej zaawansowany:
 .. code-block:: python
 
     my_data = {
-        "imie": "Mateusz",
-        "nazwisko": 'Harasymczuk',
+        "imie": "José",
+        "nazwisko": 'Jiménez',
         'wiek': 10,
     }
 
@@ -116,13 +116,13 @@ Dobieranie się do wartości elementów
 
 .. code-block:: python
 
-    >>> dane = {'imie': 'Jan', 'nazwisko': 'Kowalski'}
+    >>> dane = {'imie': 'José', 'nazwisko': 'Jiménez'}
 
     >>> dane['nazwisko']
-    'Kowalski'
+    'Jiménez'
 
     >>> dane.get('nazwisko')
-    'Kowalski'
+    'Jiménez'
 
     >>> dane['wiek']
     Traceback (most recent call last):
@@ -143,11 +143,11 @@ Lista słowników
 .. code-block:: python
 
     studenci = [
-        {'imie': 'Mateusz'},
-        {'imie': 'Angelika', 'nazwisko': 'Nowak'},
-        {'imie': 'Dawid', 'nazwisko': 'Kowalski'},
-        {'imie': 'Piotr', 'nazwisko': None},
-        {'imie': 'Grzegorz', 'programuje w': ['python', 'java', 'c/c++']},
+        {'imie': 'Matt'},
+        {'imie': 'Max', 'nazwisko': 'Peck'},
+        {'imie': 'José', 'nazwisko': 'Jiménez'},
+        {'imie': 'Ivan', 'nazwisko': None},
+        {'imie': 'Buster', 'programuje w': ['python', 'java', 'c/c++']},
     ]
 
     dane = studenci[0]['nazwisko']
@@ -174,7 +174,7 @@ Mieszane typy
         [0, 1, 2],
         (1, 2, 3),
         set([1, 3, 1]),
-        {'imie': 'Jan', 'nazwisko': 'Kowalski'}
+        {'imie': 'José', 'nazwisko': 'Jiménez'}
     ]
 
 Jak inicjować poszczególne typy?

@@ -10,6 +10,12 @@ Pętla ``for``
     for x in [1, 3, 4, 2]:
         print(f'Value is: {x}')
 
+
+.. code-block:: python
+
+    for x in ['Max', 3, 'Peck', 2.8, [1, 'José', 'Jiménez']]:
+        print(f'Value is: {x}')
+
 .. code-block:: python
 
     for x in range(0, 30):

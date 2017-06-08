@@ -18,7 +18,7 @@ Dziedziczenie
 
     class Samochod(Pojazd):
         marka = None
-        kierowca = {'imie': 'Matt', 'nazwisko': 'Harasymczuk'}
+        kierowca = {'imie': 'José', 'nazwisko': 'Jiménez'}
 
     class Motor(Pojazd):
         marka = 'honda'
@@ -34,7 +34,7 @@ Wielodziedziczenie
 
     class Samochod(Pojazd):
         marka = None
-        kierowca = {'imie': 'Matt', 'nazwisko': 'Harasymczuk'}
+        kierowca = {'imie': 'José', 'nazwisko': 'Jiménez'}
 
     class Jeep(Samochod):
         marka = 'jeep'
@@ -405,7 +405,7 @@ Co powinno być w klasie a co nie?
     print(Osoba.wiek)
 
 
-    o = Osoba(imie='Matt')
+    o = Osoba(imie='Ivan')
     o.powiedz_hello()
     print(Osoba.wiek)
 
@@ -419,40 +419,40 @@ Przykłady praktyczne
 .. code-block:: python
 
     >>> class Osoba:
-    ...    nazwisko = 'Harasymczuk'
+    ...    nazwisko = 'Jiménez'
     ...
     ...    def __init__(self, imie):
     ...        self.imie = imie
 
-    >>> o1 = Osoba('Matt')
-    >>> o2 = Osoba('Maciej')
+    >>> o1 = Osoba('Jose')
+    >>> o2 = Osoba('Ivan')
 
 
     >>> print(o1.nazwisko)
-    Harasymczuk
+    Jiménez
 
     >>> print(o2.nazwisko)
-    Harasymczuk
+    Jiménez
 
 
 
-    >>>o1.nazwisko = 'XYZ'
+    >>>o1.nazwisko = 'Ivanovic'
 
     >>> print(o1.nazwisko)
-    XYZ
+    Ivanovic
 
     >>> print(o2.nazwisko)
-    Harasymczuk
+    Jiménez
 
 
 
-    >>> Osoba.nazwisko = 'ABC'
+    >>> Osoba.nazwisko = 'Peck'
 
     >>> print(o1.nazwisko)
-    XYZ
+    Ivanovic
 
     >>> print(o2.nazwisko)
-    ABC
+    Peck
 
 
 
