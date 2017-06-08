@@ -58,10 +58,9 @@ Operator ``yield``
 .. code-block:: python
 
     osoby_w_klasie = [
-        {'username': 'wykladowca1', 'czy_wykladowca': True},
-        {'username': 'uczen1', 'czy_wykladowca': False},
-        {'username': 'uczen2', 'czy_wykladowca': False},
-        {'username': 'uczen3', 'czy_wykladowca': False},
+        {'username': 'ivan-ivanovic', 'czy_wykladowca': True},
+        {'username': 'max-peck', 'czy_wykladowca': False},
+        {'username': 'jose-jimenez', 'czy_wykladowca': False},
     ]
 
 
@@ -82,10 +81,9 @@ Operator ``yield``
 .. code-block:: python
 
     osoby_w_klasie = [
-        {'username': 'wykladowca1', 'czy_wykladowca': True},
-        {'username': 'uczen1', 'czy_wykladowca': False},
-        {'username': 'uczen2', 'czy_wykladowca': False},
-        {'username': 'uczen3', 'czy_wykladowca': False},
+        {'username': 'ivan-ivanovic', 'czy_wykladowca': True},
+        {'username': 'max-peck', 'czy_wykladowca': False},
+        {'username': 'jose-jimenez', 'czy_wykladowca': False},
     ]
 
     def uczestnicy_kursu_yield():
@@ -101,10 +99,9 @@ Operator ``yield``
 .. code-block:: python
 
     osoby_w_klasie = [
-        {'username': 'wykladowca1', 'czy_wykladowca': True},
-        {'username': 'uczen1', 'czy_wykladowca': False},
-        {'username': 'uczen2', 'czy_wykladowca': False},
-        {'username': 'uczen3', 'czy_wykladowca': False},
+        {'username': 'ivan-ivanovic', 'czy_wykladowca': True},
+        {'username': 'max-peck', 'czy_wykladowca': False},
+        {'username': 'jose-jimenez', 'czy_wykladowca': False},
     ]
 
 
@@ -149,12 +146,12 @@ Zamiana klucz wartość oraz generowanie ``dict`` i ``set``
 
 .. code-block:: python
 
-    >>> osoba = {'username': 'wykladowca1', 'czy_wykladowca': True}
+    >>> osoba = {'username': 'Ivan Ivanovic', 'czy_wykladowca': True}
 
     >>> out = {wartosc: klucz for klucz, wartosc in osoba.items()}
 
     >>> print(out)
-    {'wykladowca1': 'username', True: 'czy_wykladowca'}
+    {'wykladowca1': 'Ivan Ivanovic', True: 'czy_wykladowca'}
 
     >>> type(out)
     <class 'dict'>
@@ -162,7 +159,7 @@ Zamiana klucz wartość oraz generowanie ``dict`` i ``set``
     >>> out = {wartosc for klucz, wartosc in osoba.items()}
 
     >>> print(out)
-    {'wykladowca1', True}
+    {'Ivan Ivanovic', True}
 
     >>> type(out)
     <class 'set'>
@@ -173,21 +170,21 @@ Filtrowanie wyników na liście dictów
 .. code-block:: python
 
     ADDRESS_BOOK = [
-        {'imie': 'Matt',
-        'nazwisko': 'Harasymczuk',
-        'ulica': 'Westpad',
-        'miasto': 'Katwijk aan Zee',
-        'kod_pocztowy': '2224',
-        'wojewodztwo': 'Zuid-Holland',
-        'panstwo': 'Netherlands'},
+        {'imie': 'Ivan',
+        'nazwisko': 'Ivanovic',
+        'ulica': 'Wochod',
+        'miasto': 'Bajkonur',
+        'kod_pocztowy': '101503',
+        'wojewodztwo': 'Kyzyłordyńskie',
+        'panstwo': 'Kazachstan'},
 
-        {'imie': 'Angelika',
-        'nazwisko': 'Jan',
-        'ulica': 'Bial',
-        'miasto': 'Warszawa',
-        'kod_pocztowy': '02-370',
-        'wojewodztwo': 'Mazowieckie',
-        'panstwo': 'Polska'},
+        {'imie': 'José',
+        'nazwisko': 'Jiménez',
+        'ulica': '2101 E NASA Pkwy',
+        'miasto': 'Huston',
+        'kod_pocztowy': '77058',
+        'wojewodztwo': 'Texas',
+        'panstwo': 'USA'},
     ]
 
     osoby = [{'imie': x['imie'], 'nazwisko': x['nazwisko']} for x in ADDRESS_BOOK]

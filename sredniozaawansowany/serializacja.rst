@@ -14,7 +14,7 @@ Serializacja
     ...     now.__str__(),
     ...     '%s' % now,
     ...     '{}'.format(now),
-    ...     {'imię': 'Mattół', 'nazwisko': 'Harasymczuk'},
+    ...     {'imie': 'Ivan', 'nazwisko': 'Ivanovic'},
     ...     (10, 20, 30),
     ...     (1,)
     ]
@@ -39,11 +39,11 @@ Serializacja
 
 .. code-block:: python
 
-    >>> DATA = {'first_name': 'Matt', 'last_name': 'Harasymczuk'}
+    >>> DATA = {'first_name': 'Ivan', 'last_name': 'Ivanovic'}
 
     >>> import json
     >>> json.dumps(DATA)
-    '{"first_name": "Matt", "last_name": "Harasymczuk"}'
+    '{"first_name": "Ivan", "last_name": "Ivanovic"}'
 
 Problem z rzutowaniem daty na JSON:
 
@@ -110,7 +110,7 @@ Problem z rzutowaniem daty na JSON:
 
 
 
-    matt = Osoba(imie='Matt', nazwisko='...')
+    matt = Osoba(imie='José', nazwisko='...')
 
 
     lista = [
@@ -125,7 +125,7 @@ Deserializacja
 
 .. code-block:: python
 
-    >>> DATA = '["2016-10-26T14:41:51.020", "2016-10-26 14:41:51.020673", "2016-10-26 14:41:51.020673", "2016-10-26 14:41:51.020673", "2016-10-26 14:41:51.020673", {"nazwisko": "Harasymczuk", "imi\u0119": "Matt\u00f3ł"}, [10, 20, 30], [1]]'
+    >>> DATA = '["2016-10-26T14:41:51.020", "2016-10-26 14:41:51.020673", "2016-10-26 14:41:51.020673", "2016-10-26 14:41:51.020673", "2016-10-26 14:41:51.020673", {"nazwisko": "Ivanovic", "imie": "Ivan"}, [10, 20, 30], [1]]'
 
     >>> import json
     >>> json.loads(DATA)
@@ -236,9 +236,9 @@ Deserializacja
     >>> import csv
 
     >>> data = [
-    ...    {'first_name': 'Baked', 'last_name': 'Beans'},
-    ...    {'first_name': 'Lovely', 'last_name': 'Spam'},
-    ...    {'first_name': 'Wonderful', 'last_name': 'Spam'}
+    ...    {'first_name': 'José', 'last_name': 'Jiménez'},
+    ...    {'first_name': 'Max', 'last_name': 'Peck'},
+    ...    {'first_name': 'Ivan', 'last_name': 'Ivanovic'},
     ...]
 
     >>> with open('filename.csv', 'w') as csvfile:
