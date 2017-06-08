@@ -69,7 +69,7 @@ Pliki nazwij:
     * ``argparse``
     * ``logging``
     * ``socket``
-    * ``socketserver``
+    * ``socketserver.UDPServer``, ``socketserver.TCPServer``
     * ``subprocess.run()``
     * ``json.dumps()``, ``json.loads()``
     * ``xml.etree.ElementTree``
