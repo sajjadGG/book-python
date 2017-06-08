@@ -199,9 +199,9 @@ Funkcje wbudowane
 .. code-block:: python
 
     >>> name = input()
-    Matt
+    Ivan
     >>> print(name)
-    'Matt'
+    'Ivan'
 
 Pamiętaj o dodaniu dwukropka i spacji, aby tekst się nie zlewał.
 

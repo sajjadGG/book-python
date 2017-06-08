@@ -175,4 +175,4 @@ Python 2
 .. code-block:: python
 
     import hello
-    hello.say_hello('Matt')
+    hello.say_hello('José Jiménez')

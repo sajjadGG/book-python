@@ -143,8 +143,7 @@ Lista słowników
 .. code-block:: python
 
     studenci = [
-        {'imie': 'Matt'},
-        {'imie': 'Max', 'nazwisko': 'Peck'},
+        {'imie': 'Max'},
         {'imie': 'José', 'nazwisko': 'Jiménez'},
         {'imie': 'Ivan', 'nazwisko': None},
         {'imie': 'Buster', 'programuje w': ['python', 'java', 'c/c++']},

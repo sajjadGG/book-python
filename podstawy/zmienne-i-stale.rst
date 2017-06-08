@@ -107,16 +107,16 @@ Obiekt typu ``str`` przechowuje łańcuch znaków. ``str()`` jest także funkcj�
 
 .. code-block:: python
 
-    >>> name1 = 'Matt'
-    'Matt'
+    >>> name1 = 'José'
+    'José'
 
-    >>> name2 = "Matt"
-    'Matt'
+    >>> name2 = "Ivan"
+    'Ivan'
 
     >>> print("""
-    ... Matt
+    ... Max Peck
     ... """)
-    '\nMatt\n'
+    '\nMax Peck\n'
 
     >>> str(10)
     '10'

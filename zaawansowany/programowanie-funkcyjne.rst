@@ -124,10 +124,9 @@ złożenia funkcji
 .. code-block:: python
 
     OSOBY = [
-        {'imie': 'Matt', 'wiek': 10},
-        {'imie': 'Angelika', 'wiek': 18},
-        {'imie': 'Mateusz', 'wiek': 21},
-        {'imie': 'Tadeusz', 'wiek': 35},
+        {'imie': 'José', 'wiek': 10},
+        {'imie': 'Max', 'wiek': 18},
+        {'imie': 'Ivan', 'wiek': 21},
     ]
 
     def osoba_pelnoletnia(osoba):

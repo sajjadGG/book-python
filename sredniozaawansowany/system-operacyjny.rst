@@ -125,7 +125,7 @@ Najczęściej wykorzystuje się:
 
     >>> import subprocess
     >>> subprocess.call('echo $HOME', shell=True)
-    /Users/matt
+    /home/jose-jimenez
     0
 
 Setting the shell argument to a true value causes subprocess to spawn an intermediate shell process, and tell it to run the command. In other words, using an intermediate shell means that variables, glob patterns, and other special shell features in the command string are processed before the command is run. Here, in the example, ``$HOME`` was processed before the echo command. Actually, this is the case of command with shell expansion while the command ``ls -l`` considered as a simple command.
@@ -167,7 +167,7 @@ Timeout dla wykonywania poleceń
 .. code-block:: python
 
     import subprocess
-    cmd = ['ping', 'www.google.com']
+    cmd = ['ping', 'www.nasa.gov']
 
     try:
         subprocess.run(cmd, timeout=5)

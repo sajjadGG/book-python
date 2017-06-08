@@ -93,7 +93,7 @@ Problem z rzutowaniem daty na JSON:
         def __init__(self, imie, nazwisko):
             self.imie = imie
             self.nazwisko = nazwisko
-            self.adres = [Adress('Warszawa')]
+            self.adres = [Adress('Bajkonur')]
 
         def __str__(self):
             return f'{self.imie}'
