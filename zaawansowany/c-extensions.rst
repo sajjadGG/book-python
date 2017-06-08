@@ -35,6 +35,13 @@ Przykład - Rekurencja
     >>> lib.factorial(17)
     -288522240
 
+Argumenty
+---------
+
+* ``ctypes.POINTER(ctypes.c_double)``
+* ``ctypes.c_int``
+* ``ctypes.c_char_p``
+
 Przykład - typy proste
 ----------------------
 
@@ -62,33 +69,24 @@ Przykład - typy proste
 
     import ctypes
 
-    ehlo = ctypes.CDLL('hello-ctypes.so')
+    lib = ctypes.CDLL('hello-ctypes.so')
 
-    ehlo.ehlo()
+    lib.ehlo()
 
-    ehlo.greeting.argtypes = [ctypes.c_char_p]
+    lib.greeting.argtypes = [ctypes.c_char_p]
     name = ctypes.create_string_buffer('Matt'.encode())
-    ehlo.greeting(name)
+    lib.greeting(name)
 
-    ehlo.number(10)
+    lib.number(10)
 
-    print(dir(ehlo))
+    print(dir(lib))
 
 
-    i = ehlo.myint(15)
+    i = lib.myint(15)
     print(i)
-
-
-Arguments
----------
-
-* ``ctypes.POINTER(ctypes.c_double)``
-* ``ctypes.c_int``
-* ``ctypes.c_char_p``
 
 Wywołania funkcji
 -----------------
-
 
 .. code-block:: python
 
@@ -101,8 +99,6 @@ Wywołania funkcji
         lib = ctypes.CDLL('/usr/lib/libc.so')
 
     lib.printf("I'm C printf() function called from Python")
-
-
 
 C Modules
 =========
