@@ -83,9 +83,9 @@ class Heartbeat:
         addr = (self.host, self.port)
 
         log.debug('Ping sent to %s:%s' % addr)
-        sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        sock.sendto(bytes('%s:%s\n', 'utf-8'), addr)
-        sock.close()
+
+        with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
+            sock.sendto(bytes('%s:%s\n', 'utf-8'), addr)
 
         self.start()
 

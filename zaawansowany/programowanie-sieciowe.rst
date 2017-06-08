@@ -32,6 +32,9 @@ Automatyzacja pracy
 * http://www.fabfile.org/
 * https://pypi.python.org/pypi/Fabric3
 
+Zadania kontrolne
+=================
+
 Mini Botnet
 -----------
 
