@@ -47,7 +47,7 @@ Pliki nazwij:
     :scale: 50%
     :align: center
 
-    Botnet Schemat Architektoniczny
+    Architektura programów botnet
 
 :Uwaga:
     * nigdy nie rób tego na produkcji bez tzw. sanityzacji parametrów, np. lista zaufanych hostów, możliwe polecenia!
