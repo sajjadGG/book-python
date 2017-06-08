@@ -56,8 +56,14 @@ Stwórz program, który otworzy socket na porcie na localhoście podanym przez u
 * stwórz dekorator ``log_request``, który weźmie parametry zapytania (IP, polecenie, argumenty) i zapisze je do pliku ``/tmp/botnet.log`` w formacie ``Request from IP:PORT to execute COMMAND ARGUMENTS``
 
 :Podpowiedź:
-    * ``subprocess.Popen``
     * użyj ``os.path.join`` do łączenia sciezki i nazwy pliku
+    * ``argparse``
+    * ``logging``
+    * ``socket``
+    * ``socketserver``
+    * ``subprocess.run()``
+    * ``json.dumps()``, ``json.loads()``
+    * ``xml.etree.ElementTree``
 
 
 :Zadanie z gwiazdką:
@@ -65,3 +71,14 @@ Stwórz program, który otworzy socket na porcie na localhoście podanym przez u
 
     * Wyszukiwanie aktywnych hostów
     * `command`
+
+:Polecenia do wykonania:
+
+    .. code-block:: xml
+
+        <execute>
+            <command timeout="2">/bin/ls -la /home</command>
+            <command>/bin/ls -l /home/ /tmp/</command>
+            <command timeout="1">/bin/sleep 2</command>
+            <command timeout="2">/bin/echo 'juz wstalem'</command>
+        </execute>
