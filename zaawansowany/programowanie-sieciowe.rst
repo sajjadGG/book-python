@@ -60,7 +60,7 @@ Pliki nazwij:
 * dodaj funkcję aby listował dowolny katalog - wykorzystaj ``os.walk`` oraz ``os.path.join`` do łączenia nazw katalogów
 * zmodyfikuj program aby przyjmował zapytania w formacie XML, pole command oraz arguments powinny być osobno
 * zmodyfikuj program aby zwracał wyniki zapytań w formacie JSON, pole command oraz arguments powinny być osobno
-* nazwy poleceń, datę ich uruchomienia i ich wyniki zapisuj lokalnie do bazy ``sqlite``
+* nazwy poleceń, datę ich uruchomienia i ich wyniki zapisuj lokalnie do bazy ``sqlite3``
 * stwórz dekorator ``localhost_only``, który będzie sprawdzał IP źródłowe połączenia i jeżeli nie pochodzi z ``127.0.0.1`` odmówi wykonania polecenia
 * stwórz dekorator ``log_request``, który weźmie parametry zapytania (IP, polecenie, argumenty) i zapisze je do pliku ``/tmp/botnet.log`` w formacie ``Request from IP:PORT to execute COMMAND ARGUMENTS``
 
