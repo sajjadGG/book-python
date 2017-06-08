@@ -37,6 +37,12 @@ Mini Botnet
 
 Stwórz program, który otworzy socket na porcie na localhoście podanym przez użytkownika z linii poleceń (wykorzystaj ``argparse``) i będzie nasłuchiwał połączeń. Zweryfikuj za pomocą ``telnet`` albo ``netcat`` czy program odpowiada. Następnie napisz w pythonie klienta, który będzie wysyłał polecenia do tamtego programu.
 
+.. figure:: /_img/botnet.png
+    :scale: 50%
+    :align: center
+
+    Botnet Schemat Architektoniczny
+
 :Uwaga:
     * nigdy nie rób tego na produkcji bez tzw. sanityzacji parametrów, np. lista zaufanych hostów, możliwe polecenia!
     * pliki nazwij:
@@ -64,7 +70,6 @@ Stwórz program, który otworzy socket na porcie na localhoście podanym przez u
     * ``subprocess.run()``
     * ``json.dumps()``, ``json.loads()``
     * ``xml.etree.ElementTree``
-
 
 :Zadanie z gwiazdką:
     Za pomocą ``Django`` stwórz panel administracyjny dla botnetu:
