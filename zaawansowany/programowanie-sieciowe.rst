@@ -52,7 +52,7 @@ Stwórz program, który otworzy socket na porcie na localhoście podanym przez u
 * stwórz dekorator ``localhost_only``, który będzie sprawdzał IP źródłowe połączenia i jeżeli nie pochodzi z ``127.0.0.1`` odmówi wykonania polecenia
 * stwórz dekorator ``log_request``, który weźmie parametry zapytania (IP, polecenie, argumenty) i zapisze je do pliku ``/tmp/botnet.log`` w formacie ``Request from IP:PORT to execute COMMAND ARGUMENTS``
 
-.. figure:: /_img/botnet.png
+.. figure:: img/botnet.png
     :scale: 75%
     :align: center
 

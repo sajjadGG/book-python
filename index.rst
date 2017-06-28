@@ -134,10 +134,13 @@ Machine Learning
     :name: machine-learning
 
     machine-learning/wprowadzenie-do-statystyki.rst
+    machine-learning/wprowadzenie-do-machine-learning.rst
+    machine-learning/supervised-learning.rst
     machine-learning/linear-regression.rst
     machine-learning/logistics-regression.rst
-    machine-learning/neural-network.rst
     machine-learning/bayes.rst
+    machine-learning/k-nearest-neighbors.rst
+    machine-learning/neural-network.rst
     machine-learning/przydatne-odnosniki.rst
 
 Załączniki
