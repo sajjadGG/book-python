@@ -96,11 +96,13 @@ Data
 :NumPy: Array processing for numbers, strings, records, and objects.
 :Quandl: Package for quandl API access https://www.quandl.com/topics
 
-Math and Plots
---------------
+Math, Plots, Graphs
+-------------------
 
 :SciPy: Scientific Library for Python
 :Matplotlib: Python plotting package
+:PyDotPlus: Python interface to Graphviz's Dot language
+:Graphviz: Simple Python interface for Graphviz
 
 Other
 -----

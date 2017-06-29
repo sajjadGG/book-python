@@ -16,14 +16,34 @@ Przykład: Apple vs. Orange
 
 Jak odróżnić jabłko od pomarańczy?
 
-.. figure:: img/apple-orange.png
+.. figure:: img/classification-apple-orange.png
     :align: center
 
-    Apple vs. Oranges
+    Apple vs. Oranges classification using orange and green pixel count.
 
 * ilość pixeli pomarańczowych i ich stosunek do zielonych/czerwonych
 * co z czarno białymi zdjęciami?
 * co ze zdjęciami bez jabłek i pomarańczy
+
+.. code-block:: python
+
+    def detect_colors(image):
+        # lots of code
+
+    def detect_edges(image):
+        # lots of code
+
+    def analyze_shapes(image):
+        # lots of code
+
+    def guess_texture(image):
+        # lots of code
+
+    def define_fruit(image):
+        # lots of code
+
+    def handle_probability(image):
+        # lots of code
 
 
 ======  =======  ======
@@ -124,6 +144,116 @@ Weight  Texture  Label
 Visualizing a Decision Tree
 ===========================
 
+* http://scikit-learn.org/stable/datasets/
+
+The Iris flower data set or Fisher's Iris data set is a multivariate data set introduced by the British statistician and biologist Ronald Fisher in his 1936 paper The use of multiple measurements in taxonomic problems as an example of linear discriminant analysis.
+
+.. figure:: img/iris-flowers.png
+    :scale: 75%
+    :align: center
+
+The data set consists of 50 samples from each of three species of Iris (Iris setosa, Iris virginica and Iris versicolor). Four features were measured from each sample: the length and the width of the sepals and petals, in centimetres. Based on the combination of these four features, Fisher developed a linear discriminant model to distinguish the species from each other.
+
+Based on Fisher's linear discriminant model, this data set became a typical test case for many statistical classification techniques in machine learning such as support vector machines.
+
+.. figure:: img/iris-dataset-scatterplot.png
+    :scale: 50%
+    :align: center
+
+    Scatterplot of the Iris data set
+
+.. figure:: img/iris-k-means.png
+    :scale: 50%
+    :align: center
+
+    Unsatisfactory k-means clustering result (the data set does not cluster into the known classes) and actual species visualized using ELKI
+
+.. code-block:: python
+
+    >>> from sklearn.datasets import load_iris
+    >>> iris = load_iris()
+
+    >>> print(iris.feature_names)
+    ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']
+
+    >>> print(iris.target_names)
+    ['setosa' 'versicolor' 'virginica']
+
+    >>> print(iris.data[0])
+    [5.1  3.5  1.4  0.2]
+
+    >>> print(iris.target[0])
+    0
+
+.. code-block:: python
+
+    import numpy
+    from sklearn.datasets import load_iris
+    from sklearn import tree
+
+    iris = load_iris()
+
+    # select test indexes
+    # dataset is ordered so 0, 50, 100 is a first of each kind
+    test_idx = [0, 50, 100]
+
+
+    # training data
+    train_target = numpy.delete(iris.target, test_idx)
+    train_data = numpy.delete(iris.data, test_idx, axis=0)
+
+    # testing data
+    test_target = iris.target[test_idx]
+    test_data = iris.data[test_idx]
+
+    # create and train classifier
+    clf = tree.DecisionTreeClassifier()
+    clf.fit(train_data, train_target)
+
+
+    print(test_target)
+    # Output: [0 1 2]
+
+    output = clf.predict(test_data)
+    print(output)
+    # Output: [0 1 2]
+
+
+    print(test_data[0], test_target[0])
+    # output: [ 5.1  3.5  1.4  0.2] 0
+
+
+    print(iris.feature_names)
+    # output: ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']
+
+    print(iris.target_names)
+    # output: ['setosa' 'versicolor' 'virginica']
+
+
+    # Vizualization of Decision Tree Classifier
+    from sklearn.externals.six import StringIO
+    import pydotplus
+
+    dot_data = StringIO()
+    tree.export_graphviz(
+        decision_tree=clf,
+        out_file=dot_data,
+        feature_names=iris.feature_names,
+        class_names=iris.target_names,
+        filled=True,
+        rounded=True,
+        impurity=True
+    )
+
+    graph = pydotplus.graph_from_dot_data(dot_data.getvalue())
+    graph.write_pdf('/tmp/iris.pdf')
+
+
+.. figure:: img/iris-decistion-tree.png
+    :scale: 50%
+    :align: center
+
+    Vizualization of Decision Tree Classifier
 
 
 Zadania praktyczne
