@@ -255,6 +255,48 @@ Based on Fisher's linear discriminant model, this data set became a typical test
 
     Vizualization of Decision Tree Classifier
 
+What Makes a Good Feature?
+==========================
+
+* Using one feature?
+
+.. code-block:: python
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+
+    greyhounds = 500
+    labradors = 500
+
+    # in inches + variation +4 inches
+    greyhounds_height = 28 + 4 * np.random.randn(greyhounds)
+    labradors_height = 24 + 4 * np.random.randn(labradors)
+
+    plt.hist(
+        [greyhounds_height, labradors_height],
+        stacked=True,
+        color=['red', 'blue']
+    )
+
+    plt.show()
+
+.. figure:: img/dogs-hist.png
+    :scale: 50%
+    :align: center
+
+    Dogs height Classification Probability
+
+* How many features do you need?
+* What features are good?
+
+.. figure:: img/dogs-bad-features.png
+    :scale: 50%
+    :align: center
+
+    Is this a good feature for classifier? Why?
+
+
 
 Zadania praktyczne
 ==================
