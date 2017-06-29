@@ -16,14 +16,15 @@ Przykład: Apple vs. Orange
 
 Jak odróżnić jabłko od pomarańczy?
 
-.. figure:: img/classification-apple-orange.png
-    :align: center
-
-    Apple vs. Oranges classification using orange and green pixel count.
-
 * ilość pixeli pomarańczowych i ich stosunek do zielonych/czerwonych
 * co z czarno białymi zdjęciami?
 * co ze zdjęciami bez jabłek i pomarańczy
+
+.. figure:: img/classification-apple-orange.png
+    :scale: 75%
+    :align: center
+
+    Apple vs. Oranges classification using orange and green pixel count.
 
 .. code-block:: python
 
@@ -92,6 +93,7 @@ Weight  Texture  Label
 
 
 .. figure:: img/decision-tree.png
+    :scale: 100%
     :align: center
 
     Drzewo decyzyjne
@@ -154,13 +156,14 @@ The Iris flower data set or Fisher's Iris data set is a multivariate data set in
 
 The data set consists of 50 samples from each of three species of Iris (Iris setosa, Iris virginica and Iris versicolor). Four features were measured from each sample: the length and the width of the sepals and petals, in centimetres. Based on the combination of these four features, Fisher developed a linear discriminant model to distinguish the species from each other.
 
-Based on Fisher's linear discriminant model, this data set became a typical test case for many statistical classification techniques in machine learning such as support vector machines.
-
 .. figure:: img/iris-dataset-scatterplot.png
-    :scale: 50%
+    :scale: 75%
     :align: center
 
     Scatterplot of the Iris data set
+
+Based on Fisher's linear discriminant model, this data set became a typical test case for many statistical classification techniques in machine learning such as support vector machines.
+
 
 .. figure:: img/iris-k-means.png
     :scale: 50%
@@ -250,7 +253,7 @@ Based on Fisher's linear discriminant model, this data set became a typical test
 
 
 .. figure:: img/iris-decistion-tree.png
-    :scale: 50%
+    :scale: 75%
     :align: center
 
     Vizualization of Decision Tree Classifier
@@ -291,7 +294,7 @@ What Makes a Good Feature?
 * What features are good?
 
 .. figure:: img/dogs-bad-features.png
-    :scale: 50%
+    :scale: 35%
     :align: center
 
     Is this a good feature for classifier? Why?
