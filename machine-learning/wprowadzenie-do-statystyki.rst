@@ -2,12 +2,6 @@
 Wprowadzenie do statystyki
 **************************
 
-Wprowadzenie
-============
-* Czym jest uczenie maszynowe?
-* Regresja i klasyfikacja
-* Miary jakości
-
 Rozkłady
 ========
 * kształty przebiegów
@@ -28,12 +22,4 @@ Podstawowe pojęcia
 * mean - średnia
 * variance - wariancja
 * interval
-
-
-Praktyka
-========
-* Podstawy NumPy
-* Podstawy Scikit-learn
-* Otwarte źródła danych
-* Praca z danymi z użyciem NumPy i Scikit-learn
 

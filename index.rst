@@ -135,6 +135,7 @@ Machine Learning
 
     machine-learning/wprowadzenie-do-statystyki.rst
     machine-learning/wprowadzenie-do-machine-learning.rst
+    machine-learning/slowniczek.rst
     machine-learning/supervised-learning.rst
     machine-learning/linear-regression.rst
     machine-learning/logistics-regression.rst

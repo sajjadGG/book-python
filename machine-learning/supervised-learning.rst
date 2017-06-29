@@ -146,8 +146,6 @@ Weight  Texture  Label
 Visualizing a Decision Tree
 ===========================
 
-* http://scikit-learn.org/stable/datasets/
-
 The Iris flower data set or Fisher's Iris data set is a multivariate data set introduced by the British statistician and biologist Ronald Fisher in his 1936 paper The use of multiple measurements in taxonomic problems as an example of linear discriminant analysis.
 
 .. figure:: img/iris-flowers.png

@@ -1,12 +1,18 @@
-************************
-Machine Learning Recipes
-************************
+********************************
+Wprowadzenie do Machine Learning
+********************************
 
 Machine learning was defined in 1959 by Arthur Samuel as the "field of study that gives computers the ability to learn without being explicitly programmed." This means imbuing knowledge to machines without hard-coding it.
 
+Wprowadzenie
+============
+* Czym jest uczenie maszynowe?
+* Regresja i klasyfikacja
+* Miary jakości
+
+
 Ważne pytania przed przystąpieniem do tworzenia algorytmu
 =========================================================
-
 * How does this work in real world?
 * How much training data do you need?
 * How is the tree created?
@@ -14,42 +20,18 @@ Ważne pytania przed przystąpieniem do tworzenia algorytmu
 
 Jak to wygląda w praktyce?
 ==========================
-1. Sparametryzuj swój problem używając rozkładów statystycznych
-2. Uzasadnij strukturę swojego modelu
-3. Napisz swój model używając PyMC3 i dokonaj obliczeń za pomocą Inference Button
-4. Zinterpretuj wynik bazując na rozkładach wynikowych
-5. (opcjonalnie) z nowymi wynikami dostosuj swój model statystyczny
+#. Sparametryzuj swój problem używając rozkładów statystycznych
+#. Uzasadnij strukturę swojego modelu
+#. Napisz swój model używając PyMC3 lub SCIKit-Learn i dokonaj obliczeń
+#. Zinterpretuj wynik bazując na rozkładach wynikowych
+#. (opcjonalnie) z nowymi wynikami dostosuj swój model statystyczny
 
-
-Słownictwo
-==========
-
-Classifier:
-    Like function, takes data as imput and produces data as output.
-    Zachowuje się jak funkcja, pobiera dane i przypisuje im labelki.
-
-Features:
-    Are attributes that make the labels.
-    Dane do trenowania algorytmu opisujące objekt.
-
-Labels:
-    Prediction into the future
-
-Learning Algorithm:
-    Procedure that creates classifiers. Finds patterns in training data.
-
-Preprocessing:
-    Is the module used to do some cleaning/scaling of data prior to machine learning.
-
-Cross_validation:
-    Is used in the testing stages.
-
-Supervised Learning:
-    Create classifier by finding patterns in examples
-
-Regression:
-    Is a form of supervised machine learning, which is where the scientist teaches the machine by showing it features and then showing it was the correct answer is, over and over, to teach the machine. Once the machine is taught, the scientist will usually "test" the machine on some unseen data, where the scientist still knows what the correct answer is, but the machine doesn't. The machine's answers are compared to the known answers, and the machine's accuracy can be measured. If the accuracy is high enough, the scientist may consider actually employing the algorithm in the real world.
-
+Co trzeba umieć aby rozpocząć?
+------------------------------
+* Podstawy NumPy
+* Podstawy Scikit-learn
+* Otwarte źródła danych
+* Praca z danymi z użyciem NumPy i Scikit-learn
 
 
 Algorytmy uczenia maszynowego
@@ -78,6 +60,54 @@ Bez nadzoru
 
 * K Nearest Neighbors
 
+Skąd wziąć dane testowe?
+========================
+
+SCI-Kit Datasets
+----------------
+* http://scikit-learn.org/stable/datasets/
+
+The ``sklearn.datasets`` package embeds some small toy datasets. To evaluate the impact of the scale of the dataset (``n_samples`` and ``n_features``) while controlling the statistical properties of the data (typically the correlation and informativeness of the features), it is also possible to generate synthetic data.
+
+This package also features helpers to fetch larger datasets commonly used by the machine learning community to benchmark algorithm on data that comes from the 'real world'.
+
+ML Data
+-------
+* http://mldata.org
+
+`mldata.org <http://mldata.org>`_ is a public repository for machine learning data, supported by the `PASCAL network <http://www.pascal-network.org>`_.
+
+The sklearn.datasets package is able to directly download data sets from the repository using the function ``sklearn.datasets.fetch_mldata``.
+
+For example, to download the MNIST digit recognition database:
+
+.. code-block:: python
+
+    >>> from sklearn.datasets import fetch_mldata
+    >>> mnist = fetch_mldata('MNIST original', data_home=custom_data_home)
+
+PASCAL
+------
+* http://www.pascal-network.org
+
+PASCAL is a Network of Excellence funded by the European Union. It has established a distributed institute that brings together researchers and students across Europe, and is now reaching out to countries all over the world.
+
+PASCAL is developing the expertise and scientific results that will help create new technologies such as intelligent interfaces and adaptive cognitive systems. To achieve this, it supports and encourages collaboration between experts in Machine Learning, Statistics and Optimization. It also promotes the use of machine learning in many relevant application domains such as:
+
+* Machine Vision
+* Speech
+* Haptics
+* Brain-Computer Interface
+* User-modeling for computer human interaction
+* Multimodal integration
+* Natural Language Processing
+* Information Retrieval
+* Textual Information Access
+
+Public datasets in svmlight / libsvm format
+-------------------------------------------
+
+* http://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/
 
 Biblioteki
 ==========
