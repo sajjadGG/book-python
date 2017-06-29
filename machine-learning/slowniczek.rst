@@ -159,4 +159,5 @@ Utility:
     See Cost.
 
 
-.. note:: Source http://robotics.stanford.edu/~ronnyk/glossary.html
+.. note::
+    Source: `Glossary of Terms - Special Issue on Applications of Machine Learning and the Knowledge Discovery Process <http://robotics.stanford.edu/~ronnyk/glossary.html>`_
