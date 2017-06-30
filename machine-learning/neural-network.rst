@@ -25,6 +25,7 @@ Przykłady praktyczne
 
 Image Classification using ``TensorFlow for Poets``
 ---------------------------------------------------
+* https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#1
 
 .. code-block:: console
 
@@ -40,4 +41,67 @@ Image Classification using ``TensorFlow for Poets``
         $ ls flower_photos/roses | wc -l
         $ rm flower_photos/*/[3-9]*
         $ ls flower_photos/roses | wc -l
+
+.. code-block:: python
+
+    from sklearn import metrics
+    from sklearn import model_selection
+    import tensorflow as tf
+    from tensorflow.contrib import learn
+
+
+    # Load dataset
+    iris = learn.datasets.load_dataset('iris')
+    x_train, x_test, y_train, y_test = model_selection.train_test_split(
+        iris.data,
+        iris.target,
+        test_size=0.2,
+        random_state=42
+    )
+
+    # Build 3 layer Deep Neural Network (DNN) with 10, 20, 10 units respectively.
+    classifier = learn.DNNClassifier(hidden_units=[10, 20, 10], n_classes=3)
+
+    # Fit and predict.
+    classifier.fit(x_train, y_train, steps=200)
+    score = metrics.accuracy_score(y_test, classifier.predict(x_test))
+
+    print(f'Accuracy {score:f}')
+
+.. code-block:: console
+
+    $ curl -O https://raw.githubusercontent.com/tensorflow/tensorflow/r1.1/tensorflow/examples/image_retraining/retrain.py
+
+    $ python retrain.py \
+      --bottleneck_dir=bottlenecks \
+      --how_many_training_steps=500 \
+      --model_dir=inception \
+      --summaries_dir=training_summaries/basic \
+      --output_graph=retrained_graph.pb \
+      --output_labels=retrained_labels.txt \
+      --image_dir=flower_photos
+
+    $ curl -L https://goo.gl/3lTKZs > label_image.py
+
+    $ python label_image.py flower_photos/daisy/21652746_cc379e0eea_m.jpg
+    $ python label_image.py flower_photos/roses/2414954629_3708a1a04d.jpg
+    daisy (score = 0.99071)
+    sunflowers (score = 0.00595)
+    dandelion (score = 0.00252)
+    roses (score = 0.00049)
+    tulips (score = 0.00032)
+
+
+Inception
+^^^^^^^^^
+* One of Google's best image classifiers
+* Open Source
+* Trained on 1.2 milion images
+* Training took 2 weeks on 8GPU machine
+
+Retraining
+^^^^^^^^^^
+* Also known as Transfer Learning
+* Saves a lot of time
+* Uses prior work
 
