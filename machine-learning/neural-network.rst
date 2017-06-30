@@ -19,3 +19,25 @@ Learning
 
 Optimizing
 ----------
+
+Przykłady praktyczne
+====================
+
+Image Classification using ``TensorFlow for Poets``
+---------------------------------------------------
+
+.. code-block:: console
+
+    # download around 218MB of data
+    $ curl -O http://download.tensorflow.org/example_images/flower_photos.tgz
+    $ tar xzf flower_photos.tgz
+    $ ls flower_photos
+
+.. warning:: Training on this much data can take 30+ minutes on a small computer. If you want to reduce data:
+
+    .. code-block:: console
+
+        $ ls flower_photos/roses | wc -l
+        $ rm flower_photos/*/[3-9]*
+        $ ls flower_photos/roses | wc -l
+

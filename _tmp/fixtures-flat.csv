@@ -1,8 +1,0 @@
-"outside_conditions_humidity";"installations_waste_level";"biometrics_pressure_artery";"installations_batter_voltage";"installations_water_consumption";"installations_water_level";"biometrics_id";"room_pressure";"source";"room_humidity";"room_anemometer";"timestamp";"installations_power_generator_temperature";"outside_conditions_pressure";"room_id";"biometrics_pressure_vein";"biometrics_body_temperature";"installations_id";"outside_conditions_temperature";"installations_external_power_enabled";"outside_conditions_anemometer";"biometrics_heart_rate";"outside_conditions_device_id";"room_temperature"
-"";"";"120.6";"";"";"";"12345";"";"biometrics";"";"";"2013-10-21T13:28:06.419Z";"";"";"";"90.7";"36.6";"";"";"";"";"78.5";"";""
-"";"";"120.6";"";"";"";"12346";"";"biometrics";"";"";"2013-10-21T13:28:07.543Z";"";"";"";"90.7";"36.6";"";"";"";"";"78.5";"";""
-"120.6";"";"";"";"";"";"";"";"outside_conditions";"";"";"2013-10-21T13:28:06.419Z";"";"78.5";"";"";"";"";"36.6";"";"90.7";"";"12301";""
-"";"";"";"";"";"";"";"78.5";"room";"120.6";"90.7";"2013-10-21T13:28:06.419Z";"";"";"12371";"";"";"";"";"";"";"";"";"36.6"
-"";"";"";"";"";"";"";"78.5";"room";"120.6";"90.7";"2013-10-21T13:28:06.419Z";"";"";"12371";"";"";"";"";"";"";"";"";"36.6"
-"";"";"";"78.5";"";"";"";"";"installations";"";"";"2013-10-21T13:28:06.419Z";"36.6";"";"";"";"";"12301";"";"1";"";"";"";""
-"";"1";"";"";"36.6";"78.5";"";"";"installations";"";"";"2013-10-21T13:28:06.419Z";"";"";"";"";"";"12312";"";"";"";"";"";""
