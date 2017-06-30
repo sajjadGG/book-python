@@ -4,8 +4,9 @@ Features
 
 Czym są features?
 =================
-Attribute (field, variable, feature):
-    A quantity describing an instance. An attribute has a domain defined by the attribute type, which denotes the values that can be taken by an attribute. The following domain types are common:
+Attribute is also known as field, variable or feature.
+
+A quantity describing an instance. An attribute has a domain defined by the attribute type, which denotes the values that can be taken by an attribute. The following domain types are common:
 
     Categorical:
         A finite number of discrete values. The type nominal denotes that there is no ordering between the values, such as last names and colors. The type ordinal denotes that there is an ordering, such as in an attribute taking on the values low, medium, or high.
@@ -17,7 +18,6 @@ Attribute (field, variable, feature):
 
 Przykład praktyczny
 ===================
-
 Jak odróżnić jabłko od pomarańczy?
 
 * ilość pixeli pomarańczowych i ich stosunek do zielonych/czerwonych

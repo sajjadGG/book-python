@@ -39,26 +39,19 @@ Algorytmy uczenia maszynowego
 
 Z nadzorem
 ----------
+* Drzewa decyzyjne
+* K najbliższych sąsiadów (ang. K Nearest Neighbors)
 * Regresja liniowa (ang. Linear Regression)
 * Regresja logisyczna
-* K najbliższych sąsiadów (ang. K Nearest Neighbors)
 * Support Vector Machines (SVM)
 * Naive Bayes
-* Drzewa decyzyjne
-* Sztuczne sieci neuronowe
+* Sztuczne sieci neuronowe (ang. neural networks)
 
 Bez nadzoru
 -----------
 * Klastrowanie (ang. flat clustering, hierarchical clustering)
 * Principal Component Analysis (PCA)
 * Sztuczne sieci neuronowe (ang. neural networks)
-* Metody doboru modelu i poprawienia jakości
-* Walidacje
-* Poszukiwanie parametrów
-* Regularyzacja
-* Ensemble
-
-* K Nearest Neighbors
 
 Biblioteki
 ==========
