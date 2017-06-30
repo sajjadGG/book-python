@@ -135,13 +135,20 @@ Machine Learning
 
     machine-learning/wprowadzenie-do-statystyki.rst
     machine-learning/wprowadzenie-do-machine-learning.rst
-    machine-learning/slowniczek.rst
-    machine-learning/supervised-learning.rst
-    machine-learning/linear-regression.rst
-    machine-learning/logistics-regression.rst
-    machine-learning/bayes.rst
+    machine-learning/slownik-pojec.rst
+    machine-learning/datasets.rst
+
+    machine-learning/features.rst
+    machine-learning/classifiers.rst
+
+    machine-learning/decision-tree.rst
     machine-learning/k-nearest-neighbors.rst
+
+    machine-learning/bayes.rst
+    machine-learning/linear-regression.rst
     machine-learning/neural-network.rst
+    machine-learning/logistics-regression.rst
+
     machine-learning/przydatne-odnosniki.rst
 
 Załączniki

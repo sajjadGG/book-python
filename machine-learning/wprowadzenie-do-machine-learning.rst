@@ -60,55 +60,6 @@ Bez nadzoru
 
 * K Nearest Neighbors
 
-Skąd wziąć dane testowe?
-========================
-
-SCI-Kit Datasets
-----------------
-* http://scikit-learn.org/stable/datasets/
-
-The ``sklearn.datasets`` package embeds some small toy datasets. To evaluate the impact of the scale of the dataset (``n_samples`` and ``n_features``) while controlling the statistical properties of the data (typically the correlation and informativeness of the features), it is also possible to generate synthetic data.
-
-This package also features helpers to fetch larger datasets commonly used by the machine learning community to benchmark algorithm on data that comes from the 'real world'.
-
-ML Data
--------
-* http://mldata.org
-
-`mldata.org <http://mldata.org>`_ is a public repository for machine learning data, supported by the `PASCAL network <http://www.pascal-network.org>`_.
-
-The sklearn.datasets package is able to directly download data sets from the repository using the function ``sklearn.datasets.fetch_mldata``.
-
-For example, to download the MNIST digit recognition database:
-
-.. code-block:: python
-
-    >>> from sklearn.datasets import fetch_mldata
-    >>> mnist = fetch_mldata('MNIST original', data_home=custom_data_home)
-
-PASCAL
-------
-* http://www.pascal-network.org
-
-PASCAL is a Network of Excellence funded by the European Union. It has established a distributed institute that brings together researchers and students across Europe, and is now reaching out to countries all over the world.
-
-PASCAL is developing the expertise and scientific results that will help create new technologies such as intelligent interfaces and adaptive cognitive systems. To achieve this, it supports and encourages collaboration between experts in Machine Learning, Statistics and Optimization. It also promotes the use of machine learning in many relevant application domains such as:
-
-* Machine Vision
-* Speech
-* Haptics
-* Brain-Computer Interface
-* User-modeling for computer human interaction
-* Multimodal integration
-* Natural Language Processing
-* Information Retrieval
-* Textual Information Access
-
-Public datasets in svmlight / libsvm format
--------------------------------------------
-
-* http://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/
-
 Biblioteki
 ==========
 

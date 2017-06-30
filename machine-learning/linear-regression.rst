@@ -8,6 +8,7 @@ Problemy
 ========
 Predicting output on data matrix
 
+
 Podstawowe pojęcia
 ==================
 * Loss Function
@@ -26,7 +27,6 @@ Podstawowe pojęcia
 
 Regression
 ==========
-
 How does the actual machine learning thing work? With supervised learning, you have features and labels. The features are the descriptive attributes, and the label is what you're attempting to predict or forecast. Another common example with regression might be to try to predict the dollar value of an insurance policy premium for someone. The company may collect your age, past driving infractions, public criminal record, and your credit score for example. The company will use past customers, taking this data, and feeding in the amount of the "ideal premium" that they think should have been given to that customer, or they will use the one they actually used if they thought it was a profitable amount.
 
 Thus, for training the machine learning classifier, the features are customer attributes, the label is the premium associated with those attributes.

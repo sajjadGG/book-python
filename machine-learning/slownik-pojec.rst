@@ -1,6 +1,6 @@
-*******************
-Słowniczek Pojęć ML
-*******************
+*************
+Słownik Pojęć
+*************
 
 Accuracy (error rate):
     The rate of correct (incorrect) predictions made by the model over a data set (cf. coverage). Accuracy is usually estimated by using an independent test set that was not used at any time during the learning process. More complex accuracy estimation techniques, such as cross-validation and the bootstrap, are commonly used, especially with data sets containing a small number of instances.
@@ -11,13 +11,13 @@ Association learning:
 Attribute (field, variable, feature):
     A quantity describing an instance. An attribute has a domain defined by the attribute type, which denotes the values that can be taken by an attribute. The following domain types are common:
 
-Categorical:
-    A finite number of discrete values. The type nominal denotes that there is no ordering between the values, such as last names and colors. The type ordinal denotes that there is an ordering, such as in an attribute taking on the values low, medium, or high.
+    Categorical:
+        A finite number of discrete values. The type nominal denotes that there is no ordering between the values, such as last names and colors. The type ordinal denotes that there is an ordering, such as in an attribute taking on the values low, medium, or high.
 
-Continuous (quantitative):
-    Commonly, subset of real numbers, where there is a measurable difference between the possible values. Integers are usually treated as continuous in practical problems.
+    Continuous (quantitative):
+        Commonly, subset of real numbers, where there is a measurable difference between the possible values. Integers are usually treated as continuous in practical problems.
 
-    A feature is the specification of an attribute and its value. For example, color is an attribute. "Color is blue" is a feature of an example. Many transformations to the attribute set leave the feature set unchanged (for example, regrouping attribute values or transforming multi-valued attributes to binary attributes). Some authors use feature as a synonym for attribute (e.g., in feature-subset selection).
+        A feature is the specification of an attribute and its value. For example, color is an attribute. "Color is blue" is a feature of an example. Many transformations to the attribute set leave the feature set unchanged (for example, regrouping attribute values or transforming multi-valued attributes to binary attributes). Some authors use feature as a synonym for attribute (e.g., in feature-subset selection).
 
 Classifier:
     A mapping from unlabeled instances to (discrete) classes. Classifiers have a form (e.g., decision tree) plus an interpretation procedure (including how to handle unknowns, etc.). Some classifiers also provide probability estimates (scores), which can be thresholded to yield a discrete class decision thereby taking into account a utility function.
@@ -35,23 +35,23 @@ Confusion matrix:
 
     The following terms are defined for a two by two confusion matrix:
 
-Accuracy:
-    (a+d) / (a+b+c+d)
+    Accuracy:
+        (a+d) / (a+b+c+d)
 
-True positive rate (Recall, Sensitivity):
-    d / (c+d)
+    True positive rate (Recall, Sensitivity):
+        d / (c+d)
 
-True negative rate (Specificity):
-    a / (a+b)
+    True negative rate (Specificity):
+        a / (a+b)
 
-Precision:
-    d / (b+d)
+    Precision:
+        d / (b+d)
 
-False positive rate:
-    b / (a+b)
+    False positive rate:
+        b / (a+b)
 
-False negative rate:
-    c / (c+d)
+    False negative rate:
+        c / (c+d)
 
 Coverage:
     The proportion of a data set for which a classifier makes a prediction. If a classifier does not classify all the instances, it may be important to know its performance on the set of cases for which it is "confident" enough to make a prediction.
