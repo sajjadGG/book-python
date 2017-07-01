@@ -24,7 +24,7 @@ Jak odróżnić jabłko od pomarańczy?
 * co z czarno białymi zdjęciami?
 * co ze zdjęciami bez jabłek i pomarańczy
 
-.. figure:: img/classification-apple-orange.png
+.. figure:: img/features-apple-orange.png
     :scale: 75%
     :align: center
 
@@ -127,7 +127,7 @@ What Makes a Good Feature?
 
     plt.show()
 
-.. figure:: img/dogs-hist.png
+.. figure:: img/features-distribution.png
     :scale: 50%
     :align: center
 
@@ -136,7 +136,7 @@ What Makes a Good Feature?
 * How many features do you need?
 * What features are good?
 
-.. figure:: img/dogs-bad-features.png
+.. figure:: img/features-bad-features.png
     :scale: 35%
     :align: center
 

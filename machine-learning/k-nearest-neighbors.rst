@@ -128,7 +128,7 @@ Własna implementacja
 Określanie przynależności do zbioru
 ===================================
 
-.. figure:: img/knn-membership.png
+.. figure:: img/k-nearest-neighbors-membership.png
     :scale: 100%
     :align: center
 
@@ -137,13 +137,13 @@ Określanie przynależności do zbioru
 Wyznaczanie równania prostej
 ============================
 
-.. figure:: img/knn-function.png
+.. figure:: img/k-nearest-neighbors-function.png
     :scale: 100%
     :align: center
 
     Wyznaczanie równania prostej.
 
-.. figure:: img/knn-parameters.png
+.. figure:: img/k-nearest-neighbors-parameters.png
     :scale: 100%
     :align: center
 
@@ -152,7 +152,7 @@ Wyznaczanie równania prostej
 Wyznaczanie odległości
 ======================
 
-.. figure:: img/knn-euclidean-distance.png
+.. figure:: img/k-nearest-neighbors-euclidean-distance.png
     :scale: 100%
     :align: center
 
@@ -161,7 +161,7 @@ Wyznaczanie odległości
 Krzywe o nieliniowym przebiegu
 ==============================
 
-.. figure:: img/k-nearest-neighbors.png
+.. figure:: img/k-nearest-neighbors-curve.png
     :scale: 50%
     :align: center
 

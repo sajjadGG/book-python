@@ -6,10 +6,19 @@ What Is a Neural Network?
 =========================
 It’s a technique for building a computer program that learns from data. It is based very loosely on how we think the human brain works. First, a collection of software "neurons" are created and connected together, allowing them to send messages to each other. Next, the network is asked to solve a problem, which it attempts to do over and over, each time strengthening the connections that lead to success and diminishing those that lead to failure. For a more detailed introduction to neural networks, `Michael Nielsen’s Neural Networks <http://neuralnetworksanddeeplearning.com/index.html>`_ and `Deep Learning <http://www.deeplearningbook.org/>`_ is a good place to start. For a more technical overview, try Deep Learning by Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
 
-Tool
-----
+Tools
+=====
 * TensorFlow (Google) - http://playground.tensorflow.org/
 
+Inception
+---------
+* One of Google's best image classifiers
+* Open Source
+* Trained on 1.2 milion images
+* Training took 2 weeks on 8GPU machine
+
+Działanie na sieciach neuronowych
+=================================
 
 Construction
 ------------
@@ -19,6 +28,13 @@ Learning
 
 Optimizing
 ----------
+
+Retraining
+----------
+* Also known as Transfer Learning
+* Saves a lot of time
+* Uses prior work
+
 
 Przykłady praktyczne
 ====================
@@ -81,27 +97,123 @@ Image Classification using ``TensorFlow for Poets``
       --output_labels=retrained_labels.txt \
       --image_dir=flower_photos
 
+    [...]
+    2017-07-01 11:10:43.635017: Step 499: Train accuracy = 88.0%
+    2017-07-01 11:10:43.635265: Step 499: Cross entropy = 0.455413
+    2017-07-01 11:10:44.201455: Step 499: Validation accuracy = 92.0% (N=100)
+
+    Final test accuracy = 87.3% (N=331)
+
     $ curl -L https://goo.gl/3lTKZs > label_image.py
 
     $ python label_image.py flower_photos/daisy/21652746_cc379e0eea_m.jpg
+    daisy (score = 0.98659)
+    sunflowers (score = 0.01068)
+    dandelion (score = 0.00204)
+    tulips (score = 0.00063)
+    roses (score = 0.00007)
+
     $ python label_image.py flower_photos/roses/2414954629_3708a1a04d.jpg
-    daisy (score = 0.99071)
-    sunflowers (score = 0.00595)
-    dandelion (score = 0.00252)
-    roses (score = 0.00049)
-    tulips (score = 0.00032)
+    roses (score = 0.84563)
+    tulips (score = 0.13727)
+    dandelion (score = 0.00897)
+    sunflowers (score = 0.00644)
+    daisy (score = 0.00169)
 
 
-Inception
-^^^^^^^^^
-* One of Google's best image classifiers
-* Open Source
-* Trained on 1.2 milion images
-* Training took 2 weeks on 8GPU machine
+Handwritten digits recognition (MNIST) with ``tf.contrib.learn``
+----------------------------------------------------------------
 
-Retraining
-^^^^^^^^^^
-* Also known as Transfer Learning
-* Saves a lot of time
-* Uses prior work
+.. figure:: img/deep-neural-networks-mnist-overview.png
+    :scale: 100%
+    :align: center
 
+    Handwritten digits recognition also known as MNIST is equivalent to "hello world" in visual Machine Learning world.
+
+.. code-block:: python
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import tensorflow as tf
+
+    learn = tf.contrib.learn
+    tf.logging.set_verbosity(tf.logging.ERROR)
+
+    # Import the dataset
+    mnist = learn.datasets.load_dataset('mnist')
+    data = mnist.train.images
+    labels = np.asarray(mnist.train.labels, dtype=np.int32)
+    test_data = mnist.test.images
+    test_labels = np.asarray(mnist.test.labels, dtype=np.int32)
+
+    # There are 55k examples in train, and 10k in eval. You may wish to limit the size to experiment faster.
+    max_examples = 10000
+    data = data[:max_examples]
+    labels = labels[:max_examples]
+
+    def display(i):
+        img = test_data[i]
+        plt.title('Example %d. Label: %d' % (i, test_labels[i]))
+        plt.imshow(img.reshape((28,28)), cmap=plt.cm.gray_r)
+
+
+    # You can display output:
+    # display(0)
+    # display(1)
+    # display(8)
+    # print len(data[0])
+
+
+    # Fit a Linear Classifier
+    feature_columns = learn.infer_real_valued_columns_from_input(data)
+    classifier = learn.LinearClassifier(feature_columns=feature_columns, n_classes=10)
+    classifier.fit(data, labels, batch_size=100, steps=1000)
+
+    # Evaluate accuracy
+    classifier.evaluate(test_data, test_labels)
+    print(classifier.evaluate(test_data, test_labels)["accuracy"])
+    # output: 0.9141
+
+
+    # Classify a few examples
+
+    # here's one it gets right
+    print ("Predicted %d, Label: %d" % (classifier.predict(test_data[0]), test_labels[0]))
+    display(0)
+
+    # and one it gets wrong
+    print ("Predicted %d, Label: %d" % (classifier.predict(test_data[8]), test_labels[8]))
+    display(8)
+
+    # Visualize learned weights
+    weights = classifier.weights_
+    f, axes = plt.subplots(2, 5, figsize=(10,4))
+    axes = axes.reshape(-1)
+    for i in range(len(axes)):
+        a = axes[i]
+        a.imshow(weights.T[i].reshape(28, 28), cmap=plt.cm.seismic)
+        a.set_title(i)
+        a.set_xticks(()) # ticks be gone
+        a.set_yticks(())
+    plt.show()
+
+
+ .. figure:: img/deep-neural-networks-mnist-weights.png
+    :scale: 100%
+    :align: center
+
+    Visualize the the weights in the TensorFlow Basic MNIST
+
+Zadania praktyczne
+==================
+
+
+
+Kto jest na zdjęciu?
+--------------------
+Stwórz zbiór obrazów zawierający tylko twarze osób:
+
+    - twoje,
+    - twojego przyjaciela/przyjacółki.
+
+Postaraj się aby zdjęcia były na wprost. Naucz algorytm ich rozpoznawania i przedstaw Mu jakąś nową twarz (twoją lub przyjaciela i zobacz czy potrafi rozpoznać i z jaką dokładnością.
