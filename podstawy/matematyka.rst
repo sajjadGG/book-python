@@ -45,7 +45,7 @@ Dla dwóch (constant) punktów ``x`` i ``y`` o podanych koordynatach napisz prog
 :Zadanie z gwiazdką:
     Przekształć algorytm tak, aby działał w :math:`N` wymiarowej przestrzeni.
 
-.. figure:: ../machine-learning/img/knn-euclidean-distance.png
+.. figure:: ../machine-learning/img/k-nearest-neighbors-euclidean-distance.png
     :scale: 100%
     :align: center
 

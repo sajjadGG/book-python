@@ -6,6 +6,12 @@ What Is a Neural Network?
 =========================
 It’s a technique for building a computer program that learns from data. It is based very loosely on how we think the human brain works. First, a collection of software "neurons" are created and connected together, allowing them to send messages to each other. Next, the network is asked to solve a problem, which it attempts to do over and over, each time strengthening the connections that lead to success and diminishing those that lead to failure. For a more detailed introduction to neural networks, `Michael Nielsen’s Neural Networks <http://neuralnetworksanddeeplearning.com/index.html>`_ and `Deep Learning <http://www.deeplearningbook.org/>`_ is a good place to start. For a more technical overview, try Deep Learning by Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
 
+.. figure:: img/deep-neural-network.png
+    :scale: 75%
+    :align: center
+
+    Deep Neural Network.
+
 Tools
 =====
 * TensorFlow (Google) - http://playground.tensorflow.org/
@@ -35,6 +41,55 @@ Retraining
 * Saves a lot of time
 * Uses prior work
 
+Przetwarzanie obrazów
+=====================
+
+Flattening image
+----------------
+.. figure:: img/features-images.png
+    :scale: 75%
+    :align: center
+
+    In Image processing files and image pixels are features.
+
+* Używanie "raw pixels" as features
+* Classifier does the rest
+* Flatten image: 2D array -> 1D by unstacking rows and lining them up (reshape array):
+
+    .. code-block:: python
+
+        import matplotlib.pyplot as plt
+
+        def display(i):
+            img = test_data[i]
+            plt.title('Example %d. Label: %d' % (i, test_labels[i]))
+            plt.imshow(img.reshape((28,28)), cmap=plt.cm.gray_r)
+
+.. figure:: img/deep-neural-networks-mnist-segmented.png
+    :scale: 75%
+    :align: center
+
+    Segmented Digit
+
+Weight adjusted by gradient descent
+-----------------------------------
+* Begin with random weight
+* Gradually adjust to better values
+* Evaluate accuracy
+
+.. figure:: img/deep-neural-networks-mnist-pixels.png
+    :scale: 50%
+    :align: center
+
+    Compare middle image pixel.
+
+Visualize weights
+-----------------
+.. figure:: img/deep-neural-networks-mnist-weights.png
+    :scale: 75%
+    :align: center
+
+    Visualize the the weights in the TensorFlow Basic MNIST
 
 Przykłady praktyczne
 ====================
@@ -125,7 +180,7 @@ Handwritten digits recognition (MNIST) with ``tf.contrib.learn``
 ----------------------------------------------------------------
 
 .. figure:: img/deep-neural-networks-mnist-overview.png
-    :scale: 100%
+    :scale: 50%
     :align: center
 
     Handwritten digits recognition also known as MNIST is equivalent to "hello world" in visual Machine Learning world.
@@ -134,6 +189,7 @@ Handwritten digits recognition (MNIST) with ``tf.contrib.learn``
 
     import numpy as np
     import matplotlib.pyplot as plt
+    %matplotlib inline
     import tensorflow as tf
 
     learn = tf.contrib.learn
@@ -166,6 +222,8 @@ Handwritten digits recognition (MNIST) with ``tf.contrib.learn``
 
     # Fit a Linear Classifier
     feature_columns = learn.infer_real_valued_columns_from_input(data)
+
+    # n_classes = 10 because we have 10 digits
     classifier = learn.LinearClassifier(feature_columns=feature_columns, n_classes=10)
     classifier.fit(data, labels, batch_size=100, steps=1000)
 
@@ -198,11 +256,6 @@ Handwritten digits recognition (MNIST) with ``tf.contrib.learn``
     plt.show()
 
 
- .. figure:: img/deep-neural-networks-mnist-weights.png
-    :scale: 100%
-    :align: center
-
-    Visualize the the weights in the TensorFlow Basic MNIST
 
 Zadania praktyczne
 ==================
