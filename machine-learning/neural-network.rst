@@ -28,6 +28,8 @@ Działanie na sieciach neuronowych
 
 Construction
 ------------
+* Ilość neuronów
+* Poziom zagłębień
 
 Learning
 --------
@@ -41,8 +43,13 @@ Retraining
 * Saves a lot of time
 * Uses prior work
 
-Przetwarzanie obrazów
-=====================
+Przetwarzanie obrazów na przykładzie rozpoznawania odręcznie napisanych cyfr (MNIST)
+====================================================================================
+.. figure:: img/deep-neural-networks-mnist-overview.png
+    :scale: 50%
+    :align: center
+
+    Handwritten digits recognition also known as MNIST is equivalent to "hello world" in visual Machine Learning world.
 
 Flattening image
 ----------------
@@ -178,13 +185,6 @@ Image Classification using ``TensorFlow for Poets``
 
 Handwritten digits recognition (MNIST) with ``tf.contrib.learn``
 ----------------------------------------------------------------
-
-.. figure:: img/deep-neural-networks-mnist-overview.png
-    :scale: 50%
-    :align: center
-
-    Handwritten digits recognition also known as MNIST is equivalent to "hello world" in visual Machine Learning world.
-
 .. code-block:: python
 
     import numpy as np
