@@ -35,6 +35,18 @@ What is and Kernel Convolution?
 
     Convolutional Neural Network with 3x3 kernel convolutions
 
+.. figure:: img/convolution-filter-mean.png
+    :scale: 33%
+    :align: center
+
+    Convolution with 3x3 kernel for Mean Blur Filter
+
+.. figure:: img/convolution-filter-gaussian.gif
+    :scale: 33%
+    :align: center
+
+    Convolution with 3x3 kernel for Gaussian Blur Filter
+
 
 What is Convolutional Neural Network (CNN / ConvNet)
 ====================================================

@@ -10,11 +10,8 @@ Kurs programowania w Python i Machine Learning
     :linkedin: `https://linkedin.com/in/mattharasymczuk <https://linkedin.com/in/mattharasymczuk>`_
     :slideshare: `https://www.slideshare.net/astrotech/presentations <https://www.slideshare.net/astrotech/presentations>`_
 
-.. only:: latex and pdf
-
-    Wstęp
-    =====
-
+Wstęp
+=====
 .. toctree::
     :maxdepth: 2
     :numbered:
@@ -25,11 +22,8 @@ Kurs programowania w Python i Machine Learning
     wstep/wybor-ide.rst
     wstep/podstawy-skladni.rst
 
-.. only:: latex and pdf
-
-    Podstawy
-    ========
-
+Podstawy
+========
 .. toctree::
     :maxdepth: 2
     :numbered:
@@ -56,11 +50,8 @@ Kurs programowania w Python i Machine Learning
 
     podstawy/dobre-praktyki.rst
 
-.. only:: latex and pdf
-
-    Średniozaawansowany
-    ===================
-
+Średniozaawansowany
+===================
 .. toctree::
     :maxdepth: 2
     :numbered:
@@ -84,11 +75,8 @@ Kurs programowania w Python i Machine Learning
     sredniozaawansowany/django.rst
     sredniozaawansowany/programowanie-gui.rst
 
-.. only:: latex and pdf
-
-    Zaawansowany
-    ============
-
+Zaawansowany
+============
 .. toctree::
     :maxdepth: 2
     :numbered:
@@ -114,11 +102,8 @@ Kurs programowania w Python i Machine Learning
     zaawansowany/wzorce-projektowe.rst
     zaawansowany/c-extensions.rst
 
-.. only:: latex and pdf
-
-    W zastosowaniach naukowych
-    ==========================
-
+W zastosowaniach naukowych
+==========================
 .. toctree::
     :maxdepth: 2
     :numbered:
@@ -126,11 +111,8 @@ Kurs programowania w Python i Machine Learning
 
     scientific/biblioteki.rst
 
-.. only:: latex and pdf
-
-    Machine Learning
-    ================
-
+Machine Learning
+================
 .. toctree::
     :maxdepth: 2
     :numbered:
@@ -159,11 +141,8 @@ Kurs programowania w Python i Machine Learning
     machine-learning/model-quality.rst
     machine-learning/przydatne-odnosniki.rst
 
-.. only:: latex and pdf
-
-    Załączniki
-    ==========
-
+Załączniki
+==========
 .. toctree::
     :maxdepth: 2
     :numbered:
@@ -174,11 +153,8 @@ Kurs programowania w Python i Machine Learning
     zalaczniki/ksiazki.rst
     zalaczniki/python-wat.rst
 
-.. only:: latex and pdf
-
-    Receptury
-    =========
-
+Receptury
+=========
 .. toctree::
     :maxdepth: 2
     :numbered:
