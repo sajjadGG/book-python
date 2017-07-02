@@ -2,6 +2,8 @@
 Linear Regression
 *****************
 
+Linear regression fits a line to a scatterplot in such a way as to minimize the sum of the squares of the residuals. The resulting regression line, together with the standard deviations of the two variables or their correlation coefficient, can be a reasonable summary of a scatterplot if the scatterplot is roughly football-shaped. In other cases, it is a poor summary. If we are regressing the variable Y on the variable X, and if Y is plotted on the vertical axis and X is plotted on the horizontal axis, the regression line passes through the point of averages, and has slope equal to the correlation coefficient times the SD of Y divided by the SD of X. This page shows a scatterplot, with a button to plot the regression line.
+
 * Najprostszy przypadek sieci neuronowych
 
 Problemy
