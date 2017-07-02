@@ -1,3 +1,5 @@
+.. _datasets:
+
 ********
 Datasets
 ********
@@ -46,6 +48,14 @@ Based on Fisher's linear discriminant model, this data set became a typical test
 
     >>> print(iris.target[0])
     0
+
+Quandl
+------
+Quandl (/ˈkwɑːndəl/) is a platform for financial, economic, and alternative data that serves investment professionals. Quandl sources data from over 500 publishers. All Quandl's data are accessible via an API. API access is possible through packages for multiple programming languages including R, Python, Matlab, Maple (software) and Stata.
+
+An Excel add-in allows access to data, including stock price information.
+
+Package for quandl API access https://www.quandl.com/topics
 
 
 SPAM Dataset
