@@ -4,9 +4,9 @@ Convolutional Neural Network
 
 Combination of:
 
-- Deep Neural Networks
-- Kernel Convolutions
-- With assumption, that input is image
+    - Deep Neural Networks
+    - Kernel Convolutions
+    - With assumption, that input is image
 
 .. figure:: img/convolutional-neural-network-overview.png
     :scale: 66%
