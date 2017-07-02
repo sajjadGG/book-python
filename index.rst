@@ -2,8 +2,7 @@
 Kurs programowania w Python i Machine Learning
 **********************************************
 
-Author
-======
+**Author**
 
 :name: `Matt Harasymczuk <http://astrotech.io>`_
 :email: `python@astrotech.io <mailto:python@astrotech.io>`_
