@@ -2,7 +2,11 @@
 Machine Learning Algorithms
 ***************************
 
-.. note:: Source: http://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/
+.. figure:: img/algorithms-classes.png
+    :scale: 100%
+    :align: center
+
+    Machine Learning Algorithms Classes
 
 Algorithms are often grouped by similarity in terms of their function (how they work). For example, tree-based methods, and neural network inspired methods.
 
@@ -269,3 +273,4 @@ I also did not cover algorithms from specialty subfields of machine learning, su
 - And more...
 
 
+.. note:: Source: http://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/
