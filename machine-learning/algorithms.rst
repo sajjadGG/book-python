@@ -2,11 +2,17 @@
 Machine Learning Algorithms
 ***************************
 
-.. figure:: img/algorithms-classes.png
-    :scale: 100%
+.. figure:: img/algorithms-cheat-sheet.png
+    :scale: 50%
     :align: center
 
-    Machine Learning Algorithms Classes
+    Machine Learning Algorithms Cheat Sheet
+
+.. figure:: img/algorithms-classes.png
+    :scale: 66%
+    :align: center
+
+    Machine Learning Algorithms Classes and Classification
 
 Algorithms are often grouped by similarity in terms of their function (how they work). For example, tree-based methods, and neural network inspired methods.
 
