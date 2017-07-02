@@ -89,7 +89,7 @@ Distribution
 Distribution Function, Empirical
     The empirical (cumulative) distribution function of a set of numerical data is, for each real value of :math:`x` , the fraction of observations that are less than or equal to :math:`x` . A plot of the empirical distribution function is an uneven set of stairs. The width of the stairs is the spacing between adjacent data; the height of the stairs depends on how many data have exactly the same value. The distribution function is zero for small enough (negative) values of :math:`x` , and is unity for large enough values of :math:`x` . It increases monotonically: :math:`if y > x`, the empirical distribution function evaluated at :math:`y` is at least as large as the empirical distribution function evaluated at :math:`x`.
 
-Expectation, Expected Value.
+Expectation, Expected Value
 The expected value of a random variable is the long-term limiting average of its values in independent repeated experiments. The expected value of the random variable :math:`X` is denoted :math:`EX` or :math:`E(X)` . For a discrete random variable (one that has a countable number of possible values) the expected value is the weighted average of its possible values, where the weight assigned to each possible value is the chance that the random variable takes that value. One can think of the expected value of a random variable as the point at which its probability histogram would balance, if it were cut out of a uniform material. Taking the expected value is a linear operation: if :math:`X` and :math:`Y` are two random variables, the expected value of their sum is the sum of their expected values :math:`(E(X+Y) = E(X) + E(Y))` , and the expected value of a constant a times a random variable :math:`X` is the constant times the expected value of :math:`X` :math:`(E(a×X ) = a× E(X))` .
 
 Extrapolation
@@ -106,7 +106,7 @@ Geometric Mean
 
     :math:`(x1×x2×x3× … ×xn)1/n`
 
-Histogram.
+Histogram
     A histogram is a kind of plot that summarizes how data are distributed. Starting with a set of class intervals, the histogram is a set of rectangles ("bins") sitting on the horizontal axis. The bases of the rectangles are the class intervals, and their heights are such that their areas are proportional to the fraction of observations in the corresponding class intervals. That is, the height of a given rectangle is the fraction of observations in the corresponding class interval, divided by the length of the corresponding class interval. A histogram does not need a vertical scale, because the total area of the histogram must equal 100%. The units of the vertical axis are percent per unit of the horizontal axis. This is called the density scale. The horizontal axis of a histogram needs a scale. If any observations coincide with the endpoints of class intervals, the endpoint convention is important. This page contains a histogram tool, with controls to highlight ranges of values and read their areas.
 
 Interpolation
@@ -115,7 +115,7 @@ Interpolation
 Linear association
     Two variables are linearly associated if a change in one is associated with a proportional change in the other, with the same constant of proportionality throughout the range of measurement. The correlation coefficient measures the degree of linear association on a scale of −1 to 1.
 
-Mean, Arithmetic mean.
+Mean, Arithmetic mean
     The sum of a list of numbers, divided by the number of elements in the list. See also average.
 
 Median
@@ -205,7 +205,7 @@ Random Variable
 Real number
     Loosely speaking, the real numbers are all numbers that can be represented as fractions (rational numbers), whether proper or improper—and all numbers in between the rational numbers. That is, the real numbers comprise the rational numbers and all limits of Cauchy sequences of rational numbers, where the Cauchy sequence is with respect to the absolute value metric. (More formally, the real numbers are the completion of the set of rational numbers in the topology induced by the absolute value function.) The real numbers contain all integers, all fractions, and all irrational (and transcendental) numbers, such as :math:`π`, :math:`e`, and :math:`2½`. There are uncountably many real numbers between 0 and 1; in contrast, there are only countably many rational numbers between 0 and 1.
 
-Regression, Linear Regression.
+Regression, Linear Regression
     Linear regression fits a line to a scatterplot in such a way as to minimize the sum of the squares of the residuals. The resulting regression line, together with the standard deviations of the two variables or their correlation coefficient, can be a reasonable summary of a scatterplot if the scatterplot is roughly football-shaped. In other cases, it is a poor summary. If we are regressing the variable :math:`Y` on the variable :math:`X`, and if :math:`Y` is plotted on the vertical axis and :math:`X` is plotted on the horizontal axis, the regression line passes through the point of averages, and has slope equal to the correlation coefficient times the SD of :math:`Y` divided by the SD of :math:`X`. This page shows a scatterplot, with a button to plot the regression line.
 
 Sample
