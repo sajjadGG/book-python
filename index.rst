@@ -12,9 +12,6 @@ Kurs programowania w Python i Machine Learning
 :slideshare: `https://www.slideshare.net/astrotech/presentations <https://www.slideshare.net/astrotech/presentations>`_
 
 
-Wstęp
-=====
-
 .. toctree::
     :maxdepth: 3
     :numbered:
@@ -25,9 +22,6 @@ Wstęp
     wstep/instalacja.rst
     wstep/podstawy-skladni.rst
 
-
-Podstawy
-========
 
 .. toctree::
     :maxdepth: 3
@@ -56,8 +50,6 @@ Podstawy
 
     podstawy/dobre-praktyki.rst
 
-Średniozaawansowany
-===================
 
 .. toctree::
     :maxdepth: 3
@@ -83,8 +75,6 @@ Podstawy
     sredniozaawansowany/django.rst
     sredniozaawansowany/programowanie-gui.rst
 
-Zaawansowany
-============
 
 .. toctree::
     :maxdepth: 3
@@ -112,8 +102,6 @@ Zaawansowany
     zaawansowany/wzorce-projektowe.rst
     zaawansowany/c-extensions.rst
 
-W zastosowaniach naukowych
-==========================
 
 .. toctree::
     :maxdepth: 3
@@ -123,8 +111,6 @@ W zastosowaniach naukowych
 
     scientific/biblioteki.rst
 
-Machine Learning
-================
 
 .. toctree::
     :maxdepth: 3
@@ -155,8 +141,6 @@ Machine Learning
     machine-learning/model-quality.rst
     machine-learning/przydatne-odnosniki.rst
 
-Załączniki
-==========
 
 .. toctree::
     :maxdepth: 3
@@ -170,8 +154,6 @@ Załączniki
     zalaczniki/ksiazki.rst
     zalaczniki/python-wat.rst
 
-Receptury
-=========
 
 .. toctree::
     :maxdepth: 3
