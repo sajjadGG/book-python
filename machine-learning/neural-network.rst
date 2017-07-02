@@ -18,14 +18,25 @@ Przykład praktyczny
 * Każdy z elementów oferty ma swoje atrybuty:
 
     - basen
-    - 4 sypialnie
+    - ilość sypialni
+    - rok budowy
     - ogród
     - domek dla gości
     - garaż
+    - lokacja
+    - powierzchnia
+    - wyposażenie
 
-* Wpływa na cenę domu
+* Wpływa na cenę domu w różnym stopniu
+* Niektóre rzeczy mają większą wagę, tzn. lokacja mocno podnosi cenę, a garaż zdecydowanie mniej
 * Wewnątrz sieci, neurony składają się z pewnych liniowych lub nieliniowych zależności pomiędzy poszczególnymi atrybutami oferty
-* Cena domu wpłwa na sumę wszyskich kombinacji elementów poprzedniego stopnia.
+* Przykład poziomu hidden layer:
+
+    - mały dom w dobrej lokalizacji
+    - duży dom w gorszej lokalizacji
+    - umiarkowana lokalizacja i rozmiar plus basen
+
+* Cena domu wpłwa na sumę wszyskich kombinacji elementów i ich wag z poprzedniech stopni.
 
 .. figure:: img/neural-network.png
     :scale: 50%
@@ -55,20 +66,26 @@ Construction
 
 Learning
 --------
+Overfitting:
+    gdy sieć neuronowa jest tak dobrze nauczona, że dane które przychodzą mają problem z byciem dobrze sklasyfikowanymi
+
+Shallow Learing:
+    Gdy wartość output zależy od jednego poziomu parametrów. Sumujemy wagi i wartości i dostajemy liczbę na końcu.
+    Można wykreślić prostą funkcję liniową lub kwadratową. Należy zwrócić uwagę aby nie doprowadzić do overfitting.
+
+Deep Learning:
+    Wartość zależy od kilku poziomów sieci.
 
 Optimizing
 ----------
+Back propagation:
+    zmiana wartości wag w sieci neuronowej na niższych warstwach - propagacja w dół sieci
 
 Retraining
 ----------
 * Also known as Transfer Learning
 * Saves a lot of time
 * Uses prior work
-
-Overfitting
------------
-* gdy sieć neuronowa jest tak dobrze nauczona, że dane które przychodzą mają problem z byciem dobrze sklasyfikowanymi
-
 
 Przetwarzanie obrazów na przykładzie rozpoznawania odręcznie napisanych cyfr (MNIST)
 ====================================================================================
