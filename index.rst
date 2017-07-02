@@ -3,31 +3,36 @@ Kurs programowania w Python i Machine Learning
 **********************************************
 
 **Author**
+    :name: `Matt Harasymczuk <http://astrotech.io>`_
+    :email: `python@astrotech.io <mailto:python@astrotech.io>`_
+    :www: `http://www.astrotech.io <http://astrotech.io>`_
+    :facebook: `https://facebook.com/matt.harasymczuk <https://facebook.com/matt.harasymczuk>`_
+    :linkedin: `https://linkedin.com/in/mattharasymczuk <https://linkedin.com/in/mattharasymczuk>`_
+    :slideshare: `https://www.slideshare.net/astrotech/presentations <https://www.slideshare.net/astrotech/presentations>`_
 
-:name: `Matt Harasymczuk <http://astrotech.io>`_
-:email: `python@astrotech.io <mailto:python@astrotech.io>`_
-:www: `http://www.astrotech.io <http://astrotech.io>`_
-:facebook: `https://facebook.com/matt.harasymczuk <https://facebook.com/matt.harasymczuk>`_
-:linkedin: `https://linkedin.com/in/mattharasymczuk <https://linkedin.com/in/mattharasymczuk>`_
-:slideshare: `https://www.slideshare.net/astrotech/presentations <https://www.slideshare.net/astrotech/presentations>`_
+.. only:: latex
 
+    Wstęp
+    =====
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 1
     :numbered:
     :caption: Wstęp
-    :name: Wstęp
 
     wstep/o-jezyku-python.rst
     wstep/instalacja.rst
     wstep/podstawy-skladni.rst
 
+.. only:: latex
+
+    Podstawy
+    ========
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 1
     :numbered:
     :caption: Podstawy
-    :name: podstawy
 
     podstawy/zmienne-i-stale.rst
     podstawy/zlozone-typy-danych.rst
@@ -50,12 +55,15 @@ Kurs programowania w Python i Machine Learning
 
     podstawy/dobre-praktyki.rst
 
+.. only:: latex
+
+    Średniozaawansowany
+    ===================
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 1
     :numbered:
     :caption: Średniozaawansowany
-    :name: średniozaawansowany
 
     sredniozaawansowany/datetime.rst
     sredniozaawansowany/logging.rst
@@ -75,12 +83,15 @@ Kurs programowania w Python i Machine Learning
     sredniozaawansowany/django.rst
     sredniozaawansowany/programowanie-gui.rst
 
+.. only:: latex
+
+    Zaawansowany
+    ============
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 1
     :numbered:
     :caption: Zaawansowany
-    :name: zaawansowany
 
     sredniozaawansowany/virtualenv.rst
     zaawansowany/type-annotation.rst
@@ -102,21 +113,27 @@ Kurs programowania w Python i Machine Learning
     zaawansowany/wzorce-projektowe.rst
     zaawansowany/c-extensions.rst
 
+.. only:: latex
+
+    W zastosowaniach naukowych
+    ==========================
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 1
     :numbered:
     :caption: W zastosowaniach naukowych
-    :name: scientific
 
     scientific/biblioteki.rst
 
+.. only:: latex
+
+    Machine Learning
+    ================
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 1
     :numbered:
     :caption: Machine Learning
-    :name: machine-learning
 
     machine-learning/wprowadzenie-do-statystyki.rst
     machine-learning/wprowadzenie-do-machine-learning.rst
@@ -141,12 +158,15 @@ Kurs programowania w Python i Machine Learning
     machine-learning/model-quality.rst
     machine-learning/przydatne-odnosniki.rst
 
+.. only:: latex
+
+    Załączniki
+    ==========
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 1
     :numbered:
     :caption: Załączniki
-    :name: zalaczniki
 
     zalaczniki/przydatne-odnosniki.rst
     zalaczniki/python-2vs3.rst
@@ -154,12 +174,15 @@ Kurs programowania w Python i Machine Learning
     zalaczniki/ksiazki.rst
     zalaczniki/python-wat.rst
 
+.. only:: latex
+
+    Receptury
+    =========
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 1
     :numbered:
     :caption: Receptury
-    :name: receptury
 
     receptury/ldap-expiring-passwords.rst
     receptury/github-api.rst
