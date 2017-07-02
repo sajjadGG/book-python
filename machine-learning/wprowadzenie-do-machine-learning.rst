@@ -2,6 +2,9 @@
 Wprowadzenie do Machine Learning
 ********************************
 
+
+Czym jest uczenie maszynowe?
+============================
 Machine learning was defined in 1959 by Arthur Samuel as the "field of study that gives computers the ability to learn without being explicitly programmed." This means imbuing knowledge to machines without hard-coding it.
 
 Co trzeba wiedzieć przed rozpoczęciem pracy?
@@ -145,23 +148,23 @@ Datasets
 More in chapter: :ref:`Datasets`.
 
 
-Czym jest uczenie maszynowe?
-============================
-
-Regresja i klasyfikacja
-=======================
-
-Miary jakości
-=============
-
-
 Ważne pytania przed przystąpieniem do tworzenia algorytmu
----------------------------------------------------------
+=========================================================
 * How does this work in real world?
 * How much training data do you need?
 * How is the tree created?
 * What makes a good feature?
 
+.. figure:: img/machine-learninig-steps.png
+    :scale: 100%
+    :align: center
+
+    Machine Learning Steps
+
+Czyszczenie Danych
+==================
+* Bardzo ważny temat
+* Rzadko kto o tym wspomina!
 
 Praca z bibliotekami
 ====================
