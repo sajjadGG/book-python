@@ -35,7 +35,7 @@ What is and Kernel Convolution?
 
     Convolutional Neural Network with 3x3 kernel convolutions
 
-.. figure:: img/convolution-filter-mean.png
+.. figure:: img/convolution-filter-mean.gif
     :scale: 33%
     :align: center
 
