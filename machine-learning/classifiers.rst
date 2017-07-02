@@ -50,6 +50,43 @@ Random Classifier
 
 Accuracy for Iris dataset: 0.346666666667
 
+Nearest Neighbor Classifier
+---------------------------
+.. code-block:: python
+
+    def euclidean_distance(point_from_numeric_data, point_from_testing_data):
+        return distance.euclidean(point_from_numeric_data, point_from_testing_data)
+
+
+    class MyClassifier():
+
+        def fit(self, x_train, y_train):
+            # Memorize
+            self.x_train = x_train
+            self.y_train = y_train
+
+        def predict(self, x_test):
+            predictions = []
+
+            for row in x_test:
+                label = self.closest(row)
+                predictions.append(label)
+
+            return predictions
+
+        def closest(self, row):
+            best_dist = euclidean_distance(row, self.x_train[0])
+            best_index = 0
+
+            for i in range(0, len(self.x_train)):
+                dist = euclidean_distance(row, self.x_train[i])
+                if dist < best_dist:
+                    best_dist = dist
+                    best_index = i
+
+            return self.y_train[best_index]
+
+Accuracy for Iris dataset: 0.946666666667
 
 Zadania praktyczne
 ==================

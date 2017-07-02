@@ -255,7 +255,7 @@ Supervised Learning - Z nadzorem
 * Drzewa decyzyjne
 * K najbliższych sąsiadów (ang. K Nearest Neighbors)
 * Regresja liniowa (ang. Linear Regression)
-* Regresja logisyczna
+* Regresja logistyczna
 * Support Vector Machines (SVM)
 * Naive Bayes
 * Sztuczne sieci neuronowe (ang. neural networks)

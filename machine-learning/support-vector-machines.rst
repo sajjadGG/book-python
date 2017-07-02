@@ -11,7 +11,7 @@ A Support Vector Machine (SVM) is a discriminative classifier formally defined b
 Given a set of training examples, each marked as belonging to one or the other of two categories, an SVM training algorithm builds a model that assigns new examples to one category or the other, making it a non-probabilistic binary linear classifier (although methods such as Platt scaling exist to use SVM in a probabilistic classification setting). An SVM model is a representation of the examples as points in space, mapped so that the examples of the separate categories are divided by a clear gap that is as wide as possible. New examples are then mapped into that same space and predicted to belong to a category based on on which side of the gap they fall.
 
 .. figure:: img/support-vector-machines-max-sep-hyperplane-with-margin.png
-    :scale: 50%
+    :scale: 33%
     :align: center
 
     Maximum-margin hyperplane and margins for an SVM trained with samples from two classes. Samples on the margin are called the support vectors.
@@ -27,7 +27,9 @@ When data are not labeled, supervised learning is not possible, and an unsupervi
     from scipy import stats
 
     # use seaborn plotting defaults
-    import seaborn as sns; sns.set()
+    import seaborn as sns
+
+    sns.set()
 
 
 Motivating Support Vector Machines
@@ -35,7 +37,7 @@ Motivating Support Vector Machines
 Support Vector Machines (SVMs) are a powerful supervised learning algorithm used for **classification** or for **regression**. SVMs are a discriminative classifier: that is, they draw a boundary between clusters of data.
 
 .. figure:: img/k-nearest-neighbors-curve.png
-    :scale: 50%
+    :scale: 33%
     :align: center
 
     SVMs are a discriminative classifier: that is, they draw a boundary between clusters of data.
