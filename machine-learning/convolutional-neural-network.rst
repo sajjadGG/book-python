@@ -2,16 +2,17 @@
 Convolutional Neural Network
 ****************************
 
+Combination of:
+
+- Deep Neural Networks
+- Kernel Convolutions
+- With assumption, that input is image
+
 .. figure:: img/convolutional-neural-network-overview.png
     :scale: 66%
     :align: center
 
     General overview of Convolutional Neural Network
-
-Combines:
-
-- Deep Neural Networks
-- Kernel Convolutions
 
 
 Problemy z przetwarzaniem obrazów
