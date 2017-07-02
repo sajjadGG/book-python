@@ -131,7 +131,7 @@ OLAP (MOLAP, ROLAP)
 Overfitting
     Models that **overfit** learns to recognize noise from the signal, than the data.
 
-    .. figure:: img/model-overfitting.png
+    .. figure:: img/model-quality-overfitting.png
         :scale: 50%
         :align: center
 
