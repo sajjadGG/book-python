@@ -33,7 +33,7 @@ Scikit-learn
         - Built on NumPy, SciPy, and matplotlib
         - Open source, commercially usable - BSD license
 
-    * `Project github page <https://github.com/scikit-learn/scikit-learn>`_
+    * `Scikit-learn Github <https://github.com/scikit-learn/scikit-learn>`_
     * `Scikit-learn Website <http://scikit-learn.org>`_
 
 TensorFlow
@@ -41,14 +41,14 @@ TensorFlow
 
     TensorFlow was originally developed by researchers and engineers working on the Google Brain team within Google's Machine Intelligence Research organization for the purposes of conducting machine learning and deep neural networks research. The system is general enough to be applicable in a wide variety of other domains, as well.
 
-    * `Project github page <https://github.com/tensorflow/tensorflow>`_
+    * `TensorFlow Github <https://github.com/tensorflow/tensorflow>`_
     * `TensorFlow website <https://tensorflow.org/>`_
     * `TensorFlow MOOC on Udacity <https://www.udacity.com/course/deep-learning--ud730>`_
 
 PyMC3
     PyMC3 is a Python package for Bayesian statistical modeling and Probabilistic Machine Learning which focuses on advanced Markov chain Monte Carlo and variational fitting algorithms. Its flexibility and extensibility make it applicable to a large suite of problems.
 
-    * `Project github page <https://github.com/pymc-devs/pymc3>`_
+    * `PyMC3 Github <https://github.com/pymc-devs/pymc3>`_
     * `PyMC3 tutorial <http://pymc-devs.github.io/pymc3/notebooks/getting_started.html>`_
     * `Quick start <http://pymc-devs.github.io/pymc3/notebooks/api_quickstart.html>`_
 
