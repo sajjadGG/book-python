@@ -151,6 +151,7 @@ Machine Learning
     machine-learning/clustering.rst
     machine-learning/principal-component-analysis.rst
     machine-learning/neural-network.rst
+    machine-learning/convolutional-neural-network.rst
 
     machine-learning/model-quality.rst
     machine-learning/przydatne-odnosniki.rst

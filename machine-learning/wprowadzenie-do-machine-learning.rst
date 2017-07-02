@@ -37,8 +37,8 @@ Co trzeba umieć aby rozpocząć?
 Algorytmy uczenia maszynowego
 =============================
 
-Z nadzorem
-----------
+Supervised Learning - Z nadzorem
+--------------------------------
 * Drzewa decyzyjne
 * K najbliższych sąsiadów (ang. K Nearest Neighbors)
 * Regresja liniowa (ang. Linear Regression)
@@ -47,11 +47,26 @@ Z nadzorem
 * Naive Bayes
 * Sztuczne sieci neuronowe (ang. neural networks)
 
-Bez nadzoru
------------
+Unsupervised Learning - Bez nadzoru
+-----------------------------------
 * Klastrowanie (ang. flat clustering, hierarchical clustering)
 * Principal Component Analysis (PCA)
 * Sztuczne sieci neuronowe (ang. neural networks)
+
+Semi-Supervised Learning
+------------------------
+* połączenie obu światów
+* nie wszystkie dane są olabelkowane
+* przyszłość machine learning
+* ze względu na wolumen danych, nie wszystkie mogą mieć olabelkowane
+* man (human) in the loop:
+
+    * ekspert labelkuje część danych
+    * komputer dokonuje wstępnej analizy części danych
+    * przedstawia iterację człowiekowi
+    * człowiek interaktywnie poprawia i określa jakość oznaczania
+    * komputer dokonuje kolejnej analizy
+
 
 Biblioteki
 ==========

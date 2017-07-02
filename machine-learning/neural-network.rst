@@ -10,7 +10,29 @@ It’s a technique for building a computer program that learns from data. It is 
     :scale: 75%
     :align: center
 
-    Deep Neural Network.
+    Neural Network
+
+Przykład praktyczny
+-------------------
+* Wyobraźmy sobie ofertę domu.
+* Każdy z elementów oferty ma swoje atrybuty:
+
+    - basen
+    - 4 sypialnie
+    - ogród
+    - domek dla gości
+    - garaż
+
+* Wpływa na cenę domu
+* Wewnątrz sieci, neurony składają się z pewnych liniowych lub nieliniowych zależności pomiędzy poszczególnymi atrybutami oferty
+* Cena domu wpłwa na sumę wszyskich kombinacji elementów poprzedniego stopnia.
+
+.. figure:: img/neural-network.png
+    :scale: 50%
+    :align: center
+
+    Neural Network
+
 
 Tools
 =====
@@ -42,6 +64,11 @@ Retraining
 * Also known as Transfer Learning
 * Saves a lot of time
 * Uses prior work
+
+Overfitting
+-----------
+* gdy sieć neuronowa jest tak dobrze nauczona, że dane które przychodzą mają problem z byciem dobrze sklasyfikowanymi
+
 
 Przetwarzanie obrazów na przykładzie rozpoznawania odręcznie napisanych cyfr (MNIST)
 ====================================================================================

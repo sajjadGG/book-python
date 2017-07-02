@@ -119,6 +119,5 @@ PASCAL is developing the expertise and scientific results that will help create 
 
 Public datasets in svmlight / libsvm format
 -------------------------------------------
-
 * http://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/
 

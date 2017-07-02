@@ -2,7 +2,6 @@
 Decision Tree
 *************
 
-
 .. figure:: img/decision-tree.png
     :scale: 100%
     :align: center
@@ -163,7 +162,6 @@ Visualizing a Decision Tree
     :align: center
 
     Vizualization of Decision Tree Classifier
-
 
 
 Zadania praktyczne

@@ -54,7 +54,6 @@ Zadania praktyczne
 
 Spam Classifier
 ---------------
-
 #. Stwórz classifier który na podstawie wiadomości email zakwalifikuje je jako SPAM lub nie SPAM.
 
 #. Zakwalifikuj wiadomości jak na przykładzie poniżej:
