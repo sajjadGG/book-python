@@ -15,13 +15,13 @@ W poniższych materiałach będę posługiwał się kodem źródłowym, który w
 
 Korzystaj z dobrego IDE (lub edytora):
 
-- W kategorii IDE jest PyCharm i później długo długo nic. Należy się z tym pogodzić i nie zaprzeczać rzeczywistości, ponieważ ani Wingware ani Komodo IDE (konkurencja) nie grają w tej samej lidze. Darmowa wersja “Community Edition” powinna jak najbardziej wystarczyć do nauki Pythona.
+- W kategorii IDE jest PyCharm i później długo długo nic. Należy się z tym pogodzić i nie zaprzeczać rzeczywistości, ponieważ ani Wingware ani Komodo IDE (konkurencja) nie grają w tej samej lidze. Darmowa wersja "Community Edition" powinna jak najbardziej wystarczyć do nauki Pythona.
 
 Jeżeli IDE uważasz za coś potwornego i zbędnego - to się mylisz, ale nie mam zamiaru cię w tym miejscu przekonywać. Dla takich ludzi jak ty też jest nadzieja. Zarówno dobrze skonfigurowany vim jak i Sublime Text 3 mogą posłużyć za dobry edytor do nauki Pythona.
 
 Korzystaj z dobrego interpretera:
 
-- Pobierz najnowszą wersję z serii 3 (w tej chwili to 3.4.2) bezpośrednio z: https://www.python.org/downloads/
+- Pobierz najnowszą wersję z serii 3 (w tej chwili to 3.6) bezpośrednio z: https://www.python.org/downloads/
 
 Znaj narzędzia potrzebne do pracy w dobrym środowisku pythona:
 

@@ -10,27 +10,28 @@ Kurs programowania w Python i Machine Learning
     :linkedin: `https://linkedin.com/in/mattharasymczuk <https://linkedin.com/in/mattharasymczuk>`_
     :slideshare: `https://www.slideshare.net/astrotech/presentations <https://www.slideshare.net/astrotech/presentations>`_
 
-.. only:: latex
+.. only:: latex and pdf
 
     Wstęp
     =====
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :numbered:
     :caption: Wstęp
 
     wstep/o-jezyku-python.rst
     wstep/instalacja.rst
+    wstep/wybor-ide.rst
     wstep/podstawy-skladni.rst
 
-.. only:: latex
+.. only:: latex and pdf
 
     Podstawy
     ========
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :numbered:
     :caption: Podstawy
 
@@ -55,13 +56,13 @@ Kurs programowania w Python i Machine Learning
 
     podstawy/dobre-praktyki.rst
 
-.. only:: latex
+.. only:: latex and pdf
 
     Średniozaawansowany
     ===================
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :numbered:
     :caption: Średniozaawansowany
 
@@ -83,13 +84,13 @@ Kurs programowania w Python i Machine Learning
     sredniozaawansowany/django.rst
     sredniozaawansowany/programowanie-gui.rst
 
-.. only:: latex
+.. only:: latex and pdf
 
     Zaawansowany
     ============
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :numbered:
     :caption: Zaawansowany
 
@@ -113,25 +114,25 @@ Kurs programowania w Python i Machine Learning
     zaawansowany/wzorce-projektowe.rst
     zaawansowany/c-extensions.rst
 
-.. only:: latex
+.. only:: latex and pdf
 
     W zastosowaniach naukowych
     ==========================
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :numbered:
     :caption: W zastosowaniach naukowych
 
     scientific/biblioteki.rst
 
-.. only:: latex
+.. only:: latex and pdf
 
     Machine Learning
     ================
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :numbered:
     :caption: Machine Learning
 
@@ -158,29 +159,28 @@ Kurs programowania w Python i Machine Learning
     machine-learning/model-quality.rst
     machine-learning/przydatne-odnosniki.rst
 
-.. only:: latex
+.. only:: latex and pdf
 
     Załączniki
     ==========
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :numbered:
     :caption: Załączniki
 
     zalaczniki/przydatne-odnosniki.rst
     zalaczniki/python-2vs3.rst
-    zalaczniki/wybor-ide.rst
     zalaczniki/ksiazki.rst
     zalaczniki/python-wat.rst
 
-.. only:: latex
+.. only:: latex and pdf
 
     Receptury
     =========
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :numbered:
     :caption: Receptury
 
