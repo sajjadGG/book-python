@@ -2,6 +2,9 @@
 Słownik Pojęć
 *************
 
+.. note:: Source for a lot of definitions: `Glossary of Terms - Special Issue on Applications of Machine Learning and the Knowledge Discovery Process <http://robotics.stanford.edu/~ronnyk/glossary.html>`_
+
+
 Accuracy (error rate)
     The rate of correct (incorrect) predictions made by the model over a data set (cf. coverage). Accuracy is usually estimated by using an independent test set that was not used at any time during the learning process. More complex accuracy estimation techniques, such as cross-validation and the bootstrap, are commonly used, especially with data sets containing a small number of instances.
 
@@ -173,7 +176,3 @@ Unsupervised learning
 
 Utility
     See Cost.
-
-
-.. note::
-    Source: `Glossary of Terms - Special Issue on Applications of Machine Learning and the Knowledge Discovery Process <http://robotics.stanford.edu/~ronnyk/glossary.html>`_

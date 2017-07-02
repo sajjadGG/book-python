@@ -252,6 +252,18 @@ Algorytmy uczenia maszynowego
 
 Supervised Learning - Z nadzorem
 --------------------------------
+Input data is called training data and has a known label or result such as spam/not-spam or a stock price at a time.
+
+A model is prepared through a training process in which it is required to make predictions and is corrected when those predictions are wrong. The training process continues until the model achieves a desired level of accuracy on the training data.
+
+Example problems are classification and regression.
+
+.. figure:: img/algorithms-supervised.png
+    :scale: 100%
+    :align: center
+
+    Supervised Learning - Z nadzorem
+
 * Drzewa decyzyjne
 * K najbliższych sąsiadów (ang. K Nearest Neighbors)
 * Regresja liniowa (ang. Linear Regression)
@@ -262,12 +274,38 @@ Supervised Learning - Z nadzorem
 
 Unsupervised Learning - Bez nadzoru
 -----------------------------------
+Input data is not labeled and does not have a known result.
+
+A model is prepared by deducing structures present in the input data. This may be to extract general rules. It may be through a mathematical process to systematically reduce redundancy, or it may be to organize data by similarity.
+
+Example problems are clustering, dimensionality reduction and association rule learning.
+
+.. figure:: img/algorithms-unsupervised.png
+    :scale: 100%
+    :align: center
+
+    Unsupervised Learning - Bez nadzoru
+
 * Klastrowanie (ang. flat clustering, hierarchical clustering)
 * Principal Component Analysis (PCA)
 * Sztuczne sieci neuronowe (ang. neural networks)
 
 Semi-Supervised Learning
 ------------------------
+Input data is a mixture of labeled and unlabelled examples.
+
+There is a desired prediction problem but the model must learn the structures to organize the data as well as make predictions.
+
+Example problems are classification and regression.
+
+Example algorithms are extensions to other flexible methods that make assumptions about how to model the unlabeled data.
+
+.. figure:: img/algorithms-semisupervised.png
+    :scale: 100%
+    :align: center
+
+    Semi-Supervised Learning
+
 * połączenie obu światów
 * nie wszystkie dane są olabelkowane
 * przyszłość machine learning

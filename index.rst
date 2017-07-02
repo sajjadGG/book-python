@@ -123,6 +123,7 @@ Machine Learning
     machine-learning/slownik-pojec.rst
     machine-learning/datasets.rst
 
+    machine-learning/algorithms.rst
     machine-learning/features.rst
     machine-learning/classifiers.rst
 
