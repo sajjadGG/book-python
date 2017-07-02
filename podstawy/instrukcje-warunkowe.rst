@@ -1,3 +1,5 @@
+.. _Instrukcje warunkowe:
+
 ********************
 Instrukcje warunkowe
 ********************

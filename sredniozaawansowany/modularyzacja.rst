@@ -2,6 +2,41 @@
 Modularyzacja, wersjonowanie i dystrybucja
 ******************************************
 
+.. _Instalacja i korzystanie z zewnętrznych bibliotek:
+
+Instalacja i korzystanie z zewnętrznych bibliotek
+=================================================
+
+Importowanie modułów
+--------------------
+
+.. code-block:: python
+
+    import module
+    from module import submodule
+    from module.submodule import function as alias
+    from . import module
+    from .. import module
+    from ..module import submodule
+
+``pip search``
+--------------
+
+``pip install``
+---------------
+
+``pip install -r requirements.txt``
+-----------------------------------
+
+``requirements.txt`` a ``setup.py``
+-----------------------------------
+
+``wheel``
+---------
+
+``distutils`` i ``setuptools``
+------------------------------
+
 Modularyzacja
 =============
 
@@ -16,7 +51,6 @@ Importowanie względne ``from . import *``
 
 ``__all__``
 -----------
-
 
 Konwencja nazewnicza - ``main.py``
 ----------------------------------
@@ -150,26 +184,6 @@ Tworzenie paczek
 ``python setup.py sdist upload``
 --------------------------------
 
-Instalacja i korzystanie z zewnętrznych bibliotek
-=================================================
-
-``pip search``
---------------
-
-``pip install``
----------------
-
-``pip install -r requirements.txt``
------------------------------------
-
-``requirements.txt`` a ``setup.py``
------------------------------------
-
-``wheel``
----------
-
-``distutils`` i ``setuptools``
-------------------------------
 
 Przyszłość paczkowania i dystrybucji
 ====================================

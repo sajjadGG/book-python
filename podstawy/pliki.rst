@@ -1,6 +1,8 @@
-*****
-Pliki
-*****
+.. _Operacje na plikach:
+
+*******************
+Operacje na plikach
+*******************
 
 Konstrukcja ``with``
 ====================

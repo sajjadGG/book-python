@@ -1,9 +1,45 @@
-************
-Serializacja
-************
+*****************************
+Serializacja i deserializacja
+*****************************
 
-``pickle``
-==========
+.. _Serializacja i deserializacja danych w CSV:
+
+Serializacja i deserializacja danych w CSV
+==========================================
+
+.. code-block:: python
+
+    >>> import csv
+
+    >>> with open('filename.csv') as csvfile:
+    ...     data = csv.DictReader(csvfile, delimiter=',', quotechar='"')
+    ...
+    ...     for row in data:
+    ...         print(row['first_name'], row['last_name'])
+
+
+.. code-block:: python
+
+    >>> import csv
+
+    >>> data = [
+    ...    {'first_name': 'José', 'last_name': 'Jiménez'},
+    ...    {'first_name': 'Max', 'last_name': 'Peck'},
+    ...    {'first_name': 'Ivan', 'last_name': 'Ivanovic'},
+    ...]
+
+    >>> with open('filename.csv', 'w') as csvfile:
+    ...    fieldnames = data[0].keys()
+    ...    writer = csv.DictWriter(csvfile, fieldnames=fieldnames, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL, lineterminator='\n')
+    ...    writer.writeheader()
+    ...
+    ...    for row in data:
+    ...        writer.writerow(row)
+    ...
+
+
+Serializacja i deserializacja danych Pythona
+============================================
 
 .. code-block:: python
 
@@ -31,8 +67,8 @@ Serializacja
     >>> print('Obiekt po konwersji:', osoba.nazwisko)
 
 
-``json``
-========
+Serializacja i deserializacja danych w JSON
+===========================================
 
 Serializacja
 ------------
@@ -215,40 +251,6 @@ Deserializacja
     for key, value in data.items():
         for element in value:
             element['timestamp'] = make_datetime(element['timestamp'])
-
-
-``csv``
-=======
-
-.. code-block:: python
-
-    >>> import csv
-
-    >>> with open('filename.csv') as csvfile:
-    ...     data = csv.DictReader(csvfile, delimiter=',', quotechar='"')
-    ...
-    ...     for row in data:
-    ...         print(row['first_name'], row['last_name'])
-
-
-.. code-block:: python
-
-    >>> import csv
-
-    >>> data = [
-    ...    {'first_name': 'José', 'last_name': 'Jiménez'},
-    ...    {'first_name': 'Max', 'last_name': 'Peck'},
-    ...    {'first_name': 'Ivan', 'last_name': 'Ivanovic'},
-    ...]
-
-    >>> with open('filename.csv', 'w') as csvfile:
-    ...    fieldnames = data[0].keys()
-    ...    writer = csv.DictWriter(csvfile, fieldnames=fieldnames, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL, lineterminator='\n')
-    ...    writer.writeheader()
-    ...
-    ...    for row in data:
-    ...        writer.writerow(row)
-    ...
 
 
 xml

@@ -1,9 +1,11 @@
+.. _Zbiory i operacje na nich:
+
 *******************
 Złożone typy danych
 *******************
 
-Zbiory
-======
+Zbiory i operacje na nich
+=========================
 
 ``tuple`` - Krotka
 ------------------

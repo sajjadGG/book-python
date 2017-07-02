@@ -1,6 +1,9 @@
+.. _Print Formatting:
+
 ****************
-Print formatting
+Print Formatting
 ****************
+
 
 Konkatenacja stringów
 =====================

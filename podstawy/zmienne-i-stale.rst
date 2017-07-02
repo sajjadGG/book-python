@@ -1,3 +1,5 @@
+.. _Stałe, zmienne i typy danych:
+
 ****************************
 Stałe, zmienne i typy danych
 ****************************

@@ -1,9 +1,11 @@
-Pętle
-=====
+.. _Pętle:
 
+*****
+Pętle
+*****
 
 Pętla ``for``
--------------
+=============
 
 .. code-block:: python
 
@@ -43,7 +45,7 @@ Pętla ``for``
 
 
 Pętla ``while``
----------------
+===============
 
 .. code-block:: python
 

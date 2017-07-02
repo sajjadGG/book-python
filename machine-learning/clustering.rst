@@ -1,3 +1,5 @@
+.. _Clustering:
+
 **********
 Clustering
 **********
@@ -28,3 +30,11 @@ Similarities
 * statistical
 * algebraical
 * geometrical
+
+
+Flat Clustering
+===============
+
+Hierarchical Clustering
+=======================
+

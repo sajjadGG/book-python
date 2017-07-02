@@ -1,6 +1,9 @@
+.. _Dobre praktyki:
+
 **************
 Dobre praktyki
 **************
+
 
 PEP20 - Zen of Python
 =====================

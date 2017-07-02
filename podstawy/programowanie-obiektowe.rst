@@ -1,7 +1,8 @@
+.. _Programowanie obiektowe:
+
 ***********************
 Programowanie obiektowe
 ***********************
-
 
 Paradygmat Obiektowy
 ====================

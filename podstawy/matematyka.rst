@@ -1,9 +1,11 @@
+.. _Matematyka:
+
 **********
 Matematyka
 **********
 
-``math``
-========
+Moduł ``math`` w bibliotece standardowej
+========================================
 
 .. code-block:: python
 
@@ -14,8 +16,8 @@ Matematyka
     math.tan()
     math.pi
 
-``statistics``
-==============
+Moduł ``statistics`` w bibliotece standardowej
+==============================================
 
 .. code-block:: python
 
@@ -25,8 +27,8 @@ Matematyka
     statistics.mean()
     statistics.stdev()
 
-``random``
-==========
+Moduł ``random`` w bibliotece standardowej
+==========================================
 
 .. code-block:: python
 

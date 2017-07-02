@@ -1,6 +1,9 @@
+.. _Funkcje:
+
 *******
 Funkcje
 *******
+
 
 Definiowanie funkcji
 ====================

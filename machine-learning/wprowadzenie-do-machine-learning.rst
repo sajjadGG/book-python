@@ -4,6 +4,22 @@ Wprowadzenie do Machine Learning
 
 Machine learning was defined in 1959 by Arthur Samuel as the "field of study that gives computers the ability to learn without being explicitly programmed." This means imbuing knowledge to machines without hard-coding it.
 
+Co trzeba wiedzieć przed rozpoczęciem pracy?
+============================================
+* :ref:`Stałe, zmienne i typy danych`
+* :ref:`Zbiory i operacje na nich`
+* :ref:`Instrukcje warunkowe`
+* :ref:`Pętle`
+* :ref:`Funkcje`
+* :ref:`Print Formatting`
+* :ref:`Matematyka`
+* :ref:`Operacje na plikach`
+* :ref:`Serializacja i deserializacja danych w CSV`
+* :ref:`Programowanie obiektowe`
+* :ref:`Instalacja i korzystanie z zewnętrznych bibliotek`
+* :ref:`Dobre praktyki`
+
+
 Wprowadzenie
 ============
 * Czym jest uczenie maszynowe?
