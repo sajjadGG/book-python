@@ -22,10 +22,22 @@ Elementy języka Python i biblioteki standardowej
 * :ref:`Instalacja i korzystanie z zewnętrznych bibliotek`
 * :ref:`Dobre praktyki`
 
+Środowisko
+----------
+* Python 3.6+
+* Libs manually installed
+
+Anaconda
+    Anaconda is the leading open data science platform powered by Python. The open source version of Anaconda is a high performance distribution of Python and R and includes over 100 of the most popular Python, R and Scala packages for data science.
+
+    Additionally, you'll have access to over 720 packages that can easily be installed with conda, our renowned package, dependency and environment manager, that is included in Anaconda.
+
+    * https://www.continuum.io/downloads
+
 
 Biblioteki zewnętrzne do nauczania maszynowego
 ----------------------------------------------
-Scikit-learn
+``Scikit-learn``
     A set of python modules for machine learning and data mining. It features various classification, regression and clustering algorithms including support vector machines, random forests, gradient boosting, k-means and DBSCAN, and is designed to interoperate with the Python numerical and scientific libraries NumPy and SciPy.
 
         - Simple and efficient tools for data mining and data analysis
@@ -36,7 +48,7 @@ Scikit-learn
     * `Scikit-learn Github <https://github.com/scikit-learn/scikit-learn>`_
     * `Scikit-learn Website <http://scikit-learn.org>`_
 
-TensorFlow
+``TensorFlow``
     TensorFlow is an open source software library for numerical computation using data flow graphs. Nodes in the graph represent mathematical operations, while the graph edges represent the multidimensional data arrays (tensors) that flow between them. This flexible architecture lets you deploy computation to one or more CPUs or GPUs in a desktop, server, or mobile device without rewriting code. TensorFlow also includes TensorBoard, a data visualization toolkit.
 
     TensorFlow was originally developed by researchers and engineers working on the Google Brain team within Google's Machine Intelligence Research organization for the purposes of conducting machine learning and deep neural networks research. The system is general enough to be applicable in a wide variety of other domains, as well.
@@ -45,7 +57,7 @@ TensorFlow
     * `TensorFlow website <https://tensorflow.org/>`_
     * `TensorFlow MOOC on Udacity <https://www.udacity.com/course/deep-learning--ud730>`_
 
-PyMC3
+``PyMC3``
     PyMC3 is a Python package for Bayesian statistical modeling and Probabilistic Machine Learning which focuses on advanced Markov chain Monte Carlo and variational fitting algorithms. Its flexibility and extensibility make it applicable to a large suite of problems.
 
     * `PyMC3 Github <https://github.com/pymc-devs/pymc3>`_
@@ -54,7 +66,7 @@ PyMC3
 
 Biblioteki do obsługi danych
 ----------------------------
-Pandas
+``Pandas``
     pandas is a Python package providing fast, flexible, and expressive data structures designed to make working with "relational" or "labeled" data both easy and intuitive. It aims to be the fundamental high-level building block for doing practical, real world data analysis in Python. Additionally, it has the broader goal of becoming the most powerful and flexible open source data analysis / manipulation tool available in any language. It is already well on its way toward this goal. Here are just a few of the things that pandas does well:
 
         - Easy handling of missing data (represented as NaN) in floating point as well as non-floating point data
@@ -71,7 +83,7 @@ Pandas
 
     * http://pandas.pydata.org/
 
-NumPy
+``NumPy``
     NumPy is the fundamental package for scientific computing with Python. It contains among other things:
 
         - a powerful N-dimensional array object
@@ -85,7 +97,7 @@ NumPy
 
 Math, Plots, Graphs
 -------------------
-SciPy
+``SciPy``
     SciPy (pronounced "Sigh Pie") is open-source software for mathematics, science, and engineering. It includes modules for statistics, optimization, integration, linear algebra, Fourier transforms, signal and image processing, ODE solvers, and more. It is also the name of a very popular conference on scientific programming with Python.
 
     The SciPy library depends on NumPy, which provides convenient and fast N-dimensional array manipulation. The SciPy library is built to work with NumPy arrays, and provides many user-friendly and efficient numerical routines such as routines for numerical integration and optimization. Together, they run on all popular operating systems, are quick to install, and are free of charge. NumPy and SciPy are easy to use, but powerful enough to be depended upon by some of the world's leading scientists and engineers. If you need to manipulate numbers on a computer and display or publish the results.
@@ -95,7 +107,7 @@ SciPy
     * https://www.scipy.org/
     * https://github.com/scipy/scipy
 
-Matplotlib
+``Matplotlib``
     Matplotlib is a Python 2D plotting library which produces publication-quality figures in a variety of hardcopy formats and interactive environments across platforms. Matplotlib can be used in Python scripts, the Python and IPython shell (à la MATLAB or Mathematica), web application servers, and various graphical user interface toolkits.
 
     It provides an object-oriented API for embedding plots into applications using general-purpose GUI toolkits like Tkinter, wxPython, Qt, or GTK+. There is also a procedural "pylab" interface based on a state machine (like OpenGL), designed to closely resemble that of MATLAB, though its use is discouraged. SciPy makes use of matplotlib.
@@ -103,13 +115,13 @@ Matplotlib
     * https://github.com/matplotlib/matplotlib
     * http://matplotlib.org/
 
-PyDotPlus
+``PyDotPlus``
     PyDotPlus is an improved version of the old pydot project that provides a Python Interface to Graphviz’s Dot language.
 
     * https://github.com/carlos-jenkins/pydotplus
     * http://pydotplus.readthedocs.io/
 
-Graphviz
+``Graphviz``
     Graphviz is open source graph visualization software. Graph visualization is a way of representing structural information as diagrams of abstract graphs and networks. It has important applications in networking, bioinformatics,  software engineering, database and web design, machine learning, and in visual interfaces for other technical domains.
 
     The Graphviz layout programs take descriptions of graphs in a simple text language, and make diagrams in useful formats, such as images and SVG for web pages; PDF or Postscript for inclusion in other documents; or display in an interactive graph browser.  Graphviz has many useful features for concrete diagrams, such as options for colors, fonts, tabular node layouts, line styles, hyperlinks, and custom shapes.
@@ -118,7 +130,7 @@ Graphviz
 
 Other
 -----
-Jupyter
+``Jupyter``
     The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more.
 
     Jupyter notebook is a language-agnostic HTML notebook application for Project Jupyter. In 2015, Jupyter notebook was released as a part of The Big Split™ of the IPython codebase. IPython 3 was the last major monolithic release containing both language-agnostic code, such as the IPython notebook, and language specific code, such as the IPython kernel for Python. As computing spans across many languages, Project Jupyter will continue to develop the language-agnostic Jupyter notebook in this repo and with the help of the community develop language specific kernels which are found in their own discrete repos.
@@ -126,6 +138,7 @@ Jupyter
     * http://jupyter.org/
     * http://jupyter.readthedocs.io/en/latest/install.html
     * https://github.com/jupyter/notebook
+
 
 Datasets
 --------
@@ -150,14 +163,92 @@ Ważne pytania przed przystąpieniem do tworzenia algorytmu
 * What makes a good feature?
 
 
-Algorytmy uczenia maszynowego
-=============================
+Praca z bibliotekami
+====================
+
+Przykład pracy z ``scikit-learn``
+---------------------------------
+#. Import the class you plan to use
+#. Instanciate the estimator
+
+    - Estimator is the ``scikit-learn`` word for model
+    - Instanciate means create an object from the class
+    - Name of the object does not matter
+    - Can specify the tunning parameters also known as "hyperparameters" during this step
+    - All parameters not specified are set to their defaults
+
+#. Fit the model with data (aka "model training")
+
+    - Models is learning the relationship between :math:`X` and :math:`Y` (features and labels)
+    - Occurs in-place (aka change object state - mutate object)
+
+#. Predict the response for a new observation
+
+    - New observations are called "out-of-sample" data
+    - Uses the information it learned during the model training process
+    - Returns a ``NumPy`` array
+    - Can predict for multiple observations at once
+
+.. code-block:: python
+
+    # Import the class you plan to use
+    >>> from sklearn.neighbours import KNeighboursClassifier()
+
+    # Instanciate the estimator
+    >>> model = KNeighboursClassifier(n_neighbours=1)
+
+    # Fit the model with data (aka "model training")
+    >>> model.fit(features, labels)
+
+    # Predict the response for a new observation
+    >>> model.predict([3, 5, 4, 2])
+    array([2])
+
+    # Can predict for multiple observations at once
+    >>> model.predict([
+    ...    [3, 5, 4, 2],
+    ...    [5, 4, 3, 2],
+    ... ])
+    array([2, 1])
+
+.. code-block:: python
+
+    >>> from sklearn.neighbours import KNeighboursClassifier()
+
+    >>> model = KNeighboursClassifier(n_neighbours=5)
+    >>> model.fit(features, labels)
+
+    >>> model.predict([
+    ...    [3, 5, 4, 2],
+    ...    [5, 4, 3, 2],
+    ... ])
+    array([1, 1])
+
+.. code-block:: python
+
+    >>> from sklearn.linear_model import LogisticsRegression()
+
+    >>> model = LogisticsRegression()
+    >>> model.fit(features, labels)
+
+    >>> model.predict([
+    ...    [3, 5, 4, 2],
+    ...    [5, 4, 3, 2],
+    ... ])
+    array([2, 0])
+
+
+Przykład pracy z ``PyMC3``
+--------------------------
 #. Sparametryzuj swój problem używając rozkładów statystycznych
 #. Uzasadnij strukturę swojego modelu
-#. Napisz swój model używając PyMC3 lub SCIKit-Learn i dokonaj obliczeń
+#. Napisz swój model używając PyMC3 i dokonaj obliczeń
 #. Zinterpretuj wynik bazując na rozkładach wynikowych
 #. (opcjonalnie) z nowymi wynikami dostosuj swój model statystyczny
 
+
+Algorytmy uczenia maszynowego
+=============================
 
 Supervised Learning - Z nadzorem
 --------------------------------
@@ -188,5 +279,3 @@ Semi-Supervised Learning
     * przedstawia iterację człowiekowi
     * człowiek interaktywnie poprawia i określa jakość oznaczania
     * komputer dokonuje kolejnej analizy
-
-

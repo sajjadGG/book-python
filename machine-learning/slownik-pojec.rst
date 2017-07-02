@@ -119,8 +119,24 @@ Model
 Model deployment
     The use of a learned model. Model deployment usually denotes applying the model to real data.
 
+Observation
+    One row in features and labels table. For example Iris dataset has 150 observations.
+
+Out-of-sample data
+    Data that is not in Observation. In most cases that would be the data to predict.
+
 OLAP (MOLAP, ROLAP)
     On-Line Analytical Processing. Usually synonymous with MOLAP (multi-dimensional OLAP). OLAP engines facilitate the exploration of data along several (predetermined) dimensions. OLAP commonly uses intermediate data structures to store pre-calculated results on multidimensional data, allowing fast computations. ROLAP (relational OLAP) refers to performing OLAP using relational databases.
+
+Overfitting
+    Models that **overfit** learns to recognize noise from the signal, than the data.
+
+    .. figure:: img/model-overfitting.png
+        :scale: 50%
+        :align: center
+
+        Black line represents the decision boundary and represents the signal.
+        Green line represents overfitted model which learned the noise.
 
 Preprocessing
     Is the module used to do some cleaning/scaling of data prior to machine learning.

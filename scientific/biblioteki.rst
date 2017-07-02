@@ -2,10 +2,22 @@
 Biblioteki
 **********
 
+Środowisko
+==========
+* Python 3.6+
+* Libs manually installed
+
+Anaconda
+    Anaconda is the leading open data science platform powered by Python. The open source version of Anaconda is a high performance distribution of Python and R and includes over 100 of the most popular Python, R and Scala packages for data science.
+
+    Additionally, you'll have access to over 720 packages that can easily be installed with conda, our renowned package, dependency and environment manager, that is included in Anaconda.
+
+    * https://www.continuum.io/downloads
+
 Biblioteki do obsługi danych
 ============================
-Pandas
-    pandas is a Python package providing fast, flexible, and expressive data structures designed to make working with "relational" or "labeled" data both easy and intuitive. It aims to be the fundamental high-level building block for doing practical, real world data analysis in Python. Additionally, it has the broader goal of becoming the most powerful and flexible open source data analysis / manipulation tool available in any language. It is already well on its way toward this goal. Here are just a few of the things that pandas does well:
+``Pandas``
+    Pandas is a Python package providing fast, flexible, and expressive data structures designed to make working with "relational" or "labeled" data both easy and intuitive. It aims to be the fundamental high-level building block for doing practical, real world data analysis in Python. Additionally, it has the broader goal of becoming the most powerful and flexible open source data analysis / manipulation tool available in any language. It is already well on its way toward this goal. Here are just a few of the things that pandas does well:
 
         - Easy handling of missing data (represented as NaN) in floating point as well as non-floating point data
         - Size mutability: columns can be inserted and deleted from DataFrame and higher dimensional objects
@@ -21,7 +33,7 @@ Pandas
 
     * http://pandas.pydata.org/
 
-NumPy
+``NumPy``
     NumPy is the fundamental package for scientific computing with Python. It contains among other things:
 
         - a powerful N-dimensional array object
@@ -35,7 +47,7 @@ NumPy
 
 Math, Plots, Graphs
 ===================
-SciPy
+``SciPy``
     SciPy (pronounced "Sigh Pie") is open-source software for mathematics, science, and engineering. It includes modules for statistics, optimization, integration, linear algebra, Fourier transforms, signal and image processing, ODE solvers, and more. It is also the name of a very popular conference on scientific programming with Python.
 
     The SciPy library depends on NumPy, which provides convenient and fast N-dimensional array manipulation. The SciPy library is built to work with NumPy arrays, and provides many user-friendly and efficient numerical routines such as routines for numerical integration and optimization. Together, they run on all popular operating systems, are quick to install, and are free of charge. NumPy and SciPy are easy to use, but powerful enough to be depended upon by some of the world's leading scientists and engineers. If you need to manipulate numbers on a computer and display or publish the results.
@@ -45,7 +57,7 @@ SciPy
     * https://www.scipy.org/
     * https://github.com/scipy/scipy
 
-Matplotlib
+``Matplotlib``
     Matplotlib is a Python 2D plotting library which produces publication-quality figures in a variety of hardcopy formats and interactive environments across platforms. Matplotlib can be used in Python scripts, the Python and IPython shell (à la MATLAB or Mathematica), web application servers, and various graphical user interface toolkits.
 
     It provides an object-oriented API for embedding plots into applications using general-purpose GUI toolkits like Tkinter, wxPython, Qt, or GTK+. There is also a procedural "pylab" interface based on a state machine (like OpenGL), designed to closely resemble that of MATLAB, though its use is discouraged. SciPy makes use of matplotlib.
@@ -53,13 +65,13 @@ Matplotlib
     * https://github.com/matplotlib/matplotlib
     * http://matplotlib.org/
 
-PyDotPlus
+``PyDotPlus``
     PyDotPlus is an improved version of the old pydot project that provides a Python Interface to Graphviz’s Dot language.
 
     * https://github.com/carlos-jenkins/pydotplus
     * http://pydotplus.readthedocs.io/
 
-Graphviz
+``Graphviz``
     Graphviz is open source graph visualization software. Graph visualization is a way of representing structural information as diagrams of abstract graphs and networks. It has important applications in networking, bioinformatics,  software engineering, database and web design, machine learning, and in visual interfaces for other technical domains.
 
     The Graphviz layout programs take descriptions of graphs in a simple text language, and make diagrams in useful formats, such as images and SVG for web pages; PDF or Postscript for inclusion in other documents; or display in an interactive graph browser.  Graphviz has many useful features for concrete diagrams, such as options for colors, fonts, tabular node layouts, line styles, hyperlinks, and custom shapes.
@@ -68,7 +80,7 @@ Graphviz
 
 Biblioteki do nauczania maszynowego
 ===================================
-Scikit-learn
+``Scikit-learn``
     A set of python modules for machine learning and data mining. It features various classification, regression and clustering algorithms including support vector machines, random forests, gradient boosting, k-means and DBSCAN, and is designed to interoperate with the Python numerical and scientific libraries NumPy and SciPy.
 
         - Simple and efficient tools for data mining and data analysis
@@ -79,7 +91,7 @@ Scikit-learn
     * `Scikit-learn Github <https://github.com/scikit-learn/scikit-learn>`_
     * `Scikit-learn Website <http://scikit-learn.org>`_
 
-TensorFlow
+``TensorFlow``
     TensorFlow is an open source software library for numerical computation using data flow graphs. Nodes in the graph represent mathematical operations, while the graph edges represent the multidimensional data arrays (tensors) that flow between them. This flexible architecture lets you deploy computation to one or more CPUs or GPUs in a desktop, server, or mobile device without rewriting code. TensorFlow also includes TensorBoard, a data visualization toolkit.
 
     TensorFlow was originally developed by researchers and engineers working on the Google Brain team within Google's Machine Intelligence Research organization for the purposes of conducting machine learning and deep neural networks research. The system is general enough to be applicable in a wide variety of other domains, as well.
@@ -88,7 +100,7 @@ TensorFlow
     * `TensorFlow website <https://tensorflow.org/>`_
     * `TensorFlow MOOC on Udacity <https://www.udacity.com/course/deep-learning--ud730>`_
 
-PyMC3
+``PyMC3``
     PyMC3 is a Python package for Bayesian statistical modeling and Probabilistic Machine Learning which focuses on advanced Markov chain Monte Carlo and variational fitting algorithms. Its flexibility and extensibility make it applicable to a large suite of problems.
 
     * `PyMC3 Github <https://github.com/pymc-devs/pymc3>`_
@@ -97,7 +109,7 @@ PyMC3
 
 Other
 =====
-Jupyter
+``Jupyter``
     The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and explanatory text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, machine learning and much more.
 
     Jupyter notebook is a language-agnostic HTML notebook application for Project Jupyter. In 2015, Jupyter notebook was released as a part of The Big Split™ of the IPython codebase. IPython 3 was the last major monolithic release containing both language-agnostic code, such as the IPython notebook, and language specific code, such as the IPython kernel for Python. As computing spans across many languages, Project Jupyter will continue to develop the language-agnostic Jupyter notebook in this repo and with the help of the community develop language specific kernels which are found in their own discrete repos.
@@ -106,20 +118,28 @@ Jupyter
     * http://jupyter.readthedocs.io/en/latest/install.html
     * https://github.com/jupyter/notebook
 
+Dask
 
-- Dask
-- Numba
+Numba
 
-- xarray
-- Bokeh
+xarray
 
-- StatsModels
-- SymPy
-- NetworkX
-- scikit-image
+Bokeh
 
-- astropy
-- biopython
-- dipy
-- nipy
-- sunpy
+StatsModels
+
+SymPy
+
+NetworkX
+
+scikit-image
+
+astropy
+
+biopython
+
+dipy
+
+nipy
+
+sunpy

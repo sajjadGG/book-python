@@ -2,6 +2,10 @@
 Przydatne odnośniki
 *******************
 
+Understanding the Bias-Variance Tradeoff
+========================================
+* http://scott.fortmann-roe.com/docs/BiasVariance.html
+
 Bayes
 =====
 * http://pyvideo.org/pycon-us-2017/bayesian-statistical-analysis-with-python.html

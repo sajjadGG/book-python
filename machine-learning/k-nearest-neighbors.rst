@@ -1,6 +1,6 @@
-***********************
-K najbliższych sąsiadów
-***********************
+*******************
+k Nearest Neighbors
+*******************
 
 Jak działa algorytm "K najbliższych sąsiadów"
 =============================================
@@ -12,8 +12,29 @@ Algorytm polega na:
 
 #. uśrednieniu wartości zmiennej objaśnianej dla wybranych obserwacji, w wyniku czego uzyskujemy prognozę.
 
+.. figure:: img/k-nearest-neighbors-territory.png
+    :scale: 75%
+    :align: center
+
+    Predykcja obszaru przynależności w algorytmie "K najbliższych sąsiadów".
+
+
 Przykład praktyczny
 ===================
+
+Jak to działa na przykładzie Iris
+---------------------------------
+#. Mamy zbiór 150 obserwacji Iris
+#. Wyobraź sobie, że mamy określić nową Iris, która jeszcze nie została zaobserwowana i opisana.
+#. Wybieramy wartość :math:`k`
+#. Poszukujemy :math:`k` obserwacji, które są najbliższe nieznanemu gatunkowi Iris.
+#. Użyj najczęściej pojawiającej się wartości z ":math:`k` najbliższych sąsiadów" jako wartość dla nieznanego Iris.
+
+    - tzn. jeżeli np. dla :math:`k=5` (czyli wśród 5 najbliżyszch Irisów) było 3 Iris Setosa, i po jednym z innych gatunków
+    - to naszemu nieznanemu gatunkowi przypiszemy Iris Setosa.
+
+#. Najczęściej stosuje się algorytm Eukleidesa do wyznaczania odległości, ale można również i inne algorytmy.
+
 
 Wykorzystanie ``sklearn.neighbors.KNeighborsClassifier``
 --------------------------------------------------------
