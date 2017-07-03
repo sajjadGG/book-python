@@ -283,7 +283,7 @@ Manipulacja datami
 ------------------
 Użytkownik poda wykorzystując ``input()`` dwie następujące daty w formacie jak poniżej:
 
-    - 'April 12, 1961 6:07 AM'
+    - 'April 12, 1961 2:07 AM local time' # ALMT Timezone
     - '07/21/69 2:56:15 AM UTC'
 
 * Przedstaw daty jako obiekt ``datetime``. I wyświetl je w formacie ISO.

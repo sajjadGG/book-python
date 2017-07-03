@@ -5,6 +5,18 @@ Funkcje wbudowane i słowa kluczowe
 Słowa kluczowe
 ==============
 
+``import``
+----------
+.. code-block:: python
+
+    import module
+    from module import submodule
+    from module.submodule import function as alias
+    from . import module
+    from .. import module
+    from ..module import submodule
+
+
 ``pass``
 --------
 .. code-block:: python

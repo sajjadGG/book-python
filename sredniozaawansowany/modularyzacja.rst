@@ -7,18 +7,6 @@ Modularyzacja, wersjonowanie i dystrybucja
 Instalacja i korzystanie z zewnętrznych bibliotek
 =================================================
 
-Importowanie modułów
---------------------
-
-.. code-block:: python
-
-    import module
-    from module import submodule
-    from module.submodule import function as alias
-    from . import module
-    from .. import module
-    from ..module import submodule
-
 ``pip search``
 --------------
 
@@ -31,11 +19,19 @@ Importowanie modułów
 ``requirements.txt`` a ``setup.py``
 -----------------------------------
 
-``wheel``
----------
 
-``distutils`` i ``setuptools``
-------------------------------
+Importowanie modułów
+====================
+
+.. code-block:: python
+
+    import module
+    from module import submodule
+    from module.submodule import function as alias
+    from . import module
+    from .. import module
+    from ..module import submodule
+
 
 Modularyzacja
 =============
@@ -58,6 +54,12 @@ Konwencja nazewnicza - ``main.py``
 
 Tworzenie paczek
 ================
+
+``distutils`` i ``setuptools``
+------------------------------
+
+``wheel``
+---------
 
 ``setup.py``
 ------------
