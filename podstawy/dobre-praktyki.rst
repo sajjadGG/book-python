@@ -127,6 +127,21 @@ Lub:
         'd', 'e', 'f',
     )
 
+Lub:
+
+.. code-block:: python
+
+    my_list = [
+        1, 2, 3,
+        4, 5, 6]
+
+    result = some_function_that_takes_arguments(
+        'a', 'b', 'c',
+        'd', 'e', 'f')
+
+
+
+
 Tabulacje i czy spacje?
 -----------------------
 
@@ -306,13 +321,13 @@ Google style comments
 Konwencje nazewnicze
 --------------------
 
-* zmienne
-* STALE
-* NazwyKlas
-* nazwy_metod() i nazwy_funkcji()
-* nazwymodulow nazwy_modulow
-* self
-* cls
+* ``zmienne``
+* ``STALE``
+* ``NazwyKlas``
+* ``nazwy_metod()`` i ``nazwy_funkcji()``
+* ``nazwymodulow``, ``nazwy_modulow``
+* ``self``
+* ``cls``
 
 Używanie ``__`` i ``_`` w nazwach
 ---------------------------------
@@ -409,8 +424,10 @@ Kilka przykaładów z praktyki
     ## Problem solved
     def make_html2(lista):
         html = ['<table>']
+
         for element in lista:
             html.append('<tr><td>%s</td></tr>' % element)
+
         html.append('</table>')
         return '\r\n'.join(html)
 
@@ -421,11 +438,13 @@ Magic number i Magic string
 Passowords
 ==========
 * Sticky bit
+* setuid
 * configparser
 
 
 Wczytywanie konfiguracji programów
 ==================================
+* configparser
 
 Wersjonowanie API
 =================
