@@ -106,6 +106,16 @@ Gdyby w Twoim systemie nie było pliku, skorzystaj z szablonu poniżej:
 
 .. code-block:: text
 
+    ##
+    # User Database
+    #
+    # Note that this file is consulted directly only when the system is running
+    # in single-user mode.  At other times this information is provided by
+    # Open Directory.
+    #
+    # See the opendirectoryd(8) man page for additional information about
+    # Open Directory.
+    ##
     root:x:0:0:root:/root:/bin/bash
     bin:x:1:1:bin:/bin:/sbin/nologin
     daemon:x:2:2:daemon:/sbin:/sbin/nologin
