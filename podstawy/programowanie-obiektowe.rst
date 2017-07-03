@@ -437,7 +437,7 @@ Przykłady praktyczne
 
 
 
-    >>>o1.nazwisko = 'Ivanovic'
+    >>> o1.nazwisko = 'Ivanovic'
 
     >>> print(o1.nazwisko)
     Ivanovic
@@ -478,22 +478,11 @@ Książka adresowa
             * panstwo
 
     * Wszystkie dane w książce muszą być reprezentowane przez klasy.
-    * Użytkownik może mieć wiele adresów.
-    * Zrób tak, aby się ładnie wyświetlało. Zarówno dla jednego wyniku (``print(adres)``, ``print(osoba)`` jak i dla wszystkich w książce ``print(ksiazka_adresowa)``.
-
-:Zadanie 2:
     * Klasa osoba powinna wykorzystywać domyślne argumenty w ``__init__``.
+    * Użytkownik może mieć wiele adresów.
     * Klasa adres powinna mieć zmienną liczbę argumentów za pomocą ``**kwargs`` z domyślnymi wartościami.
-
-:Zadanie 3:
-    Napisz książkę adresową, która będzie zapisywała a później odczyta i sparsuje dane do pliku w formacie Pickle.
-
-:Zadanie 4:
-    Napisz książkę adresową, która będzie zapisywała a później odczyta i sparsuje dane do pliku w formacie JSON.
-
-:Podpowiedź:
-    * Dane w formacie Pickle muszą być zapisane do pliku binarnie
-    * ``pickle.loads()`` przyjmuje uchwyt do pliku, a nie jego zawartość
+    * Zrób tak, aby się ładnie wyświetlało. Zarówno dla jednego wyniku (``print(adres)``, ``print(osoba)`` jak i dla wszystkich w książce ``print(ksiazka_adresowa)``.
+    * API programu powinno być tak jak na listingu poniżej
 
     .. code-block:: python
 
@@ -507,3 +496,12 @@ Książka adresowa
             Kontakt(imie='Иван', nazwisko='Иванович', adresy=[]),
         ]
 
+:Zadanie 2:
+    Napisz książkę adresową, która będzie zapisywała a później odczyta i sparsuje dane do pliku w formacie Pickle.
+
+:Zadanie 3:
+    Napisz książkę adresową, która będzie zapisywała a później odczyta i sparsuje dane do pliku w formacie JSON.
+
+:Podpowiedź:
+    * Dane w formacie Pickle muszą być zapisane do pliku binarnie
+    * ``pickle.loads()`` przyjmuje uchwyt do pliku, a nie jego zawartość
