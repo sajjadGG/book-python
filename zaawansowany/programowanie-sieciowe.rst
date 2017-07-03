@@ -38,8 +38,19 @@ Zadania kontrolne
 Mini Botnet
 -----------
 
-Stwórz program, który otworzy socket na porcie na localhoście podanym przez użytkownika z linii poleceń (wykorzystaj ``argparse``) i będzie nasłuchiwał połączeń. Zweryfikuj za pomocą ``telnet`` albo ``netcat`` czy program odpowiada. Następnie napisz w pythonie klienta, który będzie wysyłał polecenia do tamtego programu.
+Stwórz mini botnet o architekturz podanej poniżej. Mini botnet składa się z trzech części:
 
+    - ``attacker-ping-server.py`` - Serwera przyjmującego pingi (komunikacja UDP, port 1337) i zapisującego informacje do bazy danych
+    - ``victim.py`` - Klienta który ma dwie role:
+
+        - Po zainfekowaniu otwiera randomowy port TCP (backdoor) i co 5 sekund wysyła informację z numerem portu oraz adresem IP do ping serwera ha hoście atakującego
+
+        - Po otrzymaniu komunikatu na port backdoor wykonuje operację
+
+    - ``attacker-execute-client.py`` - plik sterujący, który wysyła polecenia do victima na podstawie adresów IP i portów maszyn, które w ciągu ostatniej minut pingnęły ping serwer.
+
+* Czy port jest otwarty Zweryfikuj za pomocą ``telnet`` albo ``netcat``
+* Do obsługi parametrów z linii poleceń wykorzystaj ``argparse``
 * port na którym nasłuchuje maszyna ofiary powinien być losowo wybierany (od 1025-65535 [dlaczego taki zakres?]) i przesyłany w komunikacie *ping*.
 * przychodzące pingi, ich data, host i port źródłowy zapisać w bazie ``sqlite3`` na hoście attackera
 * przetwarzanie requestów jest nieblokujące, tzn. otwieraj wątek dla każdego zapytania
