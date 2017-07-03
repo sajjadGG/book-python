@@ -11,11 +11,17 @@ Konstrukcja ``with``
 
 Czytanie
 ========
+.. code-block:: python
+
+    with open(FILENAME) as file:
+        for line in file:
+            print(line)
 
 .. code-block:: python
 
     with open(FILENAME) as file:
         content = file.read()
+
 
 .. code-block:: python
 
@@ -25,7 +31,7 @@ Czytanie
 .. code-block:: python
 
     with open(FILENAME) as file:
-        for line in file:
+        for line in file.readlines()[30:50]
             print(line)
 
 Zapis
