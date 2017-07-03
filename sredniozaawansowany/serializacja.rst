@@ -46,12 +46,13 @@ Proste użycie
 
     >>> import json
 
-    >>> DATA = {'first_name': 'Ivan', 'last_name': 'Ivanovic'}
+    >>> PY_DATA = {'first_name': 'Ivan', 'last_name': 'Ivanovic'}
+    >>> JS_DATA = '{"first_name": "Ivan", "last_name": "Ivanovic"}'
 
-    >>> json.dumps(DATA)
+    >>> json.dumps(PY_DATA)
     '{"first_name": "Ivan", "last_name": "Ivanovic"}'
 
-    >>> json.loads(DATA)
+    >>> json.loads(JS_DATA)
     {'first_name': 'Ivan', 'last_name': 'Ivanovic'}
 
 Problemy z serializacją i deserializacją
