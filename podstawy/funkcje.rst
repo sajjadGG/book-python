@@ -119,6 +119,8 @@ Rozpakowywanie wartości zwracanych
 Operator ``*`` i ``**``
 =======================
 
+.. todo:: zrobić lepsze przykłady wykorzystania parametrów z gwiazdką
+.. todo:: zrobić zadania do rozwiązania dla parametrów z gwiazdką
 
 Argumenty ``*args``, ``**kwargs``
 ---------------------------------
@@ -133,15 +135,13 @@ Przy wywołaniu funkcji
 
 .. code-block:: python
 
-    foo(1, 2, **{'napiecie':10, 'natezenie': 20, 'moc': 3})
+    >>> foo(1, 2, **{'napiecie':10, 'natezenie': 20, 'moc': 3})
 
-    foo(
-        1,
-        2,
-        napiecie=10,
-        natezenie=20,
-        moc=3)
+    # jest równoważne z:
 
+    >>> foo(1, 2, napiecie=10, natezenie=20, moc=3)
+
+.. code-block:: python
 
     def bar():
         return range(0, 5)

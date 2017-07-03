@@ -56,6 +56,9 @@ Jednym z najbardziej podstawowych typów danych jest ``int``.
     >>> int(10.0)
     10
 
+    >>> int(10.9)
+    10
+
 ``float`` - Liczba zmiennoprzecinkowa
 -------------------------------------
 
@@ -314,10 +317,10 @@ Zadania kontrolne
 
 Zmienne i typy
 --------------
-Napisz program, który poprosi użytkownika o imie i ładnie go przywita.
+Napisz program, który poprosi użytkownika o imie i ładnie go przywita wyświetlając 'hello IMIE'. Zamiast spacji użyj przecinka
 
 :Podpowiedź:
-    * Użyj podawania stringów po przecinku ``print(str, str)``
+    * Użyj podawania stringów po przecinku ``print(str, str)`` oraz parametru ``sep``
     * Użyj f-string formatting dla Python >= 3.6
 
 

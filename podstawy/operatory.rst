@@ -86,6 +86,28 @@ Kolejność operatorów
 * ``+=``
 * ``in`` i ``not in``
 
+Bitwise
+=======
+
+.. code-block:: python
+    >>> 0^0
+    0
+    >>> 1^1
+    0
+    >>> 1^0
+    1
+    >>> 0^1
+    1
+    >>> 8^3
+    11
+
+.. code-block:: text
+
+    1000  # 8 (binary)
+    0011  # 3 (binary)
+    ----  # APPLY XOR ('vertically')
+    1011  # result = 11 (binary)
+
 
 Zadania kontrolne
 =================

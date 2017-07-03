@@ -63,7 +63,7 @@ Python WAT?!
     >>> print(a)
     [1, 3, 2, 5]
 
-    x.append(9)
+    >>> x.append(9)
 
     >>> print(x)
     [1, 3, 2, 5, 9]

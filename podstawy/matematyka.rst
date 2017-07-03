@@ -42,7 +42,7 @@ Zadania kontrolne
 
 Obliczanie odległości między dwoma punktami - Eucledean Distance
 ----------------------------------------------------------------
-Dla dwóch (constant) punktów ``x`` i ``y`` o podanych koordynatach napisz program, który obliczy odległość między nimi wykorzystując algorytm Eucledesa.
+Dla dwóch (constant) punktów :math:`A` i :math:`B` o podanych koordynatach napisz program, który obliczy odległość między nimi wykorzystując algorytm Eucledesa.
 
 :Zadanie z gwiazdką:
     Przekształć algorytm tak, aby działał w :math:`N` wymiarowej przestrzeni.

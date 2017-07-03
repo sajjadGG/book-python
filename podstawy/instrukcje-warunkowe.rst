@@ -90,11 +90,14 @@ Instrukcje warunkowe
 
 .. code-block:: python
 
-    def f(x):
+    def switch(x):
         return {
             'a': 1,
             'b': 2,
         }[x]
+
+
+    switch['a']
 
 .. code-block:: python
 
