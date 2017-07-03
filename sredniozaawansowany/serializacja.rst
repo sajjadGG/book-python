@@ -22,56 +22,46 @@ Serializacja i deserializacja danych w CSV
 
     >>> import csv
 
-    >>> data = [
+    >>> DATA = [
     ...    {'first_name': 'José', 'last_name': 'Jiménez'},
     ...    {'first_name': 'Max', 'last_name': 'Peck'},
     ...    {'first_name': 'Ivan', 'last_name': 'Ivanovic'},
     ...]
 
     >>> with open('filename.csv', 'w') as csvfile:
-    ...    fieldnames = data[0].keys()
+    ...    fieldnames = DATA[0].keys()
     ...    writer = csv.DictWriter(csvfile, fieldnames=fieldnames, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL, lineterminator='\n')
     ...    writer.writeheader()
     ...
-    ...    for row in data:
+    ...    for row in DATA:
     ...        writer.writerow(row)
     ...
-
-
-Serializacja i deserializacja danych Pythona
-============================================
-
-.. code-block:: python
-
-    >>> PYTHON = [
-    ...     Osoba,
-    ...     make_datetime(now),
-    ...     str(now),
-    ...     now.__str__(),
-    ...     '%s' % now,
-    ...     '{}'.format(now),
-    ...     {'imie': 'Ivan', 'nazwisko': 'Ivanovic'},
-    ...     (10, 20, 30),
-    ...     (1,)
-    ]
-
-    >>> import pickle
-
-    >>> p = pickle.dumps(PYTHON)
-    >>> print('Z Python do Pickle:', p)
-
-    >>> pp = pickle.loads(p)
-    >>> print('Z Pickle do Python:', pp)
-
-    >>> osoba = pp[0]
-    >>> print('Obiekt po konwersji:', osoba.nazwisko)
-
 
 Serializacja i deserializacja danych w JSON
 ===========================================
 
-Serializacja
-------------
+Proste użycie
+-------------
+.. code-block:: python
+
+    >>> import json
+
+    >>> DATA = {'first_name': 'Ivan', 'last_name': 'Ivanovic'}
+
+    >>> json.dumps(DATA)
+    '{"first_name": "Ivan", "last_name": "Ivanovic"}'
+
+    >>> json.loads(DATA)
+    {'first_name': 'Ivan', 'last_name': 'Ivanovic'}
+
+Problemy z serializacją i deserializacją
+----------------------------------------
+* Serializacja i deserializacja dat
+* Serializacja i deserializacja obiektów
+
+
+Serializacja i pisanie własnych encoderów
+-----------------------------------------
 
 .. code-block:: python
 
@@ -156,8 +146,8 @@ Problem z rzutowaniem daty na JSON:
     out = json.dumps(lista, cls=OsobaEncoder)
 
 
-Deserializacja
---------------
+Deserializacja i pisanie własnych decoderów
+-------------------------------------------
 
 .. code-block:: python
 
@@ -251,6 +241,36 @@ Deserializacja
     for key, value in data.items():
         for element in value:
             element['timestamp'] = make_datetime(element['timestamp'])
+
+
+
+Serializacja i deserializacja danych Pythona
+============================================
+
+.. code-block:: python
+
+    >>> PYTHON = [
+    ...     Osoba,
+    ...     make_datetime(now),
+    ...     str(now),
+    ...     now.__str__(),
+    ...     '%s' % now,
+    ...     '{}'.format(now),
+    ...     {'imie': 'Ivan', 'nazwisko': 'Ivanovic'},
+    ...     (10, 20, 30),
+    ...     (1,)
+    ]
+
+    >>> import pickle
+
+    >>> p = pickle.dumps(PYTHON)
+    >>> print('Z Python do Pickle:', p)
+
+    >>> pp = pickle.loads(p)
+    >>> print('Z Pickle do Python:', pp)
+
+    >>> osoba = pp[0]
+    >>> print('Obiekt po konwersji:', osoba.nazwisko)
 
 
 xml

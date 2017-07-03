@@ -22,14 +22,21 @@ Instalacja i korzystanie z zewnętrznych bibliotek
 
 Importowanie modułów
 ====================
-
 .. code-block:: python
 
     import module
+
+.. code-block:: python
+
     from module import submodule
     from module.submodule import function as alias
+
+.. code-block:: python
+
     from . import module
     from .. import module
+
+    from .module import submodule
     from ..module import submodule
 
 
