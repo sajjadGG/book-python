@@ -1,4 +1,8 @@
+from sklearn import metrics
+
 from scipy.spatial import distance
+from sklearn.model_selection import train_test_split
+from sklearn.datasets import load_iris
 
 
 class NearestNeighborClassifier:
@@ -27,3 +31,16 @@ class NearestNeighborClassifier:
                 best_index = i
 
         return self.labels_train[best_index]
+
+
+iris = load_iris()
+
+x_train, x_test, y_train, y_test = train_test_split(
+    iris.data, iris.target, test_size=0.5)
+
+model = NearestNeighborClassifier()
+model.fit(x_train, y_train)
+predictions = model.predict(x_test)
+accuracy = metrics.accuracy_score(y_test, predictions)
+
+print(accuracy)

@@ -192,6 +192,9 @@ Jaką płeć ma osoba o parametrach?:
 
 Zwizualizuj drzewo decyzyjne
 
+:Podpowiedź:
+    * ``preprocessing.LabelEncoder()``
+
 Banknoty
 --------
 Na podstawie datasetu 1372 banknotów z 5 wartościami numerycznymi pobranymi z obrazu odpowiedz czy dany banknot jest prawdziwy wykorzystując algorymt drzewa decyzyjnego.
