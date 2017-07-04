@@ -201,3 +201,6 @@ Na podstawie datasetu 1372 banknotów z 5 wartościami numerycznymi pobranymi z 
     - kurtosis of Wavelet Transformed image (continuous).
     - entropy of image (continuous).
     - class (integer).
+
+:Dataset:
+    * https://archive.ics.uci.edu/ml/machine-learning-databases/00267/data_banknote_authentication.txt

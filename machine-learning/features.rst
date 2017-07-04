@@ -157,29 +157,38 @@ Zadania kontrolne
 
 Feature Engineering
 -------------------
+- Celem zadania będzie opracowanie tabeli, cech osób, które czynią z niego astronautę.
+- Istotne jest dobranie odpowiednich kolumn cech oraz wpisanie wartości
+- Dane kontr-argumentowe możesz dobrać dowolnie
+
 #. Na podstawie danych wybranych astronautów:
 
     - https://github.com/AstroMatt/astroBio/tree/master/raw
     - https://github.com/AstroMatt/astroBio/tree/master/dat
 
 #. Stwórz listę features dla kilkunastu cech osób
+#. Stwórz CSV z wybranych przez Ciebie danych i załaduj za pomocą biblioteki ``pandas``
+#. Do
 #. Uruchom test wagi parametrów
 #. Czy Twoje features mają wysokie znaczenie?
 
+
 :Podpowiedź:
+    * ``np.genfromtxt()``
+    * ``np.array()`` i ``.transpose()``
+
     .. code-block:: python
 
         >>> from sklearn import preprocessing
 
         >>> le = preprocessing.LabelEncoder()
 
-        >>> le.fit(["paris", "paris", "tokyo", "amsterdam"])
+        >>> le.fit_transform(["paris", "paris", "tokyo", "amsterdam"])
+        array([1, 1, 2, 0])
 
         >>> list(le.classes_)
         ['amsterdam', 'paris', 'tokyo']
 
-        >>> le.transform(["tokyo", "tokyo", "paris"])
-        array([2, 2, 1]...)
 
     .. code-block:: python
 
@@ -197,4 +206,36 @@ Feature Engineering
 
         # display the relative importance of each attribute
         print(model.feature_importances_)
+
+
+
+.. code-block:: python
+
+    headers = set()
+
+    with open('../_data/astro-experience.csv') as file:
+        for line in file:
+            for element in line.split(','):
+                headers.add(element.strip())
+
+        headers = sorted(headers)
+        print(headers)
+
+
+    with open('../_data/astro-experience.csv') as file:
+        for line in file:
+            vector = []
+            features = [f.strip() for f in line.split(',')]
+
+            for element in headers:
+
+                if element in features:
+                    vector.append(1)
+                else:
+                    vector.append(0)
+
+            print(vector)
+
+
+
 

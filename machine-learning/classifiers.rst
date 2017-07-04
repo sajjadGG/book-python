@@ -62,6 +62,22 @@ Porównanie classifierów
 * Dla danych przeprowadź analizę wykorzystując różne modele danych
 * Wyświetl nazwę, dokładność oraz odchylenie standardowe modelu
 
+.. code-block:: txt
+
+                 RBF SVM | Accuracy: 64.24% (+/- 0.44%)
+              Linear SVM | Accuracy: 76.04% (+/- 5.58%)
+              Neural Net | Accuracy: 60.06% (+/- 23.16%)
+           Decision Tree | Accuracy: 66.85% (+/- 4.62%)
+        Gaussian Process | Accuracy: 68.58% (+/- 6.14%)
+       Nearest Neighbors | Accuracy: 71.18% (+/- 7.56%)
+                     QDA | Accuracy: 73.97% (+/- 8.84%)
+                AdaBoost | Accuracy: 72.57% (+/- 8.32%)
+             Naive Bayes | Accuracy: 73.62% (+/- 5.78%)
+           Random Forest | Accuracy: 73.44% (+/- 3.69%)
+
+:Zadanie z gwiazdką:
+    * Zrównoleglij uruchamianie predykcji za pomocą modułu ``threading`` oraz architektury opartej na Workerach.
+
 :Podpowiedź:
     .. code-block:: python
 
