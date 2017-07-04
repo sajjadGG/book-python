@@ -172,13 +172,13 @@ Can we locate even better value for :math:`k`?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. **Testing accuracy raises** as model complexity increases
 #. **Testing accuracy penalizes** models that are too complex or not complex enough
-#. For KNN models complexity is determined by the **value of :math:`k`** (lower value = more compelex)
+#. For KNN models complexity is determined by the value of :math:`k` (lower value = more compelex)
 
 .. figure:: img/model-quality-optimizations-knn.png
     :scale: 75%
     :align: center
 
-    For KNN models complexity is determined by the **value of :math:`k`** (lower value = more compelex)
+    For KNN models complexity is determined by the value of :math:`k` (lower value = more compelex)
 
 .. code-block:: python
 
@@ -217,7 +217,7 @@ Can we locate even better value for :math:`k`?
 Downsides of train/test split
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Provides a **high-variance estimate** of out-of-sample accuracy
-#. **:math:`K`-fold cross-validation** overcomes the limitation
+#. :math:`K` - fold **cross-validation** overcomes the limitation
 #. Train/test split is still used because of its flexibility and speed
 
 .. note:: Source: https://www.dataschool.io
