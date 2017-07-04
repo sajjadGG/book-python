@@ -128,38 +128,10 @@ Przykłady praktyczne
 Zadanie kontrolne
 =================
 
-Płeć
-----
+Pima Indians Diabetes problem
+-----------------------------
+Dla Pima Indians Diabetes wykonaj analizę algorytmem Naive Bayes z biblioteki ``sklearn``.
 
-Dla danych:
-
-.. csv-table::
-    :header: "Gender", "Height", "Weight", "Foot Size"
-
-    male,6.00,180,12
-    male,5.92,190,11
-    male,5.58,170,12
-    male,5.92,165,10
-    female,5.00,100,6
-    female,5.50,150,8
-    female,5.42,130,7
-    female,5.75,150,9
-
-Jaką płeć ma osoba o parametrach:
-
-    - Height: 6
-    - Weight: 130
-    - Foot Size: 8
-
-:Podpowiedź:
-
-.. math::
-
-    p(person is male∣person's data) = \frac{p(person's data∣person is male) * p(person is male)}{p(person's data)}
-
-    p(person is male∣person's data) = \frac{p(person's data∣person is male) * p(person is male)}{p(person's data)}
-
-    p(person is female∣person's data) = \frac{p(person's data∣person is female) * p(person is female)}{p(person's data)}
 
 Nowotwory
 ---------
@@ -184,10 +156,6 @@ negatywny	   20%	      80%
 
 Załóżmy, że dostałaś pozytywny wynik, czyli masz raka.
 Jakie jest prawdopodobieństwo, że faktycznie jesteś chora?
-
-Pima Indians Diabetes problem
------------------------------
-Dla Pima Indians Diabetes wykonaj analizę algorytmem Naive Bayes z biblioteki ``sklearn``.
 
 
 Spam Classifier

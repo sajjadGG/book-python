@@ -2,7 +2,11 @@
 Linear Regression
 *****************
 
-Linear regression fits a line to a scatterplot in such a way as to minimize the sum of the squares of the residuals. The resulting regression line, together with the standard deviations of the two variables or their correlation coefficient, can be a reasonable summary of a scatterplot if the scatterplot is roughly football-shaped. In other cases, it is a poor summary. If we are regressing the variable Y on the variable X, and if Y is plotted on the vertical axis and X is plotted on the horizontal axis, the regression line passes through the point of averages, and has slope equal to the correlation coefficient times the SD of Y divided by the SD of X. This page shows a scatterplot, with a button to plot the regression line.
+Co to jest Linear Regression?
+=============================
+The straight line can be seen in the plot, showing how linear regression attempts to draw a straight line that will best minimize the residual sum of squares between the observed responses in the dataset, and the responses predicted by the linear approximation.
+
+The coefficients, the residual sum of squares and the variance score are also calculated.
 
 * Najprostszy przypadek sieci neuronowych
 
@@ -10,50 +14,57 @@ Problemy
 ========
 Predicting output on data matrix
 
-
-Podstawowe pojęcia
-==================
-* Loss Function
-* Parameters
-* Gradient
-* Gradient descent
-* Overshoot
-* Undershoot
-* Goldi Locks
-* Chain rule
-* Weight
-* Computatiion Graph
-* Forward Propagation
-* Backpropagation
-
-
-Regression
-==========
-How does the actual machine learning thing work? With supervised learning, you have features and labels. The features are the descriptive attributes, and the label is what you're attempting to predict or forecast. Another common example with regression might be to try to predict the dollar value of an insurance policy premium for someone. The company may collect your age, past driving infractions, public criminal record, and your credit score for example. The company will use past customers, taking this data, and feeding in the amount of the "ideal premium" that they think should have been given to that customer, or they will use the one they actually used if they thought it was a profitable amount.
-
-Thus, for training the machine learning classifier, the features are customer attributes, the label is the premium associated with those attributes.
-
 .. code-block:: python
 
-    import quandl
+    import matplotlib.pyplot as plt
+    import numpy as np
+    from sklearn import datasets, linear_model
 
-    df = quandl.get('WIKI/GOOGL', api_key='sbaiDFKSHYv8TLdoWKzW')
-    df = df[['Adj. Open', 'Adj. High', 'Adj. Low', 'Adj. Close', 'Adj. Volume']]
+    # Load the diabetes dataset
+    diabetes = datasets.load_diabetes()
 
-    df['HL_PCT'] = (df['Adj. High'] - df['Adj. Close']) / df['Adj. Close'] * 100.0
-    df['PCT_change'] = (df['Adj. Close'] - df['Adj. Open']) / df['Adj. Open'] * 100.0
+    # Use only one feature
+    diabetes_features = diabetes.data[:, np.newaxis, 2]
 
-    df = df[['Adj. Close', 'HL_PCT', 'PCT_change', 'Adj. Volume']]
+    # Split the data into training/testing sets
+    features_train = diabetes_features[:-20]
+    features_test = diabetes_features[-20:]
 
-    print(df.head())
+    # Split the targets into training/testing sets
+    labels_train = diabetes.target[:-20]
+    labels_test = diabetes.target[-20:]
 
-    """
-    Date        Adj. Close    HL_PCT  PCT_change  Adj. Volume
+    # Create linear regression object
+    model = linear_model.LinearRegression()
 
-    2004-08-19   50.322842  3.712563    0.324968   44659000.0
-    2004-08-20   54.322689  0.710922    7.227007   22834300.0
-    2004-08-23   54.869377  3.729433   -1.227880   18256100.0
-    2004-08-24   52.597363  6.417469   -5.726357   15247300.0
-    2004-08-25   53.164113  1.886792    1.183658    9188600.0
-    """
+    # Train the model using the training sets
+    model.fit(features_train, labels_train)
 
+    # The coefficients
+    print('Coefficients: \n{model.coef_}')
+
+    # The mean squared error
+    print("Mean squared error: %.2f"
+          % np.mean((model.predict(features_test) - labels_test) ** 2))
+
+    # Explained variance score: 1 is perfect prediction
+    print('Variance score: %.2f' % model.score(features_test, labels_test))
+
+    # Plot outputs
+    plt.scatter(features_test, labels_test, color='black')
+    plt.plot(features_test, model.predict(features_test), color='blue', linewidth=3)
+
+    plt.xticks(())
+    plt.yticks(())
+
+    plt.show()
+
+Coefficients: [ 938.23786125]
+Mean squared error: 2548.07
+Variance score: 0.4
+
+.. figure:: img/linear-regression.png
+    :scale: 75%
+    :align: center
+
+    The straight line can be seen in the plot, showing how linear regression attempts to draw a straight line that will best minimize the residual sum of squares between the observed responses in the dataset, and the responses predicted by the linear approximation.

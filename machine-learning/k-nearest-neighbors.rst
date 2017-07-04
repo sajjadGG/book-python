@@ -180,3 +180,25 @@ Zadania kontrolne
 Pima Indians Diabetes problem
 -----------------------------
 Dla Pima Indians Diabetes wykonaj analizę algorytmem KNN z biblioteki ``sklearn``.
+
+Płeć
+----
+Dla danych:
+
+.. csv-table::
+    :header: "Gender", "Height", "Weight", "Foot Size"
+
+    male,6.00,180,12
+    male,5.92,190,11
+    male,5.58,170,12
+    male,5.92,165,10
+    female,5.00,100,6
+    female,5.50,150,8
+    female,5.42,130,7
+    female,5.75,150,9
+
+Jaką płeć ma osoba o parametrach:
+
+    - Height: 6
+    - Weight: 130
+    - Foot Size: 8
