@@ -129,7 +129,7 @@ Machine Learning
 
     machine-learning/decision-tree.rst
     machine-learning/k-nearest-neighbors.rst
-    machine-learning/naive-bayes.rst
+    machine-learning/bayes.rst
     machine-learning/linear-regression.rst
     machine-learning/logistics-regression.rst
     machine-learning/support-vector-machines.rst
@@ -137,6 +137,8 @@ Machine Learning
     machine-learning/clustering.rst
     machine-learning/principal-component-analysis.rst
     machine-learning/neural-network.rst
+
+    machine-learning/visual.rst
     machine-learning/convolutional-neural-network.rst
 
     machine-learning/model-quality.rst

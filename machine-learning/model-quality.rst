@@ -249,6 +249,35 @@ Ensemble averaging is one of the simplest types of committee machines. Along wit
 
 In machine learning ensemble refers only to a concrete finite set of alternative models, but typically allows for much more flexible structure to exist among those alternatives.
 
+.. code-block:: python
+
+    import numpy as np
+    import urllib
+    from sklearn import preprocessing
+    from sklearn import metrics
+    from sklearn.ensemble import ExtraTreesClassifier
+
+    # download the file and load data
+    url = "http://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.data"
+    raw_data = urllib.urlopen(url)
+
+    # Turn into NumPy matrix and seperate X and Y
+    dataset = np.loadtxt(raw_data, delimiter=",")
+    X = dataset[:,0:7]
+    y = dataset[:,8]
+
+
+    # Normaize and Standardize the features so that it does not affect the learning algorithm
+    preprocessing.normalize(features)
+    preprocessing.scale(features)
+
+    # Fit the Tree alogorithm
+    model = ExtraTreesClassifier()
+    model.fit(X, y)
+
+    # display the relative importance of each attribute
+    print(model.feature_importances_)
+
 Benefits
 --------
 * The resulting committee is almost always less complex than a single network which would achieve the same level of performance

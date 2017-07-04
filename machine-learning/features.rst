@@ -152,3 +152,34 @@ What Makes a Good Feature?
 * Easy to understand features.
 * Look for informative features.
 
+Zadania kontrolne
+=================
+
+Feature Engineering
+-------------------
+#. Na podstawie danych wybranych astronautów:
+
+    - https://github.com/AstroMatt/astroBio/tree/master/raw
+    - https://github.com/AstroMatt/astroBio/tree/master/dat
+
+#. Stwórz listę features dla kilkunastu cech osób
+#. Uruchom test wagi parametrów
+#. Czy Twoje features mają wysokie znaczenie?
+
+:Podpowiedź:
+    .. code-block:: python
+
+        from sklearn import preprocessing
+        from sklearn.ensemble import ExtraTreesClassifier
+
+        # Normaize the features so that it does not affect the learning algorithm
+        preprocessing.normalize(features)
+        preprocessing.scale(features)
+
+        # Fit the Tree alogorithm
+        # This class implements a meta estimator that fits a number of randomized decision trees (a.k.a. extra-trees) on various sub-samples of the dataset and use averaging to improve the predictive accuracy and control over-fitting.
+        model = ExtraTreesClassifier()
+        model.fit(features, labels)
+
+        # display the relative importance of each attribute
+        print(model.feature_importances_)

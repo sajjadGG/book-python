@@ -170,13 +170,34 @@ Zadania praktyczne
 Prosta klasyfikacja na podstawie features i labels
 --------------------------------------------------
 
-Stwórz Classifier dla podanych poniżej danych testowych
+Stwórz Classifier dla podanych poniżej danych testowych:
 
-==========  =====  ==========
-Horsepower  Seats  Label
-==========  =====  ==========
-300         2      sports-car
-450         2      sports-car
-200         8      minivan
-150         9      minivan
-==========  =====  ==========
+.. csv-table::
+    :header: "Gender", "Height", "Weight", "Foot Size"
+
+    male,6.00,180,12
+    male,5.92,190,11
+    male,5.58,170,12
+    male,5.92,165,10
+    female,5.00,100,6
+    female,5.50,150,8
+    female,5.42,130,7
+    female,5.75,150,9
+
+Jaką płeć ma osoba o parametrach?:
+
+    - Height: 6
+    - Weight: 130
+    - Foot Size: 8
+
+Zwizualizuj drzewo decyzyjne
+
+Banknoty
+--------
+Na podstawie datasetu 1372 banknotów z 5 wartościami numerycznymi pobranymi z obrazu odpowiedz czy dany banknot jest prawdziwy wykorzystując algorymt drzewa decyzyjnego.
+
+    - variance of Wavelet Transformed image (continuous).
+    - skewness of Wavelet Transformed image (continuous).
+    - kurtosis of Wavelet Transformed image (continuous).
+    - entropy of image (continuous).
+    - class (integer).

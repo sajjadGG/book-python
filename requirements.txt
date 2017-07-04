@@ -8,3 +8,9 @@ coverage
 django
 requests
 lxml
+tensorflow
+sklearn
+pandas
+scipy
+numpy
+matplotlib

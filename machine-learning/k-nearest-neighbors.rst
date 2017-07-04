@@ -49,34 +49,27 @@ Wykorzystanie ``sklearn.neighbors.KNeighborsClassifier``
 
     iris = datasets.load_iris()
 
-    # Features
-    x = iris.data
-
-    # Labels
-    y = iris.target
-
     # Split dataset into test and training set in half
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.5)
+    features_train, features_test, labels_train, labels_test = train_test_split(iris.data, iris.target, test_size=0.25)
 
     # Create classifier
-    k_neighbors = KNeighborsClassifier()
+    model = KNeighborsClassifier()
 
     # Train classifier using training data
-    k_neighbors.fit(x_train, y_train)
+    model.fit(features_train, labels_train)
 
     # Predict
-    predictions = k_neighbors.predict(x_test)
+    predictions = model.predict(features_test)
 
     # How accurate was classifier on testing set
-    output = accuracy_score(y_test, predictions)
+    output = accuracy_score(labels_test, predictions)
     print(output)
-    # Output: 0.933333333333
+    # Output: 0.947368421053
 
 .. note:: Because of some variation for each run, it might give different results.
 
 Własna implementacja
 --------------------
-
 .. code-block:: python
 
     from scipy.spatial import distance
@@ -84,64 +77,53 @@ Własna implementacja
     from sklearn.metrics import accuracy_score
     from sklearn.model_selection import train_test_split
 
-    iris = datasets.load_iris()
 
-    # Features
-    x = iris.data
+    class NearestNeighborClassifier:
+        def fit(self, features, labels):
+            self.features_train = features
+            self.labels_train = labels
 
-    # Labels
-    y = iris.target
-
-    # Split dataset into test and training set in half
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.5)
-
-
-    def euclidean_distance(point_from_numeric_data, point_from_testing_data):
-        return distance.euclidean(point_from_numeric_data, point_from_testing_data)
-
-
-    class MyClassifier():
-
-        def fit(self, x_train, y_train):
-            # Memorize
-            self.x_train = x_train
-            self.y_train = y_train
-
-        def predict(self, x_test):
+        def predict(self, features_test):
             predictions = []
 
-            for row in x_test:
+            for row in features_test:
                 label = self.closest(row)
                 predictions.append(label)
 
             return predictions
 
         def closest(self, row):
-            best_dist = euclidean_distance(row, self.x_train[0])
+            best_dist = distance.euclidean(row, self.features_train[0])
             best_index = 0
 
-            for i in range(0, len(self.x_train)):
-                dist = euclidean_distance(row, self.x_train[i])
+            for i in range(0, len(self.features_train)):
+                dist = distance.euclidean(row, self.features_train[i])
                 if dist < best_dist:
                     best_dist = dist
                     best_index = i
 
-            return self.y_train[best_index]
+            return self.labels_train[best_index]
 
+
+    iris = datasets.load_iris()
+
+    # Split dataset into test and training set in half
+    features_train, features_test, labels_train, labels_test = train_test_split(iris.data, iris.target, test_size=0.5)
 
     # Create classifier
-    clf = MyClassifier()
+    model = NearestNeighborClassifier()
 
     # Train classifier using training data
-    clf.fit(x_train, y_train)
+    model.fit(features_train, labels_train)
 
     # Predict
-    predictions = clf.predict(x_test)
+    predictions = model.predict(features_test)
 
     # How accurate was classifier on testing set
-    output = accuracy_score(y_test, predictions)
+    output = accuracy_score(labels_test, predictions)
     print(output)
-    # Output: 0.946666666667
+    # Output: 0.96
+
 
 .. note:: Because of some variation for each run, it might give different results.
 
@@ -179,15 +161,6 @@ Wyznaczanie odległości
 
     Wyliczanie odległości w celu oszacowania przynależności do zbioru. Zwróć uwagę, że bez względu na ilość wymiarów wzór się niewiele różni.
 
-Krzywe o nieliniowym przebiegu
-==============================
-
-.. figure:: img/k-nearest-neighbors-curve.png
-    :scale: 50%
-    :align: center
-
-    K najbliższych sąsiadów
-
 Zalety i wady
 =============
 
@@ -200,3 +173,10 @@ Wady
 ----
 * Wolny i zasobożerny (musi iterować dla każdej predykcji)
 * Brak możliwości ważenia features
+
+Zadania kontrolne
+=================
+
+Pima Indians Diabetes problem
+-----------------------------
+Dla Pima Indians Diabetes wykonaj analizę algorytmem KNN z biblioteki ``sklearn``.

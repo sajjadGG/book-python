@@ -34,84 +34,59 @@ Random Classifier
 
 
     class MyClassifier():
-        def fit(self, x_train, y_train):
-            # Memorize
-            self.x_train = x_train
-            self.y_train = y_train
+        def fit(self, features, labels):
+            self.features_train = features
+            self.labels_train = labels
 
-        def predict(self, x_test):
+        def predict(self, features_test):
             predictions = []
 
-            for row in x_test:
-                label = random.choice(self.y_train)
+            for row in features_test:
+                label = random.choice(self.labels_train)
                 predictions.append(label)
 
             return predictions
 
 Accuracy for Iris dataset: 0.346666666667
 
-Nearest Neighbor Classifier
----------------------------
-.. code-block:: python
-
-    def euclidean_distance(point_from_numeric_data, point_from_testing_data):
-        return distance.euclidean(point_from_numeric_data, point_from_testing_data)
-
-
-    class MyClassifier():
-
-        def fit(self, x_train, y_train):
-            # Memorize
-            self.x_train = x_train
-            self.y_train = y_train
-
-        def predict(self, x_test):
-            predictions = []
-
-            for row in x_test:
-                label = self.closest(row)
-                predictions.append(label)
-
-            return predictions
-
-        def closest(self, row):
-            best_dist = euclidean_distance(row, self.x_train[0])
-            best_index = 0
-
-            for i in range(0, len(self.x_train)):
-                dist = euclidean_distance(row, self.x_train[i])
-                if dist < best_dist:
-                    best_dist = dist
-                    best_index = i
-
-            return self.y_train[best_index]
-
-Accuracy for Iris dataset: 0.946666666667
 
 Zadania praktyczne
 ==================
 
-Spam Classifier
----------------
-#. Stwórz classifier który na podstawie wiadomości email zakwalifikuje je jako SPAM lub nie SPAM.
+Porównanie classifierów
+-----------------------
+* https://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.data
 
-#. Zakwalifikuj wiadomości jak na przykładzie poniżej:
+* Pobierz dane
+* Podziel zestaw na dane testowe (25%) i dane treningowe (75%) i ustaw ``random_state=0``
+* Dla danych przeprowadź analizę wykorzystując różne modele danych
+* Wyświetl nazwę, dokładność oraz odchylenie standardowe modelu
 
-    ===============================  ========
-    Email                            Labels
-    ===============================  ========
-    Click here to claim your prize!  Spam
-    What's new?                      Not Spam
-    Hang out later?                  Not Spam
-    You have won $1,000,000          Spam
-    Enlarge your...                  Spam
-    Nigerian prince                  Spam
-    ===============================  ========
+:Podpowiedź:
+    .. code-block:: python
 
-#. Przygotuj dwie partycje danych:
+        classifiers = [
+            {'name': "Nearest Neighbors", 'model': KNeighborsClassifier()},
+            {'name': "Linear SVM",        'model': SVC(kernel="linear")},
+            {'name': "RBF SVM",           'model': SVC(kernel="rbf")},
+            {'name': "Gaussian Process",  'model': GaussianProcessClassifier()},
+            {'name': "Decision Tree",     'model': DecisionTreeClassifier()},
+            {'name': "Random Forest",     'model': RandomForestClassifier()},
+            {'name': "Neural Net",        'model': MLPClassifier()},
+            {'name': "AdaBoost",          'model': AdaBoostClassifier()},
+            {'name': "Naive Bayes",       'model': GaussianNB()},
+            {'name': "QDA",               'model': QuadraticDiscriminantAnalysis()},
+        ]
 
-    - treningową
-    - testową
+Nearest Neighbor Classifier
+---------------------------
+Napisa klafyfikator najbliższego sąsiada osiągający dla zbioru Iris accuracy na poziomie około 0.96 dla ``test_size=0.5``.
 
-#. Skorzystaj treningowej bazy danych wiadomości spam
+:Podpowiedź:
+    Do obliczania odległości skorzystaj z algorytmu Euclidesa.
 
+    .. code-block:: python
+
+        >>> from scipy.spatial import distance
+
+        >>> distance.euclidean(point_from_numeric_data, point_from_testing_data)

@@ -49,6 +49,29 @@ Based on Fisher's linear discriminant model, this data set became a typical test
     >>> print(iris.target[0])
     0
 
+Pima Indians Diabetes problem
+-----------------------------
+Dataset:
+
+    * https://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.data
+
+This problem is comprised of 768 observations of medical details for Pima indians patents. The records describe instantaneous measurements taken from the patient such as their age, the number of times pregnant and blood workup. All patients are women aged 21 or older. All attributes are numeric, and their units vary from attribute to attribute.
+
+    - Number of times pregnant
+    - Plasma glucose concentration a 2 hours in an oral glucose tolerance test
+    - Diastolic blood pressure (mm Hg)
+    - Triceps skin fold thickness (mm)
+    - 2-Hour serum insulin (mu U/ml)
+    - Body mass index (weight in kg/(height in m)^2)
+    - Diabetes pedigree function
+    - Age (years)
+    - Class variable (0 or 1)
+
+Each record has a class value that indicates whether the patient suffered an onset of diabetes within 5 years of when the measurements were taken (1) or not (0).
+
+This is a standard dataset that has been studied a lot in machine learning literature. A good prediction accuracy is 70%-76%.
+
+
 Quandl
 ------
 Quandl (/ˈkwɑːndəl/) is a platform for financial, economic, and alternative data that serves investment professionals. Quandl sources data from over 500 publishers. All Quandl's data are accessible via an API. API access is possible through packages for multiple programming languages including R, Python, Matlab, Maple (software) and Stata.
