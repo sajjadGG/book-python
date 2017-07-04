@@ -249,16 +249,6 @@ Zaawansowane wykorzystanie `Generator Expressions`
 Zadania kontrolne
 =================
 
-``yield`` i ``/etc/passwd``
----------------------------
-
-:Zadanie:
-    * Przepisz program parsujący plik ``/etc/passwd`` aby wykorzystywał słówko kluczowe ``yield``.
-
-
-Zadania kontrolne
-=================
-
 Generatory vs. Przetwarzanie Listy
 ----------------------------------
 
