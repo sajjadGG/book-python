@@ -33,7 +33,7 @@ Random Classifier
     import random
 
 
-    class MyClassifier():
+    class RandomNeighborClassifer:
         def fit(self, features, labels):
             self.features_train = features
             self.labels_train = labels
