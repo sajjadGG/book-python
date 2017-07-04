@@ -20,6 +20,19 @@ with open("../_data/pima-diabetes.csv") as file:
 features_train, features_test, labels_train, labels_test = train_test_split(features, labels, test_size=0.25, random_state=0)
 
 
+names = [
+    "Nearest Neighbors",
+    "Linear SVM",
+    "RBF SVM",
+    "Gaussian Process",
+    "Decision Tree",
+    "Random Forest",
+    "Neural Net",
+    "AdaBoost",
+    "Naive Bayes",
+    "QDA"
+]
+
 classifiers = [
     {'name': "Nearest Neighbors", 'model': KNeighborsClassifier()},
     {'name': "Linear SVM",        'model': SVC(kernel="linear")},
@@ -41,7 +54,7 @@ for classifier in classifiers:
     scores = cross_val_score(model, features_train, labels_train, cv=5)
 
     accuracy = 100 * scores.mean()
-    stdev = 100 * scores.std() * 2
+    stdev = 100 * scores.std()
 
     print(f'{name:>20} | Accuracy: {accuracy:.2f}% (+/- {stdev:.2f}%)')
 

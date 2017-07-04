@@ -55,9 +55,7 @@ Zadania praktyczne
 
 Porównanie classifierów
 -----------------------
-* https://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.data
-
-* Pobierz dane
+* Pobierz dane Pima Diabetes Dataset
 * Podziel zestaw na dane testowe (25%) i dane treningowe (75%) i ustaw ``random_state=0``
 * Dla danych przeprowadź analizę wykorzystując różne modele danych
 * Wyświetl nazwę, dokładność oraz odchylenie standardowe modelu
@@ -74,6 +72,9 @@ Porównanie classifierów
                 AdaBoost | Accuracy: 72.57% (+/- 8.32%)
              Naive Bayes | Accuracy: 73.62% (+/- 5.78%)
            Random Forest | Accuracy: 73.44% (+/- 3.69%)
+
+:Dataset:
+    https://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.data
 
 :Zadanie z gwiazdką:
     * Zrównoleglij uruchamianie predykcji za pomocą modułu ``threading`` oraz architektury opartej na Workerach.
@@ -96,10 +97,16 @@ Porównanie classifierów
 
 Nearest Neighbor Classifier
 ---------------------------
-Napisa klafyfikator najbliższego sąsiada osiągający dla zbioru Iris accuracy na poziomie około 0.96 dla ``test_size=0.5``.
+- Napisz klafyfikator najbliższego sąsiada osiągający dla zbioru Iris accuracy na poziomie około 0.96 dla ``test_size=0.5``.
+
+- Klasa ``NearestNeighborClassifier`` powina mieć interfejs zgodny z ``scikit-learn``:
+
+    - ``.fit()`` - do uczenia funkcji
+    - ``.predict()`` - do predykcji
 
 :Podpowiedź:
-    Do obliczania odległości skorzystaj z algorytmu Euclidesa.
+    * Do załadowania danych skorzystaj z ``load_iris()``
+    * Do obliczania odległości skorzystaj z algorytmu Euclidesa.
 
     .. code-block:: python
 
