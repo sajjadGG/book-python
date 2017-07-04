@@ -169,6 +169,20 @@ Feature Engineering
 :Podpowiedź:
     .. code-block:: python
 
+        >>> from sklearn import preprocessing
+
+        >>> le = preprocessing.LabelEncoder()
+
+        >>> le.fit(["paris", "paris", "tokyo", "amsterdam"])
+
+        >>> list(le.classes_)
+        ['amsterdam', 'paris', 'tokyo']
+
+        >>> le.transform(["tokyo", "tokyo", "paris"])
+        array([2, 2, 1]...)
+
+    .. code-block:: python
+
         from sklearn import preprocessing
         from sklearn.ensemble import ExtraTreesClassifier
 
