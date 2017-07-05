@@ -2,6 +2,10 @@
 Przydatne odnośniki
 *******************
 
+Neural Networks
+===============
+* https://www.youtube.com/watch?v=oYbVFhK_olY&list=PLQVvvaa0QuDfKTOs3Keq_kaG2P55YRn5v&index=43
+
 Understanding the Bias-Variance Tradeoff
 ========================================
 * http://scott.fortmann-roe.com/docs/BiasVariance.html
