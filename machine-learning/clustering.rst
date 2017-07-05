@@ -317,3 +317,12 @@ K-means Clustering dla zbioru Iris
     ax.dist = 12
 
 
+
+Zadania kontrolne
+=================
+
+Klastrowanie zbioru Iris
+------------------------
+#. Dla zbioru Iris dokonaj klastrowania za pomocą alborytmu ``KMeans`` z biblioteki ``sklearn``.
+#. Dla jakiego hiperparametru ``n_clusters`` osiągniemy najwięsze accuracy?
+#. Zwizualizuj graficznie rozwiązanie problemu

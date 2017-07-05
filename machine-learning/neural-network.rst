@@ -30,6 +30,8 @@ Słownictwo
 
     Output Layer
 
+    Fully Connected Layer
+
     Backpropagation
 
     Activation function
