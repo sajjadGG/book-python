@@ -2,6 +2,8 @@
 k Nearest Neighbors
 *******************
 
+.. todo:: Zrobić aby wykorzystywało szablon ``_template.rst``
+
 Jak działa algorytm "K najbliższych sąsiadów"
 =============================================
 Algorytm polega na:

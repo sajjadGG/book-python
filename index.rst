@@ -1,6 +1,6 @@
-**********************************************
+##############################################
 Kurs programowania w Python i Machine Learning
-**********************************************
+##############################################
 
 **Author**
     :name: `Matt Harasymczuk <http://astrotech.io>`_
@@ -10,6 +10,7 @@ Kurs programowania w Python i Machine Learning
     :linkedin: `https://linkedin.com/in/mattharasymczuk <https://linkedin.com/in/mattharasymczuk>`_
     :slideshare: `https://www.slideshare.net/astrotech/presentations <https://www.slideshare.net/astrotech/presentations>`_
 
+=====
 Wstęp
 =====
 .. toctree::
@@ -22,6 +23,7 @@ Wstęp
     wstep/wybor-ide.rst
     wstep/podstawy-skladni.rst
 
+========
 Podstawy
 ========
 .. toctree::
@@ -50,6 +52,7 @@ Podstawy
 
     podstawy/dobre-praktyki.rst
 
+===================
 Średniozaawansowany
 ===================
 .. toctree::
@@ -75,6 +78,7 @@ Podstawy
     sredniozaawansowany/django.rst
     sredniozaawansowany/programowanie-gui.rst
 
+============
 Zaawansowany
 ============
 .. toctree::
@@ -102,6 +106,8 @@ Zaawansowany
     zaawansowany/wzorce-projektowe.rst
     zaawansowany/c-extensions.rst
 
+
+==========================
 W zastosowaniach naukowych
 ==========================
 .. toctree::
@@ -111,6 +117,8 @@ W zastosowaniach naukowych
 
     scientific/biblioteki.rst
 
+
+================
 Machine Learning
 ================
 .. toctree::
@@ -144,6 +152,8 @@ Machine Learning
     machine-learning/model-quality.rst
     machine-learning/przydatne-odnosniki.rst
 
+
+==========
 Załączniki
 ==========
 .. toctree::
@@ -156,6 +166,8 @@ Załączniki
     zalaczniki/ksiazki.rst
     zalaczniki/python-wat.rst
 
+
+=========
 Receptury
 =========
 .. toctree::

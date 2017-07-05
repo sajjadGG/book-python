@@ -16,6 +16,7 @@ extensions = [
     #'sphinx.ext.todo',
     #'sphinx.ext.coverage',
     'sphinx.ext.imgmath',
+    #'sphinx.ext.autosectionlabel',
     #'sphinx.ext.pngmath',
     #'sphinx.ext.viewcode',
 ]
@@ -28,11 +29,12 @@ copyright = '2015-2017, Matt Harasymczuk'
 author = 'Matt Harasymczuk'
 version = get_version()
 release = get_version()
-language = 'pl'
-exclude_patterns = ['_build', '_themes', 'README.rst']
+language = 'en'
+exclude_patterns = ['_build', '_themes', 'README.rst', '*/_template.rst']
 pygments_style = 'vs'
 todo_include_todos = True
 today_fmt = '%Y-%m-%d'
+numfig = True
 
 html_theme = 'sphinx_rtd_theme'
 html_theme_path = ['_themes']

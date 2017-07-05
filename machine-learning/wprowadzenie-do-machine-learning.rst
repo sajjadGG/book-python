@@ -166,6 +166,23 @@ Czyszczenie Danych
 * Bardzo ważny temat
 * Rzadko kto o tym wspomina!
 
+.. code-block:: txt
+
+    ul. Jana III Sobieskiego 12 m. 19
+    ul. Jana 3 Sobieskiego 12/19
+    Jana III Sobieskiego 12 apt. 19
+    Sobieskiego 12/19
+    os. Jana III Sobieskiego 12/19
+
+.. code-block:: txt
+
+    12/12/17
+    2017-12-12
+    Dec 12, 2017
+    Dec 12th, 2017
+    12.12.2017
+
+
 Praca z bibliotekami
 ====================
 
@@ -250,11 +267,15 @@ Przykład pracy z ``PyMC3``
 #. (opcjonalnie) z nowymi wynikami dostosuj swój model statystyczny
 
 
-Algorytmy uczenia maszynowego
-=============================
+Kategorie algorytmów uczenia maszynowego
+========================================
 
-Supervised Learning - Z nadzorem
---------------------------------
+Supervised Learning
+-------------------
+Also known as:
+
+    - Supervised Learning
+
 Input data is called training data and has a known label or result such as spam/not-spam or a stock price at a time.
 
 A model is prepared through a training process in which it is required to make predictions and is corrected when those predictions are wrong. The training process continues until the model achieves a desired level of accuracy on the training data.
@@ -275,8 +296,12 @@ Example problems are classification and regression.
 * Naive Bayes
 * Sztuczne sieci neuronowe (ang. neural networks)
 
-Unsupervised Learning - Bez nadzoru
+Unsupervised Learning
 -----------------------------------
+Also known as:
+
+    - Bez nadzoru
+
 Input data is not labeled and does not have a known result.
 
 A model is prepared by deducing structures present in the input data. This may be to extract general rules. It may be through a mathematical process to systematically reduce redundancy, or it may be to organize data by similarity.
@@ -295,6 +320,10 @@ Example problems are clustering, dimensionality reduction and association rule l
 
 Semi-Supervised Learning
 ------------------------
+Also known as:
+
+    - Reinforcement learning
+
 Input data is a mixture of labeled and unlabelled examples.
 
 There is a desired prediction problem but the model must learn the structures to organize the data as well as make predictions.

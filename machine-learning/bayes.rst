@@ -17,7 +17,6 @@ Naiwny klasyfikator Bayesowski, bazujący na twierdzeniu Bayesa, nadaje się szc
 
 Co to jest dokładnie?
 ---------------------
-
 .. figure:: img/naive-bayes.png
     :scale: 100%
     :align: center
@@ -156,12 +155,12 @@ negatywny	   20%	      80%
 
 Załóżmy, że dostałaś pozytywny wynik, czyli masz raka.
 Jakie jest prawdopodobieństwo, że faktycznie jesteś chora?
+Napisz kod bez używania bibliotek zewnętrznych.
 
 
 Spam Classifier
 ---------------
 #. Stwórz classifier który na podstawie wiadomości email zakwalifikuje je jako SPAM lub nie SPAM.
-
 #. Zakwalifikuj wiadomości jak na przykładzie poniżej:
 
     ===============================  ========

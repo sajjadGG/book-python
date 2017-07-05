@@ -2,24 +2,158 @@
 Support Vector Machines
 ***********************
 
-What is Support Vector Machine?
-===============================
-There are many supervised learning algorithms available; here we'll go into brief detail one of the most powerful and interesting methods: **Support Vector Machines (SVM)**.
+TL;DR
+=====
+- Jeden z najbardziej popularnych algorytmów Machine Learning
+- Dzieli :term:`vector space` za pomocą linii
+- Wyszukuje linię taką linię, która ma największy margines pomiędzy wszystkimi punktami tzw. :term:`Best separating hyperplane`
+- Dla nieznanego punktu sprawdza po której stronie krzywej się znajduje i na podstawie tego określa przynależność
+- Linia prosta jest najprostszym przypadkiem
+- Może się okazać, że konieczne będzie przeprowadzenie bardzo skomplikowanej krzywej
+- Jeżeli dane są zgrupowane w wielowymiarowej przestrzeni, trzeba będzie użyć zbioru
 
-A Support Vector Machine (SVM) is a discriminative classifier formally defined by a separating hyperplane. In other words, given labeled training data (supervised learning), the algorithm outputs an optimal hyperplane which categorizes new examples.
 
-Given a set of training examples, each marked as belonging to one or the other of two categories, an SVM training algorithm builds a model that assigns new examples to one category or the other, making it a non-probabilistic binary linear classifier (although methods such as Platt scaling exist to use SVM in a probabilistic classification setting). An SVM model is a representation of the examples as points in space, mapped so that the examples of the separate categories are divided by a clear gap that is as wide as possible. New examples are then mapped into that same space and predicted to belong to a category based on on which side of the gap they fall.
+Charakterystyka algorytmu
+=========================
 
-.. figure:: img/support-vector-machines-max-sep-hyperplane-with-margin.png
-    :scale: 33%
+Przeznaczenie
+-------------
+
+Zalety algorytmu
+----------------
+- Guaranteed Optimality: Due to the nature of Convex Optimization, the solution is guaranteed to be the global minimum not a local minimum.
+
+- Conformity with Semi-Supervised Learning: It may be used in a dataset where some of the data are labeled and some are not. You only add an additional condition to the minimization problem and it is called Transductive SVM.
+
+- Feature Mapping might have been a burden on the computational complexity of the overall training performance; however, thanks to the ‘Kernel Trick’ the feature mapping is implicitly carried out via simple dot products.
+
+Wady algorytmu
+--------------
+- In Natural Language Processing, structured representations of text yield better performances. Sadly, SVMs can not accomodate such structures(word embeddings) and are used through Bag-of-Words representation which loses sequantiality information and leads to worse performance.
+
+- SVM in its vanilla form cannot return a probabilistic confidence value like logistic regression does, in some sense it’s not ‘explanatory’ enough.
+
+
+Opis algorytmu
+==============
+
+Definicja intuicyjna
+--------------------
+U podstaw metody wektorów nośnych (Support Vector Machines - SVM) leży koncepcja przestrzeni decyzyjnej, którą dzieli się budując granice separujące obiekty o różnej przynależności klasowej, czego przykład widzimy na poniższym rysunku. Mamy tu dwie klasy kółek: czarne i białe. Linia graniczna rozdziela je wyraźnie. Nowy, nieznany obiekt, jeżeli znajdzie się po prawej stronie granicy zostanie zaklasyfikowany jako biały, a w przeciwnym wypadku, jako czarny.
+
+.. figure:: img/svm-hyperplane-line.png
+    :name: svm-hyperplane-line
+    :scale: 25%
     :align: center
 
     Maximum-margin hyperplane and margins for an SVM trained with samples from two classes. Samples on the margin are called the support vectors.
 
-In addition to performing linear classification, SVMs can efficiently perform a non-linear classification using what is called the kernel trick, implicitly mapping their inputs into high-dimensional feature spaces.
+Powyższy rysunek jest ilustracją bardzo prostego przykładu klasyfikatora liniowego, dzielącego obszar prób na dwie części za pomocą prostej. Większość praktycznych zadań klasyfikacyjnych jednak nie jest tak oczywista. Do poprawnego klasyfikowania potrzebne są bardziej skomplikowane struktury niż linia prosta. Przykładem może być poniższy rysunek, który porównany z poprzednim jasno wskazuje, że do rozdzielenia kółek czarnych i białych konieczna jest teraz krzywa (obiekt bardziej skomplikowany niż prosta). Krzywa ta (ale również poprzednia prosta) są przykładami klasyfikatorów hiperpłaszczyznowych. Tego typu klasyfikatory otrzymujemy stosując Metodę wektorów nośnych.
 
-When data are not labeled, supervised learning is not possible, and an unsupervised learning approach is required, which attempts to find natural clustering of the data to groups, and then map new data to these formed groups. The clustering algorithm which provides an improvement to the support vector machines is called support vector clustering[2] and is often[citation needed] used in industrial applications either when data are not labeled or when only some data are labeled as a preprocessing for a classification pass.
+.. figure:: img/svm-hyperplane-curve.png
+    :name: svm-hyperplane-curve
+    :scale: 33%
+    :align: center
 
+    SVMs are a discriminative classifier: that is, they draw a boundary between clusters of data.
+
+Definicja formalna
+------------------
+- Tą metodą wykonuje się regresję i klasyfikację, konstruując nieliniowe granice decyzyjne.
+- Istnieje kilka typów wektorów nośnych, z różnymi funkcjami bazowymi:
+
+    * liniową, wielomianową,
+    * RBF (radialne funkcje bazowe)
+    * sigmoidalną.
+
+Support Vector Machines (Kernels)
+=================================
+.. math::
+    f(x) = B0 + sum(ai * (x,xi))
+
+- The equation for making a prediction for a new input using the dot product between the input (x) and each support vector (xi)
+
+Linear Kernel SVM
+-----------------
+.. math::
+    K(x, xi) = sum(x * xi)
+
+The kernel defines the similarity or a distance measure between new data and the support vectors.
+
+.. figure:: img/support-vector-machines-4.png
+    :name: 2D Linear Kernel SVM
+    :scale: 75%
+    :align: center
+
+    2D Linear Kernel SVM
+
+Polynomial Kernel SVM
+---------------------
+.. math::
+    K(x,xi) = 1 + sum(x * xi)^d
+
+- Polynomial kernel
+- Where the degree of the polynomial must be specified by hand to the learning algorithm.
+- When :math:`d=1` this is the same as the linear kernel.
+- The polynomial kernel allows for curved lines in the input space.
+
+
+Radial Kernel SVM
+-----------------
+.. math::
+    K(x,xi) = exp(-gamma * sum((x – xi^2))
+
+- Where gamma is a parameter that must be specified to the learning algorithm.
+- A good default value for gamma is 0.1, where gamma is often 0 < gamma < 1.
+- The radial kernel is very local and can create complex regions within the feature space, like closed polygons in two-dimensional space.
+
+.. figure:: img/support-vector-machines-9.png
+    :name: 2D Radial Kernel SVM
+    :scale: 75%
+    :align: center
+
+    2D Radial Kernel SVM
+
+.. figure:: img/svm-hyperplane-3d.png
+    :name: 3D Radial Kernel SVM
+    :scale: 50%
+    :align: center
+
+    3D Radial Kernel SVM
+
+Przykłady praktyczne
+====================
+
+Przykład wykorzystania ``sklearn``
+----------------------------------
+.. code-block:: python
+
+    # import some data to play with
+    iris = datasets.load_iris()
+
+    # we only take the first two features: [:, :2]
+    X = iris.data[:, :2]
+    y = iris.target
+
+
+.. code-block:: python
+
+    from sklearn import svm
+
+    # Assumed you have, X (predictor) and Y (target) for training data set and x_test(predictor) of test_dataset
+    # Create SVM classification object
+    model = svm.svc(kernel='linear', c=1, gamma=1)
+
+    # there is various option associated with it, like changing kernel, gamma and C value. Will discuss more # about it in next section.Train the model using the training sets and check score
+    model.fit(X, y)
+    model.score(X, y)
+
+    # Predict Output
+    predicted = model.predict(x_test)
+
+
+Przygotowanie do przykładów
+---------------------------
 .. code-block:: python
 
     import numpy as np
@@ -33,14 +167,8 @@ When data are not labeled, supervised learning is not possible, and an unsupervi
 
 
 Motivating Support Vector Machines
-==================================
+----------------------------------
 Support Vector Machines (SVMs) are a powerful supervised learning algorithm used for **classification** or for **regression**. SVMs are a discriminative classifier: that is, they draw a boundary between clusters of data.
-
-.. figure:: img/k-nearest-neighbors-curve.png
-    :scale: 33%
-    :align: center
-
-    SVMs are a discriminative classifier: that is, they draw a boundary between clusters of data.
 
 Let's show a quick example of support vector classification. First we need to create a dataset:
 
@@ -80,8 +208,8 @@ These are three very different separaters which perfectly discriminate between t
 How can we improve on this?
 
 
-Support Vector Machines: Maximizing the Margin
-==============================================
+Maximizing the Margin
+---------------------
 Support vector machines are one way to address this. What support vector machined do is to not only draw a line, but consider a region about the line of some given width. Here's an example of what it might look like:
 
 .. code-block:: python
@@ -209,6 +337,7 @@ Where SVM gets incredibly exciting is when it is used in conjunction with kernel
 .. code-block:: python
 
     from sklearn.datasets.samples_generator import make_circles
+
     X, y = make_circles(100, factor=.1, noise=.1)
 
     clf = SVC(kernel='linear').fit(X, y)
@@ -276,3 +405,51 @@ Here there are effectively :math:`N` basis functions: one centered at each point
 We'll leave SVMs for the time being and take a look at another classification algorithm: Random Forests.
 
 .. note:: Source: https://github.com/jakevdp/sklearn_pycon2015/blob/master/notebooks/03.1-Classification-SVMs.ipynb
+
+
+Zadania kontrolne
+=================
+
+Wykorzystanie biblioteki ``sklearn``
+------------------------------------
+
+:Dataset: :ref:`Wisconsin Breast Cancer Database`
+:Zadanie:
+    Naucz algorytm rozpoznawania danych wykorzystując algorytm Support Vector Machines
+
+Własna implementacja
+--------------------
+
+
+Lektura uzupełniająca
+=====================
+
+Bibliografia
+------------
+
+Przydatne odnośniki
+-------------------
+
+Słownictwo
+----------
+.. glossary::
+    Positive
+        Grupa zbioru
+
+    Negative
+        Grupa zbioru
+
+    Discriminative Classifier
+        Draws a boundary between :term:`clusters` of data. For tasks such as :term:`classification` and :term:`regression` that do not require the joint :term:`distribution`. Discriminative models can yield superior performance over :term:`generative models`.
+
+    Support Vector
+        Punkty które leżą na linii "marginesu"
+
+    Vector Space
+        Przestrzeń w której znajdują się dane. Dla danych (wektorów) dwuwymiarowych przestrzeń można zobrazować za pomocą wykresu 2D z kartezjańskim układem współrzędnych.
+
+    Binary classifier
+        Dzieli zbiór na dwie części :term:`Positive` i :term:`Negative`
+
+    Best separating hyperplane
+        Line that separates two :term:`Decision boundary`
