@@ -10,6 +10,8 @@ Linear dimensionality reduction using Singular Value Decomposition of the data t
 
 2D example
 ==========
+* http://setosa.io/ev/principal-component-analysis/
+
 First, consider a dataset in only two dimensions, like (height, weight). This dataset can be plotted as points in a plane. But if we want to tease out variation, PCA finds a new coordinate system in which every point has a new (x,y) value. The axes don't actually mean anything physical; they're combinations of height and weight called "principal components" that are chosen to give one axes lots of variation.
 
 .. figure:: img/principal-component-analysis.png
