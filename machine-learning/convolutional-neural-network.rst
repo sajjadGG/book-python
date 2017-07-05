@@ -84,42 +84,68 @@ Handwritten digits recognition (MNIST) with ``sklearn``
     from sklearn.datasets import fetch_mldata
     from sklearn.neural_network import MLPClassifier
 
+
     mnist = fetch_mldata("MNIST original")
+
     # rescale the data, use the traditional train/test split
-    X, y = mnist.data / 255., mnist.target
-    X_train, X_test = X[:60000], X[60000:]
-    y_train, y_test = y[:60000], y[60000:]
+    features = mnist.data / 255.
+    labels = mnist.target
 
-    # mlp = MLPClassifier(hidden_layer_sizes=(100, 100), max_iter=400, alpha=1e-4,
-    #                     solver='sgd', verbose=10, tol=1e-4, random_state=1)
-    mlp = MLPClassifier(hidden_layer_sizes=(50,), max_iter=10, alpha=1e-4,
-                        solver='sgd', verbose=10, tol=1e-4, random_state=1,
-                        learning_rate_init=.1)
+    features_train = features[:60000]
+    features_test = features[60000:]
 
-    mlp.fit(X_train, y_train)
-    print("Training set score: %f" % mlp.score(X_train, y_train))
-    print("Test set score: %f" % mlp.score(X_test, y_test))
+    labels_train = labels[:60000]
+    labels_test = labels[60000:]
+
+
+    model = MLPClassifier(
+        hidden_layer_sizes=(50,),
+        max_iter=10,
+        alpha=1e-4,
+        solver='sgd',
+        verbose=10,
+        tol=1e-4,
+        random_state=1,
+        learning_rate_init=.1
+    )
+
+    model.fit(features_train, labels_train)
+
+    training_score = model.score(features_train, labels_train)
+    test_score = model.score(features_test, labels_test)
+
+    print(f"Training set score: {training_score}")
+    print(f"Test set score: {test_score}")
 
     fig, axes = plt.subplots(4, 4)
+
     # use global min / max to ensure all weights are shown on the same scale
-    vmin, vmax = mlp.coefs_[0].min(), mlp.coefs_[0].max()
-    for coef, ax in zip(mlp.coefs_[0].T, axes.ravel()):
-        ax.matshow(coef.reshape(28, 28), cmap=plt.cm.gray, vmin=.5 * vmin,
-                   vmax=.5 * vmax)
+    vmin = model.coefs_[0].min()
+    vmax = model.coefs_[0].max()
+
+
+    for coef, ax in zip(model.coefs_[0].T, axes.ravel()):
+
+        # każdy obrazek to jest jeden neuron
+        # Neuronów jest 50
+        ax.matshow(
+            coef.reshape(28, 28),
+            cmap=plt.cm.gray,
+            vmin=.5 * vmin,
+            vmax=.5 * vmax)
+
         ax.set_xticks(())
         ax.set_yticks(())
 
     plt.show()
 
+
 Handwritten digits recognition (MNIST) with ``tensorflow``
 ----------------------------------------------------------
 .. code-block:: python
 
-    import os
-    import requests
     import numpy as np
     import tensorflow as tf
-
 
     # Data sets
     IRIS_TRAINING = "../_data/iris_training.csv"
@@ -140,6 +166,7 @@ Handwritten digits recognition (MNIST) with ``tensorflow``
 
     # Specify that all features have real-value data
     feature_columns = [tf.contrib.layers.real_valued_column("", dimension=4)]
+
 
     # Build 3 layer DNN with 10, 20, 10 units respectively.
     classifier = tf.contrib.learn.DNNClassifier(
@@ -178,12 +205,14 @@ Handwritten digits recognition (MNIST) with ``tensorflow``
             [[6.4, 3.2, 4.5, 1.5],
              [5.8, 3.1, 5.0, 1.7]], dtype=np.float32)
 
+
     predictions = list(classifier.predict_classes(input_fn=new_samples))
 
     print(f"New Samples, Class Predictions: {predictions}\n")
 
     # Test Accuracy: 0.966667
     # New Samples, Class Predictions: [1, 1]
+
 
 
 Handwritten digits recognition (MNIST) with ``keras``
