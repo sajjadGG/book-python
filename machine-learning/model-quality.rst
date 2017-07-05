@@ -318,19 +318,14 @@ In machine learning ensemble refers only to a concrete finite set of alternative
 .. code-block:: python
 
     import numpy as np
-    import urllib
     from sklearn import preprocessing
-    from sklearn import metrics
     from sklearn.ensemble import ExtraTreesClassifier
 
-    # download the file and load data
-    url = "http://archive.ics.uci.edu/ml/machine-learning-databases/pima-indians-diabetes/pima-indians-diabetes.data"
-    raw_data = urllib.urlopen(url)
 
-    # Turn into NumPy matrix and seperate X and Y
-    dataset = np.loadtxt(raw_data, delimiter=",")
-    X = dataset[:,0:7]
-    y = dataset[:,8]
+    with open('../_data/pima-diabetes.csv') as file:
+        dataset = np.loadtxt(file, delimiter=",")
+        features = dataset[:, :-1]
+        labels = dataset[:, -1]
 
 
     # Normaize and Standardize the features so that it does not affect the learning algorithm
@@ -339,10 +334,11 @@ In machine learning ensemble refers only to a concrete finite set of alternative
 
     # Fit the Tree alogorithm
     model = ExtraTreesClassifier()
-    model.fit(X, y)
+    model.fit(features, labels)
 
     # display the relative importance of each attribute
     print(model.feature_importances_)
+
 
 Benefits
 --------
