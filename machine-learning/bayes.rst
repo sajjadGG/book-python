@@ -13,7 +13,7 @@ Naiwny klasyfikator Bayesowski, bazujący na twierdzeniu Bayesa, nadaje się szc
 - :math:`P(A|B)` - Jak prawdopodobna jest hipoteza, mając skutek. Prawdopodobieństwo warunkowe.
 - :math:`P(B|A)` - Jak prawdopodobny jest dowód, zakładając że nasza hipoteza jest prawdziwa
 - :math:`P(A)` - Jak prawdopodobna była nasza hipoteza przed zaobserwowaniem dowodów.
-- :math:`P(B) - Suma prawdopodobieństw wszystkich potencjalnych skutków zdarzenia: :math:`P(B) = \sum{(B|A)P(B)}`
+- :math:`P(B) - Suma prawdopodobieństw wszystkich potencjalnych skutków zdarzenia: :math:`P(B) = \sum (B|A)P(B)`
 
 Co to jest dokładnie?
 ---------------------
