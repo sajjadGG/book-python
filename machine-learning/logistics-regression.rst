@@ -67,3 +67,22 @@ Przykład zastosowania
 - Marketers use it to predict whether a customer will respond to a particular ad (whether by clicking on a link or sending back a self-enclosed mailer).
 
 - Weather forecasters use it to predict the "chance of rain" you see every morning.
+
+Zadania kontrolne
+=================
+
+Company sales
+-------------
+The sales of a company (in million dollars) for each year are shown in the table below.
+
+.. todo:: przepisać tabelkę
+
+.. code-block:: text
+
+    x (year)	2005	2006	2007	2008	2009
+    y (sales)	12	19	29	37	45
+
+
+#. Find the least square regression line :math:`y = ax + b` .
+#. Use the least squares regression line as a model to estimate the sales of the company in 2012.
+#. Użyj biblioteki ``sklearn``

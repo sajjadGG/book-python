@@ -145,91 +145,6 @@ Visualize weights
 Przykłady praktyczne
 ====================
 
-Deep Neural Network with Iris dataset
--------------------------------------
-.. code-block:: python
-
-    import os
-    import requests
-    import numpy as np
-    import tensorflow as tf
-
-
-    # Data sets
-    IRIS_TRAINING = "../_data/iris_training.csv"
-    IRIS_TRAINING_URL = "http://download.tensorflow.org/data/iris_training.csv"
-
-    IRIS_TEST = "../_data/iris_test.csv"
-    IRIS_TEST_URL = "http://download.tensorflow.org/data/iris_test.csv"
-
-
-    # If the training and test sets aren't stored locally, download them.
-    if not os.path.exists(IRIS_TRAINING):
-        data = requests.get(IRIS_TRAINING_URL).text
-        with open(IRIS_TRAINING, "w") as file:
-            file.write(data)
-
-    if not os.path.exists(IRIS_TEST):
-        data = requests.get(IRIS_TEST_URL).text
-        with open(IRIS_TEST, "w") as file:
-            file.write(data)
-
-
-    # Load datasets.
-    training_set = tf.contrib.learn.datasets.base.load_csv_with_header(
-        filename=IRIS_TRAINING,
-        target_dtype=np.int,
-        features_dtype=np.float32)
-
-    test_set = tf.contrib.learn.datasets.base.load_csv_with_header(
-        filename=IRIS_TEST,
-        target_dtype=np.int,
-        features_dtype=np.float32)
-
-
-    # Specify that all features have real-value data
-    feature_columns = [tf.contrib.layers.real_valued_column("", dimension=4)]
-
-    # Build 3 layer DNN with 10, 20, 10 units respectively.
-    classifier = tf.contrib.learn.DNNClassifier(
-        feature_columns=feature_columns,
-        hidden_units=[10, 20, 10],
-        n_classes=3,
-        model_dir="/tmp/iris_model")
-
-    # Define the training inputs
-    def get_train_inputs():
-        x = tf.constant(training_set.data)
-        y = tf.constant(training_set.target)
-        return x, y
-
-    # Fit model.
-    classifier.fit(input_fn=get_train_inputs, steps=2000)
-
-    # Define the test inputs
-    def get_test_inputs():
-        x = tf.constant(test_set.data)
-        y = tf.constant(test_set.target)
-        return x, y
-
-    # Evaluate accuracy.
-    accuracy_score = classifier.evaluate(input_fn=get_test_inputs, steps=1)["accuracy"]
-
-    print(f"\nTest Accuracy: {accuracy_score:f}\n")
-    # output: Test Accuracy: 0.966667
-
-
-    # Classify two new flower samples.
-    def new_samples():
-        return np.array(
-            [[6.4, 3.2, 4.5, 1.5],
-             [5.8, 3.1, 5.0, 1.7]], dtype=np.float32)
-
-    predictions = list(classifier.predict(input_fn=new_samples))
-
-    print(f"New Samples, Class Predictions: {predictions}\n")
-    # output: New Samples, Class Predictions: [1, 1]
-
 Image Classification using ``TensorFlow for Poets``
 ---------------------------------------------------
 * https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#1
@@ -311,122 +226,116 @@ Image Classification using ``TensorFlow for Poets``
     sunflowers (score = 0.00644)
     daisy (score = 0.00169)
 
+Face completion with a multi-output estimators
+----------------------------------------------
+This example shows the use of multi-output estimator to complete images. The goal is to predict the lower half of a face given its upper half.
 
-Handwritten digits recognition (MNIST) with ``tf.contrib.learn``
-----------------------------------------------------------------
+The first column of images shows true faces. The next columns illustrate how extremely randomized trees, k nearest neighbors, linear regression and ridge regression complete the lower half of those faces.
+
 .. code-block:: python
 
     import numpy as np
     import matplotlib.pyplot as plt
-    %matplotlib inline
-    import tensorflow as tf
 
-    learn = tf.contrib.learn
-    tf.logging.set_verbosity(tf.logging.ERROR)
+    from sklearn.datasets import fetch_olivetti_faces
+    from sklearn.utils.validation import check_random_state
 
-    # Import the dataset
-    mnist = learn.datasets.load_dataset('mnist')
-    data = mnist.train.images
-    labels = np.asarray(mnist.train.labels, dtype=np.int32)
-    test_data = mnist.test.images
-    test_labels = np.asarray(mnist.test.labels, dtype=np.int32)
+    from sklearn.ensemble import ExtraTreesRegressor
+    from sklearn.neighbors import KNeighborsRegressor
+    from sklearn.linear_model import LinearRegression
+    from sklearn.linear_model import RidgeCV
 
-    # There are 55k examples in train, and 10k in eval. You may wish to limit the size to experiment faster.
-    max_examples = 10000
-    data = data[:max_examples]
-    labels = labels[:max_examples]
+    # Load the faces datasets
+    data = fetch_olivetti_faces()
+    targets = data.target
 
-    def display(i):
-        img = test_data[i]
-        plt.title('Example %d. Label: %d' % (i, test_labels[i]))
-        plt.imshow(img.reshape((28,28)), cmap=plt.cm.gray_r)
+    data = data.images.reshape((len(data.images), -1))
+    train = data[targets < 30]
+    test = data[targets >= 30]  # Test on independent people
 
+    # Test on a subset of people
+    n_faces = 5
+    rng = check_random_state(4)
+    face_ids = rng.randint(test.shape[0], size=(n_faces, ))
+    test = test[face_ids, :]
 
-    # You can display output:
-    # display(0)
-    # display(1)
-    # display(8)
-    # print len(data[0])
+    n_pixels = data.shape[1]
+    # Upper half of the faces
+    X_train = train[:, :(n_pixels + 1) // 2]
+    # Lower half of the faces
+    y_train = train[:, n_pixels // 2:]
+    X_test = test[:, :(n_pixels + 1) // 2]
+    y_test = test[:, n_pixels // 2:]
 
+    # Fit estimators
+    ESTIMATORS = {
+        "Extra trees": ExtraTreesRegressor(n_estimators=10, max_features=32,
+                                           random_state=0),
+        "K-nn": KNeighborsRegressor(),
+        "Linear regression": LinearRegression(),
+        "Ridge": RidgeCV(),
+    }
 
-    # Fit a Linear Classifier
-    feature_columns = learn.infer_real_valued_columns_from_input(data)
+    y_test_predict = dict()
+    for name, estimator in ESTIMATORS.items():
+        estimator.fit(X_train, y_train)
+        y_test_predict[name] = estimator.predict(X_test)
 
-    # n_classes = 10 because we have 10 digits
-    classifier = learn.LinearClassifier(feature_columns=feature_columns, n_classes=10)
-    classifier.fit(data, labels, batch_size=100, steps=1000)
+    # Plot the completed faces
+    image_shape = (64, 64)
 
-    # Evaluate accuracy
-    classifier.evaluate(test_data, test_labels)
-    print(classifier.evaluate(test_data, test_labels)["accuracy"])
-    # output: 0.9141
+    n_cols = 1 + len(ESTIMATORS)
+    plt.figure(figsize=(2. * n_cols, 2.26 * n_faces))
+    plt.suptitle("Face completion with multi-output estimators", size=16)
 
+    for i in range(n_faces):
+        true_face = np.hstack((X_test[i], y_test[i]))
 
-    # Classify a few examples
+        if i:
+            sub = plt.subplot(n_faces, n_cols, i * n_cols + 1)
+        else:
+            sub = plt.subplot(n_faces, n_cols, i * n_cols + 1,
+                              title="true faces")
 
-    # here's one it gets right
-    print ("Predicted %d, Label: %d" % (classifier.predict(test_data[0]), test_labels[0]))
-    display(0)
+        sub.axis("off")
+        sub.imshow(true_face.reshape(image_shape),
+                   cmap=plt.cm.gray,
+                   interpolation="nearest")
 
-    # and one it gets wrong
-    print ("Predicted %d, Label: %d" % (classifier.predict(test_data[8]), test_labels[8]))
-    display(8)
+        for j, est in enumerate(sorted(ESTIMATORS)):
+            completed_face = np.hstack((X_test[i], y_test_predict[est][i]))
 
-    # Visualize learned weights
-    weights = classifier.weights_
-    f, axes = plt.subplots(2, 5, figsize=(10,4))
-    axes = axes.reshape(-1)
-    for i in range(len(axes)):
-        a = axes[i]
-        a.imshow(weights.T[i].reshape(28, 28), cmap=plt.cm.seismic)
-        a.set_title(i)
-        a.set_xticks(()) # ticks be gone
-        a.set_yticks(())
+            if i:
+                sub = plt.subplot(n_faces, n_cols, i * n_cols + 2 + j)
+
+            else:
+                sub = plt.subplot(n_faces, n_cols, i * n_cols + 2 + j,
+                                  title=est)
+
+            sub.axis("off")
+            sub.imshow(completed_face.reshape(image_shape),
+                       cmap=plt.cm.gray,
+                       interpolation="nearest")
+
     plt.show()
 
-``Keras.io``
-------------
-.. code-block:: python
+.. figure:: img/visual-faces.png
+    :scale: 100%
+    :align: center
 
-    from keras.models import Sequential
-
-    model = Sequential()
+    This example shows the use of multi-output estimator to complete images. The goal is to predict the lower half of a face given its upper half.
 
 
-    from keras.layers import Dense, Activation
+Zadania kontrolne
+=================
 
-    model.add(Dense(units=64, input_dim=100))
-    model.add(Activation('relu'))
-    model.add(Dense(units=10))
-    model.add(Activation('softmax'))
+Kto jest na zdjęciu? - używanie ``TensorFlow for Poets``
+--------------------------------------------------------
+#. Stwórz zbiór obrazów zawierający zwierzęta:
 
-    model.compile(loss='categorical_crossentropy',
-              optimizer='sgd',
-              metrics=['accuracy'])
+    - tygrysy,
+    - lwy,
+    - pantery
+    - koty.
 
-    model.compile(loss=keras.losses.categorical_crossentropy,
-                  optimizer=keras.optimizers.SGD(lr=0.01, momentum=0.9, nesterov=True))
-
-    # x_train and y_train are Numpy arrays --just like in the Scikit-Learn API.
-    model.fit(x_train, y_train, epochs=5, batch_size=32)
-
-    model.train_on_batch(x_batch, y_batch)
-
-    loss_and_metrics = model.evaluate(x_test, y_test, batch_size=128)
-
-    classes = model.predict(x_test, batch_size=128)
-
-
-Zadania praktyczne
-==================
-
-
-
-Kto jest na zdjęciu?
---------------------
-Stwórz zbiór obrazów zawierający tylko twarze osób:
-
-    - twoje,
-    - twojego przyjaciela/przyjacółki.
-
-Postaraj się aby zdjęcia były na wprost. Naucz algorytm ich rozpoznawania i przedstaw Mu jakąś nową twarz (twoją lub przyjaciela i zobacz czy potrafi rozpoznać i z jaką dokładnością.
+#. Naucz algorytm ich rozpoznawania i przedstaw Mu jakieś nowe zwierze i zobacz czy potrafi rozpoznać i z jaką dokładnością.

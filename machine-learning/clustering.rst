@@ -129,6 +129,9 @@ Each node in the cluster tree contains a group of similar data; Nodes are placed
 Porównanie algorytmów
 =====================
 
+* http://hdbscan.readthedocs.io/en/latest/comparing_clustering_algorithms.html
+
+
 .. figure:: img/clustering-overview.png
     :name: clustering-overview
     :scale: 100%

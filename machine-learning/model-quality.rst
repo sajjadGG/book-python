@@ -9,8 +9,22 @@ Metody doboru modelu i poprawienia jakości
 * Regularyzacja
 * Ensemble
 
-Model Evaluation Procedure
-==========================
+Diagnostyka Bias vs. Wariancja
+==============================
+Osiąganie kiepskich rezultatów na zbiorze testowym wiąże się zazwyczaj z jednym z dwóch zjawisk:
+
+- wysoki bias - niedopasowanie (under fitting)
+- wysoka wariancja - nadmierne dopasowanie (over fitting)
+
+.. figure:: img/model-quality-variance-bias.png
+    :scale: 100%
+    :align: center
+
+    Bias vs. Wariancja
+
+Ważne, żebyśmy zorientowali się, co jest naszym problemem. Mamy możliwe trzy sytuacje: wysoki bias, wysoką wariancję, bądź wreszcie dobre dopasowanie. Graficznie wygląda to tak:
+
+Jak można powyżej zauważyć, stopień wielomianu (który dopasowujemy do danych) rośnie, gdy przesuwamy się w stronę over fittingu.
 
 .. figure:: img/model-quality-bias-variance.png
     :scale: 75%
@@ -18,9 +32,44 @@ Model Evaluation Procedure
 
     Graphical illustration of bias and variance.
 
+Decydowanie o kolejnym kroku
+----------------------------
+Jakich zmian dokonać w naszym algorytmie, jeżeli błędy są za duże? Możliwe rozwiązania to:
+
+- Stworzyć więcej przypadków testowych (pomaga przy nadmiernym dopasowaniu)
+- Zmniejszyć zbiór wykorzystywanych cech (pomaga przy nadmiernym dopasowaniu)
+- Wykorzystać dodatkowe cechy (pomaga przy słabym dopasowaniu)
+- Dodać cechy wielomianowe (pomaga przy słabym dopasowaniu)
+- Zmniejszyć lambdę (pomaga przy słabym dopasowaniu)
+- Zwiększyć lambdę (pomaga przy nadmiernym dopasowaniu)
+
+Overfitting w sieciach neuronowych
+----------------------------------
+Tworząc sieci neuronowe mamy dwie opcje:
+
+- Możemy wykorzystać mniejszą sieć z niewielką liczbą ukrytych warstw i ukrytych jednostek. Jest ona bardziej podatna na underfitting. Jej główną zaletą jest niewielka złożoność obliczeniowa.
+
+.. figure:: img/nn-simple.png
+    :scale: 100%
+    :align: center
+
+    Prosta jednowarstwowa sieć neuronowa.
+
+- Możemy wykorzystać relatywnie dużą sieć neuronową, która zawiera więcej ukrytych jednostek lub więcej ukrytych warstw. Jest bardziej podatna na overfitting oraz ma większą złożoność.
+
+.. figure:: img/nn-deep.png
+    :scale: 100%
+    :align: center
+
+    Głęboka sieć neuronowa.
+
+- Najczęściej wykorzystanie dużej sieci neuronowej z regularyzacją (w celu zmniejszenia overfittingu) jest bardziej efektywne od stworzenia małej sieci. Decyzję o liczbie ukrytych warstw można podjąć mierząc błąd zbioru testowego dla różnych wariantów i wybierając liczbę warstw przy której błąd ten jest najmniejszy.
+
+Model Evaluation Procedure
+==========================
+
 Train and test on entire dataset
 --------------------------------
-
 #. Train the model on **entire dataset**
 #. Test the model on **the same dataset**, and evaluate how well we did by comparing the **predicted** response value with the **true** response values.
 
@@ -224,19 +273,19 @@ Downsides of train/test split
 
 Regularyzacja
 =============
-Regularyzacja – wprowadzenie dodatkowej informacji do rozwiązywanego zagadnienia źle postawionego w celu polepszenia jakości rozwiązania. Regularyzacja jest często wykorzystywana przy rozwiązywaniu problemów odwrotnych. Spośród opracowanych metod regularyzacji można wyliczyć:
+Regularyzacja – wprowadzenie dodatkowej informacji do rozwiązywanego zagadnienia źle postawionego w celu polepszenia jakości rozwiązania. Regularyzacja jest często wykorzystywana przy rozwiązywaniu problemów odwrotnych.
 
-* regularyzację Tichonowa
-* regularyzację poprzez rozkład według wartości osobliwych
-* iteracyjne metody regularyzacji
-* regularyzację poprzez dyskretyzację
-* regularyzację poprzez filtrowanie
+Regularyzacja jest sposobem na zmniejszenie prawdopodobieństwa pojawienia się over fittingu
 
 .. figure:: img/model-quality-regularization.png
     :scale: 75%
     :align: center
 
-    Regularization, in mathematics and statistics and particularly in the fields of machine learning and inverse problems, is a process of introducing additional information in order to solve an ill-posed problem or to prevent overfitting.
+    Regularyzacja – wprowadzenie dodatkowej informacji do rozwiązywanego zagadnienia źle postawionego w celu polepszenia jakości rozwiązania.
+
+Random Forrest
+==============
+A random forest is a meta estimator that fits a number of decision tree classifiers on various sub-samples of the dataset and use averaging to improve the predictive accuracy and control over-fitting. The sub-sample size is always the same as the original input sample size but the samples are drawn with replacement if bootstrap=True (default).
 
 Ensemble averaging
 ==================

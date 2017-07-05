@@ -2,8 +2,8 @@
 Bayes
 *****
 
-Co to są Naive Bayes methods?
-=============================
+Co to jest Naiwny klasyfikator Bayesowski?
+==========================================
 Naiwny klasyfikator Bayesowski, bazujący na twierdzeniu Bayesa, nadaje się szczególnie do problemów o bardzo wielu wymiarach na wejściu. Mimo prostoty metody, często działa ona lepiej od innych, bardzo skomplikowanych metod klasyfikujących.
 
 .. math::

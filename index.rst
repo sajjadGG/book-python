@@ -134,6 +134,7 @@ Machine Learning
     machine-learning/algorithms.rst
     machine-learning/features.rst
     machine-learning/classifiers.rst
+    machine-learning/model-quality.rst
 
     machine-learning/decision-tree.rst
     machine-learning/k-nearest-neighbors.rst
@@ -144,12 +145,10 @@ Machine Learning
 
     machine-learning/clustering.rst
     machine-learning/principal-component-analysis.rst
-    machine-learning/neural-network.rst
 
-    machine-learning/visual.rst
+    machine-learning/neural-network.rst
     machine-learning/convolutional-neural-network.rst
 
-    machine-learning/model-quality.rst
     machine-learning/przydatne-odnosniki.rst
 
 

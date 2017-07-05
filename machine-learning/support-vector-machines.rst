@@ -41,21 +41,14 @@ Definicja intuicyjna
 --------------------
 U podstaw metody wektorów nośnych (Support Vector Machines - SVM) leży koncepcja przestrzeni decyzyjnej, którą dzieli się budując granice separujące obiekty o różnej przynależności klasowej, czego przykład widzimy na poniższym rysunku. Mamy tu dwie klasy kółek: czarne i białe. Linia graniczna rozdziela je wyraźnie. Nowy, nieznany obiekt, jeżeli znajdzie się po prawej stronie granicy zostanie zaklasyfikowany jako biały, a w przeciwnym wypadku, jako czarny.
 
-.. figure:: img/svm-hyperplane-line.png
-    :name: svm-hyperplane-line
+.. figure:: img/svm-hyperplane-linear.png
+    :name: svm-hyperplane-linear
     :scale: 25%
     :align: center
 
     Maximum-margin hyperplane and margins for an SVM trained with samples from two classes. Samples on the margin are called the support vectors.
 
 Powyższy rysunek jest ilustracją bardzo prostego przykładu klasyfikatora liniowego, dzielącego obszar prób na dwie części za pomocą prostej. Większość praktycznych zadań klasyfikacyjnych jednak nie jest tak oczywista. Do poprawnego klasyfikowania potrzebne są bardziej skomplikowane struktury niż linia prosta. Przykładem może być poniższy rysunek, który porównany z poprzednim jasno wskazuje, że do rozdzielenia kółek czarnych i białych konieczna jest teraz krzywa (obiekt bardziej skomplikowany niż prosta). Krzywa ta (ale również poprzednia prosta) są przykładami klasyfikatorów hiperpłaszczyznowych. Tego typu klasyfikatory otrzymujemy stosując Metodę wektorów nośnych.
-
-.. figure:: img/svm-hyperplane-curve.png
-    :name: svm-hyperplane-curve
-    :scale: 33%
-    :align: center
-
-    SVMs are a discriminative classifier: that is, they draw a boundary between clusters of data.
 
 Definicja formalna
 ------------------
@@ -81,11 +74,11 @@ Linear Kernel SVM
 The kernel defines the similarity or a distance measure between new data and the support vectors.
 
 .. figure:: img/support-vector-machines-4.png
-    :name: 2D Linear Kernel SVM
+    :name: Linear Kernel SVM
     :scale: 75%
     :align: center
 
-    2D Linear Kernel SVM
+    Linear Kernel SVM
 
 Polynomial Kernel SVM
 ---------------------
@@ -96,6 +89,13 @@ Polynomial Kernel SVM
 - Where the degree of the polynomial must be specified by hand to the learning algorithm.
 - When :math:`d=1` this is the same as the linear kernel.
 - The polynomial kernel allows for curved lines in the input space.
+
+.. figure:: img/svm-hyperplane-polynomial.png
+    :name: svm-hyperplane-polynomial
+    :scale: 33%
+    :align: center
+
+    Polynomial Kernel SVM
 
 
 Radial Kernel SVM
@@ -412,23 +412,25 @@ Zadania kontrolne
 
 Wykorzystanie biblioteki ``sklearn``
 ------------------------------------
+Naucz algorytm rozpoznawania danych wykorzystując algorytm Support Vector Machines.
 
-:Dataset: :ref:`Wisconsin Breast Cancer Database`
-:Zadanie:
-    Naucz algorytm rozpoznawania danych wykorzystując algorytm Support Vector Machines
+:Dataset: :ref:`Wisconsin Breast Cancer Database` https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/
 
-Własna implementacja
---------------------
+
+.. todo::
+    Własna implementacja
+    --------------------
 
 
 Lektura uzupełniająca
 =====================
 
-Bibliografia
-------------
+.. todo::
+    Bibliografia
+    ------------
 
-Przydatne odnośniki
--------------------
+    Przydatne odnośniki
+    -------------------
 
 Słownictwo
 ----------

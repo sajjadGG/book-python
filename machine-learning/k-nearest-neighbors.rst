@@ -139,21 +139,6 @@ Określanie przynależności do zbioru
 
     Przynależność do zbioru
 
-Wyznaczanie równania prostej
-============================
-
-.. figure:: img/k-nearest-neighbors-function.png
-    :scale: 100%
-    :align: center
-
-    Wyznaczanie równania prostej.
-
-.. figure:: img/k-nearest-neighbors-parameters.png
-    :scale: 100%
-    :align: center
-
-    Manipulowanie parametrami prostej (classifiera) w celu określenia funkcji.
-
 Wyznaczanie odległości
 ======================
 
@@ -204,3 +189,6 @@ Jaką płeć ma osoba o parametrach:
     - Height: 6
     - Weight: 130
     - Foot Size: 8
+
+:Podpowiedź:
+    * ``preprocessing.LabelEncoder()``

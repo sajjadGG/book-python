@@ -17,33 +17,49 @@ The coefficients, the residual sum of squares and the variance score are also ca
 
     The straight line can be seen in the plot, showing how linear regression attempts to draw a straight line that will best minimize the residual sum of squares between the observed responses in the dataset, and the responses predicted by the linear approximation.
 
-Pojęcia
-=======
-.. glossary::
+Wyznaczanie równania prostej
+============================
+.. figure:: img/k-nearest-neighbors-parameters.png
+    :scale: 100%
+    :align: center
 
-    Loss Function
+    Manipulowanie parametrami prostej (classifiera) w celu określenia funkcji.
 
-    Parameters
+.. figure:: img/k-nearest-neighbors-function.png
+    :scale: 100%
+    :align: center
 
-    Gradient
+    Wyznaczanie równania prostej.
 
-    Gradient descent
+.. todo::
 
-    Overshoot
+    Pojęcia
+    =======
+    .. glossary::
 
-    Undershoot
+        Loss Function
 
-    Goldi Locks
+        Parameters
 
-    Chain rule
+        Gradient
 
-    Weight
+        Gradient descent
 
-    Computatiion Graph
+        Overshoot
 
-    Forward Propagation
+        Undershoot
 
-    Backpropagation
+        Goldi Locks
+
+        Chain rule
+
+        Weight
+
+        Computatiion Graph
+
+        Forward Propagation
+
+        Backpropagation
 
 
 Przykłady praktyczne
@@ -118,13 +134,10 @@ Własna implementacja
     from math import pow
 
 
-    def get_headers(dataframe):
-        """Get the headers name of the dataframe"""
-        return dataframe.columns.values
-
-
     def cal_mean(readings):
-        """Function to calculate the mean value of the input readings"""
+        """
+        Function to calculate the mean value of the input readings
+        """
         readings_total = sum(readings)
         number_of_readings = len(readings)
         mean = readings_total / float(number_of_readings)
@@ -132,7 +145,9 @@ Własna implementacja
 
 
     def cal_variance(readings):
-        """Calculating the variance of the readings"""
+        """
+        Calculating the variance of the readings
+        """
 
         # To calculate the variance we need the mean value
         # Calculating the mean value from the cal_mean function
@@ -146,7 +161,9 @@ Własna implementacja
 
 
     def cal_covariance(readings_1, readings_2):
-        """Calculate the covariance between two different list of readings"""
+        """
+        Calculate the covariance between two different list of readings
+        """
         readings_1_mean = cal_mean(readings_1)
         readings_2_mean = cal_mean(readings_2)
         readings_size = len(readings_1)
@@ -159,7 +176,9 @@ Własna implementacja
 
 
     def cal_simple_linear_regression_coefficients(x_readings, y_readings):
-        """Calculating the simple linear regression coefficients (B0, B1)"""
+        """
+        Calculating the simple linear regression coefficients (B0, B1)
+        """
 
         # Coefficient B1 = covariance of x_readings and y_readings divided by variance of x_readings
         # Directly calling the implemented covariance and the variance functions
@@ -173,12 +192,16 @@ Własna implementacja
 
 
     def predict_target_value(x, b0, b1):
-        """Calculating the target (y) value using the input x and the coefficients b0, b1"""
+        """
+        Calculating the target (y) value using the input x and the coefficients b0, b1
+        """
         return b0 + b1 * x
 
 
     def cal_rmse(actual_readings, predicted_readings):
-        """Calculating the root mean square error"""
+        """
+        Calculating the root mean square error
+        """
         square_error_total = 0.0
         total_readings = len(actual_readings)
         for i in range(0, total_readings):
@@ -189,10 +212,12 @@ Własna implementacja
 
 
     def simple_linear_regression(dataset):
-        """Implementing simple linear regression without using any python library"""
+        """
+        Implementing simple linear regression without using any python library
+        """
 
         # Get the dataset header names
-        dataset_headers = get_headers(dataset)
+        dataset_headers = dataframe.columns.values(dataset)
         print("Dataset Headers :: ", dataset_headers)
 
         # Calculating the mean of the square feet and the price readings
@@ -218,11 +243,49 @@ Własna implementacja
         simple_linear_regression(house_price_dataset)
 
 
-
-
 Zadania kontrolne
 =================
 
-Własna implementacja
---------------------
+Least square regression 3 points
+--------------------------------
+#. Consider the following set of points: :math:`{(-2 , -1) , (1 , 1) , (3 , 2)}`
+#. Find the least square regression line for the given data points.
+#. Plot the given points and the regression line in the same rectangualr system of axes.
+#. Napisz własny kod implementujący rozwiązanie
 
+Least square regression 4 points
+--------------------------------
+#. Find the least square regression line for the following set of data: :math:`{(-1 , 0),(0 , 2),(1 , 4),(2 , 5)}`
+#. Plot the given points and the regression line in the same rectangualr system of axes.
+#. Użyj kodu z przykładu własnej implementacji do rozwiązania
+
+Least square regression 5 points
+--------------------------------
+The values of y and their corresponding values of y are shown in the table below
+
+.. todo:: przepisać tabelkę
+
+.. code-block:: text
+
+    x	0	1	2	3	4
+    y	2	3	5	4	6
+
+#. Find the least square regression line y = ax + b.
+#. Estimate the value of y when x = 10.
+#. Użyj biblioteki ``sklearn``
+
+Company sales
+-------------
+The sales of a company (in million dollars) for each year are shown in the table below.
+
+.. todo:: przepisać tabelkę
+
+.. code-block:: text
+
+    x (year)	2005	2006	2007	2008	2009
+    y (sales)	12	19	29	37	45
+
+
+#. Find the least square regression line :math:`y = ax + b` .
+#. Use the least squares regression line as a model to estimate the sales of the company in 2012.
+#. Użyj biblioteki ``sklearn``
