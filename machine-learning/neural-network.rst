@@ -103,8 +103,10 @@ Learning
 
 Optimizing
 ----------
-Back propagation:
-    zmiana wartości wag w sieci neuronowej na niższych warstwach - propagacja w dół sieci
+.. glossary::
+
+    Back propagation
+        zmiana wartości wag w sieci neuronowej na niższych warstwach - propagacja w dół sieci
 
 Retraining
 ----------
