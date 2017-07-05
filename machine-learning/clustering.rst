@@ -37,57 +37,56 @@ Algorytmy klastrowania
      - Usecase
      - Geometry (metric used)
 
-   * - :ref:`K-Means <k_means>`
+   * - K-Means
      - number of clusters
-     - Very large ``n_samples``, medium ``n_clusters`` with
-       :ref:`MiniBatch code <mini_batch_kmeans>`
+     - Very large ``n_samples``, medium ``n_clusters`` with MiniBatch code
      - General-purpose, even cluster size, flat geometry, not too many clusters
      - Distances between points
 
-   * - :ref:`Affinity propagation <affinity_propagation>`
+   * - Affinity propagation
      - damping, sample preference
      - Not scalable with n_samples
      - Many clusters, uneven cluster size, non-flat geometry
      - Graph distance (e.g. nearest-neighbor graph)
 
-   * - :ref:`Mean-shift <mean_shift>`
+   * - Mean-shift
      - bandwidth
      - Not scalable with ``n_samples``
      - Many clusters, uneven cluster size, non-flat geometry
      - Distances between points
 
-   * - :ref:`Spectral clustering <spectral_clustering>`
+   * - Spectral clustering
      - number of clusters
      - Medium ``n_samples``, small ``n_clusters``
      - Few clusters, even cluster size, non-flat geometry
      - Graph distance (e.g. nearest-neighbor graph)
 
-   * - :ref:`Ward hierarchical clustering <hierarchical_clustering>`
+   * - Ward hierarchical clustering
      - number of clusters
      - Large ``n_samples`` and ``n_clusters``
      - Many clusters, possibly connectivity constraints
      - Distances between points
 
-   * - :ref:`Agglomerative clustering <hierarchical_clustering>`
+   * - Agglomerative clustering
      - number of clusters, linkage type, distance
      - Large ``n_samples`` and ``n_clusters``
      - Many clusters, possibly connectivity constraints, non Euclidean
        distances
      - Any pairwise distance
 
-   * - :ref:`DBSCAN <dbscan>`
+   * - DBSCAN
      - neighborhood size
      - Very large ``n_samples``, medium ``n_clusters``
      - Non-flat geometry, uneven cluster sizes
      - Distances between nearest points
 
-   * - :ref:`Gaussian mixtures <mixture>`
+   * - Gaussian mixtures
      - many
      - Not scalable
      - Flat geometry, good for density estimation
      - Mahalanobis distances to  centers
 
-   * - :ref:`Birch`
+   * - Birch
      - branching factor, threshold, optional global clusterer.
      - Large ``n_clusters`` and ``n_samples``
      - Large dataset, outlier removal, data reduction.

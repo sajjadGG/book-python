@@ -112,7 +112,7 @@ Wykorzystanie biblioteki ``sklearn``
 
     plt.show()
 
-.. code-block:: txt
+.. code-block:: text
 
     Coefficients: [ 938.23786125]
     Mean squared error: 2548.07

@@ -442,7 +442,7 @@ Słownictwo
         Grupa zbioru
 
     Discriminative Classifier
-        Draws a boundary between :term:`clusters` of data. For tasks such as :term:`classification` and :term:`regression` that do not require the joint :term:`distribution`. Discriminative models can yield superior performance over :term:`generative models`.
+        Draws a boundary between :term:`clusters <Cluster>` of data. For tasks such as :term:`classification` and :term:`regression` that do not require the joint :term:`distribution`. :term:`Discriminative model` can yield superior performance over :term:`Generative model`.
 
     Support Vector
         Punkty które leżą na linii "marginesu"
