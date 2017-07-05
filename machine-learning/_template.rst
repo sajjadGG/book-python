@@ -60,7 +60,7 @@ Bibliografia
 Przydatne odnośniki
 -------------------
 
-Słownictwo
-----------
+Nowe Słownictwo
+---------------
 .. glossary::
 

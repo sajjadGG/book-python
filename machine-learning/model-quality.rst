@@ -9,6 +9,23 @@ Metody doboru modelu i poprawienia jakości
 * Regularyzacja
 * Ensemble
 
+Słownictwo
+==========
+.. glossary::
+
+    Cost Function
+        A cost function is something you want to minimize. For example, your cost function might be the sum of squared errors over your training set. Gradient descent is a method for finding the minimum of a function of multiple variables.
+
+    Loss function
+        is used to measure the degree of fit. So for machine learning a few elements are:
+
+            - Hypothesis space: e.g. parametric form of the function such as linear regression, logistic regression, svm, etc.
+            - Measure of fit: loss function, likelihood
+            - Tradeoff between bias vs. variance: regularization. Or bayesian estimator (MAP)
+            - Find a good h in hypothesis space: optimization. convex - global. non-convex - multiple starts
+            - Verification of h: predict on test data. cross validation.
+
+
 Diagnostyka Bias vs. Wariancja
 ==============================
 Osiąganie kiepskich rezultatów na zbiorze testowym wiąże się zazwyczaj z jednym z dwóch zjawisk:
