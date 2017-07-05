@@ -316,6 +316,7 @@ K-means Clustering dla zbioru Iris
     ax.set_title('Ground Truth')
     ax.dist = 12
 
+    plt.show()
 
 
 Zadania kontrolne

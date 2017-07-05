@@ -7,17 +7,19 @@ Co to jest Naiwny klasyfikator Bayesowski?
 Naiwny klasyfikator Bayesowski, bazujący na twierdzeniu Bayesa, nadaje się szczególnie do problemów o bardzo wielu wymiarach na wejściu. Mimo prostoty metody, często działa ona lepiej od innych, bardzo skomplikowanych metod klasyfikujących.
 
 .. math::
+    :label: naive-bayes-formula
 
     P(A|B) = \frac{P(B|A)P(A)}{P(B)}
 
 - :math:`P(A|B)` - Jak prawdopodobna jest hipoteza, mając skutek. Prawdopodobieństwo warunkowe.
 - :math:`P(B|A)` - Jak prawdopodobny jest dowód, zakładając że nasza hipoteza jest prawdziwa
 - :math:`P(A)` - Jak prawdopodobna była nasza hipoteza przed zaobserwowaniem dowodów.
-- :math:`P(B)` - Suma prawdopodobieństw wszystkich potencjalnych skutków zdarzenia: :math:`P(B) = \sum (B|A)P(B)`
+- :math:`P(B)` - Suma prawdopodobieństw wszystkich potencjalnych skutków zdarzenia: :math:`P(B) = \sum P(B|A)P(B)`
 
 Co to jest dokładnie?
 ---------------------
 .. figure:: img/naive-bayes.png
+    :name: naive-bayes
     :scale: 100%
     :align: center
 
@@ -48,6 +50,7 @@ Przykłady praktyczne
 Przykład: Spam
 --------------
 .. math::
+    :label: formula-bayes-spam
 
     P(spam|words) = \frac{P(words|spam)P(spam)}{P(words)}
 
@@ -60,11 +63,11 @@ Spam filtering based on a blacklist is flawed — it’s too restrictive and fal
 Przykład: Apple
 ---------------
 .. figure:: img/naive-bayes-apple.jpg
+    :name: bayes-apple
     :scale: 75%
     :align: center
 
     Naive Bayes
-
 
 
 Plusy i minusy Naiwnego Bayesa
@@ -146,17 +149,38 @@ Na etapie testów klinicznych nowego mammografu przeprowadzono statystykę, któ
     - 90% przypadków, kiedy kobieta ma raka jest wykrywana prawidłowo, 10% z nich nie
     - U 20% zdrowych osób test wykrywa nowotwór.
 
-============== ========== ============
-Wynik testu    Chory (1%) Zdrowy (99%)
-============== ========== ============
-pozytywny	   90%	      10%
-negatywny	   20%	      80%
-============== ========== ============
+.. table::
+    :name: table-nowotwory
+
+    =========== ========== =============
+    Wynik testu Chory (1%)	Zdrowy (99%)
+    ----------- ---------- -------------
+    pozytywny	90%        10%
+    negatywny	20%        80%
+    =========== ========== ==============
 
 Załóżmy, że dostałaś pozytywny wynik, czyli masz raka.
 
 * Jakie jest prawdopodobieństwo, że faktycznie jesteś chora?
 * Napisz kod bez używania bibliotek zewnętrznych.
+
+.. code-block:: text
+
+    Wzór Bayesa:
+        P(A|B) = P(B|A) * P(A) / P(B)
+
+    P(pozytywny|chory) = 0.9
+    P(pozytywny|zdrowy) = 0.1
+
+    P(negatywny|chory) = 0.2
+    P(negatywny|zdrowy) = 0.8
+
+    P(pozytywny) = 0,9*0,01 + 0,2*0,99 = 0,207
+
+    P(chory|pozytywny) = P(pozytywny|chory) * P(chory) / P(pozytywny)
+    P(pozytywny|chory) = P(chory|zdrowy) * P(zdrowy) / P(pozytywny)
+
+    P(pozytywny|chory) = 0,9 * 0,01 / 0,207 = 0,0434 = 4,3%
 
 
 Spam Classifier
@@ -164,7 +188,8 @@ Spam Classifier
 #. Stwórz classifier który na podstawie wiadomości email zakwalifikuje je jako SPAM lub nie SPAM.
 #. Zakwalifikuj wiadomości poniżej:
 
-.. list-table::
+.. list-table:: Lista treści wiadomości email do klasyfikacji
+    :name: Spam Classifier
     :header-rows: 1
 
     * - Treść wiadomości
