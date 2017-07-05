@@ -160,24 +160,28 @@ Napisz kod bez używania bibliotek zewnętrznych.
 
 Spam Classifier
 ---------------
+.. list-table::
+    :header-rows: 1
+
+    * - Treść wiadomości
+
+    * - Click here to claim your prize!
+    * - What's new?
+    * - Hang out later?
+    * - You have won $1,000,000 in cash
+    * - Enlarge your...
+    * - Nigerian prince
+    * - Money for you
+    * - Here's the telnet address
+    * - Make your trip in 3D!
+
+You will receive money!
+===============================
+
 #. Stwórz classifier który na podstawie wiadomości email zakwalifikuje je jako SPAM lub nie SPAM.
-#. Zakwalifikuj wiadomości jak na przykładzie poniżej:
+#. Zakwalifikuj wiadomości poniżej:
 
-    ===============================  ========
-    Email                            Labels
-    ===============================  ========
-    Click here to claim your prize!  Spam
-    What's new?                      Not Spam
-    Hang out later?                  Not Spam
-    You have won $1,000,000          Spam
-    Enlarge your...                  Spam
-    Nigerian prince                  Spam
-    ===============================  ========
 
-#. Przygotuj dwie partycje danych:
 
-    - treningową
-    - testową
-
-#. Skorzystaj treningowej bazy danych wiadomości spam
+#. Skorzystaj treningowej bazy danych wiadomości spam: https://archive.ics.uci.edu/ml/machine-learning-databases/spambase/
 

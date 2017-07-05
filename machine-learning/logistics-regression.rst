@@ -15,7 +15,7 @@ Since the logistic function has two different asymptotes, it can be used to divi
 .. math::
     transformed = 1 / (1 + e^-x)
 
-.. figure:: img/logistics-regression-curve.png
+.. figure:: img/logistic-regression-curve.png
     :name: Logistic Regression Curve
     :scale: 75%
     :align: center
@@ -26,18 +26,19 @@ Podstawowe pojęcia
 ==================
 .. glossary::
     Binary Model
-
-    Bias term
+        Model który ma dwa typy wartości (przykład: spam, nie spam)
 
     logit
         logistic function
 
     logistic-sigmoid function
-
-    Classification
+        Funkcja sigmoidalna
 
     Softmax function
         takes logits and transforms them to probability distibutions
+
+.. todo::
+    Bias term
 
     Cost function
 

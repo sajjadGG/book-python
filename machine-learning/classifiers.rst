@@ -60,7 +60,7 @@ Porównanie classifierów
 * Dla danych przeprowadź analizę wykorzystując różne modele danych
 * Wyświetl nazwę, dokładność oraz odchylenie standardowe modelu
 
-.. code-block:: txt
+.. code-block:: text
 
    Nearest Neighbors | Accuracy: 71.18% (+/- 3.78%)
           Linear SVM | Accuracy: 76.04% (+/- 2.79%)

@@ -32,7 +32,7 @@ release = get_version()
 language = 'en'
 exclude_patterns = ['_build', '_themes', 'README.rst', '*/_template.rst']
 pygments_style = 'vs'
-todo_include_todos = True
+todo_include_todos = False
 today_fmt = '%Y-%m-%d'
 numfig = True
 

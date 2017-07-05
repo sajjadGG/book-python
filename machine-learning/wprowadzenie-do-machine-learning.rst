@@ -50,6 +50,7 @@ Biblioteki zewnętrzne do nauczania maszynowego
 
     * `Scikit-learn Github <https://github.com/scikit-learn/scikit-learn>`_
     * `Scikit-learn Website <http://scikit-learn.org>`_
+    * `Przykłady <https://github.com/scikit-learn/scikit-learn/tree/master/examples>`_
 
 ``TensorFlow``
     TensorFlow is an open source software library for numerical computation using data flow graphs. Nodes in the graph represent mathematical operations, while the graph edges represent the multidimensional data arrays (tensors) that flow between them. This flexible architecture lets you deploy computation to one or more CPUs or GPUs in a desktop, server, or mobile device without rewriting code. TensorFlow also includes TensorBoard, a data visualization toolkit.
@@ -166,7 +167,7 @@ Czyszczenie Danych
 * Bardzo ważny temat
 * Rzadko kto o tym wspomina!
 
-.. code-block:: txt
+.. code-block:: text
 
     ul. Jana III Sobieskiego 12 m. 19
     ul. Jana 3 Sobieskiego 12/19
@@ -174,7 +175,7 @@ Czyszczenie Danych
     Sobieskiego 12/19
     os. Jana III Sobieskiego 12/19
 
-.. code-block:: txt
+.. code-block:: text
 
     12/12/17
     2017-12-12
