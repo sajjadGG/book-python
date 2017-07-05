@@ -142,9 +142,9 @@ Jakie jest prawdopodobieństwo zachorowania na nowotwór przy pozytywnym wyniku 
 
 Na etapie testów klinicznych nowego mammografu przeprowadzono statystykę, której wyniki pokazują sprawność testu:
 
-- 1% kobiet poddanych badaniom ma raka, stąd 99% nie ma.
-- 90% przypadków, kiedy kobieta ma raka jest wykrywana prawidłowo, 10% z nich nie
-- U 20% zdrowych osób test wykrywa nowotwór.
+    - 1% kobiet poddanych badaniom ma raka, stąd 99% nie ma.
+    - 90% przypadków, kiedy kobieta ma raka jest wykrywana prawidłowo, 10% z nich nie
+    - U 20% zdrowych osób test wykrywa nowotwór.
 
 ============== ========== ============
 Wynik testu    Chory (1%) Zdrowy (99%)
@@ -154,8 +154,9 @@ negatywny	   20%	      80%
 ============== ========== ============
 
 Załóżmy, że dostałaś pozytywny wynik, czyli masz raka.
-Jakie jest prawdopodobieństwo, że faktycznie jesteś chora?
-Napisz kod bez używania bibliotek zewnętrznych.
+
+* Jakie jest prawdopodobieństwo, że faktycznie jesteś chora?
+* Napisz kod bez używania bibliotek zewnętrznych.
 
 
 Spam Classifier
