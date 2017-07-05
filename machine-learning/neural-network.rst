@@ -9,7 +9,7 @@ It’s a technique for building a computer program that learns from data. It is 
 Neural Networks are the best Machine Learning algorithm so far.
 
 .. figure:: img/deep-neural-network.png
-    :scale: 75%
+    :scale: 100%
     :align: center
 
     Neural Network
@@ -90,15 +90,16 @@ Construction
 
 Learning
 --------
-Overfitting:
-    gdy sieć neuronowa jest tak dobrze nauczona, że dane które przychodzą mają problem z byciem dobrze sklasyfikowanymi
+.. glossary::
 
-Shallow Learing:
-    Gdy wartość output zależy od jednego poziomu parametrów. Sumujemy wagi i wartości i dostajemy liczbę na końcu.
-    Można wykreślić prostą funkcję liniową lub kwadratową. Należy zwrócić uwagę aby nie doprowadzić do overfitting.
+    Overfitting
+        gdy sieć neuronowa jest tak dobrze nauczona, że dane które przychodzą mają problem z byciem dobrze sklasyfikowanymi
 
-Deep Learning:
-    Wartość zależy od kilku poziomów sieci.
+    Shallow Learing
+        Gdy wartość output zależy od jednego poziomu parametrów. Sumujemy wagi i wartości i dostajemy liczbę na końcu. Można wykreślić prostą funkcję liniową lub kwadratową. Należy zwrócić uwagę aby nie doprowadzić do overfitting.
+
+    Deep Learning
+        Wartość zależy od kilku poziomów sieci.
 
 Optimizing
 ----------
@@ -114,7 +115,7 @@ Retraining
 Przetwarzanie obrazów na przykładzie rozpoznawania odręcznie napisanych cyfr (MNIST)
 ====================================================================================
 .. figure:: img/deep-neural-networks-mnist-overview.png
-    :scale: 50%
+    :scale: 75%
     :align: center
 
     Handwritten digits recognition also known as MNIST is equivalent to "hello world" in visual Machine Learning world.
