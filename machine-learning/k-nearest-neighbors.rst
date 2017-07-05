@@ -170,7 +170,7 @@ Dla Pima Indians Diabetes wykonaj analizę algorytmem KNN z biblioteki ``sklearn
 
 Płeć
 ----
-Dla danych:
+Napisz własną implementacje k Nearest Neighbors, która dla danych:
 
 .. csv-table::
     :header: "Gender", "Height", "Weight", "Foot Size"
@@ -184,11 +184,24 @@ Dla danych:
     female,5.42,130,7
     female,5.75,150,9
 
-Jaką płeć ma osoba o parametrach:
+Odpowie na pytanie jaką płeć ma osoba o parametrach:
 
     - Height: 6
     - Weight: 130
     - Foot Size: 8
 
+* Jaki jest najlepszy parametr :math:`k` dla tego zadania?
+* Która z cech ma najwięszy wpływ?
+* Czy algorytm lepiej działa z:
+
+    - normalizacją i skalownaiem?
+    - bez normalizacji i skalowania?
+    - tylko z normalizacją?
+    - tylko skalowaniem?
+
+
 :Podpowiedź:
     * ``preprocessing.LabelEncoder()``
+    * ``ExtraTreesClassifier()`` i ``.feature_importances_``
+    * ``preprocessing.normalize(features)``
+    * ``preprocessing.scale(features)``
