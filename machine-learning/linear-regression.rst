@@ -259,20 +259,6 @@ Least square regression 4 points
 #. Plot the given points and the regression line in the same rectangualr system of axes.
 #. Użyj kodu z przykładu własnej implementacji do rozwiązania
 
-Least square regression 5 points
---------------------------------
-The values of y and their corresponding values of y are shown in the table below
-
-.. todo:: przepisać tabelkę
-
-.. code-block:: text
-
-    x	0	1	2	3	4
-    y	2	3	5	4	6
-
-#. Find the least square regression line y = ax + b.
-#. Estimate the value of y when x = 10.
-#. Użyj biblioteki ``sklearn``
 
 Company sales
 -------------
@@ -282,8 +268,8 @@ The sales of a company (in million dollars) for each year are shown in the table
 
 .. code-block:: text
 
-    x (year)	2005	2006	2007	2008	2009
-    y (sales)	12	19	29	37	45
+    x (year)    2005    2006    2007    2008    2009
+    y (sales)   12      19      29      37      45
 
 
 #. Find the least square regression line :math:`y = ax + b` .
