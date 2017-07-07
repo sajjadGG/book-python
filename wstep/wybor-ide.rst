@@ -11,21 +11,36 @@ Wybór edytora to temat wielce kontrowersyjny. Od kilku dziesięcioleci w środo
 
 W poniższych materiałach będę posługiwał się kodem źródłowym, który wykonywany jest przez interpreter i nie ma znaczenia z jakiego IDE skorzystasz.
 
+
+Które IDE wybrać?
+=================
+* https://www.jetbrains.com/pycharm/download/
+* http://www.pydev.org/download.html
+
+Czym się różnią?
+----------------
+
+Które jest dla mnie najlepsze?
+------------------------------
+
+Darmowe czy płatne
+------------------
+
+
+
 .. note:: `Źródło poniższych materiałów <http://www.wykop.pl/wpis/9876900/python-naukaprogramowania-programowanie-wstep-pod-/>`_
 
 Korzystaj z dobrego IDE (lub edytora):
 
-- W kategorii IDE jest PyCharm i później długo długo nic. Należy się z tym pogodzić i nie zaprzeczać rzeczywistości, ponieważ ani Wingware ani Komodo IDE (konkurencja) nie grają w tej samej lidze. Darmowa wersja "Community Edition" powinna jak najbardziej wystarczyć do nauki Pythona.
+W kategorii IDE jest PyCharm i później długo długo nic. Należy się z tym pogodzić i nie zaprzeczać rzeczywistości, ponieważ ani Wingware ani Komodo IDE (konkurencja) nie grają w tej samej lidze. Darmowa wersja "Community Edition" powinna jak najbardziej wystarczyć do nauki Pythona.
 
-Jeżeli IDE uważasz za coś potwornego i zbędnego - to się mylisz, ale nie mam zamiaru cię w tym miejscu przekonywać. Dla takich ludzi jak ty też jest nadzieja. Zarówno dobrze skonfigurowany vim jak i Sublime Text 3 mogą posłużyć za dobry edytor do nauki Pythona.
+Zarówno dobrze skonfigurowany vim jak i Sublime Text 3 mogą posłużyć za dobry edytor do nauki Pythona.
 
 Korzystaj z dobrego interpretera:
 
 - Pobierz najnowszą wersję z serii 3 (w tej chwili to 3.6) bezpośrednio z: https://www.python.org/downloads/
 
-Znaj narzędzia potrzebne do pracy w dobrym środowisku pythona:
-
-- (uczy tego wyżej już wymienione http://www.pluralsight.com/courses/python-developers-toolkit )
+Znaj narzędzia potrzebne do pracy w dobrym środowisku pythona:  (uczy tego wyżej już wymienione http://www.pluralsight.com/courses/python-developers-toolkit )
 
 Pomocny może okazać się też taki podręcznik:
 
