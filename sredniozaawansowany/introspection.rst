@@ -151,3 +151,13 @@ Other
         except ImportError, e:
             pass
 
+.. code-block:: python
+
+    from django.contrib import admin
+    from . import models
+    import inspect
+
+    for name, obj in inspect.getmembers(models):
+        if inspect.isclass(obj):
+            admin.site.register(getattr(models, name))
+
