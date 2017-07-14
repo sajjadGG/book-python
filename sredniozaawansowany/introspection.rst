@@ -125,3 +125,29 @@ an object by running:
 
 There are a couple of other methods as well which help in introspection.
 You can explore them if you wish.
+
+Other
+=====
+
+.. code-block:: python
+
+    import settings
+    from django.db import models
+
+    for app in settings.INSTALLED_APPS:
+        models_name = app + ".models"
+
+        try:
+            models_module = __import__(models_name, fromlist=["models"])
+            attributes = dir(models_module)
+
+            for attr in attributes:
+                try:
+                    attrib = models_module.__getattribute__(attr)
+                    if issubclass(attrib, models.Model) and attrib.__module__== models_name:
+                    print "%s.%s" % (models_name, attr)
+                except TypeError, e:
+                    pass
+        except ImportError, e:
+            pass
+
