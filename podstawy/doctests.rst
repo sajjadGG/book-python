@@ -21,6 +21,8 @@ Niezwykle użytecznym sposobem komentowania są tzw. doctesty. W wielolinijkowym
 
 Wykorzystując taki zapis natychmiast widzimy co dzieje się w danym rozwiązaniu. Doctesty bardzo przydają się przede wszystkim do zastosowań wykorzystujących wyrażenia regularne, których zrozumienie zapisu często wymaga chwili zastanowienia.
 
+Testy dla wszystkich funkcji aktualnie zdefiniowanych w przestrzeni nazw wykonujemy wywołując funckję ``doctest.testmod()``.
+
 .. code-block:: python
 
     def ehlo_world():

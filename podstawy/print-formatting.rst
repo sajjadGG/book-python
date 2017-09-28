@@ -4,6 +4,7 @@
 Print Formatting
 ****************
 
+Python umożliwia kilka sposobów manipulacji stringami i uwzględnianie zmiennych w wyświetlanych napisach.
 
 Konkatenacja stringów
 =====================
@@ -11,18 +12,32 @@ Konkatenacja stringów
 Operator ``+``
 --------------
 
+Operator + skleja ze sobą stringi.
+
 .. code-block:: python
 
     imie = 'José Jiménez'
     print('My name ' + imie + '!')
 
+Można go użyć do wyświetlania zmiennych liczbowych, ale nie jest to najlepsze rozwiązanie.
+
+.. code-block:: python
+
+    imie = 'José Jiménez'
+    wiek = 35
+    print('My name is ' + imie + ' and I am ' +str(wiek) + ' years old !')
+
 Wykorzystanie parametrów funkcji ``print()``
 --------------------------------------------
+
+Do łączenia ciągów znakowych, które mają zostać wyświetlone dla użytkownika, można wykorzystać bezpośrednio właściwość funkcji ``print``, która może przyjąć wiele argumentów, które następnie ze sobą połączy.
 
 .. code-block:: python
 
     imie = 'José Jiménez'
     print('My name', imie, '!')
+
+Można tutaj podać jako argumenty zarówno ciągi znaków jak i wartości liczbowe. Ciągi znaków będą od siebie odseparowane ciągiem znaków przekazanym przez argument ``sep``, domyślnie jest to spacja ``' '``.
 
 
 Interpolacja zmiennych
@@ -30,6 +45,8 @@ Interpolacja zmiennych
 
 Operator: ``%s``, ``%d``, ``%f``
 --------------------------------
+
+Używanie tych operatorów przypomina używanie funkcji ``printf``, znanej między innymi z C++. W tekście stringa wstawiamy odpowiedni operator: ``%s`` dla stringa, ``%d`` dla liczby całkowitej, ``%f`` dla liczby zmiennoprzecinkowej. Następnie podajemy po znaku % krotkę z wartościami do wstawienia.
 
 * kolejnościowe
 * nazwane
@@ -62,6 +79,9 @@ Operator: ``%s``, ``%d``, ``%f``
 
 Metoda ``.format()``
 ====================
+
+Wbudowana metoda ``format`` upraszcza nieco powyższy schemat. Zamiast operatora z procentem, używamy w tekście stringu ``{}``, następnie na tym stringu wywołujemy funkcję ``format``, której argumentami są wartości do wstawienia do tekstu.
+
 
 * ``string``
 * ``int``
@@ -97,6 +117,8 @@ Metoda ``.format()``
 
 f-strings - Python >= 3.6
 =========================
+
+f-strings to rozwinięcie funkcji ``format``. Jedyne co trzeba zrobić żeby umieścić zmienną w tekście to dodać przed stringiem ``f`` i w nawiasach klamrowych wpisać nazwę zmiennej (np. ``f'to jest zmienna: {zmienna}'``).
 
 * ``f'{variable}'``
 * ``f'{self.field}'``

@@ -12,3 +12,5 @@ _tmp/
 .idea/
 .virtualenv/
 .venv/
+
+example.py

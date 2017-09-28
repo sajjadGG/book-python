@@ -206,6 +206,8 @@ Wycinanie części stringów
 ``io``
 ------
 
+``io`` to biblioteka do obsługi strumienia wejściowego i wyjściowego. StringIO jest wtedy traktowany jak plik wejściowy.
+
 .. code-block:: python
 
     import io
@@ -240,7 +242,7 @@ Gdy użytkownik nie poda wieku, to jest to wartość ``None``.
 
     wiek = None
 
-    if not wiek:
+    if wiek is None:
         print('użytkownik nie podał wieku')
 
 Przykłady praktyczne

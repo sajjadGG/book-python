@@ -4,8 +4,12 @@
 Pętle
 *****
 
+Pętle służą do wykonywania tego samego fragmentu kodu wielokrotnie. W Pythonie, pętle wykonywane są na obiektach wieloelementowych, albo iteratorach.
+
 Pętla ``for``
 =============
+
+Pętla ``for`` wykonuje się na zestawie elementów. Dosłownie można tę instrukcję przeczytać jako "Dla iksów będących wartościami listy, wykonaj instrukcję:"
 
 .. code-block:: python
 
@@ -47,6 +51,8 @@ Pętla ``for``
 Pętla ``while``
 ===============
 
+Pętla while wykonuje się dopóki argument jest prawdą.
+
 .. code-block:: python
 
     x = 0
@@ -62,3 +68,31 @@ Pętla ``while``
 
         if number:
             break
+
+Słowa kluczowe w pętlach
+========================
+
+``break`` - powoduje przerwanie pętli.
+
+``continue`` - powoduje przerwanie aktualnie wykonywanej iteracji.
+
+
+Inline ``for``
+==============
+
+Pętla ``for`` może być także napisana jako jednoliniowy generator. wtedy wyrażenie my_function(x) jest wykonywane dla każdego x z podanego zakresu, a wynik jest zapisywany do nowej listy.
+
+
+.. code-block:: python
+
+    def my_function(i):
+        return f'This is my function of {i}'
+
+    my_list = [my_function(x) for x in range(0, 100)]
+
+
+Do takiego iteratora można także dodać instrukcję warunkową.
+
+.. code-block:: python
+
+    my_list = [my_function(x) for x in range(0, 100) if x > 50]

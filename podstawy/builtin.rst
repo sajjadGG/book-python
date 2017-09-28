@@ -5,16 +5,48 @@ Funkcje wbudowane i słowa kluczowe
 Słowa kluczowe
 ==============
 
+Słowa kluczowe (keywords) to wyrazy zarezerwoane do użytku Pythona. Nie można użyć słowa kluczowego jako nazwy zmiennej, nazwy funkcji czy innego identyfikatora. Każdy ze słów kluczowych odgrywa ważną rolę w tym języku. Lista słów kluczowych może być uzyskana wpisując:
+
+.. code-block:: python
+
+    import keyword
+    print(keyword.kwlist)
+
+
 ``import``
 ----------
+
+Biblioteki w Pythonie są pogrupowane w moduły. Słowo kluczowe ``import`` służy do importowania modułów do naszej przetrzeni nazw. Przestrzeń nazw (namespace) zawiera wszystkie zmienne (również funkcje i klasy), które zadeklarowaliśmy w trakcie działania programu. ```import`` to Pythonowy odpowiednik np. dyrektywy ``#include<nazwa_biblioteki>`` z C++.
+
 .. code-block:: python
 
     import module
+
+Wykonanie powyższego kodu spowoduje dodanie do aktualnej przestrzeni nazw modułu ``module``. Każdy moduł może zawierać submoduły, funkcje, klasy, itp. Możemy dodatkowo wskazać, którą klasę lub metodę chcemy zaimportować z modułu. Dodatkowo, wykorzystując słowo kluczowe ``as`` możemy nadać zaimportowanemu modułowi czy funkcji nową nazwę.
 
 .. code-block:: python
 
     from module import submodule
     from module.submodule import function as alias
+    from module import submodule as alias
+
+Aby wykorzystać funkcję z danego modułu, musimy najpierw wskazać, z którego modułu chcemy skorzystać a następnie podać nazwę funkcji czy zmiennej do której chcemy się odwołać. Korzystając z przykładu powyżej:
+
+.. code-block:: python
+
+    import keyword
+    print(keyword.kwlist)
+
+W pierwszej linijce importujemy moduł ``keyword``. W drugiej linijce wypisujemy zawartość zmiennej ``kwlist`` z modułu ``keyword``. Moglibyśmy uzyskać podobny efekt wykonując:
+
+.. code-block:: python
+
+    from keyword import kwlist
+    print(kwlist)
+
+W tym przykładzie, z modułu ``keyword`` importujemy jedynie zmienną ``kwlist``. Przy takiej składni warto wspomnieć, że zmniejsza ona czytelność, nie podnosząc wcale efektywności kodu. Interpreter i tak wczyta najpierw całą zawartość modułu, następnie stworzy nową zmienną ``kwlist``, której przypisze odpowiednią wartość. Taki zapis zmniejsza czytelność kodu i zwiększa prawdopodobieństwo błędu.  Używając zapisu ``import module`` i następnie ``module.variable`` jendoznacznie wskazujemy z jakiego modułu korzystamy.
+
+
 
 .. code-block:: python
 
@@ -27,6 +59,9 @@ Słowa kluczowe
 
 ``pass``
 --------
+
+Python domyślnie oczekuje wcięcia po dwukropku. Jeżeli chcemy zostawić klasę czy funkcję pustą, korzystamy wtedy ze słowa kluczowego ``pass``.
+
 .. code-block:: python
 
     class User:
@@ -35,6 +70,8 @@ Słowa kluczowe
 
 ``continue``
 ------------
+
+Słowo kluczowe ``continue`` powoduje przerwanie aktualnie wykonywanej pętli i przejście do kolejnej iteracji. Przydatne podczas debugowania i testowania kodu.
 
 .. code-block:: python
 
@@ -49,7 +86,6 @@ Słowa kluczowe
     20
     25
 
-Kod po słowie ``continue`` nie zostanie wykonany. Przydatne podczas debugowania i testowania kodu.
 
 .. code-block:: python
 
@@ -66,6 +102,8 @@ Kod po słowie ``continue`` nie zostanie wykonany. Przydatne podczas debugowania
 ``break``
 ---------
 
+Słowo kluczowe ``break`` przerywa aktualnie wykonywaną pętlę.
+
 .. code-block:: python
 
     >>> for number in range(0, 30):
@@ -77,6 +115,8 @@ Kod po słowie ``continue`` nie zostanie wykonany. Przydatne podczas debugowania
 ``return``
 ----------
 
+Słowo kluczowe ``return`` wskazuje funkcji jaką wartość ma dana funkcja zwrócić. Wykonanie linii ze słowem kluczowym ``return`` kończy wykonywanie funkcji.
+
 .. code-block:: python
 
     >>> def sum(a, b):
@@ -85,7 +125,6 @@ Kod po słowie ``continue`` nie zostanie wykonany. Przydatne podczas debugowania
     >>> sum(2, 3)
     5
 
-Kod funkcji po słowie kluczowym ``return`` nie będzie wykonywany!
 
 .. code-block:: python
 
@@ -107,10 +146,14 @@ Kod funkcji po słowie kluczowym ``return`` nie będzie wykonywany!
 ``__name__``
 ------------
 
+Zmienna ``__name__`` pozwala między innymi ustalić czy dany plik jest wykonywany czy importowany. Jeżeli dany plik jest wykonywany, zmienna ``__name__`` ustawiana jest na ``'__main__'``, jeżeli dany plik jest importowany jako moduł, zmienna ``__name__`` ustawiana jest na nazwę modułu. Jest to przydatne na przykład przy testowaniu modułów. Dodanie do modułu poniższej linijki:
+
 .. code-block:: python
 
     if __name__ == '__main__':
         print('hello world')
+
+Sprawi, że wypisane na konsoli zostanie ``'hello world!'`` jeżeli dany plik jest wykonywany jako główny. Powyższy kod nie wykona się natomiast jeżeli plik zaimportujemy jako moduł w innym pliku.
 
 .. code-block:: python
 
@@ -122,6 +165,7 @@ Kod funkcji po słowie kluczowym ``return`` nie będzie wykonywany!
 Funkcje wbudowane
 =================
 
+Funkcje wbudowane to funkcje dostępne domyślnie w języku Python.
 
 ``print()``
 -----------
@@ -132,9 +176,18 @@ Funkcje wbudowane
     print('ehlo', 'world')
     print('ehlo', 'world', sep=';')
 
-``sorted()``
-------------
+Wyświetla argument jako tekst w wierszu poleceń.
+
+W Pytonie2, print jest słowem kluczowym - nie wymaga użycia nawiasów.
+
+``sorted()`` i ``sort()``
+-------------------------
+
+Sortują elementy listy.
+
 ``sorted()`` to operator niemutowalny (nie zmienia kolejności elementów w liście).
+
+``sorted()`` to funkcja, która jako argument przyjmuje listę.
 
 .. code-block:: python
 
@@ -146,6 +199,8 @@ Funkcje wbudowane
 
 ``.sort()`` to operator zmieniający listę (mutujący).
 
+``sort()`` to metoda klasy lista.
+
 .. code-block:: python
 
     >>> numbers = [3, 1, 2]
@@ -156,6 +211,8 @@ Funkcje wbudowane
 
 ``range()``
 -----------
+
+Tworzy iterator, który zwraca liczby w sekwencji. Jedna z rzeczy, która uległa zmianie od Pythona2, w którym range zwracał sekwencję liczb zamiast iteratora.
 
 .. code-block:: python
 
@@ -171,6 +228,8 @@ Funkcje wbudowane
 ``isinstance()``
 ----------------
 
+Sprawdza czy dany obiekt jest instancją danej klasy.
+
 .. code-block:: python
 
     >>> isinstance(10, int)
@@ -185,6 +244,8 @@ Funkcje wbudowane
 ``min()``
 ---------
 
+Wartość minimalna z listy.
+
 .. code-block:: python
 
     >>> numbers = [1, 2, 3, 4, 5]
@@ -195,6 +256,8 @@ Funkcje wbudowane
 
 ``max()``
 ---------
+
+Wartość maksymalna z listy.
 
 .. code-block:: python
 
@@ -207,6 +270,8 @@ Funkcje wbudowane
 ``len()``
 ---------
 
+Długość listy.
+
 .. code-block:: python
 
     >>> numbers = [1, 2, 3, 4, 5]
@@ -215,6 +280,8 @@ Funkcje wbudowane
 
 ``input()``
 -----------
+
+Pozwala użytkownikowi wpisać tekst.
 
 .. code-block:: python
 
@@ -243,7 +310,8 @@ Czasami trzeba oczyścić dane, np. usuwając zbędne spacje na początku i koń
 
 ``bin()``
 ---------
-Argument must be integer.
+
+Konwertuje liczbę na binarną.
 
 .. code-block:: python
 
@@ -256,6 +324,8 @@ Argument must be integer.
 ``hex()``
 ---------
 
+Konwertuje liczbę na hex.
+
 .. code-block:: python
 
     >>> hex(99)
@@ -264,6 +334,8 @@ Argument must be integer.
 ``oct()``
 ---------
 
+Konwertuje liczbę na oct.
+
 .. code-block:: python
 
     >>> oct(23)
@@ -271,6 +343,9 @@ Argument must be integer.
 
 ``ord()``
 ---------
+
+Zwraca kod jednoznakowego stringa.
+
 .. code-block:: python
 
     >>> ord('a')
@@ -278,6 +353,8 @@ Argument must be integer.
 
 ``chr()``
 ---------
+
+Konwertuje kod na znak Unicode.
 
 .. code-block:: python
 

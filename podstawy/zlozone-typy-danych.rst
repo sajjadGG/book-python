@@ -116,6 +116,8 @@ Dobieranie się do wartości elementów
 ``[...]`` i ``.get(...)``
 -------------------------
 
+Do zawartości zmiennej słownikowej możemy uzyskać dostęp używając nawiasów kwadratowych wraz z kluczem, albo funkcji ``.get(klucz)``. Różnica między tymi podejściami polega na tym, że jeżeli dana zmienna słownikowa nie zawiera pewnego klucza, używanie nawiasów kwadratowych wygeneruje wyjątek KeyError, natomiast użycie funkcji ``.get(klucz)`` nie zwróci nic. Do funkcji ``.get(klucz)`` możemy dodatkowo dopisać wartość domyślną która zostanie zwrócona, jeżeli słownik nie posiada danego klucza.
+
 .. code-block:: python
 
     >>> dane = {'imie': 'José', 'nazwisko': 'Jiménez'}
@@ -219,4 +221,3 @@ Napisz program który przekonwertuje odległości (podane w metrach) i zwróci `
     * 1000 m = 1 km
     * 1608 m = 1 mila
     * 1852 m = 1 mila morska
-

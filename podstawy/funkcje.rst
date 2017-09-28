@@ -4,6 +4,8 @@
 Funkcje
 *******
 
+Funkcje pozwalają na wielokrotne używanie tego samego kodu. Znacznie poprawiają także czytelność kodu i go porządkują.
+
 
 Definiowanie funkcji
 ====================
@@ -16,13 +18,15 @@ Definiowanie funkcji
 Konwencja nazewnicza funkcji
 ============================
 
-* CamelCase? Nie?! Używanie ``_`` w nazwach
+* CamelCase? Nie?! Używanie ``_`` w nazwach (snake_case)
 * Funkcje o nazwie zaczynającej się od ``_`` przez konwencję są traktowane jako prywatne (w Pythonie nie ma private/protected/public).
 * Funkcje o nazwie zaczynającej się od ``__`` i kończących się na ``__`` przez konwencję są traktowane jako systemowe.
 * Nazwy opisowe funkcji
 
 Argumenty do funkcji
 ====================
+
+Argumenty funckji to wartości na których ta funckja wykonuje operacje. W idealnym przypadku wartość wyjściowa funkcji powinna zależeć jedynie od jej argumentów.
 
 .. code-block:: python
 
@@ -33,19 +37,29 @@ Argumenty do funkcji
     3
 
 
-Argumenty nazwane
+Nazwy argumentów
 -----------------
 
-.. code-block:: python
+Każdy argument ma swoją nazwę przez którą uzyskujemy dostęp do wartości argumentu w ciele funkcji. Ta nazwa może też być używana do przypisania wartości przy wywołaniu funkcji.
 
-    >>> def dodaj(a, b):
-    ...    return a + b
+.. code-block:: python
 
     >>> dodaj(a=1, b=2)
     3
 
+    >>> podziel(a, b):
+    ...     return a/b
+
+    >>> podziel(a=1, b=2)
+    0.5
+
+    >>> podziel(b=2, a=1)
+    0.5
+
 Argumenty z wartością domyślną
 ------------------------------
+
+Argument funkcji może mieć także wartość domyślną, z której funkcja skorzysta jeżeli użytkownik nie zdefiniuje tego argumentu.
 
 .. code-block:: python
 
@@ -57,6 +71,16 @@ Argumenty z wartością domyślną
 
     >>> hello()
     hello world
+
+    >>> def convert(value, to='bin'):
+    ...     if to=='bin':
+    ...         return bin(value)
+    ...     elif to=='hex':
+    ...         return hex(value)
+    ...     elif to=='oct':
+    ...         return oct(value)
+    ...     else:
+    ...         raise ValueError('`to` should be either bin, hex or oct!!')
 
 Zwracanie wartości
 ==================
@@ -125,21 +149,29 @@ Operator ``*`` i ``**``
 Argumenty ``*args``, ``**kwargs``
 ---------------------------------
 
+Użycie operatora * przy definicji funkcji powoduje umożliwienie przekazywanie do funkcji dodatkowych parametrów anonimowych. Zazwczaj zmienna, która jest przy tym operatorze nazywa się *args (arguments)
+Użycie operatora ** przy definicji funkcji powoduje umożliwienie przekazywania do niej dodatkowych argumentów nazwanych. Zazwczaj zmienna, która jest przy tym operatorze nazywa się **kwargs (keyword arguments)
+
 .. code-block:: python
 
-    def foo(a, b, *args, **kwargs):
-        print(locals())
+    def foo(a, *args, **kwargs):
+        print(f"zmienna a: {a}")
+        print(f"zmienna args: {args}")
+        print(f"zmienna kwargs: {kwargs}")
 
 Przy wywołaniu funkcji
 ----------------------
 
+Wywołując powyższą funkcję z argumentami:
+
 .. code-block:: python
 
-    >>> foo(1, 2, **{'napiecie':10, 'natezenie': 20, 'moc': 3})
+    >>> foo(1, 2, 3, 4, c=5, d=6)
+    zmienna a: 1
+    zmienna args: (2, 3, 4)
+    zmienna kwargs: {'c': 5, 'd': 6}
 
-    # jest równoważne z:
-
-    >>> foo(1, 2, napiecie=10, natezenie=20, moc=3)
+Sprawi, że wewnątrz funkcji będziemy mieli dostępną zmienną ``a`` o wartości 1, zmeinną args, zawierającą listę elementów (2, 3, 4) oraz zmienną słownikową kwargs, która ma klucze 'c' i 'd', które przechowują wartości, odpowiednio, 5 i 6.
 
 .. code-block:: python
 
@@ -160,7 +192,7 @@ Przy wywołaniu funkcji
     def foobar(a, b, **kwargs):
         print(locals())
 
-    foobar(1, 2, 5, 7)
+    foobar(1, 2, c=5, d=7)
 
 
 Przykładowe zastosowanie
@@ -223,4 +255,3 @@ Rzymskie
 
 :Zadanie 2:
     Zrób drugą funkcję, która dokona procesu odwrotnego.
-
