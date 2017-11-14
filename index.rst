@@ -97,6 +97,7 @@ Zaawansowany
     zaawansowany/context-managers.rst
     zaawansowany/decorators.rst
     zaawansowany/collections.rst
+    zaawansowany/metaclass.rst
 
     zaawansowany/watki-i-procesy.rst
     zaawansowany/concurrency.rst
