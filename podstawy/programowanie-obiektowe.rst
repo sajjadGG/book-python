@@ -182,6 +182,8 @@ Polimorfizm
 Klasy abstrakcyjne
 ------------------
 
+Klasa abstrakcyjna to taka klasa, która nie ma żadnych instancji (w programie nie ma ani jednego obiektu, który jest obiektem tej klasy). Klasy abstrakcyjne są uogólnieniem innych klas, wykorzystuje się to często przy dziedziczeniu. Na przykład tworzy się najpierw abstrakcyjną klasę ``figura``, która definiuje, że figura ma pole oraz, że jest metoda, ktora to pole policzy na podstawie jedynie prywatnych zmiennych. Po klasie ``figura`` możemy następnie dziedziczyć tworząc klasy ``kwadrat`` oraz ``trójkąt``, które będą miały swoje instancje i na których będziemy wykonywali operacje.
+
 Składnia
 ========
 
@@ -249,6 +251,8 @@ Pola klasy
 Funkcja inicjalizująca
 ----------------------
 
+``__init__`` jest metodą klasy, która wykonuje się podczas tworzenia nowego obiektu. Nie jest to do końca konstruktor tego obiektu, ale dla większości zastosowań można przyjąć, że metoda ``__init__`` jest konstruktorem klasy.
+
 .. code-block:: python
 
     import logging
@@ -308,7 +312,7 @@ Funkcja ``super`` pozwala uzyskać dostęp do obiektu po którym dziedziczymy, d
 ``@property`` i ``@x.setter``
 -----------------------------
 
-Dekoratory ``@propery``, ``@x.setter`` i ``@x.deleter`` służą do zdefiniowania dostępu do 'prywatnych' pól klasy. W Pythonie z definicji nie ma czegoś takiego jak pole prywatne. Jest konwencja nazywania zmiennych zaczynając od symbolu podkreślnika (np. _x), jeżeli chcemy zaznaczyć, że to jest zmienna prywatna. Nic nie blokuje jednak użytkownika przed dostępem do tej zmiennej. Dekoratory @x.setter i @property tworzą metody do obsługi zmiennej _x (w przykładzie poniżej).
+Dekoratory ``@propery``, ``@x.setter`` i ``@x.deleter`` służą do zdefiniowania dostępu do 'prywatnych' pól klasy. W Pythonie z definicji nie ma czegoś takiego jak pole prywatne. Jest natomiast konwencja nazywania zmiennych zaczynając od symbolu podkreślnika (np. ``_x``), jeżeli chcemy zaznaczyć, że to jest zmienna prywatna. Nic nie blokuje jednak użytkownika przed dostępem do tej zmiennej. Dekoratory ``@x.setter`` i ``@property`` tworzą metody do obsługi zmiennej ``_x`` (w przykładzie poniżej).
 
 .. code-block:: python
 
@@ -330,6 +334,12 @@ Dekoratory ``@propery``, ``@x.setter`` i ``@x.deleter`` służą do zdefiniowani
         @x.deleter
         def x(self):
             del self._x
+
+    new_object = Cls()
+    print(new_object.x)
+    new_object.x = 1
+    print(new_object.x)
+
 
 ``@staticmethod``
 -----------------
@@ -472,7 +482,7 @@ Poniżej przedstawiono kilka przykładów metod magicznych w Pythonie.
 Dobre praktyki
 ==============
 
-Ask don't tell
+Tell - don't ask
 --------------
 
 "Tell-Don't-Ask is a principle that helps people remember that object-orientation is about bundling data with the functions that operate on that data. It reminds us that rather than asking an object for data and acting on that data, we should instead tell an object what to do. This encourages to move behavior into an object to go with the data."

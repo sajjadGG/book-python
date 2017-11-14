@@ -4,31 +4,24 @@ Przykład implementacji książki adresowej za pomocą klas.
 """
 
 
-# class Osoba:
-#     def __init__(self,
-#                  imie=None,
-#                  nazwisko=None,
-#                  wiek=None):
-#
-#         self.imie = imie
-#         self.nazwisko = nazwisko
-#         self.wiek = wiek
+class Osoba:
+    def __init__(self,
+                 imie=None,
+                 nazwisko=None,
+                 wiek=None):
 
-class Kontakt():
+        self.imie = imie
+        self.nazwisko = nazwisko
+        self.wiek = wiek
+
+class Kontakt(Osoba):
     def __init__(self,
                  imie=None,
                  nazwisko=None,
                  wiek=None,
                  adres=None):
 
-        # super().__init__(imie,
-        #                  nazwisko,
-        #                  wiek)
-
-        self.imie = imie
-        self.nazwisko = nazwisko
-        self.wiek = wiek
-
+        super().__init__(imie, nazwisko, wiek)
 
         if adres is None:
             adres = Adres()
@@ -67,7 +60,7 @@ address_of_person = Address(ulica = "Gdańska",
 person = Kontakt('Max', 'Peck', adres = address_of_person)
 
 nowy_adres = Address(ulica = "Warszawska",
-                            miasto='Gdańsk')
+                     miasto='Gdańsk')
 
 person.dodaj_adres(nowy_adres)
 

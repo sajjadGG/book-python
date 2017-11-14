@@ -90,7 +90,8 @@ Słowo kluczowe ``in`` pozwala na sprawdzenie czy dana wartość zawiera się w 
      else:
          print('You have set your name')
 
- Bardzo kuszący jest następujący przykład:
+
+Bardzo kuszący jest następujący przykład:
 
  .. code-block:: python
 
@@ -99,7 +100,8 @@ Słowo kluczowe ``in`` pozwala na sprawdzenie czy dana wartość zawiera się w 
       else:
           print('You are not Max!')
 
- Nie jest on jednak do końca poprawny. Słowo kluczowe ``is`` porównuje czy dwa obiekty są tym samym obiektem, nie czy mają taką samą wartość. Poniższy przykład ilustruje, że pomimo że dwa obiekty przechowują takiego samego stringa to nie są sobie tożsame, mimo że są sobie równe.
+
+Nie jest on jednak do końca poprawny. Słowo kluczowe ``is`` porównuje czy dwa obiekty są tym samym obiektem, nie czy mają taką samą wartość. Poniższy przykład ilustruje, że pomimo że dwa obiekty przechowują takiego samego stringa to nie są sobie tożsame, mimo że są sobie równe.
 
  .. code-block:: python
 

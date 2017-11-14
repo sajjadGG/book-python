@@ -12,7 +12,7 @@ Lista operatorów
 +------------+-------------------------+
 | ``**``     | potęga ``pow()``        |
 +------------+-------------------------+
-| ``\\``     | dzielenie bez reszty    |
+| ``//``     | dzielenie bez reszty    |
 +------------+-------------------------+
 | ``<``      | mniejsze niż            |
 +------------+-------------------------+
@@ -89,13 +89,14 @@ Kolejność operatorów
 Bitwise
 =======
 
-| - OR
+``|`` - OR
 
-& - AND
+``&`` - AND
 
-~ - NOT
+``~`` - NOT
 
-^ - XOR
+``^`` - XOR
+
 
 .. code-block:: python
 
@@ -107,15 +108,16 @@ Bitwise
     1
     >>> 0^1
     1
-    >>> 8^3
-    11
+    >>> 8^5
+    13
+
 
 .. code-block:: text
 
     1000  # 8 (binary)
-    0011  # 3 (binary)
+    0101  # 3 (binary)
     ----  # APPLY XOR ('vertically')
-    1011  # result = 11 (binary)
+    1101  # result = 13 (dec)
 
 
 Zadania kontrolne

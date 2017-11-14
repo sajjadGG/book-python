@@ -149,8 +149,8 @@ Operator ``*`` i ``**``
 Argumenty ``*args``, ``**kwargs``
 ---------------------------------
 
-Użycie operatora * przy definicji funkcji powoduje umożliwienie przekazywanie do funkcji dodatkowych parametrów anonimowych. Zazwczaj zmienna, która jest przy tym operatorze nazywa się *args (arguments)
-Użycie operatora ** przy definicji funkcji powoduje umożliwienie przekazywania do niej dodatkowych argumentów nazwanych. Zazwczaj zmienna, która jest przy tym operatorze nazywa się **kwargs (keyword arguments)
+Użycie operatora * przy definicji funkcji powoduje umożliwienie przekazywanie do funkcji dodatkowych parametrów anonimowych. Zazwczaj zmienna, która jest przy tym operatorze nazywa się ``*args`` (arguments)
+Użycie operatora ``**`` przy definicji funkcji powoduje umożliwienie przekazywania do niej dodatkowych argumentów nazwanych. Zazwczaj zmienna, która jest przy tym operatorze nazywa się ``**kwargs`` (keyword arguments)
 
 .. code-block:: python
 
@@ -171,7 +171,7 @@ Wywołując powyższą funkcję z argumentami:
     zmienna args: (2, 3, 4)
     zmienna kwargs: {'c': 5, 'd': 6}
 
-Sprawi, że wewnątrz funkcji będziemy mieli dostępną zmienną ``a`` o wartości 1, zmeinną args, zawierającą listę elementów (2, 3, 4) oraz zmienną słownikową kwargs, która ma klucze 'c' i 'd', które przechowują wartości, odpowiednio, 5 i 6.
+Sprawi, że wewnątrz funkcji będziemy mieli dostępną zmienną ``a`` o wartości 1, zmeinną ``args``, zawierającą listę elementów (2, 3, 4) oraz zmienną słownikową ``kwargs``, która ma klucze 'c' i 'd', które przechowują wartości, odpowiednio, 5 i 6.
 
 .. code-block:: python
 
@@ -194,6 +194,22 @@ Sprawi, że wewnątrz funkcji będziemy mieli dostępną zmienną ``a`` o warto
 
     foobar(1, 2, c=5, d=7)
 
+
+Inne przykładowe zastosownaie operatorów ``*`` i ``**`` polega na wykorzystaniu ich przy wywołaniu funkcji. Wtedy, wykorzystując operator ``*``, kolejne elementy listy albo krotki będą przekazane jako kolejne argumenty funkcji, a wykorzystując operator ``**`` kolejne elementy zmiennej słownikowej będą przekazane jako nazwane argumenty. Oznacza to, że na przykład argument ``x`` funkcji, przyjmie wartość ``dict_vec['x']``.
+
+.. code-block:: python
+
+    def myfunc(x, y, z):
+        print(x, y, z)
+
+    tuple_vec = (1, 0, 1)
+    dict_vec = {'y': 1, 'x': 0, 'z': 1}
+
+    >>>  myfunc(*tuple_vec)
+    1, 0, 1
+
+    >>> myfunc(**dict_vec)
+    0, 1, 1
 
 Przykładowe zastosowanie
 ------------------------
