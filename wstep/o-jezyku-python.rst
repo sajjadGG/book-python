@@ -2,6 +2,11 @@
 O języku Python
 ***************
 
+Wymagania szkolenia
+===================
+- dowolny system operacyjny wspierany przez Python 3.6.3
+- ściągnięta binarka dla odpowiedniego systemu https://www.python.org/downloads/release/python-363/
+- Pobrana binarka dla odpowiedniego systemu: https://www.jetbrains.com/pycharm/download/
 
 Co to jest Python
 =================
