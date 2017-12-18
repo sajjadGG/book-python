@@ -32,9 +32,7 @@ Wyznaczanie równania prostej
     Wyznaczanie równania prostej.
 
 .. todo::
-
-    Pojęcia
-    =======
+    Pojęcia:
     .. glossary::
 
         Loss Function

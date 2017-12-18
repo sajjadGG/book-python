@@ -262,6 +262,10 @@ Wyrazy
 ------
 Napisz program, który na podstawie paragrafu tekstu "Lorem Ipsum" podzieli go na zdania () i dla każdego zdania wyświetli ile jest w nim wyrazów.
 
+.. code-block:: text
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 :Założenia:
     * kropka rozdziela zdania
     * spacja oddziela wyrazy w zdaniu
@@ -279,12 +283,14 @@ Napisz program który przekonwertuje odległości (podane w metrach) i zwróci `
 .. code-block:: python
 
     {
-        'kilometers': int(),
-        'miles': float(),
-        'nautical miles': float(),
+        'kilometers': int,
+        'miles': float,
+        'nautical miles': float,
+        'all': [int, float, float]
     }
 
 :Podpowiedź:
     * 1000 m = 1 km
     * 1608 m = 1 mila
     * 1852 m = 1 mila morska
+    * ``def km_na_m()`` oraz ``return``
