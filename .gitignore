@@ -1,16 +1,36 @@
-*.icloud
-*.pyc
-*.o
-*.so
+## Private
+_config/
+_database/
 
+## Compiled
 __pycache__/
-_build/
-_tmp/
+*.pyc
+~$*
+*.spec
 
-.DS_Store
-.coverage/
-.idea/
-.virtualenv/
-.venv/
+## Distribution / packaging
+build/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+sdist/
+*.egg-info/
+*.egg
 
+## Django
+*.log
+*.sqlite3
+_static
+_media
+
+## Sphinx documentation
+docs/_build/
+_docs/
+
+## IDE
+.idea
+
+## Temporary
 __notepad__.py
