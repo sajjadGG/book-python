@@ -270,6 +270,7 @@ Napisz program, który na podstawie paragrafu tekstu "Lorem Ipsum" podzieli go n
 
     * ``str.split()``
     * ``len()``
+    * ``for wyraz in zdanie:``
 
 Przeliczanie odległości
 -----------------------
