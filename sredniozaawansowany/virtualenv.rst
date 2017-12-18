@@ -11,7 +11,7 @@ Tworzenie takiego środowiska jest bardzo łatwe i szybkie:
 
 .. code:: console
 
-    $ python3 -m venv .virtualenv
+    $ python -m venv .virtualenv
 
 Aktywacja i korzystanie ze środowiska
 =====================================
@@ -26,7 +26,7 @@ lub na Windowsie:
 
 .. code:: bat
 
-    .virtualenv\bin\activate.bat
+    .virtualenv\Scripts\activate.bat
 
 Dobra praktyka
 ==============

@@ -69,6 +69,7 @@ Podstawy
     sredniozaawansowany/system-operacyjny.rst
     sredniozaawansowany/linia-polecen.rst
     sredniozaawansowany/modularyzacja.rst
+    sredniozaawansowany/virtualenv.rst
     sredniozaawansowany/regex.rst
     sredniozaawansowany/bazy-danych.rst
 
@@ -86,7 +87,6 @@ Zaawansowany
     :numbered:
     :caption: Zaawansowany
 
-    sredniozaawansowany/virtualenv.rst
     zaawansowany/type-annotation.rst
 
     zaawansowany/programowanie-http.rst
