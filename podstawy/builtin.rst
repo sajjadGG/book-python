@@ -70,13 +70,15 @@ Python domyślnie oczekuje wcięcia po dwukropku. Jeżeli chcemy zostawić klas�
 
 ``continue``
 ------------
-
 Słowo kluczowe ``continue`` powoduje przerwanie aktualnie wykonywanej pętli i przejście do kolejnej iteracji. Przydatne podczas debugowania i testowania kodu.
+
+.. todo:: lepszy przykład
 
 .. code-block:: python
 
     >>> for number in range(0, 30):
-    ...     if number % 5:
+    ...     # jeżeli nie ma reszty z dzielenia przez 5
+    ...     if not number % 5 == 0:
     ...         continue
     ...     print(number)
     0
@@ -93,6 +95,9 @@ Słowo kluczowe ``continue`` powoduje przerwanie aktualnie wykonywanej pętli i 
         print(i)
         continue
 
+        # ten kod się nie wywoła
+        # przydatne do zrozumienia działania funkcji
+        # gdy chcemy wyprintować ``i`` a nie wykonywać np. requestu API w dalszej części
         if not i % 4:
             print('podzielny przez 4')
         else:
@@ -101,8 +106,9 @@ Słowo kluczowe ``continue`` powoduje przerwanie aktualnie wykonywanej pętli i 
 
 ``break``
 ---------
-
 Słowo kluczowe ``break`` przerywa aktualnie wykonywaną pętlę.
+
+.. todo:: lepszy przykład
 
 .. code-block:: python
 
@@ -130,7 +136,7 @@ Słowo kluczowe ``return`` wskazuje funkcji jaką wartość ma dana funkcja zwr�
 
     >>> def sum(a, b):
     ...     return a + b
-    ...     print('Total is', a + b)
+    ...     print('Total is', a + b)  # ten kod się nie wykona
     ...
     >>> sum(2, 3)
     5
@@ -138,13 +144,15 @@ Słowo kluczowe ``return`` wskazuje funkcji jaką wartość ma dana funkcja zwr�
 
 ``__file__``
 ------------
-
 .. code-block:: python
 
-    >>> print(__file__)
+    print(__file__)
 
 ``__name__``
 ------------
+.. code-block:: python
+
+    print(__name__)
 
 Zmienna ``__name__`` pozwala między innymi ustalić czy dany plik jest wykonywany czy importowany. Jeżeli dany plik jest wykonywany, zmienna ``__name__`` ustawiana jest na ``'__main__'``, jeżeli dany plik jest importowany jako moduł, zmienna ``__name__`` ustawiana jest na nazwę modułu. Jest to przydatne na przykład przy testowaniu modułów. Dodanie do modułu poniższej linijki:
 
@@ -155,12 +163,25 @@ Zmienna ``__name__`` pozwala między innymi ustalić czy dany plik jest wykonywa
 
 Sprawi, że wypisane na konsoli zostanie ``'hello world!'`` jeżeli dany plik jest wykonywany jako główny. Powyższy kod nie wykona się natomiast jeżeli plik zaimportujemy jako moduł w innym pliku.
 
+Przykład z życia:
+
 .. code-block:: python
 
     import logging
 
     log = logging.getLogger(__name__)
 
+
+.. code-block:: python
+
+    def run():
+        ...
+
+    if __name__ == '__main__':
+        # Jeżeli skrypt wywoływany jest z konsoli "z ręki" to uruchom funckję ``run()``
+        # Jeżeli został zaimportowany, to ten fragment będzie zignorowany
+        # I trzeba uruchomić funkcję ``run()`` samodzielnie - kontrolowanie
+        run()
 
 Funkcje wbudowane
 =================
@@ -169,25 +190,24 @@ Funkcje wbudowane to funkcje dostępne domyślnie w języku Python.
 
 ``print()``
 -----------
-
 .. code-block:: python
 
     print('ehlo world')
     print('ehlo', 'world')
     print('ehlo', 'world', sep=';')
 
+    imie = 'Max Peck'
+    print('ehlo', imie, 'world')
+
 Wyświetla argument jako tekst w wierszu poleceń.
 
-W Pytonie2, print jest słowem kluczowym - nie wymaga użycia nawiasów.
+W Pytonie2, print jest słowem kluczowym - nie wymaga użycia nawiasów. Ale dla kompatybilności można je również podawać.
 
 ``sorted()`` i ``sort()``
 -------------------------
-
-Sortują elementy listy.
-
-``sorted()`` to operator niemutowalny (nie zmienia kolejności elementów w liście).
-
-``sorted()`` to funkcja, która jako argument przyjmuje listę.
+* Sortują elementy listy.
+* ``sorted()`` to operator niemutowalny (nie zmienia kolejności elementów w liście).
+* ``sorted()`` to funkcja, która jako argument przyjmuje listę.
 
 .. code-block:: python
 
@@ -197,9 +217,8 @@ Sortują elementy listy.
     >>> print(numbers)
     [3, 1, 2]
 
-``.sort()`` to operator zmieniający listę (mutujący).
-
-``sort()`` to metoda klasy lista.
+* ``.sort()`` to operator zmieniający listę (mutujący).
+* ``sort()`` to metoda klasy lista.
 
 .. code-block:: python
 
@@ -208,11 +227,34 @@ Sortują elementy listy.
     >>> print(numbers)
     [1, 2, 3]
 
+.. code-block:: python
+
+    numbers = [3, 2, 1]
+    print(numbers)
+    # [3, 2, 1]
+
+    print(numbers.sort())
+    # None
+
+    print(numbers)
+    # [1, 2, 3]
+
+    print('---------------------')
+
+    numbers = [3, 2, 1]
+    print(numbers)
+    # [3, 2, 1]
+
+    print(sorted(numbers))
+    # [1, 2, 3]
+
+    print(numbers)
+    # [3, 2, 1]
+
 
 ``range()``
 -----------
-
-Tworzy iterator, który zwraca liczby w sekwencji. Jedna z rzeczy, która uległa zmianie od Pythona2, w którym range zwracał sekwencję liczb zamiast iteratora.
+Tworzy **iterator**, który zwraca liczby w sekwencji. Jedna z rzeczy, która uległa zmianie od Pythona2, w którym range zwracał sekwencję liczb zamiast iteratora.
 
 .. code-block:: python
 
@@ -227,7 +269,6 @@ Tworzy iterator, który zwraca liczby w sekwencji. Jedna z rzeczy, która uległ
 
 ``isinstance()``
 ----------------
-
 Sprawdza czy dany obiekt jest instancją danej klasy.
 
 .. code-block:: python
@@ -238,12 +279,11 @@ Sprawdza czy dany obiekt jest instancją danej klasy.
     >>> isinstance(10, float)
     False
 
-    >>> isinstance(10, (int, float))
+    >>> isinstance(10, (int, float))  # to musi być tupla, a nie lista
     True
 
 ``min()``
 ---------
-
 Wartość minimalna z listy.
 
 .. code-block:: python
@@ -256,7 +296,6 @@ Wartość minimalna z listy.
 
 ``max()``
 ---------
-
 Wartość maksymalna z listy.
 
 .. code-block:: python
@@ -269,14 +308,17 @@ Wartość maksymalna z listy.
 
 ``len()``
 ---------
-
-Długość listy.
+Długość listy, tuple, stringa itp.
 
 .. code-block:: python
 
     >>> numbers = [1, 2, 3, 4, 5]
     >>> len(numbers)
     5
+    >>> len('Max')
+    3
+    >>> len({'id': 3, 'name': 'Max'})
+    2
 
 ``input()``
 -----------
@@ -343,8 +385,7 @@ Konwertuje liczbę na oct.
 
 ``ord()``
 ---------
-
-Zwraca kod jednoznakowego stringa.
+Zwraca kod ASCII jednoznakowego stringa.
 
 .. code-block:: python
 
@@ -353,8 +394,7 @@ Zwraca kod jednoznakowego stringa.
 
 ``chr()``
 ---------
-
-Konwertuje kod na znak Unicode.
+Z pozycji w tablicy ASCII konwertuje kod na znak Unicode.
 
 .. code-block:: python
 

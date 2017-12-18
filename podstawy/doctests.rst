@@ -104,3 +104,49 @@ Testy dla wszystkich funkcji aktualnie zdefiniowanych w przestrzeni nazw wykonuj
         TypeError: sumowanie_liczb() missing 1 required positional argument: 'b'
         """
         return a + b
+
+.. code-block:: python
+
+    def km_na_m(km: float) -> float:
+        """
+        >>> km_na_m(1)
+        1000.0
+
+        >>> km_na_m(2)
+        2000.0
+
+        >>> km_na_m(0)
+        0.0
+
+        >>> km_na_m(-1)
+        1000.0
+
+        >>> km_na_m("jeden")
+        Traceback (most recent call last):
+            ...
+        ValueError: Argument must be int or float
+
+        >>> km_na_m([0, 1, 2, 3])
+        Traceback (most recent call last):
+            ...
+        ValueError: Argument must be int or float
+
+        >>> km_na_m(object)
+        Traceback (most recent call last):
+            ...
+        ValueError: Argument must be int or float
+
+        >>> km_na_m(1.5)
+        1500.0
+
+        >>> km_na_m(-0.5)
+        500.0
+
+        >>> km_na_m(0.0)
+        0.0
+        """
+        if not isinstance(km, (int, float)):
+            raise ValueError('Argument must be int or float')
+
+        return abs(km * 1000.0)
+

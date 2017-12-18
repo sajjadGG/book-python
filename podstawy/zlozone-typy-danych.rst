@@ -110,6 +110,11 @@ Przykład trochę bardziej zaawansowany:
 
     print(my_data['nazwisko'])
 
+.. code-block:: python
+
+    out = {'id': 10, 'id': 20}
+    print(out)
+
 
 Dobieranie się do wartości elementów za pomocą ``[...]`` i ``.get(...)``
 ------------------------------------------------------------------------

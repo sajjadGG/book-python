@@ -154,13 +154,27 @@ Napisz program, który wyświetli 6 losowych i nie powtarzających się liczb z 
 :Podpowiedź:
     * ``random.randrange()``
     * ``random.sample()``
+    * Czytelny cod obu przykładów wraz z białymi liniami nie powinien zająć więcej niż 10 linii.
 
 :Pytania:
     * Czym sa liczby pseudolosowe?
     * Czy da się stworzyć program czysto losowy?
     * Dlaczego?
 
+:Co zadanie sprawdza?:
+    * Umiejętność wykorzystania gotowych funkcji w zewnętrznej bibliotece
+    * Umiejętność wyszukania informacji na temat API funkcji w dokumentacji języka i jego odpowiedniej wersji
+    * Stworzenie dwóch alternatywnych podejść do rozwiązania zadania
+    * Porównanie czyletlności obu rozwiązań
+    * Umiejętność sprawdzania czy coś znajduje się w liście oraz ``continue``
 
 Pole trójkąta
 -------------
-Napisz program, który obliczy pole trójkąta, pod warunkiem że użytkownik poda wysokość i długość podstawy tego trójkąta. Uwzględnij, że wysokość i długość podstawy mogą być liczbami niecałkowitymi. Wykorzystaj doctest do przetestowania funckji.
+#. Napisz program, który obliczy pole trójkąta.
+#. Użytkownik poda wysokość i długość podstawy tego trójkąta. Uwzględnij, że wysokość i długość podstawy mogą być liczbami niecałkowitymi. Wykorzystaj doctest do przetestowania funckji.
+
+:Co zadanie sprawdza?:
+    * Umiejętność wykorzystania gotowych funkcji w zewnętrznej bibliotece
+    * Umiejętność wyszukania informacji na temat API funkcji w dokumentacji języka i jego odpowiedniej wersji
+    * Stworzenie dwóch alternatywnych podejść do rozwiązania zadania
+    * Porównanie czyletlności obu rozwiązań

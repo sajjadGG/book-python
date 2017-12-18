@@ -81,6 +81,38 @@ Argument funkcji może mieć także wartość domyślną, z której funkcja skor
     ...     else:
     ...         raise ValueError('`to` should be either bin, hex or oct!!')
 
+Przykład praktyczny
+-------------------
+.. code-block:: python
+
+    def server(host, user, password, port=1337):
+        print(locals())
+
+
+    # kolejność ma znaczenie
+    # łatwo się pomylić
+    server('localhost', 'admin', 'admin')
+
+    # argumenty definiowane są jawnie
+    # trudniej się pomylić
+    # kod jest bardziej przejrzysty
+    server(host='localhost', user='admin', password='admin')
+
+    server(
+        host='localhost',
+        user='admin',
+        password='admin',
+        port=31337,
+    )
+
+    # dla nazwanych argumentów kolejność nie ma znaczenia
+    server(
+        port=31337,
+        user='admin',
+        host='localhost',
+        password='admin'
+    )
+
 
 
 Zwracanie wartości
@@ -231,6 +263,7 @@ Inne przykładowe zastosownaie operatorów ``*`` i ``**`` polega na wykorzystani
         foo(1, 2, 3, 4, c=5, d=6)
 
     Taki zapis jest również możliwy, chociaż bardzo mylący
+
     .. code-block:: python
 
         def foo(dopasowane, *kwargs, **args):
