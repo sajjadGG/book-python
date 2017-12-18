@@ -9,7 +9,6 @@ Zbiory i operacje na nich
 
 ``tuple`` - Krotka
 ------------------
-
 .. code-block:: python
 
     a = (1, 2, 3)
@@ -27,7 +26,6 @@ Zbiory i operacje na nich
 
 ``list`` - Lista
 ----------------
-
 .. code-block:: python
 
     my_list = []
@@ -42,30 +40,35 @@ Zbiory i operacje na nich
 
 .. code-block:: python
 
-    ## Performance - Method concatenates strings using + in a loop
     def make_html1(lista):
+        """
+        Performance - Method concatenates strings using + in a loop
+        """
         html = '<table>'
 
         for element in lista:
-            html += '\r\n<tr><td>%s</td></tr>' % element
+            html += f'\r\n<tr><td>{element}</td></tr>'
         html += '\r\n</table>'
 
         return html
 
-    ## Problem solved
+
     def make_html2(lista):
+        """
+        Problem solved
+        """
         html = ['<table>']
 
         for element in lista:
-            html.append('<tr><td>%s</td></tr>' % element)
+            html.append(f'<tr><td>{element}</td></tr>')
 
         html.append('</table>')
 
         return '\r\n'.join(html)
 
+
 ``set`` - Zbiór
 ---------------
-
 .. code-block:: python
 
     >>> a = set([1, 3, 1])
@@ -97,7 +100,6 @@ Przykład trochę bardziej zaawansowany:
 
 ``dict`` - Słownik
 ------------------
-
 .. code-block:: python
 
     my_data = {
@@ -107,6 +109,7 @@ Przykład trochę bardziej zaawansowany:
     }
 
     print(my_data['nazwisko'])
+
 
 Dobieranie się do wartości elementów za pomocą ``[...]`` i ``.get(...)``
 ------------------------------------------------------------------------
@@ -135,7 +138,7 @@ Do zawartości zmiennej słownikowej możemy uzyskać dostęp używając nawias�
 
 Jak Python rozróżnia typy
 -------------------------
-.. note:: Dla każdego z poniższych przykładów wykonano funkcję ``type(what)`` i wynik pokazano poniżej. Dla czytelności przykładu pominięto tę linijkę.
+Dla każdego z poniższych przykładów wykonano funkcję ``type(what)`` i wynik pokazano poniżej. Dla czytelności przykładu pominięto tę linijkę.
 
 .. code-block:: python
 
@@ -209,7 +212,6 @@ Złożone typy danych
 
 Lista słowników
 ---------------
-
 .. code-block:: python
 
     studenci = [
@@ -226,7 +228,6 @@ Lista słowników
 
 Listy wielowymiarowe
 --------------------
-
 .. code-block:: python
 
     array = [
@@ -234,9 +235,9 @@ Listy wielowymiarowe
         [1, 2, 3],
     ]
 
+
 Mieszane typy
 -------------
-
 .. code-block:: python
 
     array = [
@@ -246,9 +247,9 @@ Mieszane typy
         {'imie': 'José', 'nazwisko': 'Jiménez'}
     ]
 
+
 Jak inicjować poszczególne typy?
 ================================
-
 - ``list()`` czy ``[]``
 - ``tuple()`` czy ``()``
 - ``dict()`` czy ``{}``
@@ -271,7 +272,6 @@ Napisz program, który na podstawie paragrafu tekstu "Lorem Ipsum" podzieli go n
     * spacja oddziela wyrazy w zdaniu
 
 :Podpowiedź:
-
     * ``str.split()``
     * ``len()``
     * ``for wyraz in zdanie:``
