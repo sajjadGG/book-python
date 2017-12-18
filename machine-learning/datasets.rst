@@ -71,6 +71,8 @@ Each record has a class value that indicates whether the patient suffered an ons
 
 This is a standard dataset that has been studied a lot in machine learning literature. A good prediction accuracy is 70%-76%.
 
+.. _wisconsin_breast_cancer_database:
+
 Wisconsin Breast Cancer Database
 --------------------------------
 

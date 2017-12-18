@@ -18,6 +18,8 @@ extensions = [
     # 'sphinx.ext.coverage',
     # 'sphinx.ext.githubpages',
     # 'sphinx.ext.autodoc',
+    # 'sphinx.ext.intersphinx',
+    # 'sphinx.ext.graphviz',
 ]
 
 templates_path = ['_templates']

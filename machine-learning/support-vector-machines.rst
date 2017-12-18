@@ -414,7 +414,7 @@ Wykorzystanie biblioteki ``sklearn``
 ------------------------------------
 Naucz algorytm rozpoznawania danych wykorzystując algorytm Support Vector Machines.
 
-:Dataset: :ref:`Wisconsin Breast Cancer Database` https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/
+:Dataset: :ref:`Wisconsin Breast Cancer Database <wisconsin_breast_cancer_database>` https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/
 
 
 .. todo::
@@ -426,11 +426,8 @@ Lektura uzupełniająca
 =====================
 
 .. todo::
-    Bibliografia
-    ------------
-
-    Przydatne odnośniki
-    -------------------
+    * Bibliografia
+    * Przydatne odnośniki
 
 Słownictwo
 ----------

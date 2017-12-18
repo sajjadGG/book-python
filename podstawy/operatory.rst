@@ -125,7 +125,6 @@ Zadania kontrolne
 
 Parzystość
 ----------
-
 :Zadanie:
     * napisz program, który wczyta od użytkownika ciąg znaków
     * zweryfikuje czy wprowadzony ciąg jest liczbą (``int`` lub ``float``)
@@ -135,3 +134,12 @@ Parzystość
     * Liczba parzysta, to taka, która po podzieleniu przez dwa nie ma reszty
     * Użyj dzielenia modulo ``%`` lub ``divmod()``
     * Zwróć uwagę, że operator ``%`` działa modulo tylko na ``int`` oraz na ``float``. Przy ``str`` ma zupełnie inne znaczenie.
+
+Liczby całkowite
+----------------
+#. Napisz program, który wczyta od użytkownika liczbę i wyświetli informację, czy jest to liczba całkowita, czy niecałkowita.
+
+:Podpowiedź:
+    * Liczba całkowita to taka, której część dziesiętna nie występuje (``int``) lub jest równa zero ``float``. Możesz to sprawdzić dzieląc liczbę z resztą przez 1 i sprawdzając resztę z dzielenia.
+    * Alternatywnie Możesz użyć funkcji ``type()`` albo ``isinstance()``
+    * Zwróć uywagę, że ``input()`` zawsze zwraca ``str`` wiec trzeba rzutowac na ``int``, ale wtedy tracimy informację czy wczesniej mielismy ``float`` oraz wyskakuje exception gdy podano inny niekompatybilny typ

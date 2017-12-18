@@ -10,6 +10,8 @@ Kurs programowania w Python i Machine Learning
     :linkedin: `https://linkedin.com/in/mattharasymczuk <https://linkedin.com/in/mattharasymczuk>`_
     :slideshare: `https://www.slideshare.net/astrotech/presentations <https://www.slideshare.net/astrotech/presentations>`_
 
+.. todo:: użyć literalinclude do kodu oraz dopisać testy
+
 =====
 Wstęp
 =====

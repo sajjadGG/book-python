@@ -16,25 +16,17 @@ Neural Networks are the best Machine Learning algorithm so far.
 
 Słownictwo
 ==========
-.. glossary::
+.. todo:: make this as a ``glossary`` items
 
-    Neuron
-
-    Dendrite
-
-    Weight
-
-    Input Layer
-
-    Hidden Layer
-
-    Output Layer
-
-    Fully Connected Layer
-
-    Backpropagation
-
-    Activation function
+* Neuron
+* Dendrite
+* Weight
+* Input Layer
+* Hidden Layer
+* Output Layer
+* Fully Connected Layer
+* Backpropagation
+* Activation function
 
 Przykład praktyczny
 ===================

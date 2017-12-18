@@ -332,17 +332,3 @@ Zmienne i typy
 :Podpowiedź:
     * Użyj podawania stringów po przecinku ``print(str, str)`` oraz parametru ``sep``
     * Użyj f-string formatting dla Python >= 3.6
-
-Zmienne i wczytywanie ciągu od użytkownika
-------------------------------------------
-#. Napisz program, który poprosi użytkownika o wiek i wyświetli wartość.
-#. Następnie sprawdzi pełnoletność i wyświetli informację czy osoba jest "dorosła" czy "niepełnoletnia".
-
-Liczby całkowite
-----------------
-#. Napisz program, który wczyta od użytkownika (funkcja ``input()``) liczbę i wyświetli informację, czy jest to liczba całkowita, czy niecałkowita.
-
-:Podpowiedź:
-    * Liczba całkowita to taka, której część dziesiętna nie występuje (``int``) lub jest równa zero ``float``. Możesz to sprawdzić dzieląc liczbę z resztą przez 1 i sprawdzając resztę z dzielenia.
-    * Alternatywnie Możesz użyć funkcji ``type()`` albo ``isinstance()``
-    * Zwróć uywagę, że ``input()`` zawsze zwraca ``str`` wiec trzeba rzutowac na ``int``, ale wtedy tracimy informacje czy wczesniej mielismy ``float`` oraz wyskakuje exception gdy podano inny niekompatybilny typ

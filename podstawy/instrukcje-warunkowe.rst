@@ -101,7 +101,7 @@ Bardzo kuszący jest następujący przykład:
           print('You are not Max!')
 
 
-Nie jest on jednak do końca poprawny. Słowo kluczowe ``is`` porównuje czy dwa obiekty są tym samym obiektem, nie czy mają taką samą wartość. Poniższy przykład ilustruje, że pomimo że dwa obiekty przechowują takiego samego stringa to nie są sobie tożsame, mimo że są sobie równe.
+**Nie jest on jednak do końca poprawny. Słowo kluczowe ``is`` porównuje czy dwa obiekty są tym samym obiektem, nie czy mają taką samą wartość.** Poniższy przykład ilustruje, że pomimo że dwa obiekty przechowują takiego samego stringa to nie są sobie tożsame, mimo że są sobie równe.
 
  .. code-block:: python
 
@@ -120,11 +120,11 @@ Nie jest on jednak do końca poprawny. Słowo kluczowe ``is`` porównuje czy dwa
      print(f'a is b returns: {a is b}')
 
 
-``switch`` statement?
-=====================
+``switch`` statement?!
+======================
 * Why ``switch`` is bad practise?
 
-" You can do this easily enough with a sequence of if... elif... elif... else. There have been some proposals for switch statement syntax, but there is no consensus (yet) on whether and how to do range tests. See PEP 275 for complete details and the current status. "
+    "You can do this easily enough with a sequence of ``if... elif... elif... else``. There have been some proposals for switch statement syntax, but there is no consensus (yet) on whether and how to do range tests. See PEP 275 for complete details and the current status. "
 
 .. code-block:: python
 
@@ -140,11 +140,10 @@ Nie jest on jednak do końca poprawny. Słowo kluczowe ``is`` porównuje czy dwa
 
 .. code-block:: python
 
-    def switch(x):
-        return {
-            'a': 1,
-            'b': 2,
-        }[x]
+    switch = {
+        'a': 1,
+        'b': 2,
+    }
 
     switch['a']
 
@@ -152,28 +151,23 @@ Nie jest on jednak do końca poprawny. Słowo kluczowe ``is`` porównuje czy dwa
 .. code-block:: python
 
     choices = {'a': 1, 'b': 2}
-    result = choices.get(key, 'default')
+    result = choices.get(key, 'default value when key is not found')
 
+
+.. code-block:: python
+
+    def switch(x):
+        return {
+            'a': 1,
+            'b': 2,
+        }[x]
+
+    switch('a')
 
 Zadania kontrolne
 =================
 
-Dzienniczek ucznia
-------------------
-Napisz program, który wczytuje od użytkownika kolejne oceny i:
-
-    * sprawdza czy wprowadzona ocena jest na liście dopuszczalnych na wydziale ocen
-    * jeżeli ocena jest na liście dopuszczalnych na wydziale ocen, dodaje ją do dzienniczka
-    * jeżeli wpisano cyfrę nie znjadującą się na liście dopuszczalnych ocen, wyświetl informację i zakończ wpisywanie
-    * wyświetla wyliczoną dla dzienniczka ocen średnią arytmetyczną
-    * jeżeli wciśnięto sam Enter, oznacza to koniec wpisywania do dzienniczka
-    * wykorzystaj moduł statistics do wyliczania średniej
-
-:Warunek:
-    * Zastosuj akademicką skalę ocen ``[2, 3, 3.5, 4, 4.5, 5]``
-
-:Podpowiedź:
-    * dla ułatwienia wszystkie oceny mogą być typu ``float``
-    * ``len()`` ``sum()``
-    * ``in``
-    * ``statistics.mean()``
+Zmienne i wczytywanie ciągu od użytkownika
+------------------------------------------
+#. Napisz program, który poprosi użytkownika o wiek i wyświetli wartość.
+#. Następnie sprawdzi pełnoletność i wyświetli informację czy osoba jest "dorosła" czy "niepełnoletnia".
