@@ -182,6 +182,15 @@ Pojedynczy czy podwójny cudzysłów
 
 Operacje na stringach
 ---------------------
+* ``split()``
+
+.. code-block:: python
+
+    >>> text = 'ehlo,world'
+    >>> text.split(',')
+    ['ehlo', 'world']
+
+
 * ``strip()``, ``lstrip()``, ``rstrip()``
     .. code-block:: python
 
@@ -230,6 +239,18 @@ Operacje na stringach
         >>> name.replace('J', 'j')
         'josé jiménez'
 
+
+Wykonywanie operacji na obiekcie
+--------------------------------
+.. code-block:: python
+
+    >>> text = 'Ehlo,world'
+    >>> text.split(',')
+    ['ehlo', 'world']
+    >>> str.split(text, ',')
+    ['ehlo', 'world']
+
+
 Wycinanie części stringów
 -------------------------
 .. code-block:: python
@@ -269,13 +290,11 @@ Wycinanie części stringów
     io.StringIO
 
 
-
 Logiczne typy danych
 ====================
 
 ``bool`` - Wartość logiczna
 ---------------------------
-
 Obiekt typu ``bool`` może przyjąć dwie wartości logiczne:
 
 * ``True``
@@ -287,7 +306,6 @@ Zwróć uwagę na wielkość liter!
 
 ``None`` - Wartość pusta
 ------------------------
-
 Ważne: nie jest to wartość ``False`` ani ``0``.
 Wyobraź sobie, że masz bazę danych z użytkownikami.
 Gdy użytkownik nie poda wieku, to jest to wartość ``None``.
@@ -301,77 +319,6 @@ Gdy użytkownik nie poda wieku, to jest to wartość ``None``.
 
     if not wiek:
         print('user does not ')
-
-Przykłady praktyczne
-====================
-
-.. note:: Dla każdego z poniższych przykładów wykonano funkcję ``type(what)`` i wynik pokazano poniżej. Dla czytelności przykładu pominięto tę linijkę.
-
-.. code-block:: python
-
-    >>> what = 'foo'
-    <class 'str'>
-
-    >>> what = 'foo',
-    <class 'tuple'>
-
-    >>> what = ('foo')
-    <class 'str'>
-
-    >>> what = ('foo',)
-    <class 'tuple'>
-
-.. code-block:: python
-
-    >>> what = 10
-    <class 'int'>
-
-    >>> what = 10.5
-    <class 'float'>
-
-    >>> what = .5
-    <class 'float'>
-
-    >>> what = 10.
-    <class 'float'>
-
-    >>> what = 10,
-    <class 'tuple'>
-
-    >>> what = 10, 20
-    <class 'tuple'>
-
-    >>> what = (10, 20)
-    <class 'tuple'>
-
-    >>> what = (10,)
-    <class 'tuple'>
-
-    >>> what = (10.)
-    <class 'float'>
-
-.. code-block:: python
-
-    >>> what = {}
-    <class 'dict'>
-
-    >>> what = {'id'}
-    <class 'set'>
-
-    >>> what = {'id': 1}
-    <class 'dict'>
-
-
-    >>> a = {}
-
-    >>> isinstance(a, dict)
-    True
-
-    >>> isinstance(a, set)
-    False
-
-    >>> isinstance(a, (set, dict))
-    True
 
 
 Zadania kontrolne

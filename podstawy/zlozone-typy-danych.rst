@@ -47,17 +47,20 @@ Zbiory i operacje na nich
         html = '<table>'
 
         for element in lista:
-            html += '<tr><td>%s</td></tr>' % element
-        html += '</table>'
+            html += '\r\n<tr><td>%s</td></tr>' % element
+        html += '\r\n</table>'
 
         return html
 
     ## Problem solved
     def make_html2(lista):
         html = ['<table>']
+
         for element in lista:
             html.append('<tr><td>%s</td></tr>' % element)
+
         html.append('</table>')
+
         return '\r\n'.join(html)
 
 ``set`` - Zbiór
@@ -79,22 +82,17 @@ Przykład trochę bardziej zaawansowany:
 
 
     Adres(miasto='...')
-
-
-    {}
-    {'klucz': 'wartość'}
-    {'klucz', 'wartość'}
-    {'klucz'}
     print({Adres(miasto='...'), Adres(miasto='...')})
 
     a = Adres(miasto='...')
     print({a, a})
 
+.. code-block:: python
 
-
-    print(dict(foo='bar'))
-
-
+    {}  # dict
+    {'klucz': 'wartość'}  # dict
+    {'klucz', 'wartość'}  # set
+    {'klucz'}  # set
 
 
 ``dict`` - Słownik
@@ -110,12 +108,8 @@ Przykład trochę bardziej zaawansowany:
 
     print(my_data['nazwisko'])
 
-Dobieranie się do wartości elementów
-====================================
-
-``[...]`` i ``.get(...)``
--------------------------
-
+Dobieranie się do wartości elementów za pomocą ``[...]`` i ``.get(...)``
+------------------------------------------------------------------------
 Do zawartości zmiennej słownikowej możemy uzyskać dostęp używając nawiasów kwadratowych wraz z kluczem, albo funkcji ``.get(klucz)``. Różnica między tymi podejściami polega na tym, że jeżeli dana zmienna słownikowa nie zawiera pewnego klucza, używanie nawiasów kwadratowych wygeneruje wyjątek KeyError, natomiast użycie funkcji ``.get(klucz)`` nie zwróci nic. Do funkcji ``.get(klucz)`` możemy dodatkowo dopisać wartość domyślną która zostanie zwrócona, jeżeli słownik nie posiada danego klucza.
 
 .. code-block:: python
@@ -137,6 +131,78 @@ Do zawartości zmiennej słownikowej możemy uzyskać dostęp używając nawias�
 
     >>> dane.get('wiek', 'n/d')
     'n/d'
+
+
+Jak Python rozróżnia typy
+-------------------------
+.. note:: Dla każdego z poniższych przykładów wykonano funkcję ``type(what)`` i wynik pokazano poniżej. Dla czytelności przykładu pominięto tę linijkę.
+
+.. code-block:: python
+
+    >>> what = 'foo'
+    <class 'str'>
+
+    >>> what = 'foo',
+    <class 'tuple'>
+
+    >>> what = ('foo')
+    <class 'str'>
+
+    >>> what = ('foo',)
+    <class 'tuple'>
+
+.. code-block:: python
+
+    >>> what = 10
+    <class 'int'>
+
+    >>> what = 10.5
+    <class 'float'>
+
+    >>> what = .5
+    <class 'float'>
+
+    >>> what = 10.
+    <class 'float'>
+
+    >>> what = 10,
+    <class 'tuple'>
+
+    >>> what = 10, 20
+    <class 'tuple'>
+
+    >>> what = (10, 20)
+    <class 'tuple'>
+
+    >>> what = (10,)
+    <class 'tuple'>
+
+    >>> what = (10.)
+    <class 'float'>
+
+.. code-block:: python
+
+    >>> what = {}
+    <class 'dict'>
+
+    >>> what = {'id'}
+    <class 'set'>
+
+    >>> what = {'id': 1}
+    <class 'dict'>
+
+
+    >>> a = {}
+
+    >>> isinstance(a, dict)
+    True
+
+    >>> isinstance(a, set)
+    False
+
+    >>> isinstance(a, (set, dict))
+    True
+
 
 Złożone typy danych
 ===================
