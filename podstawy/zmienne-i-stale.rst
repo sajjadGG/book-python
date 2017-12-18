@@ -9,40 +9,39 @@ Stałe i zmienne
 
 Deklarowanie zmiennych
 ----------------------
-
 .. code-block:: python
 
     my_variable = 10
     my_variable = 'ehlo world'
 
+
 Deklarowanie stałych
 --------------------
-
 .. code-block:: python
 
     MY_CONSTANT = 10
     MY_CONSTANT = 'ehlo world'
 
+
 Różnica między stałymi i zmiennymi
 ----------------------------------
-
 Jedyną różnicą jest konwencja nazewnicza:
 
 * stałe zapisujemy dużymi literami
 * zmienne zapisujemy małymi literami
 
+
 Zasięg widoczności
 ------------------
-
 * ``globals()``
 * ``locals()``
+
 
 Numeryczne typy danych
 ======================
 
 ``int`` - Liczba całkowita
 --------------------------
-
 Jednym z najbardziej podstawowych typów danych jest ``int``.
 ``int()`` jest funkcją wbudowaną, która zamieni swój argument na liczbę całkowitą.
 
@@ -61,7 +60,6 @@ Jednym z najbardziej podstawowych typów danych jest ``int``.
 
 ``float`` - Liczba zmiennoprzecinkowa
 -------------------------------------
-
 ``float`` w Pythonie reprezentuje liczbę zmiennoprzecinkową. Ciekawą własnością tego typu jest możliwość reprezentacji nieskończoności za pomocą ``Infinity`` oraz minus nieskończoności ``-Infinity``. Więcej szczegółów dostępnych jest w dokumentacji dla tego `typu <https://docs.python.org/3/library/functions.html#grammar-token-infinity>`_
 
 Podobnie jak pozostałe typy ``float()`` jest funkcją, która konwertuje swój argument na liczbę zmiennoprzecinkową.
@@ -88,7 +86,6 @@ Podobnie jak pozostałe typy ``float()`` jest funkcją, która konwertuje swój 
 
 ``complex`` - liczba zespolona
 ------------------------------
-
 ``complex`` reprezentuje typ liczby zespolonej posiadającej część rzeczywistą oraz urojoną. Należy zwrócić uwagę, że argument powinien być ciągiem znaków niezawierającym spacji. W przeciwnym przypadku otrzymamy ``ValueError``.
 
 .. code-block:: python
@@ -107,7 +104,6 @@ Tekstowe typy danych
 
 ``str`` - Ciąg znaków
 ---------------------
-
 Obiekt typu ``str`` przechowuje łańcuch znaków. ``str()`` jest także funkcją, która zwraca ciąg znaków z argumentu.
 
 .. code-block:: python
@@ -126,6 +122,17 @@ Obiekt typu ``str`` przechowuje łańcuch znaków. ``str()`` jest także funkcj�
     >>> str(10)
     '10'
 
+
+Wprowadzanie znaków od użytkownika
+----------------------------------
+* Spacja na końcu prompt
+
+.. code-block:: python
+
+    name = input('Type your name: ')
+    print(name)
+
+
 Escape'owanie znaków
 --------------------
 .. code-block:: python
@@ -142,7 +149,6 @@ Escape'owanie znaków
 
 Znaki przed stringiem
 ---------------------
-
 .. code-block:: python
 
     u'zażółć gęślą jaźń'
@@ -154,33 +160,81 @@ Znaki przed stringiem
 
 Niemutowalność
 --------------
+* Ważną cechą ciągów znakowych jest tzw. niemutowalność.
+* Gdy wykonujemy operację na stringu tworzona jest jego nowa kopia.
+* Zwóć uwagę ile stringów jest przechowywanych w pamięci
 
-Ważną cechą ciągów znakowych jest tzw. niemutowalność. Gdy wykonujemy operację na stringu tworzona jest jego nowa kopia.
+.. code-block:: python
+
+    >>> name = 'José'
+    >>> name += 'Jiménez'
+    >>> print(name)
+    José Jiménez
 
 
 Pojedynczy czy podwójny cudzysłów
 ---------------------------------
+* Python nie rozróżnia czy stosujemy pojedyncze znaki cudzysłowiu czy podwójne.
+* Ważne jest aby wybrać jedną konwencję i się jej konsekwentnie trzymać.
+* Interpreter Pythona domyślnie stosuje pojedyncze znaki cudzysłowia.
+* Z tego powodu w tej książce będziemy trzymać się powyższej konwencji.
 
-Python nie rozróżnia czy stosujemy pojedyncze znaki cudzysłowiu czy podwójne.
-Ważne jest aby wybrać jedną konwencję i się jej konsekwentnie trzymać.
-
-Interpreter Pythona domyślnie stosuje pojedyncze znaki cudzysłowia, z tego powodu w tym materiale będziemy trzymać się tej konwencji.
 
 Operacje na stringach
 ---------------------
-
 * ``strip()``, ``lstrip()``, ``rstrip()``
-* ``join()``
+    .. code-block:: python
+
+        >>> name = '    Max Peck    '
+        >>> name.strip()
+        'Max Peck'
+        >>> name.lstrip()
+        'Max Peck    '
+        >>> name.rstrip()
+        '    Max Peck'
+
 * ``startswith()``
-* ``title()``
+    .. code-block:: python
+
+        name = 'José Jiménez'
+
+        if name.startswith('José'):
+            print('My name José Jiménez')
+        else:
+            print('Noname')
+
+* ``join()``
+    .. code-block:: python
+
+        >>> names = ['José', 'Max', 'Ivan', str(1961), '1969']
+        >>> ';'.join()
+        'José;Max;Ivan;1961;1969'
+
+
+* ``title()``, ``lower()``, ``upper()``
+    .. code-block:: python
+
+        >>> name = 'joSé jiMénEz'
+        >>> name.title()
+        'José Jiménez'
+        >>> name.upper()
+        'JOSÉ JIMÉNEZ'
+        >>> name.lower()
+        'josé jiménez'
+
+
 * ``replace()``
+    .. code-block:: python
+
+        >>> name = 'José Jiménez'
+        >>> name.replace('J', 'j')
+        'josé jiménez'
 
 Wycinanie części stringów
 -------------------------
-
 .. code-block:: python
 
-    >>> text = "Lorem ipsum"
+    >>> text = 'Lorem ipsum'
 
     >>> text[2]
     'r'
@@ -245,6 +299,9 @@ Gdy użytkownik nie poda wieku, to jest to wartość ``None``.
     if wiek is None:
         print('użytkownik nie podał wieku')
 
+    if not wiek:
+        print('user does not ')
+
 Przykłady praktyczne
 ====================
 
@@ -290,6 +347,9 @@ Przykłady praktyczne
     >>> what = (10,)
     <class 'tuple'>
 
+    >>> what = (10.)
+    <class 'float'>
+
 .. code-block:: python
 
     >>> what = {}
@@ -319,21 +379,22 @@ Zadania kontrolne
 
 Zmienne i typy
 --------------
-Napisz program, który poprosi użytkownika o imie i ładnie go przywita wyświetlając 'hello IMIE'. Zamiast spacji użyj przecinka
+#. Napisz program, który poprosi użytkownika o imie i ładnie go przywita wyświetlając 'hello IMIE'.
+#. Zamiast spacji użyj przecinka
 
 :Podpowiedź:
     * Użyj podawania stringów po przecinku ``print(str, str)`` oraz parametru ``sep``
     * Użyj f-string formatting dla Python >= 3.6
 
-
 Zmienne i wczytywanie ciągu od użytkownika
 ------------------------------------------
-Napisz program, który poprosi użytkownika o wiek i wyświetli wartość. Następnie sprawdzi pełnoletność i wyświetli informację czy osoba jest "dorosła" czy "niepełnoletnia".
-
+#. Napisz program, który poprosi użytkownika o wiek i wyświetli wartość.
+#. Następnie sprawdzi pełnoletność i wyświetli informację czy osoba jest "dorosła" czy "niepełnoletnia".
 
 Liczby całkowite
 ----------------
-Napisz program, który wczyta od użytkownika liczbę i wyświetli informację, czy jest to liczba całkowita, czy niecałkowita.
+#. Napisz program, który wczyta od użytkownika (funkcja ``input()``) liczbę i wyświetli informację, czy jest to liczba całkowita, czy niecałkowita.
 
 :Podpowiedź:
-    Liczba całkowita to taka, której część dziesiętna nie występuje (``int``) lub jest równa zero ``float``.
+    * Liczba całkowita to taka, której część dziesiętna nie występuje (``int``) lub jest równa zero ``float``. Możesz to sprawdzić dzieląc liczbę z resztą przez 1 i sprawdzając resztę z dzielenia.
+    * Alternatywnie Możesz użyć funkcji ``type()`` albo ``isinstance()``

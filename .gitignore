@@ -13,4 +13,4 @@ _tmp/
 .virtualenv/
 .venv/
 
-example.py
+__notepad__.py
