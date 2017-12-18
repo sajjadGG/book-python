@@ -11,6 +11,7 @@ Kurs programowania w Python i Machine Learning
     :slideshare: `https://www.slideshare.net/astrotech/presentations <https://www.slideshare.net/astrotech/presentations>`_
 
 .. todo:: użyć literalinclude do kodu oraz dopisać testy
+.. todo:: dodać linki do innych dokumentacji: git, devops, procesy, agile
 
 =====
 Wstęp

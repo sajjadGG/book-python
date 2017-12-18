@@ -25,7 +25,6 @@ Konwencja nazewnicza funkcji
 
 Argumenty do funkcji
 ====================
-
 Argumenty funckji to wartości na których ta funckja wykonuje operacje. W idealnym przypadku wartość wyjściowa funkcji powinna zależeć jedynie od jej argumentów.
 
 .. code-block:: python
@@ -47,7 +46,7 @@ Każdy argument ma swoją nazwę przez którą uzyskujemy dostęp do wartości a
     >>> dodaj(a=1, b=2)
     3
 
-    >>> podziel(a, b):
+    >>> def podziel(a, b):
     ...     return a/b
 
     >>> podziel(a=1, b=2)
@@ -82,6 +81,8 @@ Argument funkcji może mieć także wartość domyślną, z której funkcja skor
     ...     else:
     ...         raise ValueError('`to` should be either bin, hex or oct!!')
 
+
+
 Zwracanie wartości
 ==================
 
@@ -106,6 +107,7 @@ Zwracanie wartości prostych
         return foo1
 
     def foo6():
+        # Python always return something, in this case ``return None``
         pass
 
     def foo7():
@@ -126,52 +128,58 @@ Zwracanie typów złożonych
             {'imie': 'Ivan', 'nazwisko': 'Ivanovic'},
             {'imie': 'José', 'nazwisko': 'Jiménez'}]
 
-Rozpakowywanie wartości zwracanych
-----------------------------------
-
-.. code-block:: python
-
-    >>> napiece, natezenie, *args = foo7()
-    >>> napiecie, *_ = foo7()
-
-.. code-block:: python
-
-    >>> value, _ = function()
-    >>> value, *args = function()
-
 
 Operator ``*`` i ``**``
 =======================
-
 .. todo:: zrobić lepsze przykłady wykorzystania parametrów z gwiazdką
 .. todo:: zrobić zadania do rozwiązania dla parametrów z gwiazdką
 
 Argumenty ``*args``, ``**kwargs``
 ---------------------------------
-
 Użycie operatora * przy definicji funkcji powoduje umożliwienie przekazywanie do funkcji dodatkowych parametrów anonimowych. Zazwczaj zmienna, która jest przy tym operatorze nazywa się ``*args`` (arguments)
+
 Użycie operatora ``**`` przy definicji funkcji powoduje umożliwienie przekazywania do niej dodatkowych argumentów nazwanych. Zazwczaj zmienna, która jest przy tym operatorze nazywa się ``**kwargs`` (keyword arguments)
-
-.. code-block:: python
-
-    def foo(a, *args, **kwargs):
-        print(f"zmienna a: {a}")
-        print(f"zmienna args: {args}")
-        print(f"zmienna kwargs: {kwargs}")
 
 Przy wywołaniu funkcji
 ----------------------
-
 Wywołując powyższą funkcję z argumentami:
 
 .. code-block:: python
 
-    >>> foo(1, 2, 3, 4, c=5, d=6)
-    zmienna a: 1
+    >>> def foo(my_var, *args, **kwargs):
+    ...    print(f"zmienna my_var: {my_var}")  # pierwsze dopasowanie
+    ...    print(f"zmienna args: {args}")  # argumenty pozycyjne 2, 3, 4
+    ...    print(f"zmienna kwargs: {kwargs}")  # argumenty nazwane c=5, d=6
+    ...
+    ...
+    ... foo(1, 2, 3, 4, c=5, d=6)
+    zmienna my_var: 1
     zmienna args: (2, 3, 4)
     zmienna kwargs: {'c': 5, 'd': 6}
 
-Sprawi, że wewnątrz funkcji będziemy mieli dostępną zmienną ``a`` o wartości 1, zmeinną ``args``, zawierającą listę elementów (2, 3, 4) oraz zmienną słownikową ``kwargs``, która ma klucze 'c' i 'd', które przechowują wartości, odpowiednio, 5 i 6.
+Sprawi, że wewnątrz funkcji będziemy mieli dostępną zmienną ``my_var`` o wartości 1, zmeinną ``args``, zawierającą listę elementów (2, 3, 4) oraz zmienną słownikową ``kwargs``, która ma klucze 'c' i 'd', które przechowują wartości, odpowiednio, 5 i 6.
+
+Przy zwracaniu wartości z funkcji
+----------------------------------
+.. code-block:: python
+
+    >>> value, _ = function()
+    >>> value, *args = function()
+
+.. code-block:: python
+
+    def sensor_temperatury():
+        # ładniej byłoby gdyby programista napisał
+        # {'napiecie': 10, 'natezenie': 20, 'rezystancja': 30, 'czas': 5, 'location': 'laboratorium'}
+        # ale programiści niskopoziomowi zwykle zwracają jako list...
+        return (10, 20, 30, 5, 'laboratorium')
+
+    # z funkcji dopasuje nam dwa pierwsze elementy, a kolejne umieści w ``tuple`` o nazwie args
+    napiece, natezenie, *args = sensor_temperatury()
+
+    # Przez konwencję, jeżeli nie korzystamy później z argumentów, to możemy przypisać je do ``_``
+    napiecie, natezenie, *_ = sensor_temperatury()
+
 
 .. code-block:: python
 
@@ -199,21 +207,43 @@ Inne przykładowe zastosownaie operatorów ``*`` i ``**`` polega na wykorzystani
 
 .. code-block:: python
 
-    def myfunc(x, y, z):
-        print(x, y, z)
+    >>> def my_function(x, y, z):
+    ...    print(x, y, z)
 
-    tuple_vec = (1, 0, 1)
-    dict_vec = {'y': 1, 'x': 0, 'z': 1}
-
-    >>>  myfunc(*tuple_vec)
+    >>> tuple_vec = (1, 0, 1)
+    >>>  my_function(*tuple_vec)
     1, 0, 1
 
-    >>> myfunc(**dict_vec)
+    >>> dict_vec = {'y': 1, 'x': 0, 'z': 1}
+    >>> my_function(**dict_vec)
     0, 1, 1
+
+.. warning:: Nie przywiązuj się do nazewnictwa ``*args`` i ``**kwargs``, chociaż jest to konwencja!!
+
+    .. code-block:: python
+
+        def foo(dopasowane, *pozycyjne, **nazwane):
+            print(f"argumenty dopasowane: {dopasowane}")  # 1
+            print(f"argumenty pozycyjne: {pozycyjne}")    # 2, 3, 4
+            print(f"argumenty nazwane: {nazwane}")        # c=5, d=6
+
+
+        foo(1, 2, 3, 4, c=5, d=6)
+
+    Taki zapis jest również możliwy, chociaż bardzo mylący
+    .. code-block:: python
+
+        def foo(dopasowane, *kwargs, **args):
+            print(f"argumenty dopasowane: {dopasowane}")  # 1
+            print(f"argumenty pozycyjne: {kwargs}")       # 2, 3, 4
+            print(f"argumenty nazwane: {args}")           # c=5, d=6
+
+
+        foo(1, 2, 3, 4, c=5, d=6)
+
 
 Przykładowe zastosowanie
 ------------------------
-
 .. code-block:: python
 
     class Osoba:
@@ -247,15 +277,22 @@ Napisz program ``numer.py``, który zamieni wprowadzony przez użytkownika ciąg
 * znaki nie będące cyframi mają być ignorowane
 * konwertujemy cyfry, nie liczby, a zatem:
 
-  * 911 to "dziewięć jeden jeden"
-  * 1100 to "jeden jeden zero zero"
+    .. code-block:: python
+
+        >>> int_to_str(999)
+        'dziewięć jeden jeden'
+
+        >>> int_to_str(1100)
+        'jeden jeden zero zero'
 
 * Napisz testy sprawdzające przypadki brzegowe.
+* Wersja zaawansowana - odmiana przez przypadki
 
 .. code-block:: python
 
     >>> int_to_str(999)
     'dziewiećset dziewięćdziesiąt dziewięć'
+
     >>> int_to_str(127.32)
     'sto dwadzieścia siedem i trzydzieści dwa setne'
 
@@ -263,11 +300,14 @@ Napisz program ``numer.py``, który zamieni wprowadzony przez użytkownika ciąg
     * 6 cyfr przed przecinkiem
     * 5 cyfr po przecinku
 
+:Co zadanie sprawdza?:
+    * Definiowanie i uruchamianie funkcji
+    * Sprawdzanie przypadków brzegowych (niekompatybilne argumenty)
+    * Parsowanie argumentów funkcji
+    * Definiowanie i korzystanie z ``dict`` z wartościami
+    * Przypadek zaawansowany: argumenty pozycyjne i domyślne
 
 Rzymskie
 --------
-:Zadanie 1:
-    Napisz program, który przeliczy wprowadzoną liczbę rzymską na jej postać dziesiętną.
-
-:Zadanie 2:
-    Zrób drugą funkcję, która dokona procesu odwrotnego.
+* Napisz program, który przeliczy wprowadzoną liczbę rzymską na jej postać dziesiętną.
+* Zrób drugą funkcję, która dokona procesu odwrotnego.

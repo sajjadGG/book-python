@@ -250,6 +250,22 @@ Pola klasy
 
 Funkcja inicjalizująca
 ----------------------
+.. code-block:: python
+
+    class Server:
+
+        def __init__(self, host, user, password):
+            self.host = host
+            self.user = user
+            self.password = password
+
+
+    localhost = Server(
+        host='localhost',
+        user='admin',
+        password='admin'
+    )
+
 
 ``__init__`` jest metodą klasy, która wykonuje się podczas tworzenia nowego obiektu. Nie jest to do końca konstruktor tego obiektu, ale dla większości zastosowań można przyjąć, że metoda ``__init__`` jest konstruktorem klasy.
 
