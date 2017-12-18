@@ -398,3 +398,4 @@ Liczby całkowite
 :Podpowiedź:
     * Liczba całkowita to taka, której część dziesiętna nie występuje (``int``) lub jest równa zero ``float``. Możesz to sprawdzić dzieląc liczbę z resztą przez 1 i sprawdzając resztę z dzielenia.
     * Alternatywnie Możesz użyć funkcji ``type()`` albo ``isinstance()``
+    * Zwróć uywagę, że ``input()`` zawsze zwraca ``str`` wiec trzeba rzutowac na ``int``, ale wtedy tracimy informacje czy wczesniej mielismy ``float`` oraz wyskakuje exception gdy podano inny niekompatybilny typ

@@ -9,6 +9,10 @@ Podpowiedź:
 
 def czy_liczba_jest_calkowita(liczba):
     """
+    Zwroc uywage, ze ``input()`` zawsze zwraca ``str()`` wiec trzeba rzutowac na int
+    Wtedy tracimy informacje czy byl wczesniej float
+    Lub wyskakuje exception gdy podano inny typ
+
     >>> czy_liczba_jest_calkowita(0)
     True
     >>> czy_liczba_jest_calkowita(1)
@@ -28,4 +32,5 @@ def czy_liczba_jest_calkowita(liczba):
 
 if __name__ == '__main__':
     liczba_wprowadzona_przez_uzytownika = input('Podaj liczbę: ')
-    czy_liczba_jest_calkowita(liczba=liczba_wprowadzona_przez_uzytownika)
+    wynik = czy_liczba_jest_calkowita(liczba=liczba_wprowadzona_przez_uzytownika)
+    print(wynik)
