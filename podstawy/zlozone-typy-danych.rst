@@ -293,4 +293,4 @@ Napisz program który przekonwertuje odległości (podane w metrach) i zwróci `
     * 1000 m = 1 km
     * 1608 m = 1 mila
     * 1852 m = 1 mila morska
-    * ``def km_na_m()`` oraz ``return``
+    * ``def konwersja_odleglosci():`` oraz ``return {...}``
