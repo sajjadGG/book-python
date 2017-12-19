@@ -6,17 +6,40 @@ Matematyka
 
 Moduł ``math`` w bibliotece standardowej
 ========================================
-
 Biblioteka ``math`` implementuje podstawowe operacje matematyczne. Pełna lista funkcji, wraz z opisami, dostępna jest po wywołaniu komendy ``help(math)``. Funckcje biblioteki ``math`` wykonują operacje na pojedynczych liczbach (nie na listach).
 
 .. code-block:: python
 
     import math
 
+    math.isinf(x)
+    math.floor(x)
+    math.ceil(x)
+    math.fabs(x)
+
+    math.log(x)
+    math.log(x, base=2)
+    math.sqrt()
+    math.pow(x, y)
+    math.exp(x)
+    math.log10()
+
     math.sin()
     math.cos()
     math.tan()
+
+    math.atan(x)
+    math.asin(x)
+    math.acos(x)
+
+    # Return the Euclidean norm, sqrt(x*x + y*y). This is the length of the vector from the origin to point (x, y).
+    math.hypot(x, y)
+
+    math.degrees(x)
+    math.radians(x)
+
     math.pi
+    math.e
 
 Moduł ``statistics`` w bibliotece standardowej
 ==============================================
@@ -42,8 +65,9 @@ Moduł ``random`` w bibliotece standardowej
     random.random()
 
 
-Moduł ``matplotlib`` (nie w bibliotece standardowej)
+Moduł ``matplotlib`` (biblioteka zewnętrzna)
 ====================================================
+.. note:: Moduł jest szczegółowo opisany w :ref:`matplotlib`.
 
 Moduł ``matplotlib`` pozwala na rysowanie wykresów i diagramów. Jest to bardzo rozbudowana biblioteka z setkami opcji konfiguracyjnych. Najczęściej używanym modułem biblioteki ``matplotlib`` jest moduł ``pyplot``, który implementuje szereg funkcji umożliwiających rysowanie wykresów 2d.
 
@@ -53,14 +77,12 @@ Podstawowe użycie jest następujące.
 
     from matplotlib import pyplot as plt
 
-
-.. code-block:: python
-
     plt.plot(0, 0, 'o')
     plt.show()
 
-
 .. code-block:: python
+
+    from matplotlib import pyplot as plt
 
     x1 = [x*0.01 for x in range(0,628)]
     y1 = [math.sin(x*0.01)+random.gauss(0, 0.1) for x in range(0,628)]

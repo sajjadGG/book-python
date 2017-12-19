@@ -150,3 +150,6 @@ Testy dla wszystkich funkcji aktualnie zdefiniowanych w przestrzeni nazw wykonuj
 
         return abs(km * 1000.0)
 
+Zadania kontrolne
+=================
+
