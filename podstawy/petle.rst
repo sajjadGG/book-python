@@ -212,7 +212,7 @@ Napisz program, który wczytuje od użytkownika kolejne oceny i:
     * ``in``
     * ``statistics.mean()``
 
-    .. code-block::
+    .. code-block:: python
 
         try:
             wprowadzona_ocena = float(input('Wprowadź ocenę: '))

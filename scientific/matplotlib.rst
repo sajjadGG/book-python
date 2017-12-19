@@ -1,4 +1,4 @@
-.. _matplotlib::
+.. _matplotlib:
 
 **********
 Matplotlib

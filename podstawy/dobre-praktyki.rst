@@ -435,8 +435,10 @@ Kilka przykaładów z praktyki
 Magic number i Magic string
 ===========================
 
-Passowords
-==========
+
+Passwords and secrets
+=====================
+* UMASK
 * Sticky bit
 * setuid
 * configparser
@@ -445,6 +447,7 @@ Passowords
 Wczytywanie konfiguracji programów
 ==================================
 * configparser
+
 
 Wersjonowanie API
 =================

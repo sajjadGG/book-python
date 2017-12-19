@@ -4,86 +4,47 @@ Datetime
 
 ``calendar``
 ============
-
-.. code-block:: python
-
-    import calendar
-
-    cal = calendar.HTMLCalendar()
-    cal.formatmonth(2017, 12)
-
+.. literalinclude:: src/calendar-html.py
+    :language: python
+    :caption: HTML Calendar
 
 
 ``time``
 ========
+.. literalinclude:: src/time-sleep.py
+    :language: python
+    :caption: Time sleep function
 
-.. code-block:: python
+.. literalinclude:: src/time-timestamp.py
+    :language: python
+    :caption: Get timestamp
 
-    import time
+.. literalinclude:: src/time-format.py
+    :language: python
+    :caption: Time formatting
 
-    time.sleep(2)
+.. literalinclude:: src/time-parse.py
+    :language: python
+    :caption: Time parsing
 
-.. code-block:: python
-
-    import time
-
-    >>> time.time()
-    1496737953.0712671
-
-    >>> time.time()
-    1496737954.3189602
-
-    >>> time.time()
-    1496737954.9830358
-
-.. code-block:: python
-
-    >>> from time import gmtime, strftime
-
-    >>> strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
-    'Thu, 28 Jun 2001 14:17:15 +0000'
-
-.. code-block:: python
-
-    >>> import time
-
-    >>> time.strptime("30 Nov 00", "%d %b %y")
-    time.struct_time(tm_year=2000, tm_mon=11, tm_mday=30, tm_hour=0, tm_min=0, tm_sec=0, tm_wday=3, tm_yday=335, tm_isdst=-1)
-
-.. code-block:: python
-
-    >>> import time
-
-    >>> time.timezone
-    -3600
-
-    >>> time.tzname
-    ('CET', 'CEST')
-
+.. literalinclude:: src/time-timezone.py
+    :language: python
+    :caption: Timezone information for time
 
 ``datetime``
 ============
+* Computerophile Time & Time Zones https://www.youtube.com/watch?v=-5wpm-gesOY
 
-* `Computerophile Time & Time Zones <https://www.youtube.com/watch?v=-5wpm-gesOY>`_
 
 Tworzenie obiektu ``date`` i ``datetime``
 -----------------------------------------
-
-.. code-block:: python
-
-    import datetime
-
-    now = datetime.datetime.now()
-    today = datetime.date.today()
-
-    date = datetime.date(2017, 12, 15)
-    dt = datetime.datetime(2017, 12, 15, 20, 13, 33)
-    midnight = datetime.datetime(2017, 12, 15)
+.. literalinclude:: src/datetime-new.py
+    :language: python
+    :caption: Creating ``date`` and ``datetime`` objects
 
 
 Różne formaty dat
 -----------------
-
 https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
 
 * '15.12.2017'
@@ -94,14 +55,14 @@ https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
 * 'December 15, 2017'
 * '2017-12-15'
 
-.. code-block:: python
+.. literalinclude:: src/datetime-format.py
+    :language: python
+    :caption: Datetime formatting as string
 
-    import datetime
+.. literalinclude:: src/datetime-parse.py
+    :language: python
+    :caption: Datetime parsing from string
 
-    now = datetime.datetime.now()
-    now.strftime('%A, %B %d, %I:%M %p')
-
-    print(f'{now:%Y-%m-%d}')
 
 +-----------+--------------------------------+------------------------+
 | Directive | Meaning                        | Example                |
@@ -228,52 +189,28 @@ incomplete or ambiguous ISO 8601 directives will raise a ``ValueError``.
 
 Przesunięcia czasu (dodawanie i odejmowanie)
 --------------------------------------------
+.. literalinclude:: src/datetime-shift.py
+    :language: python
+    :caption: Shifting datetimes
 
-.. code-block:: python
-
-    >>> import datetime
-
-    >>> d1 = datetime.datetime(2017, 6, 6, 10, 20, 36) - datetime.datetime(2017, 6, 3, 13, 17, 24)
-
-    >>> print(d1)
-    2 days, 21:03:12
-
-
-.. code-block:: python
-
-    import datetime
-
-    datetime.datetime.now() - datetime.timedelta(hours=3)
-    datetime.date(2017, 12, 15) - datetime.timedelta(days=3)
+.. literalinclude:: src/datetime-timedelta.py
+    :language: python
+    :caption: Substract time from datetimes
 
 Strefy czasowe
 --------------
-
-.. code-block:: python
-
-    import datetime
-
-    datetime.datetime.now().replace(tzinfo=datetime.timezone.utc)
+.. literalinclude:: src/datetime-tzinfo.py
+    :language: python
+    :caption: Make timezone aware object from naive datetime
 
 
 ``pytz``
 ========
+.. literalinclude:: src/datetime-pytz.py
+    :language: python
+    :caption: ``pytz`` brings the Olson tz database into Python.
 
-.. code-block:: python
-
-    >>> from datetime import datetime, timedelta
-    >>> from pytz import timezone
-    >>> import pytz
-
-    >>> utc = pytz.utc
-    >>> utc.zone
-    'UTC'
-    >>> eastern = timezone('US/Eastern')
-    >>> eastern.zone
-    'US/Eastern'
-    >>> amsterdam = timezone('Europe/Amsterdam')
-    >>> fmt = '%Y-%m-%d %H:%M:%S %Z%z'
-
+This library allows accurate and cross platform timezone calculations using Python 2.4 or higher. It also solves the issue of ambiguous times at the end of daylight saving time, which you can read more about in the Python Library Reference (datetime.tzinfo).
 
 
 Zadania kontrolne
@@ -283,18 +220,18 @@ Manipulacja datami
 ------------------
 Użytkownik poda wykorzystując ``input()`` dwie następujące daty w formacie jak poniżej:
 
-    - 'April 12, 1961 2:07 AM local time' # ALMT Timezone
-    - '07/21/69 2:56:15 AM UTC'
+    - ``April 12, 1961 2:07 AM local time`` (ALMT Timezone)
+    - ``07/21/69 2:56:15 AM UTC``
 
 * Przedstaw daty jako obiekt ``datetime``. I wyświetl je w formacie ISO.
 * Odejmij obie daty od siebie. Ile lat i miesięcy minęło między wydarzeniami?
-* Do dzisiejszej dodaj ten sam czas ile wyszło Ci w poprzednim zadaniu.
+* Do dzisiejszej daty dodaj ten sam czas, który Ci wyszedł w poprzednim zadaniu.
 * Wyświetl samą datę (bez czasu).
 * Ile będziesz miał wtedy lat?
 
 :Zadanie z gwiazdką:
-    * Uwzględnij strefy czasowe.
     * Co to za daty, które podał użytkownik?
+    * Uwzględnij strefy czasowe.
 
 :Podpowiedź:
     * wykorzystaj ``try`` i ``except`` przy ``strptime``

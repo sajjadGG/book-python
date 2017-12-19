@@ -149,15 +149,11 @@ Na etapie testów klinicznych nowego mammografu przeprowadzono statystykę, któ
     - 90% przypadków, kiedy kobieta ma raka jest wykrywana prawidłowo, 10% z nich nie
     - U 20% zdrowych osób test wykrywa nowotwór.
 
-.. table::
-    :name: table-nowotwory
+.. csv-table:: Nowotwory
+    :header: "Wynik testu", "Chory (1%)", "Zdrowy (99%)"
 
-    =========== ========== =============
-    Wynik testu Chory (1%)	Zdrowy (99%)
-    ----------- ---------- -------------
-    pozytywny	90%        10%
-    negatywny	20%        80%
-    =========== ========== ==============
+    "pozytywny", "90%", "10%"
+    "negatywny", "20%", "80%"
 
 Załóżmy, że dostałaś pozytywny wynik, czyli masz raka.
 
