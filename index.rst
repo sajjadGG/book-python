@@ -5,13 +5,18 @@ Kurs programowania w Python i Machine Learning
 **Author**
     :name: `Matt Harasymczuk <http://astrotech.io>`_
     :email: `python@astrotech.io <mailto:python@astrotech.io>`_
-    :www: `http://www.astrotech.io <http://astrotech.io>`_
-    :facebook: `https://facebook.com/matt.harasymczuk <https://facebook.com/matt.harasymczuk>`_
-    :linkedin: `https://linkedin.com/in/mattharasymczuk <https://linkedin.com/in/mattharasymczuk>`_
-    :slideshare: `https://www.slideshare.net/astrotech/presentations <https://www.slideshare.net/astrotech/presentations>`_
+    :www: http://www.astrotech.io
+    :facebook: https://facebook.com/matt.harasymczuk
+    :linkedin: https://linkedin.com/in/mattharasymczuk
+    :slideshare: https://www.slideshare.net/astrotech/presentations
 
 .. todo:: użyć literalinclude do kodu oraz dopisać testy
-.. todo:: dodać linki do innych dokumentacji: git, devops, procesy, agile
+
+**Dokumentacja do szkolenia**
+    :Python: http://python.astrotech.io
+    :DevOps: http://devops.astrotech.io
+    :GIT: http://git.astrotech.io
+    :Agile: http://agile.astrotech.io
 
 =====
 Wstęp
@@ -120,6 +125,7 @@ W zastosowaniach naukowych
     :caption: W zastosowaniach naukowych
 
     scientific/biblioteki.rst
+    scientific/matplotlib.rst
 
 
 ================

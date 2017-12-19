@@ -8,48 +8,26 @@ Konstrukcja ``with``
 ====================
 * Context manager
 
+
 Czytanie
 ========
-.. code-block:: python
+.. literalinclude:: src/file-read.py
+    :language: python
+    :caption: Reading from file
 
-    with open(FILENAME) as file:
-        for line in file:
-            print(line)
-
-.. code-block:: python
-
-    with open(FILENAME) as file:
-        content = file.read()
-
-
-.. code-block:: python
-
-    with open(FILENAME) as file:
-        content = file.readlines()
-
-.. code-block:: python
-
-    with open(FILENAME) as file:
-        for line in file.readlines()[30:50]
-            print(line)
 
 Zapis
 =====
-.. code-block:: python
-
-    with open(FILENAME, 'w') as file:
-        file.write('foobar')
-
-.. code-block:: python
-
-    with open(FILENAME, 'a') as file:
-        file.write('foobar')
+.. literalinclude:: src/file-write.py
+    :language: python
+    :caption: Writing to file
 
 
 Tryby odczytu i zapisu
 ======================
 .. csv-table::
     :header: "Character", "Meaning"
+    :widths: 20, 80
 
     "``'r'``", "open for reading (default)"
     "``'w'``", "open for writing, truncating the file first"
@@ -57,22 +35,12 @@ Tryby odczytu i zapisu
     "``'b'``", "binary mode"
     "``'+'``", "open a disk file for updating (reading and writing)"
 
+
 Obsługa wyjątków
 ================
-.. code-block:: python
-
-    FILENAME = input('Podaj nazwę pliku: ')
-
-    try:
-        with open(FILENAME, 'w') as file:
-            content = file.read()
-            print(content)
-
-    except FileNotFoundError:
-        print('File does not exists')
-
-    except PermissionError:
-        print('Brak uprawnien')
+.. literalinclude:: src/file-write.py
+    :language: python
+    :caption: Exception handling while accessing files
 
 
 Zadania kontrolne
@@ -83,9 +51,10 @@ Zawartość zadanego pliku
 #. Napisz program, który wyświetli na ekranie zawartość pliku o nazwie podanej przez użytkownika.
 #. Dopisz obsługę wyjątków dla braku uprawnień oraz tego że plik nie istnieje.
 
+
 Parsowanie ``/etc/passwd``
 --------------------------
-* Sparsuj plik ``/etc/passwd`` i przedstaw go w formacie listy dictów:
+#. Sparsuj plik ``/etc/passwd`` i przedstaw go w formacie listy dictów:
 
     - User name
     - Encrypted password
@@ -95,51 +64,12 @@ Parsowanie ``/etc/passwd``
     - User home directory
     - Login shell
 
-* Zwróć username, uid oraz grupy użytkowników, których UID jest mniejszy niż 50.
+#. Zwróć username, uid oraz grupy użytkowników, których UID jest mniejszy niż 50.
+#. Gdyby w Twoim systemie nie było pliku, skorzystaj z szablonu poniżej:
 
-Gdyby w Twoim systemie nie było pliku, skorzystaj z szablonu poniżej:
-
-.. code-block:: text
-
-    ##
-    # User Database
-    ##
-    root:x:0:0:root:/root:/bin/bash
-    bin:x:1:1:bin:/bin:/sbin/nologin
-    daemon:x:2:2:daemon:/sbin:/sbin/nologin
-    adm:x:3:4:adm:/var/adm:/sbin/nologin
-    lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
-    sync:x:5:0:sync:/sbin:/bin/sync
-    shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
-    halt:x:7:0:halt:/sbin:/sbin/halt
-    mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
-    news:x:9:13:news:/etc/news:
-    uucp:x:10:14:uucp:/var/spool/uucp:/sbin/nologin
-    operator:x:11:0:operator:/root:/sbin/nologin
-    games:x:12:100:games:/usr/games:/sbin/nologin
-    gopher:x:13:30:gopher:/var/gopher:/sbin/nologin
-    ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
-    nobody:x:99:99:Nobody:/:/sbin/nologin
-    nscd:x:28:28:NSCD Daemon:/:/sbin/nologin
-    vcsa:x:69:69:virtual console memory owner:/dev:/sbin/nologin
-    ntp:x:38:38::/etc/ntp:/sbin/nologin
-    pcap:x:77:77::/var/arpwatch:/sbin/nologin
-    dbus:x:81:81:System message bus:/:/sbin/nologin
-    avahi:x:70:70:Avahi daemon:/:/sbin/nologin
-    rpc:x:32:32:Portmapper RPC user:/:/sbin/nologin
-    mailnull:x:47:47::/var/spool/mqueue:/sbin/nologin
-    smmsp:x:51:51::/var/spool/mqueue:/sbin/nologin
-    apache:x:48:48:Apache:/var/www:/sbin/nologin
-    sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
-    dovecot:x:97:97:dovecot:/usr/libexec/dovecot:/sbin/nologin
-    oprofile:x:16:16:Special user account to be used by OProfile:/home/oprofile:/sbin/nologin
-    rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
-    nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
-    xfs:x:43:43:X Font Server:/etc/X11/fs:/sbin/nologin
-    haldaemon:x:68:68:HAL daemon:/:/sbin/nologin
-    avahi-autoipd:x:100:156:avahi-autoipd:/var/lib/avahi-autoipd:/sbin/nologin
-    gdm:x:42:42::/var/gdm:/sbin/nologin
-    sabayon:x:86:86:Sabayon user:/home/sabayon:/sbin/nologin
+    .. literalinclude:: src/file-passwd.txt
+        :language: text
+        :caption: ``/etc/passwd`` example
 
 :Co zadanie sprawdza?:
     * czytanie i parsowanie pliku
@@ -149,33 +79,22 @@ Gdyby w Twoim systemie nie było pliku, skorzystaj z szablonu poniżej:
     * parsowanie stringów
     * praca ze ścieżkami w systemie operacyjnym
 
+
 Parsowanie ``/etc/hosts``
 -------------------------
 #. Z twojego systemu operacyjnego wyciągnij plik ``/etc/hosts`` i przedstaw go w formie listy dictów jak w przykładzie poniżej:
 
-    .. code-block:: python
+    .. literalinclude:: src/file-hosts.py
+        :language: python
+        :caption: ``/etc/hosts`` example
 
-        {'ip': '127.0.0.1', 'hostnames': ['localhost'], 'protocol': 'ipv4'},
-        {'ip': '127.0.0.1', 'hostnames': ['mycomp'], 'protocol': 'ipv4'},
-        {'ip': '10.13.37.1', 'hostnames': ['facebook.com', 'google.com', 'microsoft.com'], 'protocol': 'ipv4'},
-        {'ip': '255.255.255.255', 'hostnames': ['broadcasthost'], 'protocol': 'ipv4'},
-        {'ip': '::1', 'hostnames': ['localhost'], 'protocol': 'ipv6'},
+#. Zwróć uwagę na uprawnienia do odczytu pliku
+#. System Windows również posiada ten plik (``C:/Windows/System32/drivers/etc/hosts``)
+#. Gdyby w Twoim systemie nie było pliku, skorzystaj z szablonu poniżej:
 
-:Uwaga:
-    * Zwróć uwagę na uprawnienia do odczytu pliku
-    * System Windows również posiada ten plik (``C:/Windows/System32/drivers/etc/hosts``)
-    * Gdyby w Twoim systemie nie było pliku, skorzystaj z szablonu poniżej:
-
-        .. code-block:: text
-
-            ##
-            # Host Database
-            ##
-            127.0.0.1       localhost
-            127.0.0.1       mycomp
-            10.13.37.1      facebook.com google.com microsoft.com
-            255.255.255.255 broadcasthost
-            ::1             localhost
+    .. literalinclude:: src/file-hosts.txt
+        :language: text
+        :caption: ``/etc/hosts`` example
 
 :Co zadanie sprawdza?:
     * czytanie i parsowanie pliku
