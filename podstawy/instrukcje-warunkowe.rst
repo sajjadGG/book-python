@@ -171,3 +171,10 @@ Zmienne i wczytywanie ciągu od użytkownika
 ------------------------------------------
 #. Napisz program, który poprosi użytkownika o wiek i wyświetli wartość.
 #. Następnie sprawdzi pełnoletność i wyświetli informację czy osoba jest "dorosła" czy "niepełnoletnia".
+
+:Co zadanie sprawdza?:
+    * Wczytywanie ciągu znaków od użytkownika
+    * Rzutowanie i konwersja typów
+    * Instrukcje warunkowe
+    * Sprawdzanie przypadków brzegowych (niekompatybilne argumenty)
+    * Definiowanie zmiennych i stałych w programie

@@ -152,6 +152,13 @@ Gdyby w Twoim systemie nie było pliku, skorzystaj z szablonu poniżej:
     gdm:x:42:42::/var/gdm:/sbin/nologin
     sabayon:x:86:86:Sabayon user:/home/sabayon:/sbin/nologin
 
+:Co zadanie sprawdza?:
+    * czytanie i parsowanie pliku
+    * nieregularne pliki konfiguracyjne (struktura może się zmieniać)
+    * filtrowanie elementów
+    * korzystanie z pętli i instrukcji warunkowych
+    * parsowanie stringów
+    * praca ze ścieżkami w systemie operacyjnym
 
 Parsowanie ``/etc/hosts``
 -------------------------
@@ -180,3 +187,11 @@ Z twojego systemu operacyjnego wyciągnij plik ``/etc/hosts`` i przedstaw go w f
     10.13.37.1      facebook.com google.com microsoft.com
     255.255.255.255 broadcasthost
     ::1             localhost
+
+:Co zadanie sprawdza?:
+    * czytanie i parsowanie pliku
+    * nieregularne pliki konfiguracyjne (struktura może się zmieniać)
+    * filtrowanie elementów
+    * korzystanie z pętli i instrukcji warunkowych
+    * parsowanie stringów
+    * praca ze ścieżkami w systemie operacyjnym

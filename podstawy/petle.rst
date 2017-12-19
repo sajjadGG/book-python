@@ -206,6 +206,7 @@ Napisz program, który wczytuje od użytkownika kolejne oceny i:
     * Zastosuj skalę ocen ``[2, 3, 3.5, 4, 4.5, 5]``
 
 :Podpowiedź:
+    * Czytelny kod powinien mieć około 10 linii
     * dla ułatwienia wszystkie oceny mogą być typu ``float``
     * ``len()`` ``sum()``
     * ``in``
@@ -217,3 +218,11 @@ Napisz program, który wczytuje od użytkownika kolejne oceny i:
             wprowadzona_ocena = float(input('Wprowadź ocenę: '))
         except ValueError:
             break
+
+:Co zadanie sprawdza?:
+    * wczytywanie ciągu znaków od użytkownika
+    * weryfikacja ciągu wprowadzonego od użytkownika
+    * korzystanie z pętli oraz instrukcji wychodzących
+    * korzystanie z bibliotek standardowych
+    * konwersja typów i rzutowanie
+    * sprawdzanie czy obiekt jest instancją klasy

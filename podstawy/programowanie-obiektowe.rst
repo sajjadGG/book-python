@@ -652,11 +652,20 @@ Książka adresowa
         ]
 
 :Zadanie 2:
-    Napisz książkę adresową, która będzie zapisywała a później odczyta i sparsuje dane do pliku w formacie Pickle.
+    Napisz książkę adresową, która będzie zapisywała a później odczyta i sparsuje dane do pliku w formacie *Pickle*.
 
 :Zadanie 3:
-    Napisz książkę adresową, która będzie zapisywała a później odczyta i sparsuje dane do pliku w formacie JSON.
+    Napisz książkę adresową, która będzie zapisywała a później odczyta i sparsuje dane do pliku w formacie *JSON*.
 
 :Podpowiedź:
+    * Czytelny kod powinien mieć około 60 linii
     * Dane w formacie Pickle muszą być zapisane do pliku binarnie
     * ``pickle.loads()`` przyjmuje uchwyt do pliku, a nie jego zawartość
+
+:Co zadanie sprawdza?:
+    * myślenie obiektowe i odwzorowanie struktury w programie
+    * praca z obiektami
+    * zagnieżdżanie obiektów
+    * serializacja obiektów do formatów *JSON* i *Pickle*
+    * korzystanie z operatorów ``*`` i ``**``
+    * rzutowanie obiektu na stringa oraz jego reprezentacja (które i kiedy użyć)

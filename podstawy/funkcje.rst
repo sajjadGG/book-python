@@ -305,10 +305,8 @@ Zadania kontrolne
 
 Konwersja liczby na zapis słowny
 --------------------------------
-Napisz program ``numer.py``, który zamieni wprowadzony przez użytkownika ciąg cyfr na formę tekstową:
-
-* znaki nie będące cyframi mają być ignorowane
-* konwertujemy cyfry, nie liczby, a zatem:
+#. Napisz program ``numer.py``, który zamieni wprowadzony przez użytkownika ciąg cyfr na formę tekstową.
+#. Konwertujemy cyfry, nie liczby, a zatem:
 
     .. code-block:: python
 
@@ -318,18 +316,19 @@ Napisz program ``numer.py``, który zamieni wprowadzony przez użytkownika ciąg
         >>> int_to_str(1100)
         'jeden jeden zero zero'
 
-* Napisz testy sprawdzające przypadki brzegowe.
-* Wersja zaawansowana - odmiana przez przypadki
+#. Wersja zaawansowana - odmiana przez przypadki
 
-.. code-block:: python
+    .. code-block:: python
 
-    >>> int_to_str(999)
-    'dziewiećset dziewięćdziesiąt dziewięć'
+        >>> int_to_str(999)
+        'dziewiećset dziewięćdziesiąt dziewięć'
 
-    >>> int_to_str(127.32)
-    'sto dwadzieścia siedem i trzydzieści dwa setne'
+        >>> int_to_str(127.32)
+        'sto dwadzieścia siedem i trzydzieści dwa setne'
 
-:Zakres:
+:Wymagania:
+    * Znaki nie będące cyframi mają być ignorowane
+    * Napisz testy sprawdzające przypadki brzegowe.
     * 6 cyfr przed przecinkiem
     * 5 cyfr po przecinku
 
@@ -339,8 +338,18 @@ Napisz program ``numer.py``, który zamieni wprowadzony przez użytkownika ciąg
     * Parsowanie argumentów funkcji
     * Definiowanie i korzystanie z ``dict`` z wartościami
     * Przypadek zaawansowany: argumenty pozycyjne i domyślne
+    * Rzutowanie i konwersja typów
 
 Rzymskie
 --------
-* Napisz program, który przeliczy wprowadzoną liczbę rzymską na jej postać dziesiętną.
-* Zrób drugą funkcję, która dokona procesu odwrotnego.
+#. Napisz program, który przeliczy wprowadzoną liczbę rzymską na jej postać dziesiętną.
+#. Napisz drugą funkcję, która dokona procesu odwrotnego.
+
+:Co zadanie sprawdza?:
+    * Definiowanie i uruchamianie funkcji
+    * Sprawdzanie przypadków brzegowych (niekompatybilne argumenty)
+    * Parsowanie argumentów funkcji
+    * Definiowanie i korzystanie z ``dict`` z wartościami
+    * Sprawdzanie czy element istnieje w ``dict``
+    * Rzutowanie i konwersja typów
+

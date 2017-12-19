@@ -185,20 +185,36 @@ Zadania kontrolne
 
 Powielanie napisów
 ------------------
-Napisz program, który wczyta od użytkownika pewien napis, a następnie wyświetli 5 kopii tego napisu, każda w osobnej linii. Napisz doctest do takiej funkcji. Napisz trzy wersje tego programu:
+#. Napisz program, który wczyta od użytkownika pewien napis, a następnie wyświetli 5 kopii tego napisu, każda w osobnej linii.
+#. Napisz doctest do takiej funkcji.
+#. Napisz trzy wersje tego programu:
 
-* wykorzystując ``range()``
-* wykorzystując pętlę ``while``
-* wykorzystując właściwości mnożenia stringów ``print('ciag znakow' * 5)``
+    * wykorzystując ``range()``
+    * wykorzystując pętlę ``while``
+    * wykorzystując właściwości mnożenia stringów ``print('ciag znakow' * 5)``
+
+:Co zadanie sprawdza?:
+    * wczytywanie ciągu znaków od użytkownika
+    * formatowanie ciągu znaków
+    * korzystanie z pętli i instrukcji warunkowych
 
 Przeliczanie temperatury
 ------------------------
-Woda zamarza przy 32 stopniach Fahrenheita, a wrze przy 212 stopniach Fahrenheita. Napisz program, który wyświetli tabelę przeliczeń stopni Celsjusza na stopnie Fahrenheita w zakresie od –20 do +40 stopni Celsjusza (co 5 stopni). Pamiętaj o wyświetlaniu znaku plus/minus przy temperaturze. Oczywiście napisz testy do rozwiązania.
+#. Woda zamarza przy 32 stopniach Fahrenheita, a wrze przy 212 stopniach Fahrenheita.
+#. Napisz program, który wyświetli tabelę przeliczeń stopni Celsjusza na stopnie Fahrenheita w zakresie od –20 do +40 stopni Celsjusza (co 5 stopni).
+#. Pamiętaj o wyświetlaniu znaku plus/minus przy temperaturze.
+#. Napisz testy do rozwiązania.
 
-* Zrób aby znak plus lub minus był zawsze wyświetlany.
-* Zrób aby tabelka była stałej szerokości.
+:Wymagania:
+    * Zrób aby znak plus lub minus był zawsze wyświetlany.
+    * Zrób aby tabelka była stałej szerokości.
 
 :Podpowiedź:
+    * Czytelny kod powinien mieć około 5 linii
     * Fahrenheit to Celsius: (°F - 32) / 1.8 = °C
     * Celsius to Fahrenheit: (°C * 1.8) + 32 = °F
     * skorzystaj z funkcji ``range()``
+
+:Co zadanie sprawdza?:
+    * konwersja typów
+    * zaawansowane formatowanie ciągu znaków
