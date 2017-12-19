@@ -835,7 +835,7 @@ Książka adresowa
     Napisz książkę adresową, która będzie zapisywała a później odczyta i sparsuje dane do pliku w formacie *JSON*.
 
 :Podpowiedź:
-    * Czytelny kod powinien mieć około 60 linii
+    * Czytelny kod powinien mieć około 35 linii
     * Dane w formacie Pickle muszą być zapisane do pliku binarnie
     * ``pickle.loads()`` przyjmuje uchwyt do pliku, a nie jego zawartość
 

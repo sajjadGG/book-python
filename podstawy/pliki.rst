@@ -6,7 +6,6 @@ Operacje na plikach
 
 Konstrukcja ``with``
 ====================
-
 * Context manager
 
 Czytanie
@@ -36,7 +35,6 @@ Czytanie
 
 Zapis
 =====
-
 .. code-block:: python
 
     with open(FILENAME, 'w') as file:
@@ -50,23 +48,17 @@ Zapis
 
 Tryby odczytu i zapisu
 ======================
+.. csv-table::
+    :header: "Character", "Meaning"
 
-   ========= ===============================================================
-   Character Meaning
-   ========= ===============================================================
-   ``'r'``   open for reading (default)
-   ``'w'``   open for writing, truncating the file first
-   ``'x'``   open for exclusive creation, failing if the file already exists
-   ``'a'``   open for writing, appending to the end of the file if it exists
-   ``'b'``   binary mode
-   ``'t'``   text mode (default)
-   ``'+'``   open a disk file for updating (reading and writing)
-   ``'U'``   universal newlines mode (deprecated)
-   ========= ===============================================================
+    "``'r'``", "open for reading (default)"
+    "``'w'``", "open for writing, truncating the file first"
+    "``'a'``", "open for writing, appending to the end of the file if it exists"
+    "``'b'``", "binary mode"
+    "``'+'``", "open a disk file for updating (reading and writing)"
 
 Obsługa wyjątków
 ================
-
 .. code-block:: python
 
     FILENAME = input('Podaj nazwę pliku: ')
@@ -88,23 +80,20 @@ Zadania kontrolne
 
 Zawartość zadanego pliku
 ------------------------
-:Zadanie 1:
-    Napisz program, który wyświetli na ekranie zawartość pliku o nazwie podanej przez użytkownika.
-
-:Zadanie 2:
-    Dopisz obsługę wyjątków dla braku uprawnień oraz tego że plik nie istnieje.
+#. Napisz program, który wyświetli na ekranie zawartość pliku o nazwie podanej przez użytkownika.
+#. Dopisz obsługę wyjątków dla braku uprawnień oraz tego że plik nie istnieje.
 
 Parsowanie ``/etc/passwd``
 --------------------------
 * Sparsuj plik ``/etc/passwd`` i przedstaw go w formacie listy dictów:
 
-        - User name
-        - Encrypted password
-        - User ID number (UID)
-        - User's group ID number (GID)
-        - Full name of the user (GECOS)
-        - User home directory
-        - Login shell
+    - User name
+    - Encrypted password
+    - User ID number (UID)
+    - User's group ID number (GID)
+    - Full name of the user (GECOS)
+    - User home directory
+    - Login shell
 
 * Zwróć username, uid oraz grupy użytkowników, których UID jest mniejszy niż 50.
 
@@ -162,31 +151,31 @@ Gdyby w Twoim systemie nie było pliku, skorzystaj z szablonu poniżej:
 
 Parsowanie ``/etc/hosts``
 -------------------------
-Z twojego systemu operacyjnego wyciągnij plik ``/etc/hosts`` i przedstaw go w formie listy dictów jak w przykładzie poniżej:
+#. Z twojego systemu operacyjnego wyciągnij plik ``/etc/hosts`` i przedstaw go w formie listy dictów jak w przykładzie poniżej:
 
-.. code-block:: python
+    .. code-block:: python
 
-    {'ip': '127.0.0.1', 'hostnames': ['localhost'], 'protocol': 'ipv4'},
-    {'ip': '127.0.0.1', 'hostnames': ['mycomp'], 'protocol': 'ipv4'},
-    {'ip': '10.13.37.1', 'hostnames': ['facebook.com', 'google.com', 'microsoft.com'], 'protocol': 'ipv4'},
-    {'ip': '255.255.255.255', 'hostnames': ['broadcasthost'], 'protocol': 'ipv4'},
-    {'ip': '::1', 'hostnames': ['localhost'], 'protocol': 'ipv6'},
+        {'ip': '127.0.0.1', 'hostnames': ['localhost'], 'protocol': 'ipv4'},
+        {'ip': '127.0.0.1', 'hostnames': ['mycomp'], 'protocol': 'ipv4'},
+        {'ip': '10.13.37.1', 'hostnames': ['facebook.com', 'google.com', 'microsoft.com'], 'protocol': 'ipv4'},
+        {'ip': '255.255.255.255', 'hostnames': ['broadcasthost'], 'protocol': 'ipv4'},
+        {'ip': '::1', 'hostnames': ['localhost'], 'protocol': 'ipv6'},
 
 :Uwaga:
     * Zwróć uwagę na uprawnienia do odczytu pliku
     * System Windows również posiada ten plik (``C:/Windows/System32/drivers/etc/hosts``)
     * Gdyby w Twoim systemie nie było pliku, skorzystaj z szablonu poniżej:
 
-.. code-block:: text
+        .. code-block:: text
 
-    ##
-    # Host Database
-    ##
-    127.0.0.1       localhost
-    127.0.0.1       mycomp
-    10.13.37.1      facebook.com google.com microsoft.com
-    255.255.255.255 broadcasthost
-    ::1             localhost
+            ##
+            # Host Database
+            ##
+            127.0.0.1       localhost
+            127.0.0.1       mycomp
+            10.13.37.1      facebook.com google.com microsoft.com
+            255.255.255.255 broadcasthost
+            ::1             localhost
 
 :Co zadanie sprawdza?:
     * czytanie i parsowanie pliku
