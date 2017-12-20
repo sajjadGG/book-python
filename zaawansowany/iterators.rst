@@ -108,8 +108,11 @@ Przykład
 Zadania kontrolne
 =================
 
+Range
+-----
+#. Zaimplementuj własne rozwiązanie ``range()`` wykorzystując iterator.
+#. Początek, koniec, krok (step)
+
 Książka adresowa
 ----------------
-
-:Zadanie:
-    * spraw aby można było iterować w książce adresowej z poprzednich zadań po adresach użytkownika.
+#. spraw aby można było iterować w książce adresowej z poprzednich zadań po adresach użytkownika.

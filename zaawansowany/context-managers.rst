@@ -7,6 +7,14 @@ Local variables in Python have function scope, and thus the target of a with sta
 * ``__enter__()``
 * ``__exit__()``
 
+Zastosowanie
+------------
+* Połączenia do bazy danych
+* Pliki
+* Stream siecowe
+
+Przykład
+--------
 .. code-block:: python
 
     f = open(filename)

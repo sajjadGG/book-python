@@ -183,12 +183,19 @@ Tworzenie paczek
 
 ``setup.cfg``
 -------------
-
 .. code:: ini
 
-    [pep8]
-    max-line-length = 939
+    [bdist_wheel]
+    universal = 1
+
+    [metadata]
+    license_file = LICENSE
+
+    [pycodestyle]
+    max-line-length = 999
+    exclude = */migrations/*
     ignore = E402,W391
+
 
 ``python setup.py sdist upload``
 --------------------------------
@@ -196,6 +203,5 @@ Tworzenie paczek
 
 Przyszłość paczkowania i dystrybucji
 ====================================
-
 * https://www.youtube.com/watch?v=jOiAp3wtx18
 * https://www.youtube.com/watch?v=Oc9khbXBes8

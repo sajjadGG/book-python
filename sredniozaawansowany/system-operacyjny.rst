@@ -2,6 +2,8 @@
 
 \usepackage{ulem}
 
+\usepackage{ulem}
+
 *****************
 System Operacyjny
 *****************
@@ -266,22 +268,25 @@ Zadanie kontrolne
 
 Rekursywne przechodzenie i wykonywanie poleceń
 ----------------------------------------------
-Napisz skrypt, który przeszuka rekurencyjnie wszystkie katalogi na pulpicie w Twoim systemie operacyjnym i jeżeli znajdzie plik README (z dowolnym rozszerzeinem) to wyświetli jego zawartość za pomocą polecenia ``cat`` (macOS, Linux) lub ``type`` (Windows).
-
-Jeżeli skrypt nie znajdzie pliku README, to ma rzucić informację ``logging.critical()`` i wyjść z kodem błędu ``1``.
+#. Napisz skrypt, który przeszuka rekurencyjnie wszystkie katalogi na pulpicie w Twoim systemie operacyjnym i jeżeli znajdzie plik *README* (z dowolnym rozszerzeinem) to wyświetli jego zawartość za pomocą polecenia ``cat`` (macOS, Linux) lub ``type`` (Windows).
+#. Ścieżkę do pliku ``README`` skonstruuj za pomocją ``os.path.join()``
+#. Jeżeli skrypt nie znajdzie pliku README, to ma rzucić informację ``logging.critical()`` i wyjść z kodem błędu ``1``.
 
 :Podpowiedź:
     * Gdyby był problem ze znalezieniem pliku, a ścieżka jest poprawna to zastosuj ``shell=True``
+    * ``os.walk()``
+    * ``subprocess.run()``
 
 :Co to zadanie sprawdza?:
     * Przeglądanie katalogów i algorytm przeszykiwania
     * Sanityzacja parametrów
-    * Korzystanie z ``logging``
+    * Logowanie wydarzeń w programie
     * Uruchamianie poleceń w systemie
     * Przechwytywanie outputu poleceń
     * Kody błędów
     * Przechodzenie do katalogów
     * Ścieżki względne i bezwzględne
+    * Łączenie ścieżek
 
 Tree
 ----

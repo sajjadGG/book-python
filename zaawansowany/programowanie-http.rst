@@ -377,35 +377,49 @@ Prosty serwer HTTP
 
 .. code-block:: python
 
-    from http.server import BaseHTTPRequestHandler
-    from http.server import HTTPServer
+import re
+from http.server import BaseHTTPRequestHandler
+from http.server import HTTPServer
 
-    class testHTTPServer_RequestHandler(BaseHTTPRequestHandler):
+SERVER = ('localhost', 8080)
 
-        def do_GET(self):
+
+class RequestHandler(BaseHTTPRequestHandler):
+    def do_HEAD(self):
+        self.send_response(200)
+        self.send_header('Content-type', 'text/html')
+        self.end_headers()
+
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header('Content-type','text/html')
+        self.end_headers()
+        self.wfile.write('<html>')
+        self.wfile.write('<body>Hello World!</body>')
+        self.wfile.write('</html>')
+
+    def do_POST(self):
+        if re.search('/api/v1/*', self.path):
+            content_length = int(self.headers['Content-Length'])
+            post_data = self.rfile.read(content_length)
+
             self.send_response(200)
-
-            # Send headers
             self.send_header('Content-type','text/html')
             self.end_headers()
-
-            # Send message back to client
-            message = "Hello world!"
-
-            # Write content as utf-8 data
-            self.wfile.write(bytes(message, "utf8"))
+            self.wfile.write('<html>')
+            self.wfile.write('<body>Hello World!</body>')
+            self.wfile.write('</html>')
 
 
-    if __name__ == '__main__':
-      print('starting server...')
+try:
+    print('Starting server {SERVER}, use <Ctrl-C> to stop')
+    httpd = HTTPServer(SERVER, RequestHandler)
+    httpd.serve_forever()
 
-      # Server settings
-      # Choose port 8080, for port 80, which is normally used for a http server, you need root access
-      server_address = ('127.0.0.1', 8081)
-      httpd = HTTPServer(server_address, testHTTPServer_RequestHandler)
+except KeyboardInterrupt:
+    print ('^C received, shutting down the web server...')
+    httpd.socket.close()
 
-      print('running server...')
-      httpd.serve_forever()
 
 Zadania kontrolne
 =================
@@ -413,47 +427,54 @@ Zadania kontrolne
 
 REST API
 --------
+#. Używając biblioteki standardowej w Pythonie zaciągnij informacje o repozytoriach użytkownika Django na https://github.com
+#. w przeglądarce internetowej wygeneruj w swoim profilu token https://github.com/settings/tokens
+#. Następnie z przeglądnij listę z poziomu Pythona i znajdź URL dla repozytorium ``django``.
 
-Używając biblioteki standardowej w Pythonie zaciągnij informacje o repozytoriach użytkownika Django na https://github.com
+    .. code-block:: python
 
-* w przeglądarce internetowej wygeneruj w swoim profilu token https://github.com/settings/tokens
+        "name": "django",
+        "full_name": "django/django",
 
-* Następnie z przeglądnij listę z poziomu Pythona i znajdź URL dla repozytorium ``django``.
+        # wyszukaj "commits_url": ???
 
-.. code-block:: python
+#. Przeglądnij to repozytorium i jego listę commitów.
+#. Podaj datę i opis ostatniego commita
+#. Znajdź numery ID ticketów (``Fixed #...``) z issue trackera, które zostały rozwiązane w ostatnim miesiącu
+#. Spróbuj skorzystać zamiast biblioteki standardowej z pakietu ``requests``
 
-    "name": "django",
-    "full_name": "django/django",
+:Podpowiedź:
+    .. code-block:: rest
 
-    # wyszukaj "commits_url": ???
+        https://api.github.com/
 
-* Przeglądnij to repozytorium i jego listę commitów.
-* Podaj datę i opis ostatniego commita
-* Znajdź numery ID ticketów (``Fixed #...``) z issue trackera, które zostały rozwiązane w ostatnim miesiącu
-* Spróbuj skorzystać zamiast biblioteki standardowej z pakietu ``requests``
+        GET /orgs/django/repos
+        GET /repos/django/django/commits
 
-.. code:: REST
+    .. code-block:: console
 
-    https://api.github.com/
+        $ curl https://api.github.com/orgs/django/repos
+        $ curl https://api.github.com/repos/django/django/commits
 
-    GET /orgs/django/repos
-    GET /repos/dajngo/django/commits
+    .. code-block:: python
 
+        >>> auth = b'username:token'
+        >>> key = base64.b64encode(auth).decode("ascii")
+        >>> headers={
+        ...     'Authorization': 'Basic {key}',
+        ...     'User-Agent': 'Python HTTP',
+        ... }
 
-.. code:: console
+        # ...
 
-    $ curl https://api.github.com/orgs/django/repos
+        >>> body = resp.read().decode()
+        >>> data = json.loads(body)
 
-
-.. code-block:: python
-
-    >>> auth = b'username:token'
-    >>> headers={
-    ...     'Authorization': 'Basic {}'.format(base64.b64encode(auth).decode('ascii')),
-    ...     'User-Agent': 'Python HTTP',
-    ...}
-
-    # ...
-
-    >>> body = resp.read().decode()
-    >>> data = json.loads(body)
+:Co zadanie sprawdza?:
+    * Komunikacja HTTP (request, response)
+    * Parsowanie odpowiedzi HTTP
+    * Sprawdzanie stanu połączenia
+    * Serializacja i parsowanie *JSON*
+    * Korzystanie z API i dokumentacji
+    * Regexpy
+    * Używanie biblioteki standardowej i bibliotek zewnętrznych
