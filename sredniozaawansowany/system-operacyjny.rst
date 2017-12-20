@@ -1,3 +1,7 @@
+\usepackage{ulem}
+
+\usepackage{ulem}
+
 *****************
 System Operacyjny
 *****************
@@ -276,6 +280,8 @@ Jeżeli skrypt nie znajdzie pliku README, to ma rzucić informację ``logging.cr
     * Uruchamianie poleceń w systemie
     * Przechwytywanie outputu poleceń
     * Kody błędów
+    * Przechodzenie do katalogów
+    * Ścieżki względne i bezwzględne
 
 Tree
 ----
