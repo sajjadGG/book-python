@@ -6,49 +6,65 @@ Introspekcja
 
 Pola obiektu
 ============
+* ``__dict__``
 
 .. code-block:: python
 
-    class Address:
+    class Server:
+        _connection = None
 
         def __init__(self, host, port):
             self.host = host
             self.port = port
 
-    addr = Address(host='127.0.0.1', port=1337)
+    localhost = Server(host='127.0.0.1', port=1337)
+    output = localhost.__dict__
+    print(output)
 
-    a = addr.__dict__
-    print('Listowanie za pomoca __dict__:\n{}\n\n'.format(a))
 
+    pola = [x for x in dir(addr) if not x.startswith('__')]
+    print('Listowanie pól klasy: {pola}')
 
-    a = [x for x in dir(addr) if not x.startswith('__')]
-    print('Listowanie pól klasy:\n{}\n\n'.format(a))
-
-    a = vars(addr)
-    print('Listowanie za pomoca vars():\n{}\n\n'.format(a))
+    zmienne = vars(addr)
+    print('Listowanie za pomoca vars(): {zmienne}')
 
 Metody obiektu
 ==============
+* ``dir()``
 
 .. code-block:: python
 
-    class Address:
+    class Server:
+        _connection = None
 
         def __init__(self, host, port):
             self.host = host
             self.port = port
 
+    localhost = Server(host='127.0.0.1', port=1337)
+    output = dir(localhost)
+    print(output)
 
-    addr = Address(host='127.0.0.1', port=1337)
 
+``help()``
+----------
+* ``help()``
 
-    a = dir(addr)
-    print('Listowanie za pomocą dir():\n"{}\n\n"'.format(a))
+.. code-block:: python
 
+    class Server:
+        _connection = None
+
+        def __init__(self, host, port):
+            self.host = host
+            self.port = port
+
+    localhost = Server(host='127.0.0.1', port=1337)
+    output = help(localhost)
+    print(output)
 
 Introspekcja obiektów
 =====================
-
 In computer programming, introspection is the ability to determine the
 type of an object at runtime. It is one of Python's strengths.
 Everything in Python is an object and we can examine those objects.
@@ -56,13 +72,7 @@ Python ships with a few built-in functions and modules to help us.
 
 ``dir``
 -------
-
-In this section we will learn about ``dir`` and how it facilitates us
-in introspection.
-
-It is one of the most important functions for introspection. It returns
-a list of attributes and methods belonging to an object. Here is an
-example:
+Returns a list of attributes and methods belonging to an object.
 
 .. code-block:: python
 
@@ -84,7 +94,6 @@ scope.
 
 ``type`` and ``id``
 -------------------
-
 The ``type`` function returns the type of an object. For example:
 
 .. code-block:: python
@@ -111,6 +120,9 @@ The ``type`` function returns the type of an object. For example:
     name = "Yasoob"
     print(id(name))
     # Output: 139972439030304
+
+``isinstance()``
+----------------
 
 ``inspect`` module
 ------------------

@@ -493,6 +493,22 @@ Dekoratory ``@propery``, ``@kola.setter`` i ``@kola.deleter`` służą do zdefin
 
 .. note:: Masz aplikację pisaną od 10 lat i chcesz wstrzyknąć logowanie użycia danej zmiennej w programie. Możesz dodać ``@property`` dla tej właściwości, która napierw zaloguje ``__name__`` i ``__file__`` a później zwróci wartość (nie zmieniając API aplikacji).
 
+Monkey Patching
+---------------
+.. code-block:: python
+
+    class User:
+        def hello(self):
+            print('siema')
+
+
+    def monkey_patch():
+        print('hhh')
+
+
+    User.hello = monkey_patch
+    User.hello()
+
 ``@staticmethod``
 -----------------
 Dekorator ``@staticmethod`` służy do tworzenia metod statycznych, takich które odnoszą się do klasy jako całości, nie do konkretnego obiektu.

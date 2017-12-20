@@ -11,13 +11,14 @@ Najczęściej wykorzystuje się:
 
     import os
 
-    os.path
     os.walk()
     os.scandir()
+    os.getcwd()
 
-    os.path.join
-    os.path.abspath
-    os.path.dirname
+    os.path.join()
+    os.path.abspath()
+    os.path.dirname()
+    os.path.basename()
 
     os.remove()
     os.rmdir()
@@ -267,6 +268,14 @@ Jeżeli skrypt nie znajdzie pliku README, to ma rzucić informację ``logging.cr
 
 :Podpowiedź:
     * Gdyby był problem ze znalezieniem pliku, a ścieżka jest poprawna to zastosuj ``shell=True``
+
+:Co to zadanie sprawdza?:
+    * Przeglądanie katalogów i algorytm przeszykiwania
+    * Sanityzacja parametrów
+    * Korzystanie z ``logging``
+    * Uruchamianie poleceń w systemie
+    * Przechwytywanie outputu poleceń
+    * Kody błędów
 
 Tree
 ----
