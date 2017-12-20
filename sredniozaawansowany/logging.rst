@@ -2,20 +2,26 @@
 Logowanie zdarzeń
 *****************
 
-Poziomy logowania
-=================
+Korzystanie z ``logging``
+=========================
 
+Poziomy logowania
+-----------------
 * Critical
 * Error
 * Warning
 * Info
 * Debug
 
-Korzystanie z ``logging``
-=========================
-
 Konfiguracja logowania
 ----------------------
+.. code-block:: python
+
+    import logging
+
+    logging.info('Będę wykonywał poniższą operację...')
+    print('Ehlo!')
+
 
 .. code-block:: python
 

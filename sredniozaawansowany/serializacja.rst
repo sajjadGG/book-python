@@ -6,8 +6,7 @@ Serializacja i deserializacja
 
 Serializacja i deserializacja danych w CSV
 ==========================================
-
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import csv
 
@@ -17,8 +16,7 @@ Serializacja i deserializacja danych w CSV
     ...     for row in data:
     ...         print(row['first_name'], row['last_name'])
 
-
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import csv
 
@@ -37,12 +35,16 @@ Serializacja i deserializacja danych w CSV
     ...        writer.writerow(row)
     ...
 
+.. literalinclude:: src/serialization-csv-passwd.py
+    :language: python
+    :caption: Parsing passwd file with ``csv``
+
 Serializacja i deserializacja danych w JSON
 ===========================================
 
 Proste użycie
 -------------
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import json
 
@@ -64,7 +66,7 @@ Problemy z serializacją i deserializacją
 Serializacja i pisanie własnych encoderów
 -----------------------------------------
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> DATA = {'first_name': 'Ivan', 'last_name': 'Ivanovic'}
 
@@ -74,7 +76,7 @@ Serializacja i pisanie własnych encoderów
 
 Problem z rzutowaniem daty na JSON:
 
-.. code-block:: python
+.. code-block:: pycon
 
     >>> import json
     >>> import datetime
@@ -393,6 +395,31 @@ xslt
 
 Zadania kontrolne
 =================
+
+Serializacja ``csv``
+--------------------
+* Za pomocą ``csv.DictWriter()`` zapisz do pliku dane o zmiennej strukturze.
+* ``fieldnames`` nie może być zahardkodowane w skrypcie.
+
+.. code-block:: python
+
+    DATA = [
+        {'last_name': 'Jiménez'},
+        {'first_name': 'Max', 'last_name': 'Peck'},
+        {'first_name': 'Ivan'},
+        {'first_name': 'Max', 'last_name': 'Peck', 'born': 1961},
+        {'first_name': 'Max', 'last_name': 'Peck', 'born': 1961, 'first_step': 1969},
+    ]
+
+:Podpowiedź:
+    * Kod powinien mieć około 5 linii
+    * To jest bardzo często występujący i użyteczny przykład
+
+:Co zadanie sprawdza?:
+    * Umiejętność korzystania z modułu ``csv``
+    * Umiejętność iteracji po złożonych strukturach danych
+    * Dynamiczne generowanie struktur danych na podstawie innych
+
 
 Książka adresowa
 ----------------

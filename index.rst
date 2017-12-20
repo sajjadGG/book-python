@@ -50,6 +50,7 @@ Podstawy
     podstawy/builtin.rst
     podstawy/matematyka.rst
 
+    podstawy/debugging.rst
     podstawy/print-formatting.rst
     podstawy/doctests.rst
 
@@ -68,8 +69,8 @@ Podstawy
     :numbered:
     :caption: Średniozaawansowany
 
-    sredniozaawansowany/datetime.rst
     sredniozaawansowany/logging.rst
+    sredniozaawansowany/datetime.rst
     sredniozaawansowany/serializacja.rst
     sredniozaawansowany/introspection.rst
 
