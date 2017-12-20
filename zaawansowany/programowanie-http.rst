@@ -377,32 +377,20 @@ Prosty serwer HTTP
 
 .. code-block:: python
 
-import re
-from http.server import BaseHTTPRequestHandler
-from http.server import HTTPServer
+    import re
+    from http.server import BaseHTTPRequestHandler
+    from http.server import HTTPServer
 
-SERVER = ('localhost', 8080)
+    SERVER = ('localhost', 8080)
 
 
-class RequestHandler(BaseHTTPRequestHandler):
-    def do_HEAD(self):
-        self.send_response(200)
-        self.send_header('Content-type', 'text/html')
-        self.end_headers()
+    class RequestHandler(BaseHTTPRequestHandler):
+        def do_HEAD(self):
+            self.send_response(200)
+            self.send_header('Content-type', 'text/html')
+            self.end_headers()
 
-    def do_GET(self):
-        self.send_response(200)
-        self.send_header('Content-type','text/html')
-        self.end_headers()
-        self.wfile.write('<html>')
-        self.wfile.write('<body>Hello World!</body>')
-        self.wfile.write('</html>')
-
-    def do_POST(self):
-        if re.search('/api/v1/*', self.path):
-            content_length = int(self.headers['Content-Length'])
-            post_data = self.rfile.read(content_length)
-
+        def do_GET(self):
             self.send_response(200)
             self.send_header('Content-type','text/html')
             self.end_headers()
@@ -410,15 +398,27 @@ class RequestHandler(BaseHTTPRequestHandler):
             self.wfile.write('<body>Hello World!</body>')
             self.wfile.write('</html>')
 
+        def do_POST(self):
+            if re.search('/api/v1/*', self.path):
+                content_length = int(self.headers['Content-Length'])
+                post_data = self.rfile.read(content_length)
 
-try:
-    print('Starting server {SERVER}, use <Ctrl-C> to stop')
-    httpd = HTTPServer(SERVER, RequestHandler)
-    httpd.serve_forever()
+                self.send_response(200)
+                self.send_header('Content-type','text/html')
+                self.end_headers()
+                self.wfile.write('<html>')
+                self.wfile.write('<body>Hello World!</body>')
+                self.wfile.write('</html>')
 
-except KeyboardInterrupt:
-    print ('^C received, shutting down the web server...')
-    httpd.socket.close()
+
+    try:
+        print('Starting server {SERVER}, use <Ctrl-C> to stop')
+        httpd = HTTPServer(SERVER, RequestHandler)
+        httpd.serve_forever()
+
+    except KeyboardInterrupt:
+        print ('^C received, shutting down the web server...')
+        httpd.socket.close()
 
 
 Zadania kontrolne
