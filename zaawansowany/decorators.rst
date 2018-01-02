@@ -2,6 +2,12 @@
 Decorator
 *********
 
+.. todo::
+    - przyklad z flaska z app.route na wykorzystywanie dekoratorów
+    - decorator decydujący czy odpalić funkcję czy nie na przykładzie @login_required czy @permission_required z django
+    - Ansible decorator @timeout(seconds=10, error_message='timeout occured')
+    - class decorators
+
 Zastosowanie
 ============
 

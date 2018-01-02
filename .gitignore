@@ -1,6 +1,7 @@
 ## Private
 _config/
 _database/
+__notepad__*
 
 ## Compiled
 __pycache__/
@@ -28,9 +29,9 @@ _media
 ## Sphinx documentation
 docs/_build/
 _docs/
+_build/
+_book/
+_slides/
 
 ## IDE
 .idea
-
-## Temporary
-__notepad__.py
