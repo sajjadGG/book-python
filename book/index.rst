@@ -2,8 +2,6 @@
 Kurs programowania w Python i Machine Learning
 ##############################################
 
-.. todo:: użyć literalinclude do kodu oraz dopisać testy
-
 **Author**
     :name: `Matt Harasymczuk <http://astrotech.io>`_
     :email: `python@astrotech.io <mailto:python@astrotech.io>`_
@@ -22,6 +20,9 @@ Kurs programowania w Python i Machine Learning
     :Architecture: http://arch.astrotech.io
 
 
+*****
+Wstęp
+*****
 .. toctree::
     :maxdepth: 2
     :numbered:
@@ -32,9 +33,10 @@ Kurs programowania w Python i Machine Learning
     wstep/wybor-ide.rst
     wstep/podstawy-skladni.rst
 
-========
+
+********
 Podstawy
-========
+********
 .. toctree::
     :maxdepth: 2
     :numbered:
@@ -62,9 +64,10 @@ Podstawy
 
     podstawy/dobre-praktyki.rst
 
-===================
+
+*******************
 Średniozaawansowany
-===================
+*******************
 .. toctree::
     :maxdepth: 2
     :numbered:
@@ -89,9 +92,10 @@ Podstawy
     sredniozaawansowany/django.rst
     sredniozaawansowany/programowanie-gui.rst
 
-============
+
+************
 Zaawansowany
-============
+************
 .. toctree::
     :maxdepth: 2
     :numbered:
@@ -118,9 +122,9 @@ Zaawansowany
     zaawansowany/c-extensions.rst
 
 
-==========================
+**************************
 W zastosowaniach naukowych
-==========================
+**************************
 .. toctree::
     :maxdepth: 2
     :numbered:
@@ -130,9 +134,9 @@ W zastosowaniach naukowych
     scientific/matplotlib.rst
 
 
-================
+****************
 Machine Learning
-================
+****************
 .. toctree::
     :maxdepth: 2
     :numbered:
@@ -164,9 +168,9 @@ Machine Learning
     machine-learning/przydatne-odnosniki.rst
 
 
-=========
+*********
 Receptury
-=========
+*********
 .. toctree::
     :maxdepth: 2
     :numbered:
@@ -176,9 +180,9 @@ Receptury
     receptury/github-api.rst
 
 
-==========
+**********
 Załączniki
-==========
+**********
 .. toctree::
     :maxdepth: 2
     :numbered:
@@ -189,9 +193,10 @@ Załączniki
     zalaczniki/ksiazki.rst
     zalaczniki/python-wat.rst
 
-==========
+
+**********
 Appendices
-==========
+**********
 .. toctree::
     :maxdepth: 2
     :numbered:
