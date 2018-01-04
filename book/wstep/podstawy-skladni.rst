@@ -10,7 +10,7 @@ W lekcjach programowania utarło się, że zawsze zaczynamy od już przysłowiow
 
 W Pythonie mamy możliwość wykorzystania interpretera REPL, przykład poniżej oraz stworzenia skryptu, który wykonamy z linii poleceń.
 
-.. code:: console
+.. code-block:: console
 
     $ python
 
@@ -27,7 +27,7 @@ Powyższy przykład ilustruje moment wpisania polecenia ``python``, standardowy 
 
 Drugim sposobem jest stworzenie skryptu posiadającego następujące linie. Ta metoda przydaje nam się gdy nasze programy zaczną rosnąć na więcej niż jedną dwie linijki. Warto zwrócić uwagę na pierwszą linię, na tzw. shebang ``#!`` i następujące po nim polecenie. To jest deklaracja programu, którego kod źródłowy znajduje się poniżej. Linijka ta jest opcjonalna, ale dla zachowania poprawności i warto w naszych skryptach coś takiego zadeklarować. Już po pierwszej linii widzimy, że skrypt będzie zinterpretowany jako kod źródłowy trzeciej wersji Pythona.
 
-.. code:: python
+.. code-block:: python
 
     #!/usr/bin/env python3
 
@@ -50,7 +50,7 @@ Deklaracja interpretera
 
 Jest to specjalny rodzaj komentarza który opisaliśmy pokrótce powyżej. Ten typ komentarza występuje tylko w pierwszej linii programu i definiuje interpreter kodu źródłowego dla kodu poniżej.
 
-.. code:: bash
+.. code-block:: bash
 
     #!/usr/bin/env python3
 

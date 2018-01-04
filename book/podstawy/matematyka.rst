@@ -132,7 +132,7 @@ Napisz tę funkcję tak, żeby przeszła doctest:
     Wyliczanie odległości w celu oszacowania przynależności do zbioru. Zwróć uwagę, że bez względu na ilość wymiarów wzór się niewiele różni.
 
 :Zadanie z gwiazdką 2:
-Wygeneruj 100 losowych punktów (rozkład gaussa o średniej 0, dowolnym odchyleniu standardowym(np. 0.2)) wokół dwóch dowolnie wybranych punktów (np. A=[0, 1], B=[2, 4]).
+    Wygeneruj 100 losowych punktów (rozkład gaussa o średniej 0, dowolnym odchyleniu standardowym(np. 0.2)) wokół dwóch dowolnie wybranych punktów (np. A=[0, 1], B=[2, 4]).
 
 Napisz do tego celu funkcję, która przejdzie doctest:
 

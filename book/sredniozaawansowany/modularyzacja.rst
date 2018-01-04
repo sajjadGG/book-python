@@ -183,7 +183,7 @@ Tworzenie paczek
 
 ``setup.cfg``
 -------------
-.. code:: ini
+.. code-block:: ini
 
     [bdist_wheel]
     universal = 1

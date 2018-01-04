@@ -418,8 +418,7 @@ Naucz algorytm rozpoznawania danych wykorzystując algorytm Support Vector Machi
 
 
 .. todo::
-    Własna implementacja
-    --------------------
+    * Własna implementacja
 
 
 Lektura uzupełniająca

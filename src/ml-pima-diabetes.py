@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_val_score
 
 
-with open("../_data/pima-diabetes.csv") as file:
+with open("../contrib/pima-diabetes.csv") as file:
     data = np.loadtxt(file, delimiter=',')
     features = data[:, :-1]
     labels = data[:, -1]

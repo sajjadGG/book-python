@@ -21,7 +21,7 @@ Elementy języka Python i biblioteki standardowej
 * :ref:`Matematyka`
 * :ref:`Operacje na plikach`
 * :ref:`Serializacja i deserializacja danych w CSV`
-* :ref:`Programowanie obiektowe`
+* :ref:`Programowanie obiektowe <Object Oriented Programming>`
 * :ref:`Instalacja i korzystanie z zewnętrznych bibliotek`
 * :ref:`Dobre praktyki`
 

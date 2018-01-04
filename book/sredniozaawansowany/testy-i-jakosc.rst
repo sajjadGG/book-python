@@ -2,182 +2,89 @@
 Testy i Jakość
 **************
 
-.. figure:: img/geek-and-poke-development-driven-tests.jpg
+.. figure:: ../../img/geek-and-poke-development-driven-tests.jpg
     :align: center
     :scale: 50%
 
     Development driven tests
 
-Doctest
-=======
 
-.. code-block:: python
+Glossary
+========
+.. glossary::
 
-    def km_na_metry(ile):
-        """
-        >>> km_na_metry(1)
-        1000
+    Mock
+        In object-oriented programming, mock objects are simulated objects that mimic the behavior of real objects in controlled ways. In a unit test, mock objects can simulate the behavior of complex, real objects and are therefore useful when a real object is impractical or impossible to incorporate into a unit test.
 
-        >>> km_na_metry(0)
-        0
+    Stub
+        A method stub or simply stub in software development is a piece of code used to stand in for some other programming functionality. A stub may simulate the behavior of existing code (such as a procedure on a remote machine) or be a temporary substitute for yet-to-be-developed code. Stubs are therefore most useful in porting, distributed computing as well as general software development and testing.
 
-        >>> km_na_metry(-1)
-        Traceback (most recent call last):
-            ...
-        ValueError
-
-        >>> km_na_metry('adas')
-        Traceback (most recent call last):
-            ...
-        TypeError
-        """
-        return ile * 1000
+    Unittest
+        In computer programming, unit testing is a software testing method by which individual units of source code, sets of one or more computer program modules together with associated control data, usage procedures, and operating procedures, are tested to determine whether they are fit for use.
 
 
-    if __name__ == "__main__":
-        import doctest
+Built-in frameworks
+===================
 
-        doctest.testmod()
+``Doctest``
+-----------
+.. literalinclude:: src/doctest-testmod.py
+    :language: python
+    :caption: Wykorzystanie ``doctest.testmod()`` do uruchamiania testów
 
+.. literalinclude:: src/doctest-corner-cases.py
+    :language: python
+    :caption: Pokrycie przypadków brzegowych doctestami
 
-.. code-block:: python
+``Unittest``
+------------
+.. literalinclude:: src/unittest-class.py
+    :language: python
+    :caption: Przykład pokrycia klasy za pomocą ``unittest``.
 
+:Usage:
+    .. code-block:: console
 
-    MINIMALNA_TEMPERATURA = -273.15
-
-
-    def przelicz_celsius_na_kelvin(temperatura):
-        """
-        >>> przelicz_celsius_na_kelvin(1)
-        274.15
-
-        >>> przelicz_celsius_na_kelvin(0)
-        273.15
-
-        >>> przelicz_celsius_na_kelvin(-300)
-        Traceback (most recent call last):
-            ...
-        ValueError: Nie może być mniejsze niż minimalna temperatura
-
-        >>> przelicz_celsius_na_kelvin('jeden')
-        Traceback (most recent call last):
-            ...
-        ValueError: Temperatura musi być float
-
-        >>> przelicz_celsius_na_kelvin([1.0, 1, 0])
-        Traceback (most recent call last):
-            ...
-        TypeError: Nie obsługiwany typ argumentu
-        """
-
-        try:
-            temperatura = float(temperatura)
-        except ValueError:
-            raise ValueError('Temperatura musi być float')
-        except TypeError:
-            raise TypeError('Nie obsługiwany typ argumentu')
-
-        if temperatura < MINIMALNA_TEMPERATURA:
-            raise ValueError('Nie może być mniejsze niż minimalna temperatura')
-        else:
-            return temperatura - MINIMALNA_TEMPERATURA
+        $ python -m unittest FILENAME.py
 
 
-Unit Test
-=========
-
-.. code-block:: python
-
-    class Prostokat:
-        def __init__(self, a, b):
-            if not isinstance(a, (float, int)) or a <= 0:
-                raise ValueError('Długość boku A musi być więszka od 0')
-
-            if not isinstance(b, (float, int)) or b <= 0:
-                raise ValueError('Długość boku B musi być więszka od 0')
-
-            self.bok_a = float(a)
-            self.bok_b = float(a)
-
-        def pole(self):
-            return self.bok_a * self.bok_b
-
-        def obwod(self):
-            return 2 * (self.bok_a + self.bok_b)
-
-        def __str__(self):
-            return f'Prostokat(a={self.bok_a}, b={self.bok_b})'
-
-.. code-block:: python
-
-    class ProstokatTest(unittest.TestCase):
-
-        def setUp(self):
-            self.prostokat = Prostokat(a=10, b=20)
-
-        def test_prostokata_bok_nieprawidlowy(self):
-            with self.assertRaises(ValueError):
-                Prostokat(a='a', b=20)
-
-            with self.assertRaises(ValueError):
-                Prostokat(a=20, b='b')
-
-        def test_prostokata_bok_zero(self):
-            with self.assertRaises(ValueError):
-                Prostokat(a=0, b=20)
-
-            with self.assertRaises(ValueError):
-                Prostokat(a=20, b=0)
-
-        def test_prostokata_bok_ujemny(self):
-            with self.assertRaises(ValueError):
-                Prostokat(a=-3, b=20)
-
-            with self.assertRaises(ValueError):
-                Prostokat(a=20, b=-3)
-
-        def test_ustawienia_bokow(self):
-            with self.assertRaises(TypeError):
-                Prostokat(a=0)
-
-            with self.assertRaises(TypeError):
-                Prostokat(b=0)
-
-        def test_tworzenie_prostokata(self):
-            self.assertEqual(self.prostokat.bok_a, 10)
-            self.assertEqual(self.prostokat.bok_b, 20)
-
-        def test_pole(self):
-            self.assertEqual(self.prostokat.pole(), 200)
-
-        def test_obwod(self):
-            self.assertEqual(self.prostokat.obwod(), 60)
-
-        def test_prostokat_to_string(self):
-            self.assertEqual(str(self.prostokat), 'Prostokat(a=5.0, b=10.0)')
-
-
-    if __name__ == '__main__':
-        unittest.main()
-
+Frontend Testing
+================
 
 ``selenium``
-============
+------------
+* http://www.seleniumhq.org/
 
-Mock
-====
+Selenium automates browsers. That's it! What you do with that power is entirely up to you. Primarily, it is for automating web applications for testing purposes, but is certainly not limited to just that. Boring web-based administration tasks can (and should!) be automated as well.
 
-Stub
-====
+Selenium has the support of some of the largest browser vendors who have taken (or are taking) steps to make Selenium a native part of their browser. It is also the core technology in countless other browser automation tools, APIs and frameworks.
+
+Selenium 1.0 + WebDriver = Selenium 2.0
+
+- WebDriver is designed in a simpler and more concise programming interface along with addressing some limitations in the Selenium-RC API.
+- WebDriver is a compact Object Oriented API when compared to Selenium1.0
+- It drives the browser much more effectively and overcomes the limitations of Selenium 1.x which affected our functional test coverage, like the file upload or download, pop-ups and dialogs barrier
+- WebDriver overcomes the limitation of Selenium RC's Single Host origin policy
+
+WebDriver is the name of the key interface against which tests should be written in Java, the implementing classes one should use are listed as below:
+
+    - ChromeDriver,
+    - EventFiringWebDriver,
+    - FirefoxDriver,
+    - HtmlUnitDriver,
+    - InternetExplorerDriver,
+    - PhantomJSDriver,
+    - RemoteWebDriver,
+    - SafariDriver.
 
 Static Code Analysis
 ====================
 
-``PEP8``
---------
+``pycodestyle`` previously known as ``PEP8``
+--------------------------------------------
 
 :About:
-    Python style guide checker. pep8 is a tool to check your Python code
+    Python style guide checker. ``pycodestyle`` is a tool to check your Python code
     against some of the style conventions in PEP 8.
 
     * Plugin architecture: Adding new checks is easy.
@@ -187,26 +94,26 @@ Static Code Analysis
     * Comes with a comprehensive test suite.
 
 :Installation:
-    .. code:: console
+    .. code-block:: console
 
-        $ pip install pep8
-        $ pip install --upgrade pep8
-        $ pip uninstall pep8
+        $ pip install pycodestyle
+        $ pip install --upgrade pycodestyle
+        $ pip uninstall pycodestyle
 
 :Usage:
-    .. code:: console
+    .. code-block:: console
 
-        $ pep8 FILENAME.py
-        $ pep8 DIRECTORY/
-        $ pep8 --statistics -qq DIRECTORY/
-        $ pep8 --show-source --show-pep8 FILENAME.py
+        $ pycodestyle FILENAME.py
+        $ pycodestyle DIRECTORY/
+        $ pycodestyle --statistics -qq DIRECTORY/
+        $ pycodestyle --show-source --show-pep8 FILENAME.py
 
 :Config:
     ``setup.cfg``
 
-    .. code:: ini
+    .. code-block:: ini
 
-        [pep8]
+        [pycodestyle]
         max-line-length = 939
         ignore = E402,W391
 
@@ -243,14 +150,14 @@ Static Code Analysis
     Pylint is shipped with Pyreverse which creates UML diagrams for python code.
 
 :Install:
-    .. code:: console
+    .. code-block:: console
 
         $ pip install pylint
         $ pip install --upgrade pylint
         $ pip uninstall pylint
 
 :Usage:
-    .. code:: console
+    .. code-block:: console
 
         $ pylint DIRECTORY/
         $ pylint FILENAME.py
@@ -266,14 +173,14 @@ Static Code Analysis
     A simple program which checks Python source files for errors. Pyflakes analyzes programs and detects various errors. It works by parsing the source file, not importing it, so it is safe to use on modules with side effects. It’s also much faster.
 
 :Install:
-    .. code:: console
+    .. code-block:: console
 
         $ pip install pyflakes
         $ pip install --upgrade pyflakes
         $ pip uninstall pyflakes
 
 :Usage:
-    .. code:: console
+    .. code-block:: console
 
         $ pyflakes DIRECTORY/
         $ python -m pyflakes DIRECTORY/
@@ -289,14 +196,14 @@ Static Code Analysis
     Coverage.py measures code coverage, typically during test execution. It uses the code analysis tools and tracing hooks provided in the Python standard library to determine which lines are executable, and which have been executed.
 
 :Install:
-    .. code:: console
+    .. code-block:: console
 
         $ pip install coverage
         $ pip install --upgrade coverage
         $ pip uninstall coverage
 
 :Usage:
-    .. code:: console
+    .. code-block:: console
 
         $ coverage run FILENAME.py
         $ coverage report -m
@@ -332,15 +239,6 @@ Static Code Analysis
     * https://coverage.readthedocs.io/
 
 
-``unittest``
-------------
-
-:Usage:
-    .. code:: console
-
-        $ python -m unittest FILENAME.py
-
-
 Automation and Releases
 =======================
 
@@ -348,7 +246,7 @@ Fabric
 ------
 
 :Install:
-    .. code:: console
+    .. code-block:: console
 
         $ pip install fabric
         $ pip install --upgrade fabric

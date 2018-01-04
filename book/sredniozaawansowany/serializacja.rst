@@ -309,7 +309,7 @@ Zapis i odczyt danych z pliku:
 xml
 ===
 
-.. code:: xml
+.. code-block:: xml
 
     <execute>
         <command timeout="2">/bin/ls -la /etc/</command>

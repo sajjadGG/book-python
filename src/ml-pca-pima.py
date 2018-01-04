@@ -8,7 +8,7 @@ features = []
 labels = []
 
 
-with open('../_data/pima-diabetes.csv') as file:
+with open('../contrib/pima-diabetes.csv') as file:
     for line in file:
         vector = line.split(',')
         features.append([float(x) for x in vector[:-1]])

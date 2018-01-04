@@ -2,6 +2,8 @@
 Kurs programowania w Python i Machine Learning
 ##############################################
 
+.. todo:: użyć literalinclude do kodu oraz dopisać testy
+
 **Author**
     :name: `Matt Harasymczuk <http://astrotech.io>`_
     :email: `python@astrotech.io <mailto:python@astrotech.io>`_
@@ -10,13 +12,14 @@ Kurs programowania w Python i Machine Learning
     :linkedin: https://linkedin.com/in/mattharasymczuk
     :slideshare: https://www.slideshare.net/astrotech/presentations
 
-.. todo:: użyć literalinclude do kodu oraz dopisać testy
+.. tip:: Pamiętaj, że zawsze najbardziej aktualna wersja tej książki znajduje się na http://python.astrotech.io
 
-**Dokumentacja do szkolenia**
+**Inne dokumentacje z tej serii**
     :Python: http://python.astrotech.io
     :DevOps: http://devops.astrotech.io
     :GIT: http://git.astrotech.io
     :Agile: http://agile.astrotech.io
+    :Architecture: http://arch.astrotech.io
 
 =====
 Wstęp
@@ -24,7 +27,6 @@ Wstęp
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Wstęp
 
     wstep/o-jezyku-python.rst
     wstep/instalacja.rst
@@ -37,7 +39,6 @@ Podstawy
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Podstawy
 
     podstawy/zmienne-i-stale.rst
     podstawy/zlozone-typy-danych.rst
@@ -187,3 +188,14 @@ Receptury
 
     receptury/ldap-expiring-passwords.rst
     receptury/github-api.rst
+
+========
+Appendix
+========
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Appendix
+
+    glossary.rst
+    license.rst

@@ -5,7 +5,7 @@ from sklearn import metrics
 from sklearn.linear_model import LogisticRegression
 
 
-with open('../_data/pima-diabetes.csv') as file:
+with open('../contrib/pima-diabetes.csv') as file:
     data = np.loadtxt(file, delimiter=',')
     features = data[:, :-1]
     labels = data[:, -1]

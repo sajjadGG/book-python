@@ -9,7 +9,7 @@ Wraz z wersją Python 3.3 do języka został dodany ten genialny moduł. Aplika
 
 Tworzenie takiego środowiska jest bardzo łatwe i szybkie:
 
-.. code:: console
+.. code-block:: console
 
     $ python -m venv .virtualenv
 
@@ -18,13 +18,13 @@ Aktywacja i korzystanie ze środowiska
 
 I po chwili w pojawi się katalog .virtualenv ze środowiskiem. Następnie za każdym razem kiedy będziesz chciał pracować wykorzystując to środowisko będzie konieczna jego aktywacja:
 
-.. code:: console
+.. code-block:: console
 
     $ source .virtualenv/bin/activate
 
 lub na Windowsie:
 
-.. code:: bat
+.. code-block:: bat
 
     .virtualenv\Scripts\activate.bat
 
@@ -73,28 +73,28 @@ Każda instalacja pakietów oraz bibliotek wykona się w środowisku. Skrypt kt�
 
 Aby zainstalować jakieś nowe paczki należy użyć polecenia ``pip``. Od wersji Python 3.4 ``pip`` jest zainstalowany domyślnie.
 
-.. code:: console
+.. code-block:: console
 
-    $ pip install pep8
+    $ pip install pycodestyle
 
 lub na Windows:
 
-.. code:: bat
+.. code-block:: bat
 
-    python -m pip install pep8
+    python -m pip install pycodestyle
 
 Lista zainstalowanych paczek
 ----------------------------
 
 Aby zobaczyć zainstalowane paczki, użyj polecenia ``pip freeze``. Przekierowując wynik tego polecenia do pliku ``requirements.txt`` stworzysz listę zależności wraz z wersjami, które są niezbędne dla uruchomienia Twojego programu.
 
-.. code:: console
+.. code-block:: console
 
     $ pip freeze > requirements.txt
 
 lub na Windows:
 
-.. code:: bat
+.. code-block:: bat
 
     python -m pip install pep8
 
