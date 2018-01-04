@@ -5,8 +5,8 @@ import subprocess
 
 author = 'Matt Harasymczuk'
 email = 'matt@astrotech.io'
-project = 'Python Book'
-description = 'Matt Harasymczuk\'s Python Book'
+project = 'Kurs programowania w Python i Machine Learning'
+description = 'Matt Harasymczuk\'s Kurs programowania w Python i Machine Learning'
 
 extensions = [
     'sphinx.ext.doctest',
