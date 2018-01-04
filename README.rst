@@ -13,8 +13,8 @@ Kurs programowania w Python i Machine Learning
 .. tip:: The most up-to-date version of this book is always at http://python.astrotech.io
 
 **Other books from this series**
-    :Python: http://python.astrotech.io
-    :DevOps: http://devops.astrotech.io
-    :GIT: http://git.astrotech.io
-    :Agile: http://agile.astrotech.io
-    :Architecture: http://arch.astrotech.io
+    :Python and Machine Learning: http://python.astrotech.io
+    :DevOps and Development Tools Ecosystem: http://devops.astrotech.io
+    :GIT and GIT Flow: http://git.astrotech.io
+    :Agile, Scrum, Kanban, XP, Lean: http://agile.astrotech.io
+    :IT Software Architecture, Cloud, Microservices and Processes: http://arch.astrotech.io
