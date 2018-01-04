@@ -21,12 +21,11 @@ Kurs programowania w Python i Machine Learning
     :Agile: http://agile.astrotech.io
     :Architecture: http://arch.astrotech.io
 
-=====
-Wstęp
-=====
+
 .. toctree::
     :maxdepth: 2
     :numbered:
+    :caption: Wstęp
 
     wstep/o-jezyku-python.rst
     wstep/instalacja.rst
@@ -39,6 +38,7 @@ Podstawy
 .. toctree::
     :maxdepth: 2
     :numbered:
+    :caption: Podstawy
 
     podstawy/zmienne-i-stale.rst
     podstawy/zlozone-typy-danych.rst
@@ -164,6 +164,18 @@ Machine Learning
     machine-learning/przydatne-odnosniki.rst
 
 
+=========
+Receptury
+=========
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Receptury
+
+    receptury/ldap-expiring-passwords.rst
+    receptury/github-api.rst
+
+
 ==========
 Załączniki
 ==========
@@ -177,25 +189,13 @@ Załączniki
     zalaczniki/ksiazki.rst
     zalaczniki/python-wat.rst
 
-
-=========
-Receptury
-=========
+==========
+Appendices
+==========
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Receptury
-
-    receptury/ldap-expiring-passwords.rst
-    receptury/github-api.rst
-
-========
-Appendix
-========
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Appendix
+    :caption: Appendices
 
     glossary.rst
     license.rst
