@@ -1,8 +1,3 @@
-#!/usr/bin/env python3
-import datetime
-import subprocess
-
-
 author = 'Matt Harasymczuk'
 email = 'matt@astrotech.io'
 project = 'Kurs programowania w Python i Machine Learning'
@@ -19,12 +14,13 @@ extensions = [
     # 'sphinx.ext.autodoc',
     # 'sphinx.ext.intersphinx',
     # 'sphinx.ext.graphviz',
+    'sphinxcontrib.bibtex',
+    # 'sphinxjp.themes.revealjs',
 ]
 
 todo_emit_warnings = False
 todo_include_todos = True
 html_theme = 'sphinx_rtd_theme'
-pygments_style = 'vs'
 
 language = 'en'
 numfig_format = {
@@ -35,16 +31,23 @@ numfig_format = {
 }
 
 # -----------------------------------------------------------------------------
-# Unified book config
+# Standard book config
 # -----------------------------------------------------------------------------
+import datetime
+import os
+import re
+import subprocess
+import sys
+
 highlight_language = 'python3'
+pygments_style = 'vs'
 numfig = True
 templates_path = ['_templates']
 master_doc = 'index'
 source_suffix = ['.rst']
 imgmath_image_format = 'svg'
 today_fmt = '%Y-%m-%d'
-project_slug = project.lower().replace(' ', '-')
+project_slug = re.sub(r'[\W]+', '', project)
 sha1 = subprocess.Popen('git log -1 --format="%h"', stdout=subprocess.PIPE, shell=True).stdout.read().decode().replace('\n', '')
 version = '#{sha1}, {date:%Y-%m-%d}'.format(sha1=sha1, date=datetime.date.today())
 release = '#{sha1}, {date:%Y-%m-%d}'.format(sha1=sha1, date=datetime.date.today())
@@ -56,6 +59,9 @@ copyright = '{year}, {author} <{email}>'.format(
 
 exclude = ['README.rst']
 exclude_patterns = ['_build', '_book', '_slides', 'img', '_themes', 'slides', 'README.rst', '*/_template.rst']
+
+extensions_dir = os.path.join(os.path.dirname(__file__), '..', '_extensions')
+sys.path.append(extensions_dir)
 
 html_theme_path = ['_themes']
 html_static_path = []
@@ -81,7 +87,6 @@ epub_author = author
 epub_publisher = author
 epub_copyright = copyright
 epub_exclude_files = ['search.html']
-
 
 man_pages = [
     (master_doc, project_slug, project, [author], 1)

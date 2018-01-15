@@ -145,6 +145,7 @@ Machine Learning
     machine-learning/wprowadzenie-do-statystyki.rst
     machine-learning/wprowadzenie-do-machine-learning.rst
     machine-learning/slownik-pojec.rst
+    machine-learning/glossary.rst
     machine-learning/datasets.rst
 
     machine-learning/algorithms.rst
