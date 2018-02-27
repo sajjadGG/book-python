@@ -210,9 +210,8 @@ Napisz program, który wczytuje od użytkownika kolejne oceny i:
     * dla ułatwienia wszystkie oceny mogą być typu ``float``
     * ``len()`` ``sum()``
     * ``in``
-    * ``statistics.mean()``
-
-    .. code-block:: python
+    * ``import statistics`` i ``statistics.mean(...)``
+    * .. code-block:: python
 
         try:
             wprowadzona_ocena = float(input('Wprowadź ocenę: '))
