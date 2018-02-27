@@ -33,9 +33,9 @@ BRACES_LIST = ['{', '}', '[', ']', '(', ')','<','>']
 
 def zbalansowanie_nawiasow(reference : str):
     """
-    >> > zbalansowanie_nawiasow("() [] () ([]()[])")
+    >>> zbalansowanie_nawiasow("() [] () ([]()[])")
     True
-    >> > zbalansowanie_nawiasow("( (] ([)]")
+    >>> zbalansowanie_nawiasow("( (] ([)]")
     False
     """
     parse_string = ''
@@ -57,10 +57,7 @@ def zbalansowanie_nawiasow(reference : str):
 
     return is_balanced
 
-def main():
-    import doctest
-    doctest.testmod()
-
 
 if __name__ == "__main__":
-    main()
+    import doctest
+    doctest.testmod()

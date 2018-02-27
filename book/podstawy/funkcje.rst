@@ -47,7 +47,7 @@ Każdy argument ma swoją nazwę przez którą uzyskujemy dostęp do wartości a
     3
 
     >>> def podziel(a, b):
-    ...     return a/b
+    ...     return a / b
 
     >>> podziel(a=1, b=2)
     0.5
@@ -55,10 +55,10 @@ Każdy argument ma swoją nazwę przez którą uzyskujemy dostęp do wartości a
     >>> podziel(b=2, a=1)
     0.5
 
+
 Argumenty z wartością domyślną
 ------------------------------
-
-Argument funkcji może mieć także wartość domyślną, z której funkcja skorzysta jeżeli użytkownik nie zdefiniuje tego argumentu.
+Argument funkcji może mieć także wartość domyślną, z której funkcja skorzysta jeżeli użytkownik nie zdefiniuje tego argumentu. Argumenty z wartością domyślną muszą być skrajnie po prawej stronie.
 
 .. code-block:: python
 
@@ -72,11 +72,11 @@ Argument funkcji może mieć także wartość domyślną, z której funkcja skor
     hello world
 
     >>> def convert(value, to='bin'):
-    ...     if to=='bin':
+    ...     if to == 'bin':
     ...         return bin(value)
-    ...     elif to=='hex':
+    ...     elif to == 'hex':
     ...         return hex(value)
-    ...     elif to=='oct':
+    ...     elif to == 'oct':
     ...         return oct(value)
     ...     else:
     ...         raise ValueError('`to` should be either bin, hex or oct!!')
@@ -113,7 +113,17 @@ Przykład praktyczny
         password='admin'
     )
 
+.. code-block:: python
 
+    jira = Jira(
+        url='http://localhost:8080',
+        username='admin',
+        password='admin',
+        ssl_verify=False)
+
+    # Zdecydowanie mniej czytelny zapis
+    # Szczególnie nie wiadomo co False na koncu znaczy
+    jira = Jira('http://localhost:8080', 'admin', 'admin', False)
 
 Zwracanie wartości
 ==================
@@ -123,42 +133,44 @@ Zwracanie wartości prostych
 
 .. code-block:: python
 
-    def foo1():
-        return True
-
-    def foo2():
-        return None
-
-    def foo3():
+    def zwracanie_stringow():
         return 'bar'
 
-    def foo4():
-        return [10, 20]
+    def zwracanie_bool():
+        return True
 
-    def foo5():
-        return foo1
+    def zwracanie_wartosci_pustej():
+        return None
 
-    def foo6():
+    def zwracanie_niejawne():
         # Python always return something, in this case ``return None``
         pass
 
-    def foo7():
-        return 10, 20, 30, 5, 'a'
-
-    def foo8():
+    def zwracanie_dict():
         return {'imie': 'Ivan', 'nazwisko': 'Ivanovic'}
 
+    def zwracanie_tupli_1():
+        return 10, 20.6, 30, 5, 'foobar'
+
+    def zwracanie_tupli_2():
+        return (10, 20.6, 30, 5, 'foobar')
+
+    def zwracanie_listy():
+        return [10, 20.6, 'foobar']
+
+    def zwracanie_funkcji():
+        return zwracanie_listy
 
 Zwracanie typów złożonych
 -------------------------
-
 .. code-block:: python
 
-    def foo9():
+    def zwracanie_zlozone():
         return [
             {'imie': 'Max', 'nazwisko': 'Peck'},
             {'imie': 'Ivan', 'nazwisko': 'Ivanovic'},
-            {'imie': 'José', 'nazwisko': 'Jiménez'}]
+            {'imie': 'José', 'nazwisko': 'Jiménez'},
+        ]
 
 
 Operator ``*`` i ``**``
@@ -178,13 +190,13 @@ Wywołując powyższą funkcję z argumentami:
 
 .. code-block:: python
 
-    >>> def foo(my_var, *args, **kwargs):
-    ...    print(f"zmienna my_var: {my_var}")  # pierwsze dopasowanie
-    ...    print(f"zmienna args: {args}")  # argumenty pozycyjne 2, 3, 4
-    ...    print(f"zmienna kwargs: {kwargs}")  # argumenty nazwane c=5, d=6
+    >>> def wyswietl_argumenty(my_var, *args, **kwargs):
+    ...    print(f'zmienna my_var: {my_var}')  # pierwsze dopasowanie
+    ...    print(f'zmienna args: {args}')  # argumenty pozycyjne 2, 3, 4
+    ...    print(f'zmienna kwargs: {kwargs}')  # argumenty nazwane c=5, d=6
     ...
     ...
-    ... foo(1, 2, 3, 4, c=5, d=6)
+    ... wyswietl_argumenty(1, 2, 3, 4, c=5, d=6)
     zmienna my_var: 1
     zmienna args: (2, 3, 4)
     zmienna kwargs: {'c': 5, 'd': 6}
@@ -204,7 +216,7 @@ Przy zwracaniu wartości z funkcji
         # ładniej byłoby gdyby programista napisał
         # {'napiecie': 10, 'natezenie': 20, 'rezystancja': 30, 'czas': 5, 'location': 'laboratorium'}
         # ale programiści niskopoziomowi zwykle zwracają jako list...
-        return (10, 20, 30, 5, 'laboratorium')
+        return (10, 20.6, 30, 5, 'laboratorium')
 
     # z funkcji dopasuje nam dwa pierwsze elementy, a kolejne umieści w ``tuple`` o nazwie args
     napiece, natezenie, *args = sensor_temperatury()
@@ -215,24 +227,26 @@ Przy zwracaniu wartości z funkcji
 
 .. code-block:: python
 
-    def bar():
+    def liczby_0_do_5():
         return range(0, 5)
 
-    jeden, dwa, *reszta = bar()
+    jeden, dwa, *reszta = liczby_0_do_5()
 
     print(jeden, dwa, reszta)
 
+.. code-block:: python
 
-    def foobar(a, b, *args):
+    def zmienne_lokalne_pozycyjne(a, b, *args):
         print(locals())
 
-    foobar(1, 2, 5, 7)
+    zmienne_lokalne_pozycyjne(1, 2, 5, 7)
 
+.. code-block:: python
 
-    def foobar(a, b, **kwargs):
+    def zmienne_lokalne_nazwane(a, b, **kwargs):
         print(locals())
 
-    foobar(1, 2, c=5, d=7)
+    zmienne_lokalne_nazwane(1, 2, c=5, d=7)
 
 
 Inne przykładowe zastosownaie operatorów ``*`` i ``**`` polega na wykorzystaniu ich przy wywołaniu funkcji. Wtedy, wykorzystując operator ``*``, kolejne elementy listy albo krotki będą przekazane jako kolejne argumenty funkcji, a wykorzystując operator ``**`` kolejne elementy zmiennej słownikowej będą przekazane jako nazwane argumenty. Oznacza to, że na przykład argument ``x`` funkcji, przyjmie wartość ``dict_vec['x']``.
@@ -254,25 +268,25 @@ Inne przykładowe zastosownaie operatorów ``*`` i ``**`` polega na wykorzystani
 
     .. code-block:: python
 
-        def foo(dopasowane, *pozycyjne, **nazwane):
-            print(f"argumenty dopasowane: {dopasowane}")  # 1
-            print(f"argumenty pozycyjne: {pozycyjne}")    # 2, 3, 4
-            print(f"argumenty nazwane: {nazwane}")        # c=5, d=6
+        def wyswietl_argumenty(dopasowane, *pozycyjne, **nazwane):
+            print(f'argumenty dopasowane: {dopasowane}')  # 1
+            print(f'argumenty pozycyjne: {pozycyjne}')    # 2, 3, 4
+            print(f'argumenty nazwane: {nazwane}')        # c=5, d=6
 
 
-        foo(1, 2, 3, 4, c=5, d=6)
+        wyswietl_argumenty(1, 2, 3, 4, c=5, d=6)
 
     Taki zapis jest również możliwy, chociaż bardzo mylący
 
     .. code-block:: python
 
-        def foo(dopasowane, *kwargs, **args):
-            print(f"argumenty dopasowane: {dopasowane}")  # 1
-            print(f"argumenty pozycyjne: {kwargs}")       # 2, 3, 4
-            print(f"argumenty nazwane: {args}")           # c=5, d=6
+        def wyswietl_argumenty(dopasowane, *kwargs, **args):
+            print(f'argumenty dopasowane: {dopasowane}')  # 1
+            print(f'argumenty pozycyjne: {kwargs}')       # 2, 3, 4
+            print(f'argumenty nazwane: {args}')           # c=5, d=6
 
 
-        foo(1, 2, 3, 4, c=5, d=6)
+        wyswietl_argumenty(1, 2, 3, 4, c=5, d=6)
 
 
 Przykładowe zastosowanie
@@ -310,8 +324,8 @@ Konwersja liczby na zapis słowny
 
     .. code-block:: python
 
-        >>> int_to_str(999)
-        'dziewięć jeden jeden'
+        >>> int_to_str(912)
+        'dziewięć jeden dwa'
 
         >>> int_to_str(1100)
         'jeden jeden zero zero'
@@ -320,8 +334,8 @@ Konwersja liczby na zapis słowny
 
     .. code-block:: python
 
-        >>> int_to_str(999)
-        'dziewiećset dziewięćdziesiąt dziewięć'
+        >>> int_to_str(973)
+        'dziewiećset siedemdziesiąt trzy'
 
         >>> int_to_str(127.32)
         'sto dwadzieścia siedem i trzydzieści dwa setne'
