@@ -216,7 +216,7 @@ Operacje na stringach
     .. code-block:: python
 
         >>> names = ['José', 'Max', 'Ivan', str(1961), '1969']
-        >>> ';'.join()
+        >>> ';'.join(name)
         'José;Max;Ivan;1961;1969'
 
 
@@ -224,10 +224,13 @@ Operacje na stringach
     .. code-block:: python
 
         >>> name = 'joSé jiMénEz'
+
         >>> name.title()
         'José Jiménez'
+
         >>> name.upper()
         'JOSÉ JIMÉNEZ'
+
         >>> name.lower()
         'josé jiménez'
 
@@ -245,11 +248,15 @@ Wykonywanie operacji na obiekcie
 .. code-block:: python
 
     >>> text = 'Ehlo,world'
+
     >>> text.split(',')
     ['ehlo', 'world']
+
     >>> str.split(text, ',')
     ['ehlo', 'world']
 
+    >>> str.split('Ehlo,world', ',')
+    ['ehlo', 'world']
 
 Wycinanie części stringów
 -------------------------
@@ -265,6 +272,9 @@ Wycinanie części stringów
 
     >>> text[0:3]
     'Lor'
+
+    >>> text[1:4]
+    'ore'
 
     >>> text[-3]
     's'

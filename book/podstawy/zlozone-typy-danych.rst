@@ -11,16 +11,18 @@ Zbiory i operacje na nich
 ------------------
 .. code-block:: python
 
-    a = (1, 2, 3)
-    a = tuple(1, 2, 3)
+    my_tuple = ()
+    my_tuple = tuple()
+
+    my_tuple = (1, 2, None, False, 'hej')
+    my_tuple = tuple(1, 2, None, False, 'hej')
 
 .. code-block:: python
 
     >>> def return_arguments(a, b):
     ...    return (a, b)
 
-    >>> out = return_arguments(10, 20)
-    >>> print(out)
+    >>> return_arguments(10, 20)
     (10, 20)
 
 
@@ -30,13 +32,17 @@ Zbiory i operacje na nich
 
     my_list = []
     my_list = list()
+
     my_list = [1, 2, None, False, 'hej']
+    my_list = list(1, 2, None, False, 'hej')
 
 .. code-block:: python
 
     >>> my_list = [1, 2, None, False, 'hej']
-    >>> my_list[2]
-    None
+    >>> my_list[1]
+    2
+    >>> my_list[2:5]
+    [None, False, 'hej']
 
 .. code-block:: python
 
@@ -70,9 +76,10 @@ Zbiory i operacje na nich
 ``set`` - Zbiór
 ---------------
 .. code-block:: python
+    >>> {1, 3, 1}
+    {1, 3}
 
-    >>> a = set([1, 3, 1])
-    >>> a
+    >>> set([1, 3, 1])
     {1, 3}
 
 Przykład trochę bardziej zaawansowany:
@@ -219,17 +226,26 @@ Lista słowników
 ---------------
 .. code-block:: python
 
-    studenci = [
-        {'imie': 'Max'},
-        {'imie': 'José', 'nazwisko': 'Jiménez'},
-        {'imie': 'Ivan', 'nazwisko': None},
-        {'imie': 'Buster', 'programuje w': ['python', 'java', 'c/c++']},
-    ]
+    >>> studenci = [
+    ...    {'imie': 'Max'},
+    ...    {'imie': 'José', 'nazwisko': 'Jiménez'},
+    ...    {'imie': 'Ivan', 'nazwisko': None},
+    ...    {'imie': 'Buster', 'programuje w': ['python', 'java', 'c/c++']},
+    ... ]
 
-    dane = studenci[0]['nazwisko']
-    dane = studenci[0].get('nazwisko', 'n/d')
-    dane = '\n'.join(studenci[4].get('programuje w'))
-    print(dane)
+    >>> studenci[0]['nazwisko']
+    Traceback (most recent call last):
+      ...
+    KeyError: 'nazwisko'
+
+    >>> studenci[0].get('nazwisko', 'n/d')
+    'n/d'
+
+    >>> '\n'.join(studenci[3].get('programuje w'))
+    python
+    java
+    c/c++
+
 
 Listy wielowymiarowe
 --------------------
@@ -238,8 +254,15 @@ Listy wielowymiarowe
     array = [
         [0, 1, 2],
         [1, 2, 3],
+        [1, 2, 3],
     ]
 
+.. code-block:: python
+
+    array2 = [
+        [0, None, 'abc'],
+        [1, 2, 3],
+    ]
 
 Mieszane typy
 -------------
@@ -266,7 +289,7 @@ Zadania kontrolne
 
 Wyrazy
 ------
-Napisz program, który na podstawie paragrafu tekstu "Lorem Ipsum" podzieli go na zdania () i dla każdego zdania wyświetli ile jest w nim wyrazów::
+Napisz program, który na podstawie paragrafu tekstu "Lorem Ipsum" podzieli go na zdania i dla każdego zdania wyświetli ile jest w nim wyrazów::
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
@@ -277,7 +300,12 @@ Napisz program, który na podstawie paragrafu tekstu "Lorem Ipsum" podzieli go n
 :Podpowiedź:
     * ``str.split()``
     * ``len()``
-    * ``for wyraz in zdanie:``
+    * .. code-block:: python
+
+        lista = ['Max', 'Peck']
+
+        for element in lista:
+            print(element)
 
 Przeliczanie odległości
 -----------------------
