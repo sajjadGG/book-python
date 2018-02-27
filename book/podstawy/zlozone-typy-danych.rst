@@ -76,6 +76,7 @@ Zbiory i operacje na nich
 ``set`` - Zbiór
 ---------------
 .. code-block:: python
+
     >>> {1, 3, 1}
     {1, 3}
 
