@@ -22,3 +22,27 @@ for cyfra in liczba_uzytkownika:
     # rzutujemy cyfrę na ``int`` aby móc odnaleźć ją w LICZBY
     index = int(cyfra)
     print(LICZBY[cyfra])
+
+
+# Alternatywnie
+def liczba_slownie(liczba: int) -> str:
+    """
+    >>> liczba_slownie(123)
+    'jeden dwa trzy'
+
+    >>> liczba_slownie(456)
+    'cztery pięć sześć'
+    """
+    slownie = []
+
+    for cyfra in str(liczba):
+        cyfra = int(cyfra)
+        slownie.append(LICZBY[cyfra])
+
+    return ' '.join(slownie)
+
+
+if __name__ == '__main__':
+    liczba_wprowadzona = input('Podaj liczbę: ')
+    napis = liczba_slownie(liczba_wprowadzona)
+    print(napis)
