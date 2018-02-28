@@ -107,23 +107,46 @@ Napisz tę funkcję tak, żeby przeszła doctest:
 .. code-block:: python
 
     def euclidean_distance(A, B):
-      """
-      >>> euclidean_distance((0,0), (1,0))
-      1.0
+        """
+        >>> euclidean_distance((0,0), (1,0))
+        1.0
 
-      >>> euclidean_distance((0,0), (1,1))
-      1.4142135623730951
+        >>> euclidean_distance((0,0), (1,1))
+        1.4142135623730951
 
-      >>> euclidean_distance((0,1), (1,1))
-      1.0
+        >>> euclidean_distance((0,1), (1,1))
+        1.0
 
-      >>> euclidean_distance((0,10), (1,1))
-      9.055385138137417
-      """
-      pass
+        >>> euclidean_distance((0,10), (1,1))
+        9.055385138137417
+        """
+        return ...
 
 :Zadanie z gwiazdką:
     Przekształć algorytm tak, aby działał w :math:`N` wymiarowej przestrzeni.
+
+    .. code-block:: python
+
+        def euclidean_distance_n_dimensions(A, B):
+            """
+            >>> euclidean_distance_n_dimensions((0,0,0), (0,0,0))
+            0.0
+
+            >>> euclidean_distance_n_dimensions((0,0,0), (1,1,1))
+            1.7320508075688772
+
+            >>> euclidean_distance_n_dimensions((0,1,0,1), (1,1,0,0))
+            1.4142135623730951
+
+            >>> euclidean_distance_n_dimensions((0,0,1,0,1), (1,1,0,0,1))
+            1.7320508075688772
+
+            >>> euclidean_distance_n_dimensions((0,0,1,0,1), (1,1))
+            Traceback (most recent call last):
+                ...
+            ValueError: Punkty muszą być w przestrzeni tylu-samo wymiarowej
+            """
+            return ...
 
 .. figure:: ../machine-learning/img/k-nearest-neighbors-euclidean-distance.png
     :scale: 100%
