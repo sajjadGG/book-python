@@ -226,6 +226,21 @@ Przeliczanie temperatury
 :Wymagania:
     * Zrób aby znak plus lub minus był zawsze wyświetlany.
     * Zrób aby tabelka była stałej szerokości.
+    * .. code-block:: txt
+
+        Temperatura   -20C to    -4F
+        Temperatura   -15C to    +5F
+        Temperatura   -10C to   +14F
+        Temperatura    -5C to   +23F
+        Temperatura    +0C to   +32F
+        Temperatura    +5C to   +41F
+        Temperatura   +10C to   +50F
+        Temperatura   +15C to   +59F
+        Temperatura   +20C to   +68F
+        Temperatura   +25C to   +77F
+        Temperatura   +30C to   +86F
+        Temperatura   +35C to   +95F
+        Temperatura   +40C to  +104F
 
 :Podpowiedź:
     * Czytelny kod powinien mieć około 5 linii

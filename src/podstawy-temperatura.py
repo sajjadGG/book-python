@@ -17,8 +17,7 @@ def celsiusz_na_farenheit(celsiusze):
 
 
 for stopien in range(-20, 41, 5):
+    celsiusz = stopien
+    fahrenheit = celsiusz_na_farenheit(stopien)
 
-    print('Temperatura {celsius}C to {fahrenheit}F'.format(
-        celsius="{0:+5d}".format(stopien),
-        fahrenheit="{0:+5.0f}".format(celsiusz_na_farenheit(stopien))
-    ))
+    print(f'Temperatura {celsiusz:+5d}C to {fahrenheit:+5.0f}F')

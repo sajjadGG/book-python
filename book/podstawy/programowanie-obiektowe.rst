@@ -227,6 +227,9 @@ Dziedziczenie
         marka = 'honda'
         kola = 2
 
+    class Tir(Pojazd):
+        pass
+
 Diament dziedziczenia
 ---------------------
 
@@ -260,17 +263,37 @@ Wielodziedziczenie
 
     class Pojazd:
         marka = None
+        kola = 4
 
     class Samochod(Pojazd):
         marka = None
         kierowca = {'imie': 'José', 'nazwisko': 'Jiménez'}
+        kola = 6
 
     class Jeep(Samochod):
         marka = 'jeep'
+        kola = 10
 
     class Star(Samochod):
         marka = 'star'
 
+    class Furmanka(Pojazd):
+        marka = 'kon'
+
+    class CabrioBezDachu(Samochod):
+        marka = 'cabrio'
+
+    auto = Star()
+    print(auto.kola)
+    # 6
+
+    inne = Jeep()
+    print(inne.kola)
+    # 10
+
+* gdzie wsadzić metodę ``zatrab()``
+* gdzie wsadzić metodę ``ruszaj()``
+* gdzie wsadzić metodę ``otworz_dach()``
 
 Kompozycja
 ----------
@@ -433,6 +456,8 @@ Klasa abstrakcyjna to taka klasa, która nie ma żadnych instancji (w programie 
 ``super()``
 -----------
 Funkcja ``super`` pozwala uzyskać dostęp do obiektu po którym dziedziczymy, do jego parametrów statycznych i metod, które przeciążamy (m.in. funkcji ``__init__``).
+
+.. todo:: zrobić inny przykład, ten jest bez sensu
 
 .. code-block:: python
 
