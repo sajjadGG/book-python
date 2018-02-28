@@ -457,33 +457,18 @@ Klasa abstrakcyjna to taka klasa, która nie ma żadnych instancji (w programie 
 -----------
 Funkcja ``super`` pozwala uzyskać dostęp do obiektu po którym dziedziczymy, do jego parametrów statycznych i metod, które przeciążamy (m.in. funkcji ``__init__``).
 
-.. todo:: zrobić inny przykład, ten jest bez sensu
-
 .. code-block:: python
 
-    class Human:
-        species = 'Homo Sapiens'
+    >>> class Samochod:
+    ...     def zatrab(self):
+    ...         print('biiiip')
 
-        def __init__(self):
-            self.short_species = 'human'
-
-    class Man(Human):
-        def __init__(self, name='man'):
-            super().__init__()
-            self.name = name
-
-        def my_parent(self):
-            print(super().species)
-
-        def get_my_species(self):
-            print(self.species)
-
-    print(John.short_species)
-    John.my_parent()
-
-    John.species
-    John.get_my_species()
-
+    >>> class Maluch(Samochod):
+    ...     def zatrab(self):
+    ...         print('bip')
+    ...
+    ...     def jak_robi_samochod(self):
+    ...         return super().zatrab()
 
 ``@property`` i ``@x.setter``
 -----------------------------
