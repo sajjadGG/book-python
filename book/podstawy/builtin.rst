@@ -262,9 +262,17 @@ Tworzy **iterator**, który zwraca liczby w sekwencji. Jedna z rzeczy, która ul
     >>> print(numbers_generator)
     range(0, 5)
 
+    >>> for liczba in range(0, 5):
+    ...    print(liczba)
+
+.. code-block:: python
+
+    >>> numbers_generator = range(0, 5)
     >>> numbers = list(numbers_generator)
     >>> print(numbers)
     [0, 1, 2, 3, 4]
+
+
 
 
 ``isinstance()``

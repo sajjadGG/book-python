@@ -178,9 +178,69 @@ Operator ``*`` i ``**``
 .. todo:: zrobić lepsze przykłady wykorzystania parametrów z gwiazdką
 .. todo:: zrobić zadania do rozwiązania dla parametrów z gwiazdką
 
+.. code-block:: python
+
+    >>> def wyswietl(a, b, c=0):
+    ...    print(locals())
+
+    >>> wyswietl(1, 2, 3)
+    {'a': 1, 'b': 2, 'c': 3}
+
+    >>> krotka = (1, 2, 3)
+    >>> wyswietl(*krotka)
+    {'a': 1, 'b': 2, 'c': 3}
+
+    >>> krotka = (1, 2)
+    >>> wyswietl(*krotka)
+    {'a': 1, 'b': 2, 'c': 0}
+
+.. code-block:: python
+
+    >>> def wyswietl(a, b, c=0, *args):
+    ...    print(locals())
+
+    >>> krotka = (1, 2, 3, 4)
+    >>> wyswietl(*krotka)
+    {'a': 1, 'b': 2, 'c': 3, 'args': (4,)}
+
+    >>> krotka = (1, 2, 3, 4, 5, 6, 7)
+    >>> wyswietl(*krotka)
+    {'a': 1, 'b': 2, 'c': 3, 'args': (4, 5, 6, 7)}
+
+    >>> wyswietl(1, 2)
+    {'a': 1, 'b': 2, 'c': 0, 'args': ()}
+
+.. code-block:: python
+
+    >>> def wyswietl(a, b, c=0, *args, **kwargs):
+    ...     print(locals())
+
+    >>> wyswietl(1, 2, x=77, y=99)
+    {'a': 1, 'b': 2, 'c': 0, 'args': (), 'kwargs': {'x': 77, 'y': 99}}
+
+    >>> wyswietl(1, 2, x=77, y=99, c=7)
+    {'a': 1, 'b': 2, 'c': 7, 'args': (), 'kwargs': {'x': 77, 'y': 99}}
+
+    >>> slownik = {'x': 77, 'y': 99}
+    >>> wyswietl(1, 2, 3, **slownik)
+    {'a': 1, 'b': 2, 'c': 3, 'args': (), 'kwargs': {'x': 77, 'y': 99}}
+
+.. code-block:: python
+
+    >>> def wyswietl(a, b, c=0, *args, **kwargs):
+    ...     print(locals())
+
+    >>> wyswietl(1, 2, 3, 4, 5, 6, x=77, y=99)
+    {'a': 1, 'b': 2, 'c': 3, 'args': (4, 5, 6), 'kwargs': {'x': 77, 'y': 99}}
+
+    >>> krotka = (4, 5, 6)
+    >>> slownik = {'x': 77, 'y': 99}
+    >>> wyswietl(1, 2, 3, *krotka, **slownik)
+    {'a': 1, 'b': 2, 'c': 3, 'args': (4, 5, 6), 'kwargs': {'x': 77, 'y': 99}}
+
 Argumenty ``*args``, ``**kwargs``
 ---------------------------------
-Użycie operatora * przy definicji funkcji powoduje umożliwienie przekazywanie do funkcji dodatkowych parametrów anonimowych. Zazwczaj zmienna, która jest przy tym operatorze nazywa się ``*args`` (arguments)
+Użycie operatora ``*`` przy definicji funkcji powoduje umożliwienie przekazywanie do funkcji dodatkowych parametrów anonimowych. Zazwczaj zmienna, która jest przy tym operatorze nazywa się ``*args`` (arguments)
 
 Użycie operatora ``**`` przy definicji funkcji powoduje umożliwienie przekazywania do niej dodatkowych argumentów nazwanych. Zazwczaj zmienna, która jest przy tym operatorze nazywa się ``**kwargs`` (keyword arguments)
 
@@ -192,7 +252,7 @@ Wywołując powyższą funkcję z argumentami:
 
     >>> def wyswietl_argumenty(my_var, *args, **kwargs):
     ...    print(f'zmienna my_var: {my_var}')  # pierwsze dopasowanie
-    ...    print(f'zmienna args: {args}')  # argumenty pozycyjne 2, 3, 4
+    ...    print(f'zmienna args: {args}')      # argumenty pozycyjne 2, 3, 4
     ...    print(f'zmienna kwargs: {kwargs}')  # argumenty nazwane c=5, d=6
     ...
     ...

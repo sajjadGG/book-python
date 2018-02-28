@@ -9,35 +9,42 @@ Python umożliwia kilka sposobów manipulacji stringami i uwzględnianie zmienny
 Konkatenacja stringów
 =====================
 
-Operator ``+``
---------------
-
-Operator + skleja ze sobą stringi.
+Wykorzystanie parametrów funkcji ``print()``
+--------------------------------------------
+Do łączenia ciągów znakowych, które mają zostać wyświetlone dla użytkownika, można wykorzystać bezpośrednio właściwość funkcji ``print``, która może przyjąć wiele argumentów, które następnie ze sobą połączy.
 
 .. code-block:: python
 
-    imie = 'José Jiménez'
-    print('My name ' + imie + '!')
+    >>> imie = 'José Jiménez'
+    >>> print('My name', imie, '!')
+    My name José Jiménez!
+
+Można tutaj podać jako argumenty zarówno ciągi znaków jak i wartości liczbowe. Ciągi znaków będą od siebie odseparowane ciągiem znaków przekazanym przez argument ``sep``, domyślnie jest to spacja ``' '``.
+
+.. code-block:: python
+
+    >>> imie = 'José Jiménez'
+    >>> print('My name', imie, '!', sep=';')
+    My;name;José;Jiménez!
+
+Operator ``+``
+--------------
+Operator + skleja ze sobą stringi. Ten sposób jest niepolecany, ale można go jeszcze często spotkać. Szczególnie u osób, które programują w innych językach tj. Java, JavaScript i C#.
+
+.. code-block:: python
+
+    >>> imie = 'José Jiménez'
+    >>> print('My name ' + imie + '!')
+    My name José Jiménez!
 
 Można go użyć do wyświetlania zmiennych liczbowych, ale nie jest to najlepsze rozwiązanie.
 
 .. code-block:: python
 
-    imie = 'José Jiménez'
-    wiek = 35
-    print('My name is ' + imie + ' and I am ' +str(wiek) + ' years old !')
-
-Wykorzystanie parametrów funkcji ``print()``
---------------------------------------------
-
-Do łączenia ciągów znakowych, które mają zostać wyświetlone dla użytkownika, można wykorzystać bezpośrednio właściwość funkcji ``print``, która może przyjąć wiele argumentów, które następnie ze sobą połączy.
-
-.. code-block:: python
-
-    imie = 'José Jiménez'
-    print('My name', imie, '!')
-
-Można tutaj podać jako argumenty zarówno ciągi znaków jak i wartości liczbowe. Ciągi znaków będą od siebie odseparowane ciągiem znaków przekazanym przez argument ``sep``, domyślnie jest to spacja ``' '``.
+    >>> imie = 'José Jiménez'
+    >>> wiek = 35
+    >>> print('My name is ' + imie + ' and I am ' + str(wiek) + ' years old!')
+    My name is José Jiménez and I am 35 years old!
 
 
 Interpolacja zmiennych
@@ -45,7 +52,6 @@ Interpolacja zmiennych
 
 Operator: ``%s``, ``%d``, ``%f``
 --------------------------------
-
 Używanie tych operatorów przypomina używanie funkcji ``printf``, znanej między innymi z C++. W tekście stringa wstawiamy odpowiedni operator: ``%s`` dla stringa, ``%d`` dla liczby całkowitej, ``%f`` dla liczby zmiennoprzecinkowej. Następnie podajemy po znaku % krotkę z wartościami do wstawienia.
 
 * kolejnościowe
@@ -55,33 +61,44 @@ Używanie tych operatorów przypomina używanie funkcji ``printf``, znanej międ
 
 .. code-block:: python
 
-    imie = 'José Jiménez'
-    wiek = 18
+    >>> imie = 'José Jiménez'
+    >>> wiek = 35
 
-    def get_imie(imie):
-        return imie
+    >>> def get_imie(imie):
+    >>>    return imie
 
-    print('My name %s!' % imie)
+    >>> print('My name %s!' % imie)
+    My name José Jiménez!
 
-    print("%s is %s years old" % (imie, wiek))
-    print('%s is %s years old' % (wiek, imie))
-    print('%s is %10.1f years old' % (imie, wiek))
-    print('%s is %.1f years old' % (imie, wiek))
-    print('%s is %d years old' % (get_imie(imie), wiek))
+    >>> print("%s is %s years old" % (imie, wiek))
+    José Jiménez is 35 years old
 
-    print('%(imie)s is %(wiek)d years old' % {
-        'wiek': wiek,
-        'imie': imie,
-    })
+    >>> print('%s is %s years old' % (wiek, imie))
+    35 is José Jiménez years old
 
-    print('My name %(imie)s.' % locals())
+    >>> print('%s is %10.1f years old' % (imie, wiek))
+    José Jiménez is       35.0 years old
+
+    >>> print('%s is %.1f years old' % (imie, wiek))
+    José Jiménez is 35.0 years old
+
+    >>> print('%s is %d years old' % (get_imie(imie), wiek))
+    José Jiménez is 35 years old
+
+    >>> print('%(imie)s is %(wiek)d years old' % {
+    ...    'wiek': wiek,
+    ...    'imie': imie,
+    ... })
+    José Jiménez is 35 years old
+
+    >>> print('My name %(imie)s.' % locals())
+    My name José Jiménez.
 
 
 Metoda ``.format()``
 ====================
 
 Wbudowana metoda ``format`` upraszcza nieco powyższy schemat. Zamiast operatora z procentem, używamy w tekście stringu ``{}``, następnie na tym stringu wywołujemy funkcję ``format``, której argumentami są wartości do wstawienia do tekstu.
-
 
 * ``string``
 * ``int``
@@ -91,33 +108,33 @@ Wbudowana metoda ``format`` upraszcza nieco powyższy schemat. Zamiast operatora
 
 .. code-block:: python
 
-    imie = 'José Jiménez'
-    wiek = 18
+    >>> imie = 'José Jiménez'
+    >>> wiek = 35
 
-    print('{imie} ma {wiek} lat'.format(
-            imie=imie,
-            wiek=wiek))
+    >>> print('{imie} ma {wiek} lat'.format(imie=imie, wiek=wiek))
+    José Jiménez ma 35 lat
 
-    print('{wiek} ma {imie} lat'.format(**locals()))
+    >>> print('{wiek} ma {imie} lat'.format(**locals()))
+    35 ma José Jiménez lat
 
-    print('Hej mam na imie {} i mam {} lat'.format(imie, wiek))
+    >>> print('Hej mam na imie {} i mam {} lat'.format(imie, wiek))
+    Hej mam na imie José Jiménez i mam 35 lat
 
     >>> print('Hej mam na imie {0} i mam {1} lat'.format(imie, wiek))
-    Hej mam na imie José i mam 10 lat
+    Hej mam na imie José i mam 35 lat
 
     >>> print('Hej mam na imie {1} i mam {0} lat'.format(imie, wiek))
-    Hej mam na imie 10 i mam José lat
+    Hej mam na imie 35 i mam José lat
 
-    >>> print('Hej mam na imie {1:.3} i mam {0:.3} lat'.format(float(wiek), imie))
-    Hej mam na imie Jos i mam 10.0 lat
+    >>> print('Hej mam na imie {1:.3} i mam {0:.1} lat'.format(float(wiek), imie))
+    Hej mam na imie Jos i mam 35.0 lat
 
-    >>> print('Hej mam na imie {1:.3} i mam {0:10.3} lat'.format(float(wiek), imie))
-    Hej mam na imie Jos i mam       10.0 lat
+    >>> print('Hej mam na imie {1:.3} i mam {0:10.1} lat'.format(float(wiek), imie))
+    Hej mam na imie Jos i mam       35.0 lat
 
 
 f-strings - Python >= 3.6
 =========================
-
 f-strings to rozwinięcie funkcji ``format``. Jedyne co trzeba zrobić żeby umieścić zmienną w tekście to dodać przed stringiem ``f`` i w nawiasach klamrowych wpisać nazwę zmiennej (np. ``f'to jest zmienna: {zmienna}'``).
 
 * ``f'{variable}'``
@@ -126,28 +143,29 @@ f-strings to rozwinięcie funkcji ``format``. Jedyne co trzeba zrobić żeby umi
 
 .. code-block:: python
 
-    import datetime
+    >>> import datetime
+    >>> imie = 'José'
+    >>> wiek = 35
 
-    imie = 'José'
-    wiek = 18
+    >>> def get_imie(imie):
+    ...    return imie
 
+    >>> print(f'My name {imie}!')
+    My name José Jiménez
 
-    def get_imie(imie):
-        return imie
+    >>> print(f'My name {get_imie(imie)}, masz: {wiek} lat')
+    My name José, masz: 35 lat
 
-    print(f'My name {imie}')
-    print(f'My name {get_imie()}, masz: {wiek} lat')
+    >>> print(f'dzis jest: {datetime.datetime.now():%Y-%m-%d %H:%M:%S}')
+    dzis jest: 1969-07-21 02:56:15
 
-
-    print(f'dzis jest: {datetime.datetime.now():%Y-%m-%d %H:%M}')
-
-    now = datetime.datetime.now
-    print(f'dzis jest: {now():%Y-%m-%d %H:%M}')
+    >>> now = datetime.datetime.now
+    >>> print(f'dzis jest: {now():%Y-%m-%d %H:%M:%S}')
+    dzis jest: 1969-07-21 02:56:15
 
 
 Przykład z życia
 ================
-
 .. warning:: Kod podatny jest na SQL Injection. W praktyce skorzystaj z funkcji ``prepare``.
 
 .. code-block:: python
