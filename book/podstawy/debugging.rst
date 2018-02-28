@@ -4,7 +4,26 @@ Debugging
 
 ``print``
 =========
+.. code-block:: python
 
+    >>> lista = ['a', 'b', 'c', [1, 2, 3]]
+    >>> for element in lista:
+    ...     print(element)
+    a
+    b
+    c
+    [1, 2, 3]
+
+.. code-block:: python
+
+    >>> imiona = ('Matt')
+
+    >>> for imie in imiona:
+    ...     print(imie)
+    M
+    a
+    t
+    t
 
 ``pprint``
 ==========
@@ -27,18 +46,19 @@ Debugging
 
 .. code-block:: python
 
-    def __init__(self):
-        self.first_name = 'José'
-        self.last_name = 'Jiménez'
+    >>> class Astronaut():
+    ...    def __init__(self):
+    ...        self.first_name = 'José'
+    ...        self.last_name = 'Jiménez'
 
+    >>> jose = Astronaut()
 
-    jose = Astronaut()
+    >>> jose.__dict__
+    {'first_name': 'José', 'last_name': 'Jiménez'}
 
-    print(jose.__dict__)
-    print(dir(jose))
+    >>> dir(jose)
+    ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'first_name', 'last_name']
 
-    # {'first_name': 'José', 'last_name': 'Jiménez'}
-    # ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'first_name', 'last_name']
 
 Wykorzystanie debuggera w IDE
 =============================
@@ -125,6 +145,23 @@ Debugging i Procesy
 
 Debugging aplikacji sieciowych
 ------------------------------
+.. code-block:: python
+
+    import logging
+
+    logging.getLogger('requests').setLevel(logging.DEBUG)
 
 Wyciszanie logowania
 --------------------
+.. code-block:: python
+
+    import logging
+
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format='[%(asctime).19s] [%(levelname)s] %(message)s')
+
+    logging.getLogger('requests').setLevel(logging.WARNING)
+    log = logging.getLogger(__name__)
+
+    log.debug('to jest moja debugowa wiadomosc')

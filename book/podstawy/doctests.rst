@@ -153,3 +153,13 @@ Testy dla wszystkich funkcji aktualnie zdefiniowanych w przestrzeni nazw wykonuj
 Zadania kontrolne
 =================
 
+Konwersja temperatury
+---------------------
+#. Napisz funkcję, która przeliczy temperaturę podaną w Fahrenheit na Kelviny
+#. Napisz testy do rozwiązania.
+
+:Podpowiedź:
+    * Fahrenheit to Celsius: (°F - 32) / 1.8 = °C
+    * Celsius to Fahrenheit: (°C * 1.8) + 32 = °F
+    * Jeden stopień Celsiusza odpowiada jednemu stopniowi w skali Kelvina
+    * -273,15 °C = 0 K
