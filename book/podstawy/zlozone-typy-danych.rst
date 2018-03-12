@@ -25,6 +25,36 @@ Zbiory i operacje na nich
     >>> return_arguments(10, 20)
     (10, 20)
 
+.. code-block:: python
+
+    >>> my_tuple = (1, 2, 3, 4, 5)
+
+    >>> my_tuple[:3]  # do 3
+    (1, 2, 3)
+
+    >>> my_tuple[1:4]  # od 1 do 4
+    (2, 3, 4)
+
+    >>> my_tuple[3:]  # od 3 do końca
+    (4, 5)
+
+    >>> my_tuple[::2]  # co 2
+    (1, 3, 5)
+
+    >>> my_tuple[-1]  # ostatni i ostatni element
+    5
+
+.. code-block:: python
+
+    >>> my_tuple = (1, 2, 3, 4, 5)
+    >>> a, b = 1, 4
+
+    >>> my_tuple[slice(a,b)]  # definiowanie za pomocą komendy
+    (2, 3, 4)
+
+    >>> my_tuple[a:b]  # to samo
+    (2, 3, 4)
+
 
 ``list`` - Lista
 ----------------
@@ -46,31 +76,37 @@ Zbiory i operacje na nich
 
 .. code-block:: python
 
-    def make_html1(lista):
-        """
-        Performance - Method concatenates strings using + in a loop
-        """
-        html = '<table>'
+    >>> my_list = [1, 2]
+    >>> my_list = my_list.append([3, 4])
+    [1, 2, [3, 4]]
 
-        for element in lista:
-            html += f'\r\n<tr><td>{element}</td></tr>'
-        html += '\r\n</table>'
+    >>> my_list = [1, 2]
+    >>> my_list.extend([3, 4])
+    [1, 2, 3, 4]
 
-        return html
+.. code-block:: python
 
+    # Performance - Method concatenates strings using + in a loop
+    html = '<table>'
 
-    def make_html2(lista):
-        """
-        Problem solved
-        """
-        html = ['<table>']
+    for element in lista:
+        html += f'\r\n<tr><td>{element}</td></tr>'
+    html += '\r\n</table>'
 
-        for element in lista:
-            html.append(f'<tr><td>{element}</td></tr>')
+    print(html)
 
-        html.append('</table>')
+.. code-block:: python
 
-        return '\r\n'.join(html)
+    # Problem solved
+    html = ['<table>']
+
+    for element in lista:
+        html.append(f'<tr><td>{element}</td></tr>')
+
+    html.append('</table>')
+    output = '\r\n'.join(html)
+
+    print(output)
 
 
 ``set`` - Zbiór
@@ -83,7 +119,40 @@ Zbiory i operacje na nich
     >>> set([1, 3, 1])
     {1, 3}
 
-Przykład trochę bardziej zaawansowany:
+.. code-block:: python
+
+    >>> my_set = {1, 2, 3}
+    {1, 2, 3}
+
+    >>> my_set.add(4)
+    >>> my_set.add(4)
+    >>> my_set.add(3)
+    {1, 2, 3, 4}
+
+    # Operacje na zbiorach
+    >>> {1,2} - {2,3}  # Różnica
+    {1}
+
+    >>> {1,2} | {2,3}  # Suma
+    {1, 2, 3}
+
+    >>> {1,2} & {2,3}  # Iloczyn
+    {2}
+
+    >>> {1,2} ^ {2,3}  # Różnica symetryczna
+    {1, 3}
+
+.. code-block:: python
+
+    # Podobnie, zbiór ma poniższe właściwości
+    print(len(my_set)) # Długość
+    print(1 in my_set) # Przynależność
+    for i in my_set: # Można po nim iterować
+        print(i)
+    print(my_set + {3,4}) # Ale już nie ma złożenia, są za to operacje na zbiorach
+
+
+Słownik można zrobić z dowolnego hashowalnego obiektu:
 
 .. code-block:: python
 
@@ -98,6 +167,8 @@ Przykład trochę bardziej zaawansowany:
     a = Adres(miasto='...')
     print({a, a})
 
+Należy zwrócić uwagę, aby nie pomylić z dictem:
+
 .. code-block:: python
 
     {}  # dict
@@ -105,24 +176,33 @@ Przykład trochę bardziej zaawansowany:
     {'klucz', 'wartość'}  # set
     {'klucz'}  # set
 
-
 ``dict`` - Słownik
 ------------------
 .. code-block:: python
 
-    my_data = {
+    my_dict = {
         "imie": "José",
         "nazwisko": 'Jiménez',
         'wiek': 10,
     }
 
-    print(my_data['nazwisko'])
+    print(my_dict['nazwisko'])
 
 .. code-block:: python
 
-    out = {'id': 10, 'id': 20}
-    print(out)
+    >>> my_dict = {'wiek': 10, 'wiek': 20, 'imie': 'José', 'nazwisko': 'Jiménez'}
+    {'imie': 'José', 'nazwisko': 'Jiménez', 'wiek': 20}
 
+    >>> my_dict.items()
+    dict_items([('wiek', 20), ('imie', 'José'), ('nazwisko', 'Jiménez')])
+
+    >>> my_dict.keys()
+    dict_keys(['wiek', 'imie', 'nazwisko'])
+
+    >>> my_dict.values()
+    dict_values([20, 'José', 'Jiménez'])
+
+.. note:: przy wyświetlaniu elementów listy, kolejność może się zmieniać!
 
 Dobieranie się do wartości elementów za pomocą ``[...]`` i ``.get(...)``
 ------------------------------------------------------------------------
