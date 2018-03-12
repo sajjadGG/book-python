@@ -131,7 +131,10 @@ W zastosowaniach naukowych
     :caption: W zastosowaniach naukowych
 
     scientific/biblioteki.rst
+    scientific/numpy.rst
     scientific/matplotlib.rst
+    scientific/scipy.rst
+    scientific/pandas.rst
 
 
 ****************
