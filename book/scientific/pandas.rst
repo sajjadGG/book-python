@@ -1,0 +1,612 @@
+Pandas
+======
+
+* http://pandas.pydata.org/
+* http://pandas.pydata.org/pandas-docs/stable/10min.html
+* http://pandas.pydata.org/pandas-docs/stable/index.html
+* https://github.com/pandas-dev/pandas/blob/master/doc/cheatsheet/Pandas_Cheat_Sheet.pdf
+
+Podstawowymi strukturami danych w Pandas jest Series (seria) i DataFrame (obiekt tabeli); zobacz dokumentacje po więcej informacji.
+
+.. code-block:: python
+
+    import pandas as pd
+    import numpy as np # Nie wymagane, użyjemy tylko elementów
+
+Series
+------
+
+Series jest to jednowymiarowa struktura danych podobna do ``ndarray``. Serię tworzymy za pomocą polecenia ``Series``; jako dane możemy przekazać wiele kolekcji:
+
+.. code-block:: python
+
+    >>> my_list = [1,3,5,np.nan,6,8]
+    >>> pd.Series(my_list)
+
+    0    1.0
+    1    3.0
+    2    5.0
+    3    NaN
+    4    6.0
+    5    8.0
+    dtype: float64
+
+Series posiada indeks, który będzie stworzony automatycznie jeżeli nie został przekazany lub można go stworzyć:
+
+.. code-block:: python
+
+daty = pd.date_range('20170101', periods=6)
+
+DatetimeIndex(['2017-01-01', '2017-01-02', '2017-01-03', '2017-01-04',
+               '2017-01-05', '2017-01-06'],
+              dtype='datetime64[ns]', freq='D')
+
+s = pd.Series(l, index=daty)
+2017-01-01    1.0
+2017-01-02    3.0
+2017-01-03    5.0
+2017-01-04    NaN
+2017-01-05    6.0
+2017-01-06    8.0
+Freq: D, dtype: float64
+
+Niemniej, może to być każda seria która jest przynajmniej tak długa jak dane:
+
+.. code-block:: python
+
+    s = pd.Series(np.random.randn(5), index=list('abcde'))
+
+    a    1.016521
+    b   -0.441865
+    c    0.519119
+    d    0.948774
+    e    0.207670
+    dtype: float64
+
+Pobierać dane z Series możemy jak w Numpy:
+
+.. code-block:: python
+
+    print('s[1] = \n{}'.format(s[1]))
+    print('s[2:] = \n{}'.format(s[2:]))
+    print('s[1:-2] = \n{}'.format(s[1:-2]))
+
+    s[1] =
+    -0.4418648443118965
+    s[2:] =
+    c    0.519119
+    d    0.948774
+    e    0.207670
+    dtype: float64
+    s[1:-2] =
+    b   -0.441865
+    c    0.519119
+    dtype: float64
+
+Możemy też robić to jak w słowniku (lub lepiej), jeżeli indeks na to pozwala:
+
+.. code-block:: python
+
+    print('s["b"] = \n{}'.format(s["b"]))
+    print('s["c":] = \n{}'.format(s["c":]))
+    print('s["b":"c"] = \n{}'.format(s["b":"c"]))
+
+    s["b"] =
+    -0.4418648443118965
+    s["c":] =
+    c    0.519119
+    d    0.948774
+    e    0.207670
+    dtype: float64
+    s["b":"c"] =
+    b   -0.441865
+    c    0.519119
+    dtype: float64
+
+Można też wykonywać operacje na serii:
+
+.. code-block:: python
+
+    print('s*5 = \n{}'.format(s*5))
+    print('s**3 = \n{}'.format(s**3))
+    print('s*s = \n{}'.format(s*s))
+    print('s+s = \n{}'.format(s+s))
+
+    s*5 =
+    a    5.082606
+    b   -2.209324
+    c    2.595593
+    d    4.743869
+    e    1.038348
+    dtype: float64
+    s**3 =
+    a    1.050387
+    b   -0.086272
+    c    0.139894
+    d    0.854059
+    e    0.008956
+    dtype: float64
+    s*s =
+    a    1.033315
+    b    0.195245
+    c    0.269484
+    d    0.900172
+    e    0.043127
+    dtype: float64
+    s+s =
+    a    2.033042
+    b   -0.883730
+    c    1.038237
+    d    1.897547
+    e    0.415339
+    dtype: float64
+
+
+DataFrame
+---------
+DataFrame to zbiór serii.
+
+DataFrame jest obiektem dwuwymiarowym, który w obsłudze przypomina tabelę. Każda kolumna ma nazwę i jest serią danych (Series). Wszystkie kolumny mają wspólny indeks. Operacje można wykonywać na całych kolumnach lub wierszach. DataFrame tworzymy operacją ``DataFrame``:
+
+.. code-block:: python
+
+    df = pd.DataFrame(np.random.randn(6,4), index=daty, columns=list('ABCD'))
+
+========== =========== ============ =========== =========
+            A            B            C            D
+========== =========== ============ =========== =========
+2017-01-01    0.131926    -1.825204    -1.909562    1.274718
+2017-01-02    0.084471    -0.932586    0.160637    -0.275183
+2017-01-03    -1.308835    -0.285436    -0.757591    -0.042493
+2017-01-04    -0.974425    1.327082    -0.435516    1.328745
+2017-01-05    0.589973    0.748417    -1.680741    0.510512
+2017-01-06    1.361922    -0.827940    0.400024    0.047176
+========== =========== ============ =========== =========
+
+.. code-block:: python
+
+    df2 = pd.DataFrame({ 'A' : 1.,
+                         'B' : pd.Timestamp('20130102'),
+                         'C' : pd.Series(1,index=list(range(4)),dtype='float32'),
+                         'D' : np.array([3] * 4,dtype='int32'),
+                         'E' : pd.Categorical(["test", "train", "test", "train"]),
+                         'F' : 'foo' })
+
+=== === =========== === === ======= ===
+    A    B            C    D    E        F
+=== === =========== === === ======= ===
+0    1.0    2013-01-02    1.0    3    test    foo
+1    1.0    2013-01-02    1.0    3    train    foo
+2    1.0    2013-01-02    1.0    3    test    foo
+3    1.0    2013-01-02    1.0    3    train    foo
+=== === =========== === === ======= ===
+
+.. code-block:: python
+
+    >>> df2.E
+    # można użyć jednego lub drugiego
+    >>> df2['E']
+
+    0     test
+    1    train
+    2     test
+    3    train
+    Name: E, dtype: category
+    Categories (2, object): [test, train]
+
+.. code-block:: python
+
+    df3 = pd.DataFrame([{'A': 1, 'B': 2}, {'C': 3}])
+
+=== === === ===
+    A    B    C
+=== === === ===
+0    1.0    2.0    NaN
+1    NaN    NaN    3.0
+=== === === ===
+
+Istnieje też wiele innych metod tworzenia i czytania DataFrame, które zostały opicane w dokumentacji.
+
+Pobierać dane można jak w serii i innych kolekcjach Pythonowych:
+
+.. code-block:: python
+
+    print("df['A'] = \n{}".format(df['A'])) # Kolumna
+    print("df[1:3] = \n{}".format(df[1:3]))
+
+    df['A'] =
+    2017-01-01    0.131926
+    2017-01-02    0.084471
+    2017-01-03   -1.308835
+    2017-01-04   -0.974425
+    2017-01-05    0.589973
+    2017-01-06    1.361922
+    Freq: D, Name: A, dtype: float64
+    df[1:3] =
+                       A         B         C         D
+    2017-01-02  0.084471 -0.932586  0.160637 -0.275183
+    2017-01-03 -1.308835 -0.285436 -0.757591 -0.042493
+
+Niemniej zalecane jest używanie zoptymalizowanych funkcji Pandas:
+
+.. code-block:: python
+
+    print("df.loc[:,'A']) = \n{}".format(df.loc[:,'A']))
+    print("df.loc[daty[0],'A'] = \n{}".format(df.loc[daty[0],'A']))
+    print("df.at[daty[0],'A'] = \n{}".format(df.at[daty[0],'A'])) # Pobiera skalar szybciej
+    print("df.iloc[:,0]] = \n{}".format(df.iloc[:,0]))
+    print("df.iloc[0,0] = \n{}".format(df.iloc[0,0]))
+    print("df.iat[0,0] = \n{}".format(df.iat[0,0])) # Pobiera skalar szybciej
+    print("df.ix[0,0] = \n{}".format(df.iat[0,0]))
+
+    df.loc[:,'A']) =
+    2017-01-01    0.131926
+    2017-01-02    0.084471
+    2017-01-03   -1.308835
+    2017-01-04   -0.974425
+    2017-01-05    0.589973
+    2017-01-06    1.361922
+    Freq: D, Name: A, dtype: float64
+    df.loc[daty[0],'A'] =
+    0.13192554022073613
+    df.at[daty[0],'A'] =
+    0.13192554022073613
+    df.iloc[:,0]] =
+    2017-01-01    0.131926
+    2017-01-02    0.084471
+    2017-01-03   -1.308835
+    2017-01-04   -0.974425
+    2017-01-05    0.589973
+    2017-01-06    1.361922
+    Freq: D, Name: A, dtype: float64
+    df.iloc[0,0] =
+    0.13192554022073613
+    df.iat[0,0] =
+    0.13192554022073613
+    df.ix[0,0] =
+    0.13192554022073613
+
+.. code-block:: python
+
+    df3[['A', 'B']]
+
+    === === ===
+        A    B
+    === === ===
+    0    1.0    2.0
+    1    NaN    NaN
+    === === ===
+
+Można też używać wyrażeń boolowskich do filtrowania wyników:
+
+.. code-block:: python
+
+    df[df.B > 0.5]
+
+=========== =========== =========== =========== ========
+            A            B            C            D
+=========== =========== =========== =========== ========
+2017-01-04    -0.974425    1.327082    -0.435516    1.328745
+2017-01-05    0.589973    0.748417    -1.680741    0.510512
+=========== =========== =========== =========== ========
+
+Jest też dostęp do poszczególnych elementów takich jak:
+
+.. code-block:: python
+
+    print('Indeks:\n{}'.format(df.index))
+    print('Kolumny:\n{}'.format(df.columns))
+    print('Początek:\n{}'.format(df.head(2)))
+    print('Koniec:\n{}'.format(df.tail(3)))
+
+    Indeks:
+    DatetimeIndex(['2017-01-01', '2017-01-02', '2017-01-03', '2017-01-04',
+                   '2017-01-05', '2017-01-06'],
+                  dtype='datetime64[ns]', freq='D')
+    Kolumny:
+    Index(['A', 'B', 'C', 'D'], dtype='object')
+    Początek:
+                       A         B         C         D
+    2017-01-01  0.131926 -1.825204 -1.909562  1.274718
+    2017-01-02  0.084471 -0.932586  0.160637 -0.275183
+    Koniec:
+                       A         B         C         D
+    2017-01-04 -0.974425  1.327082 -0.435516  1.328745
+    2017-01-05  0.589973  0.748417 -1.680741  0.510512
+    2017-01-06  1.361922 -0.827940  0.400024  0.047176
+
+Dane można też sortować po indeksie:
+
+.. code-block:: python
+
+    df.sort_index(ascending=False)
+
+=========== =========== =========== =========== =========
+            A            B            C            D
+=========== =========== =========== =========== =========
+2017-01-06    1.361922    -0.827940    0.400024    0.047176
+2017-01-05    0.589973    0.748417    -1.680741    0.510512
+2017-01-04    -0.974425    1.327082    -0.435516    1.328745
+2017-01-03    -1.308835    -0.285436    -0.757591    -0.042493
+2017-01-02    0.084471    -0.932586    0.160637    -0.275183
+2017-01-01    0.131926    -1.825204    -1.909562    1.274718
+=========== =========== =========== =========== =========
+
+Po kolumnach:
+
+.. code-block:: python
+
+    df.sort_index(axis=1, ascending=False)
+
+=========== =========== =========== =========== =========
+            D            C            B            A
+=========== =========== =========== =========== =========
+2017-01-01    1.274718    -1.909562    -1.825204    0.131926
+2017-01-02    -0.275183    0.160637    -0.932586    0.084471
+2017-01-03    -0.042493    -0.757591    -0.285436    -1.308835
+2017-01-04    1.328745    -0.435516    1.327082    -0.974425
+2017-01-05    0.510512    -1.680741    0.748417    0.589973
+2017-01-06    0.047176    0.400024    -0.827940    1.361922
+=========== =========== =========== =========== =========
+
+Lub po wartościach:
+
+.. code-block:: python
+
+    >>> df.sort_values('B')
+    >>> df.sort_values(['B', 'C'])  # można sortować po wielu kolumnach (jeżeli wartości w pierwszej będą równe)
+
+=========== =========== =========== =========== =========
+            A            B            C            D
+=========== =========== =========== =========== =========
+2017-01-01    0.131926    -1.825204    -1.909562    1.274718
+2017-01-02    0.084471    -0.932586    0.160637    -0.275183
+2017-01-06    1.361922    -0.827940    0.400024    0.047176
+2017-01-03    -1.308835    -0.285436    -0.757591    -0.042493
+2017-01-05    0.589973    0.748417    -1.680741    0.510512
+2017-01-04    -0.974425    1.327082    -0.435516    1.328745
+=========== =========== =========== =========== =========
+
+Można też tabelę transponować:
+
+.. code-block:: python
+
+    df.T
+
+    2017-01-01 00:00:00    2017-01-02 00:00:00    2017-01-03 00:00:00    2017-01-04 00:00:00    2017-01-05 00:00:00    2017-01-06 00:00:00
+A    0.131926    0.084471    -1.308835    -0.974425    0.589973    1.361922
+B    -1.825204    -0.932586    -0.285436    1.327082    0.748417    -0.827940
+C    -1.909562    0.160637    -0.757591    -0.435516    -1.680741    0.400024
+D    1.274718    -0.275183    -0.042493    1.328745    0.510512    0.047176
+
+Nową kolumnę dodajemy przez przypisanie:
+
+.. code-block:: python
+
+    df3['Z'] = ['aa', 'bb']
+
+=== === === === ==
+    A    B    C    Z
+=== === === === ==
+0    1.0    2.0    NaN    aa
+1    NaN    NaN    3.0    bb
+=== === === === ==
+
+Zmiana pojedynczej wartości może być również zrobiona przez przypisanie; używamy wtedy komend lokalizacyjnych, np:
+
+Modyfikacje zawartości DataFrame
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+df3.dropna(how='any')
+df3.dropna(how='all')
+df3.fillna(-100)
+
+Statystyki opisowe
+^^^^^^^^^^^^^^^^^^
+.. code-block:: python
+
+    df.mean()
+    df.describe()
+
+======= =========== =========== =========== =========
+        A            B            C            D
+======= =========== =========== =========== =========
+count    6.000000   6.000000    6.000000    6.000000
+mean    -0.019161   -0.299278    -0.703791    0.473913
+std     0.988715    1.162060    0.943273    0.690404
+min     -1.308835   -1.825204    -1.909562    -0.275183
+25%     -0.709701   -0.906424    -1.449953    -0.020076
+50%     0.108199    -0.556688    -0.596554    0.278844
+75%     0.475461    0.489954    0.011598    1.083666
+max     1.361922    1.327082    0.400024    1.328745
+======= =========== =========== =========== =========
+
+Dodatkowo, można używać funkcji znanych z baz danych jak grupowanie czy złączenie (join):
+
+.. code-block:: python
+
+    df2.groupby('E').size()
+    df2.groupby('E').mean()
+
+    df2.join(df3, how='left', rsuffix='_3')  # gdyby była kolizja nazw kolumn, to dodaj suffix '_3'
+    df2.merge(df3)
+    df2.merge(df3, how='outer')
+
+    # Odpowiednik:
+    # df2.join(df3, how='left', rsuffix='_3')
+    df2.merge(df3, right_index=True, left_index=True, how='left', suffixes=('', '_3'))
+
+    df2.append(df3)  # jak robi appenda, to nie zmienia indeksów (uwaga na indeksy powtórzone)
+    df2.append(df3, ignore_index=True)  # nowy dataframe będzie miał kolejne indeksy
+
+    # Przydatne przy łączeniu dataframe wczytanych z wielu plików
+    pd.concat([df2, df3])
+    pd.concat([df2, df3], ignore_index=True)
+    pd.concat([df2, df3], join='inner')
+
+
+Liczenie percentyli
+^^^^^^^^^^^^^^^^^^^
+.. code-block:: python
+
+    df.qualtile(0.33)
+    df.qualtile(0.33, 0.1, 0.99)
+
+Import
+------
+- ``pd.read_*``
+
+.. code-block:: python
+
+    pd.read_csv()
+    pd.read_excel()
+    pd.read_html()
+    pd.read_json()
+    pd.read_sas()
+    pd.read_sql()
+    pd.read_sql_query()
+    pd.read_sql_table()
+
+Eksport
+-------
+- Dane, które są w dataFrame można wyeksportować
+- ``df.to_*``
+
+.. code-block:: python
+
+    df.to_csv()
+    df.to_excel()
+    df.to_html()
+    df.to_json()
+    df.to_latex()
+    df.to_dict()
+
+Zadania kontrolne
+-----------------
+Należy stworzyć DataFrame samochody z losową kolumną liczb całkowitych przebieg z przedziału [0, 200 000] oraz spalanie z przedziału [2, 20].
+
+dodaj kolumnę marka:
+
+- jeżeli samochód ma spalanie [0, 5] marka to VW
+- jeżeli samochód ma spalanie [6, 10] marka to Ford
+- jeżeli samochód ma spalanie 11 i więcej, marka to UAZ
+
+dodaj kolumnę pochodzenie:
+
+- jeżeli przebieg poniżej 100 km, pochodzenie nowy
+- jeżeli przebieg powyżej 100 km, pochodzenie uzywany
+- jeżeli przebieg powyżej 100 000 km, pochodzenie z niemiec
+
+przeanalizuj dane statystycznie
+
+★ pogrupuj dane po marce i po pochodzenie:
+
+- sprawdź liczność grup
+- wykonaj analizę statystyczną
+
+.. code-block:: python
+
+    np.random.randint()
+    np.random.randn()  # rozklad normalny
+    np.random.rand()
+
+.. code-block:: python
+
+    n = 50
+
+    samochody = pd.DataFrame({
+        'przebieg': np.random.randint(0, 200_000, n),
+        'spalanie': 2 + 18*np.random.rand(n),
+    })
+
+    samochody.head()
+
+=== ======== ===========
+    przebieg spalanie
+=== ======== ===========
+0   5588     15.264853
+1   99747    4.308231
+2   97302    11.575376
+3   117155   18.862744
+4   73709    18.138283
+=== ======== ===========
+
+.. code-block:: python
+
+    samochody.describe()
+
+======= =============== ==========
+        przebieg        spalanie
+======= =============== ==========
+count   0.000000        50.000000
+mean    96794.320000    10.307848
+std     62282.663803    5.036276
+min     2143.000000     2.132470
+25%     36741.500000    5.952677
+50%     93007.000000    10.316452
+75%     154008.500000   13.820076
+max     198046.000000   19.694027
+======= =============== ==========
+
+.. code-block:: python
+
+    samochody.loc[samochody.spalanie < 5, 'marka'] = 'WV'
+    # alternatywnie
+    samochody['marka'] = pd.cut(samochody.spalanie,
+                            bins=[0, 5, 10, 100],
+                            labels=['VW', 'Ford', 'UAZ'])
+
+======= =============== ==========
+        przebieg        spalanie
+======= =============== ==========
+0    5588    15.264853    UAZ
+1    99747    4.308231    VW
+2    97302    11.575376    UAZ
+3    117155    18.862744    UAZ
+4    73709    18.138283    UAZ
+======= =============== ==========
+
+
+.. code-block:: python
+
+    samochody['pochodzenie'] = pd.cut(samochody.przebieg,
+                                        bins=[0, 100, 1e5, np.inf],
+                                        labels=['nowy', 'uzywany', 'z niemiec'])
+    samochody.head()
+
+=== ======= =========== ===== ===========
+    przebieg spalanie   marka pochodzenie
+=== ======= =========== ===== ===========
+0   5588    15.264853    UAZ   uzywany
+1   99747    4.308231    VW    uzywany
+2   97302    11.575376    UAZ      uzywany
+3   117155    18.862744    UAZ   z niemiec
+4   73709    18.138283    UAZ   uzywany
+=== ======= =========== ===== ===========
+
+.. code-block:: python
+
+    samochody.groupby(['marka', 'pochodzenie']).describe().T
+
+=================== ========================== ========================== ==========================
+        marka       VW                         Ford                       UAZ
+        pochodzenie uzywany      z niemiec     uzywany      z niemiec     uzywany      z niemiec
+=================== ========================== ========================== ==========================
+
+przebieg    count   5.000000     7.000000      11.000000    6.000000      13.000000    8.000000
+            mean    53130.600000 147559.285714 52263.909091 179048.000000 47688.615385 147846.375000
+            std     43207.205363 27935.718079  35514.114012 8345.607132   33578.183062 29669.603213
+            min     2988.000000  109498.000000 8550.000000  164217.000000 1746.000000  105497.000000
+            25%     20030.000000 130846.000000 23674.000000 176727.500000 14940.000000 122390.750000
+            50%     48931.000000 147778.000000 50347.000000 181309.500000 50751.000000 154775.500000
+            75%     93957.000000 164885.000000 85860.500000 183584.500000 73709.000000 166537.500000
+            max     99747.000000 184177.000000 99884.000000 187909.000000 97302.000000 192988.000000
+
+spalanie    count    5.000000    7.000000    11.000000   6.000000    13.000000    8.000000
+            mean     3.508948    3.645898    7.409556    7.028662    14.566981    16.438332
+            std      1.068128    0.867709    1.636214    1.803311    3.030231     3.786771
+            min      2.486142    2.426900    5.123669    5.076044    10.143688    10.215177
+            25%      2.697416    3.021124    6.182025    5.648620    12.600224    15.449772
+            50%      3.108775    3.870043    7.442336    6.652541    13.524153    17.990315
+            75%      4.308231    4.245297    8.671341    8.621158    18.009058    18.933888
+            max      4.944177    4.691502    9.611147    9.199502    19.708519    19.580096
+=================== ========================== ========================== ==========================

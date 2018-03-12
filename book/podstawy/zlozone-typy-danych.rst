@@ -237,6 +237,7 @@ Zastosowanie list zamiast konkatanacji stringów
 
 * Jeżeli coś ``collections.deque`` - Double ended Queue
 * Serializowane kolejki przy wielowątkowości
+* Uwaga na set zawierający floaty, bo pomiędzy dwoma wartościami jest nieskończona ilość wyrażeń
 
 
 Dobieranie się do wartości elementów za pomocą ``[...]`` i ``.get(...)``
