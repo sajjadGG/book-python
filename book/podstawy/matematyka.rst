@@ -65,6 +65,50 @@ Moduł ``random`` w bibliotece standardowej
     random.random()
 
 
+.. code-block:: python
+
+    import random
+
+    random_numbers = [random.randint(1, 10) for a in range(1, 50)]
+
+    counter = dict()
+
+    for e in random_numbers:
+        if not e in counter:
+            counter[e] = 0
+        else:
+            counter[e] += 1
+
+    counter
+    # [(7, 12), (4, 8), (9, 6), (1, 5), (2, 4)]
+
+.. code-block:: python
+
+    import random
+    from collections import Counter
+
+    random_numbers = [random.randint(1, 10) for a in range(1, 50)]
+
+    counter = Counter()  # obiekt Counter ma domyślną wartość 0 dla elementów, które nie istnieją
+
+    for e in random_numbers:
+        counter[e] += 1
+
+    counter.most_common(5)
+    # [(7, 12), (4, 8), (9, 6), (1, 5), (2, 4)]
+
+.. code-block:: python
+
+    import random
+    from collections import Counter
+
+
+    random_numbers = [random.randint(1, 10) for a in range(1, 50)]
+    counter = Counter(random_numbers)
+    counter.most_common(5)
+    # [(7, 12), (4, 8), (9, 6), (1, 5), (2, 4)]
+
+
 Moduł ``matplotlib`` (biblioteka zewnętrzna)
 ====================================================
 .. note:: Moduł jest szczegółowo opisany w :ref:`matplotlib`.

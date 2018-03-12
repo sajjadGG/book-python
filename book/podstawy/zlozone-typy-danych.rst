@@ -84,30 +84,6 @@ Zbiory i operacje na nich
     >>> my_list.extend([3, 4])
     [1, 2, 3, 4]
 
-.. code-block:: python
-
-    # Performance - Method concatenates strings using + in a loop
-    html = '<table>'
-
-    for element in lista:
-        html += f'\r\n<tr><td>{element}</td></tr>'
-    html += '\r\n</table>'
-
-    print(html)
-
-.. code-block:: python
-
-    # Problem solved
-    html = ['<table>']
-
-    for element in lista:
-        html.append(f'<tr><td>{element}</td></tr>')
-
-    html.append('</table>')
-    output = '\r\n'.join(html)
-
-    print(output)
-
 
 ``set`` - Zbiór
 ---------------
@@ -144,12 +120,17 @@ Zbiory i operacje na nich
 
 .. code-block:: python
 
-    # Podobnie, zbiór ma poniższe właściwości
-    print(len(my_set)) # Długość
-    print(1 in my_set) # Przynależność
-    for i in my_set: # Można po nim iterować
-        print(i)
-    print(my_set + {3,4}) # Ale już nie ma złożenia, są za to operacje na zbiorach
+    >>> my_set = {1, 2, 3}
+
+    >>> len(my_set)  # Długość
+    3
+
+    >>> 1 in my_set  # Przynależność
+    True
+
+    >>> for i in my_set:  # Można po nim iterować
+    ...    print(i)
+    ... print(my_set + {3,4}) # Ale już nie ma złożenia, są za to operacje na zbiorach
 
 
 Słownik można zrobić z dowolnego hashowalnego obiektu:
@@ -203,6 +184,60 @@ Należy zwrócić uwagę, aby nie pomylić z dictem:
     dict_values([20, 'José', 'Jiménez'])
 
 .. note:: przy wyświetlaniu elementów listy, kolejność może się zmieniać!
+
+Złożoność obliczeniowa
+----------------------
+* https://wiki.python.org/moin/TimeComplexity
+
+Jeżeli masz listę w której sprawdzasz czy element występuje, to zamień listę na ``set``, dzięki temu będzie lepsza złożoność
+
+Zastosowanie setów zamiast list
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: python
+
+    IMIONA = ['José', 'Ivan', 'Max']
+
+    if imie in IMIONA:
+        pass
+
+.. code-block:: python
+
+    IMIONA = {'José', 'Ivan', 'Max'}
+
+    if imie in IMIONA:
+        pass
+
+Zastosowanie list zamiast konkatanacji stringów
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: python
+
+    # Performance - Method concatenates strings using + in a loop
+    html = '<table>'
+
+    for element in lista:
+        html += f'\r\n<tr><td>{element}</td></tr>'
+    html += '\r\n</table>'
+
+    print(html)
+
+.. code-block:: python
+
+    # Problem solved
+    html = ['<table>']
+
+    for element in lista:
+        html.append(f'<tr><td>{element}</td></tr>')
+
+    html.append('</table>')
+    output = '\r\n'.join(html)
+
+    print(output)
+
+
+
+* Jeżeli coś ``collections.deque`` - Double ended Queue
+* Serializowane kolejki przy wielowątkowości
+
 
 Dobieranie się do wartości elementów za pomocą ``[...]`` i ``.get(...)``
 ------------------------------------------------------------------------
