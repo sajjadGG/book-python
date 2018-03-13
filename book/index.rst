@@ -130,11 +130,14 @@ W zastosowaniach naukowych
     :numbered:
     :caption: W zastosowaniach naukowych
 
+    scientific/code-quality.rst
     scientific/biblioteki.rst
     scientific/numpy.rst
     scientific/matplotlib.rst
     scientific/scipy.rst
     scientific/pandas.rst
+    scientific/jupyter.rst
+    scientific/graphviz.rst
 
 
 ****************
@@ -196,6 +199,7 @@ Załączniki
     zalaczniki/python-2vs3.rst
     zalaczniki/ksiazki.rst
     zalaczniki/python-wat.rst
+    zalaczniki/agenda-intermediate.rst
 
 
 **********
