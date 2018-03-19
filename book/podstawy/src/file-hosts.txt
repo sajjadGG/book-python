@@ -1,6 +1,7 @@
 ##
 # Host Database
 ##
+
 127.0.0.1       localhost
 127.0.0.1       mycomp
 10.13.37.1      facebook.com google.com microsoft.com

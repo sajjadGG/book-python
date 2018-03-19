@@ -82,19 +82,22 @@ Parsowanie ``/etc/passwd``
 
 Parsowanie ``/etc/hosts``
 -------------------------
-#. Z twojego systemu operacyjnego wyciągnij plik ``/etc/hosts`` i przedstaw go w formie listy dictów jak w przykładzie poniżej:
+#. Do pliku ``hosts`` w katalogu gdzie będzie Twój skrypt zapisz poniższy szablon:
+
+    .. literalinclude:: src/file-hosts.txt
+        :language: text
+        :caption: ``/etc/hosts`` example
+
+.. note:: jest to format pliku ``/etc/hosts`` (dla Windows ``C:/Windows/System32/drivers/etc/hosts``)
+
+#. Ważne są komentarze, białe spacje i linie przerwy
+#. Przedstaw go w formie listy dictów jak w przykładzie poniżej:
 
     .. literalinclude:: src/file-hosts.py
         :language: python
         :caption: ``/etc/hosts`` example
 
 #. Zwróć uwagę na uprawnienia do odczytu pliku
-#. System Windows również posiada ten plik (``C:/Windows/System32/drivers/etc/hosts``)
-#. Gdyby w Twoim systemie nie było pliku, skorzystaj z szablonu poniżej:
-
-    .. literalinclude:: src/file-hosts.txt
-        :language: text
-        :caption: ``/etc/hosts`` example
 
 :Co zadanie sprawdza?:
     * czytanie i parsowanie pliku

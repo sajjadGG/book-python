@@ -133,7 +133,7 @@ Zbiory i operacje na nich
     ... print(my_set + {3,4}) # Ale już nie ma złożenia, są za to operacje na zbiorach
 
 
-Słownik można zrobić z dowolnego hashowalnego obiektu:
+Set można zrobić z dowolnego hashowalnego obiektu:
 
 .. code-block:: python
 
@@ -142,10 +142,10 @@ Słownik można zrobić z dowolnego hashowalnego obiektu:
             self.miasto = miasto
 
 
-    Adres(miasto='...')
-    print({Adres(miasto='...'), Adres(miasto='...')})
+    Adres(miasto='Gwiezdne')
+    print({Adres(miasto='Gwiezdne'), Adres(miasto='Gwiezdne')})
 
-    a = Adres(miasto='...')
+    a = Adres(miasto='Gwiezdne')
     print({a, a})
 
 Należy zwrócić uwagę, aby nie pomylić z dictem:
@@ -155,7 +155,7 @@ Należy zwrócić uwagę, aby nie pomylić z dictem:
     {}  # dict
     {'klucz': 'wartość'}  # dict
     {'klucz', 'wartość'}  # set
-    {'klucz'}  # set
+    {'wartość'}  # set
 
 ``dict`` - Słownik
 ------------------
@@ -183,16 +183,16 @@ Należy zwrócić uwagę, aby nie pomylić z dictem:
     >>> my_dict.values()
     dict_values([20, 'José', 'Jiménez'])
 
-.. note:: przy wyświetlaniu elementów listy, kolejność może się zmieniać!
+.. note:: przy wyświetlaniu elementów słownika, kolejność może się zmieniać!
 
 Złożoność obliczeniowa
 ----------------------
 * https://wiki.python.org/moin/TimeComplexity
 
-Jeżeli masz listę w której sprawdzasz czy element występuje, to zamień listę na ``set``, dzięki temu będzie lepsza złożoność
-
 Zastosowanie setów zamiast list
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Jeżeli masz listę w której sprawdzasz czy element występuje, to zamień listę na ``set``, dzięki temu będzie lepsza złożoność
+
 .. code-block:: python
 
     IMIONA = ['José', 'Ivan', 'Max']
@@ -233,12 +233,9 @@ Zastosowanie list zamiast konkatanacji stringów
 
     print(output)
 
-
-
 * Jeżeli coś ``collections.deque`` - Double ended Queue
 * Serializowane kolejki przy wielowątkowości
 * Uwaga na set zawierający floaty, bo pomiędzy dwoma wartościami jest nieskończona ilość wyrażeń
-
 
 Dobieranie się do wartości elementów za pomocą ``[...]`` i ``.get(...)``
 ------------------------------------------------------------------------
@@ -297,20 +294,27 @@ Dla każdego z poniższych przykładów wykonano funkcję ``type(what)`` i wynik
     >>> what = 10.
     <class 'float'>
 
-    >>> what = 10,
+    >>> what = (10.)
+    <class 'float'>
+
+.. code-block:: python
+
+    >>> what = 10, # len(what) = 1
     <class 'tuple'>
+
+    >>> what = (10,) # len(what) = 1
+    <class 'tuple'>
+
+    >>> what = (10) # len(what) -> TypeError: object of type 'int' has no len()
+    <class 'int'>
+
+.. code-block:: python
 
     >>> what = 10, 20
     <class 'tuple'>
 
     >>> what = (10, 20)
     <class 'tuple'>
-
-    >>> what = (10,)
-    <class 'tuple'>
-
-    >>> what = (10.)
-    <class 'float'>
 
 .. code-block:: python
 
@@ -323,6 +327,7 @@ Dla każdego z poniższych przykładów wykonano funkcję ``type(what)`` i wynik
     >>> what = {'id': 1}
     <class 'dict'>
 
+.. code-block:: python
 
     >>> a = {}
 

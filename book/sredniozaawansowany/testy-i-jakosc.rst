@@ -51,6 +51,10 @@ Built-in frameworks
 Frontend Testing
 ================
 
+``SonarLint``
+-------------
+Plugin do IDE
+
 ``selenium``
 ------------
 * http://www.seleniumhq.org/
