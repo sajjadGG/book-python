@@ -89,8 +89,8 @@ Metody
         kierowca = None
         kola = 4
 
-    def zatrab(self):
-        print('piiip')
+        def zatrab(self):
+            print('piiip')
 
 
     auto = Pojazd()
@@ -132,6 +132,10 @@ Pola klasy
 
     maluch = Samochod(marka='Maluch')
     print(maluch.marka)
+
+.. literalinclude:: src/oop-getter.py
+    :language: python
+    :caption: Case Study uzasadnionego użycia gettera w kodzie
 
 
 Funkcja inicjalizująca
@@ -232,6 +236,25 @@ Dziedziczenie
 
 Diament dziedziczenia
 ---------------------
+.. code-block:: python
+
+    class Pojazd:
+        silnik = True
+        kierowca = True
+
+    class Samochod(Pojazd):
+        kierowca = None
+
+        def __init__(self, marka, kola=4):
+            self.marka = marka
+            self.kola = kola
+
+    sam1 = Samochod(marka='Maluch')
+
+
+    print(Samochod.__mro__)
+
+    # (<class '__main__.Samochod'>, <class '__main__.Pojazd'>, <class 'object'>)
 
 .. code-block:: python
 
@@ -705,6 +728,9 @@ Inicjalizacja parametrów
 ------------------------
 Wszystkie parametry lokalne dla danej instancji klasy powinny być zainicjalizowane w funkcji ``__init__``.
 
+.. literalinclude:: src/oop-dynamic-fields.py
+    :language: python
+    :caption: Fields added dynamicly
 
 Private, public? konwencja ``_`` i ``__``
 -----------------------------------------
@@ -726,30 +752,13 @@ Co powinno być w klasie a co nie?
 * Jeżeli metoda nie ma w swoim ciele ``self`` to nie powinna być w klasie
 * Jeżeli metoda nie ma w swoim ciele ``self`` ale wybitnie pasuje do klasy, to można ją tam zamieścić oraz dodać dekorator ``@staticmethod``
 
-.. code-block:: python
-
-    class Osoba:
-        wiek = 10
-
-        def __init__(self, imie):
-            self.imie = imie
-
-        @staticmethod
-        def powiedz_hello():
-            print('hello')
-
-
-    Osoba.powiedz_hello()
-    print(Osoba.wiek)
-
-
-    o = Osoba(imie='Ivan')
-    o.powiedz_hello()
-    print(Osoba.wiek)
-
+.. literalinclude:: src/oop-staticmethod.py
+    :language: python
+    :caption: Case Study uzasadnionego użcycia ``@staticmethod``
 
 Klasa per plik?
 ---------------
+Patrz przykład powyżej
 
 Przykłady praktyczne
 ====================

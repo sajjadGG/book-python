@@ -296,19 +296,19 @@ Przy zwracaniu wartości z funkcji
 
 .. code-block:: python
 
-    def zmienne_lokalne_pozycyjne(a, b, *args):
-        print(locals())
-
-    zmienne_lokalne_pozycyjne(1, 2, 5, 7)
+    >>> def zmienne_lokalne_pozycyjne(a, b, *args):
+    ...    print(locals())
+    ...
+    ... zmienne_lokalne_pozycyjne(1, 2, 5, 7)
+    {'args': (5, 7), 'b': 2, 'a': 1}
 
 .. code-block:: python
 
-    def zmienne_lokalne_nazwane(a, b, **kwargs):
-        print(locals())
-
-    zmienne_lokalne_nazwane(1, 2, c=5, d=7)
-
-
+    >>> def zmienne_lokalne_nazwane(a, b, **kwargs):
+    ...    print(locals())
+    ...
+    ... zmienne_lokalne_nazwane(1, 2, c=5, d=7)
+    {'kwargs': {'c': 5, 'd': 7}, 'b': 2, 'a': 1}
 Inne przykładowe zastosownaie operatorów ``*`` i ``**`` polega na wykorzystaniu ich przy wywołaniu funkcji. Wtedy, wykorzystując operator ``*``, kolejne elementy listy albo krotki będą przekazane jako kolejne argumenty funkcji, a wykorzystując operator ``**`` kolejne elementy zmiennej słownikowej będą przekazane jako nazwane argumenty. Oznacza to, że na przykład argument ``x`` funkcji, przyjmie wartość ``dict_vec['x']``.
 
 .. code-block:: python

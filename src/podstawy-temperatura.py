@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+TEMP_STEP = 5
+TEMP_MAX = 41
+TEMP_MIN = -20
 
 
 def celsiusz_na_farenheit(celsiusze):
@@ -16,7 +19,7 @@ def celsiusz_na_farenheit(celsiusze):
     return celsiusze * 1.8 + 32
 
 
-for stopien in range(-20, 41, 5):
+for stopien in range(TEMP_MIN, TEMP_MAX, TEMP_STEP):
     celsiusz = stopien
     fahrenheit = celsiusz_na_farenheit(stopien)
 
