@@ -26,6 +26,10 @@ class Adres:
         self.ulica = kwargs.get('ulica', None)
         self.miasto = kwargs.get('miasto', None)
 
+#        for k, v in kwargs.items():
+#           setattr(self, k, v)
+
+
     def __str__(self):
         return f'{self.ulica} {self.miasto}'
 
@@ -35,13 +39,17 @@ class Adres:
 
 ksiazka_adresowa = [
     Kontakt(imie='Max', nazwisko='Peck', adresy=[
-        Adres(ulica='ulica1', miasto='miasto1'),
-        Adres(ulica='ulica2', miasto=''),
-        Adres(ulica='ulica3'),
+        Adres(ulica='2101 E NASA Pkwy', miasto='Houston', stan='Texas', kod='77058', panstwo='USA'),
+        Adres(ulica=None, miasto='Kennedy Space Center', kod='32899', panstwo='USA'),
+        Adres(ulica='4800 Oak Grove Dr', miasto='Pasadena', kod='91109', panstwo='USA'),
+        Adres(ulica='2825 E Ave P', miasto='Palmdale', stan='California', kod='93550', panstwo='USA', data_urodzenia=None),
     ]),
-    Kontakt(imie='Ivan', nazwisko='Ivanovic'),
-    Kontakt(imie='José', nazwisko='Jiménez', adresy=[]),
+    Kontakt(imie='José', nazwisko='Jiménez'),
+    Kontakt(imie='Иван', nazwisko='Иванович', adresy=[]),
 ]
+
+
+
 
 log.debug(f'Ksiażka adresowa: {ksiazka_adresowa}')
 

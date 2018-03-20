@@ -1,7 +1,3 @@
-\usepackage{ulem}
-
-\usepackage{ulem}
-
 *****************************
 Serializacja i deserializacja
 *****************************
@@ -10,66 +6,59 @@ Serializacja i deserializacja
 
 Serializacja i deserializacja danych w CSV
 ==========================================
-.. code-block:: pycon
 
-    >>> import csv
-
-    >>> with open('filename.csv') as csvfile:
-    ...     data = csv.DictReader(csvfile, delimiter=',', quotechar='"')
-    ...
-    ...     for row in data:
-    ...         print(row['first_name'], row['last_name'])
-
-.. code-block:: pycon
-
-    >>> import csv
-
-    >>> DATA = [
-    ...    {'first_name': 'José', 'last_name': 'Jiménez'},
-    ...    {'first_name': 'Max', 'last_name': 'Peck'},
-    ...    {'first_name': 'Ivan', 'last_name': 'Ivanovic'},
-    ...]
-
-    >>> with open('filename.csv', 'w') as csvfile:
-    ...    fieldnames = DATA[0].keys()
-    ...    writer = csv.DictWriter(csvfile, fieldnames=fieldnames, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL, lineterminator='\n')
-    ...    writer.writeheader()
-    ...
-    ...    for row in DATA:
-    ...        writer.writerow(row)
-    ...
-
-.. literalinclude:: src/serialization-csv-passwd.py
+Odczytywanie danych z plików CSV
+--------------------------------
+.. literalinclude:: src/csv-read.py
+    :name: listing-csv-read
     :language: python
-    :caption: Parsing passwd file with ``csv``
+    :caption: Zapis do plików csv używając ``csv.DictReader()``
+
+Zapis do plików CSV
+-------------------
+.. literalinclude:: src/csv-write.py
+    :name: listing-csv-write
+    :language: python
+    :caption: Zapis do plików csv używając ``csv.DictWriter()``
+
+Parsowanie innych plików za pomocą ``csv.DictReader()``
+-------------------------------------------------------
+.. literalinclude:: src/csv-passwd.py
+    :name: listing-csv-passwd
+    :language: python
+    :caption: Parsing ``/etc/passwd`` file with ``csv.DictReader()``
+
 
 Serializacja i deserializacja danych w JSON
 ===========================================
+Format JSON jest podobny do zapisu dict w Python, ale różni się:
 
-Proste użycie
--------------
-.. code-block:: pycon
+- brak przecinka na końcu ostatniego elementu list
+- zawsze są stosowane podwójne cudzysłowia
+- ``true`` i ``false`` jest pisane małymi literami
+- zamiast ``None`` jest ``null``
 
-    >>> import json
+Zapis danych do formatu JSON
+----------------------------
+.. literalinclude:: src/json-dumps.py
+    :name: listing-json-dumps
+    :language: python
+    :caption: Zapis danych do formatu JSON
 
-    >>> PY_DATA = {'first_name': 'Ivan', 'last_name': 'Ivanovic'}
-    >>> JS_DATA = '{"first_name": "Ivan", "last_name": "Ivanovic"}'
-
-    >>> json.dumps(PY_DATA)
-    '{"first_name": "Ivan", "last_name": "Ivanovic"}'
-
-    >>> json.loads(JS_DATA)
-    {'first_name': 'Ivan', 'last_name': 'Ivanovic'}
+Odczyt danych z formatu JSON
+----------------------------
+.. literalinclude:: src/json-loads.py
+    :name: listing-json-loads
+    :language: python
+    :caption: Odczyt danych z formatu JSON
 
 Problemy z serializacją i deserializacją
 ----------------------------------------
 * Serializacja i deserializacja dat
 * Serializacja i deserializacja obiektów
 
-
 Serializacja i pisanie własnych encoderów
 -----------------------------------------
-
 .. code-block:: pycon
 
     >>> DATA = {'first_name': 'Ivan', 'last_name': 'Ivanovic'}
@@ -155,7 +144,6 @@ Problem z rzutowaniem daty na JSON:
 
 Deserializacja i pisanie własnych decoderów
 -------------------------------------------
-
 .. code-block:: python
 
     >>> DATA = '["2016-10-26T14:41:51.020", "2016-10-26 14:41:51.020673", "2016-10-26 14:41:51.020673", "2016-10-26 14:41:51.020673", "2016-10-26 14:41:51.020673", {"nazwisko": "Ivanovic", "imie": "Ivan"}, [10, 20, 30], [1]]'
@@ -419,7 +407,7 @@ Serializacja ``csv``
         {'first_name': 'Max', 'last_name': 'Peck'},
         {'first_name': 'Ivan'},
         {'first_name': 'Max', 'last_name': 'Peck', 'born': 1961},
-        {'first_name': 'Max', 'last_name': 'Peck', 'born': 1961, 'first_step': 1969},
+        {'first_name': 'Jose', 'born': 1961, 'first_step': 1969},
     ]
 
 :Podpowiedź:
@@ -431,40 +419,31 @@ Serializacja ``csv``
     * Umiejętność iteracji po złożonych strukturach danych
     * Dynamiczne generowanie struktur danych na podstawie innych
 
+Serializacja obiektów do Pickle
+-------------------------------
+#. Użyj obiektu ``książka_adresowa`` stworzonego w zadaniu z serializacją
+#. Za pomocą ``pickle`` zapisz kontakty z książki adresowej w pliku
+#. Stwórz obiekty książki adresowej na podstawie danych odczytanych z pliku
 
-Książka adresowa
-----------------
-Bardzo często wykorzystywanym typem pliku jest CSV, czyli wartości oddzielone przecinkami. Zamień format pliku na ten typ. Zrób tak, aby dane trafiły do odpowiednich kolumn nawet po przesortowaniu. Użyj ``csv.DictWriter()``. Wszystkie pola muszą być zawsze w cudzysłowiach i oddzielone średnikami.
+Serializacja obiektów do JSON
+-----------------------------
+#. Użyj obiektu ``książka_adresowa`` stworzonego w zadaniu z serializacją
+#. Zapisz kontakty z książki adresowej w JSON
+#. Jak odtworzyć relacje?
+#. Stwórz obiekty książki adresowej na podstawie danych odczytanych z pliku
 
-Każdy z użytkowników jest reprezentowany przez:
+:Podpowiedź: ``self.__dict__``
 
-    * imię
-    * nazwisko
-    * telefon
-    * ulica
-    * miasto
-    * kod_pocztowy
-    * wojewodztwo
-    * panstwo
+Serializacja obiektów do CSV
+----------------------------
+#. Użyj obiektu ``książka_adresowa`` stworzonego w zadaniu z serializacją
+#. Za pomocą ``csv.DictWriter()`` zapisz kontakty z książki adresowej w pliku
+#. Wszystkie pola muszą być zawsze w cudzysłowiach i oddzielone średnikami, kodowanie UTF-8.
+#. Jak zapisać w CSV dane relacyjne (kontakt ma wiele adresów)?
+#. Stwórz obiekty książki adresowej na podstawie danych odczytanych z pliku
 
-Wszystkie dane w książce muszą być reprezentowane przez typy proste.
-
-:Zadanie 2:
-    Zmodyfikuj aby można było wpisywać wiele adresów. Dlaczego CSV nie może zapisać wielu adresów dla jednego rekordu?
-
-:Zadanie 3:
-    Napisz książkę adresową, która będzie zapisywała dane do pliku w formacie JSON.
-
-:Zadanie 4:
-    Zmodyfikuj program aby wykorzystywał klasy do reprezentowania wpisów w książce. Które podejście jest lepsze?
-
-:Zadanie 5:
-    Teraz wykorzystaj plik bazy danych SQLite aby trzymać informacje w tabeli. Które podejście jest lepsze?
-
-:Zadanie 6:
-    Wykorzystaj Django do stworzenia takiego modelu i wygeneruj panel administracyjny. Trudne?
-
-:Pytanie:
-    * Które podejście było najłatwiejsze?
-    * W jakim formacie najlepiej przechowywać dane?
-    * Które podejście jest najlepsze dla innych programistów, a które dla użytkowników?
+:Podpowiedź:
+    - powtarzanie rekordów (user pozostaje ten sam) z innymi danymi adresowymi
+    - dodawanie kolumn (ulica_1, miasto_1, panstwo_1, ulica_2, miasto_2, panstwo_2) i automatyczne generowanie fieldnames
+    - wrzucenie danych jako string do jednego pola adres_1, adres_2, adres_3 i ustalenie separatora (np: średnik - ';')
+    - jedno pole adres (w ramach niego wszystkie adresy rozdzielone ";" a dane przecinkami ",")

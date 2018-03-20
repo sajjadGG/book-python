@@ -38,7 +38,7 @@ Tryby odczytu i zapisu
 
 Obsługa wyjątków
 ================
-.. literalinclude:: src/file-write.py
+.. literalinclude:: src/file-exception.py
     :language: python
     :caption: Exception handling while accessing files
 
@@ -51,45 +51,9 @@ Zawartość zadanego pliku
 #. Napisz program, który wyświetli na ekranie zawartość pliku o nazwie podanej przez użytkownika.
 #. Dopisz obsługę wyjątków dla braku uprawnień oraz tego że plik nie istnieje.
 
-
-Parsowanie ``/etc/passwd``
---------------------------
-#. Sparsuj plik ``/etc/passwd`` i przedstaw go w formacie listy dictów:
-
-    - User name
-    - Encrypted password
-    - User ID number (UID)
-    - User's group ID number (GID)
-    - Full name of the user (GECOS)
-    - User home directory
-    - Login shell
-
-#. Zwróć username, uid oraz grupy użytkowników, których UID jest mniejszy niż 50.
-#. Gdyby w Twoim systemie nie było pliku, skorzystaj z szablonu poniżej:
-
-    .. literalinclude:: src/file-passwd.txt
-        :language: text
-        :caption: ``/etc/passwd`` example
-
-:Co zadanie sprawdza?:
-    * czytanie i parsowanie pliku
-    * nieregularne pliki konfiguracyjne (struktura może się zmieniać)
-    * filtrowanie elementów
-    * korzystanie z pętli i instrukcji warunkowych
-    * parsowanie stringów
-    * praca ze ścieżkami w systemie operacyjnym
-
-
 Parsowanie ``/etc/hosts``
 -------------------------
 #. Do pliku ``hosts`` w katalogu gdzie będzie Twój skrypt zapisz poniższy szablon:
-
-    .. literalinclude:: src/file-hosts.txt
-        :language: text
-        :caption: ``/etc/hosts`` example
-
-.. note:: jest to format pliku ``/etc/hosts`` (dla Windows ``C:/Windows/System32/drivers/etc/hosts``)
-
 #. Ważne są komentarze, białe spacje i linie przerwy
 #. Przedstaw go w formie listy dictów jak w przykładzie poniżej:
 
@@ -106,3 +70,62 @@ Parsowanie ``/etc/hosts``
     * korzystanie z pętli i instrukcji warunkowych
     * parsowanie stringów
     * praca ze ścieżkami w systemie operacyjnym
+
+.. literalinclude:: src/file-etc-hosts.txt
+    :name: code-file-etc-hosts
+    :language: text
+    :caption: Przykładowa zawartość pliku ``/etc/hosts``
+
+Parsowanie ``/etc/passwd``
+--------------------------
+#. Poniższe listingi prezentują przykładową zawartość plików:
+
+    - ``/etc/passwd`` - :numref:`code-file-etc-passwd`
+    - ``/etc/shadow`` - :numref:`code-file-etc-shadow`
+    - ``/etc/group`` - :numref:`code-file-etc-group`
+
+#. Skopuj ich zawartość do plików (shadow, passwd, group) na dysku w katalogu gdzie masz kod programu (uwaga: komentarze i puste mają również być skopiowane)
+#. Sparsuj plik i przedstaw go w formacie listy dictów
+#. W ramach dicta połącz dane, tak aby uzyskać wynik:
+
+    .. code-block:: python
+
+        users = [{
+            'login': 'jimenez',
+            'uid': 1001,
+            'gid': 1001,
+            'home': '/home/jimenez',
+            'shell': '/bin/bash',
+            'algorithm': 'SHA-512',
+            'password': 'P9zn0KwR...k4kijuhE50',
+            'groups': ['staff', 'sysadmin'],
+            'lastchanged': datetime.date(2015, 7, 16),
+            'locked': False,
+        }, ...]
+
+#. Zwróć listę użytkowników, których UID jest większy niż 1000 (są to konta niesystemowe - użytkowników).
+
+:Co zadanie sprawdza?:
+    * czytanie i parsowanie pliku
+    * łączenie danych z różnych plików w jeden format wynikowy
+    * nieregularne pliki konfiguracyjne (struktura może się zmieniać)
+    * filtrowanie elementów
+    * korzystanie z pętli i instrukcji warunkowych
+    * parsowanie stringów
+    * praca ze ścieżkami w systemie operacyjnym
+    * różna reprezentacja danych (podmienianie wartości)
+
+.. literalinclude:: src/file-etc-passwd.txt
+    :name: code-file-etc-passwd
+    :language: text
+    :caption: Przykładowa zawartość pliku ``/etc/passwd``
+
+.. literalinclude:: src/file-etc-shadow.txt
+    :name: code-file-etc-shadow
+    :language: text
+    :caption: Przykładowa zawartość pliku ``/etc/shadow``
+
+.. literalinclude:: src/file-etc-group.txt
+    :name: code-file-etc-group
+    :language: text
+    :caption: Przykładowa zawartość pliku ``/etc/group``

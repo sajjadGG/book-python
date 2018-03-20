@@ -197,6 +197,13 @@ Przesunięcia czasu (dodawanie i odejmowanie)
     :language: python
     :caption: Substract time from datetimes
 
+Konwersja Timestamp Unix Timestamp -> Microsoft Timestamp
+---------------------------------------------------------
+.. literalinclude:: src/datetime-mstimestamp.py
+    :name: code-datetime-mstimestamp
+    :language: python
+    :caption: Konwersja Timestamp Unix Timestamp -> Microsoft Timestamp
+
 Strefy czasowe
 --------------
 .. literalinclude:: src/datetime-tzinfo.py

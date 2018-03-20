@@ -23,12 +23,12 @@ def passwd1():
     with open(FILENAME) as file:
 
         for line in file:
+            if line and not line.startswith('#'):
+                line_splitted = line.split(':')
+                username = line_splitted[0]
+                uid = int(line_splitted[2])
 
-            if not line.startswith('#'):
-                username = line.split(':')[0]
-                uid = int(line.split(':')[2])
-
-                if uid < 1000:
+                if uid < 50:
                     technical_accouts.append(username)
 
     return technical_accouts

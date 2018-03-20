@@ -732,6 +732,12 @@ Wszystkie parametry lokalne dla danej instancji klasy powinny być zainicjalizow
     :language: python
     :caption: Fields added dynamicly
 
+.. literalinclude:: src/class-init-dynamic.py
+    :name: listing-class-init-dynamic
+    :language: python
+    :caption: Funkcja inicjalizująca, która automatycznie dodaje pola do naszej klasy w zależności od tego co zostanie podane przy tworzeniu obiektu
+
+
 Private, public? konwencja ``_`` i ``__``
 -----------------------------------------
 W Pythonie nie ma czegoś takiego jak prywatne pole klasy. Czy prywatna metoda klasy. Wszystkie obiekty zdefiniowane wewnątrz klasy są publiczne. Istnieje jednak ogólnie przyjęta konwencja, że obiekty poprzedzone ``_`` są prywatne dla tej klasy i nie powinny być bezpośrednio wywoływane przez użytkownika. Podobnie z funkcjami rozpoczynającymi się od ``__`` (m.in. metody magiczne wspomniane powyżej). Są tu funkcje systemowe, które są używane przez interpreter Pythona i raczej nie powinny być używane bezpośrednio.
