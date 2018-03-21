@@ -165,3 +165,4 @@ Wyciszanie logowania
     log = logging.getLogger(__name__)
 
     log.debug('to jest moja debugowa wiadomosc')
+

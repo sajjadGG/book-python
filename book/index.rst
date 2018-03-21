@@ -76,6 +76,8 @@ Podstawy
     sredniozaawansowany/logging.rst
     sredniozaawansowany/datetime.rst
     sredniozaawansowany/serializacja.rst
+
+    sredniozaawansowany/testy-i-jakosc.rst
     sredniozaawansowany/introspection.rst
 
     sredniozaawansowany/biblioteki-zewnetrzne.rst
@@ -85,8 +87,6 @@ Podstawy
     sredniozaawansowany/virtualenv.rst
     sredniozaawansowany/regex.rst
     sredniozaawansowany/bazy-danych.rst
-
-    sredniozaawansowany/testy-i-jakosc.rst
 
     sredniozaawansowany/tworzenie-dokumentacji.rst
     sredniozaawansowany/django.rst

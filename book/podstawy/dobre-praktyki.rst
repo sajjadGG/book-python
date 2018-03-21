@@ -457,3 +457,40 @@ Wersjonowanie API
     Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
     Accept-Encoding:gzip, deflate, sdch
     Accept-Language:en-US,en;q=0.8,pl;q=0.6
+
+``pycodestyle`` previously known as ``PEP8``
+============================================
+
+:About:
+    Python style guide checker. ``pycodestyle`` is a tool to check your Python code
+    against some of the style conventions in PEP 8.
+
+    * Plugin architecture: Adding new checks is easy.
+    * Parseable output: Jump to error location in your editor.
+    * Small: Just one Python file, requires only stdlib. You can use just the
+    * pep8.py file for this purpose.
+    * Comes with a comprehensive test suite.
+
+:Installation:
+    .. code-block:: console
+
+        $ pip install pycodestyle
+        $ pip install --upgrade pycodestyle
+        $ pip uninstall pycodestyle
+
+:Usage:
+    .. code-block:: console
+
+        $ pycodestyle FILENAME.py
+        $ pycodestyle DIRECTORY/
+        $ pycodestyle --statistics -qq DIRECTORY/
+        $ pycodestyle --show-source --show-pep8 FILENAME.py
+
+:Config:
+    ``setup.cfg``
+
+    .. code-block:: ini
+
+        [pycodestyle]
+        max-line-length = 939
+        ignore = E402,W391
