@@ -300,4 +300,4 @@ Skrypt z książką adresową z poprzednich zadań przepisz tak, aby wykorzystyw
 
 * Wykorzystaj ``cursor``
 * Dane powinny być zwracane dane w postaci listy ``dict``
-* Do wpisywania danych wykorzystaj konstrukcję ``PreparedStatement`` wykorzystując ``dict`` jako argument
+* Do wpisywania danych wykorzystaj konstrukcję ``execute`` wykorzystując ``dict`` jako argument
