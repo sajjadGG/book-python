@@ -5,6 +5,15 @@ Biblioteki zewnętrzne
 Inne
 ====
 
+HTML Scrapping
+--------------
+* BeautifulSoup https://www.crummy.com/software/BeautifulSoup/bs4/doc/#
+* Scrapy https://scrapy.org/
+
+Zastosowania sieciowe
+---------------------
+* Scapy http://www.secdev.org/projects/scapy/
+
 Python Executable
 -----------------
 

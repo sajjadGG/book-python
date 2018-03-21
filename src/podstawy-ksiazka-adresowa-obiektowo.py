@@ -2,7 +2,7 @@ import json
 import logging
 import pickle
 
-KSIAZKA_ADRESOWA_PICKLE = '/_tmp/ksiazka-adresowa.pickle'
+KSIAZKA_ADRESOWA_PICKLE = 'ksiazka-adresowa.pickle'
 
 log = logging.getLogger(__name__)
 logging.basicConfig(level=logging.DEBUG)
@@ -47,7 +47,6 @@ ksiazka_adresowa = [
     Kontakt(imie='José', nazwisko='Jiménez'),
     Kontakt(imie='Иван', nazwisko='Иванович', adresy=[]),
 ]
-
 
 
 
