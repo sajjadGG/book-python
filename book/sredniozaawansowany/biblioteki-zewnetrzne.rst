@@ -5,6 +5,14 @@ Biblioteki zewnętrzne
 Inne
 ====
 
+Wykonywanie poleceń równolegle na wielu maszynach
+-------------------------------------------------
+https://linux.die.net/man/1/pssh
+
+Wizualizacja danych
+-------------------
+- https://superset.incubator.apache.org/
+
 HTML Scrapping
 --------------
 * BeautifulSoup https://www.crummy.com/software/BeautifulSoup/bs4/doc/#
@@ -16,14 +24,12 @@ Zastosowania sieciowe
 
 Python Executable
 -----------------
-
 * https://py2app.readthedocs.io/
 * http://www.py2exe.org/
 * http://www.pyinstaller.org/
 
 Allegro Tipboard
 ----------------
-
 * http://allegro.tech/tipboard/
 * https://github.com/allegro/tipboard
 

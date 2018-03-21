@@ -215,6 +215,8 @@ Parsowanie i sanityzacja argumentów
 
     >>> p = subprocess.Popen(args) # Success!
 
+.. note:: pssh
+https://linux.die.net/man/1/pssh
 
 ``tempfile``
 ============
