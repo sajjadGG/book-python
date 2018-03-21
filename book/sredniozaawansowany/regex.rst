@@ -80,6 +80,14 @@ Przykład
     email_poprawny('matt+@astrotech.io')
     email_poprawny('mattastrotech@.io')
 
+Wizualizacja regexpów
+---------------------
+https://regexper.com/
+
+.. figure:: img/regexp-vizualization.png
+    :name: figure-regexp-vizualization
+    :scale: 100%
+    :align: center
 
 Zadania kontrolne
 =================
