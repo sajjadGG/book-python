@@ -80,6 +80,18 @@ Przykład
     email_poprawny('matt+@astrotech.io')
     email_poprawny('mattastrotech@.io')
 
+.. code-block:: python
+
+    issues = set()
+    issue_id = re.compile(r'#([0-9]+)', flags=re.MULTILINE)
+
+    for msg in messages:
+        issue = issue_id.findall(msg)
+
+        if issue:
+            issues.add(issue)
+
+
 Wizualizacja regexpów
 ---------------------
 https://regexper.com/

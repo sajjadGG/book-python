@@ -136,6 +136,13 @@ Context manager
     except sqlite3.IntegrityError:
         print("couldn't add Joe twice")
 
+Przykład praktyczny
+===================
+.. literalinclude:: src/database-case-study.py
+    :name: listing-database-case-study
+    :language: python
+    :caption: Zapisywanie do bazy danych wyników pobranych z sensorów podłączonych po USB
+
 
 ``pyMySQL``
 ===========
