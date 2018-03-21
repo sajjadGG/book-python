@@ -66,6 +66,7 @@ Cytowanie
 
 Sphinx
 ======
+
 Zależnośći
 ----------
 .. code-block:: text
@@ -115,6 +116,7 @@ Buildery
 - make singlehtml
 - make pdf
 
+- generowanie Word (docx) -> pandoc
 
 Read the docs
 =============
