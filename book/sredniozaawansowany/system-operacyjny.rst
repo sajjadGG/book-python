@@ -1,9 +1,3 @@
-\usepackage{ulem}
-
-\usepackage{ulem}
-
-\usepackage{ulem}
-
 *****************
 System Operacyjny
 *****************
