@@ -31,7 +31,7 @@ Odnośniki
 
 Obrazki i media
 ---------------
-- figure (scale, name,
+- figure (scale, name, align, podpsy pod obrazkami)
 
 Specjalne wstawki
 -----------------
@@ -68,14 +68,23 @@ Sphinx
 ======
 Zależnośći
 ----------
-sphinx==1.6.5
-sphinx_rtd_theme
-sphinxcontrib-bibtex==0.3.6
-sphinxjp.themes.revealjs
+.. code-block:: text
+
+    # Minimalne wymaganie
+    sphinx==1.8.0
+
+    # Theme Read the Docs
+    sphinx_rtd_theme
+
+    # System cytowania i parsowanie bibtex
+    sphinxcontrib-bibtex==0.3.6
+
+    # Jeżeli chcemy generować slajdy RevealJS
+    sphinxjp.themes.revealjs
 
 Config
 ------
-- Wersja na podstawie hasba git
+- Wersja na podstawie hasha git
 
 Dobre praktyki
 --------------
@@ -91,14 +100,21 @@ Generowanie dokumentacji
 ------------------------
 - Table of Contents
 
+toctree
+-------
+
+Automatyczne odpalanie doctestów do listingów kodu
+--------------------------------------------------
+
+Osadzanie LaTeX
+---------------
+
 Buildery
 --------
 - make html
 - make singlehtml
 - make pdf
 
-toctree
--------
 
 Read the docs
 =============

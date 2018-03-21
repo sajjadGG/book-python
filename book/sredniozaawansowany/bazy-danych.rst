@@ -116,7 +116,6 @@ Typy i konwertery
 
 Context manager
 ---------------
-
 .. code-block:: python
 
     import sqlite3
@@ -135,6 +134,32 @@ Context manager
             con.execute("insert into person(firstname) values (?)", ("Joe",))
     except sqlite3.IntegrityError:
         print("couldn't add Joe twice")
+
+Typy danych w SQLite
+--------------------
+- NULL. The value is a NULL value.
+- INTEGER. The value is a signed integer, stored in 1, 2, 3, 4, 6, or 8 bytes depending on the magnitude of the value.
+- REAL. The value is a floating point value, stored as an 8-byte IEEE floating point number.
+- TEXT. The value is a text string, stored using the database encoding (UTF-8, UTF-16BE or UTF-16LE).
+- BLOB. The value is a blob of data, stored exactly as it was input.
+
+SQLite Auto Increment
+---------------------
+.. code-block:: sql
+
+    CREATE TABLE people (
+        id integer primary key auto increment,
+        first_name varchar(20),
+        last_name varchar(20)
+    );
+
+    INSERT INTO people VALUES ("José", "Jiménez");
+    INSERT INTO people (first_name, last_name) VALUES ("Max", "Peck");
+
+    SELECT * FROM people;
+
+    1|José|Jiménez
+    2|Max|Peck
 
 Przykład praktyczny
 ===================
