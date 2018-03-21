@@ -25,6 +25,18 @@ Najczęściej wykorzystuje się:
 
 .. code-block:: python
 
+    >>> import os
+    >>> os.path.isdir(os.path.join("c:", "\\", "Users"))
+    True
+
+    >>> os.path.isdir(os.path.join("c:", "/", "Users"))
+    True
+
+    >>> os.path.isdir(os.path.join("c:", os.sep, "Users"))
+    True
+
+.. code-block:: python
+
     import os
 
     for element in os.scandir('/etc'):
@@ -136,7 +148,6 @@ Setting the shell argument to a true value causes subprocess to spawn an interme
 
 Uruchamianie poleceń
 --------------------
-
 .. code-block:: python
 
     >>> subprocess.run(["ls", "-l"])  # doesn't capture output
@@ -164,7 +175,6 @@ Uruchamianie poleceń
 
 Timeout dla wykonywania poleceń
 -------------------------------
-
 .. code-block:: python
 
     import subprocess
@@ -177,7 +187,6 @@ Timeout dla wykonywania poleceń
 
 Przechwytywanie outputu
 -----------------------
-
 .. code-block:: python
 
     def run(command, timeout=15, clear=True):
