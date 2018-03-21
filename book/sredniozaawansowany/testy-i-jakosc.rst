@@ -102,7 +102,6 @@ Static Code Analysis
 
         $ pip install pycodestyle
         $ pip install --upgrade pycodestyle
-        $ pip uninstall pycodestyle
 
 :Usage:
     .. code-block:: console
@@ -120,6 +119,7 @@ Static Code Analysis
         [pycodestyle]
         max-line-length = 939
         ignore = E402,W391
+        exclude = */migrations/*
 
 ``SonarQube``
 -------------
