@@ -38,6 +38,12 @@ Najczęściej wykorzystywane funkcje
 ``compile()``
 -------------
 
+
+.. literalinclude:: src/re-regexp.py
+    :name: listing-re-regexp
+    :language: python
+    :caption: Usage of regexp
+
 Greedy search
 =============
 

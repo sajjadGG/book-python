@@ -5,37 +5,15 @@ Programowanie HTTP
 Biblioteki standardowe
 ======================
 
-ściąganie danych z internetu, które trzeba rozpakować:
-
-.. code-block:: python
-
-    import os
-    import urllib.request
-    import zipfile
-
-    data_path = 'data'
-
-    os.makedirs(data_path, exist_ok=True)
-
-    url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/00228/smsspamcollection.zip'
-    file_name = url.split('/')[-1]
-    dest_file = os.path.join(data_path, file_name)
-
-    data_file = 'SMSSpamCollection'
-    data_full = os.path.join(data_path, data_file)
-
-    urllib.request.urlretrieve(url, dest_file)
-
-    with zipfile.ZipFile(dest_file) as zip_file:
-        zip_file.extract(data_file, path=data_path)
-
-Dane są w formacie TSV (tab separator values)
-
 ``http``
 --------
 
 ``urllib``
 ----------
+.. literalinclude:: src/http-urlib.py
+    :name: listing-http-urlib
+    :language: python
+    :caption: ściąganie danych z internetu, które trzeba rozpakować, Dane są w formacie TSV (tab separator values), można je rozpakować modułem CSV i podać jako ``delimiter='\t'``
 
 Biblioteki zewnętrzne
 =====================
@@ -134,6 +112,18 @@ Biblioteki zewnętrzne
 * http://docs.python-requests.org/en/master/user/quickstart/#json-response-content
 * http://docs.python-requests.org/en/master/dev/contributing/#kenneth-reitz-s-code-style
 
+Requests OAuth
+--------------
+http://requests-oauthlib.readthedocs.io/en/latest/index.html
+
+.. code-block:: console
+
+    pip install requests_oauthlib
+
+.. literalinclude:: src/requests-oauthlib.py
+    :name: listing-requests-oauthlib
+    :language: python
+    :caption: Requests OAuth
 
 HTML Scrapping i ``BeautifulSoup``
 ----------------------------------
@@ -261,21 +251,27 @@ Flask is a microframework for Python based on Werkzeug, Jinja 2 and good intenti
 .. code-block:: console
 
     $ pip install Flask
+
+.. code-block:: console
+
     $ python hello.py
      * Running on http://localhost:5000/
 
-.. code-block:: python
+.. code-block:: console
 
-    from flask import Flask
-    app = Flask(__name__)
+    $ export FLASK_APP=hello.py
+    $ python -m flask run --host=0.0.0.0
+     * Running on http://0.0.0.0:5000/
 
-    @app.route("/")
-    def hello():
-        return "Hello World!"
+.. literalinclude:: src/http-flask-simple.py
+    :name: listing-http-flask-simple
+    :language: python
+    :caption: Simple usage of Flask
 
-    if __name__ == "__main__":
-        app.run()
-
+.. literalinclude:: src/http-flask-template.py
+    :name: listing-http-flask-template
+    :language: python
+    :caption: Flask using templates and data from user
 
 ``webapp2``
 -----------
@@ -339,6 +335,26 @@ Tornado is a Python web framework and asynchronous networking library, originall
         app = make_app()
         app.listen(8888)
         tornado.ioloop.IOLoop.current().start()
+
+Formatowanie JSON
+-----------------
+
+.. code-block:: console
+
+    $ echo '{"json": "obj"}' | python -m json.tool
+    {
+        "json": "obj"
+    }
+    $ echo '{1.2:3.4}' | python -m json.tool
+    Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+
+.. code-block:: console
+
+    $ curl https://api.github.com/repos/django/django/commits |python -m json.tool
+
+Alternatywy:
+
+- https://stedolan.github.io/jq/
 
 Utils
 =====

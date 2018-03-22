@@ -3,6 +3,9 @@ sphinx_rtd_theme
 sphinxjp.themes.revealjs
 sphinxcontrib-bibtex==0.3.6
 
+requests
+pycodestyle
+
 matplotlib
 numpy
 scikit-learn

@@ -111,6 +111,10 @@ Static Code Analysis
         $ pycodestyle --statistics -qq DIRECTORY/
         $ pycodestyle --show-source --show-pep8 FILENAME.py
 
+    .. code-block:: console
+
+        $ python -m pycodestyle FILENAME.py
+
 :Config:
     ``setup.cfg``
 
