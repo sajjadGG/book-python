@@ -8,6 +8,7 @@ Testy i Jakość
 
     Development driven tests
 
+- https://martinfowler.com/articles/microservice-testing/#testing-component-out-of-process-diagram
 
 Glossary
 ========
@@ -46,6 +47,10 @@ Built-in frameworks
     .. code-block:: console
 
         $ python -m unittest FILENAME.py
+
+Mock:
+
+- https://docs.python.org/3/library/unittest.mock.html
 
 
 Frontend Testing
