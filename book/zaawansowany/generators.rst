@@ -304,7 +304,12 @@ Zaawansowane wykorzystanie `Generator Expressions`
     fieldnames.update(key for key in record.keys() for record in DATA)
     print('set(), podejście 4:', fieldnames)
 
-
+Uwaga, czytelność kodu ma znaczenie
+-----------------------------------
+.. literalinclude:: src/generator-clean-code.py
+    :name: listing-generator-clean-code
+    :language: python
+    :caption: Clean Code in generator
 
 
 Zadania kontrolne
@@ -312,10 +317,9 @@ Zadania kontrolne
 
 Generatory vs. Przetwarzanie Listy
 ----------------------------------
+Napisz program, który wczyta plik :numref:`listing-file-etc-passwd-2`, a następnie:
 
-Napisz program, który wczyta plik ``/etc/passwd``, a następnie:
-
-* przefiltruje linie, tak aby nie zawierały komentarzy (zaczynające się od ``#``)
+* przefiltruje linie, tak aby nie zawierały komentarzy (zaczynające się od ``#``) oraz pustych linii
 * przefiltruje linie, aby wyciągnąć konta systemowe - użytkowników, którzy mają UID (trzecie pole) mniejsze niż 1000
 * zwróci listę loginów takich użytkowników
 
@@ -324,43 +328,7 @@ Napisz program, który wczyta plik ``/etc/passwd``, a następnie:
 
 * Porównaj wyniki jednego i drugiego rozwiązania przez użycie ``sys.getsizeof()``
 
-Gdyby w Twoim systemie nie było pliku, skorzystaj z szablonu poniżej:
-
-.. code-block:: text
-
-    root:x:0:0:root:/root:/bin/bash
-    bin:x:1:1:bin:/bin:/sbin/nologin
-    daemon:x:2:2:daemon:/sbin:/sbin/nologin
-    adm:x:3:4:adm:/var/adm:/sbin/nologin
-    lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
-    sync:x:5:0:sync:/sbin:/bin/sync
-    shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
-    halt:x:7:0:halt:/sbin:/sbin/halt
-    mail:x:8:12:mail:/var/spool/mail:/sbin/nologin
-    news:x:9:13:news:/etc/news:
-    uucp:x:10:14:uucp:/var/spool/uucp:/sbin/nologin
-    operator:x:11:0:operator:/root:/sbin/nologin
-    games:x:12:100:games:/usr/games:/sbin/nologin
-    gopher:x:13:30:gopher:/var/gopher:/sbin/nologin
-    ftp:x:14:50:FTP User:/var/ftp:/sbin/nologin
-    nobody:x:99:99:Nobody:/:/sbin/nologin
-    nscd:x:28:28:NSCD Daemon:/:/sbin/nologin
-    vcsa:x:69:69:virtual console memory owner:/dev:/sbin/nologin
-    ntp:x:38:38::/etc/ntp:/sbin/nologin
-    pcap:x:77:77::/var/arpwatch:/sbin/nologin
-    dbus:x:81:81:System message bus:/:/sbin/nologin
-    avahi:x:70:70:Avahi daemon:/:/sbin/nologin
-    rpc:x:32:32:Portmapper RPC user:/:/sbin/nologin
-    mailnull:x:47:47::/var/spool/mqueue:/sbin/nologin
-    smmsp:x:51:51::/var/spool/mqueue:/sbin/nologin
-    apache:x:48:48:Apache:/var/www:/sbin/nologin
-    sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
-    dovecot:x:97:97:dovecot:/usr/libexec/dovecot:/sbin/nologin
-    oprofile:x:16:16:Special user account to be used by OProfile:/home/oprofile:/sbin/nologin
-    rpcuser:x:29:29:RPC Service User:/var/lib/nfs:/sbin/nologin
-    nfsnobody:x:65534:65534:Anonymous NFS User:/var/lib/nfs:/sbin/nologin
-    xfs:x:43:43:X Font Server:/etc/X11/fs:/sbin/nologin
-    haldaemon:x:68:68:HAL daemon:/:/sbin/nologin
-    avahi-autoipd:x:100:156:avahi-autoipd:/var/lib/avahi-autoipd:/sbin/nologin
-    gdm:x:42:42::/var/gdm:/sbin/nologin
-    sabayon:x:86:86:Sabayon user:/home/sabayon:/sbin/nologin
+.. literalinclude:: src/file-etc-passwd.txt
+    :name: listing-file-etc-passwd-2
+    :language: python
+    :caption: ``/etc/passwd`` sample file
