@@ -1,11 +1,9 @@
+import datetime
 import json
-import re
-
-import requests
 import logging
 import os
-import datetime
-from pprint import pprint
+import re
+import requests
 
 
 logging.basicConfig(
@@ -14,6 +12,7 @@ logging.basicConfig(
 )
 
 log = logging.getLogger(__name__)
+
 
 class HTTPGateway:
     def __init__(self, username=None, password=None, cache_expiry_days=30, cache_directory='.'):
