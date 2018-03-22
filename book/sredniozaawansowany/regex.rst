@@ -28,18 +28,33 @@ Najczęściej wykorzystywane funkcje
 
 ``match()``
 -----------
+.. literalinclude:: src/re-match.py
+    :name: listing-re-match
+    :language: python
+    :caption: Usage of ``re.match()``
 
 ``search()``
 ------------
 
+.. literalinclude:: src/re-search.py
+    :name: listing-re-search()
+    :language: python
+    :caption: Usage of ``re.search()``
+
 ``findall()`` i ``finditer()``
 ------------------------------
+.. literalinclude:: src/re-find.py
+    :name: listing-re-find
+    :language: python
+    :caption: Usage of ``re.findall()`` and ``re.finditer()``
 
 ``compile()``
 -------------
 
+MULTILINE
+---------
 
-.. literalinclude:: src/re-regexp.py
+.. literalinclude:: src/re-multiline.py
     :name: listing-re-regexp
     :language: python
     :caption: Usage of regexp
@@ -65,38 +80,6 @@ Przykład
     SLOWA_ZAWIERAJACE_IS = re.compile(r'[a-zA-Z0-9]*is[a-zA-Z0-9]*')
     SLOWA_ZAWIERAJACE_IS.findall(TEKST)
     print(wynik)
-
-.. code-block:: python
-
-    POPRAWNY_EMAIL = r'(^[a-z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)'
-
-
-    def email_poprawny(email):
-        if re.match(POPRAWNY_EMAIL, email):
-            print('Poprawny:', email)
-            return True
-        else:
-            print('Niepoprawny:', email)
-            return False
-
-
-    email_poprawny('Amatt@astrotech.io')
-    email_poprawny('matt@astrotech.io')
-    email_poprawny('+matt@astrotech.io')
-    email_poprawny('matt+@astrotech.io')
-    email_poprawny('mattastrotech@.io')
-
-.. code-block:: python
-
-    issues = set()
-    issue_id = re.compile(r'#([0-9]+)', flags=re.MULTILINE)
-
-    for msg in messages:
-        issue = issue_id.findall(msg)
-
-        if issue:
-            issues.add(issue)
-
 
 Wizualizacja regexpów
 ---------------------
