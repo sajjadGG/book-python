@@ -49,6 +49,7 @@ Class Decorators
     :caption: Case Study wykorzystania dekotatorów do poprawienia czytelności kodu Flask
 
 .. todo:: classdecorators
+.. todo:: https://andrefsp.wordpress.com/2012/08/23/writing-a-class-decorator-in-python/
 
 @staticmethod
 -------------
