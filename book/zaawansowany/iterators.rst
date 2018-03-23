@@ -116,3 +116,8 @@ Range
 Książka adresowa
 ----------------
 #. spraw aby można było iterować w książce adresowej z poprzednich zadań po adresach użytkownika.
+
+.. literalinclude:: src/iterators-ksiazka-adresowa.py
+    :name: listing-iterators-ksiazka-adresowa
+    :language: python
+    :caption: Struktury danych książki adresowej

@@ -35,9 +35,24 @@ Przykład
         # ...
 
 
+Dzieli naszą funkcję na bloki przed i po ``yield``.
+
+- Bloki przed traktuje jako ``__enter__()``
+- Bloki za traktuje jako ``__exit__()``
+
 .. code-block:: python
 
+    from contextlib import contextmanager
+
     @contextmanager
-    def FileName(*args, **kwargs):
-       with File(*args, **kwargs) as f:
-           yield f.name
+    def tag(name):
+        print("<%s>" % name)
+        yield
+        print("</%s>" % name)
+
+    >>> with tag("h1"):
+    ...    print("foo")
+    ...
+    <h1>
+    foo
+    </h1>

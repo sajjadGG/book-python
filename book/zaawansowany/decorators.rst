@@ -2,12 +2,6 @@
 Decorator
 *********
 
-.. todo::
-    - przyklad z flaska z app.route na wykorzystywanie dekoratorów
-    - decorator decydujący czy odpalić funkcję czy nie na przykładzie @login_required czy @permission_required z django
-    - Ansible decorator @timeout(seconds=10, error_message='timeout occured')
-    - class decorators
-
 Zastosowanie
 ============
 
@@ -21,6 +15,8 @@ Zastosowanie
 
 Przykład zastosowania
 ---------------------
+- Zagnieżdżone
+- wykonywane od góry
 
 .. code-block:: python
 
@@ -30,9 +26,9 @@ Przykład zastosowania
     def instaluj_oprogramowanie(sciezka, nazwa_oprogramowania, wersja_paczki):
         pass
 
+
 Definicja
 =========
-
 .. code-block:: python
 
     def my_decorator(f):
@@ -45,6 +41,39 @@ Definicja
     @my_decorator
     def func(x):
         return x
+
+Class Decorators
+================
+.. literalinclude:: src/decorators-class-decorator.py
+    :name: listing-decorators-case-study-flask
+    :language: python
+    :caption: Case Study wykorzystania dekotatorów do poprawienia czytelności kodu Flask
+
+
+@staticmethod
+-------------
+
+.. code-block:: python
+
+class Foo:
+    def __init__(self, tekst='Jose'):
+        self.tekst = tekst
+
+    def hello(self):
+        print(f'hello {self.tekst}')
+
+    @staticmethod
+    def ehlo():
+        print('hello')
+
+
+# pryzkładowa implementacja
+def staticmethod(f):
+    def wrapper(*args, **kwargs):
+        return f()
+    return wrapper
+
+
 
 Przykład
 ========
@@ -76,6 +105,19 @@ Przykład
     if __name__ == '__main__':
         print_file('/etc/passwd')
         print_file('/tmp/passwd')
+
+Case Study
+----------
+.. literalinclude:: src/decorators-case-study-flask.py
+    :name: listing-decorators-case-study-flask
+    :language: python
+    :caption: Case Study wykorzystania dekotatorów do poprawienia czytelności kodu Flask
+
+.. literalinclude:: src/decorators-case-study-django.py
+    :name: listing-decorators-case-study-django
+    :language: python
+    :caption: Case Study wykorzystania dekotatorów do poprawienia czytelności kodu Django
+
 
 Zadania kontrolne
 =================
