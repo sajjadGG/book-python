@@ -5,14 +5,26 @@ Programowanie sieciowe
 Socket
 ======
 
-Otwieranie połączeń
--------------------
-
 Protokoły
 ---------
+* IPv4 - ``socket.AF_INET``
+* IPv6 - ``socket.AF_INET6``
+* UDP - ``socket.SOCK_DGRAM``
+* TCP - ``socket.SOCK_STREAM``
+
+Otwieranie połączeń
+-------------------
+.. literalinclude:: src/socket-communication.py
+    :name: listing-socket-communication
+    :language: python
+    :caption: Komunikacja za pomocą socketów
 
 Nasłuchiwanie
 -------------
+.. code-block:: ptyhon
+
+    with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
+        sock.sendto(bytes('%s:%s\n', 'utf-8'), addr)
 
 Przekazywanie informacji
 ------------------------
@@ -37,72 +49,98 @@ Zadania kontrolne
 
 Mini Botnet
 -----------
+#. Do pliku ``botnet-commands.xml`` skopiuj zawartość :numref:`listing-botnet-commands`.
+#. Stwórz mini botnet o architekturz podanej :numref:`figure-botnet`. Mini botnet składa się z trzech części:
 
-Stwórz mini botnet o architekturz podanej poniżej. Mini botnet składa się z trzech części:
-
-    - ``attacker-ping-server.py`` - Serwera przyjmującego pingi (komunikacja UDP, port 1337) i zapisującego informacje do bazy danych
-    - ``victim.py`` - Klienta który ma dwie role:
-
-        - Po zainfekowaniu otwiera randomowy port TCP (backdoor) i co 5 sekund wysyła informację z numerem portu oraz adresem IP do ping serwera ha hoście atakującego
-
-        - Po otrzymaniu komunikatu na port backdoor wykonuje operację
-
-    - ``attacker-execute-client.py`` - plik sterujący, który wysyła polecenia do victima na podstawie adresów IP i portów maszyn, które w ciągu ostatniej minut pingnęły ping serwer.
-
-* Czy port jest otwarty Zweryfikuj za pomocą ``telnet`` albo ``netcat``
-* Do obsługi parametrów z linii poleceń wykorzystaj ``argparse``
-* port na którym nasłuchuje maszyna ofiary powinien być losowo wybierany (od 1025-65535 [dlaczego taki zakres?]) i przesyłany w komunikacie *ping*.
-* przychodzące pingi, ich data, host i port źródłowy zapisać w bazie ``sqlite3`` na hoście attackera
-* przetwarzanie requestów jest nieblokujące, tzn. otwieraj wątek dla każdego zapytania
-* wykonaj polecenie za pomocą ``eval`` w systemie operacyjnym i zwróć klientowi odpowiedź
-* dodaj funkcję aby wyświetlał dowolny plik, którego nazwa przyjdzie od atakującego
-* dodaj funkcję aby listował dowolny katalog - wykorzystaj ``os.walk`` oraz ``os.path.join`` do łączenia nazw katalogów
-* dodaj opcję aby victim przyjmował zapytania w formacie XML, pole command oraz arguments powinny być osobno
-* zmodyfikuj program aby zwracał atakującemu wyniki wykonanych poleceń na komputerze ofiary w formacie JSON
-* nazwy poleceń, datę ich uruchomienia i ich wyniki zapisuj lokalnie do bazy ``sqlite3`` na komputerze ofiary (w charakterze logów)
-* stwórz dekorator ``localhost_only``, który będzie sprawdzał IP źródłowe połączenia i jeżeli nie pochodzi z ``127.0.0.1`` odmówi wykonania polecenia
-* stwórz dekorator ``log_request``, który weźmie parametry zapytania (IP, polecenie, argumenty) i zapisze je do pliku ``/tmp/botnet.log`` w formacie ``Request from IP:PORT to execute COMMAND ARGUMENTS``
+    - Heartbeat Server - server przyjmujący informacje o ofiarach (czy wciąż żyją),
+    - Victim - ofiara,
+    - Attacket - atakujący.
 
 .. figure:: img/botnet.png
+    :name: figure-botnet
     :scale: 75%
     :align: center
 
-    Architektura programów botnet
-
-:Pliki nazwij:
-
-    * ``victim.py`` - ofiara
-    * ``attacker-ping-server.py`` - serwer przyjmujący
-    * ``attacker-execute-client.py``
-
-:Uwaga:
-    * nigdy nie rób tego na produkcji bez tzw. sanityzacji parametrów, np. lista zaufanych hostów, możliwe polecenia!
+    Architektura botnet
 
 :Podpowiedź:
-    * użyj ``os.path.join`` do łączenia sciezki i nazwy pliku
+    - Do weryfikacji czy port jest otwarty możesz użyć ``telnet`` albo ``netcat``
+
+Heartbeat
+^^^^^^^^^
+#. Skrypt serwera heartbeat nazwij ``botnet-heartbeat-server.py``
+#. Server ma przyjmować komunikaty UDP na porcie 1337
+#. Datę UTC przyjścia pakietu, IP i port backdoora zapisuje do bazy danych ``sqlite3`` jako pola:
+
+    - datetime DATETIME,
+    - ip TEXT,
+    - port INTEGER
+
+:Podpowiedź:
+    * ``socketserver.UDPServer``
+    * ``sqlite3``
+
+Victim
+^^^^^^
+#. Skrypt ofiary nazwij ``botnet-victim.py``
+#. Po zainfekowaniu otwiera randomowy port TCP (backdoor) z przedziału 1025-65535 na którym nasłuchuje komunikatów. Dlaczego taki zakres portów?
+#. Co 5 sekund wysyła informację ze swoim numerem portu backdoor oraz swoim adresem IP do serwera Heartbeat
+#. Po otrzymaniu komunikatu XML na port backdoora wykonuje operację w nim zawarte
+#. Ofiara ma przesyłać dane atakującemu w formacie JSON w formacie zawierającym datę, ip, port, stdout, stderror
+#. Stwórz dekorator ``is_valid_xml``, który sprawdzi czy XML się waliduje (czy ma poprawną strukturę) i tylko wtedy wykona polecenia
+#. Stwórz dekorator ``log_incoming_requests``, który zapisze do pliku ``botnet.log`` logi w formacie ``Request from IP:PORT to execute COMMAND ARGUMENTS`` dla każdego polecenia wykonywanego na systemie ofiary
+
+:Podpowiedź:
     * ``random``
-    * ``argparse``
     * ``logging``
     * ``socket``
-    * ``socketserver.UDPServer``, ``socketserver.TCPServer``
+    * ``socketserver.TCPServer``
     * ``subprocess.run()``
     * ``json.dumps()``, ``json.loads()``
     * ``xml.etree.ElementTree``
-    * ``sqlite3``
+
+Attacker
+^^^^^^^^
+#. Skopiuj zawartość :numref:`listing-botnet-commands` do pliku ``botnet-commands.xml``
+#. Skrypt atakującego nazwij ``botnet-attacker.py``
+#. Skrypt można wywoływać z parametrami linii poleceń:
+
+    - ``--xml FILENAME``, domyślnie ``botnet-commands.xml``, opcjonalny (jeżeli podano inne parametry),
+    - ``--exec COMMAND`` - opcjonalny,
+    - ``--cat FILENAME`` - opcjonalny,
+    - ``--ls PATH`` - opcjonalny,
+    - ``--eval CODE`` - opcjonalny.
+
+#. Skrypt ma do wszystkich botów (ofiar), które pingnęły serwer heartbeat w ciągu godziny wysyłać (IP ofiary, port backdoor) polecenia do wykonania.
+#. Polecenia są:
+
+    - w pliku XML podanym jako parametr (jeżeli podano flagę ``--xml``),
+    - podane jako parametr do ``--exec``,
+    - wyświetlanie zawartości pliku podanego jako parametr ``--cat``,
+    - listowanie zawartości katalogu podanego jako parametr ``--ls``,
+    - wykonywanie kodu Python i zwracanie wyników, jeżeli podano ``--eval``.
+
+#. Polecenia do wykonania bez względu na flagę muszą być przesłane za pomocą komunikatów XML.
+#. Datę, komunikat XML, oraz listę hostów do których poszło zapytanie zapisuj w bazie ``sqlite3`` w charakterze logów
+#. Wyniki, które przyjdą od ofiar zapisuj w bazie danych ``sqlite3`` wraz z datą otrzymania, adresem IP ofiary, portem (backdoor), stdout i stderr
+
+:Założenia:
+    #. Do obsługi parametrów z linii poleceń wykorzystaj ``argparse``
+    #. Przetwarzanie requestów jest nieblokujące, tzn. otwieraj wątek dla każdego zapytania
+    #. Wykorzystaj ``os.path.join`` (łączenie ścieżki) oraz ``os.walk`` (wyświetlanie zawartości).
+
+.. literalinclude:: src/botnet-commands.xml
+    :name: listing-botnet-commands
+    :language: python
+    :caption: Komunikat XML z listą poleceń do wykonania na komputerze ofiary
+
+:Podpowiedź:
+    * ``argparse``
+    * ``socket``
+    * ``json.dumps()``, ``json.loads()``
 
 :Zadanie z gwiazdką:
     Za pomocą ``Django`` stwórz panel administracyjny dla botnetu:
 
     * Wyszukiwanie aktywnych hostów
     * `command`
-
-:Polecenia do wykonania:
-
-    .. code-block:: xml
-
-        <execute>
-            <command timeout="2">/bin/ls -la /home</command>
-            <command>/bin/ls -l /home/ /tmp/</command>
-            <command timeout="1">/bin/sleep 2</command>
-            <command timeout="2">/bin/echo 'juz wstalem'</command>
-        </execute>

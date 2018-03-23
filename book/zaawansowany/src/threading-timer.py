@@ -1,11 +1,11 @@
-from threading import Timer
+import threading
 
 
 def hello():
     print('Timer Thread')
 
 
-t = Timer(5.0, hello)
+t = threading.Timer(5.0, hello)
 t.start()
 
 print('Main Thread')
