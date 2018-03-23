@@ -4,13 +4,12 @@ Decorator
 
 Zastosowanie
 ============
-
 * Modify arguments
 * Modify returned value
 * Do things before call
 * Do things after call
 * Avoid calling
-* Modify global state
+* Modify global state (not a good idea)
 * Metadata
 
 Przykład zastosowania
@@ -49,29 +48,32 @@ Class Decorators
     :language: python
     :caption: Case Study wykorzystania dekotatorów do poprawienia czytelności kodu Flask
 
+.. todo:: classdecorators
 
 @staticmethod
 -------------
-
 .. code-block:: python
 
-class Foo:
-    def __init__(self, tekst='Jose'):
-        self.tekst = tekst
+    class Foo:
+        def __init__(self, tekst='Jose'):
+            self.tekst = tekst
 
-    def hello(self):
-        print(f'hello {self.tekst}')
+        def hello(self):
+            print(f'hello {self.tekst}')
 
-    @staticmethod
-    def ehlo():
-        print('hello')
+        @staticmethod
+        def ehlo():
+            print('hello')
 
 
-# pryzkładowa implementacja
-def staticmethod(f):
-    def wrapper(*args, **kwargs):
-        return f()
-    return wrapper
+    # pryzkładowa implementacja
+    def staticmethod(f):
+        def wrapper(*args, **kwargs):
+            return f()
+        return wrapper
+
+@classmethod
+------------
 
 
 
