@@ -1,33 +1,30 @@
-def method_decorator(fn):
-    "Example of a method decorator"
+def make_paragraph(fn):
+
     def decorator(*args, **kwargs):
-        print("\tInside the decorator")
-        return fn(*args, **kwargs)
+        value = fn(*args, **kwargs)
+        print(f'<p>{value}</p>')
+        return value
 
     return decorator
 
-class MyFirstClass(object):
-    """
-    This class has all its methods decorated
-    """
-    @method_decorator
-    def first_method(self, *args, **kwargs):
-        print("\t\tthis is a the MyFirstClass.first_method")
 
-    @method_decorator
+class HTMLReport:
+
+    @make_paragraph
+    def first_method(self, *args, **kwargs):
+        return 'First Method'
+
+    @make_paragraph
     def second_method(self, *args, **kwargs):
-        print("\t\tthis is the MyFirstClass.second_method")
+        return 'Second Method'
+
 
 if __name__ == "__main__":
-    print("::: With decorated methods :::")
-    x = MyFirstClass()
+    x = HTMLReport()
     x.first_method()
     x.second_method()
 
 """
-::: With decorated methods :::
-	Inside the decorator
-		this is a the MyFirstClass.first_method
-	Inside the decorator
-		this is the MyFirstClass.second_method
+<p>First Method</p>
+<p>Second Method</p>
 """
