@@ -281,9 +281,13 @@ Napisz kod, który za pomocą rekurencji sprawdzi zbalansowanie nawiasów, tzn. 
 
 .. code-block:: python
 
-    >>> zbalansowanie_nawiasow("() [] () ([]()[])")
-    True
+    def zbalansowanie_nawiasow(ciag_znakow: str) -> bool:
+        """
+        >>> zbalansowanie_nawiasow("() [] () ([]()[])")
+        True
 
-    >>> zbalansowanie_nawiasow("( (] ([)]")
-    False
+        >>> zbalansowanie_nawiasow("( (] ([)]")
+        False
+        """
+        ...
 
