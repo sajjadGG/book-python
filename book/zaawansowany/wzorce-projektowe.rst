@@ -2,6 +2,31 @@
 Wzorce projektowe
 *****************
 
+Przykłady praktyczne
+====================
+
+Singleton
+---------
+.. literalinclude:: src/design-patterns-singleton.py
+    :name: listing-design-patterns-singleton
+    :language: python
+    :caption: Singleton Design Pattern
+
+Gateway
+-------
+.. literalinclude:: src/design-patterns-gateway.py
+    :name: listing-design-patterns-gateway
+    :language: python
+    :caption: Gateway Design Pattern
+
+Factory
+-------
+.. literalinclude:: src/design-patterns-factory.py
+    :name: listing-design-patterns-factory
+    :language: python
+    :caption: Factory Design Pattern
+
+
 Creational Design Patterns
 ==========================
 
@@ -71,54 +96,3 @@ Behavioral Design Patterns
 * Strategy Pattern
 * Template Method Pattern
 * Visitor Pattern
-
-
-Przykłady praktyczne
-====================
-
-Gateway, Singleton, Factory
----------------------------
-
-.. code-block:: python
-
-    class HttpClientInterface:
-        def GET(self):
-            raise NotImplementedError
-
-        def POST(self):
-            raise NotImplementedError
-
-
-    class GatewayLive(HttpClientInterface):
-        def GET(self):
-            # zaciagnij informacje o userze
-            return ...
-
-        def POST(self):
-            # zapytaj po sieci
-            pass
-
-
-    class GatewayStub(HttpClientInterface):
-        def GET(self):
-            return {'imie': 'nazwisko'}
-
-
-    class HttpClientFactory:
-        instance = None
-
-        def __init__(self):
-
-            if HttpClientFactory.instance:
-                HttpClientFactory.instance = GatewayStub
-
-            return HttpClientFactory.instance
-
-
-    client = HttpClientFactory()
-    client.GET()
-
-
-    client2 = HttpClientFactory()
-    client2.GET()
-    client2.POST()

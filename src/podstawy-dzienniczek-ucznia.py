@@ -3,12 +3,10 @@
 import logging
 import statistics
 
-
 LISTA_DOPUSZALNYCH_OCEN = [2, 3, 3.5, 4, 4.5, 5]
 dzienniczek = []
 
 log = logging.getLogger(__name__)
-
 
 while True:
     try:
@@ -21,7 +19,6 @@ while True:
         break
     else:
         dzienniczek.append(wprowadzona_ocena)
-
 
 suma = sum(dzienniczek)
 ilosc = len(dzienniczek)

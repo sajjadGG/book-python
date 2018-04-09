@@ -28,6 +28,8 @@ Klasy
     class Pojazd:
         pass
 
+Pola Statyczne
+--------------
 .. code-block:: python
 
     class Pojazd:
@@ -37,21 +39,6 @@ Klasy
 
 
     auto = Pojazd()
-
-.. code-block:: python
-
-    class Pojazd:
-        def __init__(self, marka, kola=4):
-            self.marka = marka
-            self.kola = kola
-            self.kierowca = 'Max Peck'  # tak się raczej nie robi
-
-
-    mercedes = Pojazd(marka='mercedes', kola=6)
-    print(mercedes.kola)
-
-    tir = Pojazd(marka='scania', kola=18)
-    print(tir.kola)
 
 .. code-block:: python
 
@@ -68,17 +55,36 @@ Klasy
 
     print(auto1.kola)  # 4
     print(auto2.kola)  # 4
+    print(Pojazd.kola) # 4
 
     auto1.kola = 6
 
     print(auto1.kola)  # 6
     print(auto2.kola)  # 4
+    print(Pojazd.kola) # 4
 
     Pojazd.kola = 8
 
     print(auto1.kola)  # 6
     print(auto2.kola)  # 8
+    print(Pojazd.kola) # 8
 
+Pola dynamiczne
+---------------
+.. code-block:: python
+
+    class Pojazd:
+        def __init__(self, marka, kola=4):
+            self.marka = marka
+            self.kola = kola
+            self.kierowca = 'Max Peck'  # tak się raczej nie robi
+
+
+    mercedes = Pojazd(marka='mercedes', kola=6)
+    print(mercedes.kola)
+
+    tir = Pojazd(marka='scania', kola=18)
+    print(tir.kola)
 
 Metody
 ------
@@ -92,9 +98,13 @@ Metody
         def zatrab(self):
             print('piiip')
 
+        def kto_kieruje(self):
+            print(self.kierowca)
+
 
     auto = Pojazd()
     auto.zatrab()
+    auto.kto_kieruje()
 
 ``self``
 --------
@@ -514,7 +524,7 @@ Dekoratory ``@propery``, ``@kola.setter`` i ``@kola.deleter`` służą do zdefin
             self._kola = value
 
         @kola.deleter
-        def _kola(self):
+        def kola(self):
             del self._kola
 
 
@@ -851,9 +861,9 @@ Książka adresowa
             * panstwo
 
     * Wszystkie dane w książce muszą być reprezentowane przez klasy.
-    * Klasa osoba powinna wykorzystywać domyślne argumenty w ``__init__``.
+    * Klasa ``Kontakt`` powinna wykorzystywać domyślne argumenty w ``__init__``.
     * Użytkownik może mieć wiele adresów.
-    * Klasa adres powinna mieć zmienną liczbę argumentów za pomocą ``**kwargs`` z domyślnymi wartościami.
+    * Klasa ``Adres`` powinna mieć zmienną liczbę argumentów za pomocą ``**kwargs``.
     * Zrób tak, aby się ładnie wyświetlało. Zarówno dla jednego wyniku (``print(adres)``, ``print(osoba)`` jak i dla wszystkich w książce ``print(ksiazka_adresowa)``.
     * API programu powinno być tak jak na listingu poniżej
 
@@ -870,16 +880,8 @@ Książka adresowa
             Kontakt(imie='Иван', nazwisko='Иванович', adresy=[]),
         ]
 
-:Zadanie 2:
-    Napisz książkę adresową, która będzie zapisywała a później odczyta i sparsuje dane do pliku w formacie *Pickle*.
-
-:Zadanie 3:
-    Napisz książkę adresową, która będzie zapisywała a później odczyta i sparsuje dane do pliku w formacie *JSON*.
-
 :Podpowiedź:
     * Czytelny kod powinien mieć około 35 linii
-    * Dane w formacie Pickle muszą być zapisane do pliku binarnie
-    * ``pickle.loads()`` przyjmuje uchwyt do pliku, a nie jego zawartość
 
 :Co zadanie sprawdza?:
     * myślenie obiektowe i odwzorowanie struktury w programie
@@ -888,3 +890,14 @@ Książka adresowa
     * serializacja obiektów do formatów *JSON* i *Pickle*
     * korzystanie z operatorów ``*`` i ``**``
     * rzutowanie obiektu na stringa oraz jego reprezentacja (które i kiedy użyć)
+
+:Zadanie 2:
+    Zrób aby dane w
+
+:Zadanie 2:
+    Napisz książkę adresową, która będzie zapisywała a później odczyta i sparsuje dane do pliku w formacie *Pickle*.
+    * Dane w formacie Pickle muszą być zapisane do pliku binarnie
+    * ``pickle.loads()`` przyjmuje uchwyt do pliku, a nie jego zawartość
+
+:Zadanie 3:
+    Napisz książkę adresową, która będzie zapisywała a później odczyta i sparsuje dane do pliku w formacie *JSON*.

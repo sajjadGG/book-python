@@ -22,6 +22,8 @@ Konwencja nazewnicza funkcji
 * Funkcje o nazwie zaczynającej się od ``_`` przez konwencję są traktowane jako prywatne (w Pythonie nie ma private/protected/public).
 * Funkcje o nazwie zaczynającej się od ``__`` i kończących się na ``__`` przez konwencję są traktowane jako systemowe.
 * Nazwy opisowe funkcji
+* ``nazwa_funkcji_()``
+* ``__nazwa_funkcji()``
 
 Argumenty do funkcji
 ====================
@@ -175,7 +177,6 @@ Zwracanie typów złożonych
 
 Operator ``*`` i ``**``
 =======================
-.. todo:: zrobić lepsze przykłady wykorzystania parametrów z gwiazdką
 .. todo:: zrobić zadania do rozwiązania dla parametrów z gwiazdką
 
 .. code-block:: python
