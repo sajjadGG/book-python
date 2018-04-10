@@ -391,6 +391,7 @@ Zadania kontrolne
 Wczytywanie pliku ``csv``
 -------------------------
 * https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv
+
 #. ściągnij plik z URL podanego powyżej i zapisz na dysku w miejscu gdzie masz skrypty
 #. Wczytaj dane z pliku ``csv``
 #. Pierwsza linijka stanowi header

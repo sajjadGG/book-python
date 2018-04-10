@@ -23,10 +23,10 @@ Składnia
 
 Klasy
 -----
-.. code-block:: python
-
-    class Pojazd:
-        pass
+.. literalinclude:: src/oop-class.py
+    :name: listing-oop-class
+    :language: python
+    :caption: Class
 
 Pola Statyczne
 --------------
@@ -209,7 +209,7 @@ Funkcja inicjalizująca
                 self.host = host
                 self.user = user
                 self.password = password
-                self.login()  # Błąd. Obiekt nie jest jeszcze w pełni zainicjalizowany
+                self.login()  # Błąd. Obiekt nie jest jeszcze w pełni zainicjalizowany, chociaż Python na to pozwoli (bo jest to funkcja inicjalizująca (Java już nie bo tam jest konstruktor).
 
            def login(self):
                 print('loguję się do systemu')
@@ -226,103 +226,24 @@ Funkcja inicjalizująca
 
 Dziedziczenie
 -------------
-.. code-block:: python
+.. literalinclude:: src/oop-inheritance.py
+    :name: listing-oop-inheritance
+    :language: python
+    :caption: Inheritance
 
-    class Pojazd:
-        marka = None
-        kierowca = None
-        kola = 4
-
-    class Samochod(Pojazd):
-        marka = None
-        kierowca = {'imie': 'José', 'nazwisko': 'Jiménez'}
-
-    class Motor(Pojazd):
-        marka = 'honda'
-        kola = 2
-
-    class Tir(Pojazd):
-        pass
-
-Diament dziedziczenia
----------------------
-.. code-block:: python
-
-    class Pojazd:
-        silnik = True
-        kierowca = True
-
-    class Samochod(Pojazd):
-        kierowca = None
-
-        def __init__(self, marka, kola=4):
-            self.marka = marka
-            self.kola = kola
-
-    sam1 = Samochod(marka='Maluch')
-
-
-    print(Samochod.__mro__)
-
-    # (<class '__main__.Samochod'>, <class '__main__.Pojazd'>, <class 'object'>)
-
-.. code-block:: python
-
-    class A:
-        def wyswietl(self):
-            print('a')
-
-
-    class B:
-        def wyswietl(self):
-            print('b')
-
-
-    class C:
-        def wyswietl(self):
-            print('c')
-
-
-    class D(A, B, C):
-        pass
-
-
-    d = D().wyswietl()  # a
-
+Method Resolution Order - Diament dziedziczenia
+-----------------------------------------------
+.. literalinclude:: src/oop-mro.py
+    :name: listing-oop-mro
+    :language: python
+    :caption: Method Resolution Order
 
 Wielodziedziczenie
 ------------------
-.. code-block:: python
-
-    class Pojazd:
-        marka = None
-        kola = 4
-
-    class Samochod(Pojazd):
-        marka = None
-        kierowca = {'imie': 'José', 'nazwisko': 'Jiménez'}
-        kola = 6
-
-    class Jeep(Samochod):
-        marka = 'jeep'
-        kola = 10
-
-    class Star(Samochod):
-        marka = 'star'
-
-    class Furmanka(Pojazd):
-        marka = 'kon'
-
-    class CabrioBezDachu(Samochod):
-        marka = 'cabrio'
-
-    auto = Star()
-    print(auto.kola)
-    # 6
-
-    inne = Jeep()
-    print(inne.kola)
-    # 10
+.. literalinclude:: src/oop-multiple-inheritance.py
+    :name: listing-oop-multiple-inheritance
+    :language: python
+    :caption: Multiple Inheritance
 
 * gdzie wsadzić metodę ``zatrab()``
 * gdzie wsadzić metodę ``ruszaj()``
@@ -463,28 +384,21 @@ Polimorfizm
             print('biiiip')
         ...
 
+Interfejsy
+----------
+.. literalinclude:: src/oop-interface.py
+    :name: listing-oop-interface
+    :language: python
+    :caption: Interfejsy
 
 Klasy abstrakcyjne
 ------------------
 Klasa abstrakcyjna to taka klasa, która nie ma żadnych instancji (w programie nie ma ani jednego obiektu, który jest obiektem tej klasy). Klasy abstrakcyjne są uogólnieniem innych klas, wykorzystuje się to często przy dziedziczeniu. Na przykład tworzy się najpierw abstrakcyjną klasę ``figura``, która definiuje, że figura ma pole oraz, że jest metoda, ktora to pole policzy na podstawie jedynie prywatnych zmiennych. Po klasie ``figura`` możemy następnie dziedziczyć tworząc klasy ``kwadrat`` oraz ``trójkąt``, które będą miały swoje instancje i na których będziemy wykonywali operacje.
 
-.. code-block:: python
-
-    class Figura:
-        def pole(self):
-            raise NotImplementedError
-
-        def obwod(self):
-            raise NotImplementedError
-
-
-     class Trojkat(Figura):
-        def pole(self):
-            self.a * self.h
-
-        def obwod(self):
-            pass
-
+.. literalinclude:: src/oop-abstract-class.py
+    :name: listing-abstract-class
+    :language: python
+    :caption: Abstract Class
 
 ``super()``
 -----------
@@ -863,7 +777,7 @@ Książka adresowa
     * Wszystkie dane w książce muszą być reprezentowane przez klasy.
     * Klasa ``Kontakt`` powinna wykorzystywać domyślne argumenty w ``__init__``.
     * Użytkownik może mieć wiele adresów.
-    * Klasa ``Adres`` powinna mieć zmienną liczbę argumentów za pomocą ``**kwargs``.
+    * Klasa ``Adres`` powinna mieć zmienną liczbę argumentów za pomocą ``**kwargs`` i dynamicznie wpisywane pola ``setattr()`` (jeżeli nie mają wartości ``None``).
     * Zrób tak, aby się ładnie wyświetlało. Zarówno dla jednego wyniku (``print(adres)``, ``print(osoba)`` jak i dla wszystkich w książce ``print(ksiazka_adresowa)``.
     * API programu powinno być tak jak na listingu poniżej
 

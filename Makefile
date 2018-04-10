@@ -1,5 +1,5 @@
 book:
-    @sphinx-build -j4 -b html book/ _book/
+    @rm -fr _book && sphinx-build -j4 -b html book/ _book/
 
 slides:
     @sphinx-build -j4 -b html slides/ _slides/

@@ -56,3 +56,10 @@ Dzieli naszą funkcję na bloki przed i po ``yield``.
     <h1>
     foo
     </h1>
+
+Przykład praktyczny
+-------------------
+.. literalinclude:: src/context-manager.py
+    :name: listing-context-manager
+    :language: python
+    :caption: Context Manager

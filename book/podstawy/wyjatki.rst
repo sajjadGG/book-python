@@ -213,8 +213,21 @@ Korzystanie z ``warnings``
     import warnings
 
     def sumuj(a, b):
-        warnings.warn('Nie stosuj tego', PendingDeprecationWarning)
+        warnings.warn('Przestarzala nazwa, uzyj sum()', PendingDeprecationWarning)
+        return a + b
+
+    def sum(a, b):
         return a + b
 
 
     sumuj(1, 2)
+    sum(1, 2)
+
+.. code-block:: console
+
+    $ python __notepad__.py
+
+    $ python -W all __notepad__.py
+    __notepad__.py:5: PendingDeprecationWarning: Przestarzala nazwa, uzyj sum()
+      warnings.warn('Przestarzala nazwa, uzyj sum()', PendingDeprecationWarning)
+

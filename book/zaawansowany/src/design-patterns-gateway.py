@@ -6,6 +6,7 @@ import requests
 
 log = logging.getLogger(__name__)
 
+
 class HTTPGateway:
     def __init__(self, username=None, password=None, cache_expiry_days=30, cache_directory='.'):
         self.username = username
@@ -73,7 +74,8 @@ class HTTPGateway:
 http = HTTPGateway(
     username='username',
     password='password',
-    cache_directory='tmp'
+    cache_directory='tmp',
+    cache_expiry_days=10,
 )
 
 # pobranie i ustawienie cache

@@ -197,6 +197,13 @@ Więcej informacji
 
     pprint(data)
 
+.. code-block:: python
+
+    from pprint import pformat
+
+    data = [{'first_name': 'José', 'last_name': 'Jiménez'}, {'first_name': 'Max', 'last_name': 'Peck'}, {'first_name': 'Ivan', 'last_name': 'Ivanovic'}]
+
+    pformat(data)  # returns formatted data
 
 Zadania kontrolne
 =================

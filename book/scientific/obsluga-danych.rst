@@ -1,5 +1,26 @@
+**************
+Obsługa danych
+**************
+
 Pandas
 ======
+
+``Pandas``
+Pandas is a Python package providing fast, flexible, and expressive data structures designed to make working with "relational" or "labeled" data both easy and intuitive. It aims to be the fundamental high-level building block for doing practical, real world data analysis in Python. Additionally, it has the broader goal of becoming the most powerful and flexible open source data analysis / manipulation tool available in any language. It is already well on its way toward this goal. Here are just a few of the things that pandas does well:
+
+    - Easy handling of missing data (represented as NaN) in floating point as well as non-floating point data
+    - Size mutability: columns can be inserted and deleted from DataFrame and higher dimensional objects
+    - Automatic and explicit data alignment: objects can be explicitly aligned to a set of labels, or the user can simply ignore the labels and let Series, DataFrame, etc. automatically align the data for you in computations
+    - Powerful, flexible group by functionality to perform split-apply-combine operations on data sets, for both aggregating and transforming data
+    - Make it easy to convert ragged, differently-indexed data in other Python and NumPy data structures into DataFrame objects
+    - Intelligent label-based slicing, fancy indexing, and subsetting of large data sets
+    - Intuitive merging and joining data sets
+    - Flexible reshaping and pivoting of data sets
+    - Hierarchical labeling of axes (possible to have multiple labels per tick)
+    - Robust IO tools for loading data from flat files (CSV and delimited), Excel files, databases, and saving/loading data from the ultrafast HDF5 format
+    - Time series-specific functionality: date range generation and frequency conversion, moving window statistics, moving window linear regressions, date shifting and lagging, etc.
+
+    * http://pandas.pydata.org/
 
 * http://pandas.pydata.org/
 * http://pandas.pydata.org/pandas-docs/stable/10min.html
@@ -408,14 +429,14 @@ Statystyki opisowe
     df.describe()
 
 ======= =========== =========== =========== =========
-        A            B            C            D
+        A           B           C           D
 ======= =========== =========== =========== =========
-count    6.000000   6.000000    6.000000    6.000000
-mean    -0.019161   -0.299278    -0.703791    0.473913
+count   6.000000    6.000000    6.000000    6.000000
+mean    -0.019161   -0.299278   -0.703791   0.473913
 std     0.988715    1.162060    0.943273    0.690404
-min     -1.308835   -1.825204    -1.909562    -0.275183
-25%     -0.709701   -0.906424    -1.449953    -0.020076
-50%     0.108199    -0.556688    -0.596554    0.278844
+min     -1.308835   -1.825204   -1.909562   -0.275183
+25%     -0.709701   -0.906424   -1.449953   -0.020076
+50%     0.108199    -0.556688   -0.596554   0.278844
 75%     0.475461    0.489954    0.011598    1.083666
 max     1.361922    1.327082    0.400024    1.328745
 ======= =========== =========== =========== =========
@@ -555,15 +576,15 @@ max     198046.000000   19.694027
                             bins=[0, 5, 10, 100],
                             labels=['VW', 'Ford', 'UAZ'])
 
-======= =============== ==========
-        przebieg        spalanie
-======= =============== ==========
-0    5588    15.264853    UAZ
-1    99747    4.308231    VW
-2    97302    11.575376    UAZ
-3    117155    18.862744    UAZ
-4    73709    18.138283    UAZ
-======= =============== ==========
+== ======== ========== =====
+   przebieg spalanie
+== ======== ========== =====
+0  5588     15.264853  UAZ
+1  99747    4.308231   VW
+2  97302    11.575376  UAZ
+3  117155   18.862744  UAZ
+4  73709    18.138283  UAZ
+== ======== ========== =====
 
 
 .. code-block:: python
@@ -573,15 +594,15 @@ max     198046.000000   19.694027
                                         labels=['nowy', 'uzywany', 'z niemiec'])
     samochody.head()
 
-=== ======= =========== ===== ===========
-    przebieg spalanie   marka pochodzenie
-=== ======= =========== ===== ===========
-0   5588    15.264853    UAZ   uzywany
+=== ======== =========== ===== ===========
+    przebieg spalanie    marka pochodzenie
+=== ======== =========== ===== ===========
+0   5588     15.264853   UAZ   uzywany
 1   99747    4.308231    VW    uzywany
-2   97302    11.575376    UAZ      uzywany
-3   117155    18.862744    UAZ   z niemiec
-4   73709    18.138283    UAZ   uzywany
-=== ======= =========== ===== ===========
+2   97302    11.575376   UAZ   uzywany
+3   117155   18.862744   UAZ   z niemiec
+4   73709    18.138283   UAZ   uzywany
+=== =======  =========== ===== ===========
 
 .. code-block:: python
 

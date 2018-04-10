@@ -130,14 +130,15 @@ W zastosowaniach naukowych
     :numbered:
     :caption: W zastosowaniach naukowych
 
+
     scientific/code-quality.rst
     scientific/biblioteki.rst
-    scientific/numpy.rst
-    scientific/matplotlib.rst
-    scientific/scipy.rst
-    scientific/pandas.rst
+    scientific/analiza-numeryczna.rst
+    scientific/zastosowania-naukowe.rst
+    scientific/obsluga-danych.rst
+    scientific/generowanie-wykresow.rst
+    scientific/generowanie-grafow.rst
     scientific/jupyter.rst
-    scientific/graphviz.rst
 
 
 ****************

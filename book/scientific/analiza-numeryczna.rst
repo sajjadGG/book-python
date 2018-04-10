@@ -1,16 +1,31 @@
+******************
+Analiza Numeryczna
+******************
+
+
 NumPy
 =====
-
 NumPy jest podstawowym pakie (dodatkowym) w Pythonie do obliczeń naukowych. Integruje on niskopoziomowe biblioteki takie jak BLAS i LAPACK lub ATLAS. Podstawowe właściwości NumPy to :
 
-- potężny N-wymiarowy obiekt tablicy danych
-- rozbudowane funkcje (
-- narzędzia do integracji z codem napisanym w C/C++ i Fortranie
-- narzędzia do algebry liniowej, transformaty Fouriera czy generator liczb losowych
+    - potężny N-wymiarowy obiekt tablicy danych
+    - rozbudowane funkcje (
+    - narzędzia do integracji z codem napisanym w C/C++ i Fortranie
+    - narzędzia do algebry liniowej, transformaty Fouriera czy generator liczb losowych
+
+NumPy is the fundamental package for scientific computing with Python. It contains among other things:
+
+    - a powerful N-dimensional array object
+    - sophisticated (broadcasting) functions
+    - tools for integrating C/C++ and Fortran code
+    - useful linear algebra, Fourier transform, and random number capabilities
+
+Besides its obvious scientific uses, NumPy can also be used as an efficient multi-dimensional container of generic data. Arbitrary data-types can be defined. This allows NumPy to seamlessly and speedily integrate with a wide variety of databases.
+
+* http://www.numpy.org/
+
 
 Tablice
 -------
-
 .. code-block:: python
 
     >>> import numpy as np
@@ -95,7 +110,7 @@ https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html
      [0.89730518 0.13993221]]
 
 Pobieranie wartości z tablic
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------
 .. code-block:: pyton
 
     >>> n1 = np.array([1,2,3])

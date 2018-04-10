@@ -1,4 +1,9 @@
-Dzień 1:
+*******************
+Agenda Intermediate
+*******************
+
+Dzień 1
+=======
 - Podsumowanie zagadnień podstawowych
 - złożone typy danych
 - optymalizacja kodu i złożoność obliczeniowa struktur danych
@@ -7,7 +12,8 @@ Dzień 1:
 - Programowanie obiektowe
 - Serializacja i deserializacja danych
 
-Dzień 2:
+Dzień 2
+=======
 - Modularyzacja i virtualenv
 - Biblioteka standardowa
 - Operacje na datach i czasie
