@@ -1,6 +1,9 @@
 import logging
 import socketserver
 
+HOST = 'localhost'
+PORT = 31337
+
 
 logging.basicConfig(
     level=logging.INFO,
@@ -14,9 +17,7 @@ class UDPHandler(socketserver.BaseRequestHandler):
 
 
 if __name__ == '__main__':
-    addr = ('localhost', 31337)
-
-    logging.info('Listening for pings on %s...', addr)
-    listener = socketserver.UDPServer(addr, UDPHandler)
+    logging.info('Listening for pings on %s...', (HOST, PORT))
+    listener = socketserver.UDPServer((HOST, PORT), UDPHandler)
 
     listener.serve_forever()

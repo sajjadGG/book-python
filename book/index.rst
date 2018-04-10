@@ -45,24 +45,19 @@ Podstawy
     podstawy/zmienne-i-stale.rst
     podstawy/zlozone-typy-danych.rst
     podstawy/operatory.rst
-
     podstawy/instrukcje-warunkowe.rst
     podstawy/petle.rst
-
     podstawy/funkcje.rst
     podstawy/builtin.rst
+    podstawy/dobre-praktyki.rst
     podstawy/matematyka.rst
-
     podstawy/debugging.rst
     podstawy/print-formatting.rst
     podstawy/doctests.rst
-
     podstawy/programowanie-obiektowe.rst
     podstawy/wyjatki.rst
-
     podstawy/pliki.rst
-
-    podstawy/dobre-praktyki.rst
+    podstawy/datetime.rst
 
 
 *******************
@@ -74,12 +69,9 @@ Podstawy
     :caption: Średniozaawansowany
 
     sredniozaawansowany/logging.rst
-    sredniozaawansowany/datetime.rst
     sredniozaawansowany/serializacja.rst
-
     sredniozaawansowany/testy-i-jakosc.rst
     sredniozaawansowany/introspection.rst
-
     sredniozaawansowany/biblioteki-zewnetrzne.rst
     sredniozaawansowany/system-operacyjny.rst
     sredniozaawansowany/linia-polecen.rst
@@ -87,7 +79,6 @@ Podstawy
     sredniozaawansowany/virtualenv.rst
     sredniozaawansowany/regex.rst
     sredniozaawansowany/bazy-danych.rst
-
     sredniozaawansowany/tworzenie-dokumentacji.rst
     sredniozaawansowany/django.rst
     sredniozaawansowany/programowanie-gui.rst
@@ -102,22 +93,17 @@ Zaawansowany
     :caption: Zaawansowany
 
     zaawansowany/type-annotation.rst
-
     zaawansowany/programowanie-http.rst
     zaawansowany/programowanie-sieciowe.rst
-
     zaawansowany/generators.rst
     zaawansowany/iterators.rst
     zaawansowany/context-managers.rst
     zaawansowany/decorators.rst
     zaawansowany/collections.rst
     zaawansowany/metaclass.rst
-
     zaawansowany/watki-i-procesy.rst
     zaawansowany/concurrency.rst
-
     zaawansowany/programowanie-funkcyjne.rst
-
     zaawansowany/wzorce-projektowe.rst
     zaawansowany/c-extensions.rst
 
@@ -129,7 +115,6 @@ W zastosowaniach naukowych
     :maxdepth: 2
     :numbered:
     :caption: W zastosowaniach naukowych
-
 
     scientific/code-quality.rst
     scientific/biblioteki.rst
