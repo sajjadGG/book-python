@@ -66,13 +66,13 @@ for line in etc_passwd:
                 if shadow_login != login:
                     continue
 
+                shadow_lastchanged = int(shadow_lastchanged) * 60 * 60 * 24
+                lastchanged = datetime.date.fromtimestamp(shadow_lastchanged)
+
                 if shadow_password in DISSABLED_SHADOW_ENTRY:
                     locked = True
                     password = None
                     break
-
-                shadow_lastchanged = int(shadow_lastchanged) * 60 * 60 * 24
-                lastchanged = datetime.date.fromtimestamp(shadow_lastchanged)
 
                 for string in ALGORITHMS.keys():
                     if shadow_password.startswith(string):

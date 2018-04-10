@@ -10,6 +10,8 @@ Pola obiektu
 
 .. code-block:: python
 
+    from pprint import pprint
+
     class Server:
         _connection = None
 
@@ -19,14 +21,14 @@ Pola obiektu
 
     localhost = Server(host='127.0.0.1', port=1337)
     output = localhost.__dict__
-    print(output)
+    print(f'Listowanie pól za pomocą dict: {output}')
 
 
-    pola = [x for x in dir(addr) if not x.startswith('__')]
-    print('Listowanie pól klasy: {pola}')
+    pola = [x for x in dir(Server) if not x.startswith('__')]
+    print(f'Listowanie pól klasy: {pola}')
 
-    zmienne = vars(addr)
-    print('Listowanie za pomoca vars(): {zmienne}')
+    zmienne = vars(Server)
+    print(f'Listowanie za pomoca vars(): {zmienne}')
 
 Metody obiektu
 ==============

@@ -13,6 +13,14 @@ Poziomy logowania
 * Info
 * Debug
 
+.. code-block:: python
+
+    logging.critical('Błąd krytyczny, kończę.')
+    logging.error('Błąd, ale kontynuuję.')
+    logging.warning('Uwaga będę coś robił')
+    logging.info('Będę coś robił')
+    logging.debug('Robię to tak')
+
 Konfiguracja logowania
 ----------------------
 .. code-block:: python
@@ -22,35 +30,53 @@ Konfiguracja logowania
     logging.info('Będę wykonywał poniższą operację...')
     print('Ehlo!')
 
-
-.. code-block:: python
-
-    import logging
-
-    logging.basicConfig(level=logging.DEBUG)
-    logging.basicConfig(format='[%(asctime).19s] [%(levelname)s] %(message)s')
-
-    log = logging.getLogger()
-
 .. code-block:: python
 
     import logging
 
     logging.basicConfig(
-        level=logging.DEBUG,
-        filename='/tmp/python.log',
+        level=logging.INFO,
+        filename='/tmp/logging.csv',
         format='"%(asctime).19s", "%(levelname)s", "%(message)s"'
     )
 
-    logging.warning('hej')
+    log = logging.getLogger()
+
+    log.warning('warning!')  # zostanie zapisana do pliku
+    log.debug('wiadomosc debuggingowa')  # nie zostanie zapisana, bo level jest INFO, czyli powyżej DEBUG
+
 
 .. code-block:: python
 
-    logging.critical('Błąd krytyczny, kończę.')
-    logging.error('Błąd, ale kontynuuję.')
-    logging.warning('Uwaga będę coś robił')
-    logging.info('Będę coś robił')
-    logging.debug('Robię to tak')
+    {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'formatters': {
+            'standard': {
+                'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
+            },
+        },
+        'handlers': {
+            'default': {
+                'level': 'INFO',
+                'formatter': 'standard',
+                'class': 'logging.StreamHandler',
+            },
+        },
+        'loggers': {
+            '': {
+                'handlers': ['default'],
+                'level': 'INFO',
+                'propagate': True
+            },
+            'django.request': {
+                'handlers': ['default'],
+                'level': 'WARN',
+                'propagate': False
+            },
+        }
+    }
+
 
 Logowanie zdarzeń
 -----------------

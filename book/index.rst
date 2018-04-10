@@ -53,11 +53,11 @@ Podstawy
     podstawy/matematyka.rst
     podstawy/debugging.rst
     podstawy/print-formatting.rst
+    podstawy/datetime.rst
     podstawy/doctests.rst
     podstawy/programowanie-obiektowe.rst
     podstawy/wyjatki.rst
     podstawy/pliki.rst
-    podstawy/datetime.rst
 
 
 *******************
@@ -124,6 +124,7 @@ W zastosowaniach naukowych
     scientific/generowanie-wykresow.rst
     scientific/generowanie-grafow.rst
     scientific/jupyter.rst
+    scientific/uczenie-maszynowe.rst
 
 
 ****************

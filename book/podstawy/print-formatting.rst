@@ -233,7 +233,7 @@ Przeliczanie temperatury
 :Wymagania:
     * Zrób aby znak plus lub minus był zawsze wyświetlany.
     * Zrób aby tabelka była stałej szerokości.
-    * .. code-block:: txt
+    * .. code-block:: text
 
         Temperatura   -20C to    -4F
         Temperatura   -15C to    +5F

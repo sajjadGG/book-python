@@ -21,7 +21,7 @@ Otwieranie połączeń
 
 Nasłuchiwanie
 -------------
-.. code-block:: ptyhon
+.. code-block:: python
 
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
         sock.sendto(bytes('%s:%s\n', 'utf-8'), addr)
