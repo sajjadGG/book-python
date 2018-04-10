@@ -103,7 +103,7 @@ Parsowanie ``/etc/passwd``
             'locked': False,
         }, ...]
 
-#. Zwróć listę użytkowników, których UID jest większy niż 1000 (są to konta niesystemowe - użytkowników).
+#. Zwróć listę użytkowników (UID >= 1000)
 
 :Co zadanie sprawdza?:
     * czytanie i parsowanie pliku
