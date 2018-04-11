@@ -2,7 +2,7 @@ import unittest
 
 
 class Prostokat:
-    def __init__(self, a, b):
+    def __init__(self, a: [float, int], b: [float, int]) -> None:
         if not isinstance(a, (float, int)) or a <= 0:
             raise ValueError('Długość boku A musi być więszka od 0')
 
@@ -12,13 +12,13 @@ class Prostokat:
         self.bok_a = float(a)
         self.bok_b = float(a)
 
-    def pole(self):
+    def pole(self) -> float:
         return self.bok_a * self.bok_b
 
-    def obwod(self):
+    def obwod(self) -> float:
         return 2 * (self.bok_a + self.bok_b)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'Prostokat(a={self.bok_a}, b={self.bok_b})'
 
 
