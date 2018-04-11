@@ -1,6 +1,6 @@
-******************************************
-Serializacja i deserializacja danych w CSV
-******************************************
+*********************************
+Serializacja i deserializacja CSV
+*********************************
 
 
 Odczytywanie danych z plików CSV
