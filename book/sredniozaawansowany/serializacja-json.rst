@@ -24,14 +24,16 @@ Odczyt danych z formatu JSON
     :language: python
     :caption: Odczyt danych z formatu JSON
 
+
 Problemy z serializacją i deserializacją
 ========================================
 * Serializacja i deserializacja dat
 * Serializacja i deserializacja obiektów
 
+
 Serializacja i pisanie własnych encoderów
 =========================================
-.. code-block:: pycon
+.. code-block:: python
 
     >>> DATA = {'first_name': 'Ivan', 'last_name': 'Ivanovic'}
 
@@ -41,20 +43,31 @@ Serializacja i pisanie własnych encoderów
 
 Problem z rzutowaniem daty na JSON:
 
-.. code-block:: pycon
+.. literalinclude:: src/json-encoder-exception.py
+    :name: listing-json-encoder-exception
+    :language: python
+    :caption: Exception during encoding datetime
 
-    >>> import json
-    >>> import datetime
+Encoder Klasowy
+---------------
+.. literalinclude:: src/json-encoder-class.py
+    :name: listing-json-encoder-class
+    :language: python
+    :caption: Encoder Klasowy
 
-    >>> DATA = {'now': datetime.datetime.now()}
+Encoder Function
+----------------
+.. literalinclude:: src/json-encoder-function.py
+    :name: listing-json-encoder-function
+    :language: python
+    :caption: Encoder Function
 
-    >>> print(DATA)
-    {'now': datetime.datetime(1961, 4, 12, 2, 7, 0, 64511)}
-
-    >>> json.JSONEncoder.default = lambda self,obj: ('{:%Y-%m-%dT%H:%M:%S.%fZ}'.format(obj) if isinstance(obj, datetime.datetime) else None)
-
-    >>> json.dumps(DATA)
-    '{"now": "1961-04-12T02:07:00.064511Z"}'
+Encoder Lambda
+---------------
+.. literalinclude:: src/json-encoder-lambda.py
+    :name: listing-json-encoder-lambda
+    :language: python
+    :caption: Encoder Lambda
 
 Encodowanie daty
 ----------------
@@ -85,6 +98,20 @@ Dekodowanie daty
     :language: python
     :caption: Decoder dat do formatu JSON
 
+Dekodowanie klasą
+-----------------
+.. literalinclude:: src/json-decoder-class.py
+    :name: listing-json-decoder-class
+    :language: python
+    :caption: Decoder dat do formatu JSON
+
+Function decoder
+----------------
+.. literalinclude:: src/json-decoder-function.py
+    :name: listing-json-decoder-function
+    :language: python
+    :caption: Decoder dat do formatu JSON
+
 Dekodowanie obiektów
 --------------------
 .. literalinclude:: src/json-encoder-inject.py
@@ -94,6 +121,22 @@ Dekodowanie obiektów
 
 Zadania kontrolne
 =================
+
+Serializacja dat
+----------------
+#. Skopiuj do swojego pliku strukturę danych :numref:`listing-json-encoder-data`
+#. Zapisz ją do pliku json
+#. Wczyraj ją z pliku json jako obiekty Pythonowe (ten sam efekt co na listingu)
+
+:Co zadanie sprawdz:
+    * Serializacja danych
+    * Korzystanie z biblioteki JSON
+    * Serializowanie zagnieżdżonych obiektów
+
+.. literalinclude:: src/json-encoder-data.py
+    :name: listing-json-encoder-data
+    :language: python
+    :caption: Sample Python data JSON
 
 Serializacja obiektów do JSON
 -----------------------------

@@ -12,6 +12,40 @@ https://linux.die.net/man/1/pssh
 Wizualizacja danych
 -------------------
 - https://superset.incubator.apache.org/
+.. code-block:: console
+
+    # Install superset
+    pip install superset
+
+    # Create an admin user (you will be prompted to set username, first and last name before setting a password)
+    fabmanager create-admin --app superset
+
+    # Initialize the database
+    superset db upgrade
+
+    # Load some data to play with
+    superset load_examples
+
+    # Create default roles and permissions
+    superset init
+
+    # Start the web server on port 8088, use -p to bind to another port
+    superset runserver
+
+    # To start a development web server, use the -d switch
+    # superset runserver -d
+
+.. code-block:: console
+
+    gunicorn \
+        -w 10 \
+        -k gevent \
+        --timeout 120 \
+        -b  0.0.0.0:6666 \
+        --limit-request-line 0 \
+        --limit-request-field_size 0 \
+        --statsd-host localhost:8125 \
+        superset:app
 
 HTML Scrapping
 --------------

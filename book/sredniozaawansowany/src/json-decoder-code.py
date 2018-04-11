@@ -2,7 +2,8 @@ import datetime
 import json
 
 
-DATA = """{
+DATA = """
+{
     "astronaut":{
         "date": "1923-11-18",
         "person": "jose.jimenez@nasa.gov"
