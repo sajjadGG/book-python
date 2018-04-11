@@ -1,8 +1,10 @@
 import datetime
 
 
-today = 'Tuesday, December 19, 2017. 05:41 PM'
+sputnik = '4 October 1957 19:28:34 UTC'
 
-out = datetime.datetime.strptime(today, '%A, %B %d, %Y. %I:%M %p')
+out = datetime.datetime.strptime(sputnik, '%d %B %Y %H:%M:%S %Z')
+# datetime.datetime(1957, 10, 4, 19, 28, 34)
+
 print(out)
-# 2017-12-19 17:41:00
+# 1957-10-04 19:28:34

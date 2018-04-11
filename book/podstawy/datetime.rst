@@ -225,16 +225,16 @@ Zadania kontrolne
 
 Manipulacja datami
 ------------------
-Użytkownik poda wykorzystując ``input()`` dwie następujące daty w formacie jak poniżej:
+#. Użytkownik poda wykorzystując ``input()`` dwie następujące daty w formacie jak poniżej:
 
-    - ``April 12, 1961 2:07 AM local time`` (ALMT Timezone)
+    - ``April 12, 1961 2:07 local time`` (ALMT Timezone)
     - ``07/21/69 2:56:15 AM UTC``
 
-* Przedstaw daty jako obiekt ``datetime``. I wyświetl je w formacie ISO.
-* Odejmij obie daty od siebie. Ile lat i miesięcy minęło między wydarzeniami?
-* Do dzisiejszej daty dodaj ten sam czas, który Ci wyszedł w poprzednim zadaniu.
-* Wyświetl samą datę (bez czasu).
-* Ile będziesz miał wtedy lat?
+#. Przedstaw daty jako obiekt ``datetime``. I wyświetl je w formacie ISO.
+#. Odejmij obie daty od siebie. Ile lat i miesięcy minęło między wydarzeniami?
+#. Do dzisiejszej daty dodaj ten sam czas, który Ci wyszedł w poprzednim zadaniu.
+#. Wyświetl samą datę (bez czasu).
+#. Ile będziesz miał wtedy lat?
 
 :Zadanie z gwiazdką:
     * Co to za daty, które podał użytkownik?
