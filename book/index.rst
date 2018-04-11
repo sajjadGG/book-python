@@ -69,6 +69,8 @@ Podstawy
     :caption: Średniozaawansowany
 
     sredniozaawansowany/logging.rst
+    sredniozaawansowany/serializacja-csv.rst
+    sredniozaawansowany/serializacja-json.rst
     sredniozaawansowany/serializacja.rst
     sredniozaawansowany/testy-i-jakosc.rst
     sredniozaawansowany/introspection.rst

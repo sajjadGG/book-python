@@ -29,7 +29,6 @@ Factory
 
 Creational Design Patterns
 ==========================
-
 * Abstract Factory Pattern
 
     * A Classic Abstract Factory
@@ -43,7 +42,6 @@ Creational Design Patterns
 
 Structural Design Patterns
 ==========================
-
 * Adapter Pattern
 * Bridge Pattern
 * Composite Pattern
@@ -60,9 +58,9 @@ Structural Design Patterns
 * Flyweight Pattern
 * Proxy Pattern
 
+
 Behavioral Design Patterns
 ==========================
-
 * Chain of Responsibility Pattern
 
     * A Conventional Chain

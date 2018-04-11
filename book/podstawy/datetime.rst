@@ -31,6 +31,18 @@ Datetime
     :language: python
     :caption: Timezone information for time
 
+
+``timeit``
+==========
+.. literalinclude:: src/timeit.sh
+    :language: console
+    :caption: Timeit
+
+.. literalinclude:: src/timeit.py
+    :language: console
+    :caption: Timeit
+
+
 ``datetime``
 ============
 * Computerophile Time & Time Zones https://www.youtube.com/watch?v=-5wpm-gesOY

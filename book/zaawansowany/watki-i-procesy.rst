@@ -60,7 +60,6 @@ Tworzenie wątków
     :language: python
     :caption: Timer
 
-
 Synchronizacja wątków
 ---------------------
 .. literalinclude:: src/threading-worker.py
