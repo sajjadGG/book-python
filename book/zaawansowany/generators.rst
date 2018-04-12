@@ -41,18 +41,34 @@ Generator expressions
 
 List comprehension vs. Generator expressions
 ============================================
+.. code-block:: python
+
+    print('List Comprahension')
+
+    # tutaj nastąpi wykonanie i przypisanie
+    nieparzyste_list_comp = [x * x for x in range(0, 30) if x % 2]
+
+    print(nieparzyste_list_comp)
+    # [1, 9, 25, 49, 81, 121, 169, 225, 289, 361, 441, 529, 625, 729, 841]
+
+    print(nieparzyste_list_comp)
+    # [1, 9, 25, 49, 81, 121, 169, 225, 289, 361, 441, 529, 625, 729, 841]
 
 .. code-block:: python
 
-    nieparzyste_list_comp = [x*x for x in range(0, 30) if x % 2]
-    print(nieparzyste_list_comp)
-    print(nieparzyste_list_comp)
+    print('\nGenerator Expression')
 
-    print('------')
+    # tu nastąpi tylko przypisanie do generatora
+    nieparzyste_generator = (x * x for x in range(0, 30) if x % 2)
 
-    nieparzyste_generator = (x*x for x in range(0, 30) if x % 2)
+    print(list(nieparzyste_generator))  # tu dopiero nastąpi wywołanie
+    # [1, 9, 25, 49, 81, 121, 169, 225, 289, 361, 441, 529, 625, 729, 841]
+
+    # tu już generator jest pusty
     print(list(nieparzyste_generator))
-    print(list(nieparzyste_generator))
+    # []
+
+
 
 Operator ``yield``
 ==================
