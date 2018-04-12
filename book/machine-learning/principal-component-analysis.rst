@@ -50,6 +50,14 @@ First, consider a dataset in only two dimensions, like (height, weight). This da
     >>> print(pca.explained_variance_ratio_)
     [ 0.99244...]
 
+3D example
+==========
+.. figure:: /img/ml-pca.png
+    :scale: 50%
+    :align: center
+
+    Principal Component Analysis 3D
+
 Przykłady praktyczne
 ====================
 https://github.com/scikit-learn/scikit-learn/tree/master/examples/decomposition

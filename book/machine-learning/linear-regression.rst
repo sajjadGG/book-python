@@ -17,6 +17,13 @@ The coefficients, the residual sum of squares and the variance score are also ca
 
     The straight line can be seen in the plot, showing how linear regression attempts to draw a straight line that will best minimize the residual sum of squares between the observed responses in the dataset, and the responses predicted by the linear approximation.
 
+
+Przed zastosowaniem
+===================
+* Trzeba usunac outlayery
+* Trzeba sprawdzić czy są osobne klastry danych, tzn. czy linia jest przedziałami ciągła, tzn. gdyby podzielić na segmenty, to można lepiej dostosować regresję
+
+
 Wyznaczanie równania prostej
 ============================
 .. figure:: img/k-nearest-neighbors-parameters.png
