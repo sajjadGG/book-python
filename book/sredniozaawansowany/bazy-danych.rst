@@ -15,7 +15,7 @@ Typy danych w SQLite
 
 SQLite Auto Increment
 ---------------------
-.. literalinclude:: src/db-auto-increment.py
+.. literalinclude:: src/db-auto-increment.sql
     :language: sql
     :caption: Auto Increment
 

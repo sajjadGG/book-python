@@ -59,7 +59,7 @@ Podstawy
     podstawy/programowanie-obiektowe.rst
     podstawy/wyjatki.rst
     podstawy/pliki.rst
-
+    podstawy/zadania-kwalifikacyjne.rst
 
 *******************
 Średniozaawansowany
