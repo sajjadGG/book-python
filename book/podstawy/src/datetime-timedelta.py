@@ -7,7 +7,7 @@ datetime.date(1961, 4, 12) - datetime.timedelta(days=3)
 
 def month_ago(date):
     """
-    >>> month_ago(datetime.datetime(2000, 1, 31, 0, 0))
-    datetime.datetime(2000, 1, 1, 0, 0)
+    >>> month_ago(datetime.datetime(1969, 7, 21, 14, 56, 15))
+    datetime.datetime(1969, 6, 21, 14, 56, 15)
     """
     return date - datetime.timedelta(days=30)

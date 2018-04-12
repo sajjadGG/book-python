@@ -111,7 +111,7 @@ https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html
 
 Pobieranie wartości z tablic
 ----------------------------
-.. code-block:: pyton
+.. code-block:: python
 
     >>> n1 = np.array([1,2,3])
     >>> n2 = np.array([[1,2],[3,4]])

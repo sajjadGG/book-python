@@ -1,5 +1,3 @@
-.. _Exception:
-
 *******
 Wyjątki
 *******

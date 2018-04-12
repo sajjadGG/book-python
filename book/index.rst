@@ -32,6 +32,7 @@ Wstęp
     wstep/instalacja.rst
     wstep/wybor-ide.rst
     wstep/podstawy-skladni.rst
+    wstep/bohaterowie.rst
 
 
 ********

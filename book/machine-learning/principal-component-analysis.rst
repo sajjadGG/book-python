@@ -52,7 +52,7 @@ First, consider a dataset in only two dimensions, like (height, weight). This da
 
 3D example
 ==========
-.. figure:: /img/ml-pca.png
+.. figure:: /img/ml-pca-3d.png
     :scale: 50%
     :align: center
 
