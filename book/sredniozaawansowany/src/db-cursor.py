@@ -1,29 +1,34 @@
 import sqlite3
 
+SQL_CREATE_TABLE = """
+    CREATE TABLE IF NOT EXISTS kontakty (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        pesel INTEGER UNIQUE,
+        firstname TEXT,
+        lastname TEXT
+    )
+"""
 
-conn = sqlite3.connect('example.db')
-cur = conn.cursor()
+SQL_INSERT = """
+    INSERT INTO kontakty VALUES (
+        NULL,
+        :pesel,
+        :firstname,
+        :lastname
+    )
+"""
 
-# Create table
-cur.execute("""
-    CREATE TABLE stocks (
-        date text,
-        trans text,
-        symbol text,
-        qty real,
-        price real
-)""")
+ksiazka_adresowa = [
+    {'pesel': '61041212345', 'firstname': 'Jose', 'lastname': 'Jimenez'},
+    {'pesel': '61041212345', 'firstname': 'Max', 'lastname': 'Peck'},
+]
 
-# Insert a row of data
-cur.execute("INSERT INTO stocks VALUES ('2006-01-05','BUY','RHAT',100,35.14)")
 
-# And this is the named style:
-cur.execute("select * from stocks where trans=:trans and symbol=:symbol",
-            {"symbol": 'RHAT', "trans": 'BUY'})
+with sqlite3.connect(':memory:') as connection:
+    connection.execute(SQL_CREATE_TABLE)
 
-# Save (commit) the changes
-conn.commit()
-
-# We can also close the connection if we are done with it.
-# Just be sure any changes have been committed or they will be lost.
-conn.close()
+    try:
+        with connection.cursor() as cursor:
+            cursor.executemany(SQL_INSERT, ksiazka_adresowa)
+    except sqlite3.IntegrityError:
+        print('Pesel need to be UNIQUE')

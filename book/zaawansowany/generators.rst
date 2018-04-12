@@ -4,19 +4,21 @@ Generatory i list comprehension
 
 Lazy evaluation
 ===============
-
 .. code-block:: python
 
     import datetime
 
-    now = datetime.datetime.now
 
-    print(now())
+    print(datetime.datetime.now())
 
-    for i in range(0, 9999999):
+    range(0, 9_999_999)
+
+    print(datetime.datetime.now())
+
+    for i in range(0, 9_999_999):
         pow(i, 10)
 
-    print(now())
+    print(datetime.datetime.now())
 
 
 List comprehension
@@ -298,10 +300,22 @@ Zaawansowane wykorzystanie `Generator Expressions`
     print('set(), podejście 3:', fieldnames)
 
 
+Nested list comprahension
+-------------------------
+.. code-block:: python
+
+   DATA = [
+        {'last_name': 'Jiménez'},
+        {'first_name': 'Max', 'last_name': 'Peck'},
+        {'first_name': 'Ivan'},
+        {'first_name': 'Max', 'last_name': 'Peck', 'born': 1961},
+        {'first_name': 'Max', 'last_name': 'Peck', 'first_step': 1969},
+    ]
+
     # set(), podejście 4
     # Wykorzystując zbiór, który deduplikuje za nas
     fieldnames = set()
-    fieldnames.update(key for key in record.keys() for record in DATA)
+    fieldnames.update(key for record in DATA for key in record.keys())
     print('set(), podejście 4:', fieldnames)
 
 Uwaga, czytelność kodu ma znaczenie

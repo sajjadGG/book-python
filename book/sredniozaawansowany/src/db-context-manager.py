@@ -1,18 +1,33 @@
 import sqlite3
 
-con = sqlite3.connect(':memory:')
-con.execute('create table person (id integer primary key, firstname varchar unique)')
+SQL_CREATE_TABLE = """
+    CREATE TABLE IF NOT EXISTS kontakty (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        pesel INTEGER UNIQUE,
+        firstname TEXT,
+        lastname TEXT
+    )
+"""
 
-# Successful, con.commit() is called automatically afterwards
-with con:
-    data = ['Joe']
-    con.execute('insert into person(firstname) values (?)', data)
+SQL_INSERT = """
+    INSERT INTO kontakty VALUES (
+        NULL,
+        :pesel,
+        :firstname,
+        :lastname
+    )
+"""
 
-# con.rollback() is called after the with block finishes with an exception, the
-# exception is still raised and must be caught
-try:
-    with con:
-        data = ['Joe']
-        con.execute('insert into person(firstname) values (?)', data)
-except sqlite3.IntegrityError:
-    print('couldn\'t add Joe twice')
+SQL_SELECT = """
+    SELECT * FROM kontakty
+"""
+
+dane = {'pesel': '61041212345', 'firstname': 'Jose', 'lastname': 'Jimenez'},
+
+
+with sqlite3.connect(':memory:') as connection:
+    connection.execute(SQL_CREATE_TABLE)
+    connection.execute(SQL_INSERT, dane)
+
+    for row in connection.execute(SQL_INSERT, dane):
+        print(dict(row))
