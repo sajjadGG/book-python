@@ -54,18 +54,19 @@ Własny iterator
         aktualny_elemtent = 0
 
         def __iter__(self):
+            self.aktualny_elemtent = 0
             return self
 
         def push(self, figura):
             self.lista.append(figura)
 
         def __next__(self):
-            try:
-                element = self.lista[self.aktualny_elemtent]
-                self.aktualny_elemtent += 1
-                return element
-            except IndexError:
+            if self.aktualny_elemtent >= len(self.lista):
                 raise StopIteration
+
+            element = self.lista[self.aktualny_elemtent]
+            self.aktualny_elemtent += 1
+            return element
 
 
     figury = ListaFigurGeometrycznych()
@@ -73,7 +74,6 @@ Własny iterator
     figury.push('kwadrat')
     figury.push('prostokat')
     figury.push('trojkat')
-
 
     for figura in figury:
         print(figura)
@@ -96,10 +96,13 @@ Przykład
     print(parzyste_f4())
     a = parzyste_f4()
 
-    print('next1', a.__next__())
-    print('next2', a.__next__())
-    print('next3', a.__next__())
-    print('next4', a.__next__())
+    try:
+        print('next1', a.__next__())
+        print('next2', a.__next__())
+        print('next3', a.__next__())
+        print('next4', a.__next__())
+    except StopIteration:
+        pass
 
 
     for liczba in parzyste_f4():

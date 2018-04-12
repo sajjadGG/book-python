@@ -14,53 +14,40 @@ Napisz program, który wczyta plik /etc/passwd, a następnie:
 
 """
 
-def konta_systemowe(filename):
+FILENAME = '../data/file-etc-passwd.txt'
+
+
+def systemowe_lista(lines):
     konta = []
 
-    with open(filename) as file:
-        for linia in file.readlines():
+    for linia in lines:
 
-            if not linia.startswith('#'):
-                uid = int(linia.split(':')[2])
-                username = str(linia.split(':')[0])
+        if not linia.isspace() and not linia.startswith('#'):
+            uid = int(linia.split(':')[2])
+            username = str(linia.split(':')[0])
 
-                if uid < 1000:
-                    konta.append(username)
+            if uid < 1000:
+                konta.append(username)
 
     return konta
 
 
-def system_accounts1(filename):
-    with open(filename) as file:
+def systemowe_generator(lines):
+    for linia in lines:
 
-        for linia in file.readlines():
-
-            if not linia.startswith('#'):
-                uid = int(linia.split(':')[2])
-                username = str(linia.split(':')[0])
-
-                if uid < 1000:
-                    yield username
-
-
-def system_accounts2(filename):
-    with open(filename) as file:
-        #content = (line.split(':') for line in file.readlines() if not line.startswith('#'))
-
-        for line in (line for line in file.readlines() if not line.startswith('#')):
-            fields = line.split(':')
-            uid = int(fields[2])
-            username = fields[0]
+        if not linia.isspace() and not linia.startswith('#'):
+            uid = int(linia.split(':')[2])
+            username = str(linia.split(':')[0])
 
             if uid < 1000:
                 yield username
 
 
 if __name__ == '__main__':
-    z_returna = konta_systemowe('/etc/passwd')
-    z_yielda1 = system_accounts1('/etc/passwd')
-    z_yielda2 = system_accounts2('/etc/passwd')
+    with open(FILENAME) as file:
+        lines = file.readlines()
+        lista = systemowe_lista(lines)
+        generator = systemowe_generator(lines)
 
-    print('Z Returna:', sys.getsizeof(z_returna))
-    print('Z Yielda:', sys.getsizeof(z_yielda1))
-    print('Z Yielda:', sys.getsizeof(z_yielda2))
+    print('Lista:', sys.getsizeof(lista))
+    print('Generator:', sys.getsizeof(generator))
