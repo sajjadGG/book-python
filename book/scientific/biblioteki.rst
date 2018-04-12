@@ -34,6 +34,7 @@ Biblioteki do nauczania maszynowego
 - ``TensorFlow``
 - ``PyMC3``
 - ``pyTorch``
+- ``keras``
 
 Other
 =====
