@@ -16,35 +16,37 @@ Anaconda
 
 Biblioteki do obsługi danych
 ============================
-``Pandas``
-``NumPy``
-``SciPy``
+- ``Pandas``
+- ``NumPy``
+- ``SciPy``
 
 Wykresy i grafy
 ===============
-``Matplotlib``
-``plotly``
-``PyDotPlus``
-``Graphviz``
-``Bokeh``
+- ``Matplotlib``
+- ``plotly``
+- ``Bokeh``
+- ``PyDotPlus``
+- ``Graphviz``
 
 Biblioteki do nauczania maszynowego
 ===================================
-``TensorFlow``
-``PyMC3``
+- ``scikit-learn``
+- ``TensorFlow``
+- ``PyMC3``
+- ``pyTorch``
 
 Other
 =====
-``Jupyter``
-``Dask``
-``Numba``
-``xarray``
-``StatsModels``
-``SymPy``
-``NetworkX``
-``scikit-image``
-``astropy``
-``biopython``
-``dipy``
-``nipy``
-``sunpy``
+- ``Jupyter``
+- ``Dask``
+- ``Numba``
+- ``xarray``
+- ``StatsModels``
+- ``SymPy``
+- ``NetworkX``
+- ``scikit-image``
+- ``astropy``
+- ``biopython``
+- ``dipy``
+- ``nipy``
+- ``sunpy``
