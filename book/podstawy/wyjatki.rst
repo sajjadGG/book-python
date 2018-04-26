@@ -4,7 +4,6 @@ Wyjątki
 
 Po co są wyjątki?
 =================
-
 Wyjątki stosowane są wtedy, gdy pewna metoda albo funkcja nie może wykonać się poprawnie. Na przykład kiedy dane wprowadzone od użytkownika są nieprawidłowe albo jest problem z dostępem do zasobu (np. pliku). Wyjątek jest wtedy podnoszony, żeby powiadomić program, że funkcja nie jest w stanie sobie poradzić z napotkanym problemem. Program może wtedy albo próbować poradzić sobie z wyjątkiem, albo przekazać go wyżej, dochodząc ostatecznie do warstwy systemu.
 
 Wyjątki nie powinny być stosowane przy normalnym użytkowaniu projektowanej aplikacji. Wystąpienie wyjątka oznacza błąd programu!
@@ -12,7 +11,6 @@ Wyjątki nie powinny być stosowane przy normalnym użytkowaniu projektowanej ap
 
 Podnoszenie wyjątków
 ====================
-
 .. code-block:: python
 
     def bar():

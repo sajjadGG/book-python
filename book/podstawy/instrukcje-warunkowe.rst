@@ -11,7 +11,7 @@ Instrukcje warunkowe pozwalają kierować wykonywanymi instrukcjami pod pewnym w
 
 .. code-block:: python
 
-    if ... :
+    if True :
          print('this is true')
 
 
@@ -20,7 +20,7 @@ Do instrukcji warunkowej można dodać słowo kluczowe ``else``. Wtedy, jeżeli 
 
 .. code-block:: python
 
-    if ... :
+    if True :
         print('this is true')
     else:
         print('this is false')
@@ -58,7 +58,7 @@ Słowo kluczowe ``in`` pozwala na sprawdzenie czy dana wartość zawiera się w 
 
 .. code-block:: python
 
-    if name in ['José Jiménez', 'Max Peck']:
+    if name in {'José Jiménez', 'Max Peck'}:
         print('Your name is José Jiménez or Max Peck')
     else:
          print('Your name is neither José Jiménez nor Max Peck')
@@ -151,18 +151,21 @@ Bardzo kuszący jest następujący przykład:
 .. code-block:: python
 
     choices = {'a': 1, 'b': 2}
+    key = 'a'
+
     result = choices.get(key, 'default value when key is not found')
 
 
 .. code-block:: python
 
-    def switch(x):
+    def switch(key):
         return {
             'a': 1,
             'b': 2,
-        }[x]
+        }.get(key, 'default value')
 
-    switch('a')
+    switch('a')  # 1
+    switch('x')  # 'default value'
 
 Zadania kontrolne
 =================

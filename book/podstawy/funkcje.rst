@@ -179,150 +179,49 @@ Operator ``*`` i ``**``
 =======================
 .. todo:: zrobić zadania do rozwiązania dla parametrów z gwiazdką
 
+Użycie operatora ``*`` przy definicji funkcji powoduje umożliwienie przekazywanie do funkcji dodatkowych parametrów anonimowych. Zazwczaj zmienna, która jest przy tym operatorze nazywa się ``*args`` (arguments).
+
+Użycie operatora ``**`` przy definicji funkcji powoduje umożliwienie przekazywania do niej dodatkowych argumentów nazwanych. Zazwczaj zmienna, która jest przy tym operatorze nazywa się ``**kwargs`` (keyword arguments).
+
+Wykorzystywanie ``args`` i ``kwargs`` przy przyjmowaniu parametrów przez funkcję
+--------------------------------------------------------------------------------
 .. code-block:: python
 
-    >>> def wyswietl(a, b, c=0):
-    ...    print(locals())
+    def wyswietl_argumenty(dopasowane, *pozycyjne, **nazwane):
+        print(f'argumenty dopasowane: {dopasowane}')  # 1
+        print(f'argumenty pozycyjne: {pozycyjne}')    # 2, 3, 4
+        print(f'argumenty nazwane: {nazwane}')        # c=5, d=6
 
-    >>> wyswietl(1, 2, 3)
-    {'a': 1, 'b': 2, 'c': 3}
 
-    >>> krotka = (1, 2, 3)
-    >>> wyswietl(*krotka)
-    {'a': 1, 'b': 2, 'c': 3}
+    wyswietl_argumenty(1, 2, 3, 4, c=5, d=6)
 
-    >>> krotka = (1, 2)
-    >>> wyswietl(*krotka)
-    {'a': 1, 'b': 2, 'c': 0}
+Wewnątrz funkcji będziemy mieli dostępną zmienną ``dopasowane`` o wartości 1, zmeinną ``pozycyjne``, zawierającą listę elementów (2, 3, 4) oraz zmienną słownikową ``nazwane``, która ma klucze 'c' i 'd', które przechowują wartości, odpowiednio, 5 i 6.
 
-.. code-block:: python
-
-    >>> def wyswietl(a, b, c=0, *args):
-    ...    print(locals())
-
-    >>> krotka = (1, 2, 3, 4)
-    >>> wyswietl(*krotka)
-    {'a': 1, 'b': 2, 'c': 3, 'args': (4,)}
-
-    >>> krotka = (1, 2, 3, 4, 5, 6, 7)
-    >>> wyswietl(*krotka)
-    {'a': 1, 'b': 2, 'c': 3, 'args': (4, 5, 6, 7)}
-
-    >>> wyswietl(1, 2)
-    {'a': 1, 'b': 2, 'c': 0, 'args': ()}
+Przez konwencję ``pozycyjne`` powinny być nazwane ``args``, a ``nazwane`` - ``kwargs`` (keyword arguments).
 
 .. code-block:: python
 
-    >>> def wyswietl(a, b, c=0, *args, **kwargs):
-    ...     print(locals())
-
-    >>> wyswietl(1, 2, x=77, y=99)
-    {'a': 1, 'b': 2, 'c': 0, 'args': (), 'kwargs': {'x': 77, 'y': 99}}
-
-    >>> wyswietl(1, 2, x=77, y=99, c=7)
-    {'a': 1, 'b': 2, 'c': 7, 'args': (), 'kwargs': {'x': 77, 'y': 99}}
-
-    >>> slownik = {'x': 77, 'y': 99}
-    >>> wyswietl(1, 2, 3, **slownik)
-    {'a': 1, 'b': 2, 'c': 3, 'args': (), 'kwargs': {'x': 77, 'y': 99}}
-
-.. code-block:: python
-
-    >>> def wyswietl(a, b, c=0, *args, **kwargs):
-    ...     print(locals())
-
-    >>> wyswietl(1, 2, 3, 4, 5, 6, x=77, y=99)
-    {'a': 1, 'b': 2, 'c': 3, 'args': (4, 5, 6), 'kwargs': {'x': 77, 'y': 99}}
-
-    >>> krotka = (4, 5, 6)
-    >>> slownik = {'x': 77, 'y': 99}
-    >>> wyswietl(1, 2, 3, *krotka, **slownik)
-    {'a': 1, 'b': 2, 'c': 3, 'args': (4, 5, 6), 'kwargs': {'x': 77, 'y': 99}}
-
-Argumenty ``*args``, ``**kwargs``
----------------------------------
-Użycie operatora ``*`` przy definicji funkcji powoduje umożliwienie przekazywanie do funkcji dodatkowych parametrów anonimowych. Zazwczaj zmienna, która jest przy tym operatorze nazywa się ``*args`` (arguments)
-
-Użycie operatora ``**`` przy definicji funkcji powoduje umożliwienie przekazywania do niej dodatkowych argumentów nazwanych. Zazwczaj zmienna, która jest przy tym operatorze nazywa się ``**kwargs`` (keyword arguments)
-
-Przy wywołaniu funkcji
-----------------------
-Wywołując powyższą funkcję z argumentami:
-
-.. code-block:: python
-
-    >>> def wyswietl_argumenty(my_var, *args, **kwargs):
-    ...    print(f'zmienna my_var: {my_var}')  # pierwsze dopasowanie
-    ...    print(f'zmienna args: {args}')      # argumenty pozycyjne 2, 3, 4
-    ...    print(f'zmienna kwargs: {kwargs}')  # argumenty nazwane c=5, d=6
-    ...
-    ...
-    ... wyswietl_argumenty(1, 2, 3, 4, c=5, d=6)
-    zmienna my_var: 1
-    zmienna args: (2, 3, 4)
-    zmienna kwargs: {'c': 5, 'd': 6}
-
-Sprawi, że wewnątrz funkcji będziemy mieli dostępną zmienną ``my_var`` o wartości 1, zmeinną ``args``, zawierającą listę elementów (2, 3, 4) oraz zmienną słownikową ``kwargs``, która ma klucze 'c' i 'd', które przechowują wartości, odpowiednio, 5 i 6.
-
-Przy zwracaniu wartości z funkcji
-----------------------------------
-.. code-block:: python
-
-    >>> value, _ = function()
-    >>> value, *args = function()
-
-.. code-block:: python
-
-    def sensor_temperatury():
-        # ładniej byłoby gdyby programista napisał
-        # {'napiecie': 10, 'natezenie': 20, 'rezystancja': 30, 'czas': 5, 'location': 'laboratorium'}
-        # ale programiści niskopoziomowi zwykle zwracają jako list...
-        return (10, 20.6, 30, 5, 'laboratorium')
-
-    # z funkcji dopasuje nam dwa pierwsze elementy, a kolejne umieści w ``tuple`` o nazwie args
-    napiece, natezenie, *args = sensor_temperatury()
-
-    # Przez konwencję, jeżeli nie korzystamy później z argumentów, to możemy przypisać je do ``_``
-    napiecie, natezenie, *_ = sensor_temperatury()
+    def wyswietl_argumenty(dopasowane, *args, **kwargs):
+        print(f'argumenty dopasowane: {dopasowane}')  # 1
+        print(f'argumenty pozycyjne: {args}')         # 2, 3, 4
+        print(f'argumenty nazwane: {kwargs}')         # c=5, d=6
 
 
-.. code-block:: python
+    wyswietl_argumenty(1, 2, 3, 4, c=5, d=6)
 
-    def liczby_0_do_5():
-        return range(0, 5)
-
-    jeden, dwa, *reszta = liczby_0_do_5()
-
-    print(jeden, dwa, reszta)
-
-.. code-block:: python
-
-    >>> def zmienne_lokalne_pozycyjne(a, b, *args):
-    ...    print(locals())
-    ...
-    ... zmienne_lokalne_pozycyjne(1, 2, 5, 7)
-    {'args': (5, 7), 'b': 2, 'a': 1}
-
-.. code-block:: python
-
-    >>> def zmienne_lokalne_nazwane(a, b, **kwargs):
-    ...    print(locals())
-    ...
-    ... zmienne_lokalne_nazwane(1, 2, c=5, d=7)
-    {'kwargs': {'c': 5, 'd': 7}, 'b': 2, 'a': 1}
-Inne przykładowe zastosownaie operatorów ``*`` i ``**`` polega na wykorzystaniu ich przy wywołaniu funkcji. Wtedy, wykorzystując operator ``*``, kolejne elementy listy albo krotki będą przekazane jako kolejne argumenty funkcji, a wykorzystując operator ``**`` kolejne elementy zmiennej słownikowej będą przekazane jako nazwane argumenty. Oznacza to, że na przykład argument ``x`` funkcji, przyjmie wartość ``dict_vec['x']``.
+Przykładowe zastosownaie operatorów ``*`` i ``**`` polega na wykorzystaniu ich przy wywołaniu funkcji. Wtedy, wykorzystując operator ``*``, kolejne elementy listy albo krotki będą przekazane jako kolejne argumenty funkcji, a wykorzystując operator ``**`` kolejne elementy zmiennej słownikowej będą przekazane jako nazwane argumenty. Oznacza to, że na przykład argument ``x`` funkcji, przyjmie wartość ``vector['x']``.
 
 .. code-block:: python
 
     >>> def my_function(x, y, z):
     ...    print(x, y, z)
 
-    >>> tuple_vec = (1, 0, 1)
-    >>>  my_function(*tuple_vec)
+    >>> vector = (1, 0, 1)
+    >>>  my_function(*vector)
     1, 0, 1
 
-    >>> dict_vec = {'y': 1, 'x': 0, 'z': 1}
-    >>> my_function(**dict_vec)
+    >>> vector = {'y': 1, 'x': 0, 'z': 1}
+    >>> my_function(**vector)
     0, 1, 1
 
 .. warning:: Nie przywiązuj się do nazewnictwa ``*args`` i ``**kwargs``, chociaż jest to konwencja!!
@@ -349,9 +248,126 @@ Inne przykładowe zastosownaie operatorów ``*`` i ``**`` polega na wykorzystani
 
         wyswietl_argumenty(1, 2, 3, 4, c=5, d=6)
 
+Wykorzystanie ``args`` i ``kwargs`` przy przekazywaniu parametrów do funkcji
+----------------------------------------------------------------------------
+.. code-block:: python
+
+    >>> def wyswietl(a, b, c=0):
+    ...    print(locals())
+
+    >>> wyswietl(1, 2, 3)
+    {'a': 1, 'b': 2, 'c': 3}
+
+    >>> dane = (1, 2, 3)
+    >>> wyswietl(*dane)
+    {'a': 1, 'b': 2, 'c': 3}
+
+    >>> dane = (1, 2)
+    >>> wyswietl(*dane)
+    {'a': 1, 'b': 2, 'c': 0}
+
+.. code-block:: python
+
+    >>> def wyswietl(a, b, c=0, *args):
+    ...    print(locals())
+
+    >>> dane = (1, 2, 3, 4)
+    >>> wyswietl(*dane)
+    {'a': 1, 'b': 2, 'c': 3, 'args': (4,)}
+
+    >>> dane = (1, 2, 3, 4, 5, 6, 7)
+    >>> wyswietl(*dane)
+    {'a': 1, 'b': 2, 'c': 3, 'args': (4, 5, 6, 7)}
+
+    >>> wyswietl(1, 2)
+    {'a': 1, 'b': 2, 'c': 0, 'args': ()}
+
+.. code-block:: python
+
+    >>> def wyswietl(a, b, c=0, *args, **kwargs):
+    ...     print(locals())
+
+    >>> wyswietl(1, 2, x=77, y=99)
+    {'a': 1, 'b': 2, 'c': 0, 'args': (), 'kwargs': {'x': 77, 'y': 99}}
+
+    >>> wyswietl(1, 2, x=77, y=99, c=7)
+    {'a': 1, 'b': 2, 'c': 7, 'args': (), 'kwargs': {'x': 77, 'y': 99}}
+
+    >>> dane = {'x': 77, 'y': 99}
+    >>> wyswietl(1, 2, 3, **dane)
+    {'a': 1, 'b': 2, 'c': 3, 'args': (), 'kwargs': {'x': 77, 'y': 99}}
+
+.. code-block:: python
+
+    >>> def wyswietl(a, b, c=0, *args, **kwargs):
+    ...     print(locals())
+
+    >>> wyswietl(1, 2, 3, 4, 5, 6, x=77, y=99)
+    {'a': 1, 'b': 2, 'c': 3, 'args': (4, 5, 6), 'kwargs': {'x': 77, 'y': 99}}
+
+    >>> pozycyjne = (4, 5, 6)
+    >>> nazwane = {'x': 77, 'y': 99}
+    >>> wyswietl(1, 2, 3, *pozycyjne, **nazwane)
+    {'a': 1, 'b': 2, 'c': 3, 'args': (4, 5, 6), 'kwargs': {'x': 77, 'y': 99}}
+
+
+Przy zwracaniu wartości z funkcji
+----------------------------------
+.. code-block:: python
+
+    >>> value, _ = function()
+    >>> value, *args = function()
+
+.. code-block:: python
+
+    def liczby_0_do_5():
+        return range(0, 5)
+
+    pierwsza, druga, *pozostale = liczby_0_do_5()
+    # pierwsza == 0
+    # druga == 1
+    # pozostale == (2, 3, 4)
+
+.. code-block:: python
+
+    def create_or_update():
+        return True, [
+            {'id': 1, 'imie': 'Ivan', 'nazwisko': 'Ivanovic'},
+            {'id': 2, 'imie': 'José', 'nazwisko': 'Jiménez'},
+        ], 2, str('No Error')
+
+    # czy_utworzone, objects, count, error = create_or_update()
+    bylo_utworzone, *_  = create_or_update()
+
+    if bylo_utworzone:
+        print('utworzone')
+    else:
+        print('zmodyfikowane')
+
+
+.. code-block:: python
+
+    def sensor_temperatury():
+        # ładniej byłoby gdyby programista napisał
+        # {'napiecie': 10, 'natezenie': 20, 'rezystancja': 30, 'czas': 5, 'location': 'laboratorium'}
+        # ale programiści niskopoziomowi zwykle zwracają jako list...
+        return (10, 20.6, 30, 5, 'laboratorium')
+
+    # z funkcji dopasuje nam dwa pierwsze elementy, a kolejne umieści w ``tuple`` o nazwie ``_``
+    # Przez konwencję, jeżeli nie korzystamy później z argumentów, to możemy przypisać je do ``_``
+    napiecie, natezenie, *_ = sensor_temperatury()
 
 Przykładowe zastosowanie
 ------------------------
+.. code-block:: python
+
+    class Kontakt:
+        def __init__(self, **kwargs):
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    Kontakt(imie='Max', nazwisko='Peck')
+
 .. code-block:: python
 
     class Osoba:
@@ -361,26 +377,12 @@ Przykładowe zastosowanie
         def __str__(self):
             return '{first_name} {last_name}'.format(**self.__dict__)
 
-.. code-block:: python
-
-    def create_or_update():
-        return True, [
-            {'id': 1, 'imie': 'Ivan', 'nazwisko': 'Ivanovic'},
-            {'id': 2, 'imie': 'José', 'nazwisko': 'Jiménez'},
-        ], 10, str('asd')
-
-
-    czy_utworzone, *args  = create_or_update()
-
-    print(czy_utworzone)
-
-
 Zadania kontrolne
 =================
 
 Konwersja liczby na zapis słowny
 --------------------------------
-#. Napisz program ``numer.py``, który zamieni wprowadzony przez użytkownika ciąg cyfr na formę tekstową.
+#. Napisz program, który zamieni wprowadzony przez użytkownika ciąg cyfr na formę tekstową.
 #. Konwertujemy cyfry, nie liczby, a zatem:
 
     .. code-block:: python

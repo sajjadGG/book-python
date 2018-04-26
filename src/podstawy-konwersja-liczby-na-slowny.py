@@ -21,7 +21,7 @@ for cyfra in liczba_uzytkownika:
     # my iterujemy po ``str`` i cyfra jest typu ``str``
     # rzutujemy cyfrę na ``int`` aby móc odnaleźć ją w LICZBY
     index = int(cyfra)
-    print(LICZBY[cyfra])
+    print(LICZBY[index])
 
 
 # Alternatywnie

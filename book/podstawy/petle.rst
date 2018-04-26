@@ -47,7 +47,19 @@ Pętla ``for`` wykonuje się na zestawie elementów. Dosłownie można tę instr
     Value is: José
     Value is: Jiménez
 
+.. code-block:: python
 
+    >>> for x in ['Max', 3, 'Peck', 2.8, [1, 'José', 'Jiménez']]:
+    ...    if isinstance(x, list):
+    ...        for element in x:
+    ...            print(f'Value is: {element}')
+    ...    else:
+    ...        print(f'Value is: {x}')
+    Value is: Max
+    Value is: 3
+    Value is: Peck
+    Value is: 2.8
+    Value is: [1, 'José', 'Jiménez']
 
 .. code-block:: python
 
@@ -90,21 +102,24 @@ Pętla ``for`` wykonuje się na zestawie elementów. Dosłownie można tę instr
         # for domyślnie iteruje po kluczach
         print(element)
 
+    for key, value in slownik.items():
+        print(key, value)
+
+.. code-block:: python
+
+    slownik = {'x': 1, 'y': 2}
     for element in slownik:
+
         # dobieranie sie do wartosci slownika za pomoca klucza
         print(slownik.get(element))
         print(slownik[element])
+
         # get zwraca wartość w słowniku dla klucza
         {'x': 1, 'y': 2}[element]
         {'x': 1, 'y': 2}.get(element)
 
-    for key, value in slownik.items():
-        print(key, value)
-
-
 Pętla ``while``
 ===============
-
 Pętla while wykonuje się dopóki argument jest prawdą.
 
 .. code-block:: python
@@ -134,10 +149,14 @@ Inline ``for``
 ==============
 Pętla ``for`` może być także napisana jako jednoliniowy generator.
 
+Prosty przykład
+---------------
 .. code-block:: python
 
     cyfry = [x for x in range(0, 10)]
 
+Instrukcja warunkowa
+--------------------
 Do takiego iteratora można także dodać instrukcję warunkową.
 
 .. code-block:: python
@@ -145,7 +164,14 @@ Do takiego iteratora można także dodać instrukcję warunkową.
     parzyste = [x for x in range(0, 10) if x % 2 == 0]
     parzyste = [x for x in range(0, 10) if not x % 2]
 
+Aplikowanie funkcji dla elementu
+--------------------------------
 Najczęściej wykorzystuje się tą konstrukcję aby zaaplikować funkcję dla każdego elementu nowej listy
+
+.. code-block:: python
+
+    floaty = [float(x) for x in range(0, 10)]
+    parzyste = [float(x) for x in range(0, 10) if x % 2 == 0]
 
 .. code-block:: python
 
@@ -171,22 +197,38 @@ Najczęściej wykorzystuje się tą konstrukcję aby zaaplikować funkcję dla k
         {'cyfra': 9, 'czy_parzysta': False}
      ]
 
+Porównanie z pętlą ``for``
+--------------------------
 Przykład praktyczny z życia
 
 .. code-block:: python
 
     line = 'jose:x:1000:1000:José Jiménez:/home/jose:/bin/bash'
 
-    d = [record for record in line.split(':') if record.startswith('/')]
-    print(d)
-
-
-    # Equivalent code
-    d = []
+    paths = []
     for record in line:
         if record.startswith('/'):
-            d.append()
-    print(d)
+            paths.append()
+    print(paths)
+
+    # Equivalent code
+    paths = [record for record in line.split(':') if record.startswith('/')]
+    print(paths)
+
+    # this is how you might find this in real world
+    paths = [x for x in line.split(':') if x.startswith('/')]
+    print(paths)
+
+
+Inline ``for`` to nie tylko lista
+---------------------------------
+.. code-block:: python
+
+    {float(x) for x in range(0, 5)}
+    # set {1.0, 2.0, 3.0, 4.0}
+
+    {x: float(x) for x in range(0, 5)}
+    # dict {1: 1.0, 2: 2.0, 3: 3.0, 4: 4.0}
 
 Zadania kontrolne
 =================
@@ -200,10 +242,10 @@ Napisz program, który wczytuje od użytkownika kolejne oceny i:
     * jeżeli wpisano cyfrę nie znjadującą się na liście dopuszczalnych ocen, wyświetl informację i zakończ wpisywanie
     * wyświetla wyliczoną dla dzienniczka ocen średnią arytmetyczną
     * jeżeli wciśnięto sam Enter, oznacza to koniec wpisywania do dzienniczka
-    * wykorzystaj moduł statistics do wyliczania średniej
+    * wykorzystaj moduł ``statistics`` do wyliczania średniej
 
 :Warunek:
-    * Zastosuj skalę ocen ``[2, 3, 3.5, 4, 4.5, 5]``
+    * Zastosuj skalę ocen ``(2, 3, 3.5, 4, 4.5, 5)``
 
 :Podpowiedź:
     * Czytelny kod powinien mieć około 10 linii

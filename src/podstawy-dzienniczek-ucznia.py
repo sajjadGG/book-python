@@ -4,6 +4,7 @@ import logging
 import statistics
 
 LISTA_DOPUSZALNYCH_OCEN = [2, 3, 3.5, 4, 4.5, 5]
+LISTA_DOPUSZALNYCH_OCEN = [float(x) for x in LISTA_DOPUSZALNYCH_OCEN]
 dzienniczek = []
 
 log = logging.getLogger(__name__)
