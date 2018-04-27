@@ -13,14 +13,14 @@ Co trzeba wiedzieć przed rozpoczęciem pracy?
 Elementy języka Python i biblioteki standardowej
 ------------------------------------------------
 * :ref:`Stałe, zmienne i typy danych`
-* :ref:`Zbiory i operacje na nich`
+* :ref:`Złożone typy danych`
 * :ref:`Instrukcje warunkowe`
 * :ref:`Pętle`
 * :ref:`Funkcje`
 * :ref:`Print Formatting`
 * :ref:`Matematyka`
 * :ref:`Operacje na plikach`
-* :ref:`Serializacja i deserializacja danych w CSV`
+* :ref:`Serializacja i deserializacja CSV`
 * :ref:`Programowanie obiektowe <Object Oriented Programming>`
 * :ref:`Instalacja i korzystanie z zewnętrznych bibliotek`
 * :ref:`Dobre praktyki`

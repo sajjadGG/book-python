@@ -53,14 +53,9 @@ Zawartość zadanego pliku
 
 Parsowanie ``/etc/hosts``
 -------------------------
-#. Do pliku ``hosts`` w katalogu gdzie będzie Twój skrypt zapisz poniższy szablon:
+#. Do pliku ``hosts`` w katalogu gdzie będzie Twój skrypt zapisz poniższy szablon: :numref:`listing-file-etc-hosts`
 #. Ważne są komentarze, białe spacje i linie przerwy
-#. Przedstaw go w formie listy dictów jak w przykładzie poniżej:
-
-    .. literalinclude:: src/file-hosts.py
-        :language: python
-        :caption: ``/etc/hosts`` example
-
+#. Przedstaw go w formie listy dictów jak w przykładzie poniżej: :numref:`listing-file-hosts`
 #. Zwróć uwagę na uprawnienia do odczytu pliku
 
 :Co zadanie sprawdza?:
@@ -71,7 +66,15 @@ Parsowanie ``/etc/hosts``
     * parsowanie stringów
     * praca ze ścieżkami w systemie operacyjnym
 
+:Podpowiedź:
+    * kod powinien mieć około 10 linii
+
 .. literalinclude:: src/file-etc-hosts.txt
-    :name: code-file-etc-hosts
+    :name: listing-file-etc-hosts
     :language: text
     :caption: Przykładowa zawartość pliku ``/etc/hosts``
+
+.. literalinclude:: src/file-hosts.py
+    :name: listing-file-hosts
+    :language: python
+    :caption: ``/etc/hosts`` example
