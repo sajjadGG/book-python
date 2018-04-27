@@ -34,7 +34,7 @@ Max Peck
 
 Adresy
 ======
-.. code-block:: json
+.. code-block:: python
 
     {
         "nazwa": "Kosmodrom Bajkonur",
@@ -45,7 +45,7 @@ Adresy
         "panstwo": "Kazachstan"
     }
 
-.. code-block:: json
+.. code-block:: python
 
     {
         "nazwa": "Johnson Space Center",
@@ -56,7 +56,7 @@ Adresy
         "panstwo": "USA"
     }
 
-.. code-block:: json
+.. code-block:: python
 
     {
         "nazwa": "Kennedy Space Center",
@@ -67,7 +67,7 @@ Adresy
         "panstwo": "USA"
     }
 
-.. code-block:: json
+.. code-block:: python
 
     {
         "nazwa": "NASA Jet Propulsion Laboratory",
@@ -78,7 +78,7 @@ Adresy
         "panstwo": "USA"
     }
 
-.. code-block:: json
+.. code-block:: python
 
     {
         "nazwa": "NASA Armstrong Research Center",

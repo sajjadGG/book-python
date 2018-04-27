@@ -86,20 +86,13 @@ Encodowanie obiektów
 
 Deserializacja i pisanie własnych decoderów
 ===========================================
-.. literalinclude:: src/json-dumps-datetime.py
+.. literalinclude:: src/json-decoder-datetime.py
     :name: listing-json-dumps-datetime
     :language: python
     :caption: Daty w formacie JSON domyślnie nie są parsowane
 
-Dekodowanie daty
-----------------
-.. literalinclude:: src/json-decoder-datetime.py
-    :name: listing-json-decoder-datetime
-    :language: python
-    :caption: Decoder dat do formatu JSON
-
-Dekodowanie klasą
------------------
+Class decoder
+-------------
 .. literalinclude:: src/json-decoder-class.py
     :name: listing-json-decoder-class
     :language: python
@@ -112,10 +105,10 @@ Function decoder
     :language: python
     :caption: Decoder dat do formatu JSON
 
-Dekodowanie obiektów
---------------------
-.. literalinclude:: src/json-encoder-inject.py
-    :name: listing-json-encoder-inject
+Object decoder
+--------------
+.. literalinclude:: src/json-decoder-object.py
+    :name: listing-json-decoder-object
     :language: python
     :caption: Encoder do formatu JSON
 
@@ -124,7 +117,7 @@ Zadania kontrolne
 
 Serializacja dat
 ----------------
-#. Skopiuj do swojego pliku strukturę danych :numref:`listing-json-encoder-data`
+#. Skopiuj do swojego pliku strukturę danych :numref:`listing-json-encoder-datetime`
 #. Zapisz ją do pliku json
 #. Wczyraj ją z pliku json jako obiekty Pythonowe (ten sam efekt co na listingu)
 
@@ -133,8 +126,8 @@ Serializacja dat
     * Korzystanie z biblioteki JSON
     * Serializowanie zagnieżdżonych obiektów
 
-.. literalinclude:: src/json-encoder-data.py
-    :name: listing-json-encoder-data
+.. literalinclude:: src/json-excercise-datetime.py
+    :name: listing-json-excercise-datetime
     :language: python
     :caption: Sample Python data JSON
 
@@ -146,8 +139,3 @@ Serializacja obiektów do JSON
 #. Stwórz obiekty książki adresowej na podstawie danych odczytanych z pliku
 
 :Podpowiedź: ``self.__dict__``
-
-.. literalinclude:: src/json-loads.py
-    :name: listing-json-loads
-    :language: python
-    :caption: Odczyt danych z formatu JSON

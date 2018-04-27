@@ -12,6 +12,7 @@ https://linux.die.net/man/1/pssh
 Wizualizacja danych
 -------------------
 - https://superset.incubator.apache.org/
+
 .. code-block:: console
 
     # Install superset

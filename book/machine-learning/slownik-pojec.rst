@@ -50,8 +50,7 @@ Słowniczek intuicyjny
         przedział wartości, w którym z określonym prawdopodobieństwem oczekujemy średnia z populacji generalnej. Wyznaczany na podstawie średniej i odchylenia standardowego w próbie pozwala wnioskować o populacji generalnej (o średniej z tej populacji). Np. stwierdzenie iż 95% przedział ufności dla średniej masy ciała nornic to 25- 35g, oznacza że z 95% ufnością oczekujemy, że średnia masa ciała nornic mieści się w granicach 25g do 35g. Przedział jest tym węższy (z większą dokładnością szacuje położenie średniej z populacji) im próba jest większa i im mniejszą ufność przykładamy do oszacowania tego przedziału.
 
     Regresja
-        metoda statystyczna służąca do opisania charakteru zależności między dwiema zmiennymi wyrażonymi w skali interwałowej. Zwykle polega na opisaniu związku między zmiennymi w postaci równania liniowego Y=aX+b, które wyznacza się metodą najmniejszych kwadratów. W przypadku związków przyczynowo-skutkowych regresja pozwala przewidywać wartości zmiennej zależnej na podstawie wartości zmiennej
-niezależnej.
+        metoda statystyczna służąca do opisania charakteru zależności między dwiema zmiennymi wyrażonymi w skali interwałowej. Zwykle polega na opisaniu związku między zmiennymi w postaci równania liniowego Y=aX+b, które wyznacza się metodą najmniejszych kwadratów. W przypadku związków przyczynowo-skutkowych regresja pozwala przewidywać wartości zmiennej zależnej na podstawie wartości zmiennej niezależnej.
 
     Rozkład
         Częstość występowania poszczególnych wartości w populacji.
@@ -90,9 +89,7 @@ niezależnej.
         Zmiana wartości zmiennej poprzez zastosowanie operacji matematycznej w postaci funkcji matematycznych. Np. potęgowanie, pierwiastkowanie, logarytmowanie itp. Transformacja zmienia kształt rozkładu (wartość zmienia się nieproporcjonalnie).
 
     Wariancja
-        miara rozproszenia danych wokół średniej. Inaczej średnie odchylenie
-kwadratów od średniej (suma podniesionych do kwadratu różnic między wartością każdego
-pomiaru w próbie a średnią, podzielona przez wielkość próby - 1)
+        miara rozproszenia danych wokół średniej. Inaczej średnie odchylenie kwadratów od średniej (suma podniesionych do kwadratu różnic między wartością każdego pomiaru w próbie a średnią, podzielona przez wielkość próby - 1)
 
     Wartość krytyczna
         Wartość z rozkładu teoretycznego, która dla założonego poziomu istotności stanowi wartość graniczną, przy której będziemy odrzucać hipotezę zerową.
