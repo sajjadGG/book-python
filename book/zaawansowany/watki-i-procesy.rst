@@ -62,10 +62,10 @@ Tworzenie wątków
 
 Synchronizacja wątków
 ---------------------
-.. literalinclude:: src/threading-worker.py
-    :name: listing-threading-worker
+.. literalinclude:: src/threading-synchronization.py
+    :name: listing-threading-synchronization
     :language: python
-    :caption: Model Workerów
+    :caption: Synchronizacja wątków
 
 Zamykanie wątków
 ----------------

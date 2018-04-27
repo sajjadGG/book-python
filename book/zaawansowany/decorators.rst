@@ -44,7 +44,7 @@ Definicja
 Class Decorators
 ================
 .. literalinclude:: src/decorators-class-decorator.py
-    :name: listing-decorators-case-study-flask
+    :name: listing-decorators-class-decorator
     :language: python
     :caption: Case Study wykorzystania dekotatorów do poprawienia czytelności kodu Flask
 
