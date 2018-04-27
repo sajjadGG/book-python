@@ -1,52 +1,11 @@
-********
-Datetime
-********
+***********
+Daty i czas
+***********
 
-``calendar``
-============
-.. literalinclude:: src/calendar-html.py
-    :language: python
-    :caption: HTML Calendar
-
-
-``time``
-========
-.. literalinclude:: src/time-sleep.py
-    :language: python
-    :caption: Time sleep function
-
-.. literalinclude:: src/time-timestamp.py
-    :language: python
-    :caption: Get timestamp
-
-.. literalinclude:: src/time-format.py
-    :language: python
-    :caption: Time formatting
-
-.. literalinclude:: src/time-parse.py
-    :language: python
-    :caption: Time parsing
-
-.. literalinclude:: src/time-timezone.py
-    :language: python
-    :caption: Timezone information for time
-
-
-``timeit``
-==========
-.. literalinclude:: src/timeit.sh
-    :language: console
-    :caption: Timeit
-
-.. literalinclude:: src/timeit.py
-    :language: console
-    :caption: Timeit
-
+.. warning:: If you're thinking about implementing your own time calculator or system, watch Computerophile Time & Time Zones https://www.youtube.com/watch?v=-5wpm-gesOY
 
 ``datetime``
 ============
-* Computerophile Time & Time Zones https://www.youtube.com/watch?v=-5wpm-gesOY
-
 
 Tworzenie obiektu ``date`` i ``datetime``
 -----------------------------------------
@@ -55,26 +14,54 @@ Tworzenie obiektu ``date`` i ``datetime``
     :caption: Creating ``date`` and ``datetime`` objects
 
 
-Różne formaty dat
------------------
+Różne formaty dat i czasu
+-------------------------
 https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
 
-* '15.12.2017'
-* '15/12/2017'
-* '15 grudnia 2017'
-* '15 grudzień 2017'
-* '12/15/17'
-* 'December 15, 2017'
-* '2017-12-15'
+Problem z formatami dat:
 
+* '12.4.1961'
+* '12.04.1961'
+* '12 IV 1961'
+* '12.IV.1961'
+* '12/4/1961'
+* '12/04/1961'
+* '12 kwietnia 1961'
+* '12 kwiecień 1961'
+* '4/12/61'
+* 'April 12, 1961'
+
+Problem z formatami czasu:
+
+* '12:00 am'
+* '12:00 pm'
+* '12:00'
+* '23:59'
+* '24:00'
+* '0:00'
+* '00:00'
+
+Standard ISO:
+
+* '1961-04-12'
+* '1961-04-12T06:07:00'
+* '1961-04-12T06:07:00.123456'
+
+Formatowanie dat
+----------------
 .. literalinclude:: src/datetime-format.py
     :language: python
     :caption: Datetime formatting as string
 
+Parsowanie dat
+--------------
 .. literalinclude:: src/datetime-parse.py
     :language: python
     :caption: Datetime parsing from string
 
+Tabelka parametrów formatowania i parsowania dat i czasu
+--------------------------------------------------------
+.. note:: Prawie wszystkie parametry są podobne różnych językach programowania. Od czasu do czasu występują małe zmiany, np. w JavaScript minuty to ``i`` a nie ``M``
 
 +-----------+--------------------------------+------------------------+
 | Directive | Meaning                        | Example                |
@@ -230,6 +217,47 @@ Strefy czasowe
     :caption: ``pytz`` brings the Olson tz database into Python.
 
 This library allows accurate and cross platform timezone calculations using Python 2.4 or higher. It also solves the issue of ambiguous times at the end of daylight saving time, which you can read more about in the Python Library Reference (datetime.tzinfo).
+
+
+``calendar``
+============
+.. literalinclude:: src/calendar-html.py
+    :language: python
+    :caption: HTML Calendar
+
+
+``time``
+========
+.. literalinclude:: src/time-sleep.py
+    :language: python
+    :caption: Time sleep function
+
+.. literalinclude:: src/time-timestamp.py
+    :language: python
+    :caption: Get timestamp
+
+.. literalinclude:: src/time-format.py
+    :language: python
+    :caption: Time formatting
+
+.. literalinclude:: src/time-parse.py
+    :language: python
+    :caption: Time parsing
+
+.. literalinclude:: src/time-timezone.py
+    :language: python
+    :caption: Timezone information for time
+
+
+``timeit``
+==========
+.. literalinclude:: src/timeit.sh
+    :language: console
+    :caption: Timeit
+
+.. literalinclude:: src/timeit.py
+    :language: python
+    :caption: Timeit
 
 
 Zadania kontrolne

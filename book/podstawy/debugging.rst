@@ -33,12 +33,22 @@ Debugging
 
     pprint(...)
 
-``help``
-========
+``help`` and docstring ``__doc__``
+==================================
 .. code-block:: python
 
-    name = 'Matt'
-    help(name)
+    help(str)
+
+.. code-block:: python
+
+    def say_hello(name='José Jiménez'):
+        print(f'hello {name}')
+
+    help(say_hello)
+
+.. literalinclude:: src/debugging-docstring.py
+    :language: python
+    :caption: Debugging with docstring
 
 ``dir()`` i ``object.__dict__``
 ===============================
