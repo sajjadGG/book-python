@@ -2,6 +2,11 @@
 Debugging
 *********
 
+Run in the console
+==================
+* Execute cell
+* Run File in the console
+
 ``print``
 =========
 .. code-block:: python

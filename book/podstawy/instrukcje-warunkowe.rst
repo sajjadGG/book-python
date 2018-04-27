@@ -50,7 +50,6 @@ Możliwe jest także sprawdzenie kilku warunków przed przejściem do ``else``. 
     if not 0 <= k <= n:
         raise ValueError('Sample larger than population')
 
-
 ``not``, ``in``, ``is``
 =======================
 
@@ -118,6 +117,19 @@ Bardzo kuszący jest następujący przykład:
      print(f'a is {a}, b is {b}')
      print(f'a == b returns: {a==b}')
      print(f'a is b returns: {a is b}')
+
+
+Inline ``if``
+=============
+.. code-block:: python
+
+    if '.' in ip:
+        protocol = 'ipv4'
+    else:
+        protocol = 'ipv6'
+
+    # alternatywnie
+    protocol = 'ipv4' if '.' in ip else 'ipv6',
 
 
 ``switch`` statement?!

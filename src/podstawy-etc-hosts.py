@@ -14,7 +14,7 @@
 ::1             localhost
 """
 
-FILENAME = '../data/etc-hosts.txt'
+FILENAME = '../contrib/etc-hosts.txt'
 hosts = []
 
 

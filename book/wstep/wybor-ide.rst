@@ -26,8 +26,6 @@ Które jest dla mnie najlepsze?
 Darmowe czy płatne
 ------------------
 
-
-
 .. note:: `Źródło poniższych materiałów <http://www.wykop.pl/wpis/9876900/python-naukaprogramowania-programowanie-wstep-pod-/>`_
 
 Korzystaj z dobrego IDE (lub edytora):
@@ -72,3 +70,14 @@ Publikuj swój kod i czytaj kod innych:
 - https://github.com/
 - https://bitbucket.org/
 
+Korzystanie z IDE
+=================
+
+Refactoring
+-----------
+
+Podpowiadanie składni
+---------------------
+
+Uruchamianie kodu i wyświetlanie wyników
+----------------------------------------
