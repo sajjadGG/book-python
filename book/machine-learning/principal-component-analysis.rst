@@ -52,7 +52,7 @@ First, consider a dataset in only two dimensions, like (height, weight). This da
 
 3D example
 ==========
-.. figure:: /img/ml-pca-3d.png
+.. figure:: img/principal-component-analysis-3d.png
     :scale: 50%
     :align: center
 
@@ -108,7 +108,7 @@ PCA dla zbioru Iris
     plt.show()
 
 
-.. figure:: img/pca-iris.png
+.. figure:: img/principal-component-analysis-iris.png
     :name: PCA dla zbioru Iris
     :scale: 120%
     :align: center
