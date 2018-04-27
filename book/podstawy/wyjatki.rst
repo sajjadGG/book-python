@@ -163,6 +163,15 @@ Hierarchia wyjątków
 
 Przykład wyjątków przy czytaniu plików
 ======================================
+.. warning:: uważaj aby zawsze przechwytywać wyjątki! Inaczej możesz nie zabić procesu. Poniżej błędny kod
+
+      .. code-block:: python
+
+            while True:
+                try:
+                    input('Podaj ocenę: ')
+                except:
+                    continue
 
 .. code-block:: python
 

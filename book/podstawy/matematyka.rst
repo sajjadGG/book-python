@@ -228,6 +228,22 @@ Korzystając z funkcji napisanej w ćwiczeniu powyżej oblicz odległość od ka
 
 Czy dwa wykresy są takie same? Co się stanie jeżeli będziemy zwiększali odchylenie standardowe przy generacji punktów? Albo przybliżymy do siebie punkty A i B?
 
+Mnożenie macierzy
+-----------------
+#. Napisz program mnożący macierze
+
+.. code-block:: python
+
+    def matrix_multiplication(A, B):
+        """
+        >>> a = [[1, 0], [0, 1]]
+        >>> b = [[4, 1], [2, 2]]
+        [[4, 1], [2, 2]]
+        """
+
+        return ...
+
+
 Przeliczenia trygonometryczne
 -----------------------------
 Napisz program, który wczyta od użytkownika wielkość kąta w stopniach i wyświetli wartość czterech podstawowych funkcji trygonometrycznych (sin, cos, tg, ctg) o ile dla danego kąta jest to możliwe.
