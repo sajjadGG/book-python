@@ -97,6 +97,21 @@ Logowanie zdarzeń
     Will produce "3" as result
     3
 
+Wyciszanie logowania
+--------------------
+.. code-block:: python
+
+        import logging
+
+        logging.basicConfig(
+            level=logging.DEBUG,
+            format='[%(asctime).19s] [%(levelname)s] %(message)s')
+
+        logging.getLogger('requests').setLevel(logging.WARNING)
+        log = logging.getLogger(__name__)
+
+        log.debug('to jest moja debugowa wiadomosc')
+
 
 Konfiguracja formatowania logów
 ===============================
