@@ -12,6 +12,53 @@ The type system supports unions, generic types, and a special type named Any whi
 
 .. warning:: It should also be emphasized that Python will remain a dynamically typed language, and the authors have no desire to ever make type hints mandatory, even by convention.
 
+Sprawdzanie typów
+=================
+
+``MyPy``
+--------
+* http://mypy-lang.org/
+* https://github.com/python/mypy
+
+.. code-block:: console
+
+    $ pip install mypy
+    $ mypy FILENAME
+
+``setup.cfg``
+
+.. code-block:: ini
+
+    [mypy]
+    strict_optional = True
+
+``PyType``
+----------
+* https://github.com/google/pytype
+
+.. code-block:: console
+
+    $ pip install pytype
+    $ pytype -V 3.6 FILENAME
+
+Dodawanie typów do instniejącego kodu
+=====================================
+
+``PyAnnotate``
+--------------
+* http://mypy-lang.blogspot.com/2017/11/dropbox-releases-pyannotate-auto.html
+
+.. code-block:: console
+
+    $ pip install pyannotate
+
+    # (the -w flag means “go ahead, update the file”)
+    $ pyannotate -w FILENAME
+
+
+Korzystanie z typów
+===================
+
 Typy proste
 -----------
 
@@ -22,6 +69,107 @@ Typy proste
 
 
     sumuj(1, 2.5)
+
+
+Dict, List, Set
+---------------
+.. code-block:: python
+
+    from typing import Dict, List, Set
+
+    # A dictionary where the keys are strings and the values are ints
+    name_counts: Dict[str, int] = {
+        "Adam": 10,
+        "Guido": 12
+    }
+
+    # Set of integers
+    my_set: Set[int] = {1, 2, 3}
+
+    # A list of integers
+    numbers: List[int] = [1, 2, 3, 4, 5, 6]
+
+    # A list that holds dicts that each hold a string key / int value
+    list_of_dicts: List[Dict[str, int]] = [
+        {"key1": 1},
+        {"key2": 2}
+    ]
+
+Tuple
+-----
+.. code-block:: python
+
+    from typing import Tuple
+
+    my_data: Tuple[str, int, float] = ("Adam", 10, 5.7)
+
+Type aliases
+------------
+.. code-block:: python
+
+    from typing import List, Tuple
+
+    LatLngVector = List[Tuple[float, float]]
+
+    points: LatLngVector = [
+        (25.91375, -60.15503),
+        (-11.01983, -166.48477),
+        (-11.01983, -166.48477)
+    ]
+
+
+Iterable
+--------
+.. code-block:: python
+
+    from typing import Iterator
+
+    def fib(n: int) -> Iterator[int]:
+        a, b = 0, 1
+        while a < n:
+            yield a
+            a, b = b, a + b
+
+Union
+-----
+.. code-block:: python
+
+    from typing import Union
+
+    def search_for(needle: str, haystack: str) -> Union[int, None]:
+        offset = haystack.find(needle)
+        if offset == -1:
+            return None
+        else:
+            return offset
+
+Since accepting a small, limited set of expected types for a single argument is common, there is a new special factory called Union . Example:
+
+.. code-block:: python
+
+    from typing import Union
+
+    def handle_employees(e: Union[Employee, Sequence[Employee]]) -> None:
+        if isinstance(e, Employee):
+            e = [e]
+        pass
+
+A type factored by Union[T1, T2, ...] is a supertype of all types T1 , T2 , etc., so that a value that is a member of one of these types is acceptable for an argument annotated by Union[T1, T2, ...] .
+
+
+Optional
+--------
+.. code-block:: python
+
+    from typing import Optional
+
+    def search_for(needle: str, haystack: str) -> Optional[int]:
+        offset = haystack.find(needle)
+        if offset == -1:
+            return None
+        else:
+            return offset
+
 
 TypeVar, Iterable, Tuple
 ------------------------
@@ -35,8 +183,10 @@ TypeVar, Iterable, Tuple
 
     def inproduct(v: Vector[T]) -> T:
         return sum(x*y for x, y in v)
+
     def dilate(v: Vector[T], scale: T) -> Vector[T]:
         return ((x * scale, y * scale) for x, y in v)
+
     vec = []  # type: Vector[float]
 
 Callable
@@ -53,49 +203,9 @@ Callable
                     on_error: Callable[[int, Exception], None]) -> None:
         pass
 
-Dict, List, Optional
---------------------
-
-.. code-block:: python
-
-    from typing import Dict, List, Optional
-
-    class Node:
-        pass
-
-    class SymbolTable(Dict[str, List[Node]]):
-        def push(self, name: str, node: Node) -> None:
-            self.setdefault(name, []).append(node)
-
-        def pop(self, name: str) -> Node:
-            return self[name].pop()
-
-        def lookup(self, name: str) -> Optional[Node]:
-            nodes = self.get(name)
-            if nodes:
-                return nodes[-1]
-            return None
-
-
-Union types
------------
-Since accepting a small, limited set of expected types for a single argument is common, there is a new special factory called Union . Example:
-
-.. code-block:: python
-
-    from typing import Union
-
-    def handle_employees(e: Union[Employee, Sequence[Employee]]) -> None:
-        if isinstance(e, Employee):
-            e = [e]
-        pass
-
-A type factored by Union[T1, T2, ...] is a supertype of all types T1 , T2 , etc., so that a value that is a member of one of these types is acceptable for an argument annotated by Union[T1, T2, ...] .
-
 
 The NoReturn type
 -----------------
-
 The typing module provides a special type NoReturn to annotate functions that never return normally. For example, a function that unconditionally raises an exception:
 
 .. code-block:: python
@@ -104,3 +214,14 @@ The typing module provides a special type NoReturn to annotate functions that ne
 
     def stop() -> NoReturn:
         raise RuntimeError('no way')
+
+Introspekcja
+============
+.. code-block:: python
+
+    def annotated(x: int, y: str) -> bool:
+        return x < y
+
+    print(annotated.__annotations__)
+    # {'y': <class 'str'>, 'return': <class 'bool'>, 'x': <class 'int'>}
+

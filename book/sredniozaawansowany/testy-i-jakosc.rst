@@ -89,6 +89,24 @@ WebDriver is the name of the key interface against which tests should be written
 Static Code Analysis
 ====================
 
+``mypy`` type checking
+----------------------
+* http://mypy-lang.org/
+* https://github.com/python/mypy
+
+.. code-block:: console
+
+    $ python3 -m pip install -U mypy
+    $ mypy FILENAME
+
+``setup.cfg``
+
+.. code-block:: ini
+
+    [mypy]
+    strict_optional = True
+
+
 ``pycodestyle`` previously known as ``PEP8``
 --------------------------------------------
 
