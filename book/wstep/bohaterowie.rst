@@ -13,6 +13,10 @@ José Jiménez
     :align: center
 
     José Jiménez
+    
+* https://www.youtube.com/watch?v=kPnaaHR9pLc
+* https://www.youtube.com/watch?v=i6ckW7uRRNw
+* https://www.youtube.com/watch?v=PVxfJYw59cM
 
 Иван Иванович
 -------------
