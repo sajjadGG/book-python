@@ -1,10 +1,14 @@
-sphinx==1.6.5
+sphinx==1.7.5
 sphinx_rtd_theme
 sphinxjp.themes.revealjs
-sphinxcontrib-bibtex==0.3.6
+sphinxcontrib-bibtex
+nbsphinx
+ipykernel
+IPython
 
 requests
 pycodestyle
+mypy
 
 matplotlib
 numpy

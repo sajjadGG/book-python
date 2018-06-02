@@ -1,9 +1,9 @@
-***********
-Bohaterowie
-***********
+**********
+References
+**********
 
-Postacie
-========
+Main Characters
+===============
 
 José Jiménez
 ------------
@@ -17,6 +17,10 @@ José Jiménez
 * https://www.youtube.com/watch?v=kPnaaHR9pLc
 * https://www.youtube.com/watch?v=i6ckW7uRRNw
 * https://www.youtube.com/watch?v=PVxfJYw59cM
+
+* https://www.youtube.com/watch?v=i6ckW7uRRNw
+* https://www.youtube.com/watch?v=PVxfJYw59cM
+* https://youtu.be/kPnaaHR9pLc?t=16
 
 Иван Иванович
 -------------
@@ -36,65 +40,65 @@ Max Peck
 
     Max Peck
 
-Adresy
-======
+Addresses
+=========
 .. code-block:: python
 
     {
-        "nazwa": "Kosmodrom Bajkonur",
-        "ulica": "Wochod",
-        "miasto": "Bajkonur",
-        "kod_pocztowy": "101503",
-        "region": "Kyzyłordyński",
-        "panstwo": "Kazachstan"
+        "name": "Kosmodrom Bajkonur",
+        "street": "Wochod",
+        "city": "Bajkonur",
+        "post_code": "101503",
+        "state": "Kyzyłordyński",
+        "country": "Kazachstan"
     }
 
 .. code-block:: python
 
     {
-        "nazwa": "Johnson Space Center",
-        "ulica": "2101 E NASA Pkwy",
-        "miasto": "Huston",
-        "kod_pocztowy": "77058",
-        "region": "Texas",
-        "panstwo": "USA"
+        "name": "Johnson Space Center",
+        "street": "2101 E NASA Pkwy",
+        "city": "Huston",
+        "post_code": "77058",
+        "state": "Texas",
+        "country": "USA"
     }
 
 .. code-block:: python
 
     {
-        "nazwa": "Kennedy Space Center",
-        "ulica": None,
-        "miasto": "Cape Canaveral",
-        "kod_pocztowy": "32899",
-        "region": "Floryda",
-        "panstwo": "USA"
+        "name": "Kennedy Space Center",
+        "street": None,
+        "city": "Cape Canaveral",
+        "post_code": "32899",
+        "state": "Floryda",
+        "country": "USA"
     }
 
 .. code-block:: python
 
     {
-        "nazwa": "NASA Jet Propulsion Laboratory",
-        "ulica": "4800 Oak Grove Dr",
-        "miasto": "Pasadena",
-        "kod_pocztowy": "91109",
-        "region": "California",
-        "panstwo": "USA"
+        "name": "NASA Jet Propulsion Laboratory",
+        "street": "4800 Oak Grove Dr",
+        "city": "Pasadena",
+        "post_code": "91109",
+        "state": "California",
+        "country": "USA"
     }
 
 .. code-block:: python
 
     {
-        "nazwa": "NASA Armstrong Research Center",
-        "ulica": "2825 E Ave P",
-        "miasto": "Palmdale",
-        "kod_pocztowy": "93550",
-        "region": "California",
-        "panstwo": "USA"
+        "name": "NASA Armstrong Research Center",
+        "street": "2825 E Ave P",
+        "city": "Palmdale",
+        "post_code": "93550",
+        "state": "California",
+        "country": "USA"
     }
 
-Daty
-====
+Dates and timezones
+===================
 .. csv-table:: Dates used in book
     :header: Date, Time, Timezone Description
 
