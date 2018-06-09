@@ -158,7 +158,7 @@ Escape'owanie znaków
     :scale: 50%
     :align: center
 
-    Why we have '\r\n' on Windows?
+    Why we have '\\r\\n' on Windows?
 
 .. code-block:: python
 
