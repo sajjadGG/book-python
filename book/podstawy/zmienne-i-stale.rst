@@ -216,7 +216,7 @@ Operacje na stringach
     .. code-block:: python
 
         >>> names = ['José', 'Max', 'Ivan', str(1961), '1969']
-        >>> ';'.join(name)
+        >>> ';'.join(names)
         'José;Max;Ivan;1961;1969'
 
 
