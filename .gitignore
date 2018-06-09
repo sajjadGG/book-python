@@ -17,7 +17,7 @@ venv-3.6/
 .venv-3.7/
 .venv-3.6/
 
-## Distribution / p ackaging
+## Distribution / packaging
 build/
 dist/
 downloads/

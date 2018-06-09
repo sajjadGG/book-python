@@ -215,15 +215,14 @@ Operacje na stringach
 ---------------------
 * ``split()``
 
-.. code-block:: python
+    .. code-block:: python
 
-    >>> 'ehlo world'.split()
-    ['ehlo', 'world']
+        >>> 'ehlo world'.split()
+        ['ehlo', 'world']
 
-    >>> text = 'ehlo,world'
-    >>> text.split(',')
-    ['ehlo', 'world']
-
+        >>> text = 'ehlo,world'
+        >>> text.split(',')
+        ['ehlo', 'world']
 
 * ``strip()``, ``lstrip()``, ``rstrip()``
     .. code-block:: python
@@ -333,7 +332,6 @@ Wycinanie części stringów
 
     io.StringIO
 
-
 Logiczne typy danych
 ====================
 
@@ -377,6 +375,8 @@ Zmienne i typy
     * Użyj podawania stringów po przecinku ``print(str, str)`` oraz parametru ``sep``
     * Użyj f-string formatting dla Python >= 3.6
 
-.. note:: Pobaw się opcją w IDE:
+.. note:: Pobaw się opcjami w IDE:
     * Run in console
-    * Debugger
+    * Run...
+    * Debug...
+    * Python Console
