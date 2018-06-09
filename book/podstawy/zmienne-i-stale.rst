@@ -58,6 +58,11 @@ Jednym z najbardziej podstawowych typów danych jest ``int``.
     >>> int(10.9)
     10
 
+    >>> my_int = 1000000
+    >>> my_int = 1_000_000
+    >>> my_int = 1e6
+
+
 ``float`` - Liczba zmiennoprzecinkowa
 -------------------------------------
 ``float`` w Pythonie reprezentuje liczbę zmiennoprzecinkową. Ciekawą własnością tego typu jest możliwość reprezentacji nieskończoności za pomocą ``Infinity`` oraz minus nieskończoności ``-Infinity``. Więcej szczegółów dostępnych jest w dokumentacji dla tego `typu <https://docs.python.org/3/library/functions.html#grammar-token-infinity>`_
@@ -72,6 +77,9 @@ Podobnie jak pozostałe typy ``float()`` jest funkcją, która konwertuje swój 
     >>> float('+1.23')
     1.23
 
+    >>> float('-1.23')
+    -1.23
+
     >>> float('   -12345\n')
     -12345.0
 
@@ -81,8 +89,13 @@ Podobnie jak pozostałe typy ``float()`` jest funkcją, która konwertuje swój 
     >>> float('+1E6')
     1000000.0
 
+    >>> float('-inf')
     >>> float('-Infinity')
     -inf
+
+    >>> float('inf')
+    >>> float('Infinity')
+    inf
 
 ``complex`` - liczba zespolona
 ------------------------------
@@ -137,12 +150,22 @@ Escape'owanie znaków
 --------------------
 .. code-block:: python
 
+    '\n'
+    '\r'
+    '\r\n'
+
+.. figure:: img/type-machine.jpg
+    :scale: 50%
+    :align: center
+
+    Why we have '\r\n' on Windows?
+
+.. code-block:: python
+
     """
     \xac
     \u7723
-    \n
-    \b
-    \r
+    \b123
     \t
     \'
     """
@@ -179,12 +202,23 @@ Pojedynczy czy podwójny cudzysłów
 * Interpreter Pythona domyślnie stosuje pojedyncze znaki cudzysłowia.
 * Z tego powodu w tej książce będziemy trzymać się powyższej konwencji.
 
+.. code-block:: python
+
+    print('it\'s José\'s book')
+    print("it's José's book")
+
+.. code-block:: python
+
+    print('<a href="http://python.astrotech.io">Python and Machine Learning</a>')
 
 Operacje na stringach
 ---------------------
 * ``split()``
 
 .. code-block:: python
+
+    >>> 'ehlo world'.split()
+    ['ehlo', 'world']
 
     >>> text = 'ehlo,world'
     >>> text.split(',')
@@ -233,7 +267,7 @@ Operacje na stringach
 
         >>> name.lower()
         'josé jiménez'
-
+.. note:: bardzo przydatne do czyszczenia danych przed analizą lub Machine Learning
 
 * ``replace()``
     .. code-block:: python
@@ -250,13 +284,13 @@ Wykonywanie operacji na obiekcie
     >>> text = 'Ehlo,world'
 
     >>> text.split(',')
-    ['ehlo', 'world']
+    ['Ehlo', 'world']
 
     >>> str.split(text, ',')
-    ['ehlo', 'world']
+    ['Ehlo', 'world']
 
     >>> str.split('Ehlo,world', ',')
-    ['ehlo', 'world']
+    ['Ehlo', 'world']
 
 Wycinanie części stringów
 -------------------------
@@ -342,3 +376,7 @@ Zmienne i typy
 :Podpowiedź:
     * Użyj podawania stringów po przecinku ``print(str, str)`` oraz parametru ``sep``
     * Użyj f-string formatting dla Python >= 3.6
+
+.. note:: Pobaw się opcją w IDE:
+    * Run in console
+    * Debugger
