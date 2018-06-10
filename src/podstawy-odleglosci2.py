@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 
 
-def odleglosci(metry):
-    return {
-        'kilometry': int(metry / 1000),
-        'mile lądowe': float(metry / 1608),
-        'mile morskie': float(metry / 1852),
-    }
+def konwersja_odleglosci(metry):
+    km = int(metry / 1000)
+    mile = float(metry / 1608)
+    nm = float(metry / 1852)
 
-wynik = odleglosci(1000)
-print(wynik)
+    return {
+        'kilometers': km,
+        'miles': mile,
+        'nautical miles': nm,
+        'all': [km, mile, nm]
+    }
