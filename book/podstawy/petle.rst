@@ -59,7 +59,9 @@ Pętla ``for`` wykonuje się na zestawie elementów. Dosłownie można tę instr
     Value is: 3
     Value is: Peck
     Value is: 2.8
-    Value is: [1, 'José', 'Jiménez']
+    Value is: 1
+    Value is: José
+    Value is: Jiménez
 
 .. code-block:: python
 
@@ -154,6 +156,16 @@ Prosty przykład
 .. code-block:: python
 
     cyfry = [x for x in range(0, 10)]
+    # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+.. code-block:: python
+
+    cyfry = []
+    for x in range(0, 10):
+        cyfry.append(x)
+
+    print(cyfry)
+    # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 Instrukcja warunkowa
 --------------------
@@ -163,6 +175,17 @@ Do takiego iteratora można także dodać instrukcję warunkową.
 
     parzyste = [x for x in range(0, 10) if x % 2 == 0]
     parzyste = [x for x in range(0, 10) if not x % 2]
+    # [0, 2, 4, 6, 8]
+
+.. code-block:: python
+
+    cyfry = []
+    for x in range(0, 10):
+        if x % 2 == 0:
+            cyfry.append(x)
+
+    print(cyfry)
+    # [0, 2, 4, 6, 8]
 
 Aplikowanie funkcji dla elementu
 --------------------------------
@@ -206,18 +229,24 @@ Przykład praktyczny z życia
     line = 'jose:x:1000:1000:José Jiménez:/home/jose:/bin/bash'
 
     paths = []
-    for record in line:
+    for record in line.split(':'):
         if record.startswith('/'):
             paths.append()
     print(paths)
+    # ['/home/jose', '/bin/bash']
 
-    # Equivalent code
+.. code-block:: python
+
     paths = [record for record in line.split(':') if record.startswith('/')]
     print(paths)
+    # ['/home/jose', '/bin/bash']
+
+.. code-block:: python
 
     # this is how you might find this in real world
     paths = [x for x in line.split(':') if x.startswith('/')]
     print(paths)
+    # ['/home/jose', '/bin/bash']
 
 
 Inline ``for`` to nie tylko lista
