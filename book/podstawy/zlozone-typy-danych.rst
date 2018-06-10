@@ -12,13 +12,17 @@ Zbiory i operacje na nich
     my_tuple = ()
     my_tuple = tuple()
 
+    my_tuple = 1,
+    my_tuple = (1,)
+
+    my_tuple = 1, 2, None, False, 'hej'
     my_tuple = (1, 2, None, False, 'hej')
     my_tuple = tuple(1, 2, None, False, 'hej')
 
 .. code-block:: python
 
     >>> def return_arguments(a, b):
-    ...    return (a, b)
+    ...    return a, b
 
     >>> return_arguments(10, 20)
     (10, 20)
@@ -61,6 +65,8 @@ Zbiory i operacje na nich
     my_list = []
     my_list = list()
 
+    my_list = [1]
+
     my_list = [1, 2, None, False, 'hej']
     my_list = list(1, 2, None, False, 'hej')
 
@@ -86,6 +92,9 @@ Zbiory i operacje na nich
 ``set`` - Zbiór
 ---------------
 .. code-block:: python
+
+    >>> my_set = {1}
+    {1}
 
     >>> {1, 3, 1}
     {1, 3}
@@ -266,6 +275,14 @@ Dla każdego z poniższych przykładów wykonano funkcję ``type(what)`` i wynik
 
 .. code-block:: python
 
+    >>> what = 10, 20
+    <class 'tuple'>
+
+    >>> what = (10, 20)
+    <class 'tuple'>
+
+.. code-block:: python
+
     >>> what = 'foo'
     <class 'str'>
 
@@ -303,16 +320,14 @@ Dla każdego z poniższych przykładów wykonano funkcję ``type(what)`` i wynik
     >>> what = (10,) # len(what) = 1
     <class 'tuple'>
 
+    >>> what = 10. # len(what) -> TypeError: object of type 'float' has no len()
+    <class 'float'>
+
+    >>> what = (10.) # len(what) -> TypeError: object of type 'float' has no len()
+    <class 'float'>
+
     >>> what = (10) # len(what) -> TypeError: object of type 'int' has no len()
     <class 'int'>
-
-.. code-block:: python
-
-    >>> what = 10, 20
-    <class 'tuple'>
-
-    >>> what = (10, 20)
-    <class 'tuple'>
 
 .. code-block:: python
 
@@ -391,7 +406,7 @@ Mieszane typy
     array = [
         [0, 1, 2],
         (1, 2, 3),
-        set([1, 3, 1]),
+        {1, 3, 1]},
         {'imie': 'José', 'nazwisko': 'Jiménez'}
     ]
 
@@ -426,5 +441,5 @@ Napisz program który przekonwertuje odległości (podane w metrach) i zwróci `
     * 1852 m = 1 mila morska
     * .. code-block:: python
 
-        def konwersja_odleglosci(...):
+        def konwersja_odleglosci(metry: int) -> dict:
             return {...}
