@@ -45,9 +45,6 @@ Każdy argument ma swoją nazwę przez którą uzyskujemy dostęp do wartości a
 
 .. code-block:: python
 
-    >>> dodaj(a=1, b=2)
-    3
-
     >>> def podziel(a, b):
     ...     return a / b
 
@@ -382,32 +379,51 @@ Zadania kontrolne
 
 Konwersja liczby na zapis słowny
 --------------------------------
-#. Napisz program, który zamieni wprowadzony przez użytkownika ciąg cyfr na formę tekstową.
-#. Konwertujemy cyfry, nie liczby, a zatem:
+#. Napisz funkcję, który zamieni dowolego ``int`` na formę tekstową.
 
     .. code-block:: python
 
-        >>> int_to_str(912)
-        'dziewięć jeden dwa'
+        def int_to_str(number: int) -> string:
+            """
+            >>> int_to_str(1969)
+            'one nine six nine'
 
-        >>> int_to_str(1100)
-        'jeden jeden zero zero'
+            >>> int_to_str(31337)
+            'three one three three seven'
+            """
+            return ...
 
-#. Wersja zaawansowana - odmiana przez przypadki
+#. Dodaj obsługę ``float`` z wyświetlaniem liczb po przecinku
 
     .. code-block:: python
 
-        >>> int_to_str(973)
-        'dziewiećset siedemdziesiąt trzy'
+        def int_to_str(number: Union[int, float]) -> string:
+            """
+            >>> int_to_str(13.37)
+            'one three and three seven'
 
-        >>> int_to_str(127.32)
-        'sto dwadzieścia siedem i trzydzieści dwa setne'
+            >>> int_to_str(31.337)
+            'three one and three three seven'
+            """
+            return ...
+
+#. Wersja zaawansowana - pełne nazwy liczb
+
+    .. code-block:: python
+
+        def int_to_str(number: Union[int, float]) -> string:
+            """
+            >>> int_to_str(1969)
+            'one thousand nine hundred sixty nine'
+
+            >>> int_to_str(13.37)
+            'thirteen and thirty seven hundredths'
+            """
+            return ...
 
 :Wymagania:
-    * Znaki nie będące cyframi mają być ignorowane
-    * Napisz testy sprawdzające przypadki brzegowe.
-    * 6 cyfr przed przecinkiem
-    * 5 cyfr po przecinku
+    * max 6 cyfr przed przecinkiem
+    * max 5 cyfr po przecinku
 
 :Co zadanie sprawdza?:
     * Definiowanie i uruchamianie funkcji
@@ -431,7 +447,7 @@ Prosta memoizacja
 :Podpowiedź:
     .. code-block:: python
 
-        def factorial(n):
+        def factorial(n: int) -> int:
             if n == 0:
                 return 1
             else:
