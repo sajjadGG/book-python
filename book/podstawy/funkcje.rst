@@ -383,7 +383,7 @@ Konwersja liczby na zapis słowny
 
     .. code-block:: python
 
-        def int_to_str(number: int) -> string:
+        def int_to_str(number: int) -> str:
             """
             >>> int_to_str(1969)
             'one nine six nine'
@@ -397,7 +397,7 @@ Konwersja liczby na zapis słowny
 
     .. code-block:: python
 
-        def int_to_str(number: Union[int, float]) -> string:
+        def int_to_str(number: Union[int, float]) -> str:
             """
             >>> int_to_str(13.37)
             'one three and three seven'
@@ -411,7 +411,7 @@ Konwersja liczby na zapis słowny
 
     .. code-block:: python
 
-        def int_to_str(number: Union[int, float]) -> string:
+        def int_to_str(number: Union[int, float]) -> str:
             """
             >>> int_to_str(1969)
             'one thousand nine hundred sixty nine'
