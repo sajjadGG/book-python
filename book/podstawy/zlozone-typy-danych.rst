@@ -195,6 +195,9 @@ Należy zwrócić uwagę, aby nie pomylić z dictem:
 Złożoność obliczeniowa
 ----------------------
 * https://wiki.python.org/moin/TimeComplexity
+* https://visualgo.net/bn/sorting
+* http://sorting.at/
+* https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
 
 Zastosowanie setów zamiast list
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
