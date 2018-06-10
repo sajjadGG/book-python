@@ -453,13 +453,13 @@ Przeliczanie odległości
 
 Podział zbioru
 --------------
-#. Mając do dyspozycji zbiór danych z :numref:`listing-data-structures-iris-sample`
+#. Mając do dyspozycji zbiór danych Irysów z :numref:`listing-data-structures-iris-sample`
 #. Pierwsza linia jest nagłówkiem
 #. Ustaw dane z kolejnych linii w losowej kolejności
-#. Podziel zbiór na dwie listy:
+#. Podziel zbiór na dwie listy w proporcji:
 
-    - dane do uczenia
-    - dane testowe
+    - dane do uczenia - 80%
+    - dane testowe - 20%
 
 :Podpowiedź:
     - ``from random import shuffle``
