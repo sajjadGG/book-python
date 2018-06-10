@@ -461,6 +461,16 @@ Podział zbioru
     - dane do uczenia - 80%
     - dane testowe - 20%
 
+#. Nazwy gatunków zapisz jako ``int`` indeksu z tablicy cech.
+
+.. code-block:: python
+
+    {
+        0: 'I. setosa'
+        1: 'I. versicolor'
+        2: 'I. virginica'
+    }
+
 :Podpowiedź:
     - ``from random import shuffle``
 
