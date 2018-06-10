@@ -461,15 +461,17 @@ Podział zbioru
     - dane do uczenia - 80%
     - dane testowe - 20%
 
-#. Nazwy gatunków zapisz jako ``int`` indeksu z tablicy cech.
+:Zadanie z gwiazdką:
+    #. Stwórz słownik gatunków.
+    #. Kolejnym liczbą naturalnym zaczynając od zera przyporządkuj gatunek irysów
+    #. Przygotuj listę cech z kluczami ze słownika gatunków.
 
-.. code-block:: python
+    .. code-block:: python
 
-    {
-        0: 'I. setosa'
-        1: 'I. versicolor'
-        2: 'I. virginica'
-    }
+        # 0: I. setosa
+        # 1: I. versicolor
+        # 2: I. virginica
+        labels = [0, 1, 2, 1, 1, 0, ...]
 
 :Podpowiedź:
     - ``from random import shuffle``
