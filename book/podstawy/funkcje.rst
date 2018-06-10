@@ -417,6 +417,26 @@ Konwersja liczby na zapis słowny
     * Przypadek zaawansowany: argumenty pozycyjne i domyślne
     * Rzutowanie i konwersja typów
 
+Prosta memoizacja
+-----------------
+#. Napisz program, który obliczy silnię dla dowolnego ``int``
+#. Program ma zapisać w globalnej tablicy MEMOIZE wyniki funkcji dla poszczególnych parametrów
+#. Przed uruchomieniem funkcji, musi sprawdzić czy wynik został już wcześniej obliczony
+
+    - jeżeli tak, to zwraca dane z cache
+    - jeżeli nie, to oblicza, aktualizuje cache a następnie zwraca wartość
+
+#. Porównaj prędkość działania z obliczaniem na bieżąco
+
+:Podpowiedź:
+    .. code-block:: python
+
+        def factorial(n):
+            if n == 0:
+                return 1
+            else:
+                return n * factorial(n-1)
+
 Rzymskie
 --------
 #. Napisz program, który przeliczy wprowadzoną liczbę rzymską na jej postać dziesiętną.
