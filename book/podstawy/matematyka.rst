@@ -63,7 +63,7 @@ Moduł ``random`` w bibliotece standardowej
 
     random.sample()
     random.random()
-
+    random.shuffle()  # shuffle a list
 
 .. code-block:: python
 

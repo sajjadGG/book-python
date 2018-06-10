@@ -450,3 +450,21 @@ Przeliczanie odległości
 
         konwersja_odleglosci(1000)
         konwersja_odleglosci(600)
+
+Podział zbioru
+--------------
+#. Mając do dyspozycji zbiór danych z :numref:`listing-data-structures-iris-sample`
+#. Pierwsza linia jest nagłówkiem
+#. Ustaw dane z kolejnych linii w losowej kolejności
+#. Podziel zbiór na dwie listy:
+
+    - dane do uczenia
+    - dane testowe
+
+:Podpowiedź:
+    - ``from random import shuffle``
+
+.. literalinclude:: src/data-structures-iris-sample.py
+    :name: listing-data-structures-iris-sample
+    :language: python
+    :caption: Sample Iris database

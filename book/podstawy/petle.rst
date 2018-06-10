@@ -281,7 +281,7 @@ Napisz program, który wczytuje od użytkownika kolejne oceny i:
     * dla ułatwienia wszystkie oceny mogą być typu ``float``
     * ``len()`` ``sum()``
     * ``in``
-    * ``import statistics`` i ``statistics.mean(...)``
+    * ``from statistics import mean``
     * .. code-block:: python
 
         try:
