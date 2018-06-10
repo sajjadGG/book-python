@@ -14,17 +14,16 @@ Podpowiedź:
     Przy str ma zupełnie inne znaczenie.
 """
 
-
 def czy_lista_ma_tylko_parzyste(lista):
     for liczba in lista:
 
-        if not czy_parzysta1(liczba):
+        if not czy_parzysta(liczba):
             return False
 
     return True
 
 
-def czy_parzysta1(liczba: int) -> bool:
+def czy_parzysta(liczba: int) -> bool:
     """
     >>> czy_parzysta1(1)
     False
@@ -56,30 +55,3 @@ def czy_parzysta1(liczba: int) -> bool:
     else:
         logging.error('Podany argument jest nieprawidłowy')
         raise TypeError
-
-
-def czy_parzysta2(liczba: int) -> Union[str, bool]:
-    """
-    >>> czy_parzysta2(1)
-    False
-    >>> czy_parzysta2(2)
-    True
-    >>> czy_parzysta2(1.5)
-    False
-    >>> czy_parzysta2(0)
-    True
-    >>> czy_parzysta2(-1)
-    False
-    >>> czy_parzysta2(-2)
-    True
-    >>> czy_parzysta2([2, 4, 6, 8])
-    Traceback (most recent call last):
-    ...
-    TypeError
-    """
-    try:
-        return liczba % 2 == 0
-    except TypeError:
-        logging.error('Podany argument jest nieprawidłowy')
-        raise TypeError
-    return "hej"

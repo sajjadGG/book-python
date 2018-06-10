@@ -427,7 +427,8 @@ Zadania kontrolne
 
 Przeliczanie odległości
 -----------------------
-Napisz program który przekonwertuje odległości (podane w metrach) i zwróci ``dict``, zgodnie z szablonem:
+#. Napisz program który przekonwertuje odległości (podane w metrach)
+#. Na ekranie ma wyświetlić ``dict``, zgodnie z szablonem:
 
 .. code-block:: python
 
@@ -445,4 +446,7 @@ Napisz program który przekonwertuje odległości (podane w metrach) i zwróci `
     * .. code-block:: python
 
         def konwersja_odleglosci(metry: int) -> dict:
-            return {...}
+            print({...})
+
+        konwersja_odleglosci(1000)
+        konwersja_odleglosci(600)

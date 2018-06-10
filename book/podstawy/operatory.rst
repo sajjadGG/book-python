@@ -4,99 +4,64 @@ Operatory
 
 Lista operatorów
 ================
+.. csv-table:: Lista operatorów
+    :header-rows: 1
 
-+------------+-------------------------+
-| Operacja   | Znaczenie               |
-+============+=========================+
-| ``%``      | modulo (reszta)         |
-+------------+-------------------------+
-| ``**``     | potęga ``pow()``        |
-+------------+-------------------------+
-| ``//``     | dzielenie bez reszty    |
-+------------+-------------------------+
-| ``<``      | mniejsze niż            |
-+------------+-------------------------+
-| ``+=``     | dodanie i przypisanie   |
-+------------+-------------------------+
-| ``<=``     | mniejsze lub równe      |
-+------------+-------------------------+
-| ``>``      | większe niż             |
-+------------+-------------------------+
-| ``>=``     | większe lub równe       |
-+------------+-------------------------+
-| ``==``     | równe                   |
-+------------+-------------------------+
-| ``!=``     | różne                   |
-+------------+-------------------------+
-| ``is``     | obiekty są tożsame      |
-+------------+-------------------------+
-| ``is not`` | obiekty nie są tożsame  |
-+------------+-------------------------+
-| ``in``     | obiekty są tożsame      |
-+------------+-------------------------+
-| ``not in`` | obiekty nie są tożsame  |
-+------------+-------------------------+
+    "Operand", "Description"
+    "``%``", "modulo (reszta z dzielenia)"
+    "``**``", "potęga"
+    "``//``", "dzielenie bez reszty (ilość całkowitych)"
+    "``+=``", "dodanie i przypisanie"
+    "``<``", "mniejsze niż"
+    "``<=``", "mniejsze lub równe"
+    "``>``", "większe niż"
+    "``>=``", "większe lub równe"
+    "``==``", "równe"
+    "``!=``", "różne"
+    "``is``", "obiekty są tożsame (sprawdzanie czy ``None``)"
+    "``is not``", "obiekty nie są tożsame (sprawdzanie czy nie ``None``)"
+    "``in``", "obiekt jest w innym"
+    "``not in``", "obiekt nie jest w innym"
+
 
 Operacje na typach numerycznych
 ===============================
+.. csv-table:: Lista operatorów
+    :header-rows: 1
 
-+---------------------+---------------------------------+
-| Operacja            | Rezultat                        |
-+=====================+=================================+
-| ``x + y``           | suma *x* i *y*                  |
-+---------------------+---------------------------------+
-| ``x - y``           | różnica *x* i *y*               |
-+---------------------+---------------------------------+
-| ``x * y``           | iloczyn *x* i *y*               |
-+---------------------+---------------------------------+
-| ``x / y``           | iloraz *x* i *y*                |
-+---------------------+---------------------------------+
-| ``x // y``          | podłoga z ilorazu *x* i *y*     |
-+---------------------+---------------------------------+
-| ``x % y``           | reszta z dzielenia ``x / y``    |
-+---------------------+---------------------------------+
-| ``-x``              | *x* negacja                     |
-+---------------------+---------------------------------+
-| ``+x``              | *x* bez zmiany                  |
-+---------------------+---------------------------------+
-| ``abs(x)``          | wartość bezwzględna *x*         |
-+---------------------+---------------------------------+
-| ``int(x)``          | *x* przekonwertowane do int     |
-+---------------------+---------------------------------+
-| ``float(x)``        | *x* przekonwertowane do float   |
-+---------------------+---------------------------------+
-| ``complex(re, im)`` | liczba zespolona:               |
-|                     | *re* - część rzeczywista        |
-|                     | *im* - część urojona            |
-+---------------------+---------------------------------+
-| ``divmod(x, y)``    | para ``(x // y, x % y)``        |
-+---------------------+---------------------------------+
-| ``pow(x, y)``       | *x* podniesione do potęgi *y*   |
-+---------------------+---------------------------------+
-| ``x ** y``          | *x* do potęgi *y*               |
-+---------------------+---------------------------------+
+    "Operand", "Description"
+    "``x + y``", "suma ``x`` i ``y``"
+    "``x - y``", "różnica ``x`` i ``y``"
+    "``x * y``", "iloczyn ``x`` i ``y``"
+    "``x / y``", "iloraz ``x`` i ``y``"
+    "``x // y``", "podłoga z ilorazu ``x`` i ``y``"
+    "``x % y``", "reszta z dzielenia ``x / y``"
+    "``-x``", ``x`` negacja"
+    "``+x``", "``x`` bez zmiany"
+    "``abs(x)``", "wartość bezwzględna ``x``"
+    "``int(x)``", "``x`` przekonwertowane do ``int``"
+    "``float(x)``", "``x`` przekonwertowane do ``float``"
+    "``round(x, precyzja=0)``", "``x`` zaokrąglenie liczby z daną precyzją"
+    "``complex(re, im)``", "liczba zespolona: ``re`` - część rzeczywista, ``im`` - część urojona"
+    "``divmod(x, y)``", "para ``(x // y, x % y)``"
+    "``pow(x, y)``", "``x`` podniesione do potęgi ``y``"
+    "``x ** y``", "``x`` do potęgi ``y``"
 
 
 Kolejność operatorów
 ====================
-
-* modulo
-* ``//`` i ``**``
-* przypisania i porównania
-* ``+=``
-* ``in`` i ``not in``
+#. ``%``
+#. ``//``, ``**``
+#. ``=``, ``==``
+#. ``+=``
+#. ``in``, ``not in``
 
 Bitwise
 =======
-
-``|`` - OR
-
-``&`` - AND
-
-``~`` - NOT
-
-``^`` - XOR
-
+- ``|`` - OR
+- ``&`` - AND
+- ``~`` - NOT
+- ``^`` - XOR
 
 .. code-block:: python
 
@@ -133,6 +98,12 @@ Parzystość
     * Liczba parzysta, to taka, która po podzieleniu przez dwa nie ma reszty
     * Użyj dzielenia modulo ``%`` lub ``divmod()``
     * Zwróć uwagę, że operator ``%`` działa modulo tylko na ``int`` oraz na ``float``. Przy ``str`` ma zupełnie inne znaczenie.
+    * .. code-block:: python
+
+        if ... :
+            print(True)
+        else:
+            print(False)
 
 :Co zadanie sprawdza?:
     * wczytywanie ciągu znaków od użytkownika

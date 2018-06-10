@@ -11,7 +11,7 @@ Instrukcje warunkowe pozwalają kierować wykonywanymi instrukcjami pod pewnym w
 
 .. code-block:: python
 
-    if True :
+    if True:
          print('this is true')
 
 
@@ -20,7 +20,7 @@ Do instrukcji warunkowej można dodać słowo kluczowe ``else``. Wtedy, jeżeli 
 
 .. code-block:: python
 
-    if True :
+    if True:
         print('this is true')
     else:
         print('this is false')
@@ -129,7 +129,7 @@ Inline ``if``
         protocol = 'ipv6'
 
     # alternatywnie
-    protocol = 'ipv4' if '.' in ip else 'ipv6',
+    protocol = 'ipv4' if '.' in ip else 'ipv6'
 
 
 ``switch`` statement?!
@@ -193,3 +193,4 @@ Zmienne i wczytywanie ciągu od użytkownika
     * Instrukcje warunkowe
     * Sprawdzanie przypadków brzegowych (niekompatybilne argumenty)
     * Definiowanie zmiennych i stałych w programie
+    * Magic Number
