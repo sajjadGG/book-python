@@ -427,29 +427,23 @@ Zadania kontrolne
 
 Przeliczanie odległości
 -----------------------
-#. Napisz program który przekonwertuje odległości (podane w metrach)
-#. Na ekranie ma wyświetlić ``dict``, zgodnie z szablonem:
+#. Użytkownik za pomocą ``input`` wprowadza odległości w metrach
+#. Odległości są wyłącznie ``int`` lub ``float``
+#. Napisz program który przekonwertuje odległości i wyświetli je w formacie ``dict`` zgodnie z szablonem:
 
 .. code-block:: python
 
-    {
+    print({
         'kilometers': int,
         'miles': float,
         'nautical miles': float,
         'all': [int, float, float]
-    }
+    })
 
 :Podpowiedź:
     * 1000 m = 1 km
     * 1608 m = 1 mila
     * 1852 m = 1 mila morska
-    * .. code-block:: python
-
-        def konwersja_odleglosci(metry: int) -> dict:
-            print({...})
-
-        konwersja_odleglosci(1000)
-        konwersja_odleglosci(600)
 
 Podział zbioru
 --------------
