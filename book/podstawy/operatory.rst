@@ -6,67 +6,20 @@ Lista operatorów
 ================
 .. csv-table:: Lista operatorów
     :header-rows: 1
-
-    "Operand", "Description"
-    "``+=``", "dodanie i przypisanie"
-    "``<``", "mniejsze niż"
-    "``<=``", "mniejsze lub równe"
-    "``>``", "większe niż"
-    "``>=``", "większe lub równe"
-    "``==``", "równe"
-    "``!=``", "różne"
-    "``in``", "obiekt jest w innym"
-    "``not in``", "obiekt nie jest w innym"
-    "``is``", "obiekty są tożsame (sprawdzanie czy ``None``)"
-    "``is not``", "obiekty nie są tożsame (sprawdzanie czy nie ``None``)"
-
+    :file: data/operators-general.csv
 
 Operacje na typach numerycznych
 ===============================
 .. csv-table:: Lista operatorów
     :header-rows: 1
-
-    "Operand", "Description"
-    "``-x``", ``x`` negacja"
-    "``+x``", "``x`` bez zmiany"
-    "``x + y``", "suma ``x`` i ``y``"
-    "``x - y``", "różnica ``x`` i ``y``"
-    "``x * y``", "iloczyn ``x`` i ``y``"
-    "``x / y``", "iloraz ``x`` i ``y``"
-    "``x ** y``", "``x`` do potęgi ``y``"
-    "``x // y``", "podłoga z ilorazu ``x`` i ``y``"
-    "``x % y``", "reszta z dzielenia ``x / y``"
-    "``divmod(x, y)``", "para ``(x // y, x % y)``"
-    "``abs(x)``", "wartość bezwzględna ``x``"
-    "``int(x)``", "``x`` przekonwertowane do ``int``"
-    "``float(x)``", "``x`` przekonwertowane do ``float``"
-    "``round(x, y)``", "``x`` zaokrąglenie liczby z precyzją ``y``"
-    "``complex(re, im)``", "liczba zespolona: ``re`` - część rzeczywista, ``im`` - część urojona"
-
+    :file: data/operators-numerical.csv
 
 Operator precedence
 ====================
 .. csv-table:: Operator precedence
     :header-rows: 1
-
-    "Operator", "Description"
-    "``lambda``", "Lambda expression"
-    "``if`` -- ``else``", "Conditional expression"
-    "``or``", "Boolean OR"
-    "``and``", "Boolean AND"
-    "``not x``", "Boolean NOT"
-    "``in``, ``not in``, ``is``, ``is not``, ``<``, ``<=``, ``>``, ``>=``, ``!=``, ``==``", "Comparisons, including membership tests and identity tests"
-    "``|``", "Bitwise OR"
-    "``^``", "Bitwise XOR"
-    "``&``", "Bitwise AND"
-    "``<<``, ``>>``", "Shifts"
-    "``+``, ``-``", "Addition and subtraction"
-    "``*``, ``@``, ``/``, ``//``, ``%``", "Multiplication, matrix multiplication, division, floor division, remainder"
-    "``+x``, ``-x``, ``~x``", "Positive, negative, bitwise NOT"
-    "``**``", "Exponentiation"
-    "``await``", "Await expression"
-    "``x[index]``, ``x[index:index]``, ``x(arguments...)``, ``x.attribute``", "Subscription, slicing, call, attribute reference"
-    "``(expressions...)``, ``[expressions...]``, ``{key: value...}``, ``{expressions...}``", "Binding or tuple display, list display, dictionary display, set display"
+    :widths: 25, 75
+    :file: data/operators-precedence.csv
 
 Bitwise
 =======

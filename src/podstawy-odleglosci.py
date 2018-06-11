@@ -1,24 +1,14 @@
 #!/usr/bin/env python3
 
-def km_na_metry(ile):
-    """
-    >>> km_na_metry(1)
-    1000
-    >>> km_na_metry(0)
-    0
-    >>> km_na_metry(-1)
-    Traceback (most recent call last):
-        ...
-    ValueError
-    >>> km_na_metry('adas')
-    Traceback (most recent call last):
-        ... 
-    TypeError
-    """
-    return ile * 1000
+meters = float(input('Distance [m]: '))
 
+km = int(meters / 1000)
+miles = float(meters / 1608)
+nm = float(meters / 1852)
 
-if __name__ == "__main__":
-    import doctest
-
-    doctest.testmod()
+print({
+    'kilometers': int,
+    'miles': float,
+    'nautical miles': float,
+    'all': [int, float, float]
+})
