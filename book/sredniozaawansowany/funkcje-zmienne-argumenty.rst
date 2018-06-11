@@ -2,8 +2,6 @@
 Zmienna ilość argumentów funkcji
 ********************************
 
-.. todo:: zrobić zadania do rozwiązania dla parametrów z gwiazdką
-
 
 Operator ``*`` i ``**``
 =======================
@@ -210,3 +208,4 @@ Przykładowe zastosowanie
 
 Zadania kontrolne
 =================
+.. todo:: zrobić zadania do rozwiązania dla parametrów z gwiazdką
