@@ -264,35 +264,21 @@ Zadania kontrolne
 
 Dzienniczek ucznia
 ------------------
-Napisz program, który wczytuje od użytkownika kolejne oceny i:
-
-    * sprawdza czy wprowadzona ocena jest na liście dopuszczalnych w szkole ocen
-    * jeżeli ocena jest na liście dopuszczalnych ocen, dodaje ją do dzienniczka
-    * jeżeli wpisano cyfrę nie znjadującą się na liście dopuszczalnych ocen, wyświetl informację i zakończ wpisywanie
-    * wyświetla wyliczoną dla dzienniczka ocen średnią arytmetyczną
-    * jeżeli wciśnięto sam Enter, oznacza to koniec wpisywania do dzienniczka
-    * wykorzystaj moduł ``statistics`` do wyliczania średniej
-
-:Warunek:
-    * Zastosuj skalę ocen ``(2, 3, 3.5, 4, 4.5, 5)``
+#. Użytkownik podaje oceny jako ``int`` lub ``float``
+#. Program ma sprawdzać czy ocena znajduje się w skali ocen ``(2, 3, 3.5, 4, 4.5, 5)``
+#. Jeżeli ocena jest na liście dopuszczalnych ocen, dodaje ją do dzienniczka
+#. Jeżeli wpisano cyfrę nie znjadującą się na liście dopuszczalnych ocen, wyświetl informację "Niepoprawna ocena" i dalej kontunuuj wpisywanie
+#. Wyświetla wyliczoną dla dzienniczka ocen średnią arytmetyczną
+#. Jeżeli wciśnięto sam Enter, oznacza to koniec wpisywania do dzienniczka
 
 :Podpowiedź:
     * Czytelny kod powinien mieć około 10 linii
-    * dla ułatwienia wszystkie oceny mogą być typu ``float``
-    * ``len()`` ``sum()``
-    * ``in``
-    * ``from statistics import mean``
-    * .. code-block:: python
-
-        try:
-            wprowadzona_ocena = float(input('Wprowadź ocenę: '))
-        except ValueError:
-            break
+    * dla ułatwienia wszystkie oceny na skali mogą być typu ``float``
+    * ``len()``, ``sum()``
 
 :Co zadanie sprawdza?:
     * wczytywanie ciągu znaków od użytkownika
     * weryfikacja ciągu wprowadzonego od użytkownika
     * korzystanie z pętli oraz instrukcji wychodzących
-    * korzystanie z bibliotek standardowych
     * konwersja typów i rzutowanie
     * sprawdzanie czy obiekt jest instancją klasy
