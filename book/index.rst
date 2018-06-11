@@ -52,6 +52,7 @@ Podstawy
     podstawy/funkcje.rst
     podstawy/builtin.rst
     podstawy/dobre-praktyki.rst
+    podstawy/zlozonosc-obliczeniowa.rst
     podstawy/matematyka.rst
     podstawy/debugging.rst
     podstawy/print-formatting.rst

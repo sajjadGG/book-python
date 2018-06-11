@@ -487,6 +487,7 @@ Monkey Patching
     User.hello = monkey_patch
     User.hello()
 
+
 ``@staticmethod``
 -----------------
 Dekorator ``@staticmethod`` służy do tworzenia metod statycznych, takich które odnoszą się do klasy jako całości, nie do konkretnego obiektu.
@@ -560,6 +561,37 @@ Przykład praktyczny:
     >>> datetime.datetime.now() # wyświetli w konsoli napis zdefiniowany przez ``__repr__``
     >>> print(datetime.datetime.now()) # wyświetli w konsoli napis zdefiniowany przez ``__str__``
 
+Hash
+----
+Set można zrobić z dowolnego hashowalnego obiektu:
+
+.. code-block:: python
+
+    class Adres:
+        def __init__(self, miasto):
+            self.miasto = miasto
+
+
+    Adres(miasto='Gwiezdne')
+    print({Adres(miasto='Gwiezdne'), Adres(miasto='Gwiezdne')})
+
+    a = Adres(miasto='Gwiezdne')
+    print({a, a})
+
+.. code-block:: python
+
+    class Adres:
+        def __init__(self, ulica, miasto):
+            self.ulica = ulica
+            self.miasto = miasto
+
+        def __hash__(self, *args, **kwargs):
+            """
+            __hash__ should return the same value for objects that are equal.
+            It also shouldn't change over the lifetime of the object;
+            generally you only implement it for immutable objects.
+            """
+            return hash(self.__dict__)
 
 Metaclass
 ---------

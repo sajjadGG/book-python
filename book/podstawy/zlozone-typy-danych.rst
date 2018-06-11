@@ -140,30 +140,6 @@ Zbiory i operacje na nich
     ... print(my_set + {3,4}) # Ale już nie ma złożenia, są za to operacje na zbiorach
 
 
-Set można zrobić z dowolnego hashowalnego obiektu:
-
-.. code-block:: python
-
-    class Adres:
-        def __init__(self, miasto):
-            self.miasto = miasto
-
-
-    Adres(miasto='Gwiezdne')
-    print({Adres(miasto='Gwiezdne'), Adres(miasto='Gwiezdne')})
-
-    a = Adres(miasto='Gwiezdne')
-    print({a, a})
-
-Należy zwrócić uwagę, aby nie pomylić z dictem:
-
-.. code-block:: python
-
-    {}  # dict
-    {'klucz': 'wartość'}  # dict
-    {'klucz', 'wartość'}  # set
-    {'wartość'}  # set
-
 ``dict`` - Słownik
 ------------------
 .. code-block:: python
@@ -172,17 +148,24 @@ Należy zwrócić uwagę, aby nie pomylić z dictem:
         "imie": "José",
         "nazwisko": 'Jiménez',
         'wiek': 10,
+        'adresy': ['NASA KSC', 'NASA JSC'],
     }
 
-    print(my_dict['nazwisko'])
+    >>> print(my_dict['nazwisko'])
+    'Jiménez'
+
+    >>> print(my_dict['adresy'])
+    ['NASA KSC', 'NASA JSC']
 
 .. code-block:: python
 
-    >>> my_dict = {'wiek': 10, 'wiek': 20, 'imie': 'José', 'nazwisko': 'Jiménez'}
-    {'imie': 'José', 'nazwisko': 'Jiménez', 'wiek': 20}
+    >>> my_dict = {'wiek': 20, 'wiek': 30, 'imie': 'José', 'nazwisko': 'Jiménez'}
+    {'imie': 'José', 'nazwisko': 'Jiménez', 'wiek': 30}
 
-    >>> my_dict.items()
-    dict_items([('wiek', 20), ('imie', 'José'), ('nazwisko', 'Jiménez')])
+
+.. code-block:: python
+
+    >>> my_dict = {'wiek': 30, 'imie': 'José', 'nazwisko': 'Jiménez'}
 
     >>> my_dict.keys()
     dict_keys(['wiek', 'imie', 'nazwisko'])
@@ -190,62 +173,54 @@ Należy zwrócić uwagę, aby nie pomylić z dictem:
     >>> my_dict.values()
     dict_values([20, 'José', 'Jiménez'])
 
+    >>> my_dict.items()
+    dict_items([('wiek', 20), ('imie', 'José'), ('nazwisko', 'Jiménez')])
+
 .. note:: przy wyświetlaniu elementów słownika, kolejność może się zmieniać!
 
-Złożoność obliczeniowa
-----------------------
-* https://wiki.python.org/moin/TimeComplexity
-* https://visualgo.net/bn/sorting
-* http://sorting.at/
-* https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
-
-Zastosowanie setów zamiast list
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Jeżeli masz listę w której sprawdzasz czy element występuje, to zamień listę na ``set``, dzięki temu będzie lepsza złożoność
+``dict`` vs. ``set``
+--------------------
+Należy zwrócić uwagę, aby nie pomylić z dictem:
 
 .. code-block:: python
 
-    IMIONA = ['José', 'Ivan', 'Max']
-
-    if imie in IMIONA:
-        pass
-
-.. code-block:: python
-
-    IMIONA = {'José', 'Ivan', 'Max'}
-
-    if imie in IMIONA:
-        pass
-
-Zastosowanie list zamiast konkatanacji stringów
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. code-block:: python
-
-    # Performance - Method concatenates strings using + in a loop
-    html = '<table>'
-
-    for element in lista:
-        html += f'\r\n<tr><td>{element}</td></tr>'
-    html += '\r\n</table>'
-
-    print(html)
+    {}  # dict
+    {'key': 'value'}  # dict
+    {'value'}  # set
+    {'key', 'value'}  # set
 
 .. code-block:: python
 
-    # Problem solved
-    html = ['<table>']
+    >>> what = {}
+    <class 'dict'>
 
-    for element in lista:
-        html.append(f'<tr><td>{element}</td></tr>')
+    >>> what = {'id'}
+    <class 'set'>
 
-    html.append('</table>')
-    output = '\r\n'.join(html)
+    >>> what = {'id': 1}
+    <class 'dict'>
 
-    print(output)
+.. code-block:: python
 
-* Jeżeli coś ``collections.deque`` - Double ended Queue
-* Serializowane kolejki przy wielowątkowości
-* Uwaga na set zawierający floaty, bo pomiędzy dwoma wartościami jest nieskończona ilość wyrażeń
+    >>> my_data = {}
+    >>> isinstance(my_data, (set, dict))
+    True
+    >>> isinstance(my_data, dict)
+    True
+    >>> isinstance(my_data, set)
+    False
+
+    >>> my_data = {'value'}
+    >>> isinstance(my_data, set)
+    True
+    >>> isinstance(my_data, dict)
+    False
+
+    >>> my_data = {'key': 'value'}
+    >>> isinstance(my_data, set)
+    False
+    >>> isinstance(my_data, dict)
+    True
 
 Dobieranie się do wartości elementów za pomocą ``[...]`` i ``.get(...)``
 ------------------------------------------------------------------------
@@ -331,30 +306,6 @@ Dla każdego z poniższych przykładów wykonano funkcję ``type(what)`` i wynik
 
     >>> what = (10) # len(what) -> TypeError: object of type 'int' has no len()
     <class 'int'>
-
-.. code-block:: python
-
-    >>> what = {}
-    <class 'dict'>
-
-    >>> what = {'id'}
-    <class 'set'>
-
-    >>> what = {'id': 1}
-    <class 'dict'>
-
-.. code-block:: python
-
-    >>> a = {}
-
-    >>> isinstance(a, dict)
-    True
-
-    >>> isinstance(a, set)
-    False
-
-    >>> isinstance(a, (set, dict))
-    True
 
 
 Złożone typy danych
@@ -457,7 +408,7 @@ Podział zbioru
 
 :Zadanie z gwiazdką:
     #. Stwórz słownik gatunków.
-    #. Kolejnym liczbą naturalnym zaczynając od zera przyporządkuj gatunek irysów
+    #. Kolejnym liczbom naturalnym zaczynając od zera przyporządkuj gatunek irysów
     #. Przygotuj listę cech z kluczami ze słownika gatunków.
 
     .. code-block:: python
