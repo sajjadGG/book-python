@@ -6,12 +6,14 @@ Lista operatorów
 ================
 .. csv-table:: Lista operatorów
     :header-rows: 1
+    :widths: 25, 75
     :file: data/operators-general.csv
 
 Operacje na typach numerycznych
 ===============================
 .. csv-table:: Lista operatorów
     :header-rows: 1
+    :widths: 25, 75
     :file: data/operators-numerical.csv
 
 Operator precedence

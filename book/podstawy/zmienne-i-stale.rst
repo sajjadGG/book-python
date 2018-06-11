@@ -266,6 +266,7 @@ Operacje na stringach
 
         >>> name.lower()
         'josé jiménez'
+
 .. note:: bardzo przydatne do czyszczenia danych przed analizą lub Machine Learning
 
 * ``replace()``
