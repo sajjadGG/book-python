@@ -358,6 +358,7 @@ Zmienne i typy
 :Podpowiedź:
     * Użyj podawania stringów po przecinku ``print(str, str)`` oraz parametru ``sep``
     * Użyj f-string formatting dla Python >= 3.6
+    * ``input()``
 
 .. note:: Pobaw się opcjami w IDE:
 
