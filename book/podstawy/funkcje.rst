@@ -170,6 +170,16 @@ Zwracanie funkcji
     def zwracanie_funkcji():
         return zwracanie_stringow
 
+Rekurencja
+==========
+.. code-block:: python
+
+    def factorial(n: int) -> int:
+        if n == 0:
+            return 1
+        else:
+            return n * factorial(n-1)
+
 Zadania kontrolne
 =================
 
@@ -217,13 +227,13 @@ Konwersja liczby na zapis słowny
 Prosta memoizacja
 -----------------
 #. Napisz program, który obliczy silnię dla dowolnego ``int``
-#. Program ma zapisać w globalnej tablicy MEMOIZE wyniki funkcji dla poszczególnych parametrów
+#. Program ma zapisać w ``dict`` o nazwie ``MEMOIZE`` wyniki funkcji dla poszczególnych parametrów (klucz to parametr, a wartość to wynik)
 #. Przed uruchomieniem funkcji, musi sprawdzić czy wynik został już wcześniej obliczony
 
     - jeżeli tak, to zwraca dane z cache
     - jeżeli nie, to oblicza, aktualizuje cache a następnie zwraca wartość
 
-#. Porównaj prędkość działania z obliczaniem na bieżąco
+#. Porównaj prędkość działania z obliczaniem na bieżąco dla parametru 70
 
 :Podpowiedź:
     .. code-block:: python

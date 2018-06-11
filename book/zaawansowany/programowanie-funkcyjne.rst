@@ -4,13 +4,12 @@ Programowanie funkcyjne
 
 Rekurencja
 ==========
-
 * warunek zakończenia
 * maksymalna ilość zagłębień
 
 .. code-block:: python
 
-    def factorial(n):
+    def factorial(n: int) -> int:
         if n == 0:
             return 1
         else:
@@ -18,7 +17,6 @@ Rekurencja
 
 Lambda - funkcje anonimowe
 ==========================
-
 .. code-block:: python
 
     lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -50,7 +48,6 @@ Lambda - funkcje anonimowe
 
 Closure
 =======
-
 .. code-block:: python
 
     def f(x):
@@ -66,7 +63,6 @@ złożenia funkcji
 
 ``map()``
 ---------
-
 .. code-block:: python
 
     lista = [1, 2, 3]
@@ -102,7 +98,6 @@ złożenia funkcji
 
 ``zip()``
 ---------
-
 .. code-block:: python
 
     >>> x = [1, 2, 3]
@@ -120,7 +115,6 @@ złożenia funkcji
 
 ``filter()``
 ------------
-
 .. code-block:: python
 
     OSOBY = [
@@ -160,7 +154,6 @@ złożenia funkcji
 
 ``all(iterable)``
 -----------------
-
 Return True if all elements of the iterable are true (or if the iterable is empty). Equivalent to:
 
 .. code-block:: python
@@ -173,7 +166,6 @@ Return True if all elements of the iterable are true (or if the iterable is empt
 
 ``any(iterable)``
 -----------------
-
 Return True if any element of the iterable is true. If the iterable is empty, return False. Equivalent to:
 
 .. code-block:: python
@@ -213,7 +205,6 @@ Equivalent to:
 
 ``memoize``
 -----------
-
 .. code-block:: python
 
     import functools
