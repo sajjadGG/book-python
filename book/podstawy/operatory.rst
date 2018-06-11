@@ -105,7 +105,6 @@ Zadania kontrolne
 Parzystość
 ----------
 #. napisz program, który wczyta od użytkownika ciąg znaków
-#. zweryfikuje czy wprowadzony ciąg jest liczbą (``int`` lub ``float``)
 #. sprawdzi czy jest to liczba parzysta, czy nieparzysta
 
 :Podpowiedź:
@@ -118,13 +117,6 @@ Parzystość
             print(True)
         else:
             print(False)
-
-    * .. code-block:: python
-
-        try:
-            float(number)
-        except ValueError:
-            print('NaN')
 
 :Co zadanie sprawdza?:
     * wczytywanie ciągu znaków od użytkownika
