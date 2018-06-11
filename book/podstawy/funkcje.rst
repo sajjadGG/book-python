@@ -233,7 +233,7 @@ Prosta memoizacja
     - jeżeli tak, to zwraca dane z cache
     - jeżeli nie, to oblicza, aktualizuje cache a następnie zwraca wartość
 
-#. Porównaj prędkość działania z obliczaniem na bieżąco dla parametru 70
+#. Porównaj prędkość działania z obliczaniem na bieżąco dla parametru 500
 
 :Podpowiedź:
     .. code-block:: python
