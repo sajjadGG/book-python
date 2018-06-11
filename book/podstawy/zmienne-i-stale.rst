@@ -275,22 +275,6 @@ Operacje na stringach
         >>> name.replace('J', 'j')
         'josé jiménez'
 
-
-Wykonywanie operacji na obiekcie
---------------------------------
-.. code-block:: python
-
-    >>> text = 'Ehlo,world'
-
-    >>> text.split(',')
-    ['Ehlo', 'world']
-
-    >>> str.split(text, ',')
-    ['Ehlo', 'world']
-
-    >>> str.split('Ehlo,world', ',')
-    ['Ehlo', 'world']
-
 Wycinanie części stringów
 -------------------------
 .. code-block:: python
@@ -360,7 +344,7 @@ Gdy użytkownik nie poda wieku, to jest to wartość ``None``.
         print('użytkownik nie podał wieku')
 
     if not wiek:
-        print('user does not ')
+        print('user does not')
 
 
 Zadania kontrolne
@@ -376,6 +360,7 @@ Zmienne i typy
     * Użyj f-string formatting dla Python >= 3.6
 
 .. note:: Pobaw się opcjami w IDE:
+
     * Run in console
     * Run...
     * Debug...
