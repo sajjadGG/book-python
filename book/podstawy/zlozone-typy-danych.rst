@@ -129,7 +129,7 @@ Zbiory i operacje na nich
 
     >>> my_set = {1, 2, 3}
 
-    >>> len(my_set)  # Długość
+    >>> len(my_set)  # Liczność
     3
 
     >>> 1 in my_set  # Przynależność
