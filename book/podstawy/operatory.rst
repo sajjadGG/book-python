@@ -8,9 +8,6 @@ Lista operatorów
     :header-rows: 1
 
     "Operand", "Description"
-    "``%``", "modulo (reszta z dzielenia)"
-    "``**``", "potęga"
-    "``//``", "dzielenie bez reszty (ilość całkowitych)"
     "``+=``", "dodanie i przypisanie"
     "``<``", "mniejsze niż"
     "``<=``", "mniejsze lub równe"
@@ -18,10 +15,10 @@ Lista operatorów
     "``>=``", "większe lub równe"
     "``==``", "równe"
     "``!=``", "różne"
-    "``is``", "obiekty są tożsame (sprawdzanie czy ``None``)"
-    "``is not``", "obiekty nie są tożsame (sprawdzanie czy nie ``None``)"
     "``in``", "obiekt jest w innym"
     "``not in``", "obiekt nie jest w innym"
+    "``is``", "obiekty są tożsame (sprawdzanie czy ``None``)"
+    "``is not``", "obiekty nie są tożsame (sprawdzanie czy nie ``None``)"
 
 
 Operacje na typach numerycznych
@@ -30,31 +27,46 @@ Operacje na typach numerycznych
     :header-rows: 1
 
     "Operand", "Description"
+    "``-x``", ``x`` negacja"
+    "``+x``", "``x`` bez zmiany"
     "``x + y``", "suma ``x`` i ``y``"
     "``x - y``", "różnica ``x`` i ``y``"
     "``x * y``", "iloczyn ``x`` i ``y``"
     "``x / y``", "iloraz ``x`` i ``y``"
+    "``x ** y``", "``x`` do potęgi ``y``"
     "``x // y``", "podłoga z ilorazu ``x`` i ``y``"
     "``x % y``", "reszta z dzielenia ``x / y``"
-    "``-x``", ``x`` negacja"
-    "``+x``", "``x`` bez zmiany"
+    "``divmod(x, y)``", "para ``(x // y, x % y)``"
     "``abs(x)``", "wartość bezwzględna ``x``"
     "``int(x)``", "``x`` przekonwertowane do ``int``"
     "``float(x)``", "``x`` przekonwertowane do ``float``"
-    "``round(x, precyzja=0)``", "``x`` zaokrąglenie liczby z daną precyzją"
+    "``round(x, y)``", "``x`` zaokrąglenie liczby z precyzją ``y``"
     "``complex(re, im)``", "liczba zespolona: ``re`` - część rzeczywista, ``im`` - część urojona"
-    "``divmod(x, y)``", "para ``(x // y, x % y)``"
-    "``pow(x, y)``", "``x`` podniesione do potęgi ``y``"
-    "``x ** y``", "``x`` do potęgi ``y``"
 
 
-Kolejność operatorów
+Operator precedence
 ====================
-#. ``%``
-#. ``//``, ``**``
-#. ``=``, ``==``
-#. ``+=``
-#. ``in``, ``not in``
+.. csv-table:: Operator precedence
+    :header-rows: 1
+
+    "Operator", "Description"
+    "``lambda``", "Lambda expression"
+    "``if`` -- ``else``", "Conditional expression"
+    "``or``", "Boolean OR"
+    "``and``", "Boolean AND"
+    "``not x``", "Boolean NOT"
+    "``in``, ``not in``, ``is``, ``is not``, ``<``, ``<=``, ``>``, ``>=``, ``!=``, ``==``", "Comparisons, including membership tests and identity tests"
+    "``|``", "Bitwise OR"
+    "``^``", "Bitwise XOR"
+    "``&``", "Bitwise AND"
+    "``<<``, ``>>``", "Shifts"
+    "``+``, ``-``", "Addition and subtraction"
+    "``*``, ``@``, ``/``, ``//``, ``%``", "Multiplication, matrix multiplication, division, floor division, remainder"
+    "``+x``, ``-x``, ``~x``", "Positive, negative, bitwise NOT"
+    "``**``", "Exponentiation"
+    "``await``", "Await expression"
+    "``x[index]``, ``x[index:index]``, ``x(arguments...)``, ``x.attribute``", "Subscription, slicing, call, attribute reference"
+    "``(expressions...)``, ``[expressions...]``, ``{key: value...}``, ``{expressions...}``", "Binding or tuple display, list display, dictionary display, set display"
 
 Bitwise
 =======
@@ -62,6 +74,8 @@ Bitwise
 - ``&`` - AND
 - ``~`` - NOT
 - ``^`` - XOR
+- ``<<`` - Shift left
+- ``>>`` - Shift right
 
 .. code-block:: python
 
@@ -104,6 +118,13 @@ Parzystość
             print(True)
         else:
             print(False)
+
+    * .. code-block:: python
+
+        try:
+            float(number)
+        except ValueError:
+            print('NaN')
 
 :Co zadanie sprawdza?:
     * wczytywanie ciągu znaków od użytkownika
