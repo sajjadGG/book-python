@@ -1,32 +1,18 @@
-#!/usr/bin/env python3
+ALLOWED_GRADES = (2, 3, 3.5, 4, 4.5, 5)
+ALLOWED_GRADES = [float(x) for x in ALLOWED_GRADES]
+report_card = []
 
-import logging
-import statistics
-
-LISTA_DOPUSZALNYCH_OCEN = [2, 3, 3.5, 4, 4.5, 5]
-LISTA_DOPUSZALNYCH_OCEN = [float(x) for x in LISTA_DOPUSZALNYCH_OCEN]
-dzienniczek = []
-
-log = logging.getLogger(__name__)
 
 while True:
-    try:
-        wprowadzona_ocena = float(input('Wprowadź ocenę: '))
-    except ValueError:
-        break
+    grade = float(input('Grade: '))
 
-    if wprowadzona_ocena not in LISTA_DOPUSZALNYCH_OCEN:
-        log.critical('Wprowadzono nieprawidłową ocenę', wprowadzona_ocena)
-        break
+    if grade in ALLOWED_GRADES:
+        print(f'Adding {grade}')
+        report_card.append(grade)
     else:
-        dzienniczek.append(wprowadzona_ocena)
+        print('Grade is not allowed')
+        break
 
-suma = sum(dzienniczek)
-ilosc = len(dzienniczek)
-srednia = suma / ilosc
 
-print(dzienniczek)
-print(srednia)
-
-srednia = statistics.mean(dzienniczek)
-print(srednia)
+average = sum(report_card) / len(report_card)
+print(f'Average: {average}')

@@ -82,6 +82,7 @@ Podstawy
     sredniozaawansowany/linia-polecen.rst
     sredniozaawansowany/modularyzacja.rst
     sredniozaawansowany/virtualenv.rst
+    sredniozaawansowany/funkcje-zmienne-argumenty.rst
     sredniozaawansowany/regex.rst
     sredniozaawansowany/bazy-danych.rst
     sredniozaawansowany/tworzenie-dokumentacji.rst

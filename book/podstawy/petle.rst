@@ -1,5 +1,3 @@
-.. _Pętle:
-
 *****
 Pętle
 *****
@@ -264,16 +262,16 @@ Zadania kontrolne
 
 Dzienniczek ucznia
 ------------------
+#. Przekonwertuj skalę ocen ``(2, 3, 3.5, 4, 4.5, 5)`` na listę ``float`` za pomocą inline ``for`
 #. Użytkownik podaje oceny jako ``int`` lub ``float``
-#. Program ma sprawdzać czy ocena znajduje się w skali ocen ``(2, 3, 3.5, 4, 4.5, 5)``
+#. Program ma sprawdzać czy ocena znajduje się w skali ocen
 #. Jeżeli ocena jest na liście dopuszczalnych ocen, dodaje ją do dzienniczka
-#. Jeżeli wpisano cyfrę nie znjadującą się na liście dopuszczalnych ocen, wyświetl informację "Niepoprawna ocena" i dalej kontunuuj wpisywanie
+#. Jeżeli wpisano cyfrę nie znjadującą się na liście dopuszczalnych ocen, wyświetl informację "Grade is not allowed" i dalej kontunuuj wpisywanie
 #. Wyświetla wyliczoną dla dzienniczka ocen średnią arytmetyczną
 #. Jeżeli wciśnięto sam Enter, oznacza to koniec wpisywania do dzienniczka
 
 :Podpowiedź:
     * Czytelny kod powinien mieć około 10 linii
-    * dla ułatwienia wszystkie oceny na skali mogą być typu ``float``
     * ``len()``, ``sum()``
 
 :Co zadanie sprawdza?:
