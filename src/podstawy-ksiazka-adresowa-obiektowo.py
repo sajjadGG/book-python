@@ -53,12 +53,12 @@ ksiazka_adresowa = [
 log.debug(f'Ksiażka adresowa: {ksiazka_adresowa}')
 
 
-with open(KSIAZKA_ADRESOWA_PICKLE, 'wb') as file:
+with open(KSIAZKA_ADRESOWA_PICKLE, mode='wb') as file:
     serialized = pickle.dumps(ksiazka_adresowa)
     file.write(serialized)
 
 
-with open(KSIAZKA_ADRESOWA_PICKLE, 'rb') as file:
+with open(KSIAZKA_ADRESOWA_PICKLE, mode='rb') as file:
     unserialized = pickle.loads(file.read())
     log.debug(f'Pickle: {unserialized}')
 
@@ -76,7 +76,7 @@ class JSONObjectDecoder(json.JSONDecoder):
         json.JSONDecoder.__init__(self, object_hook=self.decode_object)
 
     def decode_object(self, dictionary):
-        if dictionary.get('ulica'):
+        if dictionary.get('miasto'):
             return Adres(**dictionary)
         else:
             return Kontakt(**dictionary)
