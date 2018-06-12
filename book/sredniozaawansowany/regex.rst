@@ -17,14 +17,14 @@ https://regexper.com/
 Najczęściej wykorzystywane funkcje
 ==================================
 
-``match()``
+``re.match()``
 -----------
 .. literalinclude:: src/re-match.py
     :name: listing-re-match
     :language: python
     :caption: Usage of ``re.match()``
 
-``search()``
+``re.search()``
 ------------
 .. literalinclude:: src/re-search.py
     :name: listing-re-search()
