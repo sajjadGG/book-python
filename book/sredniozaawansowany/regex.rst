@@ -18,14 +18,14 @@ Najczęściej wykorzystywane funkcje
 ==================================
 
 ``re.match()``
------------
+--------------
 .. literalinclude:: src/re-match.py
     :name: listing-re-match
     :language: python
     :caption: Usage of ``re.match()``
 
 ``re.search()``
-------------
+---------------
 .. literalinclude:: src/re-search.py
     :name: listing-re-search()
     :language: python
@@ -53,15 +53,15 @@ Najczęściej wykorzystywane funkcje
     :caption: Usage of ``re.sub()``
 
 ``re.split()``
-------------
+--------------
 .. literalinclude:: src/re-split.py
-    :name: listing-re-sub
+    :name: listing-re-split
     :language: python
     :caption: Usage of ``re.split()``
 
 Regex Flags
 ===========
-.. csv-table:: Regular Expression Syntax
+.. csv-table:: Regular Expression Flags
     :header-rows: 1
     :file: data/re-flags.csv
     :widths: 25, 75

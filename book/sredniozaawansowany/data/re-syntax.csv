@@ -17,7 +17,7 @@
 "``|``", "``A|B``, where A and B can be arbitrary REs, creates a regular expression that will match either A or B."
 "``(...)``", "Matches whatever regular expression is inside the parentheses, and indicates the start and end of a group"
 "``(?P<name>...)``", "substring matched by the group is accessible via the symbolic group name name"
-"``(?P=name)``", "A backreference to a named group; it matches whatever text was matched by the earlier group named name. ``(?P<quote>['"]).*?(?P=quote)`` or ``(?P<quote>['"]).*?\1``"
+"``(?P=name)``", "A backreference to a named group; it matches whatever text was matched by the earlier group named name. ``(?P<tag><.*?>)text(?P=tag)`` or ``(?P<tag><.*?>)text\1``"
 "``\number``", "Matches the contents of the group of the same number. Groups are numbered starting from 1. For example, ``(.+) \1`` matches ``the the`` or ``55 55``, but not ``thethe`` (note the space after the group)."
 "``\d``", "Matches any Unicode decimal digit. This includes [0-9], and also many other digit characters"
 "``\s``", "Matches Unicode whitespace characters (which includes [ \t\n\r\f\v], and also many other characters, for example the non-breaking spaces)"

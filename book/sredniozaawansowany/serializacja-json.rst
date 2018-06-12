@@ -33,14 +33,6 @@ Problemy z serializacją i deserializacją
 
 Serializacja i pisanie własnych encoderów
 =========================================
-.. code-block:: python
-
-    >>> DATA = {'first_name': 'Ivan', 'last_name': 'Ivanovic'}
-
-    >>> import json
-    >>> json.dumps(DATA)
-    '{"first_name": "Ivan", "last_name": "Ivanovic"}'
-
 Problem z rzutowaniem daty na JSON:
 
 .. literalinclude:: src/json-encoder-exception.py
