@@ -2,6 +2,9 @@
 Django
 ******
 
+Co to jest Django?
+==================
+
 Instalacja i uruchamianie
 =========================
 
@@ -11,16 +14,16 @@ Instalacja
 
     $ pip install django
 
-Tworzenie nowego projektu
--------------------------
+Starting new project
+--------------------
 .. code-block:: console
 
-    $ django-admin startproject botnet
+    $ django-admin startproject apollo
 
     $ python manage.py migrate
 
     $ python manage.py createsuperuser
-    Username (leave blank to use 'matt'): admin
+    Username (leave blank to use 'admin'): jose.jimenez
     Email address: jose.jimenez@nasa.gov
     Password:
     Password (again):
@@ -30,28 +33,46 @@ Tworzenie nowego projektu
     Performing system checks...
 
     System check identified no issues (0 silenced).
-    June 12, 2018 - 13:37:00
-    Django version 2.1.0, using settings 'botnet.settings'
+    July 21, 1969 - 14:56:15
+    Django version 2.1.0, using settings 'apollo.settings'
     Starting development server at http://127.0.0.1:8000/
     Quit the server with CONTROL-C.
-
-    $ cd botnet
-
-    $ django-admin startapp heartbeat
 
 Sprawdź w przeglądarce strony:
 
 * ``http://127.0.0.1:8000/``
 * ``http://localhost:8000/admin/``
 
-Co to jest Django?
-==================
+Starting new app
+----------------
+.. code-block:: console
+
+    $ cd apollo
+
+    $ django-admin startapp lem
 
 Architektura aplikacji Django
 =============================
 
 Modele
 ======
+- ``CharField``
+- ``DateField``
+- ``DateTimeField``
+- ``DecimalField``
+- ``DurationField``
+- ``FileField``
+- ``ImageField``
+- ``IntegerField``
+- ``ManyToManyField``
+- ``BooleanField``
+- ``PositiveIntegerField``
+- ``PositiveSmallIntegerField``
+- ``SlugField``
+- ``TextField``
+- ``TimeField``
+- ``URLField``
+
 
 Widoki
 ======
@@ -67,7 +88,6 @@ Widoki generyczne
 
 Localization
 ============
-
 .. code-block:: console
 
     $ cd botnet/heartbeat
@@ -82,7 +102,6 @@ Localization
     $ django-admin compilemessages
     processing file django.po in /private/tmp/botnet/botnet/heartbeat/locale/en/LC_MESSAGES
     processing file django.po in /private/tmp/botnet/botnet/heartbeat/locale/pl/LC_MESSAGES
-
 
 Sygnały
 =======
@@ -117,8 +136,7 @@ Przydatne Biblioteki
 
 ``django-import-export``
 ------------------------
-
-INSTALLED_APPS.append('import_export')
+* ``INSTALLED_APPS.append('import_export')``
 
 
 :admin.py:
@@ -132,5 +150,10 @@ INSTALLED_APPS.append('import_export')
 
 ``django-grappelli``
 --------------------
+* ``INSTALLED_APPS.insert(0, 'grappelli')``
 
-INSTALLED_APPS.insert(0, 'grappelli')
+``django-rest-framework``
+-------------------------
+
+``transifex``
+-------------
