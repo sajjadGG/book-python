@@ -5,6 +5,13 @@ Wyrażenia regularne
 Konstruowanie wyrażeń
 =====================
 
+Regular Expression Syntax
+-------------------------
+.. csv-table:: Regular Expression Syntax
+    :header-rows: 1
+    :file: data/re-syntax.csv
+    :widths: 25, 75
+
 Wizualizacja regexpów
 ---------------------
 https://regexper.com/
@@ -86,15 +93,6 @@ The '*', '+', and '?' qualifiers are all greedy; they match as much text as poss
     :name: listing-re-greedy
     :language: python
     :caption: Usage of greedy and non-greedy search in ``re.findall()``
-
-
-Regular Expression Syntax
-=========================
-.. csv-table:: Regular Expression Syntax
-    :header-rows: 1
-    :file: data/re-syntax.csv
-    :widths: 25, 75
-
 
 Practical example of Regex usage
 ================================
