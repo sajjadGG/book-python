@@ -87,9 +87,7 @@ Podstawy
     sredniozaawansowany/regex.rst
     sredniozaawansowany/bazy-danych.rst
     sredniozaawansowany/tworzenie-dokumentacji.rst
-    sredniozaawansowany/django.rst
     sredniozaawansowany/programowanie-gui.rst
-
 
 ************
 Zaawansowany
@@ -114,6 +112,32 @@ Zaawansowany
     zaawansowany/wzorce-projektowe.rst
     zaawansowany/c-extensions.rst
 
+******
+Django
+******
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Django
+
+    django/introduction.rst
+    django/installation-and-usage.rst
+    django/models.rst
+    django/orm.rst
+    django/views.rst
+    django/staticfiles.rst
+    django/templates.rst
+    django/admin.rst
+    django/internationalization.rst
+    django/management-commands.rst
+    django/cache.rst
+    django/rest.rst
+    django/database.rst
+    django/standalone-scripts.rst
+    django/tests-and-quality.rst
+    django/ci-cd.rst
+    django/deployment.rst
+    django/django-apps.rst
 
 **************************
 W zastosowaniach naukowych

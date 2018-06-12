@@ -6,6 +6,7 @@ nbsphinx
 ipykernel
 IPython
 
+django
 requests
 pycodestyle
 mypy
