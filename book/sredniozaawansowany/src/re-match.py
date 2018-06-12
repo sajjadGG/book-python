@@ -1,6 +1,6 @@
 import re
 
-VALID_EMAIL = r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+VALID_EMAIL = r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,}$'
 
 
 def is_valid_email(email: str) -> bool:
@@ -18,7 +18,11 @@ def is_valid_email(email: str) -> bool:
     >>> is_valid_email('jose.jimenez+newsletter@nasa.gov')
     True
     >>> is_valid_email('jose.jimenez@.gov')
-    True
+    False
+    >>> is_valid_email('@nasa.gov')
+    False
+    >>> is_valid_email('jose.jimenez@nasa.g')
+    False
     """
     if re.match(VALID_EMAIL, email):
         return True
