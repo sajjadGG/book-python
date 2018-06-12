@@ -33,7 +33,6 @@ Tryby odczytu i zapisu
     "``'w'``", "open for writing, truncating the file first"
     "``'a'``", "open for writing, appending to the end of the file if it exists"
     "``'b'``", "binary mode"
-    "``'+'``", "open a disk file for updating (reading and writing)"
 
 
 Obsługa wyjątków
