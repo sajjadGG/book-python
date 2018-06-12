@@ -2,7 +2,7 @@ FILENAME = input('Podaj nazwę pliku: ')
 
 
 try:
-    with open(FILENAME, 'w') as file:
+    with open(FILENAME, mode='w') as file:
         content = file.read()
         print(content)
 

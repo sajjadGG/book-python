@@ -1,9 +1,9 @@
 FILENAME = '/etc/hostname'
 
 
-with open(FILENAME, 'w') as file:
+with open(FILENAME, mode='w') as file:
     file.write('foobar')
 
 
-with open(FILENAME, 'a') as file:
+with open(FILENAME, mode='a') as file:
     file.write('foobar')

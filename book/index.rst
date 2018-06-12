@@ -29,6 +29,7 @@ Wstęp
     :numbered:
     :caption: Wstęp
 
+    przed-szkoleniem.rst
     wstep/o-jezyku-python.rst
     wstep/instalacja.rst
     wstep/wybor-ide.rst

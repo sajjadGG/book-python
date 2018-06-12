@@ -13,11 +13,18 @@ def say_ehlo():
     print('ehlo')
 
 
-osoba = Osoba()
-osoba.data_urodzenia = 'dynamicznie w locie'
-osoba.hello = say_hello
-osoba.imie = 'moge to zmienic'
+o1 = Osoba()
+o1.data_urodzenia = 'dynamicznie w locie'
+o1.hello = say_hello
+o1.imie = 'moge to zmienic'
 
 Osoba.adres = 'pole klasy modyfikowane dynamicznie'
-Osoba.ehlo = say_ehlo
+Osoba.hello = say_ehlo
 Osoba.imie = 'jeszcze inne imie'
+
+o2 = Osoba()
+o2.data_urodzenia = 'dynamicznie w locie'
+o2.hello = say_hello
+
+o1.hello()
+# hello

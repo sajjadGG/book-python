@@ -63,6 +63,21 @@ Python spróbuje najpierw wykonać to co będzie zaprogramowane w ramach słowa 
     if __name__ == '__main__':
         foo()
 
+.. code-block:: python
+
+      while True:
+          try:
+              print('hello')
+          except:
+              continue
+
+
+      while True:
+          try:
+              print('hello')
+          except Exception:
+              continue
+
 Najpopularniejsze wyjątki
 =========================
 

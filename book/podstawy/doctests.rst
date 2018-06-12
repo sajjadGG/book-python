@@ -151,6 +151,21 @@ Testy dla wszystkich funkcji aktualnie zdefiniowanych w przestrzeni nazw wykonuj
 
         return abs(km * 1000.0)
 
+.. code-block:: python
+
+    def say_hello(dt):
+        """
+        ta funkcja wypisuje hello na ekranie
+
+        >>> import datetime
+        >>> dt = datetime.datetime.now()
+        >>> say_hello(dt)
+        'hello'
+
+        a gdyby uruchomić ją...
+        """
+        print('hello')
+
 Zadania kontrolne
 =================
 

@@ -859,50 +859,48 @@ Klasa per plik?
 ---------------
 Patrz przykład powyżej
 
-Przykłady praktyczne
-====================
-.. code-block:: python
-
-    >>> class Osoba:
-    ...    nazwisko = 'Jiménez'
-    ...
-    ...    def __init__(self, imie):
-    ...        self.imie = imie
-
-    >>> o1 = Osoba('Jose')
-    >>> o2 = Osoba('Ivan')
-
-
-    >>> print(o1.nazwisko)
-    Jiménez
-
-    >>> print(o2.nazwisko)
-    Jiménez
-
-
-
-    >>> o1.nazwisko = 'Ivanovic'
-
-    >>> print(o1.nazwisko)
-    Ivanovic
-
-    >>> print(o2.nazwisko)
-    Jiménez
-
-
-
-    >>> Osoba.nazwisko = 'Peck'
-
-    >>> print(o1.nazwisko)
-    Ivanovic
-
-    >>> print(o2.nazwisko)
-    Peck
-
-
 
 Zadania kontrolne
 =================
+
+Książka adresowa
+----------------
+#. Napisz książkę adresową:
+
+        * imię
+        * nazwisko
+        * telefon
+        * adresy:
+
+            * ulica
+            * miasto
+            * kod_pocztowy
+            * stan
+            * panstwo
+
+#. Wszystkie dane w książce muszą być reprezentowane przez klasy.
+#. Klasa ``Kontakt`` powinna wykorzystywać domyślne argumenty w ``__init__``.
+#. Użytkownik może mieć wiele adresów.
+#. Zrób tak, aby się ładnie wyświetlało zarówno dla jednego wyniku (``print(adres)``, ``print(osoba)`` jak i dla wszystkich w książce ``print(ksiazka_adresowa)``.
+#. API programu powinno być tak jak na :numref:`listing-oop-address-book`
+
+.. literalinclude:: src/oop-address-book.py
+    :name: listing-oop-address-book
+    :language: python
+    :caption: Address Book
+
+:Podpowiedź:
+    * Czytelny kod powinien mieć około 35 linii
+
+:Zadanie z gwiazdką:
+    * Klasa ``Adres`` powinna mieć zmienną liczbę argumentów za pomocą ``**kwargs`` i dynamicznie wpisywane pola ``setattr()`` (jeżeli nie mają wartości ``None``).
+
+:Co zadanie sprawdza?:
+    * myślenie obiektowe i odwzorowanie struktury w programie
+    * praca z obiektami
+    * zagnieżdżanie obiektów
+    * rzutowanie obiektu na stringa oraz jego reprezentacja (które i kiedy użyć)
+    * korzystanie z operatorów ``*`` i ``**`` (zadanie z gwiazdką)
 
 Punkty i wektory
 ----------------
@@ -924,63 +922,3 @@ Przekształć swój kod z przykładu z modułu "Matematyka" tak żeby wykorzytyw
 
 :Zadanie 4:
     Napisz kod, który zaklasyfikuje te losowo wygenerowane punkty do punktów A oraz B na podstawie odległości. W tym celu wykorzystaj napisane metody do obliczania odległości między punktami. Po klasyfikacji wyrysuj te punkty na wykresie, podobnie jak w przykładzie z modułu "Matematyka".
-
-
-Książka adresowa
-----------------
-
-:Zadanie 1:
-    Zmień swój kod zadania z książką adresową, aby każdy z kontaktów był reprezentowany przez:
-
-        * imię
-        * nazwisko
-        * telefon
-        * adresy:
-
-            * ulica
-            * miasto
-            * kod_pocztowy
-            * stan
-            * panstwo
-
-    * Wszystkie dane w książce muszą być reprezentowane przez klasy.
-    * Klasa ``Kontakt`` powinna wykorzystywać domyślne argumenty w ``__init__``.
-    * Użytkownik może mieć wiele adresów.
-    * Klasa ``Adres`` powinna mieć zmienną liczbę argumentów za pomocą ``**kwargs`` i dynamicznie wpisywane pola ``setattr()`` (jeżeli nie mają wartości ``None``).
-    * Zrób tak, aby się ładnie wyświetlało. Zarówno dla jednego wyniku (``print(adres)``, ``print(osoba)`` jak i dla wszystkich w książce ``print(ksiazka_adresowa)``.
-    * API programu powinno być tak jak na listingu poniżej
-
-    .. code-block:: python
-
-        ksiazka_adresowa = [
-            Kontakt(imie='Max', nazwisko='Peck', adresy=[
-                Adres(ulica='2101 E NASA Pkwy', miasto='Houston', stan='Texas', kod='77058', panstwo='USA'),
-                Adres(ulica=None, miasto='Kennedy Space Center', kod='32899', panstwo='USA'),
-                Adres(ulica='4800 Oak Grove Dr', miasto='Pasadena', kod='91109', panstwo='USA'),
-                Adres(ulica='2825 E Ave P', miasto='Palmdale', stan='California', kod='93550', panstwo='USA'),
-            ]),
-            Kontakt(imie='José', nazwisko='Jiménez'),
-            Kontakt(imie='Иван', nazwisko='Иванович', adresy=[]),
-        ]
-
-:Podpowiedź:
-    * Czytelny kod powinien mieć około 35 linii
-
-:Co zadanie sprawdza?:
-    * myślenie obiektowe i odwzorowanie struktury w programie
-    * praca z obiektami
-    * zagnieżdżanie obiektów
-    * serializacja obiektów do formatów *JSON* i *Pickle*
-    * korzystanie z operatorów ``*`` i ``**``
-    * rzutowanie obiektu na stringa oraz jego reprezentacja (które i kiedy użyć)
-
-:Zadanie 2:
-    Zrób aby dane w
-
-:Zadanie 2:
-    Napisz książkę adresową, która będzie zapisywała a później odczyta i sparsuje dane do pliku w formacie *Pickle*.
-    * Dane w formacie Pickle muszą być zapisane do pliku binarnie
-    * ``pickle.loads()`` przyjmuje uchwyt do pliku, a nie jego zawartość
-
-:Zadanie 3:
-    Napisz książkę adresową, która będzie zapisywała a później odczyta i sparsuje dane do pliku w formacie *JSON*.
