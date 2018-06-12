@@ -1,23 +1,28 @@
 import re
 
 
-PATTERN = r'[a-z]'
-text = 'Lorem Ipsum'
+DATABASE = [
+    'jose.jimenez@nasa.gov',
+    'Jose.Jimenez@nasa.gov',
+    '+jose.jimenez@nasa.gov',
+    'jose.jimenez+@nasa.gov',
+    'jose.jimenez+newsletter@nasa.gov',
+    'jose.jimenez@.gov',
+    '@nasa.gov',
+    'jose.jimenez@nasa.g',
+]
 
-re.findall(PATTERN, text)
-# ['o', 'r', 'e', 'm', 'p', 's', 'u', 'm']
-
-characters = re.compile(PATTERN)
-characters.findall(text)
-# ['o', 'r', 'e', 'm', 'p', 's', 'u', 'm']
-
-
-for i in range(0, 1e6):
-    # compiles at every loop iteration
-    # and then finds
-    re.findall(PATTERN, text)
+REGEX_VALID_EMAIL = r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,}$'
 
 
-for i in range(0, 1e6):
-    # once compiled, now only searches
-    characters.findall(text)
+# compiles at every loop iteration, and then matches
+for email in DATABASE:
+    re.match(REGEX_VALID_EMAIL, email)
+
+
+# compiling before loop, hence matching only inside
+valid_email = re.compile(REGEX_VALID_EMAIL)
+
+for email in DATABASE:
+    valid_email.match(email)
+
