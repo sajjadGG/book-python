@@ -477,15 +477,38 @@ Monkey Patching
 
     class User:
         def hello(self):
-            print('siema')
+            print('hello')
 
 
     def monkey_patch():
-        print('hhh')
+        print('My function')
 
 
     User.hello = monkey_patch
     User.hello()
+    # 'My function'
+
+.. code-block:: python
+
+    import datetime
+    import json
+
+
+    DATA = {
+        'datetime': datetime.datetime(1961, 4, 12, 2, 7, 0, 123456),
+        'date': datetime.datetime(1961, 4, 12),
+        'name': 'José Jiménez',
+    }
+
+    def datetime_encoder(self, obj):
+        if isinstance(obj, datetime.datetime):
+            return f'{obj:%Y-%m-%dT%H:%M:%S.%fZ}'
+        elif isinstance(obj, datetime.date):
+            return f'{obj:%Y-%m-%d}'
+        else:
+            return super().default(obj)
+
+    json.JSONEncoder.default = datetime_encoder
 
 
 ``@staticmethod``
@@ -494,10 +517,28 @@ Dekorator ``@staticmethod`` służy do tworzenia metod statycznych, takich któr
 
 .. code-block:: python
 
+    def increment_population():
+        Person.population += 1
+
     class Person:
         population = 0
 
-        def __init__(self, name='NN'):
+        def __init__(self, name):
+            self.name = name
+            increment_population()
+
+    anna = Person('Anna')
+    john = Person('John')
+
+    # ile użytkowników zostało stworzonych
+    print(Person.population)
+
+.. code-block:: python
+
+    class Person:
+        population = 0
+
+        def __init__(self, name):
             self.name = name
             Person.increment_population()
 
@@ -505,11 +546,10 @@ Dekorator ``@staticmethod`` służy do tworzenia metod statycznych, takich któr
         def increment_population():
             Person.population += 1
 
+    jose = Person('José Jiménez')
+    ivan = Person('Иван Иванович')
 
-    anna = Person('Anna')
-    john = Person('John')
-
-    # ile użytkowników zostało stworzonych z szablonu Person
+    # ile użytkowników zostało stworzonych
     print(Person.population)
 
 
@@ -622,14 +662,8 @@ Poniżej przedstawiono kilka przykładów metod magicznych w Pythonie.
             self.x = x
             self.y = y
 
-        def __abs__(self):
-            return (self.x**2 + self.y**2)**0.5
-
         def __str__(self):
             return f"Vector(x={self.x}, y={self.y})"
-
-        def __repr__(self):
-            return f"Vector: [x: {self.x}, y: {self.y}]"
 
         def __add__(self, other):
             return Vector(
@@ -644,6 +678,86 @@ Poniżej przedstawiono kilka przykładów metod magicznych w Pythonie.
     print(suma)
     # wyświetli: Vector(x=4, y=6)
 
+``__sub__()``
+-------------
+Return the difference of another ``Transaction`` object, or another class object that also has the ``val`` property.
+.. code-block:: python
+
+    class Transaction:
+
+        def __init__(self, val):
+            self.val = val
+
+        def __sub__(self, other):
+            return self.val - other.val
+
+
+    buy = Transaction(10.00)
+    sell = Transaction(7.00)
+    print(buy - sell)
+    # 3.0
+
+Return a Transaction object with ``val`` as the difference of this ``Transaction.val`` property and another object with a ``val`` property.
+
+.. code-block:: python
+
+    class Transaction:
+
+        def __init__(self, val):
+            self.val = val
+
+        def __sub__(self, other):
+            return Transaction(self.val - other.val)
+
+
+    buy = Transaction(20.00)
+    sell = Transaction(5.00)
+    result = buy - sell
+    print(result.val)
+    # 15
+
+Return difference of this Transaction.val property and an integer.
+
+.. code-block:: python
+
+    class Transaction:
+
+        def __init__(self, val):
+            self.val = val
+
+        def __sub__(self, other):
+            return self.val - other
+
+
+    buy = Transaction(8.00)
+    print(buy - 6.00)
+    # 2
+
+``__abs__()``
+-------------
+.. code-block:: python
+
+    class Vector:
+        def __init__(self, x=0.0, y=0.0):
+            self.x = x
+            self.y = y
+
+        def __abs__(self):
+            return (self.x**2 + self.y**2)**0.5
+
+
+``__iadd__()``
+--------------
+'+='
+
+``__isub__()``
+--------------
+
+``__mul__()`` and ``__imul__()``
+--------------------------------
+
+``__div__()`` and ``__idiv__()``
+--------------------------------
 
 ``__eq__()``
 ------------
@@ -653,9 +767,11 @@ Poniżej przedstawiono kilka przykładów metod magicznych w Pythonie.
 
 ``__ne__()``
 ------------
+'!='
 
 ``__lt__()``
 ------------
+
 
 ``__le__()``
 ------------
