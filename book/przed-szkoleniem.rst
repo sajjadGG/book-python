@@ -1,6 +1,6 @@
-**********
-Instalacja
-**********
+****************
+Przed szkoleniem
+****************
 
 Wymagania szkolenia
 ===================
@@ -13,19 +13,19 @@ Wymagania szkolenia
 
 .. warning:: powyższe rzeczy mają być ściągnięte, ale nie zainstalowane!
 
-
 Instalacja
 ==========
 
 Windows
 -------
 - Zainstalować GIT (zostawić domyślne opcje)
-- Zainstalować
+- Zainstalować Python (dodać do PATH)
+- Zainstalować PyCharm (Zostawić domyślne opcje)
 
 
 OS X
 ----
-Jeżeli posiadasz OS X to Python powinien być domyślnie zainstalowany na Twoim komputerze. Apple w najnowszych systemach operacyjnych standardowo dostarcza Pythona w wersji 2.7 i 2.6. Domyślnie po wpisaniu polecenia ``python`` uruchamiany jest 2.7. Aby zainstalować Pythona w wersji 3 możemy skorzystać z managera pakietów ``brew`` albo z tzw. macports. Osobiście polecam to pierwsze podejście. Brew dostępny jest za darmo i można pobrać go z internetu uruchamiając polecenie ze strony `Brew <http://brew.sh>`_. Najpierw jednak konieczne będzie zainstalowanie najnowszej wersji Xcode z AppStore. Brew powinien zrobić to za Ciebie.
+Jeżeli posiadasz OS X to Python powinien być domyślnie zainstalowany na Twoim komputerze. Apple w najnowszych systemach operacyjnych standardowo dostarcza Pythona w wersji 2.7 i 3.6. Domyślnie po wpisaniu polecenia ``python`` uruchamiany jest 2.7. Aby zainstalować Pythona w wersji 3 możemy skorzystać z managera pakietów ``brew`` albo z tzw. macports. Osobiście polecam to pierwsze podejście. Brew dostępny jest za darmo i można pobrać go z internetu uruchamiając polecenie ze strony `Brew <http://brew.sh>`_. Najpierw jednak konieczne będzie zainstalowanie najnowszej wersji Xcode z AppStore. Brew powinien zrobić to za Ciebie.
 
 Sama instalacja brew sprowadza do uruchomienia polecenia wyglądającego jak następujące:
 
