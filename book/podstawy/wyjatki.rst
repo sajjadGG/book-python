@@ -13,12 +13,7 @@ Podnoszenie wyjątków
 ====================
 .. code-block:: python
 
-    def bar():
-        raise NameError
-
-    if __name__ == '__main__':
-        bar()
-
+    raise NameError
 
 Tworzenie własnych wyjątków
 ===========================
@@ -29,10 +24,8 @@ Tworzenie własnych wyjątków
         errno = 10
 
     def ctg(deg):
-
         if deg == 90:
             raise CtgDoesNotExistsError
-
         return "wylicz cotangens kąta"
 
 
@@ -51,17 +44,14 @@ Python spróbuje najpierw wykonać to co będzie zaprogramowane w ramach słowa 
         raise NameError
 
 
-    def foo():
-        try:
-            bar()
-        except NameError:
-            print('Błąd nazwy zlapany')
-        except SyntaxError:
-            print('Błąd składni zlapany')
+    try:
+        bar()
 
+    except NameError:
+        print('Błąd nazwy zlapany')
 
-    if __name__ == '__main__':
-        foo()
+    except SyntaxError:
+        print('Błąd składni zlapany')
 
 .. code-block:: python
 
@@ -78,35 +68,23 @@ Python spróbuje najpierw wykonać to co będzie zaprogramowane w ramach słowa 
           except Exception:
               continue
 
+Przykład z życia
+================
+.. code-block:: python
+
+    from django.contrib.auth.models import User
+
+    try:
+        User.objects.get(id=2)
+    except User.DoesNotExists:
+        pass
+
 Najpopularniejsze wyjątki
 =========================
-
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Nazwa wyjątku       | Opis                                                                                                                                                                                                                                                                                                |
-+=====================+=====================================================================================================================================================================================================================================================================================================+
-| AttributeError      | Raised when an attribute reference (see Attribute references) or assignment fails. (When an object does not support attribute references or attribute assignments at all, TypeError is raised.)                                                                                                     |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ImportError         | Raised when an import statement fails to find the module definition or when a from ... import fails to find a name that is to be imported.                                                                                                                                                          |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| IndexError          | Raised when a sequence subscript is out of range. (Slice indices are silently truncated to fall in the allowed range; if an index is not an integer, TypeError is raised.)                                                                                                                          |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| KeyError            | Raised when a mapping (dictionary) key is not found in the set of existing keys.                                                                                                                                                                                                                    |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| KeyboardInterrupt   | Raised when the user hits the interrupt key (normally Control-C or Delete). During execution, a check for interrupts is made regularly. The exception inherits from BaseException so as to not be accidentally caught by code that catches Exception and thus prevent the interpreter from exiting. |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| NameError           | Raised when a local or global name is not found. This applies only to unqualified names. The associated value is an error message that includes the name that could not be found.                                                                                                                   |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| NotImplementedError | This exception is derived from RuntimeError. In user defined base classes, abstract methods should raise this exception when they require derived classes to override the method.                                                                                                                   |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| RuntimeError        | Raised when an error is detected that doesn’t fall in any of the other categories. The associated value is a string indicating what precisely went wrong.                                                                                                                                           |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| SyntaxError         | Raised when the parser encounters a syntax error. This may occur in an import statement, in a call to the built-in functions exec() or eval(), or when reading the initial script or standard input (also interactively).                                                                           |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| IndentationError    | Base class for syntax errors related to incorrect indentation. This is a subclass of SyntaxError.                                                                                                                                                                                                   |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| TypeError           | Raised when an operation or function is applied to an object of inappropriate type. The associated value is a string giving details about the type mismatch.                                                                                                                                        |
-+---------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
+.. csv-table:: Najpopularniejsze wyjątki
+    :header-rows: 1
+    :widths: 25, 75
+    :file: data/exception-popular.csv
 
 Hierarchia wyjątków
 ===================

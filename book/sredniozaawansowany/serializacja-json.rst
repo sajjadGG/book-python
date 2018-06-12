@@ -5,7 +5,7 @@ Serializacja i deserializacja JSON
 
 Format JSON jest podobny do zapisu dict w Python, ale różni się:
 
-- brak przecinka na końcu ostatniego elementu list
+- nie może być przecinka po ostatnim elemencie list
 - zawsze są stosowane podwójne cudzysłowia
 - ``true`` i ``false`` jest pisane małymi literami
 - zamiast ``None`` jest ``null``
@@ -133,7 +133,7 @@ Serializacja dat
 
 Serializacja obiektów do JSON
 -----------------------------
-#. Użyj obiektu ``książka_adresowa`` stworzonego w zadaniu z programowaniem obiektowym
+#. Użyj obiektu ``ksiazka_adresowa`` stworzonego w zadaniu z programowaniem obiektowym
 #. Zapisz kontakty z książki adresowej w JSON
 #. Jak odtworzyć relacje?
 #. Stwórz obiekty książki adresowej na podstawie danych odczytanych z pliku
