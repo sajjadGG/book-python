@@ -8,6 +8,6 @@ eastern = pytz.timezone('US/Eastern')
 print(eastern.zone)
 # 'US/Eastern'
 
-amsterdam = pytz.timezone('Europe/Amsterdam')
+amsterdam = pytz.timezone('Europe/Warsaw')
 print(amsterdam.zone)
-# 'Europe/Amsterdam'
+# 'Europe/Warsaw'
