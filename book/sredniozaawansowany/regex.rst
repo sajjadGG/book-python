@@ -5,23 +5,14 @@ Wyrażenia regularne
 Konstruowanie wyrażeń
 =====================
 
-Wyciąganie parametrów (zmiennych)
-=================================
+Wizualizacja regexpów
+---------------------
+https://regexper.com/
 
-.. code-block:: python
-
-    def sprwadzie_ciagow():
-        REGEX_IMIE_I_NAZWISKO = r"(?P<first_name>\w+) (?P<last_name>\w+)"
-
-        imie_i_nazwisko = re.compile(REGEX_IMIE_I_NAZWISKO)
-        m = imie_i_nazwisko.match('Malcolm Reynolds')
-
-        m.group('first_name')
-        'Malcolm'
-        m.group('last_name')
-        'Reynolds'
-        m.group()
-        'Malcolm Reynolds'
+.. figure:: img/regexp-vizualization.png
+    :name: figure-regexp-vizualization
+    :scale: 100%
+    :align: center
 
 Najczęściej wykorzystywane funkcje
 ==================================
@@ -35,67 +26,106 @@ Najczęściej wykorzystywane funkcje
 
 ``search()``
 ------------
-
 .. literalinclude:: src/re-search.py
     :name: listing-re-search()
     :language: python
     :caption: Usage of ``re.search()``
 
-``findall()`` i ``finditer()``
-------------------------------
+``re.findall()`` and ``re.finditer()``
+--------------------------------------
 .. literalinclude:: src/re-find.py
     :name: listing-re-find
     :language: python
     :caption: Usage of ``re.findall()`` and ``re.finditer()``
 
-``compile()``
--------------
+``re.compile()``
+----------------
+.. literalinclude:: src/re-compile.py
+    :name: listing-re-compile
+    :language: python
+    :caption: Usage of compile
 
-MULTILINE
----------
+``re.sub()``
+------------
+.. literalinclude:: src/re-sub.py
+    :name: listing-re-sub
+    :language: python
+    :caption: Usage of ``re.sub()``
+
+``re.split()``
+------------
+.. literalinclude:: src/re-split.py
+    :name: listing-re-sub
+    :language: python
+    :caption: Usage of ``re.split()``
+
+Regex Flags
+===========
+.. csv-table:: Regular Expression Syntax
+    :header-rows: 1
+    :file: data/re-flags.csv
+    :widths: 25, 75
 
 .. literalinclude:: src/re-multiline.py
     :name: listing-re-regexp
     :language: python
     :caption: Usage of regexp
 
-Greedy search
-=============
+Wyciąganie parametrów (zmiennych)
+=================================
+.. literalinclude:: src/re-group.py
+    :name: listing-re-group
+    :language: python
+    :caption: Usage of group in ``re.match()``
+
+Greedy i non-greedy search
+==========================
+The '*', '+', and '?' qualifiers are all greedy; they match as much text as possible. Sometimes this behaviour isn’t desired; if the RE <.*> is matched against '<a> b <c>', it will match the entire string, and not just '<a>'. Adding ? after the qualifier makes it perform the match in non-greedy or minimal fashion; as few characters as possible will be matched. Using the RE <.*?> will match only '<a>'.
+
+.. literalinclude:: src/re-greedy.py
+    :name: listing-re-greedy
+    :language: python
+    :caption: Usage of greedy and non-greedy search in ``re.findall()``
 
 
-Przykład
-========
-
-.. code-block:: python
-
-    import re
-
-    TEKST = """Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. -- Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC"""
+Regular Expression Syntax
+=========================
+.. csv-table:: Regular Expression Syntax
+    :header-rows: 1
+    :file: data/re-syntax.csv
+    :widths: 25, 75
 
 
-    SLOWA_ZAWIERAJACE_IS = r'[a-zA-Z0-9]*is[a-zA-Z0-9]*'
-    wynik = re.findall(SLOWA_ZAWIERAJACE_IS, TEKST)
-    print(wynik)
+Practical example of Regex usage
+================================
 
-    SLOWA_ZAWIERAJACE_IS = re.compile(r'[a-zA-Z0-9]*is[a-zA-Z0-9]*')
-    SLOWA_ZAWIERAJACE_IS.findall(TEKST)
-    print(wynik)
+Making a Phonebook
+------------------
+.. literalinclude:: src/re-example-1.py
+    :name: listing-re-example-1
+    :language: python
+    :caption: Practical example of Regex usage
 
-Wizualizacja regexpów
----------------------
-https://regexper.com/
+Finding all Adverbs
+-------------------
+.. literalinclude:: src/re-example-2.py
+    :name: listing-re-example-2
+    :language: python
+    :caption: Finding all Adverbs
 
-.. figure:: img/regexp-vizualization.png
-    :name: figure-regexp-vizualization
-    :scale: 100%
-    :align: center
+Writing a Tokenizer
+-------------------
+.. literalinclude:: src/re-example-3.py
+    :name: listing-re-example-3
+    :language: python
+    :caption: Writing a Tokenizer.
+
 
 Zadania kontrolne
 =================
 
 Walidacja PESEL
 ---------------
-
 Za pomocą wyrażeń regularnych sprawdź:
 
 * czy pesel jest poprawny

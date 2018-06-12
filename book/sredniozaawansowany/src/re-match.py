@@ -1,19 +1,18 @@
 import re
 
-POPRAWNY_EMAIL = r'(^[a-z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)'
+POPRAWNY_EMAIL = r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
 
 
 def email_poprawny(email):
     if re.match(POPRAWNY_EMAIL, email):
-        print('Poprawny:', email)
-        return True
+        print(f'Poprawny: {email}')
     else:
-        print('Niepoprawny:', email)
-        return False
+        print(f'Niepoprawny: {email}')
 
 
-email_poprawny('Amatt@astrotech.io')
-email_poprawny('matt@astrotech.io')
-email_poprawny('+matt@astrotech.io')
-email_poprawny('matt+@astrotech.io')
-email_poprawny('mattastrotech@.io')
+email_poprawny('matt@astrotech.io')  # Poprawny
+email_poprawny('Matt@astrotech.io')  # Poprawny
+email_poprawny('+matt@astrotech.io')  # Niepoprawny
+email_poprawny('matt+@astrotech.io')  # Poprawny
+email_poprawny('matt+facebook.com@astrotech.io')  # Niepoprawny
+email_poprawny('matt@.io')  # Poprawny

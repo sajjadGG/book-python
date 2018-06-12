@@ -127,6 +127,16 @@ Przekazywanie do funkcji zmiennej ilości parametrów
 
 .. code-block:: python
 
+    def wyswietl(a, b, c=0, *args, **kwargs):
+        print(locals())
+
+
+    dane = {'x': 77, 'y': 99, 'a': 7}
+    wyswietl(1, 2, 3, **dane)
+    # TypeError: wyswietl() got multiple values for argument 'a'
+
+.. code-block:: python
+
     >>> def wyswietl(a, b, c=0, *args, **kwargs):
     ...     print(locals())
 
