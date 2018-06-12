@@ -279,6 +279,3 @@ Manipulacja datami
 :Zadanie z gwiazdką:
     * Co to za daty, które podał użytkownik?
     * Uwzględnij strefy czasowe.
-
-:Podpowiedź:
-    * wykorzystaj ``try`` i ``except`` przy ``strptime``
