@@ -327,6 +327,38 @@ Panel admina
 
 Grapelli
 ========
+installacja
+-----------
+.. code-block:: console
+
+    $ pip install django-grapelli
+
+- dodanie do INSTALLED_APPS
+
+.. code-block:: python
+
+    INSTALLED_APPS = [
+        'grappelli.dashboard',
+        'grappelli',
+    ]
+
+- dodanie do urls
+
+.. code-block:: python
+
+    from django.conf.urls import url
+    from django.conf.urls import include
+    from django.contrib import admin
+
+
+    urlpatterns += [
+        url(r'^grappelli/', include('grappelli.urls'), name='grappelli'),
+        url(r'^', admin.site.urls, name='admin'),
+    ]
+
+Settings
+--------
+
 .. code-block:: python
 
     GRAPPELLI_SWITCH_USER = True
