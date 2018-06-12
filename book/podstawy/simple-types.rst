@@ -62,6 +62,30 @@ Jednym z najbardziej podstawowych typów danych jest ``int``.
     >>> my_int = 1_000_000
     >>> my_int = 1e6
 
+Minimum and maximum values for integers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:Python 3:
+    In Python 3, this question doesn't apply. The plain int type is unbounded.
+
+    However, you might actually be looking for the machine's word size. That's still available in Python 3 as ``sys.maxsize``.
+
+    .. code-block:: python
+
+        >>> import sys
+        >>> sys.maxsize
+
+:Python 2:
+    In Python 2, the maximum value for plain int values is available as sys.maxint:
+
+    .. code-block:: python
+
+        >>> import sys
+        >>> sys.maxint
+        9223372036854775807
+
+    You can calculate the minimum value with -sys.maxint - 1 as shown here.
+
+Python seamlessly switches from plain to long integers once you exceed this value. So most of the time, you won't need to know what is the maximum value for ``int``.
 
 ``float`` - Liczba zmiennoprzecinkowa
 -------------------------------------

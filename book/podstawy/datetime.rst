@@ -265,7 +265,7 @@ Zadania kontrolne
 
 Manipulacja datami
 ------------------
-#. Użytkownik poda wykorzystując ``input()`` dwie następujące daty w formacie jak poniżej:
+#. Dane są dwie następujące daty w formacie jak poniżej:
 
     - ``April 12, 1961 2:07 local time`` (ALMT Timezone)
     - ``07/21/69 2:56:15 AM UTC``

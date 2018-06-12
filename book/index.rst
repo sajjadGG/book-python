@@ -44,7 +44,7 @@ Podstawy
     :numbered:
     :caption: Podstawy
 
-    podstawy/zmienne-i-stale.rst
+    podstawy/simple-types.rst
     podstawy/zlozone-typy-danych.rst
     podstawy/operatory.rst
     podstawy/instrukcje-warunkowe.rst
