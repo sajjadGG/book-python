@@ -1,18 +1,26 @@
 import re
 
-POPRAWNY_EMAIL = r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+VALID_EMAIL = r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
 
 
-def email_poprawny(email):
-    if re.match(POPRAWNY_EMAIL, email):
-        print(f'Poprawny: {email}')
+def is_valid_email(email: str) -> bool:
+    """
+    Function check email address against Regular Expression
+
+    >>> is_valid_email('jose.jimenez@nasa.gov')
+    True
+    >>> is_valid_email('Jose.Jimenez@nasa.gov')
+    True
+    >>> is_valid_email('+jose.jimenez@nasa.gov')
+    False
+    >>> is_valid_email('jose.jimenez+@nasa.gov')
+    True
+    >>> is_valid_email('jose.jimenez+newsletter@nasa.gov')
+    True
+    >>> is_valid_email('jose.jimenez@.gov')
+    True
+    """
+    if re.match(VALID_EMAIL, email):
+        return True
     else:
-        print(f'Niepoprawny: {email}')
-
-
-email_poprawny('matt@astrotech.io')  # Poprawny
-email_poprawny('Matt@astrotech.io')  # Poprawny
-email_poprawny('+matt@astrotech.io')  # Niepoprawny
-email_poprawny('matt+@astrotech.io')  # Poprawny
-email_poprawny('matt+facebook.com@astrotech.io')  # Niepoprawny
-email_poprawny('matt@.io')  # Poprawny
+        return False

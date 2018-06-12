@@ -5,9 +5,15 @@ Django
 Instalacja i uruchamianie
 =========================
 
+Instalacja
+----------
 .. code-block:: console
 
     $ pip install django
+
+Tworzenie nowego projektu
+-------------------------
+.. code-block:: console
 
     $ django-admin startproject botnet
 
@@ -15,7 +21,7 @@ Instalacja i uruchamianie
 
     $ python manage.py createsuperuser
     Username (leave blank to use 'matt'): admin
-    Email address: django@astrotech.io
+    Email address: jose.jimenez@nasa.gov
     Password:
     Password (again):
     Superuser created successfully.
@@ -24,8 +30,8 @@ Instalacja i uruchamianie
     Performing system checks...
 
     System check identified no issues (0 silenced).
-    June 08, 2017 - 13:33:03
-    Django version 1.11.2, using settings 'botnet.settings'
+    June 12, 2018 - 13:37:00
+    Django version 2.1.0, using settings 'botnet.settings'
     Starting development server at http://127.0.0.1:8000/
     Quit the server with CONTROL-C.
 
