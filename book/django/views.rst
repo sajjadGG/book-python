@@ -7,9 +7,9 @@ Class Based Views
 
 Generic Views
 =============
-- DetailView
-- EditView
-- ListView
+- ``DetailView``
+- ``EditView``
+- ``ListView``
 
 TemplateView
 ------------
@@ -32,8 +32,8 @@ View
 
 Responses
 =========
-HttpResponse
-JsonReponse
+- ``HttpResponse``
+- ``JsonReponse``
 
 Decorators
 ==========

@@ -127,7 +127,7 @@ Django
     django/settings.rst
     django/apps.rst
     django/models.rst
-    django/url-router.rst
+    django/urls.rst
     django/orm.rst
     django/views.rst
     django/rest.rst
