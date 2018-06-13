@@ -6,7 +6,7 @@ QuerySet
 ========
 - sklejanie zapytań
 - Tworzenie obiektów
-- Zapisywanie ForeignKey
+- Zapisywanie ``save()`` ForeignKey
 
 .. code-block:: python
 

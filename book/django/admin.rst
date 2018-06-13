@@ -1,14 +1,70 @@
-************
-Panel admina
-************
+***********
+Admin panel
+***********
 
-- @admin.register
-- StackedInline
-- TabularInline
+Customizong
+===========
+.. code-block:: python
+
+    from django.contrib import admin
+    from django.utils.translation import ugettext_lazy as _
+
+    admin.site.site_header = _('HabitatOS')
+    admin.site.index_title = _('Dashboard')
+    admin.site.site_title = _('HabitatOS')
+
+Template overwrite
+------------------
+.. code-block:: python
+
+    change_list_template = 'admin/change_list_import_export.html'
+    change_list_filter_template = 'admin/filter_listing.html'
+
+Permissions
+===========
+
+Users
+-----
+
+Groups
+------
+
+Content Types
+-------------
+
+
+Model Admin
+===========
+- ``admin.ModelAdmin``
+
+Model registering
+-----------------
+- ``@admin.register(...)``
+
+Admin fields
+------------
 - readonly_fields
 - search (``^``, ``=``, ``@``)
-- class Media (js and css)
+- ordering
+- list_filter
 
+Writing own ``list_filter``
+---------------------------
+
+Model Inlines
+=============
+
+StackedInline
+-------------
+
+TabularInline
+-------------
+
+Extending Admin
+===============
+
+Media Class
+-----------
 .. code-block:: python
 
     class Media:
@@ -22,17 +78,6 @@ Panel admina
         ]}
 
 
-- order
-- filer
-- własne kolumny i treść w komórkach
-
-.. code-block:: python
-
-    from django.contrib import admin
-
-    admin.site.site_header = _('HabitatOS')
-    admin.site.index_title = _('Dashboard')
-    admin.site.site_title = _('HabitatOS')
 
 .. code-block:: python
 
