@@ -47,3 +47,38 @@ Starting new app
 
 Architektura aplikacji Django
 =============================
+.. figure:: img/django-architecture-stack.png
+    :scale: 75%
+    :align: center
+
+    django-architecture-stack
+
+.. figure:: img/django-request-response-flow.jpg
+    :scale: 75%
+    :align: center
+
+    django-request-response-flow
+
+
+
+
+IDE Support
+===========
+
+Runserver
+---------
+
+Debugging
+---------
+
+Database Explorer
+-----------------
+
+Mark as Sources Root
+--------------------
+
+Podpowiadanie składni
+---------------------
+- Template
+- templatetags
+- filters
