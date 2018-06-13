@@ -133,3 +133,6 @@ SonarQube
     sonar.issue.ignore.multicriteria.e1.resourceKey=**/tests.py
     sonar.issue.ignore.multicriteria.e2.ruleKey=python:S100
     sonar.issue.ignore.multicriteria.e2.resourceKey=**/tests.py
+
+Debug Toolbar
+=============

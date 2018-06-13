@@ -7,6 +7,8 @@ ipykernel
 IPython
 
 django
+django-rest-framework
+django-debug-toolbar
 pillow
 requests
 pycodestyle

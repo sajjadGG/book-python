@@ -25,7 +25,7 @@ class Contact(models.Model):
 
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
-    reporter = models.ForeignKey(verbose_name=_('Reporter'), to='auth.User', on_delete=models.CASCADE)
+    reporter = models.ForeignKey(verbose_name=_('Reporter'), to='auth.User', on_delete=models.CASCADE, null=True, default=None)
     is_deleted = models.BooleanField(verbose_name=_('Is deleted?'), default=False)
 
     first_name = models.CharField(verbose_name=_('First Name'), max_length=30)
@@ -56,3 +56,4 @@ class Contact(models.Model):
     class Meta:
         verbose_name = _('Contact')
         verbose_name_plural = _('Contacts')
+        unique_together = ['first_name', 'last_name']
