@@ -124,11 +124,11 @@ Django
     django/introduction.rst
     dajngo/architecture.rst
     django/installation-and-usage.rst
+    django/settings.rst
     django/apps.rst
-    django/database.rst
     django/models.rst
-    django/orm.rst
     django/url-router.rst
+    django/orm.rst
     django/views.rst
     django/rest.rst
     django/staticfiles.rst
@@ -136,6 +136,7 @@ Django
     django/admin.rst
     django/management-commands.rst
     django/internationalization.rst
+    django/database.rst
     django/cache.rst
     django/signals.rst
     django/standalone-scripts.rst

@@ -18,22 +18,16 @@ Create
     $ cd addressbook
     $ django-admin startapp contact
 
-:settings.py:
-    .. code-block:: python
+.. code-block:: python
 
-        INSTALLED_APPS += ['addressbook.contact.apps.ContactConfig']
+    # settings.py
+    INSTALLED_APPS += ['addressbook.contact.apps.ContactConfig']
 
 Structure
 =========
-.. literalinclude:: src/django-apps-structure.py
+.. literalinclude:: src/django-apps-structure.txt
     :language: python
     :caption: Django Apps Structure
-
-Installation
-============
-.. literalinclude:: src/django-apps-installation.py
-    :language: python
-    :caption: Django Apps Installation
 
 Configuration
 =============
