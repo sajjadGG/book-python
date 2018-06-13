@@ -122,6 +122,7 @@ Django
 
     django/http-protocol.rst
     django/introduction.rst
+    dajngo/architecture.rst
     django/installation-and-usage.rst
     django/apps.rst
     django/database.rst

@@ -30,20 +30,10 @@ HTTP/1.1 vs. HTTP/2.0
 
 URI vs URL
 ----------
+- SEO friendly URL
 
 text protocol
 -------------
-
-Methods
--------
-['get', 'post', 'put', 'patch', 'delete', 'head', 'options', 'trace']
-
-GET vs POST
------------
-- przekazywanie parametrów
-- ``?zmienna1=wartosc&zmienna2=wartosc``
-- przesylanie plikow
-- przesylanie tablicy zmiennych
 
 Status Code
 -----------
@@ -119,6 +109,44 @@ sessions
 Cookies
 -------
 - ustawa o cookies
+
+HTTP Methods
+============
+.. csv-table:: Http Response Codes
+    :header-rows: 1
+    :widths: 20, 80
+    :file: data/http-methods.csv
+
+GET vs POST
+-----------
+- przekazywanie parametrów
+- ``?zmienna1=wartosc&zmienna2=wartosc``
+- przesylanie plikow
+- przesylanie tablicy zmiennych
+- bezpieczeństwo
+
+POST vs. PUT
+------------
+
+POST and CSRF
+-------------
+- csrf_token
+
+PATCH?!
+-------
+
+OPTIONS and CORS
+----------------
+.. code-block:: python
+
+    http_method_names = ['get', 'post', 'options']
+
+    def options(self, request, *args, **kwargs):
+        response = HttpResponse(status=200)
+        response['Access-Control-Allow-Origin'] = '*'
+        response['Access-Control-Allow-Methods'] = ', '.join(http_method_names).upper()
+        response['Access-Control-Allow-Headers'] = 'Content-Type'
+        return response
 
 
 HTML + JS + CSS

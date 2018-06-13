@@ -1,6 +1,6 @@
-*************************
-Instalacja i uruchamianie
-*************************
+************************
+Installation and Running
+************************
 
 Instalacja
 ==========
@@ -37,38 +37,11 @@ Sprawdź w przeglądarce strony:
 * ``http://127.0.0.1:8000/``
 * ``http://localhost:8000/admin/``
 
-Architektura aplikacji Django
-=============================
-.. figure:: img/django-architecture-stack.png
-    :scale: 75%
-    :align: center
+IDE Run configuration
+=====================
 
-    django-architecture-stack
-
-.. figure:: img/django-request-response-flow.jpg
-    :scale: 75%
-    :align: center
-
-    django-request-response-flow
-
-
-IDE Support
-===========
-
-Runserver
----------
-
-Debugging
----------
-
-Database Explorer
+Run configuration
 -----------------
 
-Mark as Sources Root
---------------------
-
-Podpowiadanie składni
----------------------
-- Template
-- templatetags
-- filters
+Debug configuration
+-------------------
