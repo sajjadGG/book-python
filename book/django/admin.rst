@@ -76,7 +76,7 @@ Media Class
 
 ModelAdmin Example
 ==================
-.. literalinclude:: src/django-admin-example
+.. literalinclude:: src/django-admin-example.py
     :language: python
     :caption: ModelAdmin Example
 
@@ -105,7 +105,7 @@ Grapelli
 ========
 
 Installation
------------
+------------
 .. code-block:: console
 
     $ pip install django-grapelli

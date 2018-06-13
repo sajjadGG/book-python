@@ -124,23 +124,23 @@ Django
     django/introduction.rst
     django/installation-and-usage.rst
     django/apps.rst
+    django/database.rst
     django/models.rst
     django/orm.rst
     django/url-router.rst
     django/views.rst
+    django/rest.rst
     django/staticfiles.rst
     django/templates.rst
     django/admin.rst
-    django/internationalization.rst
     django/management-commands.rst
+    django/internationalization.rst
     django/cache.rst
-    django/rest.rst
-    django/database.rst
+    django/signals.rst
     django/standalone-scripts.rst
     django/tests-and-quality.rst
     django/ci-cd.rst
     django/deployment.rst
-    django/django-apps.rst
 
 **************************
 W zastosowaniach naukowych

@@ -82,10 +82,12 @@ Architecture
 ============
 - Fat model architecture
 
+Single File vs. Models per file
+===============================
+
 Reverse engineering database
 ============================
-- ``python manage.py inspectdb
-
+- ``python manage.py inspectdb``
 
 Database schema migration
 =========================
@@ -108,3 +110,9 @@ Migrate
       Apply all migrations: admin, auth, contenttypes, contact, sessions
     Running migrations:
       Applying contact.0001_initial... OK
+
+Example Model
+=============
+.. literalinclude:: src/django-models-exmaple.py
+    :language: python
+    :caption: Example Model
