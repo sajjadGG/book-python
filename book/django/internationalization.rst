@@ -2,31 +2,37 @@
 i18n and l10n
 *************
 
-- transifex-client
-- gettext
+Timezone
+========
+- django.utils.timezone
+- from django.conf.locale.en import formats as en_formats
+
+.. code-block:: python
+
+    en_formats.DATETIME_FORMAT = 'Y-m-d H:i'
+    en_formats.DATE_FORMAT = 'Y-m-d'
+    en_formats.TIME_FORMAT = 'H:i'
+    USE_TZ = True
+    TIME_ZONE = 'UTC'
+
+i18n - internationalization
+===========================
 - makemessages -l en
 - compilemessages
-- django.utils.timezone
 - blocktrans
 - trans templatetag
-- from django.conf.locale.en import formats as en_formats
 - from django.utils.translation import ugettext_lazy as _
-
+- transifex-client
+- gettext
+- poedit
 
 .. code-block:: python
 
     # Internationalization
     # https://docs.djangoproject.com/en/dev/topics/i18n/
     LANGUAGE_CODE = 'en-us'
-    TIME_ZONE = 'UTC'
     USE_I18N = True
     USE_L10N = True
-    USE_TZ = True
-
-    en_formats.DATETIME_FORMAT = 'Y-m-d H:i'
-    en_formats.DATE_FORMAT = 'Y-m-d'
-    en_formats.TIME_FORMAT = 'H:i'
-
 
 .. code-block:: console
 

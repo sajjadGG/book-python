@@ -120,6 +120,7 @@ Django
     :numbered:
     :caption: Django
 
+    django/http-protocol.rst
     django/introduction.rst
     django/installation-and-usage.rst
     django/models.rst
