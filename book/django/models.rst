@@ -85,3 +85,26 @@ Architecture
 Reverse engineering database
 ============================
 - ``python manage.py inspectdb
+
+
+Database schema migration
+=========================
+
+Makemigrations
+--------------
+.. code-block:: console
+
+    $ python manage.py makemigrations
+    Migrations for 'contact':
+      addressbook/contact/migrations/0001_initial.py
+        - Create model Contact
+
+Migrate
+-------
+.. code-block:: console
+
+    $ python manage.py migrate
+    Operations to perform:
+      Apply all migrations: admin, auth, contenttypes, contact, sessions
+    Running migrations:
+      Applying contact.0001_initial... OK

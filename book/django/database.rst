@@ -2,9 +2,28 @@
 Database
 ********
 
-Sygnały
-=======
 
+Database schema migration
+=========================
+
+Makemigrations
+--------------
+.. code-block:: console
+
+    $ python manage.py makemigrations
+    Migrations for 'contact':
+      addressbook/contact/migrations/0001_initial.py
+        - Create model Contact
+
+Migrate
+-------
+.. code-block:: console
+
+    $ python manage.py migrate
+    Operations to perform:
+      Apply all migrations: admin, auth, contenttypes, contact, sessions
+    Running migrations:
+      Applying contact.0001_initial... OK
 
 Management commands
 ===================
@@ -29,8 +48,11 @@ makemigrations
 migrate
 -------
 
-settings
-========
+Database settings
+=================
+
+Sqlite3
+-------
 .. code-block:: python
 
     # https://docs.djangoproject.com/en/dev/ref/settings/#databases
@@ -41,6 +63,10 @@ settings
         }
     }
 
+Heroku
+------
+.. code-block:: python
+
     if os.environ.get('DATABASE_URL'):
         import dj_database_url
         DATABASES['default'] = dj_database_url.config()
@@ -48,21 +74,6 @@ settings
 Fixtures
 ========
 fixtures directory of every installed application
-
-Migracje schematów bazy danych
-==============================
-.. code-block:: console
-
-    $ python manage.py makemigrations
-    Migrations for 'heartbeat':
-      botnet/heartbeat/migrations/0001_initial.py
-        - Create model Heartbeat
-
-    $ python manage.py migrate
-    Operations to perform:
-      Apply all migrations: admin, auth, contenttypes, heartbeat, sessions
-    Running migrations:
-      Applying heartbeat.0001_initial... OK
 
 Multiple DB and db routing
 ==========================

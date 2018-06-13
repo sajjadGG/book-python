@@ -19,46 +19,36 @@ URLs in templates
 
 Class Based Views
 =================
-.. code-block:: python
-
-    class TodayView(View):
-        http_method_names = ['get', 'head', 'options']
-
-        def get(self, request, *args, **kwargs):
-            data = {
-                'today': datetime.date.today(),
-                'now': datetime.datetime.now(),
-            }
-            return JsonResponse(status=status.HTTP_200_OK, data=data, safe=False)
-
-.. code-block:: python
-
-    class TodayView(TemplateView):
-        template_name = 'templates/index.html'
-
-        def get_context_data(self, request, *args, **kwargs):
-            return {
-                'today': datetime.date.today(),
-                'now': datetime.datetime.now(),
-            }
-
 
 Generic Views
 =============
-- TemplateView
-- View
 - DetailView
 - EditView
 - ListView
+
+TemplateView
+------------
+.. literalinclude:: src/django-views-generic-templateview.py
+    :language: python
+    :caption: TemplateView
+
+
+RedirectView
+------------
+.. literalinclude:: src/django-views-generic-redirectview.py
+    :language: python
+    :caption: RedirectView
+
+View
+----
+.. literalinclude:: src/django-views-generic-view.py
+    :language: python
+    :caption: View
 
 Responses
 =========
 HttpResponse
 JsonReponse
-
-Http Error Codes
-================
-
 
 Decorators
 ==========

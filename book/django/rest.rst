@@ -2,6 +2,14 @@
 REST
 ****
 
+
+RESTful Views
+=============
+.. literalinclude:: src/django-rest-views.py
+    :language: python
+    :name: listing-django-rest-views
+    :caption: RESTful Views
+
 .. code-block:: python
 
     urlpatterns += [

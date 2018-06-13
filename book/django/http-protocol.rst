@@ -49,9 +49,31 @@ Status Code
 -----------
 * https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
 
+.. csv-table:: Http Response Codes
+    :header-rows: 1
+    :widths: 10, 20, 70
+    :file: data/http-status-codes.csv
+
 Header
 ------
-Host
+- Host
+- ETag
+- Last-Modified
+- Accept
+- Accept-Encoding
+- Accept-Language
+- Referer
+- Cache-Control
+- Cookie
+- DNT
+- User-Agent
+- X-*
+
+``q=...`` parameters
+--------------------
+.. code-block:: text
+
+    Accept-Language: en-US,en;q=0.9,pl;q=0.8
 
 Request
 -------

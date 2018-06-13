@@ -123,8 +123,10 @@ Django
     django/http-protocol.rst
     django/introduction.rst
     django/installation-and-usage.rst
+    django/apps.rst
     django/models.rst
     django/orm.rst
+    django/url-router.rst
     django/views.rst
     django/staticfiles.rst
     django/templates.rst

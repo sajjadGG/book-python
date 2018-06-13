@@ -4,7 +4,7 @@ Tests and quality
 
 Tests
 =====
-* https://docs.djangoproject.com/en/2.0/topics/testing/overview/
+* https://docs.djangoproject.com/en/dev/topics/testing/overview/
 
 .. literalinclude:: src/django-tests.py
     :language: python
@@ -62,30 +62,21 @@ Test URLs
 
 .. code-block:: python
 
-    from habitat.tests import Test
+    from addressbook.tests import Test
 
 
-    class ExtravehucularTest(Test):
+    class ContactTest(Test):
         assert_http_200 = [
-            '/extravehicular/',
+            '/admin/',
+            '/admin/contact/',
 
-            '/extravehicular/activity/',
-            '/extravehicular/activity/add/',
+            '/admin/contact/contact/',
+            '/admin/contact/contact/add/',
+            '/admin/contact/contact/edit/1/',
 
-            '/extravehicular/contingency/',
-            '/extravehicular/contingency/add/',
-
-            '/extravehicular/location/',
-            '/extravehicular/location/add/',
-
-            '/extravehicular/objective/',
-            '/extravehicular/objective/add/',
-
-            '/extravehicular/report/',
-            '/extravehicular/report/add/',
-
-            '/extravehicular/spacewalker/',
-            '/extravehicular/spacewalker/add/',
+            '/admin/contact/address/',
+            '/admin/contact/address/add/',
+            '/admin/contact/address/edit/1/',
         ]
 
 
@@ -136,3 +127,22 @@ SonarQube
 
 Debug Toolbar
 =============
+.. code-block:: python
+
+    INSTALLED_APPS += ['debug_toolbar']
+    MIDDLEWARE += ['django.middleware.locale.LocaleMiddleware']
+    INTERNAL_IPS = ['127.0.0.1']
+    DEBUG = True
+
+.. code-block:: python
+
+    from django.conf import settings
+    from django.urls import path
+    from django.urls import include
+    import debug_toolbar
+
+
+    if settings.DEBUG:
+        urlpatterns += [
+            path('__debug__/', include(debug_toolbar.urls)),
+        ]
