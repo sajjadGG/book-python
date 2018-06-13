@@ -2,21 +2,6 @@
 Views
 *****
 
-URLs
-====
-
-Global URLs
------------
-
-In app URLs
------------
-
-URLs reversing
---------------
-
-URLs in templates
------------------
-
 Class Based Views
 =================
 
