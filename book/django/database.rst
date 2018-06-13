@@ -5,14 +5,32 @@ Database
 Sygnały
 =======
 
-dbshell
-dumpdata --format json  --exclude=auth --exclude=contenttypes
-loaddata
-inspectdb
-fixture (fixtures directory of every installed application)
-makemigrations
-migrate
 
+Management commands
+===================
+
+dbshell
+-------
+
+dumpdata
+--------
+dumpdata --format json  --exclude=auth --exclude=contenttypes
+
+loaddata
+--------
+
+inspectdb
+---------
+
+makemigrations
+--------------
+- ``--squash``
+
+migrate
+-------
+
+settings
+========
 .. code-block:: python
 
     # https://docs.djangoproject.com/en/dev/ref/settings/#databases
@@ -27,6 +45,9 @@ migrate
         import dj_database_url
         DATABASES['default'] = dj_database_url.config()
 
+Fixtures
+========
+fixtures directory of every installed application
 
 Migracje schematów bazy danych
 ==============================
