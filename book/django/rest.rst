@@ -11,6 +11,9 @@ REST
     ]
 
 
+``python -m json.tool``
+=======================
+
 ``django-rest-framework``
 =========================
 .. code-block:: console
