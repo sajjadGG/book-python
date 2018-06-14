@@ -123,7 +123,7 @@ Django
 
     django/http-protocol.rst
     django/introduction.rst
-    dajngo/architecture.rst
+    django/architecture.rst
     django/installation-and-usage.rst
     django/settings.rst
     django/apps.rst
