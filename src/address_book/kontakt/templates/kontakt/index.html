@@ -1,8 +1,0 @@
-{% load sages %}
-
-
-<ol>
-{% for kontakt in kontakty %}
-    <li>Witaj {{ kontakt.first_name|podmien_literki }} {{ kontakt.last_name }} {{ kontakt.date_of_birth|date:"Y-m-d" }}</li>
-{% endfor %}
-</ol>

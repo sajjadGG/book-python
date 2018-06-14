@@ -396,6 +396,26 @@ Przeliczanie odległości
     * 1608 m = 1 mila
     * 1852 m = 1 mila morska
 
+Generowanie listy unikalnych kluczy
+-----------------------------------
+#. Mając bazę danych z listingu poniżej
+#. Wygeneruj listę uniklalnych kluczy dictów
+
+.. code-block:: python
+
+    DATABASE = [
+        {'last_name': 'Jiménez'},
+        {'first_name': 'Max', 'last_name': 'Peck'},
+        {'first_name': 'Ivan'},
+        {'first_name': 'Max', 'last_name': 'Peck', 'born': 1961},
+        {'first_name': 'Jose', 'born': 1961, 'first_step': 1969},
+    ]
+
+:Podpowiedź:
+    * Kod powinien mieć około 5 linii
+    * To jest bardzo często występujący i użyteczny przykład
+
+
 Podział zbioru
 --------------
 #. Mając do dyspozycji zbiór danych Irysów z :numref:`listing-data-structures-iris-sample`

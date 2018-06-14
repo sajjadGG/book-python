@@ -45,7 +45,7 @@ Serializacja ``csv``
 
 .. code-block:: python
 
-    DATA = [
+    DATABASE = [
         {'last_name': 'Jiménez'},
         {'first_name': 'Max', 'last_name': 'Peck'},
         {'first_name': 'Ivan'},
