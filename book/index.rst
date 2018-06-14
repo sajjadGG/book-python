@@ -51,6 +51,7 @@ Podstawy
     podstawy/conditionals.rst
     podstawy/loops.rst
     podstawy/functions.rst
+    podstawy/installing-packages.rst
     podstawy/builtin.rst
     podstawy/programming-convention.rst
     podstawy/time-complexity.rst
