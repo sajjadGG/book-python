@@ -83,7 +83,6 @@ Parzystość
     * weryfikacja ciągu wprowadzonego od użytkownika
     * konwersja typów i rzutowanie
     * wykorzystanie operatorów matematycznych
-    * sprawdzanie czy obiekt jest instancją klasy
 
 Liczby całkowite
 ----------------
@@ -104,5 +103,5 @@ Liczby całkowite
     * wczytywanie ciągu znaków od użytkownika
     * weryfikacja ciągu wprowadzonego od użytkownika
     * konwersja typów i rzutowanie
-    * sprawdzanie czy obiekt jest instancją klasy
+
 
