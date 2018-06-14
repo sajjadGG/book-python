@@ -1,3 +1,5 @@
+\usepackage{ulem}
+
 *******************
 Złożone typy danych
 *******************
@@ -390,6 +392,11 @@ Przeliczanie odległości
         'all': [int, float, float]
     })
 
+:Założenia:
+    * Nazwa programu: ``types-distance.py``
+    * Szacunkowa długość kodu: około 3 linie
+    * Maksymalny czas na zadanie: 5 min
+
 :Podpowiedź:
     * 1000 m = 1 km
     * 1608 m = 1 mila
@@ -410,10 +417,10 @@ Generowanie listy unikalnych kluczy
         {'first_name': 'Jose', 'born': 1961, 'first_step': 1969},
     ]
 
-:Podpowiedź:
-    * Kod powinien mieć około 5 linii
-    * To jest bardzo często występujący i użyteczny przykład
-
+:Założenia:
+    * Nazwa programu: ``type-unique.py``
+    * Szacunkowa długość kodu: około 3 linie
+    * Maksymalny czas na zadanie: 5 min
 
 Podział zbioru
 --------------
@@ -425,17 +432,10 @@ Podział zbioru
     - dane do uczenia - 80%
     - dane testowe - 20%
 
-:Zadanie z gwiazdką:
-    #. Stwórz słownik gatunków.
-    #. Kolejnym liczbom naturalnym zaczynając od zera przyporządkuj gatunek irysów
-    #. Przygotuj listę cech z kluczami ze słownika gatunków.
-
-    .. code-block:: python
-
-        # 0: I. setosa
-        # 1: I. versicolor
-        # 2: I. virginica
-        labels = [0, 1, 2, 1, 1, 0, ...]
+:Założenia:
+    * Nazwa programu: ``type-split-list.py``
+    * Szacunkowa długość kodu: około 6 linie
+    * Maksymalny czas na zadanie: 10 min
 
 :Podpowiedź:
     - ``from random import shuffle``
@@ -444,3 +444,22 @@ Podział zbioru
     :name: listing-data-structures-iris-sample
     :language: python
     :caption: Sample Iris database
+
+Słownik unikalnych cech
+-----------------------
+#. Mając do dyspozycji zbiór danych Irysów z :numref:`listing-data-structures-iris-sample`
+#. Stwórz słownik gatunków.
+#. Kolejnym liczbom naturalnym zaczynając od zera przyporządkuj gatunek irysów
+#. Przygotuj listę cech z kluczami ze słownika gatunków.
+
+.. code-block:: python
+
+    # 0: I. setosa
+    # 1: I. versicolor
+    # 2: I. virginica
+    labels = [0, 1, 2, 1, 1, 0, ...]
+
+:Założenia:
+    * Nazwa programu: ``type-split-dict.py``
+    * Szacunkowa długość kodu: około 6 linie
+    * Maksymalny czas na zadanie: 10 min

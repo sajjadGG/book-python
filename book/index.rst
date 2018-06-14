@@ -45,23 +45,23 @@ Podstawy
     :numbered:
     :caption: Podstawy
 
-    podstawy/simple-types.rst
-    podstawy/zlozone-typy-danych.rst
-    podstawy/operatory.rst
-    podstawy/instrukcje-warunkowe.rst
-    podstawy/petle.rst
-    podstawy/funkcje.rst
+    podstawy/type-primitive.rst
+    podstawy/type-collection.rst
+    podstawy/operators.rst
+    podstawy/conditionals.rst
+    podstawy/loops.rst
+    podstawy/functions.rst
     podstawy/builtin.rst
-    podstawy/dobre-praktyki.rst
-    podstawy/zlozonosc-obliczeniowa.rst
-    podstawy/matematyka.rst
+    podstawy/programming-convention.rst
+    podstawy/time-complexity.rst
+    podstawy/math.rst
     podstawy/debugging.rst
     podstawy/print-formatting.rst
     podstawy/datetime.rst
     podstawy/doctests.rst
-    podstawy/programowanie-obiektowe.rst
-    podstawy/wyjatki.rst
-    podstawy/pliki.rst
+    podstawy/object-oriented-programming.rst
+    podstawy/exceptions.rst
+    podstawy/files.rst
     podstawy/zadania-kwalifikacyjne.rst
 
 *******************
