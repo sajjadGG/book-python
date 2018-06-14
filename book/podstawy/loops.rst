@@ -7,27 +7,46 @@ Pętle służą do wykonywania tego samego fragmentu kodu wielokrotnie. W Python
 Pętla ``for``
 =============
 
+Iterowanie po wartościach prostych
+----------------------------------
 Pętla ``for`` wykonuje się na zestawie elementów. Dosłownie można tę instrukcję przeczytać jako "Dla iksów będących wartościami listy, wykonaj instrukcję:"
 
 .. code-block:: python
 
-    for x in [1, 3, 4, 2]:
-        print(f'Value is: {x}')
-
+    for x in [1, 3, 4]:
+        print(x)
+        # 1
+        # 3
+        # 4
 
 .. code-block:: python
 
-    >>> for x in ['Max', 3, 'Peck', 2.8, [1, 'José', 'Jiménez']]:
+    for x in 'Max Peck':
+        print(x)
+        # M
+        # a
+        # x
+        #
+        # P
+        # e
+        # c
+        # k
+
+Iterowanie po wartościach złożonych
+-----------------------------------
+.. code-block:: python
+
+    >>> for x in ['Max', 3, 'Peck', 2.8, ['1.0', 'José', 'Jiménez']]:
     ...    print(f'Value is: {x}')
     Value is: Max
     Value is: 3
     Value is: Peck
     Value is: 2.8
-    Value is: [1, 'José', 'Jiménez']
+    Value is: ['1.0', 'José', 'Jiménez']
 
 .. code-block:: python
 
-    >>> for element in ['Max', '3', 'Peck', '2.8', [1, 'José', 'Jiménez']]:
+    >>> for element in ['Max', 3, 'Peck',  ['1.0', 'José', 'Jiménez']]:
     ...    for e in element:
     ...        print(f'Value is: {e}')
     Value is: M
@@ -38,10 +57,10 @@ Pętla ``for`` wykonuje się na zestawie elementów. Dosłownie można tę instr
     Value is: e
     Value is: c
     Value is: k
-    Value is: 2
-    Value is: .
-    Value is: 8
+    Value is: 2.8
     Value is: 1
+    Value is: .
+    Value is
     Value is: José
     Value is: Jiménez
 
@@ -73,50 +92,85 @@ Pętla ``for`` wykonuje się na zestawie elementów. Dosłownie można tę instr
 
 .. code-block:: python
 
-    >>> for x in range(0, 30, 5):
-    ...    print(f'Value is: {x}')
-
-    Value is: 0
-    Value is: 5
-    Value is: 10
-    Value is: 15
-    Value is: 20
-    Value is: 25
+    for x in range(start=0, stop=10, step=2):
+        print(x)
+        # 0
+        # 2
+        # 4
+        # 6
+        # 8
 
 .. code-block:: python
 
-    for key, value in [(0, 0), (1, 1), (1, 2)]:
+    for element in [(0,0), (1,1), (2,2)]:
+        print(element)
+        # (0, 0)
+        # (1, 1)
+        # (2, 2)
+
+.. code-block:: python
+
+    a, b = 1, 2
+    a, b = (1, 2)
+    key, value = (1, 2)
+
+    for key, value in [(0,0), (1,1), (2,2)]:
         print(f'{key} -> {value}')
+        # 0 -> 0
+        # 1 -> 1
+        # 2 -> 2
 
 .. code-block:: python
 
-    slownik = {'x': 1, 'y': 2}
+    DATABASE = [
+        (0, 1),
+        ('name', 'José'),
+        ('locations', ['CapeCanaveral', 'Houston']),
+    ]
 
-    for element in slownik.keys():
+    for key, value in DATABASE:
+        print(f'{key} -> {value}')
+        # 0 -> 1
+        # 'name' -> 'José'
+        # 'locations' -> ['CapeCanaveral', 'Houston']
+
+
+.. code-block:: python
+
+    my_dict = {'x': 1, 'y': 2}
+
+    for element in my_dict.values():
         print(element)
+        # 1
+        # 2
 
-    for element in slownik.values():
+    for element in my_dict.keys():
         print(element)
+        # 'x'
+        # 'y'
 
-    for element in slownik:
-        # for domyślnie iteruje po kluczach
+    # for domyślnie iteruje po kluczach w ``dict``
+    for element in my_dict:
         print(element)
+        # 'x'
+        # 'y'
 
-    for key, value in slownik.items():
+    for key, value in my_dict.items():
         print(key, value)
+        # 'x', 1
+        # 'y', 2
 
 .. code-block:: python
 
     slownik = {'x': 1, 'y': 2}
+
+    # dobieranie sie do wartosci ``dict`` za pomoca klucza
     for element in slownik:
+        slownik.get(element))
+        slownik[element]
+        # '1'
+        # '2'
 
-        # dobieranie sie do wartosci slownika za pomoca klucza
-        print(slownik.get(element))
-        print(slownik[element])
-
-        # get zwraca wartość w słowniku dla klucza
-        {'x': 1, 'y': 2}[element]
-        {'x': 1, 'y': 2}.get(element)
 
 Pętla ``while``
 ===============
@@ -127,8 +181,18 @@ Pętla while wykonuje się dopóki argument jest prawdą.
     x = 0
 
     while x <= 10:
-        print(f'Value is: {x}')
-        x = x + 1
+        print(x)
+        x += 1
+
+.. code-block:: python
+
+    while True:
+        pass
+
+Słowa kluczowe w pętlach
+========================
+* ``break`` - powoduje przerwanie pętli.
+* ``continue`` - powoduje przerwanie aktualnie wykonywanej iteracji.
 
 .. code-block:: python
 
@@ -137,13 +201,6 @@ Pętla while wykonuje się dopóki argument jest prawdą.
 
         if number:
             break
-
-
-Słowa kluczowe w pętlach
-========================
-* ``break`` - powoduje przerwanie pętli.
-* ``continue`` - powoduje przerwanie aktualnie wykonywanej iteracji.
-
 
 Inline ``for``
 ==============
@@ -159,6 +216,7 @@ Prosty przykład
 .. code-block:: python
 
     cyfry = []
+
     for x in range(0, 10):
         cyfry.append(x)
 
@@ -172,12 +230,12 @@ Do takiego iteratora można także dodać instrukcję warunkową.
 .. code-block:: python
 
     parzyste = [x for x in range(0, 10) if x % 2 == 0]
-    parzyste = [x for x in range(0, 10) if not x % 2]
     # [0, 2, 4, 6, 8]
 
 .. code-block:: python
 
     cyfry = []
+
     for x in range(0, 10):
         if x % 2 == 0:
             cyfry.append(x)
@@ -191,32 +249,35 @@ Najczęściej wykorzystuje się tą konstrukcję aby zaaplikować funkcję dla k
 
 .. code-block:: python
 
-    floaty = [float(x) for x in range(0, 10)]
-    parzyste = [float(x) for x in range(0, 10) if x % 2 == 0]
+    float_list = [float(x) for x in range(0, 10)]
+    even_list = [float(x) for x in range(0, 10) if x % 2 == 0]
 
 .. code-block:: python
 
-    def czy_parzysta(cyfra):
-        if cyfra % 2 == 0:
-            czy_parzysta = True
+    def is_even(number):
+        if number % 2 == 0:
+            return True
         else:
-            czy_parzysta = False
-        return {'cyfra': cyfra, 'czy_parzysta': czy_parzysta}
+            return False
 
-    parzyste = [czy_parzysta(x) for x in range(0, 10)]
+    parzyste = [float(x) for x in range(0, 10) if is_even(x)]
 
-    [
-        {'cyfra': 0, 'czy_parzysta': True},
-        {'cyfra': 1, 'czy_parzysta': False},
-        {'cyfra': 2, 'czy_parzysta': True},
-        {'cyfra': 3, 'czy_parzysta': False},
-        {'cyfra': 4, 'czy_parzysta': True},
-        {'cyfra': 5, 'czy_parzysta': False},
-        {'cyfra': 6, 'czy_parzysta': True},
-        {'cyfra': 7, 'czy_parzysta': False},
-        {'cyfra': 8, 'czy_parzysta': True},
-        {'cyfra': 9, 'czy_parzysta': False}
-     ]
+.. code-block:: python
+
+    def is_even(number):
+        if cyfra % 2 == 0:
+            return {'number': number, 'status': 'even'}
+        else:
+            return {'number': number, 'status': 'odd'}
+
+    [is_even(x) for x in range(0, 5)]
+    # [
+    #    {'number': 0, 'status': 'even'},
+    #    {'number': 1, 'status': 'odd'},
+    #    {'number': 2, 'status': 'even'},
+    #    {'number': 3, 'status': 'odd'},
+    #    {'number': 4, 'status': 'even'},
+    # ]
 
 Porównanie z pętlą ``for``
 --------------------------
@@ -229,33 +290,43 @@ Przykład praktyczny z życia
     paths = []
     for record in line.split(':'):
         if record.startswith('/'):
-            paths.append()
+            paths.append(record)
     print(paths)
     # ['/home/jose', '/bin/bash']
 
 .. code-block:: python
 
-    paths = [record for record in line.split(':') if record.startswith('/')]
-    print(paths)
+    [record for record in line.split(':') if record.startswith('/')]
     # ['/home/jose', '/bin/bash']
 
 .. code-block:: python
 
     # this is how you might find this in real world
-    paths = [x for x in line.split(':') if x.startswith('/')]
-    print(paths)
+    [x for x in line.split(':') if x.startswith('/')]
     # ['/home/jose', '/bin/bash']
-
 
 Inline ``for`` to nie tylko lista
 ---------------------------------
 .. code-block:: python
 
-    {float(x) for x in range(0, 5)}
-    # set {1.0, 2.0, 3.0, 4.0}
+    {pow(x) for x in range(0, 5)}
+    # set {1, 2, 4, 9, 16}
 
-    {x: float(x) for x in range(0, 5)}
-    # dict {1: 1.0, 2: 2.0, 3: 3.0, 4: 4.0}
+    {x: pow(x) for x in range(0, 5)}
+    # dict {1:1, 2:4, 3:9, 4:16}
+
+    {pow(x): x for x in range(0, 5)}
+    # dict {1:1, 4:2, 9:3, 16:4}
+
+.. code-block:: python
+
+    my_dict = {'x': 1, 'y': 2}
+
+    {value: key for key, value in my_dict.items()}
+    # dict {1:'x', 2:'y'}
+
+    {v:k for k,v in my_dict.items()}
+    # dict {1:'x', 2:'y'}
 
 Zadania kontrolne
 =================

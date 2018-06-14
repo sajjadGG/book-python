@@ -56,3 +56,14 @@ Inne
 * Jeżeli coś ``collections.deque`` - Double ended Queue
 * Serializowane kolejki przy wielowątkowości
 * Uwaga na set zawierający floaty, bo pomiędzy dwoma wartościami jest nieskończona ilość wyrażeń
+
+.. code-block:: python
+
+    range(0, 2)
+    # 0
+    # 1
+    # 2
+    # 3
+    # 4
+
+    range(0.0, 5.0)

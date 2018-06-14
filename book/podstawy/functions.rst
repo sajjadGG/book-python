@@ -6,7 +6,6 @@ Funkcje
 
 Funkcje pozwalają na wielokrotne używanie tego samego kodu. Znacznie poprawiają także czytelność kodu i go porządkują.
 
-
 Definiowanie funkcji
 ====================
 .. code-block:: python
@@ -16,13 +15,99 @@ Definiowanie funkcji
 
 Konwencja nazewnicza funkcji
 ============================
+#. Nie robimy CamelCase
+#. Używanie ``_`` w nazwach (snake_case)
+#. Funkcje o nazwie zaczynającej się od ``_`` przez konwencję są traktowane jako prywatne (w Pythonie nie ma private/protected/public).
+#. Funkcje o nazwie zaczynającej się od ``__`` i kończących się na ``__`` przez konwencję są traktowane jako systemowe.
+#. Nazwy opisowe funkcji
+#. ``print_()``
+#. ``__nazwa_funkcji()``
 
-* CamelCase? Nie?! Używanie ``_`` w nazwach (snake_case)
-* Funkcje o nazwie zaczynającej się od ``_`` przez konwencję są traktowane jako prywatne (w Pythonie nie ma private/protected/public).
-* Funkcje o nazwie zaczynającej się od ``__`` i kończących się na ``__`` przez konwencję są traktowane jako systemowe.
-* Nazwy opisowe funkcji
-* ``nazwa_funkcji_()``
-* ``__nazwa_funkcji()``
+Zwracanie wartości
+==================
+#. Słowo kluczowe ``return`` wskazuje funkcji jaką wartość ma dana funkcja zwrócić.
+#. Wykonanie linii ze słowem kluczowym ``return`` kończy wykonywanie funkcji.
+
+.. code-block:: python
+
+    def sum(a, b):
+        return a + b
+
+    sum(2, 3)
+    # 5
+
+Zwracanie wartości prostych
+---------------------------
+.. code-block:: python
+
+    def zwracanie_stringow():
+        return 'José Jiménez'
+
+    def zwracanie_bool():
+        return True
+
+    def zwracanie_wartosci_pustej():
+        return None
+
+    def zwracanie_niejawne():
+        # Python always return something, in this case ``return None``
+        pass
+
+    def zwracanie_dict():
+        return {'imie': 'José', 'nazwisko': 'Jiménez'}
+
+    def zwracanie_tupli_1():
+        return 1, 'foobar'
+
+    def zwracanie_tupli_2():
+        return (5, 10, 15, 'foobar')
+
+    def zwracanie_listy():
+        return [1, 2.5, 'foobar']
+
+Zwracanie typów złożonych
+-------------------------
+.. code-block:: python
+
+    def zwracanie_zlozone():
+        return [
+            {'imie': 'Max', 'nazwisko': 'Peck'},
+            {'imie': 'Иван', 'nazwisko': 'Иванович'},
+            {'imie': 'José', 'nazwisko': 'Jiménez'},
+        ]
+
+Zwracanie funkcji
+-----------------
+.. code-block:: python
+
+    def returns_str():
+        return 'José Jiménez'
+
+    def returns_callable():
+        return returns_str
+
+
+    my_data = returns_callable()
+    # <function __main__.returns_str()>
+
+    my_data()
+    # 'José Jiménez'
+
+Przykład z życia:
+.. code-block:: python
+
+    import datetime
+
+    print(datetime.datetime.now())
+
+    now = datetime.datetime.now
+    print(now())
+    print(now())
+
+    now = datetime.datetime.now()
+    print(now)
+    print(now)
+
 
 Argumenty do funkcji
 ====================
@@ -30,11 +115,11 @@ Argumenty funkcji to wartości na których ta funkcja wykonuje operacje. W ideal
 
 .. code-block:: python
 
-    >>> def dodaj(a, b):
-    ...    return a + b
+    def add(a, b):
+        return a + b
 
-    >>> dodaj(1, 2)
-    3
+    add(1, 2)
+    # 3
 
 Typowanie
 ---------
@@ -56,119 +141,63 @@ Każdy argument ma swoją nazwę przez którą uzyskujemy dostęp do wartości a
 
 .. code-block:: python
 
-    >>> def podziel(a, b):
-    ...     return a / b
+    def substract(a, b):
+        return a - b
 
-    >>> podziel(a=1, b=2)
-    0.5
+    substract(a=0, b=1)
+    # -1
 
-    >>> podziel(b=2, a=1)
-    0.5
+    substract(0, b=1)
+    # -1
 
+    substract(b=1, a=0)
+    # -1
+
+    substract(1, 0)
+    # 0
 
 Argumenty z wartością domyślną
 ------------------------------
-Argument funkcji może mieć także wartość domyślną, z której funkcja skorzysta jeżeli użytkownik nie zdefiniuje tego argumentu. Argumenty z wartością domyślną muszą być skrajnie po prawej stronie.
+#. Argument funkcji może mieć wartość domyślną.
+#. Funkcja przyjmie tą wartość jeżeli użytkownik nie zdefiniuje tego argumentu.
+#. Argumenty z wartością domyślną muszą być skrajnie po prawej stronie.
 
 .. code-block:: python
 
-    >>> def hello(tekst='hello world'):
-    ...     print(tekst)
+    def echo(text='default string'):
+         print(text)
 
-    >>> hello(tekst='ehlo')
-    ehlo
+    echo('my string')
+    # my string
 
-    >>> hello()
-    hello world
+    echo(text='my string')
+    # my string
+
+    echo()
+    # default string
 
 .. code-block:: python
 
-    def server(host, user, password, port=1337):
-        print(locals())
+    def server(username, password, host='127.0.0.1', port=80, ssl=True):
+        print(f'host={host}, username={username}, password={password}, port={port}, ssl={ssl})
 
 
-    # kolejność ma znaczenie
-    # łatwo się pomylić
-    server('localhost', 'admin', 'admin')
+    # Kolejność ma znaczenie i łatwo się pomylić
+    # Trudno również powiedzieć co znaczy ostatni parametr True
+    server('admin', 'admin', 'localhost', 80, True)
 
-    # argumenty definiowane są jawnie
-    # trudniej się pomylić
+    # argumenty definiowane są jawnie i trudniej się pomylić
     # kod jest bardziej przejrzysty
     # dla nazwanych argumentów kolejność nie ma znaczenia
-    server(host='localhost', user='admin', password='admin')
+    server(host='localhost', user='admin', password='admin', ssl=True)
 
     server(
         host='localhost',
         user='admin',
         password='admin',
-        port=31337,
+        port=443,
+        ssl=True,
     )
-
-.. code-block:: python
-
-    jira = Jira(
-        url='http://localhost:8080',
-        username='admin',
-        password='admin',
-        ssl_verify=False)
-
-    # Zdecydowanie mniej czytelny zapis
-    # Szczególnie nie wiadomo co False na koncu znaczy
-    jira = Jira('http://localhost:8080', 'admin', 'admin', False)
-
-Zwracanie wartości
-==================
-
-Zwracanie wartości prostych
----------------------------
-
-.. code-block:: python
-
-    def zwracanie_stringow():
-        return 'Иван Иванович'
-
-    def zwracanie_bool():
-        return True
-
-    def zwracanie_wartosci_pustej():
-        return None
-
-    def zwracanie_niejawne():
-        # Python always return something, in this case ``return None``
-        pass
-
-    def zwracanie_dict():
-        return {'imie': 'José', 'nazwisko': 'Jiménez'}
-
-    def zwracanie_tupli_1():
-        return 10, 20.6, 30, 5, 'foobar'
-
-    def zwracanie_tupli_2():
-        return (10, 20.6, 30, 5, 'foobar')
-
-    def zwracanie_listy():
-        return [10, 20.6, 'foobar']
-
-Zwracanie typów złożonych
--------------------------
-.. code-block:: python
-
-    def zwracanie_zlozone():
-        return [
-            {'imie': 'Max', 'nazwisko': 'Peck'},
-            {'imie': 'Иван', 'nazwisko': 'Иванович'},
-            {'imie': 'José', 'nazwisko': 'Jiménez'},
-        ]
-
-Zwracanie funkcji
------------------
-.. code-block:: python
-
-    def zwracanie_stringow():
-        return 'Иван Иванович'
-
-    def zwracanie_funkcji():
-        return zwracanie_stringow
 
 Rekurencja
 ==========
@@ -212,6 +241,11 @@ Konwersja liczby na zapis słowny
         >>> int_to_str(13.37)
         'thirteen and thirty seven hundredths'
 
+:Założenia:
+    * Nazwa programu: ``functions-int-to-str.py``
+    * Szacunkowa długość kodu: około 15 linii
+    * Maksymalny czas na zadanie: 15 min
+
 :Wymagania:
     * max 6 cyfr przed przecinkiem
     * max 5 cyfr po przecinku
@@ -235,6 +269,11 @@ Prosta memoizacja
 
 #. Porównaj prędkość działania z obliczaniem na bieżąco dla parametru 500
 
+:Założenia:
+    * Nazwa programu: ``functions-memoize.py``
+    * Szacunkowa długość kodu: około 5 linii
+    * Maksymalny czas na zadanie: 15 min
+
 :Podpowiedź:
     .. code-block:: python
 
@@ -257,3 +296,7 @@ Rzymskie
     * Sprawdzanie czy element istnieje w ``dict``
     * Rzutowanie i konwersja typów
 
+:Założenia:
+    * Nazwa programu: ``functions-roman.py``
+    * Szacunkowa długość kodu: około 15 linii
+    * Maksymalny czas na zadanie: 15 min

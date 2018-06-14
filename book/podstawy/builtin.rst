@@ -4,7 +4,6 @@ Funkcje wbudowane i słowa kluczowe
 
 Słowa kluczowe
 ==============
-
 Słowa kluczowe (keywords) to wyrazy zarezerwoane do użytku Pythona. Nie można użyć słowa kluczowego jako nazwy zmiennej, nazwy funkcji czy innego identyfikatora. Każdy ze słów kluczowych odgrywa ważną rolę w tym języku. Lista słów kluczowych może być uzyskana wpisując:
 
 .. code-block:: python
@@ -12,10 +11,8 @@ Słowa kluczowe (keywords) to wyrazy zarezerwoane do użytku Pythona. Nie można
     import keyword
     print(keyword.kwlist)
 
-
 ``import``
 ----------
-
 Biblioteki w Pythonie są pogrupowane w moduły. Słowo kluczowe ``import`` służy do importowania modułów do naszej przetrzeni nazw. Przestrzeń nazw (namespace) zawiera wszystkie zmienne (również funkcje i klasy), które zadeklarowaliśmy w trakcie działania programu. ```import`` to Pythonowy odpowiednik np. dyrektywy ``#include<nazwa_biblioteki>`` z C++.
 
 .. code-block:: python
@@ -46,8 +43,6 @@ W pierwszej linijce importujemy moduł ``keyword``. W drugiej linijce wypisujemy
 
 W tym przykładzie, z modułu ``keyword`` importujemy jedynie zmienną ``kwlist``. Przy takiej składni warto wspomnieć, że zmniejsza ona czytelność, nie podnosząc wcale efektywności kodu. Interpreter i tak wczyta najpierw całą zawartość modułu, następnie stworzy nową zmienną ``kwlist``, której przypisze odpowiednią wartość. Taki zapis zmniejsza czytelność kodu i zwiększa prawdopodobieństwo błędu.  Używając zapisu ``import module`` i następnie ``module.variable`` jendoznacznie wskazujemy z jakiego modułu korzystamy.
 
-
-
 .. code-block:: python
 
     from . import module
@@ -56,17 +51,23 @@ W tym przykładzie, z modułu ``keyword`` importujemy jedynie zmienną ``kwlist`
     from .module import submodule
     from ..module import submodule
 
-
 ``pass``
 --------
-
 Python domyślnie oczekuje wcięcia po dwukropku. Jeżeli chcemy zostawić klasę czy funkcję pustą, korzystamy wtedy ze słowa kluczowego ``pass``.
 
 .. code-block:: python
 
-    class User:
+    def my_function():
         pass
 
+.. code-block:: python
+
+    # Python always return something, in this case ``return None``
+    def my_function():
+        pass
+
+    my_var = my_function()
+    # None
 
 ``continue``
 ------------
@@ -88,7 +89,6 @@ Słowo kluczowe ``continue`` powoduje przerwanie aktualnie wykonywanej pętli i 
     20
     25
 
-
 .. code-block:: python
 
     for i in range(1, 30):
@@ -102,7 +102,6 @@ Słowo kluczowe ``continue`` powoduje przerwanie aktualnie wykonywanej pętli i 
             print('podzielny przez 4')
         else:
             print('asdasd')
-
 
 ``break``
 ---------
@@ -118,20 +117,6 @@ Słowo kluczowe ``break`` przerywa aktualnie wykonywaną pętlę.
     ...     print(number)
     0
 
-``return``
-----------
-
-Słowo kluczowe ``return`` wskazuje funkcji jaką wartość ma dana funkcja zwrócić. Wykonanie linii ze słowem kluczowym ``return`` kończy wykonywanie funkcji.
-
-.. code-block:: python
-
-    >>> def sum(a, b):
-    ...     return a + b
-    ...
-    >>> sum(2, 3)
-    5
-
-
 .. code-block:: python
 
     >>> def sum(a, b):
@@ -140,7 +125,6 @@ Słowo kluczowe ``return`` wskazuje funkcji jaką wartość ma dana funkcja zwr�
     ...
     >>> sum(2, 3)
     5
-
 
 ``__file__``
 ------------
@@ -171,7 +155,6 @@ Przykład z życia:
 
     log = logging.getLogger(__name__)
 
-
 .. code-block:: python
 
     def run():
@@ -185,7 +168,6 @@ Przykład z życia:
 
 Funkcje wbudowane
 =================
-
 Funkcje wbudowane to funkcje dostępne domyślnie w języku Python.
 
 ``print()``
@@ -251,7 +233,6 @@ W Pytonie2, print jest słowem kluczowym - nie wymaga użycia nawiasów. Ale dla
     print(numbers)
     # [3, 2, 1]
 
-
 ``range()``
 -----------
 Tworzy **iterator**, który zwraca liczby w sekwencji. Jedna z rzeczy, która uległa zmianie od Pythona2, w którym range zwracał sekwencję liczb zamiast iteratora.
@@ -271,9 +252,6 @@ Tworzy **iterator**, który zwraca liczby w sekwencji. Jedna z rzeczy, która ul
     >>> numbers = list(numbers_generator)
     >>> print(numbers)
     [0, 1, 2, 3, 4]
-
-
-
 
 ``isinstance()``
 ----------------
@@ -330,7 +308,6 @@ Długość listy, tuple, stringa itp.
 
 ``input()``
 -----------
-
 Pozwala użytkownikowi wpisać tekst.
 
 .. code-block:: python
@@ -360,7 +337,6 @@ Czasami trzeba oczyścić dane, np. usuwając zbędne spacje na początku i koń
 
 ``bin()``
 ---------
-
 Konwertuje liczbę na binarną.
 
 .. code-block:: python
@@ -373,7 +349,6 @@ Konwertuje liczbę na binarną.
 
 ``hex()``
 ---------
-
 Konwertuje liczbę na hex.
 
 .. code-block:: python
@@ -383,7 +358,6 @@ Konwertuje liczbę na hex.
 
 ``oct()``
 ---------
-
 Konwertuje liczbę na oct.
 
 .. code-block:: python

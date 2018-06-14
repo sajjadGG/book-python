@@ -148,6 +148,12 @@ Zbiory i operacje na nich
     for element in my_set:  # Można po nim iterować
         print(element)
 
+.. code-block:: python
+
+    names = ['Max', 'Ivan', 'Jose', 'Max']
+    unique_names = set(imiona)
+    # {'Jose', 'Ivan', 'Max'}
+
 ``dict`` - Słownik
 ------------------
 .. code-block:: python
