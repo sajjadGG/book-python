@@ -380,10 +380,14 @@ Zmienne i typy
 #. Napisz program, który poprosi użytkownika o imie i ładnie go przywita wyświetlając 'hello IMIE'.
 #. Zamiast spacji użyj przecinka
 
+:Założenia:
+    * Nazwa programu: ``simple-hello.py``
+    * Szacunkowa długość kodu: około 2 linie
+    * Maksymalny czas na zadanie: 5 min
+
 :Podpowiedź:
     * Użyj podawania stringów po przecinku ``print(str, str)`` oraz parametru ``sep``
     * Użyj f-string formatting dla Python >= 3.6
-    * ``input()``
 
 .. note:: Pobaw się opcjami w IDE:
 
@@ -394,20 +398,28 @@ Zmienne i typy
 
 Wyrazy
 ------
-Napisz program, który na podstawie paragrafu tekstu "Lorem Ipsum" podzieli go na zdania i dla każdego zdania wyświetli ile jest w nim wyrazów::
+#. Napisz program, który na podstawie paragrafu tekstu "Lorem Ipsum" podzieli go na zdania
+#. Kropka rozdziela zdania
+#. Spacja oddziela wyrazy w zdaniu
+#. Dla każdego zdania wyświetli ile jest w nim wyrazów::
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 :Założenia:
-    * kropka rozdziela zdania
-    * spacja oddziela wyrazy w zdaniu
+    * Nazwa programu: ``simple-split.py``
+    * Szacunkowa długość kodu: około 3 linie
+    * Maksymalny czas na zadanie: 5 min
+
+:Co zadanie sprawdza:
+    * dzielenie stringów
+    * sprawdzanie długości linii
+    * iterowanie po elementach w tablicy
 
 :Podpowiedź:
-    * ``str.split()``
-    * ``len()``
+    * ``len(...)`` - Length of the list
     * .. code-block:: python
 
-        lista = ['Max', 'Peck']
+        lista = ['Element 1', 'Element 2']
 
         for element in lista:
             print(element)

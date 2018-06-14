@@ -49,13 +49,16 @@ Zbiory i operacje na nich
 .. code-block:: python
 
     >>> my_tuple = (1, 2, 3, 4, 5)
-    >>> a, b = 1, 4
 
-    >>> my_tuple[slice(a,b)]  # definiowanie za pomocą komendy
-    (2, 3, 4)
+    MIN = 1
+    MAX = 5
 
-    >>> my_tuple[a:b]  # to samo
-    (2, 3, 4)
+    zmienna = slice(MIN, MAX)
+    my_tuple[zmienna]
+    # (2, 3, 4)
+
+    my_tuple[MIN:MAX]  # to samo
+    # (2, 3, 4)
 
 
 ``list`` - Lista
@@ -93,75 +96,81 @@ Zbiory i operacje na nich
 ---------------
 .. code-block:: python
 
-    >>> my_set = {1}
-    {1}
+    my_set = {1}
+    # {1}
 
-    >>> {1, 3, 1}
-    {1, 3}
+    {1, 3, 1}
+    # {1, 3}
 
-    >>> set([1, 3, 1])
-    {1, 3}
-
-.. code-block:: python
-
-    >>> my_set = {1, 2, 3}
-    {1, 2, 3}
-
-    >>> my_set.add(4)
-    >>> my_set.add(4)
-    >>> my_set.add(3)
-    {1, 2, 3, 4}
-
-    # Operacje na zbiorach
-    >>> {1,2} - {2,3}  # Różnica
-    {1}
-
-    >>> {1,2} | {2,3}  # Suma
-    {1, 2, 3}
-
-    >>> {1,2} & {2,3}  # Iloczyn
-    {2}
-
-    >>> {1,2} ^ {2,3}  # Różnica symetryczna
-    {1, 3}
+    set([1, 3, 1])
+    # {1, 3}
 
 .. code-block:: python
 
-    >>> my_set = {1, 2, 3}
+    my_set = {1, 2, 3}
+    # {1, 2, 3}
 
-    >>> len(my_set)  # Liczność
-    3
+    my_set.add(4)
+    my_set.add(4)
+    my_set.add(3)
+    # {1, 2, 3, 4}
 
-    >>> 1 in my_set  # Przynależność
-    True
+.. code-block:: python
 
-    >>> for i in my_set:  # Można po nim iterować
-    ...    print(i)
-    ... print(my_set + {3,4}) # Ale już nie ma złożenia, są za to operacje na zbiorach
+    {1,2} - {2,3}  # Różnica
+    # {1}
 
+    {1,2} | {2,3}  # Suma
+    # {1, 2, 3}
+
+    {1,2} & {2,3}  # Iloczyn
+    # {2}
+
+    {1,2} ^ {2,3}  # Różnica symetryczna
+    # {1, 3}
+
+    {1,2} + {3,4}
+    # Traceback (most recent call last):
+    #    ...
+    # TypeError: unsupported operand type(s) for +: 'set' and 'set'
+
+.. code-block:: python
+
+    my_set = {1, 2, 3}
+    len(my_set)  # Liczność
+    # 3
+
+    1 in my_set  # Przynależność
+    # True
+
+    for element in my_set:  # Można po nim iterować
+        print(element)
 
 ``dict`` - Słownik
 ------------------
 .. code-block:: python
 
     my_dict = {
-        "imie": "José",
-        "nazwisko": 'Jiménez',
-        'wiek': 10,
-        'adresy': ['NASA KSC', 'NASA JSC'],
+        "first_name": "José",
+        "last_name": 'Jiménez',
+        'age': 30,
+        'locations': ['Cape Canaveral', 'Houston'],
+        1: 'value for one',
     }
 
-    >>> print(my_dict['nazwisko'])
-    'Jiménez'
+    my_dict['last_name']
+    # 'Jiménez'
 
-    >>> print(my_dict['adresy'])
-    ['NASA KSC', 'NASA JSC']
+    my_dict['locations']
+    # ['Cape Canaveral', 'Houston']
+
+    my_dict[1]
+    # 'value for one'
 
 .. code-block:: python
 
-    >>> my_dict = {'wiek': 20, 'wiek': 30, 'imie': 'José', 'nazwisko': 'Jiménez'}
-    {'imie': 'José', 'nazwisko': 'Jiménez', 'wiek': 30}
-
+    >>> my_dict = {'wiek': 20, 'wiek': 30}
+    {'wiek': 30}
 
 .. code-block:: python
 
@@ -171,10 +180,10 @@ Zbiory i operacje na nich
     dict_keys(['wiek', 'imie', 'nazwisko'])
 
     >>> my_dict.values()
-    dict_values([20, 'José', 'Jiménez'])
+    dict_values([30, 'José', 'Jiménez'])
 
     >>> my_dict.items()
-    dict_items([('wiek', 20), ('imie', 'José'), ('nazwisko', 'Jiménez')])
+    dict_items([('wiek', 30), ('imie', 'José'), ('nazwisko', 'Jiménez')])
 
 .. note:: przy wyświetlaniu elementów słownika, kolejność może się zmieniać!
 
@@ -185,20 +194,10 @@ Należy zwrócić uwagę, aby nie pomylić z dictem:
 .. code-block:: python
 
     {}  # dict
-    {'key': 'value'}  # dict
-    {'value'}  # set
-    {'key', 'value'}  # set
-
-.. code-block:: python
-
-    >>> what = {}
-    <class 'dict'>
-
-    >>> what = {'id'}
-    <class 'set'>
-
-    >>> what = {'id': 1}
-    <class 'dict'>
+    {1}  # set
+    {1, 2}  # set
+    {1: 2} # dict
+    {1:1, 2:2} # dict
 
 .. code-block:: python
 
@@ -210,13 +209,13 @@ Należy zwrócić uwagę, aby nie pomylić z dictem:
     >>> isinstance(my_data, set)
     False
 
-    >>> my_data = {'value'}
+    >>> my_data = {1}
     >>> isinstance(my_data, set)
     True
     >>> isinstance(my_data, dict)
     False
 
-    >>> my_data = {'key': 'value'}
+    >>> my_data = {1: 1}
     >>> isinstance(my_data, set)
     False
     >>> isinstance(my_data, dict)
