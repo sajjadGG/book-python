@@ -142,11 +142,13 @@ Podstawowe użycie jest następujące.
 Zadania kontrolne
 =================
 
-Obliczanie odległości między dwoma punktami - Eucledean Distance
-----------------------------------------------------------------
-Dla dwóch (constant) punktów :math:`A` i :math:`B` o podanych koordynatach napisz program, który obliczy odległość między nimi wykorzystując algorytm Euclidesa.
-
-Napisz tę funkcję tak, żeby przeszła doctest:
+Obliczanie odległości między dwoma punktami
+-------------------------------------------
+#. Dane są dwa punkty :math:`A` i :math:`B` o podanych koordynatach ``tuple``
+#. Punkty :math:`A` i :math:`B` są dwuwymiarowe``(x, y)``
+#. Oblicz odległość między nimi
+#. Wykorzystaj algorytm Euclidesa
+#. Funkcja musi przechodzić ``doctest``
 
 .. code-block:: python
 
@@ -164,33 +166,42 @@ Napisz tę funkcję tak, żeby przeszła doctest:
         >>> euclidean_distance((0,10), (1,1))
         9.055385138137417
         """
-        return ...
+        pass
 
-:Zadanie z gwiazdką:
-    Przekształć algorytm tak, aby działał w :math:`N` wymiarowej przestrzeni.
+:Założenia:
+    * Nazwa programu: ``functions-eucledean-2d.py``
+    * Szacunkowa długość kodu: około 5 linii
+    * Maksymalny czas na zadanie: 15 min
 
-    .. code-block:: python
+Obliczanie odległości między dwoma punktami
+-------------------------------------------
+#. Dane są dwa punkty :math:`A` i :math:`B` o podanych koordynatach ``tuple``
+#. Punkty :math:`A` i :math:`B` są na :math:`N`-wymiarowej przestrzeni ``(x, y, ...)``
+#. Punkty :math:`A` i :math:`B` muszą być równowymiarowe
+#. Funkcja musi przechodzić ``doctest``
 
-        def euclidean_distance_n_dimensions(A, B):
-            """
-            >>> euclidean_distance_n_dimensions((0,0,0), (0,0,0))
-            0.0
+.. code-block:: python
 
-            >>> euclidean_distance_n_dimensions((0,0,0), (1,1,1))
-            1.7320508075688772
+    def euclidean_distance_n_dimensions(A, B):
+        """
+        >>> euclidean_distance_n_dimensions((0,0,0), (0,0,0))
+        0.0
 
-            >>> euclidean_distance_n_dimensions((0,1,0,1), (1,1,0,0))
-            1.4142135623730951
+        >>> euclidean_distance_n_dimensions((0,0,0), (1,1,1))
+        1.7320508075688772
 
-            >>> euclidean_distance_n_dimensions((0,0,1,0,1), (1,1,0,0,1))
-            1.7320508075688772
+        >>> euclidean_distance_n_dimensions((0,1,0,1), (1,1,0,0))
+        1.4142135623730951
 
-            >>> euclidean_distance_n_dimensions((0,0,1,0,1), (1,1))
-            Traceback (most recent call last):
-                ...
-            ValueError: Punkty muszą być w przestrzeni tylu-samo wymiarowej
-            """
-            return ...
+        >>> euclidean_distance_n_dimensions((0,0,1,0,1), (1,1,0,0,1))
+        1.7320508075688772
+
+        >>> euclidean_distance_n_dimensions((0,0,1,0,1), (1,1))
+        Traceback (most recent call last):
+            ...
+        ValueError: Punkty muszą być w przestrzeni tylu-samo wymiarowej
+        """
+        pass
 
 .. figure:: ../machine-learning/img/k-nearest-neighbors-euclidean-distance.png
     :scale: 100%
@@ -198,14 +209,103 @@ Napisz tę funkcję tak, żeby przeszła doctest:
 
     Wyliczanie odległości w celu oszacowania przynależności do zbioru. Zwróć uwagę, że bez względu na ilość wymiarów wzór się niewiele różni.
 
-:Zadanie z gwiazdką 2:
-    Wygeneruj 100 losowych punktów (rozkład gaussa o średniej 0, dowolnym odchyleniu standardowym(np. 0.2)) wokół dwóch dowolnie wybranych punktów (np. A=[0, 1], B=[2, 4]).
+:Założenia:
+    * Nazwa programu: ``functions-eucledean-ndim.py``
+    * Szacunkowa długość kodu: około 10 linii
+    * Maksymalny czas na zadanie: 15 min
 
-Napisz do tego celu funkcję, która przejdzie doctest:
+Mnożenie macierzy
+-----------------
+#. Napisz program mnożący macierze
+#. Mnożenie macierzy wykorzystując ``for``
+#. Używając operatora ``@``
+#. Używając ``numpy``
 
 .. code-block:: python
 
-    def random_point(center, std=0.2):
+    def matrix_multiplication(A, B):
+        """
+        >>> A = [[1, 0], [0, 1]]
+        >>> B = [[4, 1], [2, 2]]
+        >>> matrix_multiplication(A, B)
+        [[4, 1], [2, 2]]
+        """
+        pass
+
+:Założenia:
+    * Nazwa programu: ``math-matrix.py``
+    * Szacunkowa długość kodu: około 6 linii
+    * Maksymalny czas na zadanie: 20 min
+
+:Podpowiedź:
+    * macierz zerowa
+    * trzy pętle
+
+Przeliczenia trygonometryczne
+-----------------------------
+Napisz program, który wczyta od użytkownika wielkość kąta w stopniach i wyświetli wartość czterech podstawowych funkcji trygonometrycznych (sin, cos, tg, ctg) o ile dla danego kąta jest to możliwe.
+
+:Zadanie z gwiazdką:
+    Jeżeli funkcja trygonometryczna nie istnieje dla danego kąta, zwróć wyjątek ``ValueError('dla tego kąta wartośćfunkcji nie istnieje')``
+
+:Założenia:
+    * Nazwa programu: ``math-trigonometry.py``
+    * Szacunkowa długość kodu: około 10 linii
+    * Maksymalny czas na zadanie: 10 min
+
+:Podpowiedź:
+    * ``raise``
+
+Lotto
+-----
+#. Napisz program, który wyświetli 6 losowych i nie powtarzających się liczb z zakresu od 1 do 49.
+#. Czym sa liczby pseudolosowe?
+#. Czy da się stworzyć program czysto losowy?
+#. Dlaczego?
+
+:Założenia:
+    * Nazwa programu: ``functions-random-number.py``
+    * Szacunkowa długość kodu: około 5 linii
+    * Maksymalny czas na zadanie: 10 min
+
+:Podpowiedź:
+    * ``random.randrange()``
+    * ``random.sample()``
+    * Czytelny cod obu przykładów wraz z białymi liniami nie powinien zająć więcej niż 10 linii.
+
+:Co zadanie sprawdza?:
+    * Umiejętność wykorzystania gotowych funkcji w zewnętrznej bibliotece
+    * Umiejętność wyszukania informacji na temat API funkcji w dokumentacji języka i jego odpowiedniej wersji
+    * Stworzenie dwóch alternatywnych podejść do rozwiązania zadania
+    * Porównanie czyletlności obu rozwiązań
+    * Umiejętność sprawdzania czy coś znajduje się w liście oraz ``continue``
+
+Pole trójkąta
+-------------
+#. Napisz program, który obliczy pole trójkąta.
+#. Użytkownik poda wysokość i długość podstawy tego trójkąta. Uwzględnij, że wysokość i długość podstawy mogą być liczbami niecałkowitymi. Wykorzystaj doctest do przetestowania funckji.
+
+:Założenia:
+    * Nazwa programu: ``functions-triangle.py``
+    * Szacunkowa długość kodu: około 5 linii
+    * Maksymalny czas na zadanie: 10 min
+
+:Co zadanie sprawdza?:
+    * Umiejętność wykorzystania gotowych funkcji w zewnętrznej bibliotece
+    * Umiejętność wyszukania informacji na temat API funkcji w dokumentacji języka i jego odpowiedniej wersji
+    * Stworzenie dwóch alternatywnych podejść do rozwiązania zadania
+    * Porównanie czyletlności obu rozwiązań
+
+
+Losowe punkty w przestrzeni
+---------------------------
+#. Wygeneruj 100 losowych punktów (rozkład gaussa o średniej 0, dowolnym odchyleniu standardowym(np. 0.2))
+#. Punkty muszą być wylosowane wokół dwóch dowolnie wybranych punktów (np. A=[0, 1], B=[2, 4]).
+#. Funkcja musi przechodzić ``doctest``
+
+.. code-block:: python
+
+    def random_point(center, std: int = 0.2):
         """
         >>> random.seed(1); random_point((0,0), std=0.2)
         (0.2576369506310926, 0.2898891217399542)
@@ -228,58 +328,7 @@ Korzystając z funkcji napisanej w ćwiczeniu powyżej oblicz odległość od ka
 
 Czy dwa wykresy są takie same? Co się stanie jeżeli będziemy zwiększali odchylenie standardowe przy generacji punktów? Albo przybliżymy do siebie punkty A i B?
 
-Mnożenie macierzy
------------------
-#. Napisz program mnożący macierze
-
-.. code-block:: python
-
-    def matrix_multiplication(A, B):
-        """
-        >>> a = [[1, 0], [0, 1]]
-        >>> b = [[4, 1], [2, 2]]
-        [[4, 1], [2, 2]]
-        """
-
-        return ...
-
-
-Przeliczenia trygonometryczne
------------------------------
-Napisz program, który wczyta od użytkownika wielkość kąta w stopniach i wyświetli wartość czterech podstawowych funkcji trygonometrycznych (sin, cos, tg, ctg) o ile dla danego kąta jest to możliwe.
-
-:Zadanie z gwiazdką:
-    Jeżeli funkcja trygonometryczna nie istnieje dla danego kąta, zwróć wyjątek ``ValueError('dla tego kąta wartośćfunkcji nie istnieje')``
-
-
-Lotto
------
-Napisz program, który wyświetli 6 losowych i nie powtarzających się liczb z zakresu od 1 do 49.
-
-:Podpowiedź:
-    * ``random.randrange()``
-    * ``random.sample()``
-    * Czytelny cod obu przykładów wraz z białymi liniami nie powinien zająć więcej niż 10 linii.
-
-:Pytania:
-    * Czym sa liczby pseudolosowe?
-    * Czy da się stworzyć program czysto losowy?
-    * Dlaczego?
-
-:Co zadanie sprawdza?:
-    * Umiejętność wykorzystania gotowych funkcji w zewnętrznej bibliotece
-    * Umiejętność wyszukania informacji na temat API funkcji w dokumentacji języka i jego odpowiedniej wersji
-    * Stworzenie dwóch alternatywnych podejść do rozwiązania zadania
-    * Porównanie czyletlności obu rozwiązań
-    * Umiejętność sprawdzania czy coś znajduje się w liście oraz ``continue``
-
-Pole trójkąta
--------------
-#. Napisz program, który obliczy pole trójkąta.
-#. Użytkownik poda wysokość i długość podstawy tego trójkąta. Uwzględnij, że wysokość i długość podstawy mogą być liczbami niecałkowitymi. Wykorzystaj doctest do przetestowania funckji.
-
-:Co zadanie sprawdza?:
-    * Umiejętność wykorzystania gotowych funkcji w zewnętrznej bibliotece
-    * Umiejętność wyszukania informacji na temat API funkcji w dokumentacji języka i jego odpowiedniej wersji
-    * Stworzenie dwóch alternatywnych podejść do rozwiązania zadania
-    * Porównanie czyletlności obu rozwiązań
+:Założenia:
+    * Nazwa programu: ``math-random-point.py``
+    * Szacunkowa długość kodu: około 15 linii
+    * Maksymalny czas na zadanie: 20 min
