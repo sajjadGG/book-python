@@ -24,50 +24,43 @@ Składnia
 Klasy
 -----
 .. literalinclude:: src/oop-class.py
-    :name: listing-oop-class
     :language: python
     :caption: Class
 
 Pola Statyczne
 --------------
-.. code-block:: python
-
-    class Pojazd:
-        marka = None
-        kierowca = None
-        kola = 4
-
-
-    auto = Pojazd()
+.. literalinclude:: src/oop-static-field.py
+    :language: python
+    :caption: Class
 
 .. code-block:: python
 
-    # Klasa
-    class Pojazd:
-        marka = None
-        kierowca = None
-        kola = 4
+    class Astronaut:
+        agency = 'NASA'
 
+    # Objects - Instances
+    ivan = Astronaut()
+    jose = Astronaut()
+    max = Astronaut()
 
-    # Obiekty
-    auto1 = Pojazd()
-    auto2 = Pojazd()
+    ivan.agency  # NASA
+    jose.agency  # NASA
+    max.agency   # NASA
+    Astronaut.agency  # NASA
 
-    print(auto1.kola)  # 4
-    print(auto2.kola)  # 4
-    print(Pojazd.kola) # 4
+    ivan.agency = 'Roscosmos'
 
-    auto1.kola = 6
+    ivan.agency  # Roscosmos
+    jose.agency  # NASA
+    max.agency   # NASA
+    Astronaut.agency  # NASA
 
-    print(auto1.kola)  # 6
-    print(auto2.kola)  # 4
-    print(Pojazd.kola) # 4
+    Astronaut.agency = 'ESA'
 
-    Pojazd.kola = 8
-
-    print(auto1.kola)  # 6
-    print(auto2.kola)  # 8
-    print(Pojazd.kola) # 8
+    ivan.agency  # Roscosmos
+    jose.agency  # ESA
+    max.agency   # ESA
+    Astronaut.agency  # ESA
 
 Pola dynamiczne
 ---------------
@@ -252,13 +245,6 @@ Dziedziczenie
     :language: python
     :caption: Inheritance
 
-Method Resolution Order - Diament dziedziczenia
------------------------------------------------
-.. literalinclude:: src/oop-mro.py
-    :name: listing-oop-mro
-    :language: python
-    :caption: Method Resolution Order
-
 Wielodziedziczenie
 ------------------
 .. literalinclude:: src/oop-multiple-inheritance.py
@@ -373,54 +359,6 @@ Dziedziczenie czy kompozycja?
 * Kompozycja ponad dziedziczenie!
 
 
-Polimorfizm
------------
-.. code-block:: python
-
-    >>> class Pojazd:
-    ...    def zatrab(self):
-    ...        raise NotImplementedError
-    ...
-    >>> class Motor(Pojazd):
-    ...     def zatrab(self):
-    ...         print('bip')
-    ...
-    >>> class Samochod(Pojazd):
-    ...     def zatrab(self):
-    ...         print('biiiip')
-    ...
-    >>> obj = Motor()
-    >>> obj.zatrab()
-    >>>
-    >>> obj = Samochod()
-    >>> obj.zatrab()
-
-.. note:: to jest alternatywa dla instrukcji ``switch``
-
-    .. code-block:: python
-
-        if obj == 'motor'
-            print('bip')
-        elif obj == 'samochod'
-            print('biiiip')
-        ...
-
-Interfejsy
-----------
-.. literalinclude:: src/oop-interface.py
-    :name: listing-oop-interface
-    :language: python
-    :caption: Interfejsy
-
-Klasy abstrakcyjne
-------------------
-Klasa abstrakcyjna to taka klasa, która nie ma żadnych instancji (w programie nie ma ani jednego obiektu, który jest obiektem tej klasy). Klasy abstrakcyjne są uogólnieniem innych klas, wykorzystuje się to często przy dziedziczeniu. Na przykład tworzy się najpierw abstrakcyjną klasę ``figura``, która definiuje, że figura ma pole oraz, że jest metoda, ktora to pole policzy na podstawie jedynie prywatnych zmiennych. Po klasie ``figura`` możemy następnie dziedziczyć tworząc klasy ``kwadrat`` oraz ``trójkąt``, które będą miały swoje instancje i na których będziemy wykonywali operacje.
-
-.. literalinclude:: src/oop-abstract-class.py
-    :name: listing-abstract-class
-    :language: python
-    :caption: Abstract Class
-
 ``super()``
 -----------
 Funkcja ``super`` pozwala uzyskać dostęp do obiektu po którym dziedziczymy, do jego parametrów statycznych i metod, które przeciążamy (m.in. funkcji ``__init__``).
@@ -438,132 +376,15 @@ Funkcja ``super`` pozwala uzyskać dostęp do obiektu po którym dziedziczymy, d
     ...     def jak_robi_samochod(self):
     ...         return super().zatrab()
 
-``@property`` i ``@x.setter``
------------------------------
-Dekoratory ``@propery``, ``@kola.setter`` i ``@kola.deleter`` służą do zdefiniowania dostępu do 'prywatnych' pól klasy. W Pythonie z definicji nie ma czegoś takiego jak pole prywatne. Jest natomiast konwencja nazywania zmiennych zaczynając od symbolu podkreślnika (np. ``_kola``), jeżeli chcemy zaznaczyć, że to jest zmienna prywatna. Nic nie blokuje jednak użytkownika przed dostępem do tej zmiennej. Dekoratory ``@kola.setter`` i ``@property`` tworzą metody do obsługi zmiennej ``_kola`` (w przykładzie poniżej).
-
-.. code-block:: python
-
-    class Samochod:
-        def __init__(self):
-            self._kola = None
-
-        @property
-        def kola(self):
-            print('Wyczytanie z książki pokazdu')
-            return self._kola
-
-        @kola.setter
-        def kola(self, value):
-            print('Wpis do książki pojazdu o zmienionych kołach')
-            self._kola = value
-
-        @kola.deleter
-        def kola(self):
-            del self._kola
-
-
-    auto = Samochod()
-    print(auto.kola)  # uruchamiany jest ``kola``, który jest property
-
-    auto.kola = 4  # uruchamiany jest ``kola.setter z argumentem 4``
-    print(auto.kola)  # uruchamiany jest ``kola``, który jest property
-
-.. note:: Masz aplikację pisaną od 10 lat i chcesz wstrzyknąć logowanie użycia danej zmiennej w programie. Możesz dodać ``@property`` dla tej właściwości, która napierw zaloguje ``__name__`` i ``__file__`` a później zwróci wartość (nie zmieniając API aplikacji).
-
-Monkey Patching
----------------
-.. code-block:: python
-
-    class User:
-        def hello(self):
-            print('hello')
-
-
-    def monkey_patch():
-        print('My function')
-
-
-    User.hello = monkey_patch
-    User.hello()
-    # 'My function'
-
-.. code-block:: python
-
-    import datetime
-    import json
-
-
-    DATA = {
-        'datetime': datetime.datetime(1961, 4, 12, 2, 7, 0, 123456),
-        'date': datetime.datetime(1961, 4, 12),
-        'name': 'José Jiménez',
-    }
-
-    def datetime_encoder(self, obj):
-        if isinstance(obj, datetime.datetime):
-            return f'{obj:%Y-%m-%dT%H:%M:%S.%fZ}'
-        elif isinstance(obj, datetime.date):
-            return f'{obj:%Y-%m-%d}'
-        else:
-            return super().default(obj)
-
-    json.JSONEncoder.default = datetime_encoder
-
-
-``@staticmethod``
------------------
-Dekorator ``@staticmethod`` służy do tworzenia metod statycznych, takich które odnoszą się do klasy jako całości, nie do konkretnego obiektu.
-
-.. code-block:: python
-
-    def increment_population():
-        Person.population += 1
-
-    class Person:
-        population = 0
-
-        def __init__(self, name):
-            self.name = name
-            increment_population()
-
-    anna = Person('Anna')
-    john = Person('John')
-
-    # ile użytkowników zostało stworzonych
-    print(Person.population)
-
-.. code-block:: python
-
-    class Person:
-        population = 0
-
-        def __init__(self, name):
-            self.name = name
-            Person.increment_population()
-
-        @staticmethod
-        def increment_population():
-            Person.population += 1
-
-    jose = Person('José Jiménez')
-    ivan = Person('Иван Иванович')
-
-    # ile użytkowników zostało stworzonych
-    print(Person.population)
-
 
 ``__str__()`` i ``__repr__()``
 ------------------------------
 Dwiema dość często używanymi metodami systemowymi są ``__repr__`` i ``__str__``. Obie te funkcje konwertują obiekt klasy do stringa, mają jednak inne przeznaczenie:
 
-    * cel ``__repr__`` to być jednoznacznym,
-    * cel ``__str__`` to być czytelnym.
-
 Albo jeszcze inaczej:
 
-    * ``__repr__`` jest dla developerów,
-    * ``__str__`` dla użytkowników.
+    * ``__repr__`` jest dla developerów (być jednoznacznym),
+    * ``__str__`` dla użytkowników (być czytelnym).
 
 .. code-block:: python
 
@@ -576,211 +397,32 @@ Albo jeszcze inaczej:
             return f'Marka: {self.marka} i ma {self.kola} koła'
 
         def __repr__(self):
-            return f'Samochód(marka: {self.marka}, kola: {self.kola})'
+            return f'Samochod(marka={self.marka}, kola={self.kola})'
 
-
-    Samochod(marka='mercedes', kola=3)
 
     auto = Samochod(marka='mercedes', kola=3)
     print(auto)
+    # Marka: {self.marka} i ma {self.kola} koła
 
     auta = [
         Samochod(marka='mercedes', kola=3),
         Samochod(marka='maluch', kola=4),
         Samochod(marka='fiat', kola=4),
     ]
-
     print(auta)
+    # Samochod(marka='mercedes', kola=3),
+    # Samochod(marka='maluch', kola=4),
+    # Samochod(marka='fiat', kola=4),
 
 
 Przykład praktyczny:
 
 .. code-block:: python
 
-    >>> import datetime
-    >>> datetime.datetime.now() # wyświetli w konsoli napis zdefiniowany przez ``__repr__``
-    >>> print(datetime.datetime.now()) # wyświetli w konsoli napis zdefiniowany przez ``__str__``
+    import datetime
 
-Hash
-----
-Set można zrobić z dowolnego hashowalnego obiektu:
-
-.. code-block:: python
-
-    class Adres:
-        def __init__(self, miasto):
-            self.miasto = miasto
-
-
-    Adres(miasto='Gwiezdne')
-    print({Adres(miasto='Gwiezdne'), Adres(miasto='Gwiezdne')})
-
-    a = Adres(miasto='Gwiezdne')
-    print({a, a})
-
-.. code-block:: python
-
-    class Adres:
-        def __init__(self, ulica, miasto):
-            self.ulica = ulica
-            self.miasto = miasto
-
-        def __hash__(self, *args, **kwargs):
-            """
-            __hash__ should return the same value for objects that are equal.
-            It also shouldn't change over the lifetime of the object;
-            generally you only implement it for immutable objects.
-            """
-            return hash(self.__dict__)
-
-Metaclass
----------
-Każdy obiekt klasy jest instankcją tej klasy. Każda napisana klasa jest instancją obiektu, który nazywa się metaklasą. Domyślnie klasy są obiektem typu ``type``
-
-.. code-block:: python
-
-    class FooClass:
-        pass
-
-    f = FooClass()
-    isinstance(f, FooClass)
-    isinstance(f, type)
-
-
-Przeciążanie operatorów
-=======================
-Python implementuje kilka funkcji systemowych (magic methods), zaczynających się od podwójnego podkreślnika. Są to funkcje wywoływane m.in podczas inicjalizacji obiektu (``__init__``). Innym przykładem może być funkcja ``obiekt1.__add__(obiekt2)``, która jest wywoływana gdy wykonamy operację ``obiekt1 + obiekt2``.
-
-Poniżej przedstawiono kilka przykładów metod magicznych w Pythonie.
-
-``__add__()``
--------------
-.. code-block:: python
-
-    class Vector:
-        def __init__(self, x=0.0, y=0.0):
-            self.x = x
-            self.y = y
-
-        def __str__(self):
-            return f"Vector(x={self.x}, y={self.y})"
-
-        def __add__(self, other):
-            return Vector(
-                self.x + other.x,
-                self.y + other.y
-            )
-
-    vector1 = Vector(x=1, y=2)
-    vector2 = Vector(x=3, y=4)
-
-    suma = vector1 + vector2
-    print(suma)
-    # wyświetli: Vector(x=4, y=6)
-
-``__sub__()``
--------------
-Return the difference of another ``Transaction`` object, or another class object that also has the ``val`` property.
-.. code-block:: python
-
-    class Transaction:
-
-        def __init__(self, val):
-            self.val = val
-
-        def __sub__(self, other):
-            return self.val - other.val
-
-
-    buy = Transaction(10.00)
-    sell = Transaction(7.00)
-    print(buy - sell)
-    # 3.0
-
-Return a Transaction object with ``val`` as the difference of this ``Transaction.val`` property and another object with a ``val`` property.
-
-.. code-block:: python
-
-    class Transaction:
-
-        def __init__(self, val):
-            self.val = val
-
-        def __sub__(self, other):
-            return Transaction(self.val - other.val)
-
-
-    buy = Transaction(20.00)
-    sell = Transaction(5.00)
-    result = buy - sell
-    print(result.val)
-    # 15
-
-Return difference of this Transaction.val property and an integer.
-
-.. code-block:: python
-
-    class Transaction:
-
-        def __init__(self, val):
-            self.val = val
-
-        def __sub__(self, other):
-            return self.val - other
-
-
-    buy = Transaction(8.00)
-    print(buy - 6.00)
-    # 2
-
-``__abs__()``
--------------
-.. code-block:: python
-
-    class Vector:
-        def __init__(self, x=0.0, y=0.0):
-            self.x = x
-            self.y = y
-
-        def __abs__(self):
-            return (self.x**2 + self.y**2)**0.5
-
-
-``__iadd__()``
---------------
-'+='
-
-``__isub__()``
---------------
-
-``__mul__()`` and ``__imul__()``
---------------------------------
-
-``__div__()`` and ``__idiv__()``
---------------------------------
-
-``__eq__()``
-------------
-.. code-block:: python
-
-    vector1 == vector2  # ``urchamia __eq__``
-
-``__ne__()``
-------------
-'!='
-
-``__lt__()``
-------------
-
-
-``__le__()``
-------------
-
-``__gt__()``
-------------
-
-``__ge__()``
-------------
+    datetime.datetime.now()  # ``__repr__``
+    print(datetime.datetime.now())  # ``__str__``
 
 
 Dobre praktyki
@@ -890,7 +532,7 @@ Książka adresowa
     :caption: Address Book
 
 :Podpowiedź:
-    * Czytelny kod powinien mieć około 35 linii
+    * Powinieneś dopisać około 20 linii
 
 :Zadanie z gwiazdką:
     * Klasa ``Adres`` powinna mieć zmienną liczbę argumentów za pomocą ``**kwargs`` i dynamicznie wpisywane pola ``setattr()`` (jeżeli nie mają wartości ``None``).

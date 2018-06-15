@@ -1,2 +1,5 @@
-class Pojazd:
+class Astronaut:
     pass
+
+
+jose = Astronaut()

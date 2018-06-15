@@ -79,6 +79,8 @@ Podstawy
     sredniozaawansowany/serializacja.rst
     sredniozaawansowany/testy-i-jakosc.rst
     sredniozaawansowany/introspection.rst
+    sredniozaawansowany/operator-overload.rst
+    sredniozaawansowany/object-oriented-programming.rst
     sredniozaawansowany/biblioteki-zewnetrzne.rst
     sredniozaawansowany/system-operacyjny.rst
     sredniozaawansowany/linia-polecen.rst
