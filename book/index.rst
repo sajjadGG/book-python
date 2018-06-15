@@ -61,6 +61,7 @@ Podstawy
     podstawy/datetime.rst
     podstawy/doctests.rst
     podstawy/object-oriented-programming.rst
+    podstawy/dataclass.rst
     podstawy/exceptions.rst
     podstawy/files.rst
     podstawy/zadania-kwalifikacyjne.rst

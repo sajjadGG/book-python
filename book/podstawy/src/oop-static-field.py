@@ -1,7 +1,8 @@
-class Pojazd:
-    marka = None
-    kierowca = None
-    kola = 4
+class Astronaut:
+    first_name = 'Jose'
+    last_name = 'Jimenez'
 
 
-auto = Pojazd()
+astro = Astronaut()
+astro.first_name
+# Jose
