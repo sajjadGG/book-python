@@ -399,8 +399,8 @@ Przeliczanie odległości
     })
 
 :Założenia:
-    * Nazwa programu: ``types-distance.py``
-    * Szacunkowa długość kodu: około 3 linie
+    * Nazwa pliku: ``types-distance.py``
+    * Linii kodu do napisania: około 3 linie
     * Maksymalny czas na zadanie: 5 min
 
 :Podpowiedź:
@@ -424,8 +424,8 @@ Generowanie listy unikalnych kluczy
     ]
 
 :Założenia:
-    * Nazwa programu: ``type-unique.py``
-    * Szacunkowa długość kodu: około 3 linie
+    * Nazwa pliku: ``type-unique.py``
+    * Linii kodu do napisania: około 3 linie
     * Maksymalny czas na zadanie: 5 min
 
 Podział zbioru
@@ -439,8 +439,8 @@ Podział zbioru
     - dane testowe - 20%
 
 :Założenia:
-    * Nazwa programu: ``type-split-list.py``
-    * Szacunkowa długość kodu: około 6 linie
+    * Nazwa pliku: ``type-split-list.py``
+    * Linii kodu do napisania: około 6 linie
     * Maksymalny czas na zadanie: 10 min
 
 :Podpowiedź:
@@ -466,6 +466,6 @@ Słownik unikalnych cech
     labels = [0, 1, 2, 1, 1, 0, ...]
 
 :Założenia:
-    * Nazwa programu: ``type-split-dict.py``
-    * Szacunkowa długość kodu: około 6 linie
+    * Nazwa pliku: ``type-split-dict.py``
+    * Linii kodu do napisania: około 6 linie
     * Maksymalny czas na zadanie: 10 min

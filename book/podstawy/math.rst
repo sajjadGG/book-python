@@ -169,8 +169,8 @@ Obliczanie odległości między dwoma punktami
         pass
 
 :Założenia:
-    * Nazwa programu: ``functions-eucledean-2d.py``
-    * Szacunkowa długość kodu: około 5 linii
+    * Nazwa pliku: ``functions-eucledean-2d.py``
+    * Linii kodu do napisania: około 5 linii
     * Maksymalny czas na zadanie: 15 min
 
 Obliczanie odległości między dwoma punktami
@@ -210,8 +210,8 @@ Obliczanie odległości między dwoma punktami
     Wyliczanie odległości w celu oszacowania przynależności do zbioru. Zwróć uwagę, że bez względu na ilość wymiarów wzór się niewiele różni.
 
 :Założenia:
-    * Nazwa programu: ``functions-eucledean-ndim.py``
-    * Szacunkowa długość kodu: około 10 linii
+    * Nazwa pliku: ``functions-eucledean-ndim.py``
+    * Linii kodu do napisania: około 10 linii
     * Maksymalny czas na zadanie: 15 min
 
 Mnożenie macierzy
@@ -233,8 +233,8 @@ Mnożenie macierzy
         pass
 
 :Założenia:
-    * Nazwa programu: ``math-matrix.py``
-    * Szacunkowa długość kodu: około 6 linii
+    * Nazwa pliku: ``math-matrix.py``
+    * Linii kodu do napisania: około 6 linii
     * Maksymalny czas na zadanie: 20 min
 
 :Podpowiedź:
@@ -249,8 +249,8 @@ Napisz program, który wczyta od użytkownika wielkość kąta w stopniach i wy�
     Jeżeli funkcja trygonometryczna nie istnieje dla danego kąta, zwróć wyjątek ``ValueError('dla tego kąta wartośćfunkcji nie istnieje')``
 
 :Założenia:
-    * Nazwa programu: ``math-trigonometry.py``
-    * Szacunkowa długość kodu: około 10 linii
+    * Nazwa pliku: ``math-trigonometry.py``
+    * Linii kodu do napisania: około 10 linii
     * Maksymalny czas na zadanie: 10 min
 
 :Podpowiedź:
@@ -264,8 +264,8 @@ Lotto
 #. Dlaczego?
 
 :Założenia:
-    * Nazwa programu: ``functions-random-number.py``
-    * Szacunkowa długość kodu: około 5 linii
+    * Nazwa pliku: ``functions-random-number.py``
+    * Linii kodu do napisania: około 5 linii
     * Maksymalny czas na zadanie: 10 min
 
 :Podpowiedź:
@@ -286,8 +286,8 @@ Pole trójkąta
 #. Użytkownik poda wysokość i długość podstawy tego trójkąta. Uwzględnij, że wysokość i długość podstawy mogą być liczbami niecałkowitymi. Wykorzystaj doctest do przetestowania funckji.
 
 :Założenia:
-    * Nazwa programu: ``functions-triangle.py``
-    * Szacunkowa długość kodu: około 5 linii
+    * Nazwa pliku: ``functions-triangle.py``
+    * Linii kodu do napisania: około 5 linii
     * Maksymalny czas na zadanie: 10 min
 
 :Co zadanie sprawdza?:
@@ -329,6 +329,6 @@ Korzystając z funkcji napisanej w ćwiczeniu powyżej oblicz odległość od ka
 Czy dwa wykresy są takie same? Co się stanie jeżeli będziemy zwiększali odchylenie standardowe przy generacji punktów? Albo przybliżymy do siebie punkty A i B?
 
 :Założenia:
-    * Nazwa programu: ``math-random-point.py``
-    * Szacunkowa długość kodu: około 15 linii
+    * Nazwa pliku: ``math-random-point.py``
+    * Linii kodu do napisania: około 15 linii
     * Maksymalny czas na zadanie: 20 min

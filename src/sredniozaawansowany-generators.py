@@ -14,7 +14,7 @@ Napisz program, który wczyta plik /etc/passwd, a następnie:
 
 """
 
-FILENAME = '../data/file-etc-passwd.txt'
+FILENAME = '../data/etc-passwd.txt'
 
 
 def systemowe_lista(lines):

@@ -1,26 +1,31 @@
 #!/usr/bin/env python3
-TEMP_STEP = 5
-TEMP_MAX = 41
-TEMP_MIN = -20
+from typing import Union
+
+STEP = 5
+MAX = 41
+MIN = -20
 
 
-def celsiusz_na_farenheit(celsiusze):
+def celsius_to_farenheit(degree: Union[int, float]) -> float:
     """
     Celsius to Fahrenheit: (°C * 1.8) + 32 = °F
-    >>> celsiusz_na_farenheit(0)
+    >>> celsius_to_farenheit(0)
     32.0
-    >>> celsiusz_na_farenheit(1)
+    >>> celsius_to_farenheit(1)
     33.8
-    >>> celsiusz_na_farenheit(-1)
+    >>> celsius_to_farenheit(-1)
     30.2
-    >>> celsiusz_na_farenheit(100)
+    >>> celsius_to_farenheit(100)
     212.0
+    >>> celsius_to_farenheit([0, 1, 2])
+    Traceback (most recent call last):
+        ...
+    TypeError: can't multiply sequence by non-int of type 'float'
     """
-    return celsiusze * 1.8 + 32
+    return degree * 1.8 + 32
 
 
-for stopien in range(TEMP_MIN, TEMP_MAX, TEMP_STEP):
-    celsiusz = stopien
-    fahrenheit = celsiusz_na_farenheit(stopien)
+for celsius in range(MIN, MAX, STEP):
+    fahrenheit = celsius_to_farenheit(celsius)
 
-    print(f'Temperatura {celsiusz:+5d}C to {fahrenheit:+5.0f}F')
+    print(f'Temperatura {celsius:=+8}C to {fahrenheit:_^+10.0f}F')

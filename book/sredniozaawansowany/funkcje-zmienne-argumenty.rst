@@ -5,131 +5,130 @@ Zmienna ilość argumentów funkcji
 
 Operator ``*`` i ``**``
 =======================
-Użycie operatora ``*`` przy definicji funkcji powoduje umożliwienie przekazywanie do funkcji dodatkowych parametrów anonimowych. Zazwczaj zmienna, która jest przy tym operatorze nazywa się ``*args`` (arguments).
+- ``*`` zwykle nazywa się ``*args`` (arguments)
+- ``**`` zwykle nazywa się ``**kwargs`` (keyword arguments)
 
-Użycie operatora ``**`` przy definicji funkcji powoduje umożliwienie przekazywania do niej dodatkowych argumentów nazwanych. Zazwczaj zmienna, która jest przy tym operatorze nazywa się ``**kwargs`` (keyword arguments).
+Użycie operatora ``*`` przy definicji funkcji powoduje umożliwienie przekazywanie do funkcji dodatkowych parametrów anonimowych.
+
+Użycie operatora ``**`` przy definicji funkcji powoduje umożliwienie przekazywania do niej dodatkowych argumentów nazwanych.
 
 
 Definiowanie funkcji ze zmienną ilością parametrów
 ==================================================
 .. code-block:: python
 
-    def wyswietl_argumenty(dopasowane, *pozycyjne, **nazwane):
-        print(f'argumenty dopasowane: {dopasowane}')  # 1
-        print(f'argumenty pozycyjne: {pozycyjne}')    # 2, 3, 4
-        print(f'argumenty nazwane: {nazwane}')        # c=5, d=6
+    def wyswietl_argumenty(a, b, c=0, *pozycyjne, **nazwane):
+        print(f'argument a: {a}')  # 1
+        print(f'argument b: {b}')  # 2
+        print(f'argument c: {c}')  # 3
+        print(f'argumenty pozycyjne: {pozycyjne}')    # 4, 5, 6
+        print(f'argumenty nazwane: {nazwane}')        # d=5, e=6
 
 
-    wyswietl_argumenty(1, 2, 3, 4, c=5, d=6)
+    wyswietl_argumenty(1, 2, 3, 4, 5, 6, d=5, e=6)
 
 Wewnątrz funkcji będziemy mieli dostępną zmienną ``dopasowane`` o wartości 1, zmeinną ``pozycyjne``, zawierającą listę elementów (2, 3, 4) oraz zmienną słownikową ``nazwane``, która ma klucze 'c' i 'd', które przechowują wartości, odpowiednio, 5 i 6.
 
-Przez konwencję ``pozycyjne`` powinny być nazwane ``args``, a ``nazwane`` - ``kwargs`` (keyword arguments).
+Przez konwencję:
+
+    - ``pozycyjne`` - ``args``
+    - ``nazwane`` - ``kwargs``
 
 .. code-block:: python
 
-    def wyswietl_argumenty(dopasowane, *args, **kwargs):
-        print(f'argumenty dopasowane: {dopasowane}')  # 1
-        print(f'argumenty pozycyjne: {args}')         # 2, 3, 4
-        print(f'argumenty nazwane: {kwargs}')         # c=5, d=6
+    def wyswietl_argumenty(a, b, c=0, *args, **kwargs):
+        print(f'argument a: {a}')  # 1
+        print(f'argument b: {b}')  # 2
+        print(f'argument c: {c}')  # 3
+        print(f'argumenty args: {args}')    # 4, 5, 6
+        print(f'argumenty kwargs: {kwargs}')        # d=5, e=6
 
 
-    wyswietl_argumenty(1, 2, 3, 4, c=5, d=6)
+    wyswietl_argumenty(1, 2, 3, 4, 5, 6, d=5, e=6)
 
-Przykładowe zastosownaie operatorów ``*`` i ``**`` polega na wykorzystaniu ich przy wywołaniu funkcji. Wtedy, wykorzystując operator ``*``, kolejne elementy listy albo krotki będą przekazane jako kolejne argumenty funkcji, a wykorzystując operator ``**`` kolejne elementy zmiennej słownikowej będą przekazane jako nazwane argumenty. Oznacza to, że na przykład argument ``x`` funkcji, przyjmie wartość ``vector['x']``.
-
+Kiedy to się przydaje
+---------------------
 .. code-block:: python
 
-    >>> def my_function(x, y, z):
-    ...    print(x, y, z)
+    def celsius_to_fahrenheit(*degrees):
+        return [degree*1.8+32 for degree in degrees]
 
-    >>> vector = (1, 0, 1)
-    >>>  my_function(*vector)
-    1, 0, 1
+    celsius_to_fahrenheit(1)
+    # [33.8]
 
-    >>> vector = {'y': 1, 'x': 0, 'z': 1}
-    >>> my_function(**vector)
-    0, 1, 1
-
-.. warning:: Nie przywiązuj się do nazewnictwa ``*args`` i ``**kwargs``, chociaż jest to konwencja!!
-
-    .. code-block:: python
-
-        def wyswietl_argumenty(dopasowane, *pozycyjne, **nazwane):
-            print(f'argumenty dopasowane: {dopasowane}')  # 1
-            print(f'argumenty pozycyjne: {pozycyjne}')    # 2, 3, 4
-            print(f'argumenty nazwane: {nazwane}')        # c=5, d=6
-
-
-        wyswietl_argumenty(1, 2, 3, 4, c=5, d=6)
-
-    Taki zapis jest również możliwy, chociaż bardzo mylący
-
-    .. code-block:: python
-
-        def wyswietl_argumenty(dopasowane, *kwargs, **args):
-            print(f'argumenty dopasowane: {dopasowane}')  # 1
-            print(f'argumenty pozycyjne: {kwargs}')       # 2, 3, 4
-            print(f'argumenty nazwane: {args}')           # c=5, d=6
-
-
-        wyswietl_argumenty(1, 2, 3, 4, c=5, d=6)
+    celsius_to_fahrenheit(1, 2, 3, 4, 5)
+    # [33.8, 35.6, 37.4, 39.2, 41.0]
 
 
 Przekazywanie do funkcji zmiennej ilości parametrów
 ===================================================
-.. code-block:: python
-
-    >>> def wyswietl(a, b, c=0):
-    ...    print(locals())
-
-    >>> wyswietl(1, 2, 3)
-    {'a': 1, 'b': 2, 'c': 3}
-
-    >>> dane = (1, 2, 3)
-    >>> wyswietl(*dane)
-    {'a': 1, 'b': 2, 'c': 3}
-
-    >>> dane = (1, 2)
-    >>> wyswietl(*dane)
-    {'a': 1, 'b': 2, 'c': 0}
+Przykładowe zastosownaie operatorów ``*`` i ``**`` polega na wykorzystaniu ich przy wywołaniu funkcji. Wtedy, wykorzystując operator ``*``, kolejne elementy listy albo krotki będą przekazane jako kolejne argumenty funkcji, a wykorzystując operator ``**`` kolejne elementy zmiennej słownikowej będą przekazane jako nazwane argumenty. Oznacza to, że na przykład argument ``x`` funkcji, przyjmie wartość ``vector['x']``.
 
 .. code-block:: python
 
-    >>> def wyswietl(a, b, c=0, *args):
-    ...    print(locals())
+    def my_function(x, y, z):
+        print(x, y, z)
 
-    >>> dane = (1, 2, 3, 4)
-    >>> wyswietl(*dane)
-    {'a': 1, 'b': 2, 'c': 3, 'args': (4,)}
+    vector = (1, 0, 1)
+    my_function(*vector)
+    # 1, 0, 1
 
-    >>> dane = (1, 2, 3, 4, 5, 6, 7)
-    >>> wyswietl(*dane)
-    {'a': 1, 'b': 2, 'c': 3, 'args': (4, 5, 6, 7)}
+    vector = {'y': 1, 'x': 0, 'z': 1}
+    my_function(**vector)
+    # 0, 1, 1
 
-    >>> wyswietl(1, 2)
-    {'a': 1, 'b': 2, 'c': 0, 'args': ()}
 
 .. code-block:: python
 
-    >>> def wyswietl(a, b, c=0, *args, **kwargs):
-    ...     print(locals())
+    def wyswietl(a, b, c=0):
+        print(locals())
 
-    >>> wyswietl(1, 2, x=77, y=99)
-    {'a': 1, 'b': 2, 'c': 0, 'args': (), 'kwargs': {'x': 77, 'y': 99}}
+    wyswietl(1, 2, 3)
+    # {'a': 1, 'b': 2, 'c': 3}
 
-    >>> wyswietl(1, 2, x=77, y=99, c=7)
-    {'a': 1, 'b': 2, 'c': 7, 'args': (), 'kwargs': {'x': 77, 'y': 99}}
+    dane = (1, 2, 3)
+    wyswietl(*dane)
+    # {'a': 1, 'b': 2, 'c': 3}
 
-    >>> dane = {'x': 77, 'y': 99}
-    >>> wyswietl(1, 2, 3, **dane)
-    {'a': 1, 'b': 2, 'c': 3, 'args': (), 'kwargs': {'x': 77, 'y': 99}}
+    dane = (1, 2)
+    wyswietl(*dane)
+    # {'a': 1, 'b': 2, 'c': 0}
+
+.. code-block:: python
+
+    def wyswietl(a, b, c=0, *args):
+        print(locals())
+
+    dane = (1, 2, 3, 4)
+    wyswietl(*dane)
+    # {'a': 1, 'b': 2, 'c': 3, 'args': (4,)}
+
+    dane = (1, 2, 3, 4, 5, 6, 7)
+    wyswietl(*dane)
+    # {'a': 1, 'b': 2, 'c': 3, 'args': (4, 5, 6, 7)}
+
+    wyswietl(1, 2)
+    # {'a': 1, 'b': 2, 'c': 0, 'args': ()}
 
 .. code-block:: python
 
     def wyswietl(a, b, c=0, *args, **kwargs):
         print(locals())
 
+    wyswietl(1, 2, x=77, y=99)
+    # {'a': 1, 'b': 2, 'c': 0, 'args': (), 'kwargs': {'x': 77, 'y': 99}}
+
+    wyswietl(1, 2, x=77, y=99, c=7)
+    # {'a': 1, 'b': 2, 'c': 7, 'args': (), 'kwargs': {'x': 77, 'y': 99}}
+
+    dane = {'x': 77, 'y': 99}
+    wyswietl(1, 2, 3, **dane)
+    # {'a': 1, 'b': 2, 'c': 3, 'args': (), 'kwargs': {'x': 77, 'y': 99}}
+
+.. code-block:: python
+
+    def wyswietl(a, b, c=0, *args, **kwargs):
+        print(locals())
 
     dane = {'x': 77, 'y': 99, 'a': 7}
     wyswietl(1, 2, 3, **dane)
@@ -139,24 +138,37 @@ Przekazywanie do funkcji zmiennej ilości parametrów
 
 .. code-block:: python
 
-    >>> def wyswietl(a, b, c=0, *args, **kwargs):
-    ...     print(locals())
+    def wyswietl(a, b, c=0, *args, **kwargs):
+        print(locals())
 
-    >>> wyswietl(1, 2, 3, 4, 5, 6, x=77, y=99)
-    {'a': 1, 'b': 2, 'c': 3, 'args': (4, 5, 6), 'kwargs': {'x': 77, 'y': 99}}
+    wyswietl(1, 2, 3, 4, 5, 6, x=77, y=99)
+    # {'a': 1, 'b': 2, 'c': 3, 'args': (4, 5, 6), 'kwargs': {'x': 77, 'y': 99}}
 
-    >>> pozycyjne = (4, 5, 6)
-    >>> nazwane = {'x': 77, 'y': 99}
-    >>> wyswietl(1, 2, 3, *pozycyjne, **nazwane)
-    {'a': 1, 'b': 2, 'c': 3, 'args': (4, 5, 6), 'kwargs': {'x': 77, 'y': 99}}
+    pozycyjne = (4, 5, 6)
+    nazwane = {'x': 77, 'y': 99}
+    wyswietl(1, 2, 3, *pozycyjne, **nazwane)
+    # {'a': 1, 'b': 2, 'c': 3, 'args': (4, 5, 6), 'kwargs': {'x': 77, 'y': 99}}
 
 
 Przyjmowanie z funkcji zmiennej ilości argumentów
 =================================================
 .. code-block:: python
 
-    >>> value, _ = function()
-    >>> value, *args = function()
+    a, b = 1, 2
+
+.. code-block:: python
+
+    def wartosci():
+        return 1, 2
+
+    a, b = wartosci()
+
+A co gdyby funkcja zwracała dużo więcej argumentów?
+
+.. code-block:: python
+
+    value, *pozostale = wartosci()
+    value, _ = wartosci()
 
 .. code-block:: python
 
@@ -200,6 +212,22 @@ Przyjmowanie z funkcji zmiennej ilości argumentów
 
 Przykładowe zastosowanie
 ========================
+.. code-block:: python
+
+    from typing import List
+
+    def celsius_to_fahrenheit(*degrees) -> List[float]:
+        return [x * 1.8 + 32 for x in degrees]
+
+
+    celsius_to_fahrenheit(1)
+    # [33.8]
+
+    celsius_to_fahrenheit(1, 2, 3, 4, 5)
+    # [33.8, 35.6, 37.4, 39.2, 41.0]
+
+
+
 .. code-block:: python
 
     class Kontakt:

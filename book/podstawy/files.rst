@@ -4,6 +4,29 @@
 Operacje na plikach
 *******************
 
+.. code-block:: python
+
+    FILENAME = '/etc/hostname'
+
+    file = open(FILENAME)
+    content = file.read()
+
+    # musisz pamiętać aby zamknąć
+    file.close()
+
+    print(content)
+
+
+.. code-block:: python
+
+    FILENAME = '/etc/hostname'
+
+    with open(FILENAME) as file:
+        content = file.read()
+
+    print(content)
+
+
 Konstrukcja ``with``
 ====================
 * Context manager

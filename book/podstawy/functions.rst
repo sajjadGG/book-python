@@ -242,8 +242,8 @@ Konwersja liczby na zapis słowny
         'thirteen and thirty seven hundredths'
 
 :Założenia:
-    * Nazwa programu: ``functions-int-to-str.py``
-    * Szacunkowa długość kodu: około 15 linii
+    * Nazwa pliku: ``functions-int-to-str.py``
+    * Linii kodu do napisania: około 15 linii
     * Maksymalny czas na zadanie: 15 min
 
 :Wymagania:
@@ -270,8 +270,8 @@ Prosta memoizacja
 #. Porównaj prędkość działania z obliczaniem na bieżąco dla parametru 500
 
 :Założenia:
-    * Nazwa programu: ``functions-memoize.py``
-    * Szacunkowa długość kodu: około 5 linii
+    * Nazwa pliku: ``functions-memoize.py``
+    * Linii kodu do napisania: około 5 linii
     * Maksymalny czas na zadanie: 15 min
 
 :Podpowiedź:
@@ -297,6 +297,6 @@ Rzymskie
     * Rzutowanie i konwersja typów
 
 :Założenia:
-    * Nazwa programu: ``functions-roman.py``
-    * Szacunkowa długość kodu: około 15 linii
+    * Nazwa pliku: ``functions-roman.py``
+    * Linii kodu do napisania: około 15 linii
     * Maksymalny czas na zadanie: 15 min

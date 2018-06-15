@@ -47,8 +47,8 @@ Podstawy
 
     podstawy/type-primitive.rst
     podstawy/type-collection.rst
-    podstawy/operators.rst
     podstawy/conditionals.rst
+    podstawy/operators.rst
     podstawy/loops.rst
     podstawy/functions.rst
     podstawy/installing-packages.rst

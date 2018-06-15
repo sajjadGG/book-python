@@ -1,6 +1,13 @@
 import csv
 
-with open('filename.csv') as file:
+FILENAME = r'filename.csv'
+# "first_name", "last_name"
+# "Jose", "Jimenez"
+# "Max", "Peck"
+# "Ivan", "Ivanovic"
+
+
+with open(FILENAME) as file:
     data = csv.DictReader(file, delimiter=',', quotechar='"')
 
     for row in data:

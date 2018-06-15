@@ -15,12 +15,12 @@ class NearestNeighborClassifier:
         predictions = []
 
         for row in features_test:
-            label = self.closest(row)
+            label = self._closest(row)
             predictions.append(label)
 
         return predictions
 
-    def closest(self, row):
+    def _closest(self, row):
         best_dist = distance.euclidean(row, self.features_train[0])
         best_index = 0
 

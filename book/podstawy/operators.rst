@@ -63,8 +63,8 @@ Parzystość
 #. sprawdzi czy jest to liczba parzysta, czy nieparzysta
 
 :Założenia:
-    * Nazwa programu: ``operators-even.py``
-    * Szacunkowa długość kodu: około 7 linii
+    * Nazwa pliku: ``operators-even.py``
+    * Linii kodu do napisania: około 7 linii
     * Maksymalny czas na zadanie: 10 min
 
 :Podpowiedź:
@@ -90,8 +90,8 @@ Liczby całkowite
 #. Wyświetl informację czy jest to liczba całkowita, czy niecałkowita.
 
 :Założenia:
-    * Nazwa programu: ``operators-integres.py``
-    * Szacunkowa długość kodu: około 7 linii
+    * Nazwa pliku: ``operators-integres.py``
+    * Linii kodu do napisania: około 7 linii
     * Maksymalny czas na zadanie: 10 min
 
 :Podpowiedź:

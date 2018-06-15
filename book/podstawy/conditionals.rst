@@ -168,7 +168,6 @@ Bardzo kuszący jest następujący przykład:
     switch['José Jiménez']
     # 'My name José Jiménez'
 
-
 .. code-block:: python
 
     switch = {
@@ -209,3 +208,8 @@ Zmienne i wczytywanie ciągu od użytkownika
     * Sprawdzanie przypadków brzegowych (niekompatybilne argumenty)
     * Definiowanie zmiennych i stałych w programie
     * Magic Number
+
+:Założenia:
+    * Nazwa pliku: ``conditionals-input.py``
+    * Linii kodu do napisania: około 5 linie
+    * Maksymalny czas na zadanie: 5 min

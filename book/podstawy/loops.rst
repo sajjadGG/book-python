@@ -341,6 +341,11 @@ Dzienniczek ucznia
 #. Wyświetla wyliczoną dla dzienniczka ocen średnią arytmetyczną
 #. Jeżeli wciśnięto sam Enter, oznacza to koniec wpisywania do dzienniczka
 
+:Założenia:
+    * Nazwa pliku: ``loops-report-card.py``
+    * Linii kodu do napisania: około 10 linie
+    * Maksymalny czas na zadanie: 15 min
+
 :Podpowiedź:
     * Czytelny kod powinien mieć około 10 linii
     * ``len()``, ``sum()``

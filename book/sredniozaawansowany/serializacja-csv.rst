@@ -21,11 +21,19 @@ Zapis do plików CSV
 
 Parsowanie innych plików za pomocą ``csv.DictReader()``
 =======================================================
+
+Parsing ``/etc/passwd``
+-----------------------
 .. literalinclude:: src/csv-passwd.py
     :name: listing-csv-passwd
     :language: python
     :caption: Parsing ``/etc/passwd`` file with ``csv.DictReader()``
 
+Parsing Java properties file
+----------------------------
+.. literalinclude:: src/csv-properties.py
+    :language: python
+    :caption: Parsing ``sonar-project.properties`` file with  ``csv.DictReader()``
 
 Zadania Kontrolne
 =================
@@ -34,14 +42,30 @@ Wczytywanie pliku ``csv``
 -------------------------
 * https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv
 
-#. ściągnij plik z URL podanego powyżej i zapisz na dysku w miejscu gdzie masz skrypty
-#. Wczytaj dane z pliku ``csv``
-#. Pierwsza linijka stanowi header
+#. Otwórz w przeglądarce podany powyżej URL
+#. Zapisz jego zawartość na dysku w miejscu gdzie masz skrypty w pliku ``csv-iris.csv``
+#. Korzystając z ``csv.DictReader`` wczytaj zawartość pliku
+#. Podaj jawnie ``encoding``, ``delimiter`` oraz ``quotechar``
+#. Pierwsza linijka stanowi metadane (nie wyświetlaj jej)
+#. Nazwy poszczególnych kolumn:
+
+    * Sepal length
+    * Sepal width
+    * Petal length
+    * Petal width
+    * Species
+
+:Założenia:
+    * Nazwa pliku: ``csv-dictreader.py``
+    * Linii kodu do napisania: około 6 linie
+    * Maksymalny czas na zadanie: 10 min
+
 
 Serializacja ``csv``
 --------------------
-* Za pomocą ``csv.DictWriter()`` zapisz do pliku dane o zmiennej strukturze.
-* ``fieldnames`` nie może być zahardkodowane w skrypcie.
+#. Za pomocą ``csv.DictWriter()`` zapisz do pliku dane o zmiennej strukturze
+#. Podaj jawnie ``encoding``, ``delimiter``, ``quotechar`` ``quoting``, ``lineterminator``
+#. ``fieldnames`` nie może być zahardkodowane w skrypcie
 
 .. code-block:: python
 
@@ -53,8 +77,12 @@ Serializacja ``csv``
         {'first_name': 'Jose', 'born': 1961, 'first_step': 1969},
     ]
 
+:Założenia:
+    * Nazwa pliku: ``csv-dictwriter.py``
+    * Linii kodu do napisania: około 8 linii
+    * Maksymalny czas na zadanie: 15 min
+
 :Podpowiedź:
-    * Kod powinien mieć około 5 linii
     * To jest bardzo często występujący i użyteczny przykład
 
 :Co zadanie sprawdza?:
@@ -81,3 +109,8 @@ Serializacja obiektów do CSV
     :name: listing-address-book
     :language: python
     :caption: Address book
+
+:Założenia:
+    * Nazwa pliku: ``csv-dictwriter.py``
+    * Linii kodu do napisania: około 10 linii
+    * Maksymalny czas na zadanie: 20 min

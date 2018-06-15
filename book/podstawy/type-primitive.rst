@@ -381,8 +381,8 @@ Zmienne i typy
 #. Zamiast spacji użyj przecinka
 
 :Założenia:
-    * Nazwa programu: ``type-print.py``
-    * Szacunkowa długość kodu: około 2 linie
+    * Nazwa pliku: ``type-print.py``
+    * Linii kodu do napisania: około 2 linie
     * Maksymalny czas na zadanie: 5 min
 
 :Podpowiedź:
@@ -406,8 +406,8 @@ Wyrazy
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 :Założenia:
-    * Nazwa programu: ``type-split-text.py``
-    * Szacunkowa długość kodu: około 3 linie
+    * Nazwa pliku: ``type-split-text.py``
+    * Linii kodu do napisania: około 3 linie
     * Maksymalny czas na zadanie: 5 min
 
 :Co zadanie sprawdza:

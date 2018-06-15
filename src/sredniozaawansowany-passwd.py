@@ -3,9 +3,9 @@ import datetime
 
 DISSABLED_SHADOW_ENTRY = {'!', '!!', '*'}
 
-ETC_PASSWD = '../data/file-etc-passwd.txt'
-ETC_SHADOW = '../data/file-etc-shadow.txt'
-ETC_GROUP = '../data/file-etc-group.txt'
+ETC_PASSWD = '../data/etc-passwd.txt'
+ETC_SHADOW = '../data/etc-shadow.txt'
+ETC_GROUP = '../data/etc-group.txt'
 
 ALGORITHMS = {
     '$1$': 'MD5',

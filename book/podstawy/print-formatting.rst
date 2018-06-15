@@ -185,6 +185,10 @@ Przykład z życia
 
 .. code-block:: python
 
+    username = "' OR 1=1; DROP TABLE users -- "
+    password = '132'
+
+
     sql_query = f"""
 
         SELECT id, username, email
@@ -194,16 +198,17 @@ Przykład z życia
 
     """
 
+    print(sql_query)
+
+
 
 Więcej informacji
 =================
-
 * https://pyformat.info - Formatowanie stringów w Python
 
 
 ``pprint``
 ==========
-
 .. code-block:: python
 
     from pprint import pprint
@@ -211,6 +216,9 @@ Więcej informacji
     data = [{'first_name': 'José', 'last_name': 'Jiménez'}, {'first_name': 'Max', 'last_name': 'Peck'}, {'first_name': 'Ivan', 'last_name': 'Ivanovic'}]
 
     pprint(data)
+    # [{'first_name': 'José', 'last_name': 'Jiménez'},
+    #  {'first_name': 'Max', 'last_name': 'Peck'},
+    #  {'first_name': 'Ivan', 'last_name': 'Ivanovic'}]
 
 .. code-block:: python
 
@@ -218,7 +226,8 @@ Więcej informacji
 
     data = [{'first_name': 'José', 'last_name': 'Jiménez'}, {'first_name': 'Max', 'last_name': 'Peck'}, {'first_name': 'Ivan', 'last_name': 'Ivanovic'}]
 
-    pformat(data)  # returns formatted data
+    # returns formatted data
+    my_string = pformat(data)
 
 Zadania kontrolne
 =================
@@ -250,19 +259,24 @@ Przeliczanie temperatury
     * Zrób aby tabelka była stałej szerokości.
     * .. code-block:: text
 
-        Temperatura   -20C to    -4F
-        Temperatura   -15C to    +5F
-        Temperatura   -10C to   +14F
-        Temperatura    -5C to   +23F
-        Temperatura    +0C to   +32F
-        Temperatura    +5C to   +41F
-        Temperatura   +10C to   +50F
-        Temperatura   +15C to   +59F
-        Temperatura   +20C to   +68F
-        Temperatura   +25C to   +77F
-        Temperatura   +30C to   +86F
-        Temperatura   +35C to   +95F
-        Temperatura   +40C to  +104F
+        Temperatura -     20C to ____-4____F
+        Temperatura -     15C to ____+5____F
+        Temperatura -     10C to ___+14____F
+        Temperatura -      5C to ___+23____F
+        Temperatura +      0C to ___+32____F
+        Temperatura +      5C to ___+41____F
+        Temperatura +     10C to ___+50____F
+        Temperatura +     15C to ___+59____F
+        Temperatura +     20C to ___+68____F
+        Temperatura +     25C to ___+77____F
+        Temperatura +     30C to ___+86____F
+        Temperatura +     35C to ___+95____F
+        Temperatura +     40C to ___+104___F
+
+:Założenia:
+    * Nazwa pliku: ``print-formatting.py``
+    * Linii kodu do napisania: około 4 linie
+    * Maksymalny czas na zadanie: 10 min
 
 :Podpowiedź:
     * Czytelny kod powinien mieć około 5 linii
