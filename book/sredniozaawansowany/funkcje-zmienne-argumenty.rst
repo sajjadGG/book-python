@@ -5,12 +5,42 @@ Zmienna ilość argumentów funkcji
 
 Operator ``*`` i ``**``
 =======================
-- ``*`` zwykle nazywa się ``*args`` (arguments)
-- ``**`` zwykle nazywa się ``**kwargs`` (keyword arguments)
+- ``*`` zwykle nazywa się ``*args`` (arguments) - argumenty pozycyjne (anonimowe)
+- ``**`` zwykle nazywa się ``**kwargs`` (keyword arguments) - argumenty nazwane
 
-Użycie operatora ``*`` przy definicji funkcji powoduje umożliwienie przekazywanie do funkcji dodatkowych parametrów anonimowych.
 
-Użycie operatora ``**`` przy definicji funkcji powoduje umożliwienie przekazywania do niej dodatkowych argumentów nazwanych.
+Przyjmowanie z funkcji zmiennej ilości argumentów
+=================================================
+.. code-block:: python
+
+    a, b = 1, 2
+    a, b = (1, 2)
+    a, b = [1, 2]
+
+.. code-block:: python
+
+    def numbers():
+        return 1, 2
+
+    a, b = numbers()
+
+.. code-block:: python
+
+    line = 'jimenez:x:1001:1001:Jose Jimenez:/home/jimenez:/bin/bash'
+    username, password, uid, *others = line.split(':')
+
+    # if you're not using ``others`` later in your code
+    username, password, uid, *_ = line.split(':')
+
+.. code-block:: python
+
+    def sensor_temperatury():
+        # ładniej byłoby gdyby programista napisał
+        # {'napiecie': 10, 'natezenie': 20, 'rezystancja': 30, 'czas': 5, 'location': 'laboratorium'}
+        # ale programiści niskopoziomowi zwykle zwracają jako list...
+        return (10, 20.6, 30, 5, 'laboratorium')
+
+    napiecie, natezenie, *_ = sensor_temperatury()
 
 
 Definiowanie funkcji ze zmienną ilością parametrów
@@ -148,67 +178,6 @@ Przykładowe zastosownaie operatorów ``*`` i ``**`` polega na wykorzystaniu ich
     nazwane = {'x': 77, 'y': 99}
     wyswietl(1, 2, 3, *pozycyjne, **nazwane)
     # {'a': 1, 'b': 2, 'c': 3, 'args': (4, 5, 6), 'kwargs': {'x': 77, 'y': 99}}
-
-
-Przyjmowanie z funkcji zmiennej ilości argumentów
-=================================================
-.. code-block:: python
-
-    a, b = 1, 2
-
-.. code-block:: python
-
-    def wartosci():
-        return 1, 2
-
-    a, b = wartosci()
-
-A co gdyby funkcja zwracała dużo więcej argumentów?
-
-.. code-block:: python
-
-    value, *pozostale = wartosci()
-    value, _ = wartosci()
-
-.. code-block:: python
-
-    def liczby_0_do_5():
-        return range(0, 5)
-
-    pierwsza, druga, *pozostale = liczby_0_do_5()
-    # pierwsza == 0
-    # druga == 1
-    # pozostale == (2, 3, 4)
-
-.. code-block:: python
-
-    def create_or_update():
-        return True, [
-            {'id': 1, 'imie': 'Ivan', 'nazwisko': 'Ivanovic'},
-            {'id': 2, 'imie': 'José', 'nazwisko': 'Jiménez'},
-        ], 2, str('No Error')
-
-    # czy_utworzone, objects, count, error = create_or_update()
-    bylo_utworzone, *_  = create_or_update()
-
-    if bylo_utworzone:
-        print('utworzone')
-    else:
-        print('zmodyfikowane')
-
-
-.. code-block:: python
-
-    def sensor_temperatury():
-        # ładniej byłoby gdyby programista napisał
-        # {'napiecie': 10, 'natezenie': 20, 'rezystancja': 30, 'czas': 5, 'location': 'laboratorium'}
-        # ale programiści niskopoziomowi zwykle zwracają jako list...
-        return (10, 20.6, 30, 5, 'laboratorium')
-
-    # z funkcji dopasuje nam dwa pierwsze elementy, a kolejne umieści w ``tuple`` o nazwie ``_``
-    # Przez konwencję, jeżeli nie korzystamy później z argumentów, to możemy przypisać je do ``_``
-    napiecie, natezenie, *_ = sensor_temperatury()
-
 
 Przykładowe zastosowanie
 ========================

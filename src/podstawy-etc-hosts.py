@@ -19,15 +19,17 @@ hosts = []
 
 
 with open(FILENAME) as file:
-    for line in file.readlines():
-        if not line.isspace() and not line.startswith('#'):
-            ip, *hostnames = line.split()
+    for line in file:
+        if line.isspace() or line.startswith('#'):
+            continue
 
-            hosts.append({
-                'ip': ip,
-                'hostnames': hostnames,
-                'protocol': 'ipv4' if '.' in ip else 'ipv6',
-            })
+        ip, *hostnames = line.split()
+
+        hosts.append({
+            'ip': ip,
+            'hostnames': hostnames,
+            'protocol': 'ipv4' if '.' in ip else 'ipv6',
+        })
 
 from pprint import pprint
 pprint(hosts)

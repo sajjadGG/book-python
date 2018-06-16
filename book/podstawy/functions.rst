@@ -36,6 +36,15 @@ Zwracanie wartości
     sum(2, 3)
     # 5
 
+.. code-block:: python
+
+    def sum(a, b):
+        return a + b
+        print('Total is', a + b)  # ten kod się nie wykona
+
+    sum(2, 3)
+    # 5
+
 Zwracanie wartości prostych
 ---------------------------
 .. code-block:: python

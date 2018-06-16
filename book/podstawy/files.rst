@@ -55,7 +55,9 @@ Tryby odczytu i zapisu
     "``'r'``", "open for reading (default)"
     "``'w'``", "open for writing, truncating the file first"
     "``'a'``", "open for writing, appending to the end of the file if it exists"
-    "``'b'``", "binary mode"
+    "``'rb'``", "read binary mode"
+    "``'ab'``", "append binary mode"
+    "``'wb'``", "write binary mode"
 
 
 Obsługa wyjątków
@@ -88,7 +90,7 @@ Parsowanie ``/etc/hosts``
 :Założenia:
     * Nazwa pliku: ``file-hosts.py``
     * Linii kodu do napisania: około 10 linii
-    * Maksymalny czas na zadanie: 15 min
+    * Maksymalny czas na zadanie: 20 min
 
 :Co zadanie sprawdza?:
     * czytanie i parsowanie pliku

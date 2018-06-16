@@ -62,7 +62,6 @@ Python domyślnie oczekuje wcięcia po dwukropku. Jeżeli chcemy zostawić klas�
 
 .. code-block:: python
 
-    # Python always return something, in this case ``return None``
     def my_function():
         pass
 
@@ -71,67 +70,71 @@ Python domyślnie oczekuje wcięcia po dwukropku. Jeżeli chcemy zostawić klas�
 
 ``continue``
 ------------
-Słowo kluczowe ``continue`` powoduje przerwanie aktualnie wykonywanej pętli i przejście do kolejnej iteracji. Przydatne podczas debugowania i testowania kodu.
-
-.. todo:: lepszy przykład
+Słowo kluczowe ``continue`` powoduje przerwanie aktualnie wykonywanej pętli i przejście do kolejnej iteracji.
 
 .. code-block:: python
 
-    >>> for number in range(0, 30):
-    ...     # jeżeli nie ma reszty z dzielenia przez 5
-    ...     if not number % 5 == 0:
-    ...         continue
-    ...     print(number)
-    0
-    5
-    10
-    15
-    20
-    25
+    ETC_PASSWD = """
+    # User Database
+    root:x:0:0:root:/root:/bin/bash
+    peck:x:1000:1000:Max Peck:/home/peck:/bin/bash
+    jimenez:x:1001:1001:Jose Jimenez:/home/jimenez:/bin/bash
+    ivanovic:x:1002:1002:Ivan Ivanovic:/home/ivanovic:/bin/bash
+    """
+
+    for line in ETC_PASSWD:
+        if line.startswith('#'):
+            continue
+
+        name = line.split(':')[4]
+        print(name)
+
 
 .. code-block:: python
 
-    for i in range(1, 30):
-        print(i)
+    ETC_PASSWD = """
+    # User Database
+    root:x:0:0:root:/root:/bin/bash
+    peck:x:1000:1000:Max Peck:/home/peck:/bin/bash
+    jimenez:x:1001:1001:Jose Jimenez:/home/jimenez:/bin/bash
+    ivanovic:x:1002:1002:Ivan Ivanovic:/home/ivanovic:/bin/bash
+    """
+
+    for line in ETC_PASSWD:
+        print(line)
         continue
 
         # ten kod się nie wywoła
-        # przydatne do zrozumienia działania funkcji
-        # gdy chcemy wyprintować ``i`` a nie wykonywać np. requestu API w dalszej części
-        if not i % 4:
-            print('podzielny przez 4')
-        else:
-            print('asdasd')
+        # przydatne do zrozumienia działania funkcji i zobaczenia jaki jest aktualny element
+        if line.startswith('#'):
+            continue
+
+        name = line.split(':')[4]
+        print(name)
+
 
 ``break``
 ---------
 Słowo kluczowe ``break`` przerywa aktualnie wykonywaną pętlę.
 
-.. todo:: lepszy przykład
-
 .. code-block:: python
 
-    >>> for number in range(0, 30):
-    ...     if number % 5:
-    ...         break
-    ...     print(number)
-    0
+    while True:
+        number = input('Type number: ')
 
+        if number:
+            break
+
+``eval()``
+----------
 .. code-block:: python
 
-    >>> def sum(a, b):
-    ...     return a + b
-    ...     print('Total is', a + b)  # ten kod się nie wykona
-    ...
-    >>> sum(2, 3)
-    5
+    eval('name="Jose Jimenez"; print(name)')
+    # Jose Jimenez
+
 
 ``__file__``
 ------------
-.. code-block:: python
-
-    print(__file__)
-
 .. code-block:: python
 
     import os
@@ -141,18 +144,19 @@ Słowo kluczowe ``break`` przerywa aktualnie wykonywaną pętlę.
 
 ``__name__``
 ------------
-.. code-block:: python
+* Zmienna ``__name__`` pozwala ustalić czy dany plik jest wykonywany czy importowany.
+* Jeżeli dany plik jest wykonywany, zmienna ``__name__`` ustawiana jest na ``'__main__'``.
+* Jeżeli dany plik jest importowany jako moduł, zmienna ``__name__`` ustawiana jest na nazwę modułu.
+* Jest to przydatne na przykład przy testowaniu modułów.
 
-    print(__name__)
-
-Zmienna ``__name__`` pozwala między innymi ustalić czy dany plik jest wykonywany czy importowany. Jeżeli dany plik jest wykonywany, zmienna ``__name__`` ustawiana jest na ``'__main__'``, jeżeli dany plik jest importowany jako moduł, zmienna ``__name__`` ustawiana jest na nazwę modułu. Jest to przydatne na przykład przy testowaniu modułów. Dodanie do modułu poniższej linijki:
+Dodanie do modułu poniższej linijki:
 
 .. code-block:: python
 
     if __name__ == '__main__':
         print('hello world')
 
-Sprawi, że wypisane na konsoli zostanie ``'hello world!'`` jeżeli dany plik jest wykonywany jako główny. Powyższy kod nie wykona się natomiast jeżeli plik zaimportujemy jako moduł w innym pliku.
+Sprawi, że wypisane na konsoli zostanie ``'hello world!'`` jeżeli dany plik jest uruchamiany z konsoli. Powyższy kod nie wykona się natomiast jeżeli plik zaimportujemy jako moduł w innym pliku.
 
 Przykład z życia:
 
@@ -179,6 +183,8 @@ Funkcje wbudowane to funkcje dostępne domyślnie w języku Python.
 
 ``print()``
 -----------
+* Wyświetla argument jako tekst w wierszu poleceń.
+
 .. code-block:: python
 
     print('ehlo world')
@@ -188,70 +194,46 @@ Funkcje wbudowane to funkcje dostępne domyślnie w języku Python.
     imie = 'Max Peck'
     print('ehlo', imie, 'world')
 
-Wyświetla argument jako tekst w wierszu poleceń.
-
-W Pytonie2, print jest słowem kluczowym - nie wymaga użycia nawiasów. Ale dla kompatybilności można je również podawać.
-
 ``sorted()`` i ``sort()``
 -------------------------
 * Sortują elementy listy.
-* ``sorted()`` to operator niemutowalny (nie zmienia kolejności elementów w liście).
-* ``sorted()`` to funkcja, która jako argument przyjmuje listę.
+* ``sorted()`` zwraca posortowaną listę, ale nie zapisuje zmienionej kolejności
+* ``sorted()`` zmienia listę na stałe
 
 .. code-block:: python
 
-    >>> numbers = [3, 1, 2]
-    >>> sorted(numbers)
-    [1, 2, 3]
-    >>> print(numbers)
-    [3, 1, 2]
-
-* ``.sort()`` to operator zmieniający listę (mutujący).
-* ``sort()`` to metoda klasy lista.
-
-.. code-block:: python
-
-    >>> numbers = [3, 1, 2]
-    >>> numbers.sort()
-    >>> print(numbers)
-    [1, 2, 3]
-
-.. code-block:: python
-
-    numbers = [3, 2, 1]
+    numbers = [3, 1, 2]
+    sorted(numbers)
+    # [1, 2, 3]
     print(numbers)
-    # [3, 2, 1]
+    # [3, 1, 2]
 
-    print(numbers.sort())
-    # None
+.. code-block:: python
 
+    numbers = [3, 1, 2]
+    numbers.sort()  # returns None
     print(numbers)
     # [1, 2, 3]
-
-    print('---------------------')
-
-    numbers = [3, 2, 1]
-    print(numbers)
-    # [3, 2, 1]
-
-    print(sorted(numbers))
-    # [1, 2, 3]
-
-    print(numbers)
-    # [3, 2, 1]
 
 ``range()``
 -----------
-Tworzy **iterator**, który zwraca liczby w sekwencji. Jedna z rzeczy, która uległa zmianie od Pythona2, w którym range zwracał sekwencję liczb zamiast iteratora.
+* Tworzy **iterator**, który zwraca liczby w sekwencji.
 
 .. code-block:: python
 
-    >>> numbers_generator = range(0, 5)
-    >>> print(numbers_generator)
-    range(0, 5)
+    for liczba in range(0, 5):
+        print(liczba)
 
-    >>> for liczba in range(0, 5):
-    ...    print(liczba)
+
+    for liczba in range(0, 5, 2):
+        print(liczba)
+
+.. code-block:: python
+
+    numbers_generator = range(0, 5)
+    print(numbers_generator)
+    # range(0, 5)
+
 
 .. code-block:: python
 
