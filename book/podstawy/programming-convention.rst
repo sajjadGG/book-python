@@ -63,10 +63,8 @@ PEP8
 
 Wcięcia
 -------
-
-Tak:
-
-.. code-block:: python
+:Good:
+    .. code-block:: python
 
     # Aligned with opening delimiter.
     foo = long_function_name(var_one, var_two,
@@ -83,7 +81,16 @@ Tak:
         var_one, var_two,
         var_three, var_four)
 
-Nie:
+    # Hanging indents should add a level.
+    connection = Server(
+        host='localhost',
+        username='admin',
+        password='admin',
+        port=1337
+    )
+
+
+:Not Good:
 
 .. code-block:: python
 

@@ -154,6 +154,11 @@ Obliczanie odległości między dwoma punktami
 
     def euclidean_distance(A, B):
         """
+        >>> A = (1, 0)
+        >>> B = (0, 1)
+        >>> euclidean_distance(A, B)
+        1.4142135623730951
+
         >>> euclidean_distance((0,0), (1,0))
         1.0
 
@@ -184,6 +189,11 @@ Obliczanie odległości między dwoma punktami
 
     def euclidean_distance_n_dimensions(A, B):
         """
+        >>> A = (0,1,0,1)
+        >>> B = (1,1,0,0)
+        >>> euclidean_distance(A, B)
+        1.4142135623730951
+
         >>> euclidean_distance_n_dimensions((0,0,0), (0,0,0))
         0.0
 
@@ -214,12 +224,16 @@ Obliczanie odległości między dwoma punktami
     * Linii kodu do napisania: około 10 linii
     * Maksymalny czas na zadanie: 15 min
 
-Mnożenie macierzy
------------------
-#. Napisz program mnożący macierze
-#. Mnożenie macierzy wykorzystując ``for``
-#. Używając operatora ``@``
-#. Używając ``numpy``
+Mnożenie macierzy iteracyjnie
+-----------------------------
+#. Napisz program mnożący macierze wykorzystując zagnieżdżone pętle ``for``
+
+.. code-block:: python
+
+    A = [
+        [1, 0],
+        [0, 1]
+    ]
 
 .. code-block:: python
 
@@ -233,13 +247,34 @@ Mnożenie macierzy
         pass
 
 :Założenia:
-    * Nazwa pliku: ``math-matrix.py``
+    * Nazwa pliku: ``math-matrix-iter.py``
     * Linii kodu do napisania: około 6 linii
     * Maksymalny czas na zadanie: 20 min
 
 :Podpowiedź:
     * macierz zerowa
     * trzy pętle
+
+Mnożenie macierzy wykorzystując biblioteki
+------------------------------------------
+#. Używając ``numpy`` oraz operatora ``@``
+
+.. code-block:: python
+
+    def matrix_multiplication(A, B):
+        """
+        >>> A = [[1, 0], [0, 1]]
+        >>> B = [[4, 1], [2, 2]]
+        >>> matrix_multiplication(A, B)
+        array([[4, 1],
+           [2, 2]])
+        """
+        pass
+
+:Założenia:
+    * Nazwa pliku: ``math-matrix-numpy.py``
+    * Linii kodu do napisania: około 2 linii
+    * Maksymalny czas na zadanie: 5 min
 
 Przeliczenia trygonometryczne
 -----------------------------

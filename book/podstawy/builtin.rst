@@ -132,6 +132,13 @@ Słowo kluczowe ``break`` przerywa aktualnie wykonywaną pętlę.
 
     print(__file__)
 
+.. code-block:: python
+
+    import os
+
+    BASE_DIR = os.path.dirname(__file__)
+    path = os.path.join(BASE_DIR, 'main.py')
+
 ``__name__``
 ------------
 .. code-block:: python

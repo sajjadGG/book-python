@@ -191,15 +191,18 @@ Przykład z życia
 
     sql_query = f"""
 
-        SELECT id, username, email
+        SELECT *
         FROM users
-        WHERE 'username' = '{username}'
-        AND 'password' = '{password}'
+        WHERE 'username'='{username}'
+        AND 'password'='{password}'
 
     """
 
     print(sql_query)
-
+    # SELECT id, username, email
+    # FROM users
+    # WHERE 'username'='' OR 1=1; DROP TABLE users -- '
+    # AND 'password'='132'
 
 
 Więcej informacji

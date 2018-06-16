@@ -379,6 +379,38 @@ Jak inicjować poszczególne typy?
 - ``dict()`` czy ``{}``
 - ``set()`` czy ``{}``
 
+Alternatywne kolekcje
+=====================
+.. code-block:: python
+
+    jose = {'first_name': 'José', 'last_name': 'Jiménez', 'agency': 'NASA'}
+
+    print(jose)
+    # {'first_name': 'José', 'last_name': 'Jiménez', 'agency': 'NASA'}
+
+    print(jose['first_name'], jose['last_name'], jose['agency'])
+    # José Jimenez NASA
+
+.. code-block:: python
+
+    from collections import OrderedDict
+
+    jose = OrderedDict(first_name='José', last_name='Jiménez', agency='NASA')
+    print(jose)
+    # OrderedDict([('first_name', 'José'), ('last_name', 'Jiménez'), ('agency', 'NASA')])
+
+.. code-block:: python
+
+    from collections import namedtuple
+
+    Astronaut = namedtuple('Astronaut', ['first_name', 'last_name', 'agency'])
+    jose = Astronaut(first_name='José', last_name='Jiménez', agency='NASA')
+
+    print(jose)
+    # Astronaut(first_name='José', last_name='Jiménez', agency='NASA')
+
+    print(jose.first_name, jose.last_name, jose.agency)
+    # José Jiménez NASA
 
 Zadania kontrolne
 =================

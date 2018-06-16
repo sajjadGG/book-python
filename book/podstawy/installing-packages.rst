@@ -8,7 +8,7 @@ Virtualenv
 
 Searching
 =========
-- pypi.org
+- https://pypi.org
 - ``pip search ...``
 
 Installing
