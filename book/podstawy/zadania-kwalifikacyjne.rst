@@ -31,6 +31,11 @@ Parsowanie ``/etc/passwd``
 
 #. Zwróć listę użytkowników (UID >= 1000)
 
+:Założenia:
+    * Nazwa pliku: ``exam-foundations.py``
+    * Linii kodu do napisania: około 30 linii
+    * Maksymalny czas na zadanie: 60 min
+
 :Co zadanie sprawdza?:
     * czytanie i parsowanie pliku
     * łączenie danych z różnych plików w jeden format wynikowy

@@ -73,12 +73,22 @@ Zawartość zadanego pliku
 #. Napisz program, który wyświetli na ekranie zawartość pliku o nazwie podanej przez użytkownika.
 #. Dopisz obsługę wyjątków dla braku uprawnień oraz tego że plik nie istnieje.
 
+:Założenia:
+    * Nazwa pliku: ``file-cat.py``
+    * Linii kodu do napisania: około 5 linii
+    * Maksymalny czas na zadanie: 5 min
+
 Parsowanie ``/etc/hosts``
 -------------------------
 #. Do pliku ``hosts`` w katalogu gdzie będzie Twój skrypt zapisz poniższy szablon: :numref:`listing-file-etc-hosts`
 #. Ważne są komentarze, białe spacje i linie przerwy
 #. Przedstaw go w formie listy dictów jak w przykładzie poniżej: :numref:`listing-file-hosts`
 #. Zwróć uwagę na uprawnienia do odczytu pliku
+
+:Założenia:
+    * Nazwa pliku: ``file-hosts.py``
+    * Linii kodu do napisania: około 10 linii
+    * Maksymalny czas na zadanie: 15 min
 
 :Co zadanie sprawdza?:
     * czytanie i parsowanie pliku
@@ -87,9 +97,6 @@ Parsowanie ``/etc/hosts``
     * korzystanie z pętli i instrukcji warunkowych
     * parsowanie stringów
     * praca ze ścieżkami w systemie operacyjnym
-
-:Podpowiedź:
-    * kod powinien mieć około 10 linii
 
 .. literalinclude:: src/file-etc-hosts.txt
     :name: listing-file-etc-hosts

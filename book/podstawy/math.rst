@@ -191,7 +191,7 @@ Obliczanie odległości między dwoma punktami
         """
         >>> A = (0,1,0,1)
         >>> B = (1,1,0,0)
-        >>> euclidean_distance(A, B)
+        >>> euclidean_distance_n_dimensions(A, B)
         1.4142135623730951
 
         >>> euclidean_distance_n_dimensions((0,0,0), (0,0,0))

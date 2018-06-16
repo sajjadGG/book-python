@@ -121,6 +121,19 @@ Argumenty funkcji to wartości na których ta funkcja wykonuje operacje. W ideal
     add(1, 2)
     # 3
 
+Zasięg widoczności zmiennych
+----------------------------
+* ``globals()``
+* ``locals()``
+
+.. code-block:: python
+
+    def add(a, b):
+        print(locals())
+
+    add(1, 2)
+    # {'a': 1, 'b': 2}
+
 Typowanie
 ---------
 * Od Python 3.5

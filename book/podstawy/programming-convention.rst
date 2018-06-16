@@ -4,62 +4,41 @@
 Dobre praktyki
 **************
 
+PEP8
+====
 
-PEP20 - Zen of Python
-=====================
+Tabulacje i czy spacje?
+-----------------------
+* 4 spacje
+* IDE zamienia tab na 4 spacje
+
+Długość linii
+-------------
+* 79 znaków
+* soft wrap
+* co z monitorami 4k?
+* najbardziej kontrowersyjna klauzula
+
+Kodowanie plików
+----------------
+Przy Pythonie 3 kodownaie plików powinno być w UTF-8.
+
+Pojedynczy czy podwójny cudzysłów
+---------------------------------
+* Python nie rozróżnia czy stosujemy pojedyncze znaki cudzysłowiu czy podwójne.
+* Ważne jest aby wybrać jedną konwencję i się jej konsekwentnie trzymać.
+* Interpreter Pythona domyślnie stosuje pojedyncze znaki cudzysłowia.
+* Z tego powodu w tej książce będziemy trzymać się powyższej konwencji.
+* Ma to znaczenie przy ``doctest``, który zawsze korzysta z pojedynczych i rzuca errorem jak są podwójne
 
 .. code-block:: python
 
-    import this
+    print('it\'s José\'s book')
+    print("it's José's book")
 
-The Zen of Python
------------------
-* Beautiful is better than ugly.
-* Explicit is better than implicit.
-* Simple is better than complex.
-* Complex is better than complicated.
-* Flat is better than nested.
-* Sparse is better than dense.
-* Readability counts.
-* Special cases aren't special enough to break the rules.
-* Although practicality beats purity.
-* Errors should never pass silently.
-* Unless explicitly silenced.
-* In the face of ambiguity, refuse the temptation to guess.
-* There should be one-- and preferably only one --obvious way to do it.
-* Although that way may not be obvious at first unless you're Dutch.
-* Now is better than never.
-* Although never is often better than *right* now.
-* If the implementation is hard to explain, it's a bad idea.
-* If the implementation is easy to explain, it may be a good idea.
-* Namespaces are one honking great idea -- let's do more of those!
+.. code-block:: python
 
-Zen Pythona
------------
-
-* Piękne jest lepsze niż brzydkie.
-* Wyrażone wprost jest lepsze niż domniemane.
-* Proste jest lepsze niż złożone.
-* Złożone jest lepsze niż skomplikowane.
-* Płaskie jest lepsze niż wielopoziomowe.
-* Rzadkie jest lepsze niż gęste.
-* Czytelność się liczy.
-* Sytuacje wyjątkowe nie są na tyle wyjątkowe, aby łamać reguły.
-* Choć praktyczność przeważa nad konsekwencją.
-* Błędy zawsze powinny być sygnalizowane.
-* Chyba że zostaną celowo ukryte.
-* W razie niejasności powstrzymaj pokusę zgadywania.
-* Powinien być jeden -- i najlepiej tylko jeden -- oczywisty sposób na zrobienie danej rzeczy.
-* Choć ten sposób może nie być oczywisty jeśli nie jest się Holendrem.
-* Teraz jest lepsze niż nigdy.
-* Chociaż nigdy jest często lepsze niż natychmiast.
-* Jeśli rozwiązanie jest trudno wyjaśnić, to jest ono złym pomysłem.
-* Jeśli rozwiązanie jest łatwo wyjaśnić, to może ono być dobrym pomysłem.
-* Przestrzenie nazw to jeden z niesamowicie genialnych pomysłów -- miejmy ich więcej!
-
-
-PEP8
-====
+    print('<a href="http://python.astrotech.io">Python and Machine Learning</a>')
 
 Wcięcia
 -------
@@ -67,170 +46,169 @@ Wcięcia
     .. code-block:: python
 
     # Aligned with opening delimiter.
-    foo = long_function_name(var_one, var_two,
-                             var_three, var_four)
+    server = Server(host='localhost', port=443, secure=True,
+                    username='admin', password='admin')
 
     # More indentation included to distinguish this from the rest.
-    def long_function_name(
-            var_one, var_two, var_three,
-            var_four):
-        print(var_one)
+    def Server(
+            host='localhost', port=443, secure=True
+            username='admin', password='admin'):
+        print(host, port)
 
     # Hanging indents should add a level.
-    foo = long_function_name(
-        var_one, var_two,
-        var_three, var_four)
+    server = Server(
+        host='localhost', port=443, secure=True,
+        username='admin', password='admin')
 
-    # Hanging indents should add a level.
-    connection = Server(
+    # The best
+    server = Server(
         host='localhost',
         username='admin',
         password='admin',
-        port=1337
+        port=443,
+        secure=True,
     )
 
-
 :Not Good:
+    .. code-block:: python
 
-.. code-block:: python
+        # Arguments on first line forbidden when not using vertical alignment.
+        server = Server(host='localhost', port=1337,
+            username='admin', password='admin')
 
-    # Arguments on first line forbidden when not using vertical alignment.
-    foo = long_function_name(var_one, var_two,
-        var_three, var_four)
-
-    # Further indentation required as indentation is not distinguishable.
-    def long_function_name(
-        var_one, var_two, var_three,
-        var_four):
-        print(var_one)
+        # Further indentation required as indentation is not distinguishable.
+        def Server(
+            host='localhost', port=1337,
+            username='admin', password='admin'):
+            print(host, port)
 
 Zamykanie nawiasów
 ------------------
+:Good:
+    .. code-block:: python
 
-.. code-block:: python
-
-    my_list = [
-        1, 2, 3,
-        4, 5, 6,
+        vector = [
+            1, 2, 3,
+            4, 5, 6,
         ]
 
-    result = some_function_that_takes_arguments(
-        'a', 'b', 'c',
-        'd', 'e', 'f',
+        result = some_function_that_takes_arguments(
+            'a', 'b', 'c',
+            'd', 'e', 'f',
         )
 
-Lub:
+        vector = [
+            1, 2, 3,
+            4, 5, 6]
 
-.. code-block:: python
+        result = some_function_that_takes_arguments(
+            'a', 'b', 'c',
+            'd', 'e', 'f')
 
-    my_list = [
-        1, 2, 3,
-        4, 5, 6,
-    ]
-
-    result = some_function_that_takes_arguments(
-        'a', 'b', 'c',
-        'd', 'e', 'f',
-    )
-
-Lub:
-
-.. code-block:: python
-
-    my_list = [
-        1, 2, 3,
-        4, 5, 6]
-
-    result = some_function_that_takes_arguments(
-        'a', 'b', 'c',
-        'd', 'e', 'f')
-
-
-
-
-Tabulacje i czy spacje?
------------------------
-
-Głębokość wcięć równa czterem spacjom.
-
-Długość linii
+Łamanie linii
 -------------
-
-To jest dość kontrowersyjna klauzula mówiąca o tym, że długość linii powinna być nie dłuższa niż 79 znaków. Przy obecnych wielkich szerokokątnych monitorach jest to dość uciążliwe. Jednakże należy przestrzegać konwencji.
-
 Linie możemy łamać poprzez stawianie znaku ukośnika ``\`` na końcu:
 
 .. code-block:: python
 
-    with open('/path/to/some/file/you/want/to/read') as file_1, \
-         open('/path/to/some/file/being/written', 'w') as file_2:
-        file_2.write(file_1.read())
+    with open('/path/to/some/file/you/want/to/read') as file1, \
+            open('/path/to/some/file/being/written', mode='w') as file2:
+        content = file1.read()
+        file2.write(content)
 
 .. code-block:: python
 
-    class Rectangle(Blob):
+    class Server:
+        def __init__(self, username, password, host='localhost'
+                     port=80, secure=False):
 
-        def __init__(self, width, height,
-                     color='black', emphasis=None, highlight=0):
+            if not instance(username, str) or not instance(password, str) or
+                    not instance(host, str) or not instance(secure, bool) or
+                    (not instance(port, int) and 0 < port <= 65535):
+                raise TypeError(f'One of your parameters is incorrect type')
+                
+         def __str__(self):
+            if secure:
+                protocol = 'https'
+            else:
+                protocol = 'http'
 
-            if (width == 0 and height == 0 and
-                    color == 'red' and emphasis == 'strong' or
-                    highlight > 100):
-                raise ValueError("sorry, you lose")
+            return f'{protocol}://{self.username}:{self.password}@{self.host}:{self.port}/'
 
-            if width == 0 and height == 0 and (color == 'red' or
-                                               emphasis is None):
-                raise ValueError("I don't think so -- values are %s, %s" %
-                                 (width, height))
-
-            Blob.__init__(self, width, height,
-                          color, emphasis, highlight)
+    server = Server(
+        host='localhost',
+        username='admin',
+        password='admin',
+        port=443,
+        secure=True,
+    )
 
 Puste linie
 -----------
+.. code-block:: python
 
-Kodowanie plików
-----------------
+    class Server:
+        def __init__(self, username, password, host='localhost'
+                     port=80, secure=False):
 
-Przy Pythonie 3 kodownaie plików powinno być w UTF-8.
+            if not instance(username, str):
+                raise TypeError(f'Username must be str')
+
+            if not instance(password, str):
+                raise TypeError(f'Password must be str')
+
+            if not instance(port, int):
+                raise TypeError(f'Port must be int')
+            elif: 0 < port <= 65535
+                raise ValueError(f'Port must be 0-65535')
+
+         def __str__(self):
+            if secure:
+                protocol = 'https'
+            else:
+                protocol = 'http'
+
+            return f'{protocol}://{self.username}:{self.password}@{self.host}:{self.port}/'
 
 Importy
 -------
+* Każdy z importów powinien być w osobnej linii
+* importy systemowe na górze
+* importy bibliotek zewnętrznych poniżej systemowych
+* importy własnych modułów poniżej bibliotek zewnętrznych
+* jeżeli jest dużo importów, pomiędzy grupami powinna być linia przerwy
 
-Importy powinny być poukładane alfabetycznie w grupach.
-Na górze importy z bibliotek standardowych Pythona.
-Następnie linia przerwy i zewnętrzne zależności.
-Znów linia przerwy i zależności wewnątrz Twoich aplikacji.
+:Good:
+    .. code-block:: python
 
-Każdy z importów powinien być w osobnej linii.
+        import os
+        import sys
+        import requests
+        import numpy as np
+        from subprocess import Popen
+        from subprocess import PIPE
 
-Tak:
+    .. code-block:: python
 
-.. code-block:: python
+        import os
+        import sys
+        import requests
+        import numpy as np
+        from random import shuffle
+        from subprocess import Popen, PIPE
 
-    import os
-    import sys
+:Not Good:
+    .. code-block:: python
 
-Nie:
+        import sys, os, requests, numpy
 
-.. code-block:: python
+    .. code-block:: python
 
-    import sys, os
-
-Ale można:
-
-.. code-block:: python
-
-    from subprocess import Popen, PIPE
-
-Cudzysłowia
------------
-
-Python interpretuje cudzysłowia pojedyncze i podwójne tak samo. Ważne jest aby wybrać jeden sposób i konsekwentnie się go trzymać w całej aplikacji.
+        import sys, os
+        import requests, numpy
 
 Białe spacje w wyrażeniach
 --------------------------
-
 Tak:
 
 .. code-block:: python
@@ -340,18 +318,20 @@ Używanie ``__`` i ``_`` w nazwach
 
 Konstrukcje warunkowe
 ---------------------
+:Good:
+    .. code-block:: python
 
-Yes:
+        if foo is not None:
+            pass
 
-.. code-block:: python
+        if foo:
+            pass
 
-    if foo is not None:
+:Not Good:
+    .. code-block:: python
 
-No:
-
-.. code-block:: python
-
-    if not foo is None:
+        # if (! foo == null) {}
+        if not foo is None:
 
 Zwracanie z funkcji
 -------------------
@@ -405,6 +385,57 @@ Nie:
 
     if greeting == True:
     if greeting is True:
+
+PEP20 - Zen of Python
+=====================
+.. code-block:: python
+
+    import this
+
+The Zen of Python
+-----------------
+* Beautiful is better than ugly.
+* Explicit is better than implicit.
+* Simple is better than complex.
+* Complex is better than complicated.
+* Flat is better than nested.
+* Sparse is better than dense.
+* Readability counts.
+* Special cases aren't special enough to break the rules.
+* Although practicality beats purity.
+* Errors should never pass silently.
+* Unless explicitly silenced.
+* In the face of ambiguity, refuse the temptation to guess.
+* There should be one-- and preferably only one --obvious way to do it.
+* Although that way may not be obvious at first unless you're Dutch.
+* Now is better than never.
+* Although never is often better than *right* now.
+* If the implementation is hard to explain, it's a bad idea.
+* If the implementation is easy to explain, it may be a good idea.
+* Namespaces are one honking great idea -- let's do more of those!
+
+Zen Pythona
+-----------
+* Piękne jest lepsze niż brzydkie.
+* Wyrażone wprost jest lepsze niż domniemane.
+* Proste jest lepsze niż złożone.
+* Złożone jest lepsze niż skomplikowane.
+* Płaskie jest lepsze niż wielopoziomowe.
+* Rzadkie jest lepsze niż gęste.
+* Czytelność się liczy.
+* Sytuacje wyjątkowe nie są na tyle wyjątkowe, aby łamać reguły.
+* Choć praktyczność przeważa nad konsekwencją.
+* Błędy zawsze powinny być sygnalizowane.
+* Chyba że zostaną celowo ukryte.
+* W razie niejasności powstrzymaj pokusę zgadywania.
+* Powinien być jeden -- i najlepiej tylko jeden -- oczywisty sposób na zrobienie danej rzeczy.
+* Choć ten sposób może nie być oczywisty jeśli nie jest się Holendrem.
+* Teraz jest lepsze niż nigdy.
+* Chociaż nigdy jest często lepsze niż natychmiast.
+* Jeśli rozwiązanie jest trudno wyjaśnić, to jest ono złym pomysłem.
+* Jeśli rozwiązanie jest łatwo wyjaśnić, to może ono być dobrym pomysłem.
+* Przestrzenie nazw to jeden z niesamowicie genialnych pomysłów -- miejmy ich więcej!
+
 
 Korzystanie z ``help()``, ``dir()`` i ``object.__dict__``
 =========================================================

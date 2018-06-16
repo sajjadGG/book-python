@@ -275,7 +275,12 @@ Manipulacja datami
 #. Do dzisiejszej daty dodaj ten sam czas, który Ci wyszedł w poprzednim zadaniu.
 #. Wyświetl samą datę (bez czasu).
 #. Ile będziesz miał wtedy lat?
+#. Co to za daty, które podał użytkownik?
+
+:Założenia:
+    * Nazwa pliku: ``datetime-deltas.py``
+    * Linii kodu do napisania: około 15 linii
+    * Maksymalny czas na zadanie: 20 min
 
 :Zadanie z gwiazdką:
-    * Co to za daty, które podał użytkownik?
     * Uwzględnij strefy czasowe.

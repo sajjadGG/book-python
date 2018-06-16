@@ -245,6 +245,11 @@ Powielanie napisów
     * wykorzystując pętlę ``while``
     * wykorzystując właściwości mnożenia stringów ``print('ciag znakow' * 5)``
 
+:Założenia:
+    * Nazwa pliku: ``print-multi.py``
+    * Linii kodu do napisania: około 5 linii
+    * Maksymalny czas na zadanie: 5 min
+
 :Co zadanie sprawdza?:
     * wczytywanie ciągu znaków od użytkownika
     * formatowanie ciągu znaków

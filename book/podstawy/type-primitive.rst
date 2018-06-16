@@ -30,12 +30,20 @@ Jedyną różnicą jest konwencja nazewnicza:
 * stałe zapisujemy dużymi literami
 * zmienne zapisujemy małymi literami
 
+Typy
+----
+* Od Python 3.5 wprowadzono nową składnię
+* Nowa składnia nie jest wymagana (ale jest dobrą praktyką)
+* Nowa składnia uruchomiona w Python < 3.5 rzuci SyntaxError
+* Guido mówi, że typy nigdy nie będą wymagane
+* Aby sprawdzić poprawność trzeba użyć bibliotek zewnętrznych tj: ``mypy`` lub ``pyre``
+* Wprowadzone w bibliotece standardowej
+* IDE podpowiada typy
 
-Zasięg widoczności
-------------------
-* ``globals()``
-* ``locals()``
+.. code-block:: python
 
+    name: str = 'José Jiménez'
+    age: int = 30
 
 Numeryczne typy danych
 ======================
@@ -172,11 +180,11 @@ Wprowadzanie znaków od użytkownika
 
 Escape'owanie znaków
 --------------------
-.. code-block:: python
+.. code-block:: text
 
-    '\n'
-    '\r'
-    '\r\n'
+    \n
+    \r
+    \r\n
 
 .. figure:: img/type-machine.jpg
     :scale: 50%
@@ -184,15 +192,14 @@ Escape'owanie znaków
 
     Why we have '\\r\\n' on Windows?
 
-.. code-block:: python
+.. code-block:: text
 
-    """
-    \xac
-    \u7723
+    🚀
+    \x1F680
+    \u1F680
     \b123
     \t
     \'
-    """
 
 Znaki przed stringiem
 ---------------------
@@ -204,7 +211,6 @@ Znaki przed stringiem
     f'hello {first_name}, how are you?'
     b'this is text'
 
-
 Niemutowalność
 --------------
 * Ważną cechą ciągów znakowych jest tzw. niemutowalność.
@@ -213,11 +219,10 @@ Niemutowalność
 
 .. code-block:: python
 
-    >>> name = 'José'
-    >>> name += 'Jiménez'
-    >>> print(name)
-    José Jiménez
-
+    name = 'José'
+    name += 'Jiménez'
+    print(name)
+    # José Jiménez
 
 Pojedynczy czy podwójny cudzysłów
 ---------------------------------
@@ -225,6 +230,7 @@ Pojedynczy czy podwójny cudzysłów
 * Ważne jest aby wybrać jedną konwencję i się jej konsekwentnie trzymać.
 * Interpreter Pythona domyślnie stosuje pojedyncze znaki cudzysłowia.
 * Z tego powodu w tej książce będziemy trzymać się powyższej konwencji.
+* Ma to znaczenie przy ``doctest``, który zawsze korzysta z pojedynczych i rzuca errorem jak są podwójne
 
 .. code-block:: python
 
