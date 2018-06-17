@@ -1,3 +1,5 @@
+.. _Type Annotation:
+
 ***************
 Type Annotation
 ***************

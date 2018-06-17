@@ -2,6 +2,8 @@
 Generowanie wykresów
 ********************
 
+.. _Matplotlib:
+
 Matplotlib
 ==========
 

@@ -19,14 +19,14 @@ Declaring constants
     MY_CONSTANT = 10
     MY_CONSTANT = 'ehlo world'
 
-Różnica między stałymi i zmiennymi
-----------------------------------
+Variables vs. Constants
+-----------------------
 * Jedyną różnicą jest konwencja nazewnicza
 * Stałe zapisujemy dużymi literami
 * Zmienne zapisujemy małymi literami
 
-Typy
-----
+Types
+-----
 * Od Python 3.5 wprowadzono nową składnię
 * Nowa składnia nie jest wymagana (ale jest dobrą praktyką)
 * Nowa składnia uruchomiona w Python przed 3.5 rzuci SyntaxError
@@ -40,8 +40,8 @@ Typy
     name: str = 'José Jiménez'
     age: int = 30
 
-Inferencja typów
-----------------
+Type inference
+--------------
 * Static Typing (Java, C++, Swift)
 
 .. code-block:: java
@@ -59,140 +59,103 @@ Inferencja typów
     # this will work, but IDE should warn
     name: str = 10
 
-Numeryczne typy danych
-======================
+Numerical types
+===============
 
-``int`` - Liczba całkowita
---------------------------
-Jednym z najbardziej podstawowych typów danych jest ``int``.
-``int()`` jest funkcją wbudowaną, która zamieni swój argument na liczbę całkowitą.
-
-.. code-block:: python
-
-    age = 10
-    int(10)
-    # 10
-
-    int(10.0)
-    # 10
-
-    int(10.9)
-    # 10
-
-    my_int = 1000000
-    my_int = 1_000_000
-    my_int = 1e6
-
-Minimum and maximum values for integers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Python 3:
-    In Python 3, this question doesn't apply. The plain int type is unbounded.
-
-    However, you might actually be looking for the machine's word size. That's still available in Python 3 as ``sys.maxsize``.
-
-    .. code-block:: python
-
-        >>> import sys
-        >>> sys.maxsize
-
-:Python 2:
-    In Python 2, the maximum value for plain int values is available as sys.maxint:
-
-    .. code-block:: python
-
-        >>> import sys
-        >>> sys.maxint
-        9223372036854775807
-
-    You can calculate the minimum value with -sys.maxint - 1 as shown here.
-
-Python seamlessly switches from plain to long integers once you exceed this value. So most of the time, you won't need to know what is the maximum value for ``int``.
-
-``float`` - Liczba zmiennoprzecinkowa
--------------------------------------
-``float`` w Pythonie reprezentuje liczbę zmiennoprzecinkową. Ciekawą własnością tego typu jest możliwość reprezentacji nieskończoności za pomocą ``Infinity`` oraz minus nieskończoności ``-Infinity``. Więcej szczegółów dostępnych jest w dokumentacji dla tego `typu <https://docs.python.org/3/library/functions.html#grammar-token-infinity>`_
-
-Podobnie jak pozostałe typy ``float()`` jest funkcją, która konwertuje swój argument na liczbę zmiennoprzecinkową.
+``int``
+-------
+* Liczba całkowita
+* Funkcja ``int()`` kowertuje argument na ``int``
+* W Python 3 ``int`` nie ma maksymalnej wartości (dynamicznie się rozszerza)
 
 .. code-block:: python
 
-    >>> float(10)
-    10.0
+    age = 30
+    age: int = 30
 
-    >>> float('+1.23')
-    1.23
+    int(10)  # 10
+    int(10.0)  # 10
+    int(10.9)  # 10
 
-    >>> float('-1.23')
-    -1.23
+    milion = 1000000
+    milion = 1_000_000
+    milion = 1e6
 
-    >>> float('   -12345\n')
-    -12345.0
-
-    >>> float('1e-003')
-    0.001
-
-    >>> float('+1E6')
-    1000000.0
-
-    >>> float('-inf')
-    >>> float('-Infinity')
-    -inf
-
-    >>> float('inf')
-    >>> float('Infinity')
-    inf
-
-``complex`` - liczba zespolona
-------------------------------
-``complex`` reprezentuje typ liczby zespolonej posiadającej część rzeczywistą oraz urojoną. Należy zwrócić uwagę, że argument powinien być ciągiem znaków niezawierającym spacji. W przeciwnym przypadku otrzymamy ``ValueError``.
+``float``
+---------
+* Liczba zmiennoprzecinkowa
+* Funkcja ``float()`` konwertuje argument na ``float``
 
 .. code-block:: python
 
-    >>> complex('1+2j')
-    (1+2j)
+    float(10)  # 10.0
 
-    >>> complex('1 + 2j')
-    Traceback (most recent call last):
-      File "<stdin>", line 1, in <module>
-    ValueError: complex() arg is a malformed string
+    float('+1.23')  # 1.23
+    float('-1.23')  # -1.23
+    float('   -123.45\n')  # -123.45
 
+    float('1e-003')  # 0.001
+    float('+1E6')  # 1000000.0
 
-Tekstowe typy danych
-====================
+    float('-inf')  # -inf
+    float('-Infinity')  # -inf
+    float('inf')  # inf
+    float('Infinity')  # inf
 
-``str`` - Ciąg znaków
----------------------
-Obiekt typu ``str`` przechowuje łańcuch znaków. ``str()`` jest także funkcją, która zwraca ciąg znaków z argumentu.
-
-.. code-block:: python
-
-    >>> name1 = 'José'
-    'José'
-
-    >>> name2 = "Ivan"
-    'Ivan'
-
-    >>> print("""
-    ... Max Peck
-    ... """)
-    '\nMax Peck\n'
-
-    >>> str(10)
-    '10'
-
-
-Wprowadzanie znaków od użytkownika
-----------------------------------
-* Spacja na końcu prompt
+``complex``
+-----------
+* Liczba zespolona (część rzeczywista i urojona)
+* Notacja inżynierska ``j`` a nie matematyczna ``i``
+* W ciągu nie może być spacji
 
 .. code-block:: python
 
-    name = input('Type your name: ')
-    print(name)
+    complex('1+2j')  # (1+2j)
+    complex('1 + 2j')  # ValueError: complex() arg is a malformed string
 
 
-Escape'owanie znaków
---------------------
+Character types
+===============
+
+``str``
+-------
+* Ciąg (łańcuch) znaków
+* Funkcja ``str()`` konwertuje argument na ``str``
+
+.. code-block:: python
+
+    name = 'José'  # 'José'
+    name = "José"  # 'José'
+    name: str = 'José'  # 'José'
+
+    str(1969)  # '1969'
+    str(13.37)  # '13.37'
+
+    name = """
+        José Jiménez
+        Max Peck
+        Ivan Ivanovic
+    """  # '\nMax Peck\nMax Peck\nIvan Ivanovic'
+
+Single or double quote?
+-----------------------
+* Python nie rozróżnia czy stosujemy pojedyncze znaki cudzysłowiu czy podwójne.
+* Ważne jest aby wybrać jedną konwencję i się jej konsekwentnie trzymać.
+* Interpreter Pythona domyślnie stosuje pojedyncze znaki cudzysłowia.
+* Z tego powodu w tej książce będziemy trzymać się powyższej konwencji.
+* Ma to znaczenie przy ``doctest``, który zawsze korzysta z pojedynczych i rzuca errorem jak są podwójne
+
+.. code-block:: python
+
+    print('it\'s José\'s book')
+    print("it's José's book")
+
+.. code-block:: python
+
+    print('<a href="http://python.astrotech.io">Python and Machine Learning</a>')
+
+Escape characters
+-----------------
 .. code-block:: text
 
     \n
@@ -208,21 +171,30 @@ Escape'owanie znaków
 .. code-block:: text
 
     🚀
-    \x1F680
-    \u1F680
-    \b123
+    \x1F680  # after \x goes hexadecimal number
+    \u1F680  # after \u goes four hexadecimal numbers
+    \b1010   # after \b goes bytes
     \t
     \'
 
-Znaki przed stringiem
----------------------
+Characters before strings
+-------------------------
 .. code-block:: python
 
-    u'zażółć gęślą jaźń'
-    r'(?P<foo>)\n' # escapes does not matters
-    r'C:\Users\Admin\Desktop\foobar.txt'
-    f'hello {first_name}, how are you?'
+    f'hello {first_name}, how are you?'  # since Python 3.6
+    u'zażółć gęślą jaźń'  # Used in Python 2, now doesn't have any effect
+    r'(?P<foo>)\n'  # escapes does not matters
+    r'C:\Users\Admin\file.txt'  # without ``r`` this have problems with \Users (invalid hex for unicode character)
     b'this is text'
+
+Wprowadzanie znaków od użytkownika
+----------------------------------
+* Spacja na końcu prompt
+* ``input()`` zawsze zwraca ``str``
+
+.. code-block:: python
+
+    name = input('Type your name: ')
 
 Niemutowalność
 --------------
@@ -237,22 +209,7 @@ Niemutowalność
     print(name)
     # José Jiménez
 
-Pojedynczy czy podwójny cudzysłów
----------------------------------
-* Python nie rozróżnia czy stosujemy pojedyncze znaki cudzysłowiu czy podwójne.
-* Ważne jest aby wybrać jedną konwencję i się jej konsekwentnie trzymać.
-* Interpreter Pythona domyślnie stosuje pojedyncze znaki cudzysłowia.
-* Z tego powodu w tej książce będziemy trzymać się powyższej konwencji.
-* Ma to znaczenie przy ``doctest``, który zawsze korzysta z pojedynczych i rzuca errorem jak są podwójne
 
-.. code-block:: python
-
-    print('it\'s José\'s book')
-    print("it's José's book")
-
-.. code-block:: python
-
-    print('<a href="http://python.astrotech.io">Python and Machine Learning</a>')
 
 Operacje na stringach
 ---------------------

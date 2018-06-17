@@ -111,7 +111,7 @@ Moduł ``random`` w bibliotece standardowej
 
 Moduł ``matplotlib`` (biblioteka zewnętrzna)
 ============================================
-.. note:: Moduł jest szczegółowo opisany w :ref:`Matplotlib`.
+.. note:: Moduł jest szczegółowo opisany w :numref:`Matplotlib`.
 
 Moduł ``matplotlib`` pozwala na rysowanie wykresów i diagramów. Jest to bardzo rozbudowana biblioteka z setkami opcji konfiguracyjnych. Najczęściej używanym modułem biblioteki ``matplotlib`` jest moduł ``pyplot``, który implementuje szereg funkcji umożliwiających rysowanie wykresów 2d.
 
