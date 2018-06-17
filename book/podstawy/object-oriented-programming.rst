@@ -18,234 +18,114 @@ Paradygm imperatywny oznacza, że używane są instrukcje, które zmieniają sta
 
 Paradygmat obiektowy polega na tym, że program manipuluje złożonymi obiektami, z których każdy ma swój własny stan i ten stan można modyfikować metodami przypisanymi do tego obiektu. Paradygmat obiektówy pozwala pisać bardzo przejrzysty kod i zrozumiały kod.
 
-Składnia
-========
+Syntax
+======
 
-Klasy
------
+Classes and Objects
+-------------------
 .. literalinclude:: src/oop-class.py
     :language: python
-    :caption: Class
+    :caption: Classes and Objects
 
-Pola Statyczne
---------------
-.. literalinclude:: src/oop-static-field.py
+Static Fields
+-------------
+.. literalinclude:: src/oop-fields-static.py
     :language: python
-    :caption: Class
+    :caption: Static Fields
 
-.. code-block:: python
+Dynamic Fields
+--------------
+.. literalinclude:: src/oop-fields-static.py
+    :language: python
+    :caption: Dynamic fields
 
-    class Astronaut:
-        agency = 'NASA'
+Static vs. Dynamic Fields
+-------------------------
+.. literalinclude:: src/oop-fields-static-vs-dynamic.py
+    :language: python
+    :caption: Static vs. Dynamic fields
 
-    # Objects - Instances
-    ivan = Astronaut()
-    jose = Astronaut()
-    max = Astronaut()
+Methods
+-------
+.. literalinclude:: src/oop-methods-noarg.py
+    :language: python
+    :caption: Methods
 
-    ivan.agency  # NASA
-    jose.agency  # NASA
-    max.agency   # NASA
-    Astronaut.agency  # NASA
-
-    ivan.agency = 'Roscosmos'
-
-    ivan.agency  # Roscosmos
-    jose.agency  # NASA
-    max.agency   # NASA
-    Astronaut.agency  # NASA
-
-    Astronaut.agency = 'ESA'
-
-    ivan.agency  # Roscosmos
-    jose.agency  # ESA
-    max.agency   # ESA
-    Astronaut.agency  # ESA
-
-Pola dynamiczne
----------------
-.. code-block:: python
-
-    class Pojazd:
-        def __init__(self, marka, kola=4):
-            self.marka = marka
-            self.kola = kola
-            self.kierowca = 'Max Peck'  # tak się raczej nie robi
-
-
-    mercedes = Pojazd(marka='mercedes', kola=6)
-    print(mercedes.kola)
-
-    tir = Pojazd(marka='scania', kola=18)
-    print(tir.kola)
-
-Metody
-------
-.. code-block:: python
-
-    class Pojazd:
-        marka = None
-        kierowca = None
-        kola = 4
-
-        def zatrab(self):
-            print('piiip')
-
-        def kto_kieruje(self):
-            print(self.kierowca)
-
-
-    auto = Pojazd()
-    auto.zatrab()
-    auto.kto_kieruje()
+.. literalinclude:: src/oop-methods-arg.py
+    :language: python
+    :caption: Methods
 
 ``self``
 --------
-.. code-block:: python
-
-    class Pojazd:
-        def zatrab(self):
-            print('piiip')
-
-Wykonywanie operacji na obiekcie
---------------------------------
-.. code-block:: python
-
-    >>> text = 'Ehlo,world'
-
-    >>> text.split(',')
-    ['Ehlo', 'world']
-
-    >>> str.split(text, ',')
-    ['Ehlo', 'world']
-
-    >>> str.split('Ehlo,world', ',')
-    ['Ehlo', 'world']
-
-
-Pola klasy
-----------
-.. code-block:: python
-
-    import logging
-
-
-    class Samochod:
-        kola = 4
-        marka = None
-
-        def set_marka(self, marka):
-            logging.warning('Ustawiamy marke')
-            self.marka = marka
-
-        def get_marka(self):
-            return self.marka
-
-
-    # Java way
-    mercedes = Samochod()
-    mercedes.set_marka('Mercedes')
-    print(mercedes.get_marka())
-
-
-    # Python way
-    maluch = Samochod()
-    maluch.marka = 'Maluch'
-    print(maluch.marka)
-
-
-    maluch = Samochod(marka='Maluch')
-    print(maluch.marka)
-
-.. literalinclude:: src/oop-getter.py
+.. literalinclude:: src/oop-methods-self.py
     :language: python
-    :caption: Case Study uzasadnionego użycia gettera w kodzie
+    :caption: Methods
 
+``__init__()`` - Initalizer Method
+----------------------------------
+* Domyślny init gdy niezdefiniowaliśmy własnego
+* ``__init__()`` to nie konstruktor
 
-Funkcja inicjalizująca
-----------------------
+.. literalinclude:: src/oop-methods-self.py
+    :language: python
+    :caption: ``__init__()`` - Initalizer Method
+
+Callable
+--------
 .. code-block:: python
 
-    class Server:
+    int()
+    10()
 
-        def __init__(self, host, user, password=None):
-            """
-            host i user są wymagane
-            password jest niewymagany i domyślnie jest None
-            """
-            self.host = host
-            self.user = user
-            self.password = password
+Inferencja typów
+----------------
+* Static Typing (Java, C++, Swift)
 
+.. code-block:: java
 
-    localhost = Server(
-        host='localhost',
-        user='admin',
-        password='admin'
-    )
+    String name = new String("Jose Jimenez")
+    name = new String()  # type inferece
 
-
-``__init__`` jest metodą klasy, która wykonuje się podczas tworzenia nowego obiektu. Nie jest to do końca konstruktor tego obiektu, ale dla większości zastosowań można przyjąć, że metoda ``__init__`` jest konstruktorem klasy.
+* Dynamic Typing (Python, PHP, Ruby)
 
 .. code-block:: python
 
-    import logging
+    name: str = str('Jose Jimenez')  # Type annotations
+    name = str()
 
-    class Samochod:
-        kierowca = None
+    # Type annotations (type hinting not forcing)
+    name: str = 10
 
-        def __init__(self, marka, kola=4):
-            logging.warning('inicjalizujemy obiekt %s', marka)
-            self.marka = marka
-            self.kola = kola
+.. code-block:: python
 
+    {}  # dict
+    {1}  # set
+    {1, 2}  # set
+    {1: 2}  # dict
+    {1:1, 2:2}  # dict
 
-    sam1 = Samochod(marka='Maluch')
-    print(sam1.marka)
-    print(sam1.kola)
+    my_data = {}
+    isinstance(my_data, (set, dict))  # True
 
-    print(dir(sam1))
-    print(sam1.__dict__)
+    isinstance(my_data, dict)  # True
+    isinstance(my_data, set)  # False
 
+    my_data = {1}
+    isinstance(my_data, set)  # True
+    isinstance(my_data, dict)  # False
 
-    sam2 = Samochod(marka='Merc')
-    print(sam2.marka)
-    print(sam2.kola)
+    my_data = {1: 1}
+    isinstance(my_data, set)  # False
+    isinstance(my_data, dict)  # True
 
-
-.. warning:: Nie powinniśmy uruchamiać innych metod na obiekcie. Bo obiekt nie jest jeszcze w pełni zainicjalizowany!! (bo konstruktor się nie wykonał do końca). Dopiero jak się skończy ``__init__`` to możemy uruchamiać metody obiektu.
-
-    .. code-block:: python
-
-        class Server:
-
-            def __init__(self, host, user, password=None):
-                self.host = host
-                self.user = user
-                self.password = password
-                self.login()  # Błąd. Obiekt nie jest jeszcze w pełni zainicjalizowany, chociaż Python na to pozwoli (bo jest to funkcja inicjalizująca (Java już nie bo tam jest konstruktor).
-
-           def login(self):
-                print('loguję się do systemu')
-
-
-        localhost = Server(
-            host='localhost',
-            user='admin',
-            password='admin'
-        )
-
-        # to jest poprawne wywoałnie
-        localhost.login()
-
-Dziedziczenie
--------------
+Inheritance
+-----------
 .. literalinclude:: src/oop-inheritance.py
     :name: listing-oop-inheritance
     :language: python
     :caption: Inheritance
 
-Wielodziedziczenie
+Multiple Inheritance
 ------------------
 .. literalinclude:: src/oop-multiple-inheritance.py
     :name: listing-oop-multiple-inheritance
@@ -256,108 +136,15 @@ Wielodziedziczenie
 * gdzie wsadzić metodę ``ruszaj()``
 * gdzie wsadzić metodę ``otworz_dach()``
 
-Kompozycja
-----------
-Tzw. Klasy Mixin
-
-.. code-block:: python
-
-    class OtwieralneSzyby:
-        def otworz_szyby(self):
-            raise NotImplementedError
-
-        def zamknij_szyby(self):
-            raise NotImplementedError
-
-
-    class OtwieralnyDach:
-        def otorz_dach(self):
-            raise NotImplementedError
-
-        def zamknij_dach(self):
-            raise NotImplementedError
-
-
-    class UmieTrabic:
-        def zatrab(self):
-            print('\bbiip')
-
-
-    class Pojazd:
-        kola = None
-
-
-    class Samochod(Pojazd, UmieTrabic, OtwieralneSzyby):
-        kola = 4
-
-        def wlacz_swiatla(self, *args, **kwargs):
-            print('włączam światła')
-
-
-    class Cabrio(Samochod, OtwieralnyDach):
-        def wlacz_swiatla(self, *args, **kwargs):
-            print('Podnieś obudowę lamp')
-            print('Puść muzyzkę')
-            super().wlacz_swiatla(*args, **kwargs)
-            print('Zatrąb')
-
-
-    class Motor(Pojazd, UmieTrabic):
-        kola = 2
-
-
-    c = Cabrio()
-    c.wlacz_swiatla()
-
-
-.. code-block:: python
-
-    class OtwieralnyDach:
-        def otworz_dach(self):
-            pass
-
-        def zamknij_dach(self):
-            pass
-
-
-    class Trabi:
-        def zatrab(self):
-            raise NotImplementedError
-
-
-
-    class Pojazd:
-        kola = None
-
-
-    class Samochod(Pojazd):
-        kola = 4
-
-
-    class Motor(Pojazd, Trabi):
-        kola = 2
-
-        def zatrab(self):
-            print('biip')
-
-
-    class Cabriolet(Samochod, OtwieralnyDach, Trabi):
-        def zatrab(self):
-            print('tru tu tu tu')
-
-
-    class Mercedes(Samochod, OtwieralnyDach, Trabi):
-        pass
-
-
-    class Maluch(Samochod, Trabi):
-        pass
-
+Composition (Mixin Classes)
+---------------------------
+.. literalinclude:: src/oop-composition.py
+    :language: python
+    :caption: Composition (Mixin Classes)
 
 Dziedziczenie czy kompozycja?
 -----------------------------
 * Kompozycja ponad dziedziczenie!
-
 
 ``super()``
 -----------
@@ -365,16 +152,22 @@ Funkcja ``super`` pozwala uzyskać dostęp do obiektu po którym dziedziczymy, d
 
 .. code-block:: python
 
-    >>> class Samochod:
-    ...     def zatrab(self):
-    ...         print('biiiip')
+    class Samochod:
+        def zatrab(self):
+            print('biiiip')
 
-    >>> class Maluch(Samochod):
-    ...     def zatrab(self):
-    ...         print('bip')
-    ...
-    ...     def jak_robi_samochod(self):
-    ...         return super().zatrab()
+    class Maluch(Samochod):
+        def zatrab(self):
+            print('bip')
+
+        def jak_trabi_samochod(self):
+            return super().zatrab()
+
+``__str__()``
+-------------
+.. literalinclude:: src/oop-str.py
+    :language: python
+    :caption: Using ``__str__()`` on a class
 
 
 ``__str__()`` i ``__repr__()``
@@ -386,77 +179,17 @@ Albo jeszcze inaczej:
     * ``__repr__`` jest dla developerów (być jednoznacznym),
     * ``__str__`` dla użytkowników (być czytelnym).
 
-.. code-block:: python
-
-    class Samochod:
-        def __init__(self, marka, kola=4):
-            self.marka = marka
-            self.kola = kola
-
-        def __str__(self):
-            return f'Marka: {self.marka} i ma {self.kola} koła'
-
-        def __repr__(self):
-            return f'Samochod(marka={self.marka}, kola={self.kola})'
-
-
-    auto = Samochod(marka='mercedes', kola=3)
-    print(auto)
-    # Marka: {self.marka} i ma {self.kola} koła
-
-    auta = [
-        Samochod(marka='mercedes', kola=3),
-        Samochod(marka='maluch', kola=4),
-        Samochod(marka='fiat', kola=4),
-    ]
-    print(auta)
-    # Samochod(marka='mercedes', kola=3),
-    # Samochod(marka='maluch', kola=4),
-    # Samochod(marka='fiat', kola=4),
-
+.. literalinclude:: src/oop-repr.py
+    :language: python
+    :caption: Using ``__repr__()`` on a class
 
 Przykład praktyczny:
 
 .. code-block:: python
 
-    import datetime
-
-    datetime.datetime.now()  # ``__repr__``
-    print(datetime.datetime.now())  # ``__str__``
-
-
-Dobre praktyki
-==============
-
-Tell - don't ask
-----------------
-"Tell-Don't-Ask is a principle that helps people remember that object-orientation is about bundling data with the functions that operate on that data. It reminds us that rather than asking an object for data and acting on that data, we should instead tell an object what to do. This encourages to move behavior into an object to go with the data."
-
-Dobrze:
-
-    .. code-block:: python
-
-        class Samochod:
-            szyby = 'zamkniete'
-
-            def otworz_szyby(self):
-                self.szyby = 'otwarte'
-
-
-        auto.otworz_szyby()
-
-Źle:
-
-    .. code-block:: python
-
-        class Samochod:
-            szyby = 'zamkniete'
-
-            def otworz_szyby(self):
-                self.szyby = 'otwarte'
-
-
-        auto.szyby = 'zamkniete'
+    >>> import datetime
+    >>> datetime.datetime.now()  # ``__repr__``
+    >>> print(datetime.datetime.now())  # ``__str__``
 
 
 Inicjalizacja parametrów
@@ -502,11 +235,11 @@ Klasa per plik?
 Patrz przykład powyżej
 
 
-Zadania kontrolne
-=================
+Assignments
+===========
 
-Książka adresowa
-----------------
+Address Book
+------------
 #. Napisz książkę adresową:
 
         * imię
@@ -526,16 +259,13 @@ Książka adresowa
 #. Zrób tak, aby się ładnie wyświetlało zarówno dla jednego wyniku (``print(adres)``, ``print(osoba)`` jak i dla wszystkich w książce ``print(ksiazka_adresowa)``.
 #. API programu powinno być tak jak na :numref:`listing-oop-address-book`
 
-.. literalinclude:: src/oop-address-book.py
-    :name: listing-oop-address-book
-    :language: python
-    :caption: Address Book
-
-:Podpowiedź:
-    * Powinieneś dopisać około 20 linii
-
 :Zadanie z gwiazdką:
     * Klasa ``Adres`` powinna mieć zmienną liczbę argumentów za pomocą ``**kwargs`` i dynamicznie wpisywane pola ``setattr()`` (jeżeli nie mają wartości ``None``).
+
+:Założenia:
+    * Nazwa pliku: ``oop-addressbook.py``
+    * Linii kodu do napisania: około 20 linii
+    * Maksymalny czas na zadanie: 30 min
 
 :Co zadanie sprawdza?:
     * myślenie obiektowe i odwzorowanie struktury w programie
@@ -543,6 +273,11 @@ Książka adresowa
     * zagnieżdżanie obiektów
     * rzutowanie obiektu na stringa oraz jego reprezentacja (które i kiedy użyć)
     * korzystanie z operatorów ``*`` i ``**`` (zadanie z gwiazdką)
+
+.. literalinclude:: src/oop-address-book.py
+    :name: listing-oop-address-book
+    :language: python
+    :caption: Address Book
 
 Punkty i wektory
 ----------------
@@ -564,3 +299,8 @@ Przekształć swój kod z przykładu z modułu "Matematyka" tak żeby wykorzytyw
 
 :Zadanie 4:
     Napisz kod, który zaklasyfikuje te losowo wygenerowane punkty do punktów A oraz B na podstawie odległości. W tym celu wykorzystaj napisane metody do obliczania odległości między punktami. Po klasyfikacji wyrysuj te punkty na wykresie, podobnie jak w przykładzie z modułu "Matematyka".
+
+:Założenia:
+    * Nazwa pliku: ``oop-vector.py``
+    * Linii kodu do napisania: około 20 linii
+    * Maksymalny czas na zadanie: 30 min

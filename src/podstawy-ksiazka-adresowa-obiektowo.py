@@ -9,9 +9,10 @@ logging.basicConfig(level=logging.DEBUG)
 
 
 class Kontakt:
-    def __init__(self, imie, nazwisko, adresy=()):
+    def __init__(self, imie, nazwisko, telefon=None, adresy=()):
         self.imie = imie
         self.nazwisko = nazwisko
+        self.telefon = telefon
         self.adresy = adresy
 
     def __str__(self):
@@ -23,12 +24,10 @@ class Kontakt:
 
 class Adres:
     def __init__(self, **kwargs):
-        self.ulica = kwargs.get('ulica', None)
-        self.miasto = kwargs.get('miasto', None)
-
-#        for k, v in kwargs.items():
-#           setattr(self, k, v)
-
+        # self.ulica = kwargs.get('ulica', None)
+        # self.miasto = kwargs.get('miasto', None)
+        for var, value in kwargs.items():
+           setattr(self, var, value)
 
     def __str__(self):
         return f'{self.ulica} {self.miasto}'

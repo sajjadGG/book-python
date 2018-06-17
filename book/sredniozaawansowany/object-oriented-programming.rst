@@ -2,6 +2,57 @@
 Object Oriented Programming
 ***************************
 
+Wykonywanie operacji na obiekcie
+================================
+.. code-block:: python
+
+    >>> text = 'Ehlo,world'
+
+    >>> text.split(',')
+    ['Ehlo', 'world']
+
+    >>> str.split(text, ',')
+    ['Ehlo', 'world']
+
+    >>> str.split('Ehlo,world', ',')
+    ['Ehlo', 'world']
+
+Accessors
+=========
+
+
+Pola klasy
+----------
+.. code-block:: python
+
+    class Samochod:
+        kola = 4
+        marka = None
+
+        def set_marka(self, marka):
+            print('Ustawiamy marke')
+            self.marka = marka
+
+        def get_marka(self):
+            return self.marka
+
+
+    # Java way
+    mercedes = Samochod()
+    mercedes.set_marka('Mercedes')
+    print(mercedes.get_marka())
+
+    # Python way
+    maluch = Samochod()
+    maluch.marka = 'Maluch'
+    print(maluch.marka)
+
+
+.. literalinclude:: src/oop-getter.py
+    :language: python
+    :caption: Case Study uzasadnionego użycia gettera w kodzie
+
+
 Method Resolution Order
 =======================
 .. literalinclude:: src/oop-mro.py
@@ -173,11 +224,53 @@ Polimorfizm
             print('biiiip')
         ...
 
+Dobre praktyki
+==============
+
+Tell - don't ask
+----------------
+"Tell-Don't-Ask is a principle that helps people remember that object-orientation is about bundling data with the functions that operate on that data. It reminds us that rather than asking an object for data and acting on that data, we should instead tell an object what to do. This encourages to move behavior into an object to go with the data."
+
+Dobrze:
+
+    .. code-block:: python
+
+        class Samochod:
+            szyby = 'zamkniete'
+
+            def otworz_szyby(self):
+                self.szyby = 'otwarte'
+
+
+        auto.otworz_szyby()
+
+Źle:
+
+    .. code-block:: python
+
+        class Samochod:
+            szyby = 'zamkniete'
+
+            def otworz_szyby(self):
+                self.szyby = 'otwarte'
+
+
+        auto.szyby = 'zamkniete'
+
+Uruchamianie metod w ``__init__()``
+-----------------------------------
+* Nie powinniśmy uruchamiać innych metod na obiekcie.
+* Obiekt nie jest jeszcze w pełni zainicjalizowany!!
+* Konstruktor się nie wykonał do końca.
+* Dopiero jak się skończy ``__init__`` to możemy uruchamiać metody obiektu.
+
+.. literalinclude:: src/oop-init-calls.py
+    :language: python
+    :caption: Uruchamianie metod w ``__init__()``
 
 Interfejsy
 ==========
 .. literalinclude:: src/oop-interface.py
-    :name: listing-oop-interface
     :language: python
     :caption: Interfejsy
 
@@ -193,42 +286,18 @@ Klasa abstrakcyjna to taka klasa, która nie ma żadnych instancji (w programie 
 
 Monkey Patching
 ===============
-.. code-block:: python
+.. literalinclude:: src/oop-monkey-patching-1.py
+    :language: python
+    :caption: Monkey Patching
 
-    class User:
-        def hello(self):
-            print('hello')
-
-
-    def monkey_patch():
-        print('My function')
+.. literalinclude:: src/oop-monkey-patching-2.py
+    :language: python
+    :caption: Monkey Patching
 
 
-    User.hello = monkey_patch
-    User.hello()
-    # 'My function'
-
-.. code-block:: python
-
-    import datetime
-    import json
-
-
-    DATA = {
-        'datetime': datetime.datetime(1961, 4, 12, 2, 7, 0, 123456),
-        'date': datetime.datetime(1961, 4, 12),
-        'name': 'José Jiménez',
-    }
-
-    def datetime_encoder(self, obj):
-        if isinstance(obj, datetime.datetime):
-            return f'{obj:%Y-%m-%dT%H:%M:%S.%fZ}'
-        elif isinstance(obj, datetime.date):
-            return f'{obj:%Y-%m-%d}'
-        else:
-            return super().default(obj)
-
-    json.JSONEncoder.default = datetime_encoder
+.. literalinclude:: src/oop-monkey-patching-3.py
+    :language: python
+    :caption: Monkey Patching
 
 
 Metaclass

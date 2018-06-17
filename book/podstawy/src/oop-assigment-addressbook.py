@@ -3,7 +3,7 @@ print(neil)
 # Neil Armstrong
 
 alan = Kontakt(imie='Alan', nazwisko='Shepard', adresy=[Adres(miasto='Houston'), Adres(miasto='Cocoa Beach')])
-print(max)
+print(alan)
 # Alan Shepard [Houston, Cocoa Beach]
 
 ksiazka_adresowa = [
