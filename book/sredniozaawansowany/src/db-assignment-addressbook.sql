@@ -1,29 +1,48 @@
-SQL_CREATE_TABLE = """
-    CREATE TABLE IF NOT EXISTS kontakty (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        firstname TEXT,
-        lastname TEXT,
-        adresy TEXT
-    )
-"""
+CREATE TABLE IF NOT EXISTS contact (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    created DATETIME,
+    modified DATETIME,
+    first_name TEXT,
+    last_name TEXT,
+    date_of_birth DATE
+);
 
-SQL_INSERT = """
-    INSERT INTO kontakty VALUES (
-        NULL,
-        :firstname,
-        :lastname,
-        :adresy
-    )
-"""
+CREATE UNIQUE INDEX IF NOT EXISTS last_name_index ON contact (last_name);
+CREATE INDEX IF NOT EXISTS modified_index ON contact (modified);
 
-SQL_UPDATE = """
-    UPDATE kontakty SET
-        firstname=:firstname,
-        lastname=:lastname,
-        adresy=:adresy  
-    WHERE id=:id
-"""
+CREATE TABLE IF NOT EXISTS address (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    contact_id INTEGER,
+    street TEXT,
+    city TEXT,
+    state TEXT,
+    code INT,
+    country TEXT
+);
 
-SQL_SELECT = """
-    SELECT * FROM kontakty
-"""
+INSERT INTO contact VALUES (
+    NULL,
+    :created,
+    :modified,
+    :first_name,
+    :last_name,
+    :date_of_birth
+);
+
+INSERT INTO address VALUES (
+    NULL,
+    :contact_id
+    :street,
+    :city,
+    :state,
+    :code,
+    :country
+);
+
+UPDATE contact SET
+    first_name=:firstname,
+    last_name=:lastname,
+    modified=:modified
+WHERE id=:id;
+
+SELECT * FROM contact;

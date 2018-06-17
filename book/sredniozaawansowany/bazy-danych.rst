@@ -199,64 +199,74 @@ Przykład praktyczny
 
 ``pymongo``
 ===========
-
 * http://api.mongodb.com/python/current/tutorial.html
 
 .. code-block:: console
 
-    $ python -m pip install pymongo
+    $ pip install pymongo
 
 .. code-block:: python
 
-    >>> from pymongo import MongoClient
+    import datetime
+    from pymongo import MongoClient
 
-    >>> client = MongoClient('mongodb://localhost:27017/')
-    >>> db = client.test_database
+    client = MongoClient('mongodb://localhost:27017/')
+    db = client.test_database
+    posts = db.posts
 
-    >>> import datetime
-    >>> post = {"author": "Mike",
-    ...         "text": "My first blog post!",
-    ...         "tags": ["mongodb", "python", "pymongo"],
-    ...         "date": datetime.datetime.utcnow()}
+    data = {
+        "name": "Jose Jimenez",
+        "catchphrase": "My name Jose Jimenez",
+        "tags": ["astronaut", "nasa", "space"],
+        "date": datetime.datetime.utcnow()
+    }
 
-    >>> posts = db.posts
-    >>> post_id = posts.insert_one(post).inserted_id
-    >>> post_id
-    ObjectId('...')
+    posts.insert_one(data).inserted_id
+    # ObjectId('...')
 
 .. code-block:: python
 
-    >>> for post in posts.find():
-    ...   pprint.pprint(post)
+    for post in posts.find():
+        print(post)
 
-    >>> for post in posts.find({"author": "Mike"}):
-    ...   pprint.pprint(post)
+    for post in posts.find({"author": "Mike"}):
+        print(post)
 
 ``SQLAlchemy``
 ==============
 
+``Django ORM``
+==============
 
 Zadania kontrolne
 =================
 
-Tworzenie bazy danych i proste zapytania
-----------------------------------------
-Skrypt z książką adresową z poprzednich zadań przepisz tak, aby wykorzystywał bazę danych do składowania informacji:
-
+Tworzenie bazy danych i proste zapytania (simple)
+-------------------------------------------------
+* Wykorzystaj kod z listingu :numref:``
 * Nie wykorzystuj relacji, a dane adresowe zapisz zserializowane i rozdzielone średnikami ``;``
 * dla ułatwienia możesz przyjąć, że zawsze jest maks jeden adres
 * Wykorzystaj ``cursor``
 * Dane powinny być zwracane dane w postaci listy ``dict``
 * Do wpisywania danych wykorzystaj konstrukcję ``execute`` wykorzystując ``dict`` jako argument
 
+:Założenia:
+    * Nazwa pliku: ``db-simple.py``
+    * Linii kodu do napisania: około 15 linii
+    * Maksymalny czas na zadanie: 20 min
+
 :Zadanie z gwiazdką:
     * Dodaj obsługę wielu adresów
     * Dodaj obsługę relacji w aplikacji
 
 :Podpowiedź:
-    .. literalinclude:: src/db-ksiazka-adresowa.py
+    .. literalinclude:: src/db-assignment-addressbook.sql
         :language: python
-        :caption: Ksiazka Adresowa zapytania SQL
+        :caption: Address Book SQL queries
+
+.. literalinclude:: src/db-assignment-addressbook.py
+    :language: python
+    :caption: Address Book
 
 Tworzenie bazy danych
 ---------------------
@@ -270,3 +280,8 @@ Tworzenie bazy danych
     * Petal length
     * Petal width
     * Species
+
+:Założenia:
+    * Nazwa pliku: ``db-iris.py``
+    * Linii kodu do napisania: około 10 linii
+    * Maksymalny czas na zadanie: 20 min

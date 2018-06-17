@@ -2,41 +2,38 @@
 Primitive types
 ***************
 
-Stałe i zmienne
-===============
+Variables and Constants
+=======================
 
-Deklarowanie zmiennych
-----------------------
+Declaring variables
+-------------------
 .. code-block:: python
 
     my_variable = 10
     my_variable = 'ehlo world'
 
-
-Deklarowanie stałych
---------------------
+Declaring constants
+-------------------
 .. code-block:: python
 
     MY_CONSTANT = 10
     MY_CONSTANT = 'ehlo world'
 
-
 Różnica między stałymi i zmiennymi
 ----------------------------------
-Jedyną różnicą jest konwencja nazewnicza:
-
-* stałe zapisujemy dużymi literami
-* zmienne zapisujemy małymi literami
+* Jedyną różnicą jest konwencja nazewnicza
+* Stałe zapisujemy dużymi literami
+* Zmienne zapisujemy małymi literami
 
 Typy
 ----
 * Od Python 3.5 wprowadzono nową składnię
 * Nowa składnia nie jest wymagana (ale jest dobrą praktyką)
-* Nowa składnia uruchomiona w Python < 3.5 rzuci SyntaxError
-* Guido mówi, że typy nigdy nie będą wymagane
+* Nowa składnia uruchomiona w Python przed 3.5 rzuci SyntaxError
+* Twórcy języka mówą, że typy nigdy nie będą wymagane
 * Aby sprawdzić poprawność trzeba użyć bibliotek zewnętrznych tj: ``mypy`` lub ``pyre``
-* Wprowadzone w bibliotece standardowej
-* IDE podpowiada typy
+* Typy można znaleźć w wielu funkcjach w bibliotece standardowej
+* Dobre IDE podpowiada typy i informuje o błędach
 
 .. code-block:: python
 
@@ -59,6 +56,7 @@ Inferencja typów
     name = str()
 
     # Type annotations (type hinting not forcing)
+    # this will work, but IDE should warn
     name: str = 10
 
 Numeryczne typy danych
@@ -71,20 +69,19 @@ Jednym z najbardziej podstawowych typów danych jest ``int``.
 
 .. code-block:: python
 
-    >>> age = 10
+    age = 10
+    int(10)
+    # 10
 
-    >>> int(10)
-    10
+    int(10.0)
+    # 10
 
-    >>> int(10.0)
-    10
+    int(10.9)
+    # 10
 
-    >>> int(10.9)
-    10
-
-    >>> my_int = 1000000
-    >>> my_int = 1_000_000
-    >>> my_int = 1e6
+    my_int = 1000000
+    my_int = 1_000_000
+    my_int = 1e6
 
 Minimum and maximum values for integers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
