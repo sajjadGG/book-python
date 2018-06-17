@@ -67,8 +67,8 @@ Methods
 
 ``__init__()`` - Initalizer Method
 ----------------------------------
-* Domyślny ``__init__()`` gdy niezdefiniowaliśmy własnego
 * ``__init__()`` to nie konstruktor
+* Domyślny ``__init__()`` gdy niezdefiniowaliśmy własnego
 
 .. literalinclude:: src/oop-init.py
     :language: python

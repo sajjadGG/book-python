@@ -3,3 +3,4 @@ class Astronaut:
 
 
 jose = Astronaut()
+ivan = Astronaut()

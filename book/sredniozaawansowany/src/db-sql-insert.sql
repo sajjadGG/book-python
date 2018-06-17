@@ -1,10 +1,4 @@
-INSERT INTO people VALUES ("José", "Jiménez");
-INSERT INTO people (first_name, last_name) VALUES ("Max", "Peck");
-insert into people(first_name, last_name) values (?, ?)
-
-INSERT INTO kontakty VALUES (
-    NULL,
-    :firstname,
-    :lastname
-)
-
+INSERT INTO contacts (first_name, last_name) VALUES ("Max", "Peck");
+INSERT INTO contacts VALUES ("José", "Jiménez");
+insert into contacts (first_name, last_name) values (?, ?)
+INSERT INTO contacts VALUES (NULL, :first_name, :last_name)

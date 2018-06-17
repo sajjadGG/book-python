@@ -63,6 +63,9 @@ ALTER
 
 DROP
 ----
+* https://www.youtube.com/watch?v=1aEqd4bl6Bs
+* prepare your statement starting with '--'
+
 .. literalinclude:: src/db-sql-drop.sql
     :language: sql
     :caption: DROP
@@ -254,3 +257,16 @@ Skrypt z książką adresową z poprzednich zadań przepisz tak, aby wykorzystyw
     .. literalinclude:: src/db-ksiazka-adresowa.py
         :language: python
         :caption: Ksiazka Adresowa zapytania SQL
+
+Tworzenie bazy danych
+---------------------
+* https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv
+
+#. bazę danych Irysów przekonwertuj na tabelę w sqlite3
+#. Nazwy poszczególnych kolumn:
+
+    * Sepal length
+    * Sepal width
+    * Petal length
+    * Petal width
+    * Species

@@ -1,8 +1,6 @@
-.. _Stałe, zmienne i typy danych:
-
-****************************
-Stałe, zmienne i typy danych
-****************************
+***************
+Primitive types
+***************
 
 Stałe i zmienne
 ===============
