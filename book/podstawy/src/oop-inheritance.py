@@ -1,18 +1,22 @@
-class Pojazd:
-    marka = None
-    kierowca = None
-    kola = 4
+class Astronaut:
+    gender = None
+
+    def what_is_your_gender(self):
+        print(f'I am {self.gender}')
 
 
-class Samochod(Pojazd):
-    marka = None
-    kierowca = {'imie': 'José', 'nazwisko': 'Jiménez'}
+class MaleAstonaut(Astronaut):
+    gender = 'male'
 
 
-class Motor(Pojazd):
-    marka = 'honda'
-    kola = 2
+class FemaleAstronaut(Astronaut):
+    gender = 'female'
 
 
-class Tir(Pojazd):
-    pass
+jose = MaleAstonaut()
+jose.what_is_your_gender()
+# male
+
+valentina = FemaleAstronaut()
+valentina.what_is_your_gender()
+# female

@@ -103,12 +103,12 @@ Serializacja obiektów do CSV
     - wrzucenie danych jako string do jednego pola adres_1, adres_2, adres_3 i ustalenie separatora (np: średnik - ';')
     - jedno pole adres (w ramach niego wszystkie adresy rozdzielone ";" a dane przecinkami ",")
 
-.. literalinclude:: src/csv-address-book.py
+.. literalinclude:: src/csv-addressbook.py
     :name: listing-address-book
     :language: python
     :caption: Address book
 
 :Założenia:
-    * Nazwa pliku: ``csv-dictwriter.py``
+    * Nazwa pliku: ``csv-addressbook.py``
     * Linii kodu do napisania: około 10 linii
     * Maksymalny czas na zadanie: 20 min

@@ -11,7 +11,7 @@ class Address:
             setattr(self, key, value)
 
 
-ksiazka_adresowa = [
+addressbook = [
     Contact(first_name='Max', last_name='Peck', addresses=[
         Address(street='2101 E NASA Pkwy', city='Houston', state='Texas', code='77058', country='USA'),
         Address(street=None, city='Kennedy Space Center', code='32899', country='USA'),

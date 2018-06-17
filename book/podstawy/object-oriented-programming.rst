@@ -70,21 +70,19 @@ Methods
 * Domyślny ``__init__()`` gdy niezdefiniowaliśmy własnego
 * ``__init__()`` to nie konstruktor
 
-.. literalinclude:: src/oop-methods-self.py
+.. literalinclude:: src/oop-init.py
     :language: python
     :caption: ``__init__()`` - Initalizer Method
 
 Inheritance
 -----------
 .. literalinclude:: src/oop-inheritance.py
-    :name: listing-oop-inheritance
     :language: python
     :caption: Inheritance
 
 Multiple Inheritance
 ------------------
-.. literalinclude:: src/oop-multiple-inheritance.py
-    :name: listing-oop-multiple-inheritance
+.. literalinclude:: src/oop-inheritance-multiple.py
     :language: python
     :caption: Multiple Inheritance
 
