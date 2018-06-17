@@ -58,8 +58,7 @@ Wczytywanie pliku ``csv``
 :Założenia:
     * Nazwa pliku: ``csv-dictreader.py``
     * Linii kodu do napisania: około 6 linie
-    * Maksymalny czas na zadanie: 10 min
-
+    * Maksymalny czas na zadanie: 15 min
 
 Serializacja ``csv``
 --------------------
@@ -69,7 +68,7 @@ Serializacja ``csv``
 
 .. code-block:: python
 
-    DATABASE = [
+    DATA = [
         {'last_name': 'Jiménez'},
         {'first_name': 'Max', 'last_name': 'Peck'},
         {'first_name': 'Ivan'},
@@ -89,7 +88,6 @@ Serializacja ``csv``
     * Umiejętność korzystania z modułu ``csv``
     * Umiejętność iteracji po złożonych strukturach danych
     * Dynamiczne generowanie struktur danych na podstawie innych
-
 
 Serializacja obiektów do CSV
 ----------------------------

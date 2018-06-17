@@ -1,11 +1,14 @@
 class Astronaut:
     agency = 'NASA'
 
+    def __init__(self, name):
+        self.name = name
+
 
 # Objects - Instances
-ivan = Astronaut()
-jose = Astronaut()
-max = Astronaut()
+ivan = Astronaut(name='Иван Иванович')
+jose = Astronaut(name='José Jiménez')
+max = Astronaut(name='Max Peck')
 
 ivan.agency  # NASA
 jose.agency  # NASA

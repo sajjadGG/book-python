@@ -1,12 +1,14 @@
-class Pojazd:
-    def __init__(self, marka, kola=4):
-        self.marka = marka
-        self.kola = kola
-        self.kierowca = 'Max Peck'  # tak się raczej nie robi
+class Astronaut:
+    def __init__(self, name, agency='NASA'):
+        self.name = name
+        self.agency = agency
+        self.age = 30  # better is to use parameter to be customized by user
 
 
-mercedes = Pojazd(marka='mercedes', kola=6)
-print(mercedes.kola)
+jose = Astronaut(name='José Jiménez')
+jose.agency
+# NASA
 
-tir = Pojazd(marka='scania', kola=18)
-print(tir.kola)
+ivan = Astronaut(name='Иван Иванович', agency='Roscosmos')
+ivan.agency
+# Roscosmos

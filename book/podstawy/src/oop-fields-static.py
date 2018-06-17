@@ -1,17 +1,7 @@
 class Astronaut:
-    first_name = 'Jose'
-    last_name = 'Jimenez'
-    age = 30
-
-
-astro = Astronaut()
-astro.first_name
-# José
-
-
-class Astronaut:
-    first_name: str = 'Jose'
-    last_name: str = 'Jimenez'
+    first_name = 'José'
+    last_name = 'Jiménez'
+    agency: str = 'NASA'
     age: int = 30
 
 

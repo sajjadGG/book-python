@@ -35,7 +35,7 @@ Static Fields
 
 Dynamic Fields
 --------------
-.. literalinclude:: src/oop-fields-static.py
+.. literalinclude:: src/oop-fields-dynamic.py
     :language: python
     :caption: Dynamic fields
 
@@ -57,13 +57,17 @@ Methods
 
 ``self``
 --------
+* pierwszy argument do metody
+* wyjątek ``@staticmethod`` o tym będzie później
+* przy uruchomieniu funkcji nie podajemy go jawnie
+
 .. literalinclude:: src/oop-methods-self.py
     :language: python
-    :caption: Methods
+    :caption: Methods argument ``self``
 
 ``__init__()`` - Initalizer Method
 ----------------------------------
-* Domyślny init gdy niezdefiniowaliśmy własnego
+* Domyślny ``__init__()`` gdy niezdefiniowaliśmy własnego
 * ``__init__()`` to nie konstruktor
 
 .. literalinclude:: src/oop-methods-self.py
@@ -152,8 +156,7 @@ Wszystkie parametry lokalne dla danej instancji klasy powinny być zainicjalizow
     :language: python
     :caption: Fields added dynamicly
 
-.. literalinclude:: src/class-init-dynamic.py
-    :name: listing-class-init-dynamic
+.. literalinclude:: src/oop-init-dynamic.py
     :language: python
     :caption: Funkcja inicjalizująca, która automatycznie dodaje pola do naszej klasy w zależności od tego co zostanie podane przy tworzeniu obiektu
 
@@ -213,22 +216,11 @@ Assignments
 
 Addressbook (Easy)
 ------------------
-#. Napisz książkę adresową:
-
-        * imię
-        * nazwisko
-        * telefon
-        * adresy:
-
-            * ulica
-            * miasto
-            * kod_pocztowy
-            * stan
-            * panstwo
-
+#. Dla danych z :numref:`listing-oop-addressbook-easy` napisz książkę adresową
 #. Wszystkie dane w książce muszą być reprezentowane przez klasy.
-#. Klasa ``Kontakt`` powinna wykorzystywać domyślne argumenty w ``__init__``.
+#. Klasy powinny wykorzystywać domyślne argumenty w ``__init__``.
 #. Użytkownik może mieć wiele adresów.
+#. Użytkownik może nie mieć żadnego adresu
 
 :Założenia:
     * Nazwa pliku: ``oop-addressbook-easy.py``
@@ -241,8 +233,8 @@ Addressbook (Easy)
     * zagnieżdżanie obiektów
     * rzutowanie obiektu na stringa oraz jego reprezentacja (które i kiedy użyć)
 
-.. literalinclude:: src/oop-assignment-easy.py
-    :name: listing-oop-address-book
+.. literalinclude:: src/oop-assignment-addressbook-easy.py
+    :name: listing-oop-addressbook-easy
     :language: python
     :caption: Address Book
 
@@ -256,7 +248,7 @@ Addressbook  (Medium)
     * Linii kodu do napisania: około 10 linii
     * Maksymalny czas na zadanie: 20 min
 
-.. literalinclude:: src/oop-assignment-medium.py
+.. literalinclude:: src/oop-assignment-addressbook-medium.py
     :language: python
     :caption: Address Book
 

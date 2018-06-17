@@ -272,12 +272,16 @@ Manipulacja datami
     date1 = 'April 12, 1961 2:07 local time'  # ALMT Timezone
     date2 = '"07/21/69 2:56:15 AM UTC"'
 
+#. Co to za daty, które podał użytkownik?
 #. Przedstaw daty jako obiekt ``datetime``. I wyświetl je w formacie ISO.
 #. Odejmij obie daty od siebie. Ile lat i miesięcy minęło między wydarzeniami?
-#. Do dzisiejszej daty dodaj ten sam czas, który Ci wyszedł w poprzednim zadaniu.
+#. Do dzisiejszej daty dodaj ten sam czas, który Ci wyszedł w poprzednim punkcie.
 #. Wyświetl samą datę (bez czasu).
 #. Ile będziesz miał wtedy lat?
-#. Co to za daty, które podał użytkownik?
+#. Przyjmij:
+
+    - rok = 365 dni
+    - miesiac = 30 dni
 
 :Założenia:
     * Nazwa pliku: ``datetime-deltas.py``

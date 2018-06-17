@@ -18,19 +18,9 @@ armstrong = datetime.datetime.strptime(input2, '%m/%d/%y %I:%M:%S %p %Z')
 roznica = armstrong - gagarin
 # 3022 days, 0:49:15
 
-
-def timedelta_na_czas(timedelta):
-    years, days = divmod(timedelta.days, YEAR)
-    months, days = divmod(days, MONTH)
-    return {
-        'years': years,
-        'months': months,
-        'days': days,
-    }
-
-uplynelo = timedelta_na_czas(roznica)
-
-print(f'Uplynelo: {uplynelo["years"]}y {uplynelo["months"]}m {uplynelo["days"]}d')
+years, days = divmod(roznica.days, YEAR)
+months, days = divmod(days, MONTH)
+print(f'Uplynelo: {years}y {months}m {days}d')
 # Uplynelo: 8y 3m 12d
 
 delta = datetime.timedelta(seconds=roznica.total_seconds())
@@ -48,6 +38,8 @@ ile_czasu = future - birthday
 print(ile_czasu)
 # 20654 days, 12:03:09.805525
 
-data = timedelta_na_czas(ile_czasu)
-print(f'Bede mial: {data["years"]}y {data["months"]}m {data["days"]}d')
+
+years, days = divmod(data.days, YEAR)
+months, days = divmod(days, MONTH)
+print(f'Bede mial: {years}y {months}m {days}d')
 # Bede mial: 56y 7m 4d
