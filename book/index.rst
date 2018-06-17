@@ -47,7 +47,7 @@ Podstawy
     :numbered:
     :caption: Podstawy
 
-    podstawy/primitives.rst
+    podstawy/primitive-types.rst
     podstawy/data-structures.rst
     podstawy/conditionals.rst
     podstawy/operators.rst
@@ -66,7 +66,7 @@ Podstawy
     podstawy/dataclass.rst
     podstawy/exceptions.rst
     podstawy/files.rst
-    podstawy/zadania-kwalifikacyjne.rst
+    podstawy/exam-foundations.rst
 
 *******************
 Średniozaawansowany

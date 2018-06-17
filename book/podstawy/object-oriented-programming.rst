@@ -1,11 +1,11 @@
 .. _Object Oriented Programming:
 
-***********************
-Programowanie obiektowe
-***********************
+***************************
+Object Oriented Programming
+***************************
 
-Paradygmat Obiektowy
-====================
+Object Paradigm
+===============
 W programowaniu istnieje kilka popularnych paradygmatów (idei programowania), są to między innymi:
 
     * imperatywny,
@@ -81,7 +81,7 @@ Inheritance
     :caption: Inheritance
 
 Multiple Inheritance
-------------------
+--------------------
 .. literalinclude:: src/oop-inheritance-multiple.py
     :language: python
     :caption: Multiple Inheritance
@@ -123,7 +123,6 @@ Funkcja ``super`` pozwala uzyskać dostęp do obiektu po którym dziedziczymy, d
     :language: python
     :caption: Using ``__str__()`` on a class
 
-
 ``__str__()`` i ``__repr__()``
 ------------------------------
 Dwiema dość często używanymi metodami systemowymi są ``__repr__`` i ``__str__``. Obie te funkcje konwertują obiekt klasy do stringa, mają jednak inne przeznaczenie:
@@ -141,16 +140,16 @@ Przykład praktyczny:
 
 .. code-block:: python
 
-    >>> import datetime
-    >>> datetime.datetime.now()  # ``__repr__``
-    >>> print(datetime.datetime.now())  # ``__str__``
+    import datetime
 
+    datetime.datetime.now()  # ``__repr__``
+    print(datetime.datetime.now())  # ``__str__``
 
 Inicjalizacja parametrów
 ------------------------
-Wszystkie parametry lokalne dla danej instancji klasy powinny być zainicjalizowane w funkcji ``__init__``.
+* Inicjalizacja pól klasy tylko w ``__init__``
 
-.. literalinclude:: src/oop-dynamic-fields.py
+.. literalinclude:: src/oop-fields-dynamic.py
     :language: python
     :caption: Fields added dynamicly
 
@@ -252,7 +251,8 @@ Addressbook  (Medium)
 
 Addressbook  (Hard)
 -------------------
-#. Klasa ``Adres`` powinna mieć zmienną liczbę argumentów za pomocą ``**kwargs`` i dynamicznie wpisywane pola ``setattr()`` (jeżeli nie mają wartości ``None``).
+#. ``Adres`` ma mieć zmienną liczbę argumentów (``**kwargs``)
+#. Jeżeli argument jest różny od ``None`` powinien być dynamicznie ustawiony (``setattr()``).
 
 :Założenia:
     * Nazwa pliku: ``oop-addressbook-hard.py``

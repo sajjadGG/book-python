@@ -2,11 +2,11 @@
 Simple Data Structures
 **********************
 
-Zbiory i operacje na nich
-=========================
+Simple Collections
+==================
 
-``tuple`` - Krotka
-------------------
+``tuple``
+---------
 .. code-block:: python
 
     my_tuple = ()
@@ -61,8 +61,8 @@ Zbiory i operacje na nich
     # (2, 3, 4)
 
 
-``list`` - Lista
-----------------
+``list``
+--------
 .. code-block:: python
 
     my_list = []
@@ -92,8 +92,8 @@ Zbiory i operacje na nich
     [1, 2, 3, 4]
 
 
-``set`` - Zbiór
----------------
+``set``
+-------
 .. code-block:: python
 
     my_set = {1}
@@ -152,8 +152,8 @@ Zbiory i operacje na nich
     unique_names = set(imiona)
     # {'Jose', 'Ivan', 'Max'}
 
-``dict`` - Słownik
-------------------
+``dict``
+--------
 .. code-block:: python
 
     my_dict = {
@@ -227,8 +227,8 @@ Należy zwrócić uwagę, aby nie pomylić z dictem:
     >>> isinstance(my_data, dict)
     True
 
-Dobieranie się do wartości elementów za pomocą ``[...]`` i ``.get(...)``
-------------------------------------------------------------------------
+Acessing ``dict`` values with ``[...]`` and ``.get(...)``
+---------------------------------------------------------
 Do zawartości zmiennej słownikowej możemy uzyskać dostęp używając nawiasów kwadratowych wraz z kluczem, albo funkcji ``.get(klucz)``. Różnica między tymi podejściami polega na tym, że jeżeli dana zmienna słownikowa nie zawiera pewnego klucza, używanie nawiasów kwadratowych wygeneruje wyjątek KeyError, natomiast użycie funkcji ``.get(klucz)`` nie zwróci nic. Do funkcji ``.get(klucz)`` możemy dodatkowo dopisać wartość domyślną która zostanie zwrócona, jeżeli słownik nie posiada danego klucza.
 
 .. code-block:: python
@@ -320,29 +320,25 @@ Lista słowników
 ---------------
 .. code-block:: python
 
-    >>> studenci = [
-    ...    {'imie': 'Max'},
-    ...    {'imie': 'José', 'nazwisko': 'Jiménez'},
-    ...    {'imie': 'Ivan', 'nazwisko': None},
-    ...    {'imie': 'Buster', 'programuje w': ['python', 'java', 'c/c++']},
-    ... ]
+    DATA = [
+        {'first_name': 'Max'},
+        {'first_name': 'José', 'last_name': 'Jiménez'},
+        {'first_name': 'Ivan', 'tags': ['astronaut', 'roscosmos', 'space']},
+    ]
 
-    >>> studenci[0]['nazwisko']
-    Traceback (most recent call last):
-      ...
-    KeyError: 'nazwisko'
+    DATA[0]['last_name']
+    # Traceback (most recent call last):
+    #  ...
+    # KeyError: 'nazwisko'
 
-    >>> studenci[0].get('nazwisko', 'n/d')
-    'n/d'
+    DATA[0].get('last_name', 'n/a')
+    # 'n/d'
 
-    >>> '\n'.join(studenci[3].get('programuje w'))
-    python
-    java
-    c/c++
+    ' and '.join(DATA[3].get('tags'))
+    # astronaut and roscosmos and space
 
-
-Listy wielowymiarowe
---------------------
+Multidimensional lists
+----------------------
 .. code-block:: python
 
     array = [
@@ -358,85 +354,26 @@ Listy wielowymiarowe
         [1, 2, 3],
     ]
 
-Mieszane typy
--------------
+Mixed types
+-----------
 .. code-block:: python
 
     array = [
         [0, 1, 2],
         (1, 2, 3),
-        {1, 3, 1]},
+        {1, 3, 1},
         {'imie': 'José', 'nazwisko': 'Jiménez'}
     ]
 
+How to initialize?
+==================
+* ``list()`` or ``[]``
+* ``tuple()`` or ``()``
+* ``dict()`` or ``{}``
+* ``set()`` or ``{}``
 
-Jak inicjować poszczególne typy?
-================================
-- ``list()`` czy ``[]``
-- ``tuple()`` czy ``()``
-- ``dict()`` czy ``{}``
-- ``set()`` czy ``{}``
-
-Alternatywne kolekcje
-=====================
-.. code-block:: python
-
-    jose = {'first_name': 'José', 'last_name': 'Jiménez', 'agency': 'NASA'}
-
-    print(jose)
-    # {'first_name': 'José', 'last_name': 'Jiménez', 'agency': 'NASA'}
-
-    print(jose['first_name'], jose['last_name'], jose['agency'])
-    # José Jimenez NASA
-
-.. code-block:: python
-
-    from collections import OrderedDict
-
-    jose = OrderedDict(first_name='José', last_name='Jiménez', agency='NASA')
-    print(jose)
-    # OrderedDict([('first_name', 'José'), ('last_name', 'Jiménez'), ('agency', 'NASA')])
-
-.. code-block:: python
-
-    from collections import namedtuple
-
-    Astronaut = namedtuple('Astronaut', ['first_name', 'last_name', 'agency'])
-    jose = Astronaut(first_name='José', last_name='Jiménez', agency='NASA')
-
-    print(jose)
-    # Astronaut(first_name='José', last_name='Jiménez', agency='NASA')
-
-    print(jose.first_name, jose.last_name, jose.agency)
-    # José Jiménez NASA
-
-Zadania kontrolne
-=================
-
-Przeliczanie odległości
------------------------
-#. Użytkownik za pomocą ``input`` wprowadza odległości w metrach
-#. Odległości są wyłącznie ``int`` lub ``float``
-#. Napisz program który przekonwertuje odległości i wyświetli je w formacie ``dict`` zgodnie z szablonem:
-
-.. code-block:: python
-
-    print({
-        'kilometers': int,
-        'miles': float,
-        'nautical miles': float,
-        'all': [int, float, float]
-    })
-
-:Założenia:
-    * Nazwa pliku: ``types-distance.py``
-    * Linii kodu do napisania: około 3 linie
-    * Maksymalny czas na zadanie: 5 min
-
-:Podpowiedź:
-    * 1000 m = 1 km
-    * 1608 m = 1 mila
-    * 1852 m = 1 mila morska
+Assignments
+===========
 
 Generowanie listy unikalnych kluczy
 -----------------------------------

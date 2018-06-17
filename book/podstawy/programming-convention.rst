@@ -1,8 +1,6 @@
-.. _Dobre praktyki:
-
-**************
-Dobre praktyki
-**************
+*******************************
+Sofware Engineering Conventions
+*******************************
 
 PEP8
 ====
@@ -42,45 +40,13 @@ Pojedynczy czy podwójny cudzysłów
 
 Wcięcia
 -------
-:Good:
-    .. code-block:: python
+.. literalinclude:: src/convention-indent-good.py
+    :language: python
+    :caption: Good
 
-    # Aligned with opening delimiter.
-    server = Server(host='localhost', port=443, secure=True,
-                    username='admin', password='admin')
-
-    # More indentation included to distinguish this from the rest.
-    def Server(
-            host='localhost', port=443, secure=True
-            username='admin', password='admin'):
-        print(host, port)
-
-    # Hanging indents should add a level.
-    server = Server(
-        host='localhost', port=443, secure=True,
-        username='admin', password='admin')
-
-    # The best
-    server = Server(
-        host='localhost',
-        username='admin',
-        password='admin',
-        port=443,
-        secure=True,
-    )
-
-:Not Good:
-    .. code-block:: python
-
-        # Arguments on first line forbidden when not using vertical alignment.
-        server = Server(host='localhost', port=1337,
-            username='admin', password='admin')
-
-        # Further indentation required as indentation is not distinguishable.
-        def Server(
-            host='localhost', port=1337,
-            username='admin', password='admin'):
-            print(host, port)
+.. literalinclude:: src/convention-indent-bad.py
+    :language: python
+    :caption: Bad
 
 Zamykanie nawiasów
 ------------------

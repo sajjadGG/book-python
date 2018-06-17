@@ -22,20 +22,37 @@ This module implements specialized container datatypes providing alternatives to
     ``UserString``    wrapper around string objects for easier string subclassing
     ================  ====================================================================
 
-``namedtuple``
---------------
-
 .. code-block:: python
 
-    >>> # Basic example
-    >>> Point = namedtuple('Point', ['x', 'y'])
-    >>> p = Point(11, y=22)     # instantiate with positional or keyword arguments
-    >>> p[0] + p[1]             # indexable like the plain tuple (11, 22)
-    33
-    >>> x, y = p                # unpack like a regular tuple
-    >>> x, y
-    (11, 22)
-    >>> p.x + p.y               # fields also accessible by name
-    33
-    >>> p                       # readable __repr__ with a name=value style
-    Point(x=11, y=22)
+    jose = {'first_name': 'José', 'last_name': 'Jiménez', 'agency': 'NASA'}
+
+    print(jose)
+    # {'first_name': 'José', 'last_name': 'Jiménez', 'agency': 'NASA'}
+
+    print(jose['first_name'], jose['last_name'], jose['agency'])
+    # José Jimenez NASA
+
+``OrderedDict``
+===============
+.. code-block:: python
+
+    from collections import OrderedDict
+
+    jose = OrderedDict(first_name='José', last_name='Jiménez', agency='NASA')
+    print(jose)
+    # OrderedDict([('first_name', 'José'), ('last_name', 'Jiménez'), ('agency', 'NASA')])
+
+``namedtuple``
+==============
+.. code-block:: python
+
+    from collections import namedtuple
+
+    Astronaut = namedtuple('Astronaut', ['first_name', 'last_name', 'agency'])
+    jose = Astronaut(first_name='José', last_name='Jiménez', agency='NASA')
+
+    print(jose)
+    # Astronaut(first_name='José', last_name='Jiménez', agency='NASA')
+
+    print(jose.first_name, jose.last_name, jose.agency)
+    # José Jiménez NASA

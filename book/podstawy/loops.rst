@@ -1,14 +1,14 @@
 *****
-Pętle
+Loops
 *****
 
 Pętle służą do wykonywania tego samego fragmentu kodu wielokrotnie. W Pythonie, pętle wykonywane są na obiektach wieloelementowych, albo iteratorach.
 
-Pętla ``for``
-=============
+``for``
+=======
 
-Iterowanie po wartościach prostych
-----------------------------------
+Iterating simple types
+----------------------
 Pętla ``for`` wykonuje się na zestawie elementów. Dosłownie można tę instrukcję przeczytać jako "Dla iksów będących wartościami listy, wykonaj instrukcję:"
 
 .. code-block:: python
@@ -32,8 +32,8 @@ Pętla ``for`` wykonuje się na zestawie elementów. Dosłownie można tę instr
         # c
         # k
 
-Iterowanie po wartościach złożonych
------------------------------------
+Iterating complex types
+-----------------------
 .. code-block:: python
 
     >>> for x in ['Max', 3, 'Peck', 2.8, ['1.0', 'José', 'Jiménez']]:
@@ -333,7 +333,7 @@ Zadania kontrolne
 
 Dzienniczek ucznia
 ------------------
-#. Przekonwertuj skalę ocen ``(2, 3, 3.5, 4, 4.5, 5)`` na listę ``float`` za pomocą inline ``for`
+#. Przekonwertuj skalę ocen ``(2, 3, 3.5, 4, 4.5, 5)`` na listę ``float`` za pomocą inline ``for``
 #. Użytkownik podaje oceny jako ``int`` lub ``float``
 #. Program ma sprawdzać czy ocena znajduje się w skali ocen
 #. Jeżeli ocena jest na liście dopuszczalnych ocen, dodaje ją do dzienniczka

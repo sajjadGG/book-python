@@ -1,6 +1,6 @@
-***********
-Daty i czas
-***********
+**************
+Dates and Time
+**************
 
 .. warning:: If you're thinking about implementing your own time calculator or system, watch Computerophile Time & Time Zones https://www.youtube.com/watch?v=-5wpm-gesOY
 

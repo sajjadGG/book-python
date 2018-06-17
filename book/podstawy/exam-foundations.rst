@@ -1,6 +1,6 @@
-****************************************
-Zadannie kwalifikacyjne na poziom średni
-****************************************
+*********************
+Exam for Intermediate
+*********************
 
 Parsowanie ``/etc/passwd``
 --------------------------
@@ -33,7 +33,7 @@ Parsowanie ``/etc/passwd``
 
 :Założenia:
     * Nazwa pliku: ``exam-foundations.py``
-    * Linii kodu do napisania: około 30 linii
+    * Linii kodu do napisania: około 60 linii
     * Maksymalny czas na zadanie: 60 min
 
 :Co zadanie sprawdza?:

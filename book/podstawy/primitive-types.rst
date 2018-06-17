@@ -391,13 +391,24 @@ Gdy użytkownik nie poda wieku, to jest to wartość ``None``.
         print('user does not')
 
 
-Zadania kontrolne
-=================
+Assignments
+===========
+
+.. note:: Pobaw się opcjami w IDE:
+
+    * Run in console
+    * Run...
+    * Debug...
+    * Python Console
 
 Zmienne i typy
 --------------
-#. Napisz program, który poprosi użytkownika o imie i ładnie go przywita wyświetlając 'hello IMIE'.
-#. Zamiast spacji użyj przecinka
+#. Wczytaj od użytkownika imię
+#. Użytkownik wprowadza tylko dane typu ``str``
+#. Wyświetl na ekranie ``'My name "IMIE".\nI hope you\'re ok!'``, gdzie IMIE to wartość którą podał
+#. Zwróć uwagę na cudzysłowia i nową linię
+#. Podmień wszystkie spacje na ``_``
+#. Nie korzystaj z dodawania stringów ``str + str``
 
 :Założenia:
     * Nazwa pliku: ``type-print.py``
@@ -408,12 +419,30 @@ Zmienne i typy
     * Użyj podawania stringów po przecinku ``print(str, str)`` oraz parametru ``sep``
     * Użyj f-string formatting dla Python >= 3.6
 
-.. note:: Pobaw się opcjami w IDE:
+User input and type casting
+---------------------------
+#. Użytkownik za pomocą wprowadza odległości w metrach
+#. Użytkownik wprowadza tylko dane typu ``int`` lub ``float``
+#. Napisz program który przekonwertuje odległości i wyświetli je w formacie ``dict`` zgodnie z szablonem:
 
-    * Run in console
-    * Run...
-    * Debug...
-    * Python Console
+.. code-block:: python
+
+    print({
+        'kilometers': int,
+        'miles': float,
+        'nautical miles': float,
+        'all': [int, float, float]
+    })
+
+:Założenia:
+    * Nazwa pliku: ``types-casting.py``
+    * Linii kodu do napisania: około 3 linie
+    * Maksymalny czas na zadanie: 5 min
+
+:Podpowiedź:
+    * 1000 m = 1 km
+    * 1608 m = 1 mila
+    * 1852 m = 1 mila morska
 
 Wyrazy
 ------

@@ -1,8 +1,6 @@
-.. _Funkcje:
-
-*******
-Funkcje
-*******
+*********
+Functions
+*********
 
 Funkcje pozwalają na wielokrotne używanie tego samego kodu. Znacznie poprawiają także czytelność kodu i go porządkują.
 
