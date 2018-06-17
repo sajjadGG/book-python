@@ -2,6 +2,105 @@
 Bazy Danych
 ***********
 
+SQL
+===
+
+CREATE
+------
+.. literalinclude:: src/db-sql-create.sql
+    :language: sql
+    :caption: CREATE
+
+Constrains
+----------
+* NOT NULL - Ensures that a column cannot have a NULL value
+* UNIQUE - Ensures that all values in a column are different
+* PRIMARY KEY - A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table
+* FOREIGN KEY - Uniquely identifies a row/record in another table
+* CHECK - Ensures that all values in a column satisfies a specific condition
+* DEFAULT - Sets a default value for a column when no value is specified
+* INDEX - Used to create and retrieve data from the database very quickly
+
+INSERT
+------
+.. literalinclude:: src/db-sql-insert.sql
+    :language: sql
+    :caption: INSERT
+
+SELECT
+------
+.. literalinclude:: src/db-sql-select.sql
+    :language: sql
+    :caption: SELECT
+
+.. literalinclude:: src/db-sql-injection.py
+    :language: python
+    :caption: SQL Injection
+
+UPDATE
+------
+.. literalinclude:: src/db-sql-update.sql
+    :language: sql
+    :caption: UPDATE
+
+GROUP
+-----
+.. literalinclude:: src/db-sql-group.sql
+    :language: sql
+    :caption: GROUP
+
+HAVING
+------
+.. literalinclude:: src/db-sql-having.sql
+    :language: sql
+    :caption: HAVING
+
+ALTER
+-----
+.. literalinclude:: src/db-sql-alter.sql
+    :language: sql
+    :caption: ALTER
+
+DROP
+----
+.. literalinclude:: src/db-sql-drop.sql
+    :language: sql
+    :caption: DROP
+
+DELETE
+------
+.. literalinclude:: src/db-sql-delete.sql
+    :language: sql
+    :caption: DELETE
+
+JOIN
+----
+.. figure:: img/db-sql-innerjoin.gif
+    :align: center
+    :scale: 100%
+
+.. figure:: img/db-sql-leftjoin.gif
+    :align: center
+    :scale: 100%
+
+.. figure:: img/db-sql-rightjoin.gif
+    :align: center
+    :scale: 100%
+
+.. figure:: img/db-sql-fulljoin.gif
+    :align: center
+    :scale: 100%
+
+.. literalinclude:: src/db-sql-join.sql
+    :language: sql
+    :caption: JOIN
+
+TRUNCATE
+--------
+.. literalinclude:: src/db-sql-truncate.sql
+    :language: sql
+    :caption: TRUNCATE
+
 ``sqlite3``
 ===========
 

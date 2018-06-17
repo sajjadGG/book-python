@@ -45,8 +45,8 @@ Podstawy
     :numbered:
     :caption: Podstawy
 
-    podstawy/type-primitive.rst
-    podstawy/type-collection.rst
+    podstawy/primitives.rst
+    podstawy/data-structures.rst
     podstawy/conditionals.rst
     podstawy/operators.rst
     podstawy/loops.rst

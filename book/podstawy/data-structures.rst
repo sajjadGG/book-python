@@ -1,8 +1,6 @@
-\usepackage{ulem}
-
-*******************
-Złożone typy danych
-*******************
+**********************
+Simple Data Structures
+**********************
 
 Zbiory i operacje na nich
 =========================
