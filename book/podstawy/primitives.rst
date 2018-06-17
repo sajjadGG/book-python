@@ -45,6 +45,24 @@ Typy
     name: str = 'José Jiménez'
     age: int = 30
 
+Inferencja typów
+----------------
+* Static Typing (Java, C++, Swift)
+
+.. code-block:: java
+
+    String name = new String("Jose Jimenez")
+
+* Dynamic Typing (Python, PHP, Ruby)
+
+.. code-block:: python
+
+    name: str = str('Jose Jimenez')  # Type annotations
+    name = str()
+
+    # Type annotations (type hinting not forcing)
+    name: str = 10
+
 Numeryczne typy danych
 ======================
 

@@ -267,8 +267,10 @@ Manipulacja datami
 ------------------
 #. Dane są dwie następujące daty w formacie jak poniżej:
 
-    - ``April 12, 1961 2:07 local time`` (ALMT Timezone)
-    - ``07/21/69 2:56:15 AM UTC``
+.. code-block:: python
+
+    date1 = 'April 12, 1961 2:07 local time'  # ALMT Timezone
+    date2 = '"07/21/69 2:56:15 AM UTC"'
 
 #. Przedstaw daty jako obiekt ``datetime``. I wyświetl je w formacie ISO.
 #. Odejmij obie daty od siebie. Ile lat i miesięcy minęło między wydarzeniami?

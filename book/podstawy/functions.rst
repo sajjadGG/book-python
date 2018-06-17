@@ -13,6 +13,18 @@ Definiowanie funkcji
     def hello():
         print('hello world')
 
+Callable
+--------
+.. code-block:: python
+
+    def hello():
+        print('hello world')
+
+    int()
+    10()
+    type(hello)
+    # <class 'callable'>
+
 Konwencja nazewnicza funkcji
 ============================
 #. Nie robimy CamelCase

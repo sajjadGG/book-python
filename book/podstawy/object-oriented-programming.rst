@@ -18,14 +18,14 @@ Paradygm imperatywny oznacza, że używane są instrukcje, które zmieniają sta
 
 Paradygmat obiektowy polega na tym, że program manipuluje złożonymi obiektami, z których każdy ma swój własny stan i ten stan można modyfikować metodami przypisanymi do tego obiektu. Paradygmat obiektówy pozwala pisać bardzo przejrzysty kod i zrozumiały kod.
 
-Syntax
-======
-
 Classes and Objects
--------------------
+===================
 .. literalinclude:: src/oop-class.py
     :language: python
     :caption: Classes and Objects
+
+Fields
+======
 
 Static Fields
 -------------
@@ -46,7 +46,7 @@ Static vs. Dynamic Fields
     :caption: Static vs. Dynamic fields
 
 Methods
--------
+=======
 .. literalinclude:: src/oop-methods-noarg.py
     :language: python
     :caption: Methods
@@ -69,54 +69,6 @@ Methods
 .. literalinclude:: src/oop-methods-self.py
     :language: python
     :caption: ``__init__()`` - Initalizer Method
-
-Callable
---------
-.. code-block:: python
-
-    int()
-    10()
-
-Inferencja typów
-----------------
-* Static Typing (Java, C++, Swift)
-
-.. code-block:: java
-
-    String name = new String("Jose Jimenez")
-    name = new String()  # type inferece
-
-* Dynamic Typing (Python, PHP, Ruby)
-
-.. code-block:: python
-
-    name: str = str('Jose Jimenez')  # Type annotations
-    name = str()
-
-    # Type annotations (type hinting not forcing)
-    name: str = 10
-
-.. code-block:: python
-
-    {}  # dict
-    {1}  # set
-    {1, 2}  # set
-    {1: 2}  # dict
-    {1:1, 2:2}  # dict
-
-    my_data = {}
-    isinstance(my_data, (set, dict))  # True
-
-    isinstance(my_data, dict)  # True
-    isinstance(my_data, set)  # False
-
-    my_data = {1}
-    isinstance(my_data, set)  # True
-    isinstance(my_data, dict)  # False
-
-    my_data = {1: 1}
-    isinstance(my_data, set)  # False
-    isinstance(my_data, dict)  # True
 
 Inheritance
 -----------
@@ -205,7 +157,6 @@ Wszystkie parametry lokalne dla danej instancji klasy powinny być zainicjalizow
     :language: python
     :caption: Funkcja inicjalizująca, która automatycznie dodaje pola do naszej klasy w zależności od tego co zostanie podane przy tworzeniu obiektu
 
-
 Private, public? konwencja ``_`` i ``__``
 -----------------------------------------
 W Pythonie nie ma czegoś takiego jak prywatne pole klasy. Czy prywatna metoda klasy. Wszystkie obiekty zdefiniowane wewnątrz klasy są publiczne. Istnieje jednak ogólnie przyjęta konwencja, że obiekty poprzedzone ``_`` są prywatne dla tej klasy i nie powinny być bezpośrednio wywoływane przez użytkownika. Podobnie z funkcjami rozpoczynającymi się od ``__`` (m.in. metody magiczne wspomniane powyżej). Są tu funkcje systemowe, które są używane przez interpreter Pythona i raczej nie powinny być używane bezpośrednio.
@@ -218,7 +169,6 @@ W Pythonie nie ma czegoś takiego jak prywatne pole klasy. Czy prywatna metoda 
         imie = ''  # publiczna
         data_urodzenia = ''  #publiczna
         _wiek =  # prywanta
-
 
 Co powinno być w klasie a co nie?
 ---------------------------------
@@ -234,12 +184,35 @@ Klasa per plik?
 ---------------
 Patrz przykład powyżej
 
+Duck typing
+-----------
+.. code-block:: python
+
+    {}  # dict
+    {1}  # set
+    {1, 2}  # set
+    {1: 2}  # dict
+    {1:1, 2:2}  # dict
+
+    my_data = {}
+    isinstance(my_data, (set, dict))  # True
+
+    isinstance(my_data, dict)  # True
+    isinstance(my_data, set)  # False
+
+    my_data = {1}
+    isinstance(my_data, set)  # True
+    isinstance(my_data, dict)  # False
+
+    my_data = {1: 1}
+    isinstance(my_data, set)  # False
+    isinstance(my_data, dict)  # True
 
 Assignments
 ===========
 
-Address Book
-------------
+Addressbook (Easy)
+------------------
 #. Napisz książkę adresową:
 
         * imię
@@ -256,28 +229,48 @@ Address Book
 #. Wszystkie dane w książce muszą być reprezentowane przez klasy.
 #. Klasa ``Kontakt`` powinna wykorzystywać domyślne argumenty w ``__init__``.
 #. Użytkownik może mieć wiele adresów.
-#. Zrób tak, aby się ładnie wyświetlało zarówno dla jednego wyniku (``print(adres)``, ``print(osoba)`` jak i dla wszystkich w książce ``print(ksiazka_adresowa)``.
-#. API programu powinno być tak jak na :numref:`listing-oop-address-book`
-
-:Zadanie z gwiazdką:
-    * Klasa ``Adres`` powinna mieć zmienną liczbę argumentów za pomocą ``**kwargs`` i dynamicznie wpisywane pola ``setattr()`` (jeżeli nie mają wartości ``None``).
 
 :Założenia:
-    * Nazwa pliku: ``oop-addressbook.py``
-    * Linii kodu do napisania: około 20 linii
-    * Maksymalny czas na zadanie: 30 min
+    * Nazwa pliku: ``oop-addressbook-easy.py``
+    * Linii kodu do napisania: około 10 linii
+    * Maksymalny czas na zadanie: 20 min
 
 :Co zadanie sprawdza?:
     * myślenie obiektowe i odwzorowanie struktury w programie
     * praca z obiektami
     * zagnieżdżanie obiektów
     * rzutowanie obiektu na stringa oraz jego reprezentacja (które i kiedy użyć)
-    * korzystanie z operatorów ``*`` i ``**`` (zadanie z gwiazdką)
 
-.. literalinclude:: src/oop-address-book.py
+.. literalinclude:: src/oop-assignment-easy.py
     :name: listing-oop-address-book
     :language: python
     :caption: Address Book
+
+Addressbook  (Medium)
+---------------------
+#. API programu powinno być tak jak na :numref:`listing-oop-address-book`
+#. Zrób tak, aby się ładnie wyświetlało zarówno dla jednego wyniku (``print(adres)``, ``print(osoba)`` jak i dla wszystkich w książce ``print(ksiazka_adresowa)``.
+
+:Założenia:
+    * Nazwa pliku: ``oop-addressbook-medium.py``
+    * Linii kodu do napisania: około 10 linii
+    * Maksymalny czas na zadanie: 20 min
+
+.. literalinclude:: src/oop-assignment-medium.py
+    :language: python
+    :caption: Address Book
+
+Addressbook  (Hard)
+-------------------
+#. Klasa ``Adres`` powinna mieć zmienną liczbę argumentów za pomocą ``**kwargs`` i dynamicznie wpisywane pola ``setattr()`` (jeżeli nie mają wartości ``None``).
+
+:Założenia:
+    * Nazwa pliku: ``oop-addressbook-hard.py``
+    * Linii kodu do napisania: około 20 linii
+    * Maksymalny czas na zadanie: 30 min
+
+:Co zadanie sprawdza?:
+    * korzystanie z operatorów ``*`` i ``**`` (zadanie z gwiazdką)
 
 Punkty i wektory
 ----------------
