@@ -1,25 +1,10 @@
-class Pojazd:
-    marka = None
-    kierowca = 'Jose Jimenez'
-    kola = 4
+class Astronaut:
+    name = 'José Jiménez'
 
-    def zatrab(self):
-        print('piiip')
-
-    def kto_kieruje(self):
-        print(self.kierowca)
-
-    def horn(self):
-        return self.zatrab()
+    def say_hello(self):
+        print(f'My name is {self.name}')
 
 
-auto = Pojazd()
-
-auto.zatrab()
-# piiip
-
-auto.kto_kieruje()
-# Jose Jimenez
-
-auto.kierowca
-# Jose Jimenez
+jose = Astronaut()
+jose.say_hello()
+# My name is José Jiménez

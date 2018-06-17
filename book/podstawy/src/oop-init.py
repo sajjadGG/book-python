@@ -1,9 +1,5 @@
 class Server:
     def __init__(self, host, user, password=None):
-        """
-        host i user są wymagane
-        password jest niewymagany i domyślnie jest None
-        """
         self.host = host
         self.user = user
         self.password = password

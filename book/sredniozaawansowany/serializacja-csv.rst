@@ -64,16 +64,16 @@ Serializacja ``csv``
 --------------------
 #. Za pomocą ``csv.DictWriter()`` zapisz do pliku dane o zmiennej strukturze
 #. Podaj jawnie ``encoding``, ``delimiter``, ``quotechar`` ``quoting``, ``lineterminator``
-#. ``fieldnames`` nie może być zahardkodowane w skrypcie
+#. ``fieldnames`` nie może być wymienione wprost w skrypcie (zahardkodowane)
 
 .. code-block:: python
 
     DATA = [
+        {'first_name': 'José'},
         {'last_name': 'Jiménez'},
-        {'first_name': 'Max', 'last_name': 'Peck'},
-        {'first_name': 'Ivan'},
+        {'first_name': 'Иван', 'last_name': 'Иванович'},
         {'first_name': 'Max', 'last_name': 'Peck', 'born': 1961},
-        {'first_name': 'Jose', 'born': 1961, 'first_step': 1969},
+        {'first_name': 'José', 'born': 1961, 'first_step': 1969},
     ]
 
 :Założenia:

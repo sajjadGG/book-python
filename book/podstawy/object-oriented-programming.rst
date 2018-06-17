@@ -47,11 +47,11 @@ Static vs. Dynamic Fields
 
 Methods
 =======
-.. literalinclude:: src/oop-methods-noarg.py
+.. literalinclude:: src/oop-methods-noargs.py
     :language: python
     :caption: Methods
 
-.. literalinclude:: src/oop-methods-arg.py
+.. literalinclude:: src/oop-methods-args.py
     :language: python
     :caption: Methods
 
