@@ -114,6 +114,35 @@ Numerical types
     complex('1 + 2j')  # ValueError: complex() arg is a malformed string
 
 
+Logic Data Types
+================
+
+``bool``
+--------
+* Wartość logiczna
+* Funkcja ``bool()`` konwertuje argument na ``bool``
+* Zwróć uwagę na wielkość liter
+
+.. code-block::
+
+    True
+    False
+
+``None`` - Wartość pusta
+------------------------
+* nie jest to wartość ``False`` ani ``0``
+* jest używany, gdy wartość jest nieustawiona
+
+.. code-block:: python
+
+    name = None
+
+    if name is None:
+        print('What is your name?')
+
+    if not wiek:
+        print('What is your name?')
+
 Character types
 ===============
 
@@ -135,7 +164,7 @@ Character types
         José Jiménez
         Max Peck
         Ivan Ivanovic
-    """  # '\nMax Peck\nMax Peck\nIvan Ivanovic'
+    """  # '\nMax Peck\nMax Peck\nIvan Ivanovic\n'
 
 Single or double quote?
 -----------------------
@@ -170,36 +199,49 @@ Escape characters
 
 .. code-block:: text
 
-    🚀
     \x1F680  # after \x goes hexadecimal number
     \u1F680  # after \u goes four hexadecimal numbers
+    🚀
     \b1010   # after \b goes bytes
     \t
     \'
 
 Characters before strings
 -------------------------
+* ``'C:\Users\Admin\file.txt'`` problem with ``\Users`` (``sers`` is invalid hexadecimal)
+* Format string: since Python 3.6
+
+.. csv-table:: String modifiers
+    :header-rows: 1
+    :widths: 10, 10, 80
+
+    "Modifier", "Name",  "Description"
+    "``f'...'``", "Format string", "String interpolation (variable substitution), since Python 3.6"
+    "``u'...'``", "Unicode string", "Used in Python 2, now only for compatibility"
+    "``r'...'``", "Raw string", "Escapes does not matters"
+    "``b'...'``", "Bytes string",  "Use ``b'...'.encode('utf-8')`` for convertion to unicode"
+
 .. code-block:: python
 
-    f'hello {first_name}, how are you?'  # since Python 3.6
-    u'zażółć gęślą jaźń'  # Used in Python 2, now doesn't have any effect
-    r'(?P<foo>)\n'  # escapes does not matters
-    r'C:\Users\Admin\file.txt'  # without ``r`` this have problems with \Users (invalid hex for unicode character)
+    f'hello {first_name}, how are you?
+    u'zażółć gęślą jaźń'  # U
+    r'(?P<foo>)\n'  #
+    r'C:\Users\Admin\file.txt'
     b'this is text'
 
-Wprowadzanie znaków od użytkownika
-----------------------------------
-* Spacja na końcu prompt
+Handling user input
+-------------------
 * ``input()`` zawsze zwraca ``str``
+* Pamiętaj o spacji na końcu prompt
 
 .. code-block:: python
 
     name = input('Type your name: ')
 
-Niemutowalność
---------------
-* Ważną cechą ciągów znakowych jest tzw. niemutowalność.
-* Gdy wykonujemy operację na stringu tworzona jest jego nowa kopia.
+String immutability
+-------------------
+* ``str`` jest niemutowalny
+* Każda operacja na stringu tworzy nową kopię
 * Zwóć uwagę ile stringów jest przechowywanych w pamięci
 
 .. code-block:: python
@@ -209,10 +251,8 @@ Niemutowalność
     print(name)
     # José Jiménez
 
-
-
-Operacje na stringach
----------------------
+String methods
+--------------
 * ``split()``
 
     .. code-block:: python
@@ -276,8 +316,8 @@ Operacje na stringach
         >>> name.replace('J', 'j')
         'josé jiménez'
 
-Wycinanie części stringów
--------------------------
+String splicing
+---------------
 .. code-block:: python
 
     >>> text = 'Lorem ipsum'
@@ -308,44 +348,14 @@ Wycinanie części stringów
 
 ``io``
 ------
-
-``io`` to biblioteka do obsługi strumienia wejściowego i wyjściowego. StringIO jest wtedy traktowany jak plik wejściowy.
+* ``io`` to biblioteka do obsługi strumienia wejściowego i wyjściowego
+* StringIO jest wtedy traktowany jak plik wejściowy.
 
 .. code-block:: python
 
     import io
 
     io.StringIO
-
-Logiczne typy danych
-====================
-
-``bool`` - Wartość logiczna
----------------------------
-Obiekt typu ``bool`` może przyjąć dwie wartości logiczne:
-
-* ``True``
-* ``False``
-
-Zwróć uwagę na wielkość liter!
-
-``bool()`` to także funkcja wbudowana w język Python, która zwraca wartość logiczną wyrażenia.
-
-``None`` - Wartość pusta
-------------------------
-Ważne: nie jest to wartość ``False`` ani ``0``.
-Wyobraź sobie, że masz bazę danych z użytkownikami.
-Gdy użytkownik nie poda wieku, to jest to wartość ``None``.
-
-.. code-block:: python
-
-    wiek = None
-
-    if wiek is None:
-        print('użytkownik nie podał wieku')
-
-    if not wiek:
-        print('user does not')
 
 
 Assignments
