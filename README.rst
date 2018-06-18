@@ -1,6 +1,6 @@
-##############################################
-Kurs programowania w Python i Machine Learning
-##############################################
+#####################################
+Python: from None to Machine Learning
+#####################################
 
 **Author**
     :name: `Matt Harasymczuk <http://astrotech.io>`_
@@ -10,6 +10,8 @@ Kurs programowania w Python i Machine Learning
     :linkedin: https://linkedin.com/in/mattharasymczuk
     :slideshare: https://www.slideshare.net/astrotech/presentations
     :github: https://github.com/astromatt
+
+.. tip:: If you're interested in training course on topics from this book, please email me at matt@astrotech.io
 
 .. tip:: The most up-to-date version of this book is always at http://python.astrotech.io
 
