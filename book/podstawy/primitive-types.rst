@@ -46,14 +46,17 @@ Type inference
 
 .. code-block:: java
 
-    String name = new String("Jose Jimenez")
+    String name = new String("José Jiménez")
 
 * Dynamic Typing (Python, PHP, Ruby)
 
 .. code-block:: python
 
-    name: str = str('Jose Jimenez')  # Type annotations
-    name = str()
+    name = str('José Jiménez')
+
+.. code-block:: python
+
+    name: str = str('José Jiménez')  # Type annotations
 
     # Type annotations (type hinting not forcing)
     # this will work, but IDE should warn
@@ -123,15 +126,16 @@ Logic Data Types
 * Funkcja ``bool()`` konwertuje argument na ``bool``
 * Zwróć uwagę na wielkość liter
 
-.. code-block::
+.. code-block:: python
 
     True
     False
 
-``None`` - Wartość pusta
-------------------------
-* nie jest to wartość ``False`` ani ``0``
-* jest używany, gdy wartość jest nieustawiona
+``None``
+--------
+* Wartość pusta
+* Nie jest to wartość ``False`` ani ``0``
+* Jest używany, gdy wartość jest nieustawiona
 
 .. code-block:: python
 
@@ -231,7 +235,7 @@ Characters before strings
 
 Handling user input
 -------------------
-* ``input()`` zawsze zwraca ``str``
+* Funkcja ``input()`` zawsze zwraca ``str``
 * Pamiętaj o spacji na końcu prompt
 
 .. code-block:: python
@@ -248,103 +252,92 @@ String immutability
 
     name = 'José'
     name += 'Jiménez'
-    print(name)
-    # José Jiménez
+    print(name)  # José Jiménez
 
 String methods
 --------------
-* ``split()``
 
-    .. code-block:: python
+``split()``
+^^^^^^^^^^^
+.. code-block:: python
 
-        >>> 'ehlo world'.split()
-        ['ehlo', 'world']
+    'ehlo world'.split()  # ['ehlo', 'world']
 
-        >>> text = 'ehlo,world'
-        >>> text.split(',')
-        ['ehlo', 'world']
+    text = 'ehlo,world'
+    text.split(',')  # ['ehlo', 'world']
 
-* ``strip()``, ``lstrip()``, ``rstrip()``
-    .. code-block:: python
+``strip()``, ``lstrip()``, ``rstrip()``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: python
 
-        >>> name = '    Max Peck    '
-        >>> name.strip()
-        'Max Peck'
-        >>> name.lstrip()
-        'Max Peck    '
-        >>> name.rstrip()
-        '    Max Peck'
+    name = '    Max Peck    '
+    name.strip()  # 'Max Peck'
+    name.lstrip()  # 'Max Peck    '
+    name.rstrip()  # '    Max Peck'
 
-* ``startswith()``
-    .. code-block:: python
+``startswith()``
+^^^^^^^^^^^^^^^^
+.. code-block:: python
 
-        name = 'José Jiménez'
+    name = 'José Jiménez'
 
-        if name.startswith('José'):
-            print('My name José Jiménez')
-        else:
-            print('Noname')
+    if name.startswith('José'):
+        print('My name José Jiménez')
+    else:
+        print('Noname')
 
-* ``join()``
-    .. code-block:: python
+``join()``
+^^^^^^^^^^
+.. code-block:: python
 
-        >>> names = ['José', 'Max', 'Ivan', str(1961), '1969']
-        >>> ';'.join(names)
-        'José;Max;Ivan;1961;1969'
+    names = ['José', 'Max', 'Ivan', str(1961), '1969']
+    ';'.join(names)  # 'José;Max;Ivan;1961;1969'
 
+``title()``, ``lower()``, ``upper()``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* Przydatne do czyszczenia danych przed analizą lub Machine Learning
+* Przykład:
 
-* ``title()``, ``lower()``, ``upper()``
-    .. code-block:: python
+    * 'Jana III Sobieskiego 1/2'
+    * 'ul. Jana III Sobieskiego 1/2'
+    * 'Ul. Jana III Sobieskiego 1/2'
+    * 'UL. Jana III Sobieskiego 1/2'
+    * 'os. Jana III Sobieskiego 1/2'
+    * 'Jana 3 Sobieskiego 1/2'
+    * 'Jana 3ego Sobieskiego 1/2'
+    * 'Jana III Sobieskiego 1 m. 2'
+    * 'Jana III Sobieskiego 1 apt 2'
+    * 'Jana Iii Sobieskiego 1/2'
+    * 'Jana IIi Sobieskiego 1/2'
 
-        >>> name = 'joSé jiMénEz'
+.. code-block:: python
 
-        >>> name.title()
-        'José Jiménez'
+    name = 'joSé jiMénEz'
+    name.title()  # 'José Jiménez'
+    name.upper()  # 'JOSÉ JIMÉNEZ'
+    name.lower()  # 'josé jiménez'
 
-        >>> name.upper()
-        'JOSÉ JIMÉNEZ'
+``replace()``
+^^^^^^^^^^^^^
+.. code-block:: python
 
-        >>> name.lower()
-        'josé jiménez'
-
-.. note:: bardzo przydatne do czyszczenia danych przed analizą lub Machine Learning
-
-* ``replace()``
-    .. code-block:: python
-
-        >>> name = 'José Jiménez'
-        >>> name.replace('J', 'j')
-        'josé jiménez'
+    name = 'José Jiménez'
+    name.replace('J', 'j')  # 'josé jiménez'
 
 String splicing
 ---------------
 .. code-block:: python
 
-    >>> text = 'Lorem ipsum'
-
-    >>> text[2]
-    'r'
-
-    >>> text[:2]
-    'Lo'
-
-    >>> text[0:3]
-    'Lor'
-
-    >>> text[1:4]
-    'ore'
-
-    >>> text[-3]
-    's'
-
-    >>> text[-3:]
-    'sum'
-
-    >>> text[-3:-1]
-    'su'
-
-    >>> text[:-2]
-    'Lorem ips'
+    text = 'Lorem ipsum'
+    text[2]  # 'r'
+    text[:2]  # 'Lo'
+    text[0:3]  # 'Lor'
+    text[1:4]  # 'ore'
+    text[-3]  # 's'
+    text[-3:]  # 'sum'
+    text[-3:-1]  # 'su'
+    text[:-2]  # 'Lorem ips'
+    text[::2]  # 'Lrmism'
 
 ``io``
 ------
@@ -356,7 +349,6 @@ String splicing
     import io
 
     io.StringIO
-
 
 Assignments
 ===========
