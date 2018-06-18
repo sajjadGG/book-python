@@ -1,6 +1,6 @@
-##############################################
-Kurs programowania w Python i Machine Learning
-##############################################
+#########################################
+Python: from beginner to Machine Learning
+#########################################
 
 **Author**
     :name: `Matt Harasymczuk <http://astrotech.io>`_
@@ -23,100 +23,100 @@ Kurs programowania w Python i Machine Learning
     :IT Software Architecture, Cloud, Microservices and Processes: http://arch.astrotech.io
     :Linux and Shell Programming with Bash: http://linux.astrotech.io
 
-*****
-Wstęp
-*****
+************
+Introduction
+************
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Wstęp
+    :caption: Introduction
 
     przed-szkoleniem.rst
+    license.rst
     wstep/o-jezyku-python.rst
     wstep/instalacja.rst
     wstep/wybor-ide.rst
     wstep/podstawy-skladni.rst
     wstep/bohaterowie.rst
 
-
-********
-Podstawy
-********
+***********
+Foundations
+***********
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Podstawy
+    :caption: Foundations
 
-    podstawy/primitive-types.rst
-    podstawy/data-structures.rst
-    podstawy/conditionals.rst
-    podstawy/operators.rst
-    podstawy/loops.rst
-    podstawy/functions.rst
-    podstawy/installing-packages.rst
-    podstawy/builtin.rst
-    podstawy/programming-convention.rst
-    podstawy/time-complexity.rst
-    podstawy/math.rst
-    podstawy/debugging.rst
-    podstawy/print-formatting.rst
-    podstawy/datetime.rst
-    podstawy/doctests.rst
-    podstawy/object-oriented-programming.rst
-    podstawy/dataclass.rst
-    podstawy/exceptions.rst
-    podstawy/files.rst
-    podstawy/exam-foundations.rst
-
-*******************
-Średniozaawansowany
-*******************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Średniozaawansowany
-
-    sredniozaawansowany/logging.rst
-    sredniozaawansowany/serializacja-csv.rst
-    sredniozaawansowany/serializacja-json.rst
-    sredniozaawansowany/serializacja.rst
-    sredniozaawansowany/testy-i-jakosc.rst
-    sredniozaawansowany/introspection.rst
-    sredniozaawansowany/operator-overload.rst
-    sredniozaawansowany/object-oriented-programming.rst
-    sredniozaawansowany/biblioteki-zewnetrzne.rst
-    sredniozaawansowany/system-operacyjny.rst
-    sredniozaawansowany/linia-polecen.rst
-    sredniozaawansowany/modularyzacja.rst
-    sredniozaawansowany/virtualenv.rst
-    sredniozaawansowany/funkcje-zmienne-argumenty.rst
-    sredniozaawansowany/regex.rst
-    sredniozaawansowany/bazy-danych.rst
-    sredniozaawansowany/tworzenie-dokumentacji.rst
-    sredniozaawansowany/programowanie-gui.rst
+    foundations/primitive-types.rst
+    foundations/data-structures.rst
+    foundations/conditionals.rst
+    foundations/operators.rst
+    foundations/loops.rst
+    foundations/functions.rst
+    foundations/installing-packages.rst
+    foundations/builtin.rst
+    foundations/programming-convention.rst
+    foundations/time-complexity.rst
+    foundations/math.rst
+    foundations/debugging.rst
+    foundations/print-formatting.rst
+    foundations/datetime.rst
+    foundations/doctests.rst
+    foundations/object-oriented-programming.rst
+    foundations/dataclass.rst
+    foundations/exceptions.rst
+    foundations/files.rst
+    foundations/exam-foundations.rst
 
 ************
-Zaawansowany
+Intermediate
 ************
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Zaawansowany
+    :caption: Intermediate
 
-    zaawansowany/type-annotation.rst
-    zaawansowany/programowanie-http.rst
-    zaawansowany/programowanie-sieciowe.rst
-    zaawansowany/generators.rst
-    zaawansowany/iterators.rst
-    zaawansowany/context-managers.rst
-    zaawansowany/decorators.rst
-    zaawansowany/collections.rst
-    zaawansowany/metaclass.rst
-    zaawansowany/watki-i-procesy.rst
-    zaawansowany/concurrency.rst
-    zaawansowany/programowanie-funkcyjne.rst
-    zaawansowany/wzorce-projektowe.rst
-    zaawansowany/c-extensions.rst
+    intermediate/logging.rst
+    intermediate/serializacja-csv.rst
+    intermediate/serializacja-json.rst
+    intermediate/serializacja.rst
+    intermediate/testy-i-jakosc.rst
+    intermediate/introspection.rst
+    intermediate/operator-overload.rst
+    intermediate/object-oriented-programming.rst
+    intermediate/biblioteki-zewnetrzne.rst
+    intermediate/system-operacyjny.rst
+    intermediate/linia-polecen.rst
+    intermediate/modularyzacja.rst
+    intermediate/virtualenv.rst
+    intermediate/funkcje-zmienne-argumenty.rst
+    intermediate/regex.rst
+    intermediate/bazy-danych.rst
+    intermediate/tworzenie-dokumentacji.rst
+    intermediate/programowanie-gui.rst
+
+********
+Advanced
+********
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Advanced
+
+    advanced/type-annotation.rst
+    advanced/programowanie-http.rst
+    advanced/programowanie-sieciowe.rst
+    advanced/generators.rst
+    advanced/iterators.rst
+    advanced/context-managers.rst
+    advanced/decorators.rst
+    advanced/collections.rst
+    advanced/metaclass.rst
+    advanced/watki-i-procesy.rst
+    advanced/concurrency.rst
+    advanced/programowanie-funkcyjne.rst
+    advanced/wzorce-projektowe.rst
+    advanced/c-extensions.rst
 
 ******
 Django
@@ -151,12 +151,12 @@ Django
     django/deployment.rst
 
 **************************
-W zastosowaniach naukowych
+Scientific and Engineering
 **************************
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: W zastosowaniach naukowych
+    :caption: Scientific and Engineering
 
     scientific/code-quality.rst
     scientific/biblioteki.rst
@@ -167,7 +167,6 @@ W zastosowaniach naukowych
     scientific/generowanie-grafow.rst
     scientific/jupyter.rst
     scientific/uczenie-maszynowe.rst
-
 
 ****************
 Machine Learning
@@ -203,41 +202,28 @@ Machine Learning
 
     machine-learning/przydatne-odnosniki.rst
 
-
 *********
-Receptury
+Free Code
 *********
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Receptury
+    :caption: Free Code
 
-    receptury/ldap-expiring-passwords.rst
-    receptury/github-api.rst
-
-
-**********
-Załączniki
-**********
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Załączniki
-
-    zalaczniki/przydatne-odnosniki.rst
-    zalaczniki/python-2vs3.rst
-    zalaczniki/ksiazki.rst
-    zalaczniki/python-wat.rst
-    zalaczniki/agenda-intermediate.rst
-
+    free-code/ldap-expiring-passwords.rst
+    free-code/github-api.rst
 
 **********
-Appendices
+Appendixes
 **********
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Appendices
+    :caption: Appendixes
 
+    appendixes/przydatne-odnosniki.rst
+    appendixes/python-2vs3.rst
+    appendixes/ksiazki.rst
+    appendixes/python-wat.rst
+    appendixes/agenda-intermediate.rst
     glossary.rst
-    license.rst
