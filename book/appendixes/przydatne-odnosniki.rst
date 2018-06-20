@@ -10,13 +10,6 @@ Doumentacja
 * http://devdocs.io
 
 
-Video
-=====
-* http://www.infoq.com/python/
-* http://pyvideo.org/
-* https://www.youtube.com/watch?v=-5wpm-gesOY
-
-
 Środowisko developerskie
 ========================
 * https://www.jetbrains.com/pycharm/download/
@@ -35,35 +28,6 @@ Humor IT
 
 .. note:: `źródło poniższych materiałów <http://www.wykop.pl/wpis/9876900/python-naukaprogramowania-programowanie-wstep-pod-/>`_
 
-Video (i inne)
-==============
-
-Screencasty / kursy video potrafią sporo pomóc, nie korzystaj wyłącznie z nich, to po prostu kolejna pomoc naukowa.
-
-* http://shop.oreilly.com/product/110000448.do - Dobra seria filmów dla bardzo początkujących, świetny materiał do oglądania na zmianę z czytaniem pierwszej książki i eksperymentowaniem z pierwszymi programami.
-
-* http://learnpythonthehardway.org/ - jest książka złożona z praktycznie samych ćwiczeń oraz seria screencastów pokazujących rozwiązania tych ćwiczeń.
-
-* http://shop.oreilly.com/product/110000667.do - wstęp do algorytmów z użyciem pythona, należy uważać - prezenter pisze sporo kodu który jest uważany za nie-pythoniczny
-
-* http://www.pluralsight.com/tag/python - wiele godnych uwagi serii screencastów ( między innymi uczących podstawowego i zaawansowanego pythona, pisania aplikacji GUI w Qt), ale najważniejsza z nich:
-
-* http://www.pluralsight.com/courses/python-developers-toolkit - to bardzo krótka seria uczący najważniejszych i niemal niezbędnych każdemu programiście pythona narzędzi
-
-Filmy z ostatnich konferencji
-=============================
-
-* https://www.youtube.com/channel/UCrJhliKNQ8g0qoE_zvL8eVg - PyCon 2017
-* https://www.youtube.com/playlist?list=PLBGl1tVyiWQSVwxne3yOH79uaSqgbnCqL - Kiwi Pycon 2014
-* https://www.youtube.com/playlist?list=PLE7tQUdRKcybbNiuhLcc3h6WzmZGVBMr3 - Filmy z DjangoCon 2014
-* https://www.youtube.com/channel/UC45KSayx_kwQAnhpaPAuVkw/videos - Filmy z PyGotham 2014
-* http://pyvideo.org/category/56/pycon-australia-2014
-* http://pyvideo.org/category/55/pydata-berlin-2014
-* http://pyvideo.org/category/54/europython-2014
-* http://pyvideo.org/category/52/pyohio-2014
-* http://pyvideo.org/category/51/scipy-2014
-
-* http://www.codecademy.com/en/tracks/python - to interaktywny kurs pythona w przeglądarcę, nie trzeba nic instalować, wystarczy wykonywać polecenia. Jest całkiem w porządku, ale nie polecam go jako “jedynego” źródła wiedzy o Pythonie, oraz (ostatnio gdy sprawdzałem) nie wspierał Pythona 3.
 
 Wyzwania i potyczki
 ===================

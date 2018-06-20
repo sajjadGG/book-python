@@ -222,8 +222,9 @@ Appendixes
     :caption: Appendixes
 
     appendixes/przydatne-odnosniki.rst
-    appendixes/python-2vs3.rst
     appendixes/ksiazki.rst
+    appendixes/video.rst
+    appendixes/python-2vs3.rst
     appendixes/python-wat.rst
     appendixes/agenda-intermediate.rst
     glossary.rst
