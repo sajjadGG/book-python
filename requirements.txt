@@ -5,6 +5,7 @@ sphinxcontrib-bibtex
 nbsphinx
 ipykernel
 IPython
+tornado
 
 django
 django-rest-framework
