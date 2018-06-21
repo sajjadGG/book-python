@@ -52,6 +52,3 @@ Bardziej zaawansowany przykład
 
 Bokeh
 -----
-
-Plotly
-------

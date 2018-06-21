@@ -1,12 +1,3 @@
-sphinx==1.7.5
-sphinx_rtd_theme
-sphinxjp.themes.revealjs
-sphinxcontrib-bibtex
-nbsphinx
-ipykernel
-IPython
-tornado
-
 django
 django-rest-framework
 django-debug-toolbar
@@ -20,5 +11,8 @@ numpy
 scikit-learn
 scipy
 jupyter
+tornado
 pandas
 graphviz
+plotly
+bokeh

@@ -36,49 +36,6 @@ Using
 * Modify code and run
 * Autocomplete
 * Cell type (Markdown, LaTeX, Code)
-* ``%%``
-
-    * ``%%timeit``
-
-Execute terminal commands
--------------------------
-* ``!``
-
-    * ``!pwd``
-    * ``!ls``
-    * .. code-block:: python
-
-        files = !dir
-        for f in files:
-            if f.find("1_") >= 0:
-                print(f)
-
-HTML
-----
-.. code-block:: python
-
-    from IPython.display import Javascript, HTML
-    Javascript("alert('It is JavaScript!')")
-    HTML("We can <i>generate</i> <code>html</code> code <b>directly</b>!")
-
-
-Kernels
-=======
-
-Functions
-=========
-
-Checkpoints
------------
-
-Download
---------
-
-Trust Notebook
---------------
-
-Close and Halt
---------------
 
 Cells
 =====
@@ -108,6 +65,78 @@ Run All (above/below)
 
 Clear Output
 ------------
+
+
+
+LaTeX
+=====
+.. code-block:: python
+
+    from IPython.display import display, Math, Latex
+
+    display(Math(r'F(k) = \int_{-\infty}^{\infty} f(x) e^{2\pi i k} dx'))
+
+.. code-block:: python
+
+    %%latex
+
+    $$c = \sqrt{a^2 + b^2}$$
+
+.. code-block:: python
+
+    %%latex
+
+    \begin{equation}
+    H← ​​​60 ​+​ \frac{​​30(B−R)​​}{Vmax−Vmin}  ​​, if V​max​​ = G
+    \end{equation}
+
+
+Magic commands
+==============
+* ``%run``
+* ``%%timeit``
+* ``%%latex``
+
+Execute terminal commands
+=========================
+* ``!``
+
+    * ``!pwd``
+    * ``!ls``
+    * .. code-block:: python
+
+        files = !dir
+        for f in files:
+            if f.find("1_") >= 0:
+                print(f)
+
+HTML and Javascript
+===================
+.. code-block:: python
+
+    from IPython.display import Javascript, HTML
+    Javascript("alert('It is JavaScript!')")
+    HTML("We can <i>generate</i> <code>html</code> code <b>directly</b>!")
+
+
+Kernels
+=======
+
+Functions
+=========
+
+Checkpoints
+-----------
+
+Download
+--------
+
+Trust Notebook
+--------------
+
+Close and Halt
+--------------
+
 
 Markdown
 ========
@@ -147,6 +176,10 @@ Image
 
 YouTube
 -------
+.. code-block:: python
+
+    from IPython.display import YouTubeVideo
+    YouTubeVideo("wupToqz1e2g")
 
 Slides
 ======
