@@ -1,15 +1,13 @@
-******************
-Analiza Numeryczna
-******************
-
-
+*****
 NumPy
-=====
-NumPy jest podstawowym pakie (dodatkowym) w Pythonie do obliczeń naukowych. Integruje on niskopoziomowe biblioteki takie jak BLAS i LAPACK lub ATLAS. Podstawowe właściwości NumPy to :
+*****
+
+
+NumPy jest podstawowym pakiet (dodatkowym) w Pythonie do obliczeń naukowych. Integruje on niskopoziomowe biblioteki takie jak BLAS i LAPACK lub ATLAS. Podstawowe właściwości NumPy to :
 
     - potężny N-wymiarowy obiekt tablicy danych
     - rozbudowane funkcje (
-    - narzędzia do integracji z codem napisanym w C/C++ i Fortranie
+    - narzędzia do integracji z kodem napisanym w C/C++ i Fortranie
     - narzędzia do algebry liniowej, transformaty Fouriera czy generator liczb losowych
 
 NumPy is the fundamental package for scientific computing with Python. It contains among other things:
@@ -23,15 +21,132 @@ Besides its obvious scientific uses, NumPy can also be used as an efficient mult
 
 * http://www.numpy.org/
 
+Functions
+=========
+* abs
+* sign
+* sqrt
+* log
+* log10
+* exp
+* sin
+* cos
+* tan
+* arcsin
+* arccos
+* arctan
+* sinh
+* cosh
+* tanh
+* arcsinh
+* arccosh
+* arctanh
 
-Arrays
-------
+Polynomial mathematics
+======================
+.. code-block:: python
+
+    >>> np.poly([-1, 1, 1, 10])
+    array([ 1, -11, 9, 11, -10])
+
+    >>> np.roots([1, 4, -2, 3])
+    array([-4.57974010+0.j , 0.28987005+0.75566815j,
+     0.28987005-0.75566815j])
+
+    >>> np.polyint([1, 1, 1, 1])
+    # x**3 + x**2 + x + C
+    array([ 0.25 , 0.33333333, 0.5 , 1. , 0. ])
+
+    # derivatives
+    >>> np.polyder([1./4., 1./3., 1./2., 1., 0.])
+    array([ 1., 1., 1., 1.])
+    polyadd, polysub, polymul, and polydiv
+
+    >>> np.polyval([1, -2, 0, 2], 4)
+    34
+
+    # polyfit function can be used to fit a polynomial of specified order to a set of data using a least-squares approach
+    >>> x = [1, 2, 3, 4, 5, 6, 7, 8]
+    >>> y = [0, 2, 1, 3, 7, 10, 11, 19]
+    >>> np.polyfit(x, y, 2)
+    array([ 0.375 , -0.88690476, 1.05357143])
+
+Statistics
+==========
+.. code-block:: python
+
+>>> a = np.array([1, 4, 3, 8, 9, 2, 3], float)
+>>> np.median(a)
+3.0
+
+>>> a = np.array([[1, 2, 1, 3], [5, 3, 1, 8]], float)
+>>> c = np.corrcoef(a)
+>>> c
+array([[ 1. , 0.72870505],
+ [ 0.72870505, 1. ]])
+
+>>> np.cov(a)
+array([[ 0.91666667, 2.08333333],
+ [ 2.08333333, 8.91666667]])
+
+Random numbers
+==============
+* Mersenne Twister algorithm for pseudorandom number generation
+
+.. code-block:: python
+
+    >>> np.random.seed(293423)
+
+    >>> np.random.rand(5)
+    array([ 0.40783762, 0.7550402 , 0.00919317, 0.01713451, 0.95299583])
+
+    >>> np.random.rand(2,3)
+    array([[ 0.50431753, 0.48272463, 0.45811345],
+     [ 0.18209476, 0.48631022, 0.49590404]])
+    >>> np.random.rand(6).reshape((2,3))
+    array([[ 0.72915152, 0.59423848, 0.25644881],
+     [ 0.75965311, 0.52151819, 0.60084796]])
+
+    >>> np.random.random()
+    0.70110427435769551
+
+    >>> np.random.randint(5, 10)
+    9
+
+    # Poisson distribution with lambda = 6.0
+    >>> np.random.poisson(6.0)
+    5
+
+    # continuous normal (Gaussian) distribution with mean micro=1.5 and standard deviation sigma=4.0:
+
+    >>> np.random.normal(1.5, 4.0)
+    0.83636555041094318
+
+    # micro=0.0, sigma=1.0
+    >>> np.random.normal()
+    0.27548716940682932
+
+    >>> np.random.normal(size=5)
+    array([-1.67215088, 0.65813053, -0.70150614, 0.91452499, 0.71440557])
+
+    >>> l = range(10)
+    >>> l
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    >>> np.random.shuffle(l)
+    >>> l
+    [4, 9, 5, 0, 2, 7, 6, 8, 1, 3]
+
+
+Data Structures
+===============
 * Skalar - jednowymiarowa
 * Wektor - dwuwymiarowa
 * Tensor - trójwymiarowa
 * Tablica - czterowymiarowa
-* Macież n-wymiarowa
+* Macierz - n-wymiarowa
 
+Arrays
+======
 .. code-block:: python
 
     import numpy as np
@@ -290,8 +405,8 @@ https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html
          [ 0., 0., 1., 0.],
          [ 0., 0., 0., 1.]])
 
-Pobieranie wartości z tablic
-----------------------------
+Array slicing
+-------------
 .. code-block:: python
 
     >>> n1 = np.array([1,2,3])
@@ -336,6 +451,8 @@ Pobieranie wartości z tablic
         [ 676 1089 4225]
     ]
 
+Array math operations
+---------------------
 .. code-block:: python
 
     >>> a = np.array([1,2,3], float)
@@ -361,8 +478,8 @@ Pobieranie wartości z tablic
 
 .. warning:: For two-dimensional arrays, multiplication ``*`` remains elementwise and does not correspond to matrix multiplication.
 
-Matrix Multiplication:
-
+Array Multiplication
+--------------------
 .. code-block:: python
 
     >>> A = [[1, 0], [0, 1]]
@@ -437,7 +554,7 @@ Matrix Multiplication:
     inf
 
 Array iteration
-^^^^^^^^^^^^^^^
+---------------
 .. code-block:: python
 
     >>> a = np.array([1, 4, 5], int)
@@ -459,7 +576,7 @@ Array iteration
     [ 5. 6.]
 
 Array operations
-^^^^^^^^^^^^^^^^
+----------------
 .. code-block:: python
 
     >>> a = np.array([2, 4, 3], float)
@@ -573,27 +690,6 @@ Array operations
     array([[-1., -1.],
      [ 3., 3.]])
 
-Functions
----------
-* abs
-* sign
-* sqrt
-* log
-* log10
-* exp
-* sin
-* cos
-* tan
-* arcsin
-* arccos
-* arctan
-* sinh
-* cosh
-* tanh
-* arcsinh
-* arccosh
-* arctanh
-
 .. code-block:: python
 
     >>> a = np.array([[0, 2], [3, -1], [3, 5]], float)
@@ -634,7 +730,7 @@ Functions
     array([ 1., 4.])
 
 Comparison operators and value testing
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------
 .. code-block:: python
 
     >>> a = np.array([1, 3, 0], float)
@@ -698,7 +794,7 @@ Comparison operators and value testing
     array([ True, False, False], dtype=bool)
 
 Array item selection and manipulation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------------
 .. code-block:: python
 
     >>> a = np.array([[6, 4], [5, 9]], float)
@@ -761,7 +857,7 @@ Array item selection and manipulation
     array([ 5., 1., 2., 5., 4., 5.])
 
 Vector and matrix mathematics
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+=============================
 .. code-block:: python
 
     >>> a = np.array([1, 2, 3], float)
@@ -836,102 +932,8 @@ Vector and matrix mathematics
      [ 0.78971838, -0.40129005, -0.46401635],
      [-0.046676 , -0.79349205, 0.60678804]])
 
-Polynomial mathematics
-----------------------
-.. code-block:: python
-
-    >>> np.poly([-1, 1, 1, 10])
-    array([ 1, -11, 9, 11, -10])
-
-    >>> np.roots([1, 4, -2, 3])
-    array([-4.57974010+0.j , 0.28987005+0.75566815j,
-     0.28987005-0.75566815j])
-
-    >>> np.polyint([1, 1, 1, 1])
-    # x**3 + x**2 + x + C
-    array([ 0.25 , 0.33333333, 0.5 , 1. , 0. ])
-
-    # derivatives
-    >>> np.polyder([1./4., 1./3., 1./2., 1., 0.])
-    array([ 1., 1., 1., 1.])
-    polyadd, polysub, polymul, and polydiv
-
-    >>> np.polyval([1, -2, 0, 2], 4)
-    34
-
-    # polyfit function can be used to fit a polynomial of specified order to a set of data using a least-squares approach
-    >>> x = [1, 2, 3, 4, 5, 6, 7, 8]
-    >>> y = [0, 2, 1, 3, 7, 10, 11, 19]
-    >>> np.polyfit(x, y, 2)
-    array([ 0.375 , -0.88690476, 1.05357143])
-
-Statistics
-==========
-.. code-block:: python
-
->>> a = np.array([1, 4, 3, 8, 9, 2, 3], float)
->>> np.median(a)
-3.0
-
->>> a = np.array([[1, 2, 1, 3], [5, 3, 1, 8]], float)
->>> c = np.corrcoef(a)
->>> c
-array([[ 1. , 0.72870505],
- [ 0.72870505, 1. ]])
-
->>> np.cov(a)
-array([[ 0.91666667, 2.08333333],
- [ 2.08333333, 8.91666667]])
-
-Random numbers
-==============
-* Mersenne Twister algorithm for pseudorandom number generation
-
-.. code-block:: python
-
-    >>> np.random.seed(293423)
-
-    >>> np.random.rand(5)
-    array([ 0.40783762, 0.7550402 , 0.00919317, 0.01713451, 0.95299583])
-
-    >>> np.random.rand(2,3)
-    array([[ 0.50431753, 0.48272463, 0.45811345],
-     [ 0.18209476, 0.48631022, 0.49590404]])
-    >>> np.random.rand(6).reshape((2,3))
-    array([[ 0.72915152, 0.59423848, 0.25644881],
-     [ 0.75965311, 0.52151819, 0.60084796]])
-
-    >>> np.random.random()
-    0.70110427435769551
-
-    >>> np.random.randint(5, 10)
-    9
-
-    # Poisson distribution with lambda = 6.0
-    >>> np.random.poisson(6.0)
-    5
-
-    # continuous normal (Gaussian) distribution with mean micro=1.5 and standard deviation sigma=4.0:
-
-    >>> np.random.normal(1.5, 4.0)
-    0.83636555041094318
-
-    # micro=0.0, sigma=1.0
-    >>> np.random.normal()
-    0.27548716940682932
-
-    >>> np.random.normal(size=5)
-    array([-1.67215088, 0.65813053, -0.70150614, 0.91452499, 0.71440557])
-
-    >>> l = range(10)
-    >>> l
-    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    >>> np.random.shuffle(l)
-    >>> l
-    [4, 9, 5, 0, 2, 7, 6, 8, 1, 3]
-
-Macierze
---------
+Matrix
+======
 Numpy ma również typ macierzy matrix. Jest on bardzo podobny do tablicy ale podstawowe operacje wykonywane są w sposób macierzowy a nie tablicowy.
 
 .. code-block:: python
@@ -1008,10 +1010,49 @@ Dodatkowo, operacje algebry liniowej można wykonywać zarówno na tablicach jak
     print('det(a) = {}'.format(np.linalg.det(a)))
 
 
-Zadania kontrolne
-=================
+Assignments
+===========
 * http://www.labri.fr/perso/nrougier/teaching/numpy.100/
 * https://github.com/rougier/numpy-100
+
+Matrix multiplication
+---------------------
+#. Używając ``numpy`` oraz operatora ``@`` oraz ``*``
+#. Czym się różnią?
+
+.. code-block:: python
+
+    def matrix_multiplication(A, B):
+        """
+        >>> A = [[1, 0], [0, 1]]
+        >>> B = [[4, 1], [2, 2]]
+        >>> matrix_multiplication(A, B)
+        [[4, 1], [2, 2]]
+
+        >>> A = [[1,0,1,0], [0,1,1,0], [3,2,1,0], [4,1,2,0]]
+        >>> B = [[4,1], [2,2], [5,1], [2,3]]
+        >>> matrix_multiplication(A, B)
+        [[9, 2], [7, 3], [21, 8], [28, 8]]
+        """
+        pass
+
+:Założenia:
+    * Nazwa pliku: ``numpy-matrix-mul.py``
+    * Linii kodu do napisania: około 2 linii
+    * Maksymalny czas na zadanie: 5 min
+
+Sum of inner matrix
+-------------------
+#. Wygeneruj macierz randomowych intów
+#. Przekonwertuj macierz na typ float
+#. Transponuj ją
+#. Policz sumę środkowych (4x4) elementów macierzy
+#. Wyświetl wartość (skalar) sumy, a nie nie wektor
+
+:Założenia:
+    * Nazwa pliku: ``numpy-sum.py``
+    * Linii kodu do napisania: około 4 linii
+    * Maksymalny czas na zadanie: 5 min
 
 Szukanie liczby
 ---------------
@@ -1093,42 +1134,3 @@ Szukanie liczby
 
     res2 = res1[m]
     # array([282., 582., 882.])
-
-Mnożenie macierzy wykorzystując numpy
--------------------------------------
-#. Używając ``numpy`` oraz operatora ``@`` oraz ``*``
-#. Czym się różnią?
-
-.. code-block:: python
-
-    def matrix_multiplication(A, B):
-        """
-        >>> A = [[1, 0], [0, 1]]
-        >>> B = [[4, 1], [2, 2]]
-        >>> matrix_multiplication(A, B)
-        [[4, 1], [2, 2]]
-
-        >>> A = [[1,0,1,0], [0,1,1,0], [3,2,1,0], [4,1,2,0]]
-        >>> B = [[4,1], [2,2], [5,1], [2,3]]
-        >>> matrix_multiplication(A, B)
-        [[9, 2], [7, 3], [21, 8], [28, 8]]
-        """
-        pass
-
-:Założenia:
-    * Nazwa pliku: ``numpy-matrix-mul.py``
-    * Linii kodu do napisania: około 2 linii
-    * Maksymalny czas na zadanie: 5 min
-
-Suma części macierzy
---------------------
-#. Wygeneruj macierz randomowych intów
-#. Przekonwertuj macierz na typ float
-#. Transponuj ją
-#. Policz sumę środkowych (4x4) elementów macierzy
-#. Wyświetl wartość (skalar) sumy, a nie nie wektor
-
-:Założenia:
-    * Nazwa pliku: ``numpy-sum.py``
-    * Linii kodu do napisania: około 4 linii
-    * Maksymalny czas na zadanie: 5 min

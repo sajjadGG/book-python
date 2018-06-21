@@ -33,11 +33,11 @@ Introduction
 
     przed-szkoleniem.rst
     license.rst
-    wstep/o-jezyku-python.rst
-    wstep/instalacja.rst
-    wstep/wybor-ide.rst
-    wstep/podstawy-skladni.rst
-    wstep/bohaterowie.rst
+    introduction/about.rst
+    introduction/installation.rst
+    introduction/ide.rst
+    introduction/syntax.rst
+    introduction/heros.rst
 
 ***********
 Foundations
@@ -166,6 +166,7 @@ Scientific and Engineering
     scientific/charts.rst
     scientific/graphs.rst
     scientific/jupyter.rst
+    scientific/numerical-analysis.rst
     scientific/machine-learning.rst
 
 ****************

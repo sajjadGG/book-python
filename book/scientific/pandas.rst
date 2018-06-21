@@ -1,11 +1,7 @@
-**************
-Obsługa danych
-**************
-
+******
 Pandas
-======
+******
 
-``Pandas``
 Pandas is a Python package providing fast, flexible, and expressive data structures designed to make working with "relational" or "labeled" data both easy and intuitive. It aims to be the fundamental high-level building block for doing practical, real world data analysis in Python. Additionally, it has the broader goal of becoming the most powerful and flexible open source data analysis / manipulation tool available in any language. It is already well on its way toward this goal. Here are just a few of the things that pandas does well:
 
     - Easy handling of missing data (represented as NaN) in floating point as well as non-floating point data
@@ -35,8 +31,7 @@ Podstawowymi strukturami danych w Pandas jest Series (seria) i DataFrame (obiekt
     import numpy as np # Nie wymagane, użyjemy tylko elementów
 
 Series
-------
-
+======
 Series jest to jednowymiarowa struktura danych podobna do ``ndarray``. Serię tworzymy za pomocą polecenia ``Series``; jako dane możemy przekazać wiele kolekcji:
 
 .. code-block:: python
@@ -164,7 +159,7 @@ Można też wykonywać operacje na serii:
 
 
 DataFrame
----------
+=========
 DataFrame to zbiór serii.
 
 DataFrame jest obiektem dwuwymiarowym, który w obsłudze przypomina tabelę. Każda kolumna ma nazwę i jest serią danych (Series). Wszystkie kolumny mają wspólny indeks. Operacje można wykonywać na całych kolumnach lub wierszach. DataFrame tworzymy operacją ``DataFrame``:
@@ -425,8 +420,8 @@ Nową kolumnę dodajemy przez przypisanie:
 
 Zmiana pojedynczej wartości może być również zrobiona przez przypisanie; używamy wtedy komend lokalizacyjnych, np:
 
-Modyfikacje zawartości DataFrame
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Removing DataFrame None values
+------------------------------
 .. code-block:: python
 
     # Drop NaN
@@ -434,8 +429,8 @@ Modyfikacje zawartości DataFrame
     df3.dropna(how='all')
     df3.fillna(-100)
 
-Statystyki opisowe
-^^^^^^^^^^^^^^^^^^
+Descriptive Statistics
+----------------------
 .. code-block:: python
 
     df.mean()
@@ -478,15 +473,15 @@ Dodatkowo, można używać funkcji znanych z baz danych jak grupowanie czy złą
     pd.concat([df2, df3], join='inner')
 
 
-Liczenie percentyli
-^^^^^^^^^^^^^^^^^^^
+Percentiles
+-----------
 .. code-block:: python
 
     df.qualtile(0.33)
     df.qualtile(0.33, 0.1, 0.99)
 
 Import
-------
+======
 - ``pd.read_*``
 
 .. code-block:: python
@@ -500,8 +495,8 @@ Import
     pd.read_sql_query()
     pd.read_sql_table()
 
-Eksport
--------
+Export
+======
 - Dane, które są w dataFrame można wyeksportować
 - ``df.to_*``
 
@@ -514,8 +509,8 @@ Eksport
     df.to_latex()
     df.to_dict()
 
-Printowanie
------------
+Display Output
+==============
 .. code-block:: python
 
     # Set options for whole script
@@ -532,8 +527,8 @@ Printowanie
     with pd.option_context('display.max_rows', None, 'display.max_columns', 3):
         print(df)
 
-Przykład praktyczny
-===================
+Practical Example
+=================
 .. code-block:: python
 
     import pandas
@@ -570,9 +565,8 @@ Przykład praktyczny
     return df[columns].to_dict('records')
 
 
-
-Zadania kontrolne
-=================
+Assignments
+===========
 
 Iris
 ----
@@ -595,9 +589,8 @@ Iris
 #. Dodaj kolumnę ``big_enough`` i dla wartości 'Petal width' powyżej 1.0 ustawi ``True``, a dla mniejszych ``False``
 #. Zwróć dane tylko dla kolumny 'Sepal length', 'Sepal width' oraz 'Species'
 
-Samochody
----------
-
+Cars
+----
 Należy stworzyć DataFrame samochody z losową kolumną liczb całkowitych przebieg z przedziału [0, 200 000] oraz spalanie z przedziału [2, 20].
 
 dodaj kolumnę marka:
