@@ -353,6 +353,17 @@ Pobieranie wartości z tablic
     >>> a * b
     array([[2., 0.], [3., 12.]])
 
+.. warning:: For two-dimensional arrays, multiplication ``*`` remains elementwise and does not correspond to matrix multiplication.
+
+Matrix Multiplication:
+
+.. code-block:: python
+
+    >>> A = [[1, 0], [0, 1]]
+    >>> B = [[4, 1], [2, 2]]
+    >>> a @ b
+    [[4, 1], [2, 2]]
+
 .. code-block:: python
 
     >>> a = np.array([1,2,3], float)
@@ -403,7 +414,7 @@ Pobieranie wartości z tablic
     >>> a = np.array([1.1, 1.5, 1.9], float)
     >>> np.floor(a)
     array([ 1., 1., 1.])
-    >>> np.ceil(a)
+     >>> np.ceil(a)
     array([ 2., 2., 2.])
     >>> np.rint(a)
     array([ 1., 2., 2.])
@@ -668,16 +679,10 @@ Szukanie liczby
     res2 = res1[m]
     # array([282., 582., 882.])
 
-Mnożenie macierzy iteracyjnie
------------------------------
-#. Napisz program mnożący macierze wykorzystując zagnieżdżone pętle ``for``
-
-.. code-block:: python
-
-    A = [
-        [1, 0],
-        [0, 1]
-    ]
+Mnożenie macierzy wykorzystując numpy
+-------------------------------------
+#. Używając ``numpy`` oraz operatora ``@`` oraz ``*``
+#. Czym się różnią?
 
 .. code-block:: python
 
@@ -687,31 +692,11 @@ Mnożenie macierzy iteracyjnie
         >>> B = [[4, 1], [2, 2]]
         >>> matrix_multiplication(A, B)
         [[4, 1], [2, 2]]
-        """
-        pass
 
-:Założenia:
-    * Nazwa pliku: ``math-matrix-iter.py``
-    * Linii kodu do napisania: około 6 linii
-    * Maksymalny czas na zadanie: 20 min
-
-:Podpowiedź:
-    * macierz zerowa
-    * trzy pętle
-
-Mnożenie macierzy wykorzystując biblioteki
-------------------------------------------
-#. Używając ``numpy`` oraz operatora ``@``
-
-.. code-block:: python
-
-    def matrix_multiplication(A, B):
-        """
-        >>> A = [[1, 0], [0, 1]]
-        >>> B = [[4, 1], [2, 2]]
+        >>> A = [[1,0,1,0], [0,1,1,0], [3,2,1,0], [4,1,2,0]]
+        >>> B = [[4,1], [2,2], [5,1], [2,3]]
         >>> matrix_multiplication(A, B)
-        array([[4, 1],
-           [2, 2]])
+        [[9, 2], [7, 3], [21, 8], [28, 8]]
         """
         pass
 
