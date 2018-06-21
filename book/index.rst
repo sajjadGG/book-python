@@ -37,7 +37,7 @@ Introduction
     introduction/installation.rst
     introduction/ide.rst
     introduction/syntax.rst
-    introduction/heros.rst
+    introduction/heroes.rst
 
 ***********
 Foundations
