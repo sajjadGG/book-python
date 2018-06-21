@@ -81,3 +81,7 @@ Podpowiadanie składni
 
 Uruchamianie kodu i wyświetlanie wyników
 ----------------------------------------
+
+Spellcheck
+----------
+* https://github.com/LibreOffice/dictionaries
