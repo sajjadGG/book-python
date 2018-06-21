@@ -360,6 +360,18 @@ Assignments
     * Debug...
     * Python Console
 
+Print
+-----
+#. Za pomocą ``print()`` Wypisz linię składającą się z 50 myślników
+
+:Założenia:
+    * Nazwa pliku: ``primitives-print.py``
+    * Linii kodu do napisania: około 1 linie
+    * Maksymalny czas na zadanie: 2 min
+
+:Podpowiedź:
+    * Wykorzystaj mnożenie stringów
+
 Zmienne i typy
 --------------
 #. Wczytaj od użytkownika imię
@@ -370,7 +382,7 @@ Zmienne i typy
 #. Nie korzystaj z dodawania stringów ``str + str``
 
 :Założenia:
-    * Nazwa pliku: ``type-print.py``
+    * Nazwa pliku: ``primitives-input.py``
     * Linii kodu do napisania: około 2 linie
     * Maksymalny czas na zadanie: 5 min
 
@@ -394,7 +406,7 @@ User input and type casting
     })
 
 :Założenia:
-    * Nazwa pliku: ``types-casting.py``
+    * Nazwa pliku: ``primitives-casting.py``
     * Linii kodu do napisania: około 3 linie
     * Maksymalny czas na zadanie: 5 min
 
@@ -413,7 +425,7 @@ Wyrazy
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 :Założenia:
-    * Nazwa pliku: ``type-split-text.py``
+    * Nazwa pliku: ``primitives-split-text.py``
     * Linii kodu do napisania: około 3 linie
     * Maksymalny czas na zadanie: 5 min
 

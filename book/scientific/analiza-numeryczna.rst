@@ -77,6 +77,12 @@ Arrays
 
 .. code-block:: python
 
+    a = np.array([[1, 2, 3], [4, 5, 6]], int)
+    a.astype(float)
+    a.dtype  # dtype('float64')
+
+.. code-block:: python
+
     a = np.array([[1, 2, 3], [4, 5, 6]], float)
     len(a)  # 2
 
@@ -701,12 +707,19 @@ Mnożenie macierzy wykorzystując numpy
         pass
 
 :Założenia:
-    * Nazwa pliku: ``math-matrix-numpy.py``
+    * Nazwa pliku: ``numpy-matrix-mul.py``
     * Linii kodu do napisania: około 2 linii
     * Maksymalny czas na zadanie: 5 min
 
 Suma części macierzy
 --------------------
-#. Wygeneruj macierz randomowych floatów 16x16
+#. Wygeneruj macierz randomowych intów
+#. Przekonwertuj macierz na typ float
 #. Transponuj ją
 #. Policz sumę środkowych (4x4) elementów macierzy
+#. Wyświetl wartość (skalar) sumy, a nie nie wektor
+
+:Założenia:
+    * Nazwa pliku: ``numpy-sum.py``
+    * Linii kodu do napisania: około 4 linii
+    * Maksymalny czas na zadanie: 5 min
