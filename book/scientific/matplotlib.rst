@@ -2,6 +2,10 @@
 Matplotlib
 **********
 
+Gallery
+=======
+* https://matplotlib.org/gallery/index.html
+
 Matplotlib and Jupyter
 ======================
 * ``%matplotlib inline``
@@ -103,11 +107,11 @@ Simple Pie Chart
     :language: python
     :caption: Simple Pie Chart
 
-Donaugh Pie Chart
+Donut Pie Chart
 -----------------
-.. literalinclude:: src/matplotlib-donaugh.py
+.. literalinclude:: src/matplotlib-pie-donut.py
     :language: python
-    :caption: Donaugh Pie Chart
+    :caption: Donut Pie Chart
 
 3D
 ==
