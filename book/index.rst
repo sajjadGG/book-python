@@ -159,14 +159,14 @@ Scientific and Engineering
     :caption: Scientific and Engineering
 
     scientific/code-quality.rst
-    scientific/biblioteki.rst
-    scientific/analiza-numeryczna.rst
-    scientific/zastosowania-naukowe.rst
-    scientific/obsluga-danych.rst
-    scientific/generowanie-wykresow.rst
-    scientific/generowanie-grafow.rst
+    scientific/libraries.rst
+    scientific/numpy.rst
+    scientific/scipy.rst
+    scientific/pandas.rst
+    scientific/charts.rst
+    scientific/graphs.rst
     scientific/jupyter.rst
-    scientific/uczenie-maszynowe.rst
+    scientific/machine-learning.rst
 
 ****************
 Machine Learning
