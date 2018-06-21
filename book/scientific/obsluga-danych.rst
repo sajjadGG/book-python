@@ -504,8 +504,69 @@ Eksport
     df.to_latex()
     df.to_dict()
 
+Printowanie
+-----------
+.. code-block:: python
+
+    # Set options for whole script
+    pd.set_option('display.height',1000)
+    pd.set_option('display.max_rows',500)
+    pd.set_option('display.max_columns',500)
+    pd.set_option('display.width',1000)
+
+    # Unlimited for whole script
+    pd.set_option('display.max_columns', None)
+    pd.set_option('display.max_rows', None)
+
+    # Use config only with context
+    with pd.option_context('display.max_rows', None, 'display.max_columns', 3):
+        print(df)
+
+Przykład praktyczny
+===================
+.. code-block:: python
+
+    import pandas
+    from reach.importer.models import Spreadsheet
+
+    data_frame = pandas.read_excel(
+        io='filename.xls',
+        encoding='utf-8',
+        parse_dates=['from', 'to'],  # list of columns to parse for dates
+        sheet_name=['Sheet 1'],
+        skip_blank_lines=True,
+        skiprows=1,
+    )
+
+    # Rename Columns to match database columns
+    data_frame.rename(columns={
+        'from': 'date_start',
+        'to': 'date_end',
+    }, inplace=True)
+
+    # Drop all records where "Name" is empty (NaN)
+    data_frame.dropna(subset=['name'], how='all', inplace=True)
+
+    # choose columns
+    columns = ['name', 'date_start', 'date_end']
+
+    # Add metadata
+    data_frame['blacklist'] = [True, False, True, False]
+    columns = columns + ['blacklist']
+
+    # Change NaN to None
+    df = data_frame.where((pandas.notnull(data_frame)), None)
+
+    return df[columns].to_dict('records')
+
+
+
 Zadania kontrolne
------------------
+=================
+
+Samochody
+---------
+
 Należy stworzyć DataFrame samochody z losową kolumną liczb całkowitych przebieg z przedziału [0, 200 000] oraz spalanie z przedziału [2, 20].
 
 dodaj kolumnę marka:
@@ -634,11 +695,20 @@ spalanie    count    5.000000    7.000000      11.000000   6.000000       13.000
             max      4.944177    4.691502      9.611147    9.199502       19.708519    19.580096
 =================== ========================== ========================== ==========================
 
-Zadania kontrolne
-=================
-
 Iris
 ----
 * https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv
 
 #. Mając dane Irysów przekonwertuj je na dataframe
+#. Wykreśl podstawowe statystyki opisowe
+#. Podaj jawnie ``encoding``
+#. Pierwsza linijka stanowi metadane (nie wyświetlaj jej)
+#. Nazwy poszczególnych kolumn:
+
+    * Sepal length
+    * Sepal width
+    * Petal length
+    * Petal width
+    * Species
+
+#. Przefiltruj ``inplace`` kolumnę 'Petal length' i pozostaw wartości powyżej 2.0

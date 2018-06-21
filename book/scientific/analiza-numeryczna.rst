@@ -431,6 +431,7 @@ Matrix Multiplication:
     3.1415926535897931
     >>> np.e
     2.7182818284590451
+    >>> np.nan
 
 Array iteration
 ^^^^^^^^^^^^^^^

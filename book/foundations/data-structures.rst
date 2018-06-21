@@ -416,7 +416,7 @@ Podział zbioru
 .. literalinclude:: src/data-structures-iris-sample.py
     :name: listing-data-structures-iris-sample
     :language: python
-    :caption: Sample Iris database
+    :caption: Sample Iris databases
 
 Słownik unikalnych cech
 -----------------------
