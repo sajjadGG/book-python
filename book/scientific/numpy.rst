@@ -525,6 +525,411 @@ Array operations
     >>> a.diagonal()
     array([ 1., 4.])
 
+.. code-block:: python
+
+    >>> a = np.array([[1,2], [3,4]], float)
+    >>> b = np.array([[2,0], [1,3]], float)
+    >>> a * b
+    array([[2., 0.], [3., 12.]])
+
+
+    >>> a = np.array([1,2,3], float)
+    >>> b = np.array([4,5], float)
+    >>> a + b
+    Traceback (most recent call last):
+     File "<stdin>", line 1, in <module>
+    ValueError: shape mismatch: objects cannot be broadcast to a single shape
+
+
+    >>> a = np.array([[1, 2], [3, 4], [5, 6]], float)
+    >>> b = np.array([-1, 3], float)
+    >>> a
+    array([[ 1., 2.],
+     [ 3., 4.],
+     [ 5., 6.]])
+    >>> b
+    array([-1., 3.])
+    >>> a + b
+    array([[ 0., 5.],
+     [ 2., 7.],
+     [ 4., 9.]])
+
+.. code-block:: python
+
+    >>> a = np.zeros((2,2), float)
+    >>> b = np.array([-1., 3.], float)
+    >>> a
+    array([[ 0., 0.],
+     [ 0., 0.]])
+    >>> b
+    array([-1., 3.])
+    >>> a + b
+    array([[-1., 3.],
+     [-1., 3.]])
+    >>> a + b[np.newaxis,:]
+    array([[-1., 3.],
+     [-1., 3.]])
+    >>> a + b[:,np.newaxis]
+    array([[-1., -1.],
+     [ 3., 3.]])
+
+Functions
+---------
+* abs
+* sign
+* sqrt
+* log
+* log10
+* exp
+* sin
+* cos
+* tan
+* arcsin
+* arccos
+* arctan
+* sinh
+* cosh
+* tanh
+* arcsinh
+* arccosh
+* arctanh
+
+.. code-block:: python
+
+    >>> a = np.array([[0, 2], [3, -1], [3, 5]], float)
+    >>> a.mean(axis=0)
+    array([ 2., 2.])
+    >>> a.mean(axis=1)
+    array([ 1., 1., 4.])
+    >>> a.min(axis=1)
+    array([ 0., -1., 3.])
+    >>> a.max(axis=0)
+    array([ 3., 5.])
+
+.. code-block:: python
+
+    >>> a = np.array([6, 2, 5, -1, 0], float)
+    >>> sorted(a)
+    [-1.0, 0.0, 2.0, 5.0, 6.0]
+    >>> a.sort()
+    >>> a
+    array([-1., 0., 2., 5., 6.])
+
+.. code-block:: python
+
+    >>> a = np.array([6, 2, 5, -1, 0], float)
+    >>> a.clip(0, 5)
+    array([ 5., 2., 5., 0., 0.])
+
+.. code-block:: python
+
+    >>> a = np.array([1, 1, 4, 5, 5, 5, 7], float)
+    >>> np.unique(a)
+    array([ 1., 4., 5., 7.])
+
+.. code-block:: python
+
+    >>> a = np.array([[1, 2], [3, 4]], float)
+    >>> a.diagonal()
+    array([ 1., 4.])
+
+Comparison operators and value testing
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: python
+
+    >>> a = np.array([1, 3, 0], float)
+    >>> b = np.array([0, 3, 2], float)
+    >>> a > b
+    array([ True, False, False], dtype=bool)
+
+    >>> a == b
+    array([False, True, False], dtype=bool)
+    >>> a <= b
+    array([False, True, True], dtype=bool)
+
+    >>> c = a > b
+    >>> c
+    array([ True, False, False], dtype=bool)
+
+    >>> a = np.array([1, 3, 0], float)
+    >>> a > 2
+    array([False, True, False], dtype=bool)
+
+    >>> c = np.array([ True, False, False], bool)
+    >>> any(c)
+    True
+    >>> all(c)
+    False
+
+    >>> a = np.array([1, 3, 0], float)
+    >>> np.logical_and(a > 0, a < 3)
+    array([ True, False, False], dtype=bool)
+    >>> b = np.array([True, False, True], bool)
+    >>> np.logical_not(b)
+    array([False, True, False], dtype=bool)
+    >>> c = np.array([False, True, False], bool)
+    >>> np.logical_or(b, c)
+    array([ True, True, False], dtype=bool)
+
+
+    # where(boolarray, truearray, falsearray
+    >>> a = np.array([1, 3, 0], float)
+    >>> np.where(a != 0, 1 / a, a)
+    array([ 1. , 0.33333333, 0. ])
+
+    >>> a = np.array([1, 3, 0], float)
+    >>> np.where(a != 0, 1 / a, a)
+    array([ 1. , 0.33333333, 0. ])
+
+    >>> np.where(a > 0, 3, 2)
+    array([3, 3, 2])
+
+    >>> a = np.array([[0, 1], [3, 0]], float)
+    >>> a.nonzero()
+    (array([0, 1]), array([1, 0]))
+
+
+    >>> a = np.array([1, np.NaN, np.Inf], float)
+    >>> a
+    array([ 1., NaN, Inf])
+    >>> np.isnan(a)
+    array([False, True, False], dtype=bool)
+    >>> np.isfinite(a)
+    array([ True, False, False], dtype=bool)
+
+Array item selection and manipulation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: python
+
+    >>> a = np.array([[6, 4], [5, 9]], float)
+    >>> a >= 6
+    array([[ True, False],
+     [False, True]], dtype=bool)
+    >>> a[a >= 6]
+    array([ 6., 9.])
+
+    >>> a = np.array([[6, 4], [5, 9]], float)
+    >>> sel = (a >= 6)
+    >>> a[sel]
+    array([ 6., 9.])
+
+    >>> a[np.logical_and(a > 5, a < 9)]
+    >>> array([ 6.])
+
+    >>> a = np.array([2, 4, 6, 8], float)
+    >>> b = np.array([0, 0, 1, 3, 2, 1], int)
+    >>> a[b]
+    array([ 2., 2., 4., 8., 6., 4.])
+
+
+    >>> a = np.array([2, 4, 6, 8], float)
+    >>> a[[0, 0, 1, 3, 2, 1]]
+    array([ 2., 2., 4., 8., 6., 4.])
+
+
+    >>> a = np.array([[1, 4], [9, 16]], float)
+    >>> b = np.array([0, 0, 1, 1, 0], int)
+    >>> c = np.array([0, 1, 1, 1, 1], int)
+    >>> a[b,c]
+    array([ 1., 4., 16., 16., 4.])
+
+    >>> a = np.array([2, 4, 6, 8], float)
+    >>> b = np.array([0, 0, 1, 3, 2, 1], int)
+    >>> a.take(b)
+    array([ 2., 2., 4., 8., 6., 4.])
+
+
+    >>> a = np.array([[0, 1], [2, 3]], float)
+    >>> b = np.array([0, 0, 1], int)
+    >>> a.take(b, axis=0)
+    array([[ 0., 1.],
+     [ 0., 1.],
+     [ 2., 3.]])
+    >>> a.take(b, axis=1)
+    array([[ 0., 0., 1.],
+     [ 2., 2., 3.]])
+
+    >>> a = np.array([0, 1, 2, 3, 4, 5], float)
+    >>> b = np.array([9, 8, 7], float)
+    >>> a.put([0, 3], b)
+    >>> a
+    array([ 9., 1., 2., 8., 4., 5.])
+
+    >>> a = np.array([0, 1, 2, 3, 4, 5], float)
+    >>> a.put([0, 3], 5)
+    >>> a
+    array([ 5., 1., 2., 5., 4., 5.])
+
+Vector and matrix mathematics
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: python
+
+    >>> a = np.array([1, 2, 3], float)
+    >>> b = np.array([0, 1, 1], float)
+    >>> np.dot(a, b)
+    5.0
+
+    >>> a = np.array([[0, 1], [2, 3]], float)
+    >>> b = np.array([2, 3], float)
+    >>> c = np.array([[1, 1], [4, 0]], float)
+    >>> a
+    array([[ 0., 1.],
+     [ 2., 3.]])
+    >>> np.dot(b, a)
+    array([ 6., 11.])
+    >>> np.dot(a, b)
+    array([ 3., 13.])
+    >>> np.dot(a, c)
+    array([[ 4., 0.],
+     [ 14., 2.]])
+    >>> np.dot(c, a)
+    array([[ 2., 4.],
+     [ 0., 4.]])
+
+    >>> a = np.array([1, 4, 0], float)
+    >>> b = np.array([2, 2, 1], float)
+    >>> np.outer(a, b)
+    array([[ 2., 2., 1.],
+     [ 8., 8., 4.],
+     [ 0., 0., 0.]])
+    >>> np.inner(a, b)
+    10.0
+    >>> np.cross(a, b)
+    array([ 4., -1., -6.])
+
+    >>> a = np.array([[4, 2, 0], [9, 3, 7], [1, 2, 1]], float)
+    >>> a
+    array([[ 4., 2., 0.],
+     [ 9., 3., 7.],
+     [ 1., 2., 1.]])
+    >>> np.linalg.det(a)
+    -53.999999999999993
+
+    >>> vals, vecs = np.linalg.eig(a)
+    >>> vals
+    array([ 9. , 2.44948974, -2.44948974])
+    >>> vecs
+    array([[-0.3538921 , -0.56786837, 0.27843404],
+     [-0.88473024, 0.44024287, -0.89787873],
+     [-0.30333608, 0.69549388, 0.34101066]])
+
+    >>> b = np.linalg.inv(a)
+    >>> b
+    array([[ 0.14814815, 0.07407407, -0.25925926],
+     [ 0.2037037 , -0.14814815, 0.51851852],
+     [-0.27777778, 0.11111111, 0.11111111]])
+    >>> np.dot(a, b)
+    array([[ 1.00000000e+00, 5.55111512e-17, 2.22044605e-16],
+     [ 0.00000000e+00, 1.00000000e+00, 5.55111512e-16],
+     [ 1.11022302e-16, 0.00000000e+00, 1.00000000e+00]])
+
+    >>> a = np.array([[1, 3, 4], [5, 2, 3]], float)
+    >>> U, s, Vh = np.linalg.svd(a)
+    >>> U
+    array([[-0.6113829 , -0.79133492],
+     [-0.79133492, 0.6113829 ]])
+    >>> s
+    array([ 7.46791327, 2.86884495])
+
+    >>> Vh
+    array([[-0.61169129, -0.45753324, -0.64536587],
+     [ 0.78971838, -0.40129005, -0.46401635],
+     [-0.046676 , -0.79349205, 0.60678804]])
+
+Polynomial mathematics
+----------------------
+.. code-block:: python
+
+    >>> np.poly([-1, 1, 1, 10])
+    array([ 1, -11, 9, 11, -10])
+
+    >>> np.roots([1, 4, -2, 3])
+    array([-4.57974010+0.j , 0.28987005+0.75566815j,
+     0.28987005-0.75566815j])
+
+    >>> np.polyint([1, 1, 1, 1])
+    # x**3 + x**2 + x + C
+    array([ 0.25 , 0.33333333, 0.5 , 1. , 0. ])
+
+    # derivatives
+    >>> np.polyder([1./4., 1./3., 1./2., 1., 0.])
+    array([ 1., 1., 1., 1.])
+    polyadd, polysub, polymul, and polydiv
+
+    >>> np.polyval([1, -2, 0, 2], 4)
+    34
+
+    # polyfit function can be used to fit a polynomial of specified order to a set of data using a least-squares approach
+    >>> x = [1, 2, 3, 4, 5, 6, 7, 8]
+    >>> y = [0, 2, 1, 3, 7, 10, 11, 19]
+    >>> np.polyfit(x, y, 2)
+    array([ 0.375 , -0.88690476, 1.05357143])
+
+Statistics
+==========
+.. code-block:: python
+
+>>> a = np.array([1, 4, 3, 8, 9, 2, 3], float)
+>>> np.median(a)
+3.0
+
+>>> a = np.array([[1, 2, 1, 3], [5, 3, 1, 8]], float)
+>>> c = np.corrcoef(a)
+>>> c
+array([[ 1. , 0.72870505],
+ [ 0.72870505, 1. ]])
+
+>>> np.cov(a)
+array([[ 0.91666667, 2.08333333],
+ [ 2.08333333, 8.91666667]])
+
+Random numbers
+==============
+* Mersenne Twister algorithm for pseudorandom number generation
+
+.. code-block:: python
+
+    >>> np.random.seed(293423)
+
+    >>> np.random.rand(5)
+    array([ 0.40783762, 0.7550402 , 0.00919317, 0.01713451, 0.95299583])
+
+    >>> np.random.rand(2,3)
+    array([[ 0.50431753, 0.48272463, 0.45811345],
+     [ 0.18209476, 0.48631022, 0.49590404]])
+    >>> np.random.rand(6).reshape((2,3))
+    array([[ 0.72915152, 0.59423848, 0.25644881],
+     [ 0.75965311, 0.52151819, 0.60084796]])
+
+    >>> np.random.random()
+    0.70110427435769551
+
+    >>> np.random.randint(5, 10)
+    9
+
+    # Poisson distribution with lambda = 6.0
+    >>> np.random.poisson(6.0)
+    5
+
+    # continuous normal (Gaussian) distribution with mean micro=1.5 and standard deviation sigma=4.0:
+
+    >>> np.random.normal(1.5, 4.0)
+    0.83636555041094318
+
+    # micro=0.0, sigma=1.0
+    >>> np.random.normal()
+    0.27548716940682932
+
+    >>> np.random.normal(size=5)
+    array([-1.67215088, 0.65813053, -0.70150614, 0.91452499, 0.71440557])
+
+    >>> l = range(10)
+    >>> l
+    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    >>> np.random.shuffle(l)
+    >>> l
+    [4, 9, 5, 0, 2, 7, 6, 8, 1, 3]
+
 Macierze
 --------
 Numpy ma również typ macierzy matrix. Jest on bardzo podobny do tablicy ale podstawowe operacje wykonywane są w sposób macierzowy a nie tablicowy.
