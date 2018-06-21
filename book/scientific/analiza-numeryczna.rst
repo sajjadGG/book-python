@@ -707,5 +707,6 @@ Mnożenie macierzy wykorzystując numpy
 
 Suma części macierzy
 --------------------
-#. Masz daną macierz 16x16
+#. Wygeneruj macierz randomowych floatów 16x16
+#. Transponuj ją
 #. Policz sumę środkowych (4x4) elementów macierzy
