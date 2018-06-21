@@ -432,6 +432,9 @@ Matrix Multiplication:
     >>> np.e
     2.7182818284590451
     >>> np.nan
+    NaN
+    >>> np.inf
+    inf
 
 Array iteration
 ^^^^^^^^^^^^^^^

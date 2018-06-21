@@ -186,6 +186,13 @@ DataFrame jest obiektem dwuwymiarowym, który w obsłudze przypomina tabelę. Ka
 
 .. code-block:: python
 
+    number_of_rows = 10
+    number_of_columns = 16
+
+    df = pd.DataFrame(index=range(number_of_rows), columns=range(number_of_columns))
+
+.. code-block:: python
+
     df2 = pd.DataFrame({ 'A' : 1.,
                          'B' : pd.Timestamp('20130102'),
                          'C' : pd.Series(1,index=list(range(4)),dtype='float32'),
@@ -420,9 +427,12 @@ Zmiana pojedynczej wartości może być również zrobiona przez przypisanie; u�
 
 Modyfikacje zawartości DataFrame
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-df3.dropna(how='any')
-df3.dropna(how='all')
-df3.fillna(-100)
+.. code-block:: python
+
+    # Drop NaN
+    df3.dropna(how='any')
+    df3.dropna(how='all')
+    df3.fillna(-100)
 
 Statystyki opisowe
 ^^^^^^^^^^^^^^^^^^
@@ -621,7 +631,7 @@ przeanalizuj dane statystycznie
     n = 50
 
     samochody = pd.DataFrame({
-        'przebieg': np.random.randint(0, 200_000, n),
+        'przebieg': np.random.randint(0, 200_000, size=n),
         'spalanie': 2 + 18*np.random.rand(n),
     })
 
@@ -656,7 +666,7 @@ max     198046.000000   19.694027
 
 .. code-block:: python
 
-    samochody.loc[samochody.spalanie < 5, 'marka'] = 'WV'
+    samochody.loc[samochody.spalanie < 5, 'marka'] = 'VW'
     # alternatywnie
     samochody['marka'] = pd.cut(samochody.spalanie,
                             bins=[0, 5, 10, 100],
@@ -676,8 +686,8 @@ max     198046.000000   19.694027
 .. code-block:: python
 
     samochody['pochodzenie'] = pd.cut(samochody.przebieg,
-                                        bins=[0, 100, 1e5, np.inf],
-                                        labels=['nowy', 'uzywany', 'z niemiec'])
+                                      bins=[0, 100, 1e5, np.inf],
+                                      labels=['nowy', 'uzywany', 'z niemiec'])
     samochody.head()
 
 === ======== =========== ===== ===========
