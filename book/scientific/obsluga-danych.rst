@@ -581,6 +581,8 @@ Iris
     * Species
 
 #. Przefiltruj ``inplace`` kolumnę 'Petal length' i pozostaw wartości powyżej 2.0
+#. Dodaj kolumnę ``datetime`` i wpisz do niej dzisiejszą datę
+#. Dodaj kolumnę ``big_enough`` i dla wartości 'Petal width' powyżej 1.0 ustawi ``True``, a dla mniejszych ``False``
 #. Zwróć dane tylko dla kolumny 'Sepal length', 'Sepal width' oraz 'Species'
 
 Samochody
