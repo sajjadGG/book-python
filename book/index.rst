@@ -165,6 +165,7 @@ Scientific and Engineering
     scientific/pandas.rst
     scientific/charts.rst
     scientific/plotly.rst
+    scientific/bokeh.rst
     scientific/graphs.rst
     scientific/jupyter.rst
     scientific/numerical-analysis.rst

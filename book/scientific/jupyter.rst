@@ -66,8 +66,6 @@ Run All (above/below)
 Clear Output
 ------------
 
-
-
 LaTeX
 =====
 .. code-block:: python
@@ -87,15 +85,15 @@ LaTeX
     %%latex
 
     \begin{equation}
-    H← ​​​60 ​+​ \frac{​​30(B−R)​​}{Vmax−Vmin}  ​​, if V​max​​ = G
+    H← ​​​60 ​+​ \frac{​​30(B-R)​​}{Vmax-Vmin}  ​​, if V​max​​ = G
     \end{equation}
-
 
 Magic commands
 ==============
 * ``%run``
 * ``%%timeit``
 * ``%%latex``
+
 
 Execute terminal commands
 =========================
@@ -109,6 +107,7 @@ Execute terminal commands
         for f in files:
             if f.find("1_") >= 0:
                 print(f)
+
 
 HTML and Javascript
 ===================
@@ -143,11 +142,11 @@ Markdown
 
 Unorganized lists
 -----------------
-* ``* `` or ``- ``
+* ``*`` or ``-``
 
 Organized lists
 ---------------
-* ``#. ``
+* ``#.``
 
 Headers
 -------

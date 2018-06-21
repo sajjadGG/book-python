@@ -48,7 +48,3 @@ Bardziej zaawansowany przykład
     plt.plot(x2, y2, 'o-')
 
     plt.show()
-
-
-Bokeh
------

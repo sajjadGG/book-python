@@ -459,7 +459,7 @@ Array math operations
     >>> b = np.array([5,2,6], float)
     >>> a + b
     array([6., 4., 9.])
-    >>> a – b
+    >>> a - b
     array([-4., 0., -3.])
     >>> a * b
     array([5., 4., 18.])
