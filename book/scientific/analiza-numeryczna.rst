@@ -24,24 +24,183 @@ Besides its obvious scientific uses, NumPy can also be used as an efficient mult
 * http://www.numpy.org/
 
 
-Tablice
--------
+Arrays
+------
+* Skalar - jednowymiarowa
+* Wektor - dwuwymiarowa
+* Tensor - trójwymiarowa
+* Tablica - czterowymiarowa
+* Macież n-wymiarowa
+
 .. code-block:: python
 
-    >>> import numpy as np
+    import numpy as np
 
-    >>> np.array([1,2,3])
-    [1, 2, 3]
+    # Create array from list
+    np.array([1,2,3])  # [1, 2, 3]
+    np.array([1, 4, 5, 8], float)  # array([ 1., 4., 5., 8.])
 
-    >>> np.array([[1,2],[3,4]])
-    array([[1, 2],
-       [3, 4]])
+    np.array([[1,2],[3,4]])
+    # array([[1, 2],
+    #   [3, 4]])
 
-- Skalar - jednowymiarowa
-- Wektor - dwuwymiarowa
-- Tensor - trójwymiarowa
-- Tablica - czterowymiarowa
-- Macież n-wymiarowa
+.. code-block:: python
+
+    np.array([1, 4, 5, 8], float)  # array([ 1., 4., 5., 8.])
+    >>> a[:2]
+    array([ 1., 4.])
+    >>> a[3]
+    8.0
+    >>> a[0] = 5.
+    >>> a
+    array([ 5., 4., 5., 8.])
+
+.. code-block:: python
+
+    a = np.array([[1, 2, 3], [4, 5, 6]], float)  # array([[ 1., 2., 3.], [ 4., 5., 6.]])
+    a[0,0]  # 1.0
+    a[0,1]  # 2.0
+
+
+.. code-block:: python
+
+    a = np.array([[1, 2, 3], [4, 5, 6]], float)
+    a[1,:]  # array([ 4., 5., 6.])
+    a[:,2]  # array([ 3., 6.])
+    a[-1:,-2:]  # array([[ 5., 6.]])
+
+.. code-block:: python
+
+    a = np.array([[1, 2, 3], [4, 5, 6]], float)
+    a.shape  # (2, 3)
+    a.dtype  # dtype('float64')
+
+.. code-block:: python
+
+    a = np.array([[1, 2, 3], [4, 5, 6]], float)
+    len(a)  # 2
+
+.. code-block:: python
+
+    >>> a = np.array([[1, 2, 3], [4, 5, 6]], float)
+    >>> 2 in a
+    True
+    >>> 0 in a
+    False
+
+.. code-block:: python
+
+    >>> a = np.array(range(10), float)
+    >>> a
+    array([ 0., 1., 2., 3., 4., 5., 6., 7., 8., 9.])
+    >>> a = a.reshape((5, 2))
+    >>> a
+    array([[ 0., 1.],
+     [ 2., 3.],
+     [ 4., 5.],
+     [ 6., 7.],
+     [ 8., 9.]])
+    >>> a.shape
+    (5, 2)
+
+.. code-block:: python
+
+    >>> a = np.array([1, 2, 3], float)
+    >>> b = a
+    >>> c = a.copy()
+    >>> a[0] = 0
+    >>> a
+    array([0., 2., 3.])
+    >>> b
+    array([0., 2., 3.])
+    >>> c
+    array([1., 2., 3.])
+
+.. code-block:: python
+
+    >>> a = np.array([1, 2, 3], float)
+    >>> a.tolist()
+    [1.0, 2.0, 3.0]
+    >>> list(a)
+    [1.0, 2.0, 3.0]
+
+.. code-block:: python
+
+    >>> a = array([1, 2, 3], float)
+    >>> s = a.tostring()
+    >>> s
+    '\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x08@'
+    >>> np.fromstring(s)
+    array([ 1., 2., 3.])
+
+.. code-block:: python
+
+    >>> a = array([1, 2, 3], float)
+    >>> a
+    array([ 1., 2., 3.])
+    >>> a.fill(0)
+    >>> a
+    array([ 0., 0., 0.])
+
+.. code-block:: python
+
+    >>> a = np.array(range(6), float).reshape((2, 3))
+    >>> a
+    array([[ 0., 1., 2.],
+     [ 3., 4., 5.]])
+    >>> a.transpose()
+    array([[ 0., 3.],
+     [ 1., 4.],
+     [ 2., 5.]])
+
+.. code-block:: python
+
+    >>> a = np.array([[1, 2, 3], [4, 5, 6]], float)
+    >>> a
+    array([[ 1., 2., 3.],
+     [ 4., 5., 6.]])
+    >>> a.flatten()
+    array([ 1., 2., 3., 4., 5., 6.])
+
+.. code-block:: python
+
+    >>> a = np.array([1,2], float)
+    >>> b = np.array([3,4,5,6], float)
+    >>> c = np.array([7,8,9], float)
+    >>> np.concatenate((a, b, c))
+    array([1., 2., 3., 4., 5., 6., 7., 8., 9.])
+
+    >>> a = np.array([[1, 2], [3, 4]], float)
+    >>> b = np.array([[5, 6], [7,8]], float)
+    >>> np.concatenate((a,b))
+    array([[ 1., 2.],
+     [ 3., 4.],
+     [ 5., 6.],
+     [ 7., 8.]])
+    >>> np.concatenate((a,b), axis=0)
+    array([[ 1., 2.],
+     [ 3., 4.],
+     [ 5., 6.],
+     [ 7., 8.]])
+    >>> np.concatenate((a,b), axis=1)
+    array([[ 1., 2., 5., 6.],
+     [ 3., 4., 7., 8.]])
+
+.. code-block:: python
+
+    >>> a = np.array([1, 2, 3], float)
+    >>> a
+    array([1., 2., 3.])
+    >>> a[:,np.newaxis]
+    array([[ 1.],
+     [ 2.],
+     [ 3.]])
+    >>> a[:,np.newaxis].shape
+    (3,1)
+    >>> b[np.newaxis,:]
+    array([[ 1., 2., 3.]])
+    >>> b[np.newaxis,:].shape
+    (1,3)
 
 .. code-block:: python
 
@@ -109,6 +268,22 @@ https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html
     [[0.6468727  0.76909227]
      [0.89730518 0.13993221]]
 
+     >>> a = np.array([[1, 2, 3], [4, 5, 6]], float)
+    >>> np.zeros_like(a)
+    array([[ 0., 0., 0.],
+     [ 0., 0., 0.]])
+
+    >>> np.ones_like(a)
+    array([[ 1., 1., 1.],
+     [ 1., 1., 1.]])
+
+    >>> np.identity(4, dtype=float)
+    array([
+         [ 1., 0., 0., 0.],
+         [ 0., 1., 0., 0.],
+         [ 0., 0., 1., 0.],
+         [ 0., 0., 0., 1.]])
+
 Pobieranie wartości z tablic
 ----------------------------
 .. code-block:: python
@@ -134,23 +309,200 @@ Pobieranie wartości z tablic
 .. code-block:: python
 
     a = np.random.randint(100,size=(2,3))
-    print('a = \n{}'.format(a))
-    print('2*a = \n{}'.format(2*a))
-    print('a**2 = \n{}'.format(a**2))
-    print('a*a = \n{}'.format(a*a))
 
-    a =
-    [[38  5 91]
-     [26 33 65]]
-    2*a =
-    [[ 76  10 182]
-     [ 52  66 130]]
-    a**2 =
-    [[1444   25 8281]
-     [ 676 1089 4225]]
-    a*a =
-    [[1444   25 8281]
-     [ 676 1089 4225]]
+    a == [
+        [38  5 91]
+        [26 33 65]
+    ]
+
+    2*a == [
+        [ 76  10 182]
+        [ 52  66 130]
+    ]
+
+    a**2 == [
+        [1444   25 8281]
+        [ 676 1089 4225]
+    ]
+
+    a*a == [
+        [1444   25 8281]
+        [ 676 1089 4225]
+    ]
+
+.. code-block:: python
+
+    >>> a = np.array([1,2,3], float)
+    >>> b = np.array([5,2,6], float)
+    >>> a + b
+    array([6., 4., 9.])
+    >>> a – b
+    array([-4., 0., -3.])
+    >>> a * b
+    array([5., 4., 18.])
+    >>> b / a
+    array([5., 1., 2.])
+    >>> a % b
+    array([1., 0., 3.])
+    >>> b**a
+    array([5., 4., 216.])
+
+
+    >>> a = np.array([[1,2], [3,4]], float)
+    >>> b = np.array([[2,0], [1,3]], float)
+    >>> a * b
+    array([[2., 0.], [3., 12.]])
+
+.. code-block:: python
+
+    >>> a = np.array([1,2,3], float)
+    >>> b = np.array([4,5], float)
+    >>> a + b
+    Traceback (most recent call last):
+     File "<stdin>", line 1, in <module>
+    ValueError: shape mismatch: objects cannot be broadcast to a single shape
+
+.. code-block:: python
+
+    >>> a = np.array([[1, 2], [3, 4], [5, 6]], float)
+    >>> b = np.array([-1, 3], float)
+    >>> a
+    array([[ 1., 2.],
+     [ 3., 4.],
+     [ 5., 6.]])
+    >>> b
+    array([-1., 3.])
+    >>> a + b
+    array([[ 0., 5.],
+     [ 2., 7.],
+     [ 4., 9.]])
+
+.. code-block:: python
+
+    >>> a = np.zeros((2,2), float)
+    >>> b = np.array([-1., 3.], float)
+    >>> a
+    array([[ 0., 0.],
+     [ 0., 0.]])
+    >>> b
+    array([-1., 3.])
+    >>> a + b
+    array([[-1., 3.],
+     [-1., 3.]])
+    >>> a + b[np.newaxis,:]
+    array([[-1., 3.],
+     [-1., 3.]])
+    >>> a + b[:,np.newaxis]
+    array([[-1., -1.],
+     [ 3., 3.]])
+
+.. code-block:: python
+
+    >>> np.sqrt(a)
+    array([ 1., 2., 3.])
+    >>> a = np.array([1.1, 1.5, 1.9], float)
+    >>> np.floor(a)
+    array([ 1., 1., 1.])
+    >>> np.ceil(a)
+    array([ 2., 2., 2.])
+    >>> np.rint(a)
+    array([ 1., 2., 2.])
+
+.. code-block:: python
+
+    >>> np.pi
+    3.1415926535897931
+    >>> np.e
+    2.7182818284590451
+
+Array iteration
+^^^^^^^^^^^^^^^
+.. code-block:: python
+
+    >>> a = np.array([1, 4, 5], int)
+    >>> for x in a:
+    ... print x
+    ...
+    1
+    4
+    5
+
+.. code-block:: python
+
+    >>> a = np.array([[1, 2], [3, 4], [5, 6]], float)
+    >>> for x in a:
+    ... print x
+    ...
+    [ 1. 2.]
+    [ 3. 4.]
+    [ 5. 6.]
+
+Array operations
+^^^^^^^^^^^^^^^^
+.. code-block:: python
+
+    >>> a = np.array([2, 4, 3], float)
+    >>> a.sum()
+    9.0
+    >>> a.prod()
+    24.0
+
+.. code-block:: python
+
+    >>> a = np.array([2, 1, 9], float)
+    >>> a.mean()
+    4.0
+    >>> a.var()
+    12.666666666666666
+    >>> a.std()
+    3.5590260840104371
+    >>> a.min()
+    1.0
+    >>> a.max()
+    9.0
+    >>> a.argmin()
+    1
+    >>> a.argmax()
+    2
+
+.. code-block:: python
+
+    >>> a = np.array([[0, 2], [3, -1], [3, 5]], float)
+    >>> a.mean(axis=0)
+    array([ 2., 2.])
+    >>> a.mean(axis=1)
+    array([ 1., 1., 4.])
+    >>> a.min(axis=1)
+    array([ 0., -1., 3.])
+    >>> a.max(axis=0)
+    array([ 3., 5.])
+
+.. code-block:: python
+
+    >>> a = np.array([6, 2, 5, -1, 0], float)
+    >>> sorted(a)
+    [-1.0, 0.0, 2.0, 5.0, 6.0]
+    >>> a.sort()
+    >>> a
+    array([-1., 0., 2., 5., 6.])
+
+.. code-block:: python
+
+    >>> a = np.array([6, 2, 5, -1, 0], float)
+    >>> a.clip(0, 5)
+    array([ 5., 2., 5., 0., 0.])
+
+.. code-block:: python
+
+    >>> a = np.array([1, 1, 4, 5, 5, 5, 7], float)
+    >>> np.unique(a)
+    array([ 1., 4., 5., 7.])
+
+.. code-block:: python
+
+    >>> a = np.array([[1, 2], [3, 4]], float)
+    >>> a.diagonal()
+    array([ 1., 4.])
 
 Macierze
 --------
@@ -158,32 +510,44 @@ Numpy ma również typ macierzy matrix. Jest on bardzo podobny do tablicy ale po
 
 .. code-block:: python
 
-    m = np.matrix([[1,2], [3,4]])
-    mm = np.matrix([[5,6], [7,8]])
+    m = np.matrix([
+        [1,2],
+        [3,4]
+    ])
 
-    print('m*mm = \n{}'.format(m*mm))
-    print('m**2 = \n {}'.format(m**2))
-    print('m*2 = \n ={}'.format(m*2))
+    mm = np.matrix([
+        [5,6],
+        [7,8]
+    ])
+
+    m*mm == [
+        [19 22]
+        [43 50]
+    ]
+
+    m**2 == [
+        [ 7 10]
+        [15 22]
+    ]
+
+    m*2 == [
+        [2 4]
+        [6 8]
+    ]
+
+.. code-block:: python
 
     d = np.diag([3,4])
-    print('d = \n {}'.format(d))
-    print('d*m = \n {}'.format(d*m))
 
-    m*mm =
-    [[19 22]
-     [43 50]]
-    m**2 =
-     [[ 7 10]
-     [15 22]]
-    m*2 =
-     =[[2 4]
-     [6 8]]
-    d =
-     [[3 0]
-     [0 4]]
-    d*m =
-     [[ 3  6]
-     [12 16]]
+    d = [
+        [3 0]
+        [0 4]
+    ]
+
+    d*m == [
+        [ 3  6]
+        [12 16]
+    ]
 
 Niemniej, tablice można używać podobnie, ale do mnożenia trzeba wykorzystywać funkcje dot:
 
@@ -220,16 +584,20 @@ Dodatkowo, operacje algebry liniowej można wykonywać zarówno na tablicach jak
 
 Zadania kontrolne
 =================
+* http://www.labri.fr/perso/nrougier/teaching/numpy.100/
+* https://github.com/rougier/numpy-100
 
-Mamy liczbę trzycyfrową. Jeżeli od liczny dziesiątek odejmiemy liczbę jedności otrzymamy 6. Jeżeli do liczby dziesiątek dodamy liczbę jedności otrzymamy 10.
-
-znajdź wszystkie liczby trzycyfrowe spełniające ten warunek
-znajdź liczby trzycyfrowe podzielne przez 3
+Szukanie liczby
+---------------
+#. Mamy liczbę trzycyfrową.
+#. Jeżeli od liczny dziesiątek odejmiemy liczbę jedności otrzymamy 6.
+#. Jeżeli do liczby dziesiątek dodamy liczbę jedności otrzymamy 10.
+#. Znajdź wszystkie liczby trzycyfrowe spełniające ten warunek
+#. Znajdź liczby trzycyfrowe podzielne przez 3
 
 :Podpowiedź:
     - Ax=B
     - x=A−1B
-
 
 .. code-block:: python
 
@@ -299,3 +667,60 @@ znajdź liczby trzycyfrowe podzielne przez 3
 
     res2 = res1[m]
     # array([282., 582., 882.])
+
+Mnożenie macierzy iteracyjnie
+-----------------------------
+#. Napisz program mnożący macierze wykorzystując zagnieżdżone pętle ``for``
+
+.. code-block:: python
+
+    A = [
+        [1, 0],
+        [0, 1]
+    ]
+
+.. code-block:: python
+
+    def matrix_multiplication(A, B):
+        """
+        >>> A = [[1, 0], [0, 1]]
+        >>> B = [[4, 1], [2, 2]]
+        >>> matrix_multiplication(A, B)
+        [[4, 1], [2, 2]]
+        """
+        pass
+
+:Założenia:
+    * Nazwa pliku: ``math-matrix-iter.py``
+    * Linii kodu do napisania: około 6 linii
+    * Maksymalny czas na zadanie: 20 min
+
+:Podpowiedź:
+    * macierz zerowa
+    * trzy pętle
+
+Mnożenie macierzy wykorzystując biblioteki
+------------------------------------------
+#. Używając ``numpy`` oraz operatora ``@``
+
+.. code-block:: python
+
+    def matrix_multiplication(A, B):
+        """
+        >>> A = [[1, 0], [0, 1]]
+        >>> B = [[4, 1], [2, 2]]
+        >>> matrix_multiplication(A, B)
+        array([[4, 1],
+           [2, 2]])
+        """
+        pass
+
+:Założenia:
+    * Nazwa pliku: ``math-matrix-numpy.py``
+    * Linii kodu do napisania: około 2 linii
+    * Maksymalny czas na zadanie: 5 min
+
+Suma części macierzy
+--------------------
+#. Masz daną macierz 16x16
+#. Policz sumę środkowych (4x4) elementów macierzy

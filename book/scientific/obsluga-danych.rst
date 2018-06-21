@@ -633,3 +633,12 @@ spalanie    count    5.000000    7.000000      11.000000   6.000000       13.000
             75%      4.308231    4.245297      8.671341    8.621158       18.009058    18.933888
             max      4.944177    4.691502      9.611147    9.199502       19.708519    19.580096
 =================== ========================== ========================== ==========================
+
+Zadania kontrolne
+=================
+
+Iris
+----
+* https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv
+
+#. Mając dane Irysów przekonwertuj je na dataframe
