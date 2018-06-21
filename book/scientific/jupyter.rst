@@ -109,6 +109,45 @@ Run All (above/below)
 Clear Output
 ------------
 
+Markdown
+========
+
+Unorganized lists
+-----------------
+* ``* `` or ``- ``
+
+Organized lists
+---------------
+* ``#. ``
+
+Headers
+-------
+* ``# Title``
+* ``## Title``
+* ``### Title``
+* ``#### Title``
+* ``##### Title``
+* ``###### Title``
+
+Formatting
+----------
+* Bold
+* Underline
+* Strikethrought
+* Italics
+
+Tables
+------
+
+Embedding objects
+=================
+
+Image
+-----
+
+YouTube
+-------
+
 Slides
 ======
 View -> Cell Toolbar -> Slideshow
