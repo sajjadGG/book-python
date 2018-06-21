@@ -164,6 +164,7 @@ Scientific and Engineering
     scientific/scipy.rst
     scientific/pandas.rst
     scientific/charts.rst
+    scientific/matplotlib.rst
     scientific/plotly.rst
     scientific/bokeh.rst
     scientific/graphs.rst

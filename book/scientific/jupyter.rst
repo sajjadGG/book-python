@@ -93,6 +93,7 @@ Magic commands
 * ``%run``
 * ``%%timeit``
 * ``%%latex``
+* ``%matplotlib inline``
 
 
 Execute terminal commands
