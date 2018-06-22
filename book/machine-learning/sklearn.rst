@@ -2,11 +2,12 @@
 scikit-learn
 ************
 
-Datasets
-========
+
+Loading Sample Datasets
+=======================
 .. literalinclude:: src/ml-sklearn-datasets.py
     :language: python
-    :caption: Classifier
+    :caption: Loading Sample Datasets
 
 
 Fit and Predict
