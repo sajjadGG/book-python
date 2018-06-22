@@ -14,11 +14,13 @@ Anaconda
 
     * https://www.continuum.io/downloads
 
+
 Biblioteki do obsługi danych
 ============================
 - ``Pandas``
 - ``NumPy``
 - ``SciPy``
+
 
 Wykresy i grafy
 ===============
@@ -28,13 +30,16 @@ Wykresy i grafy
 - ``PyDotPlus``
 - ``Graphviz``
 
+
 Biblioteki do nauczania maszynowego
 ===================================
 - ``scikit-learn``
+- ``scikit-image``
 - ``TensorFlow``
 - ``PyMC3``
 - ``pyTorch``
 - ``keras``
+
 
 Other
 =====
@@ -45,7 +50,6 @@ Other
 - ``StatsModels``
 - ``SymPy``
 - ``NetworkX``
-- ``scikit-image``
 - ``astropy``
 - ``biopython``
 - ``dipy``

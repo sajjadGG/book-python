@@ -2,13 +2,16 @@
 Matplotlib
 **********
 
+
 Gallery
 =======
 * https://matplotlib.org/gallery/index.html
 
+
 Matplotlib and Jupyter
 ======================
 * ``%matplotlib inline``
+
 
 Points
 ======
@@ -35,6 +38,7 @@ Multiple Lines
     :language: python
     :caption: Multiple Lines
 
+
 Multiple Charts
 ===============
 
@@ -49,6 +53,7 @@ Multiple Charts in Grid
 .. literalinclude:: src/matplotlib-multiple-charts.py
     :language: python
     :caption: Multiple Charts in Grid
+
 
 Box Chart
 =========
@@ -71,11 +76,13 @@ Various Box Charts
     :language: python
     :caption: Various Box Charts
 
+
 Bars
 ====
 .. literalinclude:: src/matplotlib-bars.py
     :language: python
     :caption: Bars
+
 
 Annotate
 ========
@@ -92,11 +99,13 @@ Multiple Annotations
     :language: python
     :caption: Multiple Annotations
 
+
 Scales
 ======
 .. literalinclude:: src/matplotlib-scales.py
     :language: python
     :caption: Scales
+
 
 Pie Chart
 =========
@@ -113,6 +122,7 @@ Donut Pie Chart
     :language: python
     :caption: Donut Pie Chart
 
+
 3D
 ==
 
@@ -128,17 +138,20 @@ Donut Pie Chart
     :language: python
     :caption: 3D Surface
 
+
 Grid
 ====
 .. literalinclude:: src/matplotlib-grid.py
     :language: python
     :caption: Grid
 
+
 Legend using pre-defined labels
 ===============================
 .. literalinclude:: src/matplotlib-legend.py
     :language: python
     :caption: Legend using pre-defined labels
+
 
 Radar Chart
 ===========

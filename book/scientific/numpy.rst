@@ -42,6 +42,7 @@ Functions
 * arccosh
 * arctanh
 
+
 Polynomial mathematics
 ======================
 .. code-block:: python
@@ -71,6 +72,7 @@ Polynomial mathematics
     >>> np.polyfit(x, y, 2)
     array([ 0.375 , -0.88690476, 1.05357143])
 
+
 Statistics
 ==========
 .. code-block:: python
@@ -88,6 +90,7 @@ array([[ 1. , 0.72870505],
 >>> np.cov(a)
 array([[ 0.91666667, 2.08333333],
  [ 2.08333333, 8.91666667]])
+
 
 Random numbers
 ==============
@@ -144,6 +147,7 @@ Data Structures
 * Tensor - trójwymiarowa
 * Tablica - czterowymiarowa
 * Macierz - n-wymiarowa
+
 
 Arrays
 ======
@@ -856,6 +860,7 @@ Array item selection and manipulation
     >>> a
     array([ 5., 1., 2., 5., 4., 5.])
 
+
 Vector and matrix mathematics
 =============================
 .. code-block:: python
@@ -931,6 +936,7 @@ Vector and matrix mathematics
     array([[-0.61169129, -0.45753324, -0.64536587],
      [ 0.78971838, -0.40129005, -0.46401635],
      [-0.046676 , -0.79349205, 0.60678804]])
+
 
 Matrix
 ======
