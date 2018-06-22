@@ -4,6 +4,7 @@
 Matplotlib
 **********
 
+
 Moduł ``matplotlib`` pozwala na rysowanie wykresów i diagramów. Jest to bardzo rozbudowana biblioteka z setkami opcji konfiguracyjnych. Najczęściej używanym modułem biblioteki ``matplotlib`` jest moduł ``pyplot``, który implementuje szereg funkcji umożliwiających rysowanie wykresów 2d.
 
 Matplotlib is a Python 2D plotting library which produces publication-quality figures in a variety of hardcopy formats and interactive environments across platforms. Matplotlib can be used in Python scripts, the Python and IPython shell (à la MATLAB or Mathematica), web application servers, and various graphical user interface toolkits.
@@ -26,6 +27,18 @@ Matplotlib and Jupyter
 
 Points
 ======
+
+Simple Points
+-------------
+.. literalinclude:: src/matplotlib-points-simple.py
+    :language: python
+    :caption: Simple Points
+
+Multiple Points
+---------------
+.. literalinclude:: src/matplotlib-points-multiple.py
+    :language: python
+    :caption: Multiple Points
 
 Points with Labels
 ------------------

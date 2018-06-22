@@ -1,10 +1,16 @@
-import numpy as np
-import matplotlib.pyplot as plt
+import math
+import random
+from matplotlib import pyplot as plt
 
 
-# evenly sampled time at 200ms intervals
-t = np.arange(0., 5., 0.2)
+x1 = [x*0.01 for x in range(0,628)]
+y1 = [math.sin(x*0.01)+random.gauss(0, 0.1) for x in range(0,628)]
+plt.plot(x1, y1)
 
-# red dashes, blue squares and green triangles
-plt.plot(t, t, 'r--', t, t**2, 'bs', t, t**3, 'g^')
+
+x2 = [x*0.5 for x in range(0,round(63/5))]
+y2 = [math.cos(x*0.5) for x in range(0,round(63/5))]
+plt.plot(x2, y2, 'o-')
+
+
 plt.show()

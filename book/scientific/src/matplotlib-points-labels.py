@@ -2,12 +2,6 @@ import matplotlib.pyplot as plt
 
 
 x = [1, 2, 3, 4]
-y = [1, 2, 3, 4]
-plt.plot(x, y, 'o')
-plt.show()
-
-
-x = [1, 2, 3, 4]
 y = [1, 4, 9, 6]
 labels = ['Frogs', 'Hogs', 'Bogs', 'Slogs']
 
