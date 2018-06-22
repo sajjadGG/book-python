@@ -1,6 +1,9 @@
 class Astronaut:
     agency = None
 
+    def __init__(self, name):
+        self.name = name
+
     def say_hello(self):
         raise NotImplementedError
 
@@ -26,11 +29,19 @@ class RoscosmosAstronaut(Astronaut):
         print(f'Privyet z {self.agency}')
 
 
-astronaut = NASAAstronaut()
-astronaut.say_hello()  # Howdy from NASA
+crew = [
+    NASAAstronaut('Jose Jimenez'),
+    RoscosmosAstronaut('Ivan Ivanovic'),
+    ESAAstronaut('Paxi'),
+    NASAAstronaut('Max Peck'),
+]
 
-astronaut = RoscosmosAstronaut()
-astronaut.say_hello()  # Privyet z Roscosmos
+for astronaut in crew:
+    astronaut.say_hello()
+    # Howdy from NASA
+    # Privyet z Roscosmos
+    # Guten Tag aus ESA
+    # Howdy from NASA
 
 
 # Instead of...

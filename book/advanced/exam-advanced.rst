@@ -1,54 +1,9 @@
-**********************
-Programowanie sieciowe
-**********************
-
-Socket
-======
-
-Protokoły
----------
-* IPv4 - ``socket.AF_INET``
-* IPv6 - ``socket.AF_INET6``
-* UDP - ``socket.SOCK_DGRAM``
-* TCP - ``socket.SOCK_STREAM``
-
-Otwieranie połączeń
--------------------
-.. literalinclude:: src/socket-communication.py
-    :name: listing-socket-communication
-    :language: python
-    :caption: Komunikacja za pomocą socketów
-
-Nasłuchiwanie
--------------
-.. code-block:: python
-
-    with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
-        sock.sendto(bytes('%s:%s\n', 'utf-8'), addr)
-
-Przekazywanie informacji
-------------------------
-
-Biblioteki sieciowe
-===================
-
-``smtp``
---------
-
-Automatyzacja pracy
-===================
-
-``fabric``
-----------
-
-* http://www.fabfile.org/
-* https://pypi.python.org/pypi/Fabric3
-
-Zadania kontrolne
-=================
+*************************
+Exam from advanced topics
+*************************
 
 Mini Botnet
------------
+===========
 #. Do pliku ``botnet-commands.xml`` skopiuj zawartość :numref:`listing-botnet-commands`.
 #. Stwórz mini botnet o architekturz podanej :numref:`figure-botnet`. Mini botnet składa się z trzech części:
 
@@ -67,7 +22,7 @@ Mini Botnet
     - Do weryfikacji czy port jest otwarty możesz użyć ``telnet`` albo ``netcat``
 
 Heartbeat
-^^^^^^^^^
+---------
 #. Skrypt serwera heartbeat nazwij ``botnet-heartbeat-server.py``
 #. Server ma przyjmować komunikaty UDP na porcie 1337
 #. Datę UTC przyjścia pakietu, IP i port backdoora zapisuje do bazy danych ``sqlite3`` jako pola:
@@ -81,7 +36,7 @@ Heartbeat
     * ``sqlite3``
 
 Victim
-^^^^^^
+------
 #. Skrypt ofiary nazwij ``botnet-victim.py``
 #. Po zainfekowaniu otwiera randomowy port TCP (backdoor) z przedziału 1025-65535 na którym nasłuchuje komunikatów. Dlaczego taki zakres portów?
 #. Co 5 sekund wysyła informację ze swoim numerem portu backdoor oraz swoim adresem IP do serwera Heartbeat
@@ -100,7 +55,7 @@ Victim
     * ``xml.etree.ElementTree``
 
 Attacker
-^^^^^^^^
+--------
 #. Skopiuj zawartość :numref:`listing-botnet-commands` do pliku ``botnet-commands.xml``
 #. Skrypt atakującego nazwij ``botnet-attacker.py``
 #. Skrypt można wywoływać z parametrami linii poleceń:
@@ -143,4 +98,4 @@ Attacker
     Za pomocą ``Django`` stwórz panel administracyjny dla botnetu:
 
     * Wyszukiwanie aktywnych hostów
-    * `command`
+    * ``command``

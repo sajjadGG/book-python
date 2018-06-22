@@ -238,6 +238,83 @@ Przykład praktyczny
 ``Django ORM``
 ==============
 
+
+Data exploration
+================
+* https://superset.incubator.apache.org/
+
+.. code-block:: console
+
+    # Install superset
+    pip install superset
+
+    # Create an admin user (you will be prompted to set username, first and last name before setting a password)
+    fabmanager create-admin --app superset
+
+    # Initialize the database
+    superset db upgrade
+
+    # Load some data to play with
+    superset load_examples
+
+    # Create default roles and permissions
+    superset init
+
+    # Start the web server on port 8088, use -p to bind to another port
+    superset runserver
+
+    # To start a development web server, use the -d switch
+    # superset runserver -d
+
+:superset_config.py:
+    .. code-block:: python
+
+        import os
+
+        #---------------------------------------------------------
+        # Superset specific config
+        #---------------------------------------------------------
+        ROW_LIMIT = 5000
+        SUPERSET_WORKERS = 4
+
+        SUPERSET_WEBSERVER_PORT = 8088
+        #---------------------------------------------------------
+
+        #---------------------------------------------------------
+        # Flask App Builder configuration
+        #---------------------------------------------------------
+        # Your App secret key
+        SECRET_KEY = '\2\1secretkey\1\2\e\y\y\h'
+
+        # The SQLAlchemy connection string to your database backend
+        # This connection defines the path to the database that stores your
+        # superset metadata (slices, connections, tables, dashboards, ...).
+        # Note that the connection information to connect to the datasources
+        #you want to explore are managed directly in the web UI
+        SQLALCHEMY_DATABASE_URI = os.environ.get('HEROKU_POSTGRESQL_GREEN_URL', None)
+
+        # Flask-WTF flag for CSRF
+        WTF_CSRF_ENABLED = True
+        # Add endpoints that need to be exempt from CSRF protection
+        WTF_CSRF_EXEMPT_LIST = []
+
+        # Set this API key to enable Mapbox visualizations
+        MAPBOX_API_KEY = ''
+
+
+.. code-block:: console
+
+    gunicorn \
+        -w 10 \
+        -k gevent \
+        --timeout 120 \
+        -b  0.0.0.0:6666 \
+        --limit-request-line 0 \
+        --limit-request-field_size 0 \
+        --statsd-host localhost:8125 \
+        superset:app
+
+
 Zadania kontrolne
 =================
 

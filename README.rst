@@ -1,6 +1,6 @@
-#####################################
-Python: from None to Machine Learning
-#####################################
+#######################################
+Python 3: from None to Machine Learning
+#######################################
 
 **Author**
     :name: `Matt Harasymczuk <http://astrotech.io>`_

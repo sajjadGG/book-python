@@ -125,6 +125,11 @@ http://requests-oauthlib.readthedocs.io/en/latest/index.html
     :language: python
     :caption: Requests OAuth
 
+HTML Scrapping
+==============
+* BeautifulSoup https://www.crummy.com/software/BeautifulSoup/bs4/doc/#
+* Scrapy https://scrapy.org/
+
 HTML Scrapping i ``BeautifulSoup``
 ----------------------------------
 

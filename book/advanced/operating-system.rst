@@ -271,6 +271,15 @@ Parsowanie i sanityzacja argumentów
 
     io.StringIO
 
+``configparser``
+================
+* Wczytywanie konfiguracji programów
+
+
+Running commands in parallel across many hosts
+==============================================
+https://linux.die.net/man/1/pssh
+
 
 Passwords and secrets
 =====================
@@ -279,14 +288,33 @@ Passwords and secrets
 * setuid
 * configparser
 
-
-Wczytywanie konfiguracji programów
-==================================
-* configparser
-
-
-Zadanie kontrolne
+Python Executable
 =================
+* https://py2app.readthedocs.io/
+* http://www.py2exe.org/
+* http://www.pyinstaller.org/
+
+
+Allegro Tipboard
+================
+* http://allegro.tech/tipboard/
+* https://github.com/allegro/tipboard
+
+Tipboard is a system for creating dashboards, written in JavaScript and Python. Its widgets ('tiles' in Tipboard's terminology) are completely separated from data sources, which provides great flexibility and relatively high degree of possible customizations.
+
+Because of its intended target (displaying various data and statistics in your office), it is optimized for larger screens.
+
+Similar projects: Geckoboard, Dashing.
+
+.. code-block:: console
+
+    $ pip install tipboard
+    $ tipboard create_project my_test_dashboard
+    $ tipboard runserver
+
+
+Assignments
+===========
 
 Rekursywne przechodzenie i wykonywanie poleceń
 ----------------------------------------------

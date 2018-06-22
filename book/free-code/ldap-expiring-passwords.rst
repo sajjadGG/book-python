@@ -1,3 +1,5 @@
+.. _LDAP Expiring Passwords:
+
 ***********************
 LDAP Expiring Passwords
 ***********************

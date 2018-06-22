@@ -1,6 +1,6 @@
-#####################################
-Python: from None to Machine Learning
-#####################################
+#######################################
+Python 3: from None to Machine Learning
+#######################################
 
 **Author**
     :name: `Matt Harasymczuk <http://astrotech.io>`_
@@ -75,24 +75,20 @@ Intermediate
     :numbered:
     :caption: Intermediate
 
-    intermediate/logging.rst
-    intermediate/serializacja-csv.rst
-    intermediate/serializacja-json.rst
-    intermediate/serializacja.rst
-    intermediate/testy-i-jakosc.rst
-    intermediate/introspection.rst
-    intermediate/operator-overload.rst
-    intermediate/object-oriented-programming.rst
-    intermediate/biblioteki-zewnetrzne.rst
-    intermediate/system-operacyjny.rst
-    intermediate/linia-polecen.rst
-    intermediate/modularyzacja.rst
     intermediate/virtualenv.rst
-    intermediate/funkcje-zmienne-argumenty.rst
+    intermediate/type-annotation.rst
+    intermediate/logging.rst
+    intermediate/serialization-csv.rst
+    intermediate/serialization-json.rst
+    intermediate/quality-and-tests.rst
+    intermediate/args-kwargs.rst
+    intermediate/object-oriented-programming.rst
+    intermediate/operator-overload.rst
+    intermediate/modularization.rst
     intermediate/regex.rst
-    intermediate/bazy-danych.rst
-    intermediate/tworzenie-dokumentacji.rst
-    intermediate/programowanie-gui.rst
+    intermediate/database.rst
+    intermediate/documentation.rst
+    intermediate/gui.rst
 
 ********
 Advanced
@@ -102,20 +98,25 @@ Advanced
     :numbered:
     :caption: Advanced
 
-    advanced/type-annotation.rst
-    advanced/programowanie-http.rst
-    advanced/programowanie-sieciowe.rst
+    advanced/introspection.rst
+    advanced/serialization-pickle.rst
+    advanced/serialization-xml.rst
+    advanced/operating-system.rst
+    advanced/commandline.rst
     advanced/generators.rst
     advanced/iterators.rst
     advanced/context-managers.rst
     advanced/decorators.rst
     advanced/collections.rst
-    advanced/metaclass.rst
-    advanced/watki-i-procesy.rst
+    advanced/network-http.rst
+    advanced/network-low-level.rst
+    advanced/threads-and-processes.rst
     advanced/concurrency.rst
-    advanced/programowanie-funkcyjne.rst
-    advanced/wzorce-projektowe.rst
     advanced/c-extensions.rst
+    advanced/functional-programming.rst
+    advanced/metaclass.rst
+    advanced/design-patterns.rst
+    advanced/exam-advanced.rst
 
 ******
 Django
@@ -159,6 +160,7 @@ Scientific and Engineering
 
     scientific/code-quality.rst
     scientific/libraries.rst
+    scientific/jupyter.rst
     scientific/numpy.rst
     scientific/scipy.rst
     scientific/pandas.rst
@@ -167,7 +169,6 @@ Scientific and Engineering
     scientific/plotly.rst
     scientific/bokeh.rst
     scientific/graphs.rst
-    scientific/jupyter.rst
     scientific/numerical-analysis.rst
     scientific/machine-learning.rst
 
