@@ -189,6 +189,7 @@ Machine Learning
     machine-learning/algorithms.rst
     machine-learning/features.rst
     machine-learning/classifiers.rst
+    machine-learning/sklearn.rst
     machine-learning/model-quality.rst
 
     machine-learning/decision-tree.rst

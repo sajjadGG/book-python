@@ -73,7 +73,7 @@ Weight  Texture  Label
     ]
 
     # Output that we want from classifier
-    labels = ['apple', 'apple', 'orange', 'orange']
+    labels = ['orange', 'orange', 'apple', 'apple']
 
 .. warning:: Scikit-learn uses real-valued features
 
@@ -90,14 +90,13 @@ Weight  Texture  Label
         ]
 
         # Output that we want from classifier
-        # 0: apple
-        # 1: orange
+        # 0: orange
+        # 1: apple
         labels = [0, 0, 1, 1]
 
 
 What Makes a Good Feature?
 ==========================
-
 .. figure:: img/features-and-labels.png
     :scale: 75%
     :align: center
@@ -181,9 +180,10 @@ Feature Engineering
 
         >>> from sklearn import preprocessing
 
-        >>> le = preprocessing.LabelEncoder()
+        >>> features = ["paris", "paris", "tokyo", "amsterdam"]
 
-        >>> le.fit_transform(["paris", "paris", "tokyo", "amsterdam"])
+        >>> label_encoder = preprocessing.LabelEncoder()
+        >>> labels = label_encoder.fit_transform()
         array([1, 1, 2, 0])
 
         >>> list(le.classes_)
