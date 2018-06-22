@@ -346,43 +346,6 @@ String splicing
 Assignments
 ===========
 
-Know thou IDE
--------------
-:Zadanie Specjalne:
-    #. Prowadzący poda Ci link do repozytorium na ``github.com``
-    #. Stwórz projekt pobierając kod z GIT
-    #. Upewnij się, że jest plik ``.gitconfig`` oraz ma wpisaną linię ``.idea/``
-
-#. Po stworzeniu projektu, załóż katalog o nazwie jak twoje nazwisko
-#. WAŻNE: Już do końca książki będziesz w nim tworzył wszystkie rozwiązania do zadań
-#. Skonfiguruj aby używać ``venv``
-#. Stwórz pusty plik ``requirements.txt`` (UWAGA: nie zrób literówki!)
-#. Jak zrobić w Twoim IDE:
-
-    * Run in console
-    * Run...
-    * Debug...
-    * Python Console
-    * Terminal
-    * Full Screen
-    * Distraction Free Mode
-    * Reformat Code
-
-#. Jakie są skróty klawiszowe do poszczególnych opcji?
-#. Czym się różni ``Run...`` od ``Debug...```?
-#. Czym się różni ``Python Console`` od ``Terminal``
-#. Czym się różni ``Distraction Free Mode`` od ``Full Screen``
-
-:Założenia:
-    * Szacunkowa długość kodu: 0 linii
-    * Maksymalny czas na zadanie: 10 min
-
-:Co zadanie sprawdza?:
-    * Korzystanie z IDE
-    * Uruchamianie debuggera
-    * Znajomość różnicy między uruchamianiem i debuggingiem
-    * Znajomość różnicy między terminalem i konsolą
-
 Basic usage of ``print()`` function
 -----------------------------------
 #. Za pomocą ``print()`` wypisz linię składającą się z 50 myślników

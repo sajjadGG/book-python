@@ -1,11 +1,13 @@
-**********************
-Złożoność obliczeniowa
-**********************
+***************
+Time Complexity
+***************
+
 
 * https://wiki.python.org/moin/TimeComplexity
 * https://visualgo.net/bn/sorting
 * http://sorting.at/
 * https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
+
 
 Zastosowanie setów zamiast list
 ===============================
@@ -13,17 +15,18 @@ Jeżeli masz listę w której sprawdzasz czy element występuje, to zamień list
 
 .. code-block:: python
 
-    IMIONA = ['José', 'Ivan', 'Max']
+    NAMES = ['José', 'Ivan', 'Max']
 
-    if imie in IMIONA:
+    if 'Max' in NAMES:
         pass
 
 .. code-block:: python
 
-    IMIONA = {'José', 'Ivan', 'Max'}
+    NAMES = {'José', 'Ivan', 'Max'}
 
-    if imie in IMIONA:
+    if 'Max' in NAMES:
         pass
+
 
 Zastosowanie list zamiast konkatanacji stringów
 ===============================================
@@ -47,9 +50,8 @@ Zastosowanie list zamiast konkatanacji stringów
         html.append(f'<tr><td>{element}</td></tr>')
 
     html.append('</table>')
-    output = '\r\n'.join(html)
+    print(''.join(html))
 
-    print(output)
 
 Inne
 ====

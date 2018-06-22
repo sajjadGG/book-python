@@ -272,6 +272,19 @@ Parsowanie i sanityzacja argumentów
     io.StringIO
 
 
+Passwords and secrets
+=====================
+* UMASK
+* Sticky bit
+* setuid
+* configparser
+
+
+Wczytywanie konfiguracji programów
+==================================
+* configparser
+
+
 Zadanie kontrolne
 =================
 

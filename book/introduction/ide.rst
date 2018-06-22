@@ -1,87 +1,93 @@
-*********
-Wybór IDE
-*********
-
-Czym jest IDE?
-==============
-
-Do edycji skryptów Pythona wystarczy sam Notatnik. Kod źródłowy jest na tyle czytelny i prosty, że bardzo łatwo będziemy w stanie poradzić sobie z prostymi skryptami bez jakiejkolwiek pomocy od zaawansowanego edytora. Jednakże w miarę rośnięcia złożoności projektu oraz ilości plików przyda nam się coś co ułatwi nam pracę.
-
-Wybór edytora to temat wielce kontrowersyjny. Od kilku dziesięcioleci w środowisku programistów jest prowadzona wojna między minimalistycznym VIMem oraz posiadającym ogromne możliwości EMACSem. Jeden i drugi edytor wspaniale posłuży nam do pisania skryptów w Pythonie i po odpowiedniej konfiguracji lub instalacji pluginów podpowie składnię. I choć sam jestem fanem jednego z powyższych rozwiązań (ale nie powiem którego :) to do większych projektów korzystam z czegoś zupełnie z innej beczki. Po przetestowaniu kilkunastu środowisk IDE zaprzyjaźniłem się z edytorem PyCharm. PyCharm ma dwie wersję płatną oraz darmową. Ta druga w zupełności nam wystarczy. Ciekawą alternatywą może być PyDev - plugin do środowiska Eclipse.
-
-W poniższych materiałach będę posługiwał się kodem źródłowym, który wykonywany jest przez interpreter i nie ma znaczenia z jakiego IDE skorzystasz.
+****************************************
+IDE - Integrated Development Environment
+****************************************
 
 
-Które IDE wybrać?
-=================
+What is IDE?
+============
+* Refactoring
+* Syntax helping and highlighting
+* Type hinting and checking
+* VCS support
+* Virtualenv support
+* Debugging
+* Spell checking
+* Running code and inspections
+
+How to choose?
+--------------
 * https://www.jetbrains.com/pycharm/download/
 * http://www.pydev.org/download.html
 
-Czym się różnią?
-----------------
+* Do edycji skryptów Pythona wystarczy sam Notatnik.
+* Kod źródłowy jest na tyle czytelny i prosty, że bardzo łatwo będziemy w stanie poradzić sobie z prostymi skryptami bez jakiejkolwiek pomocy od zaawansowanego edytora.
+* Jednakże w miarę rośnięcia złożoności projektu oraz ilości plików przyda nam się coś co ułatwi nam pracę.
+* Wybór edytora to temat wielce kontrowersyjny.
+* Od kilku dziesięcioleci w środowisku programistów jest prowadzona wojna między minimalistycznym VIMem oraz posiadającym ogromne możliwości EMACSem.
+* Jeden i drugi edytor wspaniale posłuży nam do pisania skryptów w Pythonie i po odpowiedniej konfiguracji lub instalacji pluginów podpowie składnię.
+* Po przetestowaniu kilkunastu środowisk IDE zaprzyjaźniłem się z edytorem PyCharm.
+* PyCharm ma dwie wersję płatną oraz darmową.
+* Wersja darmowa w zupełności nam wystarczy.
+* Ciekawą alternatywą może być PyDev - plugin do środowiska Eclipse.
+* W poniższych materiałach będę posługiwał się kodem źródłowym, który wykonywany jest przez interpreter i nie ma znaczenia z jakiego IDE skorzystasz.
 
-Które jest dla mnie najlepsze?
-------------------------------
+Which one is the best?
+----------------------
+#. PyCharm Professional EAP
+#. PyCharm Community
+#. PyCharm Professional
 
-Darmowe czy płatne
-------------------
 
-.. note:: `Źródło poniższych materiałów <http://www.wykop.pl/wpis/9876900/python-naukaprogramowania-programowanie-wstep-pod-/>`_
+Assignments
+===========
 
-Korzystaj z dobrego IDE (lub edytora):
+Create Project from VCS
+-----------------------
+#. Prowadzący poda Ci link do repozytorium na ``github.com``
+#. Stwórz projekt pobierając kod z GIT
+#. Upewnij się, że jest plik ``.gitconfig`` oraz ma wpisaną linię ``.idea/``
 
-W kategorii IDE jest PyCharm i później długo długo nic. Należy się z tym pogodzić i nie zaprzeczać rzeczywistości, ponieważ ani Wingware ani Komodo IDE (konkurencja) nie grają w tej samej lidze. Darmowa wersja "Community Edition" powinna jak najbardziej wystarczyć do nauki Pythona.
+Know thou IDE
+-------------
+#. Po stworzeniu projektu, załóż katalog o nazwie jak twoje nazwisko
+#. WAŻNE: Już do końca książki będziesz w nim tworzył wszystkie rozwiązania do zadań
+#. Skonfiguruj aby używać ``venv``
+#. Jak zrobić w Twoim IDE:
 
-Zarówno dobrze skonfigurowany vim jak i Sublime Text 3 mogą posłużyć za dobry edytor do nauki Pythona.
+    * Run in console
+    * Run...
+    * Debug...
+    * Python Console
+    * Terminal
+    * Full Screen
+    * Distraction Free Mode
+    * Reformat Code
 
-Korzystaj z dobrego interpretera:
+#. Jakie są skróty klawiszowe do poszczególnych opcji?
+#. Czym się różni ``Run...`` od ``Debug...```?
+#. Czym się różni ``Python Console`` od ``Terminal``
+#. Czym się różni ``Distraction Free Mode`` od ``Full Screen``
 
-- Pobierz najnowszą wersję z serii 3 (w tej chwili to 3.6) bezpośrednio z: https://www.python.org/downloads/
+:Założenia:
+    * Szacunkowa długość kodu: 0 linii
+    * Maksymalny czas na zadanie: 10 min
 
-Znaj narzędzia potrzebne do pracy w dobrym środowisku pythona:  (uczy tego wyżej już wymienione http://www.pluralsight.com/courses/python-developers-toolkit )
+:Co zadanie sprawdza?:
+    * Korzystanie z IDE
+    * Uruchamianie debuggera
+    * Znajomość różnicy między uruchamianiem i debuggingiem
+    * Znajomość różnicy między terminalem i konsolą
 
-Pomocny może okazać się też taki podręcznik:
+Spellchecker
+------------
+#. Zainstaluj plugin 'Hunspell'
+#. Pobierz z https://github.com/LibreOffice/dictionaries słownik ``.dic`` oraz ``.aff`` dla języka polskiego
+#. Skonfiguruj IDE do korzystania z tego słownika
 
-- http://docs.python-guide.org/en/latest/
-- ``Pip`` - http://pip.readthedocs.org/en/latest/index.html
-- ``Virtualenv`` - http://virtualenv.readthedocs.org/en/latest/
-- ``Debugger`` - http://pymotw.com/2/pdb/
+:Założenia:
+    * Szacunkowa długość kodu: 0 linii
+    * Maksymalny czas na zadanie: 3 min
 
-Nauczyć się ładnego formatowania kodu i odpowiedzi na najczęściej zadawane pytania:
-
-- To niezmiernie ważne, szacuje się że ponad 80% kodu napisanego w Pythonie stosuje się do poniższych zasad.
-- http://legacy.python.org/dev/peps/pep-0008/
-- https://code.google.com/p/google-styleguide/
-
-Poznaj filozofię Pythona:
-
-- http://legacy.python.org/dev/peps/pep-0020/
-- https://gist.github.com/evandrix/2030615
-
-Naucz się GITa (system kontroli wersji):
-
-- http://git-scm.com/book
-- https://try.github.io/
-- https://www.atlassian.com/git/
-- http://www.git-tower.com/learn/ebook/command-line/introduction
-
-Publikuj swój kod i czytaj kod innych:
-
-- https://github.com/
-- https://bitbucket.org/
-
-Korzystanie z IDE
-=================
-
-Refactoring
------------
-
-Podpowiadanie składni
----------------------
-
-Uruchamianie kodu i wyświetlanie wyników
-----------------------------------------
-
-Spellcheck
-----------
-* https://github.com/LibreOffice/dictionaries
+:Co zadanie sprawdza?:
+    * Korzystanie z IDE
+    * Konfiguracja IDE

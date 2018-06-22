@@ -1,28 +1,56 @@
-*******************************
-Sofware Engineering Conventions
-*******************************
+********************************
+Software Engineering Conventions
+********************************
+
 
 PEP8
 ====
 
-Tabulacje i czy spacje?
------------------------
+Tabs or spaces?
+---------------
 * 4 spacje
 * IDE zamienia tab na 4 spacje
 
-Długość linii
--------------
+Line length
+-----------
 * 79 znaków
 * soft wrap
 * co z monitorami 4k?
 * najbardziej kontrowersyjna klauzula
 
-Kodowanie plików
-----------------
-Przy Pythonie 3 kodownaie plików powinno być w UTF-8.
+File encoding
+-------------
+* UTF-8
 
-Pojedynczy czy podwójny cudzysłów
----------------------------------
+Comments
+--------
+* Better named functions and variables
+
+Commented code?
+---------------
+* NO!
+* Never commit files with commented code
+
+Author name or revision version
+-------------------------------
+* Do not put author name or revision version to the files
+* Version Control System is responsible for that
+
+Naming convention
+-----------------
+* ``zmienne``
+* ``STALE``
+* ``NazwyKlas``
+* ``nazwy_metod()`` i ``nazwy_funkcji()``
+* ``nazwymodulow``, ``nazwy_modulow``
+* ``self``
+* ``cls``
+
+Using ``__`` and ``_`` in names
+-------------------------------
+
+Single or double quotes?
+------------------------
 * Python nie rozróżnia czy stosujemy pojedyncze znaki cudzysłowiu czy podwójne.
 * Ważne jest aby wybrać jedną konwencję i się jej konsekwentnie trzymać.
 * Interpreter Pythona domyślnie stosuje pojedyncze znaki cudzysłowia.
@@ -38,7 +66,7 @@ Pojedynczy czy podwójny cudzysłów
 
     print('<a href="http://python.astrotech.io">Python and Machine Learning</a>')
 
-Wcięcia
+Indents
 -------
 .. literalinclude:: src/convention-indent-good.py
     :language: python
@@ -48,31 +76,30 @@ Wcięcia
     :language: python
     :caption: Bad
 
-Zamykanie nawiasów
-------------------
-:Good:
-    .. code-block:: python
+Brackets
+--------
+.. code-block:: python
 
-        vector = [
-            1, 2, 3,
-            4, 5, 6,
-        ]
+    vector = [
+        1, 2, 3,
+        4, 5, 6,
+    ]
 
-        result = some_function_that_takes_arguments(
-            'a', 'b', 'c',
-            'd', 'e', 'f',
-        )
+    result = some_function_that_takes_arguments(
+        'a', 'b', 'c',
+        'd', 'e', 'f',
+    )
 
-        vector = [
-            1, 2, 3,
-            4, 5, 6]
+    vector = [
+        1, 2, 3,
+        4, 5, 6]
 
-        result = some_function_that_takes_arguments(
-            'a', 'b', 'c',
-            'd', 'e', 'f')
+    result = some_function_that_takes_arguments(
+        'a', 'b', 'c',
+        'd', 'e', 'f')
 
-Łamanie linii
--------------
+Line continuation
+-----------------
 Linie możemy łamać poprzez stawianie znaku ukośnika ``\`` na końcu:
 
 .. code-block:: python
@@ -109,7 +136,7 @@ Linie możemy łamać poprzez stawianie znaku ukośnika ``\`` na końcu:
         secure=True,
     )
 
-Puste linie
+Blank lines
 -----------
 .. code-block:: python
 
@@ -136,7 +163,211 @@ Puste linie
 
             return f'{protocol}://{self.username}:{self.password}@{self.host}:{self.port}/'
 
-Importy
+Whitespace in function calls
+----------------------------
+.. code-block:: python
+
+    spam(ham[1], {eggs: 2})  # Good
+    spam( ham[ 1 ], { eggs: 2 } )  # Bad
+
+    spam(1)  # Good
+    spam (1)  # Bad
+
+    do_one()  # Good
+    do_two()  # Good
+    do_three()  # Good
+
+    do_one(); do_two(); do_three()  # Bad
+
+    do_one(); do_two(); do_three(long, argument,  # Bad
+                                 list, like, this)  # Bad
+
+Whitespace in slices
+--------------------
+.. code-block:: python
+
+    ham[1:9], ham[1:9:3], ham[:9:3], ham[1::3], ham[1:9:]  # Good
+    ham[1: 9], ham[1 :9], ham[1:9 :3]  # Bad
+
+    ham[lower:upper], ham[lower:upper:], ham[lower::step]  # Good
+    ham[lower : : upper]  # Bad
+
+    ham[lower+offset : upper+offset]  # Good
+    ham[: upper_fn(x) : step_fn(x)], ham[:: step_fn(x)]  # Good
+
+    ham[lower + offset : upper + offset]  # Good
+    ham[lower + offset:upper + offset]  # Bad
+
+    ham[:upper]  # Good
+    ham[ : upper]  # Bad
+
+Whitespace in assignments
+-------------------------
+.. code-block:: python
+
+    x = 1  # Good
+    y = 2  # Good
+    long_variable = 3  # Good
+
+    x             = 1  # Bad
+    y             = 2  # Bad
+    long_variable = 3  # Bad
+
+    i = i + 1  # Good
+    i=i+1  # Bad
+
+    submitted += 1  # Good
+    submitted +=1  # Bad
+
+Whitespace in math operators
+----------------------------
+.. code-block:: python
+
+    x = x*2 - 1  # Good
+    x = x * 2 - 1  # Bad
+
+    hypot2 = x*x + y*y  # Good
+    hypot2 = x * x + y * y  # Bad
+
+    c = (a+b) * (a-b)  # Good
+    c = (a + b) * (a - b)  # Bad
+
+Whitespace in accessors
+-----------------------
+.. code-block:: python
+
+    dct['key'] = lst[index]
+    dct ['key'] = lst [index]
+
+Whitespace in functions
+-----------------------
+.. code-block:: python
+
+    def complex(real, imag=0.0):  # Good
+        return magic(r=real, i=imag)  # Good
+
+    def complex(real, imag = 0.0):  # Bad
+        return magic(r = real, i = imag)  # Bad
+
+Whitespace with type annotations
+--------------------------------
+.. code-block:: python
+
+    def funcion(first: str):  # Good
+        pass
+
+    def funcion(first: str = None):  # Good
+        pass
+
+    def funcion() -> None:  # Good
+        pass
+
+    def funcion(first: str, second: str = None, limit: int = 1000) -> int:  # Good
+        pass
+
+    def funcion(first: str=None):  # Bad
+        pass
+
+    def funcion(first:str):  # Bad
+        pass
+
+    def funcion(first: str)->None:  # Bad
+        pass
+
+Whitespace in conditionals
+--------------------------
+.. code-block:: python
+
+    if foo == 'blah':  # Good
+        do_blah_thing()  # Good
+
+    if foo == 'blah': do_blah_thing()  # Bad
+
+    if foo == 'blah': one(); two(); three()  # Bad
+
+    if foo == 'blah': do_blah_thing()  # Bad
+    else: do_non_blah_thing()  # Bad
+
+Whitespace in exceptions
+------------------------
+.. code-block:: python
+
+    try:  # Good
+        do_somethind()  # Good
+    except Exception:  # Good
+        pass  # Good
+
+    try: something()  # Bad
+    finally: cleanup()  # Bad
+
+Conditionals
+------------
+:Good:
+    .. code-block:: python
+
+        if foo is not None:
+            pass
+
+        if foo:
+            pass
+
+        if not seq:
+            pass
+
+        if seq:
+            pass
+
+        if greeting:
+            pass
+
+:Bad:
+    .. code-block:: python
+
+        # if (! foo == null) {}
+        if not foo is None:
+            pass
+
+        if len(seq):
+            pass
+
+        if not len(seq):
+            pass
+
+        if greeting == True:
+            pass
+
+        if greeting is True:
+            pass
+
+Returning from function
+-----------------------
+:Good:
+    .. code-block:: python
+
+        def foo(x):
+            if x >= 0:
+                return math.sqrt(x)
+            else:
+                return None
+
+        def bar(x):
+            if x < 0:
+                return None
+            return math.sqrt(x)
+
+:Bad:
+    .. code-block:: python
+
+        def foo(x):
+            if x >= 0:
+                return math.sqrt(x)
+
+        def bar(x):
+            if x < 0:
+                return
+            return math.sqrt(x)
+
+Imports
 -------
 * Każdy z importów powinien być w osobnej linii
 * importy systemowe na górze
@@ -163,7 +394,7 @@ Importy
         from random import shuffle
         from subprocess import Popen, PIPE
 
-:Not Good:
+:Bad:
     .. code-block:: python
 
         import sys, os, requests, numpy
@@ -173,184 +404,6 @@ Importy
         import sys, os
         import requests, numpy
 
-Białe spacje w wyrażeniach
---------------------------
-Tak:
-
-.. code-block:: python
-
-    spam(ham[1], {eggs: 2})
-
-    ham[1:9], ham[1:9:3], ham[:9:3], ham[1::3], ham[1:9:]
-    ham[lower:upper], ham[lower:upper:], ham[lower::step]
-    ham[lower+offset : upper+offset]
-    ham[: upper_fn(x) : step_fn(x)], ham[:: step_fn(x)]
-    ham[lower + offset : upper + offset]
-
-    spam(1)
-
-    dct['key'] = lst[index]
-
-    x = 1
-    y = 2
-    long_variable = 3
-
-    i = i + 1
-    submitted += 1
-    x = x*2 - 1
-    hypot2 = x*x + y*y
-    c = (a+b) * (a-b)
-
-    def complex(real, imag=0.0):
-        return magic(r=real, i=imag)
-
-    def munge(input: AnyStr):
-    def munge(sep: AnyStr = None):
-    def munge() -> AnyStr:
-    def munge(input: AnyStr, sep: AnyStr = None, limit=1000):
-
-    if foo == 'blah':
-        do_blah_thing()
-    do_one()
-    do_two()
-    do_three()
-
-Nie:
-
-.. code-block:: python
-
-    spam( ham[ 1 ], { eggs: 2 } )
-
-    ham[lower + offset:upper + offset]
-    ham[1: 9], ham[1 :9], ham[1:9 :3]
-    ham[lower : : upper]
-    ham[ : upper]
-
-    spam (1)
-
-    dct ['key'] = lst [index]
-
-    x             = 1
-    y             = 2
-    long_variable = 3
-
-    i=i+1
-    submitted +=1
-    x = x * 2 - 1
-    hypot2 = x * x + y * y
-    c = (a + b) * (a - b)
-
-    def complex(real, imag = 0.0):
-        return magic(r = real, i = imag)
-
-    def munge(input: AnyStr=None):
-    def munge(input:AnyStr):
-    def munge(input: AnyStr)->PosInt:
-
-    if foo == 'blah': do_blah_thing()
-    do_one(); do_two(); do_three()
-
-    if foo == 'blah': do_blah_thing()
-    else: do_non_blah_thing()
-
-    try: something()
-    finally: cleanup()
-
-    do_one(); do_two(); do_three(long, argument,
-                                 list, like, this)
-
-    if foo == 'blah': one(); two(); three()
-
-
-Komentarze
-----------
-
-Google style comments
-~~~~~~~~~~~~~~~~~~~~~
-
-Konwencje nazewnicze
---------------------
-
-* ``zmienne``
-* ``STALE``
-* ``NazwyKlas``
-* ``nazwy_metod()`` i ``nazwy_funkcji()``
-* ``nazwymodulow``, ``nazwy_modulow``
-* ``self``
-* ``cls``
-
-Używanie ``__`` i ``_`` w nazwach
----------------------------------
-
-Konstrukcje warunkowe
----------------------
-:Good:
-    .. code-block:: python
-
-        if foo is not None:
-            pass
-
-        if foo:
-            pass
-
-:Not Good:
-    .. code-block:: python
-
-        # if (! foo == null) {}
-        if not foo is None:
-
-Zwracanie z funkcji
--------------------
-
-Tak:
-
-.. code-block:: python
-
-    def foo(x):
-        if x >= 0:
-            return math.sqrt(x)
-        else:
-            return None
-
-    def bar(x):
-        if x < 0:
-            return None
-        return math.sqrt(x)
-
-Nie:
-
-.. code-block:: python
-
-    def foo(x):
-        if x >= 0:
-            return math.sqrt(x)
-
-    def bar(x):
-        if x < 0:
-            return
-        return math.sqrt(x)
-
-Sprawdzanie warunków
---------------------
-
-Tak:
-
-.. code-block:: python
-
-    if not seq:
-    if seq:
-
-    if greeting:
-
-Nie:
-
-.. code-block:: python
-
-    if len(seq)
-    if not len(seq)
-
-    if greeting == True:
-    if greeting is True:
 
 PEP20 - Zen of Python
 =====================
@@ -403,69 +456,69 @@ Zen Pythona
 * Przestrzenie nazw to jeden z niesamowicie genialnych pomysłów -- miejmy ich więcej!
 
 
-Korzystanie z ``help()``, ``dir()`` i ``object.__dict__``
-=========================================================
-
-
 Magic number i Magic string
 ===========================
-
-
-Passwords and secrets
-=====================
-* UMASK
-* Sticky bit
-* setuid
-* configparser
-
-
-Wczytywanie konfiguracji programów
-==================================
-* configparser
-
-
-Wersjonowanie API
-=================
-
-.. code-block:: text
-
-    Accept:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
-    Accept-Encoding:gzip, deflate, sdch
-    Accept-Language:en-US,en;q=0.8,pl;q=0.6
+* NO!
 
 ``pycodestyle`` previously known as ``PEP8``
 ============================================
+* Python style guide checker.
+* ``pycodestyle`` is a tool to check your Python code against some of the style conventions in PEP-8
+* Plugin architecture: Adding new checks is easy
+* Parseable output: Jump to error location in your editor
+* Small: Just one Python file, requires only stdlib
+* Comes with a comprehensive test suite
 
-:About:
-    Python style guide checker. ``pycodestyle`` is a tool to check your Python code
-    against some of the style conventions in PEP 8.
+Installation
+------------
+.. code-block:: console
 
-    * Plugin architecture: Adding new checks is easy.
-    * Parseable output: Jump to error location in your editor.
-    * Small: Just one Python file, requires only stdlib. You can use just the
-    * pep8.py file for this purpose.
-    * Comes with a comprehensive test suite.
+    $ pip install pycodestyle
 
-:Installation:
-    .. code-block:: console
+Usage
+-----
+.. code-block:: console
 
-        $ pip install pycodestyle
-        $ pip install --upgrade pycodestyle
-        $ pip uninstall pycodestyle
+    $ pycodestyle FILENAME.py
 
-:Usage:
-    .. code-block:: console
+.. code-block:: console
 
-        $ pycodestyle FILENAME.py
-        $ pycodestyle DIRECTORY/
-        $ pycodestyle --statistics -qq DIRECTORY/
-        $ pycodestyle --show-source --show-pep8 FILENAME.py
+    $ pycodestyle DIRECTORY/
 
-:Config:
-    ``setup.cfg``
+.. code-block:: console
 
-    .. code-block:: ini
+    $ pycodestyle --statistics -qq DIRECTORY/
 
-        [pycodestyle]
-        max-line-length = 939
-        ignore = E402,W391
+.. code-block:: console
+
+    $ pycodestyle --show-source --show-pep8 FILENAME.py
+
+Configuration
+-------------
+* ``setup.cfg``
+
+.. code-block:: ini
+
+    [pycodestyle]
+    max-line-length = 120
+    ignore = E402,W391
+
+
+Assignment
+==========
+
+Cleanup your file
+-----------------
+#. Install ``pycodestyle``
+#. Run ``pycodestyle`` on your last script
+#. Fix all errors
+#. Run ``pycodestyle`` on directory with all of your scripts
+
+:Założenia:
+    * Szacunkowa długość kodu: 2 lini
+    * Maksymalny czas na zadanie: 5 min
+
+:Co zadanie sprawdza:
+    * Umiejętność czytania komunikatów
+    * Umiejętność pracy z terminalem
+    * Utrzymywanie konwencji PEP8

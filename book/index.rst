@@ -31,13 +31,11 @@ Introduction
     :numbered:
     :caption: Introduction
 
-    przed-szkoleniem.rst
     license.rst
+    install.rst
     introduction/about.rst
-    introduction/installation.rst
-    introduction/ide.rst
-    introduction/syntax.rst
     introduction/heroes.rst
+    introduction/ide.rst
 
 ***********
 Foundations
@@ -47,6 +45,7 @@ Foundations
     :numbered:
     :caption: Foundations
 
+    foundations/syntax.rst
     foundations/types.rst
     foundations/data-structures.rst
     foundations/conditionals.rst
