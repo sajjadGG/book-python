@@ -91,15 +91,6 @@ Inne
 W internecie jest dostępnych jeszcze więcej implementacji języka. Niektóre projekty są jeszcze rozwijane, niektóre (Stackless Python) weszły w skład lub transformowały się w wyżej wymienionych lub zostały zarzucone (Unleaden Swallow).
 
 
-Ehlo World!
-===========
-W lekcjach programowania utarło się, że zawsze zaczynamy od już przysłowiowego "Hello World".
-Tym razem jednak zaczniemy od 'Ehlo World!' i nie jest to pomyłka.
-Jest to przywitanie serwera SMTP.
-W tej książce znajdziesz kilka żartów informatycznych i nawiązań do starych
-
-
-
 Read–Eval–Print Loop
 ====================
 Python spopularyzował wykorzystanie tzw. interpretera REPL (read–eval–print loop). REPL to interaktywny interpreter poleceń wykonujący wyrażenia z języka (zwykle linie), których wyniki są wyświetlane użytkownikowi natychmiast po ich wykonaniu. W uproszczeniu można powiedzieć, że REPL jest to linia poleceń programu ``python``. Znakiem zachęty do wprowadzania tekstu takiego programu są trzy znaki większości ``>>>``. Polecenia wpisane po tych znaczkach są interpretowane i natychmiast wykonywane. Ich wynik przedstawiany jest w następnej linijce. Jeżeli wykorzystamy konstrukcję, która wymaga więcej niż jednej linii, każda kolejna linijka będzie poprzedzona trzema kropkami ``...``. Przykłady takiej interakcji zobaczymy przy omawianiu "Hello World".

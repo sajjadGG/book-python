@@ -3,6 +3,14 @@ References
 **********
 
 
+Ehlo World!
+===========
+W lekcjach programowania utarło się, że zawsze zaczynamy od już przysłowiowego "Hello World".
+Tym razem jednak zaczniemy od 'Ehlo World!' i nie jest to pomyłka.
+Jest to przywitanie serwera SMTP.
+W tej książce znajdziesz kilka żartów informatycznych i nawiązań do starych
+
+
 Main Characters
 ===============
 

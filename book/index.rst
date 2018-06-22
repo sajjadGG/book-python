@@ -34,7 +34,7 @@ Introduction
     license.rst
     install.rst
     introduction/about.rst
-    introduction/heroes.rst
+    introduction/references.rst
     introduction/ide.rst
 
 ***********
