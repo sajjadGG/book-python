@@ -2,8 +2,11 @@
 scikit-learn
 ************
 
-Dataset
-=======
+Datasets
+========
+.. literalinclude:: src/ml-sklearn-datasets.py
+    :language: python
+    :caption: Classifier
 
 
 Classifier
@@ -18,13 +21,13 @@ Evaluation
 
 Score
 -----
-.. literalinclude:: src/ml-classifier-score.py
+.. literalinclude:: src/ml-sklearn-score.py
     :language: python
     :caption: Score
 
 Cross Validation
 ----------------
-.. literalinclude:: src/ml-classifier-cross-validation.py
+.. literalinclude:: src/ml-sklearn-cross-validation.py
     :language: python
     :caption: Cross Validation
 
