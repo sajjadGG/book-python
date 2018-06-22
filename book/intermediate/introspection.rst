@@ -4,6 +4,16 @@
 Introspekcja
 ************
 
+
+``eval``
+========
+.. code-block:: python
+
+    x = 1
+    eval('x+1')  # 2
+
+
+
 Pola obiektu
 ============
 * ``__dict__``

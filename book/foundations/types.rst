@@ -1,6 +1,7 @@
-***************
-Primitive types
-***************
+*****
+Types
+*****
+
 
 Variables and Constants
 =======================
@@ -339,103 +340,128 @@ String splicing
     text[:-2]  # 'Lorem ips'
     text[::2]  # 'Lrmism'
 
-``io``
-------
-* ``io`` to biblioteka do obsługi strumienia wejściowego i wyjściowego
-* StringIO jest wtedy traktowany jak plik wejściowy.
-
-.. code-block:: python
-
-    import io
-
-    io.StringIO
 
 Assignments
 ===========
 
-.. note:: Pobaw się opcjami w IDE:
+Know thou IDE
+-------------
+:Zadanie Specjalne:
+    #. Prowadzący poda Ci link do repozytorium na ``github.com``
+    #. Stwórz projekt pobierając kod z GIT
+    #. Upewnij się, że jest plik ``.gitconfig`` oraz ma wpisaną linię ``.idea/``
+
+#. Po stworzeniu projektu, załóż katalog o nazwie jak twoje nazwisko
+#. WAŻNE: Już do końca książki będziesz w nim tworzył wszystkie rozwiązania do zadań
+#. Skonfiguruj aby używać ``venv``
+#. Stwórz pusty plik ``requirements.txt`` (UWAGA: nie zrób literówki!)
+#. Jak zrobić w Twoim IDE:
 
     * Run in console
     * Run...
     * Debug...
     * Python Console
+    * Terminal
+    * Full Screen
+    * Distraction Free Mode
+    * Reformat Code
 
-Print
------
-#. Za pomocą ``print()`` Wypisz linię składającą się z 50 myślników
+#. Jakie są skróty klawiszowe do poszczególnych opcji?
+#. Czym się różni ``Run...`` od ``Debug...```?
+#. Czym się różni ``Python Console`` od ``Terminal``
+#. Czym się różni ``Distraction Free Mode`` od ``Full Screen``
 
 :Założenia:
-    * Nazwa pliku: ``primitives-print.py``
-    * Linii kodu do napisania: około 1 linie
+    * Szacunkowa długość kodu: 0 linii
+    * Maksymalny czas na zadanie: 10 min
+
+:Co zadanie sprawdza?:
+    * Korzystanie z IDE
+    * Uruchamianie debuggera
+    * Znajomość różnicy między uruchamianiem i debuggingiem
+    * Znajomość różnicy między terminalem i konsolą
+
+Basic usage of ``print()`` function
+-----------------------------------
+#. Za pomocą ``print()`` wypisz linię składającą się z 50 myślników
+#. Wykorzystaj mnożenie stringów
+
+:Założenia:
+    * Nazwa pliku: ``types_print.py``
+    * Szacunkowa długość kodu: 1 linia
     * Maksymalny czas na zadanie: 2 min
 
-:Podpowiedź:
-    * Wykorzystaj mnożenie stringów
-
-Zmienne i typy
---------------
+Variables and types
+-------------------
 #. Wczytaj od użytkownika imię
 #. Użytkownik wprowadza tylko dane typu ``str``
-#. Wyświetl na ekranie ``'My name "IMIE".\nI hope you\'re ok!'``, gdzie IMIE to wartość którą podał
-#. Zwróć uwagę na cudzysłowia i nową linię
-#. Podmień wszystkie spacje na ``_``
+#. Za pomocą f-string formatting wyświetl na ekranie ``'My name "IMIE".\nI hope you\'re ok!'``, gdzie IMIE to wartość którą podał
+#. Zwróć uwagę na znaki cudzysłowia i nowych linii
+#. Tekst wyświetlony na ekranie ma mieć zamienione wszystkie spacje na ``_``
 #. Nie korzystaj z dodawania stringów ``str + str``
 
 :Założenia:
-    * Nazwa pliku: ``primitives-input.py``
-    * Linii kodu do napisania: około 2 linie
+    * Nazwa pliku: ``types_input.py``
+    * Szacunkowa długość kodu: 3 linie
     * Maksymalny czas na zadanie: 5 min
 
-:Podpowiedź:
-    * Użyj podawania stringów po przecinku ``print(str, str)`` oraz parametru ``sep``
-    * Użyj f-string formatting dla Python >= 3.6
+:Co zadanie sprawdza?:
+    * Definiowanie zmiennych
+    * Korzystanie z print formatting
+    * Wczytywanie tekstu od użytkownika
 
-User input and type casting
----------------------------
+Handling user input and type casting
+------------------------------------
 #. Użytkownik za pomocą wprowadza odległości w metrach
 #. Użytkownik wprowadza tylko dane typu ``int`` lub ``float``
-#. Napisz program który przekonwertuje odległości i wyświetli je w formacie ``dict`` zgodnie z szablonem:
+#. Dane przy wyświetlaniu muszą być przekonwertowane do typów podanych poniżej
+#. Napisz program który przekonwertuje odległości i wyświetli je w formacie zgodnie z szablonem:
 
 .. code-block:: python
 
-    print({
-        'kilometers': int,
-        'miles': float,
-        'nautical miles': float,
-        'all': [int, float, float]
-    })
+    print(f'Meters: {meters}')  # int
+    print(f'Kilometers: {...}')  # int
+    print(f'Miles: {...}')  # float
+    print(f'Nautical Miles: {...}')  # float
+    print(f'All: {...}, {...}, {...}, {...}')  # int, int, float, float
 
 :Założenia:
-    * Nazwa pliku: ``primitives-casting.py``
-    * Linii kodu do napisania: około 3 linie
+    * Nazwa pliku: ``types_casting.py``
+    * Szacunkowa długość kodu: 3 linie
     * Maksymalny czas na zadanie: 5 min
+
+:Co zadanie sprawdza?:
+    * Definiowanie zmiennych
+    * Korzystanie z print formatting
+    * Konwersja typów
+    * Operacje matematyczne na zmiennych
+    * Wczytywanie tekstu od użytkownika
 
 :Podpowiedź:
     * 1000 m = 1 km
     * 1608 m = 1 mila
     * 1852 m = 1 mila morska
 
-Wyrazy
-------
+Text manipulation
+-----------------
 #. Napisz program, który na podstawie paragrafu tekstu "Lorem Ipsum" podzieli go na zdania
 #. Kropka rozdziela zdania
 #. Spacja oddziela wyrazy w zdaniu
-#. Dla każdego zdania wyświetli ile jest w nim wyrazów::
+#. Za pomocą funkcji ``len()`` policz ile jest wyrazów w każdym zdaniu::
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 :Założenia:
-    * Nazwa pliku: ``primitives-split-text.py``
-    * Linii kodu do napisania: około 3 linie
+    * Nazwa pliku: ``types_strings.py``
+    * Szacunkowa długość kodu: 3 linie
     * Maksymalny czas na zadanie: 5 min
 
 :Co zadanie sprawdza:
-    * dzielenie stringów
-    * sprawdzanie długości linii
-    * iterowanie po elementach w tablicy
+    * Dzielenie stringów
+    * Sprawdzanie długości ciągów znaków
+    * Iterowanie po elementach w tablicy
 
 :Podpowiedź:
-    * ``len(...)`` - Length of the list
     * .. code-block:: python
 
         lista = ['Element 1', 'Element 2']

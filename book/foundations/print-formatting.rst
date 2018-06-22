@@ -247,7 +247,7 @@ Powielanie napisów
 
 :Założenia:
     * Nazwa pliku: ``print-multi.py``
-    * Linii kodu do napisania: około 5 linii
+    * Szacunkowa długość kodu: około 5 linii
     * Maksymalny czas na zadanie: 5 min
 
 :Co zadanie sprawdza?:
@@ -283,7 +283,7 @@ Przeliczanie temperatury
 
 :Założenia:
     * Nazwa pliku: ``print-formatting.py``
-    * Linii kodu do napisania: około 4 linie
+    * Szacunkowa długość kodu: około 4 linie
     * Maksymalny czas na zadanie: 10 min
 
 :Podpowiedź:

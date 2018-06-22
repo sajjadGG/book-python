@@ -35,6 +35,13 @@ Static vs. Dynamic Fields
     :language: python
     :caption: Static vs. Dynamic fields
 
+``__dict__`` - Getting dynamic fields and values
+------------------------------------------------
+.. literalinclude:: src/oop-fields-dict.py
+    :language: python
+    :caption: ``__dict__`` - Getting dynamic fields and values
+
+
 Methods
 =======
 .. literalinclude:: src/oop-methods-noargs.py
@@ -164,7 +171,7 @@ Address Book (Easy)
 
 :Założenia:
     * Nazwa pliku: ``oop-addressbook-easy.py``
-    * Linii kodu do napisania: około 10 linii
+    * Szacunkowa długość kodu: około 10 linii
     * Maksymalny czas na zadanie: 20 min
 
 :Co zadanie sprawdza?:
@@ -185,7 +192,7 @@ Address Book (Medium)
 
 :Założenia:
     * Nazwa pliku: ``oop-addressbook-medium.py``
-    * Linii kodu do napisania: około 10 linii
+    * Szacunkowa długość kodu: około 10 linii
     * Maksymalny czas na zadanie: 20 min
 
 .. literalinclude:: src/oop-assignment-addressbook-medium.py
@@ -199,7 +206,7 @@ Address Book (Hard)
 
 :Założenia:
     * Nazwa pliku: ``oop-addressbook-hard.py``
-    * Linii kodu do napisania: około 20 linii
+    * Szacunkowa długość kodu: około 20 linii
     * Maksymalny czas na zadanie: 30 min
 
 :Co zadanie sprawdza?:
@@ -228,5 +235,5 @@ Przekształć swój kod z przykładu z modułu "Matematyka" tak żeby wykorzytyw
 
 :Założenia:
     * Nazwa pliku: ``oop-vector.py``
-    * Linii kodu do napisania: około 20 linii
+    * Szacunkowa długość kodu: około 20 linii
     * Maksymalny czas na zadanie: 30 min

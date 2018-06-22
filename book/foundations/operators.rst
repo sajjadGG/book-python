@@ -64,7 +64,7 @@ Parzystość
 
 :Założenia:
     * Nazwa pliku: ``operators-even.py``
-    * Linii kodu do napisania: około 7 linii
+    * Szacunkowa długość kodu: około 7 linii
     * Maksymalny czas na zadanie: 10 min
 
 :Podpowiedź:
@@ -91,7 +91,7 @@ Liczby całkowite
 
 :Założenia:
     * Nazwa pliku: ``operators-integres.py``
-    * Linii kodu do napisania: około 7 linii
+    * Szacunkowa długość kodu: około 7 linii
     * Maksymalny czas na zadanie: 10 min
 
 :Podpowiedź:

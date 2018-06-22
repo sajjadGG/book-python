@@ -47,7 +47,7 @@ Foundations
     :numbered:
     :caption: Foundations
 
-    foundations/primitive-types.rst
+    foundations/types.rst
     foundations/data-structures.rst
     foundations/conditionals.rst
     foundations/operators.rst

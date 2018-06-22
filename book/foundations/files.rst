@@ -77,7 +77,7 @@ Zawartość zadanego pliku
 
 :Założenia:
     * Nazwa pliku: ``file-cat.py``
-    * Linii kodu do napisania: około 5 linii
+    * Szacunkowa długość kodu: około 5 linii
     * Maksymalny czas na zadanie: 5 min
 
 Parsowanie ``/etc/hosts``
@@ -89,7 +89,7 @@ Parsowanie ``/etc/hosts``
 
 :Założenia:
     * Nazwa pliku: ``file-hosts.py``
-    * Linii kodu do napisania: około 10 linii
+    * Szacunkowa długość kodu: około 10 linii
     * Maksymalny czas na zadanie: 20 min
 
 :Co zadanie sprawdza?:

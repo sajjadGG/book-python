@@ -275,7 +275,7 @@ Konwersja liczby na zapis słowny
 
 :Założenia:
     * Nazwa pliku: ``functions-int-to-str.py``
-    * Linii kodu do napisania: około 15 linii
+    * Szacunkowa długość kodu: około 15 linii
     * Maksymalny czas na zadanie: 15 min
 
 :Wymagania:
@@ -303,7 +303,7 @@ Prosta memoizacja
 
 :Założenia:
     * Nazwa pliku: ``functions-memoize.py``
-    * Linii kodu do napisania: około 5 linii
+    * Szacunkowa długość kodu: około 5 linii
     * Maksymalny czas na zadanie: 15 min
 
 :Podpowiedź:
@@ -330,5 +330,5 @@ Rzymskie
 
 :Założenia:
     * Nazwa pliku: ``functions-roman.py``
-    * Linii kodu do napisania: około 15 linii
+    * Szacunkowa długość kodu: około 15 linii
     * Maksymalny czas na zadanie: 15 min

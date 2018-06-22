@@ -211,5 +211,5 @@ Zmienne i wczytywanie ciągu od użytkownika
 
 :Założenia:
     * Nazwa pliku: ``conditionals-input.py``
-    * Linii kodu do napisania: około 5 linie
+    * Szacunkowa długość kodu: około 5 linie
     * Maksymalny czas na zadanie: 5 min

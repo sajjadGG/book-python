@@ -36,5 +36,5 @@ Instalacja z requirements.txt od venv
 
 :Założenia:
     * Nazwa pliku: ``requirements.txt``
-    * Linii kodu do napisania: około 2 linie
+    * Szacunkowa długość kodu: około 2 linie
     * Maksymalny czas na zadanie: 5 min

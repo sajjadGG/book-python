@@ -285,7 +285,7 @@ Manipulacja datami
 
 :Założenia:
     * Nazwa pliku: ``datetime-deltas.py``
-    * Linii kodu do napisania: około 15 linii
+    * Szacunkowa długość kodu: około 15 linii
     * Maksymalny czas na zadanie: 20 min
 
 :Zadanie z gwiazdką:

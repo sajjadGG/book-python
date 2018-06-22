@@ -392,7 +392,7 @@ Generowanie listy unikalnych kluczy
 
 :Założenia:
     * Nazwa pliku: ``type-unique.py``
-    * Linii kodu do napisania: około 3 linie
+    * Szacunkowa długość kodu: około 3 linie
     * Maksymalny czas na zadanie: 5 min
 
 Podział zbioru
@@ -407,7 +407,7 @@ Podział zbioru
 
 :Założenia:
     * Nazwa pliku: ``type-split-list.py``
-    * Linii kodu do napisania: około 6 linie
+    * Szacunkowa długość kodu: około 6 linie
     * Maksymalny czas na zadanie: 10 min
 
 :Podpowiedź:
@@ -434,5 +434,5 @@ Słownik unikalnych cech
 
 :Założenia:
     * Nazwa pliku: ``type-split-dict.py``
-    * Linii kodu do napisania: około 6 linie
+    * Szacunkowa długość kodu: około 6 linie
     * Maksymalny czas na zadanie: 10 min

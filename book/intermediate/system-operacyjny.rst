@@ -2,6 +2,7 @@
 System Operacyjny
 *****************
 
+
 ``os``
 ======
 
@@ -258,14 +259,18 @@ Parsowanie i sanityzacja argumentów
     >>>
     # directory and contents have been removed
 
-``eval``
-========
+
+``io``
+======
+* ``io`` to biblioteka do obsługi strumienia wejściowego i wyjściowego
+* StringIO jest wtedy traktowany jak plik wejściowy.
 
 .. code-block:: python
 
-    >>> x = 1
-    >>> eval('x+1')
-    2
+    import io
+
+    io.StringIO
+
 
 Zadanie kontrolne
 =================

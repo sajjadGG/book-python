@@ -33,7 +33,7 @@ Parsowanie ``/etc/passwd``
 
 :Założenia:
     * Nazwa pliku: ``exam-foundations.py``
-    * Linii kodu do napisania: około 60 linii
+    * Szacunkowa długość kodu: około 60 linii
     * Maksymalny czas na zadanie: 60 min
 
 :Co zadanie sprawdza?:

@@ -343,7 +343,7 @@ Dzienniczek ucznia
 
 :Założenia:
     * Nazwa pliku: ``loops-report-card.py``
-    * Linii kodu do napisania: około 10 linie
+    * Szacunkowa długość kodu: około 10 linie
     * Maksymalny czas na zadanie: 15 min
 
 :Podpowiedź:

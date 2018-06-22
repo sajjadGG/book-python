@@ -175,7 +175,7 @@ Obliczanie odległości między dwoma punktami
 
 :Założenia:
     * Nazwa pliku: ``functions-eucledean-2d.py``
-    * Linii kodu do napisania: około 5 linii
+    * Szacunkowa długość kodu: około 5 linii
     * Maksymalny czas na zadanie: 15 min
 
 Obliczanie odległości między dwoma punktami
@@ -221,7 +221,7 @@ Obliczanie odległości między dwoma punktami
 
 :Założenia:
     * Nazwa pliku: ``functions-eucledean-ndim.py``
-    * Linii kodu do napisania: około 10 linii
+    * Szacunkowa długość kodu: około 10 linii
     * Maksymalny czas na zadanie: 15 min
 
 Mnożenie macierzy iteracyjnie
@@ -253,7 +253,7 @@ Mnożenie macierzy iteracyjnie
 
 :Założenia:
     * Nazwa pliku: ``math-matrix-iter.py``
-    * Linii kodu do napisania: około 6 linii
+    * Szacunkowa długość kodu: około 6 linii
     * Maksymalny czas na zadanie: 20 min
 
 :Podpowiedź:
@@ -282,7 +282,7 @@ Mnożenie macierzy wykorzystując biblioteki
 
 :Założenia:
     * Nazwa pliku: ``math-matrix-numpy.py``
-    * Linii kodu do napisania: około 2 linii
+    * Szacunkowa długość kodu: około 2 linii
     * Maksymalny czas na zadanie: 5 min
 
 Przeliczenia trygonometryczne
@@ -294,7 +294,7 @@ Napisz program, który wczyta od użytkownika wielkość kąta w stopniach i wy�
 
 :Założenia:
     * Nazwa pliku: ``math-trigonometry.py``
-    * Linii kodu do napisania: około 10 linii
+    * Szacunkowa długość kodu: około 10 linii
     * Maksymalny czas na zadanie: 10 min
 
 :Podpowiedź:
@@ -309,7 +309,7 @@ Lotto
 
 :Założenia:
     * Nazwa pliku: ``functions-random-number.py``
-    * Linii kodu do napisania: około 5 linii
+    * Szacunkowa długość kodu: około 5 linii
     * Maksymalny czas na zadanie: 10 min
 
 :Podpowiedź:
@@ -331,7 +331,7 @@ Pole trójkąta
 
 :Założenia:
     * Nazwa pliku: ``functions-triangle.py``
-    * Linii kodu do napisania: około 5 linii
+    * Szacunkowa długość kodu: około 5 linii
     * Maksymalny czas na zadanie: 10 min
 
 :Co zadanie sprawdza?:
@@ -374,5 +374,5 @@ Czy dwa wykresy są takie same? Co się stanie jeżeli będziemy zwiększali odc
 
 :Założenia:
     * Nazwa pliku: ``math-random-point.py``
-    * Linii kodu do napisania: około 15 linii
+    * Szacunkowa długość kodu: około 15 linii
     * Maksymalny czas na zadanie: 20 min
