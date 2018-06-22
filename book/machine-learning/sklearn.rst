@@ -9,18 +9,18 @@ Datasets
     :caption: Classifier
 
 
+Fit and Predict
+===============
+.. literalinclude:: src/ml-sklearn-fit-predict.py
+    :language: python
+    :caption: Fit and Predict
+
+
 Classifier
 ==========
 .. literalinclude:: src/ml-sklearn-classifier.py
     :language: python
     :caption: Classifier
-
-
-Label Encoder
-=============
-.. literalinclude:: src/ml-sklearn-label-encoder.py
-    :language: python
-    :caption: Label Encoder
 
 
 Evaluation
@@ -37,6 +37,13 @@ Cross Validation
 .. literalinclude:: src/ml-sklearn-cross-validation.py
     :language: python
     :caption: Cross Validation
+
+
+Label Encoder
+=============
+.. literalinclude:: src/ml-sklearn-label-encoder.py
+    :language: python
+    :caption: Label Encoder
 
 
 
