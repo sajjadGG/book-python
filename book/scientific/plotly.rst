@@ -29,21 +29,15 @@ Jupyter Usage
     x = [1, 2, 3, 4]
     y = [4, 3, 2, 1]
 
-    py.iplot({
+
+    # For in script chart rendering
+    py.plot({
         "data": [go.Scatter(x=x, y=y)],
         "layout": go.Layout(title="hello world")
     })
 
-
-.. code-block:: python
-
-    import plotly.offline as py
-    import plotly.graph_objs as go
-
-
-    x = [1, 2, 3, 4]
-    y = [4, 3, 2, 1]
-
+    # If you want to use Plotly with Jupyter
+    # Note the ``i`` before ``plot``
     py.iplot({
         "data": [go.Scatter(x=x, y=y)],
         "layout": go.Layout(title="hello world")
@@ -59,7 +53,7 @@ Plot Controls & IPython widgets
 Charts
 ======
 
-Table
+Tabl
 -----
 .. literalinclude:: src/plotly-table.py
     :language: python
