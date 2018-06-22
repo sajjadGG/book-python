@@ -6,17 +6,7 @@ Object Oriented Programming
 
 Object Paradigm
 ===============
-W programowaniu istnieje kilka popularnych paradygmatów (idei programowania), są to między innymi:
-
-    * imperatywny,
-    * deklaratywny,
-    * funkcjonalny,
-    * proceduralny,
-    * obiektowy.
-
-Paradygm imperatywny oznacza, że używane są instrukcje, które zmieniają stan programu. Lista poleceń do wypełnienia przez komputer. Przykładami języków imperatywnych są C++, Python, Java i wiele innych. Paradygm deklaratwny pozwala budować programy opisując pożądany efekt zamiast kolejnych procedur, przykładem takiego języka jest HTML, w którym opisujemy jak ma strona wyglądać, nie wgłębiając się w to jak ten efekt zostanie osiągnięty. Paradygmat funcjonalny oznacza, że wykorzystywane są jedynie funkcje, które zawsze zwracają tą samą wartość dla tych samych argumentów. Nacisk jest wtedy kładziony na matematyczny opis funkcji. Jedną z istotnych zalet tego paradygmatu jest możliwość matematycznego udowodnienia skuteczności programu. Paradygmat proceduralny polega na tym, że program wykonuje listę procedur, które to procedury są zgrupowane w byty, które można nazwać funkcjami. W tym przypadku nie jest to jendak funkcja matematyczna (jak w przypadku paradygmatu funkcjonalnego), a lista poleceń i komend.
-
-Paradygmat obiektowy polega na tym, że program manipuluje złożonymi obiektami, z których każdy ma swój własny stan i ten stan można modyfikować metodami przypisanymi do tego obiektu. Paradygmat obiektówy pozwala pisać bardzo przejrzysty kod i zrozumiały kod.
+* Odwzorowanie świata na obiekty i relacje między nimi
 
 Classes and Objects
 ===================
@@ -55,8 +45,8 @@ Methods
     :language: python
     :caption: Methods
 
-``self``
---------
+``self`` - Instance as an argument
+----------------------------------
 * pierwszy argument do metody
 * wyjątek ``@staticmethod`` o tym będzie później
 * przy uruchomieniu funkcji nie podajemy go jawnie
@@ -69,13 +59,44 @@ Methods
 ----------------------------------
 * ``__init__()`` to nie konstruktor
 * Domyślny ``__init__()`` gdy niezdefiniowaliśmy własnego
+* Inicjalizacja pól klasy tylko w ``__init__``
+
+.. literalinclude:: src/oop-fields-dynamic.py
+    :language: python
+    :caption: Fields added dynamicly
 
 .. literalinclude:: src/oop-init.py
     :language: python
     :caption: ``__init__()`` - Initalizer Method
 
+.. literalinclude:: src/oop-init-dynamic.py
+    :language: python
+    :caption: Funkcja inicjalizująca, która automatycznie dodaje pola do naszej klasy w zależności od tego co zostanie podane przy tworzeniu obiektu
+
+``__str__()`` - Stringify object
+--------------------------------
+.. literalinclude:: src/oop-str.py
+    :language: python
+    :caption: Stringify object
+
+``__str__()`` and ``__repr__()``
+---------------------------------
+* ``__repr__`` jest dla developerów (być jednoznacznym),
+* ``__str__`` dla użytkowników (być czytelnym).
+
+.. literalinclude:: src/oop-repr.py
+    :language: python
+    :caption: Using ``__repr__()`` on a class
+
+.. code-block:: python
+
+    import datetime
+
+    datetime.datetime.now()  # ``__repr__``
+    print(datetime.datetime.now())  # ``__str__``
+
 Inheritance
------------
+===========
 .. literalinclude:: src/oop-inheritance.py
     :language: python
     :caption: Inheritance
@@ -86,92 +107,36 @@ Multiple Inheritance
     :language: python
     :caption: Multiple Inheritance
 
-* gdzie wsadzić metodę ``zatrab()``
-* gdzie wsadzić metodę ``ruszaj()``
-* gdzie wsadzić metodę ``otworz_dach()``
-
 Composition (Mixin Classes)
 ---------------------------
 .. literalinclude:: src/oop-composition.py
     :language: python
     :caption: Composition (Mixin Classes)
 
-Dziedziczenie czy kompozycja?
------------------------------
+Inheritance vs. Composition
+---------------------------
 * Kompozycja ponad dziedziczenie!
 
-``super()``
------------
-Funkcja ``super`` pozwala uzyskać dostęp do obiektu po którym dziedziczymy, do jego parametrów statycznych i metod, które przeciążamy (m.in. funkcji ``__init__``).
-
-.. code-block:: python
-
-    class Samochod:
-        def zatrab(self):
-            print('biiiip')
-
-    class Maluch(Samochod):
-        def zatrab(self):
-            print('bip')
-
-        def jak_trabi_samochod(self):
-            return super().zatrab()
-
-``__str__()``
--------------
-.. literalinclude:: src/oop-str.py
+``super()`` - Calling object parent
+-----------------------------------
+.. literalinclude:: src/oop-super.py
     :language: python
-    :caption: Using ``__str__()`` on a class
+    :caption: Using ``super()`` on a class
 
-``__str__()`` i ``__repr__()``
-------------------------------
-Dwiema dość często używanymi metodami systemowymi są ``__repr__`` i ``__str__``. Obie te funkcje konwertują obiekt klasy do stringa, mają jednak inne przeznaczenie:
+``_`` and ``__`` - Private, protected, public?!
+===============================================
+* Brak pól protected i private
+* Wszystkie pola są public
+* ``_nazwa`` - pola prywatne (tylko konwencja)
+* ``__nazwa__`` - funkcje systemowe
+* ``nazwa_`` - używane przy kolizji nazw
 
-Albo jeszcze inaczej:
-
-    * ``__repr__`` jest dla developerów (być jednoznacznym),
-    * ``__str__`` dla użytkowników (być czytelnym).
-
-.. literalinclude:: src/oop-repr.py
+.. literalinclude:: src/oop-private-public.py
     :language: python
-    :caption: Using ``__repr__()`` on a class
+    :caption: ``_`` and ``__`` - Private, protected, public?!
 
-Przykład praktyczny:
-
-.. code-block:: python
-
-    import datetime
-
-    datetime.datetime.now()  # ``__repr__``
-    print(datetime.datetime.now())  # ``__str__``
-
-Inicjalizacja parametrów
-------------------------
-* Inicjalizacja pól klasy tylko w ``__init__``
-
-.. literalinclude:: src/oop-fields-dynamic.py
-    :language: python
-    :caption: Fields added dynamicly
-
-.. literalinclude:: src/oop-init-dynamic.py
-    :language: python
-    :caption: Funkcja inicjalizująca, która automatycznie dodaje pola do naszej klasy w zależności od tego co zostanie podane przy tworzeniu obiektu
-
-Private, public? konwencja ``_`` i ``__``
+What should be in the class and what not?
 -----------------------------------------
-W Pythonie nie ma czegoś takiego jak prywatne pole klasy. Czy prywatna metoda klasy. Wszystkie obiekty zdefiniowane wewnątrz klasy są publiczne. Istnieje jednak ogólnie przyjęta konwencja, że obiekty poprzedzone ``_`` są prywatne dla tej klasy i nie powinny być bezpośrednio wywoływane przez użytkownika. Podobnie z funkcjami rozpoczynającymi się od ``__`` (m.in. metody magiczne wspomniane powyżej). Są tu funkcje systemowe, które są używane przez interpreter Pythona i raczej nie powinny być używane bezpośrednio.
-
-.. code-block:: python
-
-    __author__ = 'Matt Harasymczuk'
-
-    class Person:
-        imie = ''  # publiczna
-        data_urodzenia = ''  #publiczna
-        _wiek =  # prywanta
-
-Co powinno być w klasie a co nie?
----------------------------------
 * Jeżeli metoda w swoim ciele ma ``self`` i z niego korzysta to powinna być w klasie
 * Jeżeli metoda nie ma w swoim ciele ``self`` to nie powinna być w klasie
 * Jeżeli metoda nie ma w swoim ciele ``self`` ale wybitnie pasuje do klasy, to można ją tam zamieścić oraz dodać dekorator ``@staticmethod``
@@ -180,39 +145,17 @@ Co powinno być w klasie a co nie?
     :language: python
     :caption: Case Study uzasadnionego użcycia ``@staticmethod``
 
-Klasa per plik?
----------------
-Patrz przykład powyżej
+One class per file?
+-------------------
+* Jeżeli klasy są małe - jeden plik
+* Jeżeli klasy są duże - osobne pliki
 
-Duck typing
------------
-.. code-block:: python
-
-    {}  # dict
-    {1}  # set
-    {1, 2}  # set
-    {1: 2}  # dict
-    {1:1, 2:2}  # dict
-
-    my_data = {}
-    isinstance(my_data, (set, dict))  # True
-
-    isinstance(my_data, dict)  # True
-    isinstance(my_data, set)  # False
-
-    my_data = {1}
-    isinstance(my_data, set)  # True
-    isinstance(my_data, dict)  # False
-
-    my_data = {1: 1}
-    isinstance(my_data, set)  # False
-    isinstance(my_data, dict)  # True
 
 Assignments
 ===========
 
-Addressbook (Easy)
-------------------
+Address Book (Easy)
+-------------------
 #. Dla danych z :numref:`listing-oop-addressbook-easy` napisz książkę adresową
 #. Wszystkie dane w książce muszą być reprezentowane przez klasy.
 #. Klasy powinny wykorzystywać domyślne argumenty w ``__init__``.
@@ -235,7 +178,7 @@ Addressbook (Easy)
     :language: python
     :caption: Address Book
 
-Addressbook  (Medium)
+Address Book (Medium)
 ---------------------
 #. API programu powinno być tak jak na :numref:`listing-oop-address-book`
 #. Zrób tak, aby się ładnie wyświetlało zarówno dla jednego wyniku (``print(adres)``, ``print(osoba)`` jak i dla wszystkich w książce ``print(ksiazka_adresowa)``.
@@ -249,7 +192,7 @@ Addressbook  (Medium)
     :language: python
     :caption: Address Book
 
-Addressbook  (Hard)
+Address Book (Hard)
 -------------------
 #. ``Adres`` ma mieć zmienną liczbę argumentów (``**kwargs``)
 #. Jeżeli argument jest różny od ``None`` powinien być dynamicznie ustawiony (``setattr()``).
@@ -262,8 +205,8 @@ Addressbook  (Hard)
 :Co zadanie sprawdza?:
     * korzystanie z operatorów ``*`` i ``**`` (zadanie z gwiazdką)
 
-Punkty i wektory
-----------------
+Points and Vectors
+------------------
 Przekształć swój kod z przykładu z modułu "Matematyka" tak żeby wykorzytywał klasy.
 
 :Zadanie 0:

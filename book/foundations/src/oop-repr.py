@@ -1,25 +1,26 @@
-class Samochod:
-    def __init__(self, marka, kola=4):
-        self.marka = marka
-        self.kola = kola
+class Astronaut:
+    def __init__(self, name, agency='NASA'):
+        self.name = name
+        self.agency = agency
 
     def __str__(self):
-        return f'Marka: {self.marka} i ma {self.kola} koła'
+        return f'My name {self.name}'
 
     def __repr__(self):
-        return f'Samochod(marka={self.marka}, kola={self.kola})'
+        return f'Astronaut(name="{self.name}", agency="{self.agency}")'
 
 
-auto = Samochod(marka='mercedes', kola=3)
-print(auto)
-# Marka: mercedes i ma 3 koła
+jose = Astronaut(name='Jose Jimenez', agency='NASA')
+print(jose)
+# My name Jose Jimenez
 
-auta = [
-    Samochod(marka='mercedes', kola=3),
-    Samochod(marka='maluch', kola=4),
-    Samochod(marka='fiat', kola=4),
+crew = [
+    Astronaut(name='Jose Jimenez', agency='NASA'),
+    Astronaut(name='Max Peck', agency='NASA'),
+    Astronaut(name='Ivan Ivanovic', agency='Roscosmos'),
 ]
-print(auta)
-# Samochod(marka='mercedes', kola=3),
-# Samochod(marka='maluch', kola=4),
-# Samochod(marka='fiat', kola=4),
+
+print(crew)
+# Astronaut(name='Jose Jimenez', agency='NASA'),
+# Astronaut(name='Max Peck', agency='NASA'),
+# Astronaut(name='Ivan Ivanovic', agency='Roscosmos'),

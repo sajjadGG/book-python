@@ -21,6 +21,7 @@ Python
 
 Machine Learning and Data Science
 =================================
+* https://www.youtube.com/watch?v=mA5nwGoRAOo (+ cała playlista)
 * (UC San Diego) https://www.edx.org/course/python-for-data-science
 * (UC San Diego) https://www.edx.org/course/statistics-and-probability-in-data-science-using-python
 * (MIT) https://www.edx.org/course/introduction-computer-science-mitx-6-00-1x-11
