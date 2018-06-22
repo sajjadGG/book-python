@@ -34,7 +34,7 @@ Windows
 * Znać ścieżkę do katalogu gdzie zainstalowany jest Python
 
 macOS
-----
+-----
 * macOS powinien mieć już zainstalowanego Pythona
 * Możesz zainstalować najnowszą wersję Pythona z oficjalnej strony internetowej
 * Alternatywnie możesz użyć ``brew`` (darmowy manager pakietów)

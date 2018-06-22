@@ -187,7 +187,7 @@ Address Book (Easy)
 
 Address Book (Medium)
 ---------------------
-#. API programu powinno być tak jak na :numref:`listing-oop-address-book`
+#. API programu powinno być tak jak na :numref:`listing-oop-addressbook-medium`
 #. Zrób tak, aby się ładnie wyświetlało zarówno dla jednego wyniku (``print(adres)``, ``print(osoba)`` jak i dla wszystkich w książce ``print(ksiazka_adresowa)``.
 
 :Założenia:
@@ -196,6 +196,7 @@ Address Book (Medium)
     * Maksymalny czas na zadanie: 20 min
 
 .. literalinclude:: src/oop-assignment-addressbook-medium.py
+    :name: listing-oop-addressbook-medium
     :language: python
     :caption: Address Book
 
