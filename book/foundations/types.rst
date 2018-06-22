@@ -63,6 +63,7 @@ Type inference
     # this will work, but IDE should warn
     name: str = 10
 
+
 Numerical types
 ===============
 
@@ -147,6 +148,7 @@ Logic Data Types
 
     if not wiek:
         print('What is your name?')
+
 
 Character types
 ===============
