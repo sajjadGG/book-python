@@ -2,11 +2,17 @@
 Simple Data Structures
 **********************
 
+
 Simple Collections
 ==================
 
 ``tuple``
 ---------
+* Immutable - cannot add, modify or remove elements
+* Required comma for one element ``tuple``
+* Brackets are optional
+* Can store any type
+
 .. code-block:: python
 
     my_tuple = ()
@@ -21,48 +27,36 @@ Simple Collections
 
 .. code-block:: python
 
-    >>> def return_arguments(a, b):
-    ...    return a, b
-
-    >>> return_arguments(10, 20)
-    (10, 20)
-
-.. code-block:: python
-
-    >>> my_tuple = (1, 2, 3, 4, 5)
-
-    >>> my_tuple[:3]  # do 3
-    (1, 2, 3)
-
-    >>> my_tuple[1:4]  # od 1 do 4
-    (2, 3, 4)
-
-    >>> my_tuple[3:]  # od 3 do końca
-    (4, 5)
-
-    >>> my_tuple[::2]  # co 2
-    (1, 3, 5)
-
-    >>> my_tuple[-1]  # ostatni i ostatni element
-    5
+    my_tuple = (1, 2, 3, 4, 5)
+    my_tuple[:3]  # (1, 2, 3)
+    my_tuple[1:4]  # (2, 3, 4)
+    my_tuple[3:]  # (4, 5)
+    my_tuple[::2]  # (1, 3, 5)
+    my_tuple[-1]  # 5
 
 .. code-block:: python
 
-    >>> my_tuple = (1, 2, 3, 4, 5)
+    my_tuple = (1, 2, 3, 4, 5)
 
     MIN = 1
     MAX = 5
 
-    zmienna = slice(MIN, MAX)
-    my_tuple[zmienna]
-    # (2, 3, 4)
+    between = slice(MIN, MAX)
+    my_tuple[between]  # (2, 3, 4)
+    my_tuple[MIN:MAX]  # (2, 3, 4)
 
-    my_tuple[MIN:MAX]  # to samo
-    # (2, 3, 4)
+.. code-block:: python
 
+    my_tuple = (1, 2, 3)
+    len(my_tuple)  # 3  # Liczność
 
 ``list``
 --------
+* Brackets are required
+* Can store any type
+* No need for comma for one element ``list``
+* Can be appended or extended
+
 .. code-block:: python
 
     my_list = []
@@ -75,85 +69,67 @@ Simple Collections
 
 .. code-block:: python
 
-    >>> my_list = [1, 2, None, False, 'hej']
-    >>> my_list[1]
-    2
-    >>> my_list[2:5]
-    [None, False, 'hej']
+    my_list = [1, 2, None, False, 'hej']
+    my_list[1]  # 2
+    my_list[2:4]  # [None, False]
 
 .. code-block:: python
 
-    >>> my_list = [1, 2]
-    >>> my_list = my_list.append([3, 4])
-    [1, 2, [3, 4]]
+    my_list = [1, 2]
+    my_list = my_list.append([3, 4])  # [1, 2, [3, 4]]
 
-    >>> my_list = [1, 2]
-    >>> my_list.extend([3, 4])
-    [1, 2, 3, 4]
+    my_list = [1, 2]
+    my_list.extend([3, 4])  # [1, 2, 3, 4]
 
+.. code-block:: python
+
+    my_list = [1, 2, 3]
+    len(my_list)  # 3  # Liczność
 
 ``set``
 -------
+* Only unique values
+* No need for comma for one element ``set``
+
 .. code-block:: python
 
     my_set = {1}
-    # {1}
+    my_set = {1, 3, 1}  # {1, 3}
+    my_set = set([1, 3, 1])  # {1, 3}
 
-    {1, 3, 1}
-    # {1, 3}
+.. code-block:: python
 
-    set([1, 3, 1])
-    # {1, 3}
+    my_set = {1, 2, 3}  # {1, 2, 3}
+
+    my_set.add(4)  # {1, 2, 3, 4}
+    my_set.add(4)  # {1, 2, 3, 4}
+    my_set.add(3)  # {1, 2, 3, 4}
+
+.. code-block:: python
+
+    {1,2} - {2,3}  # {1}  # Subtract
+    {1,2} | {2,3}  # {1, 2, 3}  # Suma
+    {1,2} & {2,3}  # {2}  # Union
+    {1,2} ^ {2,3}  # {1, 3}  # Różnica symetryczna
+    {1,2} + {3,4}  # TypeError: unsupported operand type(s) for +: 'set' and 'set'
 
 .. code-block:: python
 
     my_set = {1, 2, 3}
-    # {1, 2, 3}
-
-    my_set.add(4)
-    my_set.add(4)
-    my_set.add(3)
-    # {1, 2, 3, 4}
-
-.. code-block:: python
-
-    {1,2} - {2,3}  # Różnica
-    # {1}
-
-    {1,2} | {2,3}  # Suma
-    # {1, 2, 3}
-
-    {1,2} & {2,3}  # Iloczyn
-    # {2}
-
-    {1,2} ^ {2,3}  # Różnica symetryczna
-    # {1, 3}
-
-    {1,2} + {3,4}
-    # Traceback (most recent call last):
-    #    ...
-    # TypeError: unsupported operand type(s) for +: 'set' and 'set'
-
-.. code-block:: python
-
-    my_set = {1, 2, 3}
-    len(my_set)  # Liczność
-    # 3
-
-    1 in my_set  # Przynależność
-    # True
-
-    for element in my_set:  # Można po nim iterować
-        print(element)
+    len(my_set)  # 3  # Liczność
 
 .. code-block:: python
 
     names = ['Max', 'Ivan', 'Jose', 'Max']
-    unique_names = set(imiona)
-    # {'Jose', 'Ivan', 'Max'}
+    unique_names = set(imiona)  # {'Jose', 'Ivan', 'Max'}
 
 ``dict``
 --------
+* Key - Value storage
+* Key can be any hashable object
+* Value can be any object
+* Przy wyświetlaniu elementów słownika, kolejność może się zmieniać!
+
 .. code-block:: python
 
     my_dict = {
@@ -164,38 +140,25 @@ Simple Collections
         1: 'value for one',
     }
 
-    my_dict['last_name']
-    # 'Jiménez'
-
-    my_dict['locations']
-    # ['Cape Canaveral', 'Houston']
-
-    my_dict[1]
-    # 'value for one'
+    my_dict['last_name']  # 'Jiménez'
+    my_dict['locations']  # ['Cape Canaveral', 'Houston']
+    my_dict[1]  # 'value for one'
 
 .. code-block:: python
 
-    >>> my_dict = {'wiek': 20, 'wiek': 30}
-    {'wiek': 30}
+    my_dict = {'wiek': 20, 'wiek': 30}  # {'wiek': 30}
 
 .. code-block:: python
 
-    >>> my_dict = {'wiek': 30, 'imie': 'José', 'nazwisko': 'Jiménez'}
+    my_dict = {'wiek': 30, 'imie': 'José', 'nazwisko': 'Jiménez'}
 
-    >>> my_dict.keys()
-    dict_keys(['wiek', 'imie', 'nazwisko'])
-
-    >>> my_dict.values()
-    dict_values([30, 'José', 'Jiménez'])
-
-    >>> my_dict.items()
-    dict_items([('wiek', 30), ('imie', 'José'), ('nazwisko', 'Jiménez')])
-
-.. note:: przy wyświetlaniu elementów słownika, kolejność może się zmieniać!
+    my_dict.keys()  # dict_keys(['wiek', 'imie', 'nazwisko'])
+    my_dict.values()  # dict_values([30, 'José', 'Jiménez'])
+    my_dict.items()  # dict_items([('wiek', 30), ('imie', 'José'), ('nazwisko', 'Jiménez')])
 
 ``dict`` vs. ``set``
 --------------------
-Należy zwrócić uwagę, aby nie pomylić z dictem:
+* Należy zwrócić uwagę, aby nie pomylić z ``dict``
 
 .. code-block:: python
 
@@ -207,50 +170,33 @@ Należy zwrócić uwagę, aby nie pomylić z dictem:
 
 .. code-block:: python
 
-    >>> my_data = {}
-    >>> isinstance(my_data, (set, dict))
-    True
-    >>> isinstance(my_data, dict)
-    True
-    >>> isinstance(my_data, set)
-    False
+    my_data = {}
+    isinstance(my_data, (set, dict))  # True
+    isinstance(my_data, dict)  # True
+    isinstance(my_data, set)  # False
 
-    >>> my_data = {1}
-    >>> isinstance(my_data, set)
-    True
-    >>> isinstance(my_data, dict)
-    False
+    my_data = {1}
+    isinstance(my_data, set)  # True
+    isinstance(my_data, dict)  # False
 
-    >>> my_data = {1: 1}
-    >>> isinstance(my_data, set)
-    False
-    >>> isinstance(my_data, dict)
-    True
+    my_data = {1: 1}
+    isinstance(my_data, set)  # False
+    isinstance(my_data, dict)  # True
 
 Acessing ``dict`` values with ``[...]`` and ``.get(...)``
 ---------------------------------------------------------
-Do zawartości zmiennej słownikowej możemy uzyskać dostęp używając nawiasów kwadratowych wraz z kluczem, albo funkcji ``.get(klucz)``. Różnica między tymi podejściami polega na tym, że jeżeli dana zmienna słownikowa nie zawiera pewnego klucza, używanie nawiasów kwadratowych wygeneruje wyjątek KeyError, natomiast użycie funkcji ``.get(klucz)`` nie zwróci nic. Do funkcji ``.get(klucz)`` możemy dodatkowo dopisać wartość domyślną która zostanie zwrócona, jeżeli słownik nie posiada danego klucza.
+* ``[...]`` throws ``KeyError`` exception if key not found in ``dict``
+* ``.get(...)`` returns ``None`` if key not found
+* ``.get(...)`` can have default value, if key not found
 
 .. code-block:: python
 
-    >>> dane = {'imie': 'José', 'nazwisko': 'Jiménez'}
-
-    >>> dane['nazwisko']
-    'Jiménez'
-
-    >>> dane.get('nazwisko')
-    'Jiménez'
-
-    >>> dane['wiek']
-    Traceback (most recent call last):
-      File "<stdin>", line 1, in <module>
-    KeyError: 'wiek'
-
-    >>> dane.get('wiek')
-
-    >>> dane.get('wiek', 'n/d')
-    'n/d'
-
+    dane = {'imie': 'José', 'nazwisko': 'Jiménez'}
+    dane['nazwisko']  # 'Jiménez'
+    dane.get('nazwisko')  # 'Jiménez'
+    dane['wiek']    # KeyError: 'wiek'
+    dane.get('wiek')  # None
+    dane.get('wiek', 'n/a')  # n/a
 
 Jak Python rozróżnia typy
 -------------------------
