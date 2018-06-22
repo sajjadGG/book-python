@@ -9,7 +9,7 @@ features_train, features_test, labels_train, labels_test = train_test_split(data
 
 
 model = KNeighborsClassifier()
-score = scores = cross_val_score(model, features_train, labels_train, cv=5)
+scores = cross_val_score(model, features_train, labels_train, cv=5)
 accuracy = scores.mean() * 100  # percent
 stdev = scores.std() * 100  # percent
 

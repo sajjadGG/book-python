@@ -16,6 +16,13 @@ Classifier
     :caption: Classifier
 
 
+Label Encoder
+=============
+.. literalinclude:: src/ml-sklearn-label-encoder.py
+    :language: python
+    :caption: Label Encoder
+
+
 Evaluation
 ==========
 
@@ -64,6 +71,29 @@ Accuracy for Iris dataset: 0.346666666667
 Zadania praktyczne
 ==================
 
+Nearest Neighbor Classifier
+---------------------------
+#. Napisz klafyfikator najbliższego sąsiada
+#. Podziel dane treningowe i testowe pół-na-pół
+#. Dla zbioru Iris ma osiągać accuracy na poziomie powyżej 90%
+#. Klasa ``NearestNeighborClassifier`` powina mieć interfejs zgodny z ``scikit-learn``:
+
+    - ``.fit()`` - do uczenia funkcji
+    - ``.predict()`` - do predykcji
+
+#. Do porównania użyj ``accuracy = metrics.accuracy_score(labels_test, labels_predicted)``
+
+:Podpowiedź:
+    * Dla każdego feature sprawdzasz jaka jest najmniejsza odległość
+    * Wybierasz najmniejszą odległość ze wszystkich
+    * Do obliczania odległości skorzystaj z algorytmu Euclidesa.
+    * ``scipy.spatial.distance.euclidean``
+
+:Założenia:
+    * Nazwa pliku: ``ml-sklearn-classifier.py``
+    * Linii kodu do napisania: około 15 linii
+    * Maksymalny czas na zadanie: 30 min
+
 Porównanie classifierów
 -----------------------
 * Pobierz dane Brest Cancer Dataset (``datasets.load_breast_cancer()``)
@@ -104,22 +134,7 @@ Porównanie classifierów
     * Zrównoleglij uruchamianie predykcji za pomocą modułu ``threading`` oraz architektury opartej na Workerach.
     * Wyświetl posortowaną malejąco listę wg. dokładności
 
-
-Nearest Neighbor Classifier
----------------------------
-- Napisz klafyfikator najbliższego sąsiada osiągający dla zbioru Iris accuracy na poziomie około 0.96 dla ``test_size=0.5``.
-
-- Klasa ``NearestNeighborClassifier`` powina mieć interfejs zgodny z ``scikit-learn``:
-
-    - ``.fit()`` - do uczenia funkcji
-    - ``.predict()`` - do predykcji
-
-:Podpowiedź:
-    * Do załadowania danych skorzystaj z ``load_iris()``
-    * Do obliczania odległości skorzystaj z algorytmu Euclidesa.
-
-    .. code-block:: python
-
-        >>> from scipy.spatial import distance
-
-        >>> distance.euclidean(point_from_numeric_data, point_from_testing_data)
+:Założenia:
+    * Nazwa pliku: ``ml-sklearn-comparision.py``
+    * Linii kodu do napisania: około 15 linii
+    * Maksymalny czas na zadanie: 20 min

@@ -1,5 +1,4 @@
 from sklearn import metrics
-
 from scipy.spatial import distance
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import load_iris
@@ -7,7 +6,6 @@ from sklearn.datasets import load_iris
 
 class NearestNeighborClassifier:
     def fit(self, features, labels):
-        # Memorize
         self.features_train = features
         self.labels_train = labels
 
@@ -21,13 +19,13 @@ class NearestNeighborClassifier:
         return predictions
 
     def _closest(self, row):
-        best_dist = distance.euclidean(row, self.features_train[0])
+        current_best_dist = distance.euclidean(row, self.features_train[0])
         best_index = 0
 
         for i in range(0, len(self.features_train)):
             dist = distance.euclidean(row, self.features_train[i])
-            if dist < best_dist:
-                best_dist = dist
+            if dist < current_best_dist:
+                current_best_dist = dist
                 best_index = i
 
         return self.labels_train[best_index]

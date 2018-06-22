@@ -186,7 +186,7 @@ Feature Engineering
         >>> labels = label_encoder.fit_transform()
         array([1, 1, 2, 0])
 
-        >>> list(le.classes_)
+        >>> list(label_encoder.classes_)
         ['amsterdam', 'paris', 'tokyo']
 
 
@@ -237,5 +237,7 @@ Feature Engineering
             print(vector)
 
 
-
-
+:Założenia:
+    * Nazwa pliku: ``ml-features-engineering.py``
+    * Linii kodu do napisania: około 15 linii
+    * Maksymalny czas na zadanie: 10 min
