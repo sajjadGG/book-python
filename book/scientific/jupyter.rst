@@ -10,11 +10,13 @@ Jupyter notebook is a language-agnostic HTML notebook application for Project Ju
 * http://jupyter.readthedocs.io/en/latest/install.html
 * https://github.com/jupyter/notebook
 
+
 Install
 =======
 .. code-block:: console
 
     pip install jupyter
+
 
 Run
 ===
@@ -29,6 +31,7 @@ Run
     $ jupyter notebook filename.ipynb
     $ jupyter notebook --port 9999
 
+
 Using
 =====
 * Add code
@@ -36,6 +39,7 @@ Using
 * Modify code and run
 * Autocomplete
 * Cell type (Markdown, LaTeX, Code)
+
 
 Cells
 =====
@@ -54,6 +58,7 @@ Move Up/Down Cells
 Merge, Split Cells
 ------------------
 
+
 Run
 ===
 Run Cell
@@ -65,6 +70,7 @@ Run All (above/below)
 
 Clear Output
 ------------
+
 
 LaTeX
 =====
@@ -87,6 +93,7 @@ LaTeX
     \begin{equation}
     H← ​​​60 ​+​ \frac{​​30(B-R)​​}{Vmax-Vmin}  ​​, if V​max​​ = G
     \end{equation}
+
 
 Magic commands
 ==============
@@ -168,6 +175,7 @@ Formatting
 Tables
 ------
 
+
 Embedding objects
 =================
 
@@ -180,6 +188,7 @@ YouTube
 
     from IPython.display import YouTubeVideo
     YouTubeVideo("wupToqz1e2g")
+
 
 Slides
 ======
