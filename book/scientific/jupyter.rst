@@ -199,8 +199,8 @@ View -> Cell Toolbar -> Slideshow
     jupyter nbconvert filename.ipynb --to slides --post serve
 
 
-Zadania kontrolne
-=================
+Assignments
+===========
 
 Podstawy korzystania
 --------------------

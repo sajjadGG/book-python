@@ -477,9 +477,8 @@ Wersjonowanie API
     Accept-Language:en-US,en;q=0.8,pl;q=0.6
 
 
-Zadania kontrolne
-=================
-
+Assignments
+===========
 
 REST API
 --------

@@ -116,8 +116,9 @@ Aby ``pickle`` mógł odtworzyć obiekt, musi posiadać jego definicję - klasę
 Zamykanie procesów
 ------------------
 
-Zadania kontrolne
-=================
+
+Assignments
+===========
 
 Wielowątkowość
 --------------

@@ -215,6 +215,7 @@ Przykładowe zastosowanie
         def __str__(self):
             return '{first_name} {last_name}'.format(**self.__dict__)
 
-Zadania kontrolne
-=================
+
+Assignments
+===========
 .. todo:: zrobić zadania do rozwiązania dla parametrów z gwiazdką

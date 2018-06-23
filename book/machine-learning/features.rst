@@ -151,8 +151,9 @@ What Makes a Good Feature?
 * Easy to understand features.
 * Look for informative features.
 
-Zadania kontrolne
-=================
+
+Assignments
+===========
 
 Feature Engineering
 -------------------

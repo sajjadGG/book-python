@@ -116,9 +116,8 @@ PCA dla zbioru Iris
     PCA dla zbioru Iris
 
 
-
-Zadania kontrolne
-=================
+Assignments
+===========
 
 PCA dla zbioru Pima Indian Diabetes
 -----------------------------------

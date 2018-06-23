@@ -166,8 +166,9 @@ Testy dla wszystkich funkcji aktualnie zdefiniowanych w przestrzeni nazw wykonuj
         """
         print('hello')
 
-Zadania kontrolne
-=================
+
+Assignments
+===========
 
 Konwersja temperatury
 ---------------------

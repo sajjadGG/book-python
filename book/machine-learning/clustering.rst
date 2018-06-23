@@ -319,8 +319,8 @@ K-means Clustering dla zbioru Iris
     plt.show()
 
 
-Zadania kontrolne
-=================
+Assignments
+===========
 
 Klastrowanie zbioru Iris
 ------------------------

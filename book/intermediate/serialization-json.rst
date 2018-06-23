@@ -104,8 +104,9 @@ Object decoder
     :language: python
     :caption: Encoder do formatu JSON
 
-Zadania kontrolne
-=================
+
+Assignments
+===========
 
 Serializacja dat
 ----------------

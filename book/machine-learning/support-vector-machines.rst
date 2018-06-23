@@ -407,8 +407,8 @@ We'll leave SVMs for the time being and take a look at another classification al
 .. note:: Source: https://github.com/jakevdp/sklearn_pycon2015/blob/master/notebooks/03.1-Classification-SVMs.ipynb
 
 
-Zadania kontrolne
-=================
+Assignments
+===========
 
 Wykorzystanie biblioteki ``sklearn``
 ------------------------------------

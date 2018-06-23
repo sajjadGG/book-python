@@ -122,8 +122,9 @@ Read the docs
 =============
 * http://readthedocs.org
 
-Zadania kontrolne
-=================
+
+Assignments
+===========
 
 Dokumentacja
 ------------

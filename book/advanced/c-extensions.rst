@@ -192,8 +192,9 @@ Python 3
     import hello
     hello.say_hello('José Jiménez')
 
-Zadania kontrolne
-=================
+
+Assignments
+===========
 
 C Types
 -------

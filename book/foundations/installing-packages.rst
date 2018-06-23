@@ -1,5 +1,5 @@
 *******************
-Installing packages
+Installing Packages
 *******************
 
 
@@ -22,8 +22,8 @@ Using
 ``import ...``
 
 
-Zadania kontrolne
-=================
+Assignments
+===========
 
 Instalacja z requirements.txt od venv
 -------------------------------------

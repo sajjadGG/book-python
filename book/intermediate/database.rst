@@ -315,8 +315,8 @@ Data exploration
         superset:app
 
 
-Zadania kontrolne
-=================
+Assignments
+===========
 
 Tworzenie bazy danych i proste zapytania (simple)
 -------------------------------------------------

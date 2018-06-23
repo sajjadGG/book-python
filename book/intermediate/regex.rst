@@ -125,8 +125,8 @@ Writing a Tokenizer
     :caption: Writing a Tokenizer.
 
 
-Zadania kontrolne
-=================
+Assignments
+===========
 
 Walidacja PESEL
 ---------------

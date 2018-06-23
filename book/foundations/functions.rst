@@ -241,8 +241,9 @@ Rekurencja
         else:
             return n * factorial(n-1)
 
-Zadania kontrolne
-=================
+
+Assignments
+===========
 
 Konwersja liczby na zapis słowny
 --------------------------------
@@ -289,31 +290,6 @@ Konwersja liczby na zapis słowny
     * Definiowanie i korzystanie z ``dict`` z wartościami
     * Przypadek zaawansowany: argumenty pozycyjne i domyślne
     * Rzutowanie i konwersja typów
-
-Prosta memoizacja
------------------
-#. Napisz program, który obliczy silnię dla dowolnego ``int``
-#. Program ma zapisać w ``dict`` o nazwie ``MEMOIZE`` wyniki funkcji dla poszczególnych parametrów (klucz to parametr, a wartość to wynik)
-#. Przed uruchomieniem funkcji, musi sprawdzić czy wynik został już wcześniej obliczony
-
-    - jeżeli tak, to zwraca dane z cache
-    - jeżeli nie, to oblicza, aktualizuje cache a następnie zwraca wartość
-
-#. Porównaj prędkość działania z obliczaniem na bieżąco dla parametru 500
-
-:Założenia:
-    * Nazwa pliku: ``functions-memoize.py``
-    * Szacunkowa długość kodu: około 5 linii
-    * Maksymalny czas na zadanie: 15 min
-
-:Podpowiedź:
-    .. code-block:: python
-
-        def factorial(n: int) -> int:
-            if n == 0:
-                return 1
-            else:
-                return n * factorial(n-1)
 
 Rzymskie
 --------

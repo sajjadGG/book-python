@@ -1,11 +1,12 @@
-.. _Matematyka:
+.. _Mathematics:
 
-**********
-Matematyka
-**********
+***********
+Mathematics
+***********
 
-Moduł ``math`` w bibliotece standardowej
-========================================
+
+``math``
+========
 Biblioteka ``math`` implementuje podstawowe operacje matematyczne. Pełna lista funkcji, wraz z opisami, dostępna jest po wywołaniu komendy ``help(math)``. Funckcje biblioteki ``math`` wykonują operacje na pojedynczych liczbach (nie na listach).
 
 .. code-block:: python
@@ -41,8 +42,9 @@ Biblioteka ``math`` implementuje podstawowe operacje matematyczne. Pełna lista 
     math.pi
     math.e
 
-Moduł ``statistics`` w bibliotece standardowej
-==============================================
+
+``statistics``
+==============
 
 Moduł ``statistics`` pozwala na wykonywanie podstawowych operacji statystycznych, w tym obliczanie średnich, wariancji i odchylenia standardowego.
 
@@ -54,8 +56,9 @@ Moduł ``statistics`` pozwala na wykonywanie podstawowych operacji statystycznyc
     statistics.mean()
     statistics.stdev()
 
-Moduł ``random`` w bibliotece standardowej
-==========================================
+
+``random``
+==========
 
 .. code-block:: python
 
@@ -109,8 +112,9 @@ Moduł ``random`` w bibliotece standardowej
     # [(7, 12), (4, 8), (9, 6), (1, 5), (2, 4)]
 
 
-Moduł ``matplotlib`` (biblioteka zewnętrzna)
-============================================
+``matplotlib``
+==============
+* biblioteka zewnętrzna ``pip install matplotlib``
 .. note:: Moduł jest szczegółowo opisany w :numref:`Matplotlib`.
 
 Moduł ``matplotlib`` pozwala na rysowanie wykresów i diagramów. Jest to bardzo rozbudowana biblioteka z setkami opcji konfiguracyjnych. Najczęściej używanym modułem biblioteki ``matplotlib`` jest moduł ``pyplot``, który implementuje szereg funkcji umożliwiających rysowanie wykresów 2d.
@@ -139,11 +143,11 @@ Podstawowe użycie jest następujące.
     plt.show()
 
 
-Zadania kontrolne
-=================
+Assignments
+===========
 
-Obliczanie odległości między dwoma punktami
--------------------------------------------
+Euclidean distance 2D
+---------------------
 #. Dane są dwa punkty :math:`A` i :math:`B` o podanych koordynatach ``tuple``
 #. Punkty :math:`A` i :math:`B` są dwuwymiarowe``(x, y)``
 #. Oblicz odległość między nimi
@@ -174,12 +178,12 @@ Obliczanie odległości między dwoma punktami
         pass
 
 :Założenia:
-    * Nazwa pliku: ``functions-eucledean-2d.py``
+    * Nazwa pliku: ``functions_eucledean_2d.py``
     * Szacunkowa długość kodu: około 5 linii
     * Maksymalny czas na zadanie: 15 min
 
-Obliczanie odległości między dwoma punktami
--------------------------------------------
+Euclidean distance multi dimensions
+-----------------------------------
 #. Dane są dwa punkty :math:`A` i :math:`B` o podanych koordynatach ``tuple``
 #. Punkty :math:`A` i :math:`B` są na :math:`N`-wymiarowej przestrzeni ``(x, y, ...)``
 #. Punkty :math:`A` i :math:`B` muszą być równowymiarowe
@@ -220,12 +224,12 @@ Obliczanie odległości między dwoma punktami
     Wyliczanie odległości w celu oszacowania przynależności do zbioru. Zwróć uwagę, że bez względu na ilość wymiarów wzór się niewiele różni.
 
 :Założenia:
-    * Nazwa pliku: ``functions-eucledean-ndim.py``
+    * Nazwa pliku: ``functions_eucledean_multi_dim.py``
     * Szacunkowa długość kodu: około 10 linii
     * Maksymalny czas na zadanie: 15 min
 
-Mnożenie macierzy iteracyjnie
------------------------------
+Matrix multiplication
+---------------------
 #. Napisz program mnożący macierze wykorzystując zagnieżdżone pętle ``for``
 
 .. code-block:: python
@@ -252,7 +256,7 @@ Mnożenie macierzy iteracyjnie
         pass
 
 :Założenia:
-    * Nazwa pliku: ``math-matrix-iter.py``
+    * Nazwa pliku: ``math_matrix_multiplication.py``
     * Szacunkowa długość kodu: około 6 linii
     * Maksymalny czas na zadanie: 20 min
 
@@ -260,55 +264,30 @@ Mnożenie macierzy iteracyjnie
     * macierz zerowa
     * trzy pętle
 
-Mnożenie macierzy wykorzystując biblioteki
-------------------------------------------
-#. Używając ``numpy`` oraz operatora ``@``
-
-.. code-block:: python
-
-    def matrix_multiplication(A, B):
-        """
-        >>> A = [[1, 0], [0, 1]]
-        >>> B = [[4, 1], [2, 2]]
-        >>> matrix_multiplication(A, B)
-        [[4, 1], [2, 2]]
-
-        >>> A = [[1,0,1,0], [0,1,1,0], [3,2,1,0], [4,1,2,0]]
-        >>> B = [[4,1], [2,2], [5,1], [2,3]]
-        >>> matrix_multiplication(A, B)
-        [[9, 2], [7, 3], [21, 8], [28, 8]]
-        """
-        pass
-
-:Założenia:
-    * Nazwa pliku: ``math-matrix-numpy.py``
-    * Szacunkowa długość kodu: około 2 linii
-    * Maksymalny czas na zadanie: 5 min
-
-Przeliczenia trygonometryczne
------------------------------
+Trigonometry
+------------
 Napisz program, który wczyta od użytkownika wielkość kąta w stopniach i wyświetli wartość czterech podstawowych funkcji trygonometrycznych (sin, cos, tg, ctg) o ile dla danego kąta jest to możliwe.
 
 :Zadanie z gwiazdką:
     Jeżeli funkcja trygonometryczna nie istnieje dla danego kąta, zwróć wyjątek ``ValueError('dla tego kąta wartośćfunkcji nie istnieje')``
 
 :Założenia:
-    * Nazwa pliku: ``math-trigonometry.py``
+    * Nazwa pliku: ``math_trigonometry.py``
     * Szacunkowa długość kodu: około 10 linii
     * Maksymalny czas na zadanie: 10 min
 
 :Podpowiedź:
     * ``raise``
 
-Lotto
------
+Random numbers
+--------------
 #. Napisz program, który wyświetli 6 losowych i nie powtarzających się liczb z zakresu od 1 do 49.
 #. Czym sa liczby pseudolosowe?
 #. Czy da się stworzyć program czysto losowy?
 #. Dlaczego?
 
 :Założenia:
-    * Nazwa pliku: ``functions-random-number.py``
+    * Nazwa pliku: ``math_random_numbers.py``
     * Szacunkowa długość kodu: około 5 linii
     * Maksymalny czas na zadanie: 10 min
 
@@ -324,13 +303,13 @@ Lotto
     * Porównanie czyletlności obu rozwiązań
     * Umiejętność sprawdzania czy coś znajduje się w liście oraz ``continue``
 
-Pole trójkąta
--------------
+Triangle
+--------
 #. Napisz program, który obliczy pole trójkąta.
 #. Użytkownik poda wysokość i długość podstawy tego trójkąta. Uwzględnij, że wysokość i długość podstawy mogą być liczbami niecałkowitymi. Wykorzystaj doctest do przetestowania funckji.
 
 :Założenia:
-    * Nazwa pliku: ``functions-triangle.py``
+    * Nazwa pliku: ``math_triangle.py``
     * Szacunkowa długość kodu: około 5 linii
     * Maksymalny czas na zadanie: 10 min
 
@@ -340,9 +319,8 @@ Pole trójkąta
     * Stworzenie dwóch alternatywnych podejść do rozwiązania zadania
     * Porównanie czyletlności obu rozwiązań
 
-
-Losowe punkty w przestrzeni
----------------------------
+Random points
+-------------
 #. Wygeneruj 100 losowych punktów (rozkład gaussa o średniej 0, dowolnym odchyleniu standardowym(np. 0.2))
 #. Punkty muszą być wylosowane wokół dwóch dowolnie wybranych punktów (np. A=[0, 1], B=[2, 4]).
 #. Funkcja musi przechodzić ``doctest``
@@ -373,6 +351,6 @@ Korzystając z funkcji napisanej w ćwiczeniu powyżej oblicz odległość od ka
 Czy dwa wykresy są takie same? Co się stanie jeżeli będziemy zwiększali odchylenie standardowe przy generacji punktów? Albo przybliżymy do siebie punkty A i B?
 
 :Założenia:
-    * Nazwa pliku: ``math-random-point.py``
+    * Nazwa pliku: ``math_random_points.py``
     * Szacunkowa długość kodu: około 15 linii
     * Maksymalny czas na zadanie: 20 min

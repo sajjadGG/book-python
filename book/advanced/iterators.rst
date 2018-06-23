@@ -108,8 +108,9 @@ Przykład
     for liczba in parzyste_f4():
         print(liczba)
 
-Zadania kontrolne
-=================
+
+Assignments
+===========
 
 Range
 -----

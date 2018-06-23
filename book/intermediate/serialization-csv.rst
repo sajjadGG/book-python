@@ -35,8 +35,9 @@ Parsing Java properties file
     :language: python
     :caption: Parsing ``sonar-project.properties`` file with  ``csv.DictReader()``
 
-Zadania Kontrolne
-=================
+
+Assignments
+===========
 
 Wczytywanie pliku ``csv``
 -------------------------

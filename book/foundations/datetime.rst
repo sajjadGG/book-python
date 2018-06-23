@@ -260,8 +260,8 @@ This library allows accurate and cross platform timezone calculations using Pyth
     :caption: Timeit
 
 
-Zadania kontrolne
-=================
+Assignments
+===========
 
 Manipulacja datami
 ------------------

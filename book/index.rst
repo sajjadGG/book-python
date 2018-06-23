@@ -227,6 +227,7 @@ Appendixes
     :numbered:
     :caption: Appendixes
 
+    appendixes/history.rst
     appendixes/przydatne-odnosniki.rst
     appendixes/ksiazki.rst
     appendixes/video.rst

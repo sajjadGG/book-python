@@ -153,9 +153,8 @@ Przykład
     print(args)
 
 
-
-Zadania kontrolne
-=================
+Assignments
+===========
 
 Wyliczanie średniej dla parametrów
 ----------------------------------

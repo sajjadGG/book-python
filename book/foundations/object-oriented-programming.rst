@@ -158,6 +158,11 @@ One class per file?
 * Jeżeli klasy są duże - osobne pliki
 
 
+More advanced topics
+====================
+.. note:: The topic will be continued in Intermediate and Advanced part of the book
+
+
 Assignments
 ===========
 

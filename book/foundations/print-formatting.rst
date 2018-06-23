@@ -232,8 +232,9 @@ Więcej informacji
     # returns formatted data
     my_string = pformat(data)
 
-Zadania kontrolne
-=================
+
+Assignments
+===========
 
 Powielanie napisów
 ------------------

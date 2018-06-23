@@ -122,8 +122,8 @@ Case Study
     :caption: Case Study wykorzystania dekotatorów do poprawienia czytelności kodu Django
 
 
-Zadania kontrolne
-=================
+Assignments
+===========
 
 Prosty dekorator
 ----------------

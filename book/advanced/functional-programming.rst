@@ -250,8 +250,9 @@ Equivalent to:
 
     fibonacci(25)
 
-Zadania kontrolne
-=================
+
+Assignments
+===========
 
 ``map()``, ``filter()`` i ``lambda``
 ------------------------------------

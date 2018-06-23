@@ -61,8 +61,8 @@ Zapis i odczyt danych z pliku:
     print('Przeczytany obiekt:', pp)
 
 
-Zadania kontrolne
-=================
+Assignments
+===========
 
 Serializacja obiektów do Pickle
 -------------------------------

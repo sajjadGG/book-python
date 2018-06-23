@@ -344,8 +344,8 @@ Uwaga, czytelność kodu ma znaczenie
     :caption: Clean Code in generator
 
 
-Zadania kontrolne
-=================
+Assignments
+===========
 
 Generatory vs. Przetwarzanie Listy
 ----------------------------------

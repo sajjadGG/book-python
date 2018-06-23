@@ -1,6 +1,6 @@
-**********************
-Simple Data Structures
-**********************
+***************
+Data Structures
+***************
 
 
 Simple collections
@@ -199,8 +199,8 @@ Accessing ``dict`` values with ``[...]`` and ``.get(...)``
     data.get('agency', 'n/a')  # n/a
 
 
-Complex collections
-===================
+Nested collections
+==================
 
 ``list`` of ``dict``s
 ---------------------
@@ -285,6 +285,11 @@ How Python understands types?
     what = 10.  # <class 'float'>  # len(what) -> TypeError: object of type 'float' has no len()
     what = (10.)  # <class 'float'> # len(what) -> TypeError: object of type 'float' has no len()
     what = (10)  # <class 'int'>  # len(what) -> TypeError: object of type 'int' has no len()
+
+
+More advanced topics
+====================
+.. note:: The topic will be continued in Intermediate and Advanced part of the book
 
 
 Assignments

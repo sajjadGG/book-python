@@ -47,8 +47,8 @@ Przykłady praktyczne
 ====================
 
 
-Zadania kontrolne
-=================
+Assignments
+===========
 
 
 Lektura uzupełniająca

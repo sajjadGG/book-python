@@ -161,8 +161,9 @@ Wady
 * Wolny i zasobożerny (musi iterować dla każdej predykcji)
 * Brak możliwości ważenia features
 
-Zadania kontrolne
-=================
+
+Assignments
+===========
 
 Pima Indians Diabetes problem
 -----------------------------

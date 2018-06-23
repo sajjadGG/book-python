@@ -1,8 +1,8 @@
-.. _Operacje na plikach:
+.. _Files:
 
-*******************
-Operacje na plikach
-*******************
+*****
+Files
+*****
 
 .. code-block:: python
 
@@ -67,8 +67,8 @@ Obsługa wyjątków
     :caption: Exception handling while accessing files
 
 
-Zadania kontrolne
-=================
+Assignments
+===========
 
 Zawartość zadanego pliku
 ------------------------
