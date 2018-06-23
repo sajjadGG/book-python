@@ -48,7 +48,7 @@ Foundations
     foundations/syntax.rst
     foundations/types.rst
     foundations/data-structures.rst
-    foundations/conditionals.rst
+    foundations/control-flow.rst
     foundations/operators.rst
     foundations/loops.rst
     foundations/functions.rst

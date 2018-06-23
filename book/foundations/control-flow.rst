@@ -1,9 +1,10 @@
-********************
-Instrukcje warunkowe
-********************
+***********************
+Control Flow Statements
+***********************
 
-Instrukcje warunkowe
-====================
+
+Conditional Statements
+======================
 
 ``if``
 ------
@@ -12,7 +13,7 @@ Instrukcje warunkowe pozwalają kierować wykonywanymi instrukcjami pod pewnym w
 .. code-block:: python
 
     if True:
-        print('this is true')
+        print('this is True')
 
 
 ``else``
@@ -22,17 +23,17 @@ Do instrukcji warunkowej można dodać słowo kluczowe ``else``. Wtedy, jeżeli 
 .. code-block:: python
 
     if True:
-        print('this is true')
+        print('this is True')
     else:
-        print('this is false')
+        print('this is False')
 
 
 .. code-block:: python
 
     if name != 'José Jiménez':
-        print('this is false')
+        print('this is False')
     else:
-        print('this is true')
+        print('this is True')
 
 
 ``elif``
@@ -64,12 +65,14 @@ Inline ``if``
     else:
         protocol = 'ipv6'
 
-    # alternatywnie
+.. code-block:: python
+
+    ip = '127.0.0.1'
     protocol = 'ipv4' if '.' in ip else 'ipv6'
 
 
-Instrukcje sterujące
-====================
+Control Statements
+==================
 
 ``in``
 ------
@@ -142,8 +145,7 @@ Bardzo kuszący jest następujący przykład:
 ``switch`` statement?!
 ======================
 * Why ``switch`` is bad practise?
-
-    "You can do this easily enough with a sequence of ``if... elif... elif... else``. There have been some proposals for switch statement syntax, but there is no consensus (yet) on whether and how to do range tests. See PEP 275 for complete details and the current status. "
+* PEP 275 - switch statement
 
 .. code-block:: python
 
@@ -165,8 +167,7 @@ Bardzo kuszący jest następujący przykład:
         'Max Peck': 'Your name is Max Peck',
     }
 
-    switch['José Jiménez']
-    # 'My name José Jiménez'
+    switch['José Jiménez']   # 'My name José Jiménez'
 
 .. code-block:: python
 
@@ -177,9 +178,7 @@ Bardzo kuszący jest następujący przykład:
     }
 
     key = 'Neil Armstrong'
-    switch.get(key, 'Your name is other')
-    # 'Your name is other'
-
+    switch.get(key, 'Your name is other')   # 'Your name is other'
 
 .. code-block:: python
 
@@ -193,12 +192,14 @@ Bardzo kuszący jest następujący przykład:
     switch('José Jiménez')  # 'My name José Jiménez'
     switch('Neil Armstrong')  # 'Your name is other'
 
-Zadania kontrolne
-=================
+
+Assignments
+===========
 
 Zmienne i wczytywanie ciągu od użytkownika
 ------------------------------------------
-#. Napisz program, który poprosi użytkownika o wiek i wyświetli wartość.
+#. Napisz program, który poprosi użytkownika o wiek
+#. Użytkownik będzie podawał tylko i wyłącznie ``int`` lub ``float``
 #. Następnie sprawdzi pełnoletność i wyświetli informację czy osoba jest "dorosła" czy "niepełnoletnia".
 
 :Co zadanie sprawdza?:
@@ -210,6 +211,6 @@ Zmienne i wczytywanie ciągu od użytkownika
     * Magic Number
 
 :Założenia:
-    * Nazwa pliku: ``conditionals-input.py``
+    * Nazwa pliku: ``control_flow_input.py``
     * Szacunkowa długość kodu: około 5 linie
     * Maksymalny czas na zadanie: 5 min
