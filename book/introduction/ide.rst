@@ -14,8 +14,9 @@ What is IDE?
 * Spell checking
 * Running code and inspections
 
+
 How to choose?
---------------
+==============
 * Do edycji skryptów Pythona wystarczy sam Notatnik.
 * Kod źródłowy jest na tyle czytelny i prosty, że bardzo łatwo będziemy w stanie poradzić sobie z prostymi skryptami bez jakiejkolwiek pomocy od zaawansowanego edytora.
 * W miarę rośnięcia złożoności projektu oraz ilości plików przyda nam się coś co ułatwi nam pracę.
@@ -28,8 +29,9 @@ How to choose?
 * Ciekawą alternatywą może być PyDev - plugin do środowiska Eclipse.
 * W poniższych materiałach będę posługiwał się kodem źródłowym, który wykonywany jest przez interpreter i nie ma znaczenia z jakiego IDE skorzystasz.
 
+
 Which one is the best?
-----------------------
+======================
 #. PyCharm Professional EAP
 #. PyCharm Community
 #. PyCharm Professional

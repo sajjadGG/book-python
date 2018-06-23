@@ -2,7 +2,27 @@
 Loops
 *****
 
-Pętle służą do wykonywania tego samego fragmentu kodu wielokrotnie. W Pythonie, pętle wykonywane są na obiektach wieloelementowych, albo iteratorach.
+Pętle służą do wykonywania tego samego fragmentu kodu wielokrotnie.
+W Pythonie, pętle wykonywane są na obiektach wieloelementowych, albo iteratorach.
+
+
+``while``
+=========
+Pętla while wykonuje się dopóki argument jest prawdą.
+
+.. code-block:: python
+
+    x = 0
+
+    while x <= 10:
+        print(x)
+        x += 1
+
+.. code-block:: python
+
+    while True:
+        pass
+
 
 ``for``
 =======
@@ -172,25 +192,8 @@ Iterating complex types
         # '2'
 
 
-Pętla ``while``
-===============
-Pętla while wykonuje się dopóki argument jest prawdą.
-
-.. code-block:: python
-
-    x = 0
-
-    while x <= 10:
-        print(x)
-        x += 1
-
-.. code-block:: python
-
-    while True:
-        pass
-
-Słowa kluczowe w pętlach
-========================
+Keywords in loops
+=================
 * ``break`` - powoduje przerwanie pętli.
 * ``continue`` - powoduje przerwanie aktualnie wykonywanej iteracji.
 
@@ -202,12 +205,14 @@ Słowa kluczowe w pętlach
         if number:
             break
 
+
 Inline ``for``
 ==============
-Pętla ``for`` może być także napisana jako jednoliniowy generator.
+* Pętla ``for`` może być także napisana jako jednoliniowy generator
+* List comprehension :numref:`Generators`
 
-Prosty przykład
----------------
+Simple usage
+------------
 .. code-block:: python
 
     cyfry = [x for x in range(0, 10)]
@@ -223,8 +228,8 @@ Prosty przykład
     print(cyfry)
     # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-Instrukcja warunkowa
---------------------
+Conditional loop
+----------------
 Do takiego iteratora można także dodać instrukcję warunkową.
 
 .. code-block:: python
@@ -243,8 +248,8 @@ Do takiego iteratora można także dodać instrukcję warunkową.
     print(cyfry)
     # [0, 2, 4, 6, 8]
 
-Aplikowanie funkcji dla elementu
---------------------------------
+Applying function to element
+----------------------------
 Najczęściej wykorzystuje się tą konstrukcję aby zaaplikować funkcję dla każdego elementu nowej listy
 
 .. code-block:: python
@@ -279,7 +284,7 @@ Najczęściej wykorzystuje się tą konstrukcję aby zaaplikować funkcję dla k
     #    {'number': 4, 'status': 'even'},
     # ]
 
-Porównanie z pętlą ``for``
+``for`` vs. ``inline for``
 --------------------------
 Przykład praktyczny z życia
 
@@ -305,8 +310,8 @@ Przykład praktyczny z życia
     [x for x in line.split(':') if x.startswith('/')]
     # ['/home/jose', '/bin/bash']
 
-Inline ``for`` to nie tylko lista
----------------------------------
+Inline ``for`` not only for ``list``
+------------------------------------
 .. code-block:: python
 
     {pow(x) for x in range(0, 5)}
@@ -328,11 +333,12 @@ Inline ``for`` to nie tylko lista
     {v:k for k,v in my_dict.items()}
     # dict {1:'x', 2:'y'}
 
-Zadania kontrolne
-=================
 
-Dzienniczek ucznia
-------------------
+Assignments
+===========
+
+Report card
+-----------
 #. Przekonwertuj skalę ocen ``(2, 3, 3.5, 4, 4.5, 5)`` na listę ``float`` za pomocą inline ``for``
 #. Użytkownik podaje oceny jako ``int`` lub ``float``
 #. Program ma sprawdzać czy ocena znajduje się w skali ocen
@@ -346,13 +352,13 @@ Dzienniczek ucznia
     * Szacunkowa długość kodu: około 10 linie
     * Maksymalny czas na zadanie: 15 min
 
-:Podpowiedź:
-    * Czytelny kod powinien mieć około 10 linii
-    * ``len()``, ``sum()``
-
 :Co zadanie sprawdza?:
     * wczytywanie ciągu znaków od użytkownika
     * weryfikacja ciągu wprowadzonego od użytkownika
     * korzystanie z pętli oraz instrukcji wychodzących
     * konwersja typów i rzutowanie
     * sprawdzanie czy obiekt jest instancją klasy
+
+:Podpowiedź:
+    * Czytelny kod powinien mieć około 10 linii
+    * ``len()``, ``sum()``

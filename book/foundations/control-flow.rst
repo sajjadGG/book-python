@@ -148,8 +148,8 @@ Bardzo kuszący jest następujący przykład:
     print(f'a is b returns: {a is b}')  # a is b returns: False
 
 
-``switch`` statement?!
-======================
+No ``switch`` statement?!
+=========================
 * Why ``switch`` is bad practise?
 * PEP 275 - switch statement
 

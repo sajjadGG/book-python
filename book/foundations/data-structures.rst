@@ -198,39 +198,6 @@ Accessing ``dict`` values with ``[...]`` and ``.get(...)``
     data.get('agency')  # None
     data.get('agency', 'n/a')  # n/a
 
-How Python understands types?
-=============================
-* Dla każdego z poniższych przykładów wykonano funkcję ``type(what)`` i wynik pokazano poniżej.
-* Dla czytelności przykładu pominięto tę linijkę.
-
-.. code-block:: python
-
-    what = 1, 2  # <class 'tuple'>
-    what = (1, 2)  # <class 'tuple'>
-
-.. code-block:: python
-
-    what = 'foo'  # <class 'str'>
-    what = 'foo',  # <class 'tuple'>
-    what = ('foo')  # <class 'str'>
-    what = ('foo',)  # <class 'tuple'>
-
-.. code-block:: python
-
-    what = 1  # <class 'int'>
-    what = 1.5  # <class 'float'>
-    what = .5  # <class 'float'>
-    what = 1.  # <class 'float'>
-    what = (1.)  # <class 'float'>
-
-.. code-block:: python
-
-    what = 10,  # <class 'tuple'>  # len(what) = 1
-    what = (10,)  # <class 'tuple'>  # len(what) = 1
-    what = 10.  # <class 'float'>  # len(what) -> TypeError: object of type 'float' has no len()
-    what = (10.)  # <class 'float'> # len(what) -> TypeError: object of type 'float' has no len()
-    what = (10)  # <class 'int'>  # len(what) -> TypeError: object of type 'int' has no len()
-
 
 Complex collections
 ===================
@@ -277,12 +244,48 @@ Mixed types
         {'first_name': 'José', 'last_name': 'Jiménez'}
     ]
 
+
 How to initialize?
 ==================
 * ``list()`` or ``[]``
 * ``tuple()`` or ``()``
 * ``dict()`` or ``{}``
 * ``set()`` or ``{}``
+
+
+How Python understands types?
+=============================
+* Dla każdego z poniższych przykładów wykonano funkcję ``type(what)`` i wynik pokazano poniżej.
+* Dla czytelności przykładu pominięto tę linijkę.
+
+.. code-block:: python
+
+    what = 1, 2  # <class 'tuple'>
+    what = (1, 2)  # <class 'tuple'>
+
+.. code-block:: python
+
+    what = 'foo'  # <class 'str'>
+    what = 'foo',  # <class 'tuple'>
+    what = ('foo')  # <class 'str'>
+    what = ('foo',)  # <class 'tuple'>
+
+.. code-block:: python
+
+    what = 1  # <class 'int'>
+    what = 1.5  # <class 'float'>
+    what = .5  # <class 'float'>
+    what = 1.  # <class 'float'>
+    what = (1.)  # <class 'float'>
+
+.. code-block:: python
+
+    what = 10,  # <class 'tuple'>  # len(what) = 1
+    what = (10,)  # <class 'tuple'>  # len(what) = 1
+    what = 10.  # <class 'float'>  # len(what) -> TypeError: object of type 'float' has no len()
+    what = (10.)  # <class 'float'> # len(what) -> TypeError: object of type 'float' has no len()
+    what = (10)  # <class 'int'>  # len(what) -> TypeError: object of type 'int' has no len()
+
 
 Assignments
 ===========

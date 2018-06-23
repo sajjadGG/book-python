@@ -1,3 +1,5 @@
+.. _Generators:
+
 *******************************
 Generatory i list comprehension
 *******************************

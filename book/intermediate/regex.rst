@@ -2,6 +2,7 @@
 Wyrażenia regularne
 *******************
 
+
 Konstruowanie wyrażeń
 =====================
 
@@ -20,6 +21,7 @@ https://regexper.com/
     :name: figure-regexp-vizualization
     :scale: 100%
     :align: center
+
 
 Najczęściej wykorzystywane funkcje
 ==================================
@@ -66,6 +68,7 @@ Najczęściej wykorzystywane funkcje
     :language: python
     :caption: Usage of ``re.split()``
 
+
 Regex Flags
 ===========
 .. csv-table:: Regular Expression Flags
@@ -78,12 +81,14 @@ Regex Flags
     :language: python
     :caption: Usage of regexp
 
+
 Wyciąganie parametrów (zmiennych)
 =================================
 .. literalinclude:: src/re-group.py
     :name: listing-re-group
     :language: python
     :caption: Usage of group in ``re.match()``
+
 
 Greedy i non-greedy search
 ==========================
@@ -93,6 +98,7 @@ The '*', '+', and '?' qualifiers are all greedy; they match as much text as poss
     :name: listing-re-greedy
     :language: python
     :caption: Usage of greedy and non-greedy search in ``re.findall()``
+
 
 Practical example of Regex usage
 ================================
