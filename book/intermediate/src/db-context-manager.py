@@ -22,7 +22,7 @@ SQL_SELECT = """
     SELECT * FROM kontakty
 """
 
-dane = {'pesel': '61041212345', 'firstname': 'Jose', 'lastname': 'Jimenez'},
+dane = {'pesel': '61041212345', 'firstname': 'José', 'lastname': 'Jiménez'},
 
 
 with sqlite3.connect(':memory:') as connection:

@@ -19,7 +19,7 @@ SQL_INSERT = """
 """
 
 ksiazka_adresowa = [
-    {'pesel': '61041212345', 'firstname': 'Jose', 'lastname': 'Jimenez'},
+    {'pesel': '61041212345', 'firstname': 'José', 'lastname': 'Jiménez'},
     {'pesel': '61041212345', 'firstname': 'Max', 'lastname': 'Peck'},
 ]
 

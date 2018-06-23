@@ -11,7 +11,7 @@ class Astronaut:
 
 # Java way
 jose = Astronaut()
-jose.set_name('Jose Jimenez')
+jose.set_name('José Jiménez')
 print(jose.get_name())
 
 # Python way

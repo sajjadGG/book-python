@@ -1,6 +1,6 @@
-*************
-Python Syntax
-*************
+******
+Syntax
+******
 
 
 Indentation instead of braces

@@ -4,7 +4,7 @@ import sqlite3
 
 
 ksiazka_adresowa = [
-    {'firstname': 'Jose', 'lastname': 'Jimenez', 'adresy': 'NASA, Kennedy Space Center, FL, USA'}
+    {'firstname': 'José', 'lastname': 'Jiménez', 'adresy': 'NASA, Kennedy Space Center, FL, USA'}
 ]
 
 

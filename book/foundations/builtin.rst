@@ -129,8 +129,8 @@ Słowo kluczowe ``break`` przerywa aktualnie wykonywaną pętlę.
 ----------
 .. code-block:: python
 
-    eval('name="Jose Jimenez"; print(name)')
-    # Jose Jimenez
+    eval('name="José Jiménez"; print(name)')
+    # José Jiménez
 
 
 ``__file__``

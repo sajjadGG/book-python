@@ -2,7 +2,7 @@ def say_hello():
     print('Hello')
 
 class Astronaut:
-    name = 'Jose Jimenez'
+    name = 'Josv Jiménez'
 
 jose = Astronaut()
 say_hello()
@@ -10,7 +10,7 @@ say_hello()
 
 
 class Astronaut:
-    name = 'Jose Jimenez'
+    name = 'José Jiménez'
 
     def say_hello(self):
         print('Hello')
@@ -21,7 +21,7 @@ jose.say_hello()
 
 
 class Astronaut:
-    name = 'Jose Jimenez'
+    name = 'José Jiménez'
 
     @staticmethod
     def say_hello():

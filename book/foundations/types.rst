@@ -3,24 +3,24 @@ Types
 *****
 
 
-Variables and Constants
+Variables and constants
 =======================
 
-Declaring variables
--------------------
+Variable declaration
+--------------------
 .. code-block:: python
 
     my_variable = 10
     my_variable = 'ehlo world'
 
-Declaring constants
--------------------
+Constant declaration
+--------------------
 .. code-block:: python
 
     MY_CONSTANT = 10
     MY_CONSTANT = 'ehlo world'
 
-Variables vs. Constants
+Variables vs. constants
 -----------------------
 * Jedyną różnicą jest konwencja nazewnicza
 * Stałe zapisujemy dużymi literami
@@ -119,8 +119,8 @@ Numerical types
     complex('1 + 2j')  # ValueError: complex() arg is a malformed string
 
 
-Logic Data Types
-================
+Logical types
+=============
 
 ``bool``
 --------
@@ -173,6 +173,8 @@ Character types
         Ivan Ivanovic
     """  # '\nMax Peck\nMax Peck\nIvan Ivanovic\n'
 
+    'José' * 3  # JoséJoséJosé
+
 Single or double quote?
 -----------------------
 * Python nie rozróżnia czy stosujemy pojedyncze znaki cudzysłowiu czy podwójne.
@@ -183,12 +185,12 @@ Single or double quote?
 
 .. code-block:: python
 
-    print('it\'s José\'s book')
-    print("it's José's book")
+    my_str = 'it\'s José\'s book'
+    my_str = "it's José's book"
 
 .. code-block:: python
 
-    print('<a href="http://python.astrotech.io">Python and Machine Learning</a>')
+    my_str = '<a href="http://python.astrotech.io">Python and Machine Learning</a>'
 
 Escape characters
 -----------------
@@ -215,7 +217,7 @@ Escape characters
 
 Characters before strings
 -------------------------
-* ``'C:\Users\Admin\file.txt'`` problem with ``\Users`` (``sers`` is invalid hexadecimal)
+* ``'C:\Users\Admin\file.txt'`` problem with ``\Users`` (``sers`` is invalid hexadecimal for unicode)
 * Format string: since Python 3.6
 
 .. csv-table:: String modifiers
@@ -225,31 +227,36 @@ Characters before strings
     "Modifier", "Name",  "Description"
     "``f'...'``", "Format string", "String interpolation (variable substitution), since Python 3.6"
     "``u'...'``", "Unicode string", "Used in Python 2, now only for compatibility"
-    "``r'...'``", "Raw string", "Escapes does not matters"
     "``b'...'``", "Bytes string",  "Use ``b'...'.encode('utf-8')`` for convertion to unicode"
+    "``r'...'``", "Raw string", "Escapes does not matters"
 
 .. code-block:: python
 
-    f'hello {first_name}, how are you?
-    u'zażółć gęślą jaźń'  # U
-    r'(?P<foo>)\n'  #
-    r'C:\Users\Admin\file.txt'
+    name = 'José Jiménez'
+
+    f'My name {name}'
+    u'zażółć gęślą jaźń'
     b'this is text'
+    r'(?P<foo>)\n'
+    r'C:\Users\Admin\file.txt'
 
-Handling user input
--------------------
-* Funkcja ``input()`` zawsze zwraca ``str``
-* Pamiętaj o spacji na końcu prompt
+``print()``
+-----------
+* Prints on the screen
+* More in :numref:`Print Formatting`
 
 .. code-block:: python
 
-    name = input('Type your name: ')
+    print('My name José Jiménez')  # My name José Jiménez
+
+    name = 'José Jiménez'
+    print(f'My name {name}')  # My name José Jiménez
 
 String immutability
 -------------------
 * ``str`` jest niemutowalny
-* Każda operacja na stringu tworzy nową kopię
-* Zwóć uwagę ile stringów jest przechowywanych w pamięci
+* Każda operacja na ``str`` tworzy nową kopię
+* Zwróć uwagę ile stringów jest przechowywanych w pamięci
 
 .. code-block:: python
 
@@ -280,6 +287,8 @@ String methods
 
 ``startswith()``
 ^^^^^^^^^^^^^^^^
+* starts_with
+
 .. code-block:: python
 
     name = 'José Jiménez'
@@ -287,7 +296,7 @@ String methods
     if name.startswith('José'):
         print('My name José Jiménez')
     else:
-        print('Noname')
+        print('I have no name')
 
 ``join()``
 ^^^^^^^^^^
@@ -341,6 +350,15 @@ String splicing
     text[-3:-1]  # 'su'
     text[:-2]  # 'Lorem ips'
     text[::2]  # 'Lrmism'
+
+Handling user input
+-------------------
+* Funkcja ``input()`` zawsze zwraca ``str``
+* Pamiętaj o spacji na końcu prompt
+
+.. code-block:: python
+
+    name = input('Type your name: ')
 
 
 Assignments

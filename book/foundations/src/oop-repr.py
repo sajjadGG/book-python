@@ -10,17 +10,17 @@ class Astronaut:
         return f'Astronaut(name="{self.name}", agency="{self.agency}")'
 
 
-jose = Astronaut(name='Jose Jimenez', agency='NASA')
+jose = Astronaut(name='José Jiménez', agency='NASA')
 print(jose)
-# My name Jose Jimenez
+# My name José Jiménez
 
 crew = [
-    Astronaut(name='Jose Jimenez', agency='NASA'),
+    Astronaut(name='José Jimenéz', agency='NASA'),
     Astronaut(name='Max Peck', agency='NASA'),
     Astronaut(name='Ivan Ivanovic', agency='Roscosmos'),
 ]
 
 print(crew)
-# Astronaut(name='Jose Jimenez', agency='NASA'),
+# Astronaut(name='José Jiménez', agency='NASA'),
 # Astronaut(name='Max Peck', agency='NASA'),
 # Astronaut(name='Ivan Ivanovic', agency='Roscosmos'),

@@ -30,7 +30,7 @@ This module implements specialized container datatypes providing alternatives to
     # {'first_name': 'José', 'last_name': 'Jiménez', 'agency': 'NASA'}
 
     print(jose['first_name'], jose['last_name'], jose['agency'])
-    # José Jimenez NASA
+    # José Jiménez NASA
 
 ``OrderedDict``
 ===============

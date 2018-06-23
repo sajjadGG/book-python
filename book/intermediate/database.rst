@@ -215,8 +215,8 @@ Przykład praktyczny
     posts = db.posts
 
     data = {
-        "name": "Jose Jimenez",
-        "catchphrase": "My name Jose Jimenez",
+        "name": "José Jiménez",
+        "catchphrase": "My name José Jiménez",
         "tags": ["astronaut", "nasa", "space"],
         "date": datetime.datetime.utcnow()
     }

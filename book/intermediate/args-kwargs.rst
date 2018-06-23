@@ -26,7 +26,7 @@ Przyjmowanie z funkcji zmiennej ilości argumentów
 
 .. code-block:: python
 
-    line = 'jimenez:x:1001:1001:Jose Jimenez:/home/jimenez:/bin/bash'
+    line = 'jimenez:x:1001:1001:José Jiménez:/home/jimenez:/bin/bash'
     username, password, uid, *others = line.split(':')
 
     # if you're not using ``others`` later in your code

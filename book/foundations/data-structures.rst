@@ -3,7 +3,7 @@ Simple Data Structures
 **********************
 
 
-Simple Collections
+Simple collections
 ==================
 
 ``tuple``
@@ -21,9 +21,9 @@ Simple Collections
     my_tuple = 1,
     my_tuple = (1,)
 
-    my_tuple = 1, 2, None, False, 'hej'
-    my_tuple = (1, 2, None, False, 'hej')
-    my_tuple = tuple(1, 2, None, False, 'hej')
+    my_tuple = 1, 2, None, False, 'José'
+    my_tuple = (1, 2, None, False, 'José')
+    my_tuple = tuple(1, 2, None, False, 'José')
 
 .. code-block:: python
 
@@ -48,7 +48,7 @@ Simple Collections
 .. code-block:: python
 
     my_tuple = (1, 2, 3)
-    len(my_tuple)  # 3  # Liczność
+    len(my_tuple)  # 3
 
 ``list``
 --------
@@ -64,12 +64,12 @@ Simple Collections
 
     my_list = [1]
 
-    my_list = [1, 2, None, False, 'hej']
-    my_list = list(1, 2, None, False, 'hej')
+    my_list = [1, 2, None, False, 'José']
+    my_list = list(1, 2, None, False, 'José')
 
 .. code-block:: python
 
-    my_list = [1, 2, None, False, 'hej']
+    my_list = [1, 2, None, False, 'José']
     my_list[1]  # 2
     my_list[2:4]  # [None, False]
 
@@ -84,7 +84,7 @@ Simple Collections
 .. code-block:: python
 
     my_list = [1, 2, 3]
-    len(my_list)  # 3  # Liczność
+    len(my_list)  # 3
 
 ``set``
 -------
@@ -108,20 +108,20 @@ Simple Collections
 .. code-block:: python
 
     {1,2} - {2,3}  # {1}  # Subtract
-    {1,2} | {2,3}  # {1, 2, 3}  # Suma
+    {1,2} | {2,3}  # {1, 2, 3}  # Sum
     {1,2} & {2,3}  # {2}  # Union
-    {1,2} ^ {2,3}  # {1, 3}  # Różnica symetryczna
+    {1,2} ^ {2,3}  # {1, 3}  # Symmetrical difference
     {1,2} + {3,4}  # TypeError: unsupported operand type(s) for +: 'set' and 'set'
 
 .. code-block:: python
 
     my_set = {1, 2, 3}
-    len(my_set)  # 3  # Liczność
+    len(my_set)  # 3
 
 .. code-block:: python
 
-    names = ['Max', 'Ivan', 'Jose', 'Max']
-    unique_names = set(imiona)  # {'Jose', 'Ivan', 'Max'}
+    names = ['Max', 'Ivan', 'José', 'Max']
+    unique_names = set(names)  # {'Max', 'Ivan', 'José'}
 
 ``dict``
 --------
@@ -146,15 +146,15 @@ Simple Collections
 
 .. code-block:: python
 
-    my_dict = {'wiek': 20, 'wiek': 30}  # {'wiek': 30}
+    my_dict = {'age': 20, 'age': 30}  # {'age': 30}
 
 .. code-block:: python
 
-    my_dict = {'wiek': 30, 'imie': 'José', 'nazwisko': 'Jiménez'}
+    my_dict = {'age': 30, 'first_name': 'José', 'last_name': 'Jiménez'}
 
-    my_dict.keys()  # dict_keys(['wiek', 'imie', 'nazwisko'])
+    my_dict.keys()  # dict_keys(['age', 'first_name', 'last_name'])
     my_dict.values()  # dict_values([30, 'José', 'Jiménez'])
-    my_dict.items()  # dict_items([('wiek', 30), ('imie', 'José'), ('nazwisko', 'Jiménez')])
+    my_dict.items()  # dict_items([('age', 30), ('first_name', 'José'), ('last_name', 'Jiménez')])
 
 ``dict`` vs. ``set``
 --------------------
@@ -183,87 +183,60 @@ Simple Collections
     isinstance(my_data, set)  # False
     isinstance(my_data, dict)  # True
 
-Acessing ``dict`` values with ``[...]`` and ``.get(...)``
----------------------------------------------------------
+Accessing ``dict`` values with ``[...]`` and ``.get(...)``
+----------------------------------------------------------
 * ``[...]`` throws ``KeyError`` exception if key not found in ``dict``
 * ``.get(...)`` returns ``None`` if key not found
 * ``.get(...)`` can have default value, if key not found
 
 .. code-block:: python
 
-    dane = {'imie': 'José', 'nazwisko': 'Jiménez'}
-    dane['nazwisko']  # 'Jiménez'
-    dane.get('nazwisko')  # 'Jiménez'
-    dane['wiek']    # KeyError: 'wiek'
-    dane.get('wiek')  # None
-    dane.get('wiek', 'n/a')  # n/a
+    data = {'first_name': 'José', 'last_name': 'Jiménez'}
+    data['last_name']  # 'Jiménez'
+    data.get('last_name')  # 'Jiménez'
+    data['agency']    # KeyError: 'agency'
+    data.get('agency')  # None
+    data.get('agency', 'n/a')  # n/a
 
-Jak Python rozróżnia typy
--------------------------
-Dla każdego z poniższych przykładów wykonano funkcję ``type(what)`` i wynik pokazano poniżej. Dla czytelności przykładu pominięto tę linijkę.
-
-.. code-block:: python
-
-    >>> what = 10, 20
-    <class 'tuple'>
-
-    >>> what = (10, 20)
-    <class 'tuple'>
+How Python understands types?
+=============================
+* Dla każdego z poniższych przykładów wykonano funkcję ``type(what)`` i wynik pokazano poniżej.
+* Dla czytelności przykładu pominięto tę linijkę.
 
 .. code-block:: python
 
-    >>> what = 'foo'
-    <class 'str'>
-
-    >>> what = 'foo',
-    <class 'tuple'>
-
-    >>> what = ('foo')
-    <class 'str'>
-
-    >>> what = ('foo',)
-    <class 'tuple'>
+    what = 1, 2  # <class 'tuple'>
+    what = (1, 2)  # <class 'tuple'>
 
 .. code-block:: python
 
-    >>> what = 10
-    <class 'int'>
-
-    >>> what = 10.5
-    <class 'float'>
-
-    >>> what = .5
-    <class 'float'>
-
-    >>> what = 10.
-    <class 'float'>
-
-    >>> what = (10.)
-    <class 'float'>
+    what = 'foo'  # <class 'str'>
+    what = 'foo',  # <class 'tuple'>
+    what = ('foo')  # <class 'str'>
+    what = ('foo',)  # <class 'tuple'>
 
 .. code-block:: python
 
-    >>> what = 10, # len(what) = 1
-    <class 'tuple'>
+    what = 1  # <class 'int'>
+    what = 1.5  # <class 'float'>
+    what = .5  # <class 'float'>
+    what = 1.  # <class 'float'>
+    what = (1.)  # <class 'float'>
 
-    >>> what = (10,) # len(what) = 1
-    <class 'tuple'>
+.. code-block:: python
 
-    >>> what = 10. # len(what) -> TypeError: object of type 'float' has no len()
-    <class 'float'>
-
-    >>> what = (10.) # len(what) -> TypeError: object of type 'float' has no len()
-    <class 'float'>
-
-    >>> what = (10) # len(what) -> TypeError: object of type 'int' has no len()
-    <class 'int'>
+    what = 10,  # <class 'tuple'>  # len(what) = 1
+    what = (10,)  # <class 'tuple'>  # len(what) = 1
+    what = 10.  # <class 'float'>  # len(what) -> TypeError: object of type 'float' has no len()
+    what = (10.)  # <class 'float'> # len(what) -> TypeError: object of type 'float' has no len()
+    what = (10)  # <class 'int'>  # len(what) -> TypeError: object of type 'int' has no len()
 
 
-Złożone typy danych
+Complex collections
 ===================
 
-Lista słowników
----------------
+``list`` of ``dict``s
+---------------------
 .. code-block:: python
 
     DATA = [
@@ -272,16 +245,9 @@ Lista słowników
         {'first_name': 'Ivan', 'tags': ['astronaut', 'roscosmos', 'space']},
     ]
 
-    DATA[0]['last_name']
-    # Traceback (most recent call last):
-    #  ...
-    # KeyError: 'nazwisko'
-
-    DATA[0].get('last_name', 'n/a')
-    # 'n/d'
-
-    ' and '.join(DATA[3].get('tags'))
-    # astronaut and roscosmos and space
+    DATA[0]['last_name']  # KeyError: 'last_name'
+    DATA[0].get('last_name', 'n/a')  # 'n/a'
+    ' and '.join(DATA[3].get('tags'))  # astronaut and roscosmos and space
 
 Multidimensional lists
 ----------------------
@@ -296,7 +262,7 @@ Multidimensional lists
 .. code-block:: python
 
     array2 = [
-        [0, None, 'abc'],
+        [0, None, 'José'],
         [1, 2, 3],
     ]
 
@@ -308,7 +274,7 @@ Mixed types
         [0, 1, 2],
         (1, 2, 3),
         {1, 3, 1},
-        {'imie': 'José', 'nazwisko': 'Jiménez'}
+        {'first_name': 'José', 'last_name': 'Jiménez'}
     ]
 
 How to initialize?
@@ -321,28 +287,28 @@ How to initialize?
 Assignments
 ===========
 
-Generowanie listy unikalnych kluczy
------------------------------------
+Unique keys from schema-less database
+-------------------------------------
 #. Mając bazę danych z listingu poniżej
-#. Wygeneruj listę uniklalnych kluczy dictów
+#. Wygeneruj listę unikalnych kluczy dictów
 
 .. code-block:: python
 
     DATABASE = [
         {'last_name': 'Jiménez'},
         {'first_name': 'Max', 'last_name': 'Peck'},
-        {'first_name': 'Ivan'},
+        {'first_name': 'Ivan', 'age': 30},
         {'first_name': 'Max', 'last_name': 'Peck', 'born': 1961},
-        {'first_name': 'Jose', 'born': 1961, 'first_step': 1969},
+        {'first_name': 'José', 'born': 1961, 'agency': 'NASA'},
     ]
 
 :Założenia:
-    * Nazwa pliku: ``type-unique.py``
+    * Nazwa pliku: ``structures_keys.py``
     * Szacunkowa długość kodu: około 3 linie
     * Maksymalny czas na zadanie: 5 min
 
-Podział zbioru
---------------
+Split train/test
+----------------
 #. Mając do dyspozycji zbiór danych Irysów z :numref:`listing-data-structures-iris-sample`
 #. Pierwsza linia jest nagłówkiem
 #. Ustaw dane z kolejnych linii w losowej kolejności
@@ -352,7 +318,7 @@ Podział zbioru
     - dane testowe - 20%
 
 :Założenia:
-    * Nazwa pliku: ``type-split-list.py``
+    * Nazwa pliku: ``structures_split_train_test.py``
     * Szacunkowa długość kodu: około 6 linie
     * Maksymalny czas na zadanie: 10 min
 
@@ -364,12 +330,12 @@ Podział zbioru
     :language: python
     :caption: Sample Iris databases
 
-Słownik unikalnych cech
------------------------
+Label encoder
+-------------
 #. Mając do dyspozycji zbiór danych Irysów z :numref:`listing-data-structures-iris-sample`
-#. Stwórz słownik gatunków.
+#. Stwórz słownik gatunków
 #. Kolejnym liczbom naturalnym zaczynając od zera przyporządkuj gatunek irysów
-#. Przygotuj listę cech z kluczami ze słownika gatunków.
+#. Przygotuj listę cech z kluczami ze słownika gatunków
 
 .. code-block:: python
 
@@ -379,6 +345,6 @@ Słownik unikalnych cech
     labels = [0, 1, 2, 1, 1, 0, ...]
 
 :Założenia:
-    * Nazwa pliku: ``type-split-dict.py``
+    * Nazwa pliku: ``structures_label_encoder.py``
     * Szacunkowa długość kodu: około 6 linie
     * Maksymalny czas na zadanie: 10 min

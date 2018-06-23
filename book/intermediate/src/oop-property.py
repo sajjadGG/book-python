@@ -19,6 +19,6 @@ class Astronaut:
 
 
 jose = Astronaut()
-jose.name = 'Jose Jimenez'  # Changing "name" from None to Jose Jimenez
-print(jose.name)  # My name Jose Jimenez
-# Jose Jimenez
+jose.name = 'José Jiménez'  # Changing "name" from None to José Jiménez
+print(jose.name)  # My name José Jiménez
+# José Jiménez

@@ -15,5 +15,5 @@ with open(FILENAME) as file:
         print(f'{username} -> {full_name} with HOME="{home}" ')
         # root -> root with HOME="/root"
         # peck -> Max Peck with HOME="/home/peck"
-        # jimenez -> Jose Jimenez with HOME="/home/jimenez"
+        # jimenez -> José Jiménez with HOME="/home/jimenez"
         # ivanovic -> Ivan Ivanovic with HOME="/home/ivanovic"
