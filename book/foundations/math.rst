@@ -4,6 +4,11 @@
 Mathematics
 ***********
 
+Builtin
+=======
+* ``abs()``
+* ``round()``
+* ``pow()``
 
 ``math``
 ========
@@ -182,6 +187,12 @@ Euclidean distance 2D
     * Szacunkowa długość kodu: około 5 linii
     * Maksymalny czas na zadanie: 15 min
 
+.. figure:: ../machine-learning/img/k-nearest-neighbors-euclidean-distance.png
+    :scale: 100%
+    :align: center
+
+    Wyliczanie odległości w celu oszacowania przynależności do zbioru. Zwróć uwagę, że bez względu na ilość wymiarów wzór się niewiele różni.
+
 Euclidean distance multi dimensions
 -----------------------------------
 #. Dane są dwa punkty :math:`A` i :math:`B` o podanych koordynatach ``tuple``
@@ -216,12 +227,6 @@ Euclidean distance multi dimensions
         ValueError: Punkty muszą być w przestrzeni tylu-samo wymiarowej
         """
         pass
-
-.. figure:: ../machine-learning/img/k-nearest-neighbors-euclidean-distance.png
-    :scale: 100%
-    :align: center
-
-    Wyliczanie odległości w celu oszacowania przynależności do zbioru. Zwróć uwagę, że bez względu na ilość wymiarów wzór się niewiele różni.
 
 :Założenia:
     * Nazwa pliku: ``functions_eucledean_multi_dim.py``
@@ -266,10 +271,10 @@ Matrix multiplication
 
 Trigonometry
 ------------
-Napisz program, który wczyta od użytkownika wielkość kąta w stopniach i wyświetli wartość czterech podstawowych funkcji trygonometrycznych (sin, cos, tg, ctg) o ile dla danego kąta jest to możliwe.
-
-:Zadanie z gwiazdką:
-    Jeżeli funkcja trygonometryczna nie istnieje dla danego kąta, zwróć wyjątek ``ValueError('dla tego kąta wartośćfunkcji nie istnieje')``
+#. Program wczytuje od użytkownika wielkość kąta w stopniach
+#. Użytkownik zawsze podaje ``int`` albo ``float``
+#. Wyświetl wartość funkcji trygonometrycznych (sin, cos, tg, ctg)
+#. Jeżeli funkcja trygonometryczna nie istnieje dla danego kąta wypisz "For this angle function does not exist." i zakończ program
 
 :Założenia:
     * Nazwa pliku: ``math_trigonometry.py``

@@ -188,8 +188,8 @@ Run in the console
         ]
     }
 
-Wykorzystanie debuggera w IDE
-=============================
+Using debugger in IDE
+=====================
 
 Break Point
 -----------

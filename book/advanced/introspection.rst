@@ -152,6 +152,10 @@ an object by running:
 There are a couple of other methods as well which help in introspection.
 You can explore them if you wish.
 
+``vars()``
+----------
+
+
 Other
 =====
 

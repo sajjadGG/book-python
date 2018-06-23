@@ -3,8 +3,8 @@ Software Engineering Conventions
 ********************************
 
 
-PEP8
-====
+PEP 8 - Style Guide for Python Code
+===================================
 
 Tabs or spaces?
 ---------------
@@ -405,14 +405,14 @@ Imports
         import requests, numpy
 
 
-PEP20 - Zen of Python
-=====================
+PEP 20 - The Zen of Python
+==========================
 .. code-block:: python
 
     import this
 
-The Zen of Python
------------------
+English
+-------
 * Beautiful is better than ugly.
 * Explicit is better than implicit.
 * Simple is better than complex.
@@ -433,7 +433,7 @@ The Zen of Python
 * If the implementation is easy to explain, it may be a good idea.
 * Namespaces are one honking great idea -- let's do more of those!
 
-Zen Pythona
+Polish
 -----------
 * Piękne jest lepsze niż brzydkie.
 * Wyrażone wprost jest lepsze niż domniemane.
@@ -456,14 +456,16 @@ Zen Pythona
 * Przestrzenie nazw to jeden z niesamowicie genialnych pomysłów -- miejmy ich więcej!
 
 
-Magic number i Magic string
+Magic number i magic string
 ===========================
 * NO!
 
-``pycodestyle`` previously known as ``PEP8``
-============================================
+
+``pycodestyle``
+===============
+* Previously known as ``PEP 8``
 * Python style guide checker.
-* ``pycodestyle`` is a tool to check your Python code against some of the style conventions in PEP-8
+* ``pycodestyle`` is a tool to check your Python code against some of the style conventions in ``PEP 8``
 * Plugin architecture: Adding new checks is easy
 * Parseable output: Jump to error location in your editor
 * Small: Just one Python file, requires only stdlib

@@ -191,21 +191,6 @@ Iterating complex types
         # '1'
         # '2'
 
-
-Keywords in loops
-=================
-* ``break`` - powoduje przerwanie pętli.
-* ``continue`` - powoduje przerwanie aktualnie wykonywanej iteracji.
-
-.. code-block:: python
-
-    while True:
-        number = input('Type number: ')
-
-        if number:
-            break
-
-
 Inline ``for``
 ==============
 * Pętla ``for`` może być także napisana jako jednoliniowy generator
@@ -334,6 +319,20 @@ Inline ``for`` not only for ``list``
     # dict {1:'x', 2:'y'}
 
 
+Keywords in loops
+=================
+* ``break`` - powoduje przerwanie pętli.
+* ``continue`` - powoduje przerwanie aktualnie wykonywanej iteracji.
+
+.. code-block:: python
+
+    while True:
+        number = input('Type number: ')
+
+        if number:
+            break
+
+
 Assignments
 ===========
 
@@ -348,7 +347,7 @@ Report card
 #. Jeżeli wciśnięto sam Enter, oznacza to koniec wpisywania do dzienniczka
 
 :Założenia:
-    * Nazwa pliku: ``loops-report-card.py``
+    * Nazwa pliku: ``loops_report_card.py``
     * Szacunkowa długość kodu: około 10 linie
     * Maksymalny czas na zadanie: 15 min
 

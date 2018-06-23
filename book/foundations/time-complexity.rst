@@ -9,7 +9,7 @@ Time Complexity
 * https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
 
 
-Zastosowanie setów zamiast list
+Use ``set`` instead of ``list``
 ===============================
 Jeżeli masz listę w której sprawdzasz czy element występuje, to zamień listę na ``set``, dzięki temu będzie lepsza złożoność
 
@@ -28,7 +28,7 @@ Jeżeli masz listę w której sprawdzasz czy element występuje, to zamień list
         pass
 
 
-Zastosowanie list zamiast konkatanacji stringów
+Use ``list.append()`` instead of ``str + str``
 ===============================================
 .. code-block:: python
 
@@ -53,10 +53,8 @@ Zastosowanie list zamiast konkatanacji stringów
     print(''.join(html))
 
 
-Inne
-====
-* Jeżeli coś ``collections.deque`` - Double ended Queue
-* Serializowane kolejki przy wielowątkowości
+Range between two ``float``s
+============================
 * Uwaga na set zawierający floaty, bo pomiędzy dwoma wartościami jest nieskończona ilość wyrażeń
 
 .. code-block:: python
@@ -69,6 +67,13 @@ Inne
     # 4
 
     range(0.0, 5.0)
+
+
+Inne
+====
+* Jeżeli coś ``collections.deque`` - Double ended Queue
+* Serializowane kolejki przy wielowątkowości
+
 
 Assignments
 ===========

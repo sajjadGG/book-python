@@ -1,9 +1,10 @@
-**********************************
-Funkcje wbudowane i słowa kluczowe
-**********************************
+********************
+Builtin and Keywords
+********************
 
-Słowa kluczowe
-==============
+
+Keywords
+========
 Słowa kluczowe (keywords) to wyrazy zarezerwoane do użytku Pythona. Nie można użyć słowa kluczowego jako nazwy zmiennej, nazwy funkcji czy innego identyfikatora. Każdy ze słów kluczowych odgrywa ważną rolę w tym języku. Lista słów kluczowych może być uzyskana wpisując:
 
 .. code-block:: python
@@ -177,25 +178,12 @@ Przykład z życia:
         # I trzeba uruchomić funkcję ``run()`` samodzielnie - kontrolowanie
         run()
 
-Funkcje wbudowane
+
+Builtin functions
 =================
-Funkcje wbudowane to funkcje dostępne domyślnie w języku Python.
 
-``print()``
------------
-* Wyświetla argument jako tekst w wierszu poleceń.
-
-.. code-block:: python
-
-    print('ehlo world')
-    print('ehlo', 'world')
-    print('ehlo', 'world', sep=';')
-
-    imie = 'Max Peck'
-    print('ehlo', imie, 'world')
-
-``sorted()`` i ``sort()``
--------------------------
+``sorted()`` and ``sort()``
+---------------------------
 * Sortują elementy listy.
 * ``sorted()`` zwraca posortowaną listę, ale nie zapisuje zmienionej kolejności
 * ``sorted()`` zmienia listę na stałe
@@ -295,35 +283,6 @@ Długość listy, tuple, stringa itp.
     >>> len({'id': 3, 'name': 'Max'})
     2
 
-``input()``
------------
-Pozwala użytkownikowi wpisać tekst.
-
-.. code-block:: python
-
-    >>> name = input()
-    Ivan
-    >>> print(name)
-    'Ivan'
-
-Pamiętaj o dodaniu dwukropka i spacji, aby tekst się nie zlewał.
-
-.. code-block:: python
-
-    >>> name = input('Type your name: ')
-    Type your name: José
-    >>> print(name)
-    'José'
-
-Czasami trzeba oczyścić dane, np. usuwając zbędne spacje na początku i końcu ciągu znaków podanego przez użytkownika.
-
- .. code-block:: python
-
-    >>> name = input('Type your name: ')
-    Type your name:         Ivan
-    >>> print(name.strip())
-    'Ivan'
-
 ``bin()``
 ---------
 Konwertuje liczbę na binarną.
@@ -372,8 +331,9 @@ Z pozycji w tablicy ASCII konwertuje kod na znak Unicode.
     >>> chr(97)
     'a'
 
-Wszystkie funkcje wbudowane
-===========================
+
+Other builtin functions
+=======================
 .. csv-table:: Most used Built-in functions
     :header-rows: 1
 

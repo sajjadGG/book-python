@@ -2,29 +2,37 @@
 Functions
 *********
 
-Funkcje pozwalają na wielokrotne używanie tego samego kodu. Znacznie poprawiają także czytelność kodu i go porządkują.
 
-Definiowanie funkcji
-====================
+* Funkcje pozwalają na wielokrotne używanie tego samego kodu.
+* Znacznie poprawiają także czytelność kodu i go porządkują.
+
+
+Function definition
+===================
 .. code-block:: python
 
     def hello():
-        print('hello world')
+        print('My name José Jiménez')
 
 Callable
 --------
 .. code-block:: python
 
     def hello():
-        print('hello world')
+        print('My name José Jiménez')
 
-    int()
-    10()
-    type(hello)
-    # <class 'callable'>
+    hello  # <function hello at 0x0C55D420>
+    type(hello)  # <class 'function'>
 
-Konwencja nazewnicza funkcji
-============================
+.. code-block:: python
+
+    type(str)  # <class 'type'>
+    type('hello')  # <class 'str'>
+    'hello'()  # TypeError: 'str' object is not callable
+
+
+Naming convention
+=================
 #. Nie robimy CamelCase
 #. Używanie ``_`` w nazwach (snake_case)
 #. Funkcje o nazwie zaczynającej się od ``_`` przez konwencję są traktowane jako prywatne (w Pythonie nie ma private/protected/public).
@@ -33,8 +41,9 @@ Konwencja nazewnicza funkcji
 #. ``print_()``
 #. ``__nazwa_funkcji()``
 
-Zwracanie wartości
-==================
+
+Returning values
+================
 #. Słowo kluczowe ``return`` wskazuje funkcji jaką wartość ma dana funkcja zwrócić.
 #. Wykonanie linii ze słowem kluczowym ``return`` kończy wykonywanie funkcji.
 
@@ -43,76 +52,73 @@ Zwracanie wartości
     def sum(a, b):
         return a + b
 
-    sum(2, 3)
-    # 5
+    sum(2, 3)  # 5
 
 .. code-block:: python
 
     def sum(a, b):
         return a + b
-        print('Total is', a + b)  # ten kod się nie wykona
+        print('Total is', a + b)  # this won't be executed
 
-    sum(2, 3)
-    # 5
+    sum(2, 3)  # 5
 
-Zwracanie wartości prostych
----------------------------
+Returning simple types
+----------------------
 .. code-block:: python
 
-    def zwracanie_stringow():
+    def function():
         return 'José Jiménez'
 
-    def zwracanie_bool():
+    def function():
         return True
 
-    def zwracanie_wartosci_pustej():
+    def function():
         return None
 
-    def zwracanie_niejawne():
+    def function():
         # Python always return something, in this case ``return None``
         pass
 
-    def zwracanie_dict():
-        return {'imie': 'José', 'nazwisko': 'Jiménez'}
+    def function():
+        return {'first_name': 'José', 'last_name': 'Jiménez'}
 
-    def zwracanie_tupli_1():
+    def function():
         return 1, 'foobar'
 
-    def zwracanie_tupli_2():
+    def function():
         return (5, 10, 15, 'foobar')
 
-    def zwracanie_listy():
+    def function():
         return [1, 2.5, 'foobar']
 
-Zwracanie typów złożonych
--------------------------
+Returning nested types
+----------------------
 .. code-block:: python
 
-    def zwracanie_zlozone():
+    def function():
         return [
-            {'imie': 'Max', 'nazwisko': 'Peck'},
-            {'imie': 'Иван', 'nazwisko': 'Иванович'},
-            {'imie': 'José', 'nazwisko': 'Jiménez'},
+            {'first_name': 'Max', 'last_name': 'Peck'},
+            {'first_name': 'Иван', 'last_name': 'Иванович', 'agency': {'name': 'roscosmos'}},
+            {'first_name': 'José', 'last_name': 'Jiménez', 'missions': ['mercury', 'apollo']},
         ]
 
-Zwracanie funkcji
------------------
+Returning function (callable)
+-----------------------------
 .. code-block:: python
 
-    def returns_str():
+    def my_func():
         return 'José Jiménez'
 
-    def returns_callable():
-        return returns_str
+    def function():
+        return my_func
 
 
-    my_data = returns_callable()
-    # <function __main__.returns_str()>
+    foo = function()
+    # <function __main__.my_func()>
 
-    my_data()
+    foo()
     # 'José Jiménez'
 
-Przykład z życia:
 .. code-block:: python
 
     import datetime
@@ -128,8 +134,8 @@ Przykład z życia:
     print(now)
 
 
-Argumenty do funkcji
-====================
+Function arguments
+==================
 Argumenty funkcji to wartości na których ta funkcja wykonuje operacje. W idealnym przypadku wartość wyjściowa funkcji powinna zależeć jedynie od jej argumentów.
 
 .. code-block:: python
@@ -140,8 +146,8 @@ Argumenty funkcji to wartości na których ta funkcja wykonuje operacje. W ideal
     add(1, 2)
     # 3
 
-Zasięg widoczności zmiennych
-----------------------------
+Variable scope
+--------------
 * ``globals()``
 * ``locals()``
 
@@ -153,8 +159,8 @@ Zasięg widoczności zmiennych
     add(1, 2)
     # {'a': 1, 'b': 2}
 
-Typowanie
----------
+Type annotations
+----------------
 * Od Python 3.5
 
 .. code-block:: python
@@ -167,8 +173,8 @@ Typowanie
 
 .. note:: więcej na ten temat w rozdziale dotyczącym :numref:`Type Annotation`
 
-Nazwy argumentów
------------------
+Named arguments
+---------------
 Każdy argument ma swoją nazwę przez którą uzyskujemy dostęp do wartości argumentu w ciele funkcji. Ta nazwa może też być używana do przypisania wartości przy wywołaniu funkcji.
 
 .. code-block:: python
@@ -188,8 +194,8 @@ Każdy argument ma swoją nazwę przez którą uzyskujemy dostęp do wartości a
     substract(1, 0)
     # 0
 
-Argumenty z wartością domyślną
-------------------------------
+Arguments with default value
+----------------------------
 #. Argument funkcji może mieć wartość domyślną.
 #. Funkcja przyjmie tą wartość jeżeli użytkownik nie zdefiniuje tego argumentu.
 #. Argumenty z wartością domyślną muszą być skrajnie po prawej stronie.
@@ -231,7 +237,8 @@ Argumenty z wartością domyślną
         ssl=True,
     )
 
-Rekurencja
+
+Recurrence
 ==========
 .. code-block:: python
 
@@ -245,8 +252,8 @@ Rekurencja
 Assignments
 ===========
 
-Konwersja liczby na zapis słowny
---------------------------------
+Integer to string
+-----------------
 #. Napisz funkcję ``int_to_str``
 #. Funkcja zamieni dowolego ``int`` lub ``float`` na formę tekstową.
 
@@ -275,7 +282,7 @@ Konwersja liczby na zapis słowny
         'thirteen and thirty seven hundredths'
 
 :Założenia:
-    * Nazwa pliku: ``functions-int-to-str.py``
+    * Nazwa pliku: ``functions_int_str.py``
     * Szacunkowa długość kodu: około 15 linii
     * Maksymalny czas na zadanie: 15 min
 
@@ -291,8 +298,8 @@ Konwersja liczby na zapis słowny
     * Przypadek zaawansowany: argumenty pozycyjne i domyślne
     * Rzutowanie i konwersja typów
 
-Rzymskie
---------
+Roman numbers
+-------------
 #. Napisz program, który przeliczy wprowadzoną liczbę rzymską na jej postać dziesiętną.
 #. Napisz drugą funkcję, która dokona procesu odwrotnego.
 
@@ -305,6 +312,6 @@ Rzymskie
     * Rzutowanie i konwersja typów
 
 :Założenia:
-    * Nazwa pliku: ``functions-roman.py``
+    * Nazwa pliku: ``functions_roman.py``
     * Szacunkowa długość kodu: około 15 linii
     * Maksymalny czas na zadanie: 15 min
