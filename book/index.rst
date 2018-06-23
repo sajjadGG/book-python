@@ -98,6 +98,7 @@ Advanced
     :numbered:
     :caption: Advanced
 
+    advanced/interpreter.rst
     advanced/introspection.rst
     advanced/serialization-pickle.rst
     advanced/serialization-xml.rst

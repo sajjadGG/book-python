@@ -17,7 +17,6 @@ Main Characters
 José Jiménez
 ------------
 .. figure:: img/jose-jimenez.jpg
-    :name: figure-jose-jimenez
     :scale: 50%
     :align: center
 
@@ -33,7 +32,6 @@ José Jiménez
 Иван Иванович
 -------------
 .. figure:: img/ivan-ivanovich.jpg
-    :name: figure-ivan-ivanovich
     :scale: 50%
     :align: center
 
@@ -42,11 +40,18 @@ José Jiménez
 Max Peck
 --------
 .. figure:: img/max-peck.png
-    :name: figure-max-peck
     :scale: 50%
     :align: center
 
     Max Peck
+
+Paxi
+----
+.. figure:: img/paxi.jpg
+    :scale: 50%
+    :align: center
+
+    ESA's Paxi
 
 
 Addresses

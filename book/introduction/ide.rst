@@ -16,12 +16,9 @@ What is IDE?
 
 How to choose?
 --------------
-* https://www.jetbrains.com/pycharm/download/
-* http://www.pydev.org/download.html
-
 * Do edycji skryptów Pythona wystarczy sam Notatnik.
 * Kod źródłowy jest na tyle czytelny i prosty, że bardzo łatwo będziemy w stanie poradzić sobie z prostymi skryptami bez jakiejkolwiek pomocy od zaawansowanego edytora.
-* Jednakże w miarę rośnięcia złożoności projektu oraz ilości plików przyda nam się coś co ułatwi nam pracę.
+* W miarę rośnięcia złożoności projektu oraz ilości plików przyda nam się coś co ułatwi nam pracę.
 * Wybór edytora to temat wielce kontrowersyjny.
 * Od kilku dziesięcioleci w środowisku programistów jest prowadzona wojna między minimalistycznym VIMem oraz posiadającym ogromne możliwości EMACSem.
 * Jeden i drugi edytor wspaniale posłuży nam do pisania skryptów w Pythonie i po odpowiedniej konfiguracji lub instalacji pluginów podpowie składnię.
@@ -36,6 +33,10 @@ Which one is the best?
 #. PyCharm Professional EAP
 #. PyCharm Community
 #. PyCharm Professional
+#. PyDev
+
+* https://www.jetbrains.com/pycharm/download/
+* http://www.pydev.org/download.html
 
 
 Assignments

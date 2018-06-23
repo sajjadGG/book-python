@@ -2,6 +2,12 @@
 Object Oriented Programming
 ***************************
 
+Everything is an object
+=======================
+* W Pythonie wszystkie rzeczy są obiektem.
+* Każdy element posiada swoje metody, które możemy na nim uruchomić.
+* W dalszej części tych materiałów będziemy korzystali z polecenia ``help()`` aby zobaczyć jakiego z jakiego typu obiektem mamy okazję pracować oraz co możemy z nim zrobić.
+
 
 Objects and instances
 =====================

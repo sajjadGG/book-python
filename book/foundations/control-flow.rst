@@ -183,7 +183,7 @@ Bardzo kuszący jest następujący przykład:
         'Max Peck': 'Your name is Max Peck',
     }
 
-    key = 'Neil Armstrong'
+    key = 'Paxi'
     switch.get(key, 'Your name is other')   # 'Your name is other'
 
 .. code-block:: python
@@ -196,17 +196,22 @@ Bardzo kuszący jest następujący przykład:
         }.get(key, 'Your name is other')
 
     switch('José Jiménez')  # 'My name José Jiménez'
-    switch('Neil Armstrong')  # 'Your name is other'
+    switch('Paxi')  # 'Your name is other'
 
 
 Assignments
 ===========
 
-Zmienne i wczytywanie ciągu od użytkownika
-------------------------------------------
+Conditioning on user input
+--------------------------
 #. Napisz program, który poprosi użytkownika o wiek
 #. Użytkownik będzie podawał tylko i wyłącznie ``int`` lub ``float``
 #. Następnie sprawdzi pełnoletność i wyświetli informację czy osoba jest "dorosła" czy "niepełnoletnia".
+
+:Założenia:
+    * Nazwa pliku: ``control_input.py``
+    * Szacunkowa długość kodu: około 5 linie
+    * Maksymalny czas na zadanie: 5 min
 
 :Co zadanie sprawdza?:
     * Wczytywanie ciągu znaków od użytkownika
@@ -215,8 +220,3 @@ Zmienne i wczytywanie ciągu od użytkownika
     * Sprawdzanie przypadków brzegowych (niekompatybilne argumenty)
     * Definiowanie zmiennych i stałych w programie
     * Magic Number
-
-:Założenia:
-    * Nazwa pliku: ``control_flow_input.py``
-    * Szacunkowa długość kodu: około 5 linie
-    * Maksymalny czas na zadanie: 5 min
