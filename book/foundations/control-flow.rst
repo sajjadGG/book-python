@@ -8,7 +8,8 @@ Conditional Statements
 
 ``if``
 ------
-Instrukcje warunkowe pozwalają kierować wykonywanymi instrukcjami pod pewnym warunkiem. Jeżeli kod wpisany po słowie kluczowym ``if`` wykona się jako wartość prawdziwa (niezerowa, nie-``None``, itp.), wykonany zostanie kod pod tym słowem kluczowym.
+* Instrukcje warunkowe pozwalają kierować wykonywanymi instrukcjami pod pewnym warunkiem
+* Jeżeli kod wpisany po słowie kluczowym ``if`` wykona się jako wartość prawdziwa (niezerowa, nie-``None``, itp.), wykonany zostanie kod pod tym słowem kluczowym
 
 .. code-block:: python
 
@@ -18,7 +19,8 @@ Instrukcje warunkowe pozwalają kierować wykonywanymi instrukcjami pod pewnym w
 
 ``else``
 --------
-Do instrukcji warunkowej można dodać słowo kluczowe ``else``. Wtedy, jeżeli wartość przy słowie kluczowym ``if`` ewaluuje się jako fałsz, wykonany zostanie kod pod słowem kluczowym ``else``.
+* Do instrukcji warunkowej można dodać słowo kluczowe ``else``
+* Wtedy, jeżeli wartość przy słowie kluczowym ``if`` ewaluuje się jako fałsz, wykonany zostanie kod pod słowem kluczowym ``else``
 
 .. code-block:: python
 
@@ -38,7 +40,8 @@ Do instrukcji warunkowej można dodać słowo kluczowe ``else``. Wtedy, jeżeli 
 
 ``elif``
 --------
-Możliwe jest także sprawdzenie kilku warunków przed przejściem do ``else``. Do sprawdzenia drugiego i kolejnych warunków służy słowo kluczowe ``elif`` (w wielu innych językach rozwijane jako ``else if``).
+* Możliwe jest także sprawdzenie kilku warunków przed przejściem do ``else``
+* Do sprawdzenia drugiego i kolejnych warunków służy słowo kluczowe ``elif`` (w wielu innych językach rozwijane jako ``else if``)
 
 .. code-block:: python
 
@@ -76,7 +79,7 @@ Control Statements
 
 ``in``
 ------
-Słowo kluczowe ``in`` pozwala na sprawdzenie czy dana wartość zawiera się w zbiorze (iteratorze).
+* Słowo kluczowe ``in`` pozwala na sprawdzenie czy dana wartość zawiera się w zbiorze
 
 .. code-block:: python
 
@@ -87,14 +90,14 @@ Słowo kluczowe ``in`` pozwala na sprawdzenie czy dana wartość zawiera się w 
 
 ``not``
 -------
-``not`` pozwala zanegować warunek.
+* ``not`` pozwala zanegować warunek
 
 .. code-block:: python
 
-    if not name == 'José Jiménez':
-        print('Not José')
+    if name not in {'José', 'Max', 'Ivan'}:
+        print('I do not know you')
     else:
-        print('My name José Jiménez')
+        print('Hallo friend')
 
 .. code-block:: python
 
@@ -105,7 +108,7 @@ Słowo kluczowe ``in`` pozwala na sprawdzenie czy dana wartość zawiera się w 
 
 ``is``
 ------
-``is`` porównuje czy dwa obiekty są tożsame.
+* ``is`` porównuje czy dwa obiekty są tożsame
 
 .. code-block:: python
 
@@ -123,23 +126,26 @@ Bardzo kuszący jest następujący przykład:
      else:
         print('You are not Max!')
 
-**Nie jest on jednak do końca poprawny. Słowo kluczowe ``is`` porównuje czy dwa obiekty są tym samym obiektem, nie czy mają taką samą wartość.** Poniższy przykład ilustruje, że pomimo że dwa obiekty przechowują takiego samego stringa to nie są sobie tożsame, mimo że są sobie równe.
+**Nie jest on jednak do końca poprawny. Słowo kluczowe ``is`` porównuje czy dwa obiekty są tym samym obiektem, nie czy mają taką samą wartość.**
+* Poniższy przykład ilustruje, że pomimo że dwa obiekty przechowują takiego samego stringa to nie są sobie tożsame, mimo że są sobie równe.
 
  .. code-block:: python
 
-     a = 'hello'
-     b = 'hello'
+    a = 'hello'
+    b = 'hello'
 
-     print(f'a is {a}, b is {b}')
-     print(f'a == b returns: {a==b}')
-     print(f'a is b returns: {a is b}')
+    print(f'a is {a}, b is {b}')  # a is hello, b is hello
+    print(f'a == b returns: {a==b}')  # a == b returns: True
+    print(f'a is b returns: {a is b}')  # a is b returns: True
 
-     a = 'hello'
-     b = ''.join('hello')
+.. code-block:: python
 
-     print(f'a is {a}, b is {b}')
-     print(f'a == b returns: {a==b}')
-     print(f'a is b returns: {a is b}')
+    a = 'hello'
+    b = ''.join('hello')
+
+    print(f'a is {a}, b is {b}')  # a is hello, b is hello
+    print(f'a == b returns: {a==b}')  # a == b returns: True
+    print(f'a is b returns: {a is b}')  # a is b returns: False
 
 
 ``switch`` statement?!
