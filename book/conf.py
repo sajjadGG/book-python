@@ -1,7 +1,7 @@
 author = 'Matt Harasymczuk'
 email = 'matt@astrotech.io'
-project = 'Kurs programowania w Python i Machine Learning'
-description = 'Matt Harasymczuk\'s Kurs programowania w Python i Machine Learning'
+project = 'Python 3: from None to Machine Learning'
+description = "Matt Harasymczuk's Python 3: from None to Machine Learning"
 
 extensions = [
     'sphinx.ext.doctest',
