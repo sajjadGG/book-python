@@ -12,6 +12,8 @@ __pycache__/
 venv/
 .venv/
 .virtualenv/
+.virtualenv-3.6/
+.virtualenv-3.7/
 virtualenv/
 venv-3.7/
 venv-3.6/

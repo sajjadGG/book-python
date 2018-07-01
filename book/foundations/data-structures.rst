@@ -202,8 +202,8 @@ Accessing ``dict`` values with ``[...]`` and ``.get(...)``
 Nested collections
 ==================
 
-``list`` of ``dict``s
----------------------
+``list`` of ``dict``
+--------------------
 .. code-block:: python
 
     DATA = [

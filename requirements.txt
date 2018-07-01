@@ -1,5 +1,4 @@
 django
-django-rest-framework
 django-debug-toolbar
 pillow
 requests
@@ -11,8 +10,5 @@ numpy
 scikit-learn
 scipy
 jupyter
-tornado
 pandas
-graphviz
 plotly
-bokeh
