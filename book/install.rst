@@ -5,19 +5,11 @@ Instalacja
 
 Wymagania sprzętowe i systemowe
 ===============================
-* można korzystać ze swojego komputera
-* dowolny system operacyjny wspierany przez najnowszego Pythona
-
-
-Wymagania oprogramowania
-========================
-* zainstalowany najnowszy oficjalny release Pythona (https://www.python.org/downloads/)
-* zainstalowany PyCharm Professional EAP (https://www.jetbrains.com/pycharm/nextversion/)
-* zaznaczaj domyślne opcje zarówno dla GIT i PyCharm
-
-.. warning:: Jak będziesz instalował Python pamiętaj o zaznaczeniu opcji dodania do ``PATH``!
-
-.. note:: Jeżeli szkolenie będzie również odnośnie korzystania z GIT
+* Można korzystać ze swojego komputera
+* Dowolny system operacyjny wspierany przez najnowszego Pythona
+* Zainstalowane najnowsze oficjalne wydanie Pythona (https://www.python.org/downloads/)
+* Zainstalowany najnowszy PyCharm Professional EAP (https://www.jetbrains.com/pycharm/nextversion/)
+* Jeżeli szkolenie będzie również dotyczyło współpracy z wykorzystaniem GIT:
 
     * zainstalowany GIT (https://git-scm.com/download/)
     * założone darmowe konto na Github (proszę znać swój login)
@@ -29,9 +21,11 @@ Przygotowanie środowiska
 Windows
 -------
 * Zostawić domyślne opcje
-* Dodać do ``PATH``
+* Dodać do ``PATH`` (ważne!)
 * Python uruchamia się z ``cmd``
 * Znać ścieżkę do katalogu gdzie zainstalowany jest Python
+* Zaznaczaj domyślne opcje zarówno dla GIT i PyCharm (pamiętaj aby powiązać z plikami ``.py``)
+* zweryfikować za pomocą polecenia ``python --version``
 
 macOS
 -----
@@ -52,7 +46,7 @@ macOS
         $ brew install python3
 
 * Python uruchamia się z terminala
-* Polecenie ``which python`` ma zwracać ``/usr/bin/python3``
+* Zweryfikować za pomocą polecenia ``python --version``
 
 Linux
 -----
@@ -65,4 +59,4 @@ Linux
     - ``rpm`` - Redhat, Fedora
 
 * Python uruchamia się z terminala
-* Polecenie ``which python`` ma zwracać ``/usr/bin/python3``
+* Zweryfikować za pomocą polecenia ``python --version``

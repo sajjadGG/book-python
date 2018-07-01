@@ -31,7 +31,6 @@ Introduction
     :numbered:
     :caption: Introduction
 
-    license.rst
     install.rst
     introduction/about.rst
     introduction/references.rst
@@ -234,4 +233,5 @@ Appendixes
     appendixes/python-2vs3.rst
     appendixes/python-wat.rst
     appendixes/agenda-intermediate.rst
+    license.rst
     glossary.rst

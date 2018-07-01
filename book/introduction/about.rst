@@ -46,6 +46,42 @@ File types and extensions
     * ``.pyz`` - Python 3.5 wprowadził możliwość tworzenia Python ZIP Archive. Takie spakowane archiwum zawiera wszystkie pliki niezbędne do uruchomienia programu. Rozszerzenie dla obiektów tego typu jest ``.pyz``. Do pakowania służy biblioteka `zipapp <https://docs.python.org/3/library/zipapp.html>`_.
 
 
+Scripts
+=======
+Ta metoda przydaje nam się gdy nasze programy zaczną rosnąć na więcej niż jedną dwie linijki.
+Warto zwrócić uwagę na pierwszą linię, na tzw. shebang ``#!`` i następujące po nim polecenie.
+To jest deklaracja programu, którego kod źródłowy znajduje się poniżej.
+Linijka ta jest opcjonalna, ale dla zachowania poprawności i warto w naszych skryptach coś takiego zadeklarować.
+Już po pierwszej linii widzimy, że skrypt będzie zinterpretowany jako kod źródłowy trzeciej wersji Pythona.
+
+.. code-block:: python
+
+    #!/usr/bin/env python3
+
+    print('Ehlo World!')
+
+Wynik uruchomienia powyższego skryptu będzie identyczny z efektem uzyskanym w REPL, tzn, na naszym ekranie ukaże się napis ``Ehlo World``.
+Dla wszystkich, którzy potrzebują wiedzieć jak wygląda najmniejszy kod, który wyświetli nam te słowa polecam poniższy kod.
+
+.. code-block:: python
+
+    print('Ehlo World!')
+
+Interpreter declaration
+-----------------------
+Jest to specjalny rodzaj komentarza który opisaliśmy pokrótce powyżej. Ten typ komentarza występuje tylko w pierwszej linii programu i definiuje interpreter kodu źródłowego dla kodu poniżej.
+
+.. code-block:: bash
+
+    #!/usr/bin/env python3
+
+PATH
+----
+
+PYTHON_PATH
+-----------
+
+
 Read–Eval–Print Loop
 ====================
 Python spopularyzował wykorzystanie tzw. interpretera REPL (read–eval–print loop). REPL to interaktywny interpreter poleceń wykonujący wyrażenia z języka (zwykle linie), których wyniki są wyświetlane użytkownikowi natychmiast po ich wykonaniu. W uproszczeniu można powiedzieć, że REPL jest to linia poleceń programu ``python``. Znakiem zachęty do wprowadzania tekstu takiego programu są trzy znaki większości ``>>>``. Polecenia wpisane po tych znaczkach są interpretowane i natychmiast wykonywane. Ich wynik przedstawiany jest w następnej linijce. Jeżeli wykorzystamy konstrukcję, która wymaga więcej niż jednej linii, każda kolejna linijka będzie poprzedzona trzema kropkami ``...``. Przykłady takiej interakcji zobaczymy przy omawianiu "Hello World".
@@ -85,38 +121,7 @@ Standardowy tekst informujący o wersji i kompilacji języka oraz znak zachęty 
 Polecenia wpisujemy po tym znaku a ich wynik wyświetla się poniżej (i nie zawiera wcięcia).
 Dalej w materiałach będziemy posługiwali się już samym znakiem zachęty.
 
-Scripts
+
+Jupyter
 =======
-Drugim sposobem jest stworzenie skryptu posiadającego następujące linie.
-Ta metoda przydaje nam się gdy nasze programy zaczną rosnąć na więcej niż jedną dwie linijki.
-Warto zwrócić uwagę na pierwszą linię, na tzw. shebang ``#!`` i następujące po nim polecenie.
-To jest deklaracja programu, którego kod źródłowy znajduje się poniżej.
-Linijka ta jest opcjonalna, ale dla zachowania poprawności i warto w naszych skryptach coś takiego zadeklarować.
-Już po pierwszej linii widzimy, że skrypt będzie zinterpretowany jako kod źródłowy trzeciej wersji Pythona.
-
-.. code-block:: python
-
-    #!/usr/bin/env python3
-
-    print('Ehlo World!')
-
-Wynik uruchomienia powyższego skryptu będzie identyczny z efektem uzyskanym w REPL, tzn, na naszym ekranie ukaże się napis ``Ehlo World``.
-Dla wszystkich, którzy potrzebują wiedzieć jak wygląda najmniejszy kod, który wyświetli nam te słowa polecam poniższy kod.
-
-.. code-block:: python
-
-    print('Ehlo World!')
-
-Interpreter declaration
------------------------
-Jest to specjalny rodzaj komentarza który opisaliśmy pokrótce powyżej. Ten typ komentarza występuje tylko w pierwszej linii programu i definiuje interpreter kodu źródłowego dla kodu poniżej.
-
-.. code-block:: bash
-
-    #!/usr/bin/env python3
-
-PATH
-----
-
-PYTHON_PATH
------------
+The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text. Uses include: data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, and much more.
