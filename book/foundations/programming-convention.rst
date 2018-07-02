@@ -170,8 +170,12 @@ Whitespace in function calls
     spam(ham[1], {eggs: 2})  # Good
     spam( ham[ 1 ], { eggs: 2 } )  # Bad
 
+.. code-block:: python
+
     spam(1)  # Good
     spam (1)  # Bad
+
+.. code-block:: python
 
     do_one()  # Good
     do_two()  # Good
@@ -189,14 +193,22 @@ Whitespace in slices
     ham[1:9], ham[1:9:3], ham[:9:3], ham[1::3], ham[1:9:]  # Good
     ham[1: 9], ham[1 :9], ham[1:9 :3]  # Bad
 
+.. code-block:: python
+
     ham[lower:upper], ham[lower:upper:], ham[lower::step]  # Good
     ham[lower : : upper]  # Bad
+
+.. code-block:: python
 
     ham[lower+offset : upper+offset]  # Good
     ham[: upper_fn(x) : step_fn(x)], ham[:: step_fn(x)]  # Good
 
+.. code-block:: python
+
     ham[lower + offset : upper + offset]  # Good
     ham[lower + offset:upper + offset]  # Bad
+
+.. code-block:: python
 
     ham[:upper]  # Good
     ham[ : upper]  # Bad
@@ -213,8 +225,12 @@ Whitespace in assignments
     y             = 2  # Bad
     long_variable = 3  # Bad
 
+.. code-block:: python
+
     i = i + 1  # Good
     i=i+1  # Bad
+
+.. code-block:: python
 
     submitted += 1  # Good
     submitted +=1  # Bad
@@ -226,8 +242,12 @@ Whitespace in math operators
     x = x*2 - 1  # Good
     x = x * 2 - 1  # Bad
 
+.. code-block:: python
+
     hypot2 = x*x + y*y  # Good
     hypot2 = x * x + y * y  # Bad
+
+.. code-block:: python
 
     c = (a+b) * (a-b)  # Good
     c = (a + b) * (a - b)  # Bad
@@ -236,86 +256,90 @@ Whitespace in accessors
 -----------------------
 .. code-block:: python
 
-    dct['key'] = lst[index]
-    dct ['key'] = lst [index]
+    dct['key'] = lst[index]  # Good
+    dct ['key'] = lst [index]  # Bad
 
 Whitespace in functions
 -----------------------
-.. code-block:: python
+:Good:
+    .. code-block:: python
 
-    def complex(real, imag=0.0):  # Good
-        return magic(r=real, i=imag)  # Good
+        def complex(real, imag=0.0):
+            return magic(r=real, i=imag)
 
-    def complex(real, imag = 0.0):  # Bad
-        return magic(r = real, i = imag)  # Bad
+:Bad:
+    .. code-block:: python
+
+        def complex(real, imag = 0.0):
+            return magic(r = real, i = imag)
 
 Whitespace with type annotations
 --------------------------------
-.. code-block:: python
+:Good:
+    .. code-block:: python
 
-    def funcion(first: str):  # Good
-        pass
+        def function(first: str):
+            pass
 
-    def funcion(first: str = None):  # Good
-        pass
+        def function(first: str = None):
+            pass
 
-    def funcion() -> None:  # Good
-        pass
+        def function() -> None:
+            pass
 
-    def funcion(first: str, second: str = None, limit: int = 1000) -> int:  # Good
-        pass
+        def function(first: str, second: str = None, limit: int = 1000) -> int:
+            pass
 
-    def funcion(first: str=None):  # Bad
-        pass
+:Bad:
+    .. code-block:: python
 
-    def funcion(first:str):  # Bad
-        pass
+        def function(first: str=None):
+            pass
 
-    def funcion(first: str)->None:  # Bad
-        pass
+        def function(first:str):
+            pass
+
+        def function(first: str)->None:
+            pass
 
 Whitespace in conditionals
 --------------------------
-.. code-block:: python
+:Good:
+    .. code-block:: python
 
-    if foo == 'blah':  # Good
-        do_blah_thing()  # Good
+        if foo == 'blah':
+            do_blah_thing()
 
-    if foo == 'blah': do_blah_thing()  # Bad
+:Bad:
+    .. code-block:: python
 
-    if foo == 'blah': one(); two(); three()  # Bad
+        if foo == 'blah': do_blah_thing()
 
-    if foo == 'blah': do_blah_thing()  # Bad
-    else: do_non_blah_thing()  # Bad
+        if foo == 'blah': one(); two(); three()
+
+        if foo == 'blah': do_blah_thing()
+        else: do_non_blah_thing()
 
 Whitespace in exceptions
 ------------------------
-.. code-block:: python
+:Good:
+    .. code-block:: python
 
-    try:  # Good
-        do_somethind()  # Good
-    except Exception:  # Good
-        pass  # Good
+        try:
+            do_something()
+        except Exception:
+            pass
 
-    try: something()  # Bad
-    finally: cleanup()  # Bad
+:Bad:
+    .. code-block:: python
+
+        try: something()
+        finally: cleanup()
 
 Conditionals
 ------------
 :Good:
     .. code-block:: python
-
-        if foo is not None:
-            pass
-
-        if foo:
-            pass
-
-        if not seq:
-            pass
-
-        if seq:
-            pass
 
         if greeting:
             pass
@@ -323,24 +347,50 @@ Conditionals
 :Bad:
     .. code-block:: python
 
-        # if (! foo == null) {}
-        if not foo is None:
-            pass
-
-        if len(seq):
-            pass
-
-        if not len(seq):
-            pass
-
         if greeting == True:
             pass
 
         if greeting is True:
             pass
 
-Returning from function
------------------------
+
+Negative Conditionals
+---------------------
+:Good:
+    .. code-block:: python
+
+        if name is not None:
+            pass
+
+:Bad:
+    .. code-block:: python
+
+        if not name is None:  # if (! name == null) {}
+            pass
+
+
+Checking if not empty
+---------------------
+:Good:
+    .. code-block:: python
+
+        if sequence:
+            pass
+
+        if not sequence:
+            pass
+
+:Bad:
+    .. code-block:: python
+
+        if len(sequence):
+            pass
+
+        if not len(sequence):
+            pass
+
+Explicit return
+---------------
 :Good:
     .. code-block:: python
 
@@ -350,17 +400,24 @@ Returning from function
             else:
                 return None
 
-        def bar(x):
-            if x < 0:
-                return None
-            return math.sqrt(x)
-
 :Bad:
     .. code-block:: python
 
         def foo(x):
             if x >= 0:
                 return math.sqrt(x)
+
+Explicit return value
+---------------------
+:Good:
+    .. code-block:: python
+
+        def bar(x):
+            if x < 0:
+                return None
+            return math.sqrt(x)
+:Bad:
+    .. code-block:: python
 
         def bar(x):
             if x < 0:
@@ -463,7 +520,7 @@ Magic number i magic string
 
 ``pycodestyle``
 ===============
-* Previously known as ``PEP 8``
+* Previously known as ``pep8``
 * Python style guide checker.
 * ``pycodestyle`` is a tool to check your Python code against some of the style conventions in ``PEP 8``
 * Plugin architecture: Adding new checks is easy
@@ -515,6 +572,7 @@ Cleanup your file
 #. Run ``pycodestyle`` on your last script
 #. Fix all errors
 #. Run ``pycodestyle`` on directory with all of your scripts
+#. Fix all errors
 
 :Założenia:
     * Szacunkowa długość kodu: 2 lini
