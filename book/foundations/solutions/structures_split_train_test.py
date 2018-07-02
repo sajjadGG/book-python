@@ -36,3 +36,7 @@ pivot = int(len(data) * TRAINING_SIZE)
 
 data_test = data[pivot:]
 data_training = data[:pivot]
+
+print(f'Header: {header}')
+print(f'Training data: {data_training}')
+print(f'Test data: {data_test}')

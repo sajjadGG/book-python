@@ -186,7 +186,7 @@ Builtin functions
 ---------------------------
 * Sortują elementy listy.
 * ``sorted()`` zwraca posortowaną listę, ale nie zapisuje zmienionej kolejności
-* ``sorted()`` zmienia listę na stałe
+* ``.sort()`` zmienia listę na stałe
 
 .. code-block:: python
 

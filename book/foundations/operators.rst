@@ -68,8 +68,8 @@ Even and odd numbers
 
 :Założenia:
     * Nazwa pliku: ``operators_even_odd.py``
-    * Szacunkowa długość kodu: około 7 linii
-    * Maksymalny czas na zadanie: 10 min
+    * Szacunkowa długość kodu: około 5 linii
+    * Maksymalny czas na zadanie: 5 min
 
 :Co zadanie sprawdza?:
     * wczytywanie ciągu znaków od użytkownika
@@ -79,14 +79,8 @@ Even and odd numbers
 
 :Podpowiedź:
     * Liczba parzysta, to taka, która po podzieleniu przez dwa nie ma reszty
-    * Użyj dzielenia modulo ``%`` lub ``divmod()``
+    * Użyj dzielenia modulo ``%``
     * Zwróć uwagę, że operator ``%`` działa modulo tylko na ``int`` oraz na ``float``. Przy ``str`` ma zupełnie inne znaczenie.
-    * .. code-block:: python
-
-        if ... :
-            print(True)
-        else:
-            print(False)
 
 Integers and floats
 -------------------
@@ -94,7 +88,7 @@ Integers and floats
 #. Wyświetl informację czy jest to liczba całkowita, czy niecałkowita.
 
 :Założenia:
-    * Nazwa pliku: ``operators_integres.py``
+    * Nazwa pliku: ``operators_integers.py``
     * Szacunkowa długość kodu: około 7 linii
     * Maksymalny czas na zadanie: 10 min
 
