@@ -183,7 +183,7 @@ Euclidean distance 2D
         pass
 
 :Założenia:
-    * Nazwa pliku: ``functions_eucledean_2d.py``
+    * Nazwa pliku: ``math_euclidean_2d.py``
     * Szacunkowa długość kodu: około 5 linii
     * Maksymalny czas na zadanie: 15 min
 
@@ -229,7 +229,7 @@ Euclidean distance multi dimensions
         pass
 
 :Założenia:
-    * Nazwa pliku: ``functions_eucledean_multi_dim.py``
+    * Nazwa pliku: ``math_euclidean_multi_dim.py``
     * Szacunkowa długość kodu: około 10 linii
     * Maksymalny czas na zadanie: 15 min
 
@@ -305,7 +305,7 @@ Random numbers
     * Umiejętność wykorzystania gotowych funkcji w zewnętrznej bibliotece
     * Umiejętność wyszukania informacji na temat API funkcji w dokumentacji języka i jego odpowiedniej wersji
     * Stworzenie dwóch alternatywnych podejść do rozwiązania zadania
-    * Porównanie czyletlności obu rozwiązań
+    * Porównanie czytelności obu rozwiązań
     * Umiejętność sprawdzania czy coś znajduje się w liście oraz ``continue``
 
 Triangle

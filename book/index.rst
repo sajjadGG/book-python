@@ -54,7 +54,7 @@ Foundations
     foundations/installing-packages.rst
     foundations/builtin.rst
     foundations/programming-convention.rst
-    foundations/time-complexity.rst
+    foundations/performance.rst
     foundations/math.rst
     foundations/debugging.rst
     foundations/print-formatting.rst

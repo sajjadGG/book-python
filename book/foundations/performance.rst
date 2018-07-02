@@ -1,6 +1,6 @@
-***************
-Time Complexity
-***************
+************************
+Performance Optimization
+************************
 
 
 * https://wiki.python.org/moin/TimeComplexity
@@ -90,7 +90,7 @@ Memoization
 #. Porównaj prędkość działania z obliczaniem na bieżąco dla parametru 500
 
 :Założenia:
-    * Nazwa pliku: ``functions-memoize.py``
+    * Nazwa pliku: ``performance_memoize.py``
     * Szacunkowa długość kodu: około 5 linii
     * Maksymalny czas na zadanie: 15 min
 
