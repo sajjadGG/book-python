@@ -351,7 +351,7 @@ Report card
 
 :Założenia:
     * Nazwa pliku: ``loops_report_card.py``
-    * Szacunkowa długość kodu: około 15 linie
+    * Szacunkowa długość kodu: około 15 linii
     * Maksymalny czas na zadanie: 10 min
 
 :Co zadanie sprawdza?:
@@ -381,7 +381,7 @@ Label encoder
 
 :Założenia:
     * Nazwa pliku: ``loops_label_encoder.py``
-    * Szacunkowa długość kodu: około 13 linie
+    * Szacunkowa długość kodu: około 13 linii
     * Maksymalny czas na zadanie: 15 min
 
 :Podpowiedź:
