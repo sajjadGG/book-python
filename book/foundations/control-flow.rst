@@ -265,7 +265,7 @@ Conditioning on user input
 
 :Założenia:
     * Nazwa pliku: ``control_input.py``
-    * Szacunkowa długość kodu: około 5 linie
+    * Szacunkowa długość kodu: około 6 linii
     * Maksymalny czas na zadanie: 5 min
 
 :Co zadanie sprawdza?:

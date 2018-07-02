@@ -93,6 +93,8 @@ Simple collections
 
 .. code-block:: python
 
+    my_set = set()
+
     my_set = {1}
     my_set = {1, 3, 1}  # {1, 3}
     my_set = set([1, 3, 1])  # {1, 3}
@@ -199,6 +201,14 @@ Accessing ``dict`` values with ``[...]`` and ``.get(...)``
     data.get('agency', 'n/a')  # n/a
 
 
+How to initialize?
+==================
+* ``list()`` or ``[]``
+* ``tuple()`` or ``()``
+* ``dict()`` or ``{}``
+* ``set()`` or ``{}``
+
+
 Nested collections
 ==================
 
@@ -226,12 +236,7 @@ Multidimensional lists
         [1, 2, 3],
     ]
 
-.. code-block:: python
-
-    array2 = [
-        [0, None, 'José'],
-        [1, 2, 3],
-    ]
+    array[1][1]  # 2
 
 Mixed types
 -----------
@@ -244,13 +249,7 @@ Mixed types
         {'first_name': 'José', 'last_name': 'Jiménez'}
     ]
 
-
-How to initialize?
-==================
-* ``list()`` or ``[]``
-* ``tuple()`` or ``()``
-* ``dict()`` or ``{}``
-* ``set()`` or ``{}``
+    array[2][2]  # 1
 
 
 How Python understands types?
@@ -280,11 +279,11 @@ How Python understands types?
 
 .. code-block:: python
 
-    what = 10,  # <class 'tuple'>  # len(what) = 1
-    what = (10,)  # <class 'tuple'>  # len(what) = 1
-    what = 10.  # <class 'float'>  # len(what) -> TypeError: object of type 'float' has no len()
-    what = (10.)  # <class 'float'> # len(what) -> TypeError: object of type 'float' has no len()
-    what = (10)  # <class 'int'>  # len(what) -> TypeError: object of type 'int' has no len()
+    what = 10,  # <class 'tuple'>
+    what = (10,)  # <class 'tuple'>
+    what = 10.  # <class 'float'>
+    what = (10.)  # <class 'float'>
+    what = (10)  # <class 'int'>
 
 
 More advanced topics
@@ -311,9 +310,9 @@ Unique keys from schema-less database
     ]
 
 :Założenia:
-    * Nazwa pliku: ``structures_keys.py``
+    * Nazwa pliku: ``structures_unique_keys.py``
     * Szacunkowa długość kodu: około 5 linii
-    * Maksymalny czas na zadanie: 5 min
+    * Maksymalny czas na zadanie: 10 min
 
 Split train/test
 ----------------
@@ -328,7 +327,7 @@ Split train/test
 :Założenia:
     * Nazwa pliku: ``structures_split_train_test.py``
     * Szacunkowa długość kodu: około 6 linii
-    * Maksymalny czas na zadanie: 10 min
+    * Maksymalny czas na zadanie: 15 min
 
 :Podpowiedź:
     - ``from random import shuffle``
