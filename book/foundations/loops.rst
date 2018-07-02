@@ -367,8 +367,7 @@ Report card
 Label encoder
 -------------
 #. Mając do dyspozycji zbiór danych Irysów z :numref:`listing-data-structures-iris-sample`
-#. Stwórz słownik gatunków
-#. Kolejnym liczbom naturalnym zaczynając od zera przyporządkuj gatunek irysów
+#. Stwórz słownik gatunków, gdzie kolejnym liczbom naturalnym zaczynając od zera przyporządkuj gatunek irysów
 #. Przygotuj listę cech (``labels``) z kluczami ze słownika gatunków
 
 .. code-block:: python
