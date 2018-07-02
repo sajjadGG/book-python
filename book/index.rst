@@ -51,6 +51,7 @@ Foundations
     foundations/operators.rst
     foundations/loops.rst
     foundations/functions.rst
+    foundations/doctests.rst
     foundations/installing-packages.rst
     foundations/builtin.rst
     foundations/programming-convention.rst
@@ -59,7 +60,6 @@ Foundations
     foundations/debugging.rst
     foundations/print-formatting.rst
     foundations/datetime.rst
-    foundations/doctests.rst
     foundations/object-oriented-programming.rst
     foundations/dataclass.rst
     foundations/exceptions.rst

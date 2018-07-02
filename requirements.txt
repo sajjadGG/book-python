@@ -4,6 +4,7 @@ pillow
 requests
 pycodestyle
 mypy
+line_profiler
 
 matplotlib
 numpy

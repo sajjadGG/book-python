@@ -12,12 +12,19 @@ Virtualenv
 
     venv/
     .venv/
-    .virtualenv/
+
     virtualenv/
-    venv-3.7/
+    .virtualenv/
+
+    .virtualenv-3.6/
+    .virtualenv-3.7/
+
     venv-3.6/
-    .venv-3.7/
+    venv-3.7/
+
     .venv-3.6/
+    .venv-3.7/
+
     ~/.virtualenv/.../
 
 Searching
