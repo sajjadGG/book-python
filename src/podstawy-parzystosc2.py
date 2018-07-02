@@ -1,8 +1,7 @@
-#!/usr/bin/env python3
 from typing import Union
 
 
-def is_even_number(liczba: Union[int, float]) -> bool:
+def is_even_number(number: Union[int, float]) -> bool:
     """
     >>> is_even_number(1)
     False
@@ -29,7 +28,7 @@ def is_even_number(liczba: Union[int, float]) -> bool:
     ...
     TypeError
     """
-    if isinstance(liczba, (int, float)):
-        return liczba % 2 == 0
+    if isinstance(number, (int, float)):
+        return number % 2 == 0
     else:
         raise TypeError
