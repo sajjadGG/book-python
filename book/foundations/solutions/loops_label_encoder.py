@@ -42,6 +42,6 @@ for observation in OBSERVATIONS:
 
     labels.append(species[name])
 
-
+species = {value: key for key, value in species.items()}
 print(species)
 print(labels)

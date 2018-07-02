@@ -8,7 +8,13 @@ W Pythonie, pętle wykonywane są na obiektach wieloelementowych, albo iteratora
 
 ``while``
 =========
-Pętla while wykonuje się dopóki argument jest prawdą.
+* Pętla ``while`` wykonuje się dopóki argument jest prawdą.
+
+.. code-block:: python
+
+    while True:
+        pass
+
 
 .. code-block:: python
 
@@ -17,11 +23,6 @@ Pętla while wykonuje się dopóki argument jest prawdą.
     while x <= 10:
         print(x)
         x += 1
-
-.. code-block:: python
-
-    while True:
-        pass
 
 
 ``for``
@@ -41,64 +42,13 @@ Pętla ``for`` wykonuje się na zestawie elementów. Dosłownie można tę instr
 
 .. code-block:: python
 
-    for x in 'Max Peck':
+    for x in 'Hello':
         print(x)
-        # M
-        # a
-        # x
-        #
-        # P
+        # H
         # e
-        # c
-        # k
-
-Iterating complex types
------------------------
-.. code-block:: python
-
-    >>> for x in ['Max', 3, 'Peck', 2.8, ['1.0', 'José', 'Jiménez']]:
-    ...    print(f'Value is: {x}')
-    Value is: Max
-    Value is: 3
-    Value is: Peck
-    Value is: 2.8
-    Value is: ['1.0', 'José', 'Jiménez']
-
-.. code-block:: python
-
-    >>> for element in ['Max', 3, 'Peck',  ['1.0', 'José', 'Jiménez']]:
-    ...    for e in element:
-    ...        print(f'Value is: {e}')
-    Value is: M
-    Value is: a
-    Value is: x
-    Value is: 3
-    Value is: P
-    Value is: e
-    Value is: c
-    Value is: k
-    Value is: 2.8
-    Value is: 1
-    Value is: .
-    Value is
-    Value is: José
-    Value is: Jiménez
-
-.. code-block:: python
-
-    >>> for x in ['Max', 3, 'Peck', 2.8, [1, 'José', 'Jiménez']]:
-    ...    if isinstance(x, list):
-    ...        for element in x:
-    ...            print(f'Value is: {element}')
-    ...    else:
-    ...        print(f'Value is: {x}')
-    Value is: Max
-    Value is: 3
-    Value is: Peck
-    Value is: 2.8
-    Value is: 1
-    Value is: José
-    Value is: Jiménez
+        # l
+        # l
+        # o
 
 .. code-block:: python
 
@@ -120,13 +70,17 @@ Iterating complex types
         # 6
         # 8
 
+Iterating over ``dict`` items
+-----------------------------
 .. code-block:: python
 
-    for element in [(0,0), (1,1), (2,2)]:
+    DATA = [('a', 0), ('b', 1), ('c', 2)]
+
+    for element in DATA:
         print(element)
-        # (0, 0)
-        # (1, 1)
-        # (2, 2)
+        # ('a', 0)
+        # ('b', 1)
+        # ('c', 2)
 
 .. code-block:: python
 
@@ -134,62 +88,111 @@ Iterating complex types
     a, b = (1, 2)
     key, value = (1, 2)
 
-    for key, value in [(0,0), (1,1), (2,2)]:
+.. code-block:: python
+
+    DATA = [('a', 0), ('b', 1), ('c', 2)]
+
+    for key, value in DATA:
         print(f'{key} -> {value}')
-        # 0 -> 0
-        # 1 -> 1
-        # 2 -> 2
+        # a -> 0
+        # b -> 1
+        # c -> 2
 
 .. code-block:: python
 
-    DATABASE = [
+    DATA = [
         (0, 1),
         ('name', 'José'),
         ('locations', ['CapeCanaveral', 'Houston']),
     ]
 
-    for key, value in DATABASE:
+    for key, value in DATA:
         print(f'{key} -> {value}')
         # 0 -> 1
-        # 'name' -> 'José'
-        # 'locations' -> ['CapeCanaveral', 'Houston']
-
+        # name -> José
+        # locations -> ['CapeCanaveral', 'Houston']
 
 .. code-block:: python
 
-    my_dict = {'x': 1, 'y': 2}
+    DATA = {'x': 1, 'y': 2}
 
-    for element in my_dict.values():
+    for element in DATA.values():
         print(element)
         # 1
         # 2
 
-    for element in my_dict.keys():
+    for element in DATA.keys():
         print(element)
         # 'x'
         # 'y'
 
     # for domyślnie iteruje po kluczach w ``dict``
-    for element in my_dict:
+    for element in DATA:
         print(element)
         # 'x'
         # 'y'
 
-    for key, value in my_dict.items():
+    for key, value in DATA.items():
         print(key, value)
         # 'x', 1
         # 'y', 2
 
 .. code-block:: python
 
-    slownik = {'x': 1, 'y': 2}
+    DATA = {'x': 1, 'y': 2}
 
-    # dobieranie sie do wartosci ``dict`` za pomoca klucza
-    for element in slownik:
-        slownik.get(element))
-        slownik[element]
+    # accessing ``dict`` items with key
+    for element in DATA:
+        DATA.get(element))
+        DATA[element]
         # '1'
         # '2'
+
+Iterating complex types
+-----------------------
+.. code-block:: python
+
+    DATA = ['Max', 3, 2.8, ['1.0', 'José']]
+
+    for x in DATA:
+        print(f'Value is: {x}')
+
+    # Value is: Max
+    # Value is: 3
+    # Value is: 2.8
+    # Value is: ['1.0', 'José']
+
+.. code-block:: python
+
+    DATA = ['Max', 3, 2.8, ['1.0', 'José']]
+
+    for first_level_element in DATA:
+        for second_level_element in first_level_element:
+            print(f'Value is: {second_level_element}')
+
+    # Value is: M
+    # Value is: a
+    # Value is: x
+    # TypeError: 'int' object is not iterable
+
+
+.. code-block:: python
+
+    DATA = ['Max', 3, 2.8, ['1.0', 'José']]
+
+    for first_level_element in DATA:
+        if isinstance(first_level_element, (list, set, tuple)):
+            for second_level_element in first_level_element:
+                print(f'Value is: {second_level_element}')
+        else:
+            print(f'Value is: {first_level_element}')
+
+    # Value is: Max
+    # Value is: 3
+    # Value is: Peck
+    # Value is: 2.8
+    # Value is: 1.0
+    # Value is: José
 
 Inline ``for``
 ==============
@@ -343,12 +346,12 @@ Report card
 #. Program ma sprawdzać czy ocena znajduje się w skali ocen
 #. Jeżeli ocena jest na liście dopuszczalnych ocen, dodaje ją do dzienniczka
 #. Jeżeli wpisano cyfrę nie znajdującą się na liście dopuszczalnych ocen, wyświetl informację "Grade is not allowed" i dalej kontynuuj wpisywanie
-#. Wyświetla wyliczoną dla dzienniczka ocen średnią arytmetyczną
 #. Jeżeli wciśnięto sam Enter, oznacza to koniec wpisywania do dzienniczka
+#. Na zakończenie wyświetl wyliczoną dla dzienniczka średnią arytmetyczną z ocen
 
 :Założenia:
     * Nazwa pliku: ``loops_report_card.py``
-    * Szacunkowa długość kodu: około 10 linie
+    * Szacunkowa długość kodu: około 15 linie
     * Maksymalny czas na zadanie: 10 min
 
 :Co zadanie sprawdza?:
@@ -359,23 +362,22 @@ Report card
     * sprawdzanie czy obiekt jest instancją klasy
 
 :Podpowiedź:
-    * Czytelny kod powinien mieć około 10 linii
     * ``len()``, ``sum()``
 
 Label encoder
 -------------
 #. Mając do dyspozycji zbiór danych Irysów z :numref:`listing-data-structures-iris-sample`
 #. Stwórz słownik gatunków
-#. Dla każdego gatunku przyporządkuj liczbę naturalną zaczynając od 0
-#. Ustaw dane w bazie danych w losowej kolejności bez nagłówka
-#. Przygotuj listę cech (``labels``) z podstawionymi wartościami ze słownika gatunków
+#. Kolejnym liczbom naturalnym zaczynając od zera przyporządkuj gatunek irysów
+#. Przygotuj listę cech (``labels``) z kluczami ze słownika gatunków
 
 .. code-block:: python
 
-    # I. setosa: 0
-    # I. versicolor: 1
-    # I. virginica: 2
-    labels = [0, 1, 2, 1, 1, 0, ...]
+    print(species)
+    # {0: 'I. versicolor', 1: 'I. virginica', 2: 'I. setosa'}
+
+    print(labels)
+    # [0, 1, 2, 1, 1, 0, ...]
 
 :Założenia:
     * Nazwa pliku: ``loops_label_encoder.py``
