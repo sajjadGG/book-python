@@ -73,6 +73,48 @@ Inline ``if``
     ip = '127.0.0.1'
     protocol = 'ipv4' if '.' in ip else 'ipv6'
 
+Complex expressions
+===================
+
+``and``
+-------
+.. code-block:: python
+
+    first_name = 'José'
+    last_name == 'Jiménez'
+
+    if first_name == 'José' and last_name == 'Jiménez':
+        print('My name José Jiménez')
+    else:
+        print('Your name is different')
+
+
+``or``
+------
+.. code-block:: python
+
+    first_name = 'José'
+    last_name == 'Jiménez'
+
+    if first_name == 'José' or last_name == 'Max':
+        print('Your name is José or Max')
+    else:
+        print('Your name is different')
+
+
+mixed
+-----
+.. code-block:: python
+
+    first_name = 'José'
+    last_name == 'Jiménez'
+
+    if first_name == 'José' and last_name == 'Jiménez'
+            or first_name == 'Max' and last_name == 'Peck':
+        print('Your name is José Jiménez or Max Peck')
+    else:
+        print('Your name is different')
+
 
 Control Statements
 ==================
