@@ -43,5 +43,9 @@ for observation in OBSERVATIONS:
     labels.append(species[name])
 
 species = {value: key for key, value in species.items()}
+
 print(species)
+# {0: 'I. versicolor', 1: 'I. virginica', 2: 'I. setosa'}
+
 print(labels)
+# [0, 1, 2, 1, 1, 0, ...]
