@@ -80,13 +80,26 @@ Control Statements
 ``in``
 ------
 * Słowo kluczowe ``in`` pozwala na sprawdzenie czy dana wartość zawiera się w zbiorze
+* Można wykorzystać czy ``str`` zawiera się w innym ``str``
 
 .. code-block:: python
+
+    name = 'José Jiménez'
 
     if name in {'José Jiménez', 'Max Peck'}:
         print('Your name is José Jiménez or Max Peck')
     else:
         print('Your name is neither José Jiménez nor Max Peck')
+
+.. code-block:: python
+
+    name = 'José'
+    text = 'My name José Jiménez
+
+    if name in text:
+        print(True)
+    else:
+        print(False)
 
 ``not``
 -------
@@ -220,3 +233,4 @@ Conditioning on user input
     * Sprawdzanie przypadków brzegowych (niekompatybilne argumenty)
     * Definiowanie zmiennych i stałych w programie
     * Magic Number
+

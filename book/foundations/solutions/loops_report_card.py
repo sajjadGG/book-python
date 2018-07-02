@@ -1,5 +1,4 @@
 ALLOWED_GRADES = (2, 3, 3.5, 4, 4.5, 5)
-ALLOWED_GRADES = [float(x) for x in ALLOWED_GRADES]
 report_card = []
 
 

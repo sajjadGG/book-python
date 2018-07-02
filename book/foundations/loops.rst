@@ -342,14 +342,14 @@ Report card
 #. Użytkownik podaje oceny jako ``int`` lub ``float``
 #. Program ma sprawdzać czy ocena znajduje się w skali ocen
 #. Jeżeli ocena jest na liście dopuszczalnych ocen, dodaje ją do dzienniczka
-#. Jeżeli wpisano cyfrę nie znjadującą się na liście dopuszczalnych ocen, wyświetl informację "Grade is not allowed" i dalej kontunuuj wpisywanie
+#. Jeżeli wpisano cyfrę nie znajdującą się na liście dopuszczalnych ocen, wyświetl informację "Grade is not allowed" i dalej kontynuuj wpisywanie
 #. Wyświetla wyliczoną dla dzienniczka ocen średnią arytmetyczną
 #. Jeżeli wciśnięto sam Enter, oznacza to koniec wpisywania do dzienniczka
 
 :Założenia:
     * Nazwa pliku: ``loops_report_card.py``
     * Szacunkowa długość kodu: około 10 linie
-    * Maksymalny czas na zadanie: 15 min
+    * Maksymalny czas na zadanie: 10 min
 
 :Co zadanie sprawdza?:
     * wczytywanie ciągu znaków od użytkownika
@@ -361,3 +361,31 @@ Report card
 :Podpowiedź:
     * Czytelny kod powinien mieć około 10 linii
     * ``len()``, ``sum()``
+
+Label encoder
+-------------
+#. Mając do dyspozycji zbiór danych Irysów z :numref:`listing-data-structures-iris-sample`
+#. Stwórz słownik gatunków
+#. Dla każdego gatunku przyporządkuj liczbę naturalną zaczynając od 0
+#. Ustaw dane w bazie danych w losowej kolejności bez nagłówka
+#. Przygotuj listę cech (``labels``) z podstawionymi wartościami ze słownika gatunków
+
+.. code-block:: python
+
+    # I. setosa: 0
+    # I. versicolor: 1
+    # I. virginica: 2
+    labels = [0, 1, 2, 1, 1, 0, ...]
+
+:Założenia:
+    * Nazwa pliku: ``loops_label_encoder.py``
+    * Szacunkowa długość kodu: około 13 linie
+    * Maksymalny czas na zadanie: 15 min
+
+:Podpowiedź:
+    - ``from random import shuffle``
+
+.. literalinclude:: src/data-structures-iris-sample.py
+    :name: listing-data-structures-iris-sample
+    :language: python
+    :caption: Sample Iris databases

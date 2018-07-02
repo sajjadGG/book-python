@@ -45,6 +45,34 @@ Lambda - funkcje anonimowe
 
     o.say_hello()
 
+.. code-block:: python
+
+    DATA = [
+        {'user': 'jkowalski', 'uid': 1000},
+        {'user': 'root', 'uid': 0},
+    ]
+
+
+    system_users = filter(lambda x: x['uid'] < 1000, DATA)
+    out = list(system_users)
+    print(out)
+
+
+
+
+
+    def is_system_user(data):
+        if data['uid'] < 1000:
+            return True
+        else:
+            return False
+
+    system_users = []
+    for user in DATA:
+        if is_system_user(user):
+            system_users.append(user)
+
+    print(system_users)
 
 Closure
 =======

@@ -312,7 +312,7 @@ Unique keys from schema-less database
 
 :Założenia:
     * Nazwa pliku: ``structures_keys.py``
-    * Szacunkowa długość kodu: około 3 linie
+    * Szacunkowa długość kodu: około 5 linii
     * Maksymalny czas na zadanie: 5 min
 
 Split train/test
@@ -327,7 +327,7 @@ Split train/test
 
 :Założenia:
     * Nazwa pliku: ``structures_split_train_test.py``
-    * Szacunkowa długość kodu: około 6 linie
+    * Szacunkowa długość kodu: około 6 linii
     * Maksymalny czas na zadanie: 10 min
 
 :Podpowiedź:
@@ -338,21 +338,3 @@ Split train/test
     :language: python
     :caption: Sample Iris databases
 
-Label encoder
--------------
-#. Mając do dyspozycji zbiór danych Irysów z :numref:`listing-data-structures-iris-sample`
-#. Stwórz słownik gatunków
-#. Kolejnym liczbom naturalnym zaczynając od zera przyporządkuj gatunek irysów
-#. Przygotuj listę cech z kluczami ze słownika gatunków
-
-.. code-block:: python
-
-    # 0: I. setosa
-    # 1: I. versicolor
-    # 2: I. virginica
-    labels = [0, 1, 2, 1, 1, 0, ...]
-
-:Założenia:
-    * Nazwa pliku: ``structures_label_encoder.py``
-    * Szacunkowa długość kodu: około 6 linie
-    * Maksymalny czas na zadanie: 10 min

@@ -261,7 +261,7 @@ String immutability
 .. code-block:: python
 
     name = 'José'
-    name += 'Jiménez'
+    name += ' Jiménez'
     print(name)  # José Jiménez
 
 String methods
@@ -350,6 +350,7 @@ String splicing
     text[-3:-1]  # 'su'
     text[:-2]  # 'Lorem ips'
     text[::2]  # 'Lrmism'
+    text[::-1]  # muspi meroL
 
 Handling user input
 -------------------
