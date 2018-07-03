@@ -10,14 +10,14 @@ class PickleSerializable:
         return pickle.dumps(self)
 
 
-class Server(JSONSerializable, PickleSerializable):
+class Connection(JSONSerializable, PickleSerializable):
     def __init__(self, host, user, password=None):
         self.host = host
         self.user = user
         self.password = password
 
 
-connection = Server(
+connection = Connection(
     host='localhost',
     user='admin',
     password='admin'
