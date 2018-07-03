@@ -417,6 +417,75 @@ Getitem and Getattr
     '{p.type}: {p.kinds[0][name]}'.format(p=Plant())
     # 'tree: oak'
 
+Datetime
+--------
+.. code-block:: python
+
+    from datetime import datetime
+
+    '{:%Y-%m-%d %H:%M}'.format(datetime(2001, 2, 3, 4, 5))
+    # '2001-02-03 04:05'
+
+Parametrized formats
+--------------------
+.. code-block:: python
+
+    '{:{align}{width}}'.format('test', align='^', width='10')
+    # '   test   '
+
+.. code-block:: python
+
+    '%.*s = %.*f' % (3, 'Gibberish', 3, 2.7182)
+    # 'Gib = 2.718'
+
+    '{:.{prec}} = {:.{prec}f}'.format('Gibberish', 2.7182, prec=3)
+    # 'Gib = 2.718'
+
+.. code-block:: python
+
+    '%*.*f' % (5, 2, 2.7182)
+    # ' 2.72'
+
+    '{:{width}.{prec}f}'.format(2.7182, width=5, prec=2)
+    # ' 2.72'
+
+.. code-block:: python
+
+    '{:{prec}} = {:{prec}}'.format('Gibberish', 2.7182, prec='.3')
+    # 'Gib = 2.72'
+
+.. code-block:: python
+
+    from datetime import datetime
+    dt = datetime(2001, 2, 3, 4, 5)
+
+    '{:{dfmt} {tfmt}}'.format(dt, dfmt='%Y-%m-%d', tfmt='%H:%M')
+    # '2001-02-03 04:05'
+
+.. code-block:: python
+
+    '{:{}{}{}.{}}'.format(2.7182818284, '>', '+', 10, 3)
+    # '     +2.72'
+
+.. code-block:: python
+
+    '{:{}{sign}{}.{}}'.format(2.7182818284, '>', 10, 3, sign='+')
+    # '     +2.72'
+
+Custom objects
+--------------
+.. code-block:: python
+
+    class HAL9000(object):
+
+    def __format__(self, format):
+        if (format == 'open-the-pod-bay-doors'):
+            return "I'm afraid I can't do that."
+        return 'HAL 9000'
+
+    '{:open-the-pod-bay-doors}'.format(HAL9000())
+    # "I'm afraid I can't do that."
+
 Więcej informacji
 =================
 * https://pyformat.info - Formatowanie stringów w Python
