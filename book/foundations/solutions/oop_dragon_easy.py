@@ -1,19 +1,23 @@
 import random
 
 
+DRAGON_BASE_HIT_POINTS = random.randint(50, 100)
+STATUS_ALIVE = 'alive'
+STATUS_DEAD = 'dead'
+
+
 class Dragon:
-    def __init__(self, name, hp=100, pos_x=0, pos_y=0, texture='dragon.png'):
+    def __init__(self, name, position_x=0, position_y=0, texture='dragon.png'):
         self.name = name
-        self.hp = random.randint(50, 100)
-        self.position_x = pos_x
-        self.position_y = pos_y
+        self.hit_points = DRAGON_BASE_HIT_POINTS
+        self.position_x = position_x
+        self.position_y = position_y
         self.texture = texture
+        self.status = STATUS_ALIVE
 
     def move(self, left=0, down=0, up=0, right=0):
-        self.position_x += right
-        self.position_x -= left
-        self.position_y -= up
-        self.position_y += down
+        self.position_x += right - left
+        self.position_y += down - up
 
     def set_position(self, position_x, position_y):
         self.position_x = position_x
@@ -22,26 +26,37 @@ class Dragon:
     def get_position(self):
         return self.position_x, self.position_y
 
-    def dead(self):
-        print('Dead')
-        self.texture = 'dragon-dead.png'
+    def drop_gold(self):
         gold = random.randint(1, 100)
         print(f'Dropped {gold} gold at position {self.get_position()}')
 
-    def hit(self, damage=0):
-        self.hp -= damage
-        print(f'Damage taken: {damage}, Dragon HP: {self.hp}')
+    def make_dead(self):
+        print('Dragon is dead')
+        self.status = STATUS_DEAD
+        self.texture = 'dragon-dead.png'
+        self.drop_gold()
 
-        if self.hp <= 0:
-            self.dead()
+    def take_damage(self, damage=0):
+        if self.status == STATUS_DEAD:
+            return None
+
+        self.hit_points -= damage
+        print(f'Dragon damage taken: {damage}, HP left: {self.hit_points}')
+
+        if self.hit_points <= 0:
+            self.make_dead()
+
+    def make_damage(self):
+        return random.randint(5, 20)
 
 
-wawelski = Dragon(name='Wawelski', pos_x=0, pos_y=0)
+if __name__ == '__main__':
+    wawelski = Dragon(name='Wawelski', position_x=0, position_y=0)
 
-wawelski.move(left=10, down=20)
-wawelski.move(right=15, up=5)
+    wawelski.move(left=10, down=20)
+    wawelski.move(right=15, up=5)
 
-wawelski.hit(10)
-wawelski.hit(50)
-wawelski.hit(35)
-wawelski.hit(20)
+    wawelski.take_damage(10)
+    wawelski.take_damage(50)
+    wawelski.take_damage(35)
+    wawelski.take_damage(20)

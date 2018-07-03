@@ -166,7 +166,8 @@ Dragon (Easy)
     * ``.set_position(x, y)`` - ustawia pozycję smoka na ``x`` i ``y``
     * ``.get_position()`` - która zwraca aktualne położenie smoka
     * ``.move(left, right, down, up)`` - przesuwa smoka o zadaną liczbę punktów w którymś z kierunków - można podać tylko dwa z nich, np. ``.move(right=30, down=50)``
-    * ``.hit(damage)`` - zadaj obrażenia smokowi
+    * ``.take_damage(damage)`` - zadaj obrażenia smokowi
+    * ``.make_damage()`` - Smok zadaje losowe obrażenia (5-20)
 
 #. Kiedy ``hit_points`` smoka spadnie poniżej zera:
 
@@ -176,11 +177,12 @@ Dragon (Easy)
     * napisz na ekranie ile złota smok wyrzucił (losowa 1-100)
     * napisz na ekranie w jakiej pozycji smok wyrzucił pieniądze (ostania, w której widziano smoka)
 
+#. Nie można zadawać smokowi obrażeń, jeżeli już nie żyje
 #. Granie ze smokiem tak jak na :numref:`listing-oop-dragon`
 
 :Założenia:
     * Nazwa pliku: ``oop_dragon_easy.py``
-    * Szacunkowa długość kodu: około 35 linii
+    * Szacunkowa długość kodu: około 50 linii
     * Maksymalny czas na zadanie: 30 min
 
 .. literalinclude:: src/oop_dragon.py
@@ -190,17 +192,19 @@ Dragon (Easy)
 
 Dragon (Medium)
 -----------------
+#. Stwórz klasę ``Hero``
 #. Nasz bohater ma skończone losowe ``hit_points`` (100-150)
 #. Smok zadaje losowe obrażenia (5-20)
 #. Bohater zadaje losowe obrażenia (1-15)
 #. Smok nie może wyjść poza obszar ekranu (1024x768)
+#. Napisz ``doctest`` do funkcji move, sprawdzający poruszanie się poza planszą
 #. Przeprowadź symulację walki.
 #. Kto zginie pierwszy?
 
 :Założenia:
     * Nazwa pliku: ``oop_dragon_medium.py``
-    * Szacunkowa długość kodu: około 35 linii
-    * Maksymalny czas na zadanie: 15 min
+    * Szacunkowa długość kodu: około 90 linii
+    * Maksymalny czas na zadanie: 45 min
 
 Dragon (Advanced)
 -----------------
