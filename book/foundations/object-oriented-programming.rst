@@ -189,7 +189,7 @@ Dragon (Easy)
     :language: python
     :caption: Dragon API
 
-Dragon (Advanced)
+Dragon (Medium)
 -----------------
 #. Nasz bohater ma skończone losowe ``hit_points`` (100-150)
 #. Smok zadaje losowe obrażenia (5-20)
@@ -198,9 +198,26 @@ Dragon (Advanced)
 #. Kto zginie pierwszy?
 
 :Założenia:
+    * Nazwa pliku: ``oop_dragon_medium.py``
+    * Szacunkowa długość kodu: około 35 linii
+    * Maksymalny czas na zadanie: 15 min
+
+Dragon (Advanced)
+-----------------
+#. Nasz bohater ma dodatkowo:
+
+    * zbroję 10 defence
+    * tarczę 5 defence
+
+#. Zbroja i tarcza chroni przed uderzeniami proporcjonalnie
+#. Przeprowadź symulację walki.
+#. Kto zginie pierwszy?
+
+:Założenia:
     * Nazwa pliku: ``oop_dragon_advanced.py``
     * Szacunkowa długość kodu: około 35 linii
     * Maksymalny czas na zadanie: 15 min
+
 
 Address Book (Easy)
 -------------------
