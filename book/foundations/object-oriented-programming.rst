@@ -193,7 +193,7 @@ Dragon (Easy)
 Dragon (Medium)
 -----------------
 #. Stwórz klasę ``Hero``
-#. Nasz bohater ma skończone losowe ``hit_points`` (100-150)
+#. Nasz bohater (José Jiménez) ma skończone losowe ``hit_points`` (100-150)
 #. Smok zadaje losowe obrażenia (5-20)
 #. Bohater zadaje losowe obrażenia (1-15)
 #. Smok nie może wyjść poza obszar ekranu (1024x768)
@@ -225,7 +225,6 @@ Dragon (Advanced)
     * Nazwa pliku: ``oop_dragon_advanced.py``
     * Szacunkowa długość kodu: około 35 linii
     * Maksymalny czas na zadanie: 15 min
-
 
 Address Book (Easy)
 -------------------

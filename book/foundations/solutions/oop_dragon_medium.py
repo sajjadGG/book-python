@@ -59,7 +59,7 @@ class Hero:
 
 if __name__ == '__main__':
     wawelski = DragonMedium(name='Wawelski')
-    jose = Hero(name='Jose Jimenez')
+    jose = Hero(name='José Jiménez')
     turn = 0
 
     print(f'Wawelski: {wawelski.hit_points}')
