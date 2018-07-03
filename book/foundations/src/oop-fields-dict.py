@@ -5,9 +5,9 @@ class Astronaut:
 
 
 jose = Astronaut(name='José Jiménez')
-print(jose.agency.__dict__)
+print(jose.__dict__)
 # {'name': 'José Jiménez', 'agency': 'NASA'}
 
 ivan = Astronaut(name='Иван Иванович', agency='Roscosmos')
-print(ivan.agency.__dict__)
+print(ivan.__dict__)
 # {'name': 'Иван Иванович', 'agency': 'Roscosmos'}

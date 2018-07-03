@@ -5,6 +5,6 @@ class Astronaut:
     age: int = 30
 
 
-astro = Astronaut()
-astro.first_name
+jose = Astronaut()
+jose.first_name
 # José

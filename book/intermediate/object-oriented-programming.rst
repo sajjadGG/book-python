@@ -34,6 +34,11 @@ Duck typing
     :language: python
     :caption: Duck typing
 
+Dynamically creating fields
+===========================
+.. literalinclude:: src/oop-init-dynamic.py
+    :language: python
+    :caption: Funkcja inicjalizująca, która automatycznie dodaje pola do naszej klasy w zależności od tego co zostanie podane przy tworzeniu obiektu
 
 Accessors
 =========
@@ -60,6 +65,25 @@ Accessing class fields
     :language: python
     :caption: ``@property``, ``@x.setter``, ``@x.deleter``
 
+
+``__str__()`` and ``__repr__()``
+================================
+* ``__repr__`` jest dla developerów (być jednoznacznym),
+* ``__str__`` dla użytkowników (być czytelnym).
+
+.. literalinclude:: src/oop-repr.py
+    :language: python
+    :caption: Using ``__repr__()`` on a class
+
+.. code-block:: python
+
+    import datetime
+
+    datetime.datetime.now()  # ``__repr__``
+    # datetime.datetime(2018, 7, 3, 11, 32, 51, 684972)
+
+    print(datetime.datetime.now())  # ``__str__``
+    # 2018-07-03 11:32:58.927387
 
 ``@staticmethod``
 =================
@@ -213,3 +237,41 @@ Metaclass
 .. literalinclude:: src/oop-metaclass.py
     :language: python
     :caption: Metaclass
+
+Assignments
+===========
+
+Address Book (Medium)
+---------------------
+#. API programu powinno być tak jak na :numref:`listing-oop-addressbook-medium`
+#. Zrób tak, aby się ładnie wyświetlało zarówno dla jednego wyniku (``print(adres)``, ``print(osoba)`` jak i dla wszystkich w książce ``print(ksiazka_adresowa)``.
+
+:Założenia:
+    * Nazwa pliku: ``oop_addressbook_medium.py``
+    * Szacunkowa długość kodu: około 10 linii
+    * Maksymalny czas na zadanie: 20 min
+
+.. literalinclude:: src/oop-assignment-addressbook-medium.py
+    :name: listing-oop-addressbook-medium
+    :language: python
+    :caption: Address Book
+
+Address Book (Hard)
+-------------------
+#. Korzystając z kodu z listingu :numref:`listing-oop-addressbook-hard`
+#. Zrób tak, aby się ładnie wyświetlało zarówno dla jednego wyniku (``print(adres)``, ``print(osoba)`` jak i dla wszystkich w książce ``print(ksiazka_adresowa)``.
+#. ``Adres`` ma mieć zmienną liczbę argumentów (``**kwargs``)
+#. Jeżeli argument jest różny od ``None`` powinien być dynamicznie ustawiony (``setattr()``).
+
+:Założenia:
+    * Nazwa pliku: ``oop_addressbook_hard.py``
+    * Szacunkowa długość kodu: około 20 linii
+    * Maksymalny czas na zadanie: 30 min
+
+:Co zadanie sprawdza?:
+    * korzystanie z operatorów ``*`` i ``**`` (zadanie z gwiazdką)
+
+.. literalinclude:: src/oop-assignment-addressbook-hard.py
+    :name: listing-oop-addressbook-hard
+    :language: python
+    :caption: Address Book

@@ -5,7 +5,7 @@ class Astronaut:
         print(f'I am {self.gender}')
 
 
-class MaleAstonaut(Astronaut):
+class MaleAstronaut(Astronaut):
     gender = 'male'
 
 
@@ -13,7 +13,7 @@ class FemaleAstronaut(Astronaut):
     gender = 'female'
 
 
-jose = MaleAstonaut()
+jose = MaleAstronaut()
 jose.what_is_your_gender()
 # male
 

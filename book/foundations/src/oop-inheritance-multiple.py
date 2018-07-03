@@ -6,14 +6,18 @@ class Astronaut:
         print(f'My name is {self.name}')
 
 
-class MaleAstonaut(Astronaut):
+class MaleAstronaut(Astronaut):
     gender = 'male'
 
 
-class Gieroj(MaleAstonaut):
+class Gieroj(MaleAstronaut):
     status = 'hero'
 
 
-ivan = MaleAstonaut(name='Ivan')
+ivan = Gieroj(name='Ivan')
 ivan.say_hallo()
 # My name is Ivan
+ivan.status
+# hero
+ivan.gender
+# male

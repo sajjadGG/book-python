@@ -1,54 +1,30 @@
-class OtwieralneSzyby:
-    def otworz_szyby(self):
-        self.szyby = 'otwarte'
-
-    def zamknij_szyby(self):
-        self.szyby = 'zamkniete'
-
-class OtwieralnyDach:
-    def otorz_dach(self):
-        self.dach = 'otwarty'
-
-    def zamknij_dach(self):
-        self.dach = 'zamkniety'
-
-class UmieTrabic:
-    def zatrab(self):
-        print('biip')
-
-class Pojazd:
-    kola = None
-    szyby = None
-    dach = None
+class JSONSerializable:
+    def to_json(self):
+        import json
+        return json.dumps(self.__dict__)
 
 
-class Samochod(Pojazd, UmieTrabic, OtwieralneSzyby):
-    kola = 4
-
-    def wlacz_swiatla(self, *args, **kwargs):
-        print('włączam światła')
-
-
-class Cabrio(Samochod, OtwieralnyDach):
-    def wlacz_swiatla(self, *args, **kwargs):
-        print('Podnieś obudowę lamp')
-        print('Puść muzyzkę')
-        super().wlacz_swiatla(*args, **kwargs)
-        print('Zatrąb')
+class PickleSerializable:
+    def to_pickle(self):
+        import pickle
+        return pickle.dumps(self)
 
 
-class Motor(Pojazd, UmieTrabic):
-    kola = 2
+class Server(JSONSerializable, PickleSerializable):
+    def __init__(self, host, user, password=None):
+        self.host = host
+        self.user = user
+        self.password = password
 
 
-car = Cabrio()
+connection = Server(
+    host='localhost',
+    user='admin',
+    password='admin'
+)
 
-car.otworz_szyby()
-car.szyby
-# otwarte
+connection.to_json()
+# {"host": "localhost", "user": "admin", "password": "admin"}
 
-car.zamknij_szyby()
-car.szyby
-# zamkniete
-
-car.wlacz_swiatla()
+connection.to_pickle()
+# b'\x80\x03c__main__\nServer\nq\x00)\x81q\x01}q\x02(X\x04\x00\x00\x00hostq\x03X\t\x00\x00\x00localhostq\x04X\x04\x00\x00\x00userq\x05X\x05\x00\x00\x00adminq\x06X\x08\x00\x00\x00passwordq\x07h\x06ub.'
