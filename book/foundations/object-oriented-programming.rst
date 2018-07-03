@@ -194,6 +194,7 @@ Dragon (Medium)
 #. Nasz bohater ma skończone losowe ``hit_points`` (100-150)
 #. Smok zadaje losowe obrażenia (5-20)
 #. Bohater zadaje losowe obrażenia (1-15)
+#. Smok nie może wyjść poza obszar ekranu (1024x768)
 #. Przeprowadź symulację walki.
 #. Kto zginie pierwszy?
 
@@ -208,8 +209,12 @@ Dragon (Advanced)
 
     * zbroję 10 defence
     * tarczę 5 defence
+    * miecz 5 damage
 
-#. Zbroja i tarcza chroni przed uderzeniami proporcjonalnie
+#. Zbroja i tarcza chroni przed uderzeniami procentowo obniżając ``damage``
+#. Miecz procentowo zwiększa damage
+#. Obrażenia smoka maleją z sześcianem odległości
+#. Bohater nie może zadawać obrażeń jak jest dalej niż 50 punktów od przeciwnika
 #. Przeprowadź symulację walki.
 #. Kto zginie pierwszy?
 
