@@ -2,7 +2,7 @@ class Dragon:
     pass
 
 
-wawelski = Dragon(name='Wawelski', pos_x=0, pos_y=0)
+wawelski = Dragon(name='Wawelski', position_x=0, position_y=0)
 
 wawelski.move(left=10, down=20)
 wawelski.move(right=15, up=5)

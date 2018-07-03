@@ -165,7 +165,7 @@ Dragon (Easy)
 
     * ``.set_position(x, y)`` - ustawia pozycję smoka na ``x`` i ``y``
     * ``.get_position()`` - która zwraca aktualne położenie smoka
-    * ``.move(left, right, down, up)`` - przesuwa smoka o zadaną liczbę punktów w którymś z kierunków (można podać tylko dwa z nich, np. right=30, down=50)
+    * ``.move(left, right, down, up)`` - przesuwa smoka o zadaną liczbę punktów w którymś z kierunków (można podać tylko dwa z nich, np. ``right=30``, ``down=50``)
     * ``.hit(damage)`` - zadaj obrażenia smokowi
     * ``.drop()`` -
 
