@@ -11,24 +11,24 @@ Run in the console
 =========
 .. code-block:: python
 
-    >>> lista = ['a', 'b', 'c', [1, 2, 3]]
-    >>> for element in lista:
-    ...     print(element)
-    a
-    b
-    c
-    [1, 2, 3]
+    DATA = ['a', 'b', 'c', [1, 2, 3]]
+    for element in DATA:
+        print(element)
+    # a
+    # b
+    # c
+    # [1, 2, 3]
 
 .. code-block:: python
 
-    >>> imiona = ('Matt')
+    USERNAMES = ('José')
 
-    >>> for imie in imiona:
-    ...     print(imie)
-    M
-    a
-    t
-    t
+    for user in USERNAMES:
+        print(user)
+    # J
+    # o
+    # s
+    # é
 
 ``pprint``
 ==========
@@ -52,7 +52,6 @@ Run in the console
 
     pprint(globals())
 
-
 .. code-block:: python
 
     from pprint import pprint
@@ -60,24 +59,24 @@ Run in the console
     print(globals())
     pprint(globals())
 
-    def wyswietl(a, b, c=6):
-        imie = 'José'
-        nazwisko = 'Jiménez'
+    def hello(a, b, text='My name'):
+        first_name = 'José'
+        last_name = 'Jiménez'
         pprint(locals())
         return locals()
 
 
-    wyswietl(1, 2)
+    hello(1, 2)
 
 ``locals()``
 ------------
 .. code-block:: python
 
-    def wyswietl(a, b, c=6):
-        imie = 'José'
-        nazwisko = 'Jiménez'
+    def hello(a, b, text='My name'):
+        first_name = 'José'
+        last_name = 'Jiménez'
         my_vars = locals()
-        del my_vars['c']
+        del my_vars['text']
         return my_vars
 
 ``help`` and docstring ``__doc__``
@@ -88,10 +87,13 @@ Run in the console
 
 .. code-block:: python
 
-    def say_hello(name='José Jiménez'):
-        print(f'hello {name}')
+    def hello(name='José Jiménez'):
+        """
+        Function displays greeting
+        """
+        print(f'My name {name}')
 
-    help(say_hello)
+    help(hello)
 
 .. literalinclude:: src/debugging-docstring.py
     :language: python
