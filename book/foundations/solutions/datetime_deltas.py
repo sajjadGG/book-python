@@ -3,16 +3,16 @@ import datetime
 YEAR = 365
 MONTH = 30
 
-input1 = 'April 12, 1961 2:07 local time'
-input2 = '07/21/69 2:56:15 AM UTC'
+input1 = 'April 12, 1961 2:07 local time'  # ALMT Timezone
+input2 = '"07/21/69 2:56:15 AM UTC"'
 
 gagarin = datetime.datetime.strptime(input1, '%B %d, %Y %H:%M local time')
 # 1961-04-12 02:07:00
 
-armstrong = datetime.datetime.strptime(input2, '%x %X %p %Z')
+armstrong = datetime.datetime.strptime(input2, '"%x %X %p %Z"')
 # 1969-07-21 02:56:15
 
-armstrong = datetime.datetime.strptime(input2, '%m/%d/%y %I:%M:%S %p %Z')
+armstrong = datetime.datetime.strptime(input2, '"%m/%d/%y %I:%M:%S %p %Z"')
 # 1969-07-21 02:56:15
 
 roznica = armstrong - gagarin
@@ -39,7 +39,7 @@ print(ile_czasu)
 # 20654 days, 12:03:09.805525
 
 
-years, days = divmod(data.days, YEAR)
+years, days = divmod(ile_czasu.days, YEAR)
 months, days = divmod(days, MONTH)
 print(f'Bede mial: {years}y {months}m {days}d')
 # Bede mial: 56y 7m 4d

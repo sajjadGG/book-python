@@ -322,7 +322,7 @@ Triangle
     * Umiejętność wykorzystania gotowych funkcji w zewnętrznej bibliotece
     * Umiejętność wyszukania informacji na temat API funkcji w dokumentacji języka i jego odpowiedniej wersji
     * Stworzenie dwóch alternatywnych podejść do rozwiązania zadania
-    * Porównanie czyletlności obu rozwiązań
+    * Porównanie czytelności obu rozwiązań
 
 Random points
 -------------

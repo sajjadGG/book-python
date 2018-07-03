@@ -238,16 +238,18 @@ Assignments
 
 Powielanie napisów
 ------------------
-#. Napisz program, który wczyta od użytkownika pewien napis, a następnie wyświetli 5 kopii tego napisu, każda w osobnej linii.
-#. Napisz doctest do takiej funkcji.
-#. Napisz trzy wersje tego programu:
+#. Wczytaj od użytkownika tekst
+#. Napisz trzy funkcje:
 
-    * wykorzystując ``range()``
-    * wykorzystując pętlę ``while``
-    * wykorzystując właściwości mnożenia stringów ``print('ciag znakow' * 5)``
+    * ``print_1(what)`` wykorzystującą ``range()``
+    * ``print_2(what)`` wykorzystującą pętlę ``while``
+    * ``print_3(what)`` wykorzystującą mnożenie stringów
+
+#. Każda funkcja ma wyświetlić 5 kopii tego napisu, każda w osobnej linii.
+#. Napisz doctest do wszystkich funkcji.
 
 :Założenia:
-    * Nazwa pliku: ``print-multi.py``
+    * Nazwa pliku: ``print_lines.py``
     * Szacunkowa długość kodu: około 5 linii
     * Maksymalny czas na zadanie: 5 min
 
@@ -258,15 +260,13 @@ Powielanie napisów
 
 Przeliczanie temperatury
 ------------------------
-#. Woda zamarza przy 32 stopniach Fahrenheita, a wrze przy 212 stopniach Fahrenheita.
 #. Napisz program, który wyświetli tabelę przeliczeń stopni Celsjusza na stopnie Fahrenheita w zakresie od –20 do +40 stopni Celsjusza (co 5 stopni).
-#. Pamiętaj o wyświetlaniu znaku plus/minus przy temperaturze.
-#. Napisz testy do rozwiązania.
+#. Wynik musi być taki jak na listingu poniżej
+#. Znak ma być zawsze wyświetlany
+#. Zwróć uwagę na wyjustowanie tekstu
+#. Zwróć uwagę na wypełnienie miejsca niezajętego przez cyfry
 
-:Wymagania:
-    * Zrób aby znak plus lub minus był zawsze wyświetlany.
-    * Zrób aby tabelka była stałej szerokości.
-    * .. code-block:: text
+    .. code-block:: text
 
         Temperatura -     20C to ____-4____F
         Temperatura -     15C to ____+5____F
@@ -283,16 +283,17 @@ Przeliczanie temperatury
         Temperatura +     40C to ___+104___F
 
 :Założenia:
-    * Nazwa pliku: ``print-formatting.py``
-    * Szacunkowa długość kodu: około 4 linie
+    * Nazwa pliku: ``print_formatting.py``
+    * Szacunkowa długość kodu: około 3 linie
     * Maksymalny czas na zadanie: 10 min
 
 :Podpowiedź:
-    * Czytelny kod powinien mieć około 5 linii
     * Fahrenheit to Celsius: (°F - 32) / 1.8 = °C
     * Celsius to Fahrenheit: (°C * 1.8) + 32 = °F
-    * skorzystaj z funkcji ``range()``
+    * .. code-block:: python
+
+        def celsius_to_fahrenheit(degree):
+            return degree*1.8 + 32
 
 :Co zadanie sprawdza?:
-    * konwersja typów
     * zaawansowane formatowanie ciągu znaków
