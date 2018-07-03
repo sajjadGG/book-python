@@ -16,6 +16,9 @@ New style dataclasses
 =====================
 .. code-block:: python
 
+    from dataclasses import dataclass
+
+
     @dataclass
     class Astronaut:
         first_name: str
@@ -41,6 +44,8 @@ Under the hood
 Write
 -----
 .. code-block:: python
+
+    from dataclasses import dataclass
 
     @dataclass
     class InventoryItem:
@@ -92,3 +97,16 @@ Dataclass will add
         if other.__class__ is self.__class__:
             return (self.name, self.unit_price, self.quantity_on_hand) >= (other.name, other.unit_price, other.quantity_on_hand)
         return NotImplemented
+
+Assignments
+===========
+
+Address Book (dataclass)
+------------------------
+#. Zmień kod książki adresowej z listingu :numref:`listing-oop-addressbook-easy` na wykorzystujący mechanizm ``dataclass``
+
+.. literalinclude:: solutions/oop_addressbook_easy.py
+    :name: listing-oop-addressbook-easy
+    :language: python
+    :caption: Easy object implementation of Address Book
+

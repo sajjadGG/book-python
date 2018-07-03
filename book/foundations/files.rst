@@ -76,19 +76,19 @@ Zawartość zadanego pliku
 #. Dopisz obsługę wyjątków dla braku uprawnień oraz tego że plik nie istnieje.
 
 :Założenia:
-    * Nazwa pliku: ``file-cat.py``
+    * Nazwa pliku: ``file_cat.py``
     * Szacunkowa długość kodu: około 5 linii
     * Maksymalny czas na zadanie: 5 min
 
 Parsowanie ``/etc/hosts``
 -------------------------
-#. Do pliku ``hosts`` w katalogu gdzie będzie Twój skrypt zapisz poniższy szablon: :numref:`listing-file-etc-hosts`
+#. Do pliku ``hosts.txt`` w katalogu gdzie będzie Twój skrypt zapisz kod z szablonu: :numref:`listing-file-etc-hosts`
 #. Ważne są komentarze, białe spacje i linie przerwy
 #. Przedstaw go w formie listy dictów jak w przykładzie poniżej: :numref:`listing-file-hosts`
 #. Zwróć uwagę na uprawnienia do odczytu pliku
 
 :Założenia:
-    * Nazwa pliku: ``file-hosts.py``
+    * Nazwa pliku: ``file_hosts.py``
     * Szacunkowa długość kodu: około 10 linii
     * Maksymalny czas na zadanie: 20 min
 
@@ -103,7 +103,7 @@ Parsowanie ``/etc/hosts``
 .. literalinclude:: src/file-etc-hosts.txt
     :name: listing-file-etc-hosts
     :language: text
-    :caption: Przykładowa zawartość pliku ``/etc/hosts``
+    :caption: Przykładowa zawartość pliku ``hosts.txt``
 
 .. literalinclude:: src/file-hosts.py
     :name: listing-file-hosts

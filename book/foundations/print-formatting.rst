@@ -205,6 +205,218 @@ Przykład z życia
     # AND 'password'='132'
 
 
+PEP 3101 -- Advanced String Formatting
+======================================
+* https://www.python.org/dev/peps/pep-3101/
+
+Basic formatting
+----------------
+.. code-block:: python
+
+    '%s %s' % ('one', 'two')
+    # one two
+
+    '{} {}'.format('one', 'two')
+    # one two
+
+    '{1} {0}'.format('one', 'two')
+    # two one
+
+Value conversion
+----------------
+.. code-block:: python
+
+    class Data(object):
+
+        def __str__(self):
+            return 'str'
+
+        def __repr__(self):
+            return 'repr'
+
+
+    '%s %r' % (Data(), Data())
+    # str repr
+
+    '{0!s} {0!r}'.format(Data())
+    # str repr
+
+Padding and aligning strings
+----------------------------
+.. code-block:: python
+
+    '%10s' % ('test',)
+    # '      test'
+
+    '{:>10}'.format('test')
+    # '      test'
+
+.. code-block:: python
+
+    '%-10s' % ('test',)
+    # 'test      '
+
+    '{:10}'.format('test')
+    # 'test      '
+
+.. code-block:: python
+
+    '{:_<10}'.format('test')
+    # 'test______'
+
+    '{:^10}'.format('test')
+    # '   test   '
+
+    '{:^6}'.format('zip')
+    # ' zip  '
+
+Truncating long strings
+-----------------------
+.. code-block:: python
+
+    '%.5s' % ('xylophone',)
+    # 'xylop'
+
+    '{:.5}'.format('xylophone')
+    # 'xylop'
+
+Combining truncating and padding
+--------------------------------
+.. code-block:: python
+
+    '%-10.5s' % ('xylophone',)
+    # 'xylop     '
+
+    '{:10.5}'.format('xylophone')
+    # 'xylop     '
+
+Numbers
+-------
+.. code-block:: python
+
+    '%d' % (42,)
+    # '42'
+
+    '{:d}'.format(42)
+    # '42'
+
+.. code-block:: python
+
+    '%f' % (3.141592653589793,)
+    # '3.141593'
+
+    '{:f}'.format(3.141592653589793)
+    # '3.141593'
+
+Padding numbers
+---------------
+.. code-block:: python
+
+    '%4d' % (42,)
+    # '  42'
+
+    '{:4d}'.format(42)
+    # '  42'
+
+.. code-block:: python
+
+    '%06.2f' % (3.141592653589793,)
+    # '003.14'
+
+    '{:06.2f}'.format(3.141592653589793)
+    # '003.14'
+
+.. code-block:: python
+
+    '%04d' % (42,)
+    # '0042'
+
+    '{:04d}'.format(42)
+    # '0042'
+
+Signed numbers
+--------------
+.. code-block:: python
+
+    '%+d' % (42,)
+    # '+42'
+
+    '{:+d}'.format(42)
+    # '+42'
+
+.. code-block:: python
+
+    '% d' % ((- 23),)
+    # '-23'
+
+    '{: d}'.format((- 23))
+    # '-23'
+
+.. code-block:: python
+
+    '% d' % (42,)
+    # ' 42'
+
+    '{: d}'.format(42)
+    # ' 42'
+
+.. code-block:: python
+
+    '{:=5d}'.format((- 23))
+    # '-  23'
+
+    '{:=+5d}'.format(23)
+    # '+  23'
+
+Named placeholders
+------------------
+.. code-block:: python
+
+    data = {'first': 'Hodor', 'last': 'Hodor!'}
+
+    '%(first)s %(last)s' % data
+    # 'Hodor Hodor!'
+
+    '{first} {last}'.format(**data)
+    # 'Hodor Hodor!'
+
+.. code-block:: python
+
+    '{first} {last}'.format(first='Hodor', last='Hodor!')
+    # 'Hodor Hodor!'
+
+Getitem and Getattr
+-------------------
+.. code-block:: python
+
+    person = {'first': 'Jean-Luc', 'last': 'Picard'}
+
+    '{p[first]} {p[last]}'.format(p=person)
+    # 'Jean-Luc Picard'
+
+.. code-block:: python
+
+    data = [4, 8, 15, 16, 23, 42]
+    '{d[4]} {d[5]}'.format(d=data)
+    # '23 42'
+
+.. code-block:: python
+
+    class Plant(object):
+        type = 'tree'
+
+    '{p.type}'.format(p=Plant())
+    # tree
+
+.. code-block:: python
+
+    class Plant(object):
+        type = 'tree'
+        kinds = [{'name': 'oak'}, {'name': 'maple'}]
+
+    '{p.type}: {p.kinds[0][name]}'.format(p=Plant())
+    # 'tree: oak'
+
 Więcej informacji
 =================
 * https://pyformat.info - Formatowanie stringów w Python

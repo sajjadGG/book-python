@@ -60,10 +60,10 @@ Foundations
     foundations/debugging.rst
     foundations/print-formatting.rst
     foundations/datetime.rst
-    foundations/object-oriented-programming.rst
-    foundations/dataclass.rst
     foundations/exceptions.rst
     foundations/files.rst
+    foundations/object-oriented-programming.rst
+    foundations/dataclass.rst
     foundations/exam-foundations.rst
 
 ************

@@ -148,6 +148,60 @@ More advanced topics
 Assignments
 ===========
 
+Dragon (Easy)
+-------------
+#. Stwórz klasę ``Dragon``
+#. Smok ma mieć:
+
+    * ``name`` - nazwa smoka
+    * ``hit_points`` domyślnie losowy ``int`` z zakresu od 50 do 100
+    * ``position_x`` domyślnie 0
+    * ``position_y`` domyślnie 0
+    * ``texture`` domyślnie ``dragon.png``
+    * ``status`` domyślnie 'alive'
+
+#. Przyjmij górny lewy róg ekranu za punkt (0, 0)
+#. Stwórz metody:
+
+    * ``.set_position(x, y)`` - ustawia pozycję smoka na ``x`` i ``y``
+    * ``.get_position()`` - która zwraca aktualne położenie smoka
+    * ``.move(left, right, down, up)`` - przesuwa smoka o zadaną liczbę punktów w którymś z kierunków (można podać tylko dwa z nich, np. right=30, down=50)
+    * ``.hit(damage)`` - zadaj obrażenia smokowi
+    * ``.drop()`` -
+
+#. Kiedy ``hit_points`` smoka spadnie poniżej zera:
+
+    * zmień ``status`` na ``dead``
+    * wypisz na ekranie 'Dragon is dead'
+    * zmień ``texture`` na ``dragon-dead.png``
+    * napisz na ekranie ile złota smok wyrzucił (losowa 1-100)
+    * napisz na ekranie w jakiej pozycji smok wyrzucił pieniądze (ostania, w której widziano smoka)
+
+#. Granie ze smokiem tak jak na :numref:`listing-oop-dragon`
+
+:Założenia:
+    * Nazwa pliku: ``oop_dragon_easy.py``
+    * Szacunkowa długość kodu: około 35 linii
+    * Maksymalny czas na zadanie: 30 min
+
+.. literalinclude:: src/oop_dragon.py
+    :name: listing-oop-dragon
+    :language: python
+    :caption: Dragon API
+
+Dragon (Advanced)
+-----------------
+#. Nasz bohater ma skończone losowe ``hit_points`` (100-150)
+#. Smok zadaje losowe obrażenia (5-20)
+#. Bohater zadaje losowe obrażenia (1-15)
+#. Przeprowadź symulację walki.
+#. Kto zginie pierwszy?
+
+:Założenia:
+    * Nazwa pliku: ``oop_dragon_advanced.py``
+    * Szacunkowa długość kodu: około 35 linii
+    * Maksymalny czas na zadanie: 15 min
+
 Address Book (Easy)
 -------------------
 #. Dla danych z :numref:`listing-oop-addressbook-easy` napisz książkę adresową
