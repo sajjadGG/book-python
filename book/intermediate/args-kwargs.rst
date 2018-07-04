@@ -13,9 +13,9 @@ Przyjmowanie z funkcji zmiennej ilości argumentów
 =================================================
 .. code-block:: python
 
-    a, b = 1, 2
-    a, b = (1, 2)
     a, b = [1, 2]
+    a, b = (1, 2)
+    a, b = 1, 2
 
 .. code-block:: python
 
@@ -27,10 +27,29 @@ Przyjmowanie z funkcji zmiennej ilości argumentów
 .. code-block:: python
 
     line = 'jimenez:x:1001:1001:José Jiménez:/home/jimenez:/bin/bash'
-    username, password, uid, *others = line.split(':')
+    line.split(':')
+    # ['jimenez', 'x', '1001', '1001', 'José Jiménez', '/home/jimenez', '/bin/bash']
+
+
+    # username, password, uid, gid, name, home, shell = line.split(':')
+
+    username, password, *others = line.split(':')
+
+    username  # jimenez
+    password  # x
+    others  # ['1001', '1001', 'José Jiménez', '/home/jimenez', '/bin/bash']
+
+
+
+    *others, shell = line.split(':')
+
+    others  # ['jimenez', 'x', '1001', '1001', 'José Jiménez', '/home/jimenez']
+    shell  # /bin/bash
+
 
     # if you're not using ``others`` later in your code
-    username, password, uid, *_ = line.split(':')
+    username, *_ = line.split(':')
+
 
 .. code-block:: python
 
@@ -42,6 +61,10 @@ Przyjmowanie z funkcji zmiennej ilości argumentów
 
     napiecie, natezenie, *_ = sensor_temperatury()
 
+.. code-block:: python
+
+    *a, b, *c = [1, 2, 3, 4, 5, 6, 7]
+    # SyntaxError: two starred expressions in assignment
 
 Definiowanie funkcji ze zmienną ilością parametrów
 ==================================================
@@ -214,6 +237,8 @@ Przykładowe zastosowanie
 
         def __str__(self):
             return '{first_name} {last_name}'.format(**self.__dict__)
+            return '{first_name} {last_name}'.format(first_name='Max', last_name='Peck')
+            return f'{self.first_name} {self.last_name}'
 
 
 Assignments

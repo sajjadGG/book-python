@@ -1,24 +1,22 @@
-class Astronaut:
-    def __init__(self):
-        self._name = None
+class Celsius:
+    def __init__(self, value=0):
+        self._value = value
 
     @property
-    def name(self):
-        print(f'My name {self._name}')
-        return self._name
+    def temperature(self):
+        print('Getting value')
+        return self._value
 
-    @name.setter
-    def name(self, value):
-        print(f'Changing "name" from {self._name} to {value}')
-        self._name = value
-
-    @name.deleter
-    def name(self):
-        raise PermissionError(f'You do not have permission to do that!')
-        del self._name
+    @temperature.setter
+    def temperature(self, value):
+        if value < -273:
+            raise ValueError('Temperature below -273 is not possible')
+        print('Setting value')
+        self._value = value
 
 
-jose = Astronaut()
-jose.name = 'José Jiménez'  # Changing "name" from None to José Jiménez
-print(jose.name)  # My name José Jiménez
-# José Jiménez
+body = Celsius(36.6)
+
+body.temperature
+body.temperature = 34  # Setting value
+body.temperature = -1000  # ValueError: Temperature below -273 is not possible

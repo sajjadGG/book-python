@@ -21,13 +21,6 @@ Wśród programistów popularne jest powiedzenie "jeżeli chodzi jak kaczka i kw
 Sam mechanizm dynamicznego typowania jest dość kontrowersyjny, ze względu na możliwość bycia nieścisłym. W praktyce okazuje się, że rozwój oprogramowania wykorzystującego ten sposób jest dużo szybszy. Za to zwolennicy statycznego typowania, twierdzą, że projekty wykorzystujące duck typing są trudne w utrzymaniu po latach. Celem tego dokumentu nie jest udowadnianie wyższości jednego rozwiązania nad drugim. Zachęcam jednak do zapoznania się z wykładem "The Unreasonable Effectiveness of Dynamic Typing for Practical Programs", którego autorem jest "Robert Smallshire". Wykład zamieszczonym został w serwisie InfoQ (http://www.infoq.com/presentations/dynamic-static-typing). Wykład w ciekawy sposób dotyka problematyki porównania tych dwóch metod systemu typów. Wykład jest o tyle ciekawy, że bazuje na statystycznej analizie projektów umieszczonych na https://github.com a nie tylko bazuje na domysłach i flamewar jakie programiści lubią prowadzić.
 
 
-Objects and instances
-=====================
-.. literalinclude:: src/oop-objects-and-instances.py
-    :language: python
-    :caption: Objects and instances
-
-
 Inheritance vs. Composition (Mixin Classes)
 ===========================================
 * Kompozycja ponad dziedziczenie!
@@ -234,6 +227,13 @@ Monkey Patching
 .. literalinclude:: src/oop-monkey-patching-3.py
     :language: python
     :caption: Monkey Patching
+
+
+Objects and instances
+=====================
+.. literalinclude:: src/oop-objects-and-instances.py
+    :language: python
+    :caption: Objects and instances
 
 
 Metaclass
