@@ -57,7 +57,7 @@ Wczytywanie pliku ``csv``
     * Species
 
 :Założenia:
-    * Nazwa pliku: ``csv-dictreader.py``
+    * Nazwa pliku: ``csv_dictreader.py``
     * Linii kodu do napisania: około 6 linie
     * Maksymalny czas na zadanie: 15 min
 
@@ -78,7 +78,7 @@ Serializacja ``csv``
     ]
 
 :Założenia:
-    * Nazwa pliku: ``csv-dictwriter.py``
+    * Nazwa pliku: ``csv_dictwriter.py``
     * Linii kodu do napisania: około 8 linii
     * Maksymalny czas na zadanie: 15 min
 
@@ -110,6 +110,6 @@ Serializacja obiektów do CSV
     :caption: Address book
 
 :Założenia:
-    * Nazwa pliku: ``csv-addressbook.py``
+    * Nazwa pliku: ``csv_addressbook.py``
     * Linii kodu do napisania: około 10 linii
     * Maksymalny czas na zadanie: 20 min
