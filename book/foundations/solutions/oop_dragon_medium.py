@@ -11,19 +11,29 @@ BORDER_BOTTOM = 768
 
 
 class DragonMedium(Dragon):
+
     def move(self, left=0, down=0, up=0, right=0):
         """
         >>> DragonMedium(name='Wawelski').move(right=10)
         >>> DragonMedium(name='Wawelski').move(down=10)
-
+        >>> DragonMedium(name='Wawelski', position_x=20, position_y=20).move(left=10)
+        >>> DragonMedium(name='Wawelski', position_x=20, position_y=20).move(up=10)
+        >>> DragonMedium(name='Wawelski').move(right=BORDER_RIGHT+1)
+        Traceback (most recent call last):
+            ...
+        ValueError: New position is out of borders
+        >>> DragonMedium(name='Wawelski').move(down=BORDER_BOTTOM+1)
+        Traceback (most recent call last):
+            ...
+        ValueError: New position is out of borders
         >>> DragonMedium(name='Wawelski').move(left=10)
         Traceback (most recent call last):
             ...
-        ValueError: New x=-10 position is out of borders
+        ValueError: New position is out of borders
         >>> DragonMedium(name='Wawelski').move(up=10)
         Traceback (most recent call last):
             ...
-        ValueError: New y=-10 position is out of borders
+        ValueError: New position is out of borders
         """
         new_x = self.position_x + right - left
         new_y = self.position_y + down - up
@@ -31,12 +41,12 @@ class DragonMedium(Dragon):
         if BORDER_LEFT <= new_x <= BORDER_RIGHT:
             self.position_x = new_x
         else:
-            raise ValueError(f'New x={new_x} position is out of borders')
+            raise ValueError(f'New position is out of borders')
 
         if BORDER_TOP <= new_y <= BORDER_BOTTOM:
             self.position_y = new_y
         else:
-            raise ValueError(f'New y={new_y} position is out of borders')
+            raise ValueError(f'New position is out of borders')
 
 
 class Hero:
@@ -46,9 +56,10 @@ class Hero:
         self.status = STATUS_ALIVE
 
     def make_damage(self):
-        return random.randint(1, 15)
+        if self.status != STATUS_DEAD:
+            return random.randint(1, 15)
 
-    def take_damage(self, damage):
+    def take_damage(self, damage=0):
         if self.status != STATUS_DEAD:
             self.hit_points -= damage
             print(f'Hero damage taken: {damage}, HP left: {self.hit_points}')

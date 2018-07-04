@@ -47,7 +47,8 @@ class Dragon:
             self.make_dead()
 
     def make_damage(self):
-        return random.randint(5, 20)
+        if self.status != STATUS_DEAD:
+            return random.randint(5, 20)
 
 
 if __name__ == '__main__':

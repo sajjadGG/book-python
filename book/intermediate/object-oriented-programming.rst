@@ -28,6 +28,15 @@ Objects and instances
     :caption: Objects and instances
 
 
+Inheritance vs. Composition (Mixin Classes)
+===========================================
+* Kompozycja ponad dziedziczenie!
+
+.. literalinclude:: src/oop-composition.py
+    :language: python
+    :caption: Composition (Mixin Classes)
+
+
 Duck typing
 ===========
 .. literalinclude:: src/oop-duck-typing.py

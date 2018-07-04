@@ -96,16 +96,6 @@ Multiple Inheritance
     :language: python
     :caption: Multiple Inheritance
 
-Composition (Mixin Classes)
----------------------------
-.. literalinclude:: src/oop-composition.py
-    :language: python
-    :caption: Composition (Mixin Classes)
-
-Inheritance vs. Composition
----------------------------
-* Kompozycja ponad dziedziczenie!
-
 ``super()`` - Calling object parent
 -----------------------------------
 .. literalinclude:: src/oop-super.py
