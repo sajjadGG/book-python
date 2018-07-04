@@ -12,8 +12,7 @@ DATA = [
 fieldnames = set()
 
 for row in DATA:
-    for key in row.keys():
-        fieldnames.add(key)
+    fieldnames.update(row.keys())
 
 
 with open(FILENAME, mode='w', encoding='utf-8') as file:

@@ -54,13 +54,6 @@ Encoder Function
     :language: python
     :caption: Encoder Function
 
-Encoder Lambda
----------------
-.. literalinclude:: src/json-encoder-lambda.py
-    :name: listing-json-encoder-lambda
-    :language: python
-    :caption: Encoder Lambda
-
 Encodowanie daty
 ----------------
 .. literalinclude:: src/json-encoder-datetime.py
@@ -73,7 +66,7 @@ Encodowanie obiektów
 .. literalinclude:: src/json-encoder-object.py
     :name: listing-json-encoder-object
     :language: python
-    :caption: Encoder kalas do formatu JSON
+    :caption: Encoder klas do formatu JSON
 
 
 Deserializacja i pisanie własnych decoderów
@@ -112,9 +105,14 @@ Serializacja dat
 ----------------
 #. Skopiuj do swojego pliku strukturę danych :numref:`listing-json-encoder-datetime`
 #. Zapisz ją do pliku json
-#. Wczyraj ją z pliku json jako obiekty Pythonowe (ten sam efekt co na listingu)
+#. Wczytaj ją z pliku json jako obiekty Pythona (ten sam efekt co na listingu)
 
-:Co zadanie sprawdz:
+:Założenia:
+    * Nazwa pliku: ``json_datetimes.py``
+    * Linii kodu do napisania: około 10 linii
+    * Maksymalny czas na zadanie: 15 min
+
+:Co zadanie sprawdza:
     * Serializacja danych
     * Korzystanie z biblioteki JSON
     * Serializowanie zagnieżdżonych obiektów
@@ -130,5 +128,10 @@ Serializacja obiektów do JSON
 #. Zapisz kontakty z książki adresowej w JSON
 #. Jak odtworzyć relacje?
 #. Stwórz obiekty książki adresowej na podstawie danych odczytanych z pliku
+
+:Założenia:
+    * Nazwa pliku: ``csv_dictwriter.py``
+    * Linii kodu do napisania: około 8 linii
+    * Maksymalny czas na zadanie: 15 min
 
 :Podpowiedź: ``self.__dict__``

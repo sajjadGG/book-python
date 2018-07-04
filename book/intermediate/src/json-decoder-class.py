@@ -24,6 +24,7 @@ class DatetimeDecoder(json.JSONDecoder):
             if key == 'datetime':
                 dt = datetime.datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%fZ')
                 args['datetime'] = dt.replace(tzinfo=datetime.timezone.utc)
+
             elif key == 'date':
                 dt = datetime.datetime.strptime(value, '%Y-%m-%d')
                 args['date'] = dt.date()

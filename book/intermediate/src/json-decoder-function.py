@@ -5,22 +5,29 @@ import json
 DATA = """
 {
     "astronaut":{
-        "datetime":"1961-05-05T14:34:13.640Z",
-        "person":"jose.jimenez@nasa.gov"
+        "date": "1923-11-18",
+        "person": "jose.jimenez@nasa.gov"
     },
-    "first-flight":[
-        {"datetime":"1961-05-05T14:34:13.640Z", "action":"launch"},
-        {"datetime":"1961-05-05T14:49:35.640Z", "action":"landing"},
-    ],
+    "flight": [
+        {"datetime": "1961-05-05T14:34:13.000Z", "action": "launch"},
+        {"datetime": "1961-05-05T14:49:35.000Z", "action": "landing"}
+    ]
 }
 """
 
-def datetime_decoder(obj):
+
+def decoder(obj):
     for key, value in obj.items():
+
         if key == 'datetime':
-            obj['datetime'] = datetime.datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%fZ').replace(tzinfo=datetime.timezone.utc)
-    return obj
+            obj['datetime'] = datetime.datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%fZ')
+
+        elif key == 'date':
+            obj['date'] = datetime.datetime.strptime(value, '%Y-%m-%d').date()
+
+        else:
+            return obj
 
 
-out = json.loads(DATA, object_hook=datetime_decoder)
-print(out)
+output = json.loads(DATA, object_hook=decoder)
+print(output)
