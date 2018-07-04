@@ -62,4 +62,4 @@ def config_parser_factory(filename):
 
 filename = input('Type filename: ')  # iris.csv or *.csv, *.json *.yaml...
 parser = config_parser_factory()
-config = parser.parse(filename)
+config = parser.display(filename)
