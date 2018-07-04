@@ -182,3 +182,41 @@ Return difference of this Transaction.val property and an integer.
 
 ``__lshift__()``, ``__rshift__()``
 ----------------------------------
+
+
+Assignment
+==========
+
+Address Book
+------------
+#. Dopisz odpowiednie metody do ``Contact`` i ``Address`` aby poniższy kod zadziałał poprawnie
+
+:Założenia:
+    * Nazwa pliku: ``oop_addressbook_operators.py``
+    * Szacunkowa długość kodu: około 10 linii
+    * Maksymalny czas na zadanie: 15 min
+
+.. code-block:: python
+
+    class Contact:
+        def __str__(self):
+            return f'{self.__dict__}'
+
+
+    class Address:
+        def __repr__(self):
+            return f'{self.__dict__}'
+
+
+    contact = Contact(name='Jose Jimenez')
+    address = Address(city='Houston')
+
+    contact + address
+    print(contact)
+    # {'name': 'Jose Jimenez', 'addresses': [{'city': 'Houston'}]}
+
+    if address in contact:
+        print(True)
+    else:
+        print(False)
+    # True

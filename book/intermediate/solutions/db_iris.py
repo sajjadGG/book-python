@@ -56,4 +56,3 @@ with sqlite3.connect(DATABASE) as db:
 
     for row in db.execute(SQL_SELECT):
         print(dict(row))
-

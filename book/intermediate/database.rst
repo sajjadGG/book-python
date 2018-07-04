@@ -328,30 +328,43 @@ Data exploration
 Assignments
 ===========
 
-Tworzenie bazy danych
+Iris Database
 ---------------------
 * https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv
 
-#. Bazę danych Irysów przekonwertuj na tabelę w ``sqlite3``
-#. Wykorzystaj połączenia jako context manager (``with``)
-#. Zwracaj dane jako ``sqlite3.Row``
-#. Dodaj kolumnę ``datetime`` z datą dodania (automatycznie ustawiaj ją przy insercie)
-#. Załóż index na ``datetime``
+#. Bazę pomiarów Irysów przekonwertuj na tabelę w ``sqlite3``
 #. Nazwy poszczególnych kolumn:
 
-    * sepal_length
-    * sepal_width
-    * petal_length
-    * petal_width
-    * species
+    * id - ``int``
+    * species - ``str``
+    * datetime - ``datetime``
+    * sepal_length - ``float``
+    * sepal_width - ``float``
+    * petal_length - ``float``
+    * petal_width - ``float``
 
-#. Do bazy danych zapisz ``species`` jako nazwę gatunku, a nie jego id (``int``)
-#. Wyniki wypisz z bazy danych (``select * from iris order by datetime desc``)
+#. Do połączenia wykorzystaj context manager (``with``)
+#. Dane wrzuć do bazy za pomocą ``.executemany()`` podając ``dict``
+#. Do bazy danych zapisz ``species`` jako nazwę gatunku (``str``), a nie jego id (``int``) (wersja z gwiazdką: nie korzystaj z if-ów do tego)
+#. Dodaj kolumnę ``datetime`` z datą i czasem dodania (UTC)
+#. Załóż index na ``datetime``
+#. Wyniki wypisz z bazy danych (``SELECT * FROM iris ORDER BY datetime DESC``)
+#. Zwracaj dane jako ``sqlite3.Row``
 
 :Założenia:
     * Nazwa pliku: ``db_iris.py``
-    * Linii kodu do napisania: około 10 linii
-    * Maksymalny czas na zadanie: 20 min
+    * Linii kodu do napisania: około 30 linii
+    * Maksymalny czas na zadanie: 30 min
+
+:Co zadanie sprawdza?:
+    * Parsowanie plików ``csv``
+    * Wykorzystywanie bazy ``sqlite3``
+    * Tworzenie bazy danych
+    * Zakładanie indeksów na bazie danych
+    * Wrzucanie danych do bazy
+    * Wyciąganie danych z bazy
+    * Konwersja typów
+    * Korzystanie z ``datetime``
 
 Tworzenie bazy danych i proste zapytania
 ----------------------------------------
