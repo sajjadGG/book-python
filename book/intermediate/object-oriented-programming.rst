@@ -260,34 +260,21 @@ Assignments
 Address Book (Medium)
 ---------------------
 #. API programu powinno być tak jak na :numref:`listing-oop-addressbook-medium`
-#. Zrób tak, aby się ładnie wyświetlało zarówno dla jednego wyniku (``print(adres)``, ``print(osoba)`` jak i dla wszystkich w książce ``print(ksiazka_adresowa)``.
-
-:Założenia:
-    * Nazwa pliku: ``oop_addressbook_medium.py``
-    * Szacunkowa długość kodu: około 10 linii
-    * Maksymalny czas na zadanie: 20 min
-
-.. literalinclude:: src/oop-assignment-addressbook-medium.py
-    :name: listing-oop-addressbook-medium
-    :language: python
-    :caption: Address Book
-
-Address Book (Hard)
--------------------
-#. Korzystając z kodu z listingu :numref:`listing-oop-addressbook-hard`
-#. Zrób tak, aby się ładnie wyświetlało zarówno dla jednego wyniku (``print(adres)``, ``print(osoba)`` jak i dla wszystkich w książce ``print(ksiazka_adresowa)``.
-#. ``Adres`` ma mieć zmienną liczbę argumentów (``**kwargs``)
+#. Zrób tak, aby się ładnie wyświetlało zarówno dla jednego wyniku jak i dla wszystkich w książce
+#. ``Address`` ma mieć zmienną liczbę argumentów
 #. Jeżeli argument jest różny od ``None`` powinien być dynamicznie ustawiony (``setattr()``).
 
 :Założenia:
-    * Nazwa pliku: ``oop_addressbook_hard.py``
-    * Szacunkowa długość kodu: około 20 linii
-    * Maksymalny czas na zadanie: 30 min
+    * Nazwa pliku: ``oop_addressbook_medium.py``
+    * Szacunkowa długość kodu: około 15 linii
+    * Maksymalny czas na zadanie: 20 min
 
 :Co zadanie sprawdza?:
-    * korzystanie z operatorów ``*`` i ``**`` (zadanie z gwiazdką)
+    * Korzystanie z operatorów ``*args`` i ``**kwargs``
+    * Korzystanie i rozróżnianie ``.__repr__()`` od ``.__str__()``
+    * Dynamiczne tworzenie pól w obiekcie
 
-.. literalinclude:: src/oop-assignment-addressbook-hard.py
-    :name: listing-oop-addressbook-hard
+.. literalinclude:: src/oop-assignment-addressbook-medium.py
+    :name: listing-oop-addressbook-medium
     :language: python
     :caption: Address Book
