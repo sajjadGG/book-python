@@ -29,5 +29,5 @@ with sqlite3.connect(':memory:') as connection:
     connection.execute(SQL_CREATE_TABLE)
     connection.execute(SQL_INSERT, dane)
 
-    for row in connection.execute(SQL_INSERT, dane):
+    for row in connection.execute(SQL_SELECT, dane):
         print(dict(row))

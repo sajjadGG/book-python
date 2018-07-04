@@ -15,7 +15,8 @@ Regular Expression Syntax
 
 Wizualizacja regexpów
 ---------------------
-https://regexper.com/
+* https://regexper.com/
+* https://regex101.com/
 
 .. figure:: img/regexp-vizualization.png
     :name: figure-regexp-vizualization

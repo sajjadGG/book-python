@@ -5,25 +5,22 @@ class Document(ABC):
     def __init__(self, filename):
         self.filename = filename
 
-    def open(self):
-        with open(self.filename) as file:
-            return file.read()
-
     @abstractmethod
     def display(self):
-        raise NotImplementedError
+        with open(self.filename) as file:
+            return file.read()
 
 
 class PDFDocument(Document):
     def display(self):
-        content = self.open()
-        # parse as PDF Document
+        content = super().display()
+        # display ``content`` as PDF Document
 
 
 class WordDocument(Document):
     def display(self):
-        content = self.open()
-        # parse as Word Document
+        content = self.display()
+        # display ``content`` as Word Document
 
 
 file1 = PDFDocument('filename.pdf')

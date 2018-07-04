@@ -123,6 +123,16 @@ SQLite Auto Increment
 
 Połączenie
 ----------
+.. code-block:: python
+
+    import sqlite3
+    connection = sqlite3.connect('example.db')
+
+.. code-block:: python
+
+    import sqlite3
+    connection = sqlite3.connect(":memory:")
+
 .. literalinclude:: src/db-connect.py
     :language: python
     :caption: Connection
@@ -318,38 +328,12 @@ Data exploration
 Assignments
 ===========
 
-Tworzenie bazy danych i proste zapytania (simple)
--------------------------------------------------
-* Wykorzystaj kod z listingu :numref:``
-* Nie wykorzystuj relacji, a dane adresowe zapisz zserializowane i rozdzielone średnikami ``;``
-* dla ułatwienia możesz przyjąć, że zawsze jest maks jeden adres
-* Wykorzystaj ``cursor``
-* Dane powinny być zwracane dane w postaci listy ``dict``
-* Do wpisywania danych wykorzystaj konstrukcję ``execute`` wykorzystując ``dict`` jako argument
-
-:Założenia:
-    * Nazwa pliku: ``db-simple.py``
-    * Linii kodu do napisania: około 15 linii
-    * Maksymalny czas na zadanie: 20 min
-
-:Zadanie z gwiazdką:
-    * Dodaj obsługę wielu adresów
-    * Dodaj obsługę relacji w aplikacji
-
-:Podpowiedź:
-    .. literalinclude:: src/db-assignment-addressbook.sql
-        :language: python
-        :caption: Address Book SQL queries
-
-.. literalinclude:: src/db-assignment-addressbook.py
-    :language: python
-    :caption: Address Book
-
 Tworzenie bazy danych
 ---------------------
 * https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv
 
-#. bazę danych Irysów przekonwertuj na tabelę w sqlite3
+#.Bbazę danych Irysów przekonwertuj na tabelę w ``sqlite3``
+#. Wykorzystaj ``cursor`` oraz połączenia jako context manager (``with``)
 #. Nazwy poszczególnych kolumn:
 
     * Sepal length
@@ -359,6 +343,33 @@ Tworzenie bazy danych
     * Species
 
 :Założenia:
-    * Nazwa pliku: ``db-iris.py``
+    * Nazwa pliku: ``db_iris.py``
     * Linii kodu do napisania: około 10 linii
     * Maksymalny czas na zadanie: 20 min
+
+Tworzenie bazy danych i proste zapytania
+----------------------------------------
+#. Wykorzystaj kod z listingu :numref:`listing-db-assignment-addressbook-sql` oraz :numref:`listing-db-assignment-addressbook-py`
+#. Nie wykorzystuj relacji, a dane adresowe zapisz zserializowane i rozdzielone średnikami ``;``
+#. Wykorzystaj ``cursor`` oraz połączenia jako context manager (``with``)
+#. Dane powinny być zwracane w postaci listy ``dict``
+#. Do wpisywania danych wykorzystaj konstrukcję ``execute`` wykorzystując ``dict`` jako argument
+
+:Założenia:
+    * Nazwa pliku: ``db_addressbook.py``
+    * Linii kodu do napisania: około 15 linii
+    * Maksymalny czas na zadanie: 20 min
+
+:Zadanie z gwiazdką:
+    * Dodaj obsługę wielu adresów
+    * Dodaj obsługę relacji w aplikacji
+
+.. literalinclude:: src/db-assignment-addressbook.sql
+    :name: listing-db-assignment-addressbook-sql
+    :language: python
+    :caption: Address Book SQL queries
+
+.. literalinclude:: src/db-assignment-addressbook.py
+    :name: listing-db-assignment-addressbook-py
+    :language: python
+    :caption: Address Book
