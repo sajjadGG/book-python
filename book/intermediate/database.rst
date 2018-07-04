@@ -332,15 +332,21 @@ Tworzenie bazy danych
 ---------------------
 * https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv
 
-#.Bbazę danych Irysów przekonwertuj na tabelę w ``sqlite3``
-#. Wykorzystaj ``cursor`` oraz połączenia jako context manager (``with``)
+#. Bazę danych Irysów przekonwertuj na tabelę w ``sqlite3``
+#. Wykorzystaj połączenia jako context manager (``with``)
+#. Zwracaj dane jako ``sqlite3.Row``
+#. Dodaj kolumnę ``datetime`` z datą dodania (automatycznie ustawiaj ją przy insercie)
+#. Załóż index na ``datetime``
 #. Nazwy poszczególnych kolumn:
 
-    * Sepal length
-    * Sepal width
-    * Petal length
-    * Petal width
-    * Species
+    * sepal_length
+    * sepal_width
+    * petal_length
+    * petal_width
+    * species
+
+#. Do bazy danych zapisz ``species`` jako nazwę gatunku, a nie jego id (``int``)
+#. Wyniki wypisz z bazy danych (``select * from iris order by datetime desc``)
 
 :Założenia:
     * Nazwa pliku: ``db_iris.py``
