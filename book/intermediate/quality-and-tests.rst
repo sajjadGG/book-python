@@ -89,24 +89,6 @@ WebDriver is the name of the key interface against which tests should be written
 Static Code Analysis
 ====================
 
-``mypy`` type checking
-----------------------
-* http://mypy-lang.org/
-* https://github.com/python/mypy
-
-.. code-block:: console
-
-    $ python3 -m pip install -U mypy
-    $ mypy FILENAME
-
-``setup.cfg``
-
-.. code-block:: ini
-
-    [mypy]
-    strict_optional = True
-
-
 ``pycodestyle`` previously known as ``PEP8``
 --------------------------------------------
 
@@ -147,6 +129,11 @@ Static Code Analysis
         max-line-length = 939
         ignore = E402,W391
         exclude = */migrations/*
+
+``flake8``
+----------
+:About:
+    Simply speaking flake8 is “the wrapper which verifies pep8, pyflakes and circular complexity “. For other functions, it can control the warnings for specific line (impossible by a simple pyflakes)by # flake8: noqa or it can customize warnings happening by configuration file such as pep8.
 
 ``SonarQube``
 -------------
@@ -269,6 +256,33 @@ Static Code Analysis
     * https://pypi.python.org/pypi/coverage
     * https://coverage.readthedocs.io/
 
+Type Checking
+=============
+
+``mypy`` type checking
+----------------------
+* http://mypy-lang.org/
+* https://github.com/python/mypy
+
+.. code-block:: console
+
+    $ python3 -m pip install -U mypy
+    $ mypy FILENAME
+
+``setup.cfg``
+
+.. code-block:: ini
+
+    [mypy]
+    strict_optional = True
+
+``pyre``
+--------
+* https://pyre-check.org/
+
+.. code-block:: console
+
+    $ pip install pyre-check
 
 Automation and Releases
 =======================
