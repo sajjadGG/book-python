@@ -1,3 +1,10 @@
+class Contact:
+    pass
+
+class Address:
+    pass
+
+
 neil = Contact(imie='Neil', nazwisko='Armstrong')
 print(neil)
 # Neil Armstrong

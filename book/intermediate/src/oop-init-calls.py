@@ -6,9 +6,8 @@ class Server:
         self.password = password
         self.login()  # You should not do this way
 
-
-def login(self):
-    print('Logging...')
+    def login(self):
+        print('Logging...')
 
 
 localhost = Server(
@@ -17,5 +16,5 @@ localhost = Server(
     password='admin'
 )
 
-# to jest poprawne wywoałnie
+# to jest poprawne wywołanie
 localhost.login()
