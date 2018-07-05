@@ -386,39 +386,31 @@ Parsowanie i sanityzacja argumentów
 
     p = subprocess.Popen(args) # Success!
 
-.. note:: pssh https://linux.die.net/man/1/pssh
 
 
 ``tempfile``
 ============
 
+Creating temporary files
+------------------------
 .. code-block:: python
 
-    >>> import tempfile
+    import tempfile
 
-    # create a temporary file and write some data to it
-    >>> fp = tempfile.TemporaryFile()
-    >>> fp.write(b'Hello world!')
-    # read data from file
-    >>> fp.seek(0)
-    >>> fp.read()
-    b'Hello world!'
-    # close the file, it will be removed
-    >>> fp.close()
+    with tempfile.TemporaryFile() as file:
+        file.write(b'Hello world!')
+        file.seek(0)
+        file.read()  # b'Hello world!'
 
-    # create a temporary file using a context manager
-    >>> with tempfile.TemporaryFile() as fp:
-    ...     fp.write(b'Hello world!')
-    ...     fp.seek(0)
-    ...     fp.read()
-    b'Hello world!'
-    >>>
     # file is now closed and removed
 
-    # create a temporary directory using the context manager
-    >>> with tempfile.TemporaryDirectory() as tmpdirname:
-    ...     print('created temporary directory', tmpdirname)
-    >>>
+Creating temporary directories
+------------------------------
+.. code-block:: python
+
+    with tempfile.TemporaryDirectory() as dir:
+        print('created temporary directory', dir)
+
     # directory and contents have been removed
 
 
@@ -432,15 +424,52 @@ Parsowanie i sanityzacja argumentów
     import io
 
     io.StringIO
+    io.BytesIO
+
+.. code-block:: python
+
+    f = open("myfile.txt", "r", encoding="utf-8")
+    f = io.StringIO("some initial text data")
+
+.. code-block:: python
+
+    f = open("myfile.jpg", "rb")
+    f = io.BytesIO(b"some initial binary data: \x00\x01")
+
+.. code-block:: python
+
+    import io
+
+    output = io.StringIO()
+    output.write('First line.\n')
+    print('Second line.', file=output)
+
+    # Retrieve file contents -- this will be
+    # 'First line.\nSecond line.\n'
+    contents = output.getvalue()
+
+    # Close object and discard memory buffer --
+    # .getvalue() will now raise an exception.
+    output.close()
+
+.. code-block:: python
+
+    b = io.BytesIO(b"abcdef")
+    view = b.getbuffer()
+    view[2:4] = b"56"
+    b.getvalue()  # b'ab56ef'
 
 ``configparser``
 ================
-* Wczytywanie konfiguracji programów
+
+Writing configuration
+---------------------
 .. code-block:: python
 
     import configparser
 
     config = configparser.ConfigParser()
+
     config['DEFAULT'] = {'ServerAliveInterval': '45',
                           'Compression': 'yes',
                           'CompressionLevel': '9'}
@@ -450,8 +479,8 @@ Parsowanie i sanityzacja argumentów
     config['topsecret.server.com'] = {}
 
     topsecret = config['topsecret.server.com']
-    topsecret['Port'] = '50022'     # mutates the parser
-    topsecret['ForwardX11'] = 'no'  # same here
+    topsecret['Port'] = '50022'
+    topsecret['ForwardX11'] = 'no'
     config['DEFAULT']['ForwardX11'] = 'yes'
 
     with open('example.ini', 'w') as configfile:
@@ -472,10 +501,78 @@ Parsowanie i sanityzacja argumentów
     Port = 50022
     ForwardX11 = no
 
+Reading configuration
+---------------------
+.. code-block:: python
+
+    import configparser
+
+    config = configparser.ConfigParser()
+
+    config.read('example.ini')  # ['example.ini']
+    config.sections()  # ['bitbucket.org', 'topsecret.server.com']
+
+    'bitbucket.org' in config  # True
+    'example.com' in config  # False
+
+    config['bitbucket.org']['User']  # 'hg'
+    config['DEFAULT']['Compression']  # 'yes'
+
+    config.getboolean('BatchMode', fallback=True)  # True
+    config.getfloat('DEFAULT', 'a_float', fallback=0.0)  # 0.0
+    config.getint('DEFAULT', 'an_int', fallback=0)  # 0
+
+    topsecret = config['topsecret.server.com']
+    topsecret.get('ForwardX11', 'yes')  # 'no'
+    topsecret.get('Port', 8000)  # '50022'
+
+
+    for key in config['bitbucket.org']:  # 'bitbucket.org' has laso entries from DEFAULT
+        print(key)
+
+        # user
+        # compressionlevel
+        # serveraliveinterval
+        # compression
+        # forwardx11
+
+Alternative syntax and using variables in config
+------------------------------------------------
+.. code-block:: ini
+
+    [Common]
+    home_dir: /Users
+    library_dir: /Library
+    system_dir: /System
+    macports_dir: /opt/local
+
+    [Frameworks]
+    Python: 3.2
+    path: ${Common:system_dir}/Library/Frameworks/
+
+    [Arthur]
+    nickname: Two Sheds
+    last_name: Jackson
+    my_dir: ${Common:home_dir}/twosheds
+    my_pictures: ${my_dir}/Pictures
+    python_dir: ${Frameworks:path}/Python/Versions/${Frameworks:Python}
+
 
 Running commands in parallel across many hosts
 ==============================================
-https://linux.die.net/man/1/pssh
+* https://linux.die.net/man/1/pssh
+
+.. figure:: img/system-pssh-1.jpg
+    :align: center
+    :scale: 100%
+
+.. figure:: img/system-pssh-2.jpg
+    :align: center
+    :scale: 100%
+
+.. figure:: img/system-pssh-3.png
+    :align: center
+    :scale: 100%
 
 
 Passwords and secrets
