@@ -70,6 +70,10 @@ Sprawdzanie systemu operacyjnego
     os.getcwd()
     os.stat()
 
+    os.is_dir()
+    os.is_file()
+    os.is_symlink()
+
     os.path.join()
     os.path.abspath()
     os.path.dirname()
