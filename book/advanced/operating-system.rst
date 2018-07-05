@@ -601,11 +601,6 @@ Alternative syntax and using variables in config
 
 ``pathlib``
 ===========
-.. code-block:: python
-
-    pathlib.home()
-    # WindowsPath('C:/Users/Jose')
-
 .. csv-table::
     :header-rows: 1
 
@@ -624,8 +619,15 @@ Alternative syntax and using variables in config
     "``os.path.dirname()``", "``PurePath.parent``"
     "``os.path.splitext()``", "``PurePath.suffix``"
 
-.drive
-------
+``.home()``
+-----------
+.. code-block:: python
+
+    pathlib.home()
+    # WindowsPath('C:/Users/Jose')
+
+``.drive``
+----------
 .. code-block:: python
 
     >>> PureWindowsPath('c:/Program Files/').drive
@@ -635,8 +637,8 @@ Alternative syntax and using variables in config
     >>> PurePosixPath('/etc').drive
     ''
 
-.parents
---------
+``.parents``
+------------
 .. code-block:: python
 
     >>> p = PureWindowsPath('c:/foo/bar/setup.py')
@@ -647,16 +649,16 @@ Alternative syntax and using variables in config
     >>> p.parents[2]
     PureWindowsPath('c:/')
 
-.parent
--------
+``.parent``
+-----------
 .. code-block:: python
 
     >>> p = PurePosixPath('/a/b/c/d')
     >>> p.parent
     PurePosixPath('/a/b/c')
 
-.as_posix()
------------
+``.as_posix()``
+---------------
 .. code-block:: python
 
     >>> p = PureWindowsPath('c:\\windows')
@@ -665,8 +667,8 @@ Alternative syntax and using variables in config
     >>> p.as_posix()
     'c:/windows'
 
-.as_uri()
----------
+``.as_uri()``
+-------------
 .. code-block:: python
 
     >>> p = PurePosixPath('/etc/passwd')
@@ -676,8 +678,8 @@ Alternative syntax and using variables in config
     >>> p.as_uri()
     'file:///c:/Windows'
 
-Path.chmod()
-------------
+``Path.chmod()``
+----------------
 .. code-block:: python
 
     >>> p = Path('setup.py')
@@ -687,8 +689,8 @@ Path.chmod()
     >>> p.stat().st_mode
     33060
 
-.glob
------
+``.glob()``
+-----------
 .. code-block:: python
 
     >>> sorted(Path('.').glob('*.py'))
@@ -696,8 +698,8 @@ Path.chmod()
     >>> sorted(Path('.').glob('*/*.py'))
     [PosixPath('docs/conf.py')]
 
-.iterdir
---------
+``.iterdir()``
+--------------
 .. code-block:: python
 
     >>> p = Path('docs')
@@ -718,7 +720,7 @@ Running commands in parallel across many hosts
 
 .. figure:: img/system-pssh-1.jpg
     :align: center
-    :scale: 100%
+    :scale: 75%
 
 .. figure:: img/system-pssh-2.jpg
     :align: center
