@@ -3,11 +3,64 @@ System Operacyjny
 *****************
 
 
+Sprawdzanie systemu operacyjnego
+================================
+* Linux: Linux
+* Mac: Darwin
+* Windows: Windows
+
+``platform``
+------------
+.. code-block:: python
+
+    import platform
+
+    platform.system()  # Windows
+    platform.release()  # 7
+    platform.platform()  # 'Windows-7-6.1.7601-SP1'
+    platform.os.name  # 'nt'
+
+    platform.uname()
+    # uname_result(system='Windows', node='Lenovo-Komputer', release='7', version='6.1.7601', machine='AMD64', processor='Intel64 Family 6 Model 42 Stepping 7, GenuineIntel')
+
+    platform.win32_ver()  # ('7', '6.1.7601', 'SP1', 'Multiprocessor Free')
+    platform.mac_ver()
+    platform.linux_distribution()  # deprecated since Python 3.5
+
+    platform.uname()  # not working of Windows
+    # ('Darwin', 'mainframe.local', '15.3.0', 'Darwin Kernel Version 15.3.0: Thu Dec 10 18:40:58 PST 2015; root:xnu-3248.30.4~1/RELEASE_X86_64', 'x86_64', 'i386')
+
+``os``
+------
+.. code-block:: python
+
+    import os
+
+    os.name  # 'nt'
+    os.name  # 'posix'
+
+``psutil``
+----------
+.. code-block:: python
+
+    import psutil
+
+    psutil.OSX      # False
+    psutil.WINDOWS  # True
+    psutil.LINUX    # False
+
+``sys``
+-------
+.. code-block:: python
+
+    import sys
+
+    sys.platform
+    # 'win32'
+
+
 ``os``
 ======
-
-Najczęściej wykorzystuje się:
-
 .. code-block:: python
 
     import os
@@ -15,12 +68,14 @@ Najczęściej wykorzystuje się:
     os.walk()
     os.scandir()
     os.getcwd()
+    os.stat()
 
     os.path.join()
     os.path.abspath()
     os.path.dirname()
     os.path.basename()
 
+    os.mkdir()
     os.remove()
     os.rmdir()
 
@@ -54,8 +109,9 @@ Najczęściej wykorzystuje się:
 
     import os
     from os.path import join, getsize
-    for root, dirs, files in os.walk('python/Lib/email'):
-        print(root, "consumes", end=" ")
+
+
+    for root, dirs, files in os.walk('/home/'):
         print(sum(getsize(join(root, name)) for name in files), end=" ")
         print("bytes in", len(files), "non-directory files")
         if 'CVS' in dirs:
@@ -74,6 +130,40 @@ Najczęściej wykorzystuje się:
         for name in dirs:
             os.rmdir(os.path.join(root, name))
 
+Stats and permissions
+---------------------
+.. code-block:: python
+
+    import os
+
+    output = os.stat(r'c:\Python\__notepad__.py')
+    print(output)
+    # os.stat_result(st_mode=33206, st_ino=3659174697409906, st_dev=3763209288, st_nlink=1, st_uid=0, st_gid=0, st_size=780, st_atime=1530775767, st_mtime=1530775767, st_ctime=1523261133)
+
+    oct_perm = oct(output.st_mode)
+    print(oct_perm)
+    # 0o100666
+
+Permissions
+-----------
+.. code-block:: python
+
+    import os
+
+    os.access(r'C:\Python\README.rst', os.R_OK)
+    # True
+    os.access(r'C:\Python\README.rst', os.W_OK)
+    # True
+    os.access(r'C:\Python\README.rst', os.X_OK)
+    # True
+
+    os.access(r'C:\Python\notREADME.rst', os.R_OK)
+    # False
+    os.access(r'C:\Python\notREADME.rst', os.W_OK)
+    # False
+    os.access(r'C:\Python\notREADME.rst', os.X_OK)
+    # False
+
 
 ``sys``
 =======
@@ -87,6 +177,8 @@ Najczęściej wykorzystuje się:
     sys.path
     sys.path.append
     sys.platform
+    sys.path.insert(0, '/path/to/directory')
+    sys.path.insert(index=0, object='/path/to/directory')
 
 .. code-block:: python
 
@@ -105,24 +197,46 @@ Najczęściej wykorzystuje się:
     import subprocess
 
     subprocess.call('clear')
-    subprocess.Popen()
-    subprocess.run()
-
+    subprocess.run()  # preferred for Python >= 3.5
+    subprocess.Popen()  #
 
 ``subprocess.Popen()``
 ----------------------
+* Used in Python < 3.5
+* In Python >= 3.5 use ``subprocess.run()``
+
 .. code-block:: python
 
-    subprocess.Popen(args, bufsize=-1, executable=None, stdin=None, stdout=None, stderr=None, preexec_fn=None, close_fds=True,  shell=False, cwd=None, env=None, universal_newlines=False, startupinfo=None, creationflags=0, restore_signals=True, start_new_session=False, pass_fds=(), *, encoding=None, errors=None)
+    subprocess.Popen(
+        args,
+        stdin=None,
+        stdout=None,
+        stderr=None,
+        shell=False,
+        cwd=None,
+        env=None,
+        encoding=None,
+        errors=None,
+        # ... there are other, less commonly used parameters
+    )
 
 ``subprocess.run()``
 --------------------
-
 * New in Python 3.5
+* Preferred
 
 .. code-block:: python
 
-    subprocess.run(args, *, stdin=None, input=None, stdout=None, stderr=None, shell=False, timeout=None, check=False, encoding=None, errors=None)
+    subprocess.run(
+        args,
+        stdin=None,
+        stdout=None,
+        stderr=None,
+        shell=False,
+        timeout=None,  # important
+        check=False,
+        encoding=None
+    )
 
 ``shell=True``
 --------------
@@ -146,22 +260,59 @@ Setting the shell argument to a true value causes subprocess to spawn an interme
 
 .. note:: source: `Subprocess Module <https://stackoverflow.com/a/36299483/228517>`
 
-
 Uruchamianie poleceń
 --------------------
 .. code-block:: python
 
-    >>> subprocess.run(["ls", "-l"])  # doesn't capture output
-    CompletedProcess(args=['ls', '-l'], returncode=0)
+    subprocess.run('ls -la /home')  # doesn't capture output
 
-    >>> subprocess.run("exit 1", shell=True, check=True)
-    Traceback (most recent call last):
-      ...
-    subprocess.CalledProcessError: Command 'exit 1' returned non-zero exit status 1
+.. code-block:: python
 
-    >>> subprocess.run(["ls", "-l", "/dev/null"], stdout=subprocess.PIPE)
-    CompletedProcess(args=['ls', '-l', '/dev/null'], returncode=0,
-    stdout=b'crw-rw-rw- 1 root root 1, 3 Jan 23 16:23 /dev/null\n')
+    import subprocess
+
+    cmd = 'dir ..'
+
+    output = subprocess.run(
+        cmd,
+        timeout=2,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        encoding='utf-8')
+
+    print(output.stdout)
+    print(output.stderr)
+
+.. code-block:: python
+
+    import subprocess
+    import shlex
+
+    cmd = 'dir ..'
+
+    output = subprocess.run(
+        shlex.split(cmd),  # ['dir', '..']
+        timeout=2,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        encoding='utf-8')
+
+    print(output.stdout)
+    print(output.stderr)
+
+
+
+.. code-block:: python
+
+    subprocess.run("exit 1", shell=True, check=True)
+    # Traceback (most recent call last):
+    #   ...
+    # subprocess.CalledProcessError: Command 'exit 1' returned non-zero exit status 1
+
+.. code-block:: python
+
+    subprocess.run(["ls", "-l", "/dev/null"], stdout=subprocess.PIPE)
+    # CompletedProcess(args=['ls', '-l', '/dev/null'], returncode=0,
+    # stdout=b'crw-rw-rw- 1 root root 1, 3 Jan 23 16:23 /dev/null\n')
 
 .. code-block:: python
 
@@ -190,21 +341,32 @@ Przechwytywanie outputu
 -----------------------
 .. code-block:: python
 
+    import logging
+    import subprocess
+    import shlex
+
+
     def run(command, timeout=15, clear=True):
+
         if clear:
             subprocess.call('clear')
-        log.debug(f'Execute: {command}\n')
+
+        logging.debug(f'Execute: {command}\n')
+
         result = subprocess.run(
-            command,
+            shlex.split(command),
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             shell=True,
             timeout=timeout,
             encoding='utf-8')
+
         if result.stdout:
-            log.info(f'\n\n{result.stdout}')
+            logging.info(f'{result.stdout}')
+
         if result.stderr:
-            log.warning(f'\n\n{result.stderr}')
+            logging.warning(f'{result.stderr}')
+
         return result
 
 Parsowanie i sanityzacja argumentów
@@ -212,20 +374,20 @@ Parsowanie i sanityzacja argumentów
 
 .. code-block:: python
 
-    >>> import shlex
-    >>> import subprocess
+    import shlex
+    import subprocess
 
-    >>> command_line = input()
-    /bin/vikings -input eggs.txt -output "spam spam.txt" -cmd "echo '$MONEY'"
+    command_line = input()
+    # /bin/vikings -input eggs.txt -output "spam spam.txt" -cmd "echo '$MONEY'"
 
-    >>> args = shlex.split(command_line)
+    args = shlex.split(command_line)
+    print(args)
+    # ['/bin/vikings', '-input', 'eggs.txt', '-output', 'spam spam.txt', '-cmd', "echo '$MONEY'"]
 
-    >>> print(args)
-    ['/bin/vikings', '-input', 'eggs.txt', '-output', 'spam spam.txt', '-cmd', "echo '$MONEY'"]
-
-    >>> p = subprocess.Popen(args) # Success!
+    p = subprocess.Popen(args) # Success!
 
 .. note:: pssh https://linux.die.net/man/1/pssh
+
 
 ``tempfile``
 ============
@@ -274,6 +436,41 @@ Parsowanie i sanityzacja argumentów
 ``configparser``
 ================
 * Wczytywanie konfiguracji programów
+.. code-block:: python
+
+    import configparser
+
+    config = configparser.ConfigParser()
+    config['DEFAULT'] = {'ServerAliveInterval': '45',
+                          'Compression': 'yes',
+                          'CompressionLevel': '9'}
+
+    config['bitbucket.org'] = {}
+    config['bitbucket.org']['User'] = 'hg'
+    config['topsecret.server.com'] = {}
+
+    topsecret = config['topsecret.server.com']
+    topsecret['Port'] = '50022'     # mutates the parser
+    topsecret['ForwardX11'] = 'no'  # same here
+    config['DEFAULT']['ForwardX11'] = 'yes'
+
+    with open('example.ini', 'w') as configfile:
+        config.write(configfile)
+
+.. code-block:: ini
+
+    [DEFAULT]
+    ServerAliveInterval = 45
+    Compression = yes
+    CompressionLevel = 9
+    ForwardX11 = yes
+
+    [bitbucket.org]
+    User = hg
+
+    [topsecret.server.com]
+    Port = 50022
+    ForwardX11 = no
 
 
 Running commands in parallel across many hosts
@@ -318,9 +515,19 @@ Assignments
 
 Rekursywne przechodzenie i wykonywanie poleceń
 ----------------------------------------------
-#. Napisz skrypt, który przeszuka rekurencyjnie wszystkie katalogi na pulpicie w Twoim systemie operacyjnym i jeżeli znajdzie plik *README* (z dowolnym rozszerzeinem) to wyświetli jego zawartość za pomocą polecenia ``cat`` (macOS, Linux) lub ``type`` (Windows).
-#. Ścieżkę do pliku ``README`` skonstruuj za pomocją ``os.path.join()``
-#. Jeżeli skrypt nie znajdzie pliku README, to ma rzucić informację ``logging.critical()`` i wyjść z kodem błędu ``1``.
+#. Sprawdź czy katalog "Python" już istnieje na pulpicie w Twoim systemie
+#. Jeżeli nie istnieje to za pomocą ``os.mkdir()`` stwórz go w tym miejscu
+#. Za pomocą ``subprocess.call()`` w tym katalogu stwórz plik ``README.rst`` i dodaj do niego tekst "Ehlo World"
+#. Przeszukaj rekurencyjnie wszystkie katalogi na pulpicie
+#. Znajdź wszystkie pliki ``README`` (z dowolnym rozszerzeniem)
+#. Wyświetl ich zawartość za pomocą polecenia:
+
+    * ``cat`` (macOS, Linux)
+    * ``type`` (Windows)
+
+#. Ścieżkę do powyższego pliku ``README`` skonstruuj za pomocą ``os.path.join()``
+#. Ścieżka ma być względna w stosunku do pliku, który aktualnie jest uruchamiany
+#. Jeżeli po przeszukaniu całego Pulpitu rekurencyjnie skrypt nie znajdzie pliku ``LICENSE.rst``, to ma rzucić informację ``logging.critical()`` i wyjść z kodem błędu ``1``.
 
 :Podpowiedź:
     * Gdyby był problem ze znalezieniem pliku, a ścieżka jest poprawna to zastosuj ``shell=True``
