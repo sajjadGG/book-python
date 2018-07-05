@@ -6,6 +6,7 @@ import json
 import io
 import socket
 import threading
+import datetime
 
 
 logging.basicConfig(
@@ -38,6 +39,7 @@ class Executor(socketserver.BaseRequestHandler):
             timeout = float(command.get('timeout', 1))
             stdout = self.execute(cmd, timeout)
             output.append({
+                'datetime': datetime.datetime.utcnow(),
                 'command': cmd,
                 'timeout': timeout,
                 'stdout': stdout,
@@ -71,21 +73,22 @@ class Executor(socketserver.BaseRequestHandler):
 
 class Heartbeat:
 
-    def __init__(self, host='localhost', port=31337):
+    def __init__(self, host='localhost', port=31337, frequency=1.0):
         log.debug('Starting ping hearthbeat')
         self.host = host
         self.port = port
+        self.frequency = frequency
 
     def start(self):
-        threading.Timer(1.0, self.ping).start()
+        threading.Timer(self.frequency, self.ping).start()
 
     def ping(self):
-        addr = (self.host, self.port)
-
-        log.debug('Ping sent to %s:%s' % addr)
+        log.debug(f'Ping sent to {self.host}:{self.port}')
 
         with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
-            sock.sendto(bytes('%s:%s\n', 'utf-8'), addr)
+            data = {'host': self.host, 'port': self.port}
+            message = bytes(json.dumps(data), 'utf-8')
+            sock.sendto(message, (self.host, self.port))
 
         self.start()
 
@@ -96,7 +99,7 @@ if __name__ == '__main__':
     log.info('Create the server')
     server = socketserver.TCPServer((HOST, PORT), Executor)
 
-    Heartbeat().start()
+    Heartbeat(frequency=1.0).start()
 
     log.info('Server activated')
     server.serve_forever()

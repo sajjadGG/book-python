@@ -6,7 +6,7 @@ from pprint import pprint
 
 HOST = "localhost"
 PORT = 1337
-XML_CMD_FILE = '../../../_tmp/botnet-commands.xml'
+XML_CMD_FILE = '../contrib/botnet-commands.xml'
 
 
 logging.basicConfig(
@@ -26,15 +26,15 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
     addr = (HOST, PORT)
     sock.connect(addr)
     sock.settimeout(7.0)
-    sock.sendall(bytes(commands + "\n", "utf-8"))
+    sock.sendall(bytes(commands + "\n", 'utf-8'))
 
     log.debug('Receive data from the server and shut down')
-    received = str(sock.recv(1024), "utf-8")
+    received = str(sock.recv(1024), 'utf-8')
     output = json.loads(received)
 
 
-print("Sent:     {}".format(commands))
-print("Received: {}".format(output))
+print(f'Sent:     {commands}')
+print(f'Received: {output}')
 print('\n\n')
 
 for executed in output:

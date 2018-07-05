@@ -2,6 +2,13 @@
 System Operacyjny
 *****************
 
+Accessing Environmental Variables
+=================================
+.. code-block:: python
+
+    import os
+
+    os.getenv('HOME')  # /home/jose
 
 Getting filenames and extensions
 ================================
@@ -12,8 +19,8 @@ Extensions
 
     import os
 
-    fname, ext = os.path.splitext(r'c:\Python\README.rst')
-    fname  # 'c:\\Python\\README'
+    path, ext = os.path.splitext(r'c:\Python\README.rst')
+    path   # 'c:\\Python\\README'
     ext    # '.rst'
 
 .. code-block:: python
@@ -52,15 +59,27 @@ Sprawdzanie systemu operacyjnego
 
     import platform
 
-    platform.system()  # Windows
-    platform.release()  # 7
+    platform.system()    # Windows
+    platform.release()   # 7
     platform.platform()  # 'Windows-7-6.1.7601-SP1'
-    platform.os.name  # 'nt'
+    platform.os.name     # 'nt'
 
     platform.uname()
-    # uname_result(system='Windows', node='Lenovo-Komputer', release='7', version='6.1.7601', machine='AMD64', processor='Intel64 Family 6 Model 42 Stepping 7, GenuineIntel')
+    # uname_result(
+    #     system='Windows',
+    #     node='Lenovo-Komputer',
+    #     release='7',
+    #     version='6.1.7601',
+    #     machine='AMD64',
+    #     processor='Intel64 Family 6 Model 42 Stepping 7, GenuineIntel')
     #
-    # ('Darwin', 'mainframe.local', '15.3.0', 'Darwin Kernel Version 15.3.0: Thu Dec 10 18:40:58 PST 2015; root:xnu-3248.30.4~1/RELEASE_X86_64', 'x86_64', 'i386')
+    # uname_result(
+    #     system='Darwin',
+    #     node='mainframe.local',
+    #     release='15.3.0',
+    #     version='Darwin Kernel Version 15.3.0: Thu Dec 10 18:40:58 PST 2015; root:xnu-3248.30.4~1/RELEASE_X86_64',
+    #     machine='x86_64',
+    #     processor='i386')
 
     platform.win32_ver()  # ('7', '6.1.7601', 'SP1', 'Multiprocessor Free')
     platform.mac_ver()
@@ -91,8 +110,35 @@ Sprawdzanie systemu operacyjnego
 
     import sys
 
+    sys.platform  # 'win32'
+
+
+``sys``
+=======
+
+Most commonly used methods
+--------------------------
+.. code-block:: python
+
+    import sys
+
+    sys.path
+    sys.path.append
     sys.platform
-    # 'win32'
+    sys.path.insert(0, '/path/to/directory')
+    sys.path.insert(index=0, object='/path/to/directory')
+
+System exit and exit codes
+--------------------------
+.. code-block:: python
+
+    import sys
+
+    sys.exit(0)
+
+.. csv-table:: System Exit Codes
+    :header-rows: 1
+    :file: data/system-exit-codes.csv
 
 
 ``os``
@@ -121,15 +167,11 @@ Sprawdzanie systemu operacyjnego
 
 .. code-block:: python
 
-    >>> import os
-    >>> os.path.isdir(os.path.join("c:", "\\", "Users"))
-    True
+    import os
 
-    >>> os.path.isdir(os.path.join("c:", "/", "Users"))
-    True
-
-    >>> os.path.isdir(os.path.join("c:", os.sep, "Users"))
-    True
+    os.path.isdir(os.path.join("c:", "\\", "Users"))    # True
+    os.path.isdir(os.path.join("c:", "/", "Users"))     # True
+    os.path.isdir(os.path.join("c:", os.sep, "Users"))  # True
 
 .. code-block:: python
 
@@ -142,7 +184,6 @@ Sprawdzanie systemu operacyjnego
     PWD = os.path.basename(os.getcwd())
 
     path = os.path.join(PWD, script)
-
     print(path)
 
 .. code-block:: python
@@ -154,8 +195,9 @@ Sprawdzanie systemu operacyjnego
     for root, dirs, files in os.walk('/home/'):
         print(sum(getsize(join(root, name)) for name in files), end=" ")
         print("bytes in", len(files), "non-directory files")
+
         if 'CVS' in dirs:
-            dirs.remove('CVS')  # don't visit CVS directories
+            dirs.remove('.git')  # skip ``.git`` directories
 
 .. code-block:: python
 
@@ -164,9 +206,12 @@ Sprawdzanie systemu operacyjnego
     # CAUTION:  This is dangerous!  For example, if top == '/', it
     # could delete all your disk files.
     import os
+
     for root, dirs, files in os.walk(top, topdown=False):
+
         for name in files:
             os.remove(os.path.join(root, name))
+
         for name in dirs:
             os.rmdir(os.path.join(root, name))
 
@@ -177,11 +222,21 @@ Stats and permissions
     import os
 
     output = os.stat(r'c:\Python\__notepad__.py')
-    print(output)
-    # os.stat_result(st_mode=33206, st_ino=3659174697409906, st_dev=3763209288, st_nlink=1, st_uid=0, st_gid=0, st_size=780, st_atime=1530775767, st_mtime=1530775767, st_ctime=1523261133)
 
-    oct_perm = oct(output.st_mode)
-    print(oct_perm)
+    print(output)
+    # os.stat_result(
+    #     st_mode=33206,
+    #     st_ino=3659174697409906,
+    #     st_dev=3763209288,
+    #     st_nlink=1,
+    #     st_uid=0,
+    #     st_gid=0,
+    #     st_size=780,
+    #     st_atime=1530775767,
+    #     st_mtime=1530775767,
+    #     st_ctime=1523261133)
+
+    oct(output.st_mode)
     # 0o100666
 
 Permissions
@@ -190,56 +245,13 @@ Permissions
 
     import os
 
-    os.access(r'C:\Python\README.rst', os.R_OK)
-    # True
-    os.access(r'C:\Python\README.rst', os.W_OK)
-    # True
-    os.access(r'C:\Python\README.rst', os.X_OK)
-    # True
+    os.access(r'C:\Python\README.rst', os.R_OK)     # True
+    os.access(r'C:\Python\README.rst', os.W_OK)     # True
+    os.access(r'C:\Python\README.rst', os.X_OK)     # True
 
-    os.access(r'C:\Python\notREADME.rst', os.R_OK)
-    # False
-    os.access(r'C:\Python\notREADME.rst', os.W_OK)
-    # False
-    os.access(r'C:\Python\notREADME.rst', os.X_OK)
-    # False
-
-
-``sys``
-=======
-
-Most commonly used methods
---------------------------
-.. code-block:: python
-
-    import sys
-
-    sys.path
-    sys.path.append
-    sys.platform
-    sys.path.insert(0, '/path/to/directory')
-    sys.path.insert(index=0, object='/path/to/directory')
-
-System exit and exit codes
---------------------------
-.. code-block:: python
-
-    import sys
-
-    sys.exit(0)
-
-.. csv-table::
-    :header-rows: 1
-
-    "Code", "Description"
-    "1", "Catchall for general errors"
-    "2", "Misuse of shell builtins (according to Bash documentation)"
-    "126", "Command invoked cannot execute"
-    "127", "command not found"
-    "128", "Invalid argument to exit"
-    "128+n", "Fatal error signal 'n'"
-    "255", "Exit status out of range (exit takes only integer args in the range 0 - 255)"
-
+    os.access(r'C:\Python\notREADME.rst', os.R_OK)  # False
+    os.access(r'C:\Python\notREADME.rst', os.W_OK)  # False
+    os.access(r'C:\Python\notREADME.rst', os.X_OK)  # False
 
 ``subprocess``
 ==============
@@ -253,7 +265,6 @@ Most commonly used methods
     subprocess.call('clear')
     subprocess.run()  # preferred over ``Popen()`` for Python >= 3.5
     subprocess.Popen()
-
 
 ``subprocess.Popen()``
 ----------------------
@@ -291,6 +302,7 @@ Most commonly used methods
         timeout=None,  # important
         check=False,
         encoding=None
+        # ... there are other, less commonly used parameters
     )
 
 ``shell=True``
@@ -319,7 +331,17 @@ Execute command in OS
 ---------------------
 .. code-block:: python
 
-    subprocess.run('ls -la /home')  # doesn't capture output
+    subprocess.run('ls -la /home')  # without capturing output
+
+.. code-block:: python
+
+    import os
+    import subprocess
+
+    BASE_DIR = os.path.dirname(__file__)
+    path = os.path.join(BASE_DIR, 'README.rst')
+
+    subprocess.run(f'echo "ehlo world" > {my_path}')
 
 .. code-block:: python
 
@@ -550,22 +572,22 @@ Reading configuration
 
     config = configparser.ConfigParser()
 
-    config.read('example.ini')  # ['example.ini']
-    config.sections()  # ['bitbucket.org', 'topsecret.server.com']
+    config.read('example.ini')          # ['example.ini']
+    config.sections()                   # ['bitbucket.org', 'topsecret.server.com']
 
-    'bitbucket.org' in config  # True
-    'example.com' in config  # False
+    'bitbucket.org' in config           # True
+    'example.com' in config             # False
 
-    config['bitbucket.org']['User']  # 'hg'
-    config['DEFAULT']['Compression']  # 'yes'
+    config['bitbucket.org']['User']     # 'hg'
+    config['DEFAULT']['Compression']    # 'yes'
 
-    config.getboolean('BatchMode', fallback=True)  # True
+    config.getboolean('BatchMode', fallback=True)        # True
     config.getfloat('DEFAULT', 'a_float', fallback=0.0)  # 0.0
-    config.getint('DEFAULT', 'an_int', fallback=0)  # 0
+    config.getint('DEFAULT', 'an_int', fallback=0)       # 0
 
     topsecret = config['topsecret.server.com']
-    topsecret.get('ForwardX11', 'yes')  # 'no'
-    topsecret.get('Port', 8000)  # '50022'
+    topsecret.get('ForwardX11', 'yes')          # 'no'
+    topsecret.get('Port', 8000)                 # '50022'
 
 
     for key in config['bitbucket.org']:  # 'bitbucket.org' has laso entries from DEFAULT
@@ -601,117 +623,120 @@ Alternative syntax and using variables in config
 
 ``pathlib``
 ===========
-.. csv-table::
-    :header-rows: 1
 
-    "``os`` and ``os.path``", "``pathlib``"
-    "``os.path.abspath()``", "``Path.resolve()``"
-    "``os.getcwd()``", "``Path.cwd()``"
-    "``os.path.exists()``", "``Path.exists()``"
-    "``os.path.expanduser()``", "``Path.expanduser()`` and ``Path.home()``"
-    "``os.path.isdir()``", "``Path.is_dir()``"
-    "``os.path.isfile()``", "``Path.is_file()``"
-    "``os.path.islink()``", "``Path.is_symlink()``"
-    "``os.stat()``", "``Path.stat()``, ``Path.owner()``, ``Path.group()``"
-    "``os.path.isabs()``", "``PurePath.is_absolute()``"
-    "``os.path.join()``", "``PurePath.joinpath()``"
-    "``os.path.basename()``", "``PurePath.name``"
-    "``os.path.dirname()``", "``PurePath.parent``"
-    "``os.path.splitext()``", "``PurePath.suffix``"
+System ``os`` vs. ``pathlib``
+-----------------------------
+.. csv-table:: System ``os`` vs. ``pathlib``
+    :header-rows: 1
+    :file: data/system-os-vs-pathlib.csv
 
 ``.home()``
 -----------
 .. code-block:: python
 
-    pathlib.home()
-    # WindowsPath('C:/Users/Jose')
+    import pathlib
+
+    pathlib.home()  # WindowsPath('C:/Users/Jose')
 
 ``.drive``
 ----------
 .. code-block:: python
 
-    >>> PureWindowsPath('c:/Program Files/').drive
-    'c:'
-    >>> PureWindowsPath('/Program Files/').drive
-    ''
-    >>> PurePosixPath('/etc').drive
-    ''
+    import pathlib
+
+    PureWindowsPath('c:/Program Files/').drive  # 'c:'
+    PureWindowsPath('/Program Files/').drive    # ''
+    PurePosixPath('/etc').drive                 # ''
 
 ``.parents``
 ------------
 .. code-block:: python
 
-    >>> p = PureWindowsPath('c:/foo/bar/setup.py')
-    >>> p.parents[0]
-    PureWindowsPath('c:/foo/bar')
-    >>> p.parents[1]
-    PureWindowsPath('c:/foo')
-    >>> p.parents[2]
-    PureWindowsPath('c:/')
+    import pathlib
+
+    p = PureWindowsPath('c:/foo/bar/setup.py')
+
+    p.parents[0]  # PureWindowsPath('c:/foo/bar')
+    p.parents[1]  # PureWindowsPath('c:/foo')
+    p.parents[2]  # PureWindowsPath('c:/')
 
 ``.parent``
 -----------
 .. code-block:: python
 
-    >>> p = PurePosixPath('/a/b/c/d')
-    >>> p.parent
-    PurePosixPath('/a/b/c')
+    import pathlib
+
+    p = PurePosixPath('/a/b/c/d')
+    p.parent  # PurePosixPath('/a/b/c')
 
 ``.as_posix()``
 ---------------
 .. code-block:: python
 
-    >>> p = PureWindowsPath('c:\\windows')
-    >>> str(p)
-    'c:\\windows'
-    >>> p.as_posix()
-    'c:/windows'
+    import pathlib
+
+    p = PureWindowsPath('c:\\windows')
+
+    str(p)        # 'c:\\windows'
+    p.as_posix()  # 'c:/windows'
 
 ``.as_uri()``
 -------------
 .. code-block:: python
 
-    >>> p = PurePosixPath('/etc/passwd')
-    >>> p.as_uri()
-    'file:///etc/passwd'
-    >>> p = PureWindowsPath('c:/Windows')
-    >>> p.as_uri()
-    'file:///c:/Windows'
+    import pathlib
+
+    p = PurePosixPath('/etc/passwd')
+    p.as_uri()  # 'file:///etc/passwd'
+
+    p = PureWindowsPath('c:/Windows')
+    p.as_uri()  # 'file:///c:/Windows'
 
 ``Path.chmod()``
 ----------------
 .. code-block:: python
 
-    >>> p = Path('setup.py')
-    >>> p.stat().st_mode
-    33277
-    >>> p.chmod(0o444)
-    >>> p.stat().st_mode
-    33060
+    import pathlib
+
+    p = Path('setup.py')
+
+    oct(p.stat().st_mode)  # 0o100775
+    p.chmod(0o444)
+    oct(p.stat().st_mode)  # 0o100444
 
 ``.glob()``
 -----------
 .. code-block:: python
 
-    >>> sorted(Path('.').glob('*.py'))
-    [PosixPath('pathlib.py'), PosixPath('setup.py'), PosixPath('test_pathlib.py')]
-    >>> sorted(Path('.').glob('*/*.py'))
-    [PosixPath('docs/conf.py')]
+    import pathlib
+
+    sorted(Path('.').glob('*.py'))
+    # [PosixPath('pathlib.py'), PosixPath('setup.py'), PosixPath('test_pathlib.py')]
+
+    sorted(Path('.').glob('*/*.py'))
+    # [PosixPath('docs/conf.py')]
+
+    sorted(Path('.').glob('**/*.py'))
+    # [PosixPath('docs/conf.py'), ...]
 
 ``.iterdir()``
 --------------
 .. code-block:: python
 
-    >>> p = Path('docs')
-    >>> for child in p.iterdir(): child
-    ...
-    PosixPath('docs/conf.py')
-    PosixPath('docs/_templates')
-    PosixPath('docs/make.bat')
-    PosixPath('docs/index.rst')
-    PosixPath('docs/_build')
-    PosixPath('docs/_static')
-    PosixPath('docs/Makefile')
+    import pathlib
+
+    p = Path('docs')
+
+    for child in p.iterdir():
+        print(child)
+
+        # PosixPath('docs/conf.py')
+        # PosixPath('docs/_templates')
+        # PosixPath('docs/make.bat')
+        # PosixPath('docs/index.rst')
+        # PosixPath('docs/_build')
+        # PosixPath('docs/_static')
+        # PosixPath('docs/Makefile')
 
 
 Running commands in parallel across many hosts
@@ -737,6 +762,7 @@ Passwords and secrets
 * Sticky bit
 * setuid
 * configparser
+
 
 Python Executable
 =================
@@ -806,7 +832,7 @@ Recursive folders walking
 Tree
 ----
 #. Za pomocą znaków unicode: "┣━", "┗━" , "┃  "
-#. wygeneruj wynik przypominający wynik polecenia ``tree``.
+#. Wygeneruj wynik przypominający wynik polecenia ``tree``.
 
 .. code-block:: text
 

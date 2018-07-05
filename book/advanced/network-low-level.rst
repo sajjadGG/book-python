@@ -1,6 +1,6 @@
-**********************
-Programowanie sieciowe
-**********************
+*******************
+Network Programming
+*******************
 
 Socket
 ======
@@ -44,9 +44,17 @@ Automatyzacja pracy
 
 ``fabric``
 ----------
-
 * http://www.fabfile.org/
 * https://pypi.python.org/pypi/Fabric3
+
+.. code-block:: python
+
+    from fabric.api import hosts
+
+    @hosts(['127.0.0.1', 'localhost'])
+    def whoami():
+        sudo('whoami')
+
 
 Allegro Ralph
 =============

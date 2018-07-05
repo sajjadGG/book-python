@@ -226,6 +226,7 @@ Appendixes
     :numbered:
     :caption: Appendixes
 
+    appendixes/sql.rst
     appendixes/history.rst
     appendixes/przydatne-odnosniki.rst
     appendixes/ksiazki.rst
