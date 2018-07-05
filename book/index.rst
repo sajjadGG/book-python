@@ -101,8 +101,8 @@ Advanced
     advanced/introspection.rst
     advanced/serialization-pickle.rst
     advanced/serialization-xml.rst
+    advanced/argparse.rst
     advanced/operating-system.rst
-    advanced/commandline.rst
     advanced/generators.rst
     advanced/iterators.rst
     advanced/context-managers.rst

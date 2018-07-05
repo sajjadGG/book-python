@@ -3,6 +3,43 @@ System Operacyjny
 *****************
 
 
+Getting filenames and extensions
+================================
+
+Extensions
+----------
+.. code-block:: python
+
+    import os
+
+    fname, ext = os.path.splitext(r'c:\Python\README.rst')
+    fname  # 'c:\\Python\\README'
+    ext    # '.rst'
+
+.. code-block:: python
+
+    import pathlib
+
+    pathlib.Path('my/library/setup.py').suffix   # '.py'
+    pathlib.Path('my/library.tar.gz').suffix     # '.gz'
+    pathlib.Path('my/library').suffix            # ''
+    pathlib.Path('my/library.tar.gar').suffixes  # ['.tar', '.gar']
+    pathlib.Path('my/library.tar.gz').suffixes   # ['.tar', '.gz']
+    pathlib.Path('my/library').suffixes          # []
+
+Filenames
+---------
+.. code-block:: python
+
+    import pathlib
+
+    pathlib.Path('//some/share/setup.py').name  # 'setup.py'
+    pathlib.Path('//some/share').name           # ''
+    pathlib.Path('my/library.tar.gz').stem      # 'library.tar'
+    pathlib.Path('my/library.tar').stem         # 'library'
+    pathlib.Path('my/library').stem             # 'library'
+
+
 Sprawdzanie systemu operacyjnego
 ================================
 * Linux: Linux
@@ -22,13 +59,12 @@ Sprawdzanie systemu operacyjnego
 
     platform.uname()
     # uname_result(system='Windows', node='Lenovo-Komputer', release='7', version='6.1.7601', machine='AMD64', processor='Intel64 Family 6 Model 42 Stepping 7, GenuineIntel')
+    #
+    # ('Darwin', 'mainframe.local', '15.3.0', 'Darwin Kernel Version 15.3.0: Thu Dec 10 18:40:58 PST 2015; root:xnu-3248.30.4~1/RELEASE_X86_64', 'x86_64', 'i386')
 
     platform.win32_ver()  # ('7', '6.1.7601', 'SP1', 'Multiprocessor Free')
     platform.mac_ver()
     platform.linux_distribution()  # deprecated since Python 3.5
-
-    platform.uname()  # not working of Windows
-    # ('Darwin', 'mainframe.local', '15.3.0', 'Darwin Kernel Version 15.3.0: Thu Dec 10 18:40:58 PST 2015; root:xnu-3248.30.4~1/RELEASE_X86_64', 'x86_64', 'i386')
 
 ``os``
 ------
@@ -172,8 +208,8 @@ Permissions
 ``sys``
 =======
 
-Najczęściej wykorzystuje się:
-
+Most commonly used methods
+--------------------------
 .. code-block:: python
 
     import sys
@@ -184,25 +220,40 @@ Najczęściej wykorzystuje się:
     sys.path.insert(0, '/path/to/directory')
     sys.path.insert(index=0, object='/path/to/directory')
 
+System exit and exit codes
+--------------------------
 .. code-block:: python
 
     import sys
 
     sys.exit(0)
 
+.. csv-table::
+    :header-rows: 1
+
+    "Code", "Description"
+    "1", "Catchall for general errors"
+    "2", "Misuse of shell builtins (according to Bash documentation)"
+    "126", "Command invoked cannot execute"
+    "127", "command not found"
+    "128", "Invalid argument to exit"
+    "128+n", "Fatal error signal 'n'"
+    "255", "Exit status out of range (exit takes only integer args in the range 0 - 255)"
+
 
 ``subprocess``
 ==============
 
-Najczęściej wykorzystuje się:
-
+Most commonly used methods
+--------------------------
 .. code-block:: python
 
     import subprocess
 
     subprocess.call('clear')
-    subprocess.run()  # preferred for Python >= 3.5
-    subprocess.Popen()  #
+    subprocess.run()  # preferred over ``Popen()`` for Python >= 3.5
+    subprocess.Popen()
+
 
 ``subprocess.Popen()``
 ----------------------
@@ -244,28 +295,28 @@ Najczęściej wykorzystuje się:
 
 ``shell=True``
 --------------
-
-.. code-block:: python
-
-    >>> import subprocess
-
-    >>> subprocess.call('echo $HOME')
-    Traceback (most recent call last):
-    ...
-    OSError: [Errno 2] No such file or directory
-
-
-    >>> import subprocess
-    >>> subprocess.call('echo $HOME', shell=True)
-    /home/jose-jimenez
-    0
-
 Setting the shell argument to a true value causes subprocess to spawn an intermediate shell process, and tell it to run the command. In other words, using an intermediate shell means that variables, glob patterns, and other special shell features in the command string are processed before the command is run. Here, in the example, ``$HOME`` was processed before the echo command. Actually, this is the case of command with shell expansion while the command ``ls -l`` considered as a simple command.
 
 .. note:: source: `Subprocess Module <https://stackoverflow.com/a/36299483/228517>`
 
-Uruchamianie poleceń
---------------------
+.. code-block:: python
+
+    import subprocess
+
+    subprocess.call('echo $HOME')
+    # Traceback (most recent call last):
+    #   ...
+    # OSError: [Errno 2] No such file or directory
+
+.. code-block:: python
+
+    import subprocess
+
+    subprocess.call('echo $HOME', shell=True)
+    # /home/jose-jimenez
+
+Execute command in OS
+---------------------
 .. code-block:: python
 
     subprocess.run('ls -la /home')  # doesn't capture output
@@ -288,25 +339,6 @@ Uruchamianie poleceń
 
 .. code-block:: python
 
-    import subprocess
-    import shlex
-
-    cmd = 'dir ..'
-
-    output = subprocess.run(
-        shlex.split(cmd),  # ['dir', '..']
-        timeout=2,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        encoding='utf-8')
-
-    print(output.stdout)
-    print(output.stderr)
-
-
-
-.. code-block:: python
-
     subprocess.run("exit 1", shell=True, check=True)
     # Traceback (most recent call last):
     #   ...
@@ -314,20 +346,9 @@ Uruchamianie poleceń
 
 .. code-block:: python
 
-    subprocess.run(["ls", "-l", "/dev/null"], stdout=subprocess.PIPE)
+    subprocess.run(["ls", "-l", "/dev/null"], stdout=subprocess.PIPE, encoding='utf-8')
     # CompletedProcess(args=['ls', '-l', '/dev/null'], returncode=0,
-    # stdout=b'crw-rw-rw- 1 root root 1, 3 Jan 23 16:23 /dev/null\n')
-
-.. code-block:: python
-
-    import subprocess
-    import shlex
-
-    cmd = 'ls -la'
-
-    with subprocess.Popen(shlex.split(cmd), stdout=subprocess.PIPE) as proc:
-        ret = proc.stdout.read()
-        print(ret)
+    #                  stdout='crw-rw-rw- 1 root root 1, 3 Jan 23 16:23 /dev/null\n')
 
 Timeout dla wykonywania poleceń
 -------------------------------
@@ -373,9 +394,8 @@ Przechwytywanie outputu
 
         return result
 
-Parsowanie i sanityzacja argumentów
------------------------------------
-
+Parsing and sanitizing arguments
+--------------------------------
 .. code-block:: python
 
     import shlex
@@ -384,12 +404,27 @@ Parsowanie i sanityzacja argumentów
     command_line = input()
     # /bin/vikings -input eggs.txt -output "spam spam.txt" -cmd "echo '$MONEY'"
 
-    args = shlex.split(command_line)
-    print(args)
+    cmd = shlex.split(command_line)
     # ['/bin/vikings', '-input', 'eggs.txt', '-output', 'spam spam.txt', '-cmd', "echo '$MONEY'"]
 
-    p = subprocess.Popen(args) # Success!
+    subprocess.run(cmd)
 
+.. code-block:: python
+
+    import subprocess
+    import shlex
+
+    cmd = 'dir ..'
+
+    output = subprocess.run(
+        shlex.split(cmd),  # ['dir', '..']
+        timeout=2,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        encoding='utf-8')
+
+    print(output.stdout)
+    print(output.stderr)
 
 
 ``tempfile``
@@ -462,6 +497,8 @@ Creating temporary directories
     view = b.getbuffer()
     view[2:4] = b"56"
     b.getvalue()  # b'ab56ef'
+
+
 
 ``configparser``
 ================
@@ -562,6 +599,119 @@ Alternative syntax and using variables in config
     python_dir: ${Frameworks:path}/Python/Versions/${Frameworks:Python}
 
 
+``pathlib``
+===========
+.. code-block:: python
+
+    pathlib.home()
+    # WindowsPath('C:/Users/Jose')
+
+.. csv-table::
+    :header-rows: 1
+
+    "``os`` and ``os.path``", "``pathlib``"
+    "``os.path.abspath()``", "``Path.resolve()``"
+    "``os.getcwd()``", "``Path.cwd()``"
+    "``os.path.exists()``", "``Path.exists()``"
+    "``os.path.expanduser()``", "``Path.expanduser()`` and ``Path.home()``"
+    "``os.path.isdir()``", "``Path.is_dir()``"
+    "``os.path.isfile()``", "``Path.is_file()``"
+    "``os.path.islink()``", "``Path.is_symlink()``"
+    "``os.stat()``", "``Path.stat()``, ``Path.owner()``, ``Path.group()``"
+    "``os.path.isabs()``", "``PurePath.is_absolute()``"
+    "``os.path.join()``", "``PurePath.joinpath()``"
+    "``os.path.basename()``", "``PurePath.name``"
+    "``os.path.dirname()``", "``PurePath.parent``"
+    "``os.path.splitext()``", "``PurePath.suffix``"
+
+.drive
+------
+.. code-block:: python
+
+    >>> PureWindowsPath('c:/Program Files/').drive
+    'c:'
+    >>> PureWindowsPath('/Program Files/').drive
+    ''
+    >>> PurePosixPath('/etc').drive
+    ''
+
+.parents
+--------
+.. code-block:: python
+
+    >>> p = PureWindowsPath('c:/foo/bar/setup.py')
+    >>> p.parents[0]
+    PureWindowsPath('c:/foo/bar')
+    >>> p.parents[1]
+    PureWindowsPath('c:/foo')
+    >>> p.parents[2]
+    PureWindowsPath('c:/')
+
+.parent
+-------
+.. code-block:: python
+
+    >>> p = PurePosixPath('/a/b/c/d')
+    >>> p.parent
+    PurePosixPath('/a/b/c')
+
+.as_posix()
+-----------
+.. code-block:: python
+
+    >>> p = PureWindowsPath('c:\\windows')
+    >>> str(p)
+    'c:\\windows'
+    >>> p.as_posix()
+    'c:/windows'
+
+.as_uri()
+---------
+.. code-block:: python
+
+    >>> p = PurePosixPath('/etc/passwd')
+    >>> p.as_uri()
+    'file:///etc/passwd'
+    >>> p = PureWindowsPath('c:/Windows')
+    >>> p.as_uri()
+    'file:///c:/Windows'
+
+Path.chmod()
+------------
+.. code-block:: python
+
+    >>> p = Path('setup.py')
+    >>> p.stat().st_mode
+    33277
+    >>> p.chmod(0o444)
+    >>> p.stat().st_mode
+    33060
+
+.glob
+-----
+.. code-block:: python
+
+    >>> sorted(Path('.').glob('*.py'))
+    [PosixPath('pathlib.py'), PosixPath('setup.py'), PosixPath('test_pathlib.py')]
+    >>> sorted(Path('.').glob('*/*.py'))
+    [PosixPath('docs/conf.py')]
+
+.iterdir
+--------
+.. code-block:: python
+
+    >>> p = Path('docs')
+    >>> for child in p.iterdir(): child
+    ...
+    PosixPath('docs/conf.py')
+    PosixPath('docs/_templates')
+    PosixPath('docs/make.bat')
+    PosixPath('docs/index.rst')
+    PosixPath('docs/_build')
+    PosixPath('docs/_static')
+    PosixPath('docs/Makefile')
+
+
 Running commands in parallel across many hosts
 ==============================================
 * https://linux.die.net/man/1/pssh
@@ -572,11 +722,11 @@ Running commands in parallel across many hosts
 
 .. figure:: img/system-pssh-2.jpg
     :align: center
-    :scale: 100%
+    :scale: 50%
 
 .. figure:: img/system-pssh-3.png
     :align: center
-    :scale: 100%
+    :scale: 75%
 
 
 Passwords and secrets
@@ -614,8 +764,8 @@ Similar projects: Geckoboard, Dashing.
 Assignments
 ===========
 
-Rekursywne przechodzenie i wykonywanie poleceń
-----------------------------------------------
+Recursive folders walking
+-------------------------
 #. Sprawdź czy katalog "Python" już istnieje na pulpicie w Twoim systemie
 #. Jeżeli nie istnieje to za pomocą ``os.mkdir()`` stwórz go w tym miejscu
 #. Za pomocą ``subprocess.call()`` w tym katalogu stwórz plik ``README.rst`` i dodaj do niego tekst "Ehlo World"
@@ -630,13 +780,18 @@ Rekursywne przechodzenie i wykonywanie poleceń
 #. Ścieżka ma być względna w stosunku do pliku, który aktualnie jest uruchamiany
 #. Jeżeli po przeszukaniu całego Pulpitu rekurencyjnie skrypt nie znajdzie pliku ``LICENSE.rst``, to ma rzucić informację ``logging.critical()`` i wyjść z kodem błędu ``1``.
 
+:Założenia:
+    * Nazwa pliku: ``system_walk.py``
+    * Szacunkowa długość kodu: około 30 linii
+    * Maksymalny czas na zadanie: 30 min
+
 :Podpowiedź:
     * Gdyby był problem ze znalezieniem pliku, a ścieżka jest poprawna to zastosuj ``shell=True``
     * ``os.walk()``
     * ``subprocess.run()``
 
 :Co to zadanie sprawdza?:
-    * Przeglądanie katalogów i algorytm przeszykiwania
+    * Przeglądanie katalogów i algorytm przeszukiwania
     * Sanityzacja parametrów
     * Logowanie wydarzeń w programie
     * Uruchamianie poleceń w systemie
@@ -648,8 +803,8 @@ Rekursywne przechodzenie i wykonywanie poleceń
 
 Tree
 ----
-Za pomocą znaków unicode: "┣━", "┗━" , "┃  " wygeneruj wynik przypominający wynik polecenia ``tree``.
-
+#. Za pomocą znaków unicode: "┣━", "┗━" , "┃  "
+#. wygeneruj wynik przypominający wynik polecenia ``tree``.
 
 .. code-block:: text
 
@@ -675,3 +830,8 @@ Za pomocą znaków unicode: "┣━", "┗━" , "┃  " wygeneruj wynik przypom
     ┃  ┗━test2
     ┣━folder_tree_maker.py
     ┗━tree.py
+
+:Założenia:
+    * Nazwa pliku: ``system_tree.py``
+    * Szacunkowa długość kodu: około 60 linii
+    * Maksymalny czas na zadanie: 60 min
