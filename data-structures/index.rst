@@ -22,7 +22,6 @@ Simple collections
 
     my_tuple = 1,
     my_tuple = (1,)
-
     my_tuple = 1, 2, None, False, 'José'
     my_tuple = (1, 2, None, False, 'José')
     my_tuple = tuple(1, 2, None, False, 'José')
@@ -30,11 +29,11 @@ Simple collections
 .. code-block:: python
 
     my_tuple = (1, 2, 3, 4, 5)
-    my_tuple[:3]  # (1, 2, 3)
+    my_tuple[:3]   # (1, 2, 3)
     my_tuple[1:4]  # (2, 3, 4)
-    my_tuple[3:]  # (4, 5)
+    my_tuple[3:]   # (4, 5)
     my_tuple[::2]  # (1, 3, 5)
-    my_tuple[-1]  # 5
+    my_tuple[-1]   # 5
 
 .. code-block:: python
 
@@ -65,14 +64,14 @@ Simple collections
     my_list = list()
 
     my_list = [1]
-
     my_list = [1, 2, None, False, 'José']
     my_list = list(1, 2, None, False, 'José')
 
 .. code-block:: python
 
     my_list = [1, 2, None, False, 'José']
-    my_list[1]  # 2
+
+    my_list[1]    # 2
     my_list[2:4]  # [None, False]
 
 .. code-block:: python
@@ -81,7 +80,7 @@ Simple collections
     my_list = my_list.append([3, 4])  # [1, 2, [3, 4]]
 
     my_list = [1, 2]
-    my_list.extend([3, 4])  # [1, 2, 3, 4]
+    my_list.extend([3, 4])            # [1, 2, 3, 4]
 
 .. code-block:: python
 
@@ -98,23 +97,23 @@ Simple collections
     my_set = set()
 
     my_set = {1}
-    my_set = {1, 3, 1}  # {1, 3}
+    my_set = {1, 3, 1}       # {1, 3}
     my_set = set([1, 3, 1])  # {1, 3}
 
 .. code-block:: python
 
     my_set = {1, 2, 3}  # {1, 2, 3}
 
-    my_set.add(4)  # {1, 2, 3, 4}
-    my_set.add(4)  # {1, 2, 3, 4}
-    my_set.add(3)  # {1, 2, 3, 4}
+    my_set.add(4)       # {1, 2, 3, 4}
+    my_set.add(4)       # {1, 2, 3, 4}
+    my_set.add(3)       # {1, 2, 3, 4}
 
 .. code-block:: python
 
-    {1,2} - {2,3}  # {1}  # Subtract
+    {1,2} - {2,3}  # {1}        # Subtract
     {1,2} | {2,3}  # {1, 2, 3}  # Sum
-    {1,2} & {2,3}  # {2}  # Union
-    {1,2} ^ {2,3}  # {1, 3}  # Symmetrical difference
+    {1,2} & {2,3}  # {2}        # Union
+    {1,2} ^ {2,3}  # {1, 3}     # Symmetrical difference
     {1,2} + {3,4}  # TypeError: unsupported operand type(s) for +: 'set' and 'set'
 
 .. code-block:: python
@@ -146,7 +145,7 @@ Simple collections
 
     my_dict['last_name']  # 'Jiménez'
     my_dict['locations']  # ['Cape Canaveral', 'Houston']
-    my_dict[1]  # 'value for one'
+    my_dict[1]            # 'value for one'
 
 .. code-block:: python
 
@@ -156,9 +155,9 @@ Simple collections
 
     my_dict = {'age': 30, 'first_name': 'José', 'last_name': 'Jiménez'}
 
-    my_dict.keys()  # dict_keys(['age', 'first_name', 'last_name'])
+    my_dict.keys()    # dict_keys(['age', 'first_name', 'last_name'])
     my_dict.values()  # dict_values([30, 'José', 'Jiménez'])
-    my_dict.items()  # dict_items([('age', 30), ('first_name', 'José'), ('last_name', 'Jiménez')])
+    my_dict.items()   # dict_items([('age', 30), ('first_name', 'José'), ('last_name', 'Jiménez')])
 
 ``dict`` vs. ``set``
 --------------------
@@ -166,26 +165,26 @@ Simple collections
 
 .. code-block:: python
 
-    {}  # dict
-    {1}  # set
-    {1, 2}  # set
-    {1: 2} # dict
+    {}         # dict
+    {1}        # set
+    {1, 2}     # set
+    {1: 2}     # dict
     {1:1, 2:2} # dict
 
 .. code-block:: python
 
     my_data = {}
     isinstance(my_data, (set, dict))  # True
-    isinstance(my_data, dict)  # True
-    isinstance(my_data, set)  # False
+    isinstance(my_data, dict)         # True
+    isinstance(my_data, set)          # False
 
     my_data = {1}
-    isinstance(my_data, set)  # True
-    isinstance(my_data, dict)  # False
+    isinstance(my_data, set)          # True
+    isinstance(my_data, dict)         # False
 
     my_data = {1: 1}
-    isinstance(my_data, set)  # False
-    isinstance(my_data, dict)  # True
+    isinstance(my_data, set)          # False
+    isinstance(my_data, dict)         # True
 
 Accessing ``dict`` values with ``[...]`` and ``.get(...)``
 ----------------------------------------------------------
@@ -196,10 +195,11 @@ Accessing ``dict`` values with ``[...]`` and ``.get(...)``
 .. code-block:: python
 
     data = {'first_name': 'José', 'last_name': 'Jiménez'}
-    data['last_name']  # 'Jiménez'
-    data.get('last_name')  # 'Jiménez'
-    data['agency']    # KeyError: 'agency'
-    data.get('agency')  # None
+
+    data['last_name']          # 'Jiménez'
+    data.get('last_name')      # 'Jiménez'
+    data['agency']             # KeyError: 'agency'
+    data.get('agency')         # None
     data.get('agency', 'n/a')  # n/a
 
 
@@ -224,8 +224,8 @@ Nested collections
         {'first_name': 'Ivan', 'tags': ['astronaut', 'roscosmos', 'space']},
     ]
 
-    DATA[0]['last_name']  # KeyError: 'last_name'
-    DATA[0].get('last_name', 'n/a')  # 'n/a'
+    DATA[0]['last_name']               # KeyError: 'last_name'
+    DATA[0].get('last_name', 'n/a')    # 'n/a'
     ' and '.join(DATA[3].get('tags'))  # astronaut and roscosmos and space
 
 Multidimensional lists
@@ -261,31 +261,31 @@ How Python understands types?
 
 .. code-block:: python
 
-    what = 1, 2  # <class 'tuple'>
+    what = 1, 2    # <class 'tuple'>
     what = (1, 2)  # <class 'tuple'>
 
 .. code-block:: python
 
-    what = 'foo'  # <class 'str'>
-    what = 'foo',  # <class 'tuple'>
-    what = ('foo')  # <class 'str'>
+    what = 'foo'     # <class 'str'>
+    what = 'foo',    # <class 'tuple'>
+    what = ('foo')   # <class 'str'>
     what = ('foo',)  # <class 'tuple'>
 
 .. code-block:: python
 
-    what = 1  # <class 'int'>
-    what = 1.5  # <class 'float'>
-    what = .5  # <class 'float'>
-    what = 1.  # <class 'float'>
-    what = (1.)  # <class 'float'>
+    what = 1        # <class 'int'>
+    what = 1.5      # <class 'float'>
+    what = .5       # <class 'float'>
+    what = 1.       # <class 'float'>
+    what = (1.)     # <class 'float'>
 
 .. code-block:: python
 
-    what = 10,  # <class 'tuple'>
-    what = (10,)  # <class 'tuple'>
-    what = 10.  # <class 'float'>
-    what = (10.)  # <class 'float'>
-    what = (10)  # <class 'int'>
+    what = 10,      # <class 'tuple'>
+    what = (10,)    # <class 'tuple'>
+    what = 10.      # <class 'float'>
+    what = (10.)    # <class 'float'>
+    what = (10)     # <class 'int'>
 
 
 More advanced topics
