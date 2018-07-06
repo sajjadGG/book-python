@@ -159,19 +159,19 @@ Scientific and Engineering
     :numbered:
     :caption: Scientific and Engineering
 
-    scientific/code-quality.rst
-    scientific/libraries.rst
-    scientific/jupyter.rst
-    scientific/numpy.rst
-    scientific/scipy.rst
-    scientific/pandas.rst
-    scientific/charts.rst
-    scientific/matplotlib.rst
-    scientific/plotly.rst
-    scientific/bokeh.rst
-    scientific/graphs.rst
-    scientific/numerical-analysis.rst
-    scientific/machine-learning.rst
+    numerical-analysis/code-quality.rst
+    numerical-analysis/libraries.rst
+    numerical-analysis/jupyter.rst
+    numerical-analysis/numpy.rst
+    numerical-analysis/scipy.rst
+    numerical-analysis/pandas.rst
+    numerical-analysis/charts.rst
+    numerical-analysis/matplotlib.rst
+    numerical-analysis/plotly.rst
+    numerical-analysis/bokeh.rst
+    numerical-analysis/graphs.rst
+    numerical-analysis/numerical-analysis.rst
+    numerical-analysis/machine-learning.rst
 
 ****************
 Machine Learning
