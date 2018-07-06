@@ -33,9 +33,9 @@ Introduction
 
     install.rst
     agenda.rst
-    introduction/about.rst
-    introduction/references.rst
-    introduction/ide.rst
+    _introduction/about.rst
+    _introduction/references.rst
+    _introduction/ide.rst
 
 ***********
 Foundations
@@ -45,27 +45,27 @@ Foundations
     :numbered:
     :caption: Foundations
 
-    foundations/syntax.rst
-    foundations/types.rst
-    foundations/data-structures.rst
-    foundations/control-flow.rst
-    foundations/operators.rst
-    foundations/loops.rst
-    foundations/functions-basic.rst
-    foundations/doctests.rst
-    foundations/modules-install.rst
-    foundations/builtin.rst
-    foundations/programming-convention.rst
-    foundations/performance.rst
-    foundations/math.rst
-    foundations/debugging.rst
-    foundations/print-formatting.rst
-    foundations/datetime.rst
-    foundations/exceptions.rst
-    foundations/files.rst
-    foundations/oop-basic.rst
-    foundations/oop-dataclass.rst
-    foundations/exam-foundations.rst
+    syntax/index.rst
+    types/index.rst
+    data-structures/index.rst
+    control-flow/index.rst
+    operators/index.rst
+    loops/index.rst
+    functions-basic/index.rst
+    doctest/index.rst
+    modules-install/index.rst
+    builtin/index.rst
+    programming-convention/index.rst
+    performance/index.rst
+    math/index.rst
+    debugging/index.rst
+    print-formatting/index.rst
+    datetime/index.rst
+    exceptions/index.rst
+    file/index.rst
+    oop-basic/index.rst
+    oop-dataclass/index.rst
+    exam-basic/index.rst
 
 ************
 Intermediate
@@ -75,20 +75,20 @@ Intermediate
     :numbered:
     :caption: Intermediate
 
-    intermediate/modules-venv.rst
-    intermediate/type-annotation.rst
-    intermediate/logging.rst
-    intermediate/serialization-csv.rst
-    intermediate/serialization-json.rst
-    intermediate/quality-and-tests.rst
-    intermediate/functions-advanced.rst
-    intermediate/oop-advanced.rst
-    intermediate/operator-overload.rst
-    intermediate/modules-create.rst
-    intermediate/regex.rst
-    intermediate/database.rst
-    intermediate/documentation.rst
-    intermediate/gui.rst
+    modules-venv/index.rst
+    type-annotation/index.rst
+    logging/index.rst
+    serialization-csv/index.rst
+    serialization-json/index.rst
+    quality-and-tests/index.rst
+    functions-advanced/index.rst
+    oop-advanced/index.rst
+    oop-operator-overload/index.rst
+    modules-create/index.rst
+    regex/index.rst
+    database/index.rst
+    documentation/index.rst
+    gui/index.rst
 
 ********
 Advanced
@@ -98,26 +98,26 @@ Advanced
     :numbered:
     :caption: Advanced
 
-    advanced/interpreter.rst
-    advanced/introspection.rst
-    advanced/serialization-pickle.rst
-    advanced/serialization-xml.rst
-    advanced/argparse.rst
-    advanced/operating-system.rst
-    advanced/generators.rst
-    advanced/iterators.rst
-    advanced/context-managers.rst
-    advanced/decorators.rst
-    advanced/collections.rst
-    advanced/network-http.rst
-    advanced/network-low-level.rst
-    advanced/threads-and-processes.rst
-    advanced/concurrency.rst
-    advanced/c-extensions.rst
-    advanced/functional-programming.rst
-    advanced/metaclass.rst
-    advanced/design-patterns.rst
-    advanced/exam-advanced.rst
+    compiler/index.rst
+    introspection/index.rst
+    serialization-pickle/index.rst
+    serialization-xml/index.rst
+    argparse/index.rst
+    operating-system/index.rst
+    generator/index.rst
+    iterator/index.rst
+    context-manager/index.rst
+    decorator/index.rst
+    collections/index.rst
+    network-http/index.rst
+    network-socket/index.rst
+    threading-and-multiprocessing/index.rst
+    concurrency/index.rst
+    c-extensions/index.rst
+    functional-programming/index.rst
+    oop-metaclass/index.rst
+    design-patterns/index.rst
+    exam-advanced/index.rst
 
 ******
 Django
@@ -225,13 +225,13 @@ Appendixes
     :numbered:
     :caption: Appendixes
 
-    appendixes/sql.rst
-    appendixes/history.rst
-    appendixes/hyperlinks.rst
-    appendixes/books.rst
-    appendixes/video.rst
-    appendixes/python-2vs3.rst
-    appendixes/python-wat.rst
-    appendixes/opensource.rst
+    _appendix/sql.rst
+    _appendix/history.rst
+    _appendix/hyperlinks.rst
+    _appendix/books.rst
+    _appendix/video.rst
+    _appendix/python-2vs3.rst
+    _appendix/python-wat.rst
+    _appendix/opensource.rst
     license.rst
     glossary.rst
