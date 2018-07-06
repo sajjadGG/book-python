@@ -169,58 +169,67 @@ Whitespace in function calls
 ----------------------------
 .. code-block:: python
 
-    spam(ham[1], {eggs: 2})  # Good
+    spam(ham[1], {eggs: 2})        # Good
     spam( ham[ 1 ], { eggs: 2 } )  # Bad
 
 .. code-block:: python
 
-    spam(1)  # Good
+    spam(1)   # Good
     spam (1)  # Bad
 
 .. code-block:: python
 
-    do_one()  # Good
-    do_two()  # Good
+    do_one()    # Good
+    do_two()    # Good
     do_three()  # Good
 
     do_one(); do_two(); do_three()  # Bad
 
-    do_one(); do_two(); do_three(long, argument,  # Bad
+    do_one(); do_two(); do_three(long, argument,    # Bad
                                  list, like, this)  # Bad
 
 Whitespace in slices
 --------------------
 .. code-block:: python
 
-    ham[1:9], ham[1:9:3], ham[:9:3], ham[1::3], ham[1:9:]  # Good
-    ham[1: 9], ham[1 :9], ham[1:9 :3]  # Bad
+    ham[1:9]     # Good
+    ham[1:9:3]   # Good
+    ham[:9:3]    # Good
+    ham[1::3]    # Good
+    ham[1:9:]    # Good
+    ham[1: 9]    # Good
+
+    ham[1 :9]    # Bad
+    ham[1:9 :3]  # Bad
 
 .. code-block:: python
 
-    ham[lower:upper], ham[lower:upper:], ham[lower::step]  # Good
+    ham[lower:upper]      # Good
+    ham[lower:upper:]     # Good
+    ham[lower::step]      # Good
+
     ham[lower : : upper]  # Bad
 
 .. code-block:: python
 
     ham[lower+offset : upper+offset]  # Good
-    ham[: upper_fn(x) : step_fn(x)], ham[:: step_fn(x)]  # Good
+    ham[: upper_fn(x) : step_fn(x)]   # Good
+    ham[:: step_fn(x)]                # Good
+
+    ham[lower + offset:upper + offset]    # Bad
 
 .. code-block:: python
 
-    ham[lower + offset : upper + offset]  # Good
-    ham[lower + offset:upper + offset]  # Bad
-
-.. code-block:: python
-
-    ham[:upper]  # Good
+    ham[:upper]    # Good
     ham[ : upper]  # Bad
+    ham[ :upper]   # Bad
 
 Whitespace in assignments
 -------------------------
 .. code-block:: python
 
-    x = 1  # Good
-    y = 2  # Good
+    x = 1              # Good
+    y = 2              # Good
     long_variable = 3  # Good
 
     x             = 1  # Bad
@@ -230,35 +239,35 @@ Whitespace in assignments
 .. code-block:: python
 
     i = i + 1  # Good
-    i=i+1  # Bad
+    i=i+1      # Bad
 
 .. code-block:: python
 
     submitted += 1  # Good
-    submitted +=1  # Bad
+    submitted +=1   # Bad
 
 Whitespace in math operators
 ----------------------------
 .. code-block:: python
 
-    x = x*2 - 1  # Good
+    x = x*2 - 1    # Good
     x = x * 2 - 1  # Bad
 
 .. code-block:: python
 
-    hypot2 = x*x + y*y  # Good
+    hypot2 = x*x + y*y      # Good
     hypot2 = x * x + y * y  # Bad
 
 .. code-block:: python
 
-    c = (a+b) * (a-b)  # Good
+    c = (a+b) * (a-b)      # Good
     c = (a + b) * (a - b)  # Bad
 
 Whitespace in accessors
 -----------------------
 .. code-block:: python
 
-    dct['key'] = lst[index]  # Good
+    dct['key'] = lst[index]    # Good
     dct ['key'] = lst [index]  # Bad
 
 Whitespace in functions
