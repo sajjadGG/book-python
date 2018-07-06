@@ -73,8 +73,9 @@ exclude_patterns = [
 extensions_dir = os.path.join(os.path.dirname(__file__), '', '_extensions')
 sys.path.append(extensions_dir)
 
-html_theme_path = ['_themes']
-html_static_path = []
+html_theme_path = ['../_themes']
+html_static_path = ['../_static']
+html_favicon = '../_static/favicon.png'
 html_sidebars = {'sidebar': ['localtoc.html', 'sourcelink.html', 'searchbox.html']}
 html_show_sphinx = False
 htmlhelp_basename = project
