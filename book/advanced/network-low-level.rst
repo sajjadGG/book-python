@@ -79,4 +79,4 @@ Live demo:
 
 ``ldap3``
 =========
-:ref:`LDAP Expiring Passwords`
+:numref:`listing-opensource-ldap-expiring-passwords`

@@ -39,6 +39,8 @@ import re
 import subprocess
 import sys
 
+
+source_directory = 'book'
 highlight_language = 'python3'
 pygments_style = 'vs'
 numfig = True
@@ -57,10 +59,18 @@ copyright = '{year}, {author} <{email}>'.format(
     email=email,
 )
 
-exclude = ['README.rst']
-exclude_patterns = ['_build', '_book', '_slides', 'img', '_themes', 'slides', 'README.rst', '*/_template.rst']
+exclude = ['README.rst', 'TODO.rst']
+exclude_patterns = [
+    '_build',
+    '_book',
+    '_slides', 'slides',
+    '_blogpost', 'blogpost',
+    '_themes',
+     '*/_template.rst',
+    '.*', 'venv*', 'virtualenv*'
+]
 
-extensions_dir = os.path.join(os.path.dirname(__file__), '..', '_extensions')
+extensions_dir = os.path.join(os.path.dirname(__file__), '', '_extensions')
 sys.path.append(extensions_dir)
 
 html_theme_path = ['_themes']
