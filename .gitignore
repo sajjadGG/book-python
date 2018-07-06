@@ -39,10 +39,9 @@ _media
 
 ## Sphinx documentation
 docs/_build/
-_docs/
 _build/
-_book/
-_slides/
+.build/
+.slide/
 
 ## IDE
 .idea
