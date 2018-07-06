@@ -32,6 +32,7 @@ Introduction
     :caption: Introduction
 
     install.rst
+    agenda.rst
     introduction/about.rst
     introduction/references.rst
     introduction/ide.rst
@@ -215,8 +216,6 @@ Free Code
     :numbered:
     :caption: Free Code
 
-    free-code/ldap-expiring-passwords.rst
-    free-code/github-api.rst
 
 **********
 Appendixes
@@ -228,11 +227,11 @@ Appendixes
 
     appendixes/sql.rst
     appendixes/history.rst
-    appendixes/przydatne-odnosniki.rst
-    appendixes/ksiazki.rst
+    appendixes/hyperlinks.rst
+    appendixes/books.rst
     appendixes/video.rst
     appendixes/python-2vs3.rst
     appendixes/python-wat.rst
-    appendixes/agenda-intermediate.rst
+    appendixes/opensource.rst
     license.rst
     glossary.rst

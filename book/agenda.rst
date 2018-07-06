@@ -1,9 +1,17 @@
-*******************
-Agenda Intermediate
-*******************
+******
+Agenda
+******
+
+
+Foundations
+===========
+
+
+Intermediate
+============
 
 Dzień 1
-=======
+-------
 - Podsumowanie zagadnień podstawowych
 - złożone typy danych
 - optymalizacja kodu i złożoność obliczeniowa struktur danych
@@ -13,10 +21,26 @@ Dzień 1
 - Serializacja i deserializacja danych
 
 Dzień 2
-=======
+-------
 - Modularyzacja i virtualenv
 - Biblioteka standardowa
 - Operacje na datach i czasie
 - generatory i list comprahensions
 - kolekcje wbudowane
 - numpy, matplotlib, pandas
+
+
+Advanced
+========
+
+
+Django
+======
+
+
+Numerical Analysis
+==================
+
+
+Machine Learning
+================
