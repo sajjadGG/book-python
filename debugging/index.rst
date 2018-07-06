@@ -69,7 +69,7 @@ Run in the console
     hello(1, 2)
 
 ``locals()``
-------------
+============
 .. code-block:: python
 
     def hello(a, b, text='My name'):
@@ -189,6 +189,33 @@ Run in the console
             },
         ]
     }
+
+Using ``pdb``
+=============
+.. code-block:: python
+
+    print('Jose Jimenez')
+    import pdb; pdb.set_trace()
+    print('Max Peck')
+
+``breakpoint()``
+================
+.. code-block:: python
+
+    print('Jose Jimenez')
+    breakpoint()
+    print('Max Peck')
+
+* ``sys.breakpointhook()``
+* ``sys.__breakpointhook__``
+* By default, ``sys.breakpointhook()`` implements the actual importing and entry into ``pdb.set_trace()``.
+* It can be set to a different function to change the debugger that ``breakpoint()`` enters.
+
+.. code-block:: python
+
+    os.environ['PYTHONBREAKPOINT'] = 'foo.bar.baz'
+    breakpoint()    # Imports foo.bar and calls foo.bar.baz()
+
 
 Using debugger in IDE
 =====================

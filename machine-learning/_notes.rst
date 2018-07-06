@@ -12,6 +12,15 @@ Notes
     - dodać algorytmy genetyczne
     - sklearn ma wiele datasetów, a te które mają prefix ``fetch_`` zaciągają dane z internetu bo są większe
 
+.. todo::
+    - selekcja ficzerów
+    - LDA, QDA, KNN. KNN akurat jest, i go wykorzystam
+    - ROC, AUC
+    - niezbalansowane klasy
+    - Bagging, VotingClassifier
+    - XGBoost
+    - braki w danych
+
 Data Science
 ============
 - Scientific Computing (stara nazwa Data Science)

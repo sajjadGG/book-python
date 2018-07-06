@@ -219,18 +219,12 @@ Escape characters
 
 Characters before strings
 -------------------------
-* ``'C:\Users\Admin\file.txt'`` problem with ``\Users`` (``sers`` is invalid hexadecimal for unicode)
 * Format string: since Python 3.6
 
 .. csv-table:: String modifiers
     :header-rows: 1
-    :widths: 10, 10, 80
-
-    "Modifier", "Name",  "Description"
-    "``f'...'``", "Format string", "String interpolation (variable substitution), since Python 3.6"
-    "``u'...'``", "Unicode string", "Used in Python 2, now only for compatibility"
-    "``b'...'``", "Bytes string",  "Use ``b'...'.encode('utf-8')`` for convertion to unicode"
-    "``r'...'``", "Raw string", "Escapes does not matters"
+    :widths: 15, 30, 55
+    :file: data/str-modifiers.csv
 
 .. code-block:: python
 
@@ -241,6 +235,14 @@ Characters before strings
     b'this is text'
     r'(?P<foo>)\n'
     r'C:\Users\Admin\file.txt'
+
+.. code-block:: python
+
+    print('C:\Users\Admin\file.txt')  # ``\Users`` (``s`` is invalid hexadecimal for unicode)
+    # Traceback
+    #   ...
+    # SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
+
 
 ``print()``
 -----------
@@ -382,7 +384,7 @@ Variables and types
 #. Wczytaj od użytkownika imię
 #. Użytkownik wprowadza tylko dane typu ``str``
 #. Za pomocą f-string formatting wyświetl na ekranie ``'My name "IMIE".\nI hope you\'re ok!'``, gdzie IMIE to wartość którą podał
-#. Zwróć uwagę na znaki cudzysłowia i nowych linii
+#. Zwróć uwagę na znaki apostrofów, cudzysłowów i nowych linii
 #. Tekst wyświetlony na ekranie ma mieć zamienione wszystkie spacje na ``_``
 #. Nie korzystaj z dodawania stringów ``str + str``
 
