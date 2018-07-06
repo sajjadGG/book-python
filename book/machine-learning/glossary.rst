@@ -21,8 +21,14 @@ Słownik Pojęć
 
                 A feature is the specification of an attribute and its value. For example, color is an attribute. "Color is blue" is a feature of an example. Many transformations to the attribute set leave the feature set unchanged (for example, regrouping attribute values or transforming multi-valued attributes to binary attributes). Some authors use feature as a synonym for attribute (e.g., in feature-subset selection).
 
+        Classification
+            Process related to categorization, the process in which ideas and objects are recognized, differentiated, and understood.
+
         Classifier
             A mapping from unlabeled instances to (discrete) classes. Classifiers have a form (e.g., decision tree) plus an interpretation procedure (including how to handle unknowns, etc.). Some classifiers also provide probability estimates (scores), which can be thresholded to yield a discrete class decision thereby taking into account a utility function.
+
+        Cluster
+            Group of loosely coupled objects that belongs to the same category
 
         Confusion matrix
             A matrix showing the predicted and actual classifications. A confusion matrix is of size :math:`LxL` , where L is the number of different label values. The following confusion matrix is for :math:`L=2` :
@@ -73,8 +79,18 @@ Słownik Pojęć
         Data set
             A schema and a set of instances matching the schema. Generally, no ordering on instances is assumed. Most machine learning work uses a single fixed-format table.
 
+        Decision Boundary
+            In a statistical-classification problem with two classes, a decision boundary or decision surface is a hypersurface that partitions the underlying vector space into two sets, one for each class. The classifier will classify all the points on one side of the decision boundary as belonging to one class and all those on the other side as belonging to the other class.
+
+            A decision boundary is the region of a problem space in which the output label of a classifier is ambiguous.
+
         Dimension
             An attribute or several attributes that together describe a property. For example, a geographical dimension might consist of three attributes: country, state, city. A time dimension might include 5 attributes: year, month, day, hour, minute.
+
+        Discriminative model
+            Class of models used in machine learning for modeling the dependence of unobserved (target) variables :math:`y` on observed variables :math:`x`. Within a probabilistic framework, this is done by modeling the conditional probability distribution :math:`P(y|x)`, which can be used for predicting :math:`y` from :math:`x`.
+
+            Discriminative models, as opposed to generative models, do not allow one to generate samples from the joint distribution of observed and target variables. However, for tasks such as classification and regression that do not require the joint distribution, discriminative models can yield superior performance (in part because they have fewer variables to compute). On the other hand, generative models are typically more flexible than discriminative models in expressing dependencies in complex learning tasks. In addition, most discriminative models are inherently supervised and cannot easily support unsupervised learning. Application-specific details ultimately dictate the suitability of selecting a discriminative versus generative model.
 
         Error rate
             See Accuracy.
@@ -90,6 +106,13 @@ Słownik Pojęć
 
         Field
             See Attribute.
+
+        Generative Model
+            In statistical classification, including machine learning, two main approaches are called the generative approach and the discriminative approach. These compute classifiers by different approaches, differing in the degree of statistical modelling. Terminology is inconsistent,[a] but three major types can be distinguished, following (Jebara 2004):
+
+                * Given an observable variable :math:`X` and a target variable :math:`Y`, a generative model is a statistical model of the joint probability distribution on :math:`X × Y`, :math:`P(X,Y)`,
+                * A discriminative model is a model of the conditional probability of the target :math:`Y`, given an observation :math:`x`, symbolically, :math:`P(Y|X=x)`,
+                * Classifiers computed without using a probability model are also referred to loosely as "discriminative".
 
         i.i.d. sample
             A set of independent and identically distributed instances.

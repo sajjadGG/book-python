@@ -1,3 +1,5 @@
+.. _Control Flow Statements:
+
 ***********************
 Control Flow Statements
 ***********************

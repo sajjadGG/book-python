@@ -39,7 +39,7 @@ José Jiménez
 
 Max Peck
 --------
-.. figure:: img/max-peck.png
+.. figure:: img/max-peck.jpg
     :scale: 50%
     :align: center
 

@@ -78,13 +78,13 @@ LaTeX
 
     display(Math(r'F(k) = \int_{-\infty}^{\infty} f(x) e^{2\pi i k} dx'))
 
-.. code-block:: python
+.. code-block:: text
 
     %%latex
 
     $$c = \sqrt{a^2 + b^2}$$
 
-.. code-block:: python
+.. code-block:: text
 
     %%latex
 
@@ -107,12 +107,12 @@ Execute terminal commands
 
     * ``!pwd``
     * ``!ls``
-    * .. code-block:: python
+    * .. code-block:: text
 
-        files = !dir
-        for f in files:
-            if f.find("1_") >= 0:
-                print(f)
+        for file in !ls:
+
+            if file.find("1_") >= 0:
+                print(file)
 
 
 HTML and Javascript
@@ -120,6 +120,7 @@ HTML and Javascript
 .. code-block:: python
 
     from IPython.display import Javascript, HTML
+
     Javascript("alert('It is JavaScript!')")
     HTML("We can <i>generate</i> <code>html</code> code <b>directly</b>!")
 

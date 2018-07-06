@@ -1,3 +1,5 @@
+.. _Software Engineering Conventions:
+
 ********************************
 Software Engineering Conventions
 ********************************

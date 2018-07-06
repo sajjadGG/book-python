@@ -12,31 +12,31 @@ Co trzeba wiedzieć przed rozpoczęciem pracy?
 
 Elementy języka Python i biblioteki standardowej
 ------------------------------------------------
-* :ref:`Stałe, zmienne i typy danych`
-* :ref:`Złożone typy danych`
-* :ref:`Instrukcje warunkowe`
-* :ref:`Pętle`
-* :ref:`Funkcje`
+* :ref:`Types`
+* :ref:`Data Structures`
+* :ref:`Control Flow Statements`
+* :ref:`Loops`
+* :ref:`Function Basics`
 * :ref:`Print Formatting`
-* :ref:`Matematyka`
-* :ref:`Operacje na plikach`
-* :ref:`Serializacja i deserializacja CSV`
-* :ref:`Programowanie obiektowe <Object Oriented Programming>`
-* :ref:`Instalacja i korzystanie z zewnętrznych bibliotek`
-* :ref:`Dobre praktyki`
+* :ref:`Operators`
+* :ref:`Mathematics`
+* :ref:`Files`
+* :ref:`CSV Serialization`
+* :ref:`Object Oriented Programming`
+* :ref:`Installing Packages`
+* :ref:`Software Engineering Conventions`
+* :ref:`Performance Optimization`
 
 Środowisko
 ----------
-* Python 3.6+
-* Libs manually installed
+#. Python 3.6+
+#. Libs manually installed via ``requirements.txt``
 
-Anaconda
-    Anaconda is the leading open data science platform powered by Python. The open source version of Anaconda is a high performance distribution of Python and R and includes over 100 of the most popular Python, R and Scala packages for data science.
-
-    Additionally, you'll have access to over 720 packages that can easily be installed with conda, our renowned package, dependency and environment manager, that is included in Anaconda.
-
-    * https://www.continuum.io/downloads
-
+    * ``numpy``
+    * ``pandas``
+    * ``scikit-learn``
+    * ``matplotlib``
+    * ``jupyter``
 
 Biblioteki zewnętrzne do nauczania maszynowego
 ----------------------------------------------

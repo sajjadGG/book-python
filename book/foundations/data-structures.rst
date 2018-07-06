@@ -1,3 +1,5 @@
+.. _Data Structures:
+
 ***************
 Data Structures
 ***************

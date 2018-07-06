@@ -1,3 +1,5 @@
+.. _Installing Packages:
+
 *******************
 Installing Packages
 *******************

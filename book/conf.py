@@ -18,7 +18,7 @@ extensions = [
     # 'sphinxjp.themes.revealjs',
 ]
 
-todo_emit_warnings = True
+todo_emit_warnings = False
 todo_include_todos = True
 html_theme = 'sphinx_rtd_theme'
 

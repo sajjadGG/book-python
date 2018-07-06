@@ -1,6 +1,8 @@
-*********
-Functions
-*********
+.. _Function Basics:
+
+***************
+Function Basics
+***************
 
 
 Function definition

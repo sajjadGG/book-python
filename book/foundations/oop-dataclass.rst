@@ -103,10 +103,10 @@ Assignments
 
 Address Book (dataclass)
 ------------------------
-#. Zmień kod książki adresowej z listingu :numref:`listing-oop-addressbook-easy` na wykorzystujący mechanizm ``dataclass``
+#. Zmień kod książki adresowej z listingu :numref:`listing-oop-dataclass-addressbook` na wykorzystujący mechanizm ``dataclass``
 
-.. literalinclude:: solutions/oop_addressbook_easy.py
-    :name: listing-oop-addressbook-easy
+.. literalinclude:: assignment/oop_dataclass_addressbook.py
+    :name: listing-oop-dataclass-addressbook
     :language: python
     :caption: Easy object implementation of Address Book
 

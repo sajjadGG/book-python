@@ -1,3 +1,5 @@
+.. _Loops:
+
 *****
 Loops
 *****
@@ -366,7 +368,7 @@ Report card
 
 Label encoder
 -------------
-#. Mając do dyspozycji zbiór danych Irysów z :numref:`listing-data-structures-iris-sample`
+#. Mając do dyspozycji zbiór danych Irysów z :numref:`listing-loops-iris-sample`
 #. Przemieszaj w losowej
 #. Stwórz słownik gatunków, gdzie kolejnym liczbom naturalnym zaczynając od zera przyporządkuj gatunek irysów
 #. Przygotuj listę cech (``labels``) z kluczami ze słownika gatunków
@@ -387,7 +389,7 @@ Label encoder
 :Podpowiedź:
     - ``from random import shuffle``
 
-.. literalinclude:: src/data-structures-iris-sample.py
-    :name: listing-data-structures-iris-sample
+.. literalinclude:: src/loops-iris-sample.py
+    :name: listing-loops-iris-sample
     :language: python
     :caption: Sample Iris databases

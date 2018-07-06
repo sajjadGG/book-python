@@ -94,19 +94,19 @@ INNER JOIN
 
 LEFT JOIN
 ---------
-.. figure:: img/db-sql-leftjoin.gif
+.. figure:: img/sql-leftjoin.gif
     :align: center
     :scale: 100%
 
 RIGHT JOIN
 ----------
-.. figure:: img/db-sql-rightjoin.gif
+.. figure:: img/sql-rightjoin.gif
     :align: center
     :scale: 100%
 
 FULL JOIN
 ---------
-.. figure:: img/db-sql-fulljoin.gif
+.. figure:: img/sql-fulljoin.gif
     :align: center
     :scale: 100%
 
@@ -124,6 +124,6 @@ TRUNCATE
 
 SQL Injection
 =============
-.. literalinclude:: src/db-sql-injection.py
+.. literalinclude:: src/sql-injection.py
     :language: python
     :caption: SQL Injection

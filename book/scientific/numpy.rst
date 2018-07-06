@@ -484,7 +484,7 @@ Array math operations
 
 Array Multiplication
 --------------------
-.. code-block:: python
+.. code-block:: text
 
     >>> A = [[1, 0], [0, 1]]
     >>> B = [[4, 1], [2, 2]]

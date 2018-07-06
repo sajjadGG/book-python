@@ -50,7 +50,7 @@ Foundations
     foundations/control-flow.rst
     foundations/operators.rst
     foundations/loops.rst
-    foundations/functions-1.rst
+    foundations/functions-basic.rst
     foundations/doctests.rst
     foundations/modules-install.rst
     foundations/builtin.rst
@@ -62,7 +62,7 @@ Foundations
     foundations/datetime.rst
     foundations/exceptions.rst
     foundations/files.rst
-    foundations/oop-1.rst
+    foundations/oop-basic.rst
     foundations/oop-dataclass.rst
     foundations/exam-foundations.rst
 
@@ -80,8 +80,8 @@ Intermediate
     intermediate/serialization-csv.rst
     intermediate/serialization-json.rst
     intermediate/quality-and-tests.rst
-    intermediate/functions-2.rst
-    intermediate/oop-2.rst
+    intermediate/functions-advanced.rst
+    intermediate/oop-advanced.rst
     intermediate/operator-overload.rst
     intermediate/modules-create.rst
     intermediate/regex.rst
