@@ -63,7 +63,7 @@ Methods
     :caption: Methods argument ``self``
 
 ``__init__()`` - Initializer Method
-----------------------------------
+-----------------------------------
 * ``__init__()`` to nie konstruktor
 * Domyślny ``__init__()`` gdy niezdefiniowaliśmy własnego
 * Inicjalizacja pól klasy tylko w ``__init__``

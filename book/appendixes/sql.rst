@@ -8,13 +8,13 @@ Data Types
 ==========
 .. csv-table:: SQLite data types
     :header-rows: 1
-    :file: data/db-sql-types.csv
+    :file: data/sql-types.csv
 
 Constrains
 ==========
 .. csv-table:: SQL Constraints
     :header-rows: 1
-    :file: data/db-sql-constraints.csv
+    :file: data/sql-constraints.csv
 
 CREATE
 ======
@@ -88,7 +88,7 @@ JOIN
 
 INNER JOIN
 ----------
-.. figure:: img/db-sql-innerjoin.gif
+.. figure:: img/sql-innerjoin.gif
     :align: center
     :scale: 100%
 

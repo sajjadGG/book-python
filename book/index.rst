@@ -50,9 +50,9 @@ Foundations
     foundations/control-flow.rst
     foundations/operators.rst
     foundations/loops.rst
-    foundations/functions.rst
+    foundations/functions-1.rst
     foundations/doctests.rst
-    foundations/installing-packages.rst
+    foundations/modules-install.rst
     foundations/builtin.rst
     foundations/programming-convention.rst
     foundations/performance.rst
@@ -62,8 +62,8 @@ Foundations
     foundations/datetime.rst
     foundations/exceptions.rst
     foundations/files.rst
-    foundations/object-oriented-programming.rst
-    foundations/dataclass.rst
+    foundations/oop-1.rst
+    foundations/oop-dataclass.rst
     foundations/exam-foundations.rst
 
 ************
@@ -74,16 +74,16 @@ Intermediate
     :numbered:
     :caption: Intermediate
 
-    intermediate/virtualenv.rst
+    intermediate/modules-venv.rst
     intermediate/type-annotation.rst
     intermediate/logging.rst
     intermediate/serialization-csv.rst
     intermediate/serialization-json.rst
     intermediate/quality-and-tests.rst
-    intermediate/args-kwargs.rst
-    intermediate/object-oriented-programming.rst
+    intermediate/functions-2.rst
+    intermediate/oop-2.rst
     intermediate/operator-overload.rst
-    intermediate/modularization.rst
+    intermediate/modules-create.rst
     intermediate/regex.rst
     intermediate/database.rst
     intermediate/documentation.rst

@@ -133,7 +133,7 @@ Memoization
 
 :Podpowiedź:
     * ``import timeit`` - https://docs.python.org/3/library/timeit.html
-    .. code-block:: python
+    * .. code-block:: python
 
         def factorial(n: int) -> int:
             if n == 0:
