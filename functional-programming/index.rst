@@ -128,18 +128,19 @@ złożenia funkcji
 ---------
 .. code-block:: python
 
-    >>> x = [1, 2, 3]
-    >>> y = [4, 5, 6]
-    >>> zipped = zip(x, y)
-    >>> list(zipped)
-    [(1, 4), (2, 5), (3, 6)]
+    x = [1, 2, 3]
+    y = [4, 5, 6]
+
+    zipped = zip(x, y)
+    list(zipped)
+    # [(1, 4), (2, 5), (3, 6)]
 
 .. code-block:: python
 
-    >>> # unzip
-    >>> x2, y2 = zip(*zip(x, y))
-    >>> x == list(x2) and y == list(y2)
-    True
+    # unzip
+    x2, y2 = zip(*zip(x, y))
+
+    x == list(x2) and y == list(y2)  # True
 
 ``filter()``
 ------------
@@ -210,11 +211,13 @@ Return an enumerate object. iterable must be a sequence, an iterator, or some ot
 
 .. code-block:: python
 
-    >>> seasons = ['Spring', 'Summer', 'Fall', 'Winter']
-    >>> list(enumerate(seasons))
-    [(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]
-    >>> list(enumerate(seasons, start=1))
-    [(1, 'Spring'), (2, 'Summer'), (3, 'Fall'), (4, 'Winter')]
+    seasons = ['Spring', 'Summer', 'Fall', 'Winter']
+
+    list(enumerate(seasons))
+    # [(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]
+
+    list(enumerate(seasons, start=1))
+    # [(1, 'Spring'), (2, 'Summer'), (3, 'Fall'), (4, 'Winter')]
 
 Equivalent to:
 

@@ -179,16 +179,16 @@ Feature Engineering
 
     .. code-block:: python
 
-        >>> from sklearn import preprocessing
+        from sklearn import preprocessing
 
-        >>> features = ["paris", "paris", "tokyo", "amsterdam"]
+        features = ["paris", "paris", "tokyo", "amsterdam"]
 
-        >>> label_encoder = preprocessing.LabelEncoder()
-        >>> labels = label_encoder.fit_transform()
-        array([1, 1, 2, 0])
+        label_encoder = preprocessing.LabelEncoder()
+        labels = label_encoder.fit_transform()
+        # array([1, 1, 2, 0])
 
-        >>> list(label_encoder.classes_)
-        ['amsterdam', 'paris', 'tokyo']
+        list(label_encoder.classes_)
+        # ['amsterdam', 'paris', 'tokyo']
 
 
     .. code-block:: python

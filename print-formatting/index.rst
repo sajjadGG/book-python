@@ -30,17 +30,19 @@ Do łączenia ciągów znakowych, które mają zostać wyświetlone dla użytkow
 
 .. code-block:: python
 
-    >>> imie = 'José Jiménez'
-    >>> print('My name', imie, '!')
-    My name José Jiménez!
+    name = 'José Jiménez'
+
+    print('My name', name, '!')
+    # My name José Jiménez!
 
 Można tutaj podać jako argumenty zarówno ciągi znaków jak i wartości liczbowe. Ciągi znaków będą od siebie odseparowane ciągiem znaków przekazanym przez argument ``sep``, domyślnie jest to spacja ``' '``.
 
 .. code-block:: python
 
-    >>> imie = 'José Jiménez'
-    >>> print('My name', imie, '!', sep=';')
-    My;name;José;Jiménez!
+    name = 'José Jiménez'
+
+    print('My name', name, '!', sep=';')
+    # My;name;José;Jiménez!
 
 Operator ``+``
 --------------
@@ -48,18 +50,20 @@ Operator + skleja ze sobą stringi. Ten sposób jest niepolecany, ale można go 
 
 .. code-block:: python
 
-    >>> imie = 'José Jiménez'
-    >>> print('My name ' + imie + '!')
-    My name José Jiménez!
+    name = 'José Jiménez'
+
+    print('My name ' + name + '!')
+    # My name José Jiménez!
 
 Można go użyć do wyświetlania zmiennych liczbowych, ale nie jest to najlepsze rozwiązanie.
 
 .. code-block:: python
 
-    >>> imie = 'José Jiménez'
-    >>> wiek = 35
-    >>> print('My name is ' + imie + ' and I am ' + str(wiek) + ' years old!')
-    My name is José Jiménez and I am 35 years old!
+    name = 'José Jiménez'
+    age = 35
+
+    print('My name ' + name + ' and I am ' + str(age) + ' years old!')
+    # My name is José Jiménez and I am 35 years old!
 
 
 Interpolacja zmiennych
@@ -76,38 +80,27 @@ Używanie tych operatorów przypomina używanie funkcji ``printf``, znanej międ
 
 .. code-block:: python
 
-    >>> imie = 'José Jiménez'
-    >>> wiek = 35
+    name = 'José Jiménez'
+    age = 35
 
-    >>> def get_imie(imie):
-    >>>    return imie
+    def my(name):
+        return name
 
-    >>> print('My name %s!' % imie)
-    My name José Jiménez!
+    print('My name %s!' % name)                    # My name José Jiménez!
+    print("%s is %s years old" % (name, age))      # José Jiménez is 35 years old
+    print('%s is %s years old' % (age, name))      # 35 is José Jiménez years old
+    print('%s is %10.1f years old' % (name, age))  # José Jiménez is       35.0 years old
+    print('%s is %.1f years old' % (name, age))    # José Jiménez is 35.0 years old
+    print('%s is %d years old' % (my(name), age))  # José Jiménez is 35 years old
 
-    >>> print("%s is %s years old" % (imie, wiek))
-    José Jiménez is 35 years old
+    print('%(name)s is %(age)d years old' % {
+        'age': age,
+        'name': name,
+    })
+    # José Jiménez is 35 years old
 
-    >>> print('%s is %s years old' % (wiek, imie))
-    35 is José Jiménez years old
-
-    >>> print('%s is %10.1f years old' % (imie, wiek))
-    José Jiménez is       35.0 years old
-
-    >>> print('%s is %.1f years old' % (imie, wiek))
-    José Jiménez is 35.0 years old
-
-    >>> print('%s is %d years old' % (get_imie(imie), wiek))
-    José Jiménez is 35 years old
-
-    >>> print('%(imie)s is %(wiek)d years old' % {
-    ...    'wiek': wiek,
-    ...    'imie': imie,
-    ... })
-    José Jiménez is 35 years old
-
-    >>> print('My name %(imie)s.' % locals())
-    My name José Jiménez.
+    print('My name %(name)s.' % locals())
+    # My name José Jiménez.
 
 
 Metoda ``.format()``
@@ -123,28 +116,28 @@ Wbudowana metoda ``format`` upraszcza nieco powyższy schemat. Zamiast operatora
 
 .. code-block:: python
 
-    >>> imie = 'José Jiménez'
-    >>> wiek = 35
+    imie = 'José Jiménez'
+    wiek = 35
 
-    >>> print('{imie} ma {wiek} lat'.format(imie=imie, wiek=wiek))
-    José Jiménez ma 35 lat
+    print('{imie} ma {wiek} lat'.format(imie=imie, wiek=wiek))
+    # José Jiménez ma 35 lat
 
-    >>> print('{wiek} ma {imie} lat'.format(**locals()))
-    35 ma José Jiménez lat
+    print('{wiek} ma {imie} lat'.format(**locals()))
+    # 35 ma José Jiménez lat
 
-    >>> print('Hej mam na imie {} i mam {} lat'.format(imie, wiek))
-    Hej mam na imie José Jiménez i mam 35 lat
+    print('Hej mam na imie {} i mam {} lat'.format(imie, wiek))
+    # Hej mam na imie José Jiménez i mam 35 lat
 
-    >>> print('Hej mam na imie {0} i mam {1} lat'.format(imie, wiek))
-    Hej mam na imie José i mam 35 lat
+    print('Hej mam na imie {0} i mam {1} lat'.format(imie, wiek))
+    # Hej mam na imie José i mam 35 lat
 
-    >>> print('Hej mam na imie {1} i mam {0} lat'.format(imie, wiek))
-    Hej mam na imie 35 i mam José lat
+    print('Hej mam na imie {1} i mam {0} lat'.format(imie, wiek))
+    # Hej mam na imie 35 i mam José lat
 
-    >>> print('Hej mam na imie {1:.3} i mam {0:.1} lat'.format(float(wiek), imie))
-    Hej mam na imie Jos i mam 35.0 lat
+    print('Hej mam na imie {1:.3} i mam {0:.1} lat'.format(float(wiek), imie))
+    # Hej mam na imie Jos i mam 35.0 lat
 
-    >>> print('Hej mam na imie {1:.3} i mam {0:10.1} lat'.format(float(wiek), imie))
+    # print('Hej mam na imie {1:.3} i mam {0:10.1} lat'.format(float(wiek), imie))
     Hej mam na imie Jos i mam       35.0 lat
 
 
@@ -158,25 +151,31 @@ f-strings to rozwinięcie funkcji ``format``. Jedyne co trzeba zrobić żeby umi
 
 .. code-block:: python
 
-    >>> import datetime
-    >>> imie = 'José'
-    >>> wiek = 35
+    import datetime
 
-    >>> def get_imie(imie):
-    ...    return imie
+    name = 'José'
+    age = 35
+    format = '%Y-%m-%d %H:%M:%S'
 
-    >>> print(f'My name {imie}!')
-    My name José Jiménez
+    def my(name):
+        return name
 
-    >>> print(f'My name {get_imie(imie)}, masz: {wiek} lat')
-    My name José, masz: 35 lat
+    print(f'My name {name}!')
+    # My name José Jiménez
 
-    >>> print(f'dzis jest: {datetime.datetime.now():%Y-%m-%d %H:%M:%S}')
-    dzis jest: 1969-07-21 02:56:15
+    print(f'My name {my(name)}, age: {age}y')
+    # My name José, age: 35y
 
-    >>> now = datetime.datetime.now
-    >>> print(f'dzis jest: {now():%Y-%m-%d %H:%M:%S}')
-    dzis jest: 1969-07-21 02:56:15
+    print(f'Today is: {datetime.datetime.now():%Y-%m-%d %H:%M:%S}')
+    # Today is: 1969-07-21 02:56:15
+
+    now = datetime.datetime.utcnow
+
+    print(f'Today is: {now():%Y-%m-%d %H:%M:%S}')
+    # Today is: 1969-07-21 02:56:15
+
+    print(f'Today is: {now():{format}}')
+    # Today is: 1969-07-21 02:56:15
 
 
 Przykład z życia
@@ -213,14 +212,12 @@ Basic formatting
 ----------------
 .. code-block:: python
 
-    '%s %s' % ('one', 'two')
-    # one two
+    one, two = 'one', 'two'
 
-    '{} {}'.format('one', 'two')
-    # one two
-
-    '{1} {0}'.format('one', 'two')
-    # two one
+    '%s %s' % (one, two)        # one two
+    '{} {}'.format(one, two)    # one two
+    '{1} {0}'.format(one, two)  # two one
+    f'{one} {two}'              # one two
 
 Value conversion
 ----------------
@@ -235,96 +232,105 @@ Value conversion
             return 'repr'
 
 
-    '%s %r' % (Data(), Data())
-    # str repr
-
-    '{0!s} {0!r}'.format(Data())
-    # str repr
+    '%s %r' % (Data(), Data())    # str repr
+    '{0!s} {0!r}'.format(Data())  # str repr
+    f'{Data()!s} {Data()!r}'      # str repr
 
 Padding and aligning strings
 ----------------------------
 .. code-block:: python
 
-    '%10s' % ('test',)
-    # '      test'
+    text = 'test'
 
-    '{:>10}'.format('test')
-    # '      test'
-
-.. code-block:: python
-
-    '%-10s' % ('test',)
-    # 'test      '
-
-    '{:10}'.format('test')
-    # 'test      '
+    '%10s' % text          # '      test'
+    '%10s' % (text,)       # '      test'
+    '{:>10}'.format(text)  # '      test'
+    f'{text:>10}'          # '      test'
 
 .. code-block:: python
 
-    '{:_<10}'.format('test')
-    # 'test______'
+    text = 'test'
 
-    '{:^10}'.format('test')
-    # '   test   '
+    '%-10s' % text        # 'test      '
+    '%-10s' % (text,)     # 'test      '
+    '{:10}'.format(text)  # 'test      '
+    f'{text:10}'          # 'test      '
 
-    '{:^6}'.format('zip')
-    # ' zip  '
+.. code-block:: python
+
+    text = 'test'
+
+    '{:_<10}'.format(text)  # 'test______'
+    f'{text:_<10}'          # 'test______'
+
+    '{:^10}'.format(text)   # '   test   '
+    f'{text:^10}'           # '   test   '
+
+    '{:^6}'.format(text)    # ' test  '
+    f'{text:^6}'            # ' test  '
+
 
 Truncating long strings
 -----------------------
 .. code-block:: python
 
-    '%.5s' % ('xylophone',)
-    # 'xylop'
+    text = 'Lorem Ipsum'
 
-    '{:.5}'.format('xylophone')
-    # 'xylop'
+    '%.5s' % text         # 'Lorem'
+    '%.5s' % (text,)      # 'Lorem'
+    '{:.5}'.format(text)  # 'Lorem'
+    f'{text:.5}'          # 'Lorem'
 
 Combining truncating and padding
 --------------------------------
 .. code-block:: python
 
-    '%-10.5s' % ('xylophone',)
-    # 'xylop     '
+    text = 'Lorem Ipsum'
 
-    '{:10.5}'.format('xylophone')
-    # 'xylop     '
+    '%-10.5s' % text        # 'Lorem     '
+    '%-10.5s' % (text,)     # 'Lorem     '
+    '{:10.5}'.format(text)  # 'Lorem     '
+    f'{text:10.5}'          # 'Lorem     '
 
 Numbers
 -------
 .. code-block:: python
 
-    '%d' % (42,)
-    # '42'
+    number = 35
 
-    '{:d}'.format(42)
-    # '42'
+    '%d' % number          # '42'
+    '%d' % (number,)       # '42'
+    '{:d}'.format(number)  # '42'
+    f'{number:d}'          # '42'
 
 .. code-block:: python
 
-    '%f' % (3.141592653589793,)
-    # '3.141593'
+    number = 3.141592653589793
 
-    '{:f}'.format(3.141592653589793)
-    # '3.141593'
+    '%f' % number          # '3.141593'
+    '%f' % (number,)       # '3.141593'
+    '{:f}'.format(number)  # '3.141593'
+    f'{number:f}'          # '3.141593'
 
 Padding numbers
 ---------------
 .. code-block:: python
 
-    '%4d' % (42,)
-    # '  42'
+    number = 42
 
-    '{:4d}'.format(42)
-    # '  42'
+    '%4d' % (number,)       # '  42'
+    '{:4d}'.format(number)  # '  42'
+    f'{number:4d}'          # '  42'
+
 
 .. code-block:: python
 
-    '%06.2f' % (3.141592653589793,)
-    # '003.14'
+    number = 3.141592653589793
 
-    '{:06.2f}'.format(3.141592653589793)
-    # '003.14'
+    '%06.2f' % number          # '003.14'
+    '%06.2f' % (number,)       # '003.14'
+    '{:06.2f}'.format(number)  # '003.14'
+    f'{number:06.2f}'          # '003.14'
 
 .. code-block:: python
 

@@ -29,18 +29,15 @@ Przykład - Rekurencja
 
 .. code-block:: python
 
-    >>> import ctypes
-    >>> lib = ctypes.CDLL('mylib-ctypes.so')
+    import ctypes
 
-    >>> lib.factorial(16)
-    2004189184
+    lib = ctypes.CDLL('mylib-ctypes.so')
 
-    >>> lib.factorial(17)
-    -288522240
+    lib.factorial(16)  # 2004189184
+    lib.factorial(17)  # -288522240
 
 Argumenty
 ---------
-
 * ``ctypes.c_double``
 * ``ctypes.c_int``
 * ``ctypes.c_char``
@@ -130,17 +127,16 @@ Overflow
 
 .. code-block:: python
 
-    >>> import ctypes
-    >>> lib = ctypes.CDLL('biblioteka.so')
+    import ctypes
 
-    >>> lib.wypisz_liczbe(10 ** 10)
-    Liczba to: 1410065408
+    lib = ctypes.CDLL('biblioteka.so')
 
-    >>> lib.wypisz_liczbe(10 ** 30)
-    Traceback (most recent call last):
-        File "main.py", line 6, in <module>
-            lib.wypisz_liczbe(10 ** 30)
-    ctypes.ArgumentError: argument 1: <class 'OverflowError'>: int too long to convert
+    lib.wypisz_liczbe(10 ** 10)  # Liczba to: 1410065408
+
+    lib.wypisz_liczbe(10 ** 30)
+    # Traceback (most recent call last):
+    #   ...
+    # ctypes.ArgumentError: argument 1: <class 'OverflowError'>: int too long to convert
 
 
 C Modules

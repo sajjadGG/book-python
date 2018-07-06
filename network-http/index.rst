@@ -26,88 +26,83 @@ Biblioteki zewnętrzne
 
 .. code-block:: python
 
-    >>> import requests
+    import requests
 
-    >>> requests.put('http://httpbin.org/put', data = {'key':'value'})
-    >>> requests.delete('http://httpbin.org/delete')
-    >>> requests.head('http://httpbin.org/get')
-    >>> requests.options('http://httpbin.org/get')
-
-.. code-block:: python
-
-    >>> payload = {'key1': 'value1', 'key2': 'value2'}
-    >>> r = requests.get('http://httpbin.org/get', params=payload)
-    >>> print(r.url)
-    http://httpbin.org/get?key2=value2&key1=value1
-
-    >>> payload = {'key1': 'value1', 'key2': ['value2', 'value3']}
-    >>> r = requests.get('http://httpbin.org/get', params=payload)
-    >>> print(r.url)
-    http://httpbin.org/get?key1=value1&key2=value2&key2=value3
+    requests.put('http://httpbin.org/put', data = {'key':'value'})
+    requests.delete('http://httpbin.org/delete')
+    requests.head('http://httpbin.org/get')
+    requests.options('http://httpbin.org/get')
 
 .. code-block:: python
 
-    >>> import requests
+    payload = {'key1': 'value1', 'key2': 'value2'}
+    r = requests.get('http://httpbin.org/get', params=payload)
+    r.url
+    # http://httpbin.org/get?key2=value2&key1=value1
 
-    >>> r = requests.get('https://api.github.com/user', auth=('user', 'pass'))
-    >>> r.status_code
-    200
-    >>> r.headers['content-type']
-    'application/json; charset=utf8'
-    >>> r.encoding
-    'utf-8'
-    >>> r.text
-    u'{"type":"User"...'
-    >>> r.json()
-    {u'private_gists': 419, u'total_private_repos': 77, ...}
+    payload = {'key1': 'value1', 'key2': ['value2', 'value3']}
+    r = requests.get('http://httpbin.org/get', params=payload)
+    r.url
+    # http://httpbin.org/get?key1=value1&key2=value2&key2=value3
+
 
 .. code-block:: python
 
-    >>> url = 'https://api.github.com/some/endpoint'
-    >>> headers = {'user-agent': 'my-app/0.0.1'}
+    import requests
 
-    >>> r = requests.get(url, headers=headers)
+    r = requests.get('https://api.github.com/user', auth=('user', 'pass'))
 
-.. code-block:: python
+    r.status_code              # 200
+    r.headers['content-type']  # 'application/json; charset=utf8'
+    r.encoding                 # 'utf-8'
+    r.text                     # '{"type":"User"...'
+    r.json()                   # {'private_gists': 419, 'total_private_repos': 77, ...}
 
-    >>> payload = {'key1': 'value1', 'key2': 'value2'}
-
-    >>> r = requests.post("http://httpbin.org/post", data=payload)
-    >>> print(r.text)
-    {
-      ...
-      "form": {
-        "key2": "value2",
-        "key1": "value1"
-      },
-      ...
-    }
 
 .. code-block:: python
 
-    >>> r = requests.head('http://github.com', allow_redirects=True)
+    url = 'https://api.github.com/some/endpoint'
+    headers = {'user-agent': 'my-app/0.0.1'}
 
-    >>> r.url
-    'https://github.com/'
-
-    >>> r.history
-    [<Response [301]>]
+    r = requests.get(url, headers=headers)
 
 .. code-block:: python
 
-    >>> import json
+    payload = {'key1': 'value1', 'key2': 'value2'}
 
-    >>> url = 'https://api.github.com/some/endpoint'
-    >>> payload = {'some': 'data'}
-
-    >>> r = requests.post(url, data=json.dumps(payload))
+    r = requests.post("http://httpbin.org/post", data=payload)
+    r.text
+    # {
+    #   ...
+    #   "form": {
+    #     "key2": "value2",
+    #     "key1": "value1"
+    #   },
+    #   ...
+    # }
 
 .. code-block:: python
 
-    >>> url = 'https://api.github.com/some/endpoint'
-    >>> payload = {'some': 'data'}
+    r = requests.head('http://github.com', allow_redirects=True)
 
-    >>> r = requests.post(url, json=payload)
+    r.url      # 'https://github.com/'
+    r.history  # [<Response [301]>]
+
+.. code-block:: python
+
+    import json
+
+    url = 'https://api.github.com/some/endpoint'
+    payload = {'some': 'data'}
+
+    r = requests.post(url, data=json.dumps(payload))
+
+.. code-block:: python
+
+    url = 'https://api.github.com/some/endpoint'
+    payload = {'some': 'data'}
+
+    r = requests.post(url, json=payload)
 
 * http://docs.python-requests.org/en/master/user/quickstart/#json-response-content
 * http://docs.python-requests.org/en/master/dev/contributing/#kenneth-reitz-s-code-style
@@ -140,41 +135,28 @@ HTML Scrapping i ``BeautifulSoup``
 .. code-block:: python
 
     html_doc = """
-    <html><head><title>The Dormouse's story</title></head>
-    <body>
-    <p class="title"><b>The Dormouse's story</b></p>
+        <html><head><title>The Dormouse's story</title></head>
+        <body>
+        <p class="title"><b>The Dormouse's story</b></p>
 
-    <p class="story">Once upon a time there were three little sisters; and their names were
-    <a href="http://example.com/elsie" class="sister" id="link1">Elsie</a>,
-    <a href="http://example.com/lacie" class="sister" id="link2">Lacie</a> and
-    <a href="http://example.com/tillie" class="sister" id="link3">Tillie</a>;
-    and they lived at the bottom of a well.</p>
+        <p class="story">Once upon a time there were three little sisters; and their names were
+        <a href="http://example.com/elsie" class="sister" id="link1">Elsie</a>,
+        <a href="http://example.com/lacie" class="sister" id="link2">Lacie</a> and
+        <a href="http://example.com/tillie" class="sister" id="link3">Tillie</a>;
+        and they lived at the bottom of a well.</p>
 
-    <p class="story">...</p>
+        <p class="story">...</p>
     """
 
 .. code-block:: python
 
-    soup.title
-    # <title>The Dormouse's story</title>
-
-    soup.title.name
-    # u'title'
-
-    soup.title.string
-    # u'The Dormouse's story'
-
-    soup.title.parent.name
-    # u'head'
-
-    soup.p
-    # <p class="title"><b>The Dormouse's story</b></p>
-
-    soup.p['class']
-    # u'title'
-
-    soup.a
-    # <a class="sister" href="http://example.com/elsie" id="link1">Elsie</a>
+    soup.title              # <title>The Dormouse's story</title>
+    soup.title.name         # 'title'
+    soup.title.string       # 'The Dormouse's story'
+    soup.title.parent.name  # 'head'
+    soup.p                  # <p class="title"><b>The Dormouse's story</b></p>
+    soup.p['class']         # 'title'
+    soup.a                  # <a class="sister" href="http://example.com/elsie" id="link1">Elsie</a>
 
     soup.find_all('a')
     # [<a class="sister" href="http://example.com/elsie" id="link1">Elsie</a>,
@@ -196,7 +178,7 @@ HTML Scrapping i ``BeautifulSoup``
 
 .. code-block:: python
 
-    print(soup.get_text())
+    soup.get_text()
     # The Dormouse's story
     #
     # The Dormouse's story
@@ -209,8 +191,10 @@ HTML Scrapping i ``BeautifulSoup``
     #
     # ...
 
+
 Standard WSGI
 =============
+
 
 Frameworki i technologie webowe
 ===============================
@@ -513,17 +497,17 @@ REST API
 
     .. code-block:: python
 
-        >>> auth = b'username:token'
-        >>> key = base64.b64encode(auth).decode("ascii")
-        >>> headers={
-        ...     'Authorization': 'Basic {key}',
-        ...     'User-Agent': 'Python HTTP',
-        ... }
+        auth = b'username:token'
+        key = base64.b64encode(auth).decode("ascii")
+        headers={
+            'Authorization': 'Basic {key}',
+            'User-Agent': 'Python HTTP',
+        }
 
         # ...
 
-        >>> body = resp.read().decode()
-        >>> data = json.loads(body)
+        body = resp.read().decode()
+        data = json.loads(body)
 
 :Co zadanie sprawdza?:
     * Komunikacja HTTP (request, response)

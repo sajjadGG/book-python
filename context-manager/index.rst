@@ -50,12 +50,12 @@ Dzieli naszą funkcję na bloki przed i po ``yield``.
         yield
         print("</%s>" % name)
 
-    >>> with tag("h1"):
-    ...    print("foo")
-    ...
-    <h1>
-    foo
-    </h1>
+    with tag("h1"):
+        print("foo")
+
+    # <h1>
+    # foo
+    # </h1>
 
 Przykład praktyczny
 -------------------

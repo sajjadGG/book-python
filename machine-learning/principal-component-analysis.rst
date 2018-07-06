@@ -22,33 +22,40 @@ First, consider a dataset in only two dimensions, like (height, weight). This da
 
 .. code-block:: python
 
-    >>> import numpy as np
-    >>> from sklearn.decomposition import PCA
-    >>> X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
-    >>> pca = PCA(n_components=2)
-    >>> pca.fit(X)
-    PCA(copy=True, iterated_power='auto', n_components=2, random_state=None,
-      svd_solver='auto', tol=0.0, whiten=False)
-    >>> print(pca.explained_variance_ratio_)
-    [ 0.99244...  0.00755...]
+    import numpy as np
+    from sklearn.decomposition import PCA
+
+    X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
+
+    pca = PCA(n_components=2)
+    pca.fit(X)
+    # PCA(copy=True, iterated_power='auto', n_components=2, random_state=None,
+    #     svd_solver='auto', tol=0.0, whiten=False)
+
+    pca.explained_variance_ratio_
+    # [ 0.99244...  0.00755...]
 
 .. code-block:: python
 
-    >>> pca = PCA(n_components=2, svd_solver='full')
-    >>> pca.fit(X)
-    PCA(copy=True, iterated_power='auto', n_components=2, random_state=None,
-      svd_solver='full', tol=0.0, whiten=False)
-    >>> print(pca.explained_variance_ratio_)
-    [ 0.99244...  0.00755...]
+    pca = PCA(n_components=2, svd_solver='full')
+
+    pca.fit(X)
+    # PCA(copy=True, iterated_power='auto', n_components=2, random_state=None,
+    #     svd_solver='full', tol=0.0, whiten=False)
+
+    pca.explained_variance_ratio_
+    # [ 0.99244...  0.00755...]
 
 .. code-block:: python
 
-    >>> pca = PCA(n_components=1, svd_solver='arpack')
-    >>> pca.fit(X)
-    PCA(copy=True, iterated_power='auto', n_components=1, random_state=None,
-      svd_solver='arpack', tol=0.0, whiten=False)
-    >>> print(pca.explained_variance_ratio_)
-    [ 0.99244...]
+    pca = PCA(n_components=1, svd_solver='arpack')
+
+    pca.fit(X)
+    # PCA(copy=True, iterated_power='auto', n_components=1, random_state=None,
+    #     svd_solver='arpack', tol=0.0, whiten=False)
+
+    pca.explained_variance_ratio_
+    # [ 0.99244...]
 
 3D example
 ==========
@@ -60,7 +67,7 @@ First, consider a dataset in only two dimensions, like (height, weight). This da
 
 Przykłady praktyczne
 ====================
-https://github.com/scikit-learn/scikit-learn/tree/master/examples/decomposition
+* https://github.com/scikit-learn/scikit-learn/tree/master/examples/decomposition
 
 PCA dla zbioru Iris
 -------------------

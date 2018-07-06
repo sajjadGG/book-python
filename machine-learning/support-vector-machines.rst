@@ -238,14 +238,14 @@ Now we'll fit a Support Vector Machine Classifier to these points. While the mat
 
 .. code-block:: python
 
-    >>> from sklearn.svm import SVC # "Support Vector Classifier"
+    from sklearn.svm import SVC # "Support Vector Classifier"
 
-    >>> clf = SVC(kernel='linear')
+    clf = SVC(kernel='linear')
 
-    >>> clf.fit(X, y)
-    SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0, degree=3, gamma=0.0,
-        kernel='linear', max_iter=-1, probability=False, random_state=None,
-        shrinking=True, tol=0.001, verbose=False)
+    clf.fit(X, y)
+    # SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0, degree=3, gamma=0.0,
+    #     kernel='linear', max_iter=-1, probability=False, random_state=None,
+    #     shrinking=True, tol=0.001, verbose=False)
 
 To better visualize what's happening here, let's create a quick convenience function that will plot SVM decision boundaries for us:
 

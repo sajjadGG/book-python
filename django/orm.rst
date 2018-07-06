@@ -25,18 +25,18 @@ Filtered QuerySets are unique
 -----------------------------
 .. code-block:: python
 
-    >>> q1 = Entry.objects.filter(headline__startswith="What")
-    >>> q2 = q1.exclude(pub_date__gte=datetime.date.today())
-    >>> q3 = q1.filter(pub_date__gte=datetime.date.today())
+    q1 = Entry.objects.filter(headline__startswith="What")
+    q2 = q1.exclude(pub_date__gte=datetime.date.today())
+    q3 = q1.filter(pub_date__gte=datetime.date.today())
 
 QuerySets are lazy
 ------------------
 .. code-block:: python
 
-    >>> q = Entry.objects.filter(headline__startswith="What")
-    >>> q = q.filter(pub_date__lte=datetime.date.today())
-    >>> q = q.exclude(body_text__icontains="food")
-    >>> print(q)
+    q = Entry.objects.filter(headline__startswith="What")
+    q = q.filter(pub_date__lte=datetime.date.today())
+    q = q.exclude(body_text__icontains="food")
+    print(q)
 
 Field lookups
 =============
@@ -89,20 +89,20 @@ The pk lookup shortcut
 ----------------------
 .. code-block:: python
 
-    >>> Blog.objects.get(id__exact=14) # Explicit form
-    >>> Blog.objects.get(id=14) # __exact is implied
-    >>> Blog.objects.get(pk=14) # pk implies id__exact
+    Blog.objects.get(id__exact=14)  # Explicit form
+    Blog.objects.get(id=14)         # __exact is implied
+    Blog.objects.get(pk=14)         # pk implies id__exact
 
     # Get blogs entries with id 1, 4 and 7
-    >>> Blog.objects.filter(pk__in=[1,4,7])
+    Blog.objects.filter(pk__in=[1,4,7])
 
     # Get all blog entries with id > 14
-    >>> Blog.objects.filter(pk__gt=14)
+    Blog.objects.filter(pk__gt=14)
 
     # pk lookups also work across joins
-    >>> Entry.objects.filter(blog__id__exact=3) # Explicit form
-    >>> Entry.objects.filter(blog__id=3)        # __exact is implied
-    >>> Entry.objects.filter(blog__pk=3)        # __pk implies __id__exact
+    Entry.objects.filter(blog__id__exact=3) # Explicit form
+    Entry.objects.filter(blog__id=3)        # __exact is implied
+    Entry.objects.filter(blog__pk=3)        # __pk implies __id__exact
 
 Complex lookups with Q objects
 ==============================
@@ -124,11 +124,11 @@ Comparing objects
 =================
 .. code-block:: python
 
-    >>> some_entry == other_entry
-    >>> some_entry.id == other_entry.id
+    some_entry == other_entry
+    some_entry.id == other_entry.id
 
-    >>> some_obj == other_obj
-    >>> some_obj.name == other_obj.name
+    some_obj == other_obj
+    some_obj.name == other_obj.name
 
 Aggregations
 ============

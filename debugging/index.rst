@@ -7,17 +7,19 @@ Run in the console
 * Execute cell
 * Run File in the console
 
+
 ``print``
 =========
 .. code-block:: python
 
     DATA = ['a', 'b', 'c', [1, 2, 3]]
+
     for element in DATA:
         print(element)
-    # a
-    # b
-    # c
-    # [1, 2, 3]
+        # a
+        # b
+        # c
+        # [1, 2, 3]
 
 .. code-block:: python
 
@@ -25,10 +27,11 @@ Run in the console
 
     for user in USERNAMES:
         print(user)
-    # J
-    # o
-    # s
-    # é
+        # J
+        # o
+        # s
+        # é
+
 
 ``pprint``
 ==========
@@ -94,6 +97,7 @@ Run in the console
         print(f'My name {name}')
 
     help(hello)
+    print(hello.__doc__)
 
 .. literalinclude:: src/debugging-docstring.py
     :language: python
@@ -103,15 +107,14 @@ Run in the console
 ===================
 .. code-block:: python
 
-    >>> class Astronaut():
-    ...    def __init__(self):
-    ...        self.first_name = 'José'
-    ...        self.last_name = 'Jiménez'
+    class Astronaut():
+        def __init__(self):
+            self.first_name = 'José'
+            self.last_name = 'Jiménez'
 
-    >>> jose = Astronaut()
-
-    >>> jose.__dict__
-    {'first_name': 'José', 'last_name': 'Jiménez'}
+    jose = Astronaut()
+    jose.__dict__
+    # {'first_name': 'José', 'last_name': 'Jiménez'}
 
 
 ``dir()`` i ``object.__dict__``
@@ -120,15 +123,14 @@ Run in the console
 
 .. code-block:: python
 
-    >>> class Astronaut():
-    ...    def __init__(self):
-    ...        self.first_name = 'José'
-    ...        self.last_name = 'Jiménez'
+    class Astronaut():
+        def __init__(self):
+            self.first_name = 'José'
+            self.last_name = 'Jiménez'
 
-    >>> jose = Astronaut()
-
-    >>> dir(jose)
-    ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'first_name', 'last_name']
+    jose = Astronaut()
+    dir(jose)
+    # ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'first_name', 'last_name']
 
 ``json.tool``
 =============

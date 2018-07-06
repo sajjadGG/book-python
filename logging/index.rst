@@ -86,35 +86,36 @@ Logowanie zdarzeń
     import logging
     log = logging.getLogger(__name__)
 
-    >>> def sum(a, b):
-    ...     log.debug('Function `sum()` executed with: %s', locals())
-    ...     value = a + b
-    ...     log.debug(f'Will produce "{value}" as result')
-    ...     return value
-    ...
-    >>> sum(1, 2)
-    Function `sum()` executed with: {'b': 2, 'a': 1}
-    Will produce "3" as result
-    3
+    def sum(a, b):
+        log.debug('Function `sum()` executed with: %s', locals())
+        value = a + b
+        log.debug(f'Will produce "{value}" as result')
+        return value
+
+    sum(1, 2)
+    # Function `sum()` executed with: {'b': 2, 'a': 1}
+    # Will produce "3" as result
+    # 3
 
 Wyciszanie logowania
 --------------------
 .. code-block:: python
 
-        import logging
+    import logging
 
-        logging.basicConfig(
-            level=logging.DEBUG,
-            format='[%(asctime).19s] [%(levelname)s] %(message)s')
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format='[%(asctime).19s] [%(levelname)s] %(message)s')
 
-        logging.getLogger('requests').setLevel(logging.WARNING)
-        log = logging.getLogger(__name__)
+    logging.getLogger('requests').setLevel(logging.WARNING)
+    log = logging.getLogger(__name__)
 
-        log.debug('to jest moja debugowa wiadomosc')
+    log.debug('to jest moja debugowa wiadomosc')
 
 
 Konfiguracja formatowania logów
 ===============================
+.. todo:: convert table to CSV
 
 +-------------------------+-----------------------------------------------+
 | Format                  | Description                                   |
@@ -197,7 +198,6 @@ Konfiguracja formatowania logów
 
 ``warnings``
 ============
-
 .. code-block:: python
 
     import warnings
@@ -208,10 +208,13 @@ Konfiguracja formatowania logów
 
     import warnings
 
-    def run_HTTP_server(*args, **kwargs):
-        pass
+    def sumuj(a, b):
+        warnings.warn('You should english name ``sum()``.', PendingDeprecationWarning)
+        return a + b
+
+    def sum(a, b):
+        return a + b
 
 
-    def runHTTPServer(*args, **kwargs):
-        warnings.warn(PendingDeprecationWarning, 'You should use \'run_HTTP_server()\' instead.')
-        return run_HTTP_server(*args, **kwargs)
+    sumuj(1, 2)
+    sum(1, 2)

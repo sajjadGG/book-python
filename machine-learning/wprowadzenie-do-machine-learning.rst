@@ -213,50 +213,50 @@ Przykład pracy z ``scikit-learn``
 .. code-block:: python
 
     # Import the class you plan to use
-    >>> from sklearn.neighbours import KNeighboursClassifier()
+    from sklearn.neighbours import KNeighboursClassifier()
 
     # Instanciate the estimator
-    >>> model = KNeighboursClassifier(n_neighbours=1)
+    model = KNeighboursClassifier(n_neighbours=1)
 
     # Fit the model with data (aka "model training")
-    >>> model.fit(features, labels)
+    model.fit(features, labels)
 
     # Predict the response for a new observation
-    >>> model.predict([3, 5, 4, 2])
-    array([2])
+    model.predict([3, 5, 4, 2])
+    # array([2])
 
     # Can predict for multiple observations at once
-    >>> model.predict([
-    ...    [3, 5, 4, 2],
-    ...    [5, 4, 3, 2],
-    ... ])
-    array([2, 1])
+    model.predict([
+        [3, 5, 4, 2],
+        [5, 4, 3, 2],
+    ])
+    # array([2, 1])
 
 .. code-block:: python
 
-    >>> from sklearn.neighbours import KNeighboursClassifier()
+    from sklearn.neighbours import KNeighboursClassifier()
 
-    >>> model = KNeighboursClassifier(n_neighbours=5)
-    >>> model.fit(features, labels)
+    model = KNeighboursClassifier(n_neighbours=5)
+    model.fit(features, labels)
 
-    >>> model.predict([
-    ...    [3, 5, 4, 2],
-    ...    [5, 4, 3, 2],
-    ... ])
-    array([1, 1])
+    model.predict([
+        [3, 5, 4, 2],
+        [5, 4, 3, 2],
+    ])
+    # array([1, 1])
 
 .. code-block:: python
 
-    >>> from sklearn.linear_model import LogisticsRegression()
+    from sklearn.linear_model import LogisticsRegression()
 
-    >>> model = LogisticsRegression()
-    >>> model.fit(features, labels)
+    model = LogisticsRegression()
+    model.fit(features, labels)
 
-    >>> model.predict([
-    ...    [3, 5, 4, 2],
-    ...    [5, 4, 3, 2],
-    ... ])
-    array([2, 0])
+    model.predict([
+        [3, 5, 4, 2],
+        [5, 4, 3, 2],
+    ])
+    # array([2, 0])
 
 
 Przykład pracy z ``PyMC3``

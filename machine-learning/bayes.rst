@@ -110,21 +110,20 @@ Przykłady praktyczne
 
 .. code-block:: python
 
-    >>> from sklearn import datasets
-    >>> from sklearn.naive_bayes import GaussianNB
+    from sklearn import datasets
+    from sklearn.naive_bayes import GaussianNB
 
-    >>> iris = datasets.load_iris()
-    >>> features = iris.data
-    >>> labels = iris.target
+    iris = datasets.load_iris()
+    features = iris.data
+    labels = iris.target
 
-    >>> model = GaussianNB()
-    >>> model.fit(features, labels)
-    >>> prediction = model.predict(iris.data)
-    >>> points = (iris.target != prediction).sum()
+    model = GaussianNB()
+    model.fit(features, labels)
+    prediction = model.predict(iris.data)
+    points = (iris.target != prediction).sum()
 
-
-    >>> print(f"Number of mislabeled points out of a total {features.shape[0]} points : {points}")
-    Number of mislabeled points out of a total 150 points : 6
+    print(f"Number of mislabeled points out of a total {features.shape[0]} points : {points}")
+    # Number of mislabeled points out of a total 150 points : 6
 
 
 Zadanie kontrolne

@@ -227,25 +227,21 @@ Builtin functions
 
 .. code-block:: python
 
-    >>> numbers_generator = range(0, 5)
-    >>> numbers = list(numbers_generator)
-    >>> print(numbers)
-    [0, 1, 2, 3, 4]
+    numbers_generator = range(0, 5)
+    numbers = list(numbers_generator)
+
+    print(numbers)  # [0, 1, 2, 3, 4]
 
 ``isinstance()``
 ----------------
-Sprawdza czy dany obiekt jest instancją danej klasy.
+* Sprawdza czy dany obiekt jest instancją danej klasy
+* Jeżeli jest więcej niż jeden typ to musi być ``tuple`` a nie ``list`` lub ``set``
 
 .. code-block:: python
 
-    >>> isinstance(10, int)
-    True
-
-    >>> isinstance(10, float)
-    False
-
-    >>> isinstance(10, (int, float))  # to musi być tupla, a nie lista
-    True
+    isinstance(10, int)           # True
+    isinstance(10, float)         # False
+    isinstance(10, (int, float))  # True
 
 ``min()``
 ---------
@@ -253,11 +249,10 @@ Wartość minimalna z listy.
 
 .. code-block:: python
 
-    >>> numbers = [1, 2, 3, 4, 5]
-    >>> min(numbers)
-    1
-    >>> min(3, 1, 5)
-    1
+    numbers = [1, 2, 3, 4, 5]
+
+    min(numbers)  # 1
+    min(3, 1, 5)  # 1
 
 ``max()``
 ---------
@@ -265,11 +260,10 @@ Wartość maksymalna z listy.
 
 .. code-block:: python
 
-    >>> numbers = [1, 2, 3, 4, 5]
-    >>> max(numbers)
-    5
-    >>> max(3, 1, 5)
-    5
+    numbers = [1, 2, 3, 4, 5]
+
+    max(numbers)  # 5
+    max(3, 1, 5)  # 5
 
 ``len()``
 ---------
@@ -277,43 +271,41 @@ Długość listy, tuple, stringa itp.
 
 .. code-block:: python
 
-    >>> numbers = [1, 2, 3, 4, 5]
-    >>> len(numbers)
-    5
-    >>> len('Max')
-    3
-    >>> len({'id': 3, 'name': 'Max'})
-    2
+    numbers = [1, 2, 3, 4, 5]
+
+    len(numbers)                   # 5
+    len('Max')                     # 3
+    len({'id': 3, 'name': 'Max'})  # 2
+
 
 ``bin()``
 ---------
-Konwertuje liczbę na binarną.
+* Konwertuje liczbę na binarną
+* Nie stosuje kodu uzupełnień do dwóch
 
 .. code-block:: python
 
-    >>> bin(3)
-    '0b11'
-
-    >>> bin(-3)
-    '-0b11'
+    bin(3)   # '0b11'
+    bin(-3)  # '-0b11'
 
 ``hex()``
 ---------
-Konwertuje liczbę na hex.
+* Konwertuje liczbę na heksadecymalną
+* Konwersja kolorów w HTML
+* Shellcode
 
 .. code-block:: python
 
-    >>> hex(99)
-    '0x63'
+    hex(99)  # '0x63'
 
 ``oct()``
 ---------
-Konwertuje liczbę na oct.
+* Konwertuje liczbę na octalną
+* Przydatne do uprawnień w systemie operacyjnym
 
 .. code-block:: python
 
-    >>> oct(23)
-    '0o27'
+    oct(33261)  # '0o100755'
 
 ``ord()``
 ---------
@@ -321,8 +313,7 @@ Zwraca kod ASCII jednoznakowego stringa.
 
 .. code-block:: python
 
-    >>> ord('a')
-    97
+    ord('a')  # 97
 
 ``chr()``
 ---------
@@ -330,12 +321,13 @@ Z pozycji w tablicy ASCII konwertuje kod na znak Unicode.
 
 .. code-block:: python
 
-    >>> chr(97)
-    'a'
+    chr(97)  # 'a'
 
 
 Other builtin functions
 =======================
+.. todo:: Convert table to CSV
+
 .. csv-table:: Most used Built-in functions
     :header-rows: 1
 

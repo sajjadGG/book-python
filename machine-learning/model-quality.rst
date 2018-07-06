@@ -126,43 +126,44 @@ Testing ``LogisticsRegression`` on Iris dataset
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: python
 
-    >>> from sklearn.linear_model import LogisticsRegression
-    >>> from sklearn import metrics
+    from sklearn.linear_model import LogisticsRegression
+    from sklearn import metrics
 
-    >>> model = LogisticsRegression()
-    >>> model.fit(features, labels)
-    >>> predicted_labels = model.predict(features)
+    model = LogisticsRegression()
+    model.fit(features, labels)
+    predicted_labels = model.predict(features)
 
-    >>> accuracy = metrics.accuracy_score(labels, predicted_labels)
-    0.96
+    metrics.accuracy_score(labels, predicted_labels)
+    # 0.96
+
 
 Testing ``KNeighborsClassifier(n_neighbors=1)`` on Iris dataset
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: python
 
-    >>> from sklearn.neighbors import KNeighborsClassifier
-    >>> from sklearn import metrics
+    from sklearn.neighbors import KNeighborsClassifier
+    from sklearn import metrics
 
-    >>> model = KNeighborsClassifier(n_neighbors=1)
-    >>> model.fit(features, labels)
-    >>> predicted_labels = model.predict(features)
+    model = KNeighborsClassifier(n_neighbors=1)
+    model.fit(features, labels)
+    predicted_labels = model.predict(features)
 
-    >>> accuracy = metrics.accuracy_score(labels, predicted_labels)
-    1.0
+    metrics.accuracy_score(labels, predicted_labels)
+    # 1.0
 
 Testing ``KNeighborsClassifier(n_neighbors=5)`` on Iris dataset
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: python
 
-    >>> from sklearn.neighbors import KNeighborsClassifier
-    >>> from sklearn import metrics
+    from sklearn.neighbors import KNeighborsClassifier
+    from sklearn import metrics
 
-    >>> model = KNeighborsClassifier(n_neighbors=5)
-    >>> model.fit(features, labels)
-    >>> predicted_labels = model.predict(features)
+    model = KNeighborsClassifier(n_neighbors=5)
+    model.fit(features, labels)
+    predicted_labels = model.predict(features)
 
-    >>> accuracy = metrics.accuracy_score(labels, predicted_labels)
-    0.966666666667
+    accuracy = metrics.accuracy_score(labels, predicted_labels)
+    # 0.966666666667
 
 Train/test split
 ----------------
@@ -181,10 +182,10 @@ Also known as:
 
 .. code-block:: python
 
-    >>> from sklearn.model_selection import train_test_split
+    from sklearn.model_selection import train_test_split
 
     # Split the data into training and testing sets
-    >>> features_train, features_test, labels_train, labels_test = train_test_split(features, labels, test_size=0.4)
+    features_train, features_test, labels_train, labels_test = train_test_split(features, labels, test_size=0.4)
 
 #. If you do not use optional integer parameter ``random_state`` to ``train_test_split`` it will randomize splitting data
 #. Models can be trained and tested on **different data**
@@ -196,43 +197,43 @@ Testing ``LogisticsRegression`` on Iris dataset
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: python
 
-    >>> from sklearn.linear_model import LogisticsRegression
-    >>> from sklearn import metrics
+    from sklearn.linear_model import LogisticsRegression
+    from sklearn import metrics
 
-    >>> model = LogisticsRegression()
-    >>> model.fit(features_train, labels_train)
-    >>> predicted_labels = model.predict(features_test)
+    model = LogisticsRegression()
+    model.fit(features_train, labels_train)
+    predicted_labels = model.predict(features_test)
 
-    >>> accuracy = metrics.accuracy_score(labels_test, predicted_labels)
-    0.95
+    accuracy = metrics.accuracy_score(labels_test, predicted_labels)
+    # 0.95
 
 Testing ``KNeighborsClassifier(n_neighbors=1)`` on Iris dataset
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: python
 
-    >>> from sklearn.neighbors import KNeighborsClassifier
-    >>> from sklearn import metrics
+    from sklearn.neighbors import KNeighborsClassifier
+    from sklearn import metrics
 
-    >>> model = KNeighborsClassifier(n_neighbors=1)
-    >>> model.fit(features_train, labels_train)
-    >>> predicted_labels = model.predict(features_test)
+    model = KNeighborsClassifier(n_neighbors=1)
+    model.fit(features_train, labels_train)
+    predicted_labels = model.predict(features_test)
 
-    >>> accuracy = metrics.accuracy_score(labels_test, predicted_labels)
-    0.95
+    accuracy = metrics.accuracy_score(labels_test, predicted_labels)
+    # 0.95
 
 Testing ``KNeighborsClassifier(n_neighbors=5)`` on Iris dataset
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: python
 
-    >>> from sklearn.neighbors import KNeighborsClassifier
-    >>> from sklearn import metrics
+    from sklearn.neighbors import KNeighborsClassifier
+    from sklearn import metrics
 
-    >>> model = KNeighborsClassifier(n_neighbors=5)
-    >>> model.fit(features_train, labels_train)
-    >>> predicted_labels = model.predict(features_test)
+    model = KNeighborsClassifier(n_neighbors=5)
+    model.fit(features_train, labels_train)
+    predicted_labels = model.predict(features_test)
 
-    >>> accuracy = metrics.accuracy_score(labels_test, predicted_labels)
-    0.966666666667
+    accuracy = metrics.accuracy_score(labels_test, predicted_labels)
+    # 0.966666666667
 
 Can we locate even better value for :math:`k`?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -254,9 +255,7 @@ Can we locate even better value for :math:`k`?
     from sklearn.model_selection import train_test_split
     import matplotlib.pyplot as plt
 
-
     iris = load_iris()
-
     features = iris.data
     labels = iris.target
 

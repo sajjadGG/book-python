@@ -163,30 +163,18 @@ Przykładowe inicjalizacje generatorów
 
 Zamiana klucz wartość oraz generowanie ``dict`` i ``set``
 ---------------------------------------------------------
-
 .. code-block:: python
 
-    >>> osoba = {'username': 'Ivan Ivanovic', 'czy_wykladowca': True}
+    data = {'first_name': 'Ivan', 'last_name': 'Ivanovic'}
 
-    >>> out = {wartosc: klucz for klucz, wartosc in osoba.items()}
+    out = {v: k for k, v in data.items()}  # {'Ivan': 'first_name', 'Ivanovic': 'last_name'}
+    type(out)  # <class 'dict'>
 
-    >>> print(out)
-    {'wykladowca1': 'Ivan Ivanovic', True: 'czy_wykladowca'}
-
-    >>> type(out)
-    <class 'dict'>
-
-    >>> out = {wartosc for klucz, wartosc in osoba.items()}
-
-    >>> print(out)
-    {'Ivan Ivanovic', True}
-
-    >>> type(out)
-    <class 'set'>
+    out = {v for k, v in data.items()}  # {'Ivan', 'Ivanovic'}
+    type(out)  # <class 'set'>
 
 Filtrowanie wyników na liście dictów
 ------------------------------------
-
 .. code-block:: python
 
     ADDRESS_BOOK = [

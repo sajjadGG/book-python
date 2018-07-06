@@ -46,31 +46,34 @@ Pętla ``for`` wykonuje się na zestawie elementów. Dosłownie można tę instr
 
     for x in 'Hello':
         print(x)
-        # H
-        # e
-        # l
-        # l
-        # o
+
+    # H
+    # e
+    # l
+    # l
+    # o
 
 .. code-block:: python
 
-    >>> for x in range(0, 5):
-    >>>     print(f'Value is: {x}')
-    Value is: 0
-    Value is: 1
-    Value is: 2
-    Value is: 3
-    Value is: 4
+    for x in range(0, 5):
+        print(f'Value is: {x}')
+
+    # Value is: 0
+    # Value is: 1
+    # Value is: 2
+    # Value is: 3
+    # Value is: 4
 
 .. code-block:: python
 
     for x in range(start=0, stop=10, step=2):
         print(x)
-        # 0
-        # 2
-        # 4
-        # 6
-        # 8
+
+    # 0
+    # 2
+    # 4
+    # 6
+    # 8
 
 Iterating over ``dict`` items
 -----------------------------
@@ -80,9 +83,10 @@ Iterating over ``dict`` items
 
     for element in DATA:
         print(element)
-        # ('a', 0)
-        # ('b', 1)
-        # ('c', 2)
+
+    # ('a', 0)
+    # ('b', 1)
+    # ('c', 2)
 
 .. code-block:: python
 
@@ -96,9 +100,10 @@ Iterating over ``dict`` items
 
     for key, value in DATA:
         print(f'{key} -> {value}')
-        # a -> 0
-        # b -> 1
-        # c -> 2
+
+    # a -> 0
+    # b -> 1
+    # c -> 2
 
 .. code-block:: python
 
@@ -110,9 +115,10 @@ Iterating over ``dict`` items
 
     for key, value in DATA:
         print(f'{key} -> {value}')
-        # 0 -> 1
-        # name -> José
-        # locations -> ['CapeCanaveral', 'Houston']
+
+    # 0 -> 1
+    # name -> José
+    # locations -> ['CapeCanaveral', 'Houston']
 
 .. code-block:: python
 

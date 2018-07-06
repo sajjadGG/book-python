@@ -11,9 +11,8 @@ Sama idea spowodowała dużą polaryzację programistów. Jedni bardzo sobie chw
 
 .. code-block:: python
 
-    >>> from __future__ import braces
-      File "<stdin>", line 1
-    SyntaxError: not a chance
+    from __future__ import braces
+    # SyntaxError: not a chance
 
 
 End lines
@@ -51,7 +50,7 @@ Kolejnym sposobem jest komentowanie inline tzn. w linijce. Tego typu komentarze 
 
 .. code-block:: python
 
-    >>> print('Hello Wold!') # na ekranie otrzymamy: Hello World!
+    >>> print('Hello Wold!')  # na ekranie otrzymamy: Hello World!
     Hello Wold!
 
 
