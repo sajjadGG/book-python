@@ -81,23 +81,23 @@ Używanie tych operatorów przypomina używanie funkcji ``printf``, znanej międ
 .. code-block:: python
 
     name = 'José Jiménez'
-    age = 35
+    age = 42
 
     def my(name):
         return name
 
-    print('My name %s!' % name)                    # My name José Jiménez!
-    print("%s is %s years old" % (name, age))      # José Jiménez is 35 years old
-    print('%s is %s years old' % (age, name))      # 35 is José Jiménez years old
-    print('%s is %10.1f years old' % (name, age))  # José Jiménez is       35.0 years old
-    print('%s is %.1f years old' % (name, age))    # José Jiménez is 35.0 years old
-    print('%s is %d years old' % (my(name), age))  # José Jiménez is 35 years old
+    print('My name %s!' % name)                 # My name José Jiménez!
+    print("%s has %s years" % (name, age))      # José Jiménez has 42 years
+    print('%s has %s years' % (age, name))      # 42 has José Jiménez years
+    print('%s has %10.1f years' % (name, age))  # José Jiménez has       42.0 years
+    print('%s has %.1f years' % (name, age))    # José Jiménez has 42.0 years
+    print('%s has %d years' % (my(name), age))  # José Jiménez has 42 years
 
-    print('%(name)s is %(age)d years old' % {
+    print('%(name)s has %(age)d years' % {
         'age': age,
         'name': name,
     })
-    # José Jiménez is 35 years old
+    # José Jiménez has 42 years
 
     print('My name %(name)s.' % locals())
     # My name José Jiménez.
@@ -116,29 +116,16 @@ Wbudowana metoda ``format`` upraszcza nieco powyższy schemat. Zamiast operatora
 
 .. code-block:: python
 
-    imie = 'José Jiménez'
-    wiek = 35
+    name = 'José Jiménez'
+    age = 42
 
-    print('{imie} ma {wiek} lat'.format(imie=imie, wiek=wiek))
-    # José Jiménez ma 35 lat
-
-    print('{wiek} ma {imie} lat'.format(**locals()))
-    # 35 ma José Jiménez lat
-
-    print('Hej mam na imie {} i mam {} lat'.format(imie, wiek))
-    # Hej mam na imie José Jiménez i mam 35 lat
-
-    print('Hej mam na imie {0} i mam {1} lat'.format(imie, wiek))
-    # Hej mam na imie José i mam 35 lat
-
-    print('Hej mam na imie {1} i mam {0} lat'.format(imie, wiek))
-    # Hej mam na imie 35 i mam José lat
-
-    print('Hej mam na imie {1:.3} i mam {0:.1} lat'.format(float(wiek), imie))
-    # Hej mam na imie Jos i mam 35.0 lat
-
-    # print('Hej mam na imie {1:.3} i mam {0:10.1} lat'.format(float(wiek), imie))
-    Hej mam na imie Jos i mam       35.0 lat
+    print('My name {name} has {age} years'.format(name=name, age=age))   # 'My name José Jiménez has 42 years'
+    print('My name {age} has {name} years'.format(**locals()))           # 'My name 42 has José Jiménez years'
+    print('My name {} has {} years'.format(name, age))                   # 'My name José Jiménez has 42 years'
+    print('My name {0} has {1} years'.format(name, age))                 # 'My name José Jiménez has 42 years'
+    print('My name {1} has {0} years'.format(name, age))                 # 'My name 42 has José Jiménez years'
+    print('My name {1:.3} has {0:10.1} years'.format(float(age), name))  # 'My name Jos has       42.0 years'
+    print('My name {1:.3} has {0:.1} years'.format(float(age), name))    # 'My name Jos has 42.0 years'
 
 
 f-strings - Python >= 3.6
@@ -154,28 +141,18 @@ f-strings to rozwinięcie funkcji ``format``. Jedyne co trzeba zrobić żeby umi
     import datetime
 
     name = 'José'
-    age = 35
+    age = 42
+    now = datetime.datetime.utcnow
     format = '%Y-%m-%d %H:%M:%S'
 
     def my(name):
         return name
 
-    print(f'My name {name}!')
-    # My name José Jiménez
-
-    print(f'My name {my(name)}, age: {age}y')
-    # My name José, age: 35y
-
-    print(f'Today is: {datetime.datetime.now():%Y-%m-%d %H:%M:%S}')
-    # Today is: 1969-07-21 02:56:15
-
-    now = datetime.datetime.utcnow
-
-    print(f'Today is: {now():%Y-%m-%d %H:%M:%S}')
-    # Today is: 1969-07-21 02:56:15
-
-    print(f'Today is: {now():{format}}')
-    # Today is: 1969-07-21 02:56:15
+    print(f'My name {name}!')                                        # 'My name José Jiménez'
+    print(f'My name {my(name)}, age: {age} years')                   # 'My name José, age: 42 years'
+    print(f'Today is: {datetime.datetime.now():%Y-%m-%d %H:%M:%S}')  # 'Today is: 1969-07-21 02:56:15'
+    print(f'Today is: {now():%Y-%m-%d %H:%M:%S}')                    # 'Today is: 1969-07-21 02:56:15'
+    print(f'Today is: {now():{format}}')                             # 'Today is: 1969-07-21 02:56:15'
 
 
 Przykład z życia
@@ -187,11 +164,9 @@ Przykład z życia
     username = "' OR 1=1; DROP TABLE users -- "
     password = '132'
 
-
     sql_query = f"""
 
-        SELECT *
-        FROM users
+        SELECT * FROM users
         WHERE 'username'='{username}'
         AND 'password'='{password}'
 
