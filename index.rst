@@ -50,7 +50,7 @@ Foundations
     data-structures/index.rst
     control-flow/index.rst
     operators/index.rst
-    loops/index.rst
+    loop/index.rst
     functions-basic/index.rst
     doctest/index.rst
     modules-install/index.rst

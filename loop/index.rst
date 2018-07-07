@@ -347,6 +347,46 @@ Keywords in loops
 Assignments
 ===========
 
+Text manipulation
+-----------------
+#. Napisz program, który na podstawie paragrafu tekstu "Lorem Ipsum" podzieli go na zdania
+#. Kropka rozdziela zdania
+#. Spacja oddziela wyrazy w zdaniu
+#. Nie przejmuj się ostatnim pustym zdaniem (długość 0)
+#. Za pomocą funkcji ``len()`` policz ile jest wyrazów w każdym zdaniu::
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+:Założenia:
+    * Nazwa pliku: ``loop_sentences.py``
+    * Szacunkowa długość kodu: 4 linie
+    * Maksymalny czas na zadanie: 5 min
+
+:Co zadanie sprawdza:
+    * Dzielenie stringów
+    * Sprawdzanie długości ciągów znaków
+    * Iterowanie po elementach w tablicy
+
+Unique keys from schema-less database
+-------------------------------------
+#. Mając bazę danych z listingu poniżej
+#. Wygeneruj listę unikalnych kluczy dictów
+
+.. code-block:: python
+
+    DATABASE = [
+        {'last_name': 'Jiménez'},
+        {'first_name': 'Max', 'last_name': 'Peck'},
+        {'first_name': 'Ivan', 'age': 42},
+        {'first_name': 'Max', 'last_name': 'Peck', 'born': 1961},
+        {'first_name': 'José', 'born': 1961, 'agency': 'NASA'},
+    ]
+
+:Założenia:
+    * Nazwa pliku: ``loop_unique_keys.py``
+    * Szacunkowa długość kodu: około 5 linii
+    * Maksymalny czas na zadanie: 10 min
+
 Report card
 -----------
 #. Przekonwertuj skalę ocen ``(2, 3, 3.5, 4, 4.5, 5)`` na listę ``float`` za pomocą inline ``for``
@@ -358,7 +398,7 @@ Report card
 #. Na zakończenie wyświetl wyliczoną dla dzienniczka średnią arytmetyczną z ocen
 
 :Założenia:
-    * Nazwa pliku: ``loops_report_card.py``
+    * Nazwa pliku: ``loop_report_card.py``
     * Szacunkowa długość kodu: około 15 linii
     * Maksymalny czas na zadanie: 10 min
 
@@ -388,7 +428,7 @@ Label encoder
     # [0, 1, 2, 1, 1, 0, ...]
 
 :Założenia:
-    * Nazwa pliku: ``loops_label_encoder.py``
+    * Nazwa pliku: ``loop_label_encoder.py``
     * Szacunkowa długość kodu: około 13 linii
     * Maksymalny czas na zadanie: 15 min
 
