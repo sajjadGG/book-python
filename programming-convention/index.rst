@@ -544,29 +544,29 @@ Installation
 ------------
 .. code-block:: console
 
-    $ pip install pycodestyle
+    pip install pycodestyle
 
 Usage
 -----
 .. code-block:: console
 
-    $ pycodestyle FILENAME.py
+    pycodestyle FILENAME.py
 
 .. code-block:: console
 
-    $ pycodestyle DIRECTORY/*.py
+    pycodestyle DIRECTORY/*.py
 
 .. code-block:: console
 
-    $ pycodestyle DIRECTORY/
+    pycodestyle DIRECTORY/
 
 .. code-block:: console
 
-    $ pycodestyle --statistics -qq DIRECTORY/
+    pycodestyle --statistics -qq DIRECTORY/
 
 .. code-block:: console
 
-    $ pycodestyle --show-source --show-pep8 FILENAME.py
+    pycodestyle --show-source --show-pep8 FILENAME.py
 
 Configuration
 -------------
