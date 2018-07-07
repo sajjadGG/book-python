@@ -93,6 +93,9 @@ Argumenty funkcji to wartości na których ta funkcja wykonuje operacje. W ideal
 Type annotations
 ----------------
 * Od Python 3.5
+* Python code will execute even if types mismatch with annotation!
+* Your IDE will check types and inform you have error
+* Use ``mypy`` or ``pyre-check`` for type checking
 
 .. code-block:: python
 
@@ -120,12 +123,14 @@ Named arguments
 .. code-block:: python
 
     def minus(a, b):
-        return a - b
+        return a + b
 
     minus(2, 1)      # 1
+    minus(1, 2)      # -1
     minus(a=2, b=1)  # 1
-    minus(2, b=1)    # 1
     minus(b=1, a=2)  # 1
+    minus(2, b=1)    # 1
+    minus(a=2, 1)    # SyntaxError: positional argument follows keyword argument
 
 Arguments with default value
 ----------------------------

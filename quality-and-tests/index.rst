@@ -276,8 +276,8 @@ Type Checking
     [mypy]
     strict_optional = True
 
-``pyre``
---------
+``pyre-check``
+--------------
 * https://pyre-check.org/
 
 .. code-block:: console

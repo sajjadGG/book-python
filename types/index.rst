@@ -34,7 +34,7 @@ Types
 * Nowa składnia nie jest wymagana (ale jest dobrą praktyką)
 * Nowa składnia uruchomiona w Python przed 3.5 rzuci SyntaxError
 * Twórcy języka mówą, że typy nigdy nie będą wymagane
-* Aby sprawdzić poprawność trzeba użyć bibliotek zewnętrznych tj: ``mypy`` lub ``pyre``
+* Aby sprawdzić poprawność trzeba użyć bibliotek zewnętrznych tj: ``mypy`` lub ``pyre-check``
 * Typy można znaleźć w wielu funkcjach w bibliotece standardowej
 * Dobre IDE podpowiada typy i informuje o błędach
 
