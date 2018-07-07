@@ -95,19 +95,19 @@ Numerical types
 
 .. code-block:: python
 
-    float(10)  # 10.0
+    float(10)              # 10.0
 
-    float('+1.23')  # 1.23
-    float('-1.23')  # -1.23
+    float('+1.23')         # 1.23
+    float('-1.23')         # -1.23
     float('   -123.45\n')  # -123.45
 
-    float('1e-003')  # 0.001
-    float('+1E6')  # 1000000.0
+    float('1e-003')        # 0.001
+    float('+1E6')          # 1000000.0
 
-    float('-inf')  # -inf
-    float('-Infinity')  # -inf
-    float('inf')  # inf
-    float('Infinity')  # inf
+    float('-inf')          # -inf
+    float('-Infinity')     # -inf
+    float('inf')           # inf
+    float('Infinity')      # inf
 
 ``complex``
 -----------
@@ -117,7 +117,7 @@ Numerical types
 
 .. code-block:: python
 
-    complex('1+2j')  # (1+2j)
+    complex('1+2j')    # (1+2j)
     complex('1 + 2j')  # ValueError: complex() arg is a malformed string
 
 
@@ -162,20 +162,21 @@ Character types
 
 .. code-block:: python
 
-    name = 'José'  # 'José'
-    name = "José"  # 'José'
+    name = 'José'       # 'José'
+    name = "José"       # 'José'
     name: str = 'José'  # 'José'
+    'José' * 3          # JoséJoséJosé
 
-    str(1969)  # '1969'
-    str(13.37)  # '13.37'
+    str(1969)           # '1969'
+    str(13.37)          # '13.37'
 
     name = """
         José Jiménez
         Max Peck
         Ivan Ivanovic
-    """  # '\nMax Peck\nMax Peck\nIvan Ivanovic\n'
+    """
+    # '\nMax Peck\nMax Peck\nIvan Ivanovic\n'
 
-    'José' * 3  # JoséJoséJosé
 
 Single or double quote?
 -----------------------
@@ -238,9 +239,8 @@ Characters before strings
 
 .. code-block:: python
 
-    print('C:\Users\Admin\file.txt')  # ``\Users`` (``s`` is invalid hexadecimal for unicode)
-    # Traceback
-    #   ...
+    print('C:\Users\Admin\file.txt')
+    # ``\Users`` (``s`` is invalid hexadecimal for unicode)
     # SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
 
 
@@ -254,7 +254,7 @@ Characters before strings
     print('My name José Jiménez')  # My name José Jiménez
 
     name = 'José Jiménez'
-    print(f'My name {name}')  # My name José Jiménez
+    print(f'My name {name}')        # My name José Jiménez
 
 String immutability
 -------------------
@@ -266,6 +266,7 @@ String immutability
 
     name = 'José'
     name += ' Jiménez'
+
     print(name)  # José Jiménez
 
 String methods
@@ -275,17 +276,19 @@ String methods
 ^^^^^^^^^^^
 .. code-block:: python
 
-    'ehlo world'.split()  # ['ehlo', 'world']
+    text = 'José Jiménez'
+    text.split()         # ['José', 'Jiménez']
 
-    text = 'ehlo,world'
-    text.split(',')  # ['ehlo', 'world']
+    text = 'Max,Peck'
+    text.split(',')         # ['Max', 'Peck']
 
 ``strip()``, ``lstrip()``, ``rstrip()``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: python
 
     name = '    Max Peck    '
-    name.strip()  # 'Max Peck'
+
+    name.strip()   # 'Max Peck'
     name.lstrip()  # 'Max Peck    '
     name.rstrip()  # '    Max Peck'
 
@@ -307,7 +310,9 @@ String methods
 .. code-block:: python
 
     names = ['José', 'Max', 'Ivan', str(1961), '1969']
-    ';'.join(names)  # 'José;Max;Ivan;1961;1969'
+
+    ';'.join(names)
+    # 'José;Max;Ivan;1961;1969'
 
 ``title()``, ``lower()``, ``upper()``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -329,6 +334,7 @@ String methods
 .. code-block:: python
 
     name = 'joSé jiMénEz'
+
     name.title()  # 'José Jiménez'
     name.upper()  # 'JOSÉ JIMÉNEZ'
     name.lower()  # 'josé jiménez'
@@ -345,16 +351,17 @@ String splicing
 .. code-block:: python
 
     text = 'Lorem ipsum'
-    text[2]  # 'r'
-    text[:2]  # 'Lo'
-    text[0:3]  # 'Lor'
-    text[1:4]  # 'ore'
-    text[-3]  # 's'
-    text[-3:]  # 'sum'
+
+    text[2]      # 'r'
+    text[:2]     # 'Lo'
+    text[0:3]    # 'Lor'
+    text[1:4]    # 'ore'
+    text[-3]     # 's'
+    text[-3:]    # 'sum'
     text[-3:-1]  # 'su'
-    text[:-2]  # 'Lorem ips'
-    text[::2]  # 'Lrmism'
-    text[::-1]  # muspi meroL
+    text[:-2]    # 'Lorem ips'
+    text[::2]    # 'Lrmism'
+    text[::-1]   # muspi meroL
 
 Handling user input
 -------------------
@@ -413,10 +420,10 @@ Handling user input and type casting
 
 .. code-block:: python
 
-    print(f'Meters: {meters}')  # int
-    print(f'Kilometers: {...}')  # int
-    print(f'Miles: {...}')  # float
-    print(f'Nautical Miles: {...}')  # float
+    print(f'Meters: {meters}')                 # int
+    print(f'Kilometers: {...}')                # int
+    print(f'Miles: {...}')                     # float
+    print(f'Nautical Miles: {...}')            # float
     print(f'All: {...}, {...}, {...}, {...}')  # int, int, float, float
 
 :Założenia:
@@ -441,6 +448,7 @@ Text manipulation
 #. Napisz program, który na podstawie paragrafu tekstu "Lorem Ipsum" podzieli go na zdania
 #. Kropka rozdziela zdania
 #. Spacja oddziela wyrazy w zdaniu
+#. Nie przejmuj się ostatnim pustym zdaniem (długość 0)
 #. Za pomocą funkcji ``len()`` policz ile jest wyrazów w każdym zdaniu::
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
