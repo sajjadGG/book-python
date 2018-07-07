@@ -371,12 +371,18 @@ Assignments
 
 Basic usage of ``print()`` function
 -----------------------------------
-#. Za pomocą ``print()`` wypisz linię składającą się z 50 myślników
-#. Wykorzystaj mnożenie stringów
+#. Stwórz skrypt o treści:
+
+    .. code-block:: python
+
+        import sys
+        print(sys.version)
+
+#. Uruchom go w swoim IDE
 
 :Założenia:
-    * Nazwa pliku: ``types_print.py``
-    * Szacunkowa długość kodu: 1 linia
+    * Nazwa pliku: ``python_version.py``
+    * Szacunkowa długość kodu: 2 linie
     * Maksymalny czas na zadanie: 2 min
 
 Variables and types
