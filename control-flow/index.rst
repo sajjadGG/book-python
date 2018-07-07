@@ -56,8 +56,8 @@ Conditional Statements
 
 .. code-block:: python
 
-    if not 0 <= k <= n:
-        raise ValueError('Sample larger than population')
+    if 0 <= k <= n:
+        raise ValueError('k in population')
 
 Inline ``if``
 -------------
@@ -83,7 +83,7 @@ Complex expressions
 .. code-block:: python
 
     first_name = 'José'
-    last_name == 'Jiménez'
+    last_name = 'Jiménez'
 
     if first_name == 'José' and last_name == 'Jiménez':
         print('My name José Jiménez')
@@ -96,9 +96,9 @@ Complex expressions
 .. code-block:: python
 
     first_name = 'José'
-    last_name == 'Jiménez'
+    last_name = 'Jiménez'
 
-    if first_name == 'José' or last_name == 'Max':
+    if first_name == 'José' or first_name == 'Max':
         print('Your name is José or Max')
     else:
         print('Your name is different')
@@ -109,10 +109,10 @@ mixed
 .. code-block:: python
 
     first_name = 'José'
-    last_name == 'Jiménez'
+    last_name = 'Jiménez'
 
-    if first_name == 'José' and last_name == 'Jiménez'
-            or first_name == 'Max' and last_name == 'Peck':
+    if (first_name == 'José' and last_name == 'Jiménez')
+            or (first_name == 'Max' and last_name == 'Peck'):
         print('Your name is José Jiménez or Max Peck')
     else:
         print('Your name is different')
@@ -128,12 +128,13 @@ Control Statements
 
 .. code-block:: python
 
+    usernames = {'José Jiménez', 'Max Peck'}
     name = 'José Jiménez'
 
-    if name in {'José Jiménez', 'Max Peck'}:
-        print('Your name is José Jiménez or Max Peck')
+    if name in usernames:
+        print(True)
     else:
-        print('Your name is neither José Jiménez nor Max Peck')
+        print(False)
 
 .. code-block:: python
 
@@ -151,10 +152,13 @@ Control Statements
 
 .. code-block:: python
 
-    if name not in {'José', 'Max', 'Ivan'}:
+    usernames = {'José', 'Max', 'Ivan'}
+    name = 'José'
+
+    if name not in usernames:
         print('I do not know you')
     else:
-        print('Hallo friend')
+        print('Hello my friend')
 
 .. code-block:: python
 
@@ -163,9 +167,22 @@ Control Statements
     else:
         print('You have set your name')
 
+Tak nie robimy:
+
+    .. code-block:: python
+
+        usernames = {'José', 'Max', 'Ivan'}
+        name = 'José'
+
+        if not name in usernames:  # if (! usernames.contains(name)) {}
+            print('I do not know you')
+        else:
+            print('Hello my friend')
+
 ``is``
 ------
 * ``is`` porównuje czy dwa obiekty są tożsame
+* Najczęściej służy do sprawdzania czy coś jest ``None``
 
 .. code-block:: python
 
@@ -191,8 +208,8 @@ Bardzo kuszący jest następujący przykład:
     a = 'hello'
     b = 'hello'
 
-    print(f'a is {a}, b is {b}')  # a is hello, b is hello
-    print(f'a == b returns: {a==b}')  # a == b returns: True
+    print(f'a is {a}, b is {b}')        # a is hello, b is hello
+    print(f'a == b returns: {a==b}')    # a == b returns: True
     print(f'a is b returns: {a is b}')  # a is b returns: True
 
 .. code-block:: python
@@ -200,8 +217,8 @@ Bardzo kuszący jest następujący przykład:
     a = 'hello'
     b = ''.join('hello')
 
-    print(f'a is {a}, b is {b}')  # a is hello, b is hello
-    print(f'a == b returns: {a==b}')  # a == b returns: True
+    print(f'a is {a}, b is {b}')        # a is hello, b is hello
+    print(f'a == b returns: {a==b}')    # a == b returns: True
     print(f'a is b returns: {a is b}')  # a is b returns: False
 
 
@@ -221,7 +238,6 @@ No ``switch`` statement?!
     else:
          print('Your name is other')
 
-
 .. code-block:: python
 
     switch = {
@@ -230,7 +246,8 @@ No ``switch`` statement?!
         'Max Peck': 'Your name is Max Peck',
     }
 
-    switch['José Jiménez']   # 'My name José Jiménez'
+    switch['José Jiménez']
+    # 'My name José Jiménez'
 
 .. code-block:: python
 
@@ -241,7 +258,8 @@ No ``switch`` statement?!
     }
 
     key = 'Paxi'
-    switch.get(key, 'Your name is other')   # 'Your name is other'
+    switch.get(key, 'Your name is other')
+    # 'Your name is other'
 
 .. code-block:: python
 
@@ -253,7 +271,7 @@ No ``switch`` statement?!
         }.get(key, 'Your name is other')
 
     switch('José Jiménez')  # 'My name José Jiménez'
-    switch('Paxi')  # 'Your name is other'
+    switch('Paxi')          # 'Your name is other'
 
 
 Assignments
