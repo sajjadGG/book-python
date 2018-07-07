@@ -23,18 +23,20 @@ Returning values
 
 .. code-block:: python
 
-    def sum(a, b):
+    def add(a, b):
         return a + b
 
-    sum(2, 3)  # 5
+    add(2, 3)
+    # 5
 
 .. code-block:: python
 
-    def sum(a, b):
+    def add(a, b):
         return a + b
         print('This will not be executed')
 
-    sum(2, 3)  # 5
+    add(2, 3)
+    # 5
 
 Returning simple types
 ----------------------
@@ -50,8 +52,8 @@ Returning simple types
         return None
 
     def function():
+        print('hello')
         # Python always return something, in this case ``return None``
-        pass
 
     def function():
         return {'first_name': 'José', 'last_name': 'Jiménez'}
@@ -71,9 +73,9 @@ Returning nested types
 
     def function():
         return [
-            {'first_name': 'Max', 'last_name': 'Peck'},
-            {'first_name': 'Иван', 'last_name': 'Иванович', 'agency': {'name': 'roscosmos'}},
-            {'first_name': 'José', 'last_name': 'Jiménez', 'missions': ['mercury', 'apollo']},
+            {'astro': 'Peck'},
+            {'astro': 'Иванович', 'agency': {'name': 'roscosmos'}},
+            {'astro': 'Jiménez', 'missions': ['mercury', 'apollo']},
         ]
 
 Function arguments
@@ -85,7 +87,8 @@ Argumenty funkcji to wartości na których ta funkcja wykonuje operacje. W ideal
     def add(a, b):
         return a + b
 
-    add(1, 2)  # 3
+    add(1, 2)
+    # 3
 
 Type annotations
 ----------------
@@ -93,10 +96,19 @@ Type annotations
 
 .. code-block:: python
 
-    def sum(a: int, b: float) -> float:
-        return float(a + b)
+    def add(a: int, b: float) -> float:
+        return a + b
 
-    sum(1, 2.0)  # 3.0
+    add(1, 2.5)
+    # 3.5
+
+.. code-block:: python
+
+    def add(a: int, b: float) -> float:
+        return a + b
+
+    add('Jose', 'Jimenez')
+    # 'JoseJimenez'
 
 .. note:: więcej na ten temat w rozdziale dotyczącym :numref:`Type Annotation`
 
@@ -107,13 +119,13 @@ Named arguments
 
 .. code-block:: python
 
-    def subtract(a, b):
+    def minus(a, b):
         return a - b
 
-    subtract(a=0, b=1)  # -1
-    subtract(0, b=1)  # -1
-    subtract(b=1, a=0)  # -1
-    subtract(1, 0)  # 1
+    minus(2, 1)      # 1
+    minus(a=2, b=1)  # 1
+    minus(2, b=1)    # 1
+    minus(b=1, a=2)  # 1
 
 Arguments with default value
 ----------------------------
@@ -126,23 +138,17 @@ Arguments with default value
     def hello(name='José Jiménez'):
          print(name)
 
-    hello('Ivan Ivanovich')  # Ivan Ivanovich
+    hello('Ivan Ivanovich')       # Ivan Ivanovich
     hello(name='Ivan Ivanovich')  # Ivan Ivanovich
-    hello()  # José Jiménez
+    hello()                       # José Jiménez
 
 .. code-block:: python
 
-    def server(username, password, host='127.0.0.1', port=80, ssl=True):
-        print(f'host={host}, username={username}, password={password}, port={port}, ssl={ssl})
+    def server(username, password, host='127.0.0.1', port=80, ssl=False):
+        print(f'Connecting to {username}:{password}@{host}:{port}')
 
+    server('admin', 'admin', 'localhost', 80, False)
 
-    # Kolejność ma znaczenie i łatwo się pomylić
-    # Trudno również powiedzieć co znaczy ostatni parametr True
-    server('admin', 'admin', 'localhost', 80, True)
-
-    # argumenty definiowane są jawnie i trudniej się pomylić
-    # kod jest bardziej przejrzysty
-    # dla nazwanych argumentów kolejność nie ma znaczenia
     server(host='localhost', user='admin', password='admin', ssl=True)
 
     server(
@@ -173,9 +179,12 @@ Variable scope
 .. code-block:: python
 
     def add(a, b):
+        c = 3
         print(locals())
 
-    add(1, 2)  # {'a': 1, 'b': 2}
+    add(1, 2)
+    # {'a': 1, 'b': 2, 'c': 3}
+
 
 Recurrence
 ==========
@@ -188,62 +197,13 @@ Recurrence
             return n * factorial(n-1)
 
 
-Callable
-========
-.. code-block:: python
-
-    def hello():
-        print('My name José Jiménez')
-
-    hello  # <function hello at 0x0C55D420>
-    type(hello)  # <class 'function'>
-
-.. code-block:: python
-
-    type('hello')  # <class 'str'>
-    'hello'()  # TypeError: 'str' object is not callable
-
-Returning function (callable)
------------------------------
-.. code-block:: python
-
-    def hello():
-        print('My name José Jiménez')
-
-    def function():
-        return hello
-
-    my_name = function()  # <function __main__.my_func()>
-    my_name()  # 'My name José Jiménez'
-
-.. code-block:: python
-
-    import datetime
-    import time
-
-    now = datetime.datetime.now()
-    print(now)  # 1969-07-21 14:56:15
-    time.sleep(10)
-    print(now)  # 1969-07-21 14:56:15
-
-.. code-block:: python
-
-    import datetime
-    import time
-
-    now = datetime.datetime.now
-    print(now())    # 1969-07-21 14:56:15
-    time.sleep(10)
-    print(now())    # 1969-07-21 14:56:25
-
-
 Assignments
 ===========
 
 Integer to string
 -----------------
 #. Napisz funkcję ``int_to_str``
-#. Funkcja zamieni dowolnego ``int`` lub ``float`` na formę tekstową.
+#. Funkcja zamieni dowolnego ``int`` lub ``float`` na formę tekstową
 
     .. code-block:: python
 
@@ -252,11 +212,26 @@ Integer to string
         int_to_str(13.37)   # 'one three and three seven'
         int_to_str(31.337)  # 'three one and three three seven'
 
-#. Wersja zaawansowana:
+:Założenia:
+    * Nazwa pliku: ``functions_intstr_simple.py``
+    * Szacunkowa długość kodu: około 15 linii
+    * Maksymalny czas na zadanie: 15 min
 
-    * pełne nazwy liczb
-    * max 6 cyfr przed przecinkiem
-    * max 5 cyfr po przecinku
+:Co zadanie sprawdza?:
+    * Definiowanie i uruchamianie funkcji
+    * Sprawdzanie przypadków brzegowych (niekompatybilne argumenty)
+    * Parsowanie argumentów funkcji
+    * Definiowanie i korzystanie z ``dict`` z wartościami
+    * Przypadek zaawansowany: argumenty pozycyjne i domyślne
+    * Rzutowanie i konwersja typów
+
+Integer to human readable
+-------------------------
+#. Napisz funkcję ``int_to_str``
+#. Funkcja zamieni dowolnego ``int`` lub ``float`` na formę tekstową
+#. Funkcja musi zmieniać wartości na poprawną gramatycznie formę
+#. Max 6 cyfr przed przecinkiem
+#. Max 5 cyfr po przecinku
 
     .. code-block:: python
 
@@ -264,7 +239,7 @@ Integer to string
         int_to_str(13.37)  # 'thirteen and thirty seven hundredths'
 
 :Założenia:
-    * Nazwa pliku: ``functions_int_str.py``
+    * Nazwa pliku: ``functions_intstr_human.py``
     * Szacunkowa długość kodu: około 15 linii
     * Maksymalny czas na zadanie: 15 min
 

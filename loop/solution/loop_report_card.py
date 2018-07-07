@@ -9,9 +9,7 @@ while True:
     if not grade:
         break
 
-    grade = float(grade)
-
-    if grade in ALLOWED_GRADES:
+    if float(grade) in ALLOWED_GRADES:
         print(f'Adding {grade}')
         report_card.append(grade)
     else:

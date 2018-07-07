@@ -52,9 +52,10 @@ Pętla ``for`` wykonuje się na zestawie elementów. Dosłownie można tę instr
 
     for x in [1, 3, 4]:
         print(x)
-        # 1
-        # 3
-        # 4
+
+    # 1
+    # 3
+    # 4
 
 .. code-block:: python
 
@@ -80,7 +81,7 @@ Pętla ``for`` wykonuje się na zestawie elementów. Dosłownie można tę instr
 
 .. code-block:: python
 
-    for x in range(start=0, stop=10, step=2):
+    for x in range(0, 10, 2):
         print(x)
 
     # 0
@@ -141,6 +142,24 @@ Iterating over nested ``list`` items
     # 0 -> 1
     # name -> José
     # locations -> ['CapeCanaveral', 'Houston']
+
+``enumerate()``
+---------------
+.. code-block:: python
+
+    DATA = [
+        ('a', 0),
+        ('b', 1),
+        ('c', 2),
+    ]
+
+    for index, element in enumerate(DATA):
+        print(f'{index}: {element}')
+
+    # 0: ('a', 0)
+    # 1: ('b', 1)
+    # 2: ('c', 2)
+
 
 Iterating over ``dict`` items
 -----------------------------

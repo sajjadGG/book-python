@@ -1,6 +1,58 @@
-********************************
-Zmienna ilość argumentów funkcji
-********************************
+******************
+Advanced Functions
+******************
+
+Callable
+========
+.. code-block:: python
+
+    def hello():
+        print('My name José Jiménez')
+
+    hello          # <function hello at 0x0C55D420>
+    type(hello)    # <class 'function'>
+    hello()        # My name José Jiménez
+
+.. code-block:: python
+
+    'hello'        # 'hello'
+    type('hello')  # <class 'str'>
+    'hello'()      # TypeError: 'str' object is not callable
+
+Returning function (callable)
+-----------------------------
+.. code-block:: python
+
+    def hello():
+        print('My name José Jiménez')
+
+    def function():
+        return hello
+
+    my_name = function()  # <function __main__.my_func()>
+    my_name()             # 'My name José Jiménez'
+
+.. code-block:: python
+
+    import datetime
+    import time
+
+    now = datetime.datetime.now()
+
+    print(now)            # 1969-07-21 14:56:15
+    time.sleep(10)
+    print(now)            # 1969-07-21 14:56:15
+
+.. code-block:: python
+
+    import datetime
+    import time
+
+    now = datetime.datetime.now
+
+    print(now())          # 1969-07-21 14:56:15
+    time.sleep(10)
+    print(now())          # 1969-07-21 14:56:25
 
 
 Operator ``*`` i ``**``
@@ -10,7 +62,7 @@ Operator ``*`` i ``**``
 
 
 Przyjmowanie z funkcji zmiennej ilości argumentów
-=================================================
+-------------------------------------------------
 .. code-block:: python
 
     a, b = [1, 2]
@@ -67,7 +119,7 @@ Przyjmowanie z funkcji zmiennej ilości argumentów
     # SyntaxError: two starred expressions in assignment
 
 Definiowanie funkcji ze zmienną ilością parametrów
-==================================================
+--------------------------------------------------
 .. code-block:: python
 
     def wyswietl_argumenty(a, b, c=0, *pozycyjne, **nazwane):
@@ -99,8 +151,8 @@ Przez konwencję:
 
     wyswietl_argumenty(1, 2, 3, 4, 5, 6, d=5, e=6)
 
-Kiedy to się przydaje
----------------------
+Kiedy to się przydaje:
+
 .. code-block:: python
 
     def celsius_to_fahrenheit(*degrees):
@@ -114,7 +166,7 @@ Kiedy to się przydaje
 
 
 Przekazywanie do funkcji zmiennej ilości parametrów
-===================================================
+---------------------------------------------------
 Przykładowe zastosownaie operatorów ``*`` i ``**`` polega na wykorzystaniu ich przy wywołaniu funkcji. Wtedy, wykorzystując operator ``*``, kolejne elementy listy albo krotki będą przekazane jako kolejne argumenty funkcji, a wykorzystując operator ``**`` kolejne elementy zmiennej słownikowej będą przekazane jako nazwane argumenty. Oznacza to, że na przykład argument ``x`` funkcji, przyjmie wartość ``vector['x']``.
 
 .. code-block:: python

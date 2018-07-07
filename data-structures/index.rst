@@ -82,21 +82,17 @@ Simple collections
 
     my_list = [1, 2, None, False, 'José']
 
-    my_list[1]                        # 2
-    my_list[2:4]                      # [None, False]
-    my_list[::2]                      # [1, None, 'José']
-    my_list[-1]                       # 'José'
+    my_list[1]             # 2
+    my_list[2:4]           # [None, False]
+    my_list[::2]           # [1, None, 'José']
+    my_list[-1]            # 'José'
 
 .. code-block:: python
 
-    my_list = [1, 2] + [3, 4]
-    print(my_list)                    # [1, 2, 3, 4]
-
-    my_list = [1, 2]
-    my_list.extend([3, 4])            # [1, 2, 3, 4]
-
-    my_list = [1, 2]
-    my_list = my_list.append([3, 4])  # [1, 2, [3, 4]]
+    [1, 2] + [3, 4]        # [1, 2, 3, 4]
+    [1, 2].append(3)       # [1, 2, 3]
+    [1, 2].append([3, 4])  # [1, 2, [3, 4]]
+    [1, 2].extend([3, 4])  # [1, 2, 3, 4]
 
 .. code-block:: python
 
