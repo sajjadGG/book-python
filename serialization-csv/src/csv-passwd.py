@@ -1,9 +1,14 @@
 import csv
 
-FILENAME = r'../contrib/etc-passwd.txt'
+FILENAME = r'etc-passwd.txt'
+"""
+root:x:0:0:root:/root:/bin/bash
+peck:x:1000:1000:Max Peck:/home/peck:/bin/bash
+jimenez:x:1001:1001:Jose Jimenez:/home/jimenez:/bin/bash
+ivanovic:x:1002:1002:Ivan Ivanovic:/home/ivanovic:/bin/bash
+"""
 
-
-with open(FILENAME) as file:
+with open(FILENAME, encoding='utf-8') as file:
     fieldnames = ['username', 'password', 'uid', 'gid', 'full_name', 'home', 'shell']
     data = csv.DictReader(file, fieldnames=fieldnames, delimiter=':')
 

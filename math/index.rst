@@ -155,9 +155,9 @@ Assignments
 Euclidean distance 2D
 ---------------------
 #. Dane są dwa punkty :math:`A` i :math:`B` o podanych koordynatach ``tuple``
-#. Punkty :math:`A` i :math:`B` są dwuwymiarowe``(x, y)``
+#. Punkty :math:`A` i :math:`B` są dwuwymiarowe ``(x, y)``
 #. Oblicz odległość między nimi
-#. Wykorzystaj algorytm Euclidesa
+#. Wykorzystaj algorytm Euklidesa
 #. Funkcja musi przechodzić ``doctest``
 
 .. code-block:: python
@@ -198,7 +198,7 @@ Euclidean distance multi dimensions
 -----------------------------------
 #. Dane są dwa punkty :math:`A` i :math:`B` o podanych koordynatach ``tuple``
 #. Punkty :math:`A` i :math:`B` są na :math:`N`-wymiarowej przestrzeni ``(x, y, ...)``
-#. Punkty :math:`A` i :math:`B` muszą być równowymiarowe
+#. Punkty :math:`A` i :math:`B` muszą być równo-wymiarowe
 #. Funkcja musi przechodzić ``doctest``
 
 .. code-block:: python
@@ -312,7 +312,7 @@ Random numbers
 Triangle
 --------
 #. Napisz program, który obliczy pole trójkąta.
-#. Użytkownik poda wysokość i długość podstawy tego trójkąta. Uwzględnij, że wysokość i długość podstawy mogą być liczbami niecałkowitymi. Wykorzystaj doctest do przetestowania funckji.
+#. Użytkownik poda wysokość i długość podstawy tego trójkąta. Uwzględnij, że wysokość i długość podstawy mogą być liczbami niecałkowitymi. Wykorzystaj doctest do przetestowania funkcji.
 
 :Założenia:
     * Nazwa pliku: ``math_triangle.py``

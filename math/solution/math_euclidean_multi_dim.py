@@ -20,7 +20,6 @@ def euclidean_distance_n_dimensions(A, B):
         ...
     ValueError: Punkty muszą być w przestrzeni tylu-samo wymiarowej
     """
-
     if len(A) != len(B):
         raise ValueError('Punkty muszą być w przestrzeni tylu-samo wymiarowej')
 
@@ -29,7 +28,7 @@ def euclidean_distance_n_dimensions(A, B):
     pod_pierwiastkiem = 0
 
     while i < dimensions:
-        pod_pierwiastkiem += math.pow(B[i]-A[i], 2)
-        i = i + 1
+        pod_pierwiastkiem += (B[i]-A[i]) ** 2
+        i += 1
 
     return math.sqrt(pod_pierwiastkiem)

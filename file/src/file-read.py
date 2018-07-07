@@ -17,3 +17,7 @@ with open(FILENAME) as file:
 with open(FILENAME) as file:
     for line in file.readlines()[30:50]:
         print(line)
+
+
+with open(FILENAME, encoding='utf-8') as file:
+    content = file.read()
