@@ -27,6 +27,20 @@ W Pythonie, pętle wykonywane są na obiektach wieloelementowych, albo iteratora
         x += 1
 
 
+Keywords in loops
+=================
+* ``break`` - powoduje przerwanie pętli.
+* ``continue`` - powoduje przerwanie aktualnie wykonywanej iteracji.
+
+.. code-block:: python
+
+    while True:
+        number = input('Type number: ')
+
+        if not number:
+            break
+
+
 ``for``
 =======
 
@@ -75,11 +89,15 @@ Pętla ``for`` wykonuje się na zestawie elementów. Dosłownie można tę instr
     # 6
     # 8
 
-Iterating over ``dict`` items
------------------------------
+Iterating over nested ``list`` items
+------------------------------------
 .. code-block:: python
 
-    DATA = [('a', 0), ('b', 1), ('c', 2)]
+    DATA = [
+        ('a', 0),
+        ('b', 1),
+        ('c', 2),
+    ]
 
     for element in DATA:
         print(element)
@@ -90,13 +108,17 @@ Iterating over ``dict`` items
 
 .. code-block:: python
 
-    a, b = 1, 2
-    a, b = (1, 2)
-    key, value = (1, 2)
+    a, b = 'a', 0
+    a, b = ('a', 0)
+    key, value = ('a', 0)
 
 .. code-block:: python
 
-    DATA = [('a', 0), ('b', 1), ('c', 2)]
+    DATA = [
+        ('a', 0),
+        ('b', 1),
+        ('c', 2),
+    ]
 
     for key, value in DATA:
         print(f'{key} -> {value}')
@@ -120,67 +142,96 @@ Iterating over ``dict`` items
     # name -> José
     # locations -> ['CapeCanaveral', 'Houston']
 
+Iterating over ``dict`` items
+-----------------------------
 .. code-block:: python
 
-    DATA = {'x': 1, 'y': 2}
+    DATA = {
+        'first_name': 'Jose',
+        'last_name': 'Jimenez',
+        'age': 42,
+    }
 
     for element in DATA.values():
         print(element)
-        # 1
-        # 2
+
+    # 'Jose'
+    # 'Jimenez'
+    # 42
+
 
     for element in DATA.keys():
         print(element)
-        # 'x'
-        # 'y'
+
+    # 'first_name'
+    # 'last_name'
+    # 'age'
+
 
     # for domyślnie iteruje po kluczach w ``dict``
     for element in DATA:
         print(element)
-        # 'x'
-        # 'y'
+
+    # 'first_name'
+    # 'last_name'
+    # 'age'
+
 
     for key, value in DATA.items():
-        print(key, value)
-        # 'x', 1
-        # 'y', 2
+        print(f'{key} -> {value}')
 
+    # 'first_name' -> 'Jose'
+    # 'last_name' -> 'Jimenez'
+    # 'age' -> 42
+
+Accessing ``dict`` items with key in the loop
+---------------------------------------------
 .. code-block:: python
 
-    DATA = {'x': 1, 'y': 2}
+    DATA = {
+        'first_name': 'Jose',
+        'last_name': 'Jimenez',
+        'age': 42,
+    }
 
-    # accessing ``dict`` items with key
     for element in DATA:
         DATA.get(element))
         DATA[element]
-        # '1'
-        # '2'
+
+    # 'Jose'
+    # 'Jose'
+    # 'Jimenez'
+    # 'Jimenez'
+    # 42
+    # 42
 
 Iterating complex types
 -----------------------
 .. code-block:: python
 
-    DATA = ['Max', 3, 2.8, ['1.0', 'José']]
+    DATA = ['Max', ('José', 'Jimenez'), 3, 2.8]
 
     for x in DATA:
         print(f'Value is: {x}')
 
     # Value is: Max
+    # Value is: ('José', 'Jimenez')
     # Value is: 3
     # Value is: 2.8
-    # Value is: ['1.0', 'José']
 
 .. code-block:: python
 
-    DATA = ['Max', 3, 2.8, ['1.0', 'José']]
+    DATA = ['Max', ('José', 'Jimenez'), 3, 2.8]
 
-    for first_level_element in DATA:
-        for second_level_element in first_level_element:
-            print(f'Value is: {second_level_element}')
+    for x in DATA:
+        for y in x:
+            print(f'Value is: {j}')
 
     # Value is: M
     # Value is: a
     # Value is: x
+    # Value is: José
+    # Value is: Jimenez
     # TypeError: 'int' object is not iterable
 
 
@@ -188,13 +239,14 @@ Iterating complex types
 
     DATA = ['Max', 3, 2.8, ['1.0', 'José']]
 
-    for first_level_element in DATA:
+    for x in DATA:
 
-        if isinstance(first_level_element, (list, set, tuple)):
-            for second_level_element in first_level_element:
-                print(f'Value is: {second_level_element}')
+        if not isinstance(x, (list, set, tuple)):
+            print(f'Value is: {x}')
         else:
-            print(f'Value is: {first_level_element}')
+            for y in x:
+                print(f'Value is: {y}')
+
 
     # Value is: Max
     # Value is: 3
@@ -211,17 +263,17 @@ Simple usage
 ------------
 .. code-block:: python
 
-    cyfry = [x for x in range(0, 10)]
+    numbers = [x for x in range(0, 10)]
     # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 .. code-block:: python
 
-    cyfry = []
+    numbers = []
 
     for x in range(0, 10):
-        cyfry.append(x)
+        numbers.append(x)
 
-    print(cyfry)
+    print(numbers)
     # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 Conditional loop
@@ -230,18 +282,18 @@ Do takiego iteratora można także dodać instrukcję warunkową.
 
 .. code-block:: python
 
-    parzyste = [x for x in range(0, 10) if x % 2 == 0]
+    even_numbers = [x for x in range(0, 10) if x % 2 == 0]
     # [0, 2, 4, 6, 8]
 
 .. code-block:: python
 
-    cyfry = []
+    even_numbers = []
 
     for x in range(0, 10):
         if x % 2 == 0:
-            cyfry.append(x)
+            even_numbers.append(x)
 
-    print(cyfry)
+    print(even_numbers)
     # [0, 2, 4, 6, 8]
 
 Applying function to element
@@ -250,8 +302,8 @@ Najczęściej wykorzystuje się tą konstrukcję aby zaaplikować funkcję dla k
 
 .. code-block:: python
 
-    float_list = [float(x) for x in range(0, 10)]
-    even_list = [float(x) for x in range(0, 10) if x % 2 == 0]
+    [float(x) for x in range(0, 10)]
+    [float(x) for x in range(0, 10) if x % 2 == 0]
 
 .. code-block:: python
 
@@ -262,6 +314,7 @@ Najczęściej wykorzystuje się tą konstrukcję aby zaaplikować funkcję dla k
             return False
 
     parzyste = [float(x) for x in range(0, 10) if is_even(x)]
+    # [0.0, 2.0, 4.0, 6.0, 8.0]
 
 .. code-block:: python
 
@@ -326,20 +379,6 @@ Inline ``for`` not only for ``list``
 
     {v:k for k,v in my_dict.items()}
     # dict {1:'x', 2:'y'}
-
-
-Keywords in loops
-=================
-* ``break`` - powoduje przerwanie pętli.
-* ``continue`` - powoduje przerwanie aktualnie wykonywanej iteracji.
-
-.. code-block:: python
-
-    while True:
-        number = input('Type number: ')
-
-        if number:
-            break
 
 
 Assignments
