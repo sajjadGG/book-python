@@ -189,6 +189,7 @@ Iterating complex types
     DATA = ['Max', 3, 2.8, ['1.0', 'José']]
 
     for first_level_element in DATA:
+
         if isinstance(first_level_element, (list, set, tuple)):
             for second_level_element in first_level_element:
                 print(f'Value is: {second_level_element}')
@@ -197,7 +198,6 @@ Iterating complex types
 
     # Value is: Max
     # Value is: 3
-    # Value is: Peck
     # Value is: 2.8
     # Value is: 1.0
     # Value is: José
@@ -266,7 +266,7 @@ Najczęściej wykorzystuje się tą konstrukcję aby zaaplikować funkcję dla k
 .. code-block:: python
 
     def is_even(number):
-        if cyfra % 2 == 0:
+        if number % 2 == 0:
             return {'number': number, 'status': 'even'}
         else:
             return {'number': number, 'status': 'odd'}
@@ -287,11 +287,12 @@ Przykład praktyczny z życia
 .. code-block:: python
 
     line = 'jose:x:1000:1000:José Jiménez:/home/jose:/bin/bash'
-
     paths = []
+
     for record in line.split(':'):
         if record.startswith('/'):
             paths.append(record)
+
     print(paths)
     # ['/home/jose', '/bin/bash']
 
@@ -300,9 +301,6 @@ Przykład praktyczny z życia
     [record for record in line.split(':') if record.startswith('/')]
     # ['/home/jose', '/bin/bash']
 
-.. code-block:: python
-
-    # this is how you might find this in real world
     [x for x in line.split(':') if x.startswith('/')]
     # ['/home/jose', '/bin/bash']
 
