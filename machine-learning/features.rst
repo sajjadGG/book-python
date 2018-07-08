@@ -151,6 +151,35 @@ What Makes a Good Feature?
 * Easy to understand features.
 * Look for informative features.
 
+Feature Selection
+-----------------
+* http://scikit-learn.org/stable/modules/feature_selection.html
+* :math:`\mathrm{Var}[X] = p(1 - p)`
+
+.. code-block:: python
+
+    from sklearn.feature_selection import VarianceThreshold
+
+    features = [
+        [0, 0, 1],
+        [0, 1, 0],
+        [1, 0, 0],
+        [0, 1, 1],
+        [0, 1, 0],
+        [0, 1, 1]
+    ]
+
+    # Remove all features below 80% change variance in the samples
+    sel = VarianceThreshold(threshold=(.8 * (1 - .8)))
+
+    sel.fit_transform(X)
+    # array([[0, 1],
+    #        [1, 0],
+    #        [0, 0],
+    #        [1, 1],
+    #        [1, 0],
+    #        [1, 1]])
+
 
 Assignments
 ===========

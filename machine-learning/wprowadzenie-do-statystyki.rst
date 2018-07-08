@@ -2,6 +2,9 @@
 Wprowadzenie do statystyki
 **************************
 
+
+* https://www.statsoft.pl/textbook/stathome_stat.html
+
 Rozkłady
 ========
 * kształty przebiegów
