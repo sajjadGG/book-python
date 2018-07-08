@@ -12,6 +12,10 @@ BORDER_BOTTOM = 768
 
 class DragonMedium(Dragon):
 
+    def make_damage(self):
+        if self.status != STATUS_DEAD:
+            return random.randint(5, 20)
+
     def move(self, left=0, down=0, up=0, right=0):
         """
         >>> DragonMedium(name='Wawelski').move(right=10)

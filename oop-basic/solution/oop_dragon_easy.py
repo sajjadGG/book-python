@@ -46,10 +46,6 @@ class Dragon:
         if self.hit_points <= 0:
             self.make_dead()
 
-    def make_damage(self):
-        if self.status != STATUS_DEAD:
-            return random.randint(5, 20)
-
 
 if __name__ == '__main__':
     wawelski = Dragon(name='Wawelski', position_x=0, position_y=0)
