@@ -38,6 +38,17 @@ Using
 * Autocomplete
 * Cell type (Markdown, LaTeX, Code)
 
+Shortcut keys
+=============
+
+Indent
+------
+Tab
+Shift + Tab
+
+Comment Code
+------------
+Ctrl + /
 
 Cells
 =====

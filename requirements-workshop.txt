@@ -1,11 +1,20 @@
-django
-django-debug-toolbar
-pillow
 requests
 pycodestyle
 mypy
 line_profiler
 
+
+##########
+# Django #
+##########
+django
+django-debug-toolbar
+pillow
+
+
+####################
+# Machine Learning #
+####################
 matplotlib
 numpy
 scikit-learn

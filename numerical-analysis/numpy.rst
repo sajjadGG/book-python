@@ -47,33 +47,31 @@ Polynomial mathematics
 ======================
 .. code-block:: python
 
-    >>> np.poly([-1, 1, 1, 10])
-    array([ 1, -11, 9, 11, -10])
+    np.poly([-1, 1, 1, 10])
+    # array([ 1, -11, 9, 11, -10])
 
-    >>> np.roots([1, 4, -2, 3])
-    array([-4.57974010+0.j , 0.28987005+0.75566815j,
-     0.28987005-0.75566815j])
+    np.roots([1, 4, -2, 3])
+    # array([-4.57974010+0.j , 0.28987005+0.75566815j, 0.28987005-0.75566815j])
 
-    >>> np.polyint([1, 1, 1, 1])
-    # x**3 + x**2 + x + C
-    array([ 0.25 , 0.33333333, 0.5 , 1. , 0. ])
+    np.polyint([1, 1, 1, 1]) # x**3 + x**2 + x + C
+    # array([ 0.25 , 0.33333333, 0.5 , 1. , 0. ])
 
-    # derivatives
-    >>> np.polyder([1./4., 1./3., 1./2., 1., 0.])
-    array([ 1., 1., 1., 1.])
-    polyadd, polysub, polymul, and polydiv
 
-    >>> np.polyval([1, -2, 0, 2], 4)
-    34
+    np.polyder([1./4., 1./3., 1./2., 1., 0.])  # derivatives
+    # array([ 1., 1., 1., 1.])
+    # polyadd, polysub, polymul, and polydiv
+
+    np.polyval([1, -2, 0, 2], 4)
+    # 34
 
 .. code-block:: python
 
     # polyfit function can be used to fit a polynomial of specified order to a set of data using a least-squares approach
-    >>> x = [1, 2, 3, 4, 5, 6, 7, 8]
-    >>> y = [0, 2, 1, 3, 7, 10, 11, 19]
+    x = [1, 2, 3, 4, 5, 6, 7, 8]
+    y = [0, 2, 1, 3, 7, 10, 11, 19]
 
-    >>> np.polyfit(x, y, 2)
-    array([ 0.375 , -0.88690476, 1.05357143])
+    np.polyfit(x, y, 2)
+    # array([ 0.375 , -0.88690476, 1.05357143])
 
 
 Statistics
@@ -90,11 +88,11 @@ Statistics
 
     np.corrcoef(a)
     # array([[ 1. , 0.72870505],
-    #  [ 0.72870505, 1. ]])
+    #        [ 0.72870505, 1. ]])
 
     np.cov(a)
     # array([[ 0.91666667, 2.08333333],
-    #  [ 2.08333333, 8.91666667]])
+    #        [ 2.08333333, 8.91666667]])
 
 
 Random numbers
@@ -112,11 +110,11 @@ Random numbers
 
     np.random.rand(2,3)
     # array([[ 0.50431753, 0.48272463, 0.45811345],
-    #       [ 0.18209476, 0.48631022, 0.49590404]])
+    #        [ 0.18209476, 0.48631022, 0.49590404]])
 
     np.random.rand(6).reshape((2,3))
     # array([[ 0.72915152, 0.59423848, 0.25644881],
-    #       [ 0.75965311, 0.52151819, 0.60084796]])
+    #        [ 0.75965311, 0.52151819, 0.60084796]])
 
 .. code-block:: python
 
@@ -178,7 +176,7 @@ Create array from list
 
     np.array([[1,2], [3,4]])
     # array([[1, 2],
-    #   [3, 4]])
+    #        [3, 4]])
 
 .. code-block:: python
 
@@ -201,7 +199,6 @@ Create array from list
 
     a[0,0]  # 1.0
     a[0,1]  # 2.0
-
 
 .. code-block:: python
 
@@ -243,171 +240,157 @@ Create array from list
 
 .. code-block:: python
 
-    >>> a = np.array(range(10), float)
+    a = np.array(range(10), float)
+    # array([ 0., 1., 2., 3., 4., 5., 6., 7., 8., 9.])
 
-    >>> a
-    array([ 0., 1., 2., 3., 4., 5., 6., 7., 8., 9.])
+    a = a.reshape((5, 2))
+    # array([[ 0., 1.],
+    #        [ 2., 3.],
+    #        [ 4., 5.],
+    #        [ 6., 7.],
+    #        [ 8., 9.]])
 
-    >>> a = a.reshape((5, 2))
-    >>> a
-    array([[ 0., 1.],
-     [ 2., 3.],
-     [ 4., 5.],
-     [ 6., 7.],
-     [ 8., 9.]])
-
-    >>> a.shape
-    (5, 2)
+    a.shape
+    # (5, 2)
 
 .. code-block:: python
 
-    >>> a = np.array([1, 2, 3], float)
+    a = np.array([1, 2, 3], float)
 
-    >>> b = a
-    >>> c = a.copy()
+    b = a
+    c = a.copy()
 
-    >>> a[0] = 0
+    a[0] = 0
+    # array([0., 2., 3.])
 
-    >>> a
-    array([0., 2., 3.])
+    b
+    # array([0., 2., 3.])
 
-    >>> b
-    array([0., 2., 3.])
-
-    >>> c
-    array([1., 2., 3.])
+    c
+    # array([1., 2., 3.])
 
 .. code-block:: python
 
-    >>> a = np.array([1, 2, 3], float)
+    a = np.array([1, 2, 3], float)
 
-    >>> a.tolist()
-    [1.0, 2.0, 3.0]
+    a.tolist()
+    # [1.0, 2.0, 3.0]
 
-    >>> list(a)
-    [1.0, 2.0, 3.0]
-
-.. code-block:: python
-
-    >>> a = array([1, 2, 3], float)
-
-    >>> s = a.tostring()
-    >>> s
-    '\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x08@'
-
-    >>> np.fromstring(s)
-    array([ 1., 2., 3.])
+    list(a)
+    # [1.0, 2.0, 3.0]
 
 .. code-block:: python
 
-    >>> a = array([1, 2, 3], float)
+    a = array([1, 2, 3], float)
 
-    >>> a
-    array([ 1., 2., 3.])
+    s = a.tostring()
+    # '\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x08@'
 
-    >>> a.fill(0)
-    >>> a
-    array([ 0., 0., 0.])
-
-.. code-block:: python
-
-    >>> a = np.array(range(6), float).reshape((2, 3))
-
-    >>> a
-    array([[ 0., 1., 2.],
-     [ 3., 4., 5.]])
-
-    >>> a.transpose()
-    array([[ 0., 3.],
-     [ 1., 4.],
-     [ 2., 5.]])
+    np.fromstring(s)
+    # array([ 1., 2., 3.])
 
 .. code-block:: python
 
-    >>> a = np.array([[1, 2, 3], [4, 5, 6]], float)
+    a = array([1, 2, 3], float)
+    # array([ 1., 2., 3.])
 
-    >>> a
-    array([[ 1., 2., 3.],
-     [ 4., 5., 6.]])
-
-    >>> a.flatten()
-    array([ 1., 2., 3., 4., 5., 6.])
+    a.fill(0)
+    # array([ 0., 0., 0.])
 
 .. code-block:: python
 
-    >>> a = np.array([1,2], float)
-    >>> b = np.array([3,4,5,6], float)
-    >>> c = np.array([7,8,9], float)
+    a = np.array(range(6), float).reshape((2, 3))
+    # array([[ 0., 1., 2.],
+    #        [ 3., 4., 5.]])
 
-    >>> np.concatenate((a, b, c))
-    array([1., 2., 3., 4., 5., 6., 7., 8., 9.])
-
-    >>> a = np.array([[1, 2], [3, 4]], float)
-
-    >>> b = np.array([[5, 6], [7,8]], float)
-
-    >>> np.concatenate((a,b))
-    array([[ 1., 2.],
-     [ 3., 4.],
-     [ 5., 6.],
-     [ 7., 8.]])
-
-    >>> np.concatenate((a,b), axis=0)
-    array([[ 1., 2.],
-     [ 3., 4.],
-     [ 5., 6.],
-     [ 7., 8.]])
-
-    >>> np.concatenate((a,b), axis=1)
-    array([[ 1., 2., 5., 6.],
-     [ 3., 4., 7., 8.]])
+    a.transpose()
+    # array([[ 0., 3.],
+    #        [ 1., 4.],
+    #        [ 2., 5.]])
 
 .. code-block:: python
 
-    >>> a = np.array([1, 2, 3], float)
+    a = np.array([[1, 2, 3], [4, 5, 6]], float)
+    # array([[ 1., 2., 3.],
+    #        [ 4., 5., 6.]])
 
-    >>> a
-    array([1., 2., 3.])
-
-    >>> a[:,np.newaxis]
-    array([[ 1.],
-     [ 2.],
-     [ 3.]])
-
-    >>> a[:,np.newaxis].shape
-    (3,1)
-
-    >>> b[np.newaxis,:]
-    array([[ 1., 2., 3.]])
-
-    >>> b[np.newaxis,:].shape
-    (1,3)
+    a.flatten()
+    # array([ 1., 2., 3., 4., 5., 6.])
 
 .. code-block:: python
 
-    >>> n1 = np.array([1,2,3])
-    >>> n2 = np.array([[1,2],[3,4]])
+    a = np.array([1,2], float)
+    b = np.array([3,4,5,6], float)
+    c = np.array([7,8,9], float)
 
-    >>> f'Wymiar: n1: {n1.ndim}, n2: {n2.ndim}'
-    Wymiar: n1: 1, n2: 2
+    np.concatenate((a, b, c))
+    # array([1., 2., 3., 4., 5., 6., 7., 8., 9.])
 
-    >>> f'Kształt: n1: {n1.shape}, n2: {n2.shape}'
-    Kształt: n1: (3,), n2: (2, 2)
+.. code-block:: python
 
-    >>> f'Rozmiar: n1: {n1.size}, n2: {n2.size}'
-    Rozmiar: n1: 3, n2: 4
+    a = np.array([[1, 2], [3, 4]], float)
+    b = np.array([[5, 6], [7,8]], float)
 
-    >>> f'Typ: n1: {n1.dtype}, n2: {n2.dtype}'
-    Typ: n1: int32, n2: int32
+    np.concatenate((a,b))
+    # array([[ 1., 2.],
+    #        [ 3., 4.],
+    #        [ 5., 6.],
+    #        [ 7., 8.]])
 
-    >>> f'Rozmiar elementu (w bajtach): n1: {n1.itemsize}, n2: {n2.itemsize}'
-    Rozmiar elementu (w bajtach): n1: 4, n2: 4
+    np.concatenate((a,b), axis=0)
+    # array([[ 1., 2.],
+    #        [ 3., 4.],
+    #        [ 5., 6.],
+    #        [ 7., 8.]])
 
-    >>> f'Wskaźnik do danych: n1: {n1.data}, n2: {n2.data}'
-    Wskaźnik do danych: n1: <memory at 0x000001B93EC75348>, n2: <memory at 0x000001B93EC5BB40>
+    np.concatenate((a,b), axis=1)
+    # array([[ 1., 2., 5., 6.],
+    #        [ 3., 4., 7., 8.]])
+
+.. code-block:: python
+
+    a = np.array([1, 2, 3], float)
+    # array([1., 2., 3.])
+
+    a[:,np.newaxis]
+    # array([[ 1.],
+    #        [ 2.],
+    #        [ 3.]])
+
+    a[:,np.newaxis].shape
+    # (3,1)
+
+    b[np.newaxis,:]
+    # array([[ 1., 2., 3.]])
+
+    b[np.newaxis,:].shape
+    # (1,3)
+
+.. code-block:: python
+
+    n1 = np.array([1,2,3])
+    n2 = np.array([[1,2],[3,4]])
+
+    f'Wymiar: n1: {n1.ndim}, n2: {n2.ndim}'
+    # Wymiar: n1: 1, n2: 2
+
+    f'Kształt: n1: {n1.shape}, n2: {n2.shape}'
+    # Kształt: n1: (3,), n2: (2, 2)
+
+    f'Rozmiar: n1: {n1.size}, n2: {n2.size}'
+    # Rozmiar: n1: 3, n2: 4
+
+    f'Typ: n1: {n1.dtype}, n2: {n2.dtype}'
+    # Typ: n1: int32, n2: int32
+
+    f'Rozmiar elementu (w bajtach): n1: {n1.itemsize}, n2: {n2.itemsize}'
+    # Rozmiar elementu (w bajtach): n1: 4, n2: 4
+
+    f'Wskaźnik do danych: n1: {n1.data}, n2: {n2.data}'
+    # Wskaźnik do danych: n1: <memory at 0x000001B93EC75348>, n2: <memory at 0x000001B93EC5BB40>
 
 
-W przeciwieństwie do kolekcji, tablice mogą mieć tylko jeden typ elementu, choć moze być złożony
+W przeciwieństwie do kolekcji, tablice mogą mieć tylko jeden typ elementu, choć może być złożony
 https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html
 
 .. code-block:: python
@@ -418,52 +401,54 @@ https://docs.scipy.org/doc/numpy/reference/arrays.dtypes.html
 
     # Można też wymusić typ przy tworzeniu tablicy
     a = np.array([1], dtype=str)
-    print('Tablica: {}, typ: {}'.format(a, a.dtype))
 
-    Tablica: [1], typ: int32
-    Tablica: [1.], typ: float64
-    Tablica: [0.+1.j], typ: complex128
-    Tablica: ['1'], typ: <U1
+    f'Tablica: {a}, typ: {a.dtype}'
+    # Tablica: [1], typ: int32
+    # Tablica: [1.], typ: float64
+    # Tablica: [0.+1.j], typ: complex128
+    # Tablica: ['1'], typ: <U1
 
 .. code-block:: python
 
-    >>> np.arange(1,10)
-    [1 2 3 4 5 6 7 8 9]
+    np.arange(1,10)
+    # [1 2 3 4 5 6 7 8 9]
 
-    >>> np.zeros((2,3))
-    [[0. 0. 0.]
-     [0. 0. 0.]]
+    np.zeros((2,3))
+    # [[0. 0. 0.]
+    #  [0. 0. 0.]]
 
-    >>> np.ones((3,2))
-    [[1. 1.]
-     [1. 1.]
-     [1. 1.]]
+    np.ones((3,2))
+    # [[1. 1.]
+    #  [1. 1.]
+    #  [1. 1.]]
 
-    >>> np.empty((2,7))  # Bez inicjalizacji
-    [[1.01855798e-312 1.18831764e-312 1.01855798e-312 9.54898106e-313
-      1.06099790e-312 1.03977794e-312 1.23075756e-312]
-     [1.20953760e-312 1.06099790e-312 9.76118064e-313 1.01855798e-312
-      1.01855798e-312 1.16709769e-312 4.44659081e-322]]
+    np.empty((2,7))  # Bez inicjalizacji
+    # [[1.01855798e-312 1.18831764e-312 1.01855798e-312 9.54898106e-313
+    #   1.06099790e-312 1.03977794e-312 1.23075756e-312]
+    # [1.20953760e-312 1.06099790e-312 9.76118064e-313 1.01855798e-312
+    #  1.01855798e-312 1.16709769e-312 4.44659081e-322]]
 
-    >>> np.random.rand(2,2)
-    [[0.6468727  0.76909227]
-     [0.89730518 0.13993221]]
+    np.random.rand(2,2)
+    # [[0.6468727  0.76909227]
+    #  [0.89730518 0.13993221]]
 
-     >>> a = np.array([[1, 2, 3], [4, 5, 6]], float)
-    >>> np.zeros_like(a)
-    array([[ 0., 0., 0.],
-     [ 0., 0., 0.]])
+.. code-block:: python
 
-    >>> np.ones_like(a)
-    array([[ 1., 1., 1.],
-     [ 1., 1., 1.]])
+    a = np.array([[1, 2, 3], [4, 5, 6]], float)
 
-    >>> np.identity(4, dtype=float)
-    array([
-         [ 1., 0., 0., 0.],
-         [ 0., 1., 0., 0.],
-         [ 0., 0., 1., 0.],
-         [ 0., 0., 0., 1.]])
+    np.zeros_like(a)
+    # array([[ 0., 0., 0.],
+    #        [ 0., 0., 0.]])
+
+    np.ones_like(a)
+    # array([[ 1., 1., 1.],
+    #        [ 1., 1., 1.]])
+
+    np.identity(4, dtype=float)
+    # array([[ 1., 0., 0., 0.],
+    #        [ 0., 1., 0., 0.],
+    #        [ 0., 0., 1., 0.],
+    #        [ 0., 0., 0., 1.]])
 
 Array slicing
 -------------
