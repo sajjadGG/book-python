@@ -494,33 +494,34 @@ Array math operations
 ---------------------
 .. code-block:: python
 
-    >>> a = np.array([1,2,3], float)
-    >>> b = np.array([5,2,6], float)
+    a = np.array([1,2,3], float)
+    b = np.array([5,2,6], float)
 
-    >>> a + b
-    array([6., 4., 9.])
+    a + b
+    # array([6., 4., 9.])
 
-    >>> a - b
-    array([-4., 0., -3.])
+    a - b
+    # array([-4., 0., -3.])
 
-    >>> a * b
-    array([5., 4., 18.])
+    a * b
+    # array([5., 4., 18.])
 
-    >>> b / a
-    array([5., 1., 2.])
+    b / a
+    # array([5., 1., 2.])
 
-    >>> a % b
-    array([1., 0., 3.])
+    a % b
+    # array([1., 0., 3.])
 
-    >>> b**a
-    array([5., 4., 216.])
+    b**a
+    # array([5., 4., 216.])
 
+.. code-block:: python
 
-    >>> a = np.array([[1,2], [3,4]], float)
-    >>> b = np.array([[2,0], [1,3]], float)
+    a = np.array([[1,2], [3,4]], float)
+    b = np.array([[2,0], [1,3]], float)
 
-    >>> a * b
-    array([[2., 0.], [3., 12.]])
+    a * b
+    # array([[2., 0.], [3., 12.]])
 
 .. warning:: For two-dimensional arrays, multiplication ``*`` remains elementwise and does not correspond to matrix multiplication.
 
@@ -545,13 +546,11 @@ Array Multiplication
 .. code-block:: python
 
     a = np.array([[1, 2], [3, 4], [5, 6]], float)
-    b = np.array([-1, 3], float)
-    a
     # array([[ 1., 2.],
     #  [ 3., 4.],
     #  [ 5., 6.]])
 
-    b
+    b = np.array([-1, 3], float)
     # array([-1., 3.])
 
     a + b
