@@ -21,6 +21,12 @@ Besides its obvious scientific uses, NumPy can also be used as an efficient mult
 
 * http://www.numpy.org/
 
+Import
+======
+.. code-block:: python
+
+    import numpy as np
+
 Functions
 =========
 * abs
@@ -1142,7 +1148,7 @@ Numpy ma również typ macierzy matrix. Jest on bardzo podobny do tablicy ale po
 
     d * m
     # [[ 3  6]
-    #   [12 16]]
+    #  [12 16]]
 
 Niemniej, tablice można używać podobnie, ale do mnożenia trzeba wykorzystywać funkcje dot:
 
@@ -1249,7 +1255,7 @@ Matrix multiplication
 
 Sum of inner matrix
 -------------------
-#. Wygeneruj macierz (6x6) randomowych intów
+#. Wygeneruj macierz (16x16) randomowych intów
 #. Przekonwertuj macierz na typ float
 #. Transponuj ją
 #. Policz sumę środkowych (4x4) elementów macierzy

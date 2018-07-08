@@ -8,5 +8,6 @@ print(A)
 inner = A[6:10, 6:10]
 print(inner)
 
-total = sum(inner.flatten())
+# total = sum(inner.flatten())
+total = inner.sum()
 print(total)

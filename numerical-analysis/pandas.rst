@@ -30,7 +30,7 @@ Podstawowymi strukturami danych w Pandas jest Series (seria) i DataFrame (obiekt
 .. code-block:: python
 
     import pandas as pd
-    import numpy as np # Nie wymagane, użyjemy tylko elementów
+    import numpy as np
 
 Series
 ======
@@ -38,126 +38,117 @@ Series jest to jednowymiarowa struktura danych podobna do ``ndarray``. Serię tw
 
 .. code-block:: python
 
-    >>> my_list = [1,3,5,np.nan,6,8]
-    >>> pd.Series(my_list)
+    my_list = [1,3,5,np.nan,6,8]
 
-    0    1.0
-    1    3.0
-    2    5.0
-    3    NaN
-    4    6.0
-    5    8.0
-    dtype: float64
+    pd.Series(my_list)
+    # 0    1.0
+    # 1    3.0
+    # 2    5.0
+    # 3    NaN
+    # 4    6.0
+    # 5    8.0
+    # dtype: float64
 
 Series posiada indeks, który będzie stworzony automatycznie jeżeli nie został przekazany lub można go stworzyć:
 
 .. code-block:: python
 
     daty = pd.date_range('20170101', periods=6)
-
-    DatetimeIndex(['2017-01-01', '2017-01-02', '2017-01-03', '2017-01-04',
-                   '2017-01-05', '2017-01-06'],
-                  dtype='datetime64[ns]', freq='D')
+    # DatetimeIndex(['2017-01-01', '2017-01-02', '2017-01-03', '2017-01-04', '2017-01-05', '2017-01-06'],
+    #               dtype='datetime64[ns]', freq='D')
 
     s = pd.Series(l, index=daty)
-    2017-01-01    1.0
-    2017-01-02    3.0
-    2017-01-03    5.0
-    2017-01-04    NaN
-    2017-01-05    6.0
-    2017-01-06    8.0
-    Freq: D, dtype: float64
+    # 2017-01-01    1.0
+    # 2017-01-02    3.0
+    # 2017-01-03    5.0
+    # 2017-01-04    NaN
+    # 2017-01-05    6.0
+    # 2017-01-06    8.0
+    # Freq: D, dtype: float64
 
 Niemniej, może to być każda seria która jest przynajmniej tak długa jak dane:
 
 .. code-block:: python
 
     s = pd.Series(np.random.randn(5), index=list('abcde'))
-
-    a    1.016521
-    b   -0.441865
-    c    0.519119
-    d    0.948774
-    e    0.207670
-    dtype: float64
+    # a    1.016521
+    # b   -0.441865
+    # c    0.519119
+    # d    0.948774
+    # e    0.207670
+    # dtype: float64
 
 Pobierać dane z Series możemy jak w Numpy:
 
 .. code-block:: python
 
-    print('s[1] = \n{}'.format(s[1]))
-    print('s[2:] = \n{}'.format(s[2:]))
-    print('s[1:-2] = \n{}'.format(s[1:-2]))
+    s[1]
+    # -0.4418648443118965
 
-    s[1] =
-    -0.4418648443118965
-    s[2:] =
-    c    0.519119
-    d    0.948774
-    e    0.207670
-    dtype: float64
-    s[1:-2] =
-    b   -0.441865
-    c    0.519119
-    dtype: float64
+    s[2:]
+    # c    0.519119
+    # d    0.948774
+    # e    0.207670
+    # dtype: float64
+
+    s[1:-2]
+    # b   -0.441865
+    # c    0.519119
+    # dtype: float64
 
 Możemy też robić to jak w słowniku (lub lepiej), jeżeli indeks na to pozwala:
 
 .. code-block:: python
 
-    print('s["b"] = \n{}'.format(s["b"]))
-    print('s["c":] = \n{}'.format(s["c":]))
-    print('s["b":"c"] = \n{}'.format(s["b":"c"]))
+    s["b"]
+    # -0.4418648443118965
 
-    s["b"] =
-    -0.4418648443118965
-    s["c":] =
-    c    0.519119
-    d    0.948774
-    e    0.207670
-    dtype: float64
-    s["b":"c"] =
-    b   -0.441865
-    c    0.519119
-    dtype: float64
+    s["c":]
+    # c    0.519119
+    # d    0.948774
+    # e    0.207670
+    # dtype: float64
+
+    s["b":"c"]
+    # b   -0.441865
+    # c    0.519119
+    # dtype: float64
 
 Można też wykonywać operacje na serii:
 
 .. code-block:: python
 
-    print('s*5 = \n{}'.format(s*5))
-    print('s**3 = \n{}'.format(s**3))
-    print('s*s = \n{}'.format(s*s))
-    print('s+s = \n{}'.format(s+s))
+    s * 5
+    # a    5.082606
+    # b   -2.209324
+    # c    2.595593
+    # d    4.743869
+    # e    1.038348
+    # dtype: float64
 
-    s*5 =
-    a    5.082606
-    b   -2.209324
-    c    2.595593
-    d    4.743869
-    e    1.038348
-    dtype: float64
-    s**3 =
-    a    1.050387
-    b   -0.086272
-    c    0.139894
-    d    0.854059
-    e    0.008956
-    dtype: float64
-    s*s =
-    a    1.033315
-    b    0.195245
-    c    0.269484
-    d    0.900172
-    e    0.043127
-    dtype: float64
-    s+s =
-    a    2.033042
-    b   -0.883730
-    c    1.038237
-    d    1.897547
-    e    0.415339
-    dtype: float64
+    s ** 3
+    # a    1.050387
+    # b   -0.086272
+    # c    0.139894
+    # d    0.854059
+    # e    0.008956
+    # dtype: float64
+
+    s * s
+    # a    1.033315
+    # b    0.195245
+    # c    0.269484
+    # d    0.900172
+    # e    0.043127
+    # dtype: float64
+
+    s + s
+    # a    2.033042
+    # b   -0.883730
+    # c    1.038237
+    # d    1.897547
+    # e    0.415339
+    # dtype: float64
 
 
 DataFrame
@@ -183,10 +174,12 @@ DataFrame jest obiektem dwuwymiarowym, który w obsłudze przypomina tabelę. Ka
 
 .. code-block:: python
 
-    number_of_rows = 10
-    number_of_columns = 16
+    rows = 10
+    cols = 16
 
-    df = pd.DataFrame(index=range(number_of_rows), columns=range(number_of_columns))
+    df = pd.DataFrame(
+        index=range(rows),
+        columns=range(cols))
 
 .. code-block:: python
 
@@ -208,16 +201,21 @@ DataFrame jest obiektem dwuwymiarowym, który w obsłudze przypomina tabelę. Ka
 
 .. code-block:: python
 
-    >>> df2.E
-    # można użyć jednego lub drugiego
-    >>> df2['E']
+    df2.E
+    # 0     test
+    # 1    train
+    # 2     test
+    # 3    train
+    # Name: E, dtype: category
+    # Categories (2, object): [test, train]
 
-    0     test
-    1    train
-    2     test
-    3    train
-    Name: E, dtype: category
-    Categories (2, object): [test, train]
+    df2['E']
+    # 0     test
+    # 1    train
+    # 2     test
+    # 3    train
+    # Name: E, dtype: category
+    # Categories (2, object): [test, train]
 
 .. code-block:: python
 
@@ -236,60 +234,56 @@ Pobierać dane można jak w serii i innych kolekcjach Pythonowych:
 
 .. code-block:: python
 
-    print("df['A'] = \n{}".format(df['A'])) # Kolumna
-    print("df[1:3] = \n{}".format(df[1:3]))
-
     df['A'] =
-    2017-01-01    0.131926
-    2017-01-02    0.084471
-    2017-01-03   -1.308835
-    2017-01-04   -0.974425
-    2017-01-05    0.589973
-    2017-01-06    1.361922
-    Freq: D, Name: A, dtype: float64
-    df[1:3] =
-                       A         B         C         D
-    2017-01-02  0.084471 -0.932586  0.160637 -0.275183
-    2017-01-03 -1.308835 -0.285436 -0.757591 -0.042493
+    # 2017-01-01    0.131926
+    # 2017-01-02    0.084471
+    # 2017-01-03   -1.308835
+    # 2017-01-04   -0.974425
+    # 2017-01-05    0.589973
+    # 2017-01-06    1.361922
+    # Freq: D, Name: A, dtype: float64
+
+    df[1:3]
+    #                    A         B         C         D
+    # 2017-01-02  0.084471 -0.932586  0.160637 -0.275183
+    # 2017-01-03 -1.308835 -0.285436 -0.757591 -0.042493
 
 Niemniej zalecane jest używanie zoptymalizowanych funkcji Pandas:
 
 .. code-block:: python
 
-    print("df.loc[:,'A']) = \n{}".format(df.loc[:,'A']))
-    print("df.loc[daty[0],'A'] = \n{}".format(df.loc[daty[0],'A']))
-    print("df.at[daty[0],'A'] = \n{}".format(df.at[daty[0],'A'])) # Pobiera skalar szybciej
-    print("df.iloc[:,0]] = \n{}".format(df.iloc[:,0]))
-    print("df.iloc[0,0] = \n{}".format(df.iloc[0,0]))
-    print("df.iat[0,0] = \n{}".format(df.iat[0,0])) # Pobiera skalar szybciej
-    print("df.ix[0,0] = \n{}".format(df.iat[0,0]))
+    df.loc[:,'A'])
+    # 2017-01-01    0.131926
+    # 2017-01-02    0.084471
+    # 2017-01-03   -1.308835
+    # 2017-01-04   -0.974425
+    # 2017-01-05    0.589973
+    # 2017-01-06    1.361922
+    # Freq: D, Name: A, dtype: float64
 
-    df.loc[:,'A']) =
-    2017-01-01    0.131926
-    2017-01-02    0.084471
-    2017-01-03   -1.308835
-    2017-01-04   -0.974425
-    2017-01-05    0.589973
-    2017-01-06    1.361922
-    Freq: D, Name: A, dtype: float64
-    df.loc[daty[0],'A'] =
-    0.13192554022073613
-    df.at[daty[0],'A'] =
-    0.13192554022073613
-    df.iloc[:,0]] =
-    2017-01-01    0.131926
-    2017-01-02    0.084471
-    2017-01-03   -1.308835
-    2017-01-04   -0.974425
-    2017-01-05    0.589973
-    2017-01-06    1.361922
-    Freq: D, Name: A, dtype: float64
-    df.iloc[0,0] =
-    0.13192554022073613
-    df.iat[0,0] =
-    0.13192554022073613
-    df.ix[0,0] =
-    0.13192554022073613
+    df.loc[daty[0],'A']
+    # 0.13192554022073613
+
+    df.at[daty[0],'A']
+    # 0.13192554022073613
+
+    df.iloc[:,0]]  # integer locate (bez where i innych bajerów)
+    # 2017-01-01    0.131926
+    # 2017-01-02    0.084471
+    # 2017-01-03   -1.308835
+    # 2017-01-04   -0.974425
+    # 2017-01-05    0.589973
+    # 2017-01-06    1.361922
+    # Freq: D, Name: A, dtype: float64
+
+    df.iloc[0,0]
+    # 0.13192554022073613
+
+    df.iat[0,0]
+    # 0.13192554022073613
+
+    df.ix[0,0]
+    # 0.13192554022073613
 
 .. code-block:: python
 
@@ -319,32 +313,35 @@ Jest też dostęp do poszczególnych elementów takich jak:
 
 .. code-block:: python
 
-    print('Indeks:\n{}'.format(df.index))
-    print('Kolumny:\n{}'.format(df.columns))
-    print('Początek:\n{}'.format(df.head(2)))
-    print('Koniec:\n{}'.format(df.tail(3)))
+    print('Indeks:\n{}'.format())
+    print('Kolumny:\n{}'.format())
+    print('Początek:\n{}'.format())
+    print('Koniec:\n{}'.format())
 
-    Indeks:
-    DatetimeIndex(['2017-01-01', '2017-01-02', '2017-01-03', '2017-01-04',
-                   '2017-01-05', '2017-01-06'],
-                  dtype='datetime64[ns]', freq='D')
-    Kolumny:
-    Index(['A', 'B', 'C', 'D'], dtype='object')
-    Początek:
-                       A         B         C         D
-    2017-01-01  0.131926 -1.825204 -1.909562  1.274718
-    2017-01-02  0.084471 -0.932586  0.160637 -0.275183
-    Koniec:
-                       A         B         C         D
-    2017-01-04 -0.974425  1.327082 -0.435516  1.328745
-    2017-01-05  0.589973  0.748417 -1.680741  0.510512
-    2017-01-06  1.361922 -0.827940  0.400024  0.047176
+    df.index
+    # DatetimeIndex(['2017-01-01', '2017-01-02', '2017-01-03', '2017-01-04', '2017-01-05', '2017-01-06'],
+    #               dtype='datetime64[ns]', freq='D')
+
+    df.columns
+    # Index(['A', 'B', 'C', 'D'], dtype='object')
+
+    df.head(2)
+    #                    A         B         C         D
+    # 2017-01-01  0.131926 -1.825204 -1.909562  1.274718
+    # 2017-01-02  0.084471 -0.932586  0.160637 -0.275183
+
+    df.tail(3)
+    #                    A         B         C         D
+    # 2017-01-04 -0.974425  1.327082 -0.435516  1.328745
+    # 2017-01-05  0.589973  0.748417 -1.680741  0.510512
+    # 2017-01-06  1.361922 -0.827940  0.400024  0.047176
 
 Dane można też sortować po indeksie:
 
 .. code-block:: python
 
     df.sort_index(ascending=False)
+    df.sort_index(ascending=False, inplace=True)
 
 =========== =========== =========== =========== =========
             A           B           C           D
@@ -364,7 +361,7 @@ Po kolumnach:
     df.sort_index(axis=1, ascending=False)
 
 =========== =========== =========== =========== =========
-            D           C           B         A
+            D           C           B           A
 =========== =========== =========== =========== =========
 2017-01-01  1.274718    -1.909562   -1.825204   0.131926
 2017-01-02  -0.275183   0.160637    -0.932586   0.084471
@@ -378,8 +375,12 @@ Lub po wartościach:
 
 .. code-block:: python
 
-    >>> df.sort_values('B')
-    >>> df.sort_values(['B', 'C'])  # można sortować po wielu kolumnach (jeżeli wartości w pierwszej będą równe)
+    df.sort_values('B')
+    df.sort_values('B', inplace=True)
+
+    # można sortować po wielu kolumnach (jeżeli wartości w pierwszej będą równe)
+    df.sort_values(['B', 'C'])
+    df.sort_values(['B', 'C'])
 
 =========== =========== =========== =========== =========
             A           B           C           D
@@ -426,10 +427,8 @@ Removing DataFrame None values
 ------------------------------
 .. code-block:: python
 
-    # Drop NaN
-    df3.dropna(how='any')
     df3.dropna(how='all')
-    df3.fillna(-100)
+    df3.fillna(0.0)
 
 Descriptive Statistics
 ----------------------
@@ -458,16 +457,24 @@ Dodatkowo, można używać funkcji znanych z baz danych jak grupowanie czy złą
     df2.groupby('E').size()
     df2.groupby('E').mean()
 
+.. code-block:: python
+
     df2.join(df3, how='left', rsuffix='_3')  # gdyby była kolizja nazw kolumn, to dodaj suffix '_3'
     df2.merge(df3)
     df2.merge(df3, how='outer')
+
+.. code-block:: python
 
     # Odpowiednik:
     # df2.join(df3, how='left', rsuffix='_3')
     df2.merge(df3, right_index=True, left_index=True, how='left', suffixes=('', '_3'))
 
+.. code-block:: python
+
     df2.append(df3)  # jak robi appenda, to nie zmienia indeksów (uwaga na indeksy powtórzone)
     df2.append(df3, ignore_index=True)  # nowy dataframe będzie miał kolejne indeksy
+
+.. code-block:: python
 
     # Przydatne przy łączeniu dataframe wczytanych z wielu plików
     pd.concat([df2, df3])
@@ -521,9 +528,13 @@ Display Output
     pd.set_option('display.max_columns',500)
     pd.set_option('display.width',1000)
 
+.. code-block:: python
+
     # Unlimited for whole script
     pd.set_option('display.max_columns', None)
     pd.set_option('display.max_rows', None)
+
+.. code-block:: python
 
     # Use config only with context
     with pd.option_context('display.max_rows', None, 'display.max_columns', 3):
@@ -562,7 +573,7 @@ Practical Example
     columns = columns + ['blacklist']
 
     # Change NaN to None
-    df = data_frame.where((pandas.notnull(data_frame)), None)
+    data_frame.fillna(None, inplace=True)
 
     return df[columns].to_dict('records')
 
@@ -587,7 +598,7 @@ Iris
     * Species
 
 #. Przefiltruj ``inplace`` kolumnę 'Petal length' i pozostaw wartości powyżej 2.0
-#. Dodaj kolumnę ``datetime`` i wpisz do niej dzisiejszą datę
+#. Dodaj kolumnę ``datetime`` i wpisz do niej dzisiejszą datę (UTC)
 #. Dodaj kolumnę ``big_enough`` i dla wartości 'Petal width' powyżej 1.0 ustawi ``True``, a dla mniejszych ``False``
 #. Zwróć dane tylko dla kolumny 'Sepal length', 'Sepal width' oraz 'Species'
 
