@@ -237,6 +237,12 @@ PASCAL is developing the expertise and scientific results that will help create 
 * Information Retrieval
 * Textual Information Access
 
+Kaggle
+------
+* https://www.kaggle.com/
+* dane raka płuc
+* konkursy ML
+
 
 Public datasets in svmlight / libsvm format
 -------------------------------------------
