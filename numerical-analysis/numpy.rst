@@ -105,6 +105,8 @@ Random numbers
 
     np.random.seed(293423)
 
+.. code-block:: python
+
     np.random.rand(5)
     # array([ 0.40783762, 0.7550402 , 0.00919317, 0.01713451, 0.95299583])
 
@@ -116,32 +118,39 @@ Random numbers
     # array([[ 0.72915152, 0.59423848, 0.25644881],
     #       [ 0.75965311, 0.52151819, 0.60084796]])
 
+.. code-block:: python
+
     np.random.random()
     # 0.70110427435769551
+
+.. code-block:: python
 
     np.random.randint(5, 10)
     # 9
 
+.. code-block:: python
+
     np.random.poisson(6.0)  # Poisson distribution with lambda = 6.0
     # 5
+
+.. code-block:: python
 
     np.random.normal(1.5, 4.0)  # continuous normal (Gaussian) distribution with mean micro=1.5 and standard deviation sigma=4.0
     # 0.83636555041094318
 
-    >>> np.random.normal()  # micro=0.0, sigma=1.0
-    0.27548716940682932
+    np.random.normal()  # micro=0.0, sigma=1.0
+    # 0.27548716940682932
 
-    >>> np.random.normal(size=5)
-    array([-1.67215088, 0.65813053, -0.70150614, 0.91452499, 0.71440557])
+    np.random.normal(size=5)
+    # array([-1.67215088, 0.65813053, -0.70150614, 0.91452499, 0.71440557])
 
-    >>> l = range(10)
-    >>> l
-    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+.. code-block:: python
 
-    >>> np.random.shuffle(l)
-    >>> l
-    [4, 9, 5, 0, 2, 7, 6, 8, 1, 3]
+    l = range(10)
+    # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+    np.random.shuffle(l)
+    # [4, 9, 5, 0, 2, 7, 6, 8, 1, 3]
 
 Data Structures
 ===============
@@ -154,35 +163,42 @@ Data Structures
 
 Arrays
 ======
+
+Create array from list
+----------------------
 .. code-block:: python
 
     import numpy as np
 
-    # Create array from list
-    np.array([1,2,3])  # [1, 2, 3]
-    np.array([1, 4, 5, 8], float)  # array([ 1., 4., 5., 8.])
+    np.array([1, 2, 3])
+    # [1, 2, 3]
 
-    np.array([[1,2],[3,4]])
+    np.array([1, 4, 5, 8], float)
+    # array([ 1., 4., 5., 8.])
+
+    np.array([[1,2], [3,4]])
     # array([[1, 2],
     #   [3, 4]])
 
 .. code-block:: python
 
-    np.array([1, 4, 5, 8], float)  # array([ 1., 4., 5., 8.])
+    np.array([1, 4, 5, 8], float)
+    # array([ 1., 4., 5., 8.])
 
-    >>> a[:2]
-    array([ 1., 4.])
+    a[:2]
+    # array([ 1., 4.])
 
-    >>> a[3]
-    8.0
+    a[3]
+    # 8.0
 
-    >>> a[0] = 5.
-    >>> a
-    array([ 5., 4., 5., 8.])
+    a[0] = 5.
+    # array([ 5., 4., 5., 8.])
 
 .. code-block:: python
 
-    a = np.array([[1, 2, 3], [4, 5, 6]], float)  # array([[ 1., 2., 3.], [ 4., 5., 6.]])
+    a = np.array([[1, 2, 3], [4, 5, 6]], float)
+    # array([[ 1., 2., 3.], [ 4., 5., 6.]])
+
     a[0,0]  # 1.0
     a[0,1]  # 2.0
 
@@ -191,8 +207,8 @@ Arrays
 
     a = np.array([[1, 2, 3], [4, 5, 6]], float)
 
-    a[1,:]  # array([ 4., 5., 6.])
-    a[:,2]  # array([ 3., 6.])
+    a[1,:]      # array([ 4., 5., 6.])
+    a[:,2]      # array([ 3., 6.])
     a[-1:,-2:]  # array([[ 5., 6.]])
 
 .. code-block:: python
@@ -217,13 +233,13 @@ Arrays
 
 .. code-block:: python
 
-    >>> a = np.array([[1, 2, 3], [4, 5, 6]], float)
+    a = np.array([[1, 2, 3], [4, 5, 6]], float)
 
-    >>> 2 in a
-    True
+    2 in a
+    # True
 
-    >>> 0 in a
-    False
+    0 in a
+    # False
 
 .. code-block:: python
 
