@@ -218,17 +218,11 @@ Przykład pracy z ``scikit-learn``
 
 .. code-block:: python
 
-    # Import the class you plan to use
     from sklearn.neighbours import KNeighboursClassifier()
 
-    # Instanciate the estimator
-    model = KNeighboursClassifier(n_neighbours=1)
-
-    # Fit the model with data (aka "model training")
-    model.fit(features, labels)
-
-    # Predict the response for a new observation
-    model.predict([3, 5, 4, 2])
+    model = KNeighboursClassifier(n_neighbours=1)    # Instanciate the estimator
+    model.fit(features, labels)     # Fit the model with data (aka "model training")
+    model.predict([3, 5, 4, 2])     # Predict the response for a new observation
     # array([2])
 
     # Can predict for multiple observations at once
@@ -242,7 +236,6 @@ Przykład pracy z ``scikit-learn``
 
     from sklearn.neighbours import KNeighboursClassifier()
 
-
     model = KNeighboursClassifier(n_neighbours=5)
     model.fit(features, labels)
     model.predict([
@@ -254,7 +247,6 @@ Przykład pracy z ``scikit-learn``
 .. code-block:: python
 
     from sklearn.linear_model import LogisticsRegression()
-
 
     model = LogisticsRegression()
     model.fit(features, labels)
