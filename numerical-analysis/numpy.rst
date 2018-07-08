@@ -560,57 +560,54 @@ Array Multiplication
 
 .. code-block:: python
 
-    >>> a = np.zeros((2,2), float)
-    >>> b = np.array([-1., 3.], float)
+    a = np.zeros((2,2), float)
+    # array([[ 0., 0.],
+    #        [ 0., 0.]])
 
-    >>> a
-    array([[ 0., 0.],
-     [ 0., 0.]])
+    b = np.array([-1., 3.], float)
+    # array([-1., 3.])
 
-    >>> b
-    array([-1., 3.])
+    a + b
+    # array([[-1., 3.],
+    #        [-1., 3.]])
 
-    >>> a + b
-    array([[-1., 3.],
-     [-1., 3.]])
+    a + b[np.newaxis,:]
+    # array([[-1., 3.],
+    #        [-1., 3.]])
 
-    >>> a + b[np.newaxis,:]
-    array([[-1., 3.],
-     [-1., 3.]])
-
-    >>> a + b[:,np.newaxis]
-    array([[-1., -1.],
-     [ 3., 3.]])
+    a + b[:,np.newaxis]
+    # array([[-1., -1.],
+    #        [ 3., 3.]])
 
 .. code-block:: python
 
-    >>> np.sqrt(a)
-    array([ 1., 2., 3.])
+    a = np.array([1.1, 1.5, 1.9], float)
 
-    >>> a = np.array([1.1, 1.5, 1.9], float)
+    np.sqrt(a)
+    # array([ 1., 2., 3.])
 
-    >>> np.floor(a)
-    array([ 1., 1., 1.])
+    np.floor(a)
+    # array([ 1., 1., 1.])
 
-    >>> np.ceil(a)
-    array([ 2., 2., 2.])
+    np.ceil(a)
+    # array([ 2., 2., 2.])
 
-    >>> np.rint(a)
-    array([ 1., 2., 2.])
+    np.rint(a)
+    # array([ 1., 2., 2.])
 
 .. code-block:: python
 
-    >>> np.pi
-    3.1415926535897931
+    np.pi
+    # 3.1415926535897931
 
-    >>> np.e
-    2.7182818284590451
+    np.e
+    # 2.7182818284590451
 
-    >>> np.nan
-    NaN
+    np.nan
+    # NaN
 
-    >>> np.inf
-    inf
+    np.inf
+    # inf
 
 Array iteration
 ---------------
@@ -675,30 +672,29 @@ Array operations
 
 .. code-block:: python
 
-    >>> a = np.array([[0, 2], [3, -1], [3, 5]], float)
+    a = np.array([[0, 2], [3, -1], [3, 5]], float)
 
-    >>> a.mean(axis=0)
-    array([ 2., 2.])
+    a.mean(axis=0)
+    # array([ 2., 2.])
 
-    >>> a.mean(axis=1)
-    array([ 1., 1., 4.])
+    a.mean(axis=1)
+    # array([ 1., 1., 4.])
 
-    >>> a.min(axis=1)
-    array([ 0., -1., 3.])
+    a.min(axis=1)
+    # array([ 0., -1., 3.])
 
-    >>> a.max(axis=0)
-    array([ 3., 5.])
+    a.max(axis=0)
+    # array([ 3., 5.])
 
 .. code-block:: python
 
-    >>> a = np.array([6, 2, 5, -1, 0], float)
+    a = np.array([6, 2, 5, -1, 0], float)
 
-    >>> sorted(a)
-    [-1.0, 0.0, 2.0, 5.0, 6.0]
+    sorted(a)
+    # [-1.0, 0.0, 2.0, 5.0, 6.0]
 
-    >>> a.sort()
-    >>> a
-    array([-1., 0., 2., 5., 6.])
+    a.sort()
+    # array([-1., 0., 2., 5., 6.])
 
 .. code-block:: python
 
@@ -710,12 +706,14 @@ Array operations
 .. code-block:: python
 
     a = np.array([1, 1, 4, 5, 5, 5, 7], float)
+
     np.unique(a)
     # array([ 1., 4., 5., 7.])
 
 .. code-block:: python
 
     a = np.array([[1, 2], [3, 4]], float)
+
     a.diagonal()
     # array([ 1., 4.])
 
@@ -723,55 +721,56 @@ Array operations
 
     a = np.array([[1,2], [3,4]], float)
     b = np.array([[2,0], [1,3]], float)
+
     a * b
     # array([[2., 0.], [3., 12.]])
 
+.. code-block:: python
 
     a = np.array([1,2,3], float)
     b = np.array([4,5], float)
+
     a + b
     # ValueError: shape mismatch: objects cannot be broadcast to a single shape
 
+.. code-block:: python
 
     a = np.array([[1, 2], [3, 4], [5, 6]], float)
     b = np.array([-1, 3], float)
 
     a
     # array([[ 1., 2.],
-    #  [ 3., 4.],
-    #  [ 5., 6.]])
+    #        [ 3., 4.],
+    #        [ 5., 6.]])
 
     b
     # array([-1., 3.])
 
     a + b
     # array([[ 0., 5.],
-    #  [ 2., 7.],
-    #  [ 4., 9.]])
+    #        [ 2., 7.],
+    #        [ 4., 9.]])
 
 .. code-block:: python
 
     a = np.zeros((2,2), float)
-    b = np.array([-1., 3.], float)
-
-    a
     # array([[ 0., 0.],
-    # [ 0., 0.]])
+    #        [ 0., 0.]])
 
-    b
+    b = np.array([-1., 3.], float)
     # array([-1., 3.])
 
     a + b
     # array([[-1., 3.],
-    #  [-1., 3.]])
+    #        [-1., 3.]])
 
     a + b[np.newaxis,:]
     # array([[-1., 3.],
-    # [-1., 3.]])
+    #        [-1., 3.]])
 
     a + b[:,np.newaxis]
     # array([[-1., -1.],
-    # [ 3., 3.]])
+    #        [ 3., 3.]])
 
 .. code-block:: python
 
@@ -797,24 +796,26 @@ Array operations
     # [-1.0, 0.0, 2.0, 5.0, 6.0]
 
     a.sort()
-    a
     # array([-1., 0., 2., 5., 6.])
 
 .. code-block:: python
 
     a = np.array([6, 2, 5, -1, 0], float)
+
     a.clip(0, 5)
     # array([ 5., 2., 5., 0., 0.])
 
 .. code-block:: python
 
     a = np.array([1, 1, 4, 5, 5, 5, 7], float)
+
     np.unique(a)
     # array([ 1., 4., 5., 7.])
 
 .. code-block:: python
 
     a = np.array([[1, 2], [3, 4]], float)
+
     a.diagonal()
     # array([ 1., 4.])
 
@@ -835,7 +836,6 @@ Comparison operators and value testing
     # array([False, True, True], dtype=bool)
 
     c = a > b
-    c
     # array([ True, False, False], dtype=bool)
 
 .. code-block:: python
@@ -856,230 +856,261 @@ Comparison operators and value testing
 
 .. code-block:: python
 
-    >>> a = np.array([1, 3, 0], float)
-    >>> np.logical_and(a > 0, a < 3)
-    array([ True, False, False], dtype=bool)
-    >>> b = np.array([True, False, True], bool)
-    >>> np.logical_not(b)
-    array([False, True, False], dtype=bool)
-    >>> c = np.array([False, True, False], bool)
-    >>> np.logical_or(b, c)
-    array([ True, True, False], dtype=bool)
+    a = np.array([1, 3, 0], float)
+
+    np.logical_and(a > 0, a < 3)
+    # array([ True, False, False], dtype=bool)
 
 .. code-block:: python
+
+    a = np.array([True, False, True], bool)
+
+    np.logical_not(a)
+    # array([False, True, False], dtype=bool)
+
+.. code-block:: python
+
+    a = np.array([True, False, True], bool)
+    b = np.array([False, True, False], bool)
+
+    np.logical_or(a, b)
+    # array([ True, True, False], dtype=bool)
+
+.. code-block:: python
+
+    a = np.array([1, 3, 0], float)
 
     # where(boolarray, truearray, falsearray
-    >>> a = np.array([1, 3, 0], float)
-    >>> np.where(a != 0, 1 / a, a)
-    array([ 1. , 0.33333333, 0. ])
 
-    >>> a = np.array([1, 3, 0], float)
-    >>> np.where(a != 0, 1 / a, a)
-    array([ 1. , 0.33333333, 0. ])
-
-    >>> np.where(a > 0, 3, 2)
-    array([3, 3, 2])
-
-    >>> a = np.array([[0, 1], [3, 0]], float)
-    >>> a.nonzero()
-    (array([0, 1]), array([1, 0]))
+    np.where(a != 0, 1 / a, a)
+    # array([ 1. , 0.33333333, 0. ])
 
 .. code-block:: python
 
-    >>> a = np.array([1, np.NaN, np.Inf], float)
+    a = np.array([1, 3, 0], float)
 
-    >>> a
-    array([ 1., NaN, Inf])
+    np.where(a != 0, 1 / a, a)
+    # array([ 1. , 0.33333333, 0. ])
 
-    >>> np.isnan(a)
-    array([False, True, False], dtype=bool)
+    np.where(a > 0, 3, 2)
+    # array([3, 3, 2])
 
-    >>> np.isfinite(a)
-    array([ True, False, False], dtype=bool)
+.. code-block:: python
+
+    a = np.array([[0, 1], [3, 0]], float)
+    a.nonzero()
+    # (array([0, 1]), array([1, 0]))
+
+.. code-block:: python
+
+    a = np.array([1, np.NaN, np.Inf], float)
+    # array([ 1., NaN, Inf])
+
+    np.isnan(a)
+    # array([False, True, False], dtype=bool)
+
+    np.isfinite(a)
+    # array([True, False, False], dtype=bool)
 
 Array item selection and manipulation
 -------------------------------------
 .. code-block:: python
 
-    >>> a = np.array([[6, 4], [5, 9]], float)
+    a = np.array([[6, 4], [5, 9]], float)
 
-    >>> a >= 6
-    array([[ True, False],
-     [False, True]], dtype=bool)
-    >>> a[a >= 6]
-    array([ 6., 9.])
+    a >= 6
+    # array([[ True, False],
+    #        [False, True]], dtype=bool)
 
-.. code-block:: python
-
-    >>> a = np.array([[6, 4], [5, 9]], float)
-
-    >>> sel = (a >= 6)
-    >>> a[sel]
-    array([ 6., 9.])
-
-    >>> a[np.logical_and(a > 5, a < 9)]
-    >>> array([ 6.])
+    a[a >= 6]
+    # array([ 6., 9.])
 
 .. code-block:: python
 
-    >>> a = np.array([2, 4, 6, 8], float)
-    >>> b = np.array([0, 0, 1, 3, 2, 1], int)
+    a = np.array([[6, 4], [5, 9]], float)
 
-    >>> a[b]
-    array([ 2., 2., 4., 8., 6., 4.])
+    sel = (a >= 6)
+    a[sel]
+    # array([ 6., 9.])
 
-.. code-block:: python
-
-    >>> a = np.array([2, 4, 6, 8], float)
-
-    >>> a[[0, 0, 1, 3, 2, 1]]
-    array([ 2., 2., 4., 8., 6., 4.])
+    a[np.logical_and(a > 5, a < 9)]
+    # array([ 6.])
 
 .. code-block:: python
 
-    >>> a = np.array([[1, 4], [9, 16]], float)
-    >>> b = np.array([0, 0, 1, 1, 0], int)
-    >>> c = np.array([0, 1, 1, 1, 1], int)
+    a = np.array([2, 4, 6, 8], float)
+    b = np.array([0, 0, 1, 3, 2, 1], int)
 
-    >>> a[b,c]
-    array([ 1., 4., 16., 16., 4.])
-
-.. code-block:: python
-
-    >>> a = np.array([2, 4, 6, 8], float)
-    >>> b = np.array([0, 0, 1, 3, 2, 1], int)
-
-    >>> a.take(b)
-    array([ 2., 2., 4., 8., 6., 4.])
+    a[b]
+    # array([ 2., 2., 4., 8., 6., 4.])
 
 .. code-block:: python
 
-    >>> a = np.array([[0, 1], [2, 3]], float)
-    >>> b = np.array([0, 0, 1], int)
+    a = np.array([2, 4, 6, 8], float)
 
-    >>> a.take(b, axis=0)
-    array([[ 0., 1.],
-     [ 0., 1.],
-     [ 2., 3.]])
-
-    >>> a.take(b, axis=1)
-    array([[ 0., 0., 1.],
-     [ 2., 2., 3.]])
+    a[[0, 0, 1, 3, 2, 1]]
+    # array([ 2., 2., 4., 8., 6., 4.])
 
 .. code-block:: python
 
-    >>> a = np.array([0, 1, 2, 3, 4, 5], float)
-    >>> b = np.array([9, 8, 7], float)
+    a = np.array([[1, 4], [9, 16]], float)
+    b = np.array([0, 0, 1, 1, 0], int)
+    c = np.array([0, 1, 1, 1, 1], int)
 
-    >>> a.put([0, 3], b)
-    >>> a
-    array([ 9., 1., 2., 8., 4., 5.])
+    a[b,c]
+    # array([ 1., 4., 16., 16., 4.])
 
 .. code-block:: python
 
-    >>> a = np.array([0, 1, 2, 3, 4, 5], float)
+    a = np.array([2, 4, 6, 8], float)
+    b = np.array([0, 0, 1, 3, 2, 1], int)
 
-    >>> a.put([0, 3], 5)
-    >>> a
-    array([ 5., 1., 2., 5., 4., 5.])
+    a.take(b)
+    # array([ 2., 2., 4., 8., 6., 4.])
+
+.. code-block:: python
+
+    a = np.array([[0, 1], [2, 3]], float)
+    b = np.array([0, 0, 1], int)
+
+    a.take(b, axis=0)
+    # array([[ 0., 1.],
+    #        [ 0., 1.],
+    #        [ 2., 3.]])
+
+    a.take(b, axis=1)
+    # array([[ 0., 0., 1.],
+    #        [ 2., 2., 3.]])
+
+.. code-block:: python
+
+    a = np.array([0, 1, 2, 3, 4, 5], float)
+    b = np.array([9, 8, 7], float)
+
+    a.put([0, 3], b)
+    # array([ 9., 1., 2., 8., 4., 5.])
+
+.. code-block:: python
+
+    a = np.array([0, 1, 2, 3, 4, 5], float)
+
+    a.put([0, 3], 5)
+    # array([ 5., 1., 2., 5., 4., 5.])
 
 
 Vector and matrix mathematics
 =============================
 .. code-block:: python
 
-    >>> a = np.array([1, 2, 3], float)
-    >>> b = np.array([0, 1, 1], float)
+    a = np.array([1, 2, 3], float)
+    b = np.array([0, 1, 1], float)
 
-    >>> np.dot(a, b)
-    5.0
-
-.. code-block:: python
-
-    >>> a = np.array([[0, 1], [2, 3]], float)
-    >>> b = np.array([2, 3], float)
-    >>> c = np.array([[1, 1], [4, 0]], float)
-
-    >>> a
-    array([[ 0., 1.],
-     [ 2., 3.]])
-
-    >>> np.dot(b, a)
-    array([ 6., 11.])
-
-    >>> np.dot(a, b)
-    array([ 3., 13.])
-
-    >>> np.dot(a, c)
-    array([[ 4., 0.],
-     [ 14., 2.]])
-
-    >>> np.dot(c, a)
-    array([[ 2., 4.],
-     [ 0., 4.]])
+    np.dot(a, b)
+    # 5.0
 
 .. code-block:: python
 
-    >>> a = np.array([1, 4, 0], float)
-    >>> b = np.array([2, 2, 1], float)
+    a = np.array([[0, 1], [2, 3]], float)
+    b = np.array([2, 3], float)
+    c = np.array([[1, 1], [4, 0]], float)
 
-    >>> np.outer(a, b)
-    array([[ 2., 2., 1.],
-     [ 8., 8., 4.],
-     [ 0., 0., 0.]])
+    a
+    # array([[ 0., 1.],
+    #        [ 2., 3.]])
 
-    >>> np.inner(a, b)
-    10.0
+    np.dot(b, a)
+    # array([ 6., 11.])
 
-    >>> np.cross(a, b)
-    array([ 4., -1., -6.])
+    np.dot(a, b)
+    # array([ 3., 13.])
 
-.. code-block:: python
+    np.dot(a, c)
+    # array([[ 4., 0.],
+    #        [ 14., 2.]])
 
-    >>> a = np.array([[4, 2, 0], [9, 3, 7], [1, 2, 1]], float)
-
-    >>> a
-    array([[ 4., 2., 0.],
-     [ 9., 3., 7.],
-     [ 1., 2., 1.]])
-    >>> np.linalg.det(a)
-    -53.999999999999993
-
-    >>> vals, vecs = np.linalg.eig(a)
-    >>> vals
-    array([ 9. , 2.44948974, -2.44948974])
-    >>> vecs
-    array([[-0.3538921 , -0.56786837, 0.27843404],
-     [-0.88473024, 0.44024287, -0.89787873],
-     [-0.30333608, 0.69549388, 0.34101066]])
-
-    >>> b = np.linalg.inv(a)
-    >>> b
-    array([[ 0.14814815, 0.07407407, -0.25925926],
-     [ 0.2037037 , -0.14814815, 0.51851852],
-     [-0.27777778, 0.11111111, 0.11111111]])
-    >>> np.dot(a, b)
-    array([[ 1.00000000e+00, 5.55111512e-17, 2.22044605e-16],
-     [ 0.00000000e+00, 1.00000000e+00, 5.55111512e-16],
-     [ 1.11022302e-16, 0.00000000e+00, 1.00000000e+00]])
+    np.dot(c, a)
+    # array([[ 2., 4.],
+    #        [ 0., 4.]])
 
 .. code-block:: python
 
-    >>> a = np.array([[1, 3, 4], [5, 2, 3]], float)
+    a = np.array([1, 4, 0], float)
+    b = np.array([2, 2, 1], float)
 
-    >>> U, s, Vh = np.linalg.svd(a)
-    >>> U
-    array([[-0.6113829 , -0.79133492],
-     [-0.79133492, 0.6113829 ]])
-    >>> s
-    array([ 7.46791327, 2.86884495])
+    np.outer(a, b)
+    # array([[ 2., 2., 1.],
+    #        [ 8., 8., 4.],
+    #        [ 0., 0., 0.]])
+
+    np.inner(a, b)
+    # 10.0
+
+    np.cross(a, b)
+    # array([ 4., -1., -6.])
 
 .. code-block:: python
 
-    >>> Vh
-    array([[-0.61169129, -0.45753324, -0.64536587],
-     [ 0.78971838, -0.40129005, -0.46401635],
-     [-0.046676 , -0.79349205, 0.60678804]])
+    a = np.array([[4, 2, 0], [9, 3, 7], [1, 2, 1]], float)
+    # array([[ 4., 2., 0.],
+    #        [ 9., 3., 7.],
+    #        [ 1., 2., 1.]])
+
+    np.linalg.det(a)
+    # -53.999999999999993
+
+.. code-block:: python
+
+    a = np.array([[4, 2, 0], [9, 3, 7], [1, 2, 1]], float)
+    # array([[ 4., 2., 0.],
+    #        [ 9., 3., 7.],
+    #        [ 1., 2., 1.]])
+
+    vals, vecs = np.linalg.eig(a)
+
+    vals
+    # array([ 9. , 2.44948974, -2.44948974])
+
+    vecs
+    # array([[-0.3538921 , -0.56786837, 0.27843404],
+    #        [-0.88473024, 0.44024287, -0.89787873],
+    #        [-0.30333608, 0.69549388, 0.34101066]])
+
+.. code-block:: python
+
+    a = np.array([[4, 2, 0], [9, 3, 7], [1, 2, 1]], float)
+    # array([[ 4., 2., 0.],
+    #        [ 9., 3., 7.],
+    #        [ 1., 2., 1.]])
+
+    b = np.linalg.inv(a)
+    # array([[ 0.14814815, 0.07407407, -0.25925926],
+    #        [ 0.2037037 , -0.14814815, 0.51851852],
+    #        [-0.27777778, 0.11111111, 0.11111111]])
+
+    np.dot(a, b)
+    # array([[ 1.00000000e+00, 5.55111512e-17, 2.22044605e-16],
+    #        [ 0.00000000e+00, 1.00000000e+00, 5.55111512e-16],
+    #        [ 1.11022302e-16, 0.00000000e+00, 1.00000000e+00]])
+
+.. code-block:: python
+
+    a = np.array([[1, 3, 4], [5, 2, 3]], float)
+
+    U, s, Vh = np.linalg.svd(a)
+
+    U
+    # array([[-0.6113829 , -0.79133492],
+    #        [-0.79133492, 0.6113829 ]])
+
+    s
+    # array([ 7.46791327, 2.86884495])
+
+.. code-block:: python
+
+    Vh
+    # array([[-0.61169129, -0.45753324, -0.64536587],
+    #        [ 0.78971838, -0.40129005, -0.46401635],
+    #        [-0.046676 , -0.79349205, 0.60678804]])
 
 
 Matrix
@@ -1088,69 +1119,53 @@ Numpy ma również typ macierzy matrix. Jest on bardzo podobny do tablicy ale po
 
 .. code-block:: python
 
-    m = np.matrix([
-        [1,2],
-        [3,4]
-    ])
+    a = np.matrix([[1,2], [3,4]])
+    b = np.matrix([[5,6], [7,8]])
 
-    mm = np.matrix([
-        [5,6],
-        [7,8]
-    ])
+    a * b
+    # [[19 22]
+    #  [43 50]]
 
-    m*mm == [
-        [19 22]
-        [43 50]
-    ]
+    a ** 2
+    # [[ 7 10]
+    #  [15 22]]
 
-    m**2 == [
-        [ 7 10]
-        [15 22]
-    ]
-
-    m*2 == [
-        [2 4]
-        [6 8]
-    ]
+    a * 2
+    # [[2 4]
+    #  [6 8]]
 
 .. code-block:: python
 
     d = np.diag([3,4])
+    # [[3 0]
+    #  [0 4]]
 
-    d = [
-        [3 0]
-        [0 4]
-    ]
-
-    d*m == [
-        [ 3  6]
-        [12 16]
-    ]
+    d * m
+    # [[ 3  6]
+    #   [12 16]]
 
 Niemniej, tablice można używać podobnie, ale do mnożenia trzeba wykorzystywać funkcje dot:
 
 .. code-block:: python
 
     a = np.array([[1,2], [3,4]])
-    aa = np.array([[5,6], [7,8]])
+    b = np.array([[5,6], [7,8]])
 
-    print('a*aa = \n{}'.format(a*aa))
-    print('a.dot(aa) = \n{}'.format(a.dot(aa)))
-    print('a**2 = \n {}'.format(a**2))
-    print('a*2 = \n ={}'.format(a*2))
+    a * b
+    # [[ 5 12]
+    #  [21 32]]
 
-    a*aa =
-    [[ 5 12]
-     [21 32]]
-    a.dot(aa) =
-    [[19 22]
-     [43 50]]
-    a**2 =
-     [[ 1  4]
-     [ 9 16]]
-    a*2 =
-     =[[2 4]
-     [6 8]]
+    a.dot(b)
+    # [[19 22]
+    #  [43 50]]
+
+    a ** 2
+    #  [[ 1  4]
+    #   [ 9 16]]
+
+    a * 2
+    # [[2 4]
+    #  [6 8]]
 
 Dodatkowo, operacje algebry liniowej można wykonywać zarówno na tablicach jak i macierzach, np:
 
@@ -1158,6 +1173,47 @@ Dodatkowo, operacje algebry liniowej można wykonywać zarówno na tablicach jak
 
     print('det(m) = {}'.format(np.linalg.det(m)))
     print('det(a) = {}'.format(np.linalg.det(a)))
+
+Linear Algebra
+==============
+.. csv-table:: Linear algebra basics
+    :header-rows: 1
+
+    "Function", "Description"
+    "norm", "Vector or matrix norm"
+    "inv", "Inverse of a square matrix"
+    "solve", "Solve a linear system of equations"
+    "det", "Determinant of a square matrix"
+    "slogdet", "Logarithm of the determinant of a square matrix"
+    "lstsq", "Solve linear least-squares problem"
+    "pinv", "Pseudo-inverse (Moore-Penrose) calculated using a singular value decomposition"
+    "matrix_power", "Integer power of a square matrix"
+    "matrix_rank", "Calculate matrix rank using an SVD-based method"
+
+.. csv-table:: Eigenvalues and decompositions
+    :header-rows: 1
+
+    "Function", "Description"
+    "eig", "Eigenvalues and vectors of a square matrix"
+    "eigh", "Eigenvalues and eigenvectors of a Hermitian matrix"
+    "eigvals", "Eigenvalues of a square matrix"
+    "eigvalsh", "Eigenvalues of a Hermitian matrix"
+    "qr", "QR decomposition of a matrix"
+    "svd", "Singular value decomposition of a matrix"
+    "cholesky", "Cholesky decomposition of a matrix"
+
+.. csv-table:: Tensor operations
+    :header-rows: 1
+
+    "Function", "Description"
+    "tensorsolve", "Solve a linear tensor equation"
+    "tensorinv", "Calculate an inverse of a tensor"
+
+.. csv-table:: Exceptions
+    :header-rows: 1
+
+    "Function", "Description"
+    "LinAlgError", "Indicates a failed linear algebra operation"
 
 
 Assignments
@@ -1193,7 +1249,7 @@ Matrix multiplication
 
 Sum of inner matrix
 -------------------
-#. Wygeneruj macierz randomowych intów
+#. Wygeneruj macierz (6x6) randomowych intów
 #. Przekonwertuj macierz na typ float
 #. Transponuj ją
 #. Policz sumę środkowych (4x4) elementów macierzy
