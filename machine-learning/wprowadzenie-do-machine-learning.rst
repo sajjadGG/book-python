@@ -242,9 +242,9 @@ Przykład pracy z ``scikit-learn``
 
     from sklearn.neighbours import KNeighboursClassifier()
 
+
     model = KNeighboursClassifier(n_neighbours=5)
     model.fit(features, labels)
-
     model.predict([
         [3, 5, 4, 2],
         [5, 4, 3, 2],
@@ -255,9 +255,9 @@ Przykład pracy z ``scikit-learn``
 
     from sklearn.linear_model import LogisticsRegression()
 
+
     model = LogisticsRegression()
     model.fit(features, labels)
-
     model.predict([
         [3, 5, 4, 2],
         [5, 4, 3, 2],

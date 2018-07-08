@@ -12,8 +12,11 @@ features = dataset.data
 labels = dataset.target
 
 data = train_test_split(features, labels, test_size=0.25, random_state=0)
-
 features_train = data[0]
 features_test = data[1]
 labels_train = data[2]
 labels_test = data[3]
+
+
+# Najczęściej w dokumentacji można znaleźć
+X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.25, random_state=0)

@@ -18,6 +18,7 @@ labels_test = data[3]
 model = KNeighborsClassifier()
 scores = cross_val_score(model, features_train, labels_train, cv=5)
 accuracy = scores.mean() * 100  # percent
-stdev = scores.std() * 100  # percent
+stdev = scores.std() * 100      # percent
 
 print(f'Accuracy: {accuracy:.2f}% (+/- {stdev:.2f}%)')
+# Accuracy: 95.49% (+/- 4.98%)

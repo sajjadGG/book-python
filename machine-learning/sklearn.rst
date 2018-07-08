@@ -24,6 +24,52 @@ Classifier
     :caption: Classifier
 
 
+Feature Selection
+=================
+* http://scikit-learn.org/stable/modules/feature_selection.html
+* :math:`\mathrm{Var}[X] = p(1 - p)`
+
+.. code-block:: python
+
+    from sklearn.feature_selection import VarianceThreshold
+
+    features = [
+        [0, 0, 1],
+        [0, 1, 0],
+        [1, 0, 0],
+        [0, 1, 1],
+        [0, 1, 0],
+        [0, 1, 1]
+    ]
+
+    # Remove all features below 80% change variance in the samples
+    sel = VarianceThreshold(threshold=(.8 * (1 - .8)))
+
+    sel.fit_transform(X)
+    # array([[0, 1],
+    #        [1, 0],
+    #        [0, 0],
+    #        [1, 1],
+    #        [1, 0],
+    #        [1, 1]])
+
+.. code-block:: python
+
+    from sklearn.datasets import load_iris
+    from sklearn.feature_selection import SelectKBest
+    from sklearn.feature_selection import chi2
+
+    iris = load_iris()
+    X, y = iris.data, iris.target
+
+    X.shape
+    # (150, 4)
+
+    X_new = SelectKBest(chi2, k=2).fit_transform(X, y)
+    X_new.shape
+    # (150, 2)
+
+
 Evaluation
 ==========
 
@@ -45,7 +91,6 @@ Label Encoder
 .. literalinclude:: src/ml-sklearn-label-encoder.py
     :language: python
     :caption: Label Encoder
-
 
 
 Writing Own Classifier
@@ -74,7 +119,6 @@ Random Classifier
             return predictions
 
 Accuracy for Iris dataset: 0.346666666667
-
 
 Zadania praktyczne
 ==================

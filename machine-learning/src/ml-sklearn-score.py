@@ -22,3 +22,4 @@ score = model.score(features_test, labels_test)
 accuracy = score * 100  # in percent
 
 print(f'Accuracy: {accuracy:.2f}%')
+# Accuracy: 97.37%
