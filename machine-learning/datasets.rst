@@ -36,20 +36,21 @@ Based on Fisher's linear discriminant model, this data set became a typical test
 
 .. code-block:: python
 
-    >>> from sklearn.datasets import load_iris
-    >>> iris = load_iris()
+    from sklearn.datasets import load_iris
 
-    >>> print(iris.feature_names)
-    ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']
+    iris = load_iris()
 
-    >>> print(iris.target_names)
-    ['setosa' 'versicolor' 'virginica']
+    iris.feature_names
+    # ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']
 
-    >>> print(iris.data[0])
-    [5.1  3.5  1.4  0.2]
+    iris.target_names
+    # ['setosa' 'versicolor' 'virginica']
 
-    >>> print(iris.target[0])
-    0
+    iris.data[0]
+    # [5.1  3.5  1.4  0.2]
+
+    print(iris.target[0]
+    # 0
 
 Pima Indians Diabetes problem
 -----------------------------
@@ -140,6 +141,66 @@ SCI-Kit Datasets
 The ``sklearn.datasets`` package embeds some small toy datasets. To evaluate the impact of the scale of the dataset (``n_samples`` and ``n_features``) while controlling the statistical properties of the data (typically the correlation and informativeness of the features), it is also possible to generate synthetic data.
 
 This package also features helpers to fetch larger datasets commonly used by the machine learning community to benchmark algorithm on data that comes from the 'real world'.
+
+.. code-block:: text
+
+    'clear_data_home',
+    'dump_svmlight_file',
+    'fetch_20newsgroups',
+    'fetch_20newsgroups_vectorized',
+    'fetch_lfw_pairs',
+    'fetch_lfw_people',
+    'fetch_mldata',
+    'fetch_olivetti_faces',
+    'fetch_species_distributions',
+    'fetch_california_housing',
+    'fetch_covtype',
+    'fetch_rcv1',
+    'fetch_kddcup99',
+    'get_data_home',
+
+.. code-block:: text
+
+    'load_boston',
+    'load_diabetes',
+    'load_digits',
+    'load_files',
+    'load_iris',
+    'load_breast_cancer',
+    'load_linnerud',
+    'load_mlcomp',
+    'load_sample_image',
+    'load_sample_images',
+    'load_svmlight_file',
+    'load_svmlight_files',
+    'load_wine',
+
+.. code-block:: text
+
+    'make_biclusters',
+    'make_blobs',
+    'make_circles',
+    'make_classification',
+    'make_checkerboard',
+    'make_friedman1',
+    'make_friedman2',
+    'make_friedman3',
+    'make_gaussian_quantiles',
+    'make_hastie_10_2',
+    'make_low_rank_matrix',
+    'make_moons',
+    'make_multilabel_classification',
+    'make_regression',
+    'make_s_curve',
+    'make_sparse_coded_signal',
+    'make_sparse_spd_matrix',
+    'make_sparse_uncorrelated',
+    'make_spd_matrix',
+    'make_swiss_roll',
+
+.. code-block:: text
+
+    'mldata_filename'
 
 
 ML Data

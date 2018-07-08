@@ -169,11 +169,17 @@ Czyszczenie Danych
 
 .. code-block:: text
 
-    ul. Jana III Sobieskiego 12 m. 19
-    ul. Jana 3 Sobieskiego 12/19
-    Jana III Sobieskiego 12 apt. 19
-    Sobieskiego 12/19
-    os. Jana III Sobieskiego 12/19
+    ‘Jana III Sobieskiego 1/2’
+    ‘ul. Jana III Sobieskiego 1/2’
+    ‘Ul. Jana III Sobieskiego 1/2’
+    ‘UL. Jana III Sobieskiego 1/2’
+    ‘os. Jana III Sobieskiego 1/2’
+    ‘Jana 3 Sobieskiego 1/2’
+    ‘Jana 3ego Sobieskiego 1/2’
+    ‘Jana III Sobieskiego 1 m. 2’
+    ‘Jana III Sobieskiego 1 apt 2’
+    ‘Jana Iii Sobieskiego 1/2’
+    ‘Jana IIi Sobieskiego 1/2’
 
 .. code-block:: text
 
