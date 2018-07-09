@@ -1,5 +1,3 @@
-:orphan:
-
 Dzień 1
 -------
 - Korzystanie z ustawień IDE: Docker, refactoring, debugging

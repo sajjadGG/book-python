@@ -1,5 +1,3 @@
-:orphan:
-
 Day 1
 -----
 .. csv-table::

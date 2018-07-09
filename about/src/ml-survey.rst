@@ -1,5 +1,3 @@
-:orphan:
-
 #. Znajomość zagadnień związanych z statystyką matematyczną:
 
     - nie znam

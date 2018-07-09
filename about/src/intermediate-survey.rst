@@ -1,5 +1,3 @@
-:orphan:
-
 #. Jakie masz doświadczenie z programowaniem:
 
     - żadnego (wymagane szkolenie :ref:`Python Foundations` przed zapisem)

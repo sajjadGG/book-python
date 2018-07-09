@@ -1,5 +1,3 @@
-:orphan:
-
 Szkolenie obejmowało 16 godzin wykładów oraz warsztatów i pokrywało zagadnienia związane z:
 
     - Instalacja i uruchamianie

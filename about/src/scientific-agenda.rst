@@ -1,5 +1,3 @@
-:orphan:
-
 Dzień 1
 -------
 - Zagadnienia podstawowe

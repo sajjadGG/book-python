@@ -1,5 +1,3 @@
-:orphan:
-
 .. note:: wymagana umiejętność tematów pokrytych w :ref:`Python Foundations`
 
 #. Jakie masz doświadczenie z programowaniem:

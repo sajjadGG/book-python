@@ -1,5 +1,3 @@
-:orphan:
-
 Szkolenie obejmowało 40 godzin wykładów oraz warsztatów i pokrywało zagadnienia związane z:
 
     - tworzenie aplikacji w języku Python,
