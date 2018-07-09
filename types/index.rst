@@ -383,29 +383,52 @@ Basic usage of ``print()`` function
 
     .. code-block:: python
 
-        import sys
-        print(sys.version)
+    import sys
+    import os
+
+    print(f'Python Executable: {sys.executable}')
+    print(f'Python Version: {sys.version}')
+    print(f'Virtualenv: {os.getenv("VIRTUAL_ENV")}')
+
 
 #. Uruchom go w swoim IDE
+#. Jaka wersja Python jest zainstalowana?
+#. Gdzie Python jest zainstalowany?
+#. Czy korzystasz z Virtualenv?
 
 :Założenia:
     * Nazwa pliku: ``python_version.py``
-    * Szacunkowa długość kodu: 2 linie
-    * Maksymalny czas na zadanie: 2 min
+    * Szacunkowa długość kodu: 5 linii
+    * Maksymalny czas na zadanie: 5 min
+
+:Co zadanie sprawdza?:
+    * Czy Python działa
+    * Jaka jest wersja Python
+    * Czy korzystasz z Virtualenv
+    * Korzystanie z print
+    * Umiejętność uruchamiania skryptów
+    * Szukanie rozwiązań zadań z książki
 
 Variables and types
 -------------------
 #. Wczytaj od użytkownika imię
 #. Użytkownik wprowadza tylko dane typu ``str``
-#. Za pomocą f-string formatting wyświetl na ekranie ``'My name "IMIE".\nI hope you\'re ok!'``, gdzie IMIE to wartość którą podał
+#. Za pomocą f-string formatting wyświetl na ekranie:
+
+    .. code-block:: text
+
+        '''My name "José Jiménez".
+	        I'm an astronaut!'''
+
+#. Gdzie wartość w podwójnym cudzysłowiu to ciąg od użytkownika (w przykładzie użytkownik wpisał ``José Jiménez``)
 #. Zwróć uwagę na znaki apostrofów, cudzysłowów i nowych linii
 #. Tekst wyświetlony na ekranie ma mieć zamienione wszystkie spacje na ``_``
-#. Nie korzystaj z dodawania stringów ``str + str``
+#. Nie korzystaj z dodawania stringów ``str + str`` ani spacjowania tekstu
 
 :Założenia:
     * Nazwa pliku: ``types_input.py``
-    * Szacunkowa długość kodu: 3 linie
-    * Maksymalny czas na zadanie: 5 min
+    * Szacunkowa długość kodu: 4 linie
+    * Maksymalny czas na zadanie: 10 min
 
 :Co zadanie sprawdza?:
     * Definiowanie zmiennych
@@ -429,7 +452,7 @@ Handling user input and type casting
 
 :Założenia:
     * Nazwa pliku: ``types_casting.py``
-    * Szacunkowa długość kodu: 3 linie
+    * Szacunkowa długość kodu: 10 linii
     * Maksymalny czas na zadanie: 5 min
 
 :Co zadanie sprawdza?:

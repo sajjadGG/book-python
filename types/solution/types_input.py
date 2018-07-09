@@ -1,4 +1,5 @@
 name = input('Type your name: ')
-output = f'My name "{name}".\nI hope you\'re ok!'
+text = f"""'''My name "{name}".\n\tI\'m an astronaut!'''"""
+output = text.replace(' ', '_')
 
-print(output.replace(' ', '_'))
+print(output)
