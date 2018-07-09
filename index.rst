@@ -1,27 +1,23 @@
-#######################################
-Python 3: from None to Machine Learning
-#######################################
+.. include:: README.rst
 
-**Author**
-    :name: `Matt Harasymczuk <http://astrotech.io>`_
-    :email: matt@astrotech.io
-    :www: http://www.astrotech.io
-    :facebook: https://facebook.com/matt.harasymczuk
-    :linkedin: https://linkedin.com/in/mattharasymczuk
-    :slideshare: https://www.slideshare.net/astrotech/presentations
-    :github: https://github.com/astromatt
 
-.. tip:: If you're interested in training course on topics from this book, please email me at matt@astrotech.io
+********
+Workshop
+********
+.. toctree::
+    :maxdepth: 1
+    :numbered:
+    :caption: Workshops
 
-.. tip:: The most up-to-date version of this book is always at http://python.astrotech.io
+    about/install.rst
+    about/workshop-foundations.rst
+    about/workshop-intermediate.rst
+    about/workshop-advanced.rst
+    about/workshop-django.rst
+    about/workshop-testing.rst
+    about/workshop-scientific.rst
+    about/workshop-machine-learning.rst
 
-**Other books from this series**
-    :Python and Machine Learning: http://python.astrotech.io
-    :DevOps and Development Tools Ecosystem: http://devops.astrotech.io
-    :GIT and GIT Flow in CI/CD: http://git.astrotech.io
-    :Agile, Scrum, Kanban, XP, Lean: http://agile.astrotech.io
-    :IT Software Architecture, Cloud, Microservices and Processes: http://arch.astrotech.io
-    :Linux and Shell Programming with Bash: http://linux.astrotech.io
 
 ************
 Introduction
@@ -31,11 +27,10 @@ Introduction
     :numbered:
     :caption: Introduction
 
-    INSTALL.rst
-    agenda.rst
-    _introduction/about.rst
-    _introduction/references.rst
-    _introduction/ide.rst
+    about/language.rst
+    about/references.rst
+    about/ide.rst
+
 
 ***********
 Foundations
@@ -67,6 +62,7 @@ Foundations
     oop-dataclass/index.rst
     exam-basic/index.rst
 
+
 ************
 Intermediate
 ************
@@ -89,6 +85,7 @@ Intermediate
     database/index.rst
     documentation/index.rst
     gui/index.rst
+
 
 ********
 Advanced
@@ -118,6 +115,7 @@ Advanced
     oop-metaclass/index.rst
     design-patterns/index.rst
     exam-advanced/index.rst
+
 
 ******
 Django
@@ -151,6 +149,7 @@ Django
     django/ci-cd.rst
     django/deployment.rst
 
+
 **************************
 Scientific and Engineering
 **************************
@@ -172,6 +171,7 @@ Scientific and Engineering
     numerical-analysis/graphs.rst
     numerical-analysis/numerical-analysis.rst
     numerical-analysis/machine-learning.rst
+
 
 ****************
 Machine Learning
@@ -209,6 +209,7 @@ Machine Learning
     machine-learning/przydatne-odnosniki.rst
     machine-learning/_notes.rst
 
+
 *********
 Blogposts
 *********
@@ -236,5 +237,6 @@ Appendixes
     _appendix/python-2vs3.rst
     _appendix/python-wat.rst
     _appendix/opensource.rst
+    TODO.rst
     LICENSE.rst
     glossary.rst

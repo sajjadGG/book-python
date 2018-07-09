@@ -1,6 +1,8 @@
-**********
-Instalacja
-**********
+.. _Install:
+
+***********************
+Konfiguracja środowiska
+***********************
 
 
 Wymagania sprzętowe i systemowe
