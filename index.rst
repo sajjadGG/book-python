@@ -9,7 +9,6 @@ Workshop
     :numbered:
     :caption: Workshops
 
-    about/install.rst
     about/workshop-foundations.rst
     about/workshop-intermediate.rst
     about/workshop-advanced.rst
@@ -17,6 +16,7 @@ Workshop
     about/workshop-testing.rst
     about/workshop-scientific.rst
     about/workshop-machine-learning.rst
+    about/install.rst
 
 
 ************

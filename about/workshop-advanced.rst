@@ -12,7 +12,7 @@ Description
 ===========
 .. include:: src/advanced-description.rst
 
-.. tip:: If you're interested in training course on topics from this book, please email me at matt@astrotech.io
+.. tip:: If you're interested in this training course, please email me at matt@astrotech.io
 
 
 Agenda

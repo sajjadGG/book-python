@@ -60,6 +60,7 @@ copyright = '{year}, {author} <{email}>'.format(
 )
 
 exclude_patterns = [
+    'about/src/*.rst',
     '_build', '.build',
     '_themes',
     '_static',
