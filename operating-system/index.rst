@@ -20,8 +20,8 @@ Extensions
     import os
 
     path, ext = os.path.splitext(r'c:\Python\README.rst')
-    path   # 'c:\\Python\\README'
-    ext    # '.rst'
+    path        # 'c:\\Python\\README'
+    ext         # '.rst'
 
 .. code-block:: python
 
@@ -59,10 +59,10 @@ Sprawdzanie systemu operacyjnego
 
     import platform
 
-    platform.system()    # Windows
-    platform.release()   # 7
-    platform.platform()  # 'Windows-7-6.1.7601-SP1'
-    platform.os.name     # 'nt'
+    platform.system()                           # Windows
+    platform.release()                          # 7
+    platform.platform()                         # 'Windows-7-6.1.7601-SP1'
+    platform.os.name                            # 'nt'
 
     platform.uname()
     # uname_result(
@@ -81,18 +81,14 @@ Sprawdzanie systemu operacyjnego
     #     machine='x86_64',
     #     processor='i386')
 
-    platform.win32_ver()  # ('7', '6.1.7601', 'SP1', 'Multiprocessor Free')
-    platform.mac_ver()
-    platform.linux_distribution()  # deprecated since Python 3.5
-
 ``os``
 ------
 .. code-block:: python
 
     import os
 
-    os.name  # 'nt'
-    os.name  # 'posix'
+    os.name         # 'nt'
+    os.name         # 'posix'
 
 ``psutil``
 ----------
@@ -110,7 +106,7 @@ Sprawdzanie systemu operacyjnego
 
     import sys
 
-    sys.platform  # 'win32'
+    sys.platform    # 'win32'
 
 
 ``sys``
@@ -189,15 +185,17 @@ System exit and exit codes
 .. code-block:: python
 
     import os
-    from os.path import join, getsize
+    from os.path import getsize
 
 
     for root, dirs, files in os.walk('/home/'):
-        print(sum(getsize(join(root, name)) for name in files), end=" ")
-        print("bytes in", len(files), "non-directory files")
+        size = sum(getsize(os.path.join(root, name)) for name in files)
+        count = len(files)
+        print(f'Size: {size} bytes in {count} non-directory files')
 
-        if 'CVS' in dirs:
-            dirs.remove('.git')  # skip ``.git`` directories
+        # skip ``.git`` directories
+        if '.git' in dirs:
+            dirs.remove('.git')
 
 .. code-block:: python
 
@@ -263,7 +261,7 @@ Most commonly used methods
     import subprocess
 
     subprocess.call('clear')
-    subprocess.run()  # preferred over ``Popen()`` for Python >= 3.5
+    subprocess.run()    # preferred over ``Popen()`` for Python >= 3.5
     subprocess.Popen()
 
 ``subprocess.Popen()``
@@ -316,8 +314,6 @@ Setting the shell argument to a true value causes subprocess to spawn an interme
     import subprocess
 
     subprocess.call('echo $HOME')
-    # Traceback (most recent call last):
-    #   ...
     # OSError: [Errno 2] No such file or directory
 
 .. code-block:: python
@@ -362,8 +358,6 @@ Execute command in OS
 .. code-block:: python
 
     subprocess.run("exit 1", shell=True, check=True)
-    # Traceback (most recent call last):
-    #   ...
     # subprocess.CalledProcessError: Command 'exit 1' returned non-zero exit status 1
 
 .. code-block:: python
@@ -656,9 +650,9 @@ System ``os`` vs. ``pathlib``
 
     p = PureWindowsPath('c:/foo/bar/setup.py')
 
-    p.parents[0]  # PureWindowsPath('c:/foo/bar')
-    p.parents[1]  # PureWindowsPath('c:/foo')
-    p.parents[2]  # PureWindowsPath('c:/')
+    p.parents[0]    # PureWindowsPath('c:/foo/bar')
+    p.parents[1]    # PureWindowsPath('c:/foo')
+    p.parents[2]    # PureWindowsPath('c:/')
 
 ``.parent``
 -----------
@@ -667,7 +661,7 @@ System ``os`` vs. ``pathlib``
     import pathlib
 
     p = PurePosixPath('/a/b/c/d')
-    p.parent  # PurePosixPath('/a/b/c')
+    p.parent        # PurePosixPath('/a/b/c')
 
 ``.as_posix()``
 ---------------
@@ -677,8 +671,8 @@ System ``os`` vs. ``pathlib``
 
     p = PureWindowsPath('c:\\windows')
 
-    str(p)        # 'c:\\windows'
-    p.as_posix()  # 'c:/windows'
+    str(p)          # 'c:\\windows'
+    p.as_posix()    # 'c:/windows'
 
 ``.as_uri()``
 -------------
@@ -687,10 +681,10 @@ System ``os`` vs. ``pathlib``
     import pathlib
 
     p = PurePosixPath('/etc/passwd')
-    p.as_uri()  # 'file:///etc/passwd'
+    p.as_uri()      # 'file:///etc/passwd'
 
     p = PureWindowsPath('c:/Windows')
-    p.as_uri()  # 'file:///c:/Windows'
+    p.as_uri()      # 'file:///c:/Windows'
 
 ``Path.chmod()``
 ----------------
@@ -730,13 +724,12 @@ System ``os`` vs. ``pathlib``
     for child in p.iterdir():
         print(child)
 
-        # PosixPath('docs/conf.py')
-        # PosixPath('docs/_templates')
-        # PosixPath('docs/make.bat')
-        # PosixPath('docs/index.rst')
-        # PosixPath('docs/_build')
-        # PosixPath('docs/_static')
-        # PosixPath('docs/Makefile')
+    # PosixPath('docs/conf.py')
+    # PosixPath('docs/index.rst')
+    # PosixPath('docs/Makefile')
+    # PosixPath('docs/_build')
+    # PosixPath('docs/_static')
+    # PosixPath('docs/_templates')
 
 
 Running commands in parallel across many hosts

@@ -119,13 +119,13 @@ Wbudowana metoda ``format`` upraszcza nieco powyższy schemat. Zamiast operatora
     name = 'José Jiménez'
     age = 42
 
-    print('My name {name} has {age} years'.format(name=name, age=age))   # 'My name José Jiménez has 42 years'
-    print('My name {age} has {name} years'.format(**locals()))           # 'My name 42 has José Jiménez years'
-    print('My name {} has {} years'.format(name, age))                   # 'My name José Jiménez has 42 years'
-    print('My name {0} has {1} years'.format(name, age))                 # 'My name José Jiménez has 42 years'
-    print('My name {1} has {0} years'.format(name, age))                 # 'My name 42 has José Jiménez years'
-    print('My name {1:.3} has {0:10.1} years'.format(float(age), name))  # 'My name Jos has       42.0 years'
-    print('My name {1:.3} has {0:.1} years'.format(float(age), name))    # 'My name Jos has 42.0 years'
+    print('{name} is {age} years'.format(name=name, age=age))   # 'José Jiménez is 42 years'
+    print('{age} is {name} years'.format(**locals()))           # '42 is José Jiménez years'
+    print('{} is {} years'.format(name, age))                   # 'José Jiménez is 42 years'
+    print('{0} is {1} years'.format(name, age))                 # 'José Jiménez is 42 years'
+    print('{1} is {0} years'.format(name, age))                 # '42 is José Jiménez years'
+    print('{1:.3} is {0:10.1} years'.format(float(age), name))  # 'Jos is       42.0 years'
+    print('{1:.3} is {0:.1} years'.format(float(age), name))    # 'Jos is 42.0 years'
 
 
 f-strings - Python >= 3.6
@@ -207,9 +207,9 @@ Value conversion
             return 'repr'
 
 
-    '%s %r' % (Data(), Data())    # str repr
-    '{0!s} {0!r}'.format(Data())  # str repr
-    f'{Data()!s} {Data()!r}'      # str repr
+    '%s %r' % (Data(), Data())      # str repr
+    '{0!s} {0!r}'.format(Data())    # str repr
+    f'{Data()!s} {Data()!r}'        # str repr
 
 Padding and aligning strings
 ----------------------------
@@ -217,32 +217,32 @@ Padding and aligning strings
 
     text = 'test'
 
-    '%10s' % text          # '      test'
-    '%10s' % (text,)       # '      test'
-    '{:>10}'.format(text)  # '      test'
-    f'{text:>10}'          # '      test'
+    '%10s' % text                   # '      test'
+    '%10s' % (text,)                # '      test'
+    '{:>10}'.format(text)           # '      test'
+    f'{text:>10}'                   # '      test'
 
 .. code-block:: python
 
     text = 'test'
 
-    '%-10s' % text        # 'test      '
-    '%-10s' % (text,)     # 'test      '
-    '{:10}'.format(text)  # 'test      '
-    f'{text:10}'          # 'test      '
+    '%-10s' % text                  # 'test      '
+    '%-10s' % (text,)               # 'test      '
+    '{:10}'.format(text)            # 'test      '
+    f'{text:10}'                    # 'test      '
 
 .. code-block:: python
 
     text = 'test'
 
-    '{:_<10}'.format(text)  # 'test______'
-    f'{text:_<10}'          # 'test______'
+    '{:_<10}'.format(text)          # 'test______'
+    f'{text:_<10}'                  # 'test______'
 
-    '{:^10}'.format(text)   # '   test   '
-    f'{text:^10}'           # '   test   '
+    '{:^10}'.format(text)           # '   test   '
+    f'{text:^10}'                   # '   test   '
 
-    '{:^6}'.format(text)    # ' test  '
-    f'{text:^6}'            # ' test  '
+    '{:^6}'.format(text)            # ' test  '
+    f'{text:^6}'                    # ' test  '
 
 
 Truncating long strings
@@ -251,10 +251,10 @@ Truncating long strings
 
     text = 'Lorem Ipsum'
 
-    '%.5s' % text         # 'Lorem'
-    '%.5s' % (text,)      # 'Lorem'
-    '{:.5}'.format(text)  # 'Lorem'
-    f'{text:.5}'          # 'Lorem'
+    '%.5s' % text                   # 'Lorem'
+    '%.5s' % (text,)                # 'Lorem'
+    '{:.5}'.format(text)            # 'Lorem'
+    f'{text:.5}'                    # 'Lorem'
 
 Combining truncating and padding
 --------------------------------
@@ -262,10 +262,10 @@ Combining truncating and padding
 
     text = 'Lorem Ipsum'
 
-    '%-10.5s' % text        # 'Lorem     '
-    '%-10.5s' % (text,)     # 'Lorem     '
-    '{:10.5}'.format(text)  # 'Lorem     '
-    f'{text:10.5}'          # 'Lorem     '
+    '%-10.5s' % text                # 'Lorem     '
+    '%-10.5s' % (text,)             # 'Lorem     '
+    '{:10.5}'.format(text)          # 'Lorem     '
+    f'{text:10.5}'                  # 'Lorem     '
 
 Numbers
 -------
@@ -273,19 +273,19 @@ Numbers
 
     number = 35
 
-    '%d' % number          # '42'
-    '%d' % (number,)       # '42'
-    '{:d}'.format(number)  # '42'
-    f'{number:d}'          # '42'
+    '%d' % number                   # '42'
+    '%d' % (number,)                # '42'
+    '{:d}'.format(number)           # '42'
+    f'{number:d}'                   # '42'
 
 .. code-block:: python
 
     number = 3.141592653589793
 
-    '%f' % number          # '3.141593'
-    '%f' % (number,)       # '3.141593'
-    '{:f}'.format(number)  # '3.141593'
-    f'{number:f}'          # '3.141593'
+    '%f' % number                   # '3.141593'
+    '%f' % (number,)                # '3.141593'
+    '{:f}'.format(number)           # '3.141593'
+    f'{number:f}'                   # '3.141593'
 
 Padding numbers
 ---------------
@@ -293,19 +293,19 @@ Padding numbers
 
     number = 42
 
-    '%4d' % (number,)       # '  42'
-    '{:4d}'.format(number)  # '  42'
-    f'{number:4d}'          # '  42'
+    '%4d' % (number,)               # '  42'
+    '{:4d}'.format(number)          # '  42'
+    f'{number:4d}'                  # '  42'
 
 
 .. code-block:: python
 
     number = 3.141592653589793
 
-    '%06.2f' % number          # '003.14'
-    '%06.2f' % (number,)       # '003.14'
-    '{:06.2f}'.format(number)  # '003.14'
-    f'{number:06.2f}'          # '003.14'
+    '%06.2f' % number               # '003.14'
+    '%06.2f' % (number,)            # '003.14'
+    '{:06.2f}'.format(number)       # '003.14'
+    f'{number:06.2f}'               # '003.14'
 
 .. code-block:: python
 
