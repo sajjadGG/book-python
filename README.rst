@@ -35,7 +35,7 @@ Python 3: from None to Machine Learning
     :DevOps and Development Tools Ecosystem: http://devops.astrotech.io
     :GIT and GIT Flow in CI/CD: http://git.astrotech.io
     :Agile, Scrum, Kanban, XP, Lean: http://agile.astrotech.io
-    :IT Software Architecture, Cloud, Microservices and Processes: http://arch.astrotech.io
+    :Software Architecture, Cloud, Microservices and Processes: http://arch.astrotech.io
     :Linux and Shell Programming with Bash: http://linux.astrotech.io
 
     .. tip:: The most up-to-date version of this book is always at http://python.astrotech.io
