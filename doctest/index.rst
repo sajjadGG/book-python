@@ -69,7 +69,7 @@ Printing ``str``
         >>> hello('Ivan Ivanovich')
         Ivan Ivanovich
         """
-        print(text)
+        print(name)
 
 Printing ``str`` with newlines
 ------------------------------
