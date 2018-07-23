@@ -80,9 +80,9 @@ Numerical types
     age = 30
     age: int = 30
 
-    int(10)  # 10
-    int(10.0)  # 10
-    int(10.9)  # 10
+    int(10)                 # 10
+    int(10.0)               # 10
+    int(10.9)               # 10
 
     milion = 1000000
     milion = 1_000_000
@@ -117,8 +117,8 @@ Numerical types
 
 .. code-block:: python
 
-    complex('1+2j')    # (1+2j)
-    complex('1 + 2j')  # ValueError: complex() arg is a malformed string
+    complex('1+2j')         # (1+2j)
+    complex('1 + 2j')       # ValueError: complex() arg is a malformed string
 
 
 Logical types
@@ -175,7 +175,7 @@ Character types
         Max Peck
         Ivan Ivanovic
     """
-    # '\nMax Peck\nMax Peck\nIvan Ivanovic\n'
+    # '\n    José Jiménez\n    Max Peck\n    Ivan Ivanovic\n'
 
 
 Single or double quote?
@@ -200,7 +200,6 @@ Escape characters
 .. code-block:: text
 
     \n
-    \r
     \r\n
 
 .. figure:: img/type-machine.jpg
@@ -277,7 +276,7 @@ String methods
 .. code-block:: python
 
     text = 'José Jiménez'
-    text.split()         # ['José', 'Jiménez']
+    text.split()            # ['José', 'Jiménez']
 
     text = 'Max,Peck'
     text.split(',')         # ['Max', 'Peck']
@@ -288,9 +287,9 @@ String methods
 
     name = '    Max Peck    '
 
-    name.strip()   # 'Max Peck'
-    name.lstrip()  # 'Max Peck    '
-    name.rstrip()  # '    Max Peck'
+    name.strip()            # 'Max Peck'
+    name.lstrip()           # 'Max Peck    '
+    name.rstrip()           # '    Max Peck'
 
 ``startswith()``
 ^^^^^^^^^^^^^^^^
@@ -335,9 +334,9 @@ String methods
 
     name = 'joSé jiMénEz'
 
-    name.title()  # 'José Jiménez'
-    name.upper()  # 'JOSÉ JIMÉNEZ'
-    name.lower()  # 'josé jiménez'
+    name.title()    # 'José Jiménez'
+    name.upper()    # 'JOSÉ JIMÉNEZ'
+    name.lower()    # 'josé jiménez'
 
 ``replace()``
 ^^^^^^^^^^^^^
@@ -353,13 +352,14 @@ String splicing
     text = 'Lorem ipsum'
 
     text[2]      # 'r'
-    text[:2]     # 'Lo'
     text[0:3]    # 'Lor'
+    text[:3]     # 'Lor'
     text[1:4]    # 'ore'
     text[-3]     # 's'
     text[-3:]    # 'sum'
     text[-3:-1]  # 'su'
     text[:-2]    # 'Lorem ips'
+
     text[::2]    # 'Lrmism'
     text[::-1]   # 'muspi meroL'
     text[::-2]   # 'msimrL'
@@ -383,13 +383,12 @@ Basic usage of ``print()`` function
 
     .. code-block:: python
 
-    import sys
-    import os
+        import sys
+        import os
 
-    print(f'Python Executable: {sys.executable}')
-    print(f'Python Version: {sys.version}')
-    print(f'Virtualenv: {os.getenv("VIRTUAL_ENV")}')
-
+        print(f'Python Executable: {sys.executable}')
+        print(f'Python Version: {sys.version}')
+        print(f'Virtualenv: {os.getenv("VIRTUAL_ENV")}')
 
 #. Uruchom go w swoim IDE
 #. Jaka wersja Python jest zainstalowana?
