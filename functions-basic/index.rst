@@ -232,10 +232,10 @@ Integer to string
 
     .. code-block:: python
 
-        int_to_str(1969)    # 'one nine six nine'
-        int_to_str(31337)   # 'three one three three seven'
-        int_to_str(13.37)   # 'one three and three seven'
-        int_to_str(31.337)  # 'three one and three three seven'
+        number_to_str(1969)    # 'one nine six nine'
+        number_to_str(31337)   # 'three one three three seven'
+        number_to_str(13.37)   # 'one three and three seven'
+        number_to_str(31.337)  # 'three one and three three seven'
 
 :Założenia:
     * Nazwa pliku: ``functions_numstr_simple.py``
@@ -260,8 +260,10 @@ Integer to human readable
 
     .. code-block:: python
 
-        int_to_str(1969)   # 'one thousand nine hundred sixty nine'
-        int_to_str(13.37)  # 'thirteen and thirty seven hundredths'
+        number_to_str(1969)   # 'one thousand nine hundred sixty nine'
+        number_to_str(13.37)  # 'thirteen and thirty seven hundredths'
+        number_to_str(31337)  # 'thirty one thousand three hundred thirty seven'
+        number_to_str(31.337) # 'thirty one three hundreds thirty seven thousands'
 
 :Założenia:
     * Nazwa pliku: ``functions_numstr_human.py``

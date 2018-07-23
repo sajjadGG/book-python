@@ -18,16 +18,16 @@ NUMBER_DICT = {
 def number_to_str(number: Union[int, float]) -> str:
     """
     >>> number_to_str(1969)
-    'one nine six nine'
+    'one thousand nine hundred sixty nine'
 
     >>> number_to_str(31337)
-    'three one three three seven'
+    'thirty one thousand three hundred thirty seven'
 
     >>> number_to_str(13.37)
-    'one three and three seven'
+    'thirteen and thirty seven hundredths'
 
     >>> number_to_str(31.337)
-    'three one and three three seven'
+    'thirty one three hundreds thirty seven thousands'
     """
     output = []
 
