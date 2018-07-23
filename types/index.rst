@@ -408,33 +408,6 @@ Basic usage of ``print()`` function
     * Umiejętność uruchamiania skryptów
     * Szukanie rozwiązań zadań z książki
 
-Variables and types
--------------------
-#. Wczytaj od użytkownika imię
-#. Użytkownik wprowadza tylko dane typu ``str``
-#. Za pomocą f-string formatting wyświetl na ekranie:
-
-    .. code-block:: text
-
-        '''My name "José Jiménez".
-	        I'm an astronaut!'''
-
-#. Gdzie wartość w podwójnym cudzysłowiu to ciąg od użytkownika (w przykładzie użytkownik wpisał ``José Jiménez``)
-#. Zwróć uwagę na znaki apostrofów, cudzysłowów, tabulacji i nowych linii
-#. W ciągu do wyświetlenia nie używaj spacji ani enterów - użyj ``\n`` i ``\t``
-#. Tekst wyświetlony na ekranie ma mieć zamienione wszystkie spacje na ``_``
-#. Nie korzystaj z dodawania stringów ``str + str``
-
-:Założenia:
-    * Nazwa pliku: ``types_input.py``
-    * Szacunkowa długość kodu: 4 linie
-    * Maksymalny czas na zadanie: 10 min
-
-:Co zadanie sprawdza?:
-    * Definiowanie zmiennych
-    * Korzystanie z print formatting
-    * Wczytywanie tekstu od użytkownika
-
 Handling user input and type casting
 ------------------------------------
 #. Użytkownik wprowadza odległości w metrach
@@ -466,3 +439,30 @@ Handling user input and type casting
     * 1000 m = 1 km
     * 1608 m = 1 mila
     * 1852 m = 1 mila morska
+
+Variables and types
+-------------------
+#. Wczytaj od użytkownika imię
+#. Użytkownik wprowadza tylko dane typu ``str``
+#. Za pomocą f-string formatting wyświetl na ekranie:
+
+    .. code-block:: text
+
+        '''My name "José Jiménez".
+	        I'm an astronaut!'''
+
+#. Gdzie wartość w podwójnym cudzysłowiu to ciąg od użytkownika (w przykładzie użytkownik wpisał ``José Jiménez``)
+#. Zwróć uwagę na znaki apostrofów, cudzysłowów, tabulacji i nowych linii
+#. W ciągu do wyświetlenia nie używaj spacji ani enterów - użyj ``\n`` i ``\t``
+#. Tekst wyświetlony na ekranie ma mieć zamienione wszystkie spacje na ``_``
+#. Nie korzystaj z dodawania stringów ``str + str``
+
+:Założenia:
+    * Nazwa pliku: ``types_input.py``
+    * Szacunkowa długość kodu: 4 linie
+    * Maksymalny czas na zadanie: 10 min
+
+:Co zadanie sprawdza?:
+    * Definiowanie zmiennych
+    * Korzystanie z print formatting
+    * Wczytywanie tekstu od użytkownika
