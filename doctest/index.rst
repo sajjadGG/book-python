@@ -56,7 +56,7 @@ Returning ``str``
         >>> hello('Ivan Ivanovich')
         'Ivan Ivanovich'
         """
-        return text
+        return name
 
 Printing ``str``
 ----------------
