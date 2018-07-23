@@ -253,7 +253,7 @@ Characters before strings
     print('My name José Jiménez')  # My name José Jiménez
 
     name = 'José Jiménez'
-    print(f'My name {name}')        # My name José Jiménez
+    print(f'My name {name}')       # My name José Jiménez
 
 String immutability
 -------------------
@@ -266,7 +266,7 @@ String immutability
     name = 'José'
     name += ' Jiménez'
 
-    print(name)  # José Jiménez
+    print(name)         # José Jiménez
 
 String methods
 --------------
@@ -276,10 +276,10 @@ String methods
 .. code-block:: python
 
     text = 'José Jiménez'
-    text.split()            # ['José', 'Jiménez']
+    text.split()        # ['José', 'Jiménez']
 
     text = 'Max,Peck'
-    text.split(',')         # ['Max', 'Peck']
+    text.split(',')     # ['Max', 'Peck']
 
 ``strip()``, ``lstrip()``, ``rstrip()``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -287,9 +287,9 @@ String methods
 
     name = '    Max Peck    '
 
-    name.strip()            # 'Max Peck'
-    name.lstrip()           # 'Max Peck    '
-    name.rstrip()           # '    Max Peck'
+    name.strip()        # 'Max Peck'
+    name.lstrip()       # 'Max Peck    '
+    name.rstrip()       # '    Max Peck'
 
 ``startswith()``
 ^^^^^^^^^^^^^^^^
@@ -420,9 +420,10 @@ Variables and types
 	        I'm an astronaut!'''
 
 #. Gdzie wartość w podwójnym cudzysłowiu to ciąg od użytkownika (w przykładzie użytkownik wpisał ``José Jiménez``)
-#. Zwróć uwagę na znaki apostrofów, cudzysłowów i nowych linii
+#. Zwróć uwagę na znaki apostrofów, cudzysłowów, tabulacji i nowych linii
+#. W ciągu do wyświetlenia nie używaj spacji ani enterów - użyj ``\n`` i ``\t``
 #. Tekst wyświetlony na ekranie ma mieć zamienione wszystkie spacje na ``_``
-#. Nie korzystaj z dodawania stringów ``str + str`` ani spacjowania tekstu
+#. Nie korzystaj z dodawania stringów ``str + str``
 
 :Założenia:
     * Nazwa pliku: ``types_input.py``
