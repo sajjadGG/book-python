@@ -29,9 +29,4 @@ def number_to_str(number: Union[int, float]) -> str:
     >>> number_to_str(31.337)
     'thirty one three hundreds thirty seven thousands'
     """
-    output = []
-
-    for digit in str(number):
-        output.append(NUMBER_DICT[digit])
-
-    return ' '.join(output)
+    pass
