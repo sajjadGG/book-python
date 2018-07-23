@@ -17,7 +17,6 @@ W Pythonie, pętle wykonywane są na obiektach wieloelementowych, albo iteratora
     while True:
         pass
 
-
 .. code-block:: python
 
     x = 0
@@ -38,6 +37,7 @@ Keywords in loops
         number = input('Type number: ')
 
         if not number:
+            # if user hit enter, without typing number
             break
 
 
@@ -47,26 +47,6 @@ Keywords in loops
 Iterating simple types
 ----------------------
 Pętla ``for`` wykonuje się na zestawie elementów. Dosłownie można tę instrukcję przeczytać jako "Dla iksów będących wartościami listy, wykonaj instrukcję:"
-
-.. code-block:: python
-
-    for x in [1, 3, 4]:
-        print(x)
-
-    # 1
-    # 3
-    # 4
-
-.. code-block:: python
-
-    for x in 'Hello':
-        print(x)
-
-    # H
-    # e
-    # l
-    # l
-    # o
 
 .. code-block:: python
 
@@ -89,6 +69,26 @@ Pętla ``for`` wykonuje się na zestawie elementów. Dosłownie można tę instr
     # 4
     # 6
     # 8
+
+.. code-block:: python
+
+    for x in 'Hello':
+        print(x)
+
+    # H
+    # e
+    # l
+    # l
+    # o
+
+.. code-block:: python
+
+    for x in [1, 3, 4]:
+        print(x)
+
+    # 1
+    # 3
+    # 4
 
 Iterating over nested ``list`` items
 ------------------------------------
@@ -122,11 +122,11 @@ Iterating over nested ``list`` items
     ]
 
     for key, value in DATA:
-        print(f'{key} -> {value}')
+        print(f'key: "{key}", value: "{value}"')
 
-    # a -> 0
-    # b -> 1
-    # c -> 2
+    # key: "a", value: "0"
+    # key: "b", value: "1"
+    # key: "c", value: "2"
 
 .. code-block:: python
 
@@ -137,11 +137,11 @@ Iterating over nested ``list`` items
     ]
 
     for key, value in DATA:
-        print(f'{key} -> {value}')
+        print(f'key: "{key}", value: "{value}"')
 
-    # 0 -> 1
-    # name -> José
-    # locations -> ['CapeCanaveral', 'Houston']
+    # key: "0",         value: "1"
+    # key: "name",      value: "José"
+    # key: "locations", value: "['CapeCanaveral', 'Houston']"
 
 ``enumerate()``
 ---------------
@@ -154,11 +154,11 @@ Iterating over nested ``list`` items
     ]
 
     for index, element in enumerate(DATA):
-        print(f'{index}: {element}')
+        print(f'index: "{index}", element: "{element}"')
 
-    # 0: ('a', 0)
-    # 1: ('b', 1)
-    # 2: ('c', 2)
+    # index: "0", element: "('a', 0)"
+    # index: "1", element: "('b', 1)"
+    # index: "2", element: "('c', 2)"
 
 
 Iterating over ``dict`` items
@@ -197,11 +197,11 @@ Iterating over ``dict`` items
 
 
     for key, value in DATA.items():
-        print(f'{key} -> {value}')
+        print(f'key: "{key}", value: "{value}"')
 
-    # 'first_name' -> 'Jose'
-    # 'last_name' -> 'Jimenez'
-    # 'age' -> 42
+    # key: "first_name", value: "Jose"
+    # key: "last_name",  value: "Jimenez"
+    # key: "age",        value: "42"
 
 Accessing ``dict`` items with key in the loop
 ---------------------------------------------
@@ -226,52 +226,58 @@ Accessing ``dict`` items with key in the loop
 
 Iterating complex types
 -----------------------
+* flatmap
+
 .. code-block:: python
 
-    DATA = ['Max', ('José', 'Jimenez'), 3, 2.8]
+    DATA = ['Max', ('1.0', 'José'), 3, 2.8, {True, None, False}]
 
     for x in DATA:
-        print(f'Value is: {x}')
+        print(f'value: "{x}"')
 
-    # Value is: Max
-    # Value is: ('José', 'Jimenez')
-    # Value is: 3
-    # Value is: 2.8
+    # value: "Max"
+    # value: "('1.0', 'José')"
+    # value: "3"
+    # value: "2.8"
+    # value: "{False, True, None}"
 
 .. code-block:: python
 
-    DATA = ['Max', ('José', 'Jimenez'), 3, 2.8]
+    DATA = ['Max', ('1.0', 'José'), 3, 2.8, {True, None, False}]
 
     for x in DATA:
         for y in x:
-            print(f'Value is: {y}')
+            print(f'value: "{y}"')
 
-    # Value is: M
-    # Value is: a
-    # Value is: x
-    # Value is: José
-    # Value is: Jimenez
+    # value: "M"
+    # value: "a"
+    # value: "x"
+    # value: "1.0"
+    # value: "José"
     # TypeError: 'int' object is not iterable
 
 
 .. code-block:: python
 
-    DATA = ['Max', 3, 2.8, ['1.0', 'José']]
+    DATA = ['Max', ('1.0', 'José'), 3, 2.8, {True, None, False}]
 
     for x in DATA:
 
-        if not isinstance(x, (list, set, tuple)):
-            print(f'Value is: {x}')
-        else:
+        if isinstance(x, (list, set, tuple)):
             for y in x:
-                print(f'Value is: {y}')
+                print(f'value: "{y}"')
+        else:
+            print(f'value: "{x}"')
 
+    # value: "Max"
+    # value: "1.0"
+    # value: "José"
+    # value: "3"
+    # value: "2.8"
+    # value: "False"
+    # value: "True"
+    # value: "None"
 
-    # Value is: Max
-    # Value is: 3
-    # Value is: 2.8
-    # Value is: 1.0
-    # Value is: José
 
 Inline ``for``
 ==============
@@ -337,13 +343,13 @@ Najczęściej wykorzystuje się tą konstrukcję aby zaaplikować funkcję dla k
 
 .. code-block:: python
 
-    def is_even(number):
+    def describe(number):
         if number % 2 == 0:
             return {'number': number, 'status': 'even'}
         else:
             return {'number': number, 'status': 'odd'}
 
-    [is_even(x) for x in range(0, 5)]
+    [describe(x) for x in range(0, 5)]
     # [
     #    {'number': 0, 'status': 'even'},
     #    {'number': 1, 'status': 'odd'},
@@ -380,14 +386,17 @@ Inline ``for`` not only for ``list``
 ------------------------------------
 .. code-block:: python
 
-    {pow(x) for x in range(0, 5)}
+    {x**2 for x in range(0, 5)}
     # set {1, 2, 4, 9, 16}
 
-    {x: pow(x) for x in range(0, 5)}
+    {x: x**2 for x in range(0, 5)}
     # dict {1:1, 2:4, 3:9, 4:16}
 
-    {pow(x): x for x in range(0, 5)}
+    {x**2: x for x in range(0, 5)}
     # dict {1:1, 4:2, 9:3, 16:4}
+
+    {x**2: x**3 for x in range(0, 5)}
+    # dict {1:1, 4:8, 9:27, 16:64}
 
 .. code-block:: python
 
@@ -478,7 +487,7 @@ Label encoder
 .. code-block:: python
 
     print(species)
-    # {0: 'I. versicolor', 1: 'I. virginica', 2: 'I. setosa'}
+    # {0: 'versicolor', 1: 'virginica', 2: 'setosa'}
 
     print(labels)
     # [0, 1, 2, 1, 1, 0, ...]
