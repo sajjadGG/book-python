@@ -34,10 +34,10 @@ Conditional Statements
 
 .. code-block:: python
 
-    if name != 'José Jiménez':
-        print('this is False')
+    if name == 'José Jiménez':
+        print('My name José Jiménez')
     else:
-        print('this is True')
+        print('My name is other')
 
 
 ``elif``
@@ -56,8 +56,8 @@ Conditional Statements
 
 .. code-block:: python
 
-    if 0 <= k <= n:
-        raise ValueError('k in population')
+    if 0 <= k < n:
+        print('k in is between [0, n)')
 
 Inline ``if``
 -------------
@@ -73,7 +73,9 @@ Inline ``if``
 .. code-block:: python
 
     ip = '127.0.0.1'
+
     protocol = 'ipv4' if '.' in ip else 'ipv6'
+
 
 Complex expressions
 ===================
@@ -129,19 +131,17 @@ Control Statements
 .. code-block:: python
 
     usernames = {'José Jiménez', 'Max Peck'}
-    name = 'José Jiménez'
 
-    if name in usernames:
+    if 'José Jiménez' in usernames:
         print(True)
     else:
         print(False)
 
 .. code-block:: python
 
-    name = 'José'
-    text = 'My name José Jiménez
+    text = 'My name José Jiménez'
 
-    if name in text:
+    if 'José' in text:
         print(True)
     else:
         print(False)
@@ -152,20 +152,21 @@ Control Statements
 
 .. code-block:: python
 
-    usernames = {'José', 'Max', 'Ivan'}
-    name = 'José'
+    name = None
 
-    if name not in usernames:
-        print('I do not know you')
+    if not name:
+        print('Name is not set')
     else:
         print('Hello my friend')
 
 .. code-block:: python
 
-    if not name:
-        print('Name is not set')
+    usernames = {'José', 'Max', 'Ivan'}
+
+    if 'José' not in usernames:
+        print('I do not know you')
     else:
-        print('You have set your name')
+        print('Hello my friend')
 
 Tak nie robimy:
 
@@ -178,48 +179,6 @@ Tak nie robimy:
             print('I do not know you')
         else:
             print('Hello my friend')
-
-``is``
-------
-* ``is`` porównuje czy dwa obiekty są tożsame
-* Najczęściej służy do sprawdzania czy coś jest ``None``
-
-.. code-block:: python
-
-    if name is None:
-        print('Name is not set')
-    else:
-        print('You have set your name')
-
-Bardzo kuszący jest następujący przykład:
-
- .. code-block:: python
-
-     if name is 'Max Peck':
-        print('You are Max!')
-     else:
-        print('You are not Max!')
-
-**Nie jest on jednak do końca poprawny. Słowo kluczowe ``is`` porównuje czy dwa obiekty są tym samym obiektem, nie czy mają taką samą wartość.**
-* Poniższy przykład ilustruje, że pomimo że dwa obiekty przechowują takiego samego stringa to nie są sobie tożsame, mimo że są sobie równe.
-
- .. code-block:: python
-
-    a = 'hello'
-    b = 'hello'
-
-    print(f'a is {a}, b is {b}')        # a is hello, b is hello
-    print(f'a == b returns: {a==b}')    # a == b returns: True
-    print(f'a is b returns: {a is b}')  # a is b returns: True
-
-.. code-block:: python
-
-    a = 'hello'
-    b = ''.join('hello')
-
-    print(f'a is {a}, b is {b}')        # a is hello, b is hello
-    print(f'a == b returns: {a==b}')    # a == b returns: True
-    print(f'a is b returns: {a is b}')  # a is b returns: False
 
 
 No ``switch`` statement?!

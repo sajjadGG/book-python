@@ -5,7 +5,7 @@
 "``x >= y``", "większe lub równe"
 "``x == y``", "równe"
 "``x != y``", "różne"
-"``x += 1``", "dodanie i przypisanie, ``x = 1; x += 3``"
+"``x += 1``", "dodanie i przypisanie, (``x = 1``, ``x += 3``, ``x == 4``)"
 "``x in y``", "obiekt jest w innym"
 "``x not in y``", "obiekt nie jest w innym"
 "``x is y``", "obiekty są tożsame (sprawdzanie czy ``None``)"

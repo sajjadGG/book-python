@@ -32,11 +32,11 @@ Bitwise operators
 
 .. code-block:: python
 
-    0^0  # 0
-    1^1  # 0
-    1^0  # 1
-    0^1  # 1
-    8^5  # 13
+    0 ^ 0  # 0
+    1 ^ 1  # 0
+    1 ^ 0  # 1
+    0 ^ 1  # 1
+    8 ^ 5  # 13
 
 .. code-block:: text
 
@@ -74,6 +74,7 @@ Even and odd numbers
     * wykorzystanie operatorów matematycznych
 
 :Podpowiedź:
+    * Zero jest parzyste: https://en.wikipedia.org/wiki/Parity_of_zero
     * Liczba parzysta, to taka, która po podzieleniu przez dwa nie ma reszty
     * Użyj dzielenia modulo ``%``
     * Zwróć uwagę, że operator ``%`` działa modulo tylko na ``int`` oraz na ``float``. Przy ``str`` ma zupełnie inne znaczenie.
