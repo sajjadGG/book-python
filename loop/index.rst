@@ -405,13 +405,12 @@ Assignments
 
 Text manipulation
 -----------------
-#. Napisz program, który na podstawie paragrafu tekstu "Lorem Ipsum" podzieli go na zdania
+#. Podziel podany poniżej tekst "Lorem Ipsum" na zdania
 #. Kropka rozdziela zdania
 #. Spacja oddziela wyrazy w zdaniu
-#. Nie przejmuj się ostatnim pustym zdaniem (długość 0)
 #. Za pomocą funkcji ``len()`` policz ile jest wyrazów w każdym zdaniu::
 
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 
 :Założenia:
     * Nazwa pliku: ``loop_sentences.py``
@@ -466,7 +465,8 @@ Report card
     * sprawdzanie czy obiekt jest instancją klasy
 
 :Podpowiedź:
-    * ``len()``, ``sum()``
+    * ``len()``
+    * ``sum()``
 
 Label encoder
 -------------
