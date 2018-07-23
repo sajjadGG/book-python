@@ -15,6 +15,8 @@ Function definition
     def hello():
         print('My name José Jiménez')
 
+    hello()
+    # José Jiménez
 
 Returning values
 ================
@@ -23,27 +25,52 @@ Returning values
 
 .. code-block:: python
 
-    def add(a, b):
-        return a + b
+    def hello():
+        return 'hello world'
 
-    add(2, 3)
-    # 5
+    output = hello()
+
+    print(output)
+    # 'hello world'
 
 .. code-block:: python
 
-    def add(a, b):
-        return a + b
+    def hello():
+        return 'hello world'
         print('This will not be executed')
 
-    add(2, 3)
-    # 5
+    output = hello()
+
+    print(output)
+    # 'hello world'
 
 Returning simple types
 ----------------------
 .. code-block:: python
 
     def function():
+        return 42
+
+    def function():
+        return 13.37
+
+    def function():
         return 'José Jiménez'
+
+    def function():
+        return (42, 13.37, 'José Jiménez')
+
+    def function():
+        return 42, 13.37, 'José Jiménez'
+
+    def function():
+        return [42, 13.37, 'foobar']
+
+    def function():
+        return {42, 13.37, 'José Jiménez'}
+
+    def function():
+        return {'first_name': 'José', 'last_name': 'Jiménez'}
 
     def function():
         return True
@@ -53,19 +80,7 @@ Returning simple types
 
     def function():
         print('hello')
-        # Python always return something, in this case ``return None``
-
-    def function():
-        return {'first_name': 'José', 'last_name': 'Jiménez'}
-
-    def function():
-        return 1, 'foobar'
-
-    def function():
-        return (5, 10, 15, 'foobar')
-
-    def function():
-        return [1, 2.5, 'foobar']
+        # Python will ``return None`` implicitly, if return is not specified
 
 Returning nested types
 ----------------------
@@ -75,8 +90,9 @@ Returning nested types
         return [
             {'astro': 'Peck'},
             {'astro': 'Иванович', 'agency': {'name': 'roscosmos'}},
-            {'astro': 'Jiménez', 'missions': ['mercury', 'apollo']},
+            {'astro': 'Jiménez', 'missions': ('mercury', 'apollo')},
         ]
+
 
 Function arguments
 ==================
@@ -123,7 +139,7 @@ Named arguments
 .. code-block:: python
 
     def minus(a, b):
-        return a + b
+        return a - b
 
     minus(2, 1)      # 1
     minus(1, 2)      # -1
@@ -149,12 +165,12 @@ Arguments with default value
 
 .. code-block:: python
 
-    def server(username, password, host='127.0.0.1', port=80, ssl=False):
-        print(f'Connecting to {username}:{password}@{host}:{port}')
+    def server(username, password, host='127.0.0.1', port=80, ssl=False, keep_alive=1, persistent=False):
+        print('Connecting...')
 
-    server('admin', 'admin', 'localhost', 80, False)
+    server('admin', 'admin', 'localhost', 80, False, 1, True)
 
-    server(host='localhost', username='admin', password='admin', ssl=True)
+    server(host='localhost', username='admin', password='admin', ssl=True, keep_alive=1, persistent=True)
 
     server(
         host='localhost',
@@ -162,18 +178,20 @@ Arguments with default value
         password='admin',
         port=443,
         ssl=True,
+        persistent=True,
     )
 
 
 Naming convention
 =================
-* Nie robimy CamelCase
-* Używanie ``_`` w nazwach (snake_case)
-* Funkcje o nazwie zaczynającej się od ``_`` przez konwencję są traktowane jako prywatne (w Pythonie nie ma private/protected/public).
-* Funkcje o nazwie zaczynającej się od ``__`` i kończących się na ``__`` przez konwencję są traktowane jako systemowe.
-* Nazwy opisowe funkcji
-* ``print_()``
-* ``__nazwa_funkcji()``
+* Nie robimy camelCase
+* Używanie ``_`` w nazwach (snake_case) - // Python - snake ;)
+* W Pythonie nie ma private/protected/public
+* Funkcje o nazwie zaczynającej się od ``_`` przez konwencję są traktowane jako prywatne
+* Funkcje o nazwie zaczynającej się od ``__`` i kończących się na ``__`` przez konwencję są traktowane jako systemowe
+* Nazwy opisowe funkcji zamiast komentarza
+* ``print_()`` - when name collision
+* ``__nazwa_funkcji()`` - name mangling
 
 
 Variable scope
@@ -193,6 +211,8 @@ Variable scope
 
 Recurrence
 ==========
+* Aby zrozumieć rekurencję – musisz najpierw zrozumieć rekurencję.
+
 .. code-block:: python
 
     def factorial(n: int) -> int:
@@ -207,7 +227,7 @@ Assignments
 
 Integer to string
 -----------------
-#. Napisz funkcję ``int_to_str``
+#. Napisz funkcję ``number_to_str``
 #. Funkcja zamieni dowolnego ``int`` lub ``float`` na formę tekstową
 
     .. code-block:: python
@@ -218,7 +238,7 @@ Integer to string
         int_to_str(31.337)  # 'three one and three three seven'
 
 :Założenia:
-    * Nazwa pliku: ``functions_intstr_simple.py``
+    * Nazwa pliku: ``functions_numstr_simple.py``
     * Szacunkowa długość kodu: około 15 linii
     * Maksymalny czas na zadanie: 15 min
 
@@ -232,7 +252,7 @@ Integer to string
 
 Integer to human readable
 -------------------------
-#. Napisz funkcję ``int_to_str``
+#. Napisz funkcję ``number_to_str``
 #. Funkcja zamieni dowolnego ``int`` lub ``float`` na formę tekstową
 #. Funkcja musi zmieniać wartości na poprawną gramatycznie formę
 #. Max 6 cyfr przed przecinkiem
@@ -244,7 +264,7 @@ Integer to human readable
         int_to_str(13.37)  # 'thirteen and thirty seven hundredths'
 
 :Założenia:
-    * Nazwa pliku: ``functions_intstr_human.py``
+    * Nazwa pliku: ``functions_numstr_human.py``
     * Szacunkowa długość kodu: około 15 linii
     * Maksymalny czas na zadanie: 15 min
 

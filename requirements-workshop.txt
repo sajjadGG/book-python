@@ -1,7 +1,7 @@
 requests
 pycodestyle
 mypy
-line_profiler
+# line_profiler
 
 
 ##########
