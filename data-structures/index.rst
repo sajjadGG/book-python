@@ -195,12 +195,12 @@ Simple collections
 .. code-block:: python
 
     my_dict = {
-        'astronaut': {'first_name': 'José', 'last_name': 'Jiménez'}
+        'astronaut': {'first_name': 'José', 'last_name': 'Jiménez'},
         'agency': ['NASA', 'Roscosmos', 'ESA'],
         'age': 42,
     }
 
-    my_dict['locations']                # ['NASA', 'Roscosmos', 'ESA']
+    my_dict['agency']                   # ['NASA', 'Roscosmos', 'ESA']
     my_dict['astronaut']['first_name']  # José
 
 
@@ -208,7 +208,7 @@ Simple collections
 
     my_dict = {
         'first_name': 'José',
-        'last_name': 'Jiménez'
+        'last_name': 'Jiménez',
         'age': 42,
     }
 

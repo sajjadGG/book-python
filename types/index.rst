@@ -210,10 +210,10 @@ Escape characters
 
 .. code-block:: text
 
-    \x1F680  # after \x goes hexadecimal number
-    \u1F680  # after \u goes four hexadecimal numbers
+    \x1F680     # after \x goes hexadecimal number
+    \u0001F680  # after \u goes four hexadecimal numbers
     🚀
-    \b1010   # after \b goes bytes
+    \b1010      # after \b goes bytes
     \t
     \'
 
