@@ -102,6 +102,7 @@ Multiple Inheritance
     :language: python
     :caption: Using ``super()`` on a class
 
+
 ``_`` and ``__`` - Private, protected, public?!
 ===============================================
 * Brak pól protected i private
@@ -148,9 +149,8 @@ Dragon (Easy)
     * ``position_x`` domyślnie 0
     * ``position_y`` domyślnie 0
     * ``texture`` domyślnie ``dragon.png``
-    * ``status`` domyślnie 'alive'
+    * ``status`` domyślnie ``alive``
 
-#. Przyjmij górny lewy róg ekranu za punkt (0, 0)
 #. Stwórz metody:
 
     * ``.set_position(x, y)`` - ustawia pozycję smoka na ``x`` i ``y``
@@ -182,11 +182,12 @@ Dragon (Easy)
 
 Dragon (Medium)
 -----------------
+#. Przyjmij górny lewy róg ekranu za punkt (0, 0)
+#. Smok nie może wyjść poza obszar ekranu (1024x768)
 #. Stwórz klasę ``Hero``
 #. Nasz bohater (José Jiménez) ma skończone losowe ``hit_points`` (100-150)
 #. Smok zadaje losowe obrażenia (5-20)
 #. Bohater zadaje losowe obrażenia (1-15)
-#. Smok nie może wyjść poza obszar ekranu (1024x768)
 #. Napisz ``doctest`` do funkcji move, sprawdzający poruszanie się poza planszą
 #. Przeprowadź symulację walki.
 #. Kto zginie pierwszy?

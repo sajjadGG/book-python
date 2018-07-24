@@ -6,5 +6,4 @@ class Astronaut:
 
 
 jose = Astronaut()
-jose.first_name
-# José
+jose.first_name     # José

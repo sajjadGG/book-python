@@ -6,24 +6,19 @@ Files
 
 .. code-block:: python
 
-    FILENAME = '/etc/hostname'
+    file = open(r'C:\Users\desktop.ini')
 
-    file = open(FILENAME)
-    content = file.read()
-
-    # musisz pamiętać aby zamknąć
-    file.close()
+    content = file.read()   # reading file
+    file.close()            # you have to close file manually
 
     print(content)
 
-
 .. code-block:: python
 
-    FILENAME = '/etc/hostname'
-
-    with open(FILENAME) as file:
+    with open(r'C:\Users\desktop.ini') as file:
         content = file.read()
-    # nie musisz sam zamykać pliku, plik zostanie zamknięty gdy opuścimy blok with
+
+    # Python will close file automatically as soon as ``with`` block is over
     print(content)
 
 
@@ -70,7 +65,7 @@ Zawartość zadanego pliku
 #. Dopisz obsługę wyjątków dla braku uprawnień oraz tego że plik nie istnieje.
 
 :Założenia:
-    * Nazwa pliku: ``file_cat.py``
+    * Nazwa pliku: ``file_content.py``
     * Szacunkowa długość kodu: około 5 linii
     * Maksymalny czas na zadanie: 5 min
 
@@ -93,6 +88,10 @@ Parsowanie ``/etc/hosts``
     * korzystanie z pętli i instrukcji warunkowych
     * parsowanie stringów
     * praca ze ścieżkami w systemie operacyjnym
+
+:Podpowiedź:
+    * ``str.isspace()``
+    * inline ``if``
 
 .. literalinclude:: src/etc-hosts.txt
     :name: listing-file-etc-hosts

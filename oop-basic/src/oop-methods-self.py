@@ -2,7 +2,7 @@ class Astronaut:
     name = 'José Jiménez'
 
     def say_hello(self):
-        print(f'My name is {self.name}')
+        print(f'My name {self.name}')
 
 
 jose = Astronaut()

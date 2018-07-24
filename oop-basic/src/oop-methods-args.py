@@ -1,14 +1,14 @@
 class Astronaut:
     name = 'José Jiménez'
 
-    def say_hello(self, text='Hello'):
-        print(f'{text} {self.name}')
+    def say_hello(self, text='¡Hola'):
+        print(f'{text} {self.name}!')
 
 
 jose = Astronaut()
 
 jose.say_hello()
-# Hello José Jiménez
+# ¡Hola José Jiménez!
 
-jose.say_hello('My name is')
-# My name is José Jiménez
+jose.say_hello('My name')
+# My name José Jiménez!

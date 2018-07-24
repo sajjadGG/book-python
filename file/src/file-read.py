@@ -1,23 +1,19 @@
-FILENAME = '/etc/hostname'
+with open(r'C:\Users\desktop.ini') as file:
+    content = file.read()
 
 
-with open(FILENAME) as file:
+with open(r'C:\Users\desktop.ini') as file:
+    content = file.readlines()
+
+
+with open(r'C:\Users\desktop.ini') as file:
+    selected_lines = file.readlines()[1:30]
+
+
+with open(r'C:\Users\desktop.ini') as file:
     for line in file:
         print(line)
 
 
-with open(FILENAME) as file:
-    content = file.read()
-
-
-with open(FILENAME) as file:
-    content = file.readlines()
-
-
-with open(FILENAME) as file:
-    for line in file.readlines()[30:50]:
-        print(line)
-
-
-with open(FILENAME, encoding='utf-8') as file:
+with open(r'C:\Users\desktop.ini', encoding='utf-8') as file:
     content = file.read()

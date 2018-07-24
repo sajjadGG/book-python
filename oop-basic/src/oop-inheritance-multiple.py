@@ -3,7 +3,7 @@ class Astronaut:
         self.name = name
 
     def say_hallo(self):
-        print(f'My name is {self.name}')
+        print(f'My name {self.name}')
 
 
 class MaleAstronaut(Astronaut):
@@ -14,10 +14,7 @@ class Gieroj(MaleAstronaut):
     status = 'hero'
 
 
-ivan = Gieroj(name='Ivan')
-ivan.say_hallo()
-# My name is Ivan
-ivan.status
-# hero
-ivan.gender
-# male
+ivan = Gieroj(name='Иван Иванович')
+ivan.say_hallo()        # My name is Иван Иванович
+ivan.status             # hero
+ivan.gender             # male

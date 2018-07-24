@@ -2,11 +2,10 @@ def say_hello():
     print('Hello')
 
 class Astronaut:
-    name = 'Josv Jiménez'
+    name = 'José Jiménez'
 
 jose = Astronaut()
-say_hello()
-# Hello
+say_hello()             # Hello
 
 
 class Astronaut:
@@ -16,8 +15,7 @@ class Astronaut:
         print('Hello')
 
 jose = Astronaut()
-jose.say_hello()
-# Hello
+jose.say_hello()        # Hello
 
 
 class Astronaut:
@@ -28,7 +26,5 @@ class Astronaut:
         print('Hello')
 
 jose = Astronaut()
-jose.say_hello()
-# Hello
-Astronaut.say_hello()
-# Hello
+jose.say_hello()        # Hello
+Astronaut.say_hello()   # Hello

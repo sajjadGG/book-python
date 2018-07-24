@@ -1,14 +1,12 @@
 class Astronaut:
-    def __init__(self, name, agency='NASA'):
+    def __init__(self, name, age=30, agency='NASA'):
         self.name = name
         self.agency = agency
-        self.age = 30  # better is to use parameter to be customized by user
+        self.age = age
 
 
 jose = Astronaut(name='José Jiménez')
-jose.agency
-# NASA
+jose.agency     # NASA
 
 ivan = Astronaut(name='Иван Иванович', agency='Roscosmos')
-ivan.agency
-# Roscosmos
+ivan.agency     # Roscosmos

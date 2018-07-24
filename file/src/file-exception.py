@@ -1,13 +1,10 @@
-FILENAME = input('Podaj nazwę pliku: ')
-
-
 try:
-    with open(FILENAME, mode='w', encoding='utf-8') as file:
+    with open(r'C:\Users\desktop.ini', mode='w', encoding='utf-8') as file:
         content = file.read()
         print(content)
 
 except FileNotFoundError:
-    print('File does not exists')
+    print('File does not exist')
 
 except PermissionError:
-    print('Brak uprawnien')
+    print('Permission denied')

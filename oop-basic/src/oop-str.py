@@ -3,8 +3,7 @@ class Astronaut:
 
 
 jose = Astronaut()
-print(jose)
-# <__main__.Astronaut object at 0x01E3FDF0>
+print(jose)  # <__main__.Astronaut object at 0x01E3FDF0>
 
 
 class Astronaut:
@@ -15,5 +14,4 @@ class Astronaut:
 
 
 jose = Astronaut()
-print(jose)
-# My name José Jiménez
+print(jose)  # My name José Jiménez

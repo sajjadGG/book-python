@@ -14,9 +14,7 @@ class FemaleAstronaut(Astronaut):
 
 
 jose = MaleAstronaut()
-jose.what_is_your_gender()
-# male
+jose.what_is_your_gender()       # male
 
 valentina = FemaleAstronaut()
-valentina.what_is_your_gender()
-# female
+valentina.what_is_your_gender()  # female

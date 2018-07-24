@@ -12,7 +12,7 @@ def datetime_to_mstimestamp(date):
     """
     timestamp = int(time.mktime(date.timetuple()))
     magic_number = 116444736000000000
-    return timestamp * 10000000 + magic_number
+    return timestamp * 10_000_000 + magic_number
 
 
 def mstimestamp_to_datetime(mstimestamp):
@@ -25,4 +25,4 @@ def mstimestamp_to_datetime(mstimestamp):
     """
     magic_number = 11644473600
     return datetime.datetime.fromtimestamp(
-        mstimestamp / 10000000 - magic_number)
+        mstimestamp / 10_000_000 - magic_number)
