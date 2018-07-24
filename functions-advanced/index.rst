@@ -2,6 +2,7 @@
 Advanced Functions
 ******************
 
+
 Callable
 ========
 .. code-block:: python
@@ -9,15 +10,15 @@ Callable
     def hello():
         print('My name José Jiménez')
 
-    hello          # <function hello at 0x0C55D420>
-    type(hello)    # <class 'function'>
-    hello()        # My name José Jiménez
+    hello                 # <function hello at 0x0C55D420>
+    type(hello)           # <class 'function'>
+    hello()               # My name José Jiménez
 
 .. code-block:: python
 
-    'hello'        # 'hello'
-    type('hello')  # <class 'str'>
-    'hello'()      # TypeError: 'str' object is not callable
+    'hello'               # 'hello'
+    type('hello')         # <class 'str'>
+    'hello'()             # TypeError: 'str' object is not callable
 
 Returning function (callable)
 -----------------------------
@@ -82,26 +83,29 @@ Przyjmowanie z funkcji zmiennej ilości argumentów
     line.split(':')
     # ['jimenez', 'x', '1001', '1001', 'José Jiménez', '/home/jimenez', '/bin/bash']
 
+.. code-block:: python
 
-    # username, password, uid, gid, name, home, shell = line.split(':')
+    username, password, uid, gid, name, home, shell = line.split(':')
+    username    # jimenez
+    password    # x
+
+.. code-block:: python
 
     username, password, *others = line.split(':')
+    username    # jimenez
+    password    # x
+    others      # ['1001', '1001', 'José Jiménez', '/home/jimenez', '/bin/bash']
 
-    username  # jimenez
-    password  # x
-    others  # ['1001', '1001', 'José Jiménez', '/home/jimenez', '/bin/bash']
-
-
+.. code-block:: python
 
     *others, shell = line.split(':')
+    others      # ['jimenez', 'x', '1001', '1001', 'José Jiménez', '/home/jimenez']
+    shell       # /bin/bash
 
-    others  # ['jimenez', 'x', '1001', '1001', 'José Jiménez', '/home/jimenez']
-    shell  # /bin/bash
-
+.. code-block:: python
 
     # if you're not using ``others`` later in your code
     username, *_ = line.split(':')
-
 
 .. code-block:: python
 
@@ -120,32 +124,28 @@ Przyjmowanie z funkcji zmiennej ilości argumentów
 
 Definiowanie funkcji ze zmienną ilością parametrów
 --------------------------------------------------
+- ``args`` - pozycyjne
+- ``kwargs``- nazwane
+
 .. code-block:: python
 
     def wyswietl_argumenty(a, b, c=0, *pozycyjne, **nazwane):
-        print(f'argument a: {a}')  # 1
-        print(f'argument b: {b}')  # 2
-        print(f'argument c: {c}')  # 3
-        print(f'argumenty pozycyjne: {pozycyjne}')    # 4, 5, 6
-        print(f'argumenty nazwane: {nazwane}')        # d=5, e=6
+        print(f'argument a: {a}')                   # 1
+        print(f'argument b: {b}')                   # 2
+        print(f'argument c: {c}')                   # 3
+        print(f'argumenty pozycyjne: {pozycyjne}')  # 4, 5, 6
+        print(f'argumenty nazwane: {nazwane}')      # d=5, e=6
 
 
     wyswietl_argumenty(1, 2, 3, 4, 5, 6, d=5, e=6)
 
-Wewnątrz funkcji będziemy mieli dostępną zmienną ``dopasowane`` o wartości 1, zmeinną ``pozycyjne``, zawierającą listę elementów (2, 3, 4) oraz zmienną słownikową ``nazwane``, która ma klucze 'c' i 'd', które przechowują wartości, odpowiednio, 5 i 6.
-
-Przez konwencję:
-
-    - ``pozycyjne`` - ``args``
-    - ``nazwane`` - ``kwargs``
-
 .. code-block:: python
 
     def wyswietl_argumenty(a, b, c=0, *args, **kwargs):
-        print(f'argument a: {a}')  # 1
-        print(f'argument b: {b}')  # 2
-        print(f'argument c: {c}')  # 3
-        print(f'argumenty args: {args}')    # 4, 5, 6
+        print(f'argument a: {a}')                   # 1
+        print(f'argument b: {b}')                   # 2
+        print(f'argument c: {c}')                   # 3
+        print(f'argumenty args: {args}')            # 4, 5, 6
         print(f'argumenty kwargs: {kwargs}')        # d=5, e=6
 
 
@@ -164,7 +164,6 @@ Kiedy to się przydaje:
     celsius_to_fahrenheit(1, 2, 3, 4, 5)
     # [33.8, 35.6, 37.4, 39.2, 41.0]
 
-
 Przekazywanie do funkcji zmiennej ilości parametrów
 ---------------------------------------------------
 Przykładowe zastosownaie operatorów ``*`` i ``**`` polega na wykorzystaniu ich przy wywołaniu funkcji. Wtedy, wykorzystując operator ``*``, kolejne elementy listy albo krotki będą przekazane jako kolejne argumenty funkcji, a wykorzystując operator ``**`` kolejne elementy zmiennej słownikowej będą przekazane jako nazwane argumenty. Oznacza to, że na przykład argument ``x`` funkcji, przyjmie wartość ``vector['x']``.
@@ -181,7 +180,6 @@ Przykładowe zastosownaie operatorów ``*`` i ``**`` polega na wykorzystaniu ich
     vector = {'y': 1, 'x': 0, 'z': 1}
     my_function(**vector)
     # 0, 1, 1
-
 
 .. code-block:: python
 
@@ -270,8 +268,6 @@ Przykładowe zastosowanie
     celsius_to_fahrenheit(1, 2, 3, 4, 5)
     # [33.8, 35.6, 37.4, 39.2, 41.0]
 
-
-
 .. code-block:: python
 
     class Kontakt:
@@ -291,7 +287,6 @@ Przykładowe zastosowanie
             return '{first_name} {last_name}'.format(**self.__dict__)
             return '{first_name} {last_name}'.format(first_name='Max', last_name='Peck')
             return f'{self.first_name} {self.last_name}'
-
 
 Assignments
 ===========
