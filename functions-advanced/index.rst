@@ -235,8 +235,6 @@ Przykładowe zastosownaie operatorów ``*`` i ``**`` polega na wykorzystaniu ich
 
     dane = {'x': 77, 'y': 99, 'a': 7}
     wyswietl(1, 2, 3, **dane)
-    # Traceback (most recent call last):
-    #   ...
     # TypeError: wyswietl() got multiple values for argument 'a'
 
 .. code-block:: python

@@ -11,14 +11,17 @@ def matrix_multiplication(A, B):
     [[9, 2], [7, 3], [21, 8], [28, 8]]
     """
     result = []
+    A_rows = len(A)
+    B_rows = len(B)
+    B_columns = len(B[0])
 
-    for i in range(0, len(A)):
+    for i in range(0, A_rows):
         row = []
 
-        for j in range(0, len(B[0])):
+        for j in range(0, B_columns):
             total = 0
 
-            for k in range(0, len(B)):
+            for k in range(0, B_rows):
                 total += A[i][k] * B[k][j]
 
             row.append(total)

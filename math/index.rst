@@ -50,9 +50,6 @@ Biblioteka ``math`` implementuje podstawowe operacje matematyczne. Pełna lista 
 
 ``statistics``
 ==============
-
-Moduł ``statistics`` pozwala na wykonywanie podstawowych operacji statystycznych, w tym obliczanie średnich, wariancji i odchylenia standardowego.
-
 .. code-block:: python
 
     import statistics
@@ -60,32 +57,30 @@ Moduł ``statistics`` pozwala na wykonywanie podstawowych operacji statystycznyc
     statistics.avg()
     statistics.mean()
     statistics.stdev()
+    statistics.median()
 
 
 ``random``
 ==========
+.. csv-table:: ``random``
+    :header-rows: 1
+    :file: data/random.csv
 
+
+``collections.Counter``
+=======================
 .. code-block:: python
 
     import random
 
-    random.sample()
-    random.random()
-    random.shuffle()  # shuffle a list
-
-.. code-block:: python
-
-    import random
-
-    random_numbers = [random.randint(1, 10) for a in range(1, 50)]
-
+    random_numbers = [random.randint(0, 10) for a in range(0, 50)]
     counter = dict()
 
-    for e in random_numbers:
-        if not e in counter:
-            counter[e] = 0
+    for number in random_numbers:
+        if number in counter:
+            counter[number] += 1
         else:
-            counter[e] += 1
+            counter[number] = 1
 
     counter
     # [(7, 12), (4, 8), (9, 6), (1, 5), (2, 4)]
@@ -95,24 +90,9 @@ Moduł ``statistics`` pozwala na wykonywanie podstawowych operacji statystycznyc
     import random
     from collections import Counter
 
-    random_numbers = [random.randint(1, 10) for a in range(1, 50)]
-
-    counter = Counter()  # obiekt Counter ma domyślną wartość 0 dla elementów, które nie istnieją
-
-    for e in random_numbers:
-        counter[e] += 1
-
-    counter.most_common(5)
-    # [(7, 12), (4, 8), (9, 6), (1, 5), (2, 4)]
-
-.. code-block:: python
-
-    import random
-    from collections import Counter
-
-
-    random_numbers = [random.randint(1, 10) for a in range(1, 50)]
+    random_numbers = [random.randint(0, 10) for a in range(0, 50)]
     counter = Counter(random_numbers)
+
     counter.most_common(5)
     # [(7, 12), (4, 8), (9, 6), (1, 5), (2, 4)]
 
@@ -136,6 +116,8 @@ Podstawowe użycie jest następujące.
 
 .. code-block:: python
 
+    import math
+    import random
     from matplotlib import pyplot as plt
 
     x1 = [x*0.01 for x in range(0,628)]
