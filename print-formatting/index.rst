@@ -499,19 +499,20 @@ Assignments
 
 Powielanie napisów
 ------------------
-#. Wczytaj od użytkownika tekst
+#. Dany jest ciąg znaków: ``text = 'Lorem Ipsum'``
 #. Napisz trzy funkcje:
 
-    * ``print_1(what)`` wykorzystującą ``range()``
-    * ``print_2(what)`` wykorzystującą pętlę ``while``
-    * ``print_3(what)`` wykorzystującą mnożenie stringów
+    * ``print_1(text)`` wykorzystującą ``range()``
+    * ``print_2(text)`` wykorzystującą pętlę ``while``
+    * ``print_3(text)`` wykorzystującą mnożenie stringów
 
-#. Każda funkcja ma wyświetlić 5 kopii tego napisu, każda w osobnej linii.
-#. Napisz doctest do wszystkich funkcji.
+#. Każda funkcja ma wyświetlić 5 kopii tego ciągu znaków
+#. Każdy ciąg znaków w osobnej linii
+#. Napisz doctest do wszystkich funkcji
 
 :Założenia:
     * Nazwa pliku: ``print_lines.py``
-    * Szacunkowa długość kodu: około 5 linii
+    * Szacunkowa długość kodu: około 8 linii
     * Maksymalny czas na zadanie: 5 min
 
 :Co zadanie sprawdza?:
