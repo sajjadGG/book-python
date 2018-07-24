@@ -6,21 +6,6 @@ MIN = -20
 
 
 def celsius_to_fahrenheit(degree: Union[int, float]) -> float:
-    """
-    Celsius to Fahrenheit: (°C * 1.8) + 32 = °F
-    >>> celsius_to_fahrenheit(0)
-    32.0
-    >>> celsius_to_fahrenheit(1)
-    33.8
-    >>> celsius_to_fahrenheit(-1)
-    30.2
-    >>> celsius_to_fahrenheit(100)
-    212.0
-    >>> celsius_to_fahrenheit([0, 1, 2])
-    Traceback (most recent call last):
-        ...
-    TypeError: can't multiply sequence by non-int of type 'float'
-    """
     return degree * 1.8 + 32
 
 

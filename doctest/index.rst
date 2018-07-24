@@ -2,9 +2,11 @@
 Doctest
 *******
 
-Niezwykle użytecznym sposobem komentowania są tzw. doctesty. W wielolinijkowym komentarzu wpisujemy sesję z interpreterem a po uruchomieniu doctestów otrzymujemy informację czy nasza funkcja poprawnie się wykonuje. Jest to bardzo proste narzędzie, które poza samym pokazaniem jak działa funkcja, jakie parametry przyjmuje i co zwraca daje możliwość weryfikacji poprawności działania kodu. W tych materiałach nieraz będziemy korzystać z tego rozwiązania.
 
-Wykorzystując taki zapis natychmiast widzimy co dzieje się w danym rozwiązaniu. Doctesty bardzo przydają się przede wszystkim do zastosowań wykorzystujących wyrażenia regularne, których zrozumienie zapisu często wymaga chwili zastanowienia.
+* używane jako zawsze aktualna dokumentacja kodu
+* sprawdzają poprawność działania funkcji
+* niezwykle przydatne przy tworzeniu regexpów
+* można przetykać tekst pomiędzy testami
 
 
 Test for ``bool`` return values
@@ -15,8 +17,12 @@ Test for ``bool`` return values
 
     def is_adult(age):
         """
+        Function checks if person is adult.
+        Adult person is over 18 years old.
+
         >>> is_adult(18)
         True
+
         >>> is_adult(17.9)
         False
         """
@@ -34,8 +40,10 @@ Test for ``int`` return values
         """
         >>> sumowanie_liczb(1, 2)
         3
+
         >>> sumowanie_liczb(-1, 1)
         0
+
         >>> sumowanie_liczb(0, 0)
         0
         """
@@ -51,10 +59,13 @@ Returning ``str``
 
     def hello(name='José Jiménez'):
         """
-        >>> hello()
-        'José Jiménez'
+        Function returns the name of the astronaut
         >>> hello('Ivan Ivanovich')
         'Ivan Ivanovich'
+
+        Default value is 'José Jiménez'
+        >>> hello()
+        'José Jiménez'
         """
         return name
 
@@ -64,10 +75,13 @@ Printing ``str``
 
     def hello(name='José Jiménez'):
         """
-        >>> hello()
-        José Jiménez
+        Function prints on the screen the name of the astronaut
         >>> hello('Ivan Ivanovich')
         Ivan Ivanovich
+
+        Default value is 'José Jiménez'
+        >>> hello()
+        José Jiménez
         """
         print(name)
 
@@ -93,10 +107,20 @@ Testing for exceptions
         """
         >>> add(1, 2)
         3
+
         >>> add(-1, 1)
         0
+
         >>> add(0, 0)
         0
+
+        Function should do:
+            - one thing
+            - one thing only
+            - one thing good
+
+        Adding list elements is not a business of this function.
+
         >>> add([1, 2])
         Traceback (most recent call last):
             ...
@@ -135,8 +159,10 @@ Running doctest from standalone scripts
         """
         >>> add(1, 2)
         3
+
         >>> add(-1, 1)
         0
+
         >>> add(0, 0)
         0
         """
@@ -150,6 +176,9 @@ Running doctest from standalone scripts
 
 Practical example
 =================
+
+Non negative distances
+----------------------
 .. code-block:: python
 
     from typing import Union
@@ -159,20 +188,25 @@ Practical example
         """
         >>> kilometers_from_meters(1)
         1000.0
+
         >>> kilometers_from_meters(0)
         0.0
+
         >>> kilometers_from_meters(-1)
         Traceback (most recent call last):
             ...
         ValueError: Argument must be positive
+
         >>> kilometers_from_meters([1, 2])
         Traceback (most recent call last):
             ...
         ValueError: Invalid Argument
+
         >>> kilometers_from_meters('one')
         Traceback (most recent call last):
             ...
         ValueError: Invalid Argument
+
         >>> kilometers_from_meters(1.5)
         1500.0
         """
@@ -183,6 +217,41 @@ Practical example
             raise ValueError('Argument must be positive')
 
         return float(1000 * km)
+
+Email regex
+-----------
+.. code-block:: python
+
+    import re
+
+    VALID_EMAIL = r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,}$'
+
+
+    def is_valid_email(email: str) -> bool:
+        """
+        Function check email address against Regular Expression
+
+        >>> is_valid_email('jose.jimenez@nasa.gov')
+        True
+        >>> is_valid_email('Jose.Jimenez@nasa.gov')
+        True
+        >>> is_valid_email('+jose.jimenez@nasa.gov')
+        False
+        >>> is_valid_email('jose.jimenez+@nasa.gov')
+        True
+        >>> is_valid_email('jose.jimenez+newsletter@nasa.gov')
+        True
+        >>> is_valid_email('jose.jimenez@.gov')
+        False
+        >>> is_valid_email('@nasa.gov')
+        False
+        >>> is_valid_email('jose.jimenez@nasa.g')
+        False
+        """
+        if re.match(VALID_EMAIL, email):
+            return True
+        else:
+            return False
 
 
 Assignments
