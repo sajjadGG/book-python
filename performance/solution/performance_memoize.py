@@ -1,4 +1,4 @@
-MEMOIZE = {}
+CACHE = {}
 
 
 # def factorial(n: int) -> int:
@@ -10,14 +10,14 @@ MEMOIZE = {}
 
 
 def factorial(n: int) -> int:
-    if n in MEMOIZE:
-        return MEMOIZE[n]
+    if n in CACHE:
+        return CACHE[n]
 
     if n == 0:
         return 1
     else:
         result = n * factorial(n-1)
-        MEMOIZE[n] = result
+        CACHE[n] = result
         return result
 
 
