@@ -2,14 +2,14 @@
 Operator Overload
 *****************
 
-Przeciążanie operatorów
-=======================
-Python implementuje kilka funkcji systemowych (magic methods), zaczynających się od podwójnego podkreślnika. Są to funkcje wywoływane m.in podczas inicjalizacji obiektu (``__init__``). Innym przykładem może być funkcja ``obiekt1.__add__(obiekt2)``, która jest wywoływana gdy wykonamy operację ``obiekt1 + obiekt2``.
 
-Poniżej przedstawiono kilka przykładów metod magicznych w Pythonie.
+Why to use operator overload?
+=============================
+* Readable syntax
+* Simpler operations
 
-``__add__()``
--------------
+Example usage of operator Overload
+==================================
 .. code-block:: python
 
     class Vector:
@@ -33,64 +33,9 @@ Poniżej przedstawiono kilka przykładów metod magicznych w Pythonie.
     print(suma)
     # wyświetli: Vector(x=4, y=6)
 
-``__sub__()``
--------------
-Return the difference of another ``Transaction`` object, or another class object that also has the ``val`` property.
 .. code-block:: python
 
-    class Transaction:
-
-        def __init__(self, val):
-            self.val = val
-
-        def __sub__(self, other):
-            return self.val - other.val
-
-
-    buy = Transaction(10.00)
-    sell = Transaction(7.00)
-    print(buy - sell)
-    # 3.0
-
-Return a Transaction object with ``val`` as the difference of this ``Transaction.val`` property and another object with a ``val`` property.
-
-.. code-block:: python
-
-    class Transaction:
-
-        def __init__(self, val):
-            self.val = val
-
-        def __sub__(self, other):
-            return Transaction(self.val - other.val)
-
-
-    buy = Transaction(20.00)
-    sell = Transaction(5.00)
-    result = buy - sell
-    print(result.val)
-    # 15
-
-Return difference of this Transaction.val property and an integer.
-
-.. code-block:: python
-
-    class Transaction:
-
-        def __init__(self, val):
-            self.val = val
-
-        def __sub__(self, other):
-            return self.val - other
-
-
-    buy = Transaction(8.00)
-    print(buy - 6.00)
-    # 2
-
-``__abs__()``
--------------
-.. code-block:: python
+    import math
 
     class Vector:
         def __init__(self, x=0.0, y=0.0):
@@ -98,90 +43,104 @@ Return difference of this Transaction.val property and an integer.
             self.y = y
 
         def __abs__(self):
-            return (self.x**2 + self.y**2)**0.5
+            return math.sqrt(self.x**2 + self.y**2)
 
+Numerical Operator Overload
+===========================
+.. csv-table:: Operator Overload
+    :header-rows: 1
 
-``__iadd__()``
---------------
-'+='
+    "Operator", "Description"
+    "``__add__()``", "``a + b``"
+    "``__iadd__()``", "``a += b``"
+    "``__sub__()``", "``a - b``"
+    "``__isub__()``", "``a -= b``"
+    "``__mul__()``", "``a * b``"
+    "``__imul__()``", "``a *= b``"
+    "``__div__()``", "``a / b``"
+    "``__idiv__()``", "``a /= b``"
+    "``__mod__()``", "``a % b``"
+    "``__divmod__()``", "``divmod(a, b)``"
+    "``__abs__()``", "``abs(a)``"
+    "``__pow__ ``", "``pow(a)``"
 
-``__isub__()``
---------------
+Logical Operator Overload
+=========================
+.. csv-table:: Operator Overload
+    :header-rows: 1
 
-``__mul__()`` and ``__imul__()``
---------------------------------
+    "Operator", "Description"
+    "``__eq__()``", "``a == b``"
+    "``__ne__()``", "``a != b``"
+    "``__lt__()``", "``a < b``"
+    "``__le__()``", "``a <= b``"
+    "``__gt__()``", "``a > b``"
+    "``__ge__()``", "``a >= b``"
+    "``__bool__()``", "``bool(a)``"
+    "``__neg__()``", "``-a``"
+    "``__pos__``", "``+a``"
+    "``__contains__()``", "``a in b``"
 
-``__div__()`` and ``__idiv__()``
---------------------------------
+Boolean Operator Overload
+=========================
+.. csv-table:: Operator Overload
+    :header-rows: 1
 
-``__eq__()``
-------------
-.. code-block:: python
+    "Operator", "Description"
+    "``__and__()``", "``a & b``"
+    "``__or__()``", "``a | b``"
+    "``__xor__()``", "``a ^ b``"
+    "``__lshift__()``", "``a << b``"
+    "``__rshift__()``", "``a >> b``"
 
-    vector1 == vector2  # ``urchamia __eq__``
+Functional Operator Overload
+============================
+.. csv-table:: Operator Overload
+    :header-rows: 1
 
-``__ne__()``
-------------
-'!='
+    "Operator", "Description"
+    "``__dir__()``", "``dir(a)``"
+    "``__len__()``", "``len(a)``"
+    "``__delattr__()``", "``delattr(cls, 'a')`` or ``del a``"
+    "``__complex__()``", "``complex(a)``"
+    "``__int__()``", "``int(a)``"
+    "``__float__()``", "``float(a)``"
+    "``__oct__()``", "``oct(a)``"
+    "``__hex__()``", "``hex(a)``"
 
-``__lt__()``
-------------
-
-
-``__le__()``
-------------
-
-``__gt__()``
-------------
-
-``__ge__()``
-------------
-
-``__contains__()``
-------------------
-* ``a in b``
-
-``__dir__()``
--------------
-
-``__len__()``
--------------
+Accessors Overload
+==================
 
 ``__delattr__()``
 -----------------
+.. code-block:: python
+
+    class Point:
+        x = 10
+        y = -5
+        z = 0
+
+    delattr(Point, 'z')
+    del Point.y
 
 ``__getattribute__()``
 ----------------------
+.. code-block:: python
 
-``__getitem__()``
------------------
+    class Point:
+        x = 10
+        y = -5
+        z = 0
 
-``__mod__()``
--------------
+    x = getattr(Point, 'x')
+    # 10
 
 ``__setattr__()``
 -----------------
 
-``__divmod__()``
-----------------
 
-``__bool__()``
---------------
-
-``__neg__()``
--------------
-
-``__and__()``, ``__rand__()``
------------------------------
-
-``__or__()``, ``__ror__()``
----------------------------
-
-``__xor__()``, ``__rxor__()``
------------------------------
-
-``__lshift__()``, ``__rshift__()``
-----------------------------------
+``__getitem__()``
+-----------------
 
 
 Assignment

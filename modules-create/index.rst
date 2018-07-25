@@ -75,8 +75,8 @@ Tworzenie paczek
 ``distutils`` i ``setuptools``
 ------------------------------
 
-``wheel``
----------
+``wheel`` vs. ``egg``
+---------------------
 
 ``setup.py``
 ------------
