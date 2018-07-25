@@ -15,6 +15,8 @@ Poziomy logowania
 
 .. code-block:: python
 
+    import logging
+
     logging.critical('Błąd krytyczny, kończę.')
     logging.error('Błąd, ale kontynuuję.')
     logging.warning('Uwaga będę coś robił')
@@ -27,20 +29,13 @@ Konfiguracja logowania
 
     import logging
 
-    logging.info('Będę wykonywał poniższą operację...')
-    print('Ehlo!')
-
-.. code-block:: python
-
-    import logging
-
     logging.basicConfig(
         level=logging.INFO,
         filename='/tmp/logging.csv',
         format='"%(asctime).19s", "%(levelname)s", "%(message)s"'
     )
 
-    log = logging.getLogger()
+    log = logging.getLogger(__name__)
 
     log.warning('warning!')  # zostanie zapisana do pliku
     log.debug('wiadomosc debuggingowa')  # nie zostanie zapisana, bo level jest INFO, czyli powyżej DEBUG

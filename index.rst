@@ -52,15 +52,12 @@ Foundations
     modules-install/index.rst
     builtin/index.rst
     programming-convention/index.rst
-    performance/index.rst
     math/index.rst
-    debugging/index.rst
-    print-formatting/index.rst
+    debugging-basic/index.rst
     datetime/index.rst
     exceptions/index.rst
     file/index.rst
     oop-basic/index.rst
-    oop-dataclass/index.rst
     exam-basic/index.rst
 
 
@@ -72,20 +69,17 @@ Intermediate
     :numbered:
     :caption: Intermediate
 
-    modules-venv/index.rst
-    type-annotation/index.rst
+    oop-dataclass/index.rst
     logging/index.rst
+    print-formatting/index.rst
+    performance/index.rst
     serialization-csv/index.rst
     serialization-json/index.rst
     quality-and-tests/index.rst
     functions-advanced/index.rst
-    oop-advanced/index.rst
     oop-operator-overload/index.rst
-    modules-create/index.rst
     regex/index.rst
     database/index.rst
-    documentation/index.rst
-    gui/index.rst
 
 
 ********
@@ -96,7 +90,12 @@ Advanced
     :numbered:
     :caption: Advanced
 
+    type-annotation/index.rst
+    modules-venv/index.rst
+    modules-create/index.rst
+    oop-advanced/index.rst
     compiler/index.rst
+    debugging-advanced/index.rst
     introspection/index.rst
     serialization-pickle/index.rst
     serialization-xml/index.rst
@@ -115,6 +114,8 @@ Advanced
     functional-programming/index.rst
     oop-metaclass/index.rst
     design-patterns/index.rst
+    gui/index.rst
+    documentation/index.rst
     exam-advanced/index.rst
 
 

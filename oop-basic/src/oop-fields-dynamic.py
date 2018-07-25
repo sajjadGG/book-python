@@ -6,7 +6,7 @@ class Astronaut:
 
 
 jose = Astronaut(name='José Jiménez')
-jose.agency     # NASA
-
 ivan = Astronaut(name='Иван Иванович', agency='Roscosmos')
+
+jose.agency     # NASA
 ivan.agency     # Roscosmos

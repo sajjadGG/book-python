@@ -4,10 +4,8 @@ class Astronaut:
         self.agency = agency
 
 
-jose = Astronaut(name='José Jiménez')
-print(jose.__dict__)
-# {'name': 'José Jiménez', 'agency': 'NASA'}
-
+jose = Astronaut(name='JoséJiménez')
 ivan = Astronaut(name='Иван Иванович', agency='Roscosmos')
-print(ivan.__dict__)
-# {'name': 'Иван Иванович', 'agency': 'Roscosmos'}
+
+jose.__dict__    # {'name': 'José Jiménez', 'agency': 'NASA'}
+ivan.__dict__    # {'name': 'Иван Иванович', 'agency': 'Roscosmos'}

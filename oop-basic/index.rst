@@ -80,7 +80,11 @@ Methods
 --------------------------------
 * print converts it's arguments to ``str()`` automatically before printing
 
-.. literalinclude:: src/oop-str.py
+.. literalinclude:: src/oop-str-without.py
+    :language: python
+    :caption: Print object without ``__str__()`` method overloaded
+
+.. literalinclude:: src/oop-str-with.py
     :language: python
     :caption: Stringify object
 
@@ -103,32 +107,10 @@ Multiple Inheritance
     :caption: Using ``super()`` on a class
 
 
-``_`` and ``__`` - Private, protected, public?!
-===============================================
-* Brak pól protected i private
-* Wszystkie pola są public
-* ``_nazwa`` - pola prywatne (tylko konwencja)
-* ``__nazwa__`` - funkcje systemowe
-* ``nazwa_`` - używane przy kolizji nazw
-
-.. literalinclude:: src/oop-private-public.py
-    :language: python
-    :caption: ``_`` and ``__`` - Private, protected, public?!
-
-What should be in the class and what not?
------------------------------------------
-* Jeżeli metoda w swoim ciele ma ``self`` i z niego korzysta to powinna być w klasie
-* Jeżeli metoda nie ma w swoim ciele ``self`` to nie powinna być w klasie
-* Jeżeli metoda nie ma w swoim ciele ``self`` ale wybitnie pasuje do klasy, to można ją tam zamieścić oraz dodać dekorator ``@staticmethod``
-
-.. literalinclude:: src/oop-staticmethod.py
-    :language: python
-    :caption: Case Study uzasadnionego użcycia ``@staticmethod``
-
 One class per file?
--------------------
-* Jeżeli klasy są małe - jeden plik
-* Jeżeli klasy są duże - osobne pliki
+===================
+* Jeden plik: gdy klasy są małe i czytelne
+* Osobne pliki: gdy klasy są duże
 
 
 More advanced topics
@@ -153,11 +135,18 @@ Dragon (Easy)
 
 #. Stwórz metody:
 
+    * ``.take_damage(damage)`` - zadaj obrażenia smokowi
+    * ``.make_damage()`` - Smok zadaje losowe obrażenia (5-20)
     * ``.set_position(x, y)`` - ustawia pozycję smoka na ``x`` i ``y``
     * ``.get_position()`` - która zwraca aktualne położenie smoka
     * ``.move(left, right, down, up)`` - przesuwa smoka o zadaną liczbę punktów w którymś z kierunków - można podać tylko dwa z nich, np. ``.move(right=30, down=50)``
-    * ``.take_damage(damage)`` - zadaj obrażenia smokowi
-    * ``.make_damage()`` - Smok zadaje losowe obrażenia (5-20)
+
+#. Przyjmij górny lewy róg ekranu za punkt (0, 0)
+
+    - idąc w prawo dodajesz ``y`` do ``position_y``
+    - idąc w lewo odejmujesz ``y`` od ``position_y``
+    - idąc w górę dodajesz ``x`` do ``position_x``
+    - idąc w dół odejmujesz ``x`` od ``position_y``
 
 #. Kiedy ``hit_points`` smoka spadnie poniżej zera:
 
@@ -182,7 +171,6 @@ Dragon (Easy)
 
 Dragon (Medium)
 -----------------
-#. Przyjmij górny lewy róg ekranu za punkt (0, 0)
 #. Smok nie może wyjść poza obszar ekranu (1024x768)
 #. Stwórz klasę ``Hero``
 #. Nasz bohater (José Jiménez) ma skończone losowe ``hit_points`` (100-150)

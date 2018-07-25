@@ -20,6 +20,41 @@ Wśród programistów popularne jest powiedzenie "jeżeli chodzi jak kaczka i kw
 
 Sam mechanizm dynamicznego typowania jest dość kontrowersyjny, ze względu na możliwość bycia nieścisłym. W praktyce okazuje się, że rozwój oprogramowania wykorzystującego ten sposób jest dużo szybszy. Za to zwolennicy statycznego typowania, twierdzą, że projekty wykorzystujące duck typing są trudne w utrzymaniu po latach. Celem tego dokumentu nie jest udowadnianie wyższości jednego rozwiązania nad drugim. Zachęcam jednak do zapoznania się z wykładem "The Unreasonable Effectiveness of Dynamic Typing for Practical Programs", którego autorem jest "Robert Smallshire". Wykład zamieszczonym został w serwisie InfoQ (http://www.infoq.com/presentations/dynamic-static-typing). Wykład w ciekawy sposób dotyka problematyki porównania tych dwóch metod systemu typów. Wykład jest o tyle ciekawy, że bazuje na statystycznej analizie projektów umieszczonych na https://github.com a nie tylko bazuje na domysłach i flamewar jakie programiści lubią prowadzić.
 
+.. literalinclude:: src/oop-duck-typing.py
+    :language: python
+    :caption: Duck typing
+
+What should be in the class and what not?
+=========================================
+* Jeżeli metoda w swoim ciele ma ``self`` i z niego korzysta to powinna być w klasie
+* Jeżeli metoda nie ma w swoim ciele ``self`` to nie powinna być w klasie
+* Jeżeli metoda nie ma w swoim ciele ``self`` ale wybitnie pasuje do klasy, to można ją tam zamieścić oraz dodać dekorator ``@staticmethod``
+
+.. literalinclude:: src/oop-staticmethod-without.py
+    :language: python
+    :caption: Case Study uzasadnionego użcycia ``@staticmethod``
+
+.. literalinclude:: src/oop-staticmethod-with.py
+    :language: python
+    :caption: Case Study uzasadnionego użcycia ``@staticmethod``
+
+.. literalinclude:: src/oop-staticmethod-decorator.py
+    :language: python
+    :caption: Case Study uzasadnionego użcycia ``@staticmethod``
+
+
+``_`` and ``__`` - Private, protected, public?!
+===============================================
+* Brak pól protected i private
+* Wszystkie pola są public
+* ``_nazwa`` - pola prywatne (tylko konwencja)
+* ``__nazwa__`` - funkcje systemowe
+* ``nazwa_`` - używane przy kolizji nazw
+
+.. literalinclude:: src/oop-private-public.py
+    :language: python
+    :caption: ``_`` and ``__`` - Private, protected, public?!
+
 
 Inheritance vs. Composition (Mixin Classes)
 ===========================================
@@ -30,17 +65,12 @@ Inheritance vs. Composition (Mixin Classes)
     :caption: Composition (Mixin Classes)
 
 
-Duck typing
-===========
-.. literalinclude:: src/oop-duck-typing.py
-    :language: python
-    :caption: Duck typing
-
 Dynamically creating fields
 ===========================
 .. literalinclude:: src/oop-init-dynamic.py
     :language: python
     :caption: Funkcja inicjalizująca, która automatycznie dodaje pola do naszej klasy w zależności od tego co zostanie podane przy tworzeniu obiektu
+
 
 Accessors
 =========
@@ -173,6 +203,7 @@ Polymorphism
 .. literalinclude:: src/oop-polymorphism-class.py
     :language: python
     :caption: Polymorphism on Classes
+
 
 Interfaces
 ==========

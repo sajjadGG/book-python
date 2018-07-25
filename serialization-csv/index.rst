@@ -58,6 +58,9 @@ Wczytywanie pliku ``csv``
     * Petal width
     * Species
 
+#. Kolumna species ma mieć wartość nazwy gatunku a nie cyfry 0, 1, 2 jak to jest w pliku
+#. Wypisz wiersze na ekranie
+
 :Założenia:
     * Nazwa pliku: ``csv_dictreader.py``
     * Linii kodu do napisania: około 6 linie
