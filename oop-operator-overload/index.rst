@@ -18,7 +18,7 @@ Example usage of operator Overload
             self.y = y
 
         def __str__(self):
-            return f"Vector(x={self.x}, y={self.y})"
+            return f'Vector(x={self.x}, y={self.y})'
 
         def __add__(self, other):
             return Vector(
@@ -28,10 +28,10 @@ Example usage of operator Overload
 
     vector1 = Vector(x=1, y=2)
     vector2 = Vector(x=3, y=4)
-
     suma = vector1 + vector2
+
     print(suma)
-    # wyświetli: Vector(x=4, y=6)
+    # Vector(x=4, y=6)
 
 .. code-block:: python
 
@@ -62,7 +62,7 @@ Numerical Operator Overload
     "``__mod__()``", "``a % b``"
     "``__divmod__()``", "``divmod(a, b)``"
     "``__abs__()``", "``abs(a)``"
-    "``__pow__ ``", "``pow(a)``"
+    "``__pow__()``", "``pow(a)``"
 
 Logical Operator Overload
 =========================

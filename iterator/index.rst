@@ -9,21 +9,26 @@ Czym jest iterator?
 * ``__next__()``
 * ``raise StopIteration``
 
+
 Iterowanie po obiektach
 =======================
 
 Iterowanie po stringu
 ---------------------
-
 .. code-block:: python
 
-    for znak in 'python':
-        print(znak)
+    for character in 'hello':
+        print(character)
+
+    # h
+    # e
+    # l
+    # l
+    # o
 
 
 Iterowanie po ``list()``, ``dict()``, ``set()``, ``tuple()``
 ------------------------------------------------------------
-
 .. code-block:: python
 
     for liczba in [1, 2, 3, 4]:
@@ -31,18 +36,33 @@ Iterowanie po ``list()``, ``dict()``, ``set()``, ``tuple()``
 
 .. code-block:: python
 
-    for key, value in [(0, 0), (1, 1), (1, 2)]:
-        print('%s -> %s' % (key, value))
+    for key, value in [('a',1), ('b',2), ('c',3)]:
+        print(f'{key} -> {value}')
+
+    # a -> 1
+    # b -> 2
+    # c -> 3
 
 .. code-block:: python
 
-    slownik = {'x': 1, 'y': 2}
+    my_dict = {'a': 1, 'b': 2, 'c': 3}
 
-    for key in slownik:
-        print(slownik.get(key))
+    for key in my_dict:
+        value = my_dict.get(key)
+        print(value)
 
-    for key, value in slownik.items():
-        print(key, value)
+    # 1
+    # 2
+    # 3
+
+
+    for key, value in my_dict.items():
+        print(f'{key} -> {value}')
+
+    # a -> 1
+    # b -> 2
+    # c -> 3
+
 
 Własny iterator
 ===============

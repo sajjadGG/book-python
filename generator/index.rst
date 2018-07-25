@@ -159,7 +159,7 @@ Przykładowe inicjalizacje generatorów
     e = tuple(x for x in range(0, 30))
     f = set(x for x in range(0, 30))
 
-    print(x for x in range(0, 30))
+    print(list(x for x in range(0, 30)))
 
 Zamiana klucz wartość oraz generowanie ``dict`` i ``set``
 ---------------------------------------------------------
