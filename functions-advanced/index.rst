@@ -30,7 +30,7 @@ Returning function (callable)
     def function():
         return hello
 
-    my_name = function()  # <function __main__.my_func()>
+    my_name = function()  # <function __main__.hello()>
     my_name()             # 'My name José Jiménez'
 
 .. code-block:: python
@@ -104,6 +104,11 @@ Przyjmowanie z funkcji zmiennej ilości argumentów
 
 .. code-block:: python
 
+    *a, b, *c = [1, 2, 3, 4, 5, 6, 7]
+    # SyntaxError: two starred expressions in assignment
+
+.. code-block:: python
+
     # if you're not using ``others`` later in your code
     username, *_ = line.split(':')
 
@@ -116,11 +121,6 @@ Przyjmowanie z funkcji zmiennej ilości argumentów
         return (10, 20.6, 30, 5, 'laboratorium')
 
     napiecie, natezenie, *_ = sensor_temperatury()
-
-.. code-block:: python
-
-    *a, b, *c = [1, 2, 3, 4, 5, 6, 7]
-    # SyntaxError: two starred expressions in assignment
 
 Definiowanie funkcji ze zmienną ilością parametrów
 --------------------------------------------------
@@ -174,11 +174,11 @@ Przykładowe zastosownaie operatorów ``*`` i ``**`` polega na wykorzystaniu ich
         print(x, y, z)
 
     vector = (1, 0, 1)
-    my_function(*vector)
+    my_function(*vector)   # my_function(1, 0, 1)
     # 1, 0, 1
 
     vector = {'y': 1, 'x': 0, 'z': 1}
-    my_function(**vector)
+    my_function(**vector)  # my_function(y=1, x=0, z=1)
     # 0, 1, 1
 
 .. code-block:: python
@@ -227,6 +227,11 @@ Przykładowe zastosownaie operatorów ``*`` i ``**`` polega na wykorzystaniu ich
     dane = {'x': 77, 'y': 99}
     wyswietl(1, 2, 3, **dane)
     # {'a': 1, 'b': 2, 'c': 3, 'args': (), 'kwargs': {'x': 77, 'y': 99}}
+
+    dane = {'a': 1, 'b': 2, 'x': 77, 'y': 99}
+    wyswietl(**dane)
+    # {'a': 1, 'b': 2, 'c': 0, 'args': (), 'kwargs': {'x': 77, 'y': 99}}
+
 
 .. code-block:: python
 
@@ -285,6 +290,23 @@ Przykładowe zastosowanie
             return '{first_name} {last_name}'.format(**self.__dict__)
             return '{first_name} {last_name}'.format(first_name='Max', last_name='Peck')
             return f'{self.first_name} {self.last_name}'
+
+.. code-block:: python
+
+    def wyswietl(*args, **kwargs):
+        print(f'args: {args}')
+        print(f'kwargs: {kwargs}')
+
+    def function(a, b, c=0):
+        x = 4
+        y = 5
+
+        wyswietl(**locals())
+
+    function(1, 2)
+    # args: ()
+    # kwargs: {'a': 1, 'b': 2, 'c': 0, 'x': 4, 'y': 5}
+
 
 Assignments
 ===========

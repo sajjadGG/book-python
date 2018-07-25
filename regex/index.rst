@@ -125,6 +125,10 @@ Writing a Tokenizer
     :language: python
     :caption: Writing a Tokenizer.
 
+Numery identyfikacyjne
+----------------------
+* https://github.com/arthurdejong/python-stdnum/tree/master/stdnum/pl
+
 
 Assignments
 ===========
