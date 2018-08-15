@@ -202,6 +202,9 @@ This package also features helpers to fetch larger datasets commonly used by the
 
     'mldata_filename'
 
+Eurostat datasets
+-----------------
+http://ec.europa.eu/eurostat/data/database
 
 ML Data
 -------
