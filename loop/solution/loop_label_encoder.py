@@ -25,7 +25,6 @@ DATABASE = [
     (4.9, 2.5, 4.5, 1.7, 'virginica'),
 ]
 
-i = 0
 species = {}
 labels = []
 
@@ -34,12 +33,11 @@ data = DATABASE[1:]
 shuffle(data)
 
 
-for observation in data:
-    name = observation[-1]
+for record in data:
+    name = record[-1]
 
     if name not in species.keys():
-        species[name] = i
-        i += 1
+        species[name] = len(species)
 
     labels.append(species[name])
 
@@ -55,8 +53,7 @@ print(labels)
 
 
 ## Alternatywnie
-species = set(x[4] for x in data)
+species = set(record[-1] for record in data)
 indexes = range(0, len(species))
 d = zip(species, indexes)
 d = dict(d)
-

@@ -460,7 +460,7 @@ Unique keys from schema-less database
 
 :The whys and wherefores:
     * Generowanie zbiorów
-    * Deduplikacja elementów
+    * Usuwanie powtarzających się elementów
     * Wyciąganie elementów ze słownika
     * Iterowanie po słowniku
     * Aktualizacja zbiorów
@@ -526,10 +526,8 @@ Label encoder
     #. Iteruj po elementach zbioru danych
     #. Gatunek to ostatni element rekordu
     #. Jeżeli w słowniku nie ma gatunku, to dodaj go z kolejnym numerem
-    #. Odwróć słownik gatunków
-    #. Iteruj po elementach zbioru danych
-    #. Gatunek to ostatni element rekordu
     #. Do listy label dodawaj wartość słownika gatunków dla gatunku w tym rekordzie
+    #. Odwróć słownik gatunków
     #. Wyświetl na ekranie ``species`` oraz ``labels``
 
 :About:
