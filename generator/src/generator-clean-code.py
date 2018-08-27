@@ -1,4 +1,4 @@
-osoba = {'username': 'Ivan Ivanovic', 'czy_wykladowca': True}
+osoba = {'username': 'Ivan Иванович', 'czy_wykladowca': True}
 
 
 def asd(x):

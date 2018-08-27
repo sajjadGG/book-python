@@ -441,7 +441,7 @@ Unique keys from schema-less database
     DATABASE = [
         {'last_name': 'Jiménez'},
         {'first_name': 'Max', 'last_name': 'Peck'},
-        {'first_name': 'Ivan', 'age': 42},
+        {'first_name': 'Иван', 'age': 42},
         {'first_name': 'Max', 'last_name': 'Peck', 'born': 1961},
         {'first_name': 'José', 'born': 1961, 'agency': 'NASA'},
     ]

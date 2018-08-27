@@ -82,7 +82,7 @@ Słowo kluczowe ``continue`` powoduje przerwanie aktualnie wykonywanej pętli i 
     root:x:0:0:root:/root:/bin/bash
     peck:x:1000:1000:Max Peck:/home/peck:/bin/bash
     jimenez:x:1001:1001:Jose Jimenez:/home/jimenez:/bin/bash
-    ivanovic:x:1002:1002:Ivan Ivanovic:/home/ivanovic:/bin/bash
+    ivanovic:x:1002:1002:Иван Иванович:/home/ivanovic:/bin/bash
     """
 
     for line in ETC_PASSWD:
@@ -100,7 +100,7 @@ Słowo kluczowe ``continue`` powoduje przerwanie aktualnie wykonywanej pętli i 
     root:x:0:0:root:/root:/bin/bash
     peck:x:1000:1000:Max Peck:/home/peck:/bin/bash
     jimenez:x:1001:1001:Jose Jimenez:/home/jimenez:/bin/bash
-    ivanovic:x:1002:1002:Ivan Ivanovic:/home/ivanovic:/bin/bash
+    ivanovic:x:1002:1002:Иван Иванович:/home/ivanovic:/bin/bash
     """
 
     for line in ETC_PASSWD:

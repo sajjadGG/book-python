@@ -18,7 +18,7 @@ Przykład demonstrujący jak działa pickle:
          now.__str__(),
          '%s' % now,
          '{}'.format(now),
-         {'imie': 'Ivan', 'nazwisko': 'Ivanovic'},
+         {'imie': 'Иван', 'nazwisko': 'Иванович'},
          (10, 20, 30),
          (1,)
     ]
@@ -46,7 +46,7 @@ Zapis i odczyt danych z pliku:
          now.__str__(),
          '%s' % now,
          '{}'.format(now),
-         {'imie': 'Ivan', 'nazwisko': 'Ivanovic'},
+         {'imie': 'Иван', 'nazwisko': 'Иванович'},
          (10, 20, 30),
          (1,)
     ]

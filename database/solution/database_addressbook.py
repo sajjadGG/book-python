@@ -20,6 +20,6 @@ with sqlite3.connect('database.sqlite3') as connection:
         data = dict(row)
         print(data)
 
-        data['lastname'] = 'Ivanovic'
+        data['lastname'] = 'Иванович'
 
         cursor.execute(SQL_UPDATE, data)

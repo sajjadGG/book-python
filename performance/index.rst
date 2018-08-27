@@ -63,14 +63,14 @@ Jeżeli masz listę w której sprawdzasz czy element występuje, to zamień list
 
 .. code-block:: python
 
-    NAMES = ['José', 'Ivan', 'Max']
+    NAMES = ['José', 'Иван', 'Max']
 
     if 'Max' in NAMES:
         pass
 
 .. code-block:: python
 
-    NAMES = {'José', 'Ivan', 'Max'}
+    NAMES = {'José', 'Иван', 'Max'}
 
     if 'Max' in NAMES:
         pass

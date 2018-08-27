@@ -16,5 +16,5 @@ print(jose.get_name())
 
 # Python way
 ivan = Astronaut()
-ivan.name = 'Ivan Ivanovic'
+ivan.name = 'Ivan Иванович'
 print(ivan.name)

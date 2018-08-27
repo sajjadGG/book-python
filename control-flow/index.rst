@@ -26,13 +26,17 @@ Conditional Statements
 
 .. code-block:: python
 
-    if True:
-        print('this is True')
+    name = 'José Jiménez'
+
+    if name:
+        print('Name is set')
     else:
-        print('this is False')
+        print('Name is not set')
 
 
 .. code-block:: python
+
+    name = 'José Jiménez'
 
     if name == 'José Jiménez':
         print('My name José Jiménez')
@@ -46,6 +50,8 @@ Conditional Statements
 * Do sprawdzenia drugiego i kolejnych warunków służy słowo kluczowe ``elif`` (w wielu innych językach rozwijane jako ``else if``)
 
 .. code-block:: python
+
+    name = 'José Jiménez'
 
     if name == 'José Jiménez':
         print('My name José Jiménez')
@@ -161,7 +167,7 @@ Control Statements
 
 .. code-block:: python
 
-    usernames = {'José', 'Max', 'Ivan'}
+    usernames = {'José', 'Max', 'Иван'}
 
     if 'José' not in usernames:
         print('I do not know you')
@@ -172,10 +178,11 @@ Tak nie robimy:
 
     .. code-block:: python
 
-        usernames = {'José', 'Max', 'Ivan'}
+        usernames = {'José', 'Max', 'Иван'}
         name = 'José'
 
-        if not name in usernames:  # if (! usernames.contains(name)) {}
+        # if (! usernames.contains(name)) {}
+        if not name in usernames:
             print('I do not know you')
         else:
             print('Hello my friend')
@@ -190,8 +197,8 @@ No ``switch`` statement?!
 
     if name == 'José Jiménez':
         print('My name José Jiménez')
-    elif name == 'Ivan Ivanovic':
-        print('Your name is Ivan Ivanovic')
+    elif name == 'Иван Иванович':
+        print('Your name is Иван Иванович')
     elif name == 'Max Peck':
         print('Your name is Max Peck')
     else:
@@ -201,7 +208,7 @@ No ``switch`` statement?!
 
     switch = {
         'José Jiménez': 'My name José Jiménez',
-        'Ivan Ivanovic': 'Your name is Ivan Ivanovic',
+        'Иван Иванович': 'Your name is Иван Иванович',
         'Max Peck': 'Your name is Max Peck',
     }
 
@@ -212,7 +219,7 @@ No ``switch`` statement?!
 
     switch = {
         'José Jiménez': 'My name José Jiménez',
-        'Ivan Ivanovic': 'Your name is Ivan Ivanovic',
+        'Иван Иванович': 'Your name is Иван Иванович',
         'Max Peck': 'Your name is Max Peck',
     }
 
@@ -225,7 +232,7 @@ No ``switch`` statement?!
     def switch(key):
         return {
             'José Jiménez': 'My name José Jiménez',
-            'Ivan Ivanovic': 'Your name is Ivan Ivanovic',
+            'Иван Иванович': 'Your name is Иван Иванович',
             'Max Peck': 'Your name is Max Peck',
         }.get(key, 'Your name is other')
 

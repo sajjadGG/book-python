@@ -159,8 +159,8 @@ Arguments with default value
     def hello(name='José Jiménez'):
          print(name)
 
-    hello('Ivan Ivanovich')       # Ivan Ivanovich
-    hello(name='Ivan Ivanovich')  # Ivan Ivanovich
+    hello('Иван Иванович')        # Иван Иванович
+    hello(name='Иван Иванович')   # Иван Иванович
     hello()                       # José Jiménez
 
 .. code-block:: python

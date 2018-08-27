@@ -192,9 +192,9 @@ Character types
     name = """
         José Jiménez
         Max Peck
-        Ivan Ivanovic
+        Иван Иванович
     """
-    # '\n    José Jiménez\n    Max Peck\n    Ivan Ivanovic\n'
+    # '\n    José Jiménez\n    Max Peck\n    Иван Иванович\n'
 
 
 Single or double quote?
@@ -327,10 +327,10 @@ String methods
 ^^^^^^^^^^
 .. code-block:: python
 
-    names = ['José', 'Max', 'Ivan', str(1961), '1969']
+    names = ['José', 'Max', 'Иван', str(1961), '1969']
 
     ';'.join(names)
-    # 'José;Max;Ivan;1961;1969'
+    # 'José;Max;Иван;1961;1969'
 
 ``title()``, ``lower()``, ``upper()``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

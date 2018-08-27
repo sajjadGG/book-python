@@ -165,10 +165,10 @@ Simple collections
 
 .. code-block:: python
 
-    names = ['Max', 'Ivan', 'José', 'Max']
+    names = ['Max', 'Иван', 'José', 'Max']
 
     unique_names = set(names)
-    # {'Max', 'Ivan', 'José'}
+    # {'Max', 'Иван', 'José'}
 
 ``dict``
 --------
@@ -201,9 +201,9 @@ Simple collections
 
     my_dict = {
         'name': 'José',
-        'name': 'Ivan',
+        'name': 'Иван',
     }
-    # {'name': 'Ivan'}
+    # {'name': 'Иван'}
 
 .. code-block:: python
 
@@ -295,7 +295,7 @@ Nested collections
     DATA = [
         {'first_name': 'Max'},
         {'first_name': 'José', 'last_name': 'Jiménez'},
-        {'first_name': 'Ivan', 'tags': ['astronaut', 'roscosmos', 'space']},
+        {'first_name': 'Иван', 'tags': ['astronaut', 'roscosmos', 'space']},
     ]
 
     DATA[0]                            # {'first_name': 'Max'}

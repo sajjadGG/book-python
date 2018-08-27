@@ -477,18 +477,18 @@ Więcej informacji
 
     from pprint import pprint
 
-    data = [{'first_name': 'José', 'last_name': 'Jiménez'}, {'first_name': 'Max', 'last_name': 'Peck'}, {'first_name': 'Ivan', 'last_name': 'Ivanovic'}]
+    data = [{'first_name': 'José', 'last_name': 'Jiménez'}, {'first_name': 'Max', 'last_name': 'Peck'}, {'first_name': 'Иван', 'last_name': 'Иванович'}]
 
     pprint(data)
     # [{'first_name': 'José', 'last_name': 'Jiménez'},
     #  {'first_name': 'Max', 'last_name': 'Peck'},
-    #  {'first_name': 'Ivan', 'last_name': 'Ivanovic'}]
+    #  {'first_name': 'Иван', 'last_name': 'Иванович'}]
 
 .. code-block:: python
 
     from pprint import pformat
 
-    data = [{'first_name': 'José', 'last_name': 'Jiménez'}, {'first_name': 'Max', 'last_name': 'Peck'}, {'first_name': 'Ivan', 'last_name': 'Ivanovic'}]
+    data = [{'first_name': 'José', 'last_name': 'Jiménez'}, {'first_name': 'Max', 'last_name': 'Peck'}, {'first_name': 'Иван', 'last_name': 'Иванович'}]
 
     # returns formatted data
     my_string = pformat(data)

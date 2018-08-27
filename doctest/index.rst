@@ -60,8 +60,8 @@ Returning ``str``
     def hello(name='José Jiménez'):
         """
         Function returns the name of the astronaut
-        >>> hello('Ivan Ivanovich')
-        'Ivan Ivanovich'
+        >>> hello('Иван Иванович')
+        'Иван Иванович'
 
         Default value is 'José Jiménez'
         >>> hello()
@@ -76,8 +76,8 @@ Printing ``str``
     def hello(name='José Jiménez'):
         """
         Function prints on the screen the name of the astronaut
-        >>> hello('Ivan Ivanovich')
-        Ivan Ivanovich
+        >>> hello('Иван Иванович')
+        Иван Иванович
 
         Default value is 'José Jiménez'
         >>> hello()

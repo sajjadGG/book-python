@@ -165,12 +165,12 @@ Zamiana klucz wartość oraz generowanie ``dict`` i ``set``
 ---------------------------------------------------------
 .. code-block:: python
 
-    data = {'first_name': 'Ivan', 'last_name': 'Ivanovic'}
+    data = {'first_name': 'Иван', 'last_name': 'Иванович'}
 
-    out = {v: k for k, v in data.items()}  # {'Ivan': 'first_name', 'Ivanovic': 'last_name'}
+    out = {v: k for k, v in data.items()}  # {'Иван': 'first_name', 'Иванович': 'last_name'}
     type(out)  # <class 'dict'>
 
-    out = {v for k, v in data.items()}  # {'Ivan', 'Ivanovic'}
+    out = {v for k, v in data.items()}  # {'Иван', 'Иванович'}
     type(out)  # <class 'set'>
 
 Filtrowanie wyników na liście dictów
@@ -178,8 +178,8 @@ Filtrowanie wyników na liście dictów
 .. code-block:: python
 
     ADDRESS_BOOK = [
-        {'imie': 'Ivan',
-        'nazwisko': 'Ivanovic',
+        {'imie': 'Иван',
+        'nazwisko': 'Иванович',
         'ulica': 'Wochod',
         'miasto': 'Bajkonur',
         'kod_pocztowy': '101503',
@@ -258,7 +258,7 @@ Zaawansowane wykorzystanie `Generator Expressions`
     DATA = [
         {'last_name': 'Jiménez'},
         {'first_name': 'Max', 'last_name': 'Peck'},
-        {'first_name': 'Ivan'},
+        {'first_name': 'Иван'},
         {'first_name': 'Max', 'last_name': 'Peck', 'born': 1961},
         {'first_name': 'Max', 'last_name': 'Peck', 'born': 1961, 'first_step': 1969},
     ]
@@ -313,7 +313,7 @@ Nested list comprahension
    DATA = [
         {'last_name': 'Jiménez'},
         {'first_name': 'Max', 'last_name': 'Peck'},
-        {'first_name': 'Ivan'},
+        {'first_name': 'Иван'},
         {'first_name': 'Max', 'last_name': 'Peck', 'born': 1961},
         {'first_name': 'Max', 'last_name': 'Peck', 'first_step': 1969},
     ]

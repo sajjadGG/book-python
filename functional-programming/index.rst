@@ -149,7 +149,7 @@ złożenia funkcji
     OSOBY = [
         {'imie': 'José', 'wiek': 10},
         {'imie': 'Max', 'wiek': 18},
-        {'imie': 'Ivan', 'wiek': 21},
+        {'imie': 'Иван', 'wiek': 21},
     ]
 
     def osoba_pelnoletnia(osoba):

@@ -5,7 +5,7 @@ FILENAME = r'etc-passwd.txt'
 root:x:0:0:root:/root:/bin/bash
 peck:x:1000:1000:Max Peck:/home/peck:/bin/bash
 jimenez:x:1001:1001:Jose Jimenez:/home/jimenez:/bin/bash
-ivanovic:x:1002:1002:Ivan Ivanovic:/home/ivanovic:/bin/bash
+ivanovic:x:1002:1002:Иван Иванович:/home/ivanovic:/bin/bash
 """
 
 with open(FILENAME, encoding='utf-8') as file:
@@ -21,4 +21,4 @@ with open(FILENAME, encoding='utf-8') as file:
         # root -> root with HOME="/root"
         # peck -> Max Peck with HOME="/home/peck"
         # jimenez -> José Jiménez with HOME="/home/jimenez"
-        # ivanovic -> Ivan Ivanovic with HOME="/home/ivanovic"
+        # ivanovic -> Иван Иванович with HOME="/home/ivanovic"
