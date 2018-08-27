@@ -138,7 +138,7 @@ Memoization
 
 #. Porównaj prędkość działania z obliczaniem na bieżąco dla parametru 500
 
-:About assignment:
+:About:
     * Filename: ``performance_memoize.py``
     * Lines of code to write: 5 lines
     * Estimated time of completion: 15 min

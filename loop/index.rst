@@ -421,7 +421,7 @@ Text manipulation
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 
-:About assignment:
+:About:
     * Filename: ``loop_sentences.py``
     * Lines of code to write: 4 lines
     * Estimated time of completion: 5 min
@@ -429,7 +429,7 @@ Text manipulation
 :Co zadanie sprawdza:
     * Dzielenie stringów
     * Sprawdzanie długości ciągów znaków
-    * Iterowanie po elementach w tablicy
+    * Iterowanie po elementach listy
 
 Unique keys from schema-less database
 -------------------------------------
@@ -446,10 +446,17 @@ Unique keys from schema-less database
         {'first_name': 'José', 'born': 1961, 'agency': 'NASA'},
     ]
 
-:About assignment:
+:About:
     * Filename: ``loop_unique_keys.py``
     * Lines of code to write: 5 lines
     * Estimated time of completion: 10 min
+
+:The whys and wherefores:
+    * Generowanie zbiorów
+    * Deduplikacja elementów
+    * Wyciąganie elementów ze słownika
+    * Iterowanie po słowniku
+    * Aktualizacja zbiorów
 
 Report card
 -----------
@@ -461,17 +468,19 @@ Report card
 #. Jeżeli wciśnięto sam Enter, oznacza to koniec wpisywania do dzienniczka
 #. Na zakończenie wyświetl wyliczoną dla dzienniczka średnią arytmetyczną z ocen
 
-:About assignment:
+:About:
     * Filename: ``loop_report_card.py``
     * Lines of code to write: 15 lines
     * Estimated time of completion: 10 min
 
-:Co zadanie sprawdza?:
-    * wczytywanie ciągu znaków od użytkownika
-    * weryfikacja ciągu wprowadzonego od użytkownika
-    * korzystanie z pętli oraz instrukcji wychodzących
-    * konwersja typów i rzutowanie
-    * sprawdzanie czy obiekt jest instancją klasy
+:The whys and wherefores:
+    * Wczytywanie ciągu znaków od użytkownika
+    * Generowanie struktur danych i konwersja typów
+    * Weryfikacja ciągu wprowadzonego od użytkownika
+    * Korzystanie z pętli oraz instrukcji wychodzących
+    * Konwersja typów i rzutowanie
+    * Sprawdzanie czy obiekt jest instancją klasy
+    * Wykorzystanie funkcji wbudowanych
 
 :Hints:
     * ``len()``
@@ -501,13 +510,18 @@ Label encoder
         print(labels)
         # [0, 1, 2, 1, 1, 0, ...]
 
-:About assignment:
+:About:
     * Filename: ``loop_label_encoder.py``
     * Lines of code to write: 13 lines
     * Estimated time of completion: 15 min
 
+:The whys and wherefores:
+    * Sprawdzanie występowania elementów w słowniku
+    * Generowanie słownika i listy na podstawie innych danych
+    * Odwracanie słownika
+
 :Hints:
-    - ``from random import shuffle``
+    * ``from random import shuffle``
 
 .. literalinclude:: src/loops-iris-sample.py
     :name: listing-loops-iris-sample

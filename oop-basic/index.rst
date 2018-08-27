@@ -159,7 +159,7 @@ Dragon (Easy)
 #. Nie można zadawać smokowi obrażeń, jeżeli już nie żyje
 #. Granie ze smokiem tak jak na :numref:`listing-oop-dragon`
 
-:About assignment:
+:About:
     * Filename: ``oop_dragon_easy.py``
     * Lines of code to write: 50 lines
     * Estimated time of completion: 30 min
@@ -180,7 +180,7 @@ Dragon (Medium)
 #. Przeprowadź symulację walki.
 #. Kto zginie pierwszy?
 
-:About assignment:
+:About:
     * Filename: ``oop_dragon_medium.py``
     * Lines of code to write: 90 lines
     * Estimated time of completion: 45 min
@@ -200,7 +200,7 @@ Dragon (Advanced)
 #. Przeprowadź symulację walki.
 #. Kto zginie pierwszy?
 
-:About assignment:
+:About:
     * Filename: ``oop_dragon_advanced.py``
     * Lines of code to write: 35 lines
     * Estimated time of completion: 15 min
@@ -213,12 +213,12 @@ Address Book (Easy)
 #. Użytkownik może mieć wiele adresów.
 #. Użytkownik może nie mieć żadnego adresu
 
-:About assignment:
+:About:
     * Filename: ``oop_addressbook_easy.py``
     * Lines of code to write: 10 lines
     * Estimated time of completion: 20 min
 
-:Co zadanie sprawdza?:
+:The whys and wherefores:
     * myślenie obiektowe i odwzorowanie struktury w programie
     * praca z obiektami
     * zagnieżdżanie obiektów
@@ -250,7 +250,7 @@ Przekształć swój kod z przykładu z modułu "Matematyka" tak żeby wykorzysty
 :Zadanie 4:
     Napisz kod, który zaklasyfikuje te losowo wygenerowane punkty do punktów A oraz B na podstawie odległości. W tym celu wykorzystaj napisane metody do obliczania odległości między punktami. Po klasyfikacji wyrysuj te punkty na wykresie, podobnie jak w przykładzie z modułu "Matematyka".
 
-:About assignment:
+:About:
     * Filename: ``oop-vector.py``
     * Lines of code to write: 20 lines
     * Estimated time of completion: 30 min

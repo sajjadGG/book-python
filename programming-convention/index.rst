@@ -590,7 +590,7 @@ Cleanup your file
 #. Run ``pycodestyle`` on directory with all of your scripts
 #. Fix all errors
 
-:About assignment:
+:About:
     * Lines of code to write: 2 lines
     * Estimated time of completion: 5 min
 

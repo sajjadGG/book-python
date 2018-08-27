@@ -71,11 +71,11 @@ Know thou IDE
 #. Czym się różni ``Python Console`` od ``Terminal``
 #. Czym się różni ``Distraction Free Mode`` od ``Full Screen``
 
-:About assignment:
+:About:
     * Lines of code to write: 0 lines
     * Estimated time of completion: 10 min
 
-:Co zadanie sprawdza?:
+:The whys and wherefores:
     * Korzystanie z IDE
     * Uruchamianie debuggera
     * Znajomość różnicy między uruchamianiem i debuggingiem
@@ -87,10 +87,10 @@ Spellchecker
 #. Pobierz z https://github.com/LibreOffice/dictionaries słownik ``.dic`` oraz ``.aff`` dla języka polskiego
 #. Skonfiguruj IDE do korzystania z tego słownika
 
-:About assignment:
+:About:
     * Lines of code to write: 0 lines
     * Estimated time of completion: 3 min
 
-:Co zadanie sprawdza?:
+:The whys and wherefores:
     * Korzystanie z IDE
     * Konfiguracja IDE

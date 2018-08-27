@@ -794,7 +794,7 @@ Recursive folders walking
 #. Ścieżka ma być względna w stosunku do pliku, który aktualnie jest uruchamiany
 #. Jeżeli po przeszukaniu całego Pulpitu rekurencyjnie skrypt nie znajdzie pliku ``LICENSE.rst``, to ma rzucić informację ``logging.critical()`` i wyjść z kodem błędu ``1``.
 
-:About assignment:
+:About:
     * Filename: ``system_walk.py``
     * Lines of code to write: 30 lines
     * Estimated time of completion: 30 min
@@ -845,7 +845,7 @@ Tree
     ┣━folder_tree_maker.py
     ┗━tree.py
 
-:About assignment:
+:About:
     * Filename: ``system_tree.py``
     * Lines of code to write: 60 lines
     * Estimated time of completion: 60 min

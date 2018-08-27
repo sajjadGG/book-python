@@ -510,12 +510,12 @@ Powielanie napisów
 #. Każdy ciąg znaków w osobnej linii
 #. Napisz doctest do wszystkich funkcji
 
-:About assignment:
+:About:
     * Filename: ``print_lines.py``
     * Lines of code to write: 8 lines
     * Estimated time of completion: 5 min
 
-:Co zadanie sprawdza?:
+:The whys and wherefores:
     * wczytywanie ciągu znaków od użytkownika
     * formatowanie ciągu znaków
     * korzystanie z pętli i instrukcji warunkowych
@@ -544,7 +544,7 @@ Przeliczanie temperatury
         Temperatura +     35C to ___+95____F
         Temperatura +     40C to ___+104___F
 
-:About assignment:
+:About:
     * Filename: ``print_formatting.py``
     * Lines of code to write: 3 lines
     * Estimated time of completion: 10 min
@@ -557,5 +557,5 @@ Przeliczanie temperatury
         def celsius_to_fahrenheit(degree):
             return degree*1.8 + 32
 
-:Co zadanie sprawdza?:
+:The whys and wherefores:
     * zaawansowane formatowanie ciągu znaków

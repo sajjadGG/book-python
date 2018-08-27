@@ -398,12 +398,12 @@ Split train/test
     #. z danych bez nagłówka zapisz do uczenia rekordy od początku do punktu przegięcia
     #. z danych bez nagłówka zapisz do testów rekordy od punktu przegięcia do końca
 
-:About assignment:
+:About:
     * Filename: ``structures_split_train_test.py``
     * Lines of code to write: 6 lines
     * Estimated time of completion: 15 min
 
-:Co zadanie sprawdza?:
+:The whys and wherefores:
     * Umiejętność przetwarzania złożonych typów danych
     * Korzystanie z przecięć danych
     * Wykorzystanie funkcji z biblioteki standardowej

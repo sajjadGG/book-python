@@ -79,7 +79,7 @@ Attacker
 #. Datę, komunikat XML, oraz listę hostów do których poszło zapytanie zapisuj w bazie ``sqlite3`` w charakterze logów
 #. Wyniki, które przyjdą od ofiar zapisuj w bazie danych ``sqlite3`` wraz z datą otrzymania, adresem IP ofiary, portem (backdoor), stdout i stderr
 
-:About assignment:
+:About:
     #. Do obsługi parametrów z linii poleceń wykorzystaj ``argparse``
     #. Przetwarzanie requestów jest nieblokujące, tzn. otwieraj wątek dla każdego zapytania
     #. Wykorzystaj ``os.path.join`` (łączenie ścieżki) oraz ``os.walk`` (wyświetlanie zawartości).

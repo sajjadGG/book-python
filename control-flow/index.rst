@@ -249,12 +249,12 @@ Conditioning on user input
 #. Użytkownik będzie podawał tylko i wyłącznie ``int`` lub ``float``
 #. Następnie sprawdzi pełnoletność i wyświetli informację czy osoba jest "dorosła" czy "niepełnoletnia".
 
-:About assignment:
+:About:
     * Filename: ``control_input.py``
     * Lines of code to write: 6 lines
     * Estimated time of completion: 5 min
 
-:Co zadanie sprawdza?:
+:The whys and wherefores:
     * Wczytywanie ciągu znaków od użytkownika
     * Rzutowanie i konwersja typów
     * Instrukcje warunkowe

@@ -107,7 +107,7 @@ Serializacja dat
 #. Zapisz ją do pliku json
 #. Wczytaj ją z pliku json jako obiekty Pythona (ten sam efekt co na listingu)
 
-:About assignment:
+:About:
     * Filename: ``json_datetimes.py``
     * Linii kodu do napisania: około 10 linii
     * Estimated time of completion: 15 min
@@ -129,7 +129,7 @@ Serializacja obiektów do JSON
 #. Jak odtworzyć relacje?
 #. Stwórz obiekty książki adresowej na podstawie danych odczytanych z pliku
 
-:About assignment:
+:About:
     * Filename: ``csv_dictwriter.py``
     * Linii kodu do napisania: około 8 linii
     * Estimated time of completion: 15 min

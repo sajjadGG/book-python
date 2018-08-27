@@ -509,7 +509,7 @@ REST API
         body = resp.read().decode()
         data = json.loads(body)
 
-:Co zadanie sprawdza?:
+:The whys and wherefores:
     * Komunikacja HTTP (request, response)
     * Parsowanie odpowiedzi HTTP
     * Sprawdzanie stanu połączenia

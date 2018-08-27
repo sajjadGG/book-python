@@ -414,12 +414,12 @@ Basic usage of ``print()`` function
 #. Gdzie Python jest zainstalowany?
 #. Czy korzystasz z Virtualenv?
 
-:About assignment:
+:About:
     * Filename: ``python_version.py``
     * Lines of code to write: 0 lines
     * Estimated time of completion: 5 min
 
-:Co zadanie sprawdza?:
+:The whys and wherefores:
     * Czy Python działa
     * Jaka jest wersja Python
     * Czy korzystasz z Virtualenv
@@ -443,12 +443,12 @@ Handling user input and type casting
     print(f'Nautical Miles: {...}')            # float
     print(f'All: {...}, {...}, {...}, {...}')  # int, int, float, float
 
-:About assignment:
+:About:
     * Filename: ``types_casting.py``
     * Lines of code to write: 4 lines
     * Estimated time of completion: 5 min
 
-:Co zadanie sprawdza?:
+:The whys and wherefores:
     * Definiowanie zmiennych
     * Korzystanie z print formatting
     * Konwersja typów
@@ -483,12 +483,12 @@ Variables and types
         '''My_name_"José_Jiménez".
         _I'm_an_"""astronaut!"""'''
 
-:About assignment:
+:About:
     * Filename: ``types_input.py``
     * Lines of code to write: 4 lines
     * Estimated time of completion: 10 min
 
-:Co zadanie sprawdza?:
+:The whys and wherefores:
     * Definiowanie zmiennych
     * Korzystanie z print formatting
     * Wczytywanie tekstu od użytkownika

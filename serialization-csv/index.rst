@@ -72,7 +72,7 @@ Wczytywanie pliku ``csv``
 #. Kolumna species ma mieć wartość nazwy gatunku a nie cyfry 0, 1, 2 jak to jest w pliku
 #. Wypisz wiersze na ekranie
 
-:About assignment:
+:About:
     * Filename: ``csv_dictreader.py``
     * Linii kodu do napisania: około 6 linie
     * Estimated time of completion: 15 min
@@ -93,7 +93,7 @@ Serializacja ``csv``
         {'first_name': 'José', 'born': 1961, 'first_step': 1969},
     ]
 
-:About assignment:
+:About:
     * Filename: ``csv_dictwriter.py``
     * Linii kodu do napisania: około 8 linii
     * Estimated time of completion: 15 min
@@ -101,7 +101,7 @@ Serializacja ``csv``
 :Hints:
     * To jest bardzo często występujący i użyteczny przykład
 
-:Co zadanie sprawdza?:
+:The whys and wherefores:
     * Umiejętność korzystania z modułu ``csv``
     * Umiejętność iteracji po złożonych strukturach danych
     * Dynamiczne generowanie struktur danych na podstawie innych
@@ -125,7 +125,7 @@ Serializacja obiektów do CSV
     :language: python
     :caption: Address book
 
-:About assignment:
+:About:
     * Filename: ``csv_addressbook.py``
     * Linii kodu do napisania: około 10 linii
     * Estimated time of completion: 20 min

@@ -165,7 +165,7 @@ Euclidean distance 2D
         """
         pass
 
-:About assignment:
+:About:
     * Filename: ``math_euclidean_2d.py``
     * Lines of code to write: 5 lines
     * Estimated time of completion: 15 min
@@ -211,7 +211,7 @@ Euclidean distance multi dimensions
         """
         pass
 
-:About assignment:
+:About:
     * Filename: ``math_euclidean_multi_dim.py``
     * Lines of code to write: 10 lines
     * Estimated time of completion: 15 min
@@ -243,7 +243,7 @@ Matrix multiplication
         """
         pass
 
-:About assignment:
+:About:
     * Filename: ``math_matrix_multiplication.py``
     * Lines of code to write: 6 lines
     * Estimated time of completion: 20 min
@@ -259,7 +259,7 @@ Trigonometry
 #. Wyświetl wartość funkcji trygonometrycznych (sin, cos, tg, ctg)
 #. Jeżeli funkcja trygonometryczna nie istnieje dla danego kąta wypisz "For this angle function does not exist." i zakończ program
 
-:About assignment:
+:About:
     * Filename: ``math_trigonometry.py``
     * Lines of code to write: 10 lines
     * Estimated time of completion: 10 min
@@ -274,7 +274,7 @@ Random numbers
 #. Czy da się stworzyć program czysto losowy?
 #. Dlaczego?
 
-:About assignment:
+:About:
     * Filename: ``math_random_numbers.py``
     * Lines of code to write: 5 lines
     * Estimated time of completion: 10 min
@@ -284,7 +284,7 @@ Random numbers
     * ``random.sample()``
     * Czytelny cod obu przykładów wraz z białymi liniami nie powinien zająć więcej niż 10 linii.
 
-:Co zadanie sprawdza?:
+:The whys and wherefores:
     * Umiejętność wykorzystania gotowych funkcji w zewnętrznej bibliotece
     * Umiejętność wyszukania informacji na temat API funkcji w dokumentacji języka i jego odpowiedniej wersji
     * Stworzenie dwóch alternatywnych podejść do rozwiązania zadania
@@ -296,12 +296,12 @@ Triangle
 #. Napisz program, który obliczy pole trójkąta.
 #. Użytkownik poda wysokość i długość podstawy tego trójkąta. Uwzględnij, że wysokość i długość podstawy mogą być liczbami niecałkowitymi. Wykorzystaj doctest do przetestowania funkcji.
 
-:About assignment:
+:About:
     * Filename: ``math_triangle.py``
     * Lines of code to write: 5 lines
     * Estimated time of completion: 10 min
 
-:Co zadanie sprawdza?:
+:The whys and wherefores:
     * Umiejętność wykorzystania gotowych funkcji w zewnętrznej bibliotece
     * Umiejętność wyszukania informacji na temat API funkcji w dokumentacji języka i jego odpowiedniej wersji
     * Stworzenie dwóch alternatywnych podejść do rozwiązania zadania
@@ -338,7 +338,7 @@ Korzystając z funkcji napisanej w ćwiczeniu powyżej oblicz odległość od ka
 
 Czy dwa wykresy są takie same? Co się stanie jeżeli będziemy zwiększali odchylenie standardowe przy generacji punktów? Albo przybliżymy do siebie punkty A i B?
 
-:About assignment:
+:About:
     * Filename: ``math_random_points.py``
     * Lines of code to write: 15 lines
     * Estimated time of completion: 20 min

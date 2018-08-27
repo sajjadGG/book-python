@@ -315,7 +315,7 @@ Manipulacja datami
     - rok = 365 dni
     - miesiac = 30 dni
 
-:About assignment:
+:About:
     * Filename: ``datetime_deltas.py``
     * Lines of code to write: 15 lines
     * Estimated time of completion: 20 min

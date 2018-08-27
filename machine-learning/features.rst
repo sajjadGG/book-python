@@ -238,7 +238,7 @@ Feature Engineering
             print(vector)
 
 
-:About assignment:
+:About:
     * Filename: ``ml-features-engineering.py``
     * Linii kodu do napisania: około 15 linii
     * Estimated time of completion: 10 min

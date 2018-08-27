@@ -237,12 +237,12 @@ Integer to string
         number_to_str(13.37)   # 'one three and three seven'
         number_to_str(31.337)  # 'three one and three three seven'
 
-:About assignment:
+:About:
     * Filename: ``functions_numstr_simple.py``
     * Lines of code to write: 15 lines
     * Estimated time of completion: 15 min
 
-:Co zadanie sprawdza?:
+:The whys and wherefores:
     * Definiowanie i uruchamianie funkcji
     * Sprawdzanie przypadków brzegowych (niekompatybilne argumenty)
     * Parsowanie argumentów funkcji
@@ -265,12 +265,12 @@ Integer to human readable
         number_to_str(31337)  # 'thirty one thousand three hundred thirty seven'
         number_to_str(31.337) # 'thirty one three hundreds thirty seven thousands'
 
-:About assignment:
+:About:
     * Filename: ``functions_numstr_human.py``
     * Lines of code to write: 15 lines
     * Estimated time of completion: 15 min
 
-:Co zadanie sprawdza?:
+:The whys and wherefores:
     * Definiowanie i uruchamianie funkcji
     * Sprawdzanie przypadków brzegowych (niekompatybilne argumenty)
     * Parsowanie argumentów funkcji
@@ -283,7 +283,7 @@ Roman numbers
 #. Napisz program, który przeliczy wprowadzoną liczbę rzymską na jej postać dziesiętną.
 #. Napisz drugą funkcję, która dokona procesu odwrotnego.
 
-:Co zadanie sprawdza?:
+:The whys and wherefores:
     * Definiowanie i uruchamianie funkcji
     * Sprawdzanie przypadków brzegowych (niekompatybilne argumenty)
     * Parsowanie argumentów funkcji
@@ -291,7 +291,7 @@ Roman numbers
     * Sprawdzanie czy element istnieje w ``dict``
     * Rzutowanie i konwersja typów
 
-:About assignment:
+:About:
     * Filename: ``functions_roman.py``
     * Lines of code to write: 15 lines
     * Estimated time of completion: 15 min

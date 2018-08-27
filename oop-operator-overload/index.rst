@@ -150,7 +150,7 @@ Address Book
 ------------
 #. Dopisz odpowiednie metody do ``Contact`` i ``Address`` aby poniższy kod zadziałał poprawnie
 
-:About assignment:
+:About:
     * Filename: ``oop_addressbook_operators.py``
     * Lines of code to write: 10 lines
     * Estimated time of completion: 15 min

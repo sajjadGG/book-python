@@ -142,7 +142,7 @@ Za pomocą wyrażeń regularnych sprawdź:
 * płeć użytkownika który podał PESEL
 
 
-:About assignment:
+:About:
     * Filename: ``regex_pesel.py``
     * Linii kodu do napisania: około 10 linii
     * Estimated time of completion: 20 min

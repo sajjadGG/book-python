@@ -135,7 +135,7 @@ Wielowątkowość
 #. Wątki mają być uruchomione w tle (ang. ``daemon``)
 #. Użyj logowania za pomocą biblioteki ``logging`` tak aby przy wyświetlaniu wyników widoczny był identyfikator procesu i wątku.
 
-:About assignment:
+:About:
     * Filename: ``multiprocessing_server.py`` i ``multiprocessing_client.py``
     * Linii kodu do napisania: około 50 linii
     * Estimated time of completion: 30 min

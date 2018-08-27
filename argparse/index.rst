@@ -228,7 +228,7 @@ Argument parsing
 
 #. Uruchamianie ``python argparse_avg.py --numbers 5 10 100 32 -90 27.5``
 
-:About assignment:
+:About:
     * Filename: ``argparse_avg.py``
     * Lines of code to write: 5 lines
     * Estimated time of completion: 10 min

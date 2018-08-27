@@ -31,12 +31,12 @@ Parsowanie ``/etc/passwd``
 
 #. Zwróć listę użytkowników (UID >= 1000)
 
-:About assignment:
+:About:
     * Filename: ``exam-foundations.py``
     * Lines of code to write: 60 lines
     * Estimated time of completion: 60 min
 
-:Co zadanie sprawdza?:
+:The whys and wherefores:
     * czytanie i parsowanie pliku
     * łączenie danych z różnych plików w jeden format wynikowy
     * nieregularne pliki konfiguracyjne (struktura może się zmieniać)
