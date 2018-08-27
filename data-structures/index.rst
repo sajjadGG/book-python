@@ -393,15 +393,22 @@ Split train/test
 :Algorithm:
     #. zapisz nagłówek do zmiennej
     #. zapisz do innej zmiennej dane bez nagłówka
-    #. zastosuj funkcję ``shuffle()`` na danych bez nagłówka
+    #. na danych bez nagłówka zastosuj funkcję ``shuffle()``
     #. wylicz punkt przegięcia: długość danych bez nagłówka razy procent
-    #. zapisz do uczenia z danych bez nagłówka od początku do punktu przegięcia
-    #. zapisz do testów z danych bez nagłówka od punktu przegięcia do końca
+    #. z danych bez nagłówka zapisz do uczenia rekordy od początku do punktu przegięcia
+    #. z danych bez nagłówka zapisz do testów rekordy od punktu przegięcia do końca
 
 :About assignment:
     * Filename: ``structures_split_train_test.py``
     * Lines of code to write: 6 lines
     * Estimated time of completion: 15 min
+
+:Co zadanie sprawdza?:
+    * Umiejętność przetwarzania złożonych typów danych
+    * Korzystanie z przecięć danych
+    * Wykorzystanie funkcji z biblioteki standardowej
+    * Konwersja typów
+    * Magic Number
 
 :Hints:
     * ``from random import shuffle``
