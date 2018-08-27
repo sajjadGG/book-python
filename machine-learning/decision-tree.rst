@@ -192,7 +192,7 @@ Jaką płeć ma osoba o parametrach?:
 
 Zwizualizuj drzewo decyzyjne
 
-:Podpowiedź:
+:Hints:
     * ``preprocessing.LabelEncoder()``
 
 Banknoty

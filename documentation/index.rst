@@ -143,5 +143,5 @@ Dokumentacja
 
 #. Tekst lorem ipsum oznacz jako cytowanie cycerona wykorzystując bibtext
 
-:Podpowiedź:
+:Hints:
     - ``sphinxcontrib-bibtex==0.3.6``

@@ -152,7 +152,7 @@ Address Book
 
 :About assignment:
     * Filename: ``oop_addressbook_operators.py``
-    * Lines of code to write: 10 linii
+    * Lines of code to write: 10 lines
     * Estimated time of completion: 15 min
 
 .. code-block:: python

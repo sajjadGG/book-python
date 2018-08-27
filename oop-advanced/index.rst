@@ -341,7 +341,7 @@ Address Book (Medium)
 
 :About assignment:
     * Filename: ``oop_addressbook_medium.py``
-    * Lines of code to write: 15 linii
+    * Lines of code to write: 15 lines
     * Estimated time of completion: 20 min
 
 :Co zadanie sprawdza?:

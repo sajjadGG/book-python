@@ -173,7 +173,7 @@ Feature Engineering
 #. Czy Twoje features mają wysokie znaczenie?
 
 
-:Podpowiedź:
+:Hints:
     * ``np.genfromtxt()``
     * ``np.array()`` i ``.transpose()``
 

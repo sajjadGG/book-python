@@ -201,7 +201,7 @@ Odpowie na pytanie jaką płeć ma osoba o parametrach:
     - tylko skalowaniem?
 
 
-:Podpowiedź:
+:Hints:
     * ``preprocessing.LabelEncoder()``
     * ``ExtraTreesClassifier()`` i ``.feature_importances_``
     * ``preprocessing.normalize(features)``

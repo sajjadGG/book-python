@@ -140,10 +140,10 @@ Memoization
 
 :About assignment:
     * Filename: ``performance_memoize.py``
-    * Lines of code to write: 5 linii
+    * Lines of code to write: 5 lines
     * Estimated time of completion: 15 min
 
-:Podpowiedź:
+:Hints:
     * ``import timeit`` - https://docs.python.org/3/library/timeit.html
     * .. code-block:: python
 

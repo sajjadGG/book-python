@@ -1274,7 +1274,7 @@ Szukanie liczby
 #. Znajdź wszystkie liczby trzycyfrowe spełniające ten warunek
 #. Znajdź liczby trzycyfrowe podzielne przez 3
 
-:Podpowiedź:
+:Hints:
     - Ax=B
     - x=A−1B
 

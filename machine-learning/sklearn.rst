@@ -135,7 +135,7 @@ Nearest Neighbor Classifier
 
 #. Do porównania użyj ``accuracy = metrics.accuracy_score(labels_test, labels_predicted)``
 
-:Podpowiedź:
+:Hints:
     * Dla każdego feature sprawdzasz jaka jest najmniejsza odległość
     * Wybierasz najmniejszą odległość ze wszystkich
     * Do obliczania odległości skorzystaj z algorytmu Euclidesa.
@@ -166,7 +166,7 @@ Porównanie classifierów
          Naive Bayes | Accuracy: 73.62% (+/- 2.89%)
                  QDA | Accuracy: 73.97% (+/- 4.42%)
 
-:Podpowiedź:
+:Hints:
     .. code-block:: python
 
         classifiers = [

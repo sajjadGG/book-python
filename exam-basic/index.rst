@@ -33,7 +33,7 @@ Parsowanie ``/etc/passwd``
 
 :About assignment:
     * Filename: ``exam-foundations.py``
-    * Lines of code to write: 60 linii
+    * Lines of code to write: 60 lines
     * Estimated time of completion: 60 min
 
 :Co zadanie sprawdza?:

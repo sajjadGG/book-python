@@ -161,7 +161,7 @@ Dragon (Easy)
 
 :About assignment:
     * Filename: ``oop_dragon_easy.py``
-    * Lines of code to write: 50 linii
+    * Lines of code to write: 50 lines
     * Estimated time of completion: 30 min
 
 .. literalinclude:: src/oop_dragon.py
@@ -182,7 +182,7 @@ Dragon (Medium)
 
 :About assignment:
     * Filename: ``oop_dragon_medium.py``
-    * Lines of code to write: 90 linii
+    * Lines of code to write: 90 lines
     * Estimated time of completion: 45 min
 
 Dragon (Advanced)
@@ -202,7 +202,7 @@ Dragon (Advanced)
 
 :About assignment:
     * Filename: ``oop_dragon_advanced.py``
-    * Lines of code to write: 35 linii
+    * Lines of code to write: 35 lines
     * Estimated time of completion: 15 min
 
 Address Book (Easy)
@@ -215,7 +215,7 @@ Address Book (Easy)
 
 :About assignment:
     * Filename: ``oop_addressbook_easy.py``
-    * Lines of code to write: 10 linii
+    * Lines of code to write: 10 lines
     * Estimated time of completion: 20 min
 
 :Co zadanie sprawdza?:
@@ -252,5 +252,5 @@ Przekształć swój kod z przykładu z modułu "Matematyka" tak żeby wykorzysty
 
 :About assignment:
     * Filename: ``oop-vector.py``
-    * Lines of code to write: 20 linii
+    * Lines of code to write: 20 lines
     * Estimated time of completion: 30 min

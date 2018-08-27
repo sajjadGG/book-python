@@ -416,7 +416,7 @@ Basic usage of ``print()`` function
 
 :About assignment:
     * Filename: ``python_version.py``
-    * Lines of code to write: 0 linii
+    * Lines of code to write: 0 lines
     * Estimated time of completion: 5 min
 
 :Co zadanie sprawdza?:
@@ -445,7 +445,7 @@ Handling user input and type casting
 
 :About assignment:
     * Filename: ``types_casting.py``
-    * Lines of code to write: 4 linie
+    * Lines of code to write: 4 lines
     * Estimated time of completion: 5 min
 
 :Co zadanie sprawdza?:
@@ -455,7 +455,7 @@ Handling user input and type casting
     * Operacje matematyczne na zmiennych
     * Wczytywanie tekstu od użytkownika
 
-:Podpowiedź:
+:Hints:
     * 1000 m = 1 km
     * 1608 m = 1 mila
     * 1852 m = 1 mila morska
@@ -485,7 +485,7 @@ Variables and types
 
 :About assignment:
     * Filename: ``types_input.py``
-    * Lines of code to write: 4 linie
+    * Lines of code to write: 4 lines
     * Estimated time of completion: 10 min
 
 :Co zadanie sprawdza?:

@@ -392,10 +392,10 @@ Split train/test
 
 :About assignment:
     * Filename: ``structures_split_train_test.py``
-    * Lines of code to write: 6 linii
+    * Lines of code to write: 6 lines
     * Estimated time of completion: 15 min
 
-:Podpowiedź:
+:Hints:
     * ``from random import shuffle``
     * ``shuffle()`` modyfikuje dane "in place" i zwraca ``None``
 

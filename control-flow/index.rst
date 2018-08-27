@@ -244,7 +244,7 @@ Conditioning on user input
 
 :About assignment:
     * Filename: ``control_input.py``
-    * Lines of code to write: 6 linii
+    * Lines of code to write: 6 lines
     * Estimated time of completion: 5 min
 
 :Co zadanie sprawdza?:

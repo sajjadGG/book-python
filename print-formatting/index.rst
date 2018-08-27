@@ -512,7 +512,7 @@ Powielanie napisów
 
 :About assignment:
     * Filename: ``print_lines.py``
-    * Lines of code to write: 8 linii
+    * Lines of code to write: 8 lines
     * Estimated time of completion: 5 min
 
 :Co zadanie sprawdza?:
@@ -546,10 +546,10 @@ Przeliczanie temperatury
 
 :About assignment:
     * Filename: ``print_formatting.py``
-    * Lines of code to write: 3 linie
+    * Lines of code to write: 3 lines
     * Estimated time of completion: 10 min
 
-:Podpowiedź:
+:Hints:
     * Fahrenheit to Celsius: (°F - 32) / 1.8 = °C
     * Celsius to Fahrenheit: (°C * 1.8) + 32 = °F
     * .. code-block:: python

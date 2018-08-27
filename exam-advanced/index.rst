@@ -18,7 +18,7 @@ Mini Botnet
 
     Architektura botnet
 
-:Podpowiedź:
+:Hints:
     - Do weryfikacji czy port jest otwarty możesz użyć ``telnet`` albo ``netcat``
 
 Heartbeat
@@ -31,7 +31,7 @@ Heartbeat
     - ip TEXT,
     - port INTEGER
 
-:Podpowiedź:
+:Hints:
     * ``socketserver.UDPServer``
     * ``sqlite3``
 
@@ -45,7 +45,7 @@ Victim
 #. Stwórz dekorator ``is_valid_xml``, który sprawdzi czy XML się waliduje (czy ma poprawną strukturę) i tylko wtedy wykona polecenia
 #. Stwórz dekorator ``log_incoming_requests``, który zapisze do pliku ``botnet.log`` logi w formacie ``Request from IP:PORT to execute COMMAND ARGUMENTS`` dla każdego polecenia wykonywanego na systemie ofiary
 
-:Podpowiedź:
+:Hints:
     * ``random``
     * ``logging``
     * ``socket``
@@ -89,7 +89,7 @@ Attacker
     :language: python
     :caption: Komunikat XML z listą poleceń do wykonania na komputerze ofiary
 
-:Podpowiedź:
+:Hints:
     * ``argparse``
     * ``socket``
     * ``json.dumps()``, ``json.loads()``

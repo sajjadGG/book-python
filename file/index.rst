@@ -66,7 +66,7 @@ Zawartość zadanego pliku
 
 :About assignment:
     * Filename: ``file_content.py``
-    * Lines of code to write: 5 linii
+    * Lines of code to write: 5 lines
     * Estimated time of completion: 5 min
 
 Parsowanie ``/etc/hosts``
@@ -78,7 +78,7 @@ Parsowanie ``/etc/hosts``
 
 :About assignment:
     * Filename: ``file_hosts.py``
-    * Lines of code to write: 10 linii
+    * Lines of code to write: 10 lines
     * Estimated time of completion: 20 min
 
 :Co zadanie sprawdza?:
@@ -89,7 +89,7 @@ Parsowanie ``/etc/hosts``
     * parsowanie stringów
     * praca ze ścieżkami w systemie operacyjnym
 
-:Podpowiedź:
+:Hints:
     * ``str.isspace()``
     * inline ``if``
 

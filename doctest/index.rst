@@ -270,7 +270,7 @@ Konwersja temperatury
     * lista temperatur
     * podany parametr to ``str``
 
-:Podpowiedź:
+:Hints:
     * Fahrenheit to Celsius: (°F - 32) / 1.8 = °C
     * Celsius to Fahrenheit: (°C * 1.8) + 32 = °F
     * Jeden stopień Celsiusza odpowiada jednemu stopniowi w skali Kelvina
@@ -278,5 +278,5 @@ Konwersja temperatury
 
 :About assignment:
     * Filename: ``doctest_temperature.py``
-    * Lines of code to write: 6 linii
+    * Lines of code to write: 6 lines
     * Estimated time of completion: 5 min

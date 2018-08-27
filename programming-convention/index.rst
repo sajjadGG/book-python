@@ -591,7 +591,7 @@ Cleanup your file
 #. Fix all errors
 
 :About assignment:
-    * Lines of code to write: 2 lini
+    * Lines of code to write: 2 lines
     * Estimated time of completion: 5 min
 
 :Co zadanie sprawdza:

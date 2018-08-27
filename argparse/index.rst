@@ -230,5 +230,5 @@ Argument parsing
 
 :About assignment:
     * Filename: ``argparse_avg.py``
-    * Lines of code to write: 5 linii
+    * Lines of code to write: 5 lines
     * Estimated time of completion: 10 min

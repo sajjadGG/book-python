@@ -796,10 +796,10 @@ Recursive folders walking
 
 :About assignment:
     * Filename: ``system_walk.py``
-    * Lines of code to write: 30 linii
+    * Lines of code to write: 30 lines
     * Estimated time of completion: 30 min
 
-:Podpowiedź:
+:Hints:
     * Gdyby był problem ze znalezieniem pliku, a ścieżka jest poprawna to zastosuj ``shell=True``
     * ``os.walk()``
     * ``subprocess.run()``
@@ -847,5 +847,5 @@ Tree
 
 :About assignment:
     * Filename: ``system_tree.py``
-    * Lines of code to write: 60 linii
+    * Lines of code to write: 60 lines
     * Estimated time of completion: 60 min

@@ -482,7 +482,7 @@ REST API
 #. Znajdź numery ID ticketów (``Fixed #...``) z issue trackera, które zostały rozwiązane w ostatnim miesiącu
 #. Spróbuj skorzystać zamiast biblioteki standardowej z pakietu ``requests``
 
-:Podpowiedź:
+:Hints:
     .. code-block:: rest
 
         https://api.github.com/

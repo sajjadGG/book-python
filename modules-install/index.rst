@@ -60,5 +60,5 @@ Installing from ``requirements.txt`` to venv
 
 :About assignment:
     * Filename: ``requirements.txt``
-    * Lines of code to write: 1 linia
+    * Lines of code to write: 1 line
     * Estimated time of completion: 5 min

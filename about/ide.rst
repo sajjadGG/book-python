@@ -72,7 +72,7 @@ Know thou IDE
 #. Czym się różni ``Distraction Free Mode`` od ``Full Screen``
 
 :About assignment:
-    * Lines of code to write: 0 linii
+    * Lines of code to write: 0 lines
     * Estimated time of completion: 10 min
 
 :Co zadanie sprawdza?:
@@ -88,7 +88,7 @@ Spellchecker
 #. Skonfiguruj IDE do korzystania z tego słownika
 
 :About assignment:
-    * Lines of code to write: 0 linii
+    * Lines of code to write: 0 lines
     * Estimated time of completion: 3 min
 
 :Co zadanie sprawdza?:

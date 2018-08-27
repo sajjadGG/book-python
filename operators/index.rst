@@ -64,7 +64,7 @@ Even and odd numbers
 
 :About assignment:
     * Filename: ``operators_even_odd.py``
-    * Lines of code to write: 5 linii
+    * Lines of code to write: 5 lines
     * Estimated time of completion: 5 min
 
 :Co zadanie sprawdza?:
@@ -73,7 +73,7 @@ Even and odd numbers
     * konwersja typów i rzutowanie
     * wykorzystanie operatorów matematycznych
 
-:Podpowiedź:
+:Hints:
     * Zero jest parzyste: https://en.wikipedia.org/wiki/Parity_of_zero
     * Liczba parzysta, to taka, która po podzieleniu przez dwa nie ma reszty
     * Użyj dzielenia modulo ``%``
@@ -86,7 +86,7 @@ Integers and floats
 
 :About assignment:
     * Filename: ``operators_integers.py``
-    * Lines of code to write: 7 linii
+    * Lines of code to write: 7 lines
     * Estimated time of completion: 10 min
 
 :Co zadanie sprawdza?:
@@ -94,7 +94,7 @@ Integers and floats
     * weryfikacja ciągu wprowadzonego od użytkownika
     * konwersja typów i rzutowanie
 
-:Podpowiedź:
+:Hints:
     * Liczba całkowita to taka, której część dziesiętna nie występuje lub jest równa zero.
     * Możesz to sprawdzić dzieląc liczbę z resztą przez *1* i sprawdzając resztę z dzielenia.
     * Zwróć uywagę, że ``input()`` zawsze zwraca ``str`` wiec trzeba rzutowac na ``int``, ale wtedy tracimy informację czy wczesniej mielismy ``float``

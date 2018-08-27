@@ -239,7 +239,7 @@ Integer to string
 
 :About assignment:
     * Filename: ``functions_numstr_simple.py``
-    * Lines of code to write: 15 linii
+    * Lines of code to write: 15 lines
     * Estimated time of completion: 15 min
 
 :Co zadanie sprawdza?:
@@ -267,7 +267,7 @@ Integer to human readable
 
 :About assignment:
     * Filename: ``functions_numstr_human.py``
-    * Lines of code to write: 15 linii
+    * Lines of code to write: 15 lines
     * Estimated time of completion: 15 min
 
 :Co zadanie sprawdza?:
@@ -293,5 +293,5 @@ Roman numbers
 
 :About assignment:
     * Filename: ``functions_roman.py``
-    * Lines of code to write: 15 linii
+    * Lines of code to write: 15 lines
     * Estimated time of completion: 15 min

@@ -423,7 +423,7 @@ Text manipulation
 
 :About assignment:
     * Filename: ``loop_sentences.py``
-    * Lines of code to write: 4 linie
+    * Lines of code to write: 4 lines
     * Estimated time of completion: 5 min
 
 :Co zadanie sprawdza:
@@ -448,7 +448,7 @@ Unique keys from schema-less database
 
 :About assignment:
     * Filename: ``loop_unique_keys.py``
-    * Lines of code to write: 5 linii
+    * Lines of code to write: 5 lines
     * Estimated time of completion: 10 min
 
 Report card
@@ -463,7 +463,7 @@ Report card
 
 :About assignment:
     * Filename: ``loop_report_card.py``
-    * Lines of code to write: 15 linii
+    * Lines of code to write: 15 lines
     * Estimated time of completion: 10 min
 
 :Co zadanie sprawdza?:
@@ -473,7 +473,7 @@ Report card
     * konwersja typów i rzutowanie
     * sprawdzanie czy obiekt jest instancją klasy
 
-:Podpowiedź:
+:Hints:
     * ``len()``
     * ``sum()``
 
@@ -494,10 +494,10 @@ Label encoder
 
 :About assignment:
     * Filename: ``loop_label_encoder.py``
-    * Lines of code to write: 13 linii
+    * Lines of code to write: 13 lines
     * Estimated time of completion: 15 min
 
-:Podpowiedź:
+:Hints:
     - ``from random import shuffle``
 
 .. literalinclude:: src/loops-iris-sample.py

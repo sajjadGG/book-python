@@ -134,4 +134,5 @@ Serializacja obiektów do JSON
     * Linii kodu do napisania: około 8 linii
     * Estimated time of completion: 15 min
 
-:Podpowiedź: ``self.__dict__``
+:Hints:
+    * ``self.__dict__``

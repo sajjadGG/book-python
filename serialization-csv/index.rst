@@ -98,7 +98,7 @@ Serializacja ``csv``
     * Linii kodu do napisania: około 8 linii
     * Estimated time of completion: 15 min
 
-:Podpowiedź:
+:Hints:
     * To jest bardzo często występujący i użyteczny przykład
 
 :Co zadanie sprawdza?:
@@ -114,7 +114,7 @@ Serializacja obiektów do CSV
 #. Jak zapisać w CSV dane relacyjne (kontakt ma wiele adresów)?
 #. Stwórz obiekty książki adresowej na podstawie danych odczytanych z pliku
 
-:Podpowiedź:
+:Hints:
     - powtarzanie rekordów (user pozostaje ten sam) z innymi danymi adresowymi
     - dodawanie kolumn (ulica_1, miasto_1, panstwo_1, ulica_2, miasto_2, panstwo_2) i automatyczne generowanie fieldnames
     - wrzucenie danych jako string do jednego pola adres_1, adres_2, adres_3 i ustalenie separatora (np: średnik - ';')

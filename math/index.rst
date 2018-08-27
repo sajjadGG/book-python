@@ -167,7 +167,7 @@ Euclidean distance 2D
 
 :About assignment:
     * Filename: ``math_euclidean_2d.py``
-    * Lines of code to write: 5 linii
+    * Lines of code to write: 5 lines
     * Estimated time of completion: 15 min
 
 .. figure:: ../machine-learning/img/k-nearest-neighbors-euclidean-distance.png
@@ -213,7 +213,7 @@ Euclidean distance multi dimensions
 
 :About assignment:
     * Filename: ``math_euclidean_multi_dim.py``
-    * Lines of code to write: 10 linii
+    * Lines of code to write: 10 lines
     * Estimated time of completion: 15 min
 
 Matrix multiplication
@@ -245,10 +245,10 @@ Matrix multiplication
 
 :About assignment:
     * Filename: ``math_matrix_multiplication.py``
-    * Lines of code to write: 6 linii
+    * Lines of code to write: 6 lines
     * Estimated time of completion: 20 min
 
-:Podpowiedź:
+:Hints:
     * macierz zerowa
     * trzy pętle
 
@@ -261,10 +261,10 @@ Trigonometry
 
 :About assignment:
     * Filename: ``math_trigonometry.py``
-    * Lines of code to write: 10 linii
+    * Lines of code to write: 10 lines
     * Estimated time of completion: 10 min
 
-:Podpowiedź:
+:Hints:
     * ``raise``
 
 Random numbers
@@ -276,10 +276,10 @@ Random numbers
 
 :About assignment:
     * Filename: ``math_random_numbers.py``
-    * Lines of code to write: 5 linii
+    * Lines of code to write: 5 lines
     * Estimated time of completion: 10 min
 
-:Podpowiedź:
+:Hints:
     * ``random.randrange()``
     * ``random.sample()``
     * Czytelny cod obu przykładów wraz z białymi liniami nie powinien zająć więcej niż 10 linii.
@@ -298,7 +298,7 @@ Triangle
 
 :About assignment:
     * Filename: ``math_triangle.py``
-    * Lines of code to write: 5 linii
+    * Lines of code to write: 5 lines
     * Estimated time of completion: 10 min
 
 :Co zadanie sprawdza?:
@@ -340,5 +340,5 @@ Czy dwa wykresy są takie same? Co się stanie jeżeli będziemy zwiększali odc
 
 :About assignment:
     * Filename: ``math_random_points.py``
-    * Lines of code to write: 15 linii
+    * Lines of code to write: 15 lines
     * Estimated time of completion: 20 min
