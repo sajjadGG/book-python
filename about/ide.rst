@@ -71,9 +71,9 @@ Know thou IDE
 #. Czym się różni ``Python Console`` od ``Terminal``
 #. Czym się różni ``Distraction Free Mode`` od ``Full Screen``
 
-:Założenia:
-    * Szacunkowa długość kodu: 0 linii
-    * Maksymalny czas na zadanie: 10 min
+:About assignment:
+    * Lines of code to write: 0 linii
+    * Estimated time of completion: 10 min
 
 :Co zadanie sprawdza?:
     * Korzystanie z IDE
@@ -87,9 +87,9 @@ Spellchecker
 #. Pobierz z https://github.com/LibreOffice/dictionaries słownik ``.dic`` oraz ``.aff`` dla języka polskiego
 #. Skonfiguruj IDE do korzystania z tego słownika
 
-:Założenia:
-    * Szacunkowa długość kodu: 0 linii
-    * Maksymalny czas na zadanie: 3 min
+:About assignment:
+    * Lines of code to write: 0 linii
+    * Estimated time of completion: 3 min
 
 :Co zadanie sprawdza?:
     * Korzystanie z IDE

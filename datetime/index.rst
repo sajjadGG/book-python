@@ -315,10 +315,10 @@ Manipulacja datami
     - rok = 365 dni
     - miesiac = 30 dni
 
-:Założenia:
-    * Nazwa pliku: ``datetime_deltas.py``
-    * Szacunkowa długość kodu: około 15 linii
-    * Maksymalny czas na zadanie: 20 min
+:About assignment:
+    * Filename: ``datetime_deltas.py``
+    * Lines of code to write: 15 linii
+    * Estimated time of completion: 20 min
 
 :Zadanie z gwiazdką:
     * Uwzględnij strefy czasowe.

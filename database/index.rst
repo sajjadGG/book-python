@@ -240,10 +240,10 @@ Iris Database
 #. Wyniki wypisz z bazy danych (``SELECT * FROM iris ORDER BY datetime DESC``)
 #. Zwracaj dane jako ``sqlite3.Row``
 
-:Założenia:
-    * Nazwa pliku: ``db_iris.py``
+:About assignment:
+    * Filename: ``db_iris.py``
     * Linii kodu do napisania: około 30 linii
-    * Maksymalny czas na zadanie: 30 min
+    * Estimated time of completion: 30 min
 
 :Co zadanie sprawdza?:
     * Parsowanie plików ``csv``
@@ -263,10 +263,10 @@ Tworzenie bazy danych i proste zapytania
 #. Dane powinny być zwracane w postaci listy ``dict``
 #. Do wpisywania danych wykorzystaj konstrukcję ``execute`` wykorzystując ``dict`` jako argument
 
-:Założenia:
-    * Nazwa pliku: ``db_addressbook.py``
+:About assignment:
+    * Filename: ``db_addressbook.py``
     * Linii kodu do napisania: około 15 linii
-    * Maksymalny czas na zadanie: 20 min
+    * Estimated time of completion: 20 min
 
 :Zadanie z gwiazdką:
     * Dodaj obsługę wielu adresów

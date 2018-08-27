@@ -138,10 +138,10 @@ Memoization
 
 #. Porównaj prędkość działania z obliczaniem na bieżąco dla parametru 500
 
-:Założenia:
-    * Nazwa pliku: ``performance_memoize.py``
-    * Szacunkowa długość kodu: około 5 linii
-    * Maksymalny czas na zadanie: 15 min
+:About assignment:
+    * Filename: ``performance_memoize.py``
+    * Lines of code to write: 5 linii
+    * Estimated time of completion: 15 min
 
 :Podpowiedź:
     * ``import timeit`` - https://docs.python.org/3/library/timeit.html

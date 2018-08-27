@@ -590,9 +590,9 @@ Cleanup your file
 #. Run ``pycodestyle`` on directory with all of your scripts
 #. Fix all errors
 
-:Założenia:
-    * Szacunkowa długość kodu: 2 lini
-    * Maksymalny czas na zadanie: 5 min
+:About assignment:
+    * Lines of code to write: 2 lini
+    * Estimated time of completion: 5 min
 
 :Co zadanie sprawdza:
     * Umiejętność czytania komunikatów

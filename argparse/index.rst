@@ -228,7 +228,7 @@ Argument parsing
 
 #. Uruchamianie ``python argparse_avg.py --numbers 5 10 100 32 -90 27.5``
 
-:Założenia:
-    * Nazwa pliku: ``argparse_avg.py``
-    * Szacunkowa długość kodu: około 5 linii
-    * Maksymalny czas na zadanie: 10 min
+:About assignment:
+    * Filename: ``argparse_avg.py``
+    * Lines of code to write: 5 linii
+    * Estimated time of completion: 10 min

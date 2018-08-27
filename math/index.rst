@@ -165,10 +165,10 @@ Euclidean distance 2D
         """
         pass
 
-:Założenia:
-    * Nazwa pliku: ``math_euclidean_2d.py``
-    * Szacunkowa długość kodu: około 5 linii
-    * Maksymalny czas na zadanie: 15 min
+:About assignment:
+    * Filename: ``math_euclidean_2d.py``
+    * Lines of code to write: 5 linii
+    * Estimated time of completion: 15 min
 
 .. figure:: ../machine-learning/img/k-nearest-neighbors-euclidean-distance.png
     :scale: 100%
@@ -211,10 +211,10 @@ Euclidean distance multi dimensions
         """
         pass
 
-:Założenia:
-    * Nazwa pliku: ``math_euclidean_multi_dim.py``
-    * Szacunkowa długość kodu: około 10 linii
-    * Maksymalny czas na zadanie: 15 min
+:About assignment:
+    * Filename: ``math_euclidean_multi_dim.py``
+    * Lines of code to write: 10 linii
+    * Estimated time of completion: 15 min
 
 Matrix multiplication
 ---------------------
@@ -243,10 +243,10 @@ Matrix multiplication
         """
         pass
 
-:Założenia:
-    * Nazwa pliku: ``math_matrix_multiplication.py``
-    * Szacunkowa długość kodu: około 6 linii
-    * Maksymalny czas na zadanie: 20 min
+:About assignment:
+    * Filename: ``math_matrix_multiplication.py``
+    * Lines of code to write: 6 linii
+    * Estimated time of completion: 20 min
 
 :Podpowiedź:
     * macierz zerowa
@@ -259,10 +259,10 @@ Trigonometry
 #. Wyświetl wartość funkcji trygonometrycznych (sin, cos, tg, ctg)
 #. Jeżeli funkcja trygonometryczna nie istnieje dla danego kąta wypisz "For this angle function does not exist." i zakończ program
 
-:Założenia:
-    * Nazwa pliku: ``math_trigonometry.py``
-    * Szacunkowa długość kodu: około 10 linii
-    * Maksymalny czas na zadanie: 10 min
+:About assignment:
+    * Filename: ``math_trigonometry.py``
+    * Lines of code to write: 10 linii
+    * Estimated time of completion: 10 min
 
 :Podpowiedź:
     * ``raise``
@@ -274,10 +274,10 @@ Random numbers
 #. Czy da się stworzyć program czysto losowy?
 #. Dlaczego?
 
-:Założenia:
-    * Nazwa pliku: ``math_random_numbers.py``
-    * Szacunkowa długość kodu: około 5 linii
-    * Maksymalny czas na zadanie: 10 min
+:About assignment:
+    * Filename: ``math_random_numbers.py``
+    * Lines of code to write: 5 linii
+    * Estimated time of completion: 10 min
 
 :Podpowiedź:
     * ``random.randrange()``
@@ -296,10 +296,10 @@ Triangle
 #. Napisz program, który obliczy pole trójkąta.
 #. Użytkownik poda wysokość i długość podstawy tego trójkąta. Uwzględnij, że wysokość i długość podstawy mogą być liczbami niecałkowitymi. Wykorzystaj doctest do przetestowania funkcji.
 
-:Założenia:
-    * Nazwa pliku: ``math_triangle.py``
-    * Szacunkowa długość kodu: około 5 linii
-    * Maksymalny czas na zadanie: 10 min
+:About assignment:
+    * Filename: ``math_triangle.py``
+    * Lines of code to write: 5 linii
+    * Estimated time of completion: 10 min
 
 :Co zadanie sprawdza?:
     * Umiejętność wykorzystania gotowych funkcji w zewnętrznej bibliotece
@@ -338,7 +338,7 @@ Korzystając z funkcji napisanej w ćwiczeniu powyżej oblicz odległość od ka
 
 Czy dwa wykresy są takie same? Co się stanie jeżeli będziemy zwiększali odchylenie standardowe przy generacji punktów? Albo przybliżymy do siebie punkty A i B?
 
-:Założenia:
-    * Nazwa pliku: ``math_random_points.py``
-    * Szacunkowa długość kodu: około 15 linii
-    * Maksymalny czas na zadanie: 20 min
+:About assignment:
+    * Filename: ``math_random_points.py``
+    * Lines of code to write: 15 linii
+    * Estimated time of completion: 20 min

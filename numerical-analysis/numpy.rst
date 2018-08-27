@@ -1248,10 +1248,10 @@ Matrix multiplication
         """
         pass
 
-:Założenia:
-    * Nazwa pliku: ``numpy-matrix-mul.py``
+:About assignment:
+    * Filename: ``numpy-matrix-mul.py``
     * Linii kodu do napisania: około 2 linii
-    * Maksymalny czas na zadanie: 5 min
+    * Estimated time of completion: 5 min
 
 Sum of inner matrix
 -------------------
@@ -1261,10 +1261,10 @@ Sum of inner matrix
 #. Policz sumę środkowych (4x4) elementów macierzy
 #. Wyświetl wartość (skalar) sumy, a nie nie wektor
 
-:Założenia:
-    * Nazwa pliku: ``numpy-sum.py``
+:About assignment:
+    * Filename: ``numpy-sum.py``
     * Linii kodu do napisania: około 4 linii
-    * Maksymalny czas na zadanie: 5 min
+    * Estimated time of completion: 5 min
 
 Szukanie liczby
 ---------------

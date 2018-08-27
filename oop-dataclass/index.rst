@@ -110,7 +110,7 @@ Address Book (dataclass)
     :language: python
     :caption: Easy object implementation of Address Book
 
-:Założenia:
-    * Nazwa pliku: ``oop_dataclass_addressbook.py``
-    * Szacunkowa długość kodu: 15 linii
-    * Maksymalny czas na zadanie: 10 min
+:About assignment:
+    * Filename: ``oop_dataclass_addressbook.py``
+    * Lines of code to write: 15 linii
+    * Estimated time of completion: 10 min

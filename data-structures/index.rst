@@ -390,10 +390,10 @@ Split train/test
     - dane do uczenia - 80%
     - dane testowe - 20%
 
-:Założenia:
-    * Nazwa pliku: ``structures_split_train_test.py``
-    * Szacunkowa długość kodu: około 6 linii
-    * Maksymalny czas na zadanie: 15 min
+:About assignment:
+    * Filename: ``structures_split_train_test.py``
+    * Lines of code to write: 6 linii
+    * Estimated time of completion: 15 min
 
 :Podpowiedź:
     * ``from random import shuffle``

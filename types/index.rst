@@ -414,10 +414,10 @@ Basic usage of ``print()`` function
 #. Gdzie Python jest zainstalowany?
 #. Czy korzystasz z Virtualenv?
 
-:Założenia:
-    * Nazwa pliku: ``python_version.py``
-    * Szacunkowa długość kodu: 5 linii
-    * Maksymalny czas na zadanie: 5 min
+:About assignment:
+    * Filename: ``python_version.py``
+    * Lines of code to write: 0 linii
+    * Estimated time of completion: 5 min
 
 :Co zadanie sprawdza?:
     * Czy Python działa
@@ -443,10 +443,10 @@ Handling user input and type casting
     print(f'Nautical Miles: {...}')            # float
     print(f'All: {...}, {...}, {...}, {...}')  # int, int, float, float
 
-:Założenia:
-    * Nazwa pliku: ``types_casting.py``
-    * Szacunkowa długość kodu: 10 linii
-    * Maksymalny czas na zadanie: 5 min
+:About assignment:
+    * Filename: ``types_casting.py``
+    * Lines of code to write: 4 linie
+    * Estimated time of completion: 5 min
 
 :Co zadanie sprawdza?:
     * Definiowanie zmiennych
@@ -483,10 +483,10 @@ Variables and types
         '''My_name_"José_Jiménez".
         _I'm_an_"""astronaut!"""'''
 
-:Założenia:
-    * Nazwa pliku: ``types_input.py``
-    * Szacunkowa długość kodu: 4 linie
-    * Maksymalny czas na zadanie: 10 min
+:About assignment:
+    * Filename: ``types_input.py``
+    * Lines of code to write: 4 linie
+    * Estimated time of completion: 10 min
 
 :Co zadanie sprawdza?:
     * Definiowanie zmiennych

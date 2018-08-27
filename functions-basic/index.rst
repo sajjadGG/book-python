@@ -237,10 +237,10 @@ Integer to string
         number_to_str(13.37)   # 'one three and three seven'
         number_to_str(31.337)  # 'three one and three three seven'
 
-:Założenia:
-    * Nazwa pliku: ``functions_numstr_simple.py``
-    * Szacunkowa długość kodu: około 15 linii
-    * Maksymalny czas na zadanie: 15 min
+:About assignment:
+    * Filename: ``functions_numstr_simple.py``
+    * Lines of code to write: 15 linii
+    * Estimated time of completion: 15 min
 
 :Co zadanie sprawdza?:
     * Definiowanie i uruchamianie funkcji
@@ -265,10 +265,10 @@ Integer to human readable
         number_to_str(31337)  # 'thirty one thousand three hundred thirty seven'
         number_to_str(31.337) # 'thirty one three hundreds thirty seven thousands'
 
-:Założenia:
-    * Nazwa pliku: ``functions_numstr_human.py``
-    * Szacunkowa długość kodu: około 15 linii
-    * Maksymalny czas na zadanie: 15 min
+:About assignment:
+    * Filename: ``functions_numstr_human.py``
+    * Lines of code to write: 15 linii
+    * Estimated time of completion: 15 min
 
 :Co zadanie sprawdza?:
     * Definiowanie i uruchamianie funkcji
@@ -291,7 +291,7 @@ Roman numbers
     * Sprawdzanie czy element istnieje w ``dict``
     * Rzutowanie i konwersja typów
 
-:Założenia:
-    * Nazwa pliku: ``functions_roman.py``
-    * Szacunkowa długość kodu: około 15 linii
-    * Maksymalny czas na zadanie: 15 min
+:About assignment:
+    * Filename: ``functions_roman.py``
+    * Lines of code to write: 15 linii
+    * Estimated time of completion: 15 min

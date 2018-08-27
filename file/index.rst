@@ -64,10 +64,10 @@ Zawartość zadanego pliku
 #. Napisz program, który wyświetli na ekranie zawartość pliku o nazwie podanej przez użytkownika.
 #. Dopisz obsługę wyjątków dla braku uprawnień oraz tego że plik nie istnieje.
 
-:Założenia:
-    * Nazwa pliku: ``file_content.py``
-    * Szacunkowa długość kodu: około 5 linii
-    * Maksymalny czas na zadanie: 5 min
+:About assignment:
+    * Filename: ``file_content.py``
+    * Lines of code to write: 5 linii
+    * Estimated time of completion: 5 min
 
 Parsowanie ``/etc/hosts``
 -------------------------
@@ -76,10 +76,10 @@ Parsowanie ``/etc/hosts``
 #. Przedstaw go w formie listy dictów jak w przykładzie poniżej: :numref:`listing-file-hosts`
 #. Zwróć uwagę na uprawnienia do odczytu pliku
 
-:Założenia:
-    * Nazwa pliku: ``file_hosts.py``
-    * Szacunkowa długość kodu: około 10 linii
-    * Maksymalny czas na zadanie: 20 min
+:About assignment:
+    * Filename: ``file_hosts.py``
+    * Lines of code to write: 10 linii
+    * Estimated time of completion: 20 min
 
 :Co zadanie sprawdza?:
     * czytanie i parsowanie pliku

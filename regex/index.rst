@@ -142,10 +142,10 @@ Za pomocą wyrażeń regularnych sprawdź:
 * płeć użytkownika który podał PESEL
 
 
-:Założenia:
-    * Nazwa pliku: ``regex_pesel.py``
+:About assignment:
+    * Filename: ``regex_pesel.py``
     * Linii kodu do napisania: około 10 linii
-    * Maksymalny czas na zadanie: 20 min
+    * Estimated time of completion: 20 min
 
 :Z gwiazdką:
     * sprawdź walidację numerów PESEL dla osób urodzonych po 2000 roku.

@@ -421,10 +421,10 @@ Text manipulation
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 
-:Założenia:
-    * Nazwa pliku: ``loop_sentences.py``
-    * Szacunkowa długość kodu: 4 linie
-    * Maksymalny czas na zadanie: 5 min
+:About assignment:
+    * Filename: ``loop_sentences.py``
+    * Lines of code to write: 4 linie
+    * Estimated time of completion: 5 min
 
 :Co zadanie sprawdza:
     * Dzielenie stringów
@@ -446,10 +446,10 @@ Unique keys from schema-less database
         {'first_name': 'José', 'born': 1961, 'agency': 'NASA'},
     ]
 
-:Założenia:
-    * Nazwa pliku: ``loop_unique_keys.py``
-    * Szacunkowa długość kodu: około 5 linii
-    * Maksymalny czas na zadanie: 10 min
+:About assignment:
+    * Filename: ``loop_unique_keys.py``
+    * Lines of code to write: 5 linii
+    * Estimated time of completion: 10 min
 
 Report card
 -----------
@@ -461,10 +461,10 @@ Report card
 #. Jeżeli wciśnięto sam Enter, oznacza to koniec wpisywania do dzienniczka
 #. Na zakończenie wyświetl wyliczoną dla dzienniczka średnią arytmetyczną z ocen
 
-:Założenia:
-    * Nazwa pliku: ``loop_report_card.py``
-    * Szacunkowa długość kodu: około 15 linii
-    * Maksymalny czas na zadanie: 10 min
+:About assignment:
+    * Filename: ``loop_report_card.py``
+    * Lines of code to write: 15 linii
+    * Estimated time of completion: 10 min
 
 :Co zadanie sprawdza?:
     * wczytywanie ciągu znaków od użytkownika
@@ -492,10 +492,10 @@ Label encoder
     print(labels)
     # [0, 1, 2, 1, 1, 0, ...]
 
-:Założenia:
-    * Nazwa pliku: ``loop_label_encoder.py``
-    * Szacunkowa długość kodu: około 13 linii
-    * Maksymalny czas na zadanie: 15 min
+:About assignment:
+    * Filename: ``loop_label_encoder.py``
+    * Lines of code to write: 13 linii
+    * Estimated time of completion: 15 min
 
 :Podpowiedź:
     - ``from random import shuffle``

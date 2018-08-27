@@ -159,10 +159,10 @@ Dragon (Easy)
 #. Nie można zadawać smokowi obrażeń, jeżeli już nie żyje
 #. Granie ze smokiem tak jak na :numref:`listing-oop-dragon`
 
-:Założenia:
-    * Nazwa pliku: ``oop_dragon_easy.py``
-    * Szacunkowa długość kodu: około 50 linii
-    * Maksymalny czas na zadanie: 30 min
+:About assignment:
+    * Filename: ``oop_dragon_easy.py``
+    * Lines of code to write: 50 linii
+    * Estimated time of completion: 30 min
 
 .. literalinclude:: src/oop_dragon.py
     :name: listing-oop-dragon
@@ -180,10 +180,10 @@ Dragon (Medium)
 #. Przeprowadź symulację walki.
 #. Kto zginie pierwszy?
 
-:Założenia:
-    * Nazwa pliku: ``oop_dragon_medium.py``
-    * Szacunkowa długość kodu: około 90 linii
-    * Maksymalny czas na zadanie: 45 min
+:About assignment:
+    * Filename: ``oop_dragon_medium.py``
+    * Lines of code to write: 90 linii
+    * Estimated time of completion: 45 min
 
 Dragon (Advanced)
 -----------------
@@ -200,10 +200,10 @@ Dragon (Advanced)
 #. Przeprowadź symulację walki.
 #. Kto zginie pierwszy?
 
-:Założenia:
-    * Nazwa pliku: ``oop_dragon_advanced.py``
-    * Szacunkowa długość kodu: około 35 linii
-    * Maksymalny czas na zadanie: 15 min
+:About assignment:
+    * Filename: ``oop_dragon_advanced.py``
+    * Lines of code to write: 35 linii
+    * Estimated time of completion: 15 min
 
 Address Book (Easy)
 -------------------
@@ -213,10 +213,10 @@ Address Book (Easy)
 #. Użytkownik może mieć wiele adresów.
 #. Użytkownik może nie mieć żadnego adresu
 
-:Założenia:
-    * Nazwa pliku: ``oop_addressbook_easy.py``
-    * Szacunkowa długość kodu: około 10 linii
-    * Maksymalny czas na zadanie: 20 min
+:About assignment:
+    * Filename: ``oop_addressbook_easy.py``
+    * Lines of code to write: 10 linii
+    * Estimated time of completion: 20 min
 
 :Co zadanie sprawdza?:
     * myślenie obiektowe i odwzorowanie struktury w programie
@@ -250,7 +250,7 @@ Przekształć swój kod z przykładu z modułu "Matematyka" tak żeby wykorzysty
 :Zadanie 4:
     Napisz kod, który zaklasyfikuje te losowo wygenerowane punkty do punktów A oraz B na podstawie odległości. W tym celu wykorzystaj napisane metody do obliczania odległości między punktami. Po klasyfikacji wyrysuj te punkty na wykresie, podobnie jak w przykładzie z modułu "Matematyka".
 
-:Założenia:
-    * Nazwa pliku: ``oop-vector.py``
-    * Szacunkowa długość kodu: około 20 linii
-    * Maksymalny czas na zadanie: 30 min
+:About assignment:
+    * Filename: ``oop-vector.py``
+    * Lines of code to write: 20 linii
+    * Estimated time of completion: 30 min

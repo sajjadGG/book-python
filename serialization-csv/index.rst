@@ -72,10 +72,10 @@ Wczytywanie pliku ``csv``
 #. Kolumna species ma mieć wartość nazwy gatunku a nie cyfry 0, 1, 2 jak to jest w pliku
 #. Wypisz wiersze na ekranie
 
-:Założenia:
-    * Nazwa pliku: ``csv_dictreader.py``
+:About assignment:
+    * Filename: ``csv_dictreader.py``
     * Linii kodu do napisania: około 6 linie
-    * Maksymalny czas na zadanie: 15 min
+    * Estimated time of completion: 15 min
 
 Serializacja ``csv``
 --------------------
@@ -93,10 +93,10 @@ Serializacja ``csv``
         {'first_name': 'José', 'born': 1961, 'first_step': 1969},
     ]
 
-:Założenia:
-    * Nazwa pliku: ``csv_dictwriter.py``
+:About assignment:
+    * Filename: ``csv_dictwriter.py``
     * Linii kodu do napisania: około 8 linii
-    * Maksymalny czas na zadanie: 15 min
+    * Estimated time of completion: 15 min
 
 :Podpowiedź:
     * To jest bardzo często występujący i użyteczny przykład
@@ -125,7 +125,7 @@ Serializacja obiektów do CSV
     :language: python
     :caption: Address book
 
-:Założenia:
-    * Nazwa pliku: ``csv_addressbook.py``
+:About assignment:
+    * Filename: ``csv_addressbook.py``
     * Linii kodu do napisania: około 10 linii
-    * Maksymalny czas na zadanie: 20 min
+    * Estimated time of completion: 20 min

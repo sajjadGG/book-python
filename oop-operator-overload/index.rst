@@ -150,10 +150,10 @@ Address Book
 ------------
 #. Dopisz odpowiednie metody do ``Contact`` i ``Address`` aby poniższy kod zadziałał poprawnie
 
-:Założenia:
-    * Nazwa pliku: ``oop_addressbook_operators.py``
-    * Szacunkowa długość kodu: około 10 linii
-    * Maksymalny czas na zadanie: 15 min
+:About assignment:
+    * Filename: ``oop_addressbook_operators.py``
+    * Lines of code to write: 10 linii
+    * Estimated time of completion: 15 min
 
 .. code-block:: python
 

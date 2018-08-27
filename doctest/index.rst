@@ -276,7 +276,7 @@ Konwersja temperatury
     * Jeden stopień Celsiusza odpowiada jednemu stopniowi w skali Kelvina
     * -273,15 °C = 0 K
 
-:Założenia:
-    * Nazwa pliku: ``doctest_temperature.py``
-    * Szacunkowa długość kodu: około 6 linii
-    * Maksymalny czas na zadanie: 5 min
+:About assignment:
+    * Filename: ``doctest_temperature.py``
+    * Lines of code to write: 6 linii
+    * Estimated time of completion: 5 min

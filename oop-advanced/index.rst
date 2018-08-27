@@ -339,10 +339,10 @@ Address Book (Medium)
 #. ``Address`` ma mieć zmienną liczbę argumentów
 #. Jeżeli argument jest różny od ``None`` powinien być dynamicznie ustawiony (``setattr()``).
 
-:Założenia:
-    * Nazwa pliku: ``oop_addressbook_medium.py``
-    * Szacunkowa długość kodu: około 15 linii
-    * Maksymalny czas na zadanie: 20 min
+:About assignment:
+    * Filename: ``oop_addressbook_medium.py``
+    * Lines of code to write: 15 linii
+    * Estimated time of completion: 20 min
 
 :Co zadanie sprawdza?:
     * Korzystanie z operatorów ``*args`` i ``**kwargs``

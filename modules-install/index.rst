@@ -58,7 +58,7 @@ Installing from ``requirements.txt`` to venv
 #. Zainstaluj bibliotekę ``pycodestyle`` poprzez wpisanie do ``requirements.txt``
 #.  Niech Twoje IDE zainstaluje ją automatycznie (kliknięcie w żółty banner)
 
-:Założenia:
-    * Nazwa pliku: ``requirements.txt``
-    * Szacunkowa długość kodu: 1 linia
-    * Maksymalny czas na zadanie: 5 min
+:About assignment:
+    * Filename: ``requirements.txt``
+    * Lines of code to write: 1 linia
+    * Estimated time of completion: 5 min

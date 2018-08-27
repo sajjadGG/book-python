@@ -31,10 +31,10 @@ Parsowanie ``/etc/passwd``
 
 #. Zwróć listę użytkowników (UID >= 1000)
 
-:Założenia:
-    * Nazwa pliku: ``exam-foundations.py``
-    * Szacunkowa długość kodu: około 60 linii
-    * Maksymalny czas na zadanie: 60 min
+:About assignment:
+    * Filename: ``exam-foundations.py``
+    * Lines of code to write: 60 linii
+    * Estimated time of completion: 60 min
 
 :Co zadanie sprawdza?:
     * czytanie i parsowanie pliku

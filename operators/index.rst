@@ -62,10 +62,10 @@ Even and odd numbers
 #. napisz program, który wczyta od użytkownika ciąg znaków
 #. sprawdzi czy jest to liczba parzysta, czy nieparzysta
 
-:Założenia:
-    * Nazwa pliku: ``operators_even_odd.py``
-    * Szacunkowa długość kodu: około 5 linii
-    * Maksymalny czas na zadanie: 5 min
+:About assignment:
+    * Filename: ``operators_even_odd.py``
+    * Lines of code to write: 5 linii
+    * Estimated time of completion: 5 min
 
 :Co zadanie sprawdza?:
     * wczytywanie ciągu znaków od użytkownika
@@ -84,10 +84,10 @@ Integers and floats
 #. Wczytaj liczbę od użytkownika (poda tylko ``int`` albo ``float``)
 #. Wyświetl informację czy jest to liczba całkowita, czy niecałkowita.
 
-:Założenia:
-    * Nazwa pliku: ``operators_integers.py``
-    * Szacunkowa długość kodu: około 7 linii
-    * Maksymalny czas na zadanie: 10 min
+:About assignment:
+    * Filename: ``operators_integers.py``
+    * Lines of code to write: 7 linii
+    * Estimated time of completion: 10 min
 
 :Co zadanie sprawdza?:
     * wczytywanie ciągu znaków od użytkownika

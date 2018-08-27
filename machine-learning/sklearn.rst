@@ -141,10 +141,10 @@ Nearest Neighbor Classifier
     * Do obliczania odległości skorzystaj z algorytmu Euclidesa.
     * ``scipy.spatial.distance.euclidean``
 
-:Założenia:
-    * Nazwa pliku: ``ml-sklearn-classifier.py``
+:About assignment:
+    * Filename: ``ml-sklearn-classifier.py``
     * Linii kodu do napisania: około 15 linii
-    * Maksymalny czas na zadanie: 30 min
+    * Estimated time of completion: 30 min
 
 Porównanie classifierów
 -----------------------
@@ -186,7 +186,7 @@ Porównanie classifierów
     * Zrównoleglij uruchamianie predykcji za pomocą modułu ``threading`` oraz architektury opartej na Workerach.
     * Wyświetl posortowaną malejąco listę wg. dokładności
 
-:Założenia:
-    * Nazwa pliku: ``ml-sklearn-comparision.py``
+:About assignment:
+    * Filename: ``ml-sklearn-comparision.py``
     * Linii kodu do napisania: około 15 linii
-    * Maksymalny czas na zadanie: 20 min
+    * Estimated time of completion: 20 min
