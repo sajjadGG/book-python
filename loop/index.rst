@@ -446,10 +446,17 @@ Unique keys from schema-less database
         {'first_name': 'José', 'born': 1961, 'agency': 'NASA'},
     ]
 
+:Algorithm:
+    #. Iteruj po rekordach w bazie danych
+    #. Z rekordu wyciągnij klucze
+    #. Dodaj klucze do zbioru
+    #. Usuń duplikaty w zbiorze
+
 :About:
     * Filename: ``loop_unique_keys.py``
     * Lines of code to write: 5 lines
     * Estimated time of completion: 10 min
+
 
 :The whys and wherefores:
     * Generowanie zbiorów
@@ -509,6 +516,21 @@ Label encoder
 
         print(labels)
         # [0, 1, 2, 1, 1, 0, ...]
+
+#. Wyświetl na ekranie ``species`` oraz ``labels``
+
+:Algorithm:
+    #. Wyodrębnij dane odrzucając nagłówek
+    #. Przemieszaj elementy zbioru danych
+    #. Stwórz słownik gatunków ``species``
+    #. Iteruj po elementach zbioru danych
+    #. Gatunek to ostatni element rekordu
+    #. Jeżeli w słowniku nie ma gatunku, to dodaj go z kolejnym numerem
+    #. Odwróć słownik gatunków
+    #. Iteruj po elementach zbioru danych
+    #. Gatunek to ostatni element rekordu
+    #. Do listy label dodawaj wartość słownika gatunków dla gatunku w tym rekordzie
+    #. Wyświetl na ekranie ``species`` oraz ``labels``
 
 :About:
     * Filename: ``loop_label_encoder.py``
