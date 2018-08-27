@@ -27,9 +27,9 @@ Simple collections
 
 .. code-block:: python
 
-    my_tuple = 1, 2, None, False, 'José'
-    my_tuple = (1, 2, None, False, 'José')
-    my_tuple = tuple(1, 2, None, False, 'José')
+    my_tuple = 1, 2.0, None, False, 'José'
+    my_tuple = (1, 2.0, None, False, 'José')
+    my_tuple = tuple(1, 2.0, None, False, 'José')
 
 .. code-block:: python
 
@@ -45,17 +45,27 @@ Simple collections
 
     my_tuple = (1, 2, 3, 4, 5)
 
+    my_tuple[1:5]      # (2, 3, 4)
+
+.. code-block:: python
+
+    my_tuple = (1, 2, 3, 4, 5)
+
     MIN = 1
     MAX = 5
-    BETWEEN = slice(MIN, MAX)
-
-    my_tuple[BETWEEN]  # (2, 3, 4)
     my_tuple[MIN:MAX]  # (2, 3, 4)
 
 .. code-block:: python
 
+    my_tuple = (1, 2, 3, 4, 5)
+
+    BETWEEN = slice(MIN, MAX)
+    my_tuple[BETWEEN]  # (2, 3, 4)
+
+.. code-block:: python
+
     my_tuple = (1, 2, 3)
-    len(my_tuple)  # 3
+    len(my_tuple)       # 3
 
 ``list``
 --------
@@ -75,12 +85,12 @@ Simple collections
 
 .. code-block:: python
 
-    my_list = [1, 2, None, False, 'José']
-    my_list = list(1, 2, None, False, 'José')
+    my_list = [1, 2.0, None, False, 'José']
+    my_list = list(1, 2.0, None, False, 'José')
 
 .. code-block:: python
 
-    my_list = [1, 2, None, False, 'José']
+    my_list = [1, 2.0, None, False, 'José']
 
     my_list[1]             # 2
     my_list[2:4]           # [None, False]
@@ -89,15 +99,18 @@ Simple collections
 
 .. code-block:: python
 
-    [1, 2] + [3, 4]        # [1, 2, 3, 4]
-    [1, 2].append(3)       # [1, 2, 3]
-    [1, 2].append([3, 4])  # [1, 2, [3, 4]]
-    [1, 2].extend([3, 4])  # [1, 2, 3, 4]
+    my_list = [1, 2]
+
+    my_list + [3, 4]        # [1, 2, 3, 4]
+    my_list.append(5)       # [1, 2, 3, 4, 5]
+    my_list.append([6, 7])  # [1, 2, 3, 4, 5, [6, 7]]
+    my_list.extend([8, 9])  # [1, 2, 3, 4, 5, [6, 7], 8, 9]
+    my_list.insert(0, 'a')  # ['a', 1, 2, 3, 4, 5, [6, 7], 8, 9]
 
 .. code-block:: python
 
     my_list = [1, 2, 3]
-    len(my_list)  # 3
+    len(my_list)            # 3
 
 ``set``
 -------
@@ -138,7 +151,7 @@ Simple collections
 
 .. code-block:: python
 
-    my_set = {1, 2, None, False, 'José'}
+    my_set = {1, 2.0, None, False, 'José'}
 
     my_set[1]                # 2
     my_set[2:4]              # {None, False}
@@ -287,29 +300,30 @@ Nested collections
 
     DATA[0]                            # {'first_name': 'Max'}
     DATA[0]['last_name']               # KeyError: 'last_name'
-    DATA[0].get('last_name', 'n/a')    # 'n/a'
+    DATA[0].get('tags', 'n/a')         # 'n/a'
     DATA[2].get('tags')                # ['astronaut', 'roscosmos', 'space']
+    DATA[2].get('tags')[1]             # 'roscosmos'
 
 Multidimensional lists
 ----------------------
 .. code-block:: python
 
     array = [
-        [0, 1, 2],
         [1, 2, 3],
-        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
     ]
 
-    array[2][1]  # 2
+    array[2][1]  # 8
 
 Mixed types
 -----------
 .. code-block:: python
 
     array = [
-        [0, 1, 2],
-        (1, 2, 3),
-        {1, 3, 1},
+        [1, 2, 3],
+        (4, 5, 6),
+        {7, 8, 9},
         {'first_name': 'José', 'last_name': 'Jiménez'}
     ]
 

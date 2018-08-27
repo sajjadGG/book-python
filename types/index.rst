@@ -71,54 +71,73 @@ Numerical types
 
 ``int``
 -------
-* Liczba całkowita
-* Funkcja ``int()`` kowertuje argument na ``int``
-* W Python 3 ``int`` nie ma maksymalnej wartości (dynamicznie się rozszerza)
+* Python 3 dynamically extends ``int``, when it's too big
+* In Python 3 there is not maximal ``int`` value
+* Defining ``int``:
 
-.. code-block:: python
+    .. code-block:: python
 
-    age = 30
-    age: int = 30
+        value = 30
+        value: int = 30
 
-    int(10)                 # 10
-    int(10.0)               # 10
-    int(10.9)               # 10
+* For large numbers you can use ``_`` as thousands separator, or engineering notation:
 
-    milion = 1000000
-    milion = 1_000_000
-    milion = 1e6
+    .. code-block:: python
+
+        million = 1000000
+        million = 1_000_000
+        million = 1e6
+        million = 1E6
+        millionth = 1E-6
+
+* ``int()`` converts argument to ``int``:
+
+    .. code-block:: python
+
+        int(10)                 # 10
+        int(10.0)               # 10
+        int(10.9)               # 10
+        int(' 10')              # 10
+        int(' 10.5')            # ValueError: invalid literal for int() with base 10: ' 10.5'
 
 ``float``
 ---------
-* Liczba zmiennoprzecinkowa
-* Funkcja ``float()`` konwertuje argument na ``float``
+* Defining ``float``:
 
-.. code-block:: python
+    .. code-block:: python
 
-    float(10)              # 10.0
+        value = 10.5
+        value: float = 10.5
 
-    float('+1.23')         # 1.23
-    float('-1.23')         # -1.23
-    float('   -123.45\n')  # -123.45
+* ``float()`` converts argument to ``float``:
 
-    float('1e-003')        # 0.001
-    float('+1E6')          # 1000000.0
+    .. code-block:: python
 
-    float('-inf')          # -inf
-    float('-Infinity')     # -inf
-    float('inf')           # inf
-    float('Infinity')      # inf
+        float(10)              # 10.0
+
+        float('+1.23')         # 1.23
+        float('-1.23')         # -1.23
+        float('   -123.45\n')  # -123.45
+
+        float('1e-003')        # 0.001
+        float('+1E6')          # 1000000.0
+
+        float('-inf')          # -inf
+        float('-Infinity')     # -inf
+        float('inf')           # inf
+        float('Infinity')      # inf
 
 ``complex``
 -----------
-* Liczba zespolona (część rzeczywista i urojona)
-* Notacja inżynierska ``j`` a nie matematyczna ``i``
-* W ciągu nie może być spacji
+* Complex number with real and imaginary parts
+* Engineering notation ``j`` not mathematical ``i``
+* No space inside the expression
+* Defining ``complex``:
 
-.. code-block:: python
+    .. code-block:: python
 
-    complex('1+2j')         # (1+2j)
-    complex('1 + 2j')       # ValueError: complex() arg is a malformed string
+        value = complex('1+2j')         # (1+2j)
+        value = complex('1 + 2j')       # ValueError: complex() arg is a malformed string
 
 
 Logical types
@@ -126,20 +145,21 @@ Logical types
 
 ``bool``
 --------
-* Wartość logiczna
-* Funkcja ``bool()`` konwertuje argument na ``bool``
-* Zwróć uwagę na wielkość liter
+* ``bool()`` converts argument to ``bool``
+* First letter capitalized, other are lower cased
+* Defining ``bool``:
 
-.. code-block:: python
+    .. code-block:: python
 
-    True
-    False
+        True
+        False
 
 ``None``
 --------
-* Wartość pusta
-* Nie jest to wartość ``False`` ani ``0``
-* Jest używany, gdy wartość jest nieustawiona
+* Empty value (null)
+* It is not ``False`` and ``0``
+* Used for unknown (unset) values
+* With ``if`` statements behaves like ``False`` and ``0``
 
 .. code-block:: python
 
@@ -157,8 +177,7 @@ Character types
 
 ``str``
 -------
-* Ciąg (łańcuch) znaków
-* Funkcja ``str()`` konwertuje argument na ``str``
+* ``str()`` converts argument to ``str``
 
 .. code-block:: python
 
@@ -180,11 +199,11 @@ Character types
 
 Single or double quote?
 -----------------------
-* Python nie rozróżnia czy stosujemy pojedyncze znaki cudzysłowiu czy podwójne.
-* Ważne jest aby wybrać jedną konwencję i się jej konsekwentnie trzymać.
-* Interpreter Pythona domyślnie stosuje pojedyncze znaki cudzysłowia.
-* Z tego powodu w tej książce będziemy trzymać się powyższej konwencji.
-* Ma to znaczenie przy ``doctest``, który zawsze korzysta z pojedynczych i rzuca errorem jak są podwójne
+* ``"`` and ``'`` works the same
+* Keep consistency in code
+* Python console uses ``'``
+* This is why I will use ``'`` in this book
+* ``doctest`` uses single quotes and throws error on double quotes
 
 .. code-block:: python
 
@@ -257,9 +276,9 @@ Characters before strings
 
 String immutability
 -------------------
-* ``str`` jest niemutowalny
-* Każda operacja na ``str`` tworzy nową kopię
-* Zwróć uwagę ile stringów jest przechowywanych w pamięci
+* ``str`` is immutable
+* ``str`` methods create a new modified ``str``
+* How many ``str`` are in the memory?
 
 .. code-block:: python
 
@@ -315,8 +334,8 @@ String methods
 
 ``title()``, ``lower()``, ``upper()``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-* Przydatne do czyszczenia danych przed analizą lub Machine Learning
-* Przykład:
+* Unify data format before analysis
+* Example:
 
     * 'Jana III Sobieskiego 1/2'
     * 'ul. Jana III Sobieskiego 1/2'
@@ -366,8 +385,8 @@ String splicing
 
 Handling user input
 -------------------
-* Funkcja ``input()`` zawsze zwraca ``str``
-* Pamiętaj o spacji na końcu prompt
+* ``input()`` returns ``str``
+* Space at the end of prompt
 
 .. code-block:: python
 
@@ -450,13 +469,19 @@ Variables and types
     .. code-block:: text
 
         '''My name "José Jiménez".
-	        I'm an astronaut!'''
+	        I'm an """astronaut!"""'''
 
 #. Gdzie wartość w podwójnym cudzysłowiu to ciąg od użytkownika (w przykładzie użytkownik wpisał ``José Jiménez``)
 #. Zwróć uwagę na znaki apostrofów, cudzysłowów, tabulacji i nowych linii
 #. W ciągu do wyświetlenia nie używaj spacji ani enterów - użyj ``\n`` i ``\t``
 #. Tekst wyświetlony na ekranie ma mieć zamienione wszystkie spacje na ``_``
 #. Nie korzystaj z dodawania stringów ``str + str``
+#. Wynik ma wyglądać jak poniżej:
+
+    .. code-block:: text
+
+        '''My_name_"José_Jiménez".
+        _I'm_an_"""astronaut!"""'''
 
 :Założenia:
     * Nazwa pliku: ``types_input.py``
