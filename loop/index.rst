@@ -387,16 +387,16 @@ Inline ``for`` not only for ``list``
 .. code-block:: python
 
     {x**2 for x in range(0, 5)}
-    # set {1, 2, 4, 9, 16}
+    # set {0, 1, 4, 9, 16}
 
     {x: x**2 for x in range(0, 5)}
-    # dict {1:1, 2:4, 3:9, 4:16}
+    # dict {0:0, 1:1, 2:4, 3:9, 4:16}
 
     {x**2: x for x in range(0, 5)}
-    # dict {1:1, 4:2, 9:3, 16:4}
+    # dict {0:0, 1:1, 4:2, 9:3, 16:4}
 
     {x**2: x**3 for x in range(0, 5)}
-    # dict {1:1, 4:8, 9:27, 16:64}
+    # dict {0:0, 1:1, 4:8, 9:27, 16:64}
 
 .. code-block:: python
 
@@ -480,17 +480,26 @@ Report card
 Label encoder
 -------------
 #. Mając do dyspozycji zbiór danych Irysów z :numref:`listing-loops-iris-sample`
-#. Przemieszaj elementy
-#. Stwórz słownik gatunków, gdzie kolejnym liczbom naturalnym zaczynając od zera przyporządkuj gatunek irysów
-#. Przygotuj listę cech (``labels``) z kluczami ze słownika gatunków
+#. Ze zbioru wyodrębnij dane odrzucając nagłówek.
+#. Przemieszaj elementy zbioru danych
+#. Stwórz słownik gatunków ``species``, gdzie kolejnym liczbom naturalnym zaczynając od zera przyporządkuj gatunek irysów.
+#. Klucze muszą być wygenerowane na podstawie kolejności występowania gatunków w przemieszanym zbiorze danych:
 
-.. code-block:: python
+    .. code-block:: python
 
-    print(species)
-    # {0: 'versicolor', 1: 'virginica', 2: 'setosa'}
+        species = {
+            0: 'versicolor',
+            1: 'virginica',
+            2: 'setosa'
+        }
 
-    print(labels)
-    # [0, 1, 2, 1, 1, 0, ...]
+#. Przygotuj listę cech (``labels``) z kluczami ze słownika gatunków.
+#. Etykiety muszą być wygenerowane na podstawie kolejności w przemieszanym zbiorze danych:
+
+    .. code-block:: python
+
+        print(labels)
+        # [0, 1, 2, 1, 1, 0, ...]
 
 :About assignment:
     * Filename: ``loop_label_encoder.py``
