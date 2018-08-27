@@ -390,6 +390,14 @@ Split train/test
     - dane do uczenia - 80%
     - dane testowe - 20%
 
+:Algorithm:
+    * zapisz nagłówek do zmiennej
+    * zapisz do innej zmiennej dane bez nagłówka
+    * zastosuj funkcję ``shuffle()`` na danych bez nagłówka
+    * wylicz punkt przegięcia: długość danych bez nagłówka razy procent
+    * zapisz do uczenia z danych bez nagłówka od początku do punktu przegięcia
+    * zapisz do testów z danych bez nagłówka od punktu przegięcia do końca
+
 :About assignment:
     * Filename: ``structures_split_train_test.py``
     * Lines of code to write: 6 lines
