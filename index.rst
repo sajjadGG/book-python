@@ -57,6 +57,7 @@ Foundations
     datetime/index.rst
     exceptions/index.rst
     file/index.rst
+    serialization-csv/index.rst
     oop-basic/index.rst
     exam-basic/index.rst
 
@@ -73,7 +74,6 @@ Intermediate
     logging/index.rst
     print-formatting/index.rst
     performance/index.rst
-    serialization-csv/index.rst
     serialization-json/index.rst
     quality-and-tests/index.rst
     functions-advanced/index.rst

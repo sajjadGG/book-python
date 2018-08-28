@@ -7,9 +7,9 @@ CSV Serialization
 
 Odczytywanie danych z plików CSV
 ================================
-* dobra praktyka: zawsze podawać encoding
-* dobra praktyka: zawsze podawać quotechar
-* dobra praktyka: zawsze podawać delimiter
+* dobra praktyka: zawsze podawać ``encoding``
+* dobra praktyka: zawsze podawać ``quotechar``
+* dobra praktyka: zawsze podawać ``delimiter``
 
 .. literalinclude:: src/csv-read.py
     :name: listing-csv-read
@@ -19,12 +19,12 @@ Odczytywanie danych z plików CSV
 
 Zapis do plików CSV
 ===================
-* dobra praktyka: zawsze podawać encoding
-* dobra praktyka: zawsze podawać quotechar
-* dobra praktyka: zawsze podawać delimiter
-* dobra praktyka: zawsze podawać lineterminator
-* dobra praktyka: zawsze podawać quotechar
-* dobra praktyka: zawsze podawać delimeter
+* dobra praktyka: zawsze podawać ``encoding``
+* dobra praktyka: zawsze podawać ``quotechar``
+* dobra praktyka: zawsze podawać ``delimiter``
+* dobra praktyka: zawsze podawać ``lineterminator``
+* dobra praktyka: zawsze podawać ``quotechar``
+* dobra praktyka: zawsze podawać ``delimeter``
 
 .. literalinclude:: src/csv-write.py
     :name: listing-csv-write

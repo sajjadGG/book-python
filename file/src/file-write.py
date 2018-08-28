@@ -1,10 +1,9 @@
-with open(r'C:\Users\desktop.ini', mode='w') as file:
+FILENAME = r'C:\Users\desktop.ini'
+
+
+with open(FILENAME, mode='w', encoding='utf-8') as file:
     file.write('foobar')
 
 
-with open(r'C:\Users\desktop.ini', mode='a') as file:
-    file.write('foobar')
-
-
-with open(r'C:\Users\desktop.ini', mode='w', encoding='utf-8') as file:
+with open(FILENAME, mode='a', encoding='utf-8') as file:
     file.write('foobar')

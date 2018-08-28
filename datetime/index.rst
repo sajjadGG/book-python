@@ -4,18 +4,9 @@ Dates and Time
 
 .. warning:: If you're thinking about implementing your own time calculator or system, watch Computerophile Time & Time Zones https://www.youtube.com/watch?v=-5wpm-gesOY
 
-``datetime``
-============
-
-Tworzenie obiektu ``date`` i ``datetime``
------------------------------------------
-.. literalinclude:: src/datetime-new.py
-    :language: python
-    :caption: Creating ``date`` and ``datetime`` objects
-
 
 Różne formaty dat i czasu
--------------------------
+=========================
 https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
 
 Problem z formatami dat:
@@ -46,6 +37,16 @@ Standard ISO:
 * '1961-04-12'
 * '1961-04-12T06:07:00'
 * '1961-04-12T06:07:00.123456'
+
+
+``datetime``
+============
+
+Tworzenie obiektu ``date`` i ``datetime``
+-----------------------------------------
+.. literalinclude:: src/datetime-new.py
+    :language: python
+    :caption: Creating ``date`` and ``datetime`` objects
 
 Formatowanie dat
 ----------------
@@ -169,7 +170,7 @@ Manipulacja datami
 #. Co to za daty, które podał użytkownik?
 #. Przedstaw daty jako obiekt ``datetime``. I wyświetl je w formacie ISO.
 #. Odejmij obie daty od siebie. Ile lat i miesięcy minęło między wydarzeniami?
-#. Do dzisiejszej daty odejmij ten sam czas, który Ci wyszedł w poprzednim punkcie.
+#. Od obecnej chwili (UTC) odejmij ten sam czas, który Ci wyszedł w poprzednim punkcie.
 #. Wyświetl samą datę (bez czasu).
 #. Ile miałeś wtedy lat? Co robiłeś przez ten czas?
 #. Przyjmij:

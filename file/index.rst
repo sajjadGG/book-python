@@ -4,31 +4,11 @@
 Files
 *****
 
-.. code-block:: python
-
-    file = open(r'C:\Users\desktop.ini')
-
-    content = file.read()   # reading file
-    file.close()            # you have to close file manually
-
-    print(content)
-
-.. code-block:: python
-
-    with open(r'C:\Users\desktop.ini') as file:
-        content = file.read()
-
-    # Python will close file automatically as soon as ``with`` block is over
-    print(content)
-
-
-Konstrukcja ``with``
-====================
-* Context manager
-
 
 Czytanie
 ========
+* Context manager ``with``
+
 .. literalinclude:: src/file-read.py
     :language: python
     :caption: Reading from file

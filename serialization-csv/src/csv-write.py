@@ -4,7 +4,7 @@ FILENAME = r'filename.csv'
 DATA = [
     {'first_name': 'José', 'last_name': 'Jiménez'},
     {'first_name': 'Max', 'last_name': 'Peck'},
-    {'first_name': 'Ivan', 'last_name': 'Иванович'},
+    {'first_name': 'Иван', 'last_name': 'Иванович'},
 ]
 
 

@@ -1,19 +1,18 @@
-with open(r'C:\Users\desktop.ini') as file:
+FILENAME = r'C:\Users\desktop.ini'
+
+
+with open(FILENAME, encoding='utf-8') as file:
     content = file.read()
 
 
-with open(r'C:\Users\desktop.ini') as file:
+with open(FILENAME, encoding='utf-8') as file:
     content = file.readlines()
 
 
-with open(r'C:\Users\desktop.ini') as file:
+with open(FILENAME, encoding='utf-8') as file:
     selected_lines = file.readlines()[1:30]
 
 
-with open(r'C:\Users\desktop.ini') as file:
+with open(FILENAME, encoding='utf-8') as file:
     for line in file:
         print(line)
-
-
-with open(r'C:\Users\desktop.ini', encoding='utf-8') as file:
-    content = file.read()
