@@ -4,7 +4,7 @@ FILENAME = r'etc-passwd.txt'
 """
 root:x:0:0:root:/root:/bin/bash
 peck:x:1000:1000:Max Peck:/home/peck:/bin/bash
-jimenez:x:1001:1001:Jose Jimenez:/home/jimenez:/bin/bash
+jimenez:x:1001:1001:José Jiménez:/home/jimenez:/bin/bash
 ivanovic:x:1002:1002:Иван Иванович:/home/ivanovic:/bin/bash
 """
 

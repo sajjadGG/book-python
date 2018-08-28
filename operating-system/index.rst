@@ -630,7 +630,7 @@ System ``os`` vs. ``pathlib``
 
     import pathlib
 
-    pathlib.home()  # WindowsPath('C:/Users/Jose')
+    pathlib.home()  # WindowsPath('C:/Users/José')
 
 ``.drive``
 ----------

@@ -1,12 +1,12 @@
 
 def print_1(what):
     """
-    >>> print_1('Jose')
-    Jose
-    Jose
-    Jose
-    Jose
-    Jose
+    >>> print_1('José')
+    José
+    José
+    José
+    José
+    José
     """
     for i in range(0, 5):
         print(what)
@@ -14,12 +14,12 @@ def print_1(what):
 
 def print_2(what):
     """
-    >>> print_2('Jose')
-    Jose
-    Jose
-    Jose
-    Jose
-    Jose
+    >>> print_2('José')
+    José
+    José
+    José
+    José
+    José
     """
     i = 0
 
@@ -30,12 +30,12 @@ def print_2(what):
 
 def print_3(what):
     """
-    >>> print_3('Jose')
-    Jose
-    Jose
-    Jose
-    Jose
-    Jose
+    >>> print_3('José')
+    José
+    José
+    José
+    José
+    José
     <BLANKLINE>
     """
     print(f'{what}\n' * 5)

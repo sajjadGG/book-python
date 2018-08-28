@@ -1,8 +1,8 @@
 import timeit
 
 setup = """
-first_name = 'Jose'
-last_name = 'Jimenez'
+first_name = 'José'
+last_name = 'Jiménez'
 """
 
 test = [

@@ -166,16 +166,16 @@ Iterating over ``dict`` items
 .. code-block:: python
 
     DATA = {
-        'first_name': 'Jose',
-        'last_name': 'Jimenez',
+        'first_name': 'José',
+        'last_name': 'Jiménez',
         'age': 42,
     }
 
     for element in DATA.values():
         print(element)
 
-    # 'Jose'
-    # 'Jimenez'
+    # 'José'
+    # 'Jiménez'
     # 42
 
 
@@ -199,8 +199,8 @@ Iterating over ``dict`` items
     for key, value in DATA.items():
         print(f'key: "{key}", value: "{value}"')
 
-    # key: "first_name", value: "Jose"
-    # key: "last_name",  value: "Jimenez"
+    # key: "first_name", value: "José"
+    # key: "last_name",  value: "Jiménez"
     # key: "age",        value: "42"
 
 Accessing ``dict`` items with key in the loop
@@ -208,8 +208,8 @@ Accessing ``dict`` items with key in the loop
 .. code-block:: python
 
     DATA = {
-        'first_name': 'Jose',
-        'last_name': 'Jimenez',
+        'first_name': 'José',
+        'last_name': 'Jiménez',
         'age': 42,
     }
 
@@ -217,10 +217,10 @@ Accessing ``dict`` items with key in the loop
         DATA.get(element))
         DATA[element]
 
-    # 'Jose'
-    # 'Jose'
-    # 'Jimenez'
-    # 'Jimenez'
+    # 'José'
+    # 'José'
+    # 'Jiménez'
+    # 'Jiménez'
     # 42
     # 42
 

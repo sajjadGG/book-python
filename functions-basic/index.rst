@@ -126,8 +126,8 @@ Type annotations
     def add(a: int, b: float) -> float:
         return a + b
 
-    add('Jose', 'Jimenez')
-    # 'JoseJimenez'
+    add('José', 'Jiménez')
+    # 'JoséJiménez'
 
 .. note:: więcej na ten temat w rozdziale dotyczącym :numref:`Type Annotation`
 

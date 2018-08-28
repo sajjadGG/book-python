@@ -18,4 +18,5 @@ with open(FILENAME, encoding='utf-8') as file:
         quotechar='"')
 
     for row in list(data)[1:]:
+        row = dict(row)
         print(row)

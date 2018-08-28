@@ -1,4 +1,4 @@
-UPDATE kontakty SET firstname='Jose' WHERE lastname='Jimenez';
+UPDATE kontakty SET firstname='José' WHERE lastname='Jiménez';
 
 UPDATE kontakty SET
     firstname=:firstname,
