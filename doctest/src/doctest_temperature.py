@@ -1,29 +1,36 @@
 from typing import Union
 
 
-def fahrenheit_to_kelvin(fahrenheit: Union[int, float]) -> float:
+def celsius_to_kelvin(celsius: Union[int, float]) -> float:
     """
-    >>> fahrenheit_to_kelvin(1)
-    255.92777777777775
-    >>> fahrenheit_to_kelvin(0)
-    255.3722222222222
-    >>> fahrenheit_to_kelvin(-1)
-    254.81666666666663
-    >>> fahrenheit_to_kelvin(1.4)
-    256.15
-    >>> fahrenheit_to_kelvin('one')
+    >>> celsius_to_kelvin(1)
+    274.15
+    >>> celsius_to_kelvin(0)
+    273.15
+    >>> celsius_to_kelvin(-1)
+    272.15
+    >>> celsius_to_kelvin(1.5)
+    274.65
+    >>> celsius_to_kelvin(-300)
+    Traceback (most recent call last):
+        ...
+    ValueError: Temperature in Kelvin cannot be negative
+    >>> celsius_to_kelvin('one')
     Traceback (most recent call last):
         ...
     ValueError: Invalid argument
-    >>> fahrenheit_to_kelvin([1, 2])
+    >>> celsius_to_kelvin([1, 2])
     Traceback (most recent call last):
         ...
     ValueError: Invalid argument
     """
-    if not isinstance(fahrenheit, (float, int)):
+    if not isinstance(celsius, (float, int)):
         raise ValueError('Invalid argument')
 
-    celsius = (fahrenheit-32) / 1.8
     kelvin = celsius + 273.15
+
+    if kelvin < 0:
+        raise ValueError('Temperature in Kelvin cannot be negative')
+
     return kelvin
 

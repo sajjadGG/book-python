@@ -259,28 +259,22 @@ Assignments
 
 Temperature conversion doctest
 ------------------------------
-#. Napisz funkcję, która przeliczy temperaturę podaną w Fahrenheit na Kelviny
+#. Napisz funkcję, która przeliczy temperaturę podaną w skali Celsiusza na stopnie Kelvina
+#. K = °C + 273.15
+#. Temperatura Kelvina nie może być ujemna
 #. Napisz testy do rozwiązania i pokryj przypadki:
 
-    * temperatura ujemna
-    * temperatura zero
-    * temperatura dodatnia
-    * temperatura ``float``
-    * temperatura ``int``
-    * lista temperatur
+    * temperatura Celsiusza jest -1 (ujemna)
+    * temperatura Celsiusza jest 0 (zero)
+    * temperatura Celsiusza jest 1 (dodatnia)
+    * temperatura Celsiusza jest -300
+    * temperatura Celsiusza jest ``float``
+    * temperatura Celsiusza jest ``int``
+    * podano listę temperatur
     * podany parametr to ``str``
-
-:Algorithm:
-    #. Convert temperature in Fahrenheit to Celsius
-    #. Convert temperature in Celsius to Kelvin
 
 :About:
     * Filename: ``doctest_temperature.py``
-    * Lines of code to write: 6 lines of code + 16 lines of tests
+    * Lines of code to write: 5 lines of code + 16 lines of tests
     * Estimated time of completion: 5 min
 
-:Hints:
-    * Fahrenheit to Celsius: (°F - 32) / 1.8 = °C
-    * Celsius to Fahrenheit: (°C * 1.8) + 32 = °F
-    * Jeden stopień Celsiusza odpowiada jednemu stopniowi w skali Kelvina
-    * -273,15 °C = 0 K
