@@ -1,10 +1,10 @@
-import datetime
+from datetime import datetime, timezone
 
 # timezone naive - nieświadome
-datetime.datetime.now()
-datetime.datetime.utcnow()
-datetime.datetime(1957, 10, 4, 19, 28, 34)
+datetime.now()
+datetime.utcnow()
+datetime(1957, 10, 4, 19, 28, 34)
 
 # timezone aware - świadome
-datetime.datetime.now(tz=datetime.timezone.utc)
-datetime.datetime(1957, 10, 4, 19, 28, 34).replace(tzinfo=datetime.timezone.utc)
+datetime.now(tz=timezone.utc)
+datetime(1957, 10, 4, 19, 28, 34, tzinfo=timezone.utc)

@@ -1,4 +1,4 @@
-import calendar
+from calendar import HTMLCalendar
 
-html = calendar.HTMLCalendar().formatmonth(2017, 12)
+html = HTMLCalendar().formatmonth(1969, 7)
 print(html)

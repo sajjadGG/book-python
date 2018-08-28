@@ -1,45 +1,68 @@
-import datetime
+from datetime import datetime, timedelta, timezone
 
-YEAR = 365
-MONTH = 30
+SECOND = 1
+MINUTE = 60 * SECOND
+HOUR = 60 * MINUTE
+DAY = 24 * HOUR
+MONTH = 30.436875               # Average days a month in solar calendar
+YEAR = 365.2425                 # Solar calendar
 
 input1 = 'April 12, 1961 2:07 local time'  # ALMT Timezone
 input2 = '"07/21/69 2:56:15 AM UTC"'
 
-gagarin = datetime.datetime.strptime(input1, '%B %d, %Y %H:%M local time')
-# 1961-04-12 02:07:00
+gagarin = datetime.strptime(input1, '%B %d, %Y %H:%M local time')
+# datetime.datetime(1961, 4, 12, 2, 7)
 
-armstrong = datetime.datetime.strptime(input2, '"%x %X %p %Z"')
-# 1969-07-21 02:56:15
+armstrong = datetime.strptime(input2, '"%x %X %p %Z"')
+# datetime.datetime(1969, 7, 21, 2, 56, 15)
 
-armstrong = datetime.datetime.strptime(input2, '"%m/%d/%y %I:%M:%S %p %Z"')
-# 1969-07-21 02:56:15
+armstrong = datetime.strptime(input2, '"%m/%d/%y %I:%M:%S %p %Z"')
+# datetime.datetime(1969, 7, 21, 2, 56, 15)
 
-roznica = armstrong - gagarin
-# 3022 days, 0:49:15
+diff = armstrong - gagarin
+# datetime.timedelta(days=3022, seconds=2955)
 
-years, days = divmod(roznica.days, YEAR)
+years, days = divmod(diff.days, YEAR)
 months, days = divmod(days, MONTH)
-print(f'Uplynelo: {years}y {months}m {days}d')
-# Uplynelo: 8y 3m 12d
+hours, minutes = divmod(diff.seconds, HOUR)
+minutes, seconds = divmod(minutes, MINUTE)
 
-delta = datetime.timedelta(seconds=roznica.total_seconds())
-# 3022 days, 0:49:15
+difference = {
+    'years': int(years),
+    'months': int(months),
+    'days': int(days),
+    'hours': int(hours),
+    'minutes': int(minutes),
+    'seconds': int(seconds),
+}
+# {'years': 8, 'months': 3, 'days': 8, 'hours': 0, 'minutes': 49, 'seconds': 15}
 
-now = datetime.datetime.now()
+delta = timedelta(seconds=diff.total_seconds())
+# datetime.timedelta(days=3022, seconds=2955)
 
-future = now + delta
-print(future.date())
-# 2026-07-20
+now = datetime.now(tz=timezone.utc)
 
-birthday = datetime.datetime(1970, 1, 1, 0, 0, 0)
+past = now - delta
+# 2010-05-20
 
-ile_czasu = future - birthday
-print(ile_czasu)
-# 20654 days, 12:03:09.805525
+birthday = datetime(1970, 1, 1, 0, 0, 0, tzinfo=timezone.utc)
+my_age = past - birthday
+# datetime.timedelta(days=14749, seconds=42059, microseconds=810113)
 
 
-years, days = divmod(ile_czasu.days, YEAR)
+years, days = divmod(my_age.days, YEAR)
 months, days = divmod(days, MONTH)
-print(f'Bede mial: {years}y {months}m {days}d')
-# Bede mial: 56y 7m 4d
+hours, minutes = divmod(my_age.seconds, HOUR)
+minutes, seconds = divmod(minutes, MINUTE)
+
+difference = {
+    'years': int(years),
+    'months': int(months),
+    'days': int(days),
+    'hours': int(hours),
+    'minutes': int(minutes),
+    'seconds': int(seconds),
+}
+
+print(difference)
+# {'years': 40, 'months': 4, 'days': 17, 'hours': 11, 'minutes': 40, 'seconds': 59}

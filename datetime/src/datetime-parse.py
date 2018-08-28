@@ -1,9 +1,9 @@
-import datetime
+from datetime import datetime
 
 
 sputnik = '4 October 1957 19:28:34 UTC'
 
-out = datetime.datetime.strptime(sputnik, '%d %B %Y %H:%M:%S %Z')
+out = datetime.strptime(sputnik, '%d %B %Y %H:%M:%S %Z')
 # datetime.datetime(1957, 10, 4, 19, 28, 34)
 
 print(out)
