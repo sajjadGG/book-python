@@ -257,8 +257,8 @@ Email regex
 Assignments
 ===========
 
-Konwersja temperatury
----------------------
+Temperature conversion doctest
+------------------------------
 #. Napisz funkcję, która przeliczy temperaturę podaną w Fahrenheit na Kelviny
 #. Napisz testy do rozwiązania i pokryj przypadki:
 
@@ -270,13 +270,17 @@ Konwersja temperatury
     * lista temperatur
     * podany parametr to ``str``
 
+:Algorithm:
+    #. Convert temperature in Fahrenheit to Celsius
+    #. Convert temperature in Celsius to Kelvin
+
+:About:
+    * Filename: ``doctest_temperature.py``
+    * Lines of code to write: 6 lines of code + 16 lines of tests
+    * Estimated time of completion: 5 min
+
 :Hints:
     * Fahrenheit to Celsius: (°F - 32) / 1.8 = °C
     * Celsius to Fahrenheit: (°C * 1.8) + 32 = °F
     * Jeden stopień Celsiusza odpowiada jednemu stopniowi w skali Kelvina
     * -273,15 °C = 0 K
-
-:About:
-    * Filename: ``doctest_temperature.py``
-    * Lines of code to write: 6 lines
-    * Estimated time of completion: 5 min
