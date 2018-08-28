@@ -24,19 +24,20 @@ Constant declaration
 
 Variables vs. constants
 -----------------------
-* Jedyną różnicą jest konwencja nazewnicza
-* Stałe zapisujemy dużymi literami
-* Zmienne zapisujemy małymi literami
+* Python do not distinguish between variables and constants
+* Constants uses uppercase letters for names
+* Variables uses lowercase letters for names
+* Python allows you to change "constants" but it's a bad practice
 
 Types
 -----
-* Od Python 3.5 wprowadzono nową składnię
-* Nowa składnia nie jest wymagana (ale jest dobrą praktyką)
-* Nowa składnia uruchomiona w Python przed 3.5 rzuci SyntaxError
-* Twórcy języka mówą, że typy nigdy nie będą wymagane
-* Aby sprawdzić poprawność trzeba użyć bibliotek zewnętrznych tj: ``mypy`` lub ``pyre-check``
-* Typy można znaleźć w wielu funkcjach w bibliotece standardowej
-* Dobre IDE podpowiada typy i informuje o błędach
+* Since Python 3.5
+* Type hints or type annotations
+* It is not required, and never will be (quote from Guido van Rossum, Python BDFL)
+* Type hints throws SyntaxError for Python before 3.5
+* To check types you have to use IDE or modules like ``mypy`` lub ``pyre-check``
+* Types are used extensively in system libraries
+* More and more documentations on the internet use types
 
 .. code-block:: python
 
@@ -122,6 +123,8 @@ Numerical types
         float('1e-003')        # 0.001
         float('+1E6')          # 1000000.0
 
+* Infinity representation in Python
+
         float('-inf')          # -inf
         float('-Infinity')     # -inf
         float('inf')           # inf
@@ -136,23 +139,22 @@ Numerical types
 
     .. code-block:: python
 
-        value = complex('1+2j')         # (1+2j)
-        value = complex('1 + 2j')       # ValueError: complex() arg is a malformed string
+        complex()               # 0j
+
+        complex(1)              # (1+0j)
+        complex(1, 2)           # (1+2j)
+        complex(1.12, 2.34)     # (1.12+2.34j)
+        complex(1, 2.34)        # (1+2.34j)
+
+        complex(1+2j)           # (1+2j)
+        complex(1+2j, 3+4j)     # (-3+5j)
+
+        complex('1+2j')         # (1+2j)
+        complex('1 + 2j')       # ValueError: complex() arg is a malformed string
 
 
 Logical types
 =============
-
-``bool``
---------
-* ``bool()`` converts argument to ``bool``
-* First letter capitalized, other are lower cased
-* Defining ``bool``:
-
-    .. code-block:: python
-
-        True
-        False
 
 ``None``
 --------
@@ -170,6 +172,40 @@ Logical types
 
     if not wiek:
         print('What is your name?')
+
+``bool``
+--------
+* First letter capitalized, other are lower cased
+* Defining ``bool``:
+
+    .. code-block:: python
+
+        True
+        False
+
+* ``bool()`` converts argument to ``bool``
+
+    .. code-block:: python
+
+        var1 = 'José'
+        var2 = None
+
+        bool(var1)      # True
+        bool(var2)      # False
+
+* Using ``and`` and ``or``
+
+    .. code-block:: python
+
+        var1 = 'José'
+        var2 = None
+        var3 = 'Иван'
+
+        var1 or var2            # True
+        var1 or var3            # True
+
+        var1 and var2           # False
+        var1 and var3           # True
 
 
 Character types
@@ -200,9 +236,8 @@ Character types
 Single or double quote?
 -----------------------
 * ``"`` and ``'`` works the same
-* Keep consistency in code
-* Python console uses ``'``
-* This is why I will use ``'`` in this book
+* Choose one and keep consistency in code
+* Python console uses ``'``, this is why I use ``'`` in this book
 * ``doctest`` uses single quotes and throws error on double quotes
 
 .. code-block:: python

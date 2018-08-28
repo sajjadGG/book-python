@@ -225,8 +225,8 @@ Recurrence
 Assignments
 ===========
 
-Integer to string
------------------
+Number to string
+----------------
 #. Napisz funkcję ``number_to_str``
 #. Funkcja zamieni dowolnego ``int`` lub ``float`` na formę tekstową
 
@@ -250,8 +250,8 @@ Integer to string
     * Przypadek zaawansowany: argumenty pozycyjne i domyślne
     * Rzutowanie i konwersja typów
 
-Integer to human readable
--------------------------
+Number to human readable
+------------------------
 #. Napisz funkcję ``number_to_str``
 #. Funkcja zamieni dowolnego ``int`` lub ``float`` na formę tekstową
 #. Funkcja musi zmieniać wartości na poprawną gramatycznie formę
