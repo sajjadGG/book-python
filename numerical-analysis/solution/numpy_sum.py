@@ -1,7 +1,7 @@
 import numpy as np
 
 
-A = np.random.randint(10, size=(16, 16)).astype(float)
+A = np.random.randint(low=10, high=100, size=(16, 16)).astype(float)
 A.transpose()
 print(A)
 

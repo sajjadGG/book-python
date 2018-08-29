@@ -1255,7 +1255,7 @@ Matrix multiplication
 
 Sum of inner matrix
 -------------------
-#. Wygeneruj macierz (16x16) randomowych intów
+#. Wygeneruj macierz (16x16) randomowych intów o wartościach od 10 do 100
 #. Przekonwertuj macierz na typ float
 #. Transponuj ją
 #. Policz sumę środkowych (4x4) elementów macierzy
