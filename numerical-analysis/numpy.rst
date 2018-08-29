@@ -6,7 +6,7 @@ NumPy
 NumPy jest podstawowym pakiet (dodatkowym) w Pythonie do obliczeń naukowych. Integruje on niskopoziomowe biblioteki takie jak BLAS i LAPACK lub ATLAS. Podstawowe właściwości NumPy to :
 
     - potężny N-wymiarowy obiekt tablicy danych
-    - rozbudowane funkcje (
+    - rozbudowane funkcje
     - narzędzia do integracji z kodem napisanym w C/C++ i Fortranie
     - narzędzia do algebry liniowej, transformaty Fouriera czy generator liczb losowych
 

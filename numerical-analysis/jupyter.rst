@@ -70,6 +70,7 @@ Merge, Split Cells
 
 Run
 ===
+
 Run Cell
 --------
 Shift-Enter
@@ -81,29 +82,6 @@ Clear Output
 ------------
 
 
-LaTeX
-=====
-.. code-block:: python
-
-    from IPython.display import display, Math, Latex
-
-    display(Math(r'F(k) = \int_{-\infty}^{\infty} f(x) e^{2\pi i k} dx'))
-
-.. code-block:: text
-
-    %%latex
-
-    $$c = \sqrt{a^2 + b^2}$$
-
-.. code-block:: text
-
-    %%latex
-
-    \begin{equation}
-    H← ​​​60 ​+​ \frac{​​30(B-R)​​}{Vmax-Vmin}  ​​, if V​max​​ = G
-    \end{equation}
-
-
 Magic commands
 ==============
 * ``%run``
@@ -112,32 +90,11 @@ Magic commands
 * ``%matplotlib inline``
 
 
-Execute terminal commands
-=========================
-* ``!``
-
-    * ``!pwd``
-    * ``!ls``
-    * .. code-block:: text
-
-        for file in !ls:
-
-            if file.find("1_") >= 0:
-                print(file)
-
-
-HTML and Javascript
-===================
-.. code-block:: python
-
-    from IPython.display import Javascript, HTML
-
-    Javascript("alert('It is JavaScript!')")
-    HTML("We can <i>generate</i> <code>html</code> code <b>directly</b>!")
-
-
 Kernels
 =======
+* Python 3
+* https://github.com/jupyter/jupyter/wiki/Jupyter-kernels
+
 
 Functions
 =========
@@ -160,34 +117,115 @@ Markdown
 
 Unorganized lists
 -----------------
-* ``*`` or ``-``
+.. code-block:: markdown
+
+    * first element
+    * second element
+    * third element
+
+.. code-block:: markdown
+
+    - first element
+    - second element
+    - third element
 
 Organized lists
 ---------------
-* ``#.``
+.. code-block:: markdown
+
+    1. first element
+    1. second element
+    1. third element
 
 Headers
 -------
-* ``# Title``
-* ``## Title``
-* ``### Title``
-* ``#### Title``
-* ``##### Title``
-* ``###### Title``
+.. code-block:: markdown
+
+    # Header level 1
+    ## Header level 2
+    ### Header level 3
+    #### Header level 4
+    ##### Header level 5
+    ###### Header level 6
 
 Formatting
 ----------
-* Bold
-* Underline
-* Strikethrought
-* Italics
+.. code-block:: markdown
+
+    *italic*
+    **bold**
 
 Tables
 ------
+* https://www.tablesgenerator.com/markdown_tables
+
+.. code-block:: markdown
+
+    | id | first_name | last_name |    agency |
+    |----|:-----------|:---------:|----------:|
+    | 1  | José       |  Jiménez  |      NASA |
+    | 2  | Иван       |  Иванович | Roscosmos |
+    | 3  | Max        |    Peck   |      NASA |
 
 
 Embedding objects
 =================
+
+LaTeX
+-----
+.. code-block:: python
+
+    from IPython.display import display, Math, Latex
+
+    display(Math(r'F(k) = \int_{-\infty}^{\infty} f(x) e^{2\pi i k} dx'))
+
+.. code-block:: text
+
+    %%latex
+
+    $$c = \sqrt{a^2 + b^2}$$
+
+.. code-block:: text
+
+    %%latex
+
+    \begin{equation}
+    H← ​​​60 ​+​ \frac{​​30(B-R)​​}{Vmax-Vmin}  ​​, if V​max​​ = G
+    \end{equation}
+
+Matplotlib charts
+-----------------
+.. code-block:: text
+
+    %matplotlib inline
+
+.. code-block:: python
+
+    import math
+    import random
+    from matplotlib import pyplot as plt
+
+    x1 = [x*0.01 for x in range(0,628)]
+    y1 = [math.sin(x*0.01)+random.gauss(0, 0.1) for x in range(0,628)]
+    plt.plot(x1, y1)
+
+    x2 = [x*0.5 for x in range(0,round(63/5))]
+    y2 = [math.cos(x*0.5) for x in range(0,round(63/5))]
+    plt.plot(x2, y2, 'o-')
+
+    plt.show()
+
+HTML and Javascript
+-------------------
+.. code-block:: python
+
+    from IPython.display import Javascript, HTML
+
+    Javascript("alert('It is JavaScript!')")
+    HTML("We can <i>generate</i> <code>html</code> code <b>directly</b>!")
+
+JavaScript
+----------
 
 Image
 -----
@@ -198,6 +236,20 @@ YouTube
 
     from IPython.display import YouTubeVideo
     YouTubeVideo("wupToqz1e2g")
+
+
+Execute terminal commands
+=========================
+* ``!``
+* ``!pwd``
+* ``!ls``
+* .. code-block:: text
+
+    dirs = !ls
+
+    for file in dirs:
+        if file.find("1_") >= 0:
+            print(file)
 
 
 Slides
