@@ -145,8 +145,8 @@ Dragon (Easy)
 
     - idąc w prawo dodajesz ``y`` do ``position_y``
     - idąc w lewo odejmujesz ``y`` od ``position_y``
-    - idąc w górę dodajesz ``x`` do ``position_x``
-    - idąc w dół odejmujesz ``x`` od ``position_y``
+    - idąc w górę odejmujesz ``x`` od ``position_x``
+    - idąc w dół dodajesz ``x`` do ``position_x``
 
 #. Kiedy ``hit_points`` smoka spadnie poniżej zera:
 
