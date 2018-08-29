@@ -587,7 +587,6 @@ Iris
 * https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv
 
 #. Mając dane Irysów przekonwertuj je na dataframe
-#. Wykreśl podstawowe statystyki opisowe
 #. Podaj jawnie ``encoding``
 #. Pierwsza linijka stanowi metadane (nie wyświetlaj jej)
 #. Nazwy poszczególnych kolumn:
@@ -601,7 +600,8 @@ Iris
 #. Przefiltruj ``inplace`` kolumnę 'Petal length' i pozostaw wartości powyżej 2.0
 #. Dodaj kolumnę ``datetime`` i wpisz do niej dzisiejszą datę (UTC)
 #. Dodaj kolumnę ``big_enough`` i dla wartości 'Petal width' powyżej 1.0 ustawi ``True``, a dla mniejszych ``False``
-#. Zwróć dane tylko dla kolumny 'Sepal length', 'Sepal width' oraz 'Species'
+#. Pozostaw tylko kolumny 'Sepal length', 'Sepal width' oraz 'Species'
+#. Wykreśl podstawowe statystyki opisowe
 
 Cars
 ----
