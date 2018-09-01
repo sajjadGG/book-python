@@ -43,9 +43,9 @@ Feature Selection
     ]
 
     # Remove all features below 80% change variance in the samples
-    sel = VarianceThreshold(threshold=(.8 * (1 - .8)))
+    sel = VarianceThreshold(threshold=(0.8 * (1 - 0.8)))
 
-    sel.fit_transform(X)
+    sel.fit_transform(features)
     # array([[0, 1],
     #        [1, 0],
     #        [0, 0],
@@ -60,13 +60,20 @@ Feature Selection
     from sklearn.feature_selection import chi2
 
     iris = load_iris()
-    X, y = iris.data, iris.target
+    features = iris.data
+    labels = iris.target
 
-    X.shape
+    features.shape
     # (150, 4)
 
-    X_new = SelectKBest(chi2, k=2).fit_transform(X, y)
-    X_new.shape
+    best_features = SelectKBest(chi2, k=2).fit_transform(features, labels)
+    # array([[1.4, 0.2],
+    #        [1.4, 0.2],
+    #        ...
+    #        [5.4, 2.3],
+    #        [5.1, 1.8]])
+
+    best_features.shape
     # (150, 2)
 
 
@@ -120,15 +127,16 @@ Random Classifier
 
 Accuracy for Iris dataset: 0.346666666667
 
+
 Zadania praktyczne
 ==================
 
 Nearest Neighbor Classifier
 ---------------------------
-#. Napisz klafyfikator najbliższego sąsiada
+#. Napisz klasyfikator najbliższego sąsiada
 #. Podziel dane treningowe i testowe pół-na-pół
 #. Dla zbioru Iris ma osiągać accuracy na poziomie powyżej 90%
-#. Klasa ``NearestNeighborClassifier`` powina mieć interfejs zgodny z ``scikit-learn``:
+#. Klasa ``NearestNeighborClassifier`` powinna mieć interfejs zgodny z ``scikit-learn``:
 
     - ``.fit()`` - do uczenia funkcji
     - ``.predict()`` - do predykcji
@@ -139,11 +147,45 @@ Nearest Neighbor Classifier
     * Dla każdego feature sprawdzasz jaka jest najmniejsza odległość
     * Wybierasz najmniejszą odległość ze wszystkich
     * Do obliczania odległości skorzystaj z algorytmu Euclidesa.
-    * ``scipy.spatial.distance.euclidean``
+    * ``from scipy.spatial.distance import euclidean as euclidean_distance``
+
+    * .. code-block:: python
+
+        from sklearn import metrics
+        from scipy.spatial.distance import euclidean as euclidean_distance
+        from sklearn.model_selection import train_test_split
+        from sklearn import datasets
+
+
+        class NearestNeighborClassifier:
+            def fit(self, features, labels):
+                raise NotImplementedError
+
+            def predict(self, features_test):
+                raise NotImplementedError
+
+        dataset = datasets.load_iris()
+        features = dataset.data
+        labels = dataset.target
+
+        data = train_test_split(features, labels, test_size=0.25, random_state=0)
+
+        features_train = data[0]
+        features_test = data[1]
+        labels_train = data[2]
+        labels_test = data[3]
+
+        model = NearestNeighborClassifier()
+        model.fit(features_train, labels_train)
+        predictions = model.predict(features_test)
+        accuracy = metrics.accuracy_score(labels_test, predictions)
+
+        print(accuracy)
+
 
 :About:
     * Filename: ``ml-sklearn-classifier.py``
-    * Linii kodu do napisania: około 15 linii
+    * Lines of code to write: 15 lines
     * Estimated time of completion: 30 min
 
 Porównanie classifierów
@@ -188,5 +230,5 @@ Porównanie classifierów
 
 :About:
     * Filename: ``ml-sklearn-comparision.py``
-    * Linii kodu do napisania: około 15 linii
+    * Lines of code to write: 15 lines
     * Estimated time of completion: 20 min

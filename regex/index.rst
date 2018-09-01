@@ -144,7 +144,7 @@ Za pomocą wyrażeń regularnych sprawdź:
 
 :About:
     * Filename: ``regex_pesel.py``
-    * Linii kodu do napisania: około 10 linii
+    * Lines of code to write: 10 lines
     * Estimated time of completion: 20 min
 
 :Z gwiazdką:

@@ -109,7 +109,7 @@ Serializacja dat
 
 :About:
     * Filename: ``json_datetimes.py``
-    * Linii kodu do napisania: około 10 linii
+    * Lines of code to write: 10 lines
     * Estimated time of completion: 15 min
 
 :Co zadanie sprawdza:
@@ -131,7 +131,7 @@ Serializacja obiektów do JSON
 
 :About:
     * Filename: ``csv_dictwriter.py``
-    * Linii kodu do napisania: około 8 linii
+    * Lines of code to write: 8 lines
     * Estimated time of completion: 15 min
 
 :Hints:

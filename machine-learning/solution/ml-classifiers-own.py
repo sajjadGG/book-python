@@ -1,7 +1,7 @@
 from sklearn import metrics
-from scipy.spatial import distance
+from scipy.spatial.distance import euclidean as euclidean_distance
 from sklearn.model_selection import train_test_split
-from sklearn.datasets import load_iris
+from sklearn import datasets
 
 
 class NearestNeighborClassifier:
@@ -19,11 +19,11 @@ class NearestNeighborClassifier:
         return predictions
 
     def _closest(self, row):
-        current_best_dist = distance.euclidean(row, self.features_train[0])
+        current_best_dist = euclidean_distance(row, self.features_train[0])
         best_index = 0
 
         for i in range(0, len(self.features_train)):
-            dist = distance.euclidean(row, self.features_train[i])
+            dist = euclidean_distance(row, self.features_train[i])
             if dist < current_best_dist:
                 current_best_dist = dist
                 best_index = i
@@ -31,14 +31,20 @@ class NearestNeighborClassifier:
         return self.labels_train[best_index]
 
 
-iris = load_iris()
+dataset = datasets.load_iris()
+features = dataset.data
+labels = dataset.target
 
-x_train, x_test, y_train, y_test = train_test_split(
-    iris.data, iris.target, test_size=0.5)
+data = train_test_split(features, labels, test_size=0.25, random_state=0)
+
+features_train = data[0]
+features_test = data[1]
+labels_train = data[2]
+labels_test = data[3]
 
 model = NearestNeighborClassifier()
-model.fit(x_train, y_train)
-predictions = model.predict(x_test)
-accuracy = metrics.accuracy_score(y_test, predictions)
+model.fit(features_train, labels_train)
+predictions = model.predict(features_test)
+accuracy = metrics.accuracy_score(labels_test, predictions)
 
 print(accuracy)

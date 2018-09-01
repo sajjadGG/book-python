@@ -111,6 +111,20 @@ Clustering algorithms group a set of documents into subsets or clusters . The al
 
     Flat Clustering
 
+K-means
+-------
+.. figure:: img/clustering-k-means.png
+    :scale: 75%
+    :align: center
+
+    K-means
+
+.. figure:: img/clustering-k-means-convergence.gif
+    :scale: 50%
+    :align: center
+
+    K-means Convergence
+
 
 Hierarchical Clustering
 =======================

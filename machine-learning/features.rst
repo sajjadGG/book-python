@@ -240,5 +240,5 @@ Feature Engineering
 
 :About:
     * Filename: ``ml-features-engineering.py``
-    * Linii kodu do napisania: około 15 linii
+    * Lines of code to write: 15 lines
     * Estimated time of completion: 10 min

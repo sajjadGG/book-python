@@ -1250,7 +1250,7 @@ Matrix multiplication
 
 :About:
     * Filename: ``numpy-matrix-mul.py``
-    * Linii kodu do napisania: około 2 linii
+    * Lines of code to write: 2 lines
     * Estimated time of completion: 5 min
 
 Sum of inner matrix
@@ -1263,7 +1263,7 @@ Sum of inner matrix
 
 :About:
     * Filename: ``numpy-sum.py``
-    * Linii kodu do napisania: około 4 linii
+    * Lines of code to write: 4 lines
     * Estimated time of completion: 5 min
 
 Szukanie liczby

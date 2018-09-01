@@ -137,5 +137,5 @@ Wielowątkowość
 
 :About:
     * Filename: ``multiprocessing_server.py`` i ``multiprocessing_client.py``
-    * Linii kodu do napisania: około 50 linii
+    * Lines of code to write: 50 lines
     * Estimated time of completion: 30 min

@@ -74,7 +74,7 @@ Wczytywanie pliku ``csv``
 
 :About:
     * Filename: ``csv_dictreader.py``
-    * Linii kodu do napisania: około 6 linie
+    * Lines of code to write: 6 linie
     * Estimated time of completion: 15 min
 
 Serializacja ``csv``
@@ -95,7 +95,7 @@ Serializacja ``csv``
 
 :About:
     * Filename: ``csv_dictwriter.py``
-    * Linii kodu do napisania: około 8 linii
+    * Lines of code to write: 8 lines
     * Estimated time of completion: 15 min
 
 :Hints:
@@ -127,5 +127,5 @@ Serializacja obiektów do CSV
 
 :About:
     * Filename: ``csv_addressbook.py``
-    * Linii kodu do napisania: około 10 linii
+    * Lines of code to write: 10 lines
     * Estimated time of completion: 20 min

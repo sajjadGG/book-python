@@ -242,7 +242,7 @@ Iris Database
 
 :About:
     * Filename: ``db_iris.py``
-    * Linii kodu do napisania: około 30 linii
+    * Lines of code to write: 30 lines
     * Estimated time of completion: 30 min
 
 :The whys and wherefores:
@@ -265,7 +265,7 @@ Tworzenie bazy danych i proste zapytania
 
 :About:
     * Filename: ``db_addressbook.py``
-    * Linii kodu do napisania: około 15 linii
+    * Lines of code to write: 15 lines
     * Estimated time of completion: 20 min
 
 :Zadanie z gwiazdką:
