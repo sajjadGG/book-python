@@ -233,7 +233,6 @@ Equivalent to:
 ``functools``
 =============
 
-
 ``memoize``
 -----------
 .. code-block:: python
@@ -280,6 +279,37 @@ Equivalent to:
         return fibonacci(n - 1) + fibonacci(n - 2)
 
     fibonacci(25)
+
+Callback
+========
+.. code-block:: python
+
+    def http(obj):
+        response = requests.request(
+            method=obj.method,
+            data=obj.data,
+            path=obj.path)
+
+        if response == 200:
+            return obj.on_success(response)
+        else:
+            return obj.on_error(response)
+
+
+    class Request:
+        method = 'GET'
+        path = '/index'
+        data = None
+
+        def on_success(self, response):
+            print('Success!')
+
+        def on_error(self, response):
+            print('Error')
+
+    http(
+        Request()
+    )
 
 
 Assignments

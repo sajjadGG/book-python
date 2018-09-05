@@ -104,6 +104,7 @@ Advanced
     generator/index.rst
     iterator/index.rst
     context-manager/index.rst
+    descriptor/index.rst
     decorator/index.rst
     collections/index.rst
     network-http/index.rst

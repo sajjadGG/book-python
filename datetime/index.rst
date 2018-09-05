@@ -78,6 +78,10 @@ Przesunięcia czasu (dodawanie i odejmowanie)
     :language: python
     :caption: Substract time from datetimes
 
+.. literalinclude:: src/datetime-diff.py
+    :language: python
+    :caption: Diff between datetimes
+
 Strefy czasowe
 --------------
 .. literalinclude:: src/datetime-tzinfo.py

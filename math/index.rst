@@ -216,6 +216,9 @@ Euclidean distance multi dimensions
     * Lines of code to write: 10 lines
     * Estimated time of completion: 15 min
 
+:Hints:
+    * ``raise ValueError('Punkty muszą być w przestrzeni tylu-samo wymiarowej')``
+
 Matrix multiplication
 ---------------------
 #. Napisz program mnożący macierze wykorzystując zagnieżdżone pętle ``for``

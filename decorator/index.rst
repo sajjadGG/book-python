@@ -75,7 +75,109 @@ Class Decorators
 
 @classmethod
 ------------
+- ``@classmehtod`` turns a normal method to a factory method.
+- first argument for ``@classmethod`` function must always be ``cls`` (class)
+- Factory methods, that are used to create an instance for a class using for example some sort of pre-processing.
+- Static methods calling static methods: if you split a static methods in several static methods, you shouldn't hard-code the class name but use class methods
 
+.. code-block:: python
+
+    class Hero:
+
+      @staticmethod
+      def say_hello():
+         print("Helllo...")
+
+      @classmethod
+      def say_class_hello(cls):
+         if cls.__name__ == "HeroSon":
+            print("Hi Kido")
+         elif cls.__name__ == "HeroDaughter":
+            print("Hi Princess")
+
+    class HeroSon(Hero):
+      def say_son_hello(self):
+         print("test  hello")
+
+
+
+    class HeroDaughter(Hero):
+      def say_daughter_hello(self):
+         print("test  hello daughter")
+
+
+    testson = HeroSon()
+    testson.say_class_hello()       # "Hi Kido"
+    testson.say_hello()             # "Helllo..."
+
+    testdaughter = HeroDaughter()
+    testdaughter.say_class_hello()  # "Hi Princess"
+    testdaughter.say_hello()        # "Helllo..."
+
+``functools``
+=============
+
+``@functools.cached_property(func)``
+------------------------------------
+.. code-block:: python
+
+    class DataSet:
+        def __init__(self, sequence_of_numbers):
+            self._data = sequence_of_numbers
+
+        @cached_property
+        def stdev(self):
+            return statistics.stdev(self._data)
+
+        @cached_property
+        def variance(self):
+            return statistics.variance(self._data)
+
+LRU (least recently used) cache
+-------------------------------
+.. code-block:: python
+
+    from functools import lru_cache
+
+    @lru_cache(maxsize=None)
+    def fib(n):
+        if n < 2:
+            return n
+        return fib(n-1) + fib(n-2)
+
+    >>> [fib(n) for n in range(16)]
+    [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610]
+
+    >>> fib.cache_info()
+    CacheInfo(hits=28, misses=16, maxsize=None, currsize=16)
+
+
+``memoize``
+-----------
+.. code-block:: python
+
+    def memoize(function):
+        from functools import wraps
+
+        memo = {}
+
+        @wraps(function)
+        def wrapper(*args):
+            if args in memo:
+                return memo[args]
+            else:
+                rv = function(*args)
+                memo[args] = rv
+                return rv
+        return wrapper
+
+
+    @memoize
+    def fibonacci(n):
+        if n < 2: return n
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+    fibonacci(25)
 
 
 Przykład
@@ -131,3 +233,37 @@ Prosty dekorator
 * Stwórz funkcję, która wypisuje na ekranie nazwę pliku lub katalogu.
 * Stwórz dekorator do funkcji, który przed wyświetleniem jej na ekranie podmieni ścieżkę na bezwzględną (``path`` + ``filename``).
 
+:About:
+    * Filename: ``decorator_abspath.py``
+    * Lines of code to write: 10 lines
+    * Estimated time of completion: 15 min
+
+Memoization
+-----------
+#. Stwórz ``dict`` o nazwie ``CACHE`` z wynikami wyliczenia funkcji
+
+    - klucz: argument funkcji
+    - wartość: wynik obliczeń
+
+#. Zmodyfikuj funkcję ``factorial(n: int)`` z listingu poniżej
+#. Przed uruchomieniem funkcji, sprawdź czy wynik został już wcześniej obliczony:
+
+    - jeżeli tak, to zwraca dane z ``CACHE``
+    - jeżeli nie, to oblicza, aktualizuje ``CACHE``, a następnie zwraca wartość
+
+#. Porównaj prędkość działania z obliczaniem na bieżąco dla parametru 500
+
+:About:
+    * Filename: ``decorator_memoize.py``
+    * Lines of code to write: 5 lines
+    * Estimated time of completion: 15 min
+
+:Hints:
+    * ``import timeit`` - https://docs.python.org/3/library/timeit.html
+    * .. code-block:: python
+
+        def factorial(n: int) -> int:
+            if n == 0:
+                return 1
+            else:
+                return n * factorial(n-1)
