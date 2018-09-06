@@ -143,10 +143,10 @@ Dragon (Easy)
 
 #. Przyjmij górny lewy róg ekranu za punkt (0, 0)
 
-    - idąc w prawo dodajesz ``y`` do ``position_y``
-    - idąc w lewo odejmujesz ``y`` od ``position_y``
-    - idąc w górę odejmujesz ``x`` od ``position_x``
-    - idąc w dół dodajesz ``x`` do ``position_x``
+    - idąc w prawo dodajesz ``x`` do ``position_x``
+    - idąc w lewo odejmujesz ``x`` od ``position_x``
+    - idąc w górę odejmujesz ``y`` od ``position_y``
+    - idąc w dół dodajesz ``y`` do ``position_y``
 
 #. Kiedy ``hit_points`` smoka spadnie poniżej zera:
 
@@ -171,6 +171,7 @@ Dragon (Easy)
 
 Dragon (Medium)
 -----------------
+#. Zaimportuj smoka z zadania podstawowego i stwórz klasę ``SuperDragon`` dziedziczącą po ``Dragon``
 #. Smok nie może wyjść poza obszar ekranu (1024x768)
 #. Stwórz klasę ``Hero``
 #. Nasz bohater (José Jiménez) ma skończone losowe ``hit_points`` (100-150)
