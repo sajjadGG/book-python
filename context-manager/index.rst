@@ -34,6 +34,82 @@ Przykład
     with open(filename) as f:
         # ...
 
+Lock
+----
+.. code-block:: python
+
+    import threading
+
+    lock = threading.Lock()
+
+    with lock:
+        my_list.append(item)
+
+replaces the more verbose:
+
+.. code-block:: python
+
+    import threading
+
+    lock = threading.Lock()
+    lock.acquire()
+
+    try:
+        my_list.append(item)
+    finally:
+        lock.release()
+
+Database
+--------
+.. code-block:: python
+
+    import sqlite3
+
+    SQL_CREATE_TABLE = """
+        CREATE TABLE IF NOT EXISTS kontakty (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            pesel INTEGER UNIQUE,
+            firstname TEXT,
+            lastname TEXT
+        )
+    """
+
+    SQL_INSERT = """
+        INSERT INTO kontakty VALUES (
+            NULL,
+            :pesel,
+            :firstname,
+            :lastname
+        )
+    """
+
+    ksiazka_adresowa = [
+        {'pesel': '61041206070', 'firstname': 'José', 'lastname': 'Jiménez'},
+        {'pesel': '69072114561', 'firstname': 'Max', 'lastname': 'Peck'},
+    ]
+
+    with sqlite3.connect(':memory:') as connection:
+        connection.execute(SQL_CREATE_TABLE)
+        cursor.executemany(SQL_INSERT, ksiazka_adresowa)
+
+Contextmanager decorator
+------------------------
+.. code-block:: python
+
+    from contextlib import contextmanager
+
+    @contextmanager
+    def tag(name):
+        print(f"<{name}>")
+        yield
+        print(f"</{name}>")
+
+    with tag("p"):
+        print("foo")
+
+    # <p>
+    # foo
+    # </p>
 
 Dzieli naszą funkcję na bloki przed i po ``yield``.
 
@@ -42,24 +118,60 @@ Dzieli naszą funkcję na bloki przed i po ``yield``.
 
 .. code-block:: python
 
-    from contextlib import contextmanager
+    from contextlib import ContextDecorator
 
-    @contextmanager
-    def tag(name):
-        print("<%s>" % name)
-        yield
-        print("</%s>" % name)
+    class makeparagraph(ContextDecorator):
+        def __enter__(self):
+            print('<p>')
+            return self
 
-    with tag("h1"):
-        print("foo")
+        def __exit__(self, *exc):
+            print('</p>')
+            return False
 
-    # <h1>
-    # foo
-    # </h1>
+    @makeparagraph()
+    def generate_html():
+        print('Here is some non-HTML')
 
-Przykład praktyczny
--------------------
-.. literalinclude:: src/context-manager.py
-    :name: listing-context-manager
-    :language: python
-    :caption: Context Manager
+    generate_html()
+
+.. code-block:: html
+
+    <p>
+    Here is some non-HTML
+    </p>
+
+timing
+------
+.. code-block:: python
+
+    import contextlib
+    import time
+    
+    @contextlib.contextmanager
+    def time_print(task_name):
+        t = time.time()
+        try:
+            yield
+        finally:
+            print task_name, "took", time.time() - t, "seconds."
+    
+    with time_print("processes"):
+        [doproc() for _ in range(500)]
+    
+    # processes took 15.236166954 seconds.
+    
+    with time_print("threads"):
+        [dothread() for _ in range(500)]
+    
+    # threads took 0.11357998848 seconds.
+
+
+Assignments
+===========
+
+Buffered file
+-------------
+#. Stwórz Context Manager dla zapisu do plików
+#. Context Manager buforuje dane (nie zapisuje ich na bieżąco
+#. Gdy program wyjdzie z bloku context managera, to nastąpi zapisanie do pliku

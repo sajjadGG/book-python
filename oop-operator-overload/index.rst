@@ -137,6 +137,26 @@ Accessors Overload
 
 ``__setattr__()``
 -----------------
+.. code-block:: python
+
+    class Kelvin:
+        def __init__(self, value):
+            self.temperature = value
+
+        def __setattr__(self, name, new_value):
+            if name == 'value' and new_value < 0.0:
+                raise ValueError('Temperature cannot be negative')
+            else:
+                super().__setattr__(name, new_value)
+
+
+    temp = Kelvin(273)
+
+    temp.value = 20
+    print(temp.value)   # 20
+
+    temp.value = -10
+    print(temp.value)   # ValueError: Temperature cannot be negative
 
 
 ``__getitem__()``
@@ -167,15 +187,15 @@ Address Book
             return f'{self.__dict__}'
 
 
-    contact = Contact(name='Jose Jimenez')
-    address = Address(city='Houston')
+    contact = Contact(name='Jose', addresses=[Address(location='JPL')])
+    contact += Address(location='Houston')
+    contact += Address(location='KSC')
 
-    contact + address
     print(contact)
-    # {'name': 'Jose Jimenez', 'addresses': [{'city': 'Houston'}]}
+    {'name': 'Jose', 'addresses': [{'city': 'JPL'}, {'city': 'Houston'}, {'city': 'KSC'}]}
 
-    if address in contact:
+    if Address(location='Bajkonur') in contact:
         print(True)
     else:
         print(False)
-    # True
+    # False

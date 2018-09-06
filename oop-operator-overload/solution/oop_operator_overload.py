@@ -4,8 +4,9 @@ class Contact:
         self.name = name
         self.addresses = addresses
 
-    def __add__(self, other):
+    def __iadd__(self, other):
         self.addresses.append(other)
+        return self
 
     def __str__(self):
         return f'{self.__dict__}'
@@ -18,20 +19,20 @@ class Contact:
 
 
 class Address:
-    def __init__(self, city):
-        self.city = city
+    def __init__(self, location):
+        self.city = location
 
     def __repr__(self):
         return f'{self.__dict__}'
 
 
-contact = Contact(name='Jose')
-address = Address(city='Houston')
+contact = Contact(name='Jose', addresses=[Address(location='JPL')])
+contact += Address(location='Houston')
+contact += Address(location='KSC')
 
-contact + address
 print(contact)
 
-if address in contact:
+if Address(location='Bajkonur') in contact:
     print(True)
 else:
     print(False)

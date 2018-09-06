@@ -48,8 +48,34 @@ Class Decorators
     :language: python
     :caption: Case Study wykorzystania dekotatorów do poprawienia czytelności kodu Flask
 
-.. todo:: classdecorators
 .. todo:: https://andrefsp.wordpress.com/2012/08/23/writing-a-class-decorator-in-python/
+
+.. code-block:: python
+
+    >>> def decorator(cls):
+    ...     class NewClass(cls):
+    ...         attr = 100
+    ...     return NewClass
+    ...
+    >>> @decorator
+    ... class X:
+    ...     pass
+    ...
+    >>> @decorator
+    ... class Y:
+    ...     pass
+    ...
+    >>> @decorator
+    ... class Z:
+    ...     pass
+    ...
+
+    >>> X.attr
+    100
+    >>> Y.attr
+    100
+    >>> Z.attr
+    100
 
 @staticmethod
 -------------
@@ -223,6 +249,9 @@ Case Study
     :language: python
     :caption: Case Study wykorzystania dekotatorów do poprawienia czytelności kodu Django
 
+Decorator library
+-----------------
+- https://wiki.python.org/moin/PythonDecoratorLibrary
 
 Assignments
 ===========
