@@ -3,7 +3,6 @@ from oop_dragon_easy import Dragon
 from oop_dragon_easy import STATUS_ALIVE, STATUS_DEAD
 
 
-HERO_BASE_HIT_POINTS = random.randint(100, 150)
 BORDER_LEFT = 0
 BORDER_RIGHT = 1024
 BORDER_TOP = 0
@@ -56,7 +55,7 @@ class DragonMedium(Dragon):
 class Hero:
     def __init__(self, name):
         self.name = name
-        self.hit_points = HERO_BASE_HIT_POINTS
+        self.hit_points = random.randint(100, 150)
         self.status = STATUS_ALIVE
 
     def make_damage(self):

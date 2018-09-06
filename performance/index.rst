@@ -136,7 +136,14 @@ Memoization
     - jeżeli tak, to zwraca dane z ``CACHE``
     - jeżeli nie, to oblicza, aktualizuje ``CACHE``, a następnie zwraca wartość
 
-#. Porównaj prędkość działania z obliczaniem na bieżąco dla parametru 500
+#. Porównaj prędkość działania z obliczaniem:
+
+    .. code-block:: python
+
+        factorial(500)
+        factorial(400)
+        factorial(450)
+        factorial(350)
 
 :About:
     * Filename: ``performance_memoize.py``
