@@ -1,36 +1,42 @@
-*******************
-Przydatne odnośniki
-*******************
+**********
+Hyperlinks
+**********
 
 
-Doumentacja
-===========
+Documentation
+=============
 * https://www.python.org - Strona do pobrania Pythona
 * https://pyformat.info - Formatowanie stringów w Python
 * http://devdocs.io
 
 
-Środowisko developerskie
-========================
+Working with Excel
+==================
+- https://www.pyxll.com/blog/tools-for-working-with-excel-and-python/
+- Comprehensive list of tools for working with Python and Excel. It covers writing Excel Add-Ins in Python, reading and writing Excel files, and interacting with Excel. It's a great resource for understanding the differences between all the different Python/Excel tools out there.
+
+
+IDE - Integrated Development Environment
+========================================
 * https://www.jetbrains.com/pycharm/download/
 
 
-Ponadto
-=======
+Others
+======
 * https://python3wos.appspot.com - Python 3 lista kompatybilnych bibliotek
 * http://www.unixtimestamp.com
 * https://coloredlogs.readthedocs.io/en/latest/
 
-Humor IT
-========
+
+IT Fun
+======
 * http://geekandpoke.typepad.com
 * http://devopsreactions.tumblr.com
-
-.. note:: `źródło poniższych materiałów <http://www.wykop.pl/wpis/9876900/python-naukaprogramowania-programowanie-wstep-pod-/>`_
 
 
 Wyzwania i potyczki
 ===================
+.. note:: `źródło poniższych materiałów <http://www.wykop.pl/wpis/9876900/python-naukaprogramowania-programowanie-wstep-pod-/>`_
 
 * TO SUPER WAŻNE żebyś podczas czytania i oglądania programował i nie kopiował gotowego kodu z paczek źródłowych do książek tylko ręcznie pisał, starając się zrozumieć co piszesz. Musisz eksperymentować, wprowadzać własne zmiany, pisać własne projekty i realizować własne pomysły.
 

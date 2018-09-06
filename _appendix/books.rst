@@ -1,20 +1,20 @@
-*******
-Książki
-*******
+*****
+Books
+*****
 
-Algorytmy
-=========
+Algorithms
+==========
 * http://www.amazon.com/Introduction-Algorithms-Edition-Thomas-Cormen/dp/0262033844/
 * http://www.amazon.com/Algorithms-4th-Edition-Robert-Sedgewick/dp/032157351X/
 
-Bazy danych
-===========
+Databases
+=========
 * http://www.amazon.com/Database-Design-Mere-Mortals-Hands-/dp/0321884493/
 * http://www.amazon.com/SQL-Antipatterns-Programming-Pragmatic-Programmers/dp/1934356557/
 * http://www.amazon.com/C.-J.-Date/e/B000AQ6OJA/
 
-Dobre praktyki i quality
-========================
+Software Engineering Practises
+==============================
 * http://www.amazon.co.uk/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/
 * http://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X/
 * http://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670/
@@ -27,7 +27,7 @@ Design patterns
 
 Refactoring
 ===========
-* Working effectively with legacy code
+* Working effectively with legacy code - Michael Feathers
 
 Python
 ======
