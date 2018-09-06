@@ -117,13 +117,13 @@ Markdown
 
 Unorganized lists
 -----------------
-.. code-block:: markdown
+.. code-block:: md
 
     * first element
     * second element
     * third element
 
-.. code-block:: markdown
+.. code-block:: md
 
     - first element
     - second element
@@ -131,7 +131,7 @@ Unorganized lists
 
 Organized lists
 ---------------
-.. code-block:: markdown
+.. code-block:: md
 
     1. first element
     1. second element
@@ -139,7 +139,7 @@ Organized lists
 
 Headers
 -------
-.. code-block:: markdown
+.. code-block:: md
 
     # Header level 1
     ## Header level 2
@@ -150,7 +150,7 @@ Headers
 
 Formatting
 ----------
-.. code-block:: markdown
+.. code-block:: md
 
     *italic*
     **bold**
@@ -159,7 +159,7 @@ Tables
 ------
 * https://www.tablesgenerator.com/markdown_tables
 
-.. code-block:: markdown
+.. code-block:: md
 
     | id | first_name | last_name |    agency |
     |----|:-----------|:---------:|----------:|

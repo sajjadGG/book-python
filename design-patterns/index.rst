@@ -31,7 +31,7 @@ Inne wzorce
 1.  Wprowadzenie
 
     - Wartości dobrego oprogramowania
-    - ojęcie jakości i jej rodzaje w oprogramowaniu
+    - pojęcie jakości i jej rodzaje w oprogramowaniu
     - Proces wytwórczy w branży oprogramowania
 
 2.  Analiza i modelowanie obiektowe z wykorzystaniem notacji UML – wstęp

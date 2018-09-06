@@ -350,5 +350,5 @@ Napisz program, który wczyta plik :numref:`listing-file-etc-passwd-2`, a nastę
 
 .. literalinclude:: src/etc-passwd.txt
     :name: listing-file-etc-passwd-2
-    :language: python
+    :language: text
     :caption: ``/etc/passwd`` sample file
