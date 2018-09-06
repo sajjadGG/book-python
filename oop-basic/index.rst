@@ -161,8 +161,8 @@ Dragon (Easy)
 
 :About:
     * Filename: ``oop_dragon_easy.py``
-    * Lines of code to write: 50 lines
-    * Estimated time of completion: 30 min
+    * Lines of code to write: 40 lines
+    * Estimated time of completion: 45 min
 
 .. literalinclude:: src/oop_dragon.py
     :name: listing-oop-dragon
@@ -173,6 +173,7 @@ Dragon (Medium)
 -----------------
 #. Zaimportuj smoka z zadania podstawowego i stwórz klasę ``SuperDragon`` dziedziczącą po ``Dragon``
 #. Smok nie może wyjść poza obszar ekranu (1024x768)
+#. Jeżeli dojdzie do granicy ekranu, to przesuwając dalej, pozycja będzie ustawiona na maks
 #. Stwórz klasę ``Hero``
 #. Nasz bohater (José Jiménez) ma skończone losowe ``hit_points`` (100-150)
 #. Smok zadaje losowe obrażenia (5-20)
@@ -183,19 +184,21 @@ Dragon (Medium)
 
 :About:
     * Filename: ``oop_dragon_medium.py``
-    * Lines of code to write: 90 lines
-    * Estimated time of completion: 45 min
+    * Lines of code to write: 100 lines
+    * Estimated time of completion: 30 min
 
 Dragon (Advanced)
 -----------------
-#. Nasz bohater ma dodatkowo:
+#. Zaimportuj i wykorzystaj dziedziczenie klas ``SuperDragon`` i ``Hero``
+#. Bohater może dodatkowo założyć ekwipunek (obiekty):
+#. Każdy z przedmiotów ma swoją nazwę, typ oraz modyfikator
 
-    * zbroję 10 defence
-    * tarczę 5 defence
-    * miecz 5 damage
+    * zbroję (dodatkowe punkty obrony, np. +10)
+    * tarczę (dodatkowe punkty obrony, np. +5)
+    * miecz (dodatkowe punkty ataku, np. +5)
 
-#. Zbroja i tarcza chroni przed uderzeniami procentowo obniżając ``damage``
-#. Miecz procentowo zwiększa damage
+#. Zbroja i tarcza chroni przed uderzeniami obniżając ``damage`` o wartość obrony
+#. Miecz zwiększa ilość zadawanych obrażeń
 #. Obrażenia smoka maleją z sześcianem odległości
 #. Bohater nie może zadawać obrażeń jak jest dalej niż 50 punktów od przeciwnika
 #. Przeprowadź symulację walki.
@@ -203,8 +206,8 @@ Dragon (Advanced)
 
 :About:
     * Filename: ``oop_dragon_advanced.py``
-    * Lines of code to write: 35 lines
-    * Estimated time of completion: 15 min
+    * Lines of code to write: 50 lines
+    * Estimated time of completion: 30 min
 
 Address Book (Easy)
 -------------------
