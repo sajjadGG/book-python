@@ -234,7 +234,7 @@ Appendixes
 
     _appendix/sql.rst
     _appendix/history.rst
-    _appendix/hyperlinks.rst
+    _appendix/further-reading.rst
     _appendix/books.rst
     _appendix/video.rst
     _appendix/python-2vs3.rst

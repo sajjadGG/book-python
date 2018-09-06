@@ -1,6 +1,6 @@
-**********
-Hyperlinks
-**********
+***************
+Further reading
+***************
 
 
 Documentation
@@ -23,9 +23,9 @@ IDE - Integrated Development Environment
 
 Others
 ======
-* https://python3wos.appspot.com - Python 3 lista kompatybilnych bibliotek
-* http://www.unixtimestamp.com
-* https://coloredlogs.readthedocs.io/en/latest/
+* https://python3wos.appspot.com - Python 3 compatibility
+* http://www.unixtimestamp.com - Unix timestamp
+* https://coloredlogs.readthedocs.io/en/latest/ - colored logs
 
 
 IT Fun

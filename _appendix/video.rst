@@ -3,8 +3,8 @@ Video
 *****
 
 
-Collections
-===========
+Collections of videos
+=====================
 * http://pyvideo.org/
 * http://www.infoq.com/python/
 * https://www.youtube.com/watch?v=-5wpm-gesOY
