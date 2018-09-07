@@ -24,7 +24,7 @@ Osoba.imie = 'jeszcze inne imie'
 
 o2 = Osoba()
 o2.data_urodzenia = 'dynamicznie w locie'
-o2.hello = say_hello
 
-o1.hello()
-# hello
+
+o1.hello()  # hello
+o2.hello()  # ehlo

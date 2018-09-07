@@ -139,56 +139,23 @@ Method Resolution Order
 Hash
 ====
 * ``set()`` można zrobić z dowolnego hashowalnego obiektu
+* ``dict()`` może mieć klucze, które są dowolnym hashowalnym obiektem
 
-.. code-block:: python
+.. literalinclude:: src/oop-hash-dict.py
+    :language: python
+    :caption: ``dict()`` może mieć klucze, które są dowolnym hashowalnym obiektem
 
-    class Adres:
-        def __init__(self, miasto):
-            self.miasto = miasto
+.. literalinclude:: src/oop-hash-set.py
+    :language: python
+    :caption: ``set()`` można zrobić z dowolnego hashowalnego obiektu
 
-    {1, 1, 2}
-    # {1, 2}
+.. literalinclude:: src/oop-hash-generate-bad.py
+    :language: python
+    :caption: Generating hash and object comparision
 
-    a = Adres(miasto='Gwiezdne')
-    data = {a, a}
-    len(data)
-    # 1
-
-    data = {Adres(miasto='Gwiezdne'), Adres(miasto='Gwiezdne')}
-    len(data)
-    # 2
-
-.. code-block:: python
-
-    key = 'last_name'
-
-    my_dict = {
-        'fist_name': 'José',
-        key: 'Jiménez',
-        1: 'id',
-    }
-
-
-.. code-block:: python
-
-    class Adres:
-        def __init__(self, ulica, miasto):
-            self.ulica = ulica
-            self.miasto = miasto
-
-        def __hash__(self, *args, **kwargs):
-            """
-            __hash__ should return the same value for objects that are equal.
-            It also shouldn't change over the lifetime of the object;
-            generally you only implement it for immutable objects.
-            """
-            return hash(self.ulica) + hash(self.miasto)
-
-        def __eq__(self, other):
-            if self.ulica == other.ulica and self.miasto == other.miasto:
-                return True
-            else:
-                return False
+.. literalinclude:: src/oop-hash-generate-good.py
+    :language: python
+    :caption: Generating hash and object comparision
 
 
 Polymorphism

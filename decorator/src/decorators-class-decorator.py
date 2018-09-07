@@ -1,28 +1,25 @@
-class Cache(object):
-    def __init__(self, function, max_hits=10, timeout=5):
-        self.function = function
-        self.max_hits = max_hits
-        self.timeout = timeout
-        self.cache = {}
+def decorator(cls):
+    class NewClass(cls):
+        attr = 100
 
-    def __call__(self, *args):
-        # Here the code returning the correct thing.
-        print(self)
+    return NewClass
 
 
-def cache_hits(max_hits=10, timeout=5):
-    def _cache(function):
-        return Cache(function, max_hits, timeout)
-    return _cache
+@decorator
+class X:
+    pass
 
 
-@cache_hits
-def double(x):
-    return x * 2
-
-@cache_hits(max_hits=100, timeout=50)
-def double(x):
-    return x * 2
+@decorator
+class Y:
+    pass
 
 
-double()
+@decorator
+class Z:
+    pass
+
+
+X.attr  # 100
+Y.attr  # 100
+Z.attr  # 100

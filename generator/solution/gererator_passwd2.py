@@ -14,7 +14,7 @@ Napisz program, który wczyta plik /etc/passwd, a następnie:
 
 """
 
-FILENAME = '../data/etc-passwd.txt'
+FILENAME = '../src/etc-passwd.txt'
 
 
 def systemowe_lista(lines):
@@ -44,7 +44,7 @@ def systemowe_generator(lines):
 
 
 if __name__ == '__main__':
-    with open(FILENAME) as file:
+    with open(FILENAME, encoding='utf-8') as file:
         lines = file.readlines()
         lista = systemowe_lista(lines)
         generator = systemowe_generator(lines)

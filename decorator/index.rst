@@ -26,8 +26,11 @@ Przykład zastosowania
         pass
 
 
-Definicja
-=========
+Function Decorators
+===================
+
+Decorator as function
+---------------------
 .. code-block:: python
 
     def my_decorator(f):
@@ -35,47 +38,45 @@ Definicja
             return f(*args, **kwargs)
         return wrapper
 
-    # usage
-
     @my_decorator
     def func(x):
         return x
+
+Decorator as class
+------------------
+.. code-block:: python
+
+    class memoize(dict):
+        def __init__(self, function):
+            self.function = function
+
+        def __call__(self, *args):
+            return self[args]
+
+        def __missing__(self, key):
+            result = self[key] = self.function(*key)
+            return result
+
+
+    @memoize
+    def foo(a, b):
+        return a * b
+
+
+    foo(2, 4)       # 8
+    foo             # {(2, 4): 8}
+
+    foo('hi', 3)    # 'hihihi'
+    foo             # {(2, 4): 8, ('hi', 3): 'hihihi'}
+
 
 Class Decorators
 ================
 .. literalinclude:: src/decorators-class-decorator.py
     :name: listing-decorators-class-decorator
     :language: python
-    :caption: Case Study wykorzystania dekotatorów do poprawienia czytelności kodu Flask
+    :caption: Class Decorator
 
-.. todo:: https://andrefsp.wordpress.com/2012/08/23/writing-a-class-decorator-in-python/
-
-.. code-block:: python
-
-    >>> def decorator(cls):
-    ...     class NewClass(cls):
-    ...         attr = 100
-    ...     return NewClass
-    ...
-    >>> @decorator
-    ... class X:
-    ...     pass
-    ...
-    >>> @decorator
-    ... class Y:
-    ...     pass
-    ...
-    >>> @decorator
-    ... class Z:
-    ...     pass
-    ...
-
-    >>> X.attr
-    100
-    >>> Y.attr
-    100
-    >>> Z.attr
-    100
 
 @staticmethod
 -------------
@@ -93,10 +94,11 @@ Class Decorators
             print('hello')
 
 
-    # pryzkładowa implementacja
-    def staticmethod(f):
+    # intuicyjna implementacja
+    def staticmethod(method):
         def wrapper(*args, **kwargs):
-            return f()
+            args = (x for x in args if not instanceof(arg, Foo))
+            return method(*args, **kwargs)
         return wrapper
 
 @classmethod
@@ -121,15 +123,15 @@ Class Decorators
          elif cls.__name__ == "HeroDaughter":
             print("Hi Princess")
 
+
     class HeroSon(Hero):
       def say_son_hello(self):
-         print("test  hello")
-
+         print("test hello")
 
 
     class HeroDaughter(Hero):
       def say_daughter_hello(self):
-         print("test  hello daughter")
+         print("test hello daughter")
 
 
     testson = HeroSon()

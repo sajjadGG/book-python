@@ -18,5 +18,5 @@ class Celsius:
 body = Celsius(36.6)
 
 body.temperature
-body.temperature = 34  # Setting value
+body.temperature = 34     # Setting value
 body.temperature = -1000  # ValueError: Temperature below -273 is not possible
