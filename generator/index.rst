@@ -337,16 +337,25 @@ Assignments
 
 Generatory vs. Przetwarzanie Listy
 ----------------------------------
-Napisz program, który wczyta plik :numref:`listing-file-etc-passwd-2`, a następnie:
+#. Napisz program, który wczyta plik :numref:`listing-file-etc-passwd-2`
+#. Przefiltruj linie, tak aby nie zawierały komentarzy (zaczynające się od ``#``) oraz pustych linii
+#. Przefiltruj linie, aby wyciągnąć konta systemowe - użytkowników, którzy mają UID (trzecie pole) mniejsze niż 1000
+#. Zwróć listę loginów użytkowników systemowych
+#. Zaimplementuj rozwiązanie wykorzystując zwykłą funkcję
+#. Zaimplementuj rozwiązanie wykorzystując generator i słówko kluczowe ``yield``
+#. Porównaj wyniki jednego i drugiego rozwiązania przez użycie ``sys.getsizeof()``
 
-* przefiltruje linie, tak aby nie zawierały komentarzy (zaczynające się od ``#``) oraz pustych linii
-* przefiltruje linie, aby wyciągnąć konta systemowe - użytkowników, którzy mają UID (trzecie pole) mniejsze niż 1000
-* zwróci listę loginów takich użytkowników
+:About:
+    * Filename: ``generator_size.py``
+    * Lines of code to write: 40 lines
+    * Estimated time of completion: 15 min
 
-* Zaimplementuj rozwiązanie wykorzystując zwykłą funkcję.
-* Zaimplementuj rozwiązanie wykorzystując generator i słówko kluczowe ``yield``.
-
-* Porównaj wyniki jednego i drugiego rozwiązania przez użycie ``sys.getsizeof()``
+:The whys and wherefores:
+    * Wykorzystanie generatorów
+    * Odbieranie danych z lazy evaluation
+    * Porównanie wielkości struktur danych
+    * Parsowanie pliku
+    * Filtrowanie treści w locie
 
 .. literalinclude:: src/etc-passwd.txt
     :name: listing-file-etc-passwd-2
