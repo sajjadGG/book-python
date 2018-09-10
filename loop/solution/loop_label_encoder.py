@@ -25,8 +25,8 @@ DATABASE = [
     (4.9, 2.5, 4.5, 1.7, 'virginica'),
 ]
 
-species = {}
-labels = []
+species = dict()
+labels = list()
 
 header = DATABASE[0]
 data = DATABASE[1:]
@@ -52,8 +52,11 @@ print(labels)
 
 
 
-## Alternatywnie
-species = set(record[-1] for record in data)
+## Alternative solution 1
+species = set(x[-1] for x in data)
 indexes = range(0, len(species))
 d = zip(species, indexes)
 d = dict(d)
+
+## In numerical analysis you can find this
+result = dict(enumerate(set(x[-1] for x in data)))

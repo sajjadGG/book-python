@@ -1,4 +1,4 @@
-DATA = [
+DATABASE = [
     {'last_name': 'Jiménez'},
     {'first_name': 'Max', 'last_name': 'Peck'},
     {'first_name': 'Иван', 'age': 42},
@@ -8,7 +8,7 @@ DATA = [
 
 unique_keys = set()
 
-for row in DATA:
+for row in DATABASE:
     unique_keys.update(row.keys())
 
 print(unique_keys)

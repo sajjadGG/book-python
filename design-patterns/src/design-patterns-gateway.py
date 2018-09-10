@@ -45,8 +45,8 @@ class HTTPGateway:
             file.write(data)
 
     def _cache_invalid(self, url):
-        def last_modified_less_than_month_ago(path):
-            modification_timestamp = os.path.getmtime(path)
+        def last_modified_less_than_month_ago(filepath):
+            modification_timestamp = os.path.getmtime(filepath)
             modification_datetime = datetime.datetime.fromtimestamp(modification_timestamp)
             now = datetime.datetime.now()
             return (now - modification_datetime).days < self.cache_expiry_days

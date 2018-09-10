@@ -52,8 +52,8 @@ Foundations
     modules-install/index.rst
     builtin/index.rst
     programming-convention/index.rst
-    math/index.rst
     debugging-basic/index.rst
+    math/index.rst
     datetime/index.rst
     exceptions/index.rst
     file/index.rst

@@ -4,13 +4,10 @@
 Loops
 *****
 
-Pętle służą do wykonywania tego samego fragmentu kodu wielokrotnie.
-W Pythonie, pętle wykonywane są na obiektach wieloelementowych, albo iteratorach.
-
 
 ``while``
 =========
-* Pętla ``while`` wykonuje się dopóki argument jest prawdą.
+* Continue execution when argument is ``True``
 
 .. code-block:: python
 
@@ -19,26 +16,11 @@ W Pythonie, pętle wykonywane są na obiektach wieloelementowych, albo iteratora
 
 .. code-block:: python
 
-    x = 0
+    i = 0
 
-    while x <= 10:
+    while i <= 10:
         print(x)
-        x += 1
-
-
-Keywords in loops
-=================
-* ``break`` - powoduje przerwanie pętli.
-* ``continue`` - powoduje przerwanie aktualnie wykonywanej iteracji.
-
-.. code-block:: python
-
-    while True:
-        number = input('Type number: ')
-
-        if not number:
-            # if user hit enter, without typing number
-            break
+        i += 1
 
 
 ``for``
@@ -46,12 +28,10 @@ Keywords in loops
 
 Iterating simple types
 ----------------------
-Pętla ``for`` wykonuje się na zestawie elementów. Dosłownie można tę instrukcję przeczytać jako "Dla iksów będących wartościami listy, wykonaj instrukcję:"
-
 .. code-block:: python
 
-    for x in range(0, 5):
-        print(f'Value is: {x}')
+    for number in range(0, 5):
+        print(f'Value is: {number}')
 
     # Value is: 0
     # Value is: 1
@@ -61,8 +41,8 @@ Pętla ``for`` wykonuje się na zestawie elementów. Dosłownie można tę instr
 
 .. code-block:: python
 
-    for x in range(0, 10, 2):
-        print(x)
+    for number in range(0, 10, 2):
+        print(number)
 
     # 0
     # 2
@@ -72,8 +52,8 @@ Pętla ``for`` wykonuje się na zestawie elementów. Dosłownie można tę instr
 
 .. code-block:: python
 
-    for x in 'Hello':
-        print(x)
+    for character in 'Hello':
+        print(character)
 
     # H
     # e
@@ -83,8 +63,8 @@ Pętla ``for`` wykonuje się na zestawie elementów. Dosłownie można tę instr
 
 .. code-block:: python
 
-    for x in [1, 3, 4]:
-        print(x)
+    for element in [1, 3, 4]:
+        print(element)
 
     # 1
     # 3
@@ -178,6 +158,13 @@ Iterating over ``dict`` items
     # 'Jiménez'
     # 42
 
+.. code-block:: python
+
+    DATA = {
+        'first_name': 'José',
+        'last_name': 'Jiménez',
+        'age': 42,
+    }
 
     for element in DATA.keys():
         print(element)
@@ -186,6 +173,13 @@ Iterating over ``dict`` items
     # 'last_name'
     # 'age'
 
+.. code-block:: python
+
+    DATA = {
+        'first_name': 'José',
+        'last_name': 'Jiménez',
+        'age': 42,
+    }
 
     # for domyślnie iteruje po kluczach w ``dict``
     for element in DATA:
@@ -195,16 +189,6 @@ Iterating over ``dict`` items
     # 'last_name'
     # 'age'
 
-
-    for key, value in DATA.items():
-        print(f'key: "{key}", value: "{value}"')
-
-    # key: "first_name", value: "José"
-    # key: "last_name",  value: "Jiménez"
-    # key: "age",        value: "42"
-
-Accessing ``dict`` items with key in the loop
----------------------------------------------
 .. code-block:: python
 
     DATA = {
@@ -213,16 +197,12 @@ Accessing ``dict`` items with key in the loop
         'age': 42,
     }
 
-    for element in DATA:
-        DATA.get(element))
-        DATA[element]
+    for key, value in DATA.items():
+        print(f'key: "{key}", value: "{value}"')
 
-    # 'José'
-    # 'José'
-    # 'Jiménez'
-    # 'Jiménez'
-    # 42
-    # 42
+    # key: "first_name", value: "José"
+    # key: "last_name",  value: "Jiménez"
+    # key: "age",        value: "42"
 
 Iterating complex types
 -----------------------
@@ -232,8 +212,8 @@ Iterating complex types
 
     DATA = ['Max', ('1.0', 'José'), 3, 2.8, {True, None, False}]
 
-    for x in DATA:
-        print(f'value: "{x}"')
+    for element in DATA:
+        print(f'value: "{element}"')
 
     # value: "Max"
     # value: "('1.0', 'José')"
@@ -245,9 +225,9 @@ Iterating complex types
 
     DATA = ['Max', ('1.0', 'José'), 3, 2.8, {True, None, False}]
 
-    for x in DATA:
-        for y in x:
-            print(f'value: "{y}"')
+    for element in DATA:
+        for sub in element:
+            print(f'value: "{sub}"')
 
     # value: "M"
     # value: "a"
@@ -261,13 +241,13 @@ Iterating complex types
 
     DATA = ['Max', ('1.0', 'José'), 3, 2.8, {True, None, False}]
 
-    for x in DATA:
+    for element in DATA:
 
-        if isinstance(x, (list, set, tuple)):
-            for y in x:
-                print(f'value: "{y}"')
+        if isinstance(element, (list, set, tuple)):
+            for sub in element:
+                print(f'value: "{sub}"')
         else:
-            print(f'value: "{x}"')
+            print(f'value: "{element}"')
 
     # value: "Max"
     # value: "1.0"
@@ -409,15 +389,45 @@ Inline ``for`` not only for ``list``
     # dict {1:'x', 2:'y'}
 
 
+Keywords in loops
+=================
+
+``break`` - exits loop
+----------------------
+.. code-block:: python
+
+    while True:
+        number = input('Type number: ')
+
+        # if user hit enter, without typing number
+        if not number:
+            break
+
+* ``continue`` - skips iteration
+--------------------------------
+.. code-block:: python
+
+    for i in range(0, 10):
+        if i % 2 == 0:
+            continue
+
+        print(i)
+
+    # 1
+    # 3
+    # 5
+    # 7
+    # 9
+
+
 Assignments
 ===========
 
 Text manipulation
 -----------------
-#. Podziel podany poniżej tekst "Lorem Ipsum" na zdania
-#. Kropka rozdziela zdania
-#. Spacja oddziela wyrazy w zdaniu
-#. Za pomocą funkcji ``len()`` policz ile jest wyrazów w każdym zdaniu::
+#. Dany jest tekst "Lorem Ipsum"
+#. Dla każdego zdania (zdania oddzielone są kropkami)
+#. Za pomocą funkcji ``len()`` policz ile jest wyrazów::
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 
@@ -457,7 +467,6 @@ Unique keys from schema-less database
     * Lines of code to write: 5 lines
     * Estimated time of completion: 10 min
 
-
 :The whys and wherefores:
     * Generowanie zbiorów
     * Usuwanie powtarzających się elementów
@@ -469,10 +478,9 @@ Report card
 -----------
 #. Przekonwertuj skalę ocen ``(2, 3, 3.5, 4, 4.5, 5)`` na listę ``float`` za pomocą inline ``for``
 #. Użytkownik podaje oceny jako ``int`` lub ``float``
-#. Program ma sprawdzać czy ocena znajduje się w skali ocen
 #. Jeżeli ocena jest na liście dopuszczalnych ocen, dodaje ją do dzienniczka
-#. Jeżeli wpisano cyfrę nie znajdującą się na liście dopuszczalnych ocen, wyświetl informację "Grade is not allowed" i dalej kontynuuj wpisywanie
 #. Jeżeli wciśnięto sam Enter, oznacza to koniec wpisywania do dzienniczka
+#. Jeżeli wpisano cyfrę nie znajdującą się na liście dopuszczalnych ocen, wyświetl informację "Grade is not allowed" i dalej kontynuuj wpisywanie
 #. Na zakończenie wyświetl wyliczoną dla dzienniczka średnią arytmetyczną z ocen
 
 :About:
@@ -490,8 +498,7 @@ Report card
     * Wykorzystanie funkcji wbudowanych
 
 :Hints:
-    * ``len()``
-    * ``sum()``
+    * ``average = sum(...) / len(...)``
 
 Label encoder
 -------------

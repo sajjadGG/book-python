@@ -29,6 +29,7 @@ Virtualenv
 
     ~/.virtualenv/.../
 
+
 Searching
 =========
 - https://pypi.org
@@ -50,13 +51,16 @@ Using
 Assignments
 ===========
 
-Installing from ``requirements.txt`` to venv
---------------------------------------------
-#. Stwórz plik ``requirements.txt``
+Virtualenv
+----------
 #. Stwórz virtualenv z instalacją Python
 #. Dodaj virtualenv do Python Interpreter w Twoim IDE
-#. Zainstaluj bibliotekę ``pycodestyle`` poprzez wpisanie do ``requirements.txt``
-#.  Niech Twoje IDE zainstaluje ją automatycznie (kliknięcie w żółty banner)
+
+Installing from ``requirements.txt``
+------------------------------------
+#. Stwórz plik ``requirements.txt``
+#. Dopisz linijkę ``pycodestyle`` do ``requirements.txt``
+#. Niech Twoje IDE zainstaluje bibliotekę automatycznie (kliknięcie w żółty banner)
 
 :About:
     * Filename: ``requirements.txt``
