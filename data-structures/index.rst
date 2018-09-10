@@ -11,23 +11,22 @@ Simple collections
 ``tuple``
 ---------
 * Immutable - cannot add, modify or remove elements
-
-* Defining empty tuple:
+* Defining empty ``tuple``:
 
     .. code-block:: python
 
         my_tuple = ()
         my_tuple = tuple()
 
-* Single element ``tuple`` require comma at the end (important!)
-* Braces are optional
+* Single element ``tuple`` require comma at the end (**important!**)
+* Braces are optional:
 
     .. code-block:: python
 
         my_tuple = 1,
         my_tuple = (1,)
 
-* Can store any type
+* Can store any type:
 
     .. code-block:: python
 
@@ -35,7 +34,7 @@ Simple collections
         my_tuple = (1, 2.0, None, False, 'José')
         my_tuple = tuple(1, 2.0, None, False, 'José')
 
-* Slicing tuple
+* Slicing tuple:
 
     .. code-block:: python
 
@@ -63,7 +62,7 @@ Simple collections
         BETWEEN = slice(1, 4)
         my_tuple[BETWEEN]       # (2, 3, 4)
 
-* Length of a ``tuple``
+* Length of a ``tuple``:
 
     .. code-block:: python
 
@@ -72,34 +71,39 @@ Simple collections
 
 ``list``
 --------
-* Brackets are required
-* Can store any type
-* No need for comma for one element ``list``
-* Can be appended or extended
+* Mutable - can add, remove, and modify values
+* Defining empty ``dict``:
 
 .. code-block:: python
 
     my_list = []
     my_list = list()
 
-.. code-block:: python
+* Brackets are required
+* No need for comma for one element ``list``:
 
-    my_list = [1]
-    my_list = list(1)
+    .. code-block:: python
+
+        my_list = [1]
+        my_list = list(1)
+
+* Can store any type:
+
+    .. code-block:: python
+
+        my_list = [1, 2.0, None, False, 'José']
+        my_list = list(1, 2.0, None, False, 'José')
 
 .. code-block:: python
 
     my_list = [1, 2.0, None, False, 'José']
-    my_list = list(1, 2.0, None, False, 'José')
 
-.. code-block:: python
-
-    my_list = [1, 2.0, None, False, 'José']
-
-    my_list[1]             # 2
+    my_list[1]             # 2.0
     my_list[2:4]           # [None, False]
     my_list[::2]           # [1, None, 'José']
     my_list[-1]            # 'José'
+
+* Can be appended or extended:
 
 .. code-block:: python
 
@@ -111,10 +115,12 @@ Simple collections
     my_list.extend([8, 9])  # [1, 2, 3, 4, 5, [6, 7], 8, 9]
     my_list.insert(0, 'a')  # ['a', 1, 2, 3, 4, 5, [6, 7], 8, 9]
 
-.. code-block:: python
+* Length of a ``list``:
 
-    my_list = [1, 2, 3]
-    len(my_list)            # 3
+    .. code-block:: python
+
+        my_list = [1, 2, 3]
+        len(my_list)            # 3
 
 ``set``
 -------

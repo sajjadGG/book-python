@@ -8,47 +8,49 @@ Syntax
 Indentation instead of braces
 =============================
 * Python uses indentation instead of braces
-* 4 spaces indentation
+* 4 spaces indentation, no tabs
 * Code indented on the same level belongs to block:
 
     .. code-block:: python
 
         if True:
-            print('This is true')
+            print('First line of the true statement')
+            print('Second line of the true statement')
+            print('Third line of the true statement')
         else:
             print('This is false')
 
 
 End of lines
 ============
-* No ``;`` at the end of lines
-* ``\r\n`` and ``\n`` is ok
+* No semicolon (``;``) at the end of lines
+* ``\r\n`` and ``\n`` are good:
 
-.. code-block:: python
+    .. code-block:: python
 
-    print('Hello!\nHow are you?')
-    print('Hello!\r\nHow are you?')
+        print('Hello!\nHow are you?')
+        print('Hello!\r\nHow are you?')
 
 Comments
 ========
 
 Line comments
 ---------------
-* ``# `` - hash and space, then comment
 * Indent must be on the same level as block indent
+* Hash (``#``), space and then comment:
 
-.. code-block:: python
+    .. code-block:: python
 
-    # Jose Jimenez says hello
-    print('My name Jose Jimenez')
+        # José Jiménez says hello
+        print('My name José Jiménez')
 
 Inline comments
 ---------------
-* ``  # `` - some code, two spaces, hash, space, then comment
+* some code, two spaces, hash (``#``), space and then comment:
 
-.. code-block:: python
+    .. code-block:: python
 
-    print('My name Jose Jimenez')  # Jose Jimenez says hello
+        print('My name José Jiménez')  # José Jiménez says hello
 
 Multiline comments
 ------------------
@@ -70,12 +72,13 @@ Multiline comments
 
 Docstring
 ---------
-* First multiline comment in:
+* Docstring is a first multiline comment in:
 
     * File / Module
     * Class
     * Method / Function
 
+* It is accessible in ``.__doc__`` property of an object
 * Used for ``help()`` documentation
 
     .. code-block:: python
@@ -104,5 +107,9 @@ Docstring
 Commented out code
 ------------------
 * Never!
-* Use Version Control System instead (``git blame``)
+* Use Version Control System instead - e.g.: ``git blame``
 * IDE has Local history (modifications) and you can compare file
+
+More advanced topics
+====================
+.. note:: The topic will be continued in chapter: :ref:`Software Engineering Conventions`
