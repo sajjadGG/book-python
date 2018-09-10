@@ -319,7 +319,7 @@ Characters before strings
 ``print()``
 -----------
 * Prints on the screen
-* More in :numref:`Print Formatting`
+* More in :ref:`Print Formatting`
 
 .. code-block:: python
 

@@ -72,12 +72,12 @@ Simple collections
 ``list``
 --------
 * Mutable - can add, remove, and modify values
-* Defining with ``list()`` is more readable, but ``[]`` is used more often
+* Defining with ``list()`` is more readable, but ``[]`` is used more often:
 
-.. code-block:: python
+    .. code-block:: python
 
-    my_list = []
-    my_list = list()
+        my_list = []
+        my_list = list()
 
 * Brackets are required
 * No need for comma for one element ``list``:
@@ -124,13 +124,13 @@ Simple collections
 
 ``set``
 -------
-* Defining only with ``set()``
+* Defining only with ``set()``:
 
     .. code-block:: python
 
         my_set = set()
 
-* No need for comma for one element ``set``
+* No need for comma for one element ``set``:
 
     .. code-block:: python
 
@@ -185,7 +185,7 @@ Simple collections
         my_set = {1, 2, 3}
         len(my_set)              # 3
 
-* Converting ``list`` to ``set`` deduplicate items
+* Converting ``list`` to ``set`` deduplicate items:
 
     .. code-block:: python
 
@@ -284,7 +284,7 @@ Accessing ``dict`` values in bulk
 
 ``dict`` vs. ``set``
 --------------------
-* ``set()`` and ``dict()`` both use ``{`` and ``}`` braces:
+* ``set()`` and ``dict()`` both use the same (``{`` and ``}``) braces:
 
     .. code-block:: python
 
