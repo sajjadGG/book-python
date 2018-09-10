@@ -32,9 +32,9 @@ Variables vs. constants
 Types
 -----
 * Since Python 3.5
+* Type hints throws SyntaxError in Python before 3.5
 * Type hints or type annotations
 * It is not required, and never will be (quote from Guido van Rossum, Python BDFL)
-* Type hints throws SyntaxError for Python before 3.5
 * To check types you have to use IDE or modules like ``mypy`` lub ``pyre-check``
 * Types are used extensively in system libraries
 * More and more documentations on the internet use types
@@ -48,23 +48,24 @@ Type inference
 --------------
 * Static Typing (Java, C++, Swift)
 
-.. code-block:: java
+    .. code-block:: java
 
-    String name = new String("José Jiménez")
+        String name = new String("José Jiménez")
 
 * Dynamic Typing (Python, PHP, Ruby)
 
-.. code-block:: python
+    .. code-block:: python
 
-    name = str('José Jiménez')
+        name = str('José Jiménez')
+        name = 'José Jiménez'
 
-.. code-block:: python
+    .. code-block:: python
 
-    name: str = str('José Jiménez')  # Type annotations
+        name: str = str('José Jiménez')  # Type annotations
 
-    # Type annotations (type hinting not forcing)
-    # this will work, but IDE should warn
-    name: str = 10
+        # Type annotations (type hinting not forcing)
+        # this will work, but IDE should warn
+        name: str = 10
 
 
 Numerical types
@@ -89,7 +90,6 @@ Numerical types
         million = 1_000_000
         million = 1e6
         million = 1E6
-        millionth = 1E-6
 
 * ``int()`` converts argument to ``int``:
 
@@ -98,8 +98,8 @@ Numerical types
         int(10)                 # 10
         int(10.0)               # 10
         int(10.9)               # 10
-        int(' 10')              # 10
-        int(' 10.5')            # ValueError: invalid literal for int() with base 10: ' 10.5'
+        int('10')               # 10
+        int('10.5')             # ValueError: invalid literal for int() with base 10: ' 10.5'
 
 ``float``
 ---------
@@ -120,10 +120,11 @@ Numerical types
         float('-1.23')         # -1.23
         float('   -123.45\n')  # -123.45
 
+        float('1E-003')        # 0.001
         float('1e-003')        # 0.001
         float('+1E6')          # 1000000.0
 
-* Infinity representation in Python
+* Infinity representation in Python:
 
     .. code-block:: python
 
@@ -162,18 +163,12 @@ Logical types
 --------
 * Empty value (null)
 * It is not ``False`` and ``0``
-* Used for unknown (unset) values
 * With ``if`` statements behaves like ``False`` and ``0``
+* Used for unknown (unset) values:
 
-.. code-block:: python
+    .. code-block:: python
 
-    name = None
-
-    if name is None:
-        print('What is your name?')
-
-    if not wiek:
-        print('What is your name?')
+        my_var = None
 
 ``bool``
 --------
@@ -182,10 +177,13 @@ Logical types
 
     .. code-block:: python
 
-        True
-        False
+        my_var = True
+        my_var = False
 
-* ``bool()`` converts argument to ``bool``
+        my_var: bool = True
+        my_var: bool = False
+
+* ``bool()`` converts argument to ``bool``:
 
     .. code-block:: python
 
@@ -195,7 +193,7 @@ Logical types
         bool(var1)      # True
         bool(var2)      # False
 
-* Using ``and`` and ``or``
+* Using ``and`` and ``or``:
 
     .. code-block:: python
 
@@ -215,24 +213,40 @@ Character types
 
 ``str``
 -------
-* ``str()`` converts argument to ``str``
+* ``"`` and ``'`` works the same
+* Defining ``str``:
 
-.. code-block:: python
+    .. code-block:: python
 
-    name = 'José'       # 'José'
-    name = "José"       # 'José'
-    name: str = 'José'  # 'José'
-    'José' * 3          # JoséJoséJosé
+        name = 'José'       # 'José'
+        name = "José"       # 'José'
 
-    str(1969)           # '1969'
-    str(13.37)          # '13.37'
+        name: str = 'José'  # 'José'
+        name: str = "José"  # 'José'
 
-    name = """
-        José Jiménez
-        Max Peck
-        Иван Иванович
-    """
-    # '\n    José Jiménez\n    Max Peck\n    Иван Иванович\n'
+* ``str`` multiplication:
+
+    .. code-block:: python
+
+        'José' * 3          # JoséJoséJosé
+
+* ``str()`` converts argument to ``str``":
+
+    .. code-block:: python
+
+        str(1969)           # '1969'
+        str(13.37)          # '13.37'
+
+* Multiline ``str``
+
+    .. code-block:: python
+
+        names = """
+            José Jiménez
+            Max Peck
+            Иван Иванович
+        """
+        # '\n    José Jiménez\n    Max Peck\n    Иван Иванович\n'
 
 
 Single or double quote?
@@ -241,15 +255,18 @@ Single or double quote?
 * Choose one and keep consistency in code
 * Python console uses ``'``, this is why I use ``'`` in this book
 * ``doctest`` uses single quotes and throws error on double quotes
+* Avoid single quotes, when ``str`` has a lot of contractions:
 
-.. code-block:: python
+    .. code-block:: python
 
-    my_str = 'it\'s José\'s book'
-    my_str = "it's José's book"
+        my_str = 'it\'s José\'s book'
+        my_str = "it's José's book"
 
-.. code-block:: python
+* HTML uses double quotes, hence it's convenient to use single ones for ``str``:
 
-    my_str = '<a href="http://python.astrotech.io">Python and Machine Learning</a>'
+    .. code-block:: python
+
+        my_str = '<a href="http://python.astrotech.io">Python and Machine Learning</a>'
 
 Escape characters
 -----------------
@@ -316,13 +333,15 @@ String immutability
 * ``str`` is immutable
 * ``str`` methods create a new modified ``str``
 * How many ``str`` are in the memory?
+* f-string formatting are preferred over ``str`` addition
 
-.. code-block:: python
+    .. code-block:: python
 
-    name = 'José'
-    name += ' Jiménez'
+        first_name = 'José'
+        last_name = 'Jiménez'
 
-    print(name)         # José Jiménez
+        print(first_name + ' ' + last_name)  # José Jiménez
+        print(f'{first_name} {last_name}')   # José Jiménez
 
 String methods
 --------------
@@ -349,7 +368,7 @@ String methods
 
 ``startswith()``
 ^^^^^^^^^^^^^^^^
-* starts_with
+* Understand this as ``starts_with``
 
 .. code-block:: python
 
@@ -385,14 +404,16 @@ String methods
     * 'Jana III Sobieskiego 1 apt 2'
     * 'Jana Iii Sobieskiego 1/2'
     * 'Jana IIi Sobieskiego 1/2'
+    * 'Jana lll Sobieskiego 1/2'
+    * ...
 
 .. code-block:: python
 
-    name = 'joSé jiMénEz'
+    name = 'joSé jiMénEz III'
 
-    name.title()    # 'José Jiménez'
-    name.upper()    # 'JOSÉ JIMÉNEZ'
-    name.lower()    # 'josé jiménez'
+    name.title()    # 'José Jiménez Iii'
+    name.upper()    # 'JOSÉ JIMÉNEZ III'
+    name.lower()    # 'josé jiménez iii'
 
 ``replace()``
 ^^^^^^^^^^^^^
