@@ -11,7 +11,7 @@ Simple collections
 ``tuple``
 ---------
 * Immutable - cannot add, modify or remove elements
-* Defining empty ``tuple``:
+* Defining with ``tuple()`` is more readable, but ``()`` is used more often:
 
     .. code-block:: python
 
@@ -72,7 +72,7 @@ Simple collections
 ``list``
 --------
 * Mutable - can add, remove, and modify values
-* Defining empty ``dict``:
+* Defining with ``list()`` is more readable, but ``[]`` is used more often
 
 .. code-block:: python
 
@@ -94,26 +94,26 @@ Simple collections
         my_list = [1, 2.0, None, False, 'José']
         my_list = list(1, 2.0, None, False, 'José')
 
-.. code-block:: python
+    .. code-block:: python
 
-    my_list = [1, 2.0, None, False, 'José']
+        my_list = [1, 2.0, None, False, 'José']
 
-    my_list[1]             # 2.0
-    my_list[2:4]           # [None, False]
-    my_list[::2]           # [1, None, 'José']
-    my_list[-1]            # 'José'
+        my_list[1]             # 2.0
+        my_list[2:4]           # [None, False]
+        my_list[::2]           # [1, None, 'José']
+        my_list[-1]            # 'José'
 
 * Can be appended or extended:
 
-.. code-block:: python
+    .. code-block:: python
 
-    my_list = [1, 2]
+        my_list = [1, 2]
 
-    my_list + [3, 4]        # [1, 2, 3, 4]
-    my_list.append(5)       # [1, 2, 3, 4, 5]
-    my_list.append([6, 7])  # [1, 2, 3, 4, 5, [6, 7]]
-    my_list.extend([8, 9])  # [1, 2, 3, 4, 5, [6, 7], 8, 9]
-    my_list.insert(0, 'a')  # ['a', 1, 2, 3, 4, 5, [6, 7], 8, 9]
+        my_list + [3, 4]        # [1, 2, 3, 4]
+        my_list.append(5)       # [1, 2, 3, 4, 5]
+        my_list.append([6, 7])  # [1, 2, 3, 4, 5, [6, 7]]
+        my_list.extend([8, 9])  # [1, 2, 3, 4, 5, [6, 7], 8, 9]
+        my_list.insert(0, 'a')  # ['a', 1, 2, 3, 4, 5, [6, 7], 8, 9]
 
 * Length of a ``list``:
 
@@ -124,124 +124,126 @@ Simple collections
 
 ``set``
 -------
-* Only unique values
+* Defining only with ``set()``
+
+    .. code-block:: python
+
+        my_set = set()
+
 * No need for comma for one element ``set``
 
-.. code-block:: python
+    .. code-block:: python
 
-    my_set = set()
+        my_set = {1}
+        my_set = set(1)
 
-.. code-block:: python
+* Only unique values:
 
-    my_set = {1}
-    my_set = set(1)
+    .. code-block:: python
 
-.. code-block:: python
+        my_set = {1, 3, 1}       # {1, 3}
+        my_set = set([1, 3, 1])  # {1, 3}
 
-    my_set = {1, 3, 1}       # {1, 3}
-    my_set = set([1, 3, 1])  # {1, 3}
+* Mutable - can add, remove, and modify values:
 
-.. code-block:: python
+    .. code-block:: python
 
-    my_set = {1, 2, 3}       # {1, 2, 3}
+        my_set = {1, 2, 3}       # {1, 2, 3}
 
-    my_set.add(4)            # {1, 2, 3, 4}
-    my_set.add(4)            # {1, 2, 3, 4}
-    my_set.add(3)            # {1, 2, 3, 4}
+        my_set.add(4)            # {1, 2, 3, 4}
+        my_set.add(4)            # {1, 2, 3, 4}
+        my_set.add(3)            # {1, 2, 3, 4}
 
-    my_set.update([4, 5])    # {1, 2, 3, 4, 5}
-    my_set.update({4, 5})    # {1, 2, 3, 4, 5}
+        my_set.update([4, 5])    # {1, 2, 3, 4, 5}
+        my_set.update({4, 5})    # {1, 2, 3, 4, 5}
 
-.. code-block:: python
+* Use of ``set`` operations with special syntax:
 
-    {1,2} - {2,3}            # {1}        # Subtract
-    {1,2} | {2,3}            # {1, 2, 3}  # Sum
-    {1,2} & {2,3}            # {2}        # Union
-    {1,2} ^ {2,3}            # {1, 3}     # Symmetrical difference
-    {1,2} + {3,4}            # TypeError: unsupported operand type(s) for +: 'set' and 'set'
+    .. code-block:: python
 
-.. code-block:: python
+        {1,2} - {2,3}            # {1}        # Subtract
+        {1,2} | {2,3}            # {1, 2, 3}  # Sum
+        {1,2} & {2,3}            # {2}        # Union
+        {1,2} ^ {2,3}            # {1, 3}     # Symmetrical difference
+        {1,2} + {3,4}            # TypeError: unsupported operand type(s) for +: 'set' and 'set'
 
-    my_set = {1, 2.0, None, False, 'José'}
+* Slicing ``set``:
 
-    my_set[1]                # 2
-    my_set[2:4]              # {None, False}
-    my_set[::2]              # {1, None, 'José'}
-    my_set[-1]               # 'José'
+    .. code-block:: python
 
-.. code-block:: python
+        my_set = {1, 2.0, None, False, 'José'}
 
-    my_set = {1, 2, 3}
-    len(my_set)              # 3
+        my_set[1]                # 2
+        my_set[2:4]              # {None, False}
+        my_set[::2]              # {1, None, 'José'}
+        my_set[-1]               # 'José'
 
-.. code-block:: python
+* Length of a ``set``:
 
-    names = ['Max', 'Иван', 'José', 'Max']
+    .. code-block:: python
 
-    unique_names = set(names)
-    # {'Max', 'Иван', 'José'}
+        my_set = {1, 2, 3}
+        len(my_set)              # 3
+
+* Converting ``list`` to ``set`` deduplicate items
+
+    .. code-block:: python
+
+        names = ['Max', 'Иван', 'José', 'Max']
+
+        unique_names = set(names)
+        # {'Max', 'Иван', 'José'}
 
 ``dict``
 --------
-* Key - Value storage
-* Key can be any hashable object
-* Value can be any object
 * ``dict()`` items order changes!
+* Declaring with ``dict()`` is more readable, but ``{}`` is used more often:
 
-.. code-block:: python
+    .. code-block:: python
 
-    my_dict = {
-        'first_name': 'José',
-        'last_name': 'Jiménez'
-    }
+        my_dict = {}
+        my_dict = dict()
 
-    my_dict['last_name']
-    # 'Jiménez'
+* Key - Value storage:
 
-.. code-block:: python
+    .. code-block:: python
 
-    my_dict = {
-        1961: 'First Human Space Flight',
-        1969: 'First Step on the Moon',
-    }
+        my_dict = {
+            'first_name': 'José',
+            'last_name': 'Jiménez'
+        }
 
-    my_dict[1969]
-    # 'First Step on the Moon'
+* Duplicating items are overridden by latter:
 
-.. code-block:: python
+    .. code-block:: python
 
-    my_dict = {
-        'name': 'José',
-        'name': 'Иван',
-    }
-    # {'name': 'Иван'}
+        my_dict = {
+            'name': 'José',
+            'name': 'Иван',
+        }
+        # {'name': 'Иван'}
 
-.. code-block:: python
+* Key can be any hashable object:
 
-    my_dict = {
-        'astronaut': {'first_name': 'José', 'last_name': 'Jiménez'},
-        'agency': ['NASA', 'Roscosmos', 'ESA'],
-        'age': 42,
-    }
+    .. code-block:: python
 
-    my_dict['agency']                   # ['NASA', 'Roscosmos', 'ESA']
-    my_dict['astronaut']['first_name']  # José
+        my_dict = {
+            1961: 'First Human Space Flight',
+            1969: 'First Step on the Moon',
+        }
 
+* Value can be any object:
 
-.. code-block:: python
+    .. code-block:: python
 
-    my_dict = {
-        'first_name': 'José',
-        'last_name': 'Jiménez',
-        'age': 42,
-    }
+        my_dict = {
+            'astronaut': {'first_name': 'José', 'last_name': 'Jiménez'},
+            'agency': ['NASA', 'Roscosmos', 'ESA'],
+            'age': 42,
+        }
 
-    my_dict.keys()                    # ['first_name', 'last_name', 'age']
-    my_dict.values()                  # ['José', 'Jiménez', 42]
-    my_dict.items()                   # [('first_name', 'José'), ('last_name', 'Jiménez'), ('age', 42)]
-
-Accessing ``dict`` values with ``[...]`` and ``.get(...)``
-----------------------------------------------------------
+Accessing ``dict`` values
+-------------------------
 * ``[...]`` throws ``KeyError`` exception if key not found in ``dict``
 * ``.get(...)`` returns ``None`` if key not found
 * ``.get(...)`` can have default value, if key not found
@@ -251,51 +253,63 @@ Accessing ``dict`` values with ``[...]`` and ``.get(...)``
     data = {
         'first_name': 'José',
         'last_name': 'Jiménez',
+        'age': 42,
+        1961: 'First Human Space Flight',
+        1969: 'First Step on the Moon',
     }
 
     data['last_name']          # 'Jiménez'
     data.get('last_name')      # 'Jiménez'
 
+    data[1961]                 # 'First Human Space Flight'
+    data.get(1961)             # 'First Human Space Flight'
+
     data['agency']             # KeyError: 'agency'
     data.get('agency')         # None
-    data.get('agency', 'n/a')  # n/a
+    data.get('agency', 'n/a')  # 'n/a'
+
+Accessing ``dict`` values in bulk
+---------------------------------
+.. code-block:: python
+
+    my_dict = {
+        'first_name': 'José',
+        'last_name': 'Jiménez',
+        'age': 42,
+    }
+
+    my_dict.keys()    # ['first_name', 'last_name', 'age']
+    my_dict.values()  # ['José', 'Jiménez', 42]
+    my_dict.items()   # [('first_name', 'José'), ('last_name', 'Jiménez'), ('age', 42)]
 
 ``dict`` vs. ``set``
 --------------------
-* ``set()`` and ``dict()`` both use ``{`` and ``}`` brackets
+* ``set()`` and ``dict()`` both use ``{`` and ``}`` braces:
 
-.. code-block:: python
+    .. code-block:: python
 
-    {}                                # dict
-    {1}                               # set
-    {1, 2}                            # set
-    {1: 2}                            # dict
-    {1:1, 2:2}                        # dict
+        {}                                # dict
+        {1}                               # set
+        {1, 2}                            # set
+        {1: 2}                            # dict
+        {1:1, 2:2}                        # dict
 
-.. code-block:: python
+* Despite similar syntax, they are different types:
 
-    my_data = {}
-    isinstance(my_data, (set, dict))  # True
-    isinstance(my_data, dict)         # True
-    isinstance(my_data, set)          # False
+    .. code-block:: python
 
-    my_data = {1}
-    isinstance(my_data, dict)         # False
-    isinstance(my_data, set)          # True
+        my_data = {}
+        isinstance(my_data, (set, dict))  # True
+        isinstance(my_data, dict)         # True
+        isinstance(my_data, set)          # False
 
-    my_data = {1: 1}
-    isinstance(my_data, dict)         # True
-    isinstance(my_data, set)          # False
+        my_data = {1}
+        isinstance(my_data, dict)         # False
+        isinstance(my_data, set)          # True
 
-
-How to initialize?
-==================
-* It's a good practice to use more readable and explicit name
-* ``list()`` are preferred over ``[]``
-* ``tuple()`` are preferred over ``()``
-* ``dict()`` are preferred over ``{}``
-* ``set()``
-* Although people tend to use shorter version more often
+        my_data = {1: 1}
+        isinstance(my_data, dict)         # True
+        isinstance(my_data, set)          # False
 
 
 Nested collections
@@ -319,7 +333,7 @@ Nested collections
 
 Multidimensional lists
 ----------------------
-* Readability Counts!
+* Readability counts:
 
     .. code-block:: python
 
@@ -333,7 +347,7 @@ Multidimensional lists
             [7, 8, 9],
         ]
 
-* Getting element from nested lists
+* Getting element from nested lists:
 
     .. code-block:: python
 
@@ -353,7 +367,7 @@ Mixed types
         [1, 2, 3],
         (4, 5, 6),
         {7, 8, 9},
-        {'first_name': 'José', 'last_name': 'Jiménez'}
+        {'first_name': 'José', 'last_name': 'Jiménez', 'age': 42}
     ]
 
     array[3]['last_name']  # 'Jiménez'
@@ -361,48 +375,48 @@ Mixed types
 
 How Python understands types?
 =============================
-* result of a ``type(what)`` for each line
+* Result of a ``type(what)`` for each line:
 
-.. code-block:: python
+    .. code-block:: python
 
-    what = 1, 2      # <class 'tuple'>
-    what = (1, 2)    # <class 'tuple'>
+        what = 1, 2      # <class 'tuple'>
+        what = (1, 2)    # <class 'tuple'>
 
-.. code-block:: python
+    .. code-block:: python
 
-    what = 'foo'     # <class 'str'>
-    what = ('foo')   # <class 'str'>
+        what = 'foo'     # <class 'str'>
+        what = ('foo')   # <class 'str'>
 
-    what = 'foo',    # <class 'tuple'>
-    what = ('foo',)  # <class 'tuple'>
+        what = 'foo',    # <class 'tuple'>
+        what = ('foo',)  # <class 'tuple'>
 
-.. code-block:: python
+    .. code-block:: python
 
-    what = 1.       # <class 'float'>
-    what = (1.)     # <class 'float'>
+        what = 1.       # <class 'float'>
+        what = (1.)     # <class 'float'>
 
-    what = .5       # <class 'float'>
-    what = (.5)     # <class 'float'>
+        what = .5       # <class 'float'>
+        what = (.5)     # <class 'float'>
 
-    what = 1.0      # <class 'float'>
-    what = 1        # <class 'int'>
+        what = 1.0      # <class 'float'>
+        what = 1        # <class 'int'>
 
-.. code-block:: python
+    .. code-block:: python
 
-    what = 10.5     # <class 'float'>
-    what = (10.5)   # <class 'float'>
+        what = 10.5     # <class 'float'>
+        what = (10.5)   # <class 'float'>
 
-    what = 10,5     # <class 'tuple'>
-    what = (10,5)   # <class 'tuple'>
+        what = 10,5     # <class 'tuple'>
+        what = (10,5)   # <class 'tuple'>
 
-    what = 10.      # <class 'float'>
-    what = (10.)    # <class 'float'>
+        what = 10.      # <class 'float'>
+        what = (10.)    # <class 'float'>
 
-    what = 10,      # <class 'tuple'>
-    what = (10,)    # <class 'tuple'>
+        what = 10,      # <class 'tuple'>
+        what = (10,)    # <class 'tuple'>
 
-    what = 10       # <class 'int'>
-    what = (10)     # <class 'int'>
+        what = 10       # <class 'int'>
+        what = (10)     # <class 'int'>
 
 
 More advanced topics

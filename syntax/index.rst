@@ -46,7 +46,7 @@ Line comments
 
 Inline comments
 ---------------
-* some code, two spaces, hash (``#``), space and then comment:
+* Source code, two spaces, hash (``#``), space and then comment:
 
     .. code-block:: python
 
@@ -78,8 +78,8 @@ Docstring
     * Class
     * Method / Function
 
-* It is accessible in ``.__doc__`` property of an object
-* Used for ``help()`` documentation
+* It is accessible in ``__doc__`` property of an object
+* Used for generating ``help()`` documentation
 
     .. code-block:: python
 
