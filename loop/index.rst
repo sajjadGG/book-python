@@ -403,8 +403,8 @@ Keywords in loops
         if not number:
             break
 
-* ``continue`` - skips iteration
---------------------------------
+``continue`` - skips iteration
+------------------------------
 .. code-block:: python
 
     for i in range(0, 10):
