@@ -1,38 +1,51 @@
+.. _Exceptions:
+
 **********
 Exceptions
 **********
 
-Po co są wyjątki?
-=================
-Wyjątki stosowane są wtedy, gdy pewna metoda albo funkcja nie może wykonać się poprawnie. Na przykład kiedy dane wprowadzone od użytkownika są nieprawidłowe albo jest problem z dostępem do zasobu (np. pliku). Wyjątek jest wtedy podnoszony, żeby powiadomić program, że funkcja nie jest w stanie sobie poradzić z napotkanym problemem. Program może wtedy albo próbować poradzić sobie z wyjątkiem, albo przekazać go wyżej, dochodząc ostatecznie do warstwy systemu.
 
-Wyjątki nie powinny być stosowane przy normalnym użytkowaniu projektowanej aplikacji. Wystąpienie wyjątku oznacza błąd programu!
+What are and why to use exceptions?
+===================================
+* Used when error occurs
+* You can catch exception and handles erroneous situation
+* Exception example situations:
+
+    * File does not exists
+    * Function argument is invalid
+    * Network or database connection could not be established
 
 
-Podnoszenie wyjątków
-====================
+Most common exceptions
+======================
+.. csv-table:: Most common exceptions
+    :header-rows: 1
+    :widths: 25, 75
+    :file: data/exception-most-common.csv
+
+
+Raising exceptions
+==================
 .. code-block:: python
 
-    raise NameError
+    raise RuntimeError
+    raise RuntimeError('Some message')
 
-Tworzenie własnych wyjątków
-===========================
 .. code-block:: python
 
-    class CtgDoesNotExistsError(ArithmeticError):
-        strerror = 'Cotangens dla kąta 90 nie istnieje'
-        errno = 10
+    def apollo18():
+        raise NotImplementedError('Mission dropped due to budget cuts')
 
-    def ctg(deg):
-        if deg == 90:
-            raise CtgDoesNotExistsError
-        return "wylicz cotangens kąta"
+    def apollo13():
+        raise RuntimeError('Mid-flight Oxygen tank explosion')
 
 
-Przechwytywanie wyjątków
-========================
-Python spróbuje najpierw wykonać to co będzie zaprogramowane w ramach słowa kluczowego ``try``. Jeżeli w trakcie wykonywania tego fragmentu kodu interpreter napotka na wyjątek, kod zostanie przerwany i zostanie wykonany fragment zaprogramowany w ramach słowa kluczowego ``except``, odnoszący się do danego wyjątku, albo do wszystkich pozostałych ``else``. Na koniec, niezależnie od tego czy wyjątek wystąpił czy nie, zostanie wykonany fragment zawarty w ``finally``.
+    apollo18()
+    apollo13()
 
+
+Catching exceptions
+===================
 * ``try``
 * ``except``
 * ``else``
@@ -40,53 +53,60 @@ Python spróbuje najpierw wykonać to co będzie zaprogramowane w ramach słowa 
 
 .. code-block:: python
 
-    def bar():
-        raise NameError
+    def apollo13():
+        raise RuntimeError('Mid-flight Oxygen tank explosion')
 
 
     try:
-        bar()
+        apollo13()
+    except RuntimeError:
+        print('Houston we have a problem!')
 
-    except NameError:
-        print('Błąd nazwy złapany')
-
-    except SyntaxError:
-        print('Błąd składni złapany')
 
 .. code-block:: python
-
-      while True:
-          try:
-              print('hello')
-          except:
-              continue
-
-
-      while True:
-          try:
-              print('hello')
-          except Exception:
-              continue
-
-Przykład z życia
-================
-.. code-block:: python
-
-    from django.contrib.auth.models import User
 
     try:
-        User.objects.get(id=2)
-    except User.DoesNotExists:
-        pass
+        with open(FILENAME, mode='w', encoding='utf-8') as file:
+            content = file.read()
+            print(content)
 
-Najpopularniejsze wyjątki
-=========================
-.. csv-table:: Najpopularniejsze wyjątki
-    :header-rows: 1
-    :widths: 25, 75
-    :file: data/exception-popular.csv
+    except PermissionError as e:
+        print('Permission denied')
 
-Hierarchia wyjątków
+    except OSError as e:
+        print('File not found')
+
+    except Exception as e:
+        print('Other error')
+
+    else:
+        print('Success!')
+
+    finally:
+        print('Cleaning up')
+
+.. warning:: Always catch exception!
+
+    .. code-block:: python
+
+        # Problematic code, catches also Ctrl-C
+        while True:
+            try:
+                print('hello')
+            except:
+                continue
+
+    .. code-block:: python
+
+        # Good code, user can kill loop with Ctrl-C
+        while True:
+            try:
+                print('hello')
+            except Exception:
+                continue
+
+
+Exception hierarchy
 ===================
 .. code-block:: text
 
@@ -154,78 +174,67 @@ Hierarchia wyjątków
                +-- BytesWarning
                +-- ResourceWarning
 
-Przykład wyjątków przy czytaniu plików
-======================================
-.. warning:: uważaj aby zawsze przechwytywać wyjątki! Inaczej możesz nie zabić procesu. Poniżej błędny kod
 
-      .. code-block:: python
-
-            while True:
-                try:
-                    input('Podaj ocenę: ')
-                except:
-                    continue
-
+Defining own exceptions
+=======================
 .. code-block:: python
 
-    import logging
-    log = logging.getLogger(__name__)
+    import math
 
-    log.info('Rozpoczynam program')
+
+    class CotangentDoesNotExistsError(ArithmeticError):
+        strerror = 'Cotangent for 180 degrees is infinite'
+        errno = 10
+
+
+    def cotangent(deg):
+        if deg == 180:
+            raise CotangentDoesNotExistsError
+
+        radians = math.radians(degrees)
+        return 1 / math.tan(radians)
+
+
+    cotangent(180)
+    # CotangentDoesNotExistsError: Cotangent for 180 degrees is infinite
+
+
+Real life use-case
+==================
+.. code-block:: python
+
+    from django.contrib.auth.models import User
 
     try:
-
-        log.debug('Próbuję odczytać plik')
-
-        with open(FILENAME, 'w') as file:
-            content = file.read()
-            print(content)
-
-        log.debug('Plik odczytany i zamknięty')
-
-    except PermissionError as e:
-        log.error(e)
-        print(e.strerror)
-
-    except OSError as e:
-        log.error(e)
-        print(e.strerror)
-
-    except Exception as e:
-        log.error(e)
-        print(e.strerror)
-
-    else:
-        log.info('Operacje na pliku zakończyły się powodzeniem')
-
-    finally:
-        log.debug('Zakończenie pracy nad plikiem')
-
-    log.info('Kończymy program')
+        User.objects.get(username='jose-jimenez')
+    except User.DoesNotExists:
+        print('No such user')
 
 
-Korzystanie z ``warnings``
-
+``warnings``
+============
 .. code-block:: python
 
     import warnings
 
-    def sumuj(a, b):
-        warnings.warn('Przestarzala nazwa, uzyj sum()', PendingDeprecationWarning)
-        return a + b
 
-    def sum(a, b):
-        return a + b
+    def ariane5():
+        warnings.warn('ariane5(), is deprecated, please use ariane6() instead', PendingDeprecationWarning)
+        print('Launching rocket Ariane 5')
+
+    def ariane6():
+        print('Launching rocket Ariane 6')
 
 
-    sumuj(1, 2)
-    sum(1, 2)
+    ariane5()
+    ariane6()
 
 .. code-block:: console
 
     $ python __notepad__.py
 
+.. code-block:: console
+
     $ python -W all __notepad__.py
-    __notepad__.py:5: PendingDeprecationWarning: Przestarzala nazwa, uzyj sum()
-      warnings.warn('Przestarzala nazwa, uzyj sum()', PendingDeprecationWarning)
+    __notepad__.py:5: PendingDeprecationWarning: ariane5(), is deprecated, please use ariane6() instead
 
