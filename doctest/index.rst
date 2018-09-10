@@ -177,46 +177,49 @@ Running doctest from standalone scripts
 Practical example
 =================
 
-Non negative distances
-----------------------
+Celsius to Kelvin temperature conversion
+----------------------------------------
 .. code-block:: python
 
     from typing import Union
 
 
-    def kilometers_from_meters(km: Union[int, float]) -> float:
+    def celsius_to_kelvin(temperature_in_celsius: Union[int, float]) -> float:
         """
-        >>> kilometers_from_meters(1)
-        1000.0
+        >>> celsius_to_kelvin(0)
+        273.15
 
-        >>> kilometers_from_meters(0)
+        >>> celsius_to_kelvin(1)
+        274.15
+
+        >>> celsius_to_kelvin(-1)
+        272.15
+
+        >>> celsius_to_kelvin(-273.15)
         0.0
 
-        >>> kilometers_from_meters(-1)
+        >>> celsius_to_kelvin(-274.15)
         Traceback (most recent call last):
             ...
-        ValueError: Argument must be positive
+        ValueError: Argument must be greater than -273.15
 
-        >>> kilometers_from_meters([1, 2])
+        >>> celsius_to_kelvin([-1, 0, 1])
         Traceback (most recent call last):
             ...
-        ValueError: Invalid Argument
+        ValueError: Argument must be int or float
 
-        >>> kilometers_from_meters('one')
+        >>> celsius_to_kelvin('one')
         Traceback (most recent call last):
             ...
-        ValueError: Invalid Argument
-
-        >>> kilometers_from_meters(1.5)
-        1500.0
+        ValueError: Argument must be int or float
         """
-        if not isinstance(km, (int, float)):
-            raise ValueError('Invalid Argument')
+        if not isinstance(temperature_in_celsius, (float, int)):
+            raise ValueError('Argument must be int or float')
 
-        if km < 0:
-            raise ValueError('Argument must be positive')
+        if temperature_in_celsius < -273.15:
+            raise ValueError('Argument must be greater than -273.15')
 
-        return float(1000 * km)
+        return float(temperature_in_celsius + 273.15)
 
 Email regex
 -----------
@@ -233,18 +236,25 @@ Email regex
 
         >>> is_valid_email('jose.jimenez@nasa.gov')
         True
+
         >>> is_valid_email('Jose.Jimenez@nasa.gov')
         True
+
         >>> is_valid_email('+jose.jimenez@nasa.gov')
         False
+
         >>> is_valid_email('jose.jimenez+@nasa.gov')
         True
+
         >>> is_valid_email('jose.jimenez+newsletter@nasa.gov')
         True
+
         >>> is_valid_email('jose.jimenez@.gov')
         False
+
         >>> is_valid_email('@nasa.gov')
         False
+
         >>> is_valid_email('jose.jimenez@nasa.g')
         False
         """
@@ -257,20 +267,20 @@ Email regex
 Assignments
 ===========
 
-Temperature conversion doctest
-------------------------------
-#. Napisz funkcję, która przeliczy temperaturę podaną w skali Celsiusza na stopnie Kelvina
-#. K = °C + 273.15
-#. Temperatura Kelvina nie może być ujemna
+Distance conversion doctest
+---------------------------
+#. Napisz funkcję, która przeliczy dystans podany w metrach na kilometry
+#. 1 km = 1000 m
+#. Dystans nie może być ujemny
+#. Zwracany dystans musi być zawsze float
 #. Napisz testy do rozwiązania i pokryj przypadki:
 
-    * temperatura Celsiusza jest -1 (ujemna)
-    * temperatura Celsiusza jest 0 (zero)
-    * temperatura Celsiusza jest 1 (dodatnia)
-    * temperatura Celsiusza jest -300
-    * temperatura Celsiusza jest ``float``
-    * temperatura Celsiusza jest ``int``
-    * podano listę temperatur
+    * dystans w metrach jest -1 (ujemny)
+    * dystans w metrach jest 0 (zero)
+    * dystans w metrach jest 1 (dodatni)
+    * dystans w metrach jest ``float``
+    * dystans w metrach jest ``int``
+    * podano listę odległości
     * podany parametr to ``str``
 
 :About:

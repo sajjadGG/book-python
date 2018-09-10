@@ -109,24 +109,66 @@ Podstawowe użycie jest następujące.
 
 .. code-block:: python
 
-    from matplotlib import pyplot as plt
+    import matplotlib.pyplot as plt
 
-    plt.plot(0, 0, 'o')
+    x = [1, 2, 3, 4]
+    y = [1, 2, 3, 4]
+    plt.plot(x, y, 'o')
     plt.show()
 
 .. code-block:: python
 
-    import math
-    import random
-    from matplotlib import pyplot as plt
+    import numpy as np
+    import matplotlib.pyplot as plt
 
-    x1 = [x*0.01 for x in range(0,628)]
-    y1 = [math.sin(x*0.01)+random.gauss(0, 0.1) for x in range(0,628)]
-    plt.plot(x1, y1)
+    def f(t):
+        return np.exp(-t) * np.cos(2*np.pi*t)
 
-    x2 = [x*0.5 for x in range(0,round(63/5))]
-    y2 = [math.cos(x*0.5) for x in range(0,round(63/5))]
-    plt.plot(x2, y2, 'o-')
+    t1 = np.arange(0.0, 5.0, 0.1)
+    t2 = np.arange(0.0, 5.0, 0.02)
+
+    plt.figure(1)
+    plt.subplot(211)
+    plt.plot(t1, f(t1), 'bo', t2, f(t2), 'k')
+
+    plt.subplot(212)
+    plt.plot(t2, np.cos(2*np.pi*t2), 'r--')
+    plt.show()
+
+.. code-block:: python
+
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    y = np.arange(0.0, 2.0, 0.01)
+    x = 1 + np.sin(2 * np.pi * y)
+
+    fig, ax = plt.subplots()
+
+    ax.plot(y, x)
+    ax.grid()
+    ax.set(
+        xlabel='time (s)',
+        ylabel='voltage (mV)',
+        title='Voltage in Time')
+
+    plt.show()
+
+.. code-block:: python
+
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    t = np.arange(0.01, 5.0, 0.01)
+    s = np.exp(-t)
+    plt.plot(t, s)
+
+    plt.xlim(5, 0)  # decreasing time
+
+    plt.xlabel('decreasing time (s)')
+    plt.ylabel('voltage (mV)')
+    plt.title('Should be growing...')
+    plt.grid(True)
 
     plt.show()
 

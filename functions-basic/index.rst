@@ -129,7 +129,7 @@ Type annotations
     add('José', 'Jiménez')
     # 'JoséJiménez'
 
-.. note:: więcej na ten temat w rozdziale dotyczącym :numref:`Type Annotation`
+.. note:: więcej na ten temat w rozdziale dotyczącym :ref:`Type Annotation`
 
 Named arguments
 ---------------
@@ -220,6 +220,11 @@ Recurrence
             return 1
         else:
             return n * factorial(n-1)
+
+
+More advanced topics
+====================
+.. note:: The topic will be continued in Intermediate and Advanced part of the book
 
 
 Assignments
