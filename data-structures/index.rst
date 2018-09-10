@@ -11,53 +11,64 @@ Simple collections
 ``tuple``
 ---------
 * Immutable - cannot add, modify or remove elements
-* Required comma for one element ``tuple``
-* Brackets are optional
+
+* Defining empty tuple:
+
+    .. code-block:: python
+
+        my_tuple = ()
+        my_tuple = tuple()
+
+* Single element ``tuple`` require comma at the end (important!)
+* Braces are optional
+
+    .. code-block:: python
+
+        my_tuple = 1,
+        my_tuple = (1,)
+
 * Can store any type
 
-.. code-block:: python
+    .. code-block:: python
 
-    my_tuple = ()
-    my_tuple = tuple()
+        my_tuple = 1, 2.0, None, False, 'José'
+        my_tuple = (1, 2.0, None, False, 'José')
+        my_tuple = tuple(1, 2.0, None, False, 'José')
 
-.. code-block:: python
+* Slicing tuple
 
-    my_tuple = 1,
-    my_tuple = (1,)
+    .. code-block:: python
 
-.. code-block:: python
+        my_tuple = (1, 2, 3, 4, 5)
 
-    my_tuple = 1, 2.0, None, False, 'José'
-    my_tuple = (1, 2.0, None, False, 'José')
-    my_tuple = tuple(1, 2.0, None, False, 'José')
+        my_tuple[2]             # 3
+        my_tuple[-1]            # 5
+        my_tuple[:3]            # (1, 2, 3)
+        my_tuple[3:]            # (4, 5)
+        my_tuple[::2]           # (1, 3, 5)
+        my_tuple[1:4]           # (2, 3, 4)
 
-.. code-block:: python
+    .. code-block:: python
 
-    my_tuple = (1, 2, 3, 4, 5)
+        my_tuple = (1, 2, 3, 4, 5)
 
-    my_tuple[:3]            # (1, 2, 3)
-    my_tuple[1:4]           # (2, 3, 4)
-    my_tuple[3:]            # (4, 5)
-    my_tuple[::2]           # (1, 3, 5)
-    my_tuple[-1]            # 5
+        MIN = 1
+        MAX = 4
+        my_tuple[MIN:MAX]       # (2, 3, 4)
 
-.. code-block:: python
+    .. code-block:: python
 
-    my_tuple = (1, 2, 3, 4, 5)
+        my_tuple = (1, 2, 3, 4, 5)
 
-    my_tuple[1:5]           # (2, 3, 4, 5)
+        BETWEEN = slice(1, 4)
+        my_tuple[BETWEEN]       # (2, 3, 4)
 
-    MIN = 1
-    MAX = 5
-    my_tuple[MIN:MAX]       # (2, 3, 4, 5)
+* Length of a ``tuple``
 
-    BETWEEN = slice(MIN, MAX)
-    my_tuple[BETWEEN]       # (2, 3, 4, 5)
+    .. code-block:: python
 
-.. code-block:: python
-
-    my_tuple = (1, 2, 3)
-    len(my_tuple)           # 3
+        my_tuple = (1, 2, 3, 4, 5)
+        len(my_tuple)           # 5
 
 ``list``
 --------
@@ -274,10 +285,11 @@ Accessing ``dict`` values with ``[...]`` and ``.get(...)``
 How to initialize?
 ==================
 * It's a good practice to use more readable and explicit name
-* ``list()`` over ``[]``
-* ``tuple()`` over ``()``
-* ``dict()`` over ``{}``
+* ``list()`` are preferred over ``[]``
+* ``tuple()`` are preferred over ``()``
+* ``dict()`` are preferred over ``{}``
 * ``set()``
+* Although people tend to use shorter version more often
 
 
 Nested collections
