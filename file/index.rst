@@ -27,8 +27,8 @@ Read and write modes
     :file: data/file-open-modes.csv
 
 
-Obsługa wyjątków
-================
+Exception handling
+==================
 .. literalinclude:: src/file-exception.py
     :language: python
     :caption: Exception handling while accessing files
@@ -37,8 +37,8 @@ Obsługa wyjątków
 Assignments
 ===========
 
-Zawartość zadanego pliku
-------------------------
+Content of a requested file
+---------------------------
 #. Napisz program, który wyświetli na ekranie zawartość pliku o nazwie podanej przez użytkownika.
 #. Dopisz obsługę wyjątków dla braku uprawnień oraz tego że plik nie istnieje.
 
@@ -47,8 +47,8 @@ Zawartość zadanego pliku
     * Lines of code to write: 5 lines
     * Estimated time of completion: 5 min
 
-Parsowanie ``/etc/hosts``
--------------------------
+Parsing ``/etc/hosts``
+----------------------
 #. Do pliku ``hosts.txt`` w katalogu gdzie będzie Twój skrypt zapisz kod z szablonu: :numref:`listing-file-etc-hosts`
 #. Ważne są komentarze, białe spacje i linie przerwy
 #. Przedstaw go w formie listy dictów jak w przykładzie poniżej: :numref:`listing-file-hosts`

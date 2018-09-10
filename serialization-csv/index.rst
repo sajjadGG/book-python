@@ -5,11 +5,13 @@ CSV Serialization
 *****************
 
 
-Odczytywanie danych z plików CSV
-================================
-* dobra praktyka: zawsze podawać ``encoding``
-* dobra praktyka: zawsze podawać ``quotechar``
-* dobra praktyka: zawsze podawać ``delimiter``
+Reading data from CSV files
+===========================
+* Good practice is to always set:
+
+    * ``encoding``
+    * ``quotechar``
+    * ``delimiter``
 
 .. literalinclude:: src/csv-read.py
     :name: listing-csv-read
@@ -17,13 +19,15 @@ Odczytywanie danych z plików CSV
     :caption: Zapis do plików csv używając ``csv.DictReader()``
 
 
-Zapis do plików CSV
-===================
-* dobra praktyka: zawsze podawać ``encoding``
-* dobra praktyka: zawsze podawać ``quoting``
-* dobra praktyka: zawsze podawać ``quotechar``
-* dobra praktyka: zawsze podawać ``delimiter``
-* dobra praktyka: zawsze podawać ``lineterminator``
+Writing to CSV files
+====================
+* Good practice is to always set:
+
+    * ``encoding``
+    * ``quoting``
+    * ``quotechar``
+    * ``delimiter``
+    * ``lineterminator``
 
 .. literalinclude:: src/csv-write.py
     :name: listing-csv-write
@@ -31,8 +35,8 @@ Zapis do plików CSV
     :caption: Zapis do plików csv używając ``csv.DictWriter()``
 
 
-Parsowanie innych plików za pomocą ``csv.DictReader()``
-=======================================================
+Parsing non-CSV files with ``csv.DictReader()``
+===============================================
 
 Parsing ``/etc/passwd``
 -----------------------
@@ -51,8 +55,8 @@ Parsing Java properties file
 Assignments
 ===========
 
-Wczytywanie pliku ``csv``
--------------------------
+Reading ``csv``
+---------------
 * https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv
 
 #. Otwórz w przeglądarce podany powyżej URL
@@ -76,8 +80,8 @@ Wczytywanie pliku ``csv``
     * Lines of code to write: 6 linie
     * Estimated time of completion: 15 min
 
-Serializacja ``csv``
---------------------
+Writing ``csv``
+---------------
 #. Za pomocą ``csv.DictWriter()`` zapisz do pliku dane o zmiennej strukturze
 #. Podaj jawnie ``encoding``, ``delimiter``, ``quotechar`` ``quoting``, ``lineterminator``
 #. ``fieldnames`` nie może być wymienione wprost w skrypcie (zahardkodowane)
@@ -105,8 +109,8 @@ Serializacja ``csv``
     * Umiejętność iteracji po złożonych strukturach danych
     * Dynamiczne generowanie struktur danych na podstawie innych
 
-Serializacja obiektów do CSV
-----------------------------
+Object serialization to CSV
+---------------------------
 #. Użyj obiektu ``książka_adresowa`` z listingu :numref:`listing-address-book`
 #. Za pomocą ``csv.DictWriter()`` zapisz kontakty z książki adresowej w pliku
 #. Wszystkie pola muszą być zawsze w cudzysłowiach i oddzielone średnikami, kodowanie UTF-8.
