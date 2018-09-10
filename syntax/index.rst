@@ -1,3 +1,5 @@
+.. _Syntax:
+
 ******
 Syntax
 ******
@@ -5,74 +7,102 @@ Syntax
 
 Indentation instead of braces
 =============================
-Jest to chyba najciekawsza rzecz w samym języku. Autorzy specyfikacji zdecydowali się na zastąpienie nawiasów klamrowych wcięciami, czyli tzw. białymi spacjami (ang. whitespace). Jest to dość nietypowe rozwiązanie, które okazało się bardzo rewolucyjne i niesamowicie podniosło czytelność kodu źródłowego.
+* Python uses indentation instead of braces
+* 4 spaces indentation
+* Code indented on the same level belongs to block:
 
-Sama idea spowodowała dużą polaryzację programistów. Jedni bardzo sobie chwalą to rozwiązanie, a inni przyzwyczajeni do języków przypominających składnią C są jej zaciekłymi wrogami. Osobiście jestem wielkim zwolennikiem takiego rozwiązania!
+    .. code-block:: python
+
+        if True:
+            print('This is true')
+        else:
+            print('This is false')
+
+
+End of lines
+============
+* No ``;`` at the end of lines
+* ``\r\n`` and ``\n`` is ok
 
 .. code-block:: python
 
-    from __future__ import braces
-    # SyntaxError: not a chance
-
-
-End lines
-=========
-Pierwszą rzeczą (poza znaczącymi wcięciami), która może zaskoczyć programistów przyzwyczajonych do składni C jest brak konieczności, a nawet zalecenie do niestawiania znaku średnika ``;`` na końcu linii. Programy interpretowane są linia po linii. Linia kończy się tam, gdzie ostatni znak polecenia.
-
-Python pozwala na stosowanie znaków końca linii zarówno znanych z systemów Windows (\r\n) jak i środowiska \*nix (\n). W tych materiałach będziemy posługiwali się znakiem \n symbolizującym koniec linii.
-
+    print('Hello!\nHow are you?')
+    print('Hello!\r\nHow are you?')
 
 Comments
 ========
-Komentarze są wykorzystywane by podpowiedzieć programiście, który będzie czytał kod źródłowy w przyszłości co dana funkcja, metoda lub po prostu kolejna linijka kodu robi. Jestem wielkim fanem pisania tak swoich programów, aby komentarze w kodzie były zbędne. Dobrego dzielenia aplikacji na mniejsze części, właściwego stosowania whitespace'ów, precyzyjnego i opisowego ich nazywania. Komentarze mogą być bardzo przydatne, ale w większości sytuacji jeżeli potrzebujemy z nich skorzystać to znaczy, że logicznie źle rozplanowaliśmy układ naszego kodu. Ponadto komentarze mają brzydką właściwość szybkiego starzenia się, tzn. kod ewoluuje, a komentarz opisuje zachowanie starej funkcji. Może to powodować dezinformację.
 
-Commented code
---------------
-Bardzo często spotykam się z problemem zakomntowanego kodu. O ile komentarze opisujące działanie poszczególnych elementów są użyteczne to zakomentowany kod jest nieakceptowalny. Często stosujemy tą technikę by chwilowo wyłączyć działanie jakiejś funkcjonalności. Jednakże niedopuszczalne jest commitowanie zmian zawierających zakomentowany kod. Kod taki bardzo często jest już niedziałający i taki pozostanie na zawsze. Bardzo często słyszę argument, że może kiedyś będziemy chcieli powrócić do tego kodu i bez sensu będzie go wymyślać i pisać na nowo. W dobie systemów kontroli wersji sytuacja ta nie będzie stwarzała jakiegokolwiek problemu. Wystarczy przeglądnąć diffa (podgląd różnicowy) pliku albo wykonać ``git blame`` i mamy dostęp do starego sposobu.
-
-Nieuruchamiający się i niewywoływany kod nie powinien znaleźć się w repozytorium. Kropka!
-
-Commenting line
+Line comments
 ---------------
-W Pythonie mamy kilka sposobów komentowania. Najprostszym z nich jest komentowanie całej linii poprzez wykorzystanie znaku zwanego "pound" lub "hash" ``#``. Ciąg znaków znajdujących się za ``#`` zostanie zignorowany przez kompilator.
+* ``# `` - hash and space, then comment
+* Indent must be on the same level as block indent
 
 .. code-block:: python
 
-    >>> # na ekranie otrzymamy: Hello World!
-    ... print('Hello World!')
-    Hello World!
-
-Tu możemy zaobserwować zachowanie, o którym wspominaliśmy trochę wcześniej, tzn. kontynuacja jest oznaczana przez znak zachęty trzech kropek ``...``.
+    # Jose Jimenez says hello
+    print('My name Jose Jimenez')
 
 Inline comments
 ---------------
-Kolejnym sposobem jest komentowanie inline tzn. w linijce. Tego typu komentarze stosuje się aby wytłumaczyć zachowanie poszczególnych linii kodu. Choć kompilator dopuszcza ich stosowanie, to w ramach dobrych praktyk lepiej zastąpić je komentarzami w linijce poprzedzającej wywołanie.
+* ``  # `` - some code, two spaces, hash, space, then comment
 
 .. code-block:: python
 
-    >>> print('Hello World!')  # na ekranie otrzymamy: Hello World!
-    Hello World!
-
+    print('My name Jose Jimenez')  # Jose Jimenez says hello
 
 Multiline comments
 ------------------
-Komentarze wieloliniowe w Pythonie można robić na dwa sposoby poprzez wykorzystanie trzech znaków cudzysłowia:
+* Both single and double are good
+* Single quotes ``'''``
+* Double quotes ``"""``
+* Double quotes are more common:
 
-* pojedynczego ``'''``,
-* podwójnego ``"""``.
+    .. code-block:: python
 
-W jednym i drugim przypadku cudzysłowie podwójne lub pojedyncze będzie oznaczało początek jak i koniec komentarza. Rodzaj cudzysłowiów nie ma znaczenia, ale utarło się aby stosować podwójne ``"``. W materiałach będziemy korzystać właśnie z tej notacji.
-
-.. code-block:: python
-
-    """
-    Tu jest treść komentarza, który obejmuje wiele linii
-    W ramach dobrych praktyk, powinniśmy takim komentarzem opisać każdą z funkcji,
-    aby narzędzia takie jak np. ``help()`` wyświetlały ładne podpowiadanie działania.
-    """
-
-Są dwie szkoły tworzenia takich komentarzy. Jedna mówi, aby tekst pisać bezpośrednio po znaku cudzysłowia, a druga od nowej linijki. Jest to kwestia estetyki i czytelności komentarza.
+        """
+        We choose to go to the Moon!
+        We choose to go to the Moon in this decade and do the other things,
+        not because they are easy, but because they are hard;
+        because that goal will serve to organize and measure the best of our energies and skills,
+        because that challenge is one that we are willing to accept, one we are unwilling to postpone,
+        and one we intend to win, and the others, too.
+        """
 
 Docstring
 ---------
-Pierwszy wielolinijkowy komentarz w pliku jest traktowany jako opis modułu. Może się w nim znajdować np. licencja użytkowania programu, instrukcja jego obsługi itp. Bardzo ciekawym pomysłem jest również napisanie komentarza opisującego parametry programów wykorzystującego standard \*unix takiego opisu. Dzięki temu poza samym jednoznacznym opisem działania programu zgodnym z ogólnie przyjętą konwencją dostajemy możliwość wykorzystania modułu docopt do jego sparsowania i obsługi parametrów przekazywanych z linii poleceń.
+* First multiline comment in:
+
+    * File / Module
+    * Class
+    * Method / Function
+
+* Used for ``help()`` documentation
+
+    .. code-block:: python
+
+        def apollo_dsky(noun, verb):
+            """
+            This is the Apollo Display Keyboard
+            It takes noun and verb
+            """
+            print(f'Program selected. Noun: {noun}, verb: {verb}')
+
+* Used for ``doctest``
+
+    .. code-block:: python
+
+        def add(a, b):
+            """
+            Sums two numbers.
+
+            >>> add(1, 2)
+            3
+            """
+            return a + b
+
+
+Commented out code
+------------------
+* Never!
+* Use Version Control System instead (``git blame``)
+* IDE has Local history (modifications) and you can compare file
