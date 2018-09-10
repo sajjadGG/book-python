@@ -10,44 +10,56 @@ Conditional Statements
 
 ``if``
 ------
-* Instrukcje warunkowe pozwalają kierować wykonywanymi instrukcjami pod pewnym warunkiem
-* Jeżeli kod wpisany po słowie kluczowym ``if`` wykona się jako wartość prawdziwa (niezerowa, nie-``None``, itp.), wykonany zostanie kod pod tym słowem kluczowym
+* Negative values: ``None``, ``0``, ``False``
+* Positive values: any other values
+* Checking for simple value
 
-.. code-block:: python
+    .. code-block:: python
 
-    if True:
-        print('this is True')
+        name = 'José Jiménez'
 
+        if name == 'José Jiménez':
+            print('My name José Jiménez')
+
+* Checking if value is in range
+
+    .. code-block:: python
+
+        digit = 7
+
+        if 0 <= digit < 10:
+            print('digit in is between [0, 10)')
 
 ``else``
 --------
-* Do instrukcji warunkowej można dodać słowo kluczowe ``else``
-* Wtedy, jeżeli wartość przy słowie kluczowym ``if`` ewaluuje się jako fałsz, wykonany zostanie kod pod słowem kluczowym ``else``
+* Optional
+* Executed when condition is not met
+* Checking if variable is certain value:
 
-.. code-block:: python
+    .. code-block:: python
 
-    name = 'José Jiménez'
+        name = 'José Jiménez'
 
-    if name:
-        print('Name is set')
-    else:
-        print('Name is not set')
+        if name == 'José Jiménez':
+            print('My name José Jiménez')
+        else:
+            print('My name is other')
 
+* Checking if variable is defined
 
-.. code-block:: python
+    .. code-block:: python
 
-    name = 'José Jiménez'
+        name = 'José Jiménez'
 
-    if name == 'José Jiménez':
-        print('My name José Jiménez')
-    else:
-        print('My name is other')
-
+        if name:
+            print('Name is defined')
+        else:
+            print('Name is not defined')
 
 ``elif``
 --------
-* Możliwe jest także sprawdzenie kilku warunków przed przejściem do ``else``
-* Do sprawdzenia drugiego i kolejnych warunków służy słowo kluczowe ``elif`` (w wielu innych językach rozwijane jako ``else if``)
+* Used to check for additional condition if first is not met
+* In other languages is known as ``else if``
 
 .. code-block:: python
 
@@ -60,10 +72,6 @@ Conditional Statements
     else:
         print('Your name is neither José Jiménez nor Max Peck')
 
-.. code-block:: python
-
-    if 0 <= k < n:
-        print('k in is between [0, n)')
 
 Inline ``if``
 -------------
@@ -72,15 +80,15 @@ Inline ``if``
     ip = '127.0.0.1'
 
     if '.' in ip:
-        protocol = 'ipv4'
+        protocol = 'IPv4'
     else:
-        protocol = 'ipv6'
+        protocol = 'IPv6'
 
 .. code-block:: python
 
     ip = '127.0.0.1'
 
-    protocol = 'ipv4' if '.' in ip else 'ipv6'
+    protocol = 'IPv4' if '.' in ip else 'IPv6'
 
 
 Complex expressions
@@ -179,10 +187,9 @@ Tak nie robimy:
     .. code-block:: python
 
         usernames = {'José', 'Max', 'Иван'}
-        name = 'José'
 
-        # if (! usernames.contains(name)) {}
-        if not name in usernames:
+        # if (! usernames.contains('José')) {}
+        if not 'José' in usernames:
             print('I do not know you')
         else:
             print('Hello my friend')
@@ -191,7 +198,7 @@ Tak nie robimy:
 No ``switch`` statement?!
 =========================
 * Why ``switch`` is bad practise?
-* PEP 275 - switch statement
+* `PEP 275 <https://www.python.org/dev/peps/pep-0275/>`_
 
 .. code-block:: python
 
@@ -203,17 +210,6 @@ No ``switch`` statement?!
         print('Your name is Max Peck')
     else:
          print('Your name is other')
-
-.. code-block:: python
-
-    switch = {
-        'José Jiménez': 'My name José Jiménez',
-        'Иван Иванович': 'Your name is Иван Иванович',
-        'Max Peck': 'Your name is Max Peck',
-    }
-
-    switch['José Jiménez']
-    # 'My name José Jiménez'
 
 .. code-block:: python
 
@@ -247,7 +243,7 @@ Conditioning on user input
 --------------------------
 #. Napisz program, który poprosi użytkownika o wiek
 #. Użytkownik będzie podawał tylko i wyłącznie ``int`` lub ``float``
-#. Następnie sprawdzi pełnoletność i wyświetli informację czy osoba jest "dorosła" czy "niepełnoletnia".
+#. Następnie sprawdzi pełnoletność i wyświetli informację czy osoba jest "dorosła" czy "niepełnoletnia"
 
 :About:
     * Filename: ``control_input.py``

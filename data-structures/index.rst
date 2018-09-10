@@ -35,37 +35,29 @@ Simple collections
 
     my_tuple = (1, 2, 3, 4, 5)
 
-    my_tuple[:3]   # (1, 2, 3)
-    my_tuple[1:4]  # (2, 3, 4)
-    my_tuple[3:]   # (4, 5)
-    my_tuple[::2]  # (1, 3, 5)
-    my_tuple[-1]   # 5
+    my_tuple[:3]            # (1, 2, 3)
+    my_tuple[1:4]           # (2, 3, 4)
+    my_tuple[3:]            # (4, 5)
+    my_tuple[::2]           # (1, 3, 5)
+    my_tuple[-1]            # 5
 
 .. code-block:: python
 
     my_tuple = (1, 2, 3, 4, 5)
 
-    my_tuple[1:5]      # (2, 3, 4)
-
-.. code-block:: python
-
-    my_tuple = (1, 2, 3, 4, 5)
+    my_tuple[1:5]           # (2, 3, 4, 5)
 
     MIN = 1
     MAX = 5
-    my_tuple[MIN:MAX]  # (2, 3, 4)
-
-.. code-block:: python
-
-    my_tuple = (1, 2, 3, 4, 5)
+    my_tuple[MIN:MAX]       # (2, 3, 4, 5)
 
     BETWEEN = slice(MIN, MAX)
-    my_tuple[BETWEEN]  # (2, 3, 4)
+    my_tuple[BETWEEN]       # (2, 3, 4, 5)
 
 .. code-block:: python
 
     my_tuple = (1, 2, 3)
-    len(my_tuple)       # 3
+    len(my_tuple)           # 3
 
 ``list``
 --------
@@ -82,6 +74,7 @@ Simple collections
 .. code-block:: python
 
     my_list = [1]
+    my_list = list(1)
 
 .. code-block:: python
 
@@ -124,6 +117,7 @@ Simple collections
 .. code-block:: python
 
     my_set = {1}
+    my_set = set(1)
 
 .. code-block:: python
 
@@ -175,7 +169,7 @@ Simple collections
 * Key - Value storage
 * Key can be any hashable object
 * Value can be any object
-* Przy wyświetlaniu elementów słownika, kolejność może się zmieniać!
+* ``dict()`` items order changes!
 
 .. code-block:: python
 
@@ -251,7 +245,7 @@ Accessing ``dict`` values with ``[...]`` and ``.get(...)``
 
 ``dict`` vs. ``set``
 --------------------
-* Należy zwrócić uwagę, aby nie pomylić z ``dict``
+* ``set()`` and ``dict()`` both use ``{`` and ``}`` brackets
 
 .. code-block:: python
 
@@ -269,20 +263,21 @@ Accessing ``dict`` values with ``[...]`` and ``.get(...)``
     isinstance(my_data, set)          # False
 
     my_data = {1}
-    isinstance(my_data, set)          # True
     isinstance(my_data, dict)         # False
+    isinstance(my_data, set)          # True
 
     my_data = {1: 1}
-    isinstance(my_data, set)          # False
     isinstance(my_data, dict)         # True
+    isinstance(my_data, set)          # False
 
 
 How to initialize?
 ==================
-* ``list()`` or ``[]``
-* ``tuple()`` or ``()``
-* ``dict()`` or ``{}``
-* ``set()`` or ``{}``
+* It's a good practice to use more readable and explicit name
+* ``list()`` over ``[]``
+* ``tuple()`` over ``()``
+* ``dict()`` over ``{}``
+* ``set()``
 
 
 Nested collections
@@ -306,15 +301,30 @@ Nested collections
 
 Multidimensional lists
 ----------------------
-.. code-block:: python
+* Readability Counts!
 
-    array = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
-    ]
+    .. code-block:: python
 
-    array[2][1]  # 8
+        array = [[1,2,3],[4,5,6],[7,8,9]]
+        array = [[1,2,3], [4,5,6], [7,8,9]]
+        array = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+        array = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9],
+        ]
+
+* Getting element from nested lists
+
+    .. code-block:: python
+
+        array = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9],
+        ]
+
+        array[2][1]  # 8
 
 Mixed types
 -----------
@@ -332,44 +342,48 @@ Mixed types
 
 How Python understands types?
 =============================
-* Dla każdego z poniższych przykładów wykonano funkcję ``type(what)`` i wynik pokazano poniżej.
-* Dla czytelności przykładu pominięto tę linijkę.
+* result of a ``type(what)`` for each line
 
 .. code-block:: python
 
-    what = (1, 2)    # <class 'tuple'>
     what = 1, 2      # <class 'tuple'>
+    what = (1, 2)    # <class 'tuple'>
 
 .. code-block:: python
 
-    what = ('foo')   # <class 'str'>
     what = 'foo'     # <class 'str'>
+    what = ('foo')   # <class 'str'>
 
-    what = ('foo',)  # <class 'tuple'>
     what = 'foo',    # <class 'tuple'>
+    what = ('foo',)  # <class 'tuple'>
 
 .. code-block:: python
 
-    what = 1.5      # <class 'float'>
-    what = 1        # <class 'int'>
-    what = (1.)     # <class 'float'>
-    what = (.5)     # <class 'float'>
     what = 1.       # <class 'float'>
+    what = (1.)     # <class 'float'>
+
     what = .5       # <class 'float'>
+    what = (.5)     # <class 'float'>
+
+    what = 1.0      # <class 'float'>
+    what = 1        # <class 'int'>
 
 .. code-block:: python
-
-    what = (10.5)   # <class 'float'>
-    what = (10,5)   # <class 'tuple'>
-    what = (10.)    # <class 'float'>
-    what = (10,)    # <class 'tuple'>
-    what = (10)     # <class 'int'>
 
     what = 10.5     # <class 'float'>
+    what = (10.5)   # <class 'float'>
+
     what = 10,5     # <class 'tuple'>
+    what = (10,5)   # <class 'tuple'>
+
     what = 10.      # <class 'float'>
+    what = (10.)    # <class 'float'>
+
     what = 10,      # <class 'tuple'>
+    what = (10,)    # <class 'tuple'>
+
     what = 10       # <class 'int'>
+    what = (10)     # <class 'int'>
 
 
 More advanced topics
