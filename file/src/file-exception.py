@@ -1,7 +1,7 @@
-FILENAME = r'C:\Users\desktop.ini'
+FILENAME = r'C:\Temp\bootfilure.txt'
 
 try:
-    with open(FILENAME, mode='w', encoding='utf-8') as file:
+    with open(FILENAME, mode='r', encoding='utf-8') as file:
         content = file.read()
         print(content)
 

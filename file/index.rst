@@ -5,28 +5,26 @@ Files
 *****
 
 
-Czytanie
-========
-* Context manager ``with``
-
+Reading
+=======
 .. literalinclude:: src/file-read.py
     :language: python
     :caption: Reading from file
 
 
-Zapis
-=====
+Writing
+=======
 .. literalinclude:: src/file-write.py
     :language: python
     :caption: Writing to file
 
 
-Tryby odczytu i zapisu
-======================
+Read and write modes
+====================
 .. csv-table::
-    :header: "Character", "Meaning"
+    :header-rows: 1
     :widths: 20, 80
-    :file: data/open-modes.csv
+    :file: data/file-open-modes.csv
 
 
 Obsługa wyjątków

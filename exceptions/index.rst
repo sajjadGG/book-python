@@ -65,43 +65,48 @@ Catching exceptions
 
 .. code-block:: python
 
+    def apollo11():
+        print('Program P63 - Landing Maneuvre Approach Phase')
+        raise RuntimeError('1201 Alarm')
+        raise RuntimeError('1202 Alarm')
+        print('Contact lights')
+        print('The Eagle has landed!')
+        print("That's one small step for [a] man, one giant leap for mankind.")
+
+
     try:
-        with open(FILENAME, mode='w', encoding='utf-8') as file:
-            content = file.read()
-            print(content)
+        apollo11()
 
-    except PermissionError as e:
-        print('Permission denied')
+    except RuntimeError:
+        print("Yo're GO for landing")
 
-    except OSError as e:
-        print('File not found')
-
-    except Exception as e:
-        print('Other error')
+    except Exception:
+        print('Abort')
 
     else:
-        print('Success!')
+        print('Landing a man on the Moon')
 
     finally:
-        print('Cleaning up')
+        print('Returning safely to the Earth')
 
 .. warning:: Always catch exception!
 
     .. code-block:: python
 
-        # Problematic code, catches also Ctrl-C
+        # Problematic code which catches 'Ctrl-C'
+        # User cannot simply kill program
         while True:
             try:
-                print('hello')
+                number = input('Type number: ')
             except:
                 continue
 
     .. code-block:: python
 
-        # Good code, user can kill loop with Ctrl-C
+        # User can kill program with 'Ctrl-C'
         while True:
             try:
-                print('hello')
+                number = input('Type number: ')
             except Exception:
                 continue
 
