@@ -267,8 +267,8 @@ Whitespace in accessors
 -----------------------
 .. code-block:: python
 
-    dct['key'] = lst[index]    # Good
-    dct ['key'] = lst [index]  # Bad
+    dct['key'] = lst[index]     # Good
+    dct ['key'] = lst[ index ]  # Bad
 
 Whitespace in functions
 -----------------------
@@ -350,6 +350,15 @@ Negative Conditionals
         if not name is None:  # if (! name == null) {}
             pass
 
+    .. code-block:: python
+
+        usernames = {'José', 'Max', 'Иван'}
+
+        # if (! usernames.contains('José')) {}
+        if not 'José' in usernames:
+            print('I do not know you')
+        else:
+            print('Hello my friend')
 
 Checking if not empty
 ---------------------

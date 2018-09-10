@@ -25,10 +25,10 @@ Conditional Statements
 
     .. code-block:: python
 
-        digit = 7
+        age = 7
 
-        if 0 <= digit < 10:
-            print('digit in is between [0, 10)')
+        if 0 <= age < 18:
+            print('Age is between [0, 18)')
 
 ``else``
 --------
@@ -122,16 +122,18 @@ Complex expressions
 
 mixed
 -----
-.. code-block:: python
+* Use parenthesis for explicit order
 
-    first_name = 'José'
-    last_name = 'Jiménez'
+    .. code-block:: python
 
-    if (first_name == 'José' and last_name == 'Jiménez')
-            or (first_name == 'Max' and last_name == 'Peck'):
-        print('Your name is José Jiménez or Max Peck')
-    else:
-        print('Your name is different')
+        first_name = 'José'
+        last_name = 'Jiménez'
+
+        if (first_name == 'José' and last_name == 'Jiménez')
+                or (first_name == 'Max' and last_name == 'Peck'):
+            print('Your name is José Jiménez or Max Peck')
+        else:
+            print('Your name is different')
 
 
 Control Statements
@@ -139,30 +141,32 @@ Control Statements
 
 ``in``
 ------
-* Słowo kluczowe ``in`` pozwala na sprawdzenie czy dana wartość zawiera się w zbiorze
-* Można wykorzystać czy ``str`` zawiera się w innym ``str``
+* works with ``tuple``, ``dict``, ``list``, ``set`` and ``str``
+* ``in`` checks whether value is in other collection
 
-.. code-block:: python
+    .. code-block:: python
 
-    usernames = {'José Jiménez', 'Max Peck'}
+        usernames = {'José Jiménez', 'Max Peck'}
 
-    if 'José Jiménez' in usernames:
-        print(True)
-    else:
-        print(False)
+        if 'José Jiménez' in usernames:
+            print(True)
+        else:
+            print(False)
 
-.. code-block:: python
+* ``in`` checks whether ``str`` is a part of another ``str``
 
-    text = 'My name José Jiménez'
+    .. code-block:: python
 
-    if 'José' in text:
-        print(True)
-    else:
-        print(False)
+        text = 'My name José Jiménez'
+
+        if 'José' in text:
+            print(True)
+        else:
+            print(False)
 
 ``not``
 -------
-* ``not`` pozwala zanegować warunek
+* ``not`` negates (logically inverts) condition
 
 .. code-block:: python
 
@@ -182,22 +186,10 @@ Control Statements
     else:
         print('Hello my friend')
 
-Tak nie robimy:
-
-    .. code-block:: python
-
-        usernames = {'José', 'Max', 'Иван'}
-
-        # if (! usernames.contains('José')) {}
-        if not 'José' in usernames:
-            print('I do not know you')
-        else:
-            print('Hello my friend')
-
 
 No ``switch`` statement?!
 =========================
-* Why ``switch`` is bad practise?
+* ``switch`` in Object Oriented Programming is considered a bad practise
 * `PEP 275 <https://www.python.org/dev/peps/pep-0275/>`_
 
 .. code-block:: python
