@@ -125,6 +125,8 @@ Numerical types
 
 * Infinity representation in Python
 
+    .. code-block:: python
+
         float('-inf')          # -inf
         float('-Infinity')     # -inf
         float('inf')           # inf
@@ -430,37 +432,6 @@ Handling user input
 
 Assignments
 ===========
-
-Basic usage of ``print()`` function
------------------------------------
-#. Stwórz skrypt o treści:
-
-    .. code-block:: python
-
-        import sys
-        import os
-
-        print(f'Python Executable: {sys.executable}')
-        print(f'Python Version: {sys.version}')
-        print(f'Virtualenv: {os.getenv("VIRTUAL_ENV")}')
-
-#. Uruchom go w swoim IDE
-#. Jaka wersja Python jest zainstalowana?
-#. Gdzie Python jest zainstalowany?
-#. Czy korzystasz z Virtualenv?
-
-:About:
-    * Filename: ``python_version.py``
-    * Lines of code to write: 0 lines
-    * Estimated time of completion: 5 min
-
-:The whys and wherefores:
-    * Czy Python działa
-    * Jaka jest wersja Python
-    * Czy korzystasz z Virtualenv
-    * Korzystanie z print
-    * Umiejętność uruchamiania skryptów
-    * Szukanie rozwiązań zadań z książki
 
 Handling user input and type casting
 ------------------------------------

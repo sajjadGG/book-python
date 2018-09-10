@@ -5,15 +5,15 @@ About Python Language
 
 What is Python?
 ===============
-* Python - język programowania wysokiego poziomu ogólnego przeznaczenia
-* Rozbudowany pakiet bibliotek standardowych
-* Ideą przewodnią jest czytelność i klarowność kodu źródłowego
-* Jego składnia cechuje się przejrzystością i zwięzłością
-* Python wspiera różne paradygmaty programowania: obiektowy, imperatywny oraz funkcyjny.
-* Posiada w pełni dynamiczny system typów i automatyczne zarządzanie pamięcią.
-* Podobnie jak inne języki dynamiczne jest często używany jako język skryptowy.
-* Interpretery Pythona są dostępne na wiele systemów operacyjnych.
-* Python rozwijany jest jako projekt Open Source zarządzany przez Python Software Foundation, która jest organizacją non-profit.
+* Turing complete, general purpose language
+* Lingua franca in Machine Learning and Data Science
+* Dynamic typing with automatic memory allocation and GC
+* Batteries included (standard system library)
+* Code readability and simplicity is important
+* White space are important
+* Everything is an Object, but you can write functional code too
+* Multi platform
+* Open Source created by non-profit Python Software Foundation
 
 
 Which version?
