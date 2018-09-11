@@ -9,6 +9,7 @@ Book TODO
 
 Python PEP
 ==========
+* from pprint import pprint
 * JSON datetime encoder, decoder to isoformat (UTC)
 * from datetime import parse(str, format)
 * from datetime import format(str, format)

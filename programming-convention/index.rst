@@ -512,15 +512,15 @@ English
 * Namespaces are one honking great idea -- let's do more of those!
 
 Polish
------------
+------
 * Piękne jest lepsze niż brzydkie.
-* Wyrażone wprost jest lepsze niż domniemane.
-* Proste jest lepsze niż złożone.
+* **Wyrażone wprost jest lepsze niż domniemane.**
+* **Proste jest lepsze niż złożone.**
 * Złożone jest lepsze niż skomplikowane.
 * Płaskie jest lepsze niż wielopoziomowe.
 * Rzadkie jest lepsze niż gęste.
-* Czytelność się liczy.
-* Sytuacje wyjątkowe nie są na tyle wyjątkowe, aby łamać reguły.
+* **Czytelność się liczy.**
+* **Sytuacje wyjątkowe nie są na tyle wyjątkowe, aby łamać reguły.**
 * Choć praktyczność przeważa nad konsekwencją.
 * Błędy zawsze powinny być sygnalizowane.
 * Chyba że zostaną celowo ukryte.
@@ -529,10 +529,17 @@ Polish
 * Choć ten sposób może nie być oczywisty jeśli nie jest się Holendrem.
 * Teraz jest lepsze niż nigdy.
 * Chociaż nigdy jest często lepsze niż natychmiast.
-* Jeśli rozwiązanie jest trudno wyjaśnić, to jest ono złym pomysłem.
+* **Jeśli rozwiązanie jest trudno wyjaśnić, to jest ono złym pomysłem.**
 * Jeśli rozwiązanie jest łatwo wyjaśnić, to może ono być dobrym pomysłem.
 * Przestrzenie nazw to jeden z niesamowicie genialnych pomysłów -- miejmy ich więcej!
 
+Most important rules
+--------------------
+* **Wyrażone wprost jest lepsze niż domniemane.**
+* **Proste jest lepsze niż złożone.**
+* **Czytelność się liczy.**
+* **Sytuacje wyjątkowe nie są na tyle wyjątkowe, aby łamać reguły.**
+* **Jeśli rozwiązanie jest trudno wyjaśnić, to jest ono złym pomysłem.**
 
 Magic number i magic string
 ===========================

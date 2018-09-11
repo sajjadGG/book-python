@@ -101,76 +101,46 @@ Biblioteka ``math`` implementuje podstawowe operacje matematyczne. Pełna lista 
 ==============
 * biblioteka zewnętrzna ``pip install matplotlib``
 
-.. note:: Moduł jest szczegółowo opisany w :numref:`Matplotlib`.
+.. note:: Moduł jest szczegółowo opisany w :ref:`Matplotlib`.
 
 Moduł ``matplotlib`` pozwala na rysowanie wykresów i diagramów. Jest to bardzo rozbudowana biblioteka z setkami opcji konfiguracyjnych. Najczęściej używanym modułem biblioteki ``matplotlib`` jest moduł ``pyplot``, który implementuje szereg funkcji umożliwiających rysowanie wykresów 2d.
 
-Podstawowe użycie jest następujące.
+Points
+------
+.. figure:: img/matplotlib-01.png
+    :scale: 100%
+    :align: center
 
-.. code-block:: python
+    Points chart
 
-    import matplotlib.pyplot as plt
+.. literalinclude:: src/matplotlib-01.py
+    :language: python
+    :caption: Matplotlib example
 
-    x = [1, 2, 3, 4]
-    y = [1, 2, 3, 4]
-    plt.plot(x, y, 'o')
-    plt.show()
+Sinusoid on grid
+----------------
 
-.. code-block:: python
+.. figure:: img/matplotlib-02.png
+    :scale: 100%
+    :align: center
 
-    import numpy as np
-    import matplotlib.pyplot as plt
+    Sinusoid on grid
 
-    def f(t):
-        return np.exp(-t) * np.cos(2*np.pi*t)
+.. literalinclude:: src/matplotlib-02.py
+    :language: python
+    :caption: Matplotlib example
 
-    t1 = np.arange(0.0, 5.0, 0.1)
-    t2 = np.arange(0.0, 5.0, 0.02)
+Multiple charts
+---------------
+.. figure:: img/matplotlib-03.png
+    :scale: 100%
+    :align: center
 
-    plt.figure(1)
-    plt.subplot(211)
-    plt.plot(t1, f(t1), 'bo', t2, f(t2), 'k')
+    Multiple charts
 
-    plt.subplot(212)
-    plt.plot(t2, np.cos(2*np.pi*t2), 'r--')
-    plt.show()
-
-.. code-block:: python
-
-    import matplotlib.pyplot as plt
-    import numpy as np
-
-    y = np.arange(0.0, 2.0, 0.01)
-    x = 1 + np.sin(2 * np.pi * y)
-
-    fig, ax = plt.subplots()
-
-    ax.plot(y, x)
-    ax.grid()
-    ax.set(
-        xlabel='time (s)',
-        ylabel='voltage (mV)',
-        title='Voltage in Time')
-
-    plt.show()
-
-.. code-block:: python
-
-    import matplotlib.pyplot as plt
-    import numpy as np
-
-    t = np.arange(0.01, 5.0, 0.01)
-    s = np.exp(-t)
-    plt.plot(t, s)
-
-    plt.xlim(5, 0)  # decreasing time
-
-    plt.xlabel('decreasing time (s)')
-    plt.ylabel('voltage (mV)')
-    plt.title('Should be growing...')
-    plt.grid(True)
-
-    plt.show()
+.. literalinclude:: src/matplotlib-03.py
+    :language: python
+    :caption: Matplotlib example
 
 
 Assignments
@@ -184,28 +154,9 @@ Euclidean distance 2D
 #. Wykorzystaj algorytm Euklidesa
 #. Funkcja musi przechodzić ``doctest``
 
-.. code-block:: python
-
-    def euclidean_distance(A, B):
-        """
-        >>> A = (1, 0)
-        >>> B = (0, 1)
-        >>> euclidean_distance(A, B)
-        1.4142135623730951
-
-        >>> euclidean_distance((0,0), (1,0))
-        1.0
-
-        >>> euclidean_distance((0,0), (1,1))
-        1.4142135623730951
-
-        >>> euclidean_distance((0,1), (1,1))
-        1.0
-
-        >>> euclidean_distance((0,10), (1,1))
-        9.055385138137417
-        """
-        pass
+.. literalinclude:: src/math-euclidean-2d.py
+    :language: python
+    :caption: Euclidean distance 2D
 
 :About:
     * Filename: ``math_euclidean_2d.py``
@@ -225,33 +176,9 @@ Euclidean distance multi dimensions
 #. Punkty :math:`A` i :math:`B` muszą być równo-wymiarowe
 #. Funkcja musi przechodzić ``doctest``
 
-.. code-block:: python
-
-    def euclidean_distance_n_dimensions(A, B):
-        """
-        >>> A = (0,1,0,1)
-        >>> B = (1,1,0,0)
-        >>> euclidean_distance_n_dimensions(A, B)
-        1.4142135623730951
-
-        >>> euclidean_distance_n_dimensions((0,0,0), (0,0,0))
-        0.0
-
-        >>> euclidean_distance_n_dimensions((0,0,0), (1,1,1))
-        1.7320508075688772
-
-        >>> euclidean_distance_n_dimensions((0,1,0,1), (1,1,0,0))
-        1.4142135623730951
-
-        >>> euclidean_distance_n_dimensions((0,0,1,0,1), (1,1,0,0,1))
-        1.7320508075688772
-
-        >>> euclidean_distance_n_dimensions((0,0,1,0,1), (1,1))
-        Traceback (most recent call last):
-            ...
-        ValueError: Punkty muszą być w przestrzeni tylu-samo wymiarowej
-        """
-        pass
+.. literalinclude:: src/math-euclidean-ndim.py
+    :language: python
+    :caption: Euclidean distance N-dimension
 
 :About:
     * Filename: ``math_euclidean_multi_dim.py``
@@ -286,7 +213,6 @@ Matrix multiplication
         >>> matrix_multiplication(A, B)
         [[9, 2], [7, 3], [21, 8], [28, 8]]
         """
-        pass
 
 :About:
     * Filename: ``math_matrix_multiplication.py``

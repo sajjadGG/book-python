@@ -1,6 +1,3 @@
-import math
-
-
 def euclidean_distance(A, B):
     """
     >>> A = (1, 0)
@@ -20,16 +17,3 @@ def euclidean_distance(A, B):
     >>> euclidean_distance((0,10), (1,1))
     9.055385138137417
     """
-
-    x1 = A[0]
-    x2 = B[0]
-
-    y1 = A[1]
-    y2 = B[1]
-
-    odleglosc_x = (x2-x1) ** 2
-    odleglosc_y = (y2-y1) ** 2
-
-    return math.sqrt(odleglosc_x + odleglosc_y)
-
-    return math.sqrt(pow(B[1]-A[1],2)+pow(B[0]-A[0],2))

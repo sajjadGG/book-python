@@ -13,6 +13,10 @@ What is IDE?
 * Debugging
 * Spell checking
 * Running code and inspections
+* File Scopes and views
+* Database explorer
+* Support for testing (doctest, unittest)
+* Jump to line in exceptions
 
 
 How to choose?
@@ -92,11 +96,13 @@ Know thou IDE
     * Full Screen
     * Distraction Free Mode
     * Reformat Code
+    * Scope
 
 #. Jakie są skróty klawiszowe do poszczególnych opcji?
 #. Czym się różni ``Run...`` od ``Debug...```?
 #. Czym się różni ``Python Console`` od ``Terminal``
 #. Czym się różni ``Distraction Free Mode`` od ``Full Screen``
+#. Ustaw Scope tak, aby ukryć katalog z Virtualenv
 
 :About:
     * Lines of code to write: 0 lines
@@ -107,6 +113,20 @@ Know thou IDE
     * Uruchamianie debuggera
     * Znajomość różnicy między uruchamianiem i debuggingiem
     * Znajomość różnicy między terminalem i konsolą
+
+Keyboard shortcuts
+------------------
+.. csv-table:: Keyboard shortcuts
+    :header-rows: 1
+
+    "Key Combination", "Action"
+    "``ctrl+/``", "Comment multiple lines"
+#. Indent, unindent
+#. Run
+#. Show terminal
+#. Show console
+#. Actions
+#. Show file drawer
 
 Spellchecker
 ------------
