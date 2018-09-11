@@ -84,6 +84,9 @@ Przesunięcia czasu (dodawanie i odejmowanie)
 
 Strefy czasowe
 --------------
+* Always keep dates and times only in UTC (**important!**)
+* Datetimes should be converted to localtime only when displaying to user
+
 .. literalinclude:: src/datetime-tzinfo.py
     :language: python
     :caption: Make timezone aware object from naive datetime
@@ -171,12 +174,13 @@ Manipulacja datami
         date1 = 'April 12, 1961 2:07 local time'  # ALMT Timezone
         date2 = '"07/21/69 2:56:15 AM UTC"'
 
-#. Co to za daty, które podał użytkownik?
-#. Przedstaw daty jako obiekt ``datetime``. I wyświetl je w formacie ISO.
-#. Odejmij obie daty od siebie. Ile lat i miesięcy minęło między wydarzeniami?
+#. Przedstaw daty jako obiekt ``datetime``
+#. Wyświetl daty w formacie ISO, e.g. "1961-04-12T06:07:00.123456"
+#. Odejmij obie daty od siebie.
+#. Oblicz ile lat i miesięcy minęło między wydarzeniami.
 #. Od obecnej chwili (UTC) odejmij ten sam czas, który Ci wyszedł w poprzednim punkcie.
 #. Wyświetl samą datę (bez czasu).
-#. Ile miałeś wtedy lat? Co robiłeś przez ten czas?
+#. Ile miałeś wtedy lat?
 #. Przyjmij:
 
     - rok = 365.2425 dni
@@ -188,4 +192,13 @@ Manipulacja datami
     * Estimated time of completion: 20 min
 
 :Zadanie z gwiazdką:
+    * Co to za daty, które podał użytkownik?
     * Uwzględnij strefy czasowe.
+    * Co robiłeś przez ten czas?
+
+:Hint:
+    Standard ISO:
+
+        * '1961-04-12'
+        * '1961-04-12T06:07:00'
+        * '1961-04-12T06:07:00.123456'
