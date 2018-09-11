@@ -60,7 +60,7 @@ Reading ``csv``
 * https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv
 
 #. Otwórz w przeglądarce podany powyżej URL
-#. Zapisz jego zawartość na dysku w miejscu gdzie masz skrypty w pliku ``csv-iris.csv``
+#. Zapisz jego zawartość na dysku w miejscu gdzie masz skrypty w pliku ``iris-dataset.csv``
 #. Korzystając z ``csv.DictReader`` wczytaj zawartość pliku
 #. Podaj jawnie ``encoding``, ``delimiter`` oraz ``quotechar``
 #. Pierwsza linijka stanowi metadane (nie wyświetlaj jej)
@@ -77,7 +77,7 @@ Reading ``csv``
 
 :About:
     * Filename: ``csv_dictreader.py``
-    * Lines of code to write: 6 linie
+    * Lines of code to write: 20 lines
     * Estimated time of completion: 15 min
 
 Writing ``csv``

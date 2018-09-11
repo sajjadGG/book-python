@@ -16,39 +16,34 @@ Access modes
 
 Reading file
 ------------
-* ``FILENAME`` as a constant
-* ``FILENAME`` as a raw string ``r'...'``
+* ``FILENAME`` as a raw string ``r'...'`` constant
 * ``encoding='utf-8'``
+* Fails when file cannot be accessed
+* Fails when directory with file cannot be accessed
 
-Read whole file as a text to ``content`` variable:
+.. literalinclude:: src/file-read.py
+    :language: python
+    :caption: Read whole file as a text to ``content`` variable
 
-    .. literalinclude:: src/file-read-whole.py
-        :language: python
-        :caption: Read whole file as a text to ``content`` variable
+.. literalinclude:: src/file-readlines.py
+    :language: python
+    :caption: Convert file to list by line
 
-Convert file to list by line:
+.. literalinclude:: src/file-readlines-slice.py
+    :language: python
+    :caption: Convert file to list by line, select 1-30 lines
 
-    .. literalinclude:: src/file-readlines.py
-        :language: python
-        :caption: Convert file to list by line
-
-Convert file to list by line, select 1-30 lines:
-
-    .. literalinclude:: src/file-readlines-slice.py
-        :language: python
-        :caption: Convert file to list by line, select 1-30 lines
-
-By default ``file`` can be iterated by line similar to ``file.readlines()``:
-
-    .. literalinclude:: src/file-iterate-lines.py
-        :language: python
-        :caption: By default ``file`` can be iterated by line similar to ``file.readlines()``
+.. literalinclude:: src/file-iterate-lines.py
+    :language: python
+    :caption: By default ``file`` can be iterated by line similar to ``file.readlines()``
 
 Writing to file
 ---------------
-* ``FILENAME`` as a constant
-* ``FILENAME`` as a raw string ``r'...'``
+* ``FILENAME`` as a raw string ``r'...'`` constant
 * ``encoding='utf-8'``
+* If file doesn't exist it will be created
+* Fails when directory with file cannot be accessed
+* Overwrite old content
 
 .. literalinclude:: src/file-write.py
     :language: python
@@ -56,9 +51,11 @@ Writing to file
 
 Appending to file
 -----------------
-* ``FILENAME`` as a constant
-* ``FILENAME`` as a raw string ``r'...'``
+* ``FILENAME`` as a raw string ``r'...'`` constant
 * ``encoding='utf-8'``
+* If file doesn't exist it will be created
+* Fails when directory with file cannot be accessed
+* Append to the end of file
 
 .. literalinclude:: src/file-append.py
     :language: python

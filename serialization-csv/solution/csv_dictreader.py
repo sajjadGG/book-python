@@ -1,19 +1,20 @@
 import csv
 
 
-FILENAME = '../data/csv-iris-dataset.csv'
+FILENAME = 'iris-dataset.csv'
+
 FIELDNAMES = [
     'Sepal length',
     'Sepal width',
     'Petal length',
     'Petal width',
-    'Species',
-]
+    'Species']
+
 SPECIES = {
     0: 'setosa',
     1: 'versicolor',
-    2: 'virginica',
-}
+    2: 'virginica'}
+
 
 with open(FILENAME, encoding='utf-8') as file:
     data = csv.DictReader(
@@ -24,5 +25,6 @@ with open(FILENAME, encoding='utf-8') as file:
 
     for row in list(data)[1:]:
         row = dict(row)
-        row['Species'] = SPECIES[int(row['Species'])]
+        index = int(row['Species'])
+        row['Species'] = SPECIES[index]
         print(row)
