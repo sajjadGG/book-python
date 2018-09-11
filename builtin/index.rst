@@ -7,52 +7,40 @@ Builtin and Keywords
 
 Keywords
 ========
-Słowa kluczowe (keywords) to wyrazy zarezerwowane do użytku Pythona. Nie można użyć słowa kluczowego jako nazwy zmiennej, nazwy funkcji czy innego identyfikatora. Każdy ze słów kluczowych odgrywa ważną rolę w tym języku. Lista słów kluczowych może być uzyskana wpisując:
-
-.. code-block:: python
-
-    import keyword
-    print(keyword.kwlist)
 
 ``import``
 ----------
-Biblioteki w Pythonie są pogrupowane w moduły. Słowo kluczowe ``import`` służy do importowania modułów do naszej przetrzeni nazw. Przestrzeń nazw (namespace) zawiera wszystkie zmienne (również funkcje i klasy), które zadeklarowaliśmy w trakcie działania programu. ```import`` to Pythonowy odpowiednik np. dyrektywy ``#include<nazwa_biblioteki>`` z C++.
+* Imports module:
 
-.. code-block:: python
+    .. code-block:: python
 
-    import module
+        import module
 
-Wykonanie powyższego kodu spowoduje dodanie do aktualnej przestrzeni nazw modułu ``module``. Każdy moduł może zawierać submoduły, funkcje, klasy, itp. Możemy dodatkowo wskazać, którą klasę lub metodę chcemy zaimportować z modułu. Dodatkowo, wykorzystując słowo kluczowe ``as`` możemy nadać zaimportowanemu modułowi czy funkcji nową nazwę.
+* From module imports function:
 
-.. code-block:: python
+    .. code-block:: python
 
-    from module import submodule
-    from module.submodule import function as alias
-    from module import submodule as alias
+        from module import function
+        from module.submodule import function
 
-Aby wykorzystać funkcję z danego modułu, musimy najpierw wskazać, z którego modułu chcemy skorzystać a następnie podać nazwę funkcji czy zmiennej do której chcemy się odwołać. Korzystając z przykładu powyżej:
+* Aliases
 
-.. code-block:: python
+    .. code-block:: python
 
-    import keyword
-    print(keyword.kwlist)
+        import module as alias
+        from module import function as alias
 
-W pierwszej linijce importujemy moduł ``keyword``. W drugiej linijce wypisujemy zawartość zmiennej ``kwlist`` z modułu ``keyword``. Moglibyśmy uzyskać podobny efekt wykonując:
+* Relative imports:
 
-.. code-block:: python
+    .. code-block:: python
 
-    from keyword import kwlist
-    print(kwlist)
+        from . import module
+        from .. import module
 
-W tym przykładzie, z modułu ``keyword`` importujemy jedynie zmienną ``kwlist``. Przy takiej składni warto wspomnieć, że zmniejsza ona czytelność, nie podnosząc wcale efektywności kodu. Interpreter i tak wczyta najpierw całą zawartość modułu, następnie stworzy nową zmienną ``kwlist``, której przypisze odpowiednią wartość. Taki zapis zmniejsza czytelność kodu i zwiększa prawdopodobieństwo błędu.  Używając zapisu ``import module`` i następnie ``module.variable`` jednoznacznie wskazujemy z jakiego modułu korzystamy.
+    .. code-block:: python
 
-.. code-block:: python
-
-    from . import module
-    from .. import module
-
-    from .module import submodule
-    from ..module import submodule
+        from .module import function
+        from ..module import function
 
 ``pass``
 --------

@@ -48,6 +48,7 @@ Foundations
     operators/index.rst
     loop/index.rst
     functions-basic/index.rst
+    exceptions/index.rst
     doctest/index.rst
     modules-install/index.rst
     builtin/index.rst
@@ -55,7 +56,6 @@ Foundations
     debugging-basic/index.rst
     math/index.rst
     datetime/index.rst
-    exceptions/index.rst
     file/index.rst
     serialization-csv/index.rst
     oop-basic/index.rst

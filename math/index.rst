@@ -12,8 +12,6 @@ Builtin
 
 ``math``
 ========
-Biblioteka ``math`` implementuje podstawowe operacje matematyczne. Pełna lista funkcji, wraz z opisami, dostępna jest po wywołaniu komendy ``help(math)``. Funckcje biblioteki ``math`` wykonują operacje na pojedynczych liczbach (nie na listach).
-
 .. code-block:: python
 
     import math
@@ -38,7 +36,7 @@ Biblioteka ``math`` implementuje podstawowe operacje matematyczne. Pełna lista 
     math.asin(x)
     math.acos(x)
 
-    # Return the Euclidean norm, sqrt(x*x + y*y). This is the length of the vector from the origin to point (x, y).
+    # Return the Euclidean distance, sqrt(x*x + y*y).
     math.hypot(x, y)
 
     math.degrees(x)
@@ -108,7 +106,7 @@ Moduł ``matplotlib`` pozwala na rysowanie wykresów i diagramów. Jest to bardz
 Points
 ------
 .. figure:: img/matplotlib-01.png
-    :scale: 100%
+    :scale: 50%
     :align: center
 
     Points chart
@@ -121,7 +119,7 @@ Sinusoid on grid
 ----------------
 
 .. figure:: img/matplotlib-02.png
-    :scale: 100%
+    :scale: 50%
     :align: center
 
     Sinusoid on grid
@@ -133,7 +131,7 @@ Sinusoid on grid
 Multiple charts
 ---------------
 .. figure:: img/matplotlib-03.png
-    :scale: 100%
+    :scale: 50%
     :align: center
 
     Multiple charts
@@ -185,9 +183,6 @@ Euclidean distance multi dimensions
     * Lines of code to write: 10 lines
     * Estimated time of completion: 15 min
 
-:Hints:
-    * ``raise ValueError('Punkty muszą być w przestrzeni tylu-samo wymiarowej')``
-
 Matrix multiplication
 ---------------------
 #. Napisz program mnożący macierze wykorzystując zagnieżdżone pętle ``for``
@@ -234,9 +229,6 @@ Trigonometry
     * Filename: ``math_trigonometry.py``
     * Lines of code to write: 10 lines
     * Estimated time of completion: 10 min
-
-:Hints:
-    * ``raise``
 
 Random numbers
 --------------
