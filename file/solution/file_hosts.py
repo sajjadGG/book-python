@@ -1,21 +1,26 @@
+from pprint import pprint
+
+
+FILENAME = r'hosts.txt'
 hosts = []
 
 
-with open(r'../src/etc-hosts.txt', encoding='utf-8') as file:
+with open(FILENAME, encoding='utf-8') as file:
     for line in file:
-        if line.isspace() or line.startswith('#'):
+
+        if line.startswith('#') or line.isspace():
             continue
 
-        # ip, *hostnames = line.split()
-        ip = line.split()[0]
-        hostnames = line.split()[1:]
+        record = line.split()
+        ip = record[0]
+        hostnames = record[1:]
+        protocol = 'ipv4' if '.' in ip else 'ipv6'
 
         hosts.append({
             'ip': ip,
             'hostnames': hostnames,
-            'protocol': 'ipv4' if '.' in ip else 'ipv6',
+            'protocol': protocol,
         })
 
 
-from pprint import pprint
 pprint(hosts)

@@ -7,6 +7,8 @@ Files
 
 Reading
 =======
+* Good practice is to always set ``encoding``
+
 .. literalinclude:: src/file-read.py
     :language: python
     :caption: Reading from file
@@ -14,6 +16,8 @@ Reading
 
 Writing
 =======
+* Good practice is to always set ``encoding``
+
 .. literalinclude:: src/file-write.py
     :language: python
     :caption: Writing to file
@@ -50,14 +54,26 @@ Content of a requested file
 Parsing ``/etc/hosts``
 ----------------------
 #. Do pliku ``hosts.txt`` w katalogu gdzie będzie Twój skrypt zapisz kod z szablonu: :numref:`listing-file-etc-hosts`
-#. Ważne są komentarze, białe spacje i linie przerwy
-#. Przedstaw go w formie listy dictów jak w przykładzie poniżej: :numref:`listing-file-hosts`
+#. Ważne, żeby przepisać zawartość zawierającą komentarze, białe spacje i linie przerwy
+#. Przeglądając plik linijka po linijce sparsuj go i przedstaw w formie listy dictów jak w przykładzie poniżej: :numref:`listing-file-hosts`
 #. Zwróć uwagę na uprawnienia do odczytu pliku
+#. Wykorzystaj inline if do sprawdzenia: jeżeli jest kropka w adresie IP to IPv4 w przeciwnym przypadku IPv6
 
 :About:
     * Filename: ``file_hosts.py``
     * Lines of code to write: 10 lines
     * Estimated time of completion: 20 min
+
+:Algorithm:
+    #. Utwórz plik i skopiuj zawartość
+    #. Otwórz plik
+    #. Dla każdej linii:
+    #. Jeżeli linia jest pusta, lub jest białym znakiem lub zaczyna się od komentarza, przeskocz do kolejnej linii
+    #. Podziel linię po białych znakach
+    #. Wydziel ip i hosty
+    #. Jeżeli jest kropka w adresie IP to IPv4 w przeciwnym przypadku IPv6
+    #. Do listy dopisz słownik z ip, hostami i protokołem
+    #. Po zakończeniu parsowania wyświetl na ekranie
 
 :The whys and wherefores:
     * czytanie i parsowanie pliku
@@ -69,7 +85,6 @@ Parsing ``/etc/hosts``
 
 :Hints:
     * ``str.isspace()``
-    * inline ``if``
 
 .. literalinclude:: src/etc-hosts.txt
     :name: listing-file-etc-hosts
