@@ -9,9 +9,9 @@ Reading data from CSV files
 ===========================
 * Good practice is to always set:
 
-    * ``encoding``
-    * ``quotechar``
-    * ``delimiter``
+    * ``encoding='utf-8'``
+    * ``quotechar='"'``
+    * ``delimiter=','``
 
 .. literalinclude:: src/csv-read.py
     :name: listing-csv-read
@@ -23,11 +23,11 @@ Writing to CSV files
 ====================
 * Good practice is to always set:
 
-    * ``encoding``
-    * ``quoting``
-    * ``quotechar``
-    * ``delimiter``
-    * ``lineterminator``
+    * ``encoding='utf-8'``
+    * ``quoting=csv.QUOTE_ALL``
+    * ``quotechar='"'``
+    * ``delimiter=','``
+    * ``lineterminator='\n'``
 
 .. literalinclude:: src/csv-write.py
     :name: listing-csv-write

@@ -1,23 +1,14 @@
 import csv
 
-FILENAME = r'../contrib/sonar-project.properties'
+FILENAME = r'sonar-project.properties'
 """
-sonar.host.url=https://sonarcloud.io
-sonar.organization=astromatt
-sonar.login=...
-sonar.language=py
-sonar.sourceEncoding=UTF-8
-sonar.verbose=true
-sonar.projectKey=habitatOS
-sonar.projectName=habitatOS
-sonar.projectDescription=Operating System for analog extraterrestrial habitats.
-sonar.links.homepage=https://bitbucket.org/AstroMatt/habitatOS/
-sonar.links.scm=https://bitbucket.org/AstroMatt/habitatOS/
-sonar.links.issue=https://bitbucket.org/AstroMatt/habitatOS/issues
-sonar.links.ci=https://bitbucket.org/AstroMatt/habitatos/addon/pipelines/home
-sonar.projectBaseDir=habitat
-sonar.sources=.
-sonar.exclusions=**/migrations/**
+    sonar.host.url=https://sonarcloud.io
+    sonar.language=py
+    sonar.sourceEncoding=UTF-8
+    sonar.verbose=true
+    sonar.projectKey=habitatOS
+    sonar.projectName=habitatOS
+    sonar.projectDescription=Operating System for analog extraterrestrial habitats.
 """
 
 with open(FILENAME) as file:

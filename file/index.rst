@@ -4,31 +4,65 @@
 Files
 *****
 
+Read, Write, Append
+===================
 
-Reading
-=======
-* Good practice is to always set ``encoding``
+Access modes
+------------
+.. csv-table::
+    :header-rows: 1
+    :widths: 20, 80
+    :file: data/file-open-modes.csv
 
-.. literalinclude:: src/file-read.py
-    :language: python
-    :caption: Reading from file
+Reading file
+------------
+* ``FILENAME`` as a constant
+* ``FILENAME`` as a raw string ``r'...'``
+* ``encoding='utf-8'``
 
+Read whole file as a text to ``content`` variable:
 
-Writing
-=======
-* Good practice is to always set ``encoding``
+    .. literalinclude:: src/file-read-whole.py
+        :language: python
+        :caption: Read whole file as a text to ``content`` variable
+
+Convert file to list by line:
+
+    .. literalinclude:: src/file-readlines.py
+        :language: python
+        :caption: Convert file to list by line
+
+Convert file to list by line, select 1-30 lines:
+
+    .. literalinclude:: src/file-readlines-slice.py
+        :language: python
+        :caption: Convert file to list by line, select 1-30 lines
+
+By default ``file`` can be iterated by line similar to ``file.readlines()``:
+
+    .. literalinclude:: src/file-iterate-lines.py
+        :language: python
+        :caption: By default ``file`` can be iterated by line similar to ``file.readlines()``
+
+Writing to file
+---------------
+* ``FILENAME`` as a constant
+* ``FILENAME`` as a raw string ``r'...'``
+* ``encoding='utf-8'``
 
 .. literalinclude:: src/file-write.py
     :language: python
     :caption: Writing to file
 
+Appending to file
+-----------------
+* ``FILENAME`` as a constant
+* ``FILENAME`` as a raw string ``r'...'``
+* ``encoding='utf-8'``
 
-Read and write modes
-====================
-.. csv-table::
-    :header-rows: 1
-    :widths: 20, 80
-    :file: data/file-open-modes.csv
+.. literalinclude:: src/file-append.py
+    :language: python
+    :caption: Appending to file
 
 
 Exception handling
