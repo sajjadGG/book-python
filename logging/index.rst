@@ -2,6 +2,8 @@
 Logowanie zdarzeń
 *****************
 
+* https://pyvideo.org/pycon-au-2018/a-guided-tour-of-python-logging.html
+
 Korzystanie z ``logging``
 =========================
 
@@ -39,38 +41,6 @@ Konfiguracja logowania
 
     log.warning('warning!')  # zostanie zapisana do pliku
     log.debug('wiadomosc debuggingowa')  # nie zostanie zapisana, bo level jest INFO, czyli powyżej DEBUG
-
-
-.. code-block:: python
-
-    {
-        'version': 1,
-        'disable_existing_loggers': False,
-        'formatters': {
-            'standard': {
-                'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
-            },
-        },
-        'handlers': {
-            'default': {
-                'level': 'INFO',
-                'formatter': 'standard',
-                'class': 'logging.StreamHandler',
-            },
-        },
-        'loggers': {
-            '': {
-                'handlers': ['default'],
-                'level': 'INFO',
-                'propagate': True
-            },
-            'django.request': {
-                'handlers': ['default'],
-                'level': 'WARN',
-                'propagate': False
-            },
-        }
-    }
 
 
 Logowanie zdarzeń
@@ -190,6 +160,51 @@ Konfiguracja formatowania logów
 | ``%(threadName)s``      | Thread name (if available).                   |
 +-------------------------+-----------------------------------------------+
 
+``DictConfig``
+--------------
+.. code-block:: python
+
+    {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'formatters': {
+            'standard': {
+                'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
+            },
+        },
+        'handlers': {
+            'default': {
+                'level': 'INFO',
+                'formatter': 'standard',
+                'class': 'logging.StreamHandler',
+            },
+        },
+        'loggers': {
+            '': {
+                'handlers': ['default'],
+                'level': 'INFO',
+                'propagate': True
+            },
+            'django.request': {
+                'handlers': ['default'],
+                'level': 'WARN',
+                'propagate': False
+            },
+        }
+    }
+
+.. csv-table:: DictConfig
+    :header-rows: 1
+
+    "Format", "Description"
+    "filename", "Specifies that a FileHandler be created, using the specified filename, rather than a StreamHandler"
+    "filemode", "If filename is specified, open the file in this mode. Defaults to 'a'"
+    "format", "Use the specified format string for the handler"
+    "datefmt", "Use the specified date/time format, as accepted by time.strftime()"
+    "style", "If format is specified, use this style for the format string. One of '%', '{' or '$' for printf-style, str.format() or string.Template respectively. Defaults to '%'"
+    "level", "Set the root logger level to the specified level"
+    "stream", "Use the specified stream to initialize the StreamHandler. Note that this argument is incompatible with filename - if both are present, a ValueError is raised"
+    "handlers", "If specified, this should be an iterable of already created handlers to add to the root logger. Any handlers which don’t already have a formatter set will be assigned the default formatter created in this function. Note that this argument is incompatible with filename or stream - if both are present, a ValueError is raised"
 
 ``warnings``
 ============

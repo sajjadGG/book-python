@@ -42,7 +42,7 @@ Można tutaj podać jako argumenty zarówno ciągi znaków jak i wartości liczb
     name = 'José Jiménez'
 
     print('My name', name, '!', sep=';')
-    # My;name;José;Jiménez!
+    # My name;José;Jiménez!
 
 Operator ``+``
 --------------
@@ -89,8 +89,8 @@ Używanie tych operatorów przypomina używanie funkcji ``printf``, znanej międ
     print('My name %s!' % name)                 # My name José Jiménez!
     print("%s has %s years" % (name, age))      # José Jiménez has 42 years
     print('%s has %s years' % (age, name))      # 42 has José Jiménez years
-    print('%s has %10.1f years' % (name, age))  # José Jiménez has       42.0 years
     print('%s has %.1f years' % (name, age))    # José Jiménez has 42.0 years
+    print('%s has %10.1f years' % (name, age))  # José Jiménez has       42.0 years
     print('%s has %d years' % (my(name), age))  # José Jiménez has 42 years
 
     print('%(name)s has %(age)d years' % {
@@ -124,8 +124,8 @@ Wbudowana metoda ``format`` upraszcza nieco powyższy schemat. Zamiast operatora
     print('{} is {} years'.format(name, age))                   # 'José Jiménez is 42 years'
     print('{0} is {1} years'.format(name, age))                 # 'José Jiménez is 42 years'
     print('{1} is {0} years'.format(name, age))                 # '42 is José Jiménez years'
-    print('{1:.3} is {0:10.1} years'.format(float(age), name))  # 'Jos is       42.0 years'
     print('{1:.3} is {0:.1} years'.format(float(age), name))    # 'Jos is 42.0 years'
+    print('{1:.3} is {0:10.1} years'.format(float(age), name))  # 'Jos is       42.0 years'
 
 
 f-strings - Python >= 3.6
@@ -161,22 +161,23 @@ Przykład z życia
 
 .. code-block:: python
 
-    username = "' OR 1=1; DROP TABLE users -- "
-    password = '132'
+    username =
 
-    sql_query = f"""
+    sql_query = """
 
-        SELECT * FROM users
-        WHERE 'username'='{username}'
-        AND 'password'='{password}'
+        SELECT id, username, email
+        FROM users
+        WHERE username='{username}' AND password='{password}'
 
     """
 
-    print(sql_query)
+    sql_query.format(
+        username="' OR 1=1; DROP TABLE users -- ",
+        password = '132'
+    )
     # SELECT id, username, email
     # FROM users
-    # WHERE 'username'='' OR 1=1; DROP TABLE users -- '
-    # AND 'password'='132'
+    # WHERE username='' OR 1=1; DROP TABLE users -- ' AND password='132'
 
 
 PEP 3101 -- Advanced String Formatting
@@ -193,23 +194,6 @@ Basic formatting
     '{} {}'.format(one, two)    # one two
     '{1} {0}'.format(one, two)  # two one
     f'{one} {two}'              # one two
-
-Value conversion
-----------------
-.. code-block:: python
-
-    class Data(object):
-
-        def __str__(self):
-            return 'str'
-
-        def __repr__(self):
-            return 'repr'
-
-
-    '%s %r' % (Data(), Data())      # str repr
-    '{0!s} {0!r}'.format(Data())    # str repr
-    f'{Data()!s} {Data()!r}'        # str repr
 
 Padding and aligning strings
 ----------------------------
@@ -407,6 +391,23 @@ Datetime
     '{:%Y-%m-%d %H:%M}'.format(datetime(2001, 2, 3, 4, 5))
     # '2001-02-03 04:05'
 
+Value conversion
+----------------
+.. code-block:: python
+
+    class Data(object):
+
+        def __str__(self):
+            return 'str'
+
+        def __repr__(self):
+            return 'repr'
+
+
+    '%s %r' % (Data(), Data())      # str repr
+    '{0!s} {0!r}'.format(Data())    # str repr
+    f'{Data()!s} {Data()!r}'        # str repr
+
 Parametrized formats
 --------------------
 .. code-block:: python
@@ -530,19 +531,34 @@ Przeliczanie temperatury
 
     .. code-block:: text
 
-        Temperatura -     20C to ____-4____F
-        Temperatura -     15C to ____+5____F
-        Temperatura -     10C to ___+14____F
-        Temperatura -      5C to ___+23____F
-        Temperatura +      0C to ___+32____F
-        Temperatura +      5C to ___+41____F
-        Temperatura +     10C to ___+50____F
-        Temperatura +     15C to ___+59____F
-        Temperatura +     20C to ___+68____F
-        Temperatura +     25C to ___+77____F
-        Temperatura +     30C to ___+86____F
-        Temperatura +     35C to ___+95____F
-        Temperatura +     40C to ___+104___F
+        -------------------------------------------
+        | Temperatura | -     20°C | ....-4....°F |
+        -------------------------------------------
+        | Temperatura | -     15°C | ....+5....°F |
+        -------------------------------------------
+        | Temperatura | -     10°C | ...+14....°F |
+        -------------------------------------------
+        | Temperatura | -      5°C | ...+23....°F |
+        -------------------------------------------
+        | Temperatura | +      0°C | ...+32....°F |
+        -------------------------------------------
+        | Temperatura | +      5°C | ...+41....°F |
+        -------------------------------------------
+        | Temperatura | +     10°C | ...+50....°F |
+        -------------------------------------------
+        | Temperatura | +     15°C | ...+59....°F |
+        -------------------------------------------
+        | Temperatura | +     20°C | ...+68....°F |
+        -------------------------------------------
+        | Temperatura | +     25°C | ...+77....°F |
+        -------------------------------------------
+        | Temperatura | +     30°C | ...+86....°F |
+        -------------------------------------------
+        | Temperatura | +     35°C | ...+95....°F |
+        -------------------------------------------
+        | Temperatura | +     40°C | ...+104...°F |
+
+
 
 :About:
     * Filename: ``print_formatting.py``
