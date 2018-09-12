@@ -153,7 +153,9 @@ Dragon (Easy)
     * ``.make_damage()`` - Smok zadaje komuś losowe obrażenia (5-20)
     * ``.set_position(x, y)`` - ustawia pozycję smoka na ``x`` i ``y``
     * ``.get_position()`` - która zwraca aktualne położenie smoka
-    * ``.move(left, right, down, up)`` - przesuwa smoka o zadaną liczbę punktów w którymś z kierunków - można podać tylko niektóre z nich, np. ``.move(right=30, down=50)`` lub ``.move(up=20)``
+    * ``.move(left, right, down, up)`` - przesuwa smoka o zadaną liczbę punktów w którymś z kierunków
+
+#. Można podać tylko niektóre z parametry metody ``.move()`` np. ``.move(right=30, down=50)`` lub ``.move(up=20)``
 
 #. Przyjmij górny lewy róg ekranu za punkt (0, 0)
 
@@ -176,7 +178,7 @@ Dragon (Easy)
 :About:
     * Filename: ``oop_dragon_easy.py``
     * Lines of code to write: 40 lines
-    * Estimated time of completion: 60 min
+    * Estimated time of completion: 75 min
 
 .. literalinclude:: src/oop_dragon.py
     :name: listing-oop-dragon
@@ -199,7 +201,7 @@ Dragon (Medium)
 :About:
     * Filename: ``oop_dragon_medium.py``
     * Lines of code to write: 100 lines
-    * Estimated time of completion: 30 min
+    * Estimated time of completion: 60 min
 
 Dragon (Advanced)
 -----------------

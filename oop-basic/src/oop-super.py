@@ -11,5 +11,5 @@ class FictionalAstronaut(Astronaut):
 
 jose = FictionalAstronaut()
 jose.say_hello()
-# MMy name... José Jiménez
+# My name... José Jiménez
 # I am an astronaut
