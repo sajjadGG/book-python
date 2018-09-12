@@ -120,6 +120,12 @@ Multiple Inheritance
     :language: python
     :caption: Using ``super()`` on a class
 
+``Enum``
+--------
+.. literalinclude:: src/oop-enum.py
+    :language: python
+    :caption: ``enum`` - Support for enumerations
+
 
 One class per file?
 ===================
@@ -137,6 +143,7 @@ Assignments
 
 Dragon (Easy)
 -------------
+#. UWAGA: Zadanie opisuje wymagania do gry a nie interfejs, tzn. jeżeli konieczne jest wprowadzenie nowej metody, klasy lub pól to należy to zrobić.
 #. Stwórz klasę ``Dragon``
 #. Smok ma mieć:
 
@@ -195,6 +202,8 @@ Dragon (Medium)
 #. Smok zadaje losowe obrażenia (5-20)
 #. Bohater zadaje losowe obrażenia (1-15)
 #. Napisz ``doctest`` do funkcji move, sprawdzający poruszanie się poza planszą
+#. Do statusów zastosuj ENUM
+#. Bohater przejmuje złoto smoka
 #. Przeprowadź symulację walki.
 #. Kto zginie pierwszy?
 
@@ -203,10 +212,13 @@ Dragon (Medium)
     * Lines of code to write: 100 lines
     * Estimated time of completion: 60 min
 
+:Hint:
+    * Aby zaimportować trzeba najpierw w katalogu stworzyć pusty plik ``__init__.py``
+
 Dragon (Advanced)
 -----------------
 #. Zaimportuj i wykorzystaj dziedziczenie klas ``SuperDragon`` i ``Hero``
-#. Bohater może dodatkowo założyć ekwipunek (obiekty):
+#. Bohater może dodatkowo założyć ekwipunek i może być to wiele obiektów na raz
 #. Każdy z przedmiotów ma swoją nazwę, typ oraz modyfikator
 
     * zbroję (dodatkowe punkty obrony, np. +10)
@@ -217,6 +229,7 @@ Dragon (Advanced)
 #. Miecz zwiększa ilość zadawanych obrażeń
 #. Obrażenia smoka maleją z sześcianem odległości
 #. Bohater nie może zadawać obrażeń jak jest dalej niż 50 punktów od przeciwnika
+#. Smok i bohater może lewelować a bazowe punty życia i obrażeń się zmieniają z poziomem
 #. Przeprowadź symulację walki.
 #. Kto zginie pierwszy?
 
