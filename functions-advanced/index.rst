@@ -1,3 +1,5 @@
+.. _Advanced Functions:
+
 ******************
 Advanced Functions
 ******************
@@ -8,11 +10,11 @@ Callable
 .. code-block:: python
 
     def hello():
-        print('My name José Jiménez')
+        print('My name... José Jiménez')
 
     hello                 # <function hello at 0x0C55D420>
     type(hello)           # <class 'function'>
-    hello()               # My name José Jiménez
+    hello()               # My name... José Jiménez
 
 .. code-block:: python
 
@@ -25,13 +27,13 @@ Returning function (callable)
 .. code-block:: python
 
     def hello():
-        print('My name José Jiménez')
+        print('My name... José Jiménez')
 
     def function():
         return hello
 
     my_name = function()  # <function __main__.hello()>
-    my_name()             # 'My name José Jiménez'
+    my_name()             # My name José Jiménez
 
 .. code-block:: python
 

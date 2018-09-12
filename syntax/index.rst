@@ -42,7 +42,7 @@ Line comments
     .. code-block:: python
 
         # José Jiménez says hello
-        print('My name José Jiménez')
+        print('My name... José Jiménez')
 
 Inline comments
 ---------------
@@ -50,7 +50,7 @@ Inline comments
 
     .. code-block:: python
 
-        print('My name José Jiménez')  # José Jiménez says hello
+        print('My name... José Jiménez')  # José Jiménez says hello
 
 Multiline comments
 ------------------

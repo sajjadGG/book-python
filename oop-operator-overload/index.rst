@@ -187,12 +187,12 @@ Address Book
             return f'{self.__dict__}'
 
 
-    contact = Contact(name='Jose', addresses=[Address(location='JPL')])
+    contact = Contact(name='José', addresses=[Address(location='JPL')])
     contact += Address(location='Houston')
     contact += Address(location='KSC')
 
     print(contact)
-    {'name': 'Jose', 'addresses': [{'city': 'JPL'}, {'city': 'Houston'}, {'city': 'KSC'}]}
+    {'name': 'José', 'addresses': [{'city': 'JPL'}, {'city': 'Houston'}, {'city': 'KSC'}]}
 
     if Address(location='Bajkonur') in contact:
         print(True)

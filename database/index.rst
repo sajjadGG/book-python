@@ -107,7 +107,7 @@ Converters
 
     data = {
         "name": "José Jiménez",
-        "catchphrase": "My name José Jiménez",
+        "catchphrase": "My name... José Jiménez",
         "tags": ["astronaut", "nasa", "space"],
         "date": datetime.datetime.utcnow()
     }

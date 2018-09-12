@@ -19,12 +19,18 @@ Fields
 
 Static Fields
 -------------
+* Simple to use
+* Must have default values
+* Share state
+
 .. literalinclude:: src/oop-fields-static.py
     :language: python
     :caption: Static Fields
 
 Dynamic Fields
 --------------
+* Require ``__init__()``
+
 .. literalinclude:: src/oop-fields-dynamic.py
     :language: python
     :caption: Dynamic fields
@@ -94,11 +100,19 @@ Inheritance
     :language: python
     :caption: Inheritance
 
+Multilevel Inheritance
+----------------------
+.. literalinclude:: src/oop-inheritance-multilevel.py
+    :language: python
+    :caption: Multilevel Inheritance
+
 Multiple Inheritance
 --------------------
 .. literalinclude:: src/oop-inheritance-multiple.py
     :language: python
     :caption: Multiple Inheritance
+
+.. note:: The topic will be continued in :ref:`Advanced OOP` chapter
 
 ``super()`` - Calling object parent
 -----------------------------------
@@ -109,13 +123,13 @@ Multiple Inheritance
 
 One class per file?
 ===================
-* Jeden plik: gdy klasy są małe i czytelne
-* Osobne pliki: gdy klasy są duże
+* Jeden plik - gdy klasy są małe i czytelne
+* Osobne pliki - gdy klasy są duże
 
 
 More advanced topics
 ====================
-.. note:: The topic will be continued in Intermediate and Advanced part of the book
+.. note:: The topic will be continued in :ref:`Advanced OOP` chapter
 
 
 Assignments
@@ -135,11 +149,11 @@ Dragon (Easy)
 
 #. Stwórz metody:
 
-    * ``.take_damage(damage)`` - zadaj obrażenia smokowi
-    * ``.make_damage()`` - Smok zadaje losowe obrażenia (5-20)
+    * ``.take_damage(damage)`` - smok otrzymuje obrażenia
+    * ``.make_damage()`` - Smok zadaje komuś losowe obrażenia (5-20)
     * ``.set_position(x, y)`` - ustawia pozycję smoka na ``x`` i ``y``
     * ``.get_position()`` - która zwraca aktualne położenie smoka
-    * ``.move(left, right, down, up)`` - przesuwa smoka o zadaną liczbę punktów w którymś z kierunków - można podać tylko dwa z nich, np. ``.move(right=30, down=50)``
+    * ``.move(left, right, down, up)`` - przesuwa smoka o zadaną liczbę punktów w którymś z kierunków - można podać tylko niektóre z nich, np. ``.move(right=30, down=50)`` lub ``.move(up=20)``
 
 #. Przyjmij górny lewy róg ekranu za punkt (0, 0)
 
@@ -150,11 +164,11 @@ Dragon (Easy)
 
 #. Kiedy ``hit_points`` smoka spadnie poniżej zera:
 
-    * zmień ``status`` na ``dead``
-    * wypisz na ekranie 'Dragon is dead'
-    * zmień ``texture`` na ``dragon-dead.png``
-    * napisz na ekranie ile złota smok wyrzucił (losowa 1-100)
-    * napisz na ekranie w jakiej pozycji smok wyrzucił pieniądze (ostania, w której widziano smoka)
+    * ``status`` ma mieć wartość ``dead``
+    * Na ekranie ma pojawić się napis 'Dragon is dead'
+    * ``texture`` smoka musi być ustawione na ``dragon-dead.png``
+    * Na ekranie pojawi się informacja ile złota smok wyrzucił (losowa 1-100)
+    * Na ekranie pojawi się informacja w jakiej pozycji smok wyrzucił pieniądze (ostania, w której widziano smoka)
 
 #. Nie można zadawać smokowi obrażeń, jeżeli już nie żyje
 #. Granie ze smokiem tak jak na :numref:`listing-oop-dragon`
@@ -162,7 +176,7 @@ Dragon (Easy)
 :About:
     * Filename: ``oop_dragon_easy.py``
     * Lines of code to write: 40 lines
-    * Estimated time of completion: 45 min
+    * Estimated time of completion: 60 min
 
 .. literalinclude:: src/oop_dragon.py
     :name: listing-oop-dragon

@@ -3,13 +3,13 @@ class Astronaut:
         print('I am an astronaut')
 
 
-class Jose(Astronaut):
+class FictionalAstronaut(Astronaut):
     def say_hello(self):
-        print('My name José Jiménez')
+        print(f'My name... José Jiménez')
         super().say_hello()
 
 
-jose = Astronaut()
+jose = FictionalAstronaut()
 jose.say_hello()
-# My name José Jiménez
+# MMy name... José Jiménez
 # I am an astronaut

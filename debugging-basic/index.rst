@@ -63,7 +63,7 @@ Run in the console
     print(globals())
     pprint(globals())
 
-    def hello(a, b, text='My name'):
+    def hello(a, b, text='My name...'):
         first_name = 'José'
         last_name = 'Jiménez'
         pprint(locals())
@@ -76,7 +76,7 @@ Run in the console
 ============
 .. code-block:: python
 
-    def hello(a, b, text='My name'):
+    def hello(a, b, text='My name...'):
         first_name = 'José'
         last_name = 'Jiménez'
         my_vars = locals()

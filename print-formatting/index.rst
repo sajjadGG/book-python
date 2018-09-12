@@ -32,8 +32,8 @@ Do łączenia ciągów znakowych, które mają zostać wyświetlone dla użytkow
 
     name = 'José Jiménez'
 
-    print('My name', name, '!')
-    # My name José Jiménez!
+    print('My name...', name, '!')
+    # My name... José Jiménez!
 
 Można tutaj podać jako argumenty zarówno ciągi znaków jak i wartości liczbowe. Ciągi znaków będą od siebie odseparowane ciągiem znaków przekazanym przez argument ``sep``, domyślnie jest to spacja ``' '``.
 
@@ -41,8 +41,8 @@ Można tutaj podać jako argumenty zarówno ciągi znaków jak i wartości liczb
 
     name = 'José Jiménez'
 
-    print('My name', name, '!', sep=';')
-    # My name;José;Jiménez!
+    print('My name...', name, '!', sep=';')
+    # My name...;José;Jiménez!
 
 Operator ``+``
 --------------
@@ -52,8 +52,8 @@ Operator + skleja ze sobą stringi. Ten sposób jest niepolecany, ale można go 
 
     name = 'José Jiménez'
 
-    print('My name ' + name + '!')
-    # My name José Jiménez!
+    print('My name... ' + name + '!')
+    # My name... José Jiménez!
 
 Można go użyć do wyświetlania zmiennych liczbowych, ale nie jest to najlepsze rozwiązanie.
 
@@ -62,8 +62,8 @@ Można go użyć do wyświetlania zmiennych liczbowych, ale nie jest to najlepsz
     name = 'José Jiménez'
     age = 35
 
-    print('My name ' + name + ' and I am ' + str(age) + ' years old!')
-    # My name is José Jiménez and I am 35 years old!
+    print('My name... ' + name + ' and I am ' + str(age) + ' years old!')
+    # My name... José Jiménez and I am 35 years old!
 
 
 Interpolacja zmiennych
@@ -86,7 +86,7 @@ Używanie tych operatorów przypomina używanie funkcji ``printf``, znanej międ
     def my(name):
         return name
 
-    print('My name %s!' % name)                 # My name José Jiménez!
+    print('My name... %s!' % name)              # My name... José Jiménez!
     print("%s has %s years" % (name, age))      # José Jiménez has 42 years
     print('%s has %s years' % (age, name))      # 42 has José Jiménez years
     print('%s has %.1f years' % (name, age))    # José Jiménez has 42.0 years
@@ -99,8 +99,8 @@ Używanie tych operatorów przypomina używanie funkcji ``printf``, znanej międ
     })
     # José Jiménez has 42 years
 
-    print('My name %(name)s.' % locals())
-    # My name José Jiménez.
+    print('My name... %(name)s.' % locals())
+    # My name... José Jiménez.
 
 
 Metoda ``.format()``
@@ -148,8 +148,8 @@ f-strings to rozwinięcie funkcji ``format``. Jedyne co trzeba zrobić żeby umi
     def my(name):
         return name
 
-    print(f'My name {name}!')                                        # 'My name José Jiménez'
-    print(f'My name {my(name)}, age: {age} years')                   # 'My name José, age: 42 years'
+    print(f'My name... {name}!')                                     # 'My name... José Jiménez'
+    print(f'My name... {my(name)}, age: {age} years')                # 'My name... José, age: 42 years'
     print(f'Today is: {datetime.datetime.now():%Y-%m-%d %H:%M:%S}')  # 'Today is: 1969-07-21 02:56:15'
     print(f'Today is: {now():%Y-%m-%d %H:%M:%S}')                    # 'Today is: 1969-07-21 02:56:15'
     print(f'Today is: {now():{format}}')                             # 'Today is: 1969-07-21 02:56:15'
@@ -562,8 +562,8 @@ Przeliczanie temperatury
 
 :About:
     * Filename: ``print_formatting.py``
-    * Lines of code to write: 3 lines
-    * Estimated time of completion: 10 min
+    * Lines of code to write: 8 lines
+    * Estimated time of completion: 15 min
 
 :Hints:
     * Fahrenheit to Celsius: (°F - 32) / 1.8 = °C

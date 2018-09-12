@@ -7,4 +7,4 @@ class Astronaut:
         print(self.__str__())
 
     def __str__(self):  # system function
-        return f'My name {self.name}'
+        return f'My name... {self.name}'

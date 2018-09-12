@@ -303,7 +303,7 @@ Characters before strings
 
     name = 'José Jiménez'
 
-    f'My name {name}'
+    f'My name... {name}'
     u'zażółć gęślą jaźń'
     b'this is text'
     r'(?P<foo>)\n'
@@ -323,10 +323,10 @@ Characters before strings
 
 .. code-block:: python
 
-    print('My name José Jiménez')  # My name José Jiménez
+    print('My name... José Jiménez')  # My name... José Jiménez
 
     name = 'José Jiménez'
-    print(f'My name {name}')       # My name José Jiménez
+    print(f'My name... {name}')       # My name... José Jiménez
 
 String immutability
 -------------------
@@ -375,7 +375,7 @@ String methods
     name = 'José Jiménez'
 
     if name.startswith('José'):
-        print('My name José Jiménez')
+        print('My name... José Jiménez')
     else:
         print('I have no name')
 
@@ -495,7 +495,7 @@ Variables and types
 
     .. code-block:: text
 
-        '''My name "José Jiménez".
+        '''My name... "José Jiménez".
 	        I'm an """astronaut!"""'''
 
 #. Gdzie wartość w podwójnym cudzysłowiu to ciąg od użytkownika (w przykładzie użytkownik wpisał ``José Jiménez``)

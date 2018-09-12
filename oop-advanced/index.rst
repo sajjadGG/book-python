@@ -1,6 +1,8 @@
-***************************
-Object Oriented Programming
-***************************
+.. _Advanced OOP:
+
+************
+Advanced OOP
+************
 
 
 Everything is an object

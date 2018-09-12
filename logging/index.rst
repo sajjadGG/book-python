@@ -2,7 +2,6 @@
 Logowanie zdarzeń
 *****************
 
-* https://pyvideo.org/pycon-au-2018/a-guided-tour-of-python-logging.html
 
 Korzystanie z ``logging``
 =========================
@@ -228,3 +227,7 @@ Konfiguracja formatowania logów
 
     sumuj(1, 2)
     sum(1, 2)
+
+Further Reading
+===============
+* https://pyvideo.org/pycon-au-2018/a-guided-tour-of-python-logging.html

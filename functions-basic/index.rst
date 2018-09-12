@@ -13,10 +13,10 @@ Function definition
 .. code-block:: python
 
     def hello():
-        print('My name José Jiménez')
+        print('My name... José Jiménez')
 
     hello()
-    # José Jiménez
+    # My name... José Jiménez
 
 Returning values
 ================
@@ -224,7 +224,7 @@ Recurrence
 
 More advanced topics
 ====================
-.. note:: The topic will be continued in Intermediate and Advanced part of the book
+.. note:: The topic will be continued in :ref:`Advanced Functions` chapter
 
 
 Assignments

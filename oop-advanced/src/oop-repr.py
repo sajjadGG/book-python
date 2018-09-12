@@ -4,7 +4,7 @@ class Astronaut:
         self.agency = agency
 
     def __str__(self):
-        return f'My name {self.name}'
+        return f'My name... {self.name}'
 
     def __repr__(self):
         return f'Astronaut(name="{self.name}", agency="{self.agency}")'
@@ -12,7 +12,7 @@ class Astronaut:
 
 jose = Astronaut(name='José Jiménez', agency='NASA')
 print(jose)
-# My name José Jiménez
+# My name... José Jiménez
 
 crew = [
     Astronaut(name='José Jimenéz', agency='NASA'),

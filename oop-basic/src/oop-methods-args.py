@@ -10,5 +10,5 @@ jose = Astronaut()
 jose.say_hello()
 # ¡Hola José Jiménez!
 
-jose.say_hello('My name')
-# My name José Jiménez!
+jose.say_hello('My name...')
+# My name... José Jiménez!

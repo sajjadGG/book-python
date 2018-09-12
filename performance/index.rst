@@ -12,14 +12,6 @@ PyPy
 * Can speedup couple order of magnitude
 
 
-Read more
-=========
-* https://wiki.python.org/moin/TimeComplexity
-* https://visualgo.net/bn/sorting
-* http://sorting.at/
-* https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
-
-
 Seven strategies
 ================
 * https://www.youtube.com/watch?v=zQeYx87mfyw
@@ -118,6 +110,14 @@ Inne
 ====
 * Jeżeli coś ``collections.deque`` - Double ended Queue
 * Serializowanie kolejki przy wielowątkowości
+
+
+Further Reading
+===============
+* https://wiki.python.org/moin/TimeComplexity
+* https://visualgo.net/bn/sorting
+* http://sorting.at/
+* https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
 
 
 Assignments

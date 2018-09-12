@@ -19,7 +19,7 @@ Conditional Statements
         name = 'José Jiménez'
 
         if name == 'José Jiménez':
-            print('My name José Jiménez')
+            print('My name... José Jiménez')
 
 * Checking if value is in range
 
@@ -41,7 +41,7 @@ Conditional Statements
         name = 'José Jiménez'
 
         if name == 'José Jiménez':
-            print('My name José Jiménez')
+            print('My name... José Jiménez')
         else:
             print('My name is other')
 
@@ -66,7 +66,7 @@ Conditional Statements
     name = 'José Jiménez'
 
     if name == 'José Jiménez':
-        print('My name José Jiménez')
+        print('My name... José Jiménez')
     elif name == 'Max Peck':
         print('Your name is Max Peck')
     else:
@@ -102,7 +102,7 @@ Complex expressions
     last_name = 'Jiménez'
 
     if first_name == 'José' and last_name == 'Jiménez':
-        print('My name José Jiménez')
+        print('My name... José Jiménez')
     else:
         print('Your name is different')
 
@@ -157,7 +157,7 @@ Control Statements
 
     .. code-block:: python
 
-        text = 'My name José Jiménez'
+        text = 'My name... José Jiménez'
 
         if 'José' in text:
             print(True)
@@ -195,7 +195,7 @@ No ``switch`` statement?!
 .. code-block:: python
 
     if name == 'José Jiménez':
-        print('My name José Jiménez')
+        print('My name... José Jiménez')
     elif name == 'Иван Иванович':
         print('Your name is Иван Иванович')
     elif name == 'Max Peck':
@@ -206,7 +206,7 @@ No ``switch`` statement?!
 .. code-block:: python
 
     switch = {
-        'José Jiménez': 'My name José Jiménez',
+        'José Jiménez': 'My name... José Jiménez',
         'Иван Иванович': 'Your name is Иван Иванович',
         'Max Peck': 'Your name is Max Peck',
     }
@@ -219,12 +219,12 @@ No ``switch`` statement?!
 
     def switch(key):
         return {
-            'José Jiménez': 'My name José Jiménez',
+            'José Jiménez': 'My name... José Jiménez',
             'Иван Иванович': 'Your name is Иван Иванович',
             'Max Peck': 'Your name is Max Peck',
         }.get(key, 'Your name is other')
 
-    switch('José Jiménez')  # 'My name José Jiménez'
+    switch('José Jiménez')  # 'My name... José Jiménez'
     switch('Paxi')          # 'Your name is other'
 
 

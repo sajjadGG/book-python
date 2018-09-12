@@ -15,7 +15,7 @@ Debugging
         """
         Function displays greeting
         """
-        print(f'My name {name}')
+        print(f'My name... {name}')
 
     help(hello)
     print(hello.__doc__)
@@ -120,7 +120,7 @@ Using ``pdb``
 =============
 .. code-block:: python
 
-    print('Jose Jimenez')
+    print('José Jiménez')
     import pdb; pdb.set_trace()
     print('Max Peck')
 
@@ -129,7 +129,7 @@ Using ``pdb``
 ================
 .. code-block:: python
 
-    print('Jose Jimenez')
+    print('José Jiménez')
     breakpoint()
     print('Max Peck')
 
