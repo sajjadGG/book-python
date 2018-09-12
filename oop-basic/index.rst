@@ -287,3 +287,11 @@ Przekształć swój kod z przykładu z modułu "Matematyka" tak żeby wykorzysty
     * Filename: ``oop-vector.py``
     * Lines of code to write: 20 lines
     * Estimated time of completion: 30 min
+
+Bank i Bankomaty
+----------------
+#. Stwórz klasę Bank
+#. Stwórz klasę Bankomat
+#. Stwórz klasę Osoba
+#. Osoba ma konto w banku
+#. Osoba może wybrać pieniądze z bankomatu
