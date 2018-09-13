@@ -17,6 +17,7 @@ ALGORITHMS = {
     '6': 'SHA-512',
 }
 
+
 def is_clean(line):
     if line.isspace() or line.startswith('#'):
         return False
@@ -69,7 +70,7 @@ with open(ETC_SHADOW) as shadow:
 with open(ETC_PASSWD, encoding='utf-8') as passwd:
     for line in passwd:
         if is_clean(line):
-            username, password, uid, gid, fullname, home, shell = line.split(':')
+            username, _, uid, gid, fullname, home, shell = line.split(':')
 
             if int(uid) >= 1000:
                 p = passwords.get(username, dict())
