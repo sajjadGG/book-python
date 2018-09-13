@@ -39,6 +39,10 @@ Built-in frameworks
 
 ``Unittest``
 ------------
+.. literalinclude:: src/unittest-typing.py
+    :language: python
+    :caption: Przykład pokrycia klasy za pomocą ``unittest``.
+
 .. literalinclude:: src/unittest-class.py
     :language: python
     :caption: Przykład pokrycia klasy za pomocą ``unittest``.

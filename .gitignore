@@ -5,6 +5,7 @@ __notepad__*
 
 ## Compiled and environmental
 __pycache__/
+.mypy_cache/
 *.pyc
 ~$*
 *.spec
