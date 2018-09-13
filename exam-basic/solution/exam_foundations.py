@@ -7,6 +7,8 @@ ETC_GROUP = '../src/etc-group.txt'
 
 users = list()
 groups = dict()
+passwords = dict()
+
 ALGORITHMS = {
     '1': 'MD5',
     '2a': 'Blowfish',
@@ -25,9 +27,9 @@ def is_clean(line):
 with open(ETC_GROUP) as group:
     for line in group:
         if is_clean(line):
-            groupname, password, gid, users = line.split(':')
+            groupname, password, gid, members = line.split(':')
 
-            for user in users.split(','):
+            for user in members.split(','):
                 user = user.strip()
 
                 if not user:
@@ -47,23 +49,44 @@ with open(ETC_SHADOW) as shadow:
 
             if password in ('*', '!', '!!'):
                 locked = True
+                algorithm = None
+                salt = None
+                password = None
             else:
                 locked = False
                 _, algorithm, salt, password = password.split('$')
                 algorithm = ALGORITHMS[algorithm]
 
-        # 'algorithm': algorithm,
-        # 'password': password,
-
-        # 'locked': locked,
-        # 'lastchanged': lastchanged,
+            passwords[username] = {
+                'algorithm': algorithm,
+                'password': password,
+                'locked': locked,
+                'salt': salt,
+                'lastchanged': lastchanged,
+            }
 
 
 with open(ETC_PASSWD, encoding='utf-8') as passwd:
     for line in passwd:
         if is_clean(line):
             username, password, uid, gid, fullname, home, shell = line.split(':')
-            users.append({'login': username, 'uid': uid, 'gid': gid, 'home': home, 'shell': shell})
+
+            if int(uid) >= 1000:
+                p = passwords.get(username, dict())
+                g = groups.get(username, list())
+                users.append({
+                    'login': username,
+                    'uid': uid,
+                    'gid': gid,
+                    'home': home,
+                    'shell': shell,
+                    'password': p.get('password'),
+                    'algorithm': p.get('algorithm'),
+                    'locked': p.get('locked'),
+                    'salt': p.get('salt'),
+                    'lastchanged': p.get('lastchanged'),
+                    'groups': g,
+                })
 
 
 pprint(users)
