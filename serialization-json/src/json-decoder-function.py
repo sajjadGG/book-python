@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime, date, timezone
 import json
 
 
@@ -20,10 +20,12 @@ def decoder(obj):
     for key, value in obj.items():
 
         if key == 'datetime':
-            obj['datetime'] = datetime.datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%fZ')
+            dt = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%fZ')
+            obj['datetime'] = dt.replace(tzinfo=timezone.utc)
 
         elif key == 'date':
-            obj['date'] = datetime.datetime.strptime(value, '%Y-%m-%d').date()
+            dt = datetime.strptime(value, '%Y-%m-%d')
+            obj['date'] = dt.date()
 
         else:
             return obj
