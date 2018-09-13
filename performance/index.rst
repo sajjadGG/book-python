@@ -130,7 +130,8 @@ Assignments
 
 Memoization
 -----------
-#. Stwórz ``dict`` o nazwie ``CACHE`` z wynikami wyliczenia funkcji
+#. Stwórz pusty ``dict`` o nazwie ``CACHE``
+#. W słowniku będziemy przechowywali wyniki wyliczenia funkcji, dla parametrów:
 
     - klucz: argument funkcji
     - wartość: wynik obliczeń
@@ -141,7 +142,7 @@ Memoization
     - jeżeli tak, to zwraca dane z ``CACHE``
     - jeżeli nie, to oblicza, aktualizuje ``CACHE``, a następnie zwraca wartość
 
-#. Porównaj prędkość działania z obliczaniem:
+#. Porównaj prędkość działania przy obliczaniu:
 
     .. code-block:: python
 
