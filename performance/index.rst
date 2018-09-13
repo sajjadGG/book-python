@@ -23,6 +23,11 @@ Line Profiling
 
 Numpy vectorization
 -------------------
+.. figure:: img/scipy-ecosystem.png
+    :scale: 50%
+    :align: center
+
+    Scipy Ecosystem
 
 Specialized data structures
 ---------------------------

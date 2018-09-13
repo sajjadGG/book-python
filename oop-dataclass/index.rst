@@ -27,6 +27,23 @@ New style dataclasses
 
 ``__init__`` vs. ``__post_init__``
 ==================================
+.. code-block:: python
+
+    from dataclasses import dataclass
+
+
+    @dataclass
+    class Kelvin:
+        value: float = 0
+
+        def __post_init__(self):
+            if self.value < 0:
+                raise ValueError('Temperature must be greater than 0')
+
+
+    temp = Kelvin(-300)
+
+
 
 More advanced options
 =====================
@@ -60,43 +77,53 @@ Dataclass will add
 ------------------
 .. code-block:: python
 
-    def __init__(self, name: str, unit_price: float, quantity_on_hand: int = 0) -> None:
-        self.name = name
-        self.unit_price = unit_price
-        self.quantity_on_hand = quantity_on_hand
+    class InventoryItem:
 
-    def __repr__(self):
-        return f'InventoryItem(name={self.name!r}, unit_price={self.unit_price!r}, quantity_on_hand={self.quantity_on_hand!r})'
+        def __init__(self, name, unit_price, quantity_on_hand=0):
+            self.name = name
+            self.unit_price = unit_price
+            self.quantity_on_hand = quantity_on_hand
 
-    def __eq__(self, other):
-        if other.__class__ is self.__class__:
-            return (self.name, self.unit_price, self.quantity_on_hand) == (other.name, other.unit_price, other.quantity_on_hand)
-        return NotImplemented
+        def total_cost(self) -> float:
+            return self.unit_price * self.quantity_on_hand
 
-    def __ne__(self, other):
-        if other.__class__ is self.__class__:
-            return (self.name, self.unit_price, self.quantity_on_hand) != (other.name, other.unit_price, other.quantity_on_hand)
-        return NotImplemented
+        def __init__(self, name: str, unit_price: float, quantity_on_hand: int = 0) -> None:
+            self.name = name
+            self.unit_price = unit_price
+            self.quantity_on_hand = quantity_on_hand
 
-    def __lt__(self, other):
-        if other.__class__ is self.__class__:
-            return (self.name, self.unit_price, self.quantity_on_hand) < (other.name, other.unit_price, other.quantity_on_hand)
-        return NotImplemented
+        def __repr__(self):
+            return f'InventoryItem(name={self.name!r}, unit_price={self.unit_price!r}, quantity_on_hand={self.quantity_on_hand!r})'
 
-    def __le__(self, other):
-        if other.__class__ is self.__class__:
-            return (self.name, self.unit_price, self.quantity_on_hand) <= (other.name, other.unit_price, other.quantity_on_hand)
-        return NotImplemented
+        def __eq__(self, other):
+            if other.__class__ is self.__class__:
+                return (self.name, self.unit_price, self.quantity_on_hand) == (other.name, other.unit_price, other.quantity_on_hand)
+            return NotImplemented
 
-    def __gt__(self, other):
-        if other.__class__ is self.__class__:
-            return (self.name, self.unit_price, self.quantity_on_hand) > (other.name, other.unit_price, other.quantity_on_hand)
-        return NotImplemented
+        def __ne__(self, other):
+            if other.__class__ is self.__class__:
+                return (self.name, self.unit_price, self.quantity_on_hand) != (other.name, other.unit_price, other.quantity_on_hand)
+            return NotImplemented
 
-    def __ge__(self, other):
-        if other.__class__ is self.__class__:
-            return (self.name, self.unit_price, self.quantity_on_hand) >= (other.name, other.unit_price, other.quantity_on_hand)
-        return NotImplemented
+        def __lt__(self, other):
+            if other.__class__ is self.__class__:
+                return (self.name, self.unit_price, self.quantity_on_hand) < (other.name, other.unit_price, other.quantity_on_hand)
+            return NotImplemented
+
+        def __le__(self, other):
+            if other.__class__ is self.__class__:
+                return (self.name, self.unit_price, self.quantity_on_hand) <= (other.name, other.unit_price, other.quantity_on_hand)
+            return NotImplemented
+
+        def __gt__(self, other):
+            if other.__class__ is self.__class__:
+                return (self.name, self.unit_price, self.quantity_on_hand) > (other.name, other.unit_price, other.quantity_on_hand)
+            return NotImplemented
+
+        def __ge__(self, other):
+            if other.__class__ is self.__class__:
+                return (self.name, self.unit_price, self.quantity_on_hand) >= (other.name, other.unit_price, other.quantity_on_hand)
+            return NotImplemented
 
 Assignments
 ===========

@@ -38,6 +38,14 @@ Elementy języka Python i biblioteki standardowej
     * ``matplotlib``
     * ``jupyter``
 
+Ecosystem Scipy
+---------------
+.. figure:: img/scipy-ecosystem.png
+    :scale: 50%
+    :align: center
+
+    Scipy Ecosystem
+
 Biblioteki zewnętrzne do nauczania maszynowego
 ----------------------------------------------
 ``Scikit-learn``

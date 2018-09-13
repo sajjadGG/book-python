@@ -14,6 +14,14 @@ Anaconda
 
     * https://www.continuum.io/downloads
 
+Ecosystem
+=========
+.. figure:: img/numerical-scipy-ecosystem.png
+    :scale: 50%
+    :align: center
+
+    Scipy Ecosystem
+
 
 Biblioteki do obsługi danych
 ============================
