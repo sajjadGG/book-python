@@ -130,26 +130,21 @@ Assignments
 
 Memoization
 -----------
+#. Skopiuj kod z listingu poniżej
 #. Stwórz pusty ``dict`` o nazwie ``CACHE``
-#. W słowniku będziemy przechowywali wyniki wyliczenia funkcji, dla parametrów:
+#. W słowniku będziemy przechowywali wyniki wyliczenia funkcji dla zadanych parametrów:
 
     - klucz: argument funkcji
     - wartość: wynik obliczeń
 
-#. Zmodyfikuj funkcję ``factorial(n: int)`` z listingu poniżej
+#. Zmodyfikuj funkcję ``factorial_cache(n: int)``
 #. Przed uruchomieniem funkcji, sprawdź czy wynik został już wcześniej obliczony:
 
     - jeżeli tak, to zwraca dane z ``CACHE``
     - jeżeli nie, to oblicza, aktualizuje ``CACHE``, a następnie zwraca wartość
 
-#. Porównaj prędkość działania przy obliczaniu:
+#. Porównaj prędkość działania
 
-    .. code-block:: python
-
-        factorial(500)
-        factorial(400)
-        factorial(450)
-        factorial(350)
 
 :About:
     * Filename: ``performance_memoize.py``
@@ -157,11 +152,31 @@ Memoization
     * Estimated time of completion: 15 min
 
 :Hints:
-    * ``import timeit`` - https://docs.python.org/3/library/timeit.html
+    * ``import timeit`` - :ref:`timeit`
     * .. code-block:: python
 
-        def factorial(n: int) -> int:
+        def factorial_nocache(n: int) -> int:
             if n == 0:
                 return 1
             else:
                 return n * factorial(n-1)
+
+        def factorial_cache(n: int) -> int:
+            raise NotImplementedError
+
+
+        duration_cache = timeit(
+            stmt='factorial_cache(500); factorial_cache(400); factorial_cache(450); factorial_cache(350)',
+            globals=globals(),
+            number=10000,
+        )
+
+        duration_nocache = timeit(
+            stmt='factorial_nocache(500); factorial_nocache(400); factorial_nocache(450); factorial_nocache(350)',
+            globals=globals(),
+            number=10000
+        )
+
+        print(f'factorial_cache time: {round(duration_cache, 4)} seconds')
+        print(f'factorial_nocache time: {round(duration_nocache, 3)} seconds')
+        print(f'Cached solution is {round(duration_nocache / duration_cache, 1)} times faster')

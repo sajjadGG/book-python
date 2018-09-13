@@ -131,6 +131,7 @@ From local to UTC
     :language: python
     :caption: Get timestamp
 
+.. _timeit:
 
 ``timeit``
 ==========
@@ -144,6 +145,10 @@ From local to UTC
 .. literalinclude:: src/timeit_multiple.py
     :language: python
     :caption: Timeit multiple statements with setup code
+
+.. literalinclude:: src/timeit_globals.py
+    :language: python
+    :caption: Timeit with ``globals()``
 
 ``timeit`` from terminal
 ------------------------
