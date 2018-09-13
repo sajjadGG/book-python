@@ -4,7 +4,7 @@ Testy i Jakość
 
 .. figure:: img/geek-and-poke-development-driven-tests.jpg
     :align: center
-    :scale: 50%
+    :scale: 25%
 
     Development driven tests
 
