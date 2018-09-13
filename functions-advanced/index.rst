@@ -63,14 +63,23 @@ Operator ``*`` i ``**``
 - ``*`` zwykle nazywa się ``*args`` (arguments) - argumenty pozycyjne (anonimowe)
 - ``**`` zwykle nazywa się ``**kwargs`` (keyword arguments) - argumenty nazwane
 
-
-Przyjmowanie z funkcji zmiennej ilości argumentów
--------------------------------------------------
+Przypomnienie wiadomości o parametrach
+--------------------------------------
 .. code-block:: python
 
-    a, b = [1, 2]
-    a, b = (1, 2)
+    def add(a, b):
+        return a + b
+
+
+    add(1, 2)       # pozycyjne
+    add(a=1, b=2)   # nazwane, kolejność nie ma znaczenia
+    add(b=2, a=1)   # nazwane, kolejność nie ma znaczenia
+
+.. code-block:: python
+
     a, b = 1, 2
+    a, b = (1, 2)
+    a, b = [1, 2]
 
 .. code-block:: python
 
@@ -79,6 +88,8 @@ Przyjmowanie z funkcji zmiennej ilości argumentów
 
     a, b = numbers()
 
+Przyjmowanie z funkcji zmiennej ilości argumentów
+-------------------------------------------------
 .. code-block:: python
 
     line = 'jimenez:x:1001:1001:José Jiménez:/home/jimenez:/bin/bash'
@@ -100,9 +111,10 @@ Przyjmowanie z funkcji zmiennej ilości argumentów
 
 .. code-block:: python
 
-    *others, shell = line.split(':')
-    others      # ['jimenez', 'x', '1001', '1001', 'José Jiménez', '/home/jimenez']
-    shell       # /bin/bash
+    *others, home, shell = line.split(':')
+    others      # ['jimenez', 'x', '1001', '1001', 'José Jiménez']
+    home        # '/home/jimenez'
+    shell       # '/bin/bash'
 
 .. code-block:: python
 
@@ -113,6 +125,22 @@ Przyjmowanie z funkcji zmiennej ilości argumentów
 
     # if you're not using ``others`` later in your code
     username, *_ = line.split(':')
+
+.. code-block:: python
+
+    class Point:
+        def __init__(self, x, y, z):
+            self.x = x
+            self.y = y
+            self.z = z
+
+        def get_position(self):
+            return self.x, self.y, self.z
+
+    p = Point(10, 20)
+    p.get_position()    # 10, 20
+    x, y, z = p.get_position()
+    x, *_ = p.get_position()
 
 .. code-block:: python
 
@@ -136,10 +164,10 @@ Definiowanie funkcji ze zmienną ilością parametrów
         print(f'argument b: {b}')                   # 2
         print(f'argument c: {c}')                   # 3
         print(f'argumenty pozycyjne: {pozycyjne}')  # 4, 5, 6
-        print(f'argumenty nazwane: {nazwane}')      # d=5, e=6
+        print(f'argumenty nazwane: {nazwane}')      # d=7, e=8
 
 
-    wyswietl_argumenty(1, 2, 3, 4, 5, 6, d=5, e=6)
+    wyswietl_argumenty(1, 2, 3, 4, 5, 6, d=7, e=8)
 
 .. code-block:: python
 
@@ -148,10 +176,10 @@ Definiowanie funkcji ze zmienną ilością parametrów
         print(f'argument b: {b}')                   # 2
         print(f'argument c: {c}')                   # 3
         print(f'argumenty args: {args}')            # 4, 5, 6
-        print(f'argumenty kwargs: {kwargs}')        # d=5, e=6
+        print(f'argumenty kwargs: {kwargs}')        # d=7, e=8
 
 
-    wyswietl_argumenty(1, 2, 3, 4, 5, 6, d=5, e=6)
+    wyswietl_argumenty(1, 2, 3, 4, 5, 6, d=7, e=8)
 
 Kiedy to się przydaje:
 
@@ -312,4 +340,19 @@ Przykładowe zastosowanie
 
 Assignments
 ===========
-.. todo:: zrobić zadania do rozwiązania dla parametrów z gwiazdką
+
+Hosts
+-----
+#. Skopiuj zawartość listingu :numref:`listing-etc-hosts` do pliku ``hosts.txt``
+#. Stwórz pusty ``dict`` o nazwie ``hosts``
+#. Czytając plik pomiń puste linie lub zaczynające się od komentarza ``#``
+#. Do ``hosts`` dla klucza IP dodaj listę hostname
+#. Przy parsowaniu linii skorzystaj z konstrukcji z gwiazdką ``*``
+
+.. literalinclude:: src/etc-hosts.txt
+    :name: `listing-etc-hosts`
+    :language: python
+    :caption: Listing pliku ``/etc/hosts``
+
+Deserialize
+-----------

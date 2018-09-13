@@ -11,12 +11,18 @@ class Astronaut:
     date_of_birth: Optional[date] = None
     first_step: Optional[datetime] = None
 
+    def __str__(self):
+        return f'My name... {self.name}'
+
     def __post_init__(self):
         if self.first_step and self.first_step.tzinfo != timezone.utc:
             raise ValueError('Timezone must by UTC')
 
 
 class AstronautTest(TestCase):
+    def setUp(self):
+        self.astro = Astronaut(name='Jose Jimenez', agency='NASA')
+
     def test_recruiting_new_astronaut(self):
         jose = Astronaut(name='Jose Jimenez')
         self.assertEqual(jose.name, 'Jose Jimenez')
@@ -39,3 +45,6 @@ class AstronautTest(TestCase):
 
         with self.assertRaises(ValueError):
             Astronaut(name='Jose Jimenez', first_step=step)
+
+    def test_hello(self):
+        self.assertEqual(str(self.astro), 'My name... Jose Jimenez')

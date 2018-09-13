@@ -1,15 +1,28 @@
+from dataclasses import dataclass
+from typing import List
 
+
+@dataclass
+class Address:
+    location: str
+    city: str = None
+
+    def __post_init__(self):
+        self.city = self.location
+
+    def __repr__(self):
+        d = {'city': self.city}
+        return f'{d}'
+
+
+@dataclass
 class Contact:
-    def __init__(self, name, addresses=[]):
-        self.name = name
-        self.addresses = addresses
+    name: str
+    addresses: List[Address]
 
     def __iadd__(self, other):
         self.addresses.append(other)
         return self
-
-    def __str__(self):
-        return f'{self.__dict__}'
 
     def __contains__(self, item):
         if item in self.addresses:
@@ -17,22 +30,21 @@ class Contact:
         else:
             return False
 
-
-class Address:
-    def __init__(self, location):
-        self.city = location
-
-    def __repr__(self):
+    def __str__(self):
         return f'{self.__dict__}'
 
 
-contact = Contact(name='Jose', addresses=[Address(location='JPL')])
+
+
+contact = Contact(name='José', addresses=[Address(location='JPL')])
 contact += Address(location='Houston')
 contact += Address(location='KSC')
 
 print(contact)
+# {'name': 'José', 'addresses': [{'city': 'JPL'}, {'city': 'Houston'}, {'city': 'KSC'}]}
 
 if Address(location='Bajkonur') in contact:
     print(True)
 else:
     print(False)
+# False
