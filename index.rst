@@ -50,7 +50,7 @@ Foundations
     functions-basic/index.rst
     exceptions/index.rst
     doctest/index.rst
-    modules-install/index.rst
+    modules-use/index.rst
     builtin/index.rst
     programming-convention/index.rst
     debugging-basic/index.rst
@@ -74,6 +74,7 @@ Intermediate
     logging/index.rst
     print-formatting/index.rst
     performance/index.rst
+    http-simple/index.rst
     serialization-json/index.rst
     quality-and-tests/index.rst
     functions-advanced/index.rst
@@ -107,7 +108,7 @@ Advanced
     descriptor/index.rst
     decorator/index.rst
     collections/index.rst
-    network-http/index.rst
+    http-advanced/index.rst
     network-socket/index.rst
     threading-and-multiprocessing/index.rst
     concurrency/index.rst

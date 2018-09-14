@@ -38,17 +38,18 @@ Using
 * Autocomplete
 * Cell type (Markdown, LaTeX, Code)
 
+
 Shortcut keys
 =============
 
 Indent
 ------
-Tab
-Shift + Tab
+* ``Tab``
+* ``Shift + Tab``
 
 Comment Code
 ------------
-Ctrl + /
+* ``Ctrl + /``
 
 Cells
 =====
@@ -73,7 +74,7 @@ Run
 
 Run Cell
 --------
-Shift-Enter
+* ``Shift-Enter``
 
 Run All (above/below)
 ---------------------
@@ -85,9 +86,6 @@ Clear Output
 Magic commands
 ==============
 * ``%run``
-* ``%%timeit``
-* ``%%latex``
-* ``%matplotlib inline``
 
 
 Kernels
@@ -110,6 +108,10 @@ Trust Notebook
 
 Close and Halt
 --------------
+
+Performance and profiling
+=========================
+- ``%%timeit``
 
 
 Markdown
@@ -155,6 +157,21 @@ Formatting
     *italic*
     **bold**
 
+Code inline
+-----------
+.. code-block:: md
+
+    `class`
+
+Code blocks
+-----------
+.. code-block:: md
+
+    ```python
+    name = 'Jose Jimenez'
+    print(f'My name... {name}')
+    ```
+
 Tables
 ------
 * https://www.tablesgenerator.com/markdown_tables
@@ -173,11 +190,7 @@ Embedding objects
 
 LaTeX
 -----
-.. code-block:: python
-
-    from IPython.display import display, Math, Latex
-
-    display(Math(r'F(k) = \int_{-\infty}^{\infty} f(x) e^{2\pi i k} dx'))
+* ``%%latex``
 
 .. code-block:: text
 
@@ -189,9 +202,21 @@ LaTeX
 
     %%latex
 
+    $$\int_{x=0}^{x=\infty} x^\pi dx$$
+
+.. code-block:: text
+
+    %%latex
+
     \begin{equation}
     H← ​​​60 ​+​ \frac{​​30(B-R)​​}{Vmax-Vmin}  ​​, if V​max​​ = G
     \end{equation}
+
+.. code-block:: python
+
+    from IPython.display import display, Math, Latex
+
+    display(Math(r'F(k) = \int_{-\infty}^{\infty} f(x) e^{2\pi i k} dx'))
 
 Matplotlib charts
 -----------------

@@ -13,6 +13,11 @@ logging.basicConfig(
 
 log = logging.getLogger(__name__)
 
+class Cache:
+    def set(self): pass
+    def get(self): pass
+    def clear(self): pass
+
 
 class HTTPGateway:
     def __init__(self, username=None, password=None, cache_expiry_days=30, cache_directory='.'):

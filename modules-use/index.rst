@@ -47,6 +47,73 @@ Using
 =====
 ``import ...``
 
+Importing
+=========
+.. code-block:: python
+
+    import sys
+
+    sys.path
+    sys.path.append
+    sys.path.insert(0, '/path/to/directory')
+
+.. code-block:: text
+
+    game
+        __init__.py
+        config.py
+        api.py
+        dragon
+            __init__.py
+            wawelski.py
+            red.py
+            black.py
+            white.py
+
+.. code-block:: python
+
+    from game.config import RESOLUTION_MAX_X
+
+.. code-block:: python
+
+    from ..config import RESOLUTION_MAX_X
+
+.. code-block:: python
+
+    from game.dragon import red
+
+    my_dragon = red.RedDragon()
+
+.. code-block:: python
+
+    from game.dragon import *
+
+    my_dragon1 = red.RedDragon()
+    my_dragon2 = white.WhiteDragon()
+
+.. code-block:: python
+
+    from game.smoki.dragon.red import RedDragon
+
+    wawelski = RedDragon()
+
+.. code-block:: python
+
+    import game
+
+    wawelski = game.dragon.red.RedDragon()
+
+.. code-block:: python
+
+    from game import *
+
+    wawelski = dragon.red.RedDragon()
+
+.. code-block:: python
+
+    from game.smoki.dragon.red import RedDragon as Smok
+    wawelski = Smok()
+
 
 Assignments
 ===========
