@@ -158,6 +158,19 @@ Since accepting a small, limited set of expected types for a single argument is 
 
 A type factored by Union[T1, T2, ...] is a supertype of all types T1 , T2 , etc., so that a value that is a member of one of these types is acceptable for an argument annotated by Union[T1, T2, ...] .
 
+.. code-block:: python
+
+    from typing import Union
+
+    AllowedTypes = Union[list, set, tuple]
+
+    def print_elements(collection: AllowedTypes) -> None:
+        if not isinstance(collection, AllowedTypes.__args__):
+            raise TypeError(f'Collection must be instance of {AllowedTypes.__args__}')
+
+        for element in collection:
+            print(element)
+
 
 Optional
 --------
