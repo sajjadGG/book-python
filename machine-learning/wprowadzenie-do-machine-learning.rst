@@ -177,17 +177,31 @@ Czyszczenie Danych
 
 .. code-block:: text
 
-    ‘Jana III Sobieskiego 1/2’
-    ‘ul. Jana III Sobieskiego 1/2’
-    ‘Ul. Jana III Sobieskiego 1/2’
-    ‘UL. Jana III Sobieskiego 1/2’
-    ‘os. Jana III Sobieskiego 1/2’
-    ‘Jana 3 Sobieskiego 1/2’
-    ‘Jana 3ego Sobieskiego 1/2’
-    ‘Jana III Sobieskiego 1 m. 2’
-    ‘Jana III Sobieskiego 1 apt 2’
-    ‘Jana Iii Sobieskiego 1/2’
-    ‘Jana IIi Sobieskiego 1/2’
+    'Jana III Sobieskiego 1/2'
+    'ul Jana III Sobieskiego 1/2'
+    'ul. Jana III Sobieskiego 1/2'
+    'ul.Jana III Sobieskiego 1/2'
+    'ulicaJana III Sobieskiego 1/2'
+    'Ul. Jana III Sobieskiego 1/2'
+    'UL. Jana III Sobieskiego 1/2'
+    'ulica Jana III Sobieskiego 1/2'
+    'Ulica. Jana III Sobieskiego 1/2'
+    'os. Jana III Sobieskiego 1/2'
+    'plac Jana III Sobieskiego 1/2'
+    'pl Jana III Sobieskiego 1/2'
+    'al Jana III Sobieskiego 1/2'
+    'al. Jana III Sobieskiego 1/2'
+    'aleja Jana III Sobieskiego 1/2'
+    'alei Jana III Sobieskiego 1/2'
+    'Jana 3 Sobieskiego 1/2'
+    'Jana 3ego Sobieskiego 1/2'
+    'Jana III Sobieskiego 1 m. 2'
+    'Jana III Sobieskiego 1 apt 2'
+    'Jana Iii Sobieskiego 1/2'
+    'Jana IIi Sobieskiego 1/2'
+    'Jana lll Sobieskiego 1/2'  # three small letters 'L'
+    'Kozia wólka 5'
+    ...
 
 .. code-block:: text
 

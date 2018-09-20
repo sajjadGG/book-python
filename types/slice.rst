@@ -1,6 +1,8 @@
-********
-Splicing
-********
+.. _Slice:
+
+*******
+Slicing
+*******
 
 
 Accessing element with index
@@ -14,6 +16,7 @@ Accessing element with index
     text[2]             # 'r'
     text[-1]            # 'm'
     text[-3]            # 's'
+    text[60]            # IndexError: string index out of range
 
 
 Accessing range of elements
@@ -28,6 +31,8 @@ Accessing range of elements
     text[-3:]             # 'sum'
     text[-3:-1]           # 'su'
     text[:-2]             # 'Lorem ips'
+    text[0:60]            # 'Lorem ipsum'
+    text[60:]             # ''
 
 .. code-block:: python
 
@@ -39,12 +44,12 @@ Accessing range of elements
     text[lower:upper+1]   # 'orem'
 
 
-Splice
-======
+Slice
+=====
 .. code-block:: python
 
     text = 'Lorem ipsum'
-    RANGE = splice(1, 4)
+    RANGE = slice(1, 4)
 
     text[RANGE]           # 'ore'
 
@@ -62,3 +67,19 @@ Reversing and stepping over elements
 
 Assignments
 ===========
+
+Slicing text
+------------
+#. Z podanych poniżej ciągów znaków wytnij ``Jana III Sobieskiego``
+#. Jakie parametry użyłeś dla każdej z linijek?
+
+.. code-block:: text
+
+    'UL. Jana III Sobieskiego 1/2'
+    'ulica Jana III Sobieskiego 1/2'
+    'os. Jana III Sobieskiego 1/2'
+    'plac Jana III Sobieskiego 1/2'
+    'aleja Jana III Sobieskiego 1/2'
+    'alei Jana III Sobieskiego 1/2'
+    'Jana III Sobieskiego 1 m. 2'
+    'os. Jana III Sobieskiego 1 apt 2'

@@ -123,34 +123,56 @@ Characters before strings
     print(f'My name... {name}')       # My name... José Jiménez
 
 
-String immutability
-===================
-* ``str`` is immutable
-* ``str`` methods create a new modified ``str``
-* How many ``str`` are in the memory?
-* f-string formatting are preferred over ``str`` addition
-
-    .. code-block:: python
-
-        first_name = 'José'
-        last_name = 'Jiménez'
-
-        print(first_name + ' ' + last_name)  # José Jiménez
-        print(f'{first_name} {last_name}')   # José Jiménez
-
-
 String methods
 ==============
 
-``split()``
------------
+``title()``, ``lower()``, ``upper()``
+-------------------------------------
+* Unify data format before analysis
+* Is this the same address?:
+
+    .. code-block:: text
+
+        'Jana III Sobieskiego 1/2'
+        'ul Jana III Sobieskiego 1/2'
+        'ul. Jana III Sobieskiego 1/2'
+        'ul.Jana III Sobieskiego 1/2'
+        'ulicaJana III Sobieskiego 1/2'
+        'Ul. Jana III Sobieskiego 1/2'
+        'UL. Jana III Sobieskiego 1/2'
+        'ulica Jana III Sobieskiego 1/2'
+        'Ulica. Jana III Sobieskiego 1/2'
+        'os. Jana III Sobieskiego 1/2'
+        'plac Jana III Sobieskiego 1/2'
+        'pl Jana III Sobieskiego 1/2'
+        'al Jana III Sobieskiego 1/2'
+        'al. Jana III Sobieskiego 1/2'
+        'aleja Jana III Sobieskiego 1/2'
+        'alei Jana III Sobieskiego 1/2'
+        'Jana 3 Sobieskiego 1/2'
+        'Jana 3ego Sobieskiego 1/2'
+        'Jana III Sobieskiego 1 m. 2'
+        'Jana III Sobieskiego 1 apt 2'
+        'Jana Iii Sobieskiego 1/2'
+        'Jana IIi Sobieskiego 1/2'
+        'Jana lll Sobieskiego 1/2'  # three small letters 'L'
+        'Kozia wólka 5'
+        ...
+
 .. code-block:: python
 
-    text = 'José Jiménez'
-    text.split()        # ['José', 'Jiménez']
+    name = 'joSé jiMénEz III'
 
-    text = 'Max,Peck'
-    text.split(',')     # ['Max', 'Peck']
+    name.title()    # 'José Jiménez Iii'
+    name.upper()    # 'JOSÉ JIMÉNEZ III'
+    name.lower()    # 'josé jiménez iii'
+
+``replace()``
+-------------
+.. code-block:: python
+
+    name = 'José Jiménez Iii'
+    name.replace('Iii', 'III')  # 'José Jiménez III'
 
 ``strip()``, ``lstrip()``, ``rstrip()``
 ---------------------------------------
@@ -175,6 +197,16 @@ String methods
     else:
         print('I have no name')
 
+``split()``
+-----------
+.. code-block:: python
+
+    text = 'José Jiménez'
+    text.split()        # ['José', 'Jiménez']
+
+    text = 'Max,Peck'
+    text.split(',')     # ['Max', 'Peck']
+
 ``join()``
 ----------
 .. code-block:: python
@@ -184,46 +216,21 @@ String methods
     ';'.join(names)
     # 'José;Max;Иван;1961;1969'
 
-``title()``, ``lower()``, ``upper()``
--------------------------------------
-* Unify data format before analysis
-* Example:
 
-    * 'Jana III Sobieskiego 1/2'
-    * 'ul Jana III Sobieskiego 1/2'
-    * 'ul. Jana III Sobieskiego 1/2'
-    * 'Ul. Jana III Sobieskiego 1/2'
-    * 'UL. Jana III Sobieskiego 1/2'
-    * 'ulica Jana III Sobieskiego 1/2'
-    * 'Ulica. Jana III Sobieskiego 1/2'
-    * 'os. Jana III Sobieskiego 1/2'
-    * 'plac Jana III Sobieskiego 1/2'
-    * 'pl Jana III Sobieskiego 1/2'
-    * 'al Jana III Sobieskiego 1/2'
-    * 'Jana 3 Sobieskiego 1/2'
-    * 'Jana 3ego Sobieskiego 1/2'
-    * 'Jana III Sobieskiego 1 m. 2'
-    * 'Jana III Sobieskiego 1 apt 2'
-    * 'Jana Iii Sobieskiego 1/2'
-    * 'Jana IIi Sobieskiego 1/2'
-    * 'Jana lll Sobieskiego 1/2'  # three small letters 'L'
-    * 'Kozia wólka 5'
-    * ...
+String immutability
+===================
+* ``str`` is immutable
+* ``str`` methods create a new modified ``str``
+* How many ``str`` are in the memory?
+* f-string formatting are preferred over ``str`` addition
 
-.. code-block:: python
+    .. code-block:: python
 
-    name = 'joSé jiMénEz III'
+        first_name = 'José'
+        last_name = 'Jiménez'
 
-    name.title()    # 'José Jiménez Iii'
-    name.upper()    # 'JOSÉ JIMÉNEZ III'
-    name.lower()    # 'josé jiménez iii'
-
-``replace()``
--------------
-.. code-block:: python
-
-    name = 'José Jiménez'
-    name.replace('J', 'j')  # 'josé jiménez'
+        print(first_name + ' ' + last_name)  # José Jiménez
+        print(f'{first_name} {last_name}')   # José Jiménez
 
 
 Handling user input

@@ -45,8 +45,10 @@ Foundations
     types/numeric.rst
     types/logic.rst
     types/string.rst
-    types/splice.rst
-    data-structures/index.rst
+    types/slice.rst
+    data-structures/collections.rst
+    data-structures/key-value.rst
+    data-structures/nested.rst
     control-flow/index.rst
     operators/index.rst
     loop/index.rst

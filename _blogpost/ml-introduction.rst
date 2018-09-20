@@ -207,14 +207,35 @@ Czyszczenie Danych
 ==================
 * Bardzo ważny temat
 * Rzadko kto o tym wspomina!
+* Czy to ten sam adres:
 
 .. code-block:: text
 
-    ul. Jana III Sobieskiego 12 m. 19
-    ul. Jana 3 Sobieskiego 12/19
-    Jana III Sobieskiego 12 apt. 19
-    Sobieskiego 12/19
-    os. Jana III Sobieskiego 12/19
+    'Jana III Sobieskiego 1/2'
+    'ul Jana III Sobieskiego 1/2'
+    'ul. Jana III Sobieskiego 1/2'
+    'ul.Jana III Sobieskiego 1/2'
+    'ulicaJana III Sobieskiego 1/2'
+    'Ul. Jana III Sobieskiego 1/2'
+    'UL. Jana III Sobieskiego 1/2'
+    'ulica Jana III Sobieskiego 1/2'
+    'Ulica. Jana III Sobieskiego 1/2'
+    'os. Jana III Sobieskiego 1/2'
+    'plac Jana III Sobieskiego 1/2'
+    'pl Jana III Sobieskiego 1/2'
+    'al Jana III Sobieskiego 1/2'
+    'al. Jana III Sobieskiego 1/2'
+    'aleja Jana III Sobieskiego 1/2'
+    'alei Jana III Sobieskiego 1/2'
+    'Jana 3 Sobieskiego 1/2'
+    'Jana 3ego Sobieskiego 1/2'
+    'Jana III Sobieskiego 1 m. 2'
+    'Jana III Sobieskiego 1 apt 2'
+    'Jana Iii Sobieskiego 1/2'
+    'Jana IIi Sobieskiego 1/2'
+    'Jana lll Sobieskiego 1/2'  # three small letters 'L'
+    'Kozia wólka 5'
+    ...
 
 .. code-block:: text
 
