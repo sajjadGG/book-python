@@ -46,15 +46,23 @@ Assignments
 Create Project
 --------------
 #. Stwórz projekt w Twoim IDE
-#. Jeżeli prowadzący podał Ci link do repozytorium, to wykorzystaj opcję 'Create from VCS'
-#. Jeżeli nie, to stwórz projekt w języku Python
-#. Upewnij się, że jest plik ``.gitconfig`` oraz ma wpisaną linię ``.idea/``
-#. Po stworzeniu projektu, załóż katalog o nazwie jak twoje nazwisko
-#. WAŻNE: Już do końca książki będziesz w nim tworzył wszystkie rozwiązania do zadań
+#. Jeżeli prowadzący podał Ci link do repozytorium GIT, to:
+
+    * wykorzystaj opcję 'Create from VCS'
+    * stwórz plik ``.gitignore``
+    * wpisz linię ``.idea/`` do pliku
+
+#. Jeżeli nie było podanego linku do repozytorium, to:
+
+    * to stwórz projekt w języku Python
+
+#. Po stworzeniu projektu, załóż katalog o nazwie jak twoje nazwisko i imie (np. ``nazwisko_imie``)
+#. WAŻNE: Już do końca książki w nim będą tworzone rozwiązania do wszystkich zadań
 
 Check Environment
 -----------------
-#. Stwórz skrypt o treści:
+#. Stwórz skrypt o nazwie wypisanej w sekcji "About"
+#. Plik ma mieć zawartość:
 
     .. code-block:: python
 

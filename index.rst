@@ -42,7 +42,9 @@ Foundations
     :caption: Foundations
 
     syntax/index.rst
-    types/index.rst
+    types/numeric.rst
+    types/logic.rst
+    types/string.rst
     data-structures/index.rst
     control-flow/index.rst
     operators/index.rst

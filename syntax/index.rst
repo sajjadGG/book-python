@@ -110,6 +110,70 @@ Commented out code
 * Use Version Control System instead - e.g.: ``git blame``
 * IDE has Local history (modifications) and you can compare file
 
+
+Variables and constants
+=======================
+
+Variable declaration
+--------------------
+.. code-block:: python
+
+    my_variable = 10
+    my_variable = 'ehlo world'
+
+Constant declaration
+--------------------
+.. code-block:: python
+
+    MY_CONSTANT = 10
+    MY_CONSTANT = 'ehlo world'
+
+Variables vs. constants
+-----------------------
+* Python do not distinguish between variables and constants
+* Constants uses uppercase letters for names
+* Variables uses lowercase letters for names
+* Python allows you to change "constants" but it's a bad practice
+
+Types
+-----
+* Since Python 3.5
+* Type hints throws SyntaxError in Python before 3.5
+* Type hints or type annotations
+* It is not required, and never will be (quote from Guido van Rossum, Python BDFL)
+* To check types you have to use IDE or modules like ``mypy`` lub ``pyre-check``
+* Types are used extensively in system libraries
+* More and more documentations on the internet use types
+
+.. code-block:: python
+
+    name: str = 'José Jiménez'
+    age: int = 30
+
+Type inference
+--------------
+* Static Typing (Java, C++, Swift)
+
+    .. code-block:: java
+
+        String name = new String("José Jiménez")
+
+* Dynamic Typing (Python, PHP, Ruby)
+
+    .. code-block:: python
+
+        name = str('José Jiménez')
+        name = 'José Jiménez'
+
+    .. code-block:: python
+
+        name: str = str('José Jiménez')  # Type annotations
+
+        # Type annotations (type hinting not forcing)
+        # this will work, but IDE should warn
+        name: str = 10
+
+
 More advanced topics
 ====================
 .. note:: The topic will be continued in chapter: :ref:`Software Engineering Conventions`
