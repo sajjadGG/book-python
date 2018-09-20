@@ -45,6 +45,7 @@ Foundations
     types/numeric.rst
     types/logic.rst
     types/string.rst
+    types/splice.rst
     data-structures/index.rst
     control-flow/index.rst
     operators/index.rst

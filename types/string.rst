@@ -226,26 +226,6 @@ String methods
     name.replace('J', 'j')  # 'josé jiménez'
 
 
-String splicing
-===============
-.. code-block:: python
-
-    text = 'Lorem ipsum'
-
-    text[2]      # 'r'
-    text[0:3]    # 'Lor'
-    text[:3]     # 'Lor'
-    text[1:4]    # 'ore'
-    text[-3]     # 's'
-    text[-3:]    # 'sum'
-    text[-3:-1]  # 'su'
-    text[:-2]    # 'Lorem ips'
-
-    text[::2]    # 'Lrmism'
-    text[::-1]   # 'muspi meroL'
-    text[::-2]   # 'msimrL'
-
-
 Handling user input
 ===================
 * ``input()`` returns ``str``
@@ -268,20 +248,21 @@ Variables and types
     .. code-block:: text
 
         '''My name... "José Jiménez".
-	        I'm an """astronaut!"""'''
+	    	I'm an """astronaut!"""'''
 
 #. Druga linijka zaczyna się od tabulacji
 #. Gdzie wartość w podwójnym cudzysłowiu to ciąg od użytkownika (w przykładzie użytkownik wpisał ``José Jiménez``)
 #. Zwróć uwagę na znaki apostrofów, cudzysłowów, tabulacji i nowych linii
 #. W ciągu do wyświetlenia nie używaj spacji ani enterów - użyj ``\n`` i ``\t``
 #. Tekst wyświetlony na ekranie ma mieć zamienione wszystkie spacje na ``_``
+#. Tekst wyświetlony na ekranie ma być w UPPERCASE
 #. Nie korzystaj z dodawania stringów ``str + str``
 #. Następnie znów wyświetl na ekranie wynik, tym razem z podmienionymi spacjami:
 
     .. code-block:: text
 
-        '''My_name_"José_Jiménez".
-        _I'm_an_"""astronaut!"""'''
+        '''MY_NAME_"JOSÉ_JIMÉNEZ".
+        _I'M_AN_"""ASTRONAUT!"""'''
 
 :About:
     * Filename: ``types_input.py``
