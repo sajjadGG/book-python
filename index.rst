@@ -51,7 +51,9 @@ Foundations
     data-structures/nested.rst
     control-flow/index.rst
     operators/index.rst
-    loop/index.rst
+    loop/loops.rst
+    loop/keywords.rst
+    loop/inline.rst
     functions-basic/index.rst
     exceptions/index.rst
     doctest/index.rst

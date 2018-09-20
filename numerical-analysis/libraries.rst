@@ -16,7 +16,7 @@ Anaconda
 
 Ecosystem
 =========
-.. figure:: img/numerical-scipy-ecosystem.png
+.. figure:: img/scipy-ecosystem.png
     :scale: 50%
     :align: center
 

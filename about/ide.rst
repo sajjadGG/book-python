@@ -129,6 +129,7 @@ Keyboard shortcuts
 
     "Key Combination", "Action"
     "``ctrl+/``", "Comment multiple lines"
+
 #. Indent, unindent
 #. Run
 #. Show terminal

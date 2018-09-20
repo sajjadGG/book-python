@@ -10,7 +10,16 @@ Conditional Statements
 
 ``if``
 ------
-* Negative values: ``None``, ``0``, ``False``
+* Negative values:
+
+    * ``None``,
+    * ``0``,
+    * ``False``
+    * ``()`` - empty tuple
+    * ``{}`` - empty dict
+    * ``[]`` - empty list
+    * ``''`` - empty str
+
 * Positive values: any other values
 * Checking for simple value
 

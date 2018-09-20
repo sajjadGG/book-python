@@ -51,7 +51,9 @@ Machine Learning to bardzo duży i złożony temat, a tak naprawdę to osobna ga
 
 Elementy języka Python i biblioteki standardowej
 ------------------------------------------------
-* :ref:`Types`
+* :ref:`Numerical Types`
+* :ref:`Logical Types`
+* :ref:`Character Types`
 * :ref:`Data Structures`
 * :ref:`Control Flow Statements`
 * :ref:`Loops`

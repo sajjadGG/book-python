@@ -1,8 +1,8 @@
 .. _Data Structures:
 
-***************
-Data Structures
-***************
+******************
+Simple Collections
+******************
 
 
 ``list``

@@ -42,16 +42,9 @@ File types and extensions
 * Podczas wytwarzania oprogramowania spotkasz się jeszcze z kilkoma innymi rozszerzeniami.
 * Mogą to być:
 
-    * ``.pyc`` - plik zawiera tzw. bytecode czyli efekt kompilacji kodu źródłowego. Python tworzy te pliki podczas kompilacji jeżeli nic nie zmienimy w naszym kodzie źródłowym, wykorzystuje je bez potrzeby analizowania i kompilowania kodu ponownie. Od wersji 3.2 pliki ``.pyc`` znajdują się w specjalnym katalogu o nazwie ``__pycache__``.
-
-    * ``.pyd`` - Windowsowy plik ze skompilowanym kodem Pythona w formie biblioteki DLL.
-
-    * ``.pyw`` - Windowsowy plik z kodem źródłowym. Takie pliki odpalane są za pomocą polecenia ``pythonw.exe``
-
-    * ``.pyx`` - Źródło cPythona, które będzie przekonwertowane do C/C++
-
-    * ``.pyz`` - Python 3.5 wprowadził możliwość tworzenia Python ZIP Archive. Takie spakowane archiwum zawiera wszystkie pliki niezbędne do uruchomienia programu. Rozszerzenie dla obiektów tego typu jest ``.pyz``. Do pakowania służy biblioteka `zipapp <https://docs.python.org/3/library/zipapp.html>`_.
-
+    .. csv-table:: Python file types and extensions
+        :header-rows: 1
+        :file: data/extensions.csv
 
 Scripts
 =======

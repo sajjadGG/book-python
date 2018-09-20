@@ -8,8 +8,7 @@ Logical Types
 ``None``
 ========
 * Empty value (null)
-* It is not ``False``, ``0`` or ``''`` (empty string)
-* With ``if`` statements behaves like ``False``, ``0`` or ``''`` (empty string)
+* With ``if`` statements behaves like negative values
 * Used for unknown (unset) values:
 
     .. code-block:: python
@@ -20,6 +19,16 @@ Logical Types
 ``bool``
 ========
 * First letter capitalized, other are lower cased
+* Negative (``False``) values:
+
+    * ``None``
+    * ``0``
+    * ``False``
+    * ``()`` - empty tuple
+    * ``{}`` - empty dict
+    * ``[]`` - empty list
+    * ``''`` - empty str
+
 * Defining ``bool``:
 
     .. code-block:: python
