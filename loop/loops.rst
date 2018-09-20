@@ -277,8 +277,8 @@ Text manipulation
 
 :About:
     * Filename: ``loop_sentences.py``
-    * Lines of code to write: 4 lines
-    * Estimated time of completion: 5 min
+    * Lines of code to write: 10 lines
+    * Estimated time of completion: 10 min
 
 :Co zadanie sprawdza:
     * Dzielenie stringów
