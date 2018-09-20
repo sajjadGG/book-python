@@ -273,7 +273,7 @@ Text manipulation
 #. Dla każdego zdania (zdania oddzielone są kropkami)
 #. Za pomocą funkcji ``len()`` policz ile jest wyrazów
 #. Wypisz na ekranie listę słowników o strukturze: zdanie (klucz) -> ilość wyrazów (wartość)
-
+#. Na końcu wypisz także ile jest zdań oraz ile słów i znaków naliczyliśmy łącznie
 
 :About:
     * Filename: ``loop_sentences.py``
