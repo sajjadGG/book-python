@@ -45,7 +45,40 @@ Raising exceptions
 
 Traceback analysis
 ==================
+.. code-block:: python
 
+    def apollo13():
+        raise RuntimeError('Mid-flight Oxygen tank explosion')
+
+    apollo13()
+
+* Stacktraces are 8 levels deep, it's not Java's 200 ;)
+* Change level with ``sys.tracebacklimit``:
+
+    .. code-block:: python
+
+        import sys
+        sys.tracebacklimit = 1
+
+* Last lines are the most important
+* In the most cases error is there
+* From time to time you can have problems somewhere in the middle, but it's rare
+
+    .. code-block:: text
+
+          File "/Users/matt/.virtualenvs/book-python/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 2961, in run_code
+            exec(code_obj, self.user_global_ns, self.user_ns)
+          File "<ipython-input-2-badb71482ca2>", line 1, in <module>
+            runfile('/Users/matt/Developer/book-python/__notepad__.py', wdir='/Users/matt/Developer/book-python')
+          File "/Applications/PyCharm 2018.3 EAP.app/Contents/helpers/pydev/_pydev_bundle/pydev_umd.py", line 198, in runfile
+            pydev_imports.execfile(filename, global_vars, local_vars)  # execute the script
+          File "/Applications/PyCharm 2018.3 EAP.app/Contents/helpers/pydev/_pydev_imps/_pydev_execfile.py", line 18, in execfile
+            exec(compile(contents+"\n", file, 'exec'), glob, loc)
+          File "/Users/matt/Developer/book-python/__notepad__.py", line 13, in <module>
+            apollo13()
+          File "/Users/matt/Developer/book-python/__notepad__.py", line 5, in apollo13
+            raise RuntimeError('Mid-flight Oxygen tank explosion')
+        RuntimeError: Mid-flight Oxygen tank explosion
 
 Catching exceptions
 ===================
@@ -100,7 +133,7 @@ Catching exceptions
         # User cannot simply kill program
         while True:
             try:
-                number = input('Type number: ')
+                number = float(input('Type number: '))
             except:
                 continue
 
@@ -109,7 +142,7 @@ Catching exceptions
         # User can kill program with 'Ctrl-C'
         while True:
             try:
-                number = input('Type number: ')
+                number = float(input('Type number: '))
             except Exception:
                 continue
 
