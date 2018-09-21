@@ -6,5 +6,9 @@ class Astronaut:
 
 
 jose = Astronaut()
+
+str(jose)
+# My name... José Jiménez
+
 print(jose)
 # My name... José Jiménez

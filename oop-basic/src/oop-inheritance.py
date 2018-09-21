@@ -1,20 +1,24 @@
-class Astronaut:
-    gender = None
+class Spaceman:
+    agency = None
 
-    def what_is_your_gender(self):
-        print(f'I am {self.gender}')
+    def __init__(self, name):
+        self.name = name
 
-
-class MaleAstronaut(Astronaut):
-    gender = 'male'
-
-
-class FemaleAstronaut(Astronaut):
-    gender = 'female'
+    def what_is_your_agency(self):
+        return self.agency
 
 
-jose = MaleAstronaut()
-jose.what_is_your_gender()       # male
+class Astronaut(Spaceman):
+    agency = 'NASA'
 
-valentina = FemaleAstronaut()
-valentina.what_is_your_gender()  # female
+
+class Cosmonaut(Spaceman):
+    agency = 'Roscosmos'
+
+
+
+jose = Astronaut(name='José Jiménez')
+jose.what_is_your_agency()       # NASA
+
+ivan = Cosmonaut(name='Иван Иванович')
+ivan.what_is_your_agency()       # Roscosmos

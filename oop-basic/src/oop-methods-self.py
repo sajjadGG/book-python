@@ -6,5 +6,6 @@ class Astronaut:
 
 
 jose = Astronaut()
+
 jose.say_hello()
 # My name... José Jiménez

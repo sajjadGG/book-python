@@ -23,8 +23,8 @@ for color in Color:
 # Color.GREEN
 # Color.BLUE
 
-Color(1)
-# <Color.RED: 1>
+Color('#00FF00')
+# <Color.GREEN: '#00FF00'>
 
 Color.RED is Color.RED
 # True

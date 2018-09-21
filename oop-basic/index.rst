@@ -60,9 +60,9 @@ Methods
 
 ``self`` - Instance as an argument
 ----------------------------------
-* pierwszy argument do metody
-* wyjątek ``@staticmethod`` o tym będzie później
-* przy uruchomieniu funkcji nie podajemy go jawnie
+* ``self`` - pierwszy argument do metody
+* wyjątek to metody z dekoratorem ``@staticmethod`` (o tym będzie później)
+* przy uruchomieniu funkcji nie podajemy jawnie argumentu ``self``
 
 .. literalinclude:: src/oop-methods-self.py
     :language: python
@@ -175,7 +175,7 @@ Dragon (Easy)
     - idąc w górę odejmujesz ``y`` od ``position_y``
     - idąc w dół dodajesz ``y`` do ``position_y``
 
-#. Kiedy ``hit_points`` smoka spadnie poniżej zera:
+#. Kiedy ``hit_points`` smoka spadnie do lub poniżej zera:
 
     * ``status`` ma mieć wartość ``dead``
     * Na ekranie ma pojawić się napis 'Dragon is dead'

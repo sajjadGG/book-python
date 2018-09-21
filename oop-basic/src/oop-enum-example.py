@@ -2,23 +2,20 @@ from enum import Enum
 
 
 class Color(Enum):
-    RED = 1
-    GREEN = '#00FF00'
-    BLUE = 'blue'
+    RED = 'Roscosmos'
+    BLUE = 'NASA'
 
 
 class Moon:
-    def __init__(self, first_explorer):
-        if first_explorer == 'NASA':
-            self.color = Color.BLUE
-        elif first_explorer == 'Roscosmos':
-            self.color = Color.RED
+    def __init__(self, explorer):
+        self.color = Color(explorer)
 
 
-moon = Moon(first_explorer='NASA')
+moon = Moon(explorer='NASA')
 
 
-if moon.color is Color.RED:
-    print(True)
-else:
-    print(False)
+if moon.color is Color.BLUE:
+    print("That's one small step for [a] man, one giant leap for mankind.")
+
+elif moon.color is Color.RED:
+    print('Красная Луна, товарищ!')
