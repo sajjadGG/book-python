@@ -126,6 +126,10 @@ Multiple Inheritance
     :language: python
     :caption: ``enum`` - Support for enumerations
 
+.. literalinclude:: src/oop-enum-example.py
+    :language: python
+    :caption: ``enum`` - Example usage
+
 
 One class per file?
 ===================

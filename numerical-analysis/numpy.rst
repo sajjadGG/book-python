@@ -67,6 +67,7 @@ Compute the median along the specified axis
 .. code-block:: python
 
     a = np.array([1, 4, 3, 8, 9, 2, 3], float)
+
     np.median(a)
     # 3.0
 
@@ -182,7 +183,7 @@ Defining polynomial
 -------------------
 .. code-block:: text
 
-    x**3 + x**2 + x + C
+    Ax^3 + Bx^2 + Cx^1 + D
 
 .. code-block:: python
 
@@ -191,7 +192,6 @@ Defining polynomial
 
 Roots of a polynomial
 ---------------------
-
 .. code-block:: python
 
     np.roots([1, 4, -2, 3])
@@ -214,6 +214,7 @@ Derivatives
 Evaluate a polynomial at specific values
 ----------------------------------------
 .. code-block:: python
+
     np.polyval([1, -2, 0, 2], 4)
     # 34
 

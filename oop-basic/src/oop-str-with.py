@@ -7,4 +7,4 @@ class Astronaut:
 
 jose = Astronaut()
 print(jose)
-# MMy name... José Jiménez
+# My name... José Jiménez

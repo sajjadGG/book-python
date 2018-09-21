@@ -4,7 +4,7 @@ class Astronaut:
         self.agency = agency
 
 
-jose = Astronaut(name='JoséJiménez')
+jose = Astronaut(name='José Jiménez')
 ivan = Astronaut(name='Иван Иванович', agency='Roscosmos')
 
 jose.__dict__    # {'name': 'José Jiménez', 'agency': 'NASA'}
