@@ -27,67 +27,51 @@ Import
 
     import numpy as np
 
+
+Data Structures
+===============
+* Skalar - jednowymiarowa
+* Wektor - dwuwymiarowa
+* Tensor - trójwymiarowa
+* Tablica - czterowymiarowa
+* Macierz - n-wymiarowa
+
+
 Functions
 =========
-* abs
-* sign
-* sqrt
-* log
-* log10
-* exp
-* sin
-* cos
-* tan
-* arcsin
-* arccos
-* arctan
-* sinh
-* cosh
-* tanh
-* arcsinh
-* arccosh
-* arctanh
-
-
-Polynomial mathematics
-======================
-.. code-block:: python
-
-    np.poly([-1, 1, 1, 10])
-    # array([ 1, -11, 9, 11, -10])
-
-    np.roots([1, 4, -2, 3])
-    # array([-4.57974010+0.j , 0.28987005+0.75566815j, 0.28987005-0.75566815j])
-
-    np.polyint([1, 1, 1, 1]) # x**3 + x**2 + x + C
-    # array([ 0.25 , 0.33333333, 0.5 , 1. , 0. ])
-
-
-    np.polyder([1./4., 1./3., 1./2., 1., 0.])  # derivatives
-    # array([ 1., 1., 1., 1.])
-    # polyadd, polysub, polymul, and polydiv
-
-    np.polyval([1, -2, 0, 2], 4)
-    # 34
-
-.. code-block:: python
-
-    # polyfit function can be used to fit a polynomial of specified order to a set of data using a least-squares approach
-    x = [1, 2, 3, 4, 5, 6, 7, 8]
-    y = [0, 2, 1, 3, 7, 10, 11, 19]
-
-    np.polyfit(x, y, 2)
-    # array([ 0.375 , -0.88690476, 1.05357143])
+* ``np.abs()``
+* ``np.sign()``
+* ``np.sqrt()``
+* ``np.log()``
+* ``np.log10()``
+* ``np.exp()``
+* ``np.sin()``
+* ``np.cos()``
+* ``np.tan()``
+* ``np.arcsin()``
+* ``np.arccos()``
+* ``np.arctan()``
+* ``np.sinh()``
+* ``np.cosh()``
+* ``np.tanh()``
+* ``np.arcsinh()``
+* ``np.arccosh()``
+* ``np.arctanh()``
 
 
 Statistics
 ==========
+
+Compute the median along the specified axis
+-------------------------------------------
 .. code-block:: python
 
     a = np.array([1, 4, 3, 8, 9, 2, 3], float)
     np.median(a)
     # 3.0
 
+Pearson product-moment correlation coefficients
+-----------------------------------------------
 .. code-block:: python
 
     a = np.array([[1, 2, 1, 3], [5, 3, 1, 8]], float)
@@ -95,6 +79,12 @@ Statistics
     np.corrcoef(a)
     # array([[ 1. , 0.72870505],
     #        [ 0.72870505, 1. ]])
+
+Estimate a covariance matrix, given data and weights
+----------------------------------------------------
+.. code-block:: python
+
+    a = np.array([[1, 2, 1, 3], [5, 3, 1, 8]], float)
 
     np.cov(a)
     # array([[ 0.91666667, 2.08333333],
@@ -105,9 +95,15 @@ Random numbers
 ==============
 * Mersenne Twister algorithm for pseudorandom number generation
 
+Seed the generator
+------------------
 .. code-block:: python
 
     np.random.seed(293423)
+
+Random values in a given shape
+------------------------------
+* Random samples from a uniform distribution over ``[0, 1)``
 
 .. code-block:: python
 
@@ -122,21 +118,31 @@ Random numbers
     # array([[ 0.72915152, 0.59423848, 0.25644881],
     #        [ 0.75965311, 0.52151819, 0.60084796]])
 
+Random floats in the half-open interval ``[0.0, 1.0)``
+------------------------------------------------------
+* Results are from the “continuous uniform” distribution over the stated interval
+
 .. code-block:: python
 
     np.random.random()
     # 0.70110427435769551
 
+Random integers from low (inclusive) to high (exclusive)
+--------------------------------------------------------
 .. code-block:: python
 
     np.random.randint(5, 10)
     # 9
 
+Draw samples from a Poisson distribution
+----------------------------------------
 .. code-block:: python
 
     np.random.poisson(6.0)  # Poisson distribution with lambda = 6.0
     # 5
 
+Draw random samples from a normal (Gaussian) distribution
+---------------------------------------------------------
 .. code-block:: python
 
     np.random.normal(1.5, 4.0)  # continuous normal (Gaussian) distribution with mean micro=1.5 and standard deviation sigma=4.0
@@ -148,42 +154,138 @@ Random numbers
     np.random.normal(size=5)
     # array([-1.67215088, 0.65813053, -0.70150614, 0.91452499, 0.71440557])
 
+Modify a sequence in-place by shuffling its contents
+----------------------------------------------------
 .. code-block:: python
 
-    l = range(10)
+    arr = range(10)
     # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-    np.random.shuffle(l)
+    np.random.shuffle(arr)
     # [4, 9, 5, 0, 2, 7, 6, 8, 1, 3]
 
-Data Structures
-===============
-* Skalar - jednowymiarowa
-* Wektor - dwuwymiarowa
-* Tensor - trójwymiarowa
-* Tablica - czterowymiarowa
-* Macierz - n-wymiarowa
+Multi-dimensional arrays are only shuffled along the first axis:
+
+    .. code-block:: python
+
+        arr = np.arange(9).reshape((3, 3))
+
+        np.random.shuffle(arr)
+        # array([[3, 4, 5],
+        #       [6, 7, 8],
+        #       [0, 1, 2]])
+
+Polynomial mathematics
+======================
+
+Defining polynomial
+-------------------
+.. code-block:: text
+
+    x**3 + x**2 + x + C
+
+.. code-block:: python
+
+    np.poly([-1, 1, 1, 10])
+    # array([ 1, -11, 9, 11, -10])
+
+Roots of a polynomial
+---------------------
+
+.. code-block:: python
+
+    np.roots([1, 4, -2, 3])
+    # array([-4.57974010+0.j , 0.28987005+0.75566815j, 0.28987005-0.75566815j])
+
+Antiderivative (indefinite integral) of a polynomial
+----------------------------------------------------
+.. code-block:: python
+
+    np.polyint([1, 1, 1, 1])
+    # array([ 0.25 , 0.33333333, 0.5 , 1. , 0. ])
+
+Derivatives
+-----------
+.. code-block:: python
+
+    np.polyder([1./4., 1./3., 1./2., 1., 0.])
+    # array([ 1., 1., 1., 1.])
+
+Evaluate a polynomial at specific values
+----------------------------------------
+.. code-block:: python
+    np.polyval([1, -2, 0, 2], 4)
+    # 34
+
+Least squares polynomial fit
+----------------------------
+.. code-block:: python
+
+    x = [1, 2, 3, 4, 5, 6, 7, 8]
+    y = [0, 2, 1, 3, 7, 10, 11, 19]
+
+    np.polyfit(x, y, 2)
+    # array([ 0.375 , -0.88690476, 1.05357143])
+
+Polynomial Arithmetic
+---------------------
+* ``np.polyadd()``
+* ``np.polysub()``
+* ``np.polymul()``
+* ``np.polydiv()``
+
+
+Find the sum of two polynomials:
+    .. code-block:: python
+
+        np.polyadd([1, 2], [9, 5, 4])
+        # array([9, 6, 6])
 
 
 Arrays
 ======
 
-Create array from list
-----------------------
-.. code-block:: python
+Create array
+------------
+* From list:
 
-    import numpy as np
+    .. code-block:: python
 
-    np.array([1, 2, 3])
-    # [1, 2, 3]
+        import numpy as np
 
-    np.array([1, 4, 5, 8], float)
-    # array([ 1., 4., 5., 8.])
+        np.array([1, 2, 3])
+        # [1, 2, 3]
 
-    np.array([[1,2], [3,4]])
-    # array([[1, 2],
-    #        [3, 4]])
+        np.array([1, 4, 5, 8], float)
+        # array([ 1., 4., 5., 8.])
 
+        np.array([[1,2], [3,4]])
+        # array([[1, 2],
+        #        [3, 4]])
+
+* Generate array:
+
+    .. code-block:: python
+
+        import numpy as np
+
+        np.arange(3)
+        # array([0, 1, 2])
+
+        np.arange(3.0)
+        # array([ 0.,  1.,  2.])
+
+        np.arange(3, 7)
+        # array([3, 4, 5, 6])
+
+        np.arange(3, 7, step=2)
+        # array([3, 5])
+
+        np.arange(start=3, stop=7, step=2, dtype=float)
+        # array([3., 5.])
+
+Slice array
+-----------
 .. code-block:: python
 
     np.array([1, 4, 5, 8], float)
@@ -214,6 +316,8 @@ Create array from list
     a[:,2]      # array([ 3., 6.])
     a[-1:,-2:]  # array([[ 5., 6.]])
 
+Array shape
+-----------
 .. code-block:: python
 
     a = np.array([[1, 2, 3], [4, 5, 6]], float)
@@ -295,6 +399,8 @@ Create array from list
     np.fromstring(s)
     # array([ 1., 2., 3.])
 
+Array modification
+------------------
 .. code-block:: python
 
     a = array([1, 2, 3], float)
@@ -323,6 +429,8 @@ Create array from list
     a.flatten()
     # array([ 1., 2., 3., 4., 5., 6.])
 
+Concatanation
+-------------
 .. code-block:: python
 
     a = np.array([1,2], float)
@@ -670,10 +778,10 @@ Array operations
     a.max()
     # 9.0
 
-    a.argmin()
+    a.argmin()  # index of an ``a.min()`` element in array
     # 1
 
-    a.argmax()
+    a.argmax()  # index of an ``a.max()`` element in array
     # 2
 
 .. code-block:: python
@@ -723,6 +831,8 @@ Array operations
     a.diagonal()
     # array([ 1., 4.])
 
+Array arithmetic
+----------------
 .. code-block:: python
 
     a = np.array([[1,2], [3,4]], float)
@@ -777,53 +887,6 @@ Array operations
     a + b[:,np.newaxis]
     # array([[-1., -1.],
     #        [ 3., 3.]])
-
-.. code-block:: python
-
-    a = np.array([[0, 2], [3, -1], [3, 5]], float)
-
-    a.mean(axis=0)
-    # array([ 2., 2.])
-
-    a.mean(axis=1)
-    # array([ 1., 1., 4.])
-
-    a.min(axis=1)
-    # array([ 0., -1., 3.])
-
-    a.max(axis=0)
-    # array([ 3., 5.])
-
-.. code-block:: python
-
-    a = np.array([6, 2, 5, -1, 0], float)
-
-    sorted(a)
-    # [-1.0, 0.0, 2.0, 5.0, 6.0]
-
-    a.sort()
-    # array([-1., 0., 2., 5., 6.])
-
-.. code-block:: python
-
-    a = np.array([6, 2, 5, -1, 0], float)
-
-    a.clip(0, 5)
-    # array([ 5., 2., 5., 0., 0.])
-
-.. code-block:: python
-
-    a = np.array([1, 1, 4, 5, 5, 5, 7], float)
-
-    np.unique(a)
-    # array([ 1., 4., 5., 7.])
-
-.. code-block:: python
-
-    a = np.array([[1, 2], [3, 4]], float)
-
-    a.diagonal()
-    # array([ 1., 4.])
 
 Comparison operators and value testing
 --------------------------------------
@@ -882,31 +945,58 @@ Comparison operators and value testing
     np.logical_or(a, b)
     # array([ True, True, False], dtype=bool)
 
-.. code-block:: python
+Where
+^^^^^
+* Single argument where ``where(boolarray)``:
 
-    a = np.array([1, 3, 0], float)
+    .. code-block:: python
 
-    # where(boolarray, truearray, falsearray
+        a = np.array([1, 3, 0], float)
 
-    np.where(a != 0, 1 / a, a)
-    # array([ 1. , 0.33333333, 0. ])
+        np.where(a != 0)
+        # array([0, 1])  # indexes of elements
 
-.. code-block:: python
 
-    a = np.array([1, 3, 0], float)
+        b = np.array([1, 0, 3, 4, 0], float)
+        np.where(b != 0)
+        # array([0, 2, 3])
 
-    np.where(a != 0, 1 / a, a)
-    # array([ 1. , 0.33333333, 0. ])
+* Multiple argument where ``where(boolarray, truearray, falsearray)``:
 
-    np.where(a > 0, 3, 2)
-    # array([3, 3, 2])
+    .. code-block:: python
 
+        a = np.array([1, 3, 0], float)
+
+        np.where(a != 0, a, None)  # for element ``a != 0`` return such element, otherwise ``None``
+        # array([1.0, 3.0, None], dtype=object)
+
+    .. code-block:: python
+
+        a = np.array([1, 3, 0], float)
+
+        np.where(a != 0, 1 / a, a)
+        # array([ 1. , 0.33333333, 0. ])
+
+    .. code-block:: python
+
+        a = np.array([1, 3, 0], float)
+
+        np.where(a != 0, 1 / a, a)
+        # array([ 1. , 0.33333333, 0. ])
+
+        np.where(a > 0, 3, 2)
+        # array([3, 3, 2])
+
+Nonzero
+^^^^^^^
 .. code-block:: python
 
     a = np.array([[0, 1], [3, 0]], float)
     a.nonzero()
     # (array([0, 1]), array([1, 0]))
 
+IsFinite and IsNaN
+^^^^^^^^^^^^^^^^^^
 .. code-block:: python
 
     a = np.array([1, np.NaN, np.Inf], float)
@@ -1236,13 +1326,15 @@ Matrix multiplication
 
     def matrix_multiplication(A, B):
         """
-        >>> A = [[1, 0], [0, 1]]
+        >>> import numpy as np
+
+        >>> A = np.array([[1, 0], [0, 1]])
         >>> B = [[4, 1], [2, 2]]
         >>> matrix_multiplication(A, B)
         [[4, 1], [2, 2]]
 
         >>> A = [[1,0,1,0], [0,1,1,0], [3,2,1,0], [4,1,2,0]]
-        >>> B = [[4,1], [2,2], [5,1], [2,3]]
+        >>> B = np.matrix([[4,1], [2,2], [5,1], [2,3]])
         >>> matrix_multiplication(A, B)
         [[9, 2], [7, 3], [21, 8], [28, 8]]
         """
