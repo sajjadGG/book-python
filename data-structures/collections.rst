@@ -103,16 +103,14 @@ Simple Collections
         {1,2} ^ {2,3}            # {1, 3}     # Symmetrical difference
         {1,2} + {3,4}            # TypeError: unsupported operand type(s) for +: 'set' and 'set'
 
-* Slicing ``set``:
+* Slicing ``set`` is not possible:
 
     .. code-block:: python
 
         my_set = {1, 2.0, None, False, 'José'}
 
-        my_set[1]                # 2
-        my_set[2:4]              # {None, False}
-        my_set[::2]              # {1, None, 'José'}
-        my_set[-1]               # 'José'
+        my_set[1]                # TypeError: 'set' object does not support indexing
+        my_set[2:4]              # TypeError: 'set' object does not support indexing
 
 * Length of a ``set``:
 

@@ -12,8 +12,8 @@ Conditional Statements
 ------
 * Negative values:
 
-    * ``None``,
-    * ``0``,
+    * ``None``
+    * ``0``
     * ``False``
     * ``()`` - empty tuple
     * ``{}`` - empty dict

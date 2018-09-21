@@ -184,14 +184,52 @@ Arguments with default value
 
 Naming convention
 =================
-* Nie robimy camelCase
 * Używanie ``_`` w nazwach (snake_case) - // Python - snake ;)
+
+    .. code-block:: python
+
+        def add_numbers(a, b):
+            return a + b
+
+* Nie robimy camelCase
+
+    .. code-block:: python
+
+        def addNumbers(a, b):
+            return a + b
+
 * W Pythonie nie ma private/protected/public
 * Funkcje o nazwie zaczynającej się od ``_`` przez konwencję są traktowane jako prywatne
-* Funkcje o nazwie zaczynającej się od ``__`` i kończących się na ``__`` przez konwencję są traktowane jako systemowe
+
+    .. code-block:: python
+
+        from random import _ceil
+
+        _ceil()
+        # good IDE will display information, that you're accessing protected member
+
+* Funkcje i zmienne o nazwie zaczynającej się od ``__`` i kończących się na ``__`` przez konwencję są traktowane jako systemowe
+
+    .. code-block:: python
+
+        print(__file__)
+
 * Nazwy opisowe funkcji zamiast komentarza
-* ``print_()`` - when name collision
-* ``__nazwa_funkcji()`` - name mangling
+
+    .. code-block:: python
+
+        def fabs(a, b):
+            return float(abs(a + b))
+
+        def float_absolute_value(a, b) -> float:
+            return float(abs(a + b))
+
+* ``_`` at the end of name when name collision
+
+    .. code-block:: python
+
+        def print_(text1, text2):
+            print(values, sep=';', end='\n')
 
 
 Variable scope
@@ -211,7 +249,12 @@ Variable scope
 
 Recurrence
 ==========
-* Aby zrozumieć rekurencję – musisz najpierw zrozumieć rekurencję.
+* Aby zrozumieć rekurencję – musisz najpierw zrozumieć rekurencję
+* Maksymalny limit rekurencji = 1000
+* Zmiana limitu ``sys.setrecursionlimit(limit)``
+* CPython implementation doesn't optimize tail recursion, and unbridled recursion causes stack overflows.
+* Python isn't a functional language and tail recursion is not a particularly efficient technique
+* Rewriting the algorithm iteratively, if possible, is generally a better idea.
 
 .. code-block:: python
 
@@ -237,10 +280,12 @@ Number to string
 
     .. code-block:: python
 
-        number_to_str(1969)    # 'one nine six nine'
-        number_to_str(31337)   # 'three one three three seven'
-        number_to_str(13.37)   # 'one three and three seven'
-        number_to_str(31.337)  # 'three one and three three seven'
+        number_to_str(1969)       # 'one nine six nine'
+        number_to_str(31337)      # 'three one three three seven'
+        number_to_str(13.37)      # 'one three and three seven'
+        number_to_str(31.337)     # 'three one and three three seven'
+        number_to_str(-1969)      # 'minus one nine six nine'
+        number_to_str(-31.337)    # 'minus three one and three three seven'
 
 :About:
     * Filename: ``functions_numstr_simple.py``
@@ -265,10 +310,12 @@ Number to human readable
 
     .. code-block:: python
 
-        number_to_str(1969)   # 'one thousand nine hundred sixty nine'
-        number_to_str(13.37)  # 'thirteen and thirty seven hundredths'
-        number_to_str(31337)  # 'thirty one thousand three hundred thirty seven'
-        number_to_str(31.337) # 'thirty one three hundreds thirty seven thousands'
+        number_to_str(1969)      # 'one thousand nine hundred sixty nine'
+        number_to_str(13.37)     # 'thirteen and thirty seven hundredths'
+        number_to_str(31337)     # 'thirty one thousand three hundred thirty seven'
+        number_to_str(31.337)    # 'thirty one three hundreds thirty seven thousands'
+        number_to_str(-1969)     # 'minus one thousand nine hundred sixty nine'
+        number_to_str(-31.337)   # 'minus thirty one three hundreds thirty seven thousands'
 
 :About:
     * Filename: ``functions_numstr_human.py``

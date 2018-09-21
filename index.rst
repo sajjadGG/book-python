@@ -53,7 +53,7 @@ Foundations
     operators/index.rst
     loop/loops.rst
     loop/keywords.rst
-    loop/inline.rst
+    loop/comprehensions.rst
     functions-basic/index.rst
     exceptions/index.rst
     doctest/index.rst

@@ -23,10 +23,24 @@ Line length
 File encoding
 -------------
 * UTF-8
+* always remember to open files for reading and writing with ``encoding='utf-8'``
 
 Comments
 --------
-* Better named functions and variables
+* Better named functions and variables:
+
+    .. code-block:: python
+
+        def fabs(a, b):
+            return float(abs(a + b))
+
+
+        def float_absolute_value(a, b):
+            return float(abs(a + b))
+
+
+        def float_absolute_value(a: int, b: int) -> float:
+            return float(abs(a + b))
 
 Commented code?
 ---------------
@@ -40,16 +54,141 @@ Author name or revision version
 
 Naming convention
 -----------------
-* ``zmienne``
-* ``STALE``
-* ``NazwyKlas``
-* ``nazwy_metod()`` i ``nazwy_funkcji()``
-* ``nazwymodulow``, ``nazwy_modulow``
+
+Constants and Variables
+^^^^^^^^^^^^^^^^^^^^^^^
+* Używanie ``_`` w nazwach (snake_case) - // Python - snake ;)
+* ``variable`` or ``variable_name``
+
+    .. code-block:: python
+
+        name = 'José Jiménez'
+
+        first_name = 'José'
+        last_name = 'Jiménez'
+
+* ``CONSTANT`` or ``CONSTANT_NAME``
+
+    .. code-block:: python
+
+        PATH = '/etc/hosts'
+
+        FILE_NAME = 'README.txt'
+
+Classes
+^^^^^^^
+* ``CamelCase``
+
+    .. code-block:: python
+
+        class MyClass:
+            pass
+
+Methods/Functions
+-----------------
+* Używanie ``_`` w nazwach (snake_case) - // Python - snake ;)
+* ``method_name()`` or ``function_name()``
+
+    .. code-block:: python
+
+        def add_numbers(a, b):
+            return a + b
+
+* Nie robimy camelCase
+
+    .. code-block:: python
+
+        def addNumbers(a, b):
+            return a + b
+
+Modules names
+-------------
+* ``nazwymodulow``
+* ``nazwy_modulow``
+* Preferable one word
+
+    .. code-block:: python
+
+        import random
+        import argparse
+
+
+Function/Method argument names
+------------------------------
 * ``self``
+
+    .. code-block:: python
+
+        class Astronaut:
+            name = 'José Jiménez'
+
+            def say_hello(self):
+                print(f'My name... {self.name}')
+
+
 * ``cls``
+
+    .. code-block:: python
+
+        class Astronaut:
+            pass
+
+        class Cosmonaut:
+            pass
+
+        class Starman:
+            pass
+
+        def is_spaceman(cls):
+            if instance(cls, (Astronaut, Cosmonaut)):
+                return True
+            else:
+                return False
+
+
+        is_spaceman(Cosmonaut)  # True
+        is_spaceman(Astronaut)  # True
+        is_spaceman(Starman)    # False
+
+* ``self`` and ``other``
+
+    .. code-block:: python
+
+        class Vector:
+            x = 0
+            y = 1
+
+            def __add__(self, other):
+                return Vector(
+                    x=self.x+other.x,
+                    y=self.y+other.y
+                )
 
 Using ``__`` and ``_`` in names
 -------------------------------
+* W Pythonie nie ma private/protected/public
+* Funkcje o nazwie zaczynającej się od ``_`` przez konwencję są traktowane jako prywatne
+
+    .. code-block:: python
+
+        from random import _ceil
+
+        _ceil()
+        # good IDE will display information, that you're accessing protected member
+
+* Funkcje i zmienne o nazwie zaczynającej się od ``__`` i kończących się na ``__`` przez konwencję są traktowane jako systemowe
+
+    .. code-block:: python
+
+        print(__file__)
+
+* ``_`` at the end of name when name collision
+
+    .. code-block:: python
+
+        def print_(text1, text2):
+            print(values, sep=';', end='\n')
+
 
 Single or double quotes?
 ------------------------

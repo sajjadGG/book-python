@@ -1,7 +1,8 @@
 "Operator", "Description"
 "``lambda``", "Lambda expression"
 "``if``, ``elif``, ``else``", "Conditional expression"
-"``or``, ``and``", "Boolean OR and AND"
+"``and``", "Boolean AND"
+"``or``", "Boolean OR"
 "``not x``", "Boolean NOT"
 "``in``, ``not in``, ``is``, ``is not``,
 
