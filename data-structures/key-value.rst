@@ -155,3 +155,11 @@ Aviation Language
     :header-rows: 1
     :file: data/aviation-alphabet.csv
 
+:About:
+    * Filename: ``collections_aviation_alphabet.py``
+    * Lines of code to write: 30 lines
+    * Estimated time of completion: 15 min
+
+:The whys and wherefores:
+    * Definiowanie i korzystanie z ``dict`` z wartościami
+    * Rzutowanie i konwersja typów

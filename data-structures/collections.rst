@@ -261,5 +261,16 @@ Assignments
 
 Simple collections
 ------------------
-#. Stwórz listę z cyframi od 0 do 9
-#.
+#. Stwórz tuplę z cyframi od 0-9
+#. Przekonwertuj ją do listy
+#. Na pierwsze miejsce w liście dodaj całą oryginalną tuplę
+#. Przekonwertuj wszystko na płaski zbiór unikalnych wartości
+
+:About:
+    * Filename: ``collections_conversions.py``
+    * Lines of code to write: 5 lines
+    * Estimated time of completion: 10 min
+
+:The whys and wherefores:
+    * Definiowanie i korzystanie z ``list``, ``tuple``, ``set``
+    * Rzutowanie i konwersja typów

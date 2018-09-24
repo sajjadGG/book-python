@@ -340,6 +340,11 @@ Roman numbers
 #. Napisz program, który przeliczy wprowadzoną liczbę rzymską na jej postać dziesiętną.
 #. Napisz drugą funkcję, która dokona procesu odwrotnego.
 
+:About:
+    * Filename: ``functions_roman.py``
+    * Lines of code to write: 15 lines
+    * Estimated time of completion: 15 min
+
 :The whys and wherefores:
     * Definiowanie i uruchamianie funkcji
     * Sprawdzanie przypadków brzegowych (niekompatybilne argumenty)
@@ -347,8 +352,3 @@ Roman numbers
     * Definiowanie i korzystanie z ``dict`` z wartościami
     * Sprawdzanie czy element istnieje w ``dict``
     * Rzutowanie i konwersja typów
-
-:About:
-    * Filename: ``functions_roman.py``
-    * Lines of code to write: 15 lines
-    * Estimated time of completion: 15 min
