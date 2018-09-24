@@ -259,3 +259,7 @@ More advanced topics
 Assignments
 ===========
 
+Simple collections
+------------------
+#. Stwórz listę z cyframi od 0 do 9
+#.

@@ -273,22 +273,27 @@ More advanced topics
 Assignments
 ===========
 
-Number to string
+Aviation numbers
 ----------------
-#. Napisz funkcję ``number_to_str``
-#. Funkcja zamieni dowolnego ``int`` lub ``float`` na formę tekstową
+#. Napisz funkcję ``aviation_numbers``
+#. Funkcja zamieni dowolnego ``int`` lub ``float`` na formę tekstową w mowie pilotów
+
+.. csv-table:: Aviation Phonetic Numbers
+    :header-rows: 1
+    :file: data/aviation-numbers.csv
 
     .. code-block:: python
 
-        number_to_str(1969)       # 'one nine six nine'
-        number_to_str(31337)      # 'three one three three seven'
-        number_to_str(13.37)      # 'one three and three seven'
-        number_to_str(31.337)     # 'three one and three three seven'
-        number_to_str(-1969)      # 'minus one nine six nine'
-        number_to_str(-31.337)    # 'minus three one and three three seven'
+        number_to_str(1969)       # 'one niner six niner'
+        number_to_str(31337)      # 'tree one tree tree seven'
+        number_to_str(13.37)      # 'one tree and tree seven'
+        number_to_str(31.337)     # 'tree one and tree tree seven'
+        number_to_str(-1969)      # 'minus one niner six niner'
+        number_to_str(-31.337)    # 'minus tree one and tree tree seven
+        number_to_str(-49.35)     # 'minus fower niner and tree fife'
 
 :About:
-    * Filename: ``functions_numstr_simple.py``
+    * Filename: ``functions_aviation_numbers.py``
     * Lines of code to write: 15 lines
     * Estimated time of completion: 15 min
 

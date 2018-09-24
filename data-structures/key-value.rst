@@ -140,3 +140,18 @@ Accessing ``dict`` values in bulk
 
 Assignments
 ===========
+
+Aviation Language
+-----------------
+#. Stwórz słownik języka pilotów
+#. Pojedynczym literom przyporządkuj ich fonetyczne odpowiedniki
+#. Wczytaj od użytkownika literę
+#. Wypisz na ekranie nazwę fonetyczną litery
+#. Użytkownik poda tylko jeden znak (literę, cyfrę lub znak specjalny)
+#. Jeżeli wpisał niepoprawny znak, to wypisz "Pilots don't say that"
+#. Nie używaj konstrukcji ``if``
+
+.. csv-table:: Aviation Alphabet
+    :header-rows: 1
+    :file: data/aviation-alphabet.csv
+
