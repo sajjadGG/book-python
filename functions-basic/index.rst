@@ -282,15 +282,15 @@ Aviation numbers
     :header-rows: 1
     :file: data/aviation-numbers.csv
 
-    .. code-block:: python
+.. code-block:: python
 
-        number_to_str(1969)       # 'one niner six niner'
-        number_to_str(31337)      # 'tree one tree tree seven'
-        number_to_str(13.37)      # 'one tree and tree seven'
-        number_to_str(31.337)     # 'tree one and tree tree seven'
-        number_to_str(-1969)      # 'minus one niner six niner'
-        number_to_str(-31.337)    # 'minus tree one and tree tree seven
-        number_to_str(-49.35)     # 'minus fower niner and tree fife'
+    number_to_str(1969)       # 'one niner six niner'
+    number_to_str(31337)      # 'tree one tree tree seven'
+    number_to_str(13.37)      # 'one tree and tree seven'
+    number_to_str(31.337)     # 'tree one and tree tree seven'
+    number_to_str(-1969)      # 'minus one niner six niner'
+    number_to_str(-31.337)    # 'minus tree one and tree tree seven
+    number_to_str(-49.35)     # 'minus fower niner and tree fife'
 
 :About:
     * Filename: ``functions_aviation_numbers.py``
