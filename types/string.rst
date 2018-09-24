@@ -122,9 +122,26 @@ Characters before strings
     name = 'José Jiménez'
     print(f'My name... {name}')       # My name... José Jiménez
 
+* f-string formatting are preferred over ``str`` addition
+* How many ``str`` are in the memory?
+
+    .. code-block:: python
+
+        first_name = 'José'
+        last_name = 'Jiménez'
+
+        print(first_name + ' ' + last_name)  # José Jiménez
+        print(f'{first_name} {last_name}')   # José Jiménez
+
 
 String methods
 ==============
+
+String immutability
+-------------------
+* ``str`` is immutable
+* ``str`` methods create a new modified ``str``
+
 
 ``title()``, ``lower()``, ``upper()``
 -------------------------------------
@@ -178,24 +195,25 @@ String methods
 ---------------------------------------
 .. code-block:: python
 
-    name = '    Max Peck    '
+    name = '\tMax Peck    \n'
 
+    name.rstrip()       # '\tMax Peck'
+    name.lstrip()       # 'Max Peck    \n'
     name.strip()        # 'Max Peck'
-    name.lstrip()       # 'Max Peck    '
-    name.rstrip()       # '    Max Peck'
 
-``startswith()``
-----------------
-* Understand this as ``starts_with``
+``startswith()`` and ``endswith()``
+-----------------------------------
+* Understand this as "starts with" and "ends with"
 
 .. code-block:: python
 
     name = 'José Jiménez'
 
-    if name.startswith('José'):
-        print('My name... José Jiménez')
-    else:
-        print('I have no name')
+    name.startswith('José')
+    # True
+
+    name.endswith(';')
+    # False
 
 ``split()``
 -----------
@@ -204,33 +222,17 @@ String methods
     text = 'José Jiménez'
     text.split()        # ['José', 'Jiménez']
 
-    text = 'Max,Peck'
-    text.split(',')     # ['Max', 'Peck']
+    text = 'root:x:0:0:System Administrator:/root:/bin/bash'
+    text.split(':')     # ['root', 'x', '0', '0', 'System Administrator', '/root', '/bin/bash']
 
 ``join()``
 ----------
 .. code-block:: python
 
-    names = ['José', 'Max', 'Иван', str(1961), '1969']
+    names = ['root', 'x', '0', '0', 'System Administrator', '/root', '/bin/bash']
 
-    ';'.join(names)
-    # 'José;Max;Иван;1961;1969'
-
-
-String immutability
-===================
-* ``str`` is immutable
-* ``str`` methods create a new modified ``str``
-* How many ``str`` are in the memory?
-* f-string formatting are preferred over ``str`` addition
-
-    .. code-block:: python
-
-        first_name = 'José'
-        last_name = 'Jiménez'
-
-        print(first_name + ' ' + last_name)  # José Jiménez
-        print(f'{first_name} {last_name}')   # José Jiménez
+    ':'.join(names)
+    # 'root:x:0:0:System Administrator:/root:/bin/bash'
 
 
 Handling user input
@@ -249,7 +251,6 @@ Assignments
 Variables and types
 -------------------
 #. Wczytaj od użytkownika imię
-#. Użytkownik wprowadza tylko dane typu ``str``
 #. Za pomocą f-string formatting wyświetl na ekranie:
 
     .. code-block:: text
@@ -257,13 +258,13 @@ Variables and types
         '''My name... "José Jiménez".
 	    	I'm an """astronaut!"""'''
 
-#. Druga linijka zaczyna się od tabulacji
+#. Uwaga! Druga linijka zaczyna się od tabulacji
 #. Gdzie wartość w podwójnym cudzysłowiu to ciąg od użytkownika (w przykładzie użytkownik wpisał ``José Jiménez``)
 #. Zwróć uwagę na znaki apostrofów, cudzysłowów, tabulacji i nowych linii
 #. W ciągu do wyświetlenia nie używaj spacji ani enterów - użyj ``\n`` i ``\t``
 #. Tekst wyświetlony na ekranie ma mieć zamienione wszystkie spacje na ``_``
 #. Tekst wyświetlony na ekranie ma być w UPPERCASE
-#. Nie korzystaj z dodawania stringów ``str + str``
+#. Nie korzystaj z dodawania stringów (``str + str``)
 #. Następnie znów wyświetl na ekranie wynik, tym razem z podmienionymi spacjami:
 
     .. code-block:: text

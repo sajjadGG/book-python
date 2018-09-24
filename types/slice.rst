@@ -83,3 +83,13 @@ Slicing text
     'alei Jana III Sobieskiego 1/2'
     'Jana III Sobieskiego 1 m. 2'
     'os. Jana III Sobieskiego 1 apt 2'
+
+:About:
+    * Filename: ``types_slice.py``
+    * Lines of code to write: 8 lines
+    * Estimated time of completion: 10 min
+
+:The whys and wherefores:
+    * Definiowanie zmiennych
+    * Korzystanie z print formatting
+    * Wczytywanie tekstu od użytkownika

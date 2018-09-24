@@ -121,10 +121,15 @@ Handling user input and type casting
     * Korzystanie z print formatting
     * Konwersja typów
     * Operacje matematyczne na zmiennych
-    * Wczytywanie tekstu od użytkownika
 
 :Hints:
     * Aby podzielić liczbę użyj ``/``, np: ``10 / 2``
     * 1000 m = 1 km
     * 1608 m = 1 mila
     * 1852 m = 1 mila morska
+    * Literka ``f'...'`` włącza tryb interpolacji:
+
+        .. code-block:: python
+
+            age = 30
+            print(f'My age is: {age}')

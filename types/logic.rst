@@ -5,30 +5,11 @@ Logical Types
 *************
 
 
-``None``
-========
-* Empty value (null)
-* With ``if`` statements behaves like negative values
-* Used for unknown (unset) values:
-
-    .. code-block:: python
-
-        my_var = None
-
-
 ``bool``
 ========
 * First letter capitalized, other are lower cased
-* Negative (``False``) values:
-
-    * ``None``
-    * ``0``
-    * ``False``
-    * ``()`` - empty tuple
-    * ``{}`` - empty dict
-    * ``[]`` - empty list
-    * ``''`` - empty str
-
+* Positive value - ``True``
+* Negative values - ``False``
 * Defining ``bool``:
 
     .. code-block:: python
@@ -39,30 +20,85 @@ Logical Types
         my_var: bool = True
         my_var: bool = False
 
+* Negative values:
+
+    * ``False``
+    * ``0``
+    * ``()`` - empty ``tuple``
+    * ``{}`` - empty ``dict``
+    * ``[]`` - empty ``list``
+    * ``''`` - empty ``str``
+    * ``None``
+
 * ``bool()`` converts argument to ``bool``:
 
     .. code-block:: python
 
-        var1 = 'José'
-        var2 = None
+        bool('José')          # True
+        bool('')              # False
 
-        bool(var1)              # True
-        bool(var2)              # False
-
-* Using ``and`` and ``or``:
+* Using ``and``:
 
     .. code-block:: python
 
-        var1 = 'José'
-        var2 = None
-        var3 = 'Иван'
+        'José' and ''         # False
+        'José' and 'Иван'     # True
 
-        var1 or var2            # True
-        var1 or var3            # True
+* Using ``or``:
 
-        var1 and var2           # False
-        var1 and var3           # True
+    .. code-block:: python
+
+        'José' or ''          # True
+        'José' or 'Иван'      # True
+
+
+``None``
+========
+* First letter capitalized, other are lower cased
+* Empty value (null)
+* It is not ``False`` value, although in ``if`` it behaves like ``False``
+* With ``if`` statements behaves like negative values
+* Used for unknown (unset) values:
+
+    .. code-block:: python
+
+        my_var = None
 
 
 Assignments
 ===========
+
+Bool
+----
+#. Wprowadzono zmienne:
+
+    .. code-block:: python
+
+        a = False
+        b = True
+        c = None
+        d = ''
+        e = ' '
+        f = 'a'
+        g = '.'
+        h = 0
+        i = 0.0
+        j = '0'
+        k = '0.0'
+        l = -0
+        m = -0.0+0.0j
+        n = int('0')
+        o = float('0')
+
+#. Które zmienne mają wartość ``True``, ``None``, ``False``?
+#. Czym się różni ``None`` od ``False``?
+
+:About:
+    * Filename: ``types_bool.py``
+    * Lines of code to write: 15 lines
+    * Estimated time of completion: 10 min
+
+:The whys and wherefores:
+    * Definiowanie zmiennych
+    * Konwersja typów
+    * Typy logiczne
