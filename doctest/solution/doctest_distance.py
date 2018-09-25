@@ -1,36 +1,36 @@
 from typing import Union
 
 
-def kilometers_from_meters(km: Union[int, float]) -> float:
+def m_to_km(meters: Union[int, float]) -> float:
     """
-    >>> kilometers_from_meters(1)
+    >>> m_to_km(1)
     1000.0
 
-    >>> kilometers_from_meters(0)
+    >>> m_to_km(0)
     0.0
 
-    >>> kilometers_from_meters(-1)
+    >>> m_to_km(-1)
     Traceback (most recent call last):
         ...
     ValueError: Argument must be positive
 
-    >>> kilometers_from_meters([1, 2])
+    >>> m_to_km([1, 2])
     Traceback (most recent call last):
         ...
     ValueError: Invalid Argument
 
-    >>> kilometers_from_meters('one')
+    >>> m_to_km('one')
     Traceback (most recent call last):
         ...
     ValueError: Invalid Argument
 
-    >>> kilometers_from_meters(1.5)
+    >>> m_to_km(1.5)
     1500.0
     """
-    if not isinstance(km, (int, float)):
+    if not isinstance(meters, (int, float)):
         raise ValueError('Invalid Argument')
 
-    if km < 0:
+    if meters < 0:
         raise ValueError('Argument must be positive')
 
-    return float(1000 * km)
+    return float(meters / 1000)

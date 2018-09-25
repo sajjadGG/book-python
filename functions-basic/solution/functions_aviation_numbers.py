@@ -1,37 +1,43 @@
-from typing import Union
-
-NUMBER_DICT = {
+SPEAK = {
+    '-': 'minus',
+    '.': 'and',
     '0': 'zero',
     '1': 'one',
     '2': 'two',
-    '3': 'three',
-    '4': 'four',
-    '5': 'five',
+    '3': 'tree',
+    '4': 'fower',
+    '5': 'fife',
     '6': 'six',
     '7': 'seven',
-    '8': 'eight',
-    '9': 'nine',
-    '.': 'and',
+    '8': 'ait',
+    '9': 'niner',
 }
 
+def aviation_numbers(number):
+    out = []
+    for char in str(number):
+        out.append(SPEAK[char])
 
-def number_to_str(number: Union[int, float]) -> str:
-    """
-    >>> number_to_str(1969)
-    'one nine six nine'
+    return ' '.join(out)
 
-    >>> number_to_str(31337)
-    'three one three three seven'
+out = aviation_numbers(1969)       # 'one niner six niner'
+print(out)
 
-    >>> number_to_str(13.37)
-    'one three and three seven'
+out = aviation_numbers(31337)      # 'tree one tree tree seven'
+print(out)
 
-    >>> number_to_str(31.337)
-    'three one and three three seven'
-    """
-    output = []
+out = aviation_numbers(13.37)      # 'one tree and tree seven'
+print(out)
 
-    for digit in str(number):
-        output.append(NUMBER_DICT[digit])
+out = aviation_numbers(31.337)     # 'tree one and tree tree seven'
+print(out)
 
-    return ' '.join(output)
+out = aviation_numbers(-1969)      # 'minus one niner six niner'
+print(out)
+
+out = aviation_numbers(-31.337)    # 'minus tree one and tree tree seven
+print(out)
+
+out = aviation_numbers(-49.35)     # 'minus fower niner and tree fife'
+print(out)
+

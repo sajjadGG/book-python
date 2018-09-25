@@ -36,15 +36,17 @@ Test for ``int`` return values
 ==============================
 .. code-block:: python
 
-    def sumowanie_liczb(a, b):
+    def add(a, b):
         """
-        >>> sumowanie_liczb(1, 2)
+        Function adds two numbers
+
+        >>> add(1, 2)
         3
 
-        >>> sumowanie_liczb(-1, 1)
+        >>> add(-1, 1)
         0
 
-        >>> sumowanie_liczb(0, 0)
+        >>> add(0, 0)
         0
         """
         return a + b
@@ -91,6 +93,9 @@ Printing ``str`` with newlines
 
     def hello(name='José Jiménez'):
         """
+        Greet's an astronaut.
+        Last line is blank.
+
         >>> hello()
         José Jiménez
         José Jiménez
@@ -105,6 +110,9 @@ Testing for exceptions
 
     def add(a, b):
         """
+        Function adds two numbers.
+        It checks for proper type of input.
+
         >>> add(1, 2)
         3
 
@@ -141,12 +149,12 @@ Using python statements in ``doctest``
 
     def when(date):
         """
-        >>> import datetime
-        >>> moon = datetime.date(1969, 7, 20)
+        >>> from datetime import datetime, timezone
+        >>> moon = datetime(1969, 7, 21, 17, 54, tzinfo=timezone.utc)
         >>> hello(moon)
-        '1969-07-20'
+        '1969-07-21 17:54 UTC'
         """
-        print(f'{date:%Y-%m-%d}')
+        print(f'{date:%Y-%m-%d %H:%M %Z}')
 
 
 Running doctest from standalone scripts
@@ -263,9 +271,53 @@ Email regex
         else:
             return False
 
+URL Regex
+---------
+.. code-block:: python
+
+    # @diegoperini --  https://mathiasbynens.be/demo/url-regex
+    REGEX = r'_^(?:(?:https?|ftp)://)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(?:\.(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(?:\.(?:[a-z\x{00a1}-\x{ffff}]{2,})))(?::\d{2,5})?(?:/[^\s]*)?$_iuS'
+
+    def is_valid_url(url):
+        if re.match(REGEX, url):
+            return True
+        else:
+            return False
 
 Assignments
 ===========
+
+Refactoring
+-----------
+#. Dana jest funkcja ``celsius_to_kelvin(degrees)``
+#. Napisz ciało funkcji aby testy przechodziły:
+
+    .. code-block:: python
+
+        def c_to_k(degrees):
+            """
+            >>> c_to_k(0)
+            273.15
+            >>> c_to_k(1)
+            274.15
+            >>> c_to_k(-1)
+            272.15
+            >>> c_to_k('a')
+            Traceback (most recent call last):
+                ...
+            TypeError: Invalid argument
+            >>> c_to_k([0, 1])
+            [273.15, 274.15]
+            >>> c_to_k((0, 1))
+            (273.15, 274.15)
+            >>> c_to_k({0, 1})
+            {273.15, 274.15}
+            """
+
+:About:
+    * Filename: ``doctest_temp.py``
+    * Lines of code to write: 5 lines of code
+    * Estimated time of completion: 15 min
 
 Distance conversion doctest
 ---------------------------
@@ -284,7 +336,102 @@ Distance conversion doctest
     * podany parametr to ``str``
 
 :About:
-    * Filename: ``doctest_temperature.py``
+    * Filename: ``doctest_distance.py``
     * Lines of code to write: 5 lines of code + 16 lines of tests
-    * Estimated time of completion: 5 min
+    * Estimated time of completion: 10 min
 
+Fix URL Regex
+-------------
+#. Dane jest wyrażenie z listingu poniżej
+
+    .. code-block:: python
+
+        REGEX = r'_^(?:(?:https?|ftp)://)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(?:\.(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(?:\.(?:[a-z\x{00a1}-\x{ffff}]{2,})))(?::\d{2,5})?(?:/[^\s]*)?$_iuS'
+
+#. Wyrażenie niepoprawnie klasyfikuje adres 'https://foo_bar.example.com/'
+#. Popraw wyrażenie nie psując parsowania wszystkich pozostałych przypadków
+#. Poprawne URL:
+
+    .. code-block:: text
+
+        http://foo.com/blah_blah
+        http://foo.com/blah_blah/
+        http://foo.com/blah_blah_(wikipedia)
+        http://foo.com/blah_blah_(wikipedia)_(again)
+        http://www.example.com/wpstyle/?p=364
+        https://www.example.com/foo/?bar=baz&inga=42&quux
+        http://✪df.ws/123
+        http://userid:password@example.com:8080
+        http://userid:password@example.com:8080/
+        http://userid@example.com
+        http://userid@example.com/
+        http://userid@example.com:8080
+        http://userid@example.com:8080/
+        http://userid:password@example.com
+        http://userid:password@example.com/
+        http://142.42.1.1/
+        http://142.42.1.1:8080/
+        http://➡.ws/䨹
+        http://⌘.ws
+        http://⌘.ws/
+        http://foo.com/blah_(wikipedia)#cite-1
+        http://foo.com/blah_(wikipedia)_blah#cite-1
+        http://foo.com/unicode_(✪)_in_parens
+        http://foo.com/(something)?after=parens
+        http://☺.damowmow.com/
+        http://code.google.com/events/#&product=browser
+        http://j.mp
+        ftp://foo.bar/baz
+        http://foo.bar/?q=Test%20URL-encoded%20stuff
+        http://مثال.إختبار
+        http://例子.测试
+        http://उदाहरण.परीक्षा
+        http://-.~_!$&'()*+,;=:%40:80%2f::::::@example.com
+        http://1337.net
+        http://a.b-c.de
+        http://223.255.255.254
+        https://foo_bar.example.com/
+
+#. Niepoprawne url:
+
+    .. code-block:: python
+
+        http://
+        http://.
+        http://..
+        http://../
+        http://?
+        http://??
+        http://??/
+        http://#
+        http://##
+        http://##/
+        http://foo.bar?q=Spaces
+        //
+        //a
+        ///a
+        ///
+        http:///a
+        foo.com
+        rdar://1234
+        h://test
+        http:// shouldfail.com
+        :// should fail
+        http://foo.bar/foo(bar)baz quux
+        ftps://foo.bar/
+        http://-error-.invalid/
+        http://a.b--c.de/
+        http://-a.b.co
+        http://a.b-.co
+        http://0.0.0.0
+        http://10.1.1.0
+        http://10.1.1.255
+        http://224.1.1.1
+        http://1.1.1.1.1
+        http://123.123.123
+        http://3628126748
+        http://.www.foo.bar/
+        http://www.foo.bar./
+        http://.www.foo.bar./
+        http://10.1.1.1
+        http://10.1.1.254

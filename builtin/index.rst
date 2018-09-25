@@ -313,8 +313,6 @@ Z pozycji w tablicy ASCII konwertuje kod na znak Unicode.
 
 Other builtin functions
 =======================
-.. todo:: Convert table to CSV
-
 .. csv-table:: Most used Built-in functions
     :header-rows: 1
     :file: data/builtins.csv
@@ -325,10 +323,29 @@ Assignments
 
 Average
 -------
-#. Dane są pomiary Irysów z :numref:`listing-data-structures-iris-sample`
-#. Policz średnią dla każdego z parametrów
+#. Dane są pomiary Irysów z :numref:`listing-builtin-iris-sample`
+#. Stwórz ``dict``, który będzie przechowywał ``list`` pomiarów dla każdego parametru:
 
-.. literalinclude:: src/data-structures-iris-sample.py
-    :name: listing-data-structures-iris-sample
+    * Sepal length
+    * Sepal width
+    * Petal length
+    * Petal width
+
+#. Policz średnią dla każdego z elementów tego ``dict`` i zapisz je w ``dict``, o strukturze: nazwa parametru -> średnia
+#. Wypisz na ekranie oba ``dict``
+
+.. literalinclude:: src/builtin-iris-sample.py
+    :name: listing-builtin-iris-sample
     :language: python
     :caption: Sample Iris databases
+
+:About:
+    * Filename: ``builtin_average.py``
+    * Lines of code to write: 12 lines
+    * Estimated time of completion: 15 min
+
+:The whys and wherefores:
+    * Korzystanie z funkcji wbudowanych
+    * Iterowanie po kolekcji
+    * Wybieranie rekordów
+

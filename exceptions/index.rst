@@ -53,16 +53,6 @@ Traceback analysis
     apollo13()
 
 * Stacktraces are 8 levels deep, it's not Java's 200 ;)
-* Change level with ``sys.tracebacklimit``:
-
-    .. code-block:: python
-
-        import sys
-        sys.tracebacklimit = 1
-
-* Last lines are the most important
-* In the most cases error is there
-* From time to time you can have problems somewhere in the middle, but it's rare
 
     .. code-block:: text
 
@@ -79,6 +69,23 @@ Traceback analysis
           File "/Users/matt/Developer/book-python/__notepad__.py", line 5, in apollo13
             raise RuntimeError('Mid-flight Oxygen tank explosion')
         RuntimeError: Mid-flight Oxygen tank explosion
+
+* Change level with ``sys.tracebacklimit``:
+
+    .. code-block:: python
+
+        import sys
+        sys.tracebacklimit = 1
+
+* From time to time you can have problems somewhere in the middle, but it's rare
+* Last lines are the most important, in most cases error is there
+
+    .. code-block:: text
+
+          File "/Users/matt/Developer/book-python/__notepad__.py", line 5, in apollo13
+            raise RuntimeError('Mid-flight Oxygen tank explosion')
+        RuntimeError: Mid-flight Oxygen tank explosion
+
 
 Catching exceptions
 ===================
@@ -98,6 +105,29 @@ Catching exceptions
     except RuntimeError:
         print('Houston we have a problem!')
 
+.. code-block:: python
+
+    def apollo13():
+        raise RuntimeError('Mid-flight Oxygen tank explosion')
+
+
+    try:
+        apollo13()
+    except (RuntimeError, TypeError, NameError):
+        print('Houston we have a problem!')
+
+.. code-block:: python
+
+    import logging
+
+    def apollo13():
+        raise RuntimeError('Mid-flight Oxygen tank explosion')
+
+
+    try:
+        apollo13()
+    except RuntimeError as err:
+        logging.error(err)
 
 .. code-block:: python
 
@@ -224,13 +254,12 @@ Defining own exceptions
 
 
     class CotangentDoesNotExistsError(ArithmeticError):
-        strerror = 'Cotangent for 180 degrees is infinite'
-        errno = 10
+        pass
 
 
-    def cotangent(deg):
-        if deg == 180:
-            raise CotangentDoesNotExistsError
+    def cotangent(degrees):
+        if degrees == 180:
+            raise CotangentDoesNotExistsError('Cotangent for 180 degrees is infinite')
 
         radians = math.radians(degrees)
         return 1 / math.tan(radians)
