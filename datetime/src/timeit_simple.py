@@ -1,7 +1,10 @@
-import timeit
+from timeit import timeit
 
 
-duration = timeit.timeit(stmt='a = 1 + 2', number=10000)
+setup = 'name="Jose Jimenez"'
+stmt = 'out = f"My name... {name}"'
+
+duration = timeit(stmt, setup, number=10000)
+
 print(duration)
-# 0.000547270999999995
-
+# 0.0005737080000000061

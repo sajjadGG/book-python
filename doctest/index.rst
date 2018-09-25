@@ -313,6 +313,7 @@ Refactoring
             >>> c_to_k({0, 1})
             {273.15, 274.15}
             """
+            pass
 
 :About:
     * Filename: ``doctest_temp.py``

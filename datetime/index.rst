@@ -56,6 +56,8 @@ Formatowanie dat
 
 Parsowanie dat
 --------------
+* Parsing - analyze (a sentence) into its parts and describe their syntactic roles.
+
 .. literalinclude:: src/datetime-parse.py
     :language: python
     :caption: Datetime parsing from string
