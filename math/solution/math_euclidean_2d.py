@@ -27,9 +27,9 @@ def euclidean_distance(A, B):
     y1 = A[1]
     y2 = B[1]
 
-    odleglosc_x = (x2-x1) ** 2
-    odleglosc_y = (y2-y1) ** 2
+    part_x = (x2-x1) ** 2
+    part_y = (y2-y1) ** 2
 
-    return math.sqrt(odleglosc_x + odleglosc_y)
+    return math.sqrt(part_x + part_y)
 
     return math.sqrt(pow(B[1]-A[1],2)+pow(B[0]-A[0],2))

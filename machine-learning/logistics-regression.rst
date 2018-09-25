@@ -22,6 +22,15 @@ Since the logistic function has two different asymptotes, it can be used to divi
 
     The standard logistic function :math:`\sigma (t)`; note that :math:`\sigma (t) \in (0,1)` for all :math:`t`.
 
+
+Linear vs Logistics
+===================
+.. figure:: img/regression-linear-vs-logistic.png
+    :scale: 100%
+    :align: center
+
+    Linear vs Logistics
+
 Podstawowe pojęcia
 ==================
 .. glossary::

@@ -4,6 +4,7 @@ Linear Regression
 
 .. todo:: Zrobić aby wykorzystywało szablon ``_template.rst``
 
+
 Co to jest Linear Regression?
 =============================
 The straight line can be seen in the plot, showing how linear regression attempts to draw a straight line that will best minimize the residual sum of squares between the observed responses in the dataset, and the responses predicted by the linear approximation.
@@ -66,6 +67,14 @@ Wyznaczanie równania prostej
 
         Backpropagation
 
+
+Funkcja przedziałami liniowa
+============================
+.. figure:: img/regression-linear-fitting.gif
+    :scale: 100%
+    :align: center
+
+    Funkcja przedziałami liniowa
 
 Przykłady praktyczne
 ====================
