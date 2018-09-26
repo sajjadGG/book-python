@@ -1,165 +1,177 @@
-.. _Generators:
+.. _Generators and Comprehensions:
 
-*******************************
-Generatory i list comprehension
-*******************************
+*****************************
+Generators and Comprehensions
+*****************************
+
 
 Lazy evaluation
 ===============
+* Code do not execute instantly
+* Sometimes code is not executed at all!
+
+Declaring generators
+--------------------
 .. code-block:: python
 
-    import datetime
-
-
-    print(datetime.datetime.now())
-
+    # This will not execute code!
+    range(0, 9_999_999)
+    range(0, 9_999_999)
     range(0, 9_999_999)
 
-    print(datetime.datetime.now())
+.. code-block:: python
 
-    for i in range(0, 9_999_999):
-        pow(i, 10)
+    # This will only create generator expression, but not execute it!
+    numbers = range(0, 9_999_999)
+    print(numbers)
+    # range(0, 9999999)
 
-    print(datetime.datetime.now())
+Getting  values from generator
+------------------------------
+.. code-block:: python
 
-
-List comprehension
-==================
-
-* wykonywane natychmiast
+    numbers = range(0, 9_999_999)
+    list(range)  # Generator will execute here (not very efficient)
 
 .. code-block:: python
 
-    [x*x for x in range(0, 30) if x % 2]
+    # Generator will execute once at a time, for every loop iteration
+    for i in range(0, 9_999_999):
+        print(i)
 
-Generator expressions
-=====================
 
-* lazy evaluation
+Generator expressions vs. Comprehensions
+========================================
+
+Generator Expressions
+---------------------
+* Lazy evaluation
 
 .. code-block:: python
 
     (x*x for x in range(0, 30) if x % 2)
 
-List comprehension vs. Generator expressions
-============================================
+Comprehensions
+--------------
+* Executes instantly
+
 .. code-block:: python
 
-    print('List Comprahension')
+    a = [x for x in range(0, 10)]
+    b = (x for x in range(0, 10))
+    c = {x for x in range(0, 10)}
+    d = {x: x for x in range(0, 10)}
+
+.. code-block:: python
+
+    a = list(x for x in range(0, 10))
+    b = tuple(x for x in range(0, 10))
+    c = set(x for x in range(0, 10))
+    d = dict(x: x for x in range(0, 10))
+
+What is the difference?
+-----------------------
+.. code-block:: python
 
     # tutaj nastąpi wykonanie i przypisanie
-    nieparzyste_list_comp = [x * x for x in range(0, 30) if x % 2]
+    numbers = [x**2 for x in range(0, 30) if x % 2 == 0]
 
-    print(nieparzyste_list_comp)
-    # [1, 9, 25, 49, 81, 121, 169, 225, 289, 361, 441, 529, 625, 729, 841]
+    print(numbers)
+    # [0, 4, 16, 36, 64, 100, 144, 196, 256, 324, 400, 484, 576, 676, 784]
 
-    print(nieparzyste_list_comp)
-    # [1, 9, 25, 49, 81, 121, 169, 225, 289, 361, 441, 529, 625, 729, 841]
+    print(numbers)
+    # [0, 4, 16, 36, 64, 100, 144, 196, 256, 324, 400, 484, 576, 676, 784]
 
 .. code-block:: python
 
-    print('\nGenerator Expression')
-
     # tu nastąpi tylko przypisanie do generatora
-    nieparzyste_generator = (x * x for x in range(0, 30) if x % 2)
+    numbers = (x**2 for x in range(0, 30) if x % 2 == 0)
 
-    print(list(nieparzyste_generator))  # tu dopiero nastąpi wywołanie
-    # [1, 9, 25, 49, 81, 121, 169, 225, 289, 361, 441, 529, 625, 729, 841]
+    print(numbers)
+    # <generator object <genexpr> at 0x11af5a570>
 
-    # tu już generator jest pusty
-    print(list(nieparzyste_generator))
+    print(list(numbers))
+    # [0, 4, 16, 36, 64, 100, 144, 196, 256, 324, 400, 484, 576, 676, 784]
+
+    print(list(numbers))
     # []
 
+Which one is better?
+--------------------
+* Comprehensions - Using values more than one
+* Generators - Using value one (for example in the loop iterator)
 
 
 Operator ``yield``
 ==================
+.. code-block:: python
+
+    # ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+    DATA = [
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (4.9, 3.0, 1.4, 0.2, 'setosa'),
+        (5.4, 3.9, 1.7, 0.4, 'setosa'),
+        (4.6, 3.4, 1.4, 0.3, 'setosa'),
+        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+        (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+        (5.7, 2.8, 4.5, 1.3, 'versicolor'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 3.3, 6.0, 2.5, 'virginica'),
+        (5.8, 2.7, 5.1, 1.9, 'virginica'),
+        (4.9, 2.5, 4.5, 1.7, 'virginica'),
+    ]
 
 .. code-block:: python
 
-    osoby_w_klasie = [
-        {'username': 'ivan-ivanovic', 'czy_wykladowca': True},
-        {'username': 'max-peck', 'czy_wykladowca': False},
-        {'username': 'jose-jimenez', 'czy_wykladowca': False},
-    ]
+    def get_species(species):
+        output = []
+
+        for record in DATA:
+            if record[4] == species:
+                output.append(record)
+
+        return output
 
 
-    def uczestnicy_kursu_lista():
-        uczniowie = []
+    data = get_species('setosa')
 
-        for osoba in osoby_w_klasie:
-            if not osoba.get('czy_wykladowca'):
-                uczen = osoba.get('username')
-                uczniowie.append(uczen)
-
-        return uczniowie
+    print(data)
+    # [(5.1, 3.5, 1.4, 0.2, 'setosa'),
+    #  (4.9, 3.0, 1.4, 0.2, 'setosa'),
+    #  (5.4, 3.9, 1.7, 0.4, 'setosa'),
+    #  (4.6, 3.4, 1.4, 0.3, 'setosa')]
 
 
-    for uczestnik in uczestnicy_kursu_lista():
-        print('certyfikat dla', uczestnik)
-
-.. code-block:: python
-
-    osoby_w_klasie = [
-        {'username': 'ivan-ivanovic', 'czy_wykladowca': True},
-        {'username': 'max-peck', 'czy_wykladowca': False},
-        {'username': 'jose-jimenez', 'czy_wykladowca': False},
-    ]
-
-    def uczestnicy_kursu_yield():
-        for osoba in osoby_w_klasie:
-            if not osoba.get('czy_wykladowca'):
-                yield osoba.get('username')
-
-
-    for uczestnik in uczestnicy_kursu_yield():
-        print('certyfikat dla', uczestnik)
+    for row in data:
+        print(row)
+    # (5.1, 3.5, 1.4, 0.2, 'setosa')
+    # (4.9, 3.0, 1.4, 0.2, 'setosa')
+    # (5.4, 3.9, 1.7, 0.4, 'setosa')
+    # (4.6, 3.4, 1.4, 0.3, 'setosa')
 
 
 .. code-block:: python
 
-    osoby_w_klasie = [
-        {'username': 'ivan-ivanovic', 'czy_wykladowca': True},
-        {'username': 'max-peck', 'czy_wykladowca': False},
-        {'username': 'jose-jimenez', 'czy_wykladowca': False},
-    ]
+    def get_species(species):
+        for record in DATA:
+            if record[4] == species:
+                yield record
+
+    data = get_species('setosa')
+
+    print(data)
+    # <generator object get_species at 0x11af257c8>
 
 
-    def uczestnicy_kursu(osoby):
-        def jest_wykladowca(user):
-            if user['czy_wykladowca']:
-                return True
-            else:
-                return False
-
-        for osoba in osoby:
-            if not osoba['czy_wykladowca']:
-                yield {
-                    'wykladowcy': jest_wykladowca,
-                    'uczestnicy': [x for x in osoby if not x['czy_wykladowca']],
-                    'wszystkie_username': [x['username'] for x in osoby]
-                }
-
-
-    uczestnicy_kursu = [osoba.get('username') for osoba in osoby_w_klasie if not osoba['czy_wykladowca']]
-    pprint(uczestnicy_kursu)
+    for row in data:
+        print(row)
+    # (5.1, 3.5, 1.4, 0.2, 'setosa')
+    # (4.9, 3.0, 1.4, 0.2, 'setosa')
+    # (5.4, 3.9, 1.7, 0.4, 'setosa')
+    # (4.6, 3.4, 1.4, 0.3, 'setosa')
 
 Przykłady
 =========
-
-Przykładowe inicjalizacje generatorów
--------------------------------------
-
-.. code-block:: python
-
-    a = [x for x in range(0, 30)]
-    b = (x for x in range(0, 30))
-    c = {x for x in range(0, 30)}
-    d = list(x for x in range(0, 30))
-    e = tuple(x for x in range(0, 30))
-    f = set(x for x in range(0, 30))
-
-    print(list(x for x in range(0, 30)))
 
 Zamiana klucz wartość oraz generowanie ``dict`` i ``set``
 ---------------------------------------------------------
