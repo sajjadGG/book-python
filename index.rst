@@ -17,7 +17,6 @@ Workshop
     about/workshop-testing.rst
     about/workshop-scientific.rst
     about/workshop-machine-learning.rst
-    about/install.rst
 
 
 ************
@@ -28,6 +27,7 @@ Introduction
     :numbered:
     :caption: Introduction
 
+    about/install.rst
     about/language.rst
     about/references.rst
     about/ide.rst
