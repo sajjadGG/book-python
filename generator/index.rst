@@ -49,7 +49,7 @@ Generator Expressions
 
 .. code-block:: python
 
-    (x*x for x in range(0, 30) if x % 2)
+    a = (x*x for x in range(0, 30) if x % 2)
 
 Comprehensions
 --------------
@@ -58,9 +58,8 @@ Comprehensions
 .. code-block:: python
 
     a = [x for x in range(0, 10)]
-    b = (x for x in range(0, 10))
-    c = {x for x in range(0, 10)}
-    d = {x: x for x in range(0, 10)}
+    b = {x for x in range(0, 10)}
+    c = {x: x for x in range(0, 10)}
 
 .. code-block:: python
 
@@ -285,7 +284,7 @@ Generatory vs. Przetwarzanie Listy
 #. Porównaj wyniki jednego i drugiego rozwiązania przez użycie ``sys.getsizeof()``
 
 :About:
-    * Filename: ``generator_size.py``
+    * Filename: ``generator_passwd.py``
     * Lines of code to write: 40 lines
     * Estimated time of completion: 15 min
 

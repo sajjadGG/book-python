@@ -301,6 +301,9 @@ Fabric
         $ pip install --upgrade fabric
         $ pip uninstall fabric
 
+PSSH
+----
+
 Testy Mutacyjne
 ===============
 
