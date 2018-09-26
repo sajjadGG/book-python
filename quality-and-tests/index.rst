@@ -45,7 +45,11 @@ Built-in frameworks
 
 .. literalinclude:: src/unittest-class.py
     :language: python
-    :caption: Przykład pokrycia klasy za pomocą ``unittest``.
+    :caption: Przykład pokrycia klasy za pomocą ``unittest``
+
+.. literalinclude:: src/unittest-temperature.py
+    :language: python
+    :caption: Przykład pokrycia klasy za pomocą ``unittest``
 
 :Usage:
     .. code-block:: console
