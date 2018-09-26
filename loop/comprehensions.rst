@@ -44,6 +44,27 @@ Conditional loop
     print(even_numbers)
     # [0, 2, 4, 6, 8]
 
+Filtering results
+-----------------
+.. code-block:: python
+
+    DATA = [
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (4.9, 3.0, 1.4, 0.2, 'setosa'),
+        (5.4, 3.9, 1.7, 0.4, 'setosa'),
+        (4.6, 3.4, 1.4, 0.3, 'setosa'),
+        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+        (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+        (5.7, 2.8, 4.5, 1.3, 'versicolor'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 3.3, 6.0, 2.5, 'virginica'),
+        (5.8, 2.7, 5.1, 1.9, 'virginica'),
+        (4.9, 2.5, 4.5, 1.7, 'virginica'),
+    ]
+
+    setosa = [x for x in DATA if x[4] == 'setosa']
+    print(setosa)
+
 
 Applying function to element
 ============================

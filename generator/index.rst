@@ -101,6 +101,29 @@ Which one is better?
 * Comprehensions - Using values more than one
 * Generators - Using value one (for example in the loop iterator)
 
+Nested Comprahensions
+---------------------
+.. code-block:: python
+
+   DATA = [
+        {'last_name': 'Jiménez'},
+        {'first_name': 'Max', 'last_name': 'Peck'},
+        {'first_name': 'Иван'},
+        {'first_name': 'Max', 'last_name': 'Peck', 'born': 1961},
+        {'first_name': 'Max', 'last_name': 'Peck', 'first_step': 1969},
+    ]
+
+    fieldnames = set()
+    fieldnames.update(key for record in DATA for key in record.keys())
+
+
+Readability counts
+------------------
+.. literalinclude:: src/generator-clean-code.py
+    :name: listing-generator-clean-code
+    :language: python
+    :caption: Clean Code in generator
+
 
 Operator ``yield``
 ==================
@@ -170,178 +193,65 @@ Operator ``yield``
     # (5.4, 3.9, 1.7, 0.4, 'setosa')
     # (4.6, 3.4, 1.4, 0.3, 'setosa')
 
-Przykłady
-=========
 
-Zamiana klucz wartość oraz generowanie ``dict`` i ``set``
----------------------------------------------------------
+The whys and wherefores
+=======================
+
+Filtering results
+-----------------
+.. code-block:: python
+
+    DATA = [
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (4.9, 3.0, 1.4, 0.2, 'setosa'),
+        (5.4, 3.9, 1.7, 0.4, 'setosa'),
+        (4.6, 3.4, 1.4, 0.3, 'setosa'),
+        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+        (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+        (5.7, 2.8, 4.5, 1.3, 'versicolor'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 3.3, 6.0, 2.5, 'virginica'),
+        (5.8, 2.7, 5.1, 1.9, 'virginica'),
+        (4.9, 2.5, 4.5, 1.7, 'virginica'),
+    ]
+
+    setosa = [x for x in DATA if x[4] == 'setosa']
+    print(setosa)
+
+
+Reversing ``dict`` keys with values
+-----------------------------------
 .. code-block:: python
 
     data = {'first_name': 'Иван', 'last_name': 'Иванович'}
 
-    out = {v: k for k, v in data.items()}  # {'Иван': 'first_name', 'Иванович': 'last_name'}
-    type(out)  # <class 'dict'>
+    {v: k for k, v in data.items()}
+    # dict {'Иван': 'first_name', 'Иванович': 'last_name'}
 
-    out = {v for k, v in data.items()}  # {'Иван', 'Иванович'}
-    type(out)  # <class 'set'>
-
-Filtrowanie wyników na liście dictów
-------------------------------------
+Filtering ``dict`` items
+------------------------
 .. code-block:: python
 
-    ADDRESS_BOOK = [
-        {'imie': 'Иван',
-        'nazwisko': 'Иванович',
-        'ulica': 'Wochod',
-        'miasto': 'Bajkonur',
-        'kod_pocztowy': '101503',
-        'wojewodztwo': 'Kyzyłordyńskie',
-        'panstwo': 'Kazachstan'},
+    {v for k, v in data.items()}
+    # {'Иван', 'Иванович'}
 
-        {'imie': 'José',
-        'nazwisko': 'Jiménez',
-        'ulica': '2101 E NASA Pkwy',
-        'miasto': 'Huston',
-        'kod_pocztowy': '77058',
-        'wojewodztwo': 'Texas',
-        'panstwo': 'USA'},
-    ]
+Applying functions
+------------------
+.. code-block:: python
 
-    osoby = [{'imie': x['imie'], 'nazwisko': x['nazwisko']} for x in ADDRESS_BOOK]
-    print(osoby)
-
-
-Zaawansowane wykorzystanie `List Comprehension`
------------------------------------------------
+    [float(x) for x in range(0, 10) if x % 2 == 0]
+    # [0.0, 2.0, 4.0, 6.0, 8.0]
 
 .. code-block:: python
 
-    def parzyste_f1(x):
+    def is_even(x):
         if x % 2 == 0:
             return True
         else:
             return False
 
-    def parzyste_f2(x):
-        return x % 2 == 0
-
-    parzyste1 = [float(x) for x in range(0, 30) if x % 2 == 0]
-    parzyste2 = [float(x) for x in range(0, 30) if parzyste_f1(x)]
-    parzyste3 = []
-
-    for x in range(0, 30):
-        if x % 2 == 0:
-            parzyste3.append(float(x))
-
-    def parzyste_f3():
-        parzyste = []
-
-        for x in range(0, 30):
-            if x % 2 == 0:
-                parzyste.append(float(x))
-
-        return parzyste
-
-    a = range(0, 30)
-
-Zaawansowane wykorzystanie `Generator Expressions`
---------------------------------------------------
-
-.. code-block:: python
-
-    liczby = (x for x in range(0, 30))
-    parzyste1 = (x for x in range(0, 30) if x % 2 == 0)
-
-    MAX = 30
-    parzyste1 = (x for x in range(0, MAX) if x % 2 == 0)
-
-    p = lambda a: (x for x in range(0, a) if x % 2 == 0)
-
-    def xxx(a):
-        return (x for x in range(0, a) if x % 2 == 0)
-
-    p(2)
-    xxx(2)
-
-    parzyste2 = (x for x in range(0, a) if x % 2 == 0)
-
-.. code-block:: python
-
-    DATA = [
-        {'last_name': 'Jiménez'},
-        {'first_name': 'Max', 'last_name': 'Peck'},
-        {'first_name': 'Иван'},
-        {'first_name': 'Max', 'last_name': 'Peck', 'born': 1961},
-        {'first_name': 'Max', 'last_name': 'Peck', 'born': 1961, 'first_step': 1969},
-    ]
-
-
-    # Wykorzystując listę
-    fieldnames = []
-
-    for record in DATA:
-        for key in record.keys():
-            if key not in fieldnames:
-                fieldnames.append(key)
-
-    print('list():', fieldnames)
-
-
-    # set(), podejście 1
-    # Wykorzystując zbiór, który deduplikuje za nas
-    fieldnames = set()
-
-    for record in DATA:
-        for key in record.keys():
-            fieldnames.add(key)
-
-    print('set(), podejście 1:', fieldnames)
-
-
-    # set(), podejście 2
-    # Wykorzystując zbiór, który deduplikuje za nas
-    fieldnames = set()
-
-    for key in [record.keys() for record in DATA]:
-        fieldnames.update(key)
-
-    print('set(), podejście 2:', fieldnames)
-
-
-    # set(), podejście 3
-    # Wykorzystując zbiór, który deduplikuje za nas
-    fieldnames = set()
-
-    for record in DATA:
-        fieldnames.update(record.keys())
-
-    print('set(), podejście 3:', fieldnames)
-
-
-Nested list comprahension
--------------------------
-.. code-block:: python
-
-   DATA = [
-        {'last_name': 'Jiménez'},
-        {'first_name': 'Max', 'last_name': 'Peck'},
-        {'first_name': 'Иван'},
-        {'first_name': 'Max', 'last_name': 'Peck', 'born': 1961},
-        {'first_name': 'Max', 'last_name': 'Peck', 'first_step': 1969},
-    ]
-
-    # set(), podejście 4
-    # Wykorzystując zbiór, który deduplikuje za nas
-    fieldnames = set()
-    fieldnames.update(key for record in DATA for key in record.keys())
-    print('set(), podejście 4:', fieldnames)
-
-Uwaga, czytelność kodu ma znaczenie
------------------------------------
-.. literalinclude:: src/generator-clean-code.py
-    :name: listing-generator-clean-code
-    :language: python
-    :caption: Clean Code in generator
+    [float(x) for x in range(0, 10) if is_even(x)]
+    # [0.0, 2.0, 4.0, 6.0, 8.0]
 
 
 Assignments
