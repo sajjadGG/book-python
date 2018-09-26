@@ -88,7 +88,7 @@ Returning nested types
 
     def function():
         return [
-            {'astro': 'Peck'},
+            {'astro': 'Watney'},
             {'astro': 'Иванович', 'agency': {'name': 'roscosmos'}},
             {'astro': 'Jiménez', 'missions': ('mercury', 'apollo')},
         ]

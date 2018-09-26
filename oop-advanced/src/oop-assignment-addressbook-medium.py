@@ -5,16 +5,16 @@ class Address:
     pass
 
 
-neil = Contact(imie='Neil', nazwisko='Armstrong')
-print(neil)
-# Neil Armstrong
+melissa = Contact(imie='Melissa', nazwisko='Lewis')
+print(melissa)
+# Melissa Lewis
 
-alan = Contact(imie='Alan', nazwisko='Shepard', adresy=[Address(miasto='Houston'), Address(miasto='Cocoa Beach')])
-print(alan)
-# Alan Shepard [Houston, Cocoa Beach]
+mark = Contact(imie='Mark', nazwisko='Watney', adresy=[Address(miasto='Houston'), Address(miasto='Cocoa Beach')])
+print(mark)
+# Mark Watney [Houston, Cocoa Beach]
 
 addressbook = [
-    Contact(imie='Max', nazwisko='Peck', adresy=[
+    Contact(imie='Matt', nazwisko='Kowalski', adresy=[
         Address(ulica='2101 E NASA Pkwy', miasto='Houston', stan='Texas', kod='77058', panstwo='USA'),
         Address(ulica=None, miasto='Kennedy Space Center', kod='32899', panstwo='USA'),
         Address(ulica='4800 Oak Grove Dr', miasto='Pasadena', kod='91109', panstwo='USA'),
@@ -26,4 +26,4 @@ addressbook = [
 
 
 print(addressbook)
-# [Max Peck [Houston, Kennedy Space Center, Pasadena, Palmdale], José Jiménez, Иван Иванович]
+# [Matt Kowalski [Houston, Kennedy Space Center, Pasadena, Palmdale], José Jiménez, Иван Иванович]

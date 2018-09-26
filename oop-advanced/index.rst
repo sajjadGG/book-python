@@ -213,10 +213,10 @@ Bardzo kuszący jest następujący przykład:
 
  .. code-block:: python
 
-     if name is 'Max Peck':
-        print('You are Max!')
+     if name is 'Mark Watney':
+        print('You are Space Pirate!')
      else:
-        print('You are not Max!')
+        print('You are not pirate at all!')
 
 **Nie jest on jednak do końca poprawny. Słowo kluczowe ``is`` porównuje czy dwa obiekty są tym samym obiektem, nie czy mają taką samą wartość.**
 * Poniższy przykład ilustruje, że pomimo że dwa obiekty przechowują takiego samego stringa to nie są sobie tożsame, mimo że są sobie równe.

@@ -183,7 +183,8 @@ Tables
     |----|:-----------|:---------:|----------:|
     | 1  | José       |  Jiménez  |      NASA |
     | 2  | Иван       |  Иванович | Roscosmos |
-    | 3  | Max        |    Peck   |      NASA |
+    | 3  | Mark       |   Watney  |      NASA |
+    | 4  | Alex       |   Vogel   |      NASA |
 
 
 Embedding objects

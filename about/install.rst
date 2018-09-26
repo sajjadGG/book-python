@@ -1,12 +1,12 @@
 .. _Install:
 
-***********************
-Konfiguracja środowiska
-***********************
+*****************
+Installing Python
+*****************
 
 
-Wymagania sprzętowe i systemowe
-===============================
+System Requirements
+===================
 * Można korzystać ze swojego komputera
 * Dowolny system operacyjny wspierany przez najnowszego Pythona
 * Zainstalowane najnowsze oficjalne wydanie Pythona (https://www.python.org/downloads/)
@@ -17,8 +17,8 @@ Wymagania sprzętowe i systemowe
     * założone darmowe konto na Github (proszę znać swój login)
 
 
-Przygotowanie środowiska
-========================
+Setting-up Environment
+======================
 
 Windows
 -------

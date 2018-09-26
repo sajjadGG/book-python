@@ -11,49 +11,6 @@ Jest to przywitanie serwera SMTP.
 W tej książce znajdziesz kilka żartów informatycznych i nawiązań do starych
 
 
-Main Characters
-===============
-
-José Jiménez
-------------
-.. figure:: img/jose-jimenez.jpg
-    :scale: 50%
-    :align: center
-
-    José Jiménez
-    
-* https://www.youtube.com/watch?v=kPnaaHR9pLc
-* https://www.youtube.com/watch?v=i6ckW7uRRNw
-* https://www.youtube.com/watch?v=PVxfJYw59cM
-* https://www.youtube.com/watch?v=i6ckW7uRRNw
-* https://www.youtube.com/watch?v=PVxfJYw59cM
-* https://youtu.be/kPnaaHR9pLc?t=16
-
-Иван Иванович
--------------
-.. figure:: img/ivan-ivanovich.jpg
-    :scale: 50%
-    :align: center
-
-    Иван Иванович
-
-Max Peck
---------
-.. figure:: img/max-peck.jpg
-    :scale: 50%
-    :align: center
-
-    Max Peck
-
-Paxi
-----
-.. figure:: img/paxi.jpg
-    :scale: 50%
-    :align: center
-
-    ESA's Paxi
-
-
 Addresses
 =========
 .. csv-table:: Addresses used in a book
@@ -76,3 +33,91 @@ Dates and timezones
     "1961-04-12", "06:07:00", "UTC", "Yuri Gagarnin's launch"
     "1969-07-21", "14:56:15", "UTC", "Apollo 11 Neil Armstrong's first step on the Moon"
 
+
+Main Characters
+===============
+
+Crews
+-----
+
+National Geographic's Mars
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. figure:: img/crew-mars-natgeo.jpg
+    :scale: 50%
+    :align: center
+
+    Crew from National Geographic's Mars: Robert Foucault (top left), Javier Delgado (top center), Amelie Durand (top right), Hana Seung (bottom left), Ben Sawyer (bottom center), Marta Kamen (bottom right)
+
+Martian Movie
+^^^^^^^^^^^^^
+.. figure:: img/crew-martian.jpg
+    :scale: 40%
+    :align: center
+
+    Crew from Martian Movie: Melissa Lewis (top left), Alex Vogel (top center), Mark Watney (top right), Chris Beck (bottom left), Beth Johanssen (bottom center), Rick Martinez (bottom right)
+
+Astronauts
+----------
+
+José Jiménez
+^^^^^^^^^^^^
+.. figure:: img/jose-jimenez.jpg
+    :scale: 50%
+    :align: center
+
+    José Jiménez
+    
+* https://www.youtube.com/watch?v=kPnaaHR9pLc
+* https://www.youtube.com/watch?v=i6ckW7uRRNw
+* https://www.youtube.com/watch?v=PVxfJYw59cM
+* https://www.youtube.com/watch?v=i6ckW7uRRNw
+* https://www.youtube.com/watch?v=PVxfJYw59cM
+* https://youtu.be/kPnaaHR9pLc?t=16
+
+Иван Иванович
+^^^^^^^^^^^^^
+.. figure:: img/ivan-ivanovich.jpg
+    :scale: 50%
+    :align: center
+
+    Иван Иванович
+
+Melissa Lewis
+^^^^^^^^^^^^^
+.. figure:: img/melissa-lewis.jpg
+    :scale: 25%
+    :align: center
+
+    Melissa Lewis
+
+Ryan Stone
+^^^^^^^^^^
+.. figure:: img/ryan-stone.jpg
+    :scale: 50%
+    :align: center
+
+    Ryan Stone
+
+Mark Watney
+^^^^^^^^^^^
+.. figure:: img/mark-watney.jpg
+    :scale: 25%
+    :align: center
+
+    Mark Watney
+
+Matt Kowalski
+^^^^^^^^^^^^^
+.. figure:: img/matt-kowalski.jpg
+    :scale: 50%
+    :align: center
+
+    Matt Kowalski
+
+Alex Vogel
+^^^^^^^^^^
+.. figure:: img/alex-vogel.jpg
+    :scale: 25%
+    :align: center
+
+    Alex Vogel

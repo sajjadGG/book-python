@@ -32,8 +32,8 @@ class RoscosmosAstronaut(Astronaut):
 crew = [
     NASAAstronaut('José Jiménez'),
     RoscosmosAstronaut('Ivan Иванович'),
-    ESAAstronaut('Paxi'),
-    NASAAstronaut('Max Peck'),
+    ESAAstronaut('Alex Vogel'),
+    NASAAstronaut('Mark Watney'),
 ]
 
 for astronaut in crew:

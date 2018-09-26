@@ -8,23 +8,23 @@ class Astronaut:
 # Objects - Instances
 ivan = Astronaut(name='Иван Иванович')
 jose = Astronaut(name='José Jiménez')
-max = Astronaut(name='Max Peck')
+matt = Astronaut(name='Matt Kowalski')
 
 ivan.agency         # NASA
 jose.agency         # NASA
-max.agency          # NASA
+matt.agency         # NASA
 Astronaut.agency    # NASA
 
 ivan.agency = 'Roscosmos'
 
 ivan.agency         # Roscosmos
 jose.agency         # NASA
-max.agency          # NASA
+matt.agency         # NASA
 Astronaut.agency    # NASA
 
 Astronaut.agency = 'ESA'
 
 ivan.agency         # Roscosmos
 jose.agency         # ESA
-max.agency          # ESA
+matt.agency         # ESA
 Astronaut.agency    # ESA

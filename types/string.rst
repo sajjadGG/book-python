@@ -37,10 +37,10 @@ Character Types
 
         names = """
             José Jiménez
-            Max Peck
+            Matt Kowalski
             Иван Иванович
         """
-        # '\n    José Jiménez\n    Max Peck\n    Иван Иванович\n'
+        # '\n    José Jiménez\n    Matt Kowalski\n    Иван Иванович\n'
 
 
 Single or double quote?
@@ -195,11 +195,11 @@ String immutability
 ---------------------------------------
 .. code-block:: python
 
-    name = '\tMax Peck    \n'
+    name = '\tMark Watney    \n'
 
-    name.rstrip()       # '\tMax Peck'
-    name.lstrip()       # 'Max Peck    \n'
-    name.strip()        # 'Max Peck'
+    name.rstrip()       # '\tMark Watney'
+    name.lstrip()       # 'Mark Watney    \n'
+    name.strip()        # 'Mark Watney'
 
 ``startswith()`` and ``endswith()``
 -----------------------------------

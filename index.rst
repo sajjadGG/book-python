@@ -1,24 +1,6 @@
 .. include:: README.rst
 
 
-********
-Workshop
-********
-.. toctree::
-    :maxdepth: 2
-    :hidden:
-    :numbered:
-    :caption: Workshops
-
-    about/workshop-foundations.rst
-    about/workshop-intermediate.rst
-    about/workshop-advanced.rst
-    about/workshop-django.rst
-    about/workshop-testing.rst
-    about/workshop-scientific.rst
-    about/workshop-machine-learning.rst
-
-
 ************
 Introduction
 ************
@@ -230,6 +212,24 @@ Blogposts
     :caption: Blogposts
 
     _blogpost/ml-introduction.rst
+
+
+********
+Workshop
+********
+.. toctree::
+    :maxdepth: 2
+    :hidden:
+    :numbered:
+    :caption: Workshops
+
+    about/workshop-foundations.rst
+    about/workshop-intermediate.rst
+    about/workshop-advanced.rst
+    about/workshop-django.rst
+    about/workshop-testing.rst
+    about/workshop-scientific.rst
+    about/workshop-machine-learning.rst
 
 
 **********

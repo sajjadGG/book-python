@@ -9,6 +9,7 @@ Indentation instead of braces
 =============================
 * Python uses indentation instead of braces
 * 4 spaces indentation, no tabs
+* Python throws ``IndentationError`` exception on problem
 * Code indented on the same level belongs to block:
 
     .. code-block:: python
@@ -55,9 +56,9 @@ Inline comments
 Multiline comments
 ------------------
 * Both single and double are good
-* Single quotes ``'''``
-* Double quotes ``"""``
-* Double quotes are more common:
+* Triple single quotes ``'''``
+* Triple double quotes ``"""``
+* Triple double quotes are more common:
 
     .. code-block:: python
 
@@ -103,7 +104,6 @@ Docstring
             """
             return a + b
 
-
 Commented out code
 ------------------
 * Never!
@@ -114,41 +114,67 @@ Commented out code
 Variables and constants
 =======================
 
+* ``NameError`` when using not declared variable
+* ``AttributeError`` when cannot assign to variables
+
 Variable declaration
 --------------------
-.. code-block:: python
+* Lowercase letters for variable names
 
-    my_variable = 10
-    my_variable = 'ehlo world'
+    .. code-block:: python
+
+        name = 'José Jiménez'
+
+* Underscore ``_`` is used for multi-word names
+
+    .. code-block:: python
+
+        first_name = 'José'
+        last_name = 'Jiménez'
 
 Constant declaration
 --------------------
-.. code-block:: python
+* Uppercase letters for constants names
 
-    MY_CONSTANT = 10
-    MY_CONSTANT = 'ehlo world'
+    .. code-block:: python
+
+        PATH = '/etc/passwd'
+
+* Underscore ``_`` is used for multi-word names
+
+    .. code-block:: python
+
+        FILE_NAME = '/etc/shadow'
 
 Variables vs. constants
 -----------------------
 * Python do not distinguish between variables and constants
-* Constants uses uppercase letters for names
-* Variables uses lowercase letters for names
 * Python allows you to change "constants" but it's a bad practice
 
 Types
 -----
 * Since Python 3.5
-* Type hints throws SyntaxError in Python before 3.5
-* Type hints or type annotations
-* It is not required, and never will be (quote from Guido van Rossum, Python BDFL)
-* To check types you have to use IDE or modules like ``mypy`` lub ``pyre-check``
+* ``SyntaxError`` in Python before 3.5
+* Two names: type hints and type annotations
+* Types are not required, and never will be (quote from Guido van Rossum, Python BDFL)
+* To check types you have to use IDE or modules like ``mypy`` or ``pyre-check``
 * Types are used extensively in system libraries
-* More and more documentations on the internet use types
+* More and more books and documentations use types
+* Declaring objects with types:
 
-.. code-block:: python
+    .. code-block:: python
 
-    name: str = 'José Jiménez'
-    age: int = 30
+        name: str = 'José Jiménez'
+        age: int = 30
+
+* Types do not enforce checking:
+
+    .. code-block:: python
+
+        # This code will run without any problems
+        # Although ``mypy`` or ``pyre-check`` will throw error
+        name: int = 'José Jiménez'
+        age: float = 30
 
 Type inference
 --------------
@@ -162,18 +188,46 @@ Type inference
 
     .. code-block:: python
 
-        name = str('José Jiménez')
+        # Type inference
         name = 'José Jiménez'
+        name = str('José Jiménez')
 
     .. code-block:: python
 
-        name: str = str('José Jiménez')  # Type annotations
-
-        # Type annotations (type hinting not forcing)
-        # this will work, but IDE should warn
-        name: str = 10
-
+        # Using type annotations,
+        # although types are still inferred
+        name: str = 'José Jiménez'
+        name: str = str('José Jiménez')
 
 More advanced topics
 ====================
 .. note:: The topic will be continued in chapter: :ref:`Software Engineering Conventions`
+
+
+Assignments
+===========
+
+Meet Python
+-----------
+#. Create Python script
+#. Add interpreter declaration
+#. Under interpreter declaration add multiline comment with program description (copy-paste from book)
+#. Declare variable ``name`` and set its value to your name
+#. Add inline comment to variable declaration with text: "This is my name"
+#. Print variable
+#. Next line under ``print`` statement add line comment, with expected output
+#. Run script
+
+:About:
+    * Filename: ``syntax_python.py``
+    * Lines of code to write: 2 lines + 2 lines of comment
+    * Estimated time of completion: 5 min
+
+:The whys and wherefores:
+    * Tworzenie skryptów Python
+    * Deklaracja zmiennych
+    * Komentowanie kodu
+    * Wyświetlanie wartości zmiennych
+
+:Hint:
+    * ``print()``

@@ -76,10 +76,10 @@ Conditional Statements
 
     if name == 'José Jiménez':
         print('My name... José Jiménez')
-    elif name == 'Max Peck':
-        print('Your name is Max Peck')
+    elif name == 'Alex Vogel':
+        print('Guten tag!')
     else:
-        print('Your name is neither José Jiménez nor Max Peck')
+        print("You're not José nor Alex")
 
 
 Inline ``if``
@@ -139,8 +139,8 @@ mixed
         last_name = 'Jiménez'
 
         if (first_name == 'José' and last_name == 'Jiménez')
-                or (first_name == 'Max' and last_name == 'Peck'):
-            print('Your name is José Jiménez or Max Peck')
+                or (first_name == 'Matt' and last_name == 'Kowalski'):
+            print('Your name is José Jiménez or Matt Kowalski')
         else:
             print('Your name is different')
 
@@ -155,7 +155,7 @@ Control Statements
 
     .. code-block:: python
 
-        usernames = {'José Jiménez', 'Max Peck'}
+        usernames = {'José Jiménez', 'Matt Kowalski', 'Mark Watney'}
 
         if 'José Jiménez' in usernames:
             print(True)
@@ -207,34 +207,36 @@ No ``switch`` statement?!
         print('My name... José Jiménez')
     elif name == 'Иван Иванович':
         print('Your name is Иван Иванович')
-    elif name == 'Max Peck':
-        print('Your name is Max Peck')
+    elif name == 'Mark Watney':
+        print('Your name is Mark Watney')
     else:
          print('Your name is other')
 
 .. code-block:: python
 
     switch = {
-        'José Jiménez': 'My name... José Jiménez',
-        'Иван Иванович': 'Your name is Иван Иванович',
-        'Max Peck': 'Your name is Max Peck',
+        'English': 'Hello',
+        'Russian': 'Здравствуйте',
+        'German': 'Guten Tag',
+        'Polish': 'Witaj',
     }
 
-    key = 'Paxi'
-    switch.get(key, 'Your name is other')
-    # 'Your name is other'
+    what = 'French'
+    switch.get(what, "Sorry, I don't know")
+    # "Sorry, I don't know"
 
 .. code-block:: python
 
     def switch(key):
         return {
-            'José Jiménez': 'My name... José Jiménez',
-            'Иван Иванович': 'Your name is Иван Иванович',
-            'Max Peck': 'Your name is Max Peck',
-        }.get(key, 'Your name is other')
+            'English': 'Hello',
+            'Russian': 'Здравствуйте',
+            'German': 'Guten Tag',
+            'Polish': 'Witaj',
+        }.get(key, "Sorry, I don't know")
 
-    switch('José Jiménez')  # 'My name... José Jiménez'
-    switch('Paxi')          # 'Your name is other'
+    switch('Russian')       # 'Здравствуйте'
+    switch('French')        # "Sorry, I don't know"
 
 
 Assignments

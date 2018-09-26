@@ -4,8 +4,9 @@ FILENAME = r'filename.csv'
 """
     "first_name", "last_name"
     "José", "Jiménez"
-    "Max", "Peck"
+    "Matt", "Kowalski"
     "Иван", "Иванович"
+    "Mark", "Watney"
 """
 
 

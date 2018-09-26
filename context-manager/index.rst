@@ -85,7 +85,9 @@ Database
 
     ksiazka_adresowa = [
         {'pesel': '61041206070', 'firstname': 'José', 'lastname': 'Jiménez'},
-        {'pesel': '69072114561', 'firstname': 'Max', 'lastname': 'Peck'},
+        {'pesel': '69072114561', 'firstname': 'Matt', 'lastname': 'Kowalski'},
+        {'pesel': '69072114562', 'firstname': 'Mark', 'lastname': 'Watney'},
+        {'pesel': '69072114563', 'firstname': 'Melissa', 'lastname': 'Lewis'},
     ]
 
     with sqlite3.connect(':memory:') as connection:

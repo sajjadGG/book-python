@@ -1,10 +1,12 @@
+.. _Comprehensions:
+
 **************
 Comprehensions
 **************
 
 
 * Pętla ``for`` może być także napisana jako jednoliniowy generator
-* List comprehension :numref:`Generators`
+* More in chapter :numref:`Generators and Comprehensions`
 
 Simple usage
 ============

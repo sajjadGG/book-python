@@ -5,7 +5,7 @@ DATA = [
     {'first_name': 'José'},
     {'last_name': 'Jiménez'},
     {'first_name': 'Иван', 'last_name': 'Иванович'},
-    {'first_name': 'Max', 'last_name': 'Peck', 'born': 1961},
+    {'first_name': 'Mark', 'last_name': 'Watney', 'born': 1961},
     {'first_name': 'José', 'born': 1961, 'first_step': 1969},
 ]
 

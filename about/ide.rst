@@ -39,6 +39,29 @@ Which one is the best?
 * https://www.jetbrains.com/pycharm/download/
 * http://www.pydev.org/download.html
 
+PyCharm
+=======
+
+Keyboard shortcuts
+------------------
+.. csv-table:: Keyboard shortcuts
+    :header-rows: 1
+    :widths: 25, 75
+
+    "Key Combination", "Action"
+    "``ctrl`` + ``/``", "Comment multiple lines"
+    "``alt`` + ``F12``", "Open Terminal"
+    "``shift`` + ``F6``", "Refactor... Rename"
+    "``tab``", "Indent (also used on multiple lines)"
+    "``shift`` + ``tab``", "Un-indent (also used on multiple lines)"
+    "``alt`` + ``1``", "Show file drawer"
+    "", "Run"
+    "", "Show console"
+    "", "Actions"
+    "``ctrl`` + ``g``", "Jump to line"
+    "``ctrl`` + ``f``", "Search in file"
+    "``ctrl`` + ``r``", "Replace in file"
+
 
 Assignments
 ===========
@@ -121,21 +144,6 @@ Know thou IDE
     * Uruchamianie debuggera
     * Znajomość różnicy między uruchamianiem i debuggingiem
     * Znajomość różnicy między terminalem i konsolą
-
-Keyboard shortcuts
-------------------
-.. csv-table:: Keyboard shortcuts
-    :header-rows: 1
-
-    "Key Combination", "Action"
-    "``ctrl+/``", "Comment multiple lines"
-
-#. Indent, unindent
-#. Run
-#. Show terminal
-#. Show console
-#. Actions
-#. Show file drawer
 
 Spellchecker
 ------------

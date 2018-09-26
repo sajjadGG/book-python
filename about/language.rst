@@ -6,6 +6,12 @@ About Python Language
 What is Python?
 ===============
 
+.. figure:: img/python-logo.png
+    :scale: 75%
+    :align: center
+
+    Python Logo
+
 Python as a Language
 --------------------
 * Turing complete, general purpose language
@@ -32,10 +38,12 @@ What changed in Python 3?
 * All strings are Unicode
 * Changes in standard library naming
 * In Python 3 ``print()`` is a function, not a keyword
+* New string formatting
 
 Why not Python 2?
 -----------------
-* Python 2 is no longer developed and stopped on 2.7
+* Python 2 is no longer developed
+* Python 2.7 is the last in 2.x branch
 * There won't be Python 2.8 (`PEP 404 <https://legacy.python.org/dev/peps/pep-0404/>`_)
 * End of Life for Python 2.7 is 2020 (`PEP 373 <https://legacy.python.org/dev/peps/pep-0373/>`_)
 
@@ -46,10 +54,12 @@ Scripts
 File types and extensions
 -------------------------
 * Python files use ``.py`` as an extension
+* Compiled files are in ``__pycache__`` directory
 * Python also uses other extensions:
 
     .. csv-table:: Python file types and extensions
         :header-rows: 1
+        :widths: 15, 85
         :file: data/extensions.csv
 
 Minimal script
@@ -82,8 +92,8 @@ Python Console (REPL)
 =====================
 * Read–Eval–Print Loop
 * Quickly test and evaluate code
-* Lines starts with ``>>> ``
-* Line continuation starts with ``... ``
+* Lines starts with ``>>>``
+* Line continuation starts with ``...``
 * Result is printed below
 * Open REPL with ``python3`` command in terminal
 

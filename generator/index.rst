@@ -106,10 +106,10 @@ Nested Comprahensions
 
    DATA = [
         {'last_name': 'Jiménez'},
-        {'first_name': 'Max', 'last_name': 'Peck'},
+        {'first_name': 'Mark', 'last_name': 'Watney'},
         {'first_name': 'Иван'},
-        {'first_name': 'Max', 'last_name': 'Peck', 'born': 1961},
-        {'first_name': 'Max', 'last_name': 'Peck', 'first_step': 1969},
+        {'first_name': 'Matt', 'last_name': 'Kowalski', 'born': 1961},
+        {'first_name': 'Melissa', 'last_name': 'Lewis', 'first_step': 1969},
     ]
 
     fieldnames = set()
@@ -224,21 +224,22 @@ Filtering ``dict`` items
     DATA = [
         {'first_name': 'Иван', 'last_name': 'Иванович', 'agency': 'Roscosmos'},
         {'first_name': 'Jose', 'last_name': 'Jimenez', 'agency': 'NASA'},
-        {'first_name': 'Max', 'last_name': 'Peck', 'agency': 'NASA'},
+        {'first_name': 'Melissa', 'last_name': 'Lewis', 'agency': 'NASA'},
+        {'first_name': 'Alex', 'last_name': 'Vogel', 'agency': 'ESA'},
         {'first_name': 'Mark', 'last_name': 'Watney', 'agency': 'NASA'},
     ]
 
     nasa_astronauts = [(astronaut['first_name'], astronaut['last_name']) for astronaut in DATA if astronaut['agency'] == 'NASA']
     # [
     #   ('Jose', 'Jimenez'),
-    #   ('Max', 'Peck'),
+    #   ('Melissa', 'Lewis'),
     #   ('Mark', 'Watney')
     # ]
 
     nasa_astronauts = [(x['first_name'], x['last_name']) for x in DATA if x['agency'] == 'NASA']
     # [
     #   ('Jose', 'Jimenez'),
-    #   ('Max', 'Peck'),
+    #   ('Melissa', 'Lewis'),
     #   ('Mark', 'Watney')
     # ]
 

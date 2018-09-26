@@ -395,7 +395,7 @@ Fix URL Regex
 
 #. Niepoprawne url:
 
-    .. code-block:: python
+    .. code-block:: text
 
         http://
         http://.

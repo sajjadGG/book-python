@@ -68,7 +68,7 @@ Słowo kluczowe ``continue`` powoduje przerwanie aktualnie wykonywanej pętli i 
     ETC_PASSWD = """
     # User Database
     root:x:0:0:root:/root:/bin/bash
-    peck:x:1000:1000:Max Peck:/home/peck:/bin/bash
+    watney:x:1000:1000:Mark Watney:/home/watney:/bin/bash
     jimenez:x:1001:1001:Jose Jimenez:/home/jimenez:/bin/bash
     ivanovic:x:1002:1002:Иван Иванович:/home/ivanovic:/bin/bash
     """
@@ -86,7 +86,7 @@ Słowo kluczowe ``continue`` powoduje przerwanie aktualnie wykonywanej pętli i 
     ETC_PASSWD = """
     # User Database
     root:x:0:0:root:/root:/bin/bash
-    peck:x:1000:1000:Max Peck:/home/peck:/bin/bash
+    watney:x:1000:1000:Mark Watney:/home/watney:/bin/bash
     jimenez:x:1001:1001:Jose Jimenez:/home/jimenez:/bin/bash
     ivanovic:x:1002:1002:Иван Иванович:/home/ivanovic:/bin/bash
     """
