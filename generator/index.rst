@@ -197,8 +197,8 @@ Operator ``yield``
 The whys and wherefores
 =======================
 
-Filtering results
------------------
+Filtering ``list`` items
+------------------------
 .. code-block:: python
 
     DATA = [
@@ -218,6 +218,30 @@ Filtering results
     setosa = [x for x in DATA if x[4] == 'setosa']
     print(setosa)
 
+Filtering ``dict`` items
+------------------------
+.. code-block:: python
+
+    DATA = [
+        {'first_name': 'Иван', 'last_name': 'Иванович', 'agency': 'Roscosmos'},
+        {'first_name': 'Jose', 'last_name': 'Jimenez', 'agency': 'NASA'},
+        {'first_name': 'Max', 'last_name': 'Peck', 'agency': 'NASA'},
+        {'first_name': 'Mark', 'last_name': 'Watney', 'agency': 'NASA'},
+    ]
+
+    nasa_astronauts = [(astronaut['first_name'], astronaut['last_name']) for astronaut in DATA if astronaut['agency'] == 'NASA']
+    # [
+    #   ('Jose', 'Jimenez'),
+    #   ('Max', 'Peck'),
+    #   ('Mark', 'Watney')
+    # ]
+
+    nasa_astronauts = [(x['first_name'], x['last_name']) for x in DATA if x['agency'] == 'NASA']
+    # [
+    #   ('Jose', 'Jimenez'),
+    #   ('Max', 'Peck'),
+    #   ('Mark', 'Watney')
+    # ]
 
 Reversing ``dict`` keys with values
 -----------------------------------
@@ -227,13 +251,6 @@ Reversing ``dict`` keys with values
 
     {v: k for k, v in data.items()}
     # dict {'Иван': 'first_name', 'Иванович': 'last_name'}
-
-Filtering ``dict`` items
-------------------------
-.. code-block:: python
-
-    {v for k, v in data.items()}
-    # {'Иван', 'Иванович'}
 
 Applying functions
 ------------------
