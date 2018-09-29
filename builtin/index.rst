@@ -272,8 +272,12 @@ Długość listy, tuple, stringa itp.
 
 .. code-block:: python
 
-    bin(3)   # '0b11'
-    bin(-3)  # '-0b11'
+    0b101111    # 47
+
+.. code-block:: python
+
+    bin(3)      # '0b11'
+    bin(-3)     # '-0b11'
 
 ``hex()``
 ---------

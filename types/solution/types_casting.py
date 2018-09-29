@@ -1,9 +1,7 @@
-meters = float(input('Distance [m]: '))
-
+meters = 1337
 km = int(meters / 1000)
 miles = float(meters / 1608)
 nm = float(meters / 1852)
-meters = int(meters)
 
 print(f'Meters: {meters}')
 print(f'Kilometers: {km}')

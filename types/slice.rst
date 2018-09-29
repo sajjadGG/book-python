@@ -10,13 +10,13 @@ Accessing element with index
 
 .. code-block:: python
 
-    text = 'That\'s one small step for [a] man, one giant leap for mankind.'
+    text = 'We choose to go to the Moon!'
 
-    text[0]             # 'T'
-    text[2]             # 'a'
-    text[4]             # "'"
-    text[-1]            # '.'
-    text[-3]            # 'n'
+    text[0]             # 'W'
+    text[1]             # 'e'
+    text[2]             # ' '
+    text[-1]            # '!'
+    text[-3]            # '0'
     text[100]           # IndexError: string index out of range
 
 
@@ -24,47 +24,47 @@ Accessing range of elements
 ===========================
 .. code-block:: python
 
-    text = 'That\'s one small step for [a] man, one giant leap for mankind.'
+    text = 'We choose to go to the Moon!'
 
-    text[0:3]             # 'Tha'
-    text[:3]              # 'Tha'
-    text[1:4]             # 'hat'
-    text[-8:]             # 'mankind.'
-    text[-8:-1]           # 'mankind'
-    text[:-9]             # "That's one small step for [a] man, one giant leap for"
-    text[:100]            # "That's one small step for [a] man, one giant leap for mankind."
+    text[0:2]             # 'We'
+    text[:2]              # 'We'
+    text[3:9]             # 'choose'
+    text[23:28]           # 'Moon!'
+    text[-5:]             # 'Moon!'
+    text[-5:-1]           # 'Moon'
+    text[:-6]             # 'We choose to go to the'
+    text[:100]            # 'We choose to go to the Moon!'
     text[100:]            # ''
 
 .. code-block:: python
 
-    text = 'That\'s one small step for [a] man, one giant leap for mankind.'
-    lower = 1
-    upper = 6
+    text = 'We choose to go to the Moon!'
+    lower = 23
+    upper = 28
 
-    text[lower:upper]       # "hat's"
-    text[lower:upper+1]     # "hat's "
-    text[lower-1:upper+1]   # "That's "
+    text[lower:upper]       # 'Moon!'
+    text[lower:upper-1]     # 'Moon'
 
 
 Slice
 =====
 .. code-block:: python
 
-    text = 'That\'s one small step for [a] man, one giant leap for mankind.'
-    RANGE = slice(0, 6)
+    text = 'We choose to go to the Moon!'
+    RANGE = slice(23, 28)
 
-    text[RANGE]           # "That's"
+    text[RANGE]           # 'Moon!'
 
 
 Reversing and stepping over elements
 ====================================
 .. code-block:: python
 
-    text = 'Lorem ipsum'
+    text = 'We choose to go to the Moon!'
 
-    text[::2]             # "Ta' n ml tpfr[]mn n in epfrmnid"
-    text[::-1]            # ".dniknam rof pael tnaig eno ,nam ]a[ rof pets llams eno s'tahT"
-    text[::-2]            # '.nka o altageo,a a o eslaseosth'
+    text[::2]             # 'W hoet ot h on'
+    text[::-1]            # '!nooM eht ot og ot esoohc eW'
+    text[::-2]            # '!oMeto go soce'
 
 
 Assignments

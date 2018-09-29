@@ -8,6 +8,8 @@ Character Types
 ``str``
 =======
 * ``"`` and ``'`` works the same
+* Sequence of Unicode characters (UTF-16 or UTF-32, depending on how Python was compiled
+
 * Defining ``str``:
 
     .. code-block:: python
@@ -36,11 +38,13 @@ Character Types
     .. code-block:: python
 
         names = """
-            José Jiménez
-            Matt Kowalski
-            Иван Иванович
+            We choose to go to the Moon!
+            We choose to go to the Moon in this decade and do the other things,
+            not because they are easy, but because they are hard.
         """
-        # '\n    José Jiménez\n    Matt Kowalski\n    Иван Иванович\n'
+
+        print(names)
+        # '\n    We choose to go to the Moon!\n    We choose to go to the Moon in this decade and do the other things, not because they are easy, but because they are hard.'
 
 
 Single or double quote?
@@ -80,13 +84,14 @@ Escape characters
     \x1F680     # after \x goes hexadecimal number
     \U0001F680  # after \u goes four hexadecimal numbers
     🚀
-    \b1010      # after \b goes bytes
     \t
     \'
 
 Characters before strings
 =========================
 * Format string: since Python 3.6
+* ``str`` = ``u'..'`` = ``'...'`` literals = a sequence of Unicode characters (UTF-16 or UTF-32, depending on how Python was compiled)
+* ``bytes`` = ``b'...'`` literals = a sequence of octets (integers between 0 and 255)
 
 .. csv-table:: String modifiers
     :header-rows: 1
@@ -99,7 +104,7 @@ Characters before strings
 
     f'My name... {name}'
     u'zażółć gęślą jaźń'
-    b'this is text'
+    b'this is bytes literals'
     r'(?P<foo>)\n'
     r'C:\Users\Admin\file.txt'
 
@@ -112,15 +117,26 @@ Characters before strings
 
 ``print()``
 ===========
+* ``print()`` adds ``'\n'`` at the end
 * Prints on the screen
-* More in :ref:`Print Formatting`
 
-.. code-block:: python
+    .. code-block:: python
 
-    print('My name... José Jiménez')  # My name... José Jiménez
+        print('My name... José Jiménez')
+        # My name... José Jiménez
 
-    name = 'José Jiménez'
-    print(f'My name... {name}')       # My name... José Jiménez
+* You can substitute variables
+
+    .. code-block:: python
+
+        name = 'José Jiménez'
+
+        print(f'My name... {name}')
+        # My name... José Jiménez
+
+        print(f'My name...\n\t{name}')
+        # My name...
+        #   José Jiménez
 
 * f-string formatting are preferred over ``str`` addition
 * How many ``str`` are in the memory?
@@ -133,6 +149,8 @@ Characters before strings
         print(first_name + ' ' + last_name)  # José Jiménez
         print(f'{first_name} {last_name}')   # José Jiménez
 
+.. note:: More in :ref:`Print Formatting`
+
 
 String methods
 ==============
@@ -142,6 +160,27 @@ String immutability
 * ``str`` is immutable
 * ``str`` methods create a new modified ``str``
 
+.. code-block:: python
+
+    a = 'Python'
+    a.replace('P', 'J')
+
+    print(a)
+    # Python
+
+.. code-block:: python
+
+    a = 'Python'
+    b = a.replace('P', 'J')
+    print(b)
+    # Jython
+
+.. code-block:: python
+
+    a = 'Python'
+    b = b.upper().replace('J', 'Tr')
+    print(b)
+    # TrYTHON
 
 ``title()``, ``lower()``, ``upper()``
 -------------------------------------
@@ -247,6 +286,25 @@ Handling user input
 
 Assignments
 ===========
+
+String cleaning
+---------------
+#. Dane poniżej przeczyść, tak aby zmienne zawierały ciąg znaków ``'Jana III Sobieskiego'``
+
+.. code-block:: python
+
+        a = ' 1/2'
+        b = 'ul Jana III Sobieskiego 1/2'
+        c = 'ul. Jana III Sobieskiego 1/2'
+        d = 'ul.Jana III Sobieskiego 1/2'
+        e = 'ulicaJana III Sobieskiego 1/2'
+        f = 'Ul. Jana III Sobieskiego 1/2'
+        g = 'UL. Jana III Sobieskiego 1/2'
+        h = 'ulica Jana III Sobieskiego 1/2'
+        i = 'Ulica. Jana III Sobieskiego 1/2'
+        j = 'Jana 3 Sobieskiego 1/2'
+        k = 'Jana III Sobieskiego 1 m. 2'
+        l = 'Jana III Sobieskiego 1 apt 2'
 
 Variables and types
 -------------------

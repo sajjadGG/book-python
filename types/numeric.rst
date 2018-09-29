@@ -53,11 +53,30 @@ Numerical Types
 
         float('+1.23')         # 1.23
         float('-1.23')         # -1.23
-        float('   -123.45\n')  # -123.45
 
         float('1E-003')        # 0.001
         float('1e-003')        # 0.001
         float('+1E6')          # 1000000.0
+
+* Min i max ``float``:
+
+    .. code-block:: python
+
+        import sys
+
+        sys.float_info.min
+        # 2.2250738585072014e-308
+
+        sys.float_info.max
+        # 1.7976931348623157e+308
+
+    .. code-block:: python
+
+        1e308
+        # 1e+308
+
+        1e309
+        # inf
 
 * Infinity representation in Python:
 

@@ -21,14 +21,20 @@ Simple Collections
     .. code-block:: python
 
         my_list = [1]
-        my_list = list(1)
 
 * Can store any type:
 
     .. code-block:: python
 
+        # ``List`` can store elements of any types
         my_list = [1, 2.0, None, False, 'José']
-        my_list = list(1, 2.0, None, False, 'José')
+
+    .. code-block:: python
+
+        # You can also add ``list`` to ``list``
+        my_list = [1, 2.0, None, False, 'José', [1, 'hello']]
+
+* Slicing, the same as for strings:
 
     .. code-block:: python
 
@@ -71,37 +77,43 @@ Simple Collections
     .. code-block:: python
 
         my_set = {1}
-        my_set = set(1)
 
 * Only unique values:
 
     .. code-block:: python
 
-        my_set = {1, 3, 1}       # {1, 3}
-        my_set = set([1, 3, 1])  # {1, 3}
+        my_set = {1, 3, 1}          # {1, 3}
+
+* Can store any hashable elements:
+
+    .. code-block:: python
+
+        my_set = {1, 2.0, 'Jose'}   # {1, 2.0, 'Jose'}
+        my_set = {1, 2.0, [3, 4]}   # TypeError: unhashable type: 'list'
+        my_set = {1, 2.0, {3, 4}}   # TypeError: unhashable type: 'set'
 
 * Mutable - can add, remove, and modify values:
 
     .. code-block:: python
 
-        my_set = {1, 2, 3}       # {1, 2, 3}
+        my_set = {1, 2, 3}          # {1, 2, 3}
 
-        my_set.add(4)            # {1, 2, 3, 4}
-        my_set.add(4)            # {1, 2, 3, 4}
-        my_set.add(3)            # {1, 2, 3, 4}
+        my_set.add(4)               # {1, 2, 3, 4}
+        my_set.add(4)               # {1, 2, 3, 4}
+        my_set.add(3)               # {1, 2, 3, 4}
 
-        my_set.update([4, 5])    # {1, 2, 3, 4, 5}
-        my_set.update({4, 5})    # {1, 2, 3, 4, 5}
+        my_set.update([4, 5])       # {1, 2, 3, 4, 5}
+        my_set.update({4, 5})       # {1, 2, 3, 4, 5}
 
 * Use of ``set`` operations with special syntax:
 
     .. code-block:: python
 
-        {1,2} - {2,3}            # {1}        # Subtract
-        {1,2} | {2,3}            # {1, 2, 3}  # Sum
-        {1,2} & {2,3}            # {2}        # Union
-        {1,2} ^ {2,3}            # {1, 3}     # Symmetrical difference
-        {1,2} + {3,4}            # TypeError: unsupported operand type(s) for +: 'set' and 'set'
+        {1,2} - {2,3}               # {1}        # Subtract
+        {1,2} | {2,3}               # {1, 2, 3}  # Sum
+        {1,2} & {2,3}               # {2}        # Union
+        {1,2} ^ {2,3}               # {1, 3}     # Symmetrical difference
+        {1,2} + {3,4}               # TypeError: unsupported operand type(s) for +: 'set' and 'set'
 
 * Slicing ``set`` is not possible:
 
@@ -109,24 +121,24 @@ Simple Collections
 
         my_set = {1, 2.0, None, False, 'José'}
 
-        my_set[1]                # TypeError: 'set' object does not support indexing
-        my_set[2:4]              # TypeError: 'set' object does not support indexing
+        my_set[1]                   # TypeError: 'set' object does not support indexing
+        my_set[2:4]                 # TypeError: 'set' object does not support indexing
 
 * Length of a ``set``:
 
     .. code-block:: python
 
         my_set = {1, 2, 3}
-        len(my_set)              # 3
+        len(my_set)                 # 3
 
 * Converting ``list`` to ``set`` deduplicate items:
 
     .. code-block:: python
 
-        names = ['Max', 'Иван', 'José', 'Max']
+        names = ['Matt', 'Иван', 'José', 'Matt']
 
         unique_names = set(names)
-        # {'Max', 'Иван', 'José'}
+        # {'Matt', 'Иван', 'José'}
 
 ``tuple``
 =========
@@ -152,7 +164,6 @@ Simple Collections
 
         my_tuple = 1, 2.0, None, False, 'José'
         my_tuple = (1, 2.0, None, False, 'José')
-        my_tuple = tuple(1, 2.0, None, False, 'José')
 
 * Slicing tuple:
 
@@ -196,59 +207,63 @@ How Python understands types?
 
     .. code-block:: python
 
-        what = 1, 2      # <class 'tuple'>
-        what = (1, 2)    # <class 'tuple'>
+        what = 1.2        # <class 'float'>
+        what = 1,2        # <class 'tuple'>
 
     .. code-block:: python
 
-        what = (1,2)     # <class 'tuple'>
-        what = (1.2)     # <class 'float'>
+        what = 1, 2       # <class 'tuple'>
+        what = (1, 2)     # <class 'tuple'>
+
+    .. code-block:: python
+
+        what = (1,2)      # <class 'tuple'>
+        what = (1.2)      # <class 'float'>
         what = (1.2,)     # <class 'tuple'>
 
     .. code-block:: python
 
-        what = 'foo'     # <class 'str'>
-        what = ('foo')   # <class 'str'>
+        what = 'foo'      # <class 'str'>
+        what = ('foo')    # <class 'str'>
 
-        what = 'foo',    # <class 'tuple'>
-        what = ('foo',)  # <class 'tuple'>
-
-
-    .. code-block:: python
-
-        what = 1.       # <class 'float'>
-        what = (1.)     # <class 'float'>
-
-        what = .5       # <class 'float'>
-        what = (.5)     # <class 'float'>
-
-        what = 1.0      # <class 'float'>
-        what = 1        # <class 'int'>
+        what = 'foo',     # <class 'tuple'>
+        what = ('foo',)   # <class 'tuple'>
 
     .. code-block:: python
 
-        what = 10.5     # <class 'float'>
-        what = (10.5)   # <class 'float'>
+        what = 1.        # <class 'float'>
+        what = (1.)      # <class 'float'>
 
-        what = 10,5     # <class 'tuple'>
-        what = (10,5)   # <class 'tuple'>
+        what = .5        # <class 'float'>
+        what = (.5)      # <class 'float'>
 
-        what = 10.      # <class 'float'>
-        what = (10.)    # <class 'float'>
-
-        what = 10,      # <class 'tuple'>
-        what = (10,)    # <class 'tuple'>
-
-        what = 10       # <class 'int'>
-        what = (10)     # <class 'int'>
+        what = 1.0       # <class 'float'>
+        what = 1         # <class 'int'>
 
     .. code-block:: python
 
-        what = (1.,1.)  # <class 'tuple'>
-        what = (.5,.5)  # <class 'tuple'>
-        what = (1.,.5)  # <class 'tuple'>
+        what = 10.5      # <class 'float'>
+        what = (10.5)    # <class 'float'>
 
-        what = 1.,.5    # <class 'tuple'>
+        what = 10,5      # <class 'tuple'>
+        what = (10,5)    # <class 'tuple'>
+
+        what = 10.       # <class 'float'>
+        what = (10.)     # <class 'float'>
+
+        what = 10,       # <class 'tuple'>
+        what = (10,)     # <class 'tuple'>
+
+        what = 10        # <class 'int'>
+        what = (10)      # <class 'int'>
+
+    .. code-block:: python
+
+        what = (1.,1.)   # <class 'tuple'>
+        what = (.5,.5)   # <class 'tuple'>
+        what = (1.,.5)   # <class 'tuple'>
+
+        what = 1.,.5     # <class 'tuple'>
 
 
 More advanced topics
@@ -261,10 +276,10 @@ Assignments
 
 Simple collections
 ------------------
-#. Stwórz tuplę z cyframi od 0-9
-#. Przekonwertuj ją do listy
-#. Na pierwsze miejsce w liście dodaj całą oryginalną tuplę
-#. Przekonwertuj wszystko na płaski zbiór unikalnych wartości
+#. Stwórz ``tuple`` z cyframi od 0-9
+#. Przekonwertuj ją do ``list``
+#. Na pierwsze miejsce w liście dodaj całą oryginalną ``tuple``
+#. Przekonwertuj wszystko na płaski ``set`` unikalnych wartości wykorzystując ``slice``
 
 :About:
     * Filename: ``collections_conversions.py``
