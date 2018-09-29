@@ -145,11 +145,14 @@ Aviation Language
 -----------------
 #. Stwórz słownik języka pilotów
 #. Pojedynczym literom przyporządkuj ich fonetyczne odpowiedniki
+#. Do przekonwertowania tabelki poniżej, wykorzystaj zaznaczanie wielu linijek za pomocą klawisza ``alt`` w Twoim IDE
 #. Wczytaj od użytkownika literę
+#. Jeżeli użytkownik podał więcej niż jedną literę, to wybierz z ciągu tylko pierwszą
+#. Słownik ma wyświetlić kod bez względu na to czy użytkownik podał dużą czy małą literę
 #. Wypisz na ekranie nazwę fonetyczną litery
 #. Użytkownik poda tylko jeden znak (literę, cyfrę lub znak specjalny)
 #. Jeżeli wpisał niepoprawny znak, to wypisz "Pilots don't say that"
-#. Nie używaj konstrukcji ``if``
+#. Nie używaj konstrukcji ``if``, ani ``try`` i ``except``
 
 .. csv-table:: Aviation Alphabet
     :header-rows: 1
