@@ -164,6 +164,10 @@ Załóżmy, że dostałaś pozytywny wynik, czyli masz raka.
     Wzór Bayesa:
         P(A|B) = P(B|A) * P(A) / P(B)
 
+    P(chory|pozytywny) = ?
+
+    P(chory) = 0.01
+
     P(pozytywny|chory) = 0.9
     P(pozytywny|zdrowy) = 0.1
 
@@ -173,9 +177,8 @@ Załóżmy, że dostałaś pozytywny wynik, czyli masz raka.
     P(pozytywny) = 0,9*0,01 + 0,2*0,99 = 0,207
 
     P(chory|pozytywny) = P(pozytywny|chory) * P(chory) / P(pozytywny)
-    P(pozytywny|chory) = P(chory|zdrowy) * P(zdrowy) / P(pozytywny)
 
-    P(pozytywny|chory) = 0,9 * 0,01 / 0,207 = 0,0434 = 4,3%
+    P(chory|pozytywny) = 0,9 * 0,01 / 0,207 = 0,0434 = 4,3%
 
 
 Spam Classifier

@@ -71,16 +71,6 @@ Compute the median along the specified axis
     np.median(a)
     # 3.0
 
-Pearson product-moment correlation coefficients
------------------------------------------------
-.. code-block:: python
-
-    a = np.array([[1, 2, 1, 3], [5, 3, 1, 8]], float)
-
-    np.corrcoef(a)
-    # array([[ 1. , 0.72870505],
-    #        [ 0.72870505, 1. ]])
-
 Estimate a covariance matrix, given data and weights
 ----------------------------------------------------
 .. code-block:: python
@@ -90,6 +80,21 @@ Estimate a covariance matrix, given data and weights
     np.cov(a)
     # array([[ 0.91666667, 2.08333333],
     #        [ 2.08333333, 8.91666667]])
+
+    np.cov(a, ddof=0)
+    # array([[0.6875, 1.5625],
+    #       [1.5625, 6.6875]])
+
+
+Pearson product-moment correlation coefficients
+-----------------------------------------------
+.. code-block:: python
+
+    a = np.array([[1, 2, 1, 3], [5, 3, 1, 8]], float)
+
+    np.corrcoef(a)
+    # array([[ 1. , 0.72870505],
+    #        [ 0.72870505, 1. ]])
 
 
 Random numbers
@@ -196,6 +201,10 @@ Roots of a polynomial
 
     np.roots([1, 4, -2, 3])
     # array([-4.57974010+0.j , 0.28987005+0.75566815j, 0.28987005-0.75566815j])
+
+    np.roots([ 1, -11, 9, 11, -10])
+    #array([10.+0.0000000e+00j, -1.+0.0000000e+00j,
+    #       1.+9.6357437e-09j, 1.-9.6357437e-09j])
 
 Antiderivative (indefinite integral) of a polynomial
 ----------------------------------------------------
@@ -392,7 +401,7 @@ Array shape
 
 .. code-block:: python
 
-    a = array([1, 2, 3], float)
+    a = np.array([1, 2, 3], float)
 
     s = a.tostring()
     # '\x00\x00\x00\x00\x00\x00\xf0?\x00\x00\x00\x00\x00\x00\x00@\x00\x00\x00\x00\x00\x00\x08@'
@@ -404,7 +413,7 @@ Array modification
 ------------------
 .. code-block:: python
 
-    a = array([1, 2, 3], float)
+    a = np.array([1, 2, 3], float)
     # array([ 1., 2., 3.])
 
     a.fill(0)
@@ -430,7 +439,18 @@ Array modification
     a.flatten()
     # array([ 1., 2., 3., 4., 5., 6.])
 
-Concatanation
+.. code-block:: python
+
+    a = np.array(range(6), float).reshape((2, 3, 1))
+    # array([[[0.],
+    #         [1.],
+    #         [2.]],
+    #
+    #        [[3.],
+    #         [4.],
+    #         [5.]]])
+
+Concatenation
 -------------
 .. code-block:: python
 
@@ -644,8 +664,8 @@ Array Multiplication
 --------------------
 .. code-block:: text
 
-    A = [[1, 0], [0, 1]]
-    B = [[4, 1], [2, 2]]
+    a = np.array([[1, 0], [0, 1]])
+    b = np.array([[4, 1], [2, 2]])
 
     a @ b
     # [[4, 1], [2, 2]]
@@ -987,6 +1007,10 @@ Where
 
         np.where(a > 0, 3, 2)
         # array([3, 3, 2])
+
+        a = np.array([1, -3, 3, 0], float)
+        np.logical_and(a > 0, a % 3 == 0)
+        # array([False, False, False, False])
 
 Nonzero
 ^^^^^^^

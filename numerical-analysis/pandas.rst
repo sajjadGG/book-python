@@ -253,7 +253,7 @@ Niemniej zalecane jest używanie zoptymalizowanych funkcji Pandas:
 
 .. code-block:: python
 
-    df.loc[:,'A'])
+    df.loc[:,'A']
     # 2017-01-01    0.131926
     # 2017-01-02    0.084471
     # 2017-01-03   -1.308835
@@ -268,7 +268,7 @@ Niemniej zalecane jest używanie zoptymalizowanych funkcji Pandas:
     df.at[daty[0],'A']
     # 0.13192554022073613
 
-    df.iloc[:,0]]  # integer locate (bez where i innych bajerów)
+    df.iloc[:,0]  # integer locate (bez where i innych bajerów)
     # 2017-01-01    0.131926
     # 2017-01-02    0.084471
     # 2017-01-03   -1.308835
@@ -283,7 +283,7 @@ Niemniej zalecane jest używanie zoptymalizowanych funkcji Pandas:
     df.iat[0,0]
     # 0.13192554022073613
 
-    df.ix[0,0]
+    df.ix[0,0] # Deprecated in favor of df.iloc and df.loc
     # 0.13192554022073613
 
 .. code-block:: python
@@ -341,7 +341,7 @@ Dane można też sortować po indeksie:
 
 .. code-block:: python
 
-    df.sort_index(ascending=False)
+    df.sort_index(ascending=False) # default axis=0
     df.sort_index(ascending=False, inplace=True)
 
 =========== =========== =========== =========== =========
@@ -428,8 +428,90 @@ Removing DataFrame None values
 ------------------------------
 .. code-block:: python
 
+    df3 = pd.DataFrame([{'A': 1, 'B': 2}, {'B': 2, 'C': 3}])
+
+=== === === ===
+    A   B   C
+=== === === ===
+0   1.0 2.0 NaN
+1   NaN 2.0 3.0
+=== === === ===
+
+.. code-block:: python
+
     df3.dropna(how='all')
+
+=== === === ===
+    A   B   C
+=== === === ===
+0   1.0 2.0 NaN
+1   NaN 2.0 3.0
+=== === === ===
+
+.. code-block:: python
+
+    df3.dropna(how='any')
+
+=== === === ===
+    A   B   C
+=== === === ===
+
+.. code-block:: python
+
+    df3.dropna(how='any', axis=1)
+
+=== ===
+    B
+=== ===
+0   2.0
+1   2.0
+=== ===
+
+.. code-block:: python
+
     df3.fillna(0.0)
+
+=== === === ===
+    A   B   C
+=== === === ===
+0   1.0 2.0 NaN
+1   NaN 2.0 3.0
+=== === === ===
+
+.. code-block:: python
+
+    values={'A': 5, 'B': 7, 'C': 9}
+    df3.fillna(values)
+
+=== === === ===
+    A   B   C
+=== === === ===
+0   1.0 2.0 9.0
+1   5.0 2.0 3.0
+=== === === ===
+
+.. code-block:: python
+
+    df3.fillna(method='ffill')
+
+=== === === ===
+    A   B   C
+=== === === ===
+0   1.0 2.0 NaN
+1   1.0 2.0 3.0
+=== === === ===
+
+.. code-block:: python
+
+    df3.fillna(method='bfill')
+
+=== === === ===
+    A   B   C
+=== === === ===
+0   1.0 2.0 3.0
+1   NaN 2.0 3.0
+=== === === ===
+
 
 Descriptive Statistics
 ----------------------

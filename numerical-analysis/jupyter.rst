@@ -59,8 +59,8 @@ Insert Below/Above Cells
 Add, Delete Cells
 -----------------
 
-Cut, Copy, Pase Cells
----------------------
+Cut, Copy, Paste Cells
+----------------------
 
 Move Up/Down Cells
 ------------------
