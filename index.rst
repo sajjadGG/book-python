@@ -45,6 +45,7 @@ Control Flow
     :name: Control Flow
     :caption: Control Flow
 
+    /control-flow/str-methods.rst
     /control-flow/slice.rst
     /control-flow/unpacking.rst
     /control-flow/if-else.rst

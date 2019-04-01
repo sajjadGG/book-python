@@ -195,17 +195,15 @@ Assignments
 Aviation Language
 -----------------
 * Filename: ``dict_alphabet.py``
-* Lines of code to write: 30 lines
-* Estimated time of completion: 15 min
+* Lines of code to write: 3 lines
+* Estimated time of completion: 10 min
 
 #. Stwórz słownik języka pilotów
 #. Pojedynczym literom przyporządkuj ich fonetyczne odpowiedniki
 #. Do przekonwertowania tabelki poniżej, wykorzystaj zaznaczanie wielu linijek za pomocą klawisza ``alt`` w Twoim IDE
 #. Wczytaj od użytkownika literę
-#. Użytkownik zawsze poda przynajmniej jedną literę, cyfrę lub znak specjalny
+#. Użytkownik zawsze poda przynajmniej jedną literę, cyfrę lub znak specjalny, zawsze będzie to duża litera
 #. Wypisz na ekranie nazwę fonetyczną litery
-#. Jeżeli użytkownik podał więcej niż jedną literę, to wybierz z ciągu tylko pierwszą
-#. Słownik ma wyświetlić kod bez względu na to czy użytkownik podał dużą czy małą literę
 #. Jeżeli wpisał znak, który nie jest w alfabecie, to wypisz "Pilots don't say that"
 #. Nie używaj konstrukcji ``if``, ani ``try`` i ``except``
 
