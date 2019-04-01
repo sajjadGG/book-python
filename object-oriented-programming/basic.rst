@@ -20,6 +20,8 @@ Object Paradigm
     method
         Function inside the class.
 
+    property
+    attribute
     field
         Variable inside the class.
         Also known as "Properties" or "Attributes"
@@ -47,6 +49,12 @@ Classes vs Instances
 * Instances are also known as Objects
 * Two newlines between class and code
 * ``snake_case`` names
+
+.. figure:: img/blueprint.png
+    :scale: 8%
+    :align: center
+
+    Intuition definition: Class is a blueprint, instances are homes made from this plan. Image source: :cite:`FigureBlueprintHouse`
 
 .. code-block:: python
     :caption: One class and one instance

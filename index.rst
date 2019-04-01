@@ -453,6 +453,5 @@ Appendixes
     /appendix/video.rst
     /appendix/python-2vs3.rst
     /appendix/python-wat.rst
+    /_references/references.rst
     /LICENSE.rst
-    /bibliography.rst
-    /glossary.rst
