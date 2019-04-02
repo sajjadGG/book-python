@@ -126,7 +126,7 @@ Assignments
 
 To ``bool`` or not to ``bool``
 ------------------------------
-* Filename: ``types_bool_imple.py``
+* Filename: ``types_bool_simple.py``
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
 

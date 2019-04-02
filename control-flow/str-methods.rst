@@ -191,28 +191,6 @@ Multiple statements in one line
     # AttributeError: 'bool' object has no attribute 'replace'
 
 
-Getting text from user
-======================
-* ``input()`` returns ``str``
-* Space at the end of prompt
-
-.. code-block:: python
-
-    name = input('Type your name: ')
-    # User inputs: Jan Twardowski
-
-    print(name)     # 'Jan Twardowski'
-    type(name)      # <class 'str'>
-
-.. code-block:: python
-
-    age = input('Type your age: ')
-    # User inputs: 42
-
-    print(age)      # '42'
-    type(age)       # <class 'str'>
-
-
 Cleaning ``str`` from user input
 ================================
 * 80% of machine learning and data science is cleaning data

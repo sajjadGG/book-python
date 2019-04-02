@@ -9,9 +9,9 @@ Defining ``None``
 =================
 * First letter capitalized, other are lower cased
 * Empty value (null)
+* Used for unknown (unset) values
 * It is not ``False`` value
 * With ``if`` statements behaves like negative values
-* Used for unknown (unset) values
 
 .. code-block:: python
 

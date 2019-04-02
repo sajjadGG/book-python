@@ -7,17 +7,13 @@
 
 Defining ``str``
 ================
-* ``"`` and ``'`` works the same
-
 .. code-block:: python
 
     name = ''
-    name = ""
 
 .. code-block:: python
 
     name = 'Jan Twardowski'       # 'Jan Twardowski'
-    name = "Jan Twardowski"       # 'Jan Twardowski'
 
 Multiline ``str``
 -----------------
@@ -64,9 +60,7 @@ Single or double quote?
 * ``"`` and ``'`` works the same
 * Choose one and keep consistency in code
 * Python console uses ``'``
-* I use ``'`` in this book to be consistent with Python
-* ``doctest`` uses single quotes and throws error on double quotes
-* For triple-quoted strings, always use double quote characters to be consistent with the docstring convention in :pep:`257`
+* it matters for ``doctest``, which compares two outputs character by character
 
 When use double quotes?
 -----------------------
@@ -85,6 +79,8 @@ When use single quotes?
 
 When use multiline?
 -------------------
+* Always use double quote characters to be consistent with the docstring convention :pep:`257`
+
 .. code-block:: python
 
     my_str = """My name's "José Jiménez""""
@@ -109,29 +105,29 @@ New lines
 
 Other escape characters
 -----------------------
-.. csv-table:: Escape characters
-    :header-rows: 1
+.. csv-table:: Frequently used escape characters
+    :header: "Sequence", "Description"
+    :widths: 15, 85
 
-    "Escape sequence", "Description"
     "``\\``", "Backslash ``\``"
     "``\'``", "Single quote ``'``"
-    "``\""``", "Double quote ``""``"
-    "``\a``", "Bell (BEL)"
-    "``\b``", "Backspace (BS)"
-    "``\f``", "New page (FF - Formfeed)"
+    "``\"``", "Double quote ``"``"
     "``\n``", "New line  (LF - Linefeed)"
     "``\r``", "Carriage Return (CR)"
     "``\t``", "Horizontal Tab (TAB)"
-    "``\uxxxx``", "Character with 16-bit hex value XXXX"
-    "``\Uxxxxxxxx``", "Character with 32-bit hex value XXXXXXXX"
+
+.. csv-table:: Less frequently used escape characters
+    :header: "Sequence", "Description"
+    :widths: 15, 85
+
+    "``\a``", "Bell (BEL)"
+    "``\b``", "Backspace (BS)"
+    "``\f``", "New page (FF - Form Feed)"
     "``\v``", "Vertical Tab (VT)"
-    "``\ooo...``", "ASCII character with octal value oo..."
-    "``\xhh...``", "ASCII character with hex value hh..."
-
-.. code-block:: text
-
-    \x1F680     # after \x goes hexadecimal number
-    \U0001F680  # after \u goes four hexadecimal numbers
+    "``\uF680``", "Character with 16-bit hex value ``F680``"
+    "``\U0001F680``", "Character with 32-bit hex value ``0001F680``"
+    "``\o755``", "ASCII character with octal value ``755``"
+    "``\x1F680``", "ASCII character with hex value ``1F680``"
 
 .. code-block:: python
 
@@ -181,9 +177,10 @@ Raw String
 
 .. code-block:: python
 
-    r'(?P<foo>)\n'
+    r'[a-z0-9]\n'
 
 .. code-block:: python
+    :emphasize-lines: 1
 
     path = r'C:\Users\Admin\file.txt'
 
@@ -191,6 +188,7 @@ Raw String
     # C:\Users\Admin\file.txt
 
 .. code-block:: python
+    :emphasize-lines: 1
 
     path = 'C:\Users\Admin\file.txt'
 
@@ -203,11 +201,33 @@ Raw String
 * ``s`` is invalid hexadecimal character
 
 
+Getting text from user
+======================
+* ``input()`` returns ``str``
+* Space at the end of prompt
+
+.. code-block:: python
+
+    name = input('Type your name: ')
+    # User inputs: Jan Twardowski
+
+    print(name)     # 'Jan Twardowski'
+    type(name)      # <class 'str'>
+
+.. code-block:: python
+
+    age = input('Type your age: ')
+    # User inputs: 42
+
+    print(age)      # '42'
+    type(age)       # <class 'str'>
+
+
 Assignments
 ===========
 
-Emot print
-----------
+Emoticon print
+--------------
 * Filename: ``types_emoticon.py``
 * Lines of code to write: 4 lines
 * Estimated time of completion: 10 min
@@ -238,7 +258,7 @@ Variables and types
 	    	I'm an """astronaut!"""'''
 
 #. Uwaga! Druga linijka zaczyna się od tabulacji
-#. Gdzie wartość w podwójnym cudzysłowiu to ciąg od użytkownika (w przykładzie użytkownik wpisał ``José Jiménez``)
+#. Gdzie wartość w podwójnych cudzysłowach to ciąg od użytkownika (w przykładzie użytkownik wpisał ``José Jiménez``)
 #. Zwróć uwagę na znaki apostrofów, cudzysłowów, tabulacji i nowych linii
 #. W ciągu do wyświetlenia nie używaj spacji ani enterów - użyj ``\n`` i ``\t``
 #. Nie korzystaj z dodawania stringów (``str + str``)
