@@ -29,12 +29,36 @@ Data Types
     /data-types/bool.rst
     /data-types/none.rst
     /data-types/str.rst
-    /data-types/list.rst
-    /data-types/set.rst
-    /data-types/tuple.rst
-    /data-types/dict.rst
-    /data-types/nested.rst
-    /data-types/type-system.rst
+
+***************
+Data Structures
+***************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :name: Data Structures
+    :caption: Data Structures
+
+    /data-structures/list.rst
+    /data-structures/set.rst
+    /data-structures/tuple.rst
+    /data-structures/dict.rst
+    /data-structures/nested.rst
+
+************
+Data Methods
+************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :name: Data Methods
+    :caption: Data Methods
+
+    /data-methods/str-methods.rst
+    /data-methods/set-methods.rst
+    /data-methods/slice.rst
+    /data-methods/unpacking.rst
+    /data-methods/type-system.rst
 
 ************
 Control Flow
@@ -45,10 +69,6 @@ Control Flow
     :name: Control Flow
     :caption: Control Flow
 
-    /control-flow/str-methods.rst
-    /control-flow/set-methods.rst
-    /control-flow/slice.rst
-    /control-flow/unpacking.rst
     /control-flow/if-else.rst
     /control-flow/composite-statements.rst
     /control-flow/operators.rst

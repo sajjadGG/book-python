@@ -315,7 +315,7 @@ Cleaning text input
     g = 'ULICA JANA III SOBIESKIEGO  '
     h = 'ULICA. JANA III SOBIeskieGO'
     i = ' Jana 3 Sobieskiego  '
-    j = 'Jana III\tSobieskiego '
+    j = 'Jana III Sobi\teskiego '
     k = 'ul.Jana III Sob\n\nieskiego\n'
 
     print(f'{a == expected}\t a: "{a}"')

@@ -111,7 +111,7 @@ Other escape characters
 
     "``\\``", "Backslash ``\``"
     "``\'``", "Single quote ``'``"
-    "``\"``", "Double quote ``"``"
+    "``\""``", "Double quote ``""``"
     "``\n``", "New line  (LF - Linefeed)"
     "``\r``", "Carriage Return (CR)"
     "``\t``", "Horizontal Tab (TAB)"
@@ -141,6 +141,7 @@ Format String
 -------------
 * String interpolation (variable substitution)
 * Since Python 3.6
+* Used for ``str`` concatenation
 
 .. code-block:: python
 
@@ -148,6 +149,14 @@ Format String
 
     print(f'My name... {name}')
     # My name... José Jiménez
+
+.. code-block:: python
+
+    first_name = 'Jan'
+    last_name = 'Twardowski'
+
+    name = f'{first_name} {last_name}'
+    # Jan Twardowski
 
 Unicode literals
 ----------------
@@ -200,16 +209,6 @@ Raw String
 * after ``\U...`` python expects Unicode codepoint in hex
 * ``s`` is invalid hexadecimal character
 
-Length of a ``str``
-===================
-.. code-block:: python
-
-    len('Jan')      # 3
-
-.. code-block:: python
-
-    a = 'Jan'
-    len(a)          # 3
 
 Getting text from user
 ======================
@@ -231,6 +230,19 @@ Getting text from user
 
     print(age)      # '42'
     type(age)       # <class 'str'>
+
+
+Length of a ``str``
+===================
+.. code-block:: python
+
+    len('Jan')      # 3
+    len('')         # 0
+
+.. code-block:: python
+
+    a = 'Jan'
+    len(a)          # 3
 
 
 Assignments

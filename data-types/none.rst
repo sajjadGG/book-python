@@ -24,7 +24,7 @@ Logic operators
 
 .. csv-table:: Logic operators
     :header: "Operand", "Description"
-    :widths: 15, 25, 60
+    :widths: 15, 85
 
     "``x is None``", "``x`` is the same object as ``y``"
     "``x is not None``", "``x`` is not the same object as ``y``"

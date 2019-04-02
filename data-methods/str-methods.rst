@@ -45,8 +45,8 @@ String Arithmetic
 ``str`` methods
 ===============
 
-``str.title()``, ``str.lower()``, ``str.upper()``
--------------------------------------------------
+Changing Character Case
+-----------------------
 * Unify data format before analysis
 
 .. code-block:: python
@@ -58,8 +58,8 @@ String Arithmetic
     name.title()       # 'Jan Twardowski Iii'
     name.capitalize()  # 'Jan twardowski iii'
 
-``str.replace()``
------------------
+Replacing parts of the ``str``
+------------------------------
 .. code-block:: python
 
     name = 'Jan Twardowski Iii'
@@ -67,8 +67,8 @@ String Arithmetic
     name.replace('Iii', 'III')
     # 'Jan Twardowski III'
 
-``str.strip()``, ``str.lstrip()``, ``str.rstrip()``
----------------------------------------------------
+Cleaning ``str`` from whitespaces
+---------------------------------
 .. code-block:: python
 
     name = '\tJan Twardowski    \n'
@@ -77,8 +77,8 @@ String Arithmetic
     name.rstrip()       # '\tJan Twardowski'
     name.lstrip()       # 'Jan Twardowski    \n'
 
-``str.startswith()`` and ``str.endswith()``
--------------------------------------------
+Checking if ``str`` starts or ends with value
+---------------------------------------------
 * Understand this as "starts with" and "ends with"
 
 .. code-block:: python
@@ -88,8 +88,8 @@ String Arithmetic
     name.startswith('Jan')  # True
     name.endswith(';')      # False
 
-``str.split()``
----------------
+Splitting ``str``
+-----------------
 .. code-block:: python
 
     setosa = '5.1,3.5,1.4,0.2,setosa'
@@ -117,8 +117,8 @@ String Arithmetic
     text.split()
     # ['10.13.37.1', 'nasa.gov', 'esa.int', 'roscosmos.ru']
 
-``str.join()``
---------------
+Joining ``str``
+---------------
 .. code-block:: python
 
     text = ['We', 'choose', 'to', 'go', 'to', 'the', 'Moon']
@@ -133,8 +133,8 @@ String Arithmetic
     ','.join(setosa)
     # '5.1,3.5,1.4,0.2,setosa'
 
-``str.isspace()``
------------------
+Checking if ``str`` contains only whitespace
+--------------------------------------------
 .. code-block:: python
 
     ''.isspace()        # False
@@ -142,15 +142,15 @@ String Arithmetic
     '\t'.isspace()      # True
     '\n'.isspace()      # True
 
-``str.isalpha()``
------------------
+Checking if ``str`` contains only alphabet characters
+-----------------------------------------------------
 .. code-block:: python
 
     'hello'.isalpha()   # True
     'hello1'.isalpha()  # False
 
-``str.find()``
---------------
+Finding starting position of a sub-string
+-----------------------------------------
 .. code-block:: python
 
     text = 'We choose to go to the Moon'
@@ -158,19 +158,12 @@ String Arithmetic
     text.find('M')      # 23
     text.find('x')      # -1
 
-``str`` in ``str``
-------------------
+Check if ``str`` is a part of another ``str``
+---------------------------------------------
 .. code-block:: python
 
     'th' in 'Python'     # True
     'hello' in 'Python'  # False
-
-``len()``
----------
-.. code-block:: python
-
-    len('Python')   # 6
-    len('')         # 0
 
 
 Multiple statements in one line
@@ -275,11 +268,10 @@ String cleaning
 * Filename: ``str_cleaning.py``
 * Lines of code to write: 11 lines
 * Estimated time of completion: 15 min
-
-#. Dane poniżej przeczyść, tak aby zmienne miały wartość ``'Jana III Sobieskiego'``
-#. Przeprowadź dyskusję jak zrobić rozwiązanie generyczne pasujące do wszystkich? (Implementacja rozwiązania będzie w rozdziale :ref:`Function Basics`)
+* Input Data: :numref:`listing-str-methods-cleaning`
 
 .. code-block:: python
+    :name: listing-str-methods-cleaning
 
     expected = 'Jana III Sobieskiego'
 
@@ -292,7 +284,7 @@ String cleaning
     g = 'ULICA JANA III SOBIESKIEGO  '
     h = 'ULICA. JANA III SOBIeskieGO'
     i = ' Jana 3 Sobieskiego  '
-    j = 'Jana III\tSobieskiego '
+    j = 'Jana III Sobi\teskiego '
     k = 'ul.Jana III Sob\n\nieskiego\n'
 
     print(f'{a == expected}\t a: "{a}"')
@@ -306,6 +298,11 @@ String cleaning
     print(f'{i == expected}\t i: "{i}"')
     print(f'{j == expected}\t j: "{j}"')
     print(f'{k == expected}\t k: "{k}"')
+
+#. Wykorzystując metody ``str``
+#. Dane przeczyść, tak aby zmienne miały wartość ``Jana III Sobieskiego``
+#. Nie wykorzystuj mechanizmu ``slice``
+#. Przeprowadź dyskusję jak zrobić rozwiązanie generyczne pasujące do wszystkich? (Implementacja rozwiązania będzie w rozdziale :ref:`Function Basics`)
 
 :The whys and wherefores:
     * Definiowanie zmiennych

@@ -9,7 +9,7 @@ f = 'UL. jana III SOBiesKIEGO'
 g = 'ULICA JANA III SOBIESKIEGO  '
 h = 'ULICA. JANA III SOBIeskieGO'
 i = ' Jana 3 Sobieskiego  '
-j = 'Jana III\tSobieskiego '
+j = 'Jana III Sobi\teskiego '
 k = 'ul.Jana III Sob\n\nieskiego\n'
 
 
@@ -36,7 +36,7 @@ f = clean(f)
 g = clean(g)
 h = clean(h)
 i = clean(i)
-j = clean(j).replace('IIIs', 'III S')
+j = clean(j)
 k = clean(k)
 
 print(f'{a == expected}\t a: "{a}"')
