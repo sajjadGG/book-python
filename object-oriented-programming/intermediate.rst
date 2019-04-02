@@ -325,6 +325,25 @@ Defining Classes
                 setosa   9.5  2.38
                 setosa   9.4  2.35
 
+Credit Scoring
+--------------
+* Filename: ``oop_credit_scoring.py``
+* Lines of code to write: 30 lines
+* Estimated time of completion: 20 min
+
+#. Stwórz klasę opisującą klienta banku
+#. Stwórz klasę konto bankowe
+#. Stwórz konta walutowe, oszczędnościowe, emerytalne i bieżące
+#. Wylicz scoring kredytowy na podstawie informacji:
+
+    - czy klient ma żonę/męża
+    - czy klient ma dzieci
+    - czy klient ma umowę o pracę
+    - suma środków zgromadzonych na wszystkich kontach
+    - wiek
+
+#. Przedstaw scoring
+
 Basic Address Book
 ------------------
 * Filename: ``oop_addressbook_basic.py``
