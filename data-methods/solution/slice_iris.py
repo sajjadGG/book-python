@@ -7,17 +7,17 @@ DATA = (
     4.7, 3.2, 1.3, 0.2, 'setosa',
 )
 
-STEP = 5
+features = [
+    DATA[0:4],
+    DATA[5:9],
+    DATA[10:14],
+    DATA[15:19],
+    DATA[20:24],
+    DATA[25:29],
+]
 
-features = list()
-labels = list()
-species = set()
-
-for i in range(0, len(DATA), STEP):
-    *measurements, kind = DATA[i:i+STEP]
-    features.append(measurements)
-    labels.append(kind)
-    species.add(kind)
+labels = list(DATA[4::5])
+species = set(labels)
 
 print(f'Features:\n{features}\n')
 print(f'Labels:\n{labels}\n')
