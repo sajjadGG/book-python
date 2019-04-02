@@ -76,6 +76,7 @@ Inserting elements at specific position
 
     my_list.insert(0, 'a')  # ['a', 1, 2]
 
+
 Multiple statements in one line
 -------------------------------
 .. code-block:: python
@@ -84,21 +85,6 @@ Multiple statements in one line
 
     a = my_list.append(4).sort()
     # AttributeError: 'NoneType' object has no attribute 'sort'
-
-
-Slicing ``list``
-================
-* Slicing works the same as for ``str``
-* More in :ref:`Slice` chapter
-
-.. code-block:: python
-
-    my_list = [1, 2.0, None, False, 'José']
-
-    my_list[1]             # 2.0
-    my_list[2:4]           # [None, False]
-    my_list[::2]           # [1, None, 'José']
-    my_list[-1]            # 'José'
 
 
 ``sorted()`` vs. ``list.sort()``

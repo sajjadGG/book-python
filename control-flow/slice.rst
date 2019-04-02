@@ -103,15 +103,46 @@ Slicing ``tuple``
 -----------------
 .. code-block:: python
 
-    my_tuple = (1, 2, 3, 4, 5)
+    my_tuple = ('a', 'b', 'c', 'd', 'e')
 
-    my_tuple[2]             # 3
-    my_tuple[-1]            # 5
-    my_tuple[:3]            # (1, 2, 3)
-    my_tuple[3:]            # (4, 5)
-    my_tuple[::2]           # (1, 3, 5)
-    my_tuple[1:4]           # (2, 3, 4)
+    my_tuple[2]             # 'c'
+    my_tuple[-1]            # 'e'
+    my_tuple[:3]            # ('a', 'b', 'c')
+    my_tuple[3:]            # ('d', 'e')
+    my_tuple[::2]           # ('a', 'c', 'e')
+    my_tuple[1:4]           # ('b', 'c', 'd')
 
+Slicing ``list``
+----------------
+* Slicing works the same as for ``str``
+* More in :ref:`Slice` chapter
+
+.. code-block:: python
+
+    my_list = ['a', 'b', 'c', 'd', 'e']
+
+    my_list[1]             # 'b'
+    my_list[2:4]           # ['c', 'd']
+    my_list[::2]           # ['a', 'c', 'e']
+    my_list[-1]            # 'e'
+
+Slice ``dict``
+--------------
+.. code-block:: python
+
+    my_dict = {'a': 1, 'b': 2}
+
+    my_dict[1:2]
+    # TypeError: unhashable type: 'slice'
+
+Slice ``set``
+-------------
+.. code-block:: python
+
+    my_set = {'a', 'b', 'c', 'd', 'e'}
+
+    my_set[1:2]
+    # TypeError: 'set' object is not subscriptable
 
 Slice function
 ==============
