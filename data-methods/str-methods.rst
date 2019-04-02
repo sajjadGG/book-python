@@ -1,6 +1,6 @@
-**************
-String methods
-**************
+***************
+``str`` methods
+***************
 
 
 String immutability
