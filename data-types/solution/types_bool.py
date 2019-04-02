@@ -6,8 +6,6 @@ e = True or True                             # True
 f = False and True                           # False
 g = bool(bool(False) == False) or False      # True
 h = None is None                             # True
-i = None is not None                         # False
-j = bool(True) is not bool(True)             # False
 
 print(a)                                     # True
 print(b)                                     # True
@@ -17,5 +15,3 @@ print(e)                                     # True
 print(f)                                     # False
 print(g)                                     # True
 print(h)                                     # True
-print(i)                                     # False
-print(j)                                     # False

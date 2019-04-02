@@ -23,12 +23,11 @@ Logic operators
 * Do not use ``==`` or ``!=`` to check ``None`` values
 
 .. csv-table:: Logic operators
-    :header-rows: 1
+    :header: "Operand", "Description"
     :widths: 15, 25, 60
 
-    "Operand", "Example", "Description"
-    "``x is y``", "``x is None``", "``x`` is the same object as ``y``"
-    "``x is not y``", "``x is not None``", "``x`` is not the same object as ``y``"
+    "``x is None``", "``x`` is the same object as ``y``"
+    "``x is not None``", "``x`` is not the same object as ``y``"
 
 
 Assignments
@@ -36,8 +35,8 @@ Assignments
 
 Is ``None`` or ``not``
 ----------------------
-* Filename: ``types_bool.py``
-* Lines of code to write: 10 lines
+* Filename: ``types_none.py``
+* Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
 
 #. Co należy podstawić do zmiennych aby wyrażenia poniżej zgadzały się z wartością oczekiwaną?
@@ -50,11 +49,11 @@ Is ``None`` or ``not``
         d = (bool(bool(...) is not bool(...)) == False and bool(...))                         # False
         e = (bool(bool(...) is not bool(...)) == False and bool(...)) and (... is not None)   # False
 
-        print(a)  # True
-        print(b)  # False
-        print(c)  # True
-        print(d)  # False
-        print(e)  # False
+        print(a)    # True
+        print(b)    # False
+        print(c)    # True
+        print(d)    # False
+        print(e)    # False
 
 :The whys and wherefores:
     * Definiowanie zmiennych

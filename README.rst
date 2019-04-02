@@ -2,8 +2,6 @@
 Python 3: from None to Machine Learning
 #######################################
 
-.. tip:: The most up-to-date version of this book is always at http://python.astrotech.io
-
 **Author**
 
 :name: `Matt Harasymczuk <http://astrotech.io>`_
@@ -13,6 +11,8 @@ Python 3: from None to Machine Learning
 :linkedin: https://linkedin.com/in/mattharasymczuk
 :facebook: https://facebook.com/matt.harasymczuk
 :slideshare: https://www.slideshare.net/astrotech/presentations
+
+.. tip:: The most up-to-date version of this book is always at http://python.astrotech.io
 
 .. csv-table:: Other books from author
     :widths: 30, 70

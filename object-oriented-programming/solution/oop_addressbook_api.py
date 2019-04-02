@@ -55,3 +55,5 @@ addressbook = AddressBook([
 
 print(addressbook)
 # [Jan Twardowski [Houston, Kennedy Space Center, Pasadena, Palmdale], José Jiménez, Иван Иванович]
+
+print(addressbook.kontakty[0].adresy[1].miasto)

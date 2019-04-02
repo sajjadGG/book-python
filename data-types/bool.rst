@@ -11,8 +11,8 @@ Defining ``bool``
 
 .. code-block:: python
 
-    my_var = True
-    my_var = False
+    my_var = True               # True
+    my_var = False              # False
 
 
 Converting to ``bool``
@@ -148,10 +148,10 @@ To ``bool`` or not to ``bool``
         j = bool(0.0)
         k = bool(-0)
         l = bool(-0.0+0.0j)
-        l = bool('-0.0+0.0j')
+        m = bool('-0.0+0.0j')
 
-        m = bool(int('0'))
-        n = bool(float('-0'))
+        n = bool(int('0'))
+        o = bool(float('-0'))
 
 #. Które zmienne mają wartość ``True``, ``False``?
 
@@ -186,7 +186,6 @@ To ``bool`` or not to ``bool``
         print(e)                                # True
         print(f)                                # False
         print(g)                                # True
-        print(i)                                # False
 
 :The whys and wherefores:
     * Definiowanie zmiennych
