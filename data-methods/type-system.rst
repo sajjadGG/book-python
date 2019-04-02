@@ -7,28 +7,36 @@ Type inference
 ==============
 * Static Typing (Java, C++, Swift)
 
-.. code-block:: java
+    .. code-block:: java
 
-    String name = new String("José Jiménez")
+        String name = new String("José Jiménez")
 
 * Dynamic Typing (Python, PHP, Ruby)
 
-.. code-block:: python
+    .. code-block:: python
 
-    # Type inference
-    name = 'José Jiménez'
-    name = str('José Jiménez')
+        name = str('José Jiménez')
+
+* Type inference
+
+    .. code-block:: python
+
+        name = 'José Jiménez'
 
 
-Type Hinting A.K.A. Type Annotation
-===================================
+Type Annotations
+================
+
+    Types are not required, and never will be
+    -- Guido van Rossum, Python BDFL
+
 * Since Python 3.5
 * ``SyntaxError`` in Python before 3.5
-* Two names: type hints and type annotations
-* Types are not required, and never will be (quote from Guido van Rossum, Python BDFL)
-* To check types you have to use IDE or modules like ``mypy`` or ``pyre-check``
+* Sometimes called "type hints"
+* Good IDE will give you hints
 * Types are used extensively in system libraries
 * More and more books and documentations use types
+* To type check use: ``mypy`` or ``pyre-check`` (more in :ref:`cicd-tools`)
 
 Basic types
 -----------
@@ -90,7 +98,7 @@ Why?
 
 More advanced topics
 --------------------
-.. note:: The topic will be continued in chapter: :ref:`Software Engineering Conventions`
+.. note:: The topic will be continued in chapter: :ref:`Type Annotation`
 
 
 Problematic types
@@ -105,17 +113,14 @@ Problematic types
 .. code-block:: python
 
     my_data = {}
-    isinstance(my_data, (set, dict))  # True
     isinstance(my_data, dict)         # True
     isinstance(my_data, set)          # False
 
     my_data = {1}
-    isinstance(my_data, (set, dict))  # True
     isinstance(my_data, dict)         # False
     isinstance(my_data, set)          # True
 
     my_data = {1: 1}
-    isinstance(my_data, (set, dict))  # True
     isinstance(my_data, dict)         # True
     isinstance(my_data, set)          # False
 
@@ -141,6 +146,8 @@ Problematic types
     what = 'foo',     # tuple with str
     what = 'foo'.     # SyntaxError: invalid syntax
 
+.. code-block:: python
+
     what = ('foo')    # str
     what = ('foo',)   # tuple with str
     what = ('foo'.)   # SyntaxError: invalid syntax
@@ -150,10 +157,10 @@ Problematic types
 .. code-block:: python
 
     what = 1.2        # float
-    what = 1,2        # tuple
+    what = 1,2        # tuple with two int
 
     what = (1.2)      # float
-    what = (1,2)      # tuple
+    what = (1,2)      # tuple with two int
 
 .. code-block:: python
 

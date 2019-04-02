@@ -77,16 +77,6 @@ Inserting elements at specific position
     my_list.insert(0, 'a')  # ['a', 1, 2]
 
 
-Multiple statements in one line
--------------------------------
-.. code-block:: python
-
-    my_list = [3, 1, 2]
-
-    a = my_list.append(4).sort()
-    # AttributeError: 'NoneType' object has no attribute 'sort'
-
-
 ``sorted()`` vs. ``list.sort()``
 ================================
 
@@ -98,8 +88,8 @@ Multiple statements in one line
 
     numbers = [3, 1, 2]
 
-    sorted(numbers)     # returns [1, 2, 3]
-    print(numbers)      # [3, 1, 2]
+    sorted(numbers)         # returns [1, 2, 3]
+    print(numbers)          # [3, 1, 2]
 
 ``list.sort()``
 ---------------
@@ -109,8 +99,20 @@ Multiple statements in one line
 
     numbers = [3, 1, 2]
 
-    numbers.sort()      # returns None
-    print(numbers)      # [1, 2, 3]
+    numbers.sort()          # returns None
+    print(numbers)          # [1, 2, 3]
+
+
+Multiple statements in one line
+===============================
+.. code-block:: python
+
+    my_list = [3, 1, 2]
+
+    my_list.append(4)       # [3, 1, 2, 4]
+
+    a = my_list.append(5).sort()
+    # AttributeError: 'NoneType' object has no attribute 'sort'
 
 
 Built-in functions on sequences
@@ -122,7 +124,7 @@ Built-in functions on sequences
 
     numbers = [1, 2, 3, 4, 5]
 
-    len(numbers)                   # 5
+    len(numbers)        # 5
 
 ``min()``
 ---------
@@ -130,8 +132,8 @@ Built-in functions on sequences
 
     numbers = [1, 2, 3, 4, 5]
 
-    min(numbers)  # 1
-    min(3, 1, 5)  # 1
+    min(numbers)        # 1
+    min(3, 1, 5)        # 1
 
 ``max()``
 ---------
@@ -139,8 +141,8 @@ Built-in functions on sequences
 
     numbers = [1, 2, 3, 4, 5]
 
-    max(numbers)  # 5
-    max(3, 1, 5)  # 5
+    max(numbers)        # 5
+    max(3, 1, 5)        # 5
 
 ``sum()``
 ---------
@@ -148,8 +150,8 @@ Built-in functions on sequences
 
     numbers = [1, 2, 3, 4, 5]
 
-    sum(numbers)  # 15
-    sum(3, 1, 5)  # 9
+    sum(numbers)        # 15
+    sum(3, 1, 5)        # 9
 
 
 Membership Operators

@@ -5,6 +5,7 @@ Conditional Statements
 
 ``if``
 ======
+* The same indent level
 
 Simple syntax
 -------------
@@ -27,14 +28,16 @@ Positive and negative values
 Negative values:
 
     * ``False``
+    * ``None``
     * ``0``
     * ``0.0``
-    * ``()`` - empty ``tuple``
-    * ``{}`` - empty ``dict``
-    * ``[]`` - empty ``list``
-    * ``''`` - empty ``str``
-    * ``set()`` - empty ``set``
-    * ``None``
+    * ``0+0j``
+    * ``0.0+0.0j``
+    * empty ``str()`` or ``''``
+    * empty ``tuple()`` or ``()``
+    * empty ``dict()`` or ``{}``
+    * empty ``list()`` or ``[]``
+    * empty ``set()``
 
 Positive values:
 
@@ -200,7 +203,7 @@ Conditioning on user input
 
 ``int`` and ``float``
 ---------------------
-* Filename: ``operators_integers.py``
+* Filename: ``ifelse_integers.py``
 * Lines of code to write: 7 lines
 * Estimated time of completion: 10 min
 

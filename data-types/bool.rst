@@ -32,20 +32,22 @@ Converting to ``bool``
 
 .. code-block:: python
 
-    bool('José')                # True
+    bool('Jan Twardowski')      # True
     bool('')                    # False
 
 Negative values
 ===============
 * ``False``
+* ``None``
 * ``0``
 * ``0.0``
-* ``()`` - empty ``tuple``
-* ``{}`` - empty ``dict``
-* ``[]`` - empty ``list``
-* ``''`` - empty ``str``
-* ``set()`` - empty ``set``
-* ``None``
+* ``0+0j``
+* ``0.0+0.0j``
+* empty ``str()`` or ``''``
+* empty ``tuple()`` or ``()``
+* empty ``dict()`` or ``{}``
+* empty ``list()`` or ``[]``
+* empty ``set()``
 
 
 Boolean logic
@@ -69,9 +71,9 @@ Using ``and``
 
 .. code-block:: python
 
-    'José' and 'Иван'           # True
-    'José' and ''               # False
-    '' and 'José'               # False
+    'Jan' and 'Jan'             # True
+    'Jan' and ''                # False
+    '' and 'Jan'                # False
     '' and ''                   # False
 
 Using ``or``

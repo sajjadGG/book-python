@@ -64,9 +64,9 @@ Getting elements
 .. code-block:: python
 
     DATA = [
-        {'measurements': [4.7, 3.2, 1.3, 0.2], 'species': 'setosa'),
-        {'measurements': [7.0, 3.2, 4.7, 1.4], 'species': 'versicolor'),
-        {'measurements': [7.6, 3.0, 6.6, 2.1], 'species': 'virginica'),
+        {'measurements': [4.7, 3.2, 1.3, 0.2], 'species': 'setosa'},
+        {'measurements': [7.0, 3.2, 4.7, 1.4], 'species': 'versicolor'},
+        {'measurements': [7.6, 3.0, 6.6, 2.1], 'species': 'virginica'},
     ]
 
     DATA[0]                             # {'measurements': [4.7, 3.2, 1.3, 0.2], 'species': 'setosa')
@@ -76,9 +76,9 @@ Getting elements
 .. code-block:: python
 
     DATA = [
-        {'measurements': [4.7, 3.2, 1.3, 0.2], 'species': 'setosa'),
-        {'measurements': [7.0, 3.2, 4.7, 1.4], 'species': 'versicolor'),
-        {'measurements': [7.6, 3.0, 6.6, 2.1], 'species': 'virginica'),
+        {'measurements': [4.7, 3.2, 1.3, 0.2], 'species': 'setosa'},
+        {'measurements': [7.0, 3.2, 4.7, 1.4], 'species': 'versicolor'},
+        {'measurements': [7.6, 3.0, 6.6, 2.1], 'species': 'virginica'},
     ]
 
     DATA[0].get('kind')                 # KeyError: 'kind'
@@ -91,18 +91,16 @@ Length
 .. code-block:: python
 
     DATA = [
-        {'species': 'setosa'},
-        {'sepal_length': 4.7, 'sepal_width': 3.2, 'species': 'setosa'},
-        {'sepal_length': 7.0, 'sepal_width': 3.2, 'petal_length': 4.7, 'petal_width': 1.4, 'species': 'versicolor'},
-        {'species': 'virginica', 'measurements': [7.6, 3.0, 6.6, 2.1]},
+        {'measurements': [4.7, 3.2, 1.3, 0.2], 'species': 'setosa'},
+        {'measurements': [7.0, 3.2, 4.7, 1.4], 'species': 'versicolor'},
+        {'measurements': [7.6, 3.0, 6.6, 2.1], 'species': 'virginica'},
     ]
 
-    len(DATA)                     # 4
-    len(DATA[0])                  # 1
-    len(DATA[1])                  # 3
-    len(DATA[2])                  # 5
-    len(DATA[3])                  # 2
-    len(DATA[3]['measurements'])  # 4
+    len(DATA)                     # 3
+    len(DATA[0])                  # 2
+    len(DATA[1])                  # 2
+    len(DATA[1]['species'])       # 10
+    len(DATA[1]['measurements'])  # 4
 
 
 ``list`` of ``list``
@@ -111,7 +109,11 @@ Length
 
 .. code-block:: python
 
-    my_list = [1, 2.0, [1, 'hello'], None, [2, 1]]
+    my_list = [[4.7, 3.2], [1.3, 0.2]]
+
+    my_list = [
+        [4.7, 3.2],
+        [1.3, 0.2]]
 
 Readability counts
 ------------------

@@ -137,9 +137,17 @@ Slicing ``str``
     DATA[2]             # 'c'
     DATA[-1]            # 'e'
 
+.. code-block:: python
+
+    DATA = 'abcde'
+
     DATA[:3]            # 'abc'
     DATA[3:]            # 'de'
     DATA[1:4]           # 'bcd'
+
+.. code-block:: python
+
+    DATA = 'abcde'
 
     DATA[::2]           # 'ace'
     DATA[::-1]          # 'edcba'
@@ -153,9 +161,17 @@ Slicing ``tuple``
     DATA[2]             # 'c'
     DATA[-1]            # 'e'
 
+.. code-block:: python
+
+    DATA = ('a', 'b', 'c', 'd', 'e')
+
     DATA[:3]            # ('a', 'b', 'c')
     DATA[3:]            # ('d', 'e')
     DATA[1:4]           # ('b', 'c', 'd')
+
+.. code-block:: python
+
+    DATA = ('a', 'b', 'c', 'd', 'e')
 
     DATA[::2]           # ('a', 'c', 'e')
     DATA[::-1]          # ('e', 'd', 'c', 'b', 'a')
@@ -163,7 +179,6 @@ Slicing ``tuple``
 Slicing ``list``
 ----------------
 * Slicing works the same as for ``str``
-* More in :ref:`Slice` chapter
 
 .. code-block:: python
 
@@ -172,9 +187,17 @@ Slicing ``list``
     DATA[1]             # 'b'
     DATA[-2]            # 'd'
 
+.. code-block:: python
+
+    DATA = ['a', 'b', 'c', 'd', 'e']
+
     DATA[:3]            # ['a', 'b', 'c']
     DATA[3:]            # ['d', 'e']
     DATA[1:4]           # ['b', 'c', 'd']
+
+.. code-block:: python
+
+    DATA = ['a', 'b', 'c', 'd', 'e']
 
     DATA[::2]           # ['a', 'c', 'e']
     DATA[::-1]          # ['e', 'd', 'c', 'b', 'a']
@@ -190,6 +213,15 @@ Slice ``dict``
 
 Slice ``set``
 -------------
+* Slicing ``set`` is not possible
+
+.. code-block:: python
+
+    DATA = {'a', 'b', 'c', 'd', 'e'}
+
+    DATA[1]
+    # TypeError: 'set' object is not subscriptable
+
 .. code-block:: python
 
     DATA = {'a', 'b', 'c', 'd', 'e'}
@@ -265,7 +297,7 @@ Slicing text
 :The whys and wherefores:
     * Definiowanie zmiennych
     * Wycinanie elementów stringów
-    * Indeksacja elemntów
+    * Indeksacja elementów
 
 Iris dataset
 ------------
@@ -312,7 +344,7 @@ Iris dataset
             'setosa',
         ]
 
-#. Za pomocą slice wyodrębnij zmienną ``species: Set[str]``, która jest unikalnym zbiorem gatunków (na podstawie ``labels``)
+#. Wyodrębnij zmienną ``species: Set[str]``, która jest unikalnym zbiorem gatunków (na podstawie ``labels``)
 
     .. code-block:: python
 

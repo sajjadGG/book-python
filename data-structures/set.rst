@@ -2,8 +2,8 @@
 ``set``
 *******
 
-* Can store elements of any **hashable** types
 * Only unique values
+* Can store elements of any **hashable** types
 * Mutable - can add, remove, and modify items
 * Brackets are required
 * Comma after last element is optional
@@ -39,7 +39,7 @@ Empty ``set``
 ------------------------------------------
 .. code-block:: python
 
-    my_set = {1, 2.0, 'Jose'}   # {1, 2.0, 'Jose'}
+    my_set = {1, 2.0, 'Jan'}    # {1, 2.0, 'Jan'}
     my_set = {1, 2.0, (3, 4)}   # {1, 2.0, (3, 4)}
     my_set = {1, 2.0, [3, 4]}   # TypeError: unhashable type: 'list'
     my_set = {1, 2.0, {3, 4}}   # TypeError: unhashable type: 'set'
@@ -65,19 +65,6 @@ Adding many items
     my_set = {1, 2, 3}          # {1, 2, 3}
 
     my_set.update([4, 5])       # {1, 2, 3, 4, 5}
-
-
-Slicing ``set``
-===============
-* Slicing ``set`` is not possible
-* More in :ref:`Slice` chapter
-
-.. code-block:: python
-
-    my_set = {1, 2.0, None, False, 'José'}
-
-    my_set[1]                   # TypeError: 'set' object does not support indexing
-    my_set[2:4]                 # TypeError: 'set' object does not support indexing
 
 
 Length of a ``set``

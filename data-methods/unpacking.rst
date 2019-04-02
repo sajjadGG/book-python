@@ -173,6 +173,8 @@ Assignments
 
 Hosts
 -----
+.. todo:: Poprawić zadanie. Wykorzystuje rzeczy, których nie było wprowadzonych
+
 * Filename: ``kwargs_hosts.py``
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
