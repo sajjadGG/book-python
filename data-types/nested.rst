@@ -32,6 +32,14 @@ Appending elements
     element = (4.9, 2.5, 4.5, 1.7, 'virginica')
     DATA.append(element)
 
+.. code-block:: python
+
+    DATA = [
+        (4.7, 3.2, 1.3, 0.2, 'setosa'),
+        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+        (7.6, 3.0, 6.6, 2.1, 'virginica'),
+    ]
+
     DATA.append((4.9, 3.0, 1.4, 0.2, 'setosa'))
 
 Length
@@ -56,17 +64,27 @@ Getting elements
 .. code-block:: python
 
     DATA = [
-        {'species': 'setosa'},
-        {'sepal_length': 4.7, 'sepal_width': 3.2, 'species': 'setosa'},
-        {'sepal_length': 7.0, 'sepal_width': 3.2, 'petal_length': 4.7, 'petal_width': 1.4, 'species': 'versicolor'},
-        {'species': 'virginica', 'measurements': [7.6, 3.0, 6.6, 2.1]},
+        {'measurements': [4.7, 3.2, 1.3, 0.2], 'species': 'setosa'),
+        {'measurements': [7.0, 3.2, 4.7, 1.4], 'species': 'versicolor'),
+        {'measurements': [7.6, 3.0, 6.6, 2.1], 'species': 'virginica'),
     ]
 
-    DATA[0]                             # {'species': 'setosa'}
-    DATA[0]['measurements']             # KeyError: 'measurements'
-    DATA[0].get('measurements', 'n/a')  # 'n/a'
-    DATA[3].get('measurements')         # [7.6, 3.0, 6.6, 2.1]
-    DATA[3].get('measurements')[1]      # 3.0
+    DATA[0]                             # {'measurements': [4.7, 3.2, 1.3, 0.2], 'species': 'setosa')
+    DATA[0]['measurements']             # [4.7, 3.2, 1.3, 0.2]
+    DATA[0]['species']                  # 'setosa'
+
+.. code-block:: python
+
+    DATA = [
+        {'measurements': [4.7, 3.2, 1.3, 0.2], 'species': 'setosa'),
+        {'measurements': [7.0, 3.2, 4.7, 1.4], 'species': 'versicolor'),
+        {'measurements': [7.6, 3.0, 6.6, 2.1], 'species': 'virginica'),
+    ]
+
+    DATA[0].get('kind')                 # KeyError: 'kind'
+    DATA[0].get('kind', 'n/a')          # 'n/a'
+    DATA[2].get('measurements')         # [7.6, 3.0, 6.6, 2.1]
+    DATA[2].get('measurements')[1]      # 3.0
 
 Length
 ------
@@ -90,6 +108,10 @@ Length
 ``list`` of ``list``
 ====================
 * Multidimensional lists
+
+.. code-block:: python
+
+    my_list = [1, 2.0, [1, 'hello'], None, [2, 1]]
 
 Readability counts
 ------------------
@@ -140,6 +162,7 @@ Length
     len(DATA)     # 3
     len(DATA[2])  # 3
 
+
 Mixed types
 ===========
 
@@ -184,24 +207,6 @@ Split train/test
 * Lines of code to write: 6 lines
 * Estimated time of completion: 15 min
 
-#. Mając do dyspozycji zbiór danych Irysów z listingu :numref:`listing-nested-iris-dataset`
-#. Zapisz nagłówek (pierwsza linia) do zmiennej
-#. Zapisz do innej zmiennej dane bez nagłówka
-#. Wylicz punkt podziału: ilość rekordów danych bez nagłówka razy procent
-#. Podziel zbiór na dwie listy w proporcji:
-
-    - ``X_train`` - dane do uczenia - 60%
-    - ``X_test`` - dane testowe - 40%
-
-#. Z danych bez nagłówka zapisz do uczenia rekordy od początku do punktu podziału
-#. Z danych bez nagłówka zapisz do testów rekordy od punktu podziału do końca
-
-:The whys and wherefores:
-    * Umiejętność przetwarzania złożonych typów danych
-    * Korzystanie z przecięć danych
-    * Konwersja typów
-    * Magic Number
-
 .. code-block:: python
     :caption: Iris Dataset
     :name: listing-nested-iris-dataset
@@ -230,3 +235,24 @@ Split train/test
         (6.9, 3.1, 4.9, 1.5, 'versicolor'),
         (4.6, 3.1, 1.5, 0.2, 'setosa'),
     ]
+
+#. Mając do dyspozycji zbiór danych Irysów z listingu :numref:`listing-nested-iris-dataset`
+#. Zapisz nagłówek (pierwsza linia) do zmiennej
+#. Zapisz do innej zmiennej dane bez nagłówka
+#. Wylicz punkt podziału: ilość rekordów danych bez nagłówka razy procent
+#. Podziel zbiór na dwie listy w proporcji:
+
+    - ``X_train`` - dane do uczenia - 60%
+    - ``X_test`` - dane testowe - 40%
+
+#. Z danych bez nagłówka zapisz do uczenia rekordy od początku do punktu podziału
+#. Z danych bez nagłówka zapisz do testów rekordy od punktu podziału do końca
+
+:The whys and wherefores:
+    * Umiejętność przetwarzania złożonych typów danych
+    * Korzystanie z przecięć danych
+    * Konwersja typów
+    * Magic Number
+
+:Hint:
+    * ``selected = DATA[1:]``

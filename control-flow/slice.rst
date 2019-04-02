@@ -96,6 +96,22 @@ Arithmetic operations on slice indexes
     text[first:last]       # 'Moon!'
     text[first:last-1]     # 'Moon'
 
+Slice data structures
+=====================
+
+Slicing ``tuple``
+-----------------
+.. code-block:: python
+
+    my_tuple = (1, 2, 3, 4, 5)
+
+    my_tuple[2]             # 3
+    my_tuple[-1]            # 5
+    my_tuple[:3]            # (1, 2, 3)
+    my_tuple[3:]            # (4, 5)
+    my_tuple[::2]           # (1, 3, 5)
+    my_tuple[1:4]           # (2, 3, 4)
+
 
 Slice function
 ==============

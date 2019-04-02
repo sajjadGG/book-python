@@ -200,6 +200,16 @@ Raw String
 * after ``\U...`` python expects Unicode codepoint in hex
 * ``s`` is invalid hexadecimal character
 
+Length of a ``str``
+===================
+.. code-block:: python
+
+    len('Jan')      # 3
+
+.. code-block:: python
+
+    a = 'Jan'
+    len(a)          # 3
 
 Getting text from user
 ======================

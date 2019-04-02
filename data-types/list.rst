@@ -38,20 +38,6 @@ Many element ``list``
     alphabet = list('ABCDE')
     # ['A', 'B', 'C', 'D', 'E']
 
-Nested ``list``
----------------
-.. code-block:: python
-
-    my_list = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
-    ]
-
-.. code-block:: python
-
-    my_list = [1, 2.0, [1, 'hello'], None, [2, 1]]
-
 
 Adding elements
 ===============
@@ -151,7 +137,6 @@ Built-in functions on sequences
     numbers = [1, 2, 3, 4, 5]
 
     len(numbers)                   # 5
-    len('Max')                     # 3
 
 ``min()``
 ---------
