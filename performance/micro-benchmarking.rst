@@ -63,8 +63,12 @@ Console use
     print a short usage message and exit
 
 
+Case Study
+==========
+.. _Micro-benchmarking Case Study:
+
 Setup
-=====
+-----
 .. code-block:: python
 
     DATA = [
@@ -76,57 +80,57 @@ Setup
         {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'},
     ]
 
-
 Statements
-==========
-* Jupyter ``%%timeit``
-
-Code 1
-------
-* 1.53 µs ± 8.41 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+----------
+* Runtime: Jupyter ``%%timeit``
 
 .. code-block:: python
+    :caption: Code 1
+
+    %%timeit
 
     fieldnames = set()
 
     for row in DATA:
         fieldnames.update(row.keys())
 
-Code 2
-------
-* 2.03 µs ± 49.9 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+    # 1.53 µs ± 8.41 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 
 .. code-block:: python
+    :caption: Code 2
+
+    %%timeit
 
     fieldnames = set(key for record in DATA for key in record.keys())
 
-Code 3
-------
-* 431 ns ± 5.93 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+    # 2.03 µs ± 49.9 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 
 .. code-block:: python
+    :caption: Code 3 (Is it correct?!)
+
+    %%timeit
 
     fieldnames = set()
     fieldnames.add(key
         for record in DATA
            for key in record.keys())
 
-.. warning:: Is it correct?
-
-Code 4
-------
-* 2.11 µs ± 51 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+    # 431 ns ± 5.93 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 
 .. code-block:: python
+    :caption: Code 4
+
+    %%timeit
 
     fieldnames = set()
     fieldnames.update(tuple(x.keys()) for x in DATA)
 
-Code 5
-------
-* 2.43 µs ± 63.9 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+    # 2.11 µs ± 51 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 
 .. code-block:: python
+    :caption: Code 5
+
+    %%timeit
 
     fieldnames = list()
 
@@ -136,6 +140,7 @@ Code 5
 
     set(fieldnames)
 
+    # 2.43 µs ± 63.9 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 
 Summary
 =======

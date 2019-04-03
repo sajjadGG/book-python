@@ -163,11 +163,11 @@ Loops with ``range``
     DATA = ['a', 'b', 'c']
 
     for i, letter in enumerate(DATA):
-        print(i, letter)
+        print(f'{i} -> {letter}')
 
-    # 0 a
-    # 1 b
-    # 2 c
+    # 0 -> a
+    # 1 -> b
+    # 2 -> c
 
 .. code-block:: python
     :caption: ``enumerate()`` can start with custom number
@@ -175,11 +175,12 @@ Loops with ``range``
     DATA = ['a', 'b', 'c']
 
     for i, letter in enumerate(DATA, start=5):
-        print(i, letter)
+        print(f'{i}, {letter}')
 
-    # 5 a
-    # 6 b
-    # 7 c
+    # 5 -> a
+    # 6 -> b
+    # 7 -> c
+
 
 Bad practice
 ============

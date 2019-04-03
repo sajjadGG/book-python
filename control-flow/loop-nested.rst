@@ -45,16 +45,19 @@ Iterating over nested ``list`` items
     # (5.7, 2.8, 4.1, 1.3, 'versicolor')
     # (6.3, 2.9, 5.6, 1.8, 'virginica')
 
+
 Unpacking values in loop
 ========================
 .. code-block:: python
-    :caption: Unpacking values in loop
+    :caption: Unpacking values
 
     a, b = 'a', 0
     a, b = ('a', 0)
     k, v = ('a', 0)
     key, value = ('a', 0)
+
     sepal_len, sepal_wid, petal_len, petal_wid, species = (5.1, 3.5, 1.4, 0.2, 'setosa')
+    *measurements, species = (5.1, 3.5, 1.4, 0.2, 'setosa')
 
 .. code-block:: python
     :caption: Unpacking values in loop
@@ -106,6 +109,23 @@ Unpacking values in loop
     # versicolor
     # virginica
 
+.. code-block:: python
+    :caption: Unpacking values in loop
+
+    DATA = [
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+    ]
+
+    for *measurements, species in DATA:
+        print(f'{species} -> {measurements}')
+
+    # setosa -> [5.1, 3.5, 1.4, 0.2]
+    # versicolor -> [5.7, 2.8, 4.1, 1.3]
+    # virginica -> [6.3, 2.9, 5.6, 1.8]
+
+
 Enumerating and item index
 ==========================
 .. code-block:: python
@@ -117,28 +137,8 @@ Enumerating and item index
         (6.3, 2.9, 5.6, 1.8, 'virginica'),
     ]
 
-    i = 0
-
-    for element in DATA:
-        print(f'{i} -> {element}')
-        i += 1
-
-    # 0 -> (5.1, 3.5, 1.4, 0.2, 'setosa')
-    # 1 -> (5.7, 2.8, 4.1, 1.3, 'versicolor')
-    # 2 -> (6.3, 2.9, 5.6, 1.8, 'virginica')
-
-
-.. code-block:: python
-    :caption: Enumerating and item index
-
-    DATA = [
-        (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-        (6.3, 2.9, 5.6, 1.8, 'virginica'),
-    ]
-
-    for i, element in enumerate(DATA):
-        print(f'{i} -> {element}')
+    for i, row in enumerate(DATA):
+        print(f'{i} -> {row}')
 
     # 0 -> (5.1, 3.5, 1.4, 0.2, 'setosa')
     # 1 -> (5.7, 2.8, 4.1, 1.3, 'versicolor')
@@ -372,11 +372,6 @@ Unique keys from schema-less database
 * Estimated time of completion: 5 min
 * Input data: :numref:`listing-loops-unique-keys`
 
-#. Mając bazę danych z listingu poniżej
-#. Iteruj po rekordach w bazie danych
-#. Z rekordu wyciągnij klucze
-#. Wypisz unikalne klucze
-
 .. code-block:: python
     :name: listing-loops-unique-keys
     :caption: Unique keys from schema-less database
@@ -390,12 +385,20 @@ Unique keys from schema-less database
         {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'},
     ]
 
+#. Mając bazę danych z listingu :numref:`listing-loops-unique-keys`
+#. Iteruj po rekordach w bazie danych
+#. Z rekordu wyciągnij klucze
+#. Wypisz unikalne klucze
+
 :The whys and wherefores:
     * Generowanie zbiorów
     * Usuwanie powtarzających się elementów
     * Wyciąganie elementów ze słownika
     * Iterowanie po słowniku
     * Aktualizacja zbiorów
+
+:Hint:
+    * Compare solutions with :numref:`Micro-benchmarking Case Study`
 
 Label encoder
 -------------
