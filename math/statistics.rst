@@ -121,3 +121,54 @@ Return the population standard deviation (the square root of the population vari
 
     variance([2.75, 1.75, 1.25, 0.25, 0.5, 1.25, 3.5])
     # 1.3720238095238095
+
+Assignments
+===========
+
+Iris Stats
+----------
+* Filename: ``statistics_iris.py``
+* Lines of code to write: 30 lines
+* Estimated time of completion: 30 min
+* Input Data: :numref:`listing-statistics-iris-dataset`
+
+.. code-block:: python
+    :name: listing-statistics-iris-dataset
+    :caption: Iris sample dataset
+
+    DATA = [
+        ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+        (5.8, 2.7, 5.1, 1.9, 'virginica'),
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+        (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+        (4.7, 3.2, 1.3, 0.2, 'setosa'),
+        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+        (7.6, 3.0, 6.6, 2.1, 'virginica'),
+        (4.9, 3.0, 1.4, 0.2, 'setosa'),
+        (4.9, 2.5, 4.5, 1.7, 'virginica'),
+        (7.1, 3.0, 5.9, 2.1, 'virginica'),
+        (4.6, 3.4, 1.4, 0.3, 'setosa'),
+        (5.4, 3.9, 1.7, 0.4, 'setosa'),
+        (5.7, 2.8, 4.5, 1.3, 'versicolor'),
+        (5.0, 3.6, 1.4, 0.3, 'setosa'),
+        (5.5, 2.3, 4.0, 1.3, 'versicolor'),
+        (6.5, 3.0, 5.8, 2.2, 'virginica'),
+        (6.5, 2.8, 4.6, 1.5, 'versicolor'),
+        (6.3, 3.3, 6.0, 2.5, 'virginica'),
+        (6.9, 3.1, 4.9, 1.5, 'versicolor'),
+        (4.6, 3.1, 1.5, 0.2, 'setosa'),
+    ]
+
+#. Dla danych z listingu :numref:`listing-statistics-iris-dataset`
+#. Stwórz ``dict`` z gatunkami
+#. Korzystając ze ``statistics`` oblicz dla każdego parametru (``Sepal length``, ``Sepal width``, ``Petal length``, ``Petal width``):
+
+    - średnią
+    - medianę
+    - modę
+    - odchylenie standardowe
+    - wariancję
+
+#. Dane zapisz w ``dict`` z podziałem na gatunki

@@ -8,9 +8,14 @@ DATA = [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0,
 counter = {}
 
 for digit in DATA:
-    if digit not in counter:
-        counter[digit] = 1
-    else:
+    if digit in counter:
         counter[digit] += 1
+    else:
+        counter[digit] = 1
+
+## Alternatywnie
+# for digit in DATA:
+#     counter[digit] = counter.get(digit, 0) + 1
+
 
 print(counter)

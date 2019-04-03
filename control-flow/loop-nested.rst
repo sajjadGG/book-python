@@ -1,6 +1,6 @@
-************************
-Loops and nested objects
-************************
+**************************
+Iterating nested sequences
+**************************
 
 
 Iterating over nested ``list`` items
@@ -329,6 +329,41 @@ Iterating complex types
 
 Assignments
 ===========
+
+Dict to Dict
+------------
+* Filename: ``for_dict_to_dict.py``
+* Lines of code to write: 4 lines
+* Estimated time of completion: 10 min
+
+#. Dany jest ``dict`` w formacie:
+
+    .. code-block:: python
+
+        DATA = {
+            6: ['Doctorate', 'Prof-school'],
+            5: ['Masters', 'Bachelor', 'Engineer'],
+            4: ['HS-grad'],
+            3: ['Junior High'],
+            2: ['Primary School'],
+            1: ['Kindergarten'],
+        }
+
+#. Przekonwertuj go aby uzyskać format:
+
+    .. code-block:: python
+
+        output = {
+            'Doctorate': '6',
+            'Prof-school': '6',
+            'Masters': '5',
+            'Bachelor': '5',
+            'Engineer': '5',
+            'HS-grad': '4',
+            'Junior High': '3',
+            'Primary School': '2',
+            'Kindergarten': '1'
+        }
 
 Unique keys from schema-less database
 -------------------------------------

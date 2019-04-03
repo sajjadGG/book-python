@@ -31,36 +31,24 @@ Example
 .. code-block:: python
     :caption: ``for`` loop syntax: printing each number from ``list``
 
-    DATA = [1, 2, 3]
+    DATA = ['a', 'b', 'c']
 
     for number in DATA:
         print(number)
 
-    # 1
-    # 2
-    # 3
+    # 'a'
+    # 'b'
+    # 'c'
 
 .. code-block:: python
     :caption: ``for`` loop syntax: data can be inline
 
-    for number in [1, 2, 3]:
+    for number in ['a', 'b', 'c']:
         print(number)
 
-    # 1
-    # 2
-    # 3
-
-.. code-block:: python
-    :caption: ``for`` loop syntax: data can be inline
-
-    for number in range(0, 5):
-        print(number)
-
-    # 0
-    # 1
-    # 2
-    # 3
-    # 4
+    # 'a'
+    # 'b'
+    # 'c'
 
 
 Iterating over ``str``
@@ -132,21 +120,105 @@ Iterating over ``set``
     # 0.2
     # 'setosa'
 
+Working with Generators and Iterators
+=====================================
+
 Loops with ``range``
 --------------------
-* ``range(0, 5)`` will generate ``(0, 1, 2, 3, 4)``
+* ``range(0, 3)`` will generate ``(0, 1, 2)``
+* ``range().start`` is inclusive
+* ``range().stop`` is exclusive
+* can also define ``range().step``
 
 .. code-block:: python
     :caption: Loops with ``range``
 
-    for number in range(0, 5):
+    for number in range(0, 3):
         print(number)
 
     # 0
     # 1
     # 2
-    # 3
+
+.. code-block:: python
+    :caption: Loops with ``range``
+
+    for number in range(4, 11, 2):
+        print(number)
+
     # 4
+    # 6
+    # 8
+    # 10
+
+``enumerate``
+-------------
+* Pythonic way
+* Preferred over ``i=0`` and every iteration ``i+=1``
+* ``enumerate()`` will return ``counter`` and ``value`` for every iteration
+
+.. code-block:: python
+    :caption: ``enumerate()`` will return ``counter`` and ``value`` for every iteration
+
+    DATA = ['a', 'b', 'c']
+
+    for i, letter in enumerate(DATA):
+        print(i, letter)
+
+    # 0 a
+    # 1 b
+    # 2 c
+
+.. code-block:: python
+    :caption: ``enumerate()`` can start with custom number
+
+    DATA = ['a', 'b', 'c']
+
+    for i, letter in enumerate(DATA, start=5):
+        print(i, letter)
+
+    # 5 a
+    # 6 b
+    # 7 c
+
+Bad practice
+============
+
+``range(len())``
+----------------
+* Very common bad practice
+* poor variable naming and readability
+* ``range(len(...))`` will evaluate generator to calculate length
+* ``DATA[i]`` lookups has ``O(n)`` complexity!!
+* Does not use generator at all!
+
+.. code-block:: python
+    :caption: Bad practice
+
+    DATA = ['a', 'b', 'c']
+
+    for i in range(len(DATA)):
+        print(DATA[i])
+
+    # a
+    # b
+    # c
+
+.. code-block:: python
+    :caption: Better solution
+
+    DATA = ['a', 'b', 'c']
+
+    for letter in DATA:
+        print(letter)
+
+    # a
+    # b
+    # c
+
+
+Example
+=======
 
 Create ``dict`` from two ``list``
 ---------------------------------
@@ -172,59 +244,49 @@ Create ``dict`` from two ``list``
 
 ``else``
 ========
+* ``else`` will execute, if ``break`` was not used to exit the loop
+
 .. code-block:: python
 
-    hostnames = {}
+    DATA = """
+    127.0.0.1       localhost
+    127.0.0.1       astromatt
+    10.13.37.1      nasa.gov esa.int roscosmos.ru
+    255.255.255.255 broadcasthost
+    ::1             localhost
+    """
+    hostnames = []
 
-    for line in content:
+    for line in DATA.splitlines():
+        if not line:
+            continue
 
-        ip, *hosts = line.strip().split()
+        ip, *hosts = line.split()
+        # line.split() == ['10.13.37.1', 'nasa.gov', 'esa.int', 'roscosmos.ru']
+        # ip == '10.13.37.1'
+        # hosts == ['nasa.gov', 'esa.int', 'roscosmos.ru']
 
         for record in hostnames:
             if record['ip'] == ip:
-                record['hostnames'] += hosts
+                record['hostnames'].update(hosts)
                 break
         else:
             hostnames.append({
                 'hostnames': set(hosts),
-                'protocol': 'IPv4' if '.' in ip else 'IPv6',
                 'ip': ip,
             })
+
+    print(hostnames)
+    # [
+    #   {'ip': '127.0.0.1', 'hostnames': {'astromatt', 'localhost'}},
+    #   {'ip': '10.13.37.1', 'hostnames': {'roscosmos.ru', 'esa.int', 'nasa.gov'}},
+    #   {'ip': '255.255.255.255', 'hostnames': {'broadcasthost'}},
+    #   {'ip': '::1', 'hostnames': {'localhost'}},
+    # ]
 
 
 Assignments
 ===========
-
-Dict to Dict
-------------
-* Filename: ``for_dict_to_dict.py``
-* Lines of code to write: 3 lines
-* Estimated time of completion: 10 min
-
-#. Dany jest ``dict`` w formacie:
-
-    .. code-block:: python
-
-        DATA = {
-            6: ['Doctorate', 'Prof-school'],
-            5: ['Masters', 'Bachelor', 'Engineer'],
-            4: ['HS-grad'],
-            3: ['Junior High'],
-            2: ['Primary School'],
-            1: ['Kindergarten'],
-        }
-
-#. Przekonwertuj go aby uzyskać format:
-
-    .. code-block:: python
-
-        OUTPUT = {
-            'Masters': '4',
-            'Doctorate': '4',
-            'Prof-school': '4',
-            'HS-grad': '6',
-            'Bachelor': '3',
-        }
 
 Counter
 -------
@@ -256,7 +318,7 @@ Counter
 Digit Segmentation
 ------------------
 * Filename: ``for_segmentation.py``
-* Lines of code to write: 5 lines
+* Lines of code to write: 12 lines
 * Estimated time of completion: 10 min
 
 #. Dane są liczby na listingu :numref:`listing-for-segmentation`
@@ -288,7 +350,7 @@ Digit Segmentation
 Get elements from nested data structure
 ---------------------------------------
 * Filename: ``for_nested.py``
-* Lines of code to write: 7 lines
+* Lines of code to write: 3 lines
 * Estimated time of completion: 10 min
 
 #. Na podstawie ``DATA`` z :numref:`listing-for-elements-fom-nested`

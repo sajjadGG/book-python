@@ -15,6 +15,7 @@ Generic syntax
     while CONDITION:
         ...
 
+
 Example
 =======
 
@@ -39,6 +40,12 @@ Stop conditions
     # 1
     # 2
 
+Iterating over sequence
+-----------------------
+* Better idea for this is to use ``for`` loop
+* ``for`` loop supports Iterators
+* ``len()`` must write all ``numbers`` to memory, to calculate its length
+
 .. code-block:: python
 
     i = 0
@@ -55,19 +62,25 @@ Stop conditions
 
 Exit flag
 ---------
+* Exit flag pattern is useful if you have for example multi-threaded application
+
 .. code-block:: python
 
     i = 0
-    exit_flag = False
+    abort = False
 
-    while not exit_flag:
-        if i % 2 == 0:
-            exit_flag = True
-
+    while not abort:
         print(i)
         i += 1
 
+        if i % 3 == 0:
+            print('Aborting!')
+            abort = True
+
     # 0
+    # 1
+    # 2
+    # Aborting!
 
 
 ``break`` and ``continue``
@@ -75,6 +88,7 @@ Exit flag
 
 Skipping iterations
 -------------------
+* if ``continue`` is encountered, it will jump to next loop iteration
 .. code-block:: python
 
     i = 0
@@ -91,7 +105,6 @@ Skipping iterations
     # 3
     # 5
 
-
 Exiting the loop
 ----------------
 .. code-block:: python
@@ -103,21 +116,25 @@ Exiting the loop
         if not number:
             break
 
+
 ``else``
 ========
+* ``else`` will execute, if ``break`` was not used to exit the loop
+
 .. code-block:: python
 
-    flag_force_exit = False
-    i = 0
+    abort = False
+    countdown = 10
 
-    while i < 10:
-        if flag_force_exit:
+    while countdown >= 0:
+        if abort:
             break
 
-        print(i)
-        i += 1
+        print(f'Launch in T-{countdown}')
+        i -= 1
     else:
-        print('Exit flag not used')
+        print('There was no abort this time')
+        print('Launch rocket')
 
 
 Assignments
