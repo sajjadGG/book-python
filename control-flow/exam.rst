@@ -2,11 +2,13 @@
 Exam from basic topics
 **********************
 
-Parsowanie ``/etc/passwd``
---------------------------
+
+Relational Files Database
+=========================
 * Filename: ``exam-foundations.py``
 * Lines of code to write: 60 lines
 * Estimated time of completion: 60 min
+* Input data: :numref:`code-file-etc-passwd`, :numref:`code-file-etc-shadow`, :numref:`code-file-etc-group`
 
 #. Poniższe listingi prezentują zawartość plików:
 
@@ -14,22 +16,24 @@ Parsowanie ``/etc/passwd``
     - ``/etc/shadow`` - :numref:`code-file-etc-shadow`
     - ``/etc/group`` - :numref:`code-file-etc-group`
 
-#. Skopuj ich zawartość każdego z tych plików na dysk (uwaga: komentarze i puste mają również być skopiowane)
+#. Skopuj ich zawartość każdego z tych plików na dysk do plików ``.txt``
+#. Uwaga: komentarze i puste mają również być skopiowane!
 #. Sparsuj plik i przedstaw go w formacie ``List[dict]``
-#. Zwróć listę użytkowników, których UID jest większy niż 1000
-#. W ramach dicta połącz dane, tak aby uzyskać wynik:
+#. Zwróć listę użytkowników, których ``UID`` jest większy niż 1000
+#. W ramach ``dict`` połącz dane, tak aby uzyskać wynik:
 
     .. code-block:: python
 
         [
             {
-                'username': 'jimenez',
+                'username': 'twardowski',
                 'uid': 1001,
                 'gid': 1001,
-                'home': '/home/jimenez',
+                'home': '/home/twardowski',
                 'shell': '/bin/bash',
                 'algorithm': 'SHA-512',
-                'password': 'P9zn0KwR...k4kijuhE50',
+                'password': 'tgfvvFWJJ5...k4kijuhE50',
+                'salt': 'P9zn0KwR',
                 'groups': ['staff', 'sysadmin'],
                 'last_changed': datetime.date(2015, 7, 16),
                 'locked': False,

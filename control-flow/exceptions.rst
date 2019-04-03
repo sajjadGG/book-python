@@ -261,11 +261,23 @@ Catch many exceptions with the same handling
 Catch many exceptions with different handling
 ---------------------------------------------
 .. code-block:: python
+    try:
+        with open(r'/tmp/iris.csv') as file:
+            content = file.read()
+            print(content)
+
+    except FileNotFoundError:
+        print('File does not exist')
+
+    except PermissionError:
+        print('Permission denied')
+
+.. code-block:: python
     :emphasize-lines: 5,7,12,14
 
     def open_file(path):
         if path.startswith('/tmp/'):
-            print('Will make file')
+            print('Will create file')
         elif path.startswith('/etc/'):
             raise PermissionError('Permission Denied')
         else:
@@ -286,15 +298,49 @@ Exceptions logging
 
     import logging
 
-    def open_file(filename):
-        raise PermissionError('Permission Denied')
-
+    def apollo13():
+        raise RuntimeError('Mid-flight Oxygen tank explosion')
 
     try:
-        open_file('/tmp/my-file.txt')
-    except PermissionError as err:
+        apollo13()
+    except RuntimeError as err:
         logging.error(err)
 
+``else``
+--------
+* Executed when no exception occurred
+
+.. code-block:: python
+
+    def apollo11():
+        print('Try landing on the Moon')
+
+    try:
+        apollo11()
+    except Exception:
+        print('Abort')
+    else:
+        print('Landing a man on the Moon')
+
+``finally``
+-----------
+* Executed always (even if there was exception)
+* Used to close file, connection or transaction to database
+
+.. code-block:: python
+
+    def apollo11():
+        print('Try landing on the Moon')
+
+    try:
+        apollo11()
+    except Exception:
+        print('Abort')
+    finally:
+        print('Returning safely to the Earth')
+
+``else`` and ``finally``
+------------------------
 .. code-block:: python
 
     def apollo11():
@@ -305,19 +351,14 @@ Exceptions logging
         print('The Eagle has landed!')
         print("That's one small step for [a] man, one giant leap for mankind.")
 
-
     try:
         apollo11()
-
     except RuntimeError:
         print("Yo're GO for landing")
-
     except Exception:
         print('Abort')
-
     else:
         print('Landing a man on the Moon')
-
     finally:
         print('Returning safely to the Earth')
 
