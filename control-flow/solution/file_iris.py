@@ -1,19 +1,15 @@
 FILE = r'../data/iris.csv'
-
 X = []
 y = []
 
-
 with open(FILE) as file:
-    for line in file.readlines()[1:]:
-        line = line.strip().split(',')
+    header, *data = file.readlines()
 
-        features = tuple(float(x) for x in line[0:4])
-        label = line[4]
+    for line in data:
+        *features, label = line.strip().split(',')
 
-        X.append(features)
+        X.append(tuple(features))
         y.append(label)
-
 
 print(X)
 print(y)
