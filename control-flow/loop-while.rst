@@ -69,9 +69,6 @@ Exit flag
 
     # 0
 
-``else``
---------
-
 
 ``break`` and ``continue``
 ==========================
@@ -105,6 +102,22 @@ Exiting the loop
         # if user hit enter, without typing number
         if not number:
             break
+
+``else``
+========
+.. code-block:: python
+
+    flag_force_exit = False
+    i = 0
+
+    while i < 10:
+        if flag_force_exit:
+            break
+
+        print(i)
+        i += 1
+    else:
+        print('Exit flag not used')
 
 
 Assignments

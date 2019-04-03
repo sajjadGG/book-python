@@ -171,7 +171,7 @@ Create ``dict`` from two ``list``
     # }
 
 ``else``
---------
+========
 .. code-block:: python
 
     hostnames = {}
