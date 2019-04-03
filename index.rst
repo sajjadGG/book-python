@@ -107,10 +107,24 @@ Standard Library
     /stdlib/import.rst
     /stdlib/keywords.rst
     /stdlib/builtin.rst
-    /stdlib/math.rst
-    /stdlib/precision.rst
     /stdlib/print.rst
     /stdlib/regex.rst
+
+****
+Math
+****
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Math
+
+    /math/math.rst
+    /math/statistics.rst
+    /math/random.rst
+    /math/fractions.rst
+    /math/decimal.rst
+    /math/matplotlib.rst
+    /math/complex.rst
 
 *************
 Date and Time

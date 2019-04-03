@@ -56,3 +56,34 @@ This module implements specialized container datatypes providing alternatives to
 
     print(jose.first_name, jose.last_name, jose.agency)
     # José Jiménez NASA
+
+``collections.Counter``
+=======================
+.. code-block:: python
+
+    import random
+
+
+    random_numbers = [random.randint(0, 10) for a in range(0, 50)]
+    counter = dict()
+
+    for number in random_numbers:
+        if number in counter:
+            counter[number] += 1
+        else:
+            counter[number] = 1
+
+    counter.items()
+    # [(7, 12), (4, 8), (9, 6), (1, 5), (2, 4)]
+
+.. code-block:: python
+
+    import random
+    from collections import Counter
+
+
+    random_numbers = [random.randint(0, 10) for a in range(0, 50)]
+    counter = Counter(random_numbers)
+
+    counter.most_common(5)
+    # [(7, 12), (4, 8), (9, 6), (1, 5), (2, 4)]
