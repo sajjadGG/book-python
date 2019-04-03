@@ -2,6 +2,13 @@
 Further reading
 ***************
 
+My favourite sources
+====================
+* https://pyvideo.org/
+* https://www.thoughtworks.com/radar
+* https://www.infoq.com/python/presentations/
+* https://www.infoq.com/ai-ml-data-eng/presentations/
+
 
 Documentation
 =============

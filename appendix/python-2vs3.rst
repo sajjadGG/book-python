@@ -9,8 +9,7 @@ Python `six <http://pythonhosted.org/six/>`_
 
 Lista kompatybilności Python 2 i Python 3
 =========================================
-
-`Wall of Super Powers <https://python3wos.appspot.com>`_
+* `Wall of Super Powers <https://python3wos.appspot.com>`_
 
 Unicode i kodowanie znaków
 ==========================
