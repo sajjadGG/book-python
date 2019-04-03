@@ -173,8 +173,8 @@ Case Study
         return wrapper
 
 
-Assignment
-==========
+Assignments
+===========
 
 Numeric Values
 --------------

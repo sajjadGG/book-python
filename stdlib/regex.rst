@@ -67,64 +67,173 @@ Most frequent used functions in ``re`` module
 
 ``re.match()``
 --------------
-.. literalinclude:: src/re-match.py
-    :language: python
+.. code-block:: python
     :caption: Usage of ``re.match()``
+
+    import re
+
+    PATTERN = r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,20}$'
+
+    def is_valid_email(email: str) -> bool:
+        if re.match(PATTERN, email):
+            return True
+        else:
+            return False
+
+    is_valid_email('jose.jimenez@nasa.gov')     # True
+    is_valid_email('jose.jimenez@nasa.g')       # False
 
 ``re.search()``
 ---------------
-.. literalinclude:: src/re-search.py
-    :language: python
+.. code-block:: python
     :caption: Usage of ``re.search()``
+
+    import re
+
+    PATTERN = r'#[0-9]+'  # used for Redmine and track issue id
+    TEXT = "Issues #23919, #31337 removed obsolete comments"
+
+    re.search(PATTERN, TEXT).group()
+    # '#23919'
+
 
 ``re.findall()`` and ``re.finditer()``
 --------------------------------------
-.. literalinclude:: src/re-find.py
-    :language: python
+.. code-block:: python
     :caption: Usage of ``re.findall()`` and ``re.finditer()``
+
+    import re
+
+    # used for redmine and track issue id
+    PATTERN = r'#[0-9]+'
+    TEXT = "Issues #23919, #31337 removed obsolete comments"
+
+    re.findall(PATTERN, TEXT)
+    # ['#23919', '#31337']
 
 ``re.compile()``
 ----------------
-.. literalinclude:: src/re-compile-no.py
-    :language: python
+.. code-block:: python
     :caption: Compiles at every loop iteration, and then matches
+    :emphasize-lines: 15
 
-.. literalinclude:: src/re-compile-yes.py
-    :language: python
+    import re
+
+    PATTERN = r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,}$'
+    DATA = [
+        'jose.jimenez@nasa.gov',
+        'Jose.Jimenez@nasa.gov',
+        '+jose.jimenez@nasa.gov',
+        'jose.jimenez+@nasa.gov',
+        'jose.jimenez+newsletter@nasa.gov',
+        'jose.jimenez@.gov',
+        '@nasa.gov',
+        'jose.jimenez@nasa.g']
+
+    for email in DATA:
+        re.match(PATTERN, email)
+
+.. code-block:: python
     :caption: Compiling before loop, hence matching only inside
+    :emphasize-lines: 15
+
+    import re
+
+    PATTERN = re.compile(r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,}$')
+    DATA = [
+        'jose.jimenez@nasa.gov',
+        'Jose.Jimenez@nasa.gov',
+        '+jose.jimenez@nasa.gov',
+        'jose.jimenez+@nasa.gov',
+        'jose.jimenez+newsletter@nasa.gov',
+        'jose.jimenez@.gov',
+        '@nasa.gov',
+        'jose.jimenez@nasa.g']
+
+    for email in DATA:
+        PATTERN.match(email)
 
 ``re.sub()``
 ------------
-.. literalinclude:: src/re-sub.py
-    :language: python
+.. code-block:: python
     :caption: Usage of ``re.sub()``
+
+    import re
+
+
+    PATTERN = r'\s[a-z]{3}\s'
+    TEXT = 'Baked Beans And Spam'
+
+    re.sub(PATTERN, ' & ', TEXT, flags=re.IGNORECASE)
+    # 'Baked Beans & Spam'
 
 ``re.split()``
 --------------
-.. literalinclude:: src/re-split.py
-    :language: python
+.. code-block:: python
     :caption: Usage of ``re.split()``
+
+    import re
+
+    PATTERN = r'\s[a-z]{3}\s'
+    TEXT = 'Baked Beans And Spam'
+
+    re.split(PATTERN, TEXT, flags=re.IGNORECASE)
+    # ['Baked Beans', 'Spam']
 
 Comparision between ``re.match()``, ``re.search()`` and ``re.findall()``
 ------------------------------------------------------------------------
-.. literalinclude:: src/re-comparision.py
-    :language: python
+.. code-block:: python
     :caption: Comparision between ``re.match()``, ``re.search()`` and ``re.findall()``
+
+    import re
+
+
+    PATTERN = r'#[0-9]+'
+    TEXT = "Issues #23919, #31337 removed obsolete comments"
+
+    re.findall(PATTERN, TEXT)           # ['#23919', '#31337']
+    re.search(PATTERN, TEXT).group()    # '#23919'
+    re.match(PATTERN, TEXT)             # None
 
 
 RegEx parameters (variables)
 ============================
-.. literalinclude:: src/re-group.py
-    :language: python
+.. code-block:: python
     :caption: Usage of group in ``re.match()``
+
+    import re
+
+    PATTERN = r'(?P<first_name>\w+) (?P<last_name>\w+)'
+    TEXT = 'José Jiménez'
+
+    matches = re.match(PATTERN, TEXT)
+
+    matches.group('first_name')     # 'José'
+    matches.group('last_name')      # 'Jiménez'
+    matches.group(1)                # 'José'
+    matches.group(2)                # 'Jiménez'
+    matches.groups()                # ('José', 'Jiménez')
+    matches.groupdict()             # {'first_name': 'José', 'last_name': 'Jiménez'}
 
 
 Multi line searches
 ===================
-.. literalinclude:: src/re-multiline.py
-    :language: python
+.. code-block:: python
     :caption: Usage of regexp
 
+    import re
+
+    PATTERN = r'^#[0-9]+'
+    TEXT = """
+    #27533 Fixed inspectdb crash;
+    #31337 Remove commented out code
+    """
+
+    re.findall(PATTERN, TEXT)
+    # []
+
+    re.findall(PATTERN, TEXT, flags=re.MULTILINE)
+    # ['#27533', '#31337']
 
 Greedy and non-greedy search
 ============================
@@ -132,9 +241,15 @@ Greedy and non-greedy search
 * they match as much text as possible
 * Adding ``?`` after the qualifier makes it non-greedy
 
-.. literalinclude:: src/re-greedy.py
-    :language: python
+.. code-block:: python
     :caption: Usage of greedy and non-greedy search in ``re.findall()``
+
+    import re
+
+    TEXT = '<strong>Ehlo World</strong>'
+
+    re.findall(r'<.*>', TEXT)       # ['<strong>Ehlo World</strong>']
+    re.findall(r'<.*?>', TEXT)      # ['<strong>', '</strong>']
 
 
 Practical example of Regex usage
@@ -142,15 +257,46 @@ Practical example of Regex usage
 
 Finding all Adverbs
 -------------------
-.. literalinclude:: src/re-example-2.py
-    :language: python
+.. code-block:: python
     :caption: Finding all Adverbs
+
+    import re
+
+    TEXT = 'He was carefully disguised but captured quickly by police.'
+    ADVERBS = r'\w+ly'
+
+    re.findall(ADVERBS, TEXT)
+    # ['carefully', 'quickly']
 
 Making a Phonebook
 ------------------
-.. literalinclude:: src/re-example-1.py
-    :language: python
+.. code-block:: python
     :caption: Practical example of Regex usage
+
+    import re
+
+    TEXT = """Ross McFluff: 834.345.1254 155 Elm Street
+
+    Ronald Heathmore: 892.345.3428 436 Finley Avenue
+    Frank Burger: 925.541.7625 662 South Dogwood Way
+
+
+    Heather Albrecht: 548.326.4584 919 Park Place"""
+
+    entries = re.split('\n+', TEXT)
+    # ['Ross McFluff: 834.345.1254 155 Elm Street',
+    # 'Ronald Heathmore: 892.345.3428 436 Finley Avenue',
+    # 'Frank Burger: 925.541.7625 662 South Dogwood Way',
+    # 'Heather Albrecht: 548.326.4584 919 Park Place']
+
+    out = [re.split(':?\s', entry, maxsplit=3) for entry in entries]
+    # [['Ross', 'McFluff', '834.345.1254', '155 Elm Street'],
+    # ['Ronald', 'Heathmore', '892.345.3428', '436 Finley Avenue'],
+    # ['Frank', 'Burger', '925.541.7625', '662 South Dogwood Way'],
+    # ['Heather', 'Albrecht', '548.326.4584', '919 Park Place']]
+
+    print(out)
+
 
 National Identification Numbers (Worldwide)
 -------------------------------------------
@@ -158,9 +304,86 @@ National Identification Numbers (Worldwide)
 
 Writing a Tokenizer
 -------------------
-.. literalinclude:: src/re-example-3.py
-    :language: python
+.. code-block:: python
     :caption: Writing a Tokenizer.
+
+    import collections
+    import re
+
+    """
+    A tokenizer or scanner analyzes a string to categorize groups of characters.
+    This is a useful first step in writing a compiler or interpreter.
+
+    The text categories are specified with regular expressions.
+    The technique is to combine those into a single master regular
+    expression and to loop over successive matches
+    """
+
+    Token = collections.namedtuple('Token', ['typ', 'value', 'line', 'column'])
+
+
+    def tokenize(code):
+        keywords = {'IF', 'THEN', 'ENDIF', 'FOR', 'NEXT', 'GOSUB', 'RETURN'}
+        token_specification = [
+            ('NUMBER',  r'\d+(\.\d*)?'),  # Integer or decimal number
+            ('ASSIGN',  r':='),           # Assignment operator
+            ('END',     r';'),            # Statement terminator
+            ('ID',      r'[A-Za-z]+'),    # Identifiers
+            ('OP',      r'[+\-*/]'),      # Arithmetic operators
+            ('NEWLINE', r'\n'),           # Line endings
+            ('SKIP',    r'[ \t]+'),       # Skip over spaces and tabs
+            ('MISMATCH',r'.'),            # Any other character
+        ]
+        tok_regex = '|'.join('(?P<%s>%s)' % pair for pair in token_specification)
+        line_num = 1
+        line_start = 0
+
+        for mo in re.finditer(tok_regex, code):
+            kind = mo.lastgroup
+            value = mo.group(kind)
+
+            if kind == 'NEWLINE':
+                line_start = mo.end()
+                line_num += 1
+            elif kind == 'SKIP':
+                pass
+            elif kind == 'MISMATCH':
+                raise RuntimeError(f'{value!r} unexpected on line {line_num}')
+            else:
+                if kind == 'ID' and value in keywords:
+                    kind = value
+                column = mo.start() - line_start
+                yield Token(kind, value, line_num, column)
+
+    statements = '''
+        IF quantity THEN
+            total := total + price * quantity;
+            tax := price * 0.05;
+        ENDIF;
+    '''
+
+    for token in tokenize(statements):
+        print(token)
+
+    # Token(typ='IF', value='IF', line=2, column=4)
+    # Token(typ='ID', value='quantity', line=2, column=7)
+    # Token(typ='THEN', value='THEN', line=2, column=16)
+    # Token(typ='ID', value='total', line=3, column=8)
+    # Token(typ='ASSIGN', value=':=', line=3, column=14)
+    # Token(typ='ID', value='total', line=3, column=17)
+    # Token(typ='OP', value='+', line=3, column=23)
+    # Token(typ='ID', value='price', line=3, column=25)
+    # Token(typ='OP', value='*', line=3, column=31)
+    # Token(typ='ID', value='quantity', line=3, column=33)
+    # Token(typ='END', value=';', line=3, column=41)
+    # Token(typ='ID', value='tax', line=4, column=8)
+    # Token(typ='ASSIGN', value=':=', line=4, column=12)
+    # Token(typ='ID', value='price', line=4, column=15)
+    # Token(typ='OP', value='*', line=4, column=21)
+    # Token(typ='NUMBER', value='0.05', line=4, column=23)
+    # Token(typ='END', value=';', line=4, column=27)
+    # Token(typ='ENDIF', value='ENDIF', line=5, column=4)
+    # Token(typ='END', value=';', line=5, column=9)
 
 
 Standards
@@ -235,6 +458,44 @@ To parse a *URL* url into its component parts, the user agent must use the follo
             The substring that follows the substring matched by the <authority> production, or the whole string if the ``<authority>`` production wasn't matched.
 
 
+Good practices
+==============
+
+Tests
+-----
+.. code-block:: python
+    :caption: Usage of ``re.match()``
+
+    import re
+
+    PATTERN = r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,20}$'
+
+
+    def is_valid_email(email: str) -> bool:
+        """
+        Function check email address against Regular Expression
+
+        >>> is_valid_email('jose.jimenez@nasa.gov')
+        True
+        >>> is_valid_email('Jose.Jimenez@nasa.gov')
+        True
+        >>> is_valid_email('+jose.jimenez@nasa.gov')
+        False
+        >>> is_valid_email('jose.jimenez+@nasa.gov')
+        True
+        >>> is_valid_email('jose.jimenez+newsletter@nasa.gov')
+        True
+        >>> is_valid_email('jose.jimenez@.gov')
+        False
+        >>> is_valid_email('@nasa.gov')
+        False
+        >>> is_valid_email('jose.jimenez@nasa.g')
+        False
+        """
+        if re.match(PATTERN, email):
+            return True
+        else:
+            return False
 
 
 Assignments
