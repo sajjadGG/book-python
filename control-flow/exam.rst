@@ -47,17 +47,17 @@ Parsowanie ``/etc/passwd``
     * praca ze ścieżkami w systemie operacyjnym
     * różna reprezentacja danych (podmienianie wartości)
 
-.. literalinclude:: src/etc-passwd.txt
+.. literalinclude:: data/etc-passwd.txt
     :name: code-file-etc-passwd
     :language: text
     :caption: Przykładowa zawartość pliku ``/etc/passwd``
 
-.. literalinclude:: src/etc-shadow.txt
+.. literalinclude:: data/etc-shadow.txt
     :name: code-file-etc-shadow
     :language: text
     :caption: Przykładowa zawartość pliku ``/etc/shadow``
 
-.. literalinclude:: src/etc-group.txt
+.. literalinclude:: data/etc-group.txt
     :name: code-file-etc-group
     :language: text
     :caption: Przykładowa zawartość pliku ``/etc/group``

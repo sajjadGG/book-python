@@ -1,4 +1,4 @@
-FILE = r'../assignments/iris.csv'
+FILE = r'../data/iris.csv'
 
 X = []
 y = []

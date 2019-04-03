@@ -24,8 +24,7 @@ DATA = [
 ]
 
 
-header = DATA[0]
-data = DATA[1:]
+header, *data = DATA
 
 features = []
 labels = []
@@ -38,6 +37,17 @@ for *measurements, kind in data:
 
     features.append(tuple(measurements))
     labels.append(species[kind])
+
+
+## Alternatywnie
+
+for *measurements, kind in data:
+    if kind not in species.values():
+        index = len(species)
+        species[index] = kind
+
+    features.append(tuple(measurements))
+    labels.append(species[index])
 
 
 # temp_species = {}

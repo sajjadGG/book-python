@@ -412,28 +412,52 @@ Label encoder
 * Estimated time of completion: 15 min
 * Input data: :numref:`listing-loops-iris-sample`
 
-.. literalinclude:: src/loops-iris-sample.py
+.. code-block:: python
     :name: listing-loops-iris-sample
-    :language: python
     :caption: Sample Iris databases
+
+    DATA = [
+        ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+        (5.8, 2.7, 5.1, 1.9, 'virginica'),
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+        (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+        (4.7, 3.2, 1.3, 0.2, 'setosa'),
+        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+        (7.6, 3.0, 6.6, 2.1, 'virginica'),
+        (4.9, 3.0, 1.4, 0.2, 'setosa'),
+        (4.9, 2.5, 4.5, 1.7, 'virginica'),
+        (7.1, 3.0, 5.9, 2.1, 'virginica'),
+        (4.6, 3.4, 1.4, 0.3, 'setosa'),
+        (5.4, 3.9, 1.7, 0.4, 'setosa'),
+        (5.7, 2.8, 4.5, 1.3, 'versicolor'),
+        (5.0, 3.6, 1.4, 0.3, 'setosa'),
+        (5.5, 2.3, 4.0, 1.3, 'versicolor'),
+        (6.5, 3.0, 5.8, 2.2, 'virginica'),
+        (6.5, 2.8, 4.6, 1.5, 'versicolor'),
+        (6.3, 3.3, 6.0, 2.5, 'virginica'),
+        (6.9, 3.1, 4.9, 1.5, 'versicolor'),
+        (4.6, 3.1, 1.5, 0.2, 'setosa'),
+    ]
 
 #. Ze zbioru :numref:`listing-loops-iris-sample` wyodrębnij dane
 #. Zdefiniuj:
 
-    * ``features: List[Tuple[float]]``
-    * ``labels: List[int]``
-    * ``species: Dict[int, str]``
+    * ``X: List[Tuple[float]]`` - features - pomiary
+    * ``y: List[int]`` - labels - gatunki
+    * ``label_encoder: Dict[int, str]`` - słownik podmiany nazw gatunków
 
-#. Aby móc odszyfrować ``labels`` i zamienić wartości ``int`` na nazwy gatunków (``str``, potrzebny jest słownik podmiany "liczba -> nazwa gatunku". Na podstawie danych (nie zapisuj go na sztywno w kodzie) wygeneruj taki słownik
+#. Aby móc odszyfrować ``labels`` i zamienić wartości ``int`` na nazwy gatunków (``str``), potrzebny jest słownik podmiany "liczba -> nazwa gatunku". Na podstawie danych (nie zapisuj go na sztywno w kodzie) wygeneruj taki słownik
 #. Dla każdego rekordu wyodrębnij pomiary i nazwę gatunku
 #. Zaktualizuj odpowiednie listy
-#. Wyświetl na ekranie ``species``, ``labels`` i ``features``:
+#. Wyświetl na ekranie ``X``, ``y`` i ``label_encoder``:
 #. Efekt końcowy:
 
     .. code-block:: python
         :caption: Przykład danych wyodrębnionych
 
-        features = [
+        X = [
             (5.8, 2.7, 5.1, 1.9),
             (5.1, 3.5, 1.4, 0.2),
             (5.7, 2.8, 4.1, 1.3),
@@ -441,12 +465,12 @@ Label encoder
             (6.4, 3.2, 4.5, 1.5),
             (4.7, 3.2, 1.3, 0.2), ...]
 
-        species = {
+        y = [0, 1, 2, 1, 2, 0, ...]
+
+        label_encoder = {
             0: 'virginica',
             1: 'setosa',
             2: 'versicolor'}
-
-        labels = [0, 1, 2, 1, 2, 0, ...]
 
 :The whys and wherefores:
     * Sprawdzanie występowania elementów w słowniku

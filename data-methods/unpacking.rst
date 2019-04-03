@@ -186,7 +186,7 @@ Hosts
 #. Do ``hosts`` dla klucza IP dodaj listę hostname
 #. Przy parsowaniu linii skorzystaj z konstrukcji z gwiazdką ``*``
 
-.. literalinclude:: src/etc-hosts.txt
+.. literalinclude:: data/etc-hosts.txt
     :name: controlflow-kwargs-hosts
     :language: python
     :caption: Listing pliku ``/etc/hosts``

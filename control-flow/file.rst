@@ -39,10 +39,9 @@ Relative path
 Access modes
 ============
 .. csv-table::
-    :header-rows: 1
     :widths: 20, 80
+    :header: "Character", "Meaning"
 
-    "Character", "Meaning"
     "``'r'``", "open for reading (default)"
     "``'w'``", "open for writing, truncating the file first"
     "``'a'``", "open for writing, appending to the end of the file if it exists"
@@ -61,27 +60,37 @@ Reading file line by line
 * Fails when directory with file cannot be accessed
 * Fails when file cannot be accessed
 
-.. literalinclude:: src/file-iterate-lines.py
-    :language: python
+.. code-block:: python
     :caption: ``file`` can be iterated line by line
+
+    with open(r'/tmp/iris.csv') as file:
+        for line in file:
+            print(line)
 
 Reading whole file content
 --------------------------
-.. literalinclude:: src/file-read.py
-    :language: python
+.. code-block:: python
     :caption: Read whole file as a text to ``content`` variable
+
+    with open(r'/tmp/iris.csv') as file:
+        content = file.read()
 
 Reading file as ``list`` with lines
 -----------------------------------
-.. literalinclude:: src/file-readlines.py
-    :language: python
+.. code-block:: python
     :caption: Convert file to list by line
+
+    with open(r'/tmp/iris.csv') as file:
+        lines = file.readlines()
 
 Read selected lines from file
 -----------------------------
-.. literalinclude:: src/file-readlines-slice.py
-    :language: python
+.. code-block:: python
     :caption: Convert file to list by line, select 1-30 lines
+
+    with open(r'/tmp/iris.csv') as file:
+        lines = file.readlines()[1:30]
+
 
 Writing
 =======
@@ -92,10 +101,11 @@ Writing to file
 * Creates file if not exists
 * Overwrite old content
 
-.. literalinclude:: src/file-write.py
-    :language: python
+.. code-block:: python
     :caption: Writing to file
 
+    with open(r'/tmp/iris.csv', mode='w') as file:
+        file.write('hello')
 
 Appending to file
 -----------------
@@ -103,16 +113,28 @@ Appending to file
 * Creates file if not exists
 * Append to the end of file
 
-.. literalinclude:: src/file-append.py
-    :language: python
+.. code-block:: python
     :caption: Appending to file
+
+    with open(r'/tmp/iris.csv', mode='a') as file:
+        file.write('hello')
 
 
 Exception handling
 ==================
-.. literalinclude:: src/file-exception.py
-    :language: python
+.. code-block:: python
     :caption: Exception handling while accessing files
+
+    try:
+        with open(r'/tmp/iris.csv') as file:
+            content = file.read()
+            print(content)
+
+    except FileNotFoundError:
+        print('File does not exist')
+
+    except PermissionError:
+        print('Permission denied')
 
 
 Good Engineering Practises
@@ -166,7 +188,7 @@ Parsing ``/etc/hosts``
 * Estimated time of completion: 20 min
 * Input data: :numref:`listing-etc-hosts`
 
-    .. literalinclude:: src/etc-hosts.txt
+    .. literalinclude:: data/etc-hosts.txt
         :name: listing-etc-hosts
         :language: text
         :caption: Zawartość pliku ``hosts.txt``
@@ -198,9 +220,16 @@ Parsing ``/etc/hosts``
 
     * Wersja zaawansowana ``List[Dict[str, Union[str, List[str]]]``:
 
-        .. literalinclude:: src/file-hosts.py
-            :language: python
+        .. code-block:: python
             :caption: ``/etc/hosts`` example
+
+            [
+                {'hostnames': ['localhost'], 'ip': '127.0.0.1', 'protocol': 'ipv4'},
+                {'hostnames': ['astromatt'], 'ip': '127.0.0.1', 'protocol': 'ipv4'},
+                {'hostnames': ['nasa.gov', 'esa.int', 'roscosmos.ru'], 'ip': '10.13.37.1', 'protocol': 'ipv4'},
+                {'hostnames': ['broadcasthost'], 'ip': '255.255.255.255', 'protocol': 'ipv4'},
+                {'hostnames': ['localhost'], 'ip': '::1', 'protocol': 'ipv6'}
+            ]
 
 :The whys and wherefores:
     * czytanie i parsowanie pliku
