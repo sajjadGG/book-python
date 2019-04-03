@@ -330,8 +330,8 @@ Iterating complex types
 Assignments
 ===========
 
-Dict to Dict
-------------
+``dict`` to ``dict``
+--------------------
 * Filename: ``for_dict_to_dict.py``
 * Lines of code to write: 4 lines
 * Estimated time of completion: 10 min
@@ -364,6 +364,11 @@ Dict to Dict
             'Primary School': '2',
             'Kindergarten': '1'
         }
+
+:The whys and wherefores:
+    * Wyciąganie elementów ze słownika
+    * Iterowanie po słowniku
+    * Aktualizacja słownika
 
 Unique keys from schema-less database
 -------------------------------------

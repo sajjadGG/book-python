@@ -829,7 +829,7 @@ Cleanup your file
 #. Run ``pycodestyle`` on directory with all of your scripts
 #. Fix all errors
 
-:Co zadanie sprawdza:
+:The whys and wherefores:
     * Umiejętność czytania komunikatów
     * Umiejętność pracy z terminalem
     * Utrzymywanie konwencji PEP8

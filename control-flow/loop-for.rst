@@ -399,7 +399,7 @@ Text analysis
     * słów
     * znaków (łącznie ze spacjami wewnątrz zdań, ale bez kropek)
 
-:Co zadanie sprawdza:
+:The whys and wherefores:
     * Dzielenie stringów
     * Sprawdzanie długości ciągów znaków
     * Iterowanie po elementach listy
