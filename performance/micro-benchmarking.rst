@@ -156,6 +156,8 @@ Statements
 .. code-block:: python
     :caption: Code 7
 
+    %%timeit
+
     fieldnames = list()
 
     for row in DATA:

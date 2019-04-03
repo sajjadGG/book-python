@@ -412,13 +412,18 @@ Label encoder
     :language: python
     :caption: Sample Iris databases
 
-#. Ze zbioru :numref:`listing-loops-iris-sample` wyodrębnij dane odrzucając nagłówek
-#. Z danych wyodrębnij:
+#. Ze zbioru :numref:`listing-loops-iris-sample` wyodrębnij dane
+#. Zdefiniuj:
 
-    * cechy opisujące: ``features: List[Tuple[float]]``
-    * cechy opisywane: ``labels: List[int]``
+    * ``features: List[Tuple[float]]``
+    * ``labels: List[int]``
+    * ``species: Dict[int, str]``
 
-#. Przykład danych wyodrębnionych:
+#. Aby móc odszyfrować ``labels`` i zamienić wartości ``int`` na nazwy gatunków (``str``, potrzebny jest słownik podmiany "liczba -> nazwa gatunku". Na podstawie danych (nie zapisuj go na sztywno w kodzie) wygeneruj taki słownik
+#. Dla każdego rekordu wyodrębnij pomiary i nazwę gatunku
+#. Zaktualizuj odpowiednie listy
+#. Wyświetl na ekranie ``species``, ``labels`` i ``features``:
+#. Efekt końcowy:
 
     .. code-block:: python
         :caption: Przykład danych wyodrębnionych
@@ -431,36 +436,12 @@ Label encoder
             (6.4, 3.2, 4.5, 1.5),
             (4.7, 3.2, 1.3, 0.2), ...]
 
-        labels = [0, 1, 2, 1, 2, 0, ...]
-
-#. Aby móc odszyfrować ``labels`` i zamienić wartości na nazwy gatunków, potrzebny jest słownik podmiany "liczba -> nazwa"
-#. Wygeneruj słownik ``species: Dict[int, str]`` na podstawie danych
-#. Przykład słownika ``species``:
-
-    .. code-block:: python
-        :caption: Przykład słownika ``species``
-
         species = {
             0: 'virginica',
             1: 'setosa',
-            2: 'versicolor'
-        }
+            2: 'versicolor'}
 
-#. Wyświetl na ekranie:
-
-    * ``species``
-    * ``labels``
-    * ``features``
-
-:Algorithm:
-    #. Wyodrębnij dane odrzucając nagłówek
-    #. Stwórz słownik gatunków ``species``
-    #. Iteruj po elementach zbioru danych
-    #. Gatunek to ostatni element rekordu
-    #. Jeżeli w słowniku nie ma gatunku, to dodaj go z kolejnym numerem
-    #. Do listy label dodawaj wartość słownika gatunków dla gatunku w tym rekordzie
-    #. Odwróć słownik gatunków
-    #. Wyświetl na ekranie ``species`` oraz ``labels``
+        labels = [0, 1, 2, 1, 2, 0, ...]
 
 :The whys and wherefores:
     * Sprawdzanie występowania elementów w słowniku
