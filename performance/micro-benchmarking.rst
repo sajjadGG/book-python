@@ -142,6 +142,28 @@ Statements
 
     # 2.43 µs ± 63.9 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 
+.. code-block:: python
+    :caption: Code 6
+
+    %%timeit
+
+    fieldnames = set()
+
+    for row in DATA:
+        for key in row.keys():
+            fieldnames.add(key)
+
+.. code-block:: python
+    :caption: Code 7
+
+    fieldnames = list()
+
+    for row in DATA:
+        for key in row.keys():
+            if key not in fieldnames:
+                fieldnames.append(key)
+
+
 Summary
 =======
 * Code 3 appends generator object not values, this is why it is so fast!
