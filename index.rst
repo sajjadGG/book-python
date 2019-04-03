@@ -187,6 +187,7 @@ Good Engineering Practice
     /good-engineering-practice/pep8.rst
     /good-engineering-practice/pep20.rst
     /good-engineering-practice/code-smells.rst
+    /good-engineering-practice/python-wat.rst
     /good-engineering-practice/type-annotation.rst
     /good-engineering-practice/logging.rst
     /good-engineering-practice/warnings.rst
@@ -474,6 +475,5 @@ Appendixes
     /appendix/books.rst
     /appendix/video.rst
     /appendix/python-2vs3.rst
-    /appendix/python-wat.rst
     /_references/references.rst
     /LICENSE.rst
