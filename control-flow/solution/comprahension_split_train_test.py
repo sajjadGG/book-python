@@ -24,22 +24,24 @@ DATA = [
 ]
 
 RATIO = 0.6
-header = DATA[0]
-data = DATA[1:]
+
+header, *data = DATA
 pivot = int(len(data) * RATIO)
 
-X = [row[:-1] for row in data]
+X = [tuple(measurements) for *measurements, species in data]
 X_train = X[:pivot]
 X_test = X[pivot:]
 
-y = [row[-1] for row in data]
+y = [species for *measurements, species in data]
 y_train = y[:pivot]
 y_test = y[pivot:]
 
+result = X_train, X_test, y_train, y_test
+print(result)
+
+## Not optimized
+#
 # X_train = [x[:4] for x in data[:pivot]]
 # X_test = [x[:4] for x in data[pivot:]]
 # y_train = [y[4] for y in data[:pivot]]
 # y_test = [y[4] for y in data[pivot:]]
-
-result = X_train, X_test, y_train, y_test
-print(result)
