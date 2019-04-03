@@ -1,10 +1,15 @@
 from datetime import date
 from pprint import pprint
 
+ETC_GROUPS = r'../data/etc-group.txt'
+ETC_SHADOW = r'../data/etc-shadow.txt'
+ETC_PASSWD = r'../data/etc-passwd.txt'
 
-ETC_GROUPS = r'../src/etc-group.txt'
-ETC_SHADOW = r'../src/etc-shadow.txt'
-ETC_PASSWD = r'../src/etc-passwd.txt'
+SECOND = 1
+MINUTE = 60 * SECOND
+HOUR = 60 * MINUTE
+DAY = 24 * HOUR
+
 ALGORITHMS = {
     '1': 'MD5',
     '2a': 'Blowfish',
@@ -57,14 +62,12 @@ for line in etc_groups:
     if not line or line.startswith('#'):
         continue
 
-    record = line.split(':')
-    group_name = record[0]
-    members = record[3].split(',')
+    group_name, _, _, members, *_ = line.split(':')
 
-    if members == ['']:
+    if not members:
         continue
 
-    for member in members:
+    for member in members.split(','):
         if member not in output_groups.keys():
             output_groups[member] = set()
 
@@ -77,10 +80,9 @@ for line in etc_shadow:
     if not line or line.startswith('#'):
         continue
 
-    record = line.split(':')
-    username = record[0]
-    password = record[1]
-    last_change = date.fromtimestamp(int(record[2]))
+    username, password, last_change, *_ = line.split(':')
+    timestamp = int(last_change) * DAY
+    last_change = date.fromtimestamp(timestamp)
 
     if password.startswith('$'):
         locked = False
