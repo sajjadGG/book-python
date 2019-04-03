@@ -120,15 +120,17 @@ Iterating over ``set``
     # 0.2
     # 'setosa'
 
+
 Working with Generators and Iterators
 =====================================
 
 Loops with ``range``
 --------------------
-* ``range(0, 3)`` will generate ``(0, 1, 2)``
+* ``range(start, stop, step)``
 * ``range().start`` is inclusive
 * ``range().stop`` is exclusive
-* can also define ``range().step``
+* ``range().step`` can be defined
+* ``range(0, 3)`` will generate ``(0, 1, 2)``
 
 .. code-block:: python
     :caption: Loops with ``range``
@@ -154,7 +156,7 @@ Loops with ``range``
 ``enumerate``
 -------------
 * Pythonic way
-* Preferred over ``i=0`` and every iteration ``i+=1``
+* Preferred over ``i=0`` and ``i+=1`` for every iteration
 * ``enumerate()`` will return ``counter`` and ``value`` for every iteration
 
 .. code-block:: python
