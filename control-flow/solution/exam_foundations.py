@@ -1,6 +1,7 @@
 from datetime import date
 from pprint import pprint
 
+
 ETC_GROUPS = r'../data/etc-group.txt'
 ETC_SHADOW = r'../data/etc-shadow.txt'
 ETC_PASSWD = r'../data/etc-passwd.txt'

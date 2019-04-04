@@ -300,35 +300,36 @@ Cleaning text input
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
 
-#. Napisz funkcję oczyszczającą, która podane niżej zmienne zamieni na ciąg "Jana III Sobieskiego"
+#. Napisz funkcję oczyszczającą ciągi znaków
 
 .. code-block:: python
 
-    expected = 'Jana III Sobieskiego'
-
-    a = '  Jana III Sobieskiego '
-    b = 'ul Jana III SobIESkiego'
-    c = '\tul. Jana trzeciego Sobieskiego'
-    d = 'ulicaJana III Sobieskiego'
-    e = 'UL. JA\tNA 3 SOBIES\tKIEGO'
-    f = 'UL. jana III SOBiesKIEGO'
-    g = 'ULICA JANA III SOBIESKIEGO  '
-    h = 'ULICA. JANA III SOBIeskieGO'
-    i = ' Jana 3 Sobieskiego  '
-    j = 'Jana III Sobi\teskiego '
-    k = 'ul.Jana III Sob\n\nieskiego\n'
-
-    print(f'{a == expected}\t a: "{a}"')
-    print(f'{b == expected}\t b: "{b}"')
-    print(f'{c == expected}\t c: "{c}"')
-    print(f'{d == expected}\t d: "{d}"')
-    print(f'{e == expected}\t e: "{e}"')
-    print(f'{f == expected}\t f: "{f}"')
-    print(f'{g == expected}\t g: "{g}"')
-    print(f'{h == expected}\t h: "{h}"')
-    print(f'{i == expected}\t i: "{i}"')
-    print(f'{j == expected}\t j: "{j}"')
-    print(f'{k == expected}\t k: "{k}"')
+    def clean(text: str) -> str:
+        """
+        >>> clean('  bolesława chrobrego ')
+        'Bolesława Chrobrego'
+        >>> clean('ul Jana III SobIESkiego')
+        'Jana III Sobieskiego'
+        >>> clean('\tul. Jana trzeciego Sobieskiego')
+        'Jana III Sobieskiego'
+        >>> clean('ulicaJana III Sobieskiego')
+        'Jana III Sobieskiego'
+        >>> clean('UL. JA\tNA 3 SOBIES\tKIEGO')
+        'Jana III Sobieskiego'
+        >>> clean('UL. Zygmunta III WaZY')
+        'Zygmunta III WaZY'
+        >>> clean('ULICA JANA III SOBIESKIEGO  ')
+        'Jana III Sobieskiego'
+        >>> clean('ULICA. JANA III SOBIeskieGO')
+        'Jana III Sobieskiego'
+        >>> clean(' Jana 3 Sobieskiego  ')
+        'Jana III Sobieskiego'
+        >>> clean('Jana III Sobi\teskiego ')
+        'Jana III Sobieskiego'
+        >>> clean('ul.Mieszka II')
+        'Mieszka II'
+        """
+        return
 
 :The whys and wherefores:
     * Definiowanie i uruchamianie funkcji

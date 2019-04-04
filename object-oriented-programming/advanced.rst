@@ -114,6 +114,81 @@ Why?
     a.__class__.__name__
     # 'One'
 
+``__slots__``
+-------------
+* faster attribute access
+* space savings in memory
+
+The proper use of __slots__ is to save space in objects. Instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions after creation. This saves the overhead of one dict for every object that uses slots
+
+Unfortunately there is a side effect to slots. They change the behavior of the objects that have slots in a way that can be abused by control freaks and static typing weenies. This is bad, because the control freaks should be abusing the metaclasses and the static typing weenies should be abusing decorators, since in Python, there should be only one obvious way of doing something.
+
+The space savings is from:
+
+    * Storing value references in slots instead of ``__dict__``.
+    * Denying ``__dict__`` and ``__weakref__`` creation if parent classes deny them and you declare ``__slots__``.
+
+.. code-block:: python
+
+    class Base(object):
+        __slots__ = ()
+
+    b = Base()
+    b.a = 'a'
+    # Traceback (most recent call last):
+    #   File "<pyshell#38>", line 1, in <module>
+    #     b.a = 'a'
+    # AttributeError: 'Base' object has no attribute 'a'
+
+    class Child(Base):
+        __slots__ = ('a',)
+
+    c = Child()
+    c.a = 'a'
+
+    c.b = 'b'
+    # Traceback (most recent call last):
+    #   File "<pyshell#42>", line 1, in <module>
+    #    c.b = 'b'
+    # AttributeError: 'Child' object has no attribute 'b'
+
+.. code-block:: python
+
+    class Base:
+        __slots__ = 'foo', 'bar'
+
+    class Right(Base):
+        __slots__ = 'baz',
+
+    class Wrong(Base):
+        __slots__ = 'foo', 'bar', 'baz'        # redundant foo and bar
+
+Requirements:
+
+    * To have attributes named in ``__slots__`` to actually be stored in slots instead of a ``__dict__``, a class must inherit from object
+    * To prevent the creation of a ``__dict__``, you must inherit from object and all classes in the inheritance must declare ``__slots__`` and none of them can have a '``__dict__``' entry.
+
+.. code-block:: python
+
+    class SlottedWithDict(Child):
+        __slots__ = ('__dict__', 'b')
+
+    swd = SlottedWithDict()
+    swd.a = 'a'
+    swd.b = 'b'
+    swd.c = 'c'
+
+    swd.__dict__
+    # {'c': 'c'}
+
+    class NoSlots(Child):
+        pass
+
+    ns = NoSlots()
+    ns.a = 'a'
+    ns.b = 'b'
+
+.. note:: More info: https://stackoverflow.com/questions/472000/usage-of-slots
 
 Stringify objects
 =================
@@ -121,12 +196,11 @@ Stringify objects
 * ``__str__()`` dla użytkowników (być czytelnym)
 * ``__format__()`` - do zaawansowanego formatowania
 
-    :emphasize-lines: 4,5
-
 ``__str__()``
 -------------
 .. code-block:: python
     :caption: Using ``__str__()`` on a class
+    :emphasize-lines: 6,7,11,12
 
     class Point:
         def __init__(self, x, y):
@@ -146,6 +220,7 @@ Stringify objects
 --------------
 .. code-block:: python
     :caption: Using ``__repr__()`` on a class
+    :emphasize-lines: 6,7,11,12
 
     class Point:
         def __init__(self, x, y):
@@ -163,6 +238,7 @@ Stringify objects
 ``__format__()``
 ----------------
 .. code-block:: python
+    :emphasize-lines: 7-13,17,18
 
     class Point:
         def __init__(self, x=0, y=0, z=0):
@@ -171,7 +247,7 @@ Stringify objects
             self.z = z
 
         def __format__(self, style):
-            if style == '2D':
+            if style == 'flat':
                 return f"({self.x}, {self.y})"
             elif style == '3D':
                 return f"({self.x}, {self.y}, {self.z})"
@@ -180,7 +256,7 @@ Stringify objects
 
     p = Point(x=1, y=2)
 
-    print(f'{p:2D}')    # (1, 2)
+    print(f'{p:flat}')    # (1, 2)
     print(f'{p:3D}')    # (1, 2, 3)
 
 Case Study
@@ -268,6 +344,7 @@ What should be in the class and what not?
 ``@classmethod``
 ----------------
 .. code-block:: python
+    :emphasize-lines: 14-17,25-29
 
     import json
 
@@ -302,9 +379,25 @@ What should be in the class and what not?
 
 Dynamically creating fields
 ===========================
-.. literalinclude:: src/oop-init-dynamic.py
-    :language: python
+.. code-block:: python
     :caption: Funkcja inicjalizującą, która automatycznie dodaje pola do naszej klasy w zależności od tego co zostanie podane przy tworzeniu obiektu
+
+    class Astronaut:
+        def __init__(self, last_name, **kwargs):
+            self.last_name = last_name
+
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+
+    ivan = Astronaut(first_name='Иван', last_name='Иванович', agency='Roscosmos')
+    jose = Astronaut(last_name='Jimenez', addresses=())
+
+    print(ivan.first_name)  # Иван
+    print(jose.last_name)   # Jimenez
+
+    print(jose.__dict__)    # {'last_name': 'Jimenez', 'addresses': ()}
+    print(ivan.__dict__)    # {'last_name': 'Иванович', 'first_name': 'Иван', 'agency': 'Roscosmos'}
 
 
 Setter and Getter
@@ -312,13 +405,61 @@ Setter and Getter
 
 Accessing class fields
 ----------------------
-.. literalinclude:: src/oop-accessor-fields.py
-    :language: python
-    :caption: Accessing class fields
+.. code-block:: python
+    :caption: Accessing class fields "Java way" -- don't do that in Python
 
-.. literalinclude:: src/oop-getter.py
-    :language: python
+    class Astronaut:
+        name = ''
+
+        def set_name(self, name):
+            print('I can print some log messages')
+            self.name = name
+
+        def get_name(self):
+            return self.name
+
+    jose = Astronaut()
+    jose.set_name('José Jiménez')
+
+    print(jose.get_name())
+
+.. code-block:: python
+    :caption: Accessing class fields - "the Python way"
+
+    class Astronaut:
+        def __init__(self, name=''):
+            self.name = name
+
+    ivan = Astronaut()              # either put ``name`` as an argument for ``__init__()``
+    ivan.name = 'Ivan Иванович'     # or create dynamic field in runtime
+
+    print(ivan.name)
+
+
+.. code-block:: python
     :caption: Case Study uzasadnionego użycia gettera w kodzie
+    :emphasize-lines: 9,14-20
+
+    from django.contrib import admin
+    from habitat._common.admin import HabitatAdmin
+    from habitat.sensors.models import ZWaveSensor
+
+
+    @admin.register(ZWaveSensor)
+    class ZWaveSensorAdmin(HabitatAdmin):
+        change_list_template = 'sensors/change_list_charts.html'
+        list_display = ['date', 'time', 'type', 'device', 'value', 'unit']
+        list_filter = ['created', 'type', 'unit', 'device']
+        search_fields = ['^date', 'device']
+        ordering = ['-datetime']
+
+        def get_list_display(self, request):
+            list_display = self.list_display
+
+            if request.user.is_superuser:
+                list_display = ['datetime'] + list_display
+
+            return list_display
 
 ``@property``
 -------------
@@ -424,13 +565,38 @@ Hash
 * ``x.__hash__()`` returns an appropriate value such that ``x == y`` implies both that ``x is y`` and ``hash(x) == hash(y)``
 
 
-.. literalinclude:: src/oop-hash-dict.py
-    :language: python
+.. code-block:: python
     :caption: ``dict()`` może mieć klucze, które są dowolnym hashowalnym obiektem
 
-.. literalinclude:: src/oop-hash-set.py
-    :language: python
+    key = 'last_name'
+
+    my_dict = {
+        'fist_name': 'key can be ``str``',
+        key: 'key can be ``str``',
+        1: 'key can be ``int``',
+        1.5: 'key can be ``float``',
+        (1, 2): 'key can be ``tuple``',
+    }
+
+.. code-block:: python
     :caption: ``set()`` można zrobić z dowolnego hashowalnego obiektu
+
+    class Astronaut:
+        def __init__(self, name):
+            self.name = name
+
+
+    {1, 1, 2}
+    # {1, 2}
+
+    jose = Astronaut(name='Jose Jimenez')
+    data = {jose, jose}
+    len(data)
+    # 1
+
+    data = {Astronaut(name='Jose Jimenez'), Astronaut(name='Jose Jimenez')}
+    len(data)
+    # 2
 
 .. literalinclude:: src/oop-hash-generate-bad.py
     :language: python
