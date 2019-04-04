@@ -404,7 +404,7 @@ Unique keys from schema-less database
     * Aktualizacja zbiorów
 
 :Hint:
-    * Compare solutions with :numref:`Micro-benchmarking Case Study`
+    * Compare solutions with :numref:`Micro-benchmarking use case`
 
 Label encoder
 -------------

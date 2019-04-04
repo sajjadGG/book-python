@@ -6,14 +6,14 @@ Passing many arguments
 Operators ``*`` i ``**``
 ========================
 - This is not multiplication or power!
-- ``*args`` - positional arguments
-- ``**kwargs`` - keyword arguments
-- ``*args`` unpacks ``tuple`` or ``list``
-- ``**kwargs`` unpacks to ``dict``
+- ``*args`` - positional arguments, unpacks ``tuple``, ``list`` or ``set``
+- ``**kwargs`` - keyword arguments, unpacks ``dict``
 
 
-``*`` unpacks ``list`` or ``tuple``
-===================================
+Unpacking sequences
+===================
+* ``*`` unpacks ``tuple``, ``list`` or ``set``
+
 .. code-block:: python
 
     complex(3, 5)
@@ -24,8 +24,10 @@ Operators ``*`` i ``**``
     complex(*args)
 
 
-``**`` unpacks ``dict``
-=======================
+Unpacking ``dict``
+==================
+* ``**`` unpacks ``dict``
+
 .. code-block:: python
 
     complex(real=3, imag=5)
@@ -35,8 +37,8 @@ Operators ``*`` i ``**``
     kwargs = {'real': 3, 'imag': 5}
     complex(**kwargs)
 
-Podawanie parametrów do funkcji
--------------------------------
+Use Case
+--------
 .. code-block:: python
 
     def draw_line(x, y, color, style, width, markers):
@@ -48,6 +50,7 @@ Podawanie parametrów do funkcji
     draw_line(5, 6, color='red', style='dashed', width='2px', markers='disc')
 
 .. code-block:: python
+    :caption: Podawanie parametrów do funkcji
 
     def draw_chart(a, b, color, style, width, markers):
         ...
@@ -67,20 +70,19 @@ Podawanie parametrów do funkcji
 
 Przekazywanie do funkcji zmiennej ilości parametrów
 ===================================================
-Przykładowe zastosowanie operatorów ``*`` i ``**`` polega na wykorzystaniu ich przy wywołaniu funkcji. Wtedy, wykorzystując operator ``*``, kolejne elementy listy albo krotki będą przekazane jako kolejne argumenty funkcji, a wykorzystując operator ``**`` kolejne elementy zmiennej słownikowej będą przekazane jako nazwane argumenty. Oznacza to, że na przykład argument ``x`` funkcji, przyjmie wartość ``vector['x']``.
 
+Passing sequence as positional arguments
+----------------------------------------
 .. code-block:: python
 
-    def my_function(x, y, z):
+    def show(x, y, z):
         print(x, y, z)
 
     vector = (1, 0, 1)
-    my_function(*vector)   # my_function(1, 0, 1)
-    # 1, 0, 1
 
-    vector = {'y': 1, 'x': 0, 'z': 1}
-    my_function(**vector)  # my_function(y=1, x=0, z=1)
-    # 0, 1, 1
+    # show(1, 0, 1)
+    show(*vector)
+    # 1, 0, 1
 
 .. code-block:: python
 
@@ -114,35 +116,50 @@ Przykładowe zastosowanie operatorów ``*`` i ``**`` polega na wykorzystaniu ich
     show(1, 2)
     # {'a': 1, 'b': 2, 'c': 0, 'args': ()}
 
+Passing ``dict`` as named argument
+----------------------------------
 .. code-block:: python
+    :caption: Named parameters don't care about order
 
-    def show(a, b, c=0, *args, **kwargs):
-        print(locals())
+    def show(x, y, z):
+        print(x, y, z)
 
-    show(1, 2, x=77, y=99)
-    # {'a': 1, 'b': 2, 'c': 0, 'args': (), 'kwargs': {'x': 77, 'y': 99}}
+    vector = {'z': 1, 'y': 0, 'x': 1}
 
-    show(1, 2, x=77, y=99, c=7)
-    # {'a': 1, 'b': 2, 'c': 7, 'args': (), 'kwargs': {'x': 77, 'y': 99}}
-
-    dane = {'x': 77, 'y': 99}
-    show(1, 2, 3, **dane)
-    # {'a': 1, 'b': 2, 'c': 3, 'args': (), 'kwargs': {'x': 77, 'y': 99}}
-
-    dane = {'a': 1, 'b': 2, 'x': 77, 'y': 99}
-    show(**dane)
-    # {'a': 1, 'b': 2, 'c': 0, 'args': (), 'kwargs': {'x': 77, 'y': 99}}
-
+    # show(z=1, y=0, x=1)
+    show(**vector)
+    # 1, 0, 1
 
 .. code-block:: python
 
-    def show(a, b, c=0, *args, **kwargs):
+    def show(a, b, c=0, **kwargs):
         print(locals())
 
     dane = {'x': 77, 'y': 99, 'a': 7}
     show(1, 2, 3, **dane)
     # TypeError: show() got multiple values for argument 'a'
 
+.. code-block:: python
+
+    def show(a, b, c=0, **kwargs):
+        print(locals())
+
+    show(1, 2, x=77, y=99)
+    # {'a': 1, 'b': 2, 'c': 0, 'kwargs': {'x': 77, 'y': 99}}
+
+    show(1, 2, x=77, y=99, c=7)
+    # {'a': 1, 'b': 2, 'c': 7, 'kwargs': {'x': 77, 'y': 99}}
+
+    dane = {'x': 77, 'y': 99}
+    show(1, 2, 3, **dane)
+    # {'a': 1, 'b': 2, 'c': 3, 'kwargs': {'x': 77, 'y': 99}}
+
+    dane = {'a': 1, 'b': 2, 'x': 77, 'y': 99}
+    show(**dane)
+    # {'a': 1, 'b': 2, 'c': 0, 'kwargs': {'x': 77, 'y': 99}}
+
+Passing sequence and ``dict`` as arguments
+------------------------------------------
 .. code-block:: python
 
     def show(a, b, c=0, *args, **kwargs):
@@ -157,24 +174,8 @@ Przykładowe zastosowanie operatorów ``*`` i ``**`` polega na wykorzystaniu ich
     # {'a': 1, 'b': 2, 'c': 3, 'args': (4, 5, 6), 'kwargs': {'x': 77, 'y': 99}}
 
 
-Przykładowe zastosowanie
-========================
-
-Konwersja Temperatury
----------------------
-.. code-block:: python
-
-    from typing import List
-
-    def celsius_to_fahrenheit(*degrees) -> List[float]:
-        return [x * 1.8 + 32 for x in degrees]
-
-
-    dane_do_konwersji = (1, 2, 3, 4, 5)
-
-    celsius_to_fahrenheit(*dane_do_konwersji)
-    # [33.8, 35.6, 37.4, 39.2, 41.0]
-
+Use cases
+=========
 
 Placeholder class
 -----------------

@@ -135,8 +135,8 @@ Parse file line by line
 
             print('\n'.join(content))
 
-Case Study
-----------
+Use cases
+---------
 .. literalinclude:: src/django-management-commands.py
     :language: python
     :caption: Writing own management commands

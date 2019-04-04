@@ -76,8 +76,8 @@ Composition using Mixin classes
         def __init__(self, first_name, last_name):
             ...
 
-Case Study
-----------
+Use cases
+---------
 .. code-block:: python
 
     class JSONSerializable:

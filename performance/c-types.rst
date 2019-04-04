@@ -56,8 +56,8 @@ Argumenty
     lib.my_function.restype = ctypes.c_char_p
 
 
-Case Study
-==========
+Use cases
+=========
 .. code-block:: C
 
     #include <stdio.h>

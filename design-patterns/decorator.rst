@@ -423,17 +423,17 @@ Example 3
     assert Foo().x == 20
 
 
-Case Study
-----------
+Use cases
+---------
 .. literalinclude:: src/decorators-case-study-flask.py
     :name: listing-decorators-case-study-flask
     :language: python
-    :caption: Case Study wykorzystania dekotatorów do poprawienia czytelności kodu Flask
+    :caption: Use case wykorzystania dekotatorów do poprawienia czytelności kodu Flask
 
 .. literalinclude:: src/decorators-case-study-django.py
     :name: listing-decorators-case-study-django
     :language: python
-    :caption: Case Study wykorzystania dekotatorów do poprawienia czytelności kodu Django
+    :caption: Use case wykorzystania dekotatorów do poprawienia czytelności kodu Django
 
 
 

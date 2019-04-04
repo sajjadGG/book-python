@@ -6,10 +6,8 @@ Functions with many arguments
 Operands ``*`` and ``**``
 =========================
 - This is not multiplication or power!
-- ``*args`` - positional arguments
-- ``**kwargs`` - keyword arguments
-- ``*args`` unpacks to ``tuple``
-- ``**kwargs`` unpacks to ``dict``
+- ``*args`` - positional arguments, unpacks to ``tuple``
+- ``**kwargs`` - keyword arguments, unpacks to ``dict``
 
 
 Recap information about function parameters
@@ -111,20 +109,24 @@ Many named and positional arguments
     show(1, 2, 3, 4, 5, 6, d=7, e=8)
 
 
-Case Study
-==========
+Use cases
+=========
 .. code-block:: python
+    :caption: Converts arguments between different units
 
-    def celsius_to_fahrenheit(*degrees):
-        return [degree*1.8+32 for degree in degrees]
+    def kelvin_to_celsius(*degrees):
+        return [x+273.15 for x in degrees]
 
-    celsius_to_fahrenheit(1)
-    # [33.8]
 
-    celsius_to_fahrenheit(1, 2, 3, 4, 5)
-    # [33.8, 35.6, 37.4, 39.2, 41.0]
+    kelvin_to_celsius(1)
+    # [274.15]
+
+    kelvin_to_celsius(1, 2, 3, 4, 5)
+    # [274.15, 275.15, 276.15, 277.15, 278.15]
+
 
 .. code-block:: python
+    :caption: Generate HTML list from function arguments
 
     def html_list(*args):
         print('<ul>')
@@ -134,19 +136,57 @@ Case Study
 
         print('</ul>')
 
-    print_everything('apple', 'banana', 'cabbage')
+
+    html_list('apple', 'banana', 'orange')
     # <ul>
     # <li>apple</li>
     # <li>banana</li>
-    # <li>cabbage</li>
+    # <li>orange</li>
     # </ul>
 
 .. code-block:: python
+    :caption: Intuitive definition of ``print`` function
 
     def print(*values, sep=' ', end='\n', ...):
         return sep.join(values) + end
 
 .. code-block:: python
+    :caption: One of the most common use of ``*args``, ``**kwargs`` is for proxy methods.
+
+    # ``read_csv`` is a function from ``pandas`` library
+    def read_csv(filepath_or_buffer, sep=', ', delimiter=None,
+                 header='infer', names=None, index_col=None,
+                 usecols=None, squeeze=False, prefix=None,
+                 mangle_dupe_cols=True, dtype=None, engine=None,
+                 converters=None, true_values=None, false_values=None,
+                 skipinitialspace=False, skiprows=None, nrows=None,
+                 na_values=None, keep_default_na=True, na_filter=True,
+                 verbose=False, skip_blank_lines=True, parse_dates=False,
+                 infer_datetime_format=False, keep_date_col=False,
+                 date_parser=None, dayfirst=False, iterator=False,
+                 chunksize=None, compression='infer', thousands=None,
+                 decimal=b'.', lineterminator=None, quotechar='"',
+                 quoting=0, escapechar=None, comment=None, encoding=None,
+                 dialect=None, tupleize_cols=None, error_bad_lines=True,
+                 warn_bad_lines=True, skipfooter=0, doublequote=True,
+                 delim_whitespace=False, low_memory=True, memory_map=False,
+                 float_precision=None):
+        ...
+
+    def my_csv(file, decimal=b',', *args, **kwargs):
+        return read_csv(
+            filepath_or_buffer=file,
+            decimal=decimal,
+            encoding='utf-8',
+            usecols=['Petal length', 'Species'],
+            skip_blank_lines=True,
+            *args,
+            **kwargs)
+
+    my_csv('iris.csv', decimal='.', verbose=True)
+
+.. code-block:: python
+    :caption: One of the most common use of ``*args``, ``**kwargs`` is for proxy methods.
 
     class Point2D:
         def __init__(self, x, y):
@@ -179,7 +219,7 @@ Assignments
 Numeric Values
 --------------
 * Filename: ``kwargs_numeric.py``
-* Lines of code to write: 10 lines
+* Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
 
 #. Stwórz funkcję ``is_numeric``

@@ -63,9 +63,9 @@ Console use
     print a short usage message and exit
 
 
-Case Study
-==========
-.. _Micro-benchmarking Case Study:
+Use cases
+=========
+.. _Micro-benchmarking use case:
 
 Setup
 -----

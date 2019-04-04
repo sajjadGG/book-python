@@ -261,6 +261,7 @@ Catch many exceptions with the same handling
 Catch many exceptions with different handling
 ---------------------------------------------
 .. code-block:: python
+
     try:
         with open(r'/tmp/iris.csv') as file:
             content = file.read()

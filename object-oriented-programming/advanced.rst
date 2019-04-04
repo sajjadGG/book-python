@@ -259,8 +259,8 @@ Stringify objects
     print(f'{p:flat}')    # (1, 2)
     print(f'{p:3D}')    # (1, 2, 3)
 
-Case Study
-----------
+Use cases
+---------
 * ``__repr__``
 
     .. code-block:: python
@@ -437,7 +437,7 @@ Accessing class fields
 
 
 .. code-block:: python
-    :caption: Case Study uzasadnionego użycia gettera w kodzie
+    :caption: Use case uzasadnionego użycia gettera w kodzie
     :emphasize-lines: 9,14-20
 
     from django.contrib import admin

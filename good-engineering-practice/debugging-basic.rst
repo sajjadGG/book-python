@@ -23,8 +23,8 @@ Run in the console
         # [1, 2, 3]
 
 
-Case Study
-----------
+Use cases
+---------
 
 Good
 ^^^^

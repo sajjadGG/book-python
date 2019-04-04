@@ -163,8 +163,8 @@ So what?
 
 
 
-Case Study
-==========
+Use cases
+=========
 
 Old style classes
 -----------------

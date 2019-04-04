@@ -23,8 +23,8 @@ Usage
     :caption: Using ``enum``
 
 
-Case Study
-==========
+Use cases
+=========
 .. literalinclude:: src/enum-example-1.py
     :language: python
     :caption: ``enum`` - Example usage

@@ -79,8 +79,8 @@ Cursor
     :caption: Results with cursor
 
 
-Case Study
-==========
+Use cases
+=========
 .. literalinclude:: src/database-case-study.py
     :name: listing-database-case-study
     :language: python
