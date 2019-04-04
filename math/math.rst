@@ -123,18 +123,6 @@ Other functions
 Assignments
 ===========
 
-Sum of inner elements
----------------------
-* Filename: ``math_inner_sum.py``
-* Lines of code to write: 5 lines
-* Estimated time of completion: 10 min
-
-#. Ustaw ``random.seed(0)``
-#. Za pomocą biblioteki ``random`` wygeneruj ``List[List[int]]`` (cyfry z przedziału <0,9> włącznie)
-#. Tablica ma mieć 16 wierszy i 16 kolumn
-#. Policz sumę środkowych 4x4 elementów
-#. Środkowych = centralna macierz 4x4 dokładnie w środku większej
-
 Euclidean distance 2D
 ---------------------
 * Filename: ``math_euclidean_2d.py``

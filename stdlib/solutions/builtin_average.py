@@ -25,8 +25,7 @@ DATA = [
     (4.6, 3.1, 1.5, 0.2, 'setosa'),
 ]
 
-header = DATA[0]
-data = DATA[1:]
+header, *data = DATA
 values = dict()
 averages = dict()
 
@@ -36,13 +35,13 @@ def average(numbers):
         return sum(numbers) / len(numbers)
 
 
-for record in data:
-    for i, name in enumerate(header):
+for row in data:
+    for i, column_name in enumerate(header):
 
-        if not values.get(name):
-            values[name] = []
+        if not values.get(column_name):
+            values[column_name] = []
 
-        values[name].append(record[i])
+        values[column_name].append(row[i])
 
 
 for key, value in values.items():

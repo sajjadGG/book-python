@@ -1,11 +1,15 @@
-
+**************
 ``matplotlib``
-==============
+**************
+
 * biblioteka zewnętrzna ``pip install matplotlib``
+* Gallery https://matplotlib.org/gallery/index.html
+* Moduł ``matplotlib`` pozwala na rysowanie wykresów i diagramów.
+* Jest to bardzo rozbudowana biblioteka z setkami opcji konfiguracyjnych.
+* Najczęściej używanym modułem biblioteki ``matplotlib`` jest moduł ``pyplot``, który implementuje szereg funkcji umożliwiających rysowanie wykresów 2d.
 
 .. note:: Moduł jest szczegółowo opisany w :ref:`Matplotlib`.
 
-Moduł ``matplotlib`` pozwala na rysowanie wykresów i diagramów. Jest to bardzo rozbudowana biblioteka z setkami opcji konfiguracyjnych. Najczęściej używanym modułem biblioteki ``matplotlib`` jest moduł ``pyplot``, który implementuje szereg funkcji umożliwiających rysowanie wykresów 2d.
 
 ``Matplotlib`` and ``Jupyter``
 ------------------------------
