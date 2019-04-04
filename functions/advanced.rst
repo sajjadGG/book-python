@@ -83,6 +83,24 @@ Returning function (callable)
     time.sleep(10)
     print(now())          # 1969-07-21 14:56:25
 
+.. code-block:: python
+
+    import datetime
+    import time
+
+
+    now = datetime.datetime.now
+
+    print(now())          # 1969-07-21 14:56:15
+    time.sleep(10)
+    print(now())          # 1969-07-21 14:56:25
+
+    print(now)
+    # <built-in method now of type object at 0x107695638>
+
+    now.__call__()
+    # datetime.datetime(1969, 7, 21, 14, 56, 25)
+
 
 Assignments
 ===========
