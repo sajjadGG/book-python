@@ -5,7 +5,8 @@
 
 Defining ``dict``
 =================
-* ``dict`` items order changes!
+* Since Python 3.7 ``dict`` has of adding elements
+* Before Python 3.7 ``dict`` order is not ensured!!
 * ``dict`` are key-value storage
 * Comma after last element is optional
 
@@ -58,6 +59,18 @@ Key can be any hashable object
     my_dict = {
         (1, 2): 'hello',
         (3, 4, 5): 'ehlo',
+    }
+
+.. code-block:: python
+
+    key = 'last_name'
+
+    my_dict = {
+        'fist_name': 'key can be ``str``',
+        key: 'key can be ``str``',
+        1: 'key can be ``int``',
+        1.5: 'key can be ``float``',
+        (1, 2): 'key can be ``tuple``',
     }
 
 Value can be any object

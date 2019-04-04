@@ -147,7 +147,8 @@ Enumerating and item index
 
 Iterating over ``dict`` items
 =============================
-* ``dict`` elements order changes!
+* Since Python 3.7 ``dict`` has of adding elements
+* Before Python 3.7 ``dict`` order is not ensured!!
 
 Iterating over ``dict`` values
 ------------------------------

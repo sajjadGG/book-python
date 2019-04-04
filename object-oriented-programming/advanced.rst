@@ -606,6 +606,7 @@ Hash
     :language: python
     :caption: Generating hash and object comparision
 
+.. note:: Since Python 3.7 ``dict`` has fixed order and using ``OrderedDict`` is not necessary
 
 ``is``
 ======
