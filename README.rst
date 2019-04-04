@@ -2,15 +2,20 @@
 Python 3: from None to Machine Learning
 #######################################
 
-**Author**
+.. figure:: about/img/AstroMatt.jpg
+    :align: left
+    :scale: 40%
 
-:name: `Matt Harasymczuk <http://astrotech.io>`_
-:email: matt@astrotech.io
-:www: http://www.astrotech.io
-:github: https://github.com/astromatt
-:linkedin: https://linkedin.com/in/mattharasymczuk
-:facebook: https://facebook.com/matt.harasymczuk
-:slideshare: https://www.slideshare.net/astrotech/presentations
+.. csv-table::
+    :widths: 20, 80
+
+    "name", "`Matt Harasymczuk <http://astrotech.io>`_"
+    "email", "matt@astrotech.io"
+    "www", "http://www.astrotech.io"
+    "github", "https://github.com/astromatt"
+    "linkedin", "https://linkedin.com/in/mattharasymczuk"
+    "facebook", "https://facebook.com/matt.harasymczuk"
+    "slideshare", "https://www.slideshare.net/astrotech/presentations"
 
 .. tip:: The most up-to-date version of this book is always at http://python.astrotech.io
 

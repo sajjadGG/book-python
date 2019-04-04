@@ -295,7 +295,7 @@ Catch many exceptions with different handling
 Exceptions logging
 ------------------
 .. code-block:: python
-    :emphasize-lines: 9,10
+    :emphasize-lines: 8,9
 
     import logging
 

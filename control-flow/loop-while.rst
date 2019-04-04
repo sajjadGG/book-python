@@ -89,6 +89,7 @@ Exit flag
 Skipping iterations
 -------------------
 * if ``continue`` is encountered, it will jump to next loop iteration
+
 .. code-block:: python
 
     i = 0
