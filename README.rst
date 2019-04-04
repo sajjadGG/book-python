@@ -4,10 +4,10 @@ Python 3: from None to Machine Learning
 
 .. figure:: about/img/AstroMatt.jpg
     :align: left
-    :scale: 40%
+    :scale: 39%
 
 .. csv-table::
-    :widths: 20, 80
+    :widths: 15, 65
 
     "author", "`Matt Harasymczuk <http://astrotech.io>`_"
     "email", "matt@astrotech.io"
@@ -17,14 +17,16 @@ Python 3: from None to Machine Learning
     "facebook", "https://facebook.com/matt.harasymczuk"
     "slideshare", "https://www.slideshare.net/astrotech/presentations"
 
-.. tip:: The most up-to-date version of this book is always at http://python.astrotech.io
+.. tip::
+    * This book is free and open source!
+    * The most up-to-date version is always at http://python.astrotech.io
 
 .. csv-table:: Other books from author
     :widths: 30, 70
     :header: "URL", "Title"
 
     "http://python.astrotech.io", "Python 3 and Machine Learning"
-    "http://devops.astrotech.io", "DevOps and CI/CD wtih Docker"
+    "http://devops.astrotech.io", "DevOps and CI/CD with Docker"
     "http://jira.astrotech.io", "Jira Software, Jira Service Desk and Jira Core"
     "http://git.astrotech.io", "GIT and GIT Flow"
     "http://agile.astrotech.io", "Agile, Scrum, Kanban, XP, Lean"
