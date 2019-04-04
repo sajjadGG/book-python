@@ -9,7 +9,7 @@ Python 3: from None to Machine Learning
 .. csv-table::
     :widths: 20, 80
 
-    "name", "`Matt Harasymczuk <http://astrotech.io>`_"
+    "author", "`Matt Harasymczuk <http://astrotech.io>`_"
     "email", "matt@astrotech.io"
     "www", "http://www.astrotech.io"
     "github", "https://github.com/astromatt"
