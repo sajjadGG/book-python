@@ -15,29 +15,145 @@ Time shifts
 
 Simple ``timedelta`` shifts
 ---------------------------
-.. literalinclude:: src/timedelta-simple.py
-    :language: python
+.. code-block:: python
     :caption: Simple ``timedelta`` shifts
+
+    from datetime import timedelta, datetime
+
+
+    gagarin = datetime(1961, 4, 12)
+
+    gagarin - timedelta(minutes=15)
+    gagarin + timedelta(minutes=10)
+
+
+.. code-block:: python
+    :caption: Simple ``timedelta`` shifts
+
+    from datetime import timedelta, datetime
+
+
+    armstrong = datetime(1969, 7, 21, 14, 56, 15)
+
+    armstrong - timedelta(hours=21)
+    armstrong + timedelta(hours=5)
+
+.. code-block:: python
+    :caption: Simple ``timedelta`` shifts
+
+    from datetime import timedelta, date
+
+
+    sputnik = date(1957, 10, 4)
+
+    sputnik + timedelta(days=5)
+    sputnik - timedelta(days=3)
+
+.. code-block:: python
+    :caption: Simple ``timedelta`` shifts
+
+    from datetime import datetime, timedelta
+
+
+    gagarin = datetime(1961, 4, 12)
+
+    gagarin + timedelta(weeks=2)
+    gagarin - timedelta(weeks=3)
 
 Complex ``timedelta`` shifts
 ----------------------------
-.. literalinclude:: src/timedelta-complex.py
-    :language: python
+.. code-block:: python
     :caption: Complex ``timedelta`` shifts
+
+
+    from datetime import timedelta, datetime
+
+
+    armstrong = datetime(1969, 7, 21, 14, 56, 15)
+
+    armstrong - timedelta(days=2, hours=21)
+
+.. code-block:: python
+    :caption: Complex ``timedelta`` shifts
+
+    from datetime import timedelta, datetime
+
+
+    armstrong = datetime(1969, 7, 21, 14, 56, 15)
+
+    duration = timedelta(
+        weeks=3,
+        days=2,
+        hours=21,
+        minutes=5,
+        seconds=12,
+        milliseconds=10,
+        microseconds=55)
+    # datetime.timedelta(days=23, seconds=75912, microseconds=10055)
+
+    between_dates = armstrong - duration
+    # datetime.datetime(1969, 6, 27, 17, 51, 2, 989945)
+
 
 ``timedelta`` month shifts
 --------------------------
-.. literalinclude:: src/timedelta-month.py
-    :language: python
+.. code-block:: python
     :caption: Subtract month from ``datetime``
+
+    from datetime import timedelta, date
+
+
+    def month():
+        """Average days a month in solar calendar"""
+        return timedelta(days=30.436875)
+
+
+    month_before = date(1961, 4, 12) - month()
+    # datetime.date(1961, 3, 13)
+
 
 .. todo:: Biblioteka calendar ma funkcję wyliczającą ilość dni w miesiącu
 
+
 Time diff
 =========
-.. literalinclude:: src/timedelta-diff.py
-    :language: python
+.. code-block:: python
     :caption: Diff between datetime objects
+
+    from datetime import datetime
+
+
+    SECOND = 1
+    MINUTE = 60 * SECOND
+    HOUR = 60 * MINUTE
+    DAY = 24 * HOUR
+    MONTH = 30.436875 * DAY    # Average days a month in solar calendar
+    YEAR = 365.2425 * DAY      # Solar calendar
+
+
+    gagarin = datetime(1961, 4, 12, 6, 7)
+    armstrong = datetime(1969, 7, 21, 14, 56, 15)
+
+    duration = armstrong - gagarin
+    # datetime.timedelta(3022, 31755)
+
+    years, seconds = divmod(duration.total_seconds(), YEAR)
+    months, seconds = divmod(seconds, MONTH)
+    days, seconds = divmod(seconds, DAY)
+    hours, seconds = divmod(duration.seconds, HOUR)
+    minutes, seconds = divmod(seconds, MINUTE)
+
+    difference = {
+        'years': int(years),
+        'months': int(months),
+        'days': int(days),
+        'hours': int(hours),
+        'minutes': int(minutes),
+        'seconds': int(seconds),
+    }
+
+    print(difference)
+    # {'years': 8, 'months': 3, 'days': 9, 'hours': 8, 'minutes': 49, 'seconds': 15}
 
 
 Assignments

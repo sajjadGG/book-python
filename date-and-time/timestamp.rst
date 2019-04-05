@@ -52,15 +52,18 @@ From Java Script timestamp
     # datetime.datetime(1978, 6, 27, 17, 27)
 
 
-
 ``time``
 ========
 
 Timestamp with precision
 ------------------------
-.. literalinclude:: src/timestamp-time.py
-    :language: python
+.. code-block:: python
     :caption: Get timestamp
+
+    import time
+
+    time.time()
+    # 1496737953.0712671
 
 
 Assignments

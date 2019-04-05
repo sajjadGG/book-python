@@ -9,9 +9,44 @@ Time zones in ``datetime`` library
 * Datetimes should be converted to localtime only when displaying to user
 * Computerphile Time & Time Zones :cite:`VideoComputerphileTimeZones`
 
-.. literalinclude:: src/datetime-tzinfo.py
-    :language: python
-    :caption: Make timezone aware object from naive datetime
+Timezone naive
+--------------
+.. code-block:: python
+    :caption: Timezone naive datetimes
+
+    from datetime import datetime
+
+    datetime.now()
+
+.. code-block:: python
+    :caption: Timezone naive datetimes. This is potentially dangerous!
+
+    from datetime import datetime
+
+    datetime.utcnow()
+
+.. code-block:: python
+    :caption: Timezone naive datetimes
+
+    from datetime import datetime
+
+    datetime(1957, 10, 4, 19, 28, 34)
+
+Timezone aware
+--------------
+.. code-block:: python
+    :caption: Timezone aware datetime
+
+    from datetime import datetime, timezone
+
+    datetime(1957, 10, 4, 19, 28, 34, tzinfo=timezone.utc)
+
+.. code-block:: python
+    :caption: Timezone aware datetime
+
+    from datetime import datetime, timezone
+
+    datetime(1957, 10, 4, 19, 28, 34, tzinfo=timezone.utc)
 
 
 ``pytz``
@@ -22,33 +57,87 @@ List of Timezones
 * https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
 * https://www.iana.org/time-zones
 
-.. literalinclude:: src/pytz-tzlist.py
-    :language: python
+.. code-block:: python
     :caption: ``pytz`` brings the Olson tz database into Python.
+
+    from pytz import timezone, utc as UTC
+
+
+    UTC = UTC
+    EST = timezone('US/Eastern')
+    WAW = timezone('Europe/Warsaw')
+    BAJKONUR = timezone('Asia/Almaty')
 
 From naive to local
 -------------------
-.. literalinclude:: src/pytz-naive-to-local.py
-    :language: python
+.. code-block:: python
     :caption: From naive to local time
+
+    from datetime import datetime
+    from pytz import timezone
+
+
+    BAJKONUR = timezone('Asia/Almaty')
+
+
+    # timezone naive
+    gagarin = datetime(1961, 4, 12, 14, 7)
+
+    BAJKONUR.localize(gagarin)
+    # datetime.datetime(1961, 4, 12, 14, 7,
+    #                   tzinfo=<DstTzInfo 'Asia/Almaty' +06+6:00:00 STD>)
 
 From naive to UTC
 -----------------
-.. literalinclude:: src/pytz-naive-to-utc.py
-    :language: python
+.. code-block:: python
     :caption: From naive to local time
+
+    from datetime import datetime
+    from pytz import utc as UTC
+
+
+    # timezone naive
+    gagarin = datetime(1961, 4, 12, 14, 7)
+
+    UTC.localize(gagarin)
+    # datetime.datetime(1961, 4, 12, 14, 7, tzinfo=<UTC>)
 
 From UTC to local time
 ----------------------
-.. literalinclude:: src/pytz-utc-to-local.py
-    :language: python
+.. code-block:: python
     :caption: From UTC to local time
+
+    from datetime import datetime
+    from pytz import timezone, utc as UTC
+
+
+    WARSAW = timezone('Europe/Warsaw')
+
+
+    armstrong = datetime(1969, 7, 21, 14, 56, 15, tzinfo=UTC)
+
+    armstrong.astimezone(WARSAW)
+    # datetime.datetime(1969, 7, 21, 15, 56, 15,
+    #                   tzinfo=<DstTzInfo 'Europe/Warsaw' CET+1:00:00 STD>)
 
 Between timezones
 -----------------
-.. literalinclude:: src/pytz-between-timezones.py
-    :language: python
+.. code-block:: python
     :caption: Between timezones
+
+    from datetime import datetime
+    from pytz import timezone
+
+
+    WARSAW = timezone('Europe/Warsaw')
+    BAJKONUR = timezone('Asia/Almaty')
+
+
+    gagarin = datetime(1961, 4, 12, 14, 7, tzinfo=BAJKONUR)
+
+    gagarin.astimezone(WARSAW)
+    # datetime.datetime(1961, 4, 12, 9, 59,
+    #                   tzinfo=<DstTzInfo 'Europe/Warsaw' CET+1:00:00 STD>)
 
 
 Assignments
