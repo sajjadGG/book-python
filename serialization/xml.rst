@@ -23,99 +23,258 @@ xml
         print(command.tag)
         print(command.text)
         print(command.attrib)
-        print('-' * 10)
+        print()
 
     # command
     # /bin/ls -la /etc/
     # {'timeout': '2'}
-    # ----------
+    #
     # command
     # /bin/ls -l /home/ /tmp/
     # {}
-    # ----------
+    #
     # command
     # /bin/sleep 2
     # {'timeout': '1'}
-    # ----------
+    #
     # command
     # /bin/echo 'juz wstalem'
     # {'timeout': '2'}
-    # ----------
 
 
 ``lxml``
 ========
+
+Creating elements
+-----------------
+.. code-block:: python
+    :caption: Creating elements
+
+    from lxml.etree import tostring, Element
+
+
+    root = Element("iris")
+
+    print(tostring(root))
+    # b'<iris/>'
+
+Adding elements using list interface
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: python
+    :caption: Adding elements using list interface
+
+    from lxml.etree import tostring, Element
+
+
+    root = Element("iris")
+
+    root.append(Element("setosa"))
+    root.append(Element("versicolor"))
+
+    print(tostring(root))
+    # b'<iris><setosa/><versicolor/></iris>'
+
+Adding elements using objects
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: python
+    :caption: Adding elements using objects
+
+
+    from lxml.etree import tostring, Element, SubElement
+
+
+    root = Element("iris")
+
+    root.append(Element("setosa"))
+    root.append(Element("versicolor"))
+    root.append(Element("virginica"))
+
+    print(tostring(root))
+    # b'<iris><setosa/><versicolor/><virginica/></iris>'
+
+Length of a subtree
+-------------------
 .. code-block:: python
 
-    from lxml import etree
+    from lxml.etree import Element
 
-    root = etree.Element("root")
 
-    print(root.tag)  # root
-    root.append(etree.Element("child1"))
+    root = Element("iris")
 
-    child2 = etree.SubElement(root, "child2")
-    child3 = etree.SubElement(root, "child3")
+    root.append(Element("setosa"))
+    root.append(Element("versicolor"))
+    root.append(Element("virginica"))
 
-    out = etree.tostring(root, pretty_print=True)
-    print(out)
+    print(len(root))
+    # 3
 
-.. code-block:: xml
+Selecting subtree
+-----------------
+.. code-block:: python
 
-    <root>
-      <child1/>
-      <child2/>
-      <child3/>
-    </root>
+    from lxml.etree import Element
+
+    root = Element("iris")
+
+    root.append(Element("setosa"))
+    root.append(Element("versicolor"))
+    root.append(Element("virginica"))
+
+    selected = root[2]
+
+    print(selected.tag)
+    # virginica
+
+Where is selected element
+^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: python
+
+    from lxml.etree import Element
+
+
+    root = Element("iris")
+
+    root.append(Element("setosa"))
+    root.append(Element("versicolor"))
+    root.append(Element("virginica"))
+
+    selected = root[1]
+    root.index(selected)
+    # 1
+
+    selected = root[2]
+    root.index(selected)
+    # 2
 
 Elements are lists
 ------------------
 .. code-block:: python
 
-    child = root[0]
-    print(child.tag)     # child1
-    print(len(root))     # 3
-    root.index(root[1])  # 1
+    from lxml.etree import tostring, Element
+
+
+    root = Element("iris")
+
+    root.append(Element("setosa"))
+    root.append(Element("versicolor"))
+    root.append(Element("virginica"))
 
     children = list(root)
+    print(children)
+    # [
+    #     <Element setosa at 0x113cd4048>,
+    #     <Element versicolor at 0x113cd4188>,
+    #     <Element virginica at 0x113cd41c8>
+    # ]
+
+Iterating over elements
+^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: python
+
+    from lxml.etree import Element
+
+
+    root = Element("iris")
+
+    root.append(Element("setosa"))
+    root.append(Element("versicolor"))
+    root.append(Element("virginica"))
 
     for child in root:
         print(child.tag)
-        # child1
-        # child2
-        # child3
 
-    root.insert(0, etree.Element("child0"))
+    # setosa
+    # versicolor
+    # virginica
+
+Slicing elements
+^^^^^^^^^^^^^^^^
+.. code-block:: python
+
+    from lxml.etree import Element
+
+
+    root = Element("iris")
+
+    root.append(Element("setosa"))
+    root.append(Element("versicolor"))
+    root.append(Element("virginica"))
+
+
+    root.insert(0, Element("arctica"))
+
     start = root[:1]
     end = root[-1:]
 
-    print(start[0].tag)  # child0
-    print(end[0].tag)    # child3
+    print(start[0].tag)  # arctica
+    print(end[0].tag)    # virginica
 
 Elements carry attributes as a dict
 -----------------------------------
 .. code-block:: python
 
-    root = etree.Element("root", interesting="totally")
-    etree.tostring(root)
-    # b'<root interesting="totally"/>'
+    from lxml.etree import tostring, Element
 
-    print(root.get("interesting"))  # totally
-    print(root.get("hello"))        # None
 
-    root.set("hello", "Huhu")
-    print(root.get("hello"))        # Huhu
+    tag = Element("iris", kingdom="plantae")
 
-    etree.tostring(root)
-    b'<root interesting="totally" hello="Huhu"/>'
+    print(tostring(tag))
+    # b'<iris kingdom="plantae"/>'
 
-    sorted(root.keys())
-    ['hello', 'interesting']
+.. code-block:: python
 
-    for name, value in sorted(root.items()):
-        print('%s = %r' % (name, value))
-        # hello = 'Huhu'
-        # interesting = 'totally'
+    from lxml.etree import tostring, Element
+
+
+    tag = Element("iris", kingdom="plantae")
+
+    print(tag.get("kingdom"))          # plantae
+    print(tag.get("not-existing"))     # None
+
+.. code-block:: python
+
+    from lxml.etree import tostring, Element
+
+
+    tag = Element("iris", kingdom="plantae")
+    tag.set("kind", "flower")
+
+    print(tag.get("kind"))
+    # flower
+
+    print(tostring(tag))
+    # b'<iris kingdom="plantae" kind="flower"/>'
+
+.. code-block:: python
+
+    from lxml.etree import Element
+
+
+    tag = Element("iris", kingdom="plantae")
+    tag.set("kind", "flower")
+
+    tag.keys()
+    # ['kind', 'kingdom']
+
+    tag.values()
+    # ['plantae', 'flower']
+
+    tag.items()
+    # [('kingdom', 'plantae'), ('kind', 'flower')]
+
+.. code-block:: python
+
+    from lxml.etree import Element
+
+
+    tag = Element("iris", kingdom="plantae")
+    tag.set("kind", "flower")
+
+    for key, value in tag.items():
+        print(f'{key} -> {value}')
+
+    # kingdom -> plantae
+    # kind -> flower
 
 .. code-block:: python
 
