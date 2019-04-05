@@ -183,9 +183,9 @@ Object Oriented Programming
 
     /object-oriented-programming/basic.rst
     /object-oriented-programming/intermediate.rst
+    /object-oriented-programming/operator-overload.rst
     /object-oriented-programming/dataclass.rst
     /object-oriented-programming/enum.rst
-    /object-oriented-programming/operator-overload.rst
     /object-oriented-programming/paradigm.rst
     /object-oriented-programming/advanced.rst
     /object-oriented-programming/metaclass.rst
