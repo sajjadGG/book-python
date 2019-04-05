@@ -5,24 +5,43 @@ Parsing and Formatting
 
 Date and time formats
 =====================
-* https://en.wikipedia.org/wiki/Date_format_by_country
 * https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
 
 Date formats
 ------------
-* Which format is a formal standard in USA?
-* Which format is a formal standard in Japan?
-* Which format is a formal standard in Germany?
-* Which format is a formal standard in Poland?
+* https://en.wikipedia.org/wiki/Date_format_by_country
+
+Formal date format in USA
+^^^^^^^^^^^^^^^^^^^^^^^^^
+* https://en.wikipedia.org/wiki/Date_and_time_notation_in_the_United_States
 
 .. code-block:: text
+    :caption: Formal date format in USA
 
     4/12/61
     April 12, 1961
 
+Formal date format in Japan
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* https://en.wikipedia.org/wiki/Date_and_time_notation_in_Japan#Date
+
 .. code-block:: text
+    :caption: Formal date format in Japan
 
     20/12/31
+
+Formal date format in Germany
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: text
+    :caption: Formal date format in Germany
+
+    12.4.1961
+    12.04.1961
+
+Formal date format in Poland
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* Which format is a formal standard in Poland?
+* https://en.wikipedia.org/wiki/ISO_8601
 
 .. code-block:: text
 
@@ -44,31 +63,46 @@ Date formats
     12 kwietnia 1961
     12 kwiecień 1961
 
-* https://en.wikipedia.org/wiki/Date_and_time_notation_in_Japan#Date
-* https://en.wikipedia.org/wiki/Date_and_time_notation_in_the_United_States
-* https://en.wikipedia.org/wiki/ISO_8601
-
 Time formats
 ------------
+
+24 and 12 hour clock
+^^^^^^^^^^^^^^^^^^^^
+* What AM stands for?
+* What PM stands for?
+* Is 12:00 a noon, or someone just simply forgot to put AM/PM?
+
+.. code-block:: text
+
+    17:00
+    5:00 PM
+    5:00
+
+Noon and Midnight
+^^^^^^^^^^^^^^^^^
 * Which time is a midnight?
 * Which time is a noon?
+* `Confusion at noon and midnight <https://en.wikipedia.org/wiki/12-hour_clock#Confusion_at_noon_and_midnight>`_
 
 .. code-block:: text
 
     12:00 am
     12:00 pm
-    12:00
-    0:00
-    24:00
-
-* `Confusion at noon and midnight <https://en.wikipedia.org/wiki/12-hour_clock#Confusion_at_noon_and_midnight>`_
-
-* Are those times correct?
 
 .. code-block:: text
 
-    0:00
+    12:00
+    24:00
+
+.. code-block:: text
+
     00:00
+    0:00
+
+Are those times correct?
+^^^^^^^^^^^^^^^^^^^^^^^^
+* `Times after 24:00 <https://en.wikipedia.org/wiki/24-hour_clock#Times_after_24:00>`_
+* Military `time <https://en.wikipedia.org/wiki/24-hour_clock#Military_time>`_ and `timezones <https://en.wikipedia.org/wiki/List_of_military_time_zones>`_
 
 .. code-block:: text
 
@@ -77,6 +111,7 @@ Time formats
 
 .. code-block:: text
 
+    24:00
     24:01
     25:00
     27:45
@@ -85,9 +120,6 @@ Time formats
 .. code-block:: text
 
     1200J
-
-* `Times after 24:00 <https://en.wikipedia.org/wiki/24-hour_clock#Times_after_24:00>`_
-* Military `time <https://en.wikipedia.org/wiki/24-hour_clock#Military_time>`_ and `timezones <https://en.wikipedia.org/wiki/List_of_military_time_zones>`_
 
 
 ISO 8601 Standard
@@ -103,9 +135,6 @@ Dates
 Date and time
 -------------
 * "Z" (Zulu) means UTC
-* The notation "00:00" is used at the beginning of a calendar day and is the more frequently used.
-* At the end of a day use "24:00".
-* "2007-04-05T24:00" is the same as "2007-04-06T00:00"
 
 .. code-block:: text
 
@@ -123,10 +152,24 @@ Date and time
 
     1961-04-12T06:07:00.123456Z
 
+Noon and Midnight
+^^^^^^^^^^^^^^^^^
+* The notation "00:00" is used at the beginning of a calendar day and is the more frequently used.
+* At the end of a day use "24:00".
+* "2007-04-05T24:00" is the same as "2007-04-06T00:00"
+
 Weeks
 -----
 * Monday 29 December 2008 is written "2009-W01-1"
 * Sunday 3 January 2010 is written "2009-W53-7"
+
+.. code-block:: text
+
+    2009-W01
+
+.. code-block:: text
+
+    2009-W53-7
 
 Timezone
 --------
@@ -157,6 +200,7 @@ Duration
 
     "P3Y6M4DT12H30M5S" represents a duration of "three years, six months, four days, twelve hours, thirty minutes, and five seconds".
 
+
 Table of date and time parsing and formatting parameters
 ========================================================
 .. note:: Prawie wszystkie parametry są podobne różnych językach programowania. Od czasu do czasu występują małe zmiany, np. w JavaScript minuty to ``i`` a nie ``M``
@@ -165,35 +209,95 @@ Table of date and time parsing and formatting parameters
     :header-rows: 1
     :file: data/datetime-formatting.csv
 
+
 Date formatting
 ===============
 
 ``f-string`` formatting
 -----------------------
-.. literalinclude:: src/datetime-format.py
-    :language: python
+.. code-block:: python
     :caption: Datetime formatting as string with ``f'...'``
+
+    from datetime import datetime
+
+    gagarin = datetime(1961, 4, 12, 6, 7)
+
+    print(f'Gagarin launched on {gagarin:%Y-%m-%d}')
+    # Gagarin launched on 1961-04-12
+
+.. code-block:: python
+    :caption: Datetime formatting as string with ``f'...'``
+
+    from datetime import datetime
+
+    gagarin = datetime(1961, 4, 12, 6, 7)
+
+    print(f'Gagarin launched on {gagarin:%Y-%m-%d %H:%M}')
+    # Gagarin launched on 1961-04-12 06:07
+
+.. code-block:: python
+    :caption: Datetime formatting as string with ``f'...'``
+
+    from datetime import datetime
+
+    gagarin = datetime(1961, 4, 12, 6, 7)
+    format = '%Y-%m-%d %H:%M'
+
+    print(f'Gagarin launched on {gagarin:{format}}')
+    # Gagarin launched on 1961-04-12  06:07
 
 Format to string
 ----------------
-.. literalinclude:: src/datetime-strftime.py
-    :language: python
+.. code-block:: python
     :caption: Datetime formatting as string with ``.strftime()``
+
+    from datetime import datetime
+
+    gagarin = datetime(1961, 4, 12, 6, 7)
+    formatted = gagarin.strftime('%Y-%m-%d %H:%M')
+
+    print(f'Gagarin launched on {formatted}')
+    # Gagarin launched on 1961-04-12 06:07
 
 ISO Format
 ----------
-.. literalinclude:: src/datetime-format-iso.py
-    :language: python
-    :caption: Date and Datetime formatting to ISO format
+.. code-block:: python
+    :caption: Datetime formatting to ISO format
+
+    from datetime import datetime
+
+    dt = datetime(1969, 7, 21, 14, 56, 15)
+
+    dt.isoformat()
+    # 1969-07-21T14:56:15
+
+.. code-block:: python
+    :caption: Date formatting to ISO format
+
+    from datetime import date
+
+    d = date(1969, 7, 21)
+
+    d.isoformat()
+    # 1969-07-21
 
 
 Parsing dates
 =============
 * Parsing - analyze (a sentence) into its parts and describe their syntactic roles.
 
-.. literalinclude:: src/datetime-parse.py
-    :language: python
+.. code-block:: python
     :caption: Datetime parsing from string
+
+    from datetime import datetime
+
+    sputnik = '4 October 1957, 19:28:34 [UTC]'
+
+    out = datetime.strptime(sputnik, '%d %B %Y, %H:%M:%S [%Z]')
+    # datetime.datetime(1957, 10, 4, 19, 28, 34)
+
+    print(out)
+    # 1957-10-04 19:28:34
 
 
 Assignments
