@@ -5,33 +5,43 @@ XML
 
 xml
 ===
-
-.. code-block:: xml
-
-    <execute>
-        <command timeout="2">/bin/ls -la /etc/</command>
-        <command>/bin/ls -l /home/ /tmp/</command>
-        <command timeout="1">/bin/sleep 2</command>
-        <command timeout="2">/bin/echo 'juz wstalem'</command>
-    </execute>
-
 .. code-block:: python
 
-    import logging
     import xml.etree.ElementTree
-    import subprocess
 
+    FILE = '../serialization/data/xml-commands.xml'
+    # <execute>
+    #     <command timeout="2">/bin/ls -la /etc/</command>
+    #     <command>/bin/ls -l /home/ /tmp/</command>
+    #     <command timeout="1">/bin/sleep 2</command>
+    #     <command timeout="2">/bin/echo 'juz wstalem'</command>
+    # </execute>
 
-    FILE = 'xml-execute-commands.xml'
     root = xml.etree.ElementTree.parse(FILE).getroot()
 
-
     for command in root.findall('./command'):
-        cmd = command.text.split()
-        timeout = float(command.get('timeout', 1))
-        output = subprocess.run(command, timeout=timeout, capture_output=True)
+        print(command.tag)
+        print(command.text)
+        print(command.attrib)
+        print('-' * 10)
 
-        print(output)
+    # command
+    # /bin/ls -la /etc/
+    # {'timeout': '2'}
+    # ----------
+    # command
+    # /bin/ls -l /home/ /tmp/
+    # {}
+    # ----------
+    # command
+    # /bin/sleep 2
+    # {'timeout': '1'}
+    # ----------
+    # command
+    # /bin/echo 'juz wstalem'
+    # {'timeout': '2'}
+    # ----------
+
 
 ``lxml``
 ========
