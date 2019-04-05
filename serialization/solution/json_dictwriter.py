@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import List
 
 
-FILE = 'addressbook.json'
+FILE = '/tmp/addressbook.json'
 
 @dataclass
 class Address:

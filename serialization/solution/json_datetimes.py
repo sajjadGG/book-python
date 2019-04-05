@@ -1,7 +1,7 @@
 from datetime import datetime, date
 import json
 
-FILE = '../tmp/json-datetimes.json'
+FILE = '/tmp/json-datetimes.json'
 DATA = {
     "astronaut": {
         "date": date(1961, 4, 12),

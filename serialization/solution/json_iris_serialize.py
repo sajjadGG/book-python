@@ -26,8 +26,7 @@ DATA = [
     (4.6, 3.1, 1.5, 0.2, 'setosa'),
 ]
 
-header = DATA[0]
-data = DATA[1:]
+header, data = DATA
 iris = []
 
 for value in data:
@@ -38,17 +37,17 @@ for value in data:
 
     # header == ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
     # iris.append({
-    #     'Sepal length': row[0],
-    #     'Sepal width': row[1],
-    #     'Petal length': row[2],
-    #     'Petal width': row[3],
-    #     'Species': row[4]
+    #     'Sepal length': value[0],
+    #     'Sepal width': value[1],
+    #     'Petal length': value[2],
+    #     'Petal width': value[3],
+    #     'Species': value[4]
     # })
 
-with open(r'iris.json', mode='w') as file:
+with open(r'/tmp/iris.json', mode='w') as file:
     content = json.dumps(iris)
     file.write(content)
 
 
-with open(r'iris.json', mode='w') as file:
+with open(r'/tmp/iris.json', mode='w') as file:
     json.dump(iris, file)

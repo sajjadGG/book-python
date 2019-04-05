@@ -2,7 +2,7 @@ import json
 from dataclasses import dataclass
 
 
-FILE = '../tmp/iris.json'
+FILE = '../data/iris.json'
 
 @dataclass
 class Iris:

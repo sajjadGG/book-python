@@ -1,5 +1,6 @@
 import csv
 
+
 DATA = [
     {'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
     {'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
@@ -14,6 +15,7 @@ fieldnames = set()
 for row in DATA:
     fieldnames.update(row.keys())
 
+# fieldnames == {'Sepal length', 'Sepal width', 'Petal length', 'Species', 'Petal width'}
 
 with open(r'../data/iris.csv', mode='w') as file:
     writer = csv.DictWriter(

@@ -360,7 +360,7 @@ XML Parsing
 
 #. Przekonwertuj dane do struktur Pythonowych ``list`` of ``dict``
 
-.. literalinclude:: assignment/xml_plants.xml
+.. literalinclude:: data/xml_plants.xml
     :name: listing-xml_plants.xml
     :language: xml
     :caption: XML Parsing
@@ -374,7 +374,7 @@ XSLT Transformation
 
 #. Przekonwertuj dane do struktur Pythonowych ``list`` of ``dict``
 
-.. literalinclude:: assignment/xml_transform.xml
+.. literalinclude:: data/xml_transform.xml
     :name: listing-xml_transform.xml
     :language: xml
     :caption: XML data for XSLT transformation

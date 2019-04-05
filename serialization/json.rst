@@ -241,14 +241,15 @@ Decoding objects
 
     DATA = """
     [
-       {"__type__":"Contact", "name":"Jan Twardowski", "addresses":[
+        {"__type__":"Contact", "name":"Jan Twardowski", "addresses":[
              {"__type__":"Address", "city":"Houston", "state":"Texas"},
              {"__type__":"Address", "city":"Kennedy Space Center", "state":"Florida"},
              {"__type__":"Address", "city":"Pasadena", "state":"California"},
              {"__type__":"Address", "city":"Palmdale", "state":"California"}]},
        {"__type__":"Contact", "name":"Mark Watney", "addresses":[]},
        {"__type__":"Contact", "name":"Jos\u00e9 Jim\u00e9nez", "addresses":[]}
-    ]"""
+    ]
+    """
 
 
     class Address:
@@ -289,32 +290,10 @@ Decoding objects
 
 Pretty Printing JSON
 ====================
-.. code-block:: console
 
-    $ DATA='[{"sepalLength":5.1,"sepalWidth":3.5,"petalLength":1.4,"petalWidth":0.2,"species":"setosa"},{"sepalLength":4.9,"sepalWidth":3,"petalLength":1.4,"petalWidth":0.2,"species":"setosa"}]'
-
-    $ echo $DATA | python -m json.tool
-    [
-        {
-            "sepalLength": 5.1,
-            "sepalWidth": 3.5,
-            "petalLength": 1.4,
-            "petalWidth": 0.2,
-            "species": "setosa"
-        },
-        {
-            "sepalLength": 4.9,
-            "sepalWidth": 3,
-            "petalLength": 1.4,
-            "petalWidth": 0.2,
-            "species": "setosa"
-        }
-    ]
-
-.. code-block:: console
-
-    $ echo '{"sepalLength":5.1,"sepalWidth":3.5,}' | python -m json.tool
-    Expecting property name enclosed in double quotes: line 1 column 37 (char 36)
+JSON can be compressed
+----------------------
+* It is not very readable
 
 .. code-block:: console
 
@@ -323,6 +302,8 @@ Pretty Printing JSON
 
     [{"sepalLength":5.1,"sepalWidth":3.5,"petalLength":1.4,"petalWidth":0.2,"species":"setosa"},{"sepalLength":4.9,"sepalWidth":3,"petalLength":1.4,"petalWidth":0.2,"species":"setosa"},{"sepalLength":4.7,"sepalWidth":3.2,"petalLength":1.3,"petalWidth":0.2,"species":"setosa"},{"sepalLength":4.6,"sepalWidth":3.1,"petalLength":1.5,"petalWidth":0.2,"species":"setosa"},{"sepalLength":5,"sepalWidth":3.6,"petalLength":1.4,"petalWidth":0.2,"species":"setosa"},{"sepalLength":5.4,"sepalWidth":3.9,"petalLength":1.7,"petalWidth":0.4,"species":"setosa"},{"sepalLength":4.6,"sepalWidth":3.4,"petalLength":1.4,"petalWidth":0.3,"species":"setosa"},{"sepalLength":5,"sepalWidth":3.4,"petalLength":1.5,"petalWidth":0.2,"species":"setosa"},{"sepalLength":4.4,"sepalWidth":2.9,"petalLength":1.4,"petalWidth":0.2,"species":"setosa"},{"sepalLength":4.9,"sepalWidth":3.1,"petalLength":1.5,"petalWidth":0.1,"species":"setosa"},{"sepalLength":7,"sepalWidth":3.2,"petalLength":4.7,"petalWidth":1.4,"species":"versicolor"},{"sepalLength":6.4,"sepalWidth":3.2,"petalLength":4.5,"petalWidth":1.5,"species":"versicolor"},{"sepalLength":6.9,"sepalWidth":3.1,"petalLength":4.9,"petalWidth":1.5,"species":"versicolor"},{"sepalLength":5.5,"sepalWidth":2.3,"petalLength":4,"petalWidth":1.3,"species":"versicolor"},{"sepalLength":6.5,"sepalWidth":2.8,"petalLength":4.6,"petalWidth":1.5,"species":"versicolor"},{"sepalLength":5.7,"sepalWidth":2.8,"petalLength":4.5,"petalWidth":1.3,"species":"versicolor"},{"sepalLength":6.3,"sepalWidth":3.3,"petalLength":4.7,"petalWidth":1.6,"species":"versicolor"},{"sepalLength":4.9,"sepalWidth":2.4,"petalLength":3.3,"petalWidth":1,"species":"versicolor"},{"sepalLength":6.6,"sepalWidth":2.9,"petalLength":4.6,"petalWidth":1.3,"species":"versicolor"},{"sepalLength":5.2,"sepalWidth":2.7,"petalLength":3.9,"petalWidth":1.4,"species":"versicolor"},{"sepalLength":6.3,"sepalWidth":3.3,"petalLength":6,"petalWidth":2.5,"species":"virginica"},{"sepalLength":5.8,"sepalWidth":2.7,"petalLength":5.1,"petalWidth":1.9,"species":"virginica"},{"sepalLength":7.1,"sepalWidth":3,"petalLength":5.9,"petalWidth":2.1,"species":"virginica"},{"sepalLength":6.3,"sepalWidth":2.9,"petalLength":5.6,"petalWidth":1.8,"species":"virginica"},{"sepalLength":6.5,"sepalWidth":3,"petalLength":5.8,"petalWidth":2.2,"species":"virginica"},{"sepalLength":7.6,"sepalWidth":3,"petalLength":6.6,"petalWidth":2.1,"species":"virginica"},{"sepalLength":4.9,"sepalWidth":2.5,"petalLength":4.5,"petalWidth":1.7,"species":"virginica"},{"sepalLength":7.3,"sepalWidth":2.9,"petalLength":6.3,"petalWidth":1.8,"species":"virginica"},{"sepalLength":6.7,"sepalWidth":2.5,"petalLength":5.8,"petalWidth":1.8,"species":"virginica"},{"sepalLength":7.2,"sepalWidth":3.6,"petalLength":6.1,"petalWidth":2.5,"species":"virginica"}]
 
+Pretty Printing JSON
+--------------------
 .. code-block:: console
 
     $ URL='https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris.json'
@@ -351,6 +332,13 @@ Pretty Printing JSON
         },
     ...
 
+Check JSON Syntax
+-----------------
+.. code-block:: console
+
+    $ echo '{"sepalLength":5.1,"sepalWidth":3.5,}' | python -m json.tool
+    Expecting property name enclosed in double quotes: line 1 column 37 (char 36)
+
 
 Assignments
 ===========
@@ -358,26 +346,9 @@ Assignments
 Iris Serialize
 --------------
 * Filename: ``json_iris_serialize.py``
-* Lines of code to write: 30 lines
+* Lines of code to write: 8 lines
 * Estimated time of completion: 20 min
 * Input data: :numref:`listing-json-serialize`
-
-#. Z danych wydziel nagłówek i pomiary
-#. Na podstawie nagłówka przekonwertuj na ``List[dict]``
-
-    - klucz: nazwa z nagłówka
-    - wartość: obserwacje
-
-    .. code-block:: python
-
-        DATA = [
-            {'Sepal length': 5.8, 'Sepal width': 2.7, ...},
-            {'Sepal length': 5.1, 'Sepal width': 3.5, ...},
-            {'Sepal length': 5.7, 'Sepal width': 2.8, ...},
-            ...
-        ]
-
-#. Zapisz do pliku ``iris.json`` w formacie JSON
 
 .. code-block:: python
     :name: listing-json-serialize
@@ -408,6 +379,25 @@ Iris Serialize
         (4.6, 3.1, 1.5, 0.2, 'setosa'),
     ]
 
+#. Z danych wydziel nagłówek i pomiary
+#. Wygeneruj ``List[dict]``
+
+    - klucz: nazwa z nagłówka
+    - wartość: wyniki pomiarów lub gatunek
+
+#. Słownik wynikowy ma wyglądać następująco:
+
+    .. code-block:: python
+
+        [
+            {'Sepal length': 5.8, 'Sepal width': 2.7, ...},
+            {'Sepal length': 5.1, 'Sepal width': 3.5, ...},
+            {'Sepal length': 5.7, 'Sepal width': 2.8, ...},
+            ...
+        ]
+
+#. Zapisz do pliku ``iris.json`` w formacie JSON
+
 :The whys and wherefores:
     * Serializacja danych
     * Korzystanie z biblioteki JSON
@@ -417,7 +407,7 @@ Iris Serialize
 Iris deserialize
 ----------------
 * Filename: ``json_iris_deserialize.py``
-* Lines of code to write: 30 lines
+* Lines of code to write: 8 lines
 * Estimated time of completion: 20 min
 * Input data: :numref:`listing-json-iris`
 
@@ -443,6 +433,24 @@ Date serialization
 * Filename: ``json_datetime.py``
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
+* Input data: :numref:`listing-json-assignment-datetime`
+
+.. code-block:: python
+    :name: listing-json-assignment-datetime
+    :caption: Sample Python data JSON
+
+    from datetime import datetime, date
+
+
+    DATA = {
+        "astronaut": {
+            "date": date(1961, 4, 12),
+            "person": "jose.jimenez@nasa.gov"
+        },
+        "flight": [
+            {"datetime": datetime(1969, 7, 21, 14, 56, 15), "action": "landing"}
+        ]
+    }
 
 #. Skopiuj do swojego pliku strukturę danych :numref:`listing-json-assignment-datetime`
 #. Zapisz ją do pliku JSON
@@ -453,16 +461,48 @@ Date serialization
     * Korzystanie z biblioteki JSON
     * Serializowanie zagnieżdżonych dat i dat z czasem
 
-.. literalinclude:: assignment/json-datetime.py
-    :name: listing-json-assignment-datetime
-    :language: python
-    :caption: Sample Python data JSON
-
 Serializing custom class to JSON
 --------------------------------
 * Filename: ``json_objects.py``
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
+
+.. code-block:: python
+    :name: listing-json-assignment-objects
+    :caption: Sample Python data JSON
+
+    DATA = [
+      {"sepalLength": 5.0, "sepalWidth": 3.6, "petalLength": 1.4, "petalWidth": 0.2, "species": "setosa"},
+      {"sepalLength": 4.9, "sepalWidth": 3.1, "petalLength": 1.5, "petalWidth": 0.1, "species": "setosa"},
+      {"sepalLength": 4.9, "sepalWidth": 3.0, "petalLength": 1.4, "petalWidth": 0.2, "species": "setosa"},
+      {"sepalLength": 7.0, "sepalWidth": 3.2, "petalLength": 4.7, "petalWidth": 1.4, "species": "versicolor"},
+      {"sepalLength": 4.6, "sepalWidth": 3.1, "petalLength": 1.5, "petalWidth": 0.2, "species": "setosa"},
+      {"sepalLength": 6.5, "sepalWidth": 3.0, "petalLength": 5.8, "petalWidth": 2.2, "species": "virginica"},
+      {"sepalLength": 7.1, "sepalWidth": 3.0, "petalLength": 5.9, "petalWidth": 2.1, "species": "virginica"},
+      {"sepalLength": 6.7, "sepalWidth": 2.5, "petalLength": 5.8, "petalWidth": 1.8, "species": "virginica"},
+      {"sepalLength": 5.2, "sepalWidth": 2.7, "petalLength": 3.9, "petalWidth": 1.4, "species": "versicolor"},
+      {"sepalLength": 5.0, "sepalWidth": 3.4, "petalLength": 1.5, "petalWidth": 0.2, "species": "setosa"},
+      {"sepalLength": 4.9, "sepalWidth": 2.4, "petalLength": 3.3, "petalWidth": 1.0, "species": "versicolor"},
+      {"sepalLength": 6.5, "sepalWidth": 2.8, "petalLength": 4.6, "petalWidth": 1.5, "species": "versicolor"},
+      {"sepalLength": 5.4, "sepalWidth": 3.9, "petalLength": 1.7, "petalWidth": 0.4, "species": "setosa"},
+      {"sepalLength": 6.3, "sepalWidth": 3.3, "petalLength": 4.7, "petalWidth": 1.6, "species": "versicolor"},
+      {"sepalLength": 6.4, "sepalWidth": 3.2, "petalLength": 4.5, "petalWidth": 1.5, "species": "versicolor"},
+      {"sepalLength": 6.6, "sepalWidth": 2.9, "petalLength": 4.6, "petalWidth": 1.3, "species": "versicolor"},
+      {"sepalLength": 5.8, "sepalWidth": 2.7, "petalLength": 5.1, "petalWidth": 1.9, "species": "virginica"},
+      {"sepalLength": 6.3, "sepalWidth": 2.9, "petalLength": 5.6, "petalWidth": 1.8, "species": "virginica"},
+      {"sepalLength": 7.6, "sepalWidth": 3.0, "petalLength": 6.6, "petalWidth": 2.1, "species": "virginica"},
+      {"sepalLength": 5.1, "sepalWidth": 3.5, "petalLength": 1.4, "petalWidth": 0.2, "species": "setosa"},
+      {"sepalLength": 7.3, "sepalWidth": 2.9, "petalLength": 6.3, "petalWidth": 1.8, "species": "virginica"},
+      {"sepalLength": 4.7, "sepalWidth": 3.2, "petalLength": 1.3, "petalWidth": 0.2, "species": "setosa"},
+      {"sepalLength": 6.9, "sepalWidth": 3.1, "petalLength": 4.9, "petalWidth": 1.5, "species": "versicolor"},
+      {"sepalLength": 7.2, "sepalWidth": 3.6, "petalLength": 6.1, "petalWidth": 2.5, "species": "virginica"},
+      {"sepalLength": 4.4, "sepalWidth": 2.9, "petalLength": 1.4, "petalWidth": 0.2, "species": "setosa"},
+      {"sepalLength": 5.5, "sepalWidth": 2.3, "petalLength": 4.0, "petalWidth": 1.3, "species": "versicolor"},
+      {"sepalLength": 4.6, "sepalWidth": 3.4, "petalLength": 1.4, "petalWidth": 0.3, "species": "setosa"},
+      {"sepalLength": 6.3, "sepalWidth": 3.3, "petalLength": 6.0, "petalWidth": 2.5, "species": "virginica"},
+      {"sepalLength": 4.9, "sepalWidth": 2.5, "petalLength": 4.5, "petalWidth": 1.7, "species": "virginica"},
+      {"sepalLength": 5.7, "sepalWidth": 2.8, "petalLength": 4.5, "petalWidth": 1.3, "species": "versicolor"}
+    ]
 
 #. Skopiuj do pliku ``iris.json`` dane z listingu :numref:`listing-json-assignment-objects`
 #. Stwórz klasy ``Setosa``, ``Virginica``, ``Versicolor``
@@ -472,11 +512,6 @@ Serializing custom class to JSON
     * Serializacja danych
     * Korzystanie z biblioteki JSON
     * Serializowanie zagnieżdżonych obiektów
-
-.. literalinclude:: assignment/json-objects.py
-    :name: listing-json-assignment-objects
-    :language: python
-    :caption: Sample Python data JSON
 
 Deserialize data from GITHub
 ----------------------------
