@@ -10,9 +10,17 @@ Bibliography
     :all:
 
 
-Figures
-=======
-.. bibliography:: figures.bib
-    :style: unsrt
-    :labelprefix: Fig
+Images
+======
+.. bibliography:: images.bib
+    :style: alpha
+    :labelprefix: Img
+    :all:
+
+
+Video
+=====
+.. bibliography:: video.bib
+    :style: alpha
+    :labelprefix: Video
     :all:

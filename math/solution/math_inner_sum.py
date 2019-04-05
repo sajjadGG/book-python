@@ -1,21 +1,24 @@
-import random
+from random import seed, randint
 from pprint import pprint
 
-random.seed(0)
-matrix = []
+
+seed(0)
+result = []
 total = 0
 
+SIZE_X = 16
+SIZE_Y = 16
 
-for x in range(0, 16):
-    matrix.append([])
 
-    for y in range(0, 16):
-        losowa = random.randint(0, 9)
-        matrix[x].append(losowa)
+for x in range(SIZE_X):
+    result.append([])
+
+    for y in range(SIZE_Y):
+        result[x].append(randint(0, 9))
 
         if 6 <= x < 10 and 6 <= y < 10:
-            total += matrix[x][y]
+            total += result[x][y]
 
 
-pprint(matrix)
+pprint(result)
 pprint(total)

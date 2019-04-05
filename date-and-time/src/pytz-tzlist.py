@@ -1,7 +1,7 @@
-from pytz import utc, timezone
+from pytz import timezone, utc as UTC
 
 
-utc = utc
-eastern = timezone('US/Eastern')
-warsaw = timezone('Europe/Warsaw')
-bajkonur = timezone('Asia/Almaty')
+UTC = UTC
+EST = timezone('US/Eastern')
+WAW = timezone('Europe/Warsaw')
+BAJKONUR = timezone('Asia/Almaty')
