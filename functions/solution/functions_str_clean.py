@@ -21,6 +21,7 @@ def clean(text):
     text = text.replace('.', '')
     text = text.replace('UL', '')
     text = text.replace('TRZECIEGO', 'III')
+    text = text.replace('3ego', 'III')
     text = text.replace('3', 'III')
     text = text.strip()
     text = text.title().replace('Iii', 'III')

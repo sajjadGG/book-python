@@ -329,7 +329,7 @@ Cleaning text input
         >>> clean('ul.Mieszka II')
         'Mieszka II'
         """
-        return
+        return text
 
 :The whys and wherefores:
     * Definiowanie i uruchamianie funkcji
@@ -352,7 +352,7 @@ Aviation numbers
 
 .. code-block:: python
 
-    def aviation_numbers(number):
+    def aviation_numbers(number: float) -> str:
         """
         >>> aviation_numbers(1969)
         'one niner six niner'
@@ -375,7 +375,7 @@ Aviation numbers
         >>> aviation_numbers(-49.35)
         'minus fower niner and tree fife'
         """
-        return
+        return number
 
 :The whys and wherefores:
     * Definiowanie i uruchamianie funkcji
@@ -408,7 +408,7 @@ Number to human readable
 
 .. code-block:: python
 
-    def aviation_numbers(number):
+    def aviation_numbers(number: float) -> str:
         """
         >>> aviation_numbers(1969)
         'one thousand nine hundred sixty nine'
@@ -431,7 +431,7 @@ Number to human readable
         >>> aviation_numbers(-49.35)
         'minus fower niner and tree fife'
         """
-        return
+        return number
 
 :The whys and wherefores:
     * Definiowanie i uruchamianie funkcji
