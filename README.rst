@@ -3,7 +3,7 @@ Python 3: from None to Machine Learning
 #######################################
 
 
-.. tip:: This book is free and open source! The most up-to-date version is always at http://python.astrotech.io
+.. tip:: This book is free and open source at http://python.astrotech.io
 
 .. figure:: _img/AstroMatt.jpg
     :align: left
