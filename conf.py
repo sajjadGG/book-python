@@ -2,9 +2,19 @@ author = 'Matt Harasymczuk'
 email = 'matt@astrotech.io'
 project = 'Python 3: from None to Machine Learning'
 description = "Matt Harasymczuk's Python 3: from None to Machine Learning"
+language = 'en'
+todo_emit_warnings = False
+todo_include_todos = True
 
+numfig_format = {
+    'section': 'Section %s.',
+    'figure': 'Figure %s.',
+    'table': 'Table %s.',
+    'code-block': 'Listing %s.',
+}
 
 extensions = [
+    'sphinxcontrib.bibtex',
     'sphinx.ext.doctest',
     'sphinx.ext.todo',
     'sphinx.ext.imgmath',
@@ -15,14 +25,11 @@ extensions = [
     # 'sphinx.ext.autodoc',
     # 'sphinx.ext.intersphinx',
     # 'sphinx.ext.graphviz',
-    'sphinxcontrib.bibtex',
     # 'sphinxjp.themes.revealjs',
     # 'nbsphinx',
     # 'IPython.sphinxext.ipython_console_highlighting',
 ]
 
-todo_emit_warnings = False
-todo_include_todos = True
 exclude_patterns = [
     '_book',
 ]
@@ -59,14 +66,6 @@ exclude_patterns = exclude_patterns + [
     'TODO.rst',
 ]
 
-numfig_format = {
-    'section': 'Sect. %s.',
-    'figure': 'Fig. %s.',
-    'table': 'Tab. %s.',
-    'code-block': 'Code Listing %s.',
-}
-
-language = 'en'
 source_directory = '.'
 master_doc = 'index'
 highlight_language = 'python3'
@@ -98,7 +97,11 @@ html_sidebars = {'sidebar': ['localtoc.html', 'sourcelink.html', 'searchbox.html
 html_show_sphinx = False
 html_context = {
     'css_files': [
-        '_static/theme-overrides.css',
+        '_static/screen.css',
+        '_static/print.css',
+    ],
+    'script_files': [
+        '_static/onload.js',
     ],
 }
 

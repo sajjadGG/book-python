@@ -268,10 +268,8 @@ String cleaning
 * Filename: ``str_cleaning.py``
 * Lines of code to write: 11 lines
 * Estimated time of completion: 15 min
-* Input Data: :numref:`listing-str-methods-cleaning`
 
 .. code-block:: python
-    :name: listing-str-methods-cleaning
 
     expected = 'Jana III Sobieskiego'
 

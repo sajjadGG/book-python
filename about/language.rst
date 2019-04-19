@@ -136,7 +136,7 @@ Python Console (REPL)
     >>> print('Ehlo World!')
     Ehlo World!
 
-.. warning:: In documentation and books you may find ``>>>`` and ``...`` at the beginning of code listing lines
+.. note:: In documentation and books you may find ``>>>`` and ``...`` at the beginning of code listing lines
 
     .. code-block:: python
 
