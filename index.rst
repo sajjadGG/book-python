@@ -190,6 +190,17 @@ Object Oriented Programming
     /object-oriented-programming/advanced.rst
     /object-oriented-programming/metaclass.rst
 
+*****
+Tests
+*****
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Tests
+
+    /tests/doctest.rst
+    /tests/unittest.rst
+
 *************************
 Good Engineering Practice
 *************************
@@ -207,8 +218,6 @@ Good Engineering Practice
     /good-engineering-practice/warnings.rst
     /good-engineering-practice/debugging-basic.rst
     /good-engineering-practice/debugging-advanced.rst
-    /good-engineering-practice/doctest.rst
-    /good-engineering-practice/unittest.rst
     /good-engineering-practice/introspection.rst
     /good-engineering-practice/documentation.rst
 

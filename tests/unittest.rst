@@ -56,6 +56,11 @@ Example 2
     :language: python
     :caption: Przykład pokrycia klasy za pomocą ``unittest``
 
+Example 3
+---------
+.. literalinclude:: src/unittest-example-3.py
+    :language: python
+    :caption: Przykład pokrycia klasy za pomocą ``unittest``
 
 Assignments
 ===========
