@@ -1,6 +1,6 @@
-***********
-Unittesting
-***********
+************
+Unit Testing
+************
 
 .. figure:: img/geek-and-poke-development-driven-tests.jpg
     :align: center
