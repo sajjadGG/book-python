@@ -201,6 +201,28 @@ Tests
     /tests/doctest.rst
     /tests/unittest.rst
 
+*****
+CI/CD
+*****
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: CI/CD
+
+    /ci-cd/tools.rst
+    /ci-cd/pipelines.rst
+    /ci-cd/code-style.rst
+    /ci-cd/coverage.rst
+    /ci-cd/db-schema-migration.rst
+    /ci-cd/distributing.rst
+    /ci-cd/security.rst
+    /ci-cd/smoke-test.rst
+    /ci-cd/static-analysis.rst
+    /ci-cd/test-automation.rst
+    /ci-cd/type-checking.rst
+    /ci-cd/mutation-testing.rst
+
+
 *************************
 Good Engineering Practice
 *************************
@@ -212,25 +234,31 @@ Good Engineering Practice
     /good-engineering-practice/pep8.rst
     /good-engineering-practice/pep20.rst
     /good-engineering-practice/code-smells.rst
-    /good-engineering-practice/python-wat.rst
     /good-engineering-practice/type-annotation.rst
-    /good-engineering-practice/logging.rst
-    /good-engineering-practice/warnings.rst
-    /good-engineering-practice/debugging-basic.rst
-    /good-engineering-practice/debugging-advanced.rst
-    /good-engineering-practice/introspection.rst
-    /good-engineering-practice/documentation.rst
 
-**********************************
-CI/CD, Versioning and Distributing
-**********************************
+*********
+Debugging
+*********
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: CI/CD, Versioning and Distributing
+    :caption: Debugging
 
-    /distributing/cicd-tools.rst
-    /distributing/cicd-pipelines.rst
+    /debugging/python-wat.rst
+    /debugging/logging.rst
+    /debugging/warnings.rst
+    /debugging/debugging-basic.rst
+    /debugging/debugging-advanced.rst
+    /debugging/introspection.rst
+
+************
+Distributing
+************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Distributing
+
     /distributing/venv.rst
     /distributing/zipapp.rst
     /distributing/distributing-packages.rst

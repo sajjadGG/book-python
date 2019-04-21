@@ -19,13 +19,20 @@ Static Analysis
     "``SonarLint``", ""
 
 
-Security and Packaging
-======================
-.. csv-table:: Security and Packaging
+Security
+========
+.. csv-table:: Security
     :header: "Tool", "Description"
 
     "``safety``", ""
     "``bandit``", ""
+
+
+Distributing and Packaging
+==========================
+.. csv-table:: Distributing and Packaging
+    :header: "Tool", "Description"
+
     "``pipenv``", "Frozen env"
     "``venv``", ""
 

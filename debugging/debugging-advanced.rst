@@ -204,11 +204,50 @@ Assignment
 
 Own ``doctest``
 ---------------
-#. Dla kodu z listingu :numref:`listing-debugging-docstring`
+* Filename: ``debugging_doctest.py``
+* Lines of code to write: 60 lines
+* Estimated time of completion: 30 min
+
+#. Dla kodu z listingu
 #. Napisz własną uproszczoną implementację ``doctest``
 #. Dla uproszczenia przyjmij, że zwracana zawsze będzie tylko jedna linia (bezpośrednio poniżej testu)
 
-.. literalinclude:: src/debugging-docstring.py
-    :name: listing-debugging-docstring
-    :language: python
+.. code-block:: python
     :caption: Debugging with docstring
+
+    class Astronaut:
+        """
+        Nowy astronauta
+
+        >>> astro = Astronaut(name='Jan Twardowski')
+        >>> astro.say_hello()
+        'hello Jan Twardowski'
+        """
+
+        def __init__(self, name):
+            """
+            Initial metod
+            """
+            self.name = name
+
+        def say_hello(self, lang='en'):
+            """
+            wyświetla przywitanie w zalezności od języka
+
+            >>> Astronaut(name='José Jiménez').say_hello(lang='es')
+            ¡hola José Jiménez!
+
+            >>> Astronaut(name='Иван Иванович').say_hello(lang='ru')
+            здраствуйте Иван Иванович!
+            """
+            if lang == 'en':
+                print(f'hello {self.first_name}')
+            elif lang == 'es':
+                print(f'¡hola {self.first_name}!')
+            elif lang == 'ru':
+                print(f'здраствуйте {self.first_name}!')
+            else:
+                print(f'witaj {self.first_name}!')
+
+
+    astronaut = Astronaut(name='José Jiménez')
