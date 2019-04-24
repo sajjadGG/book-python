@@ -216,7 +216,7 @@ CI/CD
     /ci-cd/db-schema-migration.rst
     /ci-cd/distributing.rst
     /ci-cd/security.rst
-    /ci-cd/smoke-test.rst
+    /ci-cd/smoke-tests.rst
     /ci-cd/static-analysis.rst
     /ci-cd/test-automation.rst
     /ci-cd/type-checking.rst
