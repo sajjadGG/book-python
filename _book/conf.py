@@ -44,7 +44,7 @@ import sys
 
 source_directory = 'book'
 highlight_language = 'python3'
-pygments_style = 'vs'
+pygments_style = 'default'
 numfig = True
 templates_path = ['_templates']
 master_doc = 'index'
