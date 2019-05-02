@@ -614,6 +614,8 @@ Hash
 * Sprawdzenie odbywa się przez porównanie wartości ``id()`` dla obiektu
 * Najczęściej służy do sprawdzania czy coś jest ``None``
 
+.. warning:: In Python 3.8 the compiler produces a ``SyntaxWarning`` when identity checks (``is`` and ``is not``) are used with certain types of literals (e.g. ``str``, ``int``). These can often work by accident in *CPython*, but are not guaranteed by the language spec. The warning advises users to use equality tests (``==`` and ``!=``) instead.
+
 Good
 ----
 .. code-block:: python

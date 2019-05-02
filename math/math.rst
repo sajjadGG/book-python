@@ -82,8 +82,8 @@ Linear Algebra
     math.sqrt()
     math.pow(x, y)
 
-    # Return the Euclidean distance, sqrt(x*x + y*y).
-    math.hypot(x, y)
+    math.hypot()    # 2D, since Python 3.8 also multiple dimensions
+    math.dist()     # Euclidean distance, Since Python 3.8
 
 Trigonometry
 ------------

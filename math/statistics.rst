@@ -10,12 +10,17 @@ Statistics
 
     "Function", "Description"
     "``statistics.mean()``", "Arithmetic mean ('average') of data"
+    "``statistics.fmean()``", "faster, floating point variant of ``statistics.mean()``, since Python 3.8"
     "``statistics.harmonic_mean()``", "Harmonic mean of data"
     "``statistics.median()``", "Median (middle value) of data"
     "``statistics.median_low()``", "Low median of data"
     "``statistics.median_high()``", "High median of data"
     "``statistics.median_grouped()``", "Median, or 50th percentile, of grouped data"
     "``statistics.mode()``", "Mode (most common value) of discrete data"
+    "``statistics.multimode()``", "returns a list of the most common values, since Python 3.8"
+    "``statistics.geometric_mean()``", "Since Python 3.8"
+    "``statistics.quantiles()``", "divides data or a distribution in to equiprobable intervals (e.g. quartiles, deciles, or percentiles), since Python 3.8"
+    "``statistics.NormalDist``", "tool for creating and manipulating normal distributions of a random variable"
 
 .. csv-table:: Measures of spread
     :header-rows: 1
@@ -25,6 +30,33 @@ Statistics
     "``statistics.pvariance()``", "Population variance of data"
     "``statistics.stdev()``", "Sample standard deviation of data"
     "``statistics.variance()``", "Sample variance of data"
+
+.. code-block:: python
+
+    temperature_feb = NormalDist.from_samples([4, 12, -3, 2, 7, 14])
+
+    temperature_feb.mean    # 6.0
+    temperature_feb.stdev   # 6.356099432828281
+
+    # Chance of being under 3 degrees
+    temperature_feb.cdf(3)  # 0.3184678262814532
+
+    # Relative chance of being 7 degrees versus 10 degrees
+    temperature_feb.pdf(7) / temperature_feb.pdf(10)  # 1.2039930378537762
+
+
+    el_niño = NormalDist(4, 2.5)
+
+    # Add in a climate effect
+    temperature_feb += el_niño
+
+    temperature_feb                 # NormalDist(mu=10.0, sigma=6.830080526611674)
+
+    # Convert to Fahrenheit
+    temperature_feb * (9/5) + 32    # NormalDist(mu=50.0, sigma=12.294144947901014)
+
+    # Generate random samples
+    temperature_feb.samples(3)      # [7.672102882379219, 12.000027119750287, 4.647488369766392]
 
 .. code-block:: python
 
