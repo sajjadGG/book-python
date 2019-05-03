@@ -44,7 +44,7 @@ import sys
 
 source_directory = 'book'
 highlight_language = 'python3'
-pygments_style = 'default'
+pygments_style = 'borland'
 numfig = True
 templates_path = ['_templates']
 master_doc = 'index'
