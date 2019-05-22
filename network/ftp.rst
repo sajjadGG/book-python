@@ -35,9 +35,9 @@ Methods
 Assignments
 ===========
 
-FTPS
-----
-* Filename: ``network_ftp_text.py``
+FTP Download
+------------
+* Filename: ``network_ftp_download.py``
 * Lines of code to write: 20 lines
 * Estimated time of completion: 25 min
 
@@ -52,9 +52,9 @@ FTPS
 #. Do katalogu ``files`` uploaduj plik ``imie-nazwisko.txt``
 #. Skorzystaj z Contex Managera do połączenia
 
-FTPS binary
------------
-* Filename: ``network_ftp_binary.py``
+FTP Upload
+----------
+* Filename: ``network_ftp_upload.py``
 * Lines of code to write: 20 lines
 * Estimated time of completion: 25 min
 

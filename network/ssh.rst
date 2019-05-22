@@ -43,7 +43,10 @@ Running commands
 ----------------
 .. code-block:: python
 
-    import paramiko, sys, getpass
+    import sys
+    import getpass
+    import paramiko
+
 
     hostname = sys.argv[1]
     username = sys.argv[2]
@@ -53,19 +56,98 @@ Running commands
     client = paramiko.SSHClient()
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy)
     client.connect(hostname, username=username, password=password)
-        for command in 'echo "Hello, world!"', 'uname', 'uptime':
-            stdin, stdout, stderr = client.exec_command(command)
-            stdin.close()
-            print(repr(stdout.read()))
-            stdout.close()
-            stderr.close()
+
+    commands = [
+        'echo "Hello, world!"',
+        'uname',
+        'uptime',
+    ]
+
+    for command in commands:
+        stdin, stdout, stderr = client.exec_command(command)
+        stdin.close()
+        print(repr(stdout.read()))
+        stdout.close()
+        stderr.close()
+
     client.close
+
+SFTP
+----
+.. code-block:: python
+
+    import sys
+    import paramiko
+
+    host = "example.com"
+    port = 22
+    password = "THEPASSWORD"
+    username = "THEUSERNAME"
+
+
+    transport = paramiko.Transport((host, port))
+    transport.connect(username = username, password = password)
+    sftp = paramiko.SFTPClient.from_transport(transport)
+
+    path_local = 'README.txt'
+    path_remote = '/tmp/README.txt'
+
+    sftp.put(path_local, path_remote)
+
+    sftp.close()
+    transport.close()
+
+
+``pysftp``
+==========
+.. code-block:: console
+
+    pip install pysftp
+
+.. code-block:: python
+
+    import pysftp
+    import sys
+
+
+    host = "example.com"
+    port = 22
+    password = "THEPASSWORD"
+    username = "THEUSERNAME"
+
+    path_local = 'README.txt'
+    path_remote = '/tmp/README.txt'
+
+
+    with pysftp.Connection(host, username=username, password=password) as sftp:
+        sftp.put(path_local, path_remote)
 
 
 ``fabric``
 ==========
 * http://www.fabfile.org/
 * https://pypi.python.org/pypi/Fabric3
+
+.. code-block:: console
+
+    pip install fabric
+
+Example
+-------
+.. code-block:: python
+
+    from fabric.api import *
+
+    env.hosts = ['THEHOST.com']
+    env.user = 'THEUSER'
+    env.password = 'THEPASSWORD'
+
+    def put_file(file):
+        put(file, './THETARGETDIRECTORY/')
+
+.. code-block:: console
+
+    fab -f fab_putfile.py put_file:file=./path/to/my/file
 
 Local
 -----
@@ -138,6 +220,21 @@ Failure handling
 
 Executing on remote host
 ------------------------
+.. code-block:: python
+
+    from fabric import SerialGroup
+
+    result = SerialGroup('web1', 'web2').run('hostname')
+    # web1
+    # web2
+
+    # it's a dict!
+    result.items()
+    # [
+    #   (<Connection host=web1>, <Result cmd='hostname' exited=0>),
+    #   ...
+    # ]
+
 .. code-block:: python
 
     from fabric.api import *
