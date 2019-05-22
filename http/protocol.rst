@@ -3,13 +3,31 @@ HTTP Protocol
 *************
 
 * Request vs Response
-* URI vs URL
+* URI vs URL vs URN
 * HTTP vs HTTPS
-* HTTP/1.1 vs HTTP/2.0
+* HTTP/1.1 vs HTTP/2.0 vs HTTP/3
 * Methods
 * Statuses
 * Headers
 
+URI vs URL vs URN
+=================
+* URIs identify
+* URLs locate;
+* Locators are also identifiers, so every URL is also a URI :cite:`URIvsURL`
+* There are URIs which are not URLs :cite:`URIvsURL`
+
+Examples
+
+    Roger Pate
+
+This is my name, which is an identifier. It is like a URI, but cannot be a URL, as it tells you nothing about my location or how to contact me. In this case it also happens to identify at least 5 other people in the USA alone.
+
+    4914 West Bay Street, Nassau, Bahamas
+
+This is a locator, which is an identifier for that physical location. It is like both a URL and URI (since all URLs are URIs), and also identifies me indirectly as "resident of..". In this case it uniquely identifies me, but that would change if I get a roommate.
+
+I say "like" because these examples do not follow the required syntax.
 
 HTTP Methods
 ============
