@@ -395,7 +395,8 @@ REST API
 * Estimated time of completion: 60 min
 
 #. Załóż darmowe konto na Github i potwierdź email
-#. W przeglądarce internetowej wygeneruj w swoim profilu token https://github.com/settings/tokens
+#. Wejdź na stronę internetową https://github.com/settings/tokens
+#. Wygeneruj w swoim profilu token (scope ``public_repo`` - Access public repositories)
 #. Używając biblioteki standardowej w Pythonie
 #. Zaciągnij informacje o repozytoriach użytkownika Django na https://github.com
 #. Każdy request uwierzytelnij za pomocą Basic Auth i swojego Access Tokena
@@ -414,21 +415,15 @@ REST API
     * Używanie biblioteki standardowej i bibliotek zewnętrznych
 
 :Hints:
-    .. code-block:: python
-
-        "name": "django",
-        "full_name": "django/django",
-
-        # wyszukaj "commits_url": ???
-
-    .. code-block:: rest
-
-        https://api.github.com/
-
-        GET /orgs/django/repos
-        GET /repos/django/django/commits
-
     .. code-block:: console
 
-        $ curl https://api.github.com/orgs/django/repos
-        $ curl https://api.github.com/repos/django/django/commits
+        $ curl -X GET https://api.github.com/orgs/django/repos
+        $ curl -X GET https://api.github.com/repos/django/django/commits
+
+    .. code-block:: python
+
+        ...
+        "name": "django",
+        "full_name": "django/django",
+        ...
+        # wyszukaj "commits_url"
