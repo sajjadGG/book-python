@@ -304,21 +304,15 @@ REST API
     * Używanie biblioteki standardowej i bibliotek zewnętrznych
 
 :Hints:
-    .. code-block:: python
-
-        "name": "django",
-        "full_name": "django/django",
-
-        # wyszukaj "commits_url": ???
-
-    .. code-block:: rest
-
-        https://api.github.com/
-
-        GET /orgs/django/repos
-        GET /repos/django/django/commits
-
     .. code-block:: console
 
-        $ curl https://api.github.com/orgs/django/repos
-        $ curl https://api.github.com/repos/django/django/commits
+        $ curl -X GET https://api.github.com/orgs/django/repos
+        $ curl -X GET https://api.github.com/repos/django/django/commits
+
+    .. code-block:: python
+
+        ...
+        "name": "django",
+        "full_name": "django/django",
+        ...
+        # wyszukaj "commits_url"
