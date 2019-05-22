@@ -289,7 +289,7 @@ REST API
 #. Używając biblioteki ``requests``
 #. Zaciągnij informacje o repozytoriach użytkownika Django na https://github.com
 #. Każdy request uwierzytelnij za pomocą Basic Auth i swojego Access Tokena
-#. Następnie z przeglądnij listę z poziomu Pythona i znajdź URL dla repozytorium ``django``
+#. Następnie przeglądnij listę z poziomu Pythona i znajdź URL dla repozytorium ``django``
 #. Przeglądnij to repozytorium i jego listę commitów
 #. Podaj datę i opis ostatniego commita
 #. Znajdź numery ID ticketów (``Fixed #...``) z issue trackera, które zostały rozwiązane w ostatnim miesiącu
