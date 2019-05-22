@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 
 import re
-import http.client
 import json
+from http.client import HTTPSConnection
 from http import HTTPStatus
 from base64 import b64encode
 from datetime import datetime
 import logging
 
 
-USERNAME = 'my_username'
-TOKEN = 'my_token'
+USERNAME = 'astromatt'
+TOKEN = '3208d19b7a843b5d35e1525aa51f185c874ae83b'
 
 
 auth = bytes(f'{USERNAME}:{TOKEN}', 'utf-8')
@@ -22,7 +22,7 @@ headers = {
     'Accept': 'application/json'
 }
 
-conn = http.client.HTTPSConnection(host="api.github.com", port=443)
+conn = HTTPSConnection(host="api.github.com", port=443)
 
 
 def GET(url):
@@ -37,16 +37,20 @@ def GET(url):
         raise ConnectionError(response.reason)
 
 
-repo = [repo for repo in GET('/orgs/django/repos') if repo['full_name'] == 'django/django'][0]
-url = repo['commits_url'].replace('{/sha}', '').replace('https://api.github.com', '')
+for repository in GET('/orgs/django/repos'):
+    if repository['full_name'] == 'django/django':
+        break
+
+
+url = repository['commits_url']
+url = url.replace('{/sha}', '')
+url = url.replace('https://api.github.com', '')
 
 commits = GET(url)
 date = commits[0]['commit']['author']['date']
 name = commits[0]['commit']['author']['name']
-date = datetime.strptime(date, '%Y-%m-%dT%H:%M:%S%z')
-print(f'Ostatni commit: {date} by {name}')
-
 messages = [commit['commit']['message'] for commit in commits]
+date = datetime.strptime(date, '%Y-%m-%dT%H:%M:%S%z')
 
 issues = set()
 
@@ -54,6 +58,7 @@ for msg in messages:
     tickets = re.findall(r'#([0-9]+)', msg, flags=re.MULTILINE)
     issues.update(tickets)
 
-print(issues)
+print(f'Last commit: {date} by {name}')
+print(f'Issues: {issues}')
 
 conn.close()
