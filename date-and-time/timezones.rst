@@ -46,7 +46,15 @@ Timezone aware
 
     from datetime import datetime, timezone
 
-    datetime(1957, 10, 4, 19, 28, 34, tzinfo=timezone.utc)
+    dt = datetime(1957, 10, 4, 19, 28, 34)
+    d.replace(tzinfo=timezone.utc)
+
+.. code-block:: python
+    :caption: Timezone aware datetime
+
+    from datetime import datetime, timezone
+
+    datetime.now(tz=timezone.utc)
 
 
 ``pytz``
