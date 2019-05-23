@@ -235,6 +235,7 @@ Good Engineering Practice
     /good-engineering-practice/pep20.rst
     /good-engineering-practice/code-smells.rst
     /good-engineering-practice/type-annotation.rst
+    /good-engineering-practice/documentation.rst
 
 *********
 Debugging
@@ -368,6 +369,7 @@ Network Transport
     :numbered:
     :caption: Network Transport
 
+    /network/osi-model.rst
     /network/interfaces.rst
     /network/routing.rst
     /network/socket.rst

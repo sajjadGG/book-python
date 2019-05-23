@@ -208,6 +208,8 @@ Example WSDL file
 
 Example WADL
 ------------
+* :cite:`DefinitionWADL`
+
 .. code-block:: xml
 
      <application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

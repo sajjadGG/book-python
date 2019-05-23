@@ -48,13 +48,13 @@ Lists all command functions
 
 .. csv-table:: Scapy functions
     :header: "Function", "Description"
-    :width: 30%, 70%
+    :widths: 30, 70
 
     "``IPID_count``", "Identify IP id values classes in a list of packets"
     "``arpcachepoison``", "Poison target's cache with (your MAC,victim's IP) couple"
     "``arping``", "Send ARP who-has requests to determine which hosts are up"
     "``arpleak``", "Exploit ARP leak flaws, like NetBSD-SA2017-002."
-    "``bind_layers``", "Bind 2 layers on some specific fields' values. It makes the packet being built  # noqa: E501"
+    "``bind_layers``", "Bind 2 layers on some specific fields' values. It makes the packet being built"
     "``bridge_and_sniff``", "Forward traffic between interfaces if1 and if2, sniff and return"
     "``chexdump``", "Build a per byte hexadecimal representation"
     "``computeNIGroupAddr``", "Compute the NI group Address. Can take a FQDN as input parameter"
@@ -63,8 +63,8 @@ Lists all command functions
     "``defrag``", "defrag(plist) -> ([not fragmented], [defragmented],"
     "``defragment``", "defragment(plist) -> plist defragmented as much as possible"
     "``dhcp_request``", "Send a DHCP discover request and return the answer"
-    "``dyndns_add``", "Send a DNS add message to a nameserver for "name" to have a new "rdata""
-    "``dyndns_del``", "Send a DNS delete message to a nameserver for "name""
+    "``dyndns_add``", "Send a DNS add message to a nameserver for 'name' to have a new 'rdata'"
+    "``dyndns_del``", "Send a DNS delete message to a nameserver for 'name'"
     "``etherleak``", "Exploit Etherleak flaw"
     "``explore``", "Function used to discover the Scapy layers and protocols."
     "``fletcher16_checkbytes``", "Calculates the Fletcher-16 checkbytes returned as 2 byte binary-string."
@@ -128,7 +128,7 @@ Graphical dumps (PDF, PS)
 -------------------------
 .. csv-table:: Graphical dumps (PDF, PS)
     :header: "Command", "Effect"
-    :widths: 30%, 70%
+    :widths: 30, 70
 
     "``raw(pkt)``", "assemble the packet"
     "``hexdump(pkt)``", "have a hexadecimal dump"
@@ -146,7 +146,7 @@ Generating sets of packets
 --------------------------
 .. csv-table:: Generating sets of packets
     :header: "Command", "Effect"
-    :widths: 30%, 70%
+    :widths: 30, 70
 
     "``summary()``", "displays a list of summaries of each packet"
     "``nsummary()``", "same as previous, with the packet number"
