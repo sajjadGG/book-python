@@ -1,6 +1,6 @@
-************
-DNS Protocol
-************
+***
+DNS
+***
 
 * https://yamakira.github.io/python-network-programming/protocols/dns/index.html
 

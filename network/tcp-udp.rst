@@ -35,16 +35,16 @@ Handshake
     :scale: 100%
     :align: center
 
-    TCP Hanshake Simple
+    TCP Handshake Simple
 
 .. figure:: img/tcp-handshake.png
     :scale: 50%
     :align: center
 
-    TCP Hanshake
+    TCP Handshake
 
 .. figure:: img/tcp-detailed.png
     :scale: 50%
     :align: center
 
-    TCP Hanshake Detailed
+    TCP Handshake Detailed

@@ -1,6 +1,6 @@
-************
-SSH Protocol
-************
+***
+SSH
+***
 
 
 ``paramiko``
@@ -72,8 +72,14 @@ Running commands
 
     client.close
 
+SCP
+---
+* File transfer over SSH
+
 SFTP
 ----
+* It is not FTPS
+
 .. code-block:: python
 
     import sys
