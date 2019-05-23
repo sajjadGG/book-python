@@ -350,7 +350,7 @@ Network
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Network and HTTP
+    :caption: Network
 
     /network/ftp.rst
     /network/imap.rst
