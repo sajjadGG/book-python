@@ -43,8 +43,60 @@ Install
 
     pip install celery
 
+Basic usage
+-----------
+#. Define task in ``tasks.py`` file by decorating function
+
+    .. code-block:: python
+        :caption: tasks.py
+
+        from celery import Celery
+
+        app = Celery('tasks', broker='pyamqp://guest@localhost//')
+
+        @app.task
+        def add(x, y):
+            return x + y
+
+#. Run *Celery* workers with ``tasks`` module (use verbose "info" logging)
+
+    .. code-block:: console
+
+        celery -A tasks worker --loglevel=info
+
+#. Call function asynchronously by using ``.delay()`` special method added by Celery
+
+    .. code-block:: python
+
+        from tasks import add
+
+        result = add.delay(4, 4)
+
+#. If you want to store results use:
+
+    .. code-block:: python
+
+        app = Celery('tasks', backend='rpc://', broker='pyamqp://')
+
+#. Check status
+
+    .. code-block:: python
+
+        result.ready()
+        # False
+
+        result.failed()
+        # False
+
+        result.successful()
+        # False
+
+        result.state       # PENDING -> STARTED -> SUCCESS
+        # 'PENDING'
+
 More info
 ---------
+* http://docs.celeryproject.org/en/latest/getting-started/first-steps-with-celery.html
 * https://www.youtube.com/watch?v=68QWZU_gCDA
 * https://www.youtube.com/watch?v=-ISgjBQDnhw
 
@@ -67,12 +119,20 @@ More info
 
 Install
 -------
-.. code-block:: console
+Using Docker:
 
-    echo "deb http://www.rabbitmq.com/debian/ testing main" >> /etc/apt/sources.list
-    curl http://www.rabbitmq.com/rabbitmq-signing-key-public.asc | sudo apt-key add -
-    sudo apt-get update
-    sudo apt-get install -y rabbitmq-server
+    .. code-block:: console
+
+        docker run -d -p 5462:5462 rabbitmq
+
+Ubuntu or Debian package:
+
+    .. code-block:: console
+
+        echo "deb http://www.rabbitmq.com/debian/ testing main" >> /etc/apt/sources.list
+        curl http://www.rabbitmq.com/rabbitmq-signing-key-public.asc | sudo apt-key add -
+        sudo apt-get update
+        sudo apt-get install -y rabbitmq-server
 
 Config
 ------
