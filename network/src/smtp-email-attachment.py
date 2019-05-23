@@ -5,12 +5,12 @@ from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 
 
+SMTP_USER = 'myusername@gmail.com'
+SMTP_PASS = 'mypassword'
 SMTP_HOST = 'smtp.gmail.com'
 SMTP_PORT = 465
-SMTP_USER = 'firstname.lastname@gmail.com'
-SMTP_PASS = 'mypassword'
 
-FROM = 'firstname.lastname@gmail.com'
+FROM = 'myusername@gmail.com'
 RCPT = ['he@example.com', 'she@example.com']
 
 
@@ -19,16 +19,16 @@ msg['Subject'] = 'I have a picture'
 msg['From'] = FROM
 msg['To'] = ', '.join(RCPT)
 
-txt = MIMEText('I just bought a new camera.')
+txt = MIMEText('This is the email body.')
 msg.attach(txt)
 
 
-filepath = '/path/to/image/file'
+FILE = '/path/to/image/file.png'
 
-with open(filepath, mode='rb') as file:
+with open(FILE, mode='rb') as file:
     img = MIMEImage(file.read())
 
-img.add_header('Content-Disposition', 'attachment', filename=os.path.basename(filepath))
+img.add_header('Content-Disposition', 'attachment', filename=os.path.basename(FILE))
 msg.attach(img)
 
 

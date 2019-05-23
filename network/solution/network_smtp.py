@@ -1,3 +1,9 @@
+"""
+apt install mailutils
+
+# Add following line to file /etc/postfix/master.cf
+smtps     inet  n       -       y       -       -       smtpd
+"""
 import ssl
 import smtplib
 
