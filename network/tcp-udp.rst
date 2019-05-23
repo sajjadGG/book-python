@@ -10,8 +10,3 @@ TCP
     :align: center
 
     TCP Hanshake
-
-
-``scapy``
-=========
-* http://www.secdev.org/projects/scapy/
