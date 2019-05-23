@@ -71,12 +71,12 @@ Getting list of IPv4 addresses excluding loopback and virtualbox adapters
          iface_details = netifaces.ifaddresses(iface)
 
          if iface_details.has_key(netifaces.AF_INET):
-             print iface_details[netifaces.AF_INET]
+            info = iface_details[netifaces.AF_INET]
+            print(info)
 
     # [{'broadcast': '192.168.1.255', 'netmask': '255.255.255.0', 'addr': '192.168.1.100'}]
     # [{'broadcast': '192.168.1.255', 'netmask': '255.255.255.0', 'addr': '192.168.1.101'}]
 
-
 More examples
-=============
+-------------
 * https://www.programcreek.com/python/example/81895/netifaces.interfaces
