@@ -121,7 +121,7 @@ Reading PCAP files
 
 .. code-block:: python
 
-    a = rdpcap("/spare/captures/isakmp.cap")
+    data = rdpcap("/spare/captures/isakmp.cap")
     # <isakmp.cap: UDP:721 TCP:0 ICMP:0 Other:0>
 
 Graphical dumps (PDF, PS)
@@ -181,7 +181,7 @@ List of possible fields
 IP packages
 ===========
 * Packets are constructed as layers of protocols, loosely analogous to the *OSI* model, which can be manipulated independently or glued together.
-*``IP()`` object represents an *IPv4* header.
+* ``IP()`` object represents an *IPv4* header.
 
 Create package
 --------------
@@ -209,7 +209,7 @@ Modify package
 Show package
 ------------
 .. code-block:: python
-    :caption:  Use the``show()`` method of an object to display all of its fields.
+    :caption:  Use the ``show()`` method of an object to display all of its fields.
 
     ip = IP(src="192.168.0.1")
     ip.show()
@@ -282,15 +282,14 @@ Add TCP layer to IP package
 
 Ethernet frames
 ===============
-
 .. code-block:: python
-    :caption:``scapy`` also supports Ethernet and IEEE 802.11 at layer two
+    :caption: ``scapy`` also supports Ethernet and IEEE 802.11 at layer two
 
     Ether() / Dot1Q() / IP()
     # <Ether  type=0x8100 |<Dot1Q  type=0x800 |<IP  |>>>
 
 .. code-block:: python
-    :caption:``scapy`` also supports Ethernet and IEEE 802.11 at layer two
+    :caption: ``scapy`` also supports Ethernet and IEEE 802.11 at layer two
 
     Dot11() / IP()
     # <Dot11  |<IP  |>>
@@ -301,7 +300,7 @@ Sending packets
 
 OSI layer three
 ---------------
-*``send()`` function if transmitting at layer three (i.e. without a layer two header)
+* ``send()`` function if transmitting at layer three (i.e. without a layer two header)
 
 .. code-block:: python
 
@@ -314,8 +313,8 @@ OSI layer three
 
 OSI layer two
 -------------
-*``sendp()`` function if transmitting at layer two
-* Values for blank fields, such as the source and destination addresses in the Ethernet header, are populated automatically by``scapy`` where possible.
+* ``sendp()`` function if transmitting at layer two
+* Values for blank fields, such as the source and destination addresses in the Ethernet header, are populated automatically by ``scapy`` where possible.
 
 .. code-block:: python
 
@@ -329,12 +328,12 @@ OSI layer two
 
 Send and Receive
 ================
-*``scapy`` has the ability to listen for responses to packets it sends, such as *ICMP* echo requests (pings).
+* ``scapy`` has the ability to listen for responses to packets it sends, such as *ICMP* echo requests (pings).
 
 One packet
 ----------
 * Build an *IP* packet carrying an *ICMP* header
-* Use the``sr()`` (send/receive) function to transmit the packet and record any response
+* Use the ``sr()`` (send/receive) function to transmit the packet and record any response
 
 .. code-block:: python
 
@@ -352,7 +351,7 @@ One packet
 Many packets
 ------------
 * Send and listen for responses to multiple copies of the same packet
-* Use the``srloop()`` function and specify a count of packets to send
+* Use the ``srloop()`` function and specify a count of packets to send
 
 .. code-block:: python
 
@@ -371,7 +370,7 @@ Many packets
 
 SYN Scans
 =========
-*``SA`` or``SYN-ACK`` flags indicating an open port.
+* ``SA`` or ``SYN-ACK`` flags indicating an open port.
 
 Scan one port
 -------------

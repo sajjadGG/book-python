@@ -8,6 +8,8 @@ IP
 
 IPv4
 ----
+* ``socket.AF_INET``
+
 .. figure:: img/tcp-ipv4-packet.png
     :scale: 50%
     :align: center
@@ -16,6 +18,8 @@ IPv4
 
 IPv6
 ----
+* ``socket.AF_INET6``
+
 .. figure:: img/tcp-ipv6-packet.png
     :scale: 50%
     :align: center

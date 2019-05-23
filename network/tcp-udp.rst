@@ -5,6 +5,8 @@ TCP/UDP
 
 UDP
 ===
+* ``socket.SOCK_DGRAM``
+
 .. figure:: img/udp.jpg
     :scale: 100%
     :align: center
@@ -14,6 +16,7 @@ UDP
 
 TCP
 ===
+* ``socket.SOCK_STREAM``
 
 Header
 ------
@@ -24,7 +27,7 @@ Header
     TCP packet
 
 .. figure:: img/tcp-header.png
-    :scale: 100%
+    :scale: 75%
     :align: center
 
     TCP packet
@@ -43,7 +46,7 @@ Handshake
 
     TCP Handshake
 
-.. figure:: img/tcp-detailed.png
+.. figure:: img/tcp-handshake-detailed.png
     :scale: 50%
     :align: center
 
