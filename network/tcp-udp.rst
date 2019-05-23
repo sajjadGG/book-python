@@ -3,21 +3,31 @@ TCP/UDP
 *******
 
 
+UDP
+===
+.. figure:: img/udp.jpg
+    :scale: 100%
+    :align: center
+
+    UDP packet
+
+
 TCP
 ===
+
+Header
+------
 .. figure:: img/tcp.jpg
-    :scale: 50%
+    :scale: 100%
     :align: center
 
     TCP packet
 
-Header
-------
 .. figure:: img/tcp-header.png
-    :scale: 75%
+    :scale: 100%
     :align: center
 
-    TCP Header
+    TCP packet
 
 Handshake
 ---------
@@ -38,12 +48,3 @@ Handshake
     :align: center
 
     TCP Hanshake Detailed
-
-
-UDP
-===
-.. figure:: img/udp.jpg
-    :scale: 75%
-    :align: center
-
-    UDP packet
