@@ -19,8 +19,7 @@ Basic operations
     import netifaces
 
     dir(netifaces)
-    # [ ... snipped ...
-    # 'address_families', 'gateways', 'ifaddresses', 'interfaces', 'version']
+    # [ 'address_families', 'gateways', 'ifaddresses', 'interfaces', 'version', ...]
 
 List network interfaces
 -----------------------
@@ -54,11 +53,16 @@ List Gateways
     import netifaces
 
     netifaces.gateways()
-    # {'default': {2: ('192.168.1.1', 'eth3')}, 2: [('192.168.1.1', 'eth3', True)]}
+    # {
+    #   'default': {2: ('192.168.1.1', 'eth3')},
+    #   2: [('192.168.1.1', 'eth3', True)],
+    # }
 
 Getting list of IPv4 addresses excluding loopback and virtualbox adapters
 -------------------------------------------------------------------------
 .. code-block:: python
+
+    import netifaces
 
     for iface in netifaces.interfaces():
          if iface == 'lo' or iface.startswith('vbox'):
@@ -72,4 +76,7 @@ Getting list of IPv4 addresses excluding loopback and virtualbox adapters
     # [{'broadcast': '192.168.1.255', 'netmask': '255.255.255.0', 'addr': '192.168.1.100'}]
     # [{'broadcast': '192.168.1.255', 'netmask': '255.255.255.0', 'addr': '192.168.1.101'}]
 
-.. note:: More examples: https://www.programcreek.com/python/example/81895/netifaces.interfaces
+
+More examples
+=============
+* https://www.programcreek.com/python/example/81895/netifaces.interfaces
