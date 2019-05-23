@@ -358,6 +358,7 @@ Network Protocols
     /network/pop3.rst
     /network/ldap.rst
     /network/ssh.rst
+    /network/dns.rst
 
 *****************
 Network Transport
@@ -367,13 +368,12 @@ Network Transport
     :numbered:
     :caption: Network Transport
 
+    /network/interfaces.rst
+    /network/routing.rst
     /network/socket.rst
     /network/ssl.rst
     /network/ip.rst
-    /network/dns.rst
-    /network/interfaces.rst
     /network/tcp-udp.rst
-    /network/routing.rst
     /network/scapy.rst
     /network/libraries.rst
     /network/botnet.rst

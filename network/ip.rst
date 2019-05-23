@@ -3,10 +3,29 @@ IPv4/IPv6
 *********
 
 
-* https://yamakira.github.io/python-network-programming/libraries/netaddr/index.html
+IP
+==
 
-``ipaddress`` (stdlib)
-======================
+IPv4
+----
+.. figure:: img/tcp-ipv4-packet.png
+    :scale: 50%
+    :align: center
+
+    IPv4 packet
+
+IPv6
+----
+.. figure:: img/tcp-ipv6-packet.png
+    :scale: 50%
+    :align: center
+
+    IPv6 packet
+
+
+``ipaddress``
+=============
+* In stdlib since Python 3.3
 
 IP Addresses
 ------------
@@ -239,8 +258,10 @@ Interface
     # '192.0.2.5/0.0.0.255'
 
 
-``netaddr`` (3rd party)
-=======================
+``netaddr``
+===========
+* 3rd party
+* https://yamakira.github.io/python-network-programming/libraries/netaddr/index.html
 
 Installation
 ------------
@@ -338,18 +359,18 @@ List operations on IPNetwork object
 .. code-block:: python
 
     ip_range = IPNetwork('192.0.2.16/29')
-    
+
     ip_range_list = list(ip_range)
-    
+
     len(ip_range_list)
     # 8
 
     ip_range_list
     # [IPAddress('192.0.2.16'), IPAddress('192.0.2.17'), ...snipped... IPAddress('192.0.2.23')]
-    
+
     ip_range_list[6]        # indexing
     # IPAddress('192.0.2.22')
-    
+
     ip_range_list[2:5]      # slicing
     # [IPAddress('192.0.2.18'), IPAddress('192.0.2.19'), IPAddress('192.0.2.20')]
 
@@ -358,7 +379,7 @@ IPRange
 .. code-block:: python
 
     ip_range = IPRange('192.168.1.0', '192.168.1.20')
-    
+
     for i in ip_range:
          print(i)
 
@@ -373,13 +394,13 @@ IP sets
 
     IPSet(['192.0.2.0'])
     # IPSet(['192.0.2.0/32'])
-    
+
     IPSet([IPAddress('192.0.2.0')])
     # IPSet(['192.0.2.0/32'])
-    
+
     IPSet([IPNetwork('192.0.2.0/24')])
     # IPSet(['192.0.2.0/24'])
-    
+
     IPSet(IPRange("10.0.0.0", "10.0.1.31"))
     # IPSet(['10.0.0.0/24', '10.0.1.0/27'])
 
@@ -398,16 +419,16 @@ Adding and removing set elements
 .. code-block:: python
 
     from netaddr import IPSet
-    
+
     s1 = IPSet()
 
     s1.add('192.168.1.0/30')
     s1.size
     # 4
-    
+
     '192.168.1.3' in s1
     # True
-    
+
     s1.remove('192.168.1.3')
     s1.size
     # 3
@@ -415,24 +436,24 @@ Adding and removing set elements
 .. code-block:: python
 
     scan1 = IPSet(['192.168.1.0/30'])
-    
+
     scan1
     # IPSet(['192.168.1.0/30'])
-    
+
     scan1.size
     # 4
-    
+
     scan2 = IPSet(['192.168.1.0/31'])
-    
+
     scan2.size
     # 2
-    
+
     scan1 | scan2
     # IPSet(['192.168.1.0/30'])
-    
+
     scan1 & scan2
     # IPSet(['192.168.1.0/31'])
-    
+
     scan1 ^ scan2
     # IPSet(['192.168.1.2/31'])
 
@@ -466,12 +487,12 @@ Layer 2 addressing (MAC)
 .. code-block:: python
 
     oui = mac.oui
-    
+
     dir(oui)
     # [ ... snipped ... 'records', 'reg_count', 'registration']
-    
+
     oui.registration().org
     # 'Dell Inc'
-    
+
     oui.registration().address
     # ['one dell way', 'MS:RR5-45', 'Round rock Texas 78682', 'UNITED STATES']
