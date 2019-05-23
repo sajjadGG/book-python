@@ -19,7 +19,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
         received = conn.recv(1024).decode()
         print(f'From: {addr}, received: "{received}"')
 
-        # Reply to client
+        print(f'Reply to client: {RESPONSE}')
         conn.sendall(RESPONSE.encode())
 
         if not received:

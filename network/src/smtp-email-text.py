@@ -2,20 +2,34 @@ import smtplib
 from email.mime.text import MIMEText
 
 
-USER = 'myusername@gmail.com'
-PASS = 'mypassword'
-HOST = 'smtp.gmail.com'
-PORT = 465
+SMTP_HOST = 'smtp.gmail.com'
+SMTP_PORT = 465
+SMTP_USER = 'myusername@gmail.com'
+SMTP_PASS = 'mypassword'
 
-FROM = 'ME@EXAMPLE.COM'
-RCPT = ['HE@EXAMPLE.COM', 'SHE@EXAMPLE.COM']
+EMAIL_FROM = 'myusername@gmail.com'
+EMAIL_TO = ['user1@example.com', 'user2@example.com']
+EMAIL_SUBJECT = 'My Subject'
+EMAIL_BODY = 'My Email Body'
 
-msg = MIMEText('This is my email body.')
-msg['Subject'] = 'Hello'
-msg['From'] = FROM
-msg['To'] = ', '.join(RCPT)
 
-server = smtplib.SMTP_SSL(HOST, PORT)
-server.login(USER, PASS)
-server.sendmail(FROM, RCPT, msg.as_string())
+msg = MIMEText(EMAIL_BODY)
+msg['Subject'] = EMAIL_SUBJECT
+msg['From'] = EMAIL_FROM
+msg['To'] = ', '.join(EMAIL_TO)
+
+
+server = smtplib.SMTP_SSL(
+    host=SMTP_HOST,
+    port=SMTP_PORT)
+
+server.login(
+    user=SMTP_USER,
+    password=SMTP_PASS)
+
+server.sendmail(
+    from_addr=EMAIL_FROM,
+    to_addrs=EMAIL_TO,
+    msg=msg.as_string())
+
 server.quit()

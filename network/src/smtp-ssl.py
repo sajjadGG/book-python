@@ -2,13 +2,15 @@ import ssl
 import smtplib
 
 
-SMTP_USER = 'myusername'
-SMTP_PASS = 'mypassword'
 SMTP_HOST = 'localhost'
 SMTP_PORT = 465
+SMTP_USER = 'myusername'
+SMTP_PASS = 'mypassword'
 
 
-smtp = smtplib.SMTP_SSL(SMTP_HOST, port=SMTP_PORT)
+smtp = smtplib.SMTP_SSL(
+    host=SMTP_HOST,
+    port=SMTP_PORT)
 
 context = ssl.create_default_context()
 

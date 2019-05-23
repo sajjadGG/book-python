@@ -25,7 +25,7 @@ def client(ip, port, message):
 
 
 if __name__ == '__main__':
-    
+
     with ThreadingTCPServer((HOST, PORT), MyHandler) as server:
         ip, port = server.server_address
 

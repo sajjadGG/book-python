@@ -1,10 +1,12 @@
 from ftplib import FTP_TLS
 
-HOSTNAME = 'ftp.pureftpd.org'
-USERNAME = 'anonymous'
-PASSWORD = ''
 
-with FTP_TLS(host=HOSTNAME, user=USERNAME, passwd=PASSWORD, timeout=30) as ftps:
+FTP_HOST = 'ftp.us.debian.org'
+FTP_USER = 'anonymous'
+FTP_PASS = ''
+
+
+with FTP_TLS(host=FTP_HOST, user=FTP_USER, passwd=FTP_PASS, timeout=30) as ftps:
     ftps.dir()
 
 # drwxr-xr-x   18 1000       1008             1024 Jul 21  2016 .

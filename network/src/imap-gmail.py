@@ -1,4 +1,3 @@
-import getpass
 import imaplib
 import email
 from pprint import pprint
@@ -8,14 +7,24 @@ from datetime import datetime
 
 # Gmail requires to generate One-Time App Password
 # https://security.google.com/settings/security/apppasswords
-USERNAME = getpass.getuser()
-PASSWORD = getpass.getpass()
-HOST = 'imap.gmail.com'
-PORT = 993
+IMAP4_HOST = 'imap.gmail.com'
+IMAP4_PORT = 993
+IMAP4_USER = 'myusername'
+IMAP4_PASS = 'mypassword'
+IMAP4_MAILBOX = 'INBOX'
 
-imap = imaplib.IMAP4_SSL(HOST, PORT)
-imap.login(USERNAME, PASSWORD)
-imap.select('INBOX')
+
+imap = imaplib.IMAP4_SSL(
+    host=IMAP4_HOST,
+    port=IMAP4_PORT)
+
+imap.login(
+    user=IMAP4_USER,
+    password=IMAP4_PASS)
+
+imap.select(
+    mailbox=IMAP4_MAILBOX,
+    readonly=False)
 
 
 def get_str(text):
@@ -41,10 +50,10 @@ def get_body(msg):
         return msg.get_payload(decode=True).decode('utf-8')
 
 
-status, data = imap.search(None, 'ALL')
+status, result = imap.search(None, 'ALL')
 # status: OK
-# data: [b'1 2 3 4 ...']
-messages = data[1][0].split()
+# result: [b'1 2 3 4 ...']
+messages = result[1][0].split()
 
 for msgid in messages:
     status, data = imap.fetch(msgid, '(RFC822)')

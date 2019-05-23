@@ -1,12 +1,12 @@
 from ftplib import FTP
 
 
-HOSTNAME = 'ftp.pureftpd.org'
-USERNAME = 'anonymous'
-PASSWORD = ''
+FTP_HOST = 'ftp.pureftpd.org'
+FTP_USER = 'anonymous'
+FTP_PASS = ''
 
 
-with FTP(host=HOSTNAME, user=USERNAME, passwd=PASSWORD, timeout=30) as ftp:
+with FTP(host=FTP_HOST, user=FTP_USER, passwd=FTP_PASS, timeout=30) as ftp:
     ftp.dir()
 
 # drwxr-xr-x   18 1000       1008             1024 Jul 21  2016 .

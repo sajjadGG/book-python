@@ -5,21 +5,23 @@ from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
 
 
-SMTP_USER = 'myusername@gmail.com'
-SMTP_PASS = 'mypassword'
 SMTP_HOST = 'smtp.gmail.com'
 SMTP_PORT = 465
+SMTP_USER = 'myusername@gmail.com'
+SMTP_PASS = 'mypassword'
 
-FROM = 'myusername@gmail.com'
-RCPT = ['he@example.com', 'she@example.com']
+EMAIL_FROM = 'myusername@gmail.com'
+EMAIL_TO = ['user1@example.com', 'user2@example.com']
+EMAIL_SUBJECT = 'My Subject'
+EMAIL_BODY = 'My Email Body'
 
 
 msg = MIMEMultipart()
-msg['Subject'] = 'I have a picture'
-msg['From'] = FROM
-msg['To'] = ', '.join(RCPT)
+msg['Subject'] = EMAIL_SUBJECT
+msg['From'] = EMAIL_FROM
+msg['To'] = ', '.join(EMAIL_TO)
 
-txt = MIMEText('This is the email body.')
+txt = MIMEText(EMAIL_BODY)
 msg.attach(txt)
 
 
@@ -32,7 +34,17 @@ img.add_header('Content-Disposition', 'attachment', filename=os.path.basename(FI
 msg.attach(img)
 
 
-server = smtplib.SMTP_SSL(SMTP_HOST, SMTP_PORT)
-server.login(SMTP_USER, SMTP_PASS)
-server.sendmail(FROM, RCPT, msg.as_string())
+server = smtplib.SMTP_SSL(
+    host=SMTP_HOST,
+    port=SMTP_PORT)
+
+server.login(
+    user=SMTP_USER,
+    password=SMTP_PASS)
+
+server.sendmail(
+    from_addr=EMAIL_FROM,
+    to_addrs=EMAIL_TO,
+    msg=msg.as_string())
+
 server.quit()

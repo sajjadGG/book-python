@@ -1,10 +1,12 @@
 from ftplib import FTP
 
-HOSTNAME = 'ftp.us.debian.org'
-USERNAME = 'anonymous'
-PASSWORD = ''
 
-with FTP(host=HOSTNAME, user=USERNAME, passwd=PASSWORD, timeout=30) as ftp:
+FTP_HOST = 'ftp.us.debian.org'
+FTP_USER = 'anonymous'
+FTP_PASS = ''
+
+
+with FTP(host=FTP_HOST, user=FTP_USER, passwd=FTP_PASS, timeout=30) as ftp:
     ftp.cwd('debian')  # change into "debian" directory
 
     ftp.dir()  # list directory contents
