@@ -5,6 +5,9 @@ from pprint import pprint
 from quopri import decodestring
 from datetime import datetime
 
+
+# Gmail requires to generate One-Time App Password
+# https://security.google.com/settings/security/apppasswords
 USERNAME = getpass.getuser()
 PASSWORD = getpass.getpass()
 HOST = 'imap.gmail.com'

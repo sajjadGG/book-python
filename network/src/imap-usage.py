@@ -1,27 +1,25 @@
-import getpass
 import imaplib
 
-HOST = 'imap.gmail.com'
-PORT = 993
-USERNAME = getpass.getuser()
 
-# Gmail requires to generate One-Time App Password
-# https://security.google.com/settings/security/apppasswords
-PASSWORD = getpass.getpass()
+HOSTNAME = 'localhost'
+USERNAME = 'myusername'
+PASSWORD = 'mypassword'
 
-imap = imaplib.IMAP4_SSL(HOST, PORT)
+
+imap = imaplib.IMAP4_SSL(HOSTNAME)
 imap.login(USERNAME, PASSWORD)
 imap.select('INBOX')
 
-typ, data = imap.search(None, 'ALL')
+data = imap.search(None, 'ALL')
+messages = data[1][0].split()
 
-for num in data[0].split():
-    typ, data = imap.fetch(num, '(RFC822)')
-    data = data[0][1]
+for msgid in messages:
+    data = imap.fetch(msgid, '(RFC822)')[1]
+    email = data[0][1].decode()
 
-    print(f'Message: {num}')
-    print(f'Data: {data}')
+    print(email)
     print('-' * 30)
+
 
 imap.close()
 imap.logout()

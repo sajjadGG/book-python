@@ -2,17 +2,20 @@ import poplib
 
 
 HOSTNAME = 'localhost'
-PORT = poplib.POP3_SSL_PORT
 USERNAME = 'myusername'
 PASSWORD = 'mypassword'
 
 
-server = poplib.POP3_SSL(host=HOSTNAME, port=PORT, timeout=30)
+server = poplib.POP3_SSL(host=HOSTNAME, timeout=30)
 server.user(USERNAME)
 server.pass_(PASSWORD)
 
-for message in server.list()[1]:
+status, messages, length = server.list()
+
+for message in messages:
     msgid, length = message.split()
     status, content, length = server.retr(int(msgid))
-    content = list(line.decode() for line in content)
-    print(content)
+    email = '\r\n'.join(line.decode() for line in content)
+
+    print(email)
+    print('-' * 30)
