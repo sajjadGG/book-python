@@ -96,6 +96,6 @@ if __name__ == '__main__':
     # cache = CacheMemory(expiration=timedelta(minutes=2))
 
     http = HTTPGateway(cache)
-    html = http.get('http://python.astrotech.io')
 
+    html = http.get('http://python.astrotech.io')
     print(html)
