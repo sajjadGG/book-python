@@ -344,26 +344,37 @@ HTTP and Web
     /http/paas.rst
     /http/soap-wsdl.rst
 
-*******
-Network
-*******
+*****************
+Network Protocols
+*****************
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Network
+    :caption: Network Protocols
 
     /network/ftp.rst
     /network/imap.rst
     /network/smtp.rst
     /network/pop3.rst
     /network/ldap.rst
-    /network/dns.rst
     /network/ssh.rst
-    /network/interfaces.rst
-    /network/ip.rst
-    /network/tcp-udp.rst
+
+*****************
+Network Transport
+*****************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Network Transport
+
     /network/socket.rst
     /network/ssl.rst
+    /network/ip.rst
+    /network/dns.rst
+    /network/interfaces.rst
+    /network/tcp-udp.rst
+    /network/routing.rst
+    /network/scapy.rst
     /network/libraries.rst
     /network/botnet.rst
 
