@@ -1,5 +1,4 @@
-*********
-``scapy``
+*********``scapy``
 *********
 
 
@@ -113,6 +112,52 @@ Lists all command functions
     "``wireshark``", "Run wireshark on a list of packets"
     "``wrpcap``", "Write a list of packets to a pcap file"
 
+Reading PCAP files
+------------------
+* Read packets from a *pcap* file
+* Write packets to a *pcap* file.
+
+.. code-block:: python
+
+    a = rdpcap("/spare/captures/isakmp.cap")
+    # <isakmp.cap: UDP:721 TCP:0 ICMP:0 Other:0>
+
+Graphical dumps (PDF, PS)
+-------------------------
+.. csv-table:: Graphical dumps (PDF, PS)
+    :header: "Command", "Effect"
+    :widths: 30%, 70%
+
+    "``raw(pkt)``", "assemble the packet"
+    "``hexdump(pkt)``", "have a hexadecimal dump"
+    "``ls(pkt)``", "have the list of fields values"
+    "``pkt.summary()``", "for a one-line summary"
+    "``pkt.show()``", "for a developed view of the packet"
+    "``pkt.show2()``", "same as show but on the assembled packet (checksum is calculated, for instance)"
+    "``pkt.sprintf()``", "fills a format string with fields values of the packet"
+    "``pkt.decode_payload_as()``", "changes the way the payload is decoded"
+    "``pkt.psdump()``", "draws a PostScript diagram with explained dissection"
+    "``pkt.pdfdump()``", "draws a PDF with explained dissection"
+    "``pkt.command()``", "return a Scapy command that can generate the packet"
+
+Generating sets of packets
+--------------------------
+.. csv-table:: Generating sets of packets
+    :header: "Command", "Effect"
+    :widths: 30%, 70%
+
+    "``summary()``", "displays a list of summaries of each packet"
+    "``nsummary()``", "same as previous, with the packet number"
+    "``conversations()``", "displays a graph of conversations"
+    "``show()``", "displays the preferred representation (usually nsummary())"
+    "``filter()``", "returns a packet list filtered with a lambda function"
+    "``hexdump()``", "returns a hexdump of all packets"
+    "``hexraw()``", "returns a hexdump of the Raw layer of all packets"
+    "``padding()``", "returns a hexdump of packets with padding"
+    "``nzpadding()``", "returns a hexdump of packets with non-zero padding"
+    "``plot()``", "plots a lambda function applied to the packet list"
+    "``make table()``", "displays a table according to a lambda function"
+
 List of possible fields
 -----------------------
 .. code-block:: python
@@ -134,7 +179,7 @@ List of possible fields
 IP packages
 ===========
 * Packets are constructed as layers of protocols, loosely analogous to the *OSI* model, which can be manipulated independently or glued together.
-* ``IP()`` object represents an *IPv4* header.
+*``IP()`` object represents an *IPv4* header.
 
 Create package
 --------------
@@ -162,7 +207,7 @@ Modify package
 Show package
 ------------
 .. code-block:: python
-    :caption:  Use the ``show()`` method of an object to display all of its fields.
+    :caption:  Use the``show()`` method of an object to display all of its fields.
 
     ip = IP(src="192.168.0.1")
     ip.show()
@@ -237,13 +282,13 @@ Ethernet frames
 ===============
 
 .. code-block:: python
-    :caption: ``scapy`` also supports Ethernet and IEEE 802.11 at layer two
+    :caption:``scapy`` also supports Ethernet and IEEE 802.11 at layer two
 
     Ether() / Dot1Q() / IP()
     # <Ether  type=0x8100 |<Dot1Q  type=0x800 |<IP  |>>>
 
 .. code-block:: python
-    :caption: ``scapy`` also supports Ethernet and IEEE 802.11 at layer two
+    :caption:``scapy`` also supports Ethernet and IEEE 802.11 at layer two
 
     Dot11() / IP()
     # <Dot11  |<IP  |>>
@@ -254,7 +299,7 @@ Sending packets
 
 OSI layer three
 ---------------
-* ``send()`` function if transmitting at layer three (i.e. without a layer two header)
+*``send()`` function if transmitting at layer three (i.e. without a layer two header)
 
 .. code-block:: python
 
@@ -267,8 +312,8 @@ OSI layer three
 
 OSI layer two
 -------------
-* ``sendp()`` function if transmitting at layer two
-* Values for blank fields, such as the source and destination addresses in the Ethernet header, are populated automatically by ``scapy`` where possible.
+*``sendp()`` function if transmitting at layer two
+* Values for blank fields, such as the source and destination addresses in the Ethernet header, are populated automatically by``scapy`` where possible.
 
 .. code-block:: python
 
@@ -282,12 +327,12 @@ OSI layer two
 
 Send and Receive
 ================
-* ``scapy`` has the ability to listen for responses to packets it sends, such as *ICMP* echo requests (pings).
+*``scapy`` has the ability to listen for responses to packets it sends, such as *ICMP* echo requests (pings).
 
 One packet
 ----------
 * Build an *IP* packet carrying an *ICMP* header
-* Use the ``sr()`` (send/receive) function to transmit the packet and record any response
+* Use the``sr()`` (send/receive) function to transmit the packet and record any response
 
 .. code-block:: python
 
@@ -305,7 +350,7 @@ One packet
 Many packets
 ------------
 * Send and listen for responses to multiple copies of the same packet
-* Use the ``srloop()`` function and specify a count of packets to send
+* Use the``srloop()`` function and specify a count of packets to send
 
 .. code-block:: python
 
@@ -320,3 +365,59 @@ Many packets
     # Sent 3 packets, received 3 packets. 100.0% hits.
     # (<Results: TCP:0 UDP:0 ICMP:3 Other:0>,
     #  <PacketList: TCP:0 UDP:0 ICMP:0 Other:0>)
+
+
+SYN Scans
+=========
+*``SA`` or``SYN-ACK`` flags indicating an open port.
+
+Scan one port
+-------------
+.. code-block:: python
+    :caption: Scan one port
+
+    ip = IP(dst="python.astrotech.io")
+    tcp = TCP(dport=80, flags="S")
+
+    sr1(ip/tcp)
+    # Begin emission:
+    # Finished sending 1 packets.
+    #
+    # Received 4 packets, got 1 answers, remaining 0 packets
+    # <IP  version=4 ihl=5 tos=0x0 len=44 id=0 flags= frag=0 ttl=58 proto=tcp chksum=0x7e29 src=104.18.228.122 dst=172.20.10.2 |<TCP  sport=http dport=ftp_data seq=19296319 ack=1 dataofs=6 reserved=0 flags=SA window=29200 chksum=0xb1cc urgptr=0 options=[('MSS', 1408)] |<Padding  load='z*\xc2f\x87\xad\x93\xc5' |>>>
+
+.. code-block:: python
+    :caption: Scan one port
+
+    ip = IP(dst='35.158.227.45')
+    tcp = TCP(dport=21, flags="S")
+
+    sr(ip/tcp)
+    # Begin emission:
+    # Finished sending 1 packets.
+    #
+    # Received 4 packets, got 1 answers, remaining 0 packets
+    # (<Results: TCP:1 UDP:0 ICMP:0 Other:0>,
+    #  <Unanswered: TCP:0 UDP:0 ICMP:0 Other:0>)
+
+    sr1(ip/tcp)
+    # Begin emission:
+    # Finished sending 1 packets.
+    #
+    # Received 2 packets, got 1 answers, remaining 0 packets
+    # <IP  version=4 ihl=5 tos=0x0 len=44 id=0 flags= frag=0 ttl=64 proto=tcp chksum=0xbdea src=35.158.227.45 dst=172.20.10.2 |<TCP  sport=ftp dport=ftp_data seq=952757507 ack=1 dataofs=6 reserved=0 flags=SA window=65535 chksum=0xb56f urgptr=0 options=[('MSS', 1410)] |<Padding  load='\x16\xd2e\xaf\xa16\xd2\x1b' |>>>
+
+Scan port range
+---------------
+.. code-block:: python
+    :caption: Scan port range
+
+    ip = IP(dst="python.astrotech.io")
+    tcp = TCP(sport=666, dport=(440,443), flags="S")
+
+    sr(ip/tcp)
+
+
+Advanced examples
+=================
+* https://scapy.readthedocs.io/en/latest/usage.html
