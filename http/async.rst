@@ -76,7 +76,7 @@ Basic usage
 
     .. code-block:: python
 
-        app = Celery('tasks', backend='rpc://', broker='pyamqp://')
+        app = Celery('tasks', backend='db+sqlite:///results.sqlite', broker='amqp://')
 
 #. Check status
 
