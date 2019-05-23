@@ -344,6 +344,7 @@ HTTP and Web
     /http/jinja.rst
     /http/paas.rst
     /http/soap-wsdl.rst
+    /http/async.rst
 
 *****************
 Network Protocols

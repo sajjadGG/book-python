@@ -191,10 +191,3 @@ IMAP4 Client
 * But it also provides a set of powerful features that enables you to build distributed applications rapidly and effortlessly.
 * Pyro is a pure Python library and runs on many different platforms and Python versions.
 
-
-``Celery``
-==========
-
-
-``RabbitMQ``
-============
