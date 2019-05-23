@@ -44,10 +44,13 @@ def get_body(msg):
 status, data = imap.search(None, 'ALL')
 # status: OK
 # data: [b'1 2 3 4 ...']
+messages = data[1][0].split()
 
-for num in data[0].split():
-    status, data = imap.fetch(num, '(RFC822)')
-    mail = email.message_from_string(data[0][1].decode())
+for msgid in messages:
+    status, data = imap.fetch(msgid, '(RFC822)')
+    mail = data[0][1].decode()
+    mail = email.message_from_string(mail)
+
     headers = dict(mail._headers)
     mail = {
         'to': get_str(headers['To']),
