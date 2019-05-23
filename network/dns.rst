@@ -40,7 +40,10 @@ Basic DNS queries
     # 1541631181.7326112
 
     print(answer.response.answer)
-    # [<DNS python.astrotech.io. IN CNAME RRset>, <DNS readthedocs.io. IN MX RRset>]
+    # [
+    #   <DNS python.astrotech.io. IN CNAME RRset>,
+    #   <DNS readthedocs.io. IN MX RRset>
+    # ]
 
     print(answer.rrset)
     # readthedocs.io. 71 IN MX 10 aspmx3.googlemail.com.
@@ -70,17 +73,27 @@ Basic DNS queries
 
 
     for record in records:
-        answer = dns.resolver.query(name, record, raise_on_no_answer=False)
+        answer = dns.resolver.query(name, record)
+        print(answer.rrset)
 
-        if answer.rrset is not None:
-            print(answer.rrset)
-
+    # readthedocs.io. 377 IN A 104.18.231.122
+    # readthedocs.io. 377 IN A 104.18.229.122
+    # ...
+    # readthedocs.io. 377 IN AAAA 2606:4700::6812:e57a
+    # readthedocs.io. 377 IN AAAA 2606:4700::6812:e37a
+    # ...
+    # readthedocs.io. 377 IN MX 10 aspmx2.googlemail.com.
+    # readthedocs.io. 377 IN MX 1 aspmx.l.google.com.
+    # ...
+    # readthedocs.io. 377 IN TXT "google-site-verification=..."
+    # readthedocs.io. 377 IN TXT "google-site-verification=..."
+    # readthedocs.io. 4502 IN SOA ivan.ns.cloudflare.com. dns.cloudflare.com. 2030876750 10000 2400 604800 3600
 
 Zone transfer
 -------------
-* DNS Zone transfer is the process where a DNS server passes a copy of part of it's database (which is called a "zone") to another DNS server.
-* DNS zone transfer, also sometimes known by the inducing DNS query type AXFR, is a type of DNS transaction.
-* It is one of the many mechanisms available for administrators to replicate DNS databases across a set of DNS servers.
+* *DNS Zone transfer* is the process where a *DNS* server passes a copy of part of it's database (which is called a "zone") to another *DNS* server.
+* *DNS zone transfer*, also sometimes known by the inducing *DNS* query type *AXFR*, is a type of *DNS* transaction.
+* It is one of the many mechanisms to replicate *DNS* databases across a set of *DNS* servers.
 
 .. code-block:: python
 
@@ -93,34 +106,37 @@ Zone transfer
     names.sort()
 
     for n in names:
-        print z[n].to_text(n)
+        print(z[n].to_text(n))
 
 Reverse DNS lookup (PTR record)
 -------------------------------
-* Reverse DNS resolution (rDNS) is the determination of a domain name associated with an IP address via querying DNS (the reverse of the usual “forward” DNS lookup of an IP from a domain name.)
-* To do a reverse lookup of the IP address 8.8.4.4 the PTR record for the domain name 4.4.8.8.in-addr.arpa would be looked up, and found to point to google-public-dns-b.google.com.
+* Reverse *DNS* resolution (*rDNS*)
+* Determination of a domain name associated with an *IP* address via querying *DNS*
+* Checks *PTR* record
+
+#. Reverse lookup of the *IP* address ``8.8.4.4``
+#. *PTR* (record for the domain name ``4.4.8.8.in-addr.arpa``) would be looked up
+#. Found to point to ``google-public-dns-b.google.com``
 
 .. code-block:: python
 
-    from dns import reversename
+    import dns.reversename
 
 
-    domain_address = reversename.from_address('8.8.4.4')
+    domain_address = dns.reversename.from_address('8.8.4.4')
+    # <DNS name 4.4.8.8.in-addr.arpa.>
 
-    print(domain_address)
-    # 4.4.8.8.in-addr.arpa.
-
-    ip_address = reversename.to_address(domain_address)
-
-    print(ip_address)
+    ip_address = dns.reversename.to_address(domain_address)
     # 8.8.4.4
 
 .. code-block:: python
 
-    from dns import resolver
+    import dns.resolver
+    import dns.reversename
 
 
-    domain_name = str(resolver.query(domain_address,"PTR")[0])
+    domain_address = dns.reversename.from_address('8.8.4.4')
+    # <DNS name 4.4.8.8.in-addr.arpa.>
 
-    print(domain_name)
+    domain_name = str(dns.resolver.query(domain_address, 'PTR')[0])
     # google-public-dns-b.google.com.
