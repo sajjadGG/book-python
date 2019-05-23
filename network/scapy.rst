@@ -2,7 +2,7 @@
 *********
 
 
-*``scapy`` is a Python framework for crafting and transmitting arbitrary packets
+* ``scapy`` is a Python framework for crafting and transmitting arbitrary packets
 * http://www.secdev.org/projects/scapy/
 * http://packetlife.net/blog/2011/may/23/introduction-scapy/
 
