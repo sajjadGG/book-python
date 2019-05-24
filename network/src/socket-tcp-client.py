@@ -1,17 +1,18 @@
 import socket
 
 
-HOST = '127.0.0.1'
-PORT = 1337
-DATA = 'Hello World'
+SERVER_HOST = '127.0.0.1'
+SERVER_PORT = 1337
+PAYLOAD = 'Hello World'
 
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
-    print(f'Connecting to {HOST}:{PORT}/TCP')
-    sock.connect((HOST, PORT))
 
-    print(f'Sending: "{DATA}"')
-    sock.sendall(DATA.encode())
+    print(f'Connecting to {SERVER_HOST}:{SERVER_PORT}/TCP')
+    sock.connect((SERVER_HOST, SERVER_PORT))
+
+    print(f'Sending: "{PAYLOAD}"')
+    sock.sendall(PAYLOAD.encode())
 
     data = sock.recv(1024).decode()
     print(f'Received: "{data}"')
