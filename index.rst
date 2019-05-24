@@ -211,8 +211,11 @@ CI/CD
 
     /ci-cd/tools.rst
     /ci-cd/pipelines.rst
+    /ci-cd/lint.rst
+    /ci-cd/behavioral.rst
     /ci-cd/code-style.rst
     /ci-cd/coverage.rst
+    /ci-cd/i18n.rst
     /ci-cd/db-schema-migration.rst
     /ci-cd/distributing.rst
     /ci-cd/security.rst
@@ -220,6 +223,7 @@ CI/CD
     /ci-cd/static-analysis.rst
     /ci-cd/test-automation.rst
     /ci-cd/type-checking.rst
+    /ci-cd/ui.rst
     /ci-cd/mutation-testing.rst
 
 

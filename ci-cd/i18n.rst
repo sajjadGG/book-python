@@ -1,0 +1,20 @@
+********************
+Internationalization
+********************
+
+
+Translation
+===========
+
+``gettext``
+-----------
+
+``locale``
+----------
+
+Transifex
+---------
+* https://www.transifex.com
+
+PoEdit
+------
