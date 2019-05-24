@@ -309,12 +309,12 @@ Host
 
 .. figure:: img/ssh-pssh-1.jpg
     :align: center
-    :scale: 75%
+    :scale: 100%
 
-.. figure:: img/ssh-pssh-2.jpg
+.. figure:: img/ssh-pssh-2.png
     :align: center
-    :scale: 50%
+    :scale: 75%
 
 .. figure:: img/ssh-pssh-3.png
     :align: center
-    :scale: 75%
+    :scale: 100%
