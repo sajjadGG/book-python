@@ -1,10 +1,9 @@
-import queue
-import threading
-import time
+from queue import Queue
+from threading import Thread, Lock
+from time import sleep
 
 
-class MyThread(threading.Thread):
-
+class MyThread(Thread):
     def __init__(self, thread_name, work_queue):
         self.thread_name = thread_name
         self.work_queue = work_queue
@@ -16,7 +15,7 @@ class MyThread(threading.Thread):
         while not exit_flag:
             lock.acquire()
 
-            if not work_queue.empty():
+            if not self.work_queue.empty():
                 data = work_queue.get()
                 lock.release()
 
@@ -25,14 +24,14 @@ class MyThread(threading.Thread):
             else:
                 lock.release()
 
-            time.sleep(2)
+            sleep(1)
 
         print(f'Exiting {self.thread_name}')
 
 
 exit_flag = 0
-lock = threading.Lock()
-work_queue = queue.Queue()
+lock = Lock()
+work_queue = Queue()
 running_threads = []
 
 # Create new threads

@@ -1,28 +1,43 @@
-import queue
-import logging
-import threading
+import subprocess
+from shlex import shlex
+from queue import Queue
+from threading import Timer
 
-work_queue = queue.Queue()
+TIMEOUT = 2.0
+DELAY = 5.0
+TODO = [
+    'ping python.astrotech.io',
+    'ls -la',
+    'echo "hello world"',
+    'cat /etc/passwd',
+]
+
+work_queue = Queue()
 
 
-def hello():
+def run():
     while True:
         cmd = work_queue.get()
-        print(cmd)
+        cmd = shlex(cmd)
+
+        try:
+            subprocess.run(cmd, timeout=TIMEOUT, shell=True)
+        except subprocess.TimeoutExpired:
+            print('Timeout')
+
         work_queue.task_done()
 
 
-t = threading.Timer(1.0, hello)
+t = Timer(DELAY, run)
 t.start()
 
-
 # Zapełnij kolejkę
-for todo in ['ping', 'ls -la', 'echo "hello world"', 'cat /etc/passwd']:
+for todo in TODO:
     work_queue.put(todo)
 
 # wait to complete all tasks
 print('before join')
-t.join(timeout=5.0)
+t.join(timeout=TIMEOUT)
 print('afer join')
 
 print('done.')

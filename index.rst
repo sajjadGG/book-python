@@ -298,6 +298,7 @@ Concurrency
     :numbered:
     :caption: Concurrency
 
+    /concurrency/queues.rst
     /concurrency/threading.rst
     /concurrency/multiprocessing.rst
     /concurrency/async.rst
