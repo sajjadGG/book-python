@@ -122,3 +122,28 @@ Forking
 References
 ==========
 * https://realpython.com/python-sockets/
+
+
+Assignments
+===========
+
+Heartbeat
+---------
+* Filename: ``socket_heartbeat_client.py`` and ``socket_heartbeat_server.py``
+* Lines of code to write: 20 lines
+* Estimated time of completion: 20 min
+
+#. Stwórz klienta i serwer Heart Beat
+#. Zarówno klient jak i serwer ma być uruchamiany w wątkach
+#. Serwer ma przyjmować komunikaty UDP na porcie 1337
+#. Komunikacja ma odbywać się za pomocą protokołu JSON
+#. Klient ma mieć informację o swoim adresie IP i PORT
+#. Klient ma co 5 sekund wysyłać informację do serwera o swoim IP i PORT
+#. Wyświetl na ekranie:
+
+    - datę UTC przyjścia pakietu,
+    - IP i PORT przesłany przez klienta
+
+:Hints:
+    * ``threading.Timer(frequency: int, fn: Callable).start()``
+    * ``socketserver.UDPServer``
