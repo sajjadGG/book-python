@@ -497,6 +497,18 @@ Custom objects
     p = Point(x=1, y=2)
     print(f'{p:2D}')
 
+Quick and easy debugging
+------------------------
+* since Python 3.8
+* ``f'{expr=}'`` expands to the text of the expression, an equal sign, then the repr of the evaluated expression
+
+.. code-block:: python
+
+    x = 3
+    print(f'{x*9 + 15=}')
+    # x*9 + 15=42
+
+
 Więcej informacji
 =================
 * https://pyformat.info - Formatowanie stringów w Python
