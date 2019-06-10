@@ -286,17 +286,19 @@ Iris
 * Input data: https://raw.githubusercontent.com/AstroMatt/book-python/master/functions/data/iris.csv
 
 #. Otwórz link w przeglądarce i skopiuj zawartość do pliku na dysku o nazwie ``iris.csv``
-#. Stwórz funkcję ``print_iris(sepal_length, sepal_width, *args, **kwargs)``, która wyświetli zawartość wszystkich argumentów za pomocą ``locals()``
-#. Sparsuj zawartość pliku ``iris.csv`` odrzucając nagłówek
-#. Dla każdego rekordu:
+#. Z pliku ``iris.csv`` odseparuj nagłówek i dane
+#. Z nagłówka odrzuć rekord ``species``
+#. Stwórz funkcję ``print_iris(species, **pomiary)``, która wyświetli zawartość wszystkich argumentów za pomocą ``locals()``
+#. Dla każdego rekordu w danych:
 
     #. Usuń białe spacje
     #. Podziel po przecinku ``,``
     #. Wyniki podziału zapisz do dwóch zmiennych:
 
-        * ``features: List[float]`` - pomiary
-        * ``labels: Dict[str, str]`` - key: słowo ``species``, value: nazwa gatunku
+        * ``pomiary: Dict[str, float]`` - pomiary
+        * ``gatunek: str`` - nazwa gatunku
 
-    #. Odpalaj funkcję ``print_iris()``, podając wartości ``features`` i ``labels``
-    #. Pomiary mają być podane pozycyjnie (``*``), a gatunek nazwanie (``**``)
+    #. Odpalaj funkcję ``print_iris()``, podając wartości ``pomiary`` i ``gatunek``
+    #. ``gatunek`` ma być podany pozycyjnie
+    #. ``pomiary`` mają być podane nazwanie
 

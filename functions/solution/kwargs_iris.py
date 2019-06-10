@@ -1,12 +1,13 @@
-def print_iris(sepal_length, sepal_width, *args, **kwargs):
+def print_iris(species, **pomiary):
     print(locals())
 
 
 with open(r'../data/iris.csv') as file:
     header, *data = file.readlines()
+    *header, _ = header.split(',')
 
     for line in data:
-        *features, labels = line.strip().split(',')
-        labels = {'species': labels}
-
-        print_iris(*features, **labels)
+        *features, label = line.strip().split(',')
+        features = map(float, features)
+        pomiary = zip(header, features)
+        print_iris(label, **dict(pomiary))
