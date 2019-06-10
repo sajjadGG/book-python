@@ -115,16 +115,42 @@ Complex ``timedelta`` shifts
     from datetime import timedelta, date
 
 
-    def month():
-        """Average days a month in solar calendar"""
-        return timedelta(days=30.436875)
+    MONTH = timedelta(days=30.436875)
 
-
-    month_before = date(1961, 4, 12) - month()
+    d = date(1961, 4, 12)
+    month_before = d - MONTH
     # datetime.date(1961, 3, 13)
 
+.. code-block:: python
+    :caption: Subtract month from ``datetime``
 
-.. todo:: Biblioteka calendar ma funkcję wyliczającą ilość dni w miesiącu
+    from datetime import timedelta, date
+
+
+    def month_before(dt):
+        """Average days a month in solar calendar"""
+        return dt - timedelta(days=30.436875)
+
+
+    d = date(1961, 4, 12)
+    month_before = month_before(d)
+    # datetime.date(1961, 3, 13)
+
+.. code-block:: python
+    :caption: Subtract month from ``datetime``
+
+    from calendar import monthlen
+    from datetime import timedelta, date
+
+
+    def month_before(dt):
+        MONTH = monthlen(dt.year, dt.month)
+        return dt - timedelta(days=MONTH)
+
+
+    d = date(1961, 4, 12)
+    month_before = month_before(d)
+    # datetime.date(1961, 3, 13)
 
 
 Time diff

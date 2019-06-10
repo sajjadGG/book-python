@@ -19,8 +19,7 @@ Get timestamp
 
     from datetime import datetime
 
-    now = datetime.now()
-    now.timestamp()
+    datetime.now().timestamp()
     # 1544116827.618863
 
 From epoch timestamp

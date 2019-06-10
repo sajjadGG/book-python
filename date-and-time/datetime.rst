@@ -30,9 +30,9 @@ Current ``date``
 
 
     today = date.today()
-    # datetime.date(2019, 1, 5)
+    # datetime.date(2020, 1, 5)
 
-    today.year    # 2019
+    today.year    # 2020
     today.month   # 1
     today.day     # 5
 
@@ -48,12 +48,12 @@ Create ``time``
     from datetime import time
 
 
-    t = time(12, 33, 44)
+    t = time(12, 34, 56)
     # datetime.time(12, 33, 44)
 
     t.hour            # 12
-    t.minute          # 33
-    t.second          # 44
+    t.minute          # 34
+    t.second          # 56
     t.microsecond     # 0
 
 

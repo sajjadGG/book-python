@@ -3,12 +3,14 @@ from pytz import timezone, utc as UTC
 
 
 WAW = timezone('Europe/Warsaw')
+BAJKONUR = timezone('Asia/Almaty')
 
 
-gagarin = 'April 12, 1961 2:07 local time'  # Asia/Almaty
-gagarin = datetime.strptime(gagarin, '%B %d, %Y %H:%M local time').replace(tzinfo=UTC)
+gagarin = 'April 12, 1961 2:07 local time'
+gagarin = datetime.strptime(gagarin, '%B %d, %Y %H:%M local time')
+gagarin = BAJKONUR.localize(gagarin)
 
-print('Gagarin [UTC]', gagarin)
+print('Gagarin [UTC]', gagarin.astimezone(UTC))
 print('Gagarin [WAW]', gagarin.astimezone(WAW))
 
 
