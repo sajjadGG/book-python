@@ -1,10 +1,11 @@
-FILE = 'hosts.txt'
+from pprint import pprint
+
+FILE = '../data/etc-hosts.txt'
 
 
 hosts = {}
 
 with open(FILE) as file:
-
     for line in file:
 
         if line.startswith('#'):
@@ -19,4 +20,4 @@ with open(FILE) as file:
         else:
             hosts[ip] = hostnames
 
-print(hosts)
+pprint(hosts)

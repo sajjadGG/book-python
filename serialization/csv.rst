@@ -246,7 +246,7 @@ Writing ``csv`` - variable schema
 
 Object serialization to CSV
 ---------------------------
-* Filename: ``csv_addressbook.py``
+* Filename: ``csv_relations.py``
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
 * Input data: :numref:`listing-csv-addressbook`
@@ -283,9 +283,3 @@ Object serialization to CSV
 #. Wszystkie pola muszą być zawsze w cudzysłowach i oddzielone średnikami, kodowanie UTF-8, a na końcu linii Unix newline.
 #. Jak zapisać w CSV dane relacyjne (kontakt ma wiele adresów)?
 #. Stwórz obiekty książki adresowej na podstawie danych odczytanych z pliku
-
-:Hints:
-    * powtarzanie rekordów (user pozostaje ten sam) z innymi danymi adresowymi
-    * dodawanie kolumn (ulica_1, miasto_1, panstwo_1, ulica_2, miasto_2, panstwo_2) i automatyczne generowanie fieldnames
-    * wrzucenie danych jako string do jednego pola adres_1, adres_2, adres_3 i ustalenie separatora (np: średnik - ';')
-    * jedno pole adres (w ramach niego wszystkie adresy rozdzielone ";" a dane przecinkami ",")
