@@ -101,7 +101,9 @@ Statements
 
     %%timeit
 
-    fieldnames = set(key for record in DATA for key in record.keys())
+    fieldnames = set(key
+        for record in DATA
+            for key in record.keys())
 
     # 2.03 µs ± 49.9 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 
@@ -111,6 +113,7 @@ Statements
     %%timeit
 
     fieldnames = set()
+
     fieldnames.add(key
         for record in DATA
            for key in record.keys())
@@ -153,6 +156,8 @@ Statements
         for key in row.keys():
             fieldnames.add(key)
 
+    # 2.01 µs ± 35 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+
 .. code-block:: python
     :caption: Code 7
 
@@ -165,6 +170,7 @@ Statements
             if key not in fieldnames:
                 fieldnames.append(key)
 
+    # 2.17 µs ± 39.7 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 
 Summary
 =======

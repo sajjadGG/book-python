@@ -199,7 +199,7 @@ Writing ``csv`` - fixed schema
     ]
 
 #. Za pomocą ``csv.DictWriter()`` zapisz do pliku *CSV* dane o stałej strukturze
-#. Podaj jawnie ``encoding``, ``delimiter``, ``quotechar`` ``quoting``, ``lineterminator``
+#. Wszystkie pola muszą być zawsze w cudzysłowach i oddzielone średnikami, kodowanie UTF-8, a na końcu linii Unix newline.
 
 Writing ``csv`` - variable schema
 ---------------------------------
@@ -222,7 +222,7 @@ Writing ``csv`` - variable schema
     ]
 
 #. Za pomocą ``csv.DictWriter()`` zapisz do pliku CSV dane o zmiennej strukturze
-#. Podaj jawnie ``encoding``, ``delimiter``, ``quotechar`` ``quoting``, ``lineterminator``
+#. Wszystkie pola muszą być zawsze w cudzysłowach i oddzielone średnikami, kodowanie UTF-8, a na końcu linii Unix newline.
 #. ``fieldnames`` nie może być wymienione wprost w skrypcie (zahardkodowane)
 #. Rezultat powinien wyglądać tak:
 
@@ -280,7 +280,7 @@ Object serialization to CSV
     ]
 
 #. Za pomocą ``csv.DictWriter()`` zapisz kontakty z książki adresowej w pliku
-#. Wszystkie pola muszą być zawsze w cudzysłowiach i oddzielone średnikami, kodowanie UTF-8.
+#. Wszystkie pola muszą być zawsze w cudzysłowach i oddzielone średnikami, kodowanie UTF-8, a na końcu linii Unix newline.
 #. Jak zapisać w CSV dane relacyjne (kontakt ma wiele adresów)?
 #. Stwórz obiekty książki adresowej na podstawie danych odczytanych z pliku
 
