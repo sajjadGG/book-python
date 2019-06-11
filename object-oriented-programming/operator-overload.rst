@@ -163,6 +163,18 @@ Example
     a[1][2]  # 6
     a[1,2]   # 6
 
+.. code-block:: python
+    :caption: Intuitive implementation of numpy ``array[row,col]`` accessor
+
+    class array(list):
+        def __getitem__(key):
+            row = key[0]
+            col = key[1]
+            return super().__getitem__(row).__getitem__(col)
+
+    # a[1,2]
+    a.__getitem__(key=(1,2))
+
 
 Assignment
 ==========
