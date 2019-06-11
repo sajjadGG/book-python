@@ -79,19 +79,19 @@ Classes vs Instances
 .. code-block:: python
     :caption: Three classes and three instances
 
-    class Setosa:
+    class IrisSetosa:
         pass
 
-    class Versicolor:
+    class IrisVersicolor:
         pass
 
-    class Virginica:
+    class IrisVirginica:
         pass
 
 
-    iris_setosa = Setosa()
-    iris_versicolor = Versicolor()
-    iris_virginica = Virginica()
+    iris_setosa = IrisSetosa()
+    iris_versicolor = IrisVersicolor()
+    iris_virginica = IrisVirginica()
 
 
 Fields
@@ -275,19 +275,19 @@ One class per file?
 .. code-block:: python
     :caption: Classes and Objects
 
-    class Setosa:
+    class IrisSetosa:
         pass
 
-    class Versicolor:
+    class IrisVersicolor:
         pass
 
-    class Virginica:
+    class IrisVirginica:
         pass
 
 
-    setosa = Setosa()
-    versicolor = Versicolor()
-    virginica = Virginica()
+    setosa = IrisSetosa()
+    versicolor = IrisVersicolor()
+    virginica = IrisVirginica()
 
 
 Assignments
@@ -307,8 +307,8 @@ Defining Classes
     - ``petal_width: float``,
     - ``species: str``.
 
-#. Napisz metodę ``total()`` wyliczającą sumę dla pól numerycznych
-#. Napisz metodę ``average()`` wyliczającą średnią dla pól numerycznych
+#. Napisz metodę ``total()`` wyliczającą sumę dla pól numerycznych obiektu (``sepal_length``, ``sepal_width``, ``petal_length``, ``petal_width``)
+#. Napisz metodę ``average()`` wyliczającą średnią dla powyższych pól
 #. Stwórz obiekt ``setosa`` z pomiarami:
 
     * sepal_length: 5.4
