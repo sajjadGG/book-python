@@ -50,17 +50,17 @@ class Dragon(Movable):
     def make_damage(self):
         return randint(self.DAMAGE_MIN, self.DAMAGE_MAX)
 
-    def is_dead(self):
-        if self.status == Status.DEAD:
-            return True
-        else:
-            return False
-
     def update_status(self):
         if self.health <= 0:
             self.status = Status.DEAD
         else:
             self.status = Status.ALIVE
+
+    def is_dead(self):
+        if self.status == Status.DEAD:
+            return True
+        else:
+            return False
 
     def is_alive(self):
         return not self.is_dead()

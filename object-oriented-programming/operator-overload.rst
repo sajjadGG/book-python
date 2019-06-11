@@ -39,12 +39,13 @@ Example usage of operator Overload
     # Vector(x=9, y=12)
 
     suma = vector1 - vector2
-    # TypeError: unsupported operand type(s) for +=: 'NoneType' and 'Address'
+    # TypeError: unsupported operand type(s) for -: 'Vector' and 'Vector'
 
 
 .. code-block:: python
 
-    import math
+    from math import sqrt
+
 
     class Vector:
         def __init__(self, x=0.0, y=0.0):
@@ -52,11 +53,12 @@ Example usage of operator Overload
             self.y = y
 
         def __abs__(self):
-            return math.sqrt(self.x**2 + self.y**2)
+            return sqrt(self.x**2 + self.y**2)
 
-    vector1 = Vector(x=1, y=2)
+
+    vector1 = Vector(x=3, y=4)
     abs(vector1)
-
+    # 5.0
 
 Numerical Operator Overload
 ===========================
