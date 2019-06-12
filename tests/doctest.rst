@@ -114,7 +114,8 @@ Python forces single quotes
 * Those tests will fail, because of quotes
 
  .. code-block:: python
-    :caption: Python prefer single quotes
+    :caption: Test will fail, Python will automatically change to single quotes
+    :emphasize-lines: 4
 
      def echo(text):
         """
@@ -124,7 +125,8 @@ Python forces single quotes
         return text
 
  .. code-block:: python
-    :caption: Python will automatically change to single quotes
+    :caption: Test will fail, Python will automatically change to single quotes
+    :emphasize-lines: 4
 
      def echo(text):
         """
@@ -137,7 +139,7 @@ Python changes to single quotes to avoid escapes
 ------------------------------------------------
  .. code-block:: python
     :caption: Python will automatically change quotes to avoid escapes
-    :emphasize-lines: 5,6
+    :emphasize-lines: 3,4
 
      def echo(text):
         """
@@ -150,8 +152,9 @@ Testing ``print(str)``
 ----------------------
 .. code-block:: python
     :caption: ``print`` function results, don't have quotes
+    :emphasize-lines: 4
 
-    def echo(text='default text'):
+    def echo(text):
         """
         >>> echo('hello')
         hello
@@ -160,6 +163,7 @@ Testing ``print(str)``
 
 .. code-block:: python
     :caption: ``print`` function results, don't have quotes
+    :emphasize-lines: 4
 
     def echo(text='default text'):
         """
@@ -171,6 +175,8 @@ Testing ``print(str)``
 Testing ``print(str)`` with newlines
 ------------------------------------
 .. code-block:: python
+    :caption: Testing ``print(str)`` with newlines
+    :emphasize-lines: 7
 
     def echo(text):
         """
@@ -182,9 +188,12 @@ Testing ``print(str)`` with newlines
         """
         print(f'{text}\n' * 3)
 
+
 Testing for exceptions
 ======================
 .. code-block:: python
+    :caption: Testing for exceptions
+    :emphasize-lines: 3-6
 
     def add_numbers(a, b):
         """
@@ -205,6 +214,8 @@ Testing for exceptions
 Using python statements in ``doctest``
 ======================================
 .. code-block:: python
+    :caption: Using python statements in ``doctest``
+    :emphasize-lines: 3-5
 
     def when(date):
         """
@@ -220,9 +231,30 @@ Running doctest from standalone scripts
 =======================================
 * Testy dla wszystkich funkcji aktualnie zdefiniowanych w przestrzeni nazw
 
-.. literalinclude:: src/doctest-testmod.py
-    :language: python
+.. code-block:: python
     :caption: Wykorzystanie ``doctest.testmod()`` do uruchamiania testów
+    :emphasize-lines: 19,20
+
+    def km_na_metry(ile):
+        """
+        >>> km_na_metry(1)
+        1000
+        >>> km_na_metry(0)
+        0
+        >>> km_na_metry(-1)
+        Traceback (most recent call last):
+            ...
+        ValueError
+        """
+        if ile < 0:
+            raise ValueError
+        else:
+            return ile * 1000
+
+
+    if __name__ == "__main__":
+        import doctest
+        doctest.testmod()
 
 
 Practical example
