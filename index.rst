@@ -188,6 +188,9 @@ Object Oriented Programming
     /object-oriented-programming/enum.rst
     /object-oriented-programming/paradigm.rst
     /object-oriented-programming/advanced.rst
+    /object-oriented-programming/setter-getter-deleter.rst
+    /object-oriented-programming/setattr-getattr-delattr.rst
+    /object-oriented-programming/descriptor.rst
     /object-oriented-programming/slots.rst
     /object-oriented-programming/metaclass.rst
 
@@ -319,7 +322,6 @@ Design Patterns
     /design-patterns/generator.rst
     /design-patterns/iterator.rst
     /design-patterns/context-manager.rst
-    /design-patterns/descriptor.rst
     /design-patterns/decorator.rst
     /design-patterns/gang-of-four.rst
 
