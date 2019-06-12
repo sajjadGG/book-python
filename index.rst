@@ -188,6 +188,7 @@ Object Oriented Programming
     /object-oriented-programming/enum.rst
     /object-oriented-programming/paradigm.rst
     /object-oriented-programming/advanced.rst
+    /object-oriented-programming/slots.rst
     /object-oriented-programming/metaclass.rst
 
 *****

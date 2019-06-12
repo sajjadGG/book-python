@@ -14,9 +14,9 @@ OOP Advanced
 
 
     twardowski = Astronaut      # Creates alias to class (not an instance)
-    twardowski()                # Creates instance (by calling ``.__call__()``)
+    twardowski()                # Creates instance by calling ``.__call__()``
 
-    twardowski = Astronaut()    # Creates instance (by calling ``.__call__()``)
+    twardowski = Astronaut()    # Creates instance by calling ``.__call__()``
 
 
 ``__new__()`` and ``__init__()``
@@ -131,91 +131,6 @@ Why?
     print(flower)                # <__main__.Iris object at 0x108165c18>
     flower.__class__.__name__    # 'Iris'
 
-``__slots__``
-=============
-* faster attribute access
-* space savings in memory
-
-The proper use of __slots__ is to save space in objects. Instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions after creation. This saves the overhead of one dict for every object that uses slots
-
-Unfortunately there is a side effect to slots. They change the behavior of the objects that have slots in a way that can be abused by control freaks and static typing weenies. This is bad, because the control freaks should be abusing the metaclasses and the static typing weenies should be abusing decorators, since in Python, there should be only one obvious way of doing something.
-
-The space savings is from:
-
-    * Storing value references in slots instead of ``__dict__``.
-    * Denying ``__dict__`` and ``__weakref__`` creation if parent classes deny them and you declare ``__slots__``.
-
-.. code-block:: python
-
-    class Iris:
-        __slots__ = ()
-
-    flower = Iris()
-
-    flower.species = 'setosa'
-    # AttributeError: 'Iris' object has no attribute 'species'
-
-.. code-block:: python
-
-    class Iris:
-        __slots__ = ('species',)
-
-    flower = Iris()
-
-    flower.species = 'setosa'
-    flower.kingdom = 'plantae'
-    # AttributeError: 'Iris' object has no attribute 'kingdom'
-
-.. code-block:: python
-    :caption: Using ``__slots__`` will prevent from creating ``__dict__``
-
-    class Iris:
-        __slots__ = ('species', 'kingdom')
-
-    flower = Iris()
-
-    flower.species = 'setosa'
-    flower.kingdom = 'plantae'
-
-    flower.__dict__
-    # AttributeError: 'Iris' object has no attribute '__dict__'
-
-Requirements:
-
-    * To have attributes named in ``__slots__`` to actually be stored in slots instead of a ``__dict__``, a class must inherit from object
-    * To prevent the creation of a ``__dict__``, you must inherit from object and all classes in the inheritance must declare ``__slots__`` and none of them can have a '``__dict__``' entry.
-
-``__slots__`` and ``__dict__``
-------------------------------
-.. code-block:: python
-
-    class Iris:
-        __slots__ = ('__dict__', 'species')
-
-    flower = Iris()
-
-    flower.species = 'setosa'   # will use slots
-    flower.kingdom = 'plantae'  # not in __slots__, will use __dict__
-
-    flower.__dict__
-    # {'kingdom': 'plantae'}
-
-Inheritance
------------
-.. code-block:: python
-
-    class Iris:
-        __slots__ = 'species', 'kingdom'
-
-    class Setosa(Iris):
-        __slots__ = 'name',
-
-    class Virginica(Iris):
-        __slots__ = 'species', 'kingdom', 'name'  # redundant species and kingdom
-
-More info
----------
-.. note:: More info: https://stackoverflow.com/questions/472000/usage-of-slots
 
 Stringify objects
 =================

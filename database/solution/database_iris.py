@@ -31,8 +31,9 @@ SPECIES = {
 SQL_CREATE_TABLE = """
     CREATE TABLE IF NOT EXISTS iris (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        species TEXT,
+        timestamp DATETIME DEFAULT (datetime('now', 'UTC')),
         datetime DATETIME,
+        species TEXT,
         sepal_length REAL,
         sepal_width REAL,
         petal_length REAL,
@@ -48,12 +49,13 @@ SQL_CREATE_INDEX = """
 SQL_INSERT = """
     INSERT INTO iris VALUES (
         NULL,
-        :species,
+        NULL,
         :datetime,
+        :species,
         :sepal_length,
         :sepal_width,
         :petal_length,
-        :petal_width
+        :petal_width,
     )
 """
 
