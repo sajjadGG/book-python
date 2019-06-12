@@ -1,9 +1,9 @@
-class Bear(object):
+class Bear:
     def sound(self):
         print('Groarrr')
 
 
-class Dog(object):
+class Dog:
     def sound(self):
         print('Woof woof!')
 

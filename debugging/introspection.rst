@@ -88,7 +88,7 @@ Introspecting Types
 --------------
 .. code-block:: python
 
-    class Car(object):
+    class Car:
         def setName(self, name):
             self.name = name
 

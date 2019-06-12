@@ -389,7 +389,7 @@ Getitem and Getattr
 
 .. code-block:: python
 
-    class Plant(object):
+    class Plant:
         type = 'tree'
 
     '{p.type}'.format(p=Plant())
@@ -397,7 +397,7 @@ Getitem and Getattr
 
 .. code-block:: python
 
-    class Plant(object):
+    class Plant:
         type = 'tree'
         kinds = [{'name': 'oak'}, {'name': 'maple'}]
 
@@ -417,7 +417,7 @@ Value conversion
 ----------------
 .. code-block:: python
 
-    class Data(object):
+    class Data:
 
         def __str__(self):
             return 'str'

@@ -5,6 +5,20 @@ OOP Advanced
 ************
 
 
+``__call__()``
+==============
+.. code-block:: python
+
+    class Astronaut:
+        pass
+
+
+    twardowski = Astronaut      # Creates alias to class (not an instance)
+    twardowski()                # Creates instance (by calling ``.__call__()``)
+
+    twardowski = Astronaut()    # Creates instance (by calling ``.__call__()``)
+
+
 ``__new__()`` and ``__init__()``
 ================================
 ``__call__()`` method invokes the following:
@@ -12,6 +26,13 @@ OOP Advanced
     * ``__new__()``
     * ``__init__()``
 
+.. code-block:: python
+    :caption: Intuition definition of ``__new__()`` and ``__init__()``
+
+    class object:
+        def __call__(cls):
+            obj = type.__new__(cls)
+            obj.__init__()
 
 ``__new__()``
 -------------
@@ -33,32 +54,32 @@ Example usage
 .. code-block:: python
     :emphasize-lines: 3,4
 
-    class A:
+    class Iris:
         def __new__(cls):
-            print("A.__new__() called")
+            print("Iris.__new__() called")
             return super().__new__(cls)
 
         def __init__(self):
-            print("A.__init__() called")
+            print("Iris.__init__() called")
 
-    A()
-    # A.__new__() called
-    # A.__init__() called
+    Iris()
+    # Iris.__new__() called
+    # Iris.__init__() called
 
 Missing ``return`` from constructor
 -----------------------------------
 .. code-block:: python
     :emphasize-lines: 3
 
-    class B:
+    class Iris:
         def __new__(cls):
-            print("B.__new__() called")
+            print("Iris.__new__() called")
 
         def __init__(self):
-            print("B.__init__() called")  # -> is actually never called
+            print("Iris.__init__() called")  # -> is actually never called
 
-    print B()
-    # B.__new__() called
+    print Iris()
+    # Iris.__new__() called
     # None
 
 The instantiation is evaluated to ``None`` since we don't return anything from the constructor.
@@ -68,13 +89,13 @@ Return invalid from constructor
 .. code-block:: python
     :emphasize-lines: 4
 
-    class C:
+    class Iris:
         def __new__(cls):
-            print("C.__new__() called")
+            print("Iris.__new__() called")
             return 29
 
-    print C()
-    # C.__new__() called
+    print Iris()
+    # Iris.__new__() called
     # 29
 
 Return invalid from initializer
@@ -82,12 +103,12 @@ Return invalid from initializer
 .. code-block:: python
     :emphasize-lines: 4
 
-    class D:
+    class Iris:
         def __init__(self):
-            print("C.__new__() called")
+            print("Iris.__new__() called")
             return 33
 
-    D()
+    Iris()
     # TypeError: __init__ should return None
 
 Why?
@@ -97,25 +118,21 @@ Why?
 
 .. code-block:: python
 
-    class One:
-        name = 'Twardowski'
+    class Iris:
+        name = None
 
-
-    class Two:
+    class Setosa:
         def __new__(cls):
-            return One()
+            return Iris()
 
 
-    a = Two()
+    flower = Setosa()
 
-    print(a)
-    # <__main__.One object at 0x11ca09588>
-
-    a.__class__.__name__
-    # 'One'
+    print(flower)                # <__main__.Iris object at 0x108165c18>
+    flower.__class__.__name__    # 'Iris'
 
 ``__slots__``
--------------
+=============
 * faster attribute access
 * space savings in memory
 
@@ -130,64 +147,74 @@ The space savings is from:
 
 .. code-block:: python
 
-    class Base(object):
+    class Iris:
         __slots__ = ()
 
-    b = Base()
-    b.a = 'a'
-    # Traceback (most recent call last):
-    #   File "<pyshell#38>", line 1, in <module>
-    #     b.a = 'a'
-    # AttributeError: 'Base' object has no attribute 'a'
+    flower = Iris()
 
-    class Child(Base):
-        __slots__ = ('a',)
-
-    c = Child()
-    c.a = 'a'
-
-    c.b = 'b'
-    # Traceback (most recent call last):
-    #   File "<pyshell#42>", line 1, in <module>
-    #    c.b = 'b'
-    # AttributeError: 'Child' object has no attribute 'b'
+    flower.species = 'setosa'
+    # AttributeError: 'Iris' object has no attribute 'species'
 
 .. code-block:: python
 
-    class Base:
-        __slots__ = 'foo', 'bar'
+    class Iris:
+        __slots__ = ('species',)
 
-    class Right(Base):
-        __slots__ = 'baz',
+    flower = Iris()
 
-    class Wrong(Base):
-        __slots__ = 'foo', 'bar', 'baz'        # redundant foo and bar
+    flower.species = 'setosa'
+    flower.kingdom = 'plantae'
+    # AttributeError: 'Iris' object has no attribute 'kingdom'
+
+.. code-block:: python
+    :caption: Using ``__slots__`` will prevent from creating ``__dict__``
+
+    class Iris:
+        __slots__ = ('species', 'kingdom')
+
+    flower = Iris()
+
+    flower.species = 'setosa'
+    flower.kingdom = 'plantae'
+
+    flower.__dict__
+    # AttributeError: 'Iris' object has no attribute '__dict__'
 
 Requirements:
 
     * To have attributes named in ``__slots__`` to actually be stored in slots instead of a ``__dict__``, a class must inherit from object
     * To prevent the creation of a ``__dict__``, you must inherit from object and all classes in the inheritance must declare ``__slots__`` and none of them can have a '``__dict__``' entry.
 
+``__slots__`` and ``__dict__``
+------------------------------
 .. code-block:: python
 
-    class SlottedWithDict(Child):
-        __slots__ = ('__dict__', 'b')
+    class Iris:
+        __slots__ = ('__dict__', 'species')
 
-    swd = SlottedWithDict()
-    swd.a = 'a'
-    swd.b = 'b'
-    swd.c = 'c'
+    flower = Iris()
 
-    swd.__dict__
-    # {'c': 'c'}
+    flower.species = 'setosa'   # will use slots
+    flower.kingdom = 'plantae'  # not in __slots__, will use __dict__
 
-    class NoSlots(Child):
-        pass
+    flower.__dict__
+    # {'kingdom': 'plantae'}
 
-    ns = NoSlots()
-    ns.a = 'a'
-    ns.b = 'b'
+Inheritance
+-----------
+.. code-block:: python
 
+    class Iris:
+        __slots__ = 'species', 'kingdom'
+
+    class Setosa(Iris):
+        __slots__ = 'name',
+
+    class Virginica(Iris):
+        __slots__ = 'species', 'kingdom', 'name'  # redundant species and kingdom
+
+More info
+---------
 .. note:: More info: https://stackoverflow.com/questions/472000/usage-of-slots
 
 Stringify objects
@@ -279,6 +306,45 @@ Use cases
         print(datetime.datetime.now())
         # 2019-01-05 20:15:00.927387
 
+List Print
+----------
+.. code-block:: python
+
+    class Astronaut:
+        def __init__(self, name):
+            self.name = name
+
+    crew = [
+        Astronaut(name='Jan Twardowski'),
+        Astronaut(name='Mark Watney'),
+        Astronaut(name='Melissa Lewis'),
+    ]
+
+    print(crew)
+    # [
+    #   <__main__.Astronaut object at 0x107871160>,
+    #   <__main__.Astronaut object at 0x107c422e8>,
+    #   <__main__.Astronaut object at 0x108156be0>
+    # ]
+
+.. code-block:: python
+
+    class Astronaut:
+        def __init__(self, name):
+            self.name = name
+
+        def __repr__(self):
+            return f'{self.name}'
+
+    crew = [
+        Astronaut(name='Jan Twardowski'),
+        Astronaut(name='Mark Watney'),
+        Astronaut(name='Melissa Lewis'),
+    ]
+
+    print(crew)
+    # [Jan Twardowski, Mark Watney, Melissa Lewis]
+
 
 What should be in the class and what not?
 =========================================
@@ -344,9 +410,19 @@ What should be in the class and what not?
 ``@classmethod``
 ----------------
 .. code-block:: python
-    :emphasize-lines: 14-17,25-29
+    :emphasize-lines: 7-10,21,24,30,31
 
     import json
+
+    class JSONSerializable:
+        def to_json(self):
+            return json.dumps(self.__dict__)
+
+        @classmethod
+        def from_json(cls, data):
+            data = json.loads(data)
+            return cls(**data)
+
 
     class User:
         def __init__(self, first_name, last_name):
@@ -356,24 +432,19 @@ What should be in the class and what not?
         def __str__(self):
             return f'{self.first_name} {self.last_name}'
 
-        def to_json(self):
-            return json.dumps(self.__dict__)
+    class Guest(User, JSONSerializable):
+        pass
 
-        @classmethod
-        def from_json(cls, data):
-            data = json.loads(data)
-            return cls(**data)
-
-    class SuperUser(User):
+    class SuperUser(User, JSONSerializable):
         pass
 
 
     DATA = '{"first_name": "Jan", "last_name": "Twardowski"}'
 
-    normal = User.from_json(DATA)
+    guest = Guest.from_json(DATA)
     root = SuperUser.from_json(DATA)
 
-    type(normal)    # <class '__main__.User'>
+    type(guest)     # <class '__main__.Guest'>
     type(root)      # <class '__main__.SuperUser'>
 
 
@@ -461,98 +532,6 @@ Accessing class fields
 
             return list_display
 
-``@property``
--------------
-* ``@property`` - for defining getters
-* Przykład użycia:
-
-    * Blokowanie możliwości edycji pola klasy
-    * Dodawanie logowania przy ustawianiu wartości
-
-.. code-block:: python
-    :caption: Using ``@property`` as a getter
-
-    class Temperature:
-        def __init__(self, kelvin: float = 0.0):
-            self.kelvin = kelvin
-
-        @property
-        def celsius(self):
-            temp = self.kelvin - 273.15
-            return round(temp, 2)
-
-
-    temp = Temperature(kelvin=309.75)
-
-    print(temp.celsius)
-    # 36.6
-
-``@x.setter``
--------------
-* ``@x.setter`` - for defining setter for field ``x``
-* Require field to be ``@property``
-
-.. code-block:: python
-    :caption: ``@x.setter``
-
-    class Temperature:
-        def __init__(self, kelvin: float = 0.0):
-            self.kelvin = kelvin
-
-        @property
-        def celsius(self):
-            temp = self.kelvin - 273.15
-            return round(temp, 2)
-
-        @celsius.setter
-        def celsius(self, value):
-            if value < -273.15:
-                raise ValueError('Temperature below -273.15 is not possible')
-            else:
-                self.kelvin = value + 273.15
-
-    temp = Temperature()
-
-    print(temp.kelvin)
-    # 0.0
-
-    temp.celsius = 36.60
-    print(temp.kelvin)
-    # 309.75
-
-    temp.celsius = -1000
-    # ValueError: Temperature below -273.15 is not possible
-
-``@x.deleter``
---------------
-* ``@x.deleter`` - for defining deleter for field ``x``
-* Require field to be ``@property``
-
-.. code-block:: python
-    :caption: ``@x.deleter``
-
-    class Temperature:
-        def __init__(self, kelvin: float = 0.0):
-            self.kelvin = kelvin
-
-        @property
-        def celsius(self):
-            temp = self.kelvin - 273.15
-            return round(temp, 2)
-
-        @celsius.deleter
-        def celsius(self):
-            self.kelvin = 0.0
-
-    temp = Temperature(kelvin=100)
-
-    print(temp.celsius)
-    # -173.15
-
-    del temp.celsius
-
-    print(temp.celsius)
-    # -273.15
 
 Hash
 ====

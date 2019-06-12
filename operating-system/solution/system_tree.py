@@ -9,7 +9,7 @@ import os
 import argparse
 import time
 
-class FileTreeMaker(object):
+class FileTreeMaker:
 
     def _recurse(self, parent_path, file_list, prefix, output_buf, level):
         if len(file_list) == 0 \
