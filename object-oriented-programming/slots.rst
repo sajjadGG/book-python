@@ -1,6 +1,6 @@
-*************
-``__slots__``
-*************
+*****
+Slots
+*****
 
 
 * faster attribute access

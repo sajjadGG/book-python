@@ -56,22 +56,32 @@ Test for ``bool`` return values
             return False
 
 
-Test for ``int`` return values
-==============================
+Test numeric return values
+==========================
+
+``int`` values
+--------------
 .. code-block:: python
 
-    def add(a, b):
+    def add_numbers(a, b):
         """
-        Function adds two numbers
-
-        >>> add(1, 2)
+        >>> add_numbers(1, 2)
         3
-
-        >>> add(-1, 1)
+        >>> add_numbers(-1, 1)
         0
-
-        >>> add(0, 0)
+        >>> add_numbers(0, 0)
         0
+        """
+        return a + b
+
+``float`` values
+----------------
+.. code-block:: python
+
+    def add_numbers(a, b):
+        """
+        >>> add_numbers(2.5, 1.2)
+        3.7
         """
         return a + b
 
@@ -83,77 +93,102 @@ Returning ``str``
 -----------------
 .. code-block:: python
 
-    def hello(name='José Jiménez'):
+    def echo(text):
         """
-        Function returns the name of the astronaut
-        >>> hello('Иван Иванович')
-        'Иван Иванович'
-
-        Default value is 'José Jiménez'
-        >>> hello()
-        'José Jiménez'
+        >>> echo('hello')
+        'hello'
         """
-        return name
+        return text
 
-Printing ``str``
-----------------
 .. code-block:: python
 
-    def hello(name='José Jiménez'):
+    def echo(text='default text'):
         """
-        Function prints on the screen the name of the astronaut
-        >>> hello('Иван Иванович')
-        Иван Иванович
+        >>> echo()
+        'default text'
+        """
+        return text
 
-        Default value is 'José Jiménez'
+Python forces single quotes
+---------------------------
+* Those tests will fail, because of quotes
+
+ .. code-block:: python
+    :caption: Python prefer single quotes
+
+     def echo(text):
+        """
+        >>> echo('hello')
+        "hello"
+        """
+        return text
+
+ .. code-block:: python
+    :caption: Python will automatically change to single quotes
+
+     def echo(text):
+        """
+        >>> echo("hello")
+        "hello"
+        """
+        return text
+
+Python changes to single quotes to avoid escapes
+------------------------------------------------
+ .. code-block:: python
+    :caption: Python will automatically change quotes to avoid escapes
+    :emphasize-lines: 5,6
+
+     def echo(text):
+        """
+        >>> echo('It\'s Twardowski\'s Moon')
+        "It's Twardowski's Moon"
+        """
+        return text
+
+Testing ``print(str)``
+----------------------
+.. code-block:: python
+    :caption: ``print`` function results, don't have quotes
+
+    def echo(text='default text'):
+        """
+        >>> echo('hello')
+        hello
+        """
+        print(text)
+
+.. code-block:: python
+    :caption: ``print`` function results, don't have quotes
+
+    def echo(text='default text'):
+        """
         >>> hello()
-        José Jiménez
+        default text
         """
-        print(name)
+        print(text)
 
-Printing ``str`` with newlines
-------------------------------
+Testing ``print(str)`` with newlines
+------------------------------------
 .. code-block:: python
 
-    def hello(name='José Jiménez'):
+    def echo(text):
         """
-        Greet's an astronaut.
-        Last line is blank.
-
-        >>> hello()
-        José Jiménez
-        José Jiménez
-        José Jiménez
+        >>> echo('hello')
+        hello
+        hello
+        hello
         <BLANKLINE>
         """
-        print(f'{name}\n' * 3)
+        print(f'{text}\n' * 3)
 
 Testing for exceptions
 ======================
 .. code-block:: python
 
-    def add(a, b):
+    def add_numbers(a, b):
         """
-        Function adds two numbers.
-        It checks for proper type of input.
-
-        >>> add(1, 2)
-        3
-
-        >>> add(-1, 1)
-        0
-
-        >>> add(0, 0)
-        0
-
-        Function should do:
-            - one thing
-            - one thing only
-            - one thing good
-
-        Adding list elements is not a business of this function.
-
-        >>> add([1, 2])
+        >>> add_numbers([1, 2])
         Traceback (most recent call last):
             ...
         TypeError: Argument must be int or float
@@ -175,8 +210,8 @@ Using python statements in ``doctest``
         """
         >>> from datetime import datetime, timezone
         >>> moon = datetime(1969, 7, 21, 17, 54, tzinfo=timezone.utc)
-        >>> hello(moon)
-        '1969-07-21 17:54 UTC'
+        >>> when(moon)
+        1969-07-21 17:54 UTC
         """
         print(f'{date:%Y-%m-%d %H:%M %Z}')
 
@@ -203,6 +238,7 @@ Celsius to Kelvin temperature conversion
 Email regex
 -----------
 .. code-block:: python
+    :caption: Function check email address against Regular Expression
 
     import re
 
@@ -211,29 +247,20 @@ Email regex
 
     def is_valid_email(email: str) -> bool:
         """
-        Function check email address against Regular Expression
-
         >>> is_valid_email('jose.jimenez@nasa.gov')
         True
-
         >>> is_valid_email('Jose.Jimenez@nasa.gov')
         True
-
         >>> is_valid_email('+jose.jimenez@nasa.gov')
         False
-
         >>> is_valid_email('jose.jimenez+@nasa.gov')
         True
-
         >>> is_valid_email('jose.jimenez+newsletter@nasa.gov')
         True
-
         >>> is_valid_email('jose.jimenez@.gov')
         False
-
         >>> is_valid_email('@nasa.gov')
         False
-
         >>> is_valid_email('jose.jimenez@nasa.g')
         False
         """
