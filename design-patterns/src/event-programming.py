@@ -1,49 +1,44 @@
-class event:
-    __slots__ = ('__subscribers', )
+from dataclasses import dataclass
 
-    def __init__(self):
-        self.__subscribers = set()
+
+@dataclass
+class Event:
+    name: str
+    subscribers: set = ()
+
+    def __post_init__(self):
+        self.subscribers = set(self.subscribers)
 
     def call(self, *args, **kwargs):
-        for subscriber in self.__subscribers:
+        for subscriber in self.subscribers:
             subscriber(*args, **kwargs)
     __call__ = call
 
     def register(self, function):
-        self.__subscribers.add(function)
+        self.subscribers.add(function)
         return self
-    __add__ = __iadd__ = register
 
     def unregister(self, function):
-        self.__subscribers.remove(function)
+        self.subscribers.remove(function)
         return self
-    __sub__ = __isub__ = unregister
 
-class EventManager:
+
+class MessageBroker:
     @staticmethod
-    def register(name):
-        if not hasattr(EventManager, name):
-            setattr(EventManager, name, event())
-        return getattr(EventManager, name).register
+    def register(event_name):
+        if not hasattr(MessageBroker, event_name):
+            setattr(MessageBroker, event_name, Event(event_name))
+        return getattr(MessageBroker, event_name).register
 
 
 
-@EventManager.register('on_foo')
-def foo(*args, **kwargs):
-    print('Args: ' + str(args), 'Kwargs: ' + str(kwargs))
-
-def call_on_foo():
-    EventManager.on_foo()
-    EventManager.on_foo(1, 2, 3)
-    EventManager.on_foo(a=1, b=2, c=3)
-    EventManager.on_foo(1, 2, 3, a=1, b=2, c=3)
-
-@EventManager.register('on_bar')
-def bar():
-    call_on_foo()
-
-EventManager.on_bar()
+@MessageBroker.register('on_echo')
+def echo(*args, **kwargs):
+    print(locals())
 
 
-
-EventManager.on_bar += funkcja
+if __name__ == '__main__':
+    MessageBroker.on_echo()
+    MessageBroker.on_echo(1, 2, 3)
+    MessageBroker.on_echo(a=1, b=2, c=3)
+    MessageBroker.on_echo(1, 2, 3, a=1, b=2, c=3)

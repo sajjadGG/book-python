@@ -1,20 +1,20 @@
 class DB:
-    connection = None
-
-    def __init__(self):
-        pass
+    _connection = None
 
     @staticmethod
     def connect():
-        if not DB.connection:
-            print('Nawiazujemy nowe polaczenie')
-            DB.connection = ...
+        if not DB._connection:
+            print('Establishing connection...')
+            DB._connection = ...
 
-        return DB.connection
+        return DB._connection
 
 
-# Bedzie sie laczyl do bazy danych
-conn = DB().connect()
+# Connecting for the first time
+# Will establish new connection
+first = DB().connect()
 
-# uzyje juz istniejacego polaczenia
-conn = DB().connect()
+# Connecting for the second time
+# Will use existing connection to the DB
+# The same handle as ``first``
+second = DB().connect()
