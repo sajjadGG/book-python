@@ -3,79 +3,60 @@ Decorator
 *********
 
 
-Example
-=======
+Definition
+==========
 
-Example 1
----------
+Decorating functions
+--------------------
+* ``my_decorator`` is decorator name
+* ``func`` is a pointer to function which is being decorated (``my_function`` in this case)
+* ``wrapper`` is a closure function
+* ``wrapper`` name is a convention, but you can name it anyhow
+* ``wrapper`` gets arguments passed to ``my_function``
+* by calling ``func(*func_args, **func_kwargs)`` you actually run original (wrapped) function
+* decorator must return pointer to ``wrapper``
+
 .. code-block:: python
 
-    from django.shortcuts import render
-    from django.contrib.auth.decorators import login_required
+    def my_decorator(func):
+        def wrapper(*func_args, **func_kwargs):
+            return func(*func_args, **func_kwargs)
+        return wrapper
 
 
-    def edit_profile(request):
-        """
-        Function checks whether user is_authenticated
-        If not, user will be redirected to login page
-        """
-        if not request.user.is_authenticated:
-            return render(request, 'myapp/login_error.html')
-        else:
-            return render(request, 'myapp/edit-profile.html')
+    @my_decorator
+    def my_function(x):
+        print(x)
 
-    # better use decorator
-    # as shown below
 
-    @login_required
-    def edit_profile(request):
-        """
-        Decorator checks whether user is_authenticated
-        If not, user will be redirected to login page
-        """
-        return render(request, 'myapp/edit_profile.html')
+    my_function('hello')
+    # hello
 
-Example 2
----------
+Decorating classes
+------------------
+* ``my_decorator`` is decorator name
+* ``cls`` is a pointer to class which is being decorated (``MyClass`` in this case)
+* ``Wrapper`` is a closure class
+* ``Wrapper`` name is a convention, but you can name it anyhow
+* ``Wrapper`` inherits from ``MyClass`` so it is similar
+* decorator must return pointer to ``Wrapper``
+
+
 .. code-block:: python
 
-    import warnings
-    import functools
+    def my_decorator(cls):
+        class Wrapper(cls):
+            my_value = 'some value'
+        return Wrapper
 
 
-    def deprecated(func):
-        """
-        This is a decorator which can be used to mark functions
-        as deprecated. It will result in a warning being emitted
-        when the function is used.
-        """
-
-        @functools.wraps(func)
-        def new_func(*args, **kwargs):
-            warnings.warn_explicit(
-                f"Call to deprecated function {func.__name__}.",
-                category=DeprecationWarning,
-                filename=func.func_code.co_filename,
-                lineno=func.func_code.co_firstlineno + 1)
-            return func(*args, **kwargs)
-        return new_func
-
-
-    ## Usage examples ##
-    @deprecated
-    def my_func():
+    @my_decorator
+    class MyClass:
         pass
 
-    @other_decorators_must_be_upper
-    @deprecated
-    def my_func():
-        pass
 
-Example 3
----------
-.. literalinclude:: src/decorators-function.py
-    :language: python
-    :caption: Decorator usage
+    print(MyClass.my_value)
+    # some value
 
 
 Zastosowanie
@@ -87,6 +68,75 @@ Zastosowanie
 * Avoid calling
 * Modify global state (not a good idea)
 * Metadata
+
+
+Example
+=======
+
+Example 1
+---------
+.. code-block:: python
+
+    import os
+    import logging
+
+
+    def if_file_exists(func):
+
+        def check(filename):
+            if os.path.exists(filename):
+                return func(filename)
+            else:
+                logging.error(f'File "{filename}" does not exists')
+
+        return check
+
+
+    @if_file_exists
+    def print_file(filename):
+        with open(filename) as file:
+            content = file.read()
+            print(content)
+
+
+    if __name__ == '__main__':
+        print_file('/etc/passwd')
+        print_file('/tmp/passwd')
+
+
+Example 2
+---------
+.. code-block:: python
+
+    import warnings
+    import functools
+
+
+    def deprecated(func):
+
+        @functools.wraps(func)
+        def wrapper(*args, **kwargs):
+
+            warnings.warn(f"Call to deprecated function {func.__name__}.",
+                category=DeprecationWarning,
+                filename=func.func_code.co_filename,
+                lineno=func.func_code.co_firstlineno + 1)
+
+            return func(*args, **kwargs)
+        return wrapper
+
+
+    @deprecated
+    def my_function():
+        pass
+
+
+Example 3
+---------
+.. literalinclude:: src/decorators-function.py
+    :language: python
+    :caption: Decorator usage
+
 
 Przykład zastosowania
 ---------------------
@@ -214,8 +264,19 @@ Class Decorators
 - Static methods calling static methods: if you split a static methods in several static methods, you shouldn't hard-code the class name but use class methods
 
 .. code-block:: python
+    :emphasize-lines: 7-10,21,24,30,31
 
     import json
+
+    class JSONSerializable:
+        def to_json(self):
+            return json.dumps(self.__dict__)
+
+        @classmethod
+        def from_json(cls, data):
+            data = json.loads(data)
+            return cls(**data)
+
 
     class User:
         def __init__(self, first_name, last_name):
@@ -225,24 +286,19 @@ Class Decorators
         def __str__(self):
             return f'{self.first_name} {self.last_name}'
 
-        def to_json(self):
-            return json.dumps(self.__dict__)
+    class Guest(User, JSONSerializable):
+        pass
 
-        @classmethod
-        def from_json(cls, data):
-            data = json.loads(data)
-            return cls(**data)
-
-    class SuperUser(User):
+    class SuperUser(User, JSONSerializable):
         pass
 
 
     DATA = '{"first_name": "Jan", "last_name": "Twardowski"}'
 
-    normal = User.from_json(DATA)
+    guest = Guest.from_json(DATA)
     root = SuperUser.from_json(DATA)
 
-    type(normal)    # <class '__main__.User'>
+    type(guest)     # <class '__main__.Guest'>
     type(root)      # <class '__main__.SuperUser'>
 
 
@@ -313,36 +369,6 @@ LRU (least recently used) cache
 
 Przykład
 ========
-
-Example 1
----------
-.. code-block:: python
-
-    import os
-    import logging
-
-
-    def if_file_exists(function):
-
-        def check(filename):
-            if os.path.exists(filename):
-                function(filename)
-            else:
-                logging.error('File "%(filename)s" does not exists, will not execute!', locals())
-
-        return check
-
-
-    @if_file_exists
-    def print_file(filename):
-        with open(filename) as file:
-            content = file.read()
-            print(content)
-
-
-    if __name__ == '__main__':
-        print_file('/etc/passwd')
-        print_file('/tmp/passwd')
 
 Example 2
 ---------
@@ -434,9 +460,6 @@ Use cases
     :name: listing-decorators-case-study-django
     :language: python
     :caption: Use case wykorzystania dekotatorów do poprawienia czytelności kodu Django
-
-
-
 
 
 Decorator library
