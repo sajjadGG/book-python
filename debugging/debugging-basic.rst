@@ -22,52 +22,48 @@ Run in the console
         # c
         # [1, 2, 3]
 
-
 Use cases
 ---------
+.. code-block:: python
+    :caption: One element tuple (``ADMINISTRATORS``) has comma at the end
+    :emphasize-lines: 2
 
-Good
-^^^^
-:settings.py:
-    .. code-block:: python
+    ## Content of the ``settings.py`` file
+    ADMINISTRATORS = 'jan.twardowski@polsa.gov.pl',
 
-        ADMINISTRATORS = 'jose.jimenez@nasa.gov',
 
-:main.py:
-    .. code-block:: python
+    ## Content of the ``script.py`` file
+    from settings import ADMINISTRATORS
 
-        from settings import ADMINISTRATORS
+    for admin in ADMINISTRATORS:
+        print(admin)
 
-        for config in MY_CONFIGURATION:
-            print(config)
+    # jan.twardowski@polsa.gov.pl
 
-        # jose.jimenez@nasa.gov
+.. code-block:: python
+    :caption: Problem with missing coma for ``ADMINISTRATORS`` tuple
+    :emphasize-lines: 3
 
-Bad
-^^^
-:settings.py:
-    .. code-block:: python
+    ## Content of the ``settings.py`` file
+    ADMINISTRATORS = 'jan.twardowski@polsa.gov.pl'
 
-        ADMINISTRATORS = 'jose.jimenez@nasa.gov'
 
-:main.py:
-    .. code-block:: python
+    ## Content of the ``script.py`` file
+    from settings import ADMINISTRATORS
 
-        from settings import ADMINISTRATORS
+    for admin in ADMINISTRATORS:
+        print(admin)
 
-        for config in MY_CONFIGURATION:
-            print(config)
-
-        # j
-        # o
-        # s
-        # e
-        # .
-        # j
-        # ...
-        # g
-        # o
-        # v
+    # j
+    # a
+    # n
+    # .
+    # t
+    # w
+    #[...]
+    # .
+    # p
+    # l
 
 
 ``pprint``
@@ -115,14 +111,24 @@ Bad
     from pprint import pformat
 
 
-    class ASD:
-        def __init__(self):
-            self.a = 1
-            self.b = 2
+    class Point:
+        def __init__(self, x=0, y=0):
+            self.x = x
+            self.y = y
 
         def __str__(self):
-        return pformat(self.__dict__, indent=1, width=120, compact=False)
+            return pformat(self.__dict__, indent=1, width=120, compact=False)
 
+    p = Point(1, 2)
+
+    repr(p)
+    # <__main__.Point object at 0x10378a470>
+
+    str(p)
+    # {'x': 1, 'y': 2}
+
+    print(p)
+    # {'x': 1, 'y': 2}
 
 
 ``locals()``
