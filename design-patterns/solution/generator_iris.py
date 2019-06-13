@@ -1,26 +1,29 @@
-def get_measurements_function(file, species):
-    measurements = []
-
-    for line in file:
-        *m, s = line.strip().split(',')
-        if s == species:
-            measurements.append(m)
-
-    return measurements
+import sys
 
 
-def get_measurements_comprehension(file, species):
-    for line in file:
-        *m, s = line.strip().split(',')
-        if s == species:
-            yield m
+def function_filter(selected_species):
+    output = []
+
+    with open(r'iris.csv') as file:
+        for line in file:
+            *measurements, species = line.strip().split(',')
+            if species == selected_species:
+                output.append(measurements)
+
+    return output
 
 
-with open(r'iris.csv') as file:
-    next(file)
-    setosa = []
-    virginica = []
-    versicolor = []
+def generator_filter(selected_species):
+    with open(r'iris.csv') as file:
+        for line in file:
+            *measurements, species = line.strip().split(',')
+            if species == selected_species:
+                yield measurements
 
-    for x in get_measurements_comprehension(file, 'setosa'):
-        print(x)
+
+if __name__ == '__main__':
+    fun = function_filter('setosa')
+    gen = generator_filter('setosa')
+
+    print(sys.getsizeof(fun))
+    print(sys.getsizeof(gen))
