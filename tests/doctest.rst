@@ -263,7 +263,7 @@ Practical example
 Celsius to Kelvin temperature conversion
 ----------------------------------------
 .. literalinclude:: src/doctest-corner-cases.py
-    :language: python
+    :language: python8
     :caption: Pokrycie przypadków brzegowych doctestami
 
 

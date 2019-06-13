@@ -15,16 +15,16 @@ Declaring generators
 .. code-block:: python
 
     # This will not execute code!
-    range(0, 9_999_999)
-    range(0, 9_999_999)
-    range(0, 9_999_999)
+    range(0, 1E30)
+    range(0, 1E30)
+    range(0, 1E30)
 
 .. code-block:: python
 
     # This will only create generator expression, but not execute it!
-    numbers = range(0, 9_999_999)
+    numbers = range(0, 1E30)
     print(numbers)
-    # range(0, 9999999)
+    # range(0, 1E30)
 
 Getting  values from generator
 ------------------------------
@@ -362,6 +362,7 @@ Generators vs. Comprehensions - iris
 #. Gatunek będzie podawany jako ``str`` do funkcji
 #. Zaimplementuj rozwiązanie wykorzystując zwykłą funkcję
 #. Zaimplementuj rozwiązanie wykorzystując generator i słówko kluczowe ``yield``
+#. Porównaj wyniki jednego i drugiego rozwiązania przez użycie ``sys.getsizeof()``
 
 :The whys and wherefores:
     * Wykorzystanie generatorów
