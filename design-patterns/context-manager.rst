@@ -133,9 +133,10 @@ Contextmanager decorator
 
     @contextmanager
     def MicroBenchmark():
-        start = time.time()
+        start_time = time.time()
         yield
-        duration = time.time() - start
+        end_time = time.time()
+        duration = end_time - start_time
         print(f'Duration {duration:.4f} seconds')
 
 
@@ -158,8 +159,9 @@ Contextmanager decorator
             self.start_time = time.time()
             return self
 
-        def __exit__(self, *exc):
-            duration = time.time() - self.start_time
+        def __exit__(self, *args):
+            end_time = time.time()
+            duration = end_time - start_time
             print(f'Duration {duration:.4f} seconds')
 
 
