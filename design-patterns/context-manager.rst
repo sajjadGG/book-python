@@ -128,6 +128,56 @@ Contextmanager decorator
 .. code-block:: python
 
     from contextlib import contextmanager
+    import time
+
+
+    @contextmanager
+    def MicroBenchmark():
+        start = time.time()
+        yield
+        duration = time.time() - start
+        print(f'Duration {duration:.4f} seconds')
+
+
+    with MicroBenchmark():
+        max = int(1e8)
+        list(range(max))
+
+    # Duration 3.4540 seconds
+
+``ContextDecorator`` class
+--------------------------
+.. code-block:: python
+
+    from contextlib import ContextDecorator
+    import time
+
+
+    class MicroBenchmark(ContextDecorator):
+        def __enter__(self):
+            self.start_time = time.time()
+            return self
+
+        def __exit__(self, *exc):
+            duration = time.time() - self.start_time
+            print(f'Duration {duration:.4f} seconds')
+
+
+    @MicroBenchmark()
+    def my_function():
+        max = int(1e8)
+        list(range(max))
+
+
+    my_function()
+    # Duration 3.3507 seconds
+
+
+Use Case
+--------
+.. code-block:: python
+
+    from contextlib import contextmanager
 
 
     @contextmanager
@@ -144,64 +194,6 @@ Contextmanager decorator
     # foo
     # </p>
 
-``ContextDecorator`` class
---------------------------
-.. code-block:: python
-
-    from contextlib import ContextDecorator
-
-
-    class makeparagraph(ContextDecorator):
-        def __enter__(self):
-            print('<p>')
-            return self
-
-        def __exit__(self, *exc):
-            print('</p>')
-
-
-    @makeparagraph()
-    def generate_html():
-        print('Here is some non-HTML')
-
-    generate_html()
-    # <p>
-    # Here is some non-HTML
-    # </p>
-
-timing
-------
-.. code-block:: python
-
-    from contextlib import contextmanager
-    import time
-
-
-    @contextmanager
-    def timeit(task_name):
-        start = time.time()
-        yield
-        duration = time.time() - start
-        print(f'{task_name} took {duration} seconds')
-
-
-    def exec_as_process():
-        return 9999 ** 1e99999999
-
-
-    def exec_as_thread():
-        return 9999 ** 1e99999999
-
-    TRIES = int(1e8)
-
-    with timeit("processes"):
-        [exec_as_process() for _ in range(TRIES)]
-    # processes took 15.236166954 seconds
-
-
-    with timeit("threads"):
-        [exec_as_thread() for _ in range(TRIES)]
-    # threads took 0.11357998848 seconds
 
 
 Assignments
@@ -214,12 +206,12 @@ Buffered file
 * Estimated time of completion: 15 min
 
 #. Stwórz Context Manager dla zapisu do plików
-#. Context Manager buforuje dane (nie zapisuje ich na bieżąco
-#. Gdy program wyjdzie z bloku context managera, to nastąpi zapisanie do pliku
+#. Context Manager buforuje dane (nie zapisuje ich na bieżąco)
+#. Gdy program wyjdzie z bloku context managera, to nastąpi otwarcie pliku, zapisanie do pliku i jego zamknięcie
 
 .. code-block:: python
 
-    FILE = '/tmp/context-manager.txt'
+    FILENAME = '/tmp/context-manager.txt'
 
     class File:
         pass
