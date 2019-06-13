@@ -67,38 +67,6 @@ Iterowanie po ``list()``, ``dict()``, ``set()``, ``tuple()``
 
 Własny iterator
 ===============
-
-.. code-block:: python
-
-    class ListaFigurGeometrycznych:
-        lista = []
-        aktualny_elemtent = 0
-
-        def __iter__(self):
-            self.aktualny_elemtent = 0
-            return self
-
-        def push(self, figura):
-            self.lista.append(figura)
-
-        def __next__(self):
-            if self.aktualny_elemtent >= len(self.lista):
-                raise StopIteration
-
-            element = self.lista[self.aktualny_elemtent]
-            self.aktualny_elemtent += 1
-            return element
-
-
-    figury = ListaFigurGeometrycznych()
-
-    figury.push('kwadrat')
-    figury.push('prostokat')
-    figury.push('trojkat')
-
-    for figura in figury:
-        print(figura)
-
 .. code-block:: python
 
     class Parking:
@@ -134,27 +102,86 @@ Własny iterator
 
 ``itertools``
 =============
+
+``chain()``
+-----------
+.. code-block:: python
+
+    from itertools import chain
+
+
+    class Numbers:
+        def __init__(self, *values):
+            self.values = values
+            self._iter_index = 0
+
+        def __iter__(self):
+            self._iter_index = 0
+            return self
+
+        def __next__(self):
+            if self._iter_index >= len(self.values):
+                raise StopIteration
+
+            element = self.values[self._iter_index]
+            self._iter_index += 1
+            return element
+
+
+    class Characters:
+        def __init__(self, *values):
+            self.values = values
+            self._iter_index = 0
+
+        def __iter__(self):
+            self._iter_index = 0
+            return self
+
+        def __next__(self):
+            if self._iter_index >= len(self.values):
+                raise StopIteration
+
+            element = self.values[self._iter_index]
+            self._iter_index += 1
+            return element
+
+
+    num = Numbers(1, 2, 3)
+    chr = Characters('a', 'b', 'c')
+
+    print(chain(num, chr))
+    # <itertools.chain object at 0x1008ca0f0>
+
+    print(list(chain(num, chr)))
+    # [1, 2, 3, 'a', 'b', 'c']
+
+    for x in chain(num, chr):
+        print(x)
+
+    # 1
+    # 2
+    # 3
+    # a
+    # b
+    # c
+
+``cycle()``
+-----------
 .. code-block:: python
 
     from itertools import cycle
 
-    DATA = [
-        {'last_name': 'Jiménez'},
-        {'first_name': 'Mark', 'last_name': 'Watney'},
-        {'first_name': 'Иван'},
-        {'first_name': 'Jan', 'last_name': 'Twardowski', 'born': 1961},
-        {'first_name': 'Melissa', 'last_name': 'Lewis', 'first_step': 1969},
-    ]
+    DATA = ['even', 'odd']
 
-    def get_species(species):
-        for record in DATA:
-            if record[4] == species:
-                yield record
+    for x in cycle(DATA):
+        print(x)
 
-    data = get_species('setosa')
-
-    cycle(data)
-
+    # even
+    # odd
+    # even
+    # odd
+    # even
+    # [...]
 
 
 Przykład
