@@ -3,30 +3,37 @@
 ********
 
 
-Defining ``dict``
-=================
 * ``dict`` are key-value storage
-* Comma after last element is optional
-* Since Python 3.7 ``dict`` keeps order of elements
-* Before Python 3.7 ``dict`` order is not ensured!!
+* Mutable - can add, remove, and modify items
 
-.. note:: Since Python 3.7: The insertion-order preservation nature of dict objects is now an official part of the Python language spec.
 
-Empty ``dict``
---------------
+Initializing
+============
+
+Initialize empty
+----------------
 .. code-block:: python
 
     my_dict = {}
     my_dict = dict()
 
-``dict`` with multiple values
+Initialize with many elements
 -----------------------------
+* Comma after last element is optional
+
 .. code-block:: python
 
     my_dict = {
         'first_name': 'Jan',
         'last_name': 'Twardowski'
     }
+
+.. code-block:: python
+
+    my_dict = dict(
+        first_name='Jan',
+        last_name='Twardowski'
+    )
 
 Duplicating items are overridden by latter
 ------------------------------------------
@@ -85,6 +92,13 @@ Value can be any object
         'agency': ['POLSA', 'Roscosmos', 'ESA'],
         'location': ('Bajkonur', 'KSC Florida'),
     }
+
+Order of ``dict`` elements
+--------------------------
+* Since Python 3.7 ``dict`` keeps order of elements
+* Before Python 3.7 ``dict`` order is not ensured!!
+
+.. note:: Since Python 3.7: The insertion-order preservation nature of dict objects is now an official part of the Python language spec.
 
 
 Adding elements

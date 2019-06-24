@@ -2,24 +2,25 @@
 ``tuple``
 *********
 
+
 * Can store elements of any types
 * Immutable - cannot add, modify or remove items
 
 
-Defining ``tuple``
-==================
+Initializing
+============
 * ``tuple()`` is more readable
 * ``()`` is used more often
 
-Empty ``tuple``
----------------
+Initialize empty
+----------------
 .. code-block:: python
 
     my_tuple = ()
     my_tuple = tuple()
 
-``tuple`` with one element
---------------------------
+Initialize with one element
+---------------------------
 * Single element ``tuple`` require comma at the end (**important!**)
 * Brackets are optional
 
@@ -28,8 +29,8 @@ Empty ``tuple``
     my_tuple = 1,
     my_tuple = (1,)
 
-``tuple`` with many elements
-----------------------------
+Initialize with many elements
+-----------------------------
 * Comma after last element is optional
 * Brackets are optional
 

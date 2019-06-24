@@ -2,24 +2,25 @@
 ``list``
 ********
 
+
 * Can store elements of any types
 * Mutable - can add, remove, and modify items
 
 
-Defining ``list``
-=================
+Initializing
+============
 * ``list()`` is more readable
 * ``[]`` is used more often
 
-Empty ``list``
---------------
+Initialize empty
+----------------
 .. code-block:: python
 
     my_list = []
     my_list = list()
 
-One element ``list``
---------------------
+Initialize with one element
+---------------------------
 * Comma after last element is optional
 * Brackets are required
 
@@ -28,8 +29,8 @@ One element ``list``
     my_list = [1]
     my_list = [1,]
 
-Many element ``list``
----------------------
+Initialize with many elements
+-----------------------------
 * Brackets are required
 
 .. code-block:: python
@@ -45,23 +46,21 @@ Many element ``list``
 Adding elements
 ===============
 
-``list`` arithmetic
--------------------
-.. code-block:: python
-
-    my_list = [1, 2]
-
-    my_list + [3, 4]        # [1, 2, 3, 4]
-
-
 Appending elements
 ------------------
 .. code-block:: python
 
     my_list = [1, 2]
 
-    my_list.append(3)       # [1, 2, 3]
-    my_list.append([4, 5])  # [1, 2, 3, [4, 5]]
+    my_list.append(3)
+    # [1, 2, 3]
+
+.. code-block:: python
+
+    my_list = [1, 2]
+
+    my_list.append([4, 5])
+    # [1, 2, 3, [4, 5]]
 
 Extending lists
 ---------------
@@ -69,7 +68,16 @@ Extending lists
 
     my_list = [1, 2]
 
-    my_list.extend([3, 4])  # [1, 2, 3, 4]
+    my_list.extend([3, 4])
+    # [1, 2, 3, 4]
+
+.. code-block:: python
+
+    my_list = [1, 2]
+
+    my_list + [3, 4]
+    # [1, 2, 3, 4]
+
 
 Inserting elements at specific position
 ---------------------------------------
@@ -77,7 +85,8 @@ Inserting elements at specific position
 
     my_list = [1, 2]
 
-    my_list.insert(0, 'a')  # ['a', 1, 2]
+    my_list.insert(0, 'a')
+    # ['a', 1, 2]
 
 
 ``sorted()`` vs. ``list.sort()``
@@ -91,8 +100,11 @@ Inserting elements at specific position
 
     numbers = [3, 1, 2]
 
-    sorted(numbers)         # returns [1, 2, 3]
-    print(numbers)          # [3, 1, 2]
+    sorted(numbers)
+    # [1, 2, 3]
+
+    print(numbers)
+    # [3, 1, 2]
 
 ``list.sort()``
 ---------------
@@ -102,8 +114,11 @@ Inserting elements at specific position
 
     numbers = [3, 1, 2]
 
-    numbers.sort()          # returns None
-    print(numbers)          # [1, 2, 3]
+    numbers.sort()
+    # None
+
+    print(numbers)
+    # [1, 2, 3]
 
 
 Multiple statements in one line
@@ -112,10 +127,8 @@ Multiple statements in one line
 
     my_list = [3, 1, 2]
 
-    my_list.append(4)       # [3, 1, 2, 4]
-
-    a = my_list.append(5).sort()
-    # AttributeError: 'NoneType' object has no attribute 'sort'
+    a = my_list.sort().append(4)
+    # AttributeError: 'NoneType' object has no attribute 'append'
 
 
 Membership Operators

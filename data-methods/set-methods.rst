@@ -5,8 +5,7 @@
 
 ``set.isdisjoint()``
 ====================
-* Return ``True`` if the ``set`` has no elements in common with other
-* Sets are disjoint if and only if their intersection is the empty ``set``.
+* No common elements
 
 .. code-block:: python
 
@@ -15,7 +14,7 @@
 
 ``set.issubset()``
 ==================
-* Test whether every element in the ``set`` is in other
+* All elements in both
 
 .. code-block:: python
 
@@ -34,7 +33,7 @@
 
 ``set.issuperset()``
 ====================
-* Test whether every element in other is in the ``set``
+* All elements of ``b`` are in ``a``
 
 .. code-block:: python
 
@@ -50,7 +49,7 @@
 
 ``set.union()``
 ===============
-* Return a new ``set`` with elements from the ``set`` and all others
+* add
 
 .. code-block:: python
 
@@ -60,20 +59,9 @@
     {1,2} | {1,3} | {2,4}       # {1, 2, 3, 4}
 
 
-``set.intersection()``
-======================
-* Return a new ``set`` with elements common to the ``set`` and all others
-
-.. code-block:: python
-
-    {1,2} & {2,3}               # {2}
-    {1,2} & {2,3} & {2,4}       # {2}
-    {1,2} & {2,3} & {3}         # set()
-
-
 ``set.difference()``
 ====================
-* Return a new ``set`` with elements in the ``set`` that are not in the others
+* subtract
 
 .. code-block:: python
 
@@ -82,12 +70,35 @@
     {1,2} - {1,2,3}             # set()
 
 
+``set.intersection()``
+======================
+* common element from each
+
+.. code-block:: python
+
+    {1,2} & {2,3}               # {2}
+    {1,2} & {2,3} & {2,4}       # {2}
+    {1,2} & {2,3} & {3}         # set()
+
+
 ``set.symmetric_difference()``
 ==============================
-* Return a new set with elements in either the set or other but not both
+* not common elements from each
 
 .. code-block:: python
 
     {1,2} ^ {1,2}               # set()
     {1,2} ^ {2,3}               # {1, 3}
     {1,2} ^ {1,3}               # {2, 3}
+
+
+``set.difference()``
+====================
+* subtract
+
+.. code-block:: python
+
+    {1,2} - {2,3}               # {1}
+    {1,2} - {2,3} - {3}         # {1}
+    {1,2} - {1,2,3}             # set()
+

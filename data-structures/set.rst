@@ -2,28 +2,28 @@
 ``set``
 *******
 
+
 * Only unique values
-* Can store elements of any **hashable** types
 * Mutable - can add, remove, and modify items
 
 
-Defining ``set``
-================
+Initializing
+============
 * Do not record element position
 * Do not record order of insertion
 * Do not support indexing
-* Dot support slicing
+* Do not support slicing
 
-Empty ``set``
--------------
+Initialize empty
+----------------
 * Defining only with ``set()``
 
 .. code-block:: python
 
     my_set = set()
 
-``set`` with one element
-------------------------
+Initialize with one element
+---------------------------
 * Comma after last element is optional
 * Brackets are required
 
@@ -32,22 +32,23 @@ Empty ``set``
     my_set = {1}
     my_set = {1,}
 
-``set`` with multiple values
-----------------------------
+Initialize with many elements
+-----------------------------
 * Brackets are required
+* Only unique values
+* Can store elements of any **hashable** types
 
 .. code-block:: python
 
     my_set = {1, 3, 1}          # {1, 3}
 
-``set`` with multiple values in many types
-------------------------------------------
-* Brackets are required
-
 .. code-block:: python
 
     my_set = {1, 2.0, 'Jan'}    # {1, 2.0, 'Jan'}
     my_set = {1, 2.0, (3, 4)}   # {1, 2.0, (3, 4)}
+
+.. code-block:: python
+
     my_set = {1, 2.0, [3, 4]}   # TypeError: unhashable type: 'list'
     my_set = {1, 2.0, {3, 4}}   # TypeError: unhashable type: 'set'
 

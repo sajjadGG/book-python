@@ -263,42 +263,6 @@ Simple collections
     * Slice zbiorów danych
     * Rzutowanie i konwersja typów
 
-Slicing text
-------------
-* Filename: ``slice_text.py``
-* Lines of code to write: 8 lines
-* Estimated time of completion: 10 min
-
-#. Z podanych poniżej ciągów znaków
-#. Za pomocą ``[...]`` wydobądź ``Jana III Sobieskiego``
-#. Jakie parametry użyłeś dla każdej z linijek?
-
-.. code-block:: python
-
-    a = 'UL. Jana III Sobieskiego 1/2'
-    b = 'ulica Jana III Sobieskiego 1 apt 2'
-    c = 'os. Jana III Sobieskiego'
-    d = 'plac Jana III Sobieskiego 1/2'
-    e = 'aleja Jana III Sobieskiego'
-    f = 'alei Jana III Sobieskiego 1/2'
-    g = 'Jana III Sobieskiego 1 m. 2'
-    h = 'os. Jana III Sobieskiego 1 apt 2'
-
-    expected = 'Jana III Sobieskiego'
-    print(f'{a == expected}\t a: "{a}"')
-    print(f'{b == expected}\t b: "{b}"')
-    print(f'{c == expected}\t c: "{c}"')
-    print(f'{d == expected}\t d: "{d}"')
-    print(f'{e == expected}\t e: "{e}"')
-    print(f'{f == expected}\t f: "{f}"')
-    print(f'{g == expected}\t g: "{g}"')
-    print(f'{h == expected}\t h: "{h}"')
-
-:The whys and wherefores:
-    * Definiowanie zmiennych
-    * Wycinanie elementów stringów
-    * Indeksacja elementów
-
 Iris dataset
 ------------
 * Filename: ``slice_iris.py``
@@ -358,3 +322,39 @@ Iris dataset
     * Definiowanie i korzystanie z ``list``, ``tuple``, ``set``
     * Slice zbiorów danych
     * Rzutowanie i konwersja typów
+
+Slicing text
+------------
+* Filename: ``slice_text.py``
+* Lines of code to write: 8 lines
+* Estimated time of completion: 10 min
+
+#. Z podanych poniżej ciągów znaków
+#. Za pomocą ``[...]`` wydobądź ``Jana III Sobieskiego``
+#. Jakie parametry użyłeś dla każdej z linijek?
+
+.. code-block:: python
+
+    a = 'UL. Jana III Sobieskiego 1/2'
+    b = 'ulica Jana III Sobieskiego 1 apt 2'
+    c = 'os. Jana III Sobieskiego'
+    d = 'plac Jana III Sobieskiego 1/2'
+    e = 'aleja Jana III Sobieskiego'
+    f = 'alei Jana III Sobieskiego 1/2'
+    g = 'Jana III Sobieskiego 1 m. 2'
+    h = 'os. Jana III Sobieskiego 1 apt 2'
+
+    expected = 'Jana III Sobieskiego'
+    print(f'{a == expected}\t a: "{a}"')
+    print(f'{b == expected}\t b: "{b}"')
+    print(f'{c == expected}\t c: "{c}"')
+    print(f'{d == expected}\t d: "{d}"')
+    print(f'{e == expected}\t e: "{e}"')
+    print(f'{f == expected}\t f: "{f}"')
+    print(f'{g == expected}\t g: "{g}"')
+    print(f'{h == expected}\t h: "{h}"')
+
+:The whys and wherefores:
+    * Definiowanie zmiennych
+    * Wycinanie elementów stringów
+    * Indeksacja elementów
