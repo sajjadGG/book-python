@@ -72,6 +72,25 @@ Checking if has value
     else:
         print('Name is not defined')
 
+.. code-block:: python
+
+    name = None
+
+    if not name:
+        print('Name is not defined')
+    else:
+        print(f'My name... {name}')
+
+.. code-block:: python
+
+    name = None
+
+    if name is None:
+        print('Name is not defined')
+    else:
+        print(f'My name... {name}')
+
+
 ``else``
 ========
 * Optional
@@ -104,10 +123,8 @@ Multiline blocks
 
 Inline ``if``
 =============
-
-Normal ``if``
--------------
 .. code-block:: python
+    :caption: Normal ``if``
 
     ip = '127.0.0.1'
 
@@ -116,20 +133,16 @@ Normal ``if``
     else:
         protocol = 'IPv6'
 
-One line version
-----------------
 .. code-block:: python
+    :caption: One line version
 
     ip = '127.0.0.1'
 
     protocol = 'IPv4' if '.' in ip else 'IPv6'
 
 
-``elif`` and ``switch``
-=======================
-
 ``elif``
---------
+========
 * Used to check for additional condition if first is not met
 * In other languages is known as ``else if``
 
@@ -146,10 +159,12 @@ One line version
     elif language == 'Poland':
         print('Witaj!')
     else:
-        print('I do not speak this language')
+        print("I don't speak this language")
 
-No ``switch`` statement?!
--------------------------
+
+Switch statement
+================
+* No ``switch`` statement!
 * ``switch`` in Object Oriented Programming is considered a bad practise
 * `PEP 275 <https://www.python.org/dev/peps/pep-0275/>`_
 
@@ -162,9 +177,11 @@ No ``switch`` statement?!
         'Polish': 'Witaj',
     }
 
+
     language = 'French'
-    switch.get(language, 'I do not speak this language')
-    # 'I do not speak this language'
+
+    switch.get(language, "I don't speak this language")
+    # "I don't speak this language"
 
 .. code-block:: python
 
@@ -174,10 +191,10 @@ No ``switch`` statement?!
             'Russian': 'Здравствуйте',
             'German': 'Guten Tag',
             'Polish': 'Witaj',
-        }.get(key, 'I do not speak this language')
+        }.get(key, "I don't speak this language")
 
     switch('Russian')       # 'Здравствуйте'
-    switch('French')        # "Sorry, I don't know"
+    switch('French')        # "I don't speak this language"
 
 
 Assignments
@@ -218,4 +235,4 @@ Conditioning on user input
 :Hints:
     * Liczba całkowita to taka, której część dziesiętna nie występuje lub jest równa zero.
     * Możesz to sprawdzić dzieląc liczbę z resztą przez *1* i sprawdzając resztę z dzielenia.
-    * Zwróć uywagę, że ``input()`` zawsze zwraca ``str`` wiec trzeba rzutowac na ``int``, ale wtedy tracimy informację czy wczesniej mielismy ``float``
+    * Zwróć uwagę, że ``input()`` zawsze zwraca ``str`` wiec trzeba rzutować na ``int``, ale wtedy tracimy informację czy wczesnej mieliśmy ``float``

@@ -55,8 +55,8 @@ Unpacking values at the left side
     a           # 3
     b           # 4
 
-Unpacking values at the left side
----------------------------------
+Unpacking values from both sides at once
+----------------------------------------
 .. code-block:: python
 
     first, *middle, last = [1, 2, 3, 4]
@@ -120,15 +120,6 @@ Unpacking values at the left side
     features        # ['4.9', '3.1', '1.5', '0.1']
     species         # 'setosa'
 
-Cannot unpack from both sides at once
--------------------------------------
-.. code-block:: python
-
-    line = '4.9,3.1,1.5,0.1,setosa'
-
-    *a, b, *c = line.split(',')
-    # SyntaxError: two starred expressions in assignment
-
 Naming convention
 -----------------
 * if you're not using ``features`` later in your code
@@ -143,25 +134,34 @@ Naming convention
 Example
 =======
 .. code-block:: python
+    :caption: With ``dict`` all values are namespaced
 
     def get_iris():
-        """
-        Would be nice, if you can get ``dict``...
-        but most programmers will return ``tuple``
-        because it's a bit faster
+        return {'features': [4.9, 3.1, 1.5, 0.1], 'species': 'setosa'}
 
-        return {
-            'sepal_length': 4.9,
-            'sepal_width': 3.1,
-            'petal_length': 1.5,
-            'petal_width': 0.1,
-            'species': 'setosa'
-        }
-        """
+
+    data = get_iris()
+
+    data['features']
+    # [4.9, 3.1, 1.5, 0.1]
+
+    data['species']
+    # 'setosa'
+
+.. code-block:: python
+    :caption: In most cases you'll get ``tuple``, because it's a bit faster
+
+    def get_iris():
         return 4.9, 3.1, 1.5, 0.1, 'setosa'
+
 
     *features, species = get_iris()
 
+    features
+    # 4.9, 3.1, 1.5, 0.1
+
+    species
+    # 'setosa'
 
 More advanced topics
 ====================

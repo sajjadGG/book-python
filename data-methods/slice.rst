@@ -276,6 +276,7 @@ Iris dataset
 * Lines of code to write: 30 lines
 * Estimated time of completion: 20 min
 
+#. Do rozwiązania zadania nie używaj pętli, generatorów, rozwinięć and instrukcji warunkowych.
 #. Mając dane z listingu poniżej
 
     .. code-block:: python
@@ -324,6 +325,7 @@ Iris dataset
             'setosa',
             'virginica',
         }
+
 
 :The whys and wherefores:
     * Definiowanie i korzystanie z ``list``, ``tuple``, ``set``
