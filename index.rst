@@ -40,8 +40,8 @@ Data Structures
     :caption: Data Structures
 
     /data-structures/list.rst
-    /data-structures/set.rst
     /data-structures/tuple.rst
+    /data-structures/set.rst
     /data-structures/dict.rst
     /data-structures/nested.rst
 

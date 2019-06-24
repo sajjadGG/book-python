@@ -5,10 +5,10 @@
 
 Defining ``dict``
 =================
-* Since Python 3.7 ``dict`` has of adding elements
-* Before Python 3.7 ``dict`` order is not ensured!!
 * ``dict`` are key-value storage
 * Comma after last element is optional
+* Since Python 3.7 ``dict`` keeps order of elements
+* Before Python 3.7 ``dict`` order is not ensured!!
 
 .. note:: Since Python 3.7: The insertion-order preservation nature of dict objects is now an official part of the Python language spec.
 
@@ -66,11 +66,11 @@ Key can be any hashable object
     key = 'last_name'
 
     my_dict = {
-        'fist_name': 'key can be ``str``',
-        key: 'key can be ``str``',
-        1: 'key can be ``int``',
-        1.5: 'key can be ``float``',
-        (1, 2): 'key can be ``tuple``',
+        'fist_name': 'key can be str',
+        key: 'key can be str',
+        1: 'key can be int',
+        1.5: 'key can be float',
+        (1, 2): 'key can be tuple',
     }
 
 Value can be any object
@@ -114,17 +114,42 @@ Adding using ``.update()`` method
 .. code-block:: python
 
     data = {
-        'name': 'José Jiménez',
+        'first_name': 'José',
+        'last_name': 'Jiménez',
     }
 
-    data.update(age=42, location=['Bajkonur', 'Florida'])
-    data.update({'agency': 'NASA'})
-
-    print(data)
+    data.update(agency='NASA')
     # {
-    #   'name': 'José Jiménez',
-    #   'age': 42,
-    #   'location': ['Bajkonur', 'Florida'],
+    #   'first_name': 'José',
+    #   'last_name': 'Jiménez',
+    #   'agency': 'NASA'
+    # }
+
+.. code-block:: python
+
+    data = {
+        'first_name': 'José',
+        'last_name': 'Jiménez',
+    }
+
+    data.update(agency=['NASA', 'ESA', 'Roscosmos'])
+    # {
+    #   'first_name': 'José',
+    #   'last_name': 'Jiménez',
+    #   'location': ['NASA', 'ESA', 'Roscosmos']
+    # }
+
+.. code-block:: python
+
+    data = {
+        'first_name': 'José',
+        'last_name': 'Jiménez',
+    }
+
+    data.update({'agency': 'NASA'})
+    # {
+    #   'first_name': 'José',
+    #   'last_name': 'Jiménez',
     #   'agency': 'NASA'
     # }
 

@@ -11,13 +11,15 @@
 
 Defining ``set``
 ================
-* Defining only with ``set()``
-* Is an unordered collection
-* ``set`` do not record element position or order of insertion
-* ``set`` do not support indexing, slicing, or other sequence-like behavior
+* Do not record element position
+* Do not record order of insertion
+* Do not support indexing
+* Dot support slicing
 
 Empty ``set``
 -------------
+* Defining only with ``set()``
+
 .. code-block:: python
 
     my_set = set()
@@ -67,6 +69,21 @@ Adding many items
     my_set.update([4, 5])       # {1, 2, 3, 4, 5}
 
 
+Converting ``list`` to ``set`` deduplicate items
+================================================
+.. code-block:: python
+
+    names = [
+        'Twardowski',
+        'Иванович',
+        'Jiménez',
+        'Twardowski'
+    ]
+
+    unique_names = set(names)
+    # {'Twardowski', 'Иван', 'Jiménez'}
+
+
 Length of a ``set``
 ===================
 .. code-block:: python
@@ -75,12 +92,3 @@ Length of a ``set``
 
     len(my_set)                 # 3
 
-
-Converting ``list`` to ``set`` deduplicate items
-================================================
-.. code-block:: python
-
-    names = ['Twardowski', 'Иван', 'Jiménez', 'Twardowski']
-
-    unique_names = set(names)
-    # {'Twardowski', 'Иван', 'Jiménez'}

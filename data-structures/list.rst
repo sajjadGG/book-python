@@ -115,45 +115,6 @@ Multiple statements in one line
     # AttributeError: 'NoneType' object has no attribute 'sort'
 
 
-Built-in functions on sequences
-===============================
-
-``len()``
----------
-.. code-block:: python
-
-    numbers = [1, 2, 3, 4, 5]
-
-    len(numbers)        # 5
-
-``min()``
----------
-.. code-block:: python
-
-    numbers = [1, 2, 3, 4, 5]
-
-    min(numbers)        # 1
-    min(3, 1, 5)        # 1
-
-``max()``
----------
-.. code-block:: python
-
-    numbers = [1, 2, 3, 4, 5]
-
-    max(numbers)        # 5
-    max(3, 1, 5)        # 5
-
-``sum()``
----------
-.. code-block:: python
-
-    numbers = [1, 2, 3, 4, 5]
-
-    sum(numbers)        # 15
-    sum(3, 1, 5)        # 9
-
-
 Membership Operators
 ====================
 .. csv-table:: Membership operators
@@ -165,6 +126,34 @@ Membership Operators
     "``x != y``", "``x != 18``", "value of ``x`` is not equal to ``y``"
     "``x in y``", "``x in [1, 2, 3]``", "``x`` contains ``y``"
     "``x not in y``", "``x not in [1, 2, 3]``", "``x`` not contains ``y``"
+
+
+Built-in functions on sequences
+===============================
+
+``min()``
+---------
+.. code-block:: python
+
+    numbers = [1, 2, 3, 4, 5]
+
+    min(numbers)        # 1
+
+``max()``
+---------
+.. code-block:: python
+
+    numbers = [1, 2, 3, 4, 5]
+
+    max(numbers)        # 5
+
+``sum()``
+---------
+.. code-block:: python
+
+    numbers = [1, 2, 3, 4, 5]
+
+    sum(numbers)        # 15
 
 
 Length of a ``list``

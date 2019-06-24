@@ -78,6 +78,12 @@ Multiplication
     "``x *= y``", "Incremental multiplication"
     "``x ** y``", "``x`` to the power of ``y``"
 
+.. code-block:: python
+
+    2 ** 2          # 4
+    3 ** 4          # 81
+    -1 ** 2         # 1
+
 Division
 --------
 .. csv-table:: Division operators
@@ -89,9 +95,32 @@ Division
     "``x // y``", "Quotient of division ``x`` by ``y``"
     "``x % y``", "Modulo. Reminder of division ``x`` by ``y``"
 
+.. code-block:: python
+
+    10 // 3         # 3
+    10 % 3          # 1
+
 
 Numeric Functions
 =================
+
+Minimal value
+-------------
+.. code-block:: python
+
+    min(3, 1, 5)    # 1
+
+Maximal value
+-------------
+.. code-block:: python
+
+    max(3, 1, 5)    # 5
+
+Total value
+-----------
+.. code-block:: python
+
+    sum(3, 1, 5)    # 9
 
 Absolute value
 --------------
@@ -107,9 +136,3 @@ Number to the ``n-th`` power
     pow(2, 2)       # 4
     pow(3, 4)       # 81
     pow(-1, 2)      # 1
-
-.. code-block:: python
-
-    2 ** 2          # 4
-    3 ** 4          # 81
-    -1 ** 2         # 1
