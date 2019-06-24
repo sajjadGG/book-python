@@ -58,6 +58,15 @@ Changing Character Case
     name.title()       # 'Jan Twardowski Iii'
     name.capitalize()  # 'Jan twardowski iii'
 
+.. code-block:: python
+
+    name = 'Angus McGyver'
+
+    name.upper()       # 'ANGUS MCGYVER'
+    name.lower()       # 'angus mcgyver'
+    name.title()       # 'Angus Mcgyver'
+    name.capitalize()  # 'Angus mcgyver'
+
 Replacing parts of the ``str``
 ------------------------------
 .. code-block:: python
@@ -217,25 +226,41 @@ Different way of spelling and abbreviating
 ------------------------------------------
 .. code-block:: text
 
-    'ul '
-    'ul. '
+    'ul'
     'ul.'
+    'Ul.'
+    'UL.'
     'ulica'
-    'Ul. '
-    'UL. '
-    'ulica '
-    'Ulica. '
-    'os. '
-    'ośedle'
-    'osiedle'
+    'Ulica'
+
+.. code-block:: text
+
     'os'
-    'plac '
-    'pl '
-    'al '
-    'al. '
-    'aleja '
-    'alei '
+    'os.'
+    'Os.'
+    'osiedle'
+
+    'oś'
+    'oś.'
+    'Oś.'
+    'ośedle'
+
+.. code-block:: text
+
+    'pl'
+    'pl.'
+    'Pl.'
+    'plac'
+
+.. code-block:: text
+
+    'al'
+    'al.'
+    'Al.'
+
+    'aleja'
     'aleia'
+    'alei'
     'aleii'
     'aleji'
 
@@ -249,16 +274,43 @@ House number and apartment
     '1 /2'
     '3/5/7'
 
+.. code-block:: text
+
     '1 m. 2'
     '1 m 2'
     '1 apt 2'
     '1 apt. 2'
 
+.. code-block:: text
+
     '180f/8f'
     '180f/8'
     '180/8f'
 
+.. code-block:: text
+
     '13d bud. A'
+
+Phone numbers
+-------------
+.. code-block:: text
+
+    123 555 678
+
+    +48 12 355 5678
+    +48 123 555 678
+    +48 123-555-678
+
+    +48123555678
+    +48 123 555 6789
+
+    +1 (123) 555-6789
+    +1 (123).555.6789
+
+    +1 800-python
+
+    +48 123 555 678 wew. 1337
+
 
 Assignments
 ===========
