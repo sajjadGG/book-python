@@ -70,17 +70,6 @@
     {1,2} - {1,2,3}             # set()
 
 
-``set.intersection()``
-======================
-* common element from each
-
-.. code-block:: python
-
-    {1,2} & {2,3}               # {2}
-    {1,2} & {2,3} & {2,4}       # {2}
-    {1,2} & {2,3} & {3}         # set()
-
-
 ``set.symmetric_difference()``
 ==============================
 * not common elements from each
@@ -92,13 +81,13 @@
     {1,2} ^ {1,3}               # {2, 3}
 
 
-``set.difference()``
-====================
-* subtract
+``set.intersection()``
+======================
+* common element from each
 
 .. code-block:: python
 
-    {1,2} - {2,3}               # {1}
-    {1,2} - {2,3} - {3}         # {1}
-    {1,2} - {1,2,3}             # set()
+    {1,2} & {2,3}               # {2}
+    {1,2} & {2,3} & {2,4}       # {2}
+    {1,2} & {2,3} & {3}         # set()
 

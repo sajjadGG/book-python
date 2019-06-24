@@ -208,6 +208,13 @@ Slice ``dict``
 
     DATA = {'a': 1, 'b': 2}
 
+    DATA[1]
+    # KeyError: 1
+
+.. code-block:: python
+
+    DATA = {'a': 1, 'b': 2}
+
     DATA[1:2]
     # TypeError: unhashable type: 'slice'
 
