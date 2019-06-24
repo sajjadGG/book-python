@@ -24,8 +24,8 @@ Empty ``dict``
 .. code-block:: python
 
     my_dict = {
-        'first_name': 'José',
-        'last_name': 'Jiménez'
+        'first_name': 'Jan',
+        'last_name': 'Twardowski'
     }
 
 Duplicating items are overridden by latter
@@ -33,18 +33,18 @@ Duplicating items are overridden by latter
 .. code-block:: python
 
     my_dict = {
-        'name': 'José',
-        'name': 'Иван',
+        'name': 'Twardowski',
+        'name': 'Иванович',
     }
-    # {'name': 'Иван'}
+    # {'name': 'Иванович'}
 
 Key can be any hashable object
 ------------------------------
 .. code-block:: python
 
     my_dict = {
-        'first_name': 'José',
-        'last_name': 'Jiménez',
+        'first_name': 'Jan',
+        'last_name': 'Twardowski',
     }
 
 .. code-block:: python
@@ -57,8 +57,8 @@ Key can be any hashable object
 .. code-block:: python
 
     my_dict = {
-        (1, 2): 'hello',
-        (3, 4, 5): 'ehlo',
+        (1,): 'tuple with one element',
+        (2, 3, 4): 'tuple with many elements',
     }
 
 .. code-block:: python
@@ -67,10 +67,11 @@ Key can be any hashable object
 
     my_dict = {
         'fist_name': 'key can be str',
-        key: 'key can be str',
         1: 'key can be int',
         1.5: 'key can be float',
-        (1, 2): 'key can be tuple',
+        (1,): 'key can be tuple',
+        (2, 3, 4): 'key can be tuple',
+        key: 'key can be str',
     }
 
 Value can be any object
@@ -80,8 +81,8 @@ Value can be any object
     my_dict = {
         'date': '1969-07-21',
         'age': 42,
-        'astronaut': {'name': 'José Jiménez', 'medals': {'Medal of Honor', 'Purple Heart'}},
-        'agency': ['NASA', 'Roscosmos', 'ESA'],
+        'astronaut': {'name': 'Jan Twardowski', 'medals': {'Medal of Honor', 'Purple Heart'}},
+        'agency': ['POLSA', 'Roscosmos', 'ESA'],
         'location': ('Bajkonur', 'KSC Florida'),
     }
 
@@ -95,62 +96,62 @@ Adding using ``[...]`` syntax
 -----------------------------
 .. code-block:: python
 
-    data = {
-        'first_name': 'José',
-        'last_name': 'Jiménez',
+    my_dict = {
+        'first_name': 'Jan',
+        'last_name': 'Twardowski',
     }
 
-    data['agency'] = 'NASA'
+    my_dict['agency'] = 'POLSA'
 
-    print(data)
+    print(my_dict)
     # {
-    #   'first_name': 'José',
-    #   'last_name': 'Jiménez',
-    #   'agency': 'NASA'
+    #   'first_name': 'Jan',
+    #   'last_name': 'Twardowski',
+    #   'agency': 'POLSA'
     # }
 
 Adding using ``.update()`` method
 ---------------------------------
 .. code-block:: python
 
-    data = {
-        'first_name': 'José',
-        'last_name': 'Jiménez',
+    my_dict = {
+        'first_name': 'Jan',
+        'last_name': 'Twardowski',
     }
 
-    data.update(agency='NASA')
+    my_dict.update(agency='POLSA')
     # {
-    #   'first_name': 'José',
-    #   'last_name': 'Jiménez',
-    #   'agency': 'NASA'
+    #   'first_name': 'Jan',
+    #   'last_name': 'Twardowski',
+    #   'agency': 'POLSA'
     # }
 
 .. code-block:: python
 
-    data = {
-        'first_name': 'José',
-        'last_name': 'Jiménez',
+    my_dict = {
+        'first_name': 'Jan',
+        'last_name': 'Twardowski',
     }
 
-    data.update(agency=['NASA', 'ESA', 'Roscosmos'])
+    my_dict.update(agency=['POLSA', 'ESA', 'Roscosmos'])
     # {
-    #   'first_name': 'José',
-    #   'last_name': 'Jiménez',
-    #   'location': ['NASA', 'ESA', 'Roscosmos']
+    #   'first_name': 'Jan',
+    #   'last_name': 'Twardowski',
+    #   'location': ['POLSA', 'ESA', 'Roscosmos']
     # }
 
 .. code-block:: python
 
-    data = {
-        'first_name': 'José',
-        'last_name': 'Jiménez',
+    my_dict = {
+        'first_name': 'Jan',
+        'last_name': 'Twardowski',
     }
 
-    data.update({'agency': 'NASA'})
+    my_dict.update({'agency': 'POLSA'})
     # {
-    #   'first_name': 'José',
-    #   'last_name': 'Jiménez',
-    #   'agency': 'NASA'
+    #   'first_name': 'Jan',
+    #   'last_name': 'Twardowski',
+    #   'agency': 'POLSA'
     # }
 
 
@@ -163,17 +164,33 @@ Accessing values with ``[...]``
 
 .. code-block:: python
 
-    data = {
-        'first_name': 'José',
-        'last_name': 'Jiménez',
-        'age': 42,
+    my_dict = {
+        'first_name': 'Jan',
+        'last_name': 'Twardowski',
+    }
+
+    my_dict['last_name']
+    # Twardowski
+
+.. code-block:: python
+
+    my_dict = {
         1961: 'First Human Space Flight',
         1969: 'First Step on the Moon',
     }
 
-    data['last_name']          # 'Jiménez'
-    data[1961]                 # 'First Human Space Flight'
-    data['agency']             # KeyError: 'agency'
+    my_dict[1961]
+    # 'First Human Space Flight'
+
+.. code-block:: python
+
+    my_dict = {
+        'first_name': 'Jan',
+        'last_name': 'Twardowski',
+    }
+
+    my_dict['agency']
+    # KeyError: 'agency'
 
 Accessing values with ``.get(...)``
 -----------------------------------
@@ -182,33 +199,59 @@ Accessing values with ``.get(...)``
 
 .. code-block:: python
 
-    data = {
-        'first_name': 'José',
-        'last_name': 'Jiménez',
-        'age': 42,
+    my_dict = {
+        'first_name': 'Jan',
+        'last_name': 'Twardowski',
+    }
+
+    my_dict.get('last_name')
+    # Twardowski
+
+.. code-block:: python
+
+    my_dict = {
         1961: 'First Human Space Flight',
         1969: 'First Step on the Moon',
     }
 
-    data.get('last_name')      # 'Jiménez'
-    data.get(1961)             # 'First Human Space Flight'
-    data.get('agency')         # None
-    data.get('agency', 'n/a')  # 'n/a'
+    my_dict.get(1961)
+    # 'First Human Space Flight'
 
+.. code-block:: python
+
+    my_dict = {
+        'first_name': 'Jan',
+        'last_name': 'Twardowski',
+    }
+
+    my_dict.get('agency')
+    # None
+
+    my_dict.get('agency', 'n/a')
+    # 'n/a'
 
 Accessing ``dict`` keys, values and key-value pairs
 ---------------------------------------------------
 .. code-block:: python
 
     my_dict = {
-        'first_name': 'José',
-        'last_name': 'Jiménez',
+        'first_name': 'Jan',
+        'last_name': 'Twardowski',
         'age': 42,
     }
 
-    my_dict.keys()      # ['first_name', 'last_name', 'age']
-    my_dict.values()    # ['José', 'Jiménez', 42]
-    my_dict.items()     # [('first_name', 'José'), ('last_name', 'Jiménez'), ('age', 42)]
+    my_dict.keys()
+    # ['first_name', 'last_name', 'age']
+
+    my_dict.values()
+    # ['Jan', 'Twardowski', 42]
+
+    my_dict.items()
+    # [
+    #   ('first_name', 'Jan'),
+    #   ('last_name', 'Twardowski'),
+    #   ('age', 42)
+    # ]
 
 
 Length of a ``dict``
@@ -216,8 +259,8 @@ Length of a ``dict``
 .. code-block:: python
 
     my_dict = {
-        'first_name': 'José',
-        'last_name': 'Jiménez',
+        'first_name': 'Jan',
+        'last_name': 'Twardowski',
         'age': 42,
     }
 

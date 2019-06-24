@@ -4,8 +4,6 @@
 
 * Can store elements of any types
 * Mutable - can add, remove, and modify items
-* Brackets are required
-* Comma after last element is optional
 
 
 Defining ``list``
@@ -22,6 +20,9 @@ Empty ``list``
 
 One element ``list``
 --------------------
+* Comma after last element is optional
+* Brackets are required
+
 .. code-block:: python
 
     my_list = [1]
@@ -29,6 +30,8 @@ One element ``list``
 
 Many element ``list``
 ---------------------
+* Brackets are required
+
 .. code-block:: python
 
     my_list = [1, 2.0, None, False, 'José']

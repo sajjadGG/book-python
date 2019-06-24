@@ -4,8 +4,6 @@
 
 * Can store elements of any types
 * Immutable - cannot add, modify or remove items
-* Brackets are optional
-* Comma after last element is optional
 
 
 Defining ``tuple``
@@ -23,6 +21,7 @@ Empty ``tuple``
 ``tuple`` with one element
 --------------------------
 * Single element ``tuple`` require comma at the end (**important!**)
+* Brackets are optional
 
 .. code-block:: python
 
@@ -31,6 +30,9 @@ Empty ``tuple``
 
 ``tuple`` with many elements
 ----------------------------
+* Comma after last element is optional
+* Brackets are optional
+
 .. code-block:: python
 
     my_tuple = 1, 2

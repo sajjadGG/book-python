@@ -5,8 +5,6 @@
 * Only unique values
 * Can store elements of any **hashable** types
 * Mutable - can add, remove, and modify items
-* Brackets are required
-* Comma after last element is optional
 
 
 Defining ``set``
@@ -26,6 +24,9 @@ Empty ``set``
 
 ``set`` with one element
 ------------------------
+* Comma after last element is optional
+* Brackets are required
+
 .. code-block:: python
 
     my_set = {1}
@@ -33,12 +34,16 @@ Empty ``set``
 
 ``set`` with multiple values
 ----------------------------
+* Brackets are required
+
 .. code-block:: python
 
     my_set = {1, 3, 1}          # {1, 3}
 
 ``set`` with multiple values in many types
 ------------------------------------------
+* Brackets are required
+
 .. code-block:: python
 
     my_set = {1, 2.0, 'Jan'}    # {1, 2.0, 'Jan'}
@@ -81,7 +86,7 @@ Converting ``list`` to ``set`` deduplicate items
     ]
 
     unique_names = set(names)
-    # {'Twardowski', 'Иван', 'Jiménez'}
+    # {'Twardowski', 'Иванович', 'Jiménez'}
 
 
 Length of a ``set``
