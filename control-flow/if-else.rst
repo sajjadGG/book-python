@@ -63,6 +63,8 @@ Checking if value is in range
 
 Checking if has value
 ---------------------
+* More advanced examples will be covered latter
+
 .. code-block:: python
 
     name = None
@@ -71,24 +73,6 @@ Checking if has value
         print(f'My name... {name}')
     else:
         print('Name is not defined')
-
-.. code-block:: python
-
-    name = None
-
-    if not name:
-        print('Name is not defined')
-    else:
-        print(f'My name... {name}')
-
-.. code-block:: python
-
-    name = None
-
-    if name is None:
-        print('Name is not defined')
-    else:
-        print(f'My name... {name}')
 
 
 ``else``
@@ -161,10 +145,9 @@ Inline ``if``
     else:
         print("I don't speak this language")
 
-
 Switch statement
-================
-* No ``switch`` statement!
+----------------
+* No ``switch`` statement in Python!
 * ``switch`` in Object Oriented Programming is considered a bad practise
 * `PEP 275 <https://www.python.org/dev/peps/pep-0275/>`_
 
