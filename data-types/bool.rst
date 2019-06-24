@@ -18,7 +18,7 @@ Defining ``bool``
 Converting to ``bool``
 ======================
 * Also known as "type casting"
-* ``float()`` converts argument to ``float``
+* ``bool()`` converts argument to ``bool``
 
 .. code-block:: python
 
@@ -76,6 +76,13 @@ Using ``and``
     '' and 'Jan'                # False
     '' and ''                   # False
 
+.. code-block:: python
+
+    'Jan' and 1                 # True
+    'Jan' and 0                 # False
+    0.0 and 'Jan'               # False
+    1 and False                 # False
+
 Using ``or``
 ------------
 .. code-block:: python
@@ -98,6 +105,13 @@ Using ``or``
     'José' or ''                # True
     '' or 'José'                # True
     '' or ''                    # False
+
+.. code-block:: python
+
+    1 or 'Иван'                 # True
+    True or ''                  # True
+    0 or True                   # True
+    0.0 or False                # False
 
 Using both: ``or`` and ``and``
 ------------------------------

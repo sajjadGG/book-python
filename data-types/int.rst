@@ -16,8 +16,8 @@ Defining ``int``
 
 .. code-block:: python
 
-    million = 1000000       # 1000000
-    million = 1_000_000     # 1000000
+    million = 1000000000        # 1000000000
+    million = 1_000_000_000     # 1000000000
 
 
 Converting to ``int``
@@ -48,48 +48,46 @@ Converting to ``int``
 Numerical Operators
 ===================
 
-Add and subtract
-----------------
-.. csv-table:: Add and subtract
+Addition
+--------
+.. csv-table:: Addition operators
+    :header: "Operand", "Description"
+    :widths: 15, 85
+
+    "``+x``", "``x``"
+    "``x + y``", "Sum ``x`` and ``y``"
+    "``x += y``", "Incremental addition"
+
+Subtraction
+-----------
+.. csv-table:: Subtraction operators
     :header: "Operand", "Description"
     :widths: 15, 85
 
     "``-x``", "``x`` negation"
-    "``+x``", "``x``"
-    "``x + y``", "Sum ``x`` and ``y``"
     "``x - y``", "Subtract ``x`` and ``y``"
+    "``x -= y``", "Incremental subtraction"
 
 Multiplication
 --------------
-.. csv-table:: Numerical types operators
+.. csv-table:: Multiplication operators
     :header: "Operand", "Description"
     :widths: 15, 85
 
     "``x * y``", "Multiply ``x`` and ``y``"
+    "``x *= y``", "Incremental multiplication"
     "``x ** y``", "``x`` to the power of ``y``"
 
 Division
 --------
-.. csv-table:: Numerical types operators
+.. csv-table:: Division operators
     :header: "Operand", "Description"
     :widths: 15, 85
 
     "``x / y``", "Divide ``x`` and ``y``"
+    "``x /= y``", "Incremental division"
     "``x // y``", "Quotient of division ``x`` by ``y``"
     "``x % y``", "Modulo. Reminder of division ``x`` by ``y``"
-
-Incremental assignments
------------------------
-* Add ``y`` to ``x`` and assign result to ``x`` as new value
-
-.. csv-table:: Incremental assignments
-    :header: "Operand", "Description"
-    :widths: 15, 85
-
-    "``x += y``", "Add and assign"
-    "``x -= y``", "Subtract and assign"
-    "``x *= y``", "Multiply and assign"
-    "``x /= y``", "Divide and assign"
 
 
 Numeric Functions
