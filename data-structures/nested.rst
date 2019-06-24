@@ -240,7 +240,7 @@ Split train/test
 
 #. Mając do dyspozycji zbiór danych Irysów z listingu :numref:`listing-nested-iris-dataset`
 #. Zapisz nagłówek (pierwsza linia) do zmiennej
-#. Zapisz do innej zmiennej dane bez nagłówka
+#. Zapisz do innej zmiennej dane bez nagłówka (``data = DATA[1:]``)
 #. Wylicz punkt podziału: ilość rekordów danych bez nagłówka razy procent
 #. Podziel zbiór na dwie listy w proporcji:
 
@@ -256,5 +256,3 @@ Split train/test
     * Konwersja typów
     * Magic Number
 
-:Hint:
-    * ``selected = DATA[1:]``
