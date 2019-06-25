@@ -193,7 +193,7 @@ Parsing simple CSV file
     * praca ze ścieżkami w systemie operacyjnym
 
 
-Parsing ``/etc/hosts`` - simple
+``/etc/hosts`` - Simple Parsing
 -------------------------------
 * Filename: ``file_hosts_simple.py``
 * Lines of code to write: 10 lines
@@ -236,20 +236,20 @@ Parsing ``/etc/hosts`` - simple
     * praca ze ścieżkami w systemie operacyjnym
 
 
-Parsing ``/etc/hosts``
-----------------------
+``/etc/hosts`` - Advanced Parsing
+---------------------------------
 * Filename: ``file_hosts.py``
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
-* Input data: :numref:`listing-etc-hosts`
+* Input data: :numref:`listing-etc-hosts-advanced`
 
     .. literalinclude:: data/etc-hosts.txt
-        :name: listing-etc-hosts
+        :name: listing-etc-hosts-advanced
         :language: text
         :caption: Zawartość pliku ``hosts.txt``
 
 #. Utwórz plik tekstowy ``hosts.txt``
-#. Do pliku skopiuj kod z listingu :numref:`listing-etc-hosts`
+#. Do pliku skopiuj kod z listingu :numref:`listing-etc-hosts-advanced`
 #. Ważne, żeby przepisać zawartość zawierającą komentarze, białe spacje i linie przerwy
 #. Sparsuj plik i dla każdej linii:
 

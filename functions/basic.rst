@@ -124,41 +124,56 @@ Returning nested types
             {'astro': 'Jiménez', 'missions': ('Mercury', 'Apollo')},
         ]
 
-
 Function arguments
 ==================
 
-Passing arguments
------------------
+Required arguments
+------------------
 .. code-block:: python
 
-    def add(a, b):
-        return a + b
-
-    add(1, 2)
-    # 3
-
-Named arguments
----------------
-.. code-block:: python
-
-    def minus(a, b):
+    def subtract(a, b):
         return a - b
-
-    minus(2, 1)      # 1
-    minus(1, 2)      # -1
-    minus(a=2, b=1)  # 1
-    minus(b=1, a=2)  # 1
-    minus(2, b=1)    # 1
-    minus(a=2, 1)    # SyntaxError: positional argument follows keyword argument
 
 Arguments with default value
 ----------------------------
 * Funkcja przyjmie wartość domyślną dla argumentu jeżeli użytkownik nie nadpisze
 * Argumenty z wartością domyślną muszą być skrajnie po prawej stronie
-* Kolejność podawania argumentów nazwanych nie ma znaczenia
 * Argumenty z wartościami domyślnymi nie muszą być podane
-* Arguemnty bez wartości domyślnych są wymagane
+
+.. code-block:: python
+
+    def subtract(a, b=2):
+        return a - b
+
+.. code-block:: python
+
+    def subtract(a=1, b=2):
+        return a - b
+
+Positional arguments
+--------------------
+.. code-block:: python
+
+    def subtract(a, b):
+        return a - b
+
+    minus(2, 1)      # 1
+    minus(1, 2)      # -1
+
+Named arguments
+---------------
+* Argumenty bez wartości domyślnych są wymagane
+* Kolejność podawania argumentów nazwanych nie ma znaczenia
+
+.. code-block:: python
+
+    def subtract(a, b):
+        return a - b
+
+    minus(a=2, b=1)  # 1
+    minus(b=1, a=2)  # 1
+    minus(2, b=1)    # 1
+    minus(a=2, 1)    # SyntaxError: positional argument follows keyword argument
 
 .. code-block:: python
 
@@ -301,6 +316,7 @@ Cleaning text input
 * Estimated time of completion: 15 min
 
 #. Napisz funkcję oczyszczającą ciągi znaków
+#. Funkcja musi przechodzić wszystkie ``doctest``
 
 .. code-block:: python
 
@@ -308,24 +324,34 @@ Cleaning text input
         """
         >>> clean('  bolesława chrobrego ')
         'Bolesława Chrobrego'
+
         >>> clean('ul Jana III SobIESkiego')
         'Jana III Sobieskiego'
+
         >>> clean('\tul. Jana trzeciego Sobieskiego')
         'Jana III Sobieskiego'
+
         >>> clean('ulicaJana III Sobieskiego')
         'Jana III Sobieskiego'
-        >>> clean('UL. JA\tNA 3 SOBIES\tKIEGO')
+
+        >>> clean('UL. JA\tNA 3 SOBIES  KIEGO')
         'Jana III Sobieskiego'
+
         >>> clean('UL. Zygmunta III WaZY')
-        'Zygmunta III WaZY'
+        'Zygmunta III Wazy'
+
         >>> clean('ULICA JANA III SOBIESKIEGO  ')
         'Jana III Sobieskiego'
+
         >>> clean('ULICA. JANA III SOBIeskieGO')
         'Jana III Sobieskiego'
+
         >>> clean(' Jana 3 Sobieskiego  ')
         'Jana III Sobieskiego'
+
         >>> clean('Jana III Sobi\teskiego ')
         'Jana III Sobieskiego'
+
         >>> clean('ul.Mieszka II')
         'Mieszka II'
         """
@@ -345,6 +371,7 @@ Aviation numbers
 
 #. Napisz funkcję ``aviation_numbers``
 #. Funkcja zamieni dowolnego ``int`` lub ``float`` na formę tekstową w mowie pilotów
+#. Funkcja musi przechodzić wszystkie ``doctest``
 
 .. csv-table:: Aviation Phonetic Numbers
     :header-rows: 1
