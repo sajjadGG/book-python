@@ -40,17 +40,24 @@ Initialize with many elements
 
 .. code-block:: python
 
-    my_set = {1, 3, 1}          # {1, 3}
+    my_set = {1, 3, 1}
+    # {1, 3}
 
 .. code-block:: python
 
-    my_set = {1, 2.0, 'Jan'}    # {1, 2.0, 'Jan'}
-    my_set = {1, 2.0, (3, 4)}   # {1, 2.0, (3, 4)}
+    my_set = {1, 2.0, 'Jan'}
+    # {1, 2.0, 'Jan'}
+
+    my_set = {1, 2.0, (3, 4)}
+    # {1, 2.0, (3, 4)}
 
 .. code-block:: python
 
-    my_set = {1, 2.0, [3, 4]}   # TypeError: unhashable type: 'list'
-    my_set = {1, 2.0, {3, 4}}   # TypeError: unhashable type: 'set'
+    my_set = {1, 2.0, [3, 4]}
+    # TypeError: unhashable type: 'list'
+
+    my_set = {1, 2.0, {3, 4}}
+    # TypeError: unhashable type: 'set'
 
 
 Adding items
@@ -60,19 +67,25 @@ Adding one element
 ------------------
 .. code-block:: python
 
-    my_set = {1, 2, 3}          # {1, 2, 3}
+    my_set = {1, 2, 3}
 
-    my_set.add(4)               # {1, 2, 3, 4}
-    my_set.add(4)               # {1, 2, 3, 4}
-    my_set.add(3)               # {1, 2, 3, 4}
+    my_set.add(4)
+    # {1, 2, 3, 4}
+
+    my_set.add(4)
+    # {1, 2, 3, 4}
+
+    my_set.add(3)
+    # {1, 2, 3, 4}
 
 Adding many items
 -----------------
 .. code-block:: python
 
-    my_set = {1, 2, 3}          # {1, 2, 3}
+    my_set = {1, 2, 3}
 
-    my_set.update([4, 5])       # {1, 2, 3, 4, 5}
+    my_set.update([4, 5])
+    # {1, 2, 3, 4, 5}
 
 
 Converting ``list`` to ``set`` deduplicate items
@@ -96,7 +109,8 @@ Length of a ``set``
 
     my_set = {1, 2, 3}
 
-    len(my_set)                 # 3
+    len(my_set)
+    # 3
 
 
 Assignments

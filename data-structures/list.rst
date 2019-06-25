@@ -153,7 +153,8 @@ Built-in functions on sequences
 
     numbers = [1, 2, 3, 4, 5]
 
-    min(numbers)        # 1
+    min(numbers)
+    # 1
 
 ``max()``
 ---------
@@ -161,7 +162,8 @@ Built-in functions on sequences
 
     numbers = [1, 2, 3, 4, 5]
 
-    max(numbers)        # 5
+    max(numbers)
+    # 5
 
 ``sum()``
 ---------
@@ -169,7 +171,8 @@ Built-in functions on sequences
 
     numbers = [1, 2, 3, 4, 5]
 
-    sum(numbers)        # 15
+    sum(numbers)
+    # 15
 
 
 Length of a ``list``
@@ -178,7 +181,8 @@ Length of a ``list``
 
     my_list = [1, 2, 3]
 
-    len(my_list)    # 3
+    len(my_list)
+    # 3
 
 
 Assignments

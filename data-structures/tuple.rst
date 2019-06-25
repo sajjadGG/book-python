@@ -51,7 +51,8 @@ Length of a ``tuple``
 
     my_tuple = (1, 2, 3)
 
-    len(my_tuple)           # 3
+    len(my_tuple)
+    # 3
 
 
 Assignments
@@ -60,8 +61,8 @@ Assignments
 Create
 ------
 * Filename: ``sequences_tuple.py``
-* Lines of code to write: 3 lines
-* Estimated time of completion: 5 min
+* Lines of code to write: 13 lines
+* Estimated time of completion: 10 min
 
 .. csv-table:: Pomiary Iris
     :name: sequences-tuple-iris
@@ -81,4 +82,5 @@ Create
 
 #. Dane są pomiary :numref:`sequences-tuple-iris`
 #. Stwórz ``tuple`` z nazwami gatunków
-#. Wylicz średnią arytmetyczną dla każdej z kolumn
+#. Wylicz średnią arytmetyczną dla każdej z kolumn numerycznych
+#. Do przekonwertowania tabelki, wykorzystaj zaznaczanie wielu linijek za pomocą klawisza ``alt`` w Twoim IDE
