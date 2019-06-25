@@ -97,8 +97,8 @@ Checking if ``str`` starts or ends with value
     name.startswith('Jan')  # True
     name.endswith(';')      # False
 
-Splitting ``str``
------------------
+Splitting by whitespace
+-----------------------
 .. code-block:: python
 
     setosa = '5.1,3.5,1.4,0.2,setosa'
@@ -125,6 +125,22 @@ Splitting ``str``
 
     text.split()
     # ['10.13.37.1', 'nasa.gov', 'esa.int', 'roscosmos.ru']
+
+Splitting by line
+-----------------
+.. code-block:: python
+
+    DATA = """First Line
+    Second Line
+    Third Line
+    """
+
+    DATA.splitlines()
+    # [
+    #   'First Line',
+    #   'Second Line',
+    #   'Third Line'
+    # ]
 
 Joining ``str``
 ---------------
@@ -173,6 +189,15 @@ Check if ``str`` is a part of another ``str``
 
     'th' in 'Python'     # True
     'hello' in 'Python'  # False
+
+Counting occurrences
+--------------------
+.. code-block:: python
+
+    text = 'Moon'
+
+    text.count('o')     # 2
+    text.count('Moo')   # 1
 
 
 Multiple statements in one line

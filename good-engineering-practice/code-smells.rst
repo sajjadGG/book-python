@@ -25,8 +25,41 @@ Source :cite:`CodeSmells`
 #. You code has a function which is a reimplementation of code in the standard library.
 #. You have started a new Project in 2019 (or late 2018) which uses Python2, without a good technical reason. It being what you learnt is not a good technical reason - if you learnt Python2 then you can learn Python3.
 
-Bad practices
-=============
+
+Bad practice
+============
+
+``range(len())``
+----------------
+* Very common bad practice
+* poor variable naming and readability
+* ``range(len(...))`` will evaluate generator to calculate length
+* ``DATA[i]`` lookups has ``O(n)`` complexity!!
+* Does not use generator at all!
+
+.. code-block:: python
+    :caption: Bad practice
+
+    DATA = ['a', 'b', 'c']
+
+    for i in range(len(DATA)):
+        print(DATA[i])
+
+    # a
+    # b
+    # c
+
+.. code-block:: python
+    :caption: Better solution
+
+    DATA = ['a', 'b', 'c']
+
+    for letter in DATA:
+        print(letter)
+
+    # a
+    # b
+    # c
 
 Example 1
 ---------

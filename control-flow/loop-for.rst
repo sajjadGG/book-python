@@ -8,33 +8,27 @@
 Syntax
 ======
 
-No context syntax
------------------
-.. code-block:: python
-    :caption: ``for`` loop syntax
-
-    for ... in ... :
-        ...
-
 Generic syntax
 --------------
+* ``DATA`` must implement ``iterator`` interface
 * More on iterators in chapter :ref:`Iterators`
 
 .. code-block:: python
-    :caption: ``for`` loop generic syntax
+    :caption: ``for`` loop syntax
 
-    for my_variable in ITERATOR:
-        print(my_variable)
+    for <MY VARIABLE> in <DATA> :
+        <CONTENT>
 
 Example
 -------
 .. code-block:: python
     :caption: ``for`` loop syntax: printing each number from ``list``
+    :emphasize-lines: 3
 
     DATA = ['a', 'b', 'c']
 
-    for number in DATA:
-        print(number)
+    for letter in DATA:
+        print(letter)
 
     # 'a'
     # 'b'
@@ -42,9 +36,10 @@ Example
 
 .. code-block:: python
     :caption: ``for`` loop syntax: data can be inline
+    :emphasize-lines: 1
 
-    for number in ['a', 'b', 'c']:
-        print(number)
+    for letter in ['a', 'b', 'c']:
+        print(letter)
 
     # 'a'
     # 'b'
@@ -58,8 +53,8 @@ Iterating over ``str``
 .. code-block:: python
     :caption: Iterating over ``str``
 
-    for character in 'setosa':
-        print(character)
+    for letter in 'setosa':
+        print(letter)
 
     # s
     # e
@@ -127,10 +122,10 @@ Working with Generators and Iterators
 Loops with ``range``
 --------------------
 * ``range(start, stop, step)``
-* ``range().start`` is inclusive
-* ``range().stop`` is exclusive
-* ``range().step`` can be defined
 * ``range(0, 3)`` will generate ``(0, 1, 2)``
+* ``start`` is inclusive, default: ``0``
+* ``stop`` is exclusive, required
+* ``step`` default: ``1``
 
 .. code-block:: python
     :caption: Loops with ``range``
@@ -184,42 +179,6 @@ Loops with ``range``
     # 7 -> c
 
 
-Bad practice
-============
-
-``range(len())``
-----------------
-* Very common bad practice
-* poor variable naming and readability
-* ``range(len(...))`` will evaluate generator to calculate length
-* ``DATA[i]`` lookups has ``O(n)`` complexity!!
-* Does not use generator at all!
-
-.. code-block:: python
-    :caption: Bad practice
-
-    DATA = ['a', 'b', 'c']
-
-    for i in range(len(DATA)):
-        print(DATA[i])
-
-    # a
-    # b
-    # c
-
-.. code-block:: python
-    :caption: Better solution
-
-    DATA = ['a', 'b', 'c']
-
-    for letter in DATA:
-        print(letter)
-
-    # a
-    # b
-    # c
-
-
 Example
 =======
 
@@ -245,6 +204,7 @@ Create ``dict`` from two ``list``
     #     'd': 4,
     # }
 
+
 ``else``
 ========
 * ``else`` will execute, if ``break`` was not used to exit the loop
@@ -261,8 +221,6 @@ Create ``dict`` from two ``list``
     hostnames = []
 
     for line in DATA.splitlines():
-        if not line:
-            continue
 
         ip, *hosts = line.split()
         # line.split() == ['10.13.37.1', 'nasa.gov', 'esa.int', 'roscosmos.ru']
