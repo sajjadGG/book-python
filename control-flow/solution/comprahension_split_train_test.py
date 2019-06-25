@@ -41,7 +41,7 @@ print(result)
 
 ## Not optimized
 #
-# X_train = [x[:4] for x in data[:pivot]]
-# X_test = [x[:4] for x in data[pivot:]]
-# y_train = [y[4] for y in data[:pivot]]
-# y_test = [y[4] for y in data[pivot:]]
+# X_train = [m for *m,s in data[:pivot]]
+# X_test = [m for *m,s in data[pivot:]]
+# y_train = [m for *m,s in data[:pivot]]
+# y_test = [m for *m,s in data[pivot:]]

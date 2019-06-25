@@ -10,7 +10,8 @@ Path
 
 Absolute path
 -------------
-* Windows
+* Windows:
+
     .. code-block:: python
 
         FILE = r'C:\Temp\iris.csv'
@@ -91,6 +92,13 @@ Read selected lines from file
     with open(r'/tmp/iris.csv') as file:
         lines = file.readlines()[1:30]
 
+.. code-block:: python
+    :caption: Convert file to list by line, select 1-30 lines
+
+    with open(r'/tmp/iris.csv') as file:
+        for line in file.readlines()[1:30]:
+            print(line)
+
 
 Writing
 =======
@@ -127,8 +135,8 @@ Exception handling
 
     try:
         with open(r'/tmp/iris.csv') as file:
-            content = file.read()
-            print(content)
+            for line in file:
+                print(line)
 
     except FileNotFoundError:
         print('File does not exist')
@@ -155,6 +163,9 @@ Content of a requested file
 
 #. Napisz program, który wyświetli na ekranie zawartość pliku o nazwie podanej przez użytkownika.
 #. Dopisz obsługę wyjątków dla braku uprawnień oraz tego że plik nie istnieje.
+
+:Hints:
+    * ``input()``
 
 Parsing simple CSV file
 -----------------------
