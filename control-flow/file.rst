@@ -192,10 +192,54 @@ Parsing simple CSV file
     * parsowanie stringów
     * praca ze ścieżkami w systemie operacyjnym
 
+
+Parsing ``/etc/hosts`` - simple
+-------------------------------
+* Filename: ``file_hosts_simple.py``
+* Lines of code to write: 10 lines
+* Estimated time of completion: 10 min
+* Input data: :numref:`listing-etc-hosts-simple`
+
+    .. literalinclude:: data/etc-hosts-simple.txt
+        :name: listing-etc-hosts-simple
+        :language: text
+        :caption: Zawartość pliku ``hosts.txt``
+
+#. Utwórz plik tekstowy ``hosts.txt``
+#. Do pliku skopiuj kod z listingu :numref:`listing-etc-hosts`
+#. Sparsuj plik i dla każdej linii:
+
+    #. Podziel linię po dowolnej ilości białych znaków (spacja, taby, itp)
+    #. Wydziel ip i hosty
+    #. Do struktury wynikowej dopisz ip, hostami
+    #. Jeżeli IP jest już wpisane to scal listy hostname'ów dla wpisów o tym samym IP
+
+#. Na końcu przedstaw dane w formacie:
+
+    * Wersja prosta ``Dict[str, List[str]]``:
+
+        .. code-block:: python
+
+            {
+                '127.0.0.1': ['localhost', 'astromatt'],
+                '10.13.37.1': ['nasa.gov', 'esa.int', 'roscosmos.ru'],
+                '255.255.255.255': ['broadcasthost'],
+                '::1': ['localhost'],
+            }
+
+:The whys and wherefores:
+    * czytanie i parsowanie pliku
+    * nieregularne pliki konfiguracyjne (struktura może się zmieniać)
+    * filtrowanie elementów
+    * korzystanie z pętli i instrukcji warunkowych
+    * parsowanie stringów
+    * praca ze ścieżkami w systemie operacyjnym
+
+
 Parsing ``/etc/hosts``
 ----------------------
 * Filename: ``file_hosts.py``
-* Lines of code to write: 10 lines
+* Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 * Input data: :numref:`listing-etc-hosts`
 
@@ -216,30 +260,17 @@ Parsing ``/etc/hosts``
     #. Do listy wynikowej dopisz słownik z ip, hostami i protokołem
     #. Jeżeli IP jest już wpisane do naszej listy wynikowej to scal listy hostname'ów dla wpisów o tym samym IP
 
-#. Na końcu przedstaw dane w formacie:
+#. Na końcu przedstaw dane w formacie ``List[Dict[str, Union[str, Set[str]]]``:
 
-    * Wersja prosta ``Dict[str, dict]``:
+    .. code-block:: python
+        :caption: ``/etc/hosts`` example
 
-        .. code-block:: python
-
-            {
-                '127.0.0.1': {'protocol': 'ipv4', 'hostnames': ['localhost', 'astromatt']},
-                '10.13.37.1': {'protocol': 'ipv4', 'hostnames': ['nasa.gov', 'esa.int', 'roscosmos.ru']},
-                '255.255.255.255': {'protocol': 'ipv4', 'hostnames': ['broadcasthost']},
-                '::1': {'protocol': 'ipv4', 'hostnames': ['localhost']},
-            }
-
-    * Wersja zaawansowana ``List[Dict[str, Union[str, List[str]]]``:
-
-        .. code-block:: python
-            :caption: ``/etc/hosts`` example
-
-            [
-                {'ip': '127.0.0.1', 'protocol': 'ipv4', 'hostnames': ['localhost', 'astromatt']},
-                {'ip': '10.13.37.1', 'protocol': 'ipv4', 'hostnames': ['nasa.gov', 'esa.int', 'roscosmos.ru']},
-                {'ip': '255.255.255.255', 'protocol': 'ipv4', 'hostnames': ['broadcasthost']},
-                {'ip': '::1', 'protocol': 'ipv6', 'hostnames': ['localhost']}
-            ]
+        [
+            {'ip': '127.0.0.1', 'protocol': 'ipv4', 'hostnames': {'localhost', 'astromatt'}},
+            {'ip': '10.13.37.1', 'protocol': 'ipv4', 'hostnames': {'nasa.gov', 'esa.int', 'roscosmos.ru'}},
+            {'ip': '255.255.255.255', 'protocol': 'ipv4', 'hostnames': {'broadcasthost'}},
+            {'ip': '::1', 'protocol': 'ipv6', 'hostnames': {'localhost'}}
+        ]
 
 :The whys and wherefores:
     * czytanie i parsowanie pliku
