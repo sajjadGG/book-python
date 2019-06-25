@@ -136,3 +136,8 @@ Number to the ``n-th`` power
     pow(2, 2)       # 4
     pow(3, 4)       # 81
     pow(-1, 2)      # 1
+
+
+Assignments
+===========
+.. todo:: Create Assignments

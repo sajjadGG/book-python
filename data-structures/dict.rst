@@ -172,6 +172,21 @@ Adding using ``.update()`` method
 Accessing elements
 ==================
 
+Check if value in ``dict``
+--------------------------
+.. code-block:: python
+
+    my_dict = {
+        'first_name': 'Jan',
+        'last_name': 'Twardowski',
+    }
+
+    'first_name' in my_data
+    # True
+
+    'agency' in my_data
+    # False
+
 Accessing values with ``[...]``
 -------------------------------
 * ``[...]`` throws ``KeyError`` exception if key not found in ``dict``

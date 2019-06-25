@@ -277,39 +277,6 @@ Counter
     * Definiowanie i korzystanie z ``dict`` z wartościami
     * Iterowanie po liście
 
-Segmentation
-------------
-* Filename: ``for_segmentation.py``
-* Lines of code to write: 12 lines
-* Estimated time of completion: 10 min
-
-#. Dane są liczby na listingu :numref:`listing-for-segmentation`
-
-    .. code-block:: python
-        :name: listing-for-segmentation
-        :caption: Numbers for ``dict`` counter
-
-        [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0,
-         0, 6, 5, 0, 0, 9, 7, 0, 4, 4, 8,
-         2, 4, 0, 0, 1, 9, 1, 7, 8, 8, 9,
-         1, 3, 5, 6, 8, 2, 8, 1, 3, 9, 5,
-         4, 8, 1, 9, 6, 3]
-
-#. Policz ile jest wystąpień każdej z grup w tej liście
-
-    - grupa cyfr ``małe``: cyfry z przedziału [0-2]
-    - grupa cyfr ``średnie``: cyfry z przedziału [3-7]
-    - grupa cyfr ``duże``: cyfry z przedziału [8-9]
-
-#. Zwróć ``counter: Dict[str, int]``
-
-    - klucz - grupa
-    - wartość - ilość wystąpień
-
-:The whys and wherefores:
-    * Definiowanie i korzystanie z ``dict`` z wartościami
-    * Iterowanie po liście
-
 Get elements from nested data structure
 ---------------------------------------
 * Filename: ``for_nested.py``
@@ -372,3 +339,36 @@ Text analysis
     :caption: "Moon Speech" by John F. Kennedy, Rice Stadium, Houston, TX, 1962-09-12 :cite:`Kennedy1962`
 
     We choose to go to the Moon. We choose to go to the Moon in this decade and do the other things. Not because they are easy, but because they are hard. Because that goal will serve to organize and measure the best of our energies and skills. Because that challenge is one that we are willing to accept. One we are unwilling to postpone. And one we intend to win
+
+Segmentation
+------------
+* Filename: ``for_segmentation.py``
+* Lines of code to write: 12 lines
+* Estimated time of completion: 10 min
+
+#. Dane są liczby na listingu :numref:`listing-for-segmentation`
+
+    .. code-block:: python
+        :name: listing-for-segmentation
+        :caption: Numbers for ``dict`` counter
+
+        [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0,
+         0, 6, 5, 0, 0, 9, 7, 0, 4, 4, 8,
+         2, 4, 0, 0, 1, 9, 1, 7, 8, 8, 9,
+         1, 3, 5, 6, 8, 2, 8, 1, 3, 9, 5,
+         4, 8, 1, 9, 6, 3]
+
+#. Policz ile jest wystąpień każdej z grup w tej liście
+
+    - grupa cyfr ``małe``: cyfry z przedziału [0-2]
+    - grupa cyfr ``średnie``: cyfry z przedziału [3-7]
+    - grupa cyfr ``duże``: cyfry z przedziału [8-9]
+
+#. Zwróć ``counter: Dict[str, int]``
+
+    - klucz - grupa
+    - wartość - ilość wystąpień
+
+:The whys and wherefores:
+    * Definiowanie i korzystanie z ``dict`` z wartościami
+    * Iterowanie po liście

@@ -179,3 +179,8 @@ Length of a ``list``
     my_list = [1, 2, 3]
 
     len(my_list)    # 3
+
+
+Assignments
+===========
+.. todo:: Create Assignments

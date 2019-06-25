@@ -248,6 +248,8 @@ Length of a ``str``
 Assignments
 ===========
 
+.. todo:: Create better entry-level assignment
+
 Emoticon print
 --------------
 * Filename: ``types_emoticon.py``

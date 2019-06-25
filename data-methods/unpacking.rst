@@ -173,20 +173,19 @@ Assignments
 
 Hosts
 -----
-.. todo:: Poprawić zadanie. Wykorzystuje rzeczy, których nie było wprowadzonych
-
 * Filename: ``kwargs_hosts.py``
-* Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
-* Input data: :numref:`controlflow-kwargs-hosts`
+* Lines of code to write: 1 lines
+* Estimated time of completion: 5 min
 
-#. Skopiuj zawartość listingu poniżej do pliku ``hosts.txt``
-#. Stwórz pusty ``dict`` o nazwie ``hosts``
-#. Czytając plik pomiń puste linie lub zaczynające się od komentarza ``#``
-#. Do ``hosts`` dla klucza IP dodaj listę hostname
+#. Dany jest ciąg znaków:
+
+    .. code-block:: python
+
+        '10.13.37.1      nasa.gov esa.int roscosmos.ru'
+
+#. Podziel go po białych znakach i wydostań wartości:
+
+    * ``ip: str``
+    * ``hosts: List[str]``
+
 #. Przy parsowaniu linii skorzystaj z konstrukcji z gwiazdką ``*``
-
-.. literalinclude:: data/etc-hosts.txt
-    :name: controlflow-kwargs-hosts
-    :language: python
-    :caption: Listing pliku ``/etc/hosts``

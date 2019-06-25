@@ -205,3 +205,8 @@ Problematic types
     what = (1.,1.)    # tuple with two floats
     what = (.5,.5)    # tuple with two floats
     what = (1.,.5)    # tuple with two floats
+
+
+Assignments
+===========
+.. todo:: Create Assignments
