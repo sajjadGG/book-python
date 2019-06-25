@@ -131,6 +131,42 @@ Which one is better?
 * Comprehensions - Using values more than one
 * Generators - Using value one (for example in the loop iterator)
 
+Returning nested objects
+------------------------
+.. code-block:: python
+    :caption: Returning nested objects
+
+    def get_tuple(number):
+        return number, number+10
+
+    [get_tuple(x) for x in range(0, 5)]
+    # [
+    #   (0, 10),
+    #   (1, 11),
+    #   (2, 12),
+    #   (3, 13),
+    #   (4, 14)
+    # ]
+
+.. code-block:: python
+    :caption: Returning nested objects
+
+    def get_dict(number):
+        if number % 2 == 0:
+            return {'number': number, 'status': 'even'}
+        else:
+            return {'number': number, 'status': 'odd'}
+
+
+    [get_dict(x) for x in range(0, 5)]
+    # [
+    #    {'number': 0, 'status': 'even'},
+    #    {'number': 1, 'status': 'odd'},
+    #    {'number': 2, 'status': 'even'},
+    #    {'number': 3, 'status': 'odd'},
+    #    {'number': 4, 'status': 'even'},
+    # ]
+
 Nested Comprehensions
 ---------------------
 .. code-block:: python

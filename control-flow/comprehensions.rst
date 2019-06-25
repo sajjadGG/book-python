@@ -68,6 +68,47 @@ Tuple Comprehension?!
     # <generator object <genexpr> at 0x11eaef570>
 
 
+Generator expressions vs. Comprehensions
+========================================
+
+Comprehensions
+--------------
+* Executes instantly
+
+.. code-block:: python
+
+    list(x for x in range(0, 5))        # [0, 1, 2, 3, 4]
+    [x for x in range(0, 5)]            # [0, 1, 2, 3, 4]
+
+.. code-block:: python
+
+    set(x for x in range(0, 5))         # {0, 1, 2, 3, 4}
+    {x for x in range(0, 5)}            # {0, 1, 2, 3, 4}
+
+.. code-block:: python
+
+    {x: x for x in range(0, 5)}         # {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
+
+.. code-block:: python
+
+    tuple(x for x in range(0, 5))       # (0, 1, 2, 3, 4)
+
+.. code-block:: python
+
+    all(x for x in range(0, 5))                # False
+    any(x for x in range(0, 5) if x % 5 == 0)  # True
+    sum(x*x for x in range(0, 10, 2))          # 120
+
+Generator Expressions
+---------------------
+* Lazy evaluation
+
+.. code-block:: python
+
+    (x*x for x in range(0, 30) if x % 2)
+    # <generator object <genexpr> at 0x1197032a0>
+
+
 Conditional Comprehension
 =========================
 
@@ -115,7 +156,7 @@ Filtering results
         (7.0, 3.2, 4.7, 1.4, 'versicolor'),
     ]
 
-    measurements = [record for record in DATA if record[4] == 'setosa']
+    measurements = [species for *m,species in DATA if species == 'setosa']
     # [
     #   (5.1, 3.5, 1.4, 0.2, 'setosa'),
     #   (4.7, 3.2, 1.3, 0.2, 'setosa')
@@ -145,7 +186,7 @@ Filtering with complex expressions
             return False
 
 
-    measurements = [record for record in DATA if is_setosa(record)]
+    measurements = [x for x in DATA if is_setosa(x)]
     # [
     #   (5.1, 3.5, 1.4, 0.2, 'setosa'),
     #   (4.7, 3.2, 1.3, 0.2, 'setosa')
@@ -244,42 +285,6 @@ Applying function to each output element
     :caption: Applying function to each output element
 
     numbers = [float(x) for x in range(0, 10) if x % 2 == 0]
-
-Returning nested objects
-------------------------
-.. code-block:: python
-    :caption: Returning nested objects
-
-    def get_tuple(number):
-        return number, number+10
-
-    [get_tuple(x) for x in range(0, 5)]
-    # [
-    #   (0, 10),
-    #   (1, 11),
-    #   (2, 12),
-    #   (3, 13),
-    #   (4, 14)
-    # ]
-
-.. code-block:: python
-    :caption: Returning nested objects
-
-    def get_dict(number):
-        if number % 2 == 0:
-            return {'number': number, 'status': 'even'}
-        else:
-            return {'number': number, 'status': 'odd'}
-
-
-    [get_dict(x) for x in range(0, 5)]
-    # [
-    #    {'number': 0, 'status': 'even'},
-    #    {'number': 1, 'status': 'odd'},
-    #    {'number': 2, 'status': 'even'},
-    #    {'number': 3, 'status': 'odd'},
-    #    {'number': 4, 'status': 'even'},
-    # ]
 
 
 Advanced usage for Comprehensions and Generators
