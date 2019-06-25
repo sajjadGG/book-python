@@ -1,4 +1,4 @@
-FILE = input('Podaj nazwę pliku: ')
+FILE = input('Podaj nazwę pliku: ').strip()
 
 
 try:

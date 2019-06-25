@@ -1,4 +1,4 @@
-FILE = r'../src/etc-hosts.txt'
+FILE = r'../data/etc-hosts.txt'
 hostnames = []
 
 
@@ -23,7 +23,7 @@ for line in content:
 
     for record in hostnames:
         if record['ip'] == ip:
-            record['hostnames'] += hosts
+            record['hostnames'].update(hosts)
             break
     else:
         hostnames.append({
