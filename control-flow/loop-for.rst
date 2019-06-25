@@ -277,69 +277,6 @@ Counter
     * Definiowanie i korzystanie z ``dict`` z wartościami
     * Iterowanie po liście
 
-Get elements from nested data structure
----------------------------------------
-* Filename: ``for_nested.py``
-* Lines of code to write: 3 lines
-* Estimated time of completion: 10 min
-
-#. Na podstawie ``DATA`` z :numref:`listing-for-elements-fom-nested`
-#. Po odrzuceniu nagłówka iteruj po danych
-#. Wyświetl na ekranie nazwy gatunków zaczynające się na "v".
-
-.. code-block:: python
-    :caption: Iris sample dataset
-    :name: listing-for-elements-fom-nested
-
-    DATA = [
-        ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-        (5.8, 2.7, 5.1, 1.9, {'species': 'virginica'}),
-        (5.1, 3.5, 1.4, 0.2, {'species': 'setosa'}),
-        (5.7, 2.8, 4.1, 1.3, {'species': 'versicolor'}),
-        (6.3, 2.9, 5.6, 1.8, {'species': 'virginica'}),
-        (6.4, 3.2, 4.5, 1.5, {'species': 'versicolor'}),
-        (4.7, 3.2, 1.3, 0.2, {'species': 'setosa'}),
-        (7.0, 3.2, 4.7, 1.4, {'species': 'versicolor'}),
-        (7.6, 3.0, 6.6, 2.1, {'species': 'virginica'}),
-        (4.6, 3.1, 1.5, 0.2, {'species': 'setosa'}),
-    ]
-
-Text analysis
--------------
-* Filename: ``for_text_analysis.py``
-* Lines of code to write: 10 lines
-* Estimated time of completion: 10 min
-
-#. Dany jest tekst przemówienia John F. Kennedy'ego "Moon Speech" wygłoszony na Rice Stadium :numref:`listing-for-moon-speech`
-#. Zdania oddzielone są kropkami
-#. Każde zdanie oczyść z białych znaków na początku i końcu
-#. Wyrazy oddzielone są spacjami
-#. Policz ile jest wyrazów w każdym zdaniu
-#. Wypisz na ekranie słownik o strukturze:
-
-    * ``Dict[str, int]``
-    * klucz: zdanie
-    * wartość: ilość wyrazów
-
-#. Na końcu wypisz także ile jest łącznie w całym tekście:
-
-    * przysłówków (słów zakończonych na "ly")
-    * zdań
-    * słów
-    * znaków (łącznie ze spacjami wewnątrz zdań, ale bez kropek)
-
-:The whys and wherefores:
-    * Dzielenie stringów
-    * Sprawdzanie długości ciągów znaków
-    * Iterowanie po elementach listy
-    * Nazywanie zmiennych
-
-.. code-block:: text
-    :name: listing-for-moon-speech
-    :caption: "Moon Speech" by John F. Kennedy, Rice Stadium, Houston, TX, 1962-09-12 :cite:`Kennedy1962`
-
-    We choose to go to the Moon. We choose to go to the Moon in this decade and do the other things. Not because they are easy, but because they are hard. Because that goal will serve to organize and measure the best of our energies and skills. Because that challenge is one that we are willing to accept. One we are unwilling to postpone. And one we intend to win
-
 Segmentation
 ------------
 * Filename: ``for_segmentation.py``
@@ -372,3 +309,40 @@ Segmentation
 :The whys and wherefores:
     * Definiowanie i korzystanie z ``dict`` z wartościami
     * Iterowanie po liście
+
+Text analysis
+-------------
+* Filename: ``for_text_analysis.py``
+* Lines of code to write: 10 lines
+* Estimated time of completion: 10 min
+
+#. Dany jest tekst przemówienia John F. Kennedy'ego "Moon Speech" wygłoszony na Rice Stadium :numref:`listing-for-moon-speech`
+#. Zdania oddzielone są kropkami
+#. Każde zdanie oczyść z białych znaków na początku i końcu
+#. Słowa oddzielone są spacjami
+#. Policz ile jest słów w każdym zdaniu
+#. Wypisz na ekranie słownik o strukturze:
+
+    * ``Dict[str, int]``
+    * klucz: zdanie
+    * wartość: ilość słów
+
+#. Na końcu wypisz także ile jest łącznie w całym tekście:
+
+    * przysłówków (słów zakończonych na "ly")
+    * zdań
+    * słów
+    * liter
+    * znaków (łącznie ze spacjami wewnątrz zdań, ale bez kropek)
+
+:The whys and wherefores:
+    * Dzielenie stringów
+    * Sprawdzanie długości ciągów znaków
+    * Iterowanie po elementach listy
+    * Nazywanie zmiennych
+
+.. code-block:: text
+    :name: listing-for-moon-speech
+    :caption: "Moon Speech" by John F. Kennedy, Rice Stadium, Houston, TX, 1962-09-12 :cite:`Kennedy1962`
+
+    We choose to go to the Moon. We choose to go to the Moon in this decade and do the other things. Not because they are easy, but because they are hard. Because that goal will serve to organize and measure the best of our energies and skills. Because that challenge is one that we are willing to accept. One we are unwilling to postpone. And one we intend to win

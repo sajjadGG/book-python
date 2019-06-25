@@ -184,3 +184,10 @@ Length of a ``list``
 Assignments
 ===========
 .. todo:: Create Assignments
+
+Create List
+-----------
+* Filename: ``sequences_list.py``
+* Lines of code to write: 1 lines
+* Estimated time of completion: 5 min
+
