@@ -5,152 +5,151 @@ Passing many arguments
 
 Arbitrary number of positional arguments
 ========================================
-- ``*args`` - is not multiplication
-- ``*args`` - positional arguments
-- ``*`` unpacks ``tuple``, ``list`` or ``set``
+- ``*`` in this context, is not multiplication in mathematical sense
+- ``args`` is a convention, but you can use any name
+- ``*args`` is used for positional arguments
+- ``*args`` unpacks from ``tuple``, ``list`` or ``set``
 
 .. code-block:: python
 
-    complex(3, 5)
+    def echo(a, b, c=0):
+        print(locals())
+
+    echo(1, 2)
+    # {'a': 1, 'b': 2, 'c': 0}
 
 .. code-block:: python
 
-    args = (3, 5)
-    complex(*args)
+    def echo(a, b, c=0):
+        print(locals())
+
+    args = (1, 2)
+    echo(*args)
+    # {'a': 1, 'b': 2, 'c': 0}
 
 
-Arbitrary number of named arguments
-===================================
-- ``**kwargs`` is not power (in mathematical sense)
-- ``**kwargs`` - named arguments
-- ``**`` unpacks ``dict``
+Arbitrary number of keyword arguments
+=====================================
+- ``**`` in this context, is not power in mathematical sense
+- ``kwargs`` is a convention, but you can use any name
+- ``**kwargs`` is used for keyword arguments
+- ``**kwargs`` unpacks from ``dict``
 
 .. code-block:: python
 
-    complex(real=3, imag=5)
+    def echo(a, b, c=0):
+        print(locals())
+
+    echo(a=1, b=2)
+    # {'a': 1, 'b': 2, 'c': 0}
 
 .. code-block:: python
 
-    kwargs = {'real': 3, 'imag': 5}
-    complex(**kwargs)
+    def echo(a, b, c=0):
+        print(locals())
+
+    kwargs = {'a': 1, 'b': 2}
+    echo(**kwargs)
+    # {'a': 1, 'b': 2, 'c': 0}
+
+
+Arbitrary number of positional and keyword arguments
+====================================================
+.. code-block:: python
+
+    def echo(a, b, c=0):
+        print(locals())
+
+    echo(1, b=2)
+    # {'a': 1, 'b': 2, 'c': 0}
+
+.. code-block:: python
+
+    def echo(a, b, c=0):
+        print(locals())
+
+    args = (1,)
+    kwargs = {'b': 2}
+
+    echo(*args, **kwargs)
+    # {'a': 1, 'b': 2, 'c': 0}
 
 
 Examples
 ========
 
-Passing sequence as positional arguments
-----------------------------------------
+Creating complex numbers
+------------------------
 .. code-block:: python
 
-    def show(x, y, z):
-        print(x, y, z)
+    complex(real=3, imag=5)
+    # (3+5j)
+
+.. code-block:: python
+
+    kwargs = {'real': 3, 'imag': 5}
+    complex(**kwargs)
+    # (3+5j)
+
+Vectors
+-------
+.. code-block:: python
+
+    def echo(x, y, z):
+        print(locals())
 
     vector = (1, 0, 1)
 
-    # show(1, 0, 1)
-    show(*vector)
-    # 1, 0, 1
-
-.. code-block:: python
-
-    def show(a, b, c=0):
-        print(locals())
-
-    show(1, 2, 3)
-    # {'a': 1, 'b': 2, 'c': 3}
-
-    dane = (1, 2, 3)
-    show(*dane)
-    # {'a': 1, 'b': 2, 'c': 3}
-
-    dane = (1, 2)
-    show(*dane)
-    # {'a': 1, 'b': 2, 'c': 0}
-
-.. code-block:: python
-
-    def show(a, b, c=0, *args):
-        print(locals())
-
-    dane = (1, 2, 3, 4)
-    show(*dane)
-    # {'a': 1, 'b': 2, 'c': 3, 'args': (4,)}
-
-    dane = (1, 2, 3, 4, 5, 6, 7)
-    show(*dane)
-    # {'a': 1, 'b': 2, 'c': 3, 'args': (4, 5, 6, 7)}
-
-    show(1, 2)
-    # {'a': 1, 'b': 2, 'c': 0, 'args': ()}
-
-Passing ``dict`` as named argument
-----------------------------------
-.. code-block:: python
-    :caption: Named parameters don't care about order
-
-    def show(x, y, z):
-        print(x, y, z)
-
-    vector = {'z': 1, 'y': 0, 'x': 1}
-
-    # show(z=1, y=0, x=1)
-    show(**vector)
-    # 1, 0, 1
-
-.. code-block:: python
-
-    def show(a, b, c=0, **kwargs):
-        print(locals())
-
-    dane = {'x': 77, 'y': 99, 'a': 7}
-    show(1, 2, 3, **dane)
-    # TypeError: show() got multiple values for argument 'a'
-
-.. code-block:: python
-
-    def show(a, b, c=0, **kwargs):
-        print(locals())
-
-    show(1, 2, x=77, y=99)
-    # {'a': 1, 'b': 2, 'c': 0, 'kwargs': {'x': 77, 'y': 99}}
-
-    show(1, 2, x=77, y=99, c=7)
-    # {'a': 1, 'b': 2, 'c': 7, 'kwargs': {'x': 77, 'y': 99}}
-
-    dane = {'x': 77, 'y': 99}
-    show(1, 2, 3, **dane)
-    # {'a': 1, 'b': 2, 'c': 3, 'kwargs': {'x': 77, 'y': 99}}
-
-    dane = {'a': 1, 'b': 2, 'x': 77, 'y': 99}
-    show(**dane)
-    # {'a': 1, 'b': 2, 'c': 0, 'kwargs': {'x': 77, 'y': 99}}
-
-Passing sequence and ``dict`` as arguments
-------------------------------------------
-.. code-block:: python
-
-    def show(a, b, c=0, *args, **kwargs):
-        print(locals())
-
-    show(1, 2, 3, 4, 5, 6, x=77, y=99)
-    # {'a': 1, 'b': 2, 'c': 3, 'args': (4, 5, 6), 'kwargs': {'x': 77, 'y': 99}}
-
-    pozycyjne = (4, 5, 6)
-    nazwane = {'x': 77, 'y': 99}
-    show(1, 2, 3, *pozycyjne, **nazwane)
-    # {'a': 1, 'b': 2, 'c': 3, 'args': (4, 5, 6), 'kwargs': {'x': 77, 'y': 99}}
+    echo(*vector)
+    # {'x': 1, 'y': 0, 'z': 1}
 
 
 Use cases
 =========
 
-Locals
-------
+Print formatting
+----------------
+* Now f-string formatting is preferred
+
 .. code-block:: python
 
-    mynum = 1000
-    mystr = 'Hello World!'
-    print "{mystr} New-style formatting is {mynum}x more fun!".format(**locals())
+    name = 'Jan Twardowski'
+    agency = 'POLSA'
+
+    output = "{agency} astronaut {name} first on the Moon".format(**locals())
+    print(output)
+    # POLSA astronaut Jan Twardowski first on the Moon
+
+Print formatting in classes
+---------------------------
+* Now f-string formatting is preferred
+
+.. code-block:: python
+
+    class Osoba:
+        first_name = 'Jan'
+        last_name = 'Twardowski'
+
+        def __str__(self):
+            return '{first_name} {last_name}'.format(**self.__dict__)
+
+.. code-block:: python
+
+    class Osoba:
+        first_name = 'Jan'
+        last_name = 'Twardowski'
+
+        def __str__(self):
+            return '{first_name} {last_name}'.format(first_name='Jan', last_name='Twardowski')
+
+.. code-block:: python
+
+    class Osoba:
+        first_name = 'Jan'
+        last_name = 'Twardowski'
+
+        def __str__(self):
+            return f'{self.first_name} {self.last_name}'
 
 Common configuration
 --------------------
@@ -238,20 +237,6 @@ Placeholder class
 
     # 'versicolor'
     # 'setosa'
-
-Print formatting in classes
----------------------------
-.. code-block:: python
-
-    class Osoba:
-        first_name = 'Jan'
-        last_name = 'Twardowski'
-
-        def __str__(self):
-            return '{first_name} {last_name}'.format(**self.__dict__)
-            return '{first_name} {last_name}'.format(first_name='Jan', last_name='Twardowski')
-            return f'{self.first_name} {self.last_name}'
-
 
 Calling function with all variables from higher order function
 --------------------------------------------------------------

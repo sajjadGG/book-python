@@ -245,16 +245,20 @@ Average
             (4.6, 3.1, 1.5, 0.2, 'setosa'),
         ]
 
-#. Na podstawie nagłówka stwórz ``dict`` z pustymi ``list`` dla każdego z parametrów"
+#. Stwórz słownik ``values: Dict[str, list]``
+#. Klucze w słowniku mają być rekordami z nagłówka zbioru ``DATA``
+#. Iterując po danych dodawaj wartości do odpowiednich kluczy
+#. Każdy z kluczy słownika, ma mieć przyporządkowaną listę z wszystkimi wartościami danego parametru,
 
     .. code-block:: python
+        :caption: Ta struktura danych ma generować się automatycznie
 
         values = {
-            'Sepal length': [],
-            'Sepal width': [],
-            'Petal length': [],
-            'Petal width': [],
-            'Species': [],
+            'Sepal length': [5.8, 5.1, ...],
+            'Sepal width': [2.7, 3.5, ...],
+            'Petal length': [5.1, 1.4, ...],
+            'Petal width': [1.9, 0.2, ...],
+            'Species': ['virginica', 'setosa', ...],
         }
 
 #. Stwórz funkcję ``average()``, która będzie liczyła średnią dla dowolnej ilości argumentów
@@ -266,19 +270,7 @@ Average
 
 #. Do wyliczenia średniej, wykorzystaj wbudowane funkcje
 #. Funkcja ma wyliczać średnią tylko dla parametrów typu ``float``, w przeciwnym wypadku zwróć ``None``
-#. Do ``averages: Dict[str, float]`` wpisz wyliczone wartości dla każdego z parametrów
-
-    .. code-block:: python
-
-        averages = {
-            'Sepal length': average(...),
-            'Sepal width': average(...),
-            'Petal length': average(...),
-            'Petal width': average(...),
-            'Species': average(...),
-        }
-
-#. Wypisz na ekranie ``values`` oraz ``averages``
+#. Iterując po słowniku ``values`` wypisz nazwę parametru oraz wyliczoną średnią
 
 :The whys and wherefores:
     * Korzystanie z funkcji wbudowanych

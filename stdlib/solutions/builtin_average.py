@@ -30,7 +30,7 @@ values = dict()
 averages = dict()
 
 
-def average(numbers):
+def average(*numbers):
     if all(isinstance(x, float) for x in numbers):
         return sum(numbers) / len(numbers)
 
@@ -45,7 +45,7 @@ for row in data:
 
 
 for key, value in values.items():
-    averages[key] = average(value)
+    averages[key] = average(*value)
 
 
 pprint(values)
