@@ -1,6 +1,6 @@
-***********************************************
-Defining function arbitrary number of arguments
-***********************************************
+****************************************************
+Defining function with arbitrary number of arguments
+****************************************************
 
 
 Recap information about function parameters
@@ -16,6 +16,7 @@ Recap information about function parameters
     echo(a=1, b=2)   # nazwane, kolejność nie ma znaczenia
     echo(b=2, a=1)   # nazwane, kolejność nie ma znaczenia
     echo(1, b=2)     # pozycyjne i nazwane
+    echo(a=1, 2)     # SyntaxError: positional argument follows keyword argument
 
 
 Arbitrary number of positional arguments

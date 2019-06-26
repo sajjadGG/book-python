@@ -13,19 +13,21 @@ Arbitrary number of positional arguments
 .. code-block:: python
 
     def echo(a, b, c=0):
-        print(locals())
+        print(a)    # 1
+        print(b)    # 2
+        print(c)    # 0
 
     echo(1, 2)
-    # {'a': 1, 'b': 2, 'c': 0}
 
 .. code-block:: python
 
     def echo(a, b, c=0):
-        print(locals())
+        print(a)    # 1
+        print(b)    # 2
+        print(c)    # 0
 
     args = (1, 2)
     echo(*args)
-    # {'a': 1, 'b': 2, 'c': 0}
 
 
 Arbitrary number of keyword arguments
@@ -38,19 +40,21 @@ Arbitrary number of keyword arguments
 .. code-block:: python
 
     def echo(a, b, c=0):
-        print(locals())
+        print(a)    # 1
+        print(b)    # 2
+        print(c)    # 0
 
     echo(a=1, b=2)
-    # {'a': 1, 'b': 2, 'c': 0}
 
 .. code-block:: python
 
     def echo(a, b, c=0):
-        print(locals())
+        print(a)    # 1
+        print(b)    # 2
+        print(c)    # 0
 
     kwargs = {'a': 1, 'b': 2}
     echo(**kwargs)
-    # {'a': 1, 'b': 2, 'c': 0}
 
 
 Arbitrary number of positional and keyword arguments
@@ -58,21 +62,23 @@ Arbitrary number of positional and keyword arguments
 .. code-block:: python
 
     def echo(a, b, c=0):
-        print(locals())
+        print(a)    # 1
+        print(b)    # 2
+        print(c)    # 0
 
     echo(1, b=2)
-    # {'a': 1, 'b': 2, 'c': 0}
 
 .. code-block:: python
 
     def echo(a, b, c=0):
-        print(locals())
+        print(a)    # 1
+        print(b)    # 2
+        print(c)    # 0
 
     args = (1,)
     kwargs = {'b': 2}
 
     echo(*args, **kwargs)
-    # {'a': 1, 'b': 2, 'c': 0}
 
 
 Examples
@@ -96,12 +102,13 @@ Vectors
 .. code-block:: python
 
     def echo(x, y, z):
-        print(locals())
+        print(x)    # 1
+        print(y)    # 0
+        print(z)    # 1
 
     vector = (1, 0, 1)
 
     echo(*vector)
-    # {'x': 1, 'y': 0, 'z': 1}
 
 
 Use cases
