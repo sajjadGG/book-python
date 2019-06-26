@@ -27,10 +27,8 @@ output = []
 try:
     with open(ETC_GROUPS, encoding='utf-8') as file:
         etc_groups = file.readlines()
-
 except FileNotFoundError:
     print('File does not exist')
-
 except PermissionError:
     print('Permission denied')
 
@@ -38,10 +36,8 @@ except PermissionError:
 try:
     with open(ETC_SHADOW, encoding='utf-8') as file:
         etc_shadow = file.readlines()
-
 except FileNotFoundError:
     print('File does not exist')
-
 except PermissionError:
     print('Permission denied')
 
@@ -49,10 +45,8 @@ except PermissionError:
 try:
     with open(ETC_PASSWD, encoding='utf-8') as file:
         etc_passwd = file.readlines()
-
 except FileNotFoundError:
     print('File does not exist')
-
 except PermissionError:
     print('Permission denied')
 

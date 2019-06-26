@@ -156,7 +156,7 @@ Classification of blood pressure in adults
 #. Daj informację użytkownikowi o klasyfikacji ciśnienia
 #. W przypadku gdy wartości ciśnienia skurczowego i ciśnienia rozkurczowego należą do różnych kategorii, należy przyjąć kategorię wyższą
 
-.. csv-table:: Classification of blood pressure in adults :cite:`AHA2018`
+.. csv-table:: Classification of blood pressure in adults :cite:`Whelton2018`
     :header-rows: 1
 
     "Blood Pressure Category", "Systolic [mm Hg]", "Operator", "Diastolic [mm Hg]"

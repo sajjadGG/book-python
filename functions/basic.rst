@@ -157,8 +157,8 @@ Positional arguments
     def subtract(a, b):
         return a - b
 
-    minus(2, 1)      # 1
-    minus(1, 2)      # -1
+    subtract(2, 1)      # 1
+    subtract(1, 2)      # -1
 
 Named arguments
 ---------------
@@ -170,10 +170,10 @@ Named arguments
     def subtract(a, b):
         return a - b
 
-    minus(a=2, b=1)  # 1
-    minus(b=1, a=2)  # 1
-    minus(2, b=1)    # 1
-    minus(a=2, 1)    # SyntaxError: positional argument follows keyword argument
+    subtract(a=2, b=1)  # 1
+    subtract(b=1, a=2)  # 1
+    subtract(2, b=1)    # 1
+    subtract(a=2, 1)    # SyntaxError: positional argument follows keyword argument
 
 .. code-block:: python
 
