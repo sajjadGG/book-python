@@ -3,16 +3,11 @@ Passing many arguments
 **********************
 
 
-Operators ``*`` i ``**``
-========================
-- This is not multiplication or power!
-- ``*args`` - positional arguments, unpacks ``tuple``, ``list`` or ``set``
-- ``**kwargs`` - keyword arguments, unpacks ``dict``
-
-
-Unpacking sequences
-===================
-* ``*`` unpacks ``tuple``, ``list`` or ``set``
+Arbitrary number of positional arguments
+========================================
+- ``*args`` - is not multiplication
+- ``*args`` - positional arguments
+- ``*`` unpacks ``tuple``, ``list`` or ``set``
 
 .. code-block:: python
 
@@ -24,9 +19,11 @@ Unpacking sequences
     complex(*args)
 
 
-Unpacking ``dict``
-==================
-* ``**`` unpacks ``dict``
+Arbitrary number of named arguments
+===================================
+- ``**kwargs`` is not power (in mathematical sense)
+- ``**kwargs`` - named arguments
+- ``**`` unpacks ``dict``
 
 .. code-block:: python
 
@@ -37,39 +34,9 @@ Unpacking ``dict``
     kwargs = {'real': 3, 'imag': 5}
     complex(**kwargs)
 
-Use Case
---------
-.. code-block:: python
 
-    def draw_line(x, y, color, style, width, markers):
-        ...
-
-
-    draw_line(1, 2, color='red', style='dashed', width='2px', markers='disc')
-    draw_line(3, 4, color='red', style='dashed', width='2px', markers='disc')
-    draw_line(5, 6, color='red', style='dashed', width='2px', markers='disc')
-
-.. code-block:: python
-    :caption: Podawanie parametrów do funkcji
-
-    def draw_chart(a, b, color, style, width, markers):
-        ...
-
-
-    config = {
-        'color': 'czerwony',
-        'style': 'dashed',
-        'width': '2px',
-        'markers': 'disc',
-    }
-
-    draw_line(1, 2, **config)
-    draw_line(3, 4, **config)
-    draw_line(5, 6, **config)
-
-
-Przekazywanie do funkcji zmiennej ilości parametrów
-===================================================
+Examples
+========
 
 Passing sequence as positional arguments
 ----------------------------------------
@@ -177,6 +144,44 @@ Passing sequence and ``dict`` as arguments
 Use cases
 =========
 
+Locals
+------
+.. code-block:: python
+
+    mynum = 1000
+    mystr = 'Hello World!'
+    print "{mystr} New-style formatting is {mynum}x more fun!".format(**locals())
+
+Common configuration
+--------------------
+.. code-block:: python
+
+    def draw_line(x, y, color, style, width, markers):
+        ...
+
+
+    draw_line(1, 2, color='red', style='dashed', width='2px', markers='disc')
+    draw_line(3, 4, color='red', style='dashed', width='2px', markers='disc')
+    draw_line(5, 6, color='red', style='dashed', width='2px', markers='disc')
+
+.. code-block:: python
+    :caption: Podawanie parametrów do funkcji
+
+    def draw_chart(a, b, color, style, width, markers):
+        ...
+
+
+    config = {
+        'color': 'czerwony',
+        'style': 'dashed',
+        'width': '2px',
+        'markers': 'disc',
+    }
+
+    draw_line(1, 2, **config)
+    draw_line(3, 4, **config)
+    draw_line(5, 6, **config)
+
 Placeholder class
 -----------------
 .. code-block:: python
@@ -233,14 +238,6 @@ Placeholder class
 
     # 'versicolor'
     # 'setosa'
-
-Example
--------
-.. code-block:: python
-
-    mynum = 1000
-    mystr = 'Hello World!'
-    print "{mystr} New-style formatting is {mynum}x more fun!".format(**locals())
 
 Print formatting in classes
 ---------------------------
@@ -311,6 +308,8 @@ Proxy functions
 
     my_csv('iris.csv', decimal='.', verbose=True)
 
+Init
+----
 .. code-block:: python
     :caption: One of the most common use of ``*args``, ``**kwargs`` is for proxy methods.
 

@@ -1,6 +1,6 @@
-*****************************
-Functions with many arguments
-*****************************
+***********************************************
+Defining function arbitrary number of arguments
+***********************************************
 
 
 Recap information about function parameters
@@ -17,12 +17,9 @@ Recap information about function parameters
     add(1, b=2)     # pozycyjne i nazwane
 
 
-Defining function with many arguments
-=====================================
-
 Arbitrary number of positional arguments
-----------------------------------------
-- ``*args`` is not multiplication
+========================================
+- ``*args`` is not multiplication (in mathematical sense)
 - ``*args`` - positional arguments, unpacks to ``tuple``
 
 .. code-block:: python
@@ -59,8 +56,9 @@ Arbitrary number of positional arguments
 
     show(1, 2, 3, 4, 5, 6)
 
+
 Arbitrary number of named arguments
------------------------------------
+===================================
 - ``**kwargs`` is not power (in mathematical sense)
 - ``**kwargs`` - keyword arguments, unpacks to ``dict``
 
@@ -107,8 +105,9 @@ Arbitrary number of named arguments
 
     show(1, 2, 3, d=7, e=8)
 
-Arbitrary number of both positional and named arguments
--------------------------------------------------------
+
+Arbitrary number of positional and named arguments
+==================================================
 .. code-block:: python
 
     def show(a, b, c=0, *args, **kwargs):
