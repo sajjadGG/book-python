@@ -3,13 +3,6 @@ Functions with many arguments
 *****************************
 
 
-Operands ``*`` and ``**``
-=========================
-- This is not multiplication or power!
-- ``*args`` - positional arguments, unpacks to ``tuple``
-- ``**kwargs`` - keyword arguments, unpacks to ``dict``
-
-
 Recap information about function parameters
 ===========================================
 .. code-block:: python
@@ -27,8 +20,11 @@ Recap information about function parameters
 Defining function with many arguments
 =====================================
 
-Many positional arguments
--------------------------
+Arbitrary number of positional arguments
+----------------------------------------
+- ``*args`` is not multiplication
+- ``*args`` - positional arguments, unpacks to ``tuple``
+
 .. code-block:: python
 
     def show(*args):
@@ -43,23 +39,31 @@ Many positional arguments
 
 .. code-block:: python
 
-    def add(*args):
-        total = 0
-
-        for arg in args:
-            total += arg
-
-        return total
+    def show(a, b, c=0, *args):
+        print(a)       # 1
+        print(b)       # 2
+        print(c)       # 3
+        print(args)    # ()
 
 
-    add()            # 0
-    add(1)           # 1
-    add(1, 4)        # 5
-    add(3, 1)        # 4
-    add(1, 2, 3, 4)  # 10
+    show(1, 2)
 
-Many named arguments
---------------------
+.. code-block:: python
+
+    def show(a, b, c=0, *args):
+        print(a)       # 1
+        print(b)       # 2
+        print(c)       # 3
+        print(args)    # (4, 5, 6)
+
+
+    show(1, 2, 3, 4, 5, 6)
+
+Arbitrary number of named arguments
+-----------------------------------
+- ``**kwargs`` is not power (in mathematical sense)
+- ``**kwargs`` - keyword arguments, unpacks to ``dict``
+
 .. code-block:: python
 
     def show(**kwargs):
@@ -70,8 +74,41 @@ Many named arguments
     show(color='red')                               # {'color': 'red'}
     show(first_name='Jan', last_name='Twardowski')  # {'first_name': 'Jan', 'last_name': Twardowski}
 
-Many named and positional arguments
------------------------------------
+.. code-block:: python
+
+    def show(a, b, c=0, **kwargs):
+        print(a)       # 1
+        print(b)       # 2
+        print(c)       # 3
+        print(kwargs)  # {}
+
+
+    show(1, 2)
+
+.. code-block:: python
+
+    def show(a, b, c=0, **kwargs):
+        print(a)       # 1
+        print(b)       # 2
+        print(c)       # 0
+        print(kwargs)  # {'d':7, 'e': 8}
+
+
+    show(1, 2, d=7, e=8)
+
+.. code-block:: python
+
+    def show(a, b, c=0, **kwargs):
+        print(a)       # 1
+        print(b)       # 2
+        print(c)       # 3
+        print(kwargs)  # {'d':7, 'e': 8}
+
+
+    show(1, 2, 3, d=7, e=8)
+
+Arbitrary number of both positional and named arguments
+-------------------------------------------------------
 .. code-block:: python
 
     def show(a, b, c=0, *args, **kwargs):
@@ -112,6 +149,23 @@ Many named and positional arguments
 Use cases
 =========
 .. code-block:: python
+
+    def add(*args):
+        total = 0
+
+        for arg in args:
+            total += arg
+
+        return total
+
+
+    add()            # 0
+    add(1)           # 1
+    add(1, 4)        # 5
+    add(3, 1)        # 4
+    add(1, 2, 3, 4)  # 10
+
+.. code-block:: python
     :caption: Converts arguments between different units
 
     def kelvin_to_celsius(*degrees):
@@ -149,68 +203,6 @@ Use cases
 
     def print(*values, sep=' ', end='\n', ...):
         return sep.join(values) + end
-
-.. code-block:: python
-    :caption: One of the most common use of ``*args``, ``**kwargs`` is for proxy methods.
-
-    # ``read_csv`` is a function from ``pandas`` library
-    def read_csv(filepath_or_buffer, sep=', ', delimiter=None,
-                 header='infer', names=None, index_col=None,
-                 usecols=None, squeeze=False, prefix=None,
-                 mangle_dupe_cols=True, dtype=None, engine=None,
-                 converters=None, true_values=None, false_values=None,
-                 skipinitialspace=False, skiprows=None, nrows=None,
-                 na_values=None, keep_default_na=True, na_filter=True,
-                 verbose=False, skip_blank_lines=True, parse_dates=False,
-                 infer_datetime_format=False, keep_date_col=False,
-                 date_parser=None, dayfirst=False, iterator=False,
-                 chunksize=None, compression='infer', thousands=None,
-                 decimal=b'.', lineterminator=None, quotechar='"',
-                 quoting=0, escapechar=None, comment=None, encoding=None,
-                 dialect=None, tupleize_cols=None, error_bad_lines=True,
-                 warn_bad_lines=True, skipfooter=0, doublequote=True,
-                 delim_whitespace=False, low_memory=True, memory_map=False,
-                 float_precision=None):
-        ...
-
-    def my_csv(file, decimal=b',', *args, **kwargs):
-        return read_csv(
-            filepath_or_buffer=file,
-            decimal=decimal,
-            encoding='utf-8',
-            usecols=['Petal length', 'Species'],
-            skip_blank_lines=True,
-            *args,
-            **kwargs)
-
-    my_csv('iris.csv', decimal='.', verbose=True)
-
-.. code-block:: python
-    :caption: One of the most common use of ``*args``, ``**kwargs`` is for proxy methods.
-
-    class Point2D:
-        def __init__(self, x, y):
-            self.x = x
-            self.y = y
-
-
-    class Point3D(Point2D):
-        def __init__(self, z, *args, **kwargs):
-            super().__init__(*args, **kwargs)
-            self.z = z
-
-.. code-block:: python
-
-    from functools import wraps
-
-    def login_required(f):
-        @wraps(f)
-        def wrapper(*args, **kwargs):
-            if user.is_logged():
-                return f(*args, **kwargs)
-            else:
-                print('Permission denied')
-        return wrapper
 
 
 Assignments

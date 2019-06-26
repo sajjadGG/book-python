@@ -274,6 +274,73 @@ Calling function with all variables from higher order function
     # args: ()
     # kwargs: {'a': 1, 'b': 2, 'c': 0, 'x': 4, 'y': 5}
 
+Proxy functions
+---------------
+.. code-block:: python
+    :caption: One of the most common use of ``*args``, ``**kwargs`` is for proxy methods.
+
+    # ``read_csv`` is a function from ``pandas`` library
+    def read_csv(filepath_or_buffer, sep=', ', delimiter=None,
+                 header='infer', names=None, index_col=None,
+                 usecols=None, squeeze=False, prefix=None,
+                 mangle_dupe_cols=True, dtype=None, engine=None,
+                 converters=None, true_values=None, false_values=None,
+                 skipinitialspace=False, skiprows=None, nrows=None,
+                 na_values=None, keep_default_na=True, na_filter=True,
+                 verbose=False, skip_blank_lines=True, parse_dates=False,
+                 infer_datetime_format=False, keep_date_col=False,
+                 date_parser=None, dayfirst=False, iterator=False,
+                 chunksize=None, compression='infer', thousands=None,
+                 decimal=b'.', lineterminator=None, quotechar='"',
+                 quoting=0, escapechar=None, comment=None, encoding=None,
+                 dialect=None, tupleize_cols=None, error_bad_lines=True,
+                 warn_bad_lines=True, skipfooter=0, doublequote=True,
+                 delim_whitespace=False, low_memory=True, memory_map=False,
+                 float_precision=None):
+        ...
+
+    def my_csv(file, decimal=b',', *args, **kwargs):
+        return read_csv(
+            filepath_or_buffer=file,
+            decimal=decimal,
+            encoding='utf-8',
+            usecols=['Petal length', 'Species'],
+            skip_blank_lines=True,
+            *args,
+            **kwargs)
+
+    my_csv('iris.csv', decimal='.', verbose=True)
+
+.. code-block:: python
+    :caption: One of the most common use of ``*args``, ``**kwargs`` is for proxy methods.
+
+    class Point2D:
+        def __init__(self, x, y):
+            self.x = x
+            self.y = y
+
+
+    class Point3D(Point2D):
+        def __init__(self, z, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.z = z
+
+
+Decorators
+----------
+.. code-block:: python
+
+    from functools import wraps
+
+    def login_required(f):
+        @wraps(f)
+        def wrapper(*args, **kwargs):
+            if user.is_logged():
+                return f(*args, **kwargs)
+            else:
+                print('Permission denied')
+        return wrapper
+
 
 Assignments
 ===========
