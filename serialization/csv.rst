@@ -222,19 +222,23 @@ Writing ``csv`` - variable schema
     ]
 
 #. Za pomocą ``csv.DictWriter()`` zapisz do pliku CSV dane o zmiennej strukturze
-#. Wszystkie pola muszą być zawsze w cudzysłowach i oddzielone średnikami, kodowanie UTF-8, a na końcu linii Unix newline.
-#. ``fieldnames`` nie może być wymienione wprost w skrypcie (zahardkodowane)
+#. Wszystkie pola muszą być zawsze w cudzysłowach
+#. Pola mają być oddzielone średnikami
+#. Kodowanie pliku kodowanie UTF-8
+#. Na końcu linii Unix newline.
+#. ``fieldnames`` musi być generowane automatycznie na podstawie ``DATA``
 #. Rezultat powinien wyglądać tak:
 
-.. csv-table:: Result of variable schema CSV file generation
-    :header: "first_step","last_name","first_name","born"
+    .. csv-table:: Result of variable schema CSV file generation
+        :header: "first_step","last_name","first_name","born"
 
-    "","","José",""
-    "","Jiménez","",""
-    "","Иванович","Иван",""
-    "","Peck","Max","1961"
-    "1969","","José","1961"
-
+        "Petal width", "Petal length", "Sepal length", "Sepal width", "Species"
+        "", "", "5.1", "3.5", "setosa"
+        "1.3", "4.1", "", "", "versicolor"
+        "1.8", "", "6.3", "", "virginica"
+        "0.2", "1.4", "", "", "setosa"
+        "", "4.1", "", "2.8", "versicolor"
+        "1.8", "", "", "2.9", "virginica"
 
 :The whys and wherefores:
     * Umiejętność korzystania z modułu ``csv``

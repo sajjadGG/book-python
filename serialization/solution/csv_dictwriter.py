@@ -17,7 +17,7 @@ for row in DATA:
 
 # fieldnames == {'Sepal length', 'Sepal width', 'Petal length', 'Species', 'Petal width'}
 
-with open(r'../data/iris.csv', mode='w') as file:
+with open(r'../tmp/iris.csv', mode='w') as file:
     writer = csv.DictWriter(
         f=file,
         fieldnames=fieldnames,
