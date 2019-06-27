@@ -389,7 +389,7 @@ Dragon (Part 2)
 ---------------
 * Filename: ``oop_dragon_2.py``
 * Lines of code to write: 120 lines
-* Estimated time of completion: 60 min
+* Estimated time of completion: 30 min (±10 min), then 30 min live coding with instructor
 * Warning: Don't delete code, assignment will be continued
 
 .. figure:: img/dragon.gif
