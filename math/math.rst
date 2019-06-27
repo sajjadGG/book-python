@@ -7,10 +7,23 @@ Mathematics
 
 Builtin
 =======
+
+Constans
+--------
+* ``inf`` or ``Infinity``
+* ``-inf`` or ``-Infinity``
+* ``1E10`` or ``1E-5``
+
+Functions
+---------
 * ``abs()``
 * ``round()``
 * ``pow()``
-
+* ``sum()``
+* ``min()``
+* ``max()``
+* ``divmod()``
+* ``complex()``
 
 ``math``
 ========
@@ -122,6 +135,17 @@ Other functions
 
 Assignments
 ===========
+
+Trigonometry
+------------
+* Filename: ``math_trigonometry.py``
+* Lines of code to write: 10 lines
+* Estimated time of completion: 10 min
+
+#. Program wczytuje od użytkownika wielkość kąta w stopniach
+#. Użytkownik zawsze podaje ``int`` albo ``float``
+#. Wyświetl wartość funkcji trygonometrycznych (sin, cos, tg, ctg)
+#. Jeżeli funkcja trygonometryczna nie istnieje dla danego kąta podnieś stosowny wyjątek
 
 Euclidean distance 2D
 ---------------------
@@ -252,40 +276,6 @@ Matrix multiplication
     * macierz zerowa
     * trzy pętle
 
-Trigonometry
-------------
-* Filename: ``math_trigonometry.py``
-* Lines of code to write: 10 lines
-* Estimated time of completion: 10 min
-
-#. Program wczytuje od użytkownika wielkość kąta w stopniach
-#. Użytkownik zawsze podaje ``int`` albo ``float``
-#. Wyświetl wartość funkcji trygonometrycznych (sin, cos, tg, ctg)
-#. Jeżeli funkcja trygonometryczna nie istnieje dla danego kąta wypisz "For this angle function does not exist." i zakończ program
-
-Random numbers
---------------
-* Filename: ``math_random_numbers.py``
-* Lines of code to write: 5 lines
-* Estimated time of completion: 10 min
-
-#. Napisz program, który wyświetli 6 losowych i nie powtarzających się liczb z zakresu od 1 do 49.
-#. Czym sa liczby pseudolosowe?
-#. Czy da się stworzyć program czysto losowy?
-#. Dlaczego?
-
-:Hints:
-    * ``random.randrange()``
-    * ``random.sample()``
-    * Czytelny cod obu przykładów wraz z białymi liniami nie powinien zająć więcej niż 10 linii.
-
-:The whys and wherefores:
-    * Umiejętność wykorzystania gotowych funkcji w zewnętrznej bibliotece
-    * Umiejętność wyszukania informacji na temat API funkcji w dokumentacji języka i jego odpowiedniej wersji
-    * Stworzenie dwóch alternatywnych podejść do rozwiązania zadania
-    * Porównanie czytelności obu rozwiązań
-    * Umiejętność sprawdzania czy coś znajduje się w liście oraz ``continue``
-
 Triangle
 --------
 * Filename: ``math_triangle.py``
@@ -293,7 +283,9 @@ Triangle
 * Estimated time of completion: 10 min
 
 #. Napisz program, który obliczy pole trójkąta.
-#. Użytkownik poda wysokość i długość podstawy tego trójkąta. Uwzględnij, że wysokość i długość podstawy mogą być liczbami niecałkowitymi. Wykorzystaj doctest do przetestowania funkcji.
+#. Użytkownik poda wysokość i długość podstawy tego trójkąta.
+#. Wysokość i długość podstawy mogą być liczbami niecałkowitymi.
+#. Wykorzystaj doctest do przetestowania funkcji.
 
 :The whys and wherefores:
     * Umiejętność wykorzystania gotowych funkcji w zewnętrznej bibliotece

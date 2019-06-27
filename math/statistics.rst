@@ -193,14 +193,14 @@ Iris Stats
         (4.6, 3.1, 1.5, 0.2, 'setosa'),
     ]
 
+#. W zadaniu do obliczeń wykorzystaj funkcje z biblioteki ``statistics``
 #. Dla danych z listingu :numref:`listing-statistics-iris-dataset`
 #. Stwórz ``dict`` z gatunkami
-#. Korzystając ze ``statistics`` oblicz dla każdego parametru (``Sepal length``, ``Sepal width``, ``Petal length``, ``Petal width``):
+#. Dla każdego gatunku, dla wszystkich parametrów numerycznych oblicz wartości:
 
-    - średnią
-    - medianę
-    - modę
-    - odchylenie standardowe
-    - wariancję
+        - średnią,
+        - medianę,
+        - odchylenie standardowe,
+        - wariancję.
 
-#. Dane zapisz w ``dict`` z podziałem na gatunki
+#. Dane zapisz w tej samej strukturze danych co gatunki
