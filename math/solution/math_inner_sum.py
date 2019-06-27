@@ -6,17 +6,30 @@ seed(0)
 result = []
 total = 0
 
-SIZE_X = 16
-SIZE_Y = 16
+
+X_MAX = 16
+Y_MAX = 16
+X_INNER = 4
+Y_INNER = 4
 
 
-for x in range(SIZE_X):
+x_offset = (X_MAX - X_INNER) / 2
+y_offset = (Y_MAX - Y_INNER) / 2
+
+
+for x in range(X_MAX):
     result.append([])
 
-    for y in range(SIZE_Y):
+    for y in range(Y_MAX):
         result[x].append(randint(0, 9))
 
-        if 6 <= x < 10 and 6 <= y < 10:
+        x_offset_left = x_offset
+        x_offset_right = X_MAX - x_offset
+
+        y_offset_left = y_offset
+        y_offset_right = Y_MAX - y_offset
+
+        if x_offset_left <= x < x_offset_right and y_offset_left <= y < y_offset_right:
             total += result[x][y]
 
 
