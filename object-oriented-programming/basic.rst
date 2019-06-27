@@ -331,6 +331,7 @@ Dragon (Part 1)
 
     Firkraag dragon from game Baldur's Gate II: Shadows of Amn
 
+#. Zadanie jest opisem co Smok ma robić, a nie jak to ma robić
 #. Smok ma mieć:
 
     * nazwę
@@ -379,7 +380,7 @@ Dragon (Part 1)
     * Zadaj 25 obrażeń smokowi
     * Zadaj 75 obrażeń smokowi
 
-#. Zadanie jest opisem co Smok ma robić, a nie jak to ma robić
 #. Możesz wprowadzać dodatkowe pola, zmienne, klasy, obiekty, co tylko chcesz
 #. Nie musisz trzymać się kolejności punktów i podpunktów w zadaniu
-#. Nie przeglądaj kolejnych (przyszłych) części zadania
+
+.. warning:: Nie przeglądaj kolejnych (przyszłych) części zadania
