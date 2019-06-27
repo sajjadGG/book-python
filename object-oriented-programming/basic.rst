@@ -382,3 +382,4 @@ Dragon (Part 1)
 #. Zadanie jest opisem co Smok ma robić, a nie jak to ma robić
 #. Możesz wprowadzać dodatkowe pola, zmienne, klasy, obiekty, co tylko chcesz
 #. Nie musisz trzymać się kolejności punktów i podpunktów w zadaniu
+#. Nie przeglądaj kolejnych (przyszłych) części zadania
