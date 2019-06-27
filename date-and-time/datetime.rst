@@ -36,6 +36,20 @@ Current ``date``
     today.month   # 1
     today.day     # 5
 
+``date`` methods
+--------------------
+.. code-block:: python
+    :caption: ``date`` methods
+
+    from datetime import date
+
+
+    d = date(1969, 7, 21)
+
+    d.weekday()         # 0  # in US week starts with Sunday
+    d.isoweekday()      # 1
+    d.isoformat()       # '1969-07-21'
+
 
 Creating ``time`` objects
 =========================
@@ -81,6 +95,7 @@ Create ``datetime``
 
 
     dt = datetime(1969, 7, 21, 14, 56, 15)
+    # datetime.datetime(1969, 7, 21, 14, 56, 15)
 
     dt.year          # 1969
     dt.month         # 7
@@ -99,6 +114,7 @@ Create ``datetime`` with empty time (midnight)
 
 
     dt = datetime(1969, 7, 21)
+    # datetime.datetime(1969, 7, 21, 0, 0, 0)
 
     dt.year          # 1969
     dt.month         # 7
@@ -133,6 +149,24 @@ Create ``datetime`` from ``date`` and ``time`` objects
     dt = datetime(d.year, d.month, d.day, t.hour, t. minute, t.second)
     # datetime.datetime(1969, 7, 21, 14, 56, 15)
 
+``datetime`` methods
+--------------------
+.. code-block:: python
+    :caption: ``datetime`` methods
+
+    from datetime import datetime
+
+
+    dt = datetime(1969, 7, 21, 14, 56, 15)
+    # datetime.datetime(1969, 7, 21, 14, 56, 15)
+
+    dt.date()        # datetime.date(1969, 7, 21)
+    dt.time()        # datetime.time(14, 56, 15)
+
+    dt.weekday()     # 0  # in US week starts with Sunday
+    dt.isoweekday()  # 1
+    dt.isoformat()   # '1969-07-21T14:56:15'
+
 Current ``datetime`` in local time
 ----------------------------------
 .. code-block:: python
@@ -153,23 +187,18 @@ Current ``datetime`` in local time
     now.microsecond   # 547414
 
 
-``datetime`` methods
-====================
-.. code-block:: python
-    :caption: ``datetime`` methods
-
-    from datetime import datetime
-
-
-    dt = datetime(1969, 7, 21, 14, 56, 15)
-
-    dt.date()        # datetime.date(1969, 7, 21)
-    dt.time()        # datetime.time(14, 56, 15)
-    dt.weekday()     # 0  # in US week starts with Sunday
-
-
 Assignments
 ===========
+
+Create current ``date`` and ``datetime`` objects
+------------------------------------------------
+* Filename: ``datetime_create_current.py``
+* Lines of code to write: 3 lines
+* Estimated time of completion: 5 min
+
+#. Stwórz obiekt ``date`` z obecną datą
+#. Stwórz obiekt ``datetime`` z obecną datą i czasem
+#. Jak stworzyć obiekt ``time`` obecnym czasem?
 
 Create ``date``, ``time`` and ``datetime`` objects
 --------------------------------------------------
@@ -180,13 +209,3 @@ Create ``date``, ``time`` and ``datetime`` objects
 #. Stwórz obiekt ``date`` z datą Twojego urodzenia
 #. Stwórz obiekt ``time`` z czasem Twojego urodzenia
 #. Stwórz obiekt ``datetime`` z datą i czasem Twojego urodzenia
-
-Create current ``date`` and ``datetime`` objects
-------------------------------------------------
-* Filename: ``datetime_create_current.py``
-* Lines of code to write: 3 lines
-* Estimated time of completion: 5 min
-
-#. Stwórz obiekt ``date`` z obecną datą
-#. Stwórz obiekt ``datetime`` z datą i czasem
-#. Jak stworzyć obiekt ``time`` obecnym czasem?

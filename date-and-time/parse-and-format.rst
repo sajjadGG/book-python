@@ -3,43 +3,36 @@ Parsing and Formatting
 **********************
 
 
-Date and time formats
-=====================
 * https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
 
 Date formats
-------------
+============
 * https://en.wikipedia.org/wiki/Date_format_by_country
 
-Formal date format in USA
-^^^^^^^^^^^^^^^^^^^^^^^^^
-* https://en.wikipedia.org/wiki/Date_and_time_notation_in_the_United_States
-
+Date format in USA
+------------------
 .. code-block:: text
-    :caption: Formal date format in USA
+    :caption: Formal date format in USA :cite:`DateFormatUS`
 
     4/12/61
     April 12, 1961
 
-Formal date format in Japan
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-* https://en.wikipedia.org/wiki/Date_and_time_notation_in_Japan#Date
-
+Date format in Japan
+--------------------
 .. code-block:: text
-    :caption: Formal date format in Japan
+    :caption: Formal date format in Japan :cite:`DateFormatJapan`
 
     20/12/31
 
-Formal date format in Germany
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Date format in Germany
+----------------------
 .. code-block:: text
     :caption: Formal date format in Germany
 
-    12.4.1961
     12.04.1961
 
-Formal date format in Poland
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Date format in Poland
+---------------------
 * Which format is a formal standard in Poland?
 * https://en.wikipedia.org/wiki/ISO_8601
 
@@ -63,23 +56,22 @@ Formal date format in Poland
     12 kwietnia 1961
     12 kwiecień 1961
 
+
 Time formats
-------------
+============
 
 24 and 12 hour clock
-^^^^^^^^^^^^^^^^^^^^
+--------------------
 * What AM stands for?
 * What PM stands for?
-* Is 12:00 a noon, or someone just simply forgot to put AM/PM?
 
 .. code-block:: text
 
     17:00
     5:00 PM
-    5:00
 
 Noon and Midnight
-^^^^^^^^^^^^^^^^^
+-----------------
 * Which time is a midnight?
 * Which time is a noon?
 * `Confusion at noon and midnight <https://en.wikipedia.org/wiki/12-hour_clock#Confusion_at_noon_and_midnight>`_
@@ -88,6 +80,11 @@ Noon and Midnight
 
     12:00 am
     12:00 pm
+
+.. code-block:: text
+    :caption: Is 12:00 a noon (in 24h format), or someone just simply forgot to put AM/PM?
+
+    12:00
 
 .. code-block:: text
 
@@ -99,10 +96,9 @@ Noon and Midnight
     00:00
     0:00
 
-Are those times correct?
-^^^^^^^^^^^^^^^^^^^^^^^^
+Times after 24:00
+-----------------
 * `Times after 24:00 <https://en.wikipedia.org/wiki/24-hour_clock#Times_after_24:00>`_
-* Military `time <https://en.wikipedia.org/wiki/24-hour_clock#Military_time>`_ and `timezones <https://en.wikipedia.org/wiki/List_of_military_time_zones>`_
 
 .. code-block:: text
 
@@ -116,6 +112,11 @@ Are those times correct?
     25:00
     27:45
     14:00-30:00
+
+Military time
+-------------
+* `Military time <https://en.wikipedia.org/wiki/24-hour_clock#Military_time>`_
+* `Military time zones <https://en.wikipedia.org/wiki/List_of_military_time_zones>`_
 
 .. code-block:: text
 
@@ -135,39 +136,45 @@ Dates
 Date and time
 -------------
 * "Z" (Zulu) means UTC
+* "T" separates date and time
 
 .. code-block:: text
+    :caption: Date and time with second precision
 
     1961-04-12T06:07:00Z
 
-* Date and time with milliseconds:
-
 .. code-block:: text
+    :caption: Date and time with with millisecond precision
 
     1961-04-12T06:07:00.123Z
 
-* Date and time with microseconds:
-
 .. code-block:: text
+    :caption: Date and time with microsecond precision
 
     1961-04-12T06:07:00.123456Z
 
 Noon and Midnight
-^^^^^^^^^^^^^^^^^
-* The notation "00:00" is used at the beginning of a calendar day and is the more frequently used.
-* At the end of a day use "24:00".
-* "2007-04-05T24:00" is the same as "2007-04-06T00:00"
+-----------------
+* "00:00" - midnight, at the beginning of a day (more frequent)
+* "24:00" - midnight, at the end of a day
+* "2007-04-05T24:00" is equal to "2007-04-06T00:00"
 
 Weeks
 -----
-* Monday 29 December 2008 is written "2009-W01-1"
-* Sunday 3 January 2010 is written "2009-W53-7"
+* Note year/month changes during the week
 
 .. code-block:: text
+    :caption: First week of 2009
 
     2009-W01
 
 .. code-block:: text
+    :catpion: Monday 29 December 2008
+
+    2009-W01-1
+
+.. code-block:: text
+    :catpion: Sunday 3 January 2010
 
     2009-W53-7
 
@@ -184,17 +191,21 @@ Timezone
 
 Duration
 --------
-* ``P[n]Y[n]M[n]DT[n]H[n]M[n]S``:
+* Format: ``P[n]Y[n]M[n]DT[n]H[n]M[n]S``
 
-    - ``P`` is the duration designator (for period) placed at the start of the duration representation.
-    - ``Y`` is the year designator that follows the value for the number of years.
-    - ``M`` is the month designator that follows the value for the number of months.
-    - ``W`` is the week designator that follows the value for the number of weeks.
-    - ``D`` is the day designator that follows the value for the number of days.
-    - ``T`` is the time designator that precedes the time components of the representation.
-    - ``H`` is the hour designator that follows the value for the number of hours.
-    - ``M`` is the minute designator that follows the value for the number of minutes.
-    - ``S`` is the second designator that follows the value for the number of seconds.
+.. csv-table:: Duration format
+    :header: "Format", "Designator", "Description"
+    :widths: 10, 15, 75
+
+    "``P``", "duration (period)",  "placed at the start of the duration representation"
+    "``Y``", "year",  "number of years"
+    "``M``", "month",  "number of months"
+    "``W``", "week",  "number of weeks"
+    "``D``", "day",  "number of days"
+    "``T``", "time",  "precedes the time components of the representation"
+    "``H``", "hour",  "number of hours"
+    "``M``", "minute",  "number of minutes"
+    "``S``", "second",  "number of seconds"
 
 .. code-block:: text
 
