@@ -1,5 +1,5 @@
 import json
-
+from pprint import pprint
 
 DATA = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
@@ -26,28 +26,30 @@ DATA = [
     (4.6, 3.1, 1.5, 0.2, 'setosa'),
 ]
 
-header, data = DATA
+header, *data = DATA
 iris = []
 
-for value in data:
-    # iris.append({key: value[i] for i, key in enumerate(header)})
+for values in data:
+    # iris.append({key: values[i] for i, key in enumerate(header)})
 
-    pair = zip(header, value)
+    pair = zip(header, values)
     iris.append(dict(pair))
 
     # header == ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
     # iris.append({
-    #     'Sepal length': value[0],
-    #     'Sepal width': value[1],
-    #     'Petal length': value[2],
-    #     'Petal width': value[3],
-    #     'Species': value[4]
+    #     'Sepal length': values[0],
+    #     'Sepal width': values[1],
+    #     'Petal length': values[2],
+    #     'Petal width': values[3],
+    #     'Species': values[4]
     # })
 
-with open(r'/tmp/iris.json', mode='w') as file:
+with open(r'../tmp/iris.json', mode='w') as file:
     content = json.dumps(iris)
     file.write(content)
 
 
-with open(r'/tmp/iris.json', mode='w') as file:
-    json.dump(iris, file)
+with open(r'../tmp/iris.json', mode='r') as file:
+    out = json.load(file)
+
+pprint(out)

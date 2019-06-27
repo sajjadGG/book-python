@@ -1,4 +1,4 @@
-from datetime import datetime, date
+from datetime import datetime, date, timezone
 import json
 
 FILE = '/tmp/json-datetimes.json'
@@ -13,29 +13,39 @@ DATA = {
 }
 
 
-def encoder(self, obj):
-    if isinstance(obj, datetime):
-        return f'{obj:%Y-%m-%dT%H:%M:%S.%fZ}'
-    elif isinstance(obj, datetime.date):
-        return f'{obj:%Y-%m-%d}'
+class JSONDatetimeEncoder(json.JSONEncoder):
+    def default(self, value):
+
+        if isinstance(value, datetime):
+            return value.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
+        elif isinstance(value, date):
+            return value.strftime('%Y-%m-%d')
 
 
-def decoder(obj):
-    for key, value in obj.items():
-        if key == 'datetime':
-            obj['datetime'] = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%fZ')
-        elif key == 'date':
-            obj['date'] = datetime.strptime(value, '%Y-%m-%d').date()
-    return obj
+class JSONDatetimeDecoder(json.JSONDecoder):
+    def __init__(self):
+        super().__init__(object_hook=self.default)
+
+    def default(self, obj):
+        for key, value in obj.items():
+
+            if key == 'datetime':
+                dt = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%fZ')
+                obj['datetime'] = dt.replace(tzinfo=timezone.utc)
+
+            elif key == 'date':
+                dt = datetime.strptime(value, '%Y-%m-%d')
+                obj['date'] = dt.replace(tzinfo=timezone.utc).date()
+
+        return obj
 
 
 with open(FILE, mode='w', encoding='utf-8') as file:
-    json.JSONEncoder.default = encoder
-    json.dump(DATA, file)
+    json.dump(DATA, file, cls=JSONDatetimeEncoder)
 
 
 with open(FILE, encoding='utf-8') as file:
-    data = json.load(file, object_hook=decoder)
+    data = json.load(file, cls=JSONDatetimeDecoder)
 
 
 print(data)

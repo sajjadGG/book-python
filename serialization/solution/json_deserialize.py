@@ -9,7 +9,7 @@ with open(FILE) as file:
     DATA = json.load(file)
 
 
-header = DATA[0].keys()
+header, *data = DATA
 out.append(tuple(header))
 
 for row in DATA:
