@@ -208,8 +208,17 @@ Duration
     "``S``", "second",  "number of seconds"
 
 .. code-block:: text
+    :caption: Example
 
-    "P3Y6M4DT12H30M5S" represents a duration of "three years, six months, four days, twelve hours, thirty minutes, and five seconds".
+    P8Y3M9DT8H49M15S
+
+    # Period of:
+    #   8 years
+    #   3 months
+    #   9 days
+    #   8 hours
+    #   49 minutes
+    #   5 seconds
 
 
 Table of date and time parsing and formatting parameters
