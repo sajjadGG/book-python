@@ -230,9 +230,8 @@ Writing ``csv`` - variable schema
 #. Rezultat powinien wyglądać tak:
 
     .. csv-table:: Result of variable schema CSV file generation
-        :header: "first_step","last_name","first_name","born"
+        :header: "Petal width", "Petal length", "Sepal length", "Sepal width", "Species"
 
-        "Petal width", "Petal length", "Sepal length", "Sepal width", "Species"
         "", "", "5.1", "3.5", "setosa"
         "1.3", "4.1", "", "", "versicolor"
         "1.8", "", "6.3", "", "virginica"
