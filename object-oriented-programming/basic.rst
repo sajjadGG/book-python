@@ -14,8 +14,9 @@ Object Paradigm
     class
         Templates for objects.
 
-    objects
-        Instances of a class.
+    instance
+    object
+        Object created from class.
 
     method
         Function inside the class.
@@ -24,7 +25,6 @@ Object Paradigm
     attribute
     field
         Variable inside the class.
-        Also known as "Properties" or "Attributes"
 
 
 Classes
