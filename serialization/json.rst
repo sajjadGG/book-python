@@ -343,9 +343,9 @@ Check JSON Syntax
 Assignments
 ===========
 
-Iris Serialize
---------------
-* Filename: ``json_iris_serialize.py``
+Serialize
+---------
+* Filename: ``json_serialize.py``
 * Lines of code to write: 8 lines
 * Estimated time of completion: 20 min
 * Input data: :numref:`listing-json-serialize`
@@ -404,9 +404,9 @@ Iris Serialize
     * Konwersja typów
     * Praca z plikami
 
-Iris deserialize
-----------------
-* Filename: ``json_iris_deserialize.py``
+Deserialize
+-----------
+* Filename: ``json_deserialize.py``
 * Lines of code to write: 8 lines
 * Estimated time of completion: 20 min
 * Input data: :numref:`listing-json-iris`
@@ -428,8 +428,8 @@ Iris deserialize
     * Konwersja typów
     * Praca z plikami
 
-Date serialization
-------------------
+Serializing datetime
+--------------------
 * Filename: ``json_datetime.py``
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
@@ -461,9 +461,9 @@ Date serialization
     * Korzystanie z biblioteki JSON
     * Serializowanie zagnieżdżonych dat i dat z czasem
 
-Serializing custom class to JSON
---------------------------------
-* Filename: ``json_objects.py``
+Serializing objects
+-------------------
+* Filename: ``json_object.py``
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 
@@ -515,7 +515,7 @@ Serializing custom class to JSON
 
 Deserialize data from GITHub
 ----------------------------
-* Filename: ``json_deserialize_github.py``
+* Filename: ``json_github.py``
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 
@@ -528,9 +528,9 @@ Deserialize data from GITHub
     * Deserializacja zagnieżdżonych obiektów
     * Reprezentacja klas na podstawie danych otrzymanych przez API
 
-Deserialize
------------
-* Filename: ``json_deserialize_classes.py``
+Deserialize data from API
+-------------------------
+* Filename: ``json_api.py``
 * Lines of code to write: 30 lines
 * Estimated time of completion: 30 min
 

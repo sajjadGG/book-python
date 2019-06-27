@@ -1,6 +1,6 @@
 import json
 from dataclasses import dataclass
-
+from pprint import pprint
 
 FILE = '../data/iris.json'
 
@@ -31,21 +31,17 @@ with open(FILE, encoding='utf-8') as file:
 result = []
 
 for iris in data:
-    if iris['species'] == 'setosa':
+    species = iris.pop('species')
+
+    if species == 'setosa':
         cls = Setosa
-    elif iris['species'] == 'versicolor':
+    elif species == 'versicolor':
         cls = Versicolor
-    elif iris['species'] == 'virginica':
+    elif species == 'virginica':
         cls = Virginica
     else:
         print('Not supported')
 
+    result.append(cls(**iris))
 
-    result.append(cls(
-        sepalLength=iris['sepalLength'],
-        sepalWidth=iris['sepalWidth'],
-        petalLength=iris['petalLength'],
-        petalWidth=iris['petalWidth']
-    ))
-
-print(result)
+pprint(result)
