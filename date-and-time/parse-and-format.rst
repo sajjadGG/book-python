@@ -169,12 +169,12 @@ Weeks
     2009-W01
 
 .. code-block:: text
-    :catpion: Monday 29 December 2008
+    :caption: Monday 29 December 2008
 
     2009-W01-1
 
 .. code-block:: text
-    :catpion: Sunday 3 January 2010
+    :caption: Sunday 3 January 2010
 
     2009-W53-7
 

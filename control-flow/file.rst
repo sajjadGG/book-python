@@ -206,7 +206,7 @@ Parsing simple CSV file
         :caption: Zawartość pliku ``hosts.txt``
 
 #. Utwórz plik tekstowy ``hosts.txt``
-#. Do pliku skopiuj kod z listingu :numref:`listing-etc-hosts`
+#. Do pliku skopiuj kod z listingu :numref:`listing-etc-hosts-simple`
 #. Sparsuj plik i dla każdej linii:
 
     #. Podziel linię po dowolnej ilości białych znaków (spacja, taby, itp)

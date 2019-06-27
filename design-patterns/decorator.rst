@@ -201,9 +201,6 @@ Decorator as class
 
 Class Decorators
 ================
-.. literalinclude:: src/decorators-class-decorator.py
-    :language: python
-    :caption: Class Decorator
 
 @staticmethod
 -------------

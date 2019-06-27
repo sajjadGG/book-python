@@ -189,7 +189,6 @@ Object Oriented Programming
     /object-oriented-programming/paradigm.rst
     /object-oriented-programming/advanced.rst
     /object-oriented-programming/setter-getter-deleter.rst
-    /object-oriented-programming/setattr-getattr-delattr.rst
     /object-oriented-programming/descriptor.rst
     /object-oriented-programming/slots.rst
     /object-oriented-programming/metaclass.rst
