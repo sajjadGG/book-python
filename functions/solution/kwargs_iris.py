@@ -10,7 +10,7 @@ with open(r'../data/iris.csv') as file:
         *measurements, species = line.strip().split(',')
         pomiary = {}
 
-        for i, _ in parameter_names:
+        for i, _ in enumerate(parameter_names):
             key = parameter_names[i]
             value = float(measurements[i])
             pomiary[key] = value
