@@ -321,13 +321,15 @@ From ISO date format
 * Estimated time of completion: 5 min
 * Input data: :numref:`listing-time-from-iso`
 
+#. Datę:
+
+    .. code-block:: text
+        :name: listing-time-from-iso
+        :caption: Convert ``str`` from ISO date format to ``datetime`` objects
+
+        1969-07-21T14:56:15.123Z
+
 #. Przedstaw datę jako obiekt ``datetime``
-
-.. code-block:: text
-    :name: listing-time-from-iso
-    :caption: Convert ``str`` from ISO date format to ``datetime`` objects
-
-    1969-07-21T14:56:15.123Z
 
 To ISO date format
 ------------------
@@ -339,22 +341,15 @@ To ISO date format
 
     .. code-block:: python
 
-        datetime.datetime(1961, 4, 12, 6, 7, 0, 123456)
+        gagarin = 'April 12, 1961 2:07 local time'  # Asia/Almaty
 
-#. Przedstaw daty jako obiekt ``datetime``
+#. Przekonwertuj do obiektu ``datetime``
 #. Wyświetl w formacie ISO datę i czas, tj.:
 
     .. code-block:: text
+        :caption: "Rok-Miesiąc-DzieńTGodzina:Minuta:Sekunda.MikrosekundyZ"
 
-        "Rok-Miesiąc-DzieńTGodzina:Minuta:Sekunda.UłamkiSekundZ"
         1961-04-12T06:07:00.123456
-
-#. Wyświetl w formacie ISO samą datę, tj. bez czasu:
-
-    .. code-block:: text
-
-        "Rok-Miesiąc-Dzień"
-        1961-04-12
 
 US date and time format
 -----------------------
@@ -366,14 +361,14 @@ US date and time format
 
     .. code-block:: python
 
-        gagarin = '"April 12, 1961 06:07:00 AM local time"'
+        armstrong = '"June 21st, 1969 2:56:15 AM UTC"'
 
 #. Wyświetl datę w formacie amerykańskim krótkim:
 
     .. code-block:: text
+        :caption: "Miesiąc/Dzień/Rok Godzina:Minuta AM/PM"
 
-        "Miesiąc/Dzień/Rok Godzina:Minuta AM/PM"
-        04/12/61 06:07 AM
+        7/21/69 2:56 AM
 
 :Hint:
     * Wpisz "local time" jako zwykły tekst w parametrze ``fmt`` funkcji ``.strptime()``

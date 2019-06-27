@@ -203,17 +203,16 @@ Date manipulation
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 
-#. Dane są dwie następujące daty w formacie jak poniżej:
+#. Między dwoma datami upłynęło:
 
-    .. code-block:: python
+    - 8 lat
+    - 3 miesiące
+    - 9 dni
+    - 8 godzin
+    - 49 minut
+    - 15 sekund
 
-        gagarin = 'April 12, 1961 2:07 local time'  # Asia/Almaty
-        armstrong = '"07/21/69 2:56:15 AM UTC"'
-
-#. Przedstaw daty jako obiekt ``datetime``
-#. Odejmij obie daty od siebie
-#. Oblicz ile lat i miesięcy minęło między wydarzeniami
-#. Od obecnej chwili odejmij ten sam czas, który Ci wyszedł w poprzednim punkcie
+#. Od obecnej chwili odejmij ten czas
 #. Wyświetl samą datę (bez czasu)
 #. Ile miałeś wtedy lat?
 #. Przyjmij:
@@ -223,13 +222,3 @@ Date manipulation
 
 :Zadanie z gwiazdką:
     * Co robiłeś przez ten czas?
-
-:Hint:
-    * Wpisz "local time" jako zwykły tekst do ``strptime``
-    * ``datetime.now(tz=timezone.utc)``
-    * ``datetime(1961, 04, 12, 6, 7).replace(tz=timezone.utc)``
-    * Standard ISO:
-
-        * '1961-04-12'
-        * '1961-04-12T06:07:00'
-        * '1961-04-12T06:07:00.123456'
