@@ -331,8 +331,6 @@ Dragon (Part 1)
 
     Firkraag dragon from game Baldur's Gate II: Shadows of Amn
 
-#. Nie musisz trzymać się kolejności punktów i podpunktów w zadaniu
-#. Jeżeli konieczne jest wprowadzenie nowej metody, klasy lub pól to należy to zrobić
 #. Smok ma mieć:
 
     * nazwę
@@ -356,7 +354,6 @@ Dragon (Part 1)
     * idąc w dół dodajesz ``y``
 
 #. Przy każdym obrażeniu wypisz na ekranie nazwę smoka, ilość obrażeń i pozostałe punkty życia
-#. Nie można zadawać smokowi obrażeń, jeżeli już nie żyje
 #. Kiedy punkty życia smoka spadną do, lub poniżej zera:
 
     * ustaw status obiektu na ``dead``
@@ -365,6 +362,7 @@ Dragon (Part 1)
     * na ekranie pojawi się informacja ile złota smok wyrzucił (losowa 1-100)
     * na ekranie pojawi się informacja o pozycji gdzie smok zginął
 
+#. Nie można zadawać smokowi obrażeń, jeżeli już nie żyje
 #. Przeprowadź grę:
 
     * Stwórz smoka w pozycji x=50, y=120 i nazwij go Wawelski
@@ -380,3 +378,7 @@ Dragon (Part 1)
     * Zadaj 15 obrażeń smokowi
     * Zadaj 25 obrażeń smokowi
     * Zadaj 75 obrażeń smokowi
+
+#. Zadanie jest opisem co Smok ma robić, a nie jak to ma robić
+#. Możesz wprowadzać dodatkowe pola, zmienne, klasy, obiekty, co tylko chcesz
+#. Nie musisz trzymać się kolejności punktów i podpunktów w zadaniu
