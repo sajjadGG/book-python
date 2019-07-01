@@ -4,7 +4,7 @@ def print_iris(species, **pomiary):
 
 with open(r'../data/iris.csv') as file:
     header, *data = file.readlines()
-    parameter_names = header.split(',')[:-1]
+    *parameter_names, _ = header.split(',')
 
     for line in data:
         *measurements, species = line.strip().split(',')

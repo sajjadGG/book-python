@@ -314,9 +314,6 @@ Proxy functions
 
     my_csv('iris.csv', ',', verbose=True)
 
-
-
-
 Init
 ----
 .. code-block:: python
@@ -332,7 +329,6 @@ Init
         def __init__(self, z, *args, **kwargs):
             super().__init__(*args, **kwargs)
             self.z = z
-
 
 Decorators
 ----------
