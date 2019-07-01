@@ -300,6 +300,23 @@ Proxy functions
 
     my_csv('iris.csv', decimal='.', verbose=True)
 
+
+.. code-block:: python
+    :caption: Positional arguments in ``args`` can be passed to proxied function after named parameters!
+
+    def my_csv(file, *args, **kwargs):
+        return pd.read_csv(
+            file,
+            encoding='utf-8',
+            skip_blank_lines=True,
+            *args,
+            **kwargs)
+
+    my_csv('iris.csv', ',', verbose=True)
+
+
+
+
 Init
 ----
 .. code-block:: python

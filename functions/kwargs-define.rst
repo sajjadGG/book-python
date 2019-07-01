@@ -150,6 +150,27 @@ Arbitrary number of positional and named arguments
 
     echo(1, 2, 3, 4, 5, 6, d=7, e=8)
 
+Keyword only
+============
+* All arguments after ``*`` is keyword only
+* Since Python 3.8 there will be ``/`` to indicate positional only arguments
+
+.. code-block:: python
+
+    def echo(a, *, b):
+        print(locals())
+
+    echo(1, b=2)
+    # {'a': 1, 'b': 2}
+
+    echo(1, 2)
+    # TypeError: echo() takes 1 positional argument but 2 were given
+
+    echo(1)
+    # TypeError: echo() missing 1 required keyword-only argument: 'b'
+
+
+
 
 Use cases
 =========
@@ -227,6 +248,8 @@ Numeric Values, positional only
     - Zwróć ``True`` jeżeli wszystkie są numeryczne
     - Zwróć ``False`` jeżeli którykolwiek jest innego typu
 
+#. Nie używaj ``all()`` oraz ``any()``
+
 :The whys and wherefores:
     * Definiowanie i uruchamianie funkcji
     * Sprawdzanie przypadków brzegowych (niekompatybilne argumenty)
@@ -248,6 +271,7 @@ Numeric Values, positional and keyword
     - Zwróć ``False`` jeżeli którykolwiek jest innego typu
 
 #. Funkcja może przyjmować zarówno argumenty pozycyjne jak i nazwane
+#. Nie używaj ``all()`` oraz ``any()``
 
 :The whys and wherefores:
     * Definiowanie i uruchamianie funkcji
