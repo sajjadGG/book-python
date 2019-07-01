@@ -29,6 +29,9 @@ Windows
 * Zaznaczaj domyślne opcje zarówno dla GIT i PyCharm (pamiętaj aby powiązać z plikami ``.py``)
 * zweryfikować za pomocą polecenia ``python --version``
 
+.. note:: Gdybyś miał zainstalowanego Pythona, ale nie dodałeś go do ``PATH``, plik wykonywalny możesz znaleźć w ``C:\Users\%User_name%\AppData\Local\Programs\Python\Python_version\Scripts\``
+
+
 macOS
 -----
 * macOS powinien mieć już zainstalowanego Pythona
