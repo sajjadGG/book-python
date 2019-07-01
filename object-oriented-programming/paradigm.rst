@@ -42,6 +42,40 @@ Inheritance vs. Composition (Mixin Classes)
 ===========================================
 * Composition over Inheritance
 
+Problem with inheritance
+------------------------
+.. code-block:: python
+    :caption: Problem with inheritance
+
+    class Vehicle:
+        def run(self):
+            pass
+
+        def drive(self):
+            pass
+
+        def window_open(self):
+            pass
+
+        def window_close(self):
+            pass
+
+
+    class Car(Vehicle):
+        pass
+
+
+    class Truck(Vehicle):
+        pass
+
+
+    class Motorbike(Vehicle):
+        def window_open(self):
+            raise NotImplementedError
+
+        def window_close(self):
+            raise NotImplementedError
+
 Multi level inheritance problem
 -------------------------------
 .. code-block:: python
