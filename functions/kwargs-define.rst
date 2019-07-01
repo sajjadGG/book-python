@@ -83,7 +83,7 @@ Arbitrary number of keyword arguments
     def echo(a, b, c=0, **kwargs):
         print(a)       # 1
         print(b)       # 2
-        print(c)       # 3
+        print(c)       # 0
         print(kwargs)  # {}
 
 
@@ -222,10 +222,10 @@ Numeric Values, positional only
 #. Stwórz funkcję ``is_numeric``
 #. Funkcja może przyjmować dowolną liczbę argumentów różnych typów
 #. Numeryczną wartością jest ``int`` lub ``float``
-#. Za pomocą ``isinstance()`` sprawdź:
+#. Za pomocą ``isinstance()`` sprawdź wszystkie elementy listy:
 
-    - Jeżeli wszystkie są numeryczne, to zwróć ``True``
-    - Jeżeli którykolwiek jest innego typu, to zwróć ``False``
+    - Zwróć ``True`` jeżeli wszystkie są numeryczne
+    - Zwróć ``False`` jeżeli którykolwiek jest innego typu
 
 :The whys and wherefores:
     * Definiowanie i uruchamianie funkcji
@@ -244,8 +244,10 @@ Numeric Values, positional and keyword
 #. Numeryczną wartością jest ``int`` lub ``float``
 #. Za pomocą ``isinstance()`` sprawdź:
 
-    - Jeżeli wszystkie są numeryczne, to zwróć ``True``
-    - Jeżeli którykolwiek jest innego typu, to zwróć ``False``
+    - Zwróć ``True`` jeżeli wszystkie są numeryczne
+    - Zwróć ``False`` jeżeli którykolwiek jest innego typu
+
+#. Funkcja może przyjmować zarówno argumenty pozycyjne jak i nazwane
 
 :The whys and wherefores:
     * Definiowanie i uruchamianie funkcji
