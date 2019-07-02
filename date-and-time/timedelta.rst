@@ -199,7 +199,7 @@ Assignments
 
 Date manipulation
 ------------------
-* Filename: ``datetime_deltas.py``
+* Filename: ``date-and-time/datetime_deltas.py``
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 

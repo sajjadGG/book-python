@@ -252,7 +252,7 @@ Assignments
 
 Emoticon print
 --------------
-* Filename: ``types_emoticon.py``
+* Filename: ``data-types/str_emoticon.py``
 * Lines of code to write: 4 lines
 * Estimated time of completion: 10 min
 
@@ -269,7 +269,7 @@ Emoticon print
 
 Variables and types
 -------------------
-* Filename: ``types_str_input.py``
+* Filename: ``data-types/str_input.py``
 * Lines of code to write: 3 lines
 * Estimated time of completion: 10 min
 

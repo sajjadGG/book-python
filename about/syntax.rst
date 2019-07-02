@@ -207,7 +207,7 @@ Assignments
 
 Meet Python
 -----------
-* Filename: ``syntax_python.py``
+* Filename: ``about/syntax_python.py``
 * Lines of code to write: 2 lines + 2 lines of comment
 * Estimated time of completion: 5 min
 

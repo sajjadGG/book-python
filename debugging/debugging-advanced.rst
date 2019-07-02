@@ -204,7 +204,7 @@ Assignment
 
 Own ``doctest``
 ---------------
-* Filename: ``debugging_doctest.py``
+* Filename: ``debugging/doctest.py``
 * Lines of code to write: 60 lines
 * Estimated time of completion: 30 min
 

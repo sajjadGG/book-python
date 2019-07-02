@@ -143,7 +143,7 @@ Assignments
 
 Classification of blood pressure in adults
 ------------------------------------------
-* Filename: ``ifelse_blood_pressure.py``
+* Filename: ``control-flow/ifelse_blood_pressure.py``
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
 

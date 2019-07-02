@@ -711,7 +711,7 @@ Assignments
 
 Dragon (version release candidate)
 ----------------------------------
-* Filename: ``oop_dragon_rc.py``
+* Filename: ``oop/dragon_rc.py``
 * Lines of code to write: 50 lines
 * Estimated time of completion: 30 min
 

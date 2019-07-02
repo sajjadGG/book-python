@@ -469,7 +469,7 @@ Assignments
 
 Prosty dekorator
 ----------------
-* Filename: ``decorator_abspath.py``
+* Filename: ``design-patterns/decorator_abspath.py``
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 
@@ -479,7 +479,7 @@ Prosty dekorator
 
 Type Checking Decorator
 -----------------------
-* Filename: ``decorator_type_check.py``
+* Filename: ``design-patterns/decorator_type_check.py``
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 
@@ -515,7 +515,7 @@ Type Checking Decorator
 
 Memoization
 -----------
-* Filename: ``decorator_memoize.py``
+* Filename: ``design-patterns/decorator_memoize.py``
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
 

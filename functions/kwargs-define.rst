@@ -236,7 +236,7 @@ Assignments
 
 Numeric Values, positional only
 -------------------------------
-* Filename: ``kwargs_numeric_args.py``
+* Filename: ``functions/kwargs_numeric_args.py``
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
 
@@ -258,7 +258,7 @@ Numeric Values, positional only
 
 Numeric Values, positional and keyword
 --------------------------------------
-* Filename: ``kwargs_numeric_kwargs.py``
+* Filename: ``functions/kwargs_numeric_kwargs.py``
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
 

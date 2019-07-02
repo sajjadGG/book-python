@@ -211,7 +211,7 @@ Assignments
 
 Average
 -------
-* Filename: ``builtin_average.py``
+* Filename: ``stdlib/builtin_average.py``
 * Lines of code to write: 12 lines
 * Estimated time of completion: 15 min
 

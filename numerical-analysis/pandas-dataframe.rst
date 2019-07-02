@@ -1180,7 +1180,7 @@ Assignments
 
 Iris Dirty
 ----------
-* Filename: ``pandas_iris_dirty.py``
+* Filename: ``pandas/iris_dirty.py``
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
 * Input data: https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/data/iris-dirty.csv
@@ -1207,7 +1207,7 @@ Iris Dirty
 
 Iris Clean
 ----------
-* Filename: ``pandas_iris_clean.py``
+* Filename: ``pandas/iris_clean.py``
 * Lines of code to write: 25 lines
 * Estimated time of completion: 25 min
 * Input data: https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/data/iris-clean.csv
@@ -1231,7 +1231,7 @@ Iris Clean
 
 Cars
 ----
-* Filename: ``pandas_cars.py``
+* Filename: ``pandas/cars.py``
 * Lines of code to write: 15 lines
 * Estimated time of completion: 45 min
 
@@ -1261,7 +1261,7 @@ Cars
 
 EVA
 ---
-* Filename: ``pandas_eva.py``
+* Filename: ``pandas/eva.py``
 * Lines of code to write: 25 lines
 * Estimated time of completion: 30 min
 

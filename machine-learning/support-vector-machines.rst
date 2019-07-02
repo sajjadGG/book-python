@@ -412,7 +412,7 @@ Assignments
 
 Wykorzystanie biblioteki ``sklearn``
 ------------------------------------
-* Filename: ``ml_svm_sklearn.py``
+* Filename: ``machine-learning/svm_sklearn.py``
 * Lines of code to write: 30 lines
 * Estimated time of completion: 25 min
 * Input data: https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/

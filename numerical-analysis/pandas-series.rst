@@ -462,7 +462,7 @@ Assignments
 
 Even Numbers
 ------------
-* Filename: ``pandas_even_numbers.py``
+* Filename: ``pandas/even_numbers.py``
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
 
@@ -472,7 +472,7 @@ Even Numbers
 
 Slicing
 -------
-* Filename: ``pandas_even_numbers.py``
+* Filename: ``pandas/even_slicing.py``
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
 

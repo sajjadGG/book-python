@@ -190,7 +190,7 @@ Assignments
 
 Create
 ------
-* Filename: ``sequences_list.py``
+* Filename: ``data-structures/sequences_list.py``
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
 

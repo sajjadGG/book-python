@@ -26,7 +26,7 @@ Mini Botnet
 
 Heartbeat Receiver
 ------------------
-* Filename: ``botnet_heartbeat_receiver.py``
+* Filename: ``network/botnet_heartbeat_receiver.py``
 * Lines of code to write: 45 lines
 * Estimated time of completion: 30 min
 
@@ -42,7 +42,7 @@ Heartbeat Receiver
 
 Victim
 ------
-* Filename: ``botnet_victim.py``
+* Filename: ``network/botnet_victim.py``
 * Lines of code to write: 150 lines
 * Estimated time of completion: 75 min
 
@@ -72,7 +72,7 @@ Victim
 
 Attacker
 --------
-* Filename: ``botnet_attacker.py``
+* Filename: ``network/botnet_attacker.py``
 * Lines of code to write: 150 lines
 * Estimated time of completion: 75 min
 

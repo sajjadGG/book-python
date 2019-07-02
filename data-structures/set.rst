@@ -118,7 +118,7 @@ Assignments
 
 Create
 ------
-* Filename: ``sequences_set.py``
+* Filename: ``data-structures/set_create.py``
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
 

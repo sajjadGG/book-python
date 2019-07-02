@@ -343,7 +343,7 @@ Assignments
 
 String cleaning
 ---------------
-* Filename: ``str_cleaning.py``
+* Filename: ``data-methods/str_cleaning.py``
 * Lines of code to write: 11 lines
 * Estimated time of completion: 15 min
 

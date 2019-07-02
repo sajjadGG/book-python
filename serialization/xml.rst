@@ -522,7 +522,7 @@ Assignments
 
 XML Parsing
 -----------
-* Filename: ``xml_parse.py``
+* Filename: ``serialization/xml_parse.py``
 * Lines of code to write: 20 lines
 * Estimated time of completion: 20 min
 * Input data: :numref:`listing-xml_plants.xml`
@@ -536,7 +536,7 @@ XML Parsing
 
 XSLT Transformation
 -------------------
-* Filename: ``xml_xslt.py``
+* Filename: ``serialization/xml_xslt.py``
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
 * Input data: :numref:`listing-xml_transform.xml`

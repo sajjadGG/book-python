@@ -128,7 +128,7 @@ Assignments
 
 PCA dla zbioru Pima Indian Diabetes
 -----------------------------------
-* Filename: ``ml_pca_pima.py``
+* Filename: ``machine-learning/pca_pima.py``
 * Lines of code to write: 30 lines
 * Estimated time of completion: 20 min
 

@@ -175,7 +175,7 @@ Assignments
 
 Longitude and Latitude
 ----------------------
-* Filename: ``descriptor_geographic.py``
+* Filename: ``oop/descriptor_geographic.py``
 * Lines of code to write: 25 lines
 * Estimated time of completion: 15 min
 
@@ -196,7 +196,7 @@ Longitude and Latitude
 
 Temperatura
 -----------
-* Filename: ``descriptor_temperature.py``
+* Filename: ``oop/descriptor_temperature.py``
 * Lines of code to write: 25 lines
 * Estimated time of completion: 15 min
 

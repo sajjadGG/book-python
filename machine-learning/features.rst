@@ -157,7 +157,7 @@ Assignments
 
 Feature Engineering
 -------------------
-* Filename: ``ml-features-engineering.py``
+* Filename: ``machine-learning/features-engineering.py``
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
 

@@ -274,7 +274,7 @@ Assignments
 
 Defining Classes
 ----------------
-* Filename: ``oop_iris.py``
+* Filename: ``oop/iris.py``
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
 * Input data: :numref:`listing-oop-classes`
@@ -327,7 +327,7 @@ Defining Classes
 
 Credit Scoring
 --------------
-* Filename: ``oop_credit_scoring.py``
+* Filename: ``oop/credit_scoring.py``
 * Lines of code to write: 30 lines
 * Estimated time of completion: 20 min
 
@@ -346,7 +346,7 @@ Credit Scoring
 
 Basic Address Book
 ------------------
-* Filename: ``oop_addressbook_basic.py``
+* Filename: ``oop/addressbook_basic.py``
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
 
@@ -369,7 +369,7 @@ Basic Address Book
 
 Address Book from API
 ---------------------
-* Filename: ``oop_addressbook_api.py``
+* Filename: ``oop/addressbook_api.py``
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 
@@ -387,7 +387,7 @@ Address Book from API
 
 Dragon (version beta)
 ---------------------
-* Filename: ``oop_dragon_beta.py``
+* Filename: ``oop/dragon_beta.py``
 * Lines of code to write: 120 lines
 * Estimated time of completion: 30 min (±10 min), then 30 min live coding with instructor
 * Warning: Don't delete code, assignment will be continued
@@ -430,7 +430,7 @@ Dragon (version beta)
 
 Bank i Bankomaty
 ----------------
-* Filename: ``oop_bank.py``
+* Filename: ``oop/bank.py``
 * Lines of code to write: 60 lines
 * Estimated time of completion: 20 min
 

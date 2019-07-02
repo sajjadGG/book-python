@@ -262,7 +262,7 @@ Assignments
 
 Least square regression 3 points
 --------------------------------
-* Filename: ``ml_linreg_least_square_3pts.py``
+* Filename: ``machine-learning/linreg_least_square_3pts.py``
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 
@@ -273,7 +273,7 @@ Least square regression 3 points
 
 Least square regression 4 points
 --------------------------------
-* Filename: ``ml_linreg_least_square_4pts.py``
+* Filename: ``machine-learning/linreg_least_square_4pts.py``
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 
@@ -284,7 +284,7 @@ Least square regression 4 points
 
 Company sales
 -------------
-* Filename: ``ml_linreg_company_sales.py``
+* Filename: ``machine-learning/linreg_company_sales.py``
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 

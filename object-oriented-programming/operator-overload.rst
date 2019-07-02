@@ -181,7 +181,7 @@ Assignment
 
 Address Book
 ------------
-* Filename: ``oop_addressbook_operators.py``
+* Filename: ``oop/addressbook_operators.py``
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 

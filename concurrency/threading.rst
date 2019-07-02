@@ -116,7 +116,7 @@ Assignments
 
 Wielowątkowość
 --------------
-* Filename: ``thread_execute.py``
+* Filename: ``concurrency/thread_execute.py``
 * Lines of code to write: 20 lines
 * Estimated time of completion: 30 min
 

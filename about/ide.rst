@@ -101,7 +101,7 @@ Create Project from GIT
 
 Check Python Version
 --------------------
-* Filename: ``python_version.py``
+* Filename: ``about/python_version.py``
 * Lines of code to write: 0 lines
 * Estimated time of completion: 5 min
 
@@ -126,7 +126,7 @@ Check Python Version
 
 Check Python Environment
 ------------------------
-* Filename: ``python_env.py``
+* Filename: ``about/python_env.py``
 * Lines of code to write: 0 lines
 * Estimated time of completion: 5 min
 

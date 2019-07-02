@@ -29,7 +29,7 @@ Assignments
 
 Send email
 ----------
-* Filename: ``network_smtp.py``
+* Filename: ``network/smtp.py``
 * Lines of code to write: 20 lines
 * Estimated time of completion: 25 min
 

@@ -216,7 +216,7 @@ Assignments
 
 Range
 -----
-* Filename: ``iterator_range.py``
+* Filename: ``design-patterns/iterator_range.py``
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
 
@@ -225,7 +225,7 @@ Range
 
 Książka adresowa
 ----------------
-* Filename: ``iterator_addressbook.py``
+* Filename: ``design-patterns/iterator_addressbook.py``
 * Lines of code to write: 20 lines
 * Estimated time of completion: 15 min
 * Input data: :numref:`listing-iterators-ksiazka-adresowa`

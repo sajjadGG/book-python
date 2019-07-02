@@ -295,7 +295,7 @@ Assignments
 
 Defining Classes
 ----------------
-* Filename: ``oop_iris.py``
+* Filename: ``oop/iris.py``
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
 
@@ -320,7 +320,7 @@ Defining Classes
 
 Dragon (version alpha)
 ----------------------
-* Filename: ``oop_dragon_alpha.py``
+* Filename: ``oop/dragon_alpha.py``
 * Lines of code to write: 120 lines
 * Estimated time of completion: 30 min (±10 min), then 30 min live coding with instructor
 * Warning: Don't delete code, assignment will be continued

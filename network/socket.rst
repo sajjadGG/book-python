@@ -129,7 +129,7 @@ Assignments
 
 Heartbeat
 ---------
-* Filename: ``socket_heartbeat_client.py`` and ``socket_heartbeat_server.py``
+* Filename: ``network/socket_heartbeat_client.py`` and ``socket_heartbeat_server.py``
 * Lines of code to write: 20 lines
 * Estimated time of completion: 20 min
 
@@ -151,7 +151,7 @@ Heartbeat
 
 Backdoor
 --------
-* Filename: ``socket_backdoor.py``
+* Filename: ``network/socket_backdoor.py``
 * Lines of code to write: 150 lines
 * Estimated time of completion: 75 min
 

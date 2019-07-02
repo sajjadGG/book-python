@@ -542,7 +542,7 @@ Assignments
 
 Powielanie napisów
 ------------------
-* Filename: ``print_lines.py``
+* Filename: ``stdlib/print_lines.py``
 * Lines of code to write: 8 lines
 * Estimated time of completion: 5 min
 
@@ -564,7 +564,7 @@ Powielanie napisów
 
 Przeliczanie temperatury
 ------------------------
-* Filename: ``print_formatting.py``
+* Filename: ``stdlib/print_formatting.py``
 * Lines of code to write: 8 lines
 * Estimated time of completion: 15 min
 

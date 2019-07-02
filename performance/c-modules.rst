@@ -91,7 +91,7 @@ Assignments
 
 C Modules
 ---------
-* Filename: ``cext_modules.py``
+* Filename: ``performance/cext_modules.py``
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 

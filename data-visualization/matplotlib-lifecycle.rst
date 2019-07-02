@@ -116,14 +116,14 @@ your visualization to your needs. To see a list of styles, we can use
 You can activate a style with the following:
 
     .. code-block:: python
-    
+
         plt.style.use('fivethirtyeight')
 
 Now let's remake the above plot to see how it looks:
 
     .. code-block:: python
-    
-    
+
+
         fig, ax = plt.subplots()
         ax.barh(group_names, group_data)
 
@@ -337,7 +337,7 @@ Assignment
 
 Iris transformations
 --------------------
-* Filename: ``matplotlib_lifecycle.py``
+* Filename: ``data-visualization/matplotlib_lifecycle.py``
 * Lines of code to write: 20 lines
 * Estimated time of completion: 20 min
 * Input data: https://raw.githubusercontent.com/AstroMatt/book-python/master/data-vizualization/data/iris.csv

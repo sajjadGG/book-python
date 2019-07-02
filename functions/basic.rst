@@ -311,7 +311,7 @@ Assignments
 
 Cleaning text input
 -------------------
-* Filename: ``functions_str_clean.py``
+* Filename: ``functions/str_clean.py``
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
 
@@ -365,7 +365,7 @@ Cleaning text input
 
 Aviation numbers
 ----------------
-* Filename: ``functions_aviation_numbers.py``
+* Filename: ``functions/aviation_numbers.py``
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
 
@@ -414,7 +414,7 @@ Aviation numbers
 
 Number to human readable
 ------------------------
-* Filename: ``functions_numstr_human.py``
+* Filename: ``functions/numstr_human.py``
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
 
@@ -470,7 +470,7 @@ Number to human readable
 
 Roman numbers
 -------------
-* Filename: ``functions_roman.py``
+* Filename: ``functions/roman.py``
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
 

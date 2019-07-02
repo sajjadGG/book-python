@@ -157,7 +157,7 @@ Assignments
 
 Content of a requested file
 ---------------------------
-* Filename: ``file_content.py``
+* Filename: ``control-flow/file_requested.py``
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
 
@@ -169,7 +169,7 @@ Content of a requested file
 
 Parsing simple CSV file
 -----------------------
-* Filename: ``file_iris.py``
+* Filename: ``control-flow/file_parsing_csv.py``
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 * Input data: http://raw.githubusercontent.com/AstroMatt/book-python/master/control-flow/data/iris.csv
@@ -192,10 +192,9 @@ Parsing simple CSV file
     * parsowanie stringów
     * praca ze ścieżkami w systemie operacyjnym
 
-
 ``/etc/hosts`` - Simple Parsing
 -------------------------------
-* Filename: ``file_hosts_simple.py``
+* Filename: ``control-flow/file_parsing_hosts.py``
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
 * Input data: :numref:`listing-etc-hosts-simple`
@@ -238,7 +237,7 @@ Parsing simple CSV file
 
 ``/etc/hosts`` - Advanced Parsing
 ---------------------------------
-* Filename: ``file_hosts.py``
+* Filename: ``control-flow/file_parsing.py``
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 * Input data: :numref:`listing-etc-hosts-advanced`
