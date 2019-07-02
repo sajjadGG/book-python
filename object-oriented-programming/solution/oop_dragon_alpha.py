@@ -50,6 +50,7 @@ class Dragon(Movable):
         self.texture: str = self.TEXTURE_ALIVE
         self.health: int = self._get_initial_health()
         self.gold: int = randint(self.GOLD_MIN, self.GOLD_MAX)
+        self._position: Point = position
         self.position_set(position)
         self.update_status()
 

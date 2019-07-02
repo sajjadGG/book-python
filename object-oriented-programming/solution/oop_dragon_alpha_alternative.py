@@ -42,7 +42,7 @@ class Dragon(Movable):
     def __init__(self, name: str, position: Position = Position()):
         self.name = name
         self.texture = self.TEXTURE_ALIVE
-        self.health = randint(self.HEALTH_MIN, self.HEALTH_MAX)
+        self.health_current = randint(self.HEALTH_MIN, self.HEALTH_MAX)
         self.gold = randint(self.GOLD_MIN, self.GOLD_MAX)
         self.update_status()
         self.set_position(position)
@@ -51,7 +51,7 @@ class Dragon(Movable):
         return randint(self.DAMAGE_MIN, self.DAMAGE_MAX)
 
     def update_status(self):
-        if self.health <= 0:
+        if self.health_current <= 0:
             self.status = Status.DEAD
         else:
             self.status = Status.ALIVE
@@ -77,11 +77,11 @@ class Dragon(Movable):
         if self.is_dead():
             raise Dragon.IsDead
 
-        self.health -= damage
+        self.health_current -= damage
         self.update_status()
 
         if self.is_alive():
-            print(f'{self.name}, DMG taken: {damage}, HP left: {self.health}')
+            print(f'{self.name}, DMG taken: {damage}, HP left: {self.health_current}')
         else:
             return self._make_dead()
 

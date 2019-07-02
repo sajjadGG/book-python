@@ -1,5 +1,5 @@
 from enum import Enum
-from oop_basic_dragon_1b import Dragon, Status
+from oop_dragon_alpha import Dragon, Status, Point, Movable
 
 
 class Status(Status):
@@ -20,11 +20,13 @@ class Character(Dragon):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.hit_points_full = self.hit_points
         self.update_status()
 
     def update_status(self):
-        procent = self.hit_points / self.hit_points_full * 100
+        if not hasattr(self, 'health_full'):
+            self.health_full = self.health
+
+        procent = self.health / self.health_full * 100
 
         if procent == 100:
             self.status = Status.FULL_HEALTH
@@ -37,22 +39,26 @@ class Character(Dragon):
         else:
             self.status = Status.DEAD
 
-    def set_position(self, x, y):
+    def position_set(self, position: Point):
         """
-        >>> wawelski = Character(name='Red', position_x=0, position_y=0)
-        >>> wawelski.move(right=1)
-        >>> wawelski.get_position()
-        {'x': 1, 'y': 0}
-        >>> wawelski.move(down=1)
-        >>> wawelski.get_position()
-        {'x': 1, 'y': 1}
-        >>> wawelski.move(left=2)
-        >>> wawelski.get_position()
-        {'x': 0, 'y': 1}
-        >>> wawelski.move(up=2)
-        >>> wawelski.get_position()
-        {'x': 0, 'y': 0}
+        >>> wawelski = Character(name='Red', position=Point(0, 0))
+        >>> wawelski.position_change(right=1)
+        >>> wawelski.position_get()
+        Point(x=1, y=0)
+        >>> wawelski.position_change(down=1)
+        >>> wawelski.position_get()
+        Point(x=1, y=1)
+        >>> wawelski.position_change(left=2)
+        >>> wawelski.position_get()
+        Point(x=0, y=1)
+        >>> wawelski.position_change(up=2)
+        >>> wawelski.position_get()
+        Point(x=1, y=1)
         """
+        current_position = self.position_get()
+        x = current_position.x
+        y = current_position.y
+
         if x > Config.BORDER_X_MAX:
             x = Config.BORDER_X_MAX
 
@@ -65,7 +71,7 @@ class Character(Dragon):
         if y < Config.BORDER_Y_MIN:
             y = Config.BORDER_Y_MIN
 
-        super().set_position(x, y)
+        super().position_set(Point(x, y))
 
 
 class CharacterClass(Enum):
@@ -96,11 +102,11 @@ def run():
     while wawelski.is_alive() and jose.is_alive():
         print(f'\nTurn: {turn}')
 
-        dmg = wawelski.make_damage()
+        dmg = wawelski.attack()
         jose.take_damage(dmg)
 
         if jose.is_alive():
-            dmg = jose.make_damage()
+            dmg = jose.attack()
             wawelski.take_damage(dmg)
 
         if wawelski.is_dead():
