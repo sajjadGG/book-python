@@ -64,16 +64,16 @@ SPECIES = {
 data = []
 
 
-for rekord in DATA.split():
-    *pomiary, gatunek = rekord.split(',')
+for line in DATA.split():
+    *measurements, species = line.split(',')
 
     data.append({
         'datetime': datetime.now(tz=timezone.utc),
-        'sepal_length': float(pomiary[0]),
-        'sepal_width': float(pomiary[1]),
-        'petal_length': float(pomiary[2]),
-        'petal_width': float(pomiary[3]),
-        'species': SPECIES[int(gatunek)],
+        'sepal_length': float(measurements[0]),
+        'sepal_width': float(measurements[1]),
+        'petal_length': float(measurements[2]),
+        'petal_width': float(measurements[3]),
+        'species': SPECIES[int(species)],
     })
 
 
