@@ -318,9 +318,9 @@ Defining Classes
 
 #. Wyświetl na ekranie nazwę gatunku oraz sumę i średnią z pomiarów.
 
-Dragon (Part 1)
----------------
-* Filename: ``oop_dragon_1.py``
+Dragon (version alpha)
+----------------------
+* Filename: ``oop_dragon_alpha.py``
 * Lines of code to write: 120 lines
 * Estimated time of completion: 30 min (±10 min), then 30 min live coding with instructor
 * Warning: Don't delete code, assignment will be continued
@@ -331,8 +331,8 @@ Dragon (Part 1)
 
     Firkraag dragon from game Baldur's Gate II: Shadows of Amn
 
-#. Zadanie jest specyfikacją wymagań biznesowych, tj. "co Smok ma robić", a nie dokumentacją techniczną "jak to ma robić"
-#. Smok ma mieć:
+#. Zadanie jest specyfikacją wymagań biznesowych, a nie dokumentacją techniczną. tj. "co Smok ma robić, a nie jak to ma robić"
+#. Smok ma:
 
     * nazwę
     * pozycję ``x`` na ekranie
@@ -347,23 +347,27 @@ Dragon (Part 1)
     * otrzymywać obrażenia
     * być przesuwany o zadaną liczbę punktów w którymś z kierunków
 
-#. Przyjmij górny lewy róg ekranu za punkt (``x=0``, ``y=0``)
+#. Przyjmij górny lewy róg ekranu za punkt początkowy:
 
     * idąc w prawo dodajesz ``x``
     * idąc w lewo odejmujesz ``x``
     * idąc w górę odejmujesz ``y``
     * idąc w dół dodajesz ``y``
 
-#. Przy każdym obrażeniu wypisz na ekranie nazwę smoka, ilość obrażeń i pozostałe punkty życia
-#. Kiedy punkty życia smoka spadną do, lub poniżej zera:
+#. Jest to wersja ``alpha`` więc bez dodatkowych funkcjonalności
+#. Przy każdym obrażeniu wypisz na ekranie nazwę Smoka, ilość obrażeń i pozostałe punkty życia
+#. Kiedy punkty życia Smoka spadną do, lub poniżej zera:
 
+    * Smok jest martwy
     * ustaw status obiektu na ``dead``
     * na ekranie ma pojawić się napis ``XXX is dead`` gdzie XXX to nazwa smoka
     * zmień nazwę pliku tekstury na ``img/dragon/dead.png``
     * na ekranie pojawi się informacja ile złota smok wyrzucił (losowa 1-100)
     * na ekranie pojawi się informacja o pozycji gdzie smok zginął
+    * Nie można zadawać mu obrażeń
+    * Smok nie może zadawać obrażeń
+    * Smok nie może się poruszać
 
-#. Nie można zadawać smokowi obrażeń, jeżeli już nie żyje
 #. Przeprowadź grę:
 
     * Stwórz smoka w pozycji x=50, y=120 i nazwij go Wawelski
@@ -382,5 +386,14 @@ Dragon (Part 1)
 
 #. Możesz wprowadzać dodatkowe pola, metody, funkcje, zmienne, stały, klasy, obiekty, co tylko chcesz
 #. Nie musisz trzymać się kolejności punktów i podpunktów w zadaniu
+#. Nie przeglądaj kolejnych (przyszłych) części zadania. Zadanie jest symulacją pewnego procesu. Jeżeli zaglądniesz w przód, to zepsujesz sobie zabawę.
 
-.. warning:: Nie przeglądaj kolejnych (przyszłych) części zadania
+:The whys and wherefores:
+    * "Smok" jest tylko narracją do demonstracji praktyk
+    * myślenie obiektowe i odwzorowanie struktury w programie
+    * tworzenie i praca z obiektami
+    * zagnieżdżanie obiektów
+    * specyfikacja interfejsów klas
+    * interakcja między obiektami
+    * podział aplikacji na warstwy
+    * dobre praktyki programistyczne

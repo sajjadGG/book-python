@@ -709,9 +709,9 @@ Objects and instances
 Assignments
 ===========
 
-Dragon (Part 3)
----------------
-* Filename: ``oop_dragon_3.py``
+Dragon (version release candidate)
+----------------------------------
+* Filename: ``oop_dragon_rc.py``
 * Lines of code to write: 50 lines
 * Estimated time of completion: 30 min
 

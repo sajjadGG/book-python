@@ -385,9 +385,9 @@ Address Book from API
     :language: python
     :caption: Address Book
 
-Dragon (Part 2)
----------------
-* Filename: ``oop_dragon_2.py``
+Dragon (version beta)
+---------------------
+* Filename: ``oop_dragon_beta.py``
 * Lines of code to write: 120 lines
 * Estimated time of completion: 30 min (±10 min), then 30 min live coding with instructor
 * Warning: Don't delete code, assignment will be continued
