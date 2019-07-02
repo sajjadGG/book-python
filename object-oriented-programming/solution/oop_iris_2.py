@@ -12,13 +12,14 @@ DATA = [
     (4.6, 3.1, 1.5, 0.2, 'setosa'),
 ]
 
+
 class Iris:
-    def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
+    def __init__(self, sepal_length, sepal_width, petal_length, petal_width):
         self.sepal_length = sepal_length
         self.sepal_width = sepal_width
         self.petal_length = petal_length
         self.petal_width = petal_width
-        self.species = species
+        self.species = self.__class__.__name__
 
     def total(self):
         return self.sepal_length \
@@ -30,72 +31,33 @@ class Iris:
         return self.total() / 4
 
 
-class Virginica:
-    def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
-        self.sepal_length = sepal_length
-        self.sepal_width = sepal_width
-        self.petal_length = petal_length
-        self.petal_width = petal_width
-        self.species = species
-
-    def total(self):
-        return self.sepal_length \
-               + self.sepal_width \
-               + self.petal_length \
-               + self.petal_width
-
-    def average(self):
-        return self.total() / 4
+class Virginica(Iris):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
 
-class Versicolor:
-    def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
-        self.sepal_length = sepal_length
-        self.sepal_width = sepal_width
-        self.petal_length = petal_length
-        self.petal_width = petal_width
-        self.species = species
-
-    def total(self):
-        return self.sepal_length \
-               + self.sepal_width \
-               + self.petal_length \
-               + self.petal_width
-
-    def average(self):
-        return self.total() / 4
+class Versicolor(Iris):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
 
-class Setosa:
-    def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
-        self.sepal_length = sepal_length
-        self.sepal_width = sepal_width
-        self.petal_length = petal_length
-        self.petal_width = petal_width
-        self.species = species
+class Setosa(Iris):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
-    def total(self):
-        return self.sepal_length \
-               + self.sepal_width \
-               + self.petal_length \
-               + self.petal_width
 
-    def average(self):
-        return self.total() / 4
-
-header = DATA[0]
-data = DATA[1:]
+header, *data = DATA
 out = []
 
 for *pomiary, gatunek in data:
     if gatunek == 'setosa':
-        obj = Setosa(*pomiary, gatunek)
+        obj = Setosa(*pomiary)
         out.append(obj)
     elif gatunek == 'versicolor':
-        obj = Versicolor(*pomiary, gatunek)
+        obj = Versicolor(*pomiary)
         out.append(obj)
     elif gatunek == 'virginica':
-        obj = Virginica(*pomiary, gatunek)
+        obj = Virginica(*pomiary)
         out.append(obj)
 
 
