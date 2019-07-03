@@ -21,6 +21,8 @@ Private, protected, public?!
 Initial arguments mutability and shared state
 =============================================
 
+.. _Initial arguments mutability and shared state:
+
 Bad
 ---
 .. literalinclude:: src/oop-init-shared-state-bad.py
