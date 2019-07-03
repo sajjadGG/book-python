@@ -29,10 +29,10 @@ OOP Advanced
 .. code-block:: python
     :caption: Intuition definition of ``__new__()`` and ``__init__()``
 
-    class object:
+    class Iris:
         def __call__(cls):
-            obj = type.__new__(cls)
-            obj.__init__()
+            iris = Iris.__new__(cls)
+            iris.__init__()
 
 ``__new__()``
 -------------
@@ -41,6 +41,17 @@ OOP Advanced
 * ``cls`` as it's first parameter
 * when calling ``__new__()`` you actually don't have an instance yet, therefore no ``self`` exists at that moment
 
+.. code-block:: python
+    :emphasize-lines: 2,3,4
+
+    class Iris:
+        def __new__(cls):
+            print("Iris.__new__() called")
+            return super().__new__(cls)
+
+    Iris()
+    # Iris.__new__() called
+
 ``__init__()``
 --------------
 * the initializer
@@ -48,6 +59,16 @@ OOP Advanced
 * ``self`` as it's first parameter
 * ``__init__()`` is called after ``__new__()`` and the instance is in place, so you can use ``self`` with it
 * it's purpose is just to alter the fresh state of the newly created instance
+
+.. code-block:: python
+    :emphasize-lines: 2,3
+
+    class Iris:
+        def __init__(self):
+            print("Iris.__init__() called")
+
+    Iris()
+    # Iris.__init__() called
 
 Example usage
 -------------
@@ -118,18 +139,31 @@ Why?
 
 .. code-block:: python
 
-    class Iris:
-        name = None
+    class PDF:
+        pass
 
-    class Setosa:
-        def __new__(cls):
-            return Iris()
+    class Docx:
+        pass
+
+    class Document:
+        def __call__(self, *args, **kwargs):
+            Document.__new__(*args, **kwargs)
+
+        def __new__(cls, *args, **kwargs):
+            filename, extension = args[0].split('.')
+
+            if extension == 'pdf':
+                return PDF()
+            elif extension == 'docx':
+                return Docx()
 
 
-    flower = Setosa()
+    file1 = Document('myfile.pdf')
+    # <__main__.PDF object at 0x1092460f0>
 
-    print(flower)                # <__main__.Iris object at 0x108165c18>
-    flower.__class__.__name__    # 'Iris'
+    file2 = Document('myfile.docx')
+    # <__main__.DOCX object at 0x107a6c160>
+
 
 
 Stringify objects
@@ -350,17 +384,17 @@ What should be in the class and what not?
     class Guest(User, JSONSerializable):
         pass
 
-    class SuperUser(User, JSONSerializable):
+    class Admin(User, JSONSerializable):
         pass
 
 
     DATA = '{"first_name": "Jan", "last_name": "Twardowski"}'
 
     guest = Guest.from_json(DATA)
-    root = SuperUser.from_json(DATA)
+    admin = Admin.from_json(DATA)
 
     type(guest)     # <class '__main__.Guest'>
-    type(root)      # <class '__main__.SuperUser'>
+    type(admin)      # <class '__main__.Admin'>
 
 
 Dynamically creating fields
@@ -384,68 +418,6 @@ Dynamically creating fields
 
     print(jose.__dict__)    # {'last_name': 'Jimenez', 'addresses': ()}
     print(ivan.__dict__)    # {'last_name': 'Иванович', 'first_name': 'Иван', 'agency': 'Roscosmos'}
-
-
-Setter and Getter
-=================
-
-Accessing class fields
-----------------------
-.. code-block:: python
-    :caption: Accessing class fields "Java way" -- don't do that in Python
-
-    class Astronaut:
-        name = ''
-
-        def set_name(self, name):
-            print('I can print some log messages')
-            self.name = name
-
-        def get_name(self):
-            return self.name
-
-    jose = Astronaut()
-    jose.set_name('José Jiménez')
-
-    print(jose.get_name())
-
-.. code-block:: python
-    :caption: Accessing class fields - "the Python way"
-
-    class Astronaut:
-        def __init__(self, name=''):
-            self.name = name
-
-    ivan = Astronaut()              # either put ``name`` as an argument for ``__init__()``
-    ivan.name = 'Ivan Иванович'     # or create dynamic field in runtime
-
-    print(ivan.name)
-
-
-.. code-block:: python
-    :caption: Use case uzasadnionego użycia gettera w kodzie
-    :emphasize-lines: 9,14-20
-
-    from django.contrib import admin
-    from habitat._common.admin import HabitatAdmin
-    from habitat.sensors.models import ZWaveSensor
-
-
-    @admin.register(ZWaveSensor)
-    class ZWaveSensorAdmin(HabitatAdmin):
-        change_list_template = 'sensors/change_list_charts.html'
-        list_display = ['date', 'time', 'type', 'device', 'value', 'unit']
-        list_filter = ['created', 'type', 'unit', 'device']
-        search_fields = ['^date', 'device']
-        ordering = ['-datetime']
-
-        def get_list_display(self, request):
-            list_display = self.list_display
-
-            if request.user.is_superuser:
-                list_display = ['datetime'] + list_display
-
-            return list_display
 
 
 Hash
@@ -508,8 +480,6 @@ Hash
 * Sprawdzenie odbywa się przez porównanie wartości ``id()`` dla obiektu
 * Najczęściej służy do sprawdzania czy coś jest ``None``
 
-.. warning:: In Python 3.8 the compiler produces a ``SyntaxWarning`` when identity checks (``is`` and ``is not``) are used with certain types of literals (e.g. ``str``, ``int``). These can often work by accident in *CPython*, but are not guaranteed by the language spec. The warning advises users to use equality tests (``==`` and ``!=``) instead.
-
 Good
 ----
 .. code-block:: python
@@ -521,6 +491,8 @@ Good
 
 Not good
 --------
+.. warning:: In Python 3.8 the compiler produces a ``SyntaxWarning`` when identity checks (``is`` and ``is not``) are used with certain types of literals (e.g. ``str``, ``int``). These can often work by accident in *CPython*, but are not guaranteed by the language spec. The warning advises users to use equality tests (``==`` and ``!=``) instead.
+
  .. code-block:: python
 
      if name is 'Mark Watney':
@@ -581,21 +553,6 @@ Using ``is`` in REPL (evaluated at once)
 
     print(id(a))    # 4784833072
     print(id(b))    # 4784833072
-
-
-Monkey Patching
-===============
-.. literalinclude:: src/oop-monkey-patching-1.py
-    :language: python
-    :caption: Monkey Patching
-
-.. literalinclude:: src/oop-monkey-patching-2.py
-    :language: python
-    :caption: Monkey Patching
-
-.. literalinclude:: src/oop-monkey-patching-3.py
-    :language: python
-    :caption: Monkey Patching
 
 
 Inheritance Method Resolution

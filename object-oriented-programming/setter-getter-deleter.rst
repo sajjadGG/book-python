@@ -3,6 +3,68 @@ Setter, Getter, Deleter
 ***********************
 
 
+Accessing class fields using setter and getter
+==============================================
+.. code-block:: python
+    :caption: Accessing class fields "Java way" -- don't do that in Python
+
+    class Astronaut:
+        name = ''
+
+        def set_name(self, name):
+            print('I can print some log messages')
+            self.name = name
+
+        def get_name(self):
+            return self.name
+
+    jose = Astronaut()
+    jose.set_name('José Jiménez')
+
+    print(jose.get_name())
+
+Use case
+--------
+.. code-block:: python
+    :caption: Use case uzasadnionego użycia gettera w kodzie
+    :emphasize-lines: 9,14-20
+
+    from django.contrib import admin
+    from habitat._common.admin import HabitatAdmin
+    from habitat.sensors.models import ZWaveSensor
+
+
+    @admin.register(ZWaveSensor)
+    class ZWaveSensorAdmin(HabitatAdmin):
+        change_list_template = 'sensors/change_list_charts.html'
+        list_display = ['date', 'time', 'type', 'device', 'value', 'unit']
+        list_filter = ['created', 'type', 'unit', 'device']
+        search_fields = ['^date', 'device']
+        ordering = ['-datetime']
+
+        def get_list_display(self, request):
+            list_display = self.list_display
+
+            if request.user.is_superuser:
+                list_display = ['datetime'] + list_display
+
+            return list_display
+
+
+Accessing class fields using properties
+=======================================
+.. code-block:: python
+    :caption: Accessing class fields - "the Python way"
+
+    class Astronaut:
+        def __init__(self, name=''):
+            self.name = name
+
+    ivan = Astronaut()              # either put ``name`` as an argument for ``__init__()``
+    ivan.name = 'Ivan Иванович'     # or create dynamic field in runtime
+
+    print(ivan.name)
+
 Getter
 ======
 * ``@property`` - for defining getters

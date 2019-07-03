@@ -188,6 +188,7 @@ Object Oriented Programming
     /object-oriented-programming/enum.rst
     /object-oriented-programming/paradigm.rst
     /object-oriented-programming/advanced.rst
+    /object-oriented-programming/dynamic-typing.rst
     /object-oriented-programming/setter-getter-deleter.rst
     /object-oriented-programming/descriptor.rst
     /object-oriented-programming/slots.rst
