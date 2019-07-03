@@ -5,6 +5,18 @@ OOP Intermediate
 ****************
 
 
+Private, protected, public?!
+============================
+* Brak pól protected i private
+* Wszystkie pola są public
+* ``_nazwa`` - pola prywatne (tylko konwencja)
+* ``__nazwa__`` - funkcje systemowe
+* ``nazwa_`` - używane przy kolizji nazw
+
+.. literalinclude:: src/oop-private-public.py
+    :language: python
+    :caption: ``_`` and ``__`` - Private, protected, public?!
+
 
 Initial arguments mutability and shared state
 =============================================
@@ -45,11 +57,6 @@ Relations
         Address(street='2101 E NASA Pkwy', city='Houston', country='USA'),
         Address(city='Kennedy Space Center', country='USA'),
     ])
-
-
-More advanced topics
-====================
-.. note:: The topic will be continued in :ref:`OOP Advanced` chapter
 
 
 Assignments

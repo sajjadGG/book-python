@@ -341,7 +341,7 @@ Distance conversion doctest
     * dystans w metrach jest 1 (dodatni)
     * dystans w metrach jest ``float``
     * dystans w metrach jest ``int``
-    * podano listę odległości
+    * podano listę odległości ``TypeError``
     * podany parametr to ``str``
 
 Fix URL Regex

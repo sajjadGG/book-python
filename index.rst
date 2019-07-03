@@ -183,6 +183,7 @@ Object Oriented Programming
 
     /object-oriented-programming/basic.rst
     /object-oriented-programming/inheritance.rst
+    /object-oriented-programming/composition-inheritance.rst
     /object-oriented-programming/fields-static-dynamic.rst
     /object-oriented-programming/object-str.rst
     /object-oriented-programming/intermediate.rst
@@ -191,6 +192,8 @@ Object Oriented Programming
     /object-oriented-programming/enum.rst
     /object-oriented-programming/object-init.rst
     /object-oriented-programming/paradigm.rst
+    /object-oriented-programming/interfaces-and-abstracts.rst
+    /object-oriented-programming/polymorphism.rst
     /object-oriented-programming/object-identity.rst
     /object-oriented-programming/method-resolution-order.rst
     /object-oriented-programming/advanced.rst
@@ -328,6 +331,7 @@ Design Patterns
     /design-patterns/iterator.rst
     /design-patterns/context-manager.rst
     /design-patterns/decorator.rst
+    /design-patterns/dependency-injection.rst
     /design-patterns/gang-of-four.rst
 
 *********
