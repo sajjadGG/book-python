@@ -186,6 +186,7 @@ Object Oriented Programming
     /object-oriented-programming/operator-overload.rst
     /object-oriented-programming/dataclass.rst
     /object-oriented-programming/enum.rst
+    /object-oriented-programming/object-init.rst
     /object-oriented-programming/paradigm.rst
     /object-oriented-programming/advanced.rst
     /object-oriented-programming/dynamic-typing.rst
