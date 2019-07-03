@@ -9,6 +9,44 @@ Everything is an object
 * Każdy element posiada swoje metody, które możemy na nim uruchomić.
 * W dalszej części tych materiałów będziemy korzystali z polecenia ``help()`` aby zobaczyć jakiego z jakiego typu obiektem mamy okazję pracować oraz co możemy z nim zrobić.
 
+.. code-block:: python
+
+    def add_numbers(a, b):
+        """Function add numbers"""
+        return a + b
+
+    add_numbers.__doc__             # 'Function add numbers'
+    add_numbers.__name__            # 'add_numbers'
+    add_numbers.__annotations__     # {}
+    add_numbers.__class__           # <class 'function'>
+
+    add_numbers.__call__()          # TypeError: function() missing 2 required positional arguments: 'a' and 'b'
+    add_numbers.__call__(1, 2)      # 3
+
+.. code-block:: python
+
+    def add_numbers(a, b):
+        """Function add numbers"""
+        return a + b
+
+
+    add_numbers.my_variable = 10
+
+    print(add_numbers.my_variable)
+    # 10
+
+ .. code-block:: python
+
+    def add_numbers(a, b):
+        """Function add numbers"""
+        return a + b
+
+
+    add_numbers.say_hello = lambda name: print(f'Hello {name}')
+
+    add_numbers.say_hello('Jan Twardowski')
+    # Hello Jan Twardowski
+
 
 Duck typing
 ===========
