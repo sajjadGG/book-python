@@ -8,6 +8,7 @@ Doctest
 * niezwykle przydatne przy tworzeniu regexpów
 * można przetykać tekst pomiędzy testami
 * Case Study: https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/linear_model/base.py#L409
+* PyCharm doctest runner ``DeprecationWarning`` https://youtrack.jetbrains.com/issue/PY-31751
 
 
 Running tests
@@ -18,9 +19,13 @@ Running tests with your IDE
 
 From command line
 -----------------
-* Without ``-v`` this won’t display anything unless an example fails
+.. code-block:: console
+    :caption: Display only errors
+
+    python -m doctest example.py
 
 .. code-block:: console
+    :caption: With ``-v`` display progress
 
     python -m doctest -v example.py
 
@@ -225,36 +230,6 @@ Using python statements in ``doctest``
         1969-07-21 17:54 UTC
         """
         print(f'{date:%Y-%m-%d %H:%M %Z}')
-
-
-Running doctest from standalone scripts
-=======================================
-* Testy dla wszystkich funkcji aktualnie zdefiniowanych w przestrzeni nazw
-
-.. code-block:: python
-    :caption: Wykorzystanie ``doctest.testmod()`` do uruchamiania testów
-    :emphasize-lines: 19,20
-
-    def km_na_metry(ile):
-        """
-        >>> km_na_metry(1)
-        1000
-        >>> km_na_metry(0)
-        0
-        >>> km_na_metry(-1)
-        Traceback (most recent call last):
-            ...
-        ValueError
-        """
-        if ile < 0:
-            raise ValueError
-        else:
-            return ile * 1000
-
-
-    if __name__ == "__main__":
-        import doctest
-        doctest.testmod()
 
 
 Practical example

@@ -5,6 +5,28 @@ OOP Advanced
 ************
 
 
+Objects and instances
+=====================
+.. code-block:: python
+    :caption: Implicit passing instance to class as ``self``.
+
+    text = 'Jan,Twardowski'
+
+    text.split(',')                     # ['Jan', 'Twardowski']
+
+.. code-block:: python
+    :caption: Explicit passing instance to class overriding ``self``.
+
+    text = 'Jan,Twardowski'
+
+    str.split(text, ',')                # ['Jan', 'Twardowski']
+
+.. code-block:: python
+    :caption: Passing anonymous objects as instances.
+
+    'Jan,Twardowski'.split(',')         # ['Jan', 'Twardowski']
+    str.split('Jan,Twardowski', ',')    # ['Jan', 'Twardowski']
+
 
 What should be in the class and what not?
 =========================================
@@ -108,248 +130,6 @@ What should be in the class and what not?
     type(admin)      # <class '__main__.Admin'>
 
 
-Hash
-====
-* Funkcja hash zwraca ``int``
-* ``set()`` można zrobić z dowolnego hashowalnego obiektu
-* ``dict()`` może mieć klucze, które są dowolnym hashowalnym obiektem
-
-* User-defined classes have ``__eq__()`` and ``__hash__()`` methods by default.
-* All objects compare unequal (except with themselves)
-* ``x.__hash__()`` returns an appropriate value such that ``x == y`` implies both that ``x is y`` and ``hash(x) == hash(y)``
-
-
-.. code-block:: python
-    :caption: ``dict()`` może mieć klucze, które są dowolnym hashowalnym obiektem
-
-    key = 'last_name'
-
-    my_dict = {
-        'fist_name': 'key can be ``str``',
-        key: 'key can be ``str``',
-        1: 'key can be ``int``',
-        1.5: 'key can be ``float``',
-        (1, 2): 'key can be ``tuple``',
-    }
-
-.. code-block:: python
-    :caption: ``set()`` można zrobić z dowolnego hashowalnego obiektu
-
-    class Astronaut:
-        def __init__(self, name):
-            self.name = name
-
-
-    {1, 1, 2}
-    # {1, 2}
-
-    jose = Astronaut(name='Jose Jimenez')
-    data = {jose, jose}
-    len(data)
-    # 1
-
-    data = {Astronaut(name='Jose Jimenez'), Astronaut(name='Jose Jimenez')}
-    len(data)
-    # 2
-
-.. literalinclude:: src/oop-hash-generate-bad.py
-    :language: python
-    :caption: Generating hash and object comparision
-
-.. literalinclude:: src/oop-hash-generate-good.py
-    :language: python
-    :caption: Generating hash and object comparision
-
-.. note:: Since Python 3.7 ``dict`` has fixed order and using ``OrderedDict`` is not necessary
-
-``is``
-======
-* ``is`` porównuje czy dwa obiekty są tożsame
-* Sprawdzenie odbywa się przez porównanie wartości ``id()`` dla obiektu
-* Najczęściej służy do sprawdzania czy coś jest ``None``
-
-Good
-----
-.. code-block:: python
-
-    if name is None:
-        print('Name is not set')
-    else:
-        print('You have set your name')
-
-Not good
---------
-.. warning:: In Python 3.8 the compiler produces a ``SyntaxWarning`` when identity checks (``is`` and ``is not``) are used with certain types of literals (e.g. ``str``, ``int``). These can often work by accident in *CPython*, but are not guaranteed by the language spec. The warning advises users to use equality tests (``==`` and ``!=``) instead.
-
- .. code-block:: python
-
-     if name is 'Mark Watney':
-        print('You are Space Pirate!')
-     else:
-        print('You are not pirate at all!')
-
-Using ``is`` in script
-----------------------
-* ``id()`` will change every time you execute script
-* both objects has the same ``id``.
-
- .. code-block:: python
-    :caption: Using this code in script.
-
-    a = 'Jan Twardowski'
-    b = 'Jan Twardowski'
-
-    print(a)        # Jan Twardowski
-    print(b)        # Jan Twardowski
-
-    print(a == b)   # True
-    print(a is b)   # True
-
-    print(id(a))    # 4430933296
-    print(id(b))    # 4430933296
-
-Using ``is`` in REPL (evaluated line by line)
----------------------------------------------
-.. code-block:: python
-    :caption: Evaluated in REPL line by line.
-
-    a = 'Jan Twardowski'
-    b = 'Jan Twardowski'
-
-    print(a)        # Jan Twardowski
-    print(b)        # Jan Twardowski
-
-    print(a == b)   # True
-    print(a is b)   # False
-
-    print(id(a))    # 4784790960
-    print(id(b))    # 4784791408
-
-Using ``is`` in REPL (evaluated at once)
-----------------------------------------
-.. code-block:: python
-    :caption: Evaluated in REPL at once.
-
-    a = 'Jan Twardowski'
-    b = 'Jan Twardowski'
-
-    print(a)        # Jan Twardowski
-    print(b)        # Jan Twardowski
-
-    print(a == b)   # True
-    print(a is b)   # True
-
-    print(id(a))    # 4784833072
-    print(id(b))    # 4784833072
-
-
-Inheritance Method Resolution
-=============================
-
-Method Resolution Order
------------------------
-
-.. code-block:: python
-    :caption: Method Resolution Order
-
-    class A:
-        def show(self):
-            print('a')
-
-    class B:
-        def show(self):
-            print('b')
-
-    class C:
-        def show(self):
-            print('c')
-
-    class D(A, B, C):
-        pass
-
-
-    obj = D()
-
-    obj.show()
-    # a
-
-    print(D.__mro__)
-    # (<class '__main__.D'>,
-    #  <class '__main__.A'>,
-    #  <class '__main__.B'>,
-    #  <class '__main__.C'>,
-    #  <class 'object'>)
-
-Inheritance Diamond
--------------------
-.. figure:: img/inheritance-diamond-1.jpg
-    :scale: 75%
-    :align: center
-
-    Inheritance Diamond
-
-.. figure:: img/inheritance-diamond-2.jpg
-    :scale: 75%
-    :align: center
-
-    Inheritance Diamond
-
-.. code-block:: python
-    :caption: Inheritance Diamond
-
-    class A:
-        def show(self):
-            print('a')
-
-
-    class B(A):
-        def show(self):
-            print('b')
-
-
-    class C(A):
-        def show(self):
-            print('c')
-
-
-    class D(B, C):
-        pass
-
-
-    obj = D()
-
-    obj.show()
-    # b
-
-    print(D.__mro__)
-    # (<class '__main__.D'>,
-    #  <class '__main__.B'>,
-    #  <class '__main__.C'>,
-    #  <class '__main__.A'>,
-    #  <class 'object'>)
-
-
-Objects and instances
-=====================
-.. code-block:: python
-    :caption: Implicit passing instance to class as ``self``.
-
-    text = 'Jan,Twardowski'
-
-    text.split(',')                     # ['Jan', 'Twardowski']
-
-.. code-block:: python
-    :caption: Explicit passing instance to class overriding ``self``.
-
-    text = 'Jan,Twardowski'
-
-    str.split(text, ',')                # ['Jan', 'Twardowski']
-
-.. code-block:: python
-    :caption: Passing anonymous objects as instances.
-
-    'Jan,Twardowski'.split(',')         # ['Jan', 'Twardowski']
-    str.split('Jan,Twardowski', ',')    # ['Jan', 'Twardowski']
 
 Assignments
 ===========

@@ -182,12 +182,17 @@ Object Oriented Programming
     :caption: Object Oriented Programming
 
     /object-oriented-programming/basic.rst
+    /object-oriented-programming/inheritance.rst
+    /object-oriented-programming/fields-static-dynamic.rst
+    /object-oriented-programming/object-str.rst
     /object-oriented-programming/intermediate.rst
     /object-oriented-programming/operator-overload.rst
     /object-oriented-programming/dataclass.rst
     /object-oriented-programming/enum.rst
     /object-oriented-programming/object-init.rst
     /object-oriented-programming/paradigm.rst
+    /object-oriented-programming/object-identity.rst
+    /object-oriented-programming/method-resolution-order.rst
     /object-oriented-programming/advanced.rst
     /object-oriented-programming/dynamic-typing.rst
     /object-oriented-programming/setter-getter-deleter.rst
@@ -205,6 +210,20 @@ Tests
 
     /tests/doctest.rst
     /tests/unittest.rst
+
+*************************
+Good Engineering Practice
+*************************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Good Engineering Practice
+
+    /good-engineering-practice/pep8.rst
+    /good-engineering-practice/pep20.rst
+    /good-engineering-practice/code-smells.rst
+    /good-engineering-practice/type-annotation.rst
+    /good-engineering-practice/documentation.rst
 
 *****
 CI/CD
@@ -230,21 +249,6 @@ CI/CD
     /ci-cd/type-checking.rst
     /ci-cd/ui.rst
     /ci-cd/mutation-testing.rst
-
-
-*************************
-Good Engineering Practice
-*************************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Good Engineering Practice
-
-    /good-engineering-practice/pep8.rst
-    /good-engineering-practice/pep20.rst
-    /good-engineering-practice/code-smells.rst
-    /good-engineering-practice/type-annotation.rst
-    /good-engineering-practice/documentation.rst
 
 *********
 Debugging
