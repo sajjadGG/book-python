@@ -46,6 +46,14 @@ Problemy z wątkami
 ``threading``
 =============
 
+``daemon`` flag
+---------------
+* https://stackoverflow.com/a/190017/228517
+
+Some threads do background tasks, like sending keepalive packets, or performing periodic garbage collection, or whatever. These are only useful when the main program is running, and it's okay to kill them off once the other, non-daemon, threads have exited.
+
+Without daemon threads, you'd have to keep track of them, and tell them to exit, before your program can completely quit. By setting them as daemon threads, you can let them run and forget about them, and when your program quits, any daemon threads are killed automatically.
+
 Delay execution
 ---------------
 * dlaczego nie ``time.sleep()``
@@ -91,16 +99,98 @@ Recurrent timer
 
 Tworzenie wątków
 ================
+.. code-block:: python
+
+    from threading import Thread
+
+
+    class MyThread(Thread):
+        def run(self):
+            print('hello')
+
+
+    t = MyThread()
+    t.start()
+
 
 Synchronizacja wątków
 =====================
+.. code-block:: python
+
+    from threading import Thread
+
+
+    class MyThread(Thread):
+        def run(self):
+            print('hello')
+
+
+    t1 = MyThread()
+    t1.start()
+
+    t2 = MyThread()
+    t2.start()
+
+    t1.join()
+    t2.join()
+
+.. code-block:: python
+
+    from threading import Thread
+
+
+    class MyThread(Thread):
+        def run(self):
+            print('hello')
+
+
+    running_threads = []
+
+
+    t1 = MyThread()
+    t1.start()
+    running_threads.append(t1)
+
+    t2 = MyThread()
+    t2.start()
+    running_threads.append(t2)
+
+
+    for thread in running_threads:
+        thread.join()
+
+.. code-block:: python
+
+    from threading import Thread
+
+
+    class MyThread(Thread):
+        def run(self):
+            print('hello')
+
+
+    running_threads = []
+
+    def spawn(cls, count=1):
+        for i in range(count):
+            t = cls()
+            t.start()
+            running_threads.append(t)
+
+
+    spawn(MyThread, count=10)
+
+
+    for thread in running_threads:
+        thread.join()
+
+
+Zamykanie wątków
+================
 .. literalinclude:: src/threading-synchronization.py
     :name: listing-threading-synchronization
     :language: python
     :caption: Synchronizacja wątków
-
-Zamykanie wątków
-================
 
 
 Workery
@@ -122,7 +212,7 @@ Wielowątkowość
 
 #. Stwórz kolejkę ``queue`` do której dodasz różne polecenia systemowe do wykonania, np.:
 
-    - Lunux/macOS: ``['/bin/ls /etc/', '/bin/echo "test"', '/bin/sleep 2']``,
+    - Linux/macOS: ``['/bin/ls /etc/', '/bin/echo "test"', '/bin/sleep 2']``,
     - Windows: ``['dir c:\\Users', 'echo "test"', 'type %HOMEPATH%\Desktop\README.txt']``.
 
 #. Następnie przygotuj trzy wątki workerów, które będą wykonywały polecenia z kolejki
