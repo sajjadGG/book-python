@@ -281,17 +281,6 @@ Distributing
     /distributing/distributing-packages.rst
 
 ****************
-Operating System
-****************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Operating System
-
-    /operating-system/argparse.rst
-    /operating-system/os.rst
-
-****************
 High Performance
 ****************
 .. toctree::
@@ -332,6 +321,11 @@ Design Patterns
     /design-patterns/context-manager.rst
     /design-patterns/decorator.rst
     /design-patterns/dependency-injection.rst
+    /design-patterns/singleton.rst
+    /design-patterns/factory.rst
+    /design-patterns/gateway.rst
+    /design-patterns/callback.rst
+    /design-patterns/state-machine.rst
     /design-patterns/gang-of-four.rst
 
 *********
@@ -344,6 +338,17 @@ Paradigms
 
     /paradigms/functional-programming.rst
     /paradigms/event-programming.rst
+
+****************
+Operating System
+****************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Operating System
+
+    /operating-system/argparse.rst
+    /operating-system/os.rst
 
 ************
 HTTP and Web

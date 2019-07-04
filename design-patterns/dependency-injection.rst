@@ -77,3 +77,7 @@ Dependency injection, as a software design pattern, has number of advantages tha
 
         http3 = HTTP(cache=memory)
         http3.get('http://python.astrotech.io')
+
+.. literalinclude:: src/design-patterns-dependency-injection.py
+    :language: python
+    :caption: Dependency Injection Design Pattern
