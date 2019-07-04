@@ -473,6 +473,15 @@ Memoization
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
 
+.. code-block:: python
+
+    def factorial(n: int) -> int:
+        if n == 0:
+            return 1
+        else:
+            return n * factorial(n-1)
+
+#. Dla danego kodu funkcji ``factorial``
 #. Stwórz ``dict`` o nazwie ``CACHE`` z wynikami wyliczenia funkcji
 
     - klucz: argument funkcji
@@ -484,17 +493,7 @@ Memoization
     - jeżeli tak, to zwraca dane z ``CACHE``
     - jeżeli nie, to oblicza, aktualizuje ``CACHE``, a następnie zwraca wartość
 
-#. Porównaj prędkość działania z obliczaniem na bieżąco dla parametru 500
-
-:Hints:
-    * ``import timeit`` - https://docs.python.org/3/library/timeit.html
-    * .. code-block:: python
-
-        def factorial(n: int) -> int:
-            if n == 0:
-                return 1
-            else:
-                return n * factorial(n-1)
+#. Wykorzystując ``timeit`` porównaj prędkość działania z obliczaniem na bieżąco dla parametru 100
 
 Prosty dekorator
 ----------------
@@ -508,7 +507,7 @@ Prosty dekorator
 
 Type Checking Decorator
 -----------------------
-* Filename: ``design-patterns/decorator_type_check.py``
+* Filename: ``design-patterns/decorator_check_types.py``
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 
@@ -516,11 +515,11 @@ Type Checking Decorator
     :name: code-listing-decorator-type-check
     :caption: Force type checking for function
 
-    def annotated(x: int, y: str) -> bool:
-        return x < y
+    def function(a: str, b: int) -> bool:
+        return bool(a * b)
 
-    print(annotated.__annotations__)
-    # {'y': <class 'str'>, 'return': <class 'bool'>, 'x': <class 'int'>}
+    print(function.__annotations__)
+    # {'a': <class 'str'>, 'return': <class 'bool'>, 'b': <class 'int'>}
 
 #. Na podstawie kodu :numref:`code-listing-decorator-type-check`
 #. Stwórz dekorator ``check_types``
