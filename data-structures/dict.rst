@@ -328,33 +328,33 @@ Aviation Language
     * Definiowanie i korzystanie z ``dict`` z wartościami
     * Rzutowanie i konwersja typów
 
-.. csv-table:: Aviation Alphabet
-    :header-rows: 1
+.. code-block:: text
+    :caption: Aviation language
 
-    "Letter", "Pronounce"
-    "A", "Alfa"
-    "B", "Bravo"
-    "C", "Charlie"
-    "D", "Delta"
-    "E", "Echo"
-    "F", "Foxtrot"
-    "G", "Golf"
-    "H", "Hotel"
-    "I", "India"
-    "J", "Juliet"
-    "K", "Kilo"
-    "L", "Lima"
-    "M", "Mike"
-    "N", "November"
-    "O", "Oscar"
-    "P", "Papa"
-    "Q", "Quebec"
-    "R", "Romeo"
-    "S", "Sierra"
-    "T", "Tango"
-    "U", "Uniform"
-    "V", "Victor"
-    "W", "Whisky"
-    "X", "X-Ray"
-    "Y", "Yankee"
-    "Z", "Zulu"
+    Letter, Pronounce
+    A, Alfa
+    B, Bravo
+    C, Charlie
+    D, Delta
+    E, Echo
+    F, Foxtrot
+    G, Golf
+    H, Hotel
+    I, India
+    J, Juliet
+    K, Kilo
+    L, Lima
+    M, Mike
+    N, November
+    O, Oscar
+    P, Papa
+    Q, Quebec
+    R, Romeo
+    S, Sierra
+    T, Tango
+    U, Uniform
+    V, Victor
+    W, Whisky
+    X, X-Ray
+    Y, Yankee
+    Z, Zulu
