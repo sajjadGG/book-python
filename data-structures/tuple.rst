@@ -64,10 +64,11 @@ Create
 * Lines of code to write: 13 lines
 * Estimated time of completion: 10 min
 
-.. csv-table:: Pomiary Iris
+.. code-block:: csv
+    :caption: Pomiary Iris
     :name: sequences-tuple-iris
-    :header: "Sepal length", "Sepal width", "Petal length", "Petal width", "Species"
 
+    "Sepal length", "Sepal width", "Petal length", "Petal width", "Species"
     "5.8", "2.7", "5.1", "1.9", "virginica"
     "5.1", "3.5", "1.4", "0.2", "setosa"
     "5.7", "2.8", "4.1", "1.3", "versicolor"
