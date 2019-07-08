@@ -88,9 +88,13 @@ Adding many items
     # {1, 2, 3, 4, 5}
 
 
-Converting ``list`` to ``set`` deduplicate items
-================================================
+Converting to ``set`` deduplicate items
+=======================================
+
+Converting ``list`` to ``set``
+------------------------------
 .. code-block:: python
+    :caption: Converting ``list`` to ``set`` deduplicate items
 
     names = [
         'Twardowski',
@@ -98,6 +102,21 @@ Converting ``list`` to ``set`` deduplicate items
         'Jiménez',
         'Twardowski'
     ]
+
+    unique_names = set(names)
+    # {'Twardowski', 'Иванович', 'Jiménez'}
+
+Converting ``tuple`` to ``set``
+-------------------------------
+.. code-block:: python
+    :caption: Converting ``tuple`` to ``set`` deduplicate items
+
+    names = (
+        'Twardowski',
+        'Иванович',
+        'Jiménez',
+        'Twardowski'
+    )
 
     unique_names = set(names)
     # {'Twardowski', 'Иванович', 'Jiménez'}
@@ -133,6 +152,6 @@ Create
     "6.4", "3.2", "4.5", "1.5", "versicolor"
 
 #. Dane są pomiary :numref:`sequences-set-create`
-#. Na podstawie pierwszych dwóch wierszy danych stwórz zbiór unikalnych gatunków
+#. Na podstawie pierwszego wiersza stwórz zbiór unikalnych gatunków
 #. Dwa kolejne gatunki dodawaj pojedynczo do zbioru za pomocą ``.add()``
-#. Kolejne gatunki dodaj jednocześnie za pomocą ``.update()``
+#. Ostatnie dwa gatunki dodaj jednocześnie za pomocą ``.update()``

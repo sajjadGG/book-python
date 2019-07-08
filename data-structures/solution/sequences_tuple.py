@@ -11,7 +11,7 @@ avg = sum(sepal_width) / len(sepal_width)
 print(avg)
 
 avg = sum(petal_length) / len(petal_length)
-print(avg)
+print(f'{avg:.3f}')
 
 avg = sum(petal_width) / len(petal_width)
-print(avg)
+print(round(avg, 3))
