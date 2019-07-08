@@ -16,8 +16,8 @@ Defining ``int``
 
 .. code-block:: python
 
-    million = 1000000000        # 1000000000
-    million = 1_000_000_000     # 1000000000
+    million = 1000000        # 1000000
+    million = 1_000_000      # 1000000
 
 
 Converting to ``int``
@@ -58,6 +58,21 @@ Addition
     "``x + y``", "Sum ``x`` and ``y``"
     "``x += y``", "Incremental addition"
 
+.. code-block:: python
+
+    value = 10 + 5
+
+    print(value)
+    # 15
+
+.. code-block:: python
+
+    value = 10
+    value += 5
+
+    print(value)
+    # 15
+
 Subtraction
 -----------
 .. csv-table:: Subtraction operators
@@ -68,6 +83,21 @@ Subtraction
     "``x - y``", "Subtract ``x`` and ``y``"
     "``x -= y``", "Incremental subtraction"
 
+.. code-block:: python
+
+    value = 10 + 5
+
+    print(value)
+    # 15
+
+.. code-block:: python
+
+    value = 10
+    value += 5
+
+    print(value)
+    # 5
+
 Multiplication
 --------------
 .. csv-table:: Multiplication operators
@@ -77,6 +107,21 @@ Multiplication
     "``x * y``", "Multiply ``x`` and ``y``"
     "``x *= y``", "Incremental multiplication"
     "``x ** y``", "``x`` to the power of ``y``"
+
+.. code-block:: python
+
+    value = 10 * 5
+
+    print(value)
+    # 50
+
+.. code-block:: python
+
+    value = 10
+    value *= 5
+
+    print(value)
+    # 50
 
 .. code-block:: python
 
@@ -94,6 +139,21 @@ Division
     "``x /= y``", "Incremental division"
     "``x // y``", "Quotient of division ``x`` by ``y``"
     "``x % y``", "Modulo. Reminder of division ``x`` by ``y``"
+
+.. code-block:: python
+
+    value = 10 / 5
+
+    print(value)
+    # 2
+
+.. code-block:: python
+
+    value = 10
+    value /= 5
+
+    print(value)
+    # 2
 
 .. code-block:: python
 
