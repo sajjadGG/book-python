@@ -181,10 +181,10 @@ Check if value in ``dict``
         'last_name': 'Twardowski',
     }
 
-    'first_name' in my_data
+    'first_name' in my_dict
     # True
 
-    'agency' in my_data
+    'agency' in my_dict
     # False
 
 Accessing values with ``[...]``
