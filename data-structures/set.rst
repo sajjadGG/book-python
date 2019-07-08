@@ -152,6 +152,9 @@ Create
     "6.4", "3.2", "4.5", "1.5", "versicolor"
 
 #. Dane są pomiary :numref:`sequences-set-create`
-#. Na podstawie pierwszego wiersza stwórz zbiór unikalnych gatunków
-#. Dwa kolejne gatunki dodawaj pojedynczo do zbioru za pomocą ``.add()``
-#. Ostatnie dwa gatunki dodaj jednocześnie za pomocą ``.update()``
+#. Stwórz ``set`` na podstawie pierwszego wiersza
+#. Wszystkie wartości z dwóch kolejnych wierszy dodawaj do wcześniejszego zbioru za pomocą ``.add()`` (skorzystaj z ``alt`` w Twoim IDE).
+#. Ostatnie dwa wiersze dodaj za pomocą ``.update()``
+
+    * czwarty wiersz podaj jako ``tuple``
+    * piąty jako ``list``
