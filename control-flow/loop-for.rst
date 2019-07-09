@@ -218,26 +218,27 @@ Create ``dict`` from two ``list``
     255.255.255.255 broadcasthost
     ::1             localhost
     """
-    hostnames = []
+    DNS = []
 
     for line in DATA.splitlines():
+        if not line:
+            continue
 
-        ip, *hosts = line.split()
-        # line.split() == ['10.13.37.1', 'nasa.gov', 'esa.int', 'roscosmos.ru']
+        ip, *hostnames = line.split()
         # ip == '10.13.37.1'
-        # hosts == ['nasa.gov', 'esa.int', 'roscosmos.ru']
+        # hostnames == ['nasa.gov', 'esa.int', 'roscosmos.ru']
 
-        for record in hostnames:
+        for record in DNS:
             if record['ip'] == ip:
-                record['hostnames'].update(hosts)
+                record['hostnames'].update(hostnames)
                 break
         else:
-            hostnames.append({
-                'hostnames': set(hosts),
+            DNS.append({
+                'hostnames': set(hostnames),
                 'ip': ip,
             })
 
-    print(hostnames)
+    print(DNS)
     # [
     #   {'ip': '127.0.0.1', 'hostnames': {'astromatt', 'localhost'}},
     #   {'ip': '10.13.37.1', 'hostnames': {'roscosmos.ru', 'esa.int', 'nasa.gov'}},

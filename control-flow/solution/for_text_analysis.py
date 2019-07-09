@@ -5,7 +5,8 @@ result = dict()
 total_words = 0
 total_sentences = 0
 total_chars = 0
-total_adjectives = 0
+total_letters = 0
+total_adverbs = 0
 
 
 for sentence in TEXT.split('.'):
@@ -17,14 +18,16 @@ for sentence in TEXT.split('.'):
     total_words += word_count
     total_sentences += 1
     total_chars += len(sentence)
+    total_letters += len(sentence.replace(' ', ''))
 
     for word in words_in_sentence:
         if word.endswith('ly'):
-            total_adjectives += 1
+            total_adverbs += 1
 
 
 print(f'Result: {result}')
 print(f'Total Words: {total_words}')
 print(f'Total Sentences: {total_sentences}')
 print(f'Total Characters: {total_chars}')
-print(f'Total Adjectives: {total_adjectives}')
+print(f'Total Letters: {total_letters}')
+print(f'Total Adverbs: {total_adverbs}')
