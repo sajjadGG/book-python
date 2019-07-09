@@ -22,7 +22,7 @@ f = f.strip().upper().replace('UL.', '').strip().title().replace('Iii', 'III')
 g = g.strip().upper().replace('ULICA', '').strip().title().replace('Iii', 'III')
 h = h.strip().upper().replace('ULICA.', '').strip().title().replace('Iii', 'III')
 i = i.strip().upper().replace('3', 'III').strip().title().replace('Iii', 'III')
-j = j.strip().upper().replace('\t', ' ').strip().title().replace('Iii', 'III')
+j = j.strip().upper().replace('\t', '').strip().title().replace('Iii', 'III')
 k = k.strip().upper().replace('UL.', '').replace('\n', '').title().replace('Iii', 'III')
 
 

@@ -56,6 +56,7 @@ Data Methods
 
     /data-methods/str-methods.rst
     /data-methods/set-methods.rst
+    /data-methods/indexes.rst
     /data-methods/slice.rst
     /data-methods/unpacking.rst
     /data-methods/type-system.rst

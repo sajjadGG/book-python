@@ -1,69 +1,40 @@
 .. _Slice:
 
-*******
-Slicing
-*******
-
-
-Accessing element with index
-============================
-* Index must be positive or negative ``int``
-* Index must be less or equal to length of object
-* Negative index starts from the end and go right to left
-
-Accessing element from start
-----------------------------
-.. code-block:: python
-
-    text = 'We choose to go to the Moon!'
-
-    text[0]         # 'W'
-    text[1]         # 'e'
-    text[23]        # 'M'
-
-Accessing element from back
----------------------------
-.. code-block:: python
-
-    text = 'We choose to go to the Moon!'
-
-    text[-1]        # '!'
-    text[-5]        # 'M'
-
-Accessing not existing element
-------------------------------
-.. code-block:: python
-
-    text = 'We choose to go to the Moon!'
-
-    text[100]
-    # IndexError: string index out of range
+******
+Slices
+******
 
 
 Accessing range of elements
 ===========================
-* Slice has three indexes
+* Slice Index must be positive or negative ``int``
+* Slice has three indexes:
 
     - start (inclusive)
     - stop (exclusive)
     - step
 
-* Slice Index must be positive or negative ``int``
-* Negative index starts from the end and go right to left
 
 Accessing slice from start
---------------------------
+==========================
 .. code-block:: python
 
     text = 'We choose to go to the Moon!'
+
+    len(text)
+    # 28
 
     text[0:2]       # 'We'
     text[:2]        # 'We'
     text[3:9]       # 'choose'
     text[23:28]     # 'Moon!'
+    text[23:27]     # 'Moon'
+
 
 Accessing slice from back
--------------------------
+=========================
+* Negative index starts from the end and go right to left
+
 .. code-block:: python
 
     text = 'We choose to go to the Moon!'
@@ -79,8 +50,9 @@ Accessing slice from back
     text[4:-2]  # 'hoose to go to the Moo'
     text[-5:5]  # ''
 
+
 Accessing slice not existing elements
--------------------------------------
+=====================================
 .. code-block:: python
 
     text = 'We choose to go to the Moon!'
@@ -88,16 +60,18 @@ Accessing slice not existing elements
     text[:100]  # 'We choose to go to the Moon!'
     text[100:]  # ''
 
+
 Accessing slice from all elements
----------------------------------
+=================================
 .. code-block:: python
 
     text = 'We choose to go to the Moon!'
 
     text[:]               # 'We choose to go to the Moon!'
 
+
 Arithmetic operations on slice indexes
---------------------------------------
+======================================
 .. code-block:: python
 
     text = 'We choose to go to the Moon!'
@@ -107,16 +81,18 @@ Arithmetic operations on slice indexes
     text[first:last]       # 'Moon!'
     text[first:last-1]     # 'Moon'
 
-Every n element
----------------
+
+Every ``n-th`` element
+======================
 .. code-block:: python
 
     text = 'We choose to go to the Moon!'
 
     text[::2]             # 'W hoet ot h on'
 
+
 Reversing
----------
+=========
 .. code-block:: python
 
     text = 'We choose to go to the Moon!'

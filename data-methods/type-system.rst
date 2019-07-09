@@ -70,7 +70,7 @@ Collections
     my_list: List[float] = [5.8, 2.7, 5.1, 1.9]
     my_set: Set[int] = {0, 2, 4}
     my_tuple: Tuple[str] = ('setosa', 'virginica', 'versicolor')
-    my_dict: Dict[int, str] = {0: 'setosa', 1: 'virginica': 2: versicolor}
+    my_dict: Dict[int, str] = {0: 'setosa', 1: 'virginica': 2: 'versicolor'}
 
 Types do not enforce checking
 -----------------------------
