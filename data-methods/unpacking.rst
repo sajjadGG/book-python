@@ -227,7 +227,7 @@ Unpacking from nested sequence
 
 #. Ze zbioru oddziel nagłówek i dane:
 
-    * ``header: List[str]``
+    * ``header: Tuple[str]``
     * ``data: List[Tuple[float]]``
 
 #. Przy podziale skorzystaj z konstrukcji z gwiazdką ``*``

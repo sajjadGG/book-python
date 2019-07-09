@@ -1,23 +1,6 @@
-from pprint import pprint
+DATA = '10.13.37.1      nasa.gov esa.int roscosmos.ru'
 
-FILE = '../data/etc-hosts.txt'
+ip, *hosts = DATA.split()
 
-
-hosts = {}
-
-with open(FILE) as file:
-    for line in file:
-
-        if line.startswith('#'):
-            continue
-        if line.isspace():
-            continue
-
-        ip, *hostnames = line.split()
-
-        if ip in hosts:
-            hosts[ip] += hostnames
-        else:
-            hosts[ip] = hostnames
-
-pprint(hosts)
+print(ip)
+print(hosts)
