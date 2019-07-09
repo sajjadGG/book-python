@@ -64,7 +64,7 @@ Create
 * Lines of code to write: 13 lines
 * Estimated time of completion: 10 min
 
-.. code-block:: csv
+.. code-block:: text
     :caption: Pomiary Iris
     :name: sequences-tuple-iris
 

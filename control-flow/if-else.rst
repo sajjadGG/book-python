@@ -204,7 +204,7 @@ Conditioning on user input
 ``int`` and ``float``
 ---------------------
 * Filename: ``control-flow/ifelse_integers.py``
-* Lines of code to write: 7 lines
+* Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
 
 #. Wczytaj liczbę od użytkownika (poda tylko ``int`` albo ``float``)
