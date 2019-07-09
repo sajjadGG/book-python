@@ -142,7 +142,7 @@ Assignments
 
 To ``bool`` or not to ``bool``
 ------------------------------
-* Filename: ``data-types/bool_simple.py``
+* Filename: :download:`solution/bool_simple.py`
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
 
@@ -178,7 +178,7 @@ To ``bool`` or not to ``bool``
 
 ``True`` of ``False``
 ---------------------
-* Filename: ``data-types/bool_true_or_false.py``
+* Filename: :download:`solution/bool_true_or_false.py`
 * Lines of code to write: 10 lines
 * Estimated time of completion: 5 min
 

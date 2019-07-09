@@ -153,7 +153,7 @@ Assignments
 
 Time zone converting
 --------------------
-* Filename: ``date-and-time/datetime_tz.py``
+* Filename: :download:`solution/datetime_tz.py`
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
 

@@ -390,7 +390,7 @@ Assignments
 
 REST API
 --------
-* Filename: ``http/github.py``
+* Filename: :download:`solution/http_github.py`
 * Lines of code to write: 60 lines
 * Estimated time of completion: 60 min
 

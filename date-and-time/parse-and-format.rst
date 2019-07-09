@@ -325,7 +325,7 @@ Assignments
 
 From ISO date format
 --------------------
-* Filename: ``date-and-time/datetime_from_iso.py``
+* Filename: :download:`solution/datetime_from_iso.py`
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
 * Input data: :numref:`listing-time-from-iso`
@@ -342,7 +342,7 @@ From ISO date format
 
 To ISO date format
 ------------------
-* Filename: ``date-and-time/datetime_to_iso.py``
+* Filename: :download:`solution/datetime_to_iso.py`
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
 
@@ -362,7 +362,7 @@ To ISO date format
 
 US date and time format
 -----------------------
-* Filename: ``date-and-time/datetime_from_us.py``
+* Filename: :download:`solution/datetime_from_us.py`
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
 

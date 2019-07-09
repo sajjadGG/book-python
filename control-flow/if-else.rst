@@ -185,7 +185,7 @@ Assignments
 
 Conditioning on user input
 --------------------------
-* Filename: ``control-flow/ifelse_input.py``
+* Filename: :download:`solution/ifelse_input.py`
 * Lines of code to write: 6 lines
 * Estimated time of completion: 5 min
 
@@ -203,7 +203,7 @@ Conditioning on user input
 
 ``int`` and ``float``
 ---------------------
-* Filename: ``control-flow/ifelse_integers.py``
+* Filename: :download:`solution/ifelse_integers.py`
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
 

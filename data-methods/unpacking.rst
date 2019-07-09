@@ -173,7 +173,7 @@ Assignments
 
 Unpacking from sequence
 -----------------------
-* Filename: ``data-methods/unpacking_hosts.py``
+* Filename: :download:`solution/unpacking_hosts.py`
 * Lines of code to write: 1 lines
 * Estimated time of completion: 3 min
 
@@ -192,7 +192,7 @@ Unpacking from sequence
 
 Unpacking from nested sequence
 ------------------------------
-* Filename: ``data-methods/unpacking_iris.py``
+* Filename: :download:`solution/unpacking_iris.py`
 * Lines of code to write: 1 lines
 * Estimated time of completion: 3 min
 * Solution: :download:`solution/unpacking_iris.py`

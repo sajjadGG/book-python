@@ -143,7 +143,7 @@ Assignments
 
 Report card
 -----------
-* Filename: ``control-flow/while_report_card.py``
+* Filename: :download:`solution/while_report_card.py`
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
 

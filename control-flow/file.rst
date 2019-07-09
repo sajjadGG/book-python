@@ -157,7 +157,7 @@ Assignments
 
 Content of a requested file
 ---------------------------
-* Filename: ``control-flow/file_requested.py``
+* Filename: :download:`solution/file_requested.py`
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
 
@@ -169,7 +169,7 @@ Content of a requested file
 
 Parsing simple CSV file
 -----------------------
-* Filename: ``control-flow/file_parsing_csv.py``
+* Filename: :download:`solution/file_parsing_csv.py`
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 * Input data: http://raw.githubusercontent.com/AstroMatt/book-python/master/control-flow/data/iris.csv
@@ -194,18 +194,18 @@ Parsing simple CSV file
 
 ``/etc/hosts`` - Simple Parsing
 -------------------------------
-* Filename: ``control-flow/file_parsing_hosts.py``
+* Filename: :download:`solution/file_parsing_simple.py`
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
-* Input data: :numref:`listing-etc-hosts-simple`
+* Input data: :numref:`listing-file-parsing-simple`
 
     .. literalinclude:: data/etc-hosts-simple.txt
-        :name: listing-etc-hosts-simple
+        :name: listing-file-parsing-simple
         :language: text
         :caption: Zawartość pliku ``hosts.txt``
 
 #. Utwórz plik tekstowy ``hosts.txt``
-#. Do pliku skopiuj kod z listingu :numref:`listing-etc-hosts-simple`
+#. Do pliku skopiuj kod z listingu :numref:`listing-file-parsing-simple`
 #. Sparsuj plik i dla każdej linii:
 
     #. Podziel linię po dowolnej ilości białych znaków (spacja, taby, itp)
@@ -237,18 +237,18 @@ Parsing simple CSV file
 
 ``/etc/hosts`` - Advanced Parsing
 ---------------------------------
-* Filename: ``control-flow/file_parsing.py``
+* Filename: :download:`solution/file_parsing_advanced.py`
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
-* Input data: :numref:`listing-etc-hosts-advanced`
+* Input data: :numref:`listing-file-parsing-advanced`
 
     .. literalinclude:: data/etc-hosts.txt
-        :name: listing-etc-hosts-advanced
+        :name: listing-file-parsing-advanced
         :language: text
         :caption: Zawartość pliku ``hosts.txt``
 
 #. Utwórz plik tekstowy ``hosts.txt``
-#. Do pliku skopiuj kod z listingu :numref:`listing-etc-hosts-advanced`
+#. Do pliku skopiuj kod z listingu :numref:`listing-file-parsing-advanced`
 #. Ważne, żeby przepisać zawartość zawierającą komentarze, białe spacje i linie przerwy
 #. Sparsuj plik i dla każdej linii:
 

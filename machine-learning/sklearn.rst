@@ -133,7 +133,7 @@ Zadania praktyczne
 
 Nearest Neighbor Classifier
 ---------------------------
-* Filename: ``machine-learning/sklearn_classifier.py``
+* Filename: :download:`solution/sklearn_classifier.py`
 * Lines of code to write: 15 lines
 * Estimated time of completion: 30 min
 
@@ -188,7 +188,7 @@ Nearest Neighbor Classifier
 
 Porównanie classifierów
 -----------------------
-* Filename: ``machine-learning/sklearn_comparision.py``
+* Filename: :download:`solution/sklearn_comparision.py`
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 

@@ -37,7 +37,7 @@ Is ``None`` or ``not``
 ----------------------
 .. todo:: poprawić zadanie, jest tendencyjne
 
-* Filename: ``data-types/none.py``
+* Filename: :download:`solution/none.py`
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
 

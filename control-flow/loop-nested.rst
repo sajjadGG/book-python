@@ -333,7 +333,7 @@ Assignments
 
 Get elements from nested data structure
 ---------------------------------------
-* Filename: ``control-flow/for_nested.py``
+* Filename: :download:`solution/for_nested.py`
 * Lines of code to write: 3 lines
 * Estimated time of completion: 10 min
 
@@ -360,7 +360,7 @@ Get elements from nested data structure
 
 ``dict`` to ``dict``
 --------------------
-* Filename: ``control-flow/for_dict_to_dict.py``
+* Filename: :download:`solution/for_dict_to_dict.py`
 * Lines of code to write: 4 lines
 * Estimated time of completion: 10 min
 
@@ -400,7 +400,7 @@ Get elements from nested data structure
 
 Unique keys from schema-less database
 -------------------------------------
-* Filename: ``control-flow/loop_unique_keys.py``
+* Filename: :download:`solution/loop_unique_keys.py`
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
 * Input data: :numref:`listing-loops-unique-keys`
@@ -435,7 +435,7 @@ Unique keys from schema-less database
 
 Label encoder
 -------------
-* Filename: ``control-flow/loop_label_encoder.py``
+* Filename: :download:`solution/loop_label_encoder.py`
 * Lines of code to write: 13 lines
 * Estimated time of completion: 15 min
 * Input data: :numref:`listing-loops-iris-sample`

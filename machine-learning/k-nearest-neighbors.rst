@@ -167,7 +167,7 @@ Assignments
 
 Pima Indians Diabetes problem
 -----------------------------
-* Filename: ``machine-learning/knn_pima.py``
+* Filename: :download:`solution/knn_pima.py`
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
 
@@ -175,7 +175,7 @@ Pima Indians Diabetes problem
 
 Płeć
 ----
-* Filename: ``machine-learning/knn_gender.py``
+* Filename: :download:`solution/knn_gender.py`
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
 

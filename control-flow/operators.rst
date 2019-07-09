@@ -42,7 +42,7 @@ Assignments
 
 Even and odd numbers
 --------------------
-* Filename: ``control-flow/operators_even_odd.py``
+* Filename: :download:`solution/operators_even_odd.py`
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
 

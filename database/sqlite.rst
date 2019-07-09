@@ -92,7 +92,7 @@ Assignments
 
 Iris Database
 -------------
-* Filename: ``database/iris.py``
+* Filename: :download:`solution/iris.py`
 * Lines of code to write: 30 lines
 * Estimated time of completion: 30 min
 * Input data: :numref:`listing-database-iris.csv`
@@ -141,7 +141,7 @@ Iris Database
 
 Tworzenie bazy danych i proste zapytania
 ----------------------------------------
-* Filename: ``database/addressbook.py``
+* Filename: :download:`solution/addressbook.py`
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 

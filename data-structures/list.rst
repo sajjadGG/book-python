@@ -190,7 +190,7 @@ Assignments
 
 Create
 ------
-* Filename: ``data-structures/list_create.py``
+* Filename: :download:`solution/list_create.py`
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
 

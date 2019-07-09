@@ -797,7 +797,7 @@ Assignment
 
 Trigonometry
 ------------
-* Filename: ``data-visualization/matplotlib_trigonometry.py``
+* Filename: :download:`solution/matplotlib_trigonometry.py`
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 
@@ -821,7 +821,7 @@ Trigonometry
 
 Iris scatter
 ------------
-* Filename: ``data-visualization/matplotlib_iris.py``
+* Filename: :download:`solution/matplotlib_iris.py`
 * Lines of code to write: 20 lines
 * Estimated time of completion: 20 min
 * Input data: https://raw.githubusercontent.com/AstroMatt/book-python/master/data-vizualization/data/iris.csv
@@ -836,7 +836,7 @@ Iris scatter
 
 Random points
 -------------
-* Filename: ``data-visualization/random_points.py``
+* Filename: :download:`solution/random_points.py`
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 

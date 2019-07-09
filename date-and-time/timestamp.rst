@@ -70,7 +70,7 @@ Assignments
 
 Create ``datetime`` object
 --------------------------
-* Filename: ``date-and-time/datetime_create.py``
+* Filename: :download:`solution/datetime_create.py`
 * Lines of code to write: 1 lines
 * Estimated time of completion: 5 min
 

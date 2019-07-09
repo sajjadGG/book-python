@@ -11,8 +11,8 @@ DATA = [
     (4.6, 3.1, 1.5, 0.2, {'species': 'setosa'}),
 ]
 
-for row in DATA[1:]:
-    species = row[4]['species']
+header, *data = DATA
 
-    if species.startswith('v'):
+for *_, species in data:
+    if species['species'].startswith('v'):
         print(species)

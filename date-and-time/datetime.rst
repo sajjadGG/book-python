@@ -192,7 +192,7 @@ Assignments
 
 Create current ``date`` and ``datetime`` objects
 ------------------------------------------------
-* Filename: ``date-and-time/datetime_create_current.py``
+* Filename: :download:`solution/datetime_create_current.py`
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
 
@@ -202,7 +202,7 @@ Create current ``date`` and ``datetime`` objects
 
 Create ``date``, ``time`` and ``datetime`` objects
 --------------------------------------------------
-* Filename: ``date-and-time/datetime_create_custom.py``
+* Filename: :download:`solution/datetime_create_custom.py`
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
 

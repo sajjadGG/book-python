@@ -162,7 +162,7 @@ Assignments
 
 Iris
 ----
-* Filename: ``http/scrapping_iris.py``
+* Filename: :download:`solution/scrapping_iris.py`
 * Lines of code to write: 20 lines
 * Estimated time of completion: 30 min
 
@@ -174,7 +174,7 @@ Iris
 
 EVA
 ---
-* Filename: ``http/scrapping_eva.py``
+* Filename: :download:`solution/scrapping_eva.py`
 * Lines of code to write: 100 lines
 * Estimated time of completion: 45 min
 

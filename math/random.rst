@@ -23,7 +23,7 @@ Assignments
 
 Random numbers
 --------------
-* Filename: ``math/random_numbers.py``
+* Filename: :download:`solution/random_numbers.py`
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
 
@@ -45,7 +45,7 @@ Random numbers
 
 Sum of inner elements
 ---------------------
-* Filename: ``math/inner_sum.py``
+* Filename: :download:`solution/random_inner_sum.py`
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
 

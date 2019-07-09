@@ -311,7 +311,7 @@ Assignments
 
 Aviation Language
 -----------------
-* Filename: ``data-structures/dict_alphabet.py``
+* Filename: :download:`solution/dict_alphabet.py`
 * Lines of code to write: 3 lines
 * Estimated time of completion: 10 min
 

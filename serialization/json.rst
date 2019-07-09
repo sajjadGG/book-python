@@ -345,7 +345,7 @@ Assignments
 
 Serialize
 ---------
-* Filename: ``serialization/json_serialize.py``
+* Filename: :download:`solution/json_serialize.py`
 * Lines of code to write: 8 lines
 * Estimated time of completion: 20 min
 * Input data: :numref:`listing-json-serialize`
@@ -406,7 +406,7 @@ Serialize
 
 Deserialize
 -----------
-* Filename: ``serialization/json_deserialize.py``
+* Filename: :download:`solution/json_deserialize.py`
 * Lines of code to write: 8 lines
 * Estimated time of completion: 20 min
 * Input data: :numref:`listing-json-iris`
@@ -430,7 +430,7 @@ Deserialize
 
 Serializing datetime
 --------------------
-* Filename: ``serialization/json_datetime.py``
+* Filename: :download:`solution/json_datetime.py`
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 * Input data: :numref:`listing-json-assignment-datetime`
@@ -463,7 +463,7 @@ Serializing datetime
 
 Serializing objects
 -------------------
-* Filename: ``serialization/json_object.py``
+* Filename: :download:`solution/json_object.py`
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 
@@ -515,7 +515,7 @@ Serializing objects
 
 Deserialize data from GITHub
 ----------------------------
-* Filename: ``serialization/json_github.py``
+* Filename: :download:`solution/json_github.py`
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 
@@ -530,7 +530,7 @@ Deserialize data from GITHub
 
 Deserialize data from API
 -------------------------
-* Filename: ``serialization/json_api.py``
+* Filename: :download:`solution/json_api.py`
 * Lines of code to write: 30 lines
 * Estimated time of completion: 30 min
 

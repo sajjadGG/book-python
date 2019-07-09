@@ -262,29 +262,29 @@ Assignments
 
 Least square regression 3 points
 --------------------------------
-* Filename: ``machine-learning/linreg_least_square_3pts.py``
+* Filename: :download:`solution/linreg_least_square_3pts.py`
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 
 #. Consider the following set of points: :math:`{(-2 , -1) , (1 , 1) , (3 , 2)}`
 #. Find the least square regression line for the given data points.
-#. Plot the given points and the regression line in the same rectangualr system of axes.
+#. Plot the given points and the regression line in the same rectangular system of axes.
 #. Napisz własny kod implementujący rozwiązanie
 
 Least square regression 4 points
 --------------------------------
-* Filename: ``machine-learning/linreg_least_square_4pts.py``
+* Filename: :download:`solution/linreg_least_square_4pts.py`
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 
 #. Find the least square regression line for the following set of data: :math:`{(-1 , 0),(0 , 2),(1 , 4),(2 , 5)}`
-#. Plot the given points and the regression line in the same rectangualr system of axes.
+#. Plot the given points and the regression line in the same rectangular system of axes.
 #. Użyj kodu z przykładu własnej implementacji do rozwiązania
 
 
 Company sales
 -------------
-* Filename: ``machine-learning/linreg_company_sales.py``
+* Filename: :download:`solution/linreg_company_sales.py`
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 

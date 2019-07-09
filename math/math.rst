@@ -138,7 +138,7 @@ Assignments
 
 Trigonometry
 ------------
-* Filename: ``math/trigonometry.py``
+* Filename: :download:`solution/math_trigonometry.py`
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
 
@@ -149,7 +149,7 @@ Trigonometry
 
 Euclidean distance 2D
 ---------------------
-* Filename: ``math/euclidean_2d.py``
+* Filename: :download:`solution/math_euclidean_2d.py`
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
 * Input data: :numref:`listing-math-euclidean-distance-2D`
@@ -197,7 +197,7 @@ Euclidean distance 2D
 
 Euclidean distance ``n`` dimensions
 -----------------------------------
-* Filename: ``math/euclidean_multi_dim.py``
+* Filename: :download:`solution/math_euclidean_multi_dim.py`
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 * Input data: :numref:`listing-math-euclidean-distance-n-dimensions`
@@ -243,7 +243,7 @@ Euclidean distance ``n`` dimensions
 
 Matrix multiplication
 ---------------------
-* Filename: ``math/matmul.py``
+* Filename: :download:`solution/math_matmul.py`
 * Lines of code to write: 6 lines
 * Estimated time of completion: 20 min
 
@@ -278,7 +278,7 @@ Matrix multiplication
 
 Triangle
 --------
-* Filename: ``math/triangle.py``
+* Filename: :download:`solution/math_triangle.py`
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
 

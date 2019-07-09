@@ -338,7 +338,7 @@ Assignments
 
 Klastrowanie zbioru Iris
 ------------------------
-* Filename: ``machine-learning/clustering_iris.py``
+* Filename: :download:`solution/clustering_iris.py`
 * Lines of code to write: 30 lines
 * Estimated time of completion: 15 min
 

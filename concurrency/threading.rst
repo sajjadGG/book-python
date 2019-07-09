@@ -206,7 +206,7 @@ Assignments
 
 Wielowątkowość
 --------------
-* Filename: ``concurrency/thread_execute.py``
+* Filename: :download:`solution/threading_timer.py`
 * Lines of code to write: 20 lines
 * Estimated time of completion: 30 min
 

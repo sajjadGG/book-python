@@ -346,7 +346,7 @@ Assignments
 
 ``map()``, ``filter()`` i ``lambda``
 ------------------------------------
-* Filename: ``paradigms/funcprog_map_filter_lambda.py``
+* Filename: :download:`solution/functional_map_filter_lambda.py`
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 
@@ -357,7 +357,7 @@ Assignments
 
 Zbalansowanie nawiasów
 ----------------------
-* Filename: ``paradigms/funcprog_brackets.py``
+* Filename: :download:`solution/functional_brackets.py`
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 

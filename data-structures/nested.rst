@@ -252,7 +252,7 @@ Assignments
 
 Split train/test
 ----------------
-* Filename: ``data-structures/nested_split_train_test.py``
+* Filename: :download:`solution/nested_split_train_test.py`
 * Lines of code to write: 6 lines
 * Estimated time of completion: 15 min
 

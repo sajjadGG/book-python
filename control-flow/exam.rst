@@ -5,7 +5,7 @@ Exam from basic topics
 
 Relational Files Database
 =========================
-* Filename: ``control-flow/exam.py``
+* Filename: :download:`solution/exam.py`
 * Lines of code to write: 60 lines
 * Estimated time of completion: 60 min
 * Input data: :numref:`code-file-etc-passwd`, :numref:`code-file-etc-shadow`, :numref:`code-file-etc-group`

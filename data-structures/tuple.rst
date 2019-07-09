@@ -60,7 +60,7 @@ Assignments
 
 Create
 ------
-* Filename: ``data-structures/tuple_create.py``
+* Filename: :download:`solution/tuple_create.py`
 * Lines of code to write: 13 lines
 * Estimated time of completion: 10 min
 

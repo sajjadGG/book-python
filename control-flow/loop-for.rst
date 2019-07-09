@@ -252,7 +252,7 @@ Assignments
 
 Counter
 -------
-* Filename: ``control-flow/for_counter.py``
+* Filename: :download:`solution/for_counter.py`
 * Lines of code to write: 6 lines
 * Estimated time of completion: 5 min
 
@@ -280,7 +280,7 @@ Counter
 
 Segmentation
 ------------
-* Filename: ``control-flow/for_segmentation.py``
+* Filename: :download:`solution/for_segmentation.py`
 * Lines of code to write: 12 lines
 * Estimated time of completion: 10 min
 
@@ -313,7 +313,7 @@ Segmentation
 
 Text analysis
 -------------
-* Filename: ``control-flow/for_text_analysis.py``
+* Filename: :download:`solution/for_text_analysis.py`
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
 

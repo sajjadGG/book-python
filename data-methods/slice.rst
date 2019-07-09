@@ -232,7 +232,7 @@ Assignments
 
 Simple collections
 ------------------
-* Filename: ``data-methods/slice_every_nth.py``
+* Filename: :download:`solution/slice_every_nth.py`
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
 
@@ -248,7 +248,7 @@ Simple collections
 
 Iris dataset
 ------------
-* Filename: ``data-methods/slice_iris.py``
+* Filename: :download:`solution/slice_iris.py`
 * Lines of code to write: 30 lines
 * Estimated time of completion: 20 min
 
@@ -310,7 +310,7 @@ Iris dataset
 
 Slicing text
 ------------
-* Filename: ``data-methods/slice_text.py``
+* Filename: :download:`solution/slice_text.py`
 * Lines of code to write: 8 lines
 * Estimated time of completion: 10 min
 

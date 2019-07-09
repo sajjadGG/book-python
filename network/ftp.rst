@@ -37,7 +37,7 @@ Assignments
 
 FTP Download
 ------------
-* Filename: ``network/ftp_download.py``
+* Filename: :download:`solution/ftp_download.py`
 * Lines of code to write: 20 lines
 * Estimated time of completion: 25 min
 
@@ -54,7 +54,7 @@ FTP Download
 
 FTP Upload
 ----------
-* Filename: ``network/ftp_upload.py``
+* Filename: :download:`solution/ftp_upload.py`
 * Lines of code to write: 20 lines
 * Estimated time of completion: 25 min
 

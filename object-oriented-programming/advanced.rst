@@ -136,7 +136,7 @@ Assignments
 
 Dragon (version release candidate)
 ----------------------------------
-* Filename: ``oop/dragon_rc.py``
+* Filename: :download:`solution/advanced_dragon.py`
 * Lines of code to write: 50 lines
 * Estimated time of completion: 30 min
 

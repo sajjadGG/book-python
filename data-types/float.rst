@@ -129,7 +129,7 @@ Assignments
 
 Handling user input and type casting
 ------------------------------------
-* Filename: ``data-types/float_casting.py``
+* Filename: :download:`solution/float_casting.py`
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
 

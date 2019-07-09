@@ -1353,7 +1353,7 @@ Assignments
 
 Matrix multiplication
 ---------------------
-* Filename: ``numpy/matmul.py``
+* Filename: :download:`solution/numpy_matmul.py`
 * Lines of code to write: 2 lines
 * Estimated time of completion: 5 min
 
@@ -1380,7 +1380,7 @@ Matrix multiplication
 
 Array filtering
 ---------------
-* Filename: ``numpy/array_filtering.py``
+* Filename: :download:`solution/numpy_array_filtering.py`
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
 
@@ -1393,7 +1393,7 @@ Array filtering
 
 Sum of inner matrix
 -------------------
-* Filename: ``numpy/sum_inner.py``
+* Filename: :download:`solution/numpy_inner_sum.py`
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
 
@@ -1406,7 +1406,7 @@ Sum of inner matrix
 
 Euclidean distance 2D
 ---------------------
-* Filename: ``math/euclidean_2d.py``
+* Filename: :download:`solution/numpy_euclidean_2d.py`
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
 
@@ -1444,7 +1444,7 @@ Euclidean distance 2D
 
 Euclidean distance multi dimensions
 -----------------------------------
-* Filename: ``math/euclidean_multi_dim.py``
+* Filename: :download:`solution/numpy_euclidean_multi_dim.py`
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 
@@ -1486,7 +1486,7 @@ Euclidean distance multi dimensions
 
 Szukanie liczby
 ---------------
-* Filename: ``numpy/number.py``
+* Filename: :download:`solution/numpy_number.py`
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 

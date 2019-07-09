@@ -144,7 +144,7 @@ Assignments
 
 C Types
 -------
-* Filename: ``performance/cext_types.py``
+* Filename: :download:`solution/ctypes_datetime.py`
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 

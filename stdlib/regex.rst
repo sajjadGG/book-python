@@ -503,7 +503,7 @@ Assignments
 
 Parsing text from webpage
 -------------------------
-* Filename: ``stdlib/regex_html.py``
+* Filename: :download:`solution/regex_html.py`
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
 * Input data: :numref:`listing-regex-moon-speech`

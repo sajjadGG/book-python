@@ -136,7 +136,7 @@ Assignments
 
 Pickle serialization
 --------------------
-* Filename: ``serialization/pickle_dump.py``
+* Filename: :download:`solution/pickle_dump.py`
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
 

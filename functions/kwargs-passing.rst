@@ -351,7 +351,7 @@ Assignments
 
 Iris
 ----
-* Filename: ``functions/kwargs_iris.py``
+* Filename: :download:`solution/kwargs_iris.py`
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 * Input data: https://raw.githubusercontent.com/AstroMatt/book-python/master/functions/data/iris.csv

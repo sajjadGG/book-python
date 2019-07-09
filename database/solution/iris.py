@@ -1,7 +1,7 @@
 import sqlite3
 from datetime import datetime, timezone
 
-# DATABASE = r'iris.sqlite3'
+# DATABASE = r'../../_tmp/iris.sqlite3'
 DATABASE = r':memory:'
 
 SQL_CREATE_TABLE = """

@@ -192,7 +192,7 @@ Assignments
 
 Memoization
 -----------
-* Filename: ``performance/memoize.py``
+* Filename: :download:`solution/optimization_memoize.py`
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
 * Input data: :numref:`listing-performance-memoize`

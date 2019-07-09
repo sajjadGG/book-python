@@ -387,7 +387,7 @@ Assignments
 
 Generators vs. Comprehensions - iris
 ------------------------------------
-* Filename: ``design-patterns/generator_iris.py``
+* Filename: :download:`solution/generator_iris.py`
 * Lines of code to write: 40 lines
 * Estimated time of completion: 20 min
 * Input data: https://raw.githubusercontent.com/AstroMatt/book-python/master/database/data/iris.csv
@@ -409,7 +409,7 @@ Generators vs. Comprehensions - iris
 
 Generators vs. Comprehensions - passwd
 --------------------------------------
-* Filename: ``design-patterns/generator_passwd.py``
+* Filename: :download:`solution/generator_passwd.py`
 * Lines of code to write: 40 lines
 * Estimated time of completion: 20 min
 

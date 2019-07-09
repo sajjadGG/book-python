@@ -418,7 +418,7 @@ Assignments
 
 Podstawy korzystania
 --------------------
-* Filename: ``jupyter/first.ipynb``
+* Filename: :download:`solution/jupyter_first.ipynb`
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 
@@ -431,7 +431,7 @@ Podstawy korzystania
 
 Slajdy
 ------
-* Filename: ``jupyter/slides.py``
+* Filename: :download:`solution/jupyter_slides.py`
 * Lines of code to write: 1 lines
 * Estimated time of completion: 5 min
 

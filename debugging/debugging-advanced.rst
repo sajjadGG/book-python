@@ -204,7 +204,7 @@ Assignment
 
 Own ``doctest``
 ---------------
-* Filename: ``debugging/doctest.py``
+* Filename: :download:`solution/debugging_doctest.py`
 * Lines of code to write: 60 lines
 * Estimated time of completion: 30 min
 

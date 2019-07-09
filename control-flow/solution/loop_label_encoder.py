@@ -1,3 +1,6 @@
+from typing import List, Tuple, Dict
+
+
 DATA = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -25,6 +28,32 @@ DATA = [
 
 
 header, *data = DATA
+X: List[Tuple[float]] = []
+y: List[int] = []
+label_encoder: Dict[int, str] = {}
+
+
+for *measurements, species in data:
+    X.append(tuple(measurements))
+
+    if species not in label_encoder.values():
+        label_encoder[len(label_encoder)] = species
+
+    for numer, nazwa in label_encoder.items():
+        if nazwa == species:
+            y.append(numer)
+
+
+print(X)
+print()
+print(y)
+print()
+print(label_encoder)
+
+
+## Alternatywnie
+
+header, *data = DATA
 
 features = []
 labels = []
@@ -38,40 +67,20 @@ for *measurements, kind in data:
     features.append(tuple(measurements))
     labels.append(species[kind])
 
-
-## Alternatywnie
-
-for *measurements, kind in data:
-    if kind not in species.values():
-        index = len(species)
-        species[index] = kind
-
-    features.append(tuple(measurements))
-    labels.append(species[index])
-
-
-# temp_species = {}
-#
-# for key, value in species.items():
-#     temp_species[value] = key
-#
-# species = temp_species
-
-
 species = {v:k for k,v in species.items()}
 
 
-
 print(features)
-print(labels)
-print(species)
-
 # [
 #   (5.8, 2.7, 5.1, 1.9),
 #   (5.1, 3.5, 1.4, 0.2),
 #   (5.7, 2.8, 4.1, 1.3),
 #   (6.3, 2.9, 5.6, 1.8), ...]
+
+print(labels)
 # [0, 1, 2, 0, 2, 1, 2, 0, 1, 0, 0, 1, 1, 2, 1, 2, 0, 2, 0, 2, 1]
+
+print(species)
 # {0: 'virginica', 1: 'setosa', 2: 'versicolor'}
 
 

@@ -787,7 +787,7 @@ Assignments
 
 Recursive folders walking
 -------------------------
-* Filename: ``operating-system/system_walk.py``
+* Filename: :download:`solution/system_walk.py`
 * Lines of code to write: 30 lines
 * Estimated time of completion: 30 min
 
@@ -823,7 +823,7 @@ Recursive folders walking
 
 Tree
 ----
-* Filename: ``operating-system/system_tree.py``
+* Filename: :download:`solution/system_tree.py`
 * Lines of code to write: 60 lines
 * Estimated time of completion: 60 min
 

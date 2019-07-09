@@ -294,7 +294,7 @@ Assignments
 
 Refactoring
 -----------
-* Filename: ``tests/doctest_temp.py``
+* Filename: :download:`solution/doctest_temp.py`
 * Lines of code to write: 5 lines of code
 * Estimated time of completion: 15 min
 
@@ -326,7 +326,7 @@ Refactoring
 
 Distance conversion doctest
 ---------------------------
-* Filename: ``tests/doctest_distance.py``
+* Filename: :download:`solution/doctest_distance.py`
 * Lines of code to write: 5 lines of code + 16 lines of tests
 * Estimated time of completion: 10 min
 

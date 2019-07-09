@@ -160,7 +160,7 @@ Assignments
 
 Reading ``csv``
 ---------------
-* Filename: ``serialization/csv_dictreader.py``
+* Filename: :download:`solution/csv_dictreader.py`
 * Lines of code to write: 20 lines
 * Estimated time of completion: 10 min
 * Input data: https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris.csv
@@ -181,7 +181,7 @@ Reading ``csv``
 
 Writing ``csv`` - fixed schema
 ------------------------------
-* Filename: ``serialization/csv_dictwriter_fixed.py``
+* Filename: :download:`solution/csv_dictwriter_fixed.py`
 * Lines of code to write: 8 lines
 * Estimated time of completion: 10 min
 * Input data: :numref:`listing-csv-dictwriter-fixed`
@@ -203,7 +203,7 @@ Writing ``csv`` - fixed schema
 
 Writing ``csv`` - variable schema
 ---------------------------------
-* Filename: ``serialization/csv_dictwriter_variable.py``
+* Filename: :download:`solution/csv_dictwriter_variable.py`
 * Lines of code to write: 8 lines
 * Estimated time of completion: 10 min
 * Input data: :numref:`listing-csv-dictwriter-variable`
@@ -249,7 +249,7 @@ Writing ``csv`` - variable schema
 
 Object serialization to CSV
 ---------------------------
-* Filename: ``serialization/csv_relations.py``
+* Filename: :download:`solution/csv_relations.py`
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
 * Input data: :numref:`listing-csv-addressbook`

@@ -159,7 +159,7 @@ Assignments
 
 Iris Stats
 ----------
-* Filename: ``math/statistics_iris.py``
+* Filename: :download:`solution/statistics_iris.py`
 * Lines of code to write: 30 lines
 * Estimated time of completion: 30 min
 * Input Data: :numref:`listing-statistics-iris-dataset`
