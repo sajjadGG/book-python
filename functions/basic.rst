@@ -284,20 +284,36 @@ System functions names
             ...
 
 
-
 Variable scope
 ==============
-* function arguemnts and variables live only inside function scope
-* ``globals()`` - all variables in program (outside functions)
-* ``locals()`` - variables inside function
+
+Global scope
+------------
+* All variables in main program
+* Variables are available inside all functions
 
 .. code-block:: python
 
-    def add(a, b=2):
+    print(globals())
+    # {...}
+
+Local scope
+-----------
+* Variables defined inside function
+* Variables are not available from outside
+
+.. code-block:: python
+
+    print(locals())
+    # {...}
+
+.. code-block:: python
+
+    def add_numbers(a, b=2):
         c = 3
         print(locals())
 
-    add(1)
+    add_numbers(1)
     # {'a': 1, 'b': 2, 'c': 3}
 
 

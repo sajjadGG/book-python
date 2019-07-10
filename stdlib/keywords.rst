@@ -44,14 +44,14 @@ Example 3
 ---------
 .. code-block:: python
 
-    class SpoznienieError(Exception):
+    class MyError(Exception):
 
     print('hello')
     # IndentationError: expected an indented block
 
 .. code-block:: python
 
-    class SpoznienieError(Exception):
+    class MyError(Exception):
         pass
 
     print('hello')

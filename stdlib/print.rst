@@ -10,7 +10,7 @@ Funkcja ``print``
 =================
 .. code-block:: python
 
-    def print(*args, sep=' ', end='\n', file=sys.stdout, flush=False):
+    def print(*values, sep=' ', end='\n', file=sys.stdout, flush=False):
         """
         Prints the values to a stream, or to sys.stdout by default.
         Optional keyword arguments:
@@ -26,16 +26,12 @@ Konkatenacja stringów
 
 Wykorzystanie parametrów funkcji ``print()``
 --------------------------------------------
-Do łączenia ciągów znakowych, które mają zostać wyświetlone dla użytkownika, można wykorzystać bezpośrednio właściwość funkcji ``print``, która może przyjąć wiele argumentów, które następnie ze sobą połączy.
-
 .. code-block:: python
 
     name = 'José Jiménez'
 
     print('My name...', name, '!')
     # My name... José Jiménez!
-
-Można tutaj podać jako argumenty zarówno ciągi znaków jak i wartości liczbowe. Ciągi znaków będą od siebie odseparowane ciągiem znaków przekazanym przez argument ``sep``, domyślnie jest to spacja ``' '``.
 
 .. code-block:: python
 
@@ -46,16 +42,12 @@ Można tutaj podać jako argumenty zarówno ciągi znaków jak i wartości liczb
 
 Operator ``+``
 --------------
-Operator + skleja ze sobą stringi. Ten sposób jest niepolecany, ale można go jeszcze często spotkać. Szczególnie u osób, które programują w innych językach tj. Java, JavaScript i C#.
-
 .. code-block:: python
 
     name = 'José Jiménez'
 
     print('My name... ' + name + '!')
     # My name... José Jiménez!
-
-Można go użyć do wyświetlania zmiennych liczbowych, ale nie jest to najlepsze rozwiązanie.
 
 .. code-block:: python
 
@@ -65,16 +57,24 @@ Można go użyć do wyświetlania zmiennych liczbowych, ale nie jest to najlepsz
     print('My name... ' + name + ' and I am ' + str(age) + ' years old!')
     # My name... José Jiménez and I am 35 years old!
 
+Operator ``+`` side effect
+--------------------------
 * f-string formatting are preferred over ``str`` addition
 * How many ``str`` are in the memory?
 
-    .. code-block:: python
+.. code-block:: python
 
-        first_name = 'José'
-        last_name = 'Jiménez'
+    first_name = 'José'
+    last_name = 'Jiménez'
 
-        print(first_name + ' ' + last_name)  # José Jiménez
-        print(f'{first_name} {last_name}')   # José Jiménez
+    print(first_name + ' ' + last_name)  # José Jiménez
+
+.. code-block:: python
+
+    first_name = 'José'
+    last_name = 'Jiménez'
+
+    print(f'{first_name} {last_name}')   # José Jiménez
 
 
 Interpolacja zmiennych
@@ -82,12 +82,11 @@ Interpolacja zmiennych
 
 Operator: ``%s``, ``%d``, ``%f``
 --------------------------------
-Używanie tych operatorów przypomina używanie funkcji ``printf``, znanej między innymi z C++. W tekście stringa wstawiamy odpowiedni operator: ``%s`` dla stringa, ``%d`` dla liczby całkowitej, ``%f`` dla liczby zmiennoprzecinkowej. Następnie podajemy po znaku % krotkę z wartościami do wstawienia.
-
-* kolejnościowe
-* nazwane
-* typy: ``string``, ``int``, ``float``
-* operatory na stringu
+* positional
+* keyword
+* ``%s`` - ``str``
+* ``%d`` - ``int``
+* ``%f`` - ``float``
 
 .. code-block:: python
 
@@ -116,15 +115,6 @@ Używanie tych operatorów przypomina używanie funkcji ``printf``, znanej międ
 
 Metoda ``.format()``
 ====================
-
-Wbudowana metoda ``format`` upraszcza nieco powyższy schemat. Zamiast operatora z procentem, używamy w tekście stringu ``{}``, następnie na tym stringu wywołujemy funkcję ``format``, której argumentami są wartości do wstawienia do tekstu.
-
-* ``string``
-* ``int``
-* ``float``
-* operatory na stringu
-* jako parametry do ``print("string", **args)``
-
 .. code-block:: python
 
     name = 'José Jiménez'
@@ -153,7 +143,7 @@ f-strings to rozwinięcie funkcji ``format``. Jedyne co trzeba zrobić żeby umi
 
     name = 'José'
     age = 42
-    now = datetime.datetime.utcnow
+    now = datetime.datetime.utcnow()
     format = '%Y-%m-%d %H:%M:%S'
 
     def my(name):
@@ -161,45 +151,8 @@ f-strings to rozwinięcie funkcji ``format``. Jedyne co trzeba zrobić żeby umi
 
     print(f'My name... {name}!')                                     # 'My name... José Jiménez'
     print(f'My name... {my(name)}, age: {age} years')                # 'My name... José, age: 42 years'
-    print(f'Today is: {datetime.datetime.now():%Y-%m-%d %H:%M:%S}')  # 'Today is: 1969-07-21 02:56:15'
-    print(f'Today is: {now():%Y-%m-%d %H:%M:%S}')                    # 'Today is: 1969-07-21 02:56:15'
-    print(f'Today is: {now():{format}}')                             # 'Today is: 1969-07-21 02:56:15'
-
-
-SQL Injection
-=============
-.. code-block:: python
-    :caption: Query with SQL injection possibility
-
-    SQL_QUERY = f"""
-
-        SELECT id, username, email
-        FROM users
-        WHERE username='{username}' AND password='{password}'
-
-    """
-
-.. code-block:: python
-
-    username = input('Username: ')
-    # ' OR 1=1; DROP TABLE users --
-
-    password = input('Password: ')
-    # 123
-
-.. code-block:: python
-    :caption: Exploited SQL injection, will Select all users and then Drop all data from table users
-
-    print(query)
-    # SELECT id, username, email
-    # FROM users
-    # WHERE username='' OR 1=1; DROP TABLE users -- ' AND password='132'
-
-.. figure:: img/sql-injection.jpg
-    :scale: 50%
-    :align: center
-
-    SQL Injection
+    print(f'Today is: {now:%Y-%m-%d %H:%M:%S}')                      # 'Today is: 1969-07-21 02:56:15'
+    print(f'Today is: {now:{format}}')                               # 'Today is: 1969-07-21 02:56:15'
 
 
 PEP 3101 -- Advanced String Formatting
@@ -210,7 +163,8 @@ Basic formatting
 ----------------
 .. code-block:: python
 
-    one, two = 'one', 'two'
+    one = 'one'
+    two = 'two'
 
     '%s %s' % (one, two)        # one two
     '{} {}'.format(one, two)    # one two
@@ -223,32 +177,12 @@ Padding and aligning strings
 
     text = 'test'
 
-    '%10s' % text                   # '      test'
-    '%10s' % (text,)                # '      test'
-    '{:>10}'.format(text)           # '      test'
-    f'{text:>10}'                   # '      test'
-
-.. code-block:: python
-
-    text = 'test'
-
-    '%-10s' % text                  # 'test      '
-    '%-10s' % (text,)               # 'test      '
-    '{:10}'.format(text)            # 'test      '
     f'{text:10}'                    # 'test      '
-
-.. code-block:: python
-
-    text = 'test'
-
-    '{:_<10}'.format(text)          # 'test______'
-    f'{text:_<10}'                  # 'test______'
-
-    '{:^10}'.format(text)           # '   test   '
+    f'{text:<10}'                   # 'test      '
     f'{text:^10}'                   # '   test   '
-
-    '{:^6}'.format(text)            # ' test  '
+    f'{text:>10}'                   # '      test'
     f'{text:^6}'                    # ' test  '
+    f'{text:.<10}'                  # 'test......'
 
 
 Truncating long strings
@@ -257,20 +191,7 @@ Truncating long strings
 
     text = 'Lorem Ipsum'
 
-    '%.5s' % text                   # 'Lorem'
-    '%.5s' % (text,)                # 'Lorem'
-    '{:.5}'.format(text)            # 'Lorem'
     f'{text:.5}'                    # 'Lorem'
-
-Combining truncating and padding
---------------------------------
-.. code-block:: python
-
-    text = 'Lorem Ipsum'
-
-    '%-10.5s' % text                # 'Lorem     '
-    '%-10.5s' % (text,)             # 'Lorem     '
-    '{:10.5}'.format(text)          # 'Lorem     '
     f'{text:10.5}'                  # 'Lorem     '
 
 Numbers
@@ -279,18 +200,12 @@ Numbers
 
     number = 35
 
-    '%d' % number                   # '35'
-    '%d' % (number,)                # '35'
-    '{:d}'.format(number)           # '35'
     f'{number:d}'                   # '35'
 
 .. code-block:: python
 
     number = 3.141592653589793
 
-    '%f' % number                   # '3.141593'
-    '%f' % (number,)                # '3.141593'
-    '{:f}'.format(number)           # '3.141593'
     f'{number:f}'                   # '3.141593'
 
 Padding numbers
@@ -299,8 +214,6 @@ Padding numbers
 
     number = 42
 
-    '%4d' % (number,)               # '  42'
-    '{:4d}'.format(number)          # '  42'
     f'{number:4d}'                  # '  42'
 
 
@@ -308,9 +221,6 @@ Padding numbers
 
     number = 3.141592653589793
 
-    '%06.2f' % number               # '003.14'
-    '%06.2f' % (number,)            # '003.14'
-    '{:06.2f}'.format(number)       # '003.14'
     f'{number:06.2f}'               # '003.14'
 
 .. code-block:: python
