@@ -138,9 +138,9 @@ Date and Time
     /date-and-time/datetime.rst
     /date-and-time/parse-and-format.rst
     /date-and-time/timedelta.rst
-    /date-and-time/timezones.rst
     /date-and-time/timestamp.rst
     /date-and-time/utils.rst
+    /date-and-time/timezones.rst
 
 *************
 Serialization

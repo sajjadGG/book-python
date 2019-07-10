@@ -68,13 +68,13 @@ List of Timezones
 .. code-block:: python
     :caption: ``pytz`` brings the Olson tz database into Python.
 
-    from pytz import timezone, utc as UTC
+    from pytz import timezone
 
 
-    UTC = UTC
-    EST = timezone('US/Eastern')
-    WAW = timezone('Europe/Warsaw')
-    BAJKONUR = timezone('Asia/Almaty')
+    timezone('UTC')
+    timezone('US/Eastern')
+    timezone('Europe/Warsaw')
+    timezone('Asia/Almaty')
 
 From naive to local
 -------------------
@@ -85,13 +85,10 @@ From naive to local
     from pytz import timezone
 
 
-    BAJKONUR = timezone('Asia/Almaty')
-
-
     # timezone naive
-    gagarin = datetime(1961, 4, 12, 14, 7)
+    my_date = datetime(1961, 4, 12, 14, 7)
 
-    BAJKONUR.localize(gagarin)
+    timezone('Asia/Almaty').localize(my_date)
     # datetime.datetime(1961, 4, 12, 14, 7,
     #                   tzinfo=<DstTzInfo 'Asia/Almaty' +06+6:00:00 STD>)
 
@@ -101,13 +98,12 @@ From naive to UTC
     :caption: From naive to local time
 
     from datetime import datetime
-    from pytz import utc as UTC
 
 
     # timezone naive
-    gagarin = datetime(1961, 4, 12, 14, 7)
+    my_date = datetime(1961, 4, 12, 14, 7)
 
-    UTC.localize(gagarin)
+    timezone('UTC').localize(my_date)
     # datetime.datetime(1961, 4, 12, 14, 7, tzinfo=<UTC>)
 
 From UTC to local time
@@ -116,15 +112,12 @@ From UTC to local time
     :caption: From UTC to local time
 
     from datetime import datetime
-    from pytz import timezone, utc as UTC
+    from pytz import timezone
 
 
-    WARSAW = timezone('Europe/Warsaw')
+    my_date = datetime(1969, 7, 21, 14, 56, 15, tzinfo=timezone('UTC'))
 
-
-    armstrong = datetime(1969, 7, 21, 14, 56, 15, tzinfo=UTC)
-
-    armstrong.astimezone(WARSAW)
+    my_date.astimezone(timezone('Europe/Warsaw'))
     # datetime.datetime(1969, 7, 21, 15, 56, 15,
     #                   tzinfo=<DstTzInfo 'Europe/Warsaw' CET+1:00:00 STD>)
 
@@ -137,13 +130,9 @@ Between timezones
     from pytz import timezone
 
 
-    WARSAW = timezone('Europe/Warsaw')
-    BAJKONUR = timezone('Asia/Almaty')
+    my_date = datetime(1961, 4, 12, 14, 7, tzinfo=timezone('Asia/Almaty'))
 
-
-    gagarin = datetime(1961, 4, 12, 14, 7, tzinfo=BAJKONUR)
-
-    gagarin.astimezone(WARSAW)
+    my_date.astimezone(timezone('Europe/Warsaw'))
     # datetime.datetime(1961, 4, 12, 9, 59,
     #                   tzinfo=<DstTzInfo 'Europe/Warsaw' CET+1:00:00 STD>)
 

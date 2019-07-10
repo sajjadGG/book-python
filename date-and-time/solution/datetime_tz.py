@@ -1,7 +1,8 @@
 from datetime import datetime
-from pytz import timezone, utc as UTC
+from pytz import timezone
 
 
+UTC = timezone('UTC')
 WAW = timezone('Europe/Warsaw')
 BAJKONUR = timezone('Asia/Almaty')
 
