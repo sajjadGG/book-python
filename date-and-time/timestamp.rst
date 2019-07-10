@@ -70,9 +70,11 @@ Assignments
 
 Create ``datetime`` object
 --------------------------
-* Filename: :download:`solution/datetime_create.py`
+* Filename: :download:`solution/datetime_timestamp.py`
 * Lines of code to write: 1 lines
 * Estimated time of completion: 5 min
 
 #. Stwórz obiekt ``datetime`` z datą "1970-01-01T00:00:00.000000+0000"
+#. Przedstaw datę jako timestamp
+#. Co wyszło?
 #. Co to za data?
