@@ -195,7 +195,6 @@ Unpacking from nested sequence
 * Filename: :download:`solution/unpacking_iris.py`
 * Lines of code to write: 1 lines
 * Estimated time of completion: 3 min
-* Solution: :download:`solution/unpacking_iris.py`
 
 #. Dany jest zbiór:
 
