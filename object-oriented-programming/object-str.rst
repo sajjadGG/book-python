@@ -83,6 +83,39 @@ Stringify objects
     print(f'{p:3D}')    # (1, 2, 3)
 
 
+Print formatting in classes
+===========================
+* Now f-string formatting is preferred
+
+.. code-block:: python
+
+    class Osoba:
+        first_name = 'Jan'
+        last_name = 'Twardowski'
+
+        def __str__(self):
+            return '{first_name} {last_name}'.format(first_name=self.first_name,
+                                                     last_name=self.last_name)
+
+.. code-block:: python
+
+    class Osoba:
+        first_name = 'Jan'
+        last_name = 'Twardowski'
+
+        def __str__(self):
+            return '{first_name} {last_name}'.format(**self.__dict__)
+
+.. code-block:: python
+
+    class Osoba:
+        first_name = 'Jan'
+        last_name = 'Twardowski'
+
+        def __str__(self):
+            return f'{self.first_name} {self.last_name}'
+
+
 Example
 =======
 

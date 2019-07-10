@@ -6,8 +6,8 @@ Passing many arguments
 Arbitrary number of positional arguments
 ========================================
 - ``*`` in this context, is not multiplication in mathematical sense
+- ``*`` is used for positional arguments
 - ``args`` is a convention, but you can use any name
-- ``*args`` is used for positional arguments
 - ``*args`` unpacks from ``tuple``, ``list`` or ``set``
 
 .. code-block:: python
@@ -33,8 +33,8 @@ Arbitrary number of positional arguments
 Arbitrary number of keyword arguments
 =====================================
 - ``**`` in this context, is not power in mathematical sense
+- ``**`` is used for keyword arguments
 - ``kwargs`` is a convention, but you can use any name
-- ``**kwargs`` is used for keyword arguments
 - ``**kwargs`` unpacks from ``dict``
 
 .. code-block:: python
@@ -110,10 +110,6 @@ Vectors
 
     echo(*vector)
 
-
-Use cases
-=========
-
 Print formatting
 ----------------
 * Now f-string formatting is preferred
@@ -126,37 +122,6 @@ Print formatting
     output = "{agency} astronaut {name} first on the Moon".format(**locals())
     print(output)
     # POLSA astronaut Jan Twardowski first on the Moon
-
-Print formatting in classes
----------------------------
-* Now f-string formatting is preferred
-
-.. code-block:: python
-
-    class Osoba:
-        first_name = 'Jan'
-        last_name = 'Twardowski'
-
-        def __str__(self):
-            return '{first_name} {last_name}'.format(**self.__dict__)
-
-.. code-block:: python
-
-    class Osoba:
-        first_name = 'Jan'
-        last_name = 'Twardowski'
-
-        def __str__(self):
-            return '{first_name} {last_name}'.format(first_name='Jan', last_name='Twardowski')
-
-.. code-block:: python
-
-    class Osoba:
-        first_name = 'Jan'
-        last_name = 'Twardowski'
-
-        def __str__(self):
-            return f'{self.first_name} {self.last_name}'
 
 Common configuration
 --------------------
@@ -188,63 +153,6 @@ Common configuration
     draw_line(3, 4, **config)
     draw_line(5, 6, **config)
 
-Placeholder class
------------------
-.. code-block:: python
-
-    DATA = [
-        {"sepal_length": 6.0, "sepal_width": 3.4, "petal_length": 4.5, "petal_width": 1.6, "species": "versicolor"},
-        {"sepal_length": 4.9, "sepal_width": 3.1, "petal_length": 1.5, "petal_width": 0.1, "species": "setosa"},
-    ]
-
-    class Iris:
-        def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
-            self.sepal_length = sepal_length
-            self.sepal_width = sepal_width
-            self.petal_length = petal_length
-            self.petal_width = petal_width
-            self.species = species
-
-    flowers = []
-
-    for row in DATA:
-        flower = Iris(**row)
-        flowers.append(flower)
-
-.. code-block:: python
-
-    class Kontakt:
-        def __init__(self, **kwargs):
-            for key, value in kwargs.items():
-                setattr(self, key, value)
-
-
-    kontakt1 = Kontakt(imie='Jan', nazwisko='Twardowski')
-    kontakt1.imie           # Jan
-    kontakt1.nazwisko       # 'Twardowski'
-
-    kontakt2 = Kontakt(sepal_length=6.0, sepal_width=3.4, nazwisko='Twardowski')
-    kontakt2.sepal_length   # 6.0
-    kontakt2.nazwisko       # 'Twardowski'
-
-
-    DATA = {"sepal_length": 6.0, "sepal_width": 3.4, "petal_length": 4.5, "petal_width": 1.6, "species": "versicolor"},
-    kontakt3 = Kontakt(**DATA)
-    kontakt3.species
-    # 'versicolor'
-
-
-    DATA = [
-        {"sepal_length": 6.0, "sepal_width": 3.4, "petal_length": 4.5, "petal_width": 1.6, "species": "versicolor"},
-        {"sepal_length": 4.9, "sepal_width": 3.1, "petal_length": 1.5, "petal_width": 0.1, "species": "setosa"},
-    ]
-    for kontakt in DATA:
-        k = Kontakt(**DATA)
-        k.species
-
-    # 'versicolor'
-    # 'setosa'
-
 Calling function with all variables from higher order function
 --------------------------------------------------------------
 .. code-block:: python
@@ -256,7 +164,6 @@ Calling function with all variables from higher order function
     def function(a, b, c=0):
         x = 4
         y = 5
-
         show(**locals())
 
     function(1, 2)
@@ -288,63 +195,38 @@ Proxy functions
                  float_precision=None):
         ...
 
-    def my_csv(file, decimal=b',', *args, **kwargs):
-        return read_csv(
-            filepath_or_buffer=file,
-            decimal=decimal,
-            encoding='utf-8',
-            usecols=['Petal length', 'Species'],
-            skip_blank_lines=True,
-            *args,
-            **kwargs)
-
-    my_csv('iris.csv', decimal='.', verbose=True)
+    def my_csv(file, encoding='utf-8', *args, **kwargs):
+        return read_csv(file,
+                        encoding=encoding,
+                        *args,
+                        **kwargs)
 
 
-.. code-block:: python
-    :caption: Positional arguments in ``args`` can be passed to proxied function after named parameters!
-
-    def my_csv(file, *args, **kwargs):
-        return pd.read_csv(
-            file,
-            encoding='utf-8',
-            skip_blank_lines=True,
-            *args,
-            **kwargs)
-
-    my_csv('iris.csv', ',', verbose=True)
-
-Init
-----
-.. code-block:: python
-    :caption: One of the most common use of ``*args``, ``**kwargs`` is for proxy methods.
-
-    class Point2D:
-        def __init__(self, x, y):
-            self.x = x
-            self.y = y
-
-
-    class Point3D(Point2D):
-        def __init__(self, z, *args, **kwargs):
-            super().__init__(*args, **kwargs)
-            self.z = z
+    my_csv('iris1.csv')
+    my_csv('iris2.csv', encoding='utf-8')
+    my_csv('iris3.csv', verbose=True)
+    my_csv('iris4.csv', encoding='utf-8', verbose=True)
 
 Decorators
 ----------
 .. code-block:: python
 
-    from functools import wraps
+    def login_required(original_function):
 
-    def login_required(f):
-        @wraps(f)
         def wrapper(*args, **kwargs):
-            if user.is_logged():
-                return f(*args, **kwargs)
+            user = kwargs['request'].user
+
+            if user.is_authenticated():
+                return original_function(*args, **kwargs)
             else:
                 print('Permission denied')
+
         return wrapper
 
+
+    @login_required
+    def edit_profile(request):
+        ...
 
 Assignments
 ===========

@@ -1,4 +1,7 @@
-def is_numeric(*args, **kwargs):
+from typing import Any
+
+
+def is_numeric(*args: Any, **kwargs: Any) -> bool:
     data = list(args) + list(kwargs.values())
 
     if not data:

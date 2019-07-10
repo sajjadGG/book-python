@@ -1,4 +1,7 @@
-def is_numeric(*args):
+from typing import Any
+
+
+def is_numeric(*args: Any) -> bool:
     if not args:
         return False
 
