@@ -5,8 +5,12 @@ Timestamp
 What is timestamp?
 ==================
 * Also called "epoch"
-* Seconds since 1970-01-01T00:00:00.000000+0000
 * Unix era
+* Seconds since 1970-01-01T00:00:00.000000+0000
+* max 32-bit integer is 2,147,483,647
+* If you add +1 to that, you get -2,147,483,647
+* 2,147,483,647 seconds from 01-01-1970 00:00:00 is January 19, 2038
+* If you add one more second, you get a date somewhere in 1902
 
 
 ``datetime``

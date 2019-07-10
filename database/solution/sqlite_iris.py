@@ -31,7 +31,7 @@ SQL_INSERT = """
         :sepal_length,
         :sepal_width,
         :petal_length,
-        :petal_width,
+        :petal_width
     )
 """
 
@@ -86,4 +86,3 @@ with sqlite3.connect(DATABASE) as db:
 
     for row in db.execute(SQL_SELECT):
         print(dict(row))
-
