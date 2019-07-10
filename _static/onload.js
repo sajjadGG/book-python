@@ -24,6 +24,15 @@ function toRoman(number) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+
+    /* Replace solution links to chapter */
+    document.querySelectorAll('a.download').forEach( (a) => {
+        let chapter = window.location.pathname.split('/')[1];
+        a.innerHTML = a.innerHTML.replace('solution',  chapter);
+    });
+
+
+
     let chapters = document.querySelectorAll("nav.wy-nav-side p.caption");
     let menuItems = document.querySelectorAll("nav.wy-nav-side p.caption + ul");
 
