@@ -22,8 +22,8 @@ Recap information about function parameters
 Arbitrary number of positional arguments
 ========================================
 - ``*`` in this context, is not multiplication in mathematical sense
+- ``*`` is used for positional arguments
 - ``args`` is a convention, but you can use any name
-- ``*args`` is used for positional arguments
 - ``*args`` unpacks to ``tuple``
 
 .. code-block:: python
@@ -43,7 +43,7 @@ Arbitrary number of positional arguments
     def echo(a, b, c=0, *args):
         print(a)       # 1
         print(b)       # 2
-        print(c)       # 3
+        print(c)       # 0
         print(args)    # ()
 
 
@@ -64,8 +64,8 @@ Arbitrary number of positional arguments
 Arbitrary number of keyword arguments
 =====================================
 - ``**`` in this context, is not power in mathematical sense
+- ``**`` is used for keyword arguments
 - ``kwargs`` is a convention, but you can use any name
-- ``**kwargs`` is used for keyword arguments
 - ``**kwargs`` unpacks to ``dict``
 
 .. code-block:: python
@@ -158,18 +158,18 @@ Keyword only
 .. code-block:: python
 
     def echo(a, *, b):
-        print(locals())
+        print(a)
+        print(b)
 
     echo(1, b=2)
-    # {'a': 1, 'b': 2}
+    # 1
+    # 2
 
     echo(1, 2)
     # TypeError: echo() takes 1 positional argument but 2 were given
 
     echo(1)
     # TypeError: echo() missing 1 required keyword-only argument: 'b'
-
-
 
 
 Use cases
@@ -241,17 +241,19 @@ Numeric Values, positional only
 * Estimated time of completion: 15 min
 
 #. Stwórz funkcję ``is_numeric``
-#. Funkcja może przyjmować dowolną liczbę argumentów różnych typów
-#. Numeryczną wartością jest ``int`` lub ``float``
-#. Za pomocą ``isinstance()`` sprawdź wszystkie elementy listy:
+#. Funkcja może przyjmować tylko argumenty pozycyjne
+#. Podawane argumenty mogą być dowolnego typu
+#. Za pomocą ``isinstance()`` sprawdź:
 
-    - Zwróć ``True`` jeżeli wszystkie są numeryczne
+    - Zwróć ``True`` jeżeli wszystkie argumenty są tylko typów ``int`` lub ``float``
     - Zwróć ``False`` jeżeli którykolwiek jest innego typu
 
+#. Przez numeryczną wartością rozumiemy
 #. Nie używaj ``all()`` oraz ``any()``
 
 :The whys and wherefores:
     * Definiowanie i uruchamianie funkcji
+    * Wiele argumentów pozycyjnych
     * Sprawdzanie przypadków brzegowych (niekompatybilne argumenty)
     * Parsowanie argumentów funkcji
     * Rzutowanie i konwersja typów
@@ -263,18 +265,18 @@ Numeric Values, positional and keyword
 * Estimated time of completion: 15 min
 
 #. Stwórz funkcję ``is_numeric``
-#. Funkcja może przyjmować dowolną liczbę argumentów różnych typów
-#. Numeryczną wartością jest ``int`` lub ``float``
+#. Funkcja może przyjmować zarówno argumenty pozycyjne jak i nazwane
+#. Podawane argumenty mogą być dowolnego typu
 #. Za pomocą ``isinstance()`` sprawdź:
 
-    - Zwróć ``True`` jeżeli wszystkie są numeryczne
+    - Zwróć ``True`` jeżeli wszystkie argumenty są tylko typów ``int`` lub ``float``
     - Zwróć ``False`` jeżeli którykolwiek jest innego typu
 
-#. Funkcja może przyjmować zarówno argumenty pozycyjne jak i nazwane
 #. Nie używaj ``all()`` oraz ``any()``
 
 :The whys and wherefores:
     * Definiowanie i uruchamianie funkcji
+    * Wiele argumentów pozycyjnych i nazwanych
     * Sprawdzanie przypadków brzegowych (niekompatybilne argumenty)
     * Parsowanie argumentów funkcji
     * Rzutowanie i konwersja typów

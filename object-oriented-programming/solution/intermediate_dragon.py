@@ -1,5 +1,5 @@
 from enum import Enum
-from oop_dragon_alpha import Dragon, Status, Point, Movable
+from basic_dragon import Dragon, Status, Point, Movable
 
 
 class Status(Status):
