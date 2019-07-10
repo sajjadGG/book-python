@@ -157,18 +157,20 @@ Calling function with all variables from higher order function
 --------------------------------------------------------------
 .. code-block:: python
 
-    def show(*args, **kwargs):
+    def lower(*args, **kwargs):
         print(f'args: {args}')
         print(f'kwargs: {kwargs}')
 
-    def function(a, b, c=0):
-        x = 4
-        y = 5
-        show(**locals())
+    def higher(a, b, c=0):
+        d = 4
+        e = 5
+        lower(**locals())
+        # lower(a=a, b=b, c=c, d=d, e=e)
 
-    function(1, 2)
+
+    higher(1, 2)
     # args: ()
-    # kwargs: {'a': 1, 'b': 2, 'c': 0, 'x': 4, 'y': 5}
+    # kwargs: {'a': 1, 'b': 2, 'c': 0, 'd': 4, 'e': 5}
 
 Proxy functions
 ---------------
@@ -203,9 +205,9 @@ Proxy functions
 
 
     my_csv('iris1.csv')
-    my_csv('iris2.csv', encoding='utf-8')
-    my_csv('iris3.csv', verbose=True)
-    my_csv('iris4.csv', encoding='utf-8', verbose=True)
+    my_csv('iris2.csv', encoding='iso-8859-2')
+    my_csv('iris3.csv', encoding='cp1250', verbose=True)
+    my_csv('iris4.csv', verbose=True)
 
 Decorators
 ----------
@@ -227,6 +229,7 @@ Decorators
     @login_required
     def edit_profile(request):
         ...
+
 
 Assignments
 ===========
