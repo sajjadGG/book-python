@@ -90,7 +90,7 @@ class Dragon(Movable):
 
         print(f'{self.name} is dead')
         print(f'Gold {drop["gold"]}')
-        print(f'Movable {self.position_get()}')
+        print(f'Position {self.position_get()}')
 
         return drop
 

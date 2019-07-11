@@ -384,6 +384,7 @@ Dragon (version alpha)
     * Zadaj 25 obrażeń smokowi
     * Zadaj 75 obrażeń smokowi
 
+#. Pozycja Smoka na końcu powinna być x=20, y=40
 #. Możesz wprowadzać dodatkowe pola, metody, funkcje, zmienne, stały, klasy, obiekty, co tylko chcesz
 #. Nie musisz trzymać się kolejności punktów i podpunktów w zadaniu
 #. Nie przeglądaj kolejnych (przyszłych) części zadania. Zadanie jest symulacją pewnego procesu. Jeżeli zaglądniesz w przód, to zepsujesz sobie zabawę.
