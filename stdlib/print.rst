@@ -4,10 +4,12 @@
 Print Formatting
 ****************
 
-Python umożliwia kilka sposobów manipulacji stringami i uwzględnianie zmiennych w wyświetlanych napisach.
 
-Funkcja ``print``
-=================
+``print`` function
+==================
+
+Function definition
+-------------------
 .. code-block:: python
 
     def print(*values, sep=' ', end='\n', file=sys.stdout, flush=False):
@@ -21,16 +23,16 @@ Funkcja ``print``
         """
         ...
 
-Konkatenacja stringów
-=====================
-* Wykorzystanie parametrów funkcji ``print()``
-* Operator ``+`` (with side effects)
-* ``str.join()``
-* ``str.format()``
-* f-string formatting (preferred)
+Intuitive implementation
+------------------------
+.. code-block:: python
+    :caption: Intuitive implementation of ``print`` function
 
-Wykorzystanie parametrów funkcji ``print()``
---------------------------------------------
+    def print(*values, sep=' ', end='\n', ...):
+        return sep.join(values) + end
+
+Printing multiple values
+------------------------
 .. code-block:: python
 
     name = 'José Jiménez'
@@ -45,44 +47,34 @@ Wykorzystanie parametrów funkcji ``print()``
     print('My name...', name, '!', sep=';')
     # My name...;José;Jiménez!
 
-Operator ``+``
+
+String concatenation
+====================
+* ``+`` operator (with side effects)
+* ``str.join()``
+* ``str.format()``
+* f-string formatting (preferred)
+
+``+`` Operator
 --------------
-.. code-block:: python
-
-    name = 'José Jiménez'
-
-    'My name... ' + name + '!'
-    # My name... José Jiménez!
-
-.. code-block:: python
-
-    name = 'José Jiménez'
-    age = 42
-
-    print('My name... ' + name + ' and I am ' + str(age) + ' years old!')
-    # My name... José Jiménez and I am 42 years old!
-
-Operator ``+`` side effect
---------------------------
 * f-string formatting are preferred over ``str`` addition
 * How many ``str`` are in the memory?
 
 .. code-block:: python
 
-    first_name = 'José'
-    last_name = 'Jiménez'
+    name = 'José Jiménez'
 
-
-    first_name + ' ' + last_name
-    # José Jiménez
+    'My name... ' + name
+    # 'My name... José Jiménez'
 
 .. code-block:: python
+    :caption: ``+`` Operator side effect
 
-    first_name = 'José'
-    last_name = 'Jiménez'
+    name = 'José Jiménez'
+    age = 42
 
-    f'{first_name} {last_name}'
-    # José Jiménez
+    'My name... ' + name + ' and I am ' + str(age) + ' years old!'
+    # 'My name... José Jiménez and I am 42 years old!'
 
 ``str.join()``
 --------------
@@ -110,70 +102,108 @@ Operator: ``%s``, ``%d``, ``%f``
 
     name = 'José Jiménez'
     age = 42
+    pi = 3.141592653589793
 
-    def my(name):
-        return name
+    'My name... %s' % name             # My name... José Jiménez
+    'My name... %d' % name             # TypeError: %d format: a number is required, not str
+    'My name... %f' % name             # TypeError: must be real number, not str
 
-    print('My name... %s!' % name)              # My name... José Jiménez!
-    print("%s has %s years" % (name, age))      # José Jiménez has 42 years
-    print('%s has %s years' % (age, name))      # 42 has José Jiménez years
-    print('%s has %.1f years' % (name, age))    # José Jiménez has 42.0 years
-    print('%s has %10.1f years' % (name, age))  # José Jiménez has       42.0 years
-    print('%s has %d years' % (my(name), age))  # José Jiménez has 42 years
+    'I have %s years' % age             # 'I have 42 years'
+    'I have %d years' % age             # 'I have 42 years'
+    'I have %f years' % age             # 'I have 42.000000 years'
 
-    print('%(name)s has %(age)d years' % {
-        'age': age,
-        'name': name,
-    })
-    # José Jiménez has 42 years
+    'Number PI is %s' % pi              # 'Number PI is 3.141592653589793'
+    'Number PI is %f' % pi              # 'Number PI is 3.141593'
+    'Number PI is %d' % pi              # 'Number PI is 3'
 
-    print('My name... %(name)s.' % locals())
-    # My name... José Jiménez.
-
-
-Metoda ``.format()``
---------------------
 .. code-block:: python
 
     name = 'José Jiménez'
     age = 42
 
-    print('{name} is {age} years'.format(name=name, age=age))   # 'José Jiménez is 42 years'
-    print('{age} is {name} years'.format(**locals()))           # '42 is José Jiménez years'
-    print('{} is {} years'.format(name, age))                   # 'José Jiménez is 42 years'
-    print('{0} is {1} years'.format(name, age))                 # 'José Jiménez is 42 years'
-    print('{1} is {0} years'.format(name, age))                 # '42 is José Jiménez years'
-    print('{1:.3} is {0:.1} years'.format(float(age), name))    # 'Jos is 42.0 years'
-    print('{1:.3} is {0:10.1} years'.format(float(age), name))  # 'Jos is       42.0 years'
-
-
-f-strings - Python >= 3.6
--------------------------
-* ``f'{variable}'``
-* ``f'{self.field}'``
-* ``f'{datetime:%Y-%m-%d %H:%M}'``
+    '%s has %s years' % (name, age))      # José Jiménez has 42 years
+    '%s has %s years' % (age, name))      # 42 has José Jiménez years
 
 .. code-block:: python
 
-    import datetime
+    pi = 3.141592653589793
 
-    name = 'José'
+    def square(value):
+        return value ** 2
+
+    'PI squared is %f' % square(pi)      # 'PI squared is 9.869604'
+
+.. code-block:: python
+
+    data = {
+        'name': 'José Jiménez',
+        'age': 42,
+    }
+
+    '%(name)s has %(age)d years' % data
+    # 'José Jiménez has 42 years'
+
+    '%(name)s has %(age)d years' % {'name': 'José Jiménez', 'age': 42}
+    # 'José Jiménez has 42 years'
+
+.. code-block:: python
+
+    name = 'José Jiménez'
     age = 42
-    now = datetime.datetime.utcnow()
-    format = '%Y-%m-%d %H:%M:%S'
 
-    def my(name):
-        return name
+    'My name... %(name)s' % locals()
+    # 'My name... José Jiménez'
 
-    print(f'My name... {name}!')                                     # 'My name... José Jiménez'
-    print(f'My name... {my(name)}, age: {age} years')                # 'My name... José, age: 42 years'
-    print(f'Today is: {now:%Y-%m-%d %H:%M:%S}')                      # 'Today is: 1969-07-21 02:56:15'
-    print(f'Today is: {now:{format}}')                               # 'Today is: 1969-07-21 02:56:15'
+``str.format()``
+----------------
+.. code-block:: python
+
+    name = 'José Jiménez'
+    age = 42
+
+    '{} is {} years'.format(name, age)                     # 'José Jiménez is 42 years'
+    '{0} is {1} years'.format(name, age)                   # 'José Jiménez is 42 years'
+    '{1} is {0} years'.format(name, age)                   # '42 is José Jiménez years'
+
+.. code-block:: python
+
+    name = 'José Jiménez'
+    age = 42
+
+    '{a} is {b} years'.format(a=name, b=age)               # 'José Jiménez is 42 years'
+    '{name} is {age} years'.format(name=name, age=age)     # 'José Jiménez is 42 years'
+    '{age} is {name} years'.format(**locals())             # '42 is José Jiménez years'
+
+f-strings - Python >= 3.6
+-------------------------
+* Preferred way
+
+.. code-block:: python
+
+    name = 'José Jiménez'
+    pi = 3.141592653589793
+
+    def square(value):
+        return value ** 2
+
+    f'My name... {name}'                      # 'My name... José Jiménez'
+    f'PI squared is {square(pi)}'             # 'PI squared is 9.869604401089358'
+
+.. code-block:: python
+
+    from datetime import datetime
 
 
-PEP 3101 -- Advanced String Formatting
-======================================
-* https://www.python.org/dev/peps/pep-3101/
+    now = datetime.now()
+    iso = '%Y-%m-%dT%H:%M:%SZ'
+
+    f'Today is: {now:%Y-%m-%d}')              # 'Today is: 1969-07-21'
+    f'Today is: {now:{iso}}')                 # 'Today is: 1969-07-21T02:56:15Z'
+
+
+Advanced String Formatting
+==========================
+* :pep:`3101`
 
 Basic formatting
 ----------------
@@ -211,17 +241,17 @@ Type casting
 
     number = 3.141592653589793
 
-    f'{number}'                   # '3.141592653589793'
-    f'{number:d}'                 # ValueError: Unknown format code 'd' for object of type 'float'
-    f'{number:f}'                 # '3.141593'
+    f'{number}'                     # '3.141592653589793'
+    f'{number:d}'                   # ValueError: Unknown format code 'd' for object of type 'float'
+    f'{number:f}'                   # '3.141593'
 
 .. code-block:: python
 
     text = 'hello'
 
-    f'{text}'                     # 'hello'
-    f'{text:d}'                   # ValueError: Unknown format code 'd' for object of type 'str'
-    f'{text:f}'                   # ValueError: Unknown format code 'f' for object of type 'str'
+    f'{text}'                       # 'hello'
+    f'{text:d}'                     # ValueError: Unknown format code 'd' for object of type 'str'
+    f'{text:f}'                     # ValueError: Unknown format code 'f' for object of type 'str'
 
 Truncating and rounding
 -----------------------
@@ -270,8 +300,8 @@ Get from ``dict``
         'last_name': 'Twardowski'
     }
 
-    f'{data["first_name"]}'       # 'Jan'
-    f'{data["last_name"]}'        # 'Twardowski'
+    f'{data["first_name"]}'         # 'Jan'
+    f'{data["last_name"]}'          # 'Twardowski'
 
 Get from ``sequence``
 ---------------------
@@ -279,15 +309,15 @@ Get from ``sequence``
 
     data = ['a', 'b', 'c']
 
-    f'{data[1]}'                  # 'b'
-    f'{data[0]} -> {data[2]}'     # 'a -> c'
+    f'{data[1]}'                    # 'b'
+    f'{data[0]} -> {data[2]}'       # 'a -> c'
 
 .. code-block:: python
 
     data = ('a', 'b', 'c')
 
-    f'{data[1]}'                  # 'b'
-    f'{data[0]} -> {data[2]}'     # 'a -> c'
+    f'{data[1]}'                    # 'b'
+    f'{data[0]} -> {data[2]}'       # 'a -> c'
 
 .. code-block:: python
 
@@ -326,8 +356,8 @@ Parametrized formats
     width = 10
 
 
-    f'{text:{align}}'           # 'hello'
-    f'{text:{align}{width}}'    # '  hello   '
+    f'{text:{align}}'               # 'hello'
+    f'{text:{align}{width}}'        # '  hello   '
 
 .. code-block:: python
 
@@ -397,11 +427,11 @@ Custom object formatting
 
     point = Point(x=1, y=2)
 
-    f'{point:2D}'       # '(1, 2)'
-    f'{point:3D}'       # '(1, 2, 0)'
-    f'{point:tuple}'    # '(1, 2, 0)'
-    f'{point:dict}'     # "{'x': 1, 'y': 2, 'z': 0}"
-    f'{point:json}'     # '{"x": 1, "y": 2, "z": 0}'
+    f'{point:2D}'           # '(1, 2)'
+    f'{point:3D}'           # '(1, 2, 0)'
+    f'{point:tuple}'        # '(1, 2, 0)'
+    f'{point:dict}'         # "{'x': 1, 'y': 2, 'z': 0}"
+    f'{point:json}'         # '{"x": 1, "y": 2, "z": 0}'
 
 ``str`` and ``repr``
 --------------------
@@ -425,8 +455,8 @@ Custom object formatting
 
     point = Point(x=1, y=2)
 
-    f'{point!s}'    # '(1, 2, 0)'
-    f'{point!r}'    # 'Point(x=1, y=2, z=0)'
+    f'{point!s}'            # '(1, 2, 0)'
+    f'{point!r}'            # 'Point(x=1, y=2, z=0)'
 
 Quick and easy debugging
 ------------------------
