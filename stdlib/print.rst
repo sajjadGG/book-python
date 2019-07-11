@@ -51,16 +51,16 @@ Operator ``+``
 
     name = 'José Jiménez'
 
-    print('My name... ' + name + '!')
+    'My name... ' + name + '!'
     # My name... José Jiménez!
 
 .. code-block:: python
 
     name = 'José Jiménez'
-    age = 35
+    age = 42
 
     print('My name... ' + name + ' and I am ' + str(age) + ' years old!')
-    # My name... José Jiménez and I am 35 years old!
+    # My name... José Jiménez and I am 42 years old!
 
 Operator ``+`` side effect
 --------------------------
@@ -72,17 +72,30 @@ Operator ``+`` side effect
     first_name = 'José'
     last_name = 'Jiménez'
 
-    print(first_name + ' ' + last_name)  # José Jiménez
+
+    first_name + ' ' + last_name
+    # José Jiménez
 
 .. code-block:: python
 
     first_name = 'José'
     last_name = 'Jiménez'
 
-    print(f'{first_name} {last_name}')   # José Jiménez
+    f'{first_name} {last_name}'
+    # José Jiménez
+
+``str.join()``
+--------------
+.. code-block:: python
+
+    data = ['Jan Twardowski', 'Mark Watney', 'José Jiménez']
+
+    ' '.join(data)              # 'Jan Twardowski Mark Watney José Jiménez'
+    ','.join(data)              # 'Jan Twardowski,Mark Watney,José Jiménez'
+    ', '.join(data)             # 'Jan Twardowski, Mark Watney, José Jiménez'
 
 
-Interpolacja zmiennych
+Variable interpolation
 ======================
 
 Operator: ``%s``, ``%d``, ``%f``
@@ -207,8 +220,8 @@ Type casting
     text = 'hello'
 
     f'{text}'                     # 'hello'
-    f'{text:f}'                   # ValueError: Unknown format code 'f' for object of type 'str'
     f'{text:d}'                   # ValueError: Unknown format code 'd' for object of type 'str'
+    f'{text:f}'                   # ValueError: Unknown format code 'f' for object of type 'str'
 
 Truncating and rounding
 -----------------------
@@ -226,6 +239,7 @@ Truncating and rounding
     f'{number:.2f}'                 # '3.14'
     f'{number: 6.2f}'               # '  3.14'
     f'{number:06.2f}'               # '003.14'
+    f'{number:.6.2f}'               # ValueError: Invalid format specifier
 
 Signed numbers
 --------------
@@ -234,9 +248,15 @@ Signed numbers
     positive = 42
     negative = -42
 
-    f'{positive:+d}'                # '+42'
+
+    f'{positive:d}'                 # '42'
+    f'{negative:d}'                 # '-42'
+
     f'{positive: d}'                # ' 42'
     f'{negative: d}'                # '-42'
+
+    f'{positive:+d}'                # '+42'
+    f'{negative:+d}'                # '-42'
 
     f'{negative:=5d}'               # '-  42'
     f'{positive:=+5d}'              # '+  42'
@@ -245,7 +265,10 @@ Get from ``dict``
 -----------------
 .. code-block:: python
 
-    data = {'first_name': 'Jan', 'last_name': 'Twardowski'}
+    data = {
+        'first_name': 'Jan',
+        'last_name': 'Twardowski'
+    }
 
     f'{data["first_name"]}'       # 'Jan'
     f'{data["last_name"]}'        # 'Twardowski'
@@ -266,6 +289,13 @@ Get from ``sequence``
     f'{data[1]}'                  # 'b'
     f'{data[0]} -> {data[2]}'     # 'a -> c'
 
+.. code-block:: python
+
+    data = {'a', 'b', 'c'}
+
+    f'{data[1]}'
+    # TypeError: 'set' object is not subscriptable
+
 Get from ``class``
 ------------------
 .. code-block:: python
@@ -281,8 +311,10 @@ Get from ``class``
 
     flower = Iris()
 
-    f'{flower.species}'                         # setosa
-    f'{flower.measurements["sepal_width"]}'     # 3.5
+    f'{flower.species}'                             # 'setosa'
+    f'{flower.species:.3}'                          # 'set'
+    f'{flower.measurements["sepal_width"]}'         # '3.5'
+    f'{flower.measurements["sepal_width"]:.3f}'     # '3.500'
 
 Parametrized formats
 --------------------
@@ -342,6 +374,7 @@ Custom object formatting
             self.z = z
 
         def __format__(self, format):
+
             if format == '2D':
                 return f"({self.x}, {self.y})"
 
@@ -372,6 +405,9 @@ Custom object formatting
 
 ``str`` and ``repr``
 --------------------
+* ``!s`` executes ``__str__()``
+* ``!r`` executes ``__repr__()``
+
 .. code-block:: python
 
     class Point:
@@ -399,8 +435,9 @@ Quick and easy debugging
 
 .. code-block:: python
 
-    x = 3
-    print(f'{x*9 + 15=}')
+    number = 3
+
+    f'{number*9 + 15=}'
     # x*9 + 15=42
 
 
