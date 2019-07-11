@@ -200,6 +200,8 @@ Writing ``csv`` - fixed schema
 
 #. Za pomocą ``csv.DictWriter()`` zapisz do pliku *CSV* dane o stałej strukturze
 #. Wszystkie pola muszą być zawsze w cudzysłowach i oddzielone średnikami, kodowanie UTF-8, a na końcu linii Unix newline.
+#. Spróbuj otworzyć plik w MS Excel i w Notatniku, porównaj wyniki
+#. Jeżeli będziesz otwierał plik w MS Excel, to zwróć uwagę, że ten program oczekuje innego kodowania ("windows-1250")
 
 Writing ``csv`` - variable schema
 ---------------------------------

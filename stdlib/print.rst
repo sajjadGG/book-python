@@ -23,6 +23,11 @@ Funkcja ``print``
 
 Konkatenacja stringów
 =====================
+* Wykorzystanie parametrów funkcji ``print()``
+* Operator ``+`` (with side effects)
+* ``str.join()``
+* ``str.format()``
+* f-string formatting (preferred)
 
 Wykorzystanie parametrów funkcji ``print()``
 --------------------------------------------
@@ -114,7 +119,7 @@ Operator: ``%s``, ``%d``, ``%f``
 
 
 Metoda ``.format()``
-====================
+--------------------
 .. code-block:: python
 
     name = 'José Jiménez'
@@ -130,9 +135,7 @@ Metoda ``.format()``
 
 
 f-strings - Python >= 3.6
-=========================
-f-strings to rozwinięcie funkcji ``format``. Jedyne co trzeba zrobić żeby umieścić zmienną w tekście to dodać przed stringiem ``f`` i w nawiasach klamrowych wpisać nazwę zmiennej (np. ``f'to jest zmienna: {zmienna}'``).
-
+-------------------------
 * ``f'{variable}'``
 * ``f'{self.field}'``
 * ``f'{datetime:%Y-%m-%d %H:%M}'``
@@ -163,29 +166,51 @@ Basic formatting
 ----------------
 .. code-block:: python
 
-    one = 'one'
-    two = 'two'
+    text = 'PI'
+    number = 3.14
 
-    '%s %s' % (one, two)        # one two
-    '{} {}'.format(one, two)    # one two
-    '{1} {0}'.format(one, two)  # two one
-    f'{one} {two}'              # one two
+    f'{text} = {number}'            # 'PI = 3.14'
 
 Padding and aligning strings
 ----------------------------
 .. code-block:: python
 
-    text = 'test'
+    text = 'hello'
 
-    f'{text:10}'                    # 'test      '
-    f'{text:<10}'                   # 'test      '
-    f'{text:^10}'                   # '   test   '
-    f'{text:>10}'                   # '      test'
-    f'{text:^6}'                    # ' test  '
-    f'{text:.<10}'                  # 'test......'
+    f'{text:10}'                    # 'hello     '
+    f'{text:<10}'                   # 'hello     '
+    f'{text:^10}'                   # '  hello   '
+    f'{text:>10}'                   # '     hello'
+    f'{text:.<10}'                  # 'hello.....'
+    f'{text:_^10}'                  # '__hello___'
 
+Type casting
+------------
+.. code-block:: python
 
-Truncating long strings
+    number = 3
+
+    f'{number}'                    # '3'
+    f'{number:d}'                  # '3'
+    f'{number:f}'                  # '3.000000'
+
+.. code-block:: python
+
+    number = 3.141592653589793
+
+    f'{number}'                   # '3.141592653589793'
+    f'{number:d}'                 # ValueError: Unknown format code 'd' for object of type 'float'
+    f'{number:f}'                 # '3.141593'
+
+.. code-block:: python
+
+    text = 'hello'
+
+    f'{text}'                     # 'hello'
+    f'{text:f}'                   # ValueError: Unknown format code 'f' for object of type 'str'
+    f'{text:d}'                   # ValueError: Unknown format code 'd' for object of type 'str'
+
+Truncating and rounding
 -----------------------
 .. code-block:: python
 
@@ -194,125 +219,97 @@ Truncating long strings
     f'{text:.5}'                    # 'Lorem'
     f'{text:10.5}'                  # 'Lorem     '
 
-Numbers
--------
-.. code-block:: python
-
-    number = 35
-
-    f'{number:d}'                   # '35'
-
 .. code-block:: python
 
     number = 3.141592653589793
 
-    f'{number:f}'                   # '3.141593'
-
-Padding numbers
----------------
-.. code-block:: python
-
-    number = 42
-
-    f'{number:4d}'                  # '  42'
-
-
-.. code-block:: python
-
-    number = 3.141592653589793
-
+    f'{number:.2f}'                 # '3.14'
+    f'{number: 6.2f}'               # '  3.14'
     f'{number:06.2f}'               # '003.14'
-
-.. code-block:: python
-
-    '%04d' % (42,)
-    # '0042'
-
-    '{:04d}'.format(42)
-    # '0042'
 
 Signed numbers
 --------------
 .. code-block:: python
 
-    '%+d' % (42,)
-    # '+42'
+    positive = 42
+    negative = -42
 
-    '{:+d}'.format(42)
-    # '+42'
+    f'{positive:+d}'                # '+42'
+    f'{positive: d}'                # ' 42'
+    f'{negative: d}'                # '-42'
+
+    f'{negative:=5d}'               # '-  42'
+    f'{positive:=+5d}'              # '+  42'
+
+Get from ``dict``
+-----------------
+.. code-block:: python
+
+    data = {'first_name': 'Jan', 'last_name': 'Twardowski'}
+
+    f'{data["first_name"]}'       # 'Jan'
+    f'{data["last_name"]}'        # 'Twardowski'
+
+Get from ``sequence``
+---------------------
+.. code-block:: python
+
+    data = ['a', 'b', 'c']
+
+    f'{data[1]}'                  # 'b'
+    f'{data[0]} -> {data[2]}'     # 'a -> c'
 
 .. code-block:: python
 
-    '% d' % ((- 23),)
-    # '-23'
+    data = ('a', 'b', 'c')
 
-    '{: d}'.format((- 23))
-    # '-23'
+    f'{data[1]}'                  # 'b'
+    f'{data[0]} -> {data[2]}'     # 'a -> c'
 
-.. code-block:: python
-
-    '% d' % (42,)
-    # ' 42'
-
-    '{: d}'.format(42)
-    # ' 42'
-
-.. code-block:: python
-
-    '{:=5d}'.format((- 23))
-    # '-  23'
-
-    '{:=+5d}'.format(23)
-    # '+  23'
-
-Named placeholders
+Get from ``class``
 ------------------
 .. code-block:: python
 
-    data = {'first': 'Hodor', 'last': 'Hodor!'}
+    class Iris:
+        species = 'setosa'
+        measurements = {
+            'sepal_length': 5.1,
+            'sepal_width': 3.5,
+            'petal_length': 1.3,
+            'petal_width': 0.4,
+        }
 
-    '%(first)s %(last)s' % data
-    # 'Hodor Hodor!'
+    flower = Iris()
 
-    '{first} {last}'.format(**data)
-    # 'Hodor Hodor!'
+    f'{flower.species}'                         # setosa
+    f'{flower.measurements["sepal_width"]}'     # 3.5
+
+Parametrized formats
+--------------------
+.. code-block:: python
+
+    text = 'hello'
+
+    align = '^'
+    width = 10
+
+
+    f'{text:{align}}'           # 'hello'
+    f'{text:{align}{width}}'    # '  hello   '
 
 .. code-block:: python
 
-    '{first} {last}'.format(first='Hodor', last='Hodor!')
-    # 'Hodor Hodor!'
+    number = 3.14159
 
-Getitem and Getattr
--------------------
-.. code-block:: python
+    align = '>'
+    width = 10
+    precision = 2
+    sign = '+'
 
-    person = {'first': 'Jean-Luc', 'last': 'Picard'}
 
-    '{p[first]} {p[last]}'.format(p=person)
-    # 'Jean-Luc Picard'
-
-.. code-block:: python
-
-    data = [4, 8, 15, 16, 23, 42]
-    '{d[4]} {d[5]}'.format(d=data)
-    # '23 42'
-
-.. code-block:: python
-
-    class Plant:
-        type = 'tree'
-
-    '{p.type}'.format(p=Plant())
-    # tree
-
-.. code-block:: python
-
-    class Plant:
-        type = 'tree'
-        kinds = [{'name': 'oak'}, {'name': 'maple'}]
-
-    '{p.type}: {p.kinds[0][name]}'.format(p=Plant())
-    # 'tree: oak'
+    f'{number:.{precision}f}'                       # '3.14'
+    f'{number:{width}.{precision}f}'                # '      3.14'
+    f'{number:{align}{sign}{width}.{precision}f}'   # '     +3.14'
 
 Datetime
 --------
@@ -320,74 +317,22 @@ Datetime
 
     from datetime import datetime
 
-    '{:%Y-%m-%d %H:%M}'.format(datetime(2001, 2, 3, 4, 5))
-    # '2001-02-03 04:05'
 
-Value conversion
-----------------
-.. code-block:: python
+    now = datetime(1969, 7, 21, 14, 56, 15)
 
-    class Data:
-
-        def __str__(self):
-            return 'str'
-
-        def __repr__(self):
-            return 'repr'
+    iso = '%Y-%m-%dT%H:%M:%SZ'
+    date = '%Y-%m-%d'
+    time = '%H:%M'
 
 
-    '%s %r' % (Data(), Data())      # str repr
-    '{0!s} {0!r}'.format(Data())    # str repr
-    f'{Data()!s} {Data()!r}'        # str repr
+    f'{now:%Y-%m-%d %H:%M}'       # '1969-07-21 14:56'
 
-Parametrized formats
---------------------
-.. code-block:: python
+    f'{now:{iso}}'                # '1969-07-21T14:56:15Z'
+    f'{now:{date}}'               # '1969-07-21'
+    f'{now:{time}}'               # '14:56'
 
-    '{:{align}{width}}'.format('test', align='^', width='10')
-    # '   test   '
-
-.. code-block:: python
-
-    '%.*s = %.*f' % (3, 'Gibberish', 3, 2.7182)
-    # 'Gib = 2.718'
-
-    '{:.{prec}} = {:.{prec}f}'.format('Gibberish', 2.7182, prec=3)
-    # 'Gib = 2.718'
-
-.. code-block:: python
-
-    '%*.*f' % (5, 2, 2.7182)
-    # ' 2.72'
-
-    '{:{width}.{prec}f}'.format(2.7182, width=5, prec=2)
-    # ' 2.72'
-
-.. code-block:: python
-
-    '{:{prec}} = {:{prec}}'.format('Gibberish', 2.7182, prec='.3')
-    # 'Gib = 2.72'
-
-.. code-block:: python
-
-    from datetime import datetime
-    dt = datetime(2001, 2, 3, 4, 5)
-
-    '{:{dfmt} {tfmt}}'.format(dt, dfmt='%Y-%m-%d', tfmt='%H:%M')
-    # '2001-02-03 04:05'
-
-.. code-block:: python
-
-    '{:{}{}{}.{}}'.format(2.7182818284, '>', '+', 10, 3)
-    # '     +2.72'
-
-.. code-block:: python
-
-    '{:{}{sign}{}.{}}'.format(2.7182818284, '>', 10, 3, sign='+')
-    # '     +2.72'
-
-Custom objects
---------------
+Custom object formatting
+------------------------
 .. code-block:: python
 
     class Point:
@@ -399,13 +344,53 @@ Custom objects
         def __format__(self, format):
             if format == '2D':
                 return f"({self.x}, {self.y})"
+
             elif format == '3D':
                 return f"({self.x}, {self.y}, {self.z})"
+
+            elif format == 'dict':
+                return str(self.__dict__)
+
+            elif format == 'tuple':
+                return str(tuple(self.__dict__.values()))
+
+            elif format == 'json':
+                import json
+                return json.dumps(self.__dict__)
+
             else:
                 raise ValueError
 
-    p = Point(x=1, y=2)
-    print(f'{p:2D}')
+
+    point = Point(x=1, y=2)
+
+    f'{point:2D}'       # '(1, 2)'
+    f'{point:3D}'       # '(1, 2, 0)'
+    f'{point:tuple}'    # '(1, 2, 0)'
+    f'{point:dict}'     # "{'x': 1, 'y': 2, 'z': 0}"
+    f'{point:json}'     # '{"x": 1, "y": 2, "z": 0}'
+
+``str`` and ``repr``
+--------------------
+.. code-block:: python
+
+    class Point:
+        def __init__(self, x, y, z=0):
+            self.x = x
+            self.y = y
+            self.z = z
+
+        def __str__(self):
+            return f'({self.x}, {self.y}, {self.z})'
+
+        def __repr__(self):
+            return f'Point(x={self.x}, y={self.y}, z={self.z})'
+
+
+    point = Point(x=1, y=2)
+
+    f'{point!s}'    # '(1, 2, 0)'
+    f'{point!r}'    # 'Point(x=1, y=2, z=0)'
 
 Quick and easy debugging
 ------------------------
@@ -417,11 +402,6 @@ Quick and easy debugging
     x = 3
     print(f'{x*9 + 15=}')
     # x*9 + 15=42
-
-
-Więcej informacji
-=================
-* https://pyformat.info - Formatowanie stringów w Python
 
 
 ``pprint``

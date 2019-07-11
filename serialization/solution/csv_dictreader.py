@@ -1,7 +1,8 @@
 import csv
+from typing import List
 
 
-FIELDNAMES = [
+FIELDNAMES: List[str] = [
     'Sepal length',
     'Sepal width',
     'Petal length',

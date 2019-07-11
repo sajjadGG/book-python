@@ -1,7 +1,9 @@
 import json
 from pprint import pprint
+from typing import List
 
-DATA = [
+
+DATA: List[tuple] = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, 'virginica'),
     (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -30,19 +32,22 @@ header, *data = DATA
 iris = []
 
 for values in data:
+    # header == ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
+    iris.append({
+        'Sepal length': values[0],
+        'Sepal width': values[1],
+        'Petal length': values[2],
+        'Petal width': values[3],
+        'Species': values[4]
+    })
+
+    ## Alternatywnie
     # iris.append({key: values[i] for i, key in enumerate(header)})
 
-    pair = zip(header, values)
-    iris.append(dict(pair))
+    ## Alternatywnie
+    # pair = zip(header, values)
+    # iris.append(dict(pair))
 
-    # header == ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
-    # iris.append({
-    #     'Sepal length': values[0],
-    #     'Sepal width': values[1],
-    #     'Petal length': values[2],
-    #     'Petal width': values[3],
-    #     'Species': values[4]
-    # })
 
 with open(r'../tmp/iris.json', mode='w') as file:
     content = json.dumps(iris)

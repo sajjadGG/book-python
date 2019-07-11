@@ -1,8 +1,9 @@
 from datetime import datetime, date, timezone
 import json
+from typing import Dict, List, Union
 
-FILE = '/tmp/json-datetimes.json'
-DATA = {
+FILE: str = '/tmp/json-datetimes.json'
+DATA: Dict[str, Union[Dict[str, Union[date, str]], List[Dict[str, Union[datetime, str]]]]] = {
     "astronaut": {
         "date": date(1961, 4, 12),
         "person": "jose.jimenez@nasa.gov"

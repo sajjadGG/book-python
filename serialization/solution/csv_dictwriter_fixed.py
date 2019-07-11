@@ -1,7 +1,8 @@
 import csv
+from typing import Dict, List
 
 
-DATA = [
+DATA: List[Dict[str, str]] = [
     {'first_name': 'Jan',  'last_name': 'Twardowski'},
     {'first_name': 'José', 'last_name': 'Jiménez'},
     {'first_name': 'Mark', 'last_name': 'Watney'},
