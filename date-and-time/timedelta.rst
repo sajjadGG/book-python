@@ -77,7 +77,6 @@ Complex ``timedelta`` shifts
 .. code-block:: python
     :caption: Complex ``timedelta`` shifts
 
-
     from datetime import timedelta, datetime
 
 
@@ -117,8 +116,8 @@ Complex ``timedelta`` shifts
 
     MONTH = timedelta(days=30.436875)
 
-    d = date(1961, 4, 12)
-    month_before = d - MONTH
+    gagarin = date(1961, 4, 12)
+    gagarin - MONTH
     # datetime.date(1961, 3, 13)
 
 .. code-block:: python
@@ -127,13 +126,13 @@ Complex ``timedelta`` shifts
     from datetime import timedelta, date
 
 
-    def month_before(dt):
+    def month_before(dt, month=30.436875):
         """Average days a month in solar calendar"""
-        return dt - timedelta(days=30.436875)
+        return dt - timedelta(days=month)
 
 
-    d = date(1961, 4, 12)
-    month_before = month_before(d)
+    gagarin = date(1961, 4, 12)
+    month_before(gagarin)
     # datetime.date(1961, 3, 13)
 
 .. code-block:: python
@@ -148,8 +147,8 @@ Complex ``timedelta`` shifts
         return dt - timedelta(days=MONTH)
 
 
-    d = date(1961, 4, 12)
-    month_before = month_before(d)
+    gagarin = date(1961, 4, 12)
+    month_before(gagarin)
     # datetime.date(1961, 3, 13)
 
 
@@ -160,37 +159,37 @@ Time diff
 
     from datetime import datetime
 
-
     SECOND = 1
     MINUTE = 60 * SECOND
     HOUR = 60 * MINUTE
     DAY = 24 * HOUR
-    MONTH = 30.436875 * DAY    # Average days a month in solar calendar
-    YEAR = 365.2425 * DAY      # Solar calendar
+    MONTH = 30.436875 * DAY  # Average days a month in solar calendar
+    YEAR = 365.2425 * DAY  # Solar calendar
+
+    def duration(dt):
+        years, seconds = divmod(dt.total_seconds(), YEAR)
+        months, seconds = divmod(seconds, MONTH)
+        days, seconds = divmod(seconds, DAY)
+        hours, seconds = divmod(dt.seconds, HOUR)
+        minutes, seconds = divmod(seconds, MINUTE)
+
+        return {
+            'years': int(years),
+            'months': int(months),
+            'days': int(days),
+            'hours': int(hours),
+            'minutes': int(minutes),
+            'seconds': int(seconds),
+        }
 
 
     gagarin = datetime(1961, 4, 12, 6, 7)
     armstrong = datetime(1969, 7, 21, 14, 56, 15)
 
-    duration = armstrong - gagarin
+    dt = armstrong - gagarin
     # datetime.timedelta(3022, 31755)
 
-    years, seconds = divmod(duration.total_seconds(), YEAR)
-    months, seconds = divmod(seconds, MONTH)
-    days, seconds = divmod(seconds, DAY)
-    hours, seconds = divmod(duration.seconds, HOUR)
-    minutes, seconds = divmod(seconds, MINUTE)
-
-    difference = {
-        'years': int(years),
-        'months': int(months),
-        'days': int(days),
-        'hours': int(hours),
-        'minutes': int(minutes),
-        'seconds': int(seconds),
-    }
-
-    print(difference)
+    duration(dt)
     # {'years': 8, 'months': 3, 'days': 9, 'hours': 8, 'minutes': 49, 'seconds': 15}
 
 
@@ -203,7 +202,7 @@ Date manipulation
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 
-#. Między dwoma datami upłynęło:
+#. Między startem Gagarina a pierwszym krokiem Armstronga na Księżycu upłynęło:
 
     - 8 lat
     - 3 miesiące

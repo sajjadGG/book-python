@@ -233,6 +233,28 @@ Table of date and time parsing and formatting parameters
 Date formatting
 ===============
 
+ISO Format
+----------
+.. code-block:: python
+    :caption: Datetime formatting to ISO format
+
+    from datetime import datetime
+
+    dt = datetime(1969, 7, 21, 14, 56, 15)
+
+    dt.isoformat()
+    # 1969-07-21T14:56:15
+
+.. code-block:: python
+    :caption: Date formatting to ISO format
+
+    from datetime import date
+
+    d = date(1969, 7, 21)
+
+    d.isoformat()
+    # 1969-07-21
+
 ``f-string`` formatting
 -----------------------
 .. code-block:: python
@@ -278,28 +300,6 @@ Format to string
 
     print(f'Gagarin launched on {formatted}')
     # Gagarin launched on 1961-04-12 06:07
-
-ISO Format
-----------
-.. code-block:: python
-    :caption: Datetime formatting to ISO format
-
-    from datetime import datetime
-
-    dt = datetime(1969, 7, 21, 14, 56, 15)
-
-    dt.isoformat()
-    # 1969-07-21T14:56:15
-
-.. code-block:: python
-    :caption: Date formatting to ISO format
-
-    from datetime import date
-
-    d = date(1969, 7, 21)
-
-    d.isoformat()
-    # 1969-07-21
 
 
 Parsing dates
