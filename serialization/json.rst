@@ -239,6 +239,7 @@ Decoding objects
     import sys
 
 
+    CURRENT_MODULE = sys.modules[__name__]
     DATA = """
     [
         {"__type__":"Contact", "name":"Jan Twardowski", "addresses":[
@@ -269,8 +270,8 @@ Decoding objects
             super().__init__(object_hook=self.default)
 
         def default(self, obj):
-            type = obj.pop('__type__')
-            cls = getattr(sys.modules[__name__], type)
+            cls = obj.pop('__type__')
+            cls = getattr(CURRENT_MODULE, cls)
             return cls(**obj)
 
 
