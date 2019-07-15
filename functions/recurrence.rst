@@ -2,7 +2,7 @@
 Recurrence
 **********
 
-    Aby zrozumieć rekurencję – musisz najpierw zrozumieć rekurencję
+    Aby zrozumieć rekurencję – musisz najpierw zrozumieć rekursję
 
 
 What is recurrence?
@@ -21,6 +21,16 @@ What is recurrence?
             return 1
         else:
             return n * factorial(n-1)
+
+.. code-block:: python
+
+    factorial(5)
+        return 5 * factorial(4)
+            return 4 * factorial(3)
+                return 3 * factorial(2)
+                    return 2 * factorial(1)
+                        return 1 * factorial(0)
+                            return 1
 
 
 Limit
