@@ -67,7 +67,7 @@ Numerical Operators
     "``a *= b``",       "``__imul__()``"
     "``a / b``",        "``__div__()``"
     "``a /= b``",       "``__idiv__()``"
-    "``a % b``",        "``__mod__()``
+    "``a % b``",        "``__mod__()``"
 
 Comparison Operators
 --------------------
@@ -106,7 +106,7 @@ Builtin Functions
     "``round(a, prec)``",     "``__round__()``"
     "``dir(a)``",             "``__dir__()``"
     "``len(a)``",             "``__len__()``"
-    "``delattr(cls, 'a')``",  "``__delattr__()``
+    "``delattr(cls, 'a')``",  "``__delattr__()``"
     "``complex(a)``",         "``__complex__()``"
     "``int(a)``",             "``__int__()``"
     "``float(a)``",           "``__float__()``"
@@ -137,7 +137,7 @@ Builtin keywords
 .. csv-table:: Builtin Keywords Overload
     :header: "Keyword", "Method"
 
-    "``del a``",              "``__delattr__()``
+    "``del a``",              "``__delattr__()``"
 
 Accessors Overload
 ------------------
@@ -145,9 +145,9 @@ Accessors Overload
     :header: "Operator", "Description"
 
     "``a[b]``",                                 "``__getitem__()``"
-    "``a[b] = 10``",                            "``__setitem__()``",
-    "``a in b``",                               "``__contains__()``",
-    "``a[b]`` (when ``b`` is not in ``a``)",    "``__missing__()``",
+    "``a[b] = 10``",                            "``__setitem__()``"
+    "``a in b``",                               "``__contains__()``"
+    "``a[b]`` (when ``b`` is not in ``a``)",    "``__missing__()``"
 
 
 Example

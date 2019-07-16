@@ -270,7 +270,7 @@ Assignments
 
 Defining Classes
 ----------------
-* Filename: :download:`solution/objects_and_classes_iris.py`
+* Filename: :download:`solution/introduction_iris.py`
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
 
