@@ -20,10 +20,68 @@ Switch
         raise NotImplementedError
 
 
-.. literalinclude:: src/oop-polymorphism-function.py
-    :language: python
+Polymorphism on Function
+========================
+.. code-block:: python
     :caption: Polymorphism on Function
 
-.. literalinclude:: src/oop-polymorphism-class.py
-    :language: python
+    class Astronaut:
+        def say_hello(self):
+            print('Howdy from NASA')
+
+    class Cosmonaut:
+        def say_hello(self):
+            print('Privyet z Roscosmos')
+
+
+    def hello(spaceman):
+        spaceman.say_hello()
+
+
+    watney = Astronaut()
+    ivanovic = Cosmonaut()
+
+
+    hello(watney)
+    # Howdy from NASA
+
+    hello(ivanovic)
+    # Privyet z Roscosmos
+
+
+Polymorphism on Classes
+=======================
+.. code-block:: python
     :caption: Polymorphism on Classes
+
+    class Spaceman:
+        def __init__(self, name):
+            self.name = name
+
+        def say_hello(self):
+            raise NotImplementedError
+
+
+    class Astronaut(Spaceman):
+        def say_hello(self):
+            print(f'Howdy from NASA')
+
+
+    class Cosmonaut(Spaceman):
+        def say_hello(self):
+            print(f'Privyet z Roscosmos')
+
+
+    crew = [
+        Astronaut('Mark Watney'),
+        Cosmonaut('Иван Иванович'),
+        Astronaut('Matt Kowalski'),
+        Cosmonaut('Jan Twardowski'),
+    ]
+
+    for member in crew:
+        member.say_hello()
+        # Howdy from NASA
+        # Privyet z Roscosmos
+        # Howdy from NASA
+        # Privyet z Roscosmos
