@@ -175,7 +175,7 @@ Dragon (version beta)
 #. Smok nie może wyjść poza obszar ekranu (1024x768) + napisz ``doctest``
 #. Jeżeli dojdzie do granicy ekranu, to przesuwając dalej, pozycja będzie ustawiona na maks
 #. Zmień smokowi punkty życia na losowy ``int`` z zakresu 100 do 150
-#. Stwórz bohatera (José Jiménez):
+#. Stwórz bohatera "Jan Twardowski":
 
     * losowe punkty życia (200-250)
     * zadaje losowe obrażenia (1-15)

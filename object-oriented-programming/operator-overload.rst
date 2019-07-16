@@ -8,8 +8,20 @@ Why to use operator overload?
 * Readable syntax
 * Simpler operations
 
-Example usage of operator Overload
-----------------------------------
+.. code-block:: python
+
+    class Vector:
+        def __init__(self, x=0.0, y=0.0):
+            self.x = x
+            self.y = y
+
+
+    vector1 = Vector(x=1, y=2)
+    vector2 = Vector(x=3, y=4)
+
+    suma = vector1 + vector2
+    # TypeError: unsupported operand type(s) for +: 'Vector' and 'Vector'
+
 .. code-block:: python
 
     class Vector:
@@ -38,9 +50,69 @@ Example usage of operator Overload
     print(suma)
     # Vector(x=9, y=12)
 
-    suma = vector1 - vector2
-    # TypeError: unsupported operand type(s) for -: 'Vector' and 'Vector'
 
+Operator Overload
+=================
+
+Numerical Operators
+-------------------
+.. csv-table:: Numerical Operator Overload
+    :header: "Operator", "Method"
+
+    "``a + b``",        "``__add__()``"
+    "``a += b``",       "``__iadd__()``"
+    "``a - b``",        "``__sub__()``"
+    "``a -= b``",       "``__isub__()``"
+    "``a * b``",        "``__mul__()``"
+    "``a *= b``",       "``__imul__()``"
+    "``a / b``",        "``__div__()``"
+    "``a /= b``",       "``__idiv__()``"
+    "``a % b``",        "``__mod__()``
+
+Comparison Operators
+--------------------
+.. csv-table:: Comparison Operators Overload
+    :header: "Operator", "Method"
+
+    "``a == b``",       "``__eq__()``"
+    "``a != b``",       "``__ne__()``"
+    "``a < b``",        "``__lt__()``"
+    "``a <= b``",       "``__le__()``"
+    "``a > b``",        "``__gt__()``"
+    "``a >= b``",       "``__ge__()``"
+
+Boolean Operators
+-----------------
+.. csv-table:: Boolean Operators Overload
+    :header: "Operator", "Method"
+
+    "``-a``",           "``__neg__()``"
+    "``+a``",           "``__pos__``"
+    "``a & b``",        "``__and__()``"
+    "``a | b``",        "``__or__()``"
+    "``a ^ b``",        "``__xor__()``"
+    "``a << b``",       "``__lshift__()``"
+    "``a >> b``",       "``__rshift__()``"
+
+Builtin Functions
+-----------------
+.. csv-table:: Builtin Functions Overload
+    :header: "Function", "Method"
+
+    "``abs(a)``",             "``__abs__()``"
+    "``bool(a)``",            "``__bool__()``"
+    "``divmod(a, b)``",       "``__divmod__()``"
+    "``pow(a)``",             "``__pow__()``"
+    "``round(a, prec)``",     "``__round__()``"
+    "``dir(a)``",             "``__dir__()``"
+    "``len(a)``",             "``__len__()``"
+    "``delattr(cls, 'a')``",  "``__delattr__()``
+    "``complex(a)``",         "``__complex__()``"
+    "``int(a)``",             "``__int__()``"
+    "``float(a)``",           "``__float__()``"
+    "``oct(a)``",             "``__oct__()``"
+    "``hex(a)``",             "``__hex__()``"
+    "``reversed()``",         "``__reversed__()``"
 
 .. code-block:: python
 
@@ -56,32 +128,33 @@ Example usage of operator Overload
             return sqrt(self.x**2 + self.y**2)
 
 
-    vector1 = Vector(x=3, y=4)
-    abs(vector1)
+    vector = Vector(x=3, y=4)
+    abs(vector)
     # 5.0
 
-Numerical Operator Overload
-===========================
-.. csv-table:: Operator Overload
-    :header-rows: 1
+Builtin keywords
+----------------
+.. csv-table:: Builtin Keywords Overload
+    :header: "Keyword", "Method"
 
-    "Operator", "Description"
-    "``__add__()``", "``a + b``"
-    "``__iadd__()``", "``a += b``"
-    "``__sub__()``", "``a - b``"
-    "``__isub__()``", "``a -= b``"
-    "``__mul__()``", "``a * b``"
-    "``__imul__()``", "``a *= b``"
-    "``__div__()``", "``a / b``"
-    "``__idiv__()``", "``a /= b``"
-    "``__mod__()``", "``a % b``"
-    "``__divmod__()``", "``divmod(a, b)``"
-    "``__abs__()``", "``abs(a)``"
-    "``__pow__()``", "``pow(a)``"
-    "``__round__()``", "``round(a)``, or ``round(a, x)``, where ``x`` is ndigits presision"
+    "``del a``",              "``__delattr__()``
+
+Accessors Overload
+------------------
+.. csv-table:: Operator Overload
+    :header: "Operator", "Description"
+
+    "``a[b]``",                                 "``__getitem__()``"
+    "``a[b] = 10``",                            "``__setitem__()``",
+    "``a in b``",                               "``__contains__()``",
+    "``a[b]`` (when ``b`` is not in ``a``)",    "``__missing__()``",
+
 
 Example
--------
+=======
+
+Modulo operator for ``int`` and ``str``
+---------------------------------------
 .. code-block:: python
 
     7 % 2               # 1
@@ -92,67 +165,8 @@ Example
 
 .. note:: ``%s``, ``%d``, ``%f`` is currently deprecated in favor of ``f'...'`` string formatting. The topic will be continued in :ref:`Print Formatting` chapter.
 
-
-Logical Operator Overload
-=========================
-.. csv-table:: Operator Overload
-    :header-rows: 1
-
-    "Operator", "Description"
-    "``__eq__()``", "``a == b``"
-    "``__ne__()``", "``a != b``"
-    "``__lt__()``", "``a < b``"
-    "``__le__()``", "``a <= b``"
-    "``__gt__()``", "``a > b``"
-    "``__ge__()``", "``a >= b``"
-    "``__bool__()``", "``bool(a)``"
-    "``__neg__()``", "``-a``"
-    "``__pos__``", "``+a``"
-
-
-Boolean Operator Overload
-=========================
-.. csv-table:: Operator Overload
-    :header-rows: 1
-
-    "Operator", "Description"
-    "``__and__()``", "``a & b``"
-    "``__or__()``", "``a | b``"
-    "``__xor__()``", "``a ^ b``"
-    "``__lshift__()``", "``a << b``"
-    "``__rshift__()``", "``a >> b``"
-
-
-Builtins Function Overload
-==========================
-.. csv-table:: Operator Overload
-    :header-rows: 1
-
-    "Operator", "Description"
-    "``__dir__()``", "``dir(a)``"
-    "``__len__()``", "``len(a)``"
-    "``__delattr__()``", "``delattr(cls, 'a')`` or ``del a``"
-    "``__complex__()``", "``complex(a)``"
-    "``__int__()``", "``int(a)``"
-    "``__float__()``", "``float(a)``"
-    "``__oct__()``", "``oct(a)``"
-    "``__hex__()``", "``hex(a)``"
-    "``__reversed__()``", "``reversed()``"
-
-
-Accessors Overload
-==================
-.. csv-table:: Operator Overload
-    :header-rows: 1
-
-    "Operator", "Description"
-    "``__getitem__()``", "``a[b]``"
-    "``__setitem__()``", "``a[b] = 10``"
-    "``__contains__()``", "``a in b``"
-    "``__missing__()``", "``a[b]`` when ``b`` is not in ``a``"
-
-Example
--------
+Contains in ``numpy``
+---------------------
 .. code-block:: python
 
     import numpy as np

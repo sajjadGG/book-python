@@ -1,5 +1,5 @@
 from enum import Enum
-from basic_dragon import Dragon, Status, Point, Movable
+from basic_dragon_advanced import Dragon, Status, Point, Movable
 
 
 class Status(Status):
@@ -24,9 +24,9 @@ class Character(Dragon):
 
     def update_status(self):
         if not hasattr(self, 'health_full'):
-            self.health_full = self.health
+            self.health_full = self.health_current
 
-        procent = self.health / self.health_full * 100
+        procent = self.health_current / self.health_full * 100
 
         if procent == 100:
             self.status = Status.FULL_HEALTH
@@ -39,23 +39,23 @@ class Character(Dragon):
         else:
             self.status = Status.DEAD
 
-    def position_set(self, position: Point):
+    def set_position(self, position: Point = Point()) -> None:
         """
-        >>> wawelski = Character(name='Red', position=Point(0, 0))
-        >>> wawelski.position_change(right=1)
-        >>> wawelski.position_get()
+        >>> dragon = Character(name='Red', position=Point(0, 0))
+        >>> dragon.change_position(right=1)
+        >>> dragon.get_position()
         Point(x=1, y=0)
-        >>> wawelski.position_change(down=1)
-        >>> wawelski.position_get()
+        >>> dragon.change_position(down=1)
+        >>> dragon.get_position()
         Point(x=1, y=1)
-        >>> wawelski.position_change(left=2)
-        >>> wawelski.position_get()
+        >>> dragon.change_position(left=2)
+        >>> dragon.get_position()
         Point(x=0, y=1)
-        >>> wawelski.position_change(up=2)
-        >>> wawelski.position_get()
+        >>> dragon.change_position(up=2)
+        >>> dragon.get_position()
         Point(x=1, y=1)
         """
-        current_position = self.position_get()
+        current_position = self.get_position()
         x = current_position.x
         y = current_position.y
 
@@ -71,7 +71,7 @@ class Character(Dragon):
         if y < Config.BORDER_Y_MIN:
             y = Config.BORDER_Y_MIN
 
-        super().position_set(Point(x, y))
+        super().set_position(Point(x, y))
 
 
 class CharacterClass(Enum):
@@ -94,24 +94,25 @@ class Hero(Character):
 
 
 def run():
-    wawelski = MediumDragon(name='Wawelski')
-    jose = Hero(name='Jose Jimenez')
+    dragon = MediumDragon(name='Wawelski')
+    hero = Hero(name='Jan Twardowski')
 
     turn = 1
 
-    while wawelski.is_alive() and jose.is_alive():
+    while dragon.is_alive() and hero.is_alive():
         print(f'\nTurn: {turn}')
 
-        dmg = wawelski.attack()
-        jose.take_damage(dmg)
+        dmg = dragon.make_damage()
+        hero.take_damage(dmg)
 
-        if jose.is_alive():
-            dmg = jose.attack()
-            wawelski.take_damage(dmg)
+        if hero.is_alive():
+            dmg = hero.make_damage()
+            dragon.take_damage(dmg)
 
-        if wawelski.is_dead():
-            jose.gold += wawelski.gold
-            print(f'{jose.name} now has: {jose.gold} gold')
+        if dragon.is_dead():
+            drop = dragon.get_drop()
+            hero.gold += drop['gold']
+            print(f'{hero.name} now has: {hero.gold} gold')
 
         turn += 1
 
