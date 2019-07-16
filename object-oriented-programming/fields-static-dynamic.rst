@@ -85,33 +85,3 @@ Static vs. Dynamic Fields
     virginica.kingdom    # Iris
     Iris.kingdom         # Iris
 
-
-``__dict__`` - Getting dynamic fields and values
-================================================
-.. code-block:: python
-    :caption: ``__dict__`` - Getting dynamic fields and values
-
-    class Iris:
-        def __init__(self, sepal_length, sepal_width,
-                     petal_length, petal_width, species):
-
-            self.sepal_length = sepal_length
-            self.sepal_width = sepal_width
-            self.petal_length = petal_length
-            self.petal_width = petal_width
-            self.species = species
-
-    flower = Iris(
-        sepal_length=5.1,
-        sepal_width=3.5,
-        petal_length=1.4,
-        petal_width=0.2,
-        species='setosa'
-    )
-
-    flower.__dict__
-    # {'sepal_length': 5.1,
-    # 'sepal_width': 3.5,
-    # 'petal_length': 1.4,
-    # 'petal_width': 0.2,
-    # 'species': 'setosa'}

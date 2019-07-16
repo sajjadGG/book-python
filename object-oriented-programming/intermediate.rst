@@ -5,19 +5,6 @@ OOP Intermediate
 ****************
 
 
-Private, protected, public?!
-============================
-* Brak pól protected i private
-* Wszystkie pola są public
-* ``_nazwa`` - pola prywatne (tylko konwencja)
-* ``__nazwa__`` - funkcje systemowe
-* ``nazwa_`` - używane przy kolizji nazw
-
-.. literalinclude:: src/oop-private-public.py
-    :language: python
-    :caption: ``_`` and ``__`` - Private, protected, public?!
-
-
 Initial arguments mutability and shared state
 =============================================
 

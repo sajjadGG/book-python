@@ -3,8 +3,11 @@ Stringify objects
 *****************
 
 
+``__str__`` vs. ``__repr__``
+============================
+
 ``__str__()``
-=============
+-------------
 * ``__str__()`` dla użytkowników (być czytelnym)
 * ``print`` converts it's arguments to ``str()`` before printing
 
@@ -37,9 +40,8 @@ Stringify objects
     str(flower)       # Species: setosa
     print(flower)     # Species: setosa
 
-
 ``__repr__()``
-==============
+--------------
 * ``__repr__()`` jest dla developerów (być jednoznacznym)
 
 .. code-block:: python
@@ -58,29 +60,58 @@ Stringify objects
      repr(point)    # Iris(species="setosa")
      point          # Iris(species="setosa")
 
+Examples
+--------
+.. code-block:: python
+    :caption: ``__str__`` and ``__repr__``
 
-``__format__()``
-================
-* ``__format__()`` - do zaawansowanego formatowania
+    import datetime
+
+    str(datetime.datetime.now())
+    # 2019-01-05 20:15:00.927387
+
+    repr(datetime.datetime.now())
+    # datetime.datetime(2019, 1, 5, 20, 15, 0, 684972)
+
 
 .. code-block:: python
+    :caption: printing ``list`` will call ``__repr__`` on each element
 
-    class Iris:
-        def __init__(self, species):
-            self.species = species
+    class Astronaut:
+        def __init__(self, name):
+            self.name = name
 
-        def __format__(self, style):
-            if style == 'flat':
-                return f"({self.x}, {self.y})"
-            elif style == '3D':
-                return f"({self.x}, {self.y}, {self.z})"
-            else:
-                raise ValueError
+    crew = [
+        Astronaut('Jan Twardowski'),
+        Astronaut('Mark Watney'),
+        Astronaut('Melissa Lewis'),
+    ]
 
-    flower = Iris()
+    print(crew)
+    # [
+    #   <__main__.Astronaut object at 0x107871160>,
+    #   <__main__.Astronaut object at 0x107c422e8>,
+    #   <__main__.Astronaut object at 0x108156be0>
+    # ]
 
-    print(f'{p:flat}')    # (1, 2)
-    print(f'{p:3D}')    # (1, 2, 3)
+.. code-block:: python
+    :caption: printing ``list`` will call ``__repr__`` on each element
+
+    class Astronaut:
+        def __init__(self, name):
+            self.name = name
+
+        def __repr__(self):
+            return f'{self.name}'
+
+    crew = [
+        Astronaut('Jan Twardowski'),
+        Astronaut('Mark Watney'),
+        Astronaut('Melissa Lewis'),
+    ]
+
+    print(crew)
+    # [Jan Twardowski, Mark Watney, Melissa Lewis]
 
 
 Print formatting in classes
@@ -115,63 +146,44 @@ Print formatting in classes
         def __str__(self):
             return f'{self.first_name} {self.last_name}'
 
-
-Example
-=======
-
-Datetime
---------
-.. code-block:: python
-    :caption: ``__str__``
-
-    import datetime
-
-    print(datetime.datetime.now())
-    # 2019-01-05 20:15:00.927387
-
-.. code-block:: python
-    :caption: ``__repr__``
-
-    import datetime
-
-    datetime.datetime.now()
-    # datetime.datetime(2019, 1, 5, 20, 15, 0, 684972)
-
-List Print
-----------
-.. code-block:: python
-
-    class Astronaut:
-        def __init__(self, name):
-            self.name = name
-
-    crew = [
-        Astronaut(name='Jan Twardowski'),
-        Astronaut(name='Mark Watney'),
-        Astronaut(name='Melissa Lewis'),
-    ]
-
-    print(crew)
-    # [
-    #   <__main__.Astronaut object at 0x107871160>,
-    #   <__main__.Astronaut object at 0x107c422e8>,
-    #   <__main__.Astronaut object at 0x108156be0>
-    # ]
+``__format__()``
+----------------
+* ``__format__()`` - do zaawansowanego formatowania
 
 .. code-block:: python
 
-    class Astronaut:
-        def __init__(self, name):
-            self.name = name
+    class Point:
+        def __init__(self, x, y, z=0):
+            self.x = x
+            self.y = y
+            self.z = z
 
-        def __repr__(self):
-            return f'{self.name}'
+        def __format__(self, format):
 
-    crew = [
-        Astronaut(name='Jan Twardowski'),
-        Astronaut(name='Mark Watney'),
-        Astronaut(name='Melissa Lewis'),
-    ]
+            if format == '2D':
+                return f"({self.x}, {self.y})"
 
-    print(crew)
-    # [Jan Twardowski, Mark Watney, Melissa Lewis]
+            elif format == '3D':
+                return f"({self.x}, {self.y}, {self.z})"
+
+            elif format == 'dict':
+                return str(self.__dict__)
+
+            elif format == 'tuple':
+                return str(tuple(self.__dict__.values()))
+
+            elif format == 'json':
+                import json
+                return json.dumps(self.__dict__)
+
+            else:
+                raise ValueError
+
+
+    point = Point(x=1, y=2)
+
+    f'{point:2D}'           # '(1, 2)'
+    f'{point:3D}'           # '(1, 2, 0)'
+    f'{point:tuple}'        # '(1, 2, 0)'
+    f'{point:dict}'         # "{'x': 1, 'y': 2, 'z': 0}"
+    f'{point:json}'         # '{"x": 1, "y": 2, "z": 0}'

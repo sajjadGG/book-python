@@ -182,6 +182,7 @@ Object Oriented Programming
     :numbered:
     :caption: Object Oriented Programming
 
+    /object-oriented-programming/objects-and-classes.rst
     /object-oriented-programming/basic.rst
     /object-oriented-programming/inheritance.rst
     /object-oriented-programming/inheritance-composition.rst
