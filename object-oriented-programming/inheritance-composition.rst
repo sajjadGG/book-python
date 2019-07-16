@@ -10,6 +10,31 @@ Inheritance vs. Composition
 Problem with inheritance
 ========================
 .. code-block:: python
+    :caption: Inheritance pattern
+
+    class Vehicle:
+        def run(self):
+            pass
+
+        def drive(self):
+            pass
+
+        def window_open(self):
+            pass
+
+        def window_close(self):
+            pass
+
+
+    class Car(Vehicle):
+        pass
+
+
+    class Truck(Vehicle):
+        pass
+
+
+.. code-block:: python
     :caption: Problem with inheritance
 
     class Vehicle:
@@ -35,6 +60,11 @@ Problem with inheritance
 
 
     class Motorbike(Vehicle):
+        """
+        Motorbike is a vehicle,
+        but doesn't have windows.
+        """
+
         def window_open(self):
             raise NotImplementedError
 
