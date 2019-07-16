@@ -322,7 +322,7 @@ Dragon (version alpha)
 ----------------------
 * Filename: :download:`solution/basic_dragon.py`
 * Lines of code to write: 120 lines
-* Estimated time of completion: 60 min (±10 min), then 30 min live coding with instructor
+* Estimated time of completion: 60 min (±15 min), then 60 min live coding with instructor
 * Warning: Don't delete code, assignment will be continued
 
 .. figure:: img/dragon.gif
@@ -398,3 +398,6 @@ Dragon (version alpha)
     * interakcja między obiektami
     * podział aplikacji na warstwy
     * dobre praktyki programistyczne
+
+:Hint:
+    * ``from random import randint``

@@ -184,7 +184,7 @@ Object Oriented Programming
 
     /object-oriented-programming/basic.rst
     /object-oriented-programming/inheritance.rst
-    /object-oriented-programming/composition-inheritance.rst
+    /object-oriented-programming/inheritance-composition.rst
     /object-oriented-programming/fields-static-dynamic.rst
     /object-oriented-programming/object-str.rst
     /object-oriented-programming/intermediate.rst

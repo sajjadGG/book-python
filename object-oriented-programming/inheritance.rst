@@ -46,40 +46,57 @@ Multilevel Inheritance
         species = 'setosa'
 
 
+    setosa = Setosa()
+
+    setosa.species     # setosa
+    setosa.genus       # iris
+    setosa.kingdom     # plantae
+
+
 Multiple Inheritance
 ====================
 .. code-block:: python
-    :caption: Multiple inheritance.
 
-    class JSONMixin:
-        def to_json(self):
-            return ...
+    class Flower:
+        kingdom = 'plantae'
 
-    class CSVMixin:
-        def to_csv(self):
-            return ...
+    class Iris:
+        genus = 'iris'
 
-    class User(JSONMixin, CSVMixin):
-        def __init__(self, first_name, last_name):
-            ...
+    class Setosa(Flower, Iris):
+        species = 'setosa'
 
-Calling object parent
-=====================
+
+    setosa = Setosa()
+
+    setosa.species     # setosa
+    setosa.genus       # iris
+    setosa.kingdom     # plantae
+
+
+Calling parent methods
+======================
 .. code-block:: python
     :caption: Using ``super()`` on a class
 
-    class Astronaut:
-        def say_hello(self):
-            print('I am an astronaut')
+    class Iris:
+        def __init__(self):
+            self.sepal_length=5.1,
+            self.sepal_width=3.5,
+            self.petal_length=1.4,
+            self.petal_width=0.2,
 
 
-    class FictionalAstronaut(Astronaut):
-        def say_hello(self):
-            print(f'My name... José Jiménez')
-            super().say_hello()
+    class Setosa(Iris):
+        def __init__(self):
+            super().__init__()
+            self.species = 'setosa'
 
 
-    jose = FictionalAstronaut()
-    jose.say_hello()
-    # My name... José Jiménez
-    # I am an astronaut
+    flower = Setosa()
+
+    flower.sepal_length     # 5.1
+    flower.sepal_width      # 3.4
+    flower.petal_length     # 1.4
+    flower.petal_width      # 0.2
+    flower.species          # setosa
