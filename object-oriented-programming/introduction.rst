@@ -292,3 +292,22 @@ Defining Classes
     * petal_width: 0.4
 
 #. Wyświetl na ekranie nazwę gatunku oraz sumę i średnią z pomiarów.
+
+Credit Scoring
+--------------
+* Filename: :download:`solution/introduction_credit_scoring.py`
+* Lines of code to write: 30 lines
+* Estimated time of completion: 20 min
+
+#. Stwórz klasę opisującą klienta banku
+#. Stwórz klasę konto bankowe
+#. Stwórz konta walutowe, oszczędnościowe, emerytalne i bieżące
+#. Wylicz scoring kredytowy na podstawie informacji:
+
+    - czy klient ma żonę/męża
+    - czy klient ma dzieci
+    - czy klient ma umowę o pracę
+    - suma środków zgromadzonych na wszystkich kontach
+    - wiek
+
+#. Przedstaw scoring

@@ -13,9 +13,28 @@ Wśród programistów popularne jest powiedzenie "jeżeli chodzi jak kaczka i kw
 
 Sam mechanizm dynamicznego typowania jest dość kontrowersyjny, ze względu na możliwość bycia nieścisłym. W praktyce okazuje się, że rozwój oprogramowania wykorzystującego ten sposób jest dużo szybszy. Za to zwolennicy statycznego typowania, twierdzą, że projekty wykorzystujące duck typing są trudne w utrzymaniu po latach. Celem tego dokumentu nie jest udowadnianie wyższości jednego rozwiązania nad drugim. Zachęcam jednak do zapoznania się z wykładem "The Unreasonable Effectiveness of Dynamic Typing for Practical Programs", którego autorem jest "Robert Smallshire". Wykład zamieszczonym został w serwisie InfoQ (http://www.infoq.com/presentations/dynamic-static-typing). Wykład w ciekawy sposób dotyka problematyki porównania tych dwóch metod systemu typów. Wykład jest o tyle ciekawy, że bazuje na statystycznej analizie projektów umieszczonych na https://github.com a nie tylko bazuje na domysłach i flamewar jakie programiści lubią prowadzić.
 
-.. literalinclude:: src/oop-duck-typing.py
-    :language: python
+.. code-block:: python
     :caption: Duck typing
+
+    {}  # dict
+    {1}  # set
+    {1, 2}  # set
+    {1: 2}  # dict
+    {1: 1, 2: 2}  # dict
+
+    my_data = {}
+    isinstance(my_data, (set, dict))  # True
+
+    isinstance(my_data, dict)  # True
+    isinstance(my_data, set)  # False
+
+    my_data = {1}
+    isinstance(my_data, set)  # True
+    isinstance(my_data, dict)  # False
+
+    my_data = {1: 1}
+    isinstance(my_data, set)  # False
+    isinstance(my_data, dict)  # True
 
 
 Everything is an object

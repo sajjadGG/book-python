@@ -5,17 +5,27 @@ OOP Basic
 *********
 
 
-Private, protected, public?!
-============================
-* Brak pól protected i private
-* Wszystkie pola są public
-* ``_nazwa`` - pola prywatne (tylko konwencja)
-* ``__nazwa__`` - funkcje systemowe
-* ``nazwa_`` - używane przy kolizji nazw
+Access modifiers
+================
+* No protected i private
+* All fields are always public
+* ``_nazwa`` - private fields (by convention)
+* ``__nazwa__`` - system methods
+* ``nazwa_`` - used while name collision
 
-.. literalinclude:: src/oop-private-public.py
-    :language: python
+.. code-block:: python
     :caption: ``_`` and ``__`` - Private, protected, public?!
+
+    class Astronaut:
+        first_name = ''     # public
+        last_name = ''      # public
+        _agency = None      # private
+
+        def print_(self):   # avoid name collision with print
+            print(self.__str__())
+
+        def __str__(self):  # system function
+            return f'My name... {self.name}'
 
 
 ``__dict__`` - Getting dynamic fields and values
@@ -160,3 +170,16 @@ Dragon (version alpha)
 :Hint:
     * ``from random import randint``
     * ``logging.debug()``
+
+Bank i Bankomaty
+----------------
+* Filename: :download:`solution/basic_bank.py`
+* Lines of code to write: 60 lines
+* Estimated time of completion: 20 min
+
+#. Klient może otworzyć konto w banku
+#. Bank może mieć wiele kont dla różnych klientów
+#. Każde konto ma unikalny numer, który jest generowany przy zakładaniu
+#. Klient może odpytać o swój numer
+#. Klient może wpłacić pieniądze na swoje konto
+#. Klient może wybrać pieniądze z bankomatu

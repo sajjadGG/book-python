@@ -12,9 +12,29 @@ Tell - don't ask
 * It reminds us that rather than asking an object for data and acting on that data, we should instead tell an object what to do.
 * This encourages to move behavior into an object to go with the data.
 
-.. literalinclude:: src/oop-tell-dont-ask.py
-    :language: python
-    :caption: Tell - don't ask
+.. code-block:: python
+    :caption: Tell - don't ask (Bad)
+
+    class Rocket:
+        status = 'off'
+
+
+    soyuz = Rocket()
+    soyuz.status = 'on'
+
+.. code-block:: python
+    :caption: Tell - don't ask (Good)
+
+    class Rocket:
+        status = 'off'
+
+        def ignite(self):
+            self.status = 'on'
+
+
+    soyuz = Rocket()
+    soyuz.ignite()
+
 
 Do not run methods in ``__init__()``
 ------------------------------------

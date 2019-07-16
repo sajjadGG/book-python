@@ -73,6 +73,17 @@ Defining Classes
         (7.0, 3.2, 4.7, 1.4, 'versicolor'),
         (7.6, 3.0, 6.6, 2.1, 'virginica'),
         (4.9, 3.0, 1.4, 0.2, 'setosa'),
+        (4.9, 2.5, 4.5, 1.7, 'virginica'),
+        (7.1, 3.0, 5.9, 2.1, 'virginica'),
+        (4.6, 3.4, 1.4, 0.3, 'setosa'),
+        (5.4, 3.9, 1.7, 0.4, 'setosa'),
+        (5.7, 2.8, 4.5, 1.3, 'versicolor'),
+        (5.0, 3.6, 1.4, 0.3, 'setosa'),
+        (5.5, 2.3, 4.0, 1.3, 'versicolor'),
+        (6.5, 3.0, 5.8, 2.2, 'virginica'),
+        (6.5, 2.8, 4.6, 1.5, 'versicolor'),
+        (6.3, 3.3, 6.0, 2.5, 'virginica'),
+        (6.9, 3.1, 4.9, 1.5, 'versicolor'),
         (4.6, 3.1, 1.5, 0.2, 'setosa'),
     ]
 
@@ -103,25 +114,6 @@ Defining Classes
              virginica  19.3  4.83
                 setosa   9.5  2.38
                 setosa   9.4  2.35
-
-Credit Scoring
---------------
-* Filename: :download:`solution/intermediate_credit_scoring.py`
-* Lines of code to write: 30 lines
-* Estimated time of completion: 20 min
-
-#. Stwórz klasę opisującą klienta banku
-#. Stwórz klasę konto bankowe
-#. Stwórz konta walutowe, oszczędnościowe, emerytalne i bieżące
-#. Wylicz scoring kredytowy na podstawie informacji:
-
-    - czy klient ma żonę/męża
-    - czy klient ma dzieci
-    - czy klient ma umowę o pracę
-    - suma środków zgromadzonych na wszystkich kontach
-    - wiek
-
-#. Przedstaw scoring
 
 Basic Address Book
 ------------------
@@ -206,16 +198,3 @@ Dragon (version beta)
 
 :Hint:
     * Aby zaimportować trzeba najpierw w katalogu stworzyć pusty plik ``__init__.py``
-
-Bank i Bankomaty
-----------------
-* Filename: :download:`solution/intermediate_bank.py`
-* Lines of code to write: 60 lines
-* Estimated time of completion: 20 min
-
-#. Klient może otworzyć konto w banku
-#. Bank może mieć wiele kont dla różnych klientów
-#. Każde konto ma unikalny numer, który jest generowany przy zakładaniu
-#. Klient może odpytać o swój numer
-#. Klient może wpłacić pieniądze na swoje konto
-#. Klient może wybrać pieniądze z bankomatu
