@@ -8,7 +8,7 @@ class Property:
         else:
             raise ValueError(f'Value must be between {self.MIN} and {self.MAX}')
 
-    def __del__(self):
+    def __delete__(self):
         self.value = None
 
 
