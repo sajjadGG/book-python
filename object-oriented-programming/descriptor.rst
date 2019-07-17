@@ -182,8 +182,8 @@ Longitude and Latitude
 #. Stwórz klasę ``GeographicCoordinate``
 #. Klasa ma mieć pola:
 
-    * ``latitude`` - min: -180.0; max: 180.0
-    * ``longitude`` - min: -90.0; max 90.0
+    * ``latitude`` - min: -90.0; max 90.0
+    * ``longitude`` - min: -180.0; max: 180.0
     * ``elevation`` - min: -10,994; max: 8,848 m
 
 #. Wykorzystując deskryptory dodaj mechanizm sprawdzania wartości
