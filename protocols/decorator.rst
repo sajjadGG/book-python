@@ -73,12 +73,11 @@ Zastosowanie
 Example
 =======
 
-Example 1
----------
+File exists
+-----------
 .. code-block:: python
 
     import os
-    import logging
 
 
     def if_file_exists(func):
@@ -87,7 +86,7 @@ Example 1
             if os.path.exists(filename):
                 return func(filename)
             else:
-                logging.error(f'File "{filename}" does not exists')
+                print(f'File "{filename}" does not exists')
 
         return check
 
@@ -104,8 +103,8 @@ Example 1
         print_file('/tmp/passwd')
 
 
-Example 2
----------
+Deprecated
+----------
 .. code-block:: python
 
     import warnings
@@ -131,48 +130,47 @@ Example 2
         pass
 
 
-Example 3
----------
-.. literalinclude:: src/decorators-function.py
-    :language: python
+Timeout
+-------
+.. code-block:: python
     :caption: Decorator usage
 
-
-Przykład zastosowania
----------------------
-- Zagnieżdżone
-- wykonywane od góry
-
-.. code-block:: python
-
-    @timeout(seconds=10)
-    def calculate(operations=[], collection):
-        total = 0
-
-        for operation in operations:
-            total += operations(collection)
-
-        return total
+    import signal
+    from time import sleep
 
 
-Function Decorators
-===================
+    def timeout(function, seconds=2, error_message='Timeout'):
 
-Decorator as function
----------------------
-.. code-block:: python
-
-    def my_decorator(f):
         def wrapper(*args, **kwargs):
-            return f(*args, **kwargs)
+
+            def handler(signum, frame):
+                raise TimeoutError
+
+            signal.signal(signal.SIGALRM, handler)
+            signal.alarm(seconds)
+
+            try:
+                function(*args, **kwargs)
+            except TimeoutError:
+                print(error_message)
+            finally:
+                signal.alarm(0)
+
         return wrapper
 
-    @my_decorator
-    def func(x):
-        return x
 
-Decorator as class
-------------------
+    @timeout
+    def connect(username, password, host='127.0.0.1', port='80'):
+        print('Connecting...')
+        sleep(5)
+        print('Connected')
+
+
+    connect('admin', 'admin')
+
+
+Class Decorators
+================
 .. code-block:: python
 
     class memoize(dict):
@@ -198,105 +196,6 @@ Decorator as class
     foo('hi', 3)    # 'hihihi'
     foo             # {(2, 4): 8, ('hi', 3): 'hihihi'}
 
-
-Class Decorators
-================
-
-@staticmethod
--------------
-.. code-block:: python
-    :caption: Functions on a high level of a module lack namespace
-
-    def add(a, b):
-        return a + b
-
-    def sub(a, b):
-        return a - b
-
-
-    add(1, 2)
-    sub(8, 4)
-
-.. code-block:: python
-    :caption: When ``add`` and ``sub`` are in ``Calculator`` class (namespace) they get instance (``self``) as a first argument. Instantiating Calculator is not needed, as of functions do not read or write to instance variables.
-
-    class Calculator:
-
-        def add(self, a, b):
-            return a + b
-
-        def sub(self, a, b):
-            return a - b
-
-
-    Calculator.add(10, 20)  # TypeError: add() missing 1 required positional argument: 'b'
-    Calculator.sub(8, 4)    # TypeError: add() missing 1 required positional argument: 'b'
-
-    calc = Calculator()
-    calc.add(1, 2)          # 3
-    calc.sub(8, 4)          # 4
-
-.. code-block:: python
-    :caption: Class ``Calculator`` is a namespace for functions. ``@staticmethod`` remove instance (``self``) argument to method.
-
-    class Calculator:
-
-        @staticmethod
-        def add(a, b):
-            return a + b
-
-        @staticmethod
-        def sub(a, b):
-            return a - b
-
-
-    Calculator.add(1, 2)
-    Calculator.sub(8, 4)
-
-@classmethod
-------------
-- ``@classmethod`` turns a normal method to a factory method.
-- first argument for ``@classmethod`` function must always be ``cls`` (class)
-- Factory methods, that are used to create an instance for a class using for example some sort of pre-processing.
-- Static methods calling static methods: if you split a static methods in several static methods, you shouldn't hard-code the class name but use class methods
-
-.. code-block:: python
-    :emphasize-lines: 7-10,21,24,30,31
-
-    import json
-
-    class JSONSerializable:
-        def to_json(self):
-            return json.dumps(self.__dict__)
-
-        @classmethod
-        def from_json(cls, data):
-            data = json.loads(data)
-            return cls(**data)
-
-
-    class User:
-        def __init__(self, first_name, last_name):
-            self.first_name = first_name
-            self.last_name = last_name
-
-        def __str__(self):
-            return f'{self.first_name} {self.last_name}'
-
-    class Guest(User, JSONSerializable):
-        pass
-
-    class SuperUser(User, JSONSerializable):
-        pass
-
-
-    DATA = '{"first_name": "Jan", "last_name": "Twardowski"}'
-
-    guest = Guest.from_json(DATA)
-    root = SuperUser.from_json(DATA)
-
-    type(guest)     # <class '__main__.Guest'>
-    type(root)      # <class '__main__.SuperUser'>
 
 
 ``functools``
@@ -340,19 +239,22 @@ LRU (least recently used) cache
 -----------
 .. code-block:: python
 
-    def memoize(function):
-        from functools import wraps
+    from functools import wraps
 
-        memo = {}
 
-        @wraps(function)
-        def wrapper(*args):
-            if args in memo:
-                return memo[args]
+    def memoize(func):
+        cache = getattr(func, '__cache__', {})
+
+        @wraps(func)
+        def wrapper(*func_args):
+            if func_args in cache:
+                return cache[func_args]
             else:
-                rv = function(*args)
-                memo[args] = rv
-                return rv
+                result = func(*func_args)
+                cache[func_args] = result
+                setattr(func, '__cache__', cache)
+                return result
+
         return wrapper
 
 
@@ -361,7 +263,8 @@ LRU (least recently used) cache
         if n < 2: return n
         return fibonacci(n - 1) + fibonacci(n - 2)
 
-    fibonacci(25)
+
+    print(fibonacci(25))
 
 
 Przykład
@@ -372,33 +275,26 @@ Example 2
 .. code-block:: python
 
     class LoginCheck:
-        '''
-        This class checks whether a user
-        has logged in properly via
-        the global "check_function". If so,
-        the requested routine is called.
-        Otherwise, an alternative page is
-        displayed via the global "alt_function"
-        '''
-        def __init__(self, f):
-            self._f = f
+        def __init__(self, func):
+            self._func = func
 
         def __call__(self, *args):
-            Status = check_function()
-            if Status is 1:
-                return self._f(*args)
+            if is_authenticated():
+                return self._func(*func_args)
             else:
-                return alt_function()
+                return on_error()
 
-    def check_function():
-        return test
 
-    def alt_function():
-        return 'Sorry - this is the forced behaviour'
+    def is_authenticated():
+        ...
+
+    def on_error():
+        print('Sorry - this site private')
+
 
     @LoginCheck
     def display_members_page():
-        print 'This is the members page'
+        print('This is the members page')
 
 Example 3
 ---------

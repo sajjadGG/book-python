@@ -12,16 +12,16 @@ Accessing class fields using setter and getter
         name = ''
 
         def set_name(self, name):
-            print('I can print some log messages')
+            print('Log, that value is being changed')
             self.name = name
 
         def get_name(self):
             return self.name
 
-    jose = Astronaut()
-    jose.set_name('José Jiménez')
+    astro = Astronaut()
+    astro.set_name('Jan Twardowski')
 
-    print(jose.get_name())
+    print(astro.get_name())
 
 Use case
 --------
@@ -37,7 +37,7 @@ Use case
     @admin.register(ZWaveSensor)
     class ZWaveSensorAdmin(HabitatAdmin):
         change_list_template = 'sensors/change_list_charts.html'
-        list_display = ['date', 'time', 'type', 'device', 'value', 'unit']
+        list_display = ['mission_date', 'mission_date', 'type', 'device', 'value', 'unit']
         list_filter = ['created', 'type', 'unit', 'device']
         search_fields = ['^date', 'device']
         ordering = ['-datetime']
@@ -46,7 +46,7 @@ Use case
             list_display = self.list_display
 
             if request.user.is_superuser:
-                list_display = ['datetime'] + list_display
+                list_display = ['earth_datetime'] + list_display
 
             return list_display
 
@@ -60,10 +60,10 @@ Accessing class fields using properties
         def __init__(self, name=''):
             self.name = name
 
-    ivan = Astronaut()              # either put ``name`` as an argument for ``__init__()``
-    ivan.name = 'Ivan Иванович'     # or create dynamic field in runtime
+    astro = Astronaut()              # either put ``name`` as an argument for ``__init__()``
+    astro.name = 'Jan Twardowski'     # or create dynamic field in runtime
 
-    print(ivan.name)
+    print(astro.name)
 
 
 Dynamically creating fields
@@ -79,13 +79,13 @@ Dynamically creating fields
                 setattr(self, key, value)
 
 
+    jan = Astronaut(last_name='Twardowski', addresses=())
     ivan = Astronaut(first_name='Иван', last_name='Иванович', agency='Roscosmos')
-    jose = Astronaut(last_name='Jimenez', addresses=())
 
+    print(jan.last_name)   # Twardowski
     print(ivan.first_name)  # Иван
-    print(jose.last_name)   # Jimenez
 
-    print(jose.__dict__)    # {'last_name': 'Jimenez', 'addresses': ()}
+    print(jan.__dict__)    # {'last_name': 'Twardowski', 'addresses': ()}
     print(ivan.__dict__)    # {'last_name': 'Иванович', 'first_name': 'Иван', 'agency': 'Roscosmos'}
 
 

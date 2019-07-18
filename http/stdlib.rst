@@ -172,7 +172,7 @@ Own HTTP Sever
         httpd.serve_forever()
 
     except KeyboardInterrupt:
-        print ('^C received, shutting down the web server...')
+        print('^C received, shutting down the web server...')
         httpd.socket.close()
 
 Threaded server with JSON response

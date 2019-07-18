@@ -122,7 +122,7 @@ Missing ``return`` from constructor
         def __init__(self):
             print("Iris.__init__() called")  # -> is actually never called
 
-    print Iris()
+    Iris()
     # Iris.__new__() called
     # None
 
@@ -138,7 +138,7 @@ Return invalid from constructor
             print("Iris.__new__() called")
             return 29
 
-    print Iris()
+    Iris()
     # Iris.__new__() called
     # 29
 

@@ -751,7 +751,7 @@ Array iteration
     >>> a = np.array([1, 4, 5], int)
 
     for x in a:
-        print x
+        print(x)
 
     # 1
     # 4
@@ -762,7 +762,7 @@ Array iteration
     a = np.array([[1, 2], [3, 4], [5, 6]], float)
 
     for x in a:
-        print x
+        print(x)
 
     # [ 1. 2.]
     # [ 3. 4.]

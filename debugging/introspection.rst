@@ -309,7 +309,7 @@ Example
                 try:
                     attrib = models_module.__getattribute__(attr)
                     if issubclass(attrib, models.Model) and attrib.__module__== models_name:
-                    print "%s.%s" % (models_name, attr)
+                    print(f'{models_name}.{attr}')
                 except TypeError, e:
                     pass
         except ImportError, e:
