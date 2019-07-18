@@ -9,22 +9,28 @@ Threads vs processes
 Process
 -------
 #. Co to jest proces?
-#. Ile może być procesów?
+#. Ile czasu trwa tworzenie procesów?
+#. Kto zarządza procesami?
+#. Ile może być równoległych procesów?
 #. Co to jest ``nice``
 #. Jak komunikować się między procesami?
-#. Ile może być procesów przetwarzanych równolegle na procesorze czterordzeniowym (z i bez Hyper Threading)?
 
 Thread
 ------
 #. Co to jest wątek?
-#. Ile wątków może być w ramach procesów?
+#. Ile czasu trwa tworzenie wątków?
+#. Kto zarządza wątkami?
+#. Ile może być równoległych wątków?
+#. Ile wątków może być w ramach jednego procesu?
 #. Jak komunikować się między wątkami?
 #. Czy współdzielenie pamięci przez wątki jest dobre czy złe?
-#. Ile może być wątków przetwarzanych równolegle na procesorze czterordzeniowym (z i bez Hyper Threading)?
 
 Threads vs processes
 --------------------
 #. Czym się różnią wątki od procesów?
+#. Ile może być wątków przetwarzanych równolegle na procesorze czterordzeniowym (z i bez Hyper Threading)?
+#. Ile może być procesów przetwarzanych równolegle na procesorze czterordzeniowym (z i bez Hyper Threading)?
+#. Jak na wątki i procesy wpływa GIL?
 
 
 Problemy z wątkami
@@ -138,67 +144,152 @@ Synchronizacja wątków
 
     from threading import Thread
 
+    RUNNING = []
+
 
     class MyThread(Thread):
         def run(self):
             print('hello')
 
 
-    running_threads = []
-
-
     t1 = MyThread()
     t1.start()
-    running_threads.append(t1)
+    RUNNING.append(t1)
 
     t2 = MyThread()
     t2.start()
-    running_threads.append(t2)
+    RUNNING.append(t2)
 
-
-    for thread in running_threads:
+    for thread in RUNNING:
         thread.join()
 
 .. code-block:: python
 
     from threading import Thread
 
+    RUNNING = []
+
 
     class MyThread(Thread):
         def run(self):
             print('hello')
 
 
-    running_threads = []
-
     def spawn(cls, count=1):
         for i in range(count):
             t = cls()
             t.start()
-            running_threads.append(t)
+            RUNNING.append(t)
 
 
     spawn(MyThread, count=10)
 
 
-    for thread in running_threads:
+    for thread in RUNNING:
         thread.join()
 
 
 Zamykanie wątków
 ================
-.. literalinclude:: src/threading-synchronization.py
-    :name: listing-threading-synchronization
-    :language: python
+.. code-block:: python
     :caption: Synchronizacja wątków
+
+    from queue import Queue
+    from threading import Thread, Lock
+    from time import sleep
+
+
+    EXIT = False
+    LOCK = Lock()
+    TODO = Queue()
+    RUNNING = []
+
+
+    class MyThread(Thread):
+        def run(self):
+            while not EXIT:
+                # Remove and return an item from the queue.
+                job = TODO.get()
+
+                # Execute work
+                print(f'Will do the work: {job}')
+
+                # Indicate that a formerly enqueued task is complete.
+                TODO.task_done()
+                sleep(1)
+
+            print(f'Exiting {self.name}')
+
+
+    # Create new threads
+    def spawn_worker(count=1):
+        for i in range(count):
+            thread = MyThread()
+            thread.start()
+            RUNNING.append(thread)
+
+
+    if __name__ == '__main__':
+        spawn_worker(5)
+
+        # Fill the queue
+        with LOCK:
+            for task in ['One', 'Two', 'Three', 'Four', 'Five']:
+                TODO.put(task)
+
+        # Wait for queue to empty
+        while not TODO.empty():
+            pass
+
+        # Notify threads it's time to exit
+        EXIT = True
+
+        # Wait for all threads to complete
+        for thread in RUNNING:
+            thread.join()
+
+        print(f'Exiting Main Thread')
 
 
 Workery
 =======
-.. literalinclude:: src/threading-worker.py
-    :name: listing-threading-worker
-    :language: python
+.. code-block:: python
     :caption: Model Workerów
+
+    from queue import Queue
+    from threading import Thread
+
+    TODO = Queue()
+
+
+    class Worker(Thread):
+        def run(self):
+            while True:
+                # Remove and return an item from the queue.
+                job = TODO.get()
+
+                # Execute work
+                print(f'Will do the work: {job}')
+
+                # Indicate that a formerly enqueued task is complete.
+                TODO.task_done()
+
+
+    def spawn_worker(count=1):
+        for i in range(count):
+            Worker().start()
+
+
+    if __name__ == '__main__':
+        spawn_worker(3)
+
+        TODO.put('ping')
+        TODO.put('ls -la')
+        TODO.put('echo "hello world"')
+        TODO.put('cat /etc/passwd')
+
+        # wait to complete all tasks
+        TODO.join()
 
 
 Assignments
