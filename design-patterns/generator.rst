@@ -13,16 +13,17 @@ Lazy evaluation
 Declaring generators
 --------------------
 .. code-block:: python
+    :caption: This will not execute code!
 
-    # This will not execute code!
     range(0, 1E30)
     range(0, 1E30)
     range(0, 1E30)
 
 .. code-block:: python
+    :caption: This will only create generator expression, but not execute it!
 
-    # This will only create generator expression, but not execute it!
     numbers = range(0, 1E30)
+
     print(numbers)
     # range(0, 1E30)
 
@@ -81,12 +82,13 @@ Comprehensions
 .. code-block:: python
 
     tuple(x for x in range(0, 5))       # (0, 1, 2, 3, 4)
+    (x for x in range(0, 5))            # <generator object <genexpr> at 0x1197032a0>
 
 .. code-block:: python
 
-    all(x for x in range(0, 5))                # False
-    any(x for x in range(0, 5) if x % 5 == 0)  # True
-    sum(x*x for x in range(0, 10, 2))          # 120
+    all(x for x in range(0, 5))         # False
+    any(x for x in range(0, 5))         # True
+    sum(x for x in range(0, 5))         # 10
 
 Generator Expressions
 ---------------------
@@ -131,15 +133,16 @@ Which one is better?
 * Comprehensions - Using values more than one
 * Generators - Using value one (for example in the loop iterator)
 
+
 Returning nested objects
-------------------------
+========================
 .. code-block:: python
     :caption: Returning nested objects
 
-    def get_tuple(number):
+    def my_function(number):
         return number, number+10
 
-    [get_tuple(x) for x in range(0, 5)]
+    [my_function(x) for x in range(0, 5)]
     # [
     #   (0, 10),
     #   (1, 11),
@@ -151,14 +154,14 @@ Returning nested objects
 .. code-block:: python
     :caption: Returning nested objects
 
-    def get_dict(number):
+    def my_function(number):
         if number % 2 == 0:
             return {'number': number, 'status': 'even'}
         else:
             return {'number': number, 'status': 'odd'}
 
 
-    [get_dict(x) for x in range(0, 5)]
+    [my_function(x) for x in range(0, 5)]
     # [
     #    {'number': 0, 'status': 'even'},
     #    {'number': 1, 'status': 'odd'},
@@ -199,7 +202,7 @@ Nested Comprehensions
     )
 
 
-Operator ``yield``
+``yield`` Operator
 ==================
 .. code-block:: python
 
@@ -268,8 +271,8 @@ Operator ``yield``
     # (4.6, 3.4, 1.4, 0.3, 'setosa')
 
 
-The whys and wherefores
-=======================
+Example
+=======
 
 Filtering ``list`` items
 ------------------------

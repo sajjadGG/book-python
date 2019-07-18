@@ -18,7 +18,8 @@ Traditional
     for x in range(0, 5):
         numbers.append(x+10)
 
-    # numbers = [10, 11, 12, 13, 14]
+    print(numbers)
+    # [10, 11, 12, 13, 14]
 
 List Comprehension
 ------------------
@@ -26,6 +27,8 @@ List Comprehension
     :caption: ``list`` Comprehension approach to applying function to elements
 
     numbers = [x+10 for x in range(0, 5)]
+
+    print(numbers)
     # [10, 11, 12, 13, 14]
 
 Set Comprehension
@@ -58,7 +61,7 @@ Dict Comprehension
 
 Tuple Comprehension?!
 ---------------------
-* It is a generator
+* It is a Generator Expression
 * More in chapter :ref:`Generators and Comprehensions`
 
 .. code-block:: python
@@ -92,12 +95,13 @@ Comprehensions
 .. code-block:: python
 
     tuple(x for x in range(0, 5))       # (0, 1, 2, 3, 4)
+    (x for x in range(0, 5))            # <generator object <genexpr> at 0x1197032a0>
 
 .. code-block:: python
 
-    all(x for x in range(0, 5))                # False
-    any(x for x in range(0, 5) if x % 5 == 0)  # True
-    sum(x*x for x in range(0, 10, 2))          # 120
+    all(x for x in range(0, 5))         # False
+    any(x for x in range(0, 5))         # True
+    sum(x for x in range(0, 5))         # 10
 
 Generator Expressions
 ---------------------
@@ -137,8 +141,28 @@ Comprehensions
     # [0, 2, 4, 6, 8]
 
 
-Why?
-====
+Examples
+========
+
+Applying function to each element
+---------------------------------
+.. code-block:: python
+    :caption: Applying function to each output element
+
+    [float(x) for x in range(0, 5)]
+    # [0.0, 1.0, 2.0, 3.0, 4.0]
+
+    [float(x) for x in range(0, 5) if x % 2 == 0]
+    # [0.0, 2.0, 4.0]
+
+.. code-block:: python
+    :caption: Applying function to each output element
+
+    [pow(x, 2) for x in range(0, 5)]
+    # [0, 1, 4, 9, 16]
+
+    [pow(x, 2) for x in range(0, 5) if x % 2 == 0]
+    # [0, 4, 16]
 
 Filtering results
 -----------------
@@ -156,10 +180,10 @@ Filtering results
         (7.0, 3.2, 4.7, 1.4, 'versicolor'),
     ]
 
-    measurements = [species for *m,species in DATA if species == 'setosa']
+    setosa = [m for *m,s in DATA if s == 'setosa']
     # [
-    #   (5.1, 3.5, 1.4, 0.2, 'setosa'),
-    #   (4.7, 3.2, 1.3, 0.2, 'setosa')
+    #   [5.1, 3.5, 1.4, 0.2],
+    #   [4.7, 3.2, 1.3, 0.2],
     # ]
 
 Filtering with complex expressions
@@ -179,57 +203,18 @@ Filtering with complex expressions
     ]
 
 
-    def is_setosa(record):
-        if record[4] == 'setosa':
+    def is_setosa(species):
+        if species == 'setosa':
             return True
         else:
             return False
 
 
-    measurements = [x for x in DATA if is_setosa(x)]
+    measurements = [m for *m,s in DATA if is_setosa(s)]
     # [
-    #   (5.1, 3.5, 1.4, 0.2, 'setosa'),
-    #   (4.7, 3.2, 1.3, 0.2, 'setosa')
+    #   [5.1, 3.5, 1.4, 0.2],
+    #   [4.7, 3.2, 1.3, 0.2],
     # ]
-
-Reversing ``dict`` keys with values
------------------------------------
-.. code-block:: python
-    :caption: Reversing ``dict`` keys with values
-
-    DATA = {'a': 1, 'b': 2}
-
-    DATA.items()
-    # [
-    #    ('a', 1),
-    #    ('b', 2),
-    # ]
-
-.. code-block:: python
-    :caption: Reversing ``dict`` keys with values
-
-    DATA = {'a': 1, 'b': 2}
-
-    {value: key for key, value in DATA.items()}
-    # {1:'a', 2:'b'}
-
-.. code-block:: python
-    :caption: Reversing ``dict`` keys with values
-
-    DATA = {'a': 1, 'b': 2}
-
-    {v:k for k,v in DATA.items()}
-    # {1:'a', 2:'b'}
-
-Value collision while reversing ``dict``
-----------------------------------------
-.. code-block:: python
-    :caption: Value collision while reversing ``dict``
-
-    DATA = {'a': 1, 'b': 2, 'c': 2}
-
-    {v:k for k,v in DATA.items()}
-    # {1:'a', 2:'c'}
 
 Quick parsing lines
 -------------------
@@ -274,18 +259,42 @@ Quick parsing lines
     #   ['5.7', '2.8', '4.1', '1.3', 'versicolor']
     # ]
 
-Applying function to each output element
-----------------------------------------
+Reversing ``dict`` keys with values
+-----------------------------------
 .. code-block:: python
-    :caption: Applying function to each output element
+    :caption: Reversing ``dict`` keys with values
 
-    numbers = [float(x) for x in range(0, 10)]
+    DATA = {'a': 1, 'b': 2}
+
+    DATA.items()
+    # [
+    #    ('a', 1),
+    #    ('b', 2),
+    # ]
 
 .. code-block:: python
-    :caption: Applying function to each output element
+    :caption: Reversing ``dict`` keys with values
 
-    numbers = [float(x) for x in range(0, 10) if x % 2 == 0]
+    DATA = {'a': 1, 'b': 2}
 
+    {value: key for key, value in DATA.items()}
+    # {1:'a', 2:'b'}
+
+.. code-block:: python
+    :caption: Reversing ``dict`` keys with values
+
+    DATA = {'a': 1, 'b': 2}
+
+    {v:k for k,v in DATA.items()}
+    # {1:'a', 2:'b'}
+
+.. code-block:: python
+    :caption: Value collision while reversing ``dict``
+
+    DATA = {'a': 1, 'b': 2, 'c': 2}
+
+    {v:k for k,v in DATA.items()}
+    # {1:'a', 2:'c'}
 
 Advanced usage for Comprehensions and Generators
 ================================================
