@@ -17,46 +17,47 @@ Dependency injection, as a software design pattern, has number of advantages tha
 .. code-block:: python
     :caption: Dependency injection
 
+    from dataclasses import dataclass
     from datetime import timedelta
+    from typing import Optional, Any
 
 
-    class Cache:
-        def __init__(self, expiration=timedelta(days=30), location=None):
-            self.expiration = expiration
-            self.location = location
+    @dataclass
+    class CacheInterface:
+        expiration: timedelta = timedelta(days=30)
+        location: Optional[str] = None
 
-        def get(self):
+        def get(self, key: str) -> Any:
             raise NotImplementedError
 
-        def set(self):
+        def set(self, key: str, value: Any) -> None:
             raise NotImplementedError
 
-        def is_valid(self):
+        def is_valid(self, key) -> bool:
             raise NotImplementedError
 
 
-    class CacheFilesystem(Cache):
+    class CacheFilesystem(CacheInterface):
         """Cache using files"""
 
 
-    class CacheMemory(Cache):
+    class CacheMemory(CacheInterface):
         """Cache using memory"""
 
 
-    class CacheDatabase(Cache):
+    class CacheDatabase(CacheInterface):
         """Cache using database"""
 
 
+    @dataclass
     class HTTP:
-        def __init__(self, cache):
-            # Inject Cache object
-            self._cache = cache
+        _cache: CacheInterface
 
         def _fetch(self, url):
             return ...
 
         def get(self, url):
-            if self._cache.is_valid():
+            if self._cache.is_valid(url):
                 # Use cached data
                 self._cache.get(url)
             else:
@@ -65,19 +66,15 @@ Dependency injection, as a software design pattern, has number of advantages tha
 
 
     if __name__ == '__main__':
-        database = CacheDatabase(location='sqlite3://http-cache.sqlite3')
-        filesystem = CacheFilesystem(location='/tmp/http-cache.txt')
+        database = CacheDatabase(location='sqlite3:///tmp/http-cache.sqlite3')
+        filesystem = CacheFilesystem(location='/tmp/')
         memory = CacheMemory(expiration=timedelta(hours=2))
 
-        http1 = HTTP(cache=database)
+        http1 = HTTP(_cache=database)
         http1.get('http://python.astrotech.io')
 
-        http2 = HTTP(cache=filesystem)
+        http2 = HTTP(_cache=filesystem)
         http2.get('http://python.astrotech.io')
 
-        http3 = HTTP(cache=memory)
+        http3 = HTTP(_cache=memory)
         http3.get('http://python.astrotech.io')
-
-.. literalinclude:: src/design-patterns-dependency-injection.py
-    :language: python
-    :caption: Dependency Injection Design Pattern

@@ -8,11 +8,6 @@ Examples
 * https://www.toptal.com/python/python-design-patterns
 
 
-
-
-
-
-
 Structural Design Patterns
 ==========================
 - Adapter (klasowy i obiektowy)
@@ -38,7 +33,7 @@ Behavioral Design Patterns
 - Łańcuch zobowiązań (ang. Chain of Responsibility) (obiektowy)
 - Polecenie (ang. Command) (obiektowy)
 - Interpreter (ang. Interpreter) (klasowy)
-- Interator (obiektowy)
+- Interactor (obiektowy)
 - Mediator (ang. Mediator) (obiektowy)
 - Pamiątka (ang. Memento) (obiektowy)
 - Obserwator (ang. Observer) (obiektowy)
@@ -51,6 +46,6 @@ Behavioral Design Patterns
 Idiomy języka programowania
 ===========================
 - Wzorzec EFAP (ang. It's easier to ask for forgiveness than permission)
-- Wzorzec Metaklasy
+- Metaclasses
 - Borg
-- Klasa domieszkowa w języku Python (ang. Mixin)
+- Mixin
