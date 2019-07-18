@@ -19,8 +19,9 @@ def factorial_cache(n: int) -> int:
     if n == 0:
         return 1
     else:
-        CACHE[n] = n * factorial_cache(n-1)
-        return CACHE[n]
+        result = n * factorial_cache(n-1)
+        CACHE[n] = result
+        return result
 
 
 # Alternative implementation
