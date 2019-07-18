@@ -15,9 +15,10 @@ State Machine
 .. code-block:: text
 
     statemachine TrafficLight:
-        Red -> Green
+        Red -> Amber
+        Amber (if previous == Red) -> Green
         Green -> Amber
-        Amber -> Red
+        Amber (if previous == Green) -> Red
 
 
     Red.wait = sleep(2)
