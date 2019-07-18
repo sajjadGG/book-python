@@ -26,7 +26,7 @@ msgstr "Data i godzina"
 
 #: models.py:14
 msgid "Host"
-msgstr "Adres"
+msgstr "Address"
 
 #: models.py:18
 msgid "Port"

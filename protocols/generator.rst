@@ -423,6 +423,8 @@ Generators vs. Comprehensions - passwd
 #. Zaimplementuj rozwiązanie wykorzystując zwykłą funkcję
 #. Zaimplementuj rozwiązanie wykorzystując generator i słówko kluczowe ``yield``
 #. Porównaj wyniki jednego i drugiego rozwiązania przez użycie ``sys.getsizeof()``
+#. Dlaczego różnice są tak niewielkie?
+#. Co się stanie, gdy ilość danych się zwiększy?
 
 :The whys and wherefores:
     * Wykorzystanie generatorów
@@ -431,7 +433,29 @@ Generators vs. Comprehensions - passwd
     * Parsowanie pliku
     * Filtrowanie treści w locie
 
-.. literalinclude:: assignment/etc-passwd.txt
+.. code-block:: text
     :name: listing-file-etc-passwd-2
-    :language: text
     :caption: ``/etc/passwd`` sample file
+
+    ##
+    # User Database
+    #   - User name
+    #   - Encrypted password
+    #   - User ID number (UID)
+    #   - User's group ID number (GID)
+    #   - Full name of the user (GECOS)
+    #   - User home directory
+    #   - Login shell
+    ##
+
+    root:x:0:0:root:/root:/bin/bash
+    bin:x:1:1:bin:/bin:/sbin/nologin
+    daemon:x:2:2:daemon:/sbin:/sbin/nologin
+    adm:x:3:4:adm:/var/adm:/sbin/nologin
+    shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+    halt:x:7:0:halt:/sbin:/sbin/halt
+    nobody:x:99:99:Nobody:/:/sbin/nologin
+    sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+    peck:x:1000:1000:Max Peck:/home/peck:/bin/bash
+    jimenez:x:1001:1001:José Jiménez:/home/jimenez:/bin/bash
+    ivanovic:x:1002:1002:Ivan Иванович:/home/ivanovic:/bin/bash

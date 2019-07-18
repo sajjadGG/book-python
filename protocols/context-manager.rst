@@ -3,22 +3,8 @@ Context Managers
 ****************
 
 
-About Context Managers
-======================
-
-Zastosowanie
-------------
-* Pliki
-* Buforowanie danych
-* Połączenia do bazy danych
-* Transakcje w bazie danych
-* Cursory w bazie danych
-* Lock
-* Stream sieciowe
-* Komunikacja po socketach
-
-How to create
--------------
+Protocol
+========
 * ``__enter__(self, *args, **kwargs) -> self``
 * ``__exit__(self, *args, **kwargs) -> None``
 
@@ -38,6 +24,18 @@ How to create
 
     with MyClass() as cls:
         cls.hello()
+
+
+Use Case
+========
+* Pliki
+* Buforowanie danych
+* Połączenia do bazy danych
+* Transakcje w bazie danych
+* Cursory w bazie danych
+* Lock
+* Stream sieciowe
+* Komunikacja po socketach
 
 
 Examples
@@ -93,10 +91,9 @@ Lock
 ----
 .. code-block:: python
 
-    import threading
+    from threading import Lock
 
-
-    lock = threading.Lock()
+    lock = Lock()
 
     with lock:
         my_list.append(item)
@@ -105,10 +102,9 @@ replaces the more verbose:
 
 .. code-block:: python
 
-    import threading
+    from threading import Lock
 
-
-    lock = threading.Lock()
+    lock = Lock()
     lock.acquire()
 
     try:
@@ -174,7 +170,6 @@ Contextmanager decorator
     my_function()
     # Duration 3.3507 seconds
 
-
 Use Case
 --------
 .. code-block:: python
@@ -197,7 +192,6 @@ Use Case
     # </p>
 
 
-
 Assignments
 ===========
 
@@ -210,6 +204,10 @@ Buffered file
 #. Stwórz Context Manager dla zapisu do plików
 #. Context Manager buforuje dane (nie zapisuje ich na bieżąco)
 #. Gdy program wyjdzie z bloku context managera, to nastąpi otwarcie pliku, zapisanie do pliku i jego zamknięcie
+
+:Dla zaawansowanych:
+    #. Jak zrobić, aby bufor periodycznie zapisywał dane na dysku (w tle)?
+    #. Jak zrobić, aby do bufora podczas zapisu na dysk, nadal można było pisać?
 
 .. code-block:: python
 

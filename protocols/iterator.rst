@@ -5,28 +5,14 @@ Iterators
 *********
 
 
-What is iterator?
-=================
+Protocol
+========
 * ``__iter__()``
 * ``__next__() -> raise StopIteration``
 
 
 Iterowanie po obiektach
 =======================
-
-Iterowanie po ``str``
----------------------
-.. code-block:: python
-
-    for character in 'hello':
-        print(character)
-
-    # h
-    # e
-    # l
-    # l
-    # o
-
 
 Iterowanie po ``list()``, ``dict()``, ``set()``, ``tuple()``
 ------------------------------------------------------------
@@ -64,40 +50,56 @@ Iterowanie po ``list()``, ``dict()``, ``set()``, ``tuple()``
     # b -> 2
     # c -> 3
 
+Iterowanie po ``str``
+---------------------
+.. code-block:: python
 
-Własny iterator
-===============
+    for character in 'hello':
+        print(character)
+
+    # h
+    # e
+    # l
+    # l
+    # o
+
+
+Own Implementation
+==================
 .. code-block:: python
 
     class Parking:
         def __init__(self):
-            self.zaparkowane_samochody = []
-            self.index = 0
+            self._parked_cars = list()
 
-        def zaparkuj(self, samochod):
-            self.zaparkowane_samochody.append(samochod)
+        def park(self, car):
+            self._parked_cars.append(car)
 
         def __iter__(self):
-            self.index = 0
+            self._current_element = 0
             return self
 
         def __next__(self):
-            if self.index >= len(self.zaparkowane_samochody):
+            if self._current_element >= len(self._parked_cars):
                 raise StopIteration
 
-            samochod = self.zaparkowane_samochody[self.index]
-            self.index += 1
-            return samochod
+            result = self._parked_cars[self._current_element]
+            self._current_element += 1
+            return result
 
 
     parking = Parking()
-    parking.zaparkuj('Mercedes')
-    parking.zaparkuj('Maluch')
-    parking.zaparkuj('Toyota')
+    parking.park('Mercedes')
+    parking.park('Maluch')
+    parking.park('Toyota')
 
 
-    for samochod in parking:
-        print(samochod)
+    for car in parking:
+        print(car)
+
+    # Mercedes
+    # Maluch
+    # Toyota
 
 
 ``itertools``
@@ -181,8 +183,21 @@ Własny iterator
     # even
     # odd
     # even
-    # [...]
+    # ...
 
+.. code-block:: python
+
+    from itertools import cycle
+
+    DATA = ['even', 'odd']
+
+    for i, status in enumerate(cycle(DATA)):
+        print(i, status)
+
+    # 0, even
+    # 1, odd
+    # 2, even
+    # ...
 
 Przykład
 ========
@@ -194,22 +209,25 @@ Przykład
             if x % 2 == 0:
                 yield float(x)
 
-
-    print(parzyste_f4())
-    a = parzyste_f4()
+    for number in DATA:
+        print(number)
 
     try:
-        print('next1', a.__next__())
-        print('next2', a.__next__())
-        print('next3', a.__next__())
-        print('next4', a.__next__())
+
+        number = DATA.__next__()
+        print(number)
+
+        number = DATA.__next__()
+        print(number)
+
+        number = DATA.__next__()
+        print(number)
+
+        number = DATA.__next__()
+        print(number)
+
     except StopIteration:
         pass
-
-
-    for liczba in parzyste_f4():
-        print(liczba)
-
 
 Assignments
 ===========
@@ -230,9 +248,37 @@ Książka adresowa
 * Estimated time of completion: 15 min
 * Input data: :numref:`listing-iterators-ksiazka-adresowa`
 
-#. spraw aby można było iterować w książce adresowej z poprzednich zadań po adresach użytkownika.
+#. Na podstawie kodu z listingu :numref:`listing-iterators-ksiazka-adresowa`
+#. Zmodyfikuj odpowiednie klasy aby stworzyć iterator
 
-.. literalinclude:: src/iterators-ksiazka-adresowa.py
+.. code-block:: python
     :name: listing-iterators-ksiazka-adresowa
-    :language: python
     :caption: Struktury danych książki adresowej
+
+    from dataclasses import dataclass
+
+
+    @dataclass
+    class Contact:
+        first_name: str
+        last_name: str
+        addresses: tuple = ()
+
+    @dataclass
+    class Address:
+        building: str
+        location: str
+
+
+    kontakt = Contact(first_name='Jan', last_name='Twardowski', addresses=(
+        Address(building='Johnson Space Center', location='Houston, Texas'),
+        Address(building='Kennedy Space Center', location='Florida'),
+        Address(building='Jet Propulsion Laboratory', location='Pasadena, California'),
+    ))
+
+    for adres in kontakt:
+        print(adres)
+
+    # Address(building='Johnson Space Center', location='Houston, Texas')
+    # Address(building='Kennedy Space Center', location='Florida')
+    # Address(building='Jet Propulsion Laboratory', location='Pasadena, California')

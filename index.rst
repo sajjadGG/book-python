@@ -201,9 +201,22 @@ Object Oriented Programming
     /object-oriented-programming/advanced.rst
     /object-oriented-programming/dynamic-typing.rst
     /object-oriented-programming/setter-getter-deleter.rst
-    /object-oriented-programming/descriptor.rst
     /object-oriented-programming/slots.rst
     /object-oriented-programming/metaclass.rst
+
+*********
+Protocols
+*********
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Protocols
+
+    /protocols/descriptor.rst
+    /protocols/generator.rst
+    /protocols/iterator.rst
+    /protocols/context-manager.rst
+    /protocols/decorator.rst
 
 *****
 Tests
@@ -318,10 +331,6 @@ Design Patterns
     :numbered:
     :caption: Design Patterns
 
-    /design-patterns/generator.rst
-    /design-patterns/iterator.rst
-    /design-patterns/context-manager.rst
-    /design-patterns/decorator.rst
     /design-patterns/dependency-injection.rst
     /design-patterns/singleton.rst
     /design-patterns/factory.rst

@@ -2,15 +2,13 @@ from dataclasses import dataclass
 from typing import Union
 
 
-FILE = '/tmp/context-manager.txt'
+FILE = r'/tmp/context-manager.txt'
 
 
 @dataclass
 class File:
     name: str
-    mode: str = 'w'
     content: Union[list, tuple] = ()
-    encoding: str = 'utf-8'
 
     def __post_init__(self):
         self.content = list(self.content)
@@ -19,20 +17,12 @@ class File:
         return self
 
     def __exit__(self, *args):
-        return self.write()
-
-    def append_line(self, line):
-        self.content.append(line)
-
-    def write(self):
-        with open(self.name, mode=self.mode, encoding=self.encoding) as file:
+        with open(self.name, mode='w', encoding='utf-8') as file:
             for line in self.content:
                 file.write(f'{line}\n')
 
-
-f = File(FILE, content=['hello'])
-print(f.content)
-f.write()
+    def append_line(self, line):
+        self.content.append(line)
 
 
 with File(FILE) as file:
