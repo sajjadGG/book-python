@@ -336,6 +336,8 @@ Phone numbers
     +1 800-python
 
     +48 123 555 678 wew. 1337
+    +48 123555678,1
+    +48 123555678,1,2,3
 
 
 Assignments
