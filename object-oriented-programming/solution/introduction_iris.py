@@ -16,6 +16,10 @@ class Iris:
         return self.total() / 4
 
 
-flower = Iris(5.4, 3.9, 1.3, 0.4, 'setosa')
-print(f'Total: {flower.total():.2f}')
-print(f'Average: {flower.average():.2f}')
+setosa = Iris(5.4, 3.9, 1.3, 0.4, 'setosa')
+print(f'Total: {setosa.total():.2f}')
+print(f'Average: {setosa.average():.2f}')
+
+virginica = Iris(5.8, 2.7, 5.1, 1.9, 'virginica')
+print(f'Total: {virginica.total():.2f}')
+print(f'Average: {virginica.average():.2f}')
