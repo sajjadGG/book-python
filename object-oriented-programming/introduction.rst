@@ -284,14 +284,21 @@ Defining Classes
 
 #. Napisz metodę ``total()`` wyliczającą sumę dla pól numerycznych obiektu (``sepal_length``, ``sepal_width``, ``petal_length``, ``petal_width``)
 #. Napisz metodę ``average()`` wyliczającą średnią dla powyższych pól
-#. Stwórz obiekt ``setosa`` z pomiarami:
+#. Stwórz obiekt ``setosa`` z pomiarami podawanymi przy inicjalizacji:
 
     * sepal_length: 5.4
     * sepal_width: 3.9
     * petal_length: 1.3
     * petal_width: 0.4
 
-#. Wyświetl na ekranie nazwę gatunku oraz sumę i średnią z pomiarów.
+#. Stwórz drugi obiekt ``virginica`` z pomiarami podawanymi przy inicjalizacji:
+
+    * sepal_length: 5.8
+    * sepal_width: 2.7
+    * petal_length: 5.1
+    * petal_width: 1.9
+
+#. Wyświetl na ekranie nazwę gatunku oraz sumę i średnią z pomiarów dla obu instancji.
 
 Credit Scoring
 --------------
