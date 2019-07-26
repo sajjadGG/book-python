@@ -115,9 +115,9 @@ Unpacking values at the left side
 
     line = '4.9,3.1,1.5,0.1,setosa'
 
-    *features, species = line.split(',')
+    *measurements, species = line.split(',')
 
-    features        # ['4.9', '3.1', '1.5', '0.1']
+    measurements        # ['4.9', '3.1', '1.5', '0.1']
     species         # 'setosa'
 
 Naming convention
