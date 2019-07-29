@@ -45,7 +45,7 @@ String Arithmetic
 
 .. code-block:: python
 
-    'José' * 3          # JoséJoséJosé
+    'Ha' * 3            # HaHaHa
     '-' * 10            # ----------
 
 
@@ -104,8 +104,8 @@ Checking if ``str`` starts or ends with value
     name.startswith('Jan')  # True
     name.endswith(';')      # False
 
-Splitting by whitespace
------------------------
+Splitting by character or whitespace
+------------------------------------
 .. code-block:: python
 
     setosa = '5.1,3.5,1.4,0.2,setosa'
@@ -205,6 +205,7 @@ Counting occurrences
 
     text.count('o')     # 2
     text.count('Moo')   # 1
+    text.count('x')     # 0
 
 
 Multiple statements in one line
