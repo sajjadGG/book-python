@@ -136,16 +136,6 @@ Length
 
 .. code-block:: python
 
-    my_list = [[4.7, 3.2], [1.3, 0.2]]
-
-    my_list = [
-        [4.7, 3.2],
-        [1.3, 0.2]]
-
-Readability counts
-------------------
-.. code-block:: python
-
     DATA = [[1,2,3],[4,5,6],[7,8,9]]
 
 .. code-block:: python

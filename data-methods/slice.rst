@@ -90,9 +90,22 @@ Every ``n-th`` element
 
     text[::2]             # 'W hoet ot h on'
 
+.. code-block:: python
+
+    DATA = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+    ]
+
+    DATA[::2]
+    # [
+    #   [1, 2, 3],
+    #   [7, 8, 9],
+    # ]
 
 Reversing
-=========
+---------
 .. code-block:: python
 
     text = 'We choose to go to the Moon!'
@@ -101,18 +114,8 @@ Reversing
     text[::-2]            # '!oMeto go soce'
 
 
-Slice data structures
-=====================
-
-Slicing ``str``
----------------
-.. code-block:: python
-
-    DATA = 'abcde'
-
-    DATA[2]             # 'c'
-    DATA[-1]            # 'e'
-
+Slicing data structures
+=======================
 .. code-block:: python
 
     DATA = 'abcde'
@@ -130,13 +133,6 @@ Slicing ``str``
 
 Slicing ``tuple``
 -----------------
-.. code-block:: python
-
-    DATA = ('a', 'b', 'c', 'd', 'e')
-
-    DATA[2]             # 'c'
-    DATA[-1]            # 'e'
-
 .. code-block:: python
 
     DATA = ('a', 'b', 'c', 'd', 'e')
@@ -160,13 +156,6 @@ Slicing ``list``
 
     DATA = ['a', 'b', 'c', 'd', 'e']
 
-    DATA[1]             # 'b'
-    DATA[-2]            # 'd'
-
-.. code-block:: python
-
-    DATA = ['a', 'b', 'c', 'd', 'e']
-
     DATA[:3]            # ['a', 'b', 'c']
     DATA[3:]            # ['d', 'e']
     DATA[1:4]           # ['b', 'c', 'd']
@@ -178,22 +167,6 @@ Slicing ``list``
     DATA[::2]           # ['a', 'c', 'e']
     DATA[::-1]          # ['e', 'd', 'c', 'b', 'a']
 
-Slice ``dict``
---------------
-.. code-block:: python
-
-    DATA = {'a': 1, 'b': 2}
-
-    DATA[1]
-    # KeyError: 1
-
-.. code-block:: python
-
-    DATA = {'a': 1, 'b': 2}
-
-    DATA[1:2]
-    # TypeError: unhashable type: 'slice'
-
 Slice ``set``
 -------------
 * Slicing ``set`` is not possible
@@ -202,15 +175,17 @@ Slice ``set``
 
     DATA = {'a', 'b', 'c', 'd', 'e'}
 
-    DATA[1]
-    # TypeError: 'set' object is not subscriptable
-
-.. code-block:: python
-
-    DATA = {'a', 'b', 'c', 'd', 'e'}
-
     DATA[1:2]
     # TypeError: 'set' object is not subscriptable
+
+Slice ``dict``
+--------------
+.. code-block:: python
+
+    DATA = {'a': 1, 'b': 2}
+
+    DATA[1:2]
+    # TypeError: unhashable type: 'slice'
 
 
 Slice function
