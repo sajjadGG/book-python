@@ -41,8 +41,28 @@ Initialize with many elements
 
 .. code-block:: python
 
-    my_tuple = 1, 2.0, None, False, 'José'
-    my_tuple = (1, 2.0, None, False, 'José')
+    my_tuple = 1, 2.0, None, False, 'Iris'
+    my_tuple = (1, 2.0, None, False, 'Iris')
+
+
+Accessing elements
+==================
+* More in :ref:`Indexes` and :ref:`Slice`
+
+.. code-block:: python
+
+    my_tuple = ('a', 'b', 'c', 'd')
+
+    my_tuple[0]         # 'a'
+    my_tuple[1]         # 'b'
+    my_tuple[3]         # 'd'
+
+.. code-block:: python
+
+    my_tuple = ('a', 'b', 'c', 'd')
+
+    my_tuple[-1]        # 'd'
+    my_tuple[-3]        # 'b'
 
 
 Length of a ``tuple``

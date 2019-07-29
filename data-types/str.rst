@@ -21,9 +21,8 @@ Multiline ``str``
 
     text = """First line
     Second line
-    Third line
-    """
-    # 'First line\nSecond line\nThird line\n'
+    Third line"""
+    # 'First line\nSecond line\nThird line'
 
 .. code-block:: python
 
@@ -34,25 +33,10 @@ Multiline ``str``
     """
     # '\n        First line\n        Second line\n        Third line\n    '
 
-Type casting to ``str``
-=======================
 .. code-block:: python
 
-    str('hello')        # 'hello'
-    str(1969)           # '1969'
-    str(13.37)          # '13.37'
-
-Print converts argument to ``str`` before printing
---------------------------------------------------
-.. code-block:: python
-
-    print('hello')      # str('hello') -> 'hello'
-    # 'hello'
-
-.. code-block:: python
-
-    print(10)           # str(10) -> '10'
-    # '10'
+    my_str = """First line"""
+    # 'First line'
 
 
 Single or double quote?
@@ -87,15 +71,34 @@ When use multiline?
     my_str = '''My name's "José Jiménez"'''
 
 
+Type casting to ``str``
+=======================
+.. code-block:: python
+
+    str('hello')        # 'hello'
+    str(1969)           # '1969'
+    str(13.37)          # '13.37'
+
+Print converts argument to ``str`` before printing
+--------------------------------------------------
+.. code-block:: python
+
+    print('hello')      # str('hello') -> 'hello'
+    # 'hello'
+
+.. code-block:: python
+
+    print(10)           # str(10) -> '10'
+    # '10'
+
+
 Escape characters
 =================
 
 New lines
 ---------
-.. code-block:: text
-
-    \n
-    \r\n
+* ``\r\n`` - is used on windows
+* ``\n`` - is used everywhere else
 
 .. figure:: img/type-machine.jpg
     :scale: 25%
@@ -124,8 +127,8 @@ Other escape characters
     "``\b``", "Backspace (BS)"
     "``\f``", "New page (FF - Form Feed)"
     "``\v``", "Vertical Tab (VT)"
-    "``\uF680``", "Character with 16-bit hex value ``F680``"
-    "``\U0001F680``", "Character with 32-bit hex value ``0001F680``"
+    "``\uF680``", "Character with 16-bit (2 bytes) hex value ``F680``"
+    "``\U0001F680``", "Character with 32-bit (4 bytes) hex value ``0001F680``"
     "``\o755``", "ASCII character with octal value ``755``"
     "``\x1F680``", "ASCII character with hex value ``1F680``"
 
@@ -213,7 +216,7 @@ Raw String
 Getting text from user
 ======================
 * ``input()`` returns ``str``
-* Space at the end of prompt
+* Good practice: add space at the end of prompt
 
 .. code-block:: python
 
@@ -253,14 +256,16 @@ Assignments
 Emoticon print
 --------------
 * Filename: :download:`solution/str_emoticon.py`
-* Lines of code to write: 4 lines
-* Estimated time of completion: 10 min
+* Lines of code to write: 3 lines
+* Estimated time of completion: 3 min
 
 #. Wczytaj od użytkownika imię
 #. Wyświetl ``hello IMIE EMOTICON``, gdzie:
 
     - IMIE to imie wprowadzone przez usera
     - EMOTICON to Unicode Codepoint "U+1F642"
+
+#. Wyświetl długość imienia, które wprowadził użytkownik
 
 :The whys and wherefores:
     * Definiowanie zmiennych

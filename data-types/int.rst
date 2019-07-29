@@ -60,18 +60,18 @@ Addition
 
 .. code-block:: python
 
-    value = 10 + 5
+    value = 10 + 2
 
     print(value)
-    # 15
+    # 12
 
 .. code-block:: python
 
     value = 10
-    value += 5
+    value += 2
 
     print(value)
-    # 15
+    # 12
 
 Subtraction
 -----------
@@ -85,18 +85,18 @@ Subtraction
 
 .. code-block:: python
 
-    value = 10 + 5
+    value = 10 - 2
 
     print(value)
-    # 15
+    # 8
 
 .. code-block:: python
 
     value = 10
-    value += 5
+    value -= 2
 
     print(value)
-    # 5
+    # 8
 
 Multiplication
 --------------
@@ -110,22 +110,22 @@ Multiplication
 
 .. code-block:: python
 
-    value = 10 * 5
+    value = 10 * 2
 
     print(value)
-    # 50
+    # 20
 
 .. code-block:: python
 
     value = 10
-    value *= 5
+    value *= 2
 
     print(value)
-    # 50
+    # 20
 
 .. code-block:: python
 
-    2 ** 2          # 4
+    10 ** 2         # 100
     3 ** 4          # 81
     -1 ** 2         # 1
 
@@ -142,20 +142,23 @@ Division
 
 .. code-block:: python
 
-    value = 10 / 5
+    value = 10 / 2
 
     print(value)
-    # 2
+    # 5
 
 .. code-block:: python
 
     value = 10
-    value /= 5
+    value /= 2
 
     print(value)
-    # 2
+    # 5
 
 .. code-block:: python
+
+    10 // 2         # 5
+    10 % 2          # 0
 
     10 // 3         # 3
     10 % 3          # 1
@@ -176,12 +179,6 @@ Maximal value
 
     max(3, 1, 5)    # 5
 
-Total value
------------
-.. code-block:: python
-
-    sum(3, 1, 5)    # 9
-
 Absolute value
 --------------
 .. code-block:: python
@@ -193,7 +190,7 @@ Number to the ``n-th`` power
 ----------------------------
 .. code-block:: python
 
-    pow(2, 2)       # 4
+    pow(10, 2)      # 100
     pow(3, 4)       # 81
     pow(-1, 2)      # 1
 

@@ -35,7 +35,7 @@ Initialize with many elements
 
 .. code-block:: python
 
-    my_list = [1, 2.0, None, False, 'José']
+    my_list = [1, 2.0, None, False, 'Iris']
 
 .. code-block:: python
 
@@ -89,6 +89,26 @@ Inserting elements at specific position
     # ['a', 1, 2]
 
 
+Accessing elements
+==================
+* More in :ref:`Indexes` and :ref:`Slice`
+
+.. code-block:: python
+
+    my_list = ['a', 'b', 'c', 'd']
+
+    my_list[0]         # 'a'
+    my_list[1]         # 'b'
+    my_list[3]         # 'd'
+
+.. code-block:: python
+
+    my_list = ['a', 'b', 'c', 'd']
+
+    my_list[-1]        # 'd'
+    my_list[-3]        # 'b'
+
+
 ``sorted()`` vs. ``list.sort()``
 ================================
 
@@ -127,7 +147,7 @@ Multiple statements in one line
 
     my_list = [3, 1, 2]
 
-    a = my_list.sort().append(4)
+    my_list.sort().append(4)
     # AttributeError: 'NoneType' object has no attribute 'append'
 
 
