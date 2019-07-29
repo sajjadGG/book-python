@@ -138,7 +138,7 @@ Assignments
 Create
 ------
 * Filename: :download:`solution/set_create.py`
-* Lines of code to write: 5 lines
+* Lines of code to write: 13 lines
 * Estimated time of completion: 5 min
 
 .. csv-table:: Pomiary Iris
@@ -153,8 +153,6 @@ Create
 
 #. Dane są pomiary :numref:`sequences-set-create`
 #. Stwórz ``set`` na podstawie pierwszego wiersza
-#. Wszystkie wartości z dwóch kolejnych wierszy dodawaj do wcześniejszego zbioru za pomocą ``.add()`` (skorzystaj z ``alt`` w Twoim IDE).
-#. Ostatnie dwa wiersze dodaj za pomocą ``.update()``
-
-    * czwarty wiersz podaj jako ``tuple``
-    * piąty jako ``list``
+#. Wartości z dwóch kolejnych wierszy dodawaj do zbioru za pomocą ``.add()``
+#. Przedostatni wiersz dodaj za pomocą ``.update()`` jako ``tuple``
+#. Ostatni wiersz dodaj za pomocą ``.update()`` jako ``list``

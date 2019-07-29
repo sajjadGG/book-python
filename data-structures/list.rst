@@ -59,8 +59,8 @@ Appending elements
 
     my_list = [1, 2]
 
-    my_list.append([4, 5])
-    # [1, 2, 3, [4, 5]]
+    my_list.append([3, 4])
+    # [1, 2, [3, 4]]
 
 Extending lists
 ---------------
@@ -78,7 +78,6 @@ Extending lists
     my_list + [3, 4]
     # [1, 2, 3, 4]
 
-
 Inserting elements at specific position
 ---------------------------------------
 .. code-block:: python
@@ -88,6 +87,12 @@ Inserting elements at specific position
     my_list.insert(0, 'a')
     # ['a', 1, 2]
 
+.. code-block:: python
+
+    my_list = [1, 2]
+
+    my_list.insert(1, 'a')
+    # [1, 'a', 2]
 
 Accessing elements
 ==================
