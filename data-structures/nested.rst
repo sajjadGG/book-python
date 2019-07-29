@@ -250,9 +250,9 @@ Length
 Assignments
 ===========
 
-Split train/test
-----------------
-* Filename: :download:`solution/nested_split_train_test.py`
+Select
+------
+* Filename: :download:`solution/nested_select.py`
 * Lines of code to write: 6 lines
 * Estimated time of completion: 15 min
 
@@ -287,15 +287,12 @@ Split train/test
 
 #. Mając do dyspozycji zbiór danych Irysów z listingu :numref:`listing-nested-iris-dataset`
 #. Zapisz nagłówek (pierwsza linia) do zmiennej
-#. Zapisz do innej zmiennej dane bez nagłówka (``data = DATA[1:]``)
-#. Wylicz punkt podziału: ilość rekordów danych bez nagłówka razy procent
-#. Podziel zbiór na dwie listy w proporcji:
+#. Zapisz do listy ``output``, dane z rekordów:
 
-    - ``X_train`` - dane do uczenia - 60%
-    - ``X_test`` - dane testowe - 40%
-
-#. Z danych bez nagłówka zapisz do uczenia rekordy od początku do punktu podziału
-#. Z danych bez nagłówka zapisz do testów rekordy od punktu podziału do końca
+    * 2, 6, 9 jako ``list``
+    * 12, 15, 16 jako ``tuple``
+    * 18, 24 jako ``dict`` (klucz: numer, wartość -> nazwa gatunku)
+    * pusty ``set``
 
 :The whys and wherefores:
     * Umiejętność przetwarzania złożonych typów danych

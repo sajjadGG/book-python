@@ -151,7 +151,7 @@ Adding using ``.update()`` method
     # {
     #   'first_name': 'Jan',
     #   'last_name': 'Twardowski',
-    #   'location': ['POLSA', 'ESA', 'Roscosmos']
+    #   'agency': ['POLSA', 'ESA', 'Roscosmos']
     # }
 
 .. code-block:: python

@@ -23,6 +23,13 @@ String immutability
     print(a)  # Python
     print(b)  # Jython
 
+.. code-block:: python
+
+    a = 'Python'
+    a = a.replace('P', 'J')
+
+    print(a)  # Jython
+
 
 String Arithmetic
 =================

@@ -166,8 +166,8 @@ Membership Operators
     "Operand", "Example", "Description"
     "``x == y``", "``x == 18``", "value of ``x`` is equal to ``y``"
     "``x != y``", "``x != 18``", "value of ``x`` is not equal to ``y``"
-    "``x in y``", "``x in [1, 2, 3]``", "``x`` contains ``y``"
-    "``x not in y``", "``x not in [1, 2, 3]``", "``x`` not contains ``y``"
+    "``x in y``", "``x in [1, 2, 3]``", "``y`` contains ``x``"
+    "``x not in y``", "``x not in [1, 2, 3]``", "``y`` not contains ``x``"
 
 
 Built-in functions on sequences
