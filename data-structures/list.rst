@@ -94,6 +94,7 @@ Inserting elements at specific position
     my_list.insert(1, 'a')
     # [1, 'a', 2]
 
+
 Accessing elements
 ==================
 * More in :ref:`Indexes` and :ref:`Slice`
