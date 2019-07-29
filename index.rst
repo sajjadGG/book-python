@@ -60,6 +60,7 @@ Data Methods
     /data-methods/slice.rst
     /data-methods/unpacking.rst
     /data-methods/type-system.rst
+    /data-methods/syntax-similarities.rst
 
 ************
 Control Flow

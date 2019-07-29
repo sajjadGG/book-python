@@ -39,7 +39,7 @@ Unpacking values at the right side
 ----------------------------------
 .. code-block:: python
 
-    a, b, *others = [1, 2, 3, 4]
+    a, b, *c = [1, 2, 3, 4]
 
     a           # 1
     b           # 2
@@ -91,11 +91,11 @@ Recap of assignment information
 
     sepal_length, sepal_width, petal_length, petal_width, species = line.split(',')
 
-    sepal_length    # '4.9'
-    sepal_width     # '3.1'
-    petal_length    # '1.5'
-    petal_width     # '0.1'
-    species         # 'setosa'
+    sepal_length        # '4.9'
+    sepal_width         # '3.1'
+    petal_length        # '1.5'
+    petal_width         # '0.1'
+    species             # 'setosa'
 
 Unpacking values at the right side
 ----------------------------------
@@ -105,9 +105,18 @@ Unpacking values at the right side
 
     sepal_length, sepal_width, *others = line.split(',')
 
-    sepal_length    # '4.9'
-    sepal_width     # '3.1'
-    others          # ['1.5', '0.1', 'setosa']
+    sepal_length        # '4.9'
+    sepal_width         # '3.1'
+    others              # ['1.5', '0.1', 'setosa']
+
+.. code-block:: python
+
+    line = 'staff,twardowski,watney,ivanovic'
+
+    group_name, *members = line.split(',')
+
+    group_name      # staff
+    members         # ['twardowski', 'watney', 'ivanovic']
 
 Unpacking values at the left side
 ---------------------------------
@@ -118,17 +127,37 @@ Unpacking values at the left side
     *measurements, species = line.split(',')
 
     measurements        # ['4.9', '3.1', '1.5', '0.1']
-    species         # 'setosa'
+    species             # 'setosa'
 
 Naming convention
 -----------------
-* if you're not using ``features`` later in your code
+* if you're not using in those values later in your code
 
 .. code-block:: python
 
     line = '4.9,3.1,1.5,0.1,setosa'
 
     *_, species = line.split(',')
+
+    species         # setosa
+
+.. code-block:: python
+
+    line = 'twardowski:x:1001:1001:Jan Twardowski:/home/twardowski:/bin/bash'
+
+    username, _, _, _, full_name, *_ = line.split(':')
+
+    username        # twardowski
+    full_name       # Jan Twardowski
+
+.. code-block:: python
+
+    line = 'twardowski:x:1001:1001:Jan Twardowski:/home/twardowski:/bin/bash'
+
+    username, *_, home, _ = line.split(':')
+
+    username        # twardowski
+    home            # /home/twardowski
 
 
 Example

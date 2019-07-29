@@ -16,11 +16,17 @@ print(f[5:-4])
 print(g[:-7])
 print(h[4:-8])
 
-# alternatively
+
+
+## Alternative solution
+
 length = len('Jana III Sobieskiego')
 print(a[4:length+4])
 print(b[6:length+6])
 
+
+
+## Alternative solution
 
 text = 'Jana III Sobieskiego'
 length = len(text)
@@ -41,3 +47,23 @@ print(f'e: {e}')
 print(f'f: {f}')
 print(f'g: {g}')
 print(f'h: {h}')
+
+
+
+## Alternative solution
+
+text = 'Jana III Sobieskiego'
+
+def range(text):
+    length = len(text)
+    lower = text.find(text)
+    upper = lower + length
+    return slice(lower, upper)
+
+b = b[range(b)]
+c = c[range(c)]
+d = d[range(d)]
+e = e[range(e)]
+f = f[range(f)]
+g = g[range(g)]
+h = h[range(h)]
