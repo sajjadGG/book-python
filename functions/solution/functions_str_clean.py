@@ -27,6 +27,9 @@ def clean(text: str) -> str:
     >>> clean(' Jana 3 Sobieskiego  ')
     'Jana III Sobieskiego'
 
+    >>> clean(' Jana 3ego Sobieskiego  ')
+    'Jana III Sobieskiego'
+
     >>> clean('Jana III Sobi\teskiego ')
     'Jana III Sobieskiego'
 
@@ -43,7 +46,7 @@ def clean(text: str) -> str:
     text = text.replace('.', '')
     text = text.replace('UL', '')
     text = text.replace('TRZECIEGO', 'III')
-    text = text.replace('3ego', 'III')
+    text = text.replace('3EGO', 'III')
     text = text.replace('3', 'III')
     text = text.strip()
     text = text.title()
