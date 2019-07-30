@@ -11,7 +11,7 @@ while i < len(ALLOWED_GRADES_ORIGINAL):
 
 
 while True:
-    grade = input('Grade: ')
+    grade = input('What grade you received?: ')
 
     if not grade:
         break

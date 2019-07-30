@@ -1,3 +1,5 @@
+from typing import Set
+
 DATA = [
     {'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
     {'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
@@ -7,7 +9,7 @@ DATA = [
     {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'},
 ]
 
-fieldnames = set()
+fieldnames: Set[str] = set()
 
 for row in DATA:
     fieldnames.update(row.keys())

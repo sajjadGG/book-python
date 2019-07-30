@@ -1,7 +1,7 @@
 from typing import List, Tuple, Dict
 
 
-DATA = [
+DATA: List[tuple] = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, 'virginica'),
     (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -37,11 +37,12 @@ for *measurements, species in data:
     X.append(tuple(measurements))
 
     if species not in label_encoder.values():
-        label_encoder[len(label_encoder)] = species
+        number = len(label_encoder)
+        label_encoder[number] = species
 
-    for numer, nazwa in label_encoder.items():
-        if nazwa == species:
-            y.append(numer)
+    for number, name in label_encoder.items():
+        if name == species:
+            y.append(name)
 
 
 print(X)
@@ -51,7 +52,7 @@ print()
 print(label_encoder)
 
 
-## Alternatywnie
+## Alternative Version
 
 header, *data = DATA
 
@@ -85,12 +86,11 @@ print(species)
 
 
 
-
-
-
-## Alternative solution 1
+## Alternative Version
 s = set(x[-1] for x in DATA[1:])
 species = dict(zip(s, range(0, len(s))))
 
-## In numerical analysis you can find this
+
+## Alternative Version
+# In numerical analysis you can find this
 species = dict(enumerate(set(x[-1] for x in DATA[1:])))

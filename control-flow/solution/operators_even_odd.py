@@ -1,4 +1,4 @@
-number = input('Podaj liczbę: ')
+number = input('What is your number?: ')
 
 
 if int(number) % 2 == 0:

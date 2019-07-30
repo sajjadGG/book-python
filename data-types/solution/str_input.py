@@ -1,4 +1,4 @@
-name = input('Type your name: ')
+name = input('What is your name?: ')
 
 text = f"""'''My name... "{name}".\n\tI\'m an \"\"\"astronaut!\"\"\"'''"""
 

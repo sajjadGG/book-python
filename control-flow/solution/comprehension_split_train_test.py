@@ -39,7 +39,7 @@ y_test = y[pivot:]
 result = X_train, X_test, y_train, y_test
 print(result)
 
-## Not optimized
+## Alternative - but not optimized (4 loops)
 #
 # X_train = [m for *m,s in data[:pivot]]
 # X_test = [m for *m,s in data[pivot:]]

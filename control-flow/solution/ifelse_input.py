@@ -1,7 +1,7 @@
 AGE_ADULT = 18
 
 
-age = input('Podaj wiek: ')
+age = input('What is your age?: ')
 
 if float(age) >= AGE_ADULT:
     print('Adult')

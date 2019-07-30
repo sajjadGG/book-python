@@ -1,4 +1,4 @@
-FILE = input('Podaj nazwę pliku: ').strip()
+FILE = input('File to open: ').strip()
 
 
 try:
