@@ -12,6 +12,7 @@ for digit in DATA:
     else:
         counter[digit] = 1
 
+
 ## Alternatywnie
 # for digit in DATA:
 #     counter[digit] = counter.get(digit, 0) + 1
