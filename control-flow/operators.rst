@@ -47,7 +47,7 @@ Even and odd numbers
 * Estimated time of completion: 5 min
 
 #. Wczytaj od użytkownika ciąg znaków dowolnej długości
-#. Użytkownik poda wyłącznie ciągi znaków parsujące się do ``int`` lub ``float`` bez błędów
+#. Użytkownik będzie podawał wyłącznie ``int``
 #. Sprawdź czy jest to liczba parzysta, czy nieparzysta
 
 :The whys and wherefores:
@@ -59,4 +59,4 @@ Even and odd numbers
 :Hints:
     * Zero jest parzyste: https://en.wikipedia.org/wiki/Parity_of_zero
     * Liczba parzysta, to taka, która po podzieleniu przez dwa nie ma reszty
-    * Zwróć uwagę, że operator ``%`` działa modulo tylko na ``int`` oraz na ``float``. Przy ``str`` ma zupełnie inne znaczenie.
+    * Zwróć uwagę, że operator ``%`` ma inne znaczenie dla ``int`` oraz ``str``
