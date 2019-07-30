@@ -31,13 +31,13 @@ def run():
 t = Timer(DELAY, run)
 t.start()
 
-# Zapełnij kolejkę
+# Assign tasks
 for todo in TODO:
     work_queue.put(todo)
 
-# wait to complete all tasks
-print('before join')
+# Wait to complete all tasks
+print('Before join')
 t.join(timeout=TIMEOUT)
-print('afer join')
+print('After join')
 
-print('done.')
+print('Done.')

@@ -348,7 +348,7 @@ Split train/test
     - ``y_train: List[str]`` - labels do uczenia - 60%
     - ``y_test: List[str]`` - labels do testów - 40%
 
-#. Stwórz ``result: Tuple[list, list, list, list]`` z wszystkimi cechami i labelkami
+#. Stwórz ``result: Tuple[list, list, list, list]`` z cechami (treningowymi i testowymi) oraz labelkami (treningowymi i testowymi)
 #. Wypisz na ekranie ``result``
 
 :The whys and wherefores:

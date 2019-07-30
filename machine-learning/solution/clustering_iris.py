@@ -45,7 +45,7 @@ fig = plt.figure(fignum, figsize=(4, 3))
 ax = Axes3D(fig, rect=[0, 0, .95, 1], elev=48, azim=134)
 
 for name, label in [('Setosa', 0),
-                    ('Versicolour', 1),
+                    ('Versicolor', 1),
                     ('Virginica', 2)]:
     ax.text3D(X[y == label, 3].mean(),
               X[y == label, 0].mean(),

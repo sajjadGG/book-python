@@ -1,39 +1,32 @@
-import logging
 import re
 
 PESEL_REGEX = r'^\d{11}$'
 
-log = logging.getLogger(__name__)
 
-
-def poprawny_pesel(pesel):
-    if re.match(PESEL_REGEX, pesel):
+def is_valid_PESEL(PESEL):
+    if re.match(PESEL_REGEX, PESEL):
         return True
     else:
         return False
 
 
-def czy_kobieta(pesel):
+def is_woman(PESEL):
     """
-    Sprawdzenie czy PESEL należy do kobiety.
+    Check whether PESEL is woman's.
 
-    Przedostatni zank w PESEL oznacza płeć,
-    gdy liczba jest parzysta, PESEL należy do kobiety,
-    w przeciwnym wypadku numer jest mężczyzny.
+    If the second to last number is even,
+    then PESEL is woman's, in other case
+    PESEL is man's.
     """
 
-    if int(pesel[-2]) % 2 == 0:
-        log.debug('Pesel należy do kobiety')
+    if int(PESEL[-2]) % 2 == 0:
         return True
     else:
-        log.debug('Pesel należy do mężczyzny')
         return False
 
 
 if __name__ == '__main__':
-    print('Moduł:', __name__)
-
-    if czy_kobieta('12345678901'):
-        print('Kobieta: tak')
+    if is_woman('12345678901'):
+        print('Woman')
     else:
-        print('Kobieta: nie')
+        print('Man')

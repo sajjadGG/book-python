@@ -14,15 +14,16 @@ def random_point(center, std=0.2):
 
 def distance(A, B):
     """
-    Wylicz odległość między punktami A i B.
+    Calculate distance between A and B.
 
-    Argumenty:
-        A: punkt w przestrzeni wielowymiarowej zdefiniowany następująco:
-            [x, y, z, ...]
-        B: punkt w przestrzeni wielowymiarowej zdefiniowany następująco:
-            [x, y, z, ...]
 
-    Zwraca:
+    :A:
+        punkt w przestrzeni wielowymiarowej zdefiniowany następująco: [x, y, z, ...]
+
+    :B:
+        punkt w przestrzeni wielowymiarowej zdefiniowany następująco:
+            [x, y, z, ...]
+    :returns:
         Odległość euklidesową między punktami A i B.
 
     >>> distance((0,0), (1,0))
@@ -56,13 +57,13 @@ def plot_list_of_points(list_of_points, color='black'):
 
 A = [0,3]
 B = [2,4]
-ODCHYLENIE_STANDARDOWE_A = 0.8
-ODCHYLENIE_STANDARDOWE_B = 1.0
+STANDARD_DEVIATION_A = 0.8
+STANDARD_DEVIATION_B = 1.0
 
-p1 = [random_point(A, ODCHYLENIE_STANDARDOWE_A)
+p1 = [random_point(A, STANDARD_DEVIATION_A)
           for _ in range(0,500)]
 
-p2 = [random_point(B, ODCHYLENIE_STANDARDOWE_B)
+p2 = [random_point(B, STANDARD_DEVIATION_B)
           for _ in range(0,500)]
 
 plot_list_of_points(p1, 'red')

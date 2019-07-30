@@ -185,19 +185,17 @@ Traceback analysis
 
     apollo13()
     # Traceback (most recent call last):
-    #   File "/Users/matt/.virtualenvs/book-python/lib/python3.7/site-packages/IPython/core/interactiveshell.py", line 2961, in run_code
-    #     exec(code_obj, self.user_global_ns, self.user_ns)
-    #   File "<ipython-input-2-badb71482ca2>", line 1, in <module>
-    #     runfile('/Users/matt/Developer/book-python/__notepad__.py', wdir='/Users/matt/Developer/book-python')
-    #   File "/Applications/PyCharm 2018.3 EAP.app/Contents/helpers/pydev/_pydev_bundle/pydev_umd.py", line 198, in runfile
+    #   File "<input>", line 1, in <module>
+    #   File "/Applications/PyCharm 2019.2 EAP.app/Contents/helpers/pydev/_pydev_bundle/pydev_umd.py", line 197, in runfile
     #     pydev_imports.execfile(filename, global_vars, local_vars)  # execute the script
-    #   File "/Applications/PyCharm 2018.3 EAP.app/Contents/helpers/pydev/_pydev_imps/_pydev_execfile.py", line 18, in execfile
+    #   File "/Applications/PyCharm 2019.2 EAP.app/Contents/helpers/pydev/_pydev_imps/_pydev_execfile.py", line 18, in execfile
     #     exec(compile(contents+"\n", file, 'exec'), glob, loc)
-    #   File "/Users/matt/Developer/book-python/__notepad__.py", line 13, in <module>
+    #   File "/home/Developer/project/my_file.py", line 4, in <module>
     #     apollo13()
-    #   File "/Users/matt/Developer/book-python/__notepad__.py", line 5, in apollo13
+    #   File "/home/Developer/project/my_file.py", line 2, in apollo13
     #     raise RuntimeError('Mid-flight Oxygen tank explosion')
     # RuntimeError: Mid-flight Oxygen tank explosion
+
 
 Change verbosity level
 ----------------------

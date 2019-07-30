@@ -3,7 +3,7 @@ from ksiazkaadresowa.models import Person
 
 
 class Command(BaseCommand):
-    help = 'Moj tekst pomocy'
+    help = 'My help text'
 
     def add_arguments(self, parser):
         parser.add_argument(

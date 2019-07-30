@@ -24,6 +24,3 @@ DATA = [
 ]
 
 header, *data = DATA
-
-# for *pomiary, gatunek in data:
-#     pass

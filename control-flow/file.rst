@@ -161,11 +161,9 @@ Content of a requested file
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
 
-#. Napisz program, który wyświetli na ekranie zawartość pliku o nazwie podanej przez użytkownika.
+#. Za pomocą ``input()`` poproś użytkownika o podanie ścieżki do pliku
+#. Wyświetl na ekranie zawartość pliku
 #. Dopisz obsługę wyjątków dla braku uprawnień oraz tego że plik nie istnieje.
-
-:Hints:
-    * ``input()``
 
 Parsing simple CSV file
 -----------------------
@@ -213,18 +211,16 @@ Parsing simple CSV file
     #. Do struktury wynikowej dopisz ip, hostami
     #. Jeżeli IP jest już wpisane to scal listy hostname'ów dla wpisów o tym samym IP
 
-#. Na końcu przedstaw dane w formacie:
+#. Na końcu przedstaw dane w formacie ``Dict[str, List[str]]``:
 
-    * Wersja prosta ``Dict[str, List[str]]``:
+    .. code-block:: python
 
-        .. code-block:: python
-
-            {
-                '127.0.0.1': ['localhost', 'astromatt'],
-                '10.13.37.1': ['nasa.gov', 'esa.int', 'roscosmos.ru'],
-                '255.255.255.255': ['broadcasthost'],
-                '::1': ['localhost'],
-            }
+        {
+            '127.0.0.1': ['localhost', 'astromatt'],
+            '10.13.37.1': ['nasa.gov', 'esa.int', 'roscosmos.ru'],
+            '255.255.255.255': ['broadcasthost'],
+            '::1': ['localhost'],
+        }
 
 :The whys and wherefores:
     * czytanie i parsowanie pliku

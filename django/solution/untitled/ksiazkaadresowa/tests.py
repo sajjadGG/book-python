@@ -14,33 +14,33 @@ class PersonTest(TestCase):
 
     def test_is_adult(self):
         p1 = Person.objects.create(
-            first_name='Osoba',
+            first_name='First',
             last_name='Twardowski',
             date_of_birth=date(2018, 12, 6))
         self.assertFalse(p1.is_adult())
 
         # p2 = Person.objects.create(
-        #     first_name='Drugi',
+        #     first_name='Second',
         #     last_name='Twardowski',
         #     date_of_birth=date(2000, 12, 5))
         # self.assertTrue(p2.is_adult())
         #
         # p3 = Person.objects.create(
-        #     first_name='Trzeci',
+        #     first_name='Third',
         #     last_name='Twardowski',
         #     date_of_birth=date(2000, 12, 6))
         # self.assertTrue(p3.is_adult())
         #
         # p4 = Person.objects.create(
-        #     first_name='Czwarty',
+        #     first_name='Fourth',
         #     last_name='Twardowski',
         #     date_of_birth=date(2000, 12, 7))
         # self.assertFalse(p3.is_adult())
 
-    def test_blednego_tworzenia_osoby(self):
+    def test_create_invalid_person(self):
         with self.assertRaises(IntegrityError):
             p1 = Person.objects.create(first_name='F1', last_name='L1')
             p2 = Person.objects.create(first_name='F1', last_name='L1')
 
-    def test_polaczenia(self):
+    def test_connection(self):
         self.client.get('...')

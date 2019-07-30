@@ -4,84 +4,84 @@
 import unittest
 
 
-class Prostokat:
+class Rectangle:
 
     def __init__(self, a, b):
         """
-        >>> Prostokat(0, 1)
+        >>> Rectangle(0, 1)
         Traceback (most recent call last):
         ...
-        ValueError: Długość boku musi być dodatnia
+        ValueError: Side length must be positive
         """
-        self.a = a
-        self.b = b
-        self.c = 10
+        self.side_a = a
+        self.side_b = b
 
         if a <= 0 or b <= 0:
-            raise ValueError('Długość boku musi być dodatnia')
+            raise ValueError('Side length must be positive')
 
-    def pole(self) -> int:
+    def area(self) -> int:
         """
-        Wyświtla pole dla danej figury
+        Show figure area
         """
-        return self.a * self.b
+        return self.side_a * self.side_b
 
-    def obwod(self) -> int:
+    def circumference(self) -> int:
         """
-        Wyświtla obwod dla danej figury
+        Show figure circumference
         """
-        return (self.a + self.b) * 2
+        return (self.side_a + self.side_b) * 2
 
     def __str__(self):
-        # return 'Prostokat({a}, {b})'.format(**self.__dict__)
-        return 'Prostokat({a}, {b})'.format(**vars(self))
+        # return 'Rectangle({a}, {b})'.format(**self.__dict__)
+        return 'Rectangle({a}, {b})'.format(**vars(self))
 
-class ProstokatTest(unittest.TestCase):
+
+class RectangleTest(unittest.TestCase):
 
     def setUp(self):
-        self.prostokat_1_na_4 = Prostokat(1, 4)
-        self.prostokat_2_na_5 = Prostokat(2, 5)
+        self.rectangle_1_by_4 = Rectangle(1, 4)
+        self.rectangle_2_by_5 = Rectangle(2, 5)
 
     def test_bok_a(self):
-        self.assertEquals(self.prostokat_1_na_4.a, 1)
-        self.assertEquals(self.prostokat_2_na_5.a, 2)
+        self.assertEquals(self.rectangle_1_by_4.side_a, 1)
+        self.assertEquals(self.rectangle_2_by_5.side_a, 2)
 
     def test_bok_b(self):
-        self.assertEquals(self.prostokat_1_na_4.b, 4)
-        self.assertEquals(self.prostokat_2_na_5.b, 5)
+        self.assertEquals(self.rectangle_1_by_4.side_b, 4)
+        self.assertEquals(self.rectangle_2_by_5.side_b, 5)
 
-    def test_ujemna_bok_a(self):
+    def test_negative_side_a(self):
         with self.assertRaises(ValueError):
-            Prostokat(-1, 5)
+            Rectangle(-1, 5)
 
-    def test_ujemny_bok_b(self):
+    def test_negative_side_b(self):
         with self.assertRaises(ValueError):
-            Prostokat(5, -1)
+            Rectangle(5, -1)
 
-    def test_zerowa_bok_a(self):
+    def test_zero_side_a(self):
         with self.assertRaises(ValueError):
-            Prostokat(0, 1)
+            Rectangle(0, 1)
 
-    def test_zerowy_bok_b(self):
+    def test_zero_side_b(self):
         with self.assertRaises(ValueError):
-            Prostokat(1, 0)
+            Rectangle(1, 0)
 
-    def test_nieprawidlowa_wartosc_boku(self):
+    def test_abnormal_side(self):
         with self.assertRaises(TypeError):
-            Prostokat('trzy', 0)
+            Rectangle('one', 0)
 
-    def test_pole(self):
-        self.assertEquals(Prostokat(2, 5).pole(), 10)
-        self.assertEquals(Prostokat(1, 4).pole(), 4)
+    def test_area(self):
+        self.assertEquals(Rectangle(2, 5).area(), 10)
+        self.assertEquals(Rectangle(1, 4).area(), 4)
 
     def test_pole_setup(self):
-        self.assertEquals(self.prostokat_1_na_4.pole(), 4)
-        self.assertEquals(self.prostokat_2_na_5.pole(), 10)
+        self.assertEquals(self.rectangle_1_by_4.area(), 4)
+        self.assertEquals(self.rectangle_2_by_5.area(), 10)
 
-    def test_obwod_positive(self):
-        self.assertEquals(Prostokat(2, 5).obwod(), 14)
-        self.assertEquals(Prostokat(1, 4).obwod(), 10)
+    def test_circumference_positive(self):
+        self.assertEquals(Rectangle(2, 5).circumference(), 14)
+        self.assertEquals(Rectangle(1, 4).circumference(), 10)
 
-    def test_obwod_negative(self):
-        self.assertNotEquals(Prostokat(2, 5).obwod(), 10)
-        self.assertNotEquals(Prostokat(1, 4).obwod(), 5)
+    def test_circumference_negative(self):
+        self.assertNotEquals(Rectangle(2, 5).circumference(), 10)
+        self.assertNotEquals(Rectangle(1, 4).circumference(), 5)

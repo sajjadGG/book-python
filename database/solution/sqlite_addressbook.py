@@ -3,10 +3,9 @@ import sqlite3
 
 
 
-ksiazka_adresowa = [
-    {'firstname': 'José', 'lastname': 'Jiménez', 'adresy': 'NASA, Kennedy Space Center, FL, USA'}
+addressbook = [
+    {'first_name': 'Mark', 'last_name': 'Watney', 'location': 'NASA, Johnson Space Center, FL, USA'}
 ]
-
 
 
 with sqlite3.connect('database.sqlite3') as connection:
@@ -20,6 +19,6 @@ with sqlite3.connect('database.sqlite3') as connection:
         data = dict(row)
         print(data)
 
-        data['lastname'] = 'Иванович'
+        data['last_name'] = 'Иванович'
 
         cursor.execute(SQL_UPDATE, data)

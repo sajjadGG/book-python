@@ -1,40 +1,40 @@
 import csv
 
 
-class Kontakt:
-    def __init__(self, imie, nazwisko, adresy=()):
-        self.imie = imie
-        self.nazwisko = nazwisko
-        self.adresy = adresy
+class Contact:
+    def __init__(self, first_name, last_name, addresses=()):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.addresses = addresses
 
     def __str__(self):
-        return f'{self.imie} {self.nazwisko} {self.adresy}'
+        return f'{self.first_name} {self.last_name} {self.addresses}'
 
     def __repr__(self):
         return self.__str__()
 
 
-class Adres:
+class Address:
     def __init__(self, **kwargs):
-        self.ulica = kwargs.get('ulica', None)
-        self.miasto = kwargs.get('miasto', None)
+        self.street = kwargs.get('street', None)
+        self.city = kwargs.get('city', None)
 
     def __str__(self):
-        return f'{self.ulica} {self.miasto}'
+        return f'{self.street} {self.city}'
 
     def __repr__(self):
         return self.__str__()
 
 
-ksiazka_adresowa = [
-    Kontakt(imie='Jan', nazwisko='Twardowski', adresy=[
-        Adres(ulica='2101 E NASA Pkwy', miasto='Houston', stan='Texas', kod='77058', panstwo='USA'),
-        Adres(ulica=None, miasto='Kennedy Space Center', kod='32899', panstwo='USA'),
-        Adres(ulica='4800 Oak Grove Dr', miasto='Pasadena', kod='91109', panstwo='USA'),
-        Adres(ulica='2825 E Ave P', miasto='Palmdale', stan='California', kod='93550', panstwo='USA', data_urodzenia=None),
+addressbook = [
+    Contact(first_name='Jan', last_name='Twardowski', addresses=[
+        Address(street='2101 E NASA Pkwy', city='Houston', stan='Texas', kod='77058', panstwo='USA'),
+        Address(street=None, city='Kennedy Space Center', kod='32899', panstwo='USA'),
+        Address(street='4800 Oak Grove Dr', city='Pasadena', kod='91109', panstwo='USA'),
+        Address(street='2825 E Ave P', city='Palmdale', stan='California', kod='93550', panstwo='USA', data_urodzenia=None),
     ]),
-    Kontakt(imie='José', nazwisko='Jiménez'),
-    Kontakt(imie='Иван', nazwisko='Иванович', adresy=[]),
+    Contact(first_name='José', last_name='Jiménez'),
+    Contact(first_name='Иван', last_name='Иванович', addresses=[]),
 ]
 
 do_zapisu = []

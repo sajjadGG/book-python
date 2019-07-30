@@ -1,28 +1,25 @@
-#!/usr/bin/env python3
-
 import random
 
 
-MAKSYMALNA = 49
-MINIMALNA = 1
-ILOSC_LOSOWAN = 6
+MAX_VALUE = 49
+MIN_VALUE = 1
+REPETITIONS = 6
+
+output = []
 
 
-## Sposób 1
-wylosowane = []
+while len(output) <= REPETITIONS:
+    number = random.randrange(MIN_VALUE, MAX_VALUE)
 
-while len(wylosowane) <= ILOSC_LOSOWAN:
-    liczba = random.randrange(MINIMALNA, MAKSYMALNA)
+    if number not in output:
+        output.append(number)
 
-    if liczba not in wylosowane:
-        wylosowane.append(liczba)
-
-print(sorted(wylosowane))
+print(sorted(output))
 
 
+# Alternative solution
+output = random.sample(
+    population=range(MIN_VALUE, MAX_VALUE),
+    k=REPETITIONS)
 
-## Sposób 2
-
-# random.sample(population=range(1, 49), k=6)
-wylosowane = random.sample(range(MINIMALNA, MAKSYMALNA), ILOSC_LOSOWAN)
-print(wylosowane)
+print(output)
