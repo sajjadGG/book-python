@@ -127,15 +127,17 @@ Exiting the loop
     abort = False
     countdown = 10
 
+
     while countdown >= 0:
         if abort:
             break
 
         print(f'Launch in T-{countdown}')
-        i -= 1
+        countdown -= 1
+
     else:
-        print('There was no abort this time')
-        print('Launch rocket')
+        print('Countdown went smooth and there was no abort at this time')
+        print('Lift off! We have lift-off!')
 
 
 Assignments
