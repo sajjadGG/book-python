@@ -10,8 +10,8 @@ Iterating over nested ``list`` items
 
     DATA = [1, 2, 3]
 
-    for element in DATA:
-        print(element)
+    for digit in DATA:
+        print(digit)
 
     # 1
     # 2
@@ -22,8 +22,8 @@ Iterating over nested ``list`` items
 
     DATA = [(...), (...), (...)]
 
-    for element in DATA:
-        print(element)
+    for obj in DATA:
+        print(obj)
 
     # (...)
     # (...)
@@ -38,8 +38,8 @@ Iterating over nested ``list`` items
         (6.3, 2.9, 5.6, 1.8, 'virginica'),
     ]
 
-    for element in DATA:
-        print(element)
+    for row in DATA:
+        print(row)
 
     # (5.1, 3.5, 1.4, 0.2, 'setosa')
     # (5.7, 2.8, 4.1, 1.3, 'versicolor')
@@ -48,6 +48,9 @@ Iterating over nested ``list`` items
 
 Unpacking values in loop
 ========================
+
+Recap information about unpacking
+---------------------------------
 .. code-block:: python
     :caption: Unpacking values
 
@@ -56,9 +59,8 @@ Unpacking values in loop
     k, v = ('a', 0)
     key, value = ('a', 0)
 
-    sepal_len, sepal_wid, petal_len, petal_wid, species = (5.1, 3.5, 1.4, 0.2, 'setosa')
-    *measurements, species = (5.1, 3.5, 1.4, 0.2, 'setosa')
-
+Unpacking ``list`` of pairs
+---------------------------
 .. code-block:: python
     :caption: Unpacking values in loop
 
@@ -69,7 +71,7 @@ Unpacking values in loop
     ]
 
     for key, value in DATA:
-        print(f'key: "{key}", value: "{value}"')
+        print(f'{key} -> {value}')
 
     # a -> 0
     # b -> 1
@@ -80,7 +82,7 @@ Unpacking values in loop
 
     DATA = [
         (0, 1),
-        ('name', 'José'),
+        ('name', 'Jan Twardowski'),
         ('locations', ['CapeCanaveral', 'Houston']),
     ]
 
@@ -88,9 +90,11 @@ Unpacking values in loop
         print(f'{key} -> {value}')
 
     # 0 -> 1
-    # name -> José
+    # name -> Jan Twardowski
     # locations -> ['CapeCanaveral', 'Houston']
 
+Unpacking ``list`` of sequences
+-------------------------------
 .. code-block:: python
     :caption: Unpacking values in loop
 
@@ -103,11 +107,27 @@ Unpacking values in loop
     # sepal_len, sepal_wid, petal_len, petal_wid, species = (5.1, 3.5, 1.4, 0.2, 'setosa')
 
     for sepal_len, sepal_wid, petal_len, petal_wid, species in DATA:
-        print(species)
+        print(f'{species} -> {sepal_len}')
 
-    # setosa
-    # versicolor
-    # virginica
+    # setosa -> 5.1
+    # versicolor -> 5.7
+    # virginica -> 6.3
+
+.. code-block:: python
+    :caption: Unpacking values in loop
+
+    DATA = [
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+    ]
+
+    for sepal_len, *_, species in DATA:
+        print(f'{species} -> {sepal_len}')
+
+    # setosa -> 5.1
+    # versicolor -> 5.7
+    # virginica -> 6.3
 
 .. code-block:: python
     :caption: Unpacking values in loop
@@ -266,11 +286,13 @@ Getting pair: ``key``, ``value`` from ``dict`` items
     ]
 
     for row in DATA:
-        print(row['Species'])
+        sepal_length = row['Sepal length']
+        species = row['Species']
+        print(f'{species} -> {sepal_length}')
 
-    # setosa
-    # versicolor
-    # virginica
+    # setosa -> 5.1
+    # versicolor -> 5.7
+    # virginica -> 6.3
 
 
 Iterating complex types
@@ -278,54 +300,59 @@ Iterating complex types
 .. code-block:: python
     :caption: Iterating over ``list`` with scalar and vector values - simple loop
 
-    DATA = ['Max', ('1.0', 'José'), 3, 2.8, {True, None, False}]
+    DATA = [('Jan', 'Twardowski'), 'Watney', 42, 13.37, {True, None, False}]
 
     for element in DATA:
-        print(f'value: "{element}"')
+        print(element})
 
-    # value: "Max"
-    # value: "('1.0', 'José')"
-    # value: "3"
-    # value: "2.8"
-    # value: "{False, True, None}"
+    # ('Jan', 'Twardowski')
+    # Watney
+    # 42
+    # 13.37
+    # {False, True, None}
 
 .. code-block:: python
     :caption: Iterating over ``list`` with scalar and vector values - nested loop
 
-    DATA = ['Max', ('1.0', 'José'), 3, 2.8, {True, None, False}]
+    DATA = [('Jan', 'Twardowski'), 'Watney', 42, 13.37, {True, None, False}]
 
-    for element in DATA:
-        for sub in element:
-            print(f'value: "{sub}"')
+    for outer in DATA:
+        for inner in outer:
+            print(inner)
 
-    # value: "M"
-    # value: "a"
-    # value: "x"
-    # value: "1.0"
-    # value: "José"
+    # Jan
+    # Twardowski
+    # W
+    # a
+    # t
+    # n
+    # e
+    # y
+    # Traceback (most recent call last):
+    #   File "<input>", line 4, in <module>
     # TypeError: 'int' object is not iterable
 
 .. code-block:: python
     :caption: Iterating over ``list`` with scalar and vector values - smart loop
 
-    DATA = ['Max', ('1.0', 'José'), 3, 2.8, {True, None, False}]
+    DATA = [('Jan', 'Twardowski'), 'Watney', 42, 13.37, {True, None, False}]
 
-    for element in DATA:
 
-        if isinstance(element, (list, set, tuple)):
-            for sub in element:
-                print(f'value: "{sub}"')
+    for outer in DATA:
+        if not isinstance(outer, (list, set, tuple))
+            print(outer)
         else:
-            print(f'value: "{element}"')
+            for inner in outer:
+                print(inner)
 
-    # value: "Max"
-    # value: "1.0"
-    # value: "José"
-    # value: "3"
-    # value: "2.8"
-    # value: "False"
-    # value: "True"
-    # value: "None"
+    # Jan
+    # Twardowski
+    # Watney
+    # 42
+    # 13.37
+    # False
+    # True
+    # None
 
 
 Assignments
