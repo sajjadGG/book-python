@@ -277,14 +277,6 @@ Reversing ``dict`` keys with values
 
     DATA = {'a': 1, 'b': 2}
 
-    {value: key for key, value in DATA.items()}
-    # {1:'a', 2:'b'}
-
-.. code-block:: python
-    :caption: Reversing ``dict`` keys with values
-
-    DATA = {'a': 1, 'b': 2}
-
     {v:k for k,v in DATA.items()}
     # {1:'a', 2:'b'}
 
