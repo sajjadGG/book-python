@@ -182,8 +182,11 @@ Loops with ``range``
 Example
 =======
 
-Create ``dict`` from two ``list``
----------------------------------
+Create ``dict`` from two sequences
+----------------------------------
+* Pythonic way is to use ``zip()``
+* In general, don't use ``len(range(...))``, because it evaluate generator
+
 .. code-block:: python
     :caption: Create ``dict`` from two ``list``
 
@@ -191,7 +194,7 @@ Create ``dict`` from two ``list``
     values = [1, 2, 3, 4]
     output = {}
 
-    for i, element in enumerate(keys):
+    for i in range(len(keys)):
         key = keys[i]
         value = values[i]
         output[key] = value

@@ -282,6 +282,27 @@ Accessing ``dict`` keys, values and key-value pairs
     #   ('age', 42)
     # ]
 
+Create ``dict`` from two sequences
+==================================
+* ``zip`` is a generator
+* ``zip`` will create a list of pairs (like ``dict.items()``)
+
+.. code-block:: python
+
+    keys =  ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
+    values = [5.8, 2.7, 5.1, 1.9, 'virginica']
+
+    my_dict = dict(zip(header, values))
+
+    print(my_dict)
+    # {
+    #   'Sepal length': 5.8,
+    #   'Sepal width': 2.7,
+    #   'Petal length': 5.1,
+    #   'Petal width': 1.9,
+    #   'Species': 'virginica'
+    # }
+
 
 Length of a ``dict``
 ====================
