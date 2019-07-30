@@ -144,8 +144,8 @@ Assignments
 Classification of blood pressure in adults
 ------------------------------------------
 * Filename: :download:`solution/ifelse_blood_pressure.py`
-* Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
+* Lines of code to write: 25 lines
+* Estimated time of completion: 25 min
 
 #. Poniższa tabelka przedstawia klasyfikację ciśnienia krwi, wg. American Heart Association
 #. Użytkownik wprowadza ciśnienie w formacie ``XXX/YY``, gdzie:
