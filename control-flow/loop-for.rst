@@ -338,6 +338,7 @@ Text analysis
     * słów
     * liter
     * znaków (łącznie ze spacjami wewnątrz zdań, ale bez kropek)
+    * przecinków
 
 :The whys and wherefores:
     * Dzielenie stringów

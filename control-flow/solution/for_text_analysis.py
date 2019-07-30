@@ -7,6 +7,7 @@ total_sentences = 0
 total_chars = 0
 total_letters = 0
 total_adverbs = 0
+total_commas = 0
 
 
 for sentence in TEXT.split('.'):
@@ -19,6 +20,7 @@ for sentence in TEXT.split('.'):
     total_sentences += 1
     total_chars += len(sentence)
     total_letters += len(sentence.replace(' ', ''))
+    total_commas += sentence.count(',')
 
     for word in words_in_sentence:
         if word.endswith('ly'):
@@ -31,3 +33,4 @@ print(f'Total Sentences: {total_sentences}')
 print(f'Total Characters: {total_chars}')
 print(f'Total Letters: {total_letters}')
 print(f'Total Adverbs: {total_adverbs}')
+print(f'Total Commas: {total_commas}')
