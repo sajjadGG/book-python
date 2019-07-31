@@ -86,7 +86,7 @@ From naive to local
 
 
     # timezone naive
-    my_date = datetime(1961, 4, 12, 14, 7)
+    my_date = datetime(1961, 4, 12, 6, 7)
 
     timezone('Asia/Almaty').localize(my_date)
     # datetime.datetime(1961, 4, 12, 14, 7,
@@ -98,13 +98,14 @@ From naive to UTC
     :caption: From naive to local time
 
     from datetime import datetime
+    from pytz import timezone
 
 
     # timezone naive
-    my_date = datetime(1961, 4, 12, 14, 7)
+    my_date = datetime(1969, 7, 21, 2, 56, 15)
 
     timezone('UTC').localize(my_date)
-    # datetime.datetime(1961, 4, 12, 14, 7, tzinfo=<UTC>)
+    # datetime.datetime(1969, 7, 21, 2, 56, 15, tzinfo=<UTC>)
 
 From UTC to local time
 ----------------------
@@ -115,11 +116,10 @@ From UTC to local time
     from pytz import timezone
 
 
-    my_date = datetime(1969, 7, 21, 14, 56, 15, tzinfo=timezone('UTC'))
+    my_date = datetime(1969, 7, 21, 2, 56, 15, tzinfo=timezone('UTC'))
 
     my_date.astimezone(timezone('Europe/Warsaw'))
-    # datetime.datetime(1969, 7, 21, 15, 56, 15,
-    #                   tzinfo=<DstTzInfo 'Europe/Warsaw' CET+1:00:00 STD>)
+    # datetime.datetime(1969, 7, 21, 3, 56, 15, tzinfo=<DstTzInfo 'Europe/Warsaw' CET+1:00:00 STD>)
 
 Between timezones
 -----------------
@@ -130,11 +130,10 @@ Between timezones
     from pytz import timezone
 
 
-    my_date = datetime(1961, 4, 12, 14, 7, tzinfo=timezone('Asia/Almaty'))
+    my_date = datetime(1961, 4, 12, 6, 7, tzinfo=timezone('Asia/Almaty'))
 
     my_date.astimezone(timezone('Europe/Warsaw'))
-    # datetime.datetime(1961, 4, 12, 9, 59,
-    #                   tzinfo=<DstTzInfo 'Europe/Warsaw' CET+1:00:00 STD>)
+    # datetime.datetime(1961, 4, 12, 1, 59, tzinfo=<DstTzInfo 'Europe/Warsaw' CET+1:00:00 STD>)
 
 
 Assignments
@@ -150,7 +149,7 @@ Time zone converting
 
     .. code-block:: python
 
-        gagarin = 'April 12, 1961 2:07 local time'  # Asia/Almaty
+        gagarin = 'April 12, 1961 6:07 local time'  # Asia/Almaty
         armstrong = '"07/21/69 2:56:15 AM UTC"'
 
 #. Przedstaw daty jako obiekt ``datetime`` ze strefą czasową UTC
@@ -163,4 +162,4 @@ Time zone converting
 
         * '1961-04-12'
         * '1961-04-12T06:07:00Z'
-        * '1961-04-12T06:07:00.123456Z'
+        * '1961-04-12T06:07:00.000000Z'

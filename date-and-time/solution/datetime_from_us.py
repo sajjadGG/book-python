@@ -1,9 +1,11 @@
 from datetime import datetime
 
 
-armstrong = '"June 21, 1969 2:56:15 AM UTC"'
-armstrong = datetime.strptime(armstrong, '"%B %d, %Y %I:%M:%S %p UTC"')
+armstrong = '"July 21st, 1969 2:56:15 AM UTC"'
 
-# 04/12/61 06:07 AM
+armstrong = datetime.strptime(armstrong, '"%B %dst, %Y %I:%M:%S %p %Z"')
+# datetime.datetime(1969, 7, 21, 2, 56, 15)
+
 out = armstrong.strftime('%m/%d/%y %I:%M %p')
 print(out)
+# 07/21/69 02:56 AM

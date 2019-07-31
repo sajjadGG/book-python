@@ -156,7 +156,7 @@ Date and time
 Noon and Midnight
 -----------------
 * "00:00" - midnight, at the beginning of a day (more frequent)
-* "24:00" - midnight, at the end of a day
+* "24:00" - midnight, at the end of a day (not recommended)
 * "2007-04-05T24:00" is equal to "2007-04-06T00:00"
 
 Weeks
@@ -183,9 +183,14 @@ Timezone
 * "Z" (Zulu) means UTC
 
 .. code-block:: text
+    :caption: Recommended time zone notation
 
     <time>Z
     <time>±hh:mm
+
+.. code-block:: text
+    :caption: Not recommended time zone notation
+
     <time>±hhmm
     <time>±hh
 
@@ -209,14 +214,15 @@ Duration
 
 .. code-block:: text
     :caption: Example
+    :emphasize-lines: 1
 
     P8Y3M9DT8H49M15S
 
     # Period of:
     #   8 years
     #   3 months
-    #   9 days
-    #   8 hours
+    #   8 days
+    #   20 hours
     #   49 minutes
     #   5 seconds
 
@@ -240,10 +246,10 @@ ISO Format
 
     from datetime import datetime
 
-    dt = datetime(1969, 7, 21, 14, 56, 15)
+    dt = datetime(1969, 7, 21, 2, 56, 15)
 
     dt.isoformat()
-    # 1969-07-21T14:56:15
+    # 1969-07-21T02:56:15
 
 .. code-block:: python
     :caption: Date formatting to ISO format
@@ -330,13 +336,13 @@ From ISO date format
 * Estimated time of completion: 5 min
 * Input data: :numref:`listing-time-from-iso`
 
-#. Datę:
+#. Podaną datę:
 
     .. code-block:: text
         :name: listing-time-from-iso
         :caption: Convert ``str`` from ISO date format to ``datetime`` objects
 
-        1969-07-21T14:56:15.123Z
+        1969-07-2102:56:15.123Z
 
 #. Przedstaw datę jako obiekt ``datetime``
 
@@ -346,19 +352,18 @@ To ISO date format
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
 
-#. Datę:
+#. Podaną poniżej datę przekonwertuj do obiektu ``datetime``:
 
     .. code-block:: python
 
-        gagarin = 'April 12, 1961 2:07 local time'  # Asia/Almaty
+        gagarin = 'April 12, 1961 6:07 local time'  # Asia/Almaty
 
-#. Przekonwertuj do obiektu ``datetime``
 #. Wyświetl w formacie ISO datę i czas, tj.:
 
     .. code-block:: text
         :caption: "Rok-Miesiąc-DzieńTGodzina:Minuta:Sekunda.MikrosekundyZ"
 
-        1961-04-12T06:07:00.123456
+        1961-04-12T06:07:00.000000
 
 US date and time format
 -----------------------
@@ -370,7 +375,7 @@ US date and time format
 
     .. code-block:: python
 
-        armstrong = '"June 21st, 1969 2:56:15 AM UTC"'
+        armstrong = '"July 21st, 1969 2:56:15 AM UTC"'
 
 #. Wyświetl datę w formacie amerykańskim krótkim:
 

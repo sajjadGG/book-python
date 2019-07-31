@@ -47,9 +47,9 @@ Aliases
 
     now = datetime.datetime.now()
 
-    print(now)            # 1969-07-21 14:56:15
+    print(now)            # 1969-07-21 02:56:15
     time.sleep(10)
-    print(now)            # 1969-07-21 14:56:15
+    print(now)            # 1969-07-21 02:56:15
 
 .. code-block:: python
 
@@ -59,9 +59,9 @@ Aliases
 
     now = datetime.datetime.now
 
-    print(now())          # 1969-07-21 14:56:15
+    print(now())          # 1969-07-21 02:56:15
     time.sleep(10)
-    print(now())          # 1969-07-21 14:56:25
+    print(now())          # 1969-07-21 02:56:25
 
 
 .. code-block:: python
@@ -73,16 +73,16 @@ Aliases
     now = datetime.datetime.now
 
     print(now())
-    # 1969-07-21 14:56:25
+    # 1969-07-21 02:56:25
 
     print(now)
     # <built-in method now of type object at 0x107695638>
 
     now()
-    # datetime.datetime(1969, 7, 21, 14, 56, 25)
+    # datetime.datetime(1969, 7, 21, 2, 56, 25)
 
     now.__call__()
-    # datetime.datetime(1969, 7, 21, 14, 56, 25)
+    # datetime.datetime(1969, 7, 21, 2, 56, 25)
 
 
 Assignments

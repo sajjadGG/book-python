@@ -84,7 +84,7 @@ Encoding ``datetime`` and ``date``
     DATA = {
         'name': 'Pan Twardowski',
         'date': date(1961, 4, 12),
-        'datetime': datetime(1969, 7, 21, 14, 56, 15),
+        'datetime': datetime(1969, 7, 21, 2, 56, 15),
     }
 
     output = json.dumps(DATA)
@@ -100,7 +100,7 @@ Encoding ``datetime`` and ``date``
     DATA = {
         'name': 'Pan Twardowski',
         'date': date(1961, 4, 12),
-        'datetime': datetime(1969, 7, 21, 14, 56, 15),
+        'datetime': datetime(1969, 7, 21, 2, 56, 15),
     }
 
 
@@ -115,7 +115,7 @@ Encoding ``datetime`` and ``date``
 
     output = json.dumps(DATA, cls=JSONDatetimeEncoder)
     print(output)
-    # '{"name": "Pan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T14:56:15.000Z"}'
+    # '{"name": "Pan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T02:56:15.000Z"}'
 
 
 Decoding ``datetime`` and ``date``
@@ -126,14 +126,14 @@ Decoding ``datetime`` and ``date``
     import json
 
 
-    DATA = '{"name": "Pan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T14:56:15.000Z"}'
+    DATA = '{"name": "Pan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T02:56:15.000Z"}'
 
     output = json.loads(DATA)
     print(output)
     # {
     #     'name': 'Pan Twardowski',
     #     'date': '1961-04-12',
-    #     'datetime': '1969-07-21T14:56:15.000Z',
+    #     'datetime': '1969-07-21T02:56:15.000Z',
     # }
 
 .. code-block:: python
@@ -143,7 +143,7 @@ Decoding ``datetime`` and ``date``
     import json
 
 
-    DATA = '{"name": "Pan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T14:56:15.000Z"}'
+    DATA = '{"name": "Pan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T02:56:15.000Z"}'
 
 
     class JSONDatetimeDecoder(json.JSONDecoder):
@@ -169,7 +169,7 @@ Decoding ``datetime`` and ``date``
     # {
     #     'name': 'Pan Twardowski',
     #     'date': date(1961, 4, 12),
-    #     'datetime': datetime(1969, 7, 21, 14, 56, 15, tzinfo=datetime.timezone.utc),
+    #     'datetime': datetime(1969, 7, 21, 2, 56, 15, tzinfo=datetime.timezone.utc),
     # }
 
 
@@ -449,7 +449,7 @@ Serializing datetime
             "person": "jose.jimenez@nasa.gov"
         },
         "flight": [
-            {"datetime": datetime(1969, 7, 21, 14, 56, 15), "action": "landing"}
+            {"datetime": datetime(1969, 7, 21, 2, 56, 15), "action": "landing"}
         ]
     }
 

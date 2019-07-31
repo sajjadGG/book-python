@@ -9,7 +9,7 @@ DATA: Dict[str, Union[Dict[str, Union[date, str]], List[Dict[str, Union[datetime
         "person": "jose.jimenez@nasa.gov"
     },
     "flight": [
-        {"datetime": datetime(1969, 7, 21, 14, 56, 15), "action": "landing"}
+        {"datetime": datetime(1969, 7, 21, 2, 56, 15), "action": "landing"}
     ]
 }
 

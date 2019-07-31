@@ -27,7 +27,7 @@ Starting new project
     Performing system checks...
 
     System check identified no issues (0 silenced).
-    July 21, 1969 - 14:56:15
+    July 21, 1969 - 02:56:15
     Django version 2.1.0, using settings 'addressbook.settings'
     Starting development server at http://127.0.0.1:8000/
     Quit the server with CONTROL-C.

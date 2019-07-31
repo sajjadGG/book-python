@@ -12,14 +12,15 @@ Time shifts
 
 
     gagarin = datetime(1961, 4, 12, 6, 7)
-    armstrong = datetime(1969, 7, 21, 14, 56, 15)
+    armstrong = datetime(1969, 7, 21, 2, 56, 15)
 
-    between_dates = armstrong - gagarin    # datetime.timedelta(3022, 31755)
+    between_dates = armstrong - gagarin
 
-    between_dates                          # 3022 days, 8:49:15
-    between_dates.days                     # 3022
-    between_dates.seconds                  # 31755
-    between_dates.total_seconds()          # 261132555.0 (days * seconds per day + seconds)
+    str(between_dates)                  # '3021 days, 20:49:15'
+    between_dates                       # datetime.timedelta(days=3021, seconds=74955)
+    between_dates.days                  # 3021
+    between_dates.seconds               # 74955
+    between_dates.total_seconds()       # 261089355.0 (days * seconds per day + seconds)
 
 
 ``timedelta``
@@ -36,7 +37,10 @@ Simple ``timedelta`` shifts
     gagarin = datetime(1961, 4, 12)
 
     gagarin - timedelta(minutes=15)
+    # datetime.datetime(1961, 4, 11, 23, 45)
+
     gagarin + timedelta(minutes=10)
+    # datetime.datetime(1961, 4, 12, 0, 10)
 
 
 .. code-block:: python
@@ -45,10 +49,13 @@ Simple ``timedelta`` shifts
     from datetime import timedelta, datetime
 
 
-    armstrong = datetime(1969, 7, 21, 14, 56, 15)
+    armstrong = datetime(1969, 7, 21, 2, 56, 15)
 
     armstrong - timedelta(hours=21)
+    # datetime.datetime(1969, 7, 20, 5, 56, 15)
+
     armstrong + timedelta(hours=5)
+    # datetime.datetime(1969, 7, 21, 7, 56, 15)
 
 .. code-block:: python
     :caption: Simple ``timedelta`` shifts
@@ -59,7 +66,10 @@ Simple ``timedelta`` shifts
     sputnik = date(1957, 10, 4)
 
     sputnik + timedelta(days=5)
+    # datetime.date(1957, 10, 9)
+
     sputnik - timedelta(days=3)
+    # datetime.date(1957, 10, 1)
 
 .. code-block:: python
     :caption: Simple ``timedelta`` shifts
@@ -70,7 +80,10 @@ Simple ``timedelta`` shifts
     gagarin = datetime(1961, 4, 12)
 
     gagarin + timedelta(weeks=2)
+    # datetime.datetime(1961, 4, 26, 0, 0)
+
     gagarin - timedelta(weeks=3)
+    # datetime.datetime(1961, 3, 22, 0, 0)
 
 Complex ``timedelta`` shifts
 ----------------------------
@@ -80,9 +93,10 @@ Complex ``timedelta`` shifts
     from datetime import timedelta, datetime
 
 
-    armstrong = datetime(1969, 7, 21, 14, 56, 15)
+    armstrong = datetime(1969, 7, 21, 2, 56, 15)
 
     armstrong - timedelta(days=2, hours=21)
+    # datetime.datetime(1969, 7, 18, 5, 56, 15)
 
 .. code-block:: python
     :caption: Complex ``timedelta`` shifts
@@ -90,7 +104,7 @@ Complex ``timedelta`` shifts
     from datetime import timedelta, datetime
 
 
-    armstrong = datetime(1969, 7, 21, 14, 56, 15)
+    armstrong = datetime(1969, 7, 21, 2, 56, 15)
 
     duration = timedelta(
         weeks=3,
@@ -103,8 +117,7 @@ Complex ``timedelta`` shifts
     # datetime.timedelta(days=23, seconds=75912, microseconds=10055)
 
     between_dates = armstrong - duration
-    # datetime.datetime(1969, 6, 27, 17, 51, 2, 989945)
-
+    # datetime.datetime(1969, 6, 27, 5, 51, 2, 989945)
 
 ``timedelta`` month shifts
 --------------------------
@@ -127,11 +140,14 @@ Complex ``timedelta`` shifts
 
 
     def month_before(dt, month=30.436875):
-        """Average days a month in solar calendar"""
+        """
+        Average days a month in solar calendar
+        """
         return dt - timedelta(days=month)
 
 
     gagarin = date(1961, 4, 12)
+
     month_before(gagarin)
     # datetime.date(1961, 3, 13)
 
@@ -184,13 +200,13 @@ Time diff
 
 
     gagarin = datetime(1961, 4, 12, 6, 7)
-    armstrong = datetime(1969, 7, 21, 14, 56, 15)
+    armstrong = datetime(1969, 7, 21, 2, 56, 15)
 
     dt = armstrong - gagarin
-    # datetime.timedelta(3022, 31755)
+    # datetime.timedelta(days=3021, seconds=74955)
 
     duration(dt)
-    # {'years': 8, 'months': 3, 'days': 9, 'hours': 8, 'minutes': 49, 'seconds': 15}
+    # {'years': 8, 'months': 3, 'days': 8, 'hours': 20, 'minutes': 49, 'seconds': 15}
 
 
 Assignments
@@ -206,8 +222,8 @@ Date manipulation
 
     - 8 lat
     - 3 miesiące
-    - 9 dni
-    - 8 godzin
+    - 8 dni
+    - 20 godzin
     - 49 minut
     - 15 sekund
 

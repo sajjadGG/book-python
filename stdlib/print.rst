@@ -380,18 +380,18 @@ Datetime
     from datetime import datetime
 
 
-    now = datetime(1969, 7, 21, 14, 56, 15)
+    now = datetime(1969, 7, 21, 2, 56, 15)
 
     iso = '%Y-%m-%dT%H:%M:%SZ'
     date = '%Y-%m-%d'
     time = '%H:%M'
 
 
-    f'{now:%Y-%m-%d %H:%M}'       # '1969-07-21 14:56'
+    f'{now:%Y-%m-%d %H:%M}'       # '1969-07-21 02:56'
 
-    f'{now:{iso}}'                # '1969-07-21T14:56:15Z'
+    f'{now:{iso}}'                # '1969-07-21T02:56:15Z'
     f'{now:{date}}'               # '1969-07-21'
-    f'{now:{time}}'               # '14:56'
+    f'{now:{time}}'               # '02:56'
 
 Custom object formatting
 ------------------------

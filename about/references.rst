@@ -59,8 +59,8 @@ Dates and timezones
     :header: Date, Time, Timezone Description
 
     "1957-10-04", "19:28:34", "UTC", "Sputnik launch"
-    "1961-04-12", "06:07:00", "UTC", "Yuri Gagarnin's launch"
-    "1969-07-21", "14:56:15", "UTC", "Apollo 11 Neil Armstrong's first step on the Moon"
+    "1961-04-12", "06:07:00", "UTC", "Yuri Gagarin's launch"
+    "1969-07-21", "02:56:15", "UTC", "Apollo 11 Neil Armstrong's first step on the Moon"
 
 
 Main Characters

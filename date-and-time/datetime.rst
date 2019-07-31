@@ -62,26 +62,30 @@ Create ``time``
     from datetime import time
 
 
-    t = time(12, 34, 56)
-    # datetime.time(12, 33, 44)
+    t = time(2, 56, 15)
+    # datetime.time(2, 56, 15)
 
-    t.hour            # 12
-    t.minute          # 34
-    t.second          # 56
+    t.hour            # 2
+    t.minute          # 56
+    t.second          # 15
     t.microsecond     # 0
 
 
-Create empty ``time`` (midnight)
---------------------------------
+Noon and midnight
+-----------------
 .. code-block:: python
     :caption: Create empty ``time`` - midnight
 
     from datetime import time
 
 
-    midnight = time()
-    # datetime.time(0, 0)
+    time()              # datetime.time(0, 0)
+    time(0, 0)          # datetime.time(0, 0)
+    time(0, 0, 0)       # datetime.time(0, 0)
 
+    time(12)            # datetime.time(12, 0)
+    time(12, 0)         # datetime.time(12, 0)
+    time(12, 0, 0)      # datetime.time(12, 0)
 
 Creating ``datetime`` objects
 =============================
@@ -94,13 +98,13 @@ Create ``datetime``
     from datetime import datetime
 
 
-    dt = datetime(1969, 7, 21, 14, 56, 15)
-    # datetime.datetime(1969, 7, 21, 14, 56, 15)
+    dt = datetime(1969, 7, 21, 2, 56, 15)
+    # datetime.datetime(1969, 7, 21, 2, 56, 15)
 
     dt.year          # 1969
     dt.month         # 7
     dt.day           # 21
-    dt.hour          # 14
+    dt.hour          # 2
     dt.minute        # 56
     dt.second        # 15
     dt.microsecond   # 0
@@ -134,20 +138,28 @@ Create ``datetime`` from ``date`` and ``time`` objects
 
 
     d = date(1969, 7, 21)
-    t = time(14, 56, 15)
+    t = time(2, 56, 15)
 
     dt = datetime(
         year=d.year,
         month=d.month,
         day=d.day,
         hour=t.hour,
-        minute=t. minute,
+        minute=t.minute,
         second=t.second)
-    # datetime.datetime(1969, 7, 21, 14, 56, 15)
+    # datetime.datetime(1969, 7, 21, 2, 56, 15)
 
+.. code-block:: python
+    :caption: Create ``datetime`` from ``date`` and ``time`` objects
+
+    from datetime import datetime, date, time
+
+
+    d = date(1969, 7, 21)
+    t = time(2, 56, 15)
 
     dt = datetime(d.year, d.month, d.day, t.hour, t. minute, t.second)
-    # datetime.datetime(1969, 7, 21, 14, 56, 15)
+    # datetime.datetime(1969, 7, 21, 2, 56, 15)
 
 ``datetime`` methods
 --------------------
@@ -157,15 +169,15 @@ Create ``datetime`` from ``date`` and ``time`` objects
     from datetime import datetime
 
 
-    dt = datetime(1969, 7, 21, 14, 56, 15)
-    # datetime.datetime(1969, 7, 21, 14, 56, 15)
+    dt = datetime(1969, 7, 21, 2, 56, 15)
+    # datetime.datetime(1969, 7, 21, 2, 56, 15)
 
     dt.date()        # datetime.date(1969, 7, 21)
-    dt.time()        # datetime.time(14, 56, 15)
+    dt.time()        # datetime.time(2, 56, 15)
 
     dt.weekday()     # 0  # in US week starts with Sunday
     dt.isoweekday()  # 1
-    dt.isoformat()   # '1969-07-21T14:56:15'
+    dt.isoformat()   # '1969-07-21T02:56:15'
 
 Current ``datetime`` in local time
 ----------------------------------
