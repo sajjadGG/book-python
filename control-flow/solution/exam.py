@@ -2,7 +2,7 @@ from datetime import date
 from pprint import pprint
 
 
-ETC_GROUPS = r'../data/etc-group.txt'
+ETC_GROUP = r'../data/etc-group.txt'
 ETC_SHADOW = r'../data/etc-shadow.txt'
 ETC_PASSWD = r'../data/etc-passwd.txt'
 
@@ -19,13 +19,13 @@ ALGORITHMS = {
     '6': 'SHA-512',
 }
 
-output_groups = {}
+output_group = {}
 output_shadow = {}
 output_passwd = {}
 output = []
 
 try:
-    with open(ETC_GROUPS, encoding='utf-8') as file:
+    with open(ETC_GROUP, encoding='utf-8') as file:
         etc_groups = file.readlines()
 except FileNotFoundError:
     print('File does not exist')
@@ -63,10 +63,10 @@ for line in etc_groups:
         continue
 
     for member in members.split(','):
-        if member not in output_groups.keys():
-            output_groups[member] = set()
+        if member not in output_group.keys():
+            output_group[member] = set()
 
-        output_groups[member].add(group_name)
+        output_group[member].add(group_name)
 
 
 for line in etc_shadow:
@@ -121,7 +121,7 @@ for line in etc_passwd:
 
 for user in output_passwd:
     passwd = output_passwd.get(user)
-    groups = output_groups.get(user)
+    groups = output_group.get(user)
     shadow = output_shadow.get(user)
 
     if passwd['uid'] < 1000:

@@ -6,7 +6,7 @@ Exam from basic topics
 Relational Files Database
 =========================
 * Filename: :download:`solution/exam.py`
-* Lines of code to write: 60 lines
+* Lines of code to write: 100-150 lines
 * Estimated time of completion: 60 min
 * Input data: :numref:`code-file-etc-passwd`, :numref:`code-file-etc-shadow`, :numref:`code-file-etc-group`
 
@@ -34,7 +34,7 @@ Relational Files Database
                 'algorithm': 'SHA-512',
                 'password': 'tgfvvFWJJ5...k4kijuhE50',
                 'salt': 'P9zn0KwR',
-                'groups': ['staff', 'sysadmin'],
+                'groups': {'staff', 'sysadmin'},
                 'last_changed': datetime.date(2015, 7, 16),
                 'locked': False,
             },
