@@ -178,7 +178,7 @@ Traceback analysis
 * Stacktrace is 8 levels deep, it's not Java's 200 ;)
 
 .. code-block:: python
-    :emphasize-lines: 16-18
+    :emphasize-lines: 11-15
 
     def apollo13():
         raise RuntimeError('Mid-flight Oxygen tank explosion')

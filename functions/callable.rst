@@ -1,35 +1,6 @@
-.. _Advanced Functions:
-
-******************
-Advanced Functions
-******************
-
-
-Type annotations
-================
-* Since Python 3.5
-* Types are not forced
-* Twoje IDE porówna typy oraz poinformuje cię jeżeli wykryje niezgodność
-* Użyj ``mypy`` lub ``pyre-check`` do sprawdzania typów
-
-.. code-block:: python
-
-    def add_numbers(a: int, b: int) -> int:
-        return a + b
-
-    add_numbers(1, 2)
-    # 3
-
-.. code-block:: python
-    :caption: Python will execute without even warning. Your IDE and ``mypy`` will yield errors.
-
-    def add_numbers(a: int, b: int) -> int:
-        return a + b
-
-    add_numbers('Jan', 'Twardowski')
-    # 'JanTwardowski'
-
-.. note:: More about this topic at :ref:`Type Annotation`
+********
+Callable
+********
 
 
 Callable
@@ -40,33 +11,39 @@ Callable
         return 'My name... José Jiménez'
 
 
-    type(hello)           # <class 'function'>
-    hello                 # <function hello at 0x0C55D420>
-
     type(hello())         # <class 'str'>
     hello()               # My name... José Jiménez
+
+    type(hello)           # <class 'function'>
+    hello                 # <function hello at 0x0C55D420>
 
     type('hello')         # <class 'str'>
     'hello'               # 'hello'
     'hello'()             # TypeError: 'str' object is not callable
 
-Returning function (callable)
------------------------------
+
+Returning function
+==================
 .. code-block:: python
 
     def lower():
         return 'My name... José Jiménez'
 
     def higher():
-        return hello
+        return lower
+
 
     text = higher()     # <function __main__.lower()>
     text()              # 'My name... José Jiménez'
 
+
+Aliases
+=======
 .. code-block:: python
 
     import datetime
     import time
+
 
     now = datetime.datetime.now()
 
@@ -78,6 +55,7 @@ Returning function (callable)
 
     import datetime
     import time
+
 
     now = datetime.datetime.now
 

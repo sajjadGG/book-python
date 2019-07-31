@@ -11,6 +11,7 @@ Arbitrary number of positional arguments
 - ``*args`` unpacks from ``tuple``, ``list`` or ``set``
 
 .. code-block:: python
+    :caption: Positional arguments passed directly
 
     def echo(a, b, c=0):
         print(a)    # 1
@@ -20,6 +21,7 @@ Arbitrary number of positional arguments
     echo(1, 2)
 
 .. code-block:: python
+    :caption: Positional arguments passed from sequence
 
     def echo(a, b, c=0):
         print(a)    # 1
@@ -38,6 +40,7 @@ Arbitrary number of keyword arguments
 - ``**kwargs`` unpacks from ``dict``
 
 .. code-block:: python
+    :caption: Keyword arguments passed directly
 
     def echo(a, b, c=0):
         print(a)    # 1
@@ -47,6 +50,7 @@ Arbitrary number of keyword arguments
     echo(a=1, b=2)
 
 .. code-block:: python
+    :caption: Keyword arguments passed from ``dict``
 
     def echo(a, b, c=0):
         print(a)    # 1
@@ -60,6 +64,7 @@ Arbitrary number of keyword arguments
 Arbitrary number of positional and keyword arguments
 ====================================================
 .. code-block:: python
+    :caption: Positional and keyword arguments passed directly
 
     def echo(a, b, c=0):
         print(a)    # 1
@@ -69,6 +74,7 @@ Arbitrary number of positional and keyword arguments
     echo(1, b=2)
 
 .. code-block:: python
+    :caption: Positional and keyword arguments passed from sequence and ``dict``
 
     def echo(a, b, c=0):
         print(a)    # 1
@@ -87,34 +93,40 @@ Examples
 Creating complex numbers
 ------------------------
 .. code-block:: python
+    :caption: Defining complex number by passing keyword arguments directly
 
     complex(real=3, imag=5)
     # (3+5j)
 
 .. code-block:: python
+    :caption: Defining complex number by passing keyword arguments in ``dict``
 
     kwargs = {'real': 3, 'imag': 5}
+
     complex(**kwargs)
     # (3+5j)
 
 Vectors
 -------
 .. code-block:: python
+    :caption: Passing vector to the function
 
-    def echo(x, y, z):
+    def print_cartesian_coordinates(x, y, z):
         print(x)    # 1
         print(y)    # 0
         print(z)    # 1
 
+
     vector = (1, 0, 1)
 
-    echo(*vector)
+    print_cartesian_coordinates(*vector)
 
 Print formatting
 ----------------
 * Now f-string formatting is preferred
 
 .. code-block:: python
+    :caption: ``str.format()`` expects keyword arguments, which keys are used in string. It is cumbersome to pass ``format(name=name, agency=agency)`` for every variable in the code.
 
     name = 'Jan Twardowski'
     agency = 'POLSA'
@@ -126,40 +138,58 @@ Print formatting
 Common configuration
 --------------------
 .. code-block:: python
+    :caption: Calling a function which has similar parameters
 
-    def draw_line(x, y, color, style, width, markers):
+    def draw_line(x, y, color, type, width, markers):
         ...
 
 
-    draw_line(1, 2, color='red', style='dashed', width='2px', markers='disc')
-    draw_line(3, 4, color='red', style='dashed', width='2px', markers='disc')
-    draw_line(5, 6, color='red', style='dashed', width='2px', markers='disc')
+    draw_line(1, 2, color='red', type='dashed', width='2px', markers='disc')
+    draw_line(3, 4, color='red', type='dashed', width='2px', markers='disc')
+    draw_line(5, 6, color='red', type='dashed', width='2px', markers='disc')
 
 .. code-block:: python
-    :caption: Podawanie parametrów do funkcji
+    :caption: Passing configuration to the function, which sets parameters from the config
 
-    def draw_chart(a, b, color, style, width, markers):
+    def draw_chart(a, b, color, type, width, markers):
         ...
 
 
-    config = {
-        'color': 'czerwony',
-        'style': 'dashed',
+    style = {
+        'color': 'red',
+        'type': 'dashed',
         'width': '2px',
         'markers': 'disc',
     }
 
-    draw_line(1, 2, **config)
-    draw_line(3, 4, **config)
-    draw_line(5, 6, **config)
+    draw_line(x=1, y=2, **style)
+    draw_line(x=3, y=4, **style)
+    draw_line(x=5, y=6, **style)
+
+.. code-block:: python
+    :caption: Database connection configuration read from config file
+
+    config = {
+        'host': 'localhost',
+        'port': 5432,
+        'username': 'my_username',
+        'password': 'my_password',
+        'database': 'my_database',
+    }
+
+    def database_connect(host, port, username, password, database):
+        return ...
+
+    connection = database_connect(**config)
+
 
 Calling function with all variables from higher order function
 --------------------------------------------------------------
 .. code-block:: python
+    :caption: Passing arguments to lower order function. ``locals()`` will return a ``dict`` with all the variables in local scope of the function.
 
-    def lower(*args, **kwargs):
-        print(f'args: {args}')
-        print(f'kwargs: {kwargs}')
+    def lower(a, b, c, d, e):
+        print(a, b, c, d, e)
 
     def higher(a, b, c=0):
         d = 4
@@ -169,13 +199,13 @@ Calling function with all variables from higher order function
 
 
     higher(1, 2)
-    # args: ()
-    # kwargs: {'a': 1, 'b': 2, 'c': 0, 'd': 4, 'e': 5}
+    # 1 2 0 4 5
 
 Proxy functions
 ---------------
 .. code-block:: python
     :caption: One of the most common use of ``*args``, ``**kwargs`` is for proxy methods.
+    :emphasize-lines: 14
 
     # ``read_csv`` is a function from ``pandas`` library
     def read_csv(filepath_or_buffer, sep=', ', delimiter=None,
@@ -198,10 +228,7 @@ Proxy functions
         ...
 
     def my_csv(file, encoding='utf-8', *args, **kwargs):
-        return read_csv(file,
-                        encoding=encoding,
-                        *args,
-                        **kwargs)
+        return read_csv(file, encoding=encoding, *args, **kwargs)
 
 
     my_csv('iris1.csv')
@@ -212,6 +239,7 @@ Proxy functions
 Decorators
 ----------
 .. code-block:: python
+    :caption: Decorators are functions, which get pointer to the decorated function as it's argument, and has closure which gets original function arguments as positional and keyword arguments.
 
     def login_required(original_function):
 

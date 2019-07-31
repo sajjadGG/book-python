@@ -91,10 +91,11 @@ Functions
     :caption: Functions
 
     /functions/basic.rst
+    /functions/types.rst
     /functions/kwargs-define.rst
     /functions/kwargs-passing.rst
     /functions/recurrence.rst
-    /functions/advanced.rst
+    /functions/callable.rst
 
 ****************
 Standard Library

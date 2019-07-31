@@ -29,7 +29,7 @@ What is recurrence?
             return 4 * factorial(3)                 # 4 * 6 = 24
                 return 3 * factorial(2)             # 3 * 2 = 6
                     return 2 * factorial(1)         # 2 * 1 = 2
-                        return 1 * factorial(0)     # 1 * 1
+                        return 1 * factorial(0)     # 1 * 1 = 1
                             return 1                # 1
 
 
