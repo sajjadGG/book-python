@@ -234,8 +234,8 @@ Use cases
 Assignments
 ===========
 
-Numeric Values, positional only
--------------------------------
+args
+----
 * Filename: :download:`solution/kwargs_numeric_args.py`
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
@@ -248,7 +248,6 @@ Numeric Values, positional only
     - Zwróć ``True`` jeżeli wszystkie argumenty są tylko typów ``int`` lub ``float``
     - Zwróć ``False`` jeżeli którykolwiek jest innego typu
 
-#. Przez numeryczną wartością rozumiemy
 #. Nie używaj ``all()`` oraz ``any()``
 
 :The whys and wherefores:
@@ -258,8 +257,8 @@ Numeric Values, positional only
     * Parsowanie argumentów funkcji
     * Rzutowanie i konwersja typów
 
-Numeric Values, positional and keyword
---------------------------------------
+args and kwargs
+---------------
 * Filename: :download:`solution/kwargs_numeric_kwargs.py`
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min

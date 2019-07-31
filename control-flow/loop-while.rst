@@ -153,10 +153,10 @@ Report card
 #. Za pomocą pętli ``while`` przekonwertuj skalę na zmienną typu ``List[float]``
 #. Użytkownik podaje oceny jako ``int`` lub ``float``, nie będzie próbował podawać niepoprawnych typów, np. ``str`` albo ``float`` z przecinkiem zamiast kropki
 #. Jeżeli wciśnięto sam Enter, zakończ wpisywanie do dzienniczka
-#. Jeżeli ocena na liście dopuszczalnych ocen:
+#. Sprawdź czy ocena jest na liście dopuszczalnych ocen:
 
-    - Jest: dodaj ją do dzienniczka
-    - Nie ma: wyświetl informację "Grade is not allowed" i dalej kontynuuj wpisywanie
+    - ocena jest na liście: dodaj ją do dzienniczka
+    - ocena nie ma na liście: wyświetl informację "Grade is not allowed" i dalej kontynuuj wpisywanie
 
 #. Na zakończenie wyświetl wyliczoną dla dzienniczka średnią arytmetyczną z ocen
 
