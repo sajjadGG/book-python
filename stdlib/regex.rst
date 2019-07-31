@@ -90,12 +90,18 @@ Most frequent used functions in ``re`` module
 
     import re
 
-    PATTERN = r'#[0-9]+'  # used for Redmine and track issue id
+
     TEXT = "Issues #23919, #31337 removed obsolete comments"
 
-    re.search(PATTERN, TEXT).group()
-    # '#23919'
+    def contains(text, pattern)
+        if re.search(pattern, text):
+            return True
+        else:
+            return False
 
+
+    contains(r'#[0-9]+', TEXT)      # True
+    contains(r'#[a-z]+', TEXT)      # False
 
 ``re.findall()`` and ``re.finditer()``
 --------------------------------------
@@ -104,12 +110,12 @@ Most frequent used functions in ``re`` module
 
     import re
 
-    # used for redmine and track issue id
-    PATTERN = r'#[0-9]+'
-    TEXT = "Issues #23919, #31337 removed obsolete comments"
+
+    PATTERN = r'#[A-Z]{2,10}-[0-9]{1,6}'
+    TEXT = "MYPROJ-1337 removed obsolete comments"
 
     re.findall(PATTERN, TEXT)
-    # ['#23919', '#31337']
+    # ['MYPROJ-1337']
 
 ``re.compile()``
 ----------------
@@ -204,16 +210,16 @@ RegEx parameters (variables)
     import re
 
     PATTERN = r'(?P<first_name>\w+) (?P<last_name>\w+)'
-    TEXT = 'José Jiménez'
+    TEXT = 'Jan Twardowski'
 
     matches = re.match(PATTERN, TEXT)
 
-    matches.group('first_name')     # 'José'
-    matches.group('last_name')      # 'Jiménez'
-    matches.group(1)                # 'José'
-    matches.group(2)                # 'Jiménez'
-    matches.groups()                # ('José', 'Jiménez')
-    matches.groupdict()             # {'first_name': 'José', 'last_name': 'Jiménez'}
+    matches.group('first_name')     # 'Jan'
+    matches.group('last_name')      # 'Twardowski'
+    matches.group(1)                # 'Jan'
+    matches.group(2)                # 'Twardowski'
+    matches.groups()                # ('Jan', 'Twardowski')
+    matches.groupdict()             # {'first_name': 'Jan', 'last_name': 'Twardowski'}
 
 
 Multi line searches
@@ -235,6 +241,7 @@ Multi line searches
     re.findall(PATTERN, TEXT, flags=re.MULTILINE)
     # ['#27533', '#31337']
 
+
 Greedy and non-greedy search
 ============================
 * greedy qualifiers: ``*``, ``+``, ``?``
@@ -248,8 +255,15 @@ Greedy and non-greedy search
 
     TEXT = '<strong>Ehlo World</strong>'
 
-    re.findall(r'<.*>', TEXT)       # ['<strong>Ehlo World</strong>']
-    re.findall(r'<.*?>', TEXT)      # ['<strong>', '</strong>']
+    re.findall(r'<.*>', TEXT)         # ['<strong>Ehlo World</strong>']
+    re.findall(r'<.*?>', TEXT)        # ['<strong>', '</strong>']
+
+.. code-block:: python
+    :caption: Usage of greedy and non-greedy search with groups
+
+    re.findall(r'<(.*)>', TEXT)       # ['strong>Ehlo World</strong']
+    re.findall(r'<(.*?)>', TEXT)      # ['strong', '/strong']
+    re.findall(r'</?(.*?)>', TEXT)    # ['strong', 'strong']
 
 
 Practical example of Regex usage
@@ -275,27 +289,29 @@ Making a Phonebook
 
     import re
 
-    TEXT = """Ross McFluff: 834.345.1254 155 Elm Street
+    TEXT = """Jan Twardowski: 834.345.1254 Polish Space Agency
 
-    Ronald Heathmore: 892.345.3428 436 Finley Avenue
-    Frank Burger: 925.541.7625 662 South Dogwood Way
+    Mark Watney: 892.345.3428 Johnson Space Center
+    Matt Kowalski: 925.541.7625 Kennedy Space Center
 
 
-    Heather Albrecht: 548.326.4584 919 Park Place"""
+    Melissa Lewis: 548.326.4584 Bajkonur, Kazakhstan"""
 
     entries = re.split('\n+', TEXT)
-    # ['Ross McFluff: 834.345.1254 155 Elm Street',
-    # 'Ronald Heathmore: 892.345.3428 436 Finley Avenue',
-    # 'Frank Burger: 925.541.7625 662 South Dogwood Way',
-    # 'Heather Albrecht: 548.326.4584 919 Park Place']
+    # [
+    #   'Jan Twardowski: 834.345.1254 Polish Space Agency',
+    #   'Mark Watney: 892.345.3428 Johnson Space Center',
+    #   'Matt Kowalski: 925.541.7625 Kennedy Space Center',
+    #   'Melissa Lewis: 548.326.4584 Bajkonur, Kazakhstan'
+    # ]
 
     out = [re.split(':?\s', entry, maxsplit=3) for entry in entries]
-    # [['Ross', 'McFluff', '834.345.1254', '155 Elm Street'],
-    # ['Ronald', 'Heathmore', '892.345.3428', '436 Finley Avenue'],
-    # ['Frank', 'Burger', '925.541.7625', '662 South Dogwood Way'],
-    # ['Heather', 'Albrecht', '548.326.4584', '919 Park Place']]
-
-    print(out)
+    # [
+    #   ['Jan', 'Twardowski', '834.345.1254', 'Polish Space Agency'],
+    #   ['Mark', 'Watney', '892.345.3428', 'Johnson Space Center'],
+    #   ['Matt', 'Kowalski', '925.541.7625', 'Kennedy Space Center'],
+    #   ['Melissa', 'Lewis', '548.326.4584', 'Bajkonur, Kazakhstan']
+    # ]
 
 
 National Identification Numbers (Worldwide)

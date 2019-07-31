@@ -2,49 +2,16 @@
 Keywords
 ********
 
+
 ``pass``
 ========
-* Avoid ``SyntaxError`` when you don't specify the body of a block
-
-Example 1
----------
-.. code-block:: python
-
-    def my_function():
-
-    my_var = my_function()
-    # IndentationError: expected an indented block
+* Avoid error when you don't specify the body of a block
 
 .. code-block:: python
-
-    def my_function():
-        pass
-
-    my_var = my_function()
-    # None
-
-Example 2
----------
-.. code-block:: python
-
-    for i in range(0, 30):
-
-    print('hello')
-    # IndentationError: expected an indented block
-
-.. code-block:: python
-
-    for i in range(0, 30):
-        pass
-
-    print('hello')
-    # hello
-
-Example 3
----------
-.. code-block:: python
+    :caption: Exceptions has all the content needed inherited from ``Exception`` class. You need something to avoid ``IndentationError``
 
     class MyError(Exception):
+
 
     print('hello')
     # IndentationError: expected an indented block
@@ -53,6 +20,7 @@ Example 3
 
     class MyError(Exception):
         pass
+
 
     print('hello')
     # hello
@@ -63,24 +31,28 @@ Example 3
 .. code-block:: python
 
     print(__file__)
-    # /tmp/__notepad__.py
-
-.. code-block:: python
-
-    BASE_DIR = os.path.dirname(__file__)
-
-    print(f'Working directory: {BASE_DIR}')
-    # Working directory: /tmp
+    # /src/my_file.py
 
 .. code-block:: python
 
     import os
 
+
+    BASE_DIR = os.path.dirname(__file__)
+
+    print(f'Working directory: {BASE_DIR}')
+    # Working directory: /src
+
+.. code-block:: python
+
+    import os
+
+
     BASE_DIR = os.path.dirname(__file__)
     path = os.path.join(BASE_DIR, 'main.py')
 
     print(f'Executing: {path}')
-    # Executing: /tmp/main.py
+    # Executing: /src/main.py
 
 
 ``__name__``
