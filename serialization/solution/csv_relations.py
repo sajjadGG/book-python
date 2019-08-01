@@ -37,32 +37,31 @@ addressbook = [
     Contact(first_name='Иван', last_name='Иванович', addresses=[]),
 ]
 
-do_zapisu = []
+output = []
 
-for kontakt in ksiazka_adresowa:
-    adresy = []
+for contact in addressbook:
+    addresses = []
 
-    for adres in kontakt.adresy:
-        dane = adres.__dict__.values()
-        adres = '|'.join([str(x) for x in dane])
-        adresy.append(adres)
+    for address in contact.addresses:
+        dane = address.__dict__.values()
+        address = '|'.join([str(x) for x in dane])
+        addresses.append(address)
 
-    dane_kontaktu = kontakt.__dict__
-    dane_kontaktu['adresy'] = ';'.join(adresy)
-    do_zapisu.append(dane_kontaktu)
+    contact_data = contact.__dict__
+    contact_data['addresses'] = ';'.join(addresses)
+    output.append(contact_data)
 
 
 with open('filename.csv', 'w', encoding='utf-8') as file:
     fieldnames = set()
-    for kontakt in do_zapisu:
-        for fieldname in kontakt.keys():
-            fieldnames.add(fieldname)
 
+    for contact in output:
+        for field_name in contact.keys():
+            fieldnames.add(field_name)
 
     writer = csv.DictWriter(file, fieldnames=fieldnames, delimiter=',',
-                            quotechar='"', quoting=csv.QUOTE_ALL,
-                            lineterminator='\n')
+                            quotechar='"', quoting=csv.QUOTE_ALL, lineterminator='\n')
     writer.writeheader()
 
-    for row in do_zapisu:
+    for row in output:
         writer.writerow(row)

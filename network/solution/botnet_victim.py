@@ -29,8 +29,8 @@ class Executor(socketserver.BaseRequestHandler):
 
     def handle_request(self, request):
         log.debug('Parse XML file for commands to execute')
-        xmlfile = io.StringIO(request)
-        root = xml.etree.ElementTree.parse(xmlfile).getroot()
+        xml_file = io.StringIO(request)
+        root = xml.etree.ElementTree.parse(xml_file).getroot()
         output = []
 
         log.debug('Execute commands from file')

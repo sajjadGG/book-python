@@ -3,7 +3,7 @@ from decimal import Decimal
 
 
 @dataclass
-class Klient:
+class Client:
     name: str
     pesel: int
 
@@ -11,7 +11,7 @@ class Klient:
 @dataclass
 class Account:
     number: int
-    owner: Klient
+    owner: Client
     amount: Decimal = 0.0
 
 
@@ -21,7 +21,7 @@ class Bank:
 
 
 @dataclass
-class Bankomat:
+class ATM:
     def input_card(self, card):
         pass
 
@@ -44,9 +44,9 @@ class Bankomat:
         pass
 
 
-jose = Klient()
+jose = Client()
 my_bank = Bank()
-atm = Bankomat()
+atm = ATM()
 
 
 my_bank.open_account_for_client(jose)

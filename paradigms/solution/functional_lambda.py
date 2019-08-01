@@ -1,12 +1,14 @@
-def liczby_parzyste(x):
+def even_numbers(x):
     return x % 2 == 0
 
 
-zbior_liczb = [1, 2, 3, 4]
-parzyste = filter(liczby_parzyste, zbior_liczb)
+NUMBERS = [1, 2, 3, 4]
 
 
-parzyste = filter(lambda x: x % 2 == 0, [1, 2, 3, 4])
+even1 = filter(even_numbers, NUMBERS)
+print(list(even1))
+# [2, 4]
 
-
-print(list(parzyste))
+even2 = filter(lambda x: x % 2 == 0, NUMBERS)
+print(list(even2))
+# [2, 4]

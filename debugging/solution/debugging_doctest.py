@@ -2,7 +2,7 @@
 
 class Astronaut:
     """
-    Nowy astronauta
+    New Astronaut
     """
 
     def __init__(self, name):
@@ -10,7 +10,7 @@ class Astronaut:
 
     def say_hello(self, lang='en'):
         """
-        wyświetla przywitanie w zalezności od języka
+        prints greeting according to the language
 
         >>> Astronaut(name='José Jiménez').say_hello(lang='es')
         '¡hola José Jiménez!'
@@ -58,9 +58,9 @@ def doctest(docstring):
 
 jose = Astronaut(name='José Jiménez')
 
-for metoda in dir(jose):
-    print(f'jose.{metoda}.__doc__')
-    docstring = eval(f'jose.{metoda}.__doc__')
+for metho in dir(jose):
+    print(f'jose.{metho}.__doc__')
+    docstring = eval(f'jose.{metho}.__doc__')
     doctest(docstring)
 
 

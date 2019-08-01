@@ -6,7 +6,7 @@ class Status:
     DEAD = 'dead'
 
 
-class Smok:
+class Dragon:
     HEALTH_MIN = 50
     HEALTH_MAX = 100
     DAMAGE_MIN = 5
@@ -31,10 +31,10 @@ class Smok:
     def get_position(self):
         return self.position_x, self.position_y
 
-    def move(self, lewo=0, dol=0, prawo=0, gora=0):
+    def move(self, left=0, down=0, right=0, up=0):
         x, y = self.get_position()
-        x += prawo - lewo
-        y += dol - gora
+        x += right - left
+        y += down - up
         self.set_position(x, y)
 
     def make_damage(self):
@@ -81,14 +81,14 @@ class Smok:
             self.status = Status.DEAD
 
 
-wawelski = Smok(name='Wawelski', position_x=50, position_y=120)
+wawelski = Dragon(name='Wawelski', position_x=50, position_y=120)
 
 wawelski.set_position(x=10, y=20)
 
-wawelski.move(lewo=10, dol=20)
-wawelski.move(lewo=10, prawo=15)
-wawelski.move(prawo=15, gora=5)
-wawelski.move(dol=5)
+wawelski.move(left=10, down=20)
+wawelski.move(left=10, right=15)
+wawelski.move(right=15, up=5)
+wawelski.move(down=5)
 
 wawelski.take_damage(10)
 wawelski.take_damage(5)

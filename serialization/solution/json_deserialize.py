@@ -9,8 +9,8 @@ with open(FILE) as file:
     DATA = json.load(file)
 
 
-header, *data = DATA
-out.append(tuple(header))
+header = tuple(DATA[0].keys())
+out.append(header)
 
 for row in DATA:
     measurements = row.values()

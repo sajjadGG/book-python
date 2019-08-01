@@ -26,10 +26,15 @@ Example
 
 JSON Serialization of simple objects
 ====================================
-* ``json.dump(DATA, file)``
-* ``json.dumps(DATA)``
-* ``json.load(DATA, file)``
-* ``json.loads(DATA)``
+To file:
+
+    * ``json.dump(DATA, file)``
+    * ``json.load(DATA, file)``
+
+To string:
+
+    * ``json.dumps(DATA)``
+    * ``json.loads(DATA)``
 
 Serialize to JSON
 -----------------
@@ -47,7 +52,6 @@ Serialize to JSON
     output = json.dumps(DATA)
     print(output)
     # '{"first_name": "Jan", "last_name": "Twardowski"}'
-
 
 Deserialize from JSON
 ---------------------
@@ -82,7 +86,7 @@ Encoding ``datetime`` and ``date``
 
 
     DATA = {
-        'name': 'Pan Twardowski',
+        'name': 'Jan Twardowski',
         'date': date(1961, 4, 12),
         'datetime': datetime(1969, 7, 21, 2, 56, 15),
     }
@@ -98,7 +102,7 @@ Encoding ``datetime`` and ``date``
 
 
     DATA = {
-        'name': 'Pan Twardowski',
+        'name': 'Jan Twardowski',
         'date': date(1961, 4, 12),
         'datetime': datetime(1969, 7, 21, 2, 56, 15),
     }
@@ -115,7 +119,7 @@ Encoding ``datetime`` and ``date``
 
     output = json.dumps(DATA, cls=JSONDatetimeEncoder)
     print(output)
-    # '{"name": "Pan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T02:56:15.000Z"}'
+    # '{"name": "Jan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T02:56:15.000Z"}'
 
 
 Decoding ``datetime`` and ``date``
@@ -126,12 +130,12 @@ Decoding ``datetime`` and ``date``
     import json
 
 
-    DATA = '{"name": "Pan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T02:56:15.000Z"}'
+    DATA = '{"name": "Jan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T02:56:15.000Z"}'
 
     output = json.loads(DATA)
     print(output)
     # {
-    #     'name': 'Pan Twardowski',
+    #     'name': 'Jan Twardowski',
     #     'date': '1961-04-12',
     #     'datetime': '1969-07-21T02:56:15.000Z',
     # }
@@ -142,32 +146,35 @@ Decoding ``datetime`` and ``date``
     from datetime import datetime, timezone
     import json
 
-
-    DATA = '{"name": "Pan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T02:56:15.000Z"}'
+    DATA = '{"name": "Jan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T02:56:15.000Z"}'
 
 
     class JSONDatetimeDecoder(json.JSONDecoder):
+        date_fields = ['date', 'date_of_birth']
+        date_format = '%Y-%m-%d'
+        datetime_fields = ['datetime']
+        datetime_format = '%Y-%m-%dT%H:%M:%S.%fZ'
+
         def __init__(self):
             super().__init__(object_hook=self.default)
 
-        def default(self, obj):
-            for key, value in obj.items():
+        def default(self, output):
+            for field, value in output.items():
 
-                if key == 'datetime':
-                    dt = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%fZ')
-                    obj['datetime'] = dt.replace(tzinfo=timezone.utc)
+                if field in self.date_fields:
+                    value = datetime.strptime(value, self.date_format).date()
 
-                elif key == 'date':
-                    dt = datetime.strptime(value, '%Y-%m-%d')
-                    obj['date'] = dt.replace(tzinfo=timezone.utc).date()
+                if field in self.datetime_fields:
+                    value = datetime.strptime(value, self.datetime_format).replace(tzinfo=timezone.utc)
 
-            return obj
+                output[field] = value
+            return output
 
 
     output = json.loads(DATA, cls=JSONDatetimeDecoder)
     print(output)
     # {
-    #     'name': 'Pan Twardowski',
+    #     'name': 'Jan Twardowski',
     #     'date': date(1961, 4, 12),
     #     'datetime': datetime(1969, 7, 21, 2, 56, 15, tzinfo=datetime.timezone.utc),
     # }
@@ -187,9 +194,9 @@ Encoding objects
 
 
     class Address:
-        def __init__(self, city, state):
-            self.city = city
-            self.state = state
+        def __init__(self, center, location):
+            self.center = center
+            self.location = location
 
 
     class Contact:
@@ -200,10 +207,9 @@ Encoding objects
 
     DATA = [
         Contact(name='Jan Twardowski', addresses=(
-            Address(city='Houston', state='Texas'),
-            Address(city='Kennedy Space Center', state='Florida'),
-            Address(city='Pasadena', state='California'),
-            Address(city='Palmdale', state='California'),
+            Address(center='JSC', location='Houston, TX'),
+            Address(center='KSC', location='Merritt Island, FL'),
+            Address(center='JPL', location='Pasadena, CA'),
         )),
         Contact(name='Mark Watney'),
         Contact(name='José Jiménez', addresses=()),
@@ -222,13 +228,13 @@ Encoding objects
     print(output)
     # [
     #    {"__type__":"Contact", "name":"Jan Twardowski", "addresses":[
-    #          {"__type__":"Address", "city":"Houston", "state":"Texas"},
-    #          {"__type__":"Address", "city":"Kennedy Space Center", "state":"Florida"},
-    #          {"__type__":"Address", "city":"Pasadena", "state":"California"},
-    #          {"__type__":"Address", "city":"Palmdale", "state":"California"}]},
+    #          {"__type__":"Address", "center":"JSC", "location":"Houston, TX"},
+    #          {"__type__":"Address", "center":"KSC", "location":"Merritt Island, FL"},
+    #          {"__type__":"Address", "center":"JPL", "location":"Pasadena, CA"},
     #    {"__type__":"Contact", "name":"Mark Watney", "addresses":[]},
     #    {"__type__":"Contact", "name":"Jos\u00e9 Jim\u00e9nez", "addresses":[]}
     # ]
+
 
 Decoding objects
 ----------------
@@ -242,11 +248,10 @@ Decoding objects
     CURRENT_MODULE = sys.modules[__name__]
     DATA = """
     [
-        {"__type__":"Contact", "name":"Jan Twardowski", "addresses":[
-             {"__type__":"Address", "city":"Houston", "state":"Texas"},
-             {"__type__":"Address", "city":"Kennedy Space Center", "state":"Florida"},
-             {"__type__":"Address", "city":"Pasadena", "state":"California"},
-             {"__type__":"Address", "city":"Palmdale", "state":"California"}]},
+       {"__type__":"Contact", "name":"Jan Twardowski", "addresses":[
+             {"__type__":"Address", "center":"JSC", "location":"Houston, TX"},
+             {"__type__":"Address", "center":"KSC", "location":"Merritt Island, FL"},
+             {"__type__":"Address", "center":"JPL", "location":"Pasadena, CA"},
        {"__type__":"Contact", "name":"Mark Watney", "addresses":[]},
        {"__type__":"Contact", "name":"Jos\u00e9 Jim\u00e9nez", "addresses":[]}
     ]
@@ -254,9 +259,9 @@ Decoding objects
 
 
     class Address:
-        def __init__(self, city, state):
-            self.city = city
-            self.state = state
+        def __init__(self, center, location):
+            self.center = center
+            self.location = location
 
 
     class Contact:
@@ -279,10 +284,9 @@ Decoding objects
     print(output)
     # [
     #     Contact(name='Jan Twardowski', addresses=(
-    #         Address(city='Houston', state='Texas'),
-    #         Address(city='Kennedy Space Center', state='Florida'),
-    #         Address(city='Pasadena', state='California'),
-    #         Address(city='Palmdale', state='California'),
+    #         Address(center='JSC', location='Houston, TX'),
+    #         Address(center='KSC', location='Merritt Island, FL'),
+    #         Address(center='JPL', location='Pasadena, CA'),
     #     )),
     #     Contact(name='Mark Watney'),
     #     Contact(name='José Jiménez', addresses=()),

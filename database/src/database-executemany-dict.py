@@ -5,18 +5,18 @@ SQL_CREATE_TABLE = """
     CREATE TABLE IF NOT EXISTS astronauts (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         pesel INTEGER UNIQUE,
-        firstname TEXT,
-        lastname TEXT)"""
+        first_name TEXT,
+        last_name TEXT)"""
 
-SQL_INSERT_DICT = 'INSERT INTO astronauts VALUES (NULL, :pesel, :firstname, :lastname)'
+SQL_INSERT_DICT = 'INSERT INTO astronauts VALUES (NULL, :pesel, :first_name, :last_name)'
 
 
 list_of_dicts = [
-    {'pesel': '61041212345', 'firstname': 'José', 'lastname': 'Jiménez'},
-    {'pesel': '61041212346', 'firstname': 'Jan', 'lastname': 'Twardowski'},
-    {'pesel': '61041212347', 'firstname': 'Melissa', 'lastname': 'Lewis'},
-    {'pesel': '61041212348', 'firstname': 'Alex', 'lastname': 'Vogel'},
-    {'pesel': '61041212349', 'firstname': 'Ryan', 'lastname': 'Stone'},
+    {'pesel': '61041212345', 'first_name': 'José', 'last_name': 'Jiménez'},
+    {'pesel': '61041212346', 'first_name': 'Jan', 'last_name': 'Twardowski'},
+    {'pesel': '61041212347', 'first_name': 'Melissa', 'last_name': 'Lewis'},
+    {'pesel': '61041212348', 'first_name': 'Alex', 'last_name': 'Vogel'},
+    {'pesel': '61041212349', 'first_name': 'Ryan', 'last_name': 'Stone'},
 ]
 
 

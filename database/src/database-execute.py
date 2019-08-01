@@ -5,11 +5,11 @@ SQL_CREATE_TABLE = """
     CREATE TABLE IF NOT EXISTS astronauts (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         pesel INTEGER UNIQUE,
-        firstname TEXT,
-        lastname TEXT)"""
-SQL_INSERT = 'INSERT INTO astronauts VALUES (NULL, :pesel, :firstname, :lastname)'
+        first_name TEXT,
+        last_name TEXT)"""
+SQL_INSERT = 'INSERT INTO astronauts VALUES (NULL, :pesel, :first_name, :last_name)'
 
-data = {'pesel': '61041212345', 'firstname': 'José', 'lastname': 'Jiménez'}
+data = {'pesel': '61041212345', 'first_name': 'José', 'last_name': 'Jiménez'}
 
 
 with sqlite3.connect(':memory:') as db:

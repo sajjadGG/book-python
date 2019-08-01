@@ -18,7 +18,7 @@ print(output)
 
 ## Alternative version
 #
-# wynik = {education: str(key)
+# output = {education: str(key)
 #     for key, value in EDUCATION_GROUPS.items()
 #         for education in value
 # }

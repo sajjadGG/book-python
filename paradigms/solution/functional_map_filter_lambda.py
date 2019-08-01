@@ -1,14 +1,19 @@
 
-zakres = range(1, 34)
+NUMBERS = range(1, 34)
 
-podzielne_przez_3 = [x for x in zakres if x % 3 == 0]
+out = [x for x in NUMBERS if x % 3 == 0]
+# [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33]
 
-podzielne_przez_3_i_nieparzyste = filter(lambda x: not x % 2 == 0, podzielne_przez_3)
+out = filter(lambda x: not x % 2 == 0, out)
+# <filter object at 0x117c639d0>
+# [3, 9, 15, 21, 27, 33]
 
-podzielne_przez_3_i_nieparzyste_do_szescianu = map(lambda x: pow(x, 3), podzielne_przez_3_i_nieparzyste)
+out = map(lambda x: pow(x, 3), out)
+# <map object at 0x117c7ac10>
+# [3, 9, 15, 21, 27, 33]
 
-liczby = list(podzielne_przez_3_i_nieparzyste_do_szescianu)
+numbers = list(out)
+# [27, 729, 3375, 9261, 19683, 35937]
 
-srednia = sum(liczby) / len(liczby)
-
-print(srednia)
+average = sum(numbers) / len(numbers)
+# 11502.0

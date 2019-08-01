@@ -5,8 +5,8 @@ SQL_CREATE_TABLE = """
     CREATE TABLE IF NOT EXISTS astronauts (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         pesel INTEGER UNIQUE,
-        firstname TEXT,
-        lastname TEXT)"""
+        first_name TEXT,
+        last_name TEXT)"""
 
 SQL_INSERT_TUPLE = 'INSERT INTO astronauts VALUES (NULL, ?, ?, ?)'
 

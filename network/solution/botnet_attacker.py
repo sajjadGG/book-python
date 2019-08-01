@@ -12,7 +12,7 @@ XML_CMD_FILE = 'botnet-commands.xml'
 logging.basicConfig(
     level=logging.INFO,
     format='[%(asctime).19s] %(levelname)s (%(name)s) %(message)s')
-log = logging.getLogger('botnet.atacker.client')
+log = logging.getLogger('botnet.attacker.client')
 
 
 with open(XML_CMD_FILE) as file:
