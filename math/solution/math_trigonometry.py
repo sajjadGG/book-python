@@ -1,16 +1,16 @@
 import math
 
-LICZB_PO_PRZECINKU = 2
+PRECISION = 2
 
-degrees = input('Wpisz kąt w stopniach: ')
+degrees = input('What is the angle [deg]?: ')
 radians = math.radians(float(degrees))
 
-do_wyswietlenia = {
-    'sin': round(math.sin(radians), LICZB_PO_PRZECINKU),
-    'cos': round(math.cos(radians), LICZB_PO_PRZECINKU),
-    'tg': round(math.tan(radians), LICZB_PO_PRZECINKU),
-    'ctg': round(math.atan(radians), LICZB_PO_PRZECINKU),
-    'PI': round(math.pi, LICZB_PO_PRZECINKU),
+output = {
+    'sin': round(math.sin(radians), PRECISION),
+    'cos': round(math.cos(radians), PRECISION),
+    'tg': round(math.tan(radians), PRECISION),
+    'ctg': round(math.atan(radians), PRECISION),
+    'PI': round(math.pi, PRECISION),
 }
 
-print(do_wyswietlenia)
+print(output)

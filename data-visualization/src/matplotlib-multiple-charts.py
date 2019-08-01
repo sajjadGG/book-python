@@ -17,16 +17,16 @@ ax1.set_ylim(0, 2000)
 ax3.set_ylabel('misaligned 2', bbox=box)
 ax3.plot(np.random.rand(10))
 
-labelx = -0.3  # axes coords
+xlabel = -0.3  # axes coords
 
 ax2.set_title('ylabels aligned')
 ax2.plot(2000 * np.random.rand(10))
 ax2.set_ylabel('aligned 1', bbox=box)
-ax2.yaxis.set_label_coords(labelx, 0.5)
+ax2.yaxis.set_label_coords(xlabel, 0.5)
 ax2.set_ylim(0, 2000)
 
 ax4.plot(np.random.rand(10))
 ax4.set_ylabel('aligned 2', bbox=box)
-ax4.yaxis.set_label_coords(labelx, 0.5)
+ax4.yaxis.set_label_coords(xlabel, 0.5)
 
 plt.show()

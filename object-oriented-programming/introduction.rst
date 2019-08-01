@@ -161,6 +161,7 @@ Initializer Method
     # virginica
 
     versicolor = Iris()
+    print(versicolor.species)
     # None
 
 
@@ -268,8 +269,38 @@ Methods calling other methods
 Assignments
 ===========
 
-Defining Classes
-----------------
+Classes and instances
+---------------------
+* Filename: :download:`solution/introduction_instances.py`
+* Lines of code to write: 15 lines
+* Estimated time of completion: 10 min
+
+#. Zamodelu dane w programie za pomocą klas i stwórz instancje:
+
+    * Jan, Twardowski, 1961-04-12
+    * Mark, Watney, 1969-07-21
+    * Kennedy Space Center, Merritt Island, Florida
+    * Johnson Space Center, Houston, Texas
+    * Jet Propulsion Laboratory, Pasadena, Texas
+
+Fields
+------
+* Filename: :download:`solution/introduction_temperature.py`
+* Lines of code to write: 12 lines
+* Estimated time of completion: 5 min
+
+#. Stwórz klasę ``Temperature``
+#. Klasa ma pamiętać wprowadzoną wartość
+#. Stwórz instancje:
+
+    * ``celsius`` z temperaturą 36.6
+    * ``fahrenheit`` z temperaturą 97.88
+    * ``kelvin`` z temperaturą 309.75
+
+#. Wypisz temperaturę na ekranie
+
+Methods
+-------
 * Filename: :download:`solution/introduction_iris.py`
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min

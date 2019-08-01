@@ -12,8 +12,8 @@ data = [float(x.split()[0]) for x in recipe]
 ingredients = [x.split()[-1] for x in recipe]
 
 
-def func(pct, allvals):
-    absolute = int(pct / 100. * np.sum(allvals))
+def func(pct, values):
+    absolute = int(pct / 100. * np.sum(values))
     return "{:.1f}%\n({:d} g)".format(pct, absolute)
 
 

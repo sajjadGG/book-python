@@ -25,8 +25,8 @@ def radar_factory(num_vars, frame='circle'):
 
     def draw_poly_patch(self):
         # rotate theta such that the first axis is at the top
-        verts = unit_poly_verts(theta + np.pi / 2)
-        return plt.Polygon(verts, closed=True, edgecolor='k')
+        vertices = unit_poly_vertices(theta + np.pi / 2)
+        return plt.Polygon(vertices, closed=True, edgecolor='k')
 
     def draw_circle_patch(self):
         # unit circle centered on (0.5, 0.5)
@@ -68,7 +68,7 @@ def radar_factory(num_vars, frame='circle'):
                 y = np.concatenate((y, [y[0]]))
                 line.set_data(x, y)
 
-        def set_varlabels(self, labels):
+        def set_vertices_labels(self, labels):
             self.set_thetagrids(np.degrees(theta), labels)
 
         def _gen_axes_patch(self):
@@ -82,10 +82,10 @@ def radar_factory(num_vars, frame='circle'):
 
             # spine_type must be 'left', 'right', 'top', 'bottom', or `circle`.
             spine_type = 'circle'
-            verts = unit_poly_verts(theta + np.pi / 2)
+            vertices = unit_poly_vertices(theta + np.pi / 2)
             # close off polygon by repeating first vertex
-            verts.append(verts[0])
-            path = Path(verts)
+            vertices.append(vertices[0])
+            path = Path(vertices)
 
             spine = Spine(self, spine_type, path)
             spine.set_transform(self.transAxes)
@@ -95,14 +95,14 @@ def radar_factory(num_vars, frame='circle'):
     return theta
 
 
-def unit_poly_verts(theta):
+def unit_poly_vertices(theta):
     """Return vertices of polygon for subplot axes.
 
     This polygon is circumscribed by a unit circle centered at (0.5, 0.5)
     """
     x0, y0, r = [0.5] * 3
-    verts = [(r * np.cos(t) + x0, r * np.sin(t) + y0) for t in theta]
-    return verts
+    vertices = [(r * np.cos(t) + x0, r * np.sin(t) + y0) for t in theta]
+    return vertices
 
 
 def example_data():
@@ -175,7 +175,7 @@ if __name__ == '__main__':
         for d, color in zip(case_data, colors):
             ax.plot(theta, d, color=color)
             ax.fill(theta, d, facecolor=color, alpha=0.25)
-        ax.set_varlabels(spoke_labels)
+        ax.set_vertices_labels(spoke_labels)
 
     # add legend relative to top-left plot
     ax = axes[0, 0]

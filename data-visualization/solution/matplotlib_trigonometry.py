@@ -23,7 +23,7 @@ fig = plt.figure(1)
 ax1 = fig.add_subplot(211)
 ax1.plot(x, np.sin(2 * np.pi * x))
 ax1.grid(True)
-ax1.set_ylabel('Wartość funkcji')
+ax1.set_ylabel('Function Value')
 ax1.set_title('sin()')
 
 for label in ax1.get_xticklabels():
@@ -33,7 +33,7 @@ for label in ax1.get_xticklabels():
 ax2 = fig.add_subplot(212)
 ax2.plot(x, np.cos(2 * np.pi * x))
 ax2.grid(True)
-ax2.set_ylabel('Wartość funkcji')
+ax2.set_ylabel('Function Value')
 
 label = ax2.set_xlabel('cos()')
 label.set_color('green')
