@@ -5,6 +5,8 @@ import pandas as pd
 
 df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv")
 
+
+# noinspection SpellCheckingInspection
 trace_high = go.Scatter(
     x=df.Date,
     y=df['AAPL.High'],

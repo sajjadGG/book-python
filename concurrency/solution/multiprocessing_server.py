@@ -4,7 +4,7 @@
 from multiprocessing.connection import Listener
 import logging
 
-from __init__ import Prostokat
+from __init__ import Rectangle
 import pickle
 
 logging.basicConfig(
@@ -37,11 +37,11 @@ while True:
     else:
         log.info(data)
         if isinstance(data, Prostokat):
-            obwod = data.obwod()
-            log.info('Dosalem {} o obwodzie: {}'.format(data, obwod))
+            circumference = data.obwod()
+            log.info(f'Received {data} with circumference: {circumference}')
         elif isinstance(data, bytes):
             obj = pickle.loads(data, encoding='bytes')
-            print(obj, 'o obwodzie', obj.obwod())
+            print(obj, 'with circumference', obj.obwod())
         else:
             print(type(data), data)
 

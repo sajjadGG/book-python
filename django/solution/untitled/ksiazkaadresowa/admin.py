@@ -2,7 +2,7 @@ import csv
 from datetime import date
 from django.contrib import admin
 from django.http import HttpResponse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from .models import Person, Address
 
 

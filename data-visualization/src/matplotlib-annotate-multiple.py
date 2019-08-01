@@ -23,7 +23,7 @@ ax.annotate('data = (%.1f, %.1f)' % (xdata, ydata),
             (xdata, ydata), xytext=(-2 * offset, offset), textcoords='offset points',
             bbox=bbox, arrowprops=arrowprops)
 
-disp = ax.annotate('display = (%.1f, %.1f)' % (xdisplay, ydisplay),
+display = ax.annotate('display = (%.1f, %.1f)' % (xdisplay, ydisplay),
                    (xdisplay, ydisplay), xytext=(0.5 * offset, -offset),
                    xycoords='figure pixels',
                    textcoords='offset points',

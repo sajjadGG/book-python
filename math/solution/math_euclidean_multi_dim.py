@@ -1,4 +1,4 @@
-import math
+from math import sqrt
 
 
 def euclidean_distance_n_dimensions(A, B):
@@ -36,4 +36,4 @@ def euclidean_distance_n_dimensions(A, B):
         n2 = B[index]
         under_root += (n2-n1) ** 2
 
-    return math.sqrt(under_root)
+    return sqrt(under_root)

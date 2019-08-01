@@ -3,13 +3,13 @@ import pandas as pd
 
 n = 50
 
-samochody = pd.DataFrame({
+df = pd.DataFrame({
     'przebieg': np.random.randint(0, 200_000, size=n),
     'spalanie': 2 + 18*np.random.rand(n),
 })
 
 
-samochody.head()
+df.head()
 # === ======== ===========
 #     przebieg spalanie
 # === ======== ===========
@@ -21,7 +21,7 @@ samochody.head()
 # === ======== ===========
 
 
-samochody.describe()
+df.describe()
 # ======= =============== ==========
 #         przebieg        spalanie
 # ======= =============== ==========
@@ -37,11 +37,11 @@ samochody.describe()
 
 
 
-samochody.loc[samochody.spalanie < 5, 'marka'] = 'VW'
+df.loc[df.spalanie < 5, 'marka'] = 'VW'
 # alternatywnie
-samochody['marka'] = pd.cut(samochody.spalanie,
-                        bins=[0, 5, 10, 100],
-                        labels=['VW', 'Ford', 'UAZ'])
+df['marka'] = pd.cut(df.spalanie,
+                     bins=[0, 5, 10, 100],
+                     labels=['VW', 'Ford', 'UAZ'])
 # == ======== ========== =====
 #    przebieg spalanie
 # == ======== ========== =====
@@ -53,11 +53,11 @@ samochody['marka'] = pd.cut(samochody.spalanie,
 # == ======== ========== =====
 
 
-samochody['pochodzenie'] = pd.cut(samochody.przebieg,
-                                  bins=[0, 100, 1e5, np.inf],
-                                  labels=['nowy', 'uzywany', 'z niemiec'])
+df['pochodzenie'] = pd.cut(df.przebieg,
+                           bins=[0, 100, 1e5, np.inf],
+                           labels=['nowy', 'uzywany', 'z niemiec'])
 
-samochody.head()
+df.head()
 # === ======== =========== ===== ===========
 #     przebieg spalanie    marka pochodzenie
 # === ======== =========== ===== ===========
@@ -69,7 +69,7 @@ samochody.head()
 # === ======== =========== ===== ===========
 
 
-samochody.groupby(['marka', 'pochodzenie']).describe().T
+df.groupby(['marka', 'pochodzenie']).describe().T
 # =================== ========================== ========================== ==========================
 #         marka       VW                         Ford                       UAZ
 #         pochodzenie uzywany      z niemiec     uzywany      z niemiec     uzywany      z niemiec

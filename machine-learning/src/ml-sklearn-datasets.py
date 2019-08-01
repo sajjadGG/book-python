@@ -18,5 +18,5 @@ labels_train = data[2]
 labels_test = data[3]
 
 
-# Najczęściej w dokumentacji można znaleźć
+# This is the most frequent form
 X_train, X_test, y_train, y_test = train_test_split(features, labels, test_size=0.25, random_state=0)

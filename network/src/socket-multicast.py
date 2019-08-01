@@ -30,9 +30,9 @@ def recv(port=50000, addr="239.192.1.100", buf_size=1024):
     s.bind(('', port))
 
     # Set some more multicast options
-    intf = socket.gethostbyname(socket.gethostname())
-    s.setsockopt(socket.SOL_IP, socket.IP_MULTICAST_IF, socket.inet_aton(intf))
-    s.setsockopt(socket.SOL_IP, socket.IP_ADD_MEMBERSHIP, socket.inet_aton(addr) + socket.inet_aton(intf))
+    iface = socket.gethostbyname(socket.gethostname())
+    s.setsockopt(socket.SOL_IP, socket.IP_MULTICAST_IF, socket.inet_aton(iface))
+    s.setsockopt(socket.SOL_IP, socket.IP_ADD_MEMBERSHIP, socket.inet_aton(addr) + socket.inet_aton(iface))
 
     # Receive the data, then unregister multicast receive membership, then close the port
     data, sender_addr = s.recvfrom(buf_size)

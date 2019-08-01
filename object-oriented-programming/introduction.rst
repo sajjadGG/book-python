@@ -275,7 +275,7 @@ Classes and instances
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
 
-#. Zamodelu dane w programie za pomocą klas i stwórz instancje:
+#. Zamodeluj dane w programie za pomocą klas i stwórz instancje:
 
     * Jan, Twardowski, 1961-04-12
     * Mark, Watney, 1969-07-21

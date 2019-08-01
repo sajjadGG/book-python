@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 
 class Iris(models.Model):
@@ -17,5 +17,5 @@ class Iris(models.Model):
     sepal_width = models.DecimalField(verbose_name=_('Sepal Width'), help_text=_('cm'), max_digits=3, decimal_places=1)
     petal_length = models.DecimalField(verbose_name=_('Petal Length'), help_text=_('cm'), max_digits=3, decimal_places=1)
     petal_width = models.DecimalField(verbose_name=_('Petal Width'), help_text=_('cm'), max_digits=3, decimal_places=1)
-    species = models.CharField(verbose_name=_('Species'), max_length=30, choices=SPECIES_CHOICES, help_text=_('wybierz jedno z nich'))
+    species = models.CharField(verbose_name=_('Species'), max_length=30, choices=SPECIES_CHOICES, help_text=_('Select one'))
 

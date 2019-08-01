@@ -3,8 +3,6 @@
 
 """FileTreeMaker.py: ..."""
 
-__author__  = "legendmohe"
-
 import os
 import argparse
 import time

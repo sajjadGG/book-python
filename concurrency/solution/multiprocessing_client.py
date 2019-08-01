@@ -25,11 +25,11 @@ client = Client(
 
 
 log.debug('Sending data')
-prostokat = Prostokat(5, 10)
+rectangle = Prostokat(5, 10)
 
-pickled = pickle.dumps(prostokat, protocol=pickle.HIGHEST_PROTOCOL)
+pickled = pickle.dumps(rectangle, protocol=pickle.HIGHEST_PROTOCOL)
 
-data = ['ehlo', 10, 10.6, None, True, {'asd': 10}, [{1, 2, 3}], prostokat, pickled]
+data = ['ehlo', 10, 10.6, None, True, {'asd': 10}, [{1, 2, 3}], rectangle, pickled]
 
 for element in data:
     client.send(element)

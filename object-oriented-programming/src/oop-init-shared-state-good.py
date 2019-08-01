@@ -4,11 +4,11 @@ class Contact:
         self.addresses = list(addresses)
 
 
-jose = Contact(name='Jose Jimenez')
-jose.addresses.append('2101 E NASA Pkwy, Houston, TX')
-print(jose.addresses)
-# [2101 E NASA Pkwy, Houston, TX]
+watney = Contact(name='Mark Watney')
+watney.addresses.append('Houston, TX')
+print(watney.addresses)
+# ['Houston, TX']
 
-ivan = Contact(name='Ivan Ivanovich')
-print(ivan.addresses)
+twardowski = Contact(name='Jan Twardowski')
+print(twardowski.addresses)
 # []

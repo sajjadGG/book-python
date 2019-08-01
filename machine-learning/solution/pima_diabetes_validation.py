@@ -11,11 +11,11 @@ with open('../contrib/pima-diabetes.csv') as file:
     labels = data[:, -1]
 
 
-# Normaize the features so that it does not affect the learning algorithm
+# Normalize the features so that it does not affect the learning algorithm
 normalized_X = preprocessing.normalize(features)
 standardized_X = preprocessing.scale(features)
 
-# Fit the Tree alogorithm
+# Fit the Tree algorithm
 # This class implements a meta estimator that fits a number of randomized decision trees (a.k.a. extra-trees) on various sub-samples of the dataset and use averaging to improve the predictive accuracy and control over-fitting.
 model = ExtraTreesClassifier()
 model.fit(features, labels)

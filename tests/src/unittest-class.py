@@ -28,10 +28,10 @@ class RectangleTest(unittest.TestCase):
     def setUp(self):
         self.rectangle = Rectangle(bok_a=10, bok_b=20)
 
-    def test_poprawnego_tworzenie_prostokata(self):
+    def test_create_rectangle(self):
         Rectangle(bok_a=5, bok_b=10)
 
-    def test_prostokata_bok_nieprawidlowy(self):
+    def test_create_rectangle_with_invalid_side(self):
         with self.assertRaises(ValueError):
             Rectangle(bok_a='a', bok_b=20)
 
@@ -41,7 +41,7 @@ class RectangleTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(bok_a='b', bok_b='b')
 
-    def test_prostokata_bok_zero(self):
+    def test_create_rectangle_side_zero(self):
         with self.assertRaises(ValueError):
             Rectangle(bok_a=0, bok_b=20)
 
@@ -51,7 +51,7 @@ class RectangleTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(bok_a=0, bok_b=0)
 
-    def test_prostokata_bok_ujemny(self):
+    def test_create_rectangle_side_negative(self):
         with self.assertRaises(ValueError):
             Rectangle(bok_a=-3, bok_b=20)
 
@@ -61,29 +61,29 @@ class RectangleTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(bok_a=-1, bok_b=-3)
 
-    def test_ustawienia_jednego_boku(self):
+    def test_create_rectangle_with_one_side(self):
         with self.assertRaises(TypeError):
             Rectangle(bok_a=0)
 
         with self.assertRaises(TypeError):
             Rectangle(bok_b=0)
 
-    def test_przechowywanie_wartosci(self):
+    def test_create_rectangle_and_store_values(self):
         p = Rectangle(bok_a=5, bok_b=10)
         self.assertEqual(p.side_a, 5)
         self.assertEqual(p.side_b, 10)
 
-    def test_tworzenie_prostokata(self):
+    def test_create_rectangle_valid(self):
         self.assertEqual(self.rectangle.side_a, 10)
         self.assertEqual(self.rectangle.side_b, 20)
 
-    def test_pola(self):
+    def test_area(self):
         self.assertEqual(self.rectangle.area(), 200.0)
 
-    def test_obwod(self):
+    def test_circumference(self):
         self.assertEqual(self.rectangle.circumference(), 60)
 
-    def test_prostokat_to_string(self):
+    def test_stringify_rectangle(self):
         self.assertEqual(str(self.rectangle), 'Rectangle(a=10.0, b=20.0)')
 
 

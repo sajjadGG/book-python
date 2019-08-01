@@ -7,7 +7,7 @@ Customizong
 .. code-block:: python
 
     from django.contrib import admin
-    from django.utils.translation import ugettext_lazy as _
+    from django.utils.translation import gettext_lazy as _
 
     admin.site.site_header = _('HabitatOS')
     admin.site.index_title = _('Dashboard')
@@ -148,7 +148,7 @@ Settings
 
 .. code-block:: python
 
-    from django.utils.translation import ugettext_lazy as _
+    from django.utils.translation import gettext_lazy as _
     from grappelli.dashboard import Dashboard
     from grappelli.dashboard import modules
 
