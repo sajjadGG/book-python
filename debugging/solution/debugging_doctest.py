@@ -58,9 +58,9 @@ def doctest(docstring):
 
 jose = Astronaut(name='José Jiménez')
 
-for metho in dir(jose):
-    print(f'jose.{metho}.__doc__')
-    docstring = eval(f'jose.{metho}.__doc__')
+for method in dir(jose):
+    print(f'jose.{method}.__doc__')
+    docstring = eval(f'jose.{method}.__doc__')
     doctest(docstring)
 
 

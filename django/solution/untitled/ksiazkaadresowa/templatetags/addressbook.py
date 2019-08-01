@@ -1,15 +1,12 @@
-from datetime import date
 from django import template
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 
 register = template.Library()
-AGE_ADULT = 18 * 365
 
 
 @register.simple_tag
-def czy_pelnoletni(contact):
-
+def is_adult(contact):
     if contact.is_adult() is None:
         return ''
 

@@ -26,15 +26,15 @@ class Character(Dragon):
         if not hasattr(self, 'health_full'):
             self.health_full = self.health_current
 
-        procent = self.health_current / self.health_full * 100
+        percent = self.health_current / self.health_full * 100
 
-        if procent == 100:
+        if percent == 100:
             self.status = Status.FULL_HEALTH
-        elif 75 <= procent < 100:
+        elif 75 <= percent < 100:
             self.status = Status.INJURED
-        elif 25 <= procent < 75:
+        elif 25 <= percent < 75:
             self.status = Status.BADLY_WOUNDED
-        elif 0 < procent < 25:
+        elif 0 < percent < 25:
             self.status = Status.NEAR_DEAD
         else:
             self.status = Status.DEAD

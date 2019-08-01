@@ -49,15 +49,15 @@ class Setosa(Iris):
 header, *data = DATA
 out = []
 
-for *pomiary, gatunek in data:
-    if gatunek == 'setosa':
-        obj = Setosa(*pomiary)
+for *measurements, species in data:
+    if species == 'setosa':
+        obj = Setosa(*measurements)
         out.append(obj)
-    elif gatunek == 'versicolor':
-        obj = Versicolor(*pomiary)
+    elif species == 'versicolor':
+        obj = Versicolor(*measurements)
         out.append(obj)
-    elif gatunek == 'virginica':
-        obj = Virginica(*pomiary)
+    elif species == 'virginica':
+        obj = Virginica(*measurements)
         out.append(obj)
 
 

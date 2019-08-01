@@ -4,84 +4,84 @@ from random import randint
 YEAR = 365.2524
 
 
-class Klient:
-    def __init__(self, imie, nazwisko, data_urodzenia=None, czy_zonaty=None, czy_praca=None, czy_dzieci=None, konta=()):
-        self.imie = imie
-        self.nazwisko = nazwisko
-        self.data_urodzenia = data_urodzenia
-        self.czy_zonaty = czy_zonaty
-        self.czy_praca = czy_praca
-        self.czy_dzieci = czy_dzieci
-        self.konta = list(konta)
+class Client:
+    def __init__(self, first_name, last_name, date_of_birth=None, is_married=None, is_working=None, has_kids=None, accounts=()):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.date_of_birth = date_of_birth
+        self.is_married = is_married
+        self.is_working = is_working
+        self.has_kids = has_kids
+        self.accounts = list(accounts)
 
-    def wiek(self):
-        wiek = (datetime.now().date() - self.data_urodzenia)
-        return round(wiek.days / YEAR)
+    def age(self):
+        age = (datetime.now().date() - self.date_of_birth)
+        return round(age.days / YEAR)
 
-    def wylicz_scoring_kredytowy(self):
+    def calculate_scoring(self):
         score = 0
 
-        if self.czy_zonaty:
+        if self.is_married:
             score += 10
-        if self.czy_praca:
+        if self.is_working:
             score += 200
-        if self.czy_dzieci:
+        if self.has_kids:
             score -= 50
 
-        score += self.wiek() * 10
-        score += len(self.konta) * 20
-        score += sum(x.saldo for x in self.konta)
+        score += self.age() * 10
+        score += len(self.accounts) * 20
+        score += sum(x.saldo for x in self.accounts)
 
         return score
 
 
-class Konto:
+class Account:
     TYP = None
 
-    def __init__(self, saldo=0.0, waluta='PLN'):
-        self.saldo = saldo
-        self.waluta = waluta
-        self.numer = randint(0, 1e24)
-        self.oprocentowanie = None
+    def __init__(self, balance=0.0, currency='PLN'):
+        self.balance = balance
+        self.currency = currency
+        self.number = randint(0, 1e24)
+        self.interest_rate = None
 
 
-class KontoFirmowe(Konto):
-    TYP = 'Firmowe'
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.oprocentowanie = 1.0
-
-
-class KontoWalutowe(Konto):
-    TYP = 'Walutowe'
-
-    def __init__(self, waluta, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.oprocentowanie = 1.19
-
-
-class KontoOszczednosciowe(Konto):
-    TYP = 'Oszczędnościowe'
+class CorporateAccount(Account):
+    TYP = 'Corporate'
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.oprocentowanie = 0.0
+        self.interest_rate = 1.0
 
 
-twardowski = Klient(
-    imie='Jan',
-    nazwisko='Twardowski',
-    data_urodzenia=date(1970, 1, 1),
-    czy_dzieci=True,
-    czy_praca=True,
-    czy_zonaty=True,
-    konta=[
-        KontoOszczednosciowe(),
-        KontoOszczednosciowe(),
-        KontoWalutowe('EUR'),
+class CurrencyAccount(Account):
+    TYP = 'Currency'
+
+    def __init__(self, currency, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.interest_rate = 1.19
+
+
+class SavingsAccount(Account):
+    TYP = 'Savings'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.interest_rate = 0.0
+
+
+twardowski = Client(
+    first_name='Jan',
+    last_name='Twardowski',
+    date_of_birth=date(1970, 1, 1),
+    has_kids=True,
+    is_working=True,
+    is_married=True,
+    accounts=[
+        SavingsAccount(),
+        SavingsAccount(),
+        CurrencyAccount('EUR'),
     ]
 )
 
 if __name__ == '__main__':
-    twardowski.wylicz_scoring_kredytowy()
+    twardowski.calculate_scoring()

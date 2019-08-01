@@ -41,10 +41,10 @@ for values in data:
         'Species': values[4]
     })
 
-    ## Alternatywnie
+    ## Alternative solution
     # iris.append({key: values[i] for i, key in enumerate(header)})
 
-    ## Alternatywnie
+    ## Alternative solution
     # pair = zip(header, values)
     # iris.append(dict(pair))
 

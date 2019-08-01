@@ -7,53 +7,54 @@ zamykanych. Zwórć uwagę, że mogą być cztery typy nawiasów:
 - ostre < i >
 """
 
-NAWIASY_OTWIERAJACE = ('(', '{', '[', '<')
-NAWIASY_ZAMYKAJACE = (')', '}', ']', '>')
-PARA = dict(zip(NAWIASY_OTWIERAJACE, NAWIASY_ZAMYKAJACE))
+BRACKET_OPEN = ('(', '{', '[', '<')
+BRACKET_CLOSE = (')', '}', ']', '>')
+PAIRS = dict(zip(BRACKET_OPEN, BRACKET_CLOSE))
 
 
-def _czy_pasujace(otwarte, nawias_zamykajacy):
-    if otwarte:
-        nawias_otwierajacy = otwarte.pop()
-        return PARA[nawias_otwierajacy] == nawias_zamykajacy
-    else:
+def matches(opened_brackets, bracket):
+    if not opened_brackets:
         return False
 
+    opening_brackets = opened_brackets.pop()
+    return PAIRS[opening_brackets] == bracket
 
-def zbalansowanie_nawiasow(ciag):
+
+def is_balanced(text):
     """
-    >>> zbalansowanie_nawiasow('{}')
+    >>> is_balanced('{}')
     True
-    >>> zbalansowanie_nawiasow('()')
+    >>> is_balanced('()')
     True
-    >>> zbalansowanie_nawiasow('[]')
+    >>> is_balanced('[]')
     True
-    >>> zbalansowanie_nawiasow('<>')
+    >>> is_balanced('<>')
     True
-    >>> zbalansowanie_nawiasow('')
+    >>> is_balanced('')
     True
-    >>> zbalansowanie_nawiasow('(')
+    >>> is_balanced('(')
     False
-    >>> zbalansowanie_nawiasow('}')
+    >>> is_balanced('}')
     False
-    >>> zbalansowanie_nawiasow('(]')
+    >>> is_balanced('(]')
     False
-    >>> zbalansowanie_nawiasow('([)')
+    >>> is_balanced('([)')
     False
-    >>> zbalansowanie_nawiasow('[()')
+    >>> is_balanced('[()')
     False
-    >>> zbalansowanie_nawiasow('{()[]}')
+    >>> is_balanced('{()[]}')
     True
-    >>> zbalansowanie_nawiasow('() [] () ([]()[])')
+    >>> is_balanced('() [] () ([]()[])')
     True
-    >>> zbalansowanie_nawiasow("( (] ([)]")
+    >>> is_balanced("( (] ([)]")
     False
     """
-    otwarte = []
-    for znak in ciag:
-        if znak in NAWIASY_OTWIERAJACE:
-            otwarte.append(znak)
-        elif znak in NAWIASY_ZAMYKAJACE:
-            if not _czy_pasujace(otwarte, znak):
+    opened_brackets = []
+
+    for character in text:
+        if character in BRACKET_OPEN:
+            opened_brackets.append(character)
+        elif character in BRACKET_CLOSE:
+            if not matches(opened_brackets, character):
                 return False
-    return not otwarte
+    return not opened_brackets

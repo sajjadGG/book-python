@@ -10,12 +10,10 @@ out = {
     for key, value in DATA.items()
     if key == 'username'
 }
-
-print(out)
-# {'Иван Иванович': 'Ivan Ivanович'}
+# {'Иван Иванович': 'Ivan Ivanоvic'}
 
 
-out = ['CCCP' if key == 'Roscosmos' else 'USA' for key, value in DATA.items() if key == 'agency']
+out = ['CCCP' if k == 'Roscosmos' else 'USA' for k,v in DATA.items() if k == 'agency']
 print(out)
 # ['USA']
 

@@ -125,9 +125,11 @@ Iris Database
 
 #. Przy dodawaniu danych ``species`` podmień ``int`` na ``str`` ze słownika ``species``
 #. Dodaj kolumnę ``datetime`` z datą i czasem dodania (UTC)
-#. Załóż index na ``datetime``
 #. Wyniki wypisz z bazy danych (``SELECT * FROM iris ORDER BY datetime DESC``)
 #. Zwracaj dane jako ``sqlite3.Row``
+
+:Zadanie z gwiazdką:
+    #. Załóż index na ``datetime``
 
 :The whys and wherefores:
     * Parsowanie plików ``csv``

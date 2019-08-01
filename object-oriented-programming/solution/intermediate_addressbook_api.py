@@ -1,4 +1,4 @@
-from typing import List, Dict
+from typing import List, Dict, Optional
 
 
 class Address:
@@ -7,46 +7,46 @@ class Address:
             setattr(self, key, value)
 
     def __str__(self) -> str:
-        miasto = getattr(self, 'miasto', 'n/a')
-        return f'{miasto}'
+        city = getattr(self, 'city', 'n/a')
+        return f'{city}'
 
     def __repr__(self) -> str:
         return self.__str__()
 
 
 class Contact:
-    def __init__(self, imie: str, nazwisko: str, adresy: List[Address] = []) -> None:
-        self.imie = imie
-        self.nazwisko = nazwisko
-        self.adresy = adresy
+    def __init__(self, first_name: str, last_name: str, addresses: Optional[List[Address]] = None) -> None:
+        self.first_name = first_name
+        self.last_name = last_name
+        self.addresses = list(addresses) if addresses else list()
 
     def __str__(self) -> str:
-        if self.adresy:
-            return f'{self.imie} {self.nazwisko} {self.adresy}'
+        if self.addresses:
+            return f'{self.first_name} {self.last_name} {self.addresses}'
         else:
-            return f'{self.imie} {self.nazwisko}'
+            return f'{self.first_name} {self.last_name}'
 
     def __repr__(self) -> str:
         return self.__str__()
 
 
-melissa = Contact(imie='Melissa', nazwisko='Lewis')
+melissa = Contact(first_name='Melissa', last_name='Lewis')
 print(melissa)
 # Melissa Lewis
 
-mark = Contact(imie='Mark', nazwisko='Watney', adresy=[Address(miasto='Houston'), Address(miasto='Cocoa Beach')])
+mark = Contact(first_name='Mark', last_name='Watney', addresses=[Address(city='Houston'), Address(city='Cocoa Beach')])
 print(mark)
 # Mark Watney [Houston, Cocoa Beach]
 
 addressbook = [
-    Contact(imie='Jan', nazwisko='Twardowski', adresy=[
-        Address(ulica='2101 E NASA Pkwy', miasto='Houston', stan='Texas', kod='77058', panstwo='USA'),
+    Contact(first_name='Jan', last_name='Twardowski', addresses=[
+        Address(street='2101 E NASA Pkwy', miasto='Houston', stan='Texas', kod='77058', panstwo='USA'),
         Address(ulica=None, miasto='Kennedy Space Center', kod='32899', panstwo='USA'),
         Address(ulica='4800 Oak Grove Dr', miasto='Pasadena', kod='91109', panstwo='USA'),
         Address(ulica='2825 E Ave P', miasto='Palmdale', stan='California', kod='93550', panstwo='USA'),
     ]),
-    Contact(imie='José', nazwisko='Jiménez'),
-    Contact(imie='Иван', nazwisko='Иванович', adresy=[]),
+    Contact(first_name='José', last_name='Jiménez'),
+    Contact(first_name='Иван', last_name='Иванович', addresses=[]),
 ]
 
 

@@ -6,8 +6,8 @@ lib = ctypes.CDLL('hello-ctypes.so')
 
 print('-' * 30)
 
-name = 'José Jiménez'.encode('ASCII')
-buffer = ctypes.create_string_buffer(name)
+name = 'José Jiménez'
+buffer = ctypes.create_string_buffer(name.encode('ASCII'))
 lib.say_hello.argtypes = [ctypes.c_char_p]
 greeting = lib.say_hello(buffer)
 print(greeting)
