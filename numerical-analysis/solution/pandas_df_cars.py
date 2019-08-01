@@ -38,10 +38,18 @@ df.describe()
 
 
 df.loc[df.spalanie < 5, 'marka'] = 'VW'
-# alternatywnie
-df['marka'] = pd.cut(df.spalanie,
-                     bins=[0, 5, 10, 100],
-                     labels=['VW', 'Ford', 'UAZ'])
+# == ======== ========== =====
+#    przebieg spalanie
+# == ======== ========== =====
+# 0  5588     15.264853  UAZ
+# 1  99747    4.308231   VW
+# 2  97302    11.575376  UAZ
+# 3  117155   18.862744  UAZ
+# 4  73709    18.138283  UAZ
+# == ======== ========== =====
+
+# Alternative solution
+df['marka'] = pd.cut(df.spalanie, bins=[0, 5, 10, 100], labels=['VW', 'Ford', 'UAZ'])
 # == ======== ========== =====
 #    przebieg spalanie
 # == ======== ========== =====
@@ -53,9 +61,7 @@ df['marka'] = pd.cut(df.spalanie,
 # == ======== ========== =====
 
 
-df['pochodzenie'] = pd.cut(df.przebieg,
-                           bins=[0, 100, 1e5, np.inf],
-                           labels=['nowy', 'uzywany', 'z niemiec'])
+df['pochodzenie'] = pd.cut(df.przebieg, bins=[0, 100, 1e5, np.inf], labels=['nowy', 'uzywany', 'z niemiec'])
 
 df.head()
 # === ======== =========== ===== ===========

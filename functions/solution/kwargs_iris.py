@@ -8,11 +8,9 @@ with open(r'../data/iris.csv') as file:
 
     for line in data:
         *measurements, species = line.strip().split(',')
-        pomiary = {}
+        values = {}
 
-        for i, _ in enumerate(columns):
-            key = columns[i]
-            value = float(measurements[i])
-            pomiary[key] = value
+        for i, name in enumerate(columns):
+            values[name] = float(measurements[i])
 
-        print_iris(species, **pomiary)
+        print_iris(species, **values)

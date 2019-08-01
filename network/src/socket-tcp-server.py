@@ -17,8 +17,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
         received = conn.recv(1024).decode()
         print(f'From: {addr}, received: "{received}"')
 
-        reponse = 'Thanks'
-        conn.sendall(reponse.encode())
+        response = 'Thanks'
+        conn.sendall(response.encode())
 
         if not received:
             print(f'Client {addr} disconnected.')

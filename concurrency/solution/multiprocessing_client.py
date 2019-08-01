@@ -1,11 +1,8 @@
-#!/usr/bin/env python3
-# -*- encoding: utf-8 -*-
-
 from multiprocessing.connection import Client
 import logging
 import pickle
 
-from __init__ import Prostokat
+from __init__ import Rectangle
 
 
 logging.basicConfig(
@@ -25,7 +22,7 @@ client = Client(
 
 
 log.debug('Sending data')
-rectangle = Prostokat(5, 10)
+rectangle = Rectangle(5, 10)
 
 pickled = pickle.dumps(rectangle, protocol=pickle.HIGHEST_PROTOCOL)
 

@@ -10,8 +10,10 @@ ax.plot(x, y)
 ax.set_xlim(0, 10)
 ax.set_ylim(-1, 1)
 
-xdata, ydata = 5, 0
-xdisplay, ydisplay = ax.transData.transform_point((xdata, ydata))
+
+data_x = 5
+data_y = 0
+display_x, display_y = ax.transData.transform_point((data_x, data_y))
 
 bbox = dict(boxstyle="round", fc="0.8")
 arrowprops = dict(
@@ -19,14 +21,14 @@ arrowprops = dict(
     connectionstyle="angle,angleA=0,angleB=90,rad=10")
 
 offset = 72
-ax.annotate('data = (%.1f, %.1f)' % (xdata, ydata),
-            (xdata, ydata), xytext=(-2 * offset, offset), textcoords='offset points',
+ax.annotate('data = (%.1f, %.1f)' % (data_x, data_y),
+            (data_x, data_y), xytext=(-2 * offset, offset), textcoords='offset points',
             bbox=bbox, arrowprops=arrowprops)
 
-display = ax.annotate('display = (%.1f, %.1f)' % (xdisplay, ydisplay),
-                   (xdisplay, ydisplay), xytext=(0.5 * offset, -offset),
-                   xycoords='figure pixels',
-                   textcoords='offset points',
-                   bbox=bbox, arrowprops=arrowprops)
+display = ax.annotate('display = (%.1f, %.1f)' % (display_x, display_y),
+                      (display_x, display_y), xytext=(0.5 * offset, -offset),
+                      xycoords='figure pixels',
+                      textcoords='offset points',
+                      bbox=bbox, arrowprops=arrowprops)
 
 plt.show()

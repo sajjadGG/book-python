@@ -17,15 +17,15 @@ def func(pct, values):
     return "{:.1f}%\n({:d} g)".format(pct, absolute)
 
 
-wedges, texts, autotexts = ax.pie(data, autopct=lambda pct: func(pct, data),
-                                  textprops=dict(color="w"))
+wedges, texts, auto_texts = ax.pie(data, autopct=lambda pct: func(pct, data),
+                                   textprops=dict(color="w"))
 
 ax.legend(wedges, ingredients,
           title="Ingredients",
           loc="center left",
           bbox_to_anchor=(1, 0, 0.5, 1))
 
-plt.setp(autotexts, size=8, weight="bold")
+plt.setp(auto_texts, size=8, weight="bold")
 
 ax.set_title("Matplotlib bakery: A pie")
 
