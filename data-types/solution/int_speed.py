@@ -1,0 +1,16 @@
+BIT = 1
+MEGABIT = 1024 * BIT
+BYTE = 1
+KILOBYTE = 1024 * BYTE
+MEGABYTE = 1024 * KILOBYTE
+
+SECOND = 1
+MINUTE = 60 * SECOND
+HOUR = 60 * MINUTE
+
+file_size = 100 * MEGABYTE
+speed = 100*MEGABIT / SECOND
+
+time = file_size / speed
+
+print(time / MINUTE)

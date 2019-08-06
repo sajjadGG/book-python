@@ -198,24 +198,76 @@ Number to the ``n-th`` power
 Assignments
 ===========
 
+Bytes and Kilobytes
+-------------------
+* Filename: :download:`solution/int_bytes.py`
+* Lines of code to write: 3 lines
+* Estimated time of completion: 3 min
+
+#. Dane są jednostki informatyczne:
+
+    #. 1 B = 8 b
+    #. 1 KB = 1024 B
+    #. 1 MB = 1024 KB
+
+#. Ile bitów to jeden Megabajt?
+
+Download speed
+--------------
+* Filename: :download:`solution/int_speed.py`
+* Lines of code to write: 15 lines
+* Estimated time of completion: 10 min
+
+#. Dane są jednostki informatyczne:
+
+    #. 1 B = 8 bit
+    #. 1 KB = 1024 B
+    #. 1 MB = 1024 KB
+
+#. Mając łącze internetowe do 100 Mb/s
+#. Ile zajmie ściągnięcie pliku 100 MB?
+
+SI Unit Conversion
+------------------
+* Filename: :download:`solution/int_si_units.py`
+* Lines of code to write: 15 lines
+* Estimated time of completion: 10 min
+
+#. Dane są jednostki w układzie SI:
+
+    * 1000 g = 1 kg
+    * 1 metric ton = 1000 kg
+    * 1 h = 60 min
+    * 1 min = 60 s
+    * 1 ata = 1013 hPa (dokładnie 1013.25 hPa, ale przyjmij ``int``)
+
+#. Przelicz:
+
+    * 3 tony -> ile to gramów?
+    * 1 godzina -> ile to sekund?
+    * 4 ata -> ile to Pascali?
+
+:The whys and wherefores:
+    * Definiowanie zmiennych
+    * Nazewnictwo zmiennych
+    * Korzystanie z print formatting
+    * Operacje matematyczne na zmiennych
+
 Temperature
 -----------
 * Filename: :download:`solution/int_temperature.py`
-* Lines of code to write: 2 lines
-* Estimated time of completion: 2 min
+* Lines of code to write: 18 lines
+* Estimated time of completion: 15 min
 
 #. Jeden Kelwin to jeden stopień Celsiusza (1K = 1°C)
 #. Zero Kelwina (bezwzględne) to -273.15 stopni Celsiusza, w zadaniu przyjmij równe -273°C (0K = -273°C)
 #. Ile Kelwinów, a ile stopni Celsiusza wynoszą średnie temperatury powierzchni :cite:`MSL_REMS`:
 
-    * Słońca: 5778 K
     * Księżyca w dzień: -180 °C
-    * Księżyca w nocy: 180 °C
-    * Wenus: 737 K
+    * Księżyca w nocy: 93 K
     * Mars średnia: −63 °C
     * Mars najwyższa: 20 °C
     * Mars najniższa: 120 K
-
 
 :The whys and wherefores:
     * Definiowanie zmiennych

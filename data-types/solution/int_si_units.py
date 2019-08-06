@@ -1,0 +1,14 @@
+GRAM = 1
+KG = 1000 * GRAM
+TON = 1000 * KG
+
+SECOND = 1
+MIN = 60 * SECOND
+HOUR = 60 * MIN
+
+HECTOPASCAL = 1
+ATA = 1013 * HECTOPASCAL
+
+print(3 * TON)
+print(1 * HOUR)
+print(4 * ATA)
