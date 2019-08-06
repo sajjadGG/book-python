@@ -281,7 +281,11 @@ Select
 
     * 2, 6, 9 jako ``list``
     * 12, 15, 16 jako ``tuple``
-    * 18, 24 jako ``dict`` (klucz: numer, wartość -> nazwa gatunku)
+    * 18, 21 jako ``dict``:
+
+        * klucz -> numer indeksu
+        * wartość -> nazwa gatunku
+
     * pusty ``set``
 
 :The whys and wherefores:
