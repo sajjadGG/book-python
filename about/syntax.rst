@@ -32,6 +32,7 @@ End of lines
         print('Hello!\nHow are you?')
         print('Hello!\r\nHow are you?')
 
+
 Comments
 ========
 
@@ -58,6 +59,7 @@ Multiline comments
 * Triple single quotes ``'''``
 * Triple double quotes ``"""`` (more common)
 * Both ``'''`` and ``"""`` quotes works the same
+* if assigned to variable, it serves as multiline ``str``
 
     .. code-block:: python
 
@@ -100,6 +102,8 @@ Docstring
 
             >>> add(1, 2)
             3
+            >>> add(-1, 1)
+            0
             """
             return a + b
 
@@ -174,32 +178,29 @@ Variables vs. constants
 ===========
 * ``print()`` adds ``'\n'`` at the end
 * Prints on the screen
+* Variable substitution
+* Special characters
+* More in :ref:`Print Formatting`
 
     .. code-block:: python
 
         print('My name... José Jiménez')
         # My name... José Jiménez
 
-* Variable substitution
-
     .. code-block:: python
 
         name = 'José Jiménez'
+
+
+        print('My name... {name}')
+        # My name... {name}
 
         print(f'My name... {name}')
         # My name... José Jiménez
 
-* Special characters
-
-    .. code-block:: python
-
-        name = 'José Jiménez'
-
         print(f'My name...\n\t{name}')
         # My name...
         #     José Jiménez
-
-.. note:: More in :ref:`Print Formatting`
 
 
 Assignments

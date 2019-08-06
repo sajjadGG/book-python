@@ -197,4 +197,29 @@ Number to the ``n-th`` power
 
 Assignments
 ===========
-.. todo:: Create Assignments
+
+Temperature
+-----------
+* Filename: :download:`solution/int_temperature.py`
+* Lines of code to write: 2 lines
+* Estimated time of completion: 2 min
+
+#. Jeden Kelwin to jeden stopień Celsiusza (1K = 1°C)
+#. Zero Kelwina (bezwzględne) to -273.15 stopni Celsiusza, w zadaniu przyjmij równe -273°C (0K = -273°C)
+#. Ile Kelwinów, a ile stopni Celsiusza wynoszą średnie temperatury powierzchni :cite:`MSL_REMS`:
+
+    * Słońca: 5778 K
+    * Księżyca w dzień: -180 °C
+    * Księżyca w nocy: 180 °C
+    * Wenus: 737 K
+    * Mars średnia: −63 °C
+    * Mars najwyższa: 20 °C
+    * Mars najniższa: 120 K
+
+
+:The whys and wherefores:
+    * Definiowanie zmiennych
+    * Nazewnictwo zmiennych
+    * Korzystanie z print formatting
+    * Operacje matematyczne na zmiennych
+

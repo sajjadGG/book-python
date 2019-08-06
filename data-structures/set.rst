@@ -87,6 +87,17 @@ Adding many items
     my_set.update([4, 5])
     # {1, 2, 3, 4, 5}
 
+Removing items
+==============
+.. code-block:: python
+
+    my_set = {1, 2, 3}
+
+    value = my_set.pop()
+
+    my_set  # {1, 2}
+    value   # 3
+
 
 Converting to ``set`` deduplicate items
 =======================================

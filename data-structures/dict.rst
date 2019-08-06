@@ -90,7 +90,7 @@ Value can be any object
         'age': 42,
         'astronaut': {'name': 'Jan Twardowski', 'medals': {'Medal of Honor', 'Purple Heart'}},
         'agency': ['POLSA', 'Roscosmos', 'ESA'],
-        'location': ('Bajkonur', 'KSC Florida'),
+        'location': ('Baikonur', 'KSC Florida'),
     }
 
 Order of ``dict`` elements
@@ -168,6 +168,39 @@ Adding using ``.update()`` method
     #   'agency': 'POLSA'
     # }
 
+
+Removing items
+==============
+
+``.pop()``
+----------
+.. code-block:: python
+
+    my_dict = {
+        'first_name': 'Jan',
+        'last_name': 'Twardowski',
+        'agency': 'POLSA',
+    }
+
+    value = my_dict.pop('agency')
+
+    my_dict  # {'first_name', 'Jan', 'last_name': 'Twardowski'}
+    value    # 'POLSA'
+
+``del`` keyword
+---------------
+.. code-block:: python
+
+    my_dict = {
+        'first_name': 'Jan',
+        'last_name': 'Twardowski',
+        'agency': 'POLSA',
+    }
+
+    del my_dict['agency']
+
+    my_dict
+    # {'first_name': 'Jan', 'last_name': 'Twardowski'}
 
 Accessing elements
 ==================
@@ -282,6 +315,7 @@ Accessing ``dict`` keys, values and key-value pairs
     #   ('age', 42)
     # ]
 
+
 Create ``dict`` from two sequences
 ==================================
 * ``zip`` is a generator
@@ -292,7 +326,7 @@ Create ``dict`` from two sequences
     keys =  ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
     values = [5.8, 2.7, 5.1, 1.9, 'virginica']
 
-    my_dict = dict(zip(header, values))
+    my_dict = dict(zip(keys, values))
 
     print(my_dict)
     # {

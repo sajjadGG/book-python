@@ -5,7 +5,6 @@ About Python Language
 
 What is Python?
 ===============
-
 .. figure:: img/python-logo.png
     :scale: 75%
     :align: center
@@ -129,8 +128,8 @@ Python Console (REPL)
 
     $ python3
 
-    Python 3.7.0 (default, Aug 22 2018, 15:22:33)
-    [Clang 9.1.0 (clang-902.0.39.2)] on darwin
+    Python 3.7.4 (default, Jul  9 2019, 18:13:23)
+    [Clang 10.0.1 (clang-1001.0.46.4)] on darwin
     Type "help", "copyright", "credits" or "license" for more information.
 
     >>> print('Ehlo World!')
@@ -140,10 +139,11 @@ Python Console (REPL)
 
     .. code-block:: python
 
-        if True:
-            print(True)
-        else:
-            print(False)
+        >>> if True:
+        ...     print('yes')
+        ... else:
+        ...     print('no')
+        yes
 
 
 Jupyter
