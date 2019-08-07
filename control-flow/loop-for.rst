@@ -255,9 +255,10 @@ Assignments
 
 Counter
 -------
-* Filename: :download:`solution/for_counter.py`
+* Level: Easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 5 min
+* Filename: :download:`solution/for_counter.py`
 
 #. Dane są liczby na listingu :numref:`listing-for-counter`
 
@@ -283,9 +284,10 @@ Counter
 
 Segmentation
 ------------
-* Filename: :download:`solution/for_segmentation.py`
+* Level: Easy
 * Lines of code to write: 12 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/for_segmentation.py`
 
 #. Dane są liczby na listingu :numref:`listing-for-segmentation`
 
@@ -316,9 +318,10 @@ Segmentation
 
 Text analysis
 -------------
+* Level: Easy
+* Lines of code to write: 30 lines
+* Estimated time of completion: 15 min
 * Filename: :download:`solution/for_text_analysis.py`
-* Lines of code to write: 10 lines
-* Estimated time of completion: 10 min
 
 #. Dany jest tekst przemówienia John F. Kennedy'ego "Moon Speech" wygłoszony na Rice Stadium :numref:`listing-for-moon-speech`
 #. Zdania oddzielone są kropkami

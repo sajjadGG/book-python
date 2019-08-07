@@ -157,9 +157,10 @@ Assignments
 
 Content of a requested file
 ---------------------------
-* Filename: :download:`solution/file_requested.py`
+* Level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
+* Filename: :download:`solution/file_requested.py`
 
 #. Za pomocą ``input()`` poproś użytkownika o podanie ścieżki do pliku
 #. Wyświetl na ekranie zawartość pliku
@@ -167,9 +168,10 @@ Content of a requested file
 
 Parsing simple CSV file
 -----------------------
-* Filename: :download:`solution/file_parsing_csv.py`
+* Level: Easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/file_parsing_csv.py`
 * Input data: http://raw.githubusercontent.com/AstroMatt/book-python/master/control-flow/data/iris.csv
 
 #. Skopiuj plik do siebie na dysk i nazwij go ``iris.csv``
@@ -190,11 +192,12 @@ Parsing simple CSV file
     * parsowanie stringów
     * praca ze ścieżkami w systemie operacyjnym
 
-``/etc/hosts`` - Simple Parsing
--------------------------------
-* Filename: :download:`solution/file_parsing_simple.py`
+``/etc/hosts`` - parsing to ``dict``
+------------------------------------
+* Level: Easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/file_parsing_simple.py`
 * Input data: :numref:`listing-file-parsing-simple`
 
     .. literalinclude:: data/etc-hosts-simple.txt
@@ -231,11 +234,12 @@ Parsing simple CSV file
     * praca ze ścieżkami w systemie operacyjnym
 
 
-``/etc/hosts`` - Advanced Parsing
----------------------------------
-* Filename: :download:`solution/file_parsing_advanced.py`
+``/etc/hosts`` - parsing to ``List[dict]``
+------------------------------------------
+* Level: Medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/file_parsing_advanced.py`
 * Input data: :numref:`listing-file-parsing-advanced`
 
     .. literalinclude:: data/etc-hosts.txt

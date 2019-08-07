@@ -5,9 +5,10 @@ Exam from basic topics
 
 Relational Files Database
 =========================
-* Filename: :download:`solution/exam.py`
+* Level: Medium
 * Lines of code to write: 100-150 lines
 * Estimated time of completion: 60 min
+* Filename: :download:`solution/exam.py`
 * Input data: :numref:`code-file-etc-passwd`, :numref:`code-file-etc-shadow`, :numref:`code-file-etc-group`
 
 #. Poniższe listingi prezentują zawartość plików:

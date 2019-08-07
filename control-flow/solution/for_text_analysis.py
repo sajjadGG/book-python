@@ -19,8 +19,8 @@ for sentence in TEXT.split('.'):
     total_words += word_count
     total_sentences += 1
     total_chars += len(sentence)
-    total_letters += len(sentence.replace(' ', ''))
     total_commas += sentence.count(',')
+    total_letters += len(sentence.replace(' ', '').replace(',', ''))
 
     for word in words_in_sentence:
         if word.endswith('ly'):

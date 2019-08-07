@@ -360,9 +360,10 @@ Assignments
 
 Get elements from nested data structure
 ---------------------------------------
-* Filename: :download:`solution/for_nested.py`
+* Level: Easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/for_nested.py`
 
 #. Na podstawie ``DATA`` z :numref:`listing-for-elements-fom-nested`
 #. Po odrzuceniu nagłówka iteruj po danych
@@ -387,9 +388,10 @@ Get elements from nested data structure
 
 ``dict`` to ``dict``
 --------------------
-* Filename: :download:`solution/for_dict_to_dict.py`
+* Level: Easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/for_dict_to_dict.py`
 
 #. Dany jest ``dict`` w formacie:
 
@@ -427,9 +429,10 @@ Get elements from nested data structure
 
 Unique keys from schema-less database
 -------------------------------------
-* Filename: :download:`solution/loop_unique_keys.py`
+* Level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
+* Filename: :download:`solution/loop_unique_keys.py`
 * Input data: :numref:`listing-loops-unique-keys`
 
 .. code-block:: python
@@ -462,9 +465,10 @@ Unique keys from schema-less database
 
 Label encoder
 -------------
-* Filename: :download:`solution/loop_label_encoder.py`
+* Level: Medium
 * Lines of code to write: 13 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/loop_label_encoder.py`
 * Input data: :numref:`listing-loops-iris-sample`
 
 .. code-block:: python

@@ -145,9 +145,10 @@ Assignments
 
 Report card
 -----------
-* Filename: :download:`solution/while_report_card.py`
+* Level: Easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/while_report_card.py`
 
 #. Do zmiennej zapisz skalę ocen ``(2, 3, 3.5, 4, 4.5, 5)``
 #. Za pomocą pętli ``while`` przekonwertuj skalę na zmienną typu ``List[float]``

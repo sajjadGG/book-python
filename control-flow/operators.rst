@@ -42,9 +42,10 @@ Assignments
 
 Even and odd numbers
 --------------------
-* Filename: :download:`solution/operators_even_odd.py`
+* Level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
+* Filename: :download:`solution/operators_even_odd.py`
 
 #. Wczytaj od użytkownika ciąg znaków dowolnej długości
 #. Użytkownik będzie podawał wyłącznie ``int``

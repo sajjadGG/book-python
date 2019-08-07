@@ -298,9 +298,10 @@ Assignments
 
 Split train/test
 ----------------
-* Filename: :download:`solution/comprehension_split_train_test.py`
+* Level: Easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/comprehension_split_train_test.py`
 * Input data: :numref:`listing-comprehension_split_train_test`
 
     .. code-block:: python

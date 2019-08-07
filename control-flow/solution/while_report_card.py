@@ -9,7 +9,6 @@ while i < len(ALLOWED_GRADES_ORIGINAL):
     ALLOWED_GRADES.append(float(grade))
     i += 1
 
-
 while True:
     grade = input('What grade you received?: ')
 
@@ -23,7 +22,6 @@ while True:
         report_card.append(grade)
     else:
         print('Grade is not allowed')
-
 
 if report_card:
     average = sum(report_card) / len(report_card)

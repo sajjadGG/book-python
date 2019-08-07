@@ -1,6 +1,6 @@
 number = input('What is your number?: ')
 
-if float(number) % 1:
+if int(number) % 1:
     print(False)
 else:
     print(True)

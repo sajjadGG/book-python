@@ -132,6 +132,7 @@ Handling user input and type casting
 * Filename: :download:`solution/float_casting.py`
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
+* Level: Easy
 
 #. Użytkownik wprowadził odległość w metrach równą ``1337``
 #. Wyświetl wartość na ekranie w różnych jednostkach
@@ -165,3 +166,42 @@ Handling user input and type casting
 
             age = 30
             print(f'My age is: {age}')
+
+SI Unit Conversion
+------------------
+* Level: Medium
+* Lines of code to write: 20 lines
+* Estimated time of completion: 20 min
+* Filename: :download:`solution/float_pressure.py`
+
+#. Dane są jednostki w układzie SI:
+
+    * 1 ata = 1013.25 hPa (ISA - International Standard Atmosphere)
+    * 1 psi = 6894.757 Pa
+    * ciśnienie operacyjne skafandra EMU: 4.3 PSI
+    * ciśnienie operacyjne skafandra ORLAN: 400 hPa
+    * Skład gazów w atmosferze wynosi:
+
+        * Azot 78.084%
+        * Tlen 20.946%
+        * Argon 0.9340%
+        * Ditlenek węgla 0.0407%
+        * Pozostałe gazy poniżej 0.001%
+
+#. Jaką wartość ma ciśnienie:
+
+    #. operacyjne skafandra EMU?
+    #. operacyjne skafandra Orlan ?
+    #. standardowej atmosfery na poziomie morza?
+    #. parcjalne tlenu na poziomie morza?
+
+#. Wszystkie wyniki podaj w kPa oraz w PSI zaokrąglając do dwóch miejsc po przecinku.
+
+:References:
+    * https://space.stackexchange.com/a/13375/3088
+
+:The whys and wherefores:
+    * Definiowanie zmiennych
+    * Nazewnictwo zmiennych
+    * Korzystanie z print formatting
+    * Operacje matematyczne na zmiennych

@@ -185,9 +185,10 @@ Assignments
 
 Conditioning on user input
 --------------------------
-* Filename: :download:`solution/ifelse_input.py`
+* Level: Easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 5 min
+* Filename: :download:`solution/ifelse_input.py`
 
 #. Napisz program, który poprosi użytkownika o wiek
 #. Użytkownik będzie podawał ``int`` lub ``float``, nie będzie próbował podawać niepoprawnych typów, np. ``str`` albo ``float`` z przecinkiem zamiast kropki
@@ -203,9 +204,10 @@ Conditioning on user input
 
 ``int`` and ``float``
 ---------------------
-* Filename: :download:`solution/ifelse_integers.py`
+* Level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/ifelse_integers.py`
 
 #. Wczytaj liczbę od użytkownika (poda tylko ``int`` albo ``float``)
 #. Wyświetl informację czy jest to liczba całkowita, czy niecałkowita.
