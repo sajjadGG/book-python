@@ -10,63 +10,61 @@ Path
 
 Absolute path
 -------------
-* Windows:
+* ``FILE`` as constant (never hardcode paths)
+* ``FILE`` as a raw string ``r'...'``
 
-    .. code-block:: python
+.. code-block:: python
+    :caption: Windows paths
 
-        FILE = r'C:\Temp\iris.csv'
+    FILE = 'C:\\Temp\\iris.csv'
+    FILE = r'C:\Temp\iris.csv'
 
-* Linux, macOS, BSD
+.. code-block:: python
+    :caption: Linux, macOS, BSD
 
-    .. code-block:: python
-
-        FILE = r'/tmp/iris.csv'
+    FILE = '/tmp/iris.csv'
+    FILE = r'/tmp/iris.csv'
 
 Relative path
 -------------
-* File in the same directory directory
+* ``FILE`` as constant (never hardcode paths)
+* ``FILE`` as a raw string ``r'...'``
 
-    .. code-block:: python
+.. code-block:: python
+    :caption: File in the same directory directory
 
-        FILE = r'iris.csv'
+    FILE = r'iris.csv'
 
-* File in parent directory
+.. code-block:: python
+    :caption: File in parent directory
 
-    .. code-block:: python
+    FILE = r'../iris.csv'
+    FILE = r'../data/iris.csv'
 
-        FILE = r'../data/iris.csv'
+.. code-block:: python
+    :caption: File in the same directory as script
 
-    .. code-block:: python
+    import os
 
-        import os
-
-        BASE_DIR = os.path.dirname(__file__)
-        path = os.path.join(BASE_DIR, 'iris.csv')
-
-Access modes
-============
-.. csv-table::
-    :widths: 20, 80
-    :header: "Character", "Meaning"
-
-    "``'r'``", "open for reading (default)"
-    "``'w'``", "open for writing, truncating the file first"
-    "``'a'``", "open for writing, appending to the end of the file if it exists"
-    "``'rb'``", "read binary mode"
-    "``'wb'``", "write binary mode"
-    "``'ab'``", "append binary mode"
+    BASE_DIR = os.path.dirname(__file__)
+    path = os.path.join(BASE_DIR, 'iris.csv')
 
 
 Read from file
 ==============
 * Works with both relative and absolute path
+* Fails when directory with file cannot be accessed
+* Fails when file cannot be accessed
 * Uses context manager
+* ``mode`` parameter to ``open()`` function is optional (defaults to ``mode='r'``)
+* Reading access modes:
+
+    * ``mode='r'`` - write in text mode (default)
+    * ``mode='rt'`` - write in text mode
+    * ``mode='rb'`` - write in binary mode
 
 Reading file line by line
 -------------------------
-* Fails when directory with file cannot be accessed
-* Fails when file cannot be accessed
-
 .. code-block:: python
     :caption: ``file`` can be iterated line by line
 
@@ -111,9 +109,16 @@ Writing
 
 Writing to file
 ---------------
+* Works with both relative and absolute path
 * Fails when directory with file cannot be accessed
 * Creates file if not exists
-* Overwrite old content
+* Truncate the file before writing
+* ``mode`` parameter to ``open()`` function is required
+* Writing modes:
+
+    * ``mode='w' - write in text mode
+    * ``mode='wt' - write in text mode
+    * ``mode='wb' - write in binary mode
 
 .. code-block:: python
     :caption: Writing to file
@@ -123,9 +128,16 @@ Writing to file
 
 Appending to file
 -----------------
+* Works with both relative and absolute path
 * Fails when directory with file cannot be accessed
 * Creates file if not exists
 * Append to the end of file
+* ``mode`` parameter to ``open()`` function is required
+* Writing modes:
+
+    * ``mode='a' - append in text mode
+    * ``mode='at' - append in text mode
+    * ``mode='ab' - append in binary mode
 
 .. code-block:: python
     :caption: Appending to file
@@ -155,7 +167,7 @@ Good Engineering Practises
 ==========================
 * ``FILE`` as a raw string ``r'...'`` constant
 * ``encoding='utf-8'``
-* Use context manager
+* Use context manager - ``with`` keyword
 
 
 Assignments
