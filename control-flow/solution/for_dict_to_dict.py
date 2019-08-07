@@ -17,8 +17,7 @@ print(output)
 
 
 ## Alternative version
-#
 # output = {education: str(key)
-#     for key, value in EDUCATION_GROUPS.items()
+#     for key, value in DATA.items()
 #         for education in value
 # }
