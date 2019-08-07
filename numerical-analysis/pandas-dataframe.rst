@@ -1180,9 +1180,10 @@ Assignments
 
 Iris Dirty
 ----------
-* Filename: :download:`solution/pandas_df_dirty.py`
+* Level: Easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/pandas_df_dirty.py`
 * Input data: https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/data/iris-dirty.csv
 
 #. Mając dane Irysów przekonwertuj je na ``DataFrame``
@@ -1207,9 +1208,10 @@ Iris Dirty
 
 Iris Clean
 ----------
-* Filename: :download:`solution/pandas_df_clean.py`
+* Level: Easy
 * Lines of code to write: 25 lines
 * Estimated time of completion: 25 min
+* Filename: :download:`solution/pandas_df_clean.py`
 * Input data: https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/data/iris-clean.csv
 
 #. Mając dane Irysów przekonwertuj je na ``DataFrame``
@@ -1231,9 +1233,10 @@ Iris Clean
 
 Cars
 ----
-* Filename: :download:`solution/pandas_df_cars.py`
+* Level: Medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 45 min
+* Filename: :download:`solution/pandas_df_cars.py`
 
 #. Stwórz ``DataFrame`` samochody z:
 
@@ -1261,9 +1264,10 @@ Cars
 
 EVA
 ---
-* Filename: :download:`solution/pandas_df_eva.py`
+* Level: Medium
 * Lines of code to write: 25 lines
 * Estimated time of completion: 30 min
+* Filename: :download:`solution/pandas_df_eva.py`
 
 #. Na podstawie podanych URL:
 

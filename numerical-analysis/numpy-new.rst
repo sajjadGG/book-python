@@ -1353,9 +1353,10 @@ Assignments
 
 Matrix multiplication
 ---------------------
-* Filename: :download:`solution/numpy_matmul.py`
+* Level: Easy
 * Lines of code to write: 2 lines
 * Estimated time of completion: 5 min
+* Filename: :download:`solution/numpy_matmul.py`
 
 #. Używając ``numpy`` oraz operatora ``@`` oraz ``*``
 #. Czym się różnią?
@@ -1380,9 +1381,10 @@ Matrix multiplication
 
 Array filtering
 ---------------
-* Filename: :download:`solution/numpy_array_filtering.py`
+* Level: Easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/numpy_array_filtering.py`
 
 #. Ustaw ziarno losowości na 0
 #. Wygeneruj macierz (50x50) o nazwie ``A``
@@ -1393,9 +1395,10 @@ Array filtering
 
 Sum of inner matrix
 -------------------
-* Filename: :download:`solution/numpy_inner_sum.py`
+* Level: Easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
+* Filename: :download:`solution/numpy_inner_sum.py`
 
 #. Ustaw ziarno losowości na 0
 #. Wygeneruj macierz (16x16) randomowych intów o wartościach od 10 do 100
@@ -1406,9 +1409,10 @@ Sum of inner matrix
 
 Euclidean distance 2D
 ---------------------
-* Filename: :download:`solution/numpy_euclidean_2d.py`
+* Level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/numpy_euclidean_2d.py`
 
 #. Dany jest ``np.array`` przechowujący wektor
 #. Dane są dwa punkty :math:`A` i :math:`B` o podanych koordynatach ``tuple``
@@ -1444,9 +1448,10 @@ Euclidean distance 2D
 
 Euclidean distance multi dimensions
 -----------------------------------
-* Filename: :download:`solution/numpy_euclidean_multi_dim.py`
+* Level: Easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/numpy_euclidean_multi_dim.py`
 
 #. Dane są dwa punkty :math:`A` i :math:`B` o podanych koordynatach ``tuple``
 #. Punkty :math:`A` i :math:`B` są na :math:`N`-wymiarowej przestrzeni ``(x, y, ...)``
@@ -1486,9 +1491,10 @@ Euclidean distance multi dimensions
 
 Szukanie liczby
 ---------------
-* Filename: :download:`solution/numpy_number.py`
+* Level: Medium
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/numpy_number.py`
 
 #. Mamy liczbę trzycyfrową.
 #. Jeżeli od liczny dziesiątek odejmiemy liczbę jedności otrzymamy 6.

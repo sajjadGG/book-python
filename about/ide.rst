@@ -101,9 +101,10 @@ Create Project from GIT
 
 Check Python Version
 --------------------
-* Filename: :download:`solution/python_version.py`
+* Level: Easy
 * Lines of code to write: 0 lines
 * Estimated time of completion: 5 min
+* Filename: :download:`solution/python_version.py`
 
 #. Stwórz skrypt o nazwie ``python_version.py`` (nazwa skryptu będzie zawsze wpisana w sekcji "About")
 #. Plik ma mieć zawartość:
@@ -126,9 +127,10 @@ Check Python Version
 
 Check Python Environment
 ------------------------
-* Filename: :download:`solution/python_env.py`
+* Level: Easy
 * Lines of code to write: 0 lines
 * Estimated time of completion: 5 min
+* Filename: :download:`solution/python_env.py`
 
 #. Stwórz plik o nazwie ``python_env.py``
 #. Plik ma mieć zawartość:

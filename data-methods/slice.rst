@@ -207,9 +207,10 @@ Assignments
 
 Simple collections
 ------------------
-* Filename: :download:`solution/slice_every_nth.py`
+* Level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
+* Filename: :download:`solution/slice_every_nth.py`
 
 #. Stwórz ``a: tuple`` z cyframi 0, 1, 2, 3
 #. Stwórz ``b: list`` z cyframi 2, 3, 4, 5
@@ -223,9 +224,10 @@ Simple collections
 
 Split train/test
 ----------------
-* Filename: :download:`solution/slice_split_train_test.py`
+* Level: Easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/slice_split_train_test.py`
 
 .. code-block:: python
     :caption: Iris Dataset
@@ -276,9 +278,10 @@ Split train/test
 
 Iris dataset
 ------------
-* Filename: :download:`solution/slice_iris.py`
+* Level: Medium
 * Lines of code to write: 30 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/slice_iris.py`
 
 #. Do rozwiązania zadania nie używaj pętli, generatorów, rozwinięć and instrukcji warunkowych.
 #. Mając dane z listingu poniżej
@@ -338,9 +341,10 @@ Iris dataset
 
 Slicing text
 ------------
-* Filename: :download:`solution/slice_text.py`
+* Level: Easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/slice_text.py`
 
 #. Z podanych poniżej ciągów znaków
 #. Za pomocą ``[...]`` wydobądź ``Jana III Sobieskiego``

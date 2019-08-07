@@ -350,9 +350,10 @@ Assignments
 
 Serialize
 ---------
-* Filename: :download:`solution/json_serialize.py`
+* Level: Easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/json_serialize.py`
 * Input data: :numref:`listing-json-serialize`
 
 .. code-block:: python
@@ -411,9 +412,10 @@ Serialize
 
 Deserialize
 -----------
-* Filename: :download:`solution/json_deserialize.py`
+* Level: Easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/json_deserialize.py`
 * Input data: :numref:`listing-json-iris`
 
 #. Dane z listingu poniżej skopiuj do pliku "iris.json"
@@ -435,9 +437,10 @@ Deserialize
 
 Serializing datetime
 --------------------
-* Filename: :download:`solution/json_datetime.py`
+* Level: Easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/json_datetime.py`
 * Input data: :numref:`listing-json-assignment-datetime`
 
 .. code-block:: python
@@ -468,9 +471,10 @@ Serializing datetime
 
 Serializing objects
 -------------------
-* Filename: :download:`solution/json_object.py`
+* Level: Medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/json_object.py`
 
 .. code-block:: python
     :name: listing-json-assignment-objects
@@ -520,9 +524,10 @@ Serializing objects
 
 Deserialize data from GITHub
 ----------------------------
-* Filename: :download:`solution/json_github.py`
+* Level: Medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/json_github.py`
 
 #. Za pomocą biblioteki ``requests`` pobierz dane z https://api.github.com/users
 #. Iterując po rekordach twórz obiekty klasy ``User``
@@ -535,9 +540,10 @@ Deserialize data from GITHub
 
 Deserialize data from API
 -------------------------
-* Filename: :download:`solution/json_api.py`
+* Level: Easy
 * Lines of code to write: 30 lines
 * Estimated time of completion: 30 min
+* Filename: :download:`solution/json_api.py`
 
 #. Po API dostajesz JSONa tak jak na listingu poniżej
 #. Iterując po rekordach twórz obiekty klasy ``Astronaut``

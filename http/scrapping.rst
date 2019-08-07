@@ -162,9 +162,10 @@ Assignments
 
 Iris
 ----
-* Filename: :download:`solution/scrapping_iris.py`
+* Level: Medium
 * Lines of code to write: 20 lines
 * Estimated time of completion: 30 min
+* Filename: :download:`solution/scrapping_iris.py`
 
 #. Za pomocą beautifulsoup4 ze strony https://github.com/AstroMatt/book-python/blob/master/numerical-analysis/data/iris-dirty.csv pobierz dane zbióru Irysów.
 #. Parsując kod HTML oczyść dane.
@@ -174,9 +175,10 @@ Iris
 
 EVA
 ---
-* Filename: :download:`solution/scrapping_eva.py`
+* Level: Medium
 * Lines of code to write: 100 lines
 * Estimated time of completion: 45 min
+* Filename: :download:`solution/scrapping_eva.py`
 
 #. Na podstawie podanych URL:
 

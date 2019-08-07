@@ -136,9 +136,10 @@ Assignments
 
 Pickle serialization
 --------------------
-* Filename: :download:`solution/pickle_dump.py`
+* Level: Easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/pickle_dump.py`
 
 #. Użyj obiektu książki adresowej stworzonego w zadaniu z serializacją
 #. Za pomocą ``pickle`` zapisz kontakty z książki adresowej w pliku

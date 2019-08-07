@@ -80,9 +80,10 @@ Assignments
 
 Create
 ------
-* Filename: :download:`solution/tuple_create.py`
+* Level: Easy
 * Lines of code to write: 13 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/tuple_create.py`
 
 .. code-block:: text
     :caption: Pomiary Iris

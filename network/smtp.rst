@@ -29,9 +29,10 @@ Assignments
 
 Send email
 ----------
-* Filename: :download:`solution/smtp_ssl.py`
+* Level: Medium
 * Lines of code to write: 20 lines
 * Estimated time of completion: 25 min
+* Filename: :download:`solution/smtp_ssl.py`
 
 #. Połącz się z serwerem podanym przez prowadzącego
 #. Wyślij wiadomość email na podany przez prowadzącego adres

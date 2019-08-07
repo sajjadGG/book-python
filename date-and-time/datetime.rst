@@ -204,9 +204,10 @@ Assignments
 
 Create current ``date`` and ``datetime`` objects
 ------------------------------------------------
-* Filename: :download:`solution/datetime_create_current.py`
+* Level: Easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
+* Filename: :download:`solution/datetime_create_current.py`
 
 #. Stwórz obiekt ``date`` z obecną datą
 #. Stwórz obiekt ``datetime`` z obecną datą i czasem
@@ -214,9 +215,10 @@ Create current ``date`` and ``datetime`` objects
 
 Create ``date``, ``time`` and ``datetime`` objects
 --------------------------------------------------
-* Filename: :download:`solution/datetime_create_custom.py`
+* Level: Easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
+* Filename: :download:`solution/datetime_create_custom.py`
 
 #. Stwórz obiekt ``date`` z datą Twojego urodzenia
 #. Stwórz obiekt ``time`` z czasem Twojego urodzenia

@@ -166,9 +166,10 @@ Assignments
 
 Unpacking from sequence
 -----------------------
-* Filename: :download:`solution/unpacking_hosts.py`
+* Level: Easy
 * Lines of code to write: 1 lines
 * Estimated time of completion: 3 min
+* Filename: :download:`solution/unpacking_hosts.py`
 
 #. Dany jest ciąg znaków:
 
@@ -185,9 +186,10 @@ Unpacking from sequence
 
 Unpacking from nested sequence
 ------------------------------
-* Filename: :download:`solution/unpacking_iris.py`
+* Level: Easy
 * Lines of code to write: 1 lines
 * Estimated time of completion: 3 min
+* Filename: :download:`solution/unpacking_iris.py`
 
 #. Dany jest zbiór:
 

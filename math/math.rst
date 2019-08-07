@@ -138,9 +138,10 @@ Assignments
 
 Trigonometry
 ------------
-* Filename: :download:`solution/math_trigonometry.py`
+* Level: Easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/math_trigonometry.py`
 
 #. Program wczytuje od użytkownika wielkość kąta w stopniach
 #. Użytkownik zawsze podaje ``int`` albo ``float``
@@ -149,9 +150,10 @@ Trigonometry
 
 Euclidean distance 2D
 ---------------------
-* Filename: :download:`solution/math_euclidean_2d.py`
+* Level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/math_euclidean_2d.py`
 * Input data: :numref:`listing-math-euclidean-distance-2D`
 
 #. Dane są dwa punkty :math:`A` i :math:`B` o podanych koordynatach ``tuple``
@@ -197,9 +199,10 @@ Euclidean distance 2D
 
 Euclidean distance ``n`` dimensions
 -----------------------------------
-* Filename: :download:`solution/math_euclidean_multi_dim.py`
+* Level: Easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/math_euclidean_multi_dim.py`
 * Input data: :numref:`listing-math-euclidean-distance-n-dimensions`
 
 #. Dane są dwa punkty :math:`A` i :math:`B` o podanych koordynatach ``tuple``
@@ -243,9 +246,10 @@ Euclidean distance ``n`` dimensions
 
 Matrix multiplication
 ---------------------
-* Filename: :download:`solution/math_matmul.py`
+* Level: Hard
 * Lines of code to write: 6 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/math_matmul.py`
 
 #. Napisz program mnożący macierze wykorzystując zagnieżdżone pętle ``for``
 
@@ -278,9 +282,10 @@ Matrix multiplication
 
 Triangle
 --------
-* Filename: :download:`solution/math_triangle.py`
+* Level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/math_triangle.py`
 
 #. Napisz program, który obliczy pole trójkąta.
 #. Użytkownik poda wysokość i długość podstawy tego trójkąta.

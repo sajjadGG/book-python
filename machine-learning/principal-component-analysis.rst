@@ -128,8 +128,9 @@ Assignments
 
 PCA dla zbioru Pima Indian Diabetes
 -----------------------------------
-* Filename: :download:`solution/pca_pima.py`
+* Level: Medium
 * Lines of code to write: 30 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/pca_pima.py`
 
-Przeprowadź analizę PCA dla zbioru Indian Pima
+#. Przeprowadź analizę PCA dla zbioru Indian Pima

@@ -519,9 +519,10 @@ Assignments
 
 Parsing text from webpage
 -------------------------
-* Filename: :download:`solution/regex_html.py`
+* Level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/regex_html.py`
 * Input data: :numref:`listing-regex-moon-speech`
 
 #. Skopiuj zawartość listingu do pliku ``moon-speech.html``

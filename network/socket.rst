@@ -129,9 +129,10 @@ Assignments
 
 Heartbeat
 ---------
-* Filename: :download:`solution/socket_heartbeat_client.py` and :download:`solution/socket_heartbeat_server.py`
+* Level: Medium
 * Lines of code to write: 20 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/socket_heartbeat_client.py` and :download:`solution/socket_heartbeat_server.py`
 
 #. Stwórz klienta i serwer Heart Beat
 #. Zarówno klient jak i serwer ma być uruchamiany w wątkach
@@ -151,9 +152,10 @@ Heartbeat
 
 Backdoor
 --------
-* Filename: :download:`solution/socket_backdoor.py`
+* Level: Medium
 * Lines of code to write: 150 lines
 * Estimated time of completion: 75 min
+* Filename: :download:`solution/socket_backdoor.py`
 
 #. Stwórz uruchamiany w wątku serwer TCP
 #. Serwer ma być uruchamiany na losowym porcie z przedziału 1025-65535 (dlaczego taki zakres portów?)

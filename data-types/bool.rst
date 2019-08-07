@@ -35,6 +35,7 @@ Converting to ``bool``
     bool('Jan Twardowski')      # True
     bool('')                    # False
 
+
 Negative values
 ===============
 * ``False``
@@ -142,9 +143,10 @@ Assignments
 
 To ``bool`` or not to ``bool``
 ------------------------------
-* Filename: :download:`solution/bool_simple.py`
+* Level: Easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/bool_simple.py`
 
 #. Wprowadzono zmienne:
 
@@ -178,9 +180,10 @@ To ``bool`` or not to ``bool``
 
 ``True`` of ``False``
 ---------------------
-* Filename: :download:`solution/bool_true_or_false.py`
+* Level: Easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 5 min
+* Filename: :download:`solution/bool_true_or_false.py`
 
 #. Co należy podstawić do zmiennych aby wyrażenia poniżej zgadzały się z wartością oczekiwaną?
 

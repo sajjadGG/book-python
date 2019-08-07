@@ -129,10 +129,10 @@ Assignments
 
 Handling user input and type casting
 ------------------------------------
-* Filename: :download:`solution/float_casting.py`
+* Level: Easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
-* Level: Easy
+* Filename: :download:`solution/float_casting.py`
 
 #. Użytkownik wprowadził odległość w metrach równą ``1337``
 #. Wyświetl wartość na ekranie w różnych jednostkach

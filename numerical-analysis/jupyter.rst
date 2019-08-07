@@ -418,9 +418,10 @@ Assignments
 
 Podstawy korzystania
 --------------------
-* Filename: :download:`solution/jupyter_first.ipynb`
+* Level: Easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/jupyter_first.ipynb`
 
 #. Stwórz notebook jupyter o nazwie ``jupyter_first.ipynb``
 #. Dodaj tekst opisujący następne polecenia
@@ -431,8 +432,9 @@ Podstawy korzystania
 
 Slajdy
 ------
-* Filename: :download:`solution/jupyter_slides.py`
+* Level: Easy
 * Lines of code to write: 1 lines
 * Estimated time of completion: 5 min
+* Filename: :download:`solution/jupyter_slides.py`
 
 #. Poprzedni skrypt przekonwertuj na slajdy i uruchom prezentację w przeglądarce

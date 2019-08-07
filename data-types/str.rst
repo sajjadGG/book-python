@@ -255,9 +255,10 @@ Assignments
 
 Emoticon print
 --------------
-* Filename: :download:`solution/str_emoticon.py`
+* Level: Easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 3 min
+* Filename: :download:`solution/str_emoticon.py`
 
 #. Wczytaj od użytkownika imię
 #. Wyświetl ``hello IMIE EMOTICON``, gdzie:
@@ -274,9 +275,10 @@ Emoticon print
 
 Variables and types
 -------------------
-* Filename: :download:`solution/str_input.py`
+* Level: Easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/str_input.py`
 
 #. Wczytaj od użytkownika imię
 #. Za pomocą f-string formatting wyświetl na ekranie:

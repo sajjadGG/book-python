@@ -200,9 +200,10 @@ Assignments
 
 Time
 ----
-* Filename: :download:`solution/int_time.py`
+* Level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/int_time.py`
 
 #. Napisz kod, który wyliczy:
 
@@ -218,9 +219,10 @@ Time
 
 Megabits and Megabytes
 ----------------------
-* Filename: :download:`solution/int_megabit_megabyte.py`
+* Level: Medium
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
+* Filename: :download:`solution/int_megabit_megabyte.py`
 
 #. Napisz kod, który wyliczy:
 
@@ -236,9 +238,10 @@ Megabits and Megabytes
 
 Download time
 -------------
-* Filename: :download:`solution/int_download_time.py`
+* Level: Medium
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/int_download_time.py`
 
 #. Mając łącze internetowe do 100 Mb/s
 #. Ile zajmie ściągnięcie pliku 100 MB?
@@ -252,9 +255,10 @@ Download time
 
 Temperature
 -----------
-* Filename: :download:`solution/int_temperature.py`
+* Level: Medium
 * Lines of code to write: 18 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/int_temperature.py`
 
 #. Jeden Kelwin to jeden stopień Celsiusza (1K = 1°C)
 #. Zero Kelwina (bezwzględne) to -273.15 stopni Celsiusza, w zadaniu przyjmij równe -273°C (0K = -273°C)

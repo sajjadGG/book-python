@@ -211,9 +211,10 @@ Assignments
 
 Average
 -------
-* Filename: :download:`solution/builtin_average.py`
+* Level: Easy
 * Lines of code to write: 12 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/builtin_average.py`
 
 #. Dane są pomiary Irysów:
 

@@ -297,9 +297,10 @@ Assignments
 
 Wielowątkowość
 --------------
-* Filename: :download:`solution/threading_timer.py`
+* Level: Easy
 * Lines of code to write: 20 lines
 * Estimated time of completion: 30 min
+* Filename: :download:`solution/threading_timer.py`
 
 #. Stwórz kolejkę ``queue`` do której dodasz różne polecenia systemowe do wykonania, np.:
 

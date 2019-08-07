@@ -26,9 +26,10 @@ Mini Botnet
 
 Heartbeat Receiver
 ------------------
-* Filename: :download:`solution/botnet_heartbeat_receiver.py`
+* Level: Medium
 * Lines of code to write: 45 lines
 * Estimated time of completion: 30 min
+* Filename: :download:`solution/botnet_heartbeat_receiver.py`
 
 #. Server ma przyjmować komunikaty UDP na porcie 1337
 #. Datę UTC przyjścia pakietu, IP i port backdoora zapisuje do bazy danych ``sqlite3`` jako pola:
@@ -42,9 +43,10 @@ Heartbeat Receiver
 
 Victim
 ------
-* Filename: :download:`solution/botnet_victim.py`
+* Level: Medium
 * Lines of code to write: 150 lines
 * Estimated time of completion: 75 min
+* Filename: :download:`solution/botnet_victim.py`
 
 #. Po zainfekowaniu otwiera randomowy port TCP (backdoor) z przedziału 1025-65535 na którym nasłuchuje komunikatów
 #. Dlaczego taki zakres portów?
@@ -72,9 +74,10 @@ Victim
 
 Attacker
 --------
-* Filename: :download:`solution/botnet_attacker.py`
+* Level: Medium
 * Lines of code to write: 150 lines
 * Estimated time of completion: 75 min
+* Filename: :download:`solution/botnet_attacker.py`
 
 #. Skopiuj zawartość :numref:`listing-botnet-commands` do pliku ``botnet-commands.xml``
 #. Skrypt można wywoływać z parametrami linii poleceń:

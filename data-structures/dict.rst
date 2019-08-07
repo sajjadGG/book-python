@@ -366,9 +366,10 @@ Assignments
 
 Aviation Language
 -----------------
-* Filename: :download:`solution/dict_alphabet.py`
+* Level: Easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/dict_alphabet.py`
 
 #. Stwórz słownik języka pilotów
 #. Pojedynczym literom przyporządkuj ich fonetyczne odpowiedniki

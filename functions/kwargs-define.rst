@@ -236,9 +236,10 @@ Assignments
 
 args
 ----
-* Filename: :download:`solution/kwargs_numeric_args.py`
+* Level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/kwargs_numeric_args.py`
 
 #. Stwórz funkcję ``is_numeric``
 #. Funkcja może przyjmować tylko argumenty pozycyjne
@@ -259,9 +260,10 @@ args
 
 args and kwargs
 ---------------
-* Filename: :download:`solution/kwargs_numeric_kwargs.py`
+* Level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/kwargs_numeric_kwargs.py`
 
 #. Stwórz funkcję ``is_numeric``
 #. Funkcja może przyjmować zarówno argumenty pozycyjne jak i nazwane

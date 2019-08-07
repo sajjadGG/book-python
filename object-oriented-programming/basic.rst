@@ -88,9 +88,10 @@ Assignments
 
 Dragon (version alpha)
 ----------------------
-* Filename: :download:`solution/basic_dragon_foundation.py` or :download:`solution/basic_dragon_advanced.py`
+* Level: Medium
 * Lines of code to write: 120 lines
 * Estimated time of completion: 60 min (±15 min), then 60 min live coding with instructor
+* Filename: :download:`solution/basic_dragon_foundation.py` or :download:`solution/basic_dragon_advanced.py`
 * Warning: Don't delete code, assignment will be continued
 
 .. figure:: img/dragon.gif
@@ -173,9 +174,10 @@ Dragon (version alpha)
 
 Bank i Bankomaty
 ----------------
-* Filename: :download:`solution/basic_bank.py`
+* Level: Medium
 * Lines of code to write: 60 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/basic_bank.py`
 
 #. Klient może otworzyć konto w banku
 #. Bank może mieć wiele kont dla różnych klientów

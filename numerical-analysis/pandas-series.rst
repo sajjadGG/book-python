@@ -462,9 +462,10 @@ Assignments
 
 Even Numbers
 ------------
-* Filename: :download:`solution/pandas_series_even_numbers.py`
+* Level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/pandas_series_even_numbers.py`
 
 #. Stwórz ``pd.Series`` z 10 liczbami parzystymi
 #. Podnieś wszystkie elementy do kwadratu
@@ -472,9 +473,10 @@ Even Numbers
 
 Slicing
 -------
-* Filename: :download:`solution/pandas_series_slicing.py`
+* Level: Easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/pandas_series_slicing.py`
 
 #. Stwórz ``pd.Series`` z 26 losowymi liczbami całkowitymi z przedziału ``[10, 100)``
 #. Nazwij indeksy jak kolejne litery alfabetu łacińskiego (bez polskich znaków)

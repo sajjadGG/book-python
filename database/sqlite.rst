@@ -92,9 +92,10 @@ Assignments
 
 Iris Database
 -------------
-* Filename: :download:`solution/sqlite_iris.py`
+* Level: Easy
 * Lines of code to write: 30 lines
 * Estimated time of completion: 30 min
+* Filename: :download:`solution/sqlite_iris.py`
 * Input data: :numref:`listing-database-iris.csv`
 
 .. literalinclude:: assignment/database-iris.csv
@@ -143,9 +144,10 @@ Iris Database
 
 Tworzenie bazy danych i proste zapytania
 ----------------------------------------
-* Filename: :download:`solution/sqlite_addressbook.py`
+* Level: Medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/sqlite_addressbook.py`
 
 #. Wykorzystaj kod z listingu :numref:`listing-database-addressbook.sql` oraz :numref:`listing-database-addressbook.txt`
 #. Wykorzystaj ``cursor`` oraz połączenia jako context manager (``with``)

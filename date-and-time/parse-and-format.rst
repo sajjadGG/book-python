@@ -331,9 +331,10 @@ Assignments
 
 From ISO date format
 --------------------
-* Filename: :download:`solution/datetime_from_iso.py`
+* Level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
+* Filename: :download:`solution/datetime_from_iso.py`
 * Input data: :numref:`listing-time-from-iso`
 
 #. Podaną datę:
@@ -348,9 +349,10 @@ From ISO date format
 
 To ISO date format
 ------------------
-* Filename: :download:`solution/datetime_to_iso.py`
+* Level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
+* Filename: :download:`solution/datetime_to_iso.py`
 
 #. Podaną poniżej datę przekonwertuj do obiektu ``datetime``:
 
@@ -367,9 +369,10 @@ To ISO date format
 
 US date and time format
 -----------------------
-* Filename: :download:`solution/datetime_from_us.py`
+* Level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
+* Filename: :download:`solution/datetime_from_us.py`
 
 #. Rozczytaj datę z formatu amerykańskiego długiego (skopiuj z cudzysłowami):
 

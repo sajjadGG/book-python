@@ -214,9 +214,10 @@ Assignments
 
 Date manipulation
 ------------------
-* Filename: :download:`solution/datetime_deltas.py`
+* Level: Easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/datetime_deltas.py`
 
 #. Między startem Gagarina a pierwszym krokiem Armstronga na Księżycu upłynęło:
 

@@ -327,9 +327,10 @@ Assignments
 
 Cleaning text input
 -------------------
-* Filename: :download:`solution/functions_str_clean.py`
+* Level: Easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/functions_str_clean.py`
 
 #. Napisz funkcję oczyszczającą ciągi znaków
 #. Funkcja musi przechodzić wszystkie ``doctest``
@@ -381,9 +382,10 @@ Cleaning text input
 
 Aviation numbers
 ----------------
-* Filename: :download:`solution/functions_aviation_numbers.py`
+* Level: Easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/functions_aviation_numbers.py`
 
 #. Napisz funkcję ``aviation_numbers``
 #. Funkcja zamieni dowolnego ``int`` lub ``float`` na formę tekstową w mowie pilotów
@@ -430,9 +432,10 @@ Aviation numbers
 
 Number to human readable
 ------------------------
-* Filename: :download:`solution/functions_numstr_human.py`
+* Level: Medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/functions_numstr_human.py`
 
 #. Napisz funkcję ``number_to_str``
 #. Funkcja zamieni dowolnego ``int`` lub ``float`` na formę tekstową
@@ -486,9 +489,10 @@ Number to human readable
 
 Roman numbers
 -------------
-* Filename: :download:`solution/functions_roman.py`
+* Level: Medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/functions_roman.py`
 
 #. Napisz program, który przeliczy wprowadzoną liczbę rzymską na jej postać dziesiętną.
 #. Napisz drugą funkcję, która dokona procesu odwrotnego.

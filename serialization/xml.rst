@@ -522,9 +522,10 @@ Assignments
 
 XML Parsing
 -----------
-* Filename: :download:`solution/xml_parse.py`
+* Level: Easy
 * Lines of code to write: 20 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/xml_parse.py`
 * Input data: :numref:`listing-xml_plants.xml`
 
 #. Przekonwertuj dane do struktur Pythonowych ``list`` of ``dict``
@@ -536,9 +537,10 @@ XML Parsing
 
 XSLT Transformation
 -------------------
-* Filename: :download:`solution/xml_xslt.py`
+* Level: Medium
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/xml_xslt.py`
 * Input data: :numref:`listing-xml_transform.xml`
 
 #. Przekonwertuj dane do struktur Pythonowych ``list`` of ``dict``

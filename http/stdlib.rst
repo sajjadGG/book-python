@@ -390,9 +390,10 @@ Assignments
 
 REST API
 --------
-* Filename: :download:`solution/http_github.py`
+* Level: Medium
 * Lines of code to write: 60 lines
 * Estimated time of completion: 60 min
+* Filename: :download:`solution/http_github.py`
 
 #. Załóż darmowe konto na Github i potwierdź email
 #. Wejdź na stronę internetową https://github.com/settings/tokens

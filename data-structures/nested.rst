@@ -242,9 +242,10 @@ Assignments
 
 Select
 ------
-* Filename: :download:`solution/nested_select.py`
+* Level: Easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/nested_select.py`
 
 .. code-block:: python
     :caption: Iris Dataset

@@ -133,9 +133,10 @@ Zadania praktyczne
 
 Nearest Neighbor Classifier
 ---------------------------
-* Filename: :download:`solution/sklearn_classifier.py`
+* Level: Medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 30 min
+* Filename: :download:`solution/sklearn_classifier.py`
 
 #. Napisz klasyfikator najbliższego sąsiada
 #. Podziel dane treningowe i testowe pół-na-pół
@@ -188,9 +189,10 @@ Nearest Neighbor Classifier
 
 Porównanie classifierów
 -----------------------
-* Filename: :download:`solution/sklearn_comparision.py`
+* Level: Medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/sklearn_comparision.py`
 
 * Pobierz dane Brest Cancer Dataset (``datasets.load_breast_cancer()``)
 * Podziel zestaw na dane testowe (15%) i dane treningowe (85%) i ustaw ``random_state=0``

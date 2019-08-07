@@ -412,9 +412,10 @@ Assignments
 
 Wykorzystanie biblioteki ``sklearn``
 ------------------------------------
-* Filename: :download:`solution/svm_sklearn.py`
+* Level: Medium
 * Lines of code to write: 30 lines
 * Estimated time of completion: 25 min
+* Filename: :download:`solution/svm_sklearn.py`
 * Input data: https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/
 
 Naucz algorytm rozpoznawania danych wykorzystując algorytm Support Vector Machines.

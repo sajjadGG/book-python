@@ -200,9 +200,10 @@ Assignments
 
 Dragon (version release candidate)
 ----------------------------------
-* Filename: :download:`solution/advanced_dragon.py`
+* Level: Hard
 * Lines of code to write: 50 lines
 * Estimated time of completion: 30 min
+* Filename: :download:`solution/advanced_dragon.py`
 
 .. figure:: img/dragon.gif
     :scale: 100%

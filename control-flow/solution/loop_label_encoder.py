@@ -42,7 +42,7 @@ for *measurements, species in data:
 
     for number, name in label_encoder.items():
         if name == species:
-            y.append(name)
+            y.append(number)
 
 
 print(X)
@@ -53,44 +53,30 @@ print(label_encoder)
 
 
 ## Alternative Version
-
-header, *data = DATA
-
-features = []
-labels = []
-species = {}
-
-
-for *measurements, kind in data:
-    if kind not in species:
-        species[kind] = len(species)
-
-    features.append(tuple(measurements))
-    labels.append(species[kind])
-
-species = {v:k for k,v in species.items()}
-
-
-print(features)
-# [
-#   (5.8, 2.7, 5.1, 1.9),
-#   (5.1, 3.5, 1.4, 0.2),
-#   (5.7, 2.8, 4.1, 1.3),
-#   (6.3, 2.9, 5.6, 1.8), ...]
-
-print(labels)
-# [0, 1, 2, 0, 2, 1, 2, 0, 1, 0, 0, 1, 1, 2, 1, 2, 0, 2, 0, 2, 1]
-
-print(species)
-# {0: 'virginica', 1: 'setosa', 2: 'versicolor'}
-
-
+# header, *data = DATA
+#
+# features = []
+# labels = []
+# species = {}
+#
+# for *measurements, kind in data:
+#     if kind not in species:
+#         species[kind] = len(species)
+#
+#     features.append(tuple(measurements))
+#     labels.append(species[kind])
+#
+# species = {v:k for k,v in species.items()}
+#
+# print(features)
+# print(labels)
+# print(species)
 
 ## Alternative Version
-s = set(x[-1] for x in DATA[1:])
-species = dict(zip(s, range(0, len(s))))
+# s = set(x[-1] for x in DATA[1:])
+# species = dict(zip(s, range(0, len(s))))
 
 
 ## Alternative Version
 # In numerical analysis you can find this
-species = dict(enumerate(set(x[-1] for x in DATA[1:])))
+# species = dict(enumerate(set(x[-1] for x in DATA[1:])))

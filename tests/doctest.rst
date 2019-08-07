@@ -294,9 +294,10 @@ Assignments
 
 Refactoring
 -----------
-* Filename: :download:`solution/doctest_temp.py`
+* Level: Easy
 * Lines of code to write: 5 lines of code
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/doctest_temp.py`
 
 #. Dana jest funkcja ``celsius_to_kelvin(degrees)``
 #. Napisz ciało funkcji aby testy przechodziły:
@@ -326,9 +327,10 @@ Refactoring
 
 Distance conversion doctest
 ---------------------------
-* Filename: :download:`solution/doctest_distance.py`
+* Level: Easy
 * Lines of code to write: 5 lines of code + 16 lines of tests
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/doctest_distance.py`
 
 #. Napisz funkcję, która przeliczy dystans podany w metrach na kilometry
 #. 1 km = 1000 m

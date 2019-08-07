@@ -271,9 +271,10 @@ Assignments
 
 Classes and instances
 ---------------------
-* Filename: :download:`solution/introduction_instances.py`
+* Level: Easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/introduction_instances.py`
 
 #. Zamodeluj dane w programie za pomocą klas i stwórz instancje:
 
@@ -285,9 +286,10 @@ Classes and instances
 
 Fields
 ------
-* Filename: :download:`solution/introduction_temperature.py`
+* Level: Easy
 * Lines of code to write: 12 lines
 * Estimated time of completion: 5 min
+* Filename: :download:`solution/introduction_temperature.py`
 
 #. Stwórz klasę ``Temperature``
 #. Klasa ma pamiętać wprowadzoną wartość
@@ -301,9 +303,10 @@ Fields
 
 Methods
 -------
-* Filename: :download:`solution/introduction_iris.py`
+* Level: Easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/introduction_iris.py`
 
 #. Stwórz klasę ``Iris`` z polami:
 
@@ -333,9 +336,10 @@ Methods
 
 Credit Scoring
 --------------
-* Filename: :download:`solution/introduction_credit_scoring.py`
+* Level: Medium
 * Lines of code to write: 30 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/introduction_credit_scoring.py`
 
 #. Stwórz klasę opisującą klienta banku
 #. Stwórz klasę konto bankowe

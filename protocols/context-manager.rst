@@ -197,9 +197,10 @@ Assignments
 
 Buffered file
 -------------
-* Filename: :download:`solution/context_manager_file.py`
+* Level: Easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/context_manager_file.py`
 
 #. Stwórz Context Manager dla zapisu do plików
 #. Context Manager buforuje dane (nie zapisuje ich na bieżąco)

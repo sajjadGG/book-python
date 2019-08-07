@@ -390,9 +390,10 @@ Assignments
 
 Generators vs. Comprehensions - iris
 ------------------------------------
-* Filename: :download:`solution/generator_iris.py`
+* Level: Easy
 * Lines of code to write: 40 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/generator_iris.py`
 * Input data: https://raw.githubusercontent.com/AstroMatt/book-python/master/database/data/iris.csv
 
 #. Skopiuj dane do pliku "iris.csv"
@@ -412,9 +413,10 @@ Generators vs. Comprehensions - iris
 
 Generators vs. Comprehensions - passwd
 --------------------------------------
-* Filename: :download:`solution/generator_passwd.py`
+* Level: Easy
 * Lines of code to write: 40 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/generator_passwd.py`
 
 #. Napisz program, który wczyta plik :numref:`listing-file-etc-passwd-2`
 #. Przefiltruj linie, tak aby nie zawierały komentarzy (zaczynające się od ``#``) oraz pustych linii

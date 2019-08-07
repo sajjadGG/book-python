@@ -264,9 +264,10 @@ Assignments
 
 Iris
 ----
-* Filename: :download:`solution/kwargs_iris.py`
+* Level: Medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/kwargs_iris.py`
 * Input data: https://raw.githubusercontent.com/AstroMatt/book-python/master/functions/data/iris.csv
 
 #. Otwórz link w przeglądarce i skopiuj zawartość do pliku na dysku o nazwie ``iris.csv``

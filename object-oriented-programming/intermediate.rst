@@ -53,9 +53,10 @@ Assignments
 
 Defining Classes
 ----------------
-* Filename: :download:`solution/intermediate_iris.py`
+* Level: Easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/intermediate_iris.py`
 * Input data: :numref:`listing-oop-classes`
 
 .. code-block:: python
@@ -117,9 +118,10 @@ Defining Classes
 
 Basic Address Book
 ------------------
-* Filename: :download:`solution/intermediate_addressbook.py`
+* Level: Easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/intermediate_addressbook.py`
 
 #. Dla danych z listingu poniżej napisz książkę adresową
 
@@ -140,9 +142,10 @@ Basic Address Book
 
 Address Book from API
 ---------------------
-* Filename: :download:`solution/intermediate_addressbook_api.py`
+* Level: Easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/intermediate_addressbook_api.py`
 
 #. API programu powinno być tak jak na :numref:`listing-oop-addressbook-py`
 #. Zrób tak, aby się ładnie wyświetlało zarówno dla jednego wyniku jak i dla wszystkich w książce
@@ -158,9 +161,10 @@ Address Book from API
 
 Dragon (version beta)
 ---------------------
-* Filename: :download:`solution/intermediate_dragon.py`
+* Level: Medium
 * Lines of code to write: 120 lines
 * Estimated time of completion: 30 min (±10 min), then 30 min live coding with instructor
+* Filename: :download:`solution/intermediate_dragon.py`
 * Warning: Don't delete code, assignment will be continued
 
 .. figure:: img/dragon.gif

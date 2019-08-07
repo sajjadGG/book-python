@@ -327,9 +327,10 @@ Assignments
 
 Address Book (dataclass)
 ------------------------
-* Filename: :download:`solution/dataclass_addressbook.py`
+* Level: Easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/dataclass_addressbook.py`
 * Input data: :numref:`listing-dataclass_addressbook.json`
 
 #. Stwórz klasy wykorzystujące mechanizm ``dataclass``

@@ -144,8 +144,9 @@ Assignments
 
 C Types
 -------
-* Filename: :download:`solution/ctypes_datetime.py`
+* Level: Easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/ctypes_datetime.py`
 
 Wykorzystując C Types wyświetl na ekranie datę i czas, za pomocą funkcji zdefiniowanej w C ``<time.h>``

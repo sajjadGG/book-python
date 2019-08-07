@@ -365,9 +365,10 @@ Assignments
 
 Memoization
 -----------
+    * Level: Easy
+    * Lines of code to write: 5 lines
+    * Estimated time of completion: 15 min
 * Filename: :download:`solution/decorator_memoize.py`
-* Lines of code to write: 5 lines
-* Estimated time of completion: 15 min
 
 .. code-block:: python
 
@@ -393,9 +394,10 @@ Memoization
 
 Prosty dekorator
 ----------------
-* Filename: :download:`solution/decorator_abspath.py`
+* Level: Easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/decorator_abspath.py`
 
 #. Program przechodzi przez pliki i katalogi wykorzystując ``os.walk``.
 #. Stwórz funkcję, która wypisuje na ekranie nazwę pliku lub katalogu.
@@ -403,9 +405,10 @@ Prosty dekorator
 
 Type Checking Decorator
 -----------------------
-* Filename: :download:`solution/decorator_check_types.py`
+* Level: Medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
+* Filename: :download:`solution/decorator_check_types.py`
 
 .. code-block:: python
     :name: code-listing-decorator-type-check

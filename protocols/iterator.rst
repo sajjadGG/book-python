@@ -234,18 +234,20 @@ Assignments
 
 Range
 -----
-* Filename: :download:`solution/iterator_range.py`
+* Level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/iterator_range.py`
 
 #. Zaimplementuj własne rozwiązanie ``range()`` wykorzystując iterator.
 #. Początek, koniec, krok (step)
 
 Książka adresowa
 ----------------
-* Filename: :download:`solution/iterator_addressbook.py`
+* Level: Easy
 * Lines of code to write: 20 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/iterator_addressbook.py`
 * Input data: :numref:`listing-iterators-ksiazka-adresowa`
 
 #. Na podstawie kodu z listingu :numref:`listing-iterators-ksiazka-adresowa`

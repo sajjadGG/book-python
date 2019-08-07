@@ -353,9 +353,10 @@ Assignments
 
 String cleaning
 ---------------
-* Filename: :download:`solution/str_cleaning.py`
+* Level: Easy
 * Lines of code to write: 11 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/str_cleaning.py`
 
 .. code-block:: python
 

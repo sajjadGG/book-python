@@ -195,9 +195,10 @@ Assignment
 
 Address Book
 ------------
-* Filename: :download:`solution/operator_overload.py`
+* Level: Easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/operator_overload.py`
 
 #. Dopisz odpowiednie metody do ``Contact`` i ``Address`` aby poniższy kod zadziałał poprawnie
 

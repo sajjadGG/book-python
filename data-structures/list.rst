@@ -216,9 +216,10 @@ Assignments
 
 Create
 ------
-* Filename: :download:`solution/list_create.py`
+* Level: Easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
+* Filename: :download:`solution/list_create.py`
 
 .. csv-table:: Pomiary Iris
     :name: sequences-list-iris

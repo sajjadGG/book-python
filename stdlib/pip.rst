@@ -24,9 +24,10 @@ Assignments
 
 Installing from ``requirements.txt``
 ------------------------------------
-* Filename: ``requirements.txt``
+* Level: Easy
 * Lines of code to write: 1 line
 * Estimated time of completion: 5 min
+* Filename: ``requirements.txt``
 
 #. Stwórz plik ``requirements.txt``
 #. Dopisz linijkę ``pycodestyle`` do ``requirements.txt``

@@ -499,9 +499,10 @@ Assignments
 
 Powielanie napisów
 ------------------
-* Filename: :download:`solution/print_lines.py`
+* Level: Easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 5 min
+* Filename: :download:`solution/print_lines.py`
 
 #. Dany jest ciąg znaków: ``text = 'Lorem Ipsum'``
 #. Napisz trzy funkcje:
@@ -521,9 +522,10 @@ Powielanie napisów
 
 Przeliczanie temperatury
 ------------------------
-* Filename: :download:`solution/print_formatting.py`
+* Level: Easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/print_formatting.py`
 
 #. Napisz program, który wyświetli tabelę przeliczeń stopni Celsjusza na stopnie Fahrenheita w zakresie od –20 do +40 stopni Celsjusza (co 5 stopni).
 #. Wynik musi być taki jak na listingu poniżej

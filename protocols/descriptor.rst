@@ -179,9 +179,10 @@ Assignments
 
 Longitude and Latitude
 ----------------------
-* Filename: :download:`solution/descriptor_geographic.py`
+* Level: Medium
 * Lines of code to write: 25 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/descriptor_geographic.py`
 
 #. Stwórz klasę ``GeographicCoordinate``
 #. Klasa ma mieć pola:
@@ -198,11 +199,12 @@ Longitude and Latitude
     * Wykorzystanie deskryptorów
     * Walidacja danych
 
-Temperatura
+Temperature
 -----------
-* Filename: :download:`solution/descriptor_temperature.py`
+* Level: Medium
 * Lines of code to write: 25 lines
 * Estimated time of completion: 15 min
+* Filename: :download:`solution/descriptor_temperature.py`
 
 #. Stwórz klasę ``KelvinTemperature``
 #. Temperatura musi być dodatnia, sprawdzaj to przy zapisie do pola ``value``

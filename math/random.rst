@@ -23,9 +23,10 @@ Assignments
 
 Random numbers
 --------------
-* Filename: :download:`solution/random_numbers.py`
+* Level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/random_numbers.py`
 
 #. Napisz program, który wyświetli 6 losowych i nie powtarzających się liczb z zakresu od 1 do 49.
 #. Czym sa liczby pseudolosowe?
@@ -45,9 +46,10 @@ Random numbers
 
 Sum of inner elements
 ---------------------
-* Filename: :download:`solution/random_inner_sum.py`
+* Level: Medium
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
+* Filename: :download:`solution/random_inner_sum.py`
 
 #. Ustaw ``random.seed(0)``
 #. Za pomocą biblioteki ``random`` wygeneruj ``List[List[int]]`` (cyfry z przedziału <0,9> włącznie)

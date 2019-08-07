@@ -35,11 +35,10 @@ Assignments
 
 Is ``None`` or ``not``
 ----------------------
-.. todo:: poprawić zadanie, jest tendencyjne
-
-* Filename: :download:`solution/none.py`
+* Level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
+* Filename: :download:`solution/none.py`
 
 #. Co należy podstawić do zmiennych aby wyrażenia poniżej zgadzały się z wartością oczekiwaną?
 
@@ -62,3 +61,5 @@ Is ``None`` or ``not``
     * Konwersja typów
     * Typy logiczne
 
+
+.. todo:: poprawić zadanie, jest tendencyjne

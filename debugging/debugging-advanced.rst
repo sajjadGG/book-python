@@ -204,9 +204,10 @@ Assignment
 
 Own ``doctest``
 ---------------
-* Filename: :download:`solution/debugging_doctest.py`
+* Level: Easy
 * Lines of code to write: 60 lines
 * Estimated time of completion: 30 min
+* Filename: :download:`solution/debugging_doctest.py`
 
 #. Dla kodu z listingu
 #. Napisz własną uproszczoną implementację ``doctest``
