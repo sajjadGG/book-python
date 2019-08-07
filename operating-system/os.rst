@@ -787,7 +787,7 @@ Assignments
 
 Recursive folders walking
 -------------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 30 lines
 * Estimated time of completion: 30 min
 * Filename: :download:`solution/system_walk.py`
@@ -824,7 +824,7 @@ Recursive folders walking
 
 Tree
 ----
-* Level: Hard
+* Complexity level: Hard
 * Lines of code to write: 60 lines
 * Estimated time of completion: 60 min
 * Filename: :download:`solution/system_tree.py`

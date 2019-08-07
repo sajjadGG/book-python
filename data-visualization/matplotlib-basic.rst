@@ -797,7 +797,7 @@ Assignment
 
 Trigonometry
 ------------
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/matplotlib_trigonometry.py`
@@ -822,7 +822,7 @@ Trigonometry
 
 Iris scatter
 ------------
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 20 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/matplotlib_iris.py`
@@ -838,7 +838,7 @@ Iris scatter
 
 Random points
 -------------
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/random_points.py`

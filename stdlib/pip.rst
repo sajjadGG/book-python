@@ -24,7 +24,7 @@ Assignments
 
 Installing from ``requirements.txt``
 ------------------------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 1 line
 * Estimated time of completion: 5 min
 * Filename: ``requirements.txt``

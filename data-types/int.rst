@@ -200,7 +200,7 @@ Assignments
 
 Time
 ----
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/int_time.py`
@@ -219,7 +219,7 @@ Time
 
 Megabits and Megabytes
 ----------------------
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/int_megabit_megabyte.py`
@@ -238,7 +238,7 @@ Megabits and Megabytes
 
 Download time
 -------------
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/int_download_time.py`
@@ -255,7 +255,7 @@ Download time
 
 Temperature
 -----------
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 18 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/int_temperature.py`

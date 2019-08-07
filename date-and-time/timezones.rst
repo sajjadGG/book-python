@@ -141,7 +141,7 @@ Assignments
 
 Time zone converting
 --------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/datetime_tz.py`

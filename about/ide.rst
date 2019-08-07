@@ -101,7 +101,7 @@ Create Project from GIT
 
 Check Python Version
 --------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 0 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/python_version.py`
@@ -127,7 +127,7 @@ Check Python Version
 
 Check Python Environment
 ------------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 0 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/python_env.py`

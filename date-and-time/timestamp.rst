@@ -74,7 +74,7 @@ Assignments
 
 Create ``datetime`` object
 --------------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 1 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/datetime_timestamp.py`

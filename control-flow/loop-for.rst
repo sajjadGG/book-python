@@ -255,7 +255,7 @@ Assignments
 
 Counter
 -------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/for_counter.py`
@@ -284,7 +284,7 @@ Counter
 
 Segmentation
 ------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 12 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/for_segmentation.py`
@@ -318,7 +318,7 @@ Segmentation
 
 Text analysis
 -------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 30 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/for_text_analysis.py`

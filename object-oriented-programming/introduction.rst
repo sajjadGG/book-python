@@ -271,7 +271,7 @@ Assignments
 
 Classes and instances
 ---------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/introduction_instances.py`
@@ -286,7 +286,7 @@ Classes and instances
 
 Fields
 ------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 12 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/introduction_temperature.py`
@@ -303,7 +303,7 @@ Fields
 
 Methods
 -------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/introduction_iris.py`
@@ -336,7 +336,7 @@ Methods
 
 Credit Scoring
 --------------
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 30 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/introduction_credit_scoring.py`

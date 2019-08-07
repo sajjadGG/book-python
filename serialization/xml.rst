@@ -522,7 +522,7 @@ Assignments
 
 XML Parsing
 -----------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 20 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/xml_parse.py`
@@ -537,7 +537,7 @@ XML Parsing
 
 XSLT Transformation
 -------------------
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/xml_xslt.py`

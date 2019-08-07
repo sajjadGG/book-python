@@ -29,7 +29,7 @@ Assignments
 
 Send email
 ----------
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 20 lines
 * Estimated time of completion: 25 min
 * Filename: :download:`solution/smtp_ssl.py`

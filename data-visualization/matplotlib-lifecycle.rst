@@ -337,7 +337,7 @@ Assignment
 
 Iris transformations
 --------------------
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 20 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/matplotlib_lifecycle.py`

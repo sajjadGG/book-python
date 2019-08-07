@@ -519,7 +519,7 @@ Assignments
 
 Parsing text from webpage
 -------------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/regex_html.py`

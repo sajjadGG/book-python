@@ -1353,7 +1353,7 @@ Assignments
 
 Matrix multiplication
 ---------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 2 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/numpy_matmul.py`
@@ -1381,7 +1381,7 @@ Matrix multiplication
 
 Array filtering
 ---------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/numpy_array_filtering.py`
@@ -1395,7 +1395,7 @@ Array filtering
 
 Sum of inner matrix
 -------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/numpy_inner_sum.py`
@@ -1409,7 +1409,7 @@ Sum of inner matrix
 
 Euclidean distance 2D
 ---------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/numpy_euclidean_2d.py`
@@ -1448,7 +1448,7 @@ Euclidean distance 2D
 
 Euclidean distance multi dimensions
 -----------------------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/numpy_euclidean_multi_dim.py`
@@ -1491,7 +1491,7 @@ Euclidean distance multi dimensions
 
 Szukanie liczby
 ---------------
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/numpy_number.py`

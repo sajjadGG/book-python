@@ -236,7 +236,7 @@ Assignments
 
 args
 ----
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/kwargs_numeric_args.py`
@@ -260,7 +260,7 @@ args
 
 args and kwargs
 ---------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/kwargs_numeric_kwargs.py`

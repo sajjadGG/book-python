@@ -327,7 +327,7 @@ Assignments
 
 Address Book (dataclass)
 ------------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/dataclass_addressbook.py`

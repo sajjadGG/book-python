@@ -138,7 +138,7 @@ Assignments
 
 Trigonometry
 ------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/math_trigonometry.py`
@@ -150,7 +150,7 @@ Trigonometry
 
 Euclidean distance 2D
 ---------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/math_euclidean_2d.py`
@@ -199,7 +199,7 @@ Euclidean distance 2D
 
 Euclidean distance ``n`` dimensions
 -----------------------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/math_euclidean_multi_dim.py`
@@ -246,7 +246,7 @@ Euclidean distance ``n`` dimensions
 
 Matrix multiplication
 ---------------------
-* Level: Hard
+* Complexity level: Hard
 * Lines of code to write: 6 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/math_matmul.py`
@@ -282,7 +282,7 @@ Matrix multiplication
 
 Triangle
 --------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/math_triangle.py`

@@ -208,7 +208,7 @@ Assignments
 
 Meet Python
 -----------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 2 lines + 2 lines of comment
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/syntax_python.py`

@@ -179,7 +179,7 @@ Assignments
 
 Longitude and Latitude
 ----------------------
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 25 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/descriptor_geographic.py`
@@ -201,7 +201,7 @@ Longitude and Latitude
 
 Temperature
 -----------
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 25 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/descriptor_temperature.py`

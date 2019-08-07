@@ -39,31 +39,31 @@ Unpacking values at the right side
 ----------------------------------
 .. code-block:: python
 
-    a, b, *others = [1, 2, 3, 4]
+    a, b, *c = [1, 2, 3, 4]
 
     a           # 1
     b           # 2
-    others      # [3, 4]
+    c           # [3, 4]
 
 Unpacking values at the left side
 ---------------------------------
 .. code-block:: python
 
-    *others, a, b = [1, 2, 3, 4]
+    *a, b, c = [1, 2, 3, 4]
 
-    others      # [1, 2]
-    a           # 3
-    b           # 4
+    a           # [1, 2]
+    b           # 3
+    c           # 4
 
 Unpacking values from both sides at once
 ----------------------------------------
 .. code-block:: python
 
-    first, *middle, last = [1, 2, 3, 4]
+    a, *b, c = [1, 2, 3, 4]
 
-    first       # 1
-    middle      # [2, 3]
-    last        # 4
+    a           # 1
+    b           # [2, 3]
+    c           # 4
 
 Cannot unpack from both sides at once
 -------------------------------------
@@ -73,34 +73,17 @@ Cannot unpack from both sides at once
     # SyntaxError: two starred expressions in assignment
 
 
-Unpacking values from function
-==============================
-
-Unpacking values at the left side
----------------------------------
-.. code-block:: python
-
-    line = '4.9,3.1,1.5,0.1,setosa'
-
-    *measurements, species = line.split(',')
-
-    measurements        # ['4.9', '3.1', '1.5', '0.1']
-    species             # 'setosa'
-
-Unpacking values at the right side
-----------------------------------
-.. code-block:: python
-
-    line = 'staff,twardowski,watney,ivanovic'
-
-    group_name, *members = line.split(',')
-
-    group_name      # staff
-    members         # ['twardowski', 'watney', 'ivanovic']
-
 Naming convention
------------------
+=================
 * if you're not using in those values later in your code
+
+.. code-block:: python
+
+    first, *middle, last = [1, 2, 3, 4]
+
+    first           # 1
+    middle          # [2, 3]
+    last            # 4
 
 .. code-block:: python
 
@@ -129,31 +112,25 @@ Naming convention
     home            # /home/twardowski
 
 
-Example
-=======
+Examples
+========
 .. code-block:: python
-    :caption: With ``dict`` all values are namespaced
 
-    DATA = {'features': [4.9, 3.1, 1.5, 0.1], 'species': 'setosa'}
+    line = '4.9,3.1,1.5,0.1,setosa'
 
-    DATA['features']
-    # [4.9, 3.1, 1.5, 0.1]
+    *measurements, species = line.split(',')
 
-    DATA['species']
-    # 'setosa'
+    measurements        # ['4.9', '3.1', '1.5', '0.1']
+    species             # 'setosa'
 
 .. code-block:: python
-    :caption: In most cases you'll get ``tuple``, because it's a bit faster
 
-    DATA = (4.9, 3.1, 1.5, 0.1, 'setosa')
+    line = 'astronauts,twardowski,watney,ivanovic'
 
-    *features, species = DATA
+    group_name, *members = line.split(',')
 
-    features
-    # 4.9, 3.1, 1.5, 0.1
-
-    species
-    # 'setosa'
+    group_name      # astronauts
+    members         # ['twardowski', 'watney', 'ivanovic']
 
 
 More advanced topics
@@ -166,7 +143,7 @@ Assignments
 
 Unpacking from sequence
 -----------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 1 lines
 * Estimated time of completion: 3 min
 * Filename: :download:`solution/unpacking_hosts.py`
@@ -186,7 +163,7 @@ Unpacking from sequence
 
 Unpacking from nested sequence
 ------------------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 1 lines
 * Estimated time of completion: 3 min
 * Filename: :download:`solution/unpacking_iris.py`

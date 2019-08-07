@@ -42,7 +42,7 @@ Assignments
 
 Even and odd numbers
 --------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/operators_even_odd.py`

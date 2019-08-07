@@ -129,7 +129,7 @@ Assignments
 
 Handling user input and type casting
 ------------------------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/float_casting.py`
@@ -169,7 +169,7 @@ Handling user input and type casting
 
 SI Unit Conversion
 ------------------
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 20 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/float_pressure.py`

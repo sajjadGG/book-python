@@ -298,7 +298,7 @@ Assignments
 
 Split train/test
 ----------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/comprehension_split_train_test.py`

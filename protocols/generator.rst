@@ -390,7 +390,7 @@ Assignments
 
 Generators vs. Comprehensions - iris
 ------------------------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 40 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/generator_iris.py`
@@ -413,7 +413,7 @@ Generators vs. Comprehensions - iris
 
 Generators vs. Comprehensions - passwd
 --------------------------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 40 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/generator_passwd.py`

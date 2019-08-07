@@ -216,7 +216,7 @@ Assignments
 
 Create
 ------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/list_create.py`

@@ -23,7 +23,7 @@ Assignments
 
 Random numbers
 --------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/random_numbers.py`
@@ -46,7 +46,7 @@ Random numbers
 
 Sum of inner elements
 ---------------------
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/random_inner_sum.py`

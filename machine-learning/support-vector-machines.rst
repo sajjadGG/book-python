@@ -412,7 +412,7 @@ Assignments
 
 Wykorzystanie biblioteki ``sklearn``
 ------------------------------------
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 30 lines
 * Estimated time of completion: 25 min
 * Filename: :download:`solution/svm_sklearn.py`

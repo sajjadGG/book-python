@@ -211,7 +211,7 @@ Assignments
 
 Average
 -------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 12 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/builtin_average.py`

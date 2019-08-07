@@ -136,7 +136,7 @@ Assignments
 
 Pickle serialization
 --------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/pickle_dump.py`

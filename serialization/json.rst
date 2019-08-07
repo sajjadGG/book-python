@@ -350,7 +350,7 @@ Assignments
 
 Serialize
 ---------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/json_serialize.py`
@@ -412,7 +412,7 @@ Serialize
 
 Deserialize
 -----------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/json_deserialize.py`
@@ -437,7 +437,7 @@ Deserialize
 
 Serializing datetime
 --------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/json_datetime.py`
@@ -471,7 +471,7 @@ Serializing datetime
 
 Serializing objects
 -------------------
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/json_object.py`
@@ -524,7 +524,7 @@ Serializing objects
 
 Deserialize data from GITHub
 ----------------------------
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/json_github.py`
@@ -540,7 +540,7 @@ Deserialize data from GITHub
 
 Deserialize data from API
 -------------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 30 lines
 * Estimated time of completion: 30 min
 * Filename: :download:`solution/json_api.py`

@@ -327,7 +327,7 @@ Assignments
 
 Cleaning text input
 -------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/functions_str_clean.py`
@@ -382,7 +382,7 @@ Cleaning text input
 
 Aviation numbers
 ----------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/functions_aviation_numbers.py`
@@ -432,7 +432,7 @@ Aviation numbers
 
 Number to human readable
 ------------------------
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/functions_numstr_human.py`
@@ -489,7 +489,7 @@ Number to human readable
 
 Roman numbers
 -------------
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/functions_roman.py`

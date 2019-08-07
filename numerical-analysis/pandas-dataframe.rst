@@ -1180,7 +1180,7 @@ Assignments
 
 Iris Dirty
 ----------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/pandas_df_dirty.py`
@@ -1208,7 +1208,7 @@ Iris Dirty
 
 Iris Clean
 ----------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 25 lines
 * Estimated time of completion: 25 min
 * Filename: :download:`solution/pandas_df_clean.py`
@@ -1233,7 +1233,7 @@ Iris Clean
 
 Cars
 ----
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 45 min
 * Filename: :download:`solution/pandas_df_cars.py`
@@ -1264,7 +1264,7 @@ Cars
 
 EVA
 ---
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 25 lines
 * Estimated time of completion: 30 min
 * Filename: :download:`solution/pandas_df_eva.py`

@@ -143,7 +143,7 @@ Assignments
 
 Classification of blood pressure in adults
 ------------------------------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 25 lines
 * Estimated time of completion: 25 min
 * Filename: :download:`solution/ifelse_blood_pressure.py`

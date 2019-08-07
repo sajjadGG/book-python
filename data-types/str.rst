@@ -255,7 +255,7 @@ Assignments
 
 Emoticon print
 --------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 3 min
 * Filename: :download:`solution/str_emoticon.py`
@@ -275,7 +275,7 @@ Emoticon print
 
 Variables and types
 -------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/str_input.py`

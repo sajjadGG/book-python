@@ -204,7 +204,7 @@ Assignment
 
 Own ``doctest``
 ---------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 60 lines
 * Estimated time of completion: 30 min
 * Filename: :download:`solution/debugging_doctest.py`

@@ -128,7 +128,7 @@ Assignments
 
 PCA dla zbioru Pima Indian Diabetes
 -----------------------------------
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 30 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/pca_pima.py`

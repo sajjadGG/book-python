@@ -353,7 +353,7 @@ Assignments
 
 String cleaning
 ---------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 11 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/str_cleaning.py`

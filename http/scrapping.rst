@@ -162,7 +162,7 @@ Assignments
 
 Iris
 ----
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 20 lines
 * Estimated time of completion: 30 min
 * Filename: :download:`solution/scrapping_iris.py`
@@ -175,7 +175,7 @@ Iris
 
 EVA
 ---
-* Level: Medium
+* Complexity level: Medium
 * Lines of code to write: 100 lines
 * Estimated time of completion: 45 min
 * Filename: :download:`solution/scrapping_eva.py`

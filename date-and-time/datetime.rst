@@ -204,7 +204,7 @@ Assignments
 
 Create current ``date`` and ``datetime`` objects
 ------------------------------------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/datetime_create_current.py`
@@ -215,7 +215,7 @@ Create current ``date`` and ``datetime`` objects
 
 Create ``date``, ``time`` and ``datetime`` objects
 --------------------------------------------------
-* Level: Easy
+* Complexity level: Easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/datetime_create_custom.py`
