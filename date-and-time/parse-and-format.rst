@@ -216,7 +216,7 @@ Duration
     :caption: Example
     :emphasize-lines: 1
 
-    P8Y3M9DT8H49M15S
+    P8Y3M8DT20H49M15S
 
     # Period of:
     #   8 years
