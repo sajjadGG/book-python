@@ -738,6 +738,18 @@ System ``os`` vs. ``pathlib``
     # PosixPath('docs/_static')
     # PosixPath('docs/_templates')
 
+joining paths
+-------------
+.. code-block:: python
+
+    from pathlib import Path
+
+    directory = Path("/etc")
+    filepath = directory / "my_file.txt"
+
+    if filepath.exists():
+        print('ok')
+
 
 Running commands in parallel across many hosts
 ==============================================

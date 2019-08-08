@@ -171,6 +171,14 @@ Keyword only
     echo(1)
     # TypeError: echo() missing 1 required keyword-only argument: 'b'
 
+.. code-block:: python
+
+    def echo(a, b, /, c, d, *, e, f):
+        print(a, b, c, d, e, f)
+
+    echo(10, 20, 30, d=40, e=50, f=60)      # is valid
+    echo(10, b=20, c=30, d=40, e=50, f=60)  # b cannot be a keyword argument
+    echo(10, 20, 30, 40, 50, f=60)          # e must be a keyword argument
 
 Use cases
 =========

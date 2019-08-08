@@ -132,6 +132,13 @@ Examples
     group_name      # astronauts
     members         # ['twardowski', 'watney', 'ivanovic']
 
+.. code-block:: python
+
+    a, b, *c = range(10)
+
+    a       # 0
+    b       # 1
+    c       # [2, 3, 4, 5, 6, 7, 8, 9]
 
 More advanced topics
 ====================

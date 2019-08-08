@@ -456,6 +456,22 @@ Exception hierarchy
 
 Defining own exceptions
 =======================
+
+Syntax
+------
+* class which inherits from ``Exception``
+
+.. code-block:: python
+
+    class MyError(Exception):
+        pass
+
+
+    raise MyError
+    raise MyError('More verbose description')
+
+Example
+-------
 .. code-block:: python
     :emphasize-lines: 4-5, 10, 16-17
 
@@ -485,11 +501,10 @@ Real life use-case
 
     from django.contrib.auth.models import User
 
-
-    username = POST.get('username')
-    password = POST.get('password')
-
     try:
-        User.objects.get(username=username, password=password)
+        user = User.objects.get(
+            username=POST.get('username'),
+            password=POST.get('password'),
+        )
     except User.DoesNotExists:
-        print('Permission denied')
+        print('Sorry, permission denied')

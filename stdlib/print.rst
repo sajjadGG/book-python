@@ -470,6 +470,25 @@ Quick and easy debugging
     f'{number*9 + 15=}'
     # x*9 + 15=42
 
+.. code-block:: python
+
+    user = 'eric_idle'
+    member_since = date(1975, 7, 31)
+
+    f'{user=} {member_since=}'
+    # "user='eric_idle' member_since=datetime.date(1975, 7, 31)"
+
+.. code-block:: python
+
+    delta = date.today() - member_since
+
+    f'{user=!s}  {delta.days=:,d}'
+    # 'user=eric_idle  delta.days=16,075'
+
+.. code-block:: python
+
+    print(f'{theta=}  {cos(radians(theta))=:.3f}')
+    # theta=30  cos(radians(theta))=0.866
 
 ``pprint``
 ==========
