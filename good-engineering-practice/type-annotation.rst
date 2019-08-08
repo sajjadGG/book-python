@@ -89,6 +89,183 @@ Iterable
             yield a
             a, b = b, a + b
 
+Final
+-----
+* Since Python 3.8
+* :pep:`591`
+* https://www.python.org/dev/peps/pep-0591/
+
+.. code-block:: python
+
+    from typing import final
+
+    @final
+    class Base:
+        ...
+
+    class Derived(Base):  # Error: Cannot inherit from final class "Base"
+        ...
+
+.. code-block:: python
+
+    from typing import final
+
+    class Base:
+        @final
+        def foo(self) -> None:
+            ...
+
+    class Derived(Base):
+        def foo(self) -> None:  # Error: Cannot override final attribute "foo"
+                                # (previously declared in base class "Base")
+            ...
+
+.. code-block:: python
+
+    from typing import Any, overload
+
+    class Base:
+        @overload
+        def method(self) -> None:
+            ...
+
+        @overload
+        def method(self, arg: int) -> int:
+            ...
+
+        @final
+        def method(self, x=None):
+            ...
+
+.. code-block:: python
+
+    ID: Final[float] = 1
+
+.. code-block:: python
+
+    ID: Final = 1
+
+.. code-block:: python
+
+    from typing import Final
+
+    class Window:
+        BORDER_WIDTH: Final = 2.5
+
+    class ListView(Window):
+        BORDER_WIDTH = 3  # Error: can't override a final attribute
+
+.. code-block:: python
+
+    class ImmutablePoint:
+        x: Final[int]
+        y: Final[int]  # Error: final attribute without an initializer
+
+        def __init__(self) -> None:
+            self.x = 1  # Good
+
+.. code-block:: python
+
+    from typing import Final
+
+    RATE: Final = 3000
+
+    class Base:
+        DEFAULT_ID: Final = 0
+
+    RATE = 300  # Error: can't assign to final attribute
+    Base.DEFAULT_ID = 1  # Error: can't override a final attribute
+
+Literal
+-------
+* Since Python 3.8
+* https://www.python.org/dev/peps/pep-0586/
+
+.. code-block:: python
+
+    from typing import Literal
+
+    def accepts_only_four(x: Literal[4]) -> None:
+        pass
+
+    accepts_only_four(4)   # OK
+    accepts_only_four(19)  # Rejected
+
+
+.. code-block:: python
+
+    @overload
+    def open(path: str,
+             mode: Literal["r", "w", "a", "x", "r+", "w+", "a+", "x+"],
+             ) -> IO[str]: ...
+
+    @overload
+    def open(path: str,
+             mode: Literal["rb", "wb", "ab", "xb", "r+b", "w+b", "a+b", "x+b"],
+             ) -> IO[bytes]: ...
+
+TypedDict
+---------
+* Since Python 3.8
+* https://www.python.org/dev/peps/pep-0589/
+
+.. code-block:: python
+
+    from typing import TypedDict
+
+    class Movie(TypedDict):
+        name: str
+        year: int
+
+.. code-block:: python
+
+    movie: Movie = {
+        'name': 'Blade Runner',
+        'year': 1982
+    }
+
+.. code-block:: python
+
+    def record_movie(movie: Movie) -> None:
+        ...
+
+    record_movie({'name': 'Blade Runner', 'year': 1982})
+
+.. code-block:: python
+    :caption: The code below should be rejected, since 'title' is not a valid key, and the 'name' key is missing
+
+    movie2: Movie = {
+        'title': 'Blade Runner',
+        'year': 1982
+    }
+
+.. code-block:: python
+
+    m = Movie(name='Blade Runner', year=1982)
+
+.. code-block:: python
+
+    class BookBasedMovie(Movie):
+        based_on: str
+
+.. code-block:: python
+
+    class X(TypedDict):
+        x: int
+
+    class Y(TypedDict):
+        y: str
+
+    class XYZ(X, Y):
+        z: bool
+
+.. code-block:: python
+
+    m: Movie = dict(
+        name='Alien',
+        year=1979,
+        director='Ridley Scott')  # error: Unexpected key 'director'
+
 Union
 -----
 .. code-block:: python
