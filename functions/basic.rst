@@ -397,7 +397,7 @@ Aviation numbers
 
 .. code-block:: python
 
-    def aviation_numbers(number: float) -> str:
+    def aviation_numbers(number: Union[int, float]) -> str:
         """
         >>> aviation_numbers(1969)
         'one niner six niner'
@@ -454,28 +454,28 @@ Number to human readable
 
 .. code-block:: python
 
-    def aviation_numbers(number: float) -> str:
+    def number_to_text(number: Union[int, float]) -> str:
         """
-        >>> aviation_numbers(1969)
+        >>> number_to_text(1969)
         'one thousand nine hundred sixty nine'
 
-        >>> aviation_numbers(31337)
+        >>> number_to_text(31337)
         'thirty one thousand three hundred thirty seven'
 
-        >>> aviation_numbers(13.37)
+        >>> number_to_text(13.37)
         'thirteen and thirty seven hundredths'
 
-        >>> aviation_numbers(31.337)
+        >>> number_to_text(31.337)
         'thirty one three hundreds thirty seven thousands'
 
-        >>> aviation_numbers(-1969)
+        >>> number_to_text(-1969)
         'minus one thousand nine hundred sixty nine'
 
-        >>> aviation_numbers(-31.337)
+        >>> number_to_text(-31.337)
         'minus thirty one three hundreds thirty seven thousands'
 
-        >>> aviation_numbers(-49.35)
-        'minus fower niner and tree fife'
+        >>> number_to_text(-49.35)
+        'minus forty nine and thirty five hundreds'
         """
         return number
 

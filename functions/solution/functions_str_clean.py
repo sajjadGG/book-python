@@ -48,8 +48,8 @@ def clean(text: str) -> str:
     text = text.replace('TRZECIEGO', 'III')
     text = text.replace('3EGO', 'III')
     text = text.replace('3', 'III')
-    text = text.strip()
     text = text.title()
     text = text.replace('Iii', 'III')
     text = text.replace('Ii', 'II')
+    text = text.strip()
     return text
