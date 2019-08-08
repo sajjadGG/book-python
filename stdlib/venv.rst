@@ -15,42 +15,32 @@ Virtualenv
 
 Create Virtualenv
 =================
+* ``DIRECTORY`` is the name of venv folder (see "Directory Naming Convention" below)
+
 .. code-block:: console
 
-    cd PROJECT_DIRECTORY
-    python3.7 -m venv venv-3.7.4
+    cd PROJECT
+    python3.7 -m venv DIRECTORY
 
 Directory Naming Convention
 ---------------------------
 * No standard naming convention
-* Naming per Python version
-* Naming per main framework/library version
+* Naming directory like module (``venv``) name is a good idea
+* Adding Python version is also a good practice
+* Optionally naming per main framework/library version
+* Dot at the beginning hides directory on Linux and macOS (but doesn't work on Windows)
 
 .. code-block:: text
-    :caption: Naming directory like module name is a good idea
-    :emphasize-lines: 1
+    :caption: Explicitly states which Python version is installed
+    :emphasize-lines: 13
 
+    .venv/
     venv/
     virtualenv/
-
-.. code-block:: text
-    :caption: Dot at the beginning hides directory on Linux and macOS, but still, it's not a module name
-    :emphasize-lines: 1
-
-    venv/
-    .venv/
-
-.. code-block:: text
-    :caption: Points to which Python version is installed, but no bugfix information
-    :emphasize-lines: 2
 
     venv-3.6/
     venv-3.7/
     venv-3.8/
-
-.. code-block:: text
-    :caption: Explicitly states which Python version is installed (in my opinion the best solution)
-    :emphasize-lines: 5
 
     venv-3.7.0/
     venv-3.7.1/
@@ -61,17 +51,10 @@ Directory Naming Convention
     venv-3.8-beta1/
     venv-3.8-beta2/
 
-.. code-block:: text
-    :caption: You can specify version of the main framework/library used, but no Python version information
-    :emphasize-lines: 2
-
     venv-django-2.1
     venv-django-2.2
     venv-django-3.0beta1
     venv-django-3.0beta2
-
-.. code-block:: text
-    :caption: You can specify Python version and version of the main framework/library used
 
     venv-py37-dj22
     venv-python37-django22
@@ -82,6 +65,13 @@ Directory Naming Convention
 
     ~/.virtualenv/PROJECT_NAME/
 
+Example
+-------
+.. code-block:: console
+
+    cd PROJECT
+    python3.7 -m venv venv-3.7.4
+
 
 Activate Virtualenv
 ===================
@@ -90,14 +80,14 @@ Windows
 -------
 .. code-block:: console
 
-    cd PROJECT_DIRECTORY
+    cd PROJECT
     venv-3.7.4\Scripts\activate.bat
 
 macOS, Linux, BSD
 -----------------
 .. code-block:: console
 
-    cd PROJECT_DIRECTORY
+    cd PROJECT
     venv-3.7.4/bin/activate
 
 
@@ -105,7 +95,7 @@ Good practices
 ==============
 * name as version ``venv-3.7.4``
 * place in your project directory
-* add folder to ``.gitignore``
+* add folder to ``.gitignore`` (important!)
 
 
 Assignments
