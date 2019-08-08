@@ -234,6 +234,16 @@ Use cases
 Assignments
 ===========
 
+Average
+-------
+* Complexity level: Easy
+* Lines of code to write: 2 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/kwargs_average.py`
+
+#. Napisz funkcję wyliczającą średnią arytmetyczną
+#. Funckcja przyjmuje dowolną ilość pozycyjnych argumentów
+
 args
 ----
 * Complexity level: Easy
