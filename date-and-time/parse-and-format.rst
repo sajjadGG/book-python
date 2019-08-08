@@ -41,17 +41,11 @@ Date format in Poland
     12.4.1961
     12.04.1961
 
-.. code-block:: text
-
     12 IV 1961
     12.IV.1961
 
-.. code-block:: text
-
     12/4/1961
     12/04/1961
-
-.. code-block:: text
 
     12 kwietnia 1961
     12 kwiecień 1961
@@ -75,23 +69,15 @@ Noon and Midnight
 * Which time is a midnight?
 * Which time is a noon?
 * `Confusion at noon and midnight <https://en.wikipedia.org/wiki/12-hour_clock#Confusion_at_noon_and_midnight>`_
+* Is 12:00 a noon (in 24h format), or someone just simply forgot to put AM/PM?
 
 .. code-block:: text
 
     12:00 am
     12:00 pm
 
-.. code-block:: text
-    :caption: Is 12:00 a noon (in 24h format), or someone just simply forgot to put AM/PM?
-
-    12:00
-
-.. code-block:: text
-
     12:00
     24:00
-
-.. code-block:: text
 
     00:00
     0:00
@@ -121,6 +107,7 @@ Military time
 .. code-block:: text
 
     1200J
+    1200Z
 
 
 ISO 8601 Standard
@@ -155,42 +142,29 @@ Date and time
 
 Noon and Midnight
 -----------------
-* "00:00" - midnight, at the beginning of a day (more frequent)
+* "00:00" - midnight, at the beginning of a day
 * "24:00" - midnight, at the end of a day (not recommended)
 * "2007-04-05T24:00" is equal to "2007-04-06T00:00"
 
 Weeks
 -----
-* Note year/month changes during the week
-
 .. code-block:: text
-    :caption: First week of 2009
+    :caption: Note year/month changes during the week
 
-    2009-W01
-
-.. code-block:: text
-    :caption: Monday 29 December 2008
-
-    2009-W01-1
-
-.. code-block:: text
-    :caption: Sunday 3 January 2010
-
-    2009-W53-7
+    2009-W01            # First week of 2009
+    2009-W01-1          # Monday 29 December 2008
+    2009-W53-7          # Sunday 3 January 2010
 
 Timezone
 --------
 * "Z" (Zulu) means UTC
 
 .. code-block:: text
-    :caption: Recommended time zone notation
+    :caption: Time zone notation
+    :emphasize-lines: 1,2
 
     <time>Z
     <time>±hh:mm
-
-.. code-block:: text
-    :caption: Not recommended time zone notation
-
     <time>±hhmm
     <time>±hh
 
@@ -292,7 +266,7 @@ ISO Format
     format = '%Y-%m-%d %H:%M'
 
     print(f'Gagarin launched on {gagarin:{format}}')
-    # Gagarin launched on 1961-04-12  06:07
+    # Gagarin launched on 1961-04-12 06:07
 
 Format to string
 ----------------
