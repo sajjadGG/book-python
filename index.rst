@@ -93,7 +93,7 @@ Functions
     /functions/basic.rst
     /functions/types.rst
     /functions/kwargs-define.rst
-    /functions/kwargs-passing.rst
+    /functions/kwargs-call.rst
     /functions/recurrence.rst
     /functions/callable.rst
 

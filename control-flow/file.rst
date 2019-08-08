@@ -116,9 +116,9 @@ Writing to file
 * ``mode`` parameter to ``open()`` function is required
 * Writing modes:
 
-    * ``mode='w' - write in text mode
-    * ``mode='wt' - write in text mode
-    * ``mode='wb' - write in binary mode
+    * ``mode='w'`` - write in text mode
+    * ``mode='wt'`` - write in text mode
+    * ``mode='wb'`` - write in binary mode
 
 .. code-block:: python
     :caption: Writing to file
@@ -135,9 +135,9 @@ Appending to file
 * ``mode`` parameter to ``open()`` function is required
 * Writing modes:
 
-    * ``mode='a' - append in text mode
-    * ``mode='at' - append in text mode
-    * ``mode='ab' - append in binary mode
+    * ``mode='a'`` - append in text mode
+    * ``mode='at'`` - append in text mode
+    * ``mode='ab'`` - append in binary mode
 
 .. code-block:: python
     :caption: Appending to file

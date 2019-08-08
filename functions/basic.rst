@@ -207,31 +207,32 @@ Named arguments
     )
 
 .. code-block:: python
+    :emphasize-lines: 6,10
 
-    # ``read_csv`` is a function from ``pandas`` library
-    read_csv(filepath_or_buffer, sep=', ', delimiter=None,
-             header='infer', names=None, index_col=None,
-             usecols=None, squeeze=False, prefix=None,
-             mangle_dupe_cols=True, dtype=None, engine=None,
-             converters=None, true_values=None, false_values=None,
-             skipinitialspace=False, skiprows=None, nrows=None,
-             na_values=None, keep_default_na=True, na_filter=True,
-             verbose=False, skip_blank_lines=True, parse_dates=False,
-             infer_datetime_format=False, keep_date_col=False,
-             date_parser=None, dayfirst=False, iterator=False,
-             chunksize=None, compression='infer', thousands=None,
-             decimal=b'.', lineterminator=None, quotechar='"',
-             quoting=0, escapechar=None, comment=None, encoding=None,
-             dialect=None, tupleize_cols=None, error_bad_lines=True,
-             warn_bad_lines=True, skipfooter=0, doublequote=True,
-             delim_whitespace=False, low_memory=True, memory_map=False,
-             float_precision=None)
+    def read_csv(filepath_or_buffer, sep=', ', delimiter=None, header='infer',
+                 names=None, index_col=None, usecols=None, squeeze=False, prefix=None,
+                 mangle_dupe_cols=True, dtype=None, engine=None, converters=None,
+                 true_values=None, false_values=None, skipinitialspace=False,
+                 skiprows=None, nrows=None, na_values=None, keep_default_na=True,
+                 na_filter=True, verbose=False, skip_blank_lines=True, parse_dates=False,
+                 infer_datetime_format=False, keep_date_col=False, date_parser=None,
+                 dayfirst=False, iterator=False, chunksize=None, compression='infer',
+                 thousands=None, decimal=b'.', lineterminator=None, quotechar='"',
+                 quoting=0, escapechar=None, comment=None, encoding=None, dialect=None,
+                 tupleize_cols=None, error_bad_lines=True, warn_bad_lines=True,
+                 skipfooter=0, doublequote=True, delim_whitespace=False, low_memory=True,
+                 memory_map=False, float_precision=None):
+        """
+        Definition of pandas.read_csv() function
+        https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html
+        """
 
 
     data = read_csv(
         filepath_or_buffer='iris.csv',
         encoding='utf-8',
-        usecols=['Petal lenght', 'Species']
+        verbose=True,
+        usecols=['Sepal Length', 'Species']
     )
 
 
@@ -315,11 +316,6 @@ Local scope
 
     add_numbers(1)
     # {'a': 1, 'b': 2, 'c': 3}
-
-
-More advanced topics
-====================
-.. note:: The topic will be continued in :ref:`Advanced Functions` chapter
 
 
 Assignments

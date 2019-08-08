@@ -7,6 +7,8 @@ def is_numeric(*args: Any) -> bool:
     True
     >>> is_numeric(1, 1.5)
     True
+    >>> is_numeric(True)
+    False
     >>> is_numeric('one', 1)
     False
     >>> is_numeric()
@@ -20,7 +22,8 @@ def is_numeric(*args: Any) -> bool:
         return False
 
     for arg in args:
-        if not isinstance(arg, (int, float)):
+        if not type(arg) in {int, float}:
+        # if not isinstance(arg, (int, float)):
             return False
 
     return True

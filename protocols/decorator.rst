@@ -365,9 +365,9 @@ Assignments
 
 Memoization
 -----------
-    * Complexity level: Easy
-    * Lines of code to write: 5 lines
-    * Estimated time of completion: 15 min
+* Complexity level: Easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 15 min
 * Filename: :download:`solution/decorator_memoize.py`
 
 .. code-block:: python

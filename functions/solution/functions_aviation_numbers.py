@@ -1,7 +1,6 @@
-from typing import Union
+from typing import Union, Dict
 
-
-ALPHABET = {
+ALPHABET: Dict[str, str] = {
     '0': 'zero',
     '1': 'one',
     '2': 'two',

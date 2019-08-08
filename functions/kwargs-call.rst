@@ -111,7 +111,7 @@ Vectors
 .. code-block:: python
     :caption: Passing vector to the function
 
-    def print_cartesian_coordinates(x, y, z):
+    def cartesian_coordinates(x, y, z):
         print(x)    # 1
         print(y)    # 0
         print(z)    # 1
@@ -119,7 +119,7 @@ Vectors
 
     vector = (1, 0, 1)
 
-    print_cartesian_coordinates(*vector)
+    cartesian_coordinates(*vector)
 
 Print formatting
 ----------------
@@ -144,14 +144,14 @@ Common configuration
         ...
 
 
-    draw_line(1, 2, color='red', type='dashed', width='2px', markers='disc')
-    draw_line(3, 4, color='red', type='dashed', width='2px', markers='disc')
-    draw_line(5, 6, color='red', type='dashed', width='2px', markers='disc')
+    draw_line(x=1, y=2, color='red', type='dashed', width='2px', markers='disc')
+    draw_line(x=3, y=4, color='red', type='dashed', width='2px', markers='disc')
+    draw_line(x=5, y=6, color='red', type='dashed', width='2px', markers='disc')
 
 .. code-block:: python
     :caption: Passing configuration to the function, which sets parameters from the config
 
-    def draw_chart(a, b, color, type, width, markers):
+    def draw_line(x, y, color, type, width, markers):
         ...
 
 
@@ -177,11 +177,12 @@ Common configuration
         'database': 'my_database',
     }
 
+
     def database_connect(host, port, username, password, database):
         return ...
 
-    connection = database_connect(**config)
 
+    connection = database_connect(**config)
 
 Calling function with all variables from higher order function
 --------------------------------------------------------------
@@ -195,7 +196,7 @@ Calling function with all variables from higher order function
         d = 4
         e = 5
         lower(**locals())
-        # lower(a=a, b=b, c=c, d=d, e=e)
+        # lower(a=1, b=2, c=0, d=4, e=5)
 
 
     higher(1, 2)
@@ -205,27 +206,26 @@ Proxy functions
 ---------------
 .. code-block:: python
     :caption: One of the most common use of ``*args``, ``**kwargs`` is for proxy methods.
-    :emphasize-lines: 14
+    :emphasize-lines: 2,6,10
 
-    # ``read_csv`` is a function from ``pandas`` library
-    def read_csv(filepath_or_buffer, sep=', ', delimiter=None,
-                 header='infer', names=None, index_col=None,
-                 usecols=None, squeeze=False, prefix=None,
-                 mangle_dupe_cols=True, dtype=None, engine=None,
-                 converters=None, true_values=None, false_values=None,
-                 skipinitialspace=False, skiprows=None, nrows=None,
-                 na_values=None, keep_default_na=True, na_filter=True,
-                 verbose=False, skip_blank_lines=True, parse_dates=False,
-                 infer_datetime_format=False, keep_date_col=False,
-                 date_parser=None, dayfirst=False, iterator=False,
-                 chunksize=None, compression='infer', thousands=None,
-                 decimal=b'.', lineterminator=None, quotechar='"',
-                 quoting=0, escapechar=None, comment=None, encoding=None,
-                 dialect=None, tupleize_cols=None, error_bad_lines=True,
-                 warn_bad_lines=True, skipfooter=0, doublequote=True,
-                 delim_whitespace=False, low_memory=True, memory_map=False,
-                 float_precision=None):
-        ...
+    def read_csv(filepath_or_buffer, sep=', ', delimiter=None, header='infer',
+                 names=None, index_col=None, usecols=None, squeeze=False, prefix=None,
+                 mangle_dupe_cols=True, dtype=None, engine=None, converters=None,
+                 true_values=None, false_values=None, skipinitialspace=False,
+                 skiprows=None, nrows=None, na_values=None, keep_default_na=True,
+                 na_filter=True, verbose=False, skip_blank_lines=True, parse_dates=False,
+                 infer_datetime_format=False, keep_date_col=False, date_parser=None,
+                 dayfirst=False, iterator=False, chunksize=None, compression='infer',
+                 thousands=None, decimal=b'.', lineterminator=None, quotechar='"',
+                 quoting=0, escapechar=None, comment=None, encoding=None, dialect=None,
+                 tupleize_cols=None, error_bad_lines=True, warn_bad_lines=True,
+                 skipfooter=0, doublequote=True, delim_whitespace=False, low_memory=True,
+                 memory_map=False, float_precision=None):
+        """
+        Definition of pandas.read_csv() function
+        https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html
+        """
+
 
     def my_csv(file, encoding='utf-8', *args, **kwargs):
         return read_csv(file, encoding=encoding, *args, **kwargs)
@@ -234,7 +234,7 @@ Proxy functions
     my_csv('iris1.csv')
     my_csv('iris2.csv', encoding='iso-8859-2')
     my_csv('iris3.csv', encoding='cp1250', verbose=True)
-    my_csv('iris4.csv', verbose=True)
+    my_csv('iris4.csv', verbose=True, usecols=['Sepal Length', 'Species'])
 
 Decorators
 ----------

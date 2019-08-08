@@ -10,7 +10,7 @@ with open(r'../data/iris.csv') as file:
     # skip first line in file
     file.readline()
 
-    for line in file.readlines():
+    for line in file:
         *features, labels = line.strip().split(',')
 
         d = {'species': labels}
