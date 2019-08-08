@@ -317,7 +317,7 @@ From ISO date format
         :name: listing-time-from-iso
         :caption: Convert ``str`` from ISO date format to ``datetime`` objects
 
-        1969-07-2102:56:15.123Z
+        1969-07-21T02:56:15.123Z
 
 #. Przedstaw datę jako obiekt ``datetime``
 
