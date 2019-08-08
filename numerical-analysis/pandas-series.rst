@@ -462,7 +462,7 @@ Assignments
 
 Even Numbers
 ------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/pandas_series_even_numbers.py`
@@ -473,7 +473,7 @@ Even Numbers
 
 Slicing
 -------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/pandas_series_slicing.py`

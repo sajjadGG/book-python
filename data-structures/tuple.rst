@@ -80,7 +80,7 @@ Assignments
 
 Create
 ------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 13 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/tuple_create.py`

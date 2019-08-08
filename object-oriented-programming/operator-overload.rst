@@ -195,7 +195,7 @@ Assignment
 
 Address Book
 ------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/operator_overload.py`

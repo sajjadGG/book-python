@@ -185,7 +185,7 @@ Assignments
 
 Conditioning on user input
 --------------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/ifelse_input.py`
@@ -204,7 +204,7 @@ Conditioning on user input
 
 ``int`` and ``float``
 ---------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/ifelse_integers.py`

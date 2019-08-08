@@ -297,7 +297,7 @@ Assignments
 
 Wielowątkowość
 --------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 20 lines
 * Estimated time of completion: 30 min
 * Filename: :download:`solution/threading_timer.py`

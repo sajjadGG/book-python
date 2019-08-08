@@ -279,7 +279,7 @@ Assignments
 
 REST API
 --------
-* Complexity level: Medium
+* Complexity level: medium
 * Lines of code to write: 35 lines
 * Estimated time of completion: 30 min
 * Filename: :download:`solution/requests_github.py`

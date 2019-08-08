@@ -338,7 +338,7 @@ Assignments
 
 Klastrowanie zbioru Iris
 ------------------------
-* Complexity level: Medium
+* Complexity level: medium
 * Lines of code to write: 30 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/clustering_iris.py`

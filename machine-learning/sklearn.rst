@@ -133,7 +133,7 @@ Zadania praktyczne
 
 Nearest Neighbor Classifier
 ---------------------------
-* Complexity level: Medium
+* Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 30 min
 * Filename: :download:`solution/sklearn_classifier.py`
@@ -189,7 +189,7 @@ Nearest Neighbor Classifier
 
 Porównanie classifierów
 -----------------------
-* Complexity level: Medium
+* Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/sklearn_comparision.py`

@@ -192,7 +192,7 @@ Assignments
 
 Memoization
 -----------
-* Complexity level: Medium
+* Complexity level: medium
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/optimization_memoize.py`

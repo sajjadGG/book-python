@@ -129,7 +129,7 @@ Assignments
 
 Heartbeat
 ---------
-* Complexity level: Medium
+* Complexity level: medium
 * Lines of code to write: 20 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/socket_heartbeat_client.py` and :download:`solution/socket_heartbeat_server.py`
@@ -152,7 +152,7 @@ Heartbeat
 
 Backdoor
 --------
-* Complexity level: Medium
+* Complexity level: medium
 * Lines of code to write: 150 lines
 * Estimated time of completion: 75 min
 * Filename: :download:`solution/socket_backdoor.py`

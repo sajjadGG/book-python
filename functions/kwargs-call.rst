@@ -264,7 +264,7 @@ Assignments
 
 Iris
 ----
-* Complexity level: Medium
+* Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/kwargs_iris.py`

@@ -200,7 +200,7 @@ Assignments
 
 Dragon (version release candidate)
 ----------------------------------
-* Complexity level: Hard
+* Complexity level: hard
 * Lines of code to write: 50 lines
 * Estimated time of completion: 30 min
 * Filename: :download:`solution/advanced_dragon.py`

@@ -144,7 +144,7 @@ Assignments
 
 C Types
 -------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/ctypes_datetime.py`

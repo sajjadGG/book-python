@@ -418,7 +418,7 @@ Assignments
 
 Podstawy korzystania
 --------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/jupyter_first.ipynb`
@@ -432,7 +432,7 @@ Podstawy korzystania
 
 Slajdy
 ------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 1 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/jupyter_slides.py`

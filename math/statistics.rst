@@ -159,7 +159,7 @@ Assignments
 
 Iris Stats
 ----------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 30 lines
 * Estimated time of completion: 30 min
 * Filename: :download:`solution/statistics_iris.py`

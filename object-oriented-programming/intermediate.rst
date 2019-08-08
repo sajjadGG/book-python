@@ -53,7 +53,7 @@ Assignments
 
 Defining Classes
 ----------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/intermediate_iris.py`
@@ -118,7 +118,7 @@ Defining Classes
 
 Basic Address Book
 ------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/intermediate_addressbook.py`
@@ -142,7 +142,7 @@ Basic Address Book
 
 Address Book from API
 ---------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/intermediate_addressbook_api.py`
@@ -161,7 +161,7 @@ Address Book from API
 
 Dragon (version beta)
 ---------------------
-* Complexity level: Medium
+* Complexity level: medium
 * Lines of code to write: 120 lines
 * Estimated time of completion: 30 min (±10 min), then 30 min live coding with instructor
 * Filename: :download:`solution/intermediate_dragon.py`

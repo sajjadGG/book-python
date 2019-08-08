@@ -236,7 +236,7 @@ Assignments
 
 Average
 -------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 2 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/kwargs_average.py`
@@ -246,7 +246,7 @@ Average
 
 args
 ----
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/kwargs_numeric_args.py`
@@ -270,7 +270,7 @@ args
 
 args and kwargs
 ---------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/kwargs_numeric_kwargs.py`

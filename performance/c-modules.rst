@@ -91,7 +91,7 @@ Assignments
 
 C Modules
 ---------
-* Complexity level: Medium
+* Complexity level: medium
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/cmodules_datetime.py`

@@ -92,7 +92,7 @@ Assignments
 
 Iris Database
 -------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 30 lines
 * Estimated time of completion: 30 min
 * Filename: :download:`solution/sqlite_iris.py`
@@ -144,7 +144,7 @@ Iris Database
 
 Tworzenie bazy danych i proste zapytania
 ----------------------------------------
-* Complexity level: Medium
+* Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/sqlite_addressbook.py`

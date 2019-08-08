@@ -346,7 +346,7 @@ Assignments
 
 ``map()``, ``filter()`` i ``lambda``
 ------------------------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/functional_map_filter_lambda.py`
@@ -358,7 +358,7 @@ Assignments
 
 Zbalansowanie nawiasów
 ----------------------
-* Complexity level: Medium
+* Complexity level: medium
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/functional_brackets.py`

@@ -211,7 +211,7 @@ Assignments
 
 Average
 -------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 12 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/builtin_average.py`
@@ -263,12 +263,6 @@ Average
         }
 
 #. Stwórz funkcję ``average()``, która będzie liczyła średnią dla dowolnej ilości argumentów
-
-    .. code-block:: python
-
-        def average(args: List[float]) -> float:
-            pass
-
 #. Do wyliczenia średniej, wykorzystaj wbudowane funkcje
 #. Funkcja ma wyliczać średnią tylko dla parametrów typu ``float``, w przeciwnym wypadku zwróć ``None``
 #. Iterując po słowniku ``values`` wypisz nazwę parametru oraz wyliczoną średnią

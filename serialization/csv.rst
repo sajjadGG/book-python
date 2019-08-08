@@ -218,7 +218,7 @@ Assignments
 
 Reading ``csv``
 ---------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 20 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/csv_dictreader.py`
@@ -240,7 +240,7 @@ Reading ``csv``
 
 Writing ``csv`` - fixed schema
 ------------------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/csv_dictwriter_fixed.py`
@@ -265,7 +265,7 @@ Writing ``csv`` - fixed schema
 
 Writing ``csv`` - variable schema
 ---------------------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/csv_dictwriter_variable.py`
@@ -312,7 +312,7 @@ Writing ``csv`` - variable schema
 
 Object serialization to CSV
 ---------------------------
-* Complexity level: Hard
+* Complexity level: hard
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/csv_relations.py`

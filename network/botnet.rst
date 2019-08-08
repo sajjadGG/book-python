@@ -26,7 +26,7 @@ Mini Botnet
 
 Heartbeat Receiver
 ------------------
-* Complexity level: Medium
+* Complexity level: medium
 * Lines of code to write: 45 lines
 * Estimated time of completion: 30 min
 * Filename: :download:`solution/botnet_heartbeat_receiver.py`
@@ -43,7 +43,7 @@ Heartbeat Receiver
 
 Victim
 ------
-* Complexity level: Medium
+* Complexity level: medium
 * Lines of code to write: 150 lines
 * Estimated time of completion: 75 min
 * Filename: :download:`solution/botnet_victim.py`
@@ -74,7 +74,7 @@ Victim
 
 Attacker
 --------
-* Complexity level: Medium
+* Complexity level: medium
 * Lines of code to write: 150 lines
 * Estimated time of completion: 75 min
 * Filename: :download:`solution/botnet_attacker.py`

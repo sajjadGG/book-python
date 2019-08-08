@@ -5,7 +5,7 @@ Exam from basic topics
 
 Relational Files Database
 =========================
-* Complexity level: Medium
+* Complexity level: medium
 * Lines of code to write: 100-150 lines
 * Estimated time of completion: 60 min
 * Filename: :download:`solution/exam.py`

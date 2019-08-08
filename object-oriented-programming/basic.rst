@@ -88,7 +88,7 @@ Assignments
 
 Dragon (version alpha)
 ----------------------
-* Complexity level: Medium
+* Complexity level: medium
 * Lines of code to write: 120 lines
 * Estimated time of completion: 60 min (±15 min), then 60 min live coding with instructor
 * Filename: :download:`solution/basic_dragon_foundation.py` or :download:`solution/basic_dragon_advanced.py`
@@ -174,7 +174,7 @@ Dragon (version alpha)
 
 Bank i Bankomaty
 ----------------
-* Complexity level: Medium
+* Complexity level: medium
 * Lines of code to write: 60 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/basic_bank.py`

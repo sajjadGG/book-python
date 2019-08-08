@@ -234,7 +234,7 @@ Assignments
 
 Range
 -----
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/iterator_range.py`
@@ -244,7 +244,7 @@ Range
 
 Książka adresowa
 ----------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 20 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/iterator_addressbook.py`

@@ -157,7 +157,7 @@ Assignments
 
 Feature Engineering
 -------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/features_engineering.py`

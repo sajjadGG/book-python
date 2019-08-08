@@ -207,7 +207,7 @@ Assignments
 
 Simple collections
 ------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/slice_every_nth.py`
@@ -224,7 +224,7 @@ Simple collections
 
 Split train/test
 ----------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/slice_split_train_test.py`
@@ -278,7 +278,7 @@ Split train/test
 
 Iris dataset
 ------------
-* Complexity level: Medium
+* Complexity level: medium
 * Lines of code to write: 30 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/slice_iris.py`
@@ -341,7 +341,7 @@ Iris dataset
 
 Slicing text
 ------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/slice_text.py`

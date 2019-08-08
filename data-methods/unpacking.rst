@@ -143,7 +143,7 @@ Assignments
 
 Unpacking from sequence
 -----------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 1 lines
 * Estimated time of completion: 3 min
 * Filename: :download:`solution/unpacking_hosts.py`
@@ -163,7 +163,7 @@ Unpacking from sequence
 
 Unpacking from nested sequence
 ------------------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 1 lines
 * Estimated time of completion: 3 min
 * Filename: :download:`solution/unpacking_iris.py`

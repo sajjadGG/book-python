@@ -175,7 +175,7 @@ Assignments
 
 Content of a requested file
 ---------------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/file_requested.py`
@@ -186,7 +186,7 @@ Content of a requested file
 
 Parsing simple CSV file
 -----------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/file_parsing_csv.py`
@@ -212,7 +212,7 @@ Parsing simple CSV file
 
 ``/etc/hosts`` - parsing to ``dict``
 ------------------------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/file_parsing_simple.py`
@@ -254,7 +254,7 @@ Parsing simple CSV file
 
 ``/etc/hosts`` - parsing to ``List[dict]``
 ------------------------------------------
-* Complexity level: Medium
+* Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/file_parsing_advanced.py`

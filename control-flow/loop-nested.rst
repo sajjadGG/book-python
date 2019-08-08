@@ -360,7 +360,7 @@ Assignments
 
 Get elements from nested data structure
 ---------------------------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/for_nested.py`
@@ -388,7 +388,7 @@ Get elements from nested data structure
 
 ``dict`` to ``dict``
 --------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/for_dict_to_dict.py`
@@ -429,7 +429,7 @@ Get elements from nested data structure
 
 Unique keys from schema-less database
 -------------------------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/loop_unique_keys.py`
@@ -465,7 +465,7 @@ Unique keys from schema-less database
 
 Label encoder
 -------------
-* Complexity level: Medium
+* Complexity level: medium
 * Lines of code to write: 13 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/loop_label_encoder.py`

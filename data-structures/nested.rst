@@ -242,7 +242,7 @@ Assignments
 
 Select
 ------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/nested_select.py`

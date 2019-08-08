@@ -331,7 +331,7 @@ Assignments
 
 From ISO date format
 --------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/datetime_from_iso.py`
@@ -349,7 +349,7 @@ From ISO date format
 
 To ISO date format
 ------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/datetime_to_iso.py`
@@ -369,7 +369,7 @@ To ISO date format
 
 US date and time format
 -----------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/datetime_from_us.py`

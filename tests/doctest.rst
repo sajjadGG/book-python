@@ -294,7 +294,7 @@ Assignments
 
 Refactoring
 -----------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 5 lines of code
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/doctest_temp.py`
@@ -327,7 +327,7 @@ Refactoring
 
 Distance conversion doctest
 ---------------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 5 lines of code + 16 lines of tests
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/doctest_distance.py`

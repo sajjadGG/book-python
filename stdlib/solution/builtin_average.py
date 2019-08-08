@@ -1,4 +1,7 @@
-from pprint import pprint
+def average(args):
+    if all(isinstance(x, float) for x in args):
+        return sum(args) / len(args)
+
 
 DATA = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
@@ -26,27 +29,11 @@ DATA = [
 ]
 
 header, *data = DATA
-values = dict()
-averages = dict()
-
-
-def average(*numbers):
-    if all(isinstance(x, float) for x in numbers):
-        return sum(numbers) / len(numbers)
-
+values = {name: list() for name in header}
 
 for row in data:
-    for i, column_name in enumerate(header):
+    for i, name in enumerate(values):
+        values[name].append(row[i])
 
-        if not values.get(column_name):
-            values[column_name] = []
-
-        values[column_name].append(row[i])
-
-
-for key, value in values.items():
-    averages[key] = average(*value)
-
-
-pprint(values)
-pprint(averages)
+for name, measurements in values.items():
+    print(f'Name: {name}, avg: {average(measurements)}')

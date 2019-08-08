@@ -366,7 +366,7 @@ Assignments
 
 Aviation Language
 -----------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/dict_alphabet.py`

@@ -143,7 +143,7 @@ Assignments
 
 To ``bool`` or not to ``bool``
 ------------------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/bool_simple.py`
@@ -180,7 +180,7 @@ To ``bool`` or not to ``bool``
 
 ``True`` of ``False``
 ---------------------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/bool_true_or_false.py`

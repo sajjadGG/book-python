@@ -145,7 +145,7 @@ Assignments
 
 Report card
 -----------
-* Complexity level: Easy
+* Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/while_report_card.py`
