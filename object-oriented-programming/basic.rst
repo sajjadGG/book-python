@@ -7,25 +7,47 @@ OOP Basic
 
 Access modifiers
 ================
-* No protected i private
 * All fields are always public
+* No protected i private
 * ``_nazwa`` - private fields (by convention)
 * ``__nazwa__`` - system methods
 * ``nazwa_`` - used while name collision
 
 .. code-block:: python
-    :caption: ``_`` and ``__`` - Private, protected, public?!
+    :caption: ``_nazwa`` - private fields (by convention)
 
     class Astronaut:
-        first_name = ''     # public
-        last_name = ''      # public
-        _agency = None      # private
+        def __init__(self):
+            self.first_name = 'Jan'         # public
+            self.last_name = 'Twardowski'   # public
+            self._agency = 'POLSA'          # private
 
-        def print_(self):   # avoid name collision with print
-            print(self.__str__())
+    twardowski = Astronaut()
 
-        def __str__(self):  # system function
-            return f'My name... {self.name}'
+    twardowski.first_name   # Jan
+    twardowski.last_name    # Twardowski
+    twardowski._agency      # POLSA         # Good IDE will tell you, that you access private member
+
+.. code-block:: python
+    :caption: ``nazwa_`` - used while name collision
+
+    class MyClass:
+        def print_(self):
+            """avoid name collision with print"""
+            print('Printing...')
+
+.. code-block:: python
+    :caption: ``__nazwa__`` - system methods
+
+    class Astronaut:
+        def __str__(self):
+            return f'My name... Jose Jimenez'
+
+
+    jose = Astronaut()
+
+    print(jose)
+    # My name... Jose Jimenez
 
 
 ``__dict__`` - Getting dynamic fields and values
@@ -170,7 +192,6 @@ Dragon (version alpha)
 
 :Hint:
     * ``from random import randint``
-    * ``logging.debug()``
 
 Bank i Bankomaty
 ----------------
