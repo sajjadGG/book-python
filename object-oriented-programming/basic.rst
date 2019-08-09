@@ -22,6 +22,7 @@ Access modifiers
             self.last_name = 'Twardowski'   # public
             self._agency = 'POLSA'          # private
 
+
     twardowski = Astronaut()
 
     twardowski.first_name   # Jan
@@ -65,13 +66,13 @@ Access modifiers
             self.petal_width = petal_width
             self.species = species
 
+
     flower = Iris(
         sepal_length=5.1,
         sepal_width=3.5,
         petal_length=1.4,
         petal_width=0.2,
-        species='setosa'
-    )
+        species='setosa')
 
     flower.__dict__
     # {'sepal_length': 5.1,
@@ -103,7 +104,6 @@ Good engineering practices
     setosa = IrisSetosa()
     versicolor = IrisVersicolor()
     virginica = IrisVirginica()
-
 
 
 Assignments
