@@ -1,8 +1,7 @@
 import csv
-from typing import List
 
-
-FIELDNAMES: List[str] = [
+FILE = r'../data/iris.csv'
+FIELDNAMES = [
     'Sepal length',
     'Sepal width',
     'Petal length',
@@ -11,7 +10,7 @@ FIELDNAMES: List[str] = [
 ]
 
 
-with open(r'../data/iris.csv') as file:
+with open(FILE) as file:
     data = csv.DictReader(
         f=file,
         fieldnames=FIELDNAMES,

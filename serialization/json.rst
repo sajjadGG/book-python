@@ -113,7 +113,8 @@ Encoding ``datetime`` and ``date``
 
             if isinstance(value, datetime):
                 return value.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
-            elif isinstance(value, date):
+
+            if isinstance(value, date):
                 return value.strftime('%Y-%m-%d')
 
 
@@ -150,22 +151,20 @@ Decoding ``datetime`` and ``date``
 
 
     class JSONDatetimeDecoder(json.JSONDecoder):
-        date_fields = ['date', 'date_of_birth']
-        date_format = '%Y-%m-%d'
-        datetime_fields = ['datetime']
-        datetime_format = '%Y-%m-%dT%H:%M:%S.%fZ'
+        DATE_FIELDS = ['date', 'date_of_birth']
+        DATETIME_FIELDS = ['datetime']
 
         def __init__(self):
             super().__init__(object_hook=self.default)
 
-        def default(self, output):
+        def default(self, output: dict) -> dict:
             for field, value in output.items():
 
-                if field in self.date_fields:
-                    value = datetime.strptime(value, self.date_format).date()
+                if field in self.DATE_FIELDS:
+                    value = datetime.strptime(value, '%Y-%m-%d').date()
 
-                if field in self.datetime_fields:
-                    value = datetime.strptime(value, self.datetime_format).replace(tzinfo=timezone.utc)
+                if field in self.DATETIME_FIELDS:
+                    value = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%fZ').replace(tzinfo=timezone.utc)
 
                 output[field] = value
             return output
@@ -193,16 +192,16 @@ Encoding objects
     import json
 
 
-    class Address:
-        def __init__(self, center, location):
-            self.center = center
-            self.location = location
-
-
     class Contact:
         def __init__(self, name, addresses=()):
             self.name = name
             self.addresses = addresses
+
+
+    class Address:
+        def __init__(self, center, location):
+            self.center = center
+            self.location = location
 
 
     DATA = [
@@ -212,14 +211,14 @@ Encoding objects
             Address(center='JPL', location='Pasadena, CA'),
         )),
         Contact(name='Mark Watney'),
-        Contact(name='José Jiménez', addresses=()),
+        Contact(name='Melissa Lewis', addresses=()),
     ]
 
 
     class JSONObjectEncoder(json.JSONEncoder):
         def default(self, obj):
             result = obj.__dict__
-            result['__type__'] = obj.__class__.__name__
+            result['__class_name__'] = obj.__class__.__name__
             return result
 
 
@@ -227,12 +226,12 @@ Encoding objects
 
     print(output)
     # [
-    #    {"__type__":"Contact", "name":"Jan Twardowski", "addresses":[
-    #          {"__type__":"Address", "center":"JSC", "location":"Houston, TX"},
-    #          {"__type__":"Address", "center":"KSC", "location":"Merritt Island, FL"},
-    #          {"__type__":"Address", "center":"JPL", "location":"Pasadena, CA"},
-    #    {"__type__":"Contact", "name":"Mark Watney", "addresses":[]},
-    #    {"__type__":"Contact", "name":"Jos\u00e9 Jim\u00e9nez", "addresses":[]}
+    #    {"__class_name__":"Contact", "name":"Jan Twardowski", "addresses":[
+    #          {"__class_name__":"Address", "center":"JSC", "location":"Houston, TX"},
+    #          {"__class_name__":"Address", "center":"KSC", "location":"Merritt Island, FL"},
+    #          {"__class_name__":"Address", "center":"JPL", "location":"Pasadena, CA"},
+    #    {"__class_name__":"Contact", "name":"Mark Watney", "addresses":[]},
+    #    {"__class_name__":"Contact", "name":"Melissa Lewis", "addresses":[]}
     # ]
 
 
@@ -248,20 +247,14 @@ Decoding objects
     CURRENT_MODULE = sys.modules[__name__]
     DATA = """
     [
-       {"__type__":"Contact", "name":"Jan Twardowski", "addresses":[
-             {"__type__":"Address", "center":"JSC", "location":"Houston, TX"},
-             {"__type__":"Address", "center":"KSC", "location":"Merritt Island, FL"},
-             {"__type__":"Address", "center":"JPL", "location":"Pasadena, CA"},
-       {"__type__":"Contact", "name":"Mark Watney", "addresses":[]},
-       {"__type__":"Contact", "name":"Jos\u00e9 Jim\u00e9nez", "addresses":[]}
+       {"__class_name__":"Contact", "name":"Jan Twardowski", "addresses":[
+             {"__class_name__":"Address", "center":"JSC", "location":"Houston, TX"},
+             {"__class_name__":"Address", "center":"KSC", "location":"Merritt Island, FL"},
+             {"__class_name__":"Address", "center":"JPL", "location":"Pasadena, CA"},
+       {"__class_name__":"Contact", "name":"Mark Watney", "addresses":[]},
+       {"__class_name__":"Contact", "name":"Melissa Lewis", "addresses":[]}
     ]
     """
-
-
-    class Address:
-        def __init__(self, center, location):
-            self.center = center
-            self.location = location
 
 
     class Contact:
@@ -270,13 +263,19 @@ Decoding objects
             self.addresses = addresses
 
 
+    class Address:
+        def __init__(self, center, location):
+            self.center = center
+            self.location = location
+
+
     class JSONObjectDecoder(json.JSONDecoder):
         def __init__(self):
             super().__init__(object_hook=self.default)
 
         def default(self, obj):
-            cls = obj.pop('__type__')
-            cls = getattr(CURRENT_MODULE, cls)
+            class_name = obj.pop('__class_name__')
+            cls = getattr(CURRENT_MODULE, class_name)
             return cls(**obj)
 
 
@@ -289,7 +288,7 @@ Decoding objects
     #         Address(center='JPL', location='Pasadena, CA'),
     #     )),
     #     Contact(name='Mark Watney'),
-    #     Contact(name='José Jiménez', addresses=()),
+    #     Contact(name='Melissa Lewis', addresses=()),
     # ]
 
 

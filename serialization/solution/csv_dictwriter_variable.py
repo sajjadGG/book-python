@@ -1,9 +1,8 @@
 import csv
-from typing import List, Dict, Union, Set
 
 
-FILENAME: str = r'../tmp/iris.csv'
-DATA: List[Dict[str, Union[float, str]]] = [
+FILENAME = r'../../_tmp/dictwriter_variable.csv'
+DATA = [
     {'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
     {'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
     {'Sepal length': 6.3, 'Petal width': 1.8, 'Species': 'virginica'},
@@ -12,9 +11,8 @@ DATA: List[Dict[str, Union[float, str]]] = [
     {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'},
 ]
 
-fieldnames: Set[str] = set()
+fieldnames = set()
 
-row: Dict[str, Union[float, str]]
 for row in DATA:
     fieldnames.update(row.keys())
 
