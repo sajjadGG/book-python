@@ -352,8 +352,8 @@ Methods
     - ``petal_width: float``,
     - ``species: str``.
 
-#. Napisz metodę ``total()`` wyliczającą sumę dla atrybutów numerycznych obiektu (``sepal_length``, ``sepal_width``, ``petal_length``, ``petal_width``)
-#. Napisz metodę ``average()`` wyliczającą średnią dla powyższych właściwości
+#. Napisz metodę ``total()`` wyliczającą sumę atrybutów numerycznych obiektu
+#. Napisz metodę ``average()`` wyliczającą średnią powyższych właściwości
 #. Stwórz obiekt ``setosa`` z pomiarami podawanymi przy inicjalizacji:
 
     * sepal_length: 5.4
