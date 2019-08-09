@@ -337,8 +337,9 @@ Object serialization to CSV
     :caption: Address book
 
     class Contact:
-        def __init__(self, name, addresses=()):
-            self.name = name
+        def __init__(self, first_name, last_name, addresses=()):
+            self.first_name = first_name
+            self.last_name = last_name
             self.addresses = addresses
 
 
@@ -349,13 +350,13 @@ Object serialization to CSV
 
 
     DATA = [
-        Contact(name='Jan Twardowski', addresses=(
-            Address(center='JSC', location='Houston, TX'),
-            Address(center='KSC', location='Merritt Island, FL'),
-            Address(center='JPL', location='Pasadena, CA'),
+        Contact(first_name='Jan', last_name='Twardowski', addresses=(
+            Address(center='Johnson Space Center', location='Houston, TX'),
+            Address(center='Kennedy Space Center', location='Merritt Island, FL'),
+            Address(center='Jet Propulsion Laboratory', location='Pasadena, CA'),
         )),
-        Contact(name='Mark Watney'),
-        Contact(name='Melissa Lewis', addresses=()),
+        Contact(first_name='Mark', last_name='Watney'),
+        Contact(first_name='Melissa', last_name='Lewis', addresses=()),
     ]
 
 #. Za pomocą ``csv.DictWriter()`` zapisz kontakty z książki adresowej w pliku

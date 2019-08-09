@@ -193,8 +193,9 @@ Encoding objects
 
 
     class Contact:
-        def __init__(self, name, addresses=()):
-            self.name = name
+        def __init__(self, first_name, last_name, addresses=()):
+            self.first_name = first_name
+            self.last_name = last_name
             self.addresses = addresses
 
 
@@ -205,13 +206,13 @@ Encoding objects
 
 
     DATA = [
-        Contact(name='Jan Twardowski', addresses=(
-            Address(center='JSC', location='Houston, TX'),
-            Address(center='KSC', location='Merritt Island, FL'),
-            Address(center='JPL', location='Pasadena, CA'),
+        Contact(first_name='Jan', last_name='Twardowski', addresses=(
+            Address(center='Johnson Space Center', location='Houston, TX'),
+            Address(center='Kennedy Space Center', location='Merritt Island, FL'),
+            Address(center='Jet Propulsion Laboratory', location='Pasadena, CA'),
         )),
-        Contact(name='Mark Watney'),
-        Contact(name='Melissa Lewis', addresses=()),
+        Contact(first_name='Mark', last_name='Watney'),
+        Contact(first_name='Melissa', last_name='Lewis', addresses=()),
     ]
 
 
@@ -226,12 +227,12 @@ Encoding objects
 
     print(output)
     # [
-    #    {"__class_name__":"Contact", "name":"Jan Twardowski", "addresses":[
+    #    {"__class_name__":"Contact", "first_name":"Jan", "last_name":"Twardowski", "addresses":[
     #          {"__class_name__":"Address", "center":"JSC", "location":"Houston, TX"},
     #          {"__class_name__":"Address", "center":"KSC", "location":"Merritt Island, FL"},
     #          {"__class_name__":"Address", "center":"JPL", "location":"Pasadena, CA"},
-    #    {"__class_name__":"Contact", "name":"Mark Watney", "addresses":[]},
-    #    {"__class_name__":"Contact", "name":"Melissa Lewis", "addresses":[]}
+    #    {"__class_name__":"Contact", "first_name":"Mark", "last_name":"Watney", "addresses":[]},
+    #    {"__class_name__":"Contact", "first_name":"Melissa", "last_name":"Lewis", "addresses":[]}
     # ]
 
 
@@ -247,19 +248,20 @@ Decoding objects
     CURRENT_MODULE = sys.modules[__name__]
     DATA = """
     [
-       {"__class_name__":"Contact", "name":"Jan Twardowski", "addresses":[
+       {"__class_name__":"Contact", "first_name":"Jan", "last_name":"Twardowski", "addresses":[
              {"__class_name__":"Address", "center":"JSC", "location":"Houston, TX"},
              {"__class_name__":"Address", "center":"KSC", "location":"Merritt Island, FL"},
              {"__class_name__":"Address", "center":"JPL", "location":"Pasadena, CA"},
-       {"__class_name__":"Contact", "name":"Mark Watney", "addresses":[]},
-       {"__class_name__":"Contact", "name":"Melissa Lewis", "addresses":[]}
+       {"__class_name__":"Contact", "first_name":"Mark", "last_name":"Watney", "addresses":[]},
+       {"__class_name__":"Contact", "first_name":"Melissa", "last_name":"Lewis", "addresses":[]}
     ]
     """
 
 
     class Contact:
-        def __init__(self, name, addresses=()):
-            self.name = name
+        def __init__(self, first_name, last_name, addresses=()):
+            self.first_name = first_name
+            self.last_name = last_name
             self.addresses = addresses
 
 
@@ -282,13 +284,13 @@ Decoding objects
     output = json.loads(DATA, cls=JSONObjectDecoder)
     print(output)
     # [
-    #     Contact(name='Jan Twardowski', addresses=(
-    #         Address(center='JSC', location='Houston, TX'),
-    #         Address(center='KSC', location='Merritt Island, FL'),
-    #         Address(center='JPL', location='Pasadena, CA'),
+    #     Contact(first_name='Jan', last_name='Twardowski', addresses=(
+    #         Address(center='Johnson Space Center', location='Houston, TX'),
+    #         Address(center='Kennedy Space Center', location='Merritt Island, FL'),
+    #         Address(center='Jet Propulsion Laboratory', location='Pasadena, CA'),
     #     )),
-    #     Contact(name='Mark Watney'),
-    #     Contact(name='Melissa Lewis', addresses=()),
+    #     Contact(first_name='Mark', last_name='Watney'),
+    #     Contact(first_name='Melissa', last_name='Lewis', addresses=()),
     # ]
 
 

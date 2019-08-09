@@ -268,19 +268,19 @@ Książka adresowa
 
     @dataclass
     class Address:
-        building: str
+        center: str
         location: str
 
 
-    kontakt = Contact(first_name='Jan', last_name='Twardowski', addresses=(
-        Address(building='Johnson Space Center', location='Houston, Texas'),
-        Address(building='Kennedy Space Center', location='Florida'),
-        Address(building='Jet Propulsion Laboratory', location='Pasadena, California'),
+    DATA = Contact(first_name='Jan', last_name='Twardowski', addresses=(
+        Address(center='Johnson Space Center', location='Houston, TX'),
+        Address(center='Kennedy Space Center', location='Merritt Island, FL'),
+        Address(center='Jet Propulsion Laboratory', location='Pasadena, CA'),
     ))
 
-    for adres in kontakt:
-        print(adres)
+    for address in DATA:
+        print(address)
 
-    # Address(building='Johnson Space Center', location='Houston, Texas')
-    # Address(building='Kennedy Space Center', location='Florida')
-    # Address(building='Jet Propulsion Laboratory', location='Pasadena, California')
+    # Address(building='Johnson Space Center', location='Houston, TX')
+    # Address(building='Kennedy Space Center', location='FL')
+    # Address(building='Jet Propulsion Laboratory', location='Pasadena, CA')

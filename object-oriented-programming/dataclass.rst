@@ -147,14 +147,14 @@ Why?
             self.addresses = addresses
 
 
-    jose = Contact(name='Jose Jimenez')
-    jose.addresses.append('2101 E NASA Pkwy, Houston, TX')
-    print(jose.addresses)
-    # [2101 E NASA Pkwy, Houston, TX]
+    twardowski = Contact(name='Jan Twardowski')
+    twardowski.addresses.append('Johnson Space Center')
+    print(twardowski.addresses)
+    # [Johnson Space Center]
 
-    ivan = Contact(name='Ivan Ivanovich')
-    print(ivan.addresses)
-    # [2101 E NASA Pkwy, Houston, TX]
+    watney = Contact(name='Mark Watney')
+    print(watney.addresses)
+    # [Johnson Space Center]
 
 So what?
 --------

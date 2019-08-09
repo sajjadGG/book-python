@@ -214,18 +214,23 @@ Address Book
             return f'{self.__dict__}'
 
 
-    contact = Contact(name='José Jiménez', addresses=[Address(location='JPL')])
-    contact += Address(location='Houston')
-    contact += Address(location='KSC')
+    contact = Contact(first_name='Jan', last_name='Twardowski', addresses=(
+        Address(center='Johnson Space Center', location='Houston, TX'),
+        Address(center='Kennedy Space Center', location='Merritt Island, FL'),
+    ))
+
+    contact += Address(center='Jet Propulsion Laboratory', location='Pasadena, CA'),
+    contact += Address(center='Armstrong Flight Research Center', location='Edwards AFB, CA'),
 
     print(contact)
-    # {'name': 'José Jiménez', 'addresses': [
-    #       {'location': 'JPL'},
-    #       {'location': 'Houston'},
-    #       {'location': 'KSC'}
+    # {'first_name': 'Jan', 'last_name':'Twardowski', 'addresses': [
+    #       {'center': 'Johnson Space Center', 'location': 'Houston, TX'},
+    #       {'center': 'Kennedy Space Center', 'location': 'Merritt Island, FL'},
+    #       {'center': 'Jet Propulsion Laboratory', 'location': 'Pasadena, CA'},
+    #       {'center': 'Armstrong Flight Research Center', 'location': 'Edwards AFB, CA'}
     # ]}
 
-    if Address(location='Houston') in contact:
+    if Address(center='Armstrong Flight Research Center', location='Edwards AFB, CA') in contact:
         print(True)
     else:
         print(False)

@@ -280,9 +280,9 @@ Classes and instances
 
     * Jan, Twardowski, 1961-04-12
     * Mark, Watney, 1969-07-21
-    * Kennedy Space Center, Merritt Island, Florida
-    * Johnson Space Center, Houston, Texas
-    * Jet Propulsion Laboratory, Pasadena, Texas
+    * Kennedy Space Center, Merritt Island, FL
+    * Johnson Space Center, Houston, TX
+    * Jet Propulsion Laboratory, Pasadena, TX
 
 Fields
 ------

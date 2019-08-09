@@ -27,25 +27,28 @@ Relations
 =========
 .. code-block:: python
 
-    class Address:
-        def __init__(self, street=None, city=None, country=None):
-            self.street = street
-            self.city = city
-            self.country = country
-
-
     class Contact:
         def __init__(self, first_name, last_name, addresses=()):
             self.first_name = first_name
             self.last_name = last_name
-            self.address = addresses
+            self.addresses = addresses
 
 
-    twardowski = Contact(first_name='Jan', last_name='Twardowski', address=[
-        Address(street='Kamienica Pod św. Janem Kapistranem', city='Kraków', country='Poland'),
-        Address(street='2101 E NASA Pkwy', city='Houston', country='USA'),
-        Address(city='Kennedy Space Center', country='USA'),
-    ])
+    class Address:
+        def __init__(self, center, location):
+            self.center = center
+            self.location = location
+
+
+    DATA = [
+        Contact(first_name='Jan', last_name='Twardowski', addresses=(
+            Address(center='Johnson Space Center', location='Houston, TX'),
+            Address(center='Kennedy Space Center', location='Merritt Island, FL'),
+            Address(center='Jet Propulsion Laboratory', location='Pasadena, CA'),
+        )),
+        Contact(first_name='Mark', last_name='Watney'),
+        Contact(first_name='Melissa', last_name='Lewis', addresses=()),
+    ]
 
 
 Assignments

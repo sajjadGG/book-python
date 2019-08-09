@@ -90,7 +90,7 @@ Value can be any object
         'age': 42,
         'astronaut': {'name': 'Jan Twardowski', 'medals': {'Medal of Honor', 'Purple Heart'}},
         'agency': ['POLSA', 'Roscosmos', 'ESA'],
-        'location': ('Baikonur', 'KSC Florida'),
+        'location': ('Baikonur', 'Johnson Space Center'),
     }
 
 Order of ``dict`` elements
