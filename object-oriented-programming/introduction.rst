@@ -312,7 +312,7 @@ Classes and instances
 
 #. Stwórz klasę ``Temperature``
 #. Klasa ma pamiętać wprowadzoną wartość
-#. Stwórz instancje:
+#. Stwórz trzy instancje z wartościami podawanymi przy inicjalizacji:
 
     * ``celsius`` z temperaturą 36.6
     * ``fahrenheit`` z temperaturą 97.88
