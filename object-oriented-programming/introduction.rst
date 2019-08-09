@@ -75,7 +75,7 @@ Classes vs Instances
     virginica = Iris()
 
 .. code-block:: python
-    :caption: Three classes and three instances
+    :caption: Three classes and four instances
 
     class IrisSetosa:
         pass
@@ -87,9 +87,132 @@ Classes vs Instances
         pass
 
 
+    flower = IrisSetosa()
     iris_setosa = IrisSetosa()
     iris_versicolor = IrisVersicolor()
     iris_virginica = IrisVirginica()
+
+
+Methods
+=======
+* Methods are functions in the class
+* First argument is always instance (``self``)
+* While calling function you never pass ``self``
+
+Methods without arguments
+-------------------------
+.. code-block:: python
+    :caption: Methods without arguments
+
+    class Iris:
+        def latin_name(self):
+            print(f'Latin name: Iris Setosa')
+
+
+    flower = Iris()
+
+    flower.latin_name()
+    # Latin name: Iris Setosa
+
+Methods with argument
+---------------------
+.. code-block:: python
+    :caption: Methods with arguments
+
+    class Iris:
+        def latin_name(self, species):
+            print(f'Latin name: {species}')
+
+
+    flower = Iris()
+
+    flower.latin_name(species='Iris Setosa')
+    # Latin name: Iris Setosa
+
+    flower.latin_name('Iris Setosa')
+    # Latin name: Iris Setosa
+
+    flower.latin_name()
+    # TypeError: latin_name() missing 1 required positional argument: 'species'
+
+Methods with arguments with default value
+-----------------------------------------
+.. code-block:: python
+    :caption: Methods with arguments with default value
+
+    class Iris:
+        def latin_name(self, species='unknown'):
+            print(f'Latin name: Iris {species}')
+
+
+    flower = Iris()
+
+    flower.latin_name(species='Iris Setosa')
+    # Latin name: Iris Setosa
+
+    flower.latin_name('setosa')
+    # Latin name: Iris Setosa
+
+    flower.latin_name()
+    # Latin name: unknown
+
+Methods calling other methods
+-----------------------------
+.. code-block:: python
+    :caption: Methods calling other methods
+
+    class Iris:
+        def get_name(self):
+            return 'Iris Setosa'
+
+        def latin_name(self):
+            name = self.get_name()
+            return f'Latin name: {name}'
+
+
+    flower = Iris()
+
+    flower.latin_name()
+    # Latin name: Iris Setosa
+
+
+Initializer Method
+==================
+* ``__init__()`` is not a constructor!
+* It's a first method run after object is initiated
+* All classes has default ``__init__()``
+
+Initializer method without arguments
+------------------------------------
+.. code-block:: python
+    :caption: Initializer method
+
+    class Iris:
+        def __init__(self):
+            print('Latin name: Iris Setosa')
+
+
+    flower = Iris()
+    # Latin name: Iris Setosa
+
+Initializer method with arguments
+---------------------------------
+.. code-block:: python
+    :caption: Initializer method with arguments
+
+    class Iris:
+        def __init__(self, species):
+            print(f'Latin name: {species}')
+
+
+    setosa = Iris('Iris Setosa')
+    # Latin name: Iris Setosa
+
+    virginica = Iris(species='Iris Virginica')
+    # Latin name: Iris Virginica
+
+    iris = Iris()
+    # TypeError: __init__() missing 1 required positional argument: 'species'
 
 
 Fields
@@ -99,6 +222,8 @@ Fields
 * Fields are defined in ``__init__()`` method
 * Fields store information for instances
 
+Fields with constant values
+---------------------------
 .. code-block:: python
     :caption: Classes can have multiple fields. All fields should be initialized in ``__init__()`` method.
 
@@ -117,16 +242,12 @@ Fields
     print(flower.sepal_width)   # 3.5
     print(flower.species)       # 'setosa'
 
-
-Initializer Method
-==================
-* ``__init__()`` is not a constructor!
-* It's a first method run after object is initiated
-* All classes has default ``__init__()``
+Initializing fields on instance creation
+----------------------------------------
 * Initialize all fields only in ``__init__``
 
 .. code-block:: python
-    :caption: Class initialization
+    :caption: Initializing fields on instance creation
 
     class Iris:
         def __init__(self, species):
@@ -152,118 +273,31 @@ Initializer Method
             self.species = species
 
 
-    setosa = Iris(species='setosa')
-    print(setosa.species)
-    # setosa
-
-    virginica = Iris('virginica')
-    print(virginica.species)
-    # virginica
-
     versicolor = Iris()
     print(versicolor.species)
     # None
 
 
-Methods
-=======
-* Methods are functions in the class
-* First argument is always instance (``self``)
-* While calling function you never pass ``self``
-
-Simple Methods
---------------
-.. code-block:: python
-    :caption: Simple Methods
-
-    class Iris:
-        def __init__(self):
-            self.species = 'setosa'
-
-        def latin_name(self):
-            print(f'Latin name is: Iris setosa')
-
-
-    flower = Iris()
-    flower.latin_name()
-    # Latin name is: Iris setosa
-
 Methods accessing fields
-------------------------
+========================
 .. code-block:: python
     :caption: Methods accessing fields
 
     class Iris:
-        def __init__(self):
-            self.species = 'setosa'
+        def __init__(self, species='unknown'):
+            self.species = species
 
         def latin_name(self):
-            print(f'Latin name is: Iris {self.species}')
+            print(f'Latin name is: {self.species}')
 
 
-    flower = Iris()
-    flower.latin_name()
-    # Latin name is: Iris setosa
+    setosa = Iris('Iris Setosa')
+    setosa.latin_name()
+    # Latin name is: Iris Setosa
 
-Methods with argument
----------------------
-.. code-block:: python
-    :caption: Methods with arguments
-
-    class Iris:
-        def latin_name(self, species):
-            print(f'Iris {species}')
-
-
-    flower = Iris()
-
-    flower.latin_name(species='setosa')  # Iris setosa
-    flower.latin_name('setosa')          # Iris setosa
-    flower.latin_name()                  # TypeError: latin_name() missing 1 required positional argument: 'species'
-
-Methods with arguments with default value
------------------------------------------
-.. code-block:: python
-    :caption: Methods with default arguments
-
-    class Iris:
-        def latin_name(self, species='unknown'):
-            print(f'Iris {species}')
-
-
-    flower = Iris()
-
-    flower.latin_name(species='setosa')  # Iris setosa
-    flower.latin_name('setosa')          # Iris setosa
-    flower.latin_name()                  # Iris unknown
-
-Methods calling other methods
------------------------------
-.. code-block:: python
-    :caption: Methods call other methods
-
-    class Iris:
-        def __init__(self):
-            self.sepal_length = 5.1
-            self.sepal_width = 3.5
-            self.petal_length = 1.4
-            self.petal_width = 0.2
-            self.species = 'setosa'
-
-        def sepal_area(self):
-            return self.sepal_length * self.sepal_width
-
-        def petal_area(self):
-            return self.petal_length * self.petal_width
-
-        def total_area(self):
-            area = self.sepal_area() + self.petal_area()
-            print(f'Total area is: {area:.1f}')
-
-
-    flower = Iris()
-    flower.total_area()
-    # Total area is: 18.1
+    iris = Iris()
+    iris.latin_name()
+    # Latin name is: unknown
 
 
 Assignments
@@ -272,24 +306,9 @@ Assignments
 Classes and instances
 ---------------------
 * Complexity level: easy
-* Lines of code to write: 15 lines
-* Estimated time of completion: 10 min
-* Filename: :download:`solution/introduction_instances.py`
-
-#. Zamodeluj dane w programie za pomocą klas i stwórz instancje:
-
-    * Jan, Twardowski, 1961-04-12
-    * Mark, Watney, 1969-07-21
-    * Kennedy Space Center, Merritt Island, FL
-    * Johnson Space Center, Houston, TX
-    * Jet Propulsion Laboratory, Pasadena, TX
-
-Fields
-------
-* Complexity level: easy
-* Lines of code to write: 12 lines
+* Lines of code to write: 10 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/introduction_temperature.py`
+* Filename: :download:`solution/introduction_instances.py`
 
 #. Stwórz klasę ``Temperature``
 #. Klasa ma pamiętać wprowadzoną wartość
@@ -299,14 +318,31 @@ Fields
     * ``fahrenheit`` z temperaturą 97.88
     * ``kelvin`` z temperaturą 309.75
 
-#. Wypisz temperaturę na ekranie
+#. Wypisz temperatury na ekranie
+
+Data Modeling
+-------------
+* Complexity level: easy
+* Lines of code to write: 15 lines
+* Estimated time of completion: 10 min
+* Filename: :download:`solution/introduction_modeling.py`
+
+#. Zamodeluj dane w programie za pomocą klas:
+
+    * Jan, Twardowski, 1961-04-12
+    * Mark, Watney, 1969-07-21
+    * Kennedy Space Center, Merritt Island, FL
+    * Johnson Space Center, Houston, TX
+    * Jet Propulsion Laboratory, Pasadena, TX
+
+#. Stwórz instancje dla każdego wpisu
 
 Methods
 -------
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/introduction_iris.py`
+* Filename: :download:`solution/introduction_methods.py`
 
 #. Stwórz klasę ``Iris`` z polami:
 
@@ -332,7 +368,7 @@ Methods
     * petal_length: 5.1
     * petal_width: 1.9
 
-#. Wyświetl na ekranie nazwę gatunku oraz sumę i średnią z pomiarów dla obu instancji.
+#. Wyświetl na ekranie nazwę gatunku oraz sumę i średnią z pomiarów dla obu instancji
 
 Credit Scoring
 --------------

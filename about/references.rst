@@ -41,6 +41,10 @@ W tej książce znajdziesz kilka żartów informatycznych i nawiązań do staryc
 
 Addresses
 =========
+* POLSA - Polish Space Agency
+* ESA - European Space Agency
+* NASA - National Aeronautics and Space Administration, USA
+
 .. csv-table:: Addresses used in a book
     :header-rows: 1
 
