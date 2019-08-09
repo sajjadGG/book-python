@@ -51,7 +51,7 @@ Writing to CSV files
 
     import csv
 
-
+    FILE = r'filename.csv'
     DATA = [
         {'sepal_length': 5.4, 'sepal_width': 3.9, 'petal_length': 1.3, 'petal_width': 0.4, 'species': 'setosa'},
         {'sepal_length': 5.9, 'sepal_width': 3.0, 'petal_length': 5.1, 'petal_width': 1.8, 'species': 'virginica'},
@@ -59,7 +59,7 @@ Writing to CSV files
     ]
 
 
-    with open(r'filename.csv', mode='w') as file:
+    with open(FILE, mode='w') as file:
         writer = csv.DictWriter(
             f=file,
             fieldnames=['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species'],
@@ -85,15 +85,12 @@ Parsing ``/etc/passwd``
     import csv
 
 
-    FIELDNAMES = ['username', 'password', 'uid', 'gid', 'full_name', 'home', 'shell']
     FILE = r'../data/etc-passwd.txt'
-    """
-    root:x:0:0:root:/root:/bin/bash
-    watney:x:1000:1000:Mark Watney:/home/watney:/bin/bash
-    jimenez:x:1001:1001:José Jiménez:/home/jimenez:/bin/bash
-    twardowski:x:1002:1002:Jan Twardowski:/home/twardowski:/bin/bash
-    """
-
+    FIELDNAMES = ['username', 'password', 'uid', 'gid', 'full_name', 'home', 'shell']
+    # root:x:0:0:root:/root:/bin/bash
+    # watney:x:1000:1000:Mark Watney:/home/watney:/bin/bash
+    # jimenez:x:1001:1001:José Jiménez:/home/jimenez:/bin/bash
+    # twardowski:x:1002:1002:Jan Twardowski:/home/twardowski:/bin/bash
 
     with open(FILE) as file:
         data = csv.DictReader(file, fieldnames=FIELDNAMES, delimiter=':')
@@ -106,7 +103,6 @@ Parsing ``/etc/passwd``
     # {'username': 'jimenez', 'password': 'x', 'uid': '1001',...}
     # {'username': 'twardowski', 'password': 'x', 'uid': '1002',...}
 
-
 Parsing Java properties file
 ----------------------------
 .. code-block:: python
@@ -115,13 +111,11 @@ Parsing Java properties file
     import csv
 
     FILE = r'../data/sonar-project.properties'
-    """
-    sonar.projectKey=habitatOS
-    sonar.projectName=habitatOS
-    sonar.language=py
-    sonar.sourceEncoding=UTF-8
-    sonar.verbose=true
-    """
+    # sonar.projectKey=habitatOS
+    # sonar.projectName=habitatOS
+    # sonar.language=py
+    # sonar.sourceEncoding=UTF-8
+    # sonar.verbose=true
 
     with open(FILE) as file:
 
@@ -145,21 +139,31 @@ Parsing Java properties file
 Pandas
 ======
 * External library
+* Installation: ``pip install pandas``
 
 .. code-block:: python
 
     import pandas as pd
 
-    url = 'https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv'
-    columns = [
+    FILE = 'https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv'
+
+    df = pd.read_csv(FILE, skiprows=1)
+
+    df.head(5)
+    #      5.1  3.5  1.4  0.2  0
+    # 0    4.9  3.0  1.4  0.2  0
+    # 1    4.7  3.2  1.3  0.2  0
+    # 2    4.6  3.1  1.5  0.2  0
+    # 3    5.0  3.6  1.4  0.2  0
+    # 4    5.4  3.9  1.7  0.4  0
+
+    df.columns = [
         'Sepal length',
         'Sepal width',
         'Petal length',
         'Petal width',
         'Species'
     ]
-
-    df = pd.read_csv(url, skiprows=1, names=columns)
 
     df.head(5)
     #    Sepal length  Sepal width  Petal length  Petal width  Species
@@ -175,21 +179,29 @@ Pandas
     # 148           6.2          3.4           5.4          2.3        2
     # 149           5.9          3.0           5.1          1.8        2
 
-    df.Species.replace(to_replace={
+    df['Species'].replace({
         0: 'setosa',
         1: 'versicolor',
         2: 'virginica'
     }, inplace=True)
 
-    df = df.sample(frac=1.0).reset_index(drop=True)
+    df = df.sample(frac=1.0)
+    #      Sepal length  Sepal width  Petal length  Petal width     Species
+    # 120           5.6          2.8           4.9          2.0   virginica
+    # 9             5.4          3.7           1.5          0.2      setosa
+    # 54            5.7          2.8           4.5          1.3  versicolor
+    # 46            4.6          3.2           1.4          0.2      setosa
+    # 2             4.6          3.1           1.5          0.2      setosa
+    # ...
+
+    df.reset_index(drop=True)
     #      Sepal length  Sepal width     ...      Petal width     Species
     # 0             5.0          2.0     ...              1.0  versicolor
     # 1             6.4          2.7     ...              1.9   virginica
     # 2             5.6          3.0     ...              1.5  versicolor
     # 3             5.7          2.6     ...              1.0  versicolor
     # 4             6.4          3.1     ...              1.8   virginica
-    # 5             4.6          3.6     ...              0.2      setosa
-    # 6             5.9          3.0     ...              1.5  versicolor
+    # ...
 
     df.describe()
     #        Sepal length  Sepal width  Petal length  Petal width
@@ -201,6 +213,18 @@ Pandas
     # 50%        5.800000     3.000000      4.350000     1.300000
     # 75%        6.400000     3.300000      5.100000     1.800000
     # max        7.900000     4.400000      6.900000     2.500000
+
+    df.hist()
+    # array([
+    #   [
+    #        <matplotlib.axes._subplots.AxesSubplot object at 0x11c2a36d0>,
+    #        <matplotlib.axes._subplots.AxesSubplot object at 0x11f953a90>
+    #    ],
+    #    [
+    #        <matplotlib.axes._subplots.AxesSubplot object at 0x11d87acd0>,
+    #        <matplotlib.axes._subplots.AxesSubplot object at 0x11d6fe990>
+    #    ]
+    #  ], dtype=object)
 
 
 Assignments
