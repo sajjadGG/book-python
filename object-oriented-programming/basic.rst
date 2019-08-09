@@ -81,8 +81,9 @@ Access modifiers
     # 'species': 'setosa'}
 
 
-One class per file?
-===================
+Good engineering practices
+==========================
+* Never print in a class
 * Osobne pliki - gdy klasy są duże
 * Jeden plik - gdy klasy są małe i czytelne
 

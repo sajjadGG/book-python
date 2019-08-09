@@ -37,7 +37,7 @@ Classes
         pass
 
 .. code-block:: python
-    :caption: Classes should have ``CamelCase`` names
+    :caption: Multi-word class names should use ``CamelCase``
 
     class IrisSetosa:
         pass
@@ -178,14 +178,14 @@ Methods calling other methods
 
 Initializer Method
 ==================
-* ``__init__()`` is not a constructor!
 * It's a first method run after object is initiated
 * All classes has default ``__init__()``
+* ``__init__()`` is not a constructor!
 
 Initializer method without arguments
 ------------------------------------
 .. code-block:: python
-    :caption: Initializer method
+    :caption: Initializer method without arguments
 
     class Iris:
         def __init__(self):
@@ -219,13 +219,14 @@ Fields
 ======
 * Fields are also known as "Properties" or "Attributes"
 * ``snake_case`` name convention
-* Fields are defined in ``__init__()`` method
+* Fields should be defined only in ``__init__()`` method
 * Fields store information for instances
+* Access field values using ``.`` (dot) notation
 
 Fields with constant values
 ---------------------------
 .. code-block:: python
-    :caption: Classes can have multiple fields. All fields should be initialized in ``__init__()`` method.
+    :caption: Fields with constant values
 
     class Iris:
         def __init__(self):
@@ -244,8 +245,6 @@ Fields with constant values
 
 Initializing fields on instance creation
 ----------------------------------------
-* Initialize all fields only in ``__init__``
-
 .. code-block:: python
     :caption: Initializing fields on instance creation
 
@@ -314,9 +313,9 @@ Classes and instances
 #. Klasa ma pamiętać wprowadzoną wartość
 #. Stwórz trzy instancje z wartościami podawanymi przy inicjalizacji:
 
-    * ``celsius`` z temperaturą 36.6
-    * ``fahrenheit`` z temperaturą 97.88
-    * ``kelvin`` z temperaturą 309.75
+    * instancja ``celsius`` z temperaturą 36.6
+    * instancja ``fahrenheit`` z temperaturą 97.88
+    * instancja ``kelvin`` z temperaturą 309.75
 
 #. Wypisz temperatury na ekranie
 
@@ -341,7 +340,7 @@ Methods
 -------
 * Complexity level: easy
 * Lines of code to write: 15 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 15 min
 * Filename: :download:`solution/introduction_methods.py`
 
 #. Stwórz klasę ``Iris`` z polami:
@@ -369,23 +368,3 @@ Methods
     * petal_width: 1.9
 
 #. Wyświetl na ekranie nazwę gatunku oraz sumę i średnią z pomiarów dla obu instancji
-
-Credit Scoring
---------------
-* Complexity level: medium
-* Lines of code to write: 30 lines
-* Estimated time of completion: 20 min
-* Filename: :download:`solution/introduction_credit_scoring.py`
-
-#. Stwórz klasę opisującą klienta banku
-#. Stwórz klasę konto bankowe
-#. Stwórz konta walutowe, oszczędnościowe, emerytalne i bieżące
-#. Wylicz scoring kredytowy na podstawie informacji:
-
-    - czy klient ma żonę/męża
-    - czy klient ma dzieci
-    - czy klient ma umowę o pracę
-    - suma środków zgromadzonych na wszystkich kontach
-    - wiek
-
-#. Przedstaw scoring
