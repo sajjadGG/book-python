@@ -54,6 +54,7 @@ class Dragon:
         print(f'{self.name} is dead')
         print(f'Gold {drop["gold"]}')
         print(f'Position {drop["position"]}')
+        return drop
 
     def is_alive(self):
         return not self.is_dead()
