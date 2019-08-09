@@ -87,8 +87,8 @@ Classes vs Instances
         pass
 
 
-    flower = IrisSetosa()
-    iris_setosa = IrisSetosa()
+    iris_setosa1 = IrisSetosa()
+    iris_setosa2 = IrisSetosa()
     iris_versicolor = IrisVersicolor()
     iris_virginica = IrisVirginica()
 
