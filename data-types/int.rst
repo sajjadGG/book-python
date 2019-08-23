@@ -264,7 +264,7 @@ Temperature
 #. Zero Kelwina (bezwzględne) to -273.15 stopni Celsiusza, w zadaniu przyjmij równe -273°C (0K = -273°C)
 #. Ile Kelwinów, a ile stopni Celsiusza wynoszą średnie temperatury powierzchni :cite:`MSL_REMS`:
 
-    * Księżyca w dzień: -180 °C
+    * Księżyca w dzień: 180 °C
     * Księżyca w nocy: 93 K
     * Mars średnia: −63 °C
     * Mars najwyższa: 20 °C
