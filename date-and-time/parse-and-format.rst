@@ -203,6 +203,11 @@ Duration
 
 Table of date and time parsing and formatting parameters
 ========================================================
+* ``%-I`` or ``%_I`` on *nix systems (macOS, BSD, Linux) to remove leading zero
+* ``%#I`` on Windows to remove leading zero
+* *nix: ``%-d``, ``%-H``, ``%-I``, ``%-j``, ``%-m``, ``%-M``, ``%-S``, ``%-U``, ``%-w``, ``%-W``, ``%-y``, ``%-Y``
+* Windows: ``%#d``, ``%#H``, ``%#I``, ``%#j``, ``%#m``, ``%#M``, ``%#S``, ``%#U``, ``%#w``, ``%#W``, ``%#y``, ``%#Y``
+
 .. note:: Prawie wszystkie parametry są podobne różnych językach programowania. Od czasu do czasu występują małe zmiany, np. w JavaScript minuty to ``i`` a nie ``M``
 
 .. csv-table:: Tabelka parametrów formatowania i parsowania dat i czasu
@@ -354,7 +359,7 @@ US date and time format
 
         armstrong = '"July 21st, 1969 2:56:15 AM UTC"'
 
-#. Wyświetl datę w formacie amerykańskim krótkim:
+#. Wyświetl datę w formacie amerykańskim krótkim (bez wiodącego zera w godzinie):
 
     .. code-block:: text
         :caption: "Miesiąc/Dzień/Rok Godzina:Minuta AM/PM"
@@ -364,3 +369,5 @@ US date and time format
 :Hint:
     * Wpisz "local time" jako zwykły tekst w parametrze ``fmt`` funkcji ``.strptime()``
     * Wpisz znaki cudzysłowia ``"`` jako zwykły tekst w parametrze ``fmt`` funkcji ``.strptime()``
+    * ``%-I`` or ``%_I`` on *nix systems (macOS, BSD, Linux) to remove leading zero
+    * ``%#I`` on Windows to remove leading zero
