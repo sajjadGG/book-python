@@ -87,6 +87,15 @@ Naming convention
 
 .. code-block:: python
 
+    first, *middle, last = [1, 2]
+
+    print(first)           # 1
+    print(middle)          # []
+    print(last)            # 2
+
+
+.. code-block:: python
+
     line = '4.9,3.1,1.5,0.1,setosa'
 
     *_, species = line.split(',')
