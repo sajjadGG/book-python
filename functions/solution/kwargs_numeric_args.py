@@ -22,7 +22,7 @@ def is_numeric(*args: Any) -> bool:
         return False
 
     for arg in args:
-        if not type(arg) in {int, float}:
+        if type(arg) not in {int, float}:
         # if not isinstance(arg, (int, float)):
             return False
 
