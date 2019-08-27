@@ -28,3 +28,5 @@
         :header: "id", "First Name", "Last Name", "Address"
 
         "1", "Jan", "Twardowski", "Houston,USA;Pasadena,USA;Kennedy Space Center,USA",
+
+#. Dump danych jeden do jeden z bazy wraz z relacjami

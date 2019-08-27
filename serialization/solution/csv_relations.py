@@ -25,7 +25,7 @@ DATA = [
 
 output = []
 
-for contact in addressbook:
+for contact in DATA:
     addresses = []
 
     for address in contact.addresses:

@@ -1,4 +1,4 @@
-def print_iris(species, **pomiary):
+def print_iris(species, **measurements):
     print(locals())
 
 
@@ -8,9 +8,9 @@ with open(r'../data/iris.csv') as file:
 
     for line in data:
         *measurements, species = line.strip().split(',')
-        values = {}
+        data = {}
 
         for i, name in enumerate(columns):
-            values[name] = float(measurements[i])
+            data[name] = float(measurements[i])
 
-        print_iris(species, **values)
+        print_iris(species, **data)

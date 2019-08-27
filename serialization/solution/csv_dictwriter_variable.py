@@ -21,7 +21,7 @@ for row in DATA:
 with open(FILENAME, mode='w') as file:
     writer = csv.DictWriter(
         f=file,
-        fieldnames=fieldnames,
+        fieldnames=sorted(fieldnames),
         delimiter=',',
         quotechar='"',
         quoting=csv.QUOTE_ALL,

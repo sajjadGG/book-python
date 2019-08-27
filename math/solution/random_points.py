@@ -16,37 +16,22 @@ def distance(A, B):
     """
     Calculate distance between A and B.
 
-
-    :A:
-        punkt w przestrzeni wielowymiarowej zdefiniowany następująco: [x, y, z, ...]
-
-    :B:
-        punkt w przestrzeni wielowymiarowej zdefiniowany następująco:
-            [x, y, z, ...]
-    :returns:
-        Odległość euklidesową między punktami A i B.
-
     >>> distance((0,0), (1,0))
     1.0
 
     >>> distance((0,0), (1,1))
     1.4142135623730951
     """
-    suma = 0
+    sum = 0
     for a, b in zip(A, B):
-        suma += (b - a) ** 2
+        sum += (b - a) ** 2
 
-    return suma ** 0.5
+    return sum ** 0.5
 
 
 def plot_list_of_points(list_of_points, color='black'):
     """
-    Wyrysowuje listę punktów na aktualnie aktywnym wykresie.
-
-    Argumenty:
-        list_of_points: lista punktów, zgodnie z konwencją:
-            [[x1, y1], [x2, y2], [x3, y3], ...]
-        color: kolor jakim mają być punkty narysowane. Domyślnie czarny.
+    list_of_points: [(x1, y1), (x2, y2), (x3, y3), ...]
     """
     plt.plot([p[0] for p in list_of_points],
              [p[1] for p in list_of_points],
@@ -71,22 +56,18 @@ plot_list_of_points(p2, 'blue')
 plt.axis('equal')
 plt.show()
 
-punkty_po_klasyfikacji_A = []
-punkty_po_klasyfikacji_B = []
+classified_points_A = []
+classified_points_B = []
 
 
 for p in p1 + p2:
     if distance(A, p) < distance(B, p):
-        punkty_po_klasyfikacji_A.append(p)
+        classified_points_A.append(p)
     else:
-        punkty_po_klasyfikacji_B.append(p)
+        classified_points_B.append(p)
 
 
-plot_list_of_points(punkty_po_klasyfikacji_A, 'red')
-plot_list_of_points(punkty_po_klasyfikacji_B, 'blue')
+plot_list_of_points(classified_points_A, 'red')
+plot_list_of_points(classified_points_B, 'blue')
 plt.axis('equal')
 plt.show()
-
-## Zobacz co się stanie jak wywołasz:
-# help(random_points)
-# Python automatycznie stworzył dokumentację do modułu na podstawie komentarzy!

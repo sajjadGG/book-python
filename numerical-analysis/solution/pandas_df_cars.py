@@ -4,14 +4,14 @@ import pandas as pd
 n = 50
 
 df = pd.DataFrame({
-    'przebieg': np.random.randint(0, 200_000, size=n),
-    'spalanie': 2 + 18*np.random.rand(n),
+    'distance': np.random.randint(0, 200_000, size=n),
+    'fuel usage': 2 + 18*np.random.rand(n),
 })
 
 
 df.head()
 # === ======== ===========
-#     przebieg spalanie
+#     distance fuel usage
 # === ======== ===========
 # 0   5588     15.264853
 # 1   99747    4.308231
@@ -23,7 +23,7 @@ df.head()
 
 df.describe()
 # ======= =============== ==========
-#         przebieg        spalanie
+#         distance        fuel usage
 # ======= =============== ==========
 # count   0.000000        50.000000
 # mean    96794.320000    10.307848
@@ -37,9 +37,9 @@ df.describe()
 
 
 
-df.loc[df.spalanie < 5, 'marka'] = 'VW'
+df.loc[df.fuel_usage < 5, 'brand'] = 'VW'
 # == ======== ========== =====
-#    przebieg spalanie
+#    distance fuel usage brand
 # == ======== ========== =====
 # 0  5588     15.264853  UAZ
 # 1  99747    4.308231   VW
@@ -49,9 +49,9 @@ df.loc[df.spalanie < 5, 'marka'] = 'VW'
 # == ======== ========== =====
 
 # Alternative solution
-df['marka'] = pd.cut(df.spalanie, bins=[0, 5, 10, 100], labels=['VW', 'Ford', 'UAZ'])
+df['brand'] = pd.cut(df.fuel_usage, bins=[0, 5, 10, 100], labels=['VW', 'Ford', 'UAZ'])
 # == ======== ========== =====
-#    przebieg spalanie
+#    distance fuel usage brand
 # == ======== ========== =====
 # 0  5588     15.264853  UAZ
 # 1  99747    4.308231   VW
@@ -61,26 +61,26 @@ df['marka'] = pd.cut(df.spalanie, bins=[0, 5, 10, 100], labels=['VW', 'Ford', 'U
 # == ======== ========== =====
 
 
-df['pochodzenie'] = pd.cut(df.przebieg, bins=[0, 100, 1e5, np.inf], labels=['nowy', 'uzywany', 'z niemiec'])
+df['origin'] = pd.cut(df.distance, bins=[0, 100, 1e5, np.inf], labels=['new', 'used', 'from germany'])
 
 df.head()
 # === ======== =========== ===== ===========
-#     przebieg spalanie    marka pochodzenie
+#     distance fuel usage  brand origin
 # === ======== =========== ===== ===========
-# 0   5588     15.264853   UAZ   uzywany
-# 1   99747    4.308231    VW    uzywany
-# 2   97302    11.575376   UAZ   uzywany
-# 3   117155   18.862744   UAZ   z niemiec
-# 4   73709    18.138283   UAZ   uzywany
+# 0   5588     15.264853   UAZ   used
+# 1   99747    4.308231    VW    used
+# 2   97302    11.575376   UAZ   used
+# 3   117155   18.862744   UAZ   from germany
+# 4   73709    18.138283   UAZ   used
 # === ======== =========== ===== ===========
 
 
-df.groupby(['marka', 'pochodzenie']).describe().T
+df.groupby(['brand', 'origin']).describe().T
 # =================== ========================== ========================== ==========================
-#         marka       VW                         Ford                       UAZ
-#         pochodzenie uzywany      z niemiec     uzywany      z niemiec     uzywany      z niemiec
+# brand               VW                         Ford                       UAZ
+# origin              used         from germany  used         from germany  used         from germany
 # =================== ========================== ========================== ==========================
-# przebieg    count   5.000000     7.000000      11.000000    6.000000      13.000000    8.000000
+# distance    count   5.000000     7.000000      11.000000    6.000000      13.000000    8.000000
 #             mean    53130.600000 147559.285714 52263.909091 179048.000000 47688.615385 147846.375000
 #             std     43207.205363 27935.718079  35514.114012 8345.607132   33578.183062 29669.603213
 #             min     2988.000000  109498.000000 8550.000000  164217.000000 1746.000000  105497.000000
@@ -88,7 +88,7 @@ df.groupby(['marka', 'pochodzenie']).describe().T
 #             50%     48931.000000 147778.000000 50347.000000 181309.500000 50751.000000 154775.500000
 #             75%     93957.000000 164885.000000 85860.500000 183584.500000 73709.000000 166537.500000
 #             max     99747.000000 184177.000000 99884.000000 187909.000000 97302.000000 192988.000000
-# spalanie    count    5.000000    7.000000      11.000000   6.000000       13.000000    8.000000
+# fuel usage    count    5.000000    7.000000      11.000000   6.000000       13.000000    8.000000
 #             mean     3.508948    3.645898      7.409556    7.028662       14.566981    16.438332
 #             std      1.068128    0.867709      1.636214    1.803311       3.030231     3.786771
 #             min      2.486142    2.426900      5.123669    5.076044       10.143688    10.215177

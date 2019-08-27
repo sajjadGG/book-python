@@ -1,5 +1,6 @@
 import csv
 
+
 FILENAME = r'../../_tmp/dictwriter_fixed.csv'
 DATA = [
     {'first_name': 'Jan', 'last_name': 'Twardowski'},
@@ -10,7 +11,7 @@ DATA = [
 ]
 
 
-with open(FILE, mode='w') as file:
+with open(FILENAME, mode='w') as file:
     writer = csv.DictWriter(
         f=file,
         fieldnames=['first_name', 'last_name'],
