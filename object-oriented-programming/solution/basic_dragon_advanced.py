@@ -4,6 +4,12 @@ from random import randint
 from typing import Optional, Dict, Any, NoReturn
 
 
+def if_alive(method):
+    def wrapper(dragon, *args, **kwargs):
+        if dragon.is_alive():
+            return method(dragon, *args, **kwargs)
+    return wrapper
+
 @dataclass(frozen=True)
 class Point:
     x: int = 0
@@ -18,9 +24,11 @@ class Point:
 
 
 class Movable:
+    @if_alive
     def set_position(self, position: Point = Point()) -> None:
         self._position: Point = position
 
+    @if_alive
     def change_position(self, left: int = 0, down: int = 0, up: int = 0, right: int = 0) -> None:
         current_position: Point = self.get_position()
         x: int = current_position.x + right - left
@@ -61,10 +69,6 @@ class Dragon(Movable):
         self.update_status()
         self.set_position(position)
 
-    def make_damage(self) -> Optional[int]:
-        if self.is_alive():
-            return randint(self.DAMAGE_MIN, self.DAMAGE_MAX)
-
     def is_dead(self) -> bool:
         if self.status == Status.DEAD:
             return True
@@ -86,18 +90,22 @@ class Dragon(Movable):
             'position': self.get_position(),
         }
 
+    @if_alive
+    def make_damage(self) -> Optional[int]:
+        return randint(self.DAMAGE_MIN, self.DAMAGE_MAX)
+
     def make_dead(self) -> NoReturn:
         self.texture = self.TEXTURE_DEAD
         raise Dragon.IsDead
 
+    @if_alive
     def take_damage(self, damage: int) -> Optional[NoReturn]:
-        if self.is_alive():
-            self.health_current -= damage
-            self.update_status()
-            logging.info(f'{self.name} got: {damage}, HP left: {self.health_current}')
+        self.health_current -= damage
+        self.update_status()
+        logging.info(f'{self.name} got: {damage}, HP left: {self.health_current}')
 
-            if self.is_dead():
-                self.make_dead()
+        if self.is_dead():
+            self.make_dead()
 
 
 dragon: Dragon = Dragon(name='Wawelski', position=Point(x=50, y=120))

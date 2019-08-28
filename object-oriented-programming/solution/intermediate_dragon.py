@@ -18,10 +18,6 @@ class Config:
 
 class Character(Dragon):
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.update_status()
-
     def update_status(self):
         if not hasattr(self, 'health_full'):
             self.health_full = self.health_current

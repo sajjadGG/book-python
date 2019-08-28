@@ -219,8 +219,8 @@ Address Book
         Address(center='Kennedy Space Center', location='Merritt Island, FL'),
     ))
 
-    contact += Address(center='Jet Propulsion Laboratory', location='Pasadena, CA'),
-    contact += Address(center='Armstrong Flight Research Center', location='Edwards AFB, CA'),
+    contact += Address(center='Jet Propulsion Laboratory', location='Pasadena, CA')
+    contact += Address(center='Armstrong Flight Research Center', location='Edwards AFB, CA')
 
     print(contact)
     # {'first_name': 'Jan', 'last_name':'Twardowski', 'addresses': [

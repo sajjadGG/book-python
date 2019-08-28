@@ -20,9 +20,9 @@ class Dragon:
         self.name = name
         self.current_health = randint(self.HEALTH_MIN, self.HEALTH_MAX)
         self.texture = self.TEXTURE_ALIVE
-        self.status = Status.ALIVE
         self.gold = randint(self.GOLD_MIN, self.GOLD_MAX)
         self.set_position(position_x, position_y)
+        self.update_status()
 
     def set_position(self, x, y):
         self.position_x = x
