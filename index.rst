@@ -154,8 +154,8 @@ Serialization
 
     /serialization/csv.rst
     /serialization/json.rst
-    /serialization/xml.rst
     /serialization/pickle.rst
+    /serialization/xml.rst
 
 ********
 Database
@@ -184,7 +184,7 @@ Object Oriented Programming
     :numbered:
     :caption: Object Oriented Programming
 
-    /object-oriented-programming/introduction.rst
+    /object-oriented-programming/syntax.rst
     /object-oriented-programming/inheritance.rst
     /object-oriented-programming/basic.rst
     /object-oriented-programming/inheritance-composition.rst
