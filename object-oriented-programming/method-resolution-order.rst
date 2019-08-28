@@ -36,6 +36,7 @@ Inheritance Method Resolution
     #  <class '__main__.C'>,
     #  <class 'object'>)
 
+
 Inheritance Diamond
 ===================
 .. figure:: img/inheritance-diamond.jpg

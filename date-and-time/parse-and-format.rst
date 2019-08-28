@@ -203,9 +203,9 @@ Duration
 
 Table of date and time parsing and formatting parameters
 ========================================================
-* ``%-I`` or ``%_I`` on *nix systems (macOS, BSD, Linux) to remove leading zero
+* ``%-I`` or ``%_I`` on \*nix systems (macOS, BSD, Linux) to remove leading zero
 * ``%#I`` on Windows to remove leading zero
-* *nix: ``%-d``, ``%-H``, ``%-I``, ``%-j``, ``%-m``, ``%-M``, ``%-S``, ``%-U``, ``%-w``, ``%-W``, ``%-y``, ``%-Y``
+* \*nix: ``%-d``, ``%-H``, ``%-I``, ``%-j``, ``%-m``, ``%-M``, ``%-S``, ``%-U``, ``%-w``, ``%-W``, ``%-y``, ``%-Y``
 * Windows: ``%#d``, ``%#H``, ``%#I``, ``%#j``, ``%#m``, ``%#M``, ``%#S``, ``%#U``, ``%#w``, ``%#W``, ``%#y``, ``%#Y``
 
 .. note:: Prawie wszystkie parametry są podobne różnych językach programowania. Od czasu do czasu występują małe zmiany, np. w JavaScript minuty to ``i`` a nie ``M``
@@ -369,5 +369,5 @@ US date and time format
 :Hint:
     * Wpisz "local time" jako zwykły tekst w parametrze ``fmt`` funkcji ``.strptime()``
     * Wpisz znaki cudzysłowia ``"`` jako zwykły tekst w parametrze ``fmt`` funkcji ``.strptime()``
-    * ``%-I`` or ``%_I`` on *nix systems (macOS, BSD, Linux) to remove leading zero
+    * ``%-I`` or ``%_I`` on \*nix systems (macOS, BSD, Linux) to remove leading zero
     * ``%#I`` on Windows to remove leading zero
