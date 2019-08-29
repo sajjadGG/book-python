@@ -12,20 +12,22 @@ Lazy evaluation
 
 Declaring generators
 --------------------
+* ``range()`` requires ``int`` arguments
+
 .. code-block:: python
     :caption: This will not execute code!
 
-    range(0, 1E30)
-    range(0, 1E30)
-    range(0, 1E30)
+    range(0, 5)
+    range(0, 5)
+    range(0, 5)
 
 .. code-block:: python
     :caption: This will only create generator expression, but not execute it!
 
-    numbers = range(0, 1E30)
+    numbers = range(0, 5)
 
     print(numbers)
-    # range(0, 1E30)
+    # range(0, 5)
 
 Getting  values from generator
 ------------------------------
@@ -33,29 +35,37 @@ Getting  values from generator
 
     .. code-block:: python
 
-        numbers = range(0, 1E30)
-        list(range)
+        numbers = range(0, 5)
+
+        list(numbers)
+        # [0, 1, 2, 3, 4]
 
 * Generator will calculate next number for every loop iteration, forgetting previous number, and not knowing next one
 
     .. code-block:: python
 
-        for i in range(0, 1E30):
+        for i in range(0, 5):
             print(i)
 
-* Will generate only three numbers, not 1,000,000,000,000,000,000,000,000,000,000
+        # 0
+        # 1
+        # 2
+        # 3
+        # 4
+
+* Will generate only three numbers, and then stop and forget generator
 
     .. code-block:: python
 
-        for i in range(0, 1E30):
+        for i in range(0, 5):
             print(i)
 
             if i == 3:
                 break
 
-        0
-        1
-        2
+        # 0
+        # 1
+        # 2
 
 
 Generator expressions vs. Comprehensions
@@ -96,7 +106,7 @@ Generator Expressions
 
 .. code-block:: python
 
-    (x*x for x in range(0, 30) if x % 2)
+    (x for x in range(0, 5))
     # <generator object <genexpr> at 0x1197032a0>
 
 What is the difference?
@@ -105,25 +115,25 @@ What is the difference?
 
     .. code-block:: python
 
-        numbers = [x**2 for x in range(0, 30) if x % 2 == 0]
+        numbers = [x for x in range(0, 5)]
 
         print(numbers)
-        # [0, 4, 16, 36, 64, 100, 144, 196, 256, 324, 400, 484, 576, 676, 784]
+        # [0, 1, 2, 3, 4]
 
         print(numbers)
-        # [0, 4, 16, 36, 64, 100, 144, 196, 256, 324, 400, 484, 576, 676, 784]
+        # [0, 1, 2, 3, 4]
 
 * Create generator object and assign pointer (do not execute)
 
     .. code-block:: python
 
-        numbers = (x**2 for x in range(0, 30) if x % 2 == 0)
+        numbers = (x for x in range(0, 5))
 
         print(numbers)
-        # <generator object <genexpr> at 0x11af5a570>
+        # <generator object <genexpr> at 0x111e7acd0>
 
         print(list(numbers))
-        # [0, 4, 16, 36, 64, 100, 144, 196, 256, 324, 400, 484, 576, 676, 784]
+        # [0, 1, 2, 3, 4]
 
         print(list(numbers))
         # []
@@ -132,6 +142,25 @@ Which one is better?
 --------------------
 * Comprehensions - Using values more than one
 * Generators - Using value one (for example in the loop iterator)
+
+
+Conditions
+==========
+.. code-block:: python
+
+    [x for x in range(0, 5) if x % 2 == 0]
+    # [0, 2, 4]
+
+.. code-block:: python
+
+    def is_even(x):
+        if x % 2 == 0:
+            return True
+        else:
+            return False
+
+    [x for x in range(0, 5) if is_even(x)]
+    # [0, 2, 4]
 
 
 Returning nested objects
@@ -241,14 +270,12 @@ Nested Comprehensions
     #  (5.4, 3.9, 1.7, 0.4, 'setosa'),
     #  (4.6, 3.4, 1.4, 0.3, 'setosa')]
 
-
     for row in data:
         print(row)
     # (5.1, 3.5, 1.4, 0.2, 'setosa')
     # (4.9, 3.0, 1.4, 0.2, 'setosa')
     # (5.4, 3.9, 1.7, 0.4, 'setosa')
     # (4.6, 3.4, 1.4, 0.3, 'setosa')
-
 
 .. code-block:: python
 
@@ -261,7 +288,6 @@ Nested Comprehensions
 
     print(data)
     # <generator object get_species at 0x11af257c8>
-
 
     for row in data:
         print(row)
@@ -292,7 +318,7 @@ Filtering ``list`` items
         (4.9, 2.5, 4.5, 1.7, 'virginica'),
     ]
 
-    setosa = [x for x in DATA if x[4] == 'setosa']
+    setosa = [row for row in DATA if row[4] == 'setosa']
     print(setosa)
 
 Filtering ``dict`` items
@@ -319,28 +345,11 @@ Reversing ``dict`` keys with values
 -----------------------------------
 .. code-block:: python
 
-    data = {'first_name': 'Иван', 'last_name': 'Иванович'}
+    data = {'first_name': 'Jan', 'last_name': 'Twardowski'}
 
     {v: k for k, v in data.items()}
-    # dict {'Иван': 'first_name', 'Иванович': 'last_name'}
+    # {'Jan': 'first_name', 'Twardowski': 'last_name'}
 
-Applying functions
-------------------
-.. code-block:: python
-
-    [float(x) for x in range(0, 5) if x % 2 == 0]
-    # [0.0, 2.0, 4.0, 6.0, 8.0]
-
-.. code-block:: python
-
-    def is_even(x):
-        if x % 2 == 0:
-            return True
-        else:
-            return False
-
-    [float(x) for x in range(0, 5) if is_even(x)]
-    # [0.0, 2.0, 4.0, 6.0, 8.0]
 
 Readability counts
 ==================
