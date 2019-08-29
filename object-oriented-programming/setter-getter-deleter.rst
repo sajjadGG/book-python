@@ -207,10 +207,11 @@ Accessors
     temp = Kelvin(273)
 
     temp.value = 20
-    print(temp.value)  # 20
+    print(temp.value)
+    # 20
 
     temp.value = -10
-    print(temp.value)  # ValueError: Temperature cannot be negative
+    # ValueError: Temperature cannot be negative
 
 ``__getattribute__()``
 ----------------------
@@ -231,7 +232,8 @@ Accessors
     temp = Kelvin(273)
 
     temp.value = 20
-    print(temp.value)  # ValueError: Field is private, cannot display
+    print(temp.value)
+    # ValueError: Field is private, cannot display
 
 ``__delattr__()``
 -----------------

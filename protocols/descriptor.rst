@@ -23,18 +23,17 @@ Example
 =======
 .. code-block:: python
 
-    class Kelvin:
-        def __get__(self, parent, parent_type):
-            return parent.value
-
-        def __set__(self, parent, value):
-            parent.value = value
-
-        def __delete__(self, parent):
-            parent.value = None
-
-
     class Temperature:
+        class Kelvin:
+            def __get__(self, parent, parent_type):
+                return parent.value
+
+            def __set__(self, parent, value):
+                parent.value = value
+
+            def __delete__(self, parent):
+                parent.value = None
+
         kelvin = Kelvin()
 
 
@@ -119,7 +118,6 @@ Temperature Conversion
     print(f'C: {temp.celsius}')  # -273.15
     print(f'F: {temp.fahrenheit}')  # -459.67
 
-
 Timezone Conversion
 -------------------
 .. code-block:: python
@@ -173,7 +171,6 @@ Timezone Conversion
     print(t.pdt)      # 1969-07-20 19:56:15-07:00
 
 
-
 Assignments
 ===========
 
@@ -194,6 +191,7 @@ Longitude and Latitude
 #. Wykorzystując deskryptory dodaj mechanizm sprawdzania wartości
 #. Przy kasowaniu (``del``) wartości, nie usuwaj jej, a ustaw na ``None``
 #. Zablokuj całkowicie modyfikację pola ``elevation``
+#. Co zrobić, aby można było inicjalnie ustawić pole ``elevation``, ale później już jego modyfikacja jest zablokowana?
 
 :The whys and wherefores:
     * Wykorzystanie deskryptorów
