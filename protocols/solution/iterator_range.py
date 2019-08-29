@@ -1,28 +1,17 @@
-for character in 'python':
-    print(character)
-
-for number in [1, 2, 3, 4]:
-    print(number)
-
-for key, value in [(0, 0), (1, 1), (1, 2)]:
-    print('%s -> %s' % (key, value))
-
-dictionary = {'x': 1, 'y': 2}
-
-for key in dictionary:
-    print(dictionary.get(key))
-
-
-class Figures:
-    storage = []
-    current_element = 0
+class range:
+    def __init__(self, start: int, stop: int, step: int = 1):
+        self.start = start
+        self.stop = stop
+        self.step = step
 
     def __iter__(self):
+        self._current_element = self.start
         return self
 
-    def push(self, figure):
-        self.storage.append(figure)
+    def __next__(self):
+        if self._current_element >= self.stop:
+            raise StopIteration
 
-    def next(self):
-        self.current_element += 1
-        return self.storage[self.current_element]
+        return_value = self._current_element
+        self._current_element += self.step
+        return return_value
