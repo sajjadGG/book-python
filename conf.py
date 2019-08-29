@@ -11,7 +11,8 @@ extensions = [
     'sphinxcontrib.bibtex',
     'sphinx.ext.doctest',
     'sphinx.ext.todo',
-    'sphinx.ext.imgmath',
+    # 'sphinx.ext.imgmath',
+    'sphinx.ext.mathjax',
     # 'sphinx.ext.autosectionlabel',
     # 'sphinx.ext.viewcode',
     # 'sphinx.ext.coverage',
@@ -59,7 +60,13 @@ import subprocess
 import sys
 from datetime import date
 
-needs_sphinx = '2.1'
+needs_sphinx = '2.2'
+
+mathjax_path = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML'
+mathjax_config = {
+    'extensions': ['tex2jax.js'],
+    'jax': ['input/TeX', 'output/HTML-CSS'],
+}
 
 exclude_patterns += [
     '.*',
