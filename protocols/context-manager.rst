@@ -207,7 +207,8 @@ Buffered file
 #. Gdy program wyjdzie z bloku context managera, to nastąpi otwarcie pliku, zapisanie do pliku i jego zamknięcie
 
 :Dla zaawansowanych:
-    #. Jak zrobić, aby bufor periodycznie zapisywał dane na dysku (w tle)?
+    #. Jak zrobić, aby bufor co ileś bajtów zapisywał dane na dysku (w tle)?
+    #. Jak zrobić, aby bufor periodycznie (co jakiś czas) zapisywał dane na dysku (w tle)?
     #. Jak zrobić, aby do bufora podczas zapisu na dysk, nadal można było pisać?
 
 .. code-block:: python

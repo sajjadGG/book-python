@@ -10,6 +10,7 @@ Book TODO
 
 Python PEP
 ==========
+* type_check decorator, sprawdzający ``function.__annotations__``
 * dict(keys=[...], values=[...])
 * from pprint import pprint, print(pretty=True) (albo podawanie formattera)
 * JSON datetime encoder, decoder to isoformat (UTC)
