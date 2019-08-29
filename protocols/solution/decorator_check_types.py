@@ -2,8 +2,6 @@ def check_types(func):
     arg_types = func.__annotations__.copy()
     return_type = arg_types.pop('return')
 
-
-
     def check(*args, **kwargs):
 
         for i, value in enumerate(args):

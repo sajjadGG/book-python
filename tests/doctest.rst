@@ -148,7 +148,7 @@ Python changes to single quotes to avoid escapes
 
      def echo(text):
         """
-        >>> echo('It\'s Twardowski\'s Moon')
+        >>> echo('It\\'s Twardowski\\'s Moon')
         "It's Twardowski's Moon"
         """
         return text
@@ -205,7 +205,7 @@ Testing for exceptions
         >>> add_numbers([1, 2])
         Traceback (most recent call last):
             ...
-        TypeError: Argument must be int or float
+        TypeError: add_numbers() missing 1 required positional argument: 'b'
         """
         if not isinstance(a, (int, float)):
             raise TypeError('Argument must be int or float')
@@ -214,6 +214,7 @@ Testing for exceptions
             raise TypeError('Argument must be int or float')
 
         return a + b
+
 
 
 Using python statements in ``doctest``
