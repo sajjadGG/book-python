@@ -85,10 +85,12 @@ class Dragon(Movable):
             self.status: str = Status.DEAD
 
     def get_drop(self) -> Dict[str, Any]:
-        return {
+        drop = {
             'gold': self.gold,
             'position': self.get_position(),
         }
+        self.gold = 0
+        return drop
 
     @if_alive
     def make_damage(self) -> Optional[int]:

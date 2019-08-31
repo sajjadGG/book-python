@@ -80,8 +80,11 @@ Setup
         {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'},
     ]
 
-Statements
-----------
+Case Studies
+============
+
+Unique Keys
+-----------
 * Runtime: Jupyter ``%%timeit``
 
 .. code-block:: python
@@ -94,7 +97,7 @@ Statements
     for row in DATA:
         fieldnames.update(row.keys())
 
-    # 1.53 µs ± 8.41 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+    # 1.55 µs ± 12.9 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 
 .. code-block:: python
     :caption: Code 2
@@ -105,7 +108,7 @@ Statements
         for record in DATA
             for key in record.keys())
 
-    # 2.03 µs ± 49.9 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+    # 1.91 µs ± 16.7 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 
 .. code-block:: python
     :caption: Code 3 (Is it correct?!)
@@ -118,7 +121,7 @@ Statements
         for record in DATA
            for key in record.keys())
 
-    # 431 ns ± 5.93 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+    # 416 ns ± 4.24 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 
 .. code-block:: python
     :caption: Code 4
@@ -128,7 +131,7 @@ Statements
     fieldnames = set()
     fieldnames.update(tuple(x.keys()) for x in DATA)
 
-    # 2.11 µs ± 51 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+    # 2.05 µs ± 48.7 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 
 .. code-block:: python
     :caption: Code 5
@@ -143,7 +146,7 @@ Statements
 
     set(fieldnames)
 
-    # 2.43 µs ± 63.9 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+    # 2.28 µs ± 90.5 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 
 .. code-block:: python
     :caption: Code 6
@@ -156,7 +159,7 @@ Statements
         for key in row.keys():
             fieldnames.add(key)
 
-    # 2.01 µs ± 35 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+    # 2.01 µs ± 54.5 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 
 .. code-block:: python
     :caption: Code 7
@@ -170,12 +173,149 @@ Statements
             if key not in fieldnames:
                 fieldnames.append(key)
 
-    # 2.17 µs ± 39.7 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+    # 2.09 µs ± 46.2 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 
 Summary
-=======
+^^^^^^^
 * Code 3 appends generator object not values, this is why it is so fast!
 
+Fibonacci
+---------
+.. code-block:: python
+
+    %%timeit
+
+    def factorial_nocache(n: int) -> int:
+        if n == 0:
+            return 1
+        else:
+            return n * factorial_nocache(n - 1)
+
+
+    factorial_nocache(500)
+    factorial_nocache(400)
+    factorial_nocache(450)
+
+    # 283 µs ± 6.63 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+
+.. code-block:: python
+
+    %%timeit
+
+    CACHE = {}
+
+    def factorial_cache(n: int) -> int:
+        if n in CACHE:
+            return CACHE[n]
+
+        if n == 0:
+            return 1
+        else:
+            result = CACHE[n] = n * factorial_cache(n-1)
+            return result
+
+
+    factorial_cache(500)
+    factorial_cache(400)
+    factorial_cache(450)
+
+    # 153 µs ± 2.49 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+
+.. code-block:: python
+
+    %%timeit
+
+    CACHE = {}
+
+    def factorial_cache(n: int) -> int:
+        result = CACHE.get(n)
+
+        if result:
+            return result
+
+        if n == 0:
+            return 1
+        else:
+            result = CACHE[n] = n * factorial_cache(n-1)
+            return result
+
+
+    factorial_cache(500)
+    factorial_cache(400)
+    factorial_cache(450)
+
+    # 181 µs ± 10.3 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+
+.. code-block:: python
+
+    %%timeit
+
+    CACHE = {}
+
+    def factorial_cache(n: int) -> int:
+        if n == 0:
+            return 1
+
+        try:
+            return CACHE[n]
+        except KeyError:
+            CACHE[n] = result = n * factorial_cache(n-1)
+            return result
+
+
+    factorial_cache(500)
+    factorial_cache(400)
+    factorial_cache(450)
+
+    # 618 µs ± 6.6 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+
+.. code-block:: python
+
+    %%timeit
+
+    CACHE = {}
+
+    def factorial_1(n: int) -> int:
+
+        def factorial(n: int) -> int:
+            if n == 0:
+                return 1
+            return n * factorial(n-1)
+
+        if not n in CACHE:
+            CACHE[n] = factorial(n)
+
+        return CACHE[n]
+
+
+    factorial_1(500)
+    factorial_1(400)
+    factorial_1(450)
+
+    # 283 µs ± 6.44 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+
+.. code-block:: python
+
+    %%timeit
+
+    CACHE = {}
+
+    def factorial2(n: int) -> int:
+        if n == 0:
+            return 1
+
+        if n in CACHE:
+            return CACHE[n]
+
+        result = CACHE[n] = n * factorial2(n-1)
+        return result
+
+
+    factorial2(500)
+    factorial2(400)
+    factorial2(450)
+
+    # 153 µs ± 9.64 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 
 References
 ==========

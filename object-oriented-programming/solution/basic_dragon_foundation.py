@@ -42,10 +42,12 @@ class Dragon:
             return randint(self.DAMAGE_MIN, self.DAMAGE_MAX)
 
     def make_drop(self):
-        return {
+        drop = {
             'gold': self.gold,
             'position': self.get_position(),
         }
+        self.gold = 0
+        return drop
 
     def make_dead(self):
         self.status = Status.DEAD
