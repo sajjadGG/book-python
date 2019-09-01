@@ -322,8 +322,8 @@ Dataclass will add
             return NotImplemented
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Address Book (dataclass)
 ------------------------

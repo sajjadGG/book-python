@@ -114,7 +114,7 @@ Attacker
     * ``socket``
     * ``json.dumps()``, ``json.loads()``
 
-:Zadanie z gwiazdką:
+:Extra task:
     Za pomocą ``Django`` stwórz panel administracyjny dla botnetu:
 
     * Wyszukiwanie aktywnych hostów

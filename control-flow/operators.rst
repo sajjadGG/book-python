@@ -37,8 +37,8 @@ Operator precedence
     ``{key: value...}``, ``{expressions...}``", "Binding or tuple display, list display, dictionary display, set display"
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Even and odd numbers
 --------------------

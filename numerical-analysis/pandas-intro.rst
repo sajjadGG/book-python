@@ -315,5 +315,5 @@ Descriptive statistics
     "``cummin``", "Cumulative minimum"
 
 
-Assignments
-===========
+Assignments in Polish
+=====================

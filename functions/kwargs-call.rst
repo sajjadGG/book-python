@@ -259,8 +259,8 @@ Decorators
         ...
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Iris
 ----

@@ -3,8 +3,6 @@ Parsing and Formatting
 **********************
 
 
-* https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
-
 Date formats
 ============
 * https://en.wikipedia.org/wiki/Date_format_by_country
@@ -201,17 +199,19 @@ Duration
     #   5 seconds
 
 
-Table of date and time parsing and formatting parameters
-========================================================
+Date and time parsing and formatting parameters
+===============================================
+* https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
 * ``%-I`` or ``%_I`` on \*nix systems (macOS, BSD, Linux) to remove leading zero
 * ``%#I`` on Windows to remove leading zero
 * \*nix: ``%-d``, ``%-H``, ``%-I``, ``%-j``, ``%-m``, ``%-M``, ``%-S``, ``%-U``, ``%-w``, ``%-W``, ``%-y``, ``%-Y``
 * Windows: ``%#d``, ``%#H``, ``%#I``, ``%#j``, ``%#m``, ``%#M``, ``%#S``, ``%#U``, ``%#w``, ``%#W``, ``%#y``, ``%#Y``
 
-.. note:: Prawie wszystkie parametry są podobne różnych językach programowania. Od czasu do czasu występują małe zmiany, np. w JavaScript minuty to ``i`` a nie ``M``
+.. note:: Almost any programming language has very similar date formatting parameters. There are only some minor differences like in JavaScript minutes are ``i``, not ``M``.
 
-.. csv-table:: Tabelka parametrów formatowania i parsowania dat i czasu
+.. csv-table:: Date and time parsing and formatting parameters
     :header-rows: 1
+    :widths: 5,35,60
     :file: data/datetime-formatting.csv
 
 
@@ -305,8 +305,8 @@ Parsing dates
     # 1957-10-04 19:28:34
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 From ISO date format
 --------------------
@@ -371,3 +371,70 @@ US date and time format
     * Wpisz znaki cudzysłowia ``"`` jako zwykły tekst w parametrze ``fmt`` funkcji ``.strptime()``
     * ``%-I`` or ``%_I`` on \*nix systems (macOS, BSD, Linux) to remove leading zero
     * ``%#I`` on Windows to remove leading zero
+
+Assignments in English
+======================
+
+From ISO date format
+--------------------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/datetime_from_iso.py`
+
+#. The date and time is given in ISO format:
+
+    .. code-block:: text
+
+        1969-07-21T02:56:15.123Z
+
+#. Convert it to ``datetime`` object
+
+To ISO date format
+------------------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/datetime_to_iso.py`
+
+#. The date and time is given:
+
+    .. code-block:: python
+
+        gagarin = 'April 12, 1961 6:07 local time'
+
+#. Create ``datetime`` object by parsing the date
+#. Using formatting parameters print the date in ISO format
+
+    .. code-block:: text
+
+        1969-04-12T06:07:00.000Z
+
+:Hint:
+    * Wpisz "local time" jako zwykły tekst w parametrze ``fmt`` funkcji ``.strptime()``
+
+US date and time format
+-----------------------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/datetime_from_us.py`
+
+#. The date and time is given:
+
+    .. code-block:: python
+
+        armstrong = '"July 21st, 1969 2:56:15 AM UTC"'
+
+#. Create ``datetime`` object by parsing the date
+#. Using formatting parameters print american short date format
+#. Make sure, that hour is without leading zero
+
+    .. code-block:: text
+
+        7/21/69 2:56 AM
+
+:Hint:
+    * Add quote sign ``"`` like normal text to ``fmt`` parameter of ``.strptime()``
+    * Use ``%-I`` or ``%_I`` on \*nix systems (macOS, BSD, Linux) to remove leading zero
+    * Use ``%#I`` on Windows to remove leading zero

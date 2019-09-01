@@ -6,31 +6,29 @@ Timezones
 Time zones in ``datetime`` library
 ==================================
 * Always keep dates and times only in UTC (**important!**)
-* Datetimes should be converted to localtime only when displaying to user
+* Datetimes should be converted to local time only when displaying to user
 * Computerphile Time & Time Zones :cite:`VideoComputerphileTimeZones`
+* Refer to :ref:`Timezone Conversion` for automated solution
 
 Timezone naive
 --------------
+* ``datetime.utcnow()`` - produces timezone naive date!
+
 .. code-block:: python
-    :caption: Timezone naive datetimes
+    :caption: Timezone naive datetimes.
 
     from datetime import datetime
 
-    datetime.now()
-
-.. code-block:: python
-    :caption: Timezone naive datetimes. This is potentially dangerous!
-
-    from datetime import datetime
-
-    datetime.utcnow()
-
-.. code-block:: python
-    :caption: Timezone naive datetimes
-
-    from datetime import datetime
 
     datetime(1957, 10, 4, 19, 28, 34)
+    # datetime.datetime(1957, 10, 4, 19, 28, 34
+
+    datetime.now()
+    # datetime.datetime(1957, 10, 4, 19, 28, 34)
+
+    datetime.utcnow()
+    # datetime.datetime(1957, 10, 4, 17, 28, 34)
+
 
 Timezone aware
 --------------
@@ -39,23 +37,22 @@ Timezone aware
 
     from datetime import datetime, timezone
 
-    datetime(1957, 10, 4, 19, 28, 34, tzinfo=timezone.utc)
-
-.. code-block:: python
-    :caption: Timezone aware datetime
-
-    from datetime import datetime, timezone
-
-    dt = datetime(1957, 10, 4, 19, 28, 34)
-    d.replace(tzinfo=timezone.utc)
-
-.. code-block:: python
-    :caption: Timezone aware datetime
-
-    from datetime import datetime, timezone
 
     datetime.now(tz=timezone.utc)
+    # datetime.datetime(1957, 10, 4, 19, 28, 34, tzinfo=datetime.timezone.utc)
 
+    datetime(1957, 10, 4, 19, 28, 34, tzinfo=timezone.utc)
+    # datetime.datetime(1957, 10, 4, 19, 28, 34, tzinfo=datetime.timezone.utc)
+
+    dt = datetime(1957, 10, 4, 19, 28, 34)
+    dt.replace(tzinfo=timezone.utc)
+    # datetime.datetime(1957, 10, 4, 19, 28, 34, tzinfo=datetime.timezone.utc)
+
+    datetime.utcnow(tz=timezone.utc)
+    # TypeError: utcnow() takes no keyword arguments
+
+    datetime.utcnow(timezone.utc)
+    # TypeError: utcnow() takes no arguments (1 given)
 
 ``pytz``
 ========
@@ -85,12 +82,10 @@ From naive to local
     from pytz import timezone
 
 
-    # timezone naive
     my_date = datetime(1961, 4, 12, 6, 7)
 
     timezone('Asia/Almaty').localize(my_date)
-    # datetime.datetime(1961, 4, 12, 14, 7,
-    #                   tzinfo=<DstTzInfo 'Asia/Almaty' +06+6:00:00 STD>)
+    # datetime.datetime(1961, 4, 12, 6, 7, tzinfo=<DstTzInfo 'Asia/Almaty' +06+6:00:00 STD>)
 
 From naive to UTC
 -----------------
@@ -101,7 +96,6 @@ From naive to UTC
     from pytz import timezone
 
 
-    # timezone naive
     my_date = datetime(1969, 7, 21, 2, 56, 15)
 
     timezone('UTC').localize(my_date)
@@ -123,6 +117,8 @@ From UTC to local time
 
 Between timezones
 -----------------
+* Problem with precision
+
 .. code-block:: python
     :caption: Between timezones
 
@@ -136,8 +132,8 @@ Between timezones
     # datetime.datetime(1961, 4, 12, 1, 59, tzinfo=<DstTzInfo 'Europe/Warsaw' CET+1:00:00 STD>)
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Time zone converting
 --------------------
@@ -146,21 +142,58 @@ Time zone converting
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/datetime_tz.py`
 
-#. Dane są dwie następujące daty w formacie jak poniżej:
+#. Przekonwertuj do obiektu ``datetime``:
 
-    .. code-block:: python
+    .. code-block:: text
 
-        gagarin = 'April 12, 1961 6:07 local time'  # Asia/Almaty
-        armstrong = '"07/21/69 2:56:15 AM UTC"'
+        1969-07-21 02:56:15 UTC
 
-#. Przedstaw daty jako obiekt ``datetime`` ze strefą czasową UTC
-#. Wyświetl obie daty w formacie *ISO* w strefie czasowej ``Europe/Warsaw``
+#. Wyświetl datę jaka była w:
 
-:Hint:
-    * Wpisz "local time" jako zwykły tekst w parametrze ``fmt`` funkcji ``.strptime()``
-    * Wpisz znaki cudzysłowia ``"`` jako zwykły tekst w parametrze ``fmt`` funkcji ``.strptime()``
-    * Standard ISO:
+    #. London, Wielka Brytania
+    #. Moscow, Rosja
+    #. Warsaw, Polska
+    #. Tokyo, Japan
+    #. Sydney, Australia
+    #. Auckland, Nowa Zelandia
 
-        * '1961-04-12'
-        * '1961-04-12T06:07:00Z'
-        * '1961-04-12T06:07:00.000000Z'
+:Extra:
+    #. Kosmodrom Bajkonur, Kazachstan
+    #. Przylądek Canaveral, FL, USA
+    #. Houston, TX, USA
+    #. Biegun południowy
+    #. Biegun północny
+
+
+Assignments in English
+======================
+
+Time zone converting
+--------------------
+* Complexity level: easy
+* Lines of code to write: 10 lines
+* Estimated time of completion: 10 min
+* Filename: :download:`solution/datetime_tz.py`
+
+#. Convert to ``datetime`` objects:
+
+    .. code-block:: text
+
+        1969-07-21 02:56:15 UTC
+
+#. What was the time in:
+
+    #. London, United Kingdom
+    #. Moscow, Russian Federation
+    #. Warsaw, Poland
+    #. Tokyo, Japan
+    #. Sydney, Australia
+    #. Auckland, New Zealand
+
+:Extra:
+    #. Kosmodrom Bajkonur, Kazachstan
+    #. Cape Canaveral, FL, USA
+    #. Houston, TX, USA
+    #. New York, USA
+    #. South Pole
+    #. North Pole

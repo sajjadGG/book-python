@@ -111,6 +111,6 @@ Indexing ``dict``
     # 'a'
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 .. todo:: Create Assignments

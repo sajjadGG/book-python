@@ -124,8 +124,8 @@ Number to the ``n-th`` power
     2.888 ** 3      # 24.087491072
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Handling user input and type casting
 ------------------------------------

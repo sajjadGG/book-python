@@ -63,8 +63,8 @@ Example 3
     :language: python
     :caption: Przykład pokrycia klasy za pomocą ``unittest``
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Dragon
 ------

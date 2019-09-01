@@ -290,8 +290,8 @@ URL Regex
         else:
             return False
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Refactoring
 -----------

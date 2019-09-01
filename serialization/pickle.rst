@@ -222,8 +222,8 @@ Advanced Example
     # ]
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Pickle serialization
 --------------------

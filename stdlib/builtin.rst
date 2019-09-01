@@ -205,8 +205,8 @@ Other builtin functions
     "``zip()``", ""
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Average
 -------

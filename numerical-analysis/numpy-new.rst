@@ -1346,8 +1346,8 @@ Euclidean distance
     Wyliczanie odległości w celu oszacowania przynależności do zbioru. Zwróć uwagę, że bez względu na ilość wymiarów wzór się niewiele różni.
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 * http://www.labri.fr/perso/nrougier/teaching/numpy.100/
 * https://github.com/rougier/numpy-100
 

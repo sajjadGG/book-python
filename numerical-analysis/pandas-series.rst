@@ -457,8 +457,8 @@ Add values
     # dtype: float64
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Even Numbers
 ------------

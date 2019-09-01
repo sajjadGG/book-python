@@ -136,24 +136,6 @@ Complex ``timedelta`` shifts
 .. code-block:: python
     :caption: Subtract month from ``datetime``
 
-    from datetime import timedelta, date
-
-
-    def month_before(dt, month=30.436875):
-        """
-        Average days a month in solar calendar
-        """
-        return dt - timedelta(days=month)
-
-
-    gagarin = date(1961, 4, 12)
-
-    month_before(gagarin)
-    # datetime.date(1961, 3, 13)
-
-.. code-block:: python
-    :caption: Subtract month from ``datetime``
-
     from calendar import monthlen
     from datetime import timedelta, date
 
@@ -209,8 +191,8 @@ Time diff
     # {'years': 8, 'months': 3, 'days': 8, 'hours': 20, 'minutes': 49, 'seconds': 15}
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Date manipulation
 ------------------
@@ -236,5 +218,31 @@ Date manipulation
     - rok = 365.2425 dni
     - miesiąc = 30.436875 dni
 
-:Zadanie z gwiazdką:
-    * Co robiłeś przez ten czas?
+
+Assignments in English
+======================
+
+Date manipulation
+------------------
+* Complexity level: easy
+* Lines of code to write: 15 lines
+* Estimated time of completion: 20 min
+* Filename: :download:`solution/datetime_deltas.py`
+
+#. Between Gagarin launch and Armstrong first step on the Moon, there was a period of:
+
+    - 8 years
+    - 3 months
+    - 8 days
+    - 20 hours
+    - 49 minutes
+    - 15 seconds
+
+#. From current date subtract this period
+#. Print calculated date
+#. How old were you at the given moment?
+#. Assume:
+
+    - year = 365.2425 days
+    - month = 30.436875 days
+

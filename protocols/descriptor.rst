@@ -118,6 +118,8 @@ Temperature Conversion
     print(f'C: {temp.celsius}')  # -273.15
     print(f'F: {temp.fahrenheit}')  # -459.67
 
+.. _Timezone Conversion:
+
 Timezone Conversion
 -------------------
 .. code-block:: python
@@ -171,8 +173,8 @@ Timezone Conversion
     print(t.pdt)      # 1969-07-20 19:56:15-07:00
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Longitude and Latitude
 ----------------------

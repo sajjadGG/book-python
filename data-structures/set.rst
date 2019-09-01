@@ -143,8 +143,8 @@ Length of a ``set``
     # 3
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Create
 ------

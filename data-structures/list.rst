@@ -211,8 +211,8 @@ Length of a ``list``
     # 3
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Create
 ------

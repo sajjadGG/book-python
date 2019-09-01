@@ -78,6 +78,6 @@ Przykład zastosowania
 - Weather forecasters use it to predict the "chance of rain" you see every morning.
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 

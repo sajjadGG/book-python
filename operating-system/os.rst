@@ -794,8 +794,8 @@ Similar projects: Geckoboard, Dashing.
     $ tipboard runserver
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Recursive folders walking
 -------------------------

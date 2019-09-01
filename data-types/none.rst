@@ -30,8 +30,8 @@ Logic operators
     "``x is not None``", "``x`` is not the same object as ``y``"
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Is ``None`` or ``not``
 ----------------------

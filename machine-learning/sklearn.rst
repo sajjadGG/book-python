@@ -228,6 +228,6 @@ Porównanie classifierów
             {'name': "QDA",               'model': QuadraticDiscriminantAnalysis()},
         ]
 
-:Zadanie z gwiazdką:
+:Extra task:
     * Zrównoleglij uruchamianie predykcji za pomocą modułu ``threading`` oraz architektury opartej na Workerach.
     * Wyświetl posortowaną malejąco listę wg. dokładności

@@ -229,8 +229,8 @@ Przykład
     except StopIteration:
         pass
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Range
 -----

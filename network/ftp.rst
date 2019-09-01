@@ -32,8 +32,8 @@ Methods
     :file: data/ftp-api.csv
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 FTP Download
 ------------

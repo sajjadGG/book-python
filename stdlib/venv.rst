@@ -98,8 +98,8 @@ Good practices
 * add folder to ``.gitignore`` (important!)
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Virtualenv
 ----------

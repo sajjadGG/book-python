@@ -24,8 +24,8 @@ Secured connection to the SMTP server
     :caption: Secured connection to the SMTP server
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Send email
 ----------

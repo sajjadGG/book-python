@@ -195,8 +195,8 @@ Number to the ``n-th`` power
     pow(-1, 2)      # 1
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Time
 ----

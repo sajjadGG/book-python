@@ -87,8 +87,8 @@ Use cases
     :caption: Zapisywanie do bazy danych wyników pobranych z sensorów podłączonych po USB
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Iris Database
 -------------
@@ -129,7 +129,7 @@ Iris Database
 #. Wyniki wypisz z bazy danych (``SELECT * FROM iris ORDER BY datetime DESC``)
 #. Zwracaj dane jako ``sqlite3.Row``
 
-:Zadanie z gwiazdką:
+:Extra task:
     #. Załóż index na ``datetime``
 
 :The whys and wherefores:
@@ -154,7 +154,7 @@ Tworzenie bazy danych i proste zapytania
 #. Dane powinny być zwracane w postaci listy ``dict``
 #. Do wpisywania danych wykorzystaj konstrukcję ``execute`` wykorzystując ``dict`` jako argument
 
-:Zadanie z gwiazdką:
+:Extra task:
     * Dodaj obsługę wielu adresów
     * Dodaj obsługę relacji w aplikacji
 

@@ -413,8 +413,8 @@ Github pages with Jupyter Slides
         --SlidesExporter.reveal_scroll=True \
         --SlidesExporter.reveal_transition=none
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Podstawy korzystania
 --------------------

@@ -346,8 +346,8 @@ Check JSON Syntax
     Expecting property name enclosed in double quotes: line 1 column 37 (char 36)
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Serialize
 ---------

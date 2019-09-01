@@ -154,8 +154,8 @@ More advanced topics
 .. note:: The topic will be continued in Intermediate and Advanced part of the book
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Unpacking from sequence
 -----------------------

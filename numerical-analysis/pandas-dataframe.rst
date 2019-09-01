@@ -1175,8 +1175,8 @@ Practical Example
     return df[columns].to_dict('records')
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Iris Dirty
 ----------

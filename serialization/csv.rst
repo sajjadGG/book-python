@@ -5,20 +5,53 @@ CSV Serialization
 *****************
 
 
-Reading data from CSV files
-===========================
-* Good practice is to always set:
-
-    * ``quotechar='"'``
-    * ``delimiter=','``
-    * ``open(FILE, encoding='utf-8')`` - especially for MS Excel exported *CSV* files
-
+Dialects
+========
 .. code-block:: python
-    :caption: Zapis do plików csv używając ``csv.DictReader()``
 
     import csv
 
-    FILE = r'../data/iris.csv'
+    csv.list_dialects()
+    # ['excel', 'excel-tab', 'unix']
+
+* CSV quoting options:
+
+    * ``csv.QUOTE_ALL``
+    * ``csv.QUOTE_MINIMAL``
+    * ``csv.QUOTE_NONE``
+    * ``csv.QUOTE_NONNUMERIC``
+
+* Good practice is to always specify:
+
+    * ``quoting=csv.QUOTE_ALL`` to ``csv.DictReader()`` object
+    * ``quotechar='"'`` to ``csv.DictReader()`` object
+    * ``delimiter=','`` to  ``csv.DictReader()`` object
+    * ``lineterminator='\n'`` to ``csv.DictReader()`` object
+    * ``encoding='utf-8'`` to ``open()`` function (especially when working with Microsoft Excel)
+
+* Microsoft Excel uses:
+
+    * ``quotechar='"'``
+    * ``delimiter=';'``
+    * ``lineterminator='\n'``
+    * ``encoding='...'`` - depends on Windows version and settings
+
+* Encoding:
+
+    * ``utf-8`` - international standard (should be always used!)
+    * ``iso-8859-1`` - ISO standard for Western Europe and USA
+    * ``iso-8859-2`` - ISO standard for Central Europe (including Poland)
+    * ``cp1250`` or ``windows-1250`` - Polish encoding on Windows
+    * ``cp1251`` or ``windows-1251`` - Russian encoding on Windows
+
+Read data from CSV file
+=======================
+.. code-block:: python
+    :caption: Read data from CSV file using ``csv.DictReader()``
+
+    import csv
+
+    FILE = r'iris.csv'
     # sepal_length,sepal_width,petal_length,petal_width,species
     # 5.4,3.9,1.3,0.4,setosa
     # 5.9,3.0,5.1,1.8,virginica
@@ -36,22 +69,16 @@ Reading data from CSV files
     # {'sepal_length': '6.0', 'sepal_width': '3.4', 'petal_length': '4.5', 'petal_width': '1.6', 'species': 'versicolor'}
 
 
-Writing to CSV files
-====================
-* Good practice is to always set:
-
-    * ``quoting=csv.QUOTE_ALL``
-    * ``quotechar='"'``
-    * ``delimiter=','``
-    * ``lineterminator='\n'``
-    * ``open(FILE, encoding='utf-8')`` - especially for reading in MS Excel
+Write data to CSV file
+======================
+* Remember to add ``mode='w'`` to ``open()`` function
 
 .. code-block:: python
-    :caption: Zapis do plików csv używając ``csv.DictWriter()``
+    :caption: Write data to CSV file using ``csv.DictWriter()``
 
     import csv
 
-    FILE = r'filename.csv'
+    FILE = r'iris.csv'
     DATA = [
         {'sepal_length': 5.4, 'sepal_width': 3.9, 'petal_length': 1.3, 'petal_width': 0.4, 'species': 'setosa'},
         {'sepal_length': 5.9, 'sepal_width': 3.0, 'petal_length': 5.1, 'petal_width': 1.8, 'species': 'virginica'},
@@ -74,8 +101,8 @@ Writing to CSV files
             writer.writerow(row)
 
 
-Parsing non-CSV files with ``csv.DictReader()``
-===============================================
+Parsing non-CSV files
+=====================
 
 Parsing ``/etc/passwd``
 -----------------------
@@ -85,15 +112,19 @@ Parsing ``/etc/passwd``
     import csv
 
 
-    FILE = r'../data/etc-passwd.txt'
-    FIELDNAMES = ['username', 'password', 'uid', 'gid', 'full_name', 'home', 'shell']
+    FILE = r'etc-passwd.txt'
     # root:x:0:0:root:/root:/bin/bash
     # watney:x:1000:1000:Mark Watney:/home/watney:/bin/bash
     # jimenez:x:1001:1001:José Jiménez:/home/jimenez:/bin/bash
     # twardowski:x:1002:1002:Jan Twardowski:/home/twardowski:/bin/bash
 
     with open(FILE) as file:
-        data = csv.DictReader(file, fieldnames=FIELDNAMES, delimiter=':')
+        data = csv.DictReader(
+            file,
+            fieldnames=['username', 'password', 'uid', 'gid', 'full_name', 'home', 'shell'],
+            delimiter=':',
+            lineterminator='\n',
+            quoting=csv.QUOTE_NONE)
 
         for line in data:
             print(dict(line))
@@ -106,11 +137,12 @@ Parsing ``/etc/passwd``
 Parsing Java properties file
 ----------------------------
 .. code-block:: python
-    :caption: Parsing ``sonar-project.properties`` file with  ``csv.DictReader()``
+    :caption: Parsing Java properties file with ``csv.DictReader()``
 
     import csv
 
-    FILE = r'../data/sonar-project.properties'
+
+    FILE = r'sonar-project.properties'
     # sonar.projectKey=habitatOS
     # sonar.projectName=habitatOS
     # sonar.language=py
@@ -144,6 +176,7 @@ Pandas
 .. code-block:: python
 
     import pandas as pd
+
 
     FILE = 'https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv'
 
@@ -227,8 +260,8 @@ Pandas
     #  ], dtype=object)
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Reading ``csv``
 ---------------
@@ -236,7 +269,7 @@ Reading ``csv``
 * Lines of code to write: 20 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/csv_dictreader.py`
-* Input data: https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris.csv
+* Input data: https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris-clean.csv
 
 #. Otwórz w przeglądarce podany powyżej URL
 #. Zapisz jego zawartość na dysku w miejscu gdzie masz skrypty w pliku ``iris.csv``
@@ -335,6 +368,138 @@ Object serialization to CSV
 
 .. code-block:: python
     :name: listing-csv-addressbook
+    :caption: Address book
+
+    class Contact:
+        def __init__(self, first_name, last_name, addresses=()):
+            self.first_name = first_name
+            self.last_name = last_name
+            self.addresses = addresses
+
+
+    class Address:
+        def __init__(self, center, location):
+            self.center = center
+            self.location = location
+
+
+    DATA = [
+        Contact(first_name='Jan', last_name='Twardowski', addresses=(
+            Address(center='Johnson Space Center', location='Houston, TX'),
+            Address(center='Kennedy Space Center', location='Merritt Island, FL'),
+            Address(center='Jet Propulsion Laboratory', location='Pasadena, CA'),
+        )),
+        Contact(first_name='Mark', last_name='Watney'),
+        Contact(first_name='Melissa', last_name='Lewis', addresses=()),
+    ]
+
+#. Za pomocą ``csv.DictWriter()`` zapisz kontakty z książki adresowej w pliku
+#. Wszystkie pola muszą być zawsze w cudzysłowach i oddzielone średnikami, kodowanie UTF-8, a na końcu linii Unix newline.
+#. Jak zapisać w CSV dane relacyjne (kontakt ma wiele adresów)?
+#. Stwórz obiekty książki adresowej na podstawie danych odczytanych z pliku
+
+
+Assignments in English
+======================
+
+Read and parse data from CSV file
+---------------------------------
+* Complexity level: easy
+* Lines of code to write: 20 lines
+* Estimated time of completion: 10 min
+* Filename: :download:`solution/csv_dictreader.py`
+
+#. Download :download:`data/iris-clean.csv` file
+#. Save data to ``iris-clean.csv`` in your script folder
+#. Using ``csv.DictReader`` read the content
+#. Use explicit ``encoding``, ``delimiter`` and ``quotechar``
+#. Replace column names to:
+
+    * Sepal length
+    * Sepal width
+    * Petal length
+    * Petal width
+    * Species
+
+#. Print data on the screen
+
+Write fixed schema data to file
+-------------------------------
+* Complexity level: easy
+* Lines of code to write: 8 lines
+* Estimated time of completion: 10 min
+* Filename: :download:`solution/csv_dictwriter_fixed.py`
+
+    .. code-block:: python
+
+        DATA = [
+            {'first_name': 'Jan',  'last_name': 'Twardowski'},
+            {'first_name': 'Jose', 'last_name': 'Jimenez'},
+            {'first_name': 'Mark', 'last_name': 'Watney'},
+            {'first_name': 'Ivan', 'last_name': 'Ivanovic'},
+            {'first_name': 'Melissa', 'last_name': 'Lewis'},
+        ]
+
+#. Using ``csv.DictWriter()`` save ``DATA`` to file
+#. All fields must be enclosed by double quote ``"`` character
+#. Use ``;`` to separate columns
+#. Use ``utf-8`` encoding
+#. Use Unix newline
+#. Open file in your spreadsheet program like Microsoft Excel / Libre Office / Numbers etc.
+#. Open file in simple in your IDE and simple text editor (like Notepad, vim, gedit)
+
+Write variable schema data to file
+----------------------------------
+* Complexity level: easy
+* Lines of code to write: 8 lines
+* Estimated time of completion: 10 min
+* Filename: :download:`solution/csv_dictwriter_variable.py`
+* Input data: :numref:`listing-csv-dictwriter-variable`
+
+    .. code-block:: python
+
+        DATA = [
+            {'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
+            {'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
+            {'Sepal length': 6.3, 'Petal width': 1.8, 'Species': 'virginica'},
+            {'Petal length': 1.4, 'Petal width': 0.2, 'Species': 'setosa'},
+            {'Sepal width': 2.8, 'Petal length': 4.1, 'Species': 'versicolor'},
+            {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'},
+        ]
+
+#. Using ``csv.DictWriter()`` write ``DATA`` to CSV file
+#. ``fieldnames``must be automatically generated from ``DATA``
+#. Make sure ``fieldnames`` are always in the same order
+#. All fields must be enclosed by double quote ``"`` character
+#. Use ``;`` to separate columns
+#. Use ``utf-8`` encoding
+#. Use Unix newline
+#. Result should look like this:
+
+    .. csv-table:: Result of variable schema CSV file generation
+        :header: "Petal length", "Petal width", "Sepal length", "Sepal width", "Species"
+
+        "", "", "5.1", "3.5", "setosa"
+        "4.1", "1.3", "", "", "versicolor"
+        "", "1.8", "6.3", "", "virginica"
+        "1.4", "0.2", "", "", "setosa"
+        "4.1", "", "", "2.8", "versicolor"
+        "", "1.8", "", "2.9", "virginica"
+
+:The whys and wherefores:
+    * Ability to use ``csv`` module to write data
+    * Ability to iterate over nested data structures
+    * Dynamically generate data structures from other
+
+Object serialization to CSV
+---------------------------
+* Complexity level: hard
+* Lines of code to write: 10 lines
+* Estimated time of completion: 20 min
+* Filename: :download:`solution/csv_relations.py`
+* Input data: :numref:`listing-csv-addressbook`
+
+.. code-block:: python
     :caption: Address book
 
     class Contact:

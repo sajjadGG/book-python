@@ -9,7 +9,7 @@ Creating ``date`` objects
 Create ``date``
 ---------------
 .. code-block:: python
-    :caption: Create ``date``
+    :caption: ``date`` object and its properties
 
     from datetime import date
 
@@ -24,7 +24,7 @@ Create ``date``
 Current ``date``
 ----------------
 .. code-block:: python
-    :caption: Current ``date``
+    :caption: ``date`` object with current date
 
     from datetime import date
 
@@ -39,7 +39,7 @@ Current ``date``
 ``date`` methods
 --------------------
 .. code-block:: python
-    :caption: ``date`` methods
+    :caption: ``date`` object methods
 
     from datetime import date
 
@@ -57,7 +57,7 @@ Creating ``time`` objects
 Create ``time``
 ---------------
 .. code-block:: python
-    :caption: Create ``time``
+    :caption: ``time`` object and its properties
 
     from datetime import time
 
@@ -70,11 +70,10 @@ Create ``time``
     t.second          # 15
     t.microsecond     # 0
 
-
 Noon and midnight
 -----------------
 .. code-block:: python
-    :caption: Create empty ``time`` - midnight
+    :caption: ``time`` object representing midnight
 
     from datetime import time
 
@@ -86,6 +85,7 @@ Noon and midnight
     time(12)            # datetime.time(12, 0)
     time(12, 0)         # datetime.time(12, 0)
     time(12, 0, 0)      # datetime.time(12, 0)
+
 
 Creating ``datetime`` objects
 =============================
@@ -127,7 +127,6 @@ Create ``datetime`` with empty time (midnight)
     dt.minute        # 0
     dt.second        # 0
     dt.microsecond   # 0
-
 
 Create ``datetime`` from ``date`` and ``time`` objects
 ------------------------------------------------------
@@ -199,8 +198,8 @@ Current ``datetime`` in local time
     now.microsecond   # 547414
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Create current ``date`` and ``datetime`` objects
 ------------------------------------------------
@@ -211,7 +210,7 @@ Create current ``date`` and ``datetime`` objects
 
 #. Stwórz obiekt ``date`` z obecną datą
 #. Stwórz obiekt ``datetime`` z obecną datą i czasem
-#. Jak stworzyć obiekt ``time`` obecnym czasem?
+#. Stwórz obiekt ``time`` z obecnym czasem
 
 Create ``date``, ``time`` and ``datetime`` objects
 --------------------------------------------------
@@ -223,3 +222,29 @@ Create ``date``, ``time`` and ``datetime`` objects
 #. Stwórz obiekt ``date`` z datą Twojego urodzenia
 #. Stwórz obiekt ``time`` z czasem Twojego urodzenia
 #. Stwórz obiekt ``datetime`` z datą i czasem Twojego urodzenia
+
+
+Assignments in English
+======================
+
+Create current ``date`` and ``datetime`` objects
+------------------------------------------------
+* Complexity level: easy
+* Lines of code to write: 3 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/datetime_create_current.py`
+
+#. Create ``date`` object with current date
+#. Create ``datetime`` object with current date and time
+#. Create ``time`` object with current time
+
+Create ``date``, ``time`` and ``datetime`` objects
+--------------------------------------------------
+* Complexity level: easy
+* Lines of code to write: 3 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/datetime_create_custom.py`
+
+#. Create ``date`` object with date of your birth
+#. Create ``time`` object with time of your birth
+#. Create ``datetime`` object with date and time of your birth

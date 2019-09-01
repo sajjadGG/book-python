@@ -212,8 +212,8 @@ Example
     #  'test': True}
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Argument parsing
 ----------------

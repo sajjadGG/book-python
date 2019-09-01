@@ -385,8 +385,8 @@ Basic Auth
     conn.close()
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 REST API
 --------

@@ -162,8 +162,8 @@ Wady
 * Brak możliwości ważenia features
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Pima Indians Diabetes problem
 -----------------------------

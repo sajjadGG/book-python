@@ -237,8 +237,8 @@ Length
     # 4
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Select
 ------

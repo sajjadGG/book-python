@@ -19,8 +19,8 @@ Installing
 - ``pip install -r requirements.txt``
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Installing from ``requirements.txt``
 ------------------------------------

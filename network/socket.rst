@@ -124,8 +124,8 @@ References
 * https://realpython.com/python-sockets/
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Heartbeat
 ---------

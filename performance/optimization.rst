@@ -187,8 +187,8 @@ Further Reading
 * https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Memoization
 -----------

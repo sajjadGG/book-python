@@ -139,8 +139,8 @@ Overflow
     # ctypes.ArgumentError: argument 1: <class 'OverflowError'>: int too long to convert
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 C Types
 -------

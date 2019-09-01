@@ -203,8 +203,8 @@ Variables vs. constants
         #     José Jiménez
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Meet Python
 -----------

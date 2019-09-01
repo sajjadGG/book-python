@@ -292,8 +292,8 @@ Workery
         TODO.join()
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Wielowątkowość
 --------------
@@ -312,7 +312,7 @@ Wielowątkowość
 #. Ilość poleceń może się zwiększać w miarę wykonywania zadania.
 #. Wątki mają być uruchomione w tle (ang. ``daemon``)
 
-:Zadanie z gwiazdką:
+:Extra task:
     #. Wątki powinny być uśpione za pomocą ``Timer`` przez ``DELAY = 5.0`` sekund, a następnie ruszyć do roboty
     #. Parametry rozbij za pomocą ``shlex``
     #. Użyj logowania za pomocą biblioteki ``logging`` tak aby przy wyświetlaniu wyników widoczny był identyfikator procesu i wątku.

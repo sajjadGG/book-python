@@ -274,8 +274,8 @@ Requests OAuth
     :caption: Requests OAuth
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 REST API
 --------

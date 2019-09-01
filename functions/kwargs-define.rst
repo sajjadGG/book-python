@@ -239,8 +239,8 @@ Use cases
         return sep.join(values) + end
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Average
 -------

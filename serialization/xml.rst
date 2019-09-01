@@ -517,8 +517,8 @@ Example 2
     </xsl:for-each>
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 XML Parsing
 -----------

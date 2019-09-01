@@ -299,8 +299,8 @@ Methods accessing fields
     # Latin name is: unknown
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Classes and instances
 ---------------------

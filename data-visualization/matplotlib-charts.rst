@@ -199,8 +199,8 @@ Nested Pie Chart
     :caption: 3D Surface
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Color graph
 -----------

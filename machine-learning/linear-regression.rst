@@ -257,8 +257,8 @@ Własna implementacja
         simple_linear_regression(house_price_dataset)
 
 
-Assignments
-===========
+Assignments in Polish
+=====================
 
 Least square regression 3 points
 --------------------------------
