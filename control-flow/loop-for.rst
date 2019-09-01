@@ -250,8 +250,8 @@ Create ``dict`` from two sequences
     # ]
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Counter
 -------

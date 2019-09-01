@@ -173,8 +173,8 @@ Timezone Conversion
     print(t.pdt)      # 1969-07-20 19:56:15-07:00
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Longitude and Latitude
 ----------------------

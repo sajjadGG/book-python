@@ -195,8 +195,8 @@ What should be in the class and what not?
 
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Dragon (version release candidate)
 ----------------------------------

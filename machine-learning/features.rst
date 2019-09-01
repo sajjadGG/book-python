@@ -152,8 +152,8 @@ What Makes a Good Feature?
 * Look for informative features.
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Feature Engineering
 -------------------

@@ -180,8 +180,8 @@ Switch statement
     switch('French')        # "I don't speak this language"
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Conditioning on user input
 --------------------------

@@ -127,8 +127,8 @@ Read the docs
 * http://readthedocs.org
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Dokumentacja
 ------------

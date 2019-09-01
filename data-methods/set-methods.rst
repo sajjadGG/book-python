@@ -92,6 +92,6 @@
     {1,2} & {2,3} & {3}         # set()
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 .. todo:: Create Assignments

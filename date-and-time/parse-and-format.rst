@@ -305,75 +305,8 @@ Parsing dates
     # 1957-10-04 19:28:34
 
 
-Assignments in Polish
-=====================
-
-From ISO date format
---------------------
-* Complexity level: easy
-* Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
-* Filename: :download:`solution/datetime_from_iso.py`
-* Input data: :numref:`listing-time-from-iso`
-
-#. Podaną datę:
-
-    .. code-block:: text
-        :name: listing-time-from-iso
-        :caption: Convert ``str`` from ISO date format to ``datetime`` objects
-
-        1969-07-21T02:56:15.123Z
-
-#. Przedstaw datę jako obiekt ``datetime``
-
-To ISO date format
-------------------
-* Complexity level: easy
-* Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
-* Filename: :download:`solution/datetime_to_iso.py`
-
-#. Podaną poniżej datę przekonwertuj do obiektu ``datetime``:
-
-    .. code-block:: python
-
-        gagarin = 'April 12, 1961 6:07 local time'  # Asia/Almaty
-
-#. Wyświetl w formacie ISO datę i czas, tj.:
-
-    .. code-block:: text
-        :caption: "Rok-Miesiąc-DzieńTGodzina:Minuta:Sekunda.MikrosekundyZ"
-
-        1961-04-12T06:07:00.000000
-
-US date and time format
------------------------
-* Complexity level: easy
-* Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
-* Filename: :download:`solution/datetime_from_us.py`
-
-#. Rozczytaj datę z formatu amerykańskiego długiego (skopiuj z cudzysłowami):
-
-    .. code-block:: python
-
-        armstrong = '"July 21st, 1969 2:56:15 AM UTC"'
-
-#. Wyświetl datę w formacie amerykańskim krótkim (bez wiodącego zera w godzinie):
-
-    .. code-block:: text
-        :caption: "Miesiąc/Dzień/Rok Godzina:Minuta AM/PM"
-
-        7/21/69 2:56 AM
-
-:Hint:
-    * Wpisz "local time" jako zwykły tekst w parametrze ``fmt`` funkcji ``.strptime()``
-    * Wpisz znaki cudzysłowia ``"`` jako zwykły tekst w parametrze ``fmt`` funkcji ``.strptime()``
-    * ``%-I`` or ``%_I`` on \*nix systems (macOS, BSD, Linux) to remove leading zero
-    * ``%#I`` on Windows to remove leading zero
-
-Assignments in English
-======================
+Assignments
+===========
 
 From ISO date format
 --------------------
@@ -382,13 +315,18 @@ From ISO date format
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/datetime_from_iso.py`
 
-#. The date and time is given in ISO format:
+:English:
+    #. The date and time is given in ISO format:
+    #. Convert it to ``datetime`` object
 
+:Polish:
+    #. Dana jest data w formacie ISO
+    #. Przedstaw datę jako obiekt ``datetime``
+
+:Input:
     .. code-block:: text
 
         1969-07-21T02:56:15.123Z
-
-#. Convert it to ``datetime`` object
 
 To ISO date format
 ------------------
@@ -397,21 +335,24 @@ To ISO date format
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/datetime_to_iso.py`
 
-#. The date and time is given:
+:Enlish:
+    #. Using given date and time from below
+    #. Create ``datetime`` object by parsing the date
+    #. Using formatting parameters print the date in ISO format
 
+:Polish:
+    #. Podaną datę przekonwertuj do obiektu ``datetime``:
+    #. Wyświetl w formacie ISO datę i czas
+
+:Input:
     .. code-block:: python
 
         gagarin = 'April 12, 1961 6:07 local time'
 
-#. Create ``datetime`` object by parsing the date
-#. Using formatting parameters print the date in ISO format
-
+:Output:
     .. code-block:: text
 
         1969-04-12T06:07:00.000Z
-
-:Hint:
-    * Wpisz "local time" jako zwykły tekst w parametrze ``fmt`` funkcji ``.strptime()``
 
 US date and time format
 -----------------------
@@ -420,16 +361,25 @@ US date and time format
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/datetime_from_us.py`
 
-#. The date and time is given:
+:English:
+    #. Using given date and time from below (copy with quotes inside)
+    #. Create ``datetime`` object by parsing the date
+    #. Using formatting parameters print american short date format
+    #. Make sure, that hour is without leading zero
 
+
+:Polish:
+    #. Używając podaną poniżej datę i czas (skopiuj z cudzysłowami)
+    #. Parsując stwórz obiekt ``datetime``
+    #. Używając parametrów formatowania wyświetl datę w formacie amerykańskim krótkim
+    #. Upewnij się, że godzina jest bez wiodącego zera
+
+:Input:
     .. code-block:: python
 
         armstrong = '"July 21st, 1969 2:56:15 AM UTC"'
 
-#. Create ``datetime`` object by parsing the date
-#. Using formatting parameters print american short date format
-#. Make sure, that hour is without leading zero
-
+:Output:
     .. code-block:: text
 
         7/21/69 2:56 AM

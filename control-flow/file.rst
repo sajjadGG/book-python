@@ -170,8 +170,8 @@ Good Engineering Practises
 * Use context manager - ``with`` keyword
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Content of a requested file
 ---------------------------

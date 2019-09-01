@@ -360,8 +360,8 @@ Decorator library
 - https://wiki.python.org/moin/PythonDecoratorLibrary
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Memoization
 -----------

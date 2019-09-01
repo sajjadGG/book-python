@@ -157,8 +157,8 @@ Getting Page Text
     # ...
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Iris
 ----

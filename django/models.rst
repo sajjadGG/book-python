@@ -118,8 +118,8 @@ Example Model
     :caption: Example Model
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Address Book
 ------------

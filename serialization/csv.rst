@@ -79,14 +79,14 @@ Write data to CSV file
     import csv
 
     FILE = r'iris.csv'
-    DATA = [
+    INPUT = [
         {'sepal_length': 5.4, 'sepal_width': 3.9, 'petal_length': 1.3, 'petal_width': 0.4, 'species': 'setosa'},
         {'sepal_length': 5.9, 'sepal_width': 3.0, 'petal_length': 5.1, 'petal_width': 1.8, 'species': 'virginica'},
         {'sepal_length': 6.0, 'sepal_width': 3.4, 'petal_length': 4.5, 'petal_width': 1.6, 'species': 'versicolor'},
     ]
 
 
-    with open(FILE, mode='w') as file:
+    with open(INPUT, mode='w') as file:
         writer = csv.DictWriter(
             f=file,
             fieldnames=['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species'],
@@ -97,7 +97,7 @@ Write data to CSV file
 
         writer.writeheader()
 
-        for row in DATA:
+        for row in INPUT:
             writer.writerow(row)
 
 
@@ -260,147 +260,8 @@ Pandas
     #  ], dtype=object)
 
 
-Assignments in Polish
-=====================
-
-Reading ``csv``
----------------
-* Complexity level: easy
-* Lines of code to write: 20 lines
-* Estimated time of completion: 10 min
-* Filename: :download:`solution/csv_dictreader.py`
-* Input data: https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris-clean.csv
-
-#. Otwórz w przeglądarce podany powyżej URL
-#. Zapisz jego zawartość na dysku w miejscu gdzie masz skrypty w pliku ``iris.csv``
-#. Korzystając z ``csv.DictReader`` wczytaj zawartość pliku
-#. Podaj jawnie ``encoding``, ``delimiter`` oraz ``quotechar``
-#. Nazwy poszczególnych kolumn:
-
-    * Sepal length
-    * Sepal width
-    * Petal length
-    * Petal width
-    * Species
-
-#. Wypisz wiersze na ekranie
-
-Writing ``csv`` - fixed schema
-------------------------------
-* Complexity level: easy
-* Lines of code to write: 8 lines
-* Estimated time of completion: 10 min
-* Filename: :download:`solution/csv_dictwriter_fixed.py`
-* Input data: :numref:`listing-csv-dictwriter-fixed`
-
-.. code-block:: python
-    :name: listing-csv-dictwriter-fixed
-    :caption: Create ``fieldnames: Set[str]`` with unique keys
-
-    DATA = [
-        {'first_name': 'Jan',  'last_name': 'Twardowski'},
-        {'first_name': 'Jose', 'last_name': 'Jimenez'},
-        {'first_name': 'Mark', 'last_name': 'Watney'},
-        {'first_name': 'Ivan', 'last_name': 'Ivanovic'},
-        {'first_name': 'Melissa', 'last_name': 'Lewis'},
-    ]
-
-#. Za pomocą ``csv.DictWriter()`` zapisz do pliku *CSV* dane o stałej strukturze
-#. Wszystkie pola muszą być zawsze w cudzysłowach i oddzielone średnikami, kodowanie UTF-8, a na końcu linii Unix newline.
-#. Spróbuj otworzyć plik w MS Excel i w Notatniku, porównaj wyniki
-#. Jeżeli będziesz otwierał plik w MS Excel, to zwróć uwagę, że ten program oczekuje innego kodowania ("windows-1250")
-
-Writing ``csv`` - variable schema
----------------------------------
-* Complexity level: easy
-* Lines of code to write: 8 lines
-* Estimated time of completion: 10 min
-* Filename: :download:`solution/csv_dictwriter_variable.py`
-* Input data: :numref:`listing-csv-dictwriter-variable`
-
-.. code-block:: python
-    :name: listing-csv-dictwriter-variable
-    :caption: Create ``fieldnames: Set[str]`` with unique keys
-
-    DATA = [
-        {'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
-        {'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
-        {'Sepal length': 6.3, 'Petal width': 1.8, 'Species': 'virginica'},
-        {'Petal length': 1.4, 'Petal width': 0.2, 'Species': 'setosa'},
-        {'Sepal width': 2.8, 'Petal length': 4.1, 'Species': 'versicolor'},
-        {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'},
-    ]
-
-#. Za pomocą ``csv.DictWriter()`` zapisz do pliku CSV dane o zmiennej strukturze
-#. Wszystkie pola muszą być zawsze w cudzysłowach
-#. Pola mają być oddzielone średnikami
-#. Kodowanie pliku kodowanie UTF-8
-#. Na końcu linii Unix newline.
-#. ``fieldnames`` musi być generowane automatycznie na podstawie ``DATA``
-#. Co zrobić aby kolejność kolumn w pliku była zawsze taka sama?
-#. Rezultat powinien wyglądać tak:
-
-    .. csv-table:: Result of variable schema CSV file generation
-        :header: "Petal length", "Petal width", "Sepal length", "Sepal width", "Species"
-
-        "", "", "5.1", "3.5", "setosa"
-        "4.1", "1.3", "", "", "versicolor"
-        "", "1.8", "6.3", "", "virginica"
-        "1.4", "0.2", "", "", "setosa"
-        "4.1", "", "", "2.8", "versicolor"
-        "", "1.8", "", "2.9", "virginica"
-
-:The whys and wherefores:
-    * Umiejętność korzystania z modułu ``csv``
-    * Umiejętność iteracji po złożonych strukturach danych
-    * Dynamiczne generowanie struktur danych na podstawie innych
-
-:Hints:
-    * To jest bardzo często występujący i użyteczny przykład
-
-Object serialization to CSV
----------------------------
-* Complexity level: hard
-* Lines of code to write: 10 lines
-* Estimated time of completion: 20 min
-* Filename: :download:`solution/csv_relations.py`
-* Input data: :numref:`listing-csv-addressbook`
-
-.. code-block:: python
-    :name: listing-csv-addressbook
-    :caption: Address book
-
-    class Contact:
-        def __init__(self, first_name, last_name, addresses=()):
-            self.first_name = first_name
-            self.last_name = last_name
-            self.addresses = addresses
-
-
-    class Address:
-        def __init__(self, center, location):
-            self.center = center
-            self.location = location
-
-
-    DATA = [
-        Contact(first_name='Jan', last_name='Twardowski', addresses=(
-            Address(center='Johnson Space Center', location='Houston, TX'),
-            Address(center='Kennedy Space Center', location='Merritt Island, FL'),
-            Address(center='Jet Propulsion Laboratory', location='Pasadena, CA'),
-        )),
-        Contact(first_name='Mark', last_name='Watney'),
-        Contact(first_name='Melissa', last_name='Lewis', addresses=()),
-    ]
-
-#. Za pomocą ``csv.DictWriter()`` zapisz kontakty z książki adresowej w pliku
-#. Wszystkie pola muszą być zawsze w cudzysłowach i oddzielone średnikami, kodowanie UTF-8, a na końcu linii Unix newline.
-#. Jak zapisać w CSV dane relacyjne (kontakt ma wiele adresów)?
-#. Stwórz obiekty książki adresowej na podstawie danych odczytanych z pliku
-
-
-Assignments in English
-======================
+Assignments
+===========
 
 Read and parse data from CSV file
 ---------------------------------
@@ -408,31 +269,66 @@ Read and parse data from CSV file
 * Lines of code to write: 20 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/csv_dictreader.py`
+* Input data: https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris-clean.csv
 
-#. Download :download:`data/iris-clean.csv` file
-#. Save data to ``iris-clean.csv`` in your script folder
-#. Using ``csv.DictReader`` read the content
-#. Use explicit ``encoding``, ``delimiter`` and ``quotechar``
-#. Replace column names to:
+:English:
+    #. Download :download:`data/iris-clean.csv` file
+    #. Save data to ``iris-clean.csv`` in your script folder
+    #. Using ``csv.DictReader`` read the content
+    #. Use explicit ``encoding``, ``delimiter`` and ``quotechar``
+    #. Replace column names to:
 
-    * Sepal length
-    * Sepal width
-    * Petal length
-    * Petal width
-    * Species
+        * Sepal length
+        * Sepal width
+        * Petal length
+        * Petal width
+        * Species
 
-#. Print data on the screen
+    #. Print data on the screen
 
-Write fixed schema data to file
--------------------------------
+:Polish:
+    #. Otwórz w przeglądarce podany powyżej URL
+    #. Zapisz jego zawartość na dysku w miejscu gdzie masz skrypty w pliku ``iris.csv``
+    #. Korzystając z ``csv.DictReader`` wczytaj zawartość pliku
+    #. Podaj jawnie ``encoding``, ``delimiter`` oraz ``quotechar``
+    #. Nazwy poszczególnych kolumn:
+
+        * Sepal length
+        * Sepal width
+        * Petal length
+        * Petal width
+        * Species
+
+    #. Wypisz wiersze na ekranie
+
+Write fixed schema data to CSV file
+-----------------------------------
 * Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/csv_dictwriter_fixed.py`
 
-    .. code-block:: python
+:English:
+    #. Using ``csv.DictWriter()`` save ``DATA`` to file
+    #. Open file in your spreadsheet program like Microsoft Excel / Libre Office / Numbers etc.
+    #. Open file in simple in your IDE and simple text editor (like Notepad, vim, gedit)
 
-        DATA = [
+:Polish:
+    #. Za pomocą ``csv.DictWriter()`` zapisz do pliku *CSV* dane o stałej strukturze
+    #. Spróbuj otworzyć plik w arkuszu kalkulacyjnym tj. Microsoft Excel / Libre Office / Numbers itp
+    #. Spróbuj otworzyć plik w IDE i prostym edytorze tekstu tj. Notepad, vim lub gedit
+
+:Requirements:
+    #. All fields must be enclosed by double quote ``"`` character
+    #. Use ``;`` to separate columns
+    #. Use ``utf-8`` encoding
+    #. Use Unix newline
+
+:Input:
+    .. code-block:: python
+        :caption: Input
+
+        DATA: List[dict] = [
             {'first_name': 'Jan',  'last_name': 'Twardowski'},
             {'first_name': 'Jose', 'last_name': 'Jimenez'},
             {'first_name': 'Mark', 'last_name': 'Watney'},
@@ -440,25 +336,40 @@ Write fixed schema data to file
             {'first_name': 'Melissa', 'last_name': 'Lewis'},
         ]
 
-#. Using ``csv.DictWriter()`` save ``DATA`` to file
-#. All fields must be enclosed by double quote ``"`` character
-#. Use ``;`` to separate columns
-#. Use ``utf-8`` encoding
-#. Use Unix newline
-#. Open file in your spreadsheet program like Microsoft Excel / Libre Office / Numbers etc.
-#. Open file in simple in your IDE and simple text editor (like Notepad, vim, gedit)
-
 Write variable schema data to file
 ----------------------------------
 * Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/csv_dictwriter_variable.py`
-* Input data: :numref:`listing-csv-dictwriter-variable`
 
+:English:
+    #. Using ``csv.DictWriter()`` write variable schema data to CSV file
+    #. ``fieldnames``must be automatically generated from ``DATA``
+    #. ``fieldnames`` must always be in the same order
+
+:Polish:
+    #. Za pomocą ``csv.DictWriter()`` zapisz do pliku CSV dane o zmiennej strukturze
+    #. ``fieldnames`` musi być generowane automatycznie na podstawie ``DATA``
+    #. ``fieldnames`` ma być zawsze w takiej samej kolejności
+    #. Rezultat powinien wyglądać tak:
+
+:Requirements:
+    #. All fields must be enclosed by double quote ``"`` character
+    #. Use ``;`` to separate columns
+    #. Use ``utf-8`` encoding
+    #. Use Unix newline
+
+:The whys and wherefores:
+    * Ability to use ``csv`` module to write data
+    * Ability to iterate over nested data structures
+    * Dynamically generate data structures from other
+
+:Input:
     .. code-block:: python
+        :caption: Input
 
-        DATA = [
+        DATA: List[dict] = [
             {'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
             {'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
             {'Sepal length': 6.3, 'Petal width': 1.8, 'Species': 'virginica'},
@@ -467,16 +378,8 @@ Write variable schema data to file
             {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'},
         ]
 
-#. Using ``csv.DictWriter()`` write ``DATA`` to CSV file
-#. ``fieldnames``must be automatically generated from ``DATA``
-#. Make sure ``fieldnames`` are always in the same order
-#. All fields must be enclosed by double quote ``"`` character
-#. Use ``;`` to separate columns
-#. Use ``utf-8`` encoding
-#. Use Unix newline
-#. Result should look like this:
-
-    .. csv-table:: Result of variable schema CSV file generation
+:Output:
+    .. csv-table:: Output
         :header: "Petal length", "Petal width", "Sepal length", "Sepal width", "Species"
 
         "", "", "5.1", "3.5", "setosa"
@@ -486,46 +389,52 @@ Write variable schema data to file
         "4.1", "", "", "2.8", "versicolor"
         "", "1.8", "", "2.9", "virginica"
 
-:The whys and wherefores:
-    * Ability to use ``csv`` module to write data
-    * Ability to iterate over nested data structures
-    * Dynamically generate data structures from other
-
 Object serialization to CSV
 ---------------------------
 * Complexity level: hard
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/csv_relations.py`
-* Input data: :numref:`listing-csv-addressbook`
 
-.. code-block:: python
-    :caption: Address book
+:English:
+    #. Using ``csv.DictWriter()`` save contacts from addressbook to CSV file
+    #. How to write relations to CSV file (contact has many addresses)?
+    #. Recreate object structure from CSV file
 
-    class Contact:
-        def __init__(self, first_name, last_name, addresses=()):
-            self.first_name = first_name
-            self.last_name = last_name
-            self.addresses = addresses
+:Polish:
+    #. Za pomocą ``csv.DictWriter()`` zapisz kontakty z książki adresowej w pliku
+    #. Jak zapisać w CSV dane relacyjne (kontakt ma wiele adresów)?
+    #. Odtwórz strukturę obiektów na podstawie danych odczytanych z pliku
+
+:Requirements:
+    #. All fields must be enclosed by double quote ``"`` character
+    #. Use ``;`` to separate columns
+    #. Use ``utf-8`` encoding
+    #. Use Unix newline
+
+:Input:
+    .. code-block:: python
+        :caption: Input
+
+        class Contact:
+            def __init__(self, first_name, last_name, addresses=()):
+                self.first_name = first_name
+                self.last_name = last_name
+                self.addresses = addresses
 
 
-    class Address:
-        def __init__(self, center, location):
-            self.center = center
-            self.location = location
+        class Address:
+            def __init__(self, center, location):
+                self.center = center
+                self.location = location
 
 
-    DATA = [
-        Contact(first_name='Jan', last_name='Twardowski', addresses=(
-            Address(center='Johnson Space Center', location='Houston, TX'),
-            Address(center='Kennedy Space Center', location='Merritt Island, FL'),
-            Address(center='Jet Propulsion Laboratory', location='Pasadena, CA'),
-        )),
-        Contact(first_name='Mark', last_name='Watney'),
-        Contact(first_name='Melissa', last_name='Lewis', addresses=()),
-    ]
-
-#. Za pomocą ``csv.DictWriter()`` zapisz kontakty z książki adresowej w pliku
-#. Wszystkie pola muszą być zawsze w cudzysłowach i oddzielone średnikami, kodowanie UTF-8, a na końcu linii Unix newline.
-#. Jak zapisać w CSV dane relacyjne (kontakt ma wiele adresów)?
-#. Stwórz obiekty książki adresowej na podstawie danych odczytanych z pliku
+        INPUT = [
+            Contact(first_name='Jan', last_name='Twardowski', addresses=(
+                Address(center='Johnson Space Center', location='Houston, TX'),
+                Address(center='Kennedy Space Center', location='Merritt Island, FL'),
+                Address(center='Jet Propulsion Laboratory', location='Pasadena, CA'),
+            )),
+            Contact(first_name='Mark', last_name='Watney'),
+            Contact(first_name='Melissa', last_name='Lewis', addresses=()),
+        ]

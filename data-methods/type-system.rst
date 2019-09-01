@@ -101,6 +101,6 @@ More advanced topics
 .. note:: The topic will be continued in chapter: :ref:`Type Annotation`
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 .. todo:: Create Assignments

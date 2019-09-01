@@ -361,8 +361,8 @@ Length of a ``dict``
     # 3
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Aviation Language
 -----------------

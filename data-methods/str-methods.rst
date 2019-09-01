@@ -348,8 +348,8 @@ Phone numbers
     +48 123555678,1,2,3
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 String cleaning
 ---------------

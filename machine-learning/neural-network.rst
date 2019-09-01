@@ -345,8 +345,8 @@ The first column of images shows true faces. The next columns illustrate how ext
     This example shows the use of multi-output estimator to complete images. The goal is to predict the lower half of a face given its upper half.
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Kto jest na zdjęciu? - używanie ``TensorFlow for Poets``
 --------------------------------------------------------

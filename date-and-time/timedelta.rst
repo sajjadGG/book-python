@@ -191,8 +191,8 @@ Time diff
     # {'years': 8, 'months': 3, 'days': 8, 'hours': 20, 'minutes': 49, 'seconds': 15}
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Date manipulation
 ------------------
@@ -201,48 +201,26 @@ Date manipulation
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/datetime_deltas.py`
 
-#. Między startem Gagarina a pierwszym krokiem Armstronga na Księżycu upłynęło:
+:English:
+    #. Given period is the time between Gagarin launch and Armstrong first step on the Moon
+    #. From current date subtract this period
+    #. Print calculated date
+    #. How old were you at the given moment?
 
-    - 8 lat
-    - 3 miesiące
-    - 8 dni
-    - 20 godzin
-    - 49 minut
-    - 15 sekund
+:Polish:
+    #. Podany jest czas, który upłynął między startem Gagarina a pierwszym krokiem Armstronga na Księżycu
+    #. Od obecnej chwili odejmij ten czas
+    #. Wyświetl wyliczoną datę
+    #. Ile miałeś wtedy lat?
 
-#. Od obecnej chwili odejmij ten czas
-#. Wyświetl samą datę (bez czasu)
-#. Ile miałeś wtedy lat?
-#. Przyjmij:
+:Input:
+    * 8 years
+    * 3 months
+    * 8 days
+    * 20 hours
+    * 49 minutes
+    * 15 seconds
 
-    - rok = 365.2425 dni
-    - miesiąc = 30.436875 dni
-
-
-Assignments in English
-======================
-
-Date manipulation
-------------------
-* Complexity level: easy
-* Lines of code to write: 15 lines
-* Estimated time of completion: 20 min
-* Filename: :download:`solution/datetime_deltas.py`
-
-#. Between Gagarin launch and Armstrong first step on the Moon, there was a period of:
-
-    - 8 years
-    - 3 months
-    - 8 days
-    - 20 hours
-    - 49 minutes
-    - 15 seconds
-
-#. From current date subtract this period
-#. Print calculated date
-#. How old were you at the given moment?
-#. Assume:
-
-    - year = 365.2425 days
-    - month = 30.436875 days
-
+:Assumption:
+    * year = 365.2425 days
+    * month = 30.436875 days

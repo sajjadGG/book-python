@@ -248,8 +248,8 @@ Length of a ``str``
     len(a)          # 3
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 .. todo:: Create better entry-level assignment
 

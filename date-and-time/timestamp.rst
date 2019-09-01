@@ -56,8 +56,8 @@ Convert timestamp to ``datetime``
     # datetime.datetime(1978, 6, 27, 17, 27)
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Create ``datetime`` object
 --------------------------
@@ -66,31 +66,17 @@ Create ``datetime`` object
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/datetime_timestamp.py`
 
-#. Przekonwertuj do obiektów ``datetime``:
+:English:
+    #. Convert given dates to ``datetime`` objects
+    #. Print timestamp for each date
+    #. What is special about those dates?
 
-    - 1902-12-13 20:45:53 UTC
-    - 1970-01-01 00:00:00 UTC
-    - 2038-01-19 03:14:07 UTC
+:Polish:
+    #. Przekonwertuj podane daty do obiektów ``datetime``
+    #. Wypisz timestamp każdej daty
+    #. Co to za daty?
 
-#. Wypisz timestamp każdej daty
-#. Co to za daty?
-
-
-Assignments in English
-======================
-
-Create ``datetime`` object
---------------------------
-* Complexity level: easy
-* Lines of code to write: 1 lines
-* Estimated time of completion: 5 min
-* Filename: :download:`solution/datetime_timestamp.py`
-
-#. Convert to ``datetime`` objects:
-
-    - 1902-12-13 20:45:53 UTC
-    - 1970-01-01 00:00:00 UTC
-    - 2038-01-19 03:14:07 UTC
-
-#. Print timestamp for each date
-#. What is special about those dates?
+:Input:
+    * 1902-12-13 20:45:53 UTC
+    * 1970-01-01 00:00:00 UTC
+    * 2038-01-19 03:14:07 UTC

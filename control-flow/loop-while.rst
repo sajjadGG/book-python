@@ -140,8 +140,8 @@ Exiting the loop
         print('Lift off! We have lift-off!')
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Report card
 -----------

@@ -115,6 +115,6 @@ Use cases
         OperationMode = 0x6060
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 .. todo:: Create assignments

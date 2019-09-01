@@ -513,8 +513,8 @@ Quick and easy debugging
     my_string = pformat(data)
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Powielanie napisów
 ------------------

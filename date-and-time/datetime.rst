@@ -198,8 +198,8 @@ Current ``datetime`` in local time
     now.microsecond   # 547414
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Create current ``date`` and ``datetime`` objects
 ------------------------------------------------
@@ -208,9 +208,15 @@ Create current ``date`` and ``datetime`` objects
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/datetime_create_current.py`
 
-#. Stwórz obiekt ``date`` z obecną datą
-#. Stwórz obiekt ``datetime`` z obecną datą i czasem
-#. Stwórz obiekt ``time`` z obecnym czasem
+:English:
+    #. Create ``date`` object with current date
+    #. Create ``datetime`` object with current date and time
+    #. Create ``time`` object with current time
+
+:Polish:
+    #. Stwórz obiekt ``date`` z obecną datą
+    #. Stwórz obiekt ``datetime`` z obecną datą i czasem
+    #. Stwórz obiekt ``time`` z obecnym czasem
 
 Create ``date``, ``time`` and ``datetime`` objects
 --------------------------------------------------
@@ -219,32 +225,12 @@ Create ``date``, ``time`` and ``datetime`` objects
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/datetime_create_custom.py`
 
-#. Stwórz obiekt ``date`` z datą Twojego urodzenia
-#. Stwórz obiekt ``time`` z czasem Twojego urodzenia
-#. Stwórz obiekt ``datetime`` z datą i czasem Twojego urodzenia
+:English:
+    #. Create ``date`` object with date of your birth
+    #. Create ``time`` object with time of your birth
+    #. Create ``datetime`` object with date and time of your birth
 
-
-Assignments in English
-======================
-
-Create current ``date`` and ``datetime`` objects
-------------------------------------------------
-* Complexity level: easy
-* Lines of code to write: 3 lines
-* Estimated time of completion: 5 min
-* Filename: :download:`solution/datetime_create_current.py`
-
-#. Create ``date`` object with current date
-#. Create ``datetime`` object with current date and time
-#. Create ``time`` object with current time
-
-Create ``date``, ``time`` and ``datetime`` objects
---------------------------------------------------
-* Complexity level: easy
-* Lines of code to write: 3 lines
-* Estimated time of completion: 5 min
-* Filename: :download:`solution/datetime_create_custom.py`
-
-#. Create ``date`` object with date of your birth
-#. Create ``time`` object with time of your birth
-#. Create ``datetime`` object with date and time of your birth
+:Polish:
+    #. Stwórz obiekt ``date`` z datą Twojego urodzenia
+    #. Stwórz obiekt ``time`` z czasem Twojego urodzenia
+    #. Stwórz obiekt ``datetime`` z datą i czasem Twojego urodzenia

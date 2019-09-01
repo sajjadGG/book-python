@@ -123,8 +123,8 @@ PCA dla zbioru Iris
     PCA dla zbioru Iris
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 PCA dla zbioru Pima Indian Diabetes
 -----------------------------------

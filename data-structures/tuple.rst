@@ -75,8 +75,8 @@ Length of a ``tuple``
     # 3
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Create
 ------

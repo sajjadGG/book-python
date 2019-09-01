@@ -355,8 +355,8 @@ Iterating complex types
     # None
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Get elements from nested data structure
 ---------------------------------------

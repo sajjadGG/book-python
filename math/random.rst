@@ -18,8 +18,8 @@ Random Numbers
     "``random.seed(a=None, version=2)``", "Initialize the random number generator. If a is omitted or None, the current system time is used"
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Random numbers
 --------------

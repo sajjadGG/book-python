@@ -341,8 +341,8 @@ Callback
     )
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 ``map()``, ``filter()`` i ``lambda``
 ------------------------------------

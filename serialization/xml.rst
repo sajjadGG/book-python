@@ -1,13 +1,15 @@
-***
-XML
-***
+****************
+XML, XSLT, XPath
+****************
 
 
-xml
-===
+``xml`` module from standard library
+====================================
 .. code-block:: python
+    :caption: ``xml`` module from standard library
 
     import xml.etree.ElementTree
+
 
     FILE = '../serialization/data/xml-commands.xml'
     # <execute>
@@ -42,8 +44,8 @@ xml
     # {'timeout': '2'}
 
 
-``lxml``
-========
+``lxml`` module
+===============
 
 Creating elements
 -----------------
@@ -58,29 +60,10 @@ Creating elements
     print(tostring(root))
     # b'<iris/>'
 
-Adding elements using list interface
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: python
     :caption: Adding elements using list interface
 
     from lxml.etree import tostring, Element
-
-
-    root = Element("iris")
-
-    root.append(Element("setosa"))
-    root.append(Element("versicolor"))
-
-    print(tostring(root))
-    # b'<iris><setosa/><versicolor/></iris>'
-
-Adding elements using objects
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. code-block:: python
-    :caption: Adding elements using objects
-
-
-    from lxml.etree import tostring, Element, SubElement
 
 
     root = Element("iris")
@@ -95,6 +78,7 @@ Adding elements using objects
 Length of a subtree
 -------------------
 .. code-block:: python
+    :caption: Length of a subtree
 
     from lxml.etree import Element
 
@@ -111,6 +95,7 @@ Length of a subtree
 Selecting subtree
 -----------------
 .. code-block:: python
+    :caption: Selecting subtree
 
     from lxml.etree import Element
 
@@ -125,9 +110,8 @@ Selecting subtree
     print(selected.tag)
     # virginica
 
-Where is selected element
-^^^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: python
+    :caption: Where is selected element
 
     from lxml.etree import Element
 
@@ -146,9 +130,10 @@ Where is selected element
     root.index(selected)
     # 2
 
-Elements are lists
-------------------
+Element tree as a lists
+-----------------------
 .. code-block:: python
+    :caption: Elements are lists
 
     from lxml.etree import tostring, Element
 
@@ -167,9 +152,8 @@ Elements are lists
     #     <Element virginica at 0x113cd41c8>
     # ]
 
-Iterating over elements
-^^^^^^^^^^^^^^^^^^^^^^^
 .. code-block:: python
+    :caption: Iterating over elements
 
     from lxml.etree import Element
 
@@ -187,9 +171,8 @@ Iterating over elements
     # versicolor
     # virginica
 
-Slicing elements
-^^^^^^^^^^^^^^^^
 .. code-block:: python
+    :caption: Slicing elements
 
     from lxml.etree import Element
 
@@ -209,9 +192,10 @@ Slicing elements
     print(start[0].tag)  # arctica
     print(end[0].tag)    # virginica
 
-Elements carry attributes as a dict
------------------------------------
+Elements as a dict
+------------------
 .. code-block:: python
+    :caption: Create element using ``dict`` interface
 
     from lxml.etree import tostring, Element
 
@@ -222,6 +206,7 @@ Elements carry attributes as a dict
     # b'<iris kingdom="plantae"/>'
 
 .. code-block:: python
+    :caption: Get element attributes and values
 
     from lxml.etree import tostring, Element
 
@@ -232,6 +217,7 @@ Elements carry attributes as a dict
     print(tag.get("not-existing"))     # None
 
 .. code-block:: python
+    :caption: Set element attributes and values
 
     from lxml.etree import tostring, Element
 
@@ -246,6 +232,7 @@ Elements carry attributes as a dict
     # b'<iris kingdom="plantae" kind="flower"/>'
 
 .. code-block:: python
+    :caption: Elements carry attributes as a dict
 
     from lxml.etree import Element
 
@@ -263,6 +250,7 @@ Elements carry attributes as a dict
     # [('kingdom', 'plantae'), ('kind', 'flower')]
 
 .. code-block:: python
+    :caption: Iterating over element attributes and values
 
     from lxml.etree import Element
 
@@ -277,60 +265,45 @@ Elements carry attributes as a dict
     # kind -> flower
 
 .. code-block:: python
+    :caption: Elements carry attributes as a dict
 
-    attributes = root.attrib
-    print(attributes["interesting"])            # totally
-    print(attributes.get("no-such-attribute"))  # None
+    from lxml.etree import Element
 
-    attributes["hello"] = "Guten Tag"
-    print(attributes["hello"])                  # Guten Tag
 
-    d = dict(root.attrib)
-    sorted(d.items())
-    # [('hello', 'Guten Tag'), ('interesting', 'totally')]
+    tag = Element("iris", kingdom="plantae")
+    tag.set("kind", "flower")
+
+    tag.attrib['kingdom']
+    # 'plantae'
+
+    tag.attrib['not-existing']
+    # KeyError: 'not-existing'
+
+    tag.attrib['species'] = 'Setosa'
+    tag.attrib.get('species')
+    # 'Setosa'
+
+    tag.attrib
+    # {'kingdom': 'plantae', 'kind': 'flower'}
+
+    tag.attrib.items()
+    # [('kingdom', 'plantae'), ('kind', 'flower'), ('species', 'Setosa')]
 
 Elements contain text
 ---------------------
 .. code-block:: python
 
-    >>> root = etree.Element("root")
-    >>> root.text = "TEXT"
+    from lxml.etree import tostring, Element
 
-    >>> print(root.text)
-    TEXT
+    tag = Element("iris")
+    tag.text = "Setosa"
 
-    >>> etree.tostring(root)
-    b'<root>TEXT</root>'
+    tag.text
+    # 'Setosa'
 
-.. code-block:: html
+    tostring(tag)
+    # b'<iris>Setosa</iris>'
 
-    <html><body>Hello<br/>World</body></html>
-
-.. code-block:: python
-
-    >>> html = etree.Element("html")
-    >>> body = etree.SubElement(html, "body")
-    >>> body.text = "TEXT"
-
-    >>> etree.tostring(html)
-    b'<html><body>TEXT</body></html>'
-
-    >>> br = etree.SubElement(body, "br")
-    >>> etree.tostring(html)
-    b'<html><body>TEXT<br/></body></html>'
-
-    >>> br.tail = "TAIL"
-    >>> etree.tostring(html)
-    b'<html><body>TEXT<br/>TAIL</body></html>'
-
-XPATH
------
-.. code-block:: python
-
-    >>> print(html.xpath("string()")) # lxml.etree only!
-    TEXTTAIL
-    >>> print(html.xpath("//text()")) # lxml.etree only!
-    ['TEXT', 'TAIL']
 
 Tree iteration
 --------------
@@ -443,8 +416,51 @@ Serialization
     >>> etree.tostring(root, method='text')
     b'HelloWorld'
 
-xslt
+
+HTML
 ====
+* Using ``lxml`` module
+
+.. code-block:: html
+
+    <html><body>Iris<br/>Setosa</body></html>
+
+.. code-block:: python
+
+    from lxml.etree import tostring, Element, SubElement
+
+
+    html = Element("html")
+    body = SubElement(html, "body")
+
+    body.text = "Iris"
+    tostring(html)
+    # b'<html><body>Iris</body></html>'
+
+    br = SubElement(body, "br")
+    tostring(html)
+    # b'<html><body>Iris<br/></body></html>'
+
+    br.tail = "Setosa"
+    tostring(html)
+    # b'<html><body>Iris<br/>Setosa</body></html>'
+
+
+XPATH
+=====
+* Using ``lxml`` module
+
+.. code-block:: python
+
+    >>> print(html.xpath("string()")) # lxml.etree only!
+    TEXTTAIL
+    >>> print(html.xpath("//text()")) # lxml.etree only!
+    ['TEXT', 'TAIL']
+
+
+XSLT
+====
+* Using ``lxml`` module
 
 Example 1
 ---------
@@ -517,8 +533,8 @@ Example 2
     </xsl:for-each>
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 XML Parsing
 -----------
@@ -526,14 +542,17 @@ XML Parsing
 * Lines of code to write: 20 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/xml_parse.py`
-* Input data: :numref:`listing-xml_plants.xml`
 
-#. Przekonwertuj dane do struktur Pythonowych ``list`` of ``dict``
+:English:
+    #. Convert input data to Python ``List[dict]``
 
-.. literalinclude:: data/xml_plants.xml
-    :name: listing-xml_plants.xml
-    :language: xml
-    :caption: XML Parsing
+:Polish:
+    #. Przekonwertuj dane wejściowe do Pythonowego ``List[dict]``
+
+:Input:
+    .. literalinclude:: data/xml_plants.xml
+        :language: xml
+        :caption: Input
 
 XSLT Transformation
 -------------------
@@ -541,11 +560,14 @@ XSLT Transformation
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/xml_xslt.py`
-* Input data: :numref:`listing-xml_transform.xml`
 
-#. Przekonwertuj dane do struktur Pythonowych ``list`` of ``dict``
+:English:
+    #. Convert input data to Python ``List[dict]``
 
-.. literalinclude:: data/xml_transform.xml
-    :name: listing-xml_transform.xml
-    :language: xml
-    :caption: XML data for XSLT transformation
+:Polish:
+    #. Przekonwertuj dane wejściowe do Pythonowego ``List[dict]``
+
+:Input:
+    .. literalinclude:: data/xml_transform.xml
+        :language: xml
+        :caption: Input

@@ -154,8 +154,8 @@ Return the population standard deviation (the square root of the population vari
     variance([2.75, 1.75, 1.25, 0.25, 0.5, 1.25, 3.5])
     # 1.3720238095238095
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Iris Stats
 ----------

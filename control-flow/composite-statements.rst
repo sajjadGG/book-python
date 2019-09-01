@@ -138,8 +138,8 @@ Control Statements
         print(name)
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Classification of blood pressure in adults
 ------------------------------------------

@@ -18,6 +18,7 @@ Dump to string
 
     import pickle
 
+
     pickle.dumps('Jan Twardowski')
     # b'\x80\x03X\x0e\x00\x00\x00Jan Twardowskiq\x00.'
 
@@ -38,6 +39,7 @@ Load from string
 .. code-block:: python
 
     import pickle
+
 
     pickle.loads(b'\x80\x03X\x0e\x00\x00\x00Jan Twardowskiq\x00.')
     # 'Jan Twardowski'
@@ -64,6 +66,7 @@ Dump to string
 
     import pickle
 
+
     pickle.dumps([1, 2, 3])
     # b'\x80\x03]q\x00(K\x01K\x02K\x03e.
 
@@ -81,6 +84,7 @@ Load from string
 .. code-block:: python
 
     import pickle
+
 
     pickle.dumps(b'\x80\x03]q\x00(K\x01K\x02K\x03e.)
     # [1, 2, 3]
@@ -101,6 +105,7 @@ Serialize Dates and Datetimes
 
     import pickle
 
+
     dt = datetime(1969, 7, 21, 2, 56, 15)
     pickle.dumps(dt)
     # b'\x80\x03cdatetime\ndatetime\nq\x00C\n\x07\xb1\x07\x15\x028\x0f\x00\x00\x00q\x01\x85q\x02Rq\x03.'
@@ -108,6 +113,7 @@ Serialize Dates and Datetimes
 .. code-block:: python
 
     import pickle
+
 
     pickle.loads(b'\x80\x03cdatetime\ndatetime\nq\x00C\n\x07\xb1\x07\x15\x028\x0f\x00\x00\x00q\x01\x85q\x02Rq\x03.')
     # datetime.datetime(1969, 7, 21, 2, 56, 15)
@@ -145,10 +151,11 @@ Dump to file
 
     import pickle
 
-    DATA = [1, 2, 3]
+
+    INPUT = [1, 2, 3]
 
     with open('filename.pkl', mode='wb') as file:
-        pickle.dump(DATA, file)
+        pickle.dump(INPUT, file)
 
 Load from file
 --------------
@@ -157,10 +164,11 @@ Load from file
 
     import pickle
 
-    with open('filename.pkl', mode='rb') as file:
-        DATA = pickle.load(file)
 
-    print(DATA)
+    with open('filename.pkl', mode='rb') as file:
+        OUTPUT = pickle.load(file)
+
+    print(OUTPUT)
 
 
 Advanced Example
@@ -187,7 +195,7 @@ Advanced Example
     now = datetime.now(tz=timezone.utc)
 
 
-    DATA = [
+    INPUT = [
         jose,
         Astronaut,
         month_ago(now),
@@ -202,7 +210,7 @@ Advanced Example
         10.5,
     ]
 
-    pickle.dumps(DATA)
+    pickle.dumps(INPUT)
     # b'\x80\x03]q\x00(c__main__\nAstronaut\nq\x01)\x81q\x02}q\x03X\x04\x00\x00\x00nameq\x04X\x0c\x00\x00\x00Jose Jimenezq\x05sbh\x01cdatetime\ndatetime\nq\x06C\n\x07\xe2\t\x0b\r\n\x05\x04\xa9\xfdq\x07cdatetime\ntimezone\nq\x08cdatetime\ntimedelta\nq\tK\x00K\x00K\x00\x87q\nRq\x0b\x85q\x0cRq\r\x86q\x0eRq\x0fX \x00\x00\x002018-10-11 13:10:05.305661+00:00q\x10X \x00\x00\x002018-10-11 13:10:05.305661+00:00q\x11X \x00\x00\x002018-10-11 13:10:05.305661+00:00q\x12X \x00\x00\x002018-10-11 13:10:05.305661+00:00q\x13}q\x14(X\x04\x00\x00\x00imieq\x15X\x08\x00\x00\x00\xd0\x98\xd0\xb2\xd0\xb0\xd0\xbdq\x16X\x08\x00\x00\x00nazwiskoq\x17X\x10\x00\x00\x00\xd0\x98\xd0\xb2\xd0\xb0\xd0\xbd\xd0\xbe\xd0\xb2\xd0\xb8\xd1\x87q\x18ucbuiltins\nset\nq\x19]q\x1a(K\nK\x14K\x1ee\x85q\x1bRq\x1cK\x01\x85q\x1dK\nG@%\x00\x00\x00\x00\x00\x00e.'
 
     pickle.loads(b'\x80\x03]q\x00(c__main__\nAstronaut\nq\x01)\x81q\x02}q\x03X\x04\x00\x00\x00nameq\x04X\x0c\x00\x00\x00Jose Jimenezq\x05sbh\x01cdatetime\ndatetime\nq\x06C\n\x07\xe2\t\x0b\r\n\x05\x04\xa9\xfdq\x07cdatetime\ntimezone\nq\x08cdatetime\ntimedelta\nq\tK\x00K\x00K\x00\x87q\nRq\x0b\x85q\x0cRq\r\x86q\x0eRq\x0fX \x00\x00\x002018-10-11 13:10:05.305661+00:00q\x10X \x00\x00\x002018-10-11 13:10:05.305661+00:00q\x11X \x00\x00\x002018-10-11 13:10:05.305661+00:00q\x12X \x00\x00\x002018-10-11 13:10:05.305661+00:00q\x13}q\x14(X\x04\x00\x00\x00imieq\x15X\x08\x00\x00\x00\xd0\x98\xd0\xb2\xd0\xb0\xd0\xbdq\x16X\x08\x00\x00\x00nazwiskoq\x17X\x10\x00\x00\x00\xd0\x98\xd0\xb2\xd0\xb0\xd0\xbd\xd0\xbe\xd0\xb2\xd0\xb8\xd1\x87q\x18ucbuiltins\nset\nq\x19]q\x1a(K\nK\x14K\x1ee\x85q\x1bRq\x1cK\x01\x85q\x1dK\nG@%\x00\x00\x00\x00\x00\x00e.')
@@ -222,8 +230,8 @@ Advanced Example
     # ]
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Pickle serialization
 --------------------
@@ -232,39 +240,39 @@ Pickle serialization
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/pickle_dump.py`
 
-#. Użyj obiektu książki adresowej stworzonego w zadaniu z serializacją
-#. Za pomocą ``pickle`` zapisz kontakty z książki adresowej w pliku
-#. Stwórz obiekty książki adresowej na podstawie danych odczytanych z pliku
+:English:
+    #. Use data input addressbook
+    #. Using ``pickle`` save data structure to file
+    #. Recreate data structure from file
 
-.. code-block:: python
-    :caption: Serializacja obiektów do Pickle
+:Polish:
+    #. Użyj obiektu książki adresowej z danych wejściowych
+    #. Za pomocą ``pickle`` zapisz strukturę danych do pliku
+    #. Odtwórz strukturę danych na podstawie danych z pliku
 
-    class AddressBook:
-        def __init__(self, contacts=()):
-            self.contacts = contacts
+:Input:
+    .. code-block:: python
+        :caption: Input
 
-
-    class Address:
-        def __init__(self, street=None, city=None):
-            self.street = street
-            self.city = city
-
-
-    class Contact:
-        def __init__(self, first_name, last_name, addresses=()):
-            self.first_name = first_name
-            self.last_name = last_name
-            self.address = addresses
+        class Contact:
+            def __init__(self, first_name, last_name, addresses=()):
+                self.first_name = first_name
+                self.last_name = last_name
+                self.addresses = addresses
 
 
-    AddressBook([
-        Contact(first_name='José', last_name='Jiménez'),
-        Contact(first_name='Иван', last_name='Иванович', addresses=[]),
-        Contact(first_name='Jan', last_name='Twardowski', addresses=[
-            Address(street='2101 E NASA Pkwy', city='Houston'),
-            Address(city='Kennedy Space Center'),
-            Address(street='4800 Oak Grove Dr', city='Pasadena'),
-            Address(street='2825 E Ave P', city='Palmdale'),
-        ])
-    ])
+        class Address:
+            def __init__(self, center, location):
+                self.center = center
+                self.location = location
 
+
+        INPUT = [
+            Contact(first_name='Jan', last_name='Twardowski', addresses=(
+                Address(center='Johnson Space Center', location='Houston, TX'),
+                Address(center='Kennedy Space Center', location='Merritt Island, FL'),
+                Address(center='Jet Propulsion Laboratory', location='Pasadena, CA'),
+            )),
+            Contact(first_name='Mark', last_name='Watney'),
+            Contact(first_name='Melissa', last_name='Lewis', addresses=()),
+        ]

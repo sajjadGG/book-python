@@ -394,8 +394,8 @@ Readability counts
     # ]
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Generators vs. Comprehensions - iris
 ------------------------------------

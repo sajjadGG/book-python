@@ -71,8 +71,8 @@ Keyboard shortcuts
     "``ctrl`` + ``r``", "Replace in file"
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Create Project in Pure Python
 -----------------------------

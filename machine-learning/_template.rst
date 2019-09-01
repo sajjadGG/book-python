@@ -47,8 +47,8 @@ Przykłady praktyczne
 ====================
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 
 Lektura uzupełniająca

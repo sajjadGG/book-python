@@ -514,8 +514,8 @@ Tests
             return False
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Parsing text from webpage
 -------------------------

@@ -318,8 +318,8 @@ Local scope
     # {'a': 1, 'b': 2, 'c': 3}
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Cleaning text input
 -------------------

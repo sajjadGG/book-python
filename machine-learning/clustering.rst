@@ -333,8 +333,8 @@ K-means Clustering dla zbioru Iris
     plt.show()
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Klastrowanie zbioru Iris
 ------------------------

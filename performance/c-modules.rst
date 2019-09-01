@@ -86,8 +86,8 @@ Run
     hello.say_hello('José Jiménez')
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 C Modules
 ---------

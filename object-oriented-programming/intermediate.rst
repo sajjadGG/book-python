@@ -51,8 +51,8 @@ Relations
     ]
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Defining Classes
 ----------------

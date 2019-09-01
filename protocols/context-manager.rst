@@ -192,8 +192,8 @@ Use Case
     # </p>
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Buffered file
 -------------

@@ -106,8 +106,8 @@ Good engineering practices
     virginica = IrisVirginica()
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Dragon (version alpha)
 ----------------------

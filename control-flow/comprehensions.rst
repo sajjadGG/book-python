@@ -293,8 +293,8 @@ Advanced usage for Comprehensions and Generators
 .. note:: More in chapter :ref:`Generators and Comprehensions`
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Split train/test
 ----------------

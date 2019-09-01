@@ -133,6 +133,6 @@ Differences
     what = (1.,.5)    # tuple with two floats
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 .. todo:: Create Assignments

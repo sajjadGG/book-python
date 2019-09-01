@@ -87,8 +87,8 @@ Use cases
     :caption: Zapisywanie do bazy danych wyników pobranych z sensorów podłączonych po USB
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Iris Database
 -------------

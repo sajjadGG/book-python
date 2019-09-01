@@ -138,8 +138,8 @@ Logic operators
     "``x != y``", "``x != 18``", "value of ``x`` is not equal to ``y``"
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 To ``bool`` or not to ``bool``
 ------------------------------

@@ -133,8 +133,8 @@ Other functions
 
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Trigonometry
 ------------

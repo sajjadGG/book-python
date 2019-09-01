@@ -292,8 +292,8 @@ Workery
         TODO.join()
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Wielowątkowość
 --------------

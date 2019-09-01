@@ -202,8 +202,8 @@ Slice function
     # 'Moon!'
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Simple collections
 ------------------

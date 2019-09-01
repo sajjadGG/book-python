@@ -132,8 +132,8 @@ Between timezones
     # datetime.datetime(1961, 4, 12, 1, 59, tzinfo=<DstTzInfo 'Europe/Warsaw' CET+1:00:00 STD>)
 
 
-Assignments in Polish
-=====================
+Assignments
+===========
 
 Time zone converting
 --------------------
@@ -142,55 +142,34 @@ Time zone converting
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/datetime_tz.py`
 
-#. Przekonwertuj do obiektu ``datetime``:
+:English:
+    #. Convert given date to ``datetime`` objects
+    #. What was the time in:
 
+        #. London, United Kingdom
+        #. Moscow, Russian Federation
+        #. Warsaw, Poland
+        #. Tokyo, Japan
+        #. Sydney, Australia
+        #. Auckland, New Zealand
+
+:Polish:
+    #. Przekonwertuj podaną datę do obiektu ``datetime``
+    #. Wyświetl datę jaka była w:
+
+        #. London, Wielka Brytania
+        #. Moscow, Rosja
+        #. Warsaw, Polska
+        #. Tokyo, Japan
+        #. Sydney, Australia
+        #. Auckland, Nowa Zelandia
+
+:Input:
     .. code-block:: text
 
         1969-07-21 02:56:15 UTC
 
-#. Wyświetl datę jaka była w:
-
-    #. London, Wielka Brytania
-    #. Moscow, Rosja
-    #. Warsaw, Polska
-    #. Tokyo, Japan
-    #. Sydney, Australia
-    #. Auckland, Nowa Zelandia
-
-:Extra:
-    #. Kosmodrom Bajkonur, Kazachstan
-    #. Przylądek Canaveral, FL, USA
-    #. Houston, TX, USA
-    #. Biegun południowy
-    #. Biegun północny
-
-
-Assignments in English
-======================
-
-Time zone converting
---------------------
-* Complexity level: easy
-* Lines of code to write: 10 lines
-* Estimated time of completion: 10 min
-* Filename: :download:`solution/datetime_tz.py`
-
-#. Convert to ``datetime`` objects:
-
-    .. code-block:: text
-
-        1969-07-21 02:56:15 UTC
-
-#. What was the time in:
-
-    #. London, United Kingdom
-    #. Moscow, Russian Federation
-    #. Warsaw, Poland
-    #. Tokyo, Japan
-    #. Sydney, Australia
-    #. Auckland, New Zealand
-
-:Extra:
+:Extra Task:
     #. Kosmodrom Bajkonur, Kazachstan
     #. Cape Canaveral, FL, USA
     #. Houston, TX, USA
