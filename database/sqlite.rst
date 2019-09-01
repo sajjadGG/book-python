@@ -2,7 +2,6 @@
 SQLite
 ******
 
-* Database API in Python
 
 
 SQL Syntax
@@ -90,96 +89,132 @@ Use cases
 Assignments
 ===========
 
-Iris Database
--------------
+SQLite Iris
+-----------
 * Complexity level: easy
 * Lines of code to write: 30 lines
 * Estimated time of completion: 30 min
 * Filename: :download:`solution/sqlite_iris.py`
-* Input data: :numref:`listing-database-iris.csv`
 
-.. literalinclude:: assignment/database-iris.csv
-    :name: listing-database-iris.csv
-    :language: python
-    :caption: Iris Database
+:English:
+    #. Save input data as ``sqlite_iris.csv`` file
+    #. Read data from file
+    #. Create ``species: Dict[int, str]`` with structure:
 
-#. Skopiuj dane z listingu :numref:`listing-database-iris.csv` i zapisz je w pliku ``iris-db.csv``
-#. Wczytaj dane z pliku ``iris-db.csv``
-#. Stwórz ``species: Dict[int, str]`` o strukturze:
+        * 0 - setosa
+        * 1 - versicolor
+        * 2 - virginica
 
-    * 0 - setosa
-    * 1 - versicolor
-    * 2 - virginica
+    #. Save data to ``sqlite3`` database table
+    #. Replace ``int`` to ``str`` according to ``species`` conversion table
+    #. Column names:
 
-#. Bazę pomiarów Irysów przekonwertuj na tabelę w ``sqlite3``
-#. Do połączenia wykorzystaj context manager (``with``)
-#. Dane wrzuć do bazy za pomocą ``.executemany()`` podając ``dict``
-#. Nazwy poszczególnych kolumn:
+        * id - ``int``
+        * species - ``str``
+        * datetime - ``datetime``
+        * sepal_length - ``float``
+        * sepal_width - ``float``
+        * petal_length - ``float``
+        * petal_width - ``float``
 
-    * id - ``int``
-    * species - ``str`` - podmień ``int`` na ``str`` ze słownika ``species``
-    * datetime - ``datetime`` - z datą i czasem dodania w UTC
-    * sepal_length - ``float``
-    * sepal_width - ``float``
-    * petal_length - ``float``
-    * petal_width - ``float``
+    #. Print results using ``SELECT * FROM iris ORDER BY datetime DESC``
 
-#. Przy dodawaniu danych ``species`` podmień ``int`` na ``str`` ze słownika ``species``
-#. Dodaj kolumnę ``datetime`` z datą i czasem dodania (UTC)
-#. Wyniki wypisz z bazy danych (``SELECT * FROM iris ORDER BY datetime DESC``)
-#. Zwracaj dane jako ``sqlite3.Row``
+:Polish:
+    #. Zapisz dane wejściowe do pliku ``sqlite_iris.csv``
+    #. Wczytaj dane z pliku
+    #. Stwórz ``species: Dict[int, str]`` o strukturze:
+
+        * 0 - setosa
+        * 1 - versicolor
+        * 2 - virginica
+
+    #. Podmień ``int`` na ``str`` zgodnie z tabelą podstawień ``species``
+    #. Zapisz dane do tabeli w bazie danych ``sqlite3``
+    #. Nazwy kolumn:
+
+        * id - ``int``
+        * species - ``str``
+        * datetime - ``datetime``
+        * sepal_length - ``float``
+        * sepal_width - ``float``
+        * petal_length - ``float``
+        * petal_width - ``float``
+
+    #. Wyniki wypisz z bazy danych ``SELECT * FROM iris ORDER BY datetime DESC``
+
+:Non functional requirements:
+    * Use context manager (``with``) for connection
+    * Return data as ``sqlite3.Row``
+    * Add data in ``dict`` format using ``.executemany()``
+    * Save date and time to database in UTC
 
 :Extra task:
-    #. Załóż index na ``datetime``
+    * Create index on ``datetime`` column
+    * Use cursor
 
 :The whys and wherefores:
-    * Parsowanie plików ``csv``
-    * Wykorzystywanie bazy ``sqlite3``
-    * Tworzenie bazy danych
-    * Zakładanie indeksów na bazie danych
-    * Wrzucanie danych do bazy
-    * Wyciąganie danych z bazy
-    * Konwersja typów
-    * Korzystanie z ``datetime``
+    * Parsing ``csv`` files
+    * Using ``sqlite3`` database
+    * Creating database
+    * Inserting data to database
+    * Selecting data from database
+    * Type casting
+    * Using ``datetime`` and UTC timezone
+    * Creating indexes (extra task)
 
-Tworzenie bazy danych i proste zapytania
-----------------------------------------
+:Input:
+    .. literalinclude:: assignment/database-iris.csv
+        :language: python
+        :caption: Input
+
+Creating relations in database
+------------------------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/sqlite_addressbook.py`
 
-#. Wykorzystaj kod z listingu :numref:`listing-database-addressbook.sql` oraz :numref:`listing-database-addressbook.txt`
-#. Wykorzystaj ``cursor`` oraz połączenia jako context manager (``with``)
-#. Dane powinny być zwracane w postaci listy ``dict``
-#. Do wpisywania danych wykorzystaj konstrukcję ``execute`` wykorzystując ``dict`` jako argument
+:English:
+    #. Create database for input data
+    #. Add support for many addresses
+    #. Insert data to database
+    #. Select data from database using JOIN relations
 
-:Extra task:
-    * Dodaj obsługę wielu adresów
-    * Dodaj obsługę relacji w aplikacji
+:Polish:
+    #. Stwórz bazę danych na podstawie danych wejściowych
+    #. Dodaj obsługę dla wielu adresów
+    #. Zapisz dane do bazy
+    #. Wypisz dane z bazy wykorzystując relację JOIN
 
-.. literalinclude:: assignment/database-addressbook.sql
-    :name: listing-database-addressbook.sql
-    :language: sql
-    :caption: Address Book SQL queries
+:Input:
+    .. literalinclude:: assignment/database-addressbook.txt
+        :language: text
+        :caption: Input
 
-.. literalinclude:: assignment/database-addressbook.txt
-    :name: listing-database-addressbook.txt
-    :language: text
-    :caption: Address Book data
+:Hint:
+    .. literalinclude:: assignment/database-addressbook.sql]
+        :language: sql
+        :caption: Hint
 
-Dane w jednej tabeli
---------------------
+Relational data in one table
+----------------------------
+* Complexity level: easy
 * Lines of code to write: 0 lines
-* Estimated time of completion: 5 min
-* Input data: :numref:`listing-database-addressbook.txt`
+* Estimated time of completion: 15 min
 
-#. Jak zapisać w jednej tabeli bez wykorzystania relacji?
-#. Przeprowadź dyskusję na temat zalet i wad podejść:
+:English:
+    #. How to write input data in one table without using relations?
+    #. There are at least four methods
+    #. Discuss pros and cons of each method
+    #. Which methods is ACID compliant?
 
-    - jedno pole adresy i dane rozdzielone separatorem (``;``)
-    - wiele adresów i dane rozdzielone separatorem (``;``)
-    - wiele kolumn dla każdego pola
+:Polish:
+    #. Jak zapisać w jednej tabeli bez wykorzystania relacji?
+    #. Są przynajmniej cztery metody
+    #. Przeprowadź dyskusję na temat zalet i wad każdej metody
+    #. Która metody jest zgodna z ACID?
 
-#. Które podejście jest najlepsze?
-#. Które podejście jest zgodne z ACID?
+:Input:
+    .. literalinclude:: assignment/database-addressbook.txt
+        :language: text
+        :caption: Input

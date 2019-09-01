@@ -29,7 +29,6 @@ Durability
 Durability guarantees that once a transaction has been committed, it will remain committed even in the case of a system failure (e.g., power outage or crash). This usually means that completed transactions (or their effects) are recorded in non-volatile memory.
 
 
-
 CREATE
 ======
 .. literalinclude:: src/sql-create.sql
@@ -165,15 +164,3 @@ TRUNCATE
 .. literalinclude:: src/sql-truncate.sql
     :language: sql
     :caption: TRUNCATE
-
-SQL Injection
-=============
-.. literalinclude:: src/sql-injection.py
-    :language: python
-    :caption: SQL Injection
-
-.. figure:: img/sql-injection.jpg
-    :scale: 50%
-    :align: center
-
-    SQL Injection

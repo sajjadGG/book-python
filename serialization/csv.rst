@@ -318,7 +318,7 @@ Write fixed schema data to CSV file
     #. Spróbuj otworzyć plik w arkuszu kalkulacyjnym tj. Microsoft Excel / Libre Office / Numbers itp
     #. Spróbuj otworzyć plik w IDE i prostym edytorze tekstu tj. Notepad, vim lub gedit
 
-:Requirements:
+:Non functional requirements:
     #. All fields must be enclosed by double quote ``"`` character
     #. Use ``;`` to separate columns
     #. Use ``utf-8`` encoding
@@ -354,7 +354,7 @@ Write variable schema data to file
     #. ``fieldnames`` ma być zawsze w takiej samej kolejności
     #. Rezultat powinien wyglądać tak:
 
-:Requirements:
+:Non functional requirements:
     #. All fields must be enclosed by double quote ``"`` character
     #. Use ``;`` to separate columns
     #. Use ``utf-8`` encoding
@@ -406,7 +406,7 @@ Object serialization to CSV
     #. Jak zapisać w CSV dane relacyjne (kontakt ma wiele adresów)?
     #. Odtwórz strukturę obiektów na podstawie danych odczytanych z pliku
 
-:Requirements:
+:Non functional requirements:
     #. All fields must be enclosed by double quote ``"`` character
     #. Use ``;`` to separate columns
     #. Use ``utf-8`` encoding
