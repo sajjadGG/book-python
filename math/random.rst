@@ -18,6 +18,13 @@ Random Numbers
     "``random.seed(a=None, version=2)``", "Initialize the random number generator. If a is omitted or None, the current system time is used"
 
 
+Pseudo and Pure random numbers
+==============================
+* What are pseudorandom numbers?
+* Why it is not possible to generate a pure random number?
+* What is ``random.seed(0)``?
+
+
 Assignments
 ===========
 
@@ -30,19 +37,9 @@ Random numbers
 
 :English:
     #. Print 6 random without repetition numbers in range from 1 to 49
-    #. What are pseudorandom numbers?
-    #. Why it is not possible to create a pure random program?
-    #. What is ``random.seed(0)``?
 
 :Polish:
     #. Wyświetl 6 losowych i nie powtarzających się liczb z zakresu od 1 do 49.
-    #. Czym sa liczby pseudolosowe?
-    #. Dlaczego nie da się stworzyć program czysto losowego?
-    #. Co to ``random.seed(0)``?
-
-:Hints:
-    * ``random.randrange()``
-    * ``random.sample()``
 
 Sum of inner elements
 ---------------------
@@ -63,6 +60,5 @@ Sum of inner elements
     #. Policz sumę środkowych 4x4 elementów
     #. Środkowa macierz jest dokładnie w środku większej
 
-:Non-functional requirements:
-    #. Use ``random`` module
+:Hint:
     #. Digits are in range from 0 to 9 inclusive
