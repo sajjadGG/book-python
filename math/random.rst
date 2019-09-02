@@ -36,10 +36,10 @@ Random numbers
 * Filename: :download:`solution/random_numbers.py`
 
 :English:
-    #. Print 6 random without repetition numbers in range from 1 to 49
+    #. Print 6 random integers without repetition in range from 1 to 49
 
 :Polish:
-    #. Wyświetl 6 losowych i nie powtarzających się liczb z zakresu od 1 do 49.
+    #. Wyświetl 6 losowych i nie powtarzających się liczb całkowitych z zakresu od 1 do 49.
 
 Sum of inner elements
 ---------------------
@@ -49,12 +49,14 @@ Sum of inner elements
 * Filename: :download:`solution/random_inner_sum.py`
 
 :English:
+    #. Use only ``random`` module
     #. Set ``random.seed(0)``
     #. Generate ``outer: List[List[int]]`` with 16x16 random digits
     #. Calculate sum of inner 4x4 elements
     #. Inner matrix is exactly in the middle of outer
 
 :Polish:
+    #. Używaj tylko modułu ``random``
     #. Ustaw ``random.seed(0)``
     #. Wygeneruj ``outer: List[List[int]]`` z 16x16 losowych cyfr
     #. Policz sumę środkowych 4x4 elementów
