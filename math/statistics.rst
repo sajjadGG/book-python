@@ -2,35 +2,188 @@
 Statistics
 **********
 
+* ``statistics`` module
 
-``statistics``
-==============
-.. csv-table:: Averages and measures of central location
-    :header-rows: 1
 
-    "Function", "Description"
+Mean
+====
+.. csv-table:: Mean
+    :widths: 25,75
+    :header: "Function", "Description"
+
     "``statistics.mean()``", "Arithmetic mean ('average') of data"
     "``statistics.fmean()``", "faster, floating point variant of ``statistics.mean()``, since Python 3.8"
     "``statistics.harmonic_mean()``", "Harmonic mean of data"
+    "``statistics.geometric_mean()``", "Since Python 3.8"
+
+.. code-block:: python
+    :caption: Arithmetic mean ('average') of data
+
+    from statistics import mean
+
+
+    mean([1, 2, 3, 4, 4])           # 2.8
+    mean([-1.0, 2.5, 3.25, 5.75])   # 2.625
+
+.. code-block:: python
+    :caption: Harmonic mean of data
+
+    from statistics import harmonic_mean
+
+
+    harmonic_mean([2.5, 3, 10])     # 3.6
+
+
+Median
+======
+.. csv-table:: Median
+    :widths: 25,75
+    :header: "Function", "Description"
+
     "``statistics.median()``", "Median (middle value) of data"
     "``statistics.median_low()``", "Low median of data"
     "``statistics.median_high()``", "High median of data"
     "``statistics.median_grouped()``", "Median, or 50th percentile, of grouped data"
+
+.. code-block:: python
+    :caption: Median (middle value) of data
+
+    from statistics import median
+
+
+    median([1, 3, 5])               # 3
+    median([1, 3, 5, 7])            # 4.0
+
+* The low median is always a member of the data set.
+* When the number of data points is odd, the middle value is returned.
+* When it is even, the smaller of the two middle values is returned.
+
+.. code-block:: python
+    :caption: Low median of data
+
+    from statistics import median_low
+
+
+    median_low([1, 3, 5])           # 3
+    median_low([1, 3, 5, 7])        # 3
+
+* The high median is always a member of the data set.
+* When the number of data points is odd, the middle value is returned.
+* When it is even, the larger of the two middle values is returned.
+
+.. code-block:: python
+    :caption: High median of data
+
+    from statistics import median_high
+
+
+    median_high([1, 3, 5])          # 3
+    median_high([1, 3, 5, 7])       # 5
+
+* Median of grouped continuous data.
+* Calculated using interpolation as the 50th percentile.
+
+.. code-block:: python
+    :caption: Median, or 50th percentile, of grouped data
+
+    from statistics import median_grouped
+
+
+    median_grouped([52, 52, 53, 54])              # 52.5
+    median_grouped([1, 3, 3, 5, 7], interval=1)   # 3.25
+    median_grouped([1, 3, 3, 5, 7], interval=2)   # 3.5
+
+
+Mode
+====
+.. csv-table:: Mode
+    :widths: 25,75
+    :header: "Function", "Description"
+
     "``statistics.mode()``", "Mode (most common value) of discrete data"
     "``statistics.multimode()``", "returns a list of the most common values, since Python 3.8"
-    "``statistics.geometric_mean()``", "Since Python 3.8"
     "``statistics.quantiles()``", "divides data or a distribution in to equiprobable intervals (e.g. quartiles, deciles, or percentiles), since Python 3.8"
+
+.. code-block:: python
+    :caption: Mode (most common value) of discrete data
+
+    from statistics import mode
+
+
+    mode([1, 1, 2, 3, 3, 3, 3, 4])                                  # 3
+    mode(["red", "blue", "blue", "red", "green", "red", "red"])     # 'red'
+
+
+Distribution
+============
+.. csv-table:: Distribution
+    :widths: 25,75
+    :header: "Function", "Description"
+
     "``statistics.NormalDist``", "tool for creating and manipulating normal distributions of a random variable"
 
-.. csv-table:: Measures of spread
-    :header-rows: 1
 
-    "Function", "Description"
+Standard Deviation
+==================
+.. csv-table:: Standard Deviation
+    :widths: 25,75
+    :header: "Function", "Description"
+
     "``statistics.pstdev()``", "Population standard deviation of data"
-    "``statistics.pvariance()``", "Population variance of data"
     "``statistics.stdev()``", "Sample standard deviation of data"
+
+.. code-block:: python
+    :caption: Sample standard deviation of data
+
+    from statistics import stdev
+
+
+    stdev([1.5, 2.5, 2.5, 2.75, 3.25, 4.75])
+    # 1.0810874155219827
+
+* Population standard deviation
+* Is the square root of the population variance
+
+.. code-block:: python
+    :caption: Population standard deviation
+
+    from statistics import pstdev
+
+
+    pstdev([1.5, 2.5, 2.5, 2.75, 3.25, 4.75])
+    # 0.986893273527251
+
+
+Variance
+========
+.. csv-table:: Variance
+    :widths: 25,75
+    :header: "Function", "Description"
+
+    "``statistics.pvariance()``", "Population variance of data"
     "``statistics.variance()``", "Sample variance of data"
 
+.. code-block:: python
+    :caption: Sample variance of data
+
+    from statistics import variance
+
+
+    variance([2.75, 1.75, 1.25, 0.25, 0.5, 1.25, 3.5])
+    # 1.3720238095238095
+
+.. code-block:: python
+    :caption: Population variance of data
+
+    from statistics import pvariance
+
+
+    pvariance([0.0, 0.25, 0.25, 1.25, 1.5, 1.75, 2.75, 3.25])
+    # 1.25
+
+
+Example
+=======
 .. code-block:: python
 
     temperature_feb = NormalDist.from_samples([4, 12, -3, 2, 7, 14])
@@ -58,101 +211,6 @@ Statistics
     # Generate random samples
     temperature_feb.samples(3)      # [7.672102882379219, 12.000027119750287, 4.647488369766392]
 
-.. code-block:: python
-
-    from statistics import mean
-
-
-    mean([1, 2, 3, 4, 4])           # 2.8
-    mean([-1.0, 2.5, 3.25, 5.75])   # 2.625
-
-.. code-block:: python
-
-    from statistics import harmonic_mean
-
-
-    harmonic_mean([2.5, 3, 10])     # 3.6
-
-.. code-block:: python
-
-    from statistics import median
-
-
-    median([1, 3, 5])               # 3
-    median([1, 3, 5, 7])            # 4.0
-
-The low median is always a member of the data set. When the number of data points is odd, the middle value is returned. When it is even, the smaller of the two middle values is returned.
-
-.. code-block:: python
-
-    from statistics import median_low
-
-
-    median_low([1, 3, 5])           # 3
-    median_low([1, 3, 5, 7])        # 3
-
-The high median is always a member of the data set. When the number of data points is odd, the middle value is returned. When it is even, the larger of the two middle values is returned.
-
-.. code-block:: python
-
-    from statistics import median_high
-
-
-    median_high([1, 3, 5])          # 3
-    median_high([1, 3, 5, 7])       # 5
-
-Return the median of grouped continuous data, calculated as the 50th percentile, using interpolation.
-
-.. code-block:: python
-
-    from statistics import median_grouped
-
-
-    median_grouped([52, 52, 53, 54])              # 52.5
-    median_grouped([1, 3, 3, 5, 7], interval=1)   # 3.25
-    median_grouped([1, 3, 3, 5, 7], interval=2)   # 3.5
-
-.. code-block:: python
-
-    from statistics import mode
-
-
-    mode([1, 1, 2, 3, 3, 3, 3, 4])                                  # 3
-    mode(["red", "blue", "blue", "red", "green", "red", "red"])     # 'red'
-
-Return the population standard deviation (the square root of the population variance).
-
-.. code-block:: python
-
-    from statistics import pstdev
-
-
-    pstdev([1.5, 2.5, 2.5, 2.75, 3.25, 4.75])
-    # 0.986893273527251
-
-.. code-block:: python
-
-    from statistics import pvariance
-
-
-    pvariance([0.0, 0.25, 0.25, 1.25, 1.5, 1.75, 2.75, 3.25])
-    # 1.25
-
-.. code-block:: python
-
-    from statistics import stdev
-
-
-    stdev([1.5, 2.5, 2.5, 2.75, 3.25, 4.75])
-    # 1.0810874155219827
-
-.. code-block:: python
-
-    from statistics import variance
-
-
-    variance([2.75, 1.75, 1.25, 0.25, 0.5, 1.25, 3.5])
-    # 1.3720238095238095
 
 Assignments
 ===========
@@ -187,7 +245,7 @@ Iris Stats
     #. Dane zapisz w słowniku ``species``
 
 :Non-functional requirements:
-    #. Use``statistics``
+    #. Use ``statistics``
     #. Calculate only numerical parameters
     #. Those are the total values from all rows
 
@@ -195,7 +253,7 @@ Iris Stats
     .. code-block:: python
         :caption: Input
 
-        DATA = [
+        INPUT = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, 'virginica'),
             (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -224,7 +282,7 @@ Iris Stats
     .. code-block:: python
         :caption: Output
 
-        {'setosa': {
+        OUTPUT = {'setosa': {
             'petal_length': {'mean': 1.4428571428571428,
                              'median': 1.4,
                              'stdev': 0.12724180205607036,

@@ -272,10 +272,16 @@ Iris
 :English:
     #. Open in browser https://raw.githubusercontent.com/AstroMatt/book-python/master/args-kwargs/data/iris-clean.csv
     #. Write input data to file ``iris-clean.csv``
-    #. Read file and separate header from measurements
-    #. Remove ``species`` from header
-    #. Remove species field from data
-    #. Convert data to ``List[dict]`` by zipping header and measurements
+    #. First line is a header
+    #. Remove ``species`` from the header (last item)
+    #. Other lines are the measurements
+    #. For each line extract values by splitting lines by coma ``,``
+    #. Remove species field from measurements
+    #. Create ``data: List[dict]`` by zipping header and measurements:
+
+        - key: column name from the header
+        - value: measurement at the position
+
     #. Create function ``average(**kwargs)``, function
     #. Pass arguments as keywords
     #. Calculate average for each measurement
@@ -283,10 +289,34 @@ Iris
 :Polish:
     #. Otwórz w przeglądarce https://raw.githubusercontent.com/AstroMatt/book-python/master/args-kwargs/data/iris-clean.csv
     #. Zapisz dane wejściowe do pliku ``iris-clean.csv``
-    #. Wczytaj plik i odseparuj nagłówek od danych
-    #. Usuń ``species`` z nagłówka
-    #. Usuń pole z nazwą gatunku z pomiarów
-    #. Przekonwertuj dane na ``List[dict]`` łącząc nagłówek i pomiary
+    #. Pierwsza linijka jest nagłówkiem
+    #. Usuń ``species`` z nagłówka (ostatni element)
+    #. Pozostałe linie są pomiarami
+    #. Wyciągnij wartości z każdej linii przez podział jej po przecinku ``,``
+    #. Usuń pole species z pomiarów
+    #. Stwórz ``data: List[dict]`` poprzez scalenie nagłówka i pomiarów
+
+        - klucz: nazwa kolumny z nagłówka
+        - wartość: pomiar z odpowiedniej kolumny
+
     #. Stwórz funkcję ``average(**kwargs)``
     #. Podawaj nazwane argumenty
     #. Wylicz średnią dla każdego pomiaru
+
+:Non-functional requirements:
+    * Use only ``str.split()`` method
+    * Don't use ``pandas``, ``numpy`` or ``csv`` etc.
+
+:Output:
+    .. code-block:: python
+        :caption: Output
+
+        header: list
+        # ['sepal_length', 'sepal_width' ,'petal_length', 'petal_width']
+
+        data: List[Dict[str, float]] = [
+            {'sepal_length': 5.4, 'sepal_width': 3.9, 'petal_length': 1.3, 'petal_width': 0.4, 'species': 'setosa'},
+            {'sepal_length': 5.9, 'sepal_width': 3.0, 'petal_length': 5.1, 'petal_width': 1.8, 'species': 'virginica'},
+            {'sepal_length': 6.0, 'sepal_width': 3.4, 'petal_length': 4.5, 'petal_width': 1.6, 'species': 'versicolor'},
+            ...
+        ]

@@ -1,17 +1,15 @@
-*******************
-Regular Expressions
-*******************
+*************************
+Match, search and Findall
+*************************
 
-
-Most frequent used functions in ``re`` module
-=============================================
 
 ``re.match()``
---------------
+==============
 .. code-block:: python
     :caption: Usage of ``re.match()``
 
     import re
+
 
     PATTERN = r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,20}$'
 
@@ -21,190 +19,60 @@ Most frequent used functions in ``re`` module
         else:
             return False
 
-    is_valid_email('jose.jimenez@nasa.gov')     # True
-    is_valid_email('jose.jimenez@nasa.g')       # False
+    is_valid_email('mark.watney@nasa.gov')     # True
+    is_valid_email('mark.watney@nasa.g')       # False
+
 
 ``re.search()``
----------------
+===============
 .. code-block:: python
     :caption: Usage of ``re.search()``
 
     import re
 
 
-    TEXT = "Issues #23919, #31337 removed obsolete comments"
+    INPUT = 'MYPROJ-1337, MYPROJ-123 removed obsolete comments'
 
-    def contains(text, pattern)
+    def contains(pattern, text)
         if re.search(pattern, text):
             return True
         else:
             return False
 
 
-    contains(r'#[0-9]+', TEXT)      # True
-    contains(r'#[a-z]+', TEXT)      # False
+    contains(r'[A-Z]{2,10}-[0-9]{1,6}', INPUT)      # True
+    contains(r'#[a-z]+', INPUT)                     # False
+
 
 ``re.findall()`` and ``re.finditer()``
---------------------------------------
+======================================
 .. code-block:: python
     :caption: Usage of ``re.findall()`` and ``re.finditer()``
 
     import re
 
 
-    PATTERN = r'#[A-Z]{2,10}-[0-9]{1,6}'
-    TEXT = "MYPROJ-1337 removed obsolete comments"
+    PATTERN = r'[A-Z]{2,10}-[0-9]{1,6}'
+    INPUT = 'MYPROJ-1337, MYPROJ-123 removed obsolete comments'
 
-    re.findall(PATTERN, TEXT)
-    # ['MYPROJ-1337']
-
-``re.compile()``
-----------------
-.. code-block:: python
-    :caption: Compiles at every loop iteration, and then matches
-    :emphasize-lines: 15
-
-    import re
-
-    PATTERN = r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,}$'
-    DATA = [
-        'jose.jimenez@nasa.gov',
-        'Jose.Jimenez@nasa.gov',
-        '+jose.jimenez@nasa.gov',
-        'jose.jimenez+@nasa.gov',
-        'jose.jimenez+newsletter@nasa.gov',
-        'jose.jimenez@.gov',
-        '@nasa.gov',
-        'jose.jimenez@nasa.g']
-
-    for email in DATA:
-        re.match(PATTERN, email)
-
-.. code-block:: python
-    :caption: Compiling before loop, hence matching only inside
-    :emphasize-lines: 15
-
-    import re
-
-    PATTERN = re.compile(r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,}$')
-    DATA = [
-        'jose.jimenez@nasa.gov',
-        'Jose.Jimenez@nasa.gov',
-        '+jose.jimenez@nasa.gov',
-        'jose.jimenez+@nasa.gov',
-        'jose.jimenez+newsletter@nasa.gov',
-        'jose.jimenez@.gov',
-        '@nasa.gov',
-        'jose.jimenez@nasa.g']
-
-    for email in DATA:
-        PATTERN.match(email)
-
-``re.sub()``
-------------
-.. code-block:: python
-    :caption: Usage of ``re.sub()``
-
-    import re
+    re.findall(PATTERN, INPUT)
+    # ['MYPROJ-1337', 'MYPROJ-123']
 
 
-    PATTERN = r'\s[a-z]{3}\s'
-    TEXT = 'Baked Beans And Spam'
-
-    re.sub(PATTERN, ' & ', TEXT, flags=re.IGNORECASE)
-    # 'Baked Beans & Spam'
-
-``re.split()``
---------------
-.. code-block:: python
-    :caption: Usage of ``re.split()``
-
-    import re
-
-    PATTERN = r'\s[a-z]{3}\s'
-    TEXT = 'Baked Beans And Spam'
-
-    re.split(PATTERN, TEXT, flags=re.IGNORECASE)
-    # ['Baked Beans', 'Spam']
-
-Comparision between ``re.match()``, ``re.search()`` and ``re.findall()``
-------------------------------------------------------------------------
+Comparision
+===========
 .. code-block:: python
     :caption: Comparision between ``re.match()``, ``re.search()`` and ``re.findall()``
 
     import re
 
 
-    PATTERN = r'#[0-9]+'
-    TEXT = "Issues #23919, #31337 removed obsolete comments"
+    PATTERN = r'[A-Z]{2,10}-[0-9]{1,6}'
+    INPUT = 'MYPROJ-1337, MYPROJ-123 removed obsolete comments'
 
-    re.findall(PATTERN, TEXT)           # ['#23919', '#31337']
-    re.search(PATTERN, TEXT).group()    # '#23919'
-    re.match(PATTERN, TEXT)             # None
-
-
-RegEx parameters (variables)
-============================
-.. code-block:: python
-    :caption: Usage of group in ``re.match()``
-
-    import re
-
-    PATTERN = r'(?P<first_name>\w+) (?P<last_name>\w+)'
-    TEXT = 'Jan Twardowski'
-
-    matches = re.match(PATTERN, TEXT)
-
-    matches.group('first_name')     # 'Jan'
-    matches.group('last_name')      # 'Twardowski'
-    matches.group(1)                # 'Jan'
-    matches.group(2)                # 'Twardowski'
-    matches.groups()                # ('Jan', 'Twardowski')
-    matches.groupdict()             # {'first_name': 'Jan', 'last_name': 'Twardowski'}
-
-
-Multi line searches
-===================
-.. code-block:: python
-    :caption: Usage of regexp
-
-    import re
-
-    PATTERN = r'^#[0-9]+'
-    TEXT = """
-    #27533 Fixed inspectdb crash;
-    #31337 Remove commented out code
-    """
-
-    re.findall(PATTERN, TEXT)
-    # []
-
-    re.findall(PATTERN, TEXT, flags=re.MULTILINE)
-    # ['#27533', '#31337']
-
-
-Greedy and non-greedy search
-============================
-* greedy qualifiers: ``*``, ``+``, ``?``
-* they match as much text as possible
-* Adding ``?`` after the qualifier makes it non-greedy
-
-.. code-block:: python
-    :caption: Usage of greedy and non-greedy search in ``re.findall()``
-
-    import re
-
-    TEXT = '<strong>Ehlo World</strong>'
-
-    re.findall(r'<.*>', TEXT)         # ['<strong>Ehlo World</strong>']
-    re.findall(r'<.*?>', TEXT)        # ['<strong>', '</strong>']
-
-.. code-block:: python
-    :caption: Usage of greedy and non-greedy search with groups
-
-    re.findall(r'<(.*)>', TEXT)       # ['strong>Ehlo World</strong']
-    re.findall(r'<(.*?)>', TEXT)      # ['strong', '/strong']
-    re.findall(r'</?(.*?)>', TEXT)    # ['strong', 'strong']
+    re.findall(PATTERN, INPUT)           # ['MYPROJ-1337', 'MYPROJ-123']
+    re.search(PATTERN, INPUT).group()    # 'MYPROJ-1337'
+    re.match(PATTERN, INPUT)             # None
 
 
 Good practices

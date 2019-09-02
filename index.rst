@@ -143,7 +143,12 @@ Regular Expressions
     :caption: Regular Expressions
 
     /regular-expressions/syntax.rst
-    /regular-expressions/regex.rst
+    /regular-expressions/match-search-findall.rst
+    /regular-expressions/compile.rst
+    /regular-expressions/groups.rst
+    /regular-expressions/multiline.rst
+    /regular-expressions/sub-split.rst
+    /regular-expressions/greedy.rst
     /regular-expressions/examples.rst
     /regular-expressions/standards.rst
 

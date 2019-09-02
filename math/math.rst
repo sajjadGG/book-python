@@ -136,25 +136,6 @@ Other functions
 Assignments
 ===========
 
-Triangle
---------
-* Complexity level: easy
-* Lines of code to write: 5 lines
-* Estimated time of completion: 10 min
-* Filename: :download:`solution/math_triangle.py`
-
-:English:
-    #. Calculate triangle area
-    #. User will input base and height
-    #. Input numbers will be only ``int`` and ``float``
-    #. Function must pass ``doctest``
-
-:Polish:
-    #. Obliczy pole trójkąta
-    #. Użytkownik poda wysokość i długość podstawy
-    #. Wprowadzone dane będą tylko ``int`` lub ``float``
-    #. Funkcja musi przechodzić ``doctest``
-
 Trigonometry
 ------------
 * Complexity level: easy
@@ -173,6 +154,9 @@ Trigonometry
     #. Użytkownik zawsze podaje ``int`` albo ``float``
     #. Wyświetl wartość funkcji trygonometrycznych (sin, cos, tg, ctg)
     #. Jeżeli funkcja trygonometryczna nie istnieje dla danego kąta podnieś stosowny wyjątek
+
+:Hint:
+    * ``input('Type angle [deg]: ')``
 
 Euclidean distance 2D
 ---------------------
@@ -279,13 +263,12 @@ Euclidean distance ``n`` dimensions
             >>> euclidean_distance((0,0,1,0,1), (1,1))
             Traceback (most recent call last):
                 ...
-            ValueError: Punkty muszą być w przestrzeni tylu-samo wymiarowej
+            ValueError: Points must be in the same dimensions
             """
-            x1 = ...
-            y1 = ...
-            x2 = ...
-            y2 = ...
             return ...
+
+:Hint:
+    * ``zip(A, B)``
 
 Matrix multiplication
 ---------------------
@@ -322,3 +305,22 @@ Matrix multiplication
 :Hints:
     * Zero matrix
     * Three nested ``for`` loops
+
+Triangle
+--------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 10 min
+* Filename: :download:`solution/math_triangle.py`
+
+:English:
+    #. Calculate triangle area
+    #. User will input base and height
+    #. Input numbers will be only ``int`` and ``float``
+    #. Function must pass ``doctest``
+
+:Polish:
+    #. Obliczy pole trójkąta
+    #. Użytkownik poda wysokość i długość podstawy
+    #. Wprowadzone dane będą tylko ``int`` lub ``float``
+    #. Funkcja musi przechodzić ``doctest``
