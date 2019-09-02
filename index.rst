@@ -110,18 +110,6 @@ Standard Library
     /stdlib/import.rst
 
 ***************
-Args and Kwargs
-***************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Args and Kwargs
-
-    /args-kwargs/unpacking.rst
-    /args-kwargs/defining.rst
-    /args-kwargs/calling.rst
-
-***************
 Type Annotation
 ***************
 .. toctree::
@@ -133,6 +121,18 @@ Type Annotation
     /type-annotation/introspection.rst
     /type-annotation/checking.rst
     /type-annotation/annotating.rst
+
+***************
+Args and Kwargs
+***************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Args and Kwargs
+
+    /args-kwargs/unpacking.rst
+    /args-kwargs/defining.rst
+    /args-kwargs/calling.rst
 
 *******************
 Regular Expressions
