@@ -66,6 +66,22 @@ Set
     my_set: Set[float] = {1.1, 2.2, 3.3}
     my_set: Set[str] = {'a', 'b', 'c'}
 
+Tuple
+-----
+.. code-block:: python
+
+    from typing import Tuple
+
+
+    my_tuple: tuple = 'a', 2, 3.3
+    my_tuple: tuple = ('a', 2, 3.3)
+
+    my_tuple: Tuple[int, int, int] = (1, 2, 3)
+    my_tuple: Tuple[float, float, float] = (1.1, 2.2, 3.3)
+    my_tuple: Tuple[str, str, str] = ('a', 'b', 'c')
+
+    my_tuple: Tuple[str, int, float] = ('a', 2, 3.3)
+
 Dict
 ----
 .. code-block:: python
@@ -84,22 +100,6 @@ Dict
         'b': 2,
         'c': 3,
     }
-
-Tuple
------
-.. code-block:: python
-
-    from typing import Tuple
-
-
-    my_tuple: tuple = 'a', 2, 3.3
-    my_tuple: tuple = ('a', 2, 3.3)
-
-    my_tuple: Tuple[int, int, int] = (1, 2, 3)
-    my_tuple: Tuple[float, float, float] = (1.1, 2.2, 3.3)
-    my_tuple: Tuple[str, str, str] = ('a', 'b', 'c')
-
-    my_tuple: Tuple[str, int, float] = ('a', 2, 3.3)
 
 
 Nested sequences
