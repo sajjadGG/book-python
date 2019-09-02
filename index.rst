@@ -117,7 +117,7 @@ Args and Kwargs
     :numbered:
     :caption: Args and Kwargs
 
-    /args-kwargs/receiving.rst
+    /args-kwargs/unpacking.rst
     /args-kwargs/defining.rst
     /args-kwargs/calling.rst
 

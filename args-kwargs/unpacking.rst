@@ -182,8 +182,11 @@ Unpacking from sequence
 :Output:
     .. code-block:: python
 
-        * ``ip: str``
-        * ``hosts: List[str]``
+        ip: str
+        # 10.13.37.1
+
+        hosts: List[str]
+        # ['nasa.gov', 'esa.int', 'roscosmos.ru']
 
 Unpacking from nested sequence
 ------------------------------
