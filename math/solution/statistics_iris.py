@@ -2,7 +2,7 @@ from statistics import mean, median, stdev, variance
 from pprint import pprint
 
 
-DATA = [
+INPUT = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, 'virginica'),
     (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -28,7 +28,7 @@ DATA = [
 ]
 
 
-header, *data = DATA
+header, *data = INPUT
 
 output = dict()
 
@@ -46,6 +46,21 @@ for sepal_length, sepal_width, petal_length, petal_width, species in data:
     output[species]['petal_length']['values'].append(petal_length)
     output[species]['petal_width']['values'].append(petal_width)
 
+# pprint(output)
+# {
+#     'setosa': { 'petal_length': {'values': [1.4, 1.3, 1.4, 1.4, 1.7, 1.4, 1.5]},
+#                 'petal_width':  {'values': [0.2, 0.2, 0.2, 0.3, 0.4, 0.3, 0.2]},
+#                 'sepal_length': {'values': [5.1, 4.7, 4.9, 4.6, 5.4, 5.0, 4.6]},
+#                 'sepal_width':  {'values': [3.5, 3.2, 3.0, 3.4, 3.9, 3.6, 3.1]}},
+#  'versicolor': {'petal_length': {'values': [4.1, 4.5, 4.7, 4.5, 4.0, 4.6, 4.9]},
+#                 'petal_width':  {'values': [1.3, 1.5, 1.4, 1.3, 1.3, 1.5, 1.5]},
+#                 'sepal_length': {'values': [5.7, 6.4, 7.0, 5.7, 5.5, 6.5, 6.9]},
+#                 'sepal_width':  {'values': [2.8, 3.2, 3.2, 2.8, 2.3, 2.8, 3.1]}},
+#  'virginica': { 'petal_length': {'values': [5.1, 5.6, 6.6, 4.5, 5.9, 5.8, 6.0]},
+#                 'petal_width':  {'values': [1.9, 1.8, 2.1, 1.7, 2.1, 2.2, 2.5]},
+#                 'sepal_length': {'values': [5.8, 6.3, 7.6, 4.9, 7.1, 6.5, 6.3]},
+#                 'sepal_width':  {'values': [2.7, 2.9, 3.0, 2.5, 3.0, 3.0, 3.3]}}
+# }
 
 def compute(species, parameter):
     values = output[species][parameter]['values']
