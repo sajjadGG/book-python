@@ -28,21 +28,21 @@ Random numbers
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/random_numbers.py`
 
-#. Napisz program, który wyświetli 6 losowych i nie powtarzających się liczb z zakresu od 1 do 49.
-#. Czym sa liczby pseudolosowe?
-#. Czy da się stworzyć program czysto losowy?
-#. Dlaczego?
+:English:
+    #. Print 6 random without repetition numbers in range from 1 to 49
+    #. What are pseudorandom numbers?
+    #. Why it is not possible to create a pure random program?
+    #. What is ``random.seed(0)``?
+
+:Polish:
+    #. Wyświetl 6 losowych i nie powtarzających się liczb z zakresu od 1 do 49.
+    #. Czym sa liczby pseudolosowe?
+    #. Dlaczego nie da się stworzyć program czysto losowego?
+    #. Co to ``random.seed(0)``?
 
 :Hints:
     * ``random.randrange()``
     * ``random.sample()``
-
-:The whys and wherefores:
-    * Umiejętność wykorzystania gotowych funkcji w bibliotece standardowej
-    * Umiejętność wyszukania informacji na temat API funkcji w dokumentacji języka i jego odpowiedniej wersji
-    * Stworzenie dwóch alternatywnych podejść do rozwiązania zadania
-    * Porównanie czytelności obu rozwiązań
-    * Umiejętność sprawdzania czy coś znajduje się w liście oraz ``continue``
 
 Sum of inner elements
 ---------------------
@@ -51,8 +51,18 @@ Sum of inner elements
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/random_inner_sum.py`
 
-#. Ustaw ``random.seed(0)``
-#. Za pomocą biblioteki ``random`` wygeneruj ``List[List[int]]`` (cyfry z przedziału <0,9> włącznie)
-#. Tablica ma mieć 16 wierszy i 16 kolumn
-#. Policz sumę środkowych 4x4 elementów
-#. Środkowych = centralna macierz 4x4 dokładnie w środku większej
+:English:
+    #. Set ``random.seed(0)``
+    #. Generate ``outer: List[List[int]]`` with 16x16 random digits
+    #. Calculate sum of inner 4x4 elements
+    #. Inner matrix is exactly in the middle of outer
+
+:Polish:
+    #. Ustaw ``random.seed(0)``
+    #. Wygeneruj ``outer: List[List[int]]`` z 16x16 losowych cyfr
+    #. Policz sumę środkowych 4x4 elementów
+    #. Środkowa macierz jest dokładnie w środku większej
+
+:Non-functional requirements:
+    #. Use ``random`` module
+    #. Digits are in range from 0 to 9 inclusive

@@ -136,6 +136,25 @@ Other functions
 Assignments
 ===========
 
+Triangle
+--------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 10 min
+* Filename: :download:`solution/math_triangle.py`
+
+:English:
+    #. Calculate triangle area
+    #. User will input base and height
+    #. Input numbers will be only ``int`` and ``float``
+    #. Function must pass ``doctest``
+
+:Polish:
+    #. Obliczy pole trójkąta
+    #. Użytkownik poda wysokość i długość podstawy
+    #. Wprowadzone dane będą tylko ``int`` lub ``float``
+    #. Funkcja musi przechodzić ``doctest``
+
 Trigonometry
 ------------
 * Complexity level: easy
@@ -143,10 +162,17 @@ Trigonometry
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/math_trigonometry.py`
 
-#. Program wczytuje od użytkownika wielkość kąta w stopniach
-#. Użytkownik zawsze podaje ``int`` albo ``float``
-#. Wyświetl wartość funkcji trygonometrycznych (sin, cos, tg, ctg)
-#. Jeżeli funkcja trygonometryczna nie istnieje dla danego kąta podnieś stosowny wyjątek
+:English:
+    #. Read input (angle in degrees) from user
+    #. User will type ``int`` or ``float``
+    #. Print all trigonometric functions (sin, cos, tg, ctg)
+    #. If there is no value for this angle, raise an exception
+
+:Polish:
+    #. Program wczytuje od użytkownika wielkość kąta w stopniach
+    #. Użytkownik zawsze podaje ``int`` albo ``float``
+    #. Wyświetl wartość funkcji trygonometrycznych (sin, cos, tg, ctg)
+    #. Jeżeli funkcja trygonometryczna nie istnieje dla danego kąta podnieś stosowny wyjątek
 
 Euclidean distance 2D
 ---------------------
@@ -154,48 +180,55 @@ Euclidean distance 2D
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/math_euclidean_2d.py`
-* Input data: :numref:`listing-math-euclidean-distance-2D`
 
-#. Dane są dwa punkty :math:`A` i :math:`B` o podanych koordynatach ``tuple``
-#. Punkty :math:`A` i :math:`B` są dwuwymiarowe ``(x, y)``
-#. Oblicz odległość między nimi
-#. Wykorzystaj algorytm Euklidesa
-#. Funkcja musi przechodzić ``doctest`` :numref:`listing-math-euclidean-distance-2D`
+:English:
+    #. Given are two points ``A: Tuple[int, int]`` and ``B: Tuple[int, int]``
+    #. Coordinates are in cartesian system
+    #. Points :math:`A` and :math:`B` are in two dimensional space
+    #. Calculate distance between points using Euclidean algorithm
+    #. Function must pass ``doctest``
 
-.. code-block:: python
-    :name: listing-math-euclidean-distance-2D
-    :caption: Euclidean distance 2D
+:Polish:
+    #. Dane są dwa punkty ``A: Tuple[int, int]`` i ``B: Tuple[int, int]``
+    #. Koordynaty są w systemie kartezjańskim
+    #. Punkty :math:`A` i :math:`B` są w dwuwymiarowej przestrzeni
+    #. Oblicz odległość między nimi wykorzystując algorytm Euklidesa
+    #. Funkcja musi przechodzić ``doctest``
 
-    def euclidean_distance(A, B):
-        """
-        >>> A = (1, 0)
-        >>> B = (0, 1)
-        >>> euclidean_distance(A, B)
-        1.4142135623730951
+:Input:
+    .. code-block:: python
+        :caption: Euclidean distance 2D
 
-        >>> euclidean_distance((0,0), (1,0))
-        1.0
+        def euclidean_distance(A, B):
+            """
+            >>> A = (1, 0)
+            >>> B = (0, 1)
+            >>> euclidean_distance(A, B)
+            1.4142135623730951
 
-        >>> euclidean_distance((0,0), (1,1))
-        1.4142135623730951
+            >>> euclidean_distance((0,0), (1,0))
+            1.0
 
-        >>> euclidean_distance((0,1), (1,1))
-        1.0
+            >>> euclidean_distance((0,0), (1,1))
+            1.4142135623730951
 
-        >>> euclidean_distance((0,10), (1,1))
-        9.055385138137417
-        """
-        x1 = ...
-        y1 = ...
-        x2 = ...
-        y2 = ...
-        return ...
+            >>> euclidean_distance((0,1), (1,1))
+            1.0
+
+            >>> euclidean_distance((0,10), (1,1))
+            9.055385138137417
+            """
+            x1 = ...
+            y1 = ...
+            x2 = ...
+            y2 = ...
+            return ...
 
 .. figure:: ../machine-learning/img/k-nearest-neighbors-euclidean-distance.png
     :scale: 100%
     :align: center
 
-    Wyliczanie odległości w celu oszacowania przynależności do zbioru. Zwróć uwagę, że bez względu na ilość wymiarów wzór się niewiele różni.
+    Calculate Euclidean distance in Cartesian coordinate system
 
 Euclidean distance ``n`` dimensions
 -----------------------------------
@@ -203,46 +236,56 @@ Euclidean distance ``n`` dimensions
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/math_euclidean_multi_dim.py`
-* Input data: :numref:`listing-math-euclidean-distance-n-dimensions`
 
-#. Dane są dwa punkty :math:`A` i :math:`B` o podanych koordynatach ``tuple``
-#. Punkty :math:`A` i :math:`B` są na :math:`N`-wymiarowej przestrzeni ``(x, y, ...)``
-#. Punkty :math:`A` i :math:`B` muszą być równo-wymiarowe
-#. Funkcja musi przechodzić ``doctest`` :numref:`listing-math-euclidean-distance-n-dimensions`
+:English:
+    #. Given are two points ``A: Tuple[int, int]`` and ``B: Tuple[int, int]``
+    #. Coordinates are in cartesian system
+    #. Points :math:`A` and :math:`B` are in :math:`N`-dimensional space
+    #. Points :math:`A` and :math:`B` must be in the same space
+    #. Calculate distance between points using Euclidean algorithm
+    #. Function must pass ``doctest``
 
-.. code-block:: python
-    :name: listing-math-euclidean-distance-n-dimensions
-    :caption: Euclidean distance N-dimension
+:Polish:
+    #. Dane są dwa punkty ``A: Tuple[Sequence[int]]`` i ``B: Tuple[Sequence[int]]``
+    #. Koordynaty są w systemie kartezjańskim
+    #. Punkty :math:`A` i :math:`B` są w :math:`N`-wymiarowej przestrzeni
+    #. Punkty :math:`A` i :math:`B` muszą być w tej samej przestrzeni
+    #. Oblicz odległość między nimi wykorzystując algorytm Euklidesa
+    #. Funkcja musi przechodzić ``doctest``
 
-    def euclidean_distance(A, B):
-        """
-        >>> A = (0,1,0,1)
-        >>> B = (1,1,0,0)
-        >>> euclidean_distance(A, B)
-        1.4142135623730951
+:Input:
+    .. code-block:: python
+        :caption: Euclidean distance N-dimension
 
-        >>> euclidean_distance((0,0,0), (0,0,0))
-        0.0
+        def euclidean_distance(A, B):
+            """
+            >>> A = (0,1,0,1)
+            >>> B = (1,1,0,0)
+            >>> euclidean_distance(A, B)
+            1.4142135623730951
 
-        >>> euclidean_distance((0,0,0), (1,1,1))
-        1.7320508075688772
+            >>> euclidean_distance((0,0,0), (0,0,0))
+            0.0
 
-        >>> euclidean_distance((0,1,0,1), (1,1,0,0))
-        1.4142135623730951
+            >>> euclidean_distance((0,0,0), (1,1,1))
+            1.7320508075688772
 
-        >>> euclidean_distance((0,0,1,0,1), (1,1,0,0,1))
-        1.7320508075688772
+            >>> euclidean_distance((0,1,0,1), (1,1,0,0))
+            1.4142135623730951
 
-        >>> euclidean_distance((0,0,1,0,1), (1,1))
-        Traceback (most recent call last):
-            ...
-        ValueError: Punkty muszą być w przestrzeni tylu-samo wymiarowej
-        """
-        x1 = ...
-        y1 = ...
-        x2 = ...
-        y2 = ...
-        return ...
+            >>> euclidean_distance((0,0,1,0,1), (1,1,0,0,1))
+            1.7320508075688772
+
+            >>> euclidean_distance((0,0,1,0,1), (1,1))
+            Traceback (most recent call last):
+                ...
+            ValueError: Punkty muszą być w przestrzeni tylu-samo wymiarowej
+            """
+            x1 = ...
+            y1 = ...
+            x2 = ...
+            y2 = ...
+            return ...
 
 Matrix multiplication
 ---------------------
@@ -251,49 +294,31 @@ Matrix multiplication
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/math_matmul.py`
 
-#. Napisz program mnożący macierze wykorzystując zagnieżdżone pętle ``for``
+:English:
+    #. Multiply matrices using nested ``for`` loops
+    #. Function must pass ``doctest``
 
-.. code-block:: python
+:Polish:
+    #. Pomnóż macierze wykorzystując zagnieżdżone pętle ``for``
+    #. Funkcja musi przechodzić ``doctest``
 
-    A = [
-        [1, 0],
-        [0, 1]
-    ]
+:Input:
+    .. code-block:: python
 
-.. code-block:: python
+        def matrix_multiplication(A, B):
+            """
+            >>> A = [[1, 0], [0, 1]]
+            >>> B = [[4, 1], [2, 2]]
+            >>> matrix_multiplication(A, B)
+            [[4, 1], [2, 2]]
 
-    def matrix_multiplication(A, B):
-        """
-        >>> A = [[1, 0], [0, 1]]
-        >>> B = [[4, 1], [2, 2]]
-        >>> matrix_multiplication(A, B)
-        [[4, 1], [2, 2]]
-
-        >>> A = [[1,0,1,0], [0,1,1,0], [3,2,1,0], [4,1,2,0]]
-        >>> B = [[4,1], [2,2], [5,1], [2,3]]
-        >>> matrix_multiplication(A, B)
-        [[9, 2], [7, 3], [21, 8], [28, 8]]
-        """
-        return
+            >>> A = [[1,0,1,0], [0,1,1,0], [3,2,1,0], [4,1,2,0]]
+            >>> B = [[4,1], [2,2], [5,1], [2,3]]
+            >>> matrix_multiplication(A, B)
+            [[9, 2], [7, 3], [21, 8], [28, 8]]
+            """
+            return
 
 :Hints:
-    * macierz zerowa
-    * trzy pętle
-
-Triangle
---------
-* Complexity level: easy
-* Lines of code to write: 5 lines
-* Estimated time of completion: 10 min
-* Filename: :download:`solution/math_triangle.py`
-
-#. Napisz program, który obliczy pole trójkąta.
-#. Użytkownik poda wysokość i długość podstawy tego trójkąta.
-#. Wysokość i długość podstawy mogą być liczbami niecałkowitymi.
-#. Wykorzystaj doctest do przetestowania funkcji.
-
-:The whys and wherefores:
-    * Umiejętność wykorzystania gotowych funkcji w zewnętrznej bibliotece
-    * Umiejętność wyszukania informacji na temat API funkcji w dokumentacji języka i jego odpowiedniej wersji
-    * Stworzenie dwóch alternatywnych podejść do rozwiązania zadania
-    * Porównanie czytelności obu rozwiązań
+    * Zero matrix
+    * Three nested ``for`` loops

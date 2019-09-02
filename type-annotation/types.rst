@@ -116,8 +116,9 @@ List of dict
     ]
 
     list_of_dicts: List[Dict[str, int]] = [
-        {"key1": 1},
-        {"key2": 2}
+        {'a': 1},
+        {'b': 2},
+        {'c': 3},
     ]
 
 List of tuples
@@ -126,27 +127,15 @@ List of tuples
 
     my_data: List[tuple] = [
         (1, 2, 3),
-        (1, 2, 3),
+        (1.1, 2.2, 3.3),
+        ('a', 'b', 'c'),
+        ('a', 2, 3.3),
     ]
 
     my_data: List[Tuple[int, int, int]] = [
         (1, 2, 3),
         (1, 2, 3),
-    ]
-
-
-Type aliases
-============
-.. code-block:: python
-
-    from typing import List, Tuple
-
-    GeographicCoordinate = Tuple[float, float]
-
-    locations: List[GeographicCoordinate] = [
-        (25.91375, -60.15503),
-        (-11.01983, -166.48477),
-        (-11.01983, -166.48477)
+        (1, 2, 3),
     ]
 
 
@@ -201,11 +190,11 @@ Optional
     from typing import Optional
 
 
-    def starting_position(substring: str, text: str) -> Optional[int]:
-        if substring in text:
-            return text.find(substring)
-        else:
+    def non_zero(number: int) -> Optional[int]:
+        if not number:
             return None
+        else:
+            return number
 
 
 The NoReturn type
@@ -217,6 +206,22 @@ The NoReturn type
 
     def stop() -> NoReturn:
         raise RuntimeError
+
+
+Type aliases
+============
+.. code-block:: python
+
+    from typing import List, Tuple
+
+
+    GeographicCoordinate = Tuple[float, float]
+
+    locations: List[GeographicCoordinate] = [
+        (25.91375, -60.15503),
+        (-11.01983, -166.48477),
+        (-11.01983, -166.48477)
+    ]
 
 
 Iterable
