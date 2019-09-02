@@ -229,7 +229,7 @@ Named arguments
 
 
     data = read_csv(
-        filepath_or_buffer='iris.csv',
+        filepath_or_buffer='iris-clean.csv',
         encoding='utf-8',
         verbose=True,
         usecols=['Sepal Length', 'Species']

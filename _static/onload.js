@@ -1,27 +1,27 @@
-const ROMAN_NUMERALS = {
-    1000: "M",
-    900: "CM",
-    500: "D",
-    400: "CD",
-    100: "C",
-    90: "XC",
-    50: "L",
-    40: "XL",
-    10: "X",
-    9: "IX",
-    4: "IV",
-    5: "V",
-    1: "I",
-};
-
-function toRoman(number) {
-    if (number === 0)
-        return "";
-
-    for (let index of Object.keys(ROMAN_NUMERALS).reverse())
-        if (number >= index)
-            return ROMAN_NUMERALS[index] + toRoman(number - index);
-}
+// const ROMAN_NUMERALS = {
+//     1000: "M",
+//     900: "CM",
+//     500: "D",
+//     400: "CD",
+//     100: "C",
+//     90: "XC",
+//     50: "L",
+//     40: "XL",
+//     10: "X",
+//     9: "IX",
+//     4: "IV",
+//     5: "V",
+//     1: "I",
+// };
+//
+// function toRoman(number) {
+//     if (number === 0)
+//         return "";
+//
+//     for (let index of Object.keys(ROMAN_NUMERALS).reverse())
+//         if (number >= index)
+//             return ROMAN_NUMERALS[index] + toRoman(number - index);
+// }
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -44,8 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     chapters.forEach((chapter, i) => {
-        let roman = toRoman(i+1);
-        chapter.innerHTML = `${roman}. ${chapter.innerHTML}`;
+        // let roman = toRoman(i+1);
+        // chapter.innerHTML = `${roman}. ${chapter.innerHTML}`;
+        chapter.innerHTML = `${i}. ${chapter.innerHTML}`;
 
         chapter.onclick = () => {
             let ul = chapter.nextElementSibling;

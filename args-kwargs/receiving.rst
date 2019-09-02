@@ -164,18 +164,26 @@ Unpacking from sequence
 * Estimated time of completion: 3 min
 * Filename: :download:`solution/unpacking_hosts.py`
 
-#. Dany jest ciąg znaków:
+:English:
+    #. Split input data by white space
+    #. Extract ip address and host names
+    #. Use asterisk ``*`` notation
 
+:Polish:
+    #. Podziel dane wejściowe po białych znakach
+    #. Wydostań wartości adresu ip i nazw hostów
+    #. Przy parsowaniu linii skorzystaj z konstrukcji z gwiazdką ``*``
+
+:Input:
     .. code-block:: python
 
-        '10.13.37.1      nasa.gov esa.int roscosmos.ru'
+        INPUT = '10.13.37.1      nasa.gov esa.int roscosmos.ru'
 
-#. Podziel go po białych znakach i wydostań wartości:
+:Output:
+    .. code-block:: python
 
-    * ``ip: str``
-    * ``hosts: List[str]``
-
-#. Przy parsowaniu linii skorzystaj z konstrukcji z gwiazdką ``*``
+        * ``ip: str``
+        * ``hosts: List[str]``
 
 Unpacking from nested sequence
 ------------------------------
@@ -184,11 +192,19 @@ Unpacking from nested sequence
 * Estimated time of completion: 3 min
 * Filename: :download:`solution/unpacking_iris.py`
 
-#. Dany jest zbiór:
+:English:
+    #. Extract header and content from input data
+    #. Use asterisk ``*`` notation
 
+:Polish:
+    #. Z danych wejściowych oddziel nagłówek i dane
+    #. Skorzystaj z konstrukcji z gwiazdką ``*``
+
+:Input:
     .. code-block:: python
+        :caption: Input
 
-        DATA = [
+        INPUT: List[tuple] = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, 'virginica'),
             (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -213,9 +229,15 @@ Unpacking from nested sequence
             (4.6, 3.1, 1.5, 0.2, 'setosa'),
         ]
 
-#. Ze zbioru oddziel nagłówek i dane:
+:Output:
+    .. code-block:: python
+        :caption: Output
 
-    * ``header: Tuple[str]``
-    * ``data: List[tuple]``
+        header: Tuple[str]
+        # ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
 
-#. Przy podziale skorzystaj z konstrukcji z gwiazdką ``*``
+        data: List[tuple]
+        # (5.8, 2.7, 5.1, 1.9, 'virginica'),
+        # (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        # (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        # ...

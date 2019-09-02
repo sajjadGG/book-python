@@ -284,13 +284,47 @@ Trailing Commas
 
 Indents
 -------
-.. literalinclude:: src/convention-indent-good.py
-    :language: python
+.. code-block:: python
     :caption: Good
 
-.. literalinclude:: src/convention-indent-bad.py
-    :language: python
+    # More indentation included to distinguish this from the rest.
+    def server(
+            host='localhost', port=443, secure=True,
+            username='admin', password='admin'):
+        return locals()
+
+
+    # Aligned with opening delimiter.
+    connection = server(host='localhost', port=443, secure=True,
+                        username='admin', password='admin')
+
+    # Hanging indents should add a level.
+    connection = server(
+        host='localhost', port=443, secure=True,
+        username='admin', password='admin')
+
+    # The best
+    connection = server(
+        host='localhost',
+        username='admin',
+        password='admin',
+        port=443,
+        secure=True,
+    )
+
+.. code-block:: python
     :caption: Bad
+
+    # Further indentation required as indentation is not distinguishable.
+    def Connection(
+        host='localhost', port=1337,
+        username='admin', password='admin'):
+        return host, port, username, password
+
+
+    # Arguments on first line forbidden when not using vertical alignment.
+    connection = Connection(host='localhost', port=1337,
+        username='admin', password='admin')
 
 Brackets
 --------

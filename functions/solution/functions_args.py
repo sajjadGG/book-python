@@ -1,11 +1,11 @@
-# https://raw.githubusercontent.com/AstroMatt/book-python/master/database/data/iris.csv
+# https://raw.githubusercontent.com/AstroMatt/book-python/master/functions/data/iris-clean.csv
 
 
 def print_iris(sepal_length, sepal_width, *args, **kwargs):
     print(locals())
 
 
-with open(r'../data/iris.csv') as file:
+with open(r'../data/iris-clean.csv') as file:
 
     # skip first line in file
     file.readline()

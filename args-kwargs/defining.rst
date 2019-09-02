@@ -249,8 +249,13 @@ Average
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/kwargs_average.py`
 
-#. Napisz funkcję wyliczającą średnią arytmetyczną
-#. Funckcja przyjmuje dowolną ilość pozycyjnych argumentów
+:English:
+    #. Create function ``average()``, which calculates arithmetic mean
+    #. Function can have arbitrary number of positional arguments
+
+:Polish:
+    #. Napisz funkcję ``average()``, wyliczającą średnią arytmetyczną
+    #. Funkcja przyjmuje dowolną ilość pozycyjnych argumentów
 
 args
 ----
@@ -259,43 +264,67 @@ args
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/kwargs_numeric_args.py`
 
-#. Stwórz funkcję ``is_numeric``
-#. Funkcja może przyjmować tylko argumenty pozycyjne
-#. Podawane argumenty mogą być dowolnego typu
-#. Za pomocą ``isinstance()`` sprawdź:
+:English:
+    #. Create function ``is_numeric``
+    #. Function can have arbitrary number of positional arguments
+    #. Arguments can be of any type
+    #. Using ``type()`` check:
 
-    - Zwróć ``True`` jeżeli wszystkie argumenty są tylko typów ``int`` lub ``float``
-    - Zwróć ``False`` jeżeli którykolwiek jest innego typu
+        #. Return ``True`` if all arguments are ``int`` or ``float`` only
+        #. Return ``False`` if any argument is different type
 
-#. Nie używaj ``all()`` oraz ``any()``
+    #. Do not use ``all()`` and ``any()``
+
+:Polish:
+    #. Stwórz funkcję ``is_numeric``
+    #. Funkcja może przyjmować tylko argumenty pozycyjne
+    #. Podawane argumenty mogą być dowolnego typu
+    #. Za pomocą ``type()`` sprawdź:
+
+        #. Zwróć ``True`` jeżeli wszystkie argumenty są tylko typów ``int`` lub ``float``
+        #. Zwróć ``False`` jeżeli którykolwiek jest innego typu
+
+    #. Nie używaj ``all()`` oraz ``any()``
 
 :The whys and wherefores:
-    * Definiowanie i uruchamianie funkcji
-    * Wiele argumentów pozycyjnych
-    * Sprawdzanie przypadków brzegowych (niekompatybilne argumenty)
-    * Parsowanie argumentów funkcji
-    * Rzutowanie i konwersja typów
+    * Defining and calling functions
+    * Arbitrary number of positional arguments
+    * Corner case checking
+    * Function arguments checking
+    * Type casting
 
 args and kwargs
 ---------------
-* Complexity level: easy
+* Complexity level: medium
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/kwargs_numeric_kwargs.py`
 
-#. Stwórz funkcję ``is_numeric``
-#. Funkcja może przyjmować zarówno argumenty pozycyjne jak i nazwane
-#. Podawane argumenty mogą być dowolnego typu
-#. Za pomocą ``isinstance()`` sprawdź:
+:English:
+    #. Create function ``is_numeric``
+    #. **Function can have arbitrary number of positional and keyword arguments**
+    #. Arguments can be of any type
+    #. Using ``type()`` check:
 
-    - Zwróć ``True`` jeżeli wszystkie argumenty są tylko typów ``int`` lub ``float``
-    - Zwróć ``False`` jeżeli którykolwiek jest innego typu
+        #. Return ``True`` if all arguments are ``int`` or ``float`` only
+        #. Return ``False`` if any argument is different type
 
-#. Nie używaj ``all()`` oraz ``any()``
+    #. Do not use ``all()`` and ``any()``
+
+:Polish:
+    #. Stwórz funkcję ``is_numeric``
+    #. **Funkcja może przyjmować zarówno argumenty pozycyjne jak i nazwane**
+    #. Podawane argumenty mogą być dowolnego typu
+    #. Za pomocą ``type()`` sprawdź:
+
+        #. Zwróć ``True`` jeżeli wszystkie argumenty są tylko typów ``int`` lub ``float``
+        #. Zwróć ``False`` jeżeli którykolwiek jest innego typu
+
+    #. Nie używaj ``all()`` oraz ``any()``
 
 :The whys and wherefores:
-    * Definiowanie i uruchamianie funkcji
-    * Wiele argumentów pozycyjnych i nazwanych
-    * Sprawdzanie przypadków brzegowych (niekompatybilne argumenty)
-    * Parsowanie argumentów funkcji
-    * Rzutowanie i konwersja typów
+    * Defining and calling functions
+    * Arbitrary number of positional arguments
+    * Corner case checking
+    * Function arguments checking
+    * Type casting

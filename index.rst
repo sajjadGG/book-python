@@ -58,7 +58,6 @@ Data Methods
     /data-methods/set-methods.rst
     /data-methods/indexes.rst
     /data-methods/slice.rst
-    /data-methods/unpacking.rst
     /data-methods/type-system.rst
     /data-methods/syntax-similarities.rst
 
@@ -92,8 +91,6 @@ Functions
 
     /functions/basic.rst
     /functions/types.rst
-    /functions/kwargs-define.rst
-    /functions/kwargs-call.rst
     /functions/recurrence.rst
     /functions/callable.rst
 
@@ -105,13 +102,50 @@ Standard Library
     :numbered:
     :caption: Standard Library
 
+    /stdlib/builtin.rst
+    /stdlib/keywords.rst
+    /stdlib/print.rst
     /stdlib/venv.rst
     /stdlib/pip.rst
     /stdlib/import.rst
-    /stdlib/keywords.rst
-    /stdlib/builtin.rst
-    /stdlib/print.rst
-    /stdlib/regex.rst
+
+***************
+Args and Kwargs
+***************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Args and Kwargs
+
+    /args-kwargs/receiving.rst
+    /args-kwargs/defining.rst
+    /args-kwargs/calling.rst
+
+***************
+Type Annotation
+***************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Type Annotation
+
+    /type-annotation/types.rst
+    /type-annotation/introspection.rst
+    /type-annotation/checking.rst
+    /type-annotation/annotating.rst
+
+*******************
+Regular Expressions
+*******************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Regular Expressions
+
+    /regular-expressions/syntax.rst
+    /regular-expressions/regex.rst
+    /regular-expressions/examples.rst
+    /regular-expressions/standards.rst
 
 ****
 Math
@@ -242,7 +276,6 @@ Good Engineering Practice
     /good-engineering-practice/pep8.rst
     /good-engineering-practice/pep20.rst
     /good-engineering-practice/code-smells.rst
-    /good-engineering-practice/type-annotation.rst
     /good-engineering-practice/documentation.rst
 
 *****

@@ -268,22 +268,25 @@ Iris
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/kwargs_iris.py`
-* Input data: https://raw.githubusercontent.com/AstroMatt/book-python/master/functions/data/iris.csv
 
-#. Otwórz link w przeglądarce i skopiuj zawartość do pliku na dysku o nazwie ``iris.csv``
-#. Z pliku ``iris.csv`` odseparuj nagłówek i dane
-#. Z nagłówka odrzuć rekord ``species``
-#. Stwórz funkcję ``print_iris(species, **pomiary)``, która wyświetli zawartość wszystkich argumentów za pomocą ``locals()``
-#. Dla każdego rekordu w danych:
+:English:
+    #. Open in browser https://raw.githubusercontent.com/AstroMatt/book-python/master/args-kwargs/data/iris-clean.csv
+    #. Write input data to file ``iris-clean.csv``
+    #. Read file and separate header from measurements
+    #. Remove ``species`` from header
+    #. Remove species field from data
+    #. Convert data to ``List[dict]`` by zipping header and measurements
+    #. Create function ``average(**kwargs)``, function
+    #. Pass arguments as keywords
+    #. Calculate average for each measurement
 
-    #. Usuń białe spacje
-    #. Podziel po przecinku ``,``
-    #. Wyniki podziału zapisz do dwóch zmiennych:
-
-        * ``pomiary: Dict[str, float]`` - pomiary
-        * ``gatunek: str`` - nazwa gatunku
-
-    #. Odpalaj funkcję ``print_iris()``, podając wartości ``pomiary`` i ``gatunek``
-    #. ``gatunek`` ma być podany pozycyjnie
-    #. ``pomiary`` mają być podane nazwanie
-
+:Polish:
+    #. Otwórz w przeglądarce https://raw.githubusercontent.com/AstroMatt/book-python/master/args-kwargs/data/iris-clean.csv
+    #. Zapisz dane wejściowe do pliku ``iris-clean.csv``
+    #. Wczytaj plik i odseparuj nagłówek od danych
+    #. Usuń ``species`` z nagłówka
+    #. Usuń pole z nazwą gatunku z pomiarów
+    #. Przekonwertuj dane na ``List[dict]`` łącząc nagłówek i pomiary
+    #. Stwórz funkcję ``average(**kwargs)``
+    #. Podawaj nazwane argumenty
+    #. Wylicz średnią dla każdego pomiaru

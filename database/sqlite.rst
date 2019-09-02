@@ -163,9 +163,26 @@ SQLite Iris
     * Creating indexes (extra task)
 
 :Input:
-    .. literalinclude:: assignment/database-iris.csv
-        :language: python
+    .. code-block:: text
         :caption: Input
+
+        4.3,3.0,1.1,0.1,0
+        5.8,4.0,1.2,0.2,0
+        5.7,4.4,1.5,0.4,1
+        5.4,3.9,1.3,0.4,2
+        5.1,3.5,1.4,0.3,1
+        5.7,3.8,1.7,0.3,0
+        5.1,3.8,1.5,0.3,0
+        5.4,3.4,1.7,0.2,1
+        5.1,3.7,1.5,0.4,0
+        4.6,3.6,1.0,0.2,0
+        5.1,3.3,1.7,0.5,2
+        4.8,3.4,1.9,0.2,0
+        5.0,3.0,1.6,0.2,1
+        5.0,3.4,1.6,0.4,2
+        5.2,3.5,1.5,0.2,1
+        5.2,3.4,1.4,0.2,2
+        4.7,3.2,1.6,0.2,0
 
 Creating relations in database
 ------------------------------
@@ -187,14 +204,78 @@ Creating relations in database
     #. Wypisz dane z bazy wykorzystując relację JOIN
 
 :Input:
-    .. literalinclude:: assignment/database-addressbook.txt
-        :language: text
+    .. code-block:: text
         :caption: Input
 
+        José, Jiménez
+            2101 E NASA Pkwy, 77058, Houston, Texas, USA
+            , Kennedy Space Center, 32899, Florida, USA
+
+        Mark, Watney
+            4800 Oak Grove Dr, 91109, Pasadena, California, USA
+            2825 E Ave P, 93550, Palmdale, California, USA
+
+        Иван, Иванович
+            Kosmodrom Bajkonur, Bajkonur, Kazachstan
+
+        Melissa Lewis,
+            <NO ADDRESS>
+
+        Alex Vogel
+            Linder Hoehe, 51147, Köln, Germany
+
 :Hint:
-    .. literalinclude:: assignment/database-addressbook.sql]
-        :language: sql
+    .. code-block:: sql
         :caption: Hint
+
+        CREATE TABLE IF NOT EXISTS contact (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            created DATETIME,
+            modified DATETIME,
+            first_name TEXT,
+            last_name TEXT,
+            date_of_birth DATE
+        );
+
+        CREATE UNIQUE INDEX IF NOT EXISTS last_name_index ON contact (last_name);
+        CREATE INDEX IF NOT EXISTS modified_index ON contact (modified);
+
+        CREATE TABLE IF NOT EXISTS address (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            contact_id INTEGER,
+            street TEXT,
+            city TEXT,
+            state TEXT,
+            code INT,
+            country TEXT
+        );
+
+        INSERT INTO contact VALUES (
+            NULL,
+            :created,
+            :modified,
+            :first_name,
+            :last_name,
+            :date_of_birth
+        );
+
+        INSERT INTO address VALUES (
+            NULL,
+            :contact_id
+            :street,
+            :city,
+            :state,
+            :code,
+            :country
+        );
+
+        UPDATE contact SET
+            first_name=:firstname,
+            last_name=:lastname,
+            modified=:modified
+        WHERE id=:id;
+
+        SELECT * FROM contact;
 
 Relational data in one table
 ----------------------------
@@ -215,6 +296,22 @@ Relational data in one table
     #. Która metody jest zgodna z ACID?
 
 :Input:
-    .. literalinclude:: assignment/database-addressbook.txt
-        :language: text
+    .. code-block:: text
         :caption: Input
+
+        José, Jiménez
+            2101 E NASA Pkwy, 77058, Houston, Texas, USA
+            , Kennedy Space Center, 32899, Florida, USA
+
+        Mark, Watney
+            4800 Oak Grove Dr, 91109, Pasadena, California, USA
+            2825 E Ave P, 93550, Palmdale, California, USA
+
+        Иван, Иванович
+            Kosmodrom Bajkonur, Bajkonur, Kazachstan
+
+        Melissa Lewis,
+            <NO ADDRESS>
+
+        Alex Vogel
+            Linder Hoehe, 51147, Köln, Germany
