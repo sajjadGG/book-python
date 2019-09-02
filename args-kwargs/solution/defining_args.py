@@ -3,6 +3,8 @@ from typing import Any
 
 def is_numeric(*args: Any) -> bool:
     """
+    >>> is_numeric()
+    False
     >>> is_numeric(1)
     True
     >>> is_numeric(1, 1.5)
@@ -10,8 +12,6 @@ def is_numeric(*args: Any) -> bool:
     >>> is_numeric(True)
     False
     >>> is_numeric('one', 1)
-    False
-    >>> is_numeric()
     False
     >>> is_numeric([])
     False
@@ -22,8 +22,8 @@ def is_numeric(*args: Any) -> bool:
         return False
 
     for arg in args:
-        if type(arg) not in {int, float}:
         # if not isinstance(arg, (int, float)):
+        if type(arg) not in {int, float}:
             return False
 
     return True

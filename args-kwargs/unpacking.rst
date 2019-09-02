@@ -185,7 +185,7 @@ Unpacking from sequence
         ip: str
         # 10.13.37.1
 
-        hosts: List[str]
+        hosts: list
         # ['nasa.gov', 'esa.int', 'roscosmos.ru']
 
 Unpacking from nested sequence
@@ -207,7 +207,7 @@ Unpacking from nested sequence
     .. code-block:: python
         :caption: Input
 
-        INPUT: List[tuple] = [
+        INPUT: list = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, 'virginica'),
             (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -236,11 +236,13 @@ Unpacking from nested sequence
     .. code-block:: python
         :caption: Output
 
-        header: Tuple[str]
+        header: tuple
         # ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
 
-        data: List[tuple]
-        # (5.8, 2.7, 5.1, 1.9, 'virginica'),
-        # (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        # (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-        # ...
+        data: list
+        # [
+        #   (5.8, 2.7, 5.1, 1.9, 'virginica'),
+        #   (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        #   (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        #   ...
+        # ]

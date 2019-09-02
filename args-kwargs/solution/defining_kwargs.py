@@ -8,7 +8,7 @@ def is_numeric(*args: Any, **kwargs: Any) -> bool:
         return False
 
     for arg in data:
-        if not type(arg) in {int, float}:
+        if type(arg) not in {int, float}:
         # if not isinstance(arg, (int, float)):
             return False
 

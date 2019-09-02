@@ -5,6 +5,12 @@ Defining function with arbitrary number of arguments
 
 Recap information about function parameters
 ===========================================
+* positional arguments
+* keyword (named) arguments
+* default values
+* keyword arguments must be on the right side
+* order of keyword arguments doesn't matter
+
 .. code-block:: python
 
     def echo(a, b):
@@ -12,10 +18,10 @@ Recap information about function parameters
         print(b)
 
 
-    echo(1, 2)       # pozycyjne
-    echo(a=1, b=2)   # nazwane, kolejność nie ma znaczenia
-    echo(b=2, a=1)   # nazwane, kolejność nie ma znaczenia
-    echo(1, b=2)     # pozycyjne i nazwane
+    echo(1, 2)       # positional arguments
+    echo(a=1, b=2)   # keyword arguments
+    echo(b=2, a=1)   # keyword arguments, order doesn't matter
+    echo(1, b=2)     # positional and keyword arguments
     echo(a=1, 2)     # SyntaxError: positional argument follows keyword argument
 
 
@@ -32,11 +38,11 @@ Arbitrary number of positional arguments
         print(args)
 
 
-    echo()                        # ()
-    echo(1)                       # (1,)
-    echo(2, 3)                    # (2, 3)
-    echo('red', 2)                # ('red', 2)
-    echo('red', 'green', 'blue')  # ('red', 'green', 'blue')
+    echo()                     # ()
+    echo(1)                    # (1,)
+    echo(2, 3)                 # (2, 3)
+    echo('a', 'b')             # ('a', 'b')
+    echo('a', 2, 3.3)          # ('a', 2, 3.3)
 
 .. code-block:: python
 
@@ -74,7 +80,7 @@ Arbitrary number of keyword arguments
         print(kwargs)
 
 
-    echo(a=10)                                      # {'a': 10}
+    echo(a=1)                                       # {'a': 1}
     echo(color='red')                               # {'color': 'red'}
     echo(first_name='Jan', last_name='Twardowski')  # {'first_name': 'Jan', 'last_name': Twardowski}
 
@@ -94,19 +100,8 @@ Arbitrary number of keyword arguments
     def echo(a, b, c=0, **kwargs):
         print(a)       # 1
         print(b)       # 2
-        print(c)       # 0
-        print(kwargs)  # {'d':7, 'e': 8}
-
-
-    echo(1, 2, d=7, e=8)
-
-.. code-block:: python
-
-    def echo(a, b, c=0, **kwargs):
-        print(a)       # 1
-        print(b)       # 2
         print(c)       # 3
-        print(kwargs)  # {'d':7, 'e': 8}
+        print(kwargs)  # {'d': 7, 'e': 8}
 
 
     echo(1, 2, 3, d=7, e=8)
@@ -114,6 +109,18 @@ Arbitrary number of keyword arguments
 
 Arbitrary number of positional and named arguments
 ==================================================
+.. code-block:: python
+
+    def echo(a, b, c=0, *args, **kwargs):
+        print(a)       # 1
+        print(b)       # 2
+        print(c)       # 0
+        print(args)    # ()
+        print(kwargs)  # {}
+
+
+    echo(1, 2)
+
 .. code-block:: python
 
     def echo(a, b, c=0, *args, **kwargs):
@@ -133,7 +140,7 @@ Arbitrary number of positional and named arguments
         print(b)       # 2
         print(c)       # 0
         print(args)    # ()
-        print(kwargs)  # {'d':7, 'e': 8}
+        print(kwargs)  # {'d': 7, 'e': 8}
 
 
     echo(1, 2, d=7, e=8)
@@ -145,10 +152,11 @@ Arbitrary number of positional and named arguments
         print(b)       # 2
         print(c)       # 3
         print(args)    # (4, 5, 6)
-        print(kwargs)  # {'d':7, 'e': 8}
+        print(kwargs)  # {'d': 7, 'e': 8}
 
 
     echo(1, 2, 3, 4, 5, 6, d=7, e=8)
+
 
 Keyword only
 ============
@@ -176,9 +184,10 @@ Keyword only
     def echo(a, b, /, c, d, *, e, f):
         print(a, b, c, d, e, f)
 
-    echo(10, 20, 30, d=40, e=50, f=60)      # is valid
-    echo(10, b=20, c=30, d=40, e=50, f=60)  # b cannot be a keyword argument
-    echo(10, 20, 30, 40, 50, f=60)          # e must be a keyword argument
+    echo(1, 2, 3, 4, e=5, f=6)      # is valid
+    echo(1, 2, 3, d=4, e=5, f=6)    # d must be a positional argument
+    echo(1, 2, 3, 4, 5, f=6)        # e must be a keyword argument
+
 
 Use cases
 =========
@@ -245,9 +254,9 @@ Assignments
 Average
 -------
 * Complexity level: easy
-* Lines of code to write: 2 lines
+* Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/kwargs_average.py`
+* Filename: :download:`solution/defining_average.py`
 
 :English:
     #. Create function ``average()``, which calculates arithmetic mean
@@ -262,7 +271,7 @@ args
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/kwargs_numeric_args.py`
+* Filename: :download:`solution/defining_args.py`
 
 :English:
     #. Create function ``is_numeric``
@@ -298,7 +307,7 @@ args and kwargs
 * Complexity level: medium
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/kwargs_numeric_kwargs.py`
+* Filename: :download:`solution/defining_kwargs.py`
 
 :English:
     #. Create function ``is_numeric``
