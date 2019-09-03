@@ -1,7 +1,7 @@
 import csv
 
 
-FILE = r'../data/iris.csv'
+FILE = r'../data/iris-clean.csv'
 FIELDNAMES = [
     'Sepal length',
     'Sepal width',
@@ -17,6 +17,8 @@ with open(FILE) as file:
         fieldnames=FIELDNAMES,
         delimiter=',',
         quoting=csv.QUOTE_NONE)
+
+    next(data)
 
     for row in data:
         print(dict(row))

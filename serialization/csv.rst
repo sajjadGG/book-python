@@ -33,7 +33,7 @@ Dialects
 
     * ``quotechar='"'``
     * ``delimiter=';'``
-    * ``lineterminator='\n'``
+    * ``lineterminator='\r\n'``
     * ``encoding='...'`` - depends on Windows version and settings
 
 * Encoding:
@@ -43,6 +43,7 @@ Dialects
     * ``iso-8859-2`` - ISO standard for Central Europe (including Poland)
     * ``cp1250`` or ``windows-1250`` - Polish encoding on Windows
     * ``cp1251`` or ``windows-1251`` - Russian encoding on Windows
+    * ``cp1252`` or ``windows-1252`` - Western European encoding on Windows
 
 Read data from CSV file
 =======================
@@ -86,7 +87,7 @@ Write data to CSV file
     ]
 
 
-    with open(INPUT, mode='w') as file:
+    with open(FILE, mode='w') as file:
         writer = csv.DictWriter(
             f=file,
             fieldnames=['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species'],
@@ -373,14 +374,8 @@ Read and parse data from CSV file
     #. Save data to ``iris-clean.csv`` in your script folder
     #. Using ``csv.DictReader`` read the content
     #. Use explicit ``encoding``, ``delimiter`` and ``quotechar``
-    #. Replace column names to:
-
-        * Sepal length
-        * Sepal width
-        * Petal length
-        * Petal width
-        * Species
-
+    #. Replace column names (see output data)
+    #. Skip the first line (header)
     #. Print data on the screen
 
 :Polish:
@@ -388,15 +383,16 @@ Read and parse data from CSV file
     #. Zapisz jego zawartość na dysku w miejscu gdzie masz skrypty
     #. Korzystając z ``csv.DictReader`` wczytaj zawartość pliku
     #. Podaj jawnie ``encoding``, ``delimiter`` oraz ``quotechar``
-    #. Nazwy poszczególnych kolumn:
-
-        * Sepal length
-        * Sepal width
-        * Petal length
-        * Petal width
-        * Species
-
+    #. Nazwy poszczególnych kolumn (patrz dane wyjściowe)
+    #. Pomiń pierwszą linię (nagłówek)
     #. Wypisz wiersze na ekranie
+
+:Output:
+    .. code-block:: python
+
+        {'Sepal length': '5.4', 'Sepal width': '3.9', 'Petal length': '1.3', 'Petal width': '0.4', 'Species': 'setosa'}
+        {'Sepal length': '5.9', 'Sepal width': '3.0', 'Petal length': '5.1', 'Petal width': '1.8', 'Species': 'virginica'}
+        {'Sepal length': '6.0', 'Sepal width': '3.4', 'Petal length': '4.5', 'Petal width': '1.6', 'Species': 'versicolor'}
 
 Write fixed schema data to CSV file
 -----------------------------------
@@ -425,13 +421,22 @@ Write fixed schema data to CSV file
     .. code-block:: python
         :caption: Input
 
-        DATA: List[dict] = [
+        INPUT = [
             {'first_name': 'Jan',  'last_name': 'Twardowski'},
             {'first_name': 'Jose', 'last_name': 'Jimenez'},
             {'first_name': 'Mark', 'last_name': 'Watney'},
             {'first_name': 'Ivan', 'last_name': 'Ivanovic'},
             {'first_name': 'Melissa', 'last_name': 'Lewis'},
         ]
+
+.. code-block:: text
+
+    "first_name";"last_name"
+    "Jan";"Twardowski"
+    "Jose";"Jimenez"
+    "Mark";"Watney"
+    "Ivan";"Ivanovic"
+    "Melissa";"Lewis"
 
 Write variable schema data to file
 ----------------------------------
@@ -466,7 +471,7 @@ Write variable schema data to file
     .. code-block:: python
         :caption: Input
 
-        DATA: List[dict] = [
+        INPUT = [
             {'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
             {'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
             {'Sepal length': 6.3, 'Petal width': 1.8, 'Species': 'virginica'},
