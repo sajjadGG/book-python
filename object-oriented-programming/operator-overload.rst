@@ -212,33 +212,33 @@ Address Book
 
 .. code-block:: python
 
-    class Contact:
+    class Astronaut:
         def __str__(self):
             return f'{self.__dict__}'
 
 
-    class Address:
+    class Location:
         def __repr__(self):
             return f'{self.__dict__}'
 
 
-    contact = Contact(first_name='Jan', last_name='Twardowski', addresses=(
-        Address(center='Johnson Space Center', location='Houston, TX'),
-        Address(center='Kennedy Space Center', location='Merritt Island, FL'),
+    astro = Astronaut(name='Jan Twardowski', locations=(
+        Location(name='Armstrong Flight Research Center'),,
+        Location(name='Kennedy Space Center'),
     ))
 
-    contact += Address(center='Jet Propulsion Laboratory', location='Pasadena, CA')
-    contact += Address(center='Armstrong Flight Research Center', location='Edwards AFB, CA')
+    astro += Location(name='Jet Propulsion Laboratory')
+    astro += Location(name='Johnson Space Center')
 
-    print(contact)
-    # {'first_name': 'Jan', 'last_name':'Twardowski', 'addresses': [
-    #       {'center': 'Johnson Space Center', 'location': 'Houston, TX'},
-    #       {'center': 'Kennedy Space Center', 'location': 'Merritt Island, FL'},
-    #       {'center': 'Jet Propulsion Laboratory', 'location': 'Pasadena, CA'},
-    #       {'center': 'Armstrong Flight Research Center', 'location': 'Edwards AFB, CA'}
+    print(astro)
+    # {'name': 'Jan Twardowski', 'location': [
+    #       {'name': 'Johnson Space Center'},
+    #       {'name': 'Kennedy Space Center'},
+    #       {'name': 'Jet Propulsion Laboratory'},
+    #       {'name': 'Armstrong Flight Research Center'},
     # ]}
 
-    if Address(center='Armstrong Flight Research Center', location='Edwards AFB, CA') in contact:
+    if Location(name='Johnson Space Center') in contact:
         print(True)
     else:
         print(False)
