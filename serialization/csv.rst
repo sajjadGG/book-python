@@ -429,14 +429,15 @@ Write fixed schema data to CSV file
             {'first_name': 'Melissa', 'last_name': 'Lewis'},
         ]
 
-.. code-block:: text
+:Output:
+    .. code-block:: text
 
-    "first_name";"last_name"
-    "Jan";"Twardowski"
-    "Jose";"Jimenez"
-    "Mark";"Watney"
-    "Ivan";"Ivanovic"
-    "Melissa";"Lewis"
+        "first_name";"last_name"
+        "Jan";"Twardowski"
+        "Jose";"Jimenez"
+        "Mark";"Watney"
+        "Ivan";"Ivanovic"
+        "Melissa";"Lewis"
 
 Write variable schema data to file
 ----------------------------------

@@ -307,19 +307,7 @@ Classes and instances
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/introduction_instances.py`
-
-:Polish:
-    #. Stwórz klasę ``Temperature``
-    #. Klasa ma pamiętać wprowadzoną wartość
-    #. Stwórz trzy instancje klasy ``Temperature``
-    #. Wartości mają być podawane przy inicjalizacji:
-
-        #. instancja ``celsius`` z temperaturą 36.6
-        #. instancja ``fahrenheit`` z temperaturą 97.88
-        #. instancja ``kelvin`` z temperaturą 309.75
-
-    #. Wypisz na ekranie temperatury zapamiętane w instancji
+* Filename: :download:`solution/syntax_instances.py`
 
 :English:
     #. Create class ``Temperature``
@@ -327,18 +315,30 @@ Classes and instances
     #. Create three instances of ``Temperature`` class
     #. Values had to be passed at the initialization
 
-        #. instance ``celsius`` with temperature 36.6
-        #. instance ``fahrenheit`` with temperature 97.88
-        #. instance ``kelvin`` with temperature 309.75
+        #. Instance ``celsius`` with temperature 36.6
+        #. Instance ``fahrenheit`` with temperature 97.88
+        #. Instance ``kelvin`` with temperature 309.75
 
     #. Print on the screen temperatures remembered in instances
+
+:Polish:
+    #. Stwórz klasę ``Temperature``
+    #. Klasa ma pamiętać wprowadzoną wartość
+    #. Stwórz trzy instancje klasy ``Temperature``
+    #. Wartości mają być podawane przy inicjalizacji:
+
+        #. Instancja ``celsius`` z temperaturą 36.6
+        #. Instancja ``fahrenheit`` z temperaturą 97.88
+        #. Instancja ``kelvin`` z temperaturą 309.75
+
+    #. Wypisz na ekranie temperatury zapamiętane w instancji
 
 Data Modeling
 -------------
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/introduction_modeling.py`
+* Filename: :download:`solution/syntax_modeling.py`
 
 :English:
     #. Model the data using classes
@@ -366,7 +366,7 @@ Methods
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/introduction_methods.py`
+* Filename: :download:`solution/syntax_methods.py`
 
 :English:
     #. Create class ``Iris`` with fields from input data
@@ -397,15 +397,15 @@ Methods
     .. code-block:: python
         :caption: Setosa initial values
 
-        sepal_length: 5.4
-        sepal_width: 3.9
-        petal_length: 1.3
-        petal_width: 0.4
+        sepal_length = 5.4
+        sepal_width = 3.9
+        petal_length = 1.3
+        petal_width = 0.4
 
     .. code-block:: python
         :caption: Virginica initial values
 
-        sepal_length: 5.8
-        sepal_width: 2.7
-        petal_length: 5.1
-        petal_width: 1.9
+        sepal_length = 5.8
+        sepal_width = 2.7
+        petal_length = 5.1
+        petal_width = 1.9

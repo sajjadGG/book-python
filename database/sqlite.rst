@@ -99,47 +99,19 @@ SQLite Iris
 :English:
     #. Save input data as ``sqlite_iris.csv`` file
     #. Read data from file
-    #. Create ``species: Dict[int, str]`` with structure:
-
-        * 0 - setosa
-        * 1 - versicolor
-        * 2 - virginica
-
-    #. Save data to ``sqlite3`` database table
-    #. Replace ``int`` to ``str`` according to ``species`` conversion table
-    #. Column names:
-
-        * id - ``int``
-        * species - ``str``
-        * datetime - ``datetime``
-        * sepal_length - ``float``
-        * sepal_width - ``float``
-        * petal_length - ``float``
-        * petal_width - ``float``
-
+    #. Connect to the ``sqlite3`` using context manager (``with``)
+    #. Create table ``iris``, column names are specified in output data (see below)
+    #. Save data to database table
+    #. Replace ``int`` to ``str`` according to ``SPECIES`` conversion table (see input data)
     #. Print results using ``SELECT * FROM iris ORDER BY datetime DESC``
 
 :Polish:
     #. Zapisz dane wejściowe do pliku ``sqlite_iris.csv``
     #. Wczytaj dane z pliku
-    #. Stwórz ``species: Dict[int, str]`` o strukturze:
-
-        * 0 - setosa
-        * 1 - versicolor
-        * 2 - virginica
-
-    #. Podmień ``int`` na ``str`` zgodnie z tabelą podstawień ``species``
-    #. Zapisz dane do tabeli w bazie danych ``sqlite3``
-    #. Nazwy kolumn:
-
-        * id - ``int``
-        * species - ``str``
-        * datetime - ``datetime``
-        * sepal_length - ``float``
-        * sepal_width - ``float``
-        * petal_length - ``float``
-        * petal_width - ``float``
-
+    #. Połącz się do bazy danych ``sqlite3`` używając context managera (``with``)
+    #. Stwórz tabelę ``iris`` o kolumnach podanych w sekcji dane wyjściowe (patrz poniżej)
+    #. Zapisz dane do tabeli w bazie danych
+    #. Podmień ``int`` na ``str`` zgodnie z tabelą podstawień ``SPECIES`` (patrz dane wejściowe)
     #. Wyniki wypisz z bazy danych ``SELECT * FROM iris ORDER BY datetime DESC``
 
 :Non functional requirements:
@@ -164,7 +136,7 @@ SQLite Iris
 
 :Input:
     .. code-block:: text
-        :caption: Input
+        :caption: Input data
 
         4.3,3.0,1.1,0.1,0
         5.8,4.0,1.2,0.2,0
@@ -183,6 +155,26 @@ SQLite Iris
         5.2,3.5,1.5,0.2,1
         5.2,3.4,1.4,0.2,2
         4.7,3.2,1.6,0.2,0
+
+    .. code-block:: python
+        :caption: Input Species substitution ``dict``
+
+        SPECIES = {
+            0: 'setosa',
+            1: 'versicolor',
+            2: 'virginica',
+        }
+
+.. code-block:: python
+
+        id: int
+        species: str
+        datetime: datetime
+        sepal_length: float
+        sepal_width: float
+        petal_length: float
+        petal_width: float
+
 
 Creating relations in database
 ------------------------------
