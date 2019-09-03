@@ -1,54 +1,52 @@
-class Contact:
-    def __init__(self, first_name, last_name, addresses=()):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.addresses = list(addresses)
+class Astronaut:
+    def __init__(self, name, locations=()):
+        self.name = name
+        self.locations = list(locations)
 
     def __str__(self):
-        return f'{self.__dict__}'
+        return f'{self.name}, {self.locations}'
 
     def __iadd__(self, other):
-        self.addresses.append(other)
+        self.locations.append(other)
         return self
 
     def __contains__(self, item):
-        for address in self.addresses:
+        for address in self.locations:
             if address == item:
                 return True
         return False
 
 
-class Address:
-    def __init__(self, location, center):
-        self.center = center
-        self.location = location
+class Location:
+    def __init__(self, name):
+        self.name = name
 
     def __repr__(self):
-        return f'{self.__dict__}'
+        return f'\n\t{self.name}'
 
     def __eq__(self, other):
-        if self.location == other.location:
+        if self.name == other.name:
             return True
         else:
             return False
 
 
-contact = Contact(first_name='Jan', last_name='Twardowski', addresses=(
-    Address(center='Johnson Space Center', location='Houston, TX'),
-    Address(center='Kennedy Space Center', location='Merritt Island, FL'),
+astro = Astronaut('Jan Twardowski', locations=(
+    Location('Armstrong Flight Research Center'),
+    Location('Kennedy Space Center'),
 ))
 
-contact += Address(center='Jet Propulsion Laboratory', location='Pasadena, CA')
-contact += Address(center='Armstrong Flight Research Center', location='Edwards AFB, CA')
+astro += Location('Jet Propulsion Laboratory')
+astro += Location('Johnson Space Center')
 
-print(contact)
-# {'name': 'José Jiménez', 'addresses': [
-#       {'location': 'JPL'},
-#       {'location': 'Houston'},
-#       {'location': 'KSC'}
-# ]}
+print(astro)
+# Jan Twardowski, [
+#     Armstrong Flight Research Center,
+#     Kennedy Space Center,
+#     Jet Propulsion Laboratory,
+#     Johnson Space Center]
 
-if Address(center='Armstrong Flight Research Center', location='Edwards AFB, CA') in contact:
+if Location('Johnson Space Center') in astro:
     print(True)
 else:
     print(False)
