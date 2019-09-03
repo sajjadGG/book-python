@@ -1,7 +1,7 @@
 import sys
 
 
-FILE = '../assignment/etc-passwd.txt'
+FILE = 'etc-passwd.txt'
 
 
 def function():

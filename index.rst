@@ -93,6 +93,7 @@ Functions
     /functions/types.rst
     /functions/recurrence.rst
     /functions/callable.rst
+    /functions/generator.rst
 
 ****************
 Standard Library
@@ -133,6 +134,7 @@ Args and Kwargs
     /args-kwargs/unpacking.rst
     /args-kwargs/defining.rst
     /args-kwargs/calling.rst
+    /args-kwargs/decorator.rst
 
 *******************
 Regular Expressions
@@ -234,19 +236,6 @@ OOP Syntax
     /oop-syntax/dataclass.rst
     /oop-syntax/exam.rst
 
-*********
-Protocols
-*********
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Protocols
-
-    /protocols/generator.rst
-    /protocols/iterator.rst
-    /protocols/context-manager.rst
-    /protocols/decorator.rst
-
 ************
 OOP Paradigm
 ************
@@ -278,6 +267,8 @@ OOP Advanced
     :numbered:
     :caption: OOP Advanced
 
+    /oop-advanced/iterator.rst
+    /oop-advanced/context-manager.rst
     /oop-advanced/staticmethod.rst
     /oop-advanced/classmethod.rst
     /oop-advanced/object-identity.rst

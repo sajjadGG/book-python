@@ -270,6 +270,41 @@ LRU (least recently used) cache
 Przykład
 ========
 
+Example 1
+---------
+.. code-block:: python
+
+    def make_paragraph(fn):
+
+        def decorator(*args, **kwargs):
+            value = fn(*args, **kwargs)
+            print(f'<p>{value}</p>')
+            return value
+
+        return decorator
+
+
+    class HTMLReport:
+
+        @make_paragraph
+        def first_method(self, *args, **kwargs):
+            return 'First Method'
+
+        @make_paragraph
+        def second_method(self, *args, **kwargs):
+            return 'Second Method'
+
+
+    if __name__ == "__main__":
+        x = HTMLReport()
+        x.first_method()
+        x.second_method()
+
+    """
+    <p>First Method</p>
+    <p>Second Method</p>
+    """
+
 Example 2
 ---------
 .. code-block:: python
@@ -344,19 +379,67 @@ Example 3
 
 Use cases
 ---------
-.. literalinclude:: src/decorators-case-study-flask.py
-    :name: listing-decorators-case-study-flask
-    :language: python
+.. code-block:: python
     :caption: Use case wykorzystania dekotatorów do poprawienia czytelności kodu Flask
 
-.. literalinclude:: src/decorators-case-study-django.py
-    :name: listing-decorators-case-study-django
-    :language: python
+    from flask import json
+    from flask import Response
+    from flask import render_template
+    from flask import Flask
+
+    app = Flask(__name__)
+
+
+    @app.route('/summary')
+    def summary():
+        data = {'first_name': 'Jan', 'last_name': 'Twardowski'}
+        return Response(
+            response=json.dumps(data),
+            status=200,
+            mimetype='application/json'
+        )
+
+    @app.route('/post/<int:post_id>')
+    def show_post(post_id):
+        post = ... # get post from Database by post_id
+        return render_template('post.html', post=post)
+
+
+    @app.route('/hello/')
+    @app.route('/hello/<name>')
+    def hello(name=None):
+        return render_template('hello.html', name=name)
+
+
+.. code-block:: python
     :caption: Use case wykorzystania dekotatorów do poprawienia czytelności kodu Django
+
+    from django.shortcuts import render
+    from django.contrib.auth.decorators import login_required
+
+
+    def edit_profile(request):
+        """
+        Function checks whether user is_authenticated
+        If not, user will be redirected to login page
+        """
+        if not request.user.is_authenticated:
+            return render(request, 'templates/login_error.html')
+        else:
+            return render(request, 'templates/edit-profile.html')
+
+
+    @login_required
+    def edit_profile(request):
+        """
+        Decorator checks whether user is_authenticated
+        If not, user will be redirected to login page
+        """
+        return render(request, 'templates/edit-profile.html')
 
 
 Decorator library
------------------
+=================
 - https://wiki.python.org/moin/PythonDecoratorLibrary
 
 

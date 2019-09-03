@@ -353,10 +353,27 @@ Reversing ``dict`` keys with values
 
 Readability counts
 ==================
-.. literalinclude:: src/generator-clean-code.py
-    :name: listing-generator-clean-code
-    :language: python
+.. code-block:: python
     :caption: Clean Code in generator
+
+    DATA = {'username': 'Иван Иванович', 'agency': 'Roscosmos'}
+
+
+    def asd(x):
+        return x.replace('Иван', 'Ivan')
+
+
+    out = {
+        value: asd(value)
+        for key, value in DATA.items()
+        if key == 'username'
+    }
+    # {'Иван Иванович': 'Ivan Ivanоvic'}
+
+
+    out = ['CCCP' if k == 'Roscosmos' else 'USA' for k,v in DATA.items() if k == 'agency']
+    print(out)
+    # ['USA']
 
 .. code-block:: python
 
@@ -399,13 +416,12 @@ Assignments
 
 Generators vs. Comprehensions - iris
 ------------------------------------
-* Complexity level: easy
+* Complexity level: medium
 * Lines of code to write: 40 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/generator_iris.py`
-* Input data: https://raw.githubusercontent.com/AstroMatt/book-python/master/database/data/iris.csv
 
-#. Skopiuj dane do pliku "iris.csv"
+#. Zapisz dane :download:`solution/iris-clean.csv` do pliku "generator_iris.csv"
 #. Zaczytaj dane pomijając nagłówek
 #. Napisz funkcję która zwraca wszystkie pomiary dla danego gatunku
 #. Gatunek będzie podawany jako ``str`` do funkcji
@@ -422,12 +438,12 @@ Generators vs. Comprehensions - iris
 
 Generators vs. Comprehensions - passwd
 --------------------------------------
-* Complexity level: easy
+* Complexity level: medium
 * Lines of code to write: 40 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/generator_passwd.py`
 
-#. Napisz program, który wczyta plik :numref:`listing-file-etc-passwd-2`
+#. Napisz program, który wczyta plik z danymi wejśiowymi (patrz poniżej)
 #. Przefiltruj linie, tak aby nie zawierały komentarzy (zaczynające się od ``#``) oraz pustych linii
 #. Przefiltruj linie, aby wyciągnąć konta systemowe - użytkowników, którzy mają UID (trzecie pole) mniejsze niż 1000
 #. Zwróć listę loginów użytkowników systemowych
@@ -444,29 +460,29 @@ Generators vs. Comprehensions - passwd
     * Parsowanie pliku
     * Filtrowanie treści w locie
 
-.. code-block:: text
-    :name: listing-file-etc-passwd-2
-    :caption: ``/etc/passwd`` sample file
+:Input:
+    .. code-block:: text
+        :caption: ``/etc/passwd`` sample file
 
-    ##
-    # User Database
-    #   - User name
-    #   - Encrypted password
-    #   - User ID number (UID)
-    #   - User's group ID number (GID)
-    #   - Full name of the user (GECOS)
-    #   - User home directory
-    #   - Login shell
-    ##
+        ##
+        # User Database
+        #   - User name
+        #   - Encrypted password
+        #   - User ID number (UID)
+        #   - User's group ID number (GID)
+        #   - Full name of the user (GECOS)
+        #   - User home directory
+        #   - Login shell
+        ##
 
-    root:x:0:0:root:/root:/bin/bash
-    bin:x:1:1:bin:/bin:/sbin/nologin
-    daemon:x:2:2:daemon:/sbin:/sbin/nologin
-    adm:x:3:4:adm:/var/adm:/sbin/nologin
-    shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
-    halt:x:7:0:halt:/sbin:/sbin/halt
-    nobody:x:99:99:Nobody:/:/sbin/nologin
-    sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
-    peck:x:1000:1000:Max Peck:/home/peck:/bin/bash
-    jimenez:x:1001:1001:José Jiménez:/home/jimenez:/bin/bash
-    ivanovic:x:1002:1002:Ivan Иванович:/home/ivanovic:/bin/bash
+        root:x:0:0:root:/root:/bin/bash
+        bin:x:1:1:bin:/bin:/sbin/nologin
+        daemon:x:2:2:daemon:/sbin:/sbin/nologin
+        adm:x:3:4:adm:/var/adm:/sbin/nologin
+        shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+        halt:x:7:0:halt:/sbin:/sbin/halt
+        nobody:x:99:99:Nobody:/:/sbin/nologin
+        sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+        peck:x:1000:1000:Max Peck:/home/peck:/bin/bash
+        jimenez:x:1001:1001:José Jiménez:/home/jimenez:/bin/bash
+        ivanovic:x:1002:1002:Ivan Иванович:/home/ivanovic:/bin/bash
