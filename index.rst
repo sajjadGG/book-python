@@ -222,6 +222,7 @@ OOP Syntax
     :maxdepth: 2
     :numbered:
     :caption: OOP Syntax
+    :name: OOP Syntax
 
     /oop-syntax/class.rst
     /oop-syntax/attribute.rst
@@ -253,6 +254,7 @@ OOP Paradigm
     :maxdepth: 2
     :numbered:
     :caption: OOP Paradigm
+    :name: OOP Paradigm
 
     /oop-paradigm/operator-overload.rst
     /oop-paradigm/fields-static-dynamic.rst
