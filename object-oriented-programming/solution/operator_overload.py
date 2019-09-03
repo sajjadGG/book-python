@@ -1,6 +1,10 @@
+from pprint import pprint
+
+
 class Contact:
-    def __init__(self, name, addresses=()):
-        self.name = name
+    def __init__(self, first_name, last_name, addresses=()):
+        self.first_name = first_name
+        self.last_name = last_name
         self.addresses = list(addresses)
 
     def __str__(self):
@@ -18,7 +22,8 @@ class Contact:
 
 
 class Address:
-    def __init__(self, location):
+    def __init__(self, location, center):
+        self.center = center
         self.location = location
 
     def __repr__(self):
@@ -31,9 +36,13 @@ class Address:
             return False
 
 
-contact = Contact(name='José Jiménez', addresses=[Address(location='JPL')])
-contact += Address(location='Houston')
-contact += Address(location='KSC')
+contact = Contact(first_name='Jan', last_name='Twardowski', addresses=(
+    Address(center='Johnson Space Center', location='Houston, TX'),
+    Address(center='Kennedy Space Center', location='Merritt Island, FL'),
+))
+
+contact += Address(center='Jet Propulsion Laboratory', location='Pasadena, CA')
+contact += Address(center='Armstrong Flight Research Center', location='Edwards AFB, CA')
 
 print(contact)
 # {'name': 'José Jiménez', 'addresses': [
@@ -42,7 +51,7 @@ print(contact)
 #       {'location': 'KSC'}
 # ]}
 
-if Address(location='Houston') in contact:
+if Address(center='Armstrong Flight Research Center', location='Edwards AFB, CA') in contact:
     print(True)
 else:
     print(False)

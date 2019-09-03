@@ -200,7 +200,15 @@ Address Book
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/operator_overload.py`
 
-#. Dopisz odpowiednie metody do ``Contact`` i ``Address`` aby poniższy kod zadziałał poprawnie
+:English:
+    #. Use the code from listing below
+    #. Override operators of ``Contact`` and ``Address`` for code to work correctly
+    #. ``print`` output was prettified, no need to implement this
+
+:Polish:
+    #. Użyj kodu z listingu poniżej
+    #. Nadpisz operatory ``Contact`` i ``Address`` aby poniższy kod zadziałał poprawnie
+    #. Wyświetlanie ``print`` zostało upiększone, nie musisz tego implementować
 
 .. code-block:: python
 
