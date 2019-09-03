@@ -309,15 +309,29 @@ Classes and instances
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/introduction_instances.py`
 
-#. Stwórz klasę ``Temperature``
-#. Klasa ma pamiętać wprowadzoną wartość
-#. Stwórz trzy instancje klasy ``Temperature`` z wartościami podawanymi przy inicjalizacji:
+:Polish:
+    #. Stwórz klasę ``Temperature``
+    #. Klasa ma pamiętać wprowadzoną wartość
+    #. Stwórz trzy instancje klasy ``Temperature``
+    #. Wartości mają być podawane przy inicjalizacji:
 
-    * instancja ``celsius`` z temperaturą 36.6
-    * instancja ``fahrenheit`` z temperaturą 97.88
-    * instancja ``kelvin`` z temperaturą 309.75
+        #. instancja ``celsius`` z temperaturą 36.6
+        #. instancja ``fahrenheit`` z temperaturą 97.88
+        #. instancja ``kelvin`` z temperaturą 309.75
 
-#. Wypisz temperatury na ekranie
+    #. Wypisz na ekranie temperatury zapamiętane w instancji
+
+:English:
+    #. Create class ``Temperature``
+    #. Class has to remember input data
+    #. Create three instances of ``Temperature`` class
+    #. Values had to be passed at the initialization
+
+        #. instance ``celsius`` with temperature 36.6
+        #. instance ``fahrenheit`` with temperature 97.88
+        #. instance ``kelvin`` with temperature 309.75
+
+    #. Print on the screen temperatures remembered in instances
 
 Data Modeling
 -------------
@@ -326,15 +340,26 @@ Data Modeling
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/introduction_modeling.py`
 
-#. Zamodeluj dane w programie za pomocą klas:
+:English:
+    #. Model the data using classes
+    #. Create instances for each record
+    #. How many classes are there?
+    #. How many instances are there?
 
-    * Jan, Twardowski, 1961-04-12
-    * Mark, Watney, 1969-07-21
-    * Kennedy Space Center, Merritt Island, FL
-    * Johnson Space Center, Houston, TX
-    * Jet Propulsion Laboratory, Pasadena, TX
+:Polish:
+    #. Zamodeluj dane za pomocą klas
+    #. Stwórz instancje dla każdego wpisu
+    #. Jak wiele klas możemy wyróżnić?
+    #. Jak wiele instancji możemy wyróżnić?
 
-#. Stwórz instancje dla każdego wpisu
+:Input:
+    .. code-block:: text
+
+        Jan, Twardowski, 1961-04-12
+        Mark, Watney, 1969-07-21
+        Kennedy Space Center, Merritt Island, FL
+        Johnson Space Center, Houston, TX
+        Jet Propulsion Laboratory, Pasadena, TX
 
 Methods
 -------
@@ -343,28 +368,44 @@ Methods
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/introduction_methods.py`
 
-#. Stwórz klasę ``Iris`` z polami:
+:English:
+    #. Create class ``Iris`` with fields from input data
+    #. Create method ``total()`` which sums all the numerical attributes values
+    #. Create method ``mean()`` which calculates mean of numerical attributes values
+    #. Create ``setosa`` object with attributes set at the initialization (see input data)
+    #. Create ``virginica`` object with attributes set at the initialization (see input data)
+    #. Print on the screen species name, total and mean of each instance
 
-    - ``sepal_length: float``,
-    - ``sepal_width: float``,
-    - ``petal_length: float``,
-    - ``petal_width: float``,
-    - ``species: str``.
+:Polish:
+    #. Stwórz klasę ``Iris`` z polami z danych wejściowych
+    #. Napisz metodę ``total()`` wyliczającą sumę atrybutów numerycznych obiektu
+    #. Napisz metodę ``mean()`` wyliczającą średnią atrybutów numerycznych obiektu
+    #. Stwórz obiekt ``setosa`` z pomiarami podawanymi przy inicjalizacji (patrz dane wejściowe)
+    #. Stwórz obiekt ``virginica`` z pomiarami podawanymi przy inicjalizacji (patrz dane wejściowe)
+    #. Wyświetl na ekranie nazwę gatunku oraz sumę i średnią z pomiarów dla każdej instancji
 
-#. Napisz metodę ``total()`` wyliczającą sumę atrybutów numerycznych obiektu
-#. Napisz metodę ``average()`` wyliczającą średnią powyższych właściwości
-#. Stwórz obiekt ``setosa`` z pomiarami podawanymi przy inicjalizacji:
+:Input:
+    .. code-block:: python
+        :caption: Iris parameters
 
-    * sepal_length: 5.4
-    * sepal_width: 3.9
-    * petal_length: 1.3
-    * petal_width: 0.4
+        sepal_length: float
+        sepal_width: float
+        petal_length: float
+        petal_width: float
+        species: str
 
-#. Stwórz drugi obiekt ``virginica`` z pomiarami podawanymi przy inicjalizacji:
+    .. code-block:: python
+        :caption: Setosa initial values
 
-    * sepal_length: 5.8
-    * sepal_width: 2.7
-    * petal_length: 5.1
-    * petal_width: 1.9
+        sepal_length: 5.4
+        sepal_width: 3.9
+        petal_length: 1.3
+        petal_width: 0.4
 
-#. Wyświetl na ekranie nazwę gatunku oraz sumę i średnią z pomiarów dla obu instancji
+    .. code-block:: python
+        :caption: Virginica initial values
+
+        sepal_length: 5.8
+        sepal_width: 2.7
+        petal_length: 5.1
+        petal_width: 1.9

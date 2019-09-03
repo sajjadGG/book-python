@@ -336,13 +336,12 @@ To ISO date format
 * Filename: :download:`solution/datetime_to_iso.py`
 
 :Enlish:
-    #. Using given date and time from below
-    #. Create ``datetime`` object by parsing the date
-    #. Using formatting parameters print the date in ISO format
+    #. Create ``datetime`` object by parsing the given date
+    #. Using formatting parameters print the date and time in ISO format
 
 :Polish:
-    #. Podaną datę przekonwertuj do obiektu ``datetime``:
-    #. Wyświetl w formacie ISO datę i czas
+    #. Podaną datę przekonwertuj do obiektu ``datetime``
+    #. Używając parametrów formatujących wyświetl datę i czas w formacie ISO
 
 :Input:
     .. code-block:: python
