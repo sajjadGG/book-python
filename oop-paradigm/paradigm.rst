@@ -41,9 +41,29 @@ Do not run methods in ``__init__()``
 * Nie powinniśmy uruchamiać innych metod na obiekcie
 * Lepiej aby użytkownik sam wykonał metodę jawnie
 
-.. literalinclude:: src/oop-init-calls.py
-    :language: python
-    :caption: Do not run methods in ``__init__()``
+.. code-block:: python
+    :caption: Let user to call method
+
+    class Server:
+
+        def __init__(self, host, username, password=None):
+            self.host = host
+            self.username = username
+            self.password = password
+            self.connect()    # Better ask user to ``connect()`` explicitly
+
+        def connect(self):
+            print(f'Logging to {self.host} using: {self.username}:{self.password}')
+
+
+    localhost = Server(
+        host='localhost',
+        username='admin',
+        password='admin'
+    )
+
+    # This is better
+    localhost.connect()
 
 
 S.O.L.I.D.

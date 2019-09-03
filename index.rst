@@ -215,35 +215,23 @@ Database
     /database/sql-injection.rst
     /database/sql.rst
 
-***************************
-Object Oriented Programming
-***************************
+**********
+OOP Syntax
+**********
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Object Oriented Programming
+    :caption: OOP Syntax
 
-    /object-oriented-programming/syntax.rst
-    /object-oriented-programming/inheritance.rst
-    /object-oriented-programming/basic.rst
-    /object-oriented-programming/inheritance-composition.rst
-    /object-oriented-programming/fields-static-dynamic.rst
-    /object-oriented-programming/object-str.rst
-    /object-oriented-programming/intermediate.rst
-    /object-oriented-programming/operator-overload.rst
-    /object-oriented-programming/dataclass.rst
-    /object-oriented-programming/enum.rst
-    /object-oriented-programming/object-init.rst
-    /object-oriented-programming/paradigm.rst
-    /object-oriented-programming/interfaces-and-abstracts.rst
-    /object-oriented-programming/polymorphism.rst
-    /object-oriented-programming/object-identity.rst
-    /object-oriented-programming/method-resolution-order.rst
-    /object-oriented-programming/advanced.rst
-    /object-oriented-programming/dynamic-typing.rst
-    /object-oriented-programming/setter-getter-deleter.rst
-    /object-oriented-programming/slots.rst
-    /object-oriented-programming/metaclass.rst
+    /oop-syntax/class.rst
+    /oop-syntax/attribute.rst
+    /oop-syntax/method.rst
+    /oop-syntax/init.rst
+    /oop-syntax/inheritance.rst
+    /oop-syntax/str-repr-format.rst
+    /oop-syntax/enum.rst
+    /oop-syntax/dataclass.rst
+    /oop-syntax/exam.rst
 
 *********
 Protocols
@@ -253,11 +241,49 @@ Protocols
     :numbered:
     :caption: Protocols
 
-    /protocols/descriptor.rst
     /protocols/generator.rst
     /protocols/iterator.rst
     /protocols/context-manager.rst
     /protocols/decorator.rst
+
+************
+OOP Paradigm
+************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: OOP Paradigm
+
+    /oop-paradigm/operator-overload.rst
+    /oop-paradigm/fields-static-dynamic.rst
+    /oop-paradigm/intermediate.rst
+    /oop-paradigm/inheritance-composition.rst
+    /oop-paradigm/method-resolution-order.rst
+    /oop-paradigm/call-new-init.rst
+    /oop-paradigm/polymorphism.rst
+    /oop-paradigm/dynamic-typing.rst
+    /oop-paradigm/placeholder-class.rst
+    /oop-paradigm/interfaces.rst
+    /oop-paradigm/abstract-base-class.rst
+    /oop-paradigm/paradigm.rst
+    /oop-paradigm/exam.rst
+
+************
+OOP Advanced
+************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: OOP Advanced
+
+    /oop-advanced/staticmethod.rst
+    /oop-advanced/classmethod.rst
+    /oop-advanced/object-identity.rst
+    /oop-advanced/setter-getter-deleter.rst
+    /oop-advanced/descriptor.rst
+    /oop-advanced/slots.rst
+    /oop-advanced/metaclass.rst
+    /oop-advanced/exam.rst
 
 *****
 Tests

@@ -100,3 +100,32 @@ Calling parent methods
     flower.petal_length     # 1.4
     flower.petal_width      # 0.2
     flower.species          # setosa
+
+
+Assignments
+===========
+
+Objects and relations
+---------------------
+* Complexity level: medium
+* Lines of code to write: 60 lines
+* Estimated time of completion: 20 min
+* Filename: :download:`solution/basic_relations.py`
+
+:English:
+    #. Client can open a bank account
+    #. Client can have many accounts
+    #. Bank has many clients
+    #. Each account has unique number generated when opening an account
+    #. Client can ask about number of all of his accounts
+    #. Client can add money to the account
+    #. Client can withdraw money from the account
+
+:Polish:
+    #. Klient może otworzyć konto w banku
+    #. Klient może mieć wiele kont
+    #. Bank może mieć wielu klientów
+    #. Każde konto ma unikalny numer, który jest generowany przy zakładaniu
+    #. Klient może odpytać o numery wszystkich swoich kont
+    #. Klient może wpłacić pieniądze na swoje konto
+    #. Klient może wybrać pieniądze z bankomatu

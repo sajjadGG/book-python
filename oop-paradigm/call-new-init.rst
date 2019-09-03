@@ -186,3 +186,49 @@ Why?
 
     file2 = Document('myfile.docx')
     # <__main__.DOCX object at 0x107a6c160>
+
+
+Initial arguments mutability and shared state
+=============================================
+
+.. _Initial arguments mutability and shared state:
+
+Bad
+---
+.. code-block:: python
+    :caption: Initial arguments mutability and shared state
+
+    class Astronaut:
+        def __init__(self, name, locations=[]):
+            self.name = name
+            self.locations = locations
+
+
+    watney = Astronaut('Mark Watney')
+    watney.locations.append('Johnson Space Center')
+    print(watney.addresses)
+    # ['Johnson Space Center']
+
+    twardowski = Astronaut('Jan Twardowski')
+    print(twardowski.locations)
+    # ['Johnson Space Center']
+
+Good
+----
+.. code-block:: python
+    :caption: Initial arguments mutability and shared state
+
+    class Contact:
+        def __init__(self, name, locations=()):
+            self.name = name
+            self.locations = list(locations)
+
+
+    watney = Astronaut('Mark Watney')
+    watney.locations.append('Johnson Space Center')
+    print(watney.locations)
+    # ['Johnson Space Center']
+
+    twardowski = Astronaut('Jan Twardowski')
+    print(twardowski.locations)
+    # []
