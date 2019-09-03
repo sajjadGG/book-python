@@ -120,7 +120,7 @@ Methods
 * Filename: :download:`solution/syntax_methods.py`
 
 :English:
-    #. Create class ``Iris`` with fields from input data
+    #. Create class ``Iris``
     #. Create method ``total()`` which sums all the numerical attributes values
     #. Create method ``mean()`` which calculates mean of numerical attributes values
     #. Create ``setosa`` object with attributes set at the initialization (see input data)
@@ -128,7 +128,7 @@ Methods
     #. Print on the screen species name, total and mean of each instance
 
 :Polish:
-    #. Stwórz klasę ``Iris`` z polami z danych wejściowych
+    #. Stwórz klasę ``Iris``
     #. Napisz metodę ``total()`` wyliczającą sumę atrybutów numerycznych obiektu
     #. Napisz metodę ``mean()`` wyliczającą średnią atrybutów numerycznych obiektu
     #. Stwórz obiekt ``setosa`` z pomiarami podawanymi przy inicjalizacji (patrz dane wejściowe)
@@ -136,15 +136,6 @@ Methods
     #. Wyświetl na ekranie nazwę gatunku oraz sumę i średnią z pomiarów dla każdej instancji
 
 :Input:
-    .. code-block:: python
-        :caption: Iris parameters
-
-        sepal_length: float
-        sepal_width: float
-        petal_length: float
-        petal_width: float
-        species: str
-
     .. code-block:: python
         :caption: Setosa initial values
 

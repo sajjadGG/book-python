@@ -229,7 +229,7 @@ OOP Syntax
     /oop-syntax/method.rst
     /oop-syntax/init.rst
     /oop-syntax/inheritance.rst
-    /oop-syntax/str-repr-format.rst
+    /oop-syntax/stringify.rst
     /oop-syntax/enum.rst
     /oop-syntax/dataclass.rst
     /oop-syntax/exam.rst
@@ -261,7 +261,7 @@ OOP Paradigm
     /oop-paradigm/intermediate.rst
     /oop-paradigm/inheritance-composition.rst
     /oop-paradigm/method-resolution-order.rst
-    /oop-paradigm/call-new-init.rst
+    /oop-paradigm/constructor.rst
     /oop-paradigm/polymorphism.rst
     /oop-paradigm/dynamic-typing.rst
     /oop-paradigm/placeholder-class.rst

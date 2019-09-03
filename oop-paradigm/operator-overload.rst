@@ -123,7 +123,7 @@ Builtin Functions and Keywords
     "``oct(a)``",             "``a.__oct__()``"
     "``hex(a)``",             "``a.__hex__()``"
     "``reversed(a)``",        "``a.__reversed__()``"
-    "``delattr(a, name)``",   "``a.__delattr__(name)``"
+    "``delattr(a, attr)``",   "``a.__delattr__(attr)``"
     "``del a``",              "``a.__del__()``"
 
 .. code-block:: python
@@ -149,10 +149,11 @@ Accessors Overload
 .. csv-table:: Operator Overload
     :header: "Operator", "Description"
 
-    "``a[b]``",                                 "``__getitem__()``"
-    "``a[b] = 10``",                            "``__setitem__()``"
-    "``a in b``",                               "``__contains__()``"
-    "``a[b]`` (when ``b`` is not in ``a``)",    "``__missing__()``"
+    "``a(b)``",                                 "``a.__call__(b)``"
+    "``a[b]``",                                 "``a.__getitem__(b)``"
+    "``a[b] = 10``",                            "``a.__setitem__(b, 10)``"
+    "``a in b``",                               "``a.__contains__(b)``"
+    "``a[b]`` (when ``b`` is not in ``a``)",    "``a.__missing__(b)``"
 
 .. code-block:: python
     :caption: Contains in ``numpy``

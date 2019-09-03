@@ -117,3 +117,21 @@ Good engineering practices
     setosa = IrisSetosa()
     versicolor = IrisVersicolor()
     virginica = IrisVirginica()
+
+Assignments
+===========
+
+Address Book (dataclass)
+------------------------
+* Complexity level: easy
+* Lines of code to write: 6 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/class_instance.py`
+
+:English:
+    #. Create class ``Astronaut``
+    #. Create class ``Location``
+
+:Polish:
+    #. Stwórz klasę ``Astronaut``
+    #. Stwórz klasę ``Location``

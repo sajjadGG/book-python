@@ -132,7 +132,7 @@ Data Modeling
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/syntax_modeling.py`
+* Filename: :download:`solution/attribute_modeling.py`
 
 :English:
     #. Model the data using classes
