@@ -247,17 +247,115 @@ Pandas
     # 75%        6.400000     3.300000      5.100000     1.800000
     # max        7.900000     4.400000      6.900000     2.500000
 
+Hist
+----
+.. code-block:: python
+
+    import matplotlib.pyplot as plt
+    import pandas as pd
+
+
+    FILE = 'https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv'
+
+    df = pd.read_csv(FILE)
     df.hist()
-    # array([
-    #   [
-    #        <matplotlib.axes._subplots.AxesSubplot object at 0x11c2a36d0>,
-    #        <matplotlib.axes._subplots.AxesSubplot object at 0x11f953a90>
-    #    ],
-    #    [
-    #        <matplotlib.axes._subplots.AxesSubplot object at 0x11d87acd0>,
-    #        <matplotlib.axes._subplots.AxesSubplot object at 0x11d6fe990>
-    #    ]
-    #  ], dtype=object)
+    plt.show()
+
+.. figure:: img/matplotlib-pd-hist.png
+    :scale: 100%
+    :align: center
+
+    Vizualization using hist
+
+Density
+-------
+.. code-block:: python
+
+    import matplotlib.pyplot as plt
+    import pandas as pd
+
+
+    FILE = 'https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv'
+
+    df = pd.read_csv(FILE)
+    df.plot(kind='density', subplots=True, layout=(3,3), sharex=False)
+    plt.show()
+
+.. figure:: img/matplotlib-pd-density.png
+    :scale: 100%
+    :align: center
+
+    Vizualization using density
+
+Box
+---
+.. code-block:: python
+
+    import matplotlib.pyplot as plt
+    import pandas as pd
+
+
+    FILE = 'https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv'
+
+    df = pd.read_csv(url)
+    df.plot(kind='box', subplots=True, layout=(3,3), sharex=False, sharey=False)
+    plt.show()
+
+.. figure:: img/matplotlib-pd-box.png
+    :scale: 100%
+    :align: center
+
+    Vizualization using density
+
+Scatter matrix
+--------------
+* The in ``pandas`` version ``0.22`` plotting module has been moved from ``pandas.tools.plotting`` to ``pandas.plotting``
+* As of version ``0.19``, the ``pandas.plotting`` library did not exist
+
+.. code-block:: python
+
+    import matplotlib.pyplot as plt
+    import pandas as pd
+    from pandas.plotting import scatter_matrix
+
+
+    FILE = 'https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv'
+
+    df = pd.read_csv(url)
+    scatter_matrix(df)
+    plt.show()
+
+.. figure:: img/matplotlib-pd-scatter-matrix.png
+    :scale: 100%
+    :align: center
+
+    Vizualization using density
+
+Descriptive statistics
+----------------------
+.. csv-table:: Descriptive statistics
+    :header: "Function", "Description"
+
+    "``count``", "Number of non-null observations"
+    "``sum``", "Sum of values"
+    "``mean``", "Mean of values"
+    "``mad``", "Mean absolute deviation"
+    "``median``", "Arithmetic median of values"
+    "``min``", "Minimum"
+    "``max``", "Maximum"
+    "``mode``", "Mode"
+    "``abs``", "Absolute Value"
+    "``prod``", "Product of values"
+    "``std``", "Unbiased standard deviation"
+    "``var``", "Unbiased variance"
+    "``sem``", "Unbiased standard error of the mean"
+    "``skew``", "Unbiased skewness (3rd moment)"
+    "``kurt``", "Unbiased kurtosis (4th moment)"
+    "``quantile``", "Sample quantile (value at %)"
+    "``cumsum``", "Cumulative sum"
+    "``cumprod``", "Cumulative product"
+    "``cummax``", "Cumulative maximum"
+    "``cummin``", "Cumulative minimum"
 
 
 Assignments
@@ -269,7 +367,6 @@ Read and parse data from CSV file
 * Lines of code to write: 20 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/csv_dictreader.py`
-* Input data: https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris-clean.csv
 
 :English:
     #. Download :download:`data/iris-clean.csv` file
@@ -287,8 +384,8 @@ Read and parse data from CSV file
     #. Print data on the screen
 
 :Polish:
-    #. Otwórz w przeglądarce podany powyżej URL
-    #. Zapisz jego zawartość na dysku w miejscu gdzie masz skrypty w pliku ``iris.csv``
+    #. Pobierz plik :download:`data/iris-clean.csv`
+    #. Zapisz jego zawartość na dysku w miejscu gdzie masz skrypty
     #. Korzystając z ``csv.DictReader`` wczytaj zawartość pliku
     #. Podaj jawnie ``encoding``, ``delimiter`` oraz ``quotechar``
     #. Nazwy poszczególnych kolumn:
