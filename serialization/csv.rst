@@ -447,7 +447,7 @@ Write variable schema data to file
 
 :English:
     #. Using ``csv.DictWriter()`` write variable schema data to CSV file
-    #. ``fieldnames``must be automatically generated from ``DATA``
+    #. ``fieldnames`` must be automatically generated from ``DATA``
     #. ``fieldnames`` must always be in the same order
 
 :Polish:

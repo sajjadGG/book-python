@@ -11,7 +11,7 @@ DATA = [
 ]
 
 
-with open(FILENAME, mode='w') as file:
+with open(FILENAME, mode='w', encoding='utf-8') as file:
     writer = csv.DictWriter(
         f=file,
         fieldnames=['first_name', 'last_name'],
