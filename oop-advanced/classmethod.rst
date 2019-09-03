@@ -17,7 +17,7 @@ When use it?
 Example
 =======
 .. code-block:: python
-    :emphasize-lines: 7-10,21,24,30,31
+    :emphasize-lines: 8-11,22,25,31,32
 
     import json
 

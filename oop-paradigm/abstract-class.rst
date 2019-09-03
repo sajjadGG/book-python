@@ -17,9 +17,6 @@ When use it?
 
 Abstract classes and methods
 ============================
-* Nie można tworzyć instancji
-* Można tworzyć implementację metod
-
 .. code-block:: python
     :caption: Abstract Class
 

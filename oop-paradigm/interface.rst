@@ -6,10 +6,9 @@ Interfaces
 
 What it is?
 ===========
-* Nie można tworzyć instancji
-* Wszystkie metody muszą być zaimplementowane przez potomków
-* Tylko deklaracje metod
-* Metody nie mogą mieć implementacji
+* Cannot instantiate
+* Inheriting class must implement all methods
+* Only method declaration
 
 
 When use it?

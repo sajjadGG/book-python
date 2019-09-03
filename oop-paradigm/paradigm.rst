@@ -36,34 +36,27 @@ Tell - don't ask
     soyuz.ignite()
 
 
-Do not run methods in ``__init__()``
-------------------------------------
-* Nie powinniśmy uruchamiać innych metod na obiekcie
-* Lepiej aby użytkownik sam wykonał metodę jawnie
+Objects and instances
+=====================
+.. code-block:: python
+    :caption: Implicit passing instance to class as ``self``.
+
+    text = 'Jan,Twardowski'
+
+    text.split(',')                     # ['Jan', 'Twardowski']
 
 .. code-block:: python
-    :caption: Let user to call method
+    :caption: Explicit passing instance to class overriding ``self``.
 
-    class Server:
+    text = 'Jan,Twardowski'
 
-        def __init__(self, host, username, password=None):
-            self.host = host
-            self.username = username
-            self.password = password
-            self.connect()    # Better ask user to ``connect()`` explicitly
+    str.split(text, ',')                # ['Jan', 'Twardowski']
 
-        def connect(self):
-            print(f'Logging to {self.host} using: {self.username}:{self.password}')
+.. code-block:: python
+    :caption: Passing anonymous objects as instances.
 
-
-    localhost = Server(
-        host='localhost',
-        username='admin',
-        password='admin'
-    )
-
-    # This is better
-    localhost.connect()
+    'Jan,Twardowski'.split(',')         # ['Jan', 'Twardowski']
+    str.split('Jan,Twardowski', ',')    # ['Jan', 'Twardowski']
 
 
 S.O.L.I.D.

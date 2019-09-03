@@ -1,6 +1,6 @@
-**************
-OOP Basic Exam
-**************
+****
+Exam
+****
 
 
 Dragon (version alpha)

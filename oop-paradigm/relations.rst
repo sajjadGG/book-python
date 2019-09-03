@@ -5,7 +5,6 @@ OOP Intermediate
 ****************
 
 
-
 Relations
 =========
 .. code-block:: python
@@ -30,28 +29,6 @@ Relations
         Astronaut('Mark Watney'),
         Astronaut('Melissa Lewis', locations=()),
     ]
-
-Objects and instances
-=====================
-.. code-block:: python
-    :caption: Implicit passing instance to class as ``self``.
-
-    text = 'Jan,Twardowski'
-
-    text.split(',')                     # ['Jan', 'Twardowski']
-
-.. code-block:: python
-    :caption: Explicit passing instance to class overriding ``self``.
-
-    text = 'Jan,Twardowski'
-
-    str.split(text, ',')                # ['Jan', 'Twardowski']
-
-.. code-block:: python
-    :caption: Passing anonymous objects as instances.
-
-    'Jan,Twardowski'.split(',')         # ['Jan', 'Twardowski']
-    str.split('Jan,Twardowski', ',')    # ['Jan', 'Twardowski']
 
 
 Assignments

@@ -68,4 +68,12 @@ Assignments
 
 Dragon
 ------
-#. Napisz testy jednostkowe dla Smoka z OOP
+* Complexity level: medium
+* Lines of code to write: 100 lines
+* Estimated time of completion: 25 min
+
+:English:
+    #. Write unittest for the dragon created in OOP chapter
+
+:Polish:
+    #. Napisz testy jednostkowe dla Smoka z rozdziału OOP

@@ -349,6 +349,7 @@ Distance conversion doctest
 
 Fix URL Regex
 -------------
+* Complexity level: hard
 * Lines of code to write: 0 lines
 * Estimated time of completion: 5 min
 

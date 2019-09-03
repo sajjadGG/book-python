@@ -1,6 +1,7 @@
-*********************
-OOP Intermediate Exam
-*********************
+****
+Exam
+****
+
 
 Dragon (version beta)
 =====================

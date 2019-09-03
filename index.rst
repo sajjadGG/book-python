@@ -247,15 +247,15 @@ OOP Paradigm
 
     /oop-paradigm/operator-overload.rst
     /oop-paradigm/fields-static-dynamic.rst
-    /oop-paradigm/intermediate.rst
     /oop-paradigm/inheritance-composition.rst
     /oop-paradigm/method-resolution-order.rst
     /oop-paradigm/constructor.rst
+    /oop-paradigm/relations.rst
     /oop-paradigm/polymorphism.rst
     /oop-paradigm/dynamic-typing.rst
     /oop-paradigm/placeholder-class.rst
-    /oop-paradigm/interfaces.rst
-    /oop-paradigm/abstract-base-class.rst
+    /oop-paradigm/interface.rst
+    /oop-paradigm/abstract-class.rst
     /oop-paradigm/paradigm.rst
     /oop-paradigm/exam.rst
 
