@@ -1,6 +1,6 @@
-************************
-Interfaces and Abstracts
-************************
+****************
+Abstract classes
+****************
 
 
 What it is?
@@ -27,10 +27,14 @@ Abstract classes and methods
         def __init__(self, filename):
             self.filename = filename
 
-        @abstractmethod
-        def display(self):
+        def open(self):
             with open(self.filename) as file:
                 return file.read()
+
+        @abstractmethod
+        def display(self):
+            return self.open()
+
 
     class PDFDocument(Document):
         def display(self):

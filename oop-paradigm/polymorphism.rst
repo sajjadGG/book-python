@@ -19,17 +19,31 @@ Switch
     else:
         raise NotImplementedError
 
+.. code-block:: python
+
+    def switch(key=None):
+        return {
+            'NASA': 'Howdy from NASA',
+            'Roscosmos': 'Privyet z Roscosmos',
+            'ESA': 'Guten Tag aus ESA',
+        }.get(key, 'Default Value')
+
 
 Polymorphism on Function
 ========================
 .. code-block:: python
     :caption: Polymorphism on Function
 
-    class Astronaut:
+    class Person:
+        def __init__(self, name):
+            self.name = name
+
+
+    class Astronaut(Person):
         def say_hello(self):
             print('Howdy from NASA')
 
-    class Cosmonaut:
+    class Cosmonaut(Person):
         def say_hello(self):
             print('Privyet z Roscosmos')
 
@@ -38,9 +52,8 @@ Polymorphism on Function
         spaceman.say_hello()
 
 
-    watney = Astronaut()
-    ivanovic = Cosmonaut()
-
+    watney = Astronaut('Mark Watney')
+    ivanovic = Cosmonaut('Ivan Ivanovic')
 
     hello(watney)
     # Howdy from NASA
@@ -54,20 +67,17 @@ Polymorphism on Classes
 .. code-block:: python
     :caption: Polymorphism on Classes
 
-    class Spaceman:
+    class Person:
         def __init__(self, name):
             self.name = name
 
-        def say_hello(self):
-            raise NotImplementedError
 
-
-    class Astronaut(Spaceman):
+    class Astronaut(Person):
         def say_hello(self):
             print(f'Howdy from NASA')
 
 
-    class Cosmonaut(Spaceman):
+    class Cosmonaut(Person):
         def say_hello(self):
             print(f'Privyet z Roscosmos')
 

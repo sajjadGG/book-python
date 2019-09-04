@@ -29,9 +29,9 @@ class CacheDatabase(Cache):
 
 
 class HTTP:
-    def __init__(self, cache):
+    def __init__(self, cache: Cache):
         # Inject Cache object
-        self._cache = cache
+        self._cache: Cache = cache
 
     def _fetch(self, url):
         return ...

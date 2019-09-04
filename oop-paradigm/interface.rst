@@ -6,9 +6,23 @@ Interface
 
 What it is?
 ===========
+* Python don't have interfaces
 * Cannot instantiate
 * Inheriting class must implement all methods
 * Only method declaration
+
+.. code-block:: python
+    :caption: Interfaces
+
+    class CacheInterface:
+        def get(self, key: str) -> str:
+            raise NotImplementedError
+
+        def set(self, key: str, value: str) -> None:
+            raise NotImplementedError
+
+        def is_valid(self, key: str) -> bool:
+            raise NotImplementedError
 
 
 When use it?
