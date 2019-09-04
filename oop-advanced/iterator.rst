@@ -11,11 +11,11 @@ Protocol
 * ``__next__() -> raise StopIteration``
 
 
-Iterowanie po obiektach
-=======================
+Iterating over objects
+======================
 
-Iterowanie po ``list()``, ``dict()``, ``set()``, ``tuple()``
-------------------------------------------------------------
+Iterating sequences
+-------------------
 .. code-block:: python
 
     for liczba in [1, 2, 3, 4]:
@@ -50,7 +50,7 @@ Iterowanie po ``list()``, ``dict()``, ``set()``, ``tuple()``
     # b -> 2
     # c -> 3
 
-Iterowanie po ``str``
+Iterating over ``str``
 ---------------------
 .. code-block:: python
 
@@ -199,9 +199,8 @@ Own Implementation
     # 2, even
     # ...
 
-Przykład
-========
-
+Example
+=======
 .. code-block:: python
 
     def parzyste_f4():
@@ -229,6 +228,7 @@ Przykład
     except StopIteration:
         pass
 
+
 Assignments
 ===========
 
@@ -239,48 +239,62 @@ Range
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/iterator_range.py`
 
-#. Zaimplementuj własne rozwiązanie ``range()`` wykorzystując iterator.
-#. Początek, koniec, krok (step)
+:English:
+    #. Implement own implementation of a ``range()`` function
+    #. Use iterator protocol
+    #. Arguments: start, stop, step
+    #. How to implement passing only stop argument?
 
-Książka adresowa
-----------------
+:Polish:
+    #. Zaimplementuj własne rozwiązanie ``range()``
+    #. Use iterator protocol
+    #. Argumenty: początek, koniec, krok
+    #. Jak zaimplementować możliwość podawania tylko końca?
+
+Own implementation
+------------------
 * Complexity level: easy
 * Lines of code to write: 20 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/iterator_addressbook.py`
-* Input data: :numref:`listing-iterators-ksiazka-adresowa`
 
-#. Na podstawie kodu z listingu :numref:`listing-iterators-ksiazka-adresowa`
-#. Zmodyfikuj odpowiednie klasy aby stworzyć iterator
+:English:
+    #. For input data (see below)
+    #. Modify classes to implement iterator
 
-.. code-block:: python
-    :name: listing-iterators-ksiazka-adresowa
-    :caption: Struktury danych książki adresowej
+:Polish:
+    #. Dla danych wejściowych (patrz poniżej)
+    #. Zmodyfikuj klasy aby zaimplementować protokół iterator
 
-    from dataclasses import dataclass
+:Input:
+    .. code-block:: python
+        :name: listing-iterators-ksiazka-adresowa
+        :caption: Struktury danych książki adresowej
 
-
-    @dataclass
-    class Contact:
-        first_name: str
-        last_name: str
-        addresses: tuple = ()
-
-    @dataclass
-    class Address:
-        center: str
-        location: str
+        from dataclasses import dataclass
 
 
-    DATA = Contact(first_name='Jan', last_name='Twardowski', addresses=(
-        Address(center='Johnson Space Center', location='Houston, TX'),
-        Address(center='Kennedy Space Center', location='Merritt Island, FL'),
-        Address(center='Jet Propulsion Laboratory', location='Pasadena, CA'),
-    ))
+        @dataclass
+        class Contact:
+            first_name: str
+            last_name: str
+            addresses: tuple = ()
 
-    for address in DATA:
-        print(address)
+        @dataclass
+        class Address:
+            center: str
+            location: str
 
-    # Address(building='Johnson Space Center', location='Houston, TX')
-    # Address(building='Kennedy Space Center', location='FL')
-    # Address(building='Jet Propulsion Laboratory', location='Pasadena, CA')
+
+        DATA = Contact(first_name='Jan', last_name='Twardowski', addresses=(
+            Address(center='Johnson Space Center', location='Houston, TX'),
+            Address(center='Kennedy Space Center', location='Merritt Island, FL'),
+            Address(center='Jet Propulsion Laboratory', location='Pasadena, CA'),
+        ))
+
+        for address in DATA:
+            print(address)
+
+        # Address(building='Johnson Space Center', location='Houston, TX')
+        # Address(building='Kennedy Space Center', location='FL')
+        # Address(building='Jet Propulsion Laboratory', location='Pasadena, CA')
