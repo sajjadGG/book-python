@@ -3,6 +3,23 @@ Placeholder class
 *****************
 
 
+Proxy methods
+=============
+.. code-block:: python
+    :caption: One of the most common use of ``*args``, ``**kwargs`` is for proxy methods.
+
+    class Point2D:
+        def __init__(self, x, y):
+            self.x = x
+            self.y = y
+
+
+    class Point3D(Point2D):
+        def __init__(self, z, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.z = z
+
+
 Flat Problem
 ============
 .. code-block:: python

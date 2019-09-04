@@ -46,23 +46,24 @@ Defining Classes
 
         #. Create object of a class based on last element of a tuple (Species column)
         #. Initialize objects with data from measurements
+        #. To ``species`` field add class name that you are instantiating
         #. Use ``**kwargs`` notation while passing arguments
         #. Add instances to ``flowers``
 
-    #. Print on the screen species and then both sum and mean of the measurements
+    #. Print on the screen instance class name (from species field) and then both sum and mean of the measurements
     #. Format output to receive a table as shown in output data (see below)
 
 :Polish:
-    #. Stwórz ``flowers: list``
     #. Stwórz klasy ``Virginica``, ``Versicolor``, ``Setosa``, które będą identyczne do ``Iris``
     #. Iterując po danych wejściowych (patrz niżej)
 
         #. Twórz obiekty klasy odpowiedniej dla nazwy gatunku (ostatni rekord każdej z krotek)
         #. Obiekt inicjalizuj danymi z pomiarów
+        #. Do pola ``species`` w klasie zapisz nazwę klasy, której instancję tworzysz
         #. Wykorzystaj notację ``**kwargs`` przy podawaniu argumentów
         #. Obiekt instancje do ``flowers``
 
-    #. Na ekranie wyświetlaj nazwę gatunku oraz sumę i średnią z pomiarów
+    #. Na ekranie wyświetlaj nazwę stworzonej klasy (z pola species) oraz sumę i średnią z pomiarów
     #. Wynik sformatuj aby wyglądał jak tabelka z danych wyjściowych (patrz poniżej)
 
 :Input:

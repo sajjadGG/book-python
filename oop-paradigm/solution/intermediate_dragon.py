@@ -39,16 +39,16 @@ class Character(Dragon):
         """
         >>> dragon = Character(name='Red', position=Point(0, 0))
         >>> dragon.change_position(right=1)
-        >>> dragon.get_position()
+        >>> dragon.position_get()
         Point(x=1, y=0)
         >>> dragon.change_position(down=1)
-        >>> dragon.get_position()
+        >>> dragon.position_get()
         Point(x=1, y=1)
         >>> dragon.change_position(left=2)
-        >>> dragon.get_position()
+        >>> dragon.position_get()
         Point(x=0, y=1)
         >>> dragon.change_position(up=2)
-        >>> dragon.get_position()
+        >>> dragon.position_get()
         Point(x=1, y=1)
         """
         current_position = self.get_position()
@@ -67,7 +67,7 @@ class Character(Dragon):
         if y < Config.BORDER_Y_MIN:
             y = Config.BORDER_Y_MIN
 
-        super().set_position(Point(x, y))
+        super().position_set(Point(x, y))
 
 
 class CharacterClass(Enum):
