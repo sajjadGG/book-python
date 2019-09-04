@@ -266,6 +266,7 @@ OOP Advanced
     :maxdepth: 2
     :numbered:
     :caption: OOP Advanced
+    :name: OOP Advanced
 
     /oop-advanced/iterator.rst
     /oop-advanced/context-manager.rst

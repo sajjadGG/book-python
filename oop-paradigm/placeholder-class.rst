@@ -73,18 +73,32 @@ Placeholder class
 =================
 .. code-block:: python
 
-    class Contact:
+    class MyClass:
         def __init__(self, **kwargs):
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
 
-    a = Contact(first_name='Jan', last_name='Twardowski')
+    a = MyClass(first_name='Jan', last_name='Twardowski')
     a.first_name          # Jan
     a.last_name           # 'Twardowski'
 
-    b = Contact(last_name='Twardowski', date_of_birth='1970-01-01')
-    b.first_name         # AttributeError: 'Contact' object has no attribute 'first_name'
-    b.last_name          # 'Twardowski'
-    b.date_of_birth      # '1970-01-01'
+    b = MyClass(species='Setosa')
+    b.species            # 'Setosa'
 
+
+.. code-block:: python
+
+    class MyClass:
+        def __init__(self, **kwargs):
+            self.__dict__ = kwargs
+
+
+    a = MyClass(first_name='Jan', last_name='Twardowski')
+    print(a.first_name)          # Jan
+    print(a.last_name)           # 'Twardowski'
+
+    b = MyClass(species='Setosa')
+    print(b.species)             # 'Setosa'
+    print(b.first_name)          # AttributeError: 'MyClass' object has no attribute 'first_name'
+    print(b.last_name)           # AttributeError: 'MyClass' object has no attribute 'last_name'

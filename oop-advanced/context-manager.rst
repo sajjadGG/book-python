@@ -3,39 +3,51 @@ Context Managers
 ****************
 
 
+
 Protocol
 ========
 * ``__enter__(self, *args, **kwargs) -> self``
 * ``__exit__(self, *args, **kwargs) -> None``
+
+
+Use case
+========
+* Files
+* Buffering data
+* Database connection
+* Database transactions
+* Database cursors
+* Locks
+* Network sockets
+* Network streams
+* HTTP sessions
+
+
+How does it works?
+==================
 
 .. code-block:: python
     :caption: How to create Context Managers
 
     class MyClass:
         def __enter__(self):
+            print('Entering the block')
             return self
 
         def __exit__(self, *args):
+            print('Exiting the block')
             return None
 
         def hello(self):
-            print('hello')
+            print('I am inside')
 
 
     with MyClass() as cls:
         cls.hello()
 
-
-Use Case
-========
-* Pliki
-* Buforowanie danych
-* Połączenia do bazy danych
-* Transakcje w bazie danych
-* Cursory w bazie danych
-* Lock
-* Stream sieciowe
-* Komunikacja po socketach
+    # Entering the block
+    # I am inside
+    # Exiting the block
 
 
 Examples
@@ -65,18 +77,18 @@ Database
         CREATE TABLE IF NOT EXISTS astronauts (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             pesel INTEGER UNIQUE,
-            firstname TEXT,
-            lastname TEXT)"""
-    SQL_INSERT = 'INSERT INTO astronauts VALUES (NULL, :pesel, :firstname, :lastname)'
+            first_name TEXT,
+            last_name TEXT)"""
+    SQL_INSERT = 'INSERT INTO astronauts VALUES (NULL, :pesel, :first_name, :last_name)'
     SQL_SELECT = 'SELECT * from astronauts'
 
 
     astronauts = [
-        {'pesel': '61041212345', 'firstname': 'José', 'lastname': 'Jiménez'},
-        {'pesel': '61041212346', 'firstname': 'Jan', 'lastname': 'Twardowski'},
-        {'pesel': '61041212347', 'firstname': 'Melissa', 'lastname': 'Lewis'},
-        {'pesel': '61041212348', 'firstname': 'Alex', 'lastname': 'Vogel'},
-        {'pesel': '61041212349', 'firstname': 'Ryan', 'lastname': 'Stone'},
+        {'pesel': '61041212345', 'first_name': 'José', 'last_name': 'Jiménez'},
+        {'pesel': '61041212346', 'first_name': 'Jan', 'last_name': 'Twardowski'},
+        {'pesel': '61041212347', 'first_name': 'Melissa', 'last_name': 'Lewis'},
+        {'pesel': '61041212348', 'first_name': 'Alex', 'last_name': 'Vogel'},
+        {'pesel': '61041212349', 'first_name': 'Ryan', 'last_name': 'Stone'},
     ]
 
 
@@ -93,10 +105,23 @@ Lock
 
     from threading import Lock
 
+    my_list = [1, 2, 3]
+
+
+    with Lock() as lock:
+        my_list.append(4)
+
+
+.. code-block:: python
+
+    from threading import Lock
+
+    my_list = [1, 2, 3]
     lock = Lock()
 
+
     with lock:
-        my_list.append(item)
+        my_list.append(4)
 
 replaces the more verbose:
 
@@ -115,9 +140,9 @@ replaces the more verbose:
 
 Contextmanager decorator
 ========================
-* Dzieli naszą funkcję na bloki przed i po ``yield``
-* Bloki przed traktuje jako ``__enter__()``
-* Bloki za traktuje jako ``__exit__()``
+* Split function for before and after ``yield``
+* Code before ``yield`` becomes ``__enter__()``
+* Code after ``yield`` becomes ``__exit__()``
 
 ``contextmanager`` decorator
 ----------------------------
@@ -137,10 +162,9 @@ Contextmanager decorator
 
 
     with MicroBenchmark():
-        max = int(1e8)
-        list(range(max))
+        list(range(100_000_000))
 
-    # Duration 3.4540 seconds
+    # Duration 3.3795 seconds
 
 ``ContextDecorator`` class
 --------------------------
@@ -157,18 +181,17 @@ Contextmanager decorator
 
         def __exit__(self, *args):
             end_time = time.time()
-            duration = end_time - start_time
+            duration = end_time - self.start_time
             print(f'Duration {duration:.4f} seconds')
 
 
     @MicroBenchmark()
     def my_function():
-        max = int(1e8)
-        list(range(max))
+        list(range(100_000_000))
 
 
     my_function()
-    # Duration 3.3507 seconds
+    # Duration 3.4697 seconds
 
 Use Case
 --------
@@ -202,26 +225,34 @@ Buffered file
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/context_manager_file.py`
 
-#. Stwórz Context Manager dla zapisu do plików
-#. Context Manager buforuje dane (nie zapisuje ich na bieżąco)
-#. Gdy program wyjdzie z bloku context managera, to nastąpi otwarcie pliku, zapisanie do pliku i jego zamknięcie
+:English:
+    #. Take input code from listing below
+    #. Create Context manager for file which buffers data before save
+    #. When block closes, then open file and write data
+    #. How to make buffer save data every X bytes?
+    #. How to make buffer save data every X seconds?
+    #. How to make buffer save data in the background, but it could be still used?
 
-:Dla zaawansowanych:
-    #. Jak zrobić, aby bufor co ileś bajtów zapisywał dane na dysku (w tle)?
-    #. Jak zrobić, aby bufor periodycznie (co jakiś czas) zapisywał dane na dysku (w tle)?
+:Polish:
+    #. Weź kod wejściowy z listingu poniżej
+    #. Stwórz Context Manager dla plików, który buforuje dane przed zapisem
+    #. Gdy nastąpi wyjście z bloku context managera, to otwórz plik i zapisz dane
+    #. Jak zrobić, aby bufor zapisywał dane na dysku co X bajtów?
+    #. Jak zrobić, aby bufor zapisywał dane na dysku co X sekund?
     #. Jak zrobić, aby do bufora podczas zapisu na dysk, nadal można było pisać?
 
-.. code-block:: python
+:Input:
+    .. code-block:: python
 
-    FILENAME = '/tmp/context-manager.txt'
+        FILENAME = '/tmp/context-manager.txt'
 
-    class File:
-        pass
+        class File:
+            pass
 
 
-    with File(FILENAME) as file:
-        file.append_line(...)
-        file.append_line(...)
-        file.append_line(...)
+        with File(FILENAME) as file:
+            file.append_line(...)
+            file.append_line(...)
+            file.append_line(...)
 
-    # after block with exits, save to file
+        # after block with exits, save to file

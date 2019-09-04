@@ -95,7 +95,7 @@ Iterating over ``dict``
     # c -> 3
 
 Iterating over ``str``
----------------------
+----------------------
 .. code-block:: python
 
     for character in 'hello':
