@@ -332,29 +332,34 @@ Address Book (dataclass)
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/dataclass_addressbook.py`
 
-#. Stwórz klasy wykorzystujące mechanizm ``dataclass``
+:English:
+    #. Model data using ``dataclasses``
 
-.. code-block:: json
-    :caption: Data for AddressBook
+:Polish:
+    #. Zamodeluj dane wykorzystując ``dataclass``
 
-    [
-        {"first_name": "Jan", "last_name": "Twardowski", "addresses": [
-            {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków", "post_code": "31-008", "region": "Malopołskie", "country": "Poland"}]},
+:Input:
+    .. code-block:: json
+        :caption: Data for AddressBook
 
-        {"first_name": "José", "last_name": "Jiménez", "addresses": [
-            {"street": "2101 E NASA Pkwy", "city": "Houston", "post_code": 77058, "region": "Texas", "country": "USA"},
-            {"street": "", "city": "Kennedy Space Center", "post_code": 32899, "region": "Florida", "country": "USA"}]},
+        [
+            {"first_name": "Jan", "last_name": "Twardowski", "addresses": [
+                {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków", "post_code": "31-008", "region": "Malopołskie", "country": "Poland"}]},
 
-        {"first_name": "Mark", "last_name": "Watney", "addresses": [
-            {"street": "4800 Oak Grove Dr", "city": "Pasadena", "post_code": 91109, "region": "California", "country": "USA"},
-            {"street": "2825 E Ave P", "city": "Palmdale", "post_code": "93550", "region": "California", "country": "USA"}]},
+            {"first_name": "José", "last_name": "Jiménez", "addresses": [
+                {"street": "2101 E NASA Pkwy", "city": "Houston", "post_code": 77058, "region": "Texas", "country": "USA"},
+                {"street": "", "city": "Kennedy Space Center", "post_code": 32899, "region": "Florida", "country": "USA"}]},
 
-        {"first_name": "Иван", "last_name": "Иванович", "addresses": [
-            {"street": "", "city": "Космодро́м Байкону́р", "post_code": "", "region": "Кызылординская область", "country": "Қазақстан"},
-            {"street": "", "city": "Звёздный городо́к", "post_code": 141160, "region": "Московская область", "country": "Россия"}]},
+            {"first_name": "Mark", "last_name": "Watney", "addresses": [
+                {"street": "4800 Oak Grove Dr", "city": "Pasadena", "post_code": 91109, "region": "California", "country": "USA"},
+                {"street": "2825 E Ave P", "city": "Palmdale", "post_code": "93550", "region": "California", "country": "USA"}]},
 
-        {"first_name": "Melissa", "last_name": "Lewis", "addresses": []},
+            {"first_name": "Иван", "last_name": "Иванович", "addresses": [
+                {"street": "", "city": "Космодро́м Байкону́р", "post_code": "", "region": "Кызылординская область", "country": "Қазақстан"},
+                {"street": "", "city": "Звёздный городо́к", "post_code": 141160, "region": "Московская область", "country": "Россия"}]},
 
-        {"first_name": "Alex", "last_name": "Vogel", "addresses": [
-            {"street": "Linder Hoehe", "city": "Köln", "post_code": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}
-    ]
+            {"first_name": "Melissa", "last_name": "Lewis", "addresses": []},
+
+            {"first_name": "Alex", "last_name": "Vogel", "addresses": [
+                {"street": "Linder Hoehe", "city": "Köln", "post_code": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}
+        ]
