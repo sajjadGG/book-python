@@ -53,7 +53,7 @@ Addresses
     "Johnson Space Center", "2101 E NASA Pkwy", "Huston", "77058", "Texas", "USA"
     "Kennedy Space Center", None, "Cape Canaveral", "32899", "Floryda", "USA"
     "NASA Jet Propulsion Laboratory", "4800 Oak Grove Dr", "Pasadena", "91109", "California", "USA"
-    "NASA Armstrong Research Center", "2825 E Ave P", "Palmdale", "93550", "California", "USA"
+    "NASA Armstrong Research Center", "2825 E Ave P", "Palmdale", 93550, "California", "USA"
     "ESA EAC", "Linder Hoehe", "Köln", "51147", "North Rhine-Westphalia", "Germany"
 
 

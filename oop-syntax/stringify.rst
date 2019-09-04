@@ -158,3 +158,84 @@ Stringify objects
     f'{point:tuple}'        # '(1, 2, 0)'
     f'{point:dict}'         # "{'x': 1, 'y': 2, 'z': 0}"
     f'{point:json}'         # '{"x": 1, "y": 2, "z": 0}'
+
+Assignments
+===========
+
+Address Book from API
+---------------------
+* Complexity level: easy
+* Lines of code to write: 15 lines
+* Estimated time of completion: 20 min
+* Filename: :download:`solution/syntax_stringify.py`
+
+:English:
+    #. Modify code from input data (see below)
+    #. Overload ``str`` and ``repr`` to achieve result of printing
+
+:Polish:
+    #. Zmodyfikuj kod z danych wejściowych (patrz poniżej)
+    #. Przeciąż ``str`` i ``repr`` aby osiągnąć rezultat wyświetlania
+
+:The whys and wherefores:
+    * Casting objects to str
+
+:Input:
+    .. code-block:: python
+        :caption: Address Book
+
+        class Crew:
+            pass
+
+        class Astronaut:
+            pass
+
+        class Location:
+            pass
+
+
+        melissa = Astronaut(first_name='Melissa', last_name='Lewis')
+        print(melissa)
+        # Melissa Lewis
+
+        mark = Astronaut(first_name='Mark', last_name='Watney', locations=[Location('Johnson Space Center'), Location('Kennedy Space Center')])
+        print(mark)
+        # Mark Watney [Johnson Space Center, Kennedy Space Center]
+
+        crew = Crew([
+            Astronaut(first_name='Jan', last_name='Twardowski', locations=[
+                Location('Johnson Space Center'),
+                Location('Kennedy Space Center'),
+                Location('Jet Propulsion Laboratory'),
+                Location('Armstrong Flight Research Center'),
+            ]),
+            Astronaut(first_name='José', last_name='Jiménez'),
+            Astronaut(first_name='Иван', last_name='Иванович', locations=[]),
+        ])
+
+
+        print(crew)
+        # [
+        #   José Jiménez,
+        #   Иван Иванович,
+        #   Jan Twardowski [
+        #       Johnson Space Center,
+        #       Kennedy Space Center,
+        #       Jet Propulsion Laboratory,
+        #       Armstrong Flight Research Center]
+        # ]
+
+:Output:
+    .. code-block:: text
+
+        Melissa Lewis
+        Mark Watney [Houston, Cocoa Beach]
+        [
+          José Jiménez,
+          Иван Иванович,
+          Jan Twardowski [
+              Johnson Space Center,
+              Kennedy Space Center,
+              Jet Propulsion Laboratory,
+              Armstrong Flight Research Center]
+        ]

@@ -36,7 +36,7 @@ JSON syntax
 
         {"first_name": "Mark", "last_name": "Watney", "addresses": [
             {"street": "4800 Oak Grove Dr", "city": "Pasadena", "post_code": 91109, "region": "California", "country": "USA"},
-            {"street": "2825 E Ave P", "city": "Palmdale", "post_code": "93550", "region": "California", "country": "USA"}]},
+            {"street": "2825 E Ave P", "city": "Palmdale", "post_code": 93550, "region": "California", "country": "USA"}]},
 
         {"first_name": "Иван", "last_name": "Иванович", "addresses": [
             {"street": "", "city": "Космодро́м Байкону́р", "post_code": "", "region": "Кызылординская область", "country": "Қазақстан"},
