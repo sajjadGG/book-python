@@ -247,17 +247,31 @@ OOP Paradigm
 
     /oop-paradigm/operator-overload.rst
     /oop-paradigm/fields-static-dynamic.rst
-    /oop-paradigm/inheritance-composition.rst
+    /oop-paradigm/composition.rst
     /oop-paradigm/method-resolution-order.rst
-    /oop-paradigm/constructor.rst
     /oop-paradigm/relations.rst
     /oop-paradigm/polymorphism.rst
     /oop-paradigm/dynamic-typing.rst
-    /oop-paradigm/placeholder-class.rst
     /oop-paradigm/interface.rst
     /oop-paradigm/abstract-class.rst
-    /oop-paradigm/paradigm.rst
+    /oop-paradigm/good-practices.rst
     /oop-paradigm/exam.rst
+
+*************
+OOP Protocols
+*************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: OOP Protocols
+    :name: OOP Protocols
+
+    /oop-protocols/iterator.rst
+    /oop-protocols/context-manager.rst
+    /oop-protocols/staticmethod.rst
+    /oop-protocols/classmethod.rst
+    /oop-protocols/setter-getter-deleter.rst
+    /oop-protocols/descriptor.rst
 
 ************
 OOP Advanced
@@ -268,13 +282,9 @@ OOP Advanced
     :caption: OOP Advanced
     :name: OOP Advanced
 
-    /oop-advanced/iterator.rst
-    /oop-advanced/context-manager.rst
-    /oop-advanced/staticmethod.rst
-    /oop-advanced/classmethod.rst
+    /oop-advanced/constructor.rst
+    /oop-advanced/placeholder-class.rst
     /oop-advanced/object-identity.rst
-    /oop-advanced/setter-getter-deleter.rst
-    /oop-advanced/descriptor.rst
     /oop-advanced/slots.rst
     /oop-advanced/metaclass.rst
     /oop-advanced/exam.rst

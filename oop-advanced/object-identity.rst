@@ -3,47 +3,63 @@ Object Identity
 ***************
 
 
-Hash
-====
-* Funkcja hash zwraca ``int``
-* ``set()`` można zrobić z dowolnego hashowalnego obiektu
-* ``dict()`` może mieć klucze, które są dowolnym hashowalnym obiektem
+``id()``
+========
+* ``id()`` will change every time you execute script
+* An integer which is guaranteed to be unique and constant for this object during its lifetime
+* Two objects with non-overlapping lifetimes may have the same id() value.
+* In CPython it's also the memory address of the corresponding C object
 
-* User-defined classes have ``__eq__()`` and ``__hash__()`` methods by default.
+``hash()``
+==========
+* Return the hash value of the object (if it has one)
+* ``hash() ->  int``
+* They are used to quickly compare dictionary keys during a dictionary lookup
+* ``set()`` elements has to be hashable
+* ``dict()`` keys has to be hashable
+* User-defined classes have ``__eq__()`` and ``__hash__()`` methods by default
 * All objects compare unequal (except with themselves)
 * ``x.__hash__()`` returns an appropriate value such that ``x == y`` implies both that ``x is y`` and ``hash(x) == hash(y)``
 
-
 .. code-block:: python
-    :caption: ``dict()`` może mieć klucze, które są dowolnym hashowalnym obiektem
+    :caption: ``dict()`` keys has to be hashable
 
-    key = 'last_name'
+    key = 'my_key'
 
     my_dict = {
-        'fist_name': 'key can be ``str``',
-        key: 'key can be ``str``',
-        1: 'key can be ``int``',
-        1.5: 'key can be ``float``',
-        (1, 2): 'key can be ``tuple``',
+        'a': 'key can be str',
+        2: 'key can be int',
+        3.3: 'key can be float',
+        ('a', 2, 3.3): 'key can be tuple',
+        key: 'key can be str',
     }
 
 .. code-block:: python
-    :caption: ``set()`` można zrobić z dowolnego hashowalnego obiektu
+    :caption: ``set()`` elements has to be hashable
+
+    {1, 1, 2}
+    # {1, 2}
+
+    {1, 1.1, 'a'}
+    # {1, 1.1, 'a'}
+
+    {'a', (1, 2)}
+    # {'a', (1, 2)}
+
+.. code-block:: python
+    :caption: ``set()`` elements has to be hashable
 
     class Astronaut:
         def __init__(self, name):
             self.name = name
 
 
-    {1, 1, 2}
-    # {1, 2}
-
-    jose = Astronaut(name='Jose Jimenez')
-    data = {jose, jose}
+    jan = Astronaut('Jan Twardowski')
+    data = {jan, jan}
     len(data)
     # 1
 
-    data = {Astronaut(name='Jose Jimenez'), Astronaut(name='Jose Jimenez')}
+    data = {Astronaut('Jan Twardowski'), Astronaut('Jan Twardowski')}
     len(data)
     # 2
 
@@ -51,10 +67,9 @@ Hash
     :caption: Generating hash and object comparision
 
     class Astronaut:
-        def __init__(self, first_name, last_name, agency='NASA'):
+        def __init__(self, first_name, last_name):
             self.first_name = first_name
             self.last_name = last_name
-            self.agency = agency
 
         def __hash__(self, *args, **kwargs):
             """
@@ -62,25 +77,22 @@ Hash
             It also shouldn't change over the lifetime of the object;
             generally you only implement it for immutable objects.
             """
-            return hash(self.first_name) + hash(self.last_name) + hash(self.agency)
+            return hash(self.first_name) + hash(self.last_name)
 
         def __eq__(self, other):
             if self.first_name == other.first_name and \
-                    self.last_name == other.last_name and \
-                    self.agency == other.agency:
+                    self.last_name == other.last_name:
                 return True
             else:
                 return False
 
-
 .. code-block:: python
-    :caption: Generating hash and object comparision
+    :caption: Generating hash and object comparision. Since Python 3.7 ``dict`` has fixed order
 
     class Astronaut:
-        def __init__(self, first_name, last_name, agency='NASA'):
+        def __init__(self, first_name, last_name):
             self.first_name = first_name
             self.last_name = last_name
-            self.agency = agency
 
         def __hash__(self):
             return hash(self.__dict__)
@@ -92,38 +104,67 @@ Hash
                 return False
 
 
-.. note:: Since Python 3.7 ``dict`` has fixed order
+String interning
+================
+* https://en.wikipedia.org/wiki/String_interning
+* Method of storing only one copy of each distinct string value, which must be immutable
+* many high level languages use it
+* string literals and values are internally kept in a hashed list called 'string intern pool' and those which are identical are rendered as references to the same object
+* possible because ``str`` are immutable
+* implementation dependent
+* Jython, IronPython, PyPy and others may intern more aggressively
+* Calling the ``intern()`` function on strings will "force" a string to have the same object identity as any equivalent and previously interned string
+
+.. code-block:: python
+    :caption: CPython 3.7.4
+
+    ('a' * 4096) is ('a' * 4096)
+    # True
+
+    ('a' * 4097) is ('a' * 4097)
+    # False
 
 
 ``is``
 ======
-* ``is`` porównuje czy dwa obiekty są tożsame
-* Sprawdzenie odbywa się przez porównanie wartości ``id()`` dla obiektu
-* Najczęściej służy do sprawdzania czy coś jest ``None``
+* ``is`` checks for object identity
+* ``is`` tests for identity, not equality
+* Compares ``id()`` output for both objects
+* CPython: compares the memory address a object resides in
+* Is used for checking if ``None``
+* Testing strings with ``is`` only works when the strings are interned
 
-Good
-----
+Test if empty
+-------------
 .. code-block:: python
 
     if name is None:
-        print('Name is not set')
+        print('Your name is empty')
     else:
-        print('You have set your name')
+        print(f'Hello {name}')
 
-Not good
---------
+Test if value is equal
+----------------------
 .. warning:: In Python 3.8 the compiler produces a ``SyntaxWarning`` when identity checks (``is`` and ``is not``) are used with certain types of literals (e.g. ``str``, ``int``). These can often work by accident in *CPython*, but are not guaranteed by the language spec. The warning advises users to use equality tests (``==`` and ``!=``) instead.
 
  .. code-block:: python
+    :caption: Bad
 
      if name is 'Mark Watney':
         print('You are Space Pirate!')
      else:
-        print('You are not pirate at all!')
+        print('You are just a regular astronaut...')
+
+ .. code-block:: python
+    :caption: Good
+
+     if name == 'Mark Watney':
+        print('You are Space Pirate!')
+     else:
+        print('You are just a regular astronaut...')
 
 Using ``is`` in script
 ----------------------
-* ``id()`` will change every time you execute script
 * both objects has the same ``id``.
 
  .. code-block:: python
