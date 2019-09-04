@@ -11,8 +11,8 @@ Protocol
 * ``__next__() -> raise StopIteration``
 
 
-How does it works?
-==================
+Mechanism
+=========
 
 For loop
 --------

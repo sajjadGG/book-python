@@ -3,21 +3,36 @@
 ****************
 
 
-What is ``@staticmethod``?
-==========================
+Rationale
+=========
+* Should **not** be in a class: method which don't use ``self`` in its body
+* Should be in class: if method takes ``self`` and use it (it requires instances to work)
+* If a method don't use ``self`` but uses class as a namespace use ``@staticmethod`` decorator
+
+
+Application
+===========
 * Using class as namespace
-* Will not pass instance as a first argument
-* ``self`` is not required
-
-When use it?
-============
-* Jeżeli metoda w swoim ciele ma ``self`` i z niego korzysta to powinna być w klasie
-* Jeżeli metoda nie ma w swoim ciele ``self`` to nie powinna być w klasie
-* Jeżeli metoda nie ma w swoim ciele ``self`` ale wybitnie pasuje do klasy, to można ją tam zamieścić oraz dodać dekorator ``@staticmethod``
+* No need to create a class instance
+* Will not pass instance (``self``) as a first method argument
 
 
-Example
-=======
+Implementation
+==============
+.. code-block:: python
+
+    class MyClass:
+
+        @staticmethod
+        def say_hello():
+            print('hello')
+
+
+     MyClass.say_hello()
+
+
+Use case
+========
 .. code-block:: python
     :caption: Functions on a high level of a module lack namespace
 

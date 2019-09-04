@@ -3,15 +3,14 @@ Context Managers
 ****************
 
 
-
 Protocol
 ========
 * ``__enter__(self, *args, **kwargs) -> self``
 * ``__exit__(self, *args, **kwargs) -> None``
 
 
-Use case
-========
+Application
+===========
 * Files
 * Buffering data
 * Database connection
@@ -23,9 +22,8 @@ Use case
 * HTTP sessions
 
 
-How does it works?
-==================
-
+Implementation
+==============
 .. code-block:: python
     :caption: How to create Context Managers
 
