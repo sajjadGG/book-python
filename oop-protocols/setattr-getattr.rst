@@ -12,6 +12,7 @@ Protocol
 ========
 * ``__setattr__(object, attribute_name, value)``
 * ``__getattribute__(object, attribute_name, default)``
+* ``__getattr__(object, attribute_name, default)``
 * ``__delattr__(object, attribute_name)``
 
 
@@ -134,21 +135,23 @@ Implementation
 Assignments
 ===========
 
-Range
------
+Immutable classes
+-----------------
 * Complexity level: medium
-* Lines of code to write: 15 lines
-* Estimated time of completion: 10 min
-* Filename: :download:`solution/setattr_getattr.py`
+* Lines of code to write: 30 lines
+* Estimated time of completion: 20 min
+* Filename: :download:`solution/setattr_getattr_immutable.py`
 
 :English:
-    #. Write own implementation of a ``range()`` function
-    #. Use iterator protocol
-    #. Arguments: start, stop, step
-    #. How to implement passing only stop argument?
+    #. Create class ``Point`` with ``x``, ``y``, ``z`` attributes
+    #. Prevent adding new attributes
+    #. Prevent deleting attributes
+    #. Prevent changing attributes
+    #. Allow to set attributes only at the initialization
 
 :Polish:
-    #. Zaimplementuj własne rozwiązanie ``range()``
-    #. Use iterator protocol
-    #. Argumenty: początek, koniec, krok
-    #. Jak zaimplementować możliwość podawania tylko końca?
+    #. Stwórz klasę ``Point`` z atrybutami ``x``, ``y``, ``z``
+    #. Zablokuj możliwość dodawania nowych atrybutów
+    #. Zablokuj możliwość usuwania atrybutów
+    #. Zablokuj edycję atrybutów
+    #. Pozwól na ustawianie atrybutów tylko przy inicjalizacji klasy

@@ -1,6 +1,6 @@
-***********************
-Setter, Getter, Deleter
-***********************
+**********
+Properties
+**********
 
 
 Rationale
@@ -275,3 +275,26 @@ Deleter
 
     print(temp.celsius)
     # -273.15
+
+
+Assignments
+===========
+
+Immutable classes
+-----------------
+* Complexity level: medium
+* Lines of code to write: 30 lines
+* Estimated time of completion: 20 min
+* Filename: :download:`solution/property_immutable.py`
+
+:English:
+    #. Create class ``Point`` with ``x``, ``y``, ``z`` attributes
+    #. Add ``position`` property which returns tuple ``(x, y, z)``
+    #. Deleting ``position`` sets all attributes to 0 (``x=0``, ``y=0``, ``z=0``)
+    #. Prevent setting position
+
+:Polish:
+    #. Stwórz klasę ``Point`` z atrybutami ``x``, ``y``, ``z``
+    #. Dodaj property ``position``, który zwraca tuple ``(x, y, z)``
+    #. Usunięcie ``position`` ustawia wszystkie atrybuty na 0 (``x=0``, ``y=0``, ``z=0``)
+    #. Zablokuj edycję atrybutów

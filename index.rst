@@ -271,7 +271,7 @@ OOP Protocols
     /oop-protocols/context-manager.rst
     /oop-protocols/staticmethod.rst
     /oop-protocols/classmethod.rst
-    /oop-protocols/setter-getter.rst
+    /oop-protocols/property.rst
     /oop-protocols/setattr-getattr.rst
     /oop-protocols/descriptor.rst
 
