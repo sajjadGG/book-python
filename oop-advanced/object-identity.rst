@@ -103,6 +103,7 @@ Object Identity
             else:
                 return False
 
+.. _String interning:
 
 String interning
 ================

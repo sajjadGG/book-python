@@ -9,7 +9,7 @@ Bitbucket Pipelines
 ===================
 .. code-block:: yaml
 
-    image: python:3.7.2
+    image: python:3.7.4
 
     clone:
       depth: full
@@ -75,7 +75,7 @@ Travis
     sudo: required
     language: python
     python:
-    - 3.7.2
+    - 3.7.4
 
     addons:
       sonarcloud:

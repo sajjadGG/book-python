@@ -40,7 +40,16 @@ Python WAT?!
     999 + 1 is 1000         # False
     1000 is 1000            # True
 
-* Ze względów optymalizacyjnych od którejś wartości, obiekty mają inną tożsamość
+.. code-block:: python
+    :caption: CPython 3.7.4
+
+    ('a' * 4096) is ('a' * 4096)
+    # True
+
+    ('a' * 4097) is ('a' * 4097)
+    # False
+
+* More details at :ref:`String interning`
 
 .. code-block:: python
 

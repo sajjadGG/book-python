@@ -81,8 +81,3 @@ Inheritance
 
     class Virginica(Iris):
         __slots__ = 'species', 'kingdom', 'name'  # redundant species and kingdom
-
-
-More info
-=========
-.. note:: More info: https://stackoverflow.com/questions/472000/usage-of-slots
