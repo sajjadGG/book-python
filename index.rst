@@ -237,6 +237,45 @@ OOP Syntax
     /oop-syntax/dataclass.rst
     /oop-syntax/exam.rst
 
+*****
+Tests
+*****
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Tests
+
+    /tests/doctest.rst
+    /tests/unittest.rst
+
+*********
+Debugging
+*********
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Debugging
+
+    /debugging/python-wat.rst
+    /debugging/logging.rst
+    /debugging/warnings.rst
+    /debugging/debugging-basic.rst
+    /debugging/debugging-advanced.rst
+    /debugging/introspection.rst
+
+*************************
+Good Engineering Practice
+*************************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Good Engineering Practice
+
+    /good-engineering-practice/pep8.rst
+    /good-engineering-practice/pep20.rst
+    /good-engineering-practice/code-smells.rst
+    /good-engineering-practice/documentation.rst
+
 ************
 OOP Paradigm
 ************
@@ -275,46 +314,6 @@ OOP Protocols
     /oop-protocols/setattr-getattr.rst
     /oop-protocols/descriptor.rst
 
-************
-OOP Advanced
-************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: OOP Advanced
-    :name: OOP Advanced
-
-    /oop-advanced/constructor.rst
-    /oop-advanced/placeholder-class.rst
-    /oop-advanced/object-identity.rst
-    /oop-advanced/slots.rst
-    /oop-advanced/metaclass.rst
-    /oop-advanced/exam.rst
-
-*****
-Tests
-*****
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Tests
-
-    /tests/doctest.rst
-    /tests/unittest.rst
-
-*************************
-Good Engineering Practice
-*************************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Good Engineering Practice
-
-    /good-engineering-practice/pep8.rst
-    /good-engineering-practice/pep20.rst
-    /good-engineering-practice/code-smells.rst
-    /good-engineering-practice/documentation.rst
-
 *****
 CI/CD
 *****
@@ -339,21 +338,6 @@ CI/CD
     /ci-cd/type-checking.rst
     /ci-cd/ui.rst
     /ci-cd/mutation-testing.rst
-
-*********
-Debugging
-*********
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Debugging
-
-    /debugging/python-wat.rst
-    /debugging/logging.rst
-    /debugging/warnings.rst
-    /debugging/debugging-basic.rst
-    /debugging/debugging-advanced.rst
-    /debugging/introspection.rst
 
 ************
 Distributing
@@ -394,6 +378,22 @@ Concurrency
     /concurrency/threading.rst
     /concurrency/multiprocessing.rst
     /concurrency/async.rst
+
+************
+OOP Advanced
+************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: OOP Advanced
+    :name: OOP Advanced
+
+    /oop-advanced/constructor.rst
+    /oop-advanced/placeholder-class.rst
+    /oop-advanced/object-identity.rst
+    /oop-advanced/slots.rst
+    /oop-advanced/metaclass.rst
+    /oop-advanced/exam.rst
 
 ***************
 Design Patterns
