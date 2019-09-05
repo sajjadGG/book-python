@@ -26,21 +26,33 @@ Glossary
         In computer programming, unit testing is a software testing method by which individual units of source code, sets of one or more computer program modules together with associated control data, usage procedures, and operating procedures, are tested to determine whether they are fit for use.
 
 
-Using ``unittest``
-==================
-.. literalinclude:: src/unittest-typing.py
-    :language: python
-    :caption: Przykład pokrycia klasy za pomocą ``unittest``.
+Running tests
+=============
 
-.. literalinclude:: src/unittest-class.py
-    :language: python
-    :caption: Przykład pokrycia klasy za pomocą ``unittest``
+Running tests with your IDE
+---------------------------
+* View menu -> Run... -> Unittest in ``my_function``
 
+From code
+---------
+.. code-block:: python
 
-:Usage:
-    .. code-block:: console
+    if __name__ == "__main__":
+        import unittest
+        unittest.main()
 
-        $ python -m unittest FILE.py
+From command line
+-----------------
+.. code-block:: console
+    :caption: Display only errors
+
+    $ python -m unittest example.py
+
+.. code-block:: console
+    :caption: With ``-v`` display progress
+
+    python -m unittest -v example.py
+
 
 Example
 =======
@@ -49,19 +61,32 @@ Example 1
 ---------
 .. literalinclude:: src/unittest-example-1.py
     :language: python
-    :caption: Przykład pokrycia klasy za pomocą ``unittest``
+    :caption: Example ``unittest`` code coverage
 
 Example 2
 ---------
 .. literalinclude:: src/unittest-example-2.py
     :language: python
-    :caption: Przykład pokrycia klasy za pomocą ``unittest``
+    :caption: Example ``unittest`` code coverage
 
 Example 3
 ---------
 .. literalinclude:: src/unittest-example-3.py
     :language: python
-    :caption: Przykład pokrycia klasy za pomocą ``unittest``
+    :caption: Example ``unittest`` code coverage
+
+Example 4
+---------
+.. literalinclude:: src/unittest-example-4.py
+    :language: python
+    :caption: Example ``unittest`` code coverage
+
+Example 5
+---------
+.. literalinclude:: src/unittest-example-5.py
+    :language: python
+    :caption: Example ``unittest`` code coverage
+
 
 Assignments
 ===========
@@ -73,7 +98,7 @@ Dragon
 * Estimated time of completion: 25 min
 
 :English:
-    #. Write unittest for the dragon created in OOP chapter
+    #. Write unittest for the dragon created in exam at the end of :ref:`OOP Syntax` chapter
 
 :Polish:
-    #. Napisz testy jednostkowe dla Smoka z rozdziału OOP
+    #. Napisz testy jednostkowe dla Smoka z egzaminu na końcu rozdziału :ref:`OOP Syntax`
