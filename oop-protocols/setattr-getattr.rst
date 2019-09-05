@@ -3,8 +3,13 @@ Setattr, Getattr
 ****************
 
 
-Rationale
-=========
+
+Built-in Functions
+==================
+* ``setattr(obj, 'attribute_name', 'new value') -> None``
+* ``getattr(obj, 'attribute_name', 'default value') -> Any``
+* ``hasattr(obj, 'attribute_name') -> bool``
+* ``delattr(obj, 'attribute_name') -> None``
 * ``getattr(x, 'name')`` is equivalent to ``x.name``
 
 
@@ -18,19 +23,14 @@ Protocol
 
 ``__setattr__()``
 =================
-
-Trigger
--------
 * ``setattr(x, 'name', 'value')``
 
-Implementation
---------------
 .. code-block:: python
     :caption: Example ``__setattr__()``
 
-    class Kelvin:
+    class KelvinTemperature:
         def __init__(self, initial_temperature):
-            self.temperature = initial_temperature
+            self.value = initial_temperature
 
         def __setattr__(self, attribute_name, new_value):
             if attribute_name == 'value' and new_value < 0.0:
@@ -39,7 +39,7 @@ Implementation
                 object.__setattr__(self, attribute_name, new_value)
 
 
-    temp = Kelvin(273)
+    temp = Kelvin(100)
 
     temp.value = 20
     print(temp.value)
@@ -49,41 +49,45 @@ Implementation
     # ValueError: Temperature cannot be negative
 
 
-``__getattr__()``
+``__delattr__()``
 =================
-* Called whenever you request an attribute that hasn't already been defined
-* When ``__getattribute__()`` raised an ``AttributeError``
+* ``del x.name``
+* ``delattr(x, 'name')``
 
-Rationale
----------
-* Implementing a fallback for missing attributes
+.. code-block:: python
+    :caption: Example ``__delattr__()``
+
+    class KelvinTemperature:
+        def __init__(self, initial_temperature):
+            self.value = initial_temperature
+
+        def __delattr__(self, attribute_name):
+            if attribute_name == 'value':
+                self.temperature = 0
+            else:
+                object.__delattr__(self, attribute_name)
+
+
+    temp = KelvinTemperature(100)
+
+    del temp.value
+    print(temp.value)
+    # 0
 
 
 ``__getattribute__()``
 ======================
-* Called for every attribute access
-* Before looking at the actual attributes on the object
-* You can end up in infinite recursions very easily
+* Called for every time, when you want to access any attribute
+* Before even checking if this attribute exists
 * ``__getattribute__()`` is called before ``__getattr__()``
-* if ``__getattribute__()`` raises ``AttributeError`` exception then the exception will be ignored and ``__getattr__()`` method will be invoked
+* if ``__getattribute__()`` raises ``AttributeError`` exception, then the exception will be ignored and ``__getattr__()`` method will be invoked
 
-Called by
----------
-* ``getattr(x, 'name')``
-* ``getattr(x, 'name', 'default value')``
-
-Rationale
----------
-* prevent access to attributes
-
-Implementation
---------------
 .. code-block:: python
     :caption: Example ``__getattribute__()``
 
-    class Kelvin:
+    class KelvinTemperature:
         def __init__(self, initial_temperature):
-            self.temperature = initial_temperature
+            self.value = initial_temperature
 
         def __getattribute__(self, attribute_name):
             if attribute_name == 'value':
@@ -99,37 +103,19 @@ Implementation
     # ValueError: Field is private, cannot display
 
 
-``__delattr__()``
+``__getattr__()``
 =================
-* ``del x.name``
-* ``delattr(x, 'name')``
-
-.. code-block:: python
-    :caption: Example ``__delattr__()``
-
-    class Kelvin:
-        def __init__(self, initial_temperature):
-            self.temperature = initial_temperature
-
-        def __delattr__(self, attribute_name):
-            if attribute_name == 'temperature':
-                self.temperature = 0
-            else:
-                object.__delattr__(self, attribute_name)
-
-
-    temp = Kelvin(273)
-
-    del temp.temperature
-    print(temp.temperature)
-    # 0
+* Called whenever you request an attribute that hasn't already been defined
+* ``getattr(x, 'name')`` is equivalent to ``x.name``
+* When ``__getattribute__()`` raised an ``AttributeError``
+* Implementing a fallback for missing attributes
 
 
 ``hasattr()``
 =============
 * Check if object has attribute
-* no ``__hasattr__()``
-* triggers ``__getattribute__()``
+* There is no ``__hasattr__()`` method
+* Triggers ``__getattribute__()``
 
 
 Assignments

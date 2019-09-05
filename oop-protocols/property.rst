@@ -216,7 +216,7 @@ Getter
 .. code-block:: python
     :caption: Using ``@property`` as a getter
 
-    class Temperature:
+    class KelvinTemperature:
         def __init__(self, initial_temperature: float = 0.0):
             self._protected = initial_temperature
 
@@ -226,9 +226,9 @@ Getter
             return self._protected
 
 
-    temp = Temperature(100)
+    t = KelvinTemperature(100)
 
-    print(temp.value)
+    print(t.value)
     # You are trying to access a value
     # 100
 
@@ -240,7 +240,7 @@ Setter
 .. code-block:: python
     :caption: ``@x.setter``
 
-    class Temperature:
+    class KelvinTemperature:
         def __init__(self, initial_temperature: float = 0.0):
             self._protected = initial_temperature
 
@@ -260,12 +260,12 @@ Setter
                 self._protected = new_value
 
 
-    temp = Temperature(100)
+    t = KelvinTemperature(100)
 
-    print(temp.value)
+    print(t.value)
     # 100
 
-    temp.value = -10
+    t.value = -10
     # ValueError: Temperature below 0 Kelvin is not possible
 
 
@@ -277,8 +277,8 @@ Deleter
 .. code-block:: python
     :caption: ``@x.deleter``
 
-    class Temperature:
-        def __init__(self, initial_temperature: float = 0.0):
+    class KelvinTemperature:
+        def __init__(self, initial_temperature):
             self._protected = initial_temperature
 
         @property
@@ -294,11 +294,11 @@ Deleter
             self._protected = 0
 
 
-    temp = Temperature(100)
+    t = KelvinTemperature(100)
 
-    del temp.value
+    del t.value
 
-    print(temp.value)
+    print(t.value)
     # 0
 
 
@@ -308,7 +308,7 @@ Assignments
 Immutable classes
 -----------------
 * Complexity level: medium
-* Lines of code to write: 30 lines
+* Lines of code to write: 35 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/property_immutable.py`
 
