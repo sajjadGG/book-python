@@ -2,6 +2,7 @@
 Setter, Getter, Deleter
 ***********************
 
+
 Rationale
 =========
 * Disable attribute modification
@@ -9,6 +10,7 @@ Rationale
 * Check boundary
 * Raise exceptions (TypeError)
 * Check argument type
+
 
 Accessing fields
 ================
@@ -181,8 +183,11 @@ Creating properties
             def x(self):
                 del self._x
 
+Use Cases
+=========
+
 Getter
-======
+------
 * ``@property`` - for defining getters
 
 .. code-block:: python
@@ -205,10 +210,9 @@ Getter
 
 
 Setter
-======
-* Require field to be ``@property``
+------
 * ``@x.setter`` - defining setter for field ``x``
-* Checking for boundaries
+* Require field to be ``@property``
 
 .. code-block:: python
     :caption: ``@x.setter``
@@ -241,9 +245,8 @@ Setter
     temp.celsius = -1000
     # ValueError: Temperature below -273.15 is not possible
 
-
 Deleter
-=======
+-------
 * ``@x.deleter`` - for defining deleter for field ``x``
 * Require field to be ``@property``
 

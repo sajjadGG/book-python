@@ -3,12 +3,16 @@ Descriptor
 **********
 
 
-The Descriptor Protocol
-=======================
-* They provide the developer with the ability to add managed attributes to objects
-* ``__get__(self, obj, type=None) -> self``
-* ``__set__(self, obj, value) -> None``
-* ``__delete__(self, obj) -> None``
+Protocol
+========
+* ``__get__(self, parent, parent_type=None) -> self``
+* ``__set__(self, parent, new_value) -> None``
+* ``__delete__(self, parent) -> None``
+
+Rationale
+=========
+* Add managed attributes to objects
+* Outsource functionality into specialized classes
 
 
 Builtin Descriptor Object Examples
@@ -21,18 +25,48 @@ Builtin Descriptor Object Examples
 
 Example
 =======
+
+Outside class
+-------------
+.. code-block:: python
+
+    class Kelvin:
+        def __get__(self, parent, parent_type):
+            return parent.current_value
+
+        def __set__(self, parent, new_value):
+            parent.current_value = new_value
+
+        def __delete__(self, parent):
+            parent.current_value = None
+
+    class Temperature:
+        current_value = 0
+        kelvin = Kelvin()
+
+
+    temp = Temperature()
+
+    temp.kelvin = 10        # Will trigger ``Kelvin.__set__()``
+    print(temp.kelvin)      # Will trigger ``Kelvin.__get__()``
+    del temp.kelvin         # Will trigger ``Kelvin.__delete__()``
+
+Inside class
+------------
 .. code-block:: python
 
     class Temperature:
+        current_value = 0
+
         class Kelvin:
             def __get__(self, parent, parent_type):
-                return parent.value
+                return parent.current_value
 
-            def __set__(self, parent, value):
-                parent.value = value
+            def __set__(self, parent, new_value):
+                parent.current_value = new_value
 
             def __delete__(self, parent):
-                parent.value = None
+                parent.current_value = None
 
         kelvin = Kelvin()
 
@@ -43,6 +77,7 @@ Example
     print(temp.kelvin)      # Will trigger ``Kelvin.__get__()``
     del temp.kelvin         # Will trigger ``Kelvin.__delete__()``
 
+
 Case Study
 ==========
 
@@ -51,12 +86,14 @@ Temperature Conversion
 .. code-block:: python
 
     class Temperature:
+        _value = 0
+
         class Kelvin:
             def __get__(self, parent, parent_type):
                 return round(parent._value, 2)
 
-            def __set__(self, parent, value):
-                parent._value = round(value, 2)
+            def __set__(self, parent, new_value):
+                parent._value = round(new_value, 2)
 
             def __delete__(self, parent):
                 parent._value = 0
@@ -66,8 +103,8 @@ Temperature Conversion
                 temp = parent._value - 273.15
                 return round(temp, 2)
 
-            def __set__(self, parent, value):
-                temp = value + 273.15
+            def __set__(self, parent, new_value):
+                temp = new_value + 273.15
                 parent._value = round(temp, 2)
 
             def __delete__(self, parent):
@@ -139,13 +176,13 @@ Timezone Conversion
             """
             return parent.utc.astimezone(self.timezone)
 
-        def __set__(self, parent, value):
+        def __set__(self, parent, new_datetime):
             """
             First localize timezone naive datetime,
             this will add information about timezone,
             next convert to UTC (shift time by UTC offset).
             """
-            local_time = self.timezone.localize(value)
+            local_time = self.timezone.localize(new_datetime)
             parent.utc = local_time.astimezone(timezone('UTC'))
 
         def __delete__(self, parent):

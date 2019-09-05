@@ -10,9 +10,9 @@ Rationale
 
 Protocol
 ========
-* ``__setattr__(object, attribute, value)``
-* ``__getattribute__(object, attribute, default)``
-* ``__delattr__(object, attribute)``
+* ``__setattr__(object, attribute_name, value)``
+* ``__getattribute__(object, attribute_name, default)``
+* ``__delattr__(object, attribute_name)``
 
 
 ``__setattr__()``
@@ -31,10 +31,11 @@ Implementation
         def __init__(self, initial_temperature):
             self.temperature = initial_temperature
 
-        def __setattr__(self, name, new_value):
-            if name == 'value' and new_value < 0.0:
+        def __setattr__(self, attribute_name, new_value):
+            if attribute_name == 'value' and new_value < 0.0:
                 raise ValueError('Temperature cannot be negative')
-            object.__setattr__(name, new_value)
+            else:
+                object.__setattr__(self, attribute_name, new_value)
 
 
     temp = Kelvin(273)
@@ -80,13 +81,14 @@ Implementation
     :caption: Example ``__getattribute__()``
 
     class Kelvin:
-        def __init__(self, temperature):
-            self.temperature = temperature
+        def __init__(self, initial_temperature):
+            self.temperature = initial_temperature
 
-        def __getattribute__(self, name):
-            if name == 'value':
+        def __getattribute__(self, attribute_name):
+            if attribute_name == 'value':
                 raise ValueError('Field is private, cannot display')
-            object.__getattribute__(name)
+            else:
+                return object.__getattribute__(self, attribute_name)
 
 
     temp = Kelvin(273)
@@ -104,25 +106,49 @@ Implementation
 .. code-block:: python
     :caption: Example ``__delattr__()``
 
-    class Point:
-        x = 10
-        y = -5
-        z = 0
+    class Kelvin:
+        def __init__(self, initial_temperature):
+            self.temperature = initial_temperature
 
-        def __delattr__(self, name):
-            if name == 'z':
-                raise ValueError('Cannot delete field')
-            object.__delattr__(name)
+        def __delattr__(self, attribute_name):
+            if attribute_name == 'temperature':
+                self.temperature = 0
+            else:
+                object.__delattr__(self, attribute_name)
 
-    p = Point()
 
-    del p.y
+    temp = Kelvin(273)
 
-    delattr(p, 'z')
-    # ValueError('Cannot delete field')
+    del temp.temperature
+    print(temp.temperature)
+    # 0
+
 
 ``hasattr()``
--------------
+=============
 * Check if object has attribute
 * no ``__hasattr__()``
 * triggers ``__getattribute__()``
+
+
+Assignments
+===========
+
+Range
+-----
+* Complexity level: medium
+* Lines of code to write: 15 lines
+* Estimated time of completion: 10 min
+* Filename: :download:`solution/setattr_getattr.py`
+
+:English:
+    #. Write own implementation of a ``range()`` function
+    #. Use iterator protocol
+    #. Arguments: start, stop, step
+    #. How to implement passing only stop argument?
+
+:Polish:
+    #. Zaimplementuj własne rozwiązanie ``range()``
+    #. Use iterator protocol
+    #. Argumenty: początek, koniec, krok
+    #. Jak zaimplementować możliwość podawania tylko końca?
