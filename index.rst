@@ -232,6 +232,7 @@ OOP Syntax
     /oop-syntax/init.rst
     /oop-syntax/inheritance.rst
     /oop-syntax/stringify.rst
+    /oop-syntax/operator-overload.rst
     /oop-syntax/enum.rst
     /oop-syntax/dataclass.rst
     /oop-syntax/exam.rst
@@ -245,7 +246,6 @@ OOP Paradigm
     :caption: OOP Paradigm
     :name: OOP Paradigm
 
-    /oop-paradigm/operator-overload.rst
     /oop-paradigm/fields-static-dynamic.rst
     /oop-paradigm/composition.rst
     /oop-paradigm/method-resolution-order.rst

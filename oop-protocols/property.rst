@@ -50,7 +50,7 @@ Then your code starts to look like this:
 Rationale for setter and getter methods
 ---------------------------------------
 .. code-block:: python
-    :caption: Use case uzasadnionego użycia gettera w kodzie
+    :caption: `HabitatOS <https://www.habitatos.space>`_ Z-Wave sensor admin
     :emphasize-lines: 9,14-20
 
     from django.contrib import admin
@@ -61,7 +61,7 @@ Rationale for setter and getter methods
     @admin.register(ZWaveSensor)
     class ZWaveSensorAdmin(HabitatAdmin):
         change_list_template = 'sensors/change_list_charts.html'
-        list_display = ['mission_date', 'mission_date', 'type', 'device', 'value', 'unit']
+        list_display = ['mission_date', 'mission_time', 'type', 'device', 'value', 'unit']
         list_filter = ['created', 'type', 'unit', 'device']
         search_fields = ['^date', 'device']
         ordering = ['-datetime']
@@ -147,16 +147,16 @@ Creating properties with ``property`` class
 
     class MyClass:
         def __init__(self):
-            self._x = None
+            self._protected = None
 
         def get_x(self):
-            return self._x
+            return self._protected
 
         def set_x(self, value):
-            self._x = value
+            self._protected = value
 
         def del_x(self):
-            del self._x
+            del self._protected
 
         x = property(get_x, set_x, del_x, "I am the 'x' property.")
 
@@ -167,7 +167,7 @@ Creating properties with ``@property`` decorator
 
     class MyClass:
         def __init__(self):
-            self._x = None
+            self._protected = None
 
         @property
         def x(self):
@@ -175,15 +175,15 @@ Creating properties with ``@property`` decorator
 
         @x.getter
         def x(self):
-            return self._x
+            return self._protected
 
         @x.setter
         def x(self, value):
-            self._x = value
+            self._protected = value
 
         @x.deleter
         def x(self):
-            del self._x
+            del self._protected
 
 .. code-block:: python
     :caption: Properties as a decorators
@@ -191,19 +191,19 @@ Creating properties with ``@property`` decorator
 
     class MyClass:
         def __init__(self):
-            self._x = None
+            self._protected = None
 
         @property
         def x(self):
-            return self._x
+            return self._protected
 
         @x.setter
         def x(self, value):
-            self._x = value
+            self._protected = value
 
         @x.deleter
         def x(self):
-            del self._x
+            del self._protected
 
 
 Use Cases
@@ -217,20 +217,20 @@ Getter
     :caption: Using ``@property`` as a getter
 
     class Temperature:
-        def __init__(self, kelvin: float = 0.0):
-            self.kelvin = kelvin
+        def __init__(self, initial_temperature: float = 0.0):
+            self._protected = initial_temperature
 
         @property
-        def celsius(self):
-            temp = self.kelvin - 273.15
-            return round(temp, 2)
+        def value(self):
+            print('You are trying to access a value')
+            return self._protected
 
 
-    temp = Temperature(kelvin=309.75)
+    temp = Temperature(100)
 
-    print(temp.celsius)
-    # 36.6
-
+    print(temp.value)
+    # You are trying to access a value
+    # 100
 
 Setter
 ------
@@ -241,32 +241,33 @@ Setter
     :caption: ``@x.setter``
 
     class Temperature:
-        def __init__(self, kelvin: float = 0.0):
-            self.kelvin = kelvin
+        def __init__(self, initial_temperature: float = 0.0):
+            self._protected = initial_temperature
 
         @property
-        def celsius(self):
-            temp = self.kelvin - 273.15
-            return round(temp, 2)
+        def value(self):
+            pass
 
-        @celsius.setter
-        def celsius(self, value):
-            if value < -273.15:
-                raise ValueError('Temperature below -273.15 is not possible')
+        @value.getter
+        def value(self):
+            return self._protected
+
+        @value.setter
+        def value(self, new_value):
+            if new_value < 0:
+                raise ValueError('Temperature below 0 Kelvin is not possible')
             else:
-                self.kelvin = value + 273.15
+                self._protected = new_value
 
-    temp = Temperature()
 
-    print(temp.kelvin)
-    # 0.0
+    temp = Temperature(100)
 
-    temp.celsius = 36.60
-    print(temp.kelvin)
-    # 309.75
+    print(temp.value)
+    # 100
 
-    temp.celsius = -1000
-    # ValueError: Temperature below -273.15 is not possible
+    temp.value = -10
+    # ValueError: Temperature below 0 Kelvin is not possible
+
 
 Deleter
 -------
@@ -277,27 +278,28 @@ Deleter
     :caption: ``@x.deleter``
 
     class Temperature:
-        def __init__(self, kelvin: float = 0.0):
-            self.kelvin = kelvin
+        def __init__(self, initial_temperature: float = 0.0):
+            self._protected = initial_temperature
 
         @property
-        def celsius(self):
-            temp = self.kelvin - 273.15
-            return round(temp, 2)
+        def value(self):
+            pass
 
-        @celsius.deleter
-        def celsius(self):
-            self.kelvin = 0.0
+        @value.getter
+        def value(self):
+            return self._protected
 
-    temp = Temperature(kelvin=100)
+        @value.deleter
+        def value(self):
+            self._protected = 0
 
-    print(temp.celsius)
-    # -173.15
 
-    del temp.celsius
+    temp = Temperature(100)
 
-    print(temp.celsius)
-    # -273.15
+    del temp.value
+
+    print(temp.value)
+    # 0
 
 
 Assignments
