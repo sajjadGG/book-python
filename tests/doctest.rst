@@ -339,19 +339,30 @@ Distance conversion doctest
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/doctest_distance.py`
 
-#. Napisz funkcję, która przeliczy dystans podany w metrach na kilometry
-#. 1 km = 1000 m
-#. Dystans nie może być ujemny
-#. Zwracany dystans musi być zawsze float
-#. Napisz testy do rozwiązania i pokryj przypadki:
+:English:
+    #. Write functions which convert distance given in kilometers to meters
+    #. 1 km = 1000 m
+    #. Distance cannot be negative
+    #. Returned value must by float
+    #. Write doctests
 
-    * dystans w metrach jest -1 (ujemny)
-    * dystans w metrach jest 0 (zero)
-    * dystans w metrach jest 1 (dodatni)
-    * dystans w metrach jest ``float``
-    * dystans w metrach jest ``int``
-    * podano listę odległości ``TypeError``
-    * podany parametr to ``str``
+:Polish:
+    #. Napisz funkcję, która przeliczy dystans podany w kilometrach na metry
+    #. 1 km = 1000 m
+    #. Dystans nie może być ujemny
+    #. Zwracany dystans musi być float
+    #. Napisz doctesty
+
+:Output:
+    * Test arguments:
+
+        * -1
+        * 0
+        * 1
+        * ``float``
+        * ``int``
+        * ``str`` -> expect ``TypeError``
+        * any other type -> expect ``TypeError``
 
 Fix URL Regex
 -------------
