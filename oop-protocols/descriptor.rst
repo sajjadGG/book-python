@@ -32,16 +32,17 @@ Outside class
 
     class Kelvin:
         def __get__(self, parent, parent_type):
-            return parent.current_value
+            return round(parent._current_value, 2)
 
         def __set__(self, parent, new_value):
-            parent.current_value = new_value
+            parent._current_value = new_value
 
         def __delete__(self, parent):
-            parent.current_value = None
+            parent._current_value = 0.0
+
 
     class Temperature:
-        current_value = 0
+        _current_value = 0.0
         kelvin = Kelvin()
 
 
@@ -56,17 +57,17 @@ Inside class
 .. code-block:: python
 
     class Temperature:
-        current_value = 0
+        _current_value = 0.0
 
         class Kelvin:
             def __get__(self, parent, parent_type):
-                return parent.current_value
+                return round(parent._current_value, 2)
 
             def __set__(self, parent, new_value):
-                parent.current_value = new_value
+                parent._current_value = new_value
 
             def __delete__(self, parent):
-                parent.current_value = None
+                parent._current_value = 0.0
 
         kelvin = Kelvin()
 
@@ -86,41 +87,41 @@ Temperature Conversion
 .. code-block:: python
 
     class Temperature:
-        _value = 0
+        _current_value = 0.0
 
         class Kelvin:
             def __get__(self, parent, parent_type):
-                return round(parent._value, 2)
+                return round(parent._current_value, 2)
 
             def __set__(self, parent, new_value):
-                parent._value = round(new_value, 2)
+                parent._current_value = new_value
 
             def __delete__(self, parent):
-                parent._value = 0
+                parent._current_value = 0
 
         class Celsius:
             def __get__(self, parent, parent_type):
-                temp = parent._value - 273.15
+                temp = parent._current_value - 273.15
                 return round(temp, 2)
 
             def __set__(self, parent, new_value):
                 temp = new_value + 273.15
-                parent._value = round(temp, 2)
+                parent._current_value = temp
 
             def __delete__(self, parent):
-                parent._value = 0
+                self.__set__(parent, 0)
 
         class Fahrenheit:
             def __get__(self, parent, parent_type):
-                temp = (parent._value-273.15) * 9/5 + 32
+                temp = (parent._current_value - 273.15) * 9 / 5 + 32
                 return round(temp, 2)
 
             def __set__(self, parent, fahrenheit):
-                temp = (fahrenheit-32) * 5/9 + 273.15
-                parent._value = round(temp, 2)
+                temp = (fahrenheit - 32) * 5 / 9 + 273.15
+                parent._current_value = temp
 
             def __delete__(self, parent):
-                parent._value = 0
+                self.__set__(parent, 0)
 
         kelvin = Kelvin()
         celsius = Celsius()
@@ -130,30 +131,38 @@ Temperature Conversion
     temp = Temperature()
 
     temp.kelvin = 273.15
-    print(f'K: {temp.kelvin}')  # 273.15
-    print(f'C: {temp.celsius}')  # 0.0
+    print(f'K: {temp.kelvin}')      # 273.15
+    print(f'C: {temp.celsius}')     # 0.0
     print(f'F: {temp.fahrenheit}')  # 32.0
 
     print()
 
     temp.fahrenheit = 100
-    print(f'K: {temp.kelvin}')  # 310.93
-    print(f'C: {temp.celsius}')  # 37.78
+    print(f'K: {temp.kelvin}')      # 310.93
+    print(f'C: {temp.celsius}')     # 37.78
     print(f'F: {temp.fahrenheit}')  # 100.0
 
     print()
 
     temp.celsius = 100
-    print(f'K: {temp.kelvin}')  # 373.15
-    print(f'C: {temp.celsius}')  # 100.0
+    print(f'K: {temp.kelvin}')      # 373.15
+    print(f'C: {temp.celsius}')     # 100.0
     print(f'F: {temp.fahrenheit}')  # 212.0
 
     print()
 
     del temp.celsius
-    print(f'K: {temp.kelvin}')  # 0
-    print(f'C: {temp.celsius}')  # -273.15
-    print(f'F: {temp.fahrenheit}')  # -459.67
+    print(f'K: {temp.kelvin}')      # 273.15
+    print(f'C: {temp.celsius}')     # 0.0
+    print(f'F: {temp.fahrenheit}')  # 32.0
+
+    print()
+
+    del temp.fahrenheit
+    print(f'K: {temp.kelvin}')      # 255.37
+    print(f'C: {temp.celsius}')     # -17.78
+    print(f'F: {temp.fahrenheit}')  # 0
+
 
 .. _Timezone Conversion:
 
@@ -246,24 +255,24 @@ Temperature
     * Using descriptors
     * Data validation
 
-Longitude and Latitude
+Geographic Coordinates
 ----------------------
 * Complexity level: medium
 * Lines of code to write: 25 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/descriptor_geographic.py`
+* Filename: :download:`solution/descriptor_gps.py`
 
 :English:
-    #. From input data (see below) model class ``GeographicCoordinate``
-    #. Using descriptors add value boundaries checking
-    #. Deleting values should set it to ``None``
+    #. From input data (see below) model the class ``GeographicCoordinate``
+    #. Use descriptors to check value boundaries
+    #. Deleting field should set it to ``None``
     #. Disable modification of ``elevation`` field
     #. Allow to set ``elevation`` field at the class initialization
 
 :Polish:
     #. Na podstawie danych wejściowych (patrz poniżej) zamodeluj klasę ``GeographicCoordinate``
-    #. Wykorzystując deskryptory dodaj sprawdzanie wartości granicznych
-    #. Kasowanie wartości powinno ustawiać ją na ``None``
+    #. Użyj deskryptory do sprawdzania wartości brzegowych
+    #. Kasowanie pola powinno ustawiać jego wartość na ``None``
     #. Zablokuj modyfikację pola ``elevation``
     #. Zezwól na ustawianie pola ``elevation`` podczas inicjalizacji
 

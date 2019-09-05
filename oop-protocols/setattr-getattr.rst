@@ -28,25 +28,25 @@ Protocol
 .. code-block:: python
     :caption: Example ``__setattr__()``
 
-    class KelvinTemperature:
+    class Temperature:
         def __init__(self, initial_temperature):
             self.value = initial_temperature
 
         def __setattr__(self, attribute_name, new_value):
             if attribute_name == 'value' and new_value < 0.0:
-                raise ValueError('Temperature cannot be negative')
+                raise ValueError('Kelvin temperature cannot be negative')
             else:
                 object.__setattr__(self, attribute_name, new_value)
 
 
-    temp = Kelvin(100)
+    t = Temperature(100)
 
-    temp.value = 20
-    print(temp.value)
+    t.value = 20
+    print(t.value)
     # 20
 
-    temp.value = -10
-    # ValueError: Temperature cannot be negative
+    t.value = -10
+    # ValueError: Kelvin temperature cannot be negative
 
 
 ``__delattr__()``
@@ -57,22 +57,22 @@ Protocol
 .. code-block:: python
     :caption: Example ``__delattr__()``
 
-    class KelvinTemperature:
+    class Temperature:
         def __init__(self, initial_temperature):
             self.value = initial_temperature
 
         def __delattr__(self, attribute_name):
             if attribute_name == 'value':
-                self.temperature = 0
+                self.value = 0.0
             else:
                 object.__delattr__(self, attribute_name)
 
 
-    temp = KelvinTemperature(100)
+    t = Temperature(100)
 
-    del temp.value
-    print(temp.value)
-    # 0
+    del t.value
+    print(t.value)
+    # 0.0
 
 
 ``__getattribute__()``
@@ -85,22 +85,22 @@ Protocol
 .. code-block:: python
     :caption: Example ``__getattribute__()``
 
-    class KelvinTemperature:
+    class Temperature:
         def __init__(self, initial_temperature):
             self.value = initial_temperature
 
         def __getattribute__(self, attribute_name):
             if attribute_name == 'value':
-                raise ValueError('Field is private, cannot display')
+                raise PermissionError('Field is private')
             else:
                 return object.__getattribute__(self, attribute_name)
 
 
-    temp = Kelvin(273)
+    temp = Temperature(273)
 
     temp.value = 20
     print(temp.value)
-    # ValueError: Field is private, cannot display
+    # PermissionError: Field is private
 
 
 ``__getattr__()``

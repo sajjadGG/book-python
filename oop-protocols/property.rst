@@ -216,8 +216,31 @@ Getter
 .. code-block:: python
     :caption: Using ``@property`` as a getter
 
-    class KelvinTemperature:
-        def __init__(self, initial_temperature: float = 0.0):
+    class Temperature:
+        def __init__(self, initial_temperature):
+            self._protected = initial_temperature
+
+        @property
+        def value(self):
+            pass
+
+        @value.getter
+        def value(self):
+            print('You are trying to access a value')
+            return self._protected
+
+
+    t = Temperature(100)
+
+    print(t.value)
+    # You are trying to access a value
+    # 100
+
+.. code-block:: python
+    :caption: Using ``@property`` as a getter
+
+    class Temperature:
+        def __init__(self, initial_temperature):
             self._protected = initial_temperature
 
         @property
@@ -226,7 +249,7 @@ Getter
             return self._protected
 
 
-    t = KelvinTemperature(100)
+    t = Temperature(100)
 
     print(t.value)
     # You are trying to access a value
@@ -240,8 +263,8 @@ Setter
 .. code-block:: python
     :caption: ``@x.setter``
 
-    class KelvinTemperature:
-        def __init__(self, initial_temperature: float = 0.0):
+    class Temperature:
+        def __init__(self, initial_temperature):
             self._protected = initial_temperature
 
         @property
@@ -254,19 +277,19 @@ Setter
 
         @value.setter
         def value(self, new_value):
-            if new_value < 0:
-                raise ValueError('Temperature below 0 Kelvin is not possible')
+            if new_value < 0.0:
+                raise ValueError('Kelvin Temperature cannot be below zero')
             else:
                 self._protected = new_value
 
 
-    t = KelvinTemperature(100)
+    t = Temperature(100)
 
     print(t.value)
     # 100
 
     t.value = -10
-    # ValueError: Temperature below 0 Kelvin is not possible
+    # ValueError: Kelvin Temperature cannot be below zero
 
 
 Deleter
@@ -277,7 +300,7 @@ Deleter
 .. code-block:: python
     :caption: ``@x.deleter``
 
-    class KelvinTemperature:
+    class Temperature:
         def __init__(self, initial_temperature):
             self._protected = initial_temperature
 
@@ -291,10 +314,10 @@ Deleter
 
         @value.deleter
         def value(self):
-            self._protected = 0
+            self._protected = 0.0
 
 
-    t = KelvinTemperature(100)
+    t = Temperature(100)
 
     del t.value
 
