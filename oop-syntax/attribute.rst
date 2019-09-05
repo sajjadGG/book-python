@@ -9,10 +9,34 @@ Attributes
 * Access field values using ``.`` (dot) notation
 
 
-Constant value attributes
-=========================
+Setting attributes
+==================
+
+Runtime attributes
+------------------
 .. code-block:: python
-    :caption: Fields with constant values
+    :caption: Dynamic attributes
+
+    class Iris:
+        pass
+
+
+    flower = Iris()
+
+    flower.sepal_length = 5.1
+    flower.sepal_width = 3.5
+    flower.petal_length = 1.4
+    flower.petal_width = 0.2
+    flower.species = 'setosa'
+
+    print(flower.sepal_length)  # 5.1
+    print(flower.sepal_width)   # 3.5
+    print(flower.species)       # 'setosa'
+
+Init time attributes
+--------------------
+.. code-block:: python
+    :caption: Init time attributes
 
     class Iris:
         def __init__(self):
@@ -29,9 +53,8 @@ Constant value attributes
     print(flower.sepal_width)   # 3.5
     print(flower.species)       # 'setosa'
 
-
 Variable value attributes
-=========================
+-------------------------
 .. code-block:: python
     :caption: Initializing fields on instance creation
 
@@ -86,10 +109,10 @@ Access modifiers
 
     flower = Iris()
 
-    print(flower._sepal_length)  # 5.1       # Good IDE will tell you, that you access protected member
-    print(flower._sepal_width)   # 3.5       # Good IDE will tell you, that you access protected member
-    print(flower._petal_length)  # 1.4       # Good IDE will tell you, that you access protected member
-    print(flower._petal_width)   # 0.2       # Good IDE will tell you, that you access protected member
+    print(flower._sepal_length)  # 5.1       # IDE should warn, that you access protected member
+    print(flower._sepal_width)   # 3.5       # IDE should warn, that you access protected member
+    print(flower._petal_length)  # 1.4       # IDE should warn, that you access protected member
+    print(flower._petal_width)   # 0.2       # IDE should warn, that you access protected member
     print(flower.species)       # 'setosa'
 
 

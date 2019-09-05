@@ -39,14 +39,22 @@ Object properties
 -----------------
 .. code-block:: python
 
-    def add_numbers(a, b):
+    def add_numbers(a: int, b: float) -> float:
         """Function add numbers"""
         return a + b
 
-    add_numbers.__doc__             # 'Function add numbers'
-    add_numbers.__name__            # 'add_numbers'
-    add_numbers.__annotations__     # {}
-    add_numbers.__class__           # <class 'function'>
+
+    print(add_numbers.__doc__)
+    # Function add numbers
+
+    print(add_numbers.__name__)
+    # add_numbers
+
+    print(add_numbers.__annotations__)
+    # {'a': <class 'int'>, 'b': <class 'float'>, 'return': <class 'float'>}
+
+    print(add_numbers.__class__)
+    # <class 'function'>
 
 Object methods
 --------------
@@ -56,8 +64,17 @@ Object methods
         """Function add numbers"""
         return a + b
 
-    add_numbers.__call__()          # TypeError: function() missing 2 required positional arguments: 'a' and 'b'
-    add_numbers.__call__(1, 2)      # 3
+    add_numbers(1, 2)
+    # 3
+
+    add_numbers.__call__(1, 2)
+    # 3
+
+    add_numbers()
+    # TypeError: function() missing 2 required positional arguments: 'a' and 'b'
+
+    add_numbers.__call__()
+    # TypeError: function() missing 2 required positional arguments: 'a' and 'b'
 
 Injecting properties
 --------------------

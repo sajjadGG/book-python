@@ -252,6 +252,7 @@ OOP Paradigm
     /oop-paradigm/relations.rst
     /oop-paradigm/polymorphism.rst
     /oop-paradigm/dynamic-typing.rst
+    /oop-paradigm/new-style-classes.rst
     /oop-paradigm/interface.rst
     /oop-paradigm/abstract-class.rst
     /oop-paradigm/good-practices.rst
@@ -270,7 +271,8 @@ OOP Protocols
     /oop-protocols/context-manager.rst
     /oop-protocols/staticmethod.rst
     /oop-protocols/classmethod.rst
-    /oop-protocols/setter-getter-deleter.rst
+    /oop-protocols/setter-getter.rst
+    /oop-protocols/setattr-getattr.rst
     /oop-protocols/descriptor.rst
 
 ************

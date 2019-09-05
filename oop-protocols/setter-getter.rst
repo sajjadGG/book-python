@@ -2,11 +2,24 @@
 Setter, Getter, Deleter
 ***********************
 
+Rationale
+=========
+* Disable attribute modification
+* Logging value access
+* Check boundary
+* Raise exceptions (TypeError)
+* Check argument type
 
-Accessing class fields using setter and getter
-==============================================
+Accessing fields
+================
+
+Setter and Getter methods
+-------------------------
+* Java way
+* don't do that in Python
+
 .. code-block:: python
-    :caption: Accessing class fields "Java way" -- don't do that in Python
+    :caption: Accessing class fields using setter and getter
 
     class Astronaut:
         name = ''
@@ -18,13 +31,31 @@ Accessing class fields using setter and getter
         def get_name(self):
             return self.name
 
+
     astro = Astronaut()
     astro.set_name('Jan Twardowski')
 
     print(astro.get_name())
 
-Use case
---------
+Then your code starts to look like this:
+
+    .. code-block:: python
+
+        class MyClass:
+            def __init__(self):
+                self._x = None
+
+            def get_x(self):
+                return self._x
+
+            def set_x(self, value):
+                self._x = value
+
+            def del_x(self):
+                del self._x
+
+Rationale for setter and getter methods
+---------------------------------------
 .. code-block:: python
     :caption: Use case uzasadnionego użycia gettera w kodzie
     :emphasize-lines: 9,14-20
@@ -50,15 +81,17 @@ Use case
 
             return list_display
 
+Direct attribute access
+-----------------------
+* the Python way
 
-Accessing class fields using properties
-=======================================
 .. code-block:: python
-    :caption: Accessing class fields - "the Python way"
+    :caption: Accessing class fields
 
     class Astronaut:
         def __init__(self, name=''):
             self.name = name
+
 
     astro = Astronaut()              # either put ``name`` as an argument for ``__init__()``
     astro.name = 'Jan Twardowski'     # or create dynamic field in runtime
@@ -66,36 +99,91 @@ Accessing class fields using properties
     print(astro.name)
 
 
-Dynamically creating fields
-===========================
+Properties
+==========
+
+Property class
+--------------
 .. code-block:: python
-    :caption: Funkcja inicjalizującą, która automatycznie dodaje pola do naszej klasy w zależności od tego co zostanie podane przy tworzeniu obiektu
 
-    class Astronaut:
-        def __init__(self, last_name, **kwargs):
-            self.last_name = last_name
+    property()
+    # <property object at 0x10ff07940>
 
-            for key, value in kwargs.items():
-                setattr(self, key, value)
+    property().getter
+    # <built-in method getter of property object at 0x10ff07998>
 
+    property().setter
+    # <built-in method setter of property object at 0x10ff07940>
 
-    jan = Astronaut(last_name='Twardowski', addresses=())
-    ivan = Astronaut(first_name='Иван', last_name='Иванович', agency='Roscosmos')
+    property().deleter
+    # <built-in method deleter of property object at 0x10ff07998>
 
-    print(jan.last_name)   # Twardowski
-    print(ivan.first_name)  # Иван
+Property decorator
+------------------
+* ``@decorator`` syntax is just syntactic sugar; the syntax:
 
-    print(jan.__dict__)    # {'last_name': 'Twardowski', 'addresses': ()}
-    print(ivan.__dict__)    # {'last_name': 'Иванович', 'first_name': 'Иван', 'agency': 'Roscosmos'}
+    .. code-block:: python
 
+        @property
+        def foo(self):
+            return self._foo
+
+* really means the same thing as
+
+    .. code-block:: python
+
+        def foo(self):
+            return self._foo
+
+        foo = property(foo)
+
+Creating properties
+-------------------
+* Property's arguments are method pointers ``get_x``, ``set_x``, ``del_x`` and a docstring
+* Code using properties
+
+    .. code-block:: python
+        :caption: Properties
+
+        class MyClass:
+            def __init__(self):
+                self._x = None
+
+            def get_x(self):
+                return self._x
+
+            def set_x(self, value):
+                self._x = value
+
+            def del_x(self):
+                del self._x
+
+            x = property(get_x, set_x, del_x, "I am the 'x' property.")
+
+* Equivalent code using decorators
+
+    .. code-block:: python
+        :caption: Properties as a decorators
+
+        class MyClass:
+            def __init__(self):
+                self._x = None
+
+            @property
+            def x(self):
+                return self._x
+
+            @x.setter
+            def x(self, value):
+                self._x = value
+
+            @x.deleter
+            def x(self):
+                del self._x
 
 Getter
 ======
 * ``@property`` - for defining getters
-* Przykład użycia:
-
-    * Blokowanie możliwości edycji pola klasy
-    * Dodawanie logowania przy ustawianiu wartości
 
 .. code-block:: python
     :caption: Using ``@property`` as a getter
@@ -118,8 +206,9 @@ Getter
 
 Setter
 ======
-* ``@x.setter`` - for defining setter for field ``x``
 * Require field to be ``@property``
+* ``@x.setter`` - defining setter for field ``x``
+* Checking for boundaries
 
 .. code-block:: python
     :caption: ``@x.setter``
@@ -183,77 +272,3 @@ Deleter
 
     print(temp.celsius)
     # -273.15
-
-
-Accessors
-=========
-
-``__setattr__()``
------------------
-.. code-block:: python
-    :caption: Example ``__setattr__()``
-
-    class Kelvin:
-        def __init__(self, initial_temperature):
-            self.temperature = initial_temperature
-
-        def __setattr__(self, name, new_value):
-            if name == 'value' and new_value < 0.0:
-                raise ValueError('Temperature cannot be negative')
-            else:
-                super().__setattr__(name, new_value)
-
-
-    temp = Kelvin(273)
-
-    temp.value = 20
-    print(temp.value)
-    # 20
-
-    temp.value = -10
-    # ValueError: Temperature cannot be negative
-
-``__getattribute__()``
-----------------------
-.. code-block:: python
-    :caption: Example ``__getattribute__()``
-
-    class Kelvin:
-        def __init__(self, temperature):
-            self.temperature = temperature
-
-        def __getattribute__(self, name):
-            if name == 'value':
-                raise ValueError('Field is private, cannot display')
-            else:
-                super().__getattribute__(name)
-
-
-    temp = Kelvin(273)
-
-    temp.value = 20
-    print(temp.value)
-    # ValueError: Field is private, cannot display
-
-``__delattr__()``
------------------
-.. code-block:: python
-    :caption: Example ``__delattr__()``
-
-    class Point:
-        x = 10
-        y = -5
-        z = 0
-
-        def __delattr__(self, name):
-            if name == 'z':
-                raise ValueError('Cannot delete field')
-            else:
-                super().__delattr__(name)
-
-    p = Point()
-
-    del p.y
-
-    delattr(p, 'z')
-    # ValueError('Cannot delete field')

@@ -72,6 +72,7 @@ Nested Problem
 Placeholder class
 =================
 .. code-block:: python
+    :caption: Dynamically creating fields
 
     class MyClass:
         def __init__(self, **kwargs):
@@ -86,6 +87,25 @@ Placeholder class
     b = MyClass(species='Setosa')
     b.species            # 'Setosa'
 
+.. code-block:: python
+    :caption: Dynamically creating fields
+
+    class Astronaut:
+        def __init__(self, last_name, **kwargs):
+            self.last_name = last_name
+
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+
+    jan = Astronaut(last_name='Twardowski', addresses=())
+    ivan = Astronaut(first_name='Иван', last_name='Иванович', agency='Roscosmos')
+
+    print(jan.last_name)   # Twardowski
+    print(ivan.first_name)  # Иван
+
+    print(jan.__dict__)    # {'last_name': 'Twardowski', 'addresses': ()}
+    print(ivan.__dict__)    # {'last_name': 'Иванович', 'first_name': 'Иван', 'agency': 'Roscosmos'}
 
 .. code-block:: python
 
