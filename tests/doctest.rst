@@ -363,6 +363,7 @@ Distance conversion doctest
         * ``int``
         * ``str`` -> expect ``TypeError``
         * any other type -> expect ``TypeError``
+        * True
 
 Fix URL Regex
 -------------
