@@ -3,15 +3,6 @@ Properties
 **********
 
 
-Rationale
-=========
-* Disable attribute modification
-* Logging value access
-* Check boundary
-* Raise exceptions (TypeError)
-* Check argument type
-
-
 Accessing fields
 ================
 
@@ -104,6 +95,14 @@ Direct attribute access
 Properties
 ==========
 
+Rationale
+---------
+* Disable attribute modification
+* Logging value access
+* Check boundary
+* Raise exceptions (TypeError)
+* Check argument type
+
 Property class
 --------------
 .. code-block:: python
@@ -127,61 +126,85 @@ Property decorator
     .. code-block:: python
 
         @property
-        def foo(self):
-            return self._foo
+        def x(self):
+            return self._x
 
 * really means the same thing as
 
     .. code-block:: python
 
-        def foo(self):
-            return self._foo
+        def x(self):
+            return self._x
 
-        foo = property(foo)
+        x = property(x)
 
-Creating properties
--------------------
+Creating properties with ``property`` class
+-------------------------------------------
 * Property's arguments are method pointers ``get_x``, ``set_x``, ``del_x`` and a docstring
-* Code using properties
 
-    .. code-block:: python
-        :caption: Properties
+.. code-block:: python
+    :caption: Properties
 
-        class MyClass:
-            def __init__(self):
-                self._x = None
+    class MyClass:
+        def __init__(self):
+            self._x = None
 
-            def get_x(self):
-                return self._x
+        def get_x(self):
+            return self._x
 
-            def set_x(self, value):
-                self._x = value
+        def set_x(self, value):
+            self._x = value
 
-            def del_x(self):
-                del self._x
+        def del_x(self):
+            del self._x
 
-            x = property(get_x, set_x, del_x, "I am the 'x' property.")
+        x = property(get_x, set_x, del_x, "I am the 'x' property.")
 
-* Equivalent code using decorators
+Creating properties with ``@property`` decorator
+------------------------------------------------
+.. code-block:: python
+    :emphasize-lines: 5-11
 
-    .. code-block:: python
-        :caption: Properties as a decorators
+    class MyClass:
+        def __init__(self):
+            self._x = None
 
-        class MyClass:
-            def __init__(self):
-                self._x = None
+        @property
+        def x(self):
+            pass
 
-            @property
-            def x(self):
-                return self._x
+        @x.getter
+        def x(self):
+            return self._x
 
-            @x.setter
-            def x(self, value):
-                self._x = value
+        @x.setter
+        def x(self, value):
+            self._x = value
 
-            @x.deleter
-            def x(self):
-                del self._x
+        @x.deleter
+        def x(self):
+            del self._x
+
+.. code-block:: python
+    :caption: Properties as a decorators
+    :emphasize-lines: 5-7
+
+    class MyClass:
+        def __init__(self):
+            self._x = None
+
+        @property
+        def x(self):
+            return self._x
+
+        @x.setter
+        def x(self, value):
+            self._x = value
+
+        @x.deleter
+        def x(self):
+            del self._x
+
 
 Use Cases
 =========

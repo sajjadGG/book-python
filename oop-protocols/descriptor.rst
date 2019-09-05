@@ -213,6 +213,39 @@ Timezone Conversion
 Assignments
 ===========
 
+Temperature
+-----------
+* Complexity level: easy
+* Lines of code to write: 9 lines
+* Estimated time of completion: 10 min
+* Filename: :download:`solution/descriptor_temperature.py`
+
+:English:
+    #. Create class ``KelvinTemperature``
+    #. Temperature must always be positive
+    #. Use descriptors to check boundaries at each value modification
+
+:Polish:
+    #. Stwórz klasę ``KelvinTemperature``
+    #. Temperatura musi być zawsze być dodatnia
+    #. Użyj deskryptorów do sprawdzania wartości granicznych przy każdej modyfikacji
+
+:Output:
+    .. code-block:: python
+
+        temp = KelvinTemperature()
+
+        temp.value = 1
+        print(temp.value)
+        # 1
+
+        temp.value = -1
+        # ValueError: Negative temperature
+
+:The whys and wherefores:
+    * Using descriptors
+    * Data validation
+
 Longitude and Latitude
 ----------------------
 * Complexity level: medium
@@ -220,33 +253,27 @@ Longitude and Latitude
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/descriptor_geographic.py`
 
-#. Stwórz klasę ``GeographicCoordinate``
-#. Klasa ma mieć pola:
+:English:
+    #. From input data (see below) model class ``GeographicCoordinate``
+    #. Using descriptors add value boundaries checking
+    #. Deleting values should set it to ``None``
+    #. Disable modification of ``elevation`` field
+    #. Allow to set ``elevation`` field at the class initialization
 
-    * ``latitude`` - min: -90.0; max 90.0
-    * ``longitude`` - min: -180.0; max: 180.0
-    * ``elevation`` - min: -10,994; max: 8,848 m
+:Polish:
+    #. Na podstawie danych wejściowych (patrz poniżej) zamodeluj klasę ``GeographicCoordinate``
+    #. Wykorzystując deskryptory dodaj sprawdzanie wartości granicznych
+    #. Kasowanie wartości powinno ustawiać ją na ``None``
+    #. Zablokuj modyfikację pola ``elevation``
+    #. Zezwól na ustawianie pola ``elevation`` podczas inicjalizacji
 
-#. Wykorzystując deskryptory dodaj mechanizm sprawdzania wartości
-#. Przy kasowaniu (``del``) wartości, nie usuwaj jej, a ustaw na ``None``
-#. Zablokuj całkowicie modyfikację pola ``elevation``
-#. Co zrobić, aby można było inicjalnie ustawić pole ``elevation``, ale później już jego modyfikacja jest zablokowana?
+:Input Data:
+    .. code-block:: text
 
-:The whys and wherefores:
-    * Wykorzystanie deskryptorów
-    * Walidacja danych
-
-Temperature
------------
-* Complexity level: medium
-* Lines of code to write: 25 lines
-* Estimated time of completion: 15 min
-* Filename: :download:`solution/descriptor_temperature.py`
-
-#. Stwórz klasę ``KelvinTemperature``
-#. Temperatura musi być dodatnia, sprawdzaj to przy zapisie do pola ``value``
-#. Usunięcie temperatury nie usunie wartości, ale ustawi ją na ``None``
+        latitude - type: float, min: -90, max 90
+        longitude - type: float, min: -180, max: 180
+        elevation - type: float, min: -10994, max: 8848
 
 :The whys and wherefores:
-    * Wykorzystanie deskryptorów
-    * Walidacja danych
+    * Using descriptors
+    * Data validation

@@ -1,5 +1,5 @@
 ****************
-setattr, getattr
+Setattr, Getattr
 ****************
 
 
