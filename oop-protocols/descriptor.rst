@@ -42,22 +42,25 @@ Outside class
 
 
     class Temperature:
-        _current_value = 0.0
-        kelvin = Kelvin()
+        def __init__(self):
+            self._current_value = 0.0
+            self.kelvin = Kelvin()
 
 
-    temp = Temperature()
+    t = Temperature()
 
-    temp.kelvin = 10        # Will trigger ``Kelvin.__set__()``
-    print(temp.kelvin)      # Will trigger ``Kelvin.__get__()``
-    del temp.kelvin         # Will trigger ``Kelvin.__delete__()``
+    t.kelvin = 10        # Will trigger ``Kelvin.__set__()``
+    print(t.kelvin)      # Will trigger ``Kelvin.__get__()``
+    del t.kelvin         # Will trigger ``Kelvin.__delete__()``
 
 Inside class
 ------------
 .. code-block:: python
 
     class Temperature:
-        _current_value = 0.0
+        def __init__(self):
+            self._current_value = 0.0
+            self.kelvin = Temperature.Kelvin()
 
         class Kelvin:
             def __get__(self, parent, parent_type):
@@ -69,14 +72,13 @@ Inside class
             def __delete__(self, parent):
                 parent._current_value = 0.0
 
-        kelvin = Kelvin()
 
 
-    temp = Temperature()
+    t = Temperature()
 
-    temp.kelvin = 10        # Will trigger ``Kelvin.__set__()``
-    print(temp.kelvin)      # Will trigger ``Kelvin.__get__()``
-    del temp.kelvin         # Will trigger ``Kelvin.__delete__()``
+    t.kelvin = 10        # Will trigger ``Kelvin.__set__()``
+    print(t.kelvin)      # Will trigger ``Kelvin.__get__()``
+    del t.kelvin         # Will trigger ``Kelvin.__delete__()``
 
 
 Case Study
@@ -87,7 +89,11 @@ Temperature Conversion
 .. code-block:: python
 
     class Temperature:
-        _current_value = 0.0
+        def __init__(self):
+            self._current_value = 0.0
+            self.kelvin = Temperature.Kelvin()
+            self.celsius = Temperature.Celsius()
+            self.fahrenheit = Temperature.Fahrenheit()
 
         class Kelvin:
             def __get__(self, parent, parent_type):
@@ -123,45 +129,41 @@ Temperature Conversion
             def __delete__(self, parent):
                 self.__set__(parent, 0)
 
-        kelvin = Kelvin()
-        celsius = Celsius()
-        fahrenheit = Fahrenheit()
 
+    t = Temperature()
 
-    temp = Temperature()
-
-    temp.kelvin = 273.15
-    print(f'K: {temp.kelvin}')      # 273.15
-    print(f'C: {temp.celsius}')     # 0.0
-    print(f'F: {temp.fahrenheit}')  # 32.0
+    t.kelvin = 273.15
+    print(f'K: {t.kelvin}')      # 273.15
+    print(f'C: {t.celsius}')     # 0.0
+    print(f'F: {t.fahrenheit}')  # 32.0
 
     print()
 
-    temp.fahrenheit = 100
-    print(f'K: {temp.kelvin}')      # 310.93
-    print(f'C: {temp.celsius}')     # 37.78
-    print(f'F: {temp.fahrenheit}')  # 100.0
+    t.fahrenheit = 100
+    print(f'K: {t.kelvin}')      # 310.93
+    print(f'C: {t.celsius}')     # 37.78
+    print(f'F: {t.fahrenheit}')  # 100.0
 
     print()
 
-    temp.celsius = 100
-    print(f'K: {temp.kelvin}')      # 373.15
-    print(f'C: {temp.celsius}')     # 100.0
-    print(f'F: {temp.fahrenheit}')  # 212.0
+    t.celsius = 100
+    print(f'K: {t.kelvin}')      # 373.15
+    print(f'C: {t.celsius}')     # 100.0
+    print(f'F: {t.fahrenheit}')  # 212.0
 
     print()
 
-    del temp.celsius
-    print(f'K: {temp.kelvin}')      # 273.15
-    print(f'C: {temp.celsius}')     # 0.0
-    print(f'F: {temp.fahrenheit}')  # 32.0
+    del t.celsius
+    print(f'K: {t.kelvin}')      # 273.15
+    print(f'C: {t.celsius}')     # 0.0
+    print(f'F: {t.fahrenheit}')  # 32.0
 
     print()
 
-    del temp.fahrenheit
-    print(f'K: {temp.kelvin}')      # 255.37
-    print(f'C: {temp.celsius}')     # -17.78
-    print(f'F: {temp.fahrenheit}')  # 0
+    del t.fahrenheit
+    print(f'K: {t.kelvin}')      # 255.37
+    print(f'C: {t.celsius}')     # -17.78
+    print(f'F: {t.fahrenheit}')  # 0
 
 
 .. _Timezone Conversion:
@@ -242,13 +244,13 @@ Temperature
 :Output:
     .. code-block:: python
 
-        temp = KelvinTemperature()
+        t = KelvinTemperature()
 
-        temp.value = 1
-        print(temp.value)
+        t.value = 1
+        print(t.value)
         # 1
 
-        temp.value = -1
+        t.value = -1
         # ValueError: Negative temperature
 
 :The whys and wherefores:

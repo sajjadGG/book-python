@@ -1,51 +1,47 @@
-class Property:
-    def __get__(self, parent, parent_type):
-        return self.value
-
-    def __set__(self, parent, value):
-        if self.MIN <= value <= self.MAX:
-            self.value = value
-        else:
-            raise ValueError(f'Value must be between {self.MIN} and {self.MAX}')
-
-    def __delete__(self):
-        self.value = None
-
-
-class Latitude(Property):
-    MIN = -90.0
-    MAX = 90.0
-
-
-class Longitude(Property):
-    MIN = -180.0
-    MAX = 180.0
-
-
-class Elevation(Property):
-    MIN = -10994.0
-    MAX = 8848.0
-
-    def __set__(self, parent, value):
-        if not hasattr(self, 'value'):
-            super().__set__('value', value)
-        else:
-            raise PermissionError('Changing value is prohibited.')
-
-
 class GeographicCoordinate:
-    latitude = Latitude()
-    longitude = Longitude()
-    elevation = Elevation()
+    class GEOProperty:
+        def __init__(self, initial_value=None):
+            self.value = initial_value
+
+        def __get__(self, parent, parent_type):
+            return self.value
+
+        def __set__(self, parent, value):
+            if self.MIN <= value <= self.MAX:
+                self.value = value
+
+        def __delete__(self, parent):
+            self.value = None
+
+    class Latitude(GEOProperty):
+        MIN = -90
+        MAX = 90
+
+    class Longitude(GEOProperty):
+        MIN = -180
+        MAX = 180
+
+    class Elevation(GEOProperty):
+        MIN = -10994
+        MAX = 8848
+
+        def __set__(self, parent, value):
+            if hasattr(self, 'value'):
+                raise PermissionError('Changing value is prohibited.')
+            else:
+                object.__set__('value', value)
+
+    def __init__(self):
+        self.latitude = GeographicCoordinate.Latitude()
+        self.longitude = GeographicCoordinate.Longitude()
+        self.elevation = GeographicCoordinate.Elevation()
 
 
-geo = GeographicCoordinate()
+geo1 = GeographicCoordinate()
+geo2 = GeographicCoordinate()
 
-geo.latitude = 10.0
-print(geo.latitude)
+geo1.elevation = 100
+geo2.elevation = 200
 
-geo.longitude = -20.0
-print(geo.longitude)
-
-geo.elevation = 1000.0
-print(geo.elevation)
+print(geo1.elevation)
+print(geo2.elevation)

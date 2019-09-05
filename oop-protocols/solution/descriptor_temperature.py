@@ -1,4 +1,4 @@
-class KelvinTemperature:
+class Temperature:
     class Value:
         def __set__(self, parent, new_value):
             if new_value < 0:
@@ -6,13 +6,14 @@ class KelvinTemperature:
             else:
                 parent._value = new_value
 
-    value = Value()
+    def __init__(self):
+        self.value = Temperature.Value()
 
 
-temp = KelvinTemperature()
+t = Temperature()
 
-temp.value = 1
-print(temp.value)
+t.value = 1
+print(t.value)
 
-temp.value = -1
+t.value = -1
 # ValueError: Negative temperature
