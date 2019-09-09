@@ -153,18 +153,28 @@ Create
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/set_create.py`
 
-.. csv-table:: Pomiary Iris
-    :name: sequences-set-create
-    :header: "Sepal length", "Sepal width", "Petal length", "Petal width", "Species"
+:English:
+    #. For given data input (see below)
+    #. Create ``set`` representing first row
+    #. Values from second row add to ``set`` using ``.add()``
+    #. From third row create ``set`` and add it with ``.update()``
+    #. From fourth row create ``tuple`` and add it with ``.update()``
+    #. From fifth row create ``list`` and add it with ``.update()``
 
-    "5.8", "2.7", "5.1", "1.9", "virginica"
-    "5.1", "3.5", "1.4", "0.2", "setosa"
-    "5.7", "2.8", "4.1", "1.3", "versicolor"
-    "6.3", "2.9", "5.6", "1.8", "virginica"
-    "6.4", "3.2", "4.5", "1.5", "versicolor"
+:Polish:
+    #. Dla danych wejściowych (patrz poniżej)
+    #. Stwórz ``set`` reprezentujący pierwszy wiersz
+    #. Wartości z drugiego wiersza dodawaj do ``set`` za pomocą ``.add()``
+    #. Na podstawie trzeciego wiersza stwórz ``set`` i dodaj go za pomocą ``.update()``
+    #. Na podstawie czwartego wiersza stwórz ``tuple`` i dodaj go za pomocą ``.update()``
+    #. Na podstawie piątego wiersza stwórz ``list`` i dodaj go za pomocą ``.update()``
 
-#. Dane są pomiary :numref:`sequences-set-create`
-#. Stwórz ``set`` na podstawie pierwszego wiersza
-#. Wartości z dwóch kolejnych wierszy dodawaj do zbioru za pomocą ``.add()``
-#. Przedostatni wiersz dodaj za pomocą ``.update()`` jako ``tuple``
-#. Ostatni wiersz dodaj za pomocą ``.update()`` jako ``list``
+:Input:
+    .. csv-table:: Input data
+        :header: "Row", "Sepal length", "Sepal width", "Petal length", "Petal width", "Species"
+
+        "1", "5.8", "2.7", "5.1", "1.9", "virginica"
+        "2", "5.1", "3.5", "1.4", "0.2", "setosa"
+        "3", "5.7", "2.8", "4.1", "1.3", "versicolor"
+        "4", "6.3", "2.9", "5.6", "1.8", "virginica"
+        "5", "6.4", "3.2", "4.5", "1.5", "versicolor"

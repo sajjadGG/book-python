@@ -232,7 +232,7 @@ Create
     #. Do przekonwertowania tabelki wykorzystaj zaznaczanie wielu linijek za pomocą klawisza ``alt`` w Twoim IDE
 
 :Input:
-    .. csv-table:: Pomiary Iris
+    .. csv-table:: Input data
         :header: "Sepal length", "Sepal width", "Petal length", "Petal width", "Species"
 
         "5.8", "2.7", "5.1", "1.9", "virginica"
