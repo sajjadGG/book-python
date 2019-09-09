@@ -391,10 +391,6 @@ Aviation Language
     #. Jeżeli wpisał znak, który nie jest w alfabecie, wypisz: "Pilots don't say that"
     #. Nie używaj ``if``, ``try`` ani ``except``
 
-:The whys and wherefores:
-    * Defining ``dict`` with values
-    * Type casting
-
 :Input:
     .. code-block:: text
         :caption: Aviation language
@@ -426,3 +422,7 @@ Aviation Language
         X, X-Ray
         Y, Yankee
         Z, Zulu
+
+:The whys and wherefores:
+    * Defining ``dict`` with values
+    * Type casting
