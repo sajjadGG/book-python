@@ -5,8 +5,8 @@
 
 Defining ``int``
 ================
-* Python 3 dynamically extends ``int``, when it's too big
 * In Python 3 there is not maximal ``int`` value
+* Python 3 dynamically extends ``int``, when it's too big
 * You can use ``_`` for easier read especially with big numbers
 
 .. code-block:: python
@@ -24,6 +24,7 @@ Converting to ``int``
 =====================
 * Also known as "type casting"
 * ``int()`` converts argument to ``int``
+* ``int()`` does not round numbers, it returns integer value
 
 .. code-block:: python
 
@@ -41,8 +42,10 @@ Converting to ``int``
 
 .. code-block:: python
 
-    int('10')               # 10
-    int('10.5')             # ValueError: invalid literal for int() with base 10: ' 10.5'
+    int('1')                # 1
+    int('-1')               # -1
+    int('1.23')             # ValueError: invalid literal for int() with base 10: '1.23'
+    int('-1.23')            # ValueError: invalid literal for int() with base 10: '-1.23'
 
 
 Numerical Operators
@@ -205,13 +208,24 @@ Time
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/int_time.py`
 
-#. Napisz kod, który wyliczy:
+:English:
+    #. Calculate how many seconds is five minutes
+    #. Calculate how many seconds is one hour
+    #. Calculate how many seconds is eight hours
+    #. Calculate how many seconds is month (22 days per 8 hours)
+    #. Calculate how many minutes is work week (40 hours)
 
-    #. Ile sekund to pięć minut?
-    #. Ile sekund to jedna godzina?
-    #. Ile sekund to osiem godzin?
-    #. Ile sekund to miesiąc pracy (22 dni po 8 godzin)?
-    #. Ile minut to tydzień pracy (40 godzin)?
+:Polish:
+    #. Oblicz ile sekund to pięć minut
+    #. Oblicz ile sekund to jedna godzina
+    #. Oblicz ile sekund to osiem godzin
+    #. Oblicz ile sekund to miesiąc pracy (22 dni po 8 godzin)
+    #. Oblicz ile minut to tydzień pracy (40 godzin)
+
+:The whys and wherefores:
+    * Defining constants and variables
+    * Naming convention
+    * Mathematical operations
 
 :Hint:
     * 1 h = 60 min
@@ -224,10 +238,18 @@ Megabits and Megabytes
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/int_megabit_megabyte.py`
 
-#. Napisz kod, który wyliczy:
+:English:
+    #. Calculate how many bits is one Megabyte
+    #. How many times Megabyte is larger than Megabit?
 
-    #. Ile bitów to jeden Megabajt?
+:Polish:
+    #. Oblicz ile bitów to jeden Megabajt
     #. O ile różni się Megabajt od Megabita?
+
+:The whys and wherefores:
+    * Defining constants and variables
+    * Naming convention
+    * Mathematical operations
 
 :Hint:
     * 1 Kb = 1024 b
@@ -243,8 +265,18 @@ Download time
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/int_download_time.py`
 
-#. Mając łącze internetowe do 100 Mb/s
-#. Ile zajmie ściągnięcie pliku 100 MB?
+:English:
+    #. Having internet connection with speed up to 100 Mb/s
+    #. How long will take to download 100 MB?
+
+:Polish:
+    #. Mając łącze internetowe do 100 Mb/s
+    #. Ile zajmie ściągnięcie pliku 100 MB?
+
+:The whys and wherefores:
+    * Defining constants and variables
+    * Naming convention
+    * Mathematical operations
 
 :Hint:
     * 1 Kb = 1024 b
@@ -260,19 +292,33 @@ Temperature
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/int_temperature.py`
 
-#. Jeden Kelwin to jeden stopień Celsiusza (1K = 1°C)
-#. Zero Kelwina (bezwzględne) to -273.15 stopni Celsiusza, w zadaniu przyjmij równe -273°C (0K = -273°C)
-#. Ile Kelwinów, a ile stopni Celsiusza wynoszą średnie temperatury powierzchni :cite:`MSL_REMS`:
+:English:
+    #. One Kelvin is equal to 1 Celsius degree (1K = 1°C)
+    #. Zero Kelvin (absolute) is equal to -273.15 Celsius degrees
+    #. For calculation use round number -273 (0K = -273°C)
+    #. How many Kelvins and Celsius degrees has average temperatures at surface :cite:`MSL_REMS`:
 
-    * Księżyca w dzień: 180 °C
-    * Księżyca w nocy: 93 K
-    * Mars średnia: −63 °C
-    * Mars najwyższa: 20 °C
-    * Mars najniższa: 120 K
+        * Lunar day: 180 °C
+        * Lunar night: 93 K
+        * Mars average: −63 °C
+        * Mars highest: 20 °C
+        * Mars lowest: 120 K
+
+:Polish:
+    #. Jeden Kelwin to jeden stopień Celsiusza (1K = 1°C)
+    #. Zero Kelwina (bezwzględne) to -273.15 stopni Celsiusza
+    #. W zadaniu przyjmij równe -273°C (0K = -273°C)
+    #. Ile Kelwinów, a ile stopni Celsiusza wynoszą średnie temperatury powierzchni :cite:`MSL_REMS`:
+
+        * Księżyca w dzień: 180 °C
+        * Księżyca w nocy: 93 K
+        * Mars średnia: −63 °C
+        * Mars najwyższa: 20 °C
+        * Mars najniższa: 120 K
 
 :The whys and wherefores:
-    * Definiowanie zmiennych
-    * Nazewnictwo zmiennych
-    * Korzystanie z print formatting
-    * Operacje matematyczne na zmiennych
+    * Defining constants and variables
+    * Naming convention
+    * Print formatting
+    * Mathematical operations
 

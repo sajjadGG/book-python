@@ -90,6 +90,9 @@ Converting to ``float``
     float('+1.23')      # 1.23
     float('-1.23')      # -1.23
 
+    float('1,23')       # ValueError: could not convert string to float: '1,23'
+    float('-1,23')      # ValueError: could not convert string to float: '-1,23'
+
 
 Numeric Functions
 =================
