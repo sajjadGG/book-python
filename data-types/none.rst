@@ -8,8 +8,7 @@
 Defining ``None``
 =================
 * First letter capitalized, other are lower cased
-* Empty value (null)
-* Used for unknown (unset) values
+* Empty (null) or unknown (unset) value
 * It is not ``False`` value
 * With ``if`` statements behaves like negative values
 
@@ -40,26 +39,31 @@ Is ``None`` or ``not``
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/none.py`
 
-#. Co należy podstawić do zmiennych aby wyrażenia poniżej zgadzały się z wartością oczekiwaną?
+:English:
+    #. What you need to put in expressions to get the expected outcome?
 
-.. code-block:: python
+:Polish:
+    #. Co należy podstawić w wyrażeniach aby otrzymać wartość oczekiwaną?
 
-        a = ... is None                                                                       # True
-        b = ... is not None                                                                   # False
-        c = bool(bool(...) is not bool(...)) == False                                         # True
-        d = (bool(bool(...) is not bool(...)) == False and bool(...))                         # False
-        e = (bool(bool(...) is not bool(...)) == False and bool(...)) and (... is not None)   # False
+:Input:
+    .. code-block:: python
 
-        print(a)    # True
-        print(b)    # False
-        print(c)    # True
-        print(d)    # False
-        print(e)    # False
+            a = ... is None                                                                       # True
+            b = ... is not None                                                                   # False
+            c = bool(bool(...) is not bool(...)) == False                                         # True
+            d = (bool(bool(...) is not bool(...)) == False and bool(...))                         # False
+            e = (bool(bool(...) is not bool(...)) == False and bool(...)) and (... is not None)   # False
+
+            print(a)    # True
+            print(b)    # False
+            print(c)    # True
+            print(d)    # False
+            print(e)    # False
 
 :The whys and wherefores:
-    * Definiowanie zmiennych
-    * Konwersja typów
-    * Typy logiczne
+    * Defining variables
+    * Type casting
+    * Logic types
 
 
-.. todo:: poprawić zadanie, jest tendencyjne
+.. todo:: Add more interesting tasks

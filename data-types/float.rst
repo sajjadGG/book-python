@@ -137,11 +137,12 @@ Handling user input and type casting
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/float_casting.py`
 
-#. Użytkownik wprowadził odległość w metrach równą ``1337``
-#. Wyświetl wartość na ekranie w różnych jednostkach
-#. Do wyświetlania skorzystaj z kodu poniżej
-#. Dane przy wyświetlaniu muszą być przekonwertowane do typów podanych w komentarzu
-#. W miejsce ``...`` podstaw wyliczone i przekonwertowane zmienne
+:Polish:
+    #. Użytkownik wprowadził odległość w metrach równą ``1337``
+    #. Wyświetl wartość na ekranie w różnych jednostkach
+    #. Do wyświetlania skorzystaj z kodu poniżej
+    #. Dane przy wyświetlaniu muszą być przekonwertowane do typów podanych w komentarzu
+    #. W miejsce ``...`` podstaw wyliczone i przekonwertowane zmienne
 
 .. code-block:: python
 
@@ -152,23 +153,16 @@ Handling user input and type casting
     print(f'm: {...}, km: {...}, mi: {...}, nm: {...}')  # int, int, float, float
 
 :The whys and wherefores:
-    * Definiowanie zmiennych
-    * Nazewnictwo zmiennych
-    * Korzystanie z print formatting
-    * Konwersja typów
-    * Operacje matematyczne na zmiennych
-    * Oddzielenie logiki biznesowej od warstwy widoku
+    * Defining constants and variables
+    * Naming convention
+    * Print formatting
+    * Mathematical operations
+    * Separation of business logic and view
 
 :Hints:
     * 1000 m = 1 km
-    * 1608 m = 1 mila
-    * 1852 m = 1 mila morska
-    * Literka ``f'...'`` włącza tryb interpolacji:
-
-        .. code-block:: python
-
-            age = 30
-            print(f'My age is: {age}')
+    * 1608 m = 1 mile
+    * 1852 m = 1 nautical mile
 
 SI Unit Conversion
 ------------------
@@ -177,34 +171,40 @@ SI Unit Conversion
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/float_pressure.py`
 
-#. Dane są jednostki w układzie SI:
+:English:
+    #. Operational pressure of EMU spacesuit: 4.3 PSI
+    #. Operational pressure of ORLAN spacesuit: 400 hPa
+    #. Calculate operational pressure in kPa for EMU
+    #. Calculate operational pressure in PSI for Orlan
+    #. Calculate International Standard Atmosphere pressure at sea level
+    #. Calculate partial pressure of Oxygen at sea level
+    #. At what altitude above sea level, pressure is equal to partial pressure of Oxygen
 
-    * 1 ata = 1013.25 hPa (ISA - International Standard Atmosphere)
-    * 1 psi = 6894.757 Pa
-    * ciśnienie operacyjne skafandra EMU: 4.3 PSI
-    * ciśnienie operacyjne skafandra ORLAN: 400 hPa
-    * Skład gazów w atmosferze wynosi:
-
-        * Azot 78.084%
-        * Tlen 20.946%
-        * Argon 0.9340%
-        * Ditlenek węgla 0.0407%
-        * Pozostałe gazy poniżej 0.001%
-
-#. Jaką wartość ma ciśnienie:
-
-    #. operacyjne skafandra EMU?
-    #. operacyjne skafandra Orlan ?
-    #. standardowej atmosfery na poziomie morza?
-    #. parcjalne tlenu na poziomie morza?
-
-#. Wszystkie wyniki podaj w kPa oraz w PSI zaokrąglając do dwóch miejsc po przecinku.
-
-:References:
-    * https://space.stackexchange.com/a/13375/3088
+:Polish:
+    #. Ciśnienie operacyjne skafandra kosmicznego EMU: 4.3 PSI
+    #. Ciśnienie operacyjne skafandra kosmicznego ORLAN: 400 hPa
+    #. Oblicz ciśnienie operacyjne skafandra EMU w kPa
+    #. Oblicz ciśnienie operacyjne skafandra Orlan w PSI
+    #. Oblicz ciśnienie standardowej atmosfery na poziomie morza
+    #. Oblicz ciśnienie parcjalne tlenu na poziomie morza
+    #. Oa jakiej wysokości nad poziomem morza panuje ciśnienie równe ciśnieniu parcjalnemu tlenu?
+    #. Wszystkie wyniki podaj w kPa oraz w PSI zaokrąglając do dwóch miejsc po przecinku
 
 :The whys and wherefores:
-    * Definiowanie zmiennych
-    * Nazewnictwo zmiennych
-    * Korzystanie z print formatting
-    * Operacje matematyczne na zmiennych
+    * Defining constants and variables
+    * Naming convention
+    * Print formatting
+    * Mathematical operations
+    * Separation of business logic and view
+
+:Hint:
+    * 1 ata = 1013.25 hPa (ISA - International Standard Atmosphere)
+    * 1 psi = 6894.757 Pa
+    * pressure gradient = -11.3 Pa / 1 meter
+    * Atmosphere gas composition:
+
+        * Nitrogen 78.084%
+        * Oxygen 20.946%
+        * Argon 0.9340%
+        * Carbon Dioxide 0.0407%
+        * Others 0.001%

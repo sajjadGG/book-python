@@ -148,9 +148,17 @@ To ``bool`` or not to ``bool``
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/bool_simple.py`
 
-#. Wprowadzono zmienne:
+:English:
+    #. Which variables are ``True``?
+    #. Which variables are ``False``?
 
+:Polish:
+    #. Które zmienne są ``True``?
+    #. Które zmienne są ``False``?
+
+:Input:
     .. code-block:: python
+        :caption: Input
 
         a = bool(False)
         b = bool(True)
@@ -165,18 +173,18 @@ To ``bool`` or not to ``bool``
         i = bool(0)
         j = bool(0.0)
         k = bool(-0)
-        l = bool(-0.0+0.0j)
-        m = bool('-0.0+0.0j')
+        l = bool(-0.0)
 
-        n = bool(int('0'))
-        o = bool(float('-0'))
+        m = bool(int('0'))
+        n = bool(float('-0'))
 
-#. Które zmienne mają wartość ``True``, ``False``?
+        o = bool(-0.0+0.0j)
+        p = bool('-0.0+0.0j')
 
 :The whys and wherefores:
-    * Definiowanie zmiennych
-    * Konwersja typów
-    * Typy logiczne
+    * Defining variables
+    * Type casting
+    * Logic types
 
 ``True`` of ``False``
 ---------------------
@@ -185,9 +193,15 @@ To ``bool`` or not to ``bool``
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/bool_true_or_false.py`
 
-#. Co należy podstawić do zmiennych aby wyrażenia poniżej zgadzały się z wartością oczekiwaną?
+:English:
+    #. What you need to put in expressions to get the expected outcome?
 
+:Polish:
+    #. Co należy podstawić w wyrażeniach aby otrzymać wartość oczekiwaną?
+
+:Input:
     .. code-block:: python
+        :caption: Input
 
         a = bool(...) == True                   # True
         b = bool(...) == False                  # True
@@ -205,8 +219,9 @@ To ``bool`` or not to ``bool``
         print(e)                                # True
         print(f)                                # False
         print(g)                                # True
+        print(h)                                # False
 
 :The whys and wherefores:
-    * Definiowanie zmiennych
-    * Konwersja typów
-    * Typy logiczne
+    * Defining variables
+    * Type casting
+    * Logic types
