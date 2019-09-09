@@ -264,7 +264,6 @@ Split train/test
 
 :Input:
 .. code-block:: python
-    :caption: Input data
 
     INPUT = [
         ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),

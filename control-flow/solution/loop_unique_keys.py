@@ -1,6 +1,6 @@
 from typing import Set
 
-DATA = [
+INPUT = [
     {'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
     {'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
     {'Sepal length': 6.3, 'Petal width': 1.8, 'Species': 'virginica'},
@@ -11,7 +11,7 @@ DATA = [
 
 fieldnames: Set[str] = set()
 
-for row in DATA:
+for row in INPUT:
     fieldnames.update(row.keys())
 
 # http://python.astrotech.io/performance/micro-benchmarking.html

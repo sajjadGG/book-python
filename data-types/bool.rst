@@ -158,7 +158,6 @@ To ``bool`` or not to ``bool``
 
 :Input:
     .. code-block:: python
-        :caption: Input
 
         a = bool(False)
         b = bool(True)

@@ -419,7 +419,6 @@ Write fixed schema data to CSV file
 
 :Input:
     .. code-block:: python
-        :caption: Input
 
         INPUT = [
             {'first_name': 'Jan',  'last_name': 'Twardowski'},
@@ -470,7 +469,6 @@ Write variable schema data to file
 
 :Input:
     .. code-block:: python
-        :caption: Input
 
         INPUT = [
             {'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
@@ -517,7 +515,6 @@ Object serialization to CSV
 
 :Input:
     .. code-block:: python
-        :caption: Input
 
         class Contact:
             def __init__(self, first_name, last_name, addresses=()):

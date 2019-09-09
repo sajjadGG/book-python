@@ -251,7 +251,6 @@ Iris Stats
 
 :Input:
     .. code-block:: python
-        :caption: Input
 
         INPUT = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),

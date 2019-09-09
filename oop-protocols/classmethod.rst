@@ -84,7 +84,6 @@ Pickle
 
 :Input Data:
     .. code-block:: text
-        :caption: Input Data
 
         Mark, Watney, Astronaut
         Jan, Twardowski, Cosmonaut

@@ -136,7 +136,6 @@ SQLite Iris
 
 :Input:
     .. code-block:: text
-        :caption: Input data
 
         4.3,3.0,1.1,0.1,0
         5.8,4.0,1.2,0.2,0
@@ -197,7 +196,6 @@ Creating relations in database
 
 :Input:
     .. code-block:: text
-        :caption: Input
 
         José, Jiménez
             2101 E NASA Pkwy, 77058, Houston, Texas, USA
@@ -289,7 +287,6 @@ Relational data in one table
 
 :Input:
     .. code-block:: text
-        :caption: Input
 
         José, Jiménez
             2101 E NASA Pkwy, 77058, Houston, Texas, USA

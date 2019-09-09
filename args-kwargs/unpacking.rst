@@ -205,7 +205,6 @@ Unpacking from nested sequence
 
 :Input:
     .. code-block:: python
-        :caption: Input
 
         INPUT: list = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),

@@ -552,7 +552,6 @@ XML Parsing
 :Input:
     .. literalinclude:: data/xml_plants.xml
         :language: xml
-        :caption: Input
 
 XSLT Transformation
 -------------------
@@ -570,4 +569,3 @@ XSLT Transformation
 :Input:
     .. literalinclude:: data/xml_transform.xml
         :language: xml
-        :caption: Input
