@@ -391,7 +391,7 @@ String cleaning
 
 :Output:
     .. code-block:: python
-        :caption: Input
+        :caption: Output
 
         expected = 'Jana III Sobieskiego'
 

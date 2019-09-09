@@ -212,15 +212,22 @@ Simple collections
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/slice_every_nth.py`
 
-#. Stwórz ``a: tuple`` z cyframi 0, 1, 2, 3
-#. Stwórz ``b: list`` z cyframi 2, 3, 4, 5
-#. Stwórz ``c: set``, który będzie zawierał co drugie elementy z ``a`` i ``b``
-#. Wyświetl ``c`` na ekranie
+:English:
+    #. Create tuple ``a`` with digits: 0, 1, 2, 3
+    #. Create list ``b`` with digits: 2, 3, 4, 5
+    #. Create set ``c`` with every second element from ``a`` and ``b``
+    #. Print ``c`` on the screen
+
+:Polish:
+    #. Stwórz tuplę ``a`` z cyframi: 0, 1, 2, 3
+    #. Stwórz listę ``b`` z cyframi: 2, 3, 4, 5
+    #. Stwórz zbiór ``c`` z co drugim elementem ``a`` i ``b``
+    #. Wyświetl ``c`` na ekranie
 
 :The whys and wherefores:
-    * Definiowanie i korzystanie z ``list``, ``tuple``, ``set``
-    * Slice zbiorów danych
-    * Rzutowanie i konwersja typów
+    * Defining and using ``list``, ``tuple``, ``set``
+    * Slice data structures
+    * Type casting
 
 Split train/test
 ----------------
@@ -229,9 +236,35 @@ Split train/test
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/slice_split_train_test.py`
 
+:English:
+    #. For input data (see below)
+    #. Write header (first line) to ``header`` variable
+    #. Write data without header to ``data`` variable
+    #. Calculate pivot point: number records in ``data`` multiplied by PERCENT
+    #. Divide ``data`` into two lists:
+
+        * ``X_train``: 60% - training data
+        * ``X_test``: 40% - testing data
+
+    #. From ``data`` write training data from start to pivot
+    #. From ``data`` write test data from pivot to end
+
+:Polish:
+    #. Dla danych wejściowych (patrz poniżej)
+    #. Zapisz nagłówek (pierwsza linia) do zmiennej ``header``
+    #. Zapisz dane bez nagłówka do zmiennej ``data``
+    #. Wylicz punkt podziału: ilość rekordów w ``data`` razy PROCENT
+    #. Podziel ``data`` na dwie listy:
+
+        * ``X_train``: 60% - dane do uczenia
+        * ``X_test``: 40% - dane do testów
+
+    #. Z ``data`` zapisz do uczenia rekordy od początku do punktu podziału
+    #. Z ``data`` zapisz do testów rekordy od punktu podziału do końca
+
+:Input:
 .. code-block:: python
-    :caption: Iris Dataset
-    :name: listing-slice-iris-dataset
+    :caption: Input data
 
     DATA = [
         ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
@@ -258,22 +291,10 @@ Split train/test
         (4.6, 3.1, 1.5, 0.2, 'setosa'),
     ]
 
-#. Mając do dyspozycji zbiór danych Irysów z listingu :numref:`listing-slice-iris-dataset`
-#. Zapisz nagłówek (pierwsza linia) do zmiennej
-#. Zapisz do innej zmiennej dane bez nagłówka (``data = DATA[1:]``)
-#. Wylicz punkt podziału: ilość rekordów danych bez nagłówka razy procent
-#. Podziel zbiór na dwie listy w proporcji:
-
-    - ``X_train`` - dane do uczenia - 60%
-    - ``X_test`` - dane testowe - 40%
-
-#. Z danych bez nagłówka zapisz do uczenia rekordy od początku do punktu podziału
-#. Z danych bez nagłówka zapisz do testów rekordy od punktu podziału do końca
-
 :The whys and wherefores:
-    * Umiejętność przetwarzania złożonych typów danych
-    * Korzystanie z przecięć danych
-    * Konwersja typów
+    * Using nested sequences
+    * Using slices
+    * Type casting
     * Magic Number
 
 Iris dataset
@@ -283,10 +304,23 @@ Iris dataset
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/slice_iris.py`
 
-#. Do rozwiązania zadania nie używaj pętli, generatorów, rozwinięć and instrukcji warunkowych.
-#. Mając dane z listingu poniżej
+:English:
+    #. For input data (see below)
+    #. Use only ``slice``
+    #. Extract list ``features`` with measurements (every row must be tuple)
+    #. Extract species name (every fifth element) and write to ``labels`` list
+    #. Write unique species names to ``species`` set
 
+:Polish:
+    #. Dla danych wejściowych (patrz poniżej)
+    #. Użyj tylko ``slice``
+    #. Wyodrębnij listę ``features`` w pomiarami (każdy wiersz ma być krotką)
+    #. Wyodrębnij nazwę gatunku (co piąty element) i zapisz do listy ``labels``
+    #. Zapisz unikalne nazwy gatunków do zbioru ``species``
+
+:Input:
     .. code-block:: python
+        :caption: Input
 
         DATA = (
             5.8, 2.7, 5.1, 1.9, 'virginica',
@@ -297,9 +331,9 @@ Iris dataset
             4.7, 3.2, 1.3, 0.2, 'setosa',
         )
 
-#. Za pomocą slice wyodrębnij zmienną ``features: List[Tuple[float]]`` z wynikami pomiarów
-
+:Output:
     .. code-block:: python
+        :caption: Output
 
         features = [
             (5.8, 2.7, 5.1, 1.9),
@@ -310,10 +344,6 @@ Iris dataset
             (4.7, 3.2, 1.3, 0.2),
         ]
 
-#. Za pomocą slice (co piąty element) wyodrębnij zmienną ``labels: List[str]``, która będzie zawierała w kolejności wszystkie nazwy gatunków:
-
-    .. code-block:: python
-
         labels = [
             'virginica',
             'setosa',
@@ -323,21 +353,15 @@ Iris dataset
             'setosa',
         ]
 
-#. Wyodrębnij zmienną ``species: Set[str]``, która jest unikalnym zbiorem gatunków (na podstawie ``labels``)
-
-    .. code-block:: python
-
         species = {
             'versicolor',
             'setosa',
             'virginica',
         }
 
-
 :The whys and wherefores:
-    * Definiowanie i korzystanie z ``list``, ``tuple``, ``set``
-    * Slice zbiorów danych
-    * Rzutowanie i konwersja typów
+    * Defining and using ``list``, ``tuple``, ``set``
+    * Slicing sequences
 
 Slicing text
 ------------
@@ -346,32 +370,50 @@ Slicing text
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/slice_text.py`
 
-#. Z podanych poniżej ciągów znaków
-#. Za pomocą ``[...]`` wydobądź ``Jana III Sobieskiego``
-#. Jakie parametry użyłeś dla każdej z linijek?
+:English:
+    #. For input data (see below)
+    #. Expected value is ``Jana III Sobieskiego``
+    #. Use only ``slice`` to clean each variable
+    #. Compare with output data (see below)
 
-.. code-block:: python
+:Polish:
+    #. Dla danych wejściowych (patrz poniżej)
+    #. Oczekiwana wartość ``Jana III Sobieskiego``
+    #. Wykorzystaj tylko ``slice`` oczyszczenia każdej zmiennej
+    #. Porównaj wyniki z danymi wyjściowymi (patrz poniżej)
 
-    a = 'UL. Jana III Sobieskiego 1/2'
-    b = 'ulica Jana III Sobieskiego 1 apt 2'
-    c = 'os. Jana III Sobieskiego'
-    d = 'plac Jana III Sobieskiego 1/2'
-    e = 'aleja Jana III Sobieskiego'
-    f = 'alei Jana III Sobieskiego 1/2'
-    g = 'Jana III Sobieskiego 1 m. 2'
-    h = 'os. Jana III Sobieskiego 1 apt 2'
+:Input:
+    .. code-block:: python
+        :caption: Input
 
-    expected = 'Jana III Sobieskiego'
-    print(f'{a == expected}\t a: "{a}"')
-    print(f'{b == expected}\t b: "{b}"')
-    print(f'{c == expected}\t c: "{c}"')
-    print(f'{d == expected}\t d: "{d}"')
-    print(f'{e == expected}\t e: "{e}"')
-    print(f'{f == expected}\t f: "{f}"')
-    print(f'{g == expected}\t g: "{g}"')
-    print(f'{h == expected}\t h: "{h}"')
+        a = 'ul Jana III SobIESkiego'
+        b = '\tul. Jana trzeciego Sobieskiego'
+        c = 'ulicaJana III Sobieskiego'
+        d = 'UL. JANA 3 \nSOBIESKIEGO'
+        e = 'UL. jana III SOBiesKIEGO'
+        f = 'ULICA JANA III SOBIESKIEGO  '
+        g = 'ULICA. JANA III SOBIeskieGO'
+        h = ' Jana 3 Sobieskiego  '
+        i = 'Jana III Sobi\teskiego '
+
+:Output:
+    .. code-block:: python
+        :caption: Output
+
+        expected = 'Jana III Sobieskiego'
+
+        print(f'{a == expected}\t a: "{a}"')
+        print(f'{b == expected}\t b: "{b}"')
+        print(f'{c == expected}\t c: "{c}"')
+        print(f'{d == expected}\t d: "{d}"')
+        print(f'{e == expected}\t e: "{e}"')
+        print(f'{f == expected}\t f: "{f}"')
+        print(f'{g == expected}\t g: "{g}"')
+        print(f'{h == expected}\t h: "{h}"')
+        print(f'{i == expected}\t i: "{i}"')
 
 :The whys and wherefores:
-    * Definiowanie zmiennych
-    * Wycinanie elementów stringów
-    * Indeksacja elementów
+    * Variable definition
+    * Print formatting
+    * Slicing strings
+    * Cleaning text input
