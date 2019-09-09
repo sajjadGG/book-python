@@ -22,7 +22,7 @@ h = h.strip().upper().replace('3', 'III').strip().title().replace('Iii', 'III')
 i = i.strip().upper().replace('\t', ' ').strip().title().replace('Iii', 'III')
 
 
-print(f'{a == expected}\t j: "{a}"')
+print(f'{a == expected}\t a: "{a}"')
 print(f'{b == expected}\t b: "{b}"')
 print(f'{c == expected}\t c: "{c}"')
 print(f'{d == expected}\t d: "{d}"')

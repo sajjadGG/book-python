@@ -7,7 +7,7 @@ Indexes
 
 Accessing element with index
 ============================
-* Index must be positive or negative ``int``
+* Index must be positive or negative ``int`` or zero
 * Index must be less or equal to length of object
 * Negative index starts from the end and go right to left
 

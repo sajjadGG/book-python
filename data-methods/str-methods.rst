@@ -359,11 +359,21 @@ String cleaning
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/str_cleaning.py`
 
+:English:
+    #. For input data (see below)
+    #. Expected value is ``Jana III Sobieskiego``
+    #. Use only ``str`` methods to clean each variable
+    #. Compare with output data (see below)
+    #. Discuss how to create generic solution which fit all cases
+    #. Implementation of such generic function will be in :ref:`Function Basics` chapter
+
 :Polish:
-    #. Wykorzystując metody ``str``
-    #. Dane przeczyść, tak aby zmienne miały wartość ``Jana III Sobieskiego``
-    #. Nie wykorzystuj mechanizmu ``slice``
-    #. Przeprowadź dyskusję jak zrobić rozwiązanie generyczne pasujące do wszystkich? (Implementacja rozwiązania będzie w rozdziale :ref:`Function Basics`)
+    #. Dla danych wejściowych (patrz poniżej)
+    #. Oczekiwana wartość ``Jana III Sobieskiego``
+    #. Wykorzystaj tylko metody ``str`` do oczyszczenia każdej zmiennej
+    #. Porównaj wyniki z danymi wyjściowymi (patrz poniżej)
+    #. Przeprowadź dyskusję jak zrobić rozwiązanie generyczne pasujące do wszystkich przypadków
+    #. Implementacja takiej generycznej funkcji będzie w rozdziale :ref:`Function Basics`
 
 :Input:
     .. code-block:: python

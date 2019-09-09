@@ -7,7 +7,7 @@ Slices
 
 Accessing range of elements
 ===========================
-* Slice Index must be positive or negative ``int``
+* Slice Index must be positive or negative ``int`` or zero
 * Slice has three indexes:
 
     - start (inclusive)
@@ -47,7 +47,7 @@ Accessing slice from back
 
     text = 'We choose to go to the Moon!'
 
-    text[4:-2]  # 'hoose to go to the Moo'
+    text[13:-2]  # 'go to the Moo'
     text[-5:5]  # ''
 
 
