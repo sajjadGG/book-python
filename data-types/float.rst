@@ -137,20 +137,28 @@ Handling user input and type casting
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/float_casting.py`
 
+:User:
+    #. User typed distance ``1337`` meters
+    #. Print on the screen values in other units
+    #. Use code output (see below) as a template
+    #. Convert data to types shown in comments at the right side
+    #. Instead ``...`` substitute calculated and converted values
+
 :Polish:
-    #. Użytkownik wprowadził odległość w metrach równą ``1337``
+    #. Użytkownik wprowadził odległość ``1337`` metrów
     #. Wyświetl wartość na ekranie w różnych jednostkach
-    #. Do wyświetlania skorzystaj z kodu poniżej
-    #. Dane przy wyświetlaniu muszą być przekonwertowane do typów podanych w komentarzu
-    #. W miejsce ``...`` podstaw wyliczone i przekonwertowane zmienne
+    #. Użyj kodu wyjściowego (patrz poniżej) jako szablonu
+    #. Przekonwertuj dane do typów podanych w komentarzu po prawej stronie
+    #. Zamiast ``...`` podstaw wyliczone i przekonwertowane wartości
 
-.. code-block:: python
+:Output:
+    .. code-block:: python
 
-    print(f'Meters: {...}')                              # int
-    print(f'Kilometers: {...}')                          # int
-    print(f'Miles: {...}')                               # float
-    print(f'Nautical Miles: {...}')                      # float
-    print(f'm: {...}, km: {...}, mi: {...}, nm: {...}')  # int, int, float, float
+        print(f'Meters: {...}')                              # int
+        print(f'Kilometers: {...}')                          # int
+        print(f'Miles: {...}')                               # float
+        print(f'Nautical Miles: {...}')                      # float
+        print(f'm: {...}, km: {...}, mi: {...}, nm: {...}')  # int, int, float, float
 
 :The whys and wherefores:
     * Defining constants and variables

@@ -308,10 +308,8 @@ Select
             (4.6, 3.1, 1.5, 0.2, 'setosa'),
         ]
 
-
 :The whys and wherefores:
-    * Umiejętność przetwarzania złożonych typów danych
-    * Korzystanie z przecięć danych
-    * Konwersja typów
-    * Magic Number
+    * Using nested data structures
+    * Using indexes
+    * Type casting
 

@@ -258,13 +258,14 @@ Emoticon print
 * Estimated time of completion: 3 min
 * Filename: :download:`solution/str_emoticon.py`
 
-#. Wczytaj od użytkownika imię
-#. Wyświetl ``hello IMIE EMOTICON``, gdzie:
+:Polish:
+    #. Wczytaj od użytkownika imię
+    #. Wyświetl ``hello IMIE EMOTICON``, gdzie:
 
-    - IMIE to imie wprowadzone przez usera
-    - EMOTICON to Unicode Codepoint "U+1F642"
+        - IMIE to imie wprowadzone przez usera
+        - EMOTICON to Unicode Codepoint "U+1F642"
 
-#. Wyświetl długość imienia, które wprowadził użytkownik
+    #. Wyświetl długość imienia, które wprowadził użytkownik
 
 :The whys and wherefores:
     * Definiowanie zmiennych
@@ -278,19 +279,20 @@ Variables and types
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/str_input.py`
 
-#. Wczytaj od użytkownika imię
-#. Za pomocą f-string formatting wyświetl na ekranie:
+:Polish:
+    #. Wczytaj od użytkownika imię
+    #. Za pomocą f-string formatting wyświetl na ekranie:
 
-    .. code-block:: text
+        .. code-block:: text
 
-        '''My name... "José Jiménez".
-	    	I'm an """astronaut!"""'''
+            '''My name... "José Jiménez".
+                I'm an """astronaut!"""'''
 
-#. Uwaga! Druga linijka zaczyna się od tabulacji
-#. Gdzie wartość w podwójnych cudzysłowach to ciąg od użytkownika (w przykładzie użytkownik wpisał ``José Jiménez``)
-#. Zwróć uwagę na znaki apostrofów, cudzysłowów, tabulacji i nowych linii
-#. W ciągu do wyświetlenia nie używaj spacji ani enterów - użyj ``\n`` i ``\t``
-#. Nie korzystaj z dodawania stringów (``str + str``)
+    #. Uwaga! Druga linijka zaczyna się od tabulacji
+    #. Gdzie wartość w podwójnych cudzysłowach to ciąg od użytkownika (w przykładzie użytkownik wpisał ``José Jiménez``)
+    #. Zwróć uwagę na znaki apostrofów, cudzysłowów, tabulacji i nowych linii
+    #. W ciągu do wyświetlenia nie używaj spacji ani enterów - użyj ``\n`` i ``\t``
+    #. Nie korzystaj z dodawania stringów (``str + str``)
 
 :The whys and wherefores:
     * Definiowanie zmiennych
