@@ -47,12 +47,17 @@ Is ``None`` or ``not``
 
 :Input:
     .. code-block:: python
+        :caption: Input
 
             a = ... is None                                                                       # True
             b = ... is not None                                                                   # False
             c = bool(bool(...) is not bool(...)) == False                                         # True
             d = (bool(bool(...) is not bool(...)) == False and bool(...))                         # False
             e = (bool(bool(...) is not bool(...)) == False and bool(...)) and (... is not None)   # False
+
+:Output:
+    .. code-block:: python
+        :caption: Output
 
             print(a)    # True
             print(b)    # False

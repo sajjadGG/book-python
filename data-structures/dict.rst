@@ -393,7 +393,7 @@ Aviation Language
 
 :Input:
     .. code-block:: text
-        :caption: Aviation language
+        :caption: Input data
 
         Letter, Pronounce
         A, Alfa

@@ -212,6 +212,10 @@ To ``bool`` or not to ``bool``
         g = bool(bool(...) == False) or False   # True
         h = bool(...) is not bool(...)          # False
 
+:Output:
+    .. code-block:: python
+        :caption: Output
+
         print(a)                                # True
         print(b)                                # True
         print(c)                                # True

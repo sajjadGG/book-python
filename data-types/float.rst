@@ -153,6 +153,7 @@ Handling user input and type casting
 
 :Output:
     .. code-block:: python
+        :caption: Output
 
         print(f'Meters: {...}')                              # int
         print(f'Kilometers: {...}')                          # int

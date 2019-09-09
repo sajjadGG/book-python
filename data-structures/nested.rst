@@ -252,9 +252,9 @@ Select
     #. Write header (first line) to ``header`` variable
     #. Write to ``output`` list, data from records:
 
-        * 2, 6, 9 as ``list``
-        * 12, 15, 16 as ``tuple``
-        * 18, 21 as ``dict``:
+        * 2, 6, 9 converted to ``list``
+        * 12, 15, 16 converted to ``tuple``
+        * 18, 21 converted to ``dict``:
 
             * key -> index number
             * value -> species
@@ -268,9 +268,9 @@ Select
     #. Zapisz nagłówek (pierwsza linia) do zmiennej ``header``
     #. Zapisz do listy ``output``, dane z rekordów:
 
-        * 2, 6, 9 jako ``list``
-        * 12, 15, 16 jako ``tuple``
-        * 18, 21 jako ``dict``:
+        * 2, 6, 9 przekonwertowane do ``list``
+        * 12, 15, 16 przekonwertowane do ``tuple``
+        * 18, 21 przekonwertowane do ``dict``:
 
             * klucz -> numer indeksu
             * wartość -> nazwa gatunku
@@ -281,7 +281,7 @@ Select
 
 :Input:
     .. code-block:: python
-        :caption: Iris Dataset
+        :caption: Input data
 
         DATA = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),

@@ -258,19 +258,28 @@ Emoticon print
 * Estimated time of completion: 3 min
 * Filename: :download:`solution/str_emoticon.py`
 
-:Polish:
-    #. Wczytaj od użytkownika imię
-    #. Wyświetl ``hello IMIE EMOTICON``, gdzie:
+:English:
+    #. Ask user to input name
+    #. Print on the screen ``hello NAME EMOTICON``, where:
 
-        - IMIE to imie wprowadzone przez usera
-        - EMOTICON to Unicode Codepoint "U+1F642"
+        * NAME is a name read from user
+        * EMOTICON is Unicode Codepoint "U+1F642"
+
+    #. Print length of a name, which was read from user
+
+:Polish:
+    #. Poproś użytkownika o wprowadzenie imienia
+    #. Wyświetl na ekranie ``hello NAME EMOTICON``, gdzie:
+
+        * NAME to imię wprowadzone wczytane od użytkownika
+        * EMOTICON to Unicode Codepoint "U+1F642"
 
     #. Wyświetl długość imienia, które wprowadził użytkownik
 
 :The whys and wherefores:
-    * Definiowanie zmiennych
-    * Korzystanie z print formatting
-    * Wczytywanie tekstu od użytkownika
+    * Variable declaration
+    * Print formatting
+    * Reading input data from user
 
 Variables and types
 -------------------
@@ -279,22 +288,34 @@ Variables and types
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/str_input.py`
 
+:English:
+    #. Ask user to input name
+    #. Print on the screen text identical to output code (see below)
+    #. To print on the screen use f-string formatting
+    #. Note, that second line starts with tab
+    #. Value in double quotes is a name read from user (in output user typed ``José Jiménez``)
+    #. Mind the different quotes, apostrophes, tabs and newlines
+    #. Do not use neither space not enter - use ``\n`` and ``\t``
+    #. Do not use string addition (``str + str``)
+
 :Polish:
-    #. Wczytaj od użytkownika imię
-    #. Za pomocą f-string formatting wyświetl na ekranie:
-
-        .. code-block:: text
-
-            '''My name... "José Jiménez".
-                I'm an """astronaut!"""'''
-
-    #. Uwaga! Druga linijka zaczyna się od tabulacji
-    #. Gdzie wartość w podwójnych cudzysłowach to ciąg od użytkownika (w przykładzie użytkownik wpisał ``José Jiménez``)
+    #. Poproś użytkownika o wprowadzenie imienia
+    #. Wyświetl na ekranie tekst identyczny do kodu wyjścia (patrz poniżej)
+    #. Do wyświetlania na ekranie użyj f-string formatting
+    #. Zauważ, że druga linijka zaczyna się od tabulacji
+    #. Wartość w podwójnych cudzysłowach to ciąg od użytkownika (w przykładzie użytkownik wpisał ``José Jiménez``)
     #. Zwróć uwagę na znaki apostrofów, cudzysłowów, tabulacji i nowych linii
-    #. W ciągu do wyświetlenia nie używaj spacji ani enterów - użyj ``\n`` i ``\t``
+    #. Nie używaj spacji ani entera - użyj ``\n`` i ``\t``
     #. Nie korzystaj z dodawania stringów (``str + str``)
 
+:Output:
+    .. code-block:: text
+        :caption: Output
+
+        '''My name... "José Jiménez".
+            I'm an """astronaut!"""'''
+
 :The whys and wherefores:
-    * Definiowanie zmiennych
-    * Korzystanie z print formatting
-    * Wczytywanie tekstu od użytkownika
+    * Variable declaration
+    * Print formatting
+    * Reading input data from user
