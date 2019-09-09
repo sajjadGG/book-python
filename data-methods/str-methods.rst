@@ -188,6 +188,7 @@ Finding starting position of a sub-string
     text = 'We choose to go to the Moon'
 
     text.find('M')      # 23
+    text.find('Moo')    # 23
     text.find('x')      # -1
 
 Check if ``str`` is a part of another ``str``
@@ -358,36 +359,43 @@ String cleaning
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/str_cleaning.py`
 
-.. code-block:: python
+:Polish:
+    #. Wykorzystując metody ``str``
+    #. Dane przeczyść, tak aby zmienne miały wartość ``Jana III Sobieskiego``
+    #. Nie wykorzystuj mechanizmu ``slice``
+    #. Przeprowadź dyskusję jak zrobić rozwiązanie generyczne pasujące do wszystkich? (Implementacja rozwiązania będzie w rozdziale :ref:`Function Basics`)
 
-    expected = 'Jana III Sobieskiego'
+:Input:
+    .. code-block:: python
+        :caption: Input
 
-    a = 'ul Jana III SobIESkiego'
-    b = '\tul. Jana trzeciego Sobieskiego'
-    c = 'ulicaJana III Sobieskiego'
-    d = 'UL. JANA 3 \nSOBIESKIEGO'
-    e = 'UL. jana III SOBiesKIEGO'
-    f = 'ULICA JANA III SOBIESKIEGO  '
-    g = 'ULICA. JANA III SOBIeskieGO'
-    h = ' Jana 3 Sobieskiego  '
-    i = 'Jana III Sobi\teskiego '
+        a = 'ul Jana III SobIESkiego'
+        b = '\tul. Jana trzeciego Sobieskiego'
+        c = 'ulicaJana III Sobieskiego'
+        d = 'UL. JANA 3 \nSOBIESKIEGO'
+        e = 'UL. jana III SOBiesKIEGO'
+        f = 'ULICA JANA III SOBIESKIEGO  '
+        g = 'ULICA. JANA III SOBIeskieGO'
+        h = ' Jana 3 Sobieskiego  '
+        i = 'Jana III Sobi\teskiego '
 
-    print(f'{a == expected}\t j: "{a}"')
-    print(f'{b == expected}\t b: "{b}"')
-    print(f'{c == expected}\t c: "{c}"')
-    print(f'{d == expected}\t d: "{d}"')
-    print(f'{e == expected}\t e: "{e}"')
-    print(f'{f == expected}\t f: "{f}"')
-    print(f'{g == expected}\t g: "{g}"')
-    print(f'{h == expected}\t h: "{h}"')
-    print(f'{i == expected}\t i: "{i}"')
+:Output:
+    .. code-block:: python
+        :caption: Input
 
-#. Wykorzystując metody ``str``
-#. Dane przeczyść, tak aby zmienne miały wartość ``Jana III Sobieskiego``
-#. Nie wykorzystuj mechanizmu ``slice``
-#. Przeprowadź dyskusję jak zrobić rozwiązanie generyczne pasujące do wszystkich? (Implementacja rozwiązania będzie w rozdziale :ref:`Function Basics`)
+        expected = 'Jana III Sobieskiego'
+
+        print(f'{a == expected}\t a: "{a}"')
+        print(f'{b == expected}\t b: "{b}"')
+        print(f'{c == expected}\t c: "{c}"')
+        print(f'{d == expected}\t d: "{d}"')
+        print(f'{e == expected}\t e: "{e}"')
+        print(f'{f == expected}\t f: "{f}"')
+        print(f'{g == expected}\t g: "{g}"')
+        print(f'{h == expected}\t h: "{h}"')
+        print(f'{i == expected}\t i: "{i}"')
 
 :The whys and wherefores:
-    * Definiowanie zmiennych
-    * Korzystanie z print formatting
-    * Wczytywanie tekstu od użytkownika
+    * Variable definition
+    * Print formatting
+    * Cleaning text input
