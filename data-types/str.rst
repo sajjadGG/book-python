@@ -251,8 +251,6 @@ Length of a ``str``
 Assignments
 ===========
 
-.. todo:: Create better entry-level assignment
-
 Emoticon print
 --------------
 * Complexity level: easy

@@ -371,46 +371,58 @@ Aviation Language
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/dict_alphabet.py`
 
-#. Stwórz słownik języka pilotów
-#. Pojedynczym literom przyporządkuj ich fonetyczne odpowiedniki
-#. Do przekonwertowania tabelki poniżej, wykorzystaj zaznaczanie wielu linijek za pomocą klawisza ``alt`` w Twoim IDE
-#. Wczytaj od użytkownika literę
-#. Użytkownik zawsze poda przynajmniej jedną literę, cyfrę lub znak specjalny, zawsze będzie to duża litera
-#. Wypisz na ekranie nazwę fonetyczną litery
-#. Jeżeli wpisał znak, który nie jest w alfabecie, to wypisz "Pilots don't say that"
-#. Nie używaj konstrukcji ``if``, ani ``try`` i ``except``
+:Eglish:
+    #. Create translator to pilot's alphabet
+    #. Each letter has it's phonetic counterpart
+    #. To convert table use multiline select with ``alt`` key in your IDE
+    #. Ask user to input letter
+    #. User will always put only one capitalized letter or number
+    #. Print on the screen phonetic letter pronunciation
+    #. If user type character not existing in alphabet, print: "Pilots don't say that"
+    #. Do not use ``if``, ``try``, and ``except``
+
+:Polish:
+    #. Stwórz tłumacza do alfabetu pilotów
+    #. Pojedynczym literom przyporządkuj ich fonetyczne odpowiedniki
+    #. Do przekonwertowania tabelki wykorzystaj zaznaczanie wielu linijek za pomocą klawisza ``alt`` w Twoim IDE
+    #. Zapytaj użytkownika o wprowadzenie litery
+    #. Użytkownik zawsze poda tylko jedną dużą literę lub cyfrę
+    #. Wypisz na ekranie nazwę fonetyczną wymowę litery
+    #. Jeżeli wpisał znak, który nie jest w alfabecie, wypisz: "Pilots don't say that"
+    #. Nie używaj ``if``, ``try`` ani ``except``
 
 :The whys and wherefores:
-    * Definiowanie i korzystanie z ``dict`` z wartościami
-    * Rzutowanie i konwersja typów
+    * Defining ``dict`` with values
+    * Type casting
 
-.. code-block:: text
-    :caption: Aviation language
+:Input:
+    .. code-block:: text
+        :caption: Aviation language
 
-    Letter, Pronounce
-    A, Alfa
-    B, Bravo
-    C, Charlie
-    D, Delta
-    E, Echo
-    F, Foxtrot
-    G, Golf
-    H, Hotel
-    I, India
-    J, Juliet
-    K, Kilo
-    L, Lima
-    M, Mike
-    N, November
-    O, Oscar
-    P, Papa
-    Q, Quebec
-    R, Romeo
-    S, Sierra
-    T, Tango
-    U, Uniform
-    V, Victor
-    W, Whisky
-    X, X-Ray
-    Y, Yankee
-    Z, Zulu
+        Letter, Pronounce
+        A, Alfa
+        B, Bravo
+        C, Charlie
+        D, Delta
+        E, Echo
+        F, Foxtrot
+        G, Golf
+        H, Hotel
+        I, India
+        J, Juliet
+        K, Kilo
+        L, Lima
+        M, Mike
+        N, November
+        O, Oscar
+        P, Papa
+        Q, Quebec
+        R, Romeo
+        S, Sierra
+        T, Tango
+        U, Uniform
+        V, Victor
+        W, Whisky
+        X, X-Ray
+        Y, Yankee
+        Z, Zulu
