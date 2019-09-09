@@ -266,7 +266,7 @@ Split train/test
 .. code-block:: python
     :caption: Input data
 
-    DATA = [
+    INPUT = [
         ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
         (5.8, 2.7, 5.1, 1.9, 'virginica'),
         (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -320,9 +320,8 @@ Iris dataset
 
 :Input:
     .. code-block:: python
-        :caption: Input
 
-        DATA = (
+        INPUT = (
             5.8, 2.7, 5.1, 1.9, 'virginica',
             5.1, 3.5, 1.4, 0.2, 'setosa',
             5.7, 2.8, 4.1, 1.3, 'versicolor',
@@ -333,7 +332,6 @@ Iris dataset
 
 :Output:
     .. code-block:: python
-        :caption: Output
 
         features = [
             (5.8, 2.7, 5.1, 1.9),
@@ -384,7 +382,6 @@ Slicing text
 
 :Input:
     .. code-block:: python
-        :caption: Input
 
         a = 'ul Jana III SobIESkiego'
         b = '\tul. Jana trzeciego Sobieskiego'
@@ -398,7 +395,6 @@ Slicing text
 
 :Output:
     .. code-block:: python
-        :caption: Output
 
         expected = 'Jana III Sobieskiego'
 

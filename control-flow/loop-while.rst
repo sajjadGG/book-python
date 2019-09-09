@@ -171,4 +171,4 @@ Report card
     * Wykorzystanie funkcji wbudowanych
 
 :Hints:
-    * ``average = sum(...) / len(...)``
+    * ``mean = sum(...) / len(...)``

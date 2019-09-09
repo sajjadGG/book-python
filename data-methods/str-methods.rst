@@ -377,7 +377,6 @@ String cleaning
 
 :Input:
     .. code-block:: python
-        :caption: Input
 
         a = 'ul Jana III SobIESkiego'
         b = '\tul. Jana trzeciego Sobieskiego'
@@ -391,7 +390,6 @@ String cleaning
 
 :Output:
     .. code-block:: python
-        :caption: Output
 
         expected = 'Jana III Sobieskiego'
 

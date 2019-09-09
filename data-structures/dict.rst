@@ -371,7 +371,7 @@ Aviation Language
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/dict_alphabet.py`
 
-:Eglish:
+:English:
     #. Create translator to pilot's alphabet
     #. Each letter has it's phonetic counterpart
     #. To convert table use multiline select with ``alt`` key in your IDE
@@ -393,7 +393,6 @@ Aviation Language
 
 :Input:
     .. code-block:: text
-        :caption: Input data
 
         Letter, Pronounce
         A, Alfa

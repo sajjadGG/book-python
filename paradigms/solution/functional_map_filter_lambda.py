@@ -15,5 +15,5 @@ out = map(lambda x: pow(x, 3), out)
 numbers = list(out)
 # [27, 729, 3375, 9261, 19683, 35937]
 
-average = sum(numbers) / len(numbers)
+mean = sum(numbers) / len(numbers)
 # 11502.0

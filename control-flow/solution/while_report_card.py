@@ -24,7 +24,7 @@ while True:
         print('Grade is not allowed')
 
 if report_card:
-    average = sum(report_card) / len(report_card)
-    print(f'Average: {average}')
+    mean = sum(report_card) / len(report_card)
+    print(f'Mean: {mean}')
 else:
     print('Empty report card')

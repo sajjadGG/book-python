@@ -137,7 +137,7 @@ Handling user input and type casting
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/float_casting.py`
 
-:User:
+:English:
     #. User typed distance ``1337`` meters
     #. Print on the screen values in other units
     #. Use code output (see below) as a template
@@ -153,7 +153,6 @@ Handling user input and type casting
 
 :Output:
     .. code-block:: python
-        :caption: Output
 
         print(f'Meters: {...}')                              # int
         print(f'Kilometers: {...}')                          # int

@@ -310,7 +310,6 @@ Variables and types
 
 :Output:
     .. code-block:: text
-        :caption: Output
 
         '''My name... "José Jiménez".
             I'm an """astronaut!"""'''

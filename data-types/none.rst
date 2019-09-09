@@ -47,7 +47,6 @@ Is ``None`` or ``not``
 
 :Input:
     .. code-block:: python
-        :caption: Input
 
             a = ... is None                                                                       # True
             b = ... is not None                                                                   # False
@@ -57,7 +56,6 @@ Is ``None`` or ``not``
 
 :Output:
     .. code-block:: python
-        :caption: Output
 
             print(a)    # True
             print(b)    # False
@@ -71,4 +69,4 @@ Is ``None`` or ``not``
     * Logic types
 
 
-.. todo:: Add more interesting tasks
+.. todo:: Create more assignments

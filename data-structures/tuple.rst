@@ -99,7 +99,6 @@ Create
 
 :Input:
     .. code-block:: text
-        :caption: Input data
 
         "Sepal length", "Sepal width", "Petal length", "Petal width", "Species"
         "5.8", "2.7", "5.1", "1.9", "virginica"
@@ -113,3 +112,10 @@ Create
         "4.9", "3.0", "1.4", "0.2", "setosa"
         "4.9", "2.5", "4.5", "1.7", "virginica"
         "7.1", "3.0", "5.9", "2.1", "virginica"
+
+:The whys and wherefores:
+    * Defining ``tuple``
+    * Learning IDE features
+
+:Hints:
+    * ``mean = sum(...) / len(...)``

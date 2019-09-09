@@ -103,4 +103,4 @@ More advanced topics
 
 Assignments
 ===========
-.. todo:: Create Assignments
+.. todo:: Create assignments

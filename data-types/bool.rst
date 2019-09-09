@@ -201,7 +201,6 @@ To ``bool`` or not to ``bool``
 
 :Input:
     .. code-block:: python
-        :caption: Input
 
         a = bool(...) == True                   # True
         b = bool(...) == False                  # True
@@ -214,7 +213,6 @@ To ``bool`` or not to ``bool``
 
 :Output:
     .. code-block:: python
-        :caption: Output
 
         print(a)                                # True
         print(b)                                # True

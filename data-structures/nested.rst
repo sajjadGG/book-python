@@ -250,14 +250,12 @@ Select
 :English:
     #. For given data input (see below)
     #. Write header (first line) to ``header`` variable
-    #. Write to ``output`` list, data from records:
+    #. Convert to ``list`` data from row 2, 6, 9 and add to ``output``
+    #. Convert to ``tuple`` data from row 12, 15, 16 and add to ``output``
+    #. Convert to ``dict`` data from row 18, 21 and add to ``output``:
 
-        * 2, 6, 9 converted to ``list``
-        * 12, 15, 16 converted to ``tuple``
-        * 18, 21 converted to ``dict``:
-
-            * key -> index number
-            * value -> species
+        * key -> index number (18 or 21)
+        * value -> species name
 
     #. Add empty ``set`` to ``output``
     #. Use only indexes
@@ -266,14 +264,12 @@ Select
 :Polish:
     #. Dla danych wejściowych (patrz poniżej)
     #. Zapisz nagłówek (pierwsza linia) do zmiennej ``header``
-    #. Zapisz do listy ``output``, dane z rekordów:
+    #. Przekonwertuj do ``list`` dane z wierszy 2, 6, 9 i dodaj do ``output``
+    #. Przekonwertuj do ``tuple`` dane z wierszy 12, 15, 16 i dodaj do ``output``
+    #. Przekonwertuj do ``dict`` dane z wierszy 18, 21 i dodaj do ``output``:
 
-        * 2, 6, 9 przekonwertowane do ``list``
-        * 12, 15, 16 przekonwertowane do ``tuple``
-        * 18, 21 przekonwertowane do ``dict``:
-
-            * klucz -> numer indeksu
-            * wartość -> nazwa gatunku
+        * klucz -> numer indeksu (18 or 21)
+        * wartość -> nazwa gatunku
 
      #. Dodaj pusty ``set`` do ``output``
      #. Użyj tylko indeksów
@@ -281,9 +277,8 @@ Select
 
 :Input:
     .. code-block:: python
-        :caption: Input data
 
-        DATA = [
+        INPUT = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, 'virginica'),
             (5.1, 3.5, 1.4, 0.2, 'setosa'),
