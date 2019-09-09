@@ -221,16 +221,22 @@ Create
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/list_create.py`
 
-.. csv-table:: Pomiary Iris
-    :name: sequences-list-iris
-    :header: "Sepal length", "Sepal width", "Petal length", "Petal width", "Species"
+:English:
+    #. For given data input (see below)
+    #. Create a ``list`` representing each row
+    #. To convert table use multiline select with ``alt`` key in your IDE
 
-    "5.8", "2.7", "5.1", "1.9", "virginica"
-    "5.1", "3.5", "1.4", "0.2", "setosa"
-    "5.7", "2.8", "4.1", "1.3", "versicolor"
-    "6.3", "2.9", "5.6", "1.8", "virginica"
-    "6.4", "3.2", "4.5", "1.5", "versicolor"
+:Polish:
+    #. Dla danych wejściowych (patrz poniżej)
+    #. Stwórz ``list`` reprezentujący każdy wiersz
+    #. Do przekonwertowania tabelki wykorzystaj zaznaczanie wielu linijek za pomocą klawisza ``alt`` w Twoim IDE
 
-#. Dane są pomiary :numref:`sequences-list-iris`
-#. Każdy z wierszy zapisz jako osobny ``list``
-#. Do przekonwertowania tabelki, wykorzystaj zaznaczanie wielu linijek za pomocą klawisza ``alt`` w Twoim IDE
+:Input:
+    .. csv-table:: Pomiary Iris
+        :header: "Sepal length", "Sepal width", "Petal length", "Petal width", "Species"
+
+        "5.8", "2.7", "5.1", "1.9", "virginica"
+        "5.1", "3.5", "1.4", "0.2", "setosa"
+        "5.7", "2.8", "4.1", "1.3", "versicolor"
+        "6.3", "2.9", "5.6", "1.8", "virginica"
+        "6.4", "3.2", "4.5", "1.5", "versicolor"
