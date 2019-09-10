@@ -76,6 +76,7 @@ Control Flow
     /control-flow/loop-while.rst
     /control-flow/loop-for.rst
     /control-flow/loop-nested.rst
+    /control-flow/loop-else.rst
     /control-flow/comprehensions.rst
     /control-flow/exceptions.rst
     /control-flow/file.rst

@@ -118,28 +118,6 @@ Exiting the loop
             break
 
 
-``else``
-========
-* ``else`` will execute, if ``break`` was not used to exit the loop
-
-.. code-block:: python
-
-    abort = False
-    countdown = 10
-
-
-    while countdown >= 0:
-        if abort:
-            break
-
-        print(f'Launch in T-{countdown}')
-        countdown -= 1
-
-    else:
-        print('Countdown went smooth and there was no abort at this time')
-        print('Lift off! We have lift-off!')
-
-
 Assignments
 ===========
 
