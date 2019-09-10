@@ -320,22 +320,41 @@ Segmentation
 
 Text analysis
 -------------
-* Complexity level: easy
+* Complexity level: medium or hard
 * Lines of code to write: 30 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/for_text_analysis.py`
 
+:English:
+    #. Given is text of a "Moon Speech" by John F. Kennedy's (see below)
+    #. Sentences are separated by period (``.``)
+    #. Clean each sentence from whitespaces at the beginning and at the end
+    #. Words are separated by spaces
+    #. Count how many words are there in every sentence
+    #. Print on the screen ``Dict[str, int]``:
+
+        * key - sentence
+        * value - number of words
+
+    #. Print on the screen the total number in whole text:
+
+        * adverbs (words ending with "ly")
+        * sentences
+        * words
+        * letters
+        * characters (including spaces inside sentences, but without periods ``.``)
+        * comas (``,``)
+
 :Polish:
-    #. Dany jest tekst przemówienia John F. Kennedy'ego "Moon Speech" wygłoszony na Rice Stadium (patrz poniżej)
+    #. Dany jest tekst przemówienia "Moon Speech" wygłoszonej przez John F. Kennedy'ego (patrz poniżej)
     #. Zdania oddzielone są kropkami
     #. Każde zdanie oczyść z białych znaków na początku i końcu
     #. Słowa oddzielone są spacjami
     #. Policz ile jest słów w każdym zdaniu
-    #. Wypisz na ekranie słownik o strukturze:
+    #. Wypisz na ekranie ``Dict[str, int]``:
 
-        * ``Dict[str, int]``
-        * klucz: zdanie
-        * wartość: ilość słów
+        * klucz - zdanie
+        * wartość - liczba słów
 
     #. Na końcu wypisz także ile jest łącznie w całym tekście:
 
