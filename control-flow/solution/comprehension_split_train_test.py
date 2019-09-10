@@ -23,16 +23,18 @@ INPUT = [
     (4.6, 3.1, 1.5, 0.2, 'setosa'),
 ]
 
+
 RATIO = 0.6
 
-header, *data = INPUT
+header = INPUT[0]
+data = INPUT[1:]
 pivot = int(len(data) * RATIO)
 
-X = [tuple(measurements) for *measurements, species in data]
+X = [tuple(row[0:4]) for row in data]
 X_train = X[:pivot]
 X_test = X[pivot:]
 
-y = [species for *measurements, species in data]
+y = [row[4] for row in data]
 y_train = y[:pivot]
 y_test = y[pivot:]
 

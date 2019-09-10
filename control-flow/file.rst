@@ -44,10 +44,9 @@ Relative path
 .. code-block:: python
     :caption: File in the same directory as script
 
-    import os
+    from os.path import dirname, join
 
-    BASE_DIR = os.path.dirname(__file__)
-    path = os.path.join(BASE_DIR, 'iris.csv')
+    FILE = join(dirname(__file__), 'iris.csv')
 
 
 Read from file
@@ -180,9 +179,10 @@ Content of a requested file
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/file_requested.py`
 
-#. Za pomocą ``input()`` poproś użytkownika o podanie ścieżki do pliku
-#. Wypisz zawartość pliku
-#. Dopisz obsługę wyjątków dla braku uprawnień oraz tego że plik nie istnieje.
+:Polish:
+    #. Za pomocą ``input()`` poproś użytkownika o podanie ścieżki do pliku
+    #. Wypisz zawartość pliku
+    #. Dopisz obsługę wyjątków dla braku uprawnień oraz tego że plik nie istnieje.
 
 Parsing simple CSV file
 -----------------------
@@ -192,15 +192,16 @@ Parsing simple CSV file
 * Filename: :download:`solution/file_parsing_csv.py`
 * Input data: http://raw.githubusercontent.com/AstroMatt/book-python/master/control-flow/data/iris.csv
 
-#. Skopiuj plik do siebie na dysk i nazwij go ``iris.csv``
-#. Dla każdej linii:
+:Polish:
+    #. Skopiuj plik do siebie na dysk i nazwij go ``iris.csv``
+    #. Dla każdej linii:
 
-    #. Oczyść linię z białych znaków
-    #. Podziel linię po przecinku
-    #. Zapisz rekordy do:
+        #. Oczyść linię z białych znaków
+        #. Podziel linię po przecinku
+        #. Zapisz rekordy do:
 
-        - ``X: List[Tuple[float]]`` - features
-        - ``y: List[str]`` - labels
+            - ``X: List[Tuple[float]]`` - features
+            - ``y: List[str]`` - labels
 
 :The whys and wherefores:
     * czytanie i parsowanie pliku
@@ -216,27 +217,27 @@ Parsing simple CSV file
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/file_parsing_simple.py`
-* Input data: :numref:`listing-file-parsing-simple`
 
-    .. literalinclude:: data/etc-hosts-simple.txt
-        :name: listing-file-parsing-simple
-        :language: text
-        :caption: Zawartość pliku ``hosts.txt``
-
-#. Utwórz plik tekstowy ``hosts.txt``
-#. Do pliku skopiuj kod z listingu :numref:`listing-file-parsing-simple`
-#. Sparsuj plik i dla każdej linii:
-
+:Polish:
+    #. Skopiuj dane wejściowe do pliku ``hosts.txt``
     #. Podziel linię po dowolnej ilości białych znaków (spacja, taby, itp)
     #. Wydziel ip i hosty
     #. Do struktury wynikowej dopisz ip, hostami
     #. Jeżeli IP jest już wpisane to scal listy hostname'ów dla wpisów o tym samym IP
 
-#. Na końcu przedstaw dane w formacie ``Dict[str, List[str]]``:
+:Input:
+    .. code-block:: text
 
+        127.0.0.1       localhost
+        127.0.0.1       astromatt
+        10.13.37.1      nasa.gov esa.int roscosmos.ru
+        255.255.255.255 broadcasthost
+        ::1             localhost
+
+:Output:
     .. code-block:: python
 
-        {
+        OUTPUT: Dict[str, List[str]] = {
             '127.0.0.1': ['localhost', 'astromatt'],
             '10.13.37.1': ['nasa.gov', 'esa.int', 'roscosmos.ru'],
             '255.255.255.255': ['broadcasthost'],
@@ -260,29 +261,29 @@ Parsing simple CSV file
 * Filename: :download:`solution/file_parsing_advanced.py`
 * Input data: :numref:`listing-file-parsing-advanced`
 
+:Polish:
+    #. Utwórz plik tekstowy ``hosts.txt``
+    #. Do pliku skopiuj kod z listingu :numref:`listing-file-parsing-advanced`
+    #. Ważne, żeby przepisać zawartość zawierającą komentarze, białe spacje i linie przerwy
+    #. Sparsuj plik i dla każdej linii:
+
+        #. Pomiń linię jeżeli jest pusta, jest białym znakiem lub zaczyna się od komentarza
+        #. Podziel linię po dowolnej ilości białych znaków (spacja, taby, itp)
+        #. Wydziel ip i hosty
+        #. Wykorzystaj jednolinikowego ``if`` do sprawdzenia czy jest kropka w adresie IP (to IPv4) w przeciwnym przypadku IPv6
+        #. Do listy wynikowej dopisz słownik z ip, hostami i protokołem
+        #. Jeżeli IP jest już wpisane do naszej listy wynikowej to scal listy hostname'ów dla wpisów o tym samym IP
+
+:Input:
     .. literalinclude:: data/etc-hosts.txt
         :name: listing-file-parsing-advanced
         :language: text
         :caption: Zawartość pliku ``hosts.txt``
 
-#. Utwórz plik tekstowy ``hosts.txt``
-#. Do pliku skopiuj kod z listingu :numref:`listing-file-parsing-advanced`
-#. Ważne, żeby przepisać zawartość zawierającą komentarze, białe spacje i linie przerwy
-#. Sparsuj plik i dla każdej linii:
-
-    #. Pomiń linię jeżeli jest pusta, jest białym znakiem lub zaczyna się od komentarza
-    #. Podziel linię po dowolnej ilości białych znaków (spacja, taby, itp)
-    #. Wydziel ip i hosty
-    #. Wykorzystaj jednolinikowego ``if`` do sprawdzenia czy jest kropka w adresie IP (to IPv4) w przeciwnym przypadku IPv6
-    #. Do listy wynikowej dopisz słownik z ip, hostami i protokołem
-    #. Jeżeli IP jest już wpisane do naszej listy wynikowej to scal listy hostname'ów dla wpisów o tym samym IP
-
-#. Na końcu przedstaw dane w formacie ``List[Dict[str, Union[str, Set[str]]]``:
-
+:Output:
     .. code-block:: python
-        :caption: ``/etc/hosts`` example
 
-        [
+        OUTPUT: List[Dict[str, Union[str, Set[str]]] = [
             {'ip': '127.0.0.1', 'protocol': 'ipv4', 'hostnames': {'localhost', 'astromatt'}},
             {'ip': '10.13.37.1', 'protocol': 'ipv4', 'hostnames': {'nasa.gov', 'esa.int', 'roscosmos.ru'}},
             {'ip': '255.255.255.255', 'protocol': 'ipv4', 'hostnames': {'broadcasthost'}},

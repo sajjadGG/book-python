@@ -3,7 +3,7 @@ FILE = input('File to open: ').strip()
 
 try:
 
-    with open(FILE, mode='w') as file:
+    with open(FILE, mode='r') as file:
         content = file.read()
         print(content)
 

@@ -3,7 +3,7 @@ output = []
 
 
 try:
-    with open(FILE, encoding='utf-8') as file:
+    with open(FILE) as file:
         content = file.readlines()
 
 except FileNotFoundError:
@@ -19,7 +19,9 @@ for line in content:
     if line.isspace():
         continue
 
-    ip, *hosts = line.strip().split()
+    line = line.strip().split()
+    ip = line[0]
+    hosts = line[1:]
 
     for record in output:
         if record['ip'] == ip:

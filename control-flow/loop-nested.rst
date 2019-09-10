@@ -253,48 +253,9 @@ Get elements from nested data structure
         (4.6, 3.1, 1.5, 0.2, {'species': 'setosa'}),
     ]
 
-``dict`` to ``dict``
---------------------
-* Complexity level: easy
-* Lines of code to write: 4 lines
-* Estimated time of completion: 10 min
-* Filename: :download:`solution/for_dict_to_dict.py`
-
-:Polish:
-    #. Dla danych wejściowych (patrz poniżej)
-    #. Przekonwertuj je aby uzyskać zgodny z wyjściowym
-
-:Input:
-    .. code-block:: python
-
-        INPUT = {
-            6: ['Doctorate', 'Prof-school'],
-            5: ['Masters', 'Bachelor', 'Engineer'],
-            4: ['HS-grad'],
-            3: ['Junior High'],
-            2: ['Primary School'],
-            1: ['Kindergarten'],
-        }
-
-:Output:
-    .. code-block:: python
-
-        OUTPUT: Dict[str, str] = {
-            'Doctorate': '6',
-            'Prof-school': '6',
-            'Masters': '5',
-            'Bachelor': '5',
-            'Engineer': '5',
-            'HS-grad': '4',
-            'Junior High': '3',
-            'Primary School': '2',
-            'Kindergarten': '1'
-        }
-
 :The whys and wherefores:
-    * Wyciąganie elementów ze słownika
-    * Iterowanie po słowniku
-    * Aktualizacja słownika
+    * Accessing ``dict`` keys
+    * Iterating over nested structure
 
 Unique keys from schema-less database
 -------------------------------------
@@ -303,11 +264,15 @@ Unique keys from schema-less database
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/loop_unique_keys.py`
 
+:English:
+    #. For input data (see below)
+    #. Collect unique keys in one sequence
+    #. Print the sequence
+
 :Polish:
     #. Dla danych wejściowych (patrz poniżej)
-    #. Iteruj po rekordach w bazie danych
-    #. Z rekordu wyciągnij klucze
-    #. Wypisz unikalne klucze
+    #. Zbierz unikalne klucze w jednej sekwencji
+    #. Wypisz sekwencję
 
 :Input:
     .. code-block:: python
@@ -322,11 +287,11 @@ Unique keys from schema-less database
         ]
 
 :The whys and wherefores:
-    * Generowanie zbiorów
-    * Usuwanie powtarzających się elementów
-    * Wyciąganie elementów ze słownika
-    * Iterowanie po słowniku
-    * Aktualizacja zbiorów
+    * Generating ``set``
+    * Deduplication
+    * Accessing ``dict`` keys
+    * Iterating over nested structure
+    * Updating ``set``
 
 :Hint:
     * Compare solutions with :numref:`Micro-benchmarking use case`
@@ -337,21 +302,43 @@ Label encoder
 * Lines of code to write: 13 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/loop_label_encoder.py`
-* Input data: :numref:`listing-loops-iris-sample`
+
+:English:
+    #. For input data (see below)
+    #. Define:
+
+        * ``X: List[Tuple[float]]`` - measurements
+        * ``y: List[int]`` - species
+
+    #. Separate header from data
+    #. To encode and decode ``y`` (species) we need ``label_encoder: Dict[int, str]``:
+
+        * key - identyfikator (incremented integer value)
+        * value - species name
+
+    #. ``label_encoder`` must be generated from ``INPUT``
+    #. For each row add appropriate data to ``X``, ``y`` and ``label_encoder``
+    #. Print ``X``, ``y`` and ``label_encoder``
+    #. Output must be identical to output data (see below)
 
 :Polish:
     #. Dla danych wejściowych (patrz poniżej)
     #. Zdefiniuj:
 
-        * ``X: List[Tuple[float]]`` - features - pomiary
-        * ``y: List[int]`` - labels - gatunki
+        * ``X: List[Tuple[float]]`` - pomiary
+        * ``y: List[int]`` - gatunki
         * ``label_encoder: Dict[int, str]`` - słownik podmiany nazw gatunków
 
-    #. Aby móc odszyfrować ``labels`` i zamienić wartości ``int`` na nazwy gatunków (``str``), potrzebny jest słownik podmiany "liczba -> nazwa gatunku". Na podstawie danych (nie zapisuj go na sztywno w kodzie) wygeneruj taki słownik
-    #. Dla każdego rekordu wyodrębnij pomiary i nazwę gatunku
-    #. Zaktualizuj odpowiednie listy
-    #. Wypisz ``X``, ``y`` i ``label_encoder``:
-    #. Efekt końcowy ma być tożsamy z danymi wyjściowymi
+    #. Odseparuj nagłówek od danych
+    #. Aby móc zakodować i odkodować ``y`` (gatunki) potrzebny jest ``label_encoder: Dict[int, str]``:
+
+        * key - identyfikator (kolejna liczba rzeczywista)
+        * value - nazwa gatunku
+
+    #. ``label_encoder`` musi być wygenerowany z ``INPUT``
+    #. Dla każdego wiersza dodawaj odpowiednie dane do ``X``, ``y`` i ``label_encoder``
+    #. Wypisz ``X``, ``y`` i ``label_encoder``
+    #. Wynik ma być identyczny z danymi wyjściowymi (patrz poniżej)
 
 :Input:
     .. code-block:: python
@@ -401,6 +388,6 @@ Label encoder
 
 
 :The whys and wherefores:
-    * Sprawdzanie występowania elementów w słowniku
-    * Generowanie słownika i listy na podstawie innych danych
-    * Odwracanie słownika
+    * ``dict`` lookups
+    * Dynamic ``dict`` generating
+    * ``dict`` reversal

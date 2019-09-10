@@ -190,6 +190,55 @@ enumerate()
 Assignments
 ===========
 
+``dict`` to ``dict``
+--------------------
+* Complexity level: easy
+* Lines of code to write: 4 lines
+* Estimated time of completion: 10 min
+* Filename: :download:`solution/loop_dict_to_dict.py`
+
+:English:
+    #. For input data (see below)
+    #. Convert to ``Dict[str, str]``
+    #. Results should be identical to output (see below)
+
+:Polish:
+    #. Dla danych wejściowych (patrz poniżej)
+    #. Przekonwertuj do ``Dict[str, str]``
+    #. Rezultat powinien być identyczny do wyjściowego (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        INPUT = {
+            6: ['Doctorate', 'Prof-school'],
+            5: ['Masters', 'Bachelor', 'Engineer'],
+            4: ['HS-grad'],
+            3: ['Junior High'],
+            2: ['Primary School'],
+            1: ['Kindergarten'],
+        }
+
+:Output:
+    .. code-block:: python
+
+        OUTPUT: Dict[str, str] = {
+            'Doctorate': '6',
+            'Prof-school': '6',
+            'Masters': '5',
+            'Bachelor': '5',
+            'Engineer': '5',
+            'HS-grad': '4',
+            'Junior High': '3',
+            'Primary School': '2',
+            'Kindergarten': '1'
+        }
+
+:The whys and wherefores:
+    * Accessing ``dict`` items
+    * Iterating over ``dict``
+    * Updating ``dict``
+
 ``List[tuple]`` to ``List[dict]``
 ---------------------------------
 * Complexity level: easy
@@ -212,10 +261,6 @@ Assignments
 
         - klucz: nazwa z nagłówka
         - wartość: wyniki pomiarów lub gatunek
-
-:The whys and wherefores:
-    * Working with nested data structures
-    * Iterating over dict and lists
 
 :Input:
     .. code-block:: python
@@ -254,3 +299,7 @@ Assignments
             {'Sepal length': 5.7, 'Sepal width': 2.8, 'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
             ...
         ]
+
+:The whys and wherefores:
+    * Working with nested data structures
+    * Iterating over dict and lists

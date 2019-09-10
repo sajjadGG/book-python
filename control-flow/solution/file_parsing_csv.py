@@ -4,10 +4,13 @@ y = []
 
 
 with open(FILE) as file:
-    header, *data = file.readlines()
+    file.readline()
 
-    for line in data:
-        *features, label = line.strip().split(',')
+    for line in file:
+        line = line.strip().split(',')
+        features = line[:4]
+        label = line[4]
+
         X.append(tuple(features))
         y.append(label)
 

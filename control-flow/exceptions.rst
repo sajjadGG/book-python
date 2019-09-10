@@ -204,10 +204,9 @@ Change verbosity level
 * Last lines are the most important, in most cases error is there
 
 .. code-block:: python
-    :emphasize-lines: 1,3
+    :emphasize-lines: 1,2
 
     import sys
-
     sys.tracebacklimit = 1
 
 
@@ -507,4 +506,4 @@ Real life use-case
             password=POST.get('password'),
         )
     except User.DoesNotExists:
-        print('Sorry, permission denied')
+        print('Sorry, no such user in database')
