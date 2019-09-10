@@ -1,12 +1,12 @@
-ALLOWED_GRADES_ORIGINAL = (2, 3, 3.5, 4, 4.5, 5)
-ALLOWED_GRADES = []
+INPUT = (2, 3, 3.5, 4, 4.5, 5)
+GRADE_SCALE = []
 report_card = []
 
 i = 0
 
-while i < len(ALLOWED_GRADES_ORIGINAL):
-    grade = ALLOWED_GRADES_ORIGINAL[i]
-    ALLOWED_GRADES.append(float(grade))
+while i < len(INPUT):
+    grade = float(INPUT[i])
+    GRADE_SCALE.append(grade)
     i += 1
 
 while True:
@@ -17,8 +17,7 @@ while True:
 
     grade = float(grade)
 
-    if grade in ALLOWED_GRADES:
-        print(f'Adding {grade}')
+    if grade in GRADE_SCALE:
         report_card.append(grade)
     else:
         print('Grade is not allowed')

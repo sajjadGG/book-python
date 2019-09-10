@@ -40,24 +40,28 @@ Operator precedence
 Assignments
 ===========
 
-Even and odd numbers
---------------------
+To ``float`` or to ``int``?
+---------------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/operators_even_odd.py`
+* Filename: :download:`solution/ifelse_integers.py`
 
-#. Wczytaj od użytkownika ciąg znaków dowolnej długości
-#. Użytkownik będzie podawał wyłącznie ``int``
-#. Sprawdź czy jest to liczba parzysta, czy nieparzysta
+:English:
+    #. Read a number from user
+    #. User will pass only valid ``int`` or ``float``
+    #. Integer is when number modulo divided by one has no reminder
+    #. Print on the screen whether number is ``int`` or ``float``
+
+:Polish:
+    #. Wczytaj od użytkownika liczbę
+    #. Poda tylko ``int`` albo ``float``
+    #. Liczba jest całkowitą gdy podzielona modulo przez jeden nie ma reszty
+    #. Wyświetl informację czy jest to liczba całkowita, czy rzeczywista
 
 :The whys and wherefores:
-    * wczytywanie ciągu znaków od użytkownika
-    * weryfikacja ciągu wprowadzonego od użytkownika
-    * konwersja typów i rzutowanie
-    * wykorzystanie operatorów matematycznych
-
-:Hints:
-    * Zero jest parzyste: https://en.wikipedia.org/wiki/Parity_of_zero
-    * Liczba parzysta, to taka, która po podzieleniu przez dwa nie ma reszty
-    * Zwróć uwagę, że operator ``%`` ma inne znaczenie dla ``int`` oraz ``str``
+    * Reading input
+    * Type casting
+    * Conditional statements
+    * Defining variables
+    * Magic Number

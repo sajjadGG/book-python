@@ -190,34 +190,47 @@ Conditioning on user input
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/ifelse_input.py`
 
-#. Napisz program, który poprosi użytkownika o wiek
-#. Użytkownik będzie podawał ``int`` lub ``float``, nie będzie próbował podawać niepoprawnych typów, np. ``str`` albo ``float`` z przecinkiem zamiast kropki
-#. Następnie sprawdzi pełnoletność i wyświetli informację czy osoba jest "dorosła" czy "niepełnoletnia"
+:English:
+    #. Ask user for age
+    #. User will pass only valid ``int``
+    #. Print on the screen whether user is adult
+
+:Polish:
+    #. Poproś użytkownika o wiek
+    #. Użytkownika poda tylko poprawne ``int``
+    #. Wypisz na ekranie czy użytkownik jest pełnoletni
 
 :The whys and wherefores:
-    * Wczytywanie ciągu znaków od użytkownika
-    * Rzutowanie i konwersja typów
-    * Instrukcje warunkowe
-    * Sprawdzanie przypadków brzegowych (niekompatybilne argumenty)
-    * Definiowanie zmiennych i stałych w programie
+    * Reading input
+    * Type casting
+    * Conditional statements
+    * Defining variables
     * Magic Number
 
-``int`` and ``float``
----------------------
+Is odd number
+-------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 10 min
-* Filename: :download:`solution/ifelse_integers.py`
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/ifelse_is_odd.py`
 
-#. Wczytaj liczbę od użytkownika (poda tylko ``int`` albo ``float``)
-#. Wyświetl informację czy jest to liczba całkowita, czy niecałkowita.
+:English:
+    #. Read a number from user
+    #. User will pass only valid ``int``
+    #. Print on the screen whether number is odd
+    #. Number is odd, when divided modulo (``%``) by 2 has a reminder
+
+:Polish:
+    #. Wczytaj liczbę od użytkownika
+    #. Użytkownika poda tylko poprawne ``int``
+    #. Wypisz na ekranie czy liczba jest nieparzysta
+    #. Liczba jest nieparzysta, gdy dzielona modulo (``%``) przez 2 ma resztę
 
 :The whys and wherefores:
-    * wczytywanie ciągu znaków od użytkownika
-    * weryfikacja ciągu wprowadzonego od użytkownika
-    * konwersja typów i rzutowanie
+    * Reading input from user
+    * Type casting
+    * Print formatting
+    * Numerical operators
 
 :Hints:
-    * Liczba całkowita to taka, której część dziesiętna nie występuje lub jest równa zero.
-    * Możesz to sprawdzić dzieląc liczbę z resztą przez *1* i sprawdzając resztę z dzielenia.
-    * Zwróć uwagę, że ``input()`` zawsze zwraca ``str`` wiec trzeba rzutować na ``int``, ale wtedy tracimy informację czy wczesnej mieliśmy ``float``
+    * ``%`` has different meaning for ``int`` and ``str``

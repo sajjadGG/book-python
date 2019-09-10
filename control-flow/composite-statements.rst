@@ -148,14 +148,27 @@ Classification of blood pressure in adults
 * Estimated time of completion: 25 min
 * Filename: :download:`solution/ifelse_blood_pressure.py`
 
-#. Poniższa tabelka przedstawia klasyfikację ciśnienia krwi, wg. American Heart Association
-#. Użytkownik wprowadza ciśnienie w formacie ``XXX/YY``, gdzie:
+:English:
+    #. Table contains classification of input data (see below)
+    #. Blood Pressure classification according to American Heart Association
+    #. User inputs blood pressure in ``XXX/YY`` format, where:
 
-    - ``XXX`` to wartość ciśnienia skurczowego (ang. *systolic*)
-    - ``YY`` to wartość ciśnienia rozkurczowego (ang. *diastolic*)
+        - ``XXX: int`` systolic pressure
+        - ``YY: int`` diastolic pressure
 
-#. Daj informację użytkownikowi o klasyfikacji ciśnienia
-#. W przypadku gdy wartości ciśnienia skurczowego i ciśnienia rozkurczowego należą do różnych kategorii, należy przyjąć kategorię wyższą
+    #. Print on the screen status of given blood pressure
+    #. If systolic and diastolic values are in different categories, assume worst case
+
+:Polish:
+    #. Tabela zawiera klasyfikację danych wejściowych (patrz poniżej)
+    #. Klasyfikacja ciśnienia krwi wg. American Heart Association
+    #. Użytkownik wprowadza ciśnienie krwi w formacie ``XXX/YY``, gdzie:
+
+        - ``XXX: int`` to wartość ciśnienia skurczowego (ang. *systolic*)
+        - ``YY: int`` to wartość ciśnienia rozkurczowego (ang. *diastolic*)
+
+    #. Wyświetl na ekranie status wprowadzonego ciśnienia krwi
+    #. Gdy wartości ciśnienia skurczowego i rozkurczowego należą do różnych kategorii, przyjmij gorszy przypadek
 
 .. csv-table:: Classification of blood pressure in adults :cite:`Whelton2018`
     :header-rows: 1
@@ -168,9 +181,9 @@ Classification of blood pressure in adults
     "Hypertensive Crisis", "Higher than 180", "and/or", "Higher than 120"
 
 :The whys and wherefores:
-    * Wczytywanie ciągu znaków od użytkownika
-    * Rzutowanie i konwersja typów
-    * Instrukcje warunkowe
-    * Złożone instrukcje warunkowe
-    * Sprawdzanie przypadków brzegowych (niekompatybilne argumenty)
-    * Definiowanie zmiennych i stałych w programie
+    * Reading user input
+    * Type casting
+    * Conditional statements
+    * Composite conditional statements
+    * Checking for corner cases
+    * Defining constants and variables

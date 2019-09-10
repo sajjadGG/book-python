@@ -150,25 +150,41 @@ Report card
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/while_report_card.py`
 
-#. Do zmiennej zapisz skalę ocen ``(2, 3, 3.5, 4, 4.5, 5)``
-#. Za pomocą pętli ``while`` przekonwertuj skalę na zmienną typu ``List[float]``
-#. Użytkownik podaje oceny jako ``int`` lub ``float``, nie będzie próbował podawać niepoprawnych typów, np. ``str`` albo ``float`` z przecinkiem zamiast kropki
-#. Jeżeli wciśnięto sam Enter, zakończ wpisywanie do dzienniczka
-#. Sprawdź czy ocena jest na liście dopuszczalnych ocen:
+:English:
+    #. For given grade scale in input data (see below)
+    #. Convert scale to ``List[float]`` using ``while`` loop
+    #. Ask user about grade, one at a time
+    #. User will type only valid ``int`` or ``float``
+    #. If grade is on a new grade scale - add it to report card
+    #. If grade is not on a new grade scale - print "Grade is not allowed" and continue input
+    #. If user pressed Enter key, end inserting data
+    #. At the end, print on the screen calculated mean
+    #. Test case when report list is empty
 
-    - ocena jest na liście: dodaj ją do dzienniczka
-    - ocena nie ma na liście: wyświetl informację "Grade is not allowed" i dalej kontynuuj wpisywanie
+:Polish:
+    #. Dla skali ocen w danych wejściowych (patrz poniżej)
+    #. Przekonwertuj skalę do ``List[float]`` używając pętli ``while``
+    #. Poproś użytkownika o ocenę, jedną na raz
+    #. Użytkownik poda tylko poprawne ``int`` lub ``float``
+    #. Jeżeli ocena jest na nowej skali - dodaj ją do dzienniczka
+    #. Jeżeli oceny nie ma na liście - wyświetl "Grade is not allowed" i kontynuuj wpisywanie
+    #. Jeżeli użytkownik wcisnął Enter, zakończ wprowadzanie danych
+    #. Na zakończenie wyświetl wyliczoną dla dzienniczka średnią arytmetyczną
+    #. Przetestuj przypadek, gdy dzienniczek jest pusty
 
-#. Na zakończenie wyświetl wyliczoną dla dzienniczka średnią arytmetyczną z ocen
+:Input:
+    .. code-block:: python
+
+        INPUT = (2, 3, 3.5, 4, 4.5, 5)
 
 :The whys and wherefores:
-    * Wczytywanie ciągu znaków od użytkownika
-    * Generowanie struktur danych i konwersja typów
-    * Weryfikacja ciągu wprowadzonego od użytkownika
-    * Korzystanie z pętli oraz instrukcji wychodzących
-    * Konwersja typów i rzutowanie
-    * Sprawdzanie czy obiekt jest instancją klasy
-    * Wykorzystanie funkcji wbudowanych
+    * Reading user input
+    * Input validation
+    * Type casting
+    * Sequences
+    * Using while loop
+    * Breaking loop
+    * Using built-in functions
 
 :Hints:
     * ``mean = sum(...) / len(...)``
