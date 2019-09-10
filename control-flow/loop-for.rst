@@ -179,11 +179,89 @@ Loops with ``range``
     # 7 -> c
 
 
-Example
-=======
+Iterating over ``dict`` items
+=============================
+* Since Python 3.7 ``dict`` keeps order
+* Before Python 3.7 ``dict`` order is not ensured!!
 
-Create ``dict`` from two sequences - range()
---------------------------------------------
+Iterating over ``dict`` values
+------------------------------
+.. code-block:: python
+    :caption: Iterating over ``dict`` items
+
+    DATA = {
+        'Sepal length': 5.1,
+        'Sepal width': 3.5,
+        'Petal length': 1.4,
+        'Petal width': 0.2,
+        'Species': 'setosa',
+    }
+
+    DATA.values()
+    # [5.1, 3.5, 1.4, 0.2, 'setosa']
+
+    for element in DATA.values():
+        print(element)
+
+    # 5.1
+    # 3.5
+    # 1.4
+    # 0.2
+    # 'setosa'
+
+Iterating over ``dict`` keys
+----------------------------
+.. code-block:: python
+    :caption: Iterating over ``dict`` items
+
+    DATA = {
+        'Sepal length': 5.1,
+        'Sepal width': 3.5,
+        'Petal length': 1.4,
+        'Petal width': 0.2,
+        'Species': 'setosa',
+    }
+
+    DATA.keys()
+    # ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
+
+    for element in DATA.keys():
+        print(element)
+
+    # 'Sepal length'
+    # 'Sepal width'
+    # 'Petal length'
+    # 'Petal width'
+    # 'Species'
+
+By default ``dict`` iterates over keys
+--------------------------------------
+.. code-block:: python
+    :caption: By default ``dict`` iterates over keys
+
+    DATA = {
+        'Sepal length': 5.1,
+        'Sepal width': 3.5,
+        'Petal length': 1.4,
+        'Petal width': 0.2,
+        'Species': 'setosa',
+    }
+
+    for element in DATA:
+        print(element)
+
+    # 'Sepal length'
+    # 'Sepal width'
+    # 'Petal length'
+    # 'Petal width'
+    # 'Species'
+
+
+Create ``dict`` from two sequences
+==================================
+
+``range()``
+-----------
 * Pythonic way is to use ``zip()``
 * In general, don't use ``len(range(...))``, because it evaluate generator
 
@@ -207,8 +285,10 @@ Create ``dict`` from two sequences - range()
     #     'd': 4,
     # }
 
-Create ``dict`` from two sequences - enumerate()
-------------------------------------------------
+enumerate()
+-----------
+* ``_`` is used when you don't plan to access variable
+
 .. code-block:: python
     :caption: Create ``dict`` from two ``list``
 
@@ -228,6 +308,24 @@ Create ``dict`` from two sequences - enumerate()
     #     'c': 3,
     #     'd': 4,
     # }
+
+``zip()``
+---------
+.. code-block:: python
+
+    keys = ['a', 'b', 'c', 'd']
+    values = [1, 2, 3, 4]
+
+    output = dict(zip(keys, values))
+
+    print(output)
+    # {
+    #     'a': 1,
+    #     'b': 2,
+    #     'c': 3,
+    #     'd': 4,
+    # }
+
 
 Assignments
 ===========

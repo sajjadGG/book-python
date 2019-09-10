@@ -10,8 +10,8 @@ Iterating over nested ``list`` items
 
     DATA = [1, 2, 3]
 
-    for digit in DATA:
-        print(digit)
+    for obj in DATA:
+        print(obj)
 
     # 1
     # 2
@@ -54,10 +54,10 @@ Recap information about unpacking
 .. code-block:: python
     :caption: Unpacking values
 
-    a, b = 'a', 0
-    a, b = ('a', 0)
-    k, v = ('a', 0)
-    key, value = ('a', 0)
+    a, b = 1, 2
+    a, b = (1, 2)
+    k, v = (1, 2)
+    key, value = (1, 2)
 
 Unpacking ``list`` of pairs
 ---------------------------
@@ -65,33 +65,35 @@ Unpacking ``list`` of pairs
     :caption: Unpacking values in loop
 
     DATA = [
-        ('a', 0),
-        ('b', 1),
-        ('c', 2),
+        ('a', 1),
+        ('b', 2),
+        ('c', 3),
     ]
 
     for key, value in DATA:
         print(f'{key} -> {value}')
 
-    # a -> 0
-    # b -> 1
-    # c -> 2
+    # a -> 1
+    # b -> 2
+    # c -> 3
 
 .. code-block:: python
     :caption: Unpacking values in loop
 
     DATA = [
-        (0, 1),
+        (1, 2),
         ('name', 'Jan Twardowski'),
-        ('locations', ['CapeCanaveral', 'Houston']),
+        ('species', ['setosa', 'versicolor', 'virginica']),
+        ((1, 2), ['Johnson Space Center', 'Kennedy Space Center']),
     ]
 
     for key, value in DATA:
         print(f'{key} -> {value}')
 
-    # 0 -> 1
+    # 1 -> 2
     # name -> Jan Twardowski
-    # locations -> ['CapeCanaveral', 'Houston']
+    # species -> ['setosa', 'versicolor', 'virginica']
+    # (1, 2) -> ['Johnson Space Center', 'Kennedy Space Center']
 
 Unpacking ``list`` of sequences
 -------------------------------
@@ -113,37 +115,25 @@ Unpacking ``list`` of sequences
     # versicolor -> 5.7
     # virginica -> 6.3
 
+``list`` of ``dict``
+--------------------
 .. code-block:: python
-    :caption: Unpacking values in loop
+    :caption: ``list`` of ``dict``
 
     DATA = [
-        (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+        {'Sepal length': 5.1, 'Sepal width': 3.5, 'Petal length': 1.4, 'Petal width': 0.2, 'Species': 'setosa'},
+        {'Sepal length': 5.7, 'Sepal width': 2.8, 'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
+        {'Sepal length': 6.3, 'Sepal width': 2.9, 'Petal length': 5.6, 'Petal width': 1.8, 'Species': 'virginica'},
     ]
 
-    for sepal_len, *_, species in DATA:
-        print(f'{species} -> {sepal_len}')
+    for row in DATA:
+        sepal_length = row['Sepal length']
+        species = row['Species']
+        print(f'{species} -> {sepal_length}')
 
     # setosa -> 5.1
     # versicolor -> 5.7
     # virginica -> 6.3
-
-.. code-block:: python
-    :caption: Unpacking values in loop
-
-    DATA = [
-        (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-        (6.3, 2.9, 5.6, 1.8, 'virginica'),
-    ]
-
-    for *measurements, species in DATA:
-        print(f'{species} -> {measurements}')
-
-    # setosa -> [5.1, 3.5, 1.4, 0.2]
-    # versicolor -> [5.7, 2.8, 4.1, 1.3]
-    # virginica -> [6.3, 2.9, 5.6, 1.8]
 
 
 Enumerating and item index
@@ -167,83 +157,6 @@ Enumerating and item index
 
 Iterating over ``dict`` items
 =============================
-* Since Python 3.7 ``dict`` has of adding elements
-* Before Python 3.7 ``dict`` order is not ensured!!
-
-Iterating over ``dict`` values
-------------------------------
-.. code-block:: python
-    :caption: Iterating over ``dict`` items
-
-    DATA = {
-        'Sepal length': 5.1,
-        'Sepal width': 3.5,
-        'Petal length': 1.4,
-        'Petal width': 0.2,
-        'Species': 'setosa',
-    }
-
-    DATA.values()
-    # [5.1, 3.5, 1.4, 0.2, 'setosa']
-
-    for element in DATA.values():
-        print(element)
-
-    # 5.1
-    # 3.5
-    # 1.4
-    # 0.2
-    # 'setosa'
-
-Iterating over ``dict`` keys
-----------------------------
-.. code-block:: python
-    :caption: Iterating over ``dict`` items
-
-    DATA = {
-        'Sepal length': 5.1,
-        'Sepal width': 3.5,
-        'Petal length': 1.4,
-        'Petal width': 0.2,
-        'Species': 'setosa',
-    }
-
-    DATA.keys()
-    # ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
-
-    for element in DATA.keys():
-        print(element)
-
-    # 'Sepal length'
-    # 'Sepal width'
-    # 'Petal length'
-    # 'Petal width'
-    # 'Species'
-
-By default ``dict`` iterates over keys
---------------------------------------
-.. code-block:: python
-    :caption: By default ``dict`` iterates over keys
-
-    DATA = {
-        'Sepal length': 5.1,
-        'Sepal width': 3.5,
-        'Petal length': 1.4,
-        'Petal width': 0.2,
-        'Species': 'setosa',
-    }
-
-    for element in DATA:
-        print(element)
-
-    # 'Sepal length'
-    # 'Sepal width'
-    # 'Petal length'
-    # 'Petal width'
-    # 'Species'
-
-Getting pair: ``key``, ``value`` from ``dict`` items
-----------------------------------------------------
 .. code-block:: python
     :caption: Getting pair: ``key``, ``value`` from ``dict`` items
 
@@ -273,26 +186,6 @@ Getting pair: ``key``, ``value`` from ``dict`` items
     # Petal length -> 1.4
     # Petal width -> 0.2
     # Species -> setosa
-
-``list`` of ``dict``
---------------------
-.. code-block:: python
-    :caption: ``list`` of ``dict``
-
-    DATA = [
-        {'Sepal length': 5.1, 'Sepal width': 3.5, 'Petal length': 1.4, 'Petal width': 0.2, 'Species': 'setosa'},
-        {'Sepal length': 5.7, 'Sepal width': 2.8, 'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
-        {'Sepal length': 6.3, 'Sepal width': 2.9, 'Petal length': 5.6, 'Petal width': 1.8, 'Species': 'virginica'},
-    ]
-
-    for row in DATA:
-        sepal_length = row['Sepal length']
-        species = row['Species']
-        print(f'{species} -> {sepal_length}')
-
-    # setosa -> 5.1
-    # versicolor -> 5.7
-    # virginica -> 6.3
 
 
 Iterating complex types
