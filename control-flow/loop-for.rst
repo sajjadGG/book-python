@@ -192,7 +192,7 @@ Counter
 :English:
     #. For input data (see below)
     #. Count occurrences of each number
-    #. Print on the screen ``counter: Dict[int, int]``:
+    #. Print ``counter: Dict[int, int]``:
 
         * key - number
         * value - number of occurrences
@@ -200,7 +200,7 @@ Counter
 :Polish:
     #. Dla danych wejściowych (patrz poniżej)
     #. Policz wystąpienia każdej z cyfr
-    #. Wypisz na ekranie ``counter: Dict[int, int]``:
+    #. Wypisz ``counter: Dict[int, int]``:
 
         * klucz - liczba
         * wartość - liczba wystąpień
@@ -235,7 +235,7 @@ Segmentation
         * ``medium`` - numbers in range [3-7]
         * ``large`` - numbers in range [8-9]
 
-    #. Print on the screen ``counter: Dict[str, int]``:
+    #. Print ``counter: Dict[str, int]``:
 
         * key - group
         * value - number of occurrences
@@ -245,11 +245,11 @@ Segmentation
     #. Policz wystąpienia każdej z group
     #. Zdefiniuj grupy
 
-        * ``małe`` - liczby z przedziału [0-2]
-        * ``średnie`` - liczby z przedziału [3-7]
-        * ``duże`` - liczby z przedziału [8-9]
+        * ``small`` - liczby z przedziału [0-2]
+        * ``medium`` - liczby z przedziału [3-7]
+        * ``large`` - liczby z przedziału [8-9]
 
-    #. Wypisz na ekranie ``counter: Dict[str, int]``:
+    #. Wypisz ``counter: Dict[str, int]``:
 
         * klucz - grupa
         * wartość - liczba wystąpień
@@ -276,17 +276,17 @@ Text analysis
 * Filename: :download:`solution/for_text_analysis.py`
 
 :English:
-    #. Given is text of a "Moon Speech" by John F. Kennedy's (see below)
+    #. Given is text of the "Moon Speech" by John F. Kennedy's (see below)
     #. Sentences are separated by period (``.``)
     #. Clean each sentence from whitespaces at the beginning and at the end
     #. Words are separated by spaces
     #. Count how many words are there in every sentence
-    #. Print on the screen ``Dict[str, int]``:
+    #. Print ``Dict[str, int]``:
 
         * key - sentence
         * value - number of words
 
-    #. Print on the screen the total number in whole text:
+    #. Print the total number in whole text:
 
         * adverbs (words ending with "ly")
         * sentences
@@ -297,23 +297,23 @@ Text analysis
 
 :Polish:
     #. Dany jest tekst przemówienia "Moon Speech" wygłoszonej przez John F. Kennedy'ego (patrz poniżej)
-    #. Zdania oddzielone są kropkami
+    #. Zdania oddzielone są kropkami (``.``)
     #. Każde zdanie oczyść z białych znaków na początku i końcu
     #. Słowa oddzielone są spacjami
     #. Policz ile jest słów w każdym zdaniu
-    #. Wypisz na ekranie ``Dict[str, int]``:
+    #. Wypisz ``Dict[str, int]``:
 
         * klucz - zdanie
         * wartość - liczba słów
 
-    #. Na końcu wypisz także ile jest łącznie w całym tekście:
+    #. Wypisz także ile jest łącznie w całym tekście:
 
         * przysłówków (słów zakończonych na "ly")
         * zdań
         * słów
         * liter
-        * znaków (łącznie ze spacjami wewnątrz zdań, ale bez kropek)
-        * przecinków
+        * znaków (łącznie ze spacjami wewnątrz zdań, ale bez kropek ``.``)
+        * przecinków (``,``)
 
 :The whys and wherefores:
     * String splitting

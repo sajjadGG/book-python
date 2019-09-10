@@ -376,7 +376,7 @@ Read and parse data from CSV file
     #. Use explicit ``encoding``, ``delimiter`` and ``quotechar``
     #. Replace column names (see output data)
     #. Skip the first line (header)
-    #. Print data on the screen
+    #. Print rows
 
 :Polish:
     #. Pobierz plik :download:`data/iris-clean.csv`
@@ -385,7 +385,7 @@ Read and parse data from CSV file
     #. Podaj jawnie ``encoding``, ``delimiter`` oraz ``quotechar``
     #. Nazwy poszczególnych kolumn (patrz dane wyjściowe)
     #. Pomiń pierwszą linię (nagłówek)
-    #. Wypisz wiersze na ekranie
+    #. Wypisz wiersze
 
 :Output:
     .. code-block:: python

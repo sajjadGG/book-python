@@ -56,7 +56,7 @@ Classes and instances
     #. Create one class ``Temperature``
     #. Create three instances of ``Temperature`` class
     #. Values must be passed at the initialization
-    #. At initialization instances print on the screen:
+    #. At initialization instances print:
 
         #. Instance ``celsius`` prints temperature 36.6
         #. Instance ``fahrenheit`` prints temperature 97.88
@@ -66,7 +66,7 @@ Classes and instances
     #. Stwórz jedną klasę ``Temperature``
     #. Stwórz trzy instancje klasy ``Temperature``
     #. Wartości mają być podawane przy inicjalizacji
-    #. Przy inicjalizacji instancje wyświetlają na ekranie:
+    #. Przy inicjalizacji instancje wypisują:
 
         #. Instancja ``celsius`` wyświetla temperaturę 36.6
         #. Instancja ``fahrenheit`` wyświetla temperaturę 97.88

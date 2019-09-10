@@ -40,15 +40,15 @@ Dragon (version alpha)
         #. going up subtract from ``y``
         #. going down add to ``y``
 
-    #. After each hit, print on the screen: name of the Dragon, damage taken, current health points
+    #. After each hit, print: name of the Dragon, damage taken, current health points
     #. When health points drop to, and below zero:
 
         #. Dragon is dead
         #. Set object status to dead
-        #. Print on the screen ``XXX is dead``, where XXX is the name of the dragon
+        #. Print ``XXX is dead``, where XXX is the name of the dragon
         #. Change texture file name to  ``img/dragon/dead.png``
-        #. Print on the screen how much gold Dragon dropped (random in range from 1 to 100)
-        #. Print on the screen position where dragon died
+        #. Print how much gold Dragon dropped (random in range from 1 to 100)
+        #. Print position where dragon died
         #. Dragon cannot take any more damage
         #. Dragon cannot make any more damage
         #. Dragon cannot move or have position set
@@ -101,15 +101,15 @@ Dragon (version alpha)
         #. idąc w górę odejmujesz ``y``
         #. idąc w dół dodajesz ``y``
 
-    #. Przy każdym obrażeniu wypisz na ekranie nazwę Smoka, ilość obrażeń i pozostałe punkty życia
+    #. Przy każdym obrażeniu wypisz nazwę Smoka, ilość obrażeń i pozostałe punkty życia
     #. Kiedy punkty życia Smoka spadną do, lub poniżej zera:
 
         #. Smok jest martwy
-        #. ustaw status obiektu na dead
-        #. na ekranie ma pojawić się napis ``XXX is dead`` gdzie XXX to nazwa smoka
-        #. zmień nazwę pliku tekstury na ``img/dragon/dead.png``
-        #. na ekranie pojawi się informacja ile złota smok wyrzucił (losowa 1-100)
-        #. na ekranie pojawi się informacja o pozycji gdzie smok zginął
+        #. Ustaw status obiektu na dead
+        #. Wypisz napis ``XXX is dead`` gdzie XXX to nazwa smoka
+        #. Zmień nazwę pliku tekstury na ``img/dragon/dead.png``
+        #. Wypisz ile złota smok wyrzucił (losowa 1-100)
+        #. Wypisz pozycję gdzie smok zginął
         #. Nie można zadawać mu obrażeń
         #. Smok nie może zadawać obrażeń
         #. Smok nie może się poruszać

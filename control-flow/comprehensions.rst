@@ -304,11 +304,30 @@ Split train/test
 * Filename: :download:`solution/comprehension_split_train_test.py`
 * Input data: :numref:`listing-comprehension_split_train_test`
 
-    .. code-block:: python
-        :caption: Split train/test data
-        :name: listing-comprehension_split_train_test
+:Polish:
+    #. Dla danych wejściowych (patrz poniżej)
+    #. Zapisz nagłówek (pierwsza linia) do zmiennej
+    #. Zapisz do innej zmiennej dane bez nagłówka
+    #. Wylicz punkt podziału: ilość rekordów danych bez nagłówka razy procent
+    #. Za pomocą List Comprehension podziel dane na:
 
-        DATA = [
+        - ``X: List[Tuple[float]]`` - features
+        - ``y: List[str]`` - labels
+
+    #. Podziel zbiór na listy w proporcji:
+
+        - ``X_train: List[Tuple[float]]`` - features do uczenia - 60%
+        - ``X_test: List[Tuple[float]]`` - features do testów - 40%
+        - ``y_train: List[str]`` - labels do uczenia - 60%
+        - ``y_test: List[str]`` - labels do testów - 40%
+
+    #. Stwórz ``result: Tuple[list, list, list, list]`` z cechami (treningowymi i testowymi) oraz labelkami (treningowymi i testowymi)
+    #. Wypisz ``result``
+
+:Input:
+    .. code-block:: python
+
+        INPUT = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, 'virginica'),
             (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -332,25 +351,6 @@ Split train/test
             (6.9, 3.1, 4.9, 1.5, 'versicolor'),
             (4.6, 3.1, 1.5, 0.2, 'setosa'),
         ]
-
-#. Mając do dyspozycji zbiór danych Irysów z listingu :numref:`listing-comprehension_split_train_test`:
-#. Zapisz nagłówek (pierwsza linia) do zmiennej
-#. Zapisz do innej zmiennej dane bez nagłówka
-#. Wylicz punkt podziału: ilość rekordów danych bez nagłówka razy procent
-#. Za pomocą List Comprehension podziel dane na:
-
-    - ``X: List[Tuple[float]]`` - features
-    - ``y: List[str]`` - labels
-
-#. Podziel zbiór na listy w proporcji:
-
-    - ``X_train: List[Tuple[float]]`` - features do uczenia - 60%
-    - ``X_test: List[Tuple[float]]`` - features do testów - 40%
-    - ``y_train: List[str]`` - labels do uczenia - 60%
-    - ``y_test: List[str]`` - labels do testów - 40%
-
-#. Stwórz ``result: Tuple[list, list, list, list]`` z cechami (treningowymi i testowymi) oraz labelkami (treningowymi i testowymi)
-#. Wypisz na ekranie ``result``
 
 :The whys and wherefores:
     * Umiejętność przetwarzania złożonych typów danych

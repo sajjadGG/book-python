@@ -200,22 +200,18 @@ Assignments
 :English:
     #. For input data (see below)
     #. Separate header and data
-    #. Create ``List[dict]``
+    #. Print ``List[dict]``
 
         - key - name from the header
         - value - measurement or species
 
-    #. Print on the screen
-
 :Polish:
     #. Dla danych wejściowych (patrz poniżej)
     #. Odseparuj nagłówek i dane
-    #. Wygeneruj ``List[dict]``
+    #. Wypisz ``List[dict]``
 
         - klucz: nazwa z nagłówka
         - wartość: wyniki pomiarów lub gatunek
-
-    #. Wypisz na ekranie
 
 :The whys and wherefores:
     * Working with nested data structures

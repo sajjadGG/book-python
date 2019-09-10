@@ -128,7 +128,7 @@ Parsing text from webpage
 :English:
     #. Write input data to ``regex_html.html`` file
     #. Using regexp split text by paragraphs
-    #. Print on the screen paragraph starting with "We choose to go to the moon"
+    #. Print paragraph starting with "We choose to go to the moon"
 
 :Polish:
     #. Zapisz dane wejściowe do pliku ``regex_html.html``

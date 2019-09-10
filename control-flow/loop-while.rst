@@ -136,7 +136,7 @@ Report card
     #. If grade is on a new grade scale - add it to report card
     #. If grade is not on a new grade scale - print "Grade is not allowed" and continue input
     #. If user pressed Enter key, end inserting data
-    #. At the end, print on the screen calculated mean
+    #. At the end, print calculated mean
     #. Test case when report list is empty
 
 :Polish:

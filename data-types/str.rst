@@ -260,7 +260,7 @@ Emoticon print
 
 :English:
     #. Ask user to input name
-    #. Print on the screen ``hello NAME EMOTICON``, where:
+    #. Print ``hello NAME EMOTICON``, where:
 
         * NAME is a name read from user
         * EMOTICON is Unicode Codepoint "U+1F642"
@@ -269,7 +269,7 @@ Emoticon print
 
 :Polish:
     #. Poproś użytkownika o wprowadzenie imienia
-    #. Wyświetl na ekranie ``hello NAME EMOTICON``, gdzie:
+    #. Wypisz ``hello NAME EMOTICON``, gdzie:
 
         * NAME to imię wprowadzone wczytane od użytkownika
         * EMOTICON to Unicode Codepoint "U+1F642"
@@ -290,8 +290,8 @@ Variables and types
 
 :English:
     #. Ask user to input name
-    #. Print on the screen text identical to output code (see below)
-    #. To print on the screen use f-string formatting
+    #. Print text identical to output code (see below)
+    #. To print use f-string formatting
     #. Note, that second line starts with tab
     #. Value in double quotes is a name read from user (in output user typed ``José Jiménez``)
     #. Mind the different quotes, apostrophes, tabs and newlines
@@ -300,8 +300,8 @@ Variables and types
 
 :Polish:
     #. Poproś użytkownika o wprowadzenie imienia
-    #. Wyświetl na ekranie tekst identyczny do kodu wyjścia (patrz poniżej)
-    #. Do wyświetlania na ekranie użyj f-string formatting
+    #. Wypisz tekst identyczny do kodu wyjścia (patrz poniżej)
+    #. Do wypisania użyj f-string formatting
     #. Zauważ, że druga linijka zaczyna się od tabulacji
     #. Wartość w podwójnych cudzysłowach to ciąg od użytkownika (w przykładzie użytkownik wpisał ``José Jiménez``)
     #. Zwróć uwagę na znaki apostrofów, cudzysłowów, tabulacji i nowych linii

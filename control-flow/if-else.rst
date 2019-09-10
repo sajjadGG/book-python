@@ -193,12 +193,12 @@ Conditioning on user input
 :English:
     #. Ask user for age
     #. User will pass only valid ``int``
-    #. Print on the screen whether user is adult
+    #. Print whether user is adult
 
 :Polish:
     #. Poproś użytkownika o wiek
     #. Użytkownika poda tylko poprawne ``int``
-    #. Wypisz na ekranie czy użytkownik jest pełnoletni
+    #. Wypisz czy użytkownik jest pełnoletni
 
 :The whys and wherefores:
     * Reading input
@@ -217,13 +217,13 @@ Is odd number
 :English:
     #. Read a number from user
     #. User will pass only valid ``int``
-    #. Print on the screen whether number is odd
+    #. Print whether number is odd
     #. Number is odd, when divided modulo (``%``) by 2 has a reminder
 
 :Polish:
     #. Wczytaj liczbę od użytkownika
     #. Użytkownika poda tylko poprawne ``int``
-    #. Wypisz na ekranie czy liczba jest nieparzysta
+    #. Wypisz czy liczba jest nieparzysta
     #. Liczba jest nieparzysta, gdy dzielona modulo (``%``) przez 2 ma resztę
 
 :The whys and wherefores:

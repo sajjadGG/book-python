@@ -51,7 +51,7 @@ To ``float`` or to ``int``?
     #. Read a number from user
     #. User will pass only valid ``int`` or ``float``
     #. Integer is when number modulo divided by one has no reminder
-    #. Print on the screen whether number is ``int`` or ``float``
+    #. Print whether number is ``int`` or ``float``
 
 :Polish:
     #. Wczytaj od użytkownika liczbę

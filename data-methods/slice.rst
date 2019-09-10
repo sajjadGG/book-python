@@ -216,13 +216,13 @@ Simple collections
     #. Create tuple ``a`` with digits: 0, 1, 2, 3
     #. Create list ``b`` with digits: 2, 3, 4, 5
     #. Create set ``c`` with every second element from ``a`` and ``b``
-    #. Print ``c`` on the screen
+    #. Print ``c``
 
 :Polish:
     #. Stwórz tuplę ``a`` z cyframi: 0, 1, 2, 3
     #. Stwórz listę ``b`` z cyframi: 2, 3, 4, 5
     #. Stwórz zbiór ``c`` z co drugim elementem ``a`` i ``b``
-    #. Wyświetl ``c`` na ekranie
+    #. Wypisz ``c``
 
 :The whys and wherefores:
     * Defining and using ``list``, ``tuple``, ``set``

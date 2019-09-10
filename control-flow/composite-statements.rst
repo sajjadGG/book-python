@@ -156,7 +156,7 @@ Classification of blood pressure in adults
         - ``XXX: int`` systolic pressure
         - ``YY: int`` diastolic pressure
 
-    #. Print on the screen status of given blood pressure
+    #. Print status of given blood pressure
     #. If systolic and diastolic values are in different categories, assume worst case
 
 :Polish:
@@ -167,7 +167,7 @@ Classification of blood pressure in adults
         - ``XXX: int`` to wartość ciśnienia skurczowego (ang. *systolic*)
         - ``YY: int`` to wartość ciśnienia rozkurczowego (ang. *diastolic*)
 
-    #. Wyświetl na ekranie status wprowadzonego ciśnienia krwi
+    #. Wypisz status wprowadzonego ciśnienia krwi
     #. Gdy wartości ciśnienia skurczowego i rozkurczowego należą do różnych kategorii, przyjmij gorszy przypadek
 
 .. csv-table:: Classification of blood pressure in adults :cite:`Whelton2018`

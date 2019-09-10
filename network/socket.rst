@@ -140,7 +140,7 @@ Heartbeat
 #. Komunikacja ma odbywać się za pomocą protokołu JSON
 #. Klient ma mieć informację o swoim adresie IP i PORT
 #. Klient ma co 5 sekund wysyłać informację do serwera o swoim IP i PORT
-#. Wyświetl na ekranie:
+#. Wypisz:
 
     - datę UTC przyjścia pakietu,
     - IP i PORT przesłany przez klienta.

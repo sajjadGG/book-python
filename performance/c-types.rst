@@ -149,4 +149,4 @@ C Types
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/ctypes_datetime.py`
 
-Wykorzystując C Types wyświetl na ekranie datę i czas, za pomocą funkcji zdefiniowanej w C ``<time.h>``
+Wykorzystując C Types wypisz datę i czas, za pomocą funkcji zdefiniowanej w C ``<time.h>``

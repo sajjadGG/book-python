@@ -181,7 +181,7 @@ Content of a requested file
 * Filename: :download:`solution/file_requested.py`
 
 #. Za pomocą ``input()`` poproś użytkownika o podanie ścieżki do pliku
-#. Wyświetl na ekranie zawartość pliku
+#. Wypisz zawartość pliku
 #. Dopisz obsługę wyjątków dla braku uprawnień oraz tego że plik nie istnieje.
 
 Parsing simple CSV file

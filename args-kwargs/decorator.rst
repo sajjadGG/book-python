@@ -482,9 +482,9 @@ Prosty dekorator
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/decorator_abspath.py`
 
-#. Program przechodzi przez pliki i katalogi wykorzystując ``os.walk``.
-#. Stwórz funkcję, która wypisuje na ekranie nazwę pliku lub katalogu.
-#. Stwórz dekorator do funkcji, który przed wyświetleniem jej na ekranie podmieni ścieżkę na bezwzględną (``path`` + ``filename``).
+#. Program przechodzi przez pliki i katalogi wykorzystując ``os.walk``
+#. Wypisz nazwę pliku lub katalogu
+#. Stwórz dekorator do funkcji, który przed wypisaniem podmieni ścieżkę na bezwzględną (``path`` + ``filename``).
 
 Type Checking Decorator
 -----------------------

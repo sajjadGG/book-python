@@ -112,7 +112,7 @@ SQLite Iris
     #. Stwórz tabelę ``iris`` o kolumnach podanych w sekcji dane wyjściowe (patrz poniżej)
     #. Zapisz dane do tabeli w bazie danych
     #. Podmień ``int`` na ``str`` zgodnie z tabelą podstawień ``SPECIES`` (patrz dane wejściowe)
-    #. Wyniki wypisz z bazy danych ``SELECT * FROM iris ORDER BY datetime DESC``
+    #. Wypisz wyniki z bazy danych ``SELECT * FROM iris ORDER BY datetime DESC``
 
 :Non functional requirements:
     * Use context manager (``with``) for connection

@@ -125,7 +125,7 @@ Methods
     #. Create method ``mean()`` which calculates mean of numerical attributes values
     #. Create ``setosa`` object with attributes set at the initialization (see input data)
     #. Create ``virginica`` object with attributes set at the initialization (see input data)
-    #. Print on the screen species name, total and mean of each instance
+    #. Print species name, total and mean of each instance
 
 :Polish:
     #. Stwórz klasę ``Iris``
@@ -133,7 +133,7 @@ Methods
     #. Napisz metodę ``mean()`` wyliczającą średnią atrybutów numerycznych obiektu
     #. Stwórz obiekt ``setosa`` z pomiarami podawanymi przy inicjalizacji (patrz dane wejściowe)
     #. Stwórz obiekt ``virginica`` z pomiarami podawanymi przy inicjalizacji (patrz dane wejściowe)
-    #. Wyświetl na ekranie nazwę gatunku oraz sumę i średnią z pomiarów dla każdej instancji
+    #. Wypisz nazwę gatunku oraz sumę i średnią z pomiarów dla każdej instancji
 
 :Input:
     .. code-block:: python

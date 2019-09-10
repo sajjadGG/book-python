@@ -1,6 +1,6 @@
-****************
-else in the loop
-****************
+********************
+``else`` in the loop
+********************
 
 
 ``while``
@@ -68,5 +68,4 @@ else in the loop
 
 Assignments
 ===========
-
 .. todo:: Create assignments

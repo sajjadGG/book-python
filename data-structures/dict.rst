@@ -377,7 +377,7 @@ Aviation Language
     #. To convert table use multiline select with ``alt`` key in your IDE
     #. Ask user to input letter
     #. User will always put only one capitalized letter or number
-    #. Print on the screen phonetic letter pronunciation
+    #. Print phonetic letter pronunciation
     #. If user type character not existing in alphabet, print: "Pilots don't say that"
     #. Do not use ``if``, ``try``, and ``except``
 
@@ -387,7 +387,7 @@ Aviation Language
     #. Do przekonwertowania tabelki wykorzystaj zaznaczanie wielu linijek za pomocą klawisza ``alt`` w Twoim IDE
     #. Zapytaj użytkownika o wprowadzenie litery
     #. Użytkownik zawsze poda tylko jedną dużą literę lub cyfrę
-    #. Wypisz na ekranie nazwę fonetyczną wymowę litery
+    #. Wypisz nazwę fonetyczną wymowę litery
     #. Jeżeli wpisał znak, który nie jest w alfabecie, wypisz: "Pilots don't say that"
     #. Nie używaj ``if``, ``try`` ani ``except``
 

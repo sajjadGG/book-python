@@ -96,4 +96,4 @@ C Modules
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/cmodules_datetime.py`
 
-Wykorzystując C Modules wyświetl na ekranie datę i czas, za pomocą funkcji zdefiniowanej w C ``<time.h>``
+Wykorzystując C Modules wypisz datę i czas, za pomocą funkcji zdefiniowanej w C ``<time.h>``
