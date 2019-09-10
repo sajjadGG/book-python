@@ -1,4 +1,4 @@
-DATA = {
+INPUT = {
     6: ['Doctorate', 'Prof-school'],
     5: ['Masters', 'Bachelor', 'Engineer'],
     4: ['HS-grad'],
@@ -9,7 +9,7 @@ DATA = {
 
 output = {}
 
-for key, value in DATA.items():
+for key, value in INPUT.items():
     for education in value:
         output[education] = str(key)
 
@@ -18,6 +18,6 @@ print(output)
 
 ## Alternative version
 # output = {education: str(key)
-#     for key, value in DATA.items()
+#     for key, value in INPUT.items()
 #         for education in value
 # }

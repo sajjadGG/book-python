@@ -1,4 +1,4 @@
-DATA = [
+INPUT = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, {'species': 'virginica'}),
     (5.1, 3.5, 1.4, 0.2, {'species': 'setosa'}),
@@ -11,8 +11,11 @@ DATA = [
     (4.6, 3.1, 1.5, 0.2, {'species': 'setosa'}),
 ]
 
-header, *data = DATA
+header = INPUT[0]
+data = INPUT[1:]
 
-for *_, species in data:
-    if species['species'].startswith('v'):
+for row in data:
+    species = row[4]['species']
+
+    if species.startswith('v'):
         print(species)

@@ -155,39 +155,6 @@ Enumerating and item index
     # 2 -> (6.3, 2.9, 5.6, 1.8, 'virginica')
 
 
-Iterating over ``dict`` items
-=============================
-.. code-block:: python
-    :caption: Getting pair: ``key``, ``value`` from ``dict`` items
-
-    DATA = {
-        'Sepal length': 5.1,
-        'Sepal width': 3.5,
-        'Petal length': 1.4,
-        'Petal width': 0.2,
-        'Species': 'setosa',
-    }
-
-    DATA.items()
-    # [
-    #   ('Sepal length', 5.1),
-    #   ('Sepal width', 3.5),
-    #   ('Petal length', 1.4),
-    #   ('Petal width', 0.2),
-    #   ('Species', 'setosa')
-    # ]
-
-
-    for key, value in DATA.items():
-        print(f'{key} -> {value}')
-
-    # Sepal length -> 5.1
-    # Sepal width -> 3.5
-    # Petal length -> 1.4
-    # Petal width -> 0.2
-    # Species -> setosa
-
-
 Iterating complex types
 =======================
 .. code-block:: python
@@ -232,11 +199,11 @@ Iterating complex types
 
 
     for outer in DATA:
-        if not isinstance(outer, (list, set, tuple))
-            print(outer)
-        else:
+        if isinstance(outer, (list, set, tuple))
             for inner in outer:
                 print(inner)
+        else:
+            print(outer)
 
     # Jan
     # Twardowski
@@ -266,7 +233,7 @@ Get elements from nested data structure
     :caption: Iris sample dataset
     :name: listing-for-elements-fom-nested
 
-    DATA = [
+    INPUT = [
         ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
         (5.8, 2.7, 5.1, 1.9, {'species': 'virginica'}),
         (5.1, 3.5, 1.4, 0.2, {'species': 'setosa'}),
@@ -290,7 +257,7 @@ Get elements from nested data structure
 
     .. code-block:: python
 
-        DATA = {
+        INPUT = {
             6: ['Doctorate', 'Prof-school'],
             5: ['Masters', 'Bachelor', 'Engineer'],
             4: ['HS-grad'],
@@ -303,7 +270,7 @@ Get elements from nested data structure
 
     .. code-block:: python
 
-        output = {
+        OUTPUT = {
             'Doctorate': '6',
             'Prof-school': '6',
             'Masters': '5',
@@ -332,7 +299,7 @@ Unique keys from schema-less database
     :name: listing-loops-unique-keys
     :caption: Unique keys from schema-less database
 
-    DATA = [
+    INPUT = [
         {'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
         {'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
         {'Sepal length': 6.3, 'Petal width': 1.8, 'Species': 'virginica'},
@@ -368,7 +335,7 @@ Label encoder
     :name: listing-loops-iris-sample
     :caption: Sample Iris databases
 
-    DATA = [
+    INPUT = [
         ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
         (5.8, 2.7, 5.1, 1.9, 'virginica'),
         (5.1, 3.5, 1.4, 0.2, 'setosa'),

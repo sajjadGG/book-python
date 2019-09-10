@@ -23,25 +23,26 @@ INPUT = [
     (4.6, 3.1, 1.5, 0.2, 'setosa'),
 ]
 
-RATIO = 0.6
+header = INPUT[0]
+data = INPUT[1:]
+OUTPUT = []
 
-header, *data = INPUT
-pivot = int(len(data) * RATIO)
+for values in data:
+    row = {}
 
-X = [tuple(measurements) for *measurements, species in data]
-X_train = X[:pivot]
-X_test = X[pivot:]
+    for i, _ in enumerate(header):
+        key = header[i]
+        value = values[i]
+        row[key] = value
 
-y = [species for *measurements, species in data]
-y_train = y[:pivot]
-y_test = y[pivot:]
+    OUTPUT.append(row)
 
-result = X_train, X_test, y_train, y_test
-print(result)
+    ## Alternative solution
+    # OUTPUT.append({key: values[i] for i, key in enumerate(header)})
 
-## Alternative - but not optimized (4 loops)
-#
-# X_train = [m for *m,s in data[:pivot]]
-# X_test = [m for *m,s in data[pivot:]]
-# y_train = [m for *m,s in data[:pivot]]
-# y_test = [m for *m,s in data[pivot:]]
+    ## Alternative solution
+    # pair = zip(header, values)
+    # OUTPUT.append(dict(pair))
+
+
+print(OUTPUT)
