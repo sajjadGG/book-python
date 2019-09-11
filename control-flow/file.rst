@@ -268,14 +268,13 @@ Parsing simple CSV file
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/file_parsing_advanced.py`
-* Input data: :numref:`listing-file-parsing-advanced`
 
 :English:
     .. todo:: English translation
 
 :Polish:
     #. Utwórz plik tekstowy ``hosts.txt``
-    #. Do pliku skopiuj kod z listingu :numref:`listing-file-parsing-advanced`
+    #. Do pliku skopiuj kod z listingu
     #. Ważne, żeby przepisać zawartość zawierającą komentarze, białe spacje i linie przerwy
     #. Sparsuj plik i dla każdej linii:
 

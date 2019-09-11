@@ -62,7 +62,7 @@ Dict Comprehension
 Tuple Comprehension?!
 ---------------------
 * It is a Generator Expression
-* More in chapter :ref:`Generators and Comprehensions`
+* More in chapter :ref:`Generators`
 
 .. code-block:: python
     :caption: Generator Expression approach to applying function to elements
