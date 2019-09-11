@@ -147,6 +147,9 @@ PESEL Validation
 * Lines of code to write: 0 lines
 * Estimated time of completion: 10 min
 
+:English:
+    .. todo:: English translation
+
 :Polish:
     #. Przeprowadź eksperyment myślowy (nie pisz kodu tylko pomyśl)
     #. Jak sprawdzić za pomocą wyrażeń regularnych czy:

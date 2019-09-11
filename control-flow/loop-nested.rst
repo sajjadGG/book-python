@@ -307,37 +307,37 @@ Label encoder
     #. For input data (see below)
     #. Define:
 
-        * ``X: List[Tuple[float]]`` - measurements
-        * ``y: List[int]`` - species
+        * ``features: List[Tuple[float]]`` - measurements
+        * ``labels: List[int]`` - species
 
     #. Separate header from data
-    #. To encode and decode ``y`` (species) we need ``label_encoder: Dict[int, str]``:
+    #. To encode and decode ``labels`` (species) we need ``label_encoder: Dict[int, str]``:
 
-        * key - identyfikator (incremented integer value)
+        * key - id (incremented integer value)
         * value - species name
 
     #. ``label_encoder`` must be generated from ``INPUT``
-    #. For each row add appropriate data to ``X``, ``y`` and ``label_encoder``
-    #. Print ``X``, ``y`` and ``label_encoder``
+    #. For each row add appropriate data to ``features``, ``labels`` and ``label_encoder``
+    #. Print ``features``, ``labels`` and ``label_encoder``
     #. Output must be identical to output data (see below)
 
 :Polish:
     #. Dla danych wejściowych (patrz poniżej)
     #. Zdefiniuj:
 
-        * ``X: List[Tuple[float]]`` - pomiary
-        * ``y: List[int]`` - gatunki
+        * ``features: List[Tuple[float]]`` - pomiary
+        * ``labels: List[int]`` - gatunki
         * ``label_encoder: Dict[int, str]`` - słownik podmiany nazw gatunków
 
     #. Odseparuj nagłówek od danych
-    #. Aby móc zakodować i odkodować ``y`` (gatunki) potrzebny jest ``label_encoder: Dict[int, str]``:
+    #. Aby móc zakodować i odkodować ``labels`` (gatunki) potrzebny jest ``label_encoder: Dict[int, str]``:
 
         * key - identyfikator (kolejna liczba rzeczywista)
         * value - nazwa gatunku
 
     #. ``label_encoder`` musi być wygenerowany z ``INPUT``
-    #. Dla każdego wiersza dodawaj odpowiednie dane do ``X``, ``y`` i ``label_encoder``
-    #. Wypisz ``X``, ``y`` i ``label_encoder``
+    #. Dla każdego wiersza dodawaj odpowiednie dane do ``feature``, ``labels`` i ``label_encoder``
+    #. Wypisz ``feature``, ``labels`` i ``label_encoder``
     #. Wynik ma być identyczny z danymi wyjściowymi (patrz poniżej)
 
 :Input:
@@ -371,7 +371,7 @@ Label encoder
 :Output:
     .. code-block:: python
 
-        X = [
+        features = [
             (5.8, 2.7, 5.1, 1.9),
             (5.1, 3.5, 1.4, 0.2),
             (5.7, 2.8, 4.1, 1.3),
@@ -379,7 +379,7 @@ Label encoder
             (6.4, 3.2, 4.5, 1.5),
             (4.7, 3.2, 1.3, 0.2), ...]
 
-        y = [0, 1, 2, 1, 2, 0, ...]
+        labels = [0, 1, 2, 1, 2, 0, ...]
 
         label_encoder = {
             0: 'virginica',

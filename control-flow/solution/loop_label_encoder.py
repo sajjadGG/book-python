@@ -30,8 +30,8 @@ INPUT = [
 header = INPUT[0]
 data = INPUT[1:]
 
-X: List[Tuple[float]] = []
-y: List[int] = []
+features: List[Tuple[float]] = []
+labels: List[int] = []
 
 label_encoder: Dict[int, str] = {}
 
@@ -39,7 +39,7 @@ label_encoder: Dict[int, str] = {}
 for row in data:
     measurements = row[0:4]
     species = row[4]
-    X.append(tuple(measurements))
+    features.append(tuple(measurements))
 
     if species not in label_encoder.values():
         number = len(label_encoder)
@@ -47,12 +47,12 @@ for row in data:
 
     for number, name in label_encoder.items():
         if name == species:
-            y.append(number)
+            labels.append(number)
 
 
-print(X)
+print(features)
 print()
-print(y)
+print(labels)
 print()
 print(label_encoder)
 
@@ -79,9 +79,9 @@ print(label_encoder)
 
 ## Alternative Version
 # s = set(x[-1] for x in INPUT[1:])
-# species = dict(zip(s, range(0, len(s))))
+# label_encoder = dict(zip(s, range(0, len(s))))
 
 
 ## Alternative Version
 # In numerical analysis you can find this
-# species = dict(enumerate(set(x[-1] for x in INPUT[1:])))
+# label_encoder = dict(enumerate(set(x[-1] for x in INPUT[1:])))

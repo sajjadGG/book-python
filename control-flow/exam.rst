@@ -1,6 +1,6 @@
-**********************
-Exam from basic topics
-**********************
+****
+Exam
+****
 
 
 Relational Files Database
@@ -11,18 +11,39 @@ Relational Files Database
 * Filename: :download:`solution/exam.py`
 * Input data: :numref:`code-file-etc-passwd`, :numref:`code-file-etc-shadow`, :numref:`code-file-etc-group`
 
-#. Poniższe listingi prezentują zawartość plików:
+:English:
+    .. todo:: English translation
 
-    - ``/etc/passwd`` - :numref:`code-file-etc-passwd`
-    - ``/etc/shadow`` - :numref:`code-file-etc-shadow`
-    - ``/etc/group`` - :numref:`code-file-etc-group`
+:Polish:
+    #. Poniższe listingi prezentują zawartość plików:
 
-#. Skopuj ich zawartość każdego z tych plików na dysk do plików ``.txt``
-#. Uwaga: komentarze i puste mają również być skopiowane!
-#. Sparsuj plik i przedstaw go w formacie ``List[dict]``
-#. Zwróć listę użytkowników, których ``UID`` jest większy niż 1000
-#. W ramach ``dict`` połącz dane, tak aby uzyskać wynik:
+        - ``/etc/passwd`` - :numref:`code-file-etc-passwd`
+        - ``/etc/shadow`` - :numref:`code-file-etc-shadow`
+        - ``/etc/group`` - :numref:`code-file-etc-group`
 
+    #. Skopuj ich zawartość każdego z tych plików na dysk do plików ``.txt``
+    #. Uwaga: komentarze i puste mają również być skopiowane!
+    #. Sparsuj plik i przedstaw go w formacie ``List[dict]``
+    #. Zwróć listę użytkowników, których ``UID`` jest większy niż 1000
+    #. W ramach ``dict`` połącz dane, tak aby uzyskać wynik:
+
+:Input:
+    .. literalinclude:: data/etc-passwd.txt
+        :name: code-file-etc-passwd
+        :language: text
+        :caption: Przykładowa zawartość pliku ``/etc/passwd``
+
+    .. literalinclude:: data/etc-shadow.txt
+        :name: code-file-etc-shadow
+        :language: text
+        :caption: Przykładowa zawartość pliku ``/etc/shadow``
+
+    .. literalinclude:: data/etc-group.txt
+        :name: code-file-etc-group
+        :language: text
+        :caption: Przykładowa zawartość pliku ``/etc/group``
+
+:Output:
     .. code-block:: python
 
         [
@@ -51,18 +72,3 @@ Relational Files Database
     * parsowanie stringów
     * praca ze ścieżkami w systemie operacyjnym
     * różna reprezentacja danych (podmienianie wartości)
-
-.. literalinclude:: data/etc-passwd.txt
-    :name: code-file-etc-passwd
-    :language: text
-    :caption: Przykładowa zawartość pliku ``/etc/passwd``
-
-.. literalinclude:: data/etc-shadow.txt
-    :name: code-file-etc-shadow
-    :language: text
-    :caption: Przykładowa zawartość pliku ``/etc/shadow``
-
-.. literalinclude:: data/etc-group.txt
-    :name: code-file-etc-group
-    :language: text
-    :caption: Przykładowa zawartość pliku ``/etc/group``

@@ -106,5 +106,9 @@ Virtualenv
 * Lines of code to write: 0 lines
 * Estimated time of completion: 2 min
 
-#. Stwórz virtualenv z instalacją Python
-#. Dodaj virtualenv do Python Interpreter w Twoim IDE
+:English:
+    .. todo:: English translation
+
+:Polish:
+    #. Stwórz virtualenv z instalacją Python
+    #. Dodaj virtualenv do Python Interpreter w Twoim IDE

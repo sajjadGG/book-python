@@ -291,7 +291,6 @@ Unpacking from nested sequence
 
 :Output:
     .. code-block:: python
-        :caption: Output
 
         header: tuple
         # ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')

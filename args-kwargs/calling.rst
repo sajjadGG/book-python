@@ -309,7 +309,6 @@ Iris
 
 :Output:
     .. code-block:: python
-        :caption: Output
 
         header: list
         # ['sepal_length', 'sepal_width' ,'petal_length', 'petal_width']

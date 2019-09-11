@@ -507,3 +507,7 @@ Real life use-case
         )
     except User.DoesNotExists:
         print('Sorry, no such user in database')
+
+Assignments
+===========
+.. todo:: Create assignments

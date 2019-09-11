@@ -179,6 +179,9 @@ Content of a requested file
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/file_requested.py`
 
+:English:
+    .. todo:: English translation
+
 :Polish:
     #. Za pomocą ``input()`` poproś użytkownika o podanie ścieżki do pliku
     #. Wypisz zawartość pliku
@@ -192,6 +195,9 @@ Parsing simple CSV file
 * Filename: :download:`solution/file_parsing_csv.py`
 * Input data: http://raw.githubusercontent.com/AstroMatt/book-python/master/control-flow/data/iris.csv
 
+:English:
+    .. todo:: English translation
+
 :Polish:
     #. Skopiuj plik do siebie na dysk i nazwij go ``iris.csv``
     #. Dla każdej linii:
@@ -200,8 +206,8 @@ Parsing simple CSV file
         #. Podziel linię po przecinku
         #. Zapisz rekordy do:
 
-            - ``X: List[Tuple[float]]`` - features
-            - ``y: List[str]`` - labels
+            - ``features: List[Tuple[float]]`` - features
+            - ``labels: List[str]`` - labels
 
 :The whys and wherefores:
     * czytanie i parsowanie pliku
@@ -217,6 +223,9 @@ Parsing simple CSV file
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/file_parsing_simple.py`
+
+:English:
+    .. todo:: English translation
 
 :Polish:
     #. Skopiuj dane wejściowe do pliku ``hosts.txt``
@@ -261,6 +270,9 @@ Parsing simple CSV file
 * Filename: :download:`solution/file_parsing_advanced.py`
 * Input data: :numref:`listing-file-parsing-advanced`
 
+:English:
+    .. todo:: English translation
+
 :Polish:
     #. Utwórz plik tekstowy ``hosts.txt``
     #. Do pliku skopiuj kod z listingu :numref:`listing-file-parsing-advanced`
@@ -275,10 +287,19 @@ Parsing simple CSV file
         #. Jeżeli IP jest już wpisane do naszej listy wynikowej to scal listy hostname'ów dla wpisów o tym samym IP
 
 :Input:
-    .. literalinclude:: data/etc-hosts.txt
-        :name: listing-file-parsing-advanced
-        :language: text
-        :caption: Zawartość pliku ``hosts.txt``
+    .. code-block:: text
+
+        ##
+        # ``/etc/hosts`` structure:
+        #   - IPv4 or IPv6
+        #   - Hostnames
+        ##
+
+        127.0.0.1       localhost
+        127.0.0.1       astromatt
+        10.13.37.1      nasa.gov esa.int roscosmos.ru
+        255.255.255.255 broadcasthost
+        ::1             localhost
 
 :Output:
     .. code-block:: python

@@ -45,7 +45,7 @@ Printing multiple values
     name = 'José Jiménez'
 
     print('My name...', name, '!', sep=';')
-    # My name...;José;Jiménez!
+    # My name...;José Jiménez;!
 
 
 String concatenation
@@ -523,16 +523,20 @@ Powielanie napisów
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/print_lines.py`
 
-#. Dany jest ciąg znaków: ``text = 'Lorem Ipsum'``
-#. Napisz trzy funkcje:
+:English:
+    .. todo:: English translation
 
-    * ``print_1(text)`` wykorzystującą ``range()``
-    * ``print_2(text)`` wykorzystującą pętlę ``while``
-    * ``print_3(text)`` wykorzystującą mnożenie stringów
+:Polish:
+    #. Dany jest ciąg znaków: ``text = 'Lorem Ipsum'``
+    #. Napisz trzy funkcje:
 
-#. Każda funkcja ma wyświetlić 5 kopii tego ciągu znaków
-#. Każdy ciąg znaków w osobnej linii
-#. Napisz doctest do wszystkich funkcji
+        * ``print_1(text)`` wykorzystującą ``range()``
+        * ``print_2(text)`` wykorzystującą pętlę ``while``
+        * ``print_3(text)`` wykorzystującą mnożenie stringów
+
+    #. Każda funkcja ma wyświetlić 5 kopii tego ciągu znaków
+    #. Każdy ciąg znaków w osobnej linii
+    #. Napisz doctest do wszystkich funkcji
 
 :The whys and wherefores:
     * wczytywanie ciągu znaków od użytkownika
@@ -546,12 +550,17 @@ Przeliczanie temperatury
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/print_formatting.py`
 
-#. Napisz program, który wyświetli tabelę przeliczeń stopni Celsjusza na stopnie Fahrenheita w zakresie od –20 do +40 stopni Celsjusza (co 5 stopni).
-#. Wynik musi być taki jak na listingu poniżej
-#. Znak ma być zawsze wyświetlany
-#. Zwróć uwagę na wyjustowanie tekstu
-#. Zwróć uwagę na wypełnienie miejsca niezajętego przez cyfry
+:English:
+    .. todo:: English translation
 
+:Polish:
+    #. Napisz program, który wyświetli tabelę przeliczeń stopni Celsjusza na stopnie Fahrenheita w zakresie od –20 do +40 stopni Celsjusza (co 5 stopni).
+    #. Wynik musi być taki jak na listingu poniżej
+    #. Znak ma być zawsze wyświetlany
+    #. Zwróć uwagę na wyjustowanie tekstu
+    #. Zwróć uwagę na wypełnienie miejsca niezajętego przez cyfry
+
+:Output:
     .. code-block:: text
 
         -------------------------------------------

@@ -1,16 +1,29 @@
-def print_iris(species, **measurements):
-    print(locals())
+FILE = r'../data/iris-clean.csv'
 
 
-with open(r'../data/iris.csv') as file:
-    header, *data = file.readlines()
+def average(**kwargs):
+    values = kwargs.values()
+    return sum(values) / len(values)
+
+
+data = []
+
+with open(FILE) as file:
+    header, *records = file.readlines()
     *columns, _ = header.split(',')
 
-    for line in data:
-        *measurements, species = line.strip().split(',')
-        data = {}
+    for line in records:
+        *measurements, _ = line.strip().split(',')
+
+        tmp = {}
 
         for i, name in enumerate(columns):
-            data[name] = float(measurements[i])
+            tmp[name] = float(measurements[i])
 
-        print_iris(species, **data)
+        data.append(tmp)
+
+
+for row in data:
+    print(average(**row))
+
+print(data)

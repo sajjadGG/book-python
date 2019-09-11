@@ -26,13 +26,15 @@ def euclidean_distance(A, B):
     y1 = A[1]
     y2 = B[1]
 
-    dx = (x2-x1)
-    dy = (y2-y1)
-
-    return sqrt(dx**2 + dy**2)
-
-    # Alternative solution
     return sqrt((x2-x1)**2 + (y2-y1)**2)
 
-    # Alternative solution
-    return sqrt(pow(B[1]-A[1],2)+pow(B[0]-A[0],2))
+    ## Alternative solution
+    # dx =
+    # dy =
+    # return sqrt(dx**2 + dy**2)
+
+    ## Alternative solution
+    # return sqrt((x2-x1)**2 + (y2-y1)**2)
+
+    ## Alternative solution
+    # return sqrt(pow(B[1]-A[1],2)+pow(B[0]-A[0],2))

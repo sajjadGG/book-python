@@ -288,10 +288,6 @@ Reversing ``dict`` keys with values
     {v:k for k,v in DATA.items()}
     # {1:'a', 2:'c'}
 
-Advanced usage for Comprehensions and Generators
-================================================
-.. note:: More in chapter :ref:`Generators and Comprehensions`
-
 
 Assignments
 ===========
@@ -303,6 +299,9 @@ Split train/test
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/comprehension_split_train_test.py`
 
+:English:
+    .. todo:: English translation
+
 :Polish:
     #. Dla danych wejściowych (patrz poniżej)
     #. Zapisz nagłówek (pierwsza linia) do zmiennej
@@ -310,15 +309,15 @@ Split train/test
     #. Wylicz punkt podziału: ilość rekordów danych bez nagłówka razy procent
     #. Za pomocą List Comprehension podziel dane na:
 
-        - ``X: List[Tuple[float]]`` - features
-        - ``y: List[str]`` - labels
+        - ``features: List[Tuple[float]]`` - features
+        - ``labels: List[str]`` - labels
 
     #. Podziel zbiór na listy w proporcji:
 
-        - ``X_train: List[Tuple[float]]`` - features do uczenia - 60%
-        - ``X_test: List[Tuple[float]]`` - features do testów - 40%
-        - ``y_train: List[str]`` - labels do uczenia - 60%
-        - ``y_test: List[str]`` - labels do testów - 40%
+        - ``features_train: List[Tuple[float]]`` - features do uczenia - 60%
+        - ``features_test: List[Tuple[float]]`` - features do testów - 40%
+        - ``labels_train: List[str]`` - labels do uczenia - 60%
+        - ``labels_test: List[str]`` - labels do testów - 40%
 
     #. Stwórz ``result: Tuple[list, list, list, list]`` z cechami (treningowymi i testowymi) oraz labelkami (treningowymi i testowymi)
     #. Wypisz ``result``

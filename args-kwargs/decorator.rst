@@ -482,9 +482,13 @@ Prosty dekorator
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/decorator_abspath.py`
 
-#. Program przechodzi przez pliki i katalogi wykorzystując ``os.walk``
-#. Wypisz nazwę pliku lub katalogu
-#. Stwórz dekorator do funkcji, który przed wypisaniem podmieni ścieżkę na bezwzględną (``path`` + ``filename``).
+:English:
+    .. todo:: English translation
+
+:Polish:
+    #. Program przechodzi przez pliki i katalogi wykorzystując ``os.walk``
+    #. Wypisz nazwę pliku lub katalogu
+    #. Stwórz dekorator do funkcji, który przed wypisaniem podmieni ścieżkę na bezwzględną (``path`` + ``filename``).
 
 Type Checking Decorator
 -----------------------
@@ -493,21 +497,24 @@ Type Checking Decorator
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/decorator_check_types.py`
 
-.. code-block:: python
-    :name: code-listing-decorator-type-check
-    :caption: Force type checking for function
+:English:
+    .. todo:: English translation
 
-    def function(a: str, b: int) -> bool:
-        return bool(a * b)
+:Polish:
+    #. Na podstawie kodu (patrz poniżej)
+    #. Stwórz dekorator ``check_types``
+    #. Dekorator ma sprawdzać typy danych, wszystkich parametrów wchodzących do funkcji
+    #. Jeżeli, którykolwiek się nie zgadza, wyrzuć wyjątek ``TypeError``
+    #. Wyjątek ma wypisywać:
 
-    print(function.__annotations__)
-    # {'a': <class 'str'>, 'return': <class 'bool'>, 'b': <class 'int'>}
+        - nazwę parametru, który ma nieprawidłowy typ,
+        - listę dozwolonych typów.
 
-#. Na podstawie kodu :numref:`code-listing-decorator-type-check`
-#. Stwórz dekorator ``check_types``
-#. Dekorator ma sprawdzać typy danych, wszystkich parametrów wchodzących do funkcji
-#. Jeżeli, którykolwiek się nie zgadza, wyrzuć wyjątek ``TypeError``
-#. Wyjątek ma wypisywać:
+:Input:
+    .. code-block:: python
 
-    - nazwę parametru, który ma nieprawidłowy typ,
-    - listę dozwolonych typów.
+        def function(a: str, b: int) -> bool:
+            return bool(a * b)
+
+        print(function.__annotations__)
+        # {'a': <class 'str'>, 'return': <class 'bool'>, 'b': <class 'int'>}

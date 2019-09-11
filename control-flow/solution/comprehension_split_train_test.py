@@ -30,20 +30,20 @@ header = INPUT[0]
 data = INPUT[1:]
 pivot = int(len(data) * RATIO)
 
-X = [tuple(row[0:4]) for row in data]
-X_train = X[:pivot]
-X_test = X[pivot:]
+features = [tuple(row[0:4]) for row in data]
+features_train = features[:pivot]
+features_test = features[pivot:]
 
-y = [row[4] for row in data]
-y_train = y[:pivot]
-y_test = y[pivot:]
+labels = [row[4] for row in data]
+labels_train = labels[:pivot]
+labels_test = labels[pivot:]
 
-result = X_train, X_test, y_train, y_test
+result = features_train, features_test, labels_train, labels_test
 print(result)
 
 ## Alternative - but not optimized (4 loops)
 #
-# X_train = [m for *m,s in data[:pivot]]
-# X_test = [m for *m,s in data[pivot:]]
-# y_train = [m for *m,s in data[:pivot]]
-# y_test = [m for *m,s in data[pivot:]]
+# features_train = [m for *m,s in data[:pivot]]
+# features_test = [m for *m,s in data[pivot:]]
+# labels_train = [m for *m,s in data[:pivot]]
+# labels_test = [m for *m,s in data[pivot:]]

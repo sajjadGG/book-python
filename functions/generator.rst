@@ -1,8 +1,8 @@
-.. _Generators and Comprehensions:
+.. _Generators:
 
-*****************************
-Generators and Comprehensions
-*****************************
+**********
+Generators
+**********
 
 
 Lazy evaluation
@@ -428,40 +428,60 @@ Built-in generators
     print(output)
     # {'a': 1, 'b': 2, 'c': 3}
 
+``zip()``
+---------
 .. code-block:: python
 
     header = ['a', 'b', 'c']
     data = [1, 2, 3]
 
     zip(header, data)
-    <zip object at 0x11cf54b90>
+    # <zip object at 0x11cf54b90>
+
     list(zip(header, data))
-    [('a', 1), ('b', 2), ('c', 3)]
+    # [('a', 1), ('b', 2), ('c', 3)]
+
     dict(zip(header, data))
-    {'a': 1, 'b': 2, 'c': 3}
+    # {'a': 1, 'b': 2, 'c': 3}
+
     tuple(zip(header, data))
-    (('a', 1), ('b', 2), ('c', 3))
+    # (('a', 1), ('b', 2), ('c', 3))
 
-map(float, [1, 2, 3])
-<map object at 0x11d15a190>
-list(map(float, [1, 2, 3]))
-[1.0, 2.0, 3.0]
-tuple(map(float, [1, 2, 3]))
-(1.0, 2.0, 3.0)
-tuple(map(float, data))
-(1.0, 2.0, 3.0)
-filter(..., data)
-<filter object at 0x11d17b290>
-def czy_parzysty(x):
-    if x % 2 == 0:
-        return True
-    else:
-        return False
+``map()``
+---------
+.. code-block:: python
 
-filter(czy_parzysty, data)
-<filter object at 0x11d182990>
-list(filter(czy_parzysty, data))
-[2]
+    map(float, [1, 2, 3])
+    # <map object at 0x11d15a190>
+
+    list(map(float, [1, 2, 3]))
+    # [1.0, 2.0, 3.0]
+
+    tuple(map(float, [1, 2, 3]))
+    # (1.0, 2.0, 3.0)
+
+.. code-block:: python
+
+    data = [1, 2, 3]
+
+    tuple(map(float, data))
+    # (1.0, 2.0, 3.0)
+
+``filter()``
+------------
+.. code-block:: python
+
+    def czy_parzysty(x):
+        if x % 2 == 0:
+            return True
+        else:
+            return False
+
+    filter(czy_parzysty, data)
+    # <filter object at 0x11d182990>
+
+    list(filter(czy_parzysty, data))
+    # [2]
 
 
 Assignments
@@ -474,13 +494,17 @@ Generators vs. Comprehensions - iris
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/generator_iris.py`
 
-#. Zapisz dane :download:`solution/iris-clean.csv` do pliku "generator_iris.csv"
-#. Zaczytaj dane pomijając nagłówek
-#. Napisz funkcję która zwraca wszystkie pomiary dla danego gatunku
-#. Gatunek będzie podawany jako ``str`` do funkcji
-#. Zaimplementuj rozwiązanie wykorzystując zwykłą funkcję
-#. Zaimplementuj rozwiązanie wykorzystując generator i słówko kluczowe ``yield``
-#. Porównaj wyniki jednego i drugiego rozwiązania przez użycie ``sys.getsizeof()``
+:English:
+    .. todo:: English translation
+
+:Polish:
+    #. Zapisz dane :download:`solution/iris-clean.csv` do pliku "generator_iris.csv"
+    #. Zaczytaj dane pomijając nagłówek
+    #. Napisz funkcję która zwraca wszystkie pomiary dla danego gatunku
+    #. Gatunek będzie podawany jako ``str`` do funkcji
+    #. Zaimplementuj rozwiązanie wykorzystując zwykłą funkcję
+    #. Zaimplementuj rozwiązanie wykorzystując generator i słówko kluczowe ``yield``
+    #. Porównaj wyniki jednego i drugiego rozwiązania przez użycie ``sys.getsizeof()``
 
 :The whys and wherefores:
     * Wykorzystanie generatorów
@@ -496,15 +520,19 @@ Generators vs. Comprehensions - passwd
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/generator_passwd.py`
 
-#. Napisz program, który wczyta plik z danymi wejśiowymi (patrz poniżej)
-#. Przefiltruj linie, tak aby nie zawierały komentarzy (zaczynające się od ``#``) oraz pustych linii
-#. Przefiltruj linie, aby wyciągnąć konta systemowe - użytkowników, którzy mają UID (trzecie pole) mniejsze niż 1000
-#. Zwróć listę loginów użytkowników systemowych
-#. Zaimplementuj rozwiązanie wykorzystując zwykłą funkcję
-#. Zaimplementuj rozwiązanie wykorzystując generator i słówko kluczowe ``yield``
-#. Porównaj wyniki jednego i drugiego rozwiązania przez użycie ``sys.getsizeof()``
-#. Dlaczego różnice są tak niewielkie?
-#. Co się stanie, gdy ilość danych się zwiększy?
+:English:
+    .. todo:: English translation
+
+:Polish:
+    #. Napisz program, który wczyta plik z danymi wejśiowymi (patrz poniżej)
+    #. Przefiltruj linie, tak aby nie zawierały komentarzy (zaczynające się od ``#``) oraz pustych linii
+    #. Przefiltruj linie, aby wyciągnąć konta systemowe - użytkowników, którzy mają UID (trzecie pole) mniejsze niż 1000
+    #. Zwróć listę loginów użytkowników systemowych
+    #. Zaimplementuj rozwiązanie wykorzystując zwykłą funkcję
+    #. Zaimplementuj rozwiązanie wykorzystując generator i słówko kluczowe ``yield``
+    #. Porównaj wyniki jednego i drugiego rozwiązania przez użycie ``sys.getsizeof()``
+    #. Dlaczego różnice są tak niewielkie?
+    #. Co się stanie, gdy ilość danych się zwiększy?
 
 :The whys and wherefores:
     * Wykorzystanie generatorów
@@ -515,7 +543,6 @@ Generators vs. Comprehensions - passwd
 
 :Input:
     .. code-block:: text
-        :caption: ``/etc/passwd`` sample file
 
         ##
         # User Database

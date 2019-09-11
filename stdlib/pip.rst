@@ -29,6 +29,10 @@ Installing from ``requirements.txt``
 * Estimated time of completion: 5 min
 * Filename: ``requirements.txt``
 
-#. Stwórz plik ``requirements.txt``
-#. Dopisz linijkę ``pycodestyle`` do ``requirements.txt``
-#. Niech Twoje IDE zainstaluje bibliotekę automatycznie (kliknięcie w żółty banner)
+:English:
+    .. todo:: English translation
+
+:Polish:
+    #. Stwórz plik ``requirements.txt``
+    #. Dopisz linijkę ``pycodestyle`` do ``requirements.txt``
+    #. Niech Twoje IDE zainstaluje bibliotekę automatycznie (kliknięcie w żółty banner)

@@ -215,12 +215,24 @@ Average
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/builtin_average.py`
 
-#. Dane są pomiary Irysów:
+:English:
+    .. todo:: English translation
 
+:Polish:
+    #. Dane są pomiary Irysów:
+    #. Stwórz słownik ``values: Dict[str, list]``
+    #. Klucze w słowniku mają być rekordami z nagłówka zbioru ``DATA``
+    #. Iterując po danych dodawaj wartości do odpowiednich kluczy
+    #. Każdy z kluczy słownika, ma mieć przyporządkowaną listę z wszystkimi wartościami danego parametru,
+    #. Stwórz funkcję ``average()``, która będzie liczyła średnią dla dowolnej ilości argumentów
+    #. Do wyliczenia średniej, wykorzystaj wbudowane funkcje
+    #. Funkcja ma wyliczać średnią tylko dla parametrów typu ``float``, w przeciwnym wypadku zwróć ``None``
+    #. Iterując po słowniku ``values`` wypisz nazwę parametru oraz wyliczoną średnią
+
+:Input:
     .. code-block:: python
-        :caption: Sample Iris databases
 
-        DATA = [
+        INPUT = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, 'virginica'),
             (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -245,26 +257,16 @@ Average
             (4.6, 3.1, 1.5, 0.2, 'setosa'),
         ]
 
-#. Stwórz słownik ``values: Dict[str, list]``
-#. Klucze w słowniku mają być rekordami z nagłówka zbioru ``DATA``
-#. Iterując po danych dodawaj wartości do odpowiednich kluczy
-#. Każdy z kluczy słownika, ma mieć przyporządkowaną listę z wszystkimi wartościami danego parametru,
-
+:Output:
     .. code-block:: python
-        :caption: Ta struktura danych ma generować się automatycznie
 
-        values = {
+        OUTPUT = {
             'Sepal length': [5.8, 5.1, ...],
             'Sepal width': [2.7, 3.5, ...],
             'Petal length': [5.1, 1.4, ...],
             'Petal width': [1.9, 0.2, ...],
             'Species': ['virginica', 'setosa', ...],
         }
-
-#. Stwórz funkcję ``average()``, która będzie liczyła średnią dla dowolnej ilości argumentów
-#. Do wyliczenia średniej, wykorzystaj wbudowane funkcje
-#. Funkcja ma wyliczać średnią tylko dla parametrów typu ``float``, w przeciwnym wypadku zwróć ``None``
-#. Iterując po słowniku ``values`` wypisz nazwę parametru oraz wyliczoną średnią
 
 :The whys and wherefores:
     * Korzystanie z funkcji wbudowanych

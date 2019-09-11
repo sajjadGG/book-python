@@ -219,3 +219,44 @@ Import path
 
     sys.path.append('/path/to/directory')
     sys.path.insert(0, '/path/to/directory')
+
+
+``__name__``
+============
+* Zmienna ``__name__`` pozwala ustalić czy dany plik jest wykonywany czy importowany.
+* Jeżeli dany plik jest wykonywany, zmienna ``__name__`` ustawiana jest na ``'__main__'``.
+* Jeżeli dany plik jest importowany jako moduł, zmienna ``__name__`` ustawiana jest na nazwę modułu.
+* Jest to przydatne na przykład przy testowaniu modułów.
+
+Example 1
+---------
+* Wypisane na konsoli zostanie ``'hello world!'`` jeżeli dany plik jest uruchamiany z konsoli.
+* Powyższy kod nie wykona się natomiast jeżeli plik zaimportujemy jako moduł w innym pliku.
+
+.. code-block:: python
+
+    if __name__ == '__main__':
+        print('hello world')
+
+Example 2
+---------
+* Jeżeli skrypt wywoływany jest z konsoli "z ręki" to uruchom funckję ``run()``
+* Jeżeli został zaimportowany, to ten fragment będzie zignorowany
+* I trzeba uruchomić funkcję ``run()`` samodzielnie - kontrolowanie
+
+.. code-block:: python
+
+    def run():
+        ...
+
+    if __name__ == '__main__':
+        run()
+
+Example
+-------
+.. code-block:: python
+
+    import logging
+
+    log = logging.getLogger(__name__)
+

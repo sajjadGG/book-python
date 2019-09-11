@@ -181,7 +181,6 @@ Euclidean distance 2D
 
 :Input:
     .. code-block:: python
-        :caption: Euclidean distance 2D
 
         def euclidean_distance(A, B):
             """
@@ -239,7 +238,6 @@ Euclidean distance ``n`` dimensions
 
 :Input:
     .. code-block:: python
-        :caption: Euclidean distance N-dimension
 
         def euclidean_distance(A, B):
             """

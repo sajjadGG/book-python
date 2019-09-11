@@ -1,6 +1,6 @@
 FILE = r'../data/iris.csv'
-X = []
-y = []
+features = []
+labels = []
 
 
 with open(FILE) as file:
@@ -8,12 +8,10 @@ with open(FILE) as file:
 
     for line in file:
         line = line.strip().split(',')
-        features = line[:4]
-        label = line[4]
 
-        X.append(tuple(features))
-        y.append(label)
+        features.append(tuple(line[:4]))
+        labels.append(line[4])
 
 
-print(X)
-print(y)
+print(features)
+print(labels)
