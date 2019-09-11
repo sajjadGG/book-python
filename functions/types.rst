@@ -27,4 +27,19 @@ Type annotations
     add_numbers('Jan', 'Twardowski')
     # 'JanTwardowski'
 
+.. code-block:: python
+
+    from typing import Union
+
+
+    def add_numbers(a: Union[int, float], b: Union[int, float]) -> int:
+        return int(a + b)
+
+    add_numbers(1, 2)
+    # 3
+
+    add_numbers(1.5, 2.5)
+    # 4
+
+
 .. note:: More about this topic at :ref:`Type Annotation`

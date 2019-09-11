@@ -127,13 +127,13 @@ Create ``dict`` from two sequences
 .. code-block:: python
     :caption: Create ``dict`` from two ``list``
 
-    keys = ['a', 'b', 'c', 'd']
-    values = [1, 2, 3, 4]
+    header = ['a', 'b', 'c']
+    data = [1, 2, 3]
     output = {}
 
-    for i in range(len(keys)):
-        key = keys[i]
-        value = values[i]
+    for i in range(len(header)):
+        key = header[i]
+        value = data[i]
         output[key] = value
 
     print(output)
@@ -141,24 +141,23 @@ Create ``dict`` from two sequences
     #     'a': 1,
     #     'b': 2,
     #     'c': 3,
-    #     'd': 4,
     # }
 
-enumerate()
------------
+``enumerate()``
+---------------
 * ``_`` regular variable name (not a special syntax)
 * ``_`` by convention is used when variable will not be referenced
 
 .. code-block:: python
     :caption: Create ``dict`` from two ``list``
 
-    keys = ['a', 'b', 'c', 'd']
-    values = [1, 2, 3, 4]
+    header = ['a', 'b', 'c']
+    data = [1, 2, 3]
     output = {}
 
-    for i, _ in enumerate(keys):
-        key = keys[i]
-        value = values[i]
+    for i, _ in enumerate(header):
+        key = header[i]
+        value = data[i]
         output[key] = value
 
     print(output)
@@ -166,24 +165,24 @@ enumerate()
     #     'a': 1,
     #     'b': 2,
     #     'c': 3,
-    #     'd': 4,
     # }
 
 ``zip()``
 ---------
+* The most Pythonic way
+
 .. code-block:: python
 
-    keys = ['a', 'b', 'c', 'd']
-    values = [1, 2, 3, 4]
+    header = ['a', 'b', 'c']
+    data = [1, 2, 3]
 
-    output = dict(zip(keys, values))
+    output = dict(zip(header, data))
 
     print(output)
     # {
     #     'a': 1,
     #     'b': 2,
     #     'c': 3,
-    #     'd': 4,
     # }
 
 

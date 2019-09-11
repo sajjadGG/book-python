@@ -28,12 +28,30 @@ INPUT = [
     (4.6, 3.1, 1.5, 0.2, 'setosa'),
 ]
 
-header, *data = INPUT
-values = {name: list() for name in header}
+header = INPUT[0]
+data = INPUT[1:]
+values = {}
+
 
 for row in data:
-    for i, name in enumerate(values):
-        values[name].append(row[i])
+    for i, _ in enumerate(header):
+        key = header[i]
+        value = row[i]
+
+        if key in values:
+            values[key] += [value]
+        else:
+            values[key] = [value]
+
+
+## Alternative version
+# header, *data = INPUT
+# values = {name: list() for name in header}
+#
+# for row in data:
+#     for i, name in enumerate(values):
+#         values[name].append(row[i])
+
 
 for name, measurements in values.items():
     print(f'Name: {name}, avg: {average(measurements)}')

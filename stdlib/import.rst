@@ -206,18 +206,16 @@ Import path
     import sys
 
     sys.path
-    # ['/Users/matt/Developer/book/python/_tmp',
-    #  '/Applications/PyCharm.app/Contents/helpers/pydev',
-    #  '/Applications/PyCharm.app/Contents/helpers/pycharm_display',
-    #  '/Applications/PyCharm.app/Contents/helpers/third_party/thriftpy',
-    #  '/Applications/PyCharm.app/Contents/helpers/pydev',
-    #  '/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python37.zip',
-    #  '/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7',
-    #  '/usr/local/Cellar/python/3.7.3/Frameworks/Python.framework/Versions/3.7/lib/python3.7/lib-dynload',
-    #  '/Users/matt/.virtualenvs/book-python/lib/python3.7/site-packages',
-    #  '/Applications/PyCharm.app/Contents/helpers/pycharm_matplotlib_backend',
-    #  '/Applications/PyCharm.app/Contents/helpers/pycharm',
-    #  '/Applications/PyCharm.app/Contents/helpers/pydev']
+    # ['/Applications/PyCharm 2019.2 EAP.app/Contents/helpers/pydev',
+    #  '/Users/Developer/my_project',
+    #  '/Applications/PyCharm 2019.2 EAP.app/Contents/helpers/pycharm_display',
+    #  '/Applications/PyCharm 2019.2 EAP.app/Contents/helpers/third_party/thriftpy',
+    #  '/Applications/PyCharm 2019.2 EAP.app/Contents/helpers/pydev',
+    #  '/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7/lib/python37.zip',
+    #  '/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7/lib/python3.7',
+    #  '/usr/local/Cellar/python/3.7.4/Frameworks/Python.framework/Versions/3.7/lib/python3.7/lib-dynload',
+    #  '/Users/matt/Developer/book-python/.venv-3.7.3/lib/python3.7/site-packages',
+    #  '/Applications/PyCharm 2019.2 EAP.app/Contents/helpers/pycharm_matplotlib_backend']
 
     sys.path.append('/path/to/directory')
     sys.path.insert(0, '/path/to/directory')

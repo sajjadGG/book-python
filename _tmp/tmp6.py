@@ -1,28 +1,9 @@
-# output = {x: y
-#     for x in range(0, 10)
-#         for y in range(0, 10)
-# }
-#
-# print(output)
-#
-#
-#
-#
-# output = {}
-#
-# for x in range(0, 10):
-#     for y in range(0, 10):
-#         output[x] = y
-#
-# print(output)
+DATA = [
+    (5.8, 2.7, 5.1, 1.9, 'virginica'),
+    (5.1, 3.5, 1.4, 0.2, 'setosa'),
+    (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+]
 
-FILE = r'iris-clean.csv'
-
-with open(FILE) as file:
-    file.readline()
-
-    for line in file:
-        line = line.strip().split(',')
-
-        measurements = line[0:4]
-        species = line[4]
+for *measurements, species in DATA:
+    print(measurements)
+    print(species)

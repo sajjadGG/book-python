@@ -17,6 +17,24 @@ Unpacking values
 
 .. note:: Note, that ``set`` is unordered collection!
 
+.. code-block:: python
+
+    a, b, c = 1, 2, 3
+
+.. code-block:: python
+
+    a, b, c = 1, 2, 3
+    a, b, c = (1, 2, 3)
+
+    (a, b, c) = (1, 2, 3)
+    (a, b, c) = [1, 2, 3]
+
+    [a, b, c] = [1, 2, 3]
+    [a, b, c] = (1, 2, 3)
+
+    {a, b, c} = {1, 2, 3}
+    # SyntaxError: can't assign to literal
+
 Too many values to unpack
 -------------------------
 .. code-block:: python
@@ -72,11 +90,19 @@ Cannot unpack from both sides at once
     *a, b, *c = [1, 2, 3, 4]
     # SyntaxError: two starred expressions in assignment
 
+Unpacking from variable length
+------------------------------
+.. code-block:: python
+
+    a, *b, c = [1, 2]
+
+    print(a)    # 1
+    print(b)    # []
+    print(c)    # 2
+
 
 Naming convention
 =================
-* if you're not using in those values later in your code
-
 .. code-block:: python
 
     first, *middle, last = [1, 2, 3, 4]
@@ -87,12 +113,42 @@ Naming convention
 
 .. code-block:: python
 
-    first, *middle, last = [1, 2]
+    first, second, *others = [1, 2, 3, 4]
 
-    print(first)           # 1
-    print(middle)          # []
-    print(last)            # 2
+    first       # 1
+    second      # 2
+    others      # [3, 4]
 
+.. code-block:: python
+
+    first, second, *others = range(10)
+
+    first       # 0
+    second      # 1
+    others      # [2, 3, 4, 5, 6, 7, 8, 9]
+
+.. code-block:: python
+
+    line = '4.9,3.1,1.5,0.1,setosa'
+
+    *measurements, species = line.split(',')
+
+    measurements        # ['4.9', '3.1', '1.5', '0.1']
+    species             # 'setosa'
+
+.. code-block:: python
+
+    line = 'astronauts,twardowski,watney,ivanovic'
+
+    group_name, *members = line.split(',')
+
+    group_name      # astronauts
+    members         # ['twardowski', 'watney', 'ivanovic']
+
+Omitting values
+===============
+* ``_`` is regular variable name, not a special Python syntax
+* ``_`` by convention is used for data we don't want to access in future
 
 .. code-block:: python
 
@@ -121,37 +177,37 @@ Naming convention
     home            # /home/twardowski
 
 
-Examples
-========
+Using in a loop
+===============
 .. code-block:: python
 
-    line = '4.9,3.1,1.5,0.1,setosa'
+    DATA = [
+        (5.8, 2.7, 5.1, 1.9, 'virginica'),
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+    ]
 
-    *measurements, species = line.split(',')
+    for *measurements, species in DATA:
+        print(measurements)
 
-    measurements        # ['4.9', '3.1', '1.5', '0.1']
-    species             # 'setosa'
-
-.. code-block:: python
-
-    line = 'astronauts,twardowski,watney,ivanovic'
-
-    group_name, *members = line.split(',')
-
-    group_name      # astronauts
-    members         # ['twardowski', 'watney', 'ivanovic']
+    # [5.8, 2.7, 5.1, 1.9]
+    # [5.1, 3.5, 1.4, 0.2]
+    # [5.7, 2.8, 4.1, 1.3]
 
 .. code-block:: python
 
-    a, b, *c = range(10)
+    DATA = [
+        (5.8, 2.7, 5.1, 1.9, 'virginica'),
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+    ]
 
-    a       # 0
-    b       # 1
-    c       # [2, 3, 4, 5, 6, 7, 8, 9]
+    for *_, species in DATA:
+        print(species)
 
-More advanced topics
-====================
-.. note:: The topic will be continued in Intermediate and Advanced part of the book
+    # virginica
+    # setosa
+    # versicolor
 
 
 Assignments
@@ -165,14 +221,14 @@ Unpacking from sequence
 * Filename: :download:`solution/unpacking_hosts.py`
 
 :English:
-    #. Split input data by white space
-    #. Extract ip address and host names
+    #. Split input data (see below) by white space
+    #. Separate ip address and host names
     #. Use asterisk ``*`` notation
 
 :Polish:
-    #. Podziel dane wejściowe po białych znakach
-    #. Wydostań wartości adresu ip i nazw hostów
-    #. Przy parsowaniu linii skorzystaj z konstrukcji z gwiazdką ``*``
+    #. Podziel dane wejściowe (patrz poniżej) po białych znakach
+    #. Odseparuj adres ip i nazw hostów
+    #. Skorzystaj z notacji z gwiazdką ``*``
 
 :Input:
     .. code-block:: python
@@ -196,11 +252,13 @@ Unpacking from nested sequence
 * Filename: :download:`solution/unpacking_iris.py`
 
 :English:
-    #. Extract header and content from input data
+    #. For input data (see below)
+    #. Separate header and rekordy
     #. Use asterisk ``*`` notation
 
 :Polish:
-    #. Z danych wejściowych oddziel nagłówek i dane
+    #. Dla danych wejściowych (patrz poniżej)
+    #. Oddziel nagłówek i rekordy
     #. Skorzystaj z konstrukcji z gwiazdką ``*``
 
 :Input:

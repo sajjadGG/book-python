@@ -37,4 +37,9 @@ Limit
 =====
 * Default recursion depth limit is 1000
 * Warning: Anaconda sets default recursion depth limit to 2000
-* Set limit ``sys.setrecursionlimit(limit)``
+
+.. code-block:: python
+
+    import sys
+
+    sys.setrecursionlimit(3000)

@@ -7,10 +7,10 @@ Function Basics
 
 Function definition
 ===================
-* Wielokrotne używanie tego samego kodu
-* Poprawiają czytelność kodu
-* Porządkują kod
-* Pozwalają na łatwiejszy refactoring
+* Reuse code
+* Improves code readability
+* Clean-up code
+* Allows for easier refactoring
 
 .. code-block:: python
 
@@ -24,8 +24,8 @@ Function definition
 
 Returning values
 ================
-* ``return`` wskazuje funkcji jaką wartość ma zwrócić
-* Kod po słowie kluczowym ``return`` się nie wykona
+* ``return`` keyword indicates outcome of the function
+* Code after ``return`` will not execute
 
 .. code-block:: python
 
@@ -63,32 +63,32 @@ Returning simple types
 .. code-block:: python
 
     def function():
-        return 'José Jiménez'
+        return 'Mark Watney'
 
 .. code-block:: python
 
     def function():
-        return (42, 13.37, 'José Jiménez')
+        return (42, 13.37, 'Mark Watney')
 
 .. code-block:: python
 
     def function():
-        return 42, 13.37, 'José Jiménez'
+        return 42, 13.37, 'Mark Watney'
 
 .. code-block:: python
 
     def function():
-        return [42, 13.37, 'foobar']
+        return [42, 13.37, 'Mark Watney']
 
 .. code-block:: python
 
     def function():
-        return {42, 13.37, 'José Jiménez'}
+        return {42, 13.37, 'Mark Watney'}
 
 .. code-block:: python
 
     def function():
-        return {'first_name': 'José', 'last_name': 'Jiménez'}
+        return {'first_name': 'Mark', 'last_name': 'Watney'}
 
 .. code-block:: python
 
@@ -104,13 +104,18 @@ Returning simple types
 
     def function():
         print('ehlo world')
-        # Python will ``return None`` if not specified
+        # Python will ``return None`` if no explicit return is specified
 
 .. code-block:: python
 
     def function():
         pass
-        # Python will ``return None`` if not specified
+        # Python will ``return None`` if no explicit return is specified
+
+.. code-block:: python
+
+    def function():
+        # Python will ``return None`` if no explicit return is specified
 
 Returning nested types
 ----------------------
@@ -121,7 +126,7 @@ Returning nested types
             ('Mark', 'Watney'),
             {'Jan Twardowski', 'Melissa Lewis'},
             {'astro': 'Иванович', 'agency': {'name': 'Roscosmos'}},
-            {'astro': 'Jiménez', 'missions': ('Mercury', 'Apollo')},
+            {'astro': 'Jiménez', 'missions': ('Mercury', 'Gemini', 'Apollo')},
         ]
 
 Function arguments
@@ -136,9 +141,15 @@ Required arguments
 
 Arguments with default value
 ----------------------------
-* Funkcja przyjmie wartość domyślną dla argumentu jeżeli użytkownik nie nadpisze
-* Argumenty z wartością domyślną muszą być skrajnie po prawej stronie
-* Argumenty z wartościami domyślnymi nie muszą być podane
+* Arguments without default values are required
+* Function will take default value if not overwritten by user
+* Arguments with default values must be at the right side
+* Arguments with default values can be omitted while executing
+
+.. code-block:: python
+
+    def subtract(a=1, b=2):
+        return a - b
 
 .. code-block:: python
 
@@ -147,8 +158,10 @@ Arguments with default value
 
 .. code-block:: python
 
-    def subtract(a=1, b=2):
+    def subtract(a=1, b):
         return a - b
+
+    # SyntaxError: non-default argument follows default argument
 
 Positional arguments
 --------------------
@@ -160,10 +173,10 @@ Positional arguments
     subtract(2, 1)      # 1
     subtract(1, 2)      # -1
 
-Named arguments
----------------
-* Argumenty bez wartości domyślnych są wymagane
-* Kolejność podawania argumentów nazwanych nie ma znaczenia
+Keyword arguments
+-----------------
+* Arguments without default values are required
+* Order of keyword arguments has no significance
 
 .. code-block:: python
 
@@ -181,23 +194,22 @@ Named arguments
          print(f'My name... {name}')
 
 
-    hello('Иван Иванович')        # My name... Иван Иванович
-    hello(name='Иван Иванович')   # My name... Иван Иванович
+    hello('Mark Watney')          # My name... Mark Watney
+    hello(name='Mark Watney')     # My name... Mark Watney
     hello()                       # My name... José Jiménez
 
 .. code-block:: python
 
-    def server(username, password, host='127.0.0.1',
-               port=80, ssl=False, keep_alive=1,
-               persistent=False):
+    def connect(username, password, host='127.0.0.1',
+                port=80, ssl=True, keep_alive=1, persistent=False):
         print('Connecting...')
 
 
-    server('admin', 'admin', 'localhost', 80, False, 1, True)
+    connect('admin', 'admin', 'localhost', 80, False, 1, True)
 
-    server(host='localhost', username='admin', password='admin', ssl=True, keep_alive=1, persistent=True)
+    connect(host='localhost', username='admin', password='admin', ssl=True, keep_alive=1, persistent=True)
 
-    server(
+    connect(
         host='localhost',
         username='admin',
         password='admin',
@@ -228,7 +240,11 @@ Named arguments
         """
 
 
-    data = read_csv(
+    my_file1 = read_csv('iris-clean.csv')
+
+    my_file2 = read_csv('iris-clean.csv', encoding='utf-8')
+
+    my_file3 = read_csv(
         filepath_or_buffer='iris-clean.csv',
         encoding='utf-8',
         verbose=True,
@@ -262,6 +278,8 @@ Use better names, rather than comments
     def cal_var(results):
         """Calculate variance"""
         return sum((Xi-m) ** 2 for Xi in results) / len(results)
+
+.. code-block:: python
 
     def calculate_variance(results):
         return sum((Xi-m) ** 2 for Xi in results) / len(results)
@@ -328,53 +346,50 @@ Cleaning text input
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/functions_str_clean.py`
 
-#. Napisz funkcję oczyszczającą ciągi znaków
-#. Funkcja musi przechodzić wszystkie ``doctest``
+:English:
+    #. For given input data (see below)
+    #. Write function cleaning up data
 
-.. code-block:: python
+:Polish:
+    #. Dla danych wejściowych (patrz poniżej)
+    #. Napisz funkcję czyszczącą dane
 
-    def clean(text: str) -> str:
-        """
-        >>> clean('  bolesława chrobrego ')
-        'Bolesława Chrobrego'
+:Input:
+    .. code-block:: python
 
-        >>> clean('ul Jana III SobIESkiego')
-        'Jana III Sobieskiego'
+        'ul.Mieszka II'
+        'UL. Zygmunta III WaZY'
+        '  bolesława chrobrego '
+        'ul Jana III SobIESkiego'
+        '\tul. Jana trzeciego Sobieskiego'
+        'ulicaJana III Sobieskiego'
+        'UL. JA\tNA 3 SOBIES  KIEGO'
+        'ULICA JANA III SOBIESKIEGO  '
+        'ULICA. JANA III SOBIeskieGO'
+        ' Jana 3 Sobieskiego  '
+        'Jana III Sobi\teskiego '
 
-        >>> clean('\tul. Jana trzeciego Sobieskiego')
-        'Jana III Sobieskiego'
+:Output:
+    .. code-block:: python
 
-        >>> clean('ulicaJana III Sobieskiego')
-        'Jana III Sobieskiego'
-
-        >>> clean('UL. JA\tNA 3 SOBIES  KIEGO')
-        'Jana III Sobieskiego'
-
-        >>> clean('UL. Zygmunta III WaZY')
-        'Zygmunta III Wazy'
-
-        >>> clean('ULICA JANA III SOBIESKIEGO  ')
-        'Jana III Sobieskiego'
-
-        >>> clean('ULICA. JANA III SOBIeskieGO')
-        'Jana III Sobieskiego'
-
-        >>> clean(' Jana 3 Sobieskiego  ')
-        'Jana III Sobieskiego'
-
-        >>> clean('Jana III Sobi\teskiego ')
-        'Jana III Sobieskiego'
-
-        >>> clean('ul.Mieszka II')
         'Mieszka II'
-        """
-        return text
+        'Zygmunta III Wazy'
+        'Bolesława Chrobrego'
+        'Jana III Sobieskiego'
+        'Jana III Sobieskiego'
+        'Jana III Sobieskiego'
+        'Jana III Sobieskiego'
+        'Jana III Sobieskiego'
+        'Jana III Sobieskiego'
+        'Jana III Sobieskiego'
+        'Jana III Sobieskiego'
 
 :The whys and wherefores:
-    * Definiowanie i uruchamianie funkcji
-    * Sprawdzanie przypadków brzegowych (niekompatybilne argumenty)
-    * Parsowanie argumentów funkcji
-    * Czyszczenie danych od użytkownika
+    * Defining and calling functions
+    * Passing function arguments
+    * Cleaning data from user input
+
+.. todo:: Translate data to English
 
 Aviation numbers
 ----------------
@@ -383,48 +398,46 @@ Aviation numbers
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/functions_aviation_numbers.py`
 
-#. Napisz funkcję ``aviation_numbers``
-#. Funkcja zamieni dowolnego ``int`` lub ``float`` na formę tekstową w mowie pilotów
-#. Funkcja musi przechodzić wszystkie ``doctest``
 
-.. csv-table:: Aviation Phonetic Numbers
-    :header-rows: 1
-    :file: data/aviation-numbers.csv
+:English:
+    #. For input data (see below)
+    #. Define function converting ``int`` or ``float`` to text form in Pilot's Speak
 
-.. code-block:: python
+:Polish:
+    #. Dla danych wejściowych (patrz poniżej)
+    #. Zdefiniuj funkcję konwertującą ``int`` lub ``float`` na formę tekstową w mowie pilotów
 
-    def aviation_numbers(number: Union[int, float]) -> str:
-        """
-        >>> aviation_numbers(1969)
+:Input:
+    .. csv-table:: Aviation Phonetic Numbers
+        :header-rows: 1
+        :file: data/aviation-numbers.csv
+
+    .. code-block:: python
+
+        1969
+        31337
+        13.37
+        31.337
+        -1969
+        -31.337
+        -49.35
+
+:Output:
+    .. code-block:: python
+
         'one niner six niner'
-
-        >>> aviation_numbers(31337)
         'tree one tree tree seven'
-
-        >>> aviation_numbers(13.37)
         'one tree and tree seven'
-
-        >>> aviation_numbers(31.337)
         'tree one and tree tree seven'
-
-        >>> aviation_numbers(-1969)
         'minus one niner six niner'
-
-        >>> aviation_numbers(-31.337)
         'minus tree one and tree tree seven'
-
-        >>> aviation_numbers(-49.35)
         'minus fower niner and tree fife'
-        """
-        return number
 
 :The whys and wherefores:
-    * Definiowanie i uruchamianie funkcji
-    * Sprawdzanie przypadków brzegowych (niekompatybilne argumenty)
-    * Parsowanie argumentów funkcji
-    * Definiowanie i korzystanie z ``dict`` z wartościami
-    * Przypadek zaawansowany: argumenty pozycyjne i domyślne
-    * Rzutowanie i konwersja typów
+    * Defining and calling functions
+    * Passing function arguments
+    * Cleaning data from user input
+    * ``dict`` lookups
 
 Number to human readable
 ------------------------
@@ -433,55 +446,47 @@ Number to human readable
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/functions_numstr_human.py`
 
-#. Napisz funkcję ``number_to_str``
-#. Funkcja zamieni dowolnego ``int`` lub ``float`` na formę tekstową
-#. Funkcja musi zmieniać wartości na poprawną gramatycznie formę
-#. Max 6 cyfr przed przecinkiem
-#. Max 5 cyfr po przecinku
+:English:
+    #. For input data (see below)
+    #. Define function converting ``int`` or ``float`` to text form
+    #. Text form must be in proper grammar form
+    #. Max 6 digits before decimal separator (point ``.``)
+    #. Max 5 digits after decimal separator (point ``.``)
 
+:Polish:
+    #. Dla danych wejściowych (patrz poniżej)
+    #. Zdefiniuj funkcję konwertującą ``int`` lub ``float`` na formę tekstową
+    #. Forma tekstowa musi być poprawna gramatycznie
+    #. Max 6 cyfr przed separatorem dziesiętnym (point ``.``)
+    #. Max 5 cyfr po separatorze dziesiętnym (point ``.``)
+
+:Input:
     .. code-block:: python
 
-        number_to_str(1969)      #
-        number_to_str(13.37)     #
-        number_to_str(31337)     #
-        number_to_str(31.337)    #
-        number_to_str(-1969)     #
-        number_to_str(-31.337)   #
+        1969
+        31337
+        13.37
+        31.337
+        -1969
+        -31.337
+        -49.35
 
-.. code-block:: python
+:Output:
+    .. code-block:: python
 
-    def number_to_text(number: Union[int, float]) -> str:
-        """
-        >>> number_to_text(1969)
         'one thousand nine hundred sixty nine'
-
-        >>> number_to_text(31337)
         'thirty one thousand three hundred thirty seven'
-
-        >>> number_to_text(13.37)
         'thirteen and thirty seven hundredths'
-
-        >>> number_to_text(31.337)
         'thirty one three hundreds thirty seven thousands'
-
-        >>> number_to_text(-1969)
         'minus one thousand nine hundred sixty nine'
-
-        >>> number_to_text(-31.337)
         'minus thirty one three hundreds thirty seven thousands'
-
-        >>> number_to_text(-49.35)
         'minus forty nine and thirty five hundreds'
-        """
-        return number
 
 :The whys and wherefores:
-    * Definiowanie i uruchamianie funkcji
-    * Sprawdzanie przypadków brzegowych (niekompatybilne argumenty)
-    * Parsowanie argumentów funkcji
-    * Definiowanie i korzystanie z ``dict`` z wartościami
-    * Przypadek zaawansowany: argumenty pozycyjne i domyślne
-    * Rzutowanie i konwersja typów
+    * Defining and calling functions
+    * Passing function arguments
+    * Cleaning data from user input
+    * ``dict`` lookups
 
 Roman numbers
 -------------
@@ -490,13 +495,17 @@ Roman numbers
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/functions_roman.py`
 
-#. Napisz program, który przeliczy wprowadzoną liczbę rzymską na jej postać dziesiętną.
-#. Napisz drugą funkcję, która dokona procesu odwrotnego.
+:English:
+    #. Define function converting roman numerals to integer
+    #. Define function converting integer to roman numerals
+
+:Polish:
+    #. Zdefiniuj funkcję przeliczającą liczbę rzymską na całkowitą
+    #. Zdefiniuj funkcję przeliczającą liczbę całkowitą na rzymską
 
 :The whys and wherefores:
-    * Definiowanie i uruchamianie funkcji
-    * Sprawdzanie przypadków brzegowych (niekompatybilne argumenty)
-    * Parsowanie argumentów funkcji
-    * Definiowanie i korzystanie z ``dict`` z wartościami
-    * Sprawdzanie czy element istnieje w ``dict``
-    * Rzutowanie i konwersja typów
+    * Defining and calling functions
+    * Checking for corner cases
+    * Passing function arguments
+    * Cleaning data from user input
+    * ``dict`` lookups

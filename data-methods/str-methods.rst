@@ -195,8 +195,8 @@ Check if ``str`` is a part of another ``str``
 ---------------------------------------------
 .. code-block:: python
 
-    'th' in 'Python'     # True
-    'hello' in 'Python'  # False
+    'Py' in 'Python'     # True
+    'Monty' in 'Python'  # False
 
 Counting occurrences
 --------------------

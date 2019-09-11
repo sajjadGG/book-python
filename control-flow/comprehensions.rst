@@ -302,7 +302,6 @@ Split train/test
 * Lines of code to write: 8 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/comprehension_split_train_test.py`
-* Input data: :numref:`listing-comprehension_split_train_test`
 
 :Polish:
     #. Dla danych wejściowych (patrz poniżej)

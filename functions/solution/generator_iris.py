@@ -1,12 +1,17 @@
 import sys
 
+FILE = r'iris.csv'
+
 
 def function_filter(selected_species):
     output = []
 
-    with open(r'iris.csv') as file:
+    with open(FILE) as file:
         for line in file:
-            *measurements, species = line.strip().split(',')
+            line = line.strip().split(',')
+            measurements = line[0:4]
+            species = line[4]
+
             if species == selected_species:
                 output.append(measurements)
 
@@ -14,9 +19,12 @@ def function_filter(selected_species):
 
 
 def generator_filter(selected_species):
-    with open(r'iris.csv') as file:
+    with open(FILE) as file:
         for line in file:
-            *measurements, species = line.strip().split(',')
+            line = line.strip().split(',')
+            measurements = line[0:4]
+            species = line[4]
+
             if species == selected_species:
                 yield measurements
 
@@ -27,3 +35,4 @@ if __name__ == '__main__':
 
     print(sys.getsizeof(fun))
     print(sys.getsizeof(gen))
+

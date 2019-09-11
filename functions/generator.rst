@@ -66,6 +66,7 @@ Getting  values from generator
         # 0
         # 1
         # 2
+        # 3
 
 
 Generator expressions vs. Comprehensions
@@ -409,6 +410,58 @@ Readability counts
     #   ('Melissa', 'Lewis'),
     #   ('Mark', 'Watney')
     # ]
+
+
+Built-in generators
+===================
+.. code-block:: python
+
+    header = ['a', 'b', 'c']
+    data = [1, 2, 3]
+    output = {}
+
+    for i, _ in enumerate(header):
+        key = header[i]
+        value = data[i]
+        output[key] = value
+
+    print(output)
+    # {'a': 1, 'b': 2, 'c': 3}
+
+.. code-block:: python
+
+    header = ['a', 'b', 'c']
+    data = [1, 2, 3]
+
+    zip(header, data)
+    <zip object at 0x11cf54b90>
+    list(zip(header, data))
+    [('a', 1), ('b', 2), ('c', 3)]
+    dict(zip(header, data))
+    {'a': 1, 'b': 2, 'c': 3}
+    tuple(zip(header, data))
+    (('a', 1), ('b', 2), ('c', 3))
+
+map(float, [1, 2, 3])
+<map object at 0x11d15a190>
+list(map(float, [1, 2, 3]))
+[1.0, 2.0, 3.0]
+tuple(map(float, [1, 2, 3]))
+(1.0, 2.0, 3.0)
+tuple(map(float, data))
+(1.0, 2.0, 3.0)
+filter(..., data)
+<filter object at 0x11d17b290>
+def czy_parzysty(x):
+    if x % 2 == 0:
+        return True
+    else:
+        return False
+
+filter(czy_parzysty, data)
+<filter object at 0x11d182990>
+list(filter(czy_parzysty, data))
+[2]
 
 
 Assignments

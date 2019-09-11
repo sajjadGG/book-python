@@ -1,6 +1,4 @@
-from typing import Union, Dict
-
-ALPHABET: Dict[str, str] = {
+ALPHABET = {
     '0': 'zero',
     '1': 'one',
     '2': 'two',
@@ -16,7 +14,7 @@ ALPHABET: Dict[str, str] = {
 }
 
 
-def aviation_numbers(number: Union[int, float]) -> str:
+def aviation_numbers(number):
     """
     >>> aviation_numbers(1969)
     'one niner six niner'
