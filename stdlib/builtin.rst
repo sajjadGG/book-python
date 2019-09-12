@@ -216,18 +216,24 @@ Average
 * Filename: :download:`solution/builtin_average.py`
 
 :English:
-    .. todo:: English translation
+    #. For given ``INPUT`` (see below)
+    #. Separate header and data
+    #. Define dict ``OUTPUT``, keys are column names from header
+    #. For each row in data, add values to proper lists in ``OUTPUT``
+    #. Define function ``mean()``, calculating mean for arbitrary number of arguments
+    #. Return ``None`` if any argument to the function is not ``float`` or ``int``
+    #. To calculate mean use built-in functions
+    #. Iterating over ``OUTPUT`` print column name and calculated average
 
 :Polish:
-    #. Dane są pomiary Irysów:
-    #. Stwórz słownik ``values: Dict[str, list]``
-    #. Klucze w słowniku mają być rekordami z nagłówka zbioru ``DATA``
-    #. Iterując po danych dodawaj wartości do odpowiednich kluczy
-    #. Każdy z kluczy słownika, ma mieć przyporządkowaną listę z wszystkimi wartościami danego parametru,
-    #. Stwórz funkcję ``average()``, która będzie liczyła średnią dla dowolnej ilości argumentów
-    #. Do wyliczenia średniej, wykorzystaj wbudowane funkcje
-    #. Funkcja ma wyliczać średnią tylko dla parametrów typu ``float``, w przeciwnym wypadku zwróć ``None``
-    #. Iterując po słowniku ``values`` wypisz nazwę parametru oraz wyliczoną średnią
+    #. Dla danych ``INPUT`` (patrz poniżej)
+    #. Odseparuj nagłówek od danych
+    #. Zdefiniuj słownik ``OUTPUT: Dict[str, list]``, klucze to nazwy kolumn z nagłówka
+    #. Dla każdego wiersza w danych, dodawaj wartości do odpowiednich list w ``OUTPUT``
+    #. Zdefiniuj funkcję ``mean()``, liczącą średnią dla dowolnej ilości argumentów
+    #. Zwróć ``None`` jeżeli którykolwiek z argumentów do funkcji nie jest ``float`` lub ``int``
+    #. Do wyliczenia średniej wykorzystaj wbudowane funkcje
+    #. Iterując po ``OUTPUT`` wypisz nazwę kolumny oraz wyliczoną średnią
 
 :Input:
     .. code-block:: python
@@ -269,7 +275,6 @@ Average
         }
 
 :The whys and wherefores:
-    * Korzystanie z funkcji wbudowanych
-    * Iterowanie po kolekcji
-    * Wybieranie rekordów
-
+    * :ref:`Builtin functions`
+    * :ref:`Iterating nested sequences`
+    * :ref:`Slice`

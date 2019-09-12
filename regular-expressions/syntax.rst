@@ -8,22 +8,35 @@ What are Regular Expressions?
 .. glossary::
 
     pattern
-        ...
+        * ``[a-z]``
+        * ``[0-9]``
+        * ``[a-zA-Z0-9]``
+        * ``\w+``
 
     group
-        ...
+        ``(...)``
 
     newline
-        ...
+        ``^``
 
     endline
-        ...
-
-    greedy
-        ...
+        ``$``
 
     qualifier
-        ...
+        * ``?`` - 0 or 1
+        * ``*`` - 0 or many
+        * ``+`` - 1 or many
+
+    greedy
+        * ``??`` - 0 or 1 (non greedy)
+        * ``*?`` - 0 or many (non greedy)
+        * ``+?`` - 1 or many (non greedy)
+
+    flags
+        * ``re.IGNORECASE``
+        * ``re.MULTILINE``
+        * ``re.MULTILINE``
+        * ``re.DOTALL``
 
     multiline
         ...
@@ -31,8 +44,6 @@ What are Regular Expressions?
     match
         ...
 
-    flags
-        ...
 
 Constructing
 ================================

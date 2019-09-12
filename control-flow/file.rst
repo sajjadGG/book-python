@@ -180,12 +180,16 @@ Content of a requested file
 * Filename: :download:`solution/file_requested.py`
 
 :English:
-    .. todo:: English translation
+    #. Using ``input()`` ask user for a file path
+    #. Print file content
+    #. Handle exception for not existing file
+    #. Handle exception for not having sufficient permissions
 
 :Polish:
-    #. Za pomocą ``input()`` poproś użytkownika o podanie ścieżki do pliku
+    #. Używając ``input()`` zapytaj użytkownika o ścieżkę do pliku
     #. Wypisz zawartość pliku
-    #. Dopisz obsługę wyjątków dla braku uprawnień oraz tego że plik nie istnieje.
+    #. Obsłuż wyjątek dla nieistniejącego pliku
+    #. Obsłuż wyjątek dla braku wystarczających uprawnień
 
 Parsing simple CSV file
 -----------------------
@@ -193,29 +197,44 @@ Parsing simple CSV file
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/file_parsing_csv.py`
-* Input data: http://raw.githubusercontent.com/AstroMatt/book-python/master/control-flow/data/iris.csv
 
 :English:
-    .. todo:: English translation
+    #. Download :download:`data/iris-clean.csv` save as ``iris-clean.csv``
+    #. Define:
+
+            * ``features`` - list of measurements (each row is a tuple)
+            * ``labels`` - list of species names
+
+    #. For each line in file:
+
+        #. Remove whitespaces
+        #. Split line by coma ``,``
+        #. Append measurements to ``features``
+        #. Append species name to ``labels``
+
+    #. Print ``features`` and ``labels``
 
 :Polish:
-    #. Skopiuj plik do siebie na dysk i nazwij go ``iris.csv``
+    #. Ściągnij :download:`data/iris-clean.csv` i zapisz jako ``iris-clean.csv``
+    #. Zdefiniuj:
+
+            - ``features`` - lista pomiarów (każdy wiersz to tuple)
+            - ``labels`` - lista nazw gatunków
+
     #. Dla każdej linii:
 
-        #. Oczyść linię z białych znaków
-        #. Podziel linię po przecinku
-        #. Zapisz rekordy do:
+        #. Usuń białe znaki
+        #. Podziel linię po przecinku ``,``
+        #. Dodaj pomiary do ``features``
+        #. Dodaj gatunek do ``labels``
 
-            - ``features: List[Tuple[float]]`` - features
-            - ``labels: List[str]`` - labels
+    #. Wyświetl ``features`` i ``labels``
 
 :The whys and wherefores:
-    * czytanie i parsowanie pliku
-    * nieregularne pliki konfiguracyjne (struktura może się zmieniać)
-    * filtrowanie elementów
-    * korzystanie z pętli i instrukcji warunkowych
-    * parsowanie stringów
-    * praca ze ścieżkami w systemie operacyjnym
+    * Reading file
+    * Iterating over lines in file
+    * String methods
+    * Working with nested sequences
 
 ``/etc/hosts`` - parsing to ``dict``
 ------------------------------------
@@ -225,14 +244,26 @@ Parsing simple CSV file
 * Filename: :download:`solution/file_parsing_simple.py`
 
 :English:
-    .. todo:: English translation
+    #. Copy input data from listing below and save to file ``hosts.txt``
+    #. For each line in file:
+
+        #. Remove leading and trailing whitespaces
+        #. Split line by whitespace
+        #. Separate IP address and hosts names
+        #. Append IP address and hosts names to ``OUTPUT``
+
+    #. Merge hostnames for the same IP
 
 :Polish:
-    #. Skopiuj dane wejściowe do pliku ``hosts.txt``
-    #. Podziel linię po dowolnej ilości białych znaków (spacja, taby, itp)
-    #. Wydziel ip i hosty
-    #. Do struktury wynikowej dopisz ip, hostami
-    #. Jeżeli IP jest już wpisane to scal listy hostname'ów dla wpisów o tym samym IP
+    #. Skopiuj dane wejściowe z listingu poniżej i zapisz do pliku ``hosts.txt``
+    #. Dla każdej lini w piku:
+
+        #. Usuń białe znaki na początku i końcu linii
+        #. Podziel linię po białych znakach
+        #. Odseparuj adres IP i nazwy hostów
+        #. Dodaj adres IP i nazwy hostów do ``OUTPUT``
+
+    #. Scal nazwy hostów dla tego samego IP
 
 :Input:
     .. code-block:: text
@@ -254,13 +285,10 @@ Parsing simple CSV file
         }
 
 :The whys and wherefores:
-    * czytanie i parsowanie pliku
-    * nieregularne pliki konfiguracyjne (struktura może się zmieniać)
-    * filtrowanie elementów
-    * korzystanie z pętli i instrukcji warunkowych
-    * parsowanie stringów
-    * praca ze ścieżkami w systemie operacyjnym
-
+    * Reading file
+    * Iterating over lines in file
+    * String methods
+    * Working with nested sequences
 
 ``/etc/hosts`` - parsing to ``List[dict]``
 ------------------------------------------
@@ -270,20 +298,36 @@ Parsing simple CSV file
 * Filename: :download:`solution/file_parsing_advanced.py`
 
 :English:
-    .. todo:: English translation
+    #. Copy input data from listing below and save to file ``hosts.txt``
+    #. Copy also comments and empty lines
+    #. For each line in file:
+
+        #. Skup line if it's empty, is whitespace or starts with comment ``#``
+        #. Remove leading and trailing whitespaces
+        #. Split line by whitespace
+        #. Separate IP address and hosts names
+        #. Use one line ``if`` to check whether dot ``.`` is in the IP address
+        #. If is present then protocol is IPv4 otherwise IPv6
+        #. Append IP address and hosts names to ``OUTPUT``
+
+    #. Merge hostnames for the same IP
+    #. ``OUTPUT`` must be list of dicts (``List[dict]``)
 
 :Polish:
-    #. Utwórz plik tekstowy ``hosts.txt``
-    #. Do pliku skopiuj kod z listingu
-    #. Ważne, żeby przepisać zawartość zawierającą komentarze, białe spacje i linie przerwy
-    #. Sparsuj plik i dla każdej linii:
+    #. Skopiuj dane wejściowe z listingu poniżej i zapisz do pliku ``hosts.txt``
+    #. Skopiuj również komentarz i pustą linię
+    #. Dla każdej lini w piku:
 
-        #. Pomiń linię jeżeli jest pusta, jest białym znakiem lub zaczyna się od komentarza
-        #. Podziel linię po dowolnej ilości białych znaków (spacja, taby, itp)
-        #. Wydziel ip i hosty
-        #. Wykorzystaj jednolinikowego ``if`` do sprawdzenia czy jest kropka w adresie IP (to IPv4) w przeciwnym przypadku IPv6
-        #. Do listy wynikowej dopisz słownik z ip, hostami i protokołem
-        #. Jeżeli IP jest już wpisane do naszej listy wynikowej to scal listy hostname'ów dla wpisów o tym samym IP
+        #. Pomiń linię jeżeli jest pusta, jest białym znakiem lub zaczyna się od komentarza ``#``
+        #. Usuń białe znaki na początku i końcu linii
+        #. Podziel linię po białych znakach
+        #. Odseparuj adres IP i nazwy hostów
+        #. Wykorzystaj jednolinikowego ``if`` do sprawdzenia czy jest kropka ``.`` w adresie IP
+        #. Jeżeli jest obecna to protokół  jest IPv4, w przeciwnym przypadku IPv6
+        #. Dodaj adres IP i nazwy hostów do ``OUTPUT``
+
+    #. Scal nazwy hostów dla tego samego IP
+    #. ``OUTPUT`` ma być listą dictów (``List[dict]``)
 
 :Input:
     .. code-block:: text

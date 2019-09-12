@@ -9,12 +9,12 @@ Multi line searches
 
     PATTERN = r'[A-Z]{2,10}-[0-9]{1,6}'
     TEXT = """
-    #27533 Fixed inspectdb crash;
-    #31337 Remove commented out code
+    MYPROJ-1337 Fixed inspectdb crash;
+    MYPROJ-997 Remove commented out code
     """
 
     re.findall(PATTERN, TEXT)
     # []
 
     re.findall(PATTERN, TEXT, flags=re.MULTILINE)
-    # ['#27533', '#31337']
+    # ['MYPROJ-1337', 'MYPROJ-997']

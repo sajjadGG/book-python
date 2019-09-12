@@ -1,12 +1,14 @@
+.. _Attributes:
+
 **********
 Attributes
 **********
 
-* Fields are also known as "Properties" or "Fields"
+* Attributes are also known as "Properties" or "Fields"
 * ``snake_case`` name convention
-* Fields should be defined only in ``__init__()`` method
-* Fields store information for instances
-* Access field values using ``.`` (dot) notation
+* Attributes should be defined only in ``__init__()`` method
+* Attributes store information (state) for instances
+* Access field values using dot (``.``) notation
 
 
 Setting attributes
@@ -177,3 +179,7 @@ Data Modeling
         Kennedy Space Center, Merritt Island, FL
         Johnson Space Center, Houston, TX
         Jet Propulsion Laboratory, Pasadena, TX
+
+:The whys and wherefores:
+    * :ref:`Classes and Instances`
+    * :ref:`Attributes`

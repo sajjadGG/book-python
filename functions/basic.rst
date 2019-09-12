@@ -389,7 +389,7 @@ Cleaning text input
     * Passing function arguments
     * Cleaning data from user input
 
-.. todo:: Translate data to English
+.. todo:: Translate input data to English
 
 Aviation numbers
 ----------------
@@ -397,7 +397,6 @@ Aviation numbers
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/functions_aviation_numbers.py`
-
 
 :English:
     #. For input data (see below)

@@ -26,29 +26,44 @@ INPUT = [
     (4.6, 3.1, 1.5, 0.2, 'setosa'),
 ]
 
-OUTPUT = {}
 header, *data = INPUT
-*attributes, _ = header
+
+sepal_length = []
+sepal_width = []
+petal_length = []
+petal_width = []
 
 
 for *measurements, species in data:
-    if species not in OUTPUT:
-        OUTPUT[species] = dict()
-
-    for i, column in enumerate(attributes):
-        if column not in OUTPUT[species]:
-            OUTPUT[species][column] = dict(values=[])
-
-        OUTPUT[species][column]['values'].append(measurements[i])
+    sepal_length.append(measurements[0])
+    sepal_width.append(measurements[1])
+    petal_length.append(measurements[2])
+    petal_width.append(measurements[3])
 
 
-for species, attributes in OUTPUT.items():
-    for attribute_name in attributes.keys():
-        values = OUTPUT[species][attribute_name]['values']
-        OUTPUT[species][attribute_name]['mean'] = mean(values)
-        OUTPUT[species][attribute_name]['median'] = median(values)
-        OUTPUT[species][attribute_name]['stdev'] = stdev(values)
-        OUTPUT[species][attribute_name]['variance'] = variance(values)
+print('Sepal Length')
+print('mean', mean(sepal_length))
+print('median', median(sepal_length))
+print('stdev', stdev(sepal_length))
+print('variance', variance(sepal_length))
+print()
 
+print('Sepal Width')
+print('mean', mean(sepal_width))
+print('median', median(sepal_width))
+print('stdev', stdev(sepal_width))
+print('variance', variance(sepal_width))
+print()
 
-pprint(OUTPUT)
+print('Petal Length')
+print('mean', mean(petal_length))
+print('median', median(petal_length))
+print('stdev', stdev(petal_length))
+print('variance', variance(petal_length))
+print()
+
+print('Petal Width')
+print('mean', mean(petal_width))
+print('median', median(petal_width))
+print('stdev', stdev(petal_width))
+print('variance', variance(petal_width))

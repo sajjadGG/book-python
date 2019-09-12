@@ -5,7 +5,7 @@ print(output)
 
 
 # Alternative solution
-from random import sample, randint
+from random import randint
 
 MAX_VALUE = 49
 MIN_VALUE = 1

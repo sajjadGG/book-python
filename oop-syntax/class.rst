@@ -1,3 +1,5 @@
+.. _Classes and Instances:
+
 *********************
 Classes and Instances
 *********************
@@ -118,20 +120,34 @@ Good engineering practices
     versicolor = IrisVersicolor()
     virginica = IrisVirginica()
 
+
 Assignments
 ===========
 
-Address Book (dataclass)
-------------------------
+Classes and instances
+---------------------
 * Complexity level: easy
-* Lines of code to write: 6 lines
+* Lines of code to write: 9 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/class_instance.py`
 
 :English:
-    #. Create class ``Astronaut``
-    #. Create class ``Location``
+    #. Define class ``Astronaut``
+    #. Define class ``Location``
+    #. Create instance ``twardowski`` of a class ``Astronaut``
+    #. Create instance ``watney`` of a class ``Astronaut``
+    #. Create instance ``jsc`` of a class ``Location``
+    #. Create instance ``ksc`` of a class ``Location``
+    #. Create instance ``jpl`` of a class ``Location``
 
 :Polish:
-    #. Stwórz klasę ``Astronaut``
-    #. Stwórz klasę ``Location``
+    #. Zdefiniuj klasę ``Astronaut``
+    #. Zdefiniuj klasę ``Location``
+    #. Stwórz instancję ``twardowski`` klasy ``Astronaut``
+    #. Stwórz instancję ``watney`` klasy ``Astronaut``
+    #. Stwórz instancję ``jsc`` klasy ``Location``
+    #. Stwórz instancję ``ksc`` klasy ``Location``
+    #. Stwórz instancję ``jpl`` klasy ``Location``
+
+:The whys and wherefores:
+    * :ref:`Classes and Instances`

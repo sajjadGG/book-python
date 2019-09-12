@@ -196,7 +196,7 @@ Duration
     #   8 days
     #   20 hours
     #   49 minutes
-    #   5 seconds
+    #   15 seconds
 
 
 Date and time parsing and formatting parameters

@@ -11,7 +11,7 @@ Why to use operator overload?
 .. code-block:: python
 
     class Vector:
-        def __init__(self, x=0.0, y=0.0):
+        def __init__(self, x=0, y=0):
             self.x = x
             self.y = y
 
@@ -25,7 +25,7 @@ Why to use operator overload?
 .. code-block:: python
 
     class Vector:
-        def __init__(self, x=0.0, y=0.0):
+        def __init__(self, x=0, y=0):
             self.x = x
             self.y = y
 
@@ -132,7 +132,7 @@ Builtin Functions and Keywords
 
 
     class Vector:
-        def __init__(self, x=0.0, y=0.0):
+        def __init__(self, x=0, y=0):
             self.x = x
             self.y = y
 

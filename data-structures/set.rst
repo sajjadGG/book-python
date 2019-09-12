@@ -87,8 +87,11 @@ Adding many items
     my_set.update([4, 5])
     # {1, 2, 3, 4, 5}
 
-Removing items
-==============
+
+Popping items
+=============
+* Gets and remove items
+
 .. code-block:: python
 
     my_set = {1, 2, 3}

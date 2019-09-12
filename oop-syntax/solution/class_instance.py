@@ -6,5 +6,9 @@ class Location:
     pass
 
 
-astronaut = Astronaut()
-location = Location()
+twardowski = Astronaut()
+watney = Astronaut()
+
+jsc = Location()
+ksc = Location()
+jpl = Location()
