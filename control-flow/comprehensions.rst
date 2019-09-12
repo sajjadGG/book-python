@@ -300,19 +300,34 @@ Split train/test
 * Filename: :download:`solution/comprehension_split_train_test.py`
 
 :English:
-    .. todo:: English translation
+    #. For given data structure ``INPUT: List[tuple]`` (see below)
+    #. Separate header from data
+    #. Calculate pivot point: length of data times given percent
+    #. Using List Comprehension split data to:
+
+        * ``features: List[Tuple[float]]`` - list of measurements (each measurement row is a tuple)
+        * ``labels: List[str]`` - list of species names
+
+    #. Split those data structures with proportion:
+
+        * ``features_train: List[Tuple[float]]`` - features to train - 60%
+        * ``features_test: List[Tuple[float]]`` - features to test - 40%
+        * ``labels_train: List[str]`` - labels to train - 60%
+        * ``labels_test: List[str]`` - labels to test - 40%
+
+    #. Create ``result: Tuple[list, list, list, list]`` with features (training and test) and labels (training and test)
+    #. Print ``result``
 
 :Polish:
-    #. Dla danych wejściowych (patrz poniżej)
-    #. Zapisz nagłówek (pierwsza linia) do zmiennej
-    #. Zapisz do innej zmiennej dane bez nagłówka
-    #. Wylicz punkt podziału: ilość rekordów danych bez nagłówka razy procent
-    #. Za pomocą List Comprehension podziel dane na:
+    #. Dana jest struktura danych ``INPUT: List[tuple]`` (patrz poniżej)
+    #. Odseparuj nagłówek do danych
+    #. Wylicz punkt podziału: długość danych razy zadany procent
+    #. Używając List Comprehension podziel dane na:
 
-        - ``features: List[Tuple[float]]`` - features
-        - ``labels: List[str]`` - labels
+        - ``features: List[Tuple[float]]`` - lista pomiarów (każdy wiersz z pomiarami ma być tuple)
+        - ``labels: List[str]`` - lista nazw gatunków
 
-    #. Podziel zbiór na listy w proporcji:
+    #. Podziel te struktury danych w proporcji:
 
         - ``features_train: List[Tuple[float]]`` - features do uczenia - 60%
         - ``features_test: List[Tuple[float]]`` - features do testów - 40%
@@ -351,7 +366,8 @@ Split train/test
         ]
 
 :The whys and wherefores:
-    * Umiejętność przetwarzania złożonych typów danych
-    * Korzystanie z przecięć danych
-    * Konwersja typów
+    * Iterating over nested data structures
+    * Using slices
+    * Type casting
+    * List comprehension
     * Magic Number

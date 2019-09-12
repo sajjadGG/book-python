@@ -78,6 +78,7 @@ Control Flow
     /control-flow/loop-dict.rst
     /control-flow/loop-nested.rst
     /control-flow/loop-else.rst
+    /control-flow/unpacking.rst
     /control-flow/comprehensions.rst
     /control-flow/exceptions.rst
     /control-flow/file.rst
@@ -94,8 +95,7 @@ Functions
     /functions/basic.rst
     /functions/types.rst
     /functions/recurrence.rst
-    /functions/callable.rst
-    /functions/generator.rst
+    /functions/doctest.rst
 
 ****************
 Standard Library
@@ -111,50 +111,6 @@ Standard Library
     /stdlib/venv.rst
     /stdlib/pip.rst
     /stdlib/import.rst
-
-***************
-Type Annotation
-***************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Type Annotation
-
-    /type-annotation/types.rst
-    /type-annotation/introspection.rst
-    /type-annotation/checking.rst
-    /type-annotation/annotating.rst
-
-***************
-Args and Kwargs
-***************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Args and Kwargs
-
-    /args-kwargs/unpacking.rst
-    /args-kwargs/defining.rst
-    /args-kwargs/calling.rst
-    /args-kwargs/decorator.rst
-
-*******************
-Regular Expressions
-*******************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Regular Expressions
-
-    /regular-expressions/syntax.rst
-    /regular-expressions/match-search-findall.rst
-    /regular-expressions/compile.rst
-    /regular-expressions/groups.rst
-    /regular-expressions/multiline.rst
-    /regular-expressions/sub-split.rst
-    /regular-expressions/greedy.rst
-    /regular-expressions/examples.rst
-    /regular-expressions/standards.rst
 
 ****
 Math
@@ -239,6 +195,19 @@ OOP Syntax
     /oop-syntax/dataclass.rst
     /oop-syntax/exam.rst
 
+*************************
+Good Engineering Practice
+*************************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Good Engineering Practice
+
+    /good-engineering-practice/pep8.rst
+    /good-engineering-practice/pep20.rst
+    /good-engineering-practice/code-smells.rst
+    /good-engineering-practice/documentation.rst
+
 *****
 Tests
 *****
@@ -247,8 +216,52 @@ Tests
     :numbered:
     :caption: Tests
 
-    /tests/doctest.rst
     /tests/unittest.rst
+
+***************
+Type Annotation
+***************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Type Annotation
+
+    /type-annotation/types.rst
+    /type-annotation/introspection.rst
+    /type-annotation/checking.rst
+    /type-annotation/annotating.rst
+
+******************
+Advanced Functions
+******************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Advanced Functions
+
+    /functions-advanced/callable.rst
+    /functions-advanced/generator.rst
+    /functions-advanced/defining.rst
+    /functions-advanced/calling.rst
+    /functions-advanced/decorator.rst
+
+*******************
+Regular Expressions
+*******************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Regular Expressions
+
+    /regular-expressions/syntax.rst
+    /regular-expressions/match-search-findall.rst
+    /regular-expressions/compile.rst
+    /regular-expressions/groups.rst
+    /regular-expressions/multiline.rst
+    /regular-expressions/sub-split.rst
+    /regular-expressions/greedy.rst
+    /regular-expressions/examples.rst
+    /regular-expressions/standards.rst
 
 *********
 Debugging
@@ -264,19 +277,6 @@ Debugging
     /debugging/debugging-basic.rst
     /debugging/debugging-advanced.rst
     /debugging/introspection.rst
-
-*************************
-Good Engineering Practice
-*************************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Good Engineering Practice
-
-    /good-engineering-practice/pep8.rst
-    /good-engineering-practice/pep20.rst
-    /good-engineering-practice/code-smells.rst
-    /good-engineering-practice/documentation.rst
 
 ************
 OOP Paradigm

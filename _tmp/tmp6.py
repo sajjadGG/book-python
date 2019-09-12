@@ -1,9 +1,34 @@
-DATA = [
-    (5.8, 2.7, 5.1, 1.9, 'virginica'),
-    (5.1, 3.5, 1.4, 0.2, 'setosa'),
-    (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-]
+CACHE = {}
+#
+#
+# def factorial(n: int) -> int:
+#     if n not in CACHE:
+#
+#         if n == 0:
+#             return 1
+#         else:
+#             CACHE[n] = n * factorial(n-1)
+#
+#     return CACHE[n]
 
-for *measurements, species in DATA:
-    print(measurements)
-    print(species)
+
+
+def cache(func):
+    def wrapper(n):
+        if n not in CACHE:
+            CACHE[n] = func(n)
+        return CACHE[n]
+    return wrapper
+
+
+@cache
+def factorial(n: int) -> int:
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+
+
+out = factorial(5)
+print(out)
