@@ -351,6 +351,7 @@ Distributing
     :numbered:
     :caption: Distributing
 
+    /distributing/tools.rst
     /distributing/zipapp.rst
     /distributing/distributing-packages.rst
 
