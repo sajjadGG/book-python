@@ -2,49 +2,28 @@
 Distributing Packages
 *********************
 
-.. _Instalacja i korzystanie z zewnętrznych bibliotek:
+.. _Distributing Packages:
 
-Instalacja i korzystanie z zewnętrznych bibliotek
-=================================================
+Installing Packages
+===================
+* ``pip search``
+* ``pip install``
+* ``pip install -r requirements.txt``
 
-``pip search``
---------------
 
-``pip install``
+Modularization
+==============
+
+``__init__.py``
 ---------------
-
-``pip install -r requirements.txt``
------------------------------------
-
-``requirements.txt`` a ``setup.py``
------------------------------------
+* https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/linear_model/__init__.py
+* https://github.com/django/django/blob/master/django/views/generic/__init__.py
 
 
-Importowanie modułów
-====================
-.. code-block:: python
+``__all__``
+-----------
+* https://github.com/django/django/blob/master/django/views/generic/__init__.py
 
-    import module
-
-.. code-block:: python
-
-    from module import submodule
-    from module.submodule import function as alias
-
-.. code-block:: python
-
-    from . import module
-    from .. import module
-
-    from .module import submodule
-    from ..module import submodule
-
-
-Modularyzacja
-=============
-
-Plik ``__init__.py``
---------------------
 .. code-block:: python
 
     from backend.api_v2.models.click import Click
@@ -56,31 +35,49 @@ Plik ``__init__.py``
     __all__ = ['Click', 'Event', 'Survey', 'Trial']
 
 
-Linia ``if __name__ == '__main__'``
------------------------------------
+Creating packages
+=================
 
-Importowanie względne ``from . import *``
------------------------------------------
+``distutils``
+-------------
+* Provides support for building and installing additional modules into a Python.
+* The new modules may be either 100%-pure Python, or may be extension modules written in C, or may be collections of Python packages which include modules coded in both Python and C.
 
-``__all__``
------------
+``setuptools``
+--------------
+* Enhanced alternative to distutils that provides:
 
-Konwencja nazewnicza - ``__main__.py``
---------------------------------------
-* Python has been able to execute zip files which contain a ``__main__.py`` file since version 2.6
-* In order to be executed by Python, an application archive simply has to be a standard zip file containing a ``__main__.py`` file which will be run as the entry point for the application
+    #. support for declaring project dependencies
+    #. additional mechanisms for configuring which files to include in source releases (including plugins for integration with version control systems)
+    #. the ability to declare project “entry points”, which can be used as the basis for application plugin systems
+    #. the ability to automatically generate Windows command line executables at installation time rather than needing to prebuild them
+    #. consistent behaviour across all supported Python versions
 
-.. note:: Check :ref:`zipapp` for more information
+Setuptools is a fully-featured, actively-maintained, and stable library designed to facilitate packaging Python projects, where packaging includes:
 
-
-Tworzenie paczek
-================
-
-``distutils`` i ``setuptools``
-------------------------------
+    * Python package and module definitions
+    * Distribution package metadata
+    * Test hooks
+    * Project installation
+    * Platform-specific details
+    * Python 3 support
 
 ``wheel`` vs. ``egg``
 ---------------------
+* to build a python wheel package
+* ``sdist`` will generate a ``.tar.gz`` file in ``dist/``
+* ``bdist_wheel`` will generate a ``.whl`` file in ``dist/``
+
+.. code-block:: console
+
+    python setup.py sdist bdist_wheel
+
+.. code-block:: console
+
+    python setup.py sdist bdist_wheel --universal
+
+``requirements.txt`` vs ``setup.py``
+-----------------------------------
 
 ``setup.py``
 ------------
@@ -197,6 +194,9 @@ Tworzenie paczek
 
 ``setup.cfg``
 -------------
+* Configuring setup() using setup.cfg files
+* A setup.py file containing a setup() function call is still required even if your configuration resides in setup.cfg.
+
 .. code-block:: ini
 
     [bdist_wheel]
@@ -210,12 +210,119 @@ Tworzenie paczek
     exclude = */migrations/*
     ignore = E402,W391
 
+.. code-block:: ini
+
+    [metadata]
+    name = my_package
+    version = attr: src.VERSION
+    description = My package description
+    long_description = file: README.rst, CHANGELOG.rst, LICENSE.rst
+    keywords = one, two
+    license = BSD 3-Clause License
+    classifiers =
+        Framework :: Django
+        License :: OSI Approved :: BSD License
+        Programming Language :: Python :: 3
+        Programming Language :: Python :: 3.5
+
+    [options]
+    zip_safe = False
+    include_package_data = True
+    packages = find:
+    scripts =
+      bin/first.py
+      bin/second.py
+    install_requires =
+      requests
+      importlib; python_version == "2.6"
+
+    [options.package_data]
+    * = *.txt, *.rst
+    hello = *.msg
+
+    [options.extras_require]
+    pdf = ReportLab>=1.2; RXP
+    rest = docutils>=0.3; pack ==1.1, ==1.3
+
+    [options.packages.find]
+    exclude =
+        src.subpackage1
+        src.subpackage2
+
+    [options.data_files]
+    /etc/my_package =
+        site.d/00_default.conf
+        host.d/00_default.conf
+    data = data/img/logo.png, data/svg/icon.svg
 
 ``python setup.py sdist upload``
 --------------------------------
+* upload is deprecated in favor of using ``twine``
+
+twine
+-----
+.. code-block:: console
+
+    pip install twine
+    python setup.py sdist bdist_wheel
+
+    # Upload with twine to Test PyPI and verify things look right.
+    twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+
+    # Upload to PyPI
+    twine upload dist/*
+
 
 Signing packages
 ----------------
+.. code-block:: console
+
+    # Remove any old distributions
+    rm -rf dist/
+
+    # Create new tar.gz and wheel files
+    # Only create a universal wheel if py2/py3 compatible and no C extensions
+    python setup.py bdist_wheel --universal
+
+    # Sign the distributions
+    gpg --detach-sign -a dist/*
+
+    # Upload to PyPI
+    twine upload dist/*
+
+Artifactory
+-----------
+* https://www.jfrog.com/confluence/display/RTF/PyPI+Repositories#PyPIRepositories-PublishingtoArtifactory
+
+.. code-block:: ini
+    :caption: ~/.pypirc
+
+    [distutils]
+    index-servers =
+        local
+        pypi
+
+    [pypi]
+    repository: https://pypi.org/pypi
+    username: mrBagthrope
+    password: notToBeSeen
+
+    [local]
+    repository: http://localhost:8081/artifactory/api/pypi/pypi-local
+    username: admin
+    password: password
+
+.. code-block:: console
+
+    python setup.py sdist upload -r local
+    python setup.py bdist_wheel upload -r local
+    python setup.py sdist bdist_wheel upload -r local
+
+.. code-block:: console
+    :caption: Search
+
+    pip search myapp --index http://localhost:8081/artifactory/api/pypi/pypi-local/
+    # myapp                   - My Simple App
 
 
 Przyszłość paczkowania i dystrybucji
