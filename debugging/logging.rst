@@ -205,6 +205,25 @@ Konfiguracja formatowania logów
     "stream", "Use the specified stream to initialize the StreamHandler. Note that this argument is incompatible with filename - if both are present, a ValueError is raised"
     "handlers", "If specified, this should be an iterable of already created handlers to add to the root logger. Any handlers which don’t already have a formatter set will be assigned the default formatter created in this function. Note that this argument is incompatible with filename or stream - if both are present, a ValueError is raised"
 
+
+Rotate
+======
+* ``logging.handlers.WatchedFileHandler``
+* ``logging.handlers.RotatingFileHandler``
+* ``logging.handlers.TimedRotatingFileHandler``
+
+.. code-block:: python
+
+    from logging import handlers
+
+    handler = handlers.TimedRotatingFileHandler(filename, when=LOG_ROTATE)
+
+    handler.setFormatter(logging.Formatter(log_format, datefmt='%Y-%m-%d %H:%M:%S'))
+
+    #LOG_ROTATE = midnight
+    #set your log format
+
+
 Further Reading
 ===============
 * https://pyvideo.org/pycon-au-2018/a-guided-tour-of-python-logging.html
