@@ -280,8 +280,7 @@ Iris
         - value: measurement at the position
 
     #. Create function ``average(**kwargs)``, function
-    #. Pass arguments as keywords
-    #. Calculate average for each measurement
+    #. Iterate over data and calculate mean for each row by passing arguments as keywords
 
 :Polish:
     #. Pobierz plik :download:`data/iris-clean.csv` i zapisz jako ``iris-clean.csv``
@@ -294,8 +293,7 @@ Iris
         - wartość: pomiar z odpowiedniej kolumny
 
     #. Stwórz funkcję ``average(**kwargs)``
-    #. Podawaj nazwane argumenty
-    #. Wylicz średnią dla każdego pomiaru
+    #. Iterując po data wylicz średnią dla każdego wiersza przez podawanie argumentów nazwanie
 
 :Non-functional requirements:
     * Use only ``str.split()`` method
@@ -313,3 +311,4 @@ Iris
             {'sepal_length': 6.0, 'sepal_width': 3.4, 'petal_length': 4.5, 'petal_width': 1.6},
             ...
         ]
+

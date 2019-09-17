@@ -281,15 +281,17 @@ args
     #. Return ``False`` if any argument is different type
     #. Do not use ``all()`` and ``any()``
     #. Compare using ``type()`` and ``isinstance()`` passing ``True`` as an argument
+    #. Run the function without any arguments
 
 :Polish:
     #. Stwórz funkcję ``is_numeric``
-    #. Funkcja może przyjmować tylko argumenty pozycyjne
+    #. Funkcja może przyjmować dowolną liczbę argumentów pozycyjnych
     #. Podawane argumenty mogą być dowolnego typu
     #. Zwróć ``True`` jeżeli wszystkie argumenty są tylko typów ``int`` lub ``float``
     #. Zwróć ``False`` jeżeli którykolwiek jest innego typu
     #. Nie używaj ``all()`` oraz ``any()``
-    #. Porównaj użycie ``type()`` i ``isinstance()`` podając argument ``True``
+    #. Porównaj użycie ``type()`` i ``isinstance()`` podając argument do funkcji ``True``
+    #. Uruchom funkcję bez podawania argumentów
 
 :The whys and wherefores:
     * Defining and calling functions
@@ -307,25 +309,23 @@ args and kwargs
 
 :English:
     #. Create function ``is_numeric``
-    #. **Function can have arbitrary number of positional and keyword arguments**
+    #. Function can have arbitrary number of positional **and keyword arguments**
     #. Arguments can be of any type
-    #. Using ``type()`` check:
-
-        #. Return ``True`` if all arguments are ``int`` or ``float`` only
-        #. Return ``False`` if any argument is different type
-
+    #. Return ``True`` if all arguments are ``int`` or ``float`` only
+    #. Return ``False`` if any argument is different type
     #. Do not use ``all()`` and ``any()``
+    #. Compare using ``type()`` and ``isinstance()`` passing ``True`` as an argument
+    #. Run the function without any arguments
 
 :Polish:
     #. Stwórz funkcję ``is_numeric``
-    #. **Funkcja może przyjmować zarówno argumenty pozycyjne jak i nazwane**
+    #. Funkcja może przyjmować dowolną liczbę argumentów pozycyjnych **i nazwanych**
     #. Podawane argumenty mogą być dowolnego typu
-    #. Za pomocą ``type()`` sprawdź:
-
-        #. Zwróć ``True`` jeżeli wszystkie argumenty są tylko typów ``int`` lub ``float``
-        #. Zwróć ``False`` jeżeli którykolwiek jest innego typu
-
+    #. Zwróć ``True`` jeżeli wszystkie argumenty są tylko typów ``int`` lub ``float``
+    #. Zwróć ``False`` jeżeli którykolwiek jest innego typu
     #. Nie używaj ``all()`` oraz ``any()``
+    #. Porównaj użycie ``type()`` i ``isinstance()`` podając argument do funkcji ``True``
+    #. Uruchom funkcję bez podawania argumentów
 
 :The whys and wherefores:
     * Defining and calling functions
