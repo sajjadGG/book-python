@@ -259,8 +259,8 @@ Setuptools is a fully-featured, actively-maintained, and stable library designed
 --------------------------------
 * upload is deprecated in favor of using ``twine``
 
-twine
------
+``twine``
+---------
 .. code-block:: console
 
     pip install twine
@@ -271,7 +271,6 @@ twine
 
     # Upload to PyPI
     twine upload dist/*
-
 
 Signing packages
 ----------------
@@ -325,7 +324,7 @@ Artifactory
     # myapp                   - My Simple App
 
 
-Przyszłość paczkowania i dystrybucji
+Future of packaging and distribution
 ====================================
 * https://www.youtube.com/watch?v=jOiAp3wtx18
 * https://www.youtube.com/watch?v=Oc9khbXBes8

@@ -119,8 +119,9 @@ Virtualenv
 * Estimated time of completion: 2 min
 
 :English:
-    .. todo:: English translation
+    #. Create ``venv``
+    #. Add ``venv`` as a Python interpreter in your IDE
 
 :Polish:
-    #. Stwórz virtualenv z instalacją Python
-    #. Dodaj virtualenv do Python Interpreter w Twoim IDE
+    #. Stwórz ``venv``
+    #. Dodaj ``venv`` jako interpreter Python w Twoim IDE

@@ -37,9 +37,13 @@ Installing from ``requirements.txt``
 * Filename: ``requirements.txt``
 
 :English:
-    .. todo:: English translation
+    #. Create ``requirements.txt`` file
+    #. Add line ``mypy``
+    #. Let your IDE install package automatically (click in yellow banner)
+    #. Run ``mypy`` on last edited Python script
 
 :Polish:
     #. Stwórz plik ``requirements.txt``
-    #. Dopisz linijkę ``pycodestyle`` do ``requirements.txt``
-    #. Niech Twoje IDE zainstaluje bibliotekę automatycznie (kliknięcie w żółty banner)
+    #. Dopisz linię ``mypy``
+    #. Niech Twoje IDE zainstaluje package automatycznie (kliknięcie w żółty banner)
+    #. Uruchom ``mypy`` na ostatnio edytowanym skrypcie Python
