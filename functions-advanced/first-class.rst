@@ -3,6 +3,26 @@ Callable
 ********
 
 
+First-class Function
+====================
+* If a function can be assigned to a variable or passed as object/variable to other function.
+* Can be used as parameters
+* Can be used as a return value
+* Can be assigned to variables
+* Can be stored in data structures such as hash tables, lists, ...
+
+.. code-block:: python
+
+    def lower():
+        return 'My name... José Jiménez'
+
+    def higher():
+        return lower
+
+
+    text = higher()     # <function __main__.lower()>
+    text()              # 'My name... José Jiménez'
+
 Callable
 ========
 .. code-block:: python
@@ -20,21 +40,6 @@ Callable
     type('hello')         # <class 'str'>
     'hello'               # 'hello'
     'hello'()             # TypeError: 'str' object is not callable
-
-
-Returning function
-==================
-.. code-block:: python
-
-    def lower():
-        return 'My name... José Jiménez'
-
-    def higher():
-        return lower
-
-
-    text = higher()     # <function __main__.lower()>
-    text()              # 'My name... José Jiménez'
 
 
 Aliases

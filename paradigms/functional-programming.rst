@@ -2,64 +2,44 @@
 Functional Programming
 **********************
 
-Rekurencja
-==========
-* warunek zakończenia
-* maksymalna ilość zagłębień
 
+Lambda - Anonymous functions
+============================
+
+Example 1
+---------
 .. code-block:: python
 
-    def factorial(n: int) -> int:
-        if n == 0:
-            return 1
-        else:
-            return n * factorial(n-1)
-
-Lambda - funkcje anonimowe
-==========================
-.. code-block:: python
-
-    lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    DATA = [1, 2, 3, 4]
 
 
-    def parzystosc(x):
+    def is_even(x):
         if x % 2 == 0:
             return True
         else:
             return False
 
 
-    parzyste1 = filter(lambda x: x % 2 == 0, lista)
-    parzyste2 = filter(parzystosc, lista)
-
-    print(list(parzyste1))
-    print(list(parzyste2))
+    output = filter(is_even, DATA)
+    print(list(output))
+    # [2, 4]
 
 .. code-block:: python
 
-    class Osoba:
-        pass
+    DATA = [1, 2, 3, 4]
 
-    o = Osoba()
-    o.say_hello = lambda: print('hello')
+    output = filter(lambda x: x % 2 == 0, DATA)
+    print(list(output))
+    # [2, 4]
 
-    o.say_hello()
-
+Example 2
+---------
 .. code-block:: python
 
     DATA = [
-        {'user': 'jkowalski', 'uid': 1000},
+        {'user': 'twardowski', 'uid': 1000},
         {'user': 'root', 'uid': 0},
     ]
-
-
-    system_users = filter(lambda x: x['uid'] < 1000, DATA)
-    out = list(system_users)
-    print(out)
-
-
-
-
 
     def is_system_user(data):
         if data['uid'] < 1000:
@@ -68,167 +48,191 @@ Lambda - funkcje anonimowe
             return False
 
     system_users = []
+
     for user in DATA:
         if is_system_user(user):
             system_users.append(user)
 
     print(system_users)
+    # [{'user': 'root', 'uid': 0}]
 
-Closure
-=======
+
 .. code-block:: python
 
-    def f(x):
-        def g(y):
-            return x + y
-        return g
+    DATA = [
+        {'user': 'twardowski', 'uid': 1000},
+        {'user': 'root', 'uid': 0},
+    ]
 
-Monady
-======
-* Monady pozwalają programiście sprzęgać ze sobą kolejno wykonywane działania i budować potoki danych, w których każda akcja jest materializacją wzorca dekoratora z dodatkowymi regułami przetwarzającymi.
 
-złożenia funkcji
-================
+    system_users = filter(lambda x: x['uid'] < 1000, DATA)
+
+    print(list(system_users))
+    # [{'user': 'root', 'uid': 0}]
+
+Monkey patching
+---------------
+.. code-block:: python
+
+    class Astronaut:
+        pass
+
+    jan = Astronaut()
+    jan.say_hello = lambda: print('hello')
+
+    jan.say_hello()
+
+Built-in functions
+==================
 
 ``map()``
 ---------
 .. code-block:: python
 
-    lista = [1, 2, 3]
+    DATA = [1, 2, 3]
 
-    def inkrementuj(y):
-        return 1 + y
+    output = map(float, DATA)
 
-    map(inkrementuj, lista)
-    map(lambda y: 1 + y, l)
+    print(output)
+    # <map object at 0x11d2241d0>
 
+    print(list(output))
+    # [1.0, 2.0, 3.0]
 
 .. code-block:: python
 
-    def kwadrat(x):
+    DATA = [1, 2, 3]
+
+    def square(x):
         return pow(x, 2)
 
-    potegi1 = map(kwadrat, dane)
-    potegi2 = map(lambda x: pow(x, 2), dane)
+    output = map(square, DATA)
 
-    print(list(potegi1))
+    print(list(output))
+    # [1, 4, 9]
 
 .. code-block:: python
 
-    import datetime
+    DATA = [1, 2, 3]
 
-    def opoznienie(przesuniecie):
-        delay = pow(przesuniecie, 2)
-        return datetime.datetime.now() + datetime.timedelta(seconds=delay)
+    output = map(lambda x: pow(x, 2), DATA)
 
-    czasy = map(opoznienie, dane)
-
-    print(list(czasy))
+    print(list(output))
+    # [1, 4, 9]
 
 ``zip()``
 ---------
 .. code-block:: python
 
-    x = [1, 2, 3]
-    y = [4, 5, 6]
+    keys = ['a', 'b', 'c']
+    values = [1, 2, 3]
 
-    zipped = zip(x, y)
-    list(zipped)
-    # [(1, 4), (2, 5), (3, 6)]
+    output = zip(keys, values)
+
+    print(output)
+    # <zip object at 0x11cfea280>
+
+    print(list(output))
+    # [('a', 1), ('b', 2), ('c', 3)]
 
 .. code-block:: python
 
-    # unzip
-    x2, y2 = zip(*zip(x, y))
+    keys = ['a', 'b', 'c']
+    values = [1, 2, 3]
 
-    x == list(x2) and y == list(y2)  # True
+    output = zip(keys, values)
+
+    print(dict(output))
+    # {'a': 1, 'b': 2, 'c': 3}
 
 ``filter()``
 ------------
 .. code-block:: python
 
-    OSOBY = [
-        {'imie': 'José', 'wiek': 10},
-        {'imie': 'Max', 'wiek': 18},
-        {'imie': 'Иван', 'wiek': 21},
+    DATA = [
+        {'name': 'Jan Twardowski', 'age': 21},
+        {'name': 'Mark Watney', 'age': 25},
+        {'name': 'Melissa Lewis', 'age': 18},
     ]
 
-    def osoba_pelnoletnia(osoba):
-        if osoba['wiek'] >= 18:
+    def is_adult(person):
+        if person['age'] >= 21:
             return True
         else:
             return False
 
 
-    dorosli = filter(osoba_pelnoletnia, OSOBY)
-    print(list(dorosli))
+    output = filter(is_adult, DATA)
+    print(list(output))
+    # [
+    #   {'name': 'Jan Twardowski', 'age': 21},
+    #   {'name': 'Mark Watney', 'age': 25},
+    # ]
+
+.. code-block:: python
+
+    def is_even(number):
+        if number % 2 == 0:
+            return True
+        else:
+            return False
+
+
+    DATA = range(0, 10)
+
+    output = filter(is_even, DATA)
+
+    print(list(output))
+    # [0, 2, 4, 6, 8]
+
+.. code-block:: python
+
+    DATA = range(0, 10)
+
+    output = filter(lambda x: x % 2 == 0, DATA)
+
+    print(list(output))
+    # [0, 2, 4, 6, 8]
 
 
 .. code-block:: python
 
-    def parzysta(liczba):
-        if liczba % 2 == 0:
-            return True
-        else:
-            return False
+    output = filter(lambda x: x % 2 == 0, range(0, 10))
 
+    print(list(output))
+    # [0, 2, 4, 6, 8]
 
-    dane = range(0, 30)
-
-    parzyste1 = filter(parzysta, dane)
-    parzyste2 = filter(lambda x: x % 2 == 0, dane)
-    parzyste3 = filter(lambda x: not x % 2, dane)
-
-    print(list(parzyste3))
-
-
-``all(iterable)``
------------------
+``all()``
+---------
 Return True if all elements of the iterable are true (or if the iterable is empty). Equivalent to:
 
 .. code-block:: python
 
     def all(iterable):
+        if not iterable:
+            return False
+
         for element in iterable:
             if not element:
                 return False
+
         return True
 
-``any(iterable)``
------------------
+``any()``
+---------
 Return True if any element of the iterable is true. If the iterable is empty, return False. Equivalent to:
 
 .. code-block:: python
 
     def any(iterable):
+        if not iterable:
+            return False
+
         for element in iterable:
             if element:
                 return True
+
         return False
-
-``enumerate(iterable, start=0)``
---------------------------------
-Return an enumerate object. iterable must be a sequence, an iterator, or some other object which supports iteration. The __next__() method of the iterator returned by enumerate() returns a tuple containing a count (from start which defaults to 0) and the values obtained from iterating over iterable.
-
-.. code-block:: python
-
-    seasons = ['Spring', 'Summer', 'Fall', 'Winter']
-
-    list(enumerate(seasons))
-    # [(0, 'Spring'), (1, 'Summer'), (2, 'Fall'), (3, 'Winter')]
-
-    list(enumerate(seasons, start=1))
-    # [(1, 'Spring'), (2, 'Summer'), (3, 'Fall'), (4, 'Winter')]
-
-Equivalent to:
-
-.. code-block:: python
-
-    def enumerate(sequence, start=0):
-        n = start
-        for elem in sequence:
-            yield n, elem
-            n += 1
 
 
 ``functools``
@@ -236,53 +240,74 @@ Equivalent to:
 
 .. code-block:: python
 
-    import functools
+    from functools import reduce
 
-    my_list = [1, 2, 3, 4, 5]
 
-    def add_it(x, y):
+    DATA = [1, 2, 3, 4, 5]
+
+    def add(x, y):
         return (x + y)
 
-    sum = functools.reduce(add_it, my_list)
-    print(sum)
+    output = reduce(add, DATA)
+
+    print(output)
+    # 15
 
 .. code-block:: python
 
-    square = lambda x: x**2
-    double = lambda x: x + x
+    from functools import reduce
 
-    print(list(map(square, my_list)))
-    print(list(map(double, my_list)))
 
+    DATA = [1, 2, 3, 4, 5]
+
+    output = reduce(lambda x, y: x + y, DATA)
+
+    print(output)
+    # 15
+
+``lru_cache``
+-------------
 .. code-block:: python
 
-    import functools
+    from functools import lru_cache
 
-    my_list = [1, 2, 3, 4, 5]
-    sum = functools.reduce(lambda x, y: x + y, my_list)
-    print(sum)
 
-``memoize``
------------
-.. code-block:: python
-
-    import functools
-
-    @functools.lru_cache(maxsize=None)
+    @lru_cache(maxsize=None)
     def fib(num):
         if num < 2:
             return num
         else:
             return fib(num-1) + fib(num-2)
 
+
+    fib(16)
+    # 987
+
+    fib
+    # <functools._lru_cache_wrapper object at 0x11cce6730>
+
+    fib.cache_info()
+    # CacheInfo(hits=14, misses=17, maxsize=None, currsize=17)
+
+memoize
+-------
 .. code-block:: python
 
     def factorial(n):
-        if not hasattr(factorial, 'mem'):
-            factorial.mem = {1: 1}
-        if not n in factorial.mem:
-            factorial.mem[n] = n * factorial(n - 1)
-        return factorial.mem[n]
+        if not hasattr(factorial, '__cache__'):
+            factorial.__cache__ = {1: 1}
+
+        if not n in factorial.__cache__:
+            factorial.__cache__[n] = n * factorial(n - 1)
+
+        return factorial.__cache__[n]
+
+
+    factorial(5)
+    # 120
+
+    factorial.__cache__
+    # {1:1, 2:2, 3:6, 4:24, 5:120}
 
 .. code-block:: python
 

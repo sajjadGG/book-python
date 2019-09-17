@@ -1,20 +1,20 @@
-**********
-Virtualenv
-**********
+********
+``venv``
+********
 
 
 
 ``venv`` Module
 ===============
-* What is Virtualenv
+* What is ``venv``
 * Isolated Python installation for project
 * Allows to have multiple versions of Python for one project (i.e. for testing)
 * Allows to test libraries and frameworks before upgrading
 * Allows to have different versions of libraries and frameworks for each project
 
 
-Create Virtualenv
-=================
+Create ``venv``
+===============
 * ``DIRECTORY`` is the name of venv folder (see "Directory Naming Convention" below)
 
 .. code-block:: console

@@ -239,7 +239,8 @@ Advanced Functions
     :numbered:
     :caption: Advanced Functions
 
-    /functions-advanced/callable.rst
+    /functions-advanced/first-class.rst
+    /functions-advanced/closures.rst
     /functions-advanced/generator.rst
     /functions-advanced/defining.rst
     /functions-advanced/calling.rst
@@ -363,6 +364,7 @@ High Performance
 
     /performance/optimization.rst
     /performance/micro-benchmarking.rst
+    /performance/profiling.rst
     /performance/compilers.rst
     /performance/collections.rst
     /performance/c-types.rst
@@ -434,6 +436,7 @@ Operating System
 
     /operating-system/argparse.rst
     /operating-system/os.rst
+    /operating-system/pathlib.rst
 
 ************
 HTTP and Web
