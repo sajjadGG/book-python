@@ -304,6 +304,28 @@ Parsing dates
     print(out)
     # 1957-10-04 19:28:34
 
+Example
+=======
+.. code-block:: python
+
+    from datetime import datetime
+
+
+    log = '1969-07-21T02:56:15.123 [WARNING] First step on the Moon'
+
+    date, level, message = log.split(maxsplit=2)
+    format = '%Y-%m-%dT%H:%M:%S.%f'
+    date = datetime.strptime(date, format)
+
+    print(date)
+    # 1969-07-21 02:56:15.123000
+
+    print(level)
+    # [WARNING]
+
+    print(message)
+    # First step on the Moon
+
 
 Assignments
 ===========

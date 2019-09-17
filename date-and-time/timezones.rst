@@ -21,14 +21,13 @@ Timezone naive
 
 
     datetime(1957, 10, 4, 19, 28, 34)
-    # datetime.datetime(1957, 10, 4, 19, 28, 34
+    # datetime.datetime(1957, 10, 4, 19, 28, 34)
 
     datetime.now()
     # datetime.datetime(1957, 10, 4, 19, 28, 34)
 
     datetime.utcnow()
     # datetime.datetime(1957, 10, 4, 17, 28, 34)
-
 
 Timezone aware
 --------------

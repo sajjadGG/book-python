@@ -1,4 +1,3 @@
-
 def print_1(what):
     """
     >>> print_1('José')

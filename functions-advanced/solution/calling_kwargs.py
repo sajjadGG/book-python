@@ -1,29 +1,23 @@
 FILE = r'../data/iris-clean.csv'
 
-
-def average(**kwargs):
-    values = kwargs.values()
-    return sum(values) / len(values)
-
-
 data = []
 
 with open(FILE) as file:
-    header, *records = file.readlines()
-    *columns, _ = header.split(',')
+    header = file.readline()
+    *features, _ = header.strip().split(',')
 
-    for line in records:
+    for line in file:
         *measurements, _ = line.strip().split(',')
+        measurements = [float(x) for x in measurements]
+        row = dict(zip(features, measurements))
+        data.append(row)
 
-        tmp = {}
 
-        for i, name in enumerate(columns):
-            tmp[name] = float(measurements[i])
-
-        data.append(tmp)
+def average(**kwargs):
+    val = kwargs.values()
+    return sum(val) / len(val)
 
 
 for row in data:
-    print(average(**row))
-
-print(data)
+    avg = average(**row)
+    print(avg)
