@@ -351,7 +351,6 @@ Distributing
     :numbered:
     :caption: Distributing
 
-    /distributing/venv.rst
     /distributing/zipapp.rst
     /distributing/distributing-packages.rst
 
