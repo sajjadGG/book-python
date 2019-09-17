@@ -293,6 +293,10 @@ Artifactory
 -----------
 * https://www.jfrog.com/confluence/display/RTF/PyPI+Repositories#PyPIRepositories-PublishingtoArtifactory
 
+.. code-block:: console
+
+    $ docker run --name artifactory -d -p 8081:8081 docker.bintray.io/jfrog/artifactory-oss:latest
+
 .. code-block:: ini
     :caption: ~/.pypirc
 

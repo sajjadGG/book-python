@@ -178,6 +178,8 @@ pip-sync to update your virtual environment to reflect exactly what’s in there
         Uninstalling click-4.0:
           Successfully uninstalled click-4.0
     Successfully installed click-4.1
+
+
 Conda
 =====
 
