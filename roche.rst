@@ -1,4 +1,4 @@
-.. include:: /README.rst
+.. include:: ../../README.rst
 
 
 ************
@@ -9,7 +9,7 @@ Introduction
     :numbered:
     :caption: Introduction
 
-    /about/references.rst
+    ../about/references.rst
 
 
 *********
@@ -31,13 +31,6 @@ Lifecycle
     /distributing/venv.rst
     /distributing/distributing-packages.rst
     -- artifactory
-
-
-
-
-
-
-
 
 
 

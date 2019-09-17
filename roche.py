@@ -6,7 +6,7 @@ html_theme = 'sphinx_rtd_theme'
 master_doc = 'roche'
 
 todo_emit_warnings = True
-todo_include_todos = True
+todo_include_todos = False
 
 extensions = [
     'sphinxcontrib.bibtex',
@@ -36,8 +36,9 @@ numfig_format = {
 
 
 exclude_patterns = [
-    '/_book',
+    '_book',
     '*/_template.rst',
+    'index.rst',
 ]
 
 # article - for articles in scientific journals, presentations, short reports, program documentation, invitations, ...

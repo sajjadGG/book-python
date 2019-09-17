@@ -9,7 +9,7 @@ from subprocess import run
 
 FORMAT = 'html'
 
-sourcedir = dirname(abspath(__file__))
+sourcedir = dirname(abspath(__file__)) + '/_book/roche/'
 project_name = basename(sourcedir)
 outputdir = join('/tmp/', project_name)
 

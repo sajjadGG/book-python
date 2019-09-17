@@ -37,6 +37,7 @@ numfig_format = {
 exclude_patterns = [
     '_book',
     '*/_template.rst',
+    'roche.rst',
 ]
 
 # article - for articles in scientific journals, presentations, short reports, program documentation, invitations, ...
