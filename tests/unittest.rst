@@ -87,6 +87,84 @@ Example 5
     :language: python
     :caption: Example ``unittest`` code coverage
 
+Mock
+====
+* Mock and MagicMock objects create all attributes and methods as you access them and store details of how they have been used.
+.. code-block:: python
+
+    from unittest.mock import MagicMock
+
+    thing = ProductionClass()
+    thing.method = MagicMock(return_value=3)
+    thing.method(3, 4, 5, key='value')
+    # 3
+    thing.method.assert_called_with(3, 4, 5, key='value')
+
+Side effect
+-----------
+* Raising an exception when a mock is called
+
+.. code-block:: python
+
+    from unittest.mock import Mock
+
+    mock = Mock(side_effect=KeyError('foo'))
+
+    mock()
+    # Traceback (most recent call last):
+    #  ...
+    # KeyError: 'foo'
+
+patch
+-----
+* The object you specify will be replaced with a mock (or other object) during the test and restored when the test ends
+
+.. code-block:: python
+
+    from unittest.mock import patch
+
+    @patch('module.ClassName2')
+    @patch('module.ClassName1')
+    def test(MockClass1, MockClass2):
+        module.ClassName1()
+        module.ClassName2()
+        assert MockClass1 is module.ClassName1
+        assert MockClass2 is module.ClassName2
+        assert MockClass1.called
+        assert MockClass2.called
+
+
+    test()
+
+.. code-block:: python
+
+    from unittest.mock import patch
+
+    class MyClass:
+        def method(self)
+            pass
+
+    with patch.object(MyClass, 'method', return_value=None) as mock_method:
+        thing = MyClass()
+        thing.method(1, 2, 3)
+
+    mock_method.assert_called_once_with(1, 2, 3)
+
+Stub
+====
+* writing classes or functions but not yet implementing them
+* After you have planned a module or class, for example by drawing it's UML diagram, you begin implementing it.
+* As you may have to implement a lot of methods and classes, you begin with stubs.
+* This simply means that you only write the definition of a function down and leave the actual code for later.
+
+.. code-block:: python
+
+    class Foo:
+         def bar(self):
+             raise NotImplementedError
+
+         def tank(self):
+             raise NotImplementedError
 
 Assignments
 ===========
