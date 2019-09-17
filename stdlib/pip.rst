@@ -19,6 +19,13 @@ Installing
 - ``pip install -r requirements.txt``
 
 
+List requirements
+=================
+.. code-block:: console
+
+    $ pip freeze
+
+
 Assignments
 ===========
 

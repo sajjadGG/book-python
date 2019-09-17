@@ -96,6 +96,18 @@ Good practices
 * name as version ``venv-3.7.4``
 * place in your project directory
 * add folder to ``.gitignore`` (important!)
+* Add to ``venv-3.7.4/bin/activate``:
+
+    .. code-block:: bash
+
+        project_name='My Project'
+
+        red='\[\033[00;31m\]'
+        green='\[\033[00;32m\]'
+        blue='\[\033[00;36m\]'
+        white='\[\033[00;39m\]'
+
+        export PS1="\n${blue}${project_name}> ${white}"
 
 
 Assignments
