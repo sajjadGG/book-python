@@ -77,7 +77,7 @@ Setuptools is a fully-featured, actively-maintained, and stable library designed
     python setup.py sdist bdist_wheel --universal
 
 ``requirements.txt`` vs ``setup.py``
------------------------------------
+------------------------------------
 
 ``setup.py``
 ------------
