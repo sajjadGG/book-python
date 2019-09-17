@@ -3,7 +3,7 @@ author = 'Matt Harasymczuk'
 email = 'matt@astrotech.io'
 
 html_theme = 'sphinx_rtd_theme'
-master_doc = 'index'
+master_doc = 'roche'
 
 todo_emit_warnings = True
 todo_include_todos = True
@@ -36,7 +36,7 @@ numfig_format = {
 
 
 exclude_patterns = [
-    '_book',
+    '/_book',
     '*/_template.rst',
 ]
 
