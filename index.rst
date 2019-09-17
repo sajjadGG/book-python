@@ -217,6 +217,7 @@ Tests
     :caption: Tests
 
     /tests/unittest.rst
+    /tests/pytest.rst
 
 ***************
 Type Annotation
