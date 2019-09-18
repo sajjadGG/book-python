@@ -191,6 +191,34 @@ Contextmanager decorator
     my_function()
     # Duration 3.4697 seconds
 
+.. code-block:: python
+
+    class Timeit:
+        def __init__(self, name):
+            self.name = name
+
+        def __enter__(self):
+            self.start_time = datetime.now().timestamp()
+
+        def __exit__(self, *arg, **kwargs):
+            self.end_time = datetime.now().timestamp()
+            duration = self.end_time - self.start_time
+            print(f'Duration of {self.name} is {duration:f} seconds')
+
+
+    with Timeit('function'):
+        list(get_for_species_function(data, 'setosa'))
+
+    with Timeit('comprehension'):
+        list([row for row in data if row[4] == 'setosa'])
+
+    with Timeit('generator short'):
+        list((row for row in data if row[4] == 'setosa'))
+
+    with Timeit('generator'):
+        list(get_for_species_generator(data, 'setosa'))
+
+
 Use Case
 --------
 .. code-block:: python
