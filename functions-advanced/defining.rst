@@ -247,6 +247,14 @@ Use cases
     def print(*values, sep=' ', end='\n', ...):
         return sep.join(values) + end
 
+.. code-block:: python
+
+    def parse(line):
+        group_name, *members = line.split(',')
+        return group_name.upper(), *members
+
+    parse('astronauts,twardowski,watney,ivanovic')
+    # ('ASTRONAUTS', 'twardowski', 'watney', 'ivanovic')
 
 Assignments
 ===========

@@ -56,7 +56,7 @@ Relational Files Database
                 'algorithm': 'SHA-512',
                 'password': 'tgfvvFWJJ5...k4kijuhE50',
                 'salt': 'P9zn0KwR',
-                'groups': {'staff', 'sysadmin'},
+                'groups': {'astronauts', 'sysadmin'},
                 'last_changed': datetime.date(2015, 7, 16),
                 'locked': False,
             },

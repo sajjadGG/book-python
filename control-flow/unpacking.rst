@@ -145,6 +145,17 @@ Naming convention
     group_name      # astronauts
     members         # ['twardowski', 'watney', 'ivanovic']
 
+.. code-block:: python
+
+    line = '5.4,3.9,1.3,0.4,setosa'
+
+    *measurements, species = line.split(',')
+    avg = sum(measurements) / len(measurements)
+
+    species         # 'setosa'
+    avg             # 2.75
+
+
 Omitting values
 ===============
 * ``_`` is regular variable name, not a special Python syntax
