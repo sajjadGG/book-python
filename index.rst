@@ -638,6 +638,18 @@ Workshop
     /about/workshop-scientific.rst
     /about/workshop-machine-learning.rst
 
+****
+Exam
+****
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Exam
+
+    /exam/pre-foundations.rst
+    /exam/pre-intermediate.rst
+    /exam/pre-advanced.rst
+
 **********
 Appendixes
 **********
