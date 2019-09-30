@@ -46,22 +46,6 @@ Initialize with many elements
 Adding elements
 ===============
 
-Appending elements
-------------------
-.. code-block:: python
-
-    my_list = [1, 2]
-
-    my_list.append(3)
-    # [1, 2, 3]
-
-.. code-block:: python
-
-    my_list = [1, 2]
-
-    my_list.append([3, 4])
-    # [1, 2, [3, 4]]
-
 Extending lists
 ---------------
 .. code-block:: python
@@ -77,6 +61,22 @@ Extending lists
 
     my_list + [3, 4]
     # [1, 2, 3, 4]
+
+Appending elements
+------------------
+.. code-block:: python
+
+    my_list = [1, 2]
+
+    my_list.append(3)
+    # [1, 2, 3]
+
+.. code-block:: python
+
+    my_list = [1, 2]
+
+    my_list.append([3, 4])
+    # [1, 2, [3, 4]]
 
 Inserting elements at specific position
 ---------------------------------------
@@ -115,8 +115,8 @@ Accessing elements
     my_list[-3]        # 'b'
 
 
-``sorted()`` vs. ``list.sort()``
-================================
+Sorting
+=======
 
 ``sorted()``
 ------------
@@ -124,13 +124,11 @@ Accessing elements
 
 .. code-block:: python
 
-    numbers = [3, 1, 2]
+    a = [3, 1, 2]
+    b = sorted(a)
 
-    sorted(numbers)
-    # [1, 2, 3]
-
-    print(numbers)
-    # [3, 1, 2]
+    print(a)    # [3, 1, 2]
+    print(b)    # [1, 2, 3]
 
 ``list.sort()``
 ---------------
@@ -138,13 +136,11 @@ Accessing elements
 
 .. code-block:: python
 
-    numbers = [3, 1, 2]
+    a = [3, 1, 2]
+    b = a.sort()
 
-    numbers.sort()
-    # None
-
-    print(numbers)
-    # [1, 2, 3]
+    print(a)    # [1, 2, 3]
+    print(b)    # None
 
 
 Multiple statements in one line
