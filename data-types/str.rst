@@ -271,10 +271,10 @@ Emoticon print
     #. Poproś użytkownika o wprowadzenie imienia
     #. Wypisz ``hello NAME EMOTICON``, gdzie:
 
-        * NAME to imię wprowadzone wczytane od użytkownika
+        * NAME to imię wczytane od użytkownika
         * EMOTICON to Unicode Codepoint "U+1F642"
 
-    #. Wyświetl długość imienia, które wprowadził użytkownik
+    #. Wyświetl długość imienia, wczytanego od użytkownika
 
 :The whys and wherefores:
     * Variable declaration

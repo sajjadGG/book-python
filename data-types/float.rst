@@ -203,6 +203,12 @@ SI Unit Conversion
     * Mathematical operations
     * Separation of business logic and view
 
+.. figure:: img/spacesuits.png
+    :scale: 25%
+    :align: center
+
+    EMU and Orlan
+
 :Hint:
     * 1 ata = 1013.25 hPa (ISA - International Standard Atmosphere)
     * 1 psi = 6894.757 Pa

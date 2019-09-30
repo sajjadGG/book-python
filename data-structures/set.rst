@@ -59,6 +59,17 @@ Initialize with many elements
     my_set = {1, 2.0, {3, 4}}
     # TypeError: unhashable type: 'set'
 
+.. code-block:: python
+
+    {1}
+    # {1}
+
+    {1.0}
+    # {1.0}
+
+    {1, 1.0}
+    # {1}
+
 
 Adding items
 ============
@@ -67,25 +78,32 @@ Adding one element
 ------------------
 .. code-block:: python
 
-    my_set = {1, 2, 3}
-
-    my_set.add(4)
-    # {1, 2, 3, 4}
-
-    my_set.add(4)
-    # {1, 2, 3, 4}
+    my_set = {1, 2}
 
     my_set.add(3)
+    # {1, 2, 3}
+
+    my_set.add(3)
+    # {1, 2, 3}
+
+    my_set.add(4)
     # {1, 2, 3, 4}
 
 Adding many items
 -----------------
 .. code-block:: python
 
-    my_set = {1, 2, 3}
+    my_set = {1, 2}
+    # {1, 2}
 
-    my_set.update([4, 5])
-    # {1, 2, 3, 4, 5}
+    my_set.update({3, 4})
+    # {1, 2, 3, 4}
+
+    my_set.update([5, 6])
+    # {1, 2, 3, 4, 5, 6}
+
+    my_set.update((7, 8))
+    # {1, 2, 3, 4, 5, 6, 7, 8}
 
 
 Popping items

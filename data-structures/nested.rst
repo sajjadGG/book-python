@@ -250,6 +250,7 @@ Select
 :English:
     #. For given data input (see below)
     #. Write header (first line) to ``header`` variable
+    #. Create list ``output``
     #. Convert to ``list`` data from row 2, 6, 9 and add to ``output``
     #. Convert to ``tuple`` data from row 12, 15, 16 and add to ``output``
     #. Convert to ``dict`` data from row 18, 21 and add to ``output``:
@@ -264,6 +265,7 @@ Select
 :Polish:
     #. Dla danych wejściowych (patrz poniżej)
     #. Zapisz nagłówek (pierwsza linia) do zmiennej ``header``
+    #. Stwórz listę ``output``
     #. Przekonwertuj do ``list`` dane z wierszy 2, 6, 9 i dodaj do ``output``
     #. Przekonwertuj do ``tuple`` dane z wierszy 12, 15, 16 i dodaj do ``output``
     #. Przekonwertuj do ``dict`` dane z wierszy 18, 21 i dodaj do ``output``:
