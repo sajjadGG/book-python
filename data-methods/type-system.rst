@@ -5,22 +5,18 @@ Type System
 
 Type inference
 ==============
+* Type inference
 * Static Typing (Java, C++, Swift)
 
     .. code-block:: java
 
-        String name = new String("José Jiménez")
+        name = new String("José Jiménez")
 
 * Dynamic Typing (Python, PHP, Ruby)
 
     .. code-block:: python
 
         name = str('José Jiménez')
-
-* Type inference
-
-    .. code-block:: python
-
         name = 'José Jiménez'
 
 
@@ -71,6 +67,13 @@ Collections
     my_set: Set[int] = {0, 2, 4}
     my_tuple: Tuple[str] = ('setosa', 'virginica', 'versicolor')
     my_dict: Dict[int, str] = {0: 'setosa', 1: 'virginica': 2: 'versicolor'}
+
+.. code-block:: python
+
+    from typing import List, Union
+
+
+    my_list: List[Union[float, str]] = [5.8, 2.7, 5.1, 1.9, 'setosa']
 
 Types do not enforce checking
 -----------------------------

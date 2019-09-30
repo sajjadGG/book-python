@@ -14,11 +14,11 @@ Syntax similarities
     {}                # dict
     {1}               # set
 
-    {1, 2}            # set
     {1: 2}            # dict
+    {1, 2}            # set
 
-    {1, 2,}           # set
     {1: 2,}           # dict
+    {1, 2,}           # set
 
     {1: 2, 3: 4}      # dict
     {1, 2, 3, 4}      # set
@@ -28,11 +28,9 @@ Empty ``dict``
 .. code-block:: python
 
     my_data = {1: 1}
-    print(my_data)
     # {1:1}
 
     my_data.pop(1)
-    print(my_data)
     # {}
 
 Empty ``set``
@@ -40,11 +38,9 @@ Empty ``set``
 .. code-block:: python
 
     my_data = {1}
-    print(my_data)
     # {1}
 
     my_data.pop()
-    print(my_data)
     # set()
 
 Differences

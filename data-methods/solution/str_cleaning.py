@@ -11,15 +11,15 @@ h = ' Jana 3 Sobieskiego  '
 i = 'Jana III\tSobieskiego '
 
 
-a = a.strip().upper().replace('UL', '').strip().title().replace('Iii', 'III')
-b = b.strip().upper().replace('UL.', '').strip().title().replace('Trzeciego', 'III')
-c = c.strip().upper().replace('ULICA', '').strip().title().replace('Iii', 'III')
-d = d.strip().upper().replace('UL.', '').strip().title().replace('\n', '').replace('3', 'III')
-e = e.strip().upper().replace('UL.', '').strip().title().replace('Iii', 'III')
-f = f.strip().upper().replace('ULICA', '').strip().title().replace('Iii', 'III')
-g = g.strip().upper().replace('ULICA.', '').strip().title().replace('Iii', 'III')
-h = h.strip().upper().replace('3', 'III').strip().title().replace('Iii', 'III')
-i = i.strip().upper().replace('\t', ' ').strip().title().replace('Iii', 'III')
+a = a.upper().replace('UL', '').strip().title().replace('Iii', 'III')
+b = b.upper().replace('UL.', '').strip().title().replace('Trzeciego', 'III')
+c = c.upper().replace('ULICA', '').strip().title().replace('Iii', 'III')
+d = d.upper().replace('UL.', '').strip().title().replace('3', 'III').replace('\n', '')
+e = e.upper().replace('UL.', '').strip().title().replace('Iii', 'III')
+f = f.upper().replace('ULICA', '').strip().title().replace('Iii', 'III')
+g = g.upper().replace('ULICA.', '').strip().title().replace('Iii', 'III')
+h = h.upper().replace('3', 'III').strip().title().replace('Iii', 'III')
+i = i.upper().replace('\t', ' ').strip().title().replace('Iii', 'III')
 
 
 print(f'{a == expected}\t a: "{a}"')
