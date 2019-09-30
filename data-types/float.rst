@@ -7,7 +7,7 @@ Defining ``float``
 ==================
 .. code-block:: python
 
-    value = 10.5        # 10.5
+    value = 13.37        # 13.37
 
 Notation without leading or trailing zero
 -----------------------------------------
@@ -27,21 +27,20 @@ Engineering notation
 
 .. code-block:: python
 
-    million = +1E6      # 1000000.0
-    million = -1E6      # -1000000.0
+    +1e6      # 1000000.0
+    -1e6      # -1000000.0
 
 .. code-block:: python
 
-    float(+1E6)         # 1000000.0
-    float(-1E3)         # -1000.0
+    1e-3                # 0.001
+    1e-4                # 0.0001
+    1e-5                # 1e-05
+    1e-6                # 1e-06
 
 .. code-block:: python
 
-    float(1e-4)         # 0.0001
-    float(1E-3)         # 0.001
-
-    float(1e-5)         # 1e-05
-    float(1E-5)         # 1E-05
+    1.337 * 1e3          # 1337.0
+    1.337 * 1e-3         # 0.001337
 
 Maximal and minimal ``float`` values
 ------------------------------------
@@ -61,13 +60,13 @@ Infinity representation
 
 .. code-block:: python
 
-    float('-inf')       # -inf
-    float('-Infinity')  # -inf
+    float('inf')        # inf
+    float('Infinity')   # inf
 
 .. code-block:: python
 
-    float('inf')        # inf
-    float('Infinity')   # inf
+    float('-inf')       # -inf
+    float('-Infinity')  # -inf
 
 
 Converting to ``float``
@@ -82,16 +81,16 @@ Converting to ``float``
 
 .. code-block:: python
 
-    float(1.23)         # 1.23
-    float(-1.23)        # -1.23
+    float(13.37)         # 13.37
+    float(-13.37)        # -13.37
 
 .. code-block:: python
 
-    float('+1.23')      # 1.23
-    float('-1.23')      # -1.23
+    float('+13.37')      # 13.37
+    float('-13.37')      # -13.37
 
-    float('1,23')       # ValueError: could not convert string to float: '1,23'
-    float('-1,23')      # ValueError: could not convert string to float: '-1,23'
+    float('13,37')       # ValueError: could not convert string to float: '13,37'
+    float('-13,37')      # ValueError: could not convert string to float: '-13,37'
 
 
 Numeric Functions
@@ -111,21 +110,20 @@ Absolute value
 --------------
 .. code-block:: python
 
-    abs(1.5)        # 1.5
-    abs(-1.5)       # 1.5
+    abs(13.37)        # 13.37
+    abs(-13.37)       # 13.37
 
 Number to the ``n-th`` power
 ----------------------------
 .. code-block:: python
 
     pow(2, -1)      # 0.5
-    pow(2.888, 3)   # 24.087491072
+    pow(1.337, 3)   # 2.389979753
 
 .. code-block:: python
 
     2 ** -1         # 0.5
-    2.888 ** 3      # 24.087491072
-
+    1.337 ** 3      # 2.389979753
 
 Assignments
 ===========
