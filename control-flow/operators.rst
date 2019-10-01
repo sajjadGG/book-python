@@ -40,28 +40,30 @@ Operator precedence
 Assignments
 ===========
 
-To ``float`` or to ``int``?
----------------------------
+Is odd number
+-------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/operators_integers.py`
+* Filename: :download:`solution/operators_is_odd.py`
 
 :English:
     #. Read a number from user
-    #. User will pass only valid ``int`` or ``float``
-    #. Integer is when number modulo divided by one has no reminder
-    #. Print whether number is ``int`` or ``float``
+    #. User will pass only valid ``int``
+    #. Print whether number is odd
+    #. Number is odd, when divided modulo (``%``) by 2 has a reminder
 
 :Polish:
-    #. Wczytaj od użytkownika liczbę
-    #. Poda tylko ``int`` albo ``float``
-    #. Liczba jest całkowitą gdy podzielona modulo przez jeden nie ma reszty
-    #. Wyświetl informację czy jest to liczba całkowita, czy rzeczywista
+    #. Wczytaj liczbę od użytkownika
+    #. Użytkownika poda tylko poprawne ``int``
+    #. Wypisz czy liczba jest nieparzysta
+    #. Liczba jest nieparzysta, gdy dzielona modulo (``%``) przez 2 ma resztę
 
 :The whys and wherefores:
-    * Reading input
+    * Reading input from user
     * Type casting
-    * Conditional statements
-    * Defining variables
-    * Magic Number
+    * Print formatting
+    * Numerical operators
+
+:Hints:
+    * ``%`` has different meaning for ``int`` and ``str``

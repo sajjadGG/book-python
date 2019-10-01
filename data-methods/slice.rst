@@ -304,7 +304,7 @@ Iris dataset
 :Polish:
     #. Dla danych wejściowych (patrz poniżej)
     #. Użyj tylko ``slice``
-    #. Wyodrębnij listę ``features`` w pomiarami (każdy wiersz ma być krotką)
+    #. Wyodrębnij listę ``features`` z pomiarami (każdy wiersz ma być krotką)
     #. Wyodrębnij nazwę gatunku (co piąty element) i zapisz do listy ``labels``
     #. Zapisz unikalne nazwy gatunków do zbioru ``species``
 
@@ -373,30 +373,14 @@ Slicing text
 :Input:
     .. code-block:: python
 
-        a = 'ul Jana III SobIESkiego'
-        b = '\tul. Jana trzeciego Sobieskiego'
-        c = 'ulicaJana III Sobieskiego'
-        d = 'UL. JANA 3 \nSOBIESKIEGO'
-        e = 'UL. jana III SOBiesKIEGO'
-        f = 'ULICA JANA III SOBIESKIEGO  '
-        g = 'ULICA. JANA III SOBIeskieGO'
-        h = ' Jana 3 Sobieskiego  '
-        i = 'Jana III Sobi\teskiego '
-
-:Output:
-    .. code-block:: python
-
-        expected = 'Jana III Sobieskiego'
-
-        print(f'{a == expected}\t a: "{a}"')
-        print(f'{b == expected}\t b: "{b}"')
-        print(f'{c == expected}\t c: "{c}"')
-        print(f'{d == expected}\t d: "{d}"')
-        print(f'{e == expected}\t e: "{e}"')
-        print(f'{f == expected}\t f: "{f}"')
-        print(f'{g == expected}\t g: "{g}"')
-        print(f'{h == expected}\t h: "{h}"')
-        print(f'{i == expected}\t i: "{i}"')
+        a = 'lt. Mark Watney'
+        b = 'lt. col. Jan Twardowski\t'
+        c = 'dr hab. inż. Jan Twardowski, prof. LAW'
+        d = 'gen. pil. Jan Twardowski'
+        e = 'Mark Watney, PhD'
+        f = 'lt. col. ret. Melissa Lewis'
+        g = 'dr n. med. Ryan Stone'
+        h = 'Ryan Stone, MD-PhD'
 
 :The whys and wherefores:
     * Variable definition

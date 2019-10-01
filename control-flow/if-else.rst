@@ -206,31 +206,3 @@ Conditioning on user input
     * Conditional statements
     * Defining variables
     * Magic Number
-
-Is odd number
--------------
-* Complexity level: easy
-* Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
-* Filename: :download:`solution/ifelse_is_odd.py`
-
-:English:
-    #. Read a number from user
-    #. User will pass only valid ``int``
-    #. Print whether number is odd
-    #. Number is odd, when divided modulo (``%``) by 2 has a reminder
-
-:Polish:
-    #. Wczytaj liczbę od użytkownika
-    #. Użytkownika poda tylko poprawne ``int``
-    #. Wypisz czy liczba jest nieparzysta
-    #. Liczba jest nieparzysta, gdy dzielona modulo (``%``) przez 2 ma resztę
-
-:The whys and wherefores:
-    * Reading input from user
-    * Type casting
-    * Print formatting
-    * Numerical operators
-
-:Hints:
-    * ``%`` has different meaning for ``int`` and ``str``

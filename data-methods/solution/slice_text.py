@@ -1,11 +1,16 @@
-a = 'UL. Jana III Sobieskiego 1/2'
-b = 'ulica Jana III Sobieskiego 1 apt 2'
-c = 'os. Jana III Sobieskiego'
-d = 'plac Jana III Sobieskiego 1/2'
-e = 'aleja Jana III Sobieskiego'
-f = 'alei Jana III Sobieskiego 1/2'
-g = 'Jana III Sobieskiego 1 m. 2'
-h = 'os. Jana III Sobieskiego 1 apt 2'
+a = 'lt. Mark Watney'
+b = 'lt. col. Jan Twardowski\t'
+c = 'dr hab. inż. Jan Twardowski, prof. LAW'
+d = 'gen. pil. Jan Twardowski'
+e = 'Mark Watney, PhD'
+f = 'lt. col. ret. Melissa Lewis'
+g = 'dr n. med. Ryan Stone'
+h = 'Ryan Stone, MD-PhD'
+
+
+
+
+
 
 print(a[4:-4])
 print(b[6:-8])
@@ -48,9 +53,9 @@ print(f'h: {h}')
 ## Alternative Version
 def get_slice(text):
     length = len(text)
-    lower = text.find(text)
-    upper = lower + length
-    return slice(lower, upper)
+    start = text.find(text)
+    stop = start + length
+    return slice(start, stop)
 
 
 text = 'Jana III Sobieskiego'
