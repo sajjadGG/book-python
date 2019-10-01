@@ -75,8 +75,8 @@ Control Flow
     /control-flow/operators.rst
     /control-flow/loop-while.rst
     /control-flow/loop-for.rst
-    /control-flow/loop-dict.rst
     /control-flow/loop-nested.rst
+    /control-flow/loop-dict.rst
     /control-flow/loop-else.rst
     /control-flow/unpacking.rst
     /control-flow/comprehensions.rst
