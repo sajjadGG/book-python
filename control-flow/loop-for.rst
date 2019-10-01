@@ -192,17 +192,17 @@ Counter
 :English:
     #. For input data (see below)
     #. Count occurrences of each number
-    #. Print ``counter: Dict[int, int]``:
+    #. Print ``OUTPUT: Dict[int, int]``:
 
-        * key - number
+        * key - digit
         * value - number of occurrences
 
 :Polish:
     #. Dla danych wejściowych (patrz poniżej)
     #. Policz wystąpienia każdej z cyfr
-    #. Wypisz ``counter: Dict[int, int]``:
+    #. Wypisz ``OUTPUT: Dict[int, int]``:
 
-        * klucz - liczba
+        * klucz - cyfra
         * wartość - liczba wystąpień
 
 :Input:
@@ -213,6 +213,22 @@ Counter
                  2, 4, 0, 0, 1, 9, 1, 7, 8, 8, 9,
                  1, 3, 5, 6, 8, 2, 8, 1, 3, 9, 5,
                  4, 8, 1, 9, 6, 3]
+
+:Output:
+    .. code-block:: python
+
+        OUTPUT = {
+            0: 7,
+            1: 7,
+            2: 2,
+            3: 3,
+            4: 8,
+            5: 4,
+            6: 4,
+            7: 4,
+            8: 6,
+            9: 5,
+        }
 
 :The whys and wherefores:
     * Defining ``dict``
@@ -235,7 +251,7 @@ Segmentation
         * ``medium`` - numbers in range [3-7]
         * ``large`` - numbers in range [8-9]
 
-    #. Print ``counter: Dict[str, int]``:
+    #. Print ``OUTPUT: Dict[str, int]``:
 
         * key - group
         * value - number of occurrences
@@ -249,7 +265,7 @@ Segmentation
         * ``medium`` - liczby z przedziału [3-7]
         * ``large`` - liczby z przedziału [8-9]
 
-    #. Wypisz ``counter: Dict[str, int]``:
+    #. Wypisz ``OUTPUT: Dict[str, int]``:
 
         * klucz - grupa
         * wartość - liczba wystąpień

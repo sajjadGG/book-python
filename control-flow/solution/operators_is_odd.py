@@ -1,7 +1,6 @@
 number = input('What is your number?: ')
 
-
-if int(number) % 2:
+if number % 2:
     print('Odd')
 else:
     print('Even')

@@ -4,18 +4,19 @@ INPUT = [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0,
          1, 3, 5, 6, 8, 2, 8, 1, 3, 9, 5,
          4, 8, 1, 9, 6, 3]
 
-counter = {}
+OUTPUT = {}
 
 for digit in INPUT:
-    if digit in counter:
-        counter[digit] += 1
+
+    if digit not in OUTPUT:
+        OUTPUT[digit] = 1
     else:
-        counter[digit] = 1
+        OUTPUT[digit] += 1
 
 
 ## Alternative version
 # for digit in INPUT:
-#     counter[digit] = counter.get(digit, 0) + 1
+#     OUTPUT[digit] = OUTPUT.get(digit, 0) + 1
 
 
-print(counter)
+print(OUTPUT)
