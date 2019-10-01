@@ -26,15 +26,14 @@ INPUT = [
 
 RATIO = 0.6
 
-header = INPUT[0]
-data = INPUT[1:]
+header, *data = INPUT
 pivot = int(len(data) * RATIO)
 
-features = [tuple(row[0:4]) for row in data]
+features = [tuple(m) for *m,_ in data]
 features_train = features[:pivot]
 features_test = features[pivot:]
 
-labels = [row[4] for row in data]
+labels = [s for *_,s in data]
 labels_train = labels[:pivot]
 labels_test = labels[pivot:]
 
