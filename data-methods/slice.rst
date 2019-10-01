@@ -90,20 +90,6 @@ Every ``n-th`` element
 
     text[::2]             # 'W hoet ot h on'
 
-.. code-block:: python
-
-    DATA = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
-    ]
-
-    DATA[::2]
-    # [
-    #   [1, 2, 3],
-    #   [7, 8, 9],
-    # ]
-
 Reversing
 ---------
 .. code-block:: python
@@ -114,8 +100,11 @@ Reversing
     text[::-2]            # '!oMeto go soce'
 
 
-Slicing data structures
-=======================
+Slicing sequences
+=================
+
+Slicing ``str``
+---------------
 .. code-block:: python
 
     DATA = 'abcde'
@@ -123,11 +112,6 @@ Slicing data structures
     DATA[:3]            # 'abc'
     DATA[3:]            # 'de'
     DATA[1:4]           # 'bcd'
-
-.. code-block:: python
-
-    DATA = 'abcde'
-
     DATA[::2]           # 'ace'
     DATA[::-1]          # 'edcba'
 
@@ -140,11 +124,6 @@ Slicing ``tuple``
     DATA[:3]            # ('a', 'b', 'c')
     DATA[3:]            # ('d', 'e')
     DATA[1:4]           # ('b', 'c', 'd')
-
-.. code-block:: python
-
-    DATA = ('a', 'b', 'c', 'd', 'e')
-
     DATA[::2]           # ('a', 'c', 'e')
     DATA[::-1]          # ('e', 'd', 'c', 'b', 'a')
 
@@ -159,11 +138,6 @@ Slicing ``list``
     DATA[:3]            # ['a', 'b', 'c']
     DATA[3:]            # ['d', 'e']
     DATA[1:4]           # ['b', 'c', 'd']
-
-.. code-block:: python
-
-    DATA = ['a', 'b', 'c', 'd', 'e']
-
     DATA[::2]           # ['a', 'c', 'e']
     DATA[::-1]          # ['e', 'd', 'c', 'b', 'a']
 
@@ -175,7 +149,7 @@ Slice ``set``
 
     DATA = {'a', 'b', 'c', 'd', 'e'}
 
-    DATA[1:2]
+    DATA[:3]
     # TypeError: 'set' object is not subscriptable
 
 Slice ``dict``
@@ -184,8 +158,25 @@ Slice ``dict``
 
     DATA = {'a': 1, 'b': 2}
 
-    DATA[1:2]
+    DATA[:3]
     # TypeError: unhashable type: 'slice'
+
+
+Slicing nested sequences
+========================
+.. code-block:: python
+
+    DATA = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+    ]
+
+    DATA[::2]
+    # [
+    #   [1, 2, 3],
+    #   [7, 8, 9],
+    # ]
 
 
 Slice function
