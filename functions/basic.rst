@@ -240,12 +240,12 @@ Keyword arguments
         """
 
 
-    my_file1 = read_csv('iris-clean.csv')
+    my_file1 = read_csv('iris.csv')
 
-    my_file2 = read_csv('iris-clean.csv', encoding='utf-8')
+    my_file2 = read_csv('iris.csv', encoding='utf-8')
 
     my_file3 = read_csv(
-        filepath_or_buffer='iris-clean.csv',
+        filepath_or_buffer='iris.csv',
         encoding='utf-8',
         verbose=True,
         usecols=['Sepal Length', 'Species']
@@ -407,9 +407,18 @@ Aviation numbers
     #. Zdefiniuj funkcję konwertującą ``int`` lub ``float`` na formę tekstową w mowie pilotów
 
 :Input:
-    .. csv-table:: Aviation Phonetic Numbers
-        :header-rows: 1
-        :file: data/aviation-numbers.csv
+    .. code-block:: text
+
+            0, "zero"
+            1, "one"
+            2, "two"
+            3, "tree"
+            4, "fower"
+            5, "fife"
+            6, "six"
+            7, "seven"
+            8, "ait"
+            9, "niner"
 
     .. code-block:: python
 

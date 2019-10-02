@@ -498,7 +498,7 @@ Generators vs. Comprehensions - iris
     .. todo:: English translation
 
 :Polish:
-    #. Zapisz dane :download:`data/iris-clean.csv` do pliku "generator_iris.csv"
+    #. Zapisz dane :download:`data/iris.csv` do pliku "generator_iris.csv"
     #. Zaczytaj dane pomijając nagłówek
     #. Napisz funkcję która zwraca wszystkie pomiary dla danego gatunku
     #. Gatunek będzie podawany jako ``str`` do funkcji

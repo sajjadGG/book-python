@@ -210,7 +210,7 @@ Hist
     import pandas as pd
 
 
-    url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/data/iris-clean.csv'
+    url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/data/iris.csv'
     data = pd.read_csv(url)
 
     data.hist()
@@ -230,7 +230,7 @@ Density
     import pandas as pd
 
 
-    url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/data/iris-clean.csv'
+    url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/data/iris.csv'
     data = pd.read_csv(url)
 
     data.plot(kind='density', subplots=True, layout=(3,3), sharex=False)
@@ -250,7 +250,7 @@ Box
     import pandas as pd
 
 
-    url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/data/iris-clean.csv'
+    url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/data/iris.csv'
     data = pd.read_csv(url)
 
     data.plot(kind='box', subplots=True, layout=(3,3), sharex=False, sharey=False)
@@ -274,7 +274,7 @@ Scatter matrix
     from pandas.plotting import scatter_matrix
 
 
-    url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/data/iris-clean.csv'
+    url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/data/iris.csv'
     data = pd.read_csv(url)
 
     scatter_matrix(data)

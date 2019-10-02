@@ -199,7 +199,7 @@ Parsing simple CSV file
 * Filename: :download:`solution/file_parsing_csv.py`
 
 :English:
-    #. Download :download:`data/iris-clean.csv` save as ``iris-clean.csv``
+    #. Download :download:`data/iris.csv` save as ``iris.csv``
     #. Define:
 
             * ``features`` - list of measurements (each row is a tuple)
@@ -215,7 +215,7 @@ Parsing simple CSV file
     #. Print ``features`` and ``labels``
 
 :Polish:
-    #. Ściągnij :download:`data/iris-clean.csv` i zapisz jako ``iris-clean.csv``
+    #. Ściągnij :download:`data/iris.csv` i zapisz jako ``iris.csv``
     #. Zdefiniuj:
 
             - ``features`` - lista pomiarów (każdy wiersz to tuple)

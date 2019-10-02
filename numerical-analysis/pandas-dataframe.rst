@@ -1212,7 +1212,7 @@ Iris Clean
 * Lines of code to write: 25 lines
 * Estimated time of completion: 25 min
 * Filename: :download:`solution/pandas_df_clean.py`
-* Input data: https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/data/iris-clean.csv
+* Input data: https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/data/iris.csv
 
 #. Mając dane Irysów przekonwertuj je na ``DataFrame``
 #. Podaj jawnie ``encoding``

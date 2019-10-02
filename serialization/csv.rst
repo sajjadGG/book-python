@@ -370,8 +370,8 @@ Read and parse data from CSV file
 * Filename: :download:`solution/csv_dictreader.py`
 
 :English:
-    #. Download :download:`data/iris-clean.csv` file
-    #. Save data to ``iris-clean.csv`` in your script folder
+    #. Download :download:`data/iris.csv` file
+    #. Save data to ``iris.csv`` in your script folder
     #. Using ``csv.DictReader`` read the content
     #. Use explicit ``encoding``, ``delimiter`` and ``quotechar``
     #. Replace column names (see output data)
@@ -379,7 +379,7 @@ Read and parse data from CSV file
     #. Print rows
 
 :Polish:
-    #. Pobierz plik :download:`data/iris-clean.csv`
+    #. Pobierz plik :download:`data/iris.csv`
     #. Zapisz jego zawartość na dysku w miejscu gdzie masz skrypty
     #. Korzystając z ``csv.DictReader`` wczytaj zawartość pliku
     #. Podaj jawnie ``encoding``, ``delimiter`` oraz ``quotechar``

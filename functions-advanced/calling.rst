@@ -270,7 +270,7 @@ Iris
 * Filename: :download:`solution/calling_kwargs.py`
 
 :English:
-    #. Download :download:`data/iris-clean.csv` and save as ``iris-clean.csv``
+    #. Download :download:`data/iris.csv` and save as ``iris.csv``
     #. Separate header from measurements
     #. Remove ``species`` column from both header and measurements
     #. For each line extract values by splitting lines by coma ``,``
@@ -283,7 +283,7 @@ Iris
     #. Iterate over data and calculate mean for each row by passing arguments as keywords
 
 :Polish:
-    #. Pobierz plik :download:`data/iris-clean.csv` i zapisz jako ``iris-clean.csv``
+    #. Pobierz plik :download:`data/iris.csv` i zapisz jako ``iris.csv``
     #. Odseparuj nagłówek od pomiarów
     #. Usuń kolumnę ``species`` zarówno z nagłówka jak i danych
     #. Wyciągnij wartości z każdej linii przez podział jej po przecinku ``,``

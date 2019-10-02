@@ -1,7 +1,7 @@
 import csv
 
 
-FILE = r'../data/iris-clean.csv'
+FILE = r'../data/iris.csv'
 FIELDNAMES = [
     'Sepal length',
     'Sepal width',

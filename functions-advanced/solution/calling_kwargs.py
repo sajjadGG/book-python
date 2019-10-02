@@ -1,4 +1,4 @@
-FILE = r'../data/iris-clean.csv'
+FILE = r'../data/iris.csv'
 
 data = []
 
