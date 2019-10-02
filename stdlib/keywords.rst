@@ -3,12 +3,31 @@ Keywords
 ********
 
 
+List of keywords
+================
+.. code-block:: python
+
+    import keyword
+
+    print(keyword.kwlist)
+    # ['False', 'None', 'True', 'and',
+    #  'as', 'assert', 'async', 'await',
+    #  'break', 'class', 'continue', 'def',
+    #  'del', 'elif', 'else', 'except',
+    #  'finally', 'for', 'from', 'global',
+    #  'if', 'import', 'in', 'is', 'lambda',
+    #  'nonlocal', 'not', 'or', 'pass',
+    #  'raise', 'return', 'try', 'while',
+    #  'with', 'yield']
+
+
 ``pass``
 ========
 * Avoid error when you don't specify the body of a block
 
 .. code-block:: python
     :caption: Exceptions has all the content needed inherited from ``Exception`` class. You need something to avoid ``IndentationError``
+    :emphasize-lines: 2
 
     class MyError(Exception):
 
@@ -17,6 +36,7 @@ Keywords
     # IndentationError: expected an indented block
 
 .. code-block:: python
+    :emphasize-lines: 2
 
     class MyError(Exception):
         pass
@@ -31,23 +51,43 @@ Keywords
 .. code-block:: python
 
     print(__file__)
-    # /src/my_file.py
+    # /home/twardowski/bin/my_file.py
 
 .. code-block:: python
 
     from os.path import dirname
 
 
-    print(f'Working directory: {dirname(__file__)}')
-    # Working directory: /src
+    dir = dirname(__file__)
+
+    print(f'Working directory: {dir}')
+    # Working directory: /home/twardowski/bin
 
 .. code-block:: python
 
     from os.path import dirname, join
 
 
-    path = join(dirname(__file__), 'main.py')
+    dir = dirname(__file__)
+    path = join(dir, 'main.py')
 
     print(f'My file: {path}')
-    # My file: /src/main.py
+    # My file: /home/twardowski/bin/main.py
 
+
+``del``
+=======
+.. code-block:: python
+
+    DATA = {
+        'first_name': 'Jan',
+        'last_name': 'Twardowski',
+    }
+
+    print(DATA)
+    # {'first_name': 'Jan', 'last_name': 'Twardowski'}
+
+    del DATA['first_name']
+
+    print(DATA)
+    # {'last_name': 'Twardowski'}

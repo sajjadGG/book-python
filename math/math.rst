@@ -12,7 +12,7 @@ Constans
 --------
 * ``inf`` or ``Infinity``
 * ``-inf`` or ``-Infinity``
-* ``1E10`` or ``1E-5``
+* ``1e6`` or ``1e-4``
 
 Functions
 ---------
@@ -25,6 +25,7 @@ Functions
 * ``divmod()``
 * ``complex()``
 
+
 ``math``
 ========
 
@@ -33,7 +34,6 @@ Constants
 .. code-block:: python
 
     import math
-
 
     math.pi
     math.e
@@ -44,7 +44,6 @@ Degree/Radians Conversion
 
     import math
 
-
     math.degrees(x)
     math.radians(x)
 
@@ -53,7 +52,6 @@ Rounding to lower
 .. code-block:: python
 
     import math
-
 
     math.floor(3.14)                # 3
     math.floor(3.00000000000000)    # 3
@@ -66,7 +64,6 @@ Rounding to higher
 
     import math
 
-
     math.ceil(3.14)                 # 4
     math.ceil(3.00000000000000)     # 3
     math.ceil(3.00000000000001)     # 4
@@ -78,9 +75,9 @@ Logarithms
 
     import math
 
-
     math.log(x)     # if base is not set, then ``e``
     math.log(x, base=2)
+    math.log(x, base=10)
     math.log10()
 
     math.exp(x)
@@ -91,9 +88,12 @@ Linear Algebra
 
     import math
 
-
     math.sqrt()
     math.pow(x, y)
+
+.. code-block:: python
+
+    import math
 
     math.hypot()    # 2D, since Python 3.8 also multiple dimensions
     math.dist()     # Euclidean distance, Since Python 3.8
@@ -104,33 +104,114 @@ Trigonometry
 
     import math
 
-
     math.sin()
     math.cos()
     math.tan()
 
+.. code-block:: python
+
+    import math
+
     math.sinh()
     math.cosh()
     math.tanh()
+
+.. code-block:: python
+
+    import math
 
     math.asin(x)
     math.acos(x)
     math.atan(x)
     math.atan2(x)
 
-    math.asinh(x)
-    math.acosh(x)
-
-Other functions
----------------
 .. code-block:: python
 
     import math
 
+    math.asinh(x)
+    math.acosh(x)
 
-    math.isinf(x)
-    math.fabs(x)
+Infinity
+--------
+.. code-block:: python
 
+    from math import isinf
+
+
+    isinf(float('inf'))         # True
+    isinf(float('Infinity'))    # True
+    isinf(float('-inf'))        # True
+    isinf(float('-Infinity'))   # True
+
+    isinf(1e308)                # False
+    isinf(1e309)                # True
+
+    isinf(1e-9999999999999999)  # False
+
+Absolute value
+--------------
+.. code-block:: python
+
+    abs(1)          # 1
+    abs(-1)         # -1
+
+    abs(1.2)        # 1.2
+    abs(-1.2)       # 1.2
+
+.. code-block:: python
+
+    from math import fabs
+
+    fabs(1)         # 1.0
+    fabs(-1)        # 1.0
+
+    fabs(1.2)       # 1.2
+    fabs(-1.2)      # 1.2
+
+.. code-block:: python
+
+    from math import fabs
+
+    vector = [1, 0, 1]
+
+    abs(vector)
+    # TypeError: bad operand type for abs(): 'list'
+
+    fabs(vector)
+    # TypeError: must be real number, not list
+
+.. code-block:: python
+
+    from math import sqrt
+
+
+    def vector_abs(vector):
+        return sqrt(sum(n**2 for n in vector))
+
+
+    vector = [1, 0, 1]
+    vector_abs(vector)
+    # 1.4142135623730951
+
+.. code-block:: python
+
+    from math import sqrt
+
+
+    class Vector:
+        def __init__(self, x, y, z):
+            self.x = x
+            self.y = y
+            self.z = z
+
+        def __abs__(self):
+            return sqrt(self.x**2 + self.y**2 + self.z**2)
+
+
+    vector = Vector(x=1, y=0, z=1)
+    abs(vector)
+    # 1.4142135623730951
 
 
 Assignments
@@ -266,7 +347,7 @@ Euclidean distance ``n`` dimensions
             return ...
 
 :Hint:
-    * ``zip(A, B)``
+    * ``for n1, n2 in zip(A, B)``
 
 Matrix multiplication
 ---------------------

@@ -48,18 +48,18 @@ Sprawdzanie typów
 ----------
 .. code-block:: python
 
-    type(1)         # <class 'int'>
-    type(1.2)       # <class 'float'>
-    type('hello')   # <class 'str'>
+    type(1)                 # <class 'int'>
+    type(1.2)               # <class 'float'>
+    type('hello')           # <class 'str'>
 
-    type(True)      # <class 'bool'>
-    type(False)     # <class 'bool'>
-    type(None)      # <class 'NoneType'>
+    type(True)              # <class 'bool'>
+    type(False)             # <class 'bool'>
+    type(None)              # <class 'NoneType'>
 
-    type([1, 2])    # <class 'list'>
-    type((1, 2))    # <class 'tuple'>
-    type({1, 2})    # <class 'set'>
-    type({1: 2})    # <class 'dict'>
+    type([1, 2])            # <class 'list'>
+    type((1, 2))            # <class 'tuple'>
+    type({1, 2})            # <class 'set'>
+    type({1: 2})            # <class 'dict'>
 
 .. code-block:: python
 
@@ -67,7 +67,7 @@ Sprawdzanie typów
     type(1.2) == float      # True
 
     type(True) == bool      # True
-    type(False) == bool     # False
+    type(False) == bool     # True
 
     type(True) == int       # False
     type(False) == int      # False
@@ -215,8 +215,8 @@ Other builtin functions
 =======================
 .. csv-table:: Most used Built-in functions
     :header-rows: 1
+    :header: "Name", "Description"
 
-    "Name", "Description"
     "``__import__``", ""
     "``abs()``", ""
     "``all()``", ""
