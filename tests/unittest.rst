@@ -90,14 +90,17 @@ Example 5
 Mock
 ====
 * Mock and MagicMock objects create all attributes and methods as you access them and store details of how they have been used.
+
 .. code-block:: python
 
     from unittest.mock import MagicMock
 
     thing = ProductionClass()
     thing.method = MagicMock(return_value=3)
+
     thing.method(3, 4, 5, key='value')
     # 3
+
     thing.method.assert_called_with(3, 4, 5, key='value')
 
 Side effect
