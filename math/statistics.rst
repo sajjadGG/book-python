@@ -256,8 +256,6 @@ Column Stats
 
 :Non-functional requirements:
     #. Use ``statistics``
-    #. Calculate only numerical parameters
-    #. Those are the total values from all rows
 
 :Input:
     .. code-block:: python
@@ -296,7 +294,7 @@ Iris Stats
 
 :English:
     #. Create dict ``OUTPUT: Dict[str, dict]``
-    #. For each species calculate:
+    #. For each species calculate for numerical values:
 
             - mean,
             - median,
@@ -307,7 +305,7 @@ Iris Stats
 
 :Polish:
     #. Stwórz słownik ``OUTPUT: Dict[str, dict]``
-    #. Dla każdego gatunku wylicz:
+    #. Dla każdego gatunku wylicz dla wartości numerycznych:
 
             - średnią,
             - medianę,
@@ -318,8 +316,6 @@ Iris Stats
 
 :Non-functional requirements:
     #. Use ``statistics``
-    #. Calculate only numerical parameters
-    #. Those are the total values from all rows
 
 :Input:
     .. code-block:: python
@@ -352,7 +348,7 @@ Iris Stats
 :Output:
     .. code-block:: python
 
-        OUTPUT = {
+        OUTPUT: Dict[str, dict] = {
             'setosa': {
                 'Sepal length': {'mean': 4.9,
                                  'median': 4.9,

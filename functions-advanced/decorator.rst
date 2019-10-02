@@ -73,6 +73,32 @@ Zastosowanie
 Example
 =======
 
+Cache
+-----
+.. code-block:: python
+
+    CACHE = {}
+
+
+    def cache(func):
+        def wrapper(n):
+            if n not in CACHE:
+                CACHE[n] = func(n)
+            return CACHE[n]
+        return wrapper
+
+
+    @cache
+    def factorial(n: int) -> int:
+        if n == 0:
+            return 1
+        else:
+            return n * factorial(n-1)
+
+
+    output = factorial(5)
+    print(output)
+
 File exists
 -----------
 .. code-block:: python
