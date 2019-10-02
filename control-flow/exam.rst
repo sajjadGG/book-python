@@ -12,20 +12,28 @@ Relational Files Database
 * Input data: :numref:`code-file-etc-passwd`, :numref:`code-file-etc-shadow`, :numref:`code-file-etc-group`
 
 :English:
-    .. todo:: English translation
+    #. Save listings content to files:
+
+        - ``etc_passwd.txt`` - :numref:`code-file-etc-passwd`
+        - ``etc_shadow.txt`` - :numref:`code-file-etc-shadow`
+        - ``etc_group.txt`` - :numref:`code-file-etc-group`
+
+    #. Copy also comments and empty lines
+    #. Parse files and convert it to ``OUTPUT: List[dict]``
+    #. Return list of users with ``UID`` greater than 1000
+    #. User dict should contains data collected from all files
 
 :Polish:
-    #. Poniższe listingi prezentują zawartość plików:
+    #. Zapisz treści listingów do plików:
 
-        - ``/etc/passwd`` - :numref:`code-file-etc-passwd`
-        - ``/etc/shadow`` - :numref:`code-file-etc-shadow`
-        - ``/etc/group`` - :numref:`code-file-etc-group`
+        - ``etc_passwd.txt`` - :numref:`code-file-etc-passwd`
+        - ``etc_shadow.txt`` - :numref:`code-file-etc-shadow`
+        - ``etc_group.txt`` - :numref:`code-file-etc-group`
 
-    #. Skopuj ich zawartość każdego z tych plików na dysk do plików ``.txt``
-    #. Uwaga: komentarze i puste mają również być skopiowane!
-    #. Sparsuj plik i przedstaw go w formacie ``List[dict]``
+    #. Skopiuj również komentarze i puste linie
+    #. Sparsuj plik i przedstaw go w formacie ``OUTPUT: List[dict]``
     #. Zwróć listę użytkowników, których ``UID`` jest większy niż 1000
-    #. W ramach ``dict`` połącz dane, tak aby uzyskać wynik:
+    #. Dict użytkownika powinien zawierać dane z wszystkich plików
 
 :Input:
     .. literalinclude:: data/etc-passwd.txt
@@ -46,7 +54,7 @@ Relational Files Database
 :Output:
     .. code-block:: python
 
-        [
+        OUTPUT: List[dict] = [
             {
                 'username': 'twardowski',
                 'uid': 1001,
@@ -64,11 +72,9 @@ Relational Files Database
         ]
 
 :The whys and wherefores:
-    * czytanie i parsowanie pliku
-    * łączenie danych z różnych plików w jeden format wynikowy
-    * nieregularne pliki konfiguracyjne (struktura może się zmieniać)
-    * filtrowanie elementów
-    * korzystanie z pętli i instrukcji warunkowych
-    * parsowanie stringów
-    * praca ze ścieżkami w systemie operacyjnym
-    * różna reprezentacja danych (podmienianie wartości)
+    * :ref:`Files`
+    * :ref:`Nested Data Structures`
+    * :ref:`Comprehensions`
+    * :ref:`For loop`
+    * :ref:`Conditionals`
+    * :ref:`Str methods`

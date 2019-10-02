@@ -17,6 +17,6 @@ shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
 halt:x:7:0:halt:/sbin:/sbin/halt
 nobody:x:99:99:Nobody:/:/sbin/nologin
 sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
-watney:x:1000:1000:Max Peck:/home/peck:/bin/bash
+watney:x:1000:1000:Mark Watney:/home/peck:/bin/bash
 twardowski:x:1001:1001:Jan Twardowski:/home/twardowski:/bin/bash
 ivanovic:x:1002:1002:Ivan Ivanovic:/home/ivanovic:/bin/bash

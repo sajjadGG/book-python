@@ -15,6 +15,8 @@ mail::6:root
 astronauts::10:twardowski,watney,ivanovic
 daemon::12:root,daemon
 sysadmin::14:twardowski,ivanovic
+mars::1000:watney
+moon::1001:twardowski
 nobody::60001:
 noaccess::60002:
 nogroup::65534:
