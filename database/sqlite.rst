@@ -164,16 +164,33 @@ SQLite Iris
             2: 'virginica',
         }
 
-.. code-block:: python
+    .. code-block:: sql
 
-        id: int
-        species: str
-        datetime: datetime
-        sepal_length: float
-        sepal_width: float
-        petal_length: float
-        petal_width: float
+        CREATE TABLE IF NOT EXISTS iris (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            species TEXT,
+            datetime DATETIME,
+            sepal_length REAL,
+            sepal_width REAL,
+            petal_length REAL,
+            petal_width REAL
+        );
 
+    .. code-block:: sql
+
+        INSERT INTO iris VALUES (
+            NULL,
+            :species,
+            :datetime,
+            :sepal_length,
+            :sepal_width,
+            :petal_length,
+            :petal_width
+        );
+
+    .. code-block:: sql
+
+        SELECT * FROM iris ORDER BY datetime DESC
 
 Creating relations in database
 ------------------------------
