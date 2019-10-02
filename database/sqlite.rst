@@ -98,24 +98,24 @@ SQLite Iris
 
 :English:
     #. Save input data as ``sqlite_iris.csv`` file
-    #. Read data from file
+    #. Read data from file (don't use ``csv`` or ``pandas`` library)
     #. Connect to the ``sqlite3`` using context manager (``with``)
     #. Create table ``iris``, column names are specified in output data (see below)
-    #. Save data to database table
     #. Replace ``int`` to ``str`` according to ``SPECIES`` conversion table (see input data)
+    #. Save data to database table
     #. Print results using ``SELECT * FROM iris ORDER BY datetime DESC``
 
 :Polish:
     #. Zapisz dane wejściowe do pliku ``sqlite_iris.csv``
-    #. Wczytaj dane z pliku
+    #. Wczytaj dane z pliku (nie używaj biblioteki ``csv`` lub ``pandas``)
     #. Połącz się do bazy danych ``sqlite3`` używając context managera (``with``)
     #. Stwórz tabelę ``iris`` o kolumnach podanych w sekcji dane wyjściowe (patrz poniżej)
-    #. Zapisz dane do tabeli w bazie danych
     #. Podmień ``int`` na ``str`` zgodnie z tabelą podstawień ``SPECIES`` (patrz dane wejściowe)
+    #. Zapisz dane do tabeli w bazie danych
     #. Wypisz wyniki z bazy danych ``SELECT * FROM iris ORDER BY datetime DESC``
 
 :Non functional requirements:
-    * Use context manager (``with``) for connection
+    * Use context manager (``with``) for connection and for opening file
     * Return data as ``sqlite3.Row``
     * Add data in ``dict`` format using ``.executemany()``
     * Save date and time to database in UTC
