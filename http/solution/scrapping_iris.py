@@ -26,9 +26,9 @@ species = table_header.text.split()[2:]
 
 for cell in table_body:
     values = cell.text.split()
-    out = dict(zip(HEADER, values))
-    species_id = int(out['Species'])
-    out['Species'] = species[species_id]
-    OUTPUT.append(out)
+    values = dict(zip(HEADER, values))
+    species_id = int(values['Species'])
+    values['Species'] = species[species_id]
+    OUTPUT.append(values)
 
 pprint(OUTPUT)

@@ -55,6 +55,6 @@ with open(r'../tmp/iris.json', mode='w') as file:
 
 
 with open(r'../tmp/iris.json', mode='r') as file:
-    out = json.load(file)
+    output = json.load(file)
 
-pprint(out)
+pprint(output)

@@ -2,7 +2,7 @@ import json
 from pprint import pprint
 
 FILE = r'../data/iris.json'
-out = list()
+output = list()
 
 
 with open(FILE) as file:
@@ -10,10 +10,10 @@ with open(FILE) as file:
 
 
 header = tuple(DATA[0].keys())
-out.append(header)
+output.append(header)
 
 for row in DATA:
     measurements = row.values()
-    out.append(tuple(measurements))
+    output.append(tuple(measurements))
 
-pprint(out)
+pprint(output)

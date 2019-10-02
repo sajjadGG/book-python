@@ -213,23 +213,6 @@ Current ``datetime`` in local time
 Assignments
 ===========
 
-Create current ``date`` and ``datetime`` objects
-------------------------------------------------
-* Complexity level: easy
-* Lines of code to write: 3 lines
-* Estimated time of completion: 5 min
-* Filename: :download:`solution/datetime_create_current.py`
-
-:English:
-    #. Create ``date`` object with current date
-    #. Create ``datetime`` object with current date and time
-    #. Create ``time`` object with current time
-
-:Polish:
-    #. Stwórz obiekt ``date`` z obecną datą
-    #. Stwórz obiekt ``datetime`` z obecną datą i czasem
-    #. Stwórz obiekt ``time`` z obecnym czasem
-
 Create ``date``, ``time`` and ``datetime`` objects
 --------------------------------------------------
 * Complexity level: easy
@@ -246,3 +229,22 @@ Create ``date``, ``time`` and ``datetime`` objects
     #. Stwórz obiekt ``date`` z datą Twojego urodzenia
     #. Stwórz obiekt ``time`` z czasem Twojego urodzenia
     #. Stwórz obiekt ``datetime`` z datą i czasem Twojego urodzenia
+
+Create current ``date`` and ``datetime`` objects
+------------------------------------------------
+* Complexity level: easy
+* Lines of code to write: 3 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/datetime_create_current.py`
+
+:English:
+    #. Create ``date`` object with current date
+    #. Create ``datetime`` object with current date and time
+    #. Create ``time`` object with current time
+    #. Date and time must be from system, not hardcoded in code
+
+:Polish:
+    #. Stwórz obiekt ``date`` z obecną datą
+    #. Stwórz obiekt ``datetime`` z obecną datą i czasem
+    #. Stwórz obiekt ``time`` z obecnym czasem
+    #. Data i czas ma być pobierana z systemu, nie zapisana w kodzie

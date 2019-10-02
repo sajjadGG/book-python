@@ -11,13 +11,11 @@ MAX_VALUE = 49
 MIN_VALUE = 1
 REPETITIONS = 6
 
-output = []
+output = set()
 
-while len(output) <= REPETITIONS:
+while len(output) < REPETITIONS:
     number = randint(MIN_VALUE, MAX_VALUE)
-
-    if number not in output:
-        output.append(number)
+    output.add(number)
 
 print(sorted(output))
 

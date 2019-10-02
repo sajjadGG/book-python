@@ -26,6 +26,6 @@ def function(a: str, b: int) -> bool:
     return bool(a * b)
 
 
-out = function('hello', 3.5, 3)
+output = function('hello', 3.5, 3)
 
-print(out)
+print(output)

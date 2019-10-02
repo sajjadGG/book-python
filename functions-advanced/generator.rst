@@ -364,16 +364,17 @@ Readability counts
         return x.replace('Иван', 'Ivan')
 
 
-    out = {
+    output = {
         value: asd(value)
         for key, value in DATA.items()
         if key == 'username'
     }
+    print(output)
     # {'Иван Иванович': 'Ivan Ivanоvic'}
 
 
-    out = ['CCCP' if k == 'Roscosmos' else 'USA' for k,v in DATA.items() if k == 'agency']
-    print(out)
+    output = ['CCCP' if k == 'Roscosmos' else 'USA' for k,v in DATA.items() if k == 'agency']
+    print(output)
     # ['USA']
 
 .. code-block:: python

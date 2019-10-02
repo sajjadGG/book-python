@@ -45,7 +45,7 @@ Making a Phonebook
     #   'Melissa Lewis: 548.326.4584 Bajkonur, Kazakhstan'
     # ]
 
-    out = [re.split(':?\s', entry, maxsplit=3) for entry in entries]
+    output = [re.split(':?\s', entry, maxsplit=3) for entry in entries]
     # [
     #   ['Jan', 'Twardowski', '834.345.1254', 'Polish Space Agency'],
     #   ['Mark', 'Watney', '892.345.3428', 'Johnson Space Center'],

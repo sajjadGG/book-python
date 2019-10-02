@@ -60,7 +60,7 @@ class Setosa(Iris):
 
 
 header, *data = INPUT
-out = []
+output = []
 
 print('Species    Total   Avg')
 print('-' * 22)
@@ -69,12 +69,12 @@ print('-' * 22)
 for *measurements, species in data:
     if species == 'setosa':
         obj = Setosa(*measurements)
-        out.append(obj)
+        output.append(obj)
     elif species == 'versicolor':
         obj = Versicolor(*measurements)
-        out.append(obj)
+        output.append(obj)
     elif species == 'virginica':
         obj = Virginica(*measurements)
-        out.append(obj)
+        output.append(obj)
 
     print(f'{obj.species:>10} {obj.total():>5.1f} {obj.average():>5.2f}')

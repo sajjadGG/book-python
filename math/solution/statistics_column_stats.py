@@ -1,5 +1,5 @@
-from pprint import pprint
-from statistics import mean, stdev, median, variance
+from statistics import mean, stdev, variance, median
+
 
 INPUT = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
@@ -27,43 +27,22 @@ INPUT = [
 ]
 
 header, *data = INPUT
-
-sepal_length = []
-sepal_width = []
-petal_length = []
-petal_width = []
-
-
-for *measurements, species in data:
-    sepal_length.append(measurements[0])
-    sepal_width.append(measurements[1])
-    petal_length.append(measurements[2])
-    petal_width.append(measurements[3])
+sepal_length = [row[0] for row in data]
+sepal_width = [row[1] for row in data]
+petal_length = [row[2] for row in data]
+petal_width = [row[3] for row in data]
 
 
-print('Sepal Length')
-print('mean', mean(sepal_length))
-print('median', median(sepal_length))
-print('stdev', stdev(sepal_length))
-print('variance', variance(sepal_length))
-print()
+def stats(values):
+    return {
+        'mean': mean(values),
+        'stdev': stdev(values),
+        'median': median(values),
+        'variance': variance(values),
+    }
 
-print('Sepal Width')
-print('mean', mean(sepal_width))
-print('median', median(sepal_width))
-print('stdev', stdev(sepal_width))
-print('variance', variance(sepal_width))
-print()
 
-print('Petal Length')
-print('mean', mean(petal_length))
-print('median', median(petal_length))
-print('stdev', stdev(petal_length))
-print('variance', variance(petal_length))
-print()
-
-print('Petal Width')
-print('mean', mean(petal_width))
-print('median', median(petal_width))
-print('stdev', stdev(petal_width))
-print('variance', variance(petal_width))
+print('Sepal Length', stats(sepal_length))
+print('Sepal Width', stats(sepal_width))
+print('Petal Length', stats(petal_length))
+print('Petal Width', stats(petal_width))
