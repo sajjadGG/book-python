@@ -13,14 +13,22 @@ Builtin functions
 
     for liczba in range(0, 5):
         print(liczba)
-
+    # 0
+    # 1
+    # 2
+    # 3
+    # 4
 
     for liczba in range(0, 5, 2):
         print(liczba)
+    # 0
+    # 2
+    # 4
 
 .. code-block:: python
 
     numbers_generator = range(0, 5)
+
     print(numbers_generator)
     # range(0, 5)
 
@@ -29,11 +37,44 @@ Builtin functions
     numbers_generator = range(0, 5)
     numbers = list(numbers_generator)
 
-    print(numbers)  # [0, 1, 2, 3, 4]
+    print(numbers)
+    # [0, 1, 2, 3, 4]
 
 
 Sprawdzanie typów
 =================
+
+``type()``
+----------
+.. code-block:: python
+
+    type(1)         # <class 'int'>
+    type(1.2)       # <class 'float'>
+    type('hello')   # <class 'str'>
+
+    type(True)      # <class 'bool'>
+    type(False)     # <class 'bool'>
+    type(None)      # <class 'NoneType'>
+
+    type([1, 2])    # <class 'list'>
+    type((1, 2))    # <class 'tuple'>
+    type({1, 2})    # <class 'set'>
+    type({1: 2})    # <class 'dict'>
+
+.. code-block:: python
+
+    type(1) == int          # True
+    type(1.2) == float      # True
+
+    type(True) == bool      # True
+    type(False) == bool     # False
+
+    type(True) == int       # False
+    type(False) == int      # False
+
+    type(None) == int       # False
+    type(None) == bool      # False
+    type(None) == None      # False
 
 ``isinstance()``
 ----------------
@@ -42,15 +83,26 @@ Sprawdzanie typów
 
 .. code-block:: python
 
-    isinstance(10, int)           # True
-    isinstance(10, float)         # False
-    isinstance(10, (int, float))  # True
+    isinstance(10, int)             # True
+    isinstance(10, float)           # False
+    isinstance(10, (int, float))    # True
+
+.. code-block:: python
+
+    isinstance(True, float)         # False
+    isinstance(True, int)           # True
+    isinstance(True, bool)          # True
+
+    isinstance(False, float)        # False
+    isinstance(False, int)          # True
+    isinstance(False, bool)         # True
+
+    isinstance(None, int)           # False
+    isinstance(None, bool)          # False
+    isinstance(None, float)         # False
 
 ``issubclass()``
 ----------------
-
-``type()``
-----------
 
 
 Działania na kolekcjach
@@ -58,15 +110,45 @@ Działania na kolekcjach
 
 ``any()``
 ---------
+.. code-block:: python
+
+    DATA = [1, 2, 'three', 4]
+
+    if any(isinstance(x, str) for x in DATA):
+        print(True)
+    else:
+        print(False)
+
+    # True
 
 ``all()``
 ---------
+.. code-block:: python
+
+    DATA = [1, 2, 'three', 4]
+
+    if all(isinstance(x, int) for x in DATA):
+        print(True)
+    else:
+        print(False)
+
+    # False
 
 ``sum()``
 ---------
+.. code-block:: python
+
+    sum(x for x in range(0, 100))
+    # 4950
 
 ``len()``
 ---------
+.. code-block:: python
+
+    DATA = [1, 2, 3]
+
+    len(DATA)
+    # 3
 
 
 Konwersje typów
@@ -218,7 +300,7 @@ Average
 :English:
     #. For given ``INPUT`` (see below)
     #. Separate header and data
-    #. Define dict ``OUTPUT``, keys are column names from header
+    #. Define dict ``OUTPUT: Dict[str, list]``, keys are column names from header
     #. For each row in data, add values to proper lists in ``OUTPUT``
     #. Define function ``mean()``, calculating mean for arbitrary number of arguments
     #. Return ``None`` if any argument to the function is not ``float`` or ``int``
@@ -266,7 +348,7 @@ Average
 :Output:
     .. code-block:: python
 
-        OUTPUT = {
+        OUTPUT: Dict[str, list] = {
             'Sepal length': [5.8, 5.1, ...],
             'Sepal width': [2.7, 3.5, ...],
             'Petal length': [5.1, 1.4, ...],

@@ -22,7 +22,7 @@ def km_to_meters(kilometers: Union[int, float]) -> float:
     >>> km_to_meters('one')
     Traceback (most recent call last):
         ...
-    TypeError: Invalid Type of an Argument
+    TypeError: Invalid type of an Argument
 
     >>> km_to_meters(1.5)
     1500.0
@@ -30,11 +30,11 @@ def km_to_meters(kilometers: Union[int, float]) -> float:
     >>> km_to_meters(True)
     Traceback (most recent call last):
         ...
-    TypeError: Invalid Type of an Argument
+    TypeError: Invalid type of an Argument
 
     """
     if type(kilometers) not in {int, float}:
-        raise TypeError('Invalid Type of an Argument')
+        raise TypeError('Invalid type of an Argument')
 
     if kilometers < 0:
         raise ValueError('Argument must be not negative')
