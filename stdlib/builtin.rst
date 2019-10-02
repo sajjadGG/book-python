@@ -214,7 +214,7 @@ Z pozycji w tablicy ASCII konwertuje kod na znak Unicode.
 Other builtin functions
 =======================
 .. csv-table:: Most used Built-in functions
-    :header-rows: 1
+    :widths: 20, 80
     :header: "Name", "Description"
 
     "``abs()``", "Return the absolute value of the argument."
