@@ -98,67 +98,38 @@ Test for ``str`` return values
 
 Returning ``str``
 -----------------
+* Python will change to single quotes in most cases
+* Python will change to double quotes to avoid escapes
+
 .. code-block:: python
+    :caption: Python will change to single quotes in most cases
+    :emphasize-lines: 3-4,7-8,11-12,15-16
 
     def echo(text):
         """
         >>> echo('hello')
         'hello'
-        """
-        return text
 
-.. code-block:: python
+        # Python will change to single quotes in most cases
+        >>> echo("hello")
+        'hello'
 
-    def echo(text='default text'):
-        """
-        >>> echo()
-        'default text'
-        """
-        return text
-
-Python forces single quotes
----------------------------
-* Those tests will fail, because of quotes
-
- .. code-block:: python
-    :caption: Test will fail, Python will automatically change to single quotes
-    :emphasize-lines: 4
-
-     def echo(text):
-        """
+        Following test will fail
         >>> echo('hello')
         "hello"
-        """
-        return text
 
- .. code-block:: python
-    :caption: Test will fail, Python will automatically change to single quotes
-    :emphasize-lines: 4
-
-     def echo(text):
-        """
-        >>> echo("hello")
-        "hello"
-        """
-        return text
-
-Python changes to single quotes to avoid escapes
-------------------------------------------------
- .. code-block:: python
-    :caption: Python will automatically change quotes to avoid escapes
-    :emphasize-lines: 3,4
-
-     def echo(text):
-        """
+        Python will change to double quotes to avoid escapes
         >>> echo('It\\'s Twardowski\\'s Moon')
         "It's Twardowski's Moon"
         """
         return text
 
-Testing ``print(str)``
-----------------------
+Testing ``print()``
+-------------------
+* ``print()`` function results, don't have quotes
+
 .. code-block:: python
-    :caption: ``print`` function results, don't have quotes
+    :caption: ``print()`` function results, don't have quotes
     :emphasize-lines: 4
 
     def echo(text):
@@ -168,19 +139,6 @@ Testing ``print(str)``
         """
         print(text)
 
-.. code-block:: python
-    :caption: ``print`` function results, don't have quotes
-    :emphasize-lines: 4
-
-    def echo(text='default text'):
-        """
-        >>> hello()
-        default text
-        """
-        print(text)
-
-Testing ``print(str)`` with newlines
-------------------------------------
 .. code-block:: python
     :caption: Testing ``print(str)`` with newlines
     :emphasize-lines: 7
@@ -204,10 +162,10 @@ Testing for exceptions
 
     def add_numbers(a, b):
         """
-        >>> add_numbers([1, 2])
+        >>> add_numbers('one', 'two')
         Traceback (most recent call last):
             ...
-        TypeError: add_numbers() missing 1 required positional argument: 'b'
+        TypeError: Argument must be int or float
         """
         if not isinstance(a, (int, float)):
             raise TypeError('Argument must be int or float')
@@ -242,10 +200,7 @@ Celsius to Kelvin temperature conversion
 .. code-block:: python
     :caption: Celsius to Kelvin temperature conversion
 
-    from typing import Union
-
-
-    def celsius_to_kelvin(temperature_in_celsius: Union[int, float]) -> float:
+    def celsius_to_kelvin(temperature_in_celsius):
         """
         >>> celsius_to_kelvin(0)
         273.15
@@ -282,53 +237,6 @@ Celsius to Kelvin temperature conversion
 
         return float(temperature_in_celsius + 273.15)
 
-
-Email regex
------------
-.. code-block:: python
-    :caption: Function check email address against Regular Expression
-
-    import re
-
-    VALID_EMAIL = r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,}$'
-
-
-    def is_valid_email(email: str) -> bool:
-        """
-        >>> is_valid_email('jose.jimenez@nasa.gov')
-        True
-        >>> is_valid_email('Jose.Jimenez@nasa.gov')
-        True
-        >>> is_valid_email('+jose.jimenez@nasa.gov')
-        False
-        >>> is_valid_email('jose.jimenez+@nasa.gov')
-        True
-        >>> is_valid_email('jose.jimenez+newsletter@nasa.gov')
-        True
-        >>> is_valid_email('jose.jimenez@.gov')
-        False
-        >>> is_valid_email('@nasa.gov')
-        False
-        >>> is_valid_email('jose.jimenez@nasa.g')
-        False
-        """
-        if re.match(VALID_EMAIL, email):
-            return True
-        else:
-            return False
-
-URL Regex
----------
-.. code-block:: python
-
-    # @diegoperini --  https://mathiasbynens.be/demo/url-regex
-    REGEX = r'_^(?:(?:https?|ftp)://)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(?:\.(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(?:\.(?:[a-z\x{00a1}-\x{ffff}]{2,})))(?::\d{2,5})?(?:/[^\s]*)?$_iuS'
-
-    def is_valid_url(url):
-        if re.match(REGEX, url):
-            return True
-        else:
-            return False
 
 Assignments
 ===========
@@ -426,6 +334,7 @@ Fix URL Regex
 :Input:
     .. code-block:: python
 
+        # @diegoperini --  https://mathiasbynens.be/demo/url-regex
         PATTERN = r'_^(?:(?:https?|ftp)://)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(?:\.(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(?:\.(?:[a-z\x{00a1}-\x{ffff}]{2,})))(?::\d{2,5})?(?:/[^\s]*)?$_iuS'
 
         VALID = [
