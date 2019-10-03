@@ -1,54 +1,62 @@
-from typing import List, Dict, Optional
+class Crew:
+    def __init__(self, members=()):
+        self.members = list(members)
+
+    def __repr__(self):
+        return str(self.members)
 
 
-class Address:
-    def __init__(self, **kwargs: Dict[str, str]) -> None:
-        for key, value in kwargs.items():
-            setattr(self, key, value)
-
-    def __str__(self) -> str:
-        city = getattr(self, 'city', 'n/a')
-        return f'{city}'
-
-    def __repr__(self) -> str:
-        return self.__str__()
-
-
-class Contact:
-    def __init__(self, first_name: str, last_name: str, addresses: Optional[List[Address]] = None) -> None:
+class Astronaut:
+    def __init__(self, first_name, last_name, locations=()):
         self.first_name = first_name
         self.last_name = last_name
-        self.addresses = list(addresses) if addresses else list()
+        self.locations = list(locations)
 
-    def __str__(self) -> str:
-        if self.addresses:
-            return f'{self.first_name} {self.last_name} {self.addresses}'
+    def __str__(self):
+        if self.locations:
+            return f'{self.first_name} {self.last_name} {self.locations}'
         else:
             return f'{self.first_name} {self.last_name}'
 
-    def __repr__(self) -> str:
-        return self.__str__()
+    def __repr__(self):
+        return str(self)
 
 
-melissa = Contact(first_name='Melissa', last_name='Lewis')
+class Location:
+    def __init__(self, name):
+        self.name = name
+
+    def __repr__(self):
+        return f'{self.name}'
+
+
+melissa = Astronaut(first_name='Melissa', last_name='Lewis')
 print(melissa)
 # Melissa Lewis
 
-mark = Contact(first_name='Mark', last_name='Watney', addresses=[Address(city='Houston'), Address(city='Cocoa Beach')])
+mark = Astronaut(first_name='Mark', last_name='Watney', locations=[Location('Johnson Space Center'), Location('Kennedy Space Center')])
 print(mark)
-# Mark Watney [Houston, Cocoa Beach]
+# Mark Watney [Johnson Space Center, Kennedy Space Center]
 
-addressbook = [
-    Contact(first_name='Jan', last_name='Twardowski', addresses=[
-        Address(street='2101 E NASA Pkwy', miasto='Houston', stan='Texas', kod='77058', panstwo='USA'),
-        Address(ulica=None, miasto='Kennedy Space Center', kod='32899', panstwo='USA'),
-        Address(ulica='4800 Oak Grove Dr', miasto='Pasadena', kod='91109', panstwo='USA'),
-        Address(ulica='2825 E Ave P', miasto='Palmdale', stan='California', kod='93550', panstwo='USA'),
+crew = Crew([
+    Astronaut(first_name='Jan', last_name='Twardowski', locations=[
+        Location('Johnson Space Center'),
+        Location('Kennedy Space Center'),
+        Location('Jet Propulsion Laboratory'),
+        Location('Armstrong Flight Research Center'),
     ]),
-    Contact(first_name='José', last_name='Jiménez'),
-    Contact(first_name='Иван', last_name='Иванович', addresses=[]),
-]
+    Astronaut(first_name='José', last_name='Jiménez'),
+    Astronaut(first_name='Иван', last_name='Иванович', locations=[]),
+])
 
 
-print(addressbook)
-# [Jan Twardowski [Houston, Kennedy Space Center, Pasadena, Palmdale], José Jiménez, Иван Иванович]
+print(crew)
+# [
+#   José Jiménez,
+#   Иван Иванович,
+#   Jan Twardowski [
+#       Johnson Space Center,
+#       Kennedy Space Center,
+#       Jet Propulsion Laboratory,
+#       Armstrong Flight Research Center]
+# ]

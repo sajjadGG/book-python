@@ -1,3 +1,4 @@
+.. _Stringify objects:
 *****************
 Stringify objects
 *****************
@@ -159,6 +160,7 @@ Stringify objects
     f'{point:dict}'         # "{'x': 1, 'y': 2, 'z': 0}"
     f'{point:json}'         # '{"x": 1, "y": 2, "z": 0}'
 
+
 Assignments
 ===========
 
@@ -178,29 +180,32 @@ Address Book from API
     #. Przeciąż ``str`` i ``repr`` aby osiągnąć rezultat wyświetlania
 
 :The whys and wherefores:
-    * Casting objects to str
+    * :ref:`Stringify objects`
 
 :Input:
     .. code-block:: python
         :caption: Address Book
 
         class Crew:
-            pass
+            def __init__(self, members=()):
+                self.members = list(members)
 
         class Astronaut:
-            pass
+            def __init__(self, first_name, last_name, locations=()):
+                self.first_name = first_name
+                self.last_name = last_name
+                self.locations = list(locations)
 
         class Location:
-            pass
+            def __init__(self, name):
+                self.name = name
 
 
         melissa = Astronaut(first_name='Melissa', last_name='Lewis')
-        print(melissa)
-        # Melissa Lewis
+        print(f'Commander: \n{melissa}\n')
 
         mark = Astronaut(first_name='Mark', last_name='Watney', locations=[Location('Johnson Space Center'), Location('Kennedy Space Center')])
-        print(mark)
-        # Mark Watney [Johnson Space Center, Kennedy Space Center]
+        print(f'Space Pirate: \n{mark}\n')
 
         crew = Crew([
             Astronaut(first_name='Jan', last_name='Twardowski', locations=[
@@ -213,24 +218,18 @@ Address Book from API
             Astronaut(first_name='Иван', last_name='Иванович', locations=[]),
         ])
 
-
-        print(crew)
-        # [
-        #   José Jiménez,
-        #   Иван Иванович,
-        #   Jan Twardowski [
-        #       Johnson Space Center,
-        #       Kennedy Space Center,
-        #       Jet Propulsion Laboratory,
-        #       Armstrong Flight Research Center]
-        # ]
+        print(f'Crew: {crew}')
 
 :Output:
     .. code-block:: text
 
+        Commander:
         Melissa Lewis
-        Mark Watney [Houston, Cocoa Beach]
-        [
+
+        Space Pirate:
+        Mark Watney [Johnson Space Center, Kennedy Space Center]
+
+        Crew: [
           José Jiménez,
           Иван Иванович,
           Jan Twardowski [

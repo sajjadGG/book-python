@@ -97,6 +97,26 @@ Functions
     /functions/recurrence.rst
     /functions/doctest.rst
 
+**********
+OOP Syntax
+**********
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: OOP Syntax
+    :name: OOP Syntax
+
+    /oop-syntax/class.rst
+    /oop-syntax/attribute.rst
+    /oop-syntax/method.rst
+    /oop-syntax/init.rst
+    /oop-syntax/stringify.rst
+    /oop-syntax/inheritance.rst
+    /oop-syntax/enum.rst
+    /oop-syntax/operator-overload.rst
+    /oop-syntax/dataclass.rst
+    /oop-syntax/exam.rst
+
 ****************
 Standard Library
 ****************
@@ -174,26 +194,6 @@ Database
     /database/data-exploration.rst
     /database/sql-injection.rst
     /database/sql.rst
-
-**********
-OOP Syntax
-**********
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: OOP Syntax
-    :name: OOP Syntax
-
-    /oop-syntax/class.rst
-    /oop-syntax/attribute.rst
-    /oop-syntax/method.rst
-    /oop-syntax/init.rst
-    /oop-syntax/inheritance.rst
-    /oop-syntax/stringify.rst
-    /oop-syntax/operator-overload.rst
-    /oop-syntax/enum.rst
-    /oop-syntax/dataclass.rst
-    /oop-syntax/exam.rst
 
 *************************
 Good Engineering Practice
