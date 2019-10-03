@@ -261,16 +261,16 @@ Pickle serialization
 
 
         class Address:
-            def __init__(self, center, location):
-                self.center = center
+            def __init__(self, location, city):
                 self.location = location
+                self.city = city
 
 
         INPUT = [
             Contact(first_name='Jan', last_name='Twardowski', addresses=(
-                Address(center='Johnson Space Center', location='Houston, TX'),
-                Address(center='Kennedy Space Center', location='Merritt Island, FL'),
-                Address(center='Jet Propulsion Laboratory', location='Pasadena, CA'),
+                Address(location='Johnson Space Center', city='Houston, TX'),
+                Address(location='Kennedy Space Center', city='Merritt Island, FL'),
+                Address(location='Jet Propulsion Laboratory', city='Pasadena, CA'),
             )),
             Contact(first_name='Mark', last_name='Watney'),
             Contact(first_name='Melissa', last_name='Lewis', addresses=()),

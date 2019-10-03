@@ -1,4 +1,4 @@
-import csv
+from csv import DictReader, QUOTE_NONE
 
 
 FILE = r'../data/iris.csv'
@@ -12,13 +12,11 @@ FIELDNAMES = [
 
 
 with open(FILE) as file:
-    data = csv.DictReader(
+    header, *data = DictReader(file,
         f=file,
         fieldnames=FIELDNAMES,
         delimiter=',',
-        quoting=csv.QUOTE_NONE)
-
-    next(data)
+        quoting=QUOTE_NONE)
 
     for row in data:
         print(dict(row))

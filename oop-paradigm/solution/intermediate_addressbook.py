@@ -4,8 +4,8 @@ class AddressBook:
 
 
 class Address:
-    def __init__(self, street=None, city=None):
-        self.street = street
+    def __init__(self, location, city):
+        self.location = location
         self.city = city
 
 
@@ -16,14 +16,13 @@ class Contact:
         self.address = addresses
 
 
-AddressBook([
-    Contact(first_name='José', last_name='Jiménez'),
-    Contact(first_name='Иван', last_name='Иванович', addresses=()),
-    Contact(first_name='Jan', last_name='Twardowski', addresses=[
-        Address(street='2101 E NASA Pkwy', city='Houston'),
-        Address(city='Kennedy Space Center'),
-        Address(street='4800 Oak Grove Dr', city='Pasadena'),
-        Address(street='2825 E Ave P', city='Palmdale'),
-    ])
+INPUT = AddressBook([
+    Contact(first_name='Jan', last_name='Twardowski', addresses=(
+        Address(location='Johnson Space Center', city='Houston, TX'),
+        Address(location='Kennedy Space Center', city='Merritt Island, FL'),
+        Address(location='Jet Propulsion Laboratory', city='Pasadena, CA'),
+    )),
+    Contact(first_name='Mark', last_name='Watney'),
+    Contact(first_name='Melissa', last_name='Lewis', addresses=()),
 ])
 

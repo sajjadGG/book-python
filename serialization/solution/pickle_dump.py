@@ -23,44 +23,48 @@ class Contact:
         return self.__str__()
 
 
-class Addressbook:
+class Address:
     def __init__(self, **kwargs):
-        # self.street = kwargs.get('street', None)
+        # self.location = kwargs.get('location', None)
         # self.city = kwargs.get('city', None)
         for var, value in kwargs.items():
            setattr(self, var, value)
 
     def __str__(self):
-        return f'{self.street} {self.city}'
+        return f'{self.location} {self.city}'
 
     def __repr__(self):
         return self.__str__()
 
 
-addressbook = [
-    Contact(first_name='Jan', last_name='Twardowski', addresses=[
-        Addressbook(ulica='2101 E NASA Pkwy', miasto='Houston', stan='Texas', kod='77058', panstwo='USA'),
-        Addressbook(ulica=None, miasto='Kennedy Space Center', kod='32899', panstwo='USA'),
-        Addressbook(ulica='4800 Oak Grove Dr', miasto='Pasadena', kod='91109', panstwo='USA'),
-        Addressbook(ulica='2825 E Ave P', miasto='Palmdale', stan='California', kod='93550', panstwo='USA', data_urodzenia=None),
-    ]),
-    Contact(first_name='José', last_name='Jiménez'),
-    Contact(first_name='Иван', last_name='Иванович', addresses=[]),
+INPUT = [
+    Contact(first_name='Jan', last_name='Twardowski', addresses=(
+        Address(location='Johnson Space Center', city='Houston, TX'),
+        Address(location='Kennedy Space Center', city='Merritt Island, FL'),
+        Address(location='Jet Propulsion Laboratory', city='Pasadena, CA'),
+    )),
+    Contact(first_name='Mark', last_name='Watney'),
+    Contact(first_name='Melissa', last_name='Lewis', addresses=()),
 ]
 
 
-
-log.debug(f'Addressbook: {addressbook}')
-
-
 with open(FILENAME_PICKLE, mode='wb') as file:
-    serialized = pickle.dumps(addressbook)
+    serialized = pickle.dumps(INPUT)
     file.write(serialized)
 
 
 with open(FILENAME_PICKLE, mode='rb') as file:
     unserialized = pickle.loads(file.read())
     log.debug(f'Pickle: {unserialized}')
+    # [
+    #     Jan Twardowski (
+    #         Johnson Space Center Houston, TX,
+    #         Kennedy Space Center Merritt Island, FL
+    #         Jet Propulsion Laboratory Pasadena, CA
+    #     ),
+    #     Mark Watney (),
+    #     Melissa Lewis ()
+    # ]
 
 
 
@@ -79,16 +83,25 @@ class JSONObjectDecoder(json.JSONDecoder):
 
     def decode_object(self, dictionary):
         if dictionary.get('city'):
-            return Addressbook(**dictionary)
+            return Address(**dictionary)
         else:
             return Contact(**dictionary)
 
 
 with open(FILENAME_JSON, 'w') as file:
-    serialized = json.dumps(addressbook, cls=JSONObjectEncoder)
+    serialized = json.dumps(INPUT, cls=JSONObjectEncoder)
     file.write(serialized)
 
 
 with open(FILENAME_JSON, 'r') as file:
     unserialized = json.loads(file.read(), cls=JSONObjectDecoder)
     log.debug(f'JSON: {unserialized}')
+    # [
+    #     Jan Twardowski [
+    #         Johnson Space Center Houston, TX,
+    #         Kennedy Space Center Merritt Island, FL
+    #         Jet Propulsion Laboratory Pasadena, CA
+    #     ],
+    #     Mark Watney [],
+    #     Melissa Lewis []
+    # ]

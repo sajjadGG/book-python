@@ -1,4 +1,4 @@
-import csv
+from csv import DictWriter, QUOTE_ALL
 
 
 FILENAME = r'../../_tmp/dictwriter_fixed.csv'
@@ -12,12 +12,12 @@ DATA = [
 
 
 with open(FILENAME, mode='w', encoding='utf-8') as file:
-    writer = csv.DictWriter(
+    writer = DictWriter(
         f=file,
         fieldnames=['first_name', 'last_name'],
         delimiter=';',
         quotechar='"',
-        quoting=csv.QUOTE_ALL,
+        quoting=QUOTE_ALL,
         lineterminator='\n')
 
     writer.writeheader()

@@ -22,19 +22,23 @@ class Contact:
 
 @dataclass
 class Address:
-    center: str
     location: str
+    city: str
 
 
-addressbook = Contact(first_name='Jan', last_name='Twardowski', addresses=(
-    Address(center='Johnson Space Center', location='Houston, TX'),
-    Address(center='Kennedy Space Center', location='Merritt Island, FL'),
-    Address(center='Jet Propulsion Laboratory', location='Pasadena, CA'),
-))
+INPUT = [
+    Contact(first_name='Jan', last_name='Twardowski', addresses=(
+        Address(location='Johnson Space Center', city='Houston, TX'),
+        Address(location='Kennedy Space Center', city='Merritt Island, FL'),
+        Address(location='Jet Propulsion Laboratory', city='Pasadena, CA'),
+    )),
+    Contact(first_name='Mark', last_name='Watney'),
+    Contact(first_name='Melissa', last_name='Lewis', addresses=()),
+]
 
-for contact in addressbook:
+for contact in INPUT:
     print(contact)
 
-# Address(center='Johnson Space Center', location='Houston, TX')
-# Address(center='Kennedy Space Center', location='Merritt Island, FL')
-# Address(center='Jet Propulsion Laboratory', location='Pasadena, CA')
+# Address(location='Johnson Space Center', city='Houston, TX')
+# Address(location='Kennedy Space Center', city='Merritt Island, FL')
+# Address(location='Jet Propulsion Laboratory', city='Pasadena, CA')

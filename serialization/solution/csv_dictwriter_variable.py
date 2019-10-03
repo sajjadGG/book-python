@@ -1,5 +1,4 @@
-import csv
-
+from csv import DictWriter, QUOTE_ALL
 
 FILENAME = r'../../_tmp/dictwriter_variable.csv'
 DATA = [
@@ -19,12 +18,12 @@ for row in DATA:
 # fieldnames == {'Sepal length', 'Sepal width', 'Petal length', 'Species', 'Petal width'}
 
 with open(FILENAME, mode='w') as file:
-    writer = csv.DictWriter(
+    writer = DictWriter(
         f=file,
         fieldnames=sorted(fieldnames),
         delimiter=',',
         quotechar='"',
-        quoting=csv.QUOTE_ALL,
+        quoting=QUOTE_ALL,
         lineterminator='\n')
 
     writer.writeheader()
