@@ -8,10 +8,10 @@ XML, XSLT, XPath
 .. code-block:: python
     :caption: ``xml`` module from standard library
 
-    import xml.etree.ElementTree
+    from xml.etree.ElementTree import parse
 
 
-    FILE = '../serialization/data/xml-commands.xml'
+    FILE = r'../serialization/data/xml-commands.xml'
     # <execute>
     #     <command timeout="2">/bin/ls -la /etc/</command>
     #     <command>/bin/ls -l /home/ /tmp/</command>
@@ -19,7 +19,7 @@ XML, XSLT, XPath
     #     <command timeout="2">/bin/echo 'juz wstalem'</command>
     # </execute>
 
-    root = xml.etree.ElementTree.parse(FILE).getroot()
+    root = parse(FILE).getroot()
 
     for command in root.findall('./command'):
         print(command.tag)
@@ -67,7 +67,6 @@ Creating elements
 
 
     root = Element("iris")
-
     root.append(Element("setosa"))
     root.append(Element("versicolor"))
     root.append(Element("virginica"))
@@ -84,7 +83,6 @@ Length of a subtree
 
 
     root = Element("iris")
-
     root.append(Element("setosa"))
     root.append(Element("versicolor"))
     root.append(Element("virginica"))
@@ -99,14 +97,13 @@ Selecting subtree
 
     from lxml.etree import Element
 
-    root = Element("iris")
 
+    root = Element("iris")
     root.append(Element("setosa"))
     root.append(Element("versicolor"))
     root.append(Element("virginica"))
 
     selected = root[2]
-
     print(selected.tag)
     # virginica
 
@@ -117,7 +114,6 @@ Selecting subtree
 
 
     root = Element("iris")
-
     root.append(Element("setosa"))
     root.append(Element("versicolor"))
     root.append(Element("virginica"))
@@ -139,7 +135,6 @@ Element tree as a lists
 
 
     root = Element("iris")
-
     root.append(Element("setosa"))
     root.append(Element("versicolor"))
     root.append(Element("virginica"))
@@ -159,7 +154,6 @@ Element tree as a lists
 
 
     root = Element("iris")
-
     root.append(Element("setosa"))
     root.append(Element("versicolor"))
     root.append(Element("virginica"))
@@ -178,11 +172,9 @@ Element tree as a lists
 
 
     root = Element("iris")
-
     root.append(Element("setosa"))
     root.append(Element("versicolor"))
     root.append(Element("virginica"))
-
 
     root.insert(0, Element("arctica"))
 
@@ -304,70 +296,130 @@ Elements contain text
     tostring(tag)
     # b'<iris>Setosa</iris>'
 
-
 Tree iteration
 --------------
 .. code-block:: python
 
-    >>> root = etree.Element("root")
-    >>> etree.SubElement(root, "child").text = "Child 1"
-    >>> etree.SubElement(root, "child").text = "Child 2"
-    >>> etree.SubElement(root, "another").text = "Child 3"
+    from lxml.etree import tostring, Element, SubElement
 
-    >>> print(etree.tostring(root, pretty_print=True))
-    <root>
-      <child>Child 1</child>
-      <child>Child 2</child>
-      <another>Child 3</another>
-    </root>
+    root = Element("iris")
+    SubElement(root, "species").text = "Setosa"
+    SubElement(root, "species").text = "Virginica"
+    SubElement(root, "flower").text = "Versicolor"
 
-    >>> for element in root.iter():
-    ...     print("%s - %s" % (element.tag, element.text))
-    root - None
-    child - Child 1
-    child - Child 2
-    another - Child 3
+    print(tostring(root, pretty_print=True))
+    # b'<iris>
+    #       <species>Setosa</species>
+    #       <species>Virginica</species>
+    #       <flower>Versicolor</flower>
+    # </iris>'
+
+
+    for element in root.iter():
+        print(f'{element.tag} -> {element.text}')
+
+    # iris -> None
+    # species -> Setosa
+    # species -> Virginica
+    # flower -> Versicolor
+
+
+    for element in root.iter("species"):
+        print(f'{element.tag} -> {element.text}')
+
+    # species -> Setosa
+    # species -> Virginica
+
+
+    for element in root.iter("species", "flower"):
+        print(f'{element.tag} -> {element.text}')
+
+    # species -> Setosa
+    # species -> Virginica
+    # flower -> Versicolor
+
+Entities
+--------
+.. code-block:: python
+
+    from lxml.etree import tostring, Element, SubElement, Entity
+
+    root = Element("iris")
+    print(tostring(root))
+    # b'<iris/>'
+
+    root.append(Entity("#234"))
+    print(tostring(root))
+    # b'<iris>&#234;</iris>'
+
+Comments
+--------
+.. code-block:: python
+
+    from lxml.etree import tostring, Element, SubElement, Comment
+
+    root = Element("iris")
+    print(tostring(root))
+    # b'<iris/>'
+
+    root.append(Comment("Hello World"))
+    print(tostring(root))
+    # b'<iris><!--Hello World--></iris>'
 
 .. code-block:: python
 
-    >>> for element in root.iter("child"):
-    ...     print("%s - %s" % (element.tag, element.text))
-    child - Child 1
-    child - Child 2
+    from lxml.etree import tostring, Element, SubElement, Comment
 
-    >>> for element in root.iter("another", "child"):
-    ...     print("%s - %s" % (element.tag, element.text))
-    child - Child 1
-    child - Child 2
-    another - Child 3
+    root = Element("iris")
+    SubElement(root, "species").text = "Setosa"
+    SubElement(root, "species").text = "Virginica"
+    SubElement(root, "flower").text = "Versicolor"
 
-.. code-block:: python
+    print(tostring(root))
+    # b'<iris><species>Setosa</species><species>Virginica</species><flower>Versicolor</flower></iris>'
 
-    >>> root.append(etree.Entity("#234"))
-    >>> root.append(etree.Comment("some comment"))
+    root.append(Entity("#234"))
+    print(tostring(root))
+    # b'<iris><species>Setosa</species><species>Virginica</species><flower>Versicolor</flower>&#234;</iris>'
 
-    >>> for element in root.iter():
-    ...     if isinstance(element.tag, basestring):  # or 'str' in Python 3
-    ...         print("%s - %s" % (element.tag, element.text))
-    ...     else:
-    ...         print("SPECIAL: %s - %s" % (element, element.text))
-    root - None
-    child - Child 1
-    child - Child 2
-    another - Child 3
-    SPECIAL: &#234; - &#234;
-    SPECIAL: <!--some comment--> - some comment
+    root.append(Comment("Hello World"))
+    print(tostring(root))
+    # b'<iris><species>Setosa</species><species>Virginica</species><flower>Versicolor</flower>&#234;<!--Hello World--></iris>'
 
-    >>> for element in root.iter(tag=etree.Element):
-    ...     print("%s - %s" % (element.tag, element.text))
-    root - None
-    child - Child 1
-    child - Child 2
-    another - Child 3
 
-    >>> for element in root.iter(tag=etree.Entity):
-    ...     print(element.text)
-    &#234;
+    for element in root.iter():
+        if isinstance(element.tag, str):
+            print(f'TAG: {element.tag} -> {element.text}')
+        else:
+            print(f'SPECIAL: {element} -> {element.text}')
+
+    # TAG: iris -> None
+    # TAG: species -> Setosa
+    # TAG: species -> Virginica
+    # TAG: flower -> Versicolor
+    # SPECIAL: &#234; -> &#234;
+    # SPECIAL: <!--Hello World--> -> Hello World
+
+
+    for element in root.iter(tag=Element):
+            print(f'{element.tag} -> {element.text}')
+
+    # iris -> None
+    # species -> Setosa
+    # species -> Virginica
+    # flower -> Versicolor
+
+
+    for element in root.iter(tag=Entity):
+        print(element.text)
+
+    # &#234;
+
+
+    for element in root.iter(tag=Comment):
+        print(element.text)
+
+    # Hello World
 
 Serialization
 -------------
