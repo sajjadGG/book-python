@@ -121,33 +121,24 @@ Methods
 
 :English:
     #. Create class ``Iris``
-    #. Create method ``total()`` which sums all the numerical attributes values
-    #. Create method ``mean()`` which calculates mean of numerical attributes values
+    #. Create method ``total()`` which calculates sum of all numerical attributes of an object
+    #. Create method ``mean()`` which calculates mean of all numerical attributes of an object (assume length equal to 4)
     #. Create ``setosa`` object with attributes set at the initialization (see input data)
     #. Create ``virginica`` object with attributes set at the initialization (see input data)
     #. Print species name, total and mean of each instance
 
 :Polish:
     #. Stwórz klasę ``Iris``
-    #. Napisz metodę ``total()`` wyliczającą sumę atrybutów numerycznych obiektu
-    #. Napisz metodę ``mean()`` wyliczającą średnią atrybutów numerycznych obiektu
+    #. Napisz metodę ``total()`` wyliczającą sumę wszystkich atrybutów numerycznych obiektu
+    #. Napisz metodę ``mean()`` wyliczającą średnią wszystkich atrybutów numerycznych obiektu (przyjmij długość równą 4)
     #. Stwórz obiekt ``setosa`` z pomiarami podawanymi przy inicjalizacji (patrz dane wejściowe)
     #. Stwórz obiekt ``virginica`` z pomiarami podawanymi przy inicjalizacji (patrz dane wejściowe)
     #. Wypisz nazwę gatunku oraz sumę i średnią z pomiarów dla każdej instancji
 
 :Input:
-    .. code-block:: python
-        :caption: Setosa initial values
+    .. csv-table:: Initial values
+        :header: "Sepal length", "Sepal width", "Petal length", "Petal width", "Species"
+        :widths: 10, 10, 10, 10, 60
 
-        sepal_length = 5.4
-        sepal_width = 3.9
-        petal_length = 1.3
-        petal_width = 0.4
-
-    .. code-block:: python
-        :caption: Virginica initial values
-
-        sepal_length = 5.8
-        sepal_width = 2.7
-        petal_length = 5.1
-        petal_width = 1.9
+        "5.8", "2.7", "5.1", "1.9", "virginica"
+        "5.1", "3.5", "1.4", "0.2", "setosa"
