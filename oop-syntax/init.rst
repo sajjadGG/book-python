@@ -42,6 +42,24 @@ Initializer method with arguments
     # TypeError: __init__() missing 1 required positional argument: 'species'
 
 
+Checking values
+===============
+.. code-block:: python
+
+    class Kelvin:
+        def __init__(self, value):
+            if self.value < 0.0:
+                raise ValueError('Kelvin temperature must be greater than 0')
+            else:
+                self.value = value
+
+    ice = Kelvin(273.15)
+    print(ice)
+    # 273.15
+
+    not_existing = Kelvin(-300)
+    # ValueError: Kelvin temperature must be greater than 0'
+
 Assignment
 ==========
 
