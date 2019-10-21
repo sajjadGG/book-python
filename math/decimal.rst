@@ -60,6 +60,23 @@ Normalized Line
     Normalized Line
 
 
+doctests
+========
+.. code-block:: python
+
+    def add_numbers(a, b):
+        """
+        >>> add_numbers(2.5, 1.2)
+        3.7
+
+        >>> add_numbers(0.1, 0.2)
+        0.30000000000000004
+
+        >>> add_numbers(0.1, 0.2)
+        0.1 + 0.2 == 0.3000...
+        """
+        return a + b
+
 ``decimal``
 ===========
 .. code-block:: python

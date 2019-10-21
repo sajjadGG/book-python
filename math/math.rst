@@ -154,7 +154,7 @@ Absolute value
 .. code-block:: python
 
     abs(1)          # 1
-    abs(-1)         # -1
+    abs(-1)         # 1
 
     abs(1.2)        # 1.2
     abs(-1.2)       # 1.2
