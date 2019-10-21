@@ -12,7 +12,7 @@ FIELDNAMES = [
 
 
 with open(FILE) as file:
-    header, *data = DictReader(file,
+    header, *data = DictReader(
         f=file,
         fieldnames=FIELDNAMES,
         delimiter=',',

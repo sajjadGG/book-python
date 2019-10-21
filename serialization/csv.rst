@@ -29,11 +29,11 @@ Dialects
     * ``lineterminator='\n'`` to ``csv.DictReader()`` object
     * ``encoding='utf-8'`` to ``open()`` function (especially when working with Microsoft Excel)
 
-* Microsoft Excel uses:
+* Microsoft Excel 2016 uses:
 
     * ``quotechar='"'``
-    * ``delimiter=';'``
-    * ``lineterminator='\r\n'``
+    * ``delimiter=','``
+    * ``lineterminator='\n'``
     * ``encoding='...'`` - depends on Windows version and settings
 
 * Encoding:
@@ -450,12 +450,12 @@ Write variable schema data to file
 
 :English:
     #. Using ``csv.DictWriter()`` write variable schema data to CSV file
-    #. ``fieldnames`` must be automatically generated from ``DATA``
+    #. ``fieldnames`` must be automatically generated from ``INPUT``
     #. ``fieldnames`` must always be in the same order
 
 :Polish:
     #. Za pomocą ``csv.DictWriter()`` zapisz do pliku CSV dane o zmiennej strukturze
-    #. ``fieldnames`` musi być generowane automatycznie na podstawie ``DATA``
+    #. ``fieldnames`` musi być generowane automatycznie na podstawie ``INPUT``
     #. ``fieldnames`` ma być zawsze w takiej samej kolejności
     #. Rezultat powinien wyglądać tak:
 

@@ -1,4 +1,4 @@
-.. _Loops:
+.. _For loop:
 
 ************
 ``for`` loop

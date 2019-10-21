@@ -53,7 +53,7 @@ Elementy języka Python i biblioteki standardowej
 ------------------------------------------------
 * :ref:`Data Types`
 * :ref:`Control Flow`
-* :ref:`Loops`
+* :ref:`For loop`
 * :ref:`Function Basics`
 * :ref:`Print Formatting`
 * :ref:`Operators`

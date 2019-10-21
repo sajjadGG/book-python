@@ -4,7 +4,7 @@ email = 'matt@astrotech.io'
 
 html_theme = 'sphinx_rtd_theme'
 
-todo_emit_warnings = True
+todo_emit_warnings = False
 todo_include_todos = True
 
 extensions = [

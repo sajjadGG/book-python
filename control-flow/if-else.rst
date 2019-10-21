@@ -1,3 +1,5 @@
+.. _Conditional Statements:
+
 **********************
 Conditional Statements
 **********************

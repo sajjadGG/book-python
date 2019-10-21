@@ -1,3 +1,5 @@
+.. _Nested Data Structures:
+
 ******************
 Nested Collections
 ******************

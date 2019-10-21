@@ -9,14 +9,13 @@ Relational Files Database
 * Lines of code to write: 100-150 lines
 * Estimated time of completion: 60 min
 * Filename: :download:`solution/exam.py`
-* Input data: :numref:`code-file-etc-passwd`, :numref:`code-file-etc-shadow`, :numref:`code-file-etc-group`
 
 :English:
     #. Save listings content to files:
 
-        - ``etc_passwd.txt`` - :numref:`code-file-etc-passwd`
-        - ``etc_shadow.txt`` - :numref:`code-file-etc-shadow`
-        - ``etc_group.txt`` - :numref:`code-file-etc-group`
+        - ``etc_passwd.txt`` - :numref:`code-exam-etc-passwd`
+        - ``etc_shadow.txt`` - :numref:`code-exam-etc-shadow`
+        - ``etc_group.txt`` - :numref:`code-exam-etc-group`
 
     #. Copy also comments and empty lines
     #. Parse files and convert it to ``OUTPUT: List[dict]``
@@ -26,9 +25,9 @@ Relational Files Database
 :Polish:
     #. Zapisz treści listingów do plików:
 
-        - ``etc_passwd.txt`` - :numref:`code-file-etc-passwd`
-        - ``etc_shadow.txt`` - :numref:`code-file-etc-shadow`
-        - ``etc_group.txt`` - :numref:`code-file-etc-group`
+        - ``etc_passwd.txt`` - :numref:`code-exam-etc-passwd`
+        - ``etc_shadow.txt`` - :numref:`code-exam-etc-shadow`
+        - ``etc_group.txt`` - :numref:`code-exam-etc-group`
 
     #. Skopiuj również komentarze i puste linie
     #. Sparsuj plik i przedstaw go w formacie ``OUTPUT: List[dict]``
@@ -37,17 +36,17 @@ Relational Files Database
 
 :Input:
     .. literalinclude:: data/etc-passwd.txt
-        :name: code-file-etc-passwd
+        :name: code-exam-etc-passwd
         :language: text
         :caption: Przykładowa zawartość pliku ``/etc/passwd``
 
     .. literalinclude:: data/etc-shadow.txt
-        :name: code-file-etc-shadow
+        :name: code-exam-etc-shadow
         :language: text
         :caption: Przykładowa zawartość pliku ``/etc/shadow``
 
     .. literalinclude:: data/etc-group.txt
-        :name: code-file-etc-group
+        :name: code-exam-etc-group
         :language: text
         :caption: Przykładowa zawartość pliku ``/etc/group``
 
@@ -76,5 +75,5 @@ Relational Files Database
     * :ref:`Nested Data Structures`
     * :ref:`Comprehensions`
     * :ref:`For loop`
-    * :ref:`Conditionals`
+    * :ref:`Conditional Statements`
     * :ref:`Str methods`
