@@ -15,11 +15,17 @@ Why to use operator overload?
             self.x = x
             self.y = y
 
+        def __str__(self):
+            return f'Vector(x={self.x}, y={self.y})'
 
     vector1 = Vector(x=1, y=2)
     vector2 = Vector(x=3, y=4)
+    vector3 = Vector(x=5, y=6)
 
-    suma = vector1 + vector2
+    output = vector1 + vector2
+    # TypeError: unsupported operand type(s) for +: 'Vector' and 'Vector'
+
+    output = vector1 + vector2 + vector3
     # TypeError: unsupported operand type(s) for +: 'Vector' and 'Vector'
 
 .. code-block:: python
@@ -42,12 +48,12 @@ Why to use operator overload?
     vector2 = Vector(x=3, y=4)
     vector3 = Vector(x=5, y=6)
 
-    suma = vector1 + vector2
-    print(suma)
+    output = vector1 + vector2
+    print(output)
     # Vector(x=4, y=6)
 
-    suma = vector1 + vector2 + vector3
-    print(suma)
+    output = vector1 + vector2 + vector3
+    print(output)
     # Vector(x=9, y=12)
 
 
@@ -72,11 +78,11 @@ Numerical Operators
 .. code-block:: python
     :caption: Modulo operator for ``int`` and ``str``
 
-    7 % 2               # 1
-    'My number' % 2     # TypeError: not all arguments converted during string formatting
-    'My number %s' % 2  # My number 2
-    'My number %d' % 2  # My number 2
-    'My number %f' % 2  # My number 2.0
+    7 % 2                   # 1
+    'My number' % 2         # TypeError: not all arguments converted during string formatting
+    'My number %s' % 2      # My number 2
+    'My number %d' % 2      # My number 2
+    'My number %f' % 2      # My number 2.0
 
 .. note:: ``%s``, ``%d``, ``%f`` is currently deprecated in favor of ``f'...'`` string formatting. The topic will be continued in :ref:`Print Formatting` chapter.
 
@@ -147,13 +153,14 @@ Builtin Functions and Keywords
 Accessors Overload
 ------------------
 .. csv-table:: Operator Overload
-    :header: "Operator", "Description"
+    :header: "Operator", "Method", "Description"
+    :widths: 15, 25, 60
 
-    "``a(b)``",                                 "``a.__call__(b)``"
-    "``a[b]``",                                 "``a.__getitem__(b)``"
-    "``a[b] = 10``",                            "``a.__setitem__(b, 10)``"
-    "``a in b``",                               "``a.__contains__(b)``"
-    "``a[b]`` (when ``b`` is not in ``a``)",    "``a.__missing__(b)``"
+    "``a(b)``",         "``a.__call__(b)``"
+    "``a[b] = 10``",    "``a.__setitem__(b, 10)``"
+    "``a[b]``",         "``a.__getitem__(b)``"
+    "``a in b``",       "``a.__contains__(b)``"
+    "``a[b]``",         "``a.__missing__(b)``", "(when ``b`` is not in ``a``)"
 
 .. code-block:: python
     :caption: Contains in ``numpy``
@@ -191,11 +198,11 @@ Address Book
 
 :English:
     #. Use the code from listing below
-    #. Override operators of ``Contact`` and ``Address`` for code to work correctly
+    #. Override operators of ``Astronaut`` and ``Location`` for code to work correctly
 
 :Polish:
     #. Użyj kodu z listingu poniżej
-    #. Nadpisz operatory ``Contact`` i ``Address`` aby poniższy kod zadziałał poprawnie
+    #. Nadpisz operatory ``Astronaut`` i ``Location`` aby poniższy kod zadziałał poprawnie
 
 .. code-block:: python
 
