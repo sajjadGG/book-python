@@ -159,7 +159,7 @@ Accessors Overload
     "``a(b)``",         "``a.__call__(b)``"
     "``a[b] = 10``",    "``a.__setitem__(b, 10)``"
     "``a[b]``",         "``a.__getitem__(b)``"
-    "``a in b``",       "``a.__contains__(b)``"
+    "``b in a``",       "``a.__contains__(b)``"
     "``a[b]``",         "``a.__missing__(b)``", "(when ``b`` is not in ``a``)"
 
 .. code-block:: python
