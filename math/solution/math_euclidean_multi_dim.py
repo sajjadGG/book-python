@@ -33,6 +33,11 @@ def euclidean_distance_n_dimensions(A, B):
     #     n2 = B[index]
     #     under_sqrt += (n2-n1) ** 2
 
+    # for index in range(len(A)):
+    #     n1 = A[index]
+    #     n2 = B[index]
+    #     under_sqrt += (n2-n1) ** 2
+
     # number_of_dimensions = len(A)
     # for index in range(number_of_dimensions):
     #     n1 = A[index]
