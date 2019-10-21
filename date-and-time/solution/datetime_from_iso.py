@@ -1,7 +1,7 @@
 from datetime import datetime
 
 
-dt = '1969-07-21T02:56:15.123Z'
-output = datetime.strptime(dt, '%Y-%m-%dT%H:%M:%S.%fZ')
+INPUT = '1969-07-21T02:56:15.123Z'
 
-print(output)
+OUTPUT = datetime.strptime(INPUT, '%Y-%m-%dT%H:%M:%S.%fZ')
+print(OUTPUT)

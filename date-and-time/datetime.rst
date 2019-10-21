@@ -38,6 +38,7 @@ Current ``date``
 
 ``date`` methods
 --------------------
+
 .. code-block:: python
     :caption: ``date`` object methods
 
@@ -45,10 +46,16 @@ Current ``date``
 
 
     d = date(1969, 7, 21)
+    # datetime.date(1969, 7, 21)    # This is Monday
 
-    d.weekday()         # 0  # in US week starts with Sunday
-    d.isoweekday()      # 1
-    d.isoformat()       # '1969-07-21'
+    d.weekday()
+    # 0                             # Python defines Monday as zero
+
+    d.isoweekday()
+    # 1                             # ISO defines Monday as zero
+
+    d.isoformat()
+    # '1969-07-21'
 
 
 Creating ``time`` objects
@@ -73,7 +80,7 @@ Create ``time``
 Noon and midnight
 -----------------
 .. code-block:: python
-    :caption: ``time`` object representing midnight
+    :caption: ``time`` object representing midnight and noon
 
     from datetime import time
 
@@ -85,6 +92,8 @@ Noon and midnight
     time(12)            # datetime.time(12, 0)
     time(12, 0)         # datetime.time(12, 0)
     time(12, 0, 0)      # datetime.time(12, 0)
+
+    time(24, 0)         # ValueError: hour must be in 0..23
 
 
 Creating ``datetime`` objects
@@ -183,12 +192,20 @@ Create ``datetime`` from ``date`` and ``time`` objects
     dt = datetime(1969, 7, 21, 2, 56, 15)
     # datetime.datetime(1969, 7, 21, 2, 56, 15)
 
-    dt.date()        # datetime.date(1969, 7, 21)
-    dt.time()        # datetime.time(2, 56, 15)
+    dt.date()
+    # datetime.date(1969, 7, 21)
 
-    dt.weekday()     # 0  # in US week starts with Sunday
-    dt.isoweekday()  # 1
-    dt.isoformat()   # '1969-07-21T02:56:15'
+    dt.time()
+    # datetime.time(2, 56, 15)
+
+    d.weekday()
+    # 0             # Python defines Monday as zero
+
+    d.isoweekday()
+    # 1             # ISO defines Monday as one
+
+    dt.isoformat()
+    # '1969-07-21T02:56:15'
 
 Current ``datetime`` in local time
 ----------------------------------

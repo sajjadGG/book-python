@@ -1,6 +1,11 @@
 from datetime import datetime, date
 
 
-today = date.today()
-now = datetime.now()
-now_time = datetime.now().time()
+dt = datetime.now()
+d = dt.date()
+t = dt.time()
+
+## Alternative
+# dt = datetime.now()
+# d = date.today()
+# t = datetime.now().time()

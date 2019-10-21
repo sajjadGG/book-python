@@ -10,9 +10,9 @@ class Astronaut:
         self.locations.append(other)
         return self
 
-    def __contains__(self, item):
+    def __contains__(self, location):
         for address in self.locations:
-            if address == item:
+            if address == location:
                 return True
         return False
 

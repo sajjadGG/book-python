@@ -256,9 +256,9 @@ Hist
     import pandas as pd
 
 
-    FILE = 'https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv'
+    INPUT = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris.csv'
 
-    df = pd.read_csv(FILE)
+    df = pd.read_csv(INPUT)
     df.hist()
     plt.show()
 
@@ -266,7 +266,7 @@ Hist
     :scale: 100%
     :align: center
 
-    Vizualization using hist
+    Visualization using hist
 
 Density
 -------
@@ -276,17 +276,18 @@ Density
     import pandas as pd
 
 
-    FILE = 'https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv'
+    INPUT = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris.csv'
 
-    df = pd.read_csv(FILE)
-    df.plot(kind='density', subplots=True, layout=(3,3), sharex=False)
+
+    df = pd.read_csv(INPUT)
+    df.plot(kind='density', subplots=True, layout=(2,2), sharex=False)
     plt.show()
 
 .. figure:: img/matplotlib-pd-density.png
     :scale: 100%
     :align: center
 
-    Vizualization using density
+    Visualization using density
 
 Box
 ---
@@ -296,17 +297,18 @@ Box
     import pandas as pd
 
 
-    FILE = 'https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv'
+    INPUT = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris.csv'
 
-    df = pd.read_csv(url)
-    df.plot(kind='box', subplots=True, layout=(3,3), sharex=False, sharey=False)
+
+    df = pd.read_csv(INPUT)
+    df.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
     plt.show()
 
 .. figure:: img/matplotlib-pd-box.png
     :scale: 100%
     :align: center
 
-    Vizualization using density
+    Visualization using density
 
 Scatter matrix
 --------------
@@ -320,9 +322,10 @@ Scatter matrix
     from pandas.plotting import scatter_matrix
 
 
-    FILE = 'https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv'
+    INPUT = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris.csv'
 
-    df = pd.read_csv(url)
+
+    df = pd.read_csv(INPUT)
     scatter_matrix(df)
     plt.show()
 
@@ -330,7 +333,7 @@ Scatter matrix
     :scale: 100%
     :align: center
 
-    Vizualization using density
+    Visualization using density
 
 Descriptive statistics
 ----------------------
@@ -402,12 +405,12 @@ Write fixed schema data to CSV file
 * Filename: :download:`solution/csv_dictwriter_fixed.py`
 
 :English:
-    #. Using ``csv.DictWriter()`` save ``DATA`` to file
+    #. Using ``csv.DictWriter()`` save ``INPUT`` (see below) to file
     #. Open file in your spreadsheet program like Microsoft Excel / Libre Office / Numbers etc.
     #. Open file in simple in your IDE and simple text editor (like Notepad, vim, gedit)
 
 :Polish:
-    #. Za pomocą ``csv.DictWriter()`` zapisz do pliku *CSV* dane o stałej strukturze
+    #. Za pomocą ``csv.DictWriter()`` zapisz ``INPUT`` (patrz poniżej) do pliku
     #. Spróbuj otworzyć plik w arkuszu kalkulacyjnym tj. Microsoft Excel / Libre Office / Numbers itp
     #. Spróbuj otworzyć plik w IDE i prostym edytorze tekstu tj. Notepad, vim lub gedit
 
