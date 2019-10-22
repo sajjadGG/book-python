@@ -367,7 +367,7 @@ Euclidean distance ``n`` dimensions
 * Filename: :download:`solution/numpy_euclidean_multi_dim.py`
 
 :English:
-    #. Given are two points ``A: Tuple[int, int]`` and ``B: Tuple[int, int]``
+    #. Given are two points ``A: Sequence[int]`` and ``B: Sequence[int]``
     #. Coordinates are in cartesian system
     #. Points ``A`` and ``B`` are in ``N``-dimensional space
     #. Points ``A` and ``B`` must be in the same space
@@ -375,7 +375,7 @@ Euclidean distance ``n`` dimensions
     #. Function must pass ``doctest``
 
 :Polish:
-    #. Dane są dwa punkty ``A: Tuple[Sequence[int]]`` i ``B: Tuple[Sequence[int]]``
+    #. Dane są dwa punkty ``A: Sequence[int]`` i ``B: Sequence[int]``
     #. Koordynaty są w systemie kartezjańskim
     #. Punkty ``A`` i ``B`` są w ``N``-wymiarowej przestrzeni
     #. Punkty ``A`` i ``B`` muszą być w tej samej przestrzeni
