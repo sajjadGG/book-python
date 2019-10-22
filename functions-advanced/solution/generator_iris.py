@@ -1,6 +1,6 @@
 import sys
 
-FILE = r'iris.csv'
+FILE = r'../data/iris.csv'
 
 
 def function_filter(selected_species):
@@ -33,6 +33,6 @@ if __name__ == '__main__':
     fun = function_filter('setosa')
     gen = generator_filter('setosa')
 
-    print(sys.getsizeof(fun))
-    print(sys.getsizeof(gen))
+    print('Fun', sys.getsizeof(fun))
+    print('Gen', sys.getsizeof(gen))
 
