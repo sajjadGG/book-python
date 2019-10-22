@@ -84,6 +84,18 @@ Normal (Gaussian) distribution
     np.random.normal(size=5)
     # array([-1.67215088, 0.65813053, -0.70150614, 0.91452499, 0.71440557])
 
+.. figure:: img/normal-distribution.png
+    :scale: 50%
+    :align: center
+
+    Normal (Gaussian) distribution :cite:`NormalDistribution`
+
+.. figure:: img/normal-distribution-scale.gif
+    :scale: 50%
+    :align: center
+
+    Normal (Gaussian) distribution scale :cite:`NormalDistribution`
+
 Poisson distribution
 --------------------
 * Draw samples from a Poisson distribution
@@ -94,6 +106,12 @@ Poisson distribution
 
     np.random.poisson(6.0)  # Poisson distribution with lambda = 6.0
     # 5
+
+.. figure:: img/poisson-distribution.png
+    :scale: 50%
+    :align: center
+
+    Poisson distribution :cite:`PoissonDistribution`
 
 
 Shuffle

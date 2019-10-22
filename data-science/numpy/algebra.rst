@@ -306,7 +306,7 @@ Euclidean distance 2D
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/numpy_euclidean_2d.py`
+* Filename: :download:`solution/algebra_euclidean_2d.py`
 
 :English:
     #. Given are two points ``A: Tuple[int, int]`` and ``B: Tuple[int, int]``
@@ -364,7 +364,7 @@ Euclidean distance ``n`` dimensions
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/numpy_euclidean_multi_dim.py`
+* Filename: :download:`solution/algebra_euclidean_multi_dim.py`
 
 :English:
     #. Given are two points ``A: Sequence[int]`` and ``B: Sequence[int]``
@@ -415,12 +415,12 @@ Euclidean distance ``n`` dimensions
     * :math:`distance(a, b) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + ... + (n_2 - n_1)^2}`
     * ``for n1, n2 in zip(A, B)``
 
-Szukanie liczby
----------------
+Finding number
+--------------
 * Complexity level: medium
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/numpy_number.py`
+* Filename: :download:`solution/algebra_find.py`
 
 #. Mamy liczbę trzycyfrową.
 #. Jeżeli od liczny dziesiątek odejmiemy liczbę jedności otrzymamy 6.
