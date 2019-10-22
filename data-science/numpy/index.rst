@@ -1,0 +1,6 @@
+*****
+Numpy
+*****
+.. toctree::
+
+    new.rst
