@@ -321,3 +321,81 @@ Relational data in one table
 
         Alex Vogel
             Linder Hoehe, 51147, Köln, Germany
+
+Log parsing
+-----------
+* Complexity level: medium
+* Lines of code to write: 25 lines
+* Estimated time of completion: 20 min
+* Filename: :download:`solution/sqlite_logs.py`
+
+:English:
+    #. Save input data to file ``apollo11-timeline.log``
+    #. Extract ``datetime`` object, level name and message from each line
+    #. Collect data to ``INPUT: List[dict]`` (see below)
+    #. Create database schema for logs
+    #. Add all logs to database
+    #. Select only ``WARNING`` logs between 1969-07-20 and 1969-07-21
+    #. Order logs by datetime descending
+    #. Print ``OUTPUT: List[dict]``
+
+:Polish:
+    #. Zapisz dane wejściowe do pliku ``apollo11-timeline.log``
+    #. Wyciągnij obiekt ``datetime``, poziom logowania oraz wiadomość z każdej linii
+    #. Zbierz dane do ``INPUT: List[dict]`` (patrz poniżej)
+    #. Stwórz schemat bazy danych dla logów
+    #. Dodaj wszystkie linie do bazy danych
+    #. Wybierz tylko logi ``WARNING`` z przedziału 1969-07-20 i 1969-07-21
+    #. Posortuj logi w kolejności datetime malejąco
+    #. Wyświetl ``OUTPUT: List[dict]``
+
+:Input:
+    .. code-block:: text
+        :caption: Apollo 11 timeline https://history.nasa.gov/SP-4029/Apollo_11i_Timeline.htm
+
+        1969-07-14T21:00:00 [INFO] Terminal countdown started
+        1969-07-16T13:31:53 [WARNING] S-IC engine ignition (#5)
+        1969-07-16T13:33:23 [DEBUG] Maximum dynamic pressure (735.17 lb/ft^2)
+        1969-07-16T13:34:44 [WARNING] S-II ignition
+        1969-07-16T13:35:17 [DEBUG] Launch escape tower jettisoned
+        1969-07-16T13:39:40 [DEBUG] S-II center engine cutoff
+        1969-07-16T16:22:13 [INFO] Translunar injection
+        1969-07-16T16:56:03 [INFO] CSM docked with LM/S-IVB
+        1969-07-16T17:21:50 [INFO] Lunar orbit insertion ignition
+        1969-07-16T21:43:36 [INFO] Lunar orbit circularization ignition
+        1969-07-20T17:44:00 [INFO] CSM/LM undocked
+        1969-07-20T20:05:05 [WARNING] LM powered descent engine ignition
+        1969-07-20T20:10:22 [ERROR] LM 1202 alarm
+        1969-07-20T20:14:18 [ERROR] LM 1201 alarm
+        1969-07-20T20:17:39 [WARNING] LM lunar landing
+        1969-07-21T02:39:33 [DEBUG] EVA started (hatch open)
+        1969-07-21T02:56:15 [WARNING] 1st step taken lunar surface (CDR) "That's one small step for [a] man... one giant leap for mankind"
+        1969-07-21T03:05:58 [DEBUG] Contingency sample collection started (CDR)
+        1969-07-21T03:15:16 [INFO] LMP on lunar surface
+        1969-07-21T05:11:13 [DEBUG] EVA ended (hatch closed)
+        1969-07-21T17:54:00 [WARNING] LM lunar liftoff ignition (LM APS)
+        1969-07-21T21:35:00 [INFO] CSM/LM docked
+        1969-07-22T04:55:42 [WARNING] Transearth injection ignition (SPS)
+        1969-07-24T16:21:12 [INFO] CM/SM separation
+        1969-07-24T16:35:05 [WARNING] Entry
+        1969-07-24T16:50:35 [WARNING] Splashdown (went to apex-down)
+        1969-07-24T17:29 [INFO] Crew egress
+
+:Output:
+    .. code-block:: python
+
+        OUTPUT: List[dict] = [
+
+            {'date': datetime.datetime(1969, 7, 21, 17, 54, 00, tzinfo=datetime.timezone.utc),
+             'level': 'WARNING',
+             'message': 'LM lunar liftoff ignition (LM APS)'},
+
+            {'date': datetime.datetime(1969, 7, 21, 2, 56, 15, tzinfo=datetime.timezone.utc),
+             'level': 'WARNING',
+             'message': '1st step taken lunar surface (CDR) "That\'s one small step for [a] man... one giant leap for mankind"'},
+
+            {'date': datetime.datetime(1969, 7, 20, 20, 17, 39, tzinfo=datetime.timezone.utc),
+             'level': 'WARNING',
+             'message': 'LM lunar landing'},
+
+        ...]
