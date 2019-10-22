@@ -109,6 +109,9 @@ List of dict
 ------------
 .. code-block:: python
 
+    from typing import List, Dict
+
+
     list_of_dicts: List[dict] = [
         {'a': 1},
         {2: 'b'},
@@ -124,6 +127,9 @@ List of dict
 List of tuples
 --------------
 .. code-block:: python
+
+    from typing import List, Tuple
+
 
     my_data: List[tuple] = [
         (1, 2, 3),
@@ -176,7 +182,7 @@ Any
 ===
 .. code-block:: python
 
-    from typing import Optional
+    from typing import Any
 
 
     def my_print(value: Any) -> None:
@@ -224,7 +230,7 @@ Type aliases
     ]
 
 
-Iterable
+Iterator
 ========
 .. code-block:: python
 
@@ -236,6 +242,30 @@ Iterable
         while a < n:
             yield a
             a, b = b, a + b
+
+Overload
+========
+* The ``@overload`` decorator allows describing functions and methods that support multiple different combinations of argument types.
+* A series of @overload-decorated definitions must be followed by exactly one non-@overload-decorated definition (for the same function/method)
+* The @overload-decorated definitions are for the benefit of the type checker only, since they will be overwritten by the non-@overload-decorated definition
+
+.. code-block:: python
+
+    @overload
+    def process(response: None) -> None:
+        ...
+
+    @overload
+    def process(response: int) -> Tuple[int, str]:
+        ...
+
+    @overload
+    def process(response: bytes) -> str:
+        ...
+
+    def process(response):
+        <actual implementation>
+
 
 Final
 =====
@@ -270,28 +300,11 @@ Final
 
 .. code-block:: python
 
-    from typing import Any, overload
+    from typing import Final
 
-    class Base:
-        @overload
-        def method(self) -> None:
-            ...
-
-        @overload
-        def method(self, arg: int) -> int:
-            ...
-
-        @final
-        def method(self, x=None):
-            ...
-
-.. code-block:: python
-
-    ID: Final[float] = 1
-
-.. code-block:: python
 
     ID: Final = 1
+    ID: Final[float] = 1
 
 .. code-block:: python
 
@@ -304,6 +317,8 @@ Final
         BORDER_WIDTH = 3  # Error: can't override a final attribute
 
 .. code-block:: python
+
+    from typing import Final
 
     class ImmutablePoint:
         x: Final[int]
@@ -343,6 +358,9 @@ Literal
 
 .. code-block:: python
 
+    from typing import Literal, overload
+
+
     @overload
     def open(path: str,
              mode: Literal["r", "w", "a", "x", "r+", "w+", "a+", "x+"],
@@ -363,18 +381,16 @@ TypedDict
 
     from typing import TypedDict
 
+
     class Movie(TypedDict):
         name: str
         year: int
 
-.. code-block:: python
 
     movie: Movie = {
         'name': 'Blade Runner',
         'year': 1982
     }
-
-.. code-block:: python
 
     def record_movie(movie: Movie) -> None:
         ...
@@ -384,6 +400,13 @@ TypedDict
 .. code-block:: python
     :caption: The code below should be rejected, since 'title' is not a valid key, and the 'name' key is missing
 
+    from typing import TypedDict
+
+
+    class Movie(TypedDict):
+        name: str
+        year: int
+
     movie2: Movie = {
         'title': 'Blade Runner',
         'year': 1982
@@ -391,14 +414,46 @@ TypedDict
 
 .. code-block:: python
 
+    from typing import TypedDict
+
+
+    class Movie(TypedDict):
+        name: str
+        year: int
+
     m = Movie(name='Blade Runner', year=1982)
 
 .. code-block:: python
+
+    from typing import TypedDict
+
+
+    class Movie(TypedDict):
+        name: str
+        year: int
+
+    m: Movie = dict(
+        name='Alien',
+        year=1979,
+        director='Ridley Scott')  # error: Unexpected key 'director'
+
+
+.. code-block:: python
+
+    from typing import TypedDict
+
+
+    class Movie(TypedDict):
+        name: str
+        year: int
 
     class BookBasedMovie(Movie):
         based_on: str
 
 .. code-block:: python
+
+    from typing import TypedDict
+
 
     class X(TypedDict):
         x: int
@@ -408,14 +463,6 @@ TypedDict
 
     class XYZ(X, Y):
         z: bool
-
-.. code-block:: python
-
-    m: Movie = dict(
-        name='Alien',
-        year=1979,
-        director='Ridley Scott')  # error: Unexpected key 'director'
-
 
 TypeVar, Iterable, Tuple
 ========================

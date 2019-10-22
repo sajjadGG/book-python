@@ -294,6 +294,9 @@ Euclidean distance 2D
 
     Calculate Euclidean distance in Cartesian coordinate system
 
+:Hint:
+    * :math:`distance(a, b) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2`
+
 Euclidean distance ``n`` dimensions
 -----------------------------------
 * Complexity level: easy
@@ -347,6 +350,7 @@ Euclidean distance ``n`` dimensions
             return ...
 
 :Hint:
+    * :math:`distance(a, b) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + ... + (n_2 - n_1)^2}`
     * ``for n1, n2 in zip(A, B)``
 
 Matrix multiplication

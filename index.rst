@@ -362,6 +362,7 @@ System and Performance
     /system/ci-cd/index.rst
     /system/performance/index.rst
     /system/concurrency/index.rst
+    /system/gui/index.rst
 
 ****************
 Network and HTTP
@@ -376,20 +377,19 @@ Network and HTTP
     /net/http/index.rst
     /net/django/index.rst
 
-************
-Data Science
-************
+*********************
+Data Science and Math
+*********************
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Data Science
+    :caption: Data Science and Math
 
     /data-science/stdlib/index.rst
     /data-science/tools/index.rst
     /data-science/numpy/index.rst
     /data-science/pandas/index.rst
     /data-science/data-visualization/index.rst
-    /data-science/gui/index.rst
     /data-science/machine-learning/index.rst
 
 

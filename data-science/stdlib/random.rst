@@ -33,7 +33,7 @@ Random numbers
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/random_numbers.py`
+* Filename: :download:`solution/random_sample.py`
 
 :English:
     #. Print 6 random integers without repetition in range from 1 to 49
@@ -46,7 +46,7 @@ Sum of inner elements
 * Complexity level: medium
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/random_inner_sum.py`
+* Filename: :download:`solution/random_matrix.py`
 
 :English:
     #. Use only ``random`` module
