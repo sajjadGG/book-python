@@ -1184,7 +1184,7 @@ Iris Dirty
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/pandas_df_dirty.py`
-* Input data: https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/data/iris-dirty.csv
+* Input data: :download:`data/iris-dirty.csv`
 
 #. Mając dane Irysów przekonwertuj je na ``DataFrame``
 #. Pomiń pierwszą linię z metadanymi
@@ -1212,7 +1212,7 @@ Iris Clean
 * Lines of code to write: 25 lines
 * Estimated time of completion: 25 min
 * Filename: :download:`solution/pandas_df_clean.py`
-* Input data: https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/data/iris.csv
+* Input data: :download:`data/iris.csv`
 
 #. Mając dane Irysów przekonwertuj je na ``DataFrame``
 #. Podaj jawnie ``encoding``

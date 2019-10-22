@@ -27,8 +27,6 @@ Pandas is a Python package providing fast, flexible, and expressive data structu
 * http://pandas.pydata.org/pandas-docs/stable/index.html
 * https://github.com/pandas-dev/pandas/blob/master/doc/cheatsheet/Pandas_Cheat_Sheet.pdf
 
-Podstawowymi strukturami danych w Pandas jest Series (seria) i DataFrame (obiekt tabeli); zobacz dokumentacje po więcej informacji.
-
 .. code-block:: python
 
     import pandas as pd
@@ -47,40 +45,6 @@ TL;DR
     "``DataFrame.iloc()``", "Access a group of rows and columns by integer position(s)"
 
 
-Import and Export
-=================
-
-Import data to ``DataFrame``
-----------------------------
-* File paths works also with URLs
-* SQL functions uses SQLAlchemy, which supports many RDBMS
-
-.. code-block:: python
-
-    pd.read_csv()
-    pd.read_excel()
-    pd.read_html()
-    pd.read_json()
-    pd.read_sas()
-    pd.read_sql()        # Read SQL query or database table into a DataFrame
-    pd.read_sql_query()  # Read SQL query into a DataFrame
-    pd.read_sql_table()  # Read SQL database table into a DataFrame
-
-
-Export ``DataFrame``
---------------------
-* File paths works also with URLs
-* SQL functions uses SQLAlchemy, which supports many RDBMS
-
-.. code-block:: python
-
-    DataFrame.to_csv()
-    DataFrame.to_excel()
-    DataFrame.to_html()
-    DataFrame.to_json()
-    DataFrame.to_latex()
-    DataFrame.to_dict()
-    DataFrame.to_sql()
 
 
 Workflow
@@ -199,8 +163,81 @@ Display Output
             print(df)
 
 
-Vizualization
-=============
+Pandas Workflow
+===============
+.. code-block:: python
+
+    import pandas as pd
+
+
+    FILE = 'https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv'
+
+    df = pd.read_csv(FILE, skiprows=1)
+
+    df.head(5)
+    #      5.1  3.5  1.4  0.2  0
+    # 0    4.9  3.0  1.4  0.2  0
+    # 1    4.7  3.2  1.3  0.2  0
+    # 2    4.6  3.1  1.5  0.2  0
+    # 3    5.0  3.6  1.4  0.2  0
+    # 4    5.4  3.9  1.7  0.4  0
+
+    df.columns = [
+        'Sepal length',
+        'Sepal width',
+        'Petal length',
+        'Petal width',
+        'Species'
+    ]
+
+    df.head(5)
+    #    Sepal length  Sepal width  Petal length  Petal width  Species
+    # 0           5.1          3.5           1.4          0.2        0
+    # 1           4.9          3.0           1.4          0.2        0
+    # 2           4.7          3.2           1.3          0.2        0
+    # 3           4.6          3.1           1.5          0.2        0
+    # 4           5.0          3.6           1.4          0.2        0
+
+    df.tail(3)
+    #      Sepal length  Sepal width  Petal length  Petal width  Species
+    # 147           6.5          3.0           5.2          2.0        2
+    # 148           6.2          3.4           5.4          2.3        2
+    # 149           5.9          3.0           5.1          1.8        2
+
+    df['Species'].replace({
+        0: 'setosa',
+        1: 'versicolor',
+        2: 'virginica'
+    }, inplace=True)
+
+    df = df.sample(frac=1.0)
+    #      Sepal length  Sepal width  Petal length  Petal width     Species
+    # 120           5.6          2.8           4.9          2.0   virginica
+    # 9             5.4          3.7           1.5          0.2      setosa
+    # 54            5.7          2.8           4.5          1.3  versicolor
+    # 46            4.6          3.2           1.4          0.2      setosa
+    # 2             4.6          3.1           1.5          0.2      setosa
+    # ...
+
+    df.reset_index(drop=True)
+    #      Sepal length  Sepal width     ...      Petal width     Species
+    # 0             5.0          2.0     ...              1.0  versicolor
+    # 1             6.4          2.7     ...              1.9   virginica
+    # 2             5.6          3.0     ...              1.5  versicolor
+    # 3             5.7          2.6     ...              1.0  versicolor
+    # 4             6.4          3.1     ...              1.8   virginica
+    # ...
+
+    df.describe()
+    #        Sepal length  Sepal width  Petal length  Petal width
+    # count    150.000000   150.000000    150.000000   150.000000
+    # mean       5.843333     3.057333      3.758000     1.199333
+    # std        0.828066     0.435866      1.765298     0.762238
+    # min        4.300000     2.000000      1.000000     0.100000
+    # 25%        5.100000     2.800000      1.600000     0.300000
+    # 50%        5.800000     3.000000      4.350000     1.300000
+    # 75%        6.400000     3.300000      5.100000     1.800000
+    # max        7.900000     4.400000      6.900000     2.500000
 
 Hist
 ----
@@ -210,17 +247,17 @@ Hist
     import pandas as pd
 
 
-    url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/data/iris.csv'
-    data = pd.read_csv(url)
+    INPUT = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris.csv'
 
-    data.hist()
+    df = pd.read_csv(INPUT)
+    df.hist()
     plt.show()
 
 .. figure:: img/matplotlib-pd-hist.png
-    :scale: 100%
+    :scale: 40%
     :align: center
 
-    Vizualization using hist
+    Visualization using hist
 
 Density
 -------
@@ -230,17 +267,18 @@ Density
     import pandas as pd
 
 
-    url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/data/iris.csv'
-    data = pd.read_csv(url)
+    INPUT = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris.csv'
 
-    data.plot(kind='density', subplots=True, layout=(3,3), sharex=False)
+
+    df = pd.read_csv(INPUT)
+    df.plot(kind='density', subplots=True, layout=(2,2), sharex=False)
     plt.show()
 
 .. figure:: img/matplotlib-pd-density.png
-    :scale: 100%
+    :scale: 40%
     :align: center
 
-    Vizualization using density
+    Visualization using density
 
 Box
 ---
@@ -250,17 +288,18 @@ Box
     import pandas as pd
 
 
-    url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/data/iris.csv'
-    data = pd.read_csv(url)
+    INPUT = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris.csv'
 
-    data.plot(kind='box', subplots=True, layout=(3,3), sharex=False, sharey=False)
+
+    df = pd.read_csv(INPUT)
+    df.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
     plt.show()
 
 .. figure:: img/matplotlib-pd-box.png
-    :scale: 100%
+    :scale: 40%
     :align: center
 
-    Vizualization using density
+    Visualization using density
 
 Scatter matrix
 --------------
@@ -274,25 +313,24 @@ Scatter matrix
     from pandas.plotting import scatter_matrix
 
 
-    url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/data/iris.csv'
-    data = pd.read_csv(url)
+    INPUT = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris.csv'
 
-    scatter_matrix(data)
+
+    df = pd.read_csv(INPUT)
+    scatter_matrix(df)
     plt.show()
 
 .. figure:: img/matplotlib-pd-scatter-matrix.png
-    :scale: 100%
+    :scale: 40%
     :align: center
 
-    Vizualization using density
-
+    Visualization using density
 
 Descriptive statistics
-======================
+----------------------
 .. csv-table:: Descriptive statistics
-    :header-rows: 1
+    :header: "Function", "Description"
 
-    "Function", "Description"
     "``count``", "Number of non-null observations"
     "``sum``", "Sum of values"
     "``mean``", "Mean of values"
@@ -313,7 +351,3 @@ Descriptive statistics
     "``cumprod``", "Cumulative product"
     "``cummax``", "Cumulative maximum"
     "``cummin``", "Cumulative minimum"
-
-
-Assignments
-===========

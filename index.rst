@@ -502,25 +502,32 @@ Scientific and Engineering
 
     /numerical-analysis/libraries.rst
     /numerical-analysis/scipy.rst
+    /numerical-analysis/jupyter.rst
 
-******************
-Numerical Analysis
-******************
+*****
+Numpy
+*****
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Numerical Analysis
+    :caption: Numpy
 
-    /numerical-analysis/jupyter.rst
-    /numerical-analysis/numpy-new.rst
-    /numerical-analysis/pandas-intro.rst
-    /numerical-analysis/pandas-series.rst
-    /numerical-analysis/pandas-dataframe.rst
+    /numpy/new.rst
+
+******
+Pandas
+******
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Pandas
+
+    /pandas/index.rst
+
 
 ******************
 Data Visualization
 ******************
-
 .. toctree::
     :maxdepth: 2
     :numbered:
