@@ -1,0 +1,143 @@
+****************
+DataFrame Create
+****************
+
+
+Indexes
+=======
+
+Integer index
+-------------
+.. code-block:: python
+
+    import numpy as np
+    import pandas as pd
+
+    np.random.seed(0)
+
+
+    values = np.arange(16).reshape(4, 4)
+    indexes = range(0, 4)
+    columns = range(0, 4)
+
+    df = pd.DataFrame(values, index=indexes, columns=columns)
+    #     0   1   2   3
+    # 0   0   1   2   3
+    # 1   4   5   6   7
+    # 2   8   9  10  11
+    # 3  12  13  14  15
+
+Date indexes
+------------
+.. code-block:: python
+
+    import numpy as np
+    import pandas as pd
+
+    np.random.seed(0)
+
+
+    values = np.random.randn(6, 4)
+    columns = ['Morning', 'Noon', 'Evening', 'Midnight']
+    indexes = pd.date_range('1970-01-01', periods=6)
+
+    df = pd.DataFrame(values, index=indexes, columns=columns)
+    #                 Morning        Noon    Evening   Midnight
+    # 1970-01-01     2.269755   -1.454366   0.045759  -0.187184
+    # 1970-01-02     1.532779    1.469359   0.154947   0.378163
+    # 1970-01-03    -0.887786   -1.980796  -0.347912   0.156349
+    # 1970-01-04     1.230291    1.202380  -0.387327  -0.302303
+    # 1970-01-05    -1.048553   -1.420018  -1.706270   1.950775
+    # 1970-01-06    -0.509652   -0.438074  -1.252795   0.777490
+
+
+Values
+======
+
+Custom values in columns
+------------------------
+.. code-block:: python
+
+    pd.DataFrame({'A' : 1.,
+                  'B' : pd.Timestamp('1961-04-12'),
+                  'C' : pd.Series(1, index=list(range(4)), dtype='float32'),
+                  'D' : np.array([3] * 4, dtype='int32'),
+                  'E' : pd.Categorical(["test", "train", "test", "train"]),
+                  'F' : 'foo' })
+    #      A           B    C  D      E    F
+    # 0  1.0  1961-04-12  1.0  3   test  foo
+    # 1  1.0  1961-04-12  1.0  3  train  foo
+    # 2  1.0  1961-04-12  1.0  3   test  foo
+    # 3  1.0  1961-04-12  1.0  3  train  foo
+
+With multiple rows
+------------------
+.. code-block:: python
+
+    pd.DataFrame([{'A': 1, 'B': 2}, {'C': 3}])
+    #      A    B    C
+    # 0  1.0  2.0  NaN
+    # 1  NaN  NaN  3.0
+
+
+Assignments
+===========
+
+Iris Dirty
+----------
+* Complexity level: easy
+* Lines of code to write: 10 lines
+* Estimated time of completion: 20 min
+* Filename: :download:`solution/pandas_df_dirty.py`
+* Input data: :download:`data/iris-dirty.csv`
+
+#. Mając dane Irysów przekonwertuj je na ``DataFrame``
+#. Pomiń pierwszą linię z metadanymi
+#. Zmień nazwy kolumn na:
+
+    * Sepal length
+    * Sepal width
+    * Petal length
+    * Petal width
+    * Species
+
+#. Podmień wartości w kolumnie species
+
+    - 0 -> 'setosa',
+    - 1 -> 'versicolor',
+    - 2 -> 'virginica'
+
+#. Ustaw wszystkiw wiersze w losowej kolejności i zresetuj index
+#. Wyświetl pierwsze 5 i ostatnie 3 wiersze
+#. Wykreśl podstawowe statystyki opisowe
+
+Cars
+----
+* Complexity level: medium
+* Lines of code to write: 15 lines
+* Estimated time of completion: 45 min
+* Filename: :download:`solution/pandas_df_cars.py`
+
+#. Stwórz ``DataFrame`` samochody z:
+
+    - losową kolumną liczb całkowitych przebieg z przedziału [0, 200 000]
+    - losową kolumną spalanie z przedziału [2, 20]
+
+#. Dodaj kolumnę marka:
+
+    - jeżeli samochód ma spalanie [0, 5] marka to VW
+    - jeżeli samochód ma spalanie [6, 10] marka to Ford
+    - jeżeli samochód ma spalanie 11 i więcej, marka to UAZ
+
+#. Dodaj kolumnę pochodzenie:
+
+    - jeżeli przebieg poniżej 100 km, pochodzenie nowy
+    - jeżeli przebieg powyżej 100 km, pochodzenie uzywany
+    - jeżeli przebieg powyżej 100 000 km, pochodzenie z niemiec
+
+#. Przeanalizuj dane statystycznie
+
+    - sprawdź liczność grup
+    - wykonaj analizę statystyczną
+
+#. Pogrupuj dane po marce i po pochodzenie
