@@ -3,7 +3,7 @@ from pprint import pprint
 from typing import List
 
 
-DATA: List[tuple] = [
+INPUT: List[tuple] = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, 'virginica'),
     (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -28,33 +28,40 @@ DATA: List[tuple] = [
     (4.6, 3.1, 1.5, 0.2, 'setosa'),
 ]
 
-header, *data = DATA
-iris = []
+header, *data = INPUT
+OUTPUT = [dict(zip(header, values)) for values in data]
 
-for values in data:
-    # header == ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
-    iris.append({
-        'Sepal length': values[0],
-        'Sepal width': values[1],
-        'Petal length': values[2],
-        'Petal width': values[3],
-        'Species': values[4]
-    })
 
-    ## Alternative solution
-    # iris.append({key: values[i] for i, key in enumerate(header)})
+## Alternative solution
+# OUTPUT = []
+# for values in data:
+#     OUTPUT.append({zip(header, values)})
 
-    ## Alternative solution
-    # pair = zip(header, values)
-    # iris.append(dict(pair))
+
+## Alternative solution
+# OUTPUT = []
+# for values in data:
+#     OUTPUT.append({key: values[i] for i, key in enumerate(header)})
+
+
+## Alternative solution
+# OUTPUT = []
+# for values in data:
+#     OUTPUT.append({
+#         'Sepal length': values[0],
+#         'Sepal width': values[1],
+#         'Petal length': values[2],
+#         'Petal width': values[3],
+#         'Species': values[4]
+#     })
+#
 
 
 with open(r'../tmp/iris.json', mode='w') as file:
-    content = json.dumps(iris)
-    file.write(content)
+    json.dump(OUTPUT, file)
 
 
-with open(r'../tmp/iris.json', mode='r') as file:
+with open(r'../tmp/iris.json') as file:
     output = json.load(file)
 
 pprint(output)

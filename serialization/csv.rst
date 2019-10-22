@@ -443,7 +443,7 @@ Write fixed schema data to CSV file
 
 Write variable schema data to file
 ----------------------------------
-* Complexity level: easy
+* Complexity level: medium
 * Lines of code to write: 8 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/csv_dictwriter_variable.py`
