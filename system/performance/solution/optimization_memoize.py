@@ -1,3 +1,8 @@
+import sys
+
+sys.setrecursionlimit(5000)
+
+
 # Simple Dict Cache
 CACHE = {}
 
@@ -7,7 +12,7 @@ def factorial_cache(n: int) -> int:
         if n == 0:
             CACHE[n] = 1
         else:
-            CACHE[n] = n * factorial_nocache(n - 1)
+            CACHE[n] = n * factorial_cache(n - 1)
 
     return CACHE[n]
 
@@ -55,7 +60,7 @@ def factorial_decorator(n: int) -> int:
     if n == 0:
         return 1
     else:
-        return n * factorial_nocache(n - 1)
+        return n * factorial_decorator(n - 1)
 
 
 duration_decorator = timeit(
