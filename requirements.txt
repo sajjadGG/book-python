@@ -4,6 +4,3 @@ sphinxcontrib-bibtex
 
 # sphinxcontrib-book
 # sphinxjp.themes.revealjs
-
-pycodestyle
-mypy
