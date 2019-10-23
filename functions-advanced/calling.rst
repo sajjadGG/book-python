@@ -312,3 +312,5 @@ Iris
             ...
         ]
 
+:Hint:
+    * ``map(float, measurements)``

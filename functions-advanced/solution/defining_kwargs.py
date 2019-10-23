@@ -17,12 +17,12 @@ def is_numeric(*args, **kwargs) -> bool:
     >>> is_numeric(a='one')
     False
     """
-    args += tuple(kwargs.values())
+    arguments = args + tuple(kwargs.values())
 
-    if len(args) == 0:
+    if len(arguments) == 0:
         return False
 
-    for arg in args:
+    for arg in arguments:
         if type(arg) not in (float, int):
             return False
 
