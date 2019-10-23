@@ -287,6 +287,20 @@ Matrix Multiplication
 Assignments
 ===========
 
+Sum of inner matrix
+-------------------
+* Complexity level: easy
+* Lines of code to write: 4 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/numpy_inner_sum.py`
+
+#. Ustaw ziarno losowości na 0
+#. Wygeneruj macierz (16x16) randomowych intów o wartościach od 10 do 100
+#. Przekonwertuj macierz na typ float
+#. Transponuj ją
+#. Policz sumę środkowych (4x4) elementów macierzy
+#. Wyświetl wartość (skalar) sumy, a nie nie wektor
+
 Matrix multiplication
 ---------------------
 * Complexity level: easy

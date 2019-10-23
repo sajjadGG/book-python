@@ -280,43 +280,4 @@ Copy
 
 Assignments
 ===========
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.. code-block:: python
-
-    a = np.zeros((2,2), float)
-    # array([[ 0., 0.],
-    #        [ 0., 0.]])
-
-    b = np.array([-1., 3.], float)
-    # array([-1., 3.])
-
-    a + b
-    # array([[-1., 3.],
-    #        [-1., 3.]])
-
-    a + b[np.newaxis,:]
-    # array([[-1., 3.],
-    #        [-1., 3.]])
-
-    a + b[:,np.newaxis]
-    # array([[-1., -1.],
-    #        [ 3., 3.]])
-
-
-
-
+.. todo:: Create assignments

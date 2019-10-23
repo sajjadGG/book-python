@@ -153,3 +153,9 @@ Sum of two polynomials
 
     np.polyadd([1, 2], [9, 5, 4])
     # array([9, 6, 6])
+
+
+Assignments
+===========
+.. todo:: Create assignments
+

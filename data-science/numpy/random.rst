@@ -150,20 +150,6 @@ Sequences
 Assignments
 ===========
 
-Sum of inner matrix
--------------------
-* Complexity level: easy
-* Lines of code to write: 4 lines
-* Estimated time of completion: 5 min
-* Filename: :download:`solution/numpy_inner_sum.py`
-
-#. Ustaw ziarno losowości na 0
-#. Wygeneruj macierz (16x16) randomowych intów o wartościach od 10 do 100
-#. Przekonwertuj macierz na typ float
-#. Transponuj ją
-#. Policz sumę środkowych (4x4) elementów macierzy
-#. Wyświetl wartość (skalar) sumy, a nie nie wektor
-
 Random numbers
 --------------
 * Complexity level: easy
@@ -176,30 +162,3 @@ Random numbers
 
 :Polish:
     #. Wyświetl 6 losowych i nie powtarzających się liczb całkowitych z zakresu od 1 do 49.
-
-Sum of inner elements
----------------------
-* Complexity level: medium
-* Lines of code to write: 5 lines
-* Estimated time of completion: 10 min
-* Filename: :download:`solution/random_matrix.py`
-
-:English:
-    #. Use only ``random`` module
-    #. Set ``random.seed(0)``
-    #. Generate ``outer: List[List[int]]`` with 16x16 random digits (0-9 inclusive)
-    #. Calculate sum of inner 4x4 elements
-    #. Inner matrix is exactly in the middle of outer
-
-:Polish:
-    #. Używaj tylko modułu ``random``
-    #. Ustaw ``random.seed(0)``
-    #. Wygeneruj ``outer: List[List[int]]`` z 16x16 losowych cyfr (0-9 włącznie)
-    #. Policz sumę środkowych 4x4 elementów
-    #. Środkowa macierz jest dokładnie w środku większej
-
-.. figure:: img/random-inner-sum.png
-    :scale: 25%
-    :align: center
-
-    Sum of inner elements

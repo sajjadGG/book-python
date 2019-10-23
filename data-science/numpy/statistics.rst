@@ -166,3 +166,8 @@ Correlation coefficient
     :align: center
 
     Examples of scatter diagrams with different values of correlation coefficient (ρ) :cite:`PearsonCorrelationCoefficient`
+
+
+Assignments
+===========
+.. todo:: Create assignments
