@@ -224,11 +224,11 @@ Advanced Functions
     :numbered:
     :caption: Advanced Functions
 
-    /functions-advanced/first-class.rst
-    /functions-advanced/closures.rst
     /functions-advanced/generator.rst
     /functions-advanced/defining.rst
     /functions-advanced/calling.rst
+    /functions-advanced/first-class.rst
+    /functions-advanced/closures.rst
     /functions-advanced/decorator.rst
 
 *******************
