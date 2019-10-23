@@ -57,6 +57,7 @@ Data Structures:
     array-serialize.rst
     array-statistics.rst
     array-logic.rst
+    array-select.rst
 
 
     selection.rst
