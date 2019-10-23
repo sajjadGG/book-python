@@ -5,5 +5,5 @@ sphinxcontrib-bibtex
 # sphinxcontrib-book
 # sphinxjp.themes.revealjs
 
-nbsphinx
-ipython
+pycodestyle
+mypy
