@@ -271,29 +271,31 @@ Iris
 
 :English:
     #. Download :download:`data/iris.csv` and save as ``iris.csv``
+    #. Remove ``species`` column
     #. Separate header from measurements
-    #. Remove ``species`` column from both header and measurements
     #. For each line extract values by splitting lines by coma ``,``
-    #. Create ``data: List[dict]`` by zipping header and measurements:
+    #. Create ``OUTPUT: List[dict]`` by zipping header and measurements:
 
         - key: column name from the header
         - value: measurement at the position
 
-    #. Create function ``average(**kwargs)``, function
-    #. Iterate over data and calculate mean for each row by passing arguments as keywords
+    #. Create function ``mean(**kwargs)``, function
+    #. Iterate over ``OUTPUT`` and call ``average()`` by passing arguments as keywords
+    #. Print mean for each row
 
 :Polish:
     #. Pobierz plik :download:`data/iris.csv` i zapisz jako ``iris.csv``
+    #. Usuń kolumnę ``species``
     #. Odseparuj nagłówek od pomiarów
-    #. Usuń kolumnę ``species`` zarówno z nagłówka jak i danych
     #. Wyciągnij wartości z każdej linii przez podział jej po przecinku ``,``
-    #. Stwórz ``data: List[dict]`` poprzez scalenie nagłówka i pomiarów
+    #. Stwórz ``OUTPUT: List[dict]`` poprzez scalenie nagłówka i pomiarów z każdego wiersza
 
         - klucz: nazwa kolumny z nagłówka
         - wartość: pomiar z odpowiedniej kolumny
 
-    #. Stwórz funkcję ``average(**kwargs)``
-    #. Iterując po data wylicz średnią dla każdego wiersza przez podawanie argumentów nazwanie
+    #. Stwórz funkcję ``mean(**kwargs)``
+    #. Iterując po ``OUTPUT`` wywołuj ``average()`` podając argumenty nazwanie
+    #. Wypisz średnią dla każdego wiersza
 
 :Non-functional requirements:
     * Use only ``str.split()`` method
@@ -305,7 +307,7 @@ Iris
         header: list
         # ['sepal_length', 'sepal_width' ,'petal_length', 'petal_width']
 
-        data: List[Dict[str, float]] = [
+        OUTPUT: List[Dict[str, float]] = [
             {'sepal_length': 5.4, 'sepal_width': 3.9, 'petal_length': 1.3, 'petal_width': 0.4},
             {'sepal_length': 5.9, 'sepal_width': 3.0, 'petal_length': 5.1, 'petal_width': 1.8},
             {'sepal_length': 6.0, 'sepal_width': 3.4, 'petal_length': 4.5, 'petal_width': 1.6},
