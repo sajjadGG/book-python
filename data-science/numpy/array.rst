@@ -3,7 +3,7 @@ Arrays
 
 
 Data Structures
----------------
+===============
 * Skalar - jednowymiarowa
 * Wektor - dwuwymiarowa
 * Tensor - trójwymiarowa
@@ -11,78 +11,201 @@ Data Structures
 * Macierz - n-wymiarowa
 
 Create array
-------------
-* From list:
+============
 
-    .. code-block:: python
+1-dimensional array
+-------------------
+.. code-block:: python
 
-        import numpy as np
+    import numpy as np
 
-        np.array([1, 2, 3])
-        # [1, 2, 3]
 
-        np.array([1, 4, 5, 8], float)
-        # array([ 1., 4., 5., 8.])
+    np.array([1, 2, 3])
+    # array([1, 2, 3])
 
-        np.array([[1,2], [3,4]])
-        # array([[1, 2],
-        #        [3, 4]])
+.. code-block:: python
 
-* Generate array:
+    import numpy as np
 
-    .. code-block:: python
 
-        import numpy as np
+    np.array([1.0, 2.0, 3.0])
+    # array([1., 2., 3.])
 
-        np.arange(3)
-        # array([0, 1, 2])
+    np.array([1.1, 2.2, 3.3])
+    # array([1.1, 2.2, 3.3])
 
-        np.arange(3.0)
-        # array([ 0.,  1.,  2.])
+    np.array([1, 2, 3], dtype=float)
+    # array([ 1., 2., 3.])
 
-        np.arange(3, 7)
-        # array([3, 4, 5, 6])
+    np.array([1, 2, 3], float)
+    # array([ 1., 2., 3.])
 
-        np.arange(3, 7, step=2)
-        # array([3, 5])
+.. code-block:: python
 
-        np.arange(start=3, stop=7, step=2, dtype=float)
-        # array([3., 5.])
+    import numpy as np
 
-Slice array
+
+    np.array(['a', 'b', 'c'])
+    # array(['a', 'b', 'c'], dtype='<U1')
+
+    np.array(['one', 'two', 'three'])
+    # array(['one', 'two', 'three'], dtype='<U5')
+
+2-dimensional array
+-------------------
+.. code-block:: python
+
+    import numpy as np
+
+
+    np.array([[1,2], [3,4]])
+    # array([[1, 2],
+    #        [3, 4]])
+
+    np.array([[1,2], [3,4]], float)
+    # array([[1., 2.],
+    #        [3., 4.]])
+
+Data types
+----------
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([1, 2, 3])
+    # array([1, 2, 3])
+
+    type(a)
+    # <class 'numpy.ndarray'>
+
+    a.dtype
+    # dtype('int64')
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    b = np.array([1., 2., 3.])
+    # array([1., 2., 3.])
+
+    type(b)
+    # <class 'numpy.ndarray'>
+
+    b.dtype
+    # dtype('float64')
+
+Generate array
+--------------
+* similar to ``range()``
+* array-range
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    np.arange(3)
+    # array([0, 1, 2])
+
+    np.arange(3.0)
+    # array([ 0.,  1.,  2.])
+
+    np.arange(3, 7)
+    # array([3, 4, 5, 6])
+
+    np.arange(3, 7, step=2)
+    # array([3, 5])
+
+    np.arange(start=3, stop=7, step=2, dtype=float)
+    # array([3., 5.])
+
+Index
+=====
+
+1-dimension
 -----------
 .. code-block:: python
 
-    np.array([1, 4, 5, 8], float)
-    # array([ 1., 4., 5., 8.])
+    import numpy as np
 
-    a[:2]
-    # array([ 1., 4.])
 
-    a[3]
-    # 8.0
+    a = np.array([1, 2, 3, 4], float)
+    # array([1., 2., 3., 4.])
 
-    a[0] = 5.
-    # array([ 5., 4., 5., 8.])
+    a[0]        # 1.0
+    a[3]        # 4.0
+    a[-1]       # 4.0
 
+2-dimensions
+------------
 .. code-block:: python
 
+    import numpy as np
+
     a = np.array([[1, 2, 3], [4, 5, 6]], float)
-    # array([[ 1., 2., 3.], [ 4., 5., 6.]])
+    # array([[1., 2., 3.],
+    #       [4., 5., 6.]])
 
-    a[0,0]  # 1.0
-    a[0,1]  # 2.0
+    a[0]        # array([1., 2., 3.])
+    a[1]        # array([4., 5., 6.])
 
+    a[0,0]      # 1.0
+    a[0,1]      # 2.0
+    a[1,2]      # 6.0
+
+
+Modify values
+=============
 .. code-block:: python
 
-    a = np.array([[1, 2, 3], [4, 5, 6]], float)
+    import numpy as np
 
-    a[1,:]      # array([ 4., 5., 6.])
-    a[:,2]      # array([ 3., 6.])
-    a[-1:,-2:]  # array([[ 5., 6.]])
+
+    a = np.array([1, 2, 3, 4], float)
+
+    a[0] = 99.0
+    # array([99.,  2.,  3.,  4.])
+
+    a[-1] = 88.0
+    # array([99.,  2.,  3., 88.])
+
+
+Slice
+=====
+
+1-dimension
+-----------
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([1, 2, 3, 4], float)
+    # array([1., 2., 3., 4.])
+
+    a[:2]           # array([1., 2.])
+    a[1:3]          # array([2., 3.])
+    a[-2:]          # array([3., 4.])
+
+2-dimensions
+------------
+.. code-block:: python
+
+    import numpy as np
+
+    a = np.array([[1, 2, 3], [4, 5, 6]], float)
+    # array([[1., 2., 3.],
+    #        [4., 5., 6.]])
+
+    a[1,:]          # array([ 4., 5., 6.])
+    a[:,2]          # array([ 3., 6.])
+    a[-1:,-2:]      # array([[ 5., 6.]])
+
 
 Array shape
------------
+===========
 .. code-block:: python
 
     a = np.array([[1, 2, 3], [4, 5, 6]], float)
