@@ -115,7 +115,8 @@ Field Factory
 =============
 .. code-block:: python
 
-    from dataclasses import dataclass
+    from dataclasses import dataclass, field
+
 
     @dataclass
     class C:
@@ -126,14 +127,30 @@ Field Factory
 
 .. code-block:: python
 
-    from dataclasses import dataclass
+    from dataclasses import dataclass, field
+
 
     @dataclass
     class C:
-        mylist: List[int] = field(default_factory=list)
+        my_list: list = field(default_factory=list)
+
+
+    c = C([1, 2, 3])
+    c.my_list += [4]
+
+
+.. code-block:: python
+
+    from dataclasses import dataclass, field
+    from typing import List
+
+
+    @dataclass
+    class C:
+        my_list: List[int] = field(default_factory=list)
 
     c = C()
-    c.mylist += [1, 2, 3]
+    c.my_list += [1, 2, 3]
 
 Why?
 ----
@@ -174,8 +191,8 @@ Old style classes
 
         def __init__(self, title: str, episode_id: int, opening_crawl: str,
                      director: str, producer: str, release_date: datetime,
-                     characters: List[str], planets: List[str], starships: List[str],
-                     vehicles: List[str], species: List[str], created: datetime,
+                     characters: Tuple[str], planets: Tuple[str], starships: Tuple[str],
+                     vehicles: Tuple[str], species: Tuple[str], created: datetime,
                      edited: datetime, url: str):
 
             self.title = title
@@ -217,11 +234,11 @@ Dataclasses
         director: str
         producer: str
         release_date: datetime
-        characters: List[str]
-        planets: List[str]
-        starships: List[str]
-        vehicles: List[str]
-        species: List[str]
+        characters: Tuple[str]
+        planets: Tuple[str]
+        starships: Tuple[str]
+        vehicles: Tuple[str]
+        species: Tuple[str]
         created: datetime
         edited: datetime
         url: str
@@ -235,7 +252,6 @@ Dataclasses
 
             if type(self.edited) is str:
                 self.edited = dateutil.parser.parse(self.edited)
-
 
 
 More advanced options
@@ -265,6 +281,7 @@ Write
 
     from dataclasses import dataclass
 
+
     @dataclass
     class ShoppingCartItem:
         name: str
@@ -277,6 +294,7 @@ Write
 Dataclass will add
 ------------------
 .. code-block:: python
+    :emphasize-lines: 6-
 
     class ShoppingCartItem:
 
@@ -344,7 +362,7 @@ Address Book (dataclass)
 
         [
             {"first_name": "Jan", "last_name": "Twardowski", "addresses": [
-                {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków", "post_code": "31-008", "region": "Malopołskie", "country": "Poland"}]},
+                {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków", "post_code": "31-008", "region": "Małopolskie", "country": "Poland"}]},
 
             {"first_name": "José", "last_name": "Jiménez", "addresses": [
                 {"street": "2101 E NASA Pkwy", "city": "Houston", "post_code": 77058, "region": "Texas", "country": "USA"},

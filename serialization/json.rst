@@ -28,7 +28,7 @@ JSON syntax
 
     [
         {"first_name": "Jan", "last_name": "Twardowski", "addresses": [
-            {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków", "post_code": "31-008", "region": "Malopołskie", "country": "Poland"}]},
+            {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków", "post_code": "31-008", "region": "Małopolskie", "country": "Poland"}]},
 
         {"first_name": "José", "last_name": "Jiménez", "addresses": [
             {"street": "2101 E NASA Pkwy", "city": "Houston", "post_code": 77058, "region": "Texas", "country": "USA"},
