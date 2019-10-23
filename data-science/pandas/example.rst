@@ -39,3 +39,8 @@ Example
     columns = ['name', 'date_start', 'date_end', 'blacklist']
 
     return df[columns].to_dict('records')
+
+
+Assignments
+===========
+.. todo:: Create assignments

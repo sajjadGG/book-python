@@ -26,3 +26,8 @@ Display Output
 
         with pd.option_context('display.max_rows', None, 'display.max_columns', 3):
             print(df)
+
+
+Assignments
+===========
+.. todo:: Create assignments

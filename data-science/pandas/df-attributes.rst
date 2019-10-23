@@ -41,3 +41,6 @@ Columns
     # Index(['Morning', 'Noon', 'Evening', 'Midnight'], dtype='object')
 
 
+Assignments
+===========
+.. todo:: Create assignments

@@ -102,3 +102,8 @@ Other methods
     "``cumprod``", "Cumulative product"
     "``cummax``", "Cumulative maximum"
     "``cummin``", "Cumulative minimum"
+
+
+Assignments
+===========
+.. todo:: Create assignments

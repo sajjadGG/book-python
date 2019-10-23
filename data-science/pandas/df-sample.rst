@@ -55,3 +55,8 @@ Sample ``n`` percent of elements
     # 5             6.5          3.0           5.2          2.0   Virginica
     # 6             5.8          2.7           5.1          1.9   Virginica
     # 7             5.4          3.4           1.7          0.2      Setosa
+
+
+Assignments
+===========
+.. todo:: Create assignments

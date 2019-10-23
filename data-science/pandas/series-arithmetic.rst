@@ -107,3 +107,8 @@ Add values
     # x    1.0
     # y    NaN
     # dtype: float64
+
+
+Assignments
+===========
+.. todo:: Create assignments

@@ -229,3 +229,7 @@ Set value for rows matching callable condition
     # 1970-01-05  0.000000   0.000000      0.0   0.000000
     # 1970-01-06  1.259968  -0.283706      0.0  -0.962464
 
+
+Assignments
+===========
+.. todo:: Create assignments

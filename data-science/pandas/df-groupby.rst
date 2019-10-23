@@ -88,3 +88,8 @@ Example
     #   A         C          D
     # bar  0.101705   0.307594
     # foo  0.179598  -0.460136
+
+
+Assignments
+===========
+.. todo:: Create assignments

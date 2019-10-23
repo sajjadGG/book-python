@@ -217,3 +217,7 @@ Substitute values in columns
         2: 'virginica'
     }, inplace=True)
 
+
+Assignments
+===========
+.. todo:: Create assignments

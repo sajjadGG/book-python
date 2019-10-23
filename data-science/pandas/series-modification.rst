@@ -54,3 +54,8 @@ Reset index
     # 3    6.0
     # 4    8.0
     # dtype: float64
+
+
+Assignments
+===========
+.. todo:: Create assignments

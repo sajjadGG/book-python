@@ -34,3 +34,8 @@ Export data
     DataFrame.to_latex()
     DataFrame.to_dict()
     DataFrame.to_sql()
+
+
+Assignments
+===========
+.. todo:: Create assignments

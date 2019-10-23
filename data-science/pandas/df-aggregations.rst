@@ -24,3 +24,8 @@ DataFrame Aggregations
     data.groupby(['month', 'item']).agg(aggregations)
 
 .. todo:: https://www.shanelynn.ie/summarising-aggregation-and-grouping-data-in-python-pandas/
+
+
+Assignments
+===========
+.. todo:: Create assignments
