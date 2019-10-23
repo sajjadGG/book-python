@@ -13,8 +13,8 @@ Mean
 
     import numpy as np
 
-    a = np.array([[1, 2],
-                  [3, 4]])
+
+    a = np.array([[1, 2], [3, 4]])
 
     np.mean(a)
     # 2.5
@@ -82,8 +82,7 @@ Variance
     import numpy as np
 
 
-    a = np.array([[1, 2],
-                  [3, 4]])
+    a = np.array([[1, 2], [3, 4]])
 
     np.var(a)
     # 1.25

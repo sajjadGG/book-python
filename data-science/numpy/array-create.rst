@@ -240,6 +240,7 @@ Identity
 
     import numpy as np
 
+
     np.identity(3)
     # array([[1., 0., 0.],
     #        [0., 1., 0.],

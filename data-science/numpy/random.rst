@@ -14,6 +14,7 @@ Seed
 
     import numpy as np
 
+
     np.random.seed(0)
 
 
@@ -28,6 +29,7 @@ Random ``int``
 
     import numpy as np
 
+
     np.random.randint(5, 10)
     # 9
 
@@ -40,6 +42,7 @@ Random ``float``
 
     import numpy as np
 
+
     np.random.random()
     # 0.70110427435769551
 
@@ -51,6 +54,7 @@ Random ``np.array``
 .. code-block:: python
 
     import numpy as np
+
 
     np.random.rand(5)
     # array([ 0.40783762, 0.7550402 , 0.00919317, 0.01713451, 0.95299583])
@@ -74,6 +78,7 @@ Normal (Gaussian) distribution
 .. code-block:: python
 
     import numpy as np
+
 
     np.random.normal(1.5, 4.0)  # continuous normal (Gaussian) distribution with mean micro=1.5 and standard deviation sigma=4.0
     # 0.83636555041094318
@@ -104,6 +109,7 @@ Poisson distribution
 
     import numpy as np
 
+
     np.random.poisson(6.0)  # Poisson distribution with lambda = 6.0
     # 5
 
@@ -125,6 +131,7 @@ Sequences
 
     import numpy as np
 
+
     a = list(range(10))
     # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -138,6 +145,7 @@ Sequences
 .. code-block:: python
 
     import numpy as np
+
 
     a = np.arange(9).reshape((3, 3))
 

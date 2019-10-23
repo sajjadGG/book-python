@@ -102,6 +102,9 @@ Derivative of a polynomial
 --------------------------
 .. code-block:: python
 
+    import numpy as np
+
+
     np.polyder([1./4., 1./3., 1./2., 1., 0.])
     # array([ 1., 1., 1., 1.])
 
@@ -110,6 +113,9 @@ Antiderivative (indefinite integral) of a polynomial
 * Return an antiderivative (indefinite integral) of a polynomial
 
 .. code-block:: python
+
+    import numpy as np
+
 
     np.polyint([1, 1, 1, 1])
     # array([ 0.25 , 0.33333333, 0.5 , 1. , 0. ])
@@ -124,6 +130,9 @@ Evaluate a polynomial at specific values
 
 .. code-block:: python
 
+    import numpy as np
+
+
     np.polyval([1, -2, 0, 2], 4)
     # 34
 
@@ -132,6 +141,9 @@ Least squares polynomial fit
 * Least squares polynomial fit
 
 .. code-block:: python
+
+    import numpy as np
+
 
     x = [1, 2, 3, 4, 5, 6, 7, 8]
     y = [0, 2, 1, 3, 7, 10, 11, 19]
@@ -150,6 +162,9 @@ Polynomial Arithmetic
 Sum of two polynomials
 ----------------------
 .. code-block:: python
+
+    import numpy as np
+
 
     np.polyadd([1, 2], [9, 5, 4])
     # array([9, 6, 6])
