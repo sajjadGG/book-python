@@ -51,16 +51,14 @@ Data Structures:
     array-index.rst
     array-slice.rst
     array-modification.rst
-    array-logic.rst
     array-arithmetic.rst
     array-shape.rst
     array-concatenation.rst
     array-serialize.rst
     array-statistics.rst
+    array-logic.rst
 
 
-
-    logic.rst
     selection.rst
     matrix.rst
     algebra.rst
