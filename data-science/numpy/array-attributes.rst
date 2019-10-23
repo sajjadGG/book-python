@@ -5,6 +5,8 @@ Array Attributes
 
 Data type
 =========
+* Array can have only one data type (``dtype``)
+* Type can be "non-primitive" - any class
 
 int
 ---

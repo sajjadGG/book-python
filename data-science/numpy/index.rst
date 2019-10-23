@@ -39,11 +39,27 @@ Data Structures:
 .. toctree::
     :maxdepth: 2
 
+    builtin.rst
     trigonometry.rst
     statistics.rst
     random.rst
     polynomial.rst
-    array.rst
+
+    array-create.rst
+    array-attributes.rst
+    array-iteration.rst
+    array-index.rst
+    array-slice.rst
+    array-modification.rst
+    array-logic.rst
+    array-arithmetic.rst
+    array-shape.rst
+    array-concatenation.rst
+    array-serialize.rst
+    array-statistics.rst
+
+
+
     logic.rst
     selection.rst
     matrix.rst
