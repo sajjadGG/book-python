@@ -479,27 +479,55 @@ Memoization
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/decorator_memoize.py`
 
-.. code-block:: python
+:English:
+    .. todo:: English translation
 
-    def factorial(n: int) -> int:
-        if n == 0:
-            return 1
-        else:
-            return n * factorial(n-1)
+:Polish:
+    #. Dla danego kodu funkcji ``factorial`` (patrz poniżej)
+    #. Stwórz ``CACHE: Dict[int, int]`` z wynikami wyliczenia funkcji
 
-#. Dla danego kodu funkcji ``factorial``
-#. Stwórz ``dict`` o nazwie ``CACHE`` z wynikami wyliczenia funkcji
+        - klucz: argument funkcji
+        - wartość: wynik obliczeń
 
-    - klucz: argument funkcji
-    - wartość: wynik obliczeń
+    #. Dodaj dekorator do funkcji ``factorial(n: int)`` z listingu poniżej
+    #. Decorator ma sprawdzać przed uruchomieniem funkcji, sprawdź czy wynik został już wcześniej obliczony:
 
-#. Dodaj dekorator do funkcji ``factorial(n: int)`` z listingu poniżej
-#. Decorator ma sprawdzać przed uruchomieniem funkcji, sprawdź czy wynik został już wcześniej obliczony:
+        - jeżeli tak, to zwraca dane z ``CACHE``
+        - jeżeli nie, to oblicza, aktualizuje ``CACHE``, a następnie zwraca wartość
 
-    - jeżeli tak, to zwraca dane z ``CACHE``
-    - jeżeli nie, to oblicza, aktualizuje ``CACHE``, a następnie zwraca wartość
+    #. Wykorzystując ``timeit`` porównaj prędkość działania z obliczaniem na bieżąco dla parametru 100
 
-#. Wykorzystując ``timeit`` porównaj prędkość działania z obliczaniem na bieżąco dla parametru 100
+
+:Input:
+    .. code-block:: python
+
+        import sys
+        from timeit import timeit
+
+        sys.setrecursionlimit(5000)
+
+
+        def factorial_nocache(n: int) -> int:
+            if n == 0:
+                return 1
+            else:
+                return n * factorial_nocache(n-1)
+
+        duration_cache = timeit(
+            stmt='factorial_cache(500); factorial_cache(400); factorial_cache(450); factorial_cache(350)',
+            globals=globals(),
+            number=10000,
+        )
+
+        duration_nocache = timeit(
+            stmt='factorial_nocache(500); factorial_nocache(400); factorial_nocache(450); factorial_nocache(350)',
+            globals=globals(),
+            number=10000
+        )
+
+        print(f'factorial_cache time: {round(duration_cache, 4)} seconds')
+        print(f'factorial_nocache time: {round(duration_nocache, 3)} seconds')
+        print(f'Cached solution is {round(duration_nocache / duration_cache, 1)} times faster')
 
 Prosty dekorator
 ----------------
