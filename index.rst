@@ -377,13 +377,13 @@ Network and HTTP
     /net/http/index.rst
     /net/django/index.rst
 
-*********************
-Data Science and Math
-*********************
+*************************
+Math, Data Science and ML
+*************************
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Data Science and Math
+    :caption: Math, Data Science and ML
 
     /data-science/stdlib/index.rst
     /data-science/tools/index.rst
