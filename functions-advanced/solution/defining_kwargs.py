@@ -17,7 +17,7 @@ def is_numeric(*args, **kwargs) -> bool:
     >>> is_numeric(a='one')
     False
     """
-    args = args + tuple(kwargs.values())
+    args += tuple(kwargs.values())
 
     if len(args) == 0:
         return False
