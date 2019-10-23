@@ -66,36 +66,6 @@ Create array
     # array([[1., 2.],
     #        [3., 4.]])
 
-Data types
-----------
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([1, 2, 3])
-    # array([1, 2, 3])
-
-    type(a)
-    # <class 'numpy.ndarray'>
-
-    a.dtype
-    # dtype('int64')
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    b = np.array([1., 2., 3.])
-    # array([1., 2., 3.])
-
-    type(b)
-    # <class 'numpy.ndarray'>
-
-    b.dtype
-    # dtype('float64')
-
 Generate array
 --------------
 * similar to ``range()``
@@ -121,6 +91,114 @@ Generate array
     np.arange(start=3, stop=7, step=2, dtype=float)
     # array([3., 5.])
 
+
+Properties
+==========
+
+Data types
+----------
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([1, 2, 3])
+    # array([1, 2, 3])
+
+    type(a)
+    # <class 'numpy.ndarray'>
+
+    a.dtype
+    # dtype('int64')
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([1., 2., 3.])
+    # array([1., 2., 3.])
+
+    type(a)
+    # <class 'numpy.ndarray'>
+
+    a.dtype
+    # dtype('float64')
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3], [4, 5, 6]])
+    # array([[1, 2, 3],
+    #        [4, 5, 6]])
+
+    a.dtype
+    # dtype('int64')
+
+    a.astype(float)
+    # array([[1., 2., 3.],
+    #        [4., 5., 6.]])
+
+    a.dtype
+    # dtype('int64')
+
+    b = a.astype(float)
+    # array([[1., 2., 3.],
+    #        [4., 5., 6.]])
+
+    b.dtype
+    # dtype('float64')
+
+Dimensions
+----------
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([1, 2, 3])
+    # array([1, 2, 3])
+
+    a.ndim      # 1
+    a.shape     # (3,)
+    a.size      # 3
+
+    len(a)      # 3
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3], [4, 5, 6]])
+    # array([[1, 2, 3],
+    #        [4, 5, 6]])
+
+    a.ndim      # 2
+    a.shape     # (2, 3)
+    a.size      # 6
+
+    len(a)      # 2
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+    # array([[1, 2, 3],
+    #        [4, 5, 6],
+    #        [7, 8, 9]])
+
+    a.ndim      # 2
+    a.shape     # (3, 3)
+    a.size      # 9
+
+    len(a)      # 3
+
+
 Index
 =====
 
@@ -131,12 +209,14 @@ Index
     import numpy as np
 
 
-    a = np.array([1, 2, 3, 4], float)
-    # array([1., 2., 3., 4.])
+    a = np.array([1, 2, 3])
+    # array([1, 2, 3])
 
-    a[0]        # 1.0
-    a[3]        # 4.0
-    a[-1]       # 4.0
+    a[0]        # 1
+    a[1]        # 2
+    a[2]        # 3
+    a[3]        # IndexError: index 3 is out of bounds for axis 0 with size 3
+    a[-1]       # 3
 
 2-dimensions
 ------------
@@ -144,20 +224,42 @@ Index
 
     import numpy as np
 
-    a = np.array([[1, 2, 3], [4, 5, 6]], float)
-    # array([[1., 2., 3.],
-    #       [4., 5., 6.]])
 
-    a[0]        # array([1., 2., 3.])
-    a[1]        # array([4., 5., 6.])
+    a = np.array([[1, 2, 3], [4, 5, 6]])
+    # array([[1, 2, 3],
+    #        [4, 5, 6]])
 
-    a[0,0]      # 1.0
-    a[0,1]      # 2.0
-    a[1,2]      # 6.0
+    a[0]        # array([1, 2, 3])
+    a[1]        # array([4, 5, 6])
+    a[2]        # IndexError: index 2 is out of bounds for axis 0 with size 2
+
+    a[0,0]      # 1
+    a[0,1]      # 2
+    a[0,2]      # 3
+
+    a[1,0]      # 4
+    a[1,1]      # 5
+    a[1,2]      # 6
+
+    a[2,0]      # IndexError: index 2 is out of bounds for axis 0 with size 2
 
 
 Modify values
 =============
+
+1-dimension
+-----------
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([1, 2, 3, 4])
+    # array([1, 2, 3, 4])
+
+    a[0] = 99       # array([99,  2,  3,  4])
+    a[-1] = 88      # array([99,  2,  3, 88])
+
 .. code-block:: python
 
     import numpy as np
@@ -165,11 +267,36 @@ Modify values
 
     a = np.array([1, 2, 3, 4], float)
 
-    a[0] = 99.0
-    # array([99.,  2.,  3.,  4.])
+    a[0] = 99.9     # array([99.9,  2.,  3.,  4.])
+    a[-1] = 11.1    # array([99.9,  2.,  3., 11.1])
 
-    a[-1] = 88.0
-    # array([99.,  2.,  3., 88.])
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([1, 2, 3, 4], int)
+    # array([1, 2, 3, 4])
+
+    a[0] = 99.9       # array([99,  2,  3, 4])
+    a[-1] = 11.1      # array([99,  2,  3, 11])
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3], [4, 5, 6]])
+    # array([[1, 2, 3],
+    #        [4, 5, 6]])
+
+    a[0,0] = 99
+    # array([[99,  2,  3],
+    #        [ 4,  5,  6]])
+
+    a[1,2]
+    # array([[99,  2,  3],
+    #        [ 4,  5, 88]])
 
 
 Slice
@@ -189,37 +316,85 @@ Slice
     a[1:3]          # array([2., 3.])
     a[-2:]          # array([3., 4.])
 
-2-dimensions
-------------
+2-dimensions - Rows
+-------------------
 .. code-block:: python
 
     import numpy as np
 
-    a = np.array([[1, 2, 3], [4, 5, 6]], float)
-    # array([[1., 2., 3.],
-    #        [4., 5., 6.]])
 
-    a[1,:]          # array([ 4., 5., 6.])
-    a[:,2]          # array([ 3., 6.])
-    a[-1:,-2:]      # array([[ 5., 6.]])
+    a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+    # array([[1, 2, 3],
+    #        [4, 5, 6],
+    #        [7, 8, 9]])
+
+    a[:]
+    # array([[1, 2, 3],
+    #        [4, 5, 6],
+    #        [7, 8, 9]])
+
+    a[1:]
+    # array([[4, 5, 6],
+    #        [7, 8, 9]])
+
+    a[:1]
+    # array([[1., 2., 3.]])
+
+    a[1:2]
+    # array([[4, 5, 6]])
+
+2-dimensions - Columns
+----------------------
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+    # array([[1, 2, 3],
+    #        [4, 5, 6],
+    #        [7, 8, 9]])
+
+    a[:,0]          # array([1, 4, 7])
+    a[:,1]          # array([2, 5, 8])
+    a[:,2]          # array([3, 6, 9])
+    a[:,-1]         # array([3, 6, 9])
+
+    a[:,0:1]
+    # array([[1],
+    #        [4],
+    #        [7]])
+
+    a[:,0:2]
+    # array([[1, 2],
+    #        [4, 5],
+    #        [7, 8]])
+
+2-dimensions - Rows and Columns
+-------------------------------
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+    # array([[1, 2, 3],
+    #        [4, 5, 6],
+    #        [7, 8, 9]])
+
+    a[0:1,0:1]
+    # array([[1]])
+
+    a[0:2,0:2]
+    # array([[1, 2],
+    #        [4, 5]])
+
+    a[-1:,-2:]
+    # array([[8, 9]])
 
 
 Array shape
 ===========
-.. code-block:: python
-
-    a = np.array([[1, 2, 3], [4, 5, 6]], float)
-
-    a.shape  # (2, 3)
-    a.dtype  # dtype('float64')
-
-.. code-block:: python
-
-    a = np.array([[1, 2, 3], [4, 5, 6]], int)
-
-    a.astype(float)
-    a.dtype  # dtype('float64')
-
 .. code-block:: python
 
     a = np.array([[1, 2, 3], [4, 5, 6]], float)
