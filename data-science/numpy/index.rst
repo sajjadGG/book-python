@@ -28,6 +28,14 @@ Besides its obvious scientific uses, NumPy can also be used as an efficient mult
 
     import numpy as np
 
+Data Structures:
+
+    * Skalar - jednowymiarowa
+    * Wektor - dwuwymiarowa
+    * Tensor - trójwymiarowa
+    * Tablica - czterowymiarowa
+    * Macierz - n-wymiarowa
+
 .. toctree::
     :maxdepth: 2
 
