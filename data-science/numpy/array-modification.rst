@@ -68,6 +68,30 @@ Array Modification
     #        [ 4,  5, 88]])
 
 
+Put
+===
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([1, 2, 3, 4])
+
+    a.put([0, 3], 99)
+    # array([99,  2,  3, 99])
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([1, 2, 3, 4])
+    b = np.array([99, 88, 77])
+
+    a.put([0, 3], b)
+    # array([99,  2,  3, 88])
+
+
 Fill
 ====
 * Modifies inplace
@@ -146,6 +170,73 @@ Transpose
     # array([[1, 4, 7],
     #        [2, 5, 8],
     #        [3, 6, 9]])
+
+
+Sort
+====
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([2, 3, 1])
+
+    sorted(a)
+    # [1, 2, 3]
+
+    a.sort()
+    # array([1, 2, 3])
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[2, 3, 1], [5, 6, 4]])
+    # array([[1, 2, 3],
+    #        [4, 5, 6]])
+
+    sorted(a)
+    # ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+
+    a.sort()
+    # array([[1, 2, 3],
+    #        [4, 5, 6]])
+
+    a.sort(axis=0)
+    # array([[2, 3, 1],
+    #        [5, 6, 4]])
+
+    a.sort(axis=1)
+    # array([[1, 2, 3],
+    #        [4, 5, 6]])
+
+
+Clip
+====
+* Increase smaller values to lower bound
+* Decrease higher values to upper bound
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([1, 2, 3, 4, 5, 6])
+
+    a.clip(2, 5)
+    # array([2, 2, 3, 4, 5, 5])
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3], [4, 5, 6]])
+
+    a.clip(2, 5)
+    # array([[2, 2, 3],
+    #        [4, 5, 5]])
 
 
 Newaxis

@@ -59,9 +59,6 @@ Data Structures:
     array-logic.rst
     array-select.rst
 
-
-    selection.rst
-    matrix.rst
     algebra.rst
 
 .. todo:: Assignments:

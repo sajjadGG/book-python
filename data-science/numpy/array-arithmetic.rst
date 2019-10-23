@@ -3,6 +3,25 @@ Array Arithmetic
 ****************
 
 
+Rounding
+========
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([1., 1.41421356, 1.73205081])
+
+    np.floor(a)
+    # array([1., 1., 1.])
+
+    np.ceil(a)
+    # array([1., 2., 2.])
+
+    np.rint(a)
+    # array([1., 1., 2.])
+
+
 Addition
 ========
 .. code-block:: python
@@ -94,6 +113,21 @@ Division
 
     a / b
     # ValueError: operands could not be broadcast together with shapes (3,) (2,)
+
+Square Root
+===========
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3], [4, 5, 6]])
+    # array([[1, 2, 3],
+    #        [4, 5, 6]])
+
+    np.sqrt(a)
+    # array([[1., 1.41421356, 1.73205081],
+    #        [2., 2.23606798, 2.44948974]])
 
 
 Modulo
@@ -219,15 +253,23 @@ Matrix Multiplication
     a = np.array([[1, 2], [3, 4]])
     b = np.array([[5, 6], [7, 8]])
 
-    a @ b
-    # array([[19, 22],
-    #        [43, 50]])
-
     a.dot(b)
     # array([[19, 22],
     #        [43, 50]])
 
-.. code-block:: python
+.. code-block:: text
+
+    import numpy as np
+
+
+    a = np.array([[1, 2], [3, 4]])
+    b = np.array([[5, 6], [7, 8]])
+
+    a @ b
+    # array([[19, 22],
+    #        [43, 50]])
+
+.. code-block:: text
 
     import numpy as np
 
@@ -244,3 +286,31 @@ Matrix Multiplication
 
 Assignments
 ===========
+
+Matrix multiplication
+---------------------
+* Complexity level: easy
+* Lines of code to write: 2 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/numpy_matmul.py`
+
+#. Używając ``numpy`` oraz operatora ``@`` oraz ``*``
+#. Czym się różnią?
+
+.. code-block:: python
+
+    def matrix_multiplication(A, B):
+        """
+        >>> import numpy as np
+
+        >>> A = np.array([[1, 0], [0, 1]])
+        >>> B = [[4, 1], [2, 2]]
+        >>> matrix_multiplication(A, B)
+        [[4, 1], [2, 2]]
+
+        >>> A = [[1,0,1,0], [0,1,1,0], [3,2,1,0], [4,1,2,0]]
+        >>> B = np.matrix([[4,1], [2,2], [5,1], [2,3]])
+        >>> matrix_multiplication(A, B)
+        [[9, 2], [7, 3], [21, 8], [28, 8]]
+        """
+        pass
