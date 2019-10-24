@@ -120,15 +120,15 @@ Sum of inner elements
 * Filename: :download:`solution/random_matrix.py`
 
 :English:
-    #. Use only ``random`` module
-    #. Set ``random.seed(0)``
+    #. Use only ``np.random`` module
+    #. Set ``np.random.seed(0)``
     #. Generate ``outer: List[List[int]]`` with 16x16 random digits (0-9 inclusive)
     #. Calculate sum of inner 4x4 elements
     #. Inner matrix is exactly in the middle of outer
 
 :Polish:
-    #. Używaj tylko modułu ``random``
-    #. Ustaw ``random.seed(0)``
+    #. Używaj tylko modułu ``np.random``
+    #. Ustaw ``np.random.seed(0)``
     #. Wygeneruj ``outer: List[List[int]]`` z 16x16 losowych cyfr (0-9 włącznie)
     #. Policz sumę środkowych 4x4 elementów
     #. Środkowa macierz jest dokładnie w środku większej
@@ -138,3 +138,6 @@ Sum of inner elements
     :align: center
 
     Sum of inner elements
+
+:Hint:
+    * ``a.sum()``

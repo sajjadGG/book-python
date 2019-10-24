@@ -68,6 +68,32 @@ Array Modification
     #        [ 4,  5, 88]])
 
 
+Copy
+====
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([1, 2, 3])
+    # array([1, 2, 3])
+
+    b = a
+    # array([1, 2, 3])
+
+    c = a.copy()
+    # array([1, 2, 3])
+
+    a[0] = 0
+    # array([0, 2, 3])
+
+    b
+    # array([0, 2, 3])
+
+    c
+    # array([1, 2, 3])
+
+
 Put
 ===
 .. code-block:: python
