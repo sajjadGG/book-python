@@ -12,17 +12,16 @@ Co trzeba wiedzieć przed rozpoczęciem pracy?
 
 Elementy języka Python i biblioteki standardowej
 ------------------------------------------------
-* :ref:`Data Types`
+* :ref:`Numeric Types`
+* :ref:`Logic Types`
+* :ref:`Character Types`
 * :ref:`Control Flow`
-* :ref:`For Loop`
-* :ref:`Function Basics`
-* :ref:`Print Formatting`
+* :ref:`For loop`
+* :ref:`Functions`
 * :ref:`Operators`
 * :ref:`Mathematics`
 * :ref:`Files`
 * :ref:`CSV Serialization`
-* :ref:`OOP Syntax`
-* :ref:`OOP Paradigm`
 * :ref:`Installing Packages`
 * :ref:`Software Engineering Conventions`
 * :ref:`Performance Optimization`

@@ -13,109 +13,27 @@ Introduction
     /about/references.rst
     /about/language.rst
     /about/ide.rst
-    /about/syntax.rst
 
-**********
-Data Types
-**********
+
+*************
+Python basics
+*************
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :name: Data Types
-    :caption: Data Types
+    :caption: Python basics
 
-    /data-types/int.rst
-    /data-types/float.rst
-    /data-types/bool.rst
-    /data-types/none.rst
-    /data-types/str.rst
+    /basics/syntax/index.rst
+    /basics/numeric-types/index.rst
+    /basics/logic-types/index.rst
+    /basics/character-types/index.rst
+    /basics/sequence-types/index.rst
+    /basics/mapping-types/index.rst
+    /basics/data-methods/index.rst
+    /basics/control-flow/index.rst
+    /basics/functions/index.rst
+    /basics/oop/index.rst
 
-***************
-Data Structures
-***************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :name: Data Structures
-    :caption: Data Structures
-
-    /data-structures/list.rst
-    /data-structures/tuple.rst
-    /data-structures/set.rst
-    /data-structures/dict.rst
-    /data-structures/nested.rst
-
-************
-Data Methods
-************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :name: Data Methods
-    :caption: Data Methods
-
-    /data-methods/str-methods.rst
-    /data-methods/set-methods.rst
-    /data-methods/indexes.rst
-    /data-methods/slice.rst
-    /data-methods/type-system.rst
-    /data-methods/syntax-similarities.rst
-
-************
-Control Flow
-************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :name: Control Flow
-    :caption: Control Flow
-
-    /control-flow/if-else.rst
-    /control-flow/composite-statements.rst
-    /control-flow/operators.rst
-    /control-flow/loop-while.rst
-    /control-flow/loop-for.rst
-    /control-flow/loop-nested.rst
-    /control-flow/loop-dict.rst
-    /control-flow/loop-else.rst
-    /control-flow/unpacking.rst
-    /control-flow/comprehensions.rst
-    /control-flow/exceptions.rst
-    /control-flow/file.rst
-    /control-flow/exam.rst
-
-*********
-Functions
-*********
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Functions
-
-    /functions/basic.rst
-    /functions/types.rst
-    /functions/recurrence.rst
-    /functions/doctest.rst
-
-**********
-OOP Syntax
-**********
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: OOP Syntax
-    :name: OOP Syntax
-
-    /oop-syntax/class.rst
-    /oop-syntax/attribute.rst
-    /oop-syntax/method.rst
-    /oop-syntax/init.rst
-    /oop-syntax/stringify.rst
-    /oop-syntax/inheritance.rst
-    /oop-syntax/enum.rst
-    /oop-syntax/operator-overload.rst
-    /oop-syntax/dataclass.rst
-    /oop-syntax/exam.rst
 
 ****************
 Standard Library
@@ -377,9 +295,9 @@ Network and HTTP
     /net/http/index.rst
     /net/django/index.rst
 
-*************************
-Math, Data Science and ML
-*************************
+*********************
+Data Science and Math
+*********************
 .. toctree::
     :maxdepth: 2
     :numbered:
@@ -390,8 +308,16 @@ Math, Data Science and ML
     /data-science/numpy/index.rst
     /data-science/pandas/index.rst
     /data-science/data-visualization/index.rst
-    /data-science/machine-learning/index.rst
+    /machine-learning/index.rst
 
+
+****************
+Machine Learning
+****************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Math, Data Science and ML
 
 *********
 Blogposts
