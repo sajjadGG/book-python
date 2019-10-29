@@ -198,14 +198,14 @@ Number to the ``n-th`` power
     pow(-1, 2)      # 1
 
 
-Assignment Example
-==================
+Assignments
+===========
 
-Time
-----
+Example
+-------
 * Complexity level: easy
-* Lines of code to write: 5 lines
-* Estimated time of completion: 10 min
+* Lines of code to write: 12 lines
+* Estimated time of completion: 5 min
 * Filename: :download:`solution/int_time.py`
 
 :English:
@@ -222,7 +222,7 @@ Time
     #. Oblicz ile sekund to miesiąc pracy (22 dni po 8 godzin)
     #. Oblicz ile minut to tydzień pracy (40 godzin)
 
-:Result:
+:Solution:
     .. literalinclude:: solution/int_time.py
         :language: python
 
@@ -234,10 +234,6 @@ Time
 :Hint:
     * 1 h = 60 min
     * 1 min = 60 s
-
-
-Assignments
-===========
 
 Megabits and Megabytes
 ----------------------

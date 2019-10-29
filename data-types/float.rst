@@ -128,13 +128,14 @@ Number to the ``n-th`` power
     2 ** -1         # 0.5
     1.337 ** 3      # 2.389979753
 
-Assignments Example
-===================
 
-SI Unit Conversion
-------------------
+Assignments
+===========
+
+Example
+-------
 * Complexity level: easy
-* Lines of code to write: 4 lines
+* Lines of code to write: 13 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/float_si_units.py`
 
@@ -148,12 +149,19 @@ SI Unit Conversion
     * Używają system Imperialny (US)
     * Przelicz je na system metryczny (układ SI)
 
-:Result:
+:Input:
+    * Plane altitude: 10.000 ft
+    * Bottle volume: 20 Fl Oz
+    * Speed limit: 70 mph
+
+:Solution:
     .. literalinclude:: solution/float_si_units.py
         :language: python
 
-Assignments
-===========
+:The whys and wherefores:
+    * Defining constants and variables
+    * Naming convention
+    * Mathematical operations
 
 Handling user input and type casting
 ------------------------------------
