@@ -252,6 +252,25 @@ Length of a ``str``
 Assignments
 ===========
 
+Example
+-------
+* Complexity level: easy
+* Lines of code to write: 3 lines
+* Estimated time of completion: 3 min
+* Filename: :download:`solution/str_example.py`
+
+:English:
+    * Ask user to input text
+    * Print number of characters
+
+:Polish:
+    * Poproś użytkownika o wprowadzenie tekstu
+    * Wypisz liczbę znaków
+
+:Solutiuon:
+    .. literalinclude:: solution/str_example.py
+        :language: python
+
 Emoticon print
 --------------
 * Complexity level: easy
