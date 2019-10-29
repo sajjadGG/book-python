@@ -8,10 +8,6 @@ g = 'dr n. med. Ryan Stone'
 h = 'Ryan Stone, MD-PhD'
 
 
-
-
-
-
 print(a[4:-4])
 print(b[6:-8])
 print(c[4:])

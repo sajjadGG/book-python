@@ -234,8 +234,8 @@ Split train/test
     #. Calculate pivot point: number records in ``data`` multiplied by PERCENT
     #. Divide ``data`` into two lists:
 
-        * ``X_train``: 60% - training data
-        * ``X_test``: 40% - testing data
+        * ``features``: 60% - training data
+        * ``labels``: 40% - testing data
 
     #. From ``data`` write training data from start to pivot
     #. From ``data`` write test data from pivot to end
@@ -247,8 +247,8 @@ Split train/test
     #. Wylicz punkt podziału: ilość rekordów w ``data`` razy PROCENT
     #. Podziel ``data`` na dwie listy:
 
-        * ``X_train``: 60% - dane do uczenia
-        * ``X_test``: 40% - dane do testów
+        * ``features``: 60% - dane do uczenia
+        * ``labels``: 40% - dane do testów
 
     #. Z ``data`` zapisz do uczenia rekordy od początku do punktu podziału
     #. Z ``data`` zapisz do testów rekordy od punktu podziału do końca

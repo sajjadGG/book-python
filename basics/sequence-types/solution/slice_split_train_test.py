@@ -30,10 +30,10 @@ data = INPUT[1:]
 
 pivot = int(len(data) * TRAINING_SIZE)
 
-X_train = data[:pivot]
-X_test = data[pivot:]
+features = data[:pivot]
+labels = data[pivot:]
 
 
 print(f'Header: {header}')
-print(f'Training data: {X_train}')
-print(f'Test data: {X_test}')
+print(f'Training data: {features}')
+print(f'Test data: {labels}')

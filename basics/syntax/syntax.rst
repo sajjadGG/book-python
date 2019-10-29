@@ -1,8 +1,8 @@
-.. _Syntax:
+.. _Basic Syntax:
 
-******
-Syntax
-******
+************
+Basic Syntax
+************
 
 
 Indentation instead of braces
