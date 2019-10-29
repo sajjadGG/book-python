@@ -33,18 +33,19 @@ Multiline ``str``
     """
     # '\n        First line\n        Second line\n        Third line\n    '
 
-.. code-block:: python
-
-    my_str = """First line"""
-    # 'First line'
-
-
 Single or double quote?
 =======================
 * ``"`` and ``'`` works the same
 * Choose one and keep consistency in code
 * Python console uses ``'``
 * it matters for ``doctest``, which compares two outputs character by character
+
+.. code-block:: python
+
+    name = "Jan Twardowski"
+    name = 'Jan Twardowski'
+    name = """Jan Twardowski"""
+    name = '''Jan Twardowski'''
 
 When use double quotes?
 -----------------------
