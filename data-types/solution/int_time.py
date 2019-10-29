@@ -2,11 +2,13 @@ SECOND = 1
 MIN = 60 * SECOND
 HOUR = 60 * MIN
 DAY = 8 * HOUR
-WEEK = 40 * HOUR
-MONTH = 22 * DAY
 
-print(f'5 min in sec = {5 * MIN}')
-print(f'1 h in sec = {HOUR}')
-print(f'8 h in sec = {8 * HOUR}')
-print(f'22 day in sec = {1 * MONTH}')
-print(f'1 week in min = {WEEK / MIN}')
+work_day = 8 * HOUR
+work_week = 40 * HOUR
+work_month = 22 * work_day
+
+print(f'5 min = {5 * MIN} sec')
+print(f'1 h = {HOUR} sec')
+print(f'8 h = {work_day} sec')
+print(f'22 day = {work_month} sec')
+print(f'1 week = {work_week} min')

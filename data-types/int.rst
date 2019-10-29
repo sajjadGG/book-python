@@ -198,8 +198,8 @@ Number to the ``n-th`` power
     pow(-1, 2)      # 1
 
 
-Assignments
-===========
+Assignment Example
+==================
 
 Time
 ----
@@ -222,6 +222,10 @@ Time
     #. Oblicz ile sekund to miesiąc pracy (22 dni po 8 godzin)
     #. Oblicz ile minut to tydzień pracy (40 godzin)
 
+:Result:
+    .. literalinclude:: solution/int_time.py
+        :language: python
+
 :The whys and wherefores:
     * Defining constants and variables
     * Naming convention
@@ -230,6 +234,10 @@ Time
 :Hint:
     * 1 h = 60 min
     * 1 min = 60 s
+
+
+Assignments
+===========
 
 Megabits and Megabytes
 ----------------------

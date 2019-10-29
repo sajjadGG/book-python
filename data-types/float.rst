@@ -102,9 +102,12 @@ Rounding numbers
 
     pi = 3.14159265359
 
-    round(pi)       # 3
-    round(pi, 2)    # 3.14
-    round(pi, 4)    # 3.1416
+    round(pi)               # 3
+    round(pi, 2)            # 3.14
+    round(pi, 4)            # 3.1416
+
+    print(f'{pi:.2f}')      # 3.14
+    print(f'{pi:.2f}')      # 3.1416
 
 Absolute value
 --------------
@@ -124,6 +127,30 @@ Number to the ``n-th`` power
 
     2 ** -1         # 0.5
     1.337 ** 3      # 2.389979753
+
+Assignments Example
+===================
+
+SI Unit Conversion
+------------------
+* Complexity level: easy
+* Lines of code to write: 4 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/float_si_units.py`
+
+:English:
+    * Input data (see below)
+    * Use Imperial (US) measurements system
+    * Convert to metric (SI) system
+
+:Polish:
+    * Dane wejściowe (patrz poniżej)
+    * Używają system Imperialny (US)
+    * Przelicz je na system metryczny (układ SI)
+
+:Result:
+    .. literalinclude:: solution/float_si_units.py
+        :language: python
 
 Assignments
 ===========
@@ -170,8 +197,8 @@ Handling user input and type casting
     * 1608 m = 1 mile
     * 1852 m = 1 nautical mile
 
-SI Unit Conversion
-------------------
+Spacesuit Pressures
+-------------------
 * Complexity level: medium
 * Lines of code to write: 20 lines
 * Estimated time of completion: 20 min

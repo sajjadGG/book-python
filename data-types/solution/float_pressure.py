@@ -11,8 +11,8 @@ o2 = 20.946/100 * ATA
 pressure_gradient = -11.3 * Pa
 death_altitude = (o2 - ATA) / pressure_gradient
 
-print(f'EMU operating pressure: {emu / kPa} kPa, {emu / PSI} psi')
-print(f'Orlan operating pressure: {orlan / kPa} kPa, {orlan / PSI} psi')
-print(f'O2 partial pressure at sea level: {o2 / kPa} kPa, {o2 / PSI} psi')
-print(f'International Standard Atmosphere: {ATA / hPa} hPa, {ATA / PSI}')
-print(f'Death altitude: {death_altitude}m')
+print(f'EMU operating pressure: {emu / kPa:.2f} kPa, {emu / PSI:.2f} psi')
+print(f'Orlan operating pressure: {orlan / kPa:.2f} kPa, {orlan / PSI:.2f} psi')
+print(f'O2 partial pressure at sea level: {o2 / kPa:.2f} kPa, {o2 / PSI:.2f} psi')
+print(f'International Standard Atmosphere: {ATA / hPa:.2f} hPa, {ATA / PSI:.2f}')
+print(f'Death altitude: {death_altitude:.2f} m')
