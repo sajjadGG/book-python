@@ -255,4 +255,27 @@ Identity
 
 Assignments
 ===========
-.. todo:: Create assignments
+
+Create
+------
+* Complexity level: easy
+* Lines of code to write: 4 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/numpy_create.py`
+
+:English:
+    #. Set random seed to zero
+    #. Create ``np.array`` with size 16x16
+    #. Structure must contains random integers (0-9)
+    #. Print structure
+
+:Polish:
+    #. Ustaw ziarno losowości na zero
+    #. Stwórz ``np.array`` o rozmiarze 16x16
+    #. Struktura musi zawierać losowe liczby (0-9)
+    #. Wypisz strukturę
+
+:The whys and wherefores:
+    * Defining ``np.array``
+    * Using ``np.random.seed()``
+    * Generating random ``np.array``

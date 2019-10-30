@@ -201,7 +201,7 @@ Iterating complex types
 
 
     for outer in DATA:
-        if isinstance(outer, (list, set, tuple))
+        if isinstance(outer, (list, set, tuple)):
             for inner in outer:
                 print(inner)
         else:
@@ -297,99 +297,3 @@ Unique keys from schema-less database
 
 :Hint:
     * Compare solutions with :numref:`Micro-benchmarking use case`
-
-Label encoder
--------------
-* Complexity level: medium
-* Lines of code to write: 13 lines
-* Estimated time of completion: 15 min
-* Filename: :download:`solution/loop_label_encoder.py`
-
-:English:
-    #. For input data (see below)
-    #. Define:
-
-        * ``features: List[Tuple[float]]`` - measurements
-        * ``labels: List[int]`` - species
-
-    #. Separate header from data
-    #. To encode and decode ``labels`` (species) we need ``label_encoder: Dict[int, str]``:
-
-        * key - id (incremented integer value)
-        * value - species name
-
-    #. ``label_encoder`` must be generated from ``INPUT``
-    #. For each row add appropriate data to ``features``, ``labels`` and ``label_encoder``
-    #. Print ``features``, ``labels`` and ``label_encoder``
-    #. Output must be identical to output data (see below)
-
-:Polish:
-    #. Dla danych wejściowych (patrz poniżej)
-    #. Zdefiniuj:
-
-        * ``features: List[Tuple[float]]`` - pomiary
-        * ``labels: List[int]`` - gatunki
-        * ``label_encoder: Dict[int, str]`` - słownik podmiany nazw gatunków
-
-    #. Odseparuj nagłówek od danych
-    #. Aby móc zakodować i odkodować ``labels`` (gatunki) potrzebny jest ``label_encoder: Dict[int, str]``:
-
-        * key - identyfikator (kolejna liczba rzeczywista)
-        * value - nazwa gatunku
-
-    #. ``label_encoder`` musi być wygenerowany z ``INPUT``
-    #. Dla każdego wiersza dodawaj odpowiednie dane do ``feature``, ``labels`` i ``label_encoder``
-    #. Wypisz ``feature``, ``labels`` i ``label_encoder``
-    #. Wynik ma być identyczny z danymi wyjściowymi (patrz poniżej)
-
-:Input:
-    .. code-block:: python
-
-        INPUT = [
-            ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-            (5.8, 2.7, 5.1, 1.9, 'virginica'),
-            (5.1, 3.5, 1.4, 0.2, 'setosa'),
-            (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-            (6.3, 2.9, 5.6, 1.8, 'virginica'),
-            (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-            (4.7, 3.2, 1.3, 0.2, 'setosa'),
-            (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-            (7.6, 3.0, 6.6, 2.1, 'virginica'),
-            (4.9, 3.0, 1.4, 0.2, 'setosa'),
-            (4.9, 2.5, 4.5, 1.7, 'virginica'),
-            (7.1, 3.0, 5.9, 2.1, 'virginica'),
-            (4.6, 3.4, 1.4, 0.3, 'setosa'),
-            (5.4, 3.9, 1.7, 0.4, 'setosa'),
-            (5.7, 2.8, 4.5, 1.3, 'versicolor'),
-            (5.0, 3.6, 1.4, 0.3, 'setosa'),
-            (5.5, 2.3, 4.0, 1.3, 'versicolor'),
-            (6.5, 3.0, 5.8, 2.2, 'virginica'),
-            (6.5, 2.8, 4.6, 1.5, 'versicolor'),
-            (6.3, 3.3, 6.0, 2.5, 'virginica'),
-            (6.9, 3.1, 4.9, 1.5, 'versicolor'),
-            (4.6, 3.1, 1.5, 0.2, 'setosa'),
-        ]
-
-:Output:
-    .. code-block:: python
-
-        features = [
-            (5.8, 2.7, 5.1, 1.9),
-            (5.1, 3.5, 1.4, 0.2),
-            (5.7, 2.8, 4.1, 1.3),
-            (6.3, 2.9, 5.6, 1.8),
-            (6.4, 3.2, 4.5, 1.5),
-            (4.7, 3.2, 1.3, 0.2), ...]
-
-        labels = [0, 1, 2, 1, 2, 0, ...]
-
-        label_encoder = {
-            0: 'virginica',
-            1: 'setosa',
-            2: 'versicolor'}
-
-
-:The whys and wherefores:
-    * ``dict`` lookups
-    * Dynamic ``dict`` generating
-    * ``dict`` reversal

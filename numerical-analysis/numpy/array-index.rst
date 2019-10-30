@@ -48,4 +48,4 @@ Array Index
 
 Assignments
 ===========
-.. todo:: Create assignments
+

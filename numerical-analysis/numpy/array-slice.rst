@@ -112,6 +112,53 @@ Array Slice
 Assignments
 ===========
 
+Array Slicing
+-------------
+* Complexity level: easy
+* Lines of code to write: 4 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/numpy_slice.py`
+
+:English:
+    #. Use only random module from ``numpy`` module
+    #. Set random seed to zero
+    #. Use input ndarray (see below)
+    #. Select inner 3x3 and save to ``OUTPUT: ndarray``
+    #. Print ``OUTPUT``
+
+:Polish:
+    #. Używaj tylko modułu random z modułu ``numpy``
+    #. Ustaw ziarno losowości na zero
+    #. Użyj wejściowej ndarray (patrz poniżej)
+    #. Wybierz wewnętrzne 3x3 i zapisz do ``OUTPUT: ndarray``
+    #. Wypisz ``OUTPUT``
+
+:Input:
+    .. code-block:: python
+
+        INPUT = np.array([
+            [7, 5, 3, 4, 5,],
+            [2, 2, 8, 1, 5,],
+            [3, 8, 8, 4, 4,],
+            [5, 5, 5, 2, 5,],
+            [0, 1, 0, 6, 0,],
+        ])
+
+:Output:
+    .. code-block:: python
+
+        print(OUTPUT)
+        # array([
+        #     [2, 8, 1],
+        #     [8, 8, 4],
+        #     [5, 5, 2],
+        # ])
+
+:The whys and wherefores:
+    * Defining ``np.array``
+    * Using ``np.random.seed()``
+    * Generating random ``np.array``
+
 Sum of inner elements
 ---------------------
 * Complexity level: medium
@@ -120,16 +167,16 @@ Sum of inner elements
 * Filename: :download:`solution/random_matrix.py`
 
 :English:
-    #. Use only ``np.random`` module
-    #. Set ``np.random.seed(0)``
-    #. Generate ``outer: List[List[int]]`` with 16x16 random digits (0-9 inclusive)
+    #. Use only random module from ``numpy`` module
+    #. Set random seed to zero
+    #. Generate ``outer: ndarray`` with 16x16 random digits (0-9 inclusive)
     #. Calculate sum of inner 4x4 elements
     #. Inner matrix is exactly in the middle of outer
 
 :Polish:
-    #. Używaj tylko modułu ``np.random``
-    #. Ustaw ``np.random.seed(0)``
-    #. Wygeneruj ``outer: List[List[int]]`` z 16x16 losowych cyfr (0-9 włącznie)
+    #. Używaj tylko modułu random z modułu ``numpy``
+    #. Ustaw ziarno losowości na zero
+    #. Wygeneruj ``outer: ndarray`` z 16x16 losowych cyfr (0-9 włącznie)
     #. Policz sumę środkowych 4x4 elementów
     #. Środkowa macierz jest dokładnie w środku większej
 
@@ -140,4 +187,4 @@ Sum of inner elements
     Sum of inner elements
 
 :Hint:
-    * ``a.sum()``
+    * ``np.array.sum()``

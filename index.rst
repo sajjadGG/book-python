@@ -295,20 +295,19 @@ Network and HTTP
     /net/http/index.rst
     /net/django/index.rst
 
-*********************
-Data Science and Math
-*********************
+*****************************************
+Data Science, Numerical Analysis and Math
+*****************************************
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Math, Data Science and ML
+    :caption: Data Science, Numerical Analysis and Math
 
-    /data-science/stdlib/index.rst
-    /data-science/tools/index.rst
-    /data-science/numpy/index.rst
-    /data-science/pandas/index.rst
-    /data-science/data-visualization/index.rst
-    /machine-learning/index.rst
+    /numerical-analysis/stdlib/index.rst
+    /numerical-analysis/tools/index.rst
+    /numerical-analysis/numpy/index.rst
+    /numerical-analysis/pandas/index.rst
+    /numerical-analysis/data-visualization/index.rst
 
 
 ****************
@@ -318,6 +317,8 @@ Machine Learning
     :maxdepth: 2
     :numbered:
     :caption: Math, Data Science and ML
+
+    /machine-learning/index.rst
 
 *********
 Blogposts

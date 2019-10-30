@@ -14,8 +14,15 @@ INPUT = [
 header = INPUT[0]
 data = INPUT[1:]
 
+
 for row in data:
     species = row[4].pop()
 
-    if species.endswith('sa') or species.endswith('ca'):
+    if species.endswith('ca') or species.endswith('sa'):
         print(species)
+
+
+# for *_, species in data:
+#     species = species.pop()
+#     if species.endswith('ca') or species.endswith('sa'):
+#         print(species)
