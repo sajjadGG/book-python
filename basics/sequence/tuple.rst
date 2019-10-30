@@ -65,6 +65,75 @@ Accessing elements
     my_tuple[-3]        # 'b'
 
 
+``tuple`` vs. others
+====================
+.. code-block:: python
+
+    what = 'foo'      # str
+    what = 'foo',     # tuple with str
+    what = 'foo'.     # SyntaxError: invalid syntax
+
+.. code-block:: python
+
+    what = ('foo')    # str
+    what = ('foo',)   # tuple with str
+    what = ('foo'.)   # SyntaxError: invalid syntax
+
+``tuple`` vs. ``float`` and ``int``
+-----------------------------------
+.. code-block:: python
+
+    what = 1.2        # float
+    what = 1,2        # tuple with two int
+
+    what = (1.2)      # float
+    what = (1,2)      # tuple with two int
+
+.. code-block:: python
+
+    what = 1.2,       # tuple with float
+    what = 1,2.3      # tuple with int and float
+
+    what = (1.2,)     # tuple with float
+    what = (1,2.3)    # tuple with int and float
+
+.. code-block:: python
+
+    what = 1.         # float
+    what = .5         # float
+    what = 1.0        # float
+    what = 1          # int
+
+    what = (1.)       # float
+    what = (.5)       # float
+    what = (1.0)      # float
+    what = (1)        # int
+
+.. code-block:: python
+
+    what = 10.5       # float
+    what = 10,5       # tuple with two ints
+    what = 10.        # float
+    what = 10,        # tuple with int
+    what = 10         # int
+
+    what = (10.5)     # float
+    what = (10,5)     # tuple with two ints
+    what = (10.)      # float
+    what = (10,)      # tuple with int
+    what = (10)       # int
+
+.. code-block:: python
+
+    what = 1.,1.      # tuple with two floats
+    what = .5,.5      # tuple with two floats
+    what = 1.,.5      # tuple with two floats
+
+    what = (1.,1.)    # tuple with two floats
+    what = (.5,.5)    # tuple with two floats
+    what = (1.,.5)    # tuple with two floats
+
+
 Length of a ``tuple``
 =====================
 .. code-block:: python

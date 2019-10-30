@@ -24,14 +24,15 @@ Python basics
     :caption: Python basics
 
     /basics/syntax/index.rst
-    /basics/numeric-types/index.rst
-    /basics/logic-types/index.rst
-    /basics/character-types/index.rst
-    /basics/sequence-types/index.rst
-    /basics/mapping-types/index.rst
-    /basics/data-methods/index.rst
+    /basics/numeric/index.rst
+    /basics/logic/index.rst
+    /basics/character/index.rst
+    /basics/sequence/index.rst
+    /basics/mapping/index.rst
+    /basics/conditional/index.rst
+    /basics/loop/index.rst
     /basics/control-flow/index.rst
-    /basics/functions/index.rst
+    /basics/function/index.rst
     /basics/oop/index.rst
 
 

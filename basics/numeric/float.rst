@@ -7,7 +7,13 @@ Defining ``float``
 ==================
 .. code-block:: python
 
-    value = 13.37        # 13.37
+    value = 13.37           # 13.37
+    value = -13.37          # -13.37
+
+.. code-block:: python
+    :caption: Type annotation
+
+    value: float = 13.37    # 13.37
 
 Notation without leading or trailing zero
 -----------------------------------------
@@ -15,32 +21,32 @@ Notation without leading or trailing zero
 
 .. code-block:: python
 
-    value = 10.         # 10.0
-    value = .44         # 0.44
+    value = 10.             # 10.0
+    value = .44             # 0.44
 
 Engineering notation
 --------------------
 .. code-block:: python
 
-    million = 1e6       # 1000000.0
-    million = 1E6       # 1000000.0
+    million = 1e6           # 1000000.0
+    million = 1E6           # 1000000.0
 
 .. code-block:: python
 
-    +1e6      # 1000000.0
-    -1e6      # -1000000.0
+    +1e6                    # 1000000.0
+    -1e6                    # -1000000.0
 
 .. code-block:: python
 
-    1e-3                # 0.001
-    1e-4                # 0.0001
-    1e-5                # 1e-05
-    1e-6                # 1e-06
+    1e-3                    # 0.001
+    1e-4                    # 0.0001
+    1e-5                    # 1e-05
+    1e-6                    # 1e-06
 
 .. code-block:: python
 
-    1.337 * 1e3          # 1337.0
-    1.337 * 1e-3         # 0.001337
+    1.337 * 1e3             # 1337.0
+    1.337 * 1e-3            # 0.001337
 
 Maximal and minimal ``float`` values
 ------------------------------------
@@ -48,25 +54,25 @@ Maximal and minimal ``float`` values
 
     import sys
 
-    sys.float_info.min  # 2.2250738585072014e-308
-    sys.float_info.max  # 1.7976931348623157e+308
+    sys.float_info.min      # 2.2250738585072014e-308
+    sys.float_info.max      # 1.7976931348623157e+308
 
 Infinity representation
 -----------------------
 .. code-block:: python
 
-    1e308               # 1e+308
-    1e309               # inf
+    1e308                   # 1e+308
+    1e309                   # inf
 
 .. code-block:: python
 
-    float('inf')        # inf
-    float('Infinity')   # inf
+    float('inf')            # inf
+    float('Infinity')       # inf
 
 .. code-block:: python
 
-    float('-inf')       # -inf
-    float('-Infinity')  # -inf
+    float('-inf')           # -inf
+    float('-Infinity')      # -inf
 
 
 Converting to ``float``
@@ -76,21 +82,21 @@ Converting to ``float``
 
 .. code-block:: python
 
-    float(10.5)         # 10.5
-    float(10)           # 10.0
+    float(10.5)             # 10.5
+    float(10)               # 10.0
 
 .. code-block:: python
 
-    float(13.37)         # 13.37
-    float(-13.37)        # -13.37
+    float(13.37)            # 13.37
+    float(-13.37)           # -13.37
 
 .. code-block:: python
 
-    float('+13.37')      # 13.37
-    float('-13.37')      # -13.37
+    float('+13.37')         # 13.37
+    float('-13.37')         # -13.37
 
-    float('13,37')       # ValueError: could not convert string to float: '13,37'
-    float('-13,37')      # ValueError: could not convert string to float: '-13,37'
+    float('13,37')          # ValueError: could not convert string to float: '13,37'
+    float('-13,37')         # ValueError: could not convert string to float: '-13,37'
 
 
 Numeric Functions
@@ -113,20 +119,20 @@ Absolute value
 --------------
 .. code-block:: python
 
-    abs(13.37)        # 13.37
-    abs(-13.37)       # 13.37
+    abs(13.37)              # 13.37
+    abs(-13.37)             # 13.37
 
 Number to the ``n-th`` power
 ----------------------------
 .. code-block:: python
 
-    pow(2, -1)      # 0.5
-    pow(1.337, 3)   # 2.389979753
+    pow(2, -1)              # 0.5
+    pow(1.337, 3)           # 2.389979753
 
 .. code-block:: python
 
-    2 ** -1         # 0.5
-    1.337 ** 3      # 2.389979753
+    2 ** -1                 # 0.5
+    1.337 ** 3              # 2.389979753
 
 
 Assignments

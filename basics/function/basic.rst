@@ -349,25 +349,31 @@ Cleaning text input
 :English:
     #. For given input data (see below)
     #. Write function cleaning up data
+    #. Function takes one argument of type ``str``
+    #. Function returns cleaned text
 
 :Polish:
     #. Dla danych wejściowych (patrz poniżej)
     #. Napisz funkcję czyszczącą dane
+    #. Funkcja przyjmuje jeden argument typu ``str``
+    #. Funkcja zwraca oczyszczony tekst
 
 :Input:
     .. code-block:: python
 
-        'ul.Mieszka II'
-        'UL. Zygmunta III WaZY'
-        '  bolesława chrobrego '
-        'ul Jana III SobIESkiego'
-        '\tul. Jana trzeciego Sobieskiego'
-        'ulicaJana III Sobieskiego'
-        'UL. JA\tNA 3 SOBIES  KIEGO'
-        'ULICA JANA III SOBIESKIEGO  '
-        'ULICA. JANA III SOBIeskieGO'
-        ' Jana 3 Sobieskiego  '
-        'Jana III Sobi\teskiego '
+        INPUT = List[str] = [
+            'ul.Mieszka II',
+            'UL. Zygmunta III WaZY',
+            '  bolesława chrobrego ',
+            'ul Jana III SobIESkiego',
+            '\tul. Jana trzeciego Sobieskiego',
+            'ulicaJana III Sobieskiego',
+            'UL. JA\tNA 3 SOBIES  KIEGO',
+            'ULICA JANA III SOBIESKIEGO  ',
+            'ULICA. JANA III SOBIeskieGO',
+            ' Jana 3 Sobieskiego  ',
+            'Jana III Sobi\teskiego ',
+        ]
 
 :Output:
     .. code-block:: python

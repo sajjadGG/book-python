@@ -15,6 +15,12 @@ Defining ``int``
     value = -30             # -30
 
 .. code-block:: python
+    :caption: Type annotation
+
+    value: int = 30              # 30
+    value: int = -30             # -30
+
+.. code-block:: python
 
     million = 1000000        # 1000000
     million = 1_000_000      # 1000000

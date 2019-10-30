@@ -338,6 +338,63 @@ Create ``dict`` from two sequences
     # }
 
 
+``dict`` and ``set``
+====================
+* Both ``set`` and ``dict`` keys must be hashable
+* Both ``set`` and ``dict`` uses the same ``{`` and ``}`` braces
+* Despite similar syntax, they are different types
+
+.. code-block:: python
+
+    {}                # dict
+    {1}               # set
+
+    {1: 2}            # dict
+    {1, 2}            # set
+
+    {1: 2,}           # dict
+    {1, 2,}           # set
+
+    {1: 2, 3: 4}      # dict
+    {1, 2, 3, 4}      # set
+
+Empty ``dict``
+--------------
+.. code-block:: python
+
+    my_data = {1: 1}
+    # {1:1}
+
+    my_data.pop(1)
+    # {}
+
+Empty ``set``
+-------------
+.. code-block:: python
+
+    my_data = {1}
+    # {1}
+
+    my_data.pop()
+    # set()
+
+Differences
+-----------
+.. code-block:: python
+
+    my_data = {}
+    isinstance(my_data, dict)         # True
+    isinstance(my_data, set)          # False
+
+    my_data = {1}
+    isinstance(my_data, dict)         # False
+    isinstance(my_data, set)          # True
+
+    my_data = {1: 1}
+    isinstance(my_data, dict)         # True
+    isinstance(my_data, set)          # False
+
+
 Length of a ``dict``
 ====================
 .. code-block:: python

@@ -5,6 +5,58 @@ Comprehensions
 **************
 
 
+Syntax
+======
+.. code-block:: python
+
+    output = [<RETURN> for <VARIABLE> in <SEQUENCE>]
+
+.. code-block:: python
+
+    DATA = [1, 2, 3, 4]
+
+    [x for x in DATA]
+    # [1, 2, 3, 4]
+
+    [x**2 for x in DATA]
+    # [1, 2, 4, 16]
+
+
+Generator expressions vs. Comprehensions
+========================================
+* Comprehensions executes instantly
+* Generator expression executes lazily
+
+.. code-block:: python
+
+    DATA = ['a', 'b', 'c', 'd']
+
+    list(x for x in DATA)               # ['a', 'b', 'c', 'd']
+    [x for x in DATA]                   # ['a', 'b', 'c', 'd']
+
+.. code-block:: python
+
+    DATA = ['a', 'b', 'c', 'd']
+
+    set(x for x in DATA)                # {'b', 'c', 'd', 'a'}
+    {x for x in range(0, 5)}            # {'b', 'c', 'd', 'a'}
+
+.. code-block:: python
+
+    {x: x for x in range(0, 5)}         # {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
+
+.. code-block:: python
+
+    tuple(x for x in range(0, 5))       # (0, 1, 2, 3, 4)
+    (x for x in range(0, 5))            # <generator object <genexpr> at 0x1197032a0>
+
+.. code-block:: python
+
+    all(x for x in range(0, 5))         # False
+    any(x for x in range(0, 5))         # True
+    sum(x for x in range(0, 5))         # 10
+
+
 Simple usage
 ============
 
@@ -69,48 +121,6 @@ Tuple Comprehension?!
 
     numbers = (x+10 for x in range(0, 5))
     # <generator object <genexpr> at 0x11eaef570>
-
-
-Generator expressions vs. Comprehensions
-========================================
-
-Comprehensions
---------------
-* Executes instantly
-
-.. code-block:: python
-
-    list(x for x in range(0, 5))        # [0, 1, 2, 3, 4]
-    [x for x in range(0, 5)]            # [0, 1, 2, 3, 4]
-
-.. code-block:: python
-
-    set(x for x in range(0, 5))         # {0, 1, 2, 3, 4}
-    {x for x in range(0, 5)}            # {0, 1, 2, 3, 4}
-
-.. code-block:: python
-
-    {x: x for x in range(0, 5)}         # {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
-
-.. code-block:: python
-
-    tuple(x for x in range(0, 5))       # (0, 1, 2, 3, 4)
-    (x for x in range(0, 5))            # <generator object <genexpr> at 0x1197032a0>
-
-.. code-block:: python
-
-    all(x for x in range(0, 5))         # False
-    any(x for x in range(0, 5))         # True
-    sum(x for x in range(0, 5))         # 10
-
-Generator Expressions
----------------------
-* Lazy evaluation
-
-.. code-block:: python
-
-    (x*x for x in range(0, 30) if x % 2)
-    # <generator object <genexpr> at 0x1197032a0>
 
 
 Conditional Comprehension
@@ -315,8 +325,8 @@ Split train/test
         * ``labels_train: List[str]`` - labels to train - 60%
         * ``labels_test: List[str]`` - labels to test - 40%
 
-    #. Create ``result: Tuple[list, list, list, list]`` with features (training and test) and labels (training and test)
-    #. Print ``result``
+    #. Create ``OUTPUT: Tuple[list, list, list, list]`` with features (training and test) and labels (training and test)
+    #. Print ``OUTPUT``
 
 :Polish:
     #. Dana jest struktura danych ``INPUT: List[tuple]`` (patrz poniżej)
@@ -334,8 +344,8 @@ Split train/test
         - ``labels_train: List[str]`` - labels do uczenia - 60%
         - ``labels_test: List[str]`` - labels do testów - 40%
 
-    #. Stwórz ``result: Tuple[list, list, list, list]`` z cechami (treningowymi i testowymi) oraz labelkami (treningowymi i testowymi)
-    #. Wypisz ``result``
+    #. Stwórz ``OUTPUT: Tuple[list, list, list, list]`` z cechami (treningowymi i testowymi) oraz labelkami (treningowymi i testowymi)
+    #. Wypisz ``OUTPUT``
 
 :Input:
     .. code-block:: python
