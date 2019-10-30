@@ -295,13 +295,13 @@ Network and HTTP
     /net/http/index.rst
     /net/django/index.rst
 
-*****************************************
-Data Science, Numerical Analysis and Math
-*****************************************
+********************************
+Numerical Analysis, Data Science
+********************************
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Data Science, Numerical Analysis and Math
+    :caption: Numerical Analysis, Data Science
 
     /numerical-analysis/stdlib/index.rst
     /numerical-analysis/tools/index.rst

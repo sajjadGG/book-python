@@ -49,3 +49,45 @@ Array Index
 Assignments
 ===========
 
+Index
+-----
+* Complexity level: easy
+* Lines of code to write: 4 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/numpy_create.py`
+
+:English:
+    #. Create ``OUTPUT: ndarray``
+    #. Add to ``OUTPUT`` elements from ``INPUT`` (see below) at indexes:
+
+        - row 0, column 2
+        - row 2, column 2
+        - row 0, column 0
+        - row 1, column 0
+
+    #. ``OUTPUT`` size must be 2x2
+
+:Polish:
+    #. Stwórz ``OUTPUT: ndarray``
+    #. Dodaj do ``OUTPUT`` elementy z ``INPUT`` (patrz poniżej) o indeksach:
+
+        - wiersz 0, kolumna 2
+        - wiersz 2, kolumna 2
+        - wiersz 0, kolumna 0
+        - wiersz 1, kolumna 0
+
+    #. Rozmiar ``OUTPUT`` musi być 2x2
+
+:Input:
+    .. code-block:: python
+
+        INPUT = np.array([
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]
+        ])
+
+:The whys and wherefores:
+    * Defining ``np.array``
+    * Indexing ``np.array``
+
