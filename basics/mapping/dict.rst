@@ -100,6 +100,22 @@ Order of ``dict`` elements
 
 .. note:: Since Python 3.7: The insertion-order preservation nature of dict objects is now an official part of the Python language spec.
 
+Type Annotation
+---------------
+.. code-block:: python
+
+    my_dict: dict = {}
+    my_dict: dict = dict()
+
+.. code-block:: python
+
+    from typing import Dict
+
+    my_dict: Dict[int, str] = {
+        0: 'setosa',
+        1: 'virginica':
+        2: 'versicolor'
+    }
 
 Adding elements
 ===============

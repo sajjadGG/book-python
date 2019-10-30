@@ -14,6 +14,9 @@ Defining ``bool``
     my_var = True               # True
     my_var = False              # False
 
+    my_var: bool = True               # True
+    my_var: bool = False              # False
+
 
 Converting to ``bool``
 ======================

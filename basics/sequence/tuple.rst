@@ -44,6 +44,23 @@ Initialize with many elements
     my_tuple = 1, 2.0, None, False, 'Iris'
     my_tuple = (1, 2.0, None, False, 'Iris')
 
+Type Annotation
+---------------
+.. code-block:: python
+
+    my_tuple: tuple = ()
+    my_tuple: tuple = tuple()
+
+    my_tuple: tuple = ('a', 2, 3.3)
+
+.. code-block:: python
+
+    from typing import Tuple
+
+    my_tuple: Tuple[int, int, int] = (1, 2, 3)
+    my_tuple: Tuple[str, str, str] = ('setosa', 'virginica', 'versicolor')
+    my_tuple: Tuple[str, int, float] = ('a', 2, 3.3)
+
 
 Accessing elements
 ==================

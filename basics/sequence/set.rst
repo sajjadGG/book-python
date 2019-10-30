@@ -70,6 +70,20 @@ Initialize with many elements
     {1, 1.0}
     # {1}
 
+Type Annotation
+---------------
+.. code-block:: python
+
+    my_set: set = set()
+
+.. code-block:: python
+
+    from typing import Set
+
+    my_set: Set[int] = {1, 2, 3}
+    my_set: Set[float] = {0.0, 1.1, 2.2}
+    my_set: Set[str] = {'a', 'b', 'c'}
+
 
 Adding items
 ============

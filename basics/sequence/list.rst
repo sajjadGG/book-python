@@ -42,6 +42,23 @@ Initialize with many elements
     alphabet = list('ABCDE')
     # ['A', 'B', 'C', 'D', 'E']
 
+Type Annotation
+---------------
+.. code-block:: python
+
+    my_list: list = list()
+    my_list: list = []
+
+    my_list: list = ['a', 1, 2.2]
+
+.. code-block:: python
+
+    from typing import List
+
+    my_list: List[int] = [1, 2, 3, 4]
+    my_list: List[float] = [5.8, 2.7, 5.1, 1.9]
+    my_list: List[str] = ['a', 'b', 'c', 'd']
+
 
 Adding elements
 ===============
