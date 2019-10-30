@@ -115,7 +115,7 @@ Assignments
 Array Slicing
 -------------
 * Complexity level: easy
-* Lines of code to write: 4 lines
+* Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/numpy_slice.py`
 
@@ -137,22 +137,20 @@ Array Slicing
     .. code-block:: python
 
         INPUT = np.array([
-            [7, 5, 3, 4, 5,],
-            [2, 2, 8, 1, 5,],
-            [3, 8, 8, 4, 4,],
-            [5, 5, 5, 2, 5,],
-            [0, 1, 0, 6, 0,],
+            [7, 5, 3, 4, 5],
+            [2, 2, 8, 1, 5],
+            [3, 8, 8, 4, 4],
+            [5, 5, 5, 2, 5],
+            [0, 1, 0, 6, 0],
         ])
 
 :Output:
     .. code-block:: python
 
         print(OUTPUT)
-        # array([
-        #     [2, 8, 1],
-        #     [8, 8, 4],
-        #     [5, 5, 2],
-        # ])
+        # [[2 8 1]
+        #  [8 8 4]
+        #  [5 5 2]]
 
 :The whys and wherefores:
     * Defining ``np.array``
