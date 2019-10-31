@@ -40,6 +40,7 @@ Data Structures:
     :maxdepth: 2
 
     builtin.rst
+    random.rst
 
     array-create.rst
     array-attributes.rst
@@ -57,7 +58,6 @@ Data Structures:
     array-select.rst
 
     statistics.rst
-    random.rst
     trigonometry.rst
     polynomial.rst
     algebra.rst

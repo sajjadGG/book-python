@@ -18,11 +18,11 @@ Seed
     np.random.seed(0)
 
 
-Generate
-========
+Generate pseudorandom numbers
+=============================
 
-Random ``int``
---------------
+Generate pseudorandom ``int``
+-----------------------------
 * Random integers from low (inclusive) to high (exclusive)
 
 .. code-block:: python
@@ -31,10 +31,22 @@ Random ``int``
 
 
     np.random.randint(0, 10)
-    # 9
+    # 5
 
-Random ``float``
-----------------
+.. code-block:: python
+
+    import numpy as np
+
+
+    np.random.randint(0, 10, size=5)
+    # array([4, 3, 0, 4, 3])
+
+    np.random.randint(0, 10, size=(2,3))
+    # array([[8, 8, 3],
+    #        [8, 2, 8]])
+
+Generate pseudorandom ``float``
+-------------------------------
 * Random floats in the half-open interval ``[0.0, 1.0)``
 * Results are from the "continuous uniform" distribution over the stated interval
 
@@ -44,10 +56,22 @@ Random ``float``
 
 
     np.random.random()
-    # 0.70110427435769551
+    # 0.8472517387841254
 
-Random ``ndarray``
-------------------
+.. code-block:: python
+
+    import numpy as np
+
+
+    np.random.random(size=5)
+    # array([0.88173536, 0.69253159, 0.72525428, 0.50132438, 0.95608363])
+
+    np.random.random(size=(2,3))
+    # array([[0.69947928, 0.29743695, 0.81379782],
+    #        [0.39650574, 0.8811032 , 0.58127287]])
+
+Generate pseudorandom ``ndarray``
+---------------------------------
 * Random values in a given shape
 * Random samples from a uniform distribution over ``[0, 1)``
 
@@ -57,33 +81,88 @@ Random ``ndarray``
 
 
     np.random.rand(5)
-    # array([0.93123551, 0.75755626, 0.68828294, 0.5335651 , 0.98728456])
-
-    np.random.rand(2,3)
-    # array([[0.39576466, 0.39324239, 0.99116573],
-    #        [0.69457363, 0.28033562, 0.43549806]])
-
-
-Sample
-======
-
-Normal (Gaussian) distribution
-------------------------------
-* Draw random samples from a normal (Gaussian) distribution
+    # array([0.5488135 , 0.71518937, 0.60276338, 0.54488318, 0.4236548 ])
 
 .. code-block:: python
 
     import numpy as np
 
 
-    np.random.normal(1.5, 4.0)  # continuous normal (Gaussian) distribution with mean micro=1.5 and standard deviation sigma=4.0
-    # 0.83636555041094318
+    np.random.rand(2,3)
+    # array([[0.5488135 , 0.71518937, 0.60276338],
+    #        [0.54488318, 0.4236548 , 0.64589411]])
 
-    np.random.normal()  # micro=0.0, sigma=1.0
-    # 0.27548716940682932
+    np.random.rand(3,2)
+    # array([[0.5488135 , 0.71518937],
+    #        [0.60276338, 0.54488318],
+    #        [0.4236548 , 0.64589411]])
+
+
+Drawing pseudorandom sample
+===========================
+
+Choice
+------
+.. code-block:: python
+
+    import numpy as np
+
+
+    np.random.choice([1, 2, 3])
+    # 2
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    np.random.choice([1, 2, 3], size=2)
+    # array([3, 1])
+
+    np.random.choice([1, 2, 3], size=2)
+    # array([3, 3])
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    np.random.choice([1, 2, 3], 2, replace=False)
+    # array([1, 3])
+
+Normal (Gaussian) distribution
+------------------------------
+* Draw pseudorandom samples from a normal (Gaussian) distribution
+* Default:
+
+    * μ - ``loc=0.0``
+    * σ - ``scale=1.0``
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    np.random.normal()
+    # 0.9500884175255894
+
+    np.random.normal(0.0, 1.0)
+    # 0.4001572083672233
+
+    np.random.normal(loc=0.0, scale=1.0)
+    # -0.977277879876411
+
+.. code-block:: python
+
+    import numpy as np
+
 
     np.random.normal(size=5)
     # array([-1.67215088, 0.65813053, -0.70150614, 0.91452499, 0.71440557])
+
+    np.random.normal(loc=0.0, scale=1.0, size=(2,3))
+    # array([[-0.99090328,  1.01788005,  0.3415874 ],
+    #        [-1.25088622,  0.92525075, -0.90478616]])
 
 .. figure:: img/normal-distribution.png
     :scale: 50%
@@ -106,8 +185,23 @@ Poisson distribution
     import numpy as np
 
 
-    np.random.poisson(6.0)  # Poisson distribution with lambda = 6.0
+    np.random.poisson(6.0)
     # 5
+
+    np.random.poisson(lam=6.0)
+    # 5
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    np.random.poisson(lam=6.0, size=5)
+    # array([5, 7, 3, 5, 6])
+
+    np.random.poisson(lam=6.0, size=(2,3))
+    # array([[4, 9, 7],
+    #        [8, 5, 5]])
 
 .. figure:: img/poisson-distribution.png
     :scale: 50%
@@ -118,7 +212,7 @@ Poisson distribution
 
 Shuffle
 =======
-* Modify sequence in-place
+* Modify sequence in-place (!!)
 
 1-dimensional Array
 -------------------
