@@ -83,34 +83,6 @@ With multiple rows
 Assignments
 ===========
 
-Iris Dirty
-----------
-* Complexity level: easy
-* Lines of code to write: 10 lines
-* Estimated time of completion: 20 min
-* Filename: :download:`solution/pandas_df_dirty.py`
-* Input data: :download:`data/iris-dirty.csv`
-
-#. Mając dane Irysów przekonwertuj je na ``DataFrame``
-#. Pomiń pierwszą linię z metadanymi
-#. Zmień nazwy kolumn na:
-
-    * Sepal length
-    * Sepal width
-    * Petal length
-    * Petal width
-    * Species
-
-#. Podmień wartości w kolumnie species
-
-    - 0 -> 'setosa',
-    - 1 -> 'versicolor',
-    - 2 -> 'virginica'
-
-#. Ustaw wszystkiw wiersze w losowej kolejności i zresetuj index
-#. Wyświetl pierwsze 5 i ostatnie 3 wiersze
-#. Wykreśl podstawowe statystyki opisowe
-
 Cars
 ----
 * Complexity level: medium

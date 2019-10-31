@@ -90,7 +90,7 @@ Every month
 ^^^^^^^^^^^
 .. code-block:: python
 
-    pd.date_range('1970-01-01', periods=6, freq='Y')
+    pd.date_range('1970-01-01', periods=6, freq='M')
     # DatetimeIndex(['1970-01-31',
     #                '1970-02-28',
     #                '1970-03-31',
@@ -158,7 +158,7 @@ Every second
     #                '1970-01-01 00:00:03',
     #                '1970-01-01 00:00:05',
     #                '1970-01-01 00:00:06'],
-    #                dtype='datetime64[ns]', freq='T')
+    #                dtype='datetime64[ns]', freq='S')
 
 
 Assignments

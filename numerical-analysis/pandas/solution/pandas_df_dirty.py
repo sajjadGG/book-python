@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-FILE = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/data-science/pandas/data/iris-dirty.csv'
+FILE = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/iris-dirty.csv'
 
 COLUMNS = [
     'Sepal length',
