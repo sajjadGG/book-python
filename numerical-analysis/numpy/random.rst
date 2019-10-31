@@ -46,8 +46,8 @@ Random ``float``
     np.random.random()
     # 0.70110427435769551
 
-Random ``np.array``
--------------------
+Random ``ndarray``
+------------------
 * Random values in a given shape
 * Random samples from a uniform distribution over ``[0, 1)``
 
@@ -128,7 +128,6 @@ Shuffle
 
 
     a = np.array([1, 2, 3])
-    # array([3, 1, 2])
 
     np.random.shuffle(a)
     # array([3, 1, 2])
@@ -142,10 +141,9 @@ Shuffle
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6],
-    #        [7, 8, 9]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
 
     np.random.shuffle(a)
     # array([[7, 8, 9],

@@ -44,8 +44,8 @@ Data Structures:
     array-create.rst
     array-attributes.rst
     array-shape.rst
-    array-index.rst
-    array-slice.rst
+    array-indexing.rst
+    array-slicing.rst
     array-iteration.rst
     array-rounding.rst
     array-methods.rst
