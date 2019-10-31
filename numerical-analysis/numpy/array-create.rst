@@ -3,15 +3,26 @@ Array Create
 ************
 
 
+Array Declaration
+=================
+
 1-dimensional Array
-===================
+-------------------
 .. code-block:: python
 
     import numpy as np
 
 
-    np.array([1, 2, 3])
+    a = np.array([1, 2, 3])
+
+    repr(a)
     # array([1, 2, 3])
+
+    str(a)
+    # [1 2 3]
+
+    print(a)
+    # [1 2 3]
 
 .. code-block:: python
 
@@ -24,15 +35,10 @@ Array Create
     np.array([1.1, 2.2, 3.3])
     # array([1.1, 2.2, 3.3])
 
-.. code-block:: python
-
-    import numpy as np
-
-
-    np.array([1, 2, 3], dtype=float)
+    np.array([1, 2, 3], float)
     # array([ 1., 2., 3.])
 
-    np.array([1, 2, 3], float)
+    np.array([1, 2, 3], dtype=float)
     # array([ 1., 2., 3.])
 
 .. code-block:: python
@@ -46,54 +52,87 @@ Array Create
     np.array(['one', 'two', 'three'])
     # array(['one', 'two', 'three'], dtype='<U5')
 
-
 2-dimensional Array
-===================
+-------------------
 .. code-block:: python
 
     import numpy as np
 
 
-    np.array([[1,2], [3,4]])
-    # array([[1, 2],
-    #        [3, 4]])
+    b = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
-    np.array([[1,2], [3,4]], float)
-    # array([[1., 2.],
-    #        [3., 4.]])
+    repr(b)
+    # array([[1, 2, 3],
+    #        [4, 5, 6]])
+
+    str(b)
+    # [[1 2 3]
+    #  [4 5 6]]
 
 .. code-block:: python
 
     import numpy as np
 
 
-    np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+    c = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
+
+    repr(c)
     # array([[1, 2, 3],
     #        [4, 5, 6],
     #        [7, 8, 9]])
 
+    str(c)
+    # [[1 2 3]
+    #  [4 5 6]
+    #  [7 8 9]]
+
 
 Array Generation
 ================
+
+Array from ``range()``
+----------------------
 .. code-block:: python
 
     import numpy as np
 
 
-    np.array(range(10))
-    # array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+    np.array(range(5))
+    # array([0, 1, 2, 3, 4])
 
-    np.array(range(10), float)
-    # array([ 0., 1., 2., 3., 4., 5., 6., 7., 8., 9.])
+    np.array(range(5), float)
+    # array([ 0., 1., 2., 3., 4.])
+
+.. code-block:: python
+
+    import numpy as np
 
 
-Arange
-======
+    np.array(range(5, 10))
+    # array([5, 6, 7, 8, 9])
+
+    np.array(range(5, 10), float)
+    # array([5., 6., 7., 8., 9.])
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    np.array(range(5, 10, 2))
+    # array([5, 7, 9])
+
+    np.array(range(5, 10, 2), float)
+    # array([5., 7., 9.])
+
+Array from ``np.arange()``
+--------------------------
 * similar to ``range()``
 * array-range
 
-int
----
 .. code-block:: python
 
     import numpy as np
@@ -102,18 +141,8 @@ int
     np.arange(5)
     # array([0, 1, 2, 3, 4])
 
-    np.arange(1, 5)
-    # array([1, 2, 3, 4])
-
-    np.arange(1, 10, step=2)
-    # array([1, 3, 5, 7, 9])
-
-float
------
-.. code-block:: python
-
-    import numpy as np
-
+    np.arange(5, dtype=float)
+    # array([0, 1, 2, 3, 4])
 
     np.arange(5.0)
     # array([0., 1., 2., 3., 4.])
@@ -123,8 +152,17 @@ float
     import numpy as np
 
 
-    np.arange(start=2, stop=10, step=2, dtype=float)
-    # array([2., 4., 6., 8.])
+    np.arange(5, 10)
+    # array([5, 6, 7, 8, 9])
+
+    np.arange(5, 10, step=2)
+    # array([5, 7, 9])
+
+    np.arange(start=5, stop=10, step=2)
+    # array([5, 7, 9])
+
+    np.arange(start=5, stop=10, step=2, dtype=float)
+    # array([5., 7., 9.])
 
 .. code-block:: python
 
@@ -134,9 +172,14 @@ float
     np.arange(0.0, 1.0, 0.1)
     # array([0. , 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9])
 
+    np.arange(0.0, 1.0, 0.2)
+    # array([0. , 0.2, 0.4, 0.6, 0.8])
 
-Zeros
-=====
+    np.arange(0.0, 1.0, 0.3)
+    # array([0. , 0.3, 0.6, 0.9])
+
+Zeros and zeros-like
+--------------------
 .. code-block:: python
 
     import numpy as np
@@ -146,21 +189,36 @@ Zeros
     # array([[0., 0., 0.],
     #       [0., 0., 0.]])
 
+    np.zeros(shape=(2, 3))
+    # array([[0., 0., 0.],
+    #        [0., 0., 0.]])
 
 .. code-block:: python
 
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
+    b = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
-    np.zeros_like(a)
+    np.zeros_like(b)
     # array([[0, 0, 0],
     #        [0, 0, 0]])
 
+.. code-block:: python
 
-Ones
-====
+    import numpy as np
+
+
+    b2 = np.array([[1, 2, 3],
+                  [4, 5, 6]], float)
+
+    np.zeros_like(b2)
+    # array([[0., 0., 0.],
+    #        [0., 0., 0.]])
+
+Ones and ones-like
+------------------
 .. code-block:: python
 
     import numpy as np
@@ -171,22 +229,38 @@ Ones
     #        [1., 1.],
     #        [1., 1.]])
 
+    np.ones(shape=(3, 2))
+    # array([[1., 1.],
+    #        [1., 1.],
+    #        [1., 1.]])
+
 .. code-block:: python
 
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
+    b = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
-    np.ones_like(a)
+    np.ones_like(b)
     # array([[1, 1, 1],
     #        [1, 1, 1]])
 
+.. code-block:: python
 
-Empty
-=====
+    import numpy as np
+
+
+    b2 = np.array([[1, 2, 3],
+                   [4, 5, 6]], float)
+
+    np.ones_like(b)
+    # array([[1., 1., 1.],
+    #        [1., 1., 1.]])
+
+Empty and empty-like
+--------------------
 * Garbage from memory
-* Very small numbers (``1e-312``, ``1e-313``, ``1e-322``)
 * Will reuse previous if given shape was already created
 
 .. code-block:: python
@@ -204,42 +278,71 @@ Empty
     import numpy as np
 
 
-    np.zeros((2, 3))
-    #array([[0., 0., 0.],
-    #       [0., 0., 0.]])
+    b = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
-    np.empty((2, 3))
-    #array([[0., 0., 0.],
-    #       [0., 0., 0.]])
+    np.empty((2,3))
+    # array([[1., 2., 3.],
+    #        [4., 5., 6.]])
 
-
-Random
-======
 .. code-block:: python
 
     import numpy as np
 
+
+    b = np.array([[1, 2, 3],
+                  [4, 5, 6]])
+
+    np.empty_like(b)
+    # array([[1, 2, 3],
+    #        [4, 5, 6]])
+
+Random and randint
+------------------
+.. code-block:: python
+
+    import numpy as np
+
+
+    np.random.rand(3)
+    # array([0.36477855, 0.3654733 , 0.56707875])
 
     np.random.rand(2, 3)
     # array([[0.12840072, 0.14798816, 0.94352656],
     #        [0.24807979, 0.6355252 , 0.65943694]])
 
+    np.random.rand(3, 2)
+    # array([[0.65997255, 0.60316048],
+    #        [0.15598197, 0.30253777],
+    #        [0.86367738, 0.21519753]])
+
 .. code-block:: python
 
     import numpy as np
 
 
-    a = np.random.randint(10, size=(2, 3))
+    np.random.randint(10, size=(2,3))
     # array([[9, 5, 0],
     #        [7, 0, 6]])
 
+    np.random.randint(5, 10, size=(2,3))
+    # array([[6, 6, 5],
+    #        [9, 9, 7]])
+
+    np.random.randint(low=5, high=10, size=(2,3))
+    # array([[5, 7, 8],
+    #        [6, 8, 6]])
 
 Identity
-========
+--------
 .. code-block:: python
 
     import numpy as np
 
+
+    np.identity(2)
+    # array([[1., 0.],
+    #        [0., 1.]])
 
     np.identity(3)
     # array([[1., 0., 0.],
