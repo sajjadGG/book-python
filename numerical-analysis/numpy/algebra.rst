@@ -358,7 +358,7 @@ Euclidean distance 2D
     Calculate Euclidean distance in Cartesian coordinate system
 
 :Hint:
-    * :math:`distance(a, b) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2`
+    * :math:`distance(a, b) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}`
 
 Euclidean distance ``n`` dimensions
 -----------------------------------
@@ -371,7 +371,7 @@ Euclidean distance ``n`` dimensions
     #. Given are two points ``A: Sequence[int]`` and ``B: Sequence[int]``
     #. Coordinates are in cartesian system
     #. Points ``A`` and ``B`` are in ``N``-dimensional space
-    #. Points ``A` and ``B`` must be in the same space
+    #. Points ``A`` and ``B`` must be in the same space
     #. Calculate distance between points using Euclidean algorithm
     #. Function must pass ``doctest``
 
