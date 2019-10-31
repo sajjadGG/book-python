@@ -434,10 +434,10 @@ Correlation coefficient
     import numpy as np
 
 
-    b2 = np.array([[1, 2, 1],
+    b1 = np.array([[1, 2, 1],
                    [5, 4, 3]])
 
-    np.corrcoef(b2)
+    np.corrcoef(b1)
     # array([[1., 0.],
     #        [0., 1.]])
 
@@ -446,10 +446,10 @@ Correlation coefficient
     import numpy as np
 
 
-    b3 = np.array([[3, 1, 3],
+    b2 = np.array([[3, 1, 3],
                    [5, 5, 3]])
 
-    np.corrcoef(b3)
+    np.corrcoef(b2)
     # array([[ 1. , -0.5],
     #        [-0.5,  1. ]])
 
@@ -458,10 +458,10 @@ Correlation coefficient
     import numpy as np
 
 
-    b4 = np.array([[5, 2, 1],
+    b3 = np.array([[5, 2, 1],
                    [2, 4, 5]])
 
-    np.corrcoef(b4)
+    np.corrcoef(b3)
     # array([[ 1.        , -0.99587059],
     #        [-0.99587059,  1.        ]])
 

@@ -1,6 +1,6 @@
-***********
-Array Slice
-***********
+*************
+Array Slicing
+*************
 
 
 1-dimensional Array
@@ -10,8 +10,7 @@ Array Slice
     import numpy as np
 
 
-    a = np.array([1, 2, 3, 4])
-    # array([1, 2, 3, 4])
+    a = np.array([1, 2, 3])
 
     a[0:2]
     # array([1, 2])
@@ -22,30 +21,21 @@ Array Slice
     a[1:3]
     # array([2, 3])
 
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([1, 2, 3, 4])
-    # array([1., 2., 3., 4.])
-
     a[-2:]
-    # array([3, 4])
+    # array([2, 3])
 
 .. code-block:: python
 
     import numpy as np
 
 
-    a = np.array([1, 2, 3, 4])
-    # array([1., 2., 3., 4.])
+    a = np.array([1, 2, 3])
 
     a[::2]
     # array([1, 3])
 
     a[1::2]
-    # array([2, 4])
+    # array([2])
 
 
 2-dimensional Array
@@ -58,11 +48,11 @@ All
     import numpy as np
 
 
-    a = np.array([[1, 2, 3],
+    b = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    a[:]
+    b[:]
     # array([[1, 2, 3],
     #        [4, 5, 6],
     #        [7, 8, 9]])
@@ -74,26 +64,35 @@ Rows
     import numpy as np
 
 
-    a = np.array([[1, 2, 3],
+    b = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    a[1:]
+    b[1:]
     # array([[4, 5, 6],
     #        [7, 8, 9]])
 
-    a[:1]
+    b[:1]
     # array([[1, 2, 3]])
 
-    a[1:3]
+    b[1:3]
     # array([[4, 5, 6],
     #        [7, 8, 9]])
 
-    a[::2]
+.. code-block:: python
+
+    import numpy as np
+
+
+    b = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
+
+    b[::2]
     # array([[1, 2, 3],
     #        [7, 8, 9]])
 
-    a[1::2]
+    b[1::2]
     # array([[4, 5, 6]])
 
 Columns
@@ -103,20 +102,20 @@ Columns
     import numpy as np
 
 
-    a = np.array([[1, 2, 3],
+    b = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    a[:, 0]
+    b[:, 0]
     # array([1, 4, 7])
 
-    a[:, 1]
+    b[:, 1]
     # array([2, 5, 8])
 
-    a[: ,2]
+    b[: ,2]
     # array([3, 6, 9])
 
-    a[:, -1]
+    b[:, -1]
     # array([3, 6, 9])
 
 .. code-block:: python
@@ -124,21 +123,21 @@ Columns
     import numpy as np
 
 
-    a = np.array([[1, 2, 3],
+    c = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    a[:, 0:1]
+    c[:, 0:1]
     # array([[1],
     #        [4],
     #        [7]])
 
-    a[:, 0:2]
+    c[:, 0:2]
     # array([[1, 2],
     #        [4, 5],
     #        [7, 8]])
 
-    a[:, :2]
+    c[:, :2]
     # array([[1, 2],
     #        [4, 5],
     #        [7, 8]])
@@ -148,16 +147,16 @@ Columns
     import numpy as np
 
 
-    a = np.array([[1, 2, 3],
+    b = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    a[:, ::2]
+    c[:, ::2]
     # array([[1, 3],
     #        [4, 6],
     #        [7, 9]])
 
-    a[:, 1::2]
+    c[:, 1::2]
     # array([[2],
     #        [5],
     #        [8]])
@@ -169,33 +168,24 @@ Rows and Columns
     import numpy as np
 
 
-    a = np.array([[1, 2, 3],
+    c = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    a[0:1, 0:1]
+    c[0:1, 0:1]
     # array([[1]])
 
-    a[0:1, 0:2]
+    c[0:1, 0:2]
     # array([[1, 2]])
 
-    a[0:1, 0:3]
+    c[0:1, 0:3]
     # array([[1, 2, 3]])
 
-    a[0:2, 0:2]
+    c[0:2, 0:2]
     # array([[1, 2],
     #        [4, 5]])
 
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
-    a[-1:, -2:]
+    c[-1:, -2:]
     # array([[8, 9]])
 
 .. code-block:: python
@@ -203,15 +193,15 @@ Rows and Columns
     import numpy as np
 
 
-    a = np.array([[1, 2, 3],
+    c = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    a[::2, ::2]
+    c[::2, ::2]
     # array([[1, 3],
     #        [7, 9]])
 
-    a[1::2, 1::2]
+    c[1::2, 1::2]
     # array([[5]])
 
 
@@ -237,14 +227,14 @@ Newaxis
     import numpy as np
 
 
-    a = np.array([[1, 2, 3],
+    b = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    a[:, np.newaxis]
+    b[:, np.newaxis]
     # array([[[1, 2, 3]],
     #        [[4, 5, 6]]])
 
-    a[np.newaxis, :]
+    b[np.newaxis, :]
     # array([[[1, 2, 3],
     #         [4, 5, 6]]])
 
@@ -253,19 +243,19 @@ Newaxis
     import numpy as np
 
 
-    a = np.array([[1, 2, 3],
+    c = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    a[:, np.newaxis, 1]
+    c[:, np.newaxis, 1]
     # array([[2],
     #        [5],
     #        [8]])
 
-    a[np.newaxis, :, 1]
+    c[np.newaxis, :, 1]
     # array([[2, 5, 8]])
 
-    a[1, np.newaxis, :]
+    c[1, np.newaxis, :]
     # array([[4, 5, 6]])
 
 
@@ -277,7 +267,7 @@ Array Slicing
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/numpy_slice.py`
+* Filename: :download:`solution/numpy_slicing.py`
 
 :English:
     #. Use input ndarray (see below)

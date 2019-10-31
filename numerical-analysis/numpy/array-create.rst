@@ -210,10 +210,10 @@ Zeros and zeros-like
     import numpy as np
 
 
-    b2 = np.array([[1, 2, 3],
+    b1 = np.array([[1, 2, 3],
                    [4, 5, 6]], float)
 
-    np.zeros_like(b2)
+    np.zeros_like(b1)
     # array([[0., 0., 0.],
     #        [0., 0., 0.]])
 
@@ -251,10 +251,10 @@ Ones and ones-like
     import numpy as np
 
 
-    b2 = np.array([[1, 2, 3],
+    b1 = np.array([[1, 2, 3],
                    [4, 5, 6]], float)
 
-    np.ones_like(b2)
+    np.ones_like(b1)
     # array([[1., 1., 1.],
     #        [1., 1., 1.]])
 

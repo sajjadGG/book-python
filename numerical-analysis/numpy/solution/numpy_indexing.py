@@ -6,7 +6,7 @@ INPUT = np.array([
     [7, 8, 9]
 ])
 
-OUTPUT = np.zeros(shape=(2,2), dtype=int)
+OUTPUT = np.zeros(shape=(2,2), dtype=float)
 
 OUTPUT[0,0] = INPUT[0,2]
 OUTPUT[0,1] = INPUT[2,2]
