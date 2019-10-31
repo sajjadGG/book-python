@@ -142,13 +142,13 @@ Multiple argument
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3], [4, 5, 6]], float)
+    # array([[1., 2., 3.],
+    #        [4., 5., 6.]])
 
-    np.where(a != 3, a, None)       # for element ``a != 3`` return such element, otherwise ``None``
-    # array([[1, 2, None],
-    #        [4, 5, 6]], dtype=object)
+    np.where(a != 3, a, np.nan)       # if ``a != 3`` return element, otherwise ``np.nan``
+    # array([[ 1.,  2., nan],
+    #        [ 4.,  5.,  6.]])
 
 .. code-block:: python
 
