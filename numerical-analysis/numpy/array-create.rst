@@ -211,7 +211,7 @@ Zeros and zeros-like
 
 
     b2 = np.array([[1, 2, 3],
-                  [4, 5, 6]], float)
+                   [4, 5, 6]], float)
 
     np.zeros_like(b2)
     # array([[0., 0., 0.],
@@ -254,7 +254,7 @@ Ones and ones-like
     b2 = np.array([[1, 2, 3],
                    [4, 5, 6]], float)
 
-    np.ones_like(b)
+    np.ones_like(b2)
     # array([[1., 1., 1.],
     #        [1., 1., 1.]])
 

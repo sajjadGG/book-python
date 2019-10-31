@@ -190,9 +190,9 @@ Median
     import numpy as np
 
 
-    x = np.array([1, 2, 3, 4])
+    a1 = np.array([1, 2, 3, 4])
 
-    np.median(x)
+    np.median(a1)
     # 2.5
 
 Variance
@@ -388,7 +388,7 @@ Correlation coefficient
 * bivariate correlation
 
 .. figure:: img/correlation-coefficient.png
-    :scale: 100%
+    :scale: 75%
     :align: center
 
     Examples of scatter diagrams with different values of correlation coefficient (ρ) :cite:`PearsonCorrelationCoefficient`

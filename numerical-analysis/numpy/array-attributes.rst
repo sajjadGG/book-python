@@ -10,6 +10,23 @@ Data type
 
 int
 ---
+* Signed (positive and negative):
+
+    * ``np.int``
+    * ``np.int0``
+    * ``np.int8``
+    * ``np.int16``
+    * ``np.int32``
+    * ``np.int64``
+
+* Unsigned (non-negative only):
+
+    * ``np.uint0``
+    * ``np.uint8``
+    * ``np.uint16``
+    * ``np.uint32``
+    * ``np.uint64``
+
 .. code-block:: python
 
     import numpy as np
@@ -26,6 +43,12 @@ int
 
 float
 -----
+* ``np.float``
+* ``np.float16``
+* ``np.float32``
+* ``np.float64``
+* ``np.float128``
+
 .. code-block:: python
 
     import numpy as np
@@ -45,29 +68,24 @@ float
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    b = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
-    a.dtype
-    # dtype('int64')
+    b2 = b.astype(float)
 
-    a.astype(float)
-    # array([[1., 2., 3.],
-    #        [4., 5., 6.]])
-
-    a.dtype
-    # dtype('int64')
-
-    b = a.astype(float)
-    # array([[1., 2., 3.],
-    #        [4., 5., 6.]])
+    b2.dtype
+    # dtype('float64')
 
     b.dtype
-    # dtype('float64')
+    # dtype('int64')
 
 complex
 -------
+* ``np.complex``
+* ``np.complex64``
+* ``np.complex128``
+* ``np.complex256``
+
 .. code-block:: python
 
     import numpy as np
@@ -99,7 +117,6 @@ Dimensions
 
 
     a = np.array([1, 2, 3])
-    # array([1, 2, 3])
 
     a.ndim          # 1
     a.size          # 3
@@ -111,29 +128,45 @@ Dimensions
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    b = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
-    a.ndim          # 2
-    a.shape         # (2, 3)
-    a.size          # 6
-    len(a)          # 2
+    b.ndim          # 2
+    b.shape         # (2, 3)
+    b.size          # 6
+    len(b)          # 2
 
 .. code-block:: python
 
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6],
-    #        [7, 8, 9]])
+    c = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
 
-    a.ndim          # 2
-    a.shape         # (3, 3)
-    a.size          # 9
-    len(a)          # 3
+    c.ndim          # 2
+    c.shape         # (3, 3)
+    c.size          # 9
+    len(c)          # 3
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    d = np.array([[[ 1,  2,  3],
+                   [ 4,  5,  6],
+                   [ 5,  6,  7]],
+                  [[11, 22, 33],
+                   [44, 55, 66],
+                   [77, 88, 99]]])
+
+    d.ndim          # 3
+    d.shape         # (2, 3, 3)
+    d.size          # 18
+    len(d)          # 2
+
 
 Data
 ====
@@ -143,7 +176,6 @@ Data
 
 
     a = np.array([1, 2, 3])
-    # array([1, 2, 3])
 
     a.itemsize      # 8
     a.data          # <memory at 0x10cdfaa10>
@@ -154,39 +186,23 @@ Data
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    b = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
-    a.itemsize      # 8
-    a.data          # <memory at 0x10caefbb0>
+    b.itemsize      # 8
+    b.data          # <memory at 0x10caefbb0>
 
 .. code-block:: python
 
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6],
-    #        [7, 8, 9]])
+    c = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
 
     a.itemsize      # 8
     a.data          # <memory at 0x10cf92210>
-
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]], float)
-    # array([[1., 2., 3.],
-    #        [4., 5., 6.],
-    #        [7., 8., 9.]])
-
-    a.itemsize      # 8
-    a.data          # <memory at 0x10caefbb0>
 
 
 Assignments
