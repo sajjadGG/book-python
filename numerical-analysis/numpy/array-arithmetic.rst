@@ -319,4 +319,4 @@ Matrix multiplication
                [21,  8],
                [28,  8]])
         """
-        pass
+        return ...
