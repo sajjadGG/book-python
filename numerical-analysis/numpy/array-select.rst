@@ -10,9 +10,8 @@ Unique
     import numpy as np
 
 
-    a = np.array([[1, 2, 3, 1], [1, 4, 5, 6]])
-    # array([[1, 2, 3, 1],
-    #        [1, 4, 5, 6]])
+    a = np.array([[1, 2, 3, 1],
+                  [1, 4, 5, 6]])
 
     np.unique(a)
     # array([1, 2, 3, 4, 5, 6])
@@ -33,9 +32,8 @@ Diagonal
     import numpy as np
 
 
-    a = np.array([[1, 2], [3, 4]])
-    # array([[1, 2],
-    #        [3, 4]])
+    a = np.array([[1, 2],
+                  [3, 4]])
 
     a.diagonal()
     # array([1, 4])
@@ -45,9 +43,8 @@ Diagonal
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     a.diagonal()
     # array([1, 5])
@@ -57,10 +54,9 @@ Diagonal
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6],
-    #        [7, 8, 9]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
 
     a.diagonal()
     # array([1, 5, 9])
@@ -80,7 +76,6 @@ Single argument
 
 
     a = np.array([1, 2, 3])
-    # array([1, 2, 3])
 
     np.where(a != 2)
     # (array([0, 2]),)
@@ -97,9 +92,8 @@ Single argument
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     np.where(a != 3)
     # (array([0, 0, 1, 1, 1]), array([0, 1, 0, 1, 2]))
@@ -116,9 +110,8 @@ Multiple argument
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     np.where(a % 2, 'odd', 'even')
     # array([['odd', 'even', 'odd'],
@@ -129,9 +122,8 @@ Multiple argument
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     np.where(a > 4, 99, 77)
     # array([[77, 77, 77],
@@ -142,9 +134,8 @@ Multiple argument
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]], float)
-    # array([[1., 2., 3.],
-    #        [4., 5., 6.]])
+    a = np.array([[1., 2., 3.],
+                  [4., 5., 6.]])
 
     np.where(a != 3, a, np.nan)       # if ``a != 3`` return element, otherwise ``np.nan``
     # array([[ 1.,  2., nan],
@@ -155,9 +146,8 @@ Multiple argument
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     b = np.logical_and(a > 0, a % 3 == 0)
     # array([[False, False,  True],
@@ -174,9 +164,8 @@ Nonzero
     import numpy as np
 
 
-    a = np.array([[1, 0, 2], [3, 0, 4]])
-    # array([[1, 0, 2],
-    #        [3, 0, 4]])
+    a = np.array([[1, 0, 2],
+                  [3, 0, 4]])
 
     a.nonzero()
     # (array([0, 0, 1, 1]), array([0, 2, 0, 2]))
@@ -189,9 +178,8 @@ Array item selection
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     a > 2
     # array([[False, False,  True],
@@ -205,9 +193,8 @@ Array item selection
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     even = (a % 2 == 0)
     a[even]
@@ -218,9 +205,8 @@ Array item selection
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     a[np.logical_and(a > 2, a <= 5)]
     # array([3, 4, 5])
@@ -232,12 +218,12 @@ Array item selection
 
     a = np.array([1, 2, 3])
 
-    indexes = np.array([0, 1, 0])
-    a[indexes]
+    at_index = np.array([0, 1, 0])
+    a[at_index]
     # array([1, 2, 1])
 
-    indexes = np.array([0, 2])
-    a[indexes]
+    at_index = np.array([0, 2])
+    a[at_index]
     # array([1, 3])
 
 .. code-block:: python
@@ -262,33 +248,39 @@ Array item selection
     a[b,c]
     # array([ 1., 4., 16., 16., 4.])
 
+
+Take
+====
 .. code-block:: python
 
     import numpy as np
 
 
-    a = np.array([2, 4, 6, 8], float)
-    b = np.array([0, 0, 1, 3, 2, 1], int)
+    a = np.array([1, 2, 3])
 
-    a.take(b)
-    # array([ 2., 2., 4., 8., 6., 4.])
+    at_index = np.array([0, 0, 1, 2, 2, 1])
+
+    a.take(at_index)
+    # array([1, 1, 2, 3, 3, 2])
 
 .. code-block:: python
 
     import numpy as np
 
 
-    a = np.array([[0, 1], [2, 3]], float)
-    b = np.array([0, 0, 1], int)
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
-    a.take(b, axis=0)
-    # array([[ 0., 1.],
-    #        [ 0., 1.],
-    #        [ 2., 3.]])
+    at_index = np.array([0, 0, 1])
 
-    a.take(b, axis=1)
-    # array([[ 0., 0., 1.],
-    #        [ 2., 2., 3.]])
+    a.take(at_index, axis=0)
+    # array([[1, 2, 3],
+    #        [1, 2, 3],
+    #        [4, 5, 6]])
+
+    a.take(at_index, axis=1)
+    # array([[1, 1, 2],
+    #        [4, 4, 5]])
 
 
 Assignments

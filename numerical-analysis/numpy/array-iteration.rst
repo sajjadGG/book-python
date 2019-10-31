@@ -27,10 +27,10 @@ Array Iteration
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    for element in b:
+    for element in a:
         print(element)
 
     # [1 2 3]
@@ -41,11 +41,11 @@ Array Iteration
     import numpy as np
 
 
-    c = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    for element in c:
+    for element in a:
         print(element)
 
     # [1 2 3]

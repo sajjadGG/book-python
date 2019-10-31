@@ -11,28 +11,18 @@ Copy
 
 
     a = np.array([1, 2, 3])
-    x = a
+    b = a
+    c = a.copy()
+
     a[0] = 99
 
     repr(a)
     # array([99, 2, 3])
 
-    repr(x)
+    repr(b)
     # array([99, 2, 3])
 
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([1, 2, 3])
-    y = a.copy()
-    a[0] = 99
-
-    repr(a)
-    # array([99, 2, 3])
-
-    repr(y)
+    repr(c)
     # array([1, 2, 3])
 
 
@@ -65,10 +55,10 @@ Put
 
 
     a = np.array([1, 2, 3])
-    x = np.array([99, 88, 77])
+    b = np.array([99, 88, 77])
     at_index = [0, 2]
 
-    a.put(at_index, x)
+    a.put(at_index, b)
     # array([99,  2, 88])
 
 
@@ -91,10 +81,10 @@ Fill
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    b.fill(0)
+    a.fill(0)
     # array([[0, 0, 0],
     #        [0, 0, 0]])
 
@@ -154,12 +144,12 @@ Sort
     import numpy as np
 
 
-    a1 = np.array([2, 3, 1])
+    a = np.array([2, 3, 1])
 
-    sorted(a1)
+    sorted(a)
     # [1, 2, 3]
 
-    a1.sort()
+    a.sort()
     # array([1, 2, 3])
 
 .. code-block:: python
@@ -167,21 +157,21 @@ Sort
     import numpy as np
 
 
-    b1 = np.array([[2, 3, 1],
+    a = np.array([[2, 3, 1],
                    [5, 6, 4]])
 
-    sorted(b1)
+    sorted(a)
     # ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
 
-    b1.sort()
+    a.sort()
     # array([[1, 2, 3],
     #        [4, 5, 6]])
 
-    b1.sort(axis=0)
+    a.sort(axis=0)
     # array([[2, 3, 1],
     #        [5, 6, 4]])
 
-    b1.sort(axis=1)
+    a.sort(axis=1)
     # array([[1, 2, 3],
     #        [4, 5, 6]])
 
@@ -208,21 +198,35 @@ Flip
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    b.flip()
+    a.flip()
     # array([[6, 5, 4],
     #        [3, 2, 1]])
 
-    np.flip(b, axis=0)
+    np.flip(a, axis=0)
     # array([[4, 5, 6],
     #        [1, 2, 3]])
 
-    np.flip(b, axis=1)
+    np.flip(a, axis=1)
     # array([[3, 2, 1],
     #        [6, 5, 4]])
 
+
+To list
+=======
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
+
+    a.tolist()
+    # [[1, 2, 3], [4, 5, 6]]
 
 Assignments
 ===========

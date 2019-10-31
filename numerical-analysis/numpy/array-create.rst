@@ -59,14 +59,14 @@ Array Declaration
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    repr(b)
+    repr(a)
     # array([[1, 2, 3],
     #        [4, 5, 6]])
 
-    str(b)
+    str(a)
     # [[1 2 3]
     #  [4 5 6]]
 
@@ -75,16 +75,16 @@ Array Declaration
     import numpy as np
 
 
-    c = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    repr(c)
+    repr(a)
     # array([[1, 2, 3],
     #        [4, 5, 6],
     #        [7, 8, 9]])
 
-    str(c)
+    str(a)
     # [[1 2 3]
     #  [4 5 6]
     #  [7 8 9]]
@@ -198,10 +198,10 @@ Zeros and zeros-like
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    np.zeros_like(b)
+    np.zeros_like(a)
     # array([[0, 0, 0],
     #        [0, 0, 0]])
 
@@ -210,10 +210,10 @@ Zeros and zeros-like
     import numpy as np
 
 
-    b1 = np.array([[1, 2, 3],
-                   [4, 5, 6]], float)
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]], float)
 
-    np.zeros_like(b1)
+    np.zeros_like(a)
     # array([[0., 0., 0.],
     #        [0., 0., 0.]])
 
@@ -239,10 +239,10 @@ Ones and ones-like
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    np.ones_like(b)
+    np.ones_like(a)
     # array([[1, 1, 1],
     #        [1, 1, 1]])
 
@@ -251,10 +251,10 @@ Ones and ones-like
     import numpy as np
 
 
-    b1 = np.array([[1, 2, 3],
-                   [4, 5, 6]], float)
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]], float)
 
-    np.ones_like(b1)
+    np.ones_like(a)
     # array([[1., 1., 1.],
     #        [1., 1., 1.]])
 
@@ -278,7 +278,7 @@ Empty and empty-like
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
     np.empty((2,3))
@@ -290,10 +290,10 @@ Empty and empty-like
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    np.empty_like(b)
+    np.empty_like(a)
     # array([[1, 2, 3],
     #        [4, 5, 6]])
 

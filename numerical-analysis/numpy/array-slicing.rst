@@ -48,11 +48,11 @@ All
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    b[:]
+    a[:]
     # array([[1, 2, 3],
     #        [4, 5, 6],
     #        [7, 8, 9]])
@@ -64,18 +64,18 @@ Rows
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    b[1:]
+    a[1:]
     # array([[4, 5, 6],
     #        [7, 8, 9]])
 
-    b[:1]
+    a[:1]
     # array([[1, 2, 3]])
 
-    b[1:3]
+    a[1:3]
     # array([[4, 5, 6],
     #        [7, 8, 9]])
 
@@ -84,15 +84,15 @@ Rows
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    b[::2]
+    a[::2]
     # array([[1, 2, 3],
     #        [7, 8, 9]])
 
-    b[1::2]
+    a[1::2]
     # array([[4, 5, 6]])
 
 Columns
@@ -102,20 +102,20 @@ Columns
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    b[:, 0]
+    a[:, 0]
     # array([1, 4, 7])
 
-    b[:, 1]
+    a[:, 1]
     # array([2, 5, 8])
 
-    b[: ,2]
+    a[: ,2]
     # array([3, 6, 9])
 
-    b[:, -1]
+    a[:, -1]
     # array([3, 6, 9])
 
 .. code-block:: python
@@ -123,21 +123,21 @@ Columns
     import numpy as np
 
 
-    c = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    c[:, 0:1]
+    a[:, 0:1]
     # array([[1],
     #        [4],
     #        [7]])
 
-    c[:, 0:2]
+    a[:, 0:2]
     # array([[1, 2],
     #        [4, 5],
     #        [7, 8]])
 
-    c[:, :2]
+    a[:, :2]
     # array([[1, 2],
     #        [4, 5],
     #        [7, 8]])
@@ -147,16 +147,16 @@ Columns
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    c[:, ::2]
+    a[:, ::2]
     # array([[1, 3],
     #        [4, 6],
     #        [7, 9]])
 
-    c[:, 1::2]
+    a[:, 1::2]
     # array([[2],
     #        [5],
     #        [8]])
@@ -168,24 +168,24 @@ Rows and Columns
     import numpy as np
 
 
-    c = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    c[0:1, 0:1]
+    a[0:1, 0:1]
     # array([[1]])
 
-    c[0:1, 0:2]
+    a[0:1, 0:2]
     # array([[1, 2]])
 
-    c[0:1, 0:3]
+    a[0:1, 0:3]
     # array([[1, 2, 3]])
 
-    c[0:2, 0:2]
+    a[0:2, 0:2]
     # array([[1, 2],
     #        [4, 5]])
 
-    c[-1:, -2:]
+    a[-1:, -2:]
     # array([[8, 9]])
 
 .. code-block:: python
@@ -193,15 +193,15 @@ Rows and Columns
     import numpy as np
 
 
-    c = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    c[::2, ::2]
+    a[::2, ::2]
     # array([[1, 3],
     #        [7, 9]])
 
-    c[1::2, 1::2]
+    a[1::2, 1::2]
     # array([[5]])
 
 
@@ -227,14 +227,14 @@ Newaxis
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    b[:, np.newaxis]
+    a[:, np.newaxis]
     # array([[[1, 2, 3]],
     #        [[4, 5, 6]]])
 
-    b[np.newaxis, :]
+    a[np.newaxis, :]
     # array([[[1, 2, 3],
     #         [4, 5, 6]]])
 
@@ -243,19 +243,19 @@ Newaxis
     import numpy as np
 
 
-    c = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    c[:, np.newaxis, 1]
+    a[:, np.newaxis, 1]
     # array([[2],
     #        [5],
     #        [8]])
 
-    c[np.newaxis, :, 1]
+    a[np.newaxis, :, 1]
     # array([[2, 5, 8]])
 
-    c[1, np.newaxis, :]
+    a[1, np.newaxis, :]
     # array([[4, 5, 6]])
 
 

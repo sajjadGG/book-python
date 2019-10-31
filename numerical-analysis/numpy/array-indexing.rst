@@ -29,47 +29,47 @@ Selecting items
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    b[0]        # array([1, 2, 3])
-    b[1]        # array([4, 5, 6])
-    b[2]        # IndexError: index 2 is out of bounds for axis 0 with size 2
+    a[0]        # array([1, 2, 3])
+    a[1]        # array([4, 5, 6])
+    a[2]        # IndexError: index 2 is out of bounds for axis 0 with size 2
 
-    b[0,0]      # 1
-    b[0,1]      # 2
-    b[0,2]      # 3
+    a[0,0]      # 1
+    a[0,1]      # 2
+    a[0,2]      # 3
 
-    b[1,0]      # 4
-    b[1,1]      # 5
-    b[1,2]      # 6
+    a[1,0]      # 4
+    a[1,1]      # 5
+    a[1,2]      # 6
 
-    b[2,0]      # IndexError: index 2 is out of bounds for axis 0 with size 2
+    a[2,0]      # IndexError: index 2 is out of bounds for axis 0 with size 2
 
 .. code-block:: python
 
     import numpy as np
 
 
-    c = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    c[0]        # array([1, 2, 3])
-    c[1]        # array([4, 5, 6])
-    c[2]        # IndexError: index 2 is out of bounds for axis 0 with size 2
+    a[0]        # array([1, 2, 3])
+    a[1]        # array([4, 5, 6])
+    a[2]        # IndexError: index 2 is out of bounds for axis 0 with size 2
 
-    c[0,0]      # 1
-    c[0,1]      # 2
-    c[0,2]      # 3
+    a[0,0]      # 1
+    a[0,1]      # 2
+    a[0,2]      # 3
 
-    c[1,0]      # 4
-    c[1,1]      # 5
-    c[1,2]      # 6
+    a[1,0]      # 4
+    a[1,1]      # 5
+    a[1,2]      # 6
 
-    c[2,0]      # 7
-    c[2,1]      # 8
-    c[2,2]      # 9
+    a[2,0]      # 7
+    a[2,1]      # 8
+    a[2,2]      # 9
 
 3-dimensional Array
 -------------------
@@ -78,21 +78,21 @@ Selecting items
     import numpy as np
 
 
-    d = array([[[ 1,  2,  3],
+    a = array([[[ 1,  2,  3],
                 [ 4,  5,  6],
                 [ 5,  6,  7]],
                [[11, 22, 33],
                 [44, 55, 66],
                 [77, 88, 99]]])
 
-    d[0,0,0]    # 1
-    d[0,0,1]    # 2
-    d[0,0,2]    # 3
-    d[0,0,3]    # IndexError: index 3 is out of bounds for axis 2 with size 3
+    a[0,0,0]    # 1
+    a[0,0,1]    # 2
+    a[0,0,2]    # 3
+    a[0,0,3]    # IndexError: index 3 is out of bounds for axis 2 with size 3
 
-    d[0,1,2]    # 6
-    d[0,2,1]    # 6
-    d[2,1,0]    # IndexError: index 2 is out of bounds for axis 0 with size 2
+    a[0,1,2]    # 6
+    a[0,2,1]    # 6
+    a[2,1,0]    # IndexError: index 2 is out of bounds for axis 0 with size 2
 
 
 Substituting items
@@ -120,12 +120,12 @@ Substituting items
     import numpy as np
 
 
-    a1 = np.array([1, 2, 3], float)
+    a = np.array([1, 2, 3], float)
 
-    a1[0] = 99.9
+    a[0] = 99.9
     # array([99.9,  2.,  3.])
 
-    a1[-1] = 11.1
+    a[-1] = 11.1
     # array([99.9,  2.,  11.1])
 
 .. code-block:: python
@@ -133,12 +133,12 @@ Substituting items
     import numpy as np
 
 
-    a2 = np.array([1, 2, 3], int)
+    a = np.array([1, 2, 3], int)
 
-    a2[0] = 99.9
+    a[0] = 99.9
     # array([99,  2,  3])
 
-    a2[-1] = 11.1
+    a[-1] = 11.1
     # array([99,  2,  11])
 
 2-dimensional Array
@@ -148,14 +148,14 @@ Substituting items
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    b[0,0] = 99
+    a[0,0] = 99
     # array([[99,  2,  3],
     #        [ 4,  5,  6]])
 
-    b[1,2]
+    a[1,2]
     # array([[99,  2,  3],
     #        [ 4,  5, 88]])
 

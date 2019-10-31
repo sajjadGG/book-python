@@ -5,7 +5,8 @@ Array Arithmetic
 .. glossary::
 
     Vectorized Operations
-        Single statement without a loop that explains a looping concept:
+        Single statement without a loop that explains a looping concept.
+        Applies operation to each element.
 
             .. code-block:: python
 
@@ -13,6 +14,7 @@ Array Arithmetic
 
 
                 a = np.array([1, 2, 3])
+
                 a ** 2
                 # array([1, 4, 9])
 
@@ -24,9 +26,8 @@ Addition
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     a + 2
     # array([[3, 4, 5],
@@ -55,9 +56,8 @@ Subtraction
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     a - 2
     # array([[-1,  0,  1],
@@ -86,9 +86,8 @@ Division
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     a / 2
     # array([[0.5, 1. , 1.5],
@@ -116,9 +115,8 @@ Square Root
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     np.sqrt(a)
     # array([[1., 1.41421356, 1.73205081],
@@ -132,9 +130,8 @@ Modulo
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     a % 2
     # array([[1, 0, 1],
@@ -170,9 +167,8 @@ Multiplication
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     a * 2
     # array([[ 2,  4,  6],
@@ -197,9 +193,8 @@ Power
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     a ** 2
     # array([[ 1,  4,  9],
@@ -230,12 +225,15 @@ Array Multiplication
     import numpy as np
 
 
-    a = np.array([[1, 2], [3, 4]])
-    b = np.array([[5, 6], [7, 8]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
+
+    b = np.array([[4, 5, 6],
+                  [7, 8, 9]])
 
     a * b
-    # array([[ 5, 12],
-    #        [21, 32]])
+    # array([[ 4, 10, 18],
+    #        [ 7, 16, 27]])
 
 
 Matrix Multiplication
@@ -245,38 +243,61 @@ Matrix Multiplication
     import numpy as np
 
 
-    a = np.array([[1, 2], [3, 4]])
-    b = np.array([[5, 6], [7, 8]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
+
+    b = np.array([[4, 5, 6],
+                  [7, 8, 9]])
 
     a.dot(b)
-    # array([[19, 22],
-    #        [43, 50]])
+    # ValueError: shapes (3,) and (2,3) not aligned: 3 (dim 0) != 2 (dim 0)
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
+
+    b = np.array([[1, 2],
+                  [3, 4],
+                  [5, 6]])
+
+    a.dot(b)
+    # array([[22, 28],
+    #        [49, 64]])
 
 .. code-block:: text
 
     import numpy as np
 
 
-    a = np.array([[1, 2], [3, 4]])
-    b = np.array([[5, 6], [7, 8]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
+
+    b = np.array([[1, 2],
+                  [3, 4],
+                  [5, 6]])
 
     a @ b
-    # array([[19, 22],
-    #        [43, 50]])
+    # array([[22, 28],
+    #        [49, 64]])
 
 .. code-block:: text
 
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    b = np.array([7, 8])
+    a = np.array([1, 2, 3])
+    b = np.array([[4, 5, 6],
+                  [7, 8, 9]])
 
     a @ b
     # ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 2 is different from 3)
 
     a.dot(b)
-    # ValueError: shapes (3,) and (2,) not aligned: 3 (dim 0) != 2 (dim 0)
+    # ValueError: shapes (3,) and (2,3) not aligned: 3 (dim 0) != 2 (dim 0)
 
 
 Assignments

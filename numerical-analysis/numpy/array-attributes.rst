@@ -33,13 +33,32 @@ int
 
 
     a = np.array([1, 2, 3])
-    # array([1, 2, 3])
 
     type(a)
     # <class 'numpy.ndarray'>
 
     a.dtype
     # dtype('int64')
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1., 2., 3.],
+                  [4., 5., 6.]])
+
+    a.astype(int)
+    # array([[1, 2, 3],
+    #        [4, 5, 6]])
+
+    a.astype(np.int0)
+    # array([[1, 2, 3],
+    #        [4, 5, 6]])
+
+    a.astype(np.int8)
+    # array([[1, 2, 3],
+    #        [4, 5, 6]], dtype=int8)
 
 float
 -----
@@ -55,7 +74,6 @@ float
 
 
     a = np.array([1., 2., 3.])
-    # array([1., 2., 3.])
 
     type(a)
     # <class 'numpy.ndarray'>
@@ -68,16 +86,20 @@ float
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    b2 = b.astype(float)
+    a.astype(float)
+    # array([[1., 2., 3.],
+    #        [4., 5., 6.]])
 
-    b2.dtype
-    # dtype('float64')
+    a.astype(np.float64)
+    # array([[1., 2., 3.],
+    #        [4., 5., 6.]])
 
-    b.dtype
-    # dtype('int64')
+    a.astype(np.float128)
+    # array([[1., 2., 3.],
+    #        [4., 5., 6.]], dtype=float128)
 
 complex
 -------
@@ -92,7 +114,6 @@ complex
 
 
     a = np.array([1+2j])
-    # array([1.+2.j])
 
     a.dtype
     # dtype('complex128')
@@ -128,44 +149,44 @@ Dimensions
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    b.ndim          # 2
-    b.shape         # (2, 3)
-    b.size          # 6
-    len(b)          # 2
+    a.ndim          # 2
+    a.shape         # (2, 3)
+    a.size          # 6
+    len(a)          # 2
 
 .. code-block:: python
 
     import numpy as np
 
 
-    c = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    c.ndim          # 2
-    c.shape         # (3, 3)
-    c.size          # 9
-    len(c)          # 3
+    a.ndim          # 2
+    a.shape         # (3, 3)
+    a.size          # 9
+    len(a)          # 3
 
 .. code-block:: python
 
     import numpy as np
 
 
-    d = np.array([[[ 1,  2,  3],
+    a = np.array([[[ 1,  2,  3],
                    [ 4,  5,  6],
                    [ 5,  6,  7]],
                   [[11, 22, 33],
                    [44, 55, 66],
                    [77, 88, 99]]])
 
-    d.ndim          # 3
-    d.shape         # (2, 3, 3)
-    d.size          # 18
-    len(d)          # 2
+    a.ndim          # 3
+    a.shape         # (2, 3, 3)
+    a.size          # 18
+    len(a)          # 2
 
 
 Data
@@ -186,18 +207,18 @@ Data
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    b.itemsize      # 8
-    b.data          # <memory at 0x10caefbb0>
+    a.itemsize      # 8
+    a.data          # <memory at 0x10caefbb0>
 
 .. code-block:: python
 
     import numpy as np
 
 
-    c = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 

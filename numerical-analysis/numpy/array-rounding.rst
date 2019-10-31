@@ -10,9 +10,9 @@ Floor
     import numpy as np
 
 
-    a1 = np.array([1., 1.00000001, 1.99999999])
+    a = np.array([1., 1.00000001, 1.99999999])
 
-    np.floor(a1)
+    np.floor(a)
     # array([1., 1., 1.])
 
 
@@ -23,9 +23,9 @@ Ceil
     import numpy as np
 
 
-    a1 = np.array([1., 1.00000001, 1.99999999])
+    a = np.array([1., 1.00000001, 1.99999999])
 
-    np.ceil(a1)
+    np.ceil(a)
     # array([1., 2., 2.])
 
 
@@ -36,9 +36,9 @@ Round
     import numpy as np
 
 
-    a1 = np.array([1., 1.00000001, 1.99999999])
+    a = np.array([1., 1.00000001, 1.99999999])
 
-    np.rint(a1)
+    np.rint(a)
     # array([1., 1., 2.])
 
 
@@ -62,10 +62,10 @@ Clip
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    b.clip(2, 5)
+    a.clip(2, 5)
     # array([[2, 2, 3],
     #        [4, 5, 5]])
 
@@ -74,11 +74,11 @@ Clip
     import numpy as np
 
 
-    c = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    c.clip(2, 5)
+    a.clip(2, 5)
     # array([[2, 2, 3],
     #        [4, 5, 5],
     #        [5, 5, 5]])

@@ -30,16 +30,16 @@ Mean
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    np.mean(b)
+    np.mean(a)
     # 3.5
 
-    np.mean(b, axis=0)
+    np.mean(a, axis=0)
     # array([2.5, 3.5, 4.5])
 
-    np.mean(b, axis=1)
+    np.mean(a, axis=1)
     # array([2., 5.])
 
 .. code-block:: python
@@ -47,17 +47,17 @@ Mean
     import numpy as np
 
 
-    c = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    np.mean(c)
+    np.mean(a)
     # 5.0
 
-    np.mean(c, axis=0)
+    np.mean(a, axis=0)
     # array([4., 5., 6.])
 
-    np.mean(c, axis=1)
+    np.mean(a, axis=1)
     # array([2., 5., 8.])
 
 
@@ -89,20 +89,20 @@ Average
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    np.average(b)
+    np.average(a)
     # 3.5
 
-    np.average(b, axis=0)
+    np.average(a, axis=0)
     # array([2.5, 3.5, 4.5])
 
-    np.average(b, axis=1)
+    np.average(a, axis=1)
     # array([2., 5.])
 
-    np.average(b, weights=[[1, 1, 2],
-                           [2, 1, 1]])
+    np.average(a, weights=[[1, 0, 2],
+                           [2, 0, 1]])
     # 3.5
 
 .. code-block:: python
@@ -110,23 +110,23 @@ Average
     import numpy as np
 
 
-    c = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    np.average(c)
+    np.average(a)
     # 5.0
 
-    np.average(c, axis=0)
+    np.average(a, axis=0)
     # array([4., 5., 6.])
 
-    np.average(c, axis=1)
+    np.average(a, axis=1)
     # array([2., 5., 8.])
 
-    np.average(c, weights=[[1, 1, 2],
-                           [2, 1, 1],
+    np.average(a, weights=[[1, 0, 2],
+                           [2, 0, 1],
                            [1./4, 1./2, 1./3]])
-    # 4.045871559633027
+    # 4.2
 
 
 Median
@@ -155,16 +155,16 @@ Median
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    np.median(b)
+    np.median(a)
     # 3.5
 
-    np.median(b, axis=0)
+    np.median(a, axis=0)
     # array([2.5, 3.5, 4.5])
 
-    np.median(b, axis=1)
+    np.median(a, axis=1)
     # array([2., 5.])
 
 .. code-block:: python
@@ -172,17 +172,17 @@ Median
     import numpy as np
 
 
-    c = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    np.median(c)
+    np.median(a)
     # 5.0
 
-    np.median(c, axis=0)
+    np.median(a, axis=0)
     # array([4., 5., 6.])
 
-    np.median(c, axis=1)
+    np.median(a, axis=1)
     # array([2., 5., 8.])
 
 .. code-block:: python
@@ -190,9 +190,9 @@ Median
     import numpy as np
 
 
-    a1 = np.array([1, 2, 3, 4])
+    a = np.array([1, 2, 3, 4])
 
-    np.median(a1)
+    np.median(a)
     # 2.5
 
 Variance
@@ -223,16 +223,16 @@ Variance
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    np.var(b)
+    np.var(a)
     # 2.9166666666666665
 
-    np.var(b, axis=0)
+    np.var(a, axis=0)
     # array([2.25, 2.25, 2.25])
 
-    np.var(b, axis=1)
+    np.var(a, axis=1)
     # array([0.66666667, 0.66666667])
 
 .. code-block:: python
@@ -240,17 +240,17 @@ Variance
     import numpy as np
 
 
-    c = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    np.var(c)
+    np.var(a)
     # 6.666666666666667
 
-    np.var(c, axis=0)
+    np.var(a, axis=0)
     # array([6., 6., 6.])
 
-    np.var(c, axis=1)
+    np.var(a, axis=1)
     # array([0.66666667, 0.66666667, 0.66666667])
 
 
@@ -282,16 +282,16 @@ Standard Deviation
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    np.std(b)
+    np.std(a)
     # 1.707825127659933
 
-    np.std(b, axis=0)
+    np.std(a, axis=0)
     # array([1.5, 1.5, 1.5])
 
-    np.std(b, axis=1)
+    np.std(a, axis=1)
     # array([0.81649658, 0.81649658])
 
 .. code-block:: python
@@ -299,17 +299,17 @@ Standard Deviation
     import numpy as np
 
 
-    c = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    np.std(c)
+    np.std(a)
     # 2.581988897471611
 
-    np.std(c, axis=0)
+    np.std(a, axis=0)
     # array([2.44948974, 2.44948974, 2.44948974])
 
-    np.std(c, axis=1)
+    np.std(a, axis=1)
     # array([0.81649658, 0.81649658, 0.81649658])
 
 
@@ -340,18 +340,18 @@ Covariance
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    np.cov(b)
+    np.cov(a)
     # array([[1., 1.],
     #        [1., 1.]])
 
-    np.cov(b, ddof=0)
+    np.cov(a, ddof=0)
     # array([[0.66666667, 0.66666667],
     #        [0.66666667, 0.66666667]])
 
-    np.cov(b, ddof=1)
+    np.cov(a, ddof=1)
     # array([[1., 1.],
     #        [1., 1.]])
 
@@ -360,21 +360,21 @@ Covariance
     import numpy as np
 
 
-    c = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    np.cov(c)
+    np.cov(a)
     # array([[1., 1., 1.],
     #        [1., 1., 1.],
     #        [1., 1., 1.]])
 
-    np.cov(c, ddof=0)
+    np.cov(a, ddof=0)
     # array([[0.66666667, 0.66666667, 0.66666667],
     #        [0.66666667, 0.66666667, 0.66666667],
     #        [0.66666667, 0.66666667, 0.66666667]])
 
-    np.cov(c, ddof=1)
+    np.cov(a, ddof=1)
     # array([[1., 1., 1.],
     #        [1., 1., 1.],
     #        [1., 1., 1.]])
@@ -408,10 +408,10 @@ Correlation coefficient
     import numpy as np
 
 
-    b = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    np.corrcoef(b)
+    np.corrcoef(a)
     # array([[1., 1.],
     #        [1., 1.]])
 
@@ -420,11 +420,11 @@ Correlation coefficient
     import numpy as np
 
 
-    c = np.array([[1, 2, 3],
+    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    np.corrcoef(c)
+    np.corrcoef(a)
     # array([[1., 1., 1.],
     #        [1., 1., 1.],
     #        [1., 1., 1.]])
@@ -434,10 +434,10 @@ Correlation coefficient
     import numpy as np
 
 
-    b1 = np.array([[1, 2, 1],
+    a = np.array([[1, 2, 1],
                    [5, 4, 3]])
 
-    np.corrcoef(b1)
+    np.corrcoef(a)
     # array([[1., 0.],
     #        [0., 1.]])
 
@@ -446,10 +446,10 @@ Correlation coefficient
     import numpy as np
 
 
-    b2 = np.array([[3, 1, 3],
+    a = np.array([[3, 1, 3],
                    [5, 5, 3]])
 
-    np.corrcoef(b2)
+    np.corrcoef(a)
     # array([[ 1. , -0.5],
     #        [-0.5,  1. ]])
 
@@ -458,10 +458,10 @@ Correlation coefficient
     import numpy as np
 
 
-    b3 = np.array([[5, 2, 1],
+    a = np.array([[5, 2, 1],
                    [2, 4, 5]])
 
-    np.corrcoef(b3)
+    np.corrcoef(a)
     # array([[ 1.        , -0.99587059],
     #        [-0.99587059,  1.        ]])
 

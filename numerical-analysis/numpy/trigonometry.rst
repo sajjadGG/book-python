@@ -13,7 +13,9 @@ Trigonometry
 
                 import numpy as np
 
+
                  a = np.array([1, 2, 3])
+
                  np.sin(a)
                  # array([0.84147098, 0.90929743, 0.14112001])
 
