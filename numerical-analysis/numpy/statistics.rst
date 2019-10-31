@@ -435,7 +435,7 @@ Correlation coefficient
 
 
     a = np.array([[1, 2, 1],
-                   [5, 4, 3]])
+                  [5, 4, 3]])
 
     np.corrcoef(a)
     # array([[1., 0.],
@@ -447,7 +447,7 @@ Correlation coefficient
 
 
     a = np.array([[3, 1, 3],
-                   [5, 5, 3]])
+                  [5, 5, 3]])
 
     np.corrcoef(a)
     # array([[ 1. , -0.5],
@@ -459,7 +459,7 @@ Correlation coefficient
 
 
     a = np.array([[5, 2, 1],
-                   [2, 4, 5]])
+                  [2, 4, 5]])
 
     np.corrcoef(a)
     # array([[ 1.        , -0.99587059],
