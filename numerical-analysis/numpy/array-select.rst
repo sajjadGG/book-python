@@ -301,12 +301,21 @@ Array filtering
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/numpy_array_filtering.py`
 
-#. Ustaw ziarno losowości na 0
-#. Wygeneruj macierz (50x50) o nazwie ``A``
-#. Macierz ma składać się z losowych liczb całkowitych z zakresu od 0 do 1024 włącznie.
-#. Stwórz macierz ``B``, która będzie zawierała liczby z macierzy ``A`` będące potęgami dwójki.
-#. Pozostaw tylko i wyłącznie unikalne wartości.
-#. Uporządkuj macierz B w kolejności malejącej (od największej do najmniejszej).
+:English:
+    #. Set random seed to 0
+    #. Generate ``INPUT: ndarray`` of size 50x50
+    #. ``INPUT`` must contains random integers from 0 to 1024 inclusive
+    #. Create ``OUTPUT: ndarray`` with elements selected from ``INPUT`` which are power of two
+    #. Sort ``OUTPUT`` in descending order
+    #. Print ``OUTPUT``
+
+:Polish:
+    #. Ustaw ziarno losowości na 0
+    #. Wygeneruj ``INPUT: ndarray`` rozmiaru 50x50
+    #. ``INPUT`` musi zawierać losowe liczby całkowite z zakresu od 0 do 1024 włącznie
+    #. Stwórz ``OUTPUT: ndarray`` z elementami wybranymi z ``INPUT``, które są potęgami dwójki
+    #. Posortuj ``OUTPUT`` w kolejności malejącej
+    #. Wypisz ``OUTPUT``
 
 :Hint:
     * ``np.random.randint()``
