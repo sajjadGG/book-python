@@ -11,12 +11,43 @@ Get shape
 
 
     a = np.array([1, 2, 3])
-    b = np.array([[1, 2, 3], [4, 5, 6]])
-    c = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 
     a.shape     # (3,)
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    b = np.array([[1, 2, 3],
+                  [4, 5, 6]])
+
     b.shape     # (2, 3)
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    c = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
+
     c.shape     # (3, 3)
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    d = np.array([[[ 1,  2,  3],
+                   [ 4,  5,  6],
+                   [ 5,  6,  7]],
+                  [[11, 22, 33],
+                   [44, 55, 66],
+                   [77, 88, 99]]])
+
+    d.shape         # (2, 3, 3)
 
 
 Reshape
@@ -25,36 +56,39 @@ Reshape
 * Does not modify inplace
 * ``a.reshape(1, 2)`` is equivalent to ``a.reshape((1, 2))``
 
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
-
-    a.shape
-    # (2, 3)
 
 .. code-block:: python
 
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([1, 2, 3])
 
-    a.reshape(3, 2)
+    a.reshape(1, 3)
+    # array([[1, 2, 3]])
+
+    a.reshape(3, 1)
+    # array([[1],
+    #        [2],
+    #        [3]])
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    b = np.array([[1, 2, 3],
+                  [4, 5, 6]])
+
+    b.reshape(3, 2)
     # array([[1, 2],
     #        [3, 4],
     #        [5, 6]])
 
-    a.reshape(1, 6)
+    b.reshape(1, 6)
     # array([[1, 2, 3, 4, 5, 6]])
 
-    a.reshape(6, 1)
+    b.reshape(6, 1)
     # array([[1],
     #        [2],
     #        [3],
@@ -62,16 +96,7 @@ Reshape
     #        [5],
     #        [6]])
 
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
-
-    a.reshape(5, 2)
+    b.reshape(5, 2)
     # ValueError: cannot reshape array of size 6 into shape (5,2)
 
 .. code-block:: python
@@ -79,38 +104,55 @@ Reshape
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a1 = np.array([1, 2, 3, 4, 5, 6, 7, 8])
 
-    a.reshape(1, 6)
-    # array([[1, 2, 3, 4, 5, 6]])
+    a1.reshape(2, 4)
+    # array([[1, 2, 3, 4],
+    #        [5, 6, 7, 8]])
 
-    a
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a1.reshape(2, 4, 1)
+    # array([[[1],
+    #         [2],
+    #         [3],
+    #         [4]],
+    #        [[5],
+    #         [6],
+    #         [7],
+    #         [8]]])
 
+    a1.reshape(2, 2, 2)
+    # array([[[1, 2],
+    #         [3, 4]],
+    #        [[5, 6],
+    #         [7, 8]]])
 
-.. code-block:: python
+    a1.reshape(1, 2, 4)
+    # array([[[1, 2, 3, 4],
+    #         [5, 6, 7, 8]]])
 
-    import numpy as np
+    a1.reshape(4, 2, 1)
+    #array([[[1],
+    #        [2]],
+    #       [[3],
+    #        [4]],
+    #       [[5],
+    #        [6]],
+    #       [[7],
+    #        [8]]])
 
+    a1.reshape(1, 8, 1)
+    # array([[[1],
+    #         [2],
+    #         [3],
+    #         [4],
+    #         [5],
+    #         [6],
+    #         [7],
+    #         [8]]])
 
-    a = np.array(range(6), float)
-    # array([0., 1., 2., 3., 4., 5.])
+    a1.reshape(2, 3, 1)
+    # ValueError: cannot reshape array of size 8 into shape (2,3,1)
 
-    a.reshape(2, 3, 1)
-    # array([[[0.],
-    #         [1.],
-    #         [2.]],
-    #
-    #        [[3.],
-    #         [4.],
-    #         [5.]]])
-
-    a.reshape(2, 3)
-    # array([[0., 1., 2.],
-    #        [3., 4., 5.]])
 
 Flatten
 =======
@@ -122,34 +164,33 @@ Flatten
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([1, 2, 3])
 
     a.flatten()
-    # array([1, 2, 3, 4, 5, 6])
-
-    a
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    # array([1, 2, 3])
 
 .. code-block:: python
 
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6],
-    #        [7, 8, 9]])
+    b = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
-    a.flatten()
+    b.flatten()
+    # array([1, 2, 3, 4, 5, 6])
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    c = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
+
+    c.flatten()
     # array([1, 2, 3, 4, 5, 6, 7, 8, 9])
-
-    a
-    # array([[1, 2, 3],
-    #        [4, 5, 6],
-    #        [7, 8, 9]])
 
 
 Assignments
