@@ -28,30 +28,6 @@ Besides its obvious scientific uses, NumPy can also be used as an efficient mult
 
     import numpy as np
 
-.. glossary::
-
-    Vectorized Operations
-        Single statement without a loop that explains a looping concept:
-            .. code-block:: python
-
-                import numpy as np
-
-                a = np.array([1, 2, 3])
-                a ** 2
-                # array([1, 4, 9])
-
-    Universal Functions
-    ufunc
-        Mathematical operations optimized to work on ``np.array()``
-            .. code-block:: python
-
-
-                import numpy as np
-
-                 a = np.array([1, 2, 3])
-                 np.sin(a)
-                 # array([0.84147098, 0.90929743, 0.14112001])
-
 Data Structures:
 
     * Skalar - jednowymiarowa
@@ -71,13 +47,13 @@ Data Structures:
 
     array-create.rst
     array-attributes.rst
-    array-iteration.rst
+    array-shape.rst
     array-index.rst
     array-slice.rst
+    array-iteration.rst
     array-rounding.rst
     array-methods.rst
     array-arithmetic.rst
-    array-shape.rst
     array-concatenation.rst
     array-serialize.rst
     array-statistics.rst

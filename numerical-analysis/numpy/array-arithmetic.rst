@@ -2,6 +2,20 @@
 Array Arithmetic
 ****************
 
+.. glossary::
+
+    Vectorized Operations
+        Single statement without a loop that explains a looping concept:
+
+            .. code-block:: python
+
+                import numpy as np
+
+
+                a = np.array([1, 2, 3])
+                a ** 2
+                # array([1, 4, 9])
+
 
 Addition
 ========
@@ -275,8 +289,15 @@ Matrix multiplication
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/numpy_matmul.py`
 
-#. Używając ``numpy`` oraz operatora ``@`` oraz ``*``
-#. Czym się różnią?
+:English:
+    #. Multiply two ``np.array``
+    #. Compare output of ``@`` and ``*``
+    #. Why it differs?
+
+:Polish:
+    #. Pomnóż dwa ``np.array``
+    #. Porównaj wynik ``@`` oraz ``*``
+    #. Dlaczego się różnią?
 
 .. code-block:: python
 
@@ -287,11 +308,15 @@ Matrix multiplication
         >>> A = np.array([[1, 0], [0, 1]])
         >>> B = [[4, 1], [2, 2]]
         >>> matrix_multiplication(A, B)
-        [[4, 1], [2, 2]]
+        array([[4, 1],
+               [2, 2]])
 
         >>> A = [[1,0,1,0], [0,1,1,0], [3,2,1,0], [4,1,2,0]]
         >>> B = np.array([[4,1], [2,2], [5,1], [2,3]])
         >>> matrix_multiplication(A, B)
-        [[9, 2], [7, 3], [21, 8], [28, 8]]
+        array([[ 9,  2],
+               [ 7,  3],
+               [21,  8],
+               [28,  8]])
         """
         pass
