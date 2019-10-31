@@ -2,10 +2,13 @@ import numpy as np
 np.random.seed(0)
 
 
-A = np.random.randint(0, 1025, dtype=int, size=(50, 50))
-squares = [2**x for x in range(0, 11)]
+INPUT = np.random.randint(0, 1025, dtype=int, size=(50, 50))
 
-B = A[np.isin(A, squares)]
-B = np.flip(sorted(B))
+selection = [2**x for x in range(0, 11)]
+mask = np.isin(INPUT, selection)
 
-print(B)
+OUTPUT = INPUT[mask]
+OUTPUT = sorted(OUTPUT)
+OUTPUT = np.flip(OUTPUT)
+
+print(OUTPUT)
