@@ -29,6 +29,18 @@ Contains
     [3, 4] in a
     # False
 
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3], [4, 5, 6]])
+    b = np.array([1, 2, 3])
+
+    np.isin(a, b)
+    # array([[ True,  True,  True],
+    #        [False, False, False]])
+
 
 Value Comparison
 ================

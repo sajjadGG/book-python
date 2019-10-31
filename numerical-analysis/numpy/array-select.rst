@@ -307,3 +307,8 @@ Array filtering
 #. Stwórz macierz ``B``, która będzie zawierała liczby z macierzy ``A`` będące potęgami dwójki.
 #. Pozostaw tylko i wyłącznie unikalne wartości.
 #. Uporządkuj macierz B w kolejności malejącej (od największej do najmniejszej).
+
+:Hint:
+    * ``np.random.randint()``
+    * ``np.isin(a, b)``
+    * ``np.flip(a)``

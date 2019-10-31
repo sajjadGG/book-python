@@ -172,6 +172,39 @@ Sort
     # array([[1, 2, 3],
     #        [4, 5, 6]])
 
+Flip
+====
+* Reverse the order of elements in an array along the given axis.
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([1, 2, 3])
+    # array([1, 2, 3])
+
+    np.flip(a)
+    # array([3, 2, 1])
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3], [4, 5, 6]])
+
+    a.flip()
+    # array([[6, 5, 4],
+    #        [3, 2, 1]])
+
+    np.flip(a, axis=0)
+    # array([[4, 5, 6],
+    #        [1, 2, 3]])
+
+    np.flip(a, axis=1)
+    # array([[3, 2, 1],
+    #        [6, 5, 4]])
 
 Assignments
 ===========
