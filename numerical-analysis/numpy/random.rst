@@ -170,7 +170,6 @@ Random numbers
     #. Wyświetl 6 losowych i nie powtarzających się liczb całkowitych z zakresu od 1 do 49.
 
 :Hint:
-    * ``a * NUMBER``
-    * ``a.astype(int)``
     * ``np.append(a, ELEMENT)``
-    * ``a.size``
+    * ``np.array.size``
+    * ``NUMBER in np.array``

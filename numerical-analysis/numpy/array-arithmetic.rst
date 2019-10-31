@@ -3,25 +3,6 @@ Array Arithmetic
 ****************
 
 
-Rounding
-========
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([1., 1.41421356, 1.73205081])
-
-    np.floor(a)
-    # array([1., 1., 1.])
-
-    np.ceil(a)
-    # array([1., 2., 2.])
-
-    np.rint(a)
-    # array([1., 1., 2.])
-
-
 Addition
 ========
 .. code-block:: python
@@ -287,20 +268,6 @@ Matrix Multiplication
 Assignments
 ===========
 
-Sum of inner matrix
--------------------
-* Complexity level: easy
-* Lines of code to write: 4 lines
-* Estimated time of completion: 5 min
-* Filename: :download:`solution/numpy_inner_sum.py`
-
-#. Ustaw ziarno losowości na 0
-#. Wygeneruj macierz (16x16) randomowych intów o wartościach od 10 do 100
-#. Przekonwertuj macierz na typ float
-#. Transponuj ją
-#. Policz sumę środkowych (4x4) elementów macierzy
-#. Wyświetl wartość (skalar) sumy, a nie nie wektor
-
 Matrix multiplication
 ---------------------
 * Complexity level: easy
@@ -323,7 +290,7 @@ Matrix multiplication
         [[4, 1], [2, 2]]
 
         >>> A = [[1,0,1,0], [0,1,1,0], [3,2,1,0], [4,1,2,0]]
-        >>> B = np.matrix([[4,1], [2,2], [5,1], [2,3]])
+        >>> B = np.array([[4,1], [2,2], [5,1], [2,3]])
         >>> matrix_multiplication(A, B)
         [[9, 2], [7, 3], [21, 8], [28, 8]]
         """

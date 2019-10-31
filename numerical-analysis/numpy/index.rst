@@ -74,7 +74,8 @@ Data Structures:
     array-iteration.rst
     array-index.rst
     array-slice.rst
-    array-modification.rst
+    array-rounding.rst
+    array-methods.rst
     array-arithmetic.rst
     array-shape.rst
     array-concatenation.rst

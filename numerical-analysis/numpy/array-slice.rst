@@ -109,6 +109,42 @@ Array Slice
     # array([[8, 9]])
 
 
+Newaxis
+=======
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([1, 2, 3])
+    # array([1, 2, 3])
+
+    a[:,np.newaxis]
+    # array([[1],
+    #        [2],
+    #        [3]])
+
+    a[np.newaxis,:]
+    # array([[1, 2, 3]])
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3], [4, 5, 6]])
+    # array([[1, 2, 3],
+    #        [4, 5, 6]])
+
+    a[:,np.newaxis]
+    # array([[[1, 2, 3]],
+    #        [[4, 5, 6]]])
+
+    a[np.newaxis,:]
+    # array([[[1, 2, 3],
+    #         [4, 5, 6]]])
+
+
 Assignments
 ===========
 
@@ -120,15 +156,11 @@ Array Slicing
 * Filename: :download:`solution/numpy_slice.py`
 
 :English:
-    #. Use only random module from ``numpy`` module
-    #. Set random seed to zero
     #. Use input ndarray (see below)
     #. Select inner 3x3 and save to ``OUTPUT: ndarray``
     #. Print ``OUTPUT``
 
 :Polish:
-    #. Używaj tylko modułu random z modułu ``numpy``
-    #. Ustaw ziarno losowości na zero
     #. Użyj wejściowej ndarray (patrz poniżej)
     #. Wybierz wewnętrzne 3x3 i zapisz do ``OUTPUT: ndarray``
     #. Wypisz ``OUTPUT``
@@ -154,7 +186,6 @@ Array Slicing
 
 :The whys and wherefores:
     * Defining ``np.array``
-    * Using ``np.random.seed()``
     * Generating random ``np.array``
 
 Sum of inner elements
@@ -162,7 +193,7 @@ Sum of inner elements
 * Complexity level: medium
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/random_matrix.py`
+* Filename: :download:`solution/numpy_inner_sum.py`
 
 :English:
     #. Use only random module from ``numpy`` module
