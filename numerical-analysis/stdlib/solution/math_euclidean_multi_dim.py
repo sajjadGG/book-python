@@ -26,7 +26,7 @@ def euclidean_distance_n_dimensions(A, B):
     under_sqrt = 0
 
     for n1, n2 in zip(A, B):
-        under_sqrt += (n2 - n1) ** 2
+        under_sqrt += (n2-n1) ** 2
 
     # for index, _ in enumerate(A):
     #     n1 = A[index]

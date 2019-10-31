@@ -388,6 +388,11 @@ Euclidean distance ``n`` dimensions
 
         def euclidean_distance(A, B):
             """
+            >>> euclidean_distance_n_dimensions((0,0,1,0,1), (1,1))
+            Traceback (most recent call last):
+                ...
+            ValueError: Points must be in the same dimensions
+
             >>> A = (0,1,0,1)
             >>> B = (1,1,0,0)
             >>> euclidean_distance(A, B)
@@ -404,11 +409,6 @@ Euclidean distance ``n`` dimensions
 
             >>> euclidean_distance((0,0,1,0,1), (1,1,0,0,1))
             1.7320508075688772
-
-            >>> euclidean_distance((0,0,1,0,1), (1,1))
-            Traceback (most recent call last):
-                ...
-            ValueError: Points must be in the same dimensions
             """
             return ...
 
