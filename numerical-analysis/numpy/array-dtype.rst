@@ -181,3 +181,8 @@ str
 
     np.array(['one', 'two', 'three'])
     # array(['one', 'two', 'three'], dtype='<U5')
+
+
+Assignments
+===========
+.. todo:: Create assignments
