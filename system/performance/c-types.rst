@@ -2,8 +2,12 @@
 C Types
 *******
 
+
+Workflow
+========
+
 Code
-====
+----
 .. code-block:: C
 
     long factorial(long n) {
@@ -13,30 +17,33 @@ Code
         return (n * factorial(n - 1));
     }
 
-
 Build
-=====
+-----
 .. code-block:: console
 
     $ INCLUDES='-I/usr/local/Cellar/python/3.7.2_2/Frameworks/Python.framework/Versions/3.7/include/python3.7m/'
-    $ FILE='mylib-ctypes'
+    $ FILE='my_library'
+
+.. code-block:: console
+
     $ gcc -fPIC -c -o ${FILE}.o ${FILE}.c ${INCLUDE}
     $ gcc -shared ${FILE}.o -o ${FILE}.so
 
-
 Run
-===
+---
 .. code-block:: python
 
     import ctypes
 
-    lib = ctypes.CDLL('mylib.so')
+
+    lib = ctypes.CDLL('my_library.so')
 
     lib.factorial(16)  # 2004189184
     lib.factorial(17)  # -288522240
 
-Argumenty
----------
+
+Arguments
+=========
 * ``ctypes.c_double``
 * ``ctypes.c_int``
 * ``ctypes.c_char``
@@ -58,6 +65,9 @@ Argumenty
 
 Use cases
 =========
+
+Example 1
+---------
 .. code-block:: C
 
     #include <stdio.h>
@@ -66,13 +76,56 @@ Use cases
         printf("Ehlo World");
     }
 
+.. code-block:: python
+
+    import ctypes
+
+
+    lib = ctypes.CDLL('my_library.so')
+    lib.ehlo()
+
+Example 2
+---------
+.. code-block:: C
+
+    #include <stdio.h>
+
     void greeting(char *name) {
         printf("Ehlo %s!\n", name);
     }
 
+.. code-block:: python
+
+    import ctypes
+
+
+    lib = ctypes.CDLL('my_library.so')
+
+    lib.greeting.argtypes = [ctypes.c_char_p]
+    name = ctypes.create_string_buffer('Twardowski'.encode('ASCII'))
+    lib.greeting(name)
+
+Example 3
+---------
+.. code-block:: C
+
+    #include <stdio.h>
+
     void number(int num) {
         printf("My number %d\n", num);
     }
+
+.. code-block:: python
+
+    import ctypes
+
+
+    lib = ctypes.CDLL('my_library.so')
+    lib.number(10)
+
+Example 4
+---------
+.. code-block:: C
 
     int return_int(int num) {
         return num;
@@ -82,17 +135,8 @@ Use cases
 
     import ctypes
 
-    lib = ctypes.CDLL('mylib-ctypes.so')
 
-    lib.ehlo()
-
-    lib.greeting.argtypes = [ctypes.c_char_p]
-    name = ctypes.create_string_buffer('Twardowski'.encode('ASCII'))
-    lib.greeting(name)
-
-    lib.number(10)
-
-    print(dir(lib))
+    lib = ctypes.CDLL('my_library.so')
 
     i = lib.return_int(15)
     print(i)
@@ -115,6 +159,15 @@ Multi OS code
 
     lib.printf("I'm C printf() function called from Python")
 
+
+.. code-block:: python
+
+    import ctypes
+
+
+    lib = ctypes.CDLL('my_library.so')
+    print(dir(lib))
+
 Overflow
 --------
 .. code-block:: C
@@ -129,7 +182,8 @@ Overflow
 
     import ctypes
 
-    lib = ctypes.CDLL('biblioteka.so')
+
+    lib = ctypes.CDLL('my_library.so')
 
     lib.wypisz_liczbe(10 ** 10)  # Liczba to: 1410065408
 
