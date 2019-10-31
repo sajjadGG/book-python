@@ -43,6 +43,7 @@ Data Structures:
     random.rst
 
     array-create.rst
+    array-dtype.rst
     array-attributes.rst
     array-shape.rst
     array-indexing.rst

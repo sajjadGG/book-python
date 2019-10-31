@@ -131,6 +131,27 @@ Choice
     np.random.choice([1, 2, 3], 2, replace=False)
     # array([1, 3])
 
+Sample
+------
+* alias of ``np.random.random_sample``
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    np.random.sample(size=5)
+    # array([0.44792617, 0.09956909, 0.35231166, 0.46924917, 0.84114013])
+
+    np.random.sample(size=(2,3))
+    # array([[0.90464774, 0.03755938, 0.50831545],
+    #        [0.16684751, 0.77905102, 0.8649333 ]])
+
+    np.random.sample(size=(3,2))
+    # array([[0.41139672, 0.13997259],
+    #        [0.03322239, 0.98257496],
+    #        [0.37329075, 0.42007537]])
+
 Normal (Gaussian) distribution
 ------------------------------
 * Draw pseudorandom samples from a normal (Gaussian) distribution

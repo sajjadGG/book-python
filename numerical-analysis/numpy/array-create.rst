@@ -41,17 +41,6 @@ Array Declaration
     np.array([1, 2, 3], dtype=float)
     # array([ 1., 2., 3.])
 
-.. code-block:: python
-
-    import numpy as np
-
-
-    np.array(['a', 'b', 'c'])
-    # array(['a', 'b', 'c'], dtype='<U1')
-
-    np.array(['one', 'two', 'three'])
-    # array(['one', 'two', 'three'], dtype='<U5')
-
 2-dimensional Array
 -------------------
 .. code-block:: python
@@ -142,7 +131,7 @@ Array from ``np.arange()``
     # array([0, 1, 2, 3, 4])
 
     np.arange(5, dtype=float)
-    # array([0, 1, 2, 3, 4])
+    # array([0., 1., 2., 3., 4.])
 
     np.arange(5.0)
     # array([0., 1., 2., 3., 4.])
