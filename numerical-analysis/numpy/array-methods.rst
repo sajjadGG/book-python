@@ -11,21 +11,28 @@ Copy
 
 
     a = np.array([1, 2, 3])
-    # array([1, 2, 3])
+    x = a
+    a[0] = 99
 
-    b = a
-    # array([1, 2, 3])
+    repr(a)
+    # array([99, 2, 3])
 
-    c = a.copy()
-    # array([1, 2, 3])
+    repr(x)
+    # array([99, 2, 3])
 
-    a[0] = 0
-    # array([0, 2, 3])
+.. code-block:: python
 
-    b
-    # array([0, 2, 3])
+    import numpy as np
 
-    c
+
+    a = np.array([1, 2, 3])
+    y = a.copy()
+    a[0] = 99
+
+    repr(a)
+    # array([99, 2, 3])
+
+    repr(y)
     # array([1, 2, 3])
 
 
@@ -36,21 +43,33 @@ Put
     import numpy as np
 
 
-    a = np.array([1, 2, 3, 4])
+    a = np.array([1, 2, 3])
 
-    a.put([0, 3], 99)
-    # array([99,  2,  3, 99])
+    a.put([0, 2], 99)
+    # array([99,  2, 99])
 
 .. code-block:: python
 
     import numpy as np
 
 
-    a = np.array([1, 2, 3, 4])
-    b = np.array([99, 88, 77])
+    a = np.array([1, 2, 3])
+    at_index = [0, 2]
 
-    a.put([0, 3], b)
-    # array([99,  2,  3, 88])
+    a.put(at_index, 99)
+    # array([99,  2, 99])
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([1, 2, 3])
+    x = np.array([99, 88, 77])
+    at_index = [0, 2]
+
+    a.put(at_index, x)
+    # array([99,  2, 88])
 
 
 Fill
@@ -63,7 +82,6 @@ Fill
 
 
     a = np.array([1, 2, 3])
-    # array([1, 2, 3])
 
     a.fill(0)
     # array([0, 0, 0])
@@ -73,11 +91,10 @@ Fill
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    b = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
-    a.fill(0)
+    b.fill(0)
     # array([[0, 0, 0],
     #        [0, 0, 0]])
 
@@ -93,7 +110,6 @@ Transpose
 
 
     a = np.array([1, 2, 3])
-    # array([1, 2, 3])
 
     a.transpose()
     # array([1, 2, 3])
@@ -103,9 +119,8 @@ Transpose
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     a.transpose()
     # array([[1, 4],
@@ -122,10 +137,9 @@ Transpose
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6],
-    #        [7, 8, 9]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
 
     a.transpose()
     # array([[1, 4, 7],
@@ -140,12 +154,12 @@ Sort
     import numpy as np
 
 
-    a = np.array([2, 3, 1])
+    a1 = np.array([2, 3, 1])
 
-    sorted(a)
+    sorted(a1)
     # [1, 2, 3]
 
-    a.sort()
+    a1.sort()
     # array([1, 2, 3])
 
 .. code-block:: python
@@ -153,28 +167,30 @@ Sort
     import numpy as np
 
 
-    a = np.array([[2, 3, 1], [5, 6, 4]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    b1 = np.array([[2, 3, 1],
+                   [5, 6, 4]])
 
-    sorted(a)
+    sorted(b1)
     # ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
 
-    a.sort()
+    b1.sort()
     # array([[1, 2, 3],
     #        [4, 5, 6]])
 
-    a.sort(axis=0)
+    b1.sort(axis=0)
     # array([[2, 3, 1],
     #        [5, 6, 4]])
 
-    a.sort(axis=1)
+    b1.sort(axis=1)
     # array([[1, 2, 3],
     #        [4, 5, 6]])
 
+
 Flip
 ====
-* Reverse the order of elements in an array along the given axis.
+* Does not modify inplace
+* Returns new ``ndarray``
+* Reverse the order of elements in an array along the given axis
 
 .. code-block:: python
 
@@ -192,19 +208,21 @@ Flip
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
+    b = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
-    a.flip()
+    b.flip()
     # array([[6, 5, 4],
     #        [3, 2, 1]])
 
-    np.flip(a, axis=0)
+    np.flip(b, axis=0)
     # array([[4, 5, 6],
     #        [1, 2, 3]])
 
-    np.flip(a, axis=1)
+    np.flip(b, axis=1)
     # array([[3, 2, 1],
     #        [6, 5, 4]])
+
 
 Assignments
 ===========
