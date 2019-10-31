@@ -21,52 +21,6 @@ Logarithms
 Vector and matrix mathematics
 =============================
 
-Dot product of two arrays
--------------------------
-* ``np.dot()``
-* If either a or b is 0-D (scalar), it is equivalent to ``multiply`` and using ``numpy.multiply(a, b)`` or ``a * b`` is preferred.
-* If both a and b are 1-D arrays, it is inner product of vectors (without complex conjugation).
-* If both a and b are 2-D arrays, it is matrix multiplication, but using ``matmul`` or ``a @ b`` is preferred.
-* If a is an N-D array and b is a 1-D array, it is a sum product over the last axis of a and b.
-* If a is an N-D array and b is an M-D array (where ``M>=2``), it is a sum product over the last axis of a and the second-to-last axis of b: ``dot(a, b)[i,j,k,m] = sum(a[i,j,:] * b[k,:,m])``
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([1, 2, 3], float)
-    b = np.array([0, 1, 1], float)
-
-    np.dot(a, b)
-    # 5.0
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[0, 1], [2, 3]], float)
-    b = np.array([2, 3], float)
-    c = np.array([[1, 1], [4, 0]], float)
-
-    a
-    # array([[ 0., 1.],
-    #        [ 2., 3.]])
-
-    np.dot(b, a)
-    # array([ 6., 11.])
-
-    np.dot(a, b)
-    # array([ 3., 13.])
-
-    np.dot(a, c)
-    # array([[ 4., 0.],
-    #        [ 14., 2.]])
-
-    np.dot(c, a)
-    # array([[ 2., 4.],
-    #        [ 0., 4.]])
 
 Determinant of a square matrix
 ------------------------------
@@ -87,8 +41,8 @@ Inner product
 -------------
 * Compute inner product of two vectors
 * ``np.inner()``
-* Ordinary inner product of vectors for 1-D arrays (without complex conjugation).
-* In higher dimensions a sum product over the last axes.
+* Ordinary inner product of vectors for 1-D arrays (without complex conjugation)
+* In higher dimensions a sum product over the last axes
 
 .. code-block:: python
     :caption: Ordinary inner product for vectors
@@ -148,7 +102,7 @@ Outer product
 
 Cross product
 -------------
-* The cross product of a and b in R^3 is a vector perpendicular to both a and b.
+* The cross product of a and b in R^3 is a vector perpendicular to both a and b
 * ``np.cross()``
 
 .. code-block:: python
@@ -178,8 +132,8 @@ Cross product
 
 Eigenvalues and vectors of a square matrix
 ==========================================
-* Each of a set of values of a parameter for which a differential equation has a nonzero solution (an eigenfunction) under given conditions.
-* Any number such that a given matrix minus that number times the identity matrix has a zero determinant.
+* Each of a set of values of a parameter for which a differential equation has a nonzero solution (an eigenfunction) under given conditions
+* Any number such that a given matrix minus that number times the identity matrix has a zero determinant
 
 .. code-block:: python
 

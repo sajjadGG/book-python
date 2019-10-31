@@ -299,6 +299,51 @@ Matrix Multiplication
     a.dot(b)
     # ValueError: shapes (3,) and (2,3) not aligned: 3 (dim 0) != 2 (dim 0)
 
+* ``np.dot()``
+* If either a or b is 0-D (scalar), it is equivalent to ``multiply`` and using ``numpy.multiply(a, b)`` or ``a * b`` is preferred.
+* If both a and b are 1-D arrays, it is inner product of vectors (without complex conjugation).
+* If both a and b are 2-D arrays, it is matrix multiplication, but using ``matmul`` or ``a @ b`` is preferred.
+* If a is an N-D array and b is a 1-D array, it is a sum product over the last axis of a and b.
+* If a is an N-D array and b is an M-D array (where ``M>=2``), it is a sum product over the last axis of a and the second-to-last axis of b: ``dot(a, b)[i,j,k,m] = sum(a[i,j,:] * b[k,:,m])``
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([1, 2, 3], float)
+    b = np.array([0, 1, 1], float)
+
+    np.dot(a, b)
+    # 5.0
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[0, 1], [2, 3]], float)
+    b = np.array([2, 3], float)
+    c = np.array([[1, 1], [4, 0]], float)
+
+    a
+    # array([[ 0., 1.],
+    #        [ 2., 3.]])
+
+    np.dot(b, a)
+    # array([ 6., 11.])
+
+    np.dot(a, b)
+    # array([ 3., 13.])
+
+    np.dot(a, c)
+    # array([[ 4., 0.],
+    #        [ 14., 2.]])
+
+    np.dot(c, a)
+    # array([[ 2., 4.],
+    #        [ 0., 4.]])
+
 
 Assignments
 ===========
