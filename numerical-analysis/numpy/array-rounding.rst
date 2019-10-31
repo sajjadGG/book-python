@@ -10,9 +10,9 @@ Floor
     import numpy as np
 
 
-    a = np.array([1., 1.41421356, 1.73205081])
+    a1 = np.array([1., 1.00000001, 1.99999999])
 
-    np.floor(a)
+    np.floor(a1)
     # array([1., 1., 1.])
 
 
@@ -23,9 +23,9 @@ Ceil
     import numpy as np
 
 
-    a = np.array([1., 1.41421356, 1.73205081])
+    a1 = np.array([1., 1.00000001, 1.99999999])
 
-    np.ceil(a)
+    np.ceil(a1)
     # array([1., 2., 2.])
 
 
@@ -36,9 +36,9 @@ Round
     import numpy as np
 
 
-    a = np.array([1., 1.41421356, 1.73205081])
+    a1 = np.array([1., 1.00000001, 1.99999999])
 
-    np.rint(a)
+    np.rint(a1)
     # array([1., 1., 2.])
 
 
@@ -52,18 +52,38 @@ Clip
     import numpy as np
 
 
-    a = np.array([1, 2, 3, 4, 5, 6])
+    a = np.array([1, 2, 3])
 
     a.clip(2, 5)
-    # array([2, 2, 3, 4, 5, 5])
+    # array([2, 2, 3])
 
 .. code-block:: python
 
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
+    b = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
-    a.clip(2, 5)
+    b.clip(2, 5)
     # array([[2, 2, 3],
     #        [4, 5, 5]])
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    c = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
+
+    c.clip(2, 5)
+    # array([[2, 2, 3],
+    #        [4, 5, 5],
+    #        [5, 5, 5]])
+
+
+Assignments
+===========
+.. todo:: Create assignments
