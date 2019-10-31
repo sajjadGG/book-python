@@ -23,6 +23,40 @@
 //             return ROMAN_NUMERALS[index] + toRoman(number - index);
 // }
 
+const ALPHABET = {
+    0: "0",
+    1: "A",
+    2: "B",
+    3: "C",
+    4: "D",
+    5: "E",
+    6: "F",
+    7: "G",
+    8: "H",
+    9: "I",
+    10: "J",
+    11: "K",
+    12: "L",
+    13: "M",
+    14: "N",
+    15: "O",
+    16: "P",
+    17: "Q",
+    18: "R",
+    19: "S",
+    20: "T",
+    21: "U",
+    22: "V",
+    23: "W",
+    24: "X",
+    25: "Y",
+    26: "Z",
+};
+
+function toAlpha(number) {
+    return ALPHABET[index];
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 
     /* Replace solution links to chapter */
@@ -44,9 +78,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     chapters.forEach((chapter, i) => {
+        //chapter.innerHTML = `${i}. ${chapter.innerHTML}`;
+
         // let roman = toRoman(i+1);
         // chapter.innerHTML = `${roman}. ${chapter.innerHTML}`;
-        chapter.innerHTML = `${i}. ${chapter.innerHTML}`;
+
+        let alpha = toAlpha(i);
+        chapter.innerHTML = `${alpha}. ${chapter.innerHTML}`;
 
         chapter.onclick = () => {
             let ul = chapter.nextElementSibling;

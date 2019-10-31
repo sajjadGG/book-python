@@ -30,7 +30,7 @@ Random ``int``
     import numpy as np
 
 
-    np.random.randint(5, 10)
+    np.random.randint(0, 10)
     # 9
 
 Random ``float``
@@ -57,15 +57,11 @@ Random ``np.array``
 
 
     np.random.rand(5)
-    # array([ 0.40783762, 0.7550402 , 0.00919317, 0.01713451, 0.95299583])
+    # array([0.93123551, 0.75755626, 0.68828294, 0.5335651 , 0.98728456])
 
     np.random.rand(2,3)
-    # array([[ 0.50431753, 0.48272463, 0.45811345],
-    #        [ 0.18209476, 0.48631022, 0.49590404]])
-
-    np.random.rand(6).reshape((2,3))
-    # array([[ 0.72915152, 0.59423848, 0.25644881],
-    #        [ 0.75965311, 0.52151819, 0.60084796]])
+    # array([[0.39576466, 0.39324239, 0.99116573],
+    #        [0.69457363, 0.28033562, 0.43549806]])
 
 
 Sample
@@ -122,37 +118,39 @@ Poisson distribution
 
 Shuffle
 =======
+* Modify sequence in-place
 
-Sequences
----------
-* Modify a sequence in-place by shuffling its contents
+1-dimensional Array
+-------------------
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([1, 2, 3])
+    # array([3, 1, 2])
+
+    np.random.shuffle(a)
+    # array([3, 1, 2])
+
+2-dimensional Array
+-------------------
+* Multi-dimensional arrays are only shuffled along the first axis
 
 .. code-block:: python
 
     import numpy as np
 
 
-    a = list(range(10))
-    # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+    # array([[1, 2, 3],
+    #        [4, 5, 6],
+    #        [7, 8, 9]])
 
     np.random.shuffle(a)
-    # [4, 9, 5, 0, 2, 7, 6, 8, 1, 3]
-
-``np.array``
-------------
-* Multi-dimensional arrays are only shuffled along the first axis:
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.arange(9).reshape((3, 3))
-
-    np.random.shuffle(a)
-    # array([[3, 4, 5],
-    #       [6, 7, 8],
-    #       [0, 1, 2]])
+    # array([[7, 8, 9],
+    #        [1, 2, 3],
+    #        [4, 5, 6]])
 
 
 Assignments
@@ -170,3 +168,9 @@ Random numbers
 
 :Polish:
     #. Wyświetl 6 losowych i nie powtarzających się liczb całkowitych z zakresu od 1 do 49.
+
+:Hint:
+    * ``a * NUMBER``
+    * ``a.astype(int)``
+    * ``np.append(a, ELEMENT)``
+    * ``a.size``

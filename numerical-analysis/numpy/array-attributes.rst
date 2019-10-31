@@ -203,16 +203,25 @@ Create
     #. Set random seed to zero
     #. Create ``np.array`` with size 16x16
     #. Structure must contains random integers (0-9)
-    #. Print structure
+    #. Print number of:
+
+        - dimensions
+        - columns
+        - rows
+        - element count
 
 :Polish:
     #. Ustaw ziarno losowości na zero
     #. Stwórz ``np.array`` o rozmiarze 16x16
     #. Struktura musi zawierać losowe liczby (0-9)
-    #. Wypisz strukturę
+    #. Wypisz liczbę:
+
+        - wymiarów
+        - kolumn
+        - wierszy
+        - ilość elementów
 
 :The whys and wherefores:
     * Defining ``np.array``
     * Using ``np.random.seed()``
     * Generating random ``np.array``
-
