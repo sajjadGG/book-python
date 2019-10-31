@@ -35,24 +35,39 @@ Average
     import numpy as np
 
 
-    np.average([1, 2, 3, 4])
-    # 2.5
+    a = np.average([1, 2, 3])
 
-    np.average(range(1,11), weights=range(10,0,-1))
-    # 4.0
+    np.average(a)
+    # 2.0
 
 .. code-block:: python
 
     import numpy as np
 
 
-    data = np.arange(6).reshape((3,2))
-    # array([[0, 1],
-    #        [2, 3],
-    #        [4, 5]])
+    a = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+    # array([[1, 2, 3],
+    #        [4, 5, 6],
+    #        [7, 8, 9]])
 
-    np.average(data, axis=1, weights=[1./4, 3./4])
-    # array([0.75, 2.75, 4.75])
+    np.average(a)
+    # 5.0
+
+    np.average(a, axis=0)
+    # array([4., 5., 6.])
+
+    np.average(a, axis=1)
+    # array([2., 5., 8.])
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.average([1, 2, 3])
+
+    np.average(a, weights=[1, 1, 2])
+    # 2.25
 
 
 Median

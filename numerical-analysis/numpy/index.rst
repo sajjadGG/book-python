@@ -40,10 +40,6 @@ Data Structures:
     :maxdepth: 2
 
     builtin.rst
-    trigonometry.rst
-    statistics.rst
-    random.rst
-    polynomial.rst
 
     array-create.rst
     array-attributes.rst
@@ -60,6 +56,10 @@ Data Structures:
     array-logic.rst
     array-select.rst
 
+    statistics.rst
+    random.rst
+    trigonometry.rst
+    polynomial.rst
     algebra.rst
 
 .. todo:: Assignments:
