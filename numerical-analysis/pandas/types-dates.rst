@@ -70,6 +70,54 @@ Generate dates
     # DatetimeIndex(['1970-12-31', '1971-12-31', '1972-12-31'], dtype='datetime64[ns]', freq='A-DEC')
 
 
+.. code-block:: python
+
+    from datetime import datetime
+    import pandas as pd
+
+
+    start = datetime(1969, 7, 16)
+    end = datetime(1969, 7, 21)
+
+    pd.date_range(start, end)
+    # DatetimeIndex(['1969-07-16', '1969-07-17', '1969-07-18',
+    #                '1969-07-19', '1969-07-20', '1969-07-21'],
+    #                dtype='datetime64[ns]', freq='D')
+
+.. code-block:: python
+
+    from pandas.tseries.holiday import USFederalHolidayCalendar
+    from pandas.tseries.offsets import CustomBusinessDay
+
+
+    business_days = CustomBusinessDay(calendar=USFederalHolidayCalendar())
+
+    pd.date_range(start='2019-12-24',end='2019-12-31', freq=business_days)
+    # DatetimeIndex(['2019-12-24', '2019-12-26', '2019-12-27',
+    #                '2019-12-30', '2019-12-31'],
+    #                dtype='datetime64[ns]', freq='C')
+
+.. code-block:: python
+
+    from datetime import datetime
+    import pandas as pd
+
+
+    start = datetime(1970, 12, 1)
+    end = datetime(1970, 12, 31)
+    weekmask = 'Mon Tue Wed Thu Fri'
+    holidays = [datetime(1970, 12, 25), datetime(1970, 12, 26)]
+
+    pd.bdate_range(start, end, freq='C', weekmask=weekmask, holidays=holidays)
+    # DatetimeIndex(['1970-12-01', '1970-12-02', '1970-12-03', '1970-12-04',
+    #                '1970-12-07', '1970-12-08', '1970-12-09', '1970-12-10',
+    #                '1970-12-11', '1970-12-14', '1970-12-15', '1970-12-16',
+    #                '1970-12-17', '1970-12-18', '1970-12-21', '1970-12-22',
+    #                '1970-12-23', '1970-12-24', '1970-12-28', '1970-12-29',
+    #                '1970-12-30', '1970-12-31'],
+    #                dtype='datetime64[ns]', freq='C')
+
+
 Timestamp
 =========
 * subclass of ``datetime.datetime``
@@ -132,49 +180,23 @@ Period
     # Timestamp('1969-07-24 23:59:59.999999999')
 
 
-DateOffset
-==========
-* A relative time duration that respects calendar arithmetic
-* For example, ``Bday`` defines the set of dates that are weekdays (M-F)
-* To test if a date is in the ``DateOffset`` use: dateOffset.onOffset(date).
-
-.. code-block:: python
-
-    import pandas as pd
-
-
-    first_step = pd.Timestamp('1969-07-21 02:56:15')
-
-    first_step + pd.DateOffset(months=3)
-    # Timestamp('1969-10-21 02:56:15')
-
-.. code-block:: python
-
-    import pandas as pd
-
-
-    epoch = pd.Timestamp('1970-01-01 00:00:00')
-
-    epoch + pd.DateOffset(month=3)
-    # Timestamp('1970-03-01 00:00:00')
-
-
-.. code-block:: python
-
-    import pandas as pd
-
-
-    march = pd.Timestamp('1970-03-01 00:00:00')
-
-    march - pd.DateOffset(days=1)
-    # Timestamp('1970-02-28 00:00:00')
-
-
 Timedelta
 =========
-* An absolute time duration. Similar to datetime.timedelta from the standard library
 * Represents a duration, the difference between two dates or times
-* Timedeltas are differences in times, expressed in difference units, e.g. days, hours, minutes, seconds. They can be both positive and negative.
+* Difference expressed in: days, hours, minutes, seconds
+* Similar to ``datetime.timedelta`` from the standard library
+* Can be both positive and negative.
+
+.. code-block:: python
+
+    import pandas as pd
+
+
+    pd.Timedelta('1 day')
+    # Timedelta('1 days 00:00:00')
+
+    pd.Timedelta(days=1)
+    # Timedelta('1 days 00:00:00')
 
 .. code-block:: python
 
@@ -217,6 +239,44 @@ Timedelta
 
     leap + pd.Timedelta(seconds=1)
     # Timestamp('2017-01-01 00:00:00')
+
+
+DateOffset
+==========
+* A relative time duration that respects calendar arithmetic
+* If a date is Sat then adding a ``Bday`` will return the next Monday (next Business day) instead of a Saturday
+* Test if a date is in the ``DateOffset().onOffset(date)``
+
+.. code-block:: python
+
+    import pandas as pd
+
+
+    first_step = pd.Timestamp('1969-07-21 02:56:15')
+
+    first_step + pd.DateOffset(months=3)
+    # Timestamp('1969-10-21 02:56:15')
+
+.. code-block:: python
+
+    import pandas as pd
+
+
+    epoch = pd.Timestamp('1970-01-01 00:00:00')
+
+    epoch + pd.DateOffset(month=3)
+    # Timestamp('1970-03-01 00:00:00')
+
+
+.. code-block:: python
+
+    import pandas as pd
+
+
+    mar = pd.Timestamp('1970-03-01 00:00:00')
+
+    mar - pd.DateOffset(days=1)
+    # Timestamp('1970-02-28 00:00:00')
 
 
 Assignments
