@@ -3,6 +3,8 @@ Array Shape
 ***********
 
 
+* Any shape operation changes only ``ndarray.shape`` and ``ndarray.strides`` and does not touch data
+
 Get shape
 =========
 .. code-block:: python
@@ -156,7 +158,7 @@ Reshape
 
 Flatten
 =======
-* Returns new array
+* Returns new array (makes memory copy - expensive)
 * Does not modify inplace
 
 .. code-block:: python
@@ -190,6 +192,45 @@ Flatten
                   [7, 8, 9]])
 
     a.flatten()
+    # array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+
+Ravel
+=====
+* Ravel is the same as Flatten but returns a reference (or view) of the array if possible (i.e. memory is contiguous)
+* Otherwise returns new array (makes memory copy)
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([1, 2, 3])
+
+    a.ravel()
+    # array([1, 2, 3])
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
+
+    a.ravel()
+    # array([1, 2, 3, 4, 5, 6])
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
+
+    a.ravel()
     # array([1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 
