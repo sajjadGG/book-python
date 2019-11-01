@@ -28,13 +28,30 @@ Euler number
 
 Not-a-Number
 ------------
+* Special ``float`` value
+* Propagates in calculations
+
 .. code-block:: python
 
     import numpy as np
 
 
     np.nan
-    # NaN
+    # nan
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    np.nan + 1          # nan
+    np.nan + np.nan     # nan
+    np.nan - np.nan     # nan
+    np.nan - np.inf     # nan
+
+    np.nan / np.nan     # nan
+    0 / np.nan          # nan
+    np.nan / 0          # ZeroDivisionError: float division by zero
 
 Infinity
 --------
@@ -45,6 +62,22 @@ Infinity
 
     np.inf
     # inf
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    np.inf + 1          # inf
+    np.inf + np.inf     # inf
+    np.inf - np.inf     # nan
+    np.inf - np.nan     # nan
+
+    np.inf * np.inf     # inf
+    np.inf / np.inf     # nan
+
+    0 / np.inf          # 0.0
+    np.inf / 0          # ZeroDivisionError: float division by zero
 
 
 Assignments
