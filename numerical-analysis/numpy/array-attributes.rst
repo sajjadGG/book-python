@@ -101,6 +101,7 @@ Data
                   [7, 8, 9]])
 
     a.itemsize      # 8
+    a.strides       # (24, 8)
     a.data          # <memory at 0x10cf92210>
 
 
