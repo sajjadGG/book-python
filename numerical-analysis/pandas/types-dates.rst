@@ -55,6 +55,9 @@ Date frequency
 
 Generate dates
 ==============
+
+Days in a row
+-------------
 .. code-block:: python
 
     import pandas as pd
@@ -69,7 +72,8 @@ Generate dates
     pd.date_range('1970-01-01', periods=3, freq='Y')
     # DatetimeIndex(['1970-12-31', '1971-12-31', '1972-12-31'], dtype='datetime64[ns]', freq='A-DEC')
 
-
+Days between
+------------
 .. code-block:: python
 
     from datetime import datetime
@@ -84,6 +88,8 @@ Generate dates
     #                '1969-07-19', '1969-07-20', '1969-07-21'],
     #                dtype='datetime64[ns]', freq='D')
 
+Business days
+-------------
 .. code-block:: python
 
     from pandas.tseries.holiday import USFederalHolidayCalendar
@@ -97,6 +103,85 @@ Generate dates
     #                '2019-12-30', '2019-12-31'],
     #                dtype='datetime64[ns]', freq='C')
 
+.. code-block:: python
+
+    from datetime import datetime, time
+    import pandas as pd
+    from pandas.tseries.holiday import USFederalHolidayCalendar
+
+
+    today = datetime(2014, 1, 17, 15)
+
+
+    bhour_us = pd.offsets.CustomBusinessHour(
+        calendar=USFederalHolidayCalendar(),
+        start='08:00',
+        end=time(16, 0),
+        weekmask='Mon Tue Wed Thu Fri')
+
+
+    dt+bhour_us
+
+Custom Calendar
+---------------
+.. code-block:: python
+
+    import pandas as pd
+    from pandas.tseries.holiday import AbstractHolidayCalendar, Holiday, EasterMonday, Easter
+    from pandas.tseries.offsets import Day, CustomBusinessDay
+
+
+    class PLHolidayCalendar(AbstractHolidayCalendar):
+        """
+        Custom Holiday calendar for Poland based on
+        https://en.wikipedia.org/wiki/Public_holidays_in_Poland
+        """
+        rules = [
+            Holiday('New Years Day', month=1, day=1),
+            Holiday('Epiphany', month=1, day=6),
+            Holiday('Easter', month=1, day=1, offset=[Easter()]),
+            EasterMonday,
+            Holiday('May Day', month=5, day=1),
+            Holiday('Constitution Day', month=5, day=3),
+            Holiday('Pentecost Sunday', month=1, day=1, offset=[Easter(), Day(49)]),
+            Holiday('Corpus Christi', month=1, day=1, offset=[Easter(), Day(60)]),
+            Holiday('Assumption of the Blessed Virgin Mary', month=8, day=15),
+            Holiday('All Saints Day', month=11, day=1),
+            Holiday('Independence Day', month=11, day=11),
+            Holiday('Christmas Day', month=12, day=25),
+            Holiday('Second Day of Christmastide', month=12, day=26),
+        ]
+
+
+    pl_holidays_2019 = PLHolidayCalendar().holidays(start='2019-01-01', end='2019-12-31')
+    # DatetimeIndex(['2019-01-01', '2019-01-06', '2019-04-21', '2019-04-22',
+    #                '2019-05-01', '2019-05-03', '2019-06-09', '2019-06-20',
+    #                '2019-08-15', '2019-11-01', '2019-11-11', '2019-12-25',
+    #                '2019-12-26'],
+    #               dtype='datetime64[ns]', freq=None)
+
+
+    BUSINESS_DAY = CustomBusinessDay(
+        calendar=PLHolidayCalendar(),
+        weekmask='Mon Tue Wed Thu Fri')
+
+    today = pd.Timestamp('2000-01-01 00:00')
+
+    today + 2*BUSINESS_DAY
+    # Timestamp('2000-01-04 00:00:00')
+
+    today + 3*BUSINESS_DAY
+    # Timestamp('2000-01-05 00:00:00')
+
+    today + 4*BUSINESS_DAY
+    # Timestamp('2000-01-07 00:00:00')
+
+    today + 5*BUSINESS_DAY
+    # Timestamp('2000-01-10 00:00:00')
+
+
+Custom mask
+-----------
 .. code-block:: python
 
     from datetime import datetime
