@@ -61,6 +61,19 @@ Diagonal
     a.diagonal()
     # array([1, 5, 9])
 
+Nonzero
+=======
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 0, 2],
+                  [3, 0, 4]])
+
+    a.nonzero()
+    # (array([0, 0, 1, 1]), array([0, 2, 0, 2]))
+
 
 Where
 =====
@@ -155,20 +168,6 @@ Multiple argument
 
     a[b]
     # array([3, 6])
-
-
-Nonzero
-=======
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 0, 2],
-                  [3, 0, 4]])
-
-    a.nonzero()
-    # (array([0, 0, 1, 1]), array([0, 2, 0, 2]))
 
 
 Fancy indexing

@@ -135,6 +135,28 @@ Minimal Value
     a.argmin(axis=1)
     # array([0, 0])
 
+.. code-block:: python
+    :caption: Shows the coordinates of ``argmin`` value
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
+
+    a.min()
+    # 1
+
+    a.argmin()
+    # 0
+
+    np.unravel_index(a.argmin(), a.shape)
+    # (0, 0)
+
+    a == a.min()
+    # array([[ True, False, False],
+    #        [False, False, False]])
+
 
 Maximal Value
 =============
@@ -173,6 +195,28 @@ Maximal Value
 
     a.argmax(axis=0)
     # array([1, 1, 1])
+
+.. code-block:: python
+    :caption: Shows the coordinates of ``argmax`` value
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
+
+    a.max()
+    # 6
+
+    a.argmax()
+    # 5
+
+    np.unravel_index(a.argmax(), a.shape)
+    # (1, 2)
+
+    a == a.max()
+    # array([[False, False, False],
+    #        [False, False,  True]])
 
 
 Assignments

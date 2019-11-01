@@ -2,17 +2,45 @@
 Series Create
 *************
 
-Values
-======
-.. code-block:: python
-
-    pd.Timestamp('1961-04-12')
-    pd.Categorical(["test", "train", "test", "train"])
-
 
 Creating
 ========
-* 1-dimentional data structure similar to ``ndarray``
+* 1-dimensional data structure similar to ``ndarray``
+* Has numerical index
+
+.. code-block:: python
+
+    import pandas as pd
+
+
+    pd.Series([1,2,3])
+    # 0    1
+    # 1    2
+    # 2    3
+    # dtype: int64
+
+.. code-block:: python
+
+    import pandas as pd
+
+
+    pd.Series([1., 2., 3.])
+    # 0    1.0
+    # 1    2.0
+    # 2    3.0
+    # dtype: float64
+
+.. code-block:: python
+
+    import pandas as pd
+
+
+    pd.Series(['a', 'b', 'c'])
+    # 0    a
+    # 1    b
+    # 2    c
+    # dtype: object
+
 
 .. code-block:: python
 
@@ -26,6 +54,19 @@ Creating
     # 4    6.0
     # 5    8.0
     # dtype: float64
+
+
+Values
+======
+.. code-block:: python
+
+    pd.Timestamp('1961-04-12')
+    # Timestamp('1961-04-12 00:00:00')
+
+
+    pd.Categorical(["test", "train", "test", "train"])
+    # [test, train, test, train]
+    # Categories (2, object): [test, train]
 
 
 Assignments

@@ -2,6 +2,7 @@
 Series Arithmetic
 *****************
 
+
 .. code-block:: python
 
     values = np.random.randn(5)
