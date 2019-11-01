@@ -10,9 +10,8 @@ Sum
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     a.sum()
     # 21
@@ -31,9 +30,8 @@ Product
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     a.prod()
     # 720
@@ -46,9 +44,8 @@ Mean
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     a.mean()
     # 3.5
@@ -67,9 +64,8 @@ Variance
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     a.var()
     # 2.9166666666666665
@@ -88,9 +84,8 @@ Standard Deviation
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     a.std()
     # 1.707825127659933
@@ -104,14 +99,15 @@ Standard Deviation
 
 Minimal Value
 =============
+ * ``ndarray.argmin()`` index of an ``a.min()`` element in array
+
 .. code-block:: python
 
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     a.min()
     # 1
@@ -127,11 +123,10 @@ Minimal Value
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
-    a.argmin()      # index of an ``a.min()`` element in array
+    a.argmin()
     # 0
 
     a.argmin(axis=0)
@@ -143,14 +138,15 @@ Minimal Value
 
 Maximal Value
 =============
+ * ``ndarray.argmax()`` index of an ``a.max()`` element in array
+
 .. code-block:: python
 
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     a.max()
     # 6
@@ -166,11 +162,10 @@ Maximal Value
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
-    a.argmax()      # index of an ``a.max()`` element in array
+    a.argmax()
     # 5
 
     a.argmax(axis=1)

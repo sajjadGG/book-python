@@ -10,9 +10,8 @@ Contains
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     2 in a
     # True
@@ -34,7 +33,8 @@ Contains
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
     b = np.array([1, 2, 3])
 
     np.isin(a, b)
@@ -52,9 +52,8 @@ Comparision with Scalar
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     a == 2
     # array([[False,  True, False],
@@ -133,9 +132,8 @@ Any
     import numpy as np
 
 
-    a = np.array([[True, False, False], [True, True, True]])
-    # array([[ True, False, False],
-    #        [ True,  True,  True]])
+    a = np.array([[True, False, False],
+                  [True, True, True]])
 
     any(a)
     # ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
@@ -157,7 +155,6 @@ All
 
 
     a = np.array([True, False, False])
-    # array([True, False, False])
 
     all(a)
     # False
@@ -170,9 +167,8 @@ All
     import numpy as np
 
 
-    a = np.array([[True, False, False], [True, True, True]])
-    # array([[ True, False, False],
-    #        [ True,  True,  True]])
+    a = np.array([[True, False, False],
+                  [True, True, True]])
 
     all(a)
     # ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
@@ -203,9 +199,8 @@ Logical NOT
     import numpy as np
 
 
-    a = np.array([[True, False, False], [True, True, True]])
-    # array([[ True, False, False],
-    #        [ True,  True,  True]])
+    a = np.array([[True, False, False],
+                  [True, True, True]])
 
     np.logical_not(a)
     # array([[False,  True,  True],
@@ -216,9 +211,8 @@ Logical NOT
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     np.logical_not(a == 2)
     # array([[ True, False,  True],
@@ -246,9 +240,8 @@ Logical AND
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     np.logical_and(a > 2, a < 5)
     # array([[False, False,  True],
@@ -272,9 +265,8 @@ Logical OR
     import numpy as np
 
 
-    a = np.array([[1, 2, 3], [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
 
     np.logical_or(a < 2, a > 4)
     # array([[ True, False, False],

@@ -158,7 +158,7 @@ Sort
 
 
     a = np.array([[2, 3, 1],
-                   [5, 6, 4]])
+                  [5, 6, 4]])
 
     sorted(a)
     # ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()

@@ -169,6 +169,32 @@ complex
     # dtype('complex128')
 
 
+bool
+====
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([True, False, True])
+
+    a.dtype
+    # dtype('bool')
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([1, 0, 1], bool)
+
+    a.dtype
+    # dtype('bool')
+
+    repr(a)
+    # array([ True, False,  True])
+
+
 str
 ===
 .. code-block:: python
