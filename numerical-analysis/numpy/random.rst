@@ -190,13 +190,13 @@ Normal (Gaussian) distribution
     :scale: 50%
     :align: center
 
-    Normal (Gaussian) distribution :cite:`NormalDistribution`
+    Normal (Gaussian) distribution :cite:`numpy-NormalDistribution`
 
 .. figure:: img/normal-distribution-scale.gif
     :scale: 50%
     :align: center
 
-    Normal (Gaussian) distribution scale :cite:`NormalDistribution`
+    Normal (Gaussian) distribution scale :cite:`numpy-NormalDistribution`
 
 Poisson distribution
 --------------------
@@ -229,7 +229,7 @@ Poisson distribution
     :scale: 50%
     :align: center
 
-    Poisson distribution :cite:`PoissonDistribution`
+    Poisson distribution :cite:`numpy-PoissonDistribution`
 
 
 Shuffle

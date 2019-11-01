@@ -75,3 +75,12 @@ Data Frame:
     df-join.rst
     workflow.rst
     example.rst
+
+
+Bibliography
+============
+.. bibliography:: bibliography.bib
+    :style: plain
+    :labelprefix: numpy
+    :keyprefix: numpy-
+    :all:

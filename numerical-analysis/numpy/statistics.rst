@@ -391,7 +391,7 @@ Correlation coefficient
     :scale: 75%
     :align: center
 
-    Examples of scatter diagrams with different values of correlation coefficient (ρ) :cite:`PearsonCorrelationCoefficient`
+    Examples of scatter diagrams with different values of correlation coefficient (ρ) :cite:`numpy-PearsonCorrelationCoefficient`
 
 .. code-block:: python
 

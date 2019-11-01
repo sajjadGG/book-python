@@ -26,7 +26,7 @@ Polynomial of degree three
     :scale: 25%
     :align: center
 
-    Polynomial of degree three ``Ax^3 + Bx^2 + Cx^1 + D = 0`` :cite:`Polynomial`
+    Polynomial of degree three ``Ax^3 + Bx^2 + Cx^1 + D = 0`` :cite:`numpy-Polynomial`
 
 Polynomial of degree six
 ------------------------
@@ -48,7 +48,7 @@ Polynomial of degree six
     :scale: 35%
     :align: center
 
-    Polynomial of degree six ``Ax^6 + Bx^5 + Cx^4 + Dx^3 + Ex^2 + Fx + G = 0`` :cite:`Polynomial`
+    Polynomial of degree six ``Ax^6 + Bx^5 + Cx^4 + Dx^3 + Ex^2 + Fx + G = 0`` :cite:`numpy-Polynomial`
 
 
 Find coefficients

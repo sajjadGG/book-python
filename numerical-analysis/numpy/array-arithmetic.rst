@@ -19,6 +19,15 @@ Array Arithmetic
                 # array([1, 4, 9])
 
 
+Broadcasting Rules
+==================
+* Source :cite:`numpy-BroadcastingRules`
+
+#. Operations between multiple array objects are first checked for proper shape match
+#. Mathematical operators (``+``, ``-``, ``*``, ``/``, ``exp``, ``log``, ...) apply element by element, on values
+#. Reduction operations (``mean``, ``std``, ``skew``, ``kurt``, ``sum``, ``prod``, ...) apply to whole array, unless an axis is specified
+#. Missing values propagate, unless explicitly ignored (``nanmean``, ``nansum``, ...)
+
 Addition
 ========
 .. code-block:: python

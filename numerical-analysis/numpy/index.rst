@@ -72,5 +72,7 @@ Data Structures:
 Bibliography
 ============
 .. bibliography:: bibliography.bib
-    :style: alpha
+    :style: plain
+    :labelprefix: numpy
+    :keyprefix: numpy-
     :all:
