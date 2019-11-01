@@ -8,28 +8,60 @@ Creating
 * 1-dimensional data structure similar to ``ndarray``
 * Has numerical index
 
+``int``
+-------
 .. code-block:: python
 
     import pandas as pd
 
 
-    pd.Series([1,2,3])
+    pd.Series([1, 2, 3])
     # 0    1
     # 1    2
     # 2    3
+    # 3    4
     # dtype: int64
+
+``float``
+---------
+.. code-block:: python
+
+    import pandas as pd
+
+
+    pd.Series([1., 2., 3., 4.])
+    # 0    1.0
+    # 1    2.0
+    # 2    3.0
+    # 3    4.0
+    # dtype: float64
 
 .. code-block:: python
 
     import pandas as pd
 
 
-    pd.Series([1., 2., 3.])
+    pd.Series([1, 2, np.nan, 4])
     # 0    1.0
     # 1    2.0
-    # 2    3.0
+    # 2    NaN
+    # 3    4.0
     # dtype: float64
 
+.. code-block:: python
+
+    import pandas as pd
+
+
+    pd.Series([1, 2, np.nan, 4])
+    # 0    1.0
+    # 1    2.0
+    # 2    NaN
+    # 3    4.0
+    # dtype: float64
+
+``str``
+-------
 .. code-block:: python
 
     import pandas as pd
@@ -40,33 +72,6 @@ Creating
     # 1    b
     # 2    c
     # dtype: object
-
-
-.. code-block:: python
-
-    values = [1, 3, 5, np.nan, 6, 8]
-
-    pd.Series(values)
-    # 0    1.0
-    # 1    3.0
-    # 2    5.0
-    # 3    NaN
-    # 4    6.0
-    # 5    8.0
-    # dtype: float64
-
-
-Values
-======
-.. code-block:: python
-
-    pd.Timestamp('1961-04-12')
-    # Timestamp('1961-04-12 00:00:00')
-
-
-    pd.Categorical(["test", "train", "test", "train"])
-    # [test, train, test, train]
-    # Categories (2, object): [test, train]
 
 
 Assignments

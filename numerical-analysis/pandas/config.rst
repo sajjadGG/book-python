@@ -2,30 +2,52 @@
 Configuration
 *************
 
+
 Display Output
 ==============
-* Set options for whole script:
 
-    .. code-block:: python
+Limited
+-------
+.. code-block:: python
 
-        pd.set_option('display.height',1000)
-        pd.set_option('display.max_rows',500)
-        pd.set_option('display.max_columns',500)
-        pd.set_option('display.width',1000)
+    import pandas as pd
 
-* Unlimited for whole script:
 
-    .. code-block:: python
+    pd.set_option('display.max_rows', 10)
 
-        pd.set_option('display.max_columns', None)
-        pd.set_option('display.max_rows', None)
+.. code-block:: python
 
-* Use config only with context:
+    pd.set_option('display.height', 1000)
+    pd.set_option('display.max_columns', 500)
+    pd.set_option('display.width', 1000)
 
-    .. code-block:: python
+Unlimited
+---------
+.. code-block:: python
 
-        with pd.option_context('display.max_rows', None, 'display.max_columns', 3):
-            print(df)
+    import pandas as pd
+
+
+    pd.set_option('display.max_rows', None)
+    pd.set_option('display.max_columns', None)
+
+Using in context
+----------------
+.. code-block:: python
+
+    import pandas as pd
+
+
+    with pd.option_context('display.max_rows', 100):
+        print(df)
+
+.. code-block:: python
+
+    import pandas as pd
+
+
+    with pd.option_context('display.max_rows', None, 'display.max_columns', 3):
+        print(df)
 
 
 Assignments

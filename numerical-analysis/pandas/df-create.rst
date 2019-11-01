@@ -3,6 +3,23 @@ DataFrame Create
 ****************
 
 
+Create DataFrame
+================
+.. code-block:: python
+
+    import pandas as pd
+
+
+    df = pd.DataFrame({'A': ['a', 'b', 'c', 'd'],
+                       'B': [0, 1, 2, 3],
+                       'C': [0., 1., 2., 3.]})
+    #    A  B    C
+    # 0  a  0  0.0
+    # 1  b  1  1.0
+    # 2  c  2  2.0
+    # 3  d  3  3.0
+
+
 Indexes
 =======
 

@@ -55,15 +55,17 @@ Data Frame:
     import-export.rst
 
     series-create.rst
-    series-indexes.rst
-    series-slice.rst
+    series-attributes.rst
+    series-indexing.rst
+    series-slicing.rst
     series-modification.rst
     series-arithmetic.rst
 
     df-create.rst
     df-attributes.rst
     df-select.rst
-    df-slice.rst
+    df-indexing.rst
+    df-slicing.rst
     df-sample.rst
     df-at.rst
     df-locate.rst
