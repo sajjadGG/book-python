@@ -64,6 +64,9 @@ Dimensions
 
 Data
 ====
+* ``int64`` takes 64 bits (8 bytes of memory)
+* strides inform how many bytes numpy has to jump to access values in each dimensions
+
 .. code-block:: python
 
     import numpy as np
@@ -72,6 +75,7 @@ Data
     a = np.array([1, 2, 3])
 
     a.itemsize      # 8
+    a.strides       # (8,)
     a.data          # <memory at 0x10cdfaa10>
     list(a.data)    # NotImplementedError: multi-dimensional sub-views are not implemented
 
@@ -84,6 +88,7 @@ Data
                   [4, 5, 6]])
 
     a.itemsize      # 8
+    a.strides       # (24, 8)
     a.data          # <memory at 0x10caefbb0>
 
 .. code-block:: python
