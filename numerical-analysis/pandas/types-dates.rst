@@ -133,8 +133,7 @@ Custom Calendar
 
     class PLHolidayCalendar(AbstractHolidayCalendar):
         """
-        Custom Holiday calendar for Poland based on
-        https://en.wikipedia.org/wiki/Public_holidays_in_Poland
+        Holiday calendar for Poland
         """
         rules = [
             Holiday('New Years Day', month=1, day=1),
@@ -178,7 +177,6 @@ Custom Calendar
 
     today + 5*BUSINESS_DAY
     # Timestamp('2000-01-10 00:00:00')
-
 
 Custom mask
 -----------
