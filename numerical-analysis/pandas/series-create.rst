@@ -73,6 +73,24 @@ Creating
     # 2    c
     # dtype: object
 
+dates
+-----
+.. code-block:: python
+
+    import pandas as pd
+
+
+    dates = pd.date_range(start='2020-01-01', end='2020-01-06')
+
+    pd.Series(dates)
+    # 0   2020-01-01
+    # 1   2020-01-02
+    # 2   2020-01-03
+    # 3   2020-01-04
+    # 4   2020-01-05
+    # 5   2020-01-06
+    # dtype: datetime64[ns]
+
 
 Assignments
 ===========
