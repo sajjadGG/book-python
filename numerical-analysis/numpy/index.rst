@@ -41,6 +41,7 @@ Data Structures:
 
     builtin.rst
     random.rst
+    import-export.rst
 
     array-create.rst
     array-dtype.rst
