@@ -54,6 +54,9 @@ Data Frame:
     config.rst
     import-export.rst
 
+    types-data.rst
+    types-date.rst
+
     series-create.rst
     series-attributes.rst
     series-indexing.rst
@@ -75,6 +78,7 @@ Data Frame:
     df-groupby.rst
     df-aggregations.rst
     df-join.rst
+
     workflow.rst
     example.rst
 

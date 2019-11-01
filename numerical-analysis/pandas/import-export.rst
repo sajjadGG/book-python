@@ -77,13 +77,43 @@ Export data
     df.to_xarray()
 
 
-Read data
-=========
+Usage
+=====
 .. code-block:: python
 
+    import pandas as pd
 
-    pd.read_csv()
-url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/numpy/data/iris.csv'
+    url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/iris.csv'
+
+    df = pd.read_csv(url)
+
+    df.head(3)
+    #    sepal_length  sepal_width  petal_length  petal_width     species
+    # 0           5.4          3.9           1.3          0.4      setosa
+    # 1           5.9          3.0           5.1          1.8   virginica
+    # 2           6.0          3.4           4.5          1.6  versicolor
+
+.. code-block:: python
+
+    import pandas as pd
+
+    url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/iris-dirty.csv'
+
+    df = pd.read_csv(url)
+    df.head(3)
+    #      150    4  setosa  versicolor  virginica
+    # 0    5.4  3.9     1.3         0.4          0
+    # 1    5.9  3.0     5.1         1.8          2
+    # 2    6.0  3.4     4.5         1.6          1
+
+    df = pd.read_csv(url, skiprows=1, names=['sepal_length', 'sepal_width',
+                                             'petal_length', 'petal_width', 'species'])
+    df.head(3)
+    #    sepal_length  sepal_width  petal_length  petal_width  species
+    # 0           5.4          3.9           1.3          0.4        0
+    # 1           5.9          3.0           5.1          1.8        2
+    # 2           6.0          3.4           4.5          1.6        1
+
 
 Assignments
 ===========

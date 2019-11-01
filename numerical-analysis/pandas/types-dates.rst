@@ -1,83 +1,13 @@
 **********
-Data Types
+Date Types
 **********
 
 
-Common types
-============
-
-Series
-------
-.. code-block:: python
-
-    import pandas as pd
-
-
-    pd.Series([1., 2., 3., 4.])
-    # 0    1.0
-    # 1    2.0
-    # 2    3.0
-    # 3    4.0
-    # dtype: float64
-
-DataFrame
----------
-.. code-block:: python
-
-    import pandas as pd
-
-
-    df = pd.DataFrame({
-        'A': ['a', 'b', 'c', 'd'],
-        'B': [0, 1, 2, 3],
-        'C': [0., 1., 2., 3.]})
-
-    #    A  B    C
-    # 0  a  0  0.0
-    # 1  b  1  1.0
-    # 2  c  2  2.0
-    # 3  d  3  3.0
-
-Sparse data
------------
-* Data where a single value is repeated many times (e.g. ``0`` or ``NaN``) may be stored efficiently as a ``SparseArray``
-
-.. code-block:: python
-
-    import pandas as pd
-
-
-    sa = pd.SparseArray([1, 2, 3])
-    # [1, 2, 3]
-    # Fill: 0
-    # IntIndex
-    # Indices: array([0, 1, 2], dtype=int32)
-
-.. code-block:: python
-
-    import pandas as pd
-
-
-    df = pd.DataFrame({
-        'A': [1, 2, 3],
-        'B': pd.SparseArray([np.nan, np.nan, np.nan])})
-
-    #    A   B
-    # 0  1 NaN
-    # 1  2 NaN
-    # 2  3 NaN
-
-    df.dtypes
-    # A                   int64
-    # B    Sparse[float64, nan]
-    # dtype: object
-
-
-Datetime
-========
-
+Date frequency
+==============
 .. csv-table:: Offset aliases
     :header: "Alias", "Description"
+    :widths: 15, 85
 
     "``B``",            "business day frequency"
     "``C``",            "custom business day frequency"
@@ -109,6 +39,7 @@ Datetime
 
 .. csv-table:: Date frequency units
     :header: "Frequency", "Letter", "Long name", "Short name"
+    :widths: 15, 5, 40, 40
 
     "Year",         "``Y``"
     "Month",        "``M``"
@@ -121,8 +52,26 @@ Datetime
     "Microsecond",  "``U``", "``microsecond``, ``microseconds``",   "``us``, ``micro``, ``micros``"
     "Nanosecond",   "``N``", "``nanosecond``, ``nanoseconds``",     "``ns``, ``nano``, ``nanos``"
 
+
+Generate dates
+==============
+.. code-block:: python
+
+    import pandas as pd
+
+
+    pd.date_range('1970-01-01', periods=3, freq='D')
+    # DatetimeIndex(['1970-01-01', '1970-01-02', '1970-01-03'], dtype='datetime64[ns]', freq='D')
+
+    pd.date_range('1970-01-01', periods=3, freq='M')
+    # DatetimeIndex(['1970-01-31', '1970-02-28', '1970-03-31'], dtype='datetime64[ns]', freq='M')
+
+    pd.date_range('1970-01-01', periods=3, freq='Y')
+    # DatetimeIndex(['1970-12-31', '1971-12-31', '1972-12-31'], dtype='datetime64[ns]', freq='A-DEC')
+
+
 Timestamp
----------
+=========
 * subclass of ``datetime.datetime``
 * pandas' scalar type for timezone-naive or timezone-aware datetime data
 * https://pandas.pydata.org/pandas-docs/stable/reference/arrays.html#timedelta-data
@@ -155,8 +104,18 @@ Timestamp
     pd.Timestamp('12/4/69, 6:07 pm')
     # Timestamp('1969-12-04 18:07:00')
 
+.. code-block:: python
+    :caption: 2016-12-31 23:59:60 is a valid date (UTC leap second)
+
+    import pandas as pd
+
+
+    pd.Timestamp('2016-12-31 23:59:60')
+    # ValueError: second must be in 0..59
+
+
 Period
-------
+======
 * https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Period.html
 
 .. code-block:: python
@@ -172,8 +131,13 @@ Period
     apollo11.end_time
     # Timestamp('1969-07-24 23:59:59.999999999')
 
+
 DateOffset
-----------
+==========
+* A relative time duration that respects calendar arithmetic
+* For example, ``Bday`` defines the set of dates that are weekdays (M-F)
+* To test if a date is in the ``DateOffset`` use: dateOffset.onOffset(date).
+
 .. code-block:: python
 
     import pandas as pd
@@ -202,119 +166,59 @@ DateOffset
 
     march = pd.Timestamp('1970-03-01 00:00:00')
 
-    march - pd.DateOffset(day=1)
-    # Timestamp('1970-03-01 00:00:00')
+    march - pd.DateOffset(days=1)
+    # Timestamp('1970-02-28 00:00:00')
+
 
 Timedelta
----------
-* Represents a duration, the difference between two dates or times
-
-
-Numerical
 =========
-
-Interval
---------
-.. code-block:: python
-
-    import pandas as pd
-
-
-    pd.Interval(0, 5)
-    # Interval(0, 5, closed='right')
-
-    pd.Interval(left=0, right=5)
-    # Interval(0, 5, closed='right')
-
-    pd.Interval(left=0, right=5, closed='both')
-    Interval(0, 5, closed='both')
-
-Interval
---------
-.. code-block:: python
-
-    import pandas as pd
-
-
-    interval = pd.Interval(0, 5, closed='left')
-
-    2.5 in interval
-    # True
-
-    5.0 in interval
-    # False
-
+* An absolute time duration. Similar to datetime.timedelta from the standard library
+* Represents a duration, the difference between two dates or times
+* Timedeltas are differences in times, expressed in difference units, e.g. days, hours, minutes, seconds. They can be both positive and negative.
 
 .. code-block:: python
 
     import pandas as pd
 
 
-    year_1970 = pd.Interval(left=pd.Timestamp('1970-01-01 00:00:00'),
-                            right=pd.Timestamp('1971-01-01 00:00:00'),
-                            closed='left')
+    feb = pd.Timestamp('2001-02-28')
+    mar = pd.Timestamp('2001-03-01')
 
-    apollo11 = pd.Timestamp('1969-07-16')
-    apollo13 = pd.Timestamp('1970-04-11')
+    feb + pd.Timedelta(days=1)
+    # Timestamp('2001-03-01 00:00:00')
 
-    apollo11 in year_1970
-    # False
-
-    apollo13 in year_1970
-    # True
-
-    year_1970.length
-    # Timedelta('365 days 00:00:00')
-
-
-Text
-====
-
-Categorical
------------
-* Limited, fixed set of values
+    mar - pd.Timedelta(days=1)
+    # Timestamp('2001-02-28 00:00:00')
 
 .. code-block:: python
 
     import pandas as pd
 
 
-    iris = pd.Categorical(['setosa', 'virginica', 'versicolor'])
-    # [setosa, virginica, versicolor]
-    # Categories (3, object): [setosa, versicolor, virginica]
+    feb = pd.Timestamp('2000-02-28')
+    mar = pd.Timestamp('2000-03-01')
 
-    'arctica' in iris
-    # False
+    feb + pd.Timedelta(days=1)
+    # Timestamp('2000-02-29 00:00:00')
+
+    feb + pd.Timedelta(days=2)
+    # Timestamp('2000-03-01 00:00:00')
+
+    mar - pd.Timedelta(days=1)
+    # Timestamp('2000-02-29 00:00:00')
 
 .. code-block:: python
+    :caption: Leap second has not been added
 
     import pandas as pd
 
 
-    moon_landings = pd.Categorical(['apollo11', 'apollo12', 'apollo14', 'apollo15', 'apollo16', 'apollo17'])
-    # [apollo11, apollo12, apollo14, apollo15, apollo16, apollo17]
-    # Categories (6, object): [apollo11, apollo12, apollo14, apollo15, apollo16, apollo17]
+    leap = pd.Timestamp('2016-12-31 23:59:59')
 
-    'apollo11' in moon_landings
-    # True
-
-    'apollo13' in moon_landings
-    # False
-
-.. code-block:: python
-
-    import pandas as pd
+    leap + pd.Timedelta(seconds=1)
+    # Timestamp('2017-01-01 00:00:00')
 
 
-    status = pd.Categorical(['todo', 'done', 'todo', 'done'])
-    # [todo, done, todo, done]
-    # Categories (2, object): [done, todo]
-
-    'in progress' in status
-    # False
-
-    'todo' in status
-    # True
-
-    status.categories
-    # Index(['done', 'todo'], dtype='object')
+Assignments
+===========
+.. todo:: Create assignments
