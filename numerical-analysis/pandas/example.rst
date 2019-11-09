@@ -4,7 +4,6 @@ Example
 
 .. code-block:: python
 
-
     import numpy as np
     import pandas as pd
 
@@ -29,7 +28,7 @@ Example
     # Drop all records where "Name" is empty (NaN)
     df.dropna(subset=['name'], how='all', inplace=True)
 
-    # Add column ``blacklis`` with data
+    # Add column ``blacklist`` with data
     df['blacklist'] = [True, False, True, False]
 
     # Change NaN to None

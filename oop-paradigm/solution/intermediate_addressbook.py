@@ -25,4 +25,3 @@ INPUT = AddressBook([
     Contact(first_name='Mark', last_name='Watney'),
     Contact(first_name='Melissa', last_name='Lewis', addresses=()),
 ])
-
