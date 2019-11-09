@@ -38,7 +38,7 @@ client.close()
 
 
 
-## TODO: Stworzenie Listenera
+## Stworzenie Listenera
 # stworzenie listenera
 # akceptacja polaczen przychodzacych
 # petla

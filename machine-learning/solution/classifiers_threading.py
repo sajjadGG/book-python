@@ -1,6 +1,5 @@
 import queue
 import threading
-import logging
 
 from sklearn.model_selection import train_test_split
 from sklearn.datasets import load_iris
@@ -39,7 +38,6 @@ class Worker(threading.Thread):
             print(output, job)
             print('\n')
 
-
             # Indicate that a formerly enqueued task is complete.
             work_queue.task_done()
 
@@ -52,7 +50,6 @@ def spawn_worker(how_many):
 if __name__ == '__main__':
     spawn_worker(3)
 
-    # Fill the todo
     for todo in [
         KNeighborsClassifier(n_neighbors=1),
         KNeighborsClassifier(n_neighbors=5),
