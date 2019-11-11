@@ -204,8 +204,8 @@ Index
         ])
 
 :The whys and wherefores:
-    * Defining ``np.array``
-    * Indexing ``np.array``
+    * Defining ``ndarray``
+    * Indexing ``ndarray``
 
 :Hint:
     * ``np.zeros(shape, dtype)``

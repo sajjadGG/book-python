@@ -405,20 +405,20 @@ Arithmetic operations
 * Filename: :download:`solution/numpy_arithmetic.py`
 
 :English:
-    * For given ndarrays: ``a``, ``b``, ``c`` (see below)
-    * Calculate square root of each element in ``a`` and ``b``
-    * Calculate second power (square) of each element in ``c``
-    * Add elements from ``a`` to ``b``
-    * Multiply the result by ``c``
-    * Calculate the natural logarithm of the result
+    #. For given: ``a: ndarrays``, ``b: ndarrays``, ``c: ndarrays`` (see below)
+    #. Calculate square root of each element in ``a`` and ``b``
+    #. Calculate second power (square) of each element in ``c``
+    #. Add elements from ``a`` to ``b``
+    #. Multiply the result by ``c``
+    #. Calculate the natural logarithm of the result
 
 :Polish:
-    * Dla danych ndarrayów: ``a``, ``b``, ``c`` (patrz poniżej)
-    * Oblicz pierwiastek kwadratowy każdego z elementu w ``a`` i ``b``
-    * Oblicz drugą potęgę (kwadrat) każdego z elementu w ``c``
-    * Dodaj elementy z ``a`` do ``b``
-    * Przemnóż wynik przez ``c``
-    * Wylicz logarytm naturalny rezultatu
+    #. Dla danych: ``a: ndarrays``, ``b: ndarrays``, ``c: ndarrays`` (patrz poniżej)
+    #. Oblicz pierwiastek kwadratowy każdego z elementu w ``a`` i ``b``
+    #. Oblicz drugą potęgę (kwadrat) każdego z elementu w ``c``
+    #. Dodaj elementy z ``a`` do ``b``
+    #. Przemnóż wynik przez ``c``
+    #. Wylicz logarytm naturalny rezultatu
 
 :Input:
     .. code-block:: python

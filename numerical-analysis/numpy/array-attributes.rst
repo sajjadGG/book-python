@@ -117,7 +117,7 @@ Create
 
 :English:
     #. Set random seed to zero
-    #. Create ``np.array`` with size 16x16
+    #. Create ``a: ndarray`` with size 16x16
     #. Structure must contains random integers (0-9)
     #. Print number of:
 
@@ -128,7 +128,7 @@ Create
 
 :Polish:
     #. Ustaw ziarno losowości na zero
-    #. Stwórz ``np.array`` o rozmiarze 16x16
+    #. Stwórz ``a: ndarray`` o rozmiarze 16x16
     #. Struktura musi zawierać losowe liczby (0-9)
     #. Wypisz liczbę:
 
@@ -138,6 +138,6 @@ Create
         - ilość elementów
 
 :The whys and wherefores:
-    * Defining ``np.array``
+    * Defining ``ndarray``
     * Using ``np.random.seed()``
     * Generating random ``np.array``

@@ -211,4 +211,31 @@ str
 
 Assignments
 ===========
-.. todo:: Create assignments
+
+As Type
+-------
+* Complexity level: easy
+* Lines of code to write: 4 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/numpy_astype.py`
+
+:English:
+    #. Given ``a: ndarray`` (see below)
+    #. Convert to ``int`` type
+    #. The result convert to ``bool`` type
+    #. What happened in each of those steps?
+
+:Polish:
+    #. Dany ``a: ndarray`` (patrz poniżej)
+    #. Przekonwertuj do typu ``int``
+    #. Rezultat rzutuj na typ ``bool``
+    #. Co się stało w każdym z tych kroków?
+
+:Input:
+    .. code-block:: python
+
+        a = np.array([[-1.1, 0.0, 1.1],
+                      [ 2.2, 3.3, 4.4]])
+
+:The whys and wherefores:
+    * Defining ``np.array``

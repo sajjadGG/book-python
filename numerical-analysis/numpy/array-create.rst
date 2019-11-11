@@ -353,21 +353,39 @@ Create
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/numpy_create.py`
+* Filename: :download:`solution/numpy_create_arange.py`
+
+:English:
+    #. Create ``a: ndarray`` with even numbers from 0 to 100
+    #. Numbers must be ``float`` type
+
+:Polish:
+    #. Stwórz ``a: ndarray`` z liczbami parzystymi od 0 do 100
+    #. Liczby muszą być typu ``float``
+
+:The whys and wherefores:
+    * Defining ``ndarray``
+
+Create Random
+-------------
+* Complexity level: easy
+* Lines of code to write: 4 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/numpy_create_random.py`
 
 :English:
     #. Set random seed to zero
-    #. Create ``np.array`` with size 16x16
+    #. Create ``a: ndarray`` with size 16x16
     #. Structure must contains random integers (0-9)
     #. Print structure
 
 :Polish:
     #. Ustaw ziarno losowości na zero
-    #. Stwórz ``np.array`` o rozmiarze 16x16
+    #. Stwórz ``a: ndarray`` o rozmiarze 16x16
     #. Struktura musi zawierać losowe liczby (0-9)
     #. Wypisz strukturę
 
 :The whys and wherefores:
-    * Defining ``np.array``
+    * Defining ``ndarray``
     * Using ``np.random.seed()``
     * Generating random ``np.array``
