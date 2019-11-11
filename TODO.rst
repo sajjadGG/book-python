@@ -10,6 +10,18 @@ Book TODO
 
 Pandas
 ======
+* df.read_csv('filename.csv', chunksize=5) # five rows at a time, przydatne gdy czytasz plik np. 20GB
+* for df in df.read_csv('filename.csv', chunksize=5): print(df)
+* df[~...] # ~ - zaprzeczenie warunku 
+* df.loc[df['col'].str.contains('a|b', regex=True, flags=re.I)]
+* ROC Curve - stosunek True Positive do False Positive
+* pd.to_datetime(df['Timestamp Column'], unit='s')
+* df.set_index('date column')
+* df.resample('d') # d - day; m - minute; to taki groupby dla indeksów dat
+* df.assign(column_name = lambda x: ...)
+* df.agg({}) # first, mean, last, sum, min, max
+* df['column'].shift(-1) # previous column
+* df.dtypes
 * pd.explode()
 * series.map()
 * series.apply(lambda)

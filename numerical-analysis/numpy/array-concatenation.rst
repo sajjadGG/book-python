@@ -72,4 +72,32 @@ Array Concatenation
 
 Assignments
 ===========
-.. todo:: Create assignments
+
+Concatenation
+-------------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/numpy_concatenation.py`
+
+:English:
+    * Given are two one-dimensional ndarrays: ``a``, ``b`` (patrz poniżej)
+    * Concatenate them
+    * Represent the result as ndarray: two rows and three columns
+
+:Polish:
+    * Dane są dwie jednowymiarowe ndarraye: ``a``, ``b`` (see below)
+    * Połącz je ze sobą
+    * Przedstaw wynik jako ndarray: dwa wiersze na trzy kolumny
+
+:Input:
+    .. code-block:: python
+
+        a = np.array([1, 2, 3])
+        b = np.array([4, 5, 6])
+
+:Output:
+    .. code-block:: python
+
+        array([[1, 2, 3],
+               [4, 5, 6]])
