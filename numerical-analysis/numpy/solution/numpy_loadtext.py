@@ -8,6 +8,8 @@ header = np.loadtxt(URL, max_rows=1, delimiter=',', dtype=str)
 data = np.loadtxt(URL, skiprows=1, delimiter=',')
 
 species = header[2:]
+# array(['setosa', 'versicolor', 'virginica'], dtype='<U10')
+
 features = data[:, :-1]
 # array([[5.4, 3.9, 1.3, 0.4],
 #        [5.9, 3. , 5.1, 1.8],

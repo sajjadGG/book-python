@@ -136,9 +136,21 @@ Load Dirty CSV
         https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/numpy/data/iris-dirty.csv
 
 :Output:
+    .. code-block:: python
 
-    species: ndarray
-    # array(['setosa', 'versicolor', 'virginica'], dtype='<U10')
+        species: ndarray
+        # array(['setosa', 'versicolor', 'virginica'], dtype='<U10')
+
+        features: ndarray
+        # array([[5.4, 3.9, 1.3, 0.4],
+        #        [5.9, 3. , 5.1, 1.8],
+        #        [6. , 3.4, 4.5, 1.6],
+        #        [7.3, 2.9, 6.3, 1.8],
+        #        ...
+        #        [6.8, 3.2, 5.9, 2.3]])
+
+        labels: ndarray
+        # array([0, 2, 1, 2, ..., 0, 2, 2, 2])
 
 :Hint:
     * ``np.loadtext(..., dtype=str)``
