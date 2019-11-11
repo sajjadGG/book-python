@@ -236,4 +236,31 @@ Ravel
 
 Assignments
 ===========
-.. todo:: Create assignments
+
+Shape
+-----
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/numpy_shape.py`
+
+:English:
+    #. Given ``a: ndarray`` (see below)
+    #. Flatten using method ``.ravel()``
+    #. Print ``a``
+    #. Change shape back to 3x3
+    #. Print ``a``
+
+:Polish:
+    #. Dany ``a: ndarray`` (patrz poniżej)
+    #. Spłaszcz używając metody ``.ravel()``
+    #. Wypisz ``a``
+    #. Zmień kształt na powrót na 3x3
+    #. Wypisz ``a``
+
+:Input:
+    .. code-block:: python
+
+        a = np.array([[1, 2, 3],
+                      [4, 5, 6],
+                      [7, 8, 9]])
