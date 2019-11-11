@@ -270,20 +270,40 @@ Shuffle
 Assignments
 ===========
 
-Random numbers
---------------
+Random Sample
+-------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/random_sample.py`
 
 :English:
+    #. Set random seed to zero
     #. Print 6 random integers without repetition in range from 1 to 49
 
 :Polish:
+    #. Ustaw ziarno losowości na zero
     #. Wyświetl 6 losowych i nie powtarzających się liczb całkowitych z zakresu od 1 do 49.
 
 :Hint:
     * ``np.append(a, ELEMENT)``
     * ``np.array.size``
     * ``NUMBER in np.array``
+
+Random
+------
+* Complexity level: medium
+* Lines of code to write: 3 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/numpy_random.py`
+
+:English:
+    #. Set random seed to zero
+    #. Generate ``a: ndarray`` of 50 random integers from 0 to 100 (exclusive)
+    #. Print ``a``
+
+:Polish:
+    #. Ustaw ziarno losowości na zero
+    #. Wygeneruj ``a: ndarray`` z 50 losowymi liczbami całkowitymi od 0 do 100 (rozłącznie)
+    #. Wyświetl ``a``
+

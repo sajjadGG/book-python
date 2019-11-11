@@ -172,5 +172,33 @@ Sum of two polynomials
 
 Assignments
 ===========
-.. todo:: Create assignments
 
+Polyfit
+-------
+* Complexity level: easy
+* Lines of code to write: 4 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/numpy_polyfit.py`
+
+:English:
+    #. For given points (see below)
+    #. Separate first row (header) from data
+    #. Calculate coefficients of best approximating polynomial of 3rd degree
+
+:Polish:
+    #. Dla danych punktów (patrz poniżej)
+    #. Odseparuj pierwszy wiersz (nagłówek) do danych
+    #. Oblicz współczynniki najlepiej dopasowanego wielomianu 3 stopnia
+
+:Input:
+    .. code-block:: python
+
+        INPUT = [
+            ('x', 'y'),
+            (-4.0, 0.0),
+            (-3.0, 2.5),
+            (-2.0, 2.0),
+            (0.0, -2.0),
+            (2.0, 0.0),
+            (3.0, 7.0)
+        ]

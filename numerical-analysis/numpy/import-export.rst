@@ -30,6 +30,16 @@ np.loadtxt()
     #        ...,
     # ])
 
+    a = np.loadtxt(url, skiprows=1, max_rows=3, delimiter=',', usecols=(0,1,2,3))
+    # array([[5.4, 3.9, 1.3, 0.4],
+    #        [5.9, 3. , 5.1, 1.8],
+    #        [6. , 3.4, 4.5, 1.6]])
+
+    a = np.loadtxt(url, skiprows=1, max_rows=3, delimiter=',', usecols=(0,1,2,3))
+    # array([[5.4, 3.9, 1.3, 0.4],
+    #        [5.9, 3. , 5.1, 1.8],
+    #        [6. , 3.4, 4.5, 1.6]])
+
 
 np.savetxt()
 ============
@@ -90,3 +100,49 @@ Other
 * ``scipy.io.loadmat()`` - reads MATLAB data files
 
 
+Assignments
+===========
+
+Load Dirty CSV
+--------------
+* Complexity level: easy
+* Lines of code to write: 4 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/numpy_loadtext.py`
+
+:English:
+    #. Load text from URL given as input (see below)
+    #. Read first line with ``dtype=str`` and save as ``header: ndarray``
+    #. Read other lines with ``dtype=float`` and save as ``data: ndarray``
+    #. From ``header`` slice Iris species names and save result as ``species: ndarray``
+    #. In ``data`` split measurements from species number (last column)
+    #. Measurements save as ``features: ndarray`` as type ``float``
+    #. Species numbers save as ``labels: ndarray`` as type ``int``
+    #. Print ``species``, ``labels`` and ``features``
+
+:Polish:
+    #. Wczytaj tekst z URL podanego na wejściu (patrz poniżej)
+    #. Przeczytaj pierwszą linię jako ``dtype=str`` i zapisz do ``header: ndarray``
+    #. Przeczytaj pozostałe linie jako ``dtype=float`` i zapisz jako ``data: ndarray``
+    #. Z ``header`` wytnij nazwy gatunków Irysów i zapisz rezultat jako ``species: ndarray``
+    #. W ``data`` oddziel pomiary od numerów gatunków (ostatnia kolumna)
+    #. Pomiary zapisz do ``features: ndarray`` jako typ ``float``
+    #. Gatunki zapisz do ``labels: ndarray`` jako typ ``int``
+    #. Wyświetl ``species``, ``labels`` i ``features``
+
+:Input:
+    .. code-block:: text
+
+        https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/numpy/data/iris-dirty.csv
+
+:Output:
+
+    species: ndarray
+    # array(['setosa', 'versicolor', 'virginica'], dtype='<U10')
+
+:Hint:
+    * ``np.loadtext(..., dtype=str)``
+    * ``header[2:]``
+    * ``ndarray.astype(int)``
+    * ``data[:, :-1]``
+    * ``data[:, -1]``
