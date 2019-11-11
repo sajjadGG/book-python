@@ -230,4 +230,26 @@ To list
 
 Assignments
 ===========
-.. todo:: Create assignments
+
+Methods
+-------
+* Complexity level: easy
+* Lines of code to write: 6 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/numpy_methods.py`
+
+:English:
+    #. Set random seed to zero
+    #. Generate ``a: ndarray`` of 12 random integers from 0 to 100 (exclusive)
+    #. Reshape ``a`` to 3x4
+    #. Sort ``a`` in columns
+    #. Transpose ``a``
+    #. Print ``a``
+
+:Polish:
+    #. Ustaw ziarno losowości na zero
+    #. Wygeneruj ``a: ndarray`` z 12 losowymi liczbami całkowitymi od 0 do 100 (rozłącznie)
+    #. Zmień kształt na 3x4
+    #. Posortuj ``a`` w kolumnach
+    #. Transponuj ``a``
+    #. Wypisz ``a``

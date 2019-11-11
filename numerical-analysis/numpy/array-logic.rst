@@ -331,4 +331,44 @@ Not-a-Number
 
 Assignments
 ===========
-.. todo:: Create assignments
+
+Logic
+-----
+* Complexity level: easy
+* Lines of code to write: 4 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/numpy_logic.py`
+
+:English:
+    #. Set random seed to zero
+    #. Generate ``a: ndarray`` of 9 random integers from 0 to 100 (exclusive)
+    #. Check for even numbers which are less than 50
+    #. Check if all numbers matches this condition
+    #. Check if any number matches this condition
+
+:Polish:
+    #. Ustaw ziarno losowości na zero
+    #. Wygeneruj ``a: ndarray`` z 9 losowymi liczbami całkowitymi od 0 do 100 (rozłącznie)
+    #. Sprawdź parzyste elementy, które są mniejsze od 50
+    #. Sprawdź czy wszystkie liczby spełniają ten warunek
+    #. Sprawdź czy jakakolwiek liczba spełnia ten warunek
+
+Is in
+-----
+* Complexity level: easy
+* Lines of code to write: 9 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/numpy_isin.py`
+
+:English:
+    #. Set random seed to zero
+    #. Generate ``a: ndarray`` of 50 random integers from 0 to 100 (exclusive)
+    #. Generate ``b: ndarray`` with sequential powers of 2 and exponential from 0 to 6 (inclusive)
+    #. Check which elements from ``a`` are present in ``b``
+
+:Polish:
+    #. Ustaw ziarno losowości na zero
+    #. Wygeneruj ``a: ndarray`` z 50 losowymi liczbami całkowitymi od 0 do 100 (rozłącznie)
+    #. Wygeneruj ``b: ndarray`` z kolejnymi potęgami liczby 2, wykładnik od 0 do 6 (włącznie)
+    #. Sprawdź, które elementy z ``a`` są obecne w ``b``
+

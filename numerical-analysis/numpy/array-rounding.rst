@@ -86,4 +86,24 @@ Clip
 
 Assignments
 ===========
-.. todo:: Create assignments
+
+Clip
+----
+* Complexity level: easy
+* Lines of code to write: 3 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/numpy_clip.py`
+
+:English:
+    #. Set random seed to zero
+    #. Generate ``a: ndarray`` of 21 random integers from 0 to 100 (exclusive)
+    #. Change shape to 7x3
+    #. Clip numbers only in first column to 50 (inclusive) to 80 (exclusive)
+    #. Print ``a``
+
+:Polish:
+    #. Ustaw ziarno losowości na zero
+    #. Wygeneruj ``a: ndarray`` z 21 losowymi liczbami całkowitymi od 0 do 100 (rozłącznie)
+    #. Zmień kształt na 7x3
+    #. Przytnij liczby w pierwszej kolumnie od 50 (włącznie) do 80 (rozłącznie)
+    #. Wypisz ``a``
