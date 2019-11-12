@@ -11,11 +11,10 @@ INPUT = [
     (4.6, 3.1, 1.5, 0.2, {'setosa'}),
 ]
 
-header = INPUT[0]
-data = INPUT[1:]
+header, *data = INPUT
 
-for row in data:
-    species = row[4].pop()
+for *_, species in data:
+    species = species.pop()
 
     if species.endswith('sa') or species.endswith('ca'):
         print(species)

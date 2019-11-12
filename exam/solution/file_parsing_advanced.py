@@ -1,53 +1,44 @@
 FILE = r'../data/etc-hosts.txt'
-output = []
+OUTPUT = []
 
 
-try:
-    with open(FILE) as file:
-        content = file.readlines()
+with open(FILE) as file:
+    for line in file:
+        line = line.strip()
 
-except FileNotFoundError:
-    print('File does not exist')
+        if not line:
+            continue
 
-except PermissionError:
-    print('Permission denied')
+        if line.startswith('#'):
+            continue
 
+        ip, *hosts = line.split()
 
-for line in content:
-    if line.startswith('#'):
-        continue
-    if line.isspace():
-        continue
+        for record in OUTPUT:
+            if record['ip'] == ip:
+                record['hostnames'].update(hosts)
+                break
+        else:
+            OUTPUT.append({
+                'hostnames': set(hosts),
+                'protocol': 'IPv4' if '.' in ip else 'IPv6',
+                'ip': ip,
+            })
 
-    line = line.strip().split()
-    ip = line[0]
-    hosts = line[1:]
+print(OUTPUT)
 
-    for record in output:
-        if record['ip'] == ip:
-            record['hostnames'].update(hosts)
-            break
-    else:
-        output.append({
-            'hostnames': set(hosts),
-            'protocol': 'IPv4' if '.' in ip else 'IPv6',
-            'ip': ip,
-        })
-
-print(output)
-
-"""
-found = False
-
-for x in hosts:
-    if x['ip'] == ip:
-        found = True
-        x['hostnames'] += hostnames
-
-if not found:
-    hosts.append({
-        'ip': ip,
-        'hostnames': hostnames,
-        'protocol': 'IPv4' if '.' in ip else 'IPv6'
-    })
-"""
+## Alternative solution
+# found = False
+#
+# for x in hosts:
+#     if OUTPUT['ip'] == ip:
+#         found = True
+#         OUTPUT['hostnames'].update(hosts)
+#
+# if not found:
+#     OUTPUT.append({
+#         'ip': ip,
+#         'hostnames': set(hostnames),
+#         'protocol': 'IPv4' if '.' in ip else 'IPv6'
+#     })
+#

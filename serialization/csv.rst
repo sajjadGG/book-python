@@ -386,7 +386,7 @@ Read and parse data from CSV file
     #. Zapisz jego zawartość na dysku w miejscu gdzie masz skrypty
     #. Korzystając z ``csv.DictReader`` wczytaj zawartość pliku
     #. Podaj jawnie ``encoding``, ``delimiter`` oraz ``quotechar``
-    #. Nazwy poszczególnych kolumn (patrz dane wyjściowe)
+    #. Podmień nazwy kolumn (patrz dane wyjściowe)
     #. Pomiń pierwszą linię (nagłówek)
     #. Wypisz wiersze
 
@@ -457,7 +457,6 @@ Write variable schema data to file
     #. Za pomocą ``csv.DictWriter()`` zapisz do pliku CSV dane o zmiennej strukturze
     #. ``fieldnames`` musi być generowane automatycznie na podstawie ``INPUT``
     #. ``fieldnames`` ma być zawsze w takiej samej kolejności
-    #. Rezultat powinien wyglądać tak:
 
 :Non functional requirements:
     #. All fields must be enclosed by double quote ``"`` character
