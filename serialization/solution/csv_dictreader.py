@@ -12,6 +12,7 @@ FIELDNAMES = [
 
 with open(FILE) as file:
     header = file.readline()
+
     data = DictReader(
         f=file,
         fieldnames=FIELDNAMES,
@@ -21,7 +22,7 @@ with open(FILE) as file:
     for row in data:
         print(dict(row))
 
-
+## Alternative solution
 # with open(FILE) as file:
 #     header, *data = DictReader(
 #         f=file,
