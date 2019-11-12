@@ -13,12 +13,10 @@ Syntax
 
 .. code-block:: python
 
-    DATA = [1, 2, 3, 4]
-
-    [x for x in DATA]
+    [x for x in range(0,5)]
     # [1, 2, 3, 4]
 
-    [x**2 for x in DATA]
+    [x**2 for x in range(0,5)]
     # [1, 2, 4, 16]
 
 
@@ -29,32 +27,20 @@ Generator expressions vs. Comprehensions
 
 .. code-block:: python
 
-    DATA = ['a', 'b', 'c', 'd']
+    list(x for x in range(0,5))        # [0, 1, 2, 3, 4]
+    [x for x in range(0,5)]            # [0, 1, 2, 3, 4]
 
-    list(x for x in DATA)               # ['a', 'b', 'c', 'd']
-    [x for x in DATA]                   # ['a', 'b', 'c', 'd']
+    set(x for x in range(0,5))         # {0, 1, 2, 3, 4}
+    {x for x in range(0,5)}            # {0, 1, 2, 3, 4}
 
-.. code-block:: python
+    {x: x for x in range(0,5)}         # {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
 
-    DATA = ['a', 'b', 'c', 'd']
+    tuple(x for x in range(0,5))       # (0, 1, 2, 3, 4)
+    (x for x in range(0,5))            # <generator object <genexpr> at 0x118c1aed0>
 
-    set(x for x in DATA)                # {'b', 'c', 'd', 'a'}
-    {x for x in range(0, 5)}            # {'b', 'c', 'd', 'a'}
-
-.. code-block:: python
-
-    {x: x for x in range(0, 5)}         # {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
-
-.. code-block:: python
-
-    tuple(x for x in range(0, 5))       # (0, 1, 2, 3, 4)
-    (x for x in range(0, 5))            # <generator object <genexpr> at 0x1197032a0>
-
-.. code-block:: python
-
-    all(x for x in range(0, 5))         # False
-    any(x for x in range(0, 5))         # True
-    sum(x for x in range(0, 5))         # 10
+    all(x for x in range(0,5))         # False
+    any(x for x in range(0,5))         # True
+    sum(x for x in range(0,5))         # 10
 
 
 Simple usage

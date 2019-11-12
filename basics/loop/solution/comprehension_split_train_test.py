@@ -29,11 +29,11 @@ RATIO = 0.6
 header, *data = INPUT
 pivot = int(len(data) * RATIO)
 
-features = [tuple(m) for *m,_ in data]
+features = [tuple(measurements) for *measurements,_ in data]
 features_train = features[:pivot]
 features_test = features[pivot:]
 
-labels = [s for *_,s in data]
+labels = [species for *_,species in data]
 labels_train = labels[:pivot]
 labels_test = labels[pivot:]
 
@@ -44,5 +44,5 @@ print(result)
 #
 # features_train = [m for *m,s in data[:pivot]]
 # features_test = [m for *m,s in data[pivot:]]
-# labels_train = [m for *m,s in data[:pivot]]
-# labels_test = [m for *m,s in data[pivot:]]
+# labels_train = [s for *m,s in data[:pivot]]
+# labels_test = [s for *m,s in data[pivot:]]
