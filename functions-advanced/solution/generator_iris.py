@@ -8,9 +8,7 @@ def function_filter(selected_species):
 
     with open(FILE) as file:
         for line in file:
-            line = line.strip().split(',')
-            measurements = line[0:4]
-            species = line[4]
+            *measurements, species = line.strip().split(',')
 
             if species == selected_species:
                 output.append(measurements)
@@ -21,18 +19,14 @@ def function_filter(selected_species):
 def generator_filter(selected_species):
     with open(FILE) as file:
         for line in file:
-            line = line.strip().split(',')
-            measurements = line[0:4]
-            species = line[4]
+            *measurements, species = line.strip().split(',')
 
             if species == selected_species:
                 yield measurements
 
 
-if __name__ == '__main__':
-    fun = function_filter('setosa')
-    gen = generator_filter('setosa')
+fun = function_filter('setosa')
+gen = generator_filter('setosa')
 
-    print('Fun', sys.getsizeof(fun))
-    print('Gen', sys.getsizeof(gen))
-
+print('Function', sys.getsizeof(fun))
+print('Generator', sys.getsizeof(gen))

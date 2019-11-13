@@ -64,9 +64,7 @@ List Comprehension
 .. code-block:: python
     :caption: ``list`` Comprehension approach to applying function to elements
 
-    numbers = [x+10 for x in range(0, 5)]
-
-    print(numbers)
+    [x+10 for x in range(0, 5)]
     # [10, 11, 12, 13, 14]
 
 Set Comprehension
@@ -74,7 +72,7 @@ Set Comprehension
 .. code-block:: python
     :caption: ``set`` Comprehension approach to applying function to elements
 
-    numbers = {x+10 for x in range(0, 5)}
+    {x+10 for x in range(0, 5)}
     # {10, 11, 12, 13, 14}
 
 Dict Comprehension
@@ -82,66 +80,83 @@ Dict Comprehension
 .. code-block:: python
     :caption: ``dict`` Comprehension approach to applying function to elements
 
-    numbers = {x: x+10 for x in range(0, 5)}
+    {x: x+10 for x in range(0, 5)}
     # {0:10, 1:11, 2:12, 3:13, 4:14}
 
 .. code-block:: python
     :caption: ``dict`` Comprehension approach to applying function to elements
 
-    numbers = {x+10: x for x in range(0, 5)}
+    {x+10: x for x in range(0, 5)}
     # {10:0, 11:1, 12:2, 13:3, 14:4}
 
 .. code-block:: python
     :caption: ``dict`` Comprehension approach to applying function to elements
 
-    numbers = {x+10: x+10 for x in range(0, 5)}
+    {x+10: x+10 for x in range(0, 5)}
     # {10:10, 11:11, 12:12, 13:13, 14:14}
 
 Tuple Comprehension?!
 ---------------------
-* It is a Generator Expression
+* Tuple Comprehension vs. Generator Expression
 * More in chapter :ref:`Generators`
 
 .. code-block:: python
-    :caption: Generator Expression approach to applying function to elements
+    :caption: Tuple Comprehension
 
-    numbers = (x+10 for x in range(0, 5))
+    tuple(x for x in range(0,5))
+    # (0, 1, 2, 3, 4)
+
+.. code-block:: python
+    :caption: Generator Expression
+
+    (x+10 for x in range(0, 5))
     # <generator object <genexpr> at 0x11eaef570>
 
 
 Conditional Comprehension
 =========================
-
-Traditional
------------
 .. code-block:: python
     :caption: Iterative approach to applying function to selected elements
 
     even_numbers = []
 
-    for x in range(0, 10):
+    for x in range(0, 5):
         if x % 2 == 0:
             even_numbers.append(x)
 
     print(even_numbers)
-    # [0, 2, 4, 6, 8]
+    # [0, 2, 4]
 
-Comprehensions
---------------
 .. code-block:: python
     :caption: ``list`` Comprehensions approach to applying function to selected elements
 
-    even_numbers = [x for x in range(0, 10) if x % 2 == 0]
+    [x for x in range(0, 5) if x % 2 == 0]
+    # [0, 2, 4]
 
-    print(even_numbers)
-    # [0, 2, 4, 6, 8]
+Filtering ``dict`` items
+------------------------
+.. code-block:: python
+
+    DATA = [
+        {'first_name': 'Иван', 'last_name': 'Иванович', 'agency': 'Roscosmos'},
+        {'first_name': 'Jose', 'last_name': 'Jimenez', 'agency': 'NASA'},
+        {'first_name': 'Melissa', 'last_name': 'Lewis', 'agency': 'NASA'},
+        {'first_name': 'Alex', 'last_name': 'Vogel', 'agency': 'ESA'},
+        {'first_name': 'Mark', 'last_name': 'Watney', 'agency': 'NASA'},
+    ]
+
+    nasa_astronauts = [(astro['first_name'], astro['last_name'])
+                            for astro in DATA
+                                if astro['agency'] == 'NASA']
+    # [
+    #   ('Jose', 'Jimenez'),
+    #   ('Melissa', 'Lewis'),
+    #   ('Mark', 'Watney')
+    # ]
 
 
-Examples
-========
-
-Applying function to each element
----------------------------------
+Applying function
+=================
 .. code-block:: python
     :caption: Applying function to each output element
 
@@ -159,6 +174,62 @@ Applying function to each element
 
     [pow(x, 2) for x in range(0, 5) if x % 2 == 0]
     # [0, 4, 16]
+
+
+Nested Comprehensions
+=====================
+.. code-block:: python
+
+   DATA = [
+        {'last_name': 'Jiménez'},
+        {'first_name': 'Mark', 'last_name': 'Watney'},
+        {'first_name': 'Иван'},
+        {'first_name': 'Jan', 'last_name': 'Twardowski', 'born': 1961},
+        {'first_name': 'Melissa', 'last_name': 'Lewis', 'first_step': 1969},
+    ]
+
+    fieldnames = set()
+
+    fieldnames.update(key for record in DATA for key in record.keys())
+    # {'born', 'last_name', 'first_step', 'first_name'}
+
+.. code-block:: python
+
+   DATA = [
+        {'last_name': 'Jiménez'},
+        {'first_name': 'Mark', 'last_name': 'Watney'},
+        {'first_name': 'Иван'},
+        {'first_name': 'Jan', 'last_name': 'Twardowski', 'born': 1961},
+        {'first_name': 'Melissa', 'last_name': 'Lewis', 'first_step': 1969},
+    ]
+
+    fieldnames = set()
+
+    fieldnames.update(key
+        for record in DATA
+            for key in record.keys()
+    )
+    # {'born', 'last_name', 'first_step', 'first_name'}
+
+.. code-block:: python
+
+   DATA = [
+        {'last_name': 'Jiménez'},
+        {'first_name': 'Mark', 'last_name': 'Watney'},
+        {'first_name': 'Иван'},
+        {'first_name': 'Jan', 'last_name': 'Twardowski', 'born': 1961},
+        {'first_name': 'Melissa', 'last_name': 'Lewis', 'first_step': 1969},
+    ]
+
+    fieldnames = set(key
+        for record in DATA
+            for key in record.keys()
+    )
+    # {'born', 'last_name', 'first_step', 'first_name'}
+
+
+Examples
+========
 
 Filtering results
 -----------------

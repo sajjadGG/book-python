@@ -91,6 +91,14 @@ Using ``pdb``
     os.environ['PYTHONBREAKPOINT'] = 'foo.bar.baz'
     breakpoint()    # Imports foo.bar and calls foo.bar.baz()
 
+``code.interact()``
+===================
+* Halt code execution and open REPL with current state
+
+.. code-block:: python
+
+    import code
+    code.interact(local=locals())
 
 Using debugger in IDE
 =====================

@@ -1,52 +1,62 @@
 import csv
 
+OUTPUT = r'../../_tmp/csv_relations.csv'
 
 class Contact:
-    def __init__(self, name, addresses=()):
-        self.name = name
+    def __init__(self, first_name, last_name, addresses=()):
+        self.first_name = first_name
+        self.last_name = last_name
         self.addresses = addresses
 
 
 class Address:
-    def __init__(self, center, location):
-        self.center = center
+    def __init__(self, location, city):
         self.location = location
+        self.city = city
 
 
-DATA = [
-    Contact(name='Jan Twardowski', addresses=(
-        Address(center='JSC', location='Houston, TX'),
-        Address(center='KSC', location='Merritt Island, FL'),
-        Address(center='JPL', location='Pasadena, CA'),
+INPUT = [
+    Contact(first_name='Jan', last_name='Twardowski', addresses=(
+        Address(location='JSC', city='Houston, TX'),
+        Address(location='KSC', city='Merritt Island, FL'),
+        Address(location='JPL', city='Pasadena, CA'),
     )),
-    Contact(name='Mark Watney'),
-    Contact(name='Melissa Lewis', addresses=()),
+    Contact(first_name='Mark', last_name='Watney'),
+    Contact(first_name='Melissa', last_name='Lewis', addresses=()),
 ]
 
 output = []
 
-for contact in DATA:
+for contact in INPUT:
     addresses = []
 
     for address in contact.addresses:
         dane = address.__dict__.values()
-        address = '|'.join([str(x) for x in dane])
+        address = ', '.join([str(x) for x in dane])
         addresses.append(address)
 
     contact_data = contact.__dict__
-    contact_data['addresses'] = ';'.join(addresses)
+    contact_data['addresses'] = '; '.join(addresses)
     output.append(contact_data)
 
 
-with open('filename.csv', 'w', encoding='utf-8') as file:
-    fieldnames = set()
+fieldnames = set()
 
-    for contact in output:
-        for field_name in contact.keys():
-            fieldnames.add(field_name)
+for contact in output:
+    for field_name in contact.keys():
+        fieldnames.add(field_name)
 
-    writer = csv.DictWriter(file, fieldnames=fieldnames, delimiter=',',
-                            quotechar='"', quoting=csv.QUOTE_ALL, lineterminator='\n')
+
+with open(OUTPUT, mode='w', encoding='utf-8') as file:
+
+    writer = csv.DictWriter(
+        f=file,
+        fieldnames=sorted(fieldnames, reverse=True),
+        delimiter=',',
+        quotechar='"',
+        quoting=csv.QUOTE_ALL,
+        lineterminator='\n')
+
     writer.writeheader()
 
     for row in output:

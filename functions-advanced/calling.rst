@@ -280,7 +280,7 @@ Iris
         - value: measurement at the position
 
     #. Create function ``mean(**kwargs)``, function
-    #. Iterate over ``OUTPUT`` and call ``average()`` by passing arguments as keywords
+    #. Iterate over ``OUTPUT`` and call ``mean()`` by passing arguments as keywords
     #. Print mean for each row
 
 :Polish:
@@ -294,7 +294,7 @@ Iris
         - wartość: pomiar z odpowiedniej kolumny
 
     #. Stwórz funkcję ``mean(**kwargs)``
-    #. Iterując po ``OUTPUT`` wywołuj ``average()`` podając argumenty nazwanie
+    #. Iterując po ``OUTPUT`` wywołuj ``mean()`` podając argumenty nazwanie
     #. Wypisz średnią dla każdego wiersza
 
 :Non-functional requirements:

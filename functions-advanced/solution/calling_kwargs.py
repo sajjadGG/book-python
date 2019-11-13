@@ -1,6 +1,6 @@
 FILE = r'../data/iris.csv'
 
-data = []
+OUTPUT = []
 
 with open(FILE) as file:
     header = file.readline()
@@ -10,7 +10,7 @@ with open(FILE) as file:
         *measurements, _ = line.strip().split(',')
         measurements = map(float, measurements)
         pairs = zip(column_names, measurements)
-        data.append(dict(pairs))
+        OUTPUT.append(dict(pairs))
 
 
 def mean(**kwargs):
@@ -18,6 +18,6 @@ def mean(**kwargs):
     return sum(values) / len(values)
 
 
-for row in data:
+for row in OUTPUT:
     avg = mean(**row)
     print(avg)

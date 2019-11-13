@@ -5,76 +5,13 @@ Generators
 **********
 
 
-Lazy evaluation
-===============
-* Code do not execute instantly
-* Sometimes code is not executed at all!
-
-Declaring generators
---------------------
-* ``range()`` requires ``int`` arguments
-
-.. code-block:: python
-    :caption: This will not execute code!
-
-    range(0, 5)
-    range(0, 5)
-    range(0, 5)
-
-.. code-block:: python
-    :caption: This will only create generator expression, but not execute it!
-
-    numbers = range(0, 5)
-
-    print(numbers)
-    # range(0, 5)
-
-Getting  values from generator
-------------------------------
-* Get all values from generator (not very efficient)
-
-    .. code-block:: python
-
-        numbers = range(0, 5)
-
-        list(numbers)
-        # [0, 1, 2, 3, 4]
-
-* Generator will calculate next number for every loop iteration, forgetting previous number, and not knowing next one
-
-    .. code-block:: python
-
-        for i in range(0, 5):
-            print(i)
-
-        # 0
-        # 1
-        # 2
-        # 3
-        # 4
-
-* Will generate only three numbers, and then stop and forget generator
-
-    .. code-block:: python
-
-        for i in range(0, 5):
-            print(i)
-
-            if i == 3:
-                break
-
-        # 0
-        # 1
-        # 2
-        # 3
+.. note:: For information about Comprehensions, please refer to :ref:`Comprehensions`
 
 
 Generator expressions vs. Comprehensions
 ========================================
-
-Comprehensions
---------------
-* Executes instantly
+* Comprehensions executes instantly
+* Generators are lazy evaluated
 
 .. code-block:: python
 
@@ -101,14 +38,97 @@ Comprehensions
     any(x for x in range(0, 5))         # True
     sum(x for x in range(0, 5))         # 10
 
-Generator Expressions
----------------------
-* Lazy evaluation
+
+Lazy evaluation
+===============
+* Code do not execute instantly
+* Sometimes code is not executed at all!
+
+Declaring generators
+--------------------
+.. code-block:: python
+    :caption: This will not generate any numbers!
+
+    a = (x for x in range(0,5))
+    b = (x for x in range(0,5))
+    c = (x for x in range(0,5))
+
+.. code-block:: python
+    :caption: This will only create generator expression, but not evaluate it!
+
+    a = (x for x in range(0,5))
+
+    print(a)
+    # <generator object <genexpr> at 0x11cb45950>
+
+Evaluating generator instantly
+------------------------------
+* Not very efficient
+* If you need values evaluated instantly, there is no point in using generators
 
 .. code-block:: python
 
-    (x for x in range(0, 5))
-    # <generator object <genexpr> at 0x1197032a0>
+    a = (x for x in range(0,5))
+
+    list(a)
+    # [0, 1, 2, 3, 4]
+
+Evaluate generator iteratively
+------------------------------
+* Generator will calculate next number for every loop iteration
+* Forgets previous number
+* Doesn't know the next number
+
+.. code-block:: python
+
+    a = (x for x in range(0,5))
+
+    for i in a:
+        print(i)
+
+    # 0
+    # 1
+    # 2
+    # 3
+    # 4
+
+Halting iteration
+-----------------
+* Will generate only three numbers, then stop
+
+.. code-block:: python
+
+    a = (x for x in range(0,5))
+
+    for i in a:
+        print(i)
+        if i == 2:
+            break
+    # 0
+    # 1
+    # 2
+
+Halting and resuming iteration
+------------------------------
+* Will generate only three numbers, then stop
+* Forget generator
+
+.. code-block:: python
+
+    a = (x for x in range(0,5))
+
+    for i in a:
+        print(i)
+        if i == 2:
+            break
+    # 0
+    # 1
+    # 2
+
+    for i in a:
+        print(i)
+    # 3
+    # 4
 
 What is the difference?
 -----------------------
@@ -116,142 +136,50 @@ What is the difference?
 
     .. code-block:: python
 
-        numbers = [x for x in range(0, 5)]
+        a = [x for x in range(0, 5)]
 
-        print(numbers)
+        print(a)
         # [0, 1, 2, 3, 4]
 
-        print(numbers)
+        print(a)
         # [0, 1, 2, 3, 4]
 
 * Create generator object and assign pointer (do not execute)
 
     .. code-block:: python
 
-        numbers = (x for x in range(0, 5))
+        a = (x for x in range(0, 5))
 
-        print(numbers)
+        print(a)
         # <generator object <genexpr> at 0x111e7acd0>
 
-        print(list(numbers))
+        print(list(a))
         # [0, 1, 2, 3, 4]
 
-        print(list(numbers))
+        print(list(a))
         # []
 
 Which one is better?
 --------------------
 * Comprehensions - Using values more than one
-* Generators - Using value one (for example in the loop iterator)
-
-
-Conditions
-==========
-.. code-block:: python
-
-    [x for x in range(0, 5) if x % 2 == 0]
-    # [0, 2, 4]
-
-.. code-block:: python
-
-    def is_even(x):
-        if x % 2 == 0:
-            return True
-        else:
-            return False
-
-    [x for x in range(0, 5) if is_even(x)]
-    # [0, 2, 4]
-
-
-Returning nested objects
-========================
-.. code-block:: python
-    :caption: Returning nested objects
-
-    def my_function(number):
-        return number, number+10
-
-    [my_function(x) for x in range(0, 5)]
-    # [
-    #   (0, 10),
-    #   (1, 11),
-    #   (2, 12),
-    #   (3, 13),
-    #   (4, 14)
-    # ]
-
-.. code-block:: python
-    :caption: Returning nested objects
-
-    def my_function(number):
-        if number % 2 == 0:
-            return {'number': number, 'status': 'even'}
-        else:
-            return {'number': number, 'status': 'odd'}
-
-
-    [my_function(x) for x in range(0, 5)]
-    # [
-    #    {'number': 0, 'status': 'even'},
-    #    {'number': 1, 'status': 'odd'},
-    #    {'number': 2, 'status': 'even'},
-    #    {'number': 3, 'status': 'odd'},
-    #    {'number': 4, 'status': 'even'},
-    # ]
-
-Nested Comprehensions
----------------------
-.. code-block:: python
-
-   DATA = [
-        {'last_name': 'Jiménez'},
-        {'first_name': 'Mark', 'last_name': 'Watney'},
-        {'first_name': 'Иван'},
-        {'first_name': 'Jan', 'last_name': 'Twardowski', 'born': 1961},
-        {'first_name': 'Melissa', 'last_name': 'Lewis', 'first_step': 1969},
-    ]
-
-    fieldnames = set()
-    fieldnames.update(key for record in DATA for key in record.keys())
-
-.. code-block:: python
-
-   DATA = [
-        {'last_name': 'Jiménez'},
-        {'first_name': 'Mark', 'last_name': 'Watney'},
-        {'first_name': 'Иван'},
-        {'first_name': 'Jan', 'last_name': 'Twardowski', 'born': 1961},
-        {'first_name': 'Melissa', 'last_name': 'Lewis', 'first_step': 1969},
-    ]
-
-    fieldnames = set()
-    fieldnames.update(key
-        for record in DATA
-            for key in record.keys()
-    )
+* Generators - Using values once (for example in the loop iterator)
 
 
 ``yield`` Operator
 ==================
 .. code-block:: python
 
-    # ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     DATA = [
         (5.1, 3.5, 1.4, 0.2, 'setosa'),
         (4.9, 3.0, 1.4, 0.2, 'setosa'),
         (5.4, 3.9, 1.7, 0.4, 'setosa'),
-        (4.6, 3.4, 1.4, 0.3, 'setosa'),
         (7.0, 3.2, 4.7, 1.4, 'versicolor'),
         (6.4, 3.2, 4.5, 1.5, 'versicolor'),
         (5.7, 2.8, 4.5, 1.3, 'versicolor'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
         (6.3, 3.3, 6.0, 2.5, 'virginica'),
         (5.8, 2.7, 5.1, 1.9, 'virginica'),
         (4.9, 2.5, 4.5, 1.7, 'virginica'),
     ]
-
-.. code-block:: python
 
     def get_species(species):
         output = []
@@ -268,17 +196,27 @@ Nested Comprehensions
     print(data)
     # [(5.1, 3.5, 1.4, 0.2, 'setosa'),
     #  (4.9, 3.0, 1.4, 0.2, 'setosa'),
-    #  (5.4, 3.9, 1.7, 0.4, 'setosa'),
-    #  (4.6, 3.4, 1.4, 0.3, 'setosa')]
+    #  (5.4, 3.9, 1.7, 0.4, 'setosa')]
 
     for row in data:
         print(row)
     # (5.1, 3.5, 1.4, 0.2, 'setosa')
     # (4.9, 3.0, 1.4, 0.2, 'setosa')
     # (5.4, 3.9, 1.7, 0.4, 'setosa')
-    # (4.6, 3.4, 1.4, 0.3, 'setosa')
 
 .. code-block:: python
+
+    DATA = [
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (4.9, 3.0, 1.4, 0.2, 'setosa'),
+        (5.4, 3.9, 1.7, 0.4, 'setosa'),
+        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+        (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+        (5.7, 2.8, 4.5, 1.3, 'versicolor'),
+        (6.3, 3.3, 6.0, 2.5, 'virginica'),
+        (5.8, 2.7, 5.1, 1.9, 'virginica'),
+        (4.9, 2.5, 4.5, 1.7, 'virginica'),
+    ]
 
     def get_species(species):
         for record in DATA:
@@ -295,122 +233,6 @@ Nested Comprehensions
     # (5.1, 3.5, 1.4, 0.2, 'setosa')
     # (4.9, 3.0, 1.4, 0.2, 'setosa')
     # (5.4, 3.9, 1.7, 0.4, 'setosa')
-    # (4.6, 3.4, 1.4, 0.3, 'setosa')
-
-
-Example
-=======
-
-Filtering ``list`` items
-------------------------
-.. code-block:: python
-
-    DATA = [
-        (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        (4.9, 3.0, 1.4, 0.2, 'setosa'),
-        (5.4, 3.9, 1.7, 0.4, 'setosa'),
-        (4.6, 3.4, 1.4, 0.3, 'setosa'),
-        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-        (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-        (5.7, 2.8, 4.5, 1.3, 'versicolor'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-        (6.3, 3.3, 6.0, 2.5, 'virginica'),
-        (5.8, 2.7, 5.1, 1.9, 'virginica'),
-        (4.9, 2.5, 4.5, 1.7, 'virginica'),
-    ]
-
-    setosa = [row for row in DATA if row[4] == 'setosa']
-    print(setosa)
-
-Filtering ``dict`` items
-------------------------
-.. code-block:: python
-
-    DATA = [
-        {'first_name': 'Иван', 'last_name': 'Иванович', 'agency': 'Roscosmos'},
-        {'first_name': 'Jose', 'last_name': 'Jimenez', 'agency': 'NASA'},
-        {'first_name': 'Melissa', 'last_name': 'Lewis', 'agency': 'NASA'},
-        {'first_name': 'Alex', 'last_name': 'Vogel', 'agency': 'ESA'},
-        {'first_name': 'Mark', 'last_name': 'Watney', 'agency': 'NASA'},
-    ]
-
-    nasa_astronauts = [(x['first_name'], x['last_name'])
-                            for x in DATA if x['agency'] == 'NASA']
-    # [
-    #   ('Jose', 'Jimenez'),
-    #   ('Melissa', 'Lewis'),
-    #   ('Mark', 'Watney')
-    # ]
-
-Reversing ``dict`` keys with values
------------------------------------
-.. code-block:: python
-
-    data = {'first_name': 'Jan', 'last_name': 'Twardowski'}
-
-    {v: k for k, v in data.items()}
-    # {'Jan': 'first_name', 'Twardowski': 'last_name'}
-
-
-Readability counts
-==================
-.. code-block:: python
-    :caption: Clean Code in generator
-
-    DATA = {'username': 'Иван Иванович', 'agency': 'Roscosmos'}
-
-
-    def asd(x):
-        return x.replace('Иван', 'Ivan')
-
-
-    output = {
-        value: asd(value)
-        for key, value in DATA.items()
-        if key == 'username'
-    }
-    print(output)
-    # {'Иван Иванович': 'Ivan Ivanоvic'}
-
-
-    output = ['CCCP' if k == 'Roscosmos' else 'USA' for k,v in DATA.items() if k == 'agency']
-    print(output)
-    # ['USA']
-
-.. code-block:: python
-
-    DATA = [
-        {'last_name': 'Jiménez'},
-        {'first_name': 'Mark', 'last_name': 'Watney'},
-        {'first_name': 'Иван'},
-        {'first_name': 'Jan', 'last_name': 'Twardowski', 'born': 1961},
-        {'first_name': 'Melissa', 'last_name': 'Lewis', 'first_step': 1969},
-    ]
-
-    [asd(value)
-
-                for d in DATA
-            for key, value in d.items()
-        if key == 'username'
-
-    ]
-
-.. code-block:: python
-
-    DATA = [
-        {'first_name': 'Иван', 'last_name': 'Иванович', 'agency': 'Roscosmos'},
-        {'first_name': 'Jose', 'last_name': 'Jimenez', 'agency': 'NASA'},
-        {'first_name': 'Melissa', 'last_name': 'Lewis', 'agency': 'NASA'},
-        {'first_name': 'Alex', 'last_name': 'Vogel', 'agency': 'ESA'},
-        {'first_name': 'Mark', 'last_name': 'Watney', 'agency': 'NASA'},
-    ]
-
-    nasa_astronauts = [(astronaut['first_name'], astronaut['last_name']) for astronaut in DATA if astronaut['agency'] == 'NASA']
-    # [
-    #   ('Jose', 'Jimenez'),
-    #   ('Melissa', 'Lewis'),
-    #   ('Mark', 'Watney')
-    # ]
 
 
 Built-in generators
@@ -472,17 +294,28 @@ Built-in generators
 ------------
 .. code-block:: python
 
-    def czy_parzysty(x):
+    filter(<callable>, <sequence>)
+
+.. code-block:: python
+
+    data = [1, 2, 3, 4, 5, 6]
+
+    def is_even(x):
         if x % 2 == 0:
             return True
         else:
             return False
 
-    filter(czy_parzysty, data)
+    filter(is_even, data)
     # <filter object at 0x11d182990>
 
-    list(filter(czy_parzysty, data))
-    # [2]
+    list(filter(is_even, data))
+    # [2, 4, 6]
+
+.. code-block:: python
+
+    list(filter(lambda x: not x%2, data))
+    # [2, 4, 6]
 
 
 Assignments
@@ -513,6 +346,15 @@ Generators vs. Comprehensions - iris
     * Porównanie wielkości struktur danych
     * Parsowanie pliku
     * Filtrowanie treści w locie
+
+:Hint:
+    .. code-block:: python
+
+        fun = function_filter('setosa')
+        gen = generator_filter('setosa')
+
+        print('Function', sys.getsizeof(fun))
+        print('Generator', sys.getsizeof(gen))
 
 Generators vs. Comprehensions - passwd
 --------------------------------------

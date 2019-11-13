@@ -52,13 +52,13 @@ JSON Serialization of simple objects
 ====================================
 To file:
 
-    * ``json.dump(DATA, file)``
-    * ``json.load(DATA, file)``
+    * ``json.dump(DATA: dict, file: TextIOWrapper) -> None``
+    * ``json.load(file: TextIOWrapper) -> None``
 
 To string:
 
-    * ``json.dumps(DATA)``
-    * ``json.loads(DATA)``
+    * ``json.dumps(DATA: dict) -> str``
+    * ``json.loads(DATA: str) -> dict``
 
 Serialize to JSON
 -----------------
@@ -225,19 +225,21 @@ Encoding nested objects with relations to JSON
 
 
     class Address:
-        def __init__(self, location, city):
-            self.location = center
-            self.city = location
+        def __init__(self, name, city, state):
+            self.name = name
+            self.city = city
+            self.state = state
 
 
     INPUT = [
-        Contact(first_name='Jan', last_name='Twardowski', addresses=(
-            Address(location='Johnson Space Center', city='Houston, TX'),
-            Address(location='Kennedy Space Center', city='Merritt Island, FL'),
-            Address(location='Jet Propulsion Laboratory', city='Pasadena, CA'),
-        )),
-        Contact(first_name='Mark', last_name='Watney'),
-        Contact(first_name='Melissa', last_name='Lewis', addresses=()),
+        Contact('Jan', 'Twardowski', addresses=(
+            Address('Johnson Space Center', 'Houston', 'TX'),
+            Address('Kennedy Space Center', 'Merritt Island', 'FL'))),
+
+        Contact('Mark', 'Watney', addresses=(
+            Address('Jet Propulsion Laboratory', 'Pasadena', 'CA'))),
+
+        Contact('Melissa', 'Lewis', addresses=()),
     ]
 
 
@@ -252,13 +254,14 @@ Encoding nested objects with relations to JSON
     print(output)
     # [
     #    {"__class_name__":"Contact", "first_name":"Jan", "last_name":"Twardowski", "addresses":[
-    #          {"__class_name__":"Address", "location":"Johnson Space Center", "city":"Houston, TX"},
-    #          {"__class_name__":"Address", "location":"Kennedy Space Center", "city":"Merritt Island, FL"},
-    #          {"__class_name__":"Address", "location":"Jet Propulsion Laboratory", "city":"Pasadena, CA"},
-    #    {"__class_name__":"Contact", "first_name":"Mark", "last_name":"Watney", "addresses":[]},
+    #          {"__class_name__":"Address", "name":"Johnson Space Center", "city":"Houston", "state":"TX"},
+    #          {"__class_name__":"Address", "name":"Kennedy Space Center", "city":"Merritt Island", "state":"FL"}],
+    #
+    #    {"__class_name__":"Contact", "first_name":"Mark", "last_name":"Watney", "addresses":[
+    #          {"__class_name__":"Address", "name":"Jet Propulsion Laboratory", "city":"Pasadena", "state":"CA"}]},
+    #
     #    {"__class_name__":"Contact", "first_name":"Melissa", "last_name":"Lewis", "addresses":[]}
     # ]
-
 
 Decoding nested objects with relations to JSON
 ----------------------------------------------
@@ -273,10 +276,12 @@ Decoding nested objects with relations to JSON
     INPUT = """
     [
        {"__class_name__":"Contact", "first_name":"Jan", "last_name":"Twardowski", "addresses":[
-             {"__class_name__":"Address", "location":"Johnson Space Center", "city":"Houston, TX"},
-             {"__class_name__":"Address", "location":"Kennedy Space Center", "city":"Merritt Island, FL"},
-             {"__class_name__":"Address", "location":"Jet Propulsion Laboratory", "city":"Pasadena, CA"},
-       {"__class_name__":"Contact", "first_name":"Mark", "last_name":"Watney", "addresses":[]},
+             {"__class_name__":"Address", "name":"Johnson Space Center", "city":"Houston", "state":"TX"},
+             {"__class_name__":"Address", "name":"Kennedy Space Center", "city":"Merritt Island", "state":"FL"}],
+
+       {"__class_name__":"Contact", "first_name":"Mark", "last_name":"Watney", "addresses":[
+             {"__class_name__":"Address", "name":"Jet Propulsion Laboratory", "city":"Pasadena", "state":"CA"}]},
+
        {"__class_name__":"Contact", "first_name":"Melissa", "last_name":"Lewis", "addresses":[]}
     ]
     """
@@ -290,9 +295,10 @@ Decoding nested objects with relations to JSON
 
 
     class Address:
-        def __init__(self, location, city):
-            self.location = location
+        def __init__(self, name, city, state):
+            self.name = name
             self.city = city
+            self.state = state
 
 
     class JSONObjectDecoder(json.JSONDecoder):
@@ -308,13 +314,14 @@ Decoding nested objects with relations to JSON
     output = json.loads(INPUT, cls=JSONObjectDecoder)
     print(output)
     # [
-    #     Contact(first_name='Jan', last_name='Twardowski', addresses=(
-    #         Address(location='Johnson Space Center', city='Houston, TX'),
-    #         Address(location='Kennedy Space Center', city='Merritt Island, FL'),
-    #         Address(location='Jet Propulsion Laboratory', city='Pasadena, CA'),
-    #     )),
-    #     Contact(first_name='Mark', last_name='Watney'),
-    #     Contact(first_name='Melissa', last_name='Lewis', addresses=()),
+    #     Contact('Jan', 'Twardowski', addresses=(
+    #         Address('Johnson Space Center', 'Houston', 'TX'),
+    #         Address('Kennedy Space Center', 'Merritt Island', 'FL'))),
+    #
+    #     Contact('Mark', 'Watney', addresses=(
+    #         Address('Jet Propulsion Laboratory', 'Pasadena', 'CA'))),
+    #
+    #     Contact('Melissa', 'Lewis', addresses=()),
     # ]
 
 
@@ -382,7 +389,7 @@ Serialize nested sequences to JSON
 * Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/json_serialize.py`
+* Filename: :download:`solution/json_dump.py`
 
 :English:
     #. Extract from input a header and data
@@ -411,7 +418,7 @@ Serialize nested sequences to JSON
 :Input:
     .. code-block:: python
 
-        INPUT: List[tuple] = [
+        INPUT = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, 'virginica'),
             (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -452,7 +459,7 @@ Deserialize nested sequences from JSON
 * Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/json_deserialize.py`
+* Filename: :download:`solution/json_load.py`
 
 :English:
     #. Write input data to "iris_deserialize.json"
@@ -506,7 +513,7 @@ Serializing datetime to JSON
         from datetime import datetime, date
 
 
-        INPUT: dict = {
+        INPUT = {
             "astronaut": {
                 "date": date(1961, 4, 12),
                 "person": "jose.jimenez@nasa.gov"
