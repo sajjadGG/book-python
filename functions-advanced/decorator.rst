@@ -119,7 +119,6 @@ Method decorator
     my.do_something()           # Sorry, you cannot do anything
     my.do_something_else()      # Sorry, you cannot do anything
 
-
 Decorator with arguments
 ------------------------
 Code:
@@ -205,11 +204,14 @@ Cache
         if n == 0:
             return 1
         else:
-            return n * factorial(n-1)
+            return n * factorial(n - 1)
 
 
-    output = factorial(5)
-    print(output)
+    factorial(5)
+    # 120
+
+    print(CACHE)
+    # {0: 1, 1: 1, 2: 2, 3: 6, 4: 24, 5: 120}
 
 File exists
 -----------
@@ -219,15 +221,12 @@ File exists
 
 
     def if_file_exists(fn):
-
-        def check_if_exists(filename):
-
+        def check_path(filename):
             if os.path.exists(filename):
                 return fn(filename)
             else:
                 print(f'File "{filename}" does not exists')
-
-        return check_if_exists
+        return check_path
 
 
     @if_file_exists
@@ -245,30 +244,31 @@ Deprecated
 ----------
 .. code-block:: python
 
-    def deprecated(fn):
-        def write_message(*args, **kwargs):
-            name = fn.__name__
-            file = fn.__code__.co_filename
-            line = fn.__code__.co_firstlineno + 1
+    def deprecated(removed_in_version=None):
+        def decorator(fn):
+            def write_message(*args, **kwargs):
+                name = fn.__name__
+                file = fn.__code__.co_filename
+                line = fn.__code__.co_firstlineno + 1
+                message = f"Call to deprecated function {name} in {file} at line {line}"
+                message += f'\nIt will be removed in {removed_in_version}'
 
-            import warnings
-            warnings.warn(
-                category=DeprecationWarning,
-                message=f"Call to deprecated function {name} in {file} at line {line}")
+                import warnings
+                warnings.warn(message, DeprecationWarning)
+                return fn(*args, **kwargs)
 
-            return fn(*args, **kwargs)
-        return write_message
+            return write_message
+        return decorator
 
 
-    @deprecated
+    @deprecated(removed_in_version=2.0)
     def my_function():
         pass
 
 
     my_function()
-    # /src/my_script.py:11: DeprecationWarning: Call to deprecated function my_function in /src/my_script.py at line 19
-
-
+    # /tmp/my_script.py:11: DeprecationWarning: Call to deprecated function my_function in /tmp/my_script.py at line 19
+    # It will be removed in 2.0
 
 Timeout
 -------
@@ -308,9 +308,8 @@ Timeout
 
     connect('admin', 'admin')
 
-
-Class Decorators
-================
+Cache
+-----
 .. code-block:: python
 
     class cache(dict):
@@ -326,21 +325,85 @@ Class Decorators
 
 
     @cache
-    def foo(a, b):
+    def my_function(a, b):
         return a * b
 
 
-    foo(2, 4)       # 8
-    foo             # {(2, 4): 8}
+    my_function(2, 4)       # 8
+    my_function('hi', 3)    # 'hihihi'
+    my_function('ha', 3)    # 'hahaha'
+    my_function(2, 4)       # 8         # this is loaded from cache not computed
 
-    foo('hi', 3)    # 'hihihi'
-    foo             # {(2, 4): 8, ('hi', 3): 'hihihi'}
+    my_function
+    # {
+    #   (2, 4): 8,
+    #   ('hi', 3): 'hihihi',
+    #   ('ha', 3): 'hahaha'
+    # }
 
 
 ``functools``
 =============
 
-``@functools.cached_property(func)``
+``@functools.wraps(fn)``
+------------------------
+.. code-block:: python
+    :emphasize-lines: 19,22
+
+    def my_decorator(fn):
+        def wrapper(*args, **kwargs):
+            """
+            wrapper docstring
+            """
+            return fn(*args, **kwargs)
+        return wrapper
+
+
+    @my_decorator
+    def my_function(x):
+        """
+        my_function docstring
+        """
+        print(x)
+
+
+    print(my_function.__name__)
+    # wrapper
+
+    print(my_function.__doc__)
+    # wrapper docstring
+
+.. code-block:: python
+    :emphasize-lines: 1,5,23,26
+
+    from functools import wraps
+
+
+    def my_decorator(fn):
+        @wraps(fn)
+        def wrapper(*args, **kwargs):
+            """
+            wrapper docstring
+            """
+            return fn(*args, **kwargs)
+        return wrapper
+
+
+    @my_decorator
+    def my_function(x):
+        """
+        my_function docstring
+        """
+        print(x)
+
+
+    print(my_function.__name__)
+    # my_function
+
+    print(my_function.__doc__)
+    # my_function docstring
+
+``@functools.cached_property(fn)``
 ------------------------------------
 .. code-block:: python
 
