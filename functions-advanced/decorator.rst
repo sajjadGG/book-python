@@ -3,24 +3,41 @@ Decorator
 *********
 
 
+What is decorator
+=================
+* Decorator is a function, which takes another function as it's argument
+
+Code:
+    .. code-block:: python
+
+        @decorator
+        def my_function(*args, **kwargs):
+            pass
+
+Is equal to:
+    .. code-block:: python
+
+        my_function = decorator(my_function)
+
+
 Definition
 ==========
 
 Decorating functions
 --------------------
 * ``my_decorator`` is decorator name
-* ``func`` is a pointer to function which is being decorated (``my_function`` in this case)
+* ``fn`` is a pointer to function which is being decorated (``my_function`` in this case)
 * ``wrapper`` is a closure function
 * ``wrapper`` name is a convention, but you can name it anyhow
 * ``wrapper`` gets arguments passed to ``my_function``
-* by calling ``func(*func_args, **func_kwargs)`` you actually run original (wrapped) function
+* by calling ``fn(*fn_args, **fn_kwargs)`` you actually run original (wrapped) function
 * decorator must return pointer to ``wrapper``
 
 .. code-block:: python
 
-    def my_decorator(func):
-        def wrapper(*func_args, **func_kwargs):
-            return func(*func_args, **func_kwargs)
+    def my_decorator(fn):
+        def wrapper(*args, **kwargs):
+            return fn(*args, **kwargs)
         return wrapper
 
 
@@ -61,17 +78,80 @@ Decorating classes
 
 Zastosowanie
 ============
-* Modify arguments
-* Modify returned value
 * Do things before call
 * Do things after call
+* Modify arguments
+* Modify returned value
 * Avoid calling
-* Modify global state (not a good idea)
-* Metadata
+* Modify globals
+* Add or change metadata
+
+
+Decorator with arguments
+========================
+Code:
+    .. code-block:: python
+
+        @my_decorator(my_param)
+        def my_function(*args, **kwargs):
+            pass
+
+Is equivalent to:
+    .. code-block:: python
+
+        my_function = my_decorator(my_param)(my_function)
+
+.. code-block:: python
+
+    def my_decorator(my_param=10):
+        def decorator(fn):
+            def wrapper(*args, **kwargs):
+                return fn(*args, **kwargs)
+            return wrapper
+        return decorator
+
+
+    @my_decorator(my_param=1)
+    def my_function(name):
+        print(name)
+
+
+    my_function('Jan Twardowski')
+    # Jan Twardowski
+
 
 
 Example
 =======
+
+Debug
+-----
+.. code-block:: python
+
+    def debug(fn):
+        def wrapper(*args, **kwargs):
+            print(f'Calling {fn.__name__}, args: {args}, kwargs: {kwargs}')
+            result = fn(*args, **kwargs)
+            print(f'Result is {result}')
+        return wrapper
+
+
+    @debug
+    def add_numbers(a, b):
+        return a + b
+
+
+    add_numbers(1, 2)
+    # Calling add_numbers, args: (1, 2), kwargs: {}
+    # Result is 3
+
+    add_numbers(1, b=2)
+    # Calling add_numbers, args: (1,), kwargs: {'b': 2}
+    # Result is 3
+
+    add_numbers(a=1, b=2)
+    # Calling add_numbers, args: (), kwargs: {'a': 1, 'b': 2}
+    # Result is 3
 
 Cache
 -----
@@ -80,16 +160,16 @@ Cache
     CACHE = {}
 
 
-    def cache(func):
+    def cache(fn):
         def wrapper(n):
             if n not in CACHE:
-                CACHE[n] = func(n)
+                CACHE[n] = fn(n)
             return CACHE[n]
         return wrapper
 
 
     @cache
-    def factorial(n: int) -> int:
+    def factorial(n):
         if n == 0:
             return 1
         else:
@@ -106,15 +186,16 @@ File exists
     import os
 
 
-    def if_file_exists(func):
+    def if_file_exists(fn):
 
-        def check(filename):
+        def check_if_exists(filename):
+
             if os.path.exists(filename):
-                return func(filename)
+                return fn(filename)
             else:
                 print(f'File "{filename}" does not exists')
 
-        return check
+        return check_if_exists
 
 
     @if_file_exists
@@ -128,32 +209,33 @@ File exists
         print_file('/etc/passwd')
         print_file('/tmp/passwd')
 
-
 Deprecated
 ----------
 .. code-block:: python
 
-    import warnings
-    import functools
+    def deprecated(fn):
+        def write_message(*args, **kwargs):
+            name = fn.__name__
+            file = fn.__code__.co_filename
+            line = fn.__code__.co_firstlineno + 1
 
-
-    def deprecated(func):
-
-        @functools.wraps(func)
-        def wrapper(*args, **kwargs):
-
-            warnings.warn(f"Call to deprecated function {func.__name__}.",
+            import warnings
+            warnings.warn(
                 category=DeprecationWarning,
-                filename=func.func_code.co_filename,
-                lineno=func.func_code.co_firstlineno + 1)
+                message=f"Call to deprecated function {name} in {file} at line {line}")
 
-            return func(*args, **kwargs)
-        return wrapper
+            return fn(*args, **kwargs)
+        return write_message
 
 
     @deprecated
     def my_function():
         pass
+
+
+    my_function()
+    # /src/my_script.py:11: DeprecationWarning: Call to deprecated function my_function in /src/my_script.py at line 19
+
 
 
 Timeout
@@ -165,7 +247,7 @@ Timeout
     from time import sleep
 
 
-    def timeout(function, seconds=2, error_message='Timeout'):
+    def timeout(fn, seconds=2, error_message='Timeout'):
 
         def wrapper(*args, **kwargs):
 
@@ -176,7 +258,7 @@ Timeout
             signal.alarm(seconds)
 
             try:
-                function(*args, **kwargs)
+                fn(*args, **kwargs)
             except TimeoutError:
                 print(error_message)
             finally:
@@ -199,19 +281,19 @@ Class Decorators
 ================
 .. code-block:: python
 
-    class memoize(dict):
-        def __init__(self, function):
-            self.function = function
+    class cache(dict):
+        def __init__(self, fn):
+            self.fn = fn
 
         def __call__(self, *args):
             return self[args]
 
         def __missing__(self, key):
-            result = self[key] = self.function(*key)
-            return result
+            self[key] = self.fn(*key)
+            return self[key]
 
 
-    @memoize
+    @cache
     def foo(a, b):
         return a * b
 
@@ -223,13 +305,15 @@ Class Decorators
     foo             # {(2, 4): 8, ('hi', 3): 'hihihi'}
 
 
-
 ``functools``
 =============
 
 ``@functools.cached_property(func)``
 ------------------------------------
 .. code-block:: python
+
+    from functools import cached_property
+
 
     class DataSet:
         def __init__(self, sequence_of_numbers):
@@ -249,17 +333,18 @@ LRU (least recently used) cache
 
     from functools import lru_cache
 
+
     @lru_cache(maxsize=None)
     def fib(n):
         if n < 2:
             return n
         return fib(n-1) + fib(n-2)
 
-    >>> [fib(n) for n in range(16)]
-    [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610]
+    [fib(n) for n in range(16)]
+    # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610]
 
-    >>> fib.cache_info()
-    CacheInfo(hits=28, misses=16, maxsize=None, currsize=16)
+    fib.cache_info()
+    # CacheInfo(hits=28, misses=16, maxsize=None, currsize=16)
 
 ``memoize``
 -----------

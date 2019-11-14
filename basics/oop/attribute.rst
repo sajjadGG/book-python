@@ -93,8 +93,8 @@ Access modifiers
 ================
 * All fields are always public
 * No protected i private
-* ``_name`` - private fields (by convention)
-* ``__name__`` - system methods
+* ``_name`` - protected field (by convention)
+* ``__name__`` - system field
 * ``name_`` - used while name collision
 
 .. code-block:: python
@@ -178,7 +178,7 @@ Data Modeling
         Mark, Watney, 1969-07-21
         Kennedy Space Center, Merritt Island, FL
         Johnson Space Center, Houston, TX
-        Jet Propulsion Laboratory, Pasadena, TX
+        Jet Propulsion Laboratory, Pasadena, CA
 
 :The whys and wherefores:
     * :ref:`Classes and Instances`

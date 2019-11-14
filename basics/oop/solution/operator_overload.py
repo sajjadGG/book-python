@@ -31,10 +31,10 @@ class Location:
             return False
 
 
-astro = Astronaut('Jan Twardowski', locations=(
+astro = Astronaut('Jan Twardowski', locations=[
     Location('Armstrong Flight Research Center'),
     Location('Kennedy Space Center'),
-))
+])
 
 astro += Location('Jet Propulsion Laboratory')
 astro += Location('Johnson Space Center')

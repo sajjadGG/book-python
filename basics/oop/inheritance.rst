@@ -81,10 +81,10 @@ Calling parent methods
 
     class Iris:
         def __init__(self):
-            self.sepal_length=5.1,
-            self.sepal_width=3.5,
-            self.petal_length=1.4,
-            self.petal_width=0.2,
+            self.sepal_length=5.1
+            self.sepal_width=3.5
+            self.petal_length=1.4
+            self.petal_width=0.2
 
 
     class Setosa(Iris):
