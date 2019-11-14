@@ -118,13 +118,6 @@ dragon.change_position(left=10, right=15)
 dragon.change_position(right=15, up=5)
 dragon.change_position(down=5)
 
-dmg = [10, 5, ...]
-for d in dmg:
-    try:
-        dragon.take_damage(d)
-    except Dragon.IsDead:
-        ...
-
 
 try:
     dragon.take_damage(10)

@@ -6,18 +6,27 @@ Decorator
 What is decorator
 =================
 * Decorator is a function, which takes another function as it's argument
+* Decorators can:
+
+    * Do things before call
+    * Do things after call
+    * Modify arguments
+    * Modify returned value
+    * Avoid calling
+    * Modify globals
+    * Add or change metadata
 
 Code:
     .. code-block:: python
 
-        @decorator
+        @my_decorator
         def my_function(*args, **kwargs):
             pass
 
 Is equal to:
     .. code-block:: python
 
-        my_function = decorator(my_function)
+        my_function = my_decorator(my_function)
 
 
 Definition
@@ -30,7 +39,7 @@ Decorating functions
 * ``wrapper`` is a closure function
 * ``wrapper`` name is a convention, but you can name it anyhow
 * ``wrapper`` gets arguments passed to ``my_function``
-* by calling ``fn(*fn_args, **fn_kwargs)`` you actually run original (wrapped) function
+* by calling ``fn(*args, **kwargs)`` you actually run original (wrapped) function with it's original arguments
 * decorator must return pointer to ``wrapper``
 
 .. code-block:: python
@@ -58,7 +67,6 @@ Decorating classes
 * ``Wrapper`` inherits from ``MyClass`` so it is similar
 * decorator must return pointer to ``Wrapper``
 
-
 .. code-block:: python
 
     def my_decorator(cls):
@@ -75,20 +83,45 @@ Decorating classes
     print(MyClass.my_value)
     # some value
 
+Method decorator
+----------------
+.. code-block:: python
 
-Zastosowanie
-============
-* Do things before call
-* Do things after call
-* Modify arguments
-* Modify returned value
-* Avoid calling
-* Modify globals
-* Add or change metadata
+    def if_permitted(method):
+        def wrapper(instance, *args, **kwargs):
+            if instance.can_something:
+                return method(instance, *args, **kwargs)
+            else:
+                print('Sorry, you cannot do anything')
+        return wrapper
+
+
+    class MyClass:
+        def __init__(self):
+            self.can_something = True
+
+        @if_permitted
+        def do_something(self):
+            print('Doing...')
+
+        @if_permitted
+        def do_something_else(self):
+            print('Doing something else...')
+
+
+    my = MyClass()
+
+    my.do_something()           # Doing...
+    my.do_something_else()      # Doing something else...
+
+    my.can_something = False
+
+    my.do_something()           # Sorry, you cannot do anything
+    my.do_something_else()      # Sorry, you cannot do anything
 
 
 Decorator with arguments
-========================
+------------------------
 Code:
     .. code-block:: python
 
@@ -99,11 +132,11 @@ Code:
 Is equivalent to:
     .. code-block:: python
 
-        my_function = my_decorator(my_param)(my_function)
+        my_function = my_decorator(a, b)(my_function)
 
 .. code-block:: python
 
-    def my_decorator(my_param=10):
+    def my_decorator(a=1, b=2):
         def decorator(fn):
             def wrapper(*args, **kwargs):
                 return fn(*args, **kwargs)
@@ -111,14 +144,13 @@ Is equivalent to:
         return decorator
 
 
-    @my_decorator(my_param=1)
+    @my_decorator(a=1)
     def my_function(name):
         print(name)
 
 
     my_function('Jan Twardowski')
     # Jan Twardowski
-
 
 
 Example

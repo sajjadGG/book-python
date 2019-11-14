@@ -23,24 +23,6 @@ First-class Function
     text = higher()     # <function __main__.lower()>
     text()              # 'My name... José Jiménez'
 
-Callable
-========
-.. code-block:: python
-
-    def hello():
-        return 'My name... José Jiménez'
-
-
-    type(hello())         # <class 'str'>
-    hello()               # My name... José Jiménez
-
-    type(hello)           # <class 'function'>
-    hello                 # <function hello at 0x0C55D420>
-
-    type('hello')         # <class 'str'>
-    'hello'               # 'hello'
-    'hello'()             # TypeError: 'str' object is not callable
-
 
 Aliases
 =======
@@ -88,6 +70,25 @@ Aliases
 
     now.__call__()
     # datetime.datetime(1969, 7, 21, 2, 56, 25)
+
+
+Callable
+========
+.. code-block:: python
+
+    def hello():
+        return 'My name... José Jiménez'
+
+
+    type(hello())         # <class 'str'>
+    hello()               # My name... José Jiménez
+
+    type(hello)           # <class 'function'>
+    hello                 # <function hello at 0x0C55D420>
+
+    type('hello')         # <class 'str'>
+    'hello'               # 'hello'
+    'hello'()             # TypeError: 'str' object is not callable
 
 
 Assignments

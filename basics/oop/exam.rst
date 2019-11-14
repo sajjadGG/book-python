@@ -40,7 +40,12 @@ Dragon (version alpha)
         #. going up subtract from ``y``
         #. going down add to ``y``
 
-    #. After each hit, print: name of the Dragon, damage taken, current health points
+    #. When dragon receives damage:
+
+        * print name of the Dragon
+        * how many damage was taken
+        * health points which left
+
     #. When health points drop to, and below zero:
 
         #. Dragon is dead
@@ -69,14 +74,15 @@ Dragon (version alpha)
         #. Make 25 points damage to the dragon
         #. Make 75 points damage to the dragon
 
-:Non-functional requirements:
-    * Task is a narrative story telling to demonstrate OOP and good engineering practices
-    * Last position should be x=20, y=40
-    * You can introduce new fields, methods, functions, variables, constants, classes, objects, whatever you want
-    * Task is business requirements specification, not a technical documentation, i.e. "what Dragon has to do, not how to do it"
-    * You don't have to keep order of business specification while writing code
-    * This is ``alpha`` version, so no new functionality like negative position checking
-    * Do not read any future iterations of this exercise. This is a simulation of development process. If you read future tasks, you will spoil fun and learning.
+    #. Non-functional requirements:
+
+        #. Task is a narrative story telling to demonstrate OOP and good engineering practices
+        #. Last position should be x=20, y=40
+        #. You can introduce new fields, methods, functions, variables, constants, classes, objects, whatever you want
+        #. Task is business requirements specification, not a technical documentation, i.e. "what Dragon has to do, not how to do it"
+        #. You don't have to keep order of business specification while writing code
+        #. This is ``alpha`` version, so no new functionality like negative position checking
+        #. Do not read any future iterations of this exercise. This is a simulation of development process. If you read future tasks, you will spoil fun and learning.
 
 :Polish:
     #. Smok ma:
@@ -101,7 +107,12 @@ Dragon (version alpha)
         #. idąc w górę odejmujesz ``y``
         #. idąc w dół dodajesz ``y``
 
-    #. Przy każdym obrażeniu wypisz nazwę Smoka, ilość obrażeń i pozostałe punkty życia
+    #. Gdy smok otrzymuje obrażenia:
+
+        * wypisz nazwę smoka,
+        * ilość obrażeń, które otrzymał
+        * pozostałe punkty życia
+
     #. Kiedy punkty życia Smoka spadną do, lub poniżej zera:
 
         #. Smok jest martwy
@@ -130,14 +141,15 @@ Dragon (version alpha)
         #. Zadaj 25 obrażeń smokowi
         #. Zadaj 75 obrażeń smokowi
 
-:Wymagania niefunkcjonalne:
-    * Zadanie jest tylko narracją do demonstracji OOP i dobrych praktyk programowania
-    * Pozycja Smoka na końcu powinna być x=20, y=40
-    * Możesz wprowadzać dodatkowe pola, metody, funkcje, zmienne, stały, klasy, obiekty, co tylko chcesz
-    * Zadanie jest specyfikacją wymagań biznesowych, a nie dokumentacją techniczną. tj. "co Smok ma robić, a nie jak to ma robić"
-    * Nie musisz trzymać się kolejności punktów i podpunktów w zadaniu
-    * Jest to wersja ``alpha`` więc bez dodatkowych funkcjonalności (np. sprawdzanie koordynatów)
-    * Nie przeglądaj kolejnych (przyszłych) części zadania. Zadanie jest symulacją procesu developmentu. Jeżeli zaglądniesz w przód, to zepsujesz sobie zabawę i naukę.
+    #. Wymagania niefunkcjonalne:
+
+        #. Zadanie jest tylko narracją do demonstracji OOP i dobrych praktyk programowania
+        #. Pozycja Smoka na końcu powinna być x=20, y=40
+        #. Możesz wprowadzać dodatkowe pola, metody, funkcje, zmienne, stały, klasy, obiekty, co tylko chcesz
+        #. Zadanie jest specyfikacją wymagań biznesowych, a nie dokumentacją techniczną. tj. "co Smok ma robić, a nie jak to ma robić"
+        #. Nie musisz trzymać się kolejności punktów i podpunktów w zadaniu
+        #. Jest to wersja ``alpha`` więc bez dodatkowych funkcjonalności (np. sprawdzanie koordynatów)
+        #. Nie przeglądaj kolejnych (przyszłych) części zadania. Zadanie jest symulacją procesu developmentu. Jeżeli zaglądniesz w przód, to zepsujesz sobie zabawę i naukę.
 
 :The whys and wherefores:
     * Object oriented thinking
@@ -152,3 +164,4 @@ Dragon (version alpha)
 
 :Hint:
     * ``from random import randint``
+    * ``randint`` returns random integer in range [a, b], including both end point
