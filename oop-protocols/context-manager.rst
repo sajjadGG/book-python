@@ -5,8 +5,8 @@ Context Managers
 
 Protocol
 ========
-* ``__enter__(self, *args, **kwargs) -> self``
-* ``__exit__(self, *args, **kwargs) -> None``
+* ``__enter__(self) -> self``
+* ``__exit__(self, *args) -> None``
 
 
 Application
@@ -36,12 +36,12 @@ Implementation
             print('Exiting the block')
             return None
 
-        def hello(self):
+        def do_something(self):
             print('I am inside')
 
 
     with MyClass() as cls:
-        cls.hello()
+        cls.do_something()
 
     # Entering the block
     # I am inside
@@ -121,20 +121,6 @@ Lock
     with lock:
         my_list.append(4)
 
-replaces the more verbose:
-
-.. code-block:: python
-
-    from threading import Lock
-
-    lock = Lock()
-    lock.acquire()
-
-    try:
-        my_list.append(item)
-    finally:
-        lock.release()
-
 
 Contextmanager decorator
 ========================
@@ -172,7 +158,7 @@ Contextmanager decorator
     import time
 
 
-    class MicroBenchmark(ContextDecorator):
+    class Timeit(ContextDecorator):
         def __enter__(self):
             self.start_time = time.time()
             return self
@@ -183,7 +169,7 @@ Contextmanager decorator
             print(f'Duration {duration:.4f} seconds')
 
 
-    @MicroBenchmark()
+    @Timeit()
     def my_function():
         list(range(100_000_000))
 
@@ -193,31 +179,42 @@ Contextmanager decorator
 
 .. code-block:: python
 
+    import time
+
+
     class Timeit:
         def __init__(self, name):
             self.name = name
 
         def __enter__(self):
-            self.start_time = datetime.now().timestamp()
+            self.start_time = time.time()
+            return self
 
         def __exit__(self, *arg, **kwargs):
-            self.end_time = datetime.now().timestamp()
+            self.end_time = time.time()
             duration = self.end_time - self.start_time
             print(f'Duration of {self.name} is {duration:f} seconds')
 
 
-    with Timeit('function'):
-        list(get_for_species_function(data, 'setosa'))
+    a = 'a'
+    b = 'b'
 
-    with Timeit('comprehension'):
-        list([row for row in data if row[4] == 'setosa'])
+    with Timeit('f-string'):
+        f'result of a+b is: {a} {b}'
 
-    with Timeit('generator short'):
-        list((row for row in data if row[4] == 'setosa'))
+    with Timeit('string concat'):
+        'result of a+b is: ' + a + b
 
-    with Timeit('generator'):
-        list(get_for_species_generator(data, 'setosa'))
+    with Timeit('str.format()'):
+        'result of a+b is: {0}{1}'.format(a, b)
 
+    with Timeit('%-style'):
+        'result of a+b is: %s%s' % (a, b)
+
+    # Duration of f-string is 0.000002 seconds
+    # Duration of string concat is 0.000001 seconds
+    # Duration of str.format() is 0.000003 seconds
+    # Duration of %-style is 0.000002 seconds
 
 Use Case
 --------
@@ -281,4 +278,3 @@ Buffered file
             file.append_line(...)
             file.append_line(...)
 
-        # after block with exits, save to file

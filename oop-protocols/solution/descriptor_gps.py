@@ -31,13 +31,13 @@ class GeographicCoordinate:
             else:
                 object.__set__('value', value)
 
-    def __init__(self):
-        self.latitude = GeographicCoordinate.Latitude()
-        self.longitude = GeographicCoordinate.Longitude()
-        self.elevation = GeographicCoordinate.Elevation()
+    def __init__(self, latitude, longitude, elevation):
+        self.latitude = GeographicCoordinate.Latitude(latitude)
+        self.longitude = GeographicCoordinate.Longitude(longitude)
+        self.elevation = GeographicCoordinate.Elevation(elevation)
 
 
-geo1 = GeographicCoordinate()
+geo1 = GeographicCoordinate(50, 120, 8000)
 geo2 = GeographicCoordinate()
 
 geo1.elevation = 100

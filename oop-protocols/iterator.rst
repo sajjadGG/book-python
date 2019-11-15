@@ -7,8 +7,8 @@ Iterators
 
 Protocol
 ========
-* ``__iter__() -> Iterator``
-* ``__next__() -> raise StopIteration``
+* ``__iter__(self) -> self``
+* ``__next__(self) -> raise StopIteration``
 
 
 Mechanism
@@ -171,7 +171,7 @@ Own Implementation
     from itertools import chain
 
 
-    class Keys:
+    class Character:
         def __init__(self, *values):
             self.values = values
             self._iter_index = 0
@@ -189,7 +189,7 @@ Own Implementation
             return element
 
 
-    class Values:
+    class Number:
         def __init__(self, *values):
             self.values = values
             self._iter_index = 0
@@ -207,16 +207,16 @@ Own Implementation
             return element
 
 
-    keys = Keys('a', 'b', 'c')
-    values = Values(1, 2, 3)
+    chars = Character('a', 'b', 'c')
+    nums = Number(1, 2, 3)
 
-    print(chain(keys, values))
+    print(chain(chars, nums))
     # <itertools.chain object at 0x1008ca0f0>
 
-    print(list(chain(keys, values)))
+    print(list(chain(chars, nums)))
     # [1, 2, 3, 'a', 'b', 'c']
 
-    for x in chain(keys, values):
+    for x in chain(chars, nums):
         print(x)
 
     # a
@@ -253,10 +253,13 @@ Own Implementation
     for i, status in enumerate(cycle(DATA)):
         print(i, status)
 
+        if i == 3:
+            break
+
     # 0, even
     # 1, odd
     # 2, even
-    # ...
+    # 3, odd
 
 
 Assignments

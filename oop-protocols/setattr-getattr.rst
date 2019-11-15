@@ -15,10 +15,10 @@ Built-in Functions
 
 Protocol
 ========
-* ``__setattr__(object, attribute_name, value)``
-* ``__getattribute__(object, attribute_name, default)``
-* ``__getattr__(object, attribute_name, default)``
-* ``__delattr__(object, attribute_name)``
+* ``__setattr__(self, attribute_name, value)``
+* ``__getattribute__(self, attribute_name, default)``
+* ``__getattr__(self, attribute_name, default)``
+* ``__delattr__(self, attribute_name)``
 
 
 ``__setattr__()``
