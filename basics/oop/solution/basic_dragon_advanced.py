@@ -10,6 +10,7 @@ def if_alive(method):
             return method(dragon, *args, **kwargs)
     return wrapper
 
+
 @dataclass(frozen=True)
 class Point:
     x: int = 0
@@ -133,4 +134,4 @@ except Dragon.IsDead:
 
     print(f'{dragon.name} is dead')
     print(f'Gold dropped: {drop["gold"]}')
-    print(f'Movable: {drop["position"]}')
+    print(f'Position: {drop["position"]}')

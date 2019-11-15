@@ -33,6 +33,20 @@ Tell - don't ask
     soyuz.ignite()
 
 
+.. code-block:: python
+
+    class Dragon:
+        def __init__(self):
+            self.status = 'dead'
+
+
+    wawelski = Dragon()
+
+
+    while wawelski.status != 'dead':
+        ...
+
+
 Objects and instances
 =====================
 .. code-block:: python
@@ -71,17 +85,102 @@ software entities … should be open for extension, but closed for modification
 
 The name open/closed principle has been used in two ways. Both ways use generalizations (for instance, inheritance or delegate functions) to resolve the apparent dilemma, but the goals, techniques, and results are different.
 
+.. code-block:: python
+
+    class DragonLevel1:
+        def _initial_health(self):
+            return 10
+
+        def __init__(self):
+            self.current_health = self._get_initial_health()
+
+
+    class DragonLevel2(Dragon):
+        def _initial_health(self):
+            return 20
+
+
+    lvl1 = DragonLevel1()
+    lvl2 = DragonLevel2()
+
+    print(lvl1.current_health)
+    print(lvl2.current_health)
+
 Liskov substitution principle
 -----------------------------
 objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program. See also design by contract.
 
 Substitutability is a principle in object-oriented programming stating that, in a computer program, if S is a subtype of T, then objects of type T may be replaced with objects of type S (i.e. an object of type T may be substituted with any object of a subtype S) without altering any of the desirable properties of the program (correctness, task performed, etc.).
 
+.. code-block:: python
+    :emphasize-lines: 23
+
+    class CacheInterface:
+        def get(self, key: str) -> str:
+            raise NotImplementedError
+
+        def set(self, key: str, value: str) -> None:
+            raise NotImplementedError
+
+        def is_valid(self, key: str) -> bool:
+            raise NotImplementedError
+
+
+    class CacheDatabase(CacheInterface):
+        def is_valid(self, key: str) -> bool:
+            ...
+
+        def get(self, key: str) -> str:
+            ...
+
+        def set(self, key: str, value: str) -> None:
+            ...
+
+
+    db: CacheInterface = CacheDatabase()
+    db.set('name', 'Jan Twardowski')
+    db.is_valid('name')
+    db.get('name')
+
 Interface segregation principle
 -------------------------------
 many client-specific interfaces are better than one general-purpose interface
 
 The interface-segregation principle (ISP) states that no client should be forced to depend on methods it does not use. ISP splits interfaces that are very large into smaller and more specific ones so that clients will only have to know about the methods that are of interest to them. Such shrunken interfaces are also called role interfaces. ISP is intended to keep a system decoupled and thus easier to refactor, change, and redeploy. ISP is one of the five SOLID principles of object-oriented design, similar to the High Cohesion Principle of GRASP.
+
+.. code-block:: python
+    :caption: Mixin classes - multiple inheritance.
+
+    class JSONSerializable:
+        def to_json(self):
+            import json
+            return json.dumps(self.__dict__)
+
+
+    class PickleSerializable:
+        def to_pickle(self):
+            import pickle
+            return pickle.dumps(self)
+
+
+    class User(JSONSerializable, PickleSerializable):
+        def __init__(self, first_name, last_name):
+            self.first_name = first_name
+            self.last_name = last_name
+
+
+    user = User(
+        first_name='Jan',
+        last_name='Twardowski',
+        address='Copernicus Crater, Moon'
+    )
+
+    print(user.to_json())
+    # {"first_name": "Jan", "last_name": "Twardowski", "address": "Copernicus Crater, Moon"}
+
+    print(user.to_pickle())
+    # b'\x80\x03c__main__\nUser\nq\x00)\x81q\x01}q\x02(X\n\x00\x00\x00first_nameq\x03X\x03\x00\x00\x00Janq\x04X\t\x00\x00\x00last_nameq\x05X\n\x00\x00\x00Twardowskiq\x06X\x07\x00\x00\x00addressq\x07X\x17\x00\x00\x00Copernicus Crater, Moonq\x08ub.'
+
 
 Dependency inversion principle
 ------------------------------

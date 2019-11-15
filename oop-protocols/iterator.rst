@@ -7,7 +7,7 @@ Iterators
 
 Protocol
 ========
-* ``__iter__()``
+* ``__iter__() -> Iterator``
 * ``__next__() -> raise StopIteration``
 
 
