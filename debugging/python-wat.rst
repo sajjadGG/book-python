@@ -2,26 +2,8 @@
 Python WAT?!
 ************
 
-.. code-block:: python
-
-    0.1 + 0.1 == 0.2
-    # True
-
-    0.1 + 0.2 == 0.3
-    # False
 
 .. code-block:: python
-
-    list('ABCDE')
-    # ['A', 'B', 'C', 'D', 'E']
-
-    list('ABCDE',)
-    # ['A', 'B', 'C', 'D', 'E']
-
-    list('ABCDE','asd')
-    # Traceback (most recent call last):
-    #  File "<input>", line 1, in <module>
-    # TypeError: list expected at most 1 arguments, got 2
 
     a = 'ABCDE'
     list(a)
@@ -35,10 +17,16 @@ Python WAT?!
     list(a)
     # ['ABCDE']
 
-.. code-block:: python
+    list('ABCDE')
+    # ['A', 'B', 'C', 'D', 'E']
 
-    999 + 1 is 1000         # False
-    1000 is 1000            # True
+    list('ABCDE',)
+    # ['A', 'B', 'C', 'D', 'E']
+
+    list('ABCDE','asd')
+    # Traceback (most recent call last):
+    #  File "<input>", line 1, in <module>
+    # TypeError: list expected at most 1 arguments, got 2
 
 .. code-block:: python
     :caption: CPython 3.7.4
@@ -53,12 +41,20 @@ Python WAT?!
 
 .. code-block:: python
 
-    1 + 1 is 2              # True
-    0.1 + 0.2 is 0.3        # False
+    1 + 1 is 2
+    # True
 
-.. code-block:: python
+    0.1 + 0.1 == 0.2
+    # True
 
-    2.2 * 3.0 == 3.3 * 2.0  # False
+    0.1 + 0.2 == 0.3
+    # False
+
+    0.1 + 0.2
+    # 0.30000000000000004
+
+    2.2 * 3.0 == 3.3 * 2.0
+    # False
 
 .. code-block:: python
 
@@ -89,24 +85,17 @@ Python WAT?!
 .. code-block:: python
 
     a = [1, 2, 3]
-    x = a
+    b = a
+    c = a.copy()
 
-    print(x)  # [1, 2, 3]
     print(a)  # [1, 2, 3]
+    print(b)  # [1, 2, 3]
+    print(c)  # [1, 2, 3]
 
-    x.append(4)
+    a.append(4)
 
-    print(x)  # [1, 2, 3, 4]
     print(a)  # [1, 2, 3, 4]
+    print(b)  # [1, 2, 3, 4]
+    print(c)  # [1, 2, 3]
 
-.. code-block:: python
-
-    a = [1, 2, 3]
-    x = a
-
-    x = a.copy()
-    x.append(4)
-
-    print(x)  # [1, 2, 3, 4]
-    print(a)  # [1, 2, 3]
 
