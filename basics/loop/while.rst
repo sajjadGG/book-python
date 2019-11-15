@@ -1,5 +1,7 @@
+.. _Loop While:
+
 **************
-``while`` loop
+Loop ``while``
 **************
 
 

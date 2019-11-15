@@ -1,12 +1,16 @@
-**************
-Sequence Types
-**************
+.. _Basic Sequences:
+
+***************
+Basic Sequences
+***************
 .. toctree::
-    :name: Sequence Types
+    :name: Basic Sequences
 
     list.rst
     tuple.rst
     set.rst
-    nested.rst
+
+    nesting.rst
     indexing.rst
     slicing.rst
+    unpacking.rst

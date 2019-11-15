@@ -1,6 +1,8 @@
-*****
-Types
-*****
+.. _Function Type Annotation:
+
+************************
+Function Type Annotation
+************************
 
 
 Type annotations

@@ -1,8 +1,8 @@
-.. _Iterating nested sequences:
+.. _Loop Nested Sequences:
 
-**************************
-Iterating nested sequences
-**************************
+*********************
+Loop Nested Sequences
+*********************
 
 
 Iterating over nested ``list`` items

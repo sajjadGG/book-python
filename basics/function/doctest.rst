@@ -1,6 +1,8 @@
-*******
-Doctest
-*******
+.. _Function Doctest:
+
+****************
+Function Doctest
+****************
 
 
 * tests are always the most up-to-date code documentation

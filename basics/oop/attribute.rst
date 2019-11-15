@@ -1,8 +1,8 @@
-.. _Attributes:
+.. _OOP Attributes:
 
-**********
-Attributes
-**********
+**************
+OOP Attributes
+**************
 
 * Attributes are also known as "Properties" or "Fields"
 * ``snake_case`` name convention

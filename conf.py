@@ -79,14 +79,17 @@ exclude_patterns += [
     '_static',
     '_themes',
     '_tmp',
-    '*/contrib/*',
-    '*/solution/*',
-    '*/solutions/*',
+    '**/contrib/*',
+    '**/solution/*',
+    '**/solutions/*',
     '**.ipynb_checkpoints',
     'README.rst',
     'TODO.rst',
     'Thumbs.db',
     '.DS_Store',
+
+    'basics/*/index.rst',
+    'stdlib/*/index.rst',
 ]
 
 templates_path = ['_templates']

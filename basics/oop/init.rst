@@ -1,6 +1,8 @@
-******************
-Initializer Method
-******************
+.. _OOP Initializer Method:
+
+**********************
+OOP Initializer Method
+**********************
 
 
 * It's a first method run after object is initiated

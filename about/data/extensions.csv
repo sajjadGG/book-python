@@ -1,6 +1,0 @@
-"Extension", "Description"
-"``.pyc``", "Compiled source code (bytecode)"
-"``.pyd``", "Compiled Windows DLL file"
-"``.pyw``", "Compiled Windows file. Executable with ``pythonw.exe``"
-"``.pyx``", "cPythona source for C/C++ conversion"
-"``.pyz``", "`zipapp <https://docs.python.org/3/library/zipapp.html>`_ compressed archive. Since Python 3.5"

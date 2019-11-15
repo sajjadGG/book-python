@@ -1,6 +1,8 @@
-****
-Exam
-****
+.. _OOP Exam:
+
+********
+OOP Exam
+********
 
 
 Dragon (version alpha)

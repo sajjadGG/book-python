@@ -1,6 +1,8 @@
-*****************
-Looping over dict
-*****************
+.. _Loop Dict:
+
+******************
+Loop over ``dict``
+******************
 
 
 * Since Python 3.7 ``dict`` keeps order

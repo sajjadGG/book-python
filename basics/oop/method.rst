@@ -1,6 +1,8 @@
-*******
-Methods
-*******
+.. _OOP Methods:
+
+***********
+OOP Methods
+***********
 
 
 * Methods are functions in the class

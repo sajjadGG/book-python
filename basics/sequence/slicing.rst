@@ -1,8 +1,8 @@
-.. _Slice:
+.. _Sequence Slicing:
 
-******
-Slices
-******
+****************
+Sequence Slicing
+****************
 
 
 Accessing range of elements

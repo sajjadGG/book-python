@@ -1,6 +1,6 @@
-********
-``list``
-********
+*****************
+Sequence ``list``
+*****************
 
 
 * Can store elements of any types

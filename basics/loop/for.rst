@@ -1,7 +1,7 @@
-.. _For loop:
+.. _Loop For:
 
 ************
-``for`` loop
+Loop ``for``
 ************
 
 

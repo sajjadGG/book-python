@@ -1,6 +1,8 @@
-**********
-Recurrence
-**********
+.. _Function Recurrence:
+
+*******************
+Function Recurrence
+*******************
 
     Aby zrozumieć rekurencję – musisz najpierw zrozumieć rekursję
 

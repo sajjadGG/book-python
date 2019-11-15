@@ -1,8 +1,8 @@
-.. _Indexes:
+.. _Sequence Indexing:
 
-*******
-Indexes
-*******
+*****************
+Sequence Indexing
+*****************
 
 
 Accessing element with index

@@ -9,10 +9,10 @@ Introduction
     :numbered:
     :caption: Introduction
 
-    /about/install.rst
-    /about/references.rst
-    /about/language.rst
-    /about/ide.rst
+    /introduction/install.rst
+    /introduction/references.rst
+    /introduction/language.rst
+    /introduction/ide.rst
 
 
 *************
@@ -23,17 +23,52 @@ Python basics
     :numbered:
     :caption: Python basics
 
-    /basics/syntax/index.rst
-    /basics/numeric/index.rst
-    /basics/logic/index.rst
-    /basics/character/index.rst
-    /basics/sequence/index.rst
-    /basics/mapping/index.rst
-    /basics/conditional/index.rst
-    /basics/loop/index.rst
-    /basics/control-flow/index.rst
-    /basics/function/index.rst
-    /basics/oop/index.rst
+    /basics/syntax/syntax.rst
+
+    /basics/type/int.rst
+    /basics/type/float.rst
+    /basics/type/bool.rst
+    /basics/type/none.rst
+    /basics/type/str.rst
+    /basics/type/str-methods.rst
+
+    /basics/sequence/list.rst
+    /basics/sequence/tuple.rst
+    /basics/sequence/set.rst
+    /basics/sequence/nesting.rst
+    /basics/sequence/indexing.rst
+    /basics/sequence/slicing.rst
+    /basics/sequence/unpacking.rst
+
+    /basics/mapping/dict.rst
+
+    /basics/conditional/operators.rst
+    /basics/conditional/statements.rst
+    /basics/conditional/expressions.rst
+
+    /basics/loop/while.rst
+    /basics/loop/for.rst
+    /basics/loop/nested.rst
+    /basics/loop/dict.rst
+    /basics/loop/else.rst
+    /basics/loop/comprehensions.rst
+
+    /basics/control-flow/exception.rst
+    /basics/control-flow/file.rst
+
+    /basics/function/basic.rst
+    /basics/function/types.rst
+    /basics/function/recurrence.rst
+    /basics/function/doctest.rst
+
+    /basics/oop/class.rst
+    /basics/oop/attribute.rst
+    /basics/oop/method.rst
+    /basics/oop/init.rst
+    /basics/oop/stringify.rst
+    /basics/oop/inheritance.rst
+    /basics/oop/operator-overload.rst
+    /basics/oop/exam.rst
 
 
 ****************
@@ -44,96 +79,86 @@ Standard Library
     :numbered:
     :caption: Standard Library
 
-    /stdlib/builtin.rst
-    /stdlib/keywords.rst
-    /stdlib/print.rst
-    /stdlib/venv.rst
-    /stdlib/pip.rst
-    /stdlib/import.rst
+    /stdlib/builtin/functions.rst
+    /stdlib/builtin/keywords.rst
+    /stdlib/builtin/print.rst
 
-*************
-Date and Time
-*************
+    /stdlib/oop/enum.rst
+    /stdlib/oop/dataclass.rst
+
+    /stdlib/module/venv.rst
+    /stdlib/module/install.rst
+    /stdlib/module/import.rst
+
+    /stdlib/math/math.rst
+    /stdlib/math/statistics.rst
+    /stdlib/math/random.rst
+    /stdlib/math/fractions.rst
+    /stdlib/math/decimal.rst
+    /stdlib/math/plotting.rst
+    /stdlib/math/complex.rst
+
+    /stdlib/datetime/datetime.rst
+    /stdlib/datetime/parse-and-format.rst
+    /stdlib/datetime/timedelta.rst
+    /stdlib/datetime/timestamp.rst
+    /stdlib/datetime/utils.rst
+    /stdlib/datetime/timezones.rst
+
+    /stdlib/serialization/csv.rst
+    /stdlib/serialization/json.rst
+    /stdlib/serialization/pickle.rst
+    /stdlib/serialization/xml.rst
+
+    /stdlib/database/db-api.rst
+    /stdlib/database/sqlite.rst
+    /stdlib/database/mysql.rst
+    /stdlib/database/postgresql.rst
+    /stdlib/database/mongodb.rst
+    /stdlib/database/orm.rst
+    /stdlib/database/migrations.rst
+    /stdlib/database/data-exploration.rst
+    /stdlib/database/sql-injection.rst
+    /stdlib/database/sql.rst
+
+    /stdlib/regular-expressions/syntax.rst
+    /stdlib/regular-expressions/match-search-findall.rst
+    /stdlib/regular-expressions/compile.rst
+    /stdlib/regular-expressions/groups.rst
+    /stdlib/regular-expressions/multiline.rst
+    /stdlib/regular-expressions/sub-split.rst
+    /stdlib/regular-expressions/greedy.rst
+    /stdlib/regular-expressions/examples.rst
+    /stdlib/regular-expressions/standards.rst
+
+    /stdlib/exam/exam.rst
+
+*******
+Quality
+*******
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Date and Time
+    :caption: Quality
 
-    /date-and-time/datetime.rst
-    /date-and-time/parse-and-format.rst
-    /date-and-time/timedelta.rst
-    /date-and-time/timestamp.rst
-    /date-and-time/utils.rst
-    /date-and-time/timezones.rst
+    /quality/good-engineering-practice/pep8.rst
+    /quality/good-engineering-practice/pep20.rst
+    /quality/good-engineering-practice/code-smells.rst
+    /quality/good-engineering-practice/documentation.rst
+    /quality/tests/unittest.rst
+    /quality/tests/pytest.rst
+    /quality/debugging/python-wat.rst
+    /quality/debugging/logging.rst
+    /quality/debugging/warnings.rst
+    /quality/debugging/debugging-basic.rst
+    /quality/debugging/debugging-advanced.rst
+    /quality/debugging/introspection.rst
+    /quality/type-annotation/types.rst
+    /quality/type-annotation/introspection.rst
+    /quality/type-annotation/checking.rst
+    /quality/type-annotation/annotating.rst
+    /quality/ci-cd/index.rst
 
-*************
-Serialization
-*************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Serialization
-
-    /serialization/csv.rst
-    /serialization/json.rst
-    /serialization/pickle.rst
-    /serialization/xml.rst
-
-********
-Database
-********
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Database
-
-    /database/db-api.rst
-    /database/sqlite.rst
-    /database/mysql.rst
-    /database/postgresql.rst
-    /database/mongodb.rst
-    /database/orm.rst
-    /database/migrations.rst
-    /database/data-exploration.rst
-    /database/sql-injection.rst
-    /database/sql.rst
-
-*************************
-Good Engineering Practice
-*************************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Good Engineering Practice
-
-    /good-engineering-practice/pep8.rst
-    /good-engineering-practice/pep20.rst
-    /good-engineering-practice/code-smells.rst
-    /good-engineering-practice/documentation.rst
-
-*****
-Tests
-*****
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Tests
-
-    /tests/unittest.rst
-    /tests/pytest.rst
-
-***************
-Type Annotation
-***************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Type Annotation
-
-    /type-annotation/types.rst
-    /type-annotation/introspection.rst
-    /type-annotation/checking.rst
-    /type-annotation/annotating.rst
 
 ******************
 Advanced Functions
@@ -150,38 +175,6 @@ Advanced Functions
     /functions-advanced/closures.rst
     /functions-advanced/decorator.rst
 
-*******************
-Regular Expressions
-*******************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Regular Expressions
-
-    /regular-expressions/syntax.rst
-    /regular-expressions/match-search-findall.rst
-    /regular-expressions/compile.rst
-    /regular-expressions/groups.rst
-    /regular-expressions/multiline.rst
-    /regular-expressions/sub-split.rst
-    /regular-expressions/greedy.rst
-    /regular-expressions/examples.rst
-    /regular-expressions/standards.rst
-
-*********
-Debugging
-*********
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Debugging
-
-    /debugging/python-wat.rst
-    /debugging/logging.rst
-    /debugging/warnings.rst
-    /debugging/debugging-basic.rst
-    /debugging/debugging-advanced.rst
-    /debugging/introspection.rst
 
 ************
 OOP Paradigm
@@ -278,7 +271,6 @@ System and Performance
 
     /system/operating-system/index.rst
     /system/distributing/index.rst
-    /system/ci-cd/index.rst
     /system/performance/index.rst
     /system/concurrency/index.rst
     /system/gui/index.rst
@@ -304,12 +296,10 @@ Numerical Analysis, Data Science
     :numbered:
     :caption: Numerical Analysis, Data Science
 
-    /numerical-analysis/stdlib/index.rst
     /numerical-analysis/tools/index.rst
     /numerical-analysis/numpy/index.rst
     /numerical-analysis/pandas/index.rst
     /numerical-analysis/data-visualization/index.rst
-
 
 ****************
 Machine Learning
@@ -330,24 +320,6 @@ Blogposts
     :caption: Blogposts
 
     /_blogpost/ml-introduction.rst
-
-********
-Workshop
-********
-.. toctree::
-    :maxdepth: 2
-    :hidden:
-    :numbered:
-    :caption: Workshops
-
-    /about/workshop-foundations.rst
-    /about/workshop-intermediate.rst
-    /about/workshop-advanced.rst
-    /about/workshop-network.rst
-    /about/workshop-django.rst
-    /about/workshop-testing.rst
-    /about/workshop-scientific.rst
-    /about/workshop-machine-learning.rst
 
 ****
 Exam
@@ -374,5 +346,13 @@ Appendixes
     /appendix/books.rst
     /appendix/video.rst
     /appendix/python-2vs3.rst
+    /appendix/workshop/foundations.rst
+    /appendix/workshop/intermediate.rst
+    /appendix/workshop/advanced.rst
+    /appendix/workshop/network.rst
+    /appendix/workshop/django.rst
+    /appendix/workshop/testing.rst
+    /appendix/workshop/scientific.rst
+    /appendix/workshop/machine-learning.rst
     /_references/references.rst
     /LICENSE.rst

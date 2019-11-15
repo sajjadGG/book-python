@@ -1,6 +1,6 @@
-*********
-``tuple``
-*********
+******************
+Sequence ``tuple``
+******************
 
 
 * Can store elements of any types

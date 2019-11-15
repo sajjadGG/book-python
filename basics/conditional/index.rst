@@ -1,10 +1,10 @@
-.. _Conditionals:
+.. _Basic Conditionals:
 
-************
-Conditionals
-************
+******************
+Basic Conditionals
+******************
 .. toctree::
 
-    if-else.rst
-    composite-statements.rst
     operators.rst
+    statements.rst
+    expressions.rst

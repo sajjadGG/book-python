@@ -1,6 +1,8 @@
-********
-``dict``
-********
+.. _Mapping Dict:
+
+****************
+Mapping ``dict``
+****************
 
 
 * ``dict`` are key-value storage

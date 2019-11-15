@@ -1,8 +1,8 @@
-.. _Operators:
+.. _Conditional Operators:
 
-*********
-Operators
-*********
+*********************
+Conditional Operators
+*********************
 
 
 Operator precedence

@@ -1,8 +1,8 @@
-.. _Files:
+.. _Control Flow Files:
 
-*****
-Files
-*****
+******************
+Control Flow Files
+******************
 
 
 Path

@@ -1,8 +1,8 @@
-.. _Classes and Instances:
+.. _OOP Classes and Instances:
 
-*********************
-Classes and Instances
-*********************
+*************************
+OOP Classes and Instances
+*************************
 
 
 Object Paradigm

@@ -1,8 +1,8 @@
-.. _Stringify objects:
+.. _OOP Stringify objects:
 
-*****************
-Stringify objects
-*****************
+*********************
+OOP Stringify objects
+*********************
 
 
 ``__str__()``
