@@ -23,6 +23,8 @@ Python basics
     :numbered:
     :caption: Python basics
 
+    /basics/exam/pre.rst
+
     /basics/syntax/syntax.rst
 
     /basics/type/int.rst
@@ -68,7 +70,8 @@ Python basics
     /basics/oop/stringify.rst
     /basics/oop/inheritance.rst
     /basics/oop/operator-overload.rst
-    /basics/oop/exam.rst
+
+    /basics/exam/post.rst
 
 
 ****************
@@ -78,6 +81,8 @@ Standard Library
     :maxdepth: 2
     :numbered:
     :caption: Standard Library
+
+    /stdlib/exam/pre.rst
 
     /stdlib/builtin/functions.rst
     /stdlib/builtin/keywords.rst
@@ -131,7 +136,7 @@ Standard Library
     /stdlib/regular-expressions/examples.rst
     /stdlib/regular-expressions/standards.rst
 
-    /stdlib/exam/exam.rst
+    /stdlib/exam/post.rst
 
 *******
 Quality
