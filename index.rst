@@ -47,13 +47,13 @@ Advanced
 
     /advanced/index.rst
 
-*******
-Quality
-*******
+*****************
+Quality and CI/CD
+*****************
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Quality
+    :caption: Quality and CI/CD
 
     /quality/good-engineering-practice/pep8.rst
     /quality/good-engineering-practice/pep20.rst
@@ -72,22 +72,6 @@ Quality
     /quality/type-annotation/checking.rst
     /quality/type-annotation/annotating.rst
     /quality/ci-cd/index.rst
-
-***************
-Design Patterns
-***************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Design Patterns
-
-    /design-patterns/dependency-injection.rst
-    /design-patterns/singleton.rst
-    /design-patterns/factory.rst
-    /design-patterns/gateway.rst
-    /design-patterns/callback.rst
-    /design-patterns/state-machine.rst
-    /design-patterns/gang-of-four.rst
 
 ****************
 Network and HTTP
