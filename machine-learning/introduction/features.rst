@@ -1,4 +1,4 @@
-.. _Features:
+.. _Machine Learning Features:
 
 ********
 Features

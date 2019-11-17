@@ -1,8 +1,8 @@
-.. _Machine Learning Statistics Introduction:
+.. _Machine Learning Basic Statistics:
 
-***********************
-Statistics Introduction
-***********************
+****************
+Basic Statistics
+****************
 
 
 * https://www.statsoft.pl/textbook/stathome_stat.html

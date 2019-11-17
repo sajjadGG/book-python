@@ -1,3 +1,5 @@
+.. _Machine Learning Clustering:
+
 **********
 Clustering
 **********

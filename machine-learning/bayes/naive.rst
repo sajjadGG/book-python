@@ -1,6 +1,8 @@
-*****
-Bayes
-*****
+.. _Machine Learning Naive Bayes:
+
+***********
+Naive Bayes
+***********
 
 Co to jest Naiwny klasyfikator Bayesowski?
 ==========================================

@@ -1,4 +1,4 @@
-.. _Deep Neural Network:
+.. _Machine Learning Deep Neural Network:
 
 *******************
 Deep Neural Network

@@ -1,8 +1,8 @@
 .. _Machine Learning References:
 
-*******************
+**********
 References
-*******************
+**********
 
 Neural Networks
 ===============
