@@ -5,7 +5,7 @@
 Introduction
 ************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :numbered:
     :caption: Introduction
 
@@ -14,7 +14,6 @@ Introduction
     /introduction/language.rst
     /introduction/ide.rst
 
-
 *************
 Python basics
 *************
@@ -22,74 +21,20 @@ Python basics
     :maxdepth: 1
     :numbered:
     :caption: Python basics
+    :name: Python basics
 
-    basics/index.rst
-
-
+    /basics/index.rst
 
 ****************
 Standard Library
 ****************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :numbered:
     :caption: Standard Library
+    :name: Standard Library
 
-    /stdlib/exam/pre.rst
-
-    /stdlib/builtin/functions.rst
-    /stdlib/builtin/keywords.rst
-    /stdlib/builtin/print.rst
-
-    /stdlib/oop/enum.rst
-    /stdlib/oop/dataclass.rst
-
-    /stdlib/module/venv.rst
-    /stdlib/module/install.rst
-    /stdlib/module/import.rst
-
-    /stdlib/math/math.rst
-    /stdlib/math/statistics.rst
-    /stdlib/math/random.rst
-    /stdlib/math/fractions.rst
-    /stdlib/math/decimal.rst
-    /stdlib/math/plotting.rst
-    /stdlib/math/complex.rst
-
-    /stdlib/datetime/datetime.rst
-    /stdlib/datetime/parse-and-format.rst
-    /stdlib/datetime/timedelta.rst
-    /stdlib/datetime/timestamp.rst
-    /stdlib/datetime/utils.rst
-    /stdlib/datetime/timezones.rst
-
-    /stdlib/serialization/csv.rst
-    /stdlib/serialization/json.rst
-    /stdlib/serialization/pickle.rst
-    /stdlib/serialization/xml.rst
-
-    /stdlib/database/db-api.rst
-    /stdlib/database/sqlite.rst
-    /stdlib/database/mysql.rst
-    /stdlib/database/postgresql.rst
-    /stdlib/database/mongodb.rst
-    /stdlib/database/orm.rst
-    /stdlib/database/migrations.rst
-    /stdlib/database/data-exploration.rst
-    /stdlib/database/sql-injection.rst
-    /stdlib/database/sql.rst
-
-    /stdlib/regular-expressions/syntax.rst
-    /stdlib/regular-expressions/match-search-findall.rst
-    /stdlib/regular-expressions/compile.rst
-    /stdlib/regular-expressions/groups.rst
-    /stdlib/regular-expressions/multiline.rst
-    /stdlib/regular-expressions/sub-split.rst
-    /stdlib/regular-expressions/greedy.rst
-    /stdlib/regular-expressions/examples.rst
-    /stdlib/regular-expressions/standards.rst
-
-    /stdlib/exam/post.rst
+    /stdlib/index.rst
 
 *******
 Quality

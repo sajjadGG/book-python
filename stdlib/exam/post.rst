@@ -77,5 +77,6 @@ Relational Files Database
     * :ref:`Basic Files`
     * :ref:`Basic Sequences`
     * :ref:`Basic Comprehensions`
-    * :ref:`Loop For`
-    * :ref:`Str methods`
+    * :ref:`Basic Loopigng`
+    * :ref:`Basic Str methods`
+    * :ref:`Stdlib Datetime`

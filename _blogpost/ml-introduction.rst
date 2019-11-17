@@ -51,7 +51,6 @@ Machine Learning to bardzo duży i złożony temat, a tak naprawdę to osobna ga
 
 Elementy języka Python i biblioteki standardowej
 ------------------------------------------------
-
 * :ref:`Basic Syntax`
 * :ref:`Basic Types`
 * :ref:`Basic Sequences`
@@ -61,9 +60,9 @@ Elementy języka Python i biblioteki standardowej
 * :ref:`Basic Control Flow`
 * :ref:`Basic Functions`
 * :ref:`Basic Object Oriented Programming`
-* :ref:`Stdlib Math`
+* :ref:`Stdlib Mathematics`
 * :ref:`Stdlib Serialization`
-* :ref:`Stdlib Installing Packages`
+* :ref:`Stdlib Modules and Packages`
 * :ref:`Performance Optimization`
 
 Środowisko
