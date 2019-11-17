@@ -25,24 +25,24 @@ Python Basics
 
     /basics/index.rst
 
-****************
-Standard Library
-****************
+*******************
+Python Intermediate
+*******************
 .. toctree::
     :maxdepth: 1
     :numbered:
-    :caption: Standard Library
-    :name: Standard Library
+    :caption: Python Intermediate
+    :name: Intermediate
 
-    /stdlib/index.rst
+    /intermediate/index.rst
 
-********
-Advanced
-********
+***************
+Python Advanced
+***************
 .. toctree::
     :maxdepth: 1
     :numbered:
-    :caption: Advanced
+    :caption: Python Advanced
     :name: Advanced
 
     /advanced/index.rst

@@ -1,53 +1,16 @@
-*******************************************
-Wprowadzenie do Machine Learning w Pythonie
-*******************************************
+.. _Machine Learning Introduction:
 
-Wraz ze wzrostem ilości przetwarzania i gromadzenia danych pojawiła się potrzeba ich szybszej analizy. Dotychczasowe "ręczne" metody stały się niewystarczające. Z tego powodu coraz bardziej popularne stały się algorytmy tzw. maszynowego uczenia (ang. ML - Machine Learning).
-
-Dzięki specjalnym algorytmom komputery będą w stanie z coraz większą dokładnością przewidywać rozwiązanie problemów. Bez względu na to czy mamy zamiar wykryć:
-
-- trend w danych marketingowych,
-- przewidzieć sprzedaż danego produktu,
-- przewidzieć wynik wyborów,
-- anomalię w logach płatności i danych kredytowych,
-- wykryć oszustwa (ang. fraud),
-- wykryć nietypowe odczyty urządzeń,
-- skategoryzować chorych wg. klas i stanu zdrowia,
-
-komputer zrobi to szybciej i dokładniej niż człowiek. Do każdego z wyżej wymienionych tematów możemy zastosować odpowiedni model, który podpowie nam odpowiedź.
-
-- Czym jest Machine Learning?
-- Czy temat rzeczywiście wymaga znajomości zaawansowanej matematyki?
-- Jak określić problem i tworzyć zbiór danych?
-- Jak wyselekcjonować dobre cechy?
-- Jak wybrać a później dostosować model?
-- Jak przedstawić go graficznie i zinterpretować wyniki?
-- Jak konstruować sieci neuronowe i jak wykorzystywać istniejące biblioteki?
-
-O klasach algorytmów i ich trafnym doborze do odpowiedniego problemu, jak również ich przykładowej implementacji opowiemy w trakcie cyklu Machine Learning w Pythonie. Zapraszam do artykułu gdzie odpowiemy na powyższe zagadnienia!
+*****************************
+Machine Learning Introduction
+*****************************
 
 
 Czym jest uczenie maszynowe?
 ============================
-Sama definicja uczenia maszynowego została stworzona przez Arthura Samuela w 1959 roku jako:
-
-> "field of study that gives computers the ability to learn without being explicitly programmed"
-
-w wolnym tłumaczeniu:
-
-> "obszar badań, który daje komputerom umiejętność uczenia się bez wcześniejszego zaprogramowania rozwiązania".
-
-Co można przez to rozumieć?
-
-
-
-
+Machine learning was defined in 1959 by Arthur Samuel as the "field of study that gives computers the ability to learn without being explicitly programmed." This means imbuing knowledge to machines without hard-coding it.
 
 Co trzeba wiedzieć przed rozpoczęciem pracy?
 ============================================
-Machine Learning to bardzo duży i złożony temat, a tak naprawdę to osobna gałąź informatyki. Podczas tych artykułów chciałbym się skupić na praktycznym wykorzystaniu uczenia maszynowego do rozwiązywania problemów.
-
-
 
 Elementy języka Python i biblioteki standardowej
 ------------------------------------------------
@@ -67,16 +30,22 @@ Elementy języka Python i biblioteki standardowej
 
 Środowisko
 ----------
-* Python 3.6+
-* Libs manually installed
+#. Python 3.6+
+#. Libs manually installed via ``requirements.txt``
 
-Anaconda
-    Anaconda is the leading open data science platform powered by Python. The open source version of Anaconda is a high performance distribution of Python and R and includes over 100 of the most popular Python, R and Scala packages for data science.
+    * ``numpy``
+    * ``pandas``
+    * ``scikit-learn``
+    * ``matplotlib``
+    * ``jupyter``
 
-    Additionally, you'll have access to over 720 packages that can easily be installed with conda, our renowned package, dependency and environment manager, that is included in Anaconda.
+Ecosystem Scipy
+---------------
+.. figure:: img/scipy-ecosystem.png
+    :scale: 50%
+    :align: center
 
-    * https://www.continuum.io/downloads
-
+    Scipy Ecosystem
 
 Biblioteki zewnętrzne do nauczania maszynowego
 ----------------------------------------------
@@ -206,7 +175,6 @@ Czyszczenie Danych
 ==================
 * Bardzo ważny temat
 * Rzadko kto o tym wspomina!
-* Czy to ten sam adres:
 
 .. code-block:: text
 
@@ -273,17 +241,12 @@ Przykład pracy z ``scikit-learn``
 
 .. code-block:: python
 
-    # Import the class you plan to use
     from sklearn.neighbours import KNeighboursClassifier()
 
-    # Instanciate the estimator
-    model = KNeighboursClassifier(n_neighbours=1)
-
-    # Fit the model with data (aka "model training")
-    model.fit(features, labels)
-
-    # Predict the response for a new observation
-    model.predict([3, 5, 4, 2])  # array([2])
+    model = KNeighboursClassifier(n_neighbours=1)    # Instanciate the estimator
+    model.fit(features, labels)     # Fit the model with data (aka "model training")
+    model.predict([3, 5, 4, 2])     # Predict the response for a new observation
+    # array([2])
 
     # Can predict for multiple observations at once
     model.predict([
@@ -298,7 +261,6 @@ Przykład pracy z ``scikit-learn``
 
     model = KNeighboursClassifier(n_neighbours=5)
     model.fit(features, labels)
-
     model.predict([
         [3, 5, 4, 2],
         [5, 4, 3, 2],
@@ -311,21 +273,11 @@ Przykład pracy z ``scikit-learn``
 
     model = LogisticsRegression()
     model.fit(features, labels)
-
     model.predict([
         [3, 5, 4, 2],
         [5, 4, 3, 2],
     ])
     # array([2, 0])
-
-
-Przykład pracy z ``PyMC3``
---------------------------
-#. Sparametryzuj swój problem używając rozkładów statystycznych
-#. Uzasadnij strukturę swojego modelu
-#. Napisz swój model używając PyMC3 i dokonaj obliczeń
-#. Zinterpretuj wynik bazując na rozkładach wynikowych
-#. (opcjonalnie) z nowymi wynikami dostosuj swój model statystyczny
 
 
 Kategorie algorytmów uczenia maszynowego
@@ -358,7 +310,7 @@ Example problems are classification and regression.
 * Sztuczne sieci neuronowe (ang. neural networks)
 
 Unsupervised Learning
------------------------------------
+---------------------
 Also known as:
 
     - Bez nadzoru
@@ -381,9 +333,6 @@ Example problems are clustering, dimensionality reduction and association rule l
 
 Semi-Supervised Learning
 ------------------------
-Also known as:
-
-    - Reinforcement learning
 
 Input data is a mixture of labeled and unlabelled examples.
 
@@ -410,3 +359,6 @@ Example algorithms are extensions to other flexible methods that make assumption
     * przedstawia iterację człowiekowi
     * człowiek interaktywnie poprawia i określa jakość oznaczania
     * komputer dokonuje kolejnej analizy
+
+Reinforcement learning
+----------------------
