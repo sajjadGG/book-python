@@ -179,7 +179,7 @@ Dragon
 * Estimated time of completion: 25 min
 
 :English:
-    #. Write unittest for the dragon created in exam at the end of :ref:`OOP Syntax` chapter
+    #. Write unittest for the dragon created in exam at the end of :ref:`Basic Exit Test` chapter
 
 :Polish:
-    #. Napisz testy jednostkowe dla Smoka z egzaminu na końcu rozdziału :ref:`OOP Syntax`
+    #. Napisz testy jednostkowe dla Smoka z egzaminu na końcu rozdziału :ref:`Basic Exit Test`

@@ -48,45 +48,11 @@ Data Frame:
     "``DataFrame.loc()``", "Access a group of rows and columns by label(s)"
     "``DataFrame.iloc()``", "Access a group of rows and columns by integer position(s)"
 
-.. toctree::
-    :maxdepth: 2
-
-    config.rst
-    import-export.rst
-
-    types-data.rst
-    types-date.rst
-
-    series-create.rst
-    series-attributes.rst
-    series-indexing.rst
-    series-slicing.rst
-    series-modification.rst
-    series-arithmetic.rst
-
-    df-create.rst
-    df-attributes.rst
-    df-select.rst
-    df-indexing.rst
-    df-slicing.rst
-    df-sample.rst
-    df-at.rst
-    df-locate.rst
-    df-modification.rst
-    df-sort.rst
-    df-statistics.rst
-    df-groupby.rst
-    df-aggregations.rst
-    df-join.rst
-
-    workflow.rst
-    example.rst
-
 
 Bibliography
 ============
 .. bibliography:: bibliography.bib
     :style: plain
-    :labelprefix: numpy
-    :keyprefix: numpy-
+    :labelprefix: pandas
+    :keyprefix: pandas-
     :all:

@@ -119,7 +119,7 @@ Inserting elements at specific position
 Accessing elements
 ==================
 .. highlights::
-    * More in :ref:`Indexes` and :ref:`Slice`
+    * More in :ref:`Sequence Indexing` and :ref:`Sequence Slicing`
 
 .. code-block:: python
 

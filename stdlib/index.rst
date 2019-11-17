@@ -6,7 +6,7 @@ Entry Test
     :caption: Entry Test
     :name: Stdlib Entry Test
 
-    /stdlib/exam/pre.rst
+    /stdlib/exam/entry.rst
 
 ********
 Builtins
@@ -42,6 +42,9 @@ Modules and Packages
     /stdlib/module/venv.rst
     /stdlib/module/install.rst
     /stdlib/module/import.rst
+    /stdlib/module/tools.rst
+    /stdlib/module/zipapp.rst
+    /stdlib/module/distributing.rst
 
 ***********
 Mathematics
@@ -111,7 +114,6 @@ Regular Expressions
 *******************
 .. toctree::
     :maxdepth: 0
-    :numbered:
     :caption: Regular Expressions
     :name: Stdlib Regular Expressions
 
@@ -125,11 +127,34 @@ Regular Expressions
     /stdlib/regular-expressions/examples.rst
     /stdlib/regular-expressions/standards.rst
 
+****************
+Operating System
+****************
+.. toctree::
+    :maxdepth: 0
+    :caption: Operating System
+    :name: Stdlib Operating System
+
+    /stdlib/operating-system/argparse.rst
+    /stdlib/operating-system/os.rst
+    /stdlib/operating-system/pathlib.rst
+
+***
+GUI
+***
+.. toctree::
+    :maxdepth: 0
+    :caption: GUI
+    :name: Stdlib GUI
+
+    /stdlib/gui/tkinter.rst
+
 *********
 Exit Test
 *********
 .. toctree::
     :maxdepth: 0
     :caption: Exit Test
+    :name: Stdlib Exit Test
 
-    /stdlib/exam/post.rst
+    /stdlib/exam/exit.rst

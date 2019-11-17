@@ -154,4 +154,4 @@ Classes and instances
     #. Stwórz instancję ``jpl`` klasy ``Location``
 
 :The whys and wherefores:
-    * :ref:`Classes and Instances`
+    * :ref:`OOP Classes and Instances`

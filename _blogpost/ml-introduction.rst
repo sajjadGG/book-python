@@ -63,7 +63,7 @@ Elementy języka Python i biblioteki standardowej
 * :ref:`Stdlib Mathematics`
 * :ref:`Stdlib Serialization`
 * :ref:`Stdlib Modules and Packages`
-* :ref:`Performance Optimization`
+* :ref:`Advanced Performance`
 
 Środowisko
 ----------

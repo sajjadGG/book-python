@@ -1,5 +1,3 @@
-.. _Basic Syntax:
-
 *************
 Syntax Basics
 *************
@@ -190,7 +188,7 @@ Variables vs. constants
     * Prints on the screen
     * Variable substitution
     * Special characters
-    * More in :ref:`Print Formatting`
+    * More in :ref:`Builtin Printing`
 
 .. code-block:: python
 

@@ -1,4 +1,4 @@
-.. _Control Flow Files:
+.. _Basic Files:
 
 ******************
 Control Flow Files

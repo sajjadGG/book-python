@@ -841,7 +841,7 @@ Random points
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/random_points.py`
+* Filename: :download:`solution/matplotlib_random_points.py`
 
 #. Wygeneruj 100 losowych punktów:
 

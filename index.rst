@@ -15,13 +15,13 @@ Introduction
     /introduction/ide.rst
 
 *************
-Python basics
+Python Basics
 *************
 .. toctree::
     :maxdepth: 1
     :numbered:
-    :caption: Python basics
-    :name: Python basics
+    :caption: Python Basics
+    :name: Basics
 
     /basics/index.rst
 
@@ -35,6 +35,17 @@ Standard Library
     :name: Standard Library
 
     /stdlib/index.rst
+
+********
+Advanced
+********
+.. toctree::
+    :maxdepth: 1
+    :numbered:
+    :caption: Advanced
+    :name: Advanced
+
+    /advanced/index.rst
 
 *******
 Quality
@@ -62,85 +73,6 @@ Quality
     /quality/type-annotation/annotating.rst
     /quality/ci-cd/index.rst
 
-
-******************
-Advanced Functions
-******************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Advanced Functions
-
-
-    /advanced/exam/pre.rst
-
-
-    /functions-advanced/generator.rst
-    /functions-advanced/defining.rst
-    /functions-advanced/calling.rst
-    /functions-advanced/first-class.rst
-    /functions-advanced/closures.rst
-    /functions-advanced/decorator.rst
-
-
-************
-OOP Paradigm
-************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: OOP Paradigm
-    :name: OOP Paradigm
-
-    /oop-paradigm/fields-static-dynamic.rst
-    /oop-paradigm/composition.rst
-    /oop-paradigm/method-resolution-order.rst
-    /oop-paradigm/relations.rst
-    /oop-paradigm/polymorphism.rst
-    /oop-paradigm/dynamic-typing.rst
-    /oop-paradigm/new-style-classes.rst
-    /oop-paradigm/interface.rst
-    /oop-paradigm/abstract-class.rst
-    /oop-paradigm/good-practices.rst
-    /oop-paradigm/exam.rst
-
-*************
-OOP Protocols
-*************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: OOP Protocols
-    :name: OOP Protocols
-
-    /oop-protocols/iterator.rst
-    /oop-protocols/context-manager.rst
-    /oop-protocols/staticmethod.rst
-    /oop-protocols/classmethod.rst
-    /oop-protocols/property.rst
-    /oop-protocols/setattr-getattr.rst
-    /oop-protocols/descriptor.rst
-
-
-
-
-
-************
-OOP Advanced
-************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: OOP Advanced
-    :name: OOP Advanced
-
-    /oop-advanced/constructor.rst
-    /oop-advanced/placeholder-class.rst
-    /oop-advanced/object-identity.rst
-    /oop-advanced/slots.rst
-    /oop-advanced/metaclass.rst
-    /oop-advanced/exam.rst
-
 ***************
 Design Patterns
 ***************
@@ -156,31 +88,6 @@ Design Patterns
     /design-patterns/callback.rst
     /design-patterns/state-machine.rst
     /design-patterns/gang-of-four.rst
-
-*********
-Paradigms
-*********
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Paradigms
-
-    /paradigms/functional-programming.rst
-    /paradigms/event-programming.rst
-
-**********************
-System and Performance
-**********************
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: System and Performance
-
-    /system/operating-system/index.rst
-    /system/distributing/index.rst
-    /system/performance/index.rst
-    /system/concurrency/index.rst
-    /system/gui/index.rst
 
 ****************
 Network and HTTP
@@ -199,22 +106,19 @@ Network and HTTP
 Numerical Analysis, Data Science
 ********************************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :numbered:
     :caption: Numerical Analysis, Data Science
 
-    /numerical-analysis/tools/index.rst
-    /numerical-analysis/numpy/index.rst
-    /numerical-analysis/pandas/index.rst
-    /numerical-analysis/data-visualization/index.rst
+    /numerical-analysis/index.rst
 
 ****************
 Machine Learning
 ****************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :numbered:
-    :caption: Math, Data Science and ML
+    :caption: Machine Learning
 
     /machine-learning/index.rst
 

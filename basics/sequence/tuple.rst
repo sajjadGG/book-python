@@ -68,7 +68,8 @@ Type Annotation
 
 Accessing elements
 ==================
-* More in :ref:`Indexes` and :ref:`Slice`
+.. highlights::
+    * More in :ref:`Sequence Indexing` and :ref:`Sequence Slicing`
 
 .. code-block:: python
 

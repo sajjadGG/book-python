@@ -87,7 +87,7 @@ Numerical Operators
     'My number %d' % 2      # My number 2
     'My number %f' % 2      # My number 2.0
 
-.. note:: ``%s``, ``%d``, ``%f`` is currently deprecated in favor of ``f'...'`` string formatting. The topic will be continued in :ref:`Print Formatting` chapter.
+.. note:: ``%s``, ``%d``, ``%f`` is currently deprecated in favor of ``f'...'`` string formatting. The topic will be continued in :ref:`Builtin Printing` chapter.
 
 Comparison Operators
 --------------------

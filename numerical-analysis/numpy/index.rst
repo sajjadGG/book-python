@@ -36,34 +36,6 @@ Data Structures:
     * Tablica - czterowymiarowa
     * Macierz - n-wymiarowa
 
-.. toctree::
-    :maxdepth: 2
-
-    builtin.rst
-    random.rst
-    import-export.rst
-
-    array-create.rst
-    array-dtype.rst
-    array-attributes.rst
-    array-shape.rst
-    array-indexing.rst
-    array-slicing.rst
-    array-iteration.rst
-    array-rounding.rst
-    array-methods.rst
-    array-arithmetic.rst
-    array-concatenation.rst
-    array-serialize.rst
-    array-statistics.rst
-    array-logic.rst
-    array-select.rst
-
-    statistics.rst
-    trigonometry.rst
-    polynomial.rst
-    algebra.rst
-
 .. todo:: Assignments:
 
     * http://www.labri.fr/perso/nrougier/teaching/numpy.100/

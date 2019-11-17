@@ -184,5 +184,5 @@ Data Modeling
         Jet Propulsion Laboratory, Pasadena, CA
 
 :The whys and wherefores:
-    * :ref:`Classes and Instances`
-    * :ref:`Attributes`
+    * :ref:`OOP Classes and Instances`
+    * :ref:`OOP Attributes`

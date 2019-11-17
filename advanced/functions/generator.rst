@@ -5,13 +5,15 @@ Generators
 **********
 
 
-.. note:: For information about Comprehensions, please refer to :ref:`Comprehensions`
+.. note::
+    For information about Comprehensions, please refer to :ref:`Basic Comprehensions`
 
 
 Generator expressions vs. Comprehensions
 ========================================
-* Comprehensions executes instantly
-* Generators are lazy evaluated
+.. highlights::
+    * Comprehensions executes instantly
+    * Generators are lazy evaluated
 
 .. code-block:: python
 
@@ -41,8 +43,9 @@ Generator expressions vs. Comprehensions
 
 Lazy evaluation
 ===============
-* Code do not execute instantly
-* Sometimes code is not executed at all!
+.. highlights::
+    * Code do not execute instantly
+    * Sometimes code is not executed at all!
 
 Declaring generators
 --------------------
@@ -63,8 +66,9 @@ Declaring generators
 
 Evaluating generator instantly
 ------------------------------
-* Not very efficient
-* If you need values evaluated instantly, there is no point in using generators
+.. highlights::
+    * Not very efficient
+    * If you need values evaluated instantly, there is no point in using generators
 
 .. code-block:: python
 
@@ -75,9 +79,10 @@ Evaluating generator instantly
 
 Evaluate generator iteratively
 ------------------------------
-* Generator will calculate next number for every loop iteration
-* Forgets previous number
-* Doesn't know the next number
+.. highlights::
+    * Generator will calculate next number for every loop iteration
+    * Forgets previous number
+    * Doesn't know the next number
 
 .. code-block:: python
 
@@ -94,7 +99,8 @@ Evaluate generator iteratively
 
 Halting iteration
 -----------------
-* Will generate only three numbers, then stop
+.. highlights::
+    * Will generate only three numbers, then stop
 
 .. code-block:: python
 
@@ -110,8 +116,9 @@ Halting iteration
 
 Halting and resuming iteration
 ------------------------------
-* Will generate only three numbers, then stop
-* Forget generator
+.. highlights::
+    * Will generate only three numbers, then stop
+    * Forget generator
 
 .. code-block:: python
 
@@ -161,8 +168,9 @@ What is the difference?
 
 Which one is better?
 --------------------
-* Comprehensions - Using values more than one
-* Generators - Using values once (for example in the loop iterator)
+.. highlights::
+    * Comprehensions - Using values more than one
+    * Generators - Using values once (for example in the loop iterator)
 
 
 ``yield`` Operator

@@ -1,7 +1,7 @@
-.. _OOP Stringify objects:
+.. _OOP Stringify Objects:
 
 *********************
-OOP Stringify objects
+OOP Stringify Objects
 *********************
 
 
@@ -184,7 +184,7 @@ Address Book from API
     #. Przeciąż ``str`` i ``repr`` aby osiągnąć rezultat wyświetlania
 
 :The whys and wherefores:
-    * :ref:`Stringify objects`
+    * :ref:`OOP Stringify Objects`
 
 :Input:
     .. code-block:: python

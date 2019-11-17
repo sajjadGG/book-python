@@ -3,9 +3,10 @@ Entry Test
 **********
 .. toctree::
     :maxdepth: 0
-    :caption: Pre Test
+    :caption: Entry Test
+    :name: Basic Entry Test
 
-    /basics/exam/pre.rst
+    /basics/exam/entry.rst
 
 ******
 Syntax
@@ -54,7 +55,7 @@ Mappings
 .. toctree::
     :maxdepth: 0
     :caption: Mappings
-    :name: Basic Mapprings
+    :name: Basic Mappings
 
     /basics/mapping/dict.rst
 
@@ -131,5 +132,6 @@ Exit Test
 .. toctree::
     :maxdepth: 0
     :caption: Exit Test
+    :name: Basic Exit Test
 
-    /basics/exam/post.rst
+    /basics/exam/exit.rst

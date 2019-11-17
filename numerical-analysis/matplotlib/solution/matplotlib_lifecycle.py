@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/data-vizualization/data/iris.csv'
+url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/matplotlib/data/iris.csv'
 iris = pd.read_csv(url)
 
 means = iris.groupby('species').mean()
