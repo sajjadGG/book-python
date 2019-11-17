@@ -7,10 +7,11 @@ Function Type Annotation
 
 Type annotations
 ================
-* Since Python 3.5
-* Types are not forced
-* Twoje IDE porówna typy oraz poinformuje cię jeżeli wykryje niezgodność
-* Użyj ``mypy`` lub ``pyre-check`` do sprawdzania typów
+.. highlights::
+    * Since Python 3.5
+    * Types are not forced
+    * Twoje IDE porówna typy oraz poinformuje cię jeżeli wykryje niezgodność
+    * Użyj ``mypy`` lub ``pyre-check`` do sprawdzania typów
 
 .. code-block:: python
 

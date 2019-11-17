@@ -134,7 +134,8 @@ Length
 
 ``list`` of ``list``
 ====================
-* Multidimensional lists
+.. highlights::
+    * Multidimensional lists
 
 .. code-block:: python
 

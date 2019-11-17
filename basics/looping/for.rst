@@ -10,8 +10,9 @@ Syntax
 
 Generic syntax
 --------------
-* ``DATA`` must implement ``iterator`` interface
-* More on iterators in chapter :ref:`Iterators`
+.. highlights::
+    * ``DATA`` must implement ``iterator`` interface
+    * More on iterators in chapter :ref:`Iterators`
 
 .. code-block:: python
     :caption: ``for`` loop syntax
@@ -48,7 +49,8 @@ Example
 
 Iterating over ``str``
 ======================
-* Iterating ``str`` will get character on each iteration
+.. highlights::
+    * Iterating ``str`` will get character on each iteration
 
 .. code-block:: python
     :caption: Iterating over ``str``
@@ -121,11 +123,12 @@ Working with Generators and Iterators
 
 Loops with ``range``
 --------------------
-* ``range(start, stop, step)``
-* ``range(0, 3)`` will generate ``(0, 1, 2)``
-* ``start`` is inclusive, default: ``0``
-* ``stop`` is exclusive, required
-* ``step`` default: ``1``
+.. highlights::
+    * ``range(start, stop, step)``
+    * ``range(0, 3)`` will generate ``(0, 1, 2)``
+    * ``start`` is inclusive, default: ``0``
+    * ``stop`` is exclusive, required
+    * ``step`` default: ``1``
 
 .. code-block:: python
     :caption: Loops with ``range``
@@ -150,9 +153,10 @@ Loops with ``range``
 
 ``enumerate``
 -------------
-* Pythonic way
-* Preferred over ``i=0`` and ``i+=1`` for every iteration
-* ``enumerate()`` will return ``counter`` and ``value`` for every iteration
+.. highlights::
+    * Pythonic way
+    * Preferred over ``i=0`` and ``i+=1`` for every iteration
+    * ``enumerate()`` will return ``counter`` and ``value`` for every iteration
 
 .. code-block:: python
     :caption: ``enumerate()`` will return ``counter`` and ``value`` for every iteration

@@ -17,7 +17,8 @@ Defining ``float``
 
 Notation without leading or trailing zero
 -----------------------------------------
-* Used by ``numpy``
+.. highlights::
+    * Used by ``numpy``
 
 .. code-block:: python
 
@@ -77,8 +78,9 @@ Infinity representation
 
 Converting to ``float``
 =======================
-* Also known as "type casting"
-* ``float()`` converts argument to ``float``
+.. highlights::
+    * Also known as "type casting"
+    * ``float()`` converts argument to ``float``
 
 .. code-block:: python
 

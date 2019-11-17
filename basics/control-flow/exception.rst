@@ -7,13 +7,14 @@ Control Flow Exceptions
 
 What are and why to use exceptions?
 ===================================
-* Used when error occurs
-* You can catch exception and handles erroneous situation
-* Exception example situations:
+.. highlights::
+    * Used when error occurs
+    * You can catch exception and handles erroneous situation
+    * Exception example situations:
 
-    * File does not exists
-    * Function argument is invalid
-    * Network or database connection could not be established
+        * File does not exists
+        * Function argument is invalid
+        * Network or database connection could not be established
 
 
 Most common exceptions
@@ -21,7 +22,8 @@ Most common exceptions
 
 AttributeError
 --------------
-* Attribute reference or assignment fails
+.. highlights::
+    * Attribute reference or assignment fails
 
 .. code-block:: python
     :caption: ``AttributeError`` exception
@@ -34,7 +36,8 @@ AttributeError
 
 ImportError, ModuleNotFoundError
 --------------------------------
-* Module could not be located
+.. highlights::
+    * Module could not be located
 
 .. code-block:: python
     :caption: ``ModuleNotFoundError`` exception
@@ -46,7 +49,8 @@ ImportError, ModuleNotFoundError
 
 IndexError
 ----------
-* Sequence subscript is out of range
+.. highlights::
+    * Sequence subscript is out of range
 
 .. code-block:: python
     :caption: ``IndexError`` exception
@@ -59,7 +63,8 @@ IndexError
 
 KeyError
 --------
-* Dictionary key is not found
+.. highlights::
+    * Dictionary key is not found
 
 .. code-block:: python
     :caption: ``KeyError`` exception
@@ -72,7 +77,8 @@ KeyError
 
 NameError
 ---------
-* Local or global name is not found
+.. highlights::
+    * Local or global name is not found
 
 .. code-block:: python
     :caption: ``KeyError`` exception
@@ -83,7 +89,8 @@ NameError
 
 SyntaxError
 -----------
-* Parser encounters a syntax error
+.. highlights::
+    * Parser encounters a syntax error
 
 .. code-block:: python
     :caption: ``SyntaxError`` exception
@@ -96,7 +103,8 @@ SyntaxError
 
 IndentationError
 ----------------
-* Syntax errors related to incorrect indentation
+.. highlights::
+    * Syntax errors related to incorrect indentation
 
 .. code-block:: python
     :caption: ``IndentationError`` exception
@@ -111,7 +119,8 @@ IndentationError
 
 TypeError
 ---------
-* Operation or function is applied to an object of inappropriate type
+.. highlights::
+    * Operation or function is applied to an object of inappropriate type
 
 .. code-block:: python
     :caption: ``TypeError`` exception
@@ -122,7 +131,8 @@ TypeError
 
 ValueError
 ----------
-* Argument is right type but an inappropriate value
+.. highlights::
+    * Argument is right type but an inappropriate value
 
 .. code-block:: python
     :caption: ``ValueError`` exception
@@ -175,7 +185,8 @@ Traceback
 
 Traceback analysis
 ------------------
-* Stacktrace is 8 levels deep, it's not Java's 200 ;)
+.. highlights::
+    * Stacktrace is 8 levels deep, it's not Java's 200 ;)
 
 .. code-block:: python
     :emphasize-lines: 11-15
@@ -199,9 +210,10 @@ Traceback analysis
 
 Change verbosity level
 ----------------------
-* Change level with ``sys.tracebacklimit``
-* From time to time you can have problems somewhere in the middle, but it's rare
-* Last lines are the most important, in most cases error is there
+.. highlights::
+    * Change level with ``sys.tracebacklimit``
+    * From time to time you can have problems somewhere in the middle, but it's rare
+    * Last lines are the most important, in most cases error is there
 
 .. code-block:: python
     :emphasize-lines: 1,2
@@ -222,10 +234,11 @@ Change verbosity level
 
 Catching exceptions
 ===================
-* ``try``
-* ``except``
-* ``else``
-* ``finally``
+.. highlights::
+    * ``try``
+    * ``except``
+    * ``else``
+    * ``finally``
 
 Catch single exception
 ----------------------
@@ -306,7 +319,8 @@ Exceptions logging
 
 ``else``
 --------
-* Executed when no exception occurred
+.. highlights::
+    * Executed when no exception occurred
 
 .. code-block:: python
 
@@ -322,8 +336,9 @@ Exceptions logging
 
 ``finally``
 -----------
-* Executed always (even if there was exception)
-* Used to close file, connection or transaction to database
+.. highlights::
+    * Executed always (even if there was exception)
+    * Used to close file, connection or transaction to database
 
 .. code-block:: python
 
@@ -507,6 +522,7 @@ Real life use-case
         )
     except User.DoesNotExists:
         print('Sorry, no such user in database')
+
 
 Assignments
 ===========

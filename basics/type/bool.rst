@@ -5,9 +5,10 @@ Type ``bool``
 
 Defining ``bool``
 =================
-* ``True`` - Positive value
-* ``False`` - Negative value
-* First letter capitalized, other are lower cased
+.. highlights::
+    * ``True`` - Positive value
+    * ``False`` - Negative value
+    * First letter capitalized, other are lower cased
 
 .. code-block:: python
 
@@ -20,8 +21,9 @@ Defining ``bool``
 
 Converting to ``bool``
 ======================
-* Also known as "type casting"
-* ``bool()`` converts argument to ``bool``
+.. highlights::
+    * Also known as "type casting"
+    * ``bool()`` converts argument to ``bool``
 
 .. code-block:: python
 
@@ -41,17 +43,18 @@ Converting to ``bool``
 
 Negative values
 ===============
-* ``False``
-* ``None``
-* ``0``
-* ``0.0``
-* ``0+0j``
-* ``0.0+0.0j``
-* empty ``str()`` or ``''``
-* empty ``tuple()`` or ``()``
-* empty ``dict()`` or ``{}``
-* empty ``list()`` or ``[]``
-* empty ``set()``
+.. highlights::
+    * ``False``
+    * ``None``
+    * ``0``
+    * ``0.0``
+    * ``0+0j``
+    * ``0.0+0.0j``
+    * empty ``str()`` or ``''``
+    * empty ``tuple()`` or ``()``
+    * empty ``dict()`` or ``{}``
+    * empty ``list()`` or ``[]``
+    * empty ``set()``
 
 
 Boolean logic

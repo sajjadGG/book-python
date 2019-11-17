@@ -7,8 +7,9 @@ OOP Stringify objects
 
 ``__str__()``
 =============
-* for end-user
-* ``print`` converts it's arguments to ``str()`` before printing
+.. highlights::
+    * for end-user
+    * ``print`` converts it's arguments to ``str()`` before printing
 
 .. code-block:: python
     :caption: Object without ``__str__()`` method overloaded prints their memory address
@@ -42,10 +43,12 @@ OOP Stringify objects
 
 ``__repr__()``
 ==============
-* for developers
-* object representation
-* copy-paste for creating object with the same values
-* useful for debugging
+.. highlights::
+    * for developers
+    * object representation
+    * copy-paste for creating object with the same values
+    * useful for debugging
+    * printing ``list`` will call ``__repr__`` on each element
 
 .. code-block:: python
     :caption: Using ``__repr__()`` on a class
@@ -63,7 +66,6 @@ OOP Stringify objects
      repr(point)    # Iris(species="setosa")
      point          # Iris(species="setosa")
 
-* printing ``list`` will call ``__repr__`` on each element
 
 .. code-block:: python
     :caption: printing ``list`` will call ``__repr__`` on each element
@@ -121,7 +123,8 @@ OOP Stringify objects
 
 ``__format__()``
 ================
-* ``__format__()`` - do zaawansowanego formatowania
+.. highlights::
+    * Used for advanced formatting
 
 .. code-block:: python
 

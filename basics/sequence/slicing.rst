@@ -7,12 +7,13 @@ Sequence Slicing
 
 Accessing range of elements
 ===========================
-* Slice Index must be positive or negative ``int`` or zero
-* Slice has three indexes:
+.. highlights::
+    * Slice Index must be positive or negative ``int`` or zero
+    * Slice has three indexes:
 
-    - start (inclusive)
-    - stop (exclusive)
-    - step
+        - start (inclusive)
+        - stop (exclusive)
+        - step
 
 
 Accessing slice from start
@@ -33,7 +34,8 @@ Accessing slice from start
 
 Accessing slice from back
 =========================
-* Negative index starts from the end and go right to left
+.. highlights::
+    * Negative index starts from the end and go right to left
 
 .. code-block:: python
 
@@ -181,8 +183,9 @@ Slicing nested sequences
 
 Slice function
 ==============
-* Slice object can be returned from function
-* Function can, for example, calculate starting point of a sub-string
+.. highlights::
+    * Slice object can be returned from function
+    * Function can, for example, calculate starting point of a sub-string
 
 .. code-block:: python
 

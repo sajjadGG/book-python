@@ -32,10 +32,11 @@ Object initialization
 
 ``__new__()``
 =============
-* the constructor
-* solely for creating the object
-* ``cls`` as it's first parameter
-* when calling ``__new__()`` you actually don't have an instance yet, therefore no ``self`` exists at that moment
+.. highlights::
+    * the constructor
+    * solely for creating the object
+    * ``cls`` as it's first parameter
+    * when calling ``__new__()`` you actually don't have an instance yet, therefore no ``self`` exists at that moment
 
 .. code-block:: python
     :emphasize-lines: 2,3,4
@@ -51,11 +52,12 @@ Object initialization
 
 ``__init__()``
 ==============
-* the initializer
-* for initializing object with data
-* ``self`` as it's first parameter
-* ``__init__()`` is called after ``__new__()`` and the instance is in place, so you can use ``self`` with it
-* it's purpose is just to alter the fresh state of the newly created instance
+.. highlights::
+    * the initializer
+    * for initializing object with data
+    * ``self`` as it's first parameter
+    * ``__init__()`` is called after ``__new__()`` and the instance is in place, so you can use ``self`` with it
+    * it's purpose is just to alter the fresh state of the newly created instance
 
 .. code-block:: python
     :emphasize-lines: 2,3

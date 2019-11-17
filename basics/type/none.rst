@@ -7,10 +7,11 @@ Type ``None``
 
 Defining ``None``
 =================
-* First letter capitalized, other are lower cased
-* Empty (null) or unknown (unset) value
-* It is not ``False`` value
-* With ``if`` statements behaves like negative values
+.. highlights::
+    * First letter capitalized, other are lower cased
+    * Empty (null) or unknown (unset) value
+    * It is not ``False`` value
+    * With ``if`` statements behaves like negative values
 
 .. code-block:: python
 
@@ -19,7 +20,8 @@ Defining ``None``
 
 Logic operators
 ===============
-* Do not use ``==`` or ``!=`` to check ``None`` values
+.. highlights::
+    * Do not use ``==`` or ``!=`` to check ``None`` values
 
 .. csv-table:: Logic operators
     :header: "Operand", "Description"

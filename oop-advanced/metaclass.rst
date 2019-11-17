@@ -4,6 +4,7 @@
 Metaclass
 *********
 
+.. epigraph::
     "Metaclasses are deeper magic than 99% of users should ever worry about. If you wonder whether you need them, you don’t (the people who actually need them know with certainty that they need them, and don’t need an explanation about why)." -- Tim Peters
 
 
@@ -12,9 +13,10 @@ Metaclass mechanism
 
 What are Metaclasses?
 ---------------------
-* Class is an instance of a Metaclass
-* Class defines how an instance of the class behaves
-* Metaclass defines how a class behaves
+.. highlights::
+    * Class is an instance of a Metaclass
+    * Class defines how an instance of the class behaves
+    * Metaclass defines how a class behaves
 
 .. figure:: img/metaclass-instances.png
     :scale: 75%
@@ -24,17 +26,19 @@ What are Metaclasses?
 
 How Metaclasses works?
 ----------------------
-* Instances are created by calling the class
-* Python creates a new class (when it executes the 'class' statement) by calling the metaclass
-* Combined with the normal ``__init__`` and ``__new__`` methods
-* Metaclasses allow you to do 'extra things' when creating a class
+.. highlights::
+    * Instances are created by calling the class
+    * Python creates a new class (when it executes the 'class' statement) by calling the metaclass
+    * Combined with the normal ``__init__`` and ``__new__`` methods
+    * Metaclasses allow you to do 'extra things' when creating a class
 
 Example use of Metaclasses
 --------------------------
-* Allow customization of class instantiation
-* Most commonly used as a class-factory
-* Registering the new class with some registry
-* Replace the class with something else entirely
+.. highlights::
+    * Allow customization of class instantiation
+    * Most commonly used as a class-factory
+    * Registering the new class with some registry
+    * Replace the class with something else entirely
 
 
 Type and objects
@@ -133,6 +137,7 @@ Example
     Virginica.kingdom      # Plantae
     Versicolor.kingdom     # Plantae
 
+
 Factories
 =========
 
@@ -181,7 +186,8 @@ Class Factory
 
 Metaclass replacements
 ======================
-* Effectively accomplish the same thing
+.. highlights::
+    * Effectively accomplish the same thing
 
 Inheritance
 -----------

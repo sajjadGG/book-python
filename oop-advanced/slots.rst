@@ -3,8 +3,9 @@ Slots
 *****
 
 
-* faster attribute access
-* space savings in memory
+.. highlights::
+    * faster attribute access
+    * space savings in memory
 
 Instead of having a dynamic dict that allows adding attributes to objects at anytime, there is a static structure which does not allow additions after creation. This saves the overhead of one dict for every object that uses slots
 

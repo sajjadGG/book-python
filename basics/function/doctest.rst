@@ -5,13 +5,14 @@ Function Doctest
 ****************
 
 
-* tests are always the most up-to-date code documentation
-* tests cannot get out of sync from code
-* checks if function is outputs expected result
-* useful for regex modifications
-* can add text (i.e. explanations) between tests
-* Case Study: https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/linear_model/base.py#L409
-* PyCharm doctest runner warns about ``DeprecationWarning``, fix in progress -  https://youtrack.jetbrains.com/issue/PY-31751
+.. highlights::
+    * tests are always the most up-to-date code documentation
+    * tests cannot get out of sync from code
+    * checks if function is outputs expected result
+    * useful for regex modifications
+    * can add text (i.e. explanations) between tests
+    * Case Study: https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/linear_model/base.py#L409
+    * PyCharm doctest runner warns about ``DeprecationWarning``, fix in progress -  https://youtrack.jetbrains.com/issue/PY-31751
 
 
 Running tests
@@ -19,7 +20,8 @@ Running tests
 
 Running tests with your IDE
 ---------------------------
-* View menu -> Run... -> Doctest in ``my_function``
+.. highlights::
+    * View menu -> Run... -> Doctest in ``my_function``
 
 From code
 ---------
@@ -106,8 +108,9 @@ Test for ``str`` return values
 
 Returning ``str``
 -----------------
-* Python will change to single quotes in most cases
-* Python will change to double quotes to avoid escapes
+.. highlights::
+    * Python will change to single quotes in most cases
+    * Python will change to double quotes to avoid escapes
 
 .. code-block:: python
     :caption: Python will change to single quotes in most cases
@@ -134,7 +137,8 @@ Returning ``str``
 
 Testing ``print()``
 -------------------
-* ``print()`` function results, don't have quotes
+.. highlights::
+    * ``print()`` function results, don't have quotes
 
 .. code-block:: python
     :caption: ``print()`` function results, don't have quotes

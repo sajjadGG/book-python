@@ -5,9 +5,10 @@ OOP Methods
 ***********
 
 
-* Methods are functions in the class
-* First argument is always instance (``self``)
-* While calling function you never pass ``self``
+.. highlights::
+    * Methods are functions in the class
+    * First argument is always instance (``self``)
+    * While calling function you never pass ``self``
 
 
 Methods without arguments

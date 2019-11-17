@@ -7,7 +7,8 @@ Loop ``else``
 
 ``while``
 =========
-* ``else`` will execute, if ``break`` was not used to exit the loop
+.. highlights::
+    * ``else`` will execute, if ``break`` was not used to exit the loop
 
 .. code-block:: python
 
@@ -29,7 +30,8 @@ Loop ``else``
 
 ``for``
 =======
-* ``else`` will execute, if ``break`` was not used to exit the loop
+.. highlights::
+    * ``else`` will execute, if ``break`` was not used to exit the loop
 
 .. code-block:: python
 

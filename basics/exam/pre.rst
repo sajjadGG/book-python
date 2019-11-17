@@ -1,4 +1,6 @@
-***************
-Pre-foundations
-***************
+.. _Basics Entry Exam:
+
+**********
+Entry Exam
+**********
 

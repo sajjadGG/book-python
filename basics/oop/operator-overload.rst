@@ -7,8 +7,9 @@ OOP Operator Overload
 
 Why to use operator overload?
 =============================
-* Readable syntax
-* Simpler operations
+.. highlights::
+    * Readable syntax
+    * Simpler operations
 
 .. code-block:: python
 

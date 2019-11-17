@@ -5,21 +5,23 @@ Object Identity
 
 ``id()``
 ========
-* ``id()`` will change every time you execute script
-* An integer which is guaranteed to be unique and constant for this object during its lifetime
-* Two objects with non-overlapping lifetimes may have the same id() value.
-* In CPython it's also the memory address of the corresponding C object
+.. highlights::
+    * ``id()`` will change every time you execute script
+    * An integer which is guaranteed to be unique and constant for this object during its lifetime
+    * Two objects with non-overlapping lifetimes may have the same id() value.
+    * In CPython it's also the memory address of the corresponding C object
 
 ``hash()``
 ==========
-* Return the hash value of the object (if it has one)
-* ``hash() ->  int``
-* They are used to quickly compare dictionary keys during a dictionary lookup
-* ``set()`` elements has to be hashable
-* ``dict()`` keys has to be hashable
-* User-defined classes have ``__eq__()`` and ``__hash__()`` methods by default
-* All objects compare unequal (except with themselves)
-* ``x.__hash__()`` returns an appropriate value such that ``x == y`` implies both that ``x is y`` and ``hash(x) == hash(y)``
+.. highlights::
+    * Return the hash value of the object (if it has one)
+    * ``hash() ->  int``
+    * They are used to quickly compare dictionary keys during a dictionary lookup
+    * ``set()`` elements has to be hashable
+    * ``dict()`` keys has to be hashable
+    * User-defined classes have ``__eq__()`` and ``__hash__()`` methods by default
+    * All objects compare unequal (except with themselves)
+    * ``x.__hash__()`` returns an appropriate value such that ``x == y`` implies both that ``x is y`` and ``hash(x) == hash(y)``
 
 .. code-block:: python
     :caption: ``dict()`` keys has to be hashable
@@ -107,14 +109,15 @@ Object Identity
 
 String interning
 ================
-* https://en.wikipedia.org/wiki/String_interning
-* Method of storing only one copy of each distinct string value, which must be immutable
-* many high level languages use it
-* string literals and values are internally kept in a hashed list called 'string intern pool' and those which are identical are rendered as references to the same object
-* possible because ``str`` are immutable
-* implementation dependent
-* Jython, IronPython, PyPy and others may intern more aggressively
-* Calling the ``intern()`` function on strings will "force" a string to have the same object identity as any equivalent and previously interned string
+.. highlights::
+    * https://en.wikipedia.org/wiki/String_interning
+    * Method of storing only one copy of each distinct string value, which must be immutable
+    * many high level languages use it
+    * string literals and values are internally kept in a hashed list called 'string intern pool' and those which are identical are rendered as references to the same object
+    * possible because ``str`` are immutable
+    * implementation dependent
+    * Jython, IronPython, PyPy and others may intern more aggressively
+    * Calling the ``intern()`` function on strings will "force" a string to have the same object identity as any equivalent and previously interned string
 
 .. code-block:: python
     :caption: CPython 3.7.4
@@ -128,12 +131,13 @@ String interning
 
 ``is``
 ======
-* ``is`` checks for object identity
-* ``is`` tests for identity, not equality
-* Compares ``id()`` output for both objects
-* CPython: compares the memory address a object resides in
-* Is used for checking if ``None``
-* Testing strings with ``is`` only works when the strings are interned
+.. highlights::
+    * ``is`` checks for object identity
+    * ``is`` tests for identity, not equality
+    * Compares ``id()`` output for both objects
+    * CPython: compares the memory address a object resides in
+    * Is used for checking if ``None``
+    * Testing strings with ``is`` only works when the strings are interned
 
 Test if empty
 -------------
@@ -166,7 +170,8 @@ Test if value is equal
 
 Using ``is`` in script
 ----------------------
-* both objects has the same ``id``.
+.. highlights::
+    * both objects has the same ``id``.
 
  .. code-block:: python
     :caption: Using this code in script.

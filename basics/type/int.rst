@@ -5,9 +5,10 @@ Type ``int``
 
 Defining ``int``
 ================
-* In Python 3 there is not maximal ``int`` value
-* Python 3 dynamically extends ``int``, when it's too big
-* You can use ``_`` for easier read especially with big numbers
+.. highlights::
+    * In Python 3 there is not maximal ``int`` value
+    * Python 3 dynamically extends ``int``, when it's too big
+    * You can use ``_`` for easier read especially with big numbers
 
 .. code-block:: python
 
@@ -28,9 +29,10 @@ Defining ``int``
 
 Converting to ``int``
 =====================
-* Also known as "type casting"
-* ``int()`` converts argument to ``int``
-* ``int()`` does not round numbers, it returns integer value
+.. highlights::
+    * Also known as "type casting"
+    * ``int()`` converts argument to ``int``
+    * ``int()`` does not round numbers, it returns integer value
 
 .. code-block:: python
 

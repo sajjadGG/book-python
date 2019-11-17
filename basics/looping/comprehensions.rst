@@ -22,8 +22,9 @@ Syntax
 
 Generator expressions vs. Comprehensions
 ========================================
-* Comprehensions executes instantly
-* Generator expression executes lazily
+.. highlights::
+    * Comprehensions executes instantly
+    * Generator expression executes lazily
 
 .. code-block:: python
 
@@ -97,8 +98,9 @@ Dict Comprehension
 
 Tuple Comprehension?!
 ---------------------
-* Tuple Comprehension vs. Generator Expression
-* More in chapter :ref:`Generators`
+.. highlights::
+    * Tuple Comprehension vs. Generator Expression
+    * More in chapter :ref:`Generators`
 
 .. code-block:: python
     :caption: Tuple Comprehension

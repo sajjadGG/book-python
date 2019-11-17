@@ -7,10 +7,11 @@ Function Basics
 
 Function definition
 ===================
-* Reuse code
-* Improves code readability
-* Clean-up code
-* Allows for easier refactoring
+.. highlights::
+    * Reuse code
+    * Improves code readability
+    * Clean-up code
+    * Allows for easier refactoring
 
 .. code-block:: python
 
@@ -24,8 +25,9 @@ Function definition
 
 Returning values
 ================
-* ``return`` keyword indicates outcome of the function
-* Code after ``return`` will not execute
+.. highlights::
+    * ``return`` keyword indicates outcome of the function
+    * Code after ``return`` will not execute
 
 .. code-block:: python
 
@@ -141,10 +143,11 @@ Required arguments
 
 Arguments with default value
 ----------------------------
-* Arguments without default values are required
-* Function will take default value if not overwritten by user
-* Arguments with default values must be at the right side
-* Arguments with default values can be omitted while executing
+.. highlights::
+    * Arguments without default values are required
+    * Function will take default value if not overwritten by user
+    * Arguments with default values must be at the right side
+    * Arguments with default values can be omitted while executing
 
 .. code-block:: python
 
@@ -175,8 +178,9 @@ Positional arguments
 
 Keyword arguments
 -----------------
-* Arguments without default values are required
-* Order of keyword arguments has no significance
+.. highlights::
+    * Arguments without default values are required
+    * Order of keyword arguments has no significance
 
 .. code-block:: python
 
@@ -257,19 +261,20 @@ Naming convention
 
 Function name convention
 ------------------------
-* It's not Java, do not use ``camelCase``
+.. highlights::
+    * Do not use ``camelCase``
+    * CamelCase is reserved for class names
+    * Use ``snake_case`` # Python - snake ;)
 
-    .. code-block:: python
+.. code-block:: python
 
-        def addNumbers(a, b):
-            return a + b
+    def addNumbers(a, b):
+        return a + b
 
-* It's Python, use ``snake_case`` # Python - snake ;)
+.. code-block:: python
 
-    .. code-block:: python
-
-        def add_numbers(a, b):
-            return a + b
+    def add_numbers(a, b):
+        return a + b
 
 Use better names, rather than comments
 --------------------------------------
@@ -286,21 +291,23 @@ Use better names, rather than comments
 
 Name collisions
 ---------------
-* ``_`` at the end of name when name collision
+.. highlights::
+    * ``_`` at the end of name when name collision
 
-    .. code-block:: python
+.. code-block:: python
 
-        def print_(text):
-            print(f'<strong>{text}</strong>')
+    def print_(text):
+        print(f'<strong>{text}</strong>')
 
 System functions names
 ----------------------
-* ``__`` at the beginning and end of name
+.. highlights::
+    * ``__`` at the beginning and end of name
 
-    .. code-block:: python
+.. code-block:: python
 
-        def __import__(module_name):
-            ...
+    def __import__(module_name):
+        ...
 
 
 Variable scope
@@ -308,8 +315,9 @@ Variable scope
 
 Global scope
 ------------
-* All variables in main program
-* Variables are available inside all functions
+.. highlights::
+    * All variables in main program
+    * Variables are available inside all functions
 
 .. code-block:: python
 
@@ -318,8 +326,9 @@ Global scope
 
 Local scope
 -----------
-* Variables defined inside function
-* Variables are not available from outside
+.. highlights::
+    * Variables defined inside function
+    * Variables are not available from outside
 
 .. code-block:: python
 

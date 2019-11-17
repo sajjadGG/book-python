@@ -5,8 +5,9 @@ Loop over ``dict``
 ******************
 
 
-* Since Python 3.7 ``dict`` keeps order
-* Before Python 3.7 ``dict`` order is not ensured!!
+.. important::
+    * Since Python 3.7 ``dict`` keeps order
+    * Before Python 3.7 ``dict`` order is not ensured!!
 
 Looping over ``dict``
 =====================
@@ -85,7 +86,8 @@ Default iterator
 
 Items iterator
 --------------
-* list of pairs ``key``, ``value``
+.. highlights::
+    * list of pairs ``key``, ``value``
 
 .. code-block:: python
     :caption: Getting pair: ``key``, ``value`` from ``dict`` items
@@ -123,8 +125,9 @@ Create ``dict`` from two sequences
 
 ``range()``
 -----------
-* Pythonic way is to use ``zip()``
-* Don't use ``len(range(...))`` - it evaluates generator
+.. highlights::
+    * Pythonic way is to use ``zip()``
+    * Don't use ``len(range(...))`` - it evaluates generator
 
 .. code-block:: python
     :caption: Create ``dict`` from two ``list``
@@ -147,8 +150,9 @@ Create ``dict`` from two sequences
 
 ``enumerate()``
 ---------------
-* ``_`` regular variable name (not a special syntax)
-* ``_`` by convention is used when variable will not be referenced
+.. highlights::
+    * ``_`` regular variable name (not a special syntax)
+    * ``_`` by convention is used when variable will not be referenced
 
 .. code-block:: python
     :caption: Create ``dict`` from two ``list``
@@ -171,7 +175,8 @@ Create ``dict`` from two sequences
 
 ``zip()``
 ---------
-* The most Pythonic way
+.. highlights::
+    * The most Pythonic way
 
 .. code-block:: python
 

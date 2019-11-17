@@ -36,7 +36,8 @@ Complex expressions
 
 ``and`` and ``or``
 ------------------
-* Use parenthesis for explicit order
+.. highlights::
+    * Use parenthesis for explicit order
 
 .. code-block:: python
 
@@ -80,8 +81,9 @@ Control Statements
 
 ``in`` with ``tuple``, ``dict``, ``list``, ``set``
 --------------------------------------------------
-* ``in`` checks whether value is in collection
-* works with ``tuple``, ``dict``, ``list``, ``set``
+.. highlights::
+    * ``in`` checks whether value is in collection
+    * works with ``tuple``, ``dict``, ``list``, ``set``
 
 .. code-block:: python
 
@@ -94,7 +96,8 @@ Control Statements
 
 ``in`` with ``str``
 -------------------
-* ``in`` checks whether ``str`` is a part of another ``str``
+.. highlights::
+    * ``in`` checks whether ``str`` is a part of another ``str``
 
 .. code-block:: python
 
@@ -107,7 +110,8 @@ Control Statements
 
 ``not``
 -------
-* ``not`` negates (logically inverts) condition
+.. highlights::
+    * ``not`` negates (logically inverts) condition
 
 .. code-block:: python
 

@@ -3,14 +3,16 @@ Sequence ``list``
 *****************
 
 
-* Can store elements of any types
-* Mutable - can add, remove, and modify items
+.. highlights::
+    * Can store elements of any types
+    * Mutable - can add, remove, and modify items
 
 
 Initializing
 ============
-* ``list()`` is more readable
-* ``[]`` is used more often
+.. highlights::
+    * ``list()`` is more readable
+    * ``[]`` is used more often
 
 Initialize empty
 ----------------
@@ -21,8 +23,9 @@ Initialize empty
 
 Initialize with one element
 ---------------------------
-* Comma after last element is optional
-* Brackets are required
+.. highlights::
+    * Comma after last element is optional
+    * Brackets are required
 
 .. code-block:: python
 
@@ -31,7 +34,8 @@ Initialize with one element
 
 Initialize with many elements
 -----------------------------
-* Brackets are required
+.. highlights::
+    * Brackets are required
 
 .. code-block:: python
 
@@ -114,7 +118,8 @@ Inserting elements at specific position
 
 Accessing elements
 ==================
-* More in :ref:`Indexes` and :ref:`Slice`
+.. highlights::
+    * More in :ref:`Indexes` and :ref:`Slice`
 
 .. code-block:: python
 
@@ -137,7 +142,9 @@ Sorting
 
 ``sorted()``
 ------------
-* ``sorted()`` zwraca posortowaną listę, ale nie zapisuje zmienionej kolejności
+.. highlights::
+    * Returns sorted list
+    * Do not modify the object
 
 .. code-block:: python
 
@@ -149,7 +156,8 @@ Sorting
 
 ``list.sort()``
 ---------------
-* ``list.sort()`` zmienia listę na stałe
+.. highlights::
+    * Changes object permanetly
 
 .. code-block:: python
 

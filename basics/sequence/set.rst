@@ -3,20 +3,23 @@ Sequence ``set``
 ****************
 
 
-* Only unique values
-* Mutable - can add, remove, and modify items
+.. highlights::
+    * Only unique values
+    * Mutable - can add, remove, and modify items
 
 
 Initializing
 ============
-* Do not record element position
-* Do not record order of insertion
-* Do not support indexing
-* Do not support slicing
+.. highlights::
+    * Do not record element position
+    * Do not record order of insertion
+    * Do not support indexing
+    * Do not support slicing
 
 Initialize empty
 ----------------
-* Defining only with ``set()``
+.. highlights::
+    * Defining only with ``set()``
 
 .. code-block:: python
 
@@ -24,8 +27,9 @@ Initialize empty
 
 Initialize with one element
 ---------------------------
-* Comma after last element is optional
-* Brackets are required
+.. highlights::
+    * Comma after last element is optional
+    * Brackets are required
 
 .. code-block:: python
 
@@ -34,9 +38,10 @@ Initialize with one element
 
 Initialize with many elements
 -----------------------------
-* Brackets are required
-* Only unique values
-* Can store elements of any **hashable** types
+.. highlights::
+    * Brackets are required
+    * Only unique values
+    * Can store elements of any **hashable** types
 
 .. code-block:: python
 
@@ -173,7 +178,8 @@ Converting ``tuple`` to ``set``
 
 ``set.isdisjoint()``
 --------------------
-* No common elements
+.. highlights::
+    * No common elements
 
 .. code-block:: python
 
@@ -181,7 +187,8 @@ Converting ``tuple`` to ``set``
 
 ``set.issubset()``
 ------------------
-* All elements in both
+.. highlights::
+    * All elements in both
 
 .. code-block:: python
 
@@ -199,7 +206,8 @@ Converting ``tuple`` to ``set``
 
 ``set.issuperset()``
 --------------------
-* All elements of ``b`` are in ``a``
+.. highlights::
+    * All elements of ``b`` are in ``a``
 
 .. code-block:: python
 
@@ -214,7 +222,8 @@ Converting ``tuple`` to ``set``
 
 ``set.union()``
 ---------------
-* add
+.. highlights::
+    * add
 
 .. code-block:: python
 
@@ -225,7 +234,8 @@ Converting ``tuple`` to ``set``
 
 ``set.difference()``
 --------------------
-* subtract
+.. highlights::
+    * subtract
 
 .. code-block:: python
 
@@ -235,7 +245,8 @@ Converting ``tuple`` to ``set``
 
 ``set.symmetric_difference()``
 ------------------------------
-* not common elements from each
+.. highlights::
+    * not common elements from each
 
 .. code-block:: python
 
@@ -245,7 +256,8 @@ Converting ``tuple`` to ``set``
 
 ``set.intersection()``
 ----------------------
-* common element from each
+.. highlights::
+    * common element from each
 
 .. code-block:: python
 

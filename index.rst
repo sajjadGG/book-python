@@ -19,59 +19,12 @@ Introduction
 Python basics
 *************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :numbered:
     :caption: Python basics
 
-    /basics/exam/pre.rst
+    basics/index.rst
 
-    /basics/syntax/syntax.rst
-
-    /basics/type/int.rst
-    /basics/type/float.rst
-    /basics/type/bool.rst
-    /basics/type/none.rst
-    /basics/type/str.rst
-    /basics/type/str-methods.rst
-
-    /basics/sequence/list.rst
-    /basics/sequence/tuple.rst
-    /basics/sequence/set.rst
-    /basics/sequence/nesting.rst
-    /basics/sequence/indexing.rst
-    /basics/sequence/slicing.rst
-    /basics/sequence/unpacking.rst
-
-    /basics/mapping/dict.rst
-
-    /basics/conditional/operators.rst
-    /basics/conditional/statements.rst
-    /basics/conditional/expressions.rst
-
-    /basics/loop/while.rst
-    /basics/loop/for.rst
-    /basics/loop/nested.rst
-    /basics/loop/dict.rst
-    /basics/loop/else.rst
-    /basics/loop/comprehensions.rst
-
-    /basics/control-flow/exception.rst
-    /basics/control-flow/file.rst
-
-    /basics/function/basic.rst
-    /basics/function/types.rst
-    /basics/function/recurrence.rst
-    /basics/function/doctest.rst
-
-    /basics/oop/class.rst
-    /basics/oop/attribute.rst
-    /basics/oop/method.rst
-    /basics/oop/init.rst
-    /basics/oop/stringify.rst
-    /basics/oop/inheritance.rst
-    /basics/oop/operator-overload.rst
-
-    /basics/exam/post.rst
 
 
 ****************
@@ -172,6 +125,10 @@ Advanced Functions
     :maxdepth: 2
     :numbered:
     :caption: Advanced Functions
+
+
+    /advanced/exam/pre.rst
+
 
     /functions-advanced/generator.rst
     /functions-advanced/defining.rst
@@ -326,17 +283,6 @@ Blogposts
 
     /_blogpost/ml-introduction.rst
 
-****
-Exam
-****
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Exam
-
-    /exam/pre-foundations.rst
-    /exam/pre-intermediate.rst
-    /exam/pre-advanced.rst
 
 **********
 Appendixes

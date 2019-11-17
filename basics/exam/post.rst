@@ -1,8 +1,8 @@
-.. _OOP Exam:
+.. _Basics Exit Exam:
 
-********
-OOP Exam
-********
+**********
+Exit Exam
+**********
 
 
 Dragon (version alpha)

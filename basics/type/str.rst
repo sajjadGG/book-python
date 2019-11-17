@@ -35,10 +35,11 @@ Multiline ``str``
 
 Single or double quote?
 =======================
-* ``"`` and ``'`` works the same
-* Choose one and keep consistency in code
-* Python console uses ``'``
-* it matters for ``doctest``, which compares two outputs character by character
+.. highlights::
+    * ``"`` and ``'`` works the same
+    * Choose one and keep consistency in code
+    * Python console uses ``'``
+    * it matters for ``doctest``, which compares two outputs character by character
 
 .. code-block:: python
 
@@ -56,7 +57,8 @@ When use double quotes?
 
 When use single quotes?
 -----------------------
-* HTML and XML uses double quotes
+.. highlights::
+    * HTML and XML uses double quotes
 
 .. code-block:: python
 
@@ -64,7 +66,8 @@ When use single quotes?
 
 When use multiline?
 -------------------
-* Always use double quote characters to be consistent with the docstring convention :pep:`257`
+.. highlights::
+    * Always use double quote characters to be consistent with the docstring convention :pep:`257`
 
 .. code-block:: python
 
@@ -98,8 +101,9 @@ Escape characters
 
 New lines
 ---------
-* ``\r\n`` - is used on windows
-* ``\n`` - is used everywhere else
+.. highlights::
+    * ``\r\n`` - is used on windows
+    * ``\n`` - is used everywhere else
 
 .. figure:: img/type-machine.jpg
     :scale: 25%
@@ -143,9 +147,10 @@ Characters before strings
 
 Format String
 -------------
-* String interpolation (variable substitution)
-* Since Python 3.6
-* Used for ``str`` concatenation
+.. highlights::
+    * String interpolation (variable substitution)
+    * Since Python 3.6
+    * Used for ``str`` concatenation
 
 .. code-block:: python
 
@@ -164,9 +169,10 @@ Format String
 
 Unicode literals
 ----------------
-* In Python 3 ``str`` is Unicode
-* In Python 2 ``str`` is Bytes
-* In Python 3 ``u'...'`` is only for compatibility with Python 2
+.. highlights::
+    * In Python 3 ``str`` is Unicode
+    * In Python 2 ``str`` is Bytes
+    * In Python 3 ``u'...'`` is only for compatibility with Python 2
 
 .. code-block:: python
 
@@ -174,11 +180,12 @@ Unicode literals
 
 Bytes literals
 --------------
-* Used while reading from low level devices and drivers
-* Used in sockets and HTTP connections
-* ``bytes`` is a sequence of octets (integers between 0 and 255)
-* ``bytes.decode()`` conversion to unicode ``str``
-* ``str.encode()`` conversion to ``bytes``
+.. highlights::
+    * Used while reading from low level devices and drivers
+    * Used in sockets and HTTP connections
+    * ``bytes`` is a sequence of octets (integers between 0 and 255)
+    * ``bytes.decode()`` conversion to unicode ``str``
+    * ``str.encode()`` conversion to ``bytes``
 
 .. code-block:: python
 
@@ -186,7 +193,8 @@ Bytes literals
 
 Raw String
 ----------
-*  Escapes does not matters
+.. highlights::
+    *  Escapes does not matters
 
 .. code-block:: python
 
@@ -216,8 +224,9 @@ Raw String
 
 Getting text from user
 ======================
-* ``input()`` returns ``str``
-* Good practice: add space at the end of prompt
+.. highlights::
+    * ``input()`` returns ``str``
+    * Good practice: add space at the end of prompt
 
 .. code-block:: python
 

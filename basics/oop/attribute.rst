@@ -4,11 +4,13 @@
 OOP Attributes
 **************
 
-* Attributes are also known as "Properties" or "Fields"
-* ``snake_case`` name convention
-* Attributes should be defined only in ``__init__()`` method
-* Attributes store information (state) for instances
-* Access field values using dot (``.``) notation
+
+.. highlights::
+    * Attributes are also known as "Properties" or "Fields"
+    * ``snake_case`` name convention
+    * Attributes should be defined only in ``__init__()`` method
+    * Attributes store information (state) for instances
+    * Access field values using dot (``.``) notation
 
 
 Setting attributes
@@ -91,11 +93,12 @@ Variable value attributes
 
 Access modifiers
 ================
-* All fields are always public
-* No protected i private
-* ``_name`` - protected field (by convention)
-* ``__name__`` - system field
-* ``name_`` - used while name collision
+.. highlights::
+    * All fields are always public
+    * No protected i private
+    * ``_name`` - protected field (by convention)
+    * ``__name__`` - system field
+    * ``name_`` - used while name collision
 
 .. code-block:: python
     :caption: Access modifiers

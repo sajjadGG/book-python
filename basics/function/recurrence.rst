@@ -4,17 +4,19 @@
 Function Recurrence
 *******************
 
+.. epigraph::
     Aby zrozumieć rekurencję – musisz najpierw zrozumieć rekursję
 
 
 What is recurrence?
 ===================
-* Also known as recursion
-* Python isn't a functional language
-* CPython implementation doesn't optimize tail recursion
-* Tail recursion is not a particularly efficient technique in Python
-* Unbridled recursion causes stack overflows!
-* Rewriting the algorithm iteratively, is generally a better idea
+.. highlights::
+    * Also known as recursion
+    * Python isn't a functional language
+    * CPython implementation doesn't optimize tail recursion
+    * Tail recursion is not a particularly efficient technique in Python
+    * Unbridled recursion causes stack overflows!
+    * Rewriting the algorithm iteratively, is generally a better idea
 
 .. code-block:: python
 
@@ -37,8 +39,9 @@ What is recurrence?
 
 Limit
 =====
-* Default recursion depth limit is 1000
-* Warning: Anaconda sets default recursion depth limit to 2000
+.. highlights::
+    * Default recursion depth limit is 1000
+    * Warning: Anaconda sets default recursion depth limit to 2000
 
 .. code-block:: python
 

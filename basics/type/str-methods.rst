@@ -7,8 +7,9 @@ Type ``str`` Methods
 
 String immutability
 ===================
-* ``str`` is immutable
-* ``str`` methods create a new modified ``str``
+.. highlights::
+    * ``str`` is immutable
+    * ``str`` methods create a new modified ``str``
 
 .. code-block:: python
 
@@ -35,7 +36,8 @@ String immutability
 
 String Arithmetic
 =================
-* Preferred string concatenation is using ``f-string`` formatting
+.. highlights::
+    * Preferred string concatenation is using ``f-string`` formatting
 
 .. code-block:: python
 
@@ -56,7 +58,8 @@ String Arithmetic
 
 Changing Character Case
 -----------------------
-* Unify data format before analysis
+.. highlights::
+    * Unify data format before analysis
 
 .. code-block:: python
 
@@ -97,7 +100,8 @@ Cleaning ``str`` from whitespaces
 
 Checking if ``str`` starts or ends with value
 ---------------------------------------------
-* Understand this as "starts with" and "ends with"
+.. highlights::
+    * Understand this as "starts with" and "ends with"
 
 .. code-block:: python
 
@@ -231,12 +235,14 @@ Multiple statements in one line
 
 Cleaning ``str`` from user input
 ================================
-* 80% of machine learning and data science is cleaning data
+.. highlights::
+    * 80% of machine learning and data science is cleaning data
 
 Is this the same address?
 -------------------------
-* This is a dump of distinct records of a single address
-* Which one of the below is a true address?
+.. highlights::
+    * This is a dump of distinct records of a single address
+    * Which one of the below is a true address?
 
 .. code-block:: text
 

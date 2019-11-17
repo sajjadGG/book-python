@@ -5,8 +5,9 @@ Mapping ``dict``
 ****************
 
 
-* ``dict`` are key-value storage
-* Mutable - can add, remove, and modify items
+.. highlights::
+    * ``dict`` are key-value storage
+    * Mutable - can add, remove, and modify items
 
 
 Initializing
@@ -21,7 +22,8 @@ Initialize empty
 
 Initialize with many elements
 -----------------------------
-* Comma after last element is optional
+.. hint::
+    * Comma after last element is optional
 
 .. code-block:: python
 
@@ -97,10 +99,12 @@ Value can be any object
 
 Order of ``dict`` elements
 --------------------------
-* Since Python 3.7 ``dict`` keeps order of elements
-* Before Python 3.7 ``dict`` order is not ensured!!
+.. highlights::
+    * Since Python 3.7 ``dict`` keeps order of elements
+    * Before Python 3.7 ``dict`` order is not ensured!!
 
-.. note:: Since Python 3.7: The insertion-order preservation nature of dict objects is now an official part of the Python language spec.
+.. note::
+    Since Python 3.7: The insertion-order preservation nature of dict objects is now an official part of the Python language spec.
 
 Type Annotation
 ---------------
@@ -121,8 +125,9 @@ Type Annotation
 
 Adding elements
 ===============
-* Adds if value not exist
-* Updates if value exist
+.. highlights::
+    * Adds if value not exist
+    * Updates if value exist
 
 Adding using ``[...]`` syntax
 -----------------------------
@@ -240,7 +245,8 @@ Check if value in ``dict``
 
 Accessing values with ``[...]``
 -------------------------------
-* ``[...]`` throws ``KeyError`` exception if key not found in ``dict``
+.. highlights::
+    * ``[...]`` throws ``KeyError`` exception if key not found in ``dict``
 
 .. code-block:: python
 
@@ -274,8 +280,9 @@ Accessing values with ``[...]``
 
 Accessing values with ``.get(...)``
 -----------------------------------
-* ``.get(...)`` returns ``None`` if key not found
-* ``.get(...)`` can have default value, if key not found
+.. highlights::
+    * ``.get()`` returns ``None`` if key not found
+    * ``.get()`` can have default value, if key not found
 
 .. code-block:: python
 
@@ -336,8 +343,9 @@ Accessing ``dict`` keys, values and key-value pairs
 
 Create ``dict`` from two sequences
 ==================================
-* ``zip`` is a generator
-* ``zip`` will create a list of pairs (like ``dict.items()``)
+.. highlights::
+    * ``zip`` is a generator
+    * ``zip`` will create a list of pairs (like ``dict.items()``)
 
 .. code-block:: python
 
@@ -358,9 +366,10 @@ Create ``dict`` from two sequences
 
 ``dict`` and ``set``
 ====================
-* Both ``set`` and ``dict`` keys must be hashable
-* Both ``set`` and ``dict`` uses the same ``{`` and ``}`` braces
-* Despite similar syntax, they are different types
+.. highlights::
+    * Both ``set`` and ``dict`` keys must be hashable
+    * Both ``set`` and ``dict`` uses the same ``{`` and ``}`` braces
+    * Despite similar syntax, they are different types
 
 .. code-block:: python
 

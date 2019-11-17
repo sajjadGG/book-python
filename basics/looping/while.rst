@@ -7,7 +7,8 @@ Loop ``while``
 
 Syntax
 ======
-* Continue execution when argument is ``True``
+.. highlights::
+    * Continue execution when argument is ``True``
 
 Generic syntax
 --------------
@@ -44,9 +45,10 @@ Stop conditions
 
 Iterating over sequence
 -----------------------
-* Better idea for this is to use ``for`` loop
-* ``for`` loop supports Iterators
-* ``len()`` must write all ``numbers`` to memory, to calculate its length
+.. highlights::
+    * Better idea for this is to use ``for`` loop
+    * ``for`` loop supports Iterators
+    * ``len()`` must write all ``numbers`` to memory, to calculate its length
 
 .. code-block:: python
 
@@ -64,7 +66,8 @@ Iterating over sequence
 
 Exit flag
 ---------
-* Exit flag pattern is useful if you have for example multi-threaded application
+.. highlights::
+    * Exit flag pattern is useful if you have for example multi-threaded application
 
 .. code-block:: python
 
@@ -90,7 +93,8 @@ Exit flag
 
 Skipping iterations
 -------------------
-* if ``continue`` is encountered, it will jump to next loop iteration
+.. highlights::
+    * if ``continue`` is encountered, it will jump to next loop iteration
 
 .. code-block:: python
 

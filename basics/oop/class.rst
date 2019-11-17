@@ -7,7 +7,8 @@ OOP Classes and Instances
 
 Object Paradigm
 ===============
-* Model world as objects that interacts with each other
+.. highlights::
+    * Model world as objects that interacts with each other
 
 .. glossary::
 
@@ -29,8 +30,9 @@ Object Paradigm
 
 Classes
 =======
-* Capitalized ``CamelCase`` name convention
-* Classes are templates for objects
+.. highlights::
+    * Capitalized ``CamelCase`` name convention
+    * Classes are templates for objects
 
 .. code-block:: python
     :caption: Defining class. Classes should have capitalized name
@@ -47,9 +49,10 @@ Classes
 
 Instances
 =========
-* Instances are also known as Objects
-* Two newlines between class and code
-* ``snake_case`` names
+.. highlights::
+    * Instances are also known as Objects
+    * Two newlines between class and code
+    * ``snake_case`` names
 
 .. figure:: img/blueprint.png
     :scale: 8%
@@ -98,10 +101,11 @@ Instances
 
 Good engineering practices
 ==========================
-* Never print in a class
-* One class per file - when classes are long
-* All classes in one file - when classes are short
-* You can mix classes and functions in one file
+.. highlights::
+    * Never print in a class
+    * One class per file - when classes are long
+    * All classes in one file - when classes are short
+    * You can mix classes and functions in one file
 
 .. code-block:: python
     :caption: Classes and Objects

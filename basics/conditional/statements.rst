@@ -7,7 +7,8 @@ Conditional Statements
 
 ``if``
 ======
-* The same indent level
+.. highlights::
+    * The same indent level
 
 Simple syntax
 -------------
@@ -27,23 +28,24 @@ Multiline blocks
 
 Positive and negative values
 ----------------------------
-Negative values:
+.. highlights::
+    Negative values:
 
-    * ``False``
-    * ``None``
-    * ``0``
-    * ``0.0``
-    * ``0+0j``
-    * ``0.0+0.0j``
-    * empty ``str()`` or ``''``
-    * empty ``tuple()`` or ``()``
-    * empty ``dict()`` or ``{}``
-    * empty ``list()`` or ``[]``
-    * empty ``set()``
+        * ``False``
+        * ``None``
+        * ``0``
+        * ``0.0``
+        * ``0+0j``
+        * ``0.0+0.0j``
+        * empty ``str()`` or ``''``
+        * empty ``tuple()`` or ``()``
+        * empty ``dict()`` or ``{}``
+        * empty ``list()`` or ``[]``
+        * empty ``set()``
 
-Positive values:
+    Positive values:
 
-    * any other
+        * any other
 
 Checking for simple value
 -------------------------
@@ -65,7 +67,8 @@ Checking if value is in range
 
 Checking if has value
 ---------------------
-* More advanced examples will be covered latter
+.. highlights::
+    * More advanced examples will be covered latter
 
 .. code-block:: python
 
@@ -79,8 +82,9 @@ Checking if has value
 
 ``else``
 ========
-* Optional
-* Executed when condition is not met
+.. highlights::
+    * Optional
+    * Executed when condition is not met
 
 Checking if variable is certain value
 -------------------------------------
@@ -129,8 +133,9 @@ Inline ``if``
 
 ``elif``
 ========
-* Used to check for additional condition if first is not met
-* In other languages is known as ``else if``
+.. highlights::
+    * Used to check for additional condition if first is not met
+    * In other languages is known as ``else if``
 
 .. code-block:: python
 
@@ -149,9 +154,10 @@ Inline ``if``
 
 Switch statement
 ----------------
-* No ``switch`` statement in Python!
-* ``switch`` in Object Oriented Programming is considered a bad practise
-* `PEP 275 <https://www.python.org/dev/peps/pep-0275/>`_
+.. highlights::
+    * No ``switch`` statement in Python!
+    * ``switch`` in Object Oriented Programming is considered a bad practise
+    * `PEP 275 <https://www.python.org/dev/peps/pep-0275/>`_
 
 .. code-block:: python
 

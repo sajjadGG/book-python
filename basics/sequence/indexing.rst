@@ -7,9 +7,10 @@ Sequence Indexing
 
 Accessing element with index
 ============================
-* Index must be positive or negative ``int`` or zero
-* Index must be less or equal to length of object
-* Negative index starts from the end and go right to left
+.. highlights::
+    * Index must be positive or negative ``int`` or zero
+    * Index must be less or equal to length of object
+    * Negative index starts from the end and go right to left
 
 
 Indexing from start
@@ -55,7 +56,8 @@ Indexing ``str``
 
 Indexing ``list``
 --------------------
-* Indexes works the same like for ``str``
+.. highlights::
+    * Indexes works the same like for ``str``
 
 .. code-block:: python
 
@@ -66,7 +68,8 @@ Indexing ``list``
 
 Indexing ``tuple``
 --------------------
-* Indexes works the same like for ``str``
+.. highlights::
+    * Indexes works the same like for ``str``
 
 .. code-block:: python
 
@@ -77,7 +80,8 @@ Indexing ``tuple``
 
 Indexing ``set``
 ----------------
-* Indexes on ``set`` are not possible
+.. highlights::
+    * Indexes on ``set`` are not possible
 
 .. code-block:: python
 
@@ -88,7 +92,8 @@ Indexing ``set``
 
 Indexing ``dict``
 -----------------
-* Indexes on ``dict`` are not possible
+.. highlights::
+    * Indexes on ``dict`` are not possible
 
 .. code-block:: python
 

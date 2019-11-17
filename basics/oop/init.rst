@@ -5,9 +5,10 @@ OOP Initializer Method
 **********************
 
 
-* It's a first method run after object is initiated
-* All classes has default ``__init__()``
-* ``__init__()`` is not a constructor!
+.. highlights::
+    * It's a first method run after object is initiated
+    * All classes has default ``__init__()``
+    * ``__init__()`` is not a constructor!
 
 
 Initializer method without arguments

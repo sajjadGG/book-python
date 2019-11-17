@@ -10,8 +10,9 @@ Path
 
 Absolute path
 -------------
-* ``FILE`` as constant (never hardcode paths)
-* ``FILE`` as a raw string ``r'...'``
+.. highlights::
+    * ``FILE`` as constant (never hardcode paths)
+    * ``FILE`` as a raw string ``r'...'``
 
 .. code-block:: python
     :caption: Windows paths
@@ -27,8 +28,9 @@ Absolute path
 
 Relative path
 -------------
-* ``FILE`` as constant (never hardcode paths)
-* ``FILE`` as a raw string ``r'...'``
+.. highlights::
+    * ``FILE`` as constant (never hardcode paths)
+    * ``FILE`` as a raw string ``r'...'``
 
 .. code-block:: python
     :caption: File in the same directory directory
@@ -51,16 +53,17 @@ Relative path
 
 Read from file
 ==============
-* Works with both relative and absolute path
-* Fails when directory with file cannot be accessed
-* Fails when file cannot be accessed
-* Uses context manager
-* ``mode`` parameter to ``open()`` function is optional (defaults to ``mode='r'``)
-* Reading access modes:
+.. highlights::
+    * Works with both relative and absolute path
+    * Fails when directory with file cannot be accessed
+    * Fails when file cannot be accessed
+    * Uses context manager
+    * ``mode`` parameter to ``open()`` function is optional (defaults to ``mode='r'``)
+    * Reading access modes:
 
-    * ``mode='r'`` - write in text mode (default)
-    * ``mode='rt'`` - write in text mode
-    * ``mode='rb'`` - write in binary mode
+        * ``mode='r'`` - write in text mode (default)
+        * ``mode='rt'`` - write in text mode
+        * ``mode='rb'`` - write in binary mode
 
 Reading file line by line
 -------------------------
@@ -108,16 +111,17 @@ Writing
 
 Writing to file
 ---------------
-* Works with both relative and absolute path
-* Fails when directory with file cannot be accessed
-* Creates file if not exists
-* Truncate the file before writing
-* ``mode`` parameter to ``open()`` function is required
-* Writing modes:
+.. highlights::
+    * Works with both relative and absolute path
+    * Fails when directory with file cannot be accessed
+    * Creates file if not exists
+    * Truncate the file before writing
+    * ``mode`` parameter to ``open()`` function is required
+    * Writing modes:
 
-    * ``mode='w'`` - write in text mode
-    * ``mode='wt'`` - write in text mode
-    * ``mode='wb'`` - write in binary mode
+        * ``mode='w'`` - write in text mode
+        * ``mode='wt'`` - write in text mode
+        * ``mode='wb'`` - write in binary mode
 
 .. code-block:: python
     :caption: Writing to file
@@ -127,16 +131,17 @@ Writing to file
 
 Appending to file
 -----------------
-* Works with both relative and absolute path
-* Fails when directory with file cannot be accessed
-* Creates file if not exists
-* Append to the end of file
-* ``mode`` parameter to ``open()`` function is required
-* Writing modes:
+.. highlights::
+    * Works with both relative and absolute path
+    * Fails when directory with file cannot be accessed
+    * Creates file if not exists
+    * Append to the end of file
+    * ``mode`` parameter to ``open()`` function is required
+    * Writing modes:
 
-    * ``mode='a'`` - append in text mode
-    * ``mode='at'`` - append in text mode
-    * ``mode='ab'`` - append in binary mode
+        * ``mode='a'`` - append in text mode
+        * ``mode='at'`` - append in text mode
+        * ``mode='ab'`` - append in binary mode
 
 .. code-block:: python
     :caption: Appending to file
@@ -164,9 +169,10 @@ Exception handling
 
 Good Engineering Practises
 ==========================
-* ``FILE`` as a raw string ``r'...'`` constant
-* ``encoding='utf-8'``
-* Use context manager - ``with`` keyword
+.. highlights::
+    * ``FILE`` as a raw string ``r'...'`` constant
+    * ``encoding='utf-8'``
+    * Use context manager - ``with`` keyword
 
 
 Assignments
