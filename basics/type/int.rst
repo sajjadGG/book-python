@@ -219,14 +219,14 @@ Example
 :English:
     #. Calculate how many seconds is five minutes
     #. Calculate how many seconds is one hour
-    #. Calculate how many seconds is eight hours
-    #. Calculate how many seconds is month (22 days per 8 hours)
+    #. Calculate how many seconds is work day (8 hours)
+    #. Calculate how many seconds is work month (22 days per 8 hours)
     #. Calculate how many minutes is work week (40 hours)
 
 :Polish:
     #. Oblicz ile sekund to pięć minut
     #. Oblicz ile sekund to jedna godzina
-    #. Oblicz ile sekund to osiem godzin
+    #. Oblicz ile sekund to dzień pracy (8 godzin)
     #. Oblicz ile sekund to miesiąc pracy (22 dni po 8 godzin)
     #. Oblicz ile minut to tydzień pracy (40 godzin)
 
