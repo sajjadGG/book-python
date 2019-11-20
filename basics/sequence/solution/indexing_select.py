@@ -1,4 +1,4 @@
-DATA = [
+INPUT = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, 'virginica'),
     (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -23,17 +23,15 @@ DATA = [
     (4.6, 3.1, 1.5, 0.2, 'setosa'),
 ]
 
-header = DATA[0]
+header = INPUT[0]
 
 output = [
-    list(DATA[2]),
-    list(DATA[6]),
-    list(DATA[9]),
-    tuple(DATA[12]),
-    tuple(DATA[15]),
-    tuple(DATA[16]),
-    {18: DATA[18][-1]},
-    {21: DATA[21][-1]},
+    list(INPUT[2]),
+    list(INPUT[6]),
+    list(INPUT[9]),
+    tuple(INPUT[12]),
+    tuple(INPUT[15]),
+    tuple(INPUT[16]),
     set()
 ]
 

@@ -28,13 +28,13 @@ CONVERSION_TABLE = {
 
 def roman_to_arabic(roman_value: str) -> int:
     """
-    >>> roman_to_arabic("I")
+    >>> roman_to_arabic('I')
     1
-    >>> roman_to_arabic("IX")
+    >>> roman_to_arabic('IX')
     9
-    >>> roman_to_arabic("MDL")
+    >>> roman_to_arabic('MDL')
     1550
-    >>> roman_to_arabic("XIV")
+    >>> roman_to_arabic('XIV')
     14
     """
     roman_value.capitalize()
@@ -44,7 +44,7 @@ def roman_to_arabic(roman_value: str) -> int:
         if letter in CONVERSION_TABLE:
             arabic_value.append(CONVERSION_TABLE[letter])
 
-    last_value = CONVERSION_TABLE["M"] * 2
+    last_value = CONVERSION_TABLE['M'] * 2
     cumulative_value = 0
 
     for value in arabic_value:
