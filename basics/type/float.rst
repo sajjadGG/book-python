@@ -75,6 +75,40 @@ Infinity representation
     float('-inf')           # -inf
     float('-Infinity')      # -inf
 
+Not-a-Number
+------------
+.. code-block:: python
+
+    float('nan')
+    # nan
+
+    float('-nan')
+    # nan
+
+NaN vs Inf
+----------
+.. code-block:: python
+
+    float('inf') + float('inf')     # inf
+    float('inf') + float('-inf')    # nan
+    float('-inf') + float('inf')    # nan
+    float('-inf') + float('-inf')   # -inf
+
+    float('inf') - float('inf')     # nan
+    float('inf') - float('-inf')    # inf
+    float('-inf') - float('inf')    # -inf
+    float('-inf') - float('-inf')   # nan
+
+    float('inf') * float('inf')     # inf
+    float('inf') * float('-inf')    # -inf
+    float('-inf') * float('inf')    # -inf
+    float('-inf') * float('-inf')   # inf
+
+    float('inf') / float('inf')     # nan
+    float('inf') / float('-inf')    # nan
+    float('-inf') / float('inf')    # nan
+    float('-inf') / float('-inf')   # nan
+
 
 Converting to ``float``
 =======================
@@ -228,6 +262,7 @@ Spacesuit Pressures
     #. Calculate International Standard Atmosphere pressure at sea level
     #. Calculate partial pressure of Oxygen at sea level
     #. At what altitude above sea level, pressure is equal to partial pressure of Oxygen
+    #. All results print in kPa and PSI rounding to two decimal places
 
 :Polish:
     #. Ciśnienie operacyjne skafandra kosmicznego EMU: 4.3 PSI
@@ -236,7 +271,7 @@ Spacesuit Pressures
     #. Oblicz ciśnienie operacyjne skafandra Orlan w PSI
     #. Oblicz ciśnienie standardowej atmosfery na poziomie morza
     #. Oblicz ciśnienie parcjalne tlenu na poziomie morza
-    #. Oa jakiej wysokości nad poziomem morza panuje ciśnienie równe ciśnieniu parcjalnemu tlenu?
+    #. Na jakiej wysokości nad poziomem morza panuje ciśnienie równe ciśnieniu parcjalnemu tlenu?
     #. Wszystkie wyniki podaj w kPa oraz w PSI zaokrąglając do dwóch miejsc po przecinku
 
 :The whys and wherefores:

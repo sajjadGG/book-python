@@ -10,4 +10,4 @@ file_size = 100 * MEGABYTE
 speed = 100 * MEGABIT
 time = file_size / speed
 
-print(time)
+print(f'Download time: {time} sec')
