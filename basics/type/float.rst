@@ -118,8 +118,11 @@ Converting to ``float``
 
 .. code-block:: python
 
-    float(10.5)             # 10.5
     float(10)               # 10.0
+    float(-10)              # -10.0
+
+    float(10.5)             # 10.5
+    float(-10.5)            # -10.5
 
 .. code-block:: python
 
@@ -149,7 +152,7 @@ Rounding numbers
     round(pi, 4)            # 3.1416
 
     print(f'{pi:.2f}')      # 3.14
-    print(f'{pi:.2f}')      # 3.1416
+    print(f'{pi:.4f}')      # 3.1416
 
 Absolute value
 --------------
@@ -165,11 +168,16 @@ Number to the ``n-th`` power
     pow(2, -1)              # 0.5
     pow(1.337, 3)           # 2.389979753
 
+    pow(4, 0.5)             # 2.0
+    pow(2, 0.5)             # 1.4142135623730951
+
 .. code-block:: python
 
     2 ** -1                 # 0.5
     1.337 ** 3              # 2.389979753
 
+    4 ** 0.5                # 2.0
+    2 ** 0.5                # 1.4142135623730951
 
 Assignments
 ===========

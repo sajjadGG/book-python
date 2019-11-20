@@ -360,6 +360,32 @@ Phone numbers
 Assignments
 ===========
 
+Example
+-------
+* Complexity level: easy
+* Lines of code to write: 8 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/str_methods.py`
+
+:English:
+    #. For given text: ``UL. jana 3 \nSOBiesKIEGO``
+    #. Use ``str`` methods to clean variable
+    #. Expected value is ``Jana III Sobieskiego``
+
+:Polish:
+    #. Dla danego tekstu: ``UL. jana 3 \nSOBiesKIEGO``
+    #. Wykorzystaj metody ``str`` do oczyszczenia
+    #. Oczekiwana wartość ``Jana III Sobieskiego``
+
+:Solution:
+    .. literalinclude:: solution/str_methods.py
+        :language: python
+
+:The whys and wherefores:
+    * Variable definition
+    * Print formatting
+    * Cleaning text input
+
 String cleaning
 ---------------
 * Complexity level: easy

@@ -10,10 +10,12 @@ Defining ``str``
 .. code-block:: python
 
     name = ''
+    name = 'Jan Twardowski'       # 'Jan Twardowski'
 
 .. code-block:: python
 
-    name = 'Jan Twardowski'       # 'Jan Twardowski'
+    name: str = ''
+    name: str = 'Jan Twardowski'  # 'Jan Twardowski'
 
 Multiline ``str``
 -----------------

@@ -166,6 +166,23 @@ Length of a ``tuple``
     # 3
 
 
+When use ``tuple`` or ``list``
+==============================
+
+Tuple
+-----
+.. highlights::
+    * is immutable
+    * one contingent block of data in memory
+
+List
+----
+.. highlights::
+    * mutable
+    * implemented in memory as list of pointers to objects
+    * objects are scattered in memory
+
+
 Assignments
 ===========
 
