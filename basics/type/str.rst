@@ -276,7 +276,7 @@ Example
     * Poproś użytkownika o wprowadzenie tekstu
     * Wypisz liczbę znaków
 
-:Solutiuon:
+:Solution:
     .. literalinclude:: solution/str_example.py
         :language: python
 
