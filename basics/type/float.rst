@@ -202,7 +202,7 @@ Example
 :Input:
     * Plane altitude: 10.000 ft
     * Bottle volume: 20 Fl Oz
-    * Speed limit: 70 mph
+    * Speed limit: 75 mph
 
 :Solution:
     .. literalinclude:: solution/float_si_units.py
