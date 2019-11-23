@@ -40,15 +40,20 @@ def clean(text: str) -> str:
     # Common format
     text = text.upper()
 
-    # Remove unwanted parts
+    # Remove unwanted text
     text = text.replace('ULICA', '')
     text = text.replace('UL', '')
     text = text.replace('TRZECIEGO', 'III')
     text = text.replace('3EGO', 'III')
     text = text.replace('3', 'III')
-    text = text.replace('.', '')
 
-    # Clean whitespaces
+    # Remove unwanted special characters
+    text = text.replace('.', '')
+    text = text.replace(',', '')
+    text = text.replace('-', '')
+    text = text.replace('|', '')
+
+    # Remove unwanted whitespaces
     text = text.replace('\n', '')
     text = text.replace('\t', '')
     text = text.replace('    ', '')
