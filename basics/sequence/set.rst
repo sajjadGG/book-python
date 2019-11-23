@@ -173,6 +173,44 @@ Converting ``tuple`` to ``set``
     # {'Twardowski', 'Иванович', 'Jiménez'}
 
 
+Membership Operators
+====================
+
+Equals
+------
+.. code-block:: python
+
+    {1, 2} == {1, 2}        # True
+    {1, 2} == {2, 1}        # True
+
+Not equals
+----------
+.. code-block:: python
+
+    {1, 2, 3} != {1, 2}     # True
+    {1, 2} != {1, 2}        # False
+
+Contains
+--------
+.. code-block:: python
+
+    1 in {1, 2}             # True
+    3 in {1, 2}             # False
+
+    {2} in {1, 2}           # False
+    {1, 2} in {1, 2}        # False
+
+Missing
+-------
+.. code-block:: python
+
+    4 not in {1, 2}         # True
+    1 not in {1, 2}         # False
+
+    {2} not in {1, 2}       # True
+    {1, 2} not in {1, 2}    # True
+
+
 ``set`` Methods
 ===============
 

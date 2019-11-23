@@ -180,15 +180,40 @@ Multiple statements in one line
 
 Membership Operators
 ====================
-.. csv-table:: Membership operators
-    :widths: 15, 25, 60
-    :header-rows: 1
 
-    "Operand", "Example", "Description"
-    "``x == y``", "``x == 18``", "value of ``x`` is equal to ``y``"
-    "``x != y``", "``x != 18``", "value of ``x`` is not equal to ``y``"
-    "``x in y``", "``x in [1, 2, 3]``", "``y`` contains ``x``"
-    "``x not in y``", "``x not in [1, 2, 3]``", "``y`` not contains ``x``"
+Equals
+------
+.. code-block:: python
+
+    [1, 2] == [1, 2]        # True
+    [1, 2] == [2, 1]        # False
+
+Not equals
+----------
+.. code-block:: python
+
+    [1, 2, 3] != [1, 2]     # True
+    [1, 2] != [1, 2]        # False
+
+Contains
+--------
+.. code-block:: python
+
+    1 in [1, 2]             # True
+    3 in [1, 2]             # False
+
+    [2] in [1, 2]           # False
+    [1, 2] in [1, 2]        # False
+
+Missing
+-------
+.. code-block:: python
+
+    4 not in [1, 2]         # True
+    1 not in [1, 2]         # False
+
+    [2] not in [1, 2]       # True
+    [1, 2] not in [1, 2]    # True
 
 
 Built-in functions on sequences
