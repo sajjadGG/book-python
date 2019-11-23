@@ -18,11 +18,11 @@ bottle = 20 * FLOZ
 speed_limit = 75 * MI/HOUR
 
 
-print(f'Plane altitude: {plane_altitude / M} m')
+print(f'Plane altitude: {plane_altitude/M} m')
 # Plane altitude: 3048.0 m
 
-print(f'Bottle volume: {bottle / LITER} l')
+print(f'Bottle volume: {bottle/LITER} l')
 # Bottle volume: 0.5914688 l
 
-print(f'Speed limit: {speed_limit / KPH} km/h')
+print(f'Speed limit: {speed_limit/KPH} km/h')
 # Speed limit: 120.70079999999999 km/h

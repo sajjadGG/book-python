@@ -123,10 +123,10 @@ Splitting by character or whitespace
 
     text = 'We choose to go to the Moon'
 
-    text.split()
+    text.split(' ')
     # ['We', 'choose', 'to', 'go', 'to', 'the', 'Moon']
 
-    text.split(' ')
+    text.split()
     # ['We', 'choose', 'to', 'go', 'to', 'the', 'Moon']
 
 .. code-block:: python
@@ -337,20 +337,22 @@ Phone numbers
 -------------
 .. code-block:: text
 
-    123 555 678
-
     +48 (12) 355 5678
-    +48 12 355 5678
     +48 123 555 678
 
+.. code-block:: text
+
+    123 555 678
+
+    +48 12 355 5678
     +48 123-555-678
-    +48123555678
     +48 123 555 6789
 
     +1 (123) 555-6789
     +1 (123).555.6789
 
     +1 800-python
+    +48123555678
 
     +48 123 555 678 wew. 1337
     +48 123555678,1
@@ -368,14 +370,14 @@ Example
 * Filename: :download:`solution/str_methods.py`
 
 :English:
-    #. For given text: ``UL. jana 3 \nSOBiesKIEGO``
+    #. For given text: ``UL. jana \tTWArdoWskIEGO 3``
     #. Use ``str`` methods to clean variable
-    #. Expected value is ``Jana III Sobieskiego``
+    #. Expected value is ``Jana Twardowskiego III``
 
 :Polish:
-    #. Dla danego tekstu: ``UL. jana 3 \nSOBiesKIEGO``
+    #. Dla danego tekstu: ``UL. jana \tTWArdoWskIEGO 3``
     #. Wykorzystaj metody ``str`` do oczyszczenia
-    #. Oczekiwana wartość ``Jana III Sobieskiego``
+    #. Oczekiwana wartość ``Jana Twardowskiego III``
 
 :Solution:
     .. literalinclude:: solution/str_methods.py
