@@ -58,7 +58,7 @@ Mathematics
     /intermediate/math/statistics.rst
     /intermediate/math/random.rst
     /intermediate/math/fractions.rst
-    /intermediate/math/decimal.rst
+    /intermediate/math/precision.rst
     /intermediate/math/plotting.rst
     /intermediate/math/complex.rst
 

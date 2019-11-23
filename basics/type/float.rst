@@ -49,66 +49,6 @@ Engineering notation
     1.337 * 1e3             # 1337.0
     1.337 * 1e-3            # 0.001337
 
-Maximal and minimal ``float`` values
-------------------------------------
-.. code-block:: python
-
-    import sys
-
-    sys.float_info.min      # 2.2250738585072014e-308
-    sys.float_info.max      # 1.7976931348623157e+308
-
-Infinity representation
------------------------
-.. code-block:: python
-
-    1e308                   # 1e+308
-    1e309                   # inf
-
-.. code-block:: python
-
-    float('inf')            # inf
-    float('Infinity')       # inf
-
-.. code-block:: python
-
-    float('-inf')           # -inf
-    float('-Infinity')      # -inf
-
-Not-a-Number
-------------
-.. code-block:: python
-
-    float('nan')
-    # nan
-
-    float('-nan')
-    # nan
-
-NaN vs Inf
-----------
-.. code-block:: python
-
-    float('inf') + float('inf')     # inf
-    float('inf') + float('-inf')    # nan
-    float('-inf') + float('inf')    # nan
-    float('-inf') + float('-inf')   # -inf
-
-    float('inf') - float('inf')     # nan
-    float('inf') - float('-inf')    # inf
-    float('-inf') - float('inf')    # -inf
-    float('-inf') - float('-inf')   # nan
-
-    float('inf') * float('inf')     # inf
-    float('inf') * float('-inf')    # -inf
-    float('-inf') * float('inf')    # -inf
-    float('-inf') * float('-inf')   # inf
-
-    float('inf') / float('inf')     # nan
-    float('inf') / float('-inf')    # nan
-    float('-inf') / float('inf')    # nan
-    float('-inf') / float('-inf')   # nan
-
 
 Converting to ``float``
 =======================
