@@ -1,61 +1,15 @@
-// const ROMAN_NUMERALS = {
-//     1000: "M",
-//     900: "CM",
-//     500: "D",
-//     400: "CD",
-//     100: "C",
-//     90: "XC",
-//     50: "L",
-//     40: "XL",
-//     10: "X",
-//     9: "IX",
-//     4: "IV",
-//     5: "V",
-//     1: "I",
-// };
-//
-// function toRoman(number) {
-//     if (number === 0)
-//         return "";
-//
-//     for (let index of Object.keys(ROMAN_NUMERALS).reverse())
-//         if (number >= index)
-//             return ROMAN_NUMERALS[index] + toRoman(number - index);
-// }
-
-const ALPHABET = {
-    0: "0",
-    1: "A",
-    2: "B",
-    3: "C",
-    4: "D",
-    5: "E",
-    6: "F",
-    7: "G",
-    8: "H",
-    9: "I",
-    10: "J",
-    11: "K",
-    12: "L",
-    13: "M",
-    14: "N",
-    15: "O",
-    16: "P",
-    17: "Q",
-    18: "R",
-    19: "S",
-    20: "T",
-    21: "U",
-    22: "V",
-    23: "W",
-    24: "X",
-    25: "Y",
-    26: "Z",
+const PREFIX = {
+    0: "",
+    1: "1.",
+    2: "2.",
+    3: "3.",
+    4: "4.",
+    5: "5.",
+    6: "6.",
+    7: "7.",
+    8: "",
+    9: "",
 };
-
-function toAlpha(number) {
-    return ALPHABET[number];
-}
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -78,13 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     chapters.forEach((chapter, i) => {
-        // chapter.innerHTML = `${i}. ${chapter.innerHTML}`;
-
-        // let roman = toRoman(i+1);
-        // chapter.innerHTML = `${roman}. ${chapter.innerHTML}`;
-
-        let alpha = toAlpha(i);
-        chapter.innerHTML = `${alpha}. ${chapter.innerHTML}`;
+        chapter.innerHTML = `${PREFIX[i]} ${chapter.innerHTML}`;
 
         chapter.onclick = () => {
             let ul = chapter.nextElementSibling;
@@ -95,4 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 ul.style.display = "none";
         }
     });
+
+    let search_input = '<iframe src="https://duckduckgo.com/search.html?site=python.astrotech.io&prefill=Search..." style="overflow:hidden;margin:0;padding:0;width:200px;height:40px;" frameborder="0"></iframe>';
+    document.querySelectorAll('div[role="search"]')[0].innerHTML = search_input;
 });

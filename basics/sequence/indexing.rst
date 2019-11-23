@@ -142,9 +142,9 @@ Select
     #. Stwórz listę ``output``
     #. Przekonwertuj do ``list`` dane z wierszy 2, 6, 9 i dodaj do ``output``
     #. Przekonwertuj do ``tuple`` dane z wierszy 12, 15, 16 i dodaj do ``output``
-     #. Dodaj pusty ``set`` do ``output``
-     #. Użyj tylko indeksów
-     #. Nie używaj ``for``, ``while`` lub ``slice()``
+    #. Dodaj pusty ``set`` do ``output``
+    #. Użyj tylko indeksów
+    #. Nie używaj ``for``, ``while`` lub ``slice()``
 
 :Input:
     .. code-block:: python
