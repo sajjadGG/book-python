@@ -15,6 +15,10 @@ Initializing
 
 Initialize empty
 ----------------
+.. highlights::
+    * ``{}`` is used more often
+    * ``dict()`` is more readable
+
 .. code-block:: python
 
     my_dict = {}
@@ -22,7 +26,7 @@ Initialize empty
 
 Initialize with many elements
 -----------------------------
-.. hint::
+.. highlights::
     * Comma after last element is optional
 
 .. code-block:: python
@@ -44,49 +48,102 @@ Duplicating items are overridden by latter
 .. code-block:: python
 
     my_dict = {
-        'name': 'Twardowski',
-        'name': 'Иванович',
+        'species': 'setosa',
+        'species': 'virginica',
     }
-    # {'name': 'Иванович'}
+    # {'species': 'virginica'}
 
 Key can be any hashable object
 ------------------------------
 .. code-block:: python
 
     my_dict = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski',
+        'Sepal length': 5.8,
+        'Sepal width': 2.7,
+        'Petal length': 5.1,
+        'Petal width': 1.9,
     }
 
 .. code-block:: python
 
     my_dict = {
-        1961: 'First Human Space Flight',
-        1969: 'First Step on the Moon',
+        0: 'Setosa',
+        1: 'Versicolor',
+        2: 'Virginica'
     }
 
 .. code-block:: python
 
     my_dict = {
-        (1,): 'tuple with one element',
-        (2, 3, 4): 'tuple with many elements',
+        5.8: 'Sepal length',
+        2.7: 'Sepal width',
+        5.1: 'Petal length',
+        1.9: 'Petal width',
     }
 
 .. code-block:: python
 
-    key = 'last_name'
+    my_dict = {
+        (1,): 'setosa',
+        (2,): 'virginica',
+        (3,): 'versicolor',
+    }
+
+.. code-block:: python
 
     my_dict = {
-        'fist_name': 'key can be str',
-        1: 'key can be int',
-        1.5: 'key can be float',
-        (1,): 'key can be tuple',
-        (2, 3, 4): 'key can be tuple',
-        key: 'key can be str',
+        (5.8, 2.7, 5.1, 1.9): 'virginica',
+        (5.1, 3.5, 1.4, 0.2): 'setosa',
+        (5.7, 2.8, 4.1, 1.3): 'versicolor',
     }
+
+.. code-block:: python
+
+    my_dict = {
+        {1}: 'setosa',
+    }
+    # TypeError: unhashable type: 'set'
+
+    my_dict = {
+        [1]: 'setosa',
+    }
+    # TypeError: unhashable type: 'list'
 
 Value can be any object
 -----------------------
+.. code-block:: python
+
+    my_dict = {
+        'Sepal length': 5.8,
+        'Sepal width': 2.7,
+        'Petal length': 5.1,
+        'Petal width': 1.9,
+    }
+
+.. code-block:: python
+
+    my_dict = {
+        'virginica': (5.8, 2.7, 5.1, 1.9),
+        'setosa': (5.1, 3.5, 1.4, 0.2),
+        'versicolor': (5.7, 2.8, 4.1, 1.3),
+    }
+
+.. code-block:: python
+
+    my_dict = {
+        'virginica': [5.8, 2.7, 5.1, 1.9],
+        'setosa': (5.1, 3.5, 1.4, 0.2),
+        'versicolor': {5.7, 2.8, 4.1, 1.3},
+    }
+
+.. code-block:: python
+
+    my_dict = {
+        'commander': {'first_name': 'Jan', 'last_name': 'Twardowski'},
+        'medical_officer': {'first_name': 'José', 'last_name': 'Jiménez'},
+        'flight_engineer': {'first_name': 'Иван', 'last_name': 'Иванович'},
+    }
+
 .. code-block:: python
 
     my_dict = {
@@ -102,9 +159,6 @@ Order of ``dict`` elements
 .. highlights::
     * Since Python 3.7 ``dict`` keeps order of elements
     * Before Python 3.7 ``dict`` order is not ensured!!
-
-.. note::
-    Since Python 3.7: The insertion-order preservation nature of dict objects is now an official part of the Python language spec.
 
 Type Annotation
 ---------------
@@ -321,23 +375,27 @@ Accessing ``dict`` keys, values and key-value pairs
 ---------------------------------------------------
 .. code-block:: python
 
-    my_dict = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski',
-        'age': 42,
+    iris = {
+        'Sepal length': 5.8,
+        'Sepal width': 2.7,
+        'Petal length': 5.1,
+        'Petal width': 1.9,
+        'Species': 'virginica'
     }
 
-    my_dict.keys()
-    # ['first_name', 'last_name', 'age']
+    list(iris.keys())
+    # ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
 
-    my_dict.values()
-    # ['Jan', 'Twardowski', 42]
+    list(iris.values())
+    # [5.8, 2.7, 5.1, 1.9, 'virginica']
 
-    my_dict.items()
+    list(iris.items())
     # [
-    #   ('first_name', 'Jan'),
-    #   ('last_name', 'Twardowski'),
-    #   ('age', 42)
+    #   ('Sepal length', 5.8),
+    #   ('Sepal width', 2.7),
+    #   ('Petal length', 5.1),
+    #   ('Petal width', 1.9),
+    #   ('Species', 'virginica')
     # ]
 
 
@@ -352,9 +410,7 @@ Create ``dict`` from two sequences
     keys =  ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
     values = [5.8, 2.7, 5.1, 1.9, 'virginica']
 
-    my_dict = dict(zip(keys, values))
-
-    print(my_dict)
+    dict(zip(keys, values))
     # {
     #   'Sepal length': 5.8,
     #   'Sepal width': 2.7,
@@ -373,17 +429,17 @@ Create ``dict`` from two sequences
 
 .. code-block:: python
 
-    {}                # dict
-    {1}               # set
-
-    {1: 2}            # dict
-    {1, 2}            # set
-
-    {1: 2,}           # dict
-    {1, 2,}           # set
-
-    {1: 2, 3: 4}      # dict
     {1, 2, 3, 4}      # set
+    {1: 2, 3: 4}      # dict
+
+    {1, 2}            # set
+    {1: 2}            # dict
+
+    {1, 2,}           # set
+    {1: 2,}           # dict
+
+    {1}               # set
+    {}                # dict
 
 Empty ``dict``
 --------------
@@ -409,7 +465,7 @@ Differences
 -----------
 .. code-block:: python
 
-    my_data = {}
+    my_data = {1: 1}
     isinstance(my_data, dict)         # True
     isinstance(my_data, set)          # False
 
@@ -417,7 +473,7 @@ Differences
     isinstance(my_data, dict)         # False
     isinstance(my_data, set)          # True
 
-    my_data = {1: 1}
+    my_data = {}
     isinstance(my_data, dict)         # True
     isinstance(my_data, set)          # False
 

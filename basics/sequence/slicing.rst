@@ -182,7 +182,8 @@ Slicing ``tuple``
 
 Slicing ``list``
 ----------------
-* Slicing works the same as for ``str``
+.. highlights::
+    * Slicing works the same as for ``str``
 
 .. code-block:: python
 
@@ -196,7 +197,8 @@ Slicing ``list``
 
 Slice ``set``
 -------------
-* Slicing ``set`` is not possible
+.. highlights::
+    * Slicing ``set`` is not possible
 
 .. code-block:: python
 

@@ -11,8 +11,8 @@ Sequence ``list``
 Initializing
 ============
 .. highlights::
-    * ``list()`` is more readable
     * ``[]`` is used more often
+    * ``list()`` is more readable
 
 Initialize empty
 ----------------

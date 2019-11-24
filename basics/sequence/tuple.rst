@@ -11,8 +11,8 @@ Sequence ``tuple``
 Initializing
 ============
 .. highlights::
-    * ``tuple()`` is more readable
     * ``()`` is used more often
+    * ``tuple()`` is more readable
 
 Initialize empty
 ----------------
