@@ -15,7 +15,7 @@ Generic syntax
 .. code-block:: python
     :caption: ``while`` loop generic syntax
 
-    while CONDITION:
+    while <CONDITION>:
         ...
 
 
@@ -53,16 +53,15 @@ Iterating over sequence
 .. code-block:: python
 
     i = 0
-    numbers = [1, 2, 3]
+    numbers = ['a', 'b', 'c']
 
     while i <= len(numbers):
-        current = numbers[i]
-        print(current)
+        print(numbers[i])
         i += 1
 
-    # 1
-    # 2
-    # 3
+    # 'a'
+    # 'b'
+    # 'c'
 
 Exit flag
 ---------
@@ -71,21 +70,22 @@ Exit flag
 
 .. code-block:: python
 
-    i = 0
+    i = 10
     abort = False
 
     while not abort:
         print(i)
-        i += 1
+        i -= 1
 
-        if i % 3 == 0:
-            print('Aborting!')
+        if i == 6:
+            print('Abort, Abort, Abort!')
             abort = True
 
-    # 0
-    # 1
-    # 2
-    # Aborting!
+    # 10
+    # 9
+    # 8
+    # 7
+    # Abort, Abort, Abort!
 
 
 ``break`` and ``continue``
@@ -100,7 +100,7 @@ Skipping iterations
 
     i = 0
 
-    while i <= 10:
+    while i < 10:
         i += 1
 
         if i % 2 == 0:
@@ -111,6 +111,8 @@ Skipping iterations
     # 1
     # 3
     # 5
+    # 7
+    # 9
 
 Exiting the loop
 ----------------
