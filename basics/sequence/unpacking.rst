@@ -11,14 +11,16 @@ Unpacking values
 
 .. code-block:: python
 
+    a, b, c = 1, 2, 3
+    a, b, c = (1, 2, 3)
+
+.. code-block:: python
+
     a, b, c = (1, 2, 3)
     a, b, c = [1, 2, 3]
     a, b, c = {1, 2, 3}
 
 .. code-block:: python
-
-    a, b, c = 1, 2, 3
-    a, b, c = (1, 2, 3)
 
     (a, b, c) = (1, 2, 3)
     (a, b, c) = [1, 2, 3]
