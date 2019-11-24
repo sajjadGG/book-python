@@ -512,9 +512,9 @@ Aviation Language
 * Filename: :download:`solution/dict_alphabet.py`
 
 :English:
-    #. Create translator to pilot's alphabet
+    #. Create translator of pilot's alphabet
     #. Each letter has it's phonetic counterpart
-    #. To convert table use multiline select with ``alt`` key in your IDE
+    #. To convert table use multiline select with ``alt`` key in your IDE (if shortcut key is not working in your IDE, use only first four letters)
     #. Ask user to input letter
     #. User will always put only one capitalized letter or number
     #. Print phonetic letter pronunciation
@@ -522,13 +522,13 @@ Aviation Language
     #. Do not use ``if``, ``try``, and ``except``
 
 :Polish:
-    #. Stwórz tłumacza do alfabetu pilotów
+    #. Stwórz tłumacza alfabetu pilotów
     #. Pojedynczym literom przyporządkuj ich fonetyczne odpowiedniki
-    #. Do przekonwertowania tabelki wykorzystaj zaznaczanie wielu linijek za pomocą klawisza ``alt`` w Twoim IDE
-    #. Zapytaj użytkownika o wprowadzenie litery
+    #. Do przekonwertowania tabelki wykorzystaj zaznaczanie wielu linijek za pomocą klawisza ``alt`` w Twoim IDE (jeżeli skrót klawiszowy nie działa w Twoim IDE, użyj tylko cztery pierwsze litery)
+    #. Poproś użytkownika o wprowadzenie litery
     #. Użytkownik zawsze poda tylko jedną dużą literę lub cyfrę
-    #. Wypisz nazwę fonetyczną wymowę litery
-    #. Jeżeli wpisał znak, który nie jest w alfabecie, wypisz: "Pilots don't say that"
+    #. Wypisz fonetyczną wymowę litery
+    #. Jeżeli wpisał znak, który nie występuje w alfabecie, wypisz: "Pilots don't say that"
     #. Nie używaj ``if``, ``try`` ani ``except``
 
 :Input:
