@@ -15,13 +15,6 @@ Unpacking values
     a, b, c = [1, 2, 3]
     a, b, c = {1, 2, 3}
 
-.. note::
-    Note, taht ``set`` is unordered collection
-
-.. code-block:: python
-
-    a, b, c = 1, 2, 3
-
 .. code-block:: python
 
     a, b, c = 1, 2, 3
@@ -35,6 +28,9 @@ Unpacking values
 
     {a, b, c} = {1, 2, 3}
     # SyntaxError: can't assign to literal
+
+.. note::
+    Note, that ``set`` is unordered collection
 
 Too many values to unpack
 -------------------------
@@ -60,9 +56,9 @@ Unpacking values at the right side
 
     a, b, *c = [1, 2, 3, 4]
 
-    a           # 1
-    b           # 2
-    c           # [3, 4]
+    a               # 1
+    b               # 2
+    c               # [3, 4]
 
 Unpacking values at the left side
 ---------------------------------
@@ -70,9 +66,9 @@ Unpacking values at the left side
 
     *a, b, c = [1, 2, 3, 4]
 
-    a           # [1, 2]
-    b           # 3
-    c           # 4
+    a               # [1, 2]
+    b               # 3
+    c               # 4
 
 Unpacking values from both sides at once
 ----------------------------------------
@@ -80,9 +76,9 @@ Unpacking values from both sides at once
 
     a, *b, c = [1, 2, 3, 4]
 
-    a           # 1
-    b           # [2, 3]
-    c           # 4
+    a               # 1
+    b               # [2, 3]
+    c               # 4
 
 Cannot unpack from both sides at once
 -------------------------------------
@@ -97,9 +93,9 @@ Unpacking from variable length
 
     a, *b, c = [1, 2]
 
-    print(a)    # 1
-    print(b)    # []
-    print(c)    # 2
+    print(a)        # 1
+    print(b)        # []
+    print(c)        # 2
 
 
 Naming convention
@@ -116,26 +112,26 @@ Naming convention
 
     first, second, *others = [1, 2, 3, 4]
 
-    first       # 1
-    second      # 2
-    others      # [3, 4]
+    first           # 1
+    second          # 2
+    others          # [3, 4]
 
 .. code-block:: python
 
     first, second, *others = range(10)
 
-    first       # 0
-    second      # 1
-    others      # [2, 3, 4, 5, 6, 7, 8, 9]
+    first           # 0
+    second          # 1
+    others          # [2, 3, 4, 5, 6, 7, 8, 9]
 
 .. code-block:: python
 
     line = '4.9,3.1,1.5,0.1,setosa'
 
-    *measurements, species = line.split(',')
+    *features, label = line.split(',')
 
-    measurements        # ['4.9', '3.1', '1.5', '0.1']
-    species             # 'setosa'
+    features         # ['4.9', '3.1', '1.5', '0.1']
+    label            # 'setosa'
 
 .. code-block:: python
 
@@ -150,10 +146,10 @@ Naming convention
 
     line = '5.4,3.9,1.3,0.4,setosa'
 
-    *measurements, species = line.split(',')
-    avg = sum(measurements) / len(measurements)
+    *features, label = line.split(',')
+    avg = sum(features) / len(features)
 
-    species         # 'setosa'
+    label           # 'setosa'
     avg             # 2.75
 
 
@@ -167,9 +163,9 @@ Omitting values
 
     line = '4.9,3.1,1.5,0.1,setosa'
 
-    *_, species = line.split(',')
+    *_, label = line.split(',')
 
-    species         # setosa
+    label           # setosa
 
 .. code-block:: python
 
@@ -200,8 +196,8 @@ Using in a loop
         (5.7, 2.8, 4.1, 1.3, 'versicolor'),
     ]
 
-    for *measurements, species in DATA:
-        print(measurements)
+    for *features, label in DATA:
+        print(features)
 
     # [5.8, 2.7, 5.1, 1.9]
     # [5.1, 3.5, 1.4, 0.2]
@@ -215,8 +211,8 @@ Using in a loop
         (5.7, 2.8, 4.1, 1.3, 'versicolor'),
     ]
 
-    for *_, species in DATA:
-        print(species)
+    for *_, label in DATA:
+        print(label)
 
     # virginica
     # setosa

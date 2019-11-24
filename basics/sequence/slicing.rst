@@ -25,11 +25,32 @@ Accessing slice from start
     len(text)
     # 28
 
+.. code-block:: python
+
+    text = 'We choose to go to the Moon!'
+
     text[0:2]       # 'We'
-    text[:2]        # 'We'
-    text[3:9]       # 'choose'
+    text[0:9]       # 'We choose'
+
+    text[16:28]     # 'to the Moon!'
     text[23:28]     # 'Moon!'
+
+.. code-block:: python
+
+    text = 'We choose to go to the Moon!'
+
+    text[3:9]       # 'choose'
     text[23:27]     # 'Moon'
+
+.. code-block:: python
+
+    text = 'We choose to go to the Moon!'
+
+    text[:2]        # 'We'
+    text[:9]        # 'We choose'
+
+    text[16:]       # 'to the Moon!'
+    text[23:]       # 'Moon!'
 
 
 Accessing slice from back
@@ -41,47 +62,26 @@ Accessing slice from back
 
     text = 'We choose to go to the Moon!'
 
+    text[:-13]      # 'We choose to go'
+    text[:-19]      # 'We choose'
+
+    text[-12:]      # 'to the Moon!'
     text[-5:]       # 'Moon!'
+
+    text[-12:-6]    # 'to the'
     text[-5:-1]     # 'Moon'
-    text[:-6]       # 'We choose to go to the'
 
 .. code-block:: python
 
     text = 'We choose to go to the Moon!'
 
-    text[13:-2]  # 'go to the Moo'
-    text[-5:5]  # ''
+    text[23:-2]     # 'Moo'
+    text[13:-2]     # 'go to the Moo'
 
-
-Accessing slice not existing elements
-=====================================
-.. code-block:: python
-
-    text = 'We choose to go to the Moon!'
-
-    text[:100]  # 'We choose to go to the Moon!'
-    text[100:]  # ''
-
-
-Accessing slice from all elements
-=================================
-.. code-block:: python
-
-    text = 'We choose to go to the Moon!'
-
-    text[:]               # 'We choose to go to the Moon!'
-
-
-Arithmetic operations on slice indexes
-======================================
-.. code-block:: python
-
-    text = 'We choose to go to the Moon!'
-    first = 23
-    last = 28
-
-    text[first:last]       # 'Moon!'
-    text[first:last-1]     # 'Moon'
+    text[-1:0]      # ''
+    text[-2:0]      # ''
+    text[-2:2]      # ''
+    text[-5:5]      # ''
 
 
 Every ``n-th`` element
@@ -100,6 +100,57 @@ Reversing
 
     text[::-1]            # '!nooM eht ot og ot esoohc eW'
     text[::-2]            # '!oMeto go soce'
+
+
+Accessing slice not existing elements
+=====================================
+.. code-block:: python
+
+    text = 'We choose to go to the Moon!'
+
+    text[:100]      # 'We choose to go to the Moon!'
+    text[100:]      # ''
+
+
+Accessing slice from all elements
+=================================
+.. code-block:: python
+
+    text = 'We choose to go to the Moon!'
+
+    text[:]         # 'We choose to go to the Moon!'
+
+
+Arithmetic operations on slice indexes
+======================================
+.. code-block:: python
+
+    text = 'We choose to go to the Moon!'
+    first = 23
+    last = 28
+
+    text[first:last]       # 'Moon!'
+    text[first:last-1]     # 'Moon'
+
+.. code-block:: python
+
+    text = 'We choose to go to the Moon!'
+    first = 23
+    last = 28
+    step = 2
+
+    text[first:last:step]       # 'Mo!'
+    text[first:last-1:step]     # 'Mo'
+
+.. code-block:: python
+
+    text = 'We choose to go to the Moon!'
+    first = 9
+    last = 2
+    step = -2
+
+    text[first:last:step]       # ' soc!'
+    text[first-1:last:step]     # 'eoh'
 
 
 Slicing sequences
@@ -237,8 +288,8 @@ Split train/test
     #. Calculate pivot point: number records in ``data`` multiplied by PERCENT
     #. Divide ``data`` into two lists:
 
-        * ``features``: 60% - training data
-        * ``labels``: 40% - testing data
+        * ``train``: 60% - training data
+        * ``test``: 40% - testing data
 
     #. From ``data`` write training data from start to pivot
     #. From ``data`` write test data from pivot to end
@@ -250,8 +301,8 @@ Split train/test
     #. Wylicz punkt podziału: ilość rekordów w ``data`` razy PROCENT
     #. Podziel ``data`` na dwie listy:
 
-        * ``features``: 60% - dane do uczenia
-        * ``labels``: 40% - dane do testów
+        * ``train``: 60% - dane do uczenia
+        * ``test``: 40% - dane do testów
 
     #. Z ``data`` zapisz do uczenia rekordy od początku do punktu podziału
     #. Z ``data`` zapisz do testów rekordy od punktu podziału do końca

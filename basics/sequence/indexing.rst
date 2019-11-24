@@ -51,8 +51,13 @@ Indexing ``str``
 
     DATA = 'abcde'
 
+    DATA[0]             # 'a'
+    DATA[1]             # 'b'
     DATA[2]             # 'c'
+
+    DATA[-0]            # 'a'
     DATA[-1]            # 'e'
+    DATA[-2]            # 'd'
 
 Indexing ``list``
 --------------------
@@ -63,7 +68,12 @@ Indexing ``list``
 
     DATA = ['a', 'b', 'c', 'd', 'e']
 
+    DATA[0]             # 'a'
     DATA[1]             # 'b'
+    DATA[2]             # 'c'
+
+    DATA[-0]            # 'a'
+    DATA[-1]            # 'e'
     DATA[-2]            # 'd'
 
 Indexing ``tuple``
@@ -75,8 +85,14 @@ Indexing ``tuple``
 
     DATA = ('a', 'b', 'c', 'd', 'e')
 
+    DATA[0]             # 'a'
     DATA[1]             # 'b'
+    DATA[2]             # 'c'
+
+    DATA[-0]            # 'a'
+    DATA[-1]            # 'e'
     DATA[-2]            # 'd'
+
 
 Indexing ``set``
 ----------------
@@ -87,8 +103,13 @@ Indexing ``set``
 
     DATA = {'a', 'b', 'c', 'd', 'e'}
 
-    DATA[1]
-    # TypeError: 'set' object is not subscriptable
+    DATA[0]             # TypeError: 'set' object is not subscriptable
+    DATA[1]             # TypeError: 'set' object is not subscriptable
+    DATA[2]             # TypeError: 'set' object is not subscriptable
+
+    DATA[-0]            # TypeError: 'set' object is not subscriptable
+    DATA[-1]            # TypeError: 'set' object is not subscriptable
+    DATA[-2]            # TypeError: 'set' object is not subscriptable
 
 Indexing ``dict``
 -----------------
@@ -98,22 +119,34 @@ Indexing ``dict``
 .. code-block:: python
 
     DATA = {
-        'a': 1,
-        'b': 2,
+        'a': 0
+        'b': 1,
+        'c': 2,
     }
 
-    DATA[1]
-    # KeyError: 1
+    DATA[0]             # KeyError: 0
+    DATA[1]             # KeyError: 1
+    DATA[2]             # KeyError: 2
+
+    DATA[-0]            # KeyError: 0
+    DATA[-1]            # KeyError: -1
+    DATA[-2]            # KeyError: -2
 
 .. code-block:: python
 
     DATA = {
-        1: 'a',
-        2: 'b',
+        0: 'a',
+        1: 'b',
+        2: 'c',
     }
 
-    DATA[1]
-    # 'a'
+    DATA[0]             # 'a'
+    DATA[1]             # 'b'
+    DATA[2]             # 'c'
+
+    DATA[-0]            # 'a'
+    DATA[-1]            # KeyError: -1
+    DATA[-2]            # KeyError: -2
 
 
 Assignments
@@ -123,13 +156,13 @@ Select
 ------
 * Complexity level: easy
 * Lines of code to write: 6 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 10 min
 * Filename: :download:`solution/indexing_select.py`
 
 :English:
     #. For given data input (see below)
     #. Write header (first line) to ``header`` variable
-    #. Create list ``output``
+    #. Create ``output: list``
     #. Convert to ``list`` data from row 2, 6, 9 and add to ``output``
     #. Convert to ``tuple`` data from row 12, 15, 16 and add to ``output``
     #. Add empty ``set`` to ``output``
@@ -139,7 +172,7 @@ Select
 :Polish:
     #. Dla danych wejściowych (patrz poniżej)
     #. Zapisz nagłówek (pierwsza linia) do zmiennej ``header``
-    #. Stwórz listę ``output``
+    #. Stwórz ``output: list``
     #. Przekonwertuj do ``list`` dane z wierszy 2, 6, 9 i dodaj do ``output``
     #. Przekonwertuj do ``tuple`` dane z wierszy 12, 15, 16 i dodaj do ``output``
     #. Dodaj pusty ``set`` do ``output``
