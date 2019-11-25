@@ -4,7 +4,7 @@ INPUT = [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0,
          1, 3, 5, 6, 8, 2, 8, 1, 3, 9, 5,
          4, 8, 1, 9, 6, 3]
 
-counter = {
+OUTPUT = {
     'small': 0,
     'medium': 0,
     'large': 0,
@@ -12,13 +12,13 @@ counter = {
 
 for digit in INPUT:
     if 0 <= digit <= 2:
-        counter['small'] += 1
+        OUTPUT['small'] += 1
     elif 3 <= digit <= 7:
-        counter['medium'] += 1
+        OUTPUT['medium'] += 1
     elif 8 <= digit <= 9:
-        counter['large'] += 1
+        OUTPUT['large'] += 1
 
-print(counter)
+print(OUTPUT)
 
 
 ## Alternative version
@@ -28,7 +28,7 @@ print(counter)
 #          1, 3, 5, 6, 8, 2, 8, 1, 3, 9, 5,
 #          4, 8, 1, 9, 6, 3]
 #
-# COUNTERS = [
+# OUTPUT = [
 #     {'name': 'small', 'range': range(0, 3), 'count': 0, 'digits': []},
 #     {'name': 'medium', 'range': range(3, 8), 'count': 0, 'digits': []},
 #     {'name': 'large', 'range': range(8, 10), 'count': 0, 'digits': []},
@@ -38,11 +38,10 @@ print(counter)
 # ]
 #
 # for digit in INPUT:
-#     for counter in COUNTERS:
+#     for counter in OUTPUT:
 #         if digit in counter['range']:
 #             counter['digits'].append(digit)
 #             counter['count'] += 1
 #
 #
-# from pprint import pprint
-# pprint(COUNTERS)
+# print(OUTPUT)

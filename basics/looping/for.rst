@@ -197,7 +197,7 @@ Loops with ``range``
 Assignments
 ===========
 
-Counter
+Example
 -------
 * Complexity level: easy
 * Lines of code to write: 6 lines
@@ -232,18 +232,12 @@ Counter
 :Output:
     .. code-block:: python
 
-        OUTPUT = {
-            0: 7,
-            1: 7,
-            2: 2,
-            3: 3,
-            4: 8,
-            5: 4,
-            6: 4,
-            7: 4,
-            8: 6,
-            9: 5,
-        }
+        OUTPUT: dict
+        # {1: 7, 4: 8, 6: 4, 7: 4, 5: 4, 0: 7, 9: 5, 8: 6, 2: 2, 3: 3}
+
+:Solution:
+    .. literalinclude:: solution/for_counter.py
+        :language: python
 
 :The whys and wherefores:
     * Defining ``dict``
@@ -311,12 +305,6 @@ Text analysis
     #. Sentences are separated by period (``.``)
     #. Clean each sentence from whitespaces at the beginning and at the end
     #. Words are separated by spaces
-    #. Count how many words are there in every sentence
-    #. Print ``Dict[str, int]``:
-
-        * key - sentence
-        * value - number of words
-
     #. Print the total number in whole text:
 
         * adverbs (words ending with "ly")
@@ -331,12 +319,6 @@ Text analysis
     #. Zdania oddzielone są kropkami (``.``)
     #. Każde zdanie oczyść z białych znaków na początku i końcu
     #. Słowa oddzielone są spacjami
-    #. Policz ile jest słów w każdym zdaniu
-    #. Wypisz ``Dict[str, int]``:
-
-        * klucz - zdanie
-        * wartość - liczba słów
-
     #. Wypisz także ile jest łącznie w całym tekście:
 
         * przysłówków (słów zakończonych na "ly")
