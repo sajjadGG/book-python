@@ -13,10 +13,4 @@ for digit in INPUT:
     else:
         OUTPUT[digit] += 1
 
-
-## Alternative version
-# for digit in INPUT:
-#     OUTPUT[digit] = OUTPUT.get(digit, 0) + 1
-
-
 print(OUTPUT)

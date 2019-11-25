@@ -35,6 +35,22 @@ Iterating over nested ``list`` items
     :caption: Iterating over nested ``list`` items
 
     DATA = [
+        ('a', 1),
+        ('b', 2),
+        ('c', 3),
+    ]
+
+    for obj in DATA:
+        print(obj)
+
+    # ('a', 1)
+    # ('b', 2)
+    # ('c', 3)
+
+.. code-block:: python
+    :caption: Iterating over nested ``list`` items
+
+    DATA = [
         (5.1, 3.5, 1.4, 0.2, 'setosa'),
         (5.7, 2.8, 4.1, 1.3, 'versicolor'),
         (6.3, 2.9, 5.6, 1.8, 'virginica'),
@@ -164,8 +180,8 @@ Iterating complex types
 
     DATA = [('Jan', 'Twardowski'), 'Watney', 42, 13.37, {True, None, False}]
 
-    for element in DATA:
-        print(element})
+    for obj in DATA:
+        print(obj)
 
     # ('Jan', 'Twardowski')
     # Watney
@@ -178,8 +194,8 @@ Iterating complex types
 
     DATA = [('Jan', 'Twardowski'), 'Watney', 42, 13.37, {True, None, False}]
 
-    for outer in DATA:
-        for inner in outer:
+    for obj in DATA:
+        for inner in obj:
             print(inner)
 
     # Jan
@@ -200,12 +216,12 @@ Iterating complex types
     DATA = [('Jan', 'Twardowski'), 'Watney', 42, 13.37, {True, None, False}]
 
 
-    for outer in DATA:
-        if isinstance(outer, (list, set, tuple)):
-            for inner in outer:
+    for obj in DATA:
+        if isinstance(obj, (list, set, tuple)):
+            for inner in obj:
                 print(inner)
         else:
-            print(outer)
+            print(obj)
 
     # Jan
     # Twardowski

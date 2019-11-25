@@ -76,8 +76,8 @@ Iterating over ``list``
 
     DATA = [5.1, 3.5, 1.4, 0.2, 'setosa']
 
-    for element in DATA:
-        print(element)
+    for obj in DATA:
+        print(obj)
 
     # 5.1
     # 3.5
@@ -92,8 +92,8 @@ Iterating over ``tuple``
 
     DATA = (5.1, 3.5, 1.4, 0.2, 'setosa')
 
-    for element in DATA:
-        print(element)
+    for obj in DATA:
+        print(obj)
 
     # 5.1
     # 3.5
@@ -108,8 +108,8 @@ Iterating over ``set``
 
     DATA = {5.1, 3.5, 1.4, 0.2, 'setosa'}
 
-    for element in DATA:
-        print(element)
+    for obj in DATA:
+        print(obj)
 
     # 5.1
     # 3.5
