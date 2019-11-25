@@ -154,6 +154,28 @@ Value can be any object
         'location': ('Baikonur', 'Johnson Space Center'),
     }
 
+Convert list to dict
+--------------------
+.. code-block:: python
+
+    a = [(1, 2)]
+
+    dict(a)
+    # {1: 2}
+
+.. code-block:: python
+
+    pairs = [
+        ('first_name', 'Jan'),
+        ('last_name', 'Twardowski'),
+    ]
+
+    dict(pairs)
+    # {
+    #   'first_name': 'Jan',
+    #   'last_name': 'Twardowski'
+    # }
+
 Order of ``dict`` elements
 --------------------------
 .. highlights::
