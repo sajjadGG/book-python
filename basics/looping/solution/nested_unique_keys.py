@@ -1,5 +1,3 @@
-from typing import Set
-
 INPUT = [
     {'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
     {'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
@@ -9,9 +7,10 @@ INPUT = [
     {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'},
 ]
 
-fieldnames: Set[str] = set()
+unique_keys = set()
 
 for row in INPUT:
-    fieldnames.update(row.keys())
+    unique_keys.update(row.keys())
 
-# http://python.astrotech.io/performance/micro-benchmarking.html
+print(sorted(unique_keys))
+

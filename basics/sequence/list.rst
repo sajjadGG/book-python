@@ -115,7 +115,6 @@ Inserting elements at specific position
     my_list.insert(1, 'a')
     # [1, 'a', 2]
 
-
 Accessing elements
 ==================
 .. highlights::
@@ -136,6 +135,17 @@ Accessing elements
     my_list[-1]        # 'd'
     my_list[-3]        # 'b'
 
+Removing items
+==============
+.. code-block:: python
+
+    my_list = ['a', 'b', 'c', 'd']
+
+    my_list.pop()
+    # 2
+
+    print(my_list)
+    # [1]
 
 Sorting
 =======

@@ -236,12 +236,52 @@ Iterating complex types
 Assignments
 ===========
 
+Example
+-------
+* Complexity level: easy
+* Lines of code to write: 3 lines
+* Estimated time of completion: 10 min
+* Filename: :download:`solution/nested_example.py`
+
+:English:
+    #. For input data (see below)
+    #. Separate header from data
+    #. Calculate mean `Sepal length` value
+
+:Polish:
+    #. Dla danych wejściowych (patrz poniżej)
+    #. Oddziel nagłówek od danych
+    #. Wylicz średnią wartość `Sepal length`
+
+:Input:
+    .. code-block:: python
+
+        INPUT = [
+            ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+            (5.8, 2.7, 5.1, 1.9, 'virginica'),
+            (5.1, 3.5, 1.4, 0.2, 'setosa'),
+            (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+            (6.3, 2.9, 5.6, 1.8, 'virginica'),
+            (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+            (4.7, 3.2, 1.3, 0.2, 'setosa'),
+            (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+            (7.6, 3.0, 6.6, 2.1, 'virginica'),
+            (4.6, 3.1, 1.5, 0.2, 'setosa'),
+        ]
+
+:Solution:
+    .. literalinclude:: solution/nested_example.py
+        :language: python
+
+:The whys and wherefores:
+    * Iterating over nested structure
+
 Get elements from nested data structure
 ---------------------------------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/for_nested.py`
+* Filename: :download:`solution/nested_endswith.py`
 
 :English:
     #. For input data (see below)
@@ -272,7 +312,7 @@ Get elements from nested data structure
         ]
 
 :The whys and wherefores:
-    * Accessing ``dict`` keys
+    * Accessing ``set`` items
     * Iterating over nested structure
 
 Unique keys from schema-less database
@@ -280,17 +320,19 @@ Unique keys from schema-less database
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/loop_unique_keys.py`
+* Filename: :download:`solution/nested_unique_keys.py`
 
 :English:
     #. For input data (see below)
-    #. Collect unique keys in one sequence
-    #. Print the sequence
+    #. Collect keys from all rows in one sequence ``OUTPUT``
+    #. Sort ``OUTPUT``
+    #. Print unique keys
 
 :Polish:
     #. Dla danych wejściowych (patrz poniżej)
-    #. Zbierz unikalne klucze w jednej sekwencji
-    #. Wypisz sekwencję
+    #. Zbierz klucze z wszystkich wierszy w jednej sekwencji ``OUTPUT``
+    #. Sort ``OUTPUT``
+    #. Wypisz unikalne klucze
 
 :Input:
     .. code-block:: python
@@ -303,6 +345,15 @@ Unique keys from schema-less database
             {'Sepal width': 2.8, 'Petal length': 4.1, 'Species': 'versicolor'},
             {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'},
         ]
+
+:Output:
+    .. code-block:: text
+
+        Petal length
+        Petal width
+        Sepal length
+        Sepal width
+        Species
 
 :The whys and wherefores:
     * Generating ``set``

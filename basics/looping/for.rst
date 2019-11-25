@@ -232,7 +232,9 @@ Example
 :Output:
     .. code-block:: python
 
-        OUTPUT: dict
+        from typing import Dict
+
+        OUTPUT: Dict[int, int]
         # {1: 7, 4: 8, 6: 4, 7: 4, 5: 4, 0: 7, 9: 5, 8: 6, 2: 2, 3: 3}
 
 :Solution:
@@ -288,6 +290,16 @@ Segmentation
                  1, 3, 5, 6, 8, 2, 8, 1, 3, 9, 5,
                  4, 8, 1, 9, 6, 3]
 
+:Output:
+    .. code-block:: python
+
+        from typing import Dict
+
+
+        OUTPUT: Dict[str, int]
+        # {'small': 16, 'medium': 23, 'large': 11}
+
+
 :The whys and wherefores:
     * Defining ``dict``
     * Updating ``dict``
@@ -328,14 +340,25 @@ Text analysis
         * znaków (łącznie ze spacjami wewnątrz zdań, ale bez kropek ``.``)
         * przecinków (``,``)
 
+:Input:
+    .. code-block:: text
+        :caption: "Moon Speech" by John F. Kennedy, Rice Stadium, Houston, TX, 1962-09-12 :cite:`Kennedy1962`
+
+        We choose to go to the Moon. We choose to go to the Moon in this decade and do the other things. Not because they are easy, but because they are hard. Because that goal will serve to organize and measure the best of our energies and skills. Because that challenge is one that we are willing to accept. One we are unwilling to postpone. And one we intend to win
+
+:Output:
+    .. code-block:: text
+
+        Sentences: 7
+        Words: 71
+        Characters: 348
+        Letters: 283
+        Commas: 1
+        Adverbs: 0
+
 :The whys and wherefores:
     * String splitting
     * Calculating lengths
     * Iterating over string
     * Variable naming convention
     * Good variable names
-
-.. code-block:: text
-    :caption: "Moon Speech" by John F. Kennedy, Rice Stadium, Houston, TX, 1962-09-12 :cite:`Kennedy1962`
-
-    We choose to go to the Moon. We choose to go to the Moon in this decade and do the other things. Not because they are easy, but because they are hard. Because that goal will serve to organize and measure the best of our energies and skills. Because that challenge is one that we are willing to accept. One we are unwilling to postpone. And one we intend to win

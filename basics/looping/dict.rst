@@ -17,7 +17,7 @@ Values iterator
 .. code-block:: python
     :caption: Iterating over ``dict`` items
 
-    INPUT = {
+    iris = {
         'Sepal length': 5.1,
         'Sepal width': 3.5,
         'Petal length': 1.4,
@@ -25,11 +25,11 @@ Values iterator
         'Species': 'setosa',
     }
 
-    INPUT.values()
+    list(iris.values())
     # [5.1, 3.5, 1.4, 0.2, 'setosa']
 
-    for element in INPUT.values():
-        print(element)
+    for obj in iris.values():
+        print(obj)
 
     # 5.1
     # 3.5
@@ -42,7 +42,7 @@ Keys iterator
 .. code-block:: python
     :caption: Iterating over ``dict`` items
 
-    INPUT = {
+    iris = {
         'Sepal length': 5.1,
         'Sepal width': 3.5,
         'Petal length': 1.4,
@@ -50,11 +50,11 @@ Keys iterator
         'Species': 'setosa',
     }
 
-    INPUT.keys()
+    list(iris.keys())
     # ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
 
-    for element in INPUT.keys():
-        print(element)
+    for obj in iris.keys():
+        print(obj)
 
     # 'Sepal length'
     # 'Sepal width'
@@ -67,7 +67,7 @@ Default iterator
 .. code-block:: python
     :caption: By default ``dict`` iterates over keys
 
-    INPUT = {
+    iris = {
         'Sepal length': 5.1,
         'Sepal width': 3.5,
         'Petal length': 1.4,
@@ -75,8 +75,8 @@ Default iterator
         'Species': 'setosa',
     }
 
-    for element in INPUT:
-        print(element)
+    for obj in iris:
+        print(obj)
 
     # 'Sepal length'
     # 'Sepal width'
@@ -92,7 +92,7 @@ Items iterator
 .. code-block:: python
     :caption: Getting pair: ``key``, ``value`` from ``dict`` items
 
-    INPUT = {
+    iris = {
         'Sepal length': 5.1,
         'Sepal width': 3.5,
         'Petal length': 1.4,
@@ -100,17 +100,17 @@ Items iterator
         'Species': 'setosa',
     }
 
-    INPUT.items()
+    list(iris.items())
     # [
     #   ('Sepal length', 5.1),
     #   ('Sepal width', 3.5),
     #   ('Petal length', 1.4),
     #   ('Petal width', 0.2),
-    #   ('Species', 'setosa')
+    #   ('Species', 'setosa'),
     # ]
 
 
-    for key, value in INPUT.items():
+    for key, value in iris.items():
         print(f'{key} -> {value}')
 
     # Sepal length -> 5.1
@@ -132,8 +132,8 @@ Create ``dict`` from two sequences
 .. code-block:: python
     :caption: Create ``dict`` from two ``list``
 
-    header = ['a', 'b', 'c']
-    data = [1, 2, 3]
+    header = ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
+    data = [5.1, 3.5, 1.4, 0.2, 'setosa']
     output = {}
 
     for i in range(len(header)):
@@ -143,9 +143,11 @@ Create ``dict`` from two sequences
 
     print(output)
     # {
-    #     'a': 1,
-    #     'b': 2,
-    #     'c': 3,
+    #   'Sepal length': 5.1,
+    #   'Sepal width': 3.5,
+    #   'Petal length': 1.4,
+    #   'Petal width': 0.2,
+    #   'Species': 'setosa',
     # }
 
 ``enumerate()``
@@ -157,20 +159,20 @@ Create ``dict`` from two sequences
 .. code-block:: python
     :caption: Create ``dict`` from two ``list``
 
-    header = ['a', 'b', 'c']
-    data = [1, 2, 3]
+    header = ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
+    data = [5.1, 3.5, 1.4, 0.2, 'setosa']
     output = {}
 
-    for i, _ in enumerate(header):
-        key = header[i]
-        value = data[i]
-        output[key] = value
+    for i, key in enumerate(header):
+        output[key] = data[i]
 
     print(output)
     # {
-    #     'a': 1,
-    #     'b': 2,
-    #     'c': 3,
+    #   'Sepal length': 5.1,
+    #   'Sepal width': 3.5,
+    #   'Petal length': 1.4,
+    #   'Petal width': 0.2,
+    #   'Species': 'setosa',
     # }
 
 ``zip()``
@@ -180,16 +182,18 @@ Create ``dict`` from two sequences
 
 .. code-block:: python
 
-    header = ['a', 'b', 'c']
-    data = [1, 2, 3]
+    header = ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
+    data = [5.1, 3.5, 1.4, 0.2, 'setosa']
 
     output = dict(zip(header, data))
 
     print(output)
     # {
-    #     'a': 1,
-    #     'b': 2,
-    #     'c': 3,
+    #   'Sepal length': 5.1,
+    #   'Sepal width': 3.5,
+    #   'Petal length': 1.4,
+    #   'Petal width': 0.2,
+    #   'Species': 'setosa',
     # }
 
 
@@ -227,6 +231,9 @@ Assignments
 
 :Output:
     .. code-block:: python
+
+        from typing import Dict
+
 
         OUTPUT: Dict[str, str] = {
             'Doctorate': '6',
@@ -298,6 +305,9 @@ Assignments
 
 :Output:
     .. code-block:: python
+
+        from typing import List
+
 
         OUTPUT: List[dict] = [
             {'Sepal length': 5.8, 'Sepal width': 2.7, 'Petal length': 5.1, 'Petal width': 1.9, 'Species': 'virginica'},
@@ -385,7 +395,10 @@ Label encoder
 :Output:
     .. code-block:: python
 
-        features = [
+        from typing import List, Dict
+
+
+        features: List[tuple] = [
             (5.8, 2.7, 5.1, 1.9),
             (5.1, 3.5, 1.4, 0.2),
             (5.7, 2.8, 4.1, 1.3),
@@ -393,9 +406,9 @@ Label encoder
             (6.4, 3.2, 4.5, 1.5),
             (4.7, 3.2, 1.3, 0.2), ...]
 
-        labels = [0, 1, 2, 1, 2, 0, ...]
+        labels: List[int] = [0, 1, 2, 1, 2, 0, ...]
 
-        label_encoder = {
+        label_encoder: Dict[int, str] = {
             0: 'virginica',
             1: 'setosa',
             2: 'versicolor'}
