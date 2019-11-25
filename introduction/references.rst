@@ -81,6 +81,24 @@ Jan Twardowski
 
     Jan Twardowski
 
+Mark Watney
+^^^^^^^^^^^
+.. figure:: img/mark-watney.jpg
+    :scale: 25%
+    :align: center
+
+    Mark Watney
+
+Иван Иванович
+^^^^^^^^^^^^^
+.. figure:: img/ivan-ivanovich.jpg
+    :scale: 50%
+    :align: center
+
+    Иван Иванович
+
+.. _José Jiménez:
+
 José Jiménez
 ^^^^^^^^^^^^
 .. figure:: img/jose-jimenez.jpg
@@ -95,14 +113,6 @@ José Jiménez
 * https://www.youtube.com/watch?v=i6ckW7uRRNw
 * https://www.youtube.com/watch?v=PVxfJYw59cM
 * https://youtu.be/kPnaaHR9pLc?t=16
-
-Иван Иванович
-^^^^^^^^^^^^^
-.. figure:: img/ivan-ivanovich.jpg
-    :scale: 50%
-    :align: center
-
-    Иван Иванович
 
 Melissa Lewis
 ^^^^^^^^^^^^^
@@ -119,14 +129,6 @@ Ryan Stone
     :align: center
 
     Ryan Stone
-
-Mark Watney
-^^^^^^^^^^^
-.. figure:: img/mark-watney.jpg
-    :scale: 25%
-    :align: center
-
-    Mark Watney
 
 Matt Kowalski
 ^^^^^^^^^^^^^

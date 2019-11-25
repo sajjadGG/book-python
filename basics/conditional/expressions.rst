@@ -11,6 +11,7 @@ Complex expressions
 ``and``
 -------
 .. code-block:: python
+    :caption: Inside joke (see :ref:`José Jiménez`)
 
     first_name = 'José'
     last_name = 'Jiménez'
@@ -18,21 +19,22 @@ Complex expressions
     if first_name == 'José' and last_name == 'Jiménez':
         print('My name... José Jiménez')
     else:
-        print('Your name is different')
+        print("I don't know this catchphrase")
 
+    # My name... José Jiménez
 
 ``or``
 ------
 .. code-block:: python
 
-    first_name = 'José'
-    last_name = 'Jiménez'
+    name = 'Jan'
 
-    if first_name == 'José' or first_name == 'Max':
-        print('Your name is José or Max')
+    if name == 'Jan' or name == 'Melissa':
+        print('Hello astronaut')
     else:
-        print('Your name is different')
+        print('Sorry, astronauts only')
 
+    # Hello astronaut
 
 ``and`` and ``or``
 ------------------
@@ -44,12 +46,13 @@ Complex expressions
     first_name = 'José'
     last_name = 'Jiménez'
 
-    if (first_name == 'José' and last_name == 'Jiménez')
+    if (first_name == 'Jan' and last_name == 'Twardowski')
             or (first_name == 'Mark' and last_name == 'Watney'):
-        print('Your name is José Jiménez or Mark Watney')
+        print('Hello astronaut')
     else:
-        print('Your name is different')
+        print('Sorry, astronauts only')
 
+    # Sorry, astronauts only
 
 Good practice
 =============
@@ -59,7 +62,7 @@ Complex conditions
 .. code-block:: python
 
     for line in file:
-        if line and not line.startswith('#') and not line.isspace():
+        if line and not line.startswith('#') or not line.isspace():
             ...
 
 Defining exit conditions first
@@ -67,6 +70,8 @@ Defining exit conditions first
 .. code-block:: python
 
     for line in file:
+        line = line.strip()
+
         if line.startswith('#'):
             continue
 
@@ -84,15 +89,19 @@ Control Statements
 .. highlights::
     * ``in`` checks whether value is in collection
     * works with ``tuple``, ``dict``, ``list``, ``set``
+    * Checking if something in ``set`` - O(1) :ref:`Performance Optimization Contains`
+    * Checking if something in ``list`` - O(n) :ref:`Performance Optimization Contains`
 
 .. code-block:: python
 
-    usernames = {'José Jiménez', 'Jan Twardowski', 'Mark Watney'}
+    crew = {'Jan Twardowski', 'Mark Watney', 'Melissa Lewis'}
 
-    if 'José Jiménez' in usernames:
-        print(True)
+    if 'José Jiménez' in crew:
+        print('Yes')
     else:
-        print(False)
+        print('No')
+
+    # No
 
 ``in`` with ``str``
 -------------------
@@ -101,12 +110,14 @@ Control Statements
 
 .. code-block:: python
 
-    text = 'My name... José Jiménez'
+    text = 'Monty Python'
 
-    if 'José' in text:
-        print(True)
+    if 'Python' in text:
+        print('Yes')
     else:
-        print(False)
+        print('No')
+
+    # Yes
 
 ``not``
 -------
@@ -115,17 +126,19 @@ Control Statements
 
 .. code-block:: python
 
-    name = None
+    crew = {'José', 'Max', 'Иван'}
 
-    if not name:
-        print('Name is not defined')
+    if 'Jan' not in crew:
+        print('You are not an astronaut')
+
+    # You are not an astronaut
 
 .. code-block:: python
 
-    usernames = {'José', 'Max', 'Иван'}
+    name = None
 
-    if 'José' not in usernames:
-        print('Not found')
+    if not name:
+        print('Name is empty')
 
 ``is``
 ------
@@ -134,7 +147,7 @@ Control Statements
     name = None
 
     if name is None:
-        print('Name is not defined')
+        print('Name is empty')
 
 .. code-block:: python
 
@@ -149,7 +162,7 @@ Assignments
 
 Classification of blood pressure in adults
 ------------------------------------------
-* Complexity level: easy
+* Complexity level: medium
 * Lines of code to write: 25 lines
 * Estimated time of completion: 25 min
 * Filename: :download:`solution/ifelse_blood_pressure.py`

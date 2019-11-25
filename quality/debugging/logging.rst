@@ -30,6 +30,40 @@ Konfiguracja logowania
 
     import logging
 
+
+    logging.info('Rozpoczynam pętlę')
+
+    i = 0
+    while i <= 3:
+        logging.info(f'Przetwarzam {i}')
+        i += 1
+
+    logging.info('Skończyłem pętlę')
+
+.. code-block:: python
+
+    import logging
+
+
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format='"%(asctime).19s", "%(levelname)s", "%(message)s"',
+        filename="log.csv",
+    )
+
+    logging.info('Rozpoczynam pętlę')
+
+    i = 0
+    while i <= 3:
+        logging.info(f'Przetwarzam {i}')
+        i += 1
+
+    logging.info('Skończyłem pętlę')
+
+.. code-block:: python
+
+    import logging
+
     logging.basicConfig(
         level=logging.INFO,
         filename='/tmp/logging.csv',

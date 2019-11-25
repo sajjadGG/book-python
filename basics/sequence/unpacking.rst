@@ -7,6 +7,8 @@ Unpacking values
 ================
 .. code-block:: python
 
+    a = 1
+    a, b = 1, 2
     a, b, c = 1, 2, 3
 
 .. code-block:: python
@@ -163,6 +165,24 @@ Omitting values
 
 .. code-block:: python
 
+    line = 'Jan,Twardowski'
+
+    a, _ = line.split(',')
+
+.. code-block:: python
+
+    a, _, _ = 1, 2, 3
+
+    print(a)        # 1
+
+.. code-block:: python
+
+    _, interesting, _ = 1, 2, 3
+
+    print(interesting)  # 2
+
+.. code-block:: python
+
     line = '4.9,3.1,1.5,0.1,setosa'
 
     *_, label = line.split(',')
@@ -275,7 +295,7 @@ Unpacking from nested sequence
 :Input:
     .. code-block:: python
 
-        INPUT: list = [
+        INPUT = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, 'virginica'),
             (5.1, 3.5, 1.4, 0.2, 'setosa'),

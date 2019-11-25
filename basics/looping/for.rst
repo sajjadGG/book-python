@@ -11,14 +11,14 @@ Syntax
 Generic syntax
 --------------
 .. highlights::
-    * ``DATA`` must implement ``iterator`` interface
+    * ``ITERABLE`` must implement ``iterator`` interface
     * More on iterators in chapter :ref:`Iterators`
 
 .. code-block:: python
     :caption: ``for`` loop syntax
 
-    for <MY VARIABLE> in <DATA> :
-        <CONTENT>
+    for <MY_VARIABLE> in <ITERABLE> :
+        ...
 
 Example
 -------
@@ -31,9 +31,9 @@ Example
     for letter in DATA:
         print(letter)
 
-    # 'a'
-    # 'b'
-    # 'c'
+    # a
+    # b
+    # c
 
 .. code-block:: python
     :caption: ``for`` loop syntax: data can be inline
@@ -42,9 +42,9 @@ Example
     for letter in ['a', 'b', 'c']:
         print(letter)
 
-    # 'a'
-    # 'b'
-    # 'c'
+    # a
+    # b
+    # c
 
 
 Iterating over ``str``
@@ -159,16 +159,27 @@ Loops with ``range``
     * ``enumerate()`` will return ``counter`` and ``value`` for every iteration
 
 .. code-block:: python
+
+    DATA = ['a', 'b', 'c']
+
+    for letter in DATA:
+        print(letter)
+
+    # a
+    # b
+    # c
+
+.. code-block:: python
     :caption: ``enumerate()`` will return ``counter`` and ``value`` for every iteration
 
     DATA = ['a', 'b', 'c']
 
     for i, letter in enumerate(DATA):
-        print(f'{i} -> {letter}')
+        print(i, letter)
 
-    # 0 -> a
-    # 1 -> b
-    # 2 -> c
+    # 0 a
+    # 1 b
+    # 2 c
 
 .. code-block:: python
     :caption: ``enumerate()`` can start with custom number
@@ -176,11 +187,11 @@ Loops with ``range``
     DATA = ['a', 'b', 'c']
 
     for i, letter in enumerate(DATA, start=5):
-        print(f'{i}, {letter}')
+        print(i, letter)
 
-    # 5 -> a
-    # 6 -> b
-    # 7 -> c
+    # 5 a
+    # 6 b
+    # 7 c
 
 
 Assignments

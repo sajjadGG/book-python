@@ -51,10 +51,26 @@ Checking for simple value
 -------------------------
 .. code-block:: python
 
-    name = 'José Jiménez'
+    age = 7
 
-    if name == 'José Jiménez':
+    if age == 7:
+        print('Go to school')
+
+.. code-block:: python
+    :caption: Inside joke (see :ref:`José Jiménez`)
+
+    job = 'astronaut'
+
+    if job == 'astronaut':
         print('My name... José Jiménez')
+
+.. code-block:: python
+
+    number = 6
+
+    if number % 2 == 0:
+        print('Even')
+    # Even
 
 Checking if value is in range
 -----------------------------
@@ -72,12 +88,19 @@ Checking if has value
 
 .. code-block:: python
 
+    name = input('What is your name?: ')
+    # What is your name?: Jan Twardowski<Enter key>
+
+    if name:
+        print(f'My name is... {name}')
+    # My name is Jan Twardowski
+
+.. code-block:: python
+
     name = None
 
     if name:
         print(f'My name... {name}')
-    else:
-        print('Name is not defined')
 
 
 ``else``
@@ -90,12 +113,24 @@ Checking if variable is certain value
 -------------------------------------
 .. code-block:: python
 
-    name = 'José Jiménez'
+    job = 'cosmonaut'
 
-    if name == 'José Jiménez':
-        print('My name... José Jiménez')
+    if job == 'astronaut':
+        print('Yes')
     else:
-        print('Your name is different')
+        print('No')
+    # No
+
+.. code-block:: python
+
+    name = input('What is your name?: ')
+    # What is your name?: <Enter key>
+
+    if name:
+        print(f'My name is... {name}')
+    else:
+        print('Did you forget to type your name?')
+    # Did you forget to type your name?
 
 Multiline blocks
 ----------------
@@ -146,7 +181,7 @@ Inline ``if``
     elif language == 'Russian':
         print('Здравствуйте')
     elif language == 'Germany':
-        print('Guten tag!')
+        print('Guten Tag!')
     elif language == 'Poland':
         print('Witaj!')
     else:
@@ -183,6 +218,7 @@ Switch statement
             'German': 'Guten Tag',
             'Polish': 'Witaj',
         }.get(key, "I don't speak this language")
+
 
     switch('Russian')       # 'Здравствуйте'
     switch('French')        # "I don't speak this language"

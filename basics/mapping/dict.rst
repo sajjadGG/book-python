@@ -391,16 +391,40 @@ Accessing ``dict`` keys, values and key-value pairs
 
     list(iris.items())
     # [
-    #   ('Sepal length', 5.8),
-    #   ('Sepal width', 2.7),
-    #   ('Petal length', 5.1),
-    #   ('Petal width', 1.9),
-    #   ('Species', 'virginica')
+    #     ('Sepal length', 5.8),
+    #     ('Sepal width', 2.7),
+    #     ('Petal length', 5.1),
+    #     ('Petal width', 1.9),
+    #     ('Species', 'virginica')
     # ]
 
 
 Create ``dict`` from two sequences
 ==================================
+
+List of pairs
+-------------
+.. code-block:: python
+
+    pairs = [
+        ('Sepal length', 5.8),
+        ('Sepal width', 2.7),
+        ('Petal length', 5.1),
+        ('Petal width', 1.9),
+        ('Species', 'virginica')
+    ]
+
+    dict(pairs)
+    # {
+    #     'Sepal length': 5.8,
+    #     'Sepal width': 2.7,
+    #     'Petal length': 5.1,
+    #     'Petal width': 1.9,
+    #     'Species': 'virginica'
+    # }
+
+Zip
+---
 .. highlights::
     * ``zip`` is a generator
     * ``zip`` will create a list of pairs (like ``dict.items()``)
@@ -466,14 +490,17 @@ Differences
 .. code-block:: python
 
     my_data = {1: 1}
+    isinstance(my_data, (set, dict))  # True
     isinstance(my_data, dict)         # True
     isinstance(my_data, set)          # False
 
     my_data = {1}
+    isinstance(my_data, (set, dict))  # True
     isinstance(my_data, dict)         # False
     isinstance(my_data, set)          # True
 
     my_data = {}
+    isinstance(my_data, (set, dict))  # True
     isinstance(my_data, dict)         # True
     isinstance(my_data, set)          # False
 
@@ -508,7 +535,7 @@ Aviation Language
 -----------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 5 min
 * Filename: :download:`solution/dict_alphabet.py`
 
 :English:

@@ -14,6 +14,7 @@ Evaluation
 * Do not measure how long Python wakes up
 * Check what you measure
 
+
 .. _timeit:
 
 ``timeit``
@@ -79,6 +80,7 @@ Setup
         {'Sepal width': 2.8, 'Petal length': 4.1, 'Species': 'versicolor'},
         {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'},
     ]
+
 
 Case Studies
 ============

@@ -116,8 +116,13 @@ Find existing implementation
 ----------------------------
 
 
+.. _Performance Optimization Contains:
+
+Contains
+========
+
 Use ``set`` instead of ``list``
-===============================
+-------------------------------
 Jeżeli masz listę w której sprawdzasz czy element występuje, to zamień listę na ``set``, dzięki temu będzie lepsza złożoność
 
 .. code-block:: python
