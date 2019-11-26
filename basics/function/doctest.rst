@@ -97,11 +97,62 @@ Test numeric return values
         >>> add_numbers(0.1, 0.2)
         0.30000000000000004
 
-        >>> add_numbers(0.1, 0.2)
-        0.1 + 0.2 == 0.3000...
+        >>> add_numbers(0.1, 0.2)  # doctest: +ELLIPSIS
+        0.3000...
         """
         return a + b
 
+Testing logic values
+====================
+
+``isinstance()``
+----------------
+.. code-block:: python
+    :caption: This test will fail. Expected exception, got 2.0
+
+    def add_numbers(a, b):
+        """
+        >>> add_numbers(True, 1)
+        Traceback (most recent call last):
+            ...
+        ValueError: not a number
+        """
+        if not isinstance(a, (int, float)):
+            raise ValueError('not a number')
+
+        if not isinstance(b, (int, float)):
+            raise ValueError('not a number')
+
+        return a + b
+
+.. code-block:: text
+
+    Expected:
+        Traceback (most recent call last):
+            ...
+        ValueError: not a number
+    Got:
+        2.0
+
+``type()``
+----------
+.. code-block:: python
+    :caption: This test will pass.
+
+    def add_numbers(a: float, b: float) -> float:
+        """
+        >>> add_numbers(True, 1)
+        Traceback (most recent call last):
+            ...
+        ValueError: not a number
+        """
+        if type(a) not in (int, float):
+            raise ValueError('not a number')
+
+        if type(b) not in (int, float):
+            raise ValueError('not a number')
+
+        return a + b
 
 Test for ``str`` return values
 ==============================
@@ -188,8 +239,8 @@ Testing for exceptions
         return a + b
 
 
-Using python statements in ``doctest``
-======================================
+Using python statements
+=======================
 .. code-block:: python
     :caption: Using python statements in ``doctest``
     :emphasize-lines: 3-5
@@ -206,6 +257,49 @@ Using python statements in ``doctest``
 
 Examples
 ========
+
+Adding two numbers
+------------------
+.. code-block:: python
+    :caption: Adding two numbers
+
+    def add_numbers(a: float, b: float) -> float:
+        """
+        >>> add_numbers(1, 2)
+        3.0
+        >>> add_numbers(-1, 1)
+        0.0
+        >>> add_numbers(0.1, 0.2)  # doctest: +ELLIPSIS
+        0.3000...
+        >>> add_numbers(1.5, 2.5)
+        4.0
+        >>> add_numbers(1, 1.5)
+        2.5
+        >>> add_numbers([1, 2], 3)
+        Traceback (most recent call last):
+            ...
+        ValueError: not a number
+        >>> add_numbers(0, [1, 2])
+        Traceback (most recent call last):
+            ...
+        ValueError: not a number
+        >>> add_numbers('one', 'two')
+        Traceback (most recent call last):
+            ...
+        ValueError: not a number
+        >>> add_numbers(True, 1)
+        Traceback (most recent call last):
+            ...
+        ValueError: not a number
+        """
+        if type(a) not in (int, float):
+            raise ValueError('not a number')
+
+        if type(b) not in (int, float):
+            raise ValueError('not a number')
+
+        return float(a + b)
+
 
 Celsius to Kelvin temperature conversion
 ----------------------------------------

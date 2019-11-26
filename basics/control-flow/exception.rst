@@ -492,30 +492,14 @@ Syntax
 
 
     raise MyError
-    raise MyError('More verbose description')
 
-Example
--------
 .. code-block:: python
-    :emphasize-lines: 4-5, 10, 16-17
 
-    import math
-
-
-    class CotangentDoesNotExistsError(Exception):
+    class MyError(Exception):
         pass
 
 
-    def cotangent(degrees):
-        if degrees == 180:
-            raise CotangentDoesNotExistsError('Cotangent for 180 degrees is infinite')
-
-        radians = math.radians(degrees)
-        return 1 / math.tan(radians)
-
-
-    cotangent(180)
-    # CotangentDoesNotExistsError: Cotangent for 180 degrees is infinite
+    raise MyError('More verbose description')
 
 
 Real life use-case
@@ -533,16 +517,52 @@ Real life use-case
     except User.DoesNotExists:
         print('Sorry, no such user in database')
 
+Exit
+====
+.. highlights::
+    * exit with status ``0`` - no error
+    * any other status - error
+
+.. code-block:: python
+
+    try:
+        float('hello')
+    except ValueError:
+        print('Cannot type cast to float')
+        exit(1)
 
 Assignments
 ===========
 
-Only for kids
--------------
+Example
+-------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 10 min
-* Filename: :download:`solution/exception_permission.py`
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/exception_example.py`
+
+:English:
+    #. Ask user to input angle in degrees
+    #. Cotangens for 180 degrees is infinite
+    #. Define own exception
+    #. If user typed angle equal to 180, raise your exception
+
+:Polish:
+    #. Poproś użytkownika o wprowadzenie kąta
+    #. Cotangens dla konta 180 ma nieskończoną wartość
+    #. Zdefiniuj własny wyjątek
+    #. Jeżeli użytkownik wprowadził kąt równy 180, podnieś swój wyjątek
+
+:Solution:
+    .. literalinclude:: solution/exception_example.py
+        :language: python
+
+Raise Exception
+---------------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/exception_raise.py`
 
 :English:
     #. Ask user to input age
@@ -554,23 +574,40 @@ Only for kids
     #. Jeżeli użytkownik ma więcej niż 18 lat
     #. Wyrzuć wyjątek ``PermissionError`` z komunikatem "Only for kids"
 
-Temperature
------------
+Catch Exception
+---------------
 * Complexity level: easy
-* Lines of code to write: 14 lines
-* Estimated time of completion: 10 min
-* Filename: :download:`solution/exception_temperature.py`
+* Lines of code to write: 6 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/exception_catch.py`
 
 :English:
     #. Ask user to input temperature in Kelvins
     #. Convert temperature to ``float``
     #. Print 'Invalid temperature' if cannot type cast to ``float``
-    #. Define exception for negative temperature
-    #. Raise your exception if temperature is less than 0
+    #. Print temperature
 
 :Polish:
     #. Poproś użytkownika o wprowadzenie temperatury w Kelwinach
     #. Przekonwertuj temperaturę do ``float``
     #. Wypisz "Invalid temperature" jak nie można rzutować do ``float``
+    #. Wypisz temperaturę
+
+Define Exception
+----------------
+* Complexity level: easy
+* Lines of code to write: 6 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/exception_define.py`
+
+:English:
+    #. Ask user to input temperature in Kelvins
+    #. User will always type proper ``int`` or ``float``
+    #. Define exception for negative temperature
+    #. Raise your exception if temperature is less than 0
+
+:Polish:
+    #. Poproś użytkownika o wprowadzenie temperatury w Kelwinach
+    #. Użytkownik zawsze poda poprawne ``int`` lub ``float``
     #. Zdefiniuj wyjątek dla temperatur ujemnych
     #. Podnieś własny wyjątek jeżeli temperatura jest poniżej 0

@@ -38,3 +38,35 @@ def aviation_numbers(number):
     'minus fower niner and tree fife'
     """
     return ' '.join(ALPHABET[char] for char in str(number))
+
+
+def convert(number):
+    """
+    >>> convert(1969)
+    'one niner six niner'
+    >>> TEST = [
+    ...     1969,
+    ...     31337,
+    ...     13.37,
+    ...     31.337,
+    ...     -1969,
+    ...     -31.337,
+    ...     -49.35,
+    ... ]
+    >>> for number in TEST:
+    ...     convert(number)
+    'one niner six niner'
+    'tree one tree tree seven'
+    'one tree and tree seven'
+    'tree one and tree tree seven'
+    'minus one niner six niner'
+    'minus tree one and tree tree seven'
+    'minus fower niner and tree fife'
+    """
+    sentence = []
+
+    for character in str(number):
+        word = ALPHABET.get(character)
+        sentence.append(word)
+
+    return ' '.join(sentence)

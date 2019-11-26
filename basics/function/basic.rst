@@ -462,7 +462,6 @@ Example
 
         header, *data = INPUT
         wanted = {'setosa', 'versicolor'}
-        OUTPUT = 0
 
 
         def sum_if(features, label):
@@ -471,11 +470,7 @@ Example
             else:
                 return 0
 
-
-        for *features, label in data:
-            OUTPUT += sum_if(features, label)
-
-
+        OUTPUT = sum(sum_if(X,y) for *X,y in data)
         print(OUTPUT)
 
 Cleaning text input

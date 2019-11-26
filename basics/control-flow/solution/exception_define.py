@@ -1,9 +1,5 @@
 temperature = input('Type temperature: ')
-
-try:
-    temperature = float(temperature)
-except ValueError:
-    print('Invalid temperature')
+temperature = float(temperature)
 
 
 class NegativeKelvinError(Exception):
