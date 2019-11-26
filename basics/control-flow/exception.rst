@@ -29,9 +29,9 @@ AttributeError
     :caption: ``AttributeError`` exception
     :emphasize-lines: 3
 
-    name = 'Jose'
+    name = 'Jan'
 
-    name.append('Jimenez')
+    name.append('Twardowski')
     # AttributeError: 'str' object has no attribute 'append'
 
 ImportError, ModuleNotFoundError
@@ -126,7 +126,7 @@ TypeError
     :caption: ``TypeError`` exception
     :emphasize-lines: 2
 
-    42 + 'Jose'
+    42 + 'Answer to the Ultimate Question of Life, the Universe, and Everything'
     # TypeError: unsupported operand type(s) for +: 'int' and 'str'
 
 ValueError
@@ -138,8 +138,8 @@ ValueError
     :caption: ``ValueError`` exception
     :emphasize-lines: 1
 
-    float('hello')
-    # ValueError: could not convert string to float: 'hello'
+    float('Jan Twardowski')
+    # ValueError: could not convert string to float: 'Jan Twardowski'
 
 
 Raising exceptions
@@ -162,10 +162,22 @@ Exception with additional message
 Use case
 --------
 .. code-block:: python
+
+    def add_numbers(a, b):
+        if not isinstance(a, (float, int)):
+            raise ValueError('Argument ``a`` must be int or float')
+
+        if not isinstance(b, (float, int)):
+            raise ValueError('Argument ``b`` must be int or float')
+
+        return a + b
+
+
+.. code-block:: python
     :emphasize-lines: 2
 
     def apollo13():
-        raise RuntimeError('Mid-flight Oxygen tank explosion')
+        raise RuntimeError('Oxygen tank explosion')
 
 
     apollo13()
@@ -189,10 +201,26 @@ Traceback analysis
     * Stacktrace is 8 levels deep, it's not Java's 200 ;)
 
 .. code-block:: python
+    :emphasize-lines: 4
+
+    raise RuntimeError
+    # Traceback (most recent call last):
+    #   File "<input>", line 1, in <module>
+    # RuntimeError
+
+.. code-block:: python
+    :emphasize-lines: 4
+
+    raise RuntimeError('Huston we have a problem')
+    # Traceback (most recent call last):
+    #   File "<input>", line 1, in <module>
+    # RuntimeError: Huston we have a problem
+
+.. code-block:: python
     :emphasize-lines: 11-15
 
     def apollo13():
-        raise RuntimeError('Mid-flight Oxygen tank explosion')
+        raise RuntimeError('Oxygen tank explosion')
 
     apollo13()
     # Traceback (most recent call last):
@@ -201,12 +229,11 @@ Traceback analysis
     #     pydev_imports.execfile(filename, global_vars, local_vars)  # execute the script
     #   File "/Applications/PyCharm 2019.2 EAP.app/Contents/helpers/pydev/_pydev_imps/_pydev_execfile.py", line 18, in execfile
     #     exec(compile(contents+"\n", file, 'exec'), glob, loc)
-    #   File "/home/Developer/project/my_file.py", line 4, in <module>
+    #   File "/home/python/my_script.py", line 4, in <module>
     #     apollo13()
-    #   File "/home/Developer/project/my_file.py", line 2, in apollo13
-    #     raise RuntimeError('Mid-flight Oxygen tank explosion')
-    # RuntimeError: Mid-flight Oxygen tank explosion
-
+    #   File "/home/python/my_script.py", line 2, in apollo13
+    #     raise RuntimeError('Oxygen tank explosion')
+    # RuntimeError: Oxygen tank explosion
 
 Change verbosity level
 ----------------------
@@ -219,17 +246,19 @@ Change verbosity level
     :emphasize-lines: 1,2
 
     import sys
-    sys.tracebacklimit = 1
+    sys.tracebacklimit = 2
 
 
     def apollo13():
-        raise RuntimeError('Mid-flight Oxygen tank explosion')
+        raise RuntimeError('Oxygen tank explosion')
 
     apollo13()
     # Traceback (most recent call last):
-    #   File "/Users/matt/Developer/book-python/__notepad__.py", line 5, in apollo13
-    #     raise RuntimeError('Mid-flight Oxygen tank explosion')
-    # RuntimeError: Mid-flight Oxygen tank explosion
+    #   File "/home/python/my_script.py", line 4, in <module>
+    #     apollo13()
+    #   File "/home/python/my_script.py", line 2, in apollo13
+    #     raise RuntimeError('Oxygen tank explosion')
+    # RuntimeError: Oxygen tank explosion
 
 
 Catching exceptions
@@ -246,7 +275,7 @@ Catch single exception
     :emphasize-lines: 7
 
     def apollo13():
-        raise RuntimeError('Mid-flight Oxygen tank explosion')
+        raise RuntimeError('Oxygen tank explosion')
 
 
     try:
@@ -260,7 +289,7 @@ Catch many exceptions with the same handling
     :emphasize-lines: 7
 
     def apollo13():
-        raise RuntimeError('Mid-flight Oxygen tank explosion')
+        raise RuntimeError('Oxygen tank explosion')
 
 
     try:
@@ -274,33 +303,13 @@ Catch many exceptions with different handling
 
     try:
         with open(r'/tmp/iris.csv') as file:
-            content = file.read()
-            print(content)
+            print(file.read())
 
     except FileNotFoundError:
         print('File does not exist')
 
     except PermissionError:
         print('Permission denied')
-
-.. code-block:: python
-    :emphasize-lines: 5,7,12,14
-
-    def open_file(path):
-        if path.startswith('/tmp/'):
-            print('Will create file')
-        elif path.startswith('/etc/'):
-            raise PermissionError('Permission Denied')
-        else:
-            raise FileNotFoundError('File not found')
-
-
-    try:
-        open_file('/etc/my-file.txt')
-    except FileNotFoundError:
-        print('File not found')
-    except PermissionError:
-        print('Permission Denied')
 
 Exceptions logging
 ------------------
@@ -309,8 +318,9 @@ Exceptions logging
 
     import logging
 
+
     def apollo13():
-        raise RuntimeError('Mid-flight Oxygen tank explosion')
+        raise RuntimeError('Oxygen tank explosion')
 
     try:
         apollo13()

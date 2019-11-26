@@ -31,16 +31,17 @@ Generator expressions vs. Comprehensions
 
 .. code-block:: python
 
-    list(x for x in range(0,5))        # [0, 1, 2, 3, 4]
     [x for x in range(0,5)]            # [0, 1, 2, 3, 4]
+    list(x for x in range(0,5))        # [0, 1, 2, 3, 4]
 
-    set(x for x in range(0,5))         # {0, 1, 2, 3, 4}
     {x for x in range(0,5)}            # {0, 1, 2, 3, 4}
+    set(x for x in range(0,5))         # {0, 1, 2, 3, 4}
 
     {x: x for x in range(0,5)}         # {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
+    dict((x,x) for x in range(0,5))    # {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
 
-    tuple(x for x in range(0,5))       # (0, 1, 2, 3, 4)
     (x for x in range(0,5))            # <generator object <genexpr> at 0x118c1aed0>
+    tuple(x for x in range(0,5))       # (0, 1, 2, 3, 4)
 
     all(x for x in range(0,5))         # False
     any(x for x in range(0,5))         # True
@@ -55,12 +56,12 @@ Traditional
 .. code-block:: python
     :caption: Iterative approach to applying function to elements
 
-    numbers = []
+    output = []
 
     for x in range(0, 5):
-        numbers.append(x+10)
+        output.append(x+10)
 
-    print(numbers)
+    print(output)
     # [10, 11, 12, 13, 14]
 
 List Comprehension
@@ -71,12 +72,18 @@ List Comprehension
     [x+10 for x in range(0, 5)]
     # [10, 11, 12, 13, 14]
 
+    list(x+10 for x in range(0,5))
+    [10, 11, 12, 13, 14]
+
 Set Comprehension
 -----------------
 .. code-block:: python
     :caption: ``set`` Comprehension approach to applying function to elements
 
     {x+10 for x in range(0, 5)}
+    # {10, 11, 12, 13, 14}
+
+    set(x+10 for x in range(0, 5))
     # {10, 11, 12, 13, 14}
 
 Dict Comprehension
@@ -87,16 +94,25 @@ Dict Comprehension
     {x: x+10 for x in range(0, 5)}
     # {0:10, 1:11, 2:12, 3:13, 4:14}
 
+    dict((x,x+10) for x in range(0,5))
+    # {0:10, 1:11, 2:12, 3:13, 4:14}
+
 .. code-block:: python
     :caption: ``dict`` Comprehension approach to applying function to elements
 
     {x+10: x for x in range(0, 5)}
     # {10:0, 11:1, 12:2, 13:3, 14:4}
 
+    dict((x+10,x) for x in range(0,5))
+    # {10:0, 11:1, 12:2, 13:3, 14:4}
+
 .. code-block:: python
     :caption: ``dict`` Comprehension approach to applying function to elements
 
     {x+10: x+10 for x in range(0, 5)}
+    # {10:10, 11:11, 12:12, 13:13, 14:14}
+
+    dict((x+10: x+10) for x in range(0,5))
     # {10:10, 11:11, 12:12, 13:13, 14:14}
 
 Tuple Comprehension?!
@@ -123,13 +139,13 @@ Conditional Comprehension
 .. code-block:: python
     :caption: Iterative approach to applying function to selected elements
 
-    even_numbers = []
+    output = []
 
     for x in range(0, 5):
         if x % 2 == 0:
-            even_numbers.append(x)
+            output.append(x)
 
-    print(even_numbers)
+    print(output)
     # [0, 2, 4]
 
 .. code-block:: python
@@ -174,11 +190,19 @@ Applying function
 .. code-block:: python
     :caption: Applying function to each output element
 
-    [pow(x, 2) for x in range(0, 5)]
-    # [0, 1, 4, 9, 16]
+    [pow(2, x) for x in range(0, 5)]
+    # [1, 2, 4, 8, 16]
 
-    [pow(x, 2) for x in range(0, 5) if x % 2 == 0]
-    # [0, 4, 16]
+    [pow(2, x) for x in range(0, 5) if x % 2 == 0]
+    # [1, 4, 16]
+
+.. code-block:: python
+
+    [pow(2, x)
+        for x in range(0, 5)
+            if x % 2 == 0
+    ]
+    # [1, 4, 16]
 
 
 Nested Comprehensions
@@ -190,13 +214,13 @@ Nested Comprehensions
         {'first_name': 'Mark', 'last_name': 'Watney'},
         {'first_name': 'Иван'},
         {'first_name': 'Jan', 'last_name': 'Twardowski', 'born': 1961},
-        {'first_name': 'Melissa', 'last_name': 'Lewis', 'first_step': 1969},
+        {'first_name': 'Melissa', 'last_name': 'Lewis'},
     ]
 
     fieldnames = set()
 
-    fieldnames.update(key for record in DATA for key in record.keys())
-    # {'born', 'last_name', 'first_step', 'first_name'}
+    fieldnames.update(key for row in DATA for key in row.keys())
+    # {'born', 'last_name', 'first_name'}
 
 .. code-block:: python
 
@@ -205,16 +229,16 @@ Nested Comprehensions
         {'first_name': 'Mark', 'last_name': 'Watney'},
         {'first_name': 'Иван'},
         {'first_name': 'Jan', 'last_name': 'Twardowski', 'born': 1961},
-        {'first_name': 'Melissa', 'last_name': 'Lewis', 'first_step': 1969},
+        {'first_name': 'Melissa', 'last_name': 'Lewis'},
     ]
 
     fieldnames = set()
 
     fieldnames.update(key
-        for record in DATA
-            for key in record.keys()
+        for row in DATA
+            for key in row.keys()
     )
-    # {'born', 'last_name', 'first_step', 'first_name'}
+    # {'born', 'last_name', 'first_name'}
 
 .. code-block:: python
 
@@ -223,14 +247,14 @@ Nested Comprehensions
         {'first_name': 'Mark', 'last_name': 'Watney'},
         {'first_name': 'Иван'},
         {'first_name': 'Jan', 'last_name': 'Twardowski', 'born': 1961},
-        {'first_name': 'Melissa', 'last_name': 'Lewis', 'first_step': 1969},
+        {'first_name': 'Melissa', 'last_name': 'Lewis'},
     ]
 
     fieldnames = set(key
-        for record in DATA
-            for key in record.keys()
+        for row in DATA
+            for key in row.keys()
     )
-    # {'born', 'last_name', 'first_step', 'first_name'}
+    # {'born', 'last_name', 'first_name'}
 
 
 Examples
@@ -252,7 +276,13 @@ Filtering results
         (7.0, 3.2, 4.7, 1.4, 'versicolor'),
     ]
 
-    setosa = [m for *m,s in DATA if s == 'setosa']
+    [label for *features,label in DATA if label == 'setosa']
+    # [
+    #   [5.1, 3.5, 1.4, 0.2],
+    #   [4.7, 3.2, 1.3, 0.2],
+    # ]
+
+    [X for *X,y in DATA if y == 'setosa']
     # [
     #   [5.1, 3.5, 1.4, 0.2],
     #   [4.7, 3.2, 1.3, 0.2],
@@ -282,7 +312,7 @@ Filtering with complex expressions
             return False
 
 
-    measurements = [m for *m,s in DATA if is_setosa(s)]
+    measurements = [X for *X,y in DATA if is_setosa(y)]
     # [
     #   [5.1, 3.5, 1.4, 0.2],
     #   [4.7, 3.2, 1.3, 0.2],
@@ -304,7 +334,6 @@ Quick parsing lines
     for row in DATA:
         row = row.split(',')
         output.append(row)
-
 
     print(output)
     # [
@@ -338,11 +367,17 @@ Reversing ``dict`` keys with values
 
     DATA = {'a': 1, 'b': 2}
 
-    DATA.items()
+    list(DATA.items())
     # [
     #    ('a', 1),
     #    ('b', 2),
     # ]
+
+    list((k,v) for k,v in DATA.items())
+    # [('a', 1), ('b', 2)]
+
+    list((v,k) for k,v in DATA.items())
+    # [(1, 'a'), (2, 'b')]
 
 .. code-block:: python
     :caption: Reversing ``dict`` keys with values

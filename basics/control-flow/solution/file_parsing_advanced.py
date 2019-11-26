@@ -4,7 +4,7 @@ output = []
 
 try:
     with open(FILE) as file:
-        content = file.readlines()
+        hosts_file = file.readlines()
 
 except FileNotFoundError:
     print('File does not exist')
@@ -13,41 +13,39 @@ except PermissionError:
     print('Permission denied')
 
 
-for line in content:
-    if line.startswith('#'):
-        continue
-    if line.isspace():
+for line in hosts_file:
+    line = line.strip()
+
+    if line == '' or line.startswith('#'):
         continue
 
-    line = line.strip().split()
-    ip = line[0]
-    hosts = line[1:]
+    ip, *hostnames = line.split()
+    found = False
 
-    for record in output:
-        if record['ip'] == ip:
-            record['hostnames'].update(hosts)
+    for host in output:
+        if host['ip'] == ip:
+            host['hostnames'] += hostnames
+            found = True
             break
-    else:
-        output.append({
-            'hostnames': set(hosts),
-            'protocol': 'IPv4' if '.' in ip else 'IPv6',
+
+    if not found:
+        hostnames.append({
             'ip': ip,
+            'hostnames': hostnames,
+            'protocol': 'IPv4' if '.' in ip else 'IPv6'
         })
 
 print(output)
 
-"""
-found = False
 
-for x in hosts:
-    if x['ip'] == ip:
-        found = True
-        x['hostnames'] += hostnames
-
-if not found:
-    hosts.append({
-        'ip': ip,
-        'hostnames': hostnames,
-        'protocol': 'IPv4' if '.' in ip else 'IPv6'
-    })
-"""
+## Alternative solution
+# for record in output:
+#     if record['ip'] == ip:
+#         record['hostnames'].update(hostnames)
+#         break
+# else:
+#     output.append({
+#         'hostnames': set(hostnames),
+#         'protocol': 'IPv4' if '.' in ip else 'IPv6',
+#         'ip': ip,
+#     })

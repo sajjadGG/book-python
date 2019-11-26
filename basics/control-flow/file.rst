@@ -13,42 +13,61 @@ Absolute path
 .. highlights::
     * ``FILE`` as constant (never hardcode paths)
     * ``FILE`` as a raw string ``r'...'``
+    * paths on Linux, macOS, BSD and other POSIX compliant OSes uses ``/``
+    * paths on Windows uses ``\``
 
 .. code-block:: python
     :caption: Windows paths
 
-    FILE = 'C:\\Temp\\iris.csv'
-    FILE = r'C:\Temp\iris.csv'
-
-.. code-block:: python
-    :caption: Linux, macOS, BSD
-
-    FILE = '/tmp/iris.csv'
-    FILE = r'/tmp/iris.csv'
+    PATH = 'C:\\Temp\\iris.csv'
+    PATH = r'C:\Temp\iris.csv'
+    PATH = '/tmp/iris.csv'
+    PATH = r'/tmp/iris.csv'
 
 Relative path
 -------------
 .. highlights::
     * ``FILE`` as constant (never hardcode paths)
     * ``FILE`` as a raw string ``r'...'``
+    * ``.`` - Current directory
+    * ``..`` - Parent directory
 
 .. code-block:: python
-    :caption: File in the same directory directory
+    :caption: File in the same directory
 
     FILE = r'iris.csv'
+    FILE = r'./iris.csv'
+
+.. code-block:: python
+    :caption: File in the child directory
+
+    FILE = r'tmp/iris.csv'
+    FILE = r'./tmp/iris.csv'
 
 .. code-block:: python
     :caption: File in parent directory
 
     FILE = r'../iris.csv'
-    FILE = r'../data/iris.csv'
+    FILE = r'../tmp/iris.csv'
+
+.. code-block:: python
+    :caption: File in two directories up directory
+
+    FILE = r'../../iris.csv'
+    FILE = r'../../tmp/iris.csv'
 
 .. code-block:: python
     :caption: File in the same directory as script
 
     from os.path import dirname, join
 
+    dirname(__file__)
+    # '/home/python/my_script.py'
+
     FILE = join(dirname(__file__), 'iris.csv')
+
+    print(FILE)
+    #'/home/python/iris.csv'
 
 
 Read from file
@@ -61,9 +80,9 @@ Read from file
     * ``mode`` parameter to ``open()`` function is optional (defaults to ``mode='r'``)
     * Reading access modes:
 
-        * ``mode='r'`` - write in text mode (default)
-        * ``mode='rt'`` - write in text mode
-        * ``mode='rb'`` - write in binary mode
+        * ``mode='rt'`` - read in text mode
+        * ``mode='rb'`` - read in binary mode
+        * ``mode='r'`` - read in text mode (default)
 
 Reading file line by line
 -------------------------
@@ -105,6 +124,26 @@ Read selected lines from file
         for line in file.readlines()[1:30]:
             print(line)
 
+Read from file with header
+--------------------------
+.. code-block:: python
+    :caption: Convert file to list by line, select 1-30 lines
+
+    with open(r'/tmp/iris.csv') as file:
+        header, *content = file.readlines()
+
+        for line in content:
+            print(line)
+
+.. code-block:: python
+    :caption: Convert file to list by line, select 1-30 lines
+
+    with open(r'/tmp/iris.csv') as file:
+        header = file.readline()
+
+        for line in file:
+            print(line)
+
 
 Writing
 =======
@@ -119,9 +158,9 @@ Writing to file
     * ``mode`` parameter to ``open()`` function is required
     * Writing modes:
 
-        * ``mode='w'`` - write in text mode
         * ``mode='wt'`` - write in text mode
         * ``mode='wb'`` - write in binary mode
+        * ``mode='w'`` - write in text mode
 
 .. code-block:: python
     :caption: Writing to file
@@ -139,9 +178,9 @@ Appending to file
     * ``mode`` parameter to ``open()`` function is required
     * Writing modes:
 
-        * ``mode='a'`` - append in text mode
         * ``mode='at'`` - append in text mode
         * ``mode='ab'`` - append in binary mode
+        * ``mode='a'`` - append in text mode
 
 .. code-block:: python
     :caption: Appending to file
@@ -178,8 +217,8 @@ Good Engineering Practises
 Assignments
 ===========
 
-Content of a requested file
----------------------------
+Example
+-------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
@@ -197,6 +236,23 @@ Content of a requested file
     #. Obsłuż wyjątek dla nieistniejącego pliku
     #. Obsłuż wyjątek dla braku wystarczających uprawnień
 
+:Solution:
+    .. code-block:: python
+
+        filename = input('Type filename: ')
+
+        try:
+
+            with open(filename) as file:
+                for line in file:
+                    print(line)
+
+        except FileNotFoundError:
+            print('Sorry, file not found')
+
+        except PermissionError:
+            print('Sorry, not permitted')
+
 Parsing simple CSV file
 -----------------------
 * Complexity level: easy
@@ -208,8 +264,8 @@ Parsing simple CSV file
     #. Download :download:`data/iris.csv` save as ``iris.csv``
     #. Define:
 
-            * ``features`` - list of measurements (each row is a tuple)
-            * ``labels`` - list of species names
+            * ``features: List[tuple]`` - list of measurements (each row is a tuple)
+            * ``labels: List[str]`` - list of species names
 
     #. For each line in file:
 
@@ -224,8 +280,8 @@ Parsing simple CSV file
     #. Ściągnij :download:`data/iris.csv` i zapisz jako ``iris.csv``
     #. Zdefiniuj:
 
-            - ``features`` - lista pomiarów (każdy wiersz to tuple)
-            - ``labels`` - lista nazw gatunków
+            - ``features: List[tuple]`` - lista pomiarów (każdy wiersz to tuple)
+            - ``labels: List[str]`` - lista nazw gatunków
 
     #. Dla każdej linii:
 
@@ -262,7 +318,7 @@ Parsing simple CSV file
 
 :Polish:
     #. Skopiuj dane wejściowe z listingu poniżej i zapisz do pliku ``hosts.txt``
-    #. Dla każdej lini w piku:
+    #. Dla każdej lini w pliku:
 
         #. Usuń białe znaki na początku i końcu linii
         #. Podziel linię po białych znakach
@@ -322,7 +378,7 @@ Parsing simple CSV file
 :Polish:
     #. Skopiuj dane wejściowe z listingu poniżej i zapisz do pliku ``hosts.txt``
     #. Skopiuj również komentarz i pustą linię
-    #. Dla każdej lini w piku:
+    #. Dla każdej lini w pliku:
 
         #. Pomiń linię jeżeli jest pusta, jest białym znakiem lub zaczyna się od komentarza ``#``
         #. Usuń białe znaki na początku i końcu linii

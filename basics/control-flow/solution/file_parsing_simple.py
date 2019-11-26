@@ -4,9 +4,7 @@ output = {}
 
 with open(FILE) as file:
     for line in file:
-        line = line.strip().split()
-        ip = line[0]
-        hosts = line[1:]
+        ip, *hosts = line.strip().split()
 
         if ip in output:
             output[ip] += hosts

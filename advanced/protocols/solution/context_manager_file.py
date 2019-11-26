@@ -17,12 +17,15 @@ class File:
         return self
 
     def __exit__(self, *args):
-        with open(self.name, mode='w', encoding='utf-8') as file:
-            for line in self.content:
-                file.write(f'{line}\n')
+        return self.save_file()
 
     def append_line(self, line):
         self.content.append(line)
+
+    def save_file(self):
+        with open(self.name, mode='w', encoding='utf-8') as file:
+            for line in self.content:
+                file.write(f'{line}\n')
 
 
 with File(FILE) as file:
