@@ -34,9 +34,7 @@ Returning values
     def hello():
         return 'ehlo world'
 
-    output = hello()
-
-    print(output)
+    print(hello())
     # 'ehlo world'
 
 .. code-block:: python
@@ -45,85 +43,83 @@ Returning values
         return 'ehlo world'
         print('This will not be executed')
 
-    output = hello()
-
-    print(output)
+    print(hello())
     # 'ehlo world'
 
 Returning simple types
 ----------------------
 .. code-block:: python
 
-    def function():
+    def my_function():
         return 42
 
 .. code-block:: python
 
-    def function():
+    def my_function():
         return 13.37
 
 .. code-block:: python
 
-    def function():
+    def my_function():
         return 'Mark Watney'
 
 .. code-block:: python
 
-    def function():
+    def my_function():
         return (42, 13.37, 'Mark Watney')
 
 .. code-block:: python
 
-    def function():
+    def my_function():
         return 42, 13.37, 'Mark Watney'
 
 .. code-block:: python
 
-    def function():
+    def my_function():
         return [42, 13.37, 'Mark Watney']
 
 .. code-block:: python
 
-    def function():
+    def my_function():
         return {42, 13.37, 'Mark Watney'}
 
 .. code-block:: python
 
-    def function():
+    def my_function():
         return {'first_name': 'Mark', 'last_name': 'Watney'}
 
 .. code-block:: python
 
-    def function():
+    def my_function():
         return True
 
 .. code-block:: python
 
-    def function():
+    def my_function():
         return None
 
 .. code-block:: python
 
-    def function():
+    def my_function():
         print('ehlo world')
         # Python will ``return None`` if no explicit return is specified
 
 .. code-block:: python
 
-    def function():
+    def my_function():
         pass
         # Python will ``return None`` if no explicit return is specified
 
 .. code-block:: python
 
-    def function():
+    def my_function():
         # Python will ``return None`` if no explicit return is specified
 
 Returning nested types
 ----------------------
 .. code-block:: python
 
-    def function():
+    def my_function():
         return [
             ('Mark', 'Watney'),
             {'Jan Twardowski', 'Melissa Lewis'},
@@ -131,8 +127,17 @@ Returning nested types
             {'astro': 'Jiménez', 'missions': ('Mercury', 'Gemini', 'Apollo')},
         ]
 
+
 Function arguments
 ==================
+.. code-block:: python
+
+    def echo(text):
+        print(text)
+
+    echo('hello')
+    # hello
+
 
 Required arguments
 ------------------
@@ -211,7 +216,7 @@ Keyword arguments
 
     connect('admin', 'admin', 'localhost', 80, False, 1, True)
 
-    connect(host='localhost', username='admin', password='admin', ssl=True, keep_alive=1, persistent=True)
+    connect(host='localhost', username='admin', password='admin', ssl=True, persistent=True, keep_alive=1)
 
     connect(
         host='localhost',
@@ -248,8 +253,7 @@ Keyword arguments
 
     my_file2 = read_csv('iris.csv', encoding='utf-8')
 
-    my_file3 = read_csv(
-        filepath_or_buffer='iris.csv',
+    my_file3 = read_csv('iris.csv',
         encoding='utf-8',
         verbose=True,
         usecols=['Sepal Length', 'Species']
@@ -313,7 +317,53 @@ System functions names
 Variable scope
 ==============
 
-Global scope
+Access Scope
+------------
+.. code-block:: python
+    :caption: Functions has access to global values
+
+    DATA = [1, 2, 3]
+
+    def add():
+        return sum(DATA)
+
+    print(add())
+    # 6
+
+.. code-block:: python
+    :caption: Shadowing
+
+    DATA = [1, 2, 3]
+
+    def add():
+        DATA = [10, 20, 30]
+        return sum(DATA)
+
+    print(add())
+    # 60
+
+    print(DATA)
+    # [1, 2, 3]
+
+.. code-block:: python
+    :caption: Modify global, BAD PRACTICE!!
+
+    DATA = [1, 2, 3]
+
+    def add():
+        global DATA
+        DATA = [10, 20, 30]
+        return sum(DATA)
+
+
+    print(add())
+    # 60
+
+    print(DATA)
+    # [10, 20, 30]
+
+
+Global Scope
 ------------
 .. highlights::
     * All variables in main program
@@ -324,11 +374,12 @@ Global scope
     print(globals())
     # {...}
 
-Local scope
+Local Scope
 -----------
 .. highlights::
     * Variables defined inside function
     * Variables are not available from outside
+    * If outside the function, will return the same as ``globals()``
 
 .. code-block:: python
 
@@ -337,16 +388,95 @@ Local scope
 
 .. code-block:: python
 
-    def add_numbers(a, b=2):
-        c = 3
+    def add(a, b, c=3):
+        d = 4
         print(locals())
 
-    add_numbers(1)
-    # {'a': 1, 'b': 2, 'c': 3}
+    add(1, 2)
+    # {'a':1, 'b':2, 'c':3, 'd':4}
 
 
 Assignments
 ===========
+
+Example
+-------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/functions_example.py`
+
+:English:
+    #. For given input data (see below)
+    #. Define ``wanted: Set[str]`` with 'setosa' and 'versicolor'
+    #. Iterate over data and split row into ``features`` and ``label`` (last)
+    #. Define function which sums ``features``, only when ``label`` is in ``wanted``
+    #. When ``label`` is not in ``wanted`` return ``0`` (zero)
+    #. Print sum
+
+:Polish:
+    #. Dla danych wejściowych (patrz poniżej)
+    #. Zdefiniuj ``wanted: Set[str]`` z 'setosa' oraz 'versicolor'
+    #. Iterując po danych rozdziel wiersz na ``features`` i ``label`` (ostatni)
+    #. Zdefiniuj funkcję sumującą ``features``, tylko gdy ``label`` jest w ``wanted``
+    #. Gdy ``label`` nie występuje w ``wanted`` zwróć ``0`` (zero)
+    #. Wypisz sumę
+
+:Input:
+    .. code-block:: python
+
+        INPUT = [
+            ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+            (5.8, 2.7, 5.1, 1.9, 'virginica'),
+            (5.1, 3.5, 1.4, 0.2, 'setosa'),
+            (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+            (6.3, 2.9, 5.6, 1.8, 'virginica'),
+            (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+            (4.7, 3.2, 1.3, 0.2, 'setosa'),
+            (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+            (7.6, 3.0, 6.6, 2.1, 'virginica'),
+            (4.9, 3.0, 1.4, 0.2, 'setosa'),
+        ]
+
+:Output:
+    .. code-block:: python
+
+        OUTPUT: float
+        # 74.9
+
+:Solution:
+    .. code-block:: python
+
+        INPUT = [
+            ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+            (5.8, 2.7, 5.1, 1.9, 'virginica'),
+            (5.1, 3.5, 1.4, 0.2, 'setosa'),
+            (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+            (6.3, 2.9, 5.6, 1.8, 'virginica'),
+            (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+            (4.7, 3.2, 1.3, 0.2, 'setosa'),
+            (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+            (7.6, 3.0, 6.6, 2.1, 'virginica'),
+            (4.9, 3.0, 1.4, 0.2, 'setosa'),
+        ]
+
+        header, *data = INPUT
+        wanted = {'setosa', 'versicolor'}
+        OUTPUT = 0
+
+
+        def sum_if(features, label):
+            if label in wanted:
+                return sum(features)
+            else:
+                return 0
+
+
+        for *features, label in data:
+            OUTPUT += sum_if(features, label)
+
+
+        print(OUTPUT)
 
 Cleaning text input
 -------------------
@@ -370,18 +500,18 @@ Cleaning text input
 :Input:
     .. code-block:: python
 
-        INPUT = List[str] = [
+        INPUT = [
             'ul.Mieszka II',
             'UL. Zygmunta III WaZY',
             '  bolesława chrobrego ',
             'ul Jana III SobIESkiego',
             '\tul. Jana trzeciego Sobieskiego',
             'ulicaJana III Sobieskiego',
-            'UL. JA\tNA 3 SOBIES  KIEGO',
+            'UL. JA    NA 3 SOBIES  KIEGO',
             'ULICA JANA III SOBIESKIEGO  ',
             'ULICA. JANA III SOBIeskieGO',
             ' Jana 3 Sobieskiego  ',
-            'Jana III Sobi\teskiego ',
+            'Jana III Sobi  eskiego ',
         ]
 
 :Output:
@@ -424,16 +554,16 @@ Aviation numbers
 :Input:
     .. code-block:: text
 
-            0, "zero"
-            1, "one"
-            2, "two"
-            3, "tree"
-            4, "fower"
-            5, "fife"
-            6, "six"
-            7, "seven"
-            8, "ait"
-            9, "niner"
+        0, "zero"
+        1, "one"
+        2, "two"
+        3, "tree"
+        4, "fower"
+        5, "fife"
+        6, "six"
+        7, "seven"
+        8, "ait"
+        9, "niner"
 
     .. code-block:: python
 

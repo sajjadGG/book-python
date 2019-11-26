@@ -17,7 +17,7 @@ class File:
         return self
 
     def __exit__(self, *args):
-        return self.save_file()
+        return self.sav_file()
 
     def append_line(self, line):
         self.content.append(line)

@@ -536,4 +536,41 @@ Real life use-case
 
 Assignments
 ===========
-.. todo:: Create assignments
+
+Only for kids
+-------------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 10 min
+* Filename: :download:`solution/exception_permission.py`
+
+:English:
+    #. Ask user to input age
+    #. If user has more than 18 years
+    #. Raise an exception ``PermissionError`` with message "Only for kids"
+
+:Polish:
+    #. Poproś użytkownika o wprowadzenie wieku
+    #. Jeżeli użytkownik ma więcej niż 18 lat
+    #. Wyrzuć wyjątek ``PermissionError`` z komunikatem "Only for kids"
+
+Temperature
+-----------
+* Complexity level: easy
+* Lines of code to write: 14 lines
+* Estimated time of completion: 10 min
+* Filename: :download:`solution/exception_temperature.py`
+
+:English:
+    #. Ask user to input temperature in Kelvins
+    #. Convert temperature to ``float``
+    #. Print 'Invalid temperature' if cannot type cast to ``float``
+    #. Define exception for negative temperature
+    #. Raise your exception if temperature is less than 0
+
+:Polish:
+    #. Poproś użytkownika o wprowadzenie temperatury w Kelwinach
+    #. Przekonwertuj temperaturę do ``float``
+    #. Wypisz "Invalid temperature" jak nie można rzutować do ``float``
+    #. Zdefiniuj wyjątek dla temperatur ujemnych
+    #. Podnieś własny wyjątek jeżeli temperatura jest poniżej 0

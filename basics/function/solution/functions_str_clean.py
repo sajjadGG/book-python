@@ -1,51 +1,43 @@
 def clean(text: str) -> str:
     """
-    >>> clean('  bolesława chrobrego ')
-    'Bolesława Chrobrego'
-
-    >>> clean('ul Jana III SobIESkiego')
-    'Jana III Sobieskiego'
-
-    >>> clean('\tul. Jana trzeciego Sobieskiego')
-    'Jana III Sobieskiego'
-
-    >>> clean('ulicaJana III Sobieskiego')
-    'Jana III Sobieskiego'
-
-    >>> clean('UL. JA\tNA 3 SOBIES  KIEGO')
-    'Jana III Sobieskiego'
-
-    >>> clean('UL. Zygmunta III WaZY')
-    'Zygmunta III Wazy'
-
-    >>> clean('ULICA JANA III SOBIESKIEGO  ')
-    'Jana III Sobieskiego'
-
-    >>> clean('ULICA. JANA III SOBIeskieGO')
-    'Jana III Sobieskiego'
-
-    >>> clean(' Jana 3 Sobieskiego  ')
-    'Jana III Sobieskiego'
-
-    >>> clean(' Jana 3ego Sobieskiego  ')
-    'Jana III Sobieskiego'
-
-    >>> clean('Jana III Sobi\teskiego ')
-    'Jana III Sobieskiego'
-
-    >>> clean('ul.Mieszka II')
+    >>> INPUT = [
+    ...     'ul.Mieszka II',
+    ...     'UL. Zygmunta III WaZY',
+    ...     '  bolesława chrobrego ',
+    ...     'ul Jana III SobIESkiego',
+    ...     '\tul. Jana trzeciego Sobieskiego',
+    ...     'ulicaJana III Sobieskiego',
+    ...     'UL. JA    NA 3 SOBIES  KIEGO',
+    ...     'ULICA JANA III SOBIESKIEGO  ',
+    ...     'ULICA. JANA III SOBIeskieGO',
+    ...     ' Jana 3 Sobieskiego  ',
+    ...     'Jana III Sobi  eskiego ',
+    ... ]
+    >>> for address in INPUT:
+    ...     clean(address)
     'Mieszka II'
+    'Zygmunta III Wazy'
+    'Bolesława Chrobrego'
+    'Jana III Sobieskiego'
+    'Jana III Sobieskiego'
+    'Jana III Sobieskiego'
+    'Jana III Sobieskiego'
+    'Jana III Sobieskiego'
+    'Jana III Sobieskiego'
+    'Jana III Sobieskiego'
+    'Jana III Sobieskiego'
     """
 
     # Common format
     text = text.upper()
 
-    # Remove unwanted text
-    text = text.replace('ULICA', '')
-    text = text.replace('UL', '')
-    text = text.replace('TRZECIEGO', 'III')
-    text = text.replace('3EGO', 'III')
-    text = text.replace('3', 'III')
+    # Remove unwanted whitespaces
+    text = text.replace('\n', '')
+    text = text.replace('\t', '')
+    text = text.replace('     ', '')
+    text = text.replace('    ', '')
+    text = text.replace('   ', '')
+    text = text.replace('  ', '')
 
     # Remove unwanted special characters
     text = text.replace('.', '')
@@ -53,13 +45,11 @@ def clean(text: str) -> str:
     text = text.replace('-', '')
     text = text.replace('|', '')
 
-    # Remove unwanted whitespaces
-    text = text.replace('\n', '')
-    text = text.replace('\t', '')
-    text = text.replace('    ', '')
-    text = text.replace('   ', '')
-    text = text.replace('  ', '')
-    text = text.strip()
+    # Remove unwanted text
+    text = text.replace('ULICA', '')
+    text = text.replace('UL', '')
+    text = text.replace('TRZECIEGO', 'III')
+    text = text.replace('3', 'III')
 
     # Formatting
     text = text.title()
@@ -67,4 +57,4 @@ def clean(text: str) -> str:
     text = text.replace('Ii', 'II')
 
     # Return
-    return text
+    return text.strip()
