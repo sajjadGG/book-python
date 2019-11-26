@@ -13,11 +13,14 @@ Syntax
 
 .. code-block:: python
 
+    [x for x in (0,1,2,3,4)]
+    # [0, 1, 2, 3, 4]
+
     [x for x in range(0,5)]
-    # [1, 2, 3, 4]
+    # [0, 1, 2, 3, 4]
 
     [x**2 for x in range(0,5)]
-    # [1, 2, 4, 16]
+    # [0, 1, 2, 4, 16]
 
 
 Generator expressions vs. Comprehensions
