@@ -18,7 +18,7 @@ Entry Exam
         - value - measurement or species
 
 :Polish:
-    #. Dla danych wejściowych (patrz poniżej)
+    #. Dla danych wejściowych (por. sekcja input)
     #. Odseparuj nagłówek i dane
     #. Wypisz ``List[dict]``
 
@@ -81,7 +81,7 @@ Get elements from nested data structure
     #. Print species names ending with "ca" or "sa"
 
 :Polish:
-    #. Dla danych wejściowych (patrz poniżej)
+    #. Dla danych wejściowych (por. sekcja input)
     #. Oddziel nagłówek od danych
     #. Iteruj po danych
     #. Wypisz nazwy gatunków kończące się na "ca" lub "sa"

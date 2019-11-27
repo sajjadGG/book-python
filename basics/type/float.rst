@@ -135,7 +135,7 @@ Example
     * Convert to metric (SI) system
 
 :Polish:
-    * Dane wejściowe (patrz poniżej)
+    * Dane wejściowe (por. sekcja input)
     * Używają system Imperialny (US)
     * Przelicz je na system metryczny (układ SI)
 
@@ -170,7 +170,7 @@ Handling user input and type casting
 :Polish:
     #. Użytkownik wprowadził odległość ``1337`` metrów
     #. Wypisz wartość w różnych jednostkach
-    #. Użyj kodu wyjściowego (patrz poniżej) jako szablonu
+    #. Użyj kodu wyjściowego (por. sekcja input) jako szablonu
     #. Przekonwertuj dane do typów podanych w komentarzu po prawej stronie
     #. Zamiast ``...`` podstaw wyliczone i przekonwertowane wartości
 

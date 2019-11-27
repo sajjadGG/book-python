@@ -283,7 +283,7 @@ Create
     #. To convert table use multiline select with ``alt`` key in your IDE
 
 :Polish:
-    #. Dla danych wejściowych (patrz poniżej)
+    #. Dla danych wejściowych (por. sekcja input)
     #. Stwórz ``list`` reprezentujący każdy wiersz
     #. Do przekonwertowania tabelki wykorzystaj zaznaczanie wielu linijek za pomocą klawisza ``alt`` w Twoim IDE
 

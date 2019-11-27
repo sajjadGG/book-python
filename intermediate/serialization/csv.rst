@@ -410,7 +410,7 @@ Write fixed schema data to CSV file
     #. Open file in simple in your IDE and simple text editor (like Notepad, vim, gedit)
 
 :Polish:
-    #. Za pomocą ``csv.DictWriter()`` zapisz ``INPUT`` (patrz poniżej) do pliku
+    #. Za pomocą ``csv.DictWriter()`` zapisz ``INPUT`` (por. sekcja input) do pliku
     #. Spróbuj otworzyć plik w arkuszu kalkulacyjnym tj. Microsoft Excel / Libre Office / Numbers itp
     #. Spróbuj otworzyć plik w IDE i prostym edytorze tekstu tj. Notepad, vim lub gedit
 

@@ -81,12 +81,12 @@ Concatenation
 * Filename: :download:`solution/numpy_concatenation.py`
 
 :English:
-    #. Given are one-dimensional: ``a: ndarray``, ``b: ndarray`` (patrz poniżej)
+    #. Given are one-dimensional: ``a: ndarray``, ``b: ndarray`` (see below)
     #. Concatenate them
     #. Represent the result as ndarray: two rows and three columns
 
 :Polish:
-    #. Dane są jednowymiarowe: ``a: ndarray``, ``b: ndarray`` (see below)
+    #. Dane są jednowymiarowe: ``a: ndarray``, ``b: ndarray`` (por. sekcja input)
     #. Połącz je ze sobą
     #. Przedstaw wynik jako ndarray: dwa wiersze na trzy kolumny
 

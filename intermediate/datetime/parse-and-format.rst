@@ -426,7 +426,7 @@ Log parsing
 :Polish:
     #. Zapisz dane wejściowe do pliku ``apollo11-timeline.log``
     #. Wyciągnij obiekt ``datetime``, poziom logowania oraz wiadomość z każdej linii
-    #. Zbierz dane do ``OUTPUT: List[dict]`` (patrz poniżej)
+    #. Zbierz dane do ``OUTPUT: List[dict]`` (por. sekcja output)
     #. Wyświetl ``OUTPUT``
 
 :Input:

@@ -275,7 +275,7 @@ Array Slicing
     #. Print ``OUTPUT``
 
 :Polish:
-    #. Użyj wejściowej ndarray (patrz poniżej)
+    #. Użyj wejściowej ndarray (por. sekcja input)
     #. Wybierz wewnętrzne 3x3 i zapisz do ``OUTPUT: ndarray``
     #. Wypisz ``OUTPUT``
 

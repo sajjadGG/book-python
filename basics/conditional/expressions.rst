@@ -179,7 +179,7 @@ Classification of blood pressure in adults
     #. If systolic and diastolic values are in different categories, assume worst case
 
 :Polish:
-    #. Tabela zawiera klasyfikację danych wejściowych (patrz poniżej)
+    #. Tabela zawiera klasyfikację danych wejściowych (por. sekcja input)
     #. Klasyfikacja ciśnienia krwi wg. American Heart Association
     #. Użytkownik wprowadza ciśnienie krwi w formacie ``XXX/YY``, gdzie:
 

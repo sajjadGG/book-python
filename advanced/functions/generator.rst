@@ -375,7 +375,7 @@ Generators vs. Comprehensions - passwd
     .. todo:: English translation
 
 :Polish:
-    #. Napisz program, który wczyta plik z danymi wejśiowymi (patrz poniżej)
+    #. Napisz program, który wczyta plik z danymi wejściowymi (por. sekcja input)
     #. Przefiltruj linie, tak aby nie zawierały komentarzy (zaczynające się od ``#``) oraz pustych linii
     #. Przefiltruj linie, aby wyciągnąć konta systemowe - użytkowników, którzy mają UID (trzecie pole) mniejsze niż 1000
     #. Zwróć listę loginów użytkowników systemowych

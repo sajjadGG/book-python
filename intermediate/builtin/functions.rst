@@ -308,7 +308,7 @@ Average
     #. Iterating over ``OUTPUT`` print column name and calculated average
 
 :Polish:
-    #. Dla danych ``INPUT`` (patrz poniżej)
+    #. Dla danych ``INPUT`` (por. sekcja input)
     #. Odseparuj nagłówek od danych
     #. Zdefiniuj słownik ``OUTPUT: Dict[str, list]``, klucze to nazwy kolumn z nagłówka
     #. Dla każdego wiersza w danych, dodawaj wartości do odpowiednich list w ``OUTPUT``

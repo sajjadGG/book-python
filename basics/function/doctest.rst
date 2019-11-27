@@ -359,7 +359,7 @@ Refactoring
     #. All tests must pass
 
 :Polish:
-    #. Napisz implementację funkcji z kodu wejściowego (patrz poniżej)
+    #. Napisz implementację funkcji z kodu wejściowego (por. sekcja input)
     #. Wszystkie testy muszą przechodzić
 
 :Input Code:

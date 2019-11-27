@@ -415,7 +415,7 @@ Example
     #. Print sum
 
 :Polish:
-    #. Dla danych wejściowych (patrz poniżej)
+    #. Dla danych wejściowych (por. sekcja input)
     #. Zdefiniuj ``wanted: Set[str]`` z 'setosa' oraz 'versicolor'
     #. Iterując po danych rozdziel wiersz na ``features`` i ``label`` (ostatni)
     #. Zdefiniuj funkcję sumującą ``features``, tylko gdy ``label`` jest w ``wanted``
@@ -487,7 +487,7 @@ Cleaning text input
     #. Function returns cleaned text
 
 :Polish:
-    #. Dla danych wejściowych (patrz poniżej)
+    #. Dla danych wejściowych (por. sekcja input)
     #. Napisz funkcję czyszczącą dane
     #. Funkcja przyjmuje jeden argument typu ``str``
     #. Funkcja zwraca oczyszczony tekst
@@ -543,7 +543,7 @@ Aviation numbers
     #. Define function converting ``int`` or ``float`` to text form in Pilot's Speak
 
 :Polish:
-    #. Dla danych wejściowych (patrz poniżej)
+    #. Dla danych wejściowych (por. sekcja input)
     #. Zdefiniuj funkcję konwertującą ``int`` lub ``float`` na formę tekstową w mowie pilotów
 
 :Input:
@@ -602,7 +602,7 @@ Number to human readable
     #. Max 5 digits after decimal separator (point ``.``)
 
 :Polish:
-    #. Dla danych wejściowych (patrz poniżej)
+    #. Dla danych wejściowych (por. sekcja input)
     #. Zdefiniuj funkcję konwertującą ``int`` lub ``float`` na formę tekstową
     #. Forma tekstowa musi być poprawna gramatycznie
     #. Max 6 cyfr przed separatorem dziesiętnym (point ``.``)

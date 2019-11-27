@@ -413,7 +413,7 @@ Arithmetic operations
     #. Calculate the natural logarithm of the result
 
 :Polish:
-    #. Dla danych: ``a: ndarrays``, ``b: ndarrays``, ``c: ndarrays`` (patrz poniżej)
+    #. Dla danych: ``a: ndarrays``, ``b: ndarrays``, ``c: ndarrays`` (por. sekcja input)
     #. Oblicz pierwiastek kwadratowy każdego z elementu w ``a`` i ``b``
     #. Oblicz drugą potęgę (kwadrat) każdego z elementu w ``c``
     #. Dodaj elementy z ``a`` do ``b``

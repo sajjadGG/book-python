@@ -180,7 +180,7 @@ Address Book from API
     #. Overload ``str`` and ``repr`` to achieve result of printing
 
 :Polish:
-    #. Zmodyfikuj kod z danych wejściowych (patrz poniżej)
+    #. Zmodyfikuj kod z danych wejściowych (por. sekcja input)
     #. Przeciąż ``str`` i ``repr`` aby osiągnąć rezultat wyświetlania
 
 :The whys and wherefores:

@@ -205,20 +205,32 @@ Example
 * Filename: :download:`solution/for_counter.py`
 
 :English:
-    #. For input data (see below)
-    #. Count occurrences of each number
-    #. Print ``OUTPUT: Dict[int, int]``:
+    #. Iterate over input data (see below) and count occurrences of each number
+    #. Define empty ``OUTPUT: Dict[int, int]``:
 
         * key - digit
         * value - number of occurrences
 
+    #. Iterating over numbers check if number is already in ``OUTPUT``
+
+        #. If first occurrence, then add it to ``OUTPUT`` with value 1
+        #. If exists, then increment the value by 1
+
+    #. Compare results with "Output" section below
+
 :Polish:
-    #. Dla danych wejściowych (patrz poniżej)
-    #. Policz wystąpienia każdej z cyfr
-    #. Wypisz ``OUTPUT: Dict[int, int]``:
+    #. Iterując po danych wejściowych (por. sekcja input) policz wystąpienia każdej z cyfr
+    #. Zdefiniuj pusty ``OUTPUT: Dict[int, int]``:
 
         * klucz - cyfra
         * wartość - liczba wystąpień
+
+    #. Iterując po cyfrach sprawdź czy cyfra znajduje się już w ``OUTPUT``
+
+        #. Jeżeli pierwsze wystąpienie, to dodaj ją do ``OUTPUT`` z wartością 1
+        #. Jeżeli istnieje, to zwiększ w wartość o 1
+
+    #. Porównaj wynik z sekcją "Output" poniżej
 
 :Input:
     .. code-block:: python
@@ -268,7 +280,7 @@ Segmentation
         * value - number of occurrences
 
 :Polish:
-    #. Dla danych wejściowych (patrz poniżej)
+    #. Dla danych wejściowych (por. sekcja input)
     #. Policz wystąpienia każdej z group
     #. Zdefiniuj grupy
 
@@ -327,7 +339,7 @@ Text analysis
         * comas (``,``)
 
 :Polish:
-    #. Dany jest tekst przemówienia "Moon Speech" wygłoszonej przez John F. Kennedy'ego (patrz poniżej)
+    #. Dany jest tekst przemówienia "Moon Speech" wygłoszonej przez John F. Kennedy'ego (por. sekcja input)
     #. Zdania oddzielone są kropkami (``.``)
     #. Każde zdanie oczyść z białych znaków na początku i końcu
     #. Słowa oddzielone są spacjami

@@ -272,7 +272,7 @@ Geographic Coordinates
     #. Allow to set ``elevation`` field at the class initialization
 
 :Polish:
-    #. Na podstawie danych wejściowych (patrz poniżej) zamodeluj klasę ``GeographicCoordinate``
+    #. Na podstawie danych wejściowych (por. sekcja input) zamodeluj klasę ``GeographicCoordinate``
     #. Użyj deskryptory do sprawdzania wartości brzegowych
     #. Kasowanie pola powinno ustawiać jego wartość na ``None``
     #. Zablokuj modyfikację pola ``elevation``

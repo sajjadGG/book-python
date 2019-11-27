@@ -331,7 +331,7 @@ Variables and types
 
 :Polish:
     #. Poproś użytkownika o wprowadzenie imienia
-    #. Wypisz tekst identyczny do kodu wyjścia (patrz poniżej)
+    #. Wypisz tekst identyczny do kodu wyjścia (por. sekcja output)
     #. Do wypisania użyj f-string formatting
     #. Zauważ, że druga linijka zaczyna się od tabulacji
     #. Wartość w podwójnych cudzysłowach to ciąg od użytkownika (w przykładzie użytkownik wpisał ``José Jiménez``)

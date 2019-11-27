@@ -131,7 +131,7 @@ Assignments
 
 Report card
 -----------
-* Complexity level: easy
+* Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/while_report_card.py`
@@ -148,7 +148,7 @@ Report card
     #. Test case when report list is empty
 
 :Polish:
-    #. Dla skali ocen w danych wejściowych (patrz poniżej)
+    #. Dla skali ocen w danych wejściowych (por. sekcja input)
     #. Przekonwertuj skalę do ``List[float]`` używając pętli ``while``
     #. Poproś użytkownika o ocenę, jedną na raz
     #. Użytkownik poda tylko poprawne ``int`` lub ``float``

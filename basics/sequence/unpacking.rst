@@ -257,7 +257,7 @@ Unpacking from sequence
     #. Use asterisk ``*`` notation
 
 :Polish:
-    #. Podziel dane wejściowe (patrz poniżej) po białych znakach
+    #. Podziel dane wejściowe (por. sekcja input) po białych znakach
     #. Odseparuj adres ip i nazw hostów
     #. Skorzystaj z notacji z gwiazdką ``*``
 
@@ -288,7 +288,7 @@ Unpacking from nested sequence
     #. Use asterisk ``*`` notation
 
 :Polish:
-    #. Dla danych wejściowych (patrz poniżej)
+    #. Dla danych wejściowych (por. sekcja input)
     #. Oddziel nagłówek i rekordy
     #. Skorzystaj z konstrukcji z gwiazdką ``*``
 

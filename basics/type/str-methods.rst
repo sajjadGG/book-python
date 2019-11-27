@@ -404,10 +404,10 @@ String cleaning
     #. Implementation of such generic function will be in :ref:`Function Basics` chapter
 
 :Polish:
-    #. Dla danych wejściowych (patrz poniżej)
+    #. Dla danych wejściowych (por. sekcja input)
     #. Oczekiwana wartość ``Jana III Sobieskiego``
     #. Wykorzystaj tylko metody ``str`` do oczyszczenia każdej zmiennej
-    #. Porównaj wyniki z danymi wyjściowymi (patrz poniżej)
+    #. Porównaj wyniki z danymi wyjściowymi (por. sekcja output)
     #. Przeprowadź dyskusję jak zrobić rozwiązanie generyczne pasujące do wszystkich przypadków
     #. Implementacja takiej generycznej funkcji będzie w rozdziale :ref:`Function Basics`
 

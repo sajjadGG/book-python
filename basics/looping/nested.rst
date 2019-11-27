@@ -249,7 +249,7 @@ Example
     #. Calculate mean `Sepal length` value
 
 :Polish:
-    #. Dla danych wejściowych (patrz poniżej)
+    #. Dla danych wejściowych (por. sekcja input)
     #. Oddziel nagłówek od danych
     #. Wylicz średnią wartość `Sepal length`
 
@@ -278,7 +278,7 @@ Example
 
 Get elements from nested data structure
 ---------------------------------------
-* Complexity level: easy
+* Complexity level: medium
 * Lines of code to write: 3 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/nested_endswith.py`
@@ -290,7 +290,7 @@ Get elements from nested data structure
     #. Print species names ending with "ca" or "sa"
 
 :Polish:
-    #. Dla danych wejściowych (patrz poniżej)
+    #. Dla danych wejściowych (por. sekcja input)
     #. Oddziel nagłówek od danych
     #. Iteruj po danych
     #. Wypisz nazwy gatunków kończące się na "ca" lub "sa"
@@ -317,7 +317,7 @@ Get elements from nested data structure
 
 Unique keys from schema-less database
 -------------------------------------
-* Complexity level: easy
+* Complexity level: medium
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/nested_unique_keys.py`
@@ -329,7 +329,7 @@ Unique keys from schema-less database
     #. Print unique keys
 
 :Polish:
-    #. Dla danych wejściowych (patrz poniżej)
+    #. Dla danych wejściowych (por. sekcja input)
     #. Zbierz klucze z wszystkich wierszy w jednej sekwencji ``OUTPUT``
     #. Sort ``OUTPUT``
     #. Wypisz unikalne klucze

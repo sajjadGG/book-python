@@ -296,7 +296,7 @@ Own implementation
     #. Modify classes to implement iterator
 
 :Polish:
-    #. Dla danych wejściowych (patrz poniżej)
+    #. Dla danych wejściowych (por. sekcja input)
     #. Zmodyfikuj klasy aby zaimplementować protokół iterator
 
 :Input:

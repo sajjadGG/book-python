@@ -121,7 +121,7 @@ Load Dirty CSV
     #. Print ``species``, ``labels`` and ``features``
 
 :Polish:
-    #. Wczytaj tekst z URL podanego na wejściu (patrz poniżej)
+    #. Wczytaj tekst z URL podanego na wejściu (por. sekcja input)
     #. Przeczytaj pierwszą linię jako ``dtype=str`` i zapisz do ``header: ndarray``
     #. Przeczytaj pozostałe linie jako ``dtype=float`` i zapisz jako ``data: ndarray``
     #. Z ``header`` wytnij nazwy gatunków Irysów i zapisz rezultat jako ``species: ndarray``

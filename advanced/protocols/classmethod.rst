@@ -75,7 +75,7 @@ Pickle
     #. Unpickle data from file
 
 :Polish:
-    #. Zamodeluj klasę na podstawie danych wejściowych (patrz poniżej)
+    #. Zamodeluj klasę na podstawie danych wejściowych (por. sekcja input)
     #. Stwórz klasę ``PickleSerializable`` z metodami ``.to_pickle()`` i ``.from_pickle()``
     #. Użyj dekoratora ``@classmethod``
     #. Stwórz instancje dla danych wejściowych (see below)
