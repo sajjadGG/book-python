@@ -107,8 +107,8 @@ Methods accessing fields
     setosa.latin_name()
     # Latin name is: Iris Setosa
 
-    iris = Iris()
-    iris.latin_name()
+    unknown = Iris()
+    unknown.latin_name()
     # Latin name is: unknown
 
 
