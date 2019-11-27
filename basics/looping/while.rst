@@ -9,6 +9,7 @@ Syntax
 ======
 .. highlights::
     * Continue execution when argument is ``True``
+    * Stops if argument is ``False``
 
 Generic syntax
 --------------
@@ -173,4 +174,5 @@ Report card
     * Using built-in functions
 
 :Hints:
+    * ``input('...')``
     * ``mean = sum(...) / len(...)``

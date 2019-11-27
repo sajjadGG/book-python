@@ -20,6 +20,17 @@ Builtins
     /intermediate/builtin/keywords.rst
     /intermediate/builtin/print.rst
 
+*******
+Looping
+*******
+.. toctree::
+    :maxdepth: 0
+    :caption: Builtins
+    :name: Intermediate Looping
+
+    /intermediate/looping/comprehensions.rst
+    /intermediate/looping/else.rst
+
 ***************************
 Object Oriented Programming
 ***************************

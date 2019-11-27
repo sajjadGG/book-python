@@ -5,17 +5,16 @@ Loop over ``dict``
 ******************
 
 
-.. important::
+Looping over ``dict``
+=====================
+.. highlights::
     * Since Python 3.7 ``dict`` keeps order
     * Before Python 3.7 ``dict`` order is not ensured!!
 
-Looping over ``dict``
-=====================
-
-Values iterator
----------------
+Iterating
+---------
 .. code-block:: python
-    :caption: Iterating over ``dict`` items
+    :caption: By default ``dict`` iterates over keys
 
     iris = {
         'Sepal length': 5.1,
@@ -25,20 +24,17 @@ Values iterator
         'Species': 'setosa',
     }
 
-    list(iris.values())
-    # [5.1, 3.5, 1.4, 0.2, 'setosa']
-
-    for obj in iris.values():
+    for obj in iris:
         print(obj)
 
-    # 5.1
-    # 3.5
-    # 1.4
-    # 0.2
-    # 'setosa'
+    # 'Sepal length'
+    # 'Sepal width'
+    # 'Petal length'
+    # 'Petal width'
+    # 'Species'
 
-Keys iterator
--------------
+Iterating keys
+--------------
 .. code-block:: python
     :caption: Iterating over ``dict`` items
 
@@ -62,10 +58,10 @@ Keys iterator
     # 'Petal width'
     # 'Species'
 
-Default iterator
+Iterating values
 ----------------
 .. code-block:: python
-    :caption: By default ``dict`` iterates over keys
+    :caption: Iterating over ``dict`` items
 
     iris = {
         'Sepal length': 5.1,
@@ -75,17 +71,20 @@ Default iterator
         'Species': 'setosa',
     }
 
-    for obj in iris:
+    list(iris.values())
+    # [5.1, 3.5, 1.4, 0.2, 'setosa']
+
+    for obj in iris.values():
         print(obj)
 
-    # 'Sepal length'
-    # 'Sepal width'
-    # 'Petal length'
-    # 'Petal width'
-    # 'Species'
+    # 5.1
+    # 3.5
+    # 1.4
+    # 0.2
+    # 'setosa'
 
-Items iterator
---------------
+Iterating key-value pairs
+-------------------------
 .. highlights::
     * list of pairs ``key``, ``value``
 
@@ -111,7 +110,7 @@ Items iterator
 
 
     for key, value in iris.items():
-        print(f'{key} -> {value}')
+        print(key, '->', value)
 
     # Sepal length -> 5.1
     # Sepal width -> 3.5

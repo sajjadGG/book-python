@@ -17,7 +17,7 @@ Generic syntax
 .. code-block:: python
     :caption: ``for`` loop syntax
 
-    for <MY_VARIABLE> in <ITERABLE> :
+    for <VARIABLE> in <ITERABLE> :
         ...
 
 Example

@@ -70,6 +70,7 @@ Loop ``else``
     #   {'ip': '::1', 'hostnames': {'localhost'}},
     # ]
 
+
 Assignments
 ===========
 .. todo:: Create assignments

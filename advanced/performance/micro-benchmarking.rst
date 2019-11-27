@@ -64,13 +64,14 @@ Console use
     print a short usage message and exit
 
 
-Use cases
-=========
 .. _Micro-benchmarking use case:
 
-Setup
------
+Case Studies - Unique Keys
+==========================
+* Runtime: Jupyter ``%%timeit``
+
 .. code-block:: python
+    :caption: Setup code used for all examples
 
     DATA = [
         {'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
@@ -81,62 +82,24 @@ Setup
         {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'},
     ]
 
-
-Case Studies
-============
-
-Unique Keys
------------
-* Runtime: Jupyter ``%%timeit``
-
+Append if object not in the list
+--------------------------------
 .. code-block:: python
-    :caption: Code 1
 
     %%timeit
 
-    fieldnames = set()
+    fieldnames = list()
 
     for row in DATA:
-        fieldnames.update(row.keys())
+        for key in row.keys():
+            if key not in fieldnames:
+                fieldnames.append(key)
 
-    # 1.55 µs ± 12.9 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+    # 2.09 µs ± 46.2 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 
+Append to list and deduplicate at the end
+-----------------------------------------
 .. code-block:: python
-    :caption: Code 2
-
-    %%timeit
-
-    fieldnames = set(key
-        for record in DATA
-            for key in record.keys())
-
-    # 1.91 µs ± 16.7 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
-
-.. code-block:: python
-    :caption: Code 3 (Is it correct?!)
-
-    %%timeit
-
-    fieldnames = set()
-
-    fieldnames.add(key
-        for record in DATA
-           for key in record.keys())
-
-    # 416 ns ± 4.24 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
-
-.. code-block:: python
-    :caption: Code 4
-
-    %%timeit
-
-    fieldnames = set()
-    fieldnames.update(tuple(x.keys()) for x in DATA)
-
-    # 2.05 µs ± 48.7 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
-
-.. code-block:: python
-    :caption: Code 5
 
     %%timeit
 
@@ -150,8 +113,9 @@ Unique Keys
 
     # 2.28 µs ± 90.5 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 
+Add to set
+----------
 .. code-block:: python
-    :caption: Code 6
 
     %%timeit
 
@@ -163,26 +127,65 @@ Unique Keys
 
     # 2.01 µs ± 54.5 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 
+Update set
+----------
 .. code-block:: python
-    :caption: Code 7
 
     %%timeit
 
-    fieldnames = list()
+    fieldnames = set()
 
     for row in DATA:
-        for key in row.keys():
-            if key not in fieldnames:
-                fieldnames.append(key)
+        fieldnames.update(row.keys())
 
-    # 2.09 µs ± 46.2 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+    # 1.55 µs ± 12.9 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
 
-Summary
-^^^^^^^
-* Code 3 appends generator object not values, this is why it is so fast!
+Set Comprehension
+-----------------
+.. code-block:: python
 
-Fibonacci
----------
+    %%timeit
+
+    fieldnames = set(key
+        for record in DATA
+            for key in record.keys())
+
+    # 1.91 µs ± 16.7 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+
+Add to Set Comprehension
+------------------------
+.. highlights::
+    * Code 3 appends generator object not values, this is why it is so fast!
+
+.. code-block:: python
+
+    %%timeit
+
+    fieldnames = set()
+
+    fieldnames.add(key
+        for record in DATA
+           for key in record.keys())
+
+    # 416 ns ± 4.24 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+
+Update Set Comprehension
+------------------------
+.. code-block:: python
+
+    %%timeit
+
+    fieldnames = set()
+    fieldnames.update(tuple(x.keys()) for x in DATA)
+
+    # 2.05 µs ± 48.7 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+
+
+Case Study - Fibonacci
+======================
+
+Without cache
+-------------
 .. code-block:: python
 
     %%timeit
@@ -200,6 +203,8 @@ Fibonacci
 
     # 283 µs ± 6.63 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 
+Cache contains
+--------------
 .. code-block:: python
 
     %%timeit
@@ -223,6 +228,8 @@ Fibonacci
 
     # 153 µs ± 2.49 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 
+Cache get
+---------
 .. code-block:: python
 
     %%timeit
@@ -248,6 +255,8 @@ Fibonacci
 
     # 181 µs ± 10.3 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 
+Cache contains with exceptions
+------------------------------
 .. code-block:: python
 
     %%timeit
@@ -271,6 +280,8 @@ Fibonacci
 
     # 618 µs ± 6.6 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 
+Adding cache layer
+------------------
 .. code-block:: python
 
     %%timeit
@@ -296,6 +307,8 @@ Fibonacci
 
     # 283 µs ± 6.44 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 
+Get from cache
+--------------
 .. code-block:: python
 
     %%timeit
@@ -318,6 +331,7 @@ Fibonacci
     factorial2(450)
 
     # 153 µs ± 9.64 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+
 
 References
 ==========

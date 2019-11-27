@@ -77,13 +77,13 @@ Looping
 .. toctree::
     :maxdepth: 0
     :caption: Looping
-    :name: Basic Loopigng
+    :name: Basic Looping
 
     /basics/looping/while.rst
     /basics/looping/for.rst
     /basics/looping/nested.rst
+    /basics/looping/unpacking.rst
     /basics/looping/dict.rst
-    /basics/looping/else.rst
     /basics/looping/comprehensions.rst
 
 ************
