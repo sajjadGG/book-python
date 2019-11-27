@@ -2,6 +2,12 @@ class Crew:
     def __init__(self, members=()):
         self.members = list(members)
 
+    def __str__(self):
+        output = []
+        for astro in self.members:
+            output.append(f'{astro.first_name} {astro.last_name} {astro.locations}')
+        return '\n'.join(output)
+
     def __repr__(self):
         return str(self.members)
 
@@ -27,15 +33,17 @@ class Location:
         self.name = name
 
     def __repr__(self):
-        return f'{self.name}'
+        return f'\n\t{self.name}'
 
 
 melissa = Astronaut(first_name='Melissa', last_name='Lewis')
-print(melissa)
+print(f'Commander: \n{melissa}\n')
+# Commander:
 # Melissa Lewis
 
 mark = Astronaut(first_name='Mark', last_name='Watney', locations=[Location('Johnson Space Center'), Location('Kennedy Space Center')])
-print(mark)
+print(f'Space Pirate: \n{mark}\n')
+# Space Pirate:
 # Mark Watney [Johnson Space Center, Kennedy Space Center]
 
 crew = Crew([
@@ -49,14 +57,6 @@ crew = Crew([
     Astronaut(first_name='Иван', last_name='Иванович', locations=[]),
 ])
 
+print(f'Crew: {crew}')
+# Crew: [Jan Twardowski [Johnson Space Center, Kennedy Space Center, Jet Propulsion Laboratory, Armstrong Flight Research Center], José Jiménez, Иван Иванович]
 
-print(crew)
-# [
-#   José Jiménez,
-#   Иван Иванович,
-#   Jan Twardowski [
-#       Johnson Space Center,
-#       Kennedy Space Center,
-#       Jet Propulsion Laboratory,
-#       Armstrong Flight Research Center]
-# ]

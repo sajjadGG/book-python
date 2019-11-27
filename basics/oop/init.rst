@@ -51,7 +51,7 @@ Checking values
 
     class Kelvin:
         def __init__(self, value):
-            if self.value < 0.0:
+            if value < 0.0:
                 raise ValueError('Kelvin temperature must be greater than 0')
             else:
                 self.value = value

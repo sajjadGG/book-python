@@ -14,31 +14,31 @@ OOP Stringify Objects
 .. code-block:: python
     :caption: Object without ``__str__()`` method overloaded prints their memory address
 
-    class Iris:
-        def __init__(self, species):
-            self.species = species
+    class Astronaut:
+        def __init__(self, name):
+            self.name = name
 
 
-    flower = Iris('setosa')
+    astro = Astronaut('Jose Jimenez')
 
-    str(flower)       # <__main__.Iris object at 0x112b366d8>
-    print(flower)     # <__main__.Iris object at 0x112b366d8>
+    str(astro)          # '<__main__.Astronaut object at 0x114175dd0>'
+    print(astro)        # <__main__.Astronaut object at 0x114175dd0>
 
 .. code-block:: python
     :caption: Objects can verbose print if ``__str__()`` method is present
 
-    class Iris:
-        def __init__(self, species):
-            self.species = species
+    class Astronaut:
+        def __init__(self, name):
+            self.name = name
 
         def __str__(self):
-            return f'Species: {self.species}'
+            return f'My name... {self.name}'
 
 
-    flower = Iris('setosa')
+    astro = Astronaut('Jose Jimenez')
 
-    str(flower)       # Species: setosa
-    print(flower)     # Species: setosa
+    str(astro)          # 'My name... Jose Jimenez'
+    print(astro)        # My name... Jose Jimenez
 
 
 ``__repr__()``
@@ -53,18 +53,18 @@ OOP Stringify Objects
 .. code-block:: python
     :caption: Using ``__repr__()`` on a class
 
-    class Iris:
-        def __init__(self, species):
-            self.species = species
+    class Astronaut:
+        def __init__(self, name):
+            self.name = name
 
         def __repr__(self):
-            return f'Iris(species="{self.species}")'
+            return f'Astronaut(name="{self.name}")'
 
 
-     flower = Iris(species='setosa')
+     astro = Astronaut('Jose Jimenez')
 
-     repr(point)    # Iris(species="setosa")
-     point          # Iris(species="setosa")
+     repr(astro)        # 'Astronaut(name="Jose Jimenez")'
+     astro              # Astronaut(name="Jose Jimenez")
 
 
 .. code-block:: python
@@ -128,6 +128,21 @@ OOP Stringify Objects
 
 .. code-block:: python
 
+    class Astronaut:
+        def __init__(self, name):
+            self.name = name
+
+        def __format__(self, format):
+            if
+
+     astro = Astronaut('Jose Jimenez')
+
+     print(f'{astro:happy}')
+     print(f'{astro:scared}')
+
+
+.. code-block:: python
+
     class Point:
         def __init__(self, x, y, z=0):
             self.x = x
@@ -158,11 +173,11 @@ OOP Stringify Objects
 
     point = Point(x=1, y=2)
 
-    f'{point:2D}'           # '(1, 2)'
-    f'{point:3D}'           # '(1, 2, 0)'
-    f'{point:tuple}'        # '(1, 2, 0)'
-    f'{point:dict}'         # "{'x': 1, 'y': 2, 'z': 0}"
-    f'{point:json}'         # '{"x": 1, "y": 2, "z": 0}'
+    print(f'{point:2D}')           # '(1, 2)'
+    print(f'{point:3D}')           # '(1, 2, 0)'
+    print(f'{point:tuple}')        # '(1, 2, 0)'
+    print(f'{point:dict}')         # "{'x': 1, 'y': 2, 'z': 0}"
+    print(f'{point:json}')         # '{"x": 1, "y": 2, "z": 0}'
 
 
 Assignments
@@ -234,11 +249,11 @@ Address Book from API
         Mark Watney [Johnson Space Center, Kennedy Space Center]
 
         Crew: [
-          José Jiménez,
-          Иван Иванович,
           Jan Twardowski [
               Johnson Space Center,
               Kennedy Space Center,
               Jet Propulsion Laboratory,
-              Armstrong Flight Research Center]
+              Armstrong Flight Research Center],
+          José Jiménez,
+          Иван Иванович,
         ]
