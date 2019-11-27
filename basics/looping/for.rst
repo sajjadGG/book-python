@@ -205,7 +205,7 @@ Example
 * Filename: :download:`solution/for_counter.py`
 
 :English:
-    #. Iterate over input data (see below) and count occurrences of each number
+    #. Iterate over data from "Input" section and count occurrences of each number
     #. Define empty ``OUTPUT: Dict[int, int]``:
 
         * key - digit
@@ -213,13 +213,13 @@ Example
 
     #. Iterating over numbers check if number is already in ``OUTPUT``
 
-        #. If first occurrence, then add it to ``OUTPUT`` with value 1
-        #. If exists, then increment the value by 1
+        * If first occurrence, then add it to ``OUTPUT`` with value 1
+        * If exists, then increment the value by 1
 
     #. Compare results with "Output" section below
 
 :Polish:
-    #. Iterując po danych wejściowych (por. sekcja input) policz wystąpienia każdej z cyfr
+    #. Iterując po danych wejściowych z sekcji "Input" policz wystąpienia każdej z cyfr
     #. Zdefiniuj pusty ``OUTPUT: Dict[int, int]``:
 
         * klucz - cyfra
@@ -227,18 +227,16 @@ Example
 
     #. Iterując po cyfrach sprawdź czy cyfra znajduje się już w ``OUTPUT``
 
-        #. Jeżeli pierwsze wystąpienie, to dodaj ją do ``OUTPUT`` z wartością 1
-        #. Jeżeli istnieje, to zwiększ w wartość o 1
+        * Jeżeli pierwsze wystąpienie, to dodaj ją do ``OUTPUT`` z wartością 1
+        * Jeżeli istnieje, to zwiększ w wartość o 1
 
     #. Porównaj wynik z sekcją "Output" poniżej
 
 :Input:
     .. code-block:: python
 
-        INPUT = [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0,
-                 0, 6, 5, 0, 0, 9, 7, 0, 4, 4, 8,
-                 2, 4, 0, 0, 1, 9, 1, 7, 8, 8, 9,
-                 1, 3, 5, 6, 8, 2, 8, 1, 3, 9, 5,
+        INPUT = [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0, 0, 6, 5, 0, 0, 9, 7, 0, 4, 4, 8,
+                 2, 4, 0, 0, 1, 9, 1, 7, 8, 8, 9, 1, 3, 5, 6, 8, 2, 8, 1, 3, 9, 5,
                  4, 8, 1, 9, 6, 3]
 
 :Output:
@@ -296,10 +294,8 @@ Segmentation
 :Input:
     .. code-block:: python
 
-        INPUT = [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0,
-                 0, 6, 5, 0, 0, 9, 7, 0, 4, 4, 8,
-                 2, 4, 0, 0, 1, 9, 1, 7, 8, 8, 9,
-                 1, 3, 5, 6, 8, 2, 8, 1, 3, 9, 5,
+        INPUT = [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0, 0, 6, 5, 0, 0, 9, 7, 0, 4, 4, 8,
+                 2, 4, 0, 0, 1, 9, 1, 7, 8, 8, 9, 1, 3, 5, 6, 8, 2, 8, 1, 3, 9, 5,
                  4, 8, 1, 9, 6, 3]
 
 :Output:
