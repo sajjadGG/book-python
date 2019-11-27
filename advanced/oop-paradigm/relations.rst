@@ -64,7 +64,7 @@ Defining Classes
         #. Obiekt instancje do ``flowers``
 
     #. Wypisz nazwę stworzonej klasy (z pola species) oraz sumę i średnią z pomiarów
-    #. Wynik sformatuj aby wyglądał jak tabelka z danych wyjściowych (por. sekcja output)
+    #. Wynik sformatuj aby wyglądał jak tabelka z danych wyjściowych (patrz sekcja output)
 
 :Input:
     .. code-block:: python

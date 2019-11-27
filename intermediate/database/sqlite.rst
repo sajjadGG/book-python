@@ -109,7 +109,7 @@ SQLite Iris
     #. Zapisz dane wejściowe do pliku ``sqlite_iris.csv``
     #. Wczytaj dane z pliku (nie używaj biblioteki ``csv`` lub ``pandas``)
     #. Połącz się do bazy danych ``sqlite3`` używając context managera (``with``)
-    #. Stwórz tabelę ``iris`` o kolumnach podanych w sekcji dane wyjściowe (por. sekcja output)
+    #. Stwórz tabelę ``iris`` o kolumnach podanych w sekcji dane wyjściowe (patrz sekcja output)
     #. Podmień ``int`` na ``str`` zgodnie z tabelą podstawień ``SPECIES`` (patrz dane wejściowe)
     #. Zapisz dane do tabeli w bazie danych
     #. Wypisz wyniki z bazy danych ``SELECT * FROM iris ORDER BY datetime DESC``
@@ -342,7 +342,7 @@ Log parsing
 :Polish:
     #. Zapisz dane wejściowe do pliku ``apollo11-timeline.log``
     #. Wyciągnij obiekt ``datetime``, poziom logowania oraz wiadomość z każdej linii
-    #. Zbierz dane do ``INPUT: List[dict]`` (por. sekcja input)
+    #. Zbierz dane do ``INPUT: List[dict]`` (patrz sekcja input)
     #. Stwórz schemat bazy danych dla logów
     #. Dodaj wszystkie linie do bazy danych
     #. Wybierz tylko logi ``WARNING`` z przedziału 1969-07-20 i 1969-07-21

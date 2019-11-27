@@ -186,7 +186,7 @@ Polyfit
     #. Calculate coefficients of best approximating polynomial of 3rd degree
 
 :Polish:
-    #. Dla danych punktów (por. sekcja input)
+    #. Dla danych punktów (patrz sekcja input)
     #. Odseparuj pierwszy wiersz (nagłówek) do danych
     #. Oblicz współczynniki najlepiej dopasowanego wielomianu 3 stopnia
 

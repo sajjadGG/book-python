@@ -333,7 +333,7 @@ Create
     #. From fifth row create ``list`` and add it with ``.update()``
 
 :Polish:
-    #. Dla danych wejściowych (por. sekcja input)
+    #. Dla danych wejściowych (patrz sekcja input)
     #. Stwórz ``set`` reprezentujący pierwszy wiersz
     #. Wartości z drugiego wiersza dodawaj do ``set`` za pomocą ``.add()``
     #. Na podstawie trzeciego wiersza stwórz ``set`` i dodaj go za pomocą ``.update()``

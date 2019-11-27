@@ -170,7 +170,7 @@ Select
     #. Do not use ``for``, ``while`` or ``slice()``
 
 :Polish:
-    #. Dla danych wejściowych (por. sekcja input)
+    #. Dla danych wejściowych (patrz sekcja input)
     #. Zapisz nagłówek (pierwsza linia) do zmiennej ``header``
     #. Stwórz ``output: list``
     #. Przekonwertuj do ``list`` dane z wierszy 2, 6, 9 i dodaj do ``output``

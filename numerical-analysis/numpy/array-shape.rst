@@ -252,7 +252,7 @@ Shape
     #. Print ``a``
 
 :Polish:
-    #. Dany ``a: ndarray`` (por. sekcja input)
+    #. Dany ``a: ndarray`` (patrz sekcja input)
     #. Spłaszcz używając metody ``.ravel()``
     #. Wypisz ``a``
     #. Zmień kształt na powrót na 3x3

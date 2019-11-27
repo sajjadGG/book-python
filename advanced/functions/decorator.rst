@@ -663,7 +663,7 @@ Memoization
     .. todo:: English translation
 
 :Polish:
-    #. Dla danego kodu funkcji ``factorial`` (por. sekcja input)
+    #. Dla danego kodu funkcji ``factorial`` (patrz sekcja input)
     #. Stwórz ``CACHE: Dict[int, int]`` z wynikami wyliczenia funkcji
 
         - klucz: argument funkcji
@@ -735,7 +735,7 @@ Type Checking Decorator
     .. todo:: English translation
 
 :Polish:
-    #. Na podstawie kodu (por. sekcja input)
+    #. Na podstawie kodu (patrz sekcja input)
     #. Stwórz dekorator ``check_types``
     #. Dekorator ma sprawdzać typy danych, wszystkich parametrów wchodzących do funkcji
     #. Jeżeli, którykolwiek się nie zgadza, wyrzuć wyjątek ``TypeError``

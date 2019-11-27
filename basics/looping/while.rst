@@ -148,7 +148,7 @@ Report card
     #. Test case when report list is empty
 
 :Polish:
-    #. Dla skali ocen w danych wejściowych (por. sekcja input)
+    #. Dla skali ocen w danych wejściowych (patrz sekcja input)
     #. Przekonwertuj skalę do ``List[float]`` używając pętli ``while``
     #. Poproś użytkownika o ocenę, jedną na raz
     #. Użytkownik poda tylko poprawne ``int`` lub ``float``

@@ -426,7 +426,7 @@ Split train/test
     #. Print ``OUTPUT``
 
 :Polish:
-    #. Dana jest struktura danych ``INPUT: List[tuple]`` (por. sekcja input)
+    #. Dana jest struktura danych ``INPUT: List[tuple]`` (patrz sekcja input)
     #. Odseparuj nagłówek do danych
     #. Wylicz punkt podziału: długość danych razy zadany procent
     #. Używając List Comprehension podziel dane na:

@@ -213,9 +213,9 @@ Assignments
     #. Results should be identical to output (see below)
 
 :Polish:
-    #. Dla danych wejściowych (por. sekcja input)
+    #. Dla danych wejściowych (patrz sekcja input)
     #. Przekonwertuj do ``Dict[str, str]``
-    #. Rezultat powinien być identyczny do wyjściowego (por. sekcja output)
+    #. Rezultat powinien być identyczny do wyjściowego (patrz sekcja output)
 
 :Input:
     .. code-block:: python
@@ -268,7 +268,7 @@ Assignments
         - value - measurement or species
 
 :Polish:
-    #. Dla danych wejściowych (por. sekcja input)
+    #. Dla danych wejściowych (patrz sekcja input)
     #. Odseparuj nagłówek i dane
     #. Wypisz ``List[dict]``
 
@@ -346,7 +346,7 @@ Label encoder
     #. Output must be identical to output data (see below)
 
 :Polish:
-    #. Dla danych wejściowych (por. sekcja input)
+    #. Dla danych wejściowych (patrz sekcja input)
     #. Zdefiniuj:
 
         * ``features: List[Tuple[float]]`` - pomiary
@@ -362,7 +362,7 @@ Label encoder
     #. ``label_encoder`` musi być wygenerowany z ``INPUT``
     #. Dla każdego wiersza dodawaj odpowiednie dane do ``feature``, ``labels`` i ``label_encoder``
     #. Wypisz ``feature``, ``labels`` i ``label_encoder``
-    #. Wynik ma być identyczny z danymi wyjściowymi (por. sekcja output)
+    #. Wynik ma być identyczny z danymi wyjściowymi (patrz sekcja output)
 
 :Input:
     .. code-block:: python

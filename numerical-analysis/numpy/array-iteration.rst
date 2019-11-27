@@ -69,7 +69,7 @@ Iteration
     #. Print even numbers
 
 :Polish:
-    #. Dany ``a: ndarray`` (por. sekcja input)
+    #. Dany ``a: ndarray`` (patrz sekcja input)
     #. Iteruj po ``a``
     #. Wypisz liczby parzyste
 

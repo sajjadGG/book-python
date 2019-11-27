@@ -241,7 +241,7 @@ Column Stats
         - variance.
 
 :Polish:
-    #. Użyj ``INPUT: List[tuple]`` z listingu (por. sekcja input)
+    #. Użyj ``INPUT: List[tuple]`` z listingu (patrz sekcja input)
     #. Dla kolumn:
 
         - Sepal length,

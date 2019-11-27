@@ -226,7 +226,7 @@ As Type
     #. What happened in each of those steps?
 
 :Polish:
-    #. Dany ``a: ndarray`` (por. sekcja input)
+    #. Dany ``a: ndarray`` (patrz sekcja input)
     #. Przekonwertuj do typu ``int``
     #. Rezultat rzutuj na typ ``bool``
     #. Co się stało w każdym z tych kroków?

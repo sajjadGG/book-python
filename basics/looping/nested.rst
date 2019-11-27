@@ -249,7 +249,7 @@ Example
     #. Calculate mean `Sepal length` value
 
 :Polish:
-    #. Dla danych wejściowych (por. sekcja input)
+    #. Dla danych wejściowych (patrz sekcja input)
     #. Oddziel nagłówek od danych
     #. Wylicz średnią wartość `Sepal length`
 
@@ -290,7 +290,7 @@ Get elements from nested data structure
     #. Print species names ending with "ca" or "sa"
 
 :Polish:
-    #. Dla danych wejściowych (por. sekcja input)
+    #. Dla danych wejściowych (patrz sekcja input)
     #. Oddziel nagłówek od danych
     #. Iteruj po danych
     #. Wypisz nazwy gatunków kończące się na "ca" lub "sa"
@@ -329,7 +329,7 @@ Unique keys from schema-less database
     #. Print unique keys
 
 :Polish:
-    #. Dla danych wejściowych (por. sekcja input)
+    #. Dla danych wejściowych (patrz sekcja input)
     #. Zbierz klucze z wszystkich wierszy w jednej sekwencji ``OUTPUT``
     #. Sort ``OUTPUT``
     #. Wypisz unikalne klucze

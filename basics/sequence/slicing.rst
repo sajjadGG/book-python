@@ -297,7 +297,7 @@ Split train/test
     #. From ``data`` write test data from pivot to end
 
 :Polish:
-    #. Dla danych wejściowych (por. sekcja input)
+    #. Dla danych wejściowych (patrz sekcja input)
     #. Zapisz nagłówek (pierwsza linia) do zmiennej ``header``
     #. Zapisz dane bez nagłówka do zmiennej ``data``
     #. Wylicz punkt podziału: ilość rekordów w ``data`` razy PROCENT
@@ -358,7 +358,7 @@ Iris dataset
     #. Write unique species names to ``species`` set
 
 :Polish:
-    #. Dla danych wejściowych (por. sekcja input)
+    #. Dla danych wejściowych (patrz sekcja input)
     #. Użyj tylko ``slice``
     #. Wyodrębnij listę ``features`` z pomiarami (każdy wiersz ma być krotką)
     #. Wyodrębnij nazwę gatunku (co piąty element) i zapisz do listy ``labels``
@@ -421,10 +421,10 @@ Slicing text
     #. Compare with output data (see below)
 
 :Polish:
-    #. Dla danych wejściowych (por. sekcja input)
+    #. Dla danych wejściowych (patrz sekcja input)
     #. Oczekiwana wartość ``Jana III Sobieskiego``
     #. Wykorzystaj tylko ``slice`` oczyszczenia każdej zmiennej
-    #. Porównaj wyniki z danymi wyjściowymi (por. sekcja output)
+    #. Porównaj wyniki z danymi wyjściowymi (patrz sekcja output)
 
 :Input:
     .. code-block:: python

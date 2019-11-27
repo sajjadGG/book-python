@@ -17,7 +17,7 @@ Create
     #. To convert table use multiline select with ``alt`` key in your IDE
 
 :Polish:
-    #. Dla danych wejściowych (por. sekcja input)
+    #. Dla danych wejściowych (patrz sekcja input)
     #. Stwórz ``tuple`` z nazwami gatunków
     #. Wylicz średnią arytmetyczną dla każdej z kolumn numerycznych
     #. Do przekonwertowania tabelki wykorzystaj zaznaczanie wielu linijek za pomocą klawisza ``alt`` w Twoim IDE
@@ -67,7 +67,7 @@ Select
     #. Do not use ``for``, ``while`` or ``slice()``
 
 :Polish:
-    #. Dla danych wejściowych (por. sekcja input)
+    #. Dla danych wejściowych (patrz sekcja input)
     #. Zapisz nagłówek (pierwsza linia) do zmiennej ``header``
     #. Przekonwertuj do ``list`` dane z wierszy 2, 6, 9 i dodaj do ``output``
     #. Przekonwertuj do ``tuple`` dane z wierszy 12, 15, 16 i dodaj do ``output``
@@ -129,10 +129,10 @@ String cleaning
     #. Implementation of such generic function will be in :ref:`Function Basics` chapter
 
 :Polish:
-    #. Dla danych wejściowych (por. sekcja input)
+    #. Dla danych wejściowych (patrz sekcja input)
     #. Oczekiwana wartość ``Jana III Sobieskiego``
     #. Wykorzystaj tylko metody ``str`` do oczyszczenia każdej zmiennej
-    #. Porównaj wyniki z danymi wyjściowymi (por. sekcja output)
+    #. Porównaj wyniki z danymi wyjściowymi (patrz sekcja output)
     #. Przeprowadź dyskusję jak zrobić rozwiązanie generyczne pasujące do wszystkich przypadków
     #. Implementacja takiej generycznej funkcji będzie w rozdziale :ref:`Function Basics`
 
@@ -184,7 +184,7 @@ Iris dataset
     #. Write unique species names to ``species`` set
 
 :Polish:
-    #. Dla danych wejściowych (por. sekcja input)
+    #. Dla danych wejściowych (patrz sekcja input)
     #. Użyj tylko ``slice``
     #. Wyodrębnij listę ``features`` w pomiarami (każdy wiersz ma być krotką)
     #. Wyodrębnij nazwę gatunku (co piąty element) i zapisz do listy ``labels``

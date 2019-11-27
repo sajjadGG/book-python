@@ -86,7 +86,7 @@ Concatenation
     #. Represent the result as ndarray: two rows and three columns
 
 :Polish:
-    #. Dane są jednowymiarowe: ``a: ndarray``, ``b: ndarray`` (por. sekcja input)
+    #. Dane są jednowymiarowe: ``a: ndarray``, ``b: ndarray`` (patrz sekcja input)
     #. Połącz je ze sobą
     #. Przedstaw wynik jako ndarray: dwa wiersze na trzy kolumny
 

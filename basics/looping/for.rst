@@ -206,7 +206,7 @@ Example
 
 :English:
     #. Iterate over data from "Input" section and count occurrences of each number
-    #. Define empty ``OUTPUT: Dict[int, int]``:
+    #. Create empty ``OUTPUT: Dict[int, int]``:
 
         * key - digit
         * value - number of occurrences
@@ -220,7 +220,7 @@ Example
 
 :Polish:
     #. Iterując po danych wejściowych z sekcji "Input" policz wystąpienia każdej z cyfr
-    #. Zdefiniuj pusty ``OUTPUT: Dict[int, int]``:
+    #. Stwórz pusty ``OUTPUT: Dict[int, int]``:
 
         * klucz - cyfra
         * wartość - liczba wystąpień
@@ -252,7 +252,7 @@ Example
         :language: python
 
 :The whys and wherefores:
-    * Defining ``dict``
+    * Defining ``dict`` :ref:`Mapping Dict`
     * Updating ``dict``
     * Iterating over sequences
 
@@ -277,8 +277,10 @@ Segmentation
         * key - group
         * value - number of occurrences
 
+    #. Compare results with "Output" section below
+
 :Polish:
-    #. Dla danych wejściowych (por. sekcja input)
+    #. Dla danych wejściowych (patrz sekcja input)
     #. Policz wystąpienia każdej z group
     #. Zdefiniuj grupy
 
@@ -290,6 +292,8 @@ Segmentation
 
         * klucz - grupa
         * wartość - liczba wystąpień
+
+    #. Porównaj wynik z sekcją "Output" poniżej
 
 :Input:
     .. code-block:: python
@@ -306,7 +310,6 @@ Segmentation
 
         OUTPUT: Dict[str, int]
         # {'small': 16, 'medium': 23, 'large': 11}
-
 
 :The whys and wherefores:
     * Defining ``dict``
@@ -334,8 +337,10 @@ Text analysis
         * characters (including spaces inside sentences, but without periods ``.``)
         * comas (``,``)
 
+    #. Compare results with "Output" section below
+
 :Polish:
-    #. Dany jest tekst przemówienia "Moon Speech" wygłoszonej przez John F. Kennedy'ego (por. sekcja input)
+    #. Dany jest tekst przemówienia "Moon Speech" wygłoszonej przez John F. Kennedy'ego (patrz sekcja input)
     #. Zdania oddzielone są kropkami (``.``)
     #. Każde zdanie oczyść z białych znaków na początku i końcu
     #. Słowa oddzielone są spacjami
@@ -347,6 +352,8 @@ Text analysis
         * liter
         * znaków (łącznie ze spacjami wewnątrz zdań, ale bez kropek ``.``)
         * przecinków (``,``)
+
+    #. Porównaj wynik z sekcją "Output" poniżej
 
 :Input:
     .. code-block:: text

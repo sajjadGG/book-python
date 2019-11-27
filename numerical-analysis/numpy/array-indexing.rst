@@ -184,7 +184,7 @@ Index
 
 :Polish:
     #. Stwórz ``OUTPUT: ndarray``
-    #. Dodaj do ``OUTPUT`` elementy z ``INPUT`` (por. sekcja input) o indeksach:
+    #. Dodaj do ``OUTPUT`` elementy z ``INPUT`` (patrz sekcja input) o indeksach:
 
         - wiersz 0, kolumna 2
         - wiersz 2, kolumna 2
