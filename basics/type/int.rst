@@ -16,7 +16,6 @@ Defining ``int``
     value = -30             # -30
 
 .. code-block:: python
-    :caption: Type annotation
 
     value: int = 30              # 30
     value: int = -30             # -30

@@ -11,7 +11,6 @@ Defining ``float``
     value = -13.37          # -13.37
 
 .. code-block:: python
-    :caption: Type annotation
 
     value: float = 13.37    # 13.37
 

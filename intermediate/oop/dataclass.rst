@@ -86,7 +86,7 @@ Classes
 
     class Kelvin:
         def __init__(self, value):
-            if self.value < 0.0:
+            if value < 0.0:
                 raise ValueError('Temperature must be greater than 0')
             else:
                 self.value = value
@@ -341,6 +341,39 @@ Dataclass will add
                 return (self.name, self.unit_price, self.quantity) >= (other.name, other.unit_price, other.quantity)
             return NotImplemented
 
+Example
+=======
+.. code-block:: python
+
+    from dataclasses import dataclass
+
+
+    INPUT = [
+        ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+        (5.8, 2.7, 5.1, 1.9, 'virginica'),
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+        (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+        (4.7, 3.2, 1.3, 0.2, 'setosa'),
+        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+        (7.6, 3.0, 6.6, 2.1, 'virginica'),
+        (4.6, 3.1, 1.5, 0.2, 'setosa'),
+    ]
+
+
+    @dataclass
+    class Iris:
+        petal_width: int
+        petal_length: int
+        sepal_width: int
+        sepal_length: int
+        species: str
+
+
+    header, *data = INPUT
+    flowers = list(Iris(*row) for row in data)
+    print(flowers)
 
 Assignments
 ===========
