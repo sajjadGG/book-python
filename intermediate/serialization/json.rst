@@ -582,7 +582,7 @@ Serializing objects to JSON
             {"sepalLength": 5.7, "sepalWidth": 2.8, "petalLength": 4.5, "petalWidth": 1.3, "species": "versicolor"}
         ]
 
-Deserialize data from GITHub
+Deserialize data from GitHub
 ----------------------------
 * Complexity level: medium
 * Lines of code to write: 15 lines

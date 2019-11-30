@@ -64,5 +64,5 @@
     - Omówienie protokołu REST
     - Dobre praktyki tworzenia API
     - (opcjonalnie) tworzenie i korzystanie z narzędzia Swagger do dokumentacji API
-    - (opcjonalnie) wstęp do GIT
+    - (opcjonalnie) wstęp do Git
     - (opcjonalnie) wstęp do Django framework

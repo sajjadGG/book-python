@@ -86,7 +86,7 @@ Create Project in Pure Python
 #. Po stworzeniu projektu, załóż katalog o nazwie jak twoje nazwisko i imie ``nazwisko_imie``
 #. WAŻNE: Już do końca książki w nim będą tworzone rozwiązania do wszystkich zadań
 
-Create Project from GIT
+Create Project from Git
 -----------------------
 * Lines of code to write: 0 lines
 * Estimated time of completion: 2 min

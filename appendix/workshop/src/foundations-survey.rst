@@ -90,7 +90,7 @@
     - skróty klawiszowe do refaktoringu w moim IDE znam na pamięć
     - pisałem książkę z Michael Featers
 
-#. Czy chciałbyś aby w ramach szkolenia zostały poruszone kwestie dotyczące narzędzi automatyzujących budowanie aplikacji (Jenkins), GITa i GIT Flow oraz innych elementów ekosystemu developerskiego i dobrych praktyk programowania?:
+#. Czy chciałbyś aby w ramach szkolenia zostały poruszone kwestie dotyczące narzędzi automatyzujących budowanie aplikacji (Jenkins), Git i Git Flow oraz innych elementów ekosystemu developerskiego i dobrych praktyk programowania?:
 
     - Tak!
     - Nie mam zdania - zdam się na decyzję większości
