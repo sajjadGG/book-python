@@ -7,14 +7,29 @@ Installing Python
 
 System Requirements
 ===================
+
+Szkolenie z programowania w Python
+----------------------------------
 * Można korzystać ze swojego komputera
-* Dowolny system operacyjny wspierany przez najnowszego Pythona
-* Zainstalowane najnowsze oficjalne wydanie Pythona (https://www.python.org/downloads/)
-* Zainstalowany najnowszy PyCharm Professional EAP (https://www.jetbrains.com/pycharm/nextversion/)
+* Dowolny system operacyjny wspierany przez Python
+* Zainstalowane najnowsze oficjalne wydanie Python (https://www.python.org/downloads/)
+* Zainstalowany najnowszy PyCharm Community (https://www.jetbrains.com/pycharm/download/)
+* Posiadać uprawnienia na komputerze do instalacji pakietów Python za pomocą ``pip``
+* Dostęp do internetu
 * Jeżeli szkolenie będzie również dotyczyło współpracy z wykorzystaniem Git:
 
     * zainstalowany Git (https://git-scm.com/download/)
     * założone darmowe konto na Github (proszę znać swój login)
+
+Szkolenie z Analizy Numerycznej lub Machine Learning
+----------------------------------------------------
+.. warning:: Na chwilę obecną jest problem z uruchomieniem ``Jupyter Notebook`` na Python 3.8 na systemie Windows. Ma to związek ze zmianami w API biblioteki ``asyncio`` wykorzystywanej przez serwer ``Tornado``, na którym uruchamia się ``Jupyter``. Jeżeli szkolenie będzie z Machine Learning lub analizy numerycznej to zalecam najnowszą wersję gałęzi **Python 3.7**. Więcej szczegółów na https://stackoverflow.com/questions/58422817/jupyter-notebook-with-python-3-8-notimplementederror
+
+* Można korzystać ze swojego komputera
+* Dowolny system operacyjny wspierany przez Python
+* Zainstalowane najnowsze oficjalne wydanie Python 3.7 (https://www.python.org/downloads/)
+* Posiadać uprawnienia na komputerze do instalacji pakietów Python za pomocą ``pip``
+* Dostęp do internetu
 
 
 Setting-up Environment
@@ -22,46 +37,62 @@ Setting-up Environment
 
 Windows
 -------
-* Zostawić domyślne opcje
-* Dodać do ``PATH`` (ważne!)
-* Python uruchamia się z ``cmd``
-* Znać ścieżkę do katalogu gdzie zainstalowany jest Python
-* Zaznaczaj domyślne opcje zarówno dla Git i PyCharm (pamiętaj aby powiązać z plikami ``.py``)
-* zweryfikować za pomocą polecenia ``python --version``
+#. Instalacja Python:
 
-.. note:: Gdybyś miał zainstalowanego Pythona, ale nie dodałeś go do ``PATH``, plik wykonywalny możesz znaleźć w ``C:\Users\%User_name%\AppData\Local\Programs\Python\Python_version\Scripts\``
+    * Pozostaw domyślne opcje
+    * Dodaj do ``PATH`` (ważne! - inaczej nie uruchomi się w trybie poleceń ``cmd``)
 
+#. Weryfikacja instalacji:
+
+    * Zweryfikuj wersję Python wpisując ``python3 --version`` w trybie poleceń
+    * Zweryfikuj wersję ``pip`` wpisując ``pip3 --version`` w trybie poleceń
+    * Zweryfikuj czy Python uruchamia się w trybie poleceń za pomocą ``python3``
+
+#. Instalacja PyCharm:
+
+    * Pobierz i zainstaluj najnowszy PyCharm Community (https://www.jetbrains.com/pycharm/download/)
+    * Zaznaczaj domyślne opcje dla PyCharm
+    * pamiętaj aby powiązać z plikami ``.py``
+
+.. note:: Jeżeli zainstalujesz Python, ale nie zaznaczysz aby dodać go do ``PATH``, plik wykonywalny możesz znaleźć w ``C:\Users\%User_name%\AppData\Local\Programs\Python\Python_version\Scripts\``
 
 macOS
 -----
-* macOS powinien mieć już zainstalowanego Pythona
-* Możesz zainstalować najnowszą wersję Pythona z oficjalnej strony internetowej
-* Alternatywnie możesz użyć ``brew`` (darmowy manager pakietów)
-* Uprzednio konieczne będzie zainstalowanie najnowszej wersji Xcode z AppStore, Brew powinien zrobić to za Ciebie
-* Instalacja brew sprowadza się do uruchomienia polecenia:
+#. Instalacja Python:
 
-    .. code-block:: console
+    * Pobierz i zainstaluj najnowszą wersję Pythona z oficjalnej strony internetowej (https://www.python.org/downloads/)
+    * Alternatywnie użyj ``brew install python3`` - (opis instalacji brew: https://brew.sh)
 
-        $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+#. Weryfikacja instalacji:
 
-* Następnie po instalacji:
+    * Zweryfikuj wersję Python wpisując ``python3 --version`` w trybie poleceń
+    * Zweryfikuj wersję ``pip`` wpisując ``pip3 --version`` w trybie poleceń
+    * Zweryfikuj czy Python uruchamia się w trybie poleceń za pomocą ``python3``
 
-    .. code-block:: console
+#. Instalacja PyCharm:
 
-        $ brew install python3
-
-* Python uruchamia się z terminala
-* Zweryfikować za pomocą polecenia ``python --version``
+    * Pobierz i zainstaluj najnowszy PyCharm Community (https://www.jetbrains.com/pycharm/download/)
 
 Linux
 -----
-* Niemalże wszystkie dystrybucje Linuxa posiadają zainstalowanego Pythona.
-* Aby zainstalować nowszą wersję użyj swojego managera pakietów:
+#. Instalacja Python:
 
-    - ``apt-get`` - Debian, Ubuntu
+    * Niemalże wszystkie dystrybucje Linuxa posiadają zainstalowanego Pythona.
+    * Pobierz i zainstaluj najnowszą wersję Pythona z oficjalnej strony internetowej (https://www.python.org/downloads/)
+    * Alternatywnie zainstaluj używając managera pakietów dla dystrybucji z której korzystasz:
+
+    - ``apt`` - Debian, Ubuntu
+    - ``snap`` - Ubuntu
     - ``yum`` - Suse
     - ``emerge`` - Gentoo
     - ``rpm`` - Redhat, Fedora
 
-* Python uruchamia się z terminala
-* Zweryfikować za pomocą polecenia ``python --version``
+#. Weryfikacja instalacji:
+
+    * Zweryfikuj wersję Python wpisując ``python3 --version`` w trybie poleceń
+    * Zweryfikuj wersję ``pip`` wpisując ``pip3 --version`` w trybie poleceń
+    * Zweryfikuj czy Python uruchamia się w trybie poleceń za pomocą ``python3``
+
+#. Instalacja PyCharm:
+
+    * Pobierz i zainstaluj najnowszy PyCharm Community (https://www.jetbrains.com/pycharm/download/)
