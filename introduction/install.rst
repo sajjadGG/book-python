@@ -42,11 +42,11 @@ Windows
     * Pozostaw domyślne opcje
     * Dodaj do ``PATH`` (ważne! - inaczej nie uruchomi się w trybie poleceń ``cmd``)
 
-#. Weryfikacja instalacji:
+#. Weryfikacja instalacji (wykonaj polecenia w terminalu ``cmd``):
 
-    * Zweryfikuj wersję Python wpisując ``python3 --version`` w trybie poleceń
-    * Zweryfikuj wersję ``pip`` wpisując ``pip3 --version`` w trybie poleceń
-    * Zweryfikuj czy Python uruchamia się w trybie poleceń za pomocą ``python3``
+    * ``python3 --version`` - sprawdzanie wersji Python
+    * ``pip3 --version`` - sprawdzanie wersji managera pakietów ``pip``
+    * ``python3`` - weryfikacja uruchomienia interpretera Python
 
 #. Instalacja PyCharm:
 
@@ -63,11 +63,11 @@ macOS
     * Pobierz i zainstaluj najnowszą wersję Pythona z oficjalnej strony internetowej (https://www.python.org/downloads/)
     * Alternatywnie użyj ``brew install python3`` - (opis instalacji brew: https://brew.sh)
 
-#. Weryfikacja instalacji:
+#. Weryfikacja instalacji (wykonaj polecenia w terminalu ``Terminal.app``):
 
-    * Zweryfikuj wersję Python wpisując ``python3 --version`` w trybie poleceń
-    * Zweryfikuj wersję ``pip`` wpisując ``pip3 --version`` w trybie poleceń
-    * Zweryfikuj czy Python uruchamia się w trybie poleceń za pomocą ``python3``
+    * ``python3 --version`` - sprawdzanie wersji Python
+    * ``pip3 --version`` - sprawdzanie wersji managera pakietów ``pip``
+    * ``python3`` - weryfikacja uruchomienia interpretera Python
 
 #. Instalacja PyCharm:
 
@@ -81,17 +81,17 @@ Linux
     * Pobierz i zainstaluj najnowszą wersję Pythona z oficjalnej strony internetowej (https://www.python.org/downloads/)
     * Alternatywnie zainstaluj używając managera pakietów dla dystrybucji z której korzystasz:
 
-    - ``apt`` - Debian, Ubuntu
-    - ``snap`` - Ubuntu
-    - ``yum`` - Suse
-    - ``emerge`` - Gentoo
-    - ``rpm`` - Redhat, Fedora
+        * ``apt`` - Debian, Ubuntu
+        * ``snap`` - Ubuntu
+        * ``yum`` - Suse
+        * ``emerge`` - Gentoo
+        * ``rpm`` - Redhat, Fedora
 
-#. Weryfikacja instalacji:
+#. Weryfikacja instalacji (wykonaj polecenia w terminalu):
 
-    * Zweryfikuj wersję Python wpisując ``python3 --version`` w trybie poleceń
-    * Zweryfikuj wersję ``pip`` wpisując ``pip3 --version`` w trybie poleceń
-    * Zweryfikuj czy Python uruchamia się w trybie poleceń za pomocą ``python3``
+    * ``python3 --version`` - sprawdzanie wersji Python
+    * ``pip3 --version`` - sprawdzanie wersji managera pakietów ``pip``
+    * ``python3`` - weryfikacja uruchomienia interpretera Python
 
 #. Instalacja PyCharm:
 
