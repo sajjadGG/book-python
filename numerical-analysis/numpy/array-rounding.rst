@@ -31,6 +31,10 @@ Ceil
 
 Round
 =====
+* Round elements of the array to the nearest integer.
+* There is no ``np.round()`` method
+* Only ``np.rint()``
+
 .. code-block:: python
 
     import numpy as np

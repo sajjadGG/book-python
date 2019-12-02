@@ -9,9 +9,17 @@ for row in a:
     for element in row:
         if element % 2 == 0:
             print(element)
+# 2
+# 4
+# 6
+# 8
 
 
-# Alternative
+## Alternative solution
 for element in a.ravel():
     if element % 2 == 0:
         print(element)
+# 2
+# 4
+# 6
+# 8
