@@ -377,13 +377,13 @@ Create Random
     #. Set random seed to zero
     #. Create ``a: ndarray`` with size 16x16
     #. Structure must contains random integers (0-9)
-    #. Print structure
+    #. Print ``a``
 
 :Polish:
     #. Ustaw ziarno losowości na zero
     #. Stwórz ``a: ndarray`` o rozmiarze 16x16
     #. Struktura musi zawierać losowe liczby (0-9)
-    #. Wypisz strukturę
+    #. Wypisz ``a``
 
 :The whys and wherefores:
     * Defining ``ndarray``
