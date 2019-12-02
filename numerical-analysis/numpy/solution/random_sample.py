@@ -1,14 +1,20 @@
 import numpy as np
-
 np.random.seed(0)
 
 
-a = np.array([], int)
+np.random.choice(range(1, 49), size=6, replace=False)
 
-while a.size <= 6:
-    number = np.random.randint(1, 50)
+a = np.random.randint(1, 49, size=100)
+np.random.choice(np.unique(a), size=6, replace=False)
 
-    if number not in a:
-        a = np.append(a, number)
 
-print(a)
+# Alternative Solution
+# a = np.array([], int)
+#
+# while a.size <= 6:
+#     number = np.random.randint(1, 50)
+#
+#     if number not in a:
+#         a = np.append(a, number)
+#
+# print(a)

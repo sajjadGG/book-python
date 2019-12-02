@@ -35,10 +35,8 @@ np.loadtxt()
     #        [5.9, 3. , 5.1, 1.8],
     #        [6. , 3.4, 4.5, 1.6]])
 
-    a = np.loadtxt(url, skiprows=1, max_rows=3, delimiter=',', usecols=(0,1,2,3))
-    # array([[5.4, 3.9, 1.3, 0.4],
-    #        [5.9, 3. , 5.1, 1.8],
-    #        [6. , 3.4, 4.5, 1.6]])
+    a = np.loadtxt(url, max_rows=1, delimiter=',', dtype=str, usecols=(0,1,2,3))
+    # array(['sepal_length', 'sepal_width', 'petal_length', 'petal_width'], dtype='<U12')
 
 
 np.savetxt()
@@ -58,14 +56,6 @@ np.savetxt()
     # 1.000000000000000000e+00,2.000000000000000000e+00,3.000000000000000000e+00
     # 4.000000000000000000e+00,5.000000000000000000e+00,6.000000000000000000e+00
 
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1,2,3],
-                  [4,5,6]])
-
     np.savetxt('/tmp/filename.csv', a, delimiter=',', fmt='%d')
     # 1,2,3
     # 4,5,6
@@ -82,6 +72,20 @@ np.savetxt()
                   [6. , 3.4, 4.5, 1.6],
                   [7.3, 2.9, 6.3, 1.8],
                   [5.6, 2.5, 3.9, 1.1]])
+
+    np.savetxt('/tmp/filename.csv', a, delimiter=',')
+    # 5.400000000000000355e+00,3.899999999999999911e+00,1.300000000000000044e+00,4.000000000000000222e-01
+    # 5.900000000000000355e+00,3.000000000000000000e+00,5.099999999999999645e+00,1.800000000000000044e+00
+    # 6.000000000000000000e+00,3.399999999999999911e+00,4.500000000000000000e+00,1.600000000000000089e+00
+    # 7.299999999999999822e+00,2.899999999999999911e+00,6.299999999999999822e+00,1.800000000000000044e+00
+    # 5.599999999999999645e+00,2.500000000000000000e+00,3.899999999999999911e+00,1.100000000000000089e+00
+
+    np.savetxt('/tmp/filename.csv', a, delimiter=',', fmt='%.1f')
+    # 5.4,3.9,1.3,0.4
+    # 5.9,3.0,5.1,1.8
+    # 6.0,3.4,4.5,1.6
+    # 7.3,2.9,6.3,1.8
+    # 5.6,2.5,3.9,1.1
 
     np.savetxt('/tmp/filename.csv', a, delimiter=',', fmt='%.2f')
     # 5.40,3.90,1.30,0.40
@@ -112,22 +116,22 @@ Load Dirty CSV
 
 :English:
     #. Load text from URL given as input (see below)
-    #. Read first line with ``dtype=str`` and save as ``header: ndarray``
-    #. Read other lines with ``dtype=float`` and save as ``data: ndarray``
-    #. From ``header`` slice Iris species names and save result as ``species: ndarray``
-    #. In ``data`` split measurements from species number (last column)
-    #. Measurements save as ``features: ndarray`` as type ``float``
-    #. Species numbers save as ``labels: ndarray`` as type ``int``
+    #. From the first line select Iris species names and save as ``species: ndarray``
+    #. For other lines:
+
+        #. Read columns with data and save to ``features: ndarray``
+        #. Read last column with species numbers and save to ``labels: ndarray``
+
     #. Print ``species``, ``labels`` and ``features``
 
 :Polish:
     #. Wczytaj tekst z URL podanego na wejściu (patrz sekcja input)
-    #. Przeczytaj pierwszą linię jako ``dtype=str`` i zapisz do ``header: ndarray``
-    #. Przeczytaj pozostałe linie jako ``dtype=float`` i zapisz jako ``data: ndarray``
-    #. Z ``header`` wytnij nazwy gatunków Irysów i zapisz rezultat jako ``species: ndarray``
-    #. W ``data`` oddziel pomiary od numerów gatunków (ostatnia kolumna)
-    #. Pomiary zapisz do ``features: ndarray`` jako typ ``float``
-    #. Gatunki zapisz do ``labels: ndarray`` jako typ ``int``
+    #. Z pierwszej linii wybierz nazwy gatunków Irysów i zapisz rezultat jako ``species: ndarray``
+    #. W pozostałych linii:
+
+        * Wczytaj kolumny z danymi i zapisz do ``features: ndarray``
+        * Wczytaj ostatnią kolumnę z numerami gatunków i zapisz do ``labels: ndarray``
+
     #. Wyświetl ``species``, ``labels`` i ``features``
 
 :Input:
@@ -150,11 +154,5 @@ Load Dirty CSV
         #        [6.8, 3.2, 5.9, 2.3]])
 
         labels: ndarray
-        # array([0, 2, 1, 2, ..., 0, 2, 2, 2])
+        # array([0., 2., 1., 2., ..., 0., 2., 2., 2.])
 
-:Hint:
-    * ``np.loadtext(..., dtype=str)``
-    * ``header[2:]``
-    * ``ndarray.astype(int)``
-    * ``data[:, :-1]``
-    * ``data[:, -1]``
