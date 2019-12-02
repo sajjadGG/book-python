@@ -9,7 +9,7 @@ You should already know:
     * :ref:`Basic Sequences`
     * :ref:`Basic Mappings`
     * :ref:`Basic Conditionals`
-    * :ref:`Basic Loopigng`
+    * :ref:`Basic Looping`
     * :ref:`Basic Control Flow`
     * :ref:`Basic Functions`
     * :ref:`Basic Object Oriented Programming`

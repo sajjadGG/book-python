@@ -77,6 +77,6 @@ Relational Files Database
     * :ref:`Basic Files`
     * :ref:`Basic Sequences`
     * :ref:`Basic Comprehensions`
-    * :ref:`Basic Loopigng`
+    * :ref:`Basic Looping`
     * :ref:`Basic String Methods`
     * :ref:`Intermediate Datetime and Timezones`

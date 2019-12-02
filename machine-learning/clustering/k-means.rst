@@ -1,8 +1,8 @@
-.. _Machine Learning Clustering:
+.. _Machine Learning K-Means Clustering:
 
-**********
-Clustering
-**********
+******************
+K-Means Clustering
+******************
 
 A loose definition of clustering could be "the process of organizing objects into groups whose members are similar in some way". A cluster is therefore a collection of objects which are “similar” between them and are "dissimilar" to the objects belonging to other clusters.
 
