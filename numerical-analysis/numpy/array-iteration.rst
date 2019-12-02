@@ -12,8 +12,8 @@ Array Iteration
 
     a = np.array([1, 2, 3])
 
-    for element in a:
-        print(element)
+    for obj in a:
+        print(obj)
 
     # 1
     # 2
@@ -30,8 +30,8 @@ Array Iteration
     a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    for element in a:
-        print(element)
+    for obj in a:
+        print(obj)
 
     # [1 2 3]
     # [4 5 6]
@@ -45,12 +45,28 @@ Array Iteration
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    for element in a:
-        print(element)
+    for obj in a:
+        print(obj)
 
     # [1 2 3]
     # [4 5 6]
     # [7 8 9]
+
+
+Enumerate
+=========
+.. code-block:: python
+
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
+
+    for i, obj in enumerate(a):
+        print(i, obj)
+
+    # 0 [1 2 3]
+    # 1 [4 5 6]
+    # 2 [7 8 9]
 
 
 Assignments
