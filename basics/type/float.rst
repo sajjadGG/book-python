@@ -173,6 +173,9 @@ Handling user input and type casting
     #. Przekonwertuj dane do typów podanych w komentarzu po prawej stronie
     #. Zamiast ``...`` podstaw wyliczone i przekonwertowane wartości
 
+:Non-functional requirements:
+    #. Do not use ``input()``
+
 :Output:
     .. code-block:: python
 
