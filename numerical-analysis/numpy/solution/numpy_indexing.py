@@ -1,5 +1,6 @@
 import numpy as np
 
+
 INPUT = np.array([
     [1, 2, 3],
     [4, 5, 6],
@@ -14,5 +15,3 @@ OUTPUT[1,0] = INPUT[0,0]
 OUTPUT[1,1] = INPUT[1,0]
 
 print(OUTPUT)
-
-
