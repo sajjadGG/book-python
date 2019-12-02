@@ -3,6 +3,6 @@ np.random.seed(0)
 
 
 a = np.random.randint(0, 10, size=(16, 16))
-total = a[6:10, 6:10].sum()
+b = a[6:-6, 6:-6]
 
-print(total)
+print(b.sum())

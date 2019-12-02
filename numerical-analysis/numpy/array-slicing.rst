@@ -312,14 +312,14 @@ Sum of inner elements
 :English:
     #. Use only random module from ``numpy`` module
     #. Set random seed to zero
-    #. Generate ``outer: ndarray`` with 16x16 random digits (0-9 inclusive)
+    #. Generate ``INPUT: ndarray`` with 16x16 random digits (0-9 inclusive)
     #. Calculate sum of inner 4x4 elements
     #. Inner matrix is exactly in the middle of outer
 
 :Polish:
     #. Używaj tylko modułu random z modułu ``numpy``
     #. Ustaw ziarno losowości na zero
-    #. Wygeneruj ``outer: ndarray`` z 16x16 losowych cyfr (0-9 włącznie)
+    #. Wygeneruj ``INPUT: ndarray`` z 16x16 losowych cyfr (0-9 włącznie)
     #. Policz sumę środkowych 4x4 elementów
     #. Środkowa macierz jest dokładnie w środku większej
 
@@ -330,4 +330,4 @@ Sum of inner elements
     Sum of inner elements
 
 :Hint:
-    * ``np.array.sum()``
+    * ``ndarray.sum()``
