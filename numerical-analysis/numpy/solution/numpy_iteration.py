@@ -9,3 +9,9 @@ for row in a:
     for element in row:
         if element % 2 == 0:
             print(element)
+
+
+# Alternative
+for element in a.ravel():
+    if element % 2 == 0:
+        print(element)
