@@ -5,8 +5,9 @@ a = np.array([[-1.1, 0.0, 1.1],
               [2.2, 3.3, 4.4]])
 
 a = a.astype(int)
-a = a.astype(bool)
+# array([[-1,  0,  1],
+#        [ 2,  3,  4]])
 
-print(a)
-# [[ True False  True]
-#  [ True  True  True]]
+a.astype(bool)
+# array([[ True, False,  True],
+#        [ True,  True,  True]])
