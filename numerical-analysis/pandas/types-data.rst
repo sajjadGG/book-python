@@ -3,11 +3,8 @@ Data Types
 **********
 
 
-Data Types
-==========
-
 Series
-------
+======
 .. code-block:: python
 
     import pandas as pd
@@ -20,8 +17,9 @@ Series
     # 3    4.0
     # dtype: float64
 
+
 DataFrame
----------
+=========
 .. code-block:: python
 
     import pandas as pd
@@ -39,9 +37,11 @@ DataFrame
     # 3  d  3  3.0
 
 Sparse data
------------
+===========
 * Data where a single value is repeated many times (e.g. ``0`` or ``NaN``) may be stored efficiently as a ``SparseArray``
 
+Sparse data with Series
+-----------------------
 .. code-block:: python
 
     import pandas as pd
@@ -53,6 +53,8 @@ Sparse data
     # IntIndex
     # Indices: array([0, 1, 2], dtype=int32)
 
+Sparse data with DataFrame
+--------------------------
 .. code-block:: python
 
     import pandas as pd
@@ -72,12 +74,11 @@ Sparse data
     # B    Sparse[float64, nan]
     # dtype: object
 
-
-Numerical
-=========
-
 Interval
---------
+========
+
+Definition
+----------
 .. code-block:: python
 
     import pandas as pd
@@ -90,9 +91,9 @@ Interval
     # Interval(0, 5, closed='right')
 
     pd.Interval(left=0, right=5, closed='both')
-    Interval(0, 5, closed='both')
+    # Interval(0, 5, closed='both')
 
-Interval
+Contains
 --------
 .. code-block:: python
 
@@ -107,7 +108,8 @@ Interval
     5.0 in interval
     # False
 
-
+Interval between Timestamps
+---------------------------
 .. code-block:: python
 
     import pandas as pd
@@ -130,11 +132,8 @@ Interval
     # Timedelta('365 days 00:00:00')
 
 
-Text
-====
-
 Categorical
------------
+===========
 * Limited, fixed set of values
 
 .. code-block:: python

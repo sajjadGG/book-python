@@ -18,20 +18,14 @@ Slicing by index numbers
     # e   -0.510805
     # dtype: float64
 
-.. code-block:: python
-
     s[1]
     # -0.2127402802139687
-
-.. code-block:: python
 
     s[2:]
     # c   -0.895467
     # d    0.386902
     # e   -0.510805
     # dtype: float64
-
-.. code-block:: python
 
     s[1:-2]
     # b   -0.212740
@@ -54,20 +48,14 @@ Slicing by index names
     # e   -0.510805
     # dtype: float64
 
-.. code-block:: python
-
     s['b']
     # -0.2127402802139687
-
-.. code-block:: python
 
     s['c':]
     # c   -0.895467
     # d    0.386902
     # e   -0.510805
     # dtype: float64
-
-.. code-block:: python
 
     s['b':'c']
     # b   -0.212740
@@ -100,6 +88,7 @@ Slicing by index names
     # 1970-01-05    6.0
     # Freq: D, dtype: float64
 
+
 Assignments
 ===========
 
@@ -110,15 +99,25 @@ Slicing
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/pandas_series_slicing.py`
 
-#. Stwórz ``pd.Series`` z 26 losowymi liczbami całkowitymi z przedziału ``[10, 100)``
-#. Nazwij indeksy jak kolejne litery alfabetu łacińskiego (bez polskich znaków)
-#. Za pomocą funkcji ``median`` z biblioteki ``statistics`` znajdź medianę alfabetu
-#. Jak znaleźć medianę dla parzystej długości listy? Użyj dolnego elementu.
-#. Jak znaleźć element w liście o zadanym indeksie?
-#. Wytnij z serii po 3 elementy w górę i w dół od wyszukanego środka
-#. Zsumuj wyniki
+:English:
+    .. todo:: Translate to English
+
+:Polish:
+    #. Stwórz ``pd.Series`` z 26 losowymi liczbami całkowitymi z przedziału ``[10, 100)``
+    #. Przekształć kolejne litery alfabetu angielskiego (patrz poniżej) na nazwy kolumn
+    #. Nazwij indeksy jak kolejne litery alfabetu angielskiego
+    #. Za pomocą biblioteki ``statistics`` znajdź medianę alfabetu
+    #. Jak znaleźć medianę dla parzystej długości listy? Użyj dolnego elementu.
+    #. Jak znaleźć element w liście o zadanym indeksie?
+    #. Wytnij z serii po 3 elementy w górę i w dół od wyszukanego środka
+    #. Zsumuj wyniki
+
+:Input:
+    .. code-block:: python
+
+        alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
 :Hint:
     * ``import string``, ``string.ascii_lowercase``
-    * ``statistics.median_high()``, ``statistics.median_low()``
-    * ``list.index(element)``
+    * ``import statistics``, ``statistics.median_low(...)``
+    * ``list.index(...)``

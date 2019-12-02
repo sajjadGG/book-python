@@ -117,4 +117,47 @@ Usage
 
 Assignments
 ===========
-.. todo:: Create assignments
+
+Read
+-----
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/pandas_read.py`
+
+:English:
+    #. Read data from given ``url`` (see below) to ``DataFrame``
+    #. Use provided column names
+    #. Replace data in ``label`` column with values from ``labels``
+    #. Print ``DataFrame``
+    #. Print first 5 and last 10 rows from ``DataFrame``
+
+:Polish:
+    #. Wczytaj dane z danego ``url`` (patrz poniżej) do ``DataFrame``
+    #. Użyj podanych nazw kolumn
+    #. Podmień dane w kolumnie ``label`` na wartości z ``labels``
+    #. Wypisz pierwsze 5 i ostatnie 10 wierszy z ``DataFrame``
+
+:Input:
+    .. code-block:: python
+
+        url = 'https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/breast_cancer.csv'
+
+        column_names = ['mean radius', 'mean texture', 'mean perimeter', 'mean area',
+                        'mean smoothness', 'mean compactness', 'mean concavity',
+                        'mean concave points', 'mean symmetry', 'mean fractal dimension',
+                        'radius error', 'texture error', 'perimeter error', 'area error',
+                        'smoothness error', 'compactness error', 'concavity error',
+                        'concave points error', 'symmetry error',
+                        'fractal dimension error', 'worst radius', 'worst texture',
+                        'worst perimeter', 'worst area', 'worst smoothness',
+                        'worst compactness', 'worst concavity', 'worst concave points',
+                        'worst symmetry', 'worst fractal dimension', 'label']
+
+        labels = ['malignant', 'benign']
+
+:The whys and wherefores:
+    * Read Pandas ``DataFrame``
+
+:Hint:
+    * ``df['label'].replace({...})``

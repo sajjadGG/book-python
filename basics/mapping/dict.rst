@@ -465,6 +465,19 @@ Zip
     #   'Species': 'virginica'
     # }
 
+Enumerate
+---------
+.. code-block:: python
+
+    labels = ['setosa', 'versicolor', 'virginica']
+
+    dict(enumerate(labels))
+    # {
+    #   0: 'setosa',
+    #   1: 'versicolor',
+    #   2: 'virginica'
+    # }
+
 
 ``dict`` and ``set``
 ====================

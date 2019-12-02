@@ -2,8 +2,9 @@
 Series Indexing
 ***************
 
+
 Numbered
---------
+========
 * by default
 
 .. code-block:: python
@@ -20,7 +21,7 @@ Numbered
     # dtype: float64
 
 Alphabetic
-----------
+==========
 .. code-block:: python
 
     indexes = ['a', 'b', 'c', 'd', 'e', 'f']
@@ -49,7 +50,7 @@ Alphabetic
     # dtype: float64
 
 Datetime
---------
+========
 * Default is "Daily"
 
 .. code-block:: python
@@ -74,7 +75,7 @@ Datetime
     # Freq: D, dtype: float64
 
 Every year
-^^^^^^^^^^
+----------
 .. code-block:: python
 
     pd.date_range('1970-01-01', periods=6, freq='Y')
@@ -87,7 +88,7 @@ Every year
     #                dtype='datetime64[ns]', freq='A-DEC')
 
 Every month
-^^^^^^^^^^^
+-----------
 .. code-block:: python
 
     pd.date_range('1970-01-01', periods=6, freq='M')
@@ -100,8 +101,9 @@ Every month
     #                dtype='datetime64[ns]', freq='M')
 
 Every day
-^^^^^^^^^
+---------
 .. code-block:: python
+    :caption: Every day
 
     pd.date_range('1970-01-01', periods=6, freq='D')
     # DatetimeIndex(['1970-01-01',
@@ -112,8 +114,21 @@ Every day
     #                '1970-01-06'],
     #                dtype='datetime64[ns]', freq='D')
 
+.. code-block:: python
+    :caption: Every two days
+
+    pd.date_range('1970-01-01', periods=6, freq='2D')
+    # DatetimeIndex(['1970-01-01',
+    #                '1970-01-03',
+    #                '1970-01-05',
+    #                '1970-01-07',
+    #                '1970-01-09',
+    #                '1970-01-11'],
+    #                dtype='datetime64[ns]', freq='2D')
+
+
 Every hour
-^^^^^^^^^^
+----------
 * Works also with ISO time format ``1970-01-01T00:00:00``
 * If time is not provided, it will start since midnight ``00:00:00``
 
@@ -129,7 +144,7 @@ Every hour
     #                dtype='datetime64[ns]', freq='H')
 
 Every minute
-^^^^^^^^^^^^
+------------
 * Works also with ISO time format ``1970-01-01T00:00:00``
 * If time is not provided, it will start since midnight ``00:00:00``
 
@@ -145,7 +160,7 @@ Every minute
     #                dtype='datetime64[ns]', freq='T')
 
 Every second
-^^^^^^^^^^^^
+------------
 * Works also with ISO time format ``1970-01-01T00:00:00``
 * If time is not provided, it will start since midnight ``00:00:00``
 

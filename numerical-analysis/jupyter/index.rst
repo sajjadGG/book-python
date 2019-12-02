@@ -51,6 +51,11 @@ Comment Code
 ------------
 * ``Ctrl + /``
 
+Run
+---
+* ``Shift`` + ``Enter``
+
+
 Cells
 =====
 Insert Below/Above Cells
@@ -85,8 +90,11 @@ Clear Output
 
 Magic commands
 ==============
-* ``%run``
+* ``%`` - Line Magics
+* ``%%`` - Cell magic
+* ``%run`` - Run the named file inside IPython as a program.
 * ``!pip freeze``
+* Full list https://ipython.readthedocs.io/en/stable/interactive/magics.html#
 
 Kernels
 =======
@@ -113,6 +121,7 @@ Close and Halt
 Performance and profiling
 =========================
 - ``%%timeit``
+- ``%%timeit -n 1000 -r 7``
 
 
 Markdown
