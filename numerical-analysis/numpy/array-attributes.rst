@@ -121,10 +121,10 @@ Create
     #. Structure must contains random integers (0-9)
     #. Print number of:
 
-        - dimensions
-        - columns
-        - rows
-        - element count
+        * dimensions
+        * columns
+        * rows
+        * element count
 
 :Polish:
     #. Ustaw ziarno losowości na zero
@@ -132,10 +132,10 @@ Create
     #. Struktura musi zawierać losowe liczby (0-9)
     #. Wypisz liczbę:
 
-        - wymiarów
-        - kolumn
-        - wierszy
-        - ilość elementów
+        * wymiarów
+        * kolumn
+        * wierszy
+        * ilość elementów
 
 :The whys and wherefores:
     * Defining ``ndarray``
