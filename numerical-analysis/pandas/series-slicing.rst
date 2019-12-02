@@ -7,10 +7,10 @@ Slicing by index numbers
 ========================
 .. code-block:: python
 
-    values = np.random.randn(5)
-    indexes = ['a', 'b', 'c', 'd', 'e']
+    data =  np.random.randn(5)
+    index = ['a', 'b', 'c', 'd', 'e']
 
-    s = pd.Series(values, index=indexes)
+    s = pd.Series(data, index)
     # a   -1.613898
     # b   -0.212740
     # c   -0.895467
@@ -37,10 +37,10 @@ Slicing by index names
 ======================
 .. code-block:: python
 
-    values = np.random.randn(5)
-    indexes = ['a', 'b', 'c', 'd', 'e']
+    data =  np.random.randn(5)
+    index = ['a', 'b', 'c', 'd', 'e']
 
-    s = pd.Series(values, index=indexes)
+    s = pd.Series(data, index)
     # a   -1.613898
     # b   -0.212740
     # c   -0.895467
@@ -64,7 +64,7 @@ Slicing by index names
 
 .. code-block:: python
 
-    indexes = pd.date_range('1970-01-01', periods=6)
+    index = pd.date_range('1970-01-01', periods=6)
     # DatetimeIndex(['1970-01-01',
     #                '1970-01-02',
     #                '1970-01-03',
@@ -72,8 +72,8 @@ Slicing by index names
     #                '1970-01-05',
     #                '1970-01-06'], dtype='datetime64[ns]', freq='D')
 
-    values = [1, 3, 5, np.nan, 6, 8]
-    s = pd.Series(values, index=indexes)
+    data =  [1, 3, 5, np.nan, 6, 8]
+    s = pd.Series(data, index)
     # 1970-01-01    1.0
     # 1970-01-02    3.0
     # 1970-01-03    5.0

@@ -9,9 +9,11 @@ Numbered
 
 .. code-block:: python
 
-    values = [1, 3, 5, np.nan, 6, 8]
+    import pandas as pd
 
-    pd.Series(values)
+    data =  [1, 3, 5, np.nan, 6, 8]
+
+    pd.Series(data)
     # 0    1.0
     # 1    3.0
     # 2    5.0
@@ -20,14 +22,17 @@ Numbered
     # 5    8.0
     # dtype: float64
 
+
 Alphabetic
 ==========
 .. code-block:: python
 
-    indexes = ['a', 'b', 'c', 'd', 'e', 'f']
-    values = [1, 3, 5, np.nan, 6, 8]
+    import pandas as pd
 
-    s = pd.Series(values, index=indexes)
+    data =  [1, 3, 5, np.nan, 6, 8]
+    index = ['a', 'b', 'c', 'd', 'e', 'f']
+
+    s = pd.Series(data, index)
     # a    1.0
     # b    3.0
     # c    5.0
@@ -38,9 +43,12 @@ Alphabetic
 
 .. code-block:: python
 
-    values = np.random.randn(5)
+    import pandas as pd
 
-    s = pd.Series(values, index=list('abcdef'))
+    data =  np.random.randn(5)
+    index = list('abcdef')
+
+    s = pd.Series(data, index)
     # a    1.0
     # b    3.0
     # c    5.0
@@ -55,7 +63,10 @@ Datetime
 
 .. code-block:: python
 
-    indexes = pd.date_range('1970-01-01', periods=6)
+    import pandas as pd
+
+    data =  [1, 3, 5, np.nan, 6, 8]
+    index = pd.date_range('1970-01-01', periods=6)
     # DatetimeIndex(['1970-01-01',
     #                '1970-01-02',
     #                '1970-01-03',
@@ -63,9 +74,7 @@ Datetime
     #                '1970-01-05',
     #                '1970-01-06'], dtype='datetime64[ns]', freq='D')
 
-    values = [1, 3, 5, np.nan, 6, 8]
-
-    s = pd.Series(values, index=indexes)
+    s = pd.Series(data, index)
     # 1970-01-01    1.0
     # 1970-01-02    3.0
     # 1970-01-03    5.0
@@ -77,6 +86,8 @@ Datetime
 Every year
 ----------
 .. code-block:: python
+
+    import pandas as pd
 
     pd.date_range('1970-01-01', periods=6, freq='Y')
     # DatetimeIndex(['1970-12-31',
@@ -90,6 +101,8 @@ Every year
 Every month
 -----------
 .. code-block:: python
+
+    import pandas as pd
 
     pd.date_range('1970-01-01', periods=6, freq='M')
     # DatetimeIndex(['1970-01-31',
@@ -105,6 +118,8 @@ Every day
 .. code-block:: python
     :caption: Every day
 
+    import pandas as pd
+
     pd.date_range('1970-01-01', periods=6, freq='D')
     # DatetimeIndex(['1970-01-01',
     #                '1970-01-02',
@@ -116,6 +131,8 @@ Every day
 
 .. code-block:: python
     :caption: Every two days
+
+    import pandas as pd
 
     pd.date_range('1970-01-01', periods=6, freq='2D')
     # DatetimeIndex(['1970-01-01',
@@ -134,6 +151,8 @@ Every hour
 
 .. code-block:: python
 
+    import pandas as pd
+
     pd.date_range('1970-01-01 00:00:00', periods=6, freq='H')
     # DatetimeIndex(['1970-01-01 00:00:00',
     #                '1970-01-01 01:00:00',
@@ -150,6 +169,8 @@ Every minute
 
 .. code-block:: python
 
+    import pandas as pd
+
     pd.date_range('1970-01-01 00:00:00', periods=6, freq='T')
     # DatetimeIndex(['1970-01-01 00:00:00',
     #                '1970-01-01 00:01:00',
@@ -165,6 +186,8 @@ Every second
 * If time is not provided, it will start since midnight ``00:00:00``
 
 .. code-block:: python
+
+    import pandas as pd
 
     pd.date_range('1970-01-01 00:00:00', periods=6, freq='S')
     # DatetimeIndex(['1970-01-01 00:00:00',

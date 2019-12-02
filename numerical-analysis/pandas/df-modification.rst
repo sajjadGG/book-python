@@ -123,9 +123,9 @@ Fill ``NA``/``NaN`` with values from dict with column names
 
 .. code-block:: python
 
-    values = {'A': 5, 'B': 7, 'C': 9}
+    data =  {'A': 5, 'B': 7, 'C': 9}
 
-    df.fillna(values)
+    df.fillna(data)
     #       A     B     C
     # 0   1.0   2.0   9.0
     # 1   5.0   2.0   3.0
@@ -178,11 +178,11 @@ Transpose
     np.random.seed(0)
 
 
-    values = np.random.randn(6, 4)
+    data =  np.random.randn(6, 4)
     columns = ['Morning', 'Noon', 'Evening', 'Midnight']
-    indexes = pd.date_range('1970-01-01', periods=6)
+    index = pd.date_range('1970-01-01', periods=6)
 
-    df = pd.DataFrame(values, index=indexes, columns=columns)
+    df = pd.DataFrame(data, index, columns)
     #               Morning       Noon    Evening   Midnight
     # 1970-01-01   0.486726  -0.291364  -1.105248  -0.333574
     # 1970-01-02   0.301838  -0.603001   0.069894   0.309209

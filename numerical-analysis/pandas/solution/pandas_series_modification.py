@@ -1,15 +1,9 @@
-# . Z danych wejściowych stwórz ``pd.Series``
-# . Wypełnij puste wartości zerami
-# . Usuń wartości na indeksach 2, 4, 6
-# . Zresetuj indeks (bez kopii starego)
-# . Wypisz serię
-
 import pandas as pd
 import numpy as np
 
 
-values = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
-s = pd.Series(values)
+data = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
+s = pd.Series(data)
 
 s.fillna(0, inplace=True)
 s.drop(2, inplace=True)

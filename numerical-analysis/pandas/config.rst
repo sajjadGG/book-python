@@ -12,10 +12,11 @@ Limited
 
     import pandas as pd
 
-
     pd.set_option('display.max_rows', 10)
 
 .. code-block:: python
+
+    import pandas as pd
 
     pd.set_option('display.height', 1000)
     pd.set_option('display.max_columns', 500)
@@ -27,7 +28,6 @@ Unlimited
 
     import pandas as pd
 
-
     pd.set_option('display.max_rows', None)
     pd.set_option('display.max_columns', None)
 
@@ -37,14 +37,12 @@ Using in context
 
     import pandas as pd
 
-
     with pd.option_context('display.max_rows', 100):
         print(df)
 
 .. code-block:: python
 
     import pandas as pd
-
 
     with pd.option_context('display.max_rows', None, 'display.max_columns', 3):
         print(df)

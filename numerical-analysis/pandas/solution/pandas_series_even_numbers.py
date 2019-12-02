@@ -1,9 +1,9 @@
 import pandas as pd
 
 
-values = [x for x in range(0, 20) if x % 2 == 0]
+data =  [x for x in range(0, 20) if x % 2 == 0]
 
-s = pd.Series(values)
+s = pd.Series(data)
 
 
 s ** 2

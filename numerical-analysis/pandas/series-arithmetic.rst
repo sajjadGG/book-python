@@ -5,10 +5,10 @@ Series Arithmetic
 
 .. code-block:: python
 
-    values = np.random.randn(5)
-    indexes = ['a', 'b', 'c', 'd', 'e']
+    data = np.random.randn(5)
+    index = ['a', 'b', 'c', 'd', 'e']
 
-    s = pd.Series(values, index=indexes)
+    s = pd.Series(data, index)
     # a   -1.613898
     # b   -0.212740
     # c   -0.895467
@@ -16,9 +16,14 @@ Series Arithmetic
     # e   -0.510805
     # dtype: float64
 
+
 Multiply by scalar
-------------------
+==================
 .. code-block:: python
+
+    data = np.random.randn(5)
+    index = ['a', 'b', 'c', 'd', 'e']
+    s = pd.Series(data, index)
 
     s * 5
     # a   -8.069489
@@ -32,6 +37,10 @@ Multiply by itself
 ------------------
 .. code-block:: python
 
+    data = np.random.randn(5)
+    index = ['a', 'b', 'c', 'd', 'e']
+    s = pd.Series(data, index)
+
     s * s
     # a    2.604666
     # b    0.045258
@@ -41,6 +50,10 @@ Multiply by itself
     # dtype: float64
 
 .. code-block:: python
+
+    data = np.random.randn(5)
+    index = ['a', 'b', 'c', 'd', 'e']
+    s = pd.Series(data, index)
 
     s ** 3
     # a   -4.203665
@@ -54,10 +67,18 @@ Sum elements
 ------------
 .. code-block:: python
 
+    data = np.random.randn(5)
+    index = ['a', 'b', 'c', 'd', 'e']
+    s = pd.Series(data, index)
+
     s.sum()
     # -2.846007328675207
 
 .. code-block:: python
+
+    data = np.random.randn(5)
+    index = ['a', 'b', 'c', 'd', 'e']
+    s = pd.Series(data, index)
 
     sum(s)
     # -2.846007328675207
@@ -70,6 +91,7 @@ Add values
 .. code-block:: python
 
     import numpy as np
+
 
     a = pd.Series([1, 1, 1, np.nan], index=['a', 'b', 'c', 'd'])
     # a    1.0
@@ -87,6 +109,9 @@ Add values
 
 .. code-block:: python
 
+    a = pd.Series([1, 1, 1, np.nan], index=['a', 'b', 'c', 'd'])
+    b = pd.Series([1, np.nan, 1, np.nan], index=['a', 'b', 'x', 'y'])
+
     a + b
     # a    2.0
     # b    NaN
@@ -97,8 +122,10 @@ Add values
     # dtype: float64
 
 .. code-block:: python
+    :caption: ``fill_value``: If data in both corresponding ``Series`` locations is missing the result will be missing
 
-    # ``fill_value``: If data in both corresponding ``Series`` locations is missing the result will be missing
+    a = pd.Series([1, 1, 1, np.nan], index=['a', 'b', 'c', 'd'])
+    b = pd.Series([1, np.nan, 1, np.nan], index=['a', 'b', 'x', 'y'])
 
     a.add(b, fill_value=0)
     # a    2.0
@@ -112,4 +139,24 @@ Add values
 
 Assignments
 ===========
-.. todo:: Create assignments
+
+Arithmetic
+----------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/pandas_series_arithmetic.py`
+
+:English:
+    #. Set random seed to zero
+    #. Generate ``data: ndarray`` with 5 random digits [0, 9]
+    #. Create ``index: list`` with column names as sequential letters in english alphabet
+    #. Create ``s: pd.Series`` from ``data`` and ``index``
+    #. Multiply ``s`` by 5 and by original ``s`` values (before multiplying by 5)
+
+:Polish:
+    #. Ustaw random seed na zero
+    #. Wygeneruj ``data: ndarray`` z 5 losowymi cyframi <0, 9>
+    #. Stwórz ``index: list`` z nazwami kolumn jak kolejne listery alfabetu angielskiego
+    #. Stwórz ``s: pd.Series`` z ``data`` oraz ``index``
+    #. Pomnóż ``s`` przez 5 oraz przez oryginalne wartości ``s`` (przed mnożeniem przez 5)

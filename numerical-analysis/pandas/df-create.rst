@@ -33,11 +33,11 @@ Integer index
     np.random.seed(0)
 
 
-    values = np.arange(16).reshape(4, 4)
-    indexes = range(0, 4)
+    data =  np.arange(16).reshape(4, 4)
+    index = range(0, 4)
     columns = range(0, 4)
 
-    df = pd.DataFrame(values, index=indexes, columns=columns)
+    df = pd.DataFrame(data, index, columns)
     #     0   1   2   3
     # 0   0   1   2   3
     # 1   4   5   6   7
@@ -54,11 +54,11 @@ Date indexes
     np.random.seed(0)
 
 
-    values = np.random.randn(6, 4)
+    data =  np.random.randn(6, 4)
     columns = ['Morning', 'Noon', 'Evening', 'Midnight']
-    indexes = pd.date_range('1970-01-01', periods=6)
+    index = pd.date_range('1970-01-01', periods=6)
 
-    df = pd.DataFrame(values, index=indexes, columns=columns)
+    df = pd.DataFrame(data, index, columns)
     #                 Morning        Noon    Evening   Midnight
     # 1970-01-01     2.269755   -1.454366   0.045759  -0.187184
     # 1970-01-02     1.532779    1.469359   0.154947   0.378163
@@ -75,6 +75,11 @@ Custom values in columns
 ------------------------
 .. code-block:: python
 
+    import numpy as np
+    import pandas as pd
+
+    np.random.seed(0)
+
     pd.DataFrame({'A' : 1.,
                   'B' : pd.Timestamp('1961-04-12'),
                   'C' : pd.Series(1, index=list(range(4)), dtype='float32'),
@@ -90,6 +95,8 @@ Custom values in columns
 With multiple rows
 ------------------
 .. code-block:: python
+
+    import pandas as pd
 
     pd.DataFrame([{'A': 1, 'B': 2}, {'C': 3}])
     #      A    B    C

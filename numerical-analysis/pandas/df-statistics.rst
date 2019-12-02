@@ -10,9 +10,9 @@ DataFrame Statistics
     np.random.seed(0)
 
 
-    values = np.random.randn(6, 4)
+    data = np.random.randn(6, 4)
     columns = ['A', 'B', 'C', 'D']
-    indexes = pd.date_range('1970-01-01', periods=6)
+    index = pd.date_range('1970-01-01', periods=6)
     # DatetimeIndex(['1970-01-01',
     #                '1970-01-02',
     #                '1970-01-03',
@@ -20,7 +20,7 @@ DataFrame Statistics
     #                '1970-01-05',
     #                '1970-01-06'], dtype='datetime64[ns]', freq='D')
 
-    df = pd.DataFrame(values, index=indexes, columns=columns)
+    df = pd.DataFrame(data, index, columns)
 
 Arithmetic mean
 ---------------
@@ -52,10 +52,10 @@ Percentiles
 -----------
 .. code-block:: python
 
-    values = np.array([[1, 1], [2, 10], [3, 100], [4, 100]])
+    data = np.array([[1, 1], [2, 10], [3, 100], [4, 100]])
     columns = ['a', 'b']
 
-    df = pd.DataFrame(values, columns=columns)
+    df = pd.DataFrame(data, columns)
     #    a    b
     # 0  1    1
     # 1  2   10
