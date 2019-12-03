@@ -5,8 +5,8 @@ import numpy as np
 
 FILE = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/iris.csv'
 
-iris = pd.read_csv(FILE, encoding='utf-8')
-iris.columns = [
+df = pd.read_csv(FILE, encoding='utf-8')
+df.columns = [
     'Sepal length',
     'Sepal width',
     'Petal length',
@@ -14,12 +14,12 @@ iris.columns = [
     'Species',
 ]
 
-iris.where(iris['Petal length'] > 2.0, inplace=True)
-iris.dropna(how='all', inplace=True)
+df.where(df['Petal length'] > 2.0, inplace=True)
+df.dropna(how='all', inplace=True)
 
-iris['datetime'] = datetime.now(tz=timezone.utc)
-iris['big_enough'] = np.where(iris['Petal width'] > 1.0, True, False)
+df['datetime'] = datetime.now(tz=timezone.utc)
+df['big_enough'] = np.where(df['Petal width'] > 1.0, True, False)
 
 columns = ['Sepal length', 'Sepal width', 'Species']
-iris = iris[columns]
-iris.describe()
+df = df[columns]
+df.describe()

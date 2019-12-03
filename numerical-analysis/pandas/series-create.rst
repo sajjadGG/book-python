@@ -39,6 +39,7 @@ Creating
 .. code-block:: python
 
     import pandas as pd
+    import numpy as np
 
 
     pd.Series([1, 2, np.nan, 4])
@@ -51,6 +52,7 @@ Creating
 .. code-block:: python
 
     import pandas as pd
+    import numpy as np
 
 
     pd.Series([1, 2, np.nan, 4])
@@ -102,6 +104,18 @@ Even Numbers
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/pandas_series_even_numbers.py`
 
-#. Stwórz ``pd.Series`` z 10 liczbami parzystymi
-#. Podnieś wszystkie elementy do kwadratu
-#. Dodaj 5 do każdego z elementów
+:English:
+    #. Set random seed to zero
+    #. Generate list of 10 even numbers in range [0,9]
+    #. Create ``pd.Series`` from those numbers
+
+:Polish:
+    #. Ustaw ziarno losowości na zero
+    #. Stwórz listę 10 liczb parzystych z zakresu <0;9>
+    #. Stwórz ``pd.Series`` z tych liczb
+
+:Hint:
+    * ``np.random.seed(0)``
+    * ``np.random.randint(0, 9)``
+    *
+    * ``number % 2 == 0``
