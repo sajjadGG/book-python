@@ -30,8 +30,8 @@ Case Study
 ==========
 * :cite:`PandasAggregations`
 
-Data
-----
+Load Data
+---------
 * :download:`data/phones.csv`
 
 .. csv-table:: Data
@@ -45,13 +45,14 @@ Data
     "network", "The mobile network that was called/texted for each entry.
     "network_type", "Whether the number being called was a mobile, international (‘world’), voicemail, landline, or other (‘special’) number."
 
-Read DataFrame
---------------
 .. code-block:: python
 
     import pandas as pd
 
-    data = pd.DataFrame.from_csv('phones.csv')
+
+    url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/phones.csv'
+
+    data = pd.read_csv(url)
 
 Clean Dates
 -----------
@@ -312,6 +313,7 @@ Renaming index
     :caption: Quick renaming of grouped columns from the groupby() multi-index can be achieved using the ravel() function.
 
     grouped = data.groupby('month').agg("duration": [min, max, mean])
+
     # Using ravel, and a string join, we can create better names for the columns:
     grouped.columns = ["_".join(x) for x in grouped.columns.ravel()]
 
