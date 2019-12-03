@@ -1,9 +1,10 @@
 import pandas as pd
 
 
-FILE = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/iris-dirty.csv'
+URL = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/iris-dirty.csv'
 
-COLUMNS = [
+df = pd.read_csv(URL, skiprows=1)
+df.columns = [
     'Sepal length',
     'Sepal width',
     'Petal length',
@@ -11,9 +12,7 @@ COLUMNS = [
     'Species'
 ]
 
-df = pd.read_csv(FILE, skiprows=1, names=COLUMNS)
-
-df['Species'].replace(to_replace={
+df['Species'].replace({
     0: 'setosa',
     1: 'versicolor',
     2: 'virginica'

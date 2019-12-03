@@ -81,6 +81,7 @@ Pandas
     /numerical-analysis/pandas/df-indexing.rst
     /numerical-analysis/pandas/df-slicing.rst
     /numerical-analysis/pandas/df-sample.rst
+    /numerical-analysis/pandas/df-plot.rst
     /numerical-analysis/pandas/df-at.rst
     /numerical-analysis/pandas/df-locate.rst
     /numerical-analysis/pandas/df-modification.rst

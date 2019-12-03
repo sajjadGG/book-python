@@ -14,19 +14,19 @@ Set Variables
 .. code-block:: python
 
     url = 'https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv'
-    columns = [
+
+Read data
+---------
+.. code-block:: python
+
+    df = pd.read_csv(url)
+    df.columns = [
         'Sepal length',
         'Sepal width',
         'Petal length',
         'Petal width',
         'Species'
     ]
-
-Read data
----------
-.. code-block:: python
-
-    df = pd.read_csv(url, skiprows=1, names=columns)
 
 First ``n`` records
 -------------------

@@ -19,7 +19,6 @@ Adding column
     # 0   1.0   2.0   NaN  aa
     # 1   NaN   2.0   3.0  bb
 
-
 Drop row if all values are ``NaN``
 ----------------------------------
 * ``axis=0``: rows
@@ -174,7 +173,6 @@ Transpose
 
     import numpy as np
     import pandas as pd
-
     np.random.seed(0)
 
 
@@ -211,7 +209,7 @@ Substitute values in columns
 
 .. code-block:: python
 
-    df['Species'].replace(to_replace={
+    df['Species'].replace({
         0: 'setosa',
         1: 'versicolor',
         2: 'virginica'
@@ -227,8 +225,9 @@ Iris Dirty
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/pandas_df_dirty.py`
-* Input data: :download:`data/iris-dirty.csv`
 
+
+#. Pobierz dane Irysów: :download:`data/iris-dirty.csv`
 #. Mając dane Irysów przekonwertuj je na ``DataFrame``
 #. Pomiń pierwszą linię z metadanymi
 #. Zmień nazwy kolumn na:

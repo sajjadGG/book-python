@@ -3,9 +3,9 @@ import pandas as pd
 import numpy as np
 
 
-FILE = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/iris.csv'
+URL = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/iris.csv'
 
-df = pd.read_csv(FILE, encoding='utf-8')
+df = pd.read_csv(URL, encoding='utf-8')
 df.columns = [
     'Sepal length',
     'Sepal width',
