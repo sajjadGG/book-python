@@ -152,11 +152,11 @@ Arithmetic
     #. Generate ``data: ndarray`` with 5 random digits [0, 9]
     #. Create ``index: list`` with column names as sequential letters in english alphabet
     #. Create ``s: pd.Series`` from ``data`` and ``index``
-    #. Multiply ``s`` by 5 and by original ``s`` values (before multiplying by 5)
+    #. Multiply ``s`` by 10 and by original ``s`` values (before multiplying by 10)
 
 :Polish:
     #. Ustaw random seed na zero
     #. Wygeneruj ``data: ndarray`` z 5 losowymi cyframi <0, 9>
     #. Stwórz ``index: list`` z nazwami kolumn jak kolejne listery alfabetu angielskiego
     #. Stwórz ``s: pd.Series`` z ``data`` oraz ``index``
-    #. Pomnóż ``s`` przez 5 oraz przez oryginalne wartości ``s`` (przed mnożeniem przez 5)
+    #. Pomnóż ``s`` przez 10 oraz przez oryginalne wartości ``s`` (przed mnożeniem przez 10)

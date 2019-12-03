@@ -17,3 +17,7 @@ s.reset_index(drop=True)
 # 2    2.0
 # 3    inf
 # dtype: float64
+
+
+# Alternative
+# s.drop([2, 4, 6], inplace=True)
