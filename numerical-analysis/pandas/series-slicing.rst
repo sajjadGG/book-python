@@ -100,14 +100,19 @@ Slicing
 * Filename: :download:`solution/pandas_series_slicing.py`
 
 :English:
-    .. todo:: Translate to English
+    #. Create ``pd.Series`` with 26 random integers in range ``[10, 100)``
+    #. Name indexes like letters from english alphabet
+    #. Using ``statistics`` library find median of alphabet
+    #. How to find median for even number of elements? (Use lower of pair)
+    #. How to find index of element on the list?
+    #. Slice from series 3 elements up and down from middle
+    #. Sum results
 
 :Polish:
-    #. Stwórz ``pd.Series`` z 26 losowymi liczbami całkowitymi z przedziału ``[10, 100)``
-    #. Przekształć kolejne litery alfabetu angielskiego (patrz poniżej) na nazwy kolumn
+    #. Stwórz ``pd.Series`` z 26 losowymi liczbami całkowitymi z przedziału ``<10; 100)``
     #. Nazwij indeksy jak kolejne litery alfabetu angielskiego
     #. Za pomocą biblioteki ``statistics`` znajdź medianę alfabetu
-    #. Jak znaleźć medianę dla parzystej długości listy? Użyj dolnego elementu.
+    #. Jak znaleźć medianę dla parzystej długości listy? (Użyj dolnego elementu)
     #. Jak znaleźć element w liście o zadanym indeksie?
     #. Wytnij z serii po 3 elementy w górę i w dół od wyszukanego środka
     #. Zsumuj wyniki
@@ -118,6 +123,7 @@ Slicing
         alphabet = 'abcdefghijklmnopqrstuvwxyz'
 
 :Hint:
-    * ``import string``, ``string.ascii_lowercase``
-    * ``import statistics``, ``statistics.median_low(...)``
+    * ``np.random.randint(..., ..., size=...)``
+    * ``from string import ascii_lowercase``
+    * ``from statistics import median_low``
     * ``list.index(...)``

@@ -117,5 +117,4 @@ Even Numbers
 :Hint:
     * ``np.random.seed(0)``
     * ``np.random.randint(0, 9)``
-    *
-    * ``number % 2 == 0``
+    * ``a[a % 2 == 0]``
