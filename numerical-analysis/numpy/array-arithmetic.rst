@@ -377,25 +377,28 @@ Matrix multiplication
 
 .. code-block:: python
 
-    def matrix_multiplication(A, B):
-        """
-        >>> import numpy as np
+        import numpy as np
 
-        >>> A = np.array([[1, 0], [0, 1]])
-        >>> B = [[4, 1], [2, 2]]
-        >>> matrix_multiplication(A, B)
-        array([[4, 1],
-               [2, 2]])
+        a = np.array([[1, 0], [0, 1]])
+        b = [[4, 1], [2, 2]]
+        output_ab = ...
 
-        >>> A = [[1,0,1,0], [0,1,1,0], [3,2,1,0], [4,1,2,0]]
-        >>> B = np.array([[4,1], [2,2], [5,1], [2,3]])
-        >>> matrix_multiplication(A, B)
-        array([[ 9,  2],
-               [ 7,  3],
-               [21,  8],
-               [28,  8]])
-        """
-        return ...
+        c = [[1,0,1,0], [0,1,1,0], [3,2,1,0], [4,1,2,0]]
+        d = np.array([[4,1], [2,2], [5,1], [2,3]])
+        output_cd = ...
+
+:Output:
+    .. code-block:: python
+
+        output_ab: ndarray
+        # array([[4, 1],
+        #        [2, 2]])
+
+        output_cd: ndarray
+        # array([[ 9,  2],
+        #        [ 7,  3],
+        #        [21,  8],
+        #        [28,  8]])
 
 Arithmetic operations
 ---------------------
@@ -410,7 +413,6 @@ Arithmetic operations
     #. Calculate second power (square) of each element in ``c``
     #. Add elements from ``a`` to ``b``
     #. Multiply the result by ``c``
-    #. Calculate the natural logarithm of the result
 
 :Polish:
     #. Dla danych: ``a: ndarrays``, ``b: ndarrays``, ``c: ndarrays`` (patrz sekcja input)
@@ -418,7 +420,6 @@ Arithmetic operations
     #. Oblicz drugą potęgę (kwadrat) każdego z elementu w ``c``
     #. Dodaj elementy z ``a`` do ``b``
     #. Przemnóż wynik przez ``c``
-    #. Wylicz logarytm naturalny rezultatu
 
 :Input:
     .. code-block:: python

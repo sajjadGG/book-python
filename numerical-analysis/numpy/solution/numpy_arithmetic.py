@@ -7,7 +7,7 @@ c = np.array([[1, 1], [4, 0]], float)
 
 a = np.sqrt(a)
 b = np.sqrt(b)
-c = np.power(c, 2)
+c = c ** 2
 
 result = (a + b) * c
 print(result)
