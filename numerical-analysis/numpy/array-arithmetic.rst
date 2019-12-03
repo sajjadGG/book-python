@@ -369,11 +369,13 @@ Matrix multiplication
     #. Multiply two ``np.array``
     #. Compare output of ``@`` and ``*``
     #. Why it differs?
+    #. What will happen with scalar multiplication of ``c`` and ``d``?
 
 :Polish:
     #. Pomnóż dwa ``np.array``
     #. Porównaj wynik ``@`` oraz ``*``
     #. Dlaczego się różnią?
+    #. Co się stanie przy mnożeniu skalarnym ``c`` i ``d``?
 
 .. code-block:: python
 
@@ -381,24 +383,8 @@ Matrix multiplication
 
         a = np.array([[1, 0], [0, 1]])
         b = [[4, 1], [2, 2]]
-        output_ab = ...
-
         c = [[1,0,1,0], [0,1,1,0], [3,2,1,0], [4,1,2,0]]
         d = np.array([[4,1], [2,2], [5,1], [2,3]])
-        output_cd = ...
-
-:Output:
-    .. code-block:: python
-
-        output_ab: ndarray
-        # array([[4, 1],
-        #        [2, 2]])
-
-        output_cd: ndarray
-        # array([[ 9,  2],
-        #        [ 7,  3],
-        #        [21,  8],
-        #        [28,  8]])
 
 Arithmetic operations
 ---------------------

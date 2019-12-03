@@ -1,25 +1,28 @@
 import numpy as np
 
+a = np.array([[1, 0], [0, 1]])
+b = [[4, 1], [2, 2]]
+c = [[1, 0, 1, 0], [0, 1, 1, 0], [3, 2, 1, 0], [4, 1, 2, 0]]
+d = np.array([[4, 1], [2, 2], [5, 1], [2, 3]])
 
-def matrix_multiplication(A, B):
-    """
-    >>> import numpy as np
+b = np.array(b)
+c = np.array(c)
 
-    >>> A = np.array([[1, 0], [0, 1]])
-    >>> B = [[4, 1], [2, 2]]
-    >>> matrix_multiplication(A, B)
-    array([[4, 1],
-           [2, 2]])
+a @ b
+# array([[4, 1],
+#        [2, 2]])
 
-    >>> A = [[1,0,1,0], [0,1,1,0], [3,2,1,0], [4,1,2,0]]
-    >>> B = np.array([[4,1], [2,2], [5,1], [2,3]])
-    >>> matrix_multiplication(A, B)
-    array([[ 9,  2],
-           [ 7,  3],
-           [21,  8],
-           [28,  8]])
-    """
-    A = np.array(A)
-    B = np.array(B)
+a * b
+# array([[4, 0],
+#        [0, 2]])
 
-    return A @ B
+c @ b
+# array([[ 9,  2],
+#        [ 7,  3],
+#        [21,  8],
+#        [28,  8]])
+
+c * d
+# ValueError: operands could not be broadcast together with shapes (4,4) (4,2)
+
+
