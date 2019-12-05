@@ -6,20 +6,30 @@ Introduction
     :caption: Introduction
     :name: Numerical Analysis Introduction
 
-    introduction/index.rst
-    introduction/syntax.rst
-    introduction/types.rst
-    introduction/sequences.rst
-    introduction/mappings.rst
-    introduction/conditionals.rst
-    introduction/looping.rst
-    introduction/control-flow.rst
-    introduction/functions.rst
-    introduction/oop.rst
-    introduction/packages.rst
-    introduction/math.rst
-    introduction/serialization.rst
-    introduction/performance.rst
+    introduction/program.rst
+
+******
+Python
+******
+.. toctree::
+    :maxdepth: 0
+    :caption: Introduction
+    :name: Numerical Analysis Python
+
+    python/index.rst
+    python/syntax.rst
+    python/types.rst
+    python/sequences.rst
+    python/mappings.rst
+    python/conditionals.rst
+    python/looping.rst
+    python/control-flow.rst
+    python/functions.rst
+    python/oop.rst
+    python/packages.rst
+    python/math.rst
+    python/serialization.rst
+    python/performance.rst
 
 *******
 Jupyter

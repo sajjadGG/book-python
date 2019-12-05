@@ -51,7 +51,7 @@ Python Advanced
 Quality and CI/CD
 *****************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :numbered:
     :caption: Quality and CI/CD
 

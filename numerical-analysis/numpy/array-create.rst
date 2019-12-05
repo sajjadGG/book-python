@@ -334,27 +334,3 @@ Create
 
 :The whys and wherefores:
     * Defining ``ndarray``
-
-Create Random
--------------
-* Complexity level: easy
-* Lines of code to write: 4 lines
-* Estimated time of completion: 5 min
-* Filename: :download:`solution/numpy_create_random.py`
-
-:English:
-    #. Set random seed to zero
-    #. Create ``a: ndarray`` with size 16x16
-    #. Structure must contains random integers (0-9)
-    #. Print ``a``
-
-:Polish:
-    #. Ustaw ziarno losowości na zero
-    #. Stwórz ``a: ndarray`` o rozmiarze 16x16
-    #. Struktura musi zawierać losowe liczby (0-9)
-    #. Wypisz ``a``
-
-:The whys and wherefores:
-    * Defining ``ndarray``
-    * Using ``np.random.seed()``
-    * Generating random ``np.array``

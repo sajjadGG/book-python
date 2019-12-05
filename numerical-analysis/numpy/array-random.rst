@@ -270,12 +270,47 @@ Shuffle
 Assignments
 ===========
 
+Random Float
+------------
+* Complexity level: medium
+* Lines of code to write: 3 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/numpy_random_float.py`
+
+:English:
+    #. Set random seed to zero
+    #. Print ``ndarray`` of 10 random floats
+
+:Polish:
+    #. Ustaw ziarno losowości na zero
+    #. Wypisz ``ndarray`` z 10 losowymi liczbami zmiennoprzecinkowymi
+
+Random Int
+----------
+* Complexity level: easy
+* Lines of code to write: 4 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/numpy_random_int.py`
+
+:English:
+    #. Set random seed to zero
+    #. Print ``ndarray`` of size 16x16 with random integers ``[0;9]`` (inclusive)
+
+:Polish:
+    #. Ustaw ziarno losowości na zero
+    #. Print ``ndarray`` o rozmiarze 16x16 z losowymi liczbami całkowitymi ``<0,9>`` (włącznie)
+
+:The whys and wherefores:
+    * Defining ``ndarray``
+    * Using ``np.random.seed()``
+    * Generating random ``np.array``
+
 Random Sample
 -------------
-* Complexity level: easy
+* Complexity level: medium
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/random_sample.py`
+* Filename: :download:`solution/numpy_random_sample.py`
 
 :English:
     #. Set random seed to zero
@@ -289,21 +324,3 @@ Random Sample
     * ``np.append(a, ELEMENT)``
     * ``np.array.size``
     * ``NUMBER in np.array``
-
-Random
-------
-* Complexity level: medium
-* Lines of code to write: 3 lines
-* Estimated time of completion: 5 min
-* Filename: :download:`solution/numpy_random.py`
-
-:English:
-    #. Set random seed to zero
-    #. Generate ``a: ndarray`` of 50 random integers from 0 to 100 (exclusive)
-    #. Print ``a``
-
-:Polish:
-    #. Ustaw ziarno losowości na zero
-    #. Wygeneruj ``a: ndarray`` z 50 losowymi liczbami całkowitymi od 0 do 100 (rozłącznie)
-    #. Wyświetl ``a``
-
