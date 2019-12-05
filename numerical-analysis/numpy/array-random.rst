@@ -1,10 +1,10 @@
-**************
-Random numbers
-**************
+************
+Array Random
+************
 
 
 * Since ``numpy v1.17``: BitGenerator for the PCG-64 (Parallel Congruent Generator 64 bit) pseudo-random number generator
-* Before``numpy v1.17``: Mersenne Twister algorithm for pseudorandom number generation
+* Before ``numpy v1.17``: Mersenne Twister algorithm for pseudorandom number generation
 
 
 Seed

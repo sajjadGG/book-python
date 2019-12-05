@@ -3,6 +3,44 @@ Array Indexing
 **************
 
 
+Index
+=====
+
+Flat
+----
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
+
+    a.flat[0]   # 1
+    a.flat[1]   # 2
+    a.flat[2]   # 3
+    a.flat[3]   # 4
+    a.flat[4]   # 5
+    a.flat[5]   # 6
+
+Multidimensional
+----------------
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
+
+    a[0,0]      # 1
+    a[0,1]      # 2
+    a[0,2]      # 3
+    a[1,0]      # 4
+    a[1,1]      # 5
+    a[1,2]      # 6
+
+
 Selecting items
 ===============
 
