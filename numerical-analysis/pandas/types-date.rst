@@ -309,16 +309,17 @@ Business days
     from pandas.tseries.holiday import USFederalHolidayCalendar
 
 
-    today = datetime(2014, 1, 17, 15)
+    today = datetime(2020, 1, 4, 15, 0, 0)
 
-    business_hours = pd.offsets.CustomBusinessHour(
+    BUSINESS_HOURS = pd.offsets.CustomBusinessHour(
         calendar=USFederalHolidayCalendar(),
         start='08:00',
         end=time(16, 0),
         weekmask='Mon Tue Wed Thu Fri')
 
 
-    today + 5*business_hours
+    today + 5*BUSINESS_HOURS
+    # Timestamp('2020-01-06 13:00:00')
 
 Custom Calendar
 ---------------

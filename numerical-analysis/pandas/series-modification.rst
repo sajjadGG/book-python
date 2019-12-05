@@ -7,7 +7,7 @@ Series Modification
 
     import pandas as pd
 
-    data =  [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
+    data = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
     s = pd.Series(data)
     # 0    1.0
     # 1    NaN
@@ -31,7 +31,7 @@ Fill ``NaN`` values
 
     import pandas as pd
 
-    data =  [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
+    data = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
     s = pd.Series(data)
 
     s.fillna(0.0)
@@ -53,7 +53,7 @@ Ffill
 
     import pandas as pd
 
-    data =  [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
+    data = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
     s = pd.Series(data)
 
     s.ffill()
@@ -75,7 +75,7 @@ Bfill
 
     import pandas as pd
 
-    data =  [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
+    data = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
     s = pd.Series(data)
 
     s.bfill()
@@ -125,7 +125,7 @@ Interpolate
 
     import pandas as pd
 
-    data =  [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
+    data = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
     s = pd.Series(data)
 
     s.interpolate()
@@ -152,7 +152,7 @@ Drop
 
     import pandas as pd
 
-    data =  [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
+    data = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
     s = pd.Series(data)
 
     s.drop(1)
@@ -173,7 +173,7 @@ Drop duplicates
 
     import pandas as pd
 
-    data =  [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
+    data = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
     s = pd.Series(data)
 
     s.drop_duplicates()
@@ -192,7 +192,7 @@ Drop rows with ``NaN`` values
 
     import pandas as pd
 
-    data =  [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
+    data = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
     s = pd.Series(data)
 
     s.dropna()
@@ -216,7 +216,7 @@ Reset index
 
     import pandas as pd
 
-    data =  [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
+    data = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
     s = pd.Series(data)
     s = s.drop_duplicates()
     # 0    1.0

@@ -5,6 +5,9 @@ Data Types
 
 Series
 ======
+* 1-dimensional data structure similar to ``ndarray``
+* Has numerical index
+
 .. code-block:: python
 
     import pandas as pd
@@ -20,6 +23,9 @@ Series
 
 DataFrame
 =========
+* Share the same index
+* List of series
+
 .. code-block:: python
 
     import pandas as pd
@@ -36,7 +42,7 @@ DataFrame
     # 2  c  2  2.0
     # 3  d  3  3.0
 
-Sparse data
+SparseArray
 ===========
 * Data where a single value is repeated many times (e.g. ``0`` or ``NaN``) may be stored efficiently as a ``SparseArray``
 
@@ -57,6 +63,7 @@ Sparse data with DataFrame
 --------------------------
 .. code-block:: python
 
+    import numpy as np
     import pandas as pd
 
 
@@ -162,6 +169,10 @@ Categorical
 
     'apollo13' in moon_landings
     # False
+
+    moon_landings.categories
+    # Index(['apollo11', 'apollo12', 'apollo14', 'apollo15', 'apollo16', 'apollo17'], dtype='object')
+
 
 .. code-block:: python
 

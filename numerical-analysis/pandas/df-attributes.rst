@@ -10,7 +10,7 @@ DataFrame Attributes
     np.random.seed(0)
 
 
-    data =  np.random.randn(6, 4)
+    data = np.random.randn(6, 4)
     columns = ['Morning', 'Noon', 'Evening', 'Midnight']
     index = pd.date_range('1970-01-01', periods=6)
 

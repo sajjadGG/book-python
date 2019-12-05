@@ -8,6 +8,16 @@ Introduction
 
     introduction/program.rst
 
+*******
+Jupyter
+*******
+.. toctree::
+    :maxdepth: 0
+    :caption: Jupyter
+    :name: Numerical Analysis Jupyter
+
+    jupyter/index.rst
+
 ******
 Python
 ******
@@ -30,16 +40,6 @@ Python
     python/math.rst
     python/serialization.rst
     python/performance.rst
-
-*******
-Jupyter
-*******
-.. toctree::
-    :maxdepth: 0
-    :caption: Jupyter
-    :name: Numerical Analysis Jupyter
-
-    jupyter/index.rst
 
 *****
 Numpy

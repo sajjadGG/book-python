@@ -16,6 +16,7 @@ Plot kinds
 * ``scatter`` - Scatter Plot
 * ``hexbin`` - Hexbin Plot
 
+
 Parameters
 ==========
 .. list-table:: Parameters
@@ -312,3 +313,93 @@ Hexbin Plot
     :scale: 100
 
     Hexbin Plot
+
+Other
+=====
+
+Hist
+----
+.. code-block:: python
+
+    import matplotlib.pyplot as plt
+    import pandas as pd
+
+
+    INPUT = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris.csv'
+
+    df = pd.read_csv(INPUT)
+    df.hist()
+    plt.show()
+
+.. figure:: img/matplotlib-pd-hist.png
+    :scale: 40%
+    :align: center
+
+    Visualization using hist
+
+Density
+-------
+.. code-block:: python
+
+    import matplotlib.pyplot as plt
+    import pandas as pd
+
+
+    INPUT = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris.csv'
+
+
+    df = pd.read_csv(INPUT)
+    df.plot(kind='density', subplots=True, layout=(2,2), sharex=False)
+    plt.show()
+
+.. figure:: img/matplotlib-pd-density.png
+    :scale: 40%
+    :align: center
+
+    Visualization using density
+
+Box
+---
+.. code-block:: python
+
+    import matplotlib.pyplot as plt
+    import pandas as pd
+
+
+    INPUT = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris.csv'
+
+
+    df = pd.read_csv(INPUT)
+    df.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
+    plt.show()
+
+.. figure:: img/matplotlib-pd-box.png
+    :scale: 40%
+    :align: center
+
+    Visualization using density
+
+Scatter matrix
+--------------
+* The in ``pandas`` version ``0.22`` plotting module has been moved from ``pandas.tools.plotting`` to ``pandas.plotting``
+* As of version ``0.19``, the ``pandas.plotting`` library did not exist
+
+.. code-block:: python
+
+    import matplotlib.pyplot as plt
+    import pandas as pd
+    from pandas.plotting import scatter_matrix
+
+
+    INPUT = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris.csv'
+
+
+    df = pd.read_csv(INPUT)
+    scatter_matrix(df)
+    plt.show()
+
+.. figure:: img/matplotlib-pd-scatter-matrix.png
+    :scale: 40%
+    :align: center
+
+    Visualization using density

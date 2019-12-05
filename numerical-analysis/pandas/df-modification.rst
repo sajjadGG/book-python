@@ -122,7 +122,7 @@ Fill ``NA``/``NaN`` with values from dict with column names
 
 .. code-block:: python
 
-    data =  {'A': 5, 'B': 7, 'C': 9}
+    data = {'A': 5, 'B': 7, 'C': 9}
 
     df.fillna(data)
     #       A     B     C
@@ -176,7 +176,7 @@ Transpose
     np.random.seed(0)
 
 
-    data =  np.random.randn(6, 4)
+    data = np.random.randn(6, 4)
     columns = ['Morning', 'Noon', 'Evening', 'Midnight']
     index = pd.date_range('1970-01-01', periods=6)
 
