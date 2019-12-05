@@ -203,6 +203,13 @@ Index
             [7, 8, 9]
         ])
 
+:Output:
+    .. code-block:: python
+
+        OUTPUT: ndarray
+        # array([[3, 9],
+        #        [1, 4]])
+
 :The whys and wherefores:
     * Defining ``ndarray``
     * Indexing ``ndarray``

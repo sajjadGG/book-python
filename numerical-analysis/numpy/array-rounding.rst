@@ -111,3 +111,15 @@ Clip
     #. Zmień kształt na 7x3
     #. Przytnij liczby w pierwszej kolumnie od 50 (włącznie) do 80 (rozłącznie)
     #. Wypisz ``a``
+
+:Output:
+    .. code-block:: python
+
+        a: ndarray
+        # array([[50, 44, 66],
+        #        [80, 85, 39],
+        #        [50, 75, 22],
+        #        [50, 17, 70],
+        #        [71, 18, 92],
+        #        [50, 83, 49],
+        #        [50, 93, 46]])

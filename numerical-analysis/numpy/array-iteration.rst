@@ -28,20 +28,6 @@ Array Iteration
 
 
     a = np.array([[1, 2, 3],
-                  [4, 5, 6]])
-
-    for obj in a:
-        print(obj)
-
-    # [1 2 3]
-    # [4 5 6]
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
@@ -52,6 +38,79 @@ Array Iteration
     # [4 5 6]
     # [7 8 9]
 
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
+
+    for row in a:
+        for obj in row:
+            print(obj)
+
+    # 1
+    # 2
+    # 3
+    # 4
+    # 5
+    # 6
+    # 7
+    # 8
+    # 9
+
+Flat
+====
+
+Flatten
+-------
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
+
+    for obj in a.flatten():
+        print(obj)
+
+    # 1
+    # 2
+    # 3
+    # 4
+    # 5
+    # 6
+    # 7
+    # 8
+    # 9
+
+Ravel
+-----
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
+
+    for obj in a.ravel():
+        print(obj)
+
+    # 1
+    # 2
+    # 3
+    # 4
+    # 5
+    # 6
+    # 7
+    # 8
+    # 9
 
 Enumerate
 =========
@@ -81,12 +140,12 @@ Iteration
 
 :English:
     #. Given ``a: ndarray`` (see below)
-    #. Iterate over ``a``
+    #. Use ``for`` to iterate over ``a``
     #. Print even numbers
 
 :Polish:
     #. Dany ``a: ndarray`` (patrz sekcja input)
-    #. Iteruj po ``a``
+    #. Używając ``for`` iteruj po ``a``
     #. Wypisz liczby parzyste
 
 :Input:
@@ -100,4 +159,4 @@ Iteration
     * Iterating 2-dimensional ``ndarray``
 
 :Hint:
-    ``element % 2 == 0``
+    * ``element % 2 == 0``

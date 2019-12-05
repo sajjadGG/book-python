@@ -6,7 +6,7 @@ import numpy as np
 #        78., 80., 82., 84., 86., 88., 90., 92., 94., 96., 98.])
 
 
-## Results with ``%%timeit``
+## Results with ``%%timeit -n 1_000_000 -r 10``
 
 np.arange(0, 100, step=2, dtype=float)
 # 756 ns ± 10.3 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
