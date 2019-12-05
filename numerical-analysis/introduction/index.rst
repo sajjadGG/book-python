@@ -2,19 +2,57 @@
 Tools and libs
 **************
 
-You should already know:
 
-    * :ref:`Basic Syntax`
-    * :ref:`Basic Types`
-    * :ref:`Basic Sequences`
-    * :ref:`Basic Mappings`
-    * :ref:`Basic Conditionals`
-    * :ref:`Basic Looping`
-    * :ref:`Basic Control Flow`
-    * :ref:`Basic Functions`
-    * :ref:`Basic Object Oriented Programming`
-    * :ref:`Intermediate Mathematics`
-    * :ref:`Intermediate Serialization`
-    * :ref:`Intermediate Modules and Packages`
-    * :ref:`Advanced Performance`
+Libraries in Data Science and Machine Learning
+==============================================
 
+Ecosystem
+---------
+.. figure:: img/scipy-ecosystem.png
+    :scale: 50%
+    :align: center
+
+    Scipy Ecosystem
+
+Environment
+-----------
+* Python 3.6+
+* Libs manually installed
+
+Biblioteki do obsługi danych
+----------------------------
+* ``Pandas``
+* ``NumPy``
+* ``SciPy``
+* ``Dask``
+* ``xarray``
+
+Wykresy i grafy
+---------------
+* ``Matplotlib``
+* ``plotly``
+* ``Bokeh``
+* ``PyDotPlus``
+* ``Graphviz``
+
+Biblioteki do nauczania maszynowego
+-----------------------------------
+* ``scikit-learn``
+* ``scikit-image``
+* ``TensorFlow``
+* ``PyMC3``
+* ``pyTorch``
+* ``keras``
+
+Other
+-----
+* ``Jupyter``
+* ``Numba``
+* ``StatsModels``
+* ``SymPy``
+* ``NetworkX``
+* ``astropy``
+* ``biopython``
+* ``dipy``
+* ``nipy``
+* ``sunpy``

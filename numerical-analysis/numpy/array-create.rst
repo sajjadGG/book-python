@@ -13,16 +13,7 @@ Array Declaration
     import numpy as np
 
 
-    a = np.array([1, 2, 3])
-
-    repr(a)
-    # array([1, 2, 3])
-
-    str(a)
-    # [1 2 3]
-
-    print(a)
-    # [1 2 3]
+    np.array([1, 2, 3])
 
 .. code-block:: python
 
@@ -51,14 +42,6 @@ Array Declaration
     a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    repr(a)
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
-
-    str(a)
-    # [[1 2 3]
-    #  [4 5 6]]
-
 .. code-block:: python
 
     import numpy as np
@@ -68,16 +51,38 @@ Array Declaration
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    repr(a)
-    # array([[1, 2, 3],
-    #        [4, 5, 6],
-    #        [7, 8, 9]])
+
+Array str vs repr
+=================
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
 
     str(a)
+    # '[[1 2 3]\n [4 5 6]\n [7 8 9]]'
+
+    print(a)
     # [[1 2 3]
     #  [4 5 6]
     #  [7 8 9]]
 
+    repr(a)
+    # 'array([[1, 2, 3],\n       [4, 5, 6],\n       [7, 8, 9]])'
+
+    a
+    # array([[1, 2, 3],
+    #        [4, 5, 6],
+    #        [7, 8, 9]])
+
+    print(repr(a))
+    # array([[1, 2, 3],
+    #        [4, 5, 6],
+    #        [7, 8, 9]])
 
 Array Generation
 ================
@@ -285,42 +290,6 @@ Empty and empty-like
     np.empty_like(a)
     # array([[1, 2, 3],
     #        [4, 5, 6]])
-
-Random and randint
-------------------
-.. code-block:: python
-
-    import numpy as np
-
-
-    np.random.rand(3)
-    # array([0.36477855, 0.3654733 , 0.56707875])
-
-    np.random.rand(2, 3)
-    # array([[0.12840072, 0.14798816, 0.94352656],
-    #        [0.24807979, 0.6355252 , 0.65943694]])
-
-    np.random.rand(3, 2)
-    # array([[0.65997255, 0.60316048],
-    #        [0.15598197, 0.30253777],
-    #        [0.86367738, 0.21519753]])
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    np.random.randint(10, size=(2,3))
-    # array([[9, 5, 0],
-    #        [7, 0, 6]])
-
-    np.random.randint(5, 10, size=(2,3))
-    # array([[6, 6, 5],
-    #        [9, 9, 7]])
-
-    np.random.randint(low=5, high=10, size=(2,3))
-    # array([[5, 7, 8],
-    #        [6, 8, 6]])
 
 Identity
 --------

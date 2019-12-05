@@ -44,15 +44,15 @@ Converting to ``int``
 
 .. code-block:: python
 
-    int(1.23)               # 1
-    int(-1.23)              # -1
+    int(13.37)              # 1
+    int(-13.37)             # -1
 
 .. code-block:: python
 
     int('1')                # 1
     int('-1')               # -1
-    int('1.23')             # ValueError: invalid literal for int() with base 10: '1.23'
-    int('-1.23')            # ValueError: invalid literal for int() with base 10: '-1.23'
+    int('13.37')            # ValueError: invalid literal for int() with base 10: '1.23'
+    int('-13.37')           # ValueError: invalid literal for int() with base 10: '-1.23'
 
 
 Numerical Operators
@@ -213,7 +213,7 @@ Example
 * Complexity level: easy
 * Lines of code to write: 12 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/int_time.py`
+* Filename: :download:`solution/int_example.py`
 
 :English:
     #. Calculate how many seconds is five minutes
@@ -230,7 +230,7 @@ Example
     #. Oblicz ile minut to tydzień pracy (40 godzin)
 
 :Solution:
-    .. literalinclude:: solution/int_time.py
+    .. literalinclude:: solution/int_example.py
         :language: python
 
 :The whys and wherefores:

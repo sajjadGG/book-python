@@ -6,7 +6,7 @@ Entry Test
     :caption: Entry Test
     :name: Advanced Entry Test
 
-    /advanced/exam/exit.rst
+    /advanced/exam/entry.rst
 
 *********
 Functions
@@ -137,4 +137,4 @@ Exit Test
     :caption: Exit Test
     :name: Advanced Exit Test
 
-    /advanced/exam/entry.rst
+    /advanced/exam/exit.rst

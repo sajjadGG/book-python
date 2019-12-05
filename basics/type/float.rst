@@ -157,17 +157,17 @@ Handling user input and type casting
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/float_casting.py`
+* Filename: :download:`solution/float_example.py`
 
 :English:
-    #. User typed distance ``1337`` meters
+    #. Declare variable for holding value of 1337 meters
     #. Print values in other units
     #. Use code output (see below) as a template
     #. Convert data to types shown in comments at the right side
     #. Instead ``...`` substitute calculated and converted values
 
 :Polish:
-    #. Użytkownik wprowadził odległość ``1337`` metrów
+    #. Zdefiniuj zmienną dla przechowywania wartości 1337 metrów
     #. Wypisz wartość w różnych jednostkach
     #. Użyj kodu wyjściowego (patrz sekcja input) jako szablonu
     #. Przekonwertuj dane do typów podanych w komentarzu po prawej stronie
@@ -176,7 +176,7 @@ Handling user input and type casting
 :Non-functional requirements:
     #. Do not use ``input()``
 
-:Output:
+:Input:
     .. code-block:: python
 
         print(f'Meters: {...}')                              # int

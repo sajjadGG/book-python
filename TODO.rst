@@ -8,11 +8,24 @@ Book TODO
 - Newsletter, once a month, what changed in the book
 
 
+Numerical Analysis
+==================
+* Introduction to Python
+
+Numpy
+-----
+* Poprawić przykłady z argmin i argmax oraz unravel_index()
+* Zrobić rozpiskę, które funkcje zwracają np.arraye a które robią inplace
+* Poprawić mnożenie macierzowe w np-arithmetic
+* Poprawić array-concatenate
+
 Pandas
-======
+------
+* Zrobić rozpiskę, które funkcje zwracają np.arraye a które robią inplace
+* poprawić przykłady z pd.DataFrame.fill() bfill oraz ffill
 * df.read_csv('filename.csv', chunksize=5) # five rows at a time, przydatne gdy czytasz plik np. 20GB
 * for df in df.read_csv('filename.csv', chunksize=5): print(df)
-* df[~...] # ~ - zaprzeczenie warunku 
+* df[~...] # ~ - zaprzeczenie warunku
 * df.loc[df['col'].str.contains('a|b', regex=True, flags=re.I)]
 * ROC Curve - stosunek True Positive do False Positive
 * pd.to_datetime(df['Timestamp Column'], unit='s')

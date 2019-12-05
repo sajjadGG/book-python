@@ -51,7 +51,7 @@ Data Frame:
 
 Bibliography
 ============
-.. bibliography:: bibliography.bib
+.. bibliography:: _references/bibliography.bib
     :style: plain
     :labelprefix: pandas
     :keyprefix: pandas-

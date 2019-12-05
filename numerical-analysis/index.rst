@@ -6,8 +6,20 @@ Introduction
     :caption: Introduction
     :name: Numerical Analysis Introduction
 
-    /numerical-analysis/introduction/index.rst
-    /numerical-analysis/introduction/libraries.rst
+    introduction/index.rst
+    introduction/syntax.rst
+    introduction/types.rst
+    introduction/sequences.rst
+    introduction/mappings.rst
+    introduction/conditionals.rst
+    introduction/looping.rst
+    introduction/control-flow.rst
+    introduction/functions.rst
+    introduction/oop.rst
+    introduction/packages.rst
+    introduction/math.rst
+    introduction/serialization.rst
+    introduction/performance.rst
 
 *******
 Jupyter
@@ -17,7 +29,7 @@ Jupyter
     :caption: Jupyter
     :name: Numerical Analysis Jupyter
 
-    /numerical-analysis/jupyter/index.rst
+    jupyter/index.rst
 
 *****
 Numpy
@@ -27,31 +39,31 @@ Numpy
     :caption: Numpy
     :name: Numerical Analysis Numpy
 
-    /numerical-analysis/numpy/index.rst
-    /numerical-analysis/numpy/builtin.rst
-    /numerical-analysis/numpy/random.rst
-    /numerical-analysis/numpy/import-export.rst
+    numpy/index.rst
+    numpy/builtin.rst
+    numpy/import-export.rst
 
-    /numerical-analysis/numpy/array-create.rst
-    /numerical-analysis/numpy/array-dtype.rst
-    /numerical-analysis/numpy/array-attributes.rst
-    /numerical-analysis/numpy/array-shape.rst
-    /numerical-analysis/numpy/array-indexing.rst
-    /numerical-analysis/numpy/array-slicing.rst
-    /numerical-analysis/numpy/array-iteration.rst
-    /numerical-analysis/numpy/array-rounding.rst
-    /numerical-analysis/numpy/array-methods.rst
-    /numerical-analysis/numpy/array-arithmetic.rst
-    /numerical-analysis/numpy/array-concatenation.rst
-    /numerical-analysis/numpy/array-serialize.rst
-    /numerical-analysis/numpy/array-statistics.rst
-    /numerical-analysis/numpy/array-logic.rst
-    /numerical-analysis/numpy/array-select.rst
+    numpy/array-create.rst
+    numpy/array-random.rst
+    numpy/array-dtype.rst
+    numpy/array-attributes.rst
+    numpy/array-shape.rst
+    numpy/array-indexing.rst
+    numpy/array-slicing.rst
+    numpy/array-iteration.rst
+    numpy/array-rounding.rst
+    numpy/array-methods.rst
+    numpy/array-arithmetic.rst
+    numpy/array-concatenation.rst
+    numpy/array-serialize.rst
+    numpy/array-statistics.rst
+    numpy/array-logic.rst
+    numpy/array-select.rst
 
-    /numerical-analysis/numpy/statistics.rst
-    /numerical-analysis/numpy/trigonometry.rst
-    /numerical-analysis/numpy/polynomial.rst
-    /numerical-analysis/numpy/algebra.rst
+    numpy/statistics.rst
+    numpy/trigonometry.rst
+    numpy/polynomial.rst
+    numpy/algebra.rst
 
 ******
 Pandas
@@ -61,38 +73,38 @@ Pandas
     :caption: Pandas
     :name: Numerical Analysis Pandas
 
-    /numerical-analysis/pandas/index.rst
-    /numerical-analysis/pandas/config.rst
-    /numerical-analysis/pandas/import-export.rst
+    pandas/index.rst
+    pandas/config.rst
+    pandas/import-export.rst
 
-    /numerical-analysis/pandas/types-data.rst
-    /numerical-analysis/pandas/types-date.rst
+    pandas/types-data.rst
+    pandas/types-date.rst
 
-    /numerical-analysis/pandas/series-create.rst
-    /numerical-analysis/pandas/series-attributes.rst
-    /numerical-analysis/pandas/series-indexing.rst
-    /numerical-analysis/pandas/series-slicing.rst
-    /numerical-analysis/pandas/series-modification.rst
-    /numerical-analysis/pandas/series-arithmetic.rst
+    pandas/series-create.rst
+    pandas/series-attributes.rst
+    pandas/series-indexing.rst
+    pandas/series-slicing.rst
+    pandas/series-modification.rst
+    pandas/series-arithmetic.rst
 
-    /numerical-analysis/pandas/df-create.rst
-    /numerical-analysis/pandas/df-attributes.rst
-    /numerical-analysis/pandas/df-select.rst
-    /numerical-analysis/pandas/df-indexing.rst
-    /numerical-analysis/pandas/df-slicing.rst
-    /numerical-analysis/pandas/df-sample.rst
-    /numerical-analysis/pandas/df-plot.rst
-    /numerical-analysis/pandas/df-at.rst
-    /numerical-analysis/pandas/df-locate.rst
-    /numerical-analysis/pandas/df-modification.rst
-    /numerical-analysis/pandas/df-sort.rst
-    /numerical-analysis/pandas/df-statistics.rst
-    /numerical-analysis/pandas/df-groupby.rst
-    /numerical-analysis/pandas/df-aggregations.rst
-    /numerical-analysis/pandas/df-join.rst
+    pandas/df-create.rst
+    pandas/df-attributes.rst
+    pandas/df-select.rst
+    pandas/df-indexing.rst
+    pandas/df-slicing.rst
+    pandas/df-sample.rst
+    pandas/df-plot.rst
+    pandas/df-at.rst
+    pandas/df-locate.rst
+    pandas/df-modification.rst
+    pandas/df-sort.rst
+    pandas/df-statistics.rst
+    pandas/df-groupby.rst
+    pandas/df-aggregations.rst
+    pandas/df-join.rst
 
-    /numerical-analysis/pandas/workflow.rst
-    /numerical-analysis/pandas/example.rst
+    pandas/workflow.rst
+    pandas/example.rst
 
 **********
 Matplotlib
@@ -102,11 +114,11 @@ Matplotlib
     :caption: Matplotlib
     :name: Numerical Analysis Matplotlib
 
-    /numerical-analysis/matplotlib/basics.rst
-    /numerical-analysis/matplotlib/pandas.rst
-    /numerical-analysis/matplotlib/charts.rst
-    /numerical-analysis/matplotlib/lifecycle.rst
-    /numerical-analysis/matplotlib/example.rst
+    matplotlib/basics.rst
+    matplotlib/pandas.rst
+    matplotlib/charts.rst
+    matplotlib/lifecycle.rst
+    matplotlib/example.rst
 
 ******************
 Data Visualization
@@ -116,10 +128,10 @@ Data Visualization
     :caption: Data Visualization
     :name: Numerical Analysis Data Visualization
 
-    /numerical-analysis/data-visualization/plotly.rst
-    /numerical-analysis/data-visualization/bokeh.rst
-    /numerical-analysis/data-visualization/seaborn.rst
-    /numerical-analysis/data-visualization/graphs.rst
+    data-visualization/plotly.rst
+    data-visualization/bokeh.rst
+    data-visualization/seaborn.rst
+    data-visualization/graphs.rst
 
 *****
 Scipy
@@ -129,4 +141,4 @@ Scipy
     :caption: Scipy
     :name: Numerical Analysis Scipy
 
-    /numerical-analysis/scipy/index.rst
+    scipy/index.rst

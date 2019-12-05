@@ -4,17 +4,25 @@ np.random.seed(0)
 
 np.random.choice(range(1, 49), size=6, replace=False)
 
+
+## Alternative Solution
 a = np.random.randint(1, 49, size=100)
 np.random.choice(np.unique(a), size=6, replace=False)
 
 
-# Alternative Solution
-# a = np.array([], int)
-#
-# while a.size <= 6:
-#     number = np.random.randint(1, 50)
-#
-#     if number not in a:
-#         a = np.append(a, number)
-#
-# print(a)
+## Alternative Solution
+np.random.choice(np.random.randint(49), size=6, replace=False)
+
+
+## Alternative Solution
+lotto = set()
+while len(lotto) < 6:
+    lotto.add(np.random.randint(1, 49))
+print(lotto)
+
+
+## Alternative Solution - not working!! (sometimes 0, sometimes repetition)
+np.random.choice(np.random.randint(1,49), size=6, replace=False)
+
+
+

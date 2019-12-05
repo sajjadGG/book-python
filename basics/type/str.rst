@@ -119,12 +119,12 @@ Other escape characters
     :header: "Sequence", "Description"
     :widths: 15, 85
 
-    "``\\``", "Backslash ``\``"
-    "``\'``", "Single quote ``'``"
-    "``\""``", "Double quote ``""``"
     "``\n``", "New line  (LF - Linefeed)"
     "``\r``", "Carriage Return (CR)"
     "``\t``", "Horizontal Tab (TAB)"
+    "``\'``", "Single quote ``'``"
+    "``\""``", "Double quote ``""``"
+    "``\\``", "Backslash ``\``"
 
 .. csv-table:: Less frequently used escape characters
     :header: "Sequence", "Description"
@@ -224,8 +224,8 @@ Raw String
 * ``s`` is invalid hexadecimal character
 
 
-Getting text from user
-======================
+Reading user input
+==================
 .. highlights::
     * ``input()`` returns ``str``
     * Good practice: add space at the end of prompt
