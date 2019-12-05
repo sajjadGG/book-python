@@ -16,4 +16,7 @@ column_names = ['mean radius', 'mean texture', 'mean perimeter', 'mean area',
 labels = ['malignant', 'benign']
 
 df = pd.read_csv(url, skiprows=1, names=column_names)
-df['label'].replace(dict(enumerate(labels)), inplace=True)
+to_replace = dict(enumerate(labels))
+# {0: 'malignant', 1: 'benign'}
+
+df['label'].replace(to_replace, inplace=True)

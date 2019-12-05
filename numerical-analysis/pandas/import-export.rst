@@ -128,14 +128,16 @@ Read
 :English:
     #. Read data from given ``url`` (see below) to ``DataFrame``
     #. Use provided column names
-    #. Replace data in ``label`` column with values from ``labels``
+    #. Read labels from the first row
+    #. Replace data in ``label`` column with values extracted above
     #. Print ``DataFrame``
     #. Print first 5 and last 10 rows from ``DataFrame``
 
 :Polish:
     #. Wczytaj dane z danego ``url`` (patrz poniżej) do ``DataFrame``
     #. Użyj podanych nazw kolumn
-    #. Podmień dane w kolumnie ``label`` na wartości z ``labels``
+    #. Wczytaj nazwy labeli z pierwszego wiersza
+    #. Podmień dane w kolumnie ``label`` na wartości wyciągnięte powyżej
     #. Wypisz pierwsze 5 i ostatnie 10 wierszy z ``DataFrame``
 
 :Input:
@@ -154,10 +156,9 @@ Read
                         'worst compactness', 'worst concavity', 'worst concave points',
                         'worst symmetry', 'worst fractal dimension', 'label']
 
-        labels = ['malignant', 'benign']
-
 :The whys and wherefores:
     * Read Pandas ``DataFrame``
 
 :Hint:
-    * ``df['label'].replace({...})``
+    * ``pd.read_csv(url, nrows=0).columns``
+    * ``df['label'].replace({'from': 'to'})``
