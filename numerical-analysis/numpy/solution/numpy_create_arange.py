@@ -9,19 +9,19 @@ import numpy as np
 ## Results with ``%%timeit``
 
 np.arange(0, 100, step=2, dtype=float)
-# 718 ns ± 6.78 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+# 756 ns ± 10.3 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
 
 np.array(range(0, 100, 2), dtype=float)
-# 7.89 µs ± 91.4 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+# 8.28 µs ± 364 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
 
 np.array([x for x in range(0, 100) if x % 2 == 0], dtype=float)
-# 9.42 µs ± 129 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+# 9.76 µs ± 324 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
 
 np.array([float(x) for x in range(0, 100) if x % 2 == 0])
-# 12.3 µs ± 108 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+# 12.7 µs ± 195 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
 
 np.array([float(x) for x in range(0, 100, 2)])
-# 7.61 µs ± 80.4 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+# 8.35 µs ± 196 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
 
 np.array([x for x in range(0, 100, 2)], dtype=float)
-# 5.73 µs ± 104 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+# 5.89 µs ± 77 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
