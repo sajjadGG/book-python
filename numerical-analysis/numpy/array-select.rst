@@ -301,30 +301,29 @@ Take
 Assignments
 ===========
 
-Array filtering
----------------
+Select
+------
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/numpy_array_filtering.py`
+* Filename: :download:`solution/numpy_select.py`
 
 :English:
     #. Set random seed to 0
-    #. Generate ``INPUT: ndarray`` of size 50x50
-    #. ``INPUT`` must contains random integers from 0 to 1024 inclusive
-    #. Create ``OUTPUT: ndarray`` with elements selected from ``INPUT`` which are power of two
-    #. Sort ``OUTPUT`` in descending order
-    #. Print ``OUTPUT``
+    #. Generate ``a: ndarray`` of size 50x50
+    #. ``a`` must contains random integers from 0 to 1024 inclusive
+    #. Create ``b: ndarray`` with elements selected from ``a`` which are power of two
+    #. Sort ``b`` in descending order
+    #. Print ``b``
 
 :Polish:
     #. Ustaw ziarno losowości na 0
-    #. Wygeneruj ``INPUT: ndarray`` rozmiaru 50x50
-    #. ``INPUT`` musi zawierać losowe liczby całkowite z zakresu od 0 do 1024 włącznie
-    #. Stwórz ``OUTPUT: ndarray`` z elementami wybranymi z ``INPUT``, które są potęgami dwójki
-    #. Posortuj ``OUTPUT`` w kolejności malejącej
-    #. Wypisz ``OUTPUT``
+    #. Wygeneruj ``a: ndarray`` rozmiaru 50x50
+    #. ``a`` musi zawierać losowe liczby całkowite z zakresu od 0 do 1024 włącznie
+    #. Stwórz ``b: ndarray`` z elementami wybranymi z ``a``, które są potęgami dwójki
+    #. Posortuj ``b`` w kolejności malejącej
+    #. Wypisz ``b``
 
 :Hint:
-    * ``np.random.randint()``
     * ``np.isin(a, b)``
     * ``np.flip(a)``

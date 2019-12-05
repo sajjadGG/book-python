@@ -358,34 +358,6 @@ Matrix Multiplication
 Assignments
 ===========
 
-Matrix multiplication
----------------------
-* Complexity level: easy
-* Lines of code to write: 2 lines
-* Estimated time of completion: 5 min
-* Filename: :download:`solution/numpy_matmul.py`
-
-:English:
-    #. Multiply two ``np.array``
-    #. Compare output of ``@`` and ``*``
-    #. Why it differs?
-    #. What will happen with scalar multiplication of ``c`` and ``d``?
-
-:Polish:
-    #. Pomnóż dwa ``np.array``
-    #. Porównaj wynik ``@`` oraz ``*``
-    #. Dlaczego się różnią?
-    #. Co się stanie przy mnożeniu skalarnym ``c`` i ``d``?
-
-.. code-block:: python
-
-        import numpy as np
-
-        a = np.array([[1, 0], [0, 1]])
-        b = [[4, 1], [2, 2]]
-        c = [[1,0,1,0], [0,1,1,0], [3,2,1,0], [4,1,2,0]]
-        d = np.array([[4,1], [2,2], [5,1], [2,3]])
-
 Arithmetic operations
 ---------------------
 * Complexity level: easy
@@ -419,3 +391,63 @@ Arithmetic operations
 
         array([[0.34657359, 1.00505254],
                [3.81230949,       -inf]])
+
+Addition
+--------
+* Complexity level: easy
+* Lines of code to write: 2 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/numpy_arithmetic_add.py`
+
+:English:
+    #. Add ``a`` and ``b``
+    #. Add ``b`` and ``a``
+    #. What happened?
+
+:Polish:
+    #. Dodaj ``a`` i ``b``
+    #. Dodaj ``b`` i ``a``
+    #. Co się stało?
+
+.. code-block:: python
+
+        import numpy as np
+
+        a = np.array([[1, 0], [0, 1]])
+        b = [[4, 1], [2, 2]]
+
+Multiplication
+--------------
+* Complexity level: easy
+* Lines of code to write: 2 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/numpy_arithmetic_matmul.py`
+
+:English:
+    #. Multiply ``a`` and ``b`` using scalar multiplication
+    #. Multiply ``a`` and ``b`` using matrix multiplication
+    #. Multiply ``b`` and ``a`` using scalar multiplication
+    #. Multiply ``b`` and ``a`` using matrix multiplication
+    #. Discuss results
+
+:Polish:
+    #. Przemnóż ``a`` i ``b`` używając mnożenia skalarnego
+    #. Przemnóż ``a`` i ``b`` używając mnożenia macierzowego
+    #. Przemnóż ``b`` i ``a`` używając mnożenia skalarnego
+    #. Przemnóż ``b`` i ``a`` używając mnożenia macierzowego
+    #. Omów wyniki
+
+.. code-block:: python
+
+        import numpy as np
+
+        a = np.array([[1,0,1,0],
+                      [0,1,1,0],
+                      [3,2,1,0],
+                      [4,1,2,0]])
+
+        b = np.array([
+                     [4,1],
+                     [2,2],
+                     [5,1],
+                     [2,3]])
