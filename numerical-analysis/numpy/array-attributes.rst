@@ -116,26 +116,26 @@ Create
 * Filename: :download:`solution/numpy_attributes.py`
 
 :English:
-    #. Set random seed to zero
-    #. Create ``a: ndarray`` with size 16x16
-    #. Structure must contains random integers (0-9)
+    #. Set random seed to zero.
+    #. Create ``a: ndarray`` with size 16x16.
+    #. Structure must contains random integers (0-9).
     #. Print number of:
 
-        * dimensions
-        * columns
-        * rows
-        * element count
+        * dimensions;
+        * columns;
+        * rows;
+        * element count.
 
 :Polish:
-    #. Ustaw ziarno losowości na zero
-    #. Stwórz ``a: ndarray`` o rozmiarze 16x16
-    #. Struktura musi zawierać losowe liczby (0-9)
+    #. Ustaw ziarno losowości na zero.
+    #. Stwórz ``a: ndarray`` o rozmiarze 16x16.
+    #. Struktura musi zawierać losowe liczby (0-9).
     #. Wypisz liczbę:
 
-        * wymiarów
-        * kolumn
-        * wierszy
-        * ilość elementów
+        * wymiarów,
+        * kolumn,
+        * wierszy,
+        * ilość elementów.
 
 :The whys and wherefores:
     * Defining ``ndarray``
