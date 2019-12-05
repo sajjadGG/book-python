@@ -16,56 +16,90 @@ Copy
 
     a[0] = 99
 
-    repr(a)
+    a
     # array([99, 2, 3])
 
-    repr(b)
+    b
     # array([99, 2, 3])
 
-    repr(c)
+    c
     # array([1, 2, 3])
 
 
 Put
 ===
+
+One dimensional
+---------------
 .. code-block:: python
 
     import numpy as np
 
 
-    a = np.array([1, 2, 3])
+    a = np.array([1, 2, 3, 4, 5, 6])
 
-    a.put([0, 2], 99)
-    # array([99,  2, 99])
+    a.put([0, 2, 5], 99)
+
+    a
+    # array([99,  2, 99,  4,  5, 99])
 
 .. code-block:: python
 
     import numpy as np
 
 
-    a = np.array([1, 2, 3])
-    at_index = [0, 2]
+    a = np.array([1, 2, 3, 4, 5, 6])
+    at_index = [0, 2, 5]
 
     a.put(at_index, 99)
-    # array([99,  2, 99])
+
+    a
+    # array([99,  2, 99,  4,  5, 99])
 
 .. code-block:: python
 
     import numpy as np
 
 
-    a = np.array([1, 2, 3])
-    b = np.array([99, 88, 77])
-    at_index = [0, 2]
+    a = np.array([1, 2, 3, 4, 5, 6])
+    b = np.array([99, 88, 77, 66, 55, 44, 33, 22])
+    at_index = [0, 2, 5]
 
     a.put(at_index, b)
-    # array([99,  2, 88])
+
+    a
+    # array([99,  2, 88,  4,  5, 77])
+
+Two dimensional
+---------------
+* Equivalent to ``a.flat[indexes] = value``
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
+
+    b = np.array([99, 88, 77, 66, 55, 44, 33, 22])
+    at_index = [0, 2, 5]
+
+    a.put(at_index, b)
+
+    a
+    # array([[99,  2, 88],
+    #        [ 4,  5, 77],
+    #        [ 7,  8,  9]])
 
 
 Fill
 ====
 * Modifies inplace
 
+Fill all
+--------
 .. code-block:: python
 
     import numpy as np
@@ -88,12 +122,77 @@ Fill
     # array([[0, 0, 0],
     #        [0, 0, 0]])
 
+Fill slice
+----------
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
+
+    a[:, 0].fill(0)
+    # array([[0, 2, 3],
+    #        [0, 5, 6],
+    #        [0, 8, 9]])
+
+Fill NaN
+--------
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
+
+    a[:, 0].fill(np.nan)
+
+    a
+    # array([[-9223372036854775808, 2, 3],
+    #        [-9223372036854775808, 5, 6],
+    #        [-9223372036854775808, 8, 9]])
+
+.. code-block:: python
+
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]], dtype=float)
+
+    a[:, 0].fill(np.nan)
+
+    a
+    # array([[nan,  2.,  3.],
+    #        [nan,  5.,  6.],
+    #        [nan,  8.,  9.]])
+
+
+Full
+====
+.. code-block:: python
+
+    import numpy as np
+
+
+    np.full((2, 2), np.inf)
+    # array([[inf, inf],
+    #        [inf, inf]])
+
+    np.full((2, 2), 10)
+    # array([[10, 10],
+    #        [10, 10]])
+
 
 Transpose
 =========
 * ``a.transpose()`` or ``a.T``
 * ``a.transpose()`` is preferred
 
+One dimensional
+---------------
 .. code-block:: python
 
     import numpy as np
@@ -104,6 +203,8 @@ Transpose
     a.transpose()
     # array([1, 2, 3])
 
+Two dimensional
+---------------
 .. code-block:: python
 
     import numpy as np
