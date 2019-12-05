@@ -1,92 +1,258 @@
-************
-Series Slice
-************
+**************
+Series Slicing
+**************
 
 
-Slicing by index numbers
-========================
+Numeric Index
+=============
 .. code-block:: python
 
-    data = np.random.randn(5)
-    index = ['a', 'b', 'c', 'd', 'e']
+    import pandas as pd
+    import numpy as np
 
-    s = pd.Series(data, index)
-    # a   -1.613898
-    # b   -0.212740
-    # c   -0.895467
-    # d    0.386902
-    # e   -0.510805
-    # dtype: float64
 
-    s[1]
-    # -0.2127402802139687
+    data = [11, 22, 33, 44, 55]
+    s = pd.Series(data)
+
+    s
+    # 0    11
+    # 1    22
+    # 2    33
+    # 3    44
+    # 4    55
+    # dtype: int64
+
+    s[:2]
+    # 0    11
+    # 1    22
+    # dtype: int64
 
     s[2:]
-    # c   -0.895467
-    # d    0.386902
-    # e   -0.510805
-    # dtype: float64
+    # 2    33
+    # 3    44
+    # 4    55
+    # dtype: int64
 
     s[1:-2]
-    # b   -0.212740
-    # c   -0.895467
-    # dtype: float64
+    # 1    22
+    # 2    33
+    # dtype: int64
+
+    s[::2]
+    # 0    11
+    # 2    33
+    # 4    55
+    # dtype: int64
+
+    s[1::2]
+    # 1    22
+    # 3    44
+    # dtype: int64
 
 
-Slicing by index names
-======================
+String Index
+============
+* Using string index upper and lower bound are inclusive!
+* String indexes has also numeric index underneath
+
 .. code-block:: python
 
-    data = np.random.randn(5)
+    import pandas as pd
+    import numpy as np
+
+
+    data = [11, 22, 33, 44, 55]
     index = ['a', 'b', 'c', 'd', 'e']
-
     s = pd.Series(data, index)
-    # a   -1.613898
-    # b   -0.212740
-    # c   -0.895467
-    # d    0.386902
-    # e   -0.510805
-    # dtype: float64
 
-    s['b']
-    # -0.2127402802139687
+    s
+    # a    11
+    # b    22
+    # c    33
+    # d    44
+    # e    55
+    # dtype: int64
 
-    s['c':]
-    # c   -0.895467
-    # d    0.386902
-    # e   -0.510805
-    # dtype: float64
+    s['a']
+    # 11
 
-    s['b':'c']
-    # b   -0.212740
-    # c   -0.895467
-    # dtype: float64
+    s['a':'b']
+    # a    11
+    # b    22
+    # dtype: int64
+
+    s['a':'d']
+    # a    11
+    # b    22
+    # c    33
+    # d    44
+    # dtype: int64
+
+    s['a':'d':2]
+    # a    11
+    # c    33
+    # dtype: int64
+
+    s['a':'d':'b']
+    # TypeError: '>=' not supported between instances of 'str' and 'int'
+
+    s['d':'a']
+    # Series([], dtype: int64)
 
 .. code-block:: python
 
-    index = pd.date_range('1970-01-01', periods=6)
-    # DatetimeIndex(['1970-01-01',
-    #                '1970-01-02',
-    #                '1970-01-03',
-    #                '1970-01-04',
-    #                '1970-01-05',
-    #                '1970-01-06'], dtype='datetime64[ns]', freq='D')
+    import pandas as pd
+    import numpy as np
 
-    data = [1, 3, 5, np.nan, 6, 8]
+
+    data = [11, 22, 33, 44, 55]
+    index = ['a', 'b', 'c', 'd', 'e']
     s = pd.Series(data, index)
-    # 1970-01-01    1.0
-    # 1970-01-02    3.0
+
+    s
+    # a    11
+    # b    22
+    # c    33
+    # d    44
+    # e    55
+    # dtype: int64
+
+    s[:2]
+    # a    11
+    # b    22
+    # dtype: int64
+
+    s[2:]
+    # c    33
+    # d    44
+    # e    55
+    # dtype: int64
+
+    s[1:-2]
+    # b    22
+    # c    33
+    # dtype: int64
+
+    s[::2]
+    # a    11
+    # c    33
+    # e    55
+    # dtype: int64
+
+    s[1::2]
+    # b    22
+    # d    44
+    # dtype: int64
+
+
+Date Index
+==========
+.. code-block:: python
+
+    import pandas as pd
+    import numpy as np
+
+
+    data = [11, 22, 33, 44, 55]
+    index = pd.date_range('1970-01-01', periods=5, freq='D')
+    s = pd.Series(data, index)
+
+    s
+    # 1970-01-01    11
+    # 1970-01-02    22
+    # 1970-01-03    33
+    # 1970-01-04    44
+    # 1970-01-05    55
+    # Freq: D, dtype: int64
+
+    s['1970-01-02':'1970-01-04']
     # 1970-01-03    5.0
     # 1970-01-04    NaN
     # 1970-01-05    6.0
-    # 1970-01-06    8.0
     # Freq: D, dtype: float64
 
-    s['1970-01-03':'1970-01-05']
-    # 1970-01-03    5.0
-    # 1970-01-04    NaN
-    # 1970-01-05    6.0
-    # Freq: D, dtype: float64
+    s['1970-01-02':'1970-01-04':2]
+    # 1970-01-02    22
+    # 1970-01-04    44
+    # Freq: 2D, dtype: int64
+
+    s['1970-01-02':'1970-01-04':-1]
+    # Series([], Freq: -1D, dtype: int64)
+
+    s['1970-01-04':'1970-01-02':-1]
+    # 1970-01-04    44
+    # 1970-01-03    33
+    # 1970-01-02    22
+    # Freq: -1D, dtype: int64
+
+    s['1970-01':'1970-01-04']
+    # 1970-01-01    11
+    # 1970-01-02    22
+    # 1970-01-03    33
+    # 1970-01-04    44
+    # Freq: D, dtype: int64
+
+    s[:'1970-01-05']
+    # 1970-01-01    11
+    # 1970-01-02    22
+    # 1970-01-03    33
+    # 1970-01-04    44
+    # 1970-01-05    55
+    # Freq: D, dtype: int64
+
+    s[:'1970-01-05':2]
+    # 1970-01-01    11
+    # 1970-01-03    33
+    # 1970-01-05    55
+    # Freq: 2D, dtype: int64
+
+    s[:'1970-01-03':-1]
+    # 1970-01-05    55
+    # 1970-01-04    44
+    # 1970-01-03    33
+    # Freq: -1D, dtype: int64
+
+.. code-block:: python
+
+    import pandas as pd
+    import numpy as np
+
+
+    data = [11, 22, 33, 44, 55]
+    index = pd.date_range('1970-01-01', periods=5, freq='D')
+    s = pd.Series(data, index)
+
+    s
+    # 1970-01-01    11
+    # 1970-01-02    22
+    # 1970-01-03    33
+    # 1970-01-04    44
+    # 1970-01-05    55
+    # Freq: D, dtype: int64
+
+    s[1:3]
+    # 1970-01-02    22
+    # 1970-01-03    33
+    # Freq: D, dtype: int64
+
+    s[:3]
+    # 1970-01-01    11
+    # 1970-01-02    22
+    # 1970-01-03    33
+    # Freq: D, dtype: int64
+
+    s[:3:2]
+    # 1970-01-01    11
+    # 1970-01-03    33
+    # Freq: 2D, dtype: int64
+
+    s[::-1]
+    # 1970-01-05    55
+    # 1970-01-04    44
+    # 1970-01-03    33
+    # 1970-01-02    22
+    # 1970-01-01    11
+    # Freq: -1D, dtype: int64
 
 
 Assignments
@@ -97,7 +263,7 @@ Slicing
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/pandas_series_slicing.py`
+* Filename: :download:`solution/series_slicing.py`
 
 :English:
     #. Create ``pd.Series`` with 26 random integers in range ``[10, 100)``
