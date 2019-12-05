@@ -5,6 +5,7 @@ Introduction
     :maxdepth: 0
     :caption: Introduction
 
+    /machine-learning/introduction/data.rst
     /machine-learning/introduction/statistics.rst
     /machine-learning/introduction/machine-learning.rst
     /machine-learning/introduction/glossary-pl.rst
@@ -30,8 +31,8 @@ Model Quality
     :maxdepth: 0
     :caption: Model Quality
 
-    /machine-learning/model-qulity/model-quality.rst
-    /machine-learning/model-qulity/principal-component-analysis.rst
+    /machine-learning/model-quality/model-quality.rst
+    /machine-learning/model-quality/principal-component-analysis.rst
 
 
 **************

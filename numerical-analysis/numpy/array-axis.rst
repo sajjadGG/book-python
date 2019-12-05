@@ -7,6 +7,13 @@ About Axis
 ==========
 * ``axis`` is an index in ``a.shape``
 * Columns are always last
+* https://youtu.be/ZB7BZMhfPgk?t=4738
+
+.. figure:: img/array-axis.png
+    :scale: 100
+    :align: center
+
+    Visualizing Multi-Dimensional Arrays :cite:`numpy-MultidimArrays`
 
 
 One Dimensional
