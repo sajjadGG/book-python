@@ -3,10 +3,10 @@ np.random.seed(0)
 
 
 a = np.random.randint(0, 1025, size=(50, 50))
+selection = 2 ** np.arange(11)
+# selection = [2**x for x in range(0, 11)]
 
-selection = [2**x for x in range(0, 11)]
 mask = np.isin(a, selection)
-
 b = sorted(a[mask])
 b = np.flip(b)
 

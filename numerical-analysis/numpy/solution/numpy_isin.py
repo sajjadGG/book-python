@@ -2,7 +2,10 @@ import numpy as np
 np.random.seed(0)
 
 
-a = np.array([np.random.randint(0, 100) for n in range(0, 50)])
+a = np.random.randint(0, 100, size=50)
+b = 2 ** np.arange(7)
+
+# Alternative
 b = np.array([np.power(2, x) for x in range(0, 7)])
 
 print(np.isin(a, b))
