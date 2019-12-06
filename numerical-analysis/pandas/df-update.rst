@@ -2,9 +2,8 @@
 DataFrame Update
 ****************
 
-
-Update columns
-==============
+Add column
+==========
 .. code-block:: python
 
     import pandas as pd
@@ -28,15 +27,54 @@ Update columns
     # 5  NaN  NaN  NaN NaN
     # 6  4.0  4.4    d NaN
 
-    df['D'] = 0
+    df = df['A'] = 99
+    df
     #      A    B    C  D
-    # 0  1.0  1.1    a  0
-    # 1  2.0  2.2    b  0
-    # 2  NaN  NaN  NaN  0
-    # 3  NaN  NaN  NaN  0
-    # 4  3.0  3.3    c  0
-    # 5  NaN  NaN  NaN  0
-    # 6  4.0  4.4    d  0
+    # 0  99  1.1    a  99
+    # 1  99  2.2    b  99
+    # 2  99  NaN  NaN  99
+    # 3  99  NaN  NaN  99
+    # 4  99  3.3    c  99
+    # 5  99  NaN  NaN  99
+    # 6  99  4.4    d  99
+
+
+Update Column
+=============
+.. code-block:: python
+
+    import pandas as pd
+    import numpy as np
+
+
+    df = pd.DataFrame({
+        'A': [1, 2, np.nan, np.nan, 3, np.nan, 4],
+        'B': [1.1, 2.2, np.nan, np.nan, 3.3, np.nan, 4.4],
+        'C': ['a', 'b', np.nan, np.nan, 'c', np.nan, 'd'],
+        'D': [np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan],
+    })
+
+    df
+    #      A    B    C   D
+    # 0  1.0  1.1    a NaN
+    # 1  2.0  2.2    b NaN
+    # 2  NaN  NaN  NaN NaN
+    # 3  NaN  NaN  NaN NaN
+    # 4  3.0  3.3    c NaN
+    # 5  NaN  NaN  NaN NaN
+    # 6  4.0  4.4    d NaN
+
+    df = df['D'] = 99
+    df
+    #      A    B    C  D
+    # 0  1.0  1.1    a  99
+    # 1  2.0  2.2    b  99
+    # 2  NaN  NaN  NaN  99
+    # 3  NaN  NaN  NaN  99
+    # 4  3.0  3.3    c  99
+    # 5  NaN  NaN  NaN  99
+    # 6  4.0  4.4    d  99
+
 
 Update Rows
 ===========
@@ -63,17 +101,17 @@ Update Rows
     # 5  NaN  NaN  NaN NaN
     # 6  4.0  4.4    d NaN
 
-    df[1:4] = 0
+    df[1:4] = 99
 
     df
-    #      A    B    C    D
-    # 0  1.0  1.1    a  NaN
-    # 1  0.0  0.0    0  0.0
-    # 2  0.0  0.0    0  0.0
-    # 3  0.0  0.0    0  0.0
-    # 4  3.0  3.3    c  NaN
-    # 5  NaN  NaN  NaN  NaN
-    # 6  4.0  4.4    d  NaN
+    #      A     B     C     D
+    # 0  1.0    1.1    a   NaN
+    # 1  99.0  99.0   99  99.0
+    # 2  99.0  99.0   99  99.0
+    # 3  99.0  99.0   99  99.0
+    # 4  3.0    3.3    c   NaN
+    # 5  NaN    NaN  NaN   NaN
+    # 6  4.0    4.4    d   NaN
 
 .. code-block:: python
 
