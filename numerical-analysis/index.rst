@@ -95,7 +95,8 @@ Pandas
     pandas/series-attributes.rst
     pandas/series-indexing.rst
     pandas/series-slicing.rst
-    pandas/series-modification.rst
+    pandas/series-update.rst
+    pandas/series-alter.rst
     pandas/series-arithmetic.rst
 
     pandas/df-create.rst
@@ -103,11 +104,12 @@ Pandas
     pandas/df-select.rst
     pandas/df-indexing.rst
     pandas/df-slicing.rst
+    pandas/df-update.rst
     pandas/df-sample.rst
     pandas/df-plot.rst
     pandas/df-at.rst
-    pandas/df-locate.rst
-    pandas/df-modification.rst
+    pandas/df-loc.rst
+    pandas/df-alter.rst
     pandas/df-sort.rst
     pandas/df-statistics.rst
     pandas/df-groupby.rst

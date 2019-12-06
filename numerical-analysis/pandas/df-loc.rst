@@ -1,6 +1,6 @@
-****************
-DataFrame Locate
-****************
+*************
+DataFrame Loc
+*************
 
 
 * ``loc`` zaawansowane opcje wyszukiwania
