@@ -202,3 +202,6 @@ Create Date
     #. Armstrong postawił stopę na Księżycu w 1969-07-21
     #. Stwórz ``pd.Series`` z dniami pomiędzy startem Gagarina a pierwszym krokiem Armstronga
     #. Jak wiele dni upłynęło?
+
+:Hint:
+    * ``len(s)``

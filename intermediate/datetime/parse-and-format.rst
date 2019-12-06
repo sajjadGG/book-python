@@ -375,6 +375,9 @@ To ISO date format
 
         1969-04-12T06:07:00.000Z
 
+:Hint:
+    * Add string ``local time`` to format statement
+
 US date and time format
 -----------------------
 * Complexity level: easy
@@ -449,7 +452,8 @@ Log parsing
         1969-07-20, 20:14:18, ERROR, LM 1201 alarm
         1969-07-20, 20:17:39, WARNING, LM lunar landing
         1969-07-21, 02:39:33, DEBUG, EVA started (hatch open)
-        1969-07-21, 02:56:15, WARNING, 1st step taken lunar surface (CDR) "That's one small step for [a] man... one giant leap for mankind"
+        1969-07-21, 02:56:15, WARNING, 1st step taken lunar surface (CDR)
+        1969-07-21, 02:56:15, WARNING, That's one small step for [a] man... one giant leap for mankind
         1969-07-21, 03:05:58, DEBUG, Contingency sample collection started (CDR)
         1969-07-21, 03:15:16, INFO, LMP on lunar surface
         1969-07-21, 05:11:13, DEBUG, EVA ended (hatch closed)
