@@ -6,8 +6,8 @@ Series Indexing
 Creating Index
 ==============
 
-Numeric Index
--------------
+Range Index
+-----------
 * Default
 
 .. code-block:: python
@@ -16,8 +16,9 @@ Numeric Index
     import numpy as np
 
     data = [1, 3, 5, np.nan, 6, 8]
+    s = pd.Series(data)
 
-    pd.Series(data)
+    s
     # 0    1.0
     # 1    3.0
     # 2    5.0
@@ -25,6 +26,47 @@ Numeric Index
     # 4    6.0
     # 5    8.0
     # dtype: float64
+
+    s.index
+    # RangeIndex(start=0, stop=3, step=1)
+
+.. code-block:: python
+
+    import pandas as pd
+
+    data = ['a', 'b', 'c']
+    s = pd.Series(data)
+
+    s
+    # 0    a
+    # 1    b
+    # 2    c
+    # dtype: object
+
+    s.index
+    # RangeIndex(start=0, stop=3, step=1)
+
+Numeric Index
+-------------
+.. code-block:: python
+
+    import pandas as pd
+
+    data = [1, 2, 3]
+    index = [99, 88, 77]
+    s = pd.Series(data, index)
+
+    s
+    # 99    1
+    # 88    2
+    # 77    3
+    # dtype: int64
+
+    s.index
+    # Int64Index([99, 88, 77], dtype='int64')
+
+    s[0]
+    # KeyError: 0
 
 String Index
 ------------
@@ -38,6 +80,29 @@ String Index
 
     data = [1, 3, 5, np.nan, 6, 8]
     index = ['a', 'b', 'c', 'd', 'e', 'f']
+    s = pd.Series(data, index)
+
+    s
+    # a    1.0
+    # b    3.0
+    # c    5.0
+    # d    NaN
+    # e    6.0
+    # f    8.0
+    # dtype: float64
+
+    s.index
+    # Index(['a', 'b', 'c'], dtype='object')
+
+
+.. code-block:: python
+
+    import pandas as pd
+    import numpy as np
+
+
+    data = np.random.randn(5)
+    index = list('abcde')
 
     pd.Series(data, index)
     # a    1.0
@@ -54,18 +119,26 @@ String Index
     import numpy as np
 
 
-    data = np.random.randn(5)
-    index = list('abcdef')
+    data = [11, 22, 33, 44, 55]
+    index = ['aaa', 'bbb', 'ccc', 'ddd', 'eee']
+    s = pd.Series(data, index)
 
-    pd.Series(data, index)
-    # a    1.0
-    # b    3.0
-    # c    5.0
-    # d    NaN
-    # e    6.0
-    # f    8.0
-    # dtype: float64
+    s
+    # aaa    11
+    # bbb    22
+    # ccc    33
+    # ddd    44
+    # eee    55
+    # dtype: int64
 
+    s['aaa']
+    # 11
+
+    s['aa']
+    # KeyError: 'aa'
+
+    s['a']
+    # KeyError: 'a'
 
 Date Index
 ----------

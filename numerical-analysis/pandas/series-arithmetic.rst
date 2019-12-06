@@ -150,13 +150,13 @@ Arithmetic
 :English:
     #. Set random seed to zero
     #. Generate ``data: ndarray`` with 5 random digits [0, 9]
-    #. Create ``index: list`` with column names as sequential letters in english alphabet
+    #. Create ``index: list`` with index names as sequential letters in english alphabet
     #. Create ``s: pd.Series`` from ``data`` and ``index``
     #. Multiply ``s`` by 10 and by original ``s`` values (before multiplying by 10)
 
 :Polish:
     #. Ustaw random seed na zero
     #. Wygeneruj ``data: ndarray`` z 5 losowymi cyframi <0, 9>
-    #. Stwórz ``index: list`` z nazwami kolumn jak kolejne listery alfabetu angielskiego
+    #. Stwórz ``index: list`` z indeksami jak kolejne listery alfabetu angielskiego
     #. Stwórz ``s: pd.Series`` z ``data`` oraz ``index``
     #. Pomnóż ``s`` przez 10 oraz przez oryginalne wartości ``s`` (przed mnożeniem przez 10)

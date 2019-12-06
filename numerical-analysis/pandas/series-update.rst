@@ -10,29 +10,31 @@ Fill NaN - Scalar value
 .. code-block:: python
 
     import pandas as pd
+    import numpy as np
 
-    data = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
+
+    data = [1, np.nan, np.nan, np.nan, 2, np.nan, 3, np.inf]
     s = pd.Series(data)
 
     s
     # 0    1.0
     # 1    NaN
-    # 2    5.0
+    # 2    NaN
     # 3    NaN
-    # 4    1.0
-    # 5    2.0
-    # 6    1.0
+    # 4    2.0
+    # 5    NaN
+    # 6    3.0
     # 7    inf
     # dtype: float64
 
     s.fillna(0.0)
     # 0    1.0
     # 1    0.0
-    # 2    5.0
+    # 2    0.0
     # 3    0.0
-    # 4    1.0
-    # 5    2.0
-    # 6    1.0
+    # 4    2.0
+    # 5    0.0
+    # 6    3.0
     # 7    inf
     # dtype: float64
 
@@ -44,29 +46,31 @@ Fill NaN - Forward Fill
 .. code-block:: python
 
     import pandas as pd
+    import numpy as np
 
-    data = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
+
+    data = [1, np.nan, np.nan, np.nan, 2, np.nan, 3, np.inf]
     s = pd.Series(data)
 
     s
     # 0    1.0
     # 1    NaN
-    # 2    5.0
+    # 2    NaN
     # 3    NaN
-    # 4    1.0
-    # 5    2.0
-    # 6    1.0
+    # 4    2.0
+    # 5    NaN
+    # 6    3.0
     # 7    inf
     # dtype: float64
 
     s.ffill()
     # 0    1.0
     # 1    1.0
-    # 2    5.0
-    # 3    5.0
-    # 4    1.0
+    # 2    1.0
+    # 3    1.0
+    # 4    2.0
     # 5    2.0
-    # 6    1.0
+    # 6    3.0
     # 7    inf
     # dtype: float64
 
@@ -78,29 +82,31 @@ Fill NaN - Backward Fill
 .. code-block:: python
 
     import pandas as pd
+    import numpy as np
 
-    data = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
+
+    data = [1, np.nan, np.nan, np.nan, 2, np.nan, 3, np.inf]
     s = pd.Series(data)
 
     s
     # 0    1.0
     # 1    NaN
-    # 2    5.0
+    # 2    NaN
     # 3    NaN
-    # 4    1.0
-    # 5    2.0
-    # 6    1.0
+    # 4    2.0
+    # 5    NaN
+    # 6    3.0
     # 7    inf
     # dtype: float64
 
     s.bfill()
     # 0    1.0
-    # 1    5.0
-    # 2    5.0
-    # 3    1.0
-    # 4    1.0
-    # 5    2.0
-    # 6    1.0
+    # 1    2.0
+    # 2    2.0
+    # 3    2.0
+    # 4    2.0
+    # 5    3.0
+    # 6    3.0
     # 7    inf
     # dtype: float64
 
@@ -140,28 +146,30 @@ Fill NaN - Interpolate
 .. code-block:: python
 
     import pandas as pd
+    import numpy as np
 
-    data = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
+
+    data = [1, np.nan, np.nan, np.nan, 2, np.nan, 3, np.inf]
     s = pd.Series(data)
 
     s
     # 0    1.0
     # 1    NaN
-    # 2    5.0
+    # 2    NaN
     # 3    NaN
-    # 4    1.0
-    # 5    2.0
-    # 6    1.0
+    # 4    2.0
+    # 5    NaN
+    # 6    3.0
     # 7    inf
     # dtype: float64
 
     s.interpolate()
-    # 0    1.0
-    # 1    3.0
-    # 2    5.0
-    # 3    3.0
-    # 4    1.0
-    # 5    2.0
-    # 6    1.0
-    # 7    inf
+    # 0    1.00
+    # 1    1.25
+    # 2    1.50
+    # 3    1.75
+    # 4    2.00
+    # 5    2.50
+    # 6    3.00
+    # 7     inf
     # dtype: float64

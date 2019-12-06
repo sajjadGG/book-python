@@ -139,7 +139,7 @@ Creating
 dates
 -----
 * From ``pd.Timestamp``
-* From ``pd.daterange()``
+* From ``pd.date_range()``
 
 .. code-block:: python
 
@@ -147,8 +147,9 @@ dates
 
 
     apollo11 = pd.date_range(start='1969-07-16', end='1969-07-24')
+    s = pd.Series(apollo11)
 
-    pd.Series(apollo11)
+    s
     # 0   1969-07-16
     # 1   1969-07-17
     # 2   1969-07-18
@@ -159,6 +160,12 @@ dates
     # 7   1969-07-23
     # 8   1969-07-24
     # dtype: datetime64[ns]
+
+    len(apollo11)
+    # 9
+
+    len(s)
+    # 9
 
 
 Assignments

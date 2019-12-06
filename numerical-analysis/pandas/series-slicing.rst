@@ -73,9 +73,6 @@ String Index
     # e    55
     # dtype: int64
 
-    s['a']
-    # 11
-
     s['a':'b']
     # a    11
     # b    22
@@ -144,6 +141,33 @@ String Index
     # d    44
     # dtype: int64
 
+.. code-block:: python
+
+    import pandas as pd
+    import numpy as np
+
+
+    data = [11, 22, 33, 44, 55]
+    index = ['aaa', 'bbb', 'ccc', 'ddd', 'eee']
+    s = pd.Series(data, index)
+
+    s
+    # aaa    11
+    # bbb    22
+    # ccc    33
+    # ddd    44
+    # eee    55
+    # dtype: int64
+
+    s['a':'b']
+    # aaa    11
+    # dtype: int64
+
+    s['a':'c']
+    # aaa    11
+    # bbb    22
+    # dtype: int64
+
 
 Date Index
 ==========
@@ -166,10 +190,10 @@ Date Index
     # Freq: D, dtype: int64
 
     s['1970-01-02':'1970-01-04']
-    # 1970-01-03    5.0
-    # 1970-01-04    NaN
-    # 1970-01-05    6.0
-    # Freq: D, dtype: float64
+    # 1970-01-02    22
+    # 1970-01-03    33
+    # 1970-01-04    44
+    # Freq: D, dtype: int64
 
     s['1970-01-02':'1970-01-04':2]
     # 1970-01-02    22
@@ -286,7 +310,7 @@ Slicing
 :Input:
     .. code-block:: python
 
-        alphabet = 'abcdefghijklmnopqrstuvwxyz'
+        ascii_lowercase = 'abcdefghijklmnopqrstuvwxyz'
 
 :Hint:
     * ``np.random.randint(..., ..., size=...)``

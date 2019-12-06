@@ -1,11 +1,12 @@
 import pandas as pd
 import numpy as np
+np.random.seed(0)
 
 
 data = np.random.randint(0, 9, size=100)
-data = data[data % 2 == 0][:10]
+data = data[data % 2 == 0]
 
-s = pd.Series(data)
+s = pd.Series(data[:10])
 # 0    8
 # 1    2
 # 2    0
