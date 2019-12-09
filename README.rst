@@ -18,21 +18,18 @@ Python 3: from None to Machine Learning
     "facebook", "https://facebook.com/matt.harasymczuk"
     "slideshare", "https://www.slideshare.net/astrotech/presentations"
 
-.. tip::
-    * This book is free and open source at http://python.astrotech.io
-    * For consulting or training course requests please email matt@astrotech.io
+.. tip:: This book is free and open source at http://python.astrotech.io
 
-.. csv-table:: Other books from author
-    :widths: 30, 70
-    :header: "URL", "Title"
+For consulting or training course requests please email matt@astrotech.io
 
-    "http://python.astrotech.io", "Python 3: from None to Machine Learning"
-    "http://dev.astrotech.io", "DevOps and CI/CD with Docker"
-    "http://jira.astrotech.io", "Jira and Atlassian Ecosystem"
-    "http://git.astrotech.io", "Git and Git Flow in CI/CD"
-    "http://agile.astrotech.io", "Agile Software Engineering: CI/CD with Scrum, Kanban, XP and Lean"
-    "http://arch.astrotech.io", "Software Architecture, Cloud, Microservices"
-    "http://linux.astrotech.io", "Linux and Shell Programming with Bash"
+You might also be interested in other book (http://dev.astrotech.io) on Software Engineering covering topics of:
+
+    * DevOps and CI/CD with Docker
+    * Jira and Atlassian Ecosystem
+    * Git and Git Flow in CI/CD
+    * Agile Software Engineering: CI/CD with Scrum, Kanban, XP and Lean Startup
+    * Software Architecture with Cloud and Microservices
+    * Linux and Shell Programming with Bash
 
 .. include:: LICENSE.rst
 
