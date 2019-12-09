@@ -23,12 +23,12 @@ INPUT = [
     (4.6, 3.1, 1.5, 0.2, 'setosa'),
 ]
 
-TRAINING_SIZE = 0.6  # 60%
+RATIO = 0.6  # 60%
 
 header = INPUT[0]
 data = INPUT[1:]
 
-pivot = int(len(data) * TRAINING_SIZE)
+pivot = int(len(data) * RATIO)
 
 train = data[:pivot]
 test = data[pivot:]

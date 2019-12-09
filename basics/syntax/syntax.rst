@@ -7,9 +7,9 @@ Indentation instead of braces
 =============================
 .. highlights::
     * Python uses indentation instead of braces
-    * `4 spaces indentation, no tabs <https://youtu.be/SsoOG6ZeyUI>`_
+    * :pep:`8`: 4 spaces indentation, `no tabs <https://youtu.be/SsoOG6ZeyUI>`_
     * Python throws ``IndentationError`` exception on problem
-    * Code indented on the same level belongs to block:
+    * Code indented on the same level belongs to block
 
 .. code-block:: python
 
@@ -25,7 +25,8 @@ End of lines
 ============
 .. highlights::
     * No semicolon (``;``) at the end of lines
-    * ``\r\n`` and ``\n`` are good:
+    * ``\r\n`` and ``\n`` works
+    * :pep:`8`: Use ``\n``
 
 .. code-block:: python
 
@@ -35,36 +36,30 @@ End of lines
 
 Comments
 ========
-
-Line comments
----------------
 .. highlights::
     * Indent must be on the same level as block indent
-    * Hash (``#``), space and then comment:
+    * :pep:`8` - Line comments: Hash (``#``), space and then comment
+    * :pep:`8` - Inline comments: code, two spaces, hash (``#``), space and then comment
+    * :pep:`8` - Multiline comments: If assigned to variable, it serves as multiline ``str``
+    * Commented out code:
+
+        * Never!
+        * Use Version Control System instead - e.g.: ``git blame``
+        * IDE has Local history (modifications) and you can compare file
 
 .. code-block:: python
+    :caption: Line comments
 
     # José Jiménez says hello
     print('My name... José Jiménez')
 
-Inline comments
----------------
-.. highlights::
-    * Source code, two spaces, hash (``#``), space and then comment:
-
 .. code-block:: python
+    :caption: Inline comments
 
     print('My name... José Jiménez')  # José Jiménez says hello
 
-Multiline comments
-------------------
-.. highlights::
-    * Triple single quotes ``'''``
-    * Triple double quotes ``"""`` (more common)
-    * Both ``'''`` and ``"""`` quotes works the same
-    * if assigned to variable, it serves as multiline ``str``
-
 .. code-block:: python
+    :caption: Multiline comments
 
     """
     We choose to go to the Moon!
@@ -75,8 +70,9 @@ Multiline comments
     and one we intend to win, and the others, too.
     """
 
+
 Docstring
----------
+=========
 .. highlights::
     * Docstring is a first multiline comment in:
 
@@ -87,6 +83,7 @@ Docstring
     * It is accessible in ``__doc__`` property of an object
     * Used for generating ``help()`` documentation
     * Used for ``doctest``
+    * :pep:`257` Docstring convention - For multiline always use three double quote (``"""``) characters
 
 .. code-block:: python
     :caption: Docstring used for documentation
@@ -112,13 +109,6 @@ Docstring
         """
         return a + b
 
-Commented out code
-------------------
-.. highlights::
-    * Never!
-    * Use Version Control System instead - e.g.: ``git blame``
-    * IDE has Local history (modifications) and you can compare file
-
 
 Variables and constants
 =======================
@@ -126,56 +116,34 @@ Variables and constants
     * ``NameError`` when using not declared variable
     * ``AttributeError`` when cannot assign to variables
     * Names are case sensitive
-
-.. code-block:: python
-
-    name = 'José Jiménez'
-    NAME = 'Иван Иванович'
-    Name = 'Jan Twardowski'
-
-Variable declaration
---------------------
-.. highlights::
+    * Python do not distinguish between variables and constants
+    * Python allows you to change "constants" but it's a bad practice (good IDE will tell you)
     * Lowercase letters for variable names
+    * Uppercase letters for "constant" names
     * Underscore ``_`` is used for multi-word names
 
 .. code-block:: python
+    :caption: Variable declaration
 
     name = 'José Jiménez'
-
-.. code-block:: python
-
     first_name = 'José'
     last_name = 'Jiménez'
 
-Constant declaration
---------------------
-.. highlights::
-    * Uppercase letters for constants names
-    * Underscore ``_`` is used for multi-word names
-
 .. code-block:: python
+    :caption: "Constant" declaration
 
     PATH = '/etc/passwd'
-
-.. code-block:: python
-
     FILE_NAME = '/etc/shadow'
 
-Variables vs. constants
------------------------
-.. highlights::
-    * Names are case sensitive
-    * Python do not distinguish between variables and constants
-    * Python allows you to change "constants" but it's a bad practice (good IDE will tell you)
-
 .. code-block:: python
+    :caption: Variables vs. constants - Names are case sensitive
 
     name = 'José Jiménez'
     NAME = 'Иван Иванович'
     Name = 'Jan Twardowski'
 
 .. code-block:: python
+    :caption: Python allows you to change "constants" but it's a bad practice (good IDE will tell you)
 
     NAME = 'José Jiménez'
     NAME = 'Иван Иванович'
@@ -209,61 +177,6 @@ Variables vs. constants
     print(f'My name...\n\t{name}')
     # My name...
     #     José Jiménez
-
-
-Type Annotations
-================
-.. epigraph::
-    Types are not required, and never will be
-    -- Guido van Rossum, Python BDFL
-
-.. highlights::
-    * Since Python 3.5
-    * ``SyntaxError`` in Python before 3.5
-    * Sometimes called "type hints"
-    * Good IDE will give you hints
-    * Types are used extensively in system libraries
-    * More and more books and documentations use types
-    * To type check use: ``mypy`` or ``pyre-check`` (more in :ref:`cicd-tools`)
-
-Basic types
------------
-.. code-block:: python
-
-    name: str = 'Jan Twardowski'
-    age: int = 30
-    is_adult: bool = True
-
-Types do not enforce checking
------------------------------
-.. highlights::
-    * This code will run without any problems
-    * Although ``mypy`` or ``pyre-check`` will throw error
-
-.. code-block:: python
-
-    name: int = 'Jan Twardowski'
-    age: float = 30
-    is_adult: int = True
-
-Why?
-----
-.. highlights::
-    * Good IDE will highlight, incorrect types
-
-.. code-block:: python
-
-    def add_numbers(a: int, b: float) -> int:
-        return int(a + b)
-
-
-    add_numbers(1, 2.5)
-    add_numbers('a', 'b')       # Good IDE should highlight the problem here
-
-More advanced topics
---------------------
-.. note::
-    The topic will be continued in chapter: :ref:`Type Annotation`
 
 
 Assignments

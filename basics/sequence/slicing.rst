@@ -9,15 +9,14 @@ Accessing range of elements
 ===========================
 .. highlights::
     * Slice Index must be positive or negative ``int`` or zero
+    * ``my_sequence[start:stop:step]``
+    * ``my_sequence[start:stop]``
     * Slice has three indexes:
 
-        - start (inclusive)
-        - stop (exclusive)
-        - step
+        - start (inclusive), default: 0
+        - stop (exclusive), default: len(...)
+        - step, default: 1
 
-
-Accessing slice from start
-==========================
 .. code-block:: python
 
     text = 'We choose to go to the Moon!'
@@ -25,6 +24,9 @@ Accessing slice from start
     len(text)
     # 28
 
+
+Accessing slice from start
+==========================
 .. code-block:: python
 
     text = 'We choose to go to the Moon!'
@@ -92,9 +94,8 @@ Every ``n-th`` element
 
     text[::2]             # 'W hoet ot h on'
 
-Reversing
----------
 .. code-block:: python
+    :caption: Reversing
 
     text = 'We choose to go to the Moon!'
 
@@ -114,6 +115,8 @@ Accessing slice not existing elements
 
 Accessing slice from all elements
 =================================
+* Used in ``numpy``
+
 .. code-block:: python
 
     text = 'We choose to go to the Moon!'
@@ -151,6 +154,16 @@ Arithmetic operations on slice indexes
 
     text[first:last:step]       # ' soc!'
     text[first-1:last:step]     # 'eoh'
+
+.. code-block:: python
+
+    text = 'We choose to go to the Moon!'
+
+    start = text.find('Moon')   # 23
+    stop = start + 4
+
+    text[start:stop]
+    # Moo
 
 
 Slicing sequences
@@ -271,6 +284,12 @@ Simple collections
     #. Stwórz zbiór ``c`` z co drugim elementem ``a`` i ``b``
     #. Wypisz ``c``
 
+:Output:
+    .. code-block:: python
+
+        c: set
+        # {0, 2, 4}
+
 :The whys and wherefores:
     * Defining and using ``list``, ``tuple``, ``set``
     * Slice data structures
@@ -337,75 +356,42 @@ Split train/test
             (4.6, 3.1, 1.5, 0.2, 'setosa'),
         ]
 
+:Output:
+    .. code-block:: python
+
+        header: tuple
+        # ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
+
+        train: List[tuple]
+        # [(5.8, 2.7, 5.1, 1.9, 'virginica'),
+        #  (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        #  (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        #  (6.3, 2.9, 5.6, 1.8, 'virginica'),
+        #  (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+        #  (4.7, 3.2, 1.3, 0.2, 'setosa'),
+        #  (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+        #  (7.6, 3.0, 6.6, 2.1, 'virginica'),
+        #  (4.9, 3.0, 1.4, 0.2, 'setosa'),
+        #  (4.9, 2.5, 4.5, 1.7, 'virginica'),
+        #  (7.1, 3.0, 5.9, 2.1, 'virginica'),
+        #  (4.6, 3.4, 1.4, 0.3, 'setosa')]
+
+        test: List[tuple]
+        # [(5.4, 3.9, 1.7, 0.4, 'setosa'),
+        #  (5.7, 2.8, 4.5, 1.3, 'versicolor'),
+        #  (5.0, 3.6, 1.4, 0.3, 'setosa'),
+        #  (5.5, 2.3, 4.0, 1.3, 'versicolor'),
+        #  (6.5, 3.0, 5.8, 2.2, 'virginica'),
+        #  (6.5, 2.8, 4.6, 1.5, 'versicolor'),
+        #  (6.3, 3.3, 6.0, 2.5, 'virginica'),
+        #  (6.9, 3.1, 4.9, 1.5, 'versicolor'),
+        #  (4.6, 3.1, 1.5, 0.2, 'setosa')]
+
 :The whys and wherefores:
     * Using nested sequences
     * Using slices
     * Type casting
     * Magic Number
-
-Iris dataset
-------------
-* Complexity level: medium
-* Lines of code to write: 30 lines
-* Estimated time of completion: 20 min
-* Filename: :download:`solution/slice_iris.py`
-
-:English:
-    #. For input data (see below)
-    #. Use only ``slice``
-    #. Extract list ``features`` with measurements (every row must be tuple)
-    #. Extract species name (every fifth element) and write to ``labels`` list
-    #. Write unique species names to ``species`` set
-
-:Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
-    #. Użyj tylko ``slice``
-    #. Wyodrębnij listę ``features`` z pomiarami (każdy wiersz ma być krotką)
-    #. Wyodrębnij nazwę gatunku (co piąty element) i zapisz do listy ``labels``
-    #. Zapisz unikalne nazwy gatunków do zbioru ``species``
-
-:Input:
-    .. code-block:: python
-
-        INPUT = (
-            5.8, 2.7, 5.1, 1.9, 'virginica',
-            5.1, 3.5, 1.4, 0.2, 'setosa',
-            5.7, 2.8, 4.1, 1.3, 'versicolor',
-            6.3, 2.9, 5.6, 1.8, 'virginica',
-            6.4, 3.2, 4.5, 1.5, 'versicolor',
-            4.7, 3.2, 1.3, 0.2, 'setosa',
-        )
-
-:Output:
-    .. code-block:: python
-
-        features = [
-            (5.8, 2.7, 5.1, 1.9),
-            (5.1, 3.5, 1.4, 0.2),
-            (5.7, 2.8, 4.1, 1.3),
-            (6.3, 2.9, 5.6, 1.8),
-            (6.4, 3.2, 4.5, 1.5),
-            (4.7, 3.2, 1.3, 0.2),
-        ]
-
-        labels = [
-            'virginica',
-            'setosa',
-            'versicolor',
-            'virginica',
-            'versicolor',
-            'setosa',
-        ]
-
-        species = {
-            'versicolor',
-            'setosa',
-            'virginica',
-        }
-
-:The whys and wherefores:
-    * Defining and using ``list``, ``tuple``, ``set``
-    * Slicing sequences
 
 Slicing text
 ------------
@@ -423,7 +409,7 @@ Slicing text
 :Polish:
     #. Dla danych wejściowych (patrz sekcja input)
     #. Oczekiwana wartość ``Jana III Sobieskiego``
-    #. Wykorzystaj tylko ``slice`` oczyszczenia każdej zmiennej
+    #. Wykorzystaj tylko ``slice`` do oczyszczenia każdej zmiennej
     #. Porównaj wyniki z danymi wyjściowymi (patrz sekcja output)
 
 :Input:

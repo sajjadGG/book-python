@@ -1,5 +1,3 @@
-expected = 'Jana III Sobieskiego'
-
 a = 'ul Jana III SobIESkiego'
 b = '\tul. Jana trzeciego Sobieskiego'
 c = 'ulicaJana III Sobieskiego'
@@ -22,12 +20,14 @@ h = h.upper().replace('3', 'III').strip().title().replace('Iii', 'III')
 i = i.upper().replace('\t', ' ').strip().title().replace('Iii', 'III')
 
 
-print(f'{a == expected}\t a: "{a}"')
-print(f'{b == expected}\t b: "{b}"')
-print(f'{c == expected}\t c: "{c}"')
-print(f'{d == expected}\t d: "{d}"')
-print(f'{e == expected}\t e: "{e}"')
-print(f'{f == expected}\t f: "{f}"')
-print(f'{g == expected}\t g: "{g}"')
-print(f'{h == expected}\t h: "{h}"')
-print(f'{i == expected}\t i: "{i}"')
+expected = 'Jana III Sobieskiego'
+
+print('a:', a == expected, a, sep='\t')
+print('b:', b == expected, b, sep='\t')
+print('c:', c == expected, c, sep='\t')
+print('d:', d == expected, d, sep='\t')
+print('e:', e == expected, e, sep='\t')
+print('f:', f == expected, f, sep='\t')
+print('g:', g == expected, g, sep='\t')
+print('h:', h == expected, h, sep='\t')
+print('i:', i == expected, i, sep='\t')

@@ -6,6 +6,7 @@ Sequence ``set``
 .. highlights::
     * Only unique values
     * Mutable - can add, remove, and modify items
+    * Can store elements of any **hashable** types
 
 
 Initializing
@@ -15,48 +16,32 @@ Initializing
     * Do not record order of insertion
     * Do not support indexing
     * Do not support slicing
-
-Initialize empty
-----------------
-.. highlights::
-    * Defining only with ``set()``
-
-.. code-block:: python
-
-    my_set = set()
-
-Initialize with one element
----------------------------
-.. highlights::
+    * Defining only with ``set()`` - no short syntax
     * Comma after last element is optional
     * Brackets are required
 
 .. code-block:: python
+    :caption: Initialize empty
+
+    my_set = set()
+
+.. code-block:: python
+    :caption: Initialize with one element
 
     my_set = {1}
     my_set = {1,}
 
-Initialize with many elements
------------------------------
-.. highlights::
-    * Brackets are required
-    * Only unique values
-    * Can store elements of any **hashable** types
-
 .. code-block:: python
+    :caption: Initialize with many elements. Stores only unique values.
 
     my_set = {1, 3, 1}
     # {1, 3}
-
-.. code-block:: python
 
     my_set = {1, 2.0, 'Jan'}
     # {1, 2.0, 'Jan'}
 
     my_set = {1, 2.0, (3, 4)}
     # {1, 2.0, (3, 4)}
-
-.. code-block:: python
 
     my_set = {1, 2.0, [3, 4]}
     # TypeError: unhashable type: 'list'
@@ -75,8 +60,9 @@ Initialize with many elements
     {1, 1.0}
     # {1}
 
+
 Type Annotation
----------------
+===============
 .. code-block:: python
 
     my_set: set = set()
@@ -149,13 +135,13 @@ Converting ``list`` to ``set``
 
     names = [
         'Twardowski',
-        'Иванович',
+        'Twardowski',
         'Jiménez',
         'Twardowski'
     ]
 
     unique_names = set(names)
-    # {'Twardowski', 'Иванович', 'Jiménez'}
+    # {'Twardowski', 'Jiménez'}
 
 Converting ``tuple`` to ``set``
 -------------------------------
@@ -164,13 +150,13 @@ Converting ``tuple`` to ``set``
 
     names = (
         'Twardowski',
-        'Иванович',
+        'Twardowski',
         'Jiménez',
         'Twardowski'
     )
 
     unique_names = set(names)
-    # {'Twardowski', 'Иванович', 'Jiménez'}
+    # {'Twardowski', 'Jiménez'}
 
 
 Membership Operators
@@ -187,8 +173,8 @@ Not equals
 ----------
 .. code-block:: python
 
-    {1, 2, 3} != {1, 2}     # True
     {1, 2} != {1, 2}        # False
+    {1, 2, 3} != {1, 2}     # True
 
 Contains
 --------
@@ -231,16 +217,19 @@ Missing
 .. code-block:: python
 
     {1,2} <= {3,4}              # False
+    {1,2} < {3,4}               # False
 
 .. code-block:: python
 
     {1,2} <= {1,2}              # True
     {1,2} <= {1,2,3}            # True
+    {1,2,3} <= {1,2}            # False
 
 .. code-block:: python
 
-    {1,2} < {1,2,3}             # True
     {1,2} < {1,2}               # False
+    {1,2} < {1,2,3}             # True
+    {1,2,3} < {1,2}             # False
 
 ``set.issuperset()``
 --------------------
@@ -249,13 +238,14 @@ Missing
 
 .. code-block:: python
 
-    {1,2} > {1,2,3}             # False
     {1,2} > {1,2}               # False
+    {1,2} > {1,2,3}             # False
     {1,2,3} > {1,2}             # True
 
 .. code-block:: python
 
     {1,2} >= {1,2}              # True
+    {1,2} >= {1,2,3}            # False
     {1,2,3} >= {1,2}            # True
 
 ``set.union()``
@@ -334,8 +324,8 @@ Create
 
 :Polish:
     #. Dla danych wejściowych (patrz sekcja input)
-    #. Stwórz ``set`` reprezentujący pierwszy wiersz
-    #. Wartości z drugiego wiersza dodawaj do ``set`` za pomocą ``.add()``
+    #. Stwórz ``my_set: set`` reprezentujący pierwszy wiersz
+    #. Wartości z drugiego wiersza dodawaj do ``my_set`` za pomocą ``.add()``
     #. Na podstawie trzeciego wiersza stwórz ``set`` i dodaj go za pomocą ``.update()``
     #. Na podstawie czwartego wiersza stwórz ``tuple`` i dodaj go za pomocą ``.update()``
     #. Na podstawie piątego wiersza stwórz ``list`` i dodaj go za pomocą ``.update()``

@@ -18,6 +18,10 @@ Syntax
 
     /basics/syntax/syntax.rst
 
+    /basics/builtin/operators.rst
+    /basics/builtin/functions.rst
+    /basics/builtin/type-annotations.rst
+
 *****
 Types
 *****

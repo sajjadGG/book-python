@@ -3,8 +3,8 @@ Type ``bool``
 *************
 
 
-Defining ``bool``
-=================
+Type Definition
+===============
 .. highlights::
     * ``True`` - Positive value
     * ``False`` - Negative value
@@ -14,33 +14,6 @@ Defining ``bool``
 
     my_var = True               # True
     my_var = False              # False
-
-.. code-block:: python
-
-    my_var: bool = True         # True
-    my_var: bool = False        # False
-
-
-Converting to ``bool``
-======================
-.. highlights::
-    * Also known as "type casting"
-    * ``bool()`` converts argument to ``bool``
-
-.. code-block:: python
-
-    bool(1)                     # True
-    bool(0)                     # False
-
-.. code-block:: python
-
-    bool(1.0)                   # True
-    bool(0.0)                   # False
-
-.. code-block:: python
-
-    bool('Jan Twardowski')      # True
-    bool('')                    # False
 
 
 Negative values
@@ -131,21 +104,6 @@ Using both: ``or`` and ``and``
     False and False or True     # True
 
 
-Logic operators
-===============
-.. csv-table:: Logic operators
-    :header-rows: 1
-    :widths: 15, 25, 60
-
-    "Operand", "Example", "Description"
-    "``x < y``", "``x < 18``", "value of ``x`` is less than ``y``"
-    "``x <= y``", "``x <= 18``", "value of ``x`` is less or equal ``y``"
-    "``x > y``", "``x > 18``", "value of ``x`` is greater than ``y``"
-    "``x >= y``", "``x >= 18``", "value of ``x`` is greater or equal than ``y``"
-    "``x == y``", "``x == 18``", "value of ``x`` is equal to ``y``"
-    "``x != y``", "``x != 18``", "value of ``x`` is not equal to ``y``"
-
-
 Assignments
 ===========
 
@@ -202,9 +160,11 @@ To ``bool`` or not to ``bool``
 
 :English:
     #. What you need to put in expressions to get the expected outcome?
+    #. Insert only ``True`` or ``False``
 
 :Polish:
     #. Co należy podstawić w wyrażeniach aby otrzymać wartość oczekiwaną?
+    #. Wstawiaj tylko ``True`` lub ``False``
 
 :Input:
     .. code-block:: python
@@ -221,14 +181,14 @@ To ``bool`` or not to ``bool``
 :Output:
     .. code-block:: python
 
-        print(a)                                # True
-        print(b)                                # True
-        print(c)                                # True
-        print(d)                                # True
-        print(e)                                # True
-        print(f)                                # False
-        print(g)                                # True
-        print(h)                                # False
+        print(bool(a))                          # True
+        print(bool(b))                          # True
+        print(bool(c))                          # True
+        print(bool(d))                          # True
+        print(bool(e))                          # True
+        print(bool(f))                          # False
+        print(bool(g))                          # True
+        print(bool(h))                          # False
 
 :The whys and wherefores:
     * Defining variables

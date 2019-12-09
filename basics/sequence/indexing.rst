@@ -12,10 +12,8 @@ Accessing element with index
     * Index must be less or equal to length of object
     * Negative index starts from the end and go right to left
 
-
-Indexing from start
--------------------
 .. code-block:: python
+    :caption: Indexing from start
 
     text = 'We choose to go to the Moon!'
 
@@ -23,31 +21,32 @@ Indexing from start
     text[1]         # 'e'
     text[23]        # 'M'
 
-Indexing from the end
----------------------
 .. code-block:: python
+    :caption: Indexing from the end
 
     text = 'We choose to go to the Moon!'
 
     text[-1]        # '!'
     text[-5]        # 'M'
 
-Accessing not existing element
-------------------------------
 .. code-block:: python
+    :caption: Accessing not existing element
 
     text = 'We choose to go to the Moon!'
 
     text[100]
     # IndexError: string index out of range
 
+    text[-100]
+    # IndexError: string index out of range
 
-Indexing data structures
-========================
 
-Indexing ``str``
-----------------
+Indexing sequences
+==================
+* Indexes on ``set`` are not possible
+
 .. code-block:: python
+    :caption: Indexing ``str``
 
     DATA = 'abcde'
 
@@ -59,12 +58,8 @@ Indexing ``str``
     DATA[-1]            # 'e'
     DATA[-2]            # 'd'
 
-Indexing ``list``
---------------------
-.. highlights::
-    * Indexes works the same like for ``str``
-
 .. code-block:: python
+    :caption: Indexing ``list``
 
     DATA = ['a', 'b', 'c', 'd', 'e']
 
@@ -76,12 +71,8 @@ Indexing ``list``
     DATA[-1]            # 'e'
     DATA[-2]            # 'd'
 
-Indexing ``tuple``
---------------------
-.. highlights::
-    * Indexes works the same like for ``str``
-
 .. code-block:: python
+    :caption: Indexing ``tuple``
 
     DATA = ('a', 'b', 'c', 'd', 'e')
 
@@ -93,13 +84,8 @@ Indexing ``tuple``
     DATA[-1]            # 'e'
     DATA[-2]            # 'd'
 
-
-Indexing ``set``
-----------------
-.. highlights::
-    * Indexes on ``set`` are not possible
-
 .. code-block:: python
+    :caption: Indexing ``set``. Indexes on ``set`` are not possible
 
     DATA = {'a', 'b', 'c', 'd', 'e'}
 
@@ -110,43 +96,6 @@ Indexing ``set``
     DATA[-0]            # TypeError: 'set' object is not subscriptable
     DATA[-1]            # TypeError: 'set' object is not subscriptable
     DATA[-2]            # TypeError: 'set' object is not subscriptable
-
-Indexing ``dict``
------------------
-.. highlights::
-    * Indexes on ``dict`` are not possible
-
-.. code-block:: python
-
-    DATA = {
-        'a': 0
-        'b': 1,
-        'c': 2,
-    }
-
-    DATA[0]             # KeyError: 0
-    DATA[1]             # KeyError: 1
-    DATA[2]             # KeyError: 2
-
-    DATA[-0]            # KeyError: 0
-    DATA[-1]            # KeyError: -1
-    DATA[-2]            # KeyError: -2
-
-.. code-block:: python
-
-    DATA = {
-        0: 'a',
-        1: 'b',
-        2: 'c',
-    }
-
-    DATA[0]             # 'a'
-    DATA[1]             # 'b'
-    DATA[2]             # 'c'
-
-    DATA[-0]            # 'a'
-    DATA[-1]            # KeyError: -1
-    DATA[-2]            # KeyError: -2
 
 
 Assignments
@@ -161,21 +110,21 @@ Select
 
 :English:
     #. For given data input (see below)
-    #. Write header (first line) to ``header`` variable
-    #. Create ``output: list``
-    #. Convert to ``list`` data from row 2, 6, 9 and add to ``output``
-    #. Convert to ``tuple`` data from row 12, 15, 16 and add to ``output``
-    #. Add empty ``set`` to ``output``
+    #. Write header (first line) to ``header: tuple`` variable
+    #. Create ``OUTPUT: list``
+    #. Convert to ``list`` data from row 2, 6, 9 and add to ``OUTPUT``
+    #. Convert to ``tuple`` data from row 12, 15, 16 and add to ``OUTPUT``
+    #. Add empty ``set`` to ``OUTPUT``
     #. Use only indexes
     #. Do not use ``for``, ``while`` or ``slice()``
 
 :Polish:
     #. Dla danych wejściowych (patrz sekcja input)
-    #. Zapisz nagłówek (pierwsza linia) do zmiennej ``header``
-    #. Stwórz ``output: list``
-    #. Przekonwertuj do ``list`` dane z wierszy 2, 6, 9 i dodaj do ``output``
-    #. Przekonwertuj do ``tuple`` dane z wierszy 12, 15, 16 i dodaj do ``output``
-    #. Dodaj pusty ``set`` do ``output``
+    #. Zapisz nagłówek (pierwsza linia) do zmiennej ``header: tuple``
+    #. Stwórz ``OUTPUT: list``
+    #. Przekonwertuj do ``list`` dane z wierszy 2, 6, 9 i dodaj do ``OUTPUT``
+    #. Przekonwertuj do ``tuple`` dane z wierszy 12, 15, 16 i dodaj do ``OUTPUT``
+    #. Dodaj pusty ``set`` do ``OUTPUT``
     #. Użyj tylko indeksów
     #. Nie używaj ``for``, ``while`` lub ``slice()``
 
@@ -206,6 +155,18 @@ Select
             (6.9, 3.1, 4.9, 1.5, 'versicolor'),
             (4.6, 3.1, 1.5, 0.2, 'setosa'),
         ]
+
+:Output:
+    .. code-block:: python
+
+        OUTPUT: list
+        # [[5.1, 3.5, 1.4, 0.2, 'setosa'],
+        #  [4.7, 3.2, 1.3, 0.2, 'setosa'],
+        #  [4.9, 3.0, 1.4, 0.2, 'setosa'],
+        #  (4.6, 3.4, 1.4, 0.3, 'setosa'),
+        #  (5.0, 3.6, 1.4, 0.3, 'setosa'),
+        #  (5.5, 2.3, 4.0, 1.3, 'versicolor'),
+        #  set()]
 
 :The whys and wherefores:
     * Using nested data structures

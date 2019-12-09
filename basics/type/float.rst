@@ -3,85 +3,41 @@ Type ``float``
 **************
 
 
-Defining ``float``
-==================
+Type Definition
+===============
+* Notation without leading or trailing zero is used by ``numpy``
+
 .. code-block:: python
 
     value = 13.37           # 13.37
     value = -13.37          # -13.37
 
 .. code-block:: python
-
-    value: float = 13.37    # 13.37
-
-Notation without leading or trailing zero
------------------------------------------
-.. highlights::
-    * Used by ``numpy``
-
-.. code-block:: python
+    :caption: Notation without leading or trailing zero
 
     value = 10.             # 10.0
     value = .44             # 0.44
 
-Engineering notation
---------------------
 .. code-block:: python
+    :caption: Engineering notation
 
     million = 1e6           # 1000000.0
     million = 1E6           # 1000000.0
 
-.. code-block:: python
-
     +1e6                    # 1000000.0
     -1e6                    # -1000000.0
-
-.. code-block:: python
 
     1e-3                    # 0.001
     1e-4                    # 0.0001
     1e-5                    # 1e-05
     1e-6                    # 1e-06
 
-.. code-block:: python
-
     1.337 * 1e3             # 1337.0
     1.337 * 1e-3            # 0.001337
 
 
-Converting to ``float``
-=======================
-.. highlights::
-    * Also known as "type casting"
-    * ``float()`` converts argument to ``float``
-
-.. code-block:: python
-
-    float(10)               # 10.0
-    float(-10)              # -10.0
-
-    float(10.5)             # 10.5
-    float(-10.5)            # -10.5
-
-.. code-block:: python
-
-    float(13.37)            # 13.37
-    float(-13.37)           # -13.37
-
-.. code-block:: python
-
-    float('+13.37')         # 13.37
-    float('-13.37')         # -13.37
-
-    float('13,37')          # ValueError: could not convert string to float: '13,37'
-    float('-13,37')         # ValueError: could not convert string to float: '-13,37'
-
-
-Numeric Functions
-=================
-
 Rounding numbers
-----------------
+================
 .. code-block:: python
 
     pi = 3.14159265359
@@ -93,30 +49,6 @@ Rounding numbers
     print(f'{pi:.2f}')      # 3.14
     print(f'{pi:.4f}')      # 3.1416
 
-Absolute value
---------------
-.. code-block:: python
-
-    abs(13.37)              # 13.37
-    abs(-13.37)             # 13.37
-
-Number to the ``n-th`` power
-----------------------------
-.. code-block:: python
-
-    pow(2, -1)              # 0.5
-    pow(1.337, 3)           # 2.389979753
-
-    pow(4, 0.5)             # 2.0
-    pow(2, 0.5)             # 1.4142135623730951
-
-.. code-block:: python
-
-    2 ** -1                 # 0.5
-    1.337 ** 3              # 2.389979753
-
-    4 ** 0.5                # 2.0
-    2 ** 0.5                # 1.4142135623730951
 
 Assignments
 ===========
@@ -126,17 +58,19 @@ Example
 * Complexity level: easy
 * Lines of code to write: 13 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/float_si_units.py`
+* Filename: :download:`solution/float_example.py`
 
 :English:
-    * Input data (see below)
-    * Use Imperial (US) measurements system
-    * Convert to metric (SI) system
+    #. Input data (see below)
+    #. Use Imperial (US) measurements system
+    #. Convert to metric (SI) system
+    #. Speed limit round to one decimal place
 
 :Polish:
-    * Dane wejściowe (patrz sekcja input)
-    * Używają system Imperialny (US)
-    * Przelicz je na system metryczny (układ SI)
+    #. Dane wejściowe (patrz sekcja input)
+    #. Używają system Imperialny (US)
+    #. Przelicz je na system metryczny (układ SI)
+    #. Ograniczenie prędkości zaokrąglij do jednego miejsca po przecinku
 
 :Input:
     * Plane altitude: 10.000 ft
@@ -144,7 +78,7 @@ Example
     * Speed limit: 75 mph
 
 :Solution:
-    .. literalinclude:: solution/float_si_units.py
+    .. literalinclude:: solution/float_example.py
         :language: python
 
 :The whys and wherefores:
@@ -157,7 +91,7 @@ Handling user input and type casting
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/float_example.py`
+* Filename: :download:`solution/float_distance.py`
 
 :English:
     #. Declare variable for holding value of 1337 meters

@@ -13,45 +13,41 @@ Initializing
 .. highlights::
     * ``[]`` is used more often
     * ``list()`` is more readable
-
-Initialize empty
-----------------
-.. code-block:: python
-
-    my_list = []
-    my_list = list()
-
-Initialize with one element
----------------------------
-.. highlights::
     * Comma after last element is optional
     * Brackets are required
 
 .. code-block:: python
+    :caption: Initialize empty
+
+    my_list = []
+    my_list = list()
+
+.. code-block:: python
+    :caption: Initialize with one element
 
     my_list = [1]
     my_list = [1,]
 
-Initialize with many elements
------------------------------
-.. highlights::
-    * Brackets are required
-
 .. code-block:: python
+    :caption: Initialize with many elements
 
     my_list = [1, 2.0, None, False, 'Iris']
+    my_list = [1, 2.0, None, False, 'Iris',]
 
 .. code-block:: python
 
     alphabet = list('ABCDE')
     # ['A', 'B', 'C', 'D', 'E']
 
+
 Type Annotation
----------------
+===============
 .. code-block:: python
 
     my_list: list = list()
     my_list: list = []
+
+.. code-block:: python
 
     my_list: list = ['a', 1, 2.2]
 
@@ -66,15 +62,9 @@ Type Annotation
 
 Adding elements
 ===============
-
-Extending lists
----------------
-.. code-block:: python
-
-    my_list = [1, 2]
-
-    my_list.extend([3, 4])
-    # [1, 2, 3, 4]
+* ``list + list``
+* ``list.extend()``
+* ``list.append()``
 
 .. code-block:: python
 
@@ -83,9 +73,16 @@ Extending lists
     my_list + [3, 4]
     # [1, 2, 3, 4]
 
-Appending elements
-------------------
 .. code-block:: python
+    :caption: Extending lists
+
+    my_list = [1, 2]
+
+    my_list.extend([3, 4])
+    # [1, 2, 3, 4]
+
+.. code-block:: python
+    :caption: Appending single item
 
     my_list = [1, 2]
 
@@ -93,6 +90,7 @@ Appending elements
     # [1, 2, 3]
 
 .. code-block:: python
+    :caption: Appending multiple items
 
     my_list = [1, 2]
 
@@ -115,8 +113,12 @@ Inserting elements at specific position
     my_list.insert(1, 'a')
     # [1, 'a', 2]
 
-Accessing elements
-==================
+
+Modification
+============
+
+Getting items
+-------------
 .. highlights::
     * More in :ref:`Sequence Indexing` and :ref:`Sequence Slicing`
 
@@ -126,56 +128,72 @@ Accessing elements
 
     my_list[0]         # 'a'
     my_list[1]         # 'b'
+    my_list[2]         # 'c'
     my_list[3]         # 'd'
 
+Setting items
+-------------
 .. code-block:: python
 
     my_list = ['a', 'b', 'c', 'd']
 
-    my_list[-1]        # 'd'
-    my_list[-3]        # 'b'
+    my_list[0] = 'x'
 
-Removing items
-==============
+    print(my_list)
+    # ['x', 'b', 'c', 'd']
+
+Deleting items
+--------------
+.. code-block:: python
+
+    my_list = ['a', 'b', 'c', 'd']
+
+    del my_list[3]
+
+    print(my_list)
+    # ['a', 'b', 'c']
+
 .. code-block:: python
 
     my_list = ['a', 'b', 'c', 'd']
 
     my_list.pop()
-    # 2
+    # 'd'
 
     print(my_list)
-    # [1]
+    # ['a', 'b', 'c']
+
 
 Sorting
 =======
+.. epigraph::
+    Timsort is a hybrid sorting algorithm, derived from merge sort and insertion sort, designed to perform well on many kinds of real-world data. It was invented by Tim Peters in 2002 for use in the Python programming language. The algorithm finds subsets of the data that are already ordered, and uses the subsets to sort the data more efficiently. This is done by merging an identified subset, called a run, with existing runs until certain criteria are fulfilled. Timsort has been Python's standard sorting algorithm since version 2.3. It is now also used to sort arrays in Java SE 7, and on the Android platform.
 
-``sorted()``
-------------
 .. highlights::
-    * Returns sorted list
-    * Do not modify the object
+    * ``sorted()`` - Returns sorted list, do not modify the original
+    * ``list.sort()`` - Changes object permanently, returns None
 
 .. code-block:: python
 
     a = [3, 1, 2]
     b = sorted(a)
 
-    print(a)    # [3, 1, 2]
-    print(b)    # [1, 2, 3]
+    print(a)
+    # [3, 1, 2]
 
-``list.sort()``
----------------
-.. highlights::
-    * Changes object permanetly
+    print(b)
+    # [1, 2, 3]
 
 .. code-block:: python
 
     a = [3, 1, 2]
     b = a.sort()
 
-    print(a)    # [1, 2, 3]
-    print(b)    # None
+    print(a)
+    # [1, 2, 3]
+
+    print(b)
+    # None
 
 
 Multiple statements in one line
@@ -187,27 +205,30 @@ Multiple statements in one line
     my_list.sort().append(4)
     # AttributeError: 'NoneType' object has no attribute 'append'
 
+.. code-block:: python
+
+    my_list = [3, 1, 2]
+    my_list.sort()
+    my_list.append(4)
+
+    print(my_list)
+    # [1, 2, 3, 4]
+
 
 Membership Operators
 ====================
+* ``==`` - Eq (equals)
+* ``!=`` - Ne (not-equals)
+* ``in`` - Contains
+* ``not in`` - Missing
 
-Equals
-------
 .. code-block:: python
 
     [1, 2] == [1, 2]        # True
     [1, 2] == [2, 1]        # False
 
-Not equals
-----------
-.. code-block:: python
-
     [1, 2, 3] != [1, 2]     # True
     [1, 2] != [1, 2]        # False
-
-Contains
---------
-.. code-block:: python
 
     1 in [1, 2]             # True
     3 in [1, 2]             # False
@@ -215,9 +236,8 @@ Contains
     [2] in [1, 2]           # False
     [1, 2] in [1, 2]        # False
 
-Missing
--------
-.. code-block:: python
+    [2] in [1, [2]]         # False
+    [1, 2] in [[1,2], 3]    # True
 
     4 not in [1, 2]         # True
     1 not in [1, 2]         # False
@@ -228,42 +248,23 @@ Missing
 
 Built-in functions on sequences
 ===============================
+* ``min()`` - Minimal value
+* ``max()`` - Maximal value
+* ``sum()`` - Sum of elements
+* ``len()`` - Length of a list
 
-``min()``
----------
 .. code-block:: python
 
-    numbers = [1, 2, 3, 4, 5]
-
-    min(numbers)
+    min([1, 2, 3, 4, 5])
     # 1
 
-``max()``
----------
-.. code-block:: python
-
-    numbers = [1, 2, 3, 4, 5]
-
-    max(numbers)
+    max([1, 2, 3, 4, 5])
     # 5
 
-``sum()``
----------
-.. code-block:: python
-
-    numbers = [1, 2, 3, 4, 5]
-
-    sum(numbers)
+    sum([1, 2, 3, 4, 5])
     # 15
 
-
-Length of a ``list``
-====================
-.. code-block:: python
-
-    my_list = [1, 2, 3]
-
-    len(my_list)
+    len([1, 2, 3])
     # 3
 
 
@@ -296,6 +297,15 @@ Create
         "5.7", "2.8", "4.1", "1.3", "versicolor"
         "6.3", "2.9", "5.6", "1.8", "virginica"
         "6.4", "3.2", "4.5", "1.5", "versicolor"
+
+:Output:
+    .. code-block:: python
+
+        a = [5.8, 2.7, 5.1, 1.9, 'virginica']
+        b = [5.1, 3.5, 1.4, 0.2, 'setosa']
+        c = [5.7, 2.8, 4.1, 1.3, 'versicolor']
+        d = [6.3, 2.9, 5.6, 1.8, 'virginica']
+        e = [6.4, 3.2, 4.5, 1.5, 'versicolor']
 
 :The whys and wherefores:
     * Defining ``list``

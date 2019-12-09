@@ -34,8 +34,13 @@ Appending elements
         (7.6, 3.0, 6.6, 2.1, 'virginica'),
     ]
 
-    element = (4.9, 2.5, 4.5, 1.7, 'virginica')
-    DATA.append(element)
+    row = (4.9, 2.5, 4.5, 1.7, 'virginica')
+    DATA.append(row)
+    # [(4.7, 3.2, 1.3, 0.2, 'setosa'),
+    #  (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+    #  (7.6, 3.0, 6.6, 2.1, 'virginica'),
+    #  (4.9, 2.5, 4.5, 1.7, 'virginica')]
+
 
 .. code-block:: python
 
@@ -45,7 +50,16 @@ Appending elements
         (7.6, 3.0, 6.6, 2.1, 'virginica'),
     ]
 
-    DATA.append((4.9, 3.0, 1.4, 0.2, 'setosa'))
+    row = (4.9, 2.5, 4.5, 1.7, 'virginica')
+    DATA.append(row)
+    # [(4.7, 3.2, 1.3, 0.2, 'setosa'),
+    #  (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+    #  (7.6, 3.0, 6.6, 2.1, 'virginica'),
+    #  4.9,
+    #  2.5,
+    #  4.5,
+    #  1.7,
+    #  'virginica']
 
 Length
 ------
@@ -86,6 +100,90 @@ Type Annotation
         (7.0, 3.2, 4.7, 1.4, 'versicolor'),
         (7.6, 3.0, 6.6, 2.1, 'virginica'),
     ]
+
+
+``list`` of ``list``
+====================
+.. highlights::
+    * Multidimensional lists
+
+.. code-block:: python
+
+    DATA = [[1,2,3],[4,5,6],[7,8,9]]
+
+.. code-block:: python
+
+    DATA = [[1,2,3], [4,5,6], [7,8,9]]
+
+.. code-block:: python
+
+    DATA = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+.. code-block:: python
+
+    DATA = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+    ]
+
+Getting elements
+----------------
+.. code-block:: python
+
+    DATA = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+    ]
+
+    DATA[0][0]
+    # 1
+
+    DATA[0][2]
+    # 3
+
+    DATA[2][1]
+    # 8
+
+Length
+------
+.. code-block:: python
+
+    DATA = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+    ]
+
+    len(DATA)
+    # 3
+
+    len(DATA[2])
+    # 3
+
+Type Annotations
+----------------
+.. code-block:: python
+
+    from typing import List
+
+    DATA: List[list] = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+    ]
+
+.. code-block:: python
+
+    from typing import List
+
+    DATA: List[List[int]] = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+    ]
+
 
 ``list`` of ``dict``
 ====================
@@ -179,89 +277,6 @@ Type Annotation
         {'measurements': [4.7, 3.2, 1.3, 0.2], 'species': 'setosa'},
         {'measurements': [7.0, 3.2, 4.7, 1.4], 'species': 'versicolor'},
         {'measurements': [7.6, 3.0, 6.6, 2.1], 'species': 'virginica'},
-    ]
-
-
-``list`` of ``list``
-====================
-.. highlights::
-    * Multidimensional lists
-
-.. code-block:: python
-
-    DATA = [[1,2,3],[4,5,6],[7,8,9]]
-
-.. code-block:: python
-
-    DATA = [[1,2,3], [4,5,6], [7,8,9]]
-
-.. code-block:: python
-
-    DATA = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-
-.. code-block:: python
-
-    DATA = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
-    ]
-
-Getting elements
-----------------
-.. code-block:: python
-
-    DATA = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
-    ]
-
-    array[0][0]
-    # 1
-
-    array[0][2]
-    # 3
-
-    array[2][1]
-    # 8
-
-Length
-------
-.. code-block:: python
-
-    DATA = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
-    ]
-
-    len(DATA)
-    # 3
-
-    len(DATA[2])
-    # 3
-
-Type Annotations
-----------------
-.. code-block:: python
-
-    from typing import List
-
-    DATA: List[list] = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
-    ]
-
-.. code-block:: python
-
-    from typing import List
-
-    DATA: List[List[int]] = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
     ]
 
 

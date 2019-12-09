@@ -429,15 +429,15 @@ String cleaning
 
         expected = 'Jana III Sobieskiego'
 
-        print(f'{a == expected}\t a: "{a}"')
-        print(f'{b == expected}\t b: "{b}"')
-        print(f'{c == expected}\t c: "{c}"')
-        print(f'{d == expected}\t d: "{d}"')
-        print(f'{e == expected}\t e: "{e}"')
-        print(f'{f == expected}\t f: "{f}"')
-        print(f'{g == expected}\t g: "{g}"')
-        print(f'{h == expected}\t h: "{h}"')
-        print(f'{i == expected}\t i: "{i}"')
+        print('a:', a == expected, a, sep='\t')
+        print('b:', b == expected, b, sep='\t')
+        print('c:', c == expected, c, sep='\t')
+        print('d:', d == expected, d, sep='\t')
+        print('e:', e == expected, e, sep='\t')
+        print('f:', f == expected, f, sep='\t')
+        print('g:', g == expected, g, sep='\t')
+        print('h:', h == expected, h, sep='\t')
+        print('i:', i == expected, i, sep='\t')
 
 :The whys and wherefores:
     * Variable definition

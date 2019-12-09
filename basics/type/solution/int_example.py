@@ -1,14 +1,11 @@
-SECOND = 1
-MIN = 60 * SECOND
-HOUR = 60 * MIN
-DAY = 24 * HOUR
+BIT = 1
+KILOBIT = 1024 * BIT
+MEGABIT = 1024 * KILOBIT
 
-work_day = 8 * HOUR
-work_week = 40 * HOUR
-work_month = 22 * work_day
+BYTE = 8 * BIT
+KILOBYTE = 1024 * BYTE
+MEGABYTE = 1024 * KILOBYTE
 
-print(f'5 min = {5*MIN} sec')
-print(f'1 h = {HOUR} sec')
-print(f'work day = {work_day} sec')
-print(f'work month = {work_month} sec')
-print(f'work week = {work_week/MIN} min')
+print(f'1 MB in bit = {1*MEGABYTE / BIT}')
+print(f'1 MB in Mb = {1*MEGABYTE / MEGABIT} Mb')
+print(f'MB - Mb = {(MEGABYTE - MEGABIT) / BIT}')

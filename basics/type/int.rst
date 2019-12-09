@@ -3,8 +3,8 @@ Type ``int``
 ************
 
 
-Defining ``int``
-================
+Type Definition
+===============
 .. highlights::
     * In Python 3 there is not maximal ``int`` value
     * Python 3 dynamically extends ``int``, when it's too big
@@ -17,183 +17,25 @@ Defining ``int``
 
 .. code-block:: python
 
-    value: int = 30              # 30
-    value: int = -30             # -30
-
-.. code-block:: python
-
     million = 1000000        # 1000000
     million = 1_000_000      # 1000000
 
 
-Converting to ``int``
-=====================
-.. highlights::
-    * Also known as "type casting"
-    * ``int()`` converts argument to ``int``
-    * ``int()`` does not round numbers, it returns integer value
+Arithmetic Operators
+====================
+* ``+`` - Addition
+* ``-`` - Subtraction
+* ``*`` - Multiplication
+* ``**`` - Power
+* ``/`` - Division
 
 .. code-block:: python
 
-    int(10)                 # 10
-    int(10.0)               # 10
-    int(10.9)               # 10
-    int(13.37)              # 13
-    int(-13.37)             # -13
-    int('1')                # 1
-    int('-1')               # -1
-    int('13.37')            # ValueError: invalid literal for int() with base 10: '1.23'
-    int('-13.37')           # ValueError: invalid literal for int() with base 10: '-1.23'
-
-
-Numerical Operators
-===================
-
-Addition
---------
-.. csv-table:: Addition operators
-    :header: "Operand", "Description"
-    :widths: 15, 85
-
-    "``+x``", "``x``"
-    "``x + y``", "Sum ``x`` and ``y``"
-    "``x += y``", "Incremental addition"
-
-.. code-block:: python
-
-    value = 10 + 2
-
-    print(value)
-    # 12
-
-.. code-block:: python
-
-    value = 10
-    value += 2
-
-    print(value)
-    # 12
-
-Subtraction
------------
-.. csv-table:: Subtraction operators
-    :header: "Operand", "Description"
-    :widths: 15, 85
-
-    "``-x``", "``x`` negation"
-    "``x - y``", "Subtract ``x`` and ``y``"
-    "``x -= y``", "Incremental subtraction"
-
-.. code-block:: python
-
-    value = 10 - 2
-
-    print(value)
-    # 8
-
-.. code-block:: python
-
-    value = 10
-    value -= 2
-
-    print(value)
-    # 8
-
-Multiplication
---------------
-.. csv-table:: Multiplication operators
-    :header: "Operand", "Description"
-    :widths: 15, 85
-
-    "``x * y``", "Multiply ``x`` and ``y``"
-    "``x *= y``", "Incremental multiplication"
-    "``x ** y``", "``x`` to the power of ``y``"
-
-.. code-block:: python
-
-    value = 10 * 2
-
-    print(value)
-    # 20
-
-.. code-block:: python
-
-    value = 10
-    value *= 2
-
-    print(value)
-    # 20
-
-.. code-block:: python
-
-    10 ** 2         # 100
-    3 ** 4          # 81
-    -1 ** 2         # 1
-
-Division
---------
-.. csv-table:: Division operators
-    :header: "Operand", "Description"
-    :widths: 15, 85
-
-    "``x / y``", "Divide ``x`` and ``y``"
-    "``x /= y``", "Incremental division"
-    "``x // y``", "Quotient of division ``x`` by ``y``"
-    "``x % y``", "Modulo. Reminder of division ``x`` by ``y``"
-
-.. code-block:: python
-
-    value = 10 / 2
-
-    print(value)
-    # 5
-
-.. code-block:: python
-
-    value = 10
-    value /= 2
-
-    print(value)
-    # 5
-
-.. code-block:: python
-
-    10 // 2         # 5
-    10 % 2          # 0
-
-    10 // 3         # 3
-    10 % 3          # 1
-
-
-Numeric Functions
-=================
-
-Minimal value
--------------
-.. code-block:: python
-
-    min(3, 1, 5)    # 1
-
-Maximal value
--------------
-.. code-block:: python
-
-    max(3, 1, 5)    # 5
-
-Absolute value
---------------
-.. code-block:: python
-
-    abs(1)          # 1
-    abs(-1)         # 1
-
-Number to the ``n-th`` power
-----------------------------
-.. code-block:: python
-
-    pow(10, 2)      # 100
-    pow(3, 4)       # 81
-    pow(-1, 2)      # 1
+    10 + 2      # 12
+    10 - 2      # 8
+    10 * 2      # 20
+    10 ** 2     # 100
+    10 / 2      # 5
 
 
 Assignments
@@ -201,10 +43,41 @@ Assignments
 
 Example
 -------
+* Complexity level: medium
+* Lines of code to write: 5 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/int_example.py`
+
+:English:
+    #. Calculate how many bits is one Megabyte
+    #. How many times Megabyte is larger than Megabit?
+
+:Polish:
+    #. Oblicz ile bitów to jeden Megabajt
+    #. Ile razy Megabajt jest większy od Megabita?
+
+:Solution:
+    .. literalinclude:: solution/int_example.py
+        :language: python
+
+:The whys and wherefores:
+    * Defining constants and variables
+    * Naming convention
+    * Mathematical operations
+
+:Hint:
+    * 1 Kb = 1024 b
+    * 1 Mb = 1024 Kb
+    * 1 B = 8 b
+    * 1 KB = 1024 B
+    * 1 MB = 1024 KB
+
+Time
+----
 * Complexity level: easy
 * Lines of code to write: 12 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/int_example.py`
+* Filename: :download:`solution/int_time.py`
 
 :English:
     #. Calculate how many seconds is five minutes
@@ -220,10 +93,6 @@ Example
     #. Oblicz ile sekund to miesiąc pracy (22 dni po 8 godzin)
     #. Oblicz ile minut to tydzień pracy (40 godzin)
 
-:Solution:
-    .. literalinclude:: solution/int_example.py
-        :language: python
-
 :The whys and wherefores:
     * Defining constants and variables
     * Naming convention
@@ -232,33 +101,6 @@ Example
 :Hint:
     * 1 h = 60 min
     * 1 min = 60 s
-
-Megabits and Megabytes
-----------------------
-* Complexity level: medium
-* Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
-* Filename: :download:`solution/int_megabit_megabyte.py`
-
-:English:
-    #. Calculate how many bits is one Megabyte
-    #. How many times Megabyte is larger than Megabit?
-
-:Polish:
-    #. Oblicz ile bitów to jeden Megabajt
-    #. O ile różni się Megabajt od Megabita?
-
-:The whys and wherefores:
-    * Defining constants and variables
-    * Naming convention
-    * Mathematical operations
-
-:Hint:
-    * 1 Kb = 1024 b
-    * 1 Mb = 1024 Kb
-    * 1 B = 8 b
-    * 1 KB = 1024 B
-    * 1 MB = 1024 KB
 
 Download time
 -------------

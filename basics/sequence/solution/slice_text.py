@@ -7,11 +7,11 @@ f = 'lt. col. ret. Melissa Lewis'
 g = 'dr n. med. Ryan Stone'
 h = 'Ryan Stone, MD-PhD'
 
-print(a[4:-4])
-print(b[6:-8])
-print(c[4:])
-print(d[5:-4])
-print(e[6:])
+print(a[4:])
+print(b[8:-1])
+print(c[13:-11])
+print(d[10:])
+print(e[:-5])
 print(f[5:-4])
 print(g[:-7])
 print(h[4:-8])

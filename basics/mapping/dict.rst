@@ -421,6 +421,44 @@ Accessing ``dict`` keys, values and key-value pairs
     # ]
 
 
+Indexing ``dict``
+=================
+.. highlights::
+    * Indexes on ``dict`` are not possible
+
+.. code-block:: python
+
+    DATA = {
+        'a': 0
+        'b': 1,
+        'c': 2,
+    }
+
+    DATA[0]             # KeyError: 0
+    DATA[1]             # KeyError: 1
+    DATA[2]             # KeyError: 2
+
+    DATA[-0]            # KeyError: 0
+    DATA[-1]            # KeyError: -1
+    DATA[-2]            # KeyError: -2
+
+.. code-block:: python
+
+    DATA = {
+        0: 'a',
+        1: 'b',
+        2: 'c',
+    }
+
+    DATA[0]             # 'a'
+    DATA[1]             # 'b'
+    DATA[2]             # 'c'
+
+    DATA[-0]            # 'a'
+    DATA[-1]            # KeyError: -1
+    DATA[-2]            # KeyError: -2
+
+
 Create ``dict`` from two sequences
 ==================================
 

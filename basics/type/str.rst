@@ -5,35 +5,34 @@ Type ``str``
 ************
 
 
-Defining ``str``
-================
+Type Definition
+===============
 .. code-block:: python
 
-    name = ''
-    name = 'Jan Twardowski'
+    my_str = ''
+    my_str = 'Jan Twardowski'
+    my_str = "Jan Twardowski"
+    my_str = '''Jan Twardowski'''
+    my_str = """Jan Twardowski"""
 
 .. code-block:: python
+    :caption: Multiline ``str``
 
-    name: str = ''
-    name: str = 'Jan Twardowski'
-
-Multiline ``str``
------------------
-.. code-block:: python
-
-    text = """First line
+    my_str = """First line
     Second line
     Third line"""
     # 'First line\nSecond line\nThird line'
 
 .. code-block:: python
+    :caption: Multiline ``str``
 
-    text = """
+    my_str = """
         First line
         Second line
         Third line
     """
     # '\n        First line\n        Second line\n        Third line\n    '
+
 
 Single or double quote?
 =======================
@@ -41,61 +40,28 @@ Single or double quote?
     * ``"`` and ``'`` works the same
     * Choose one and keep consistency in code
     * Python console uses ``'``
-    * it matters for ``doctest``, which compares two outputs character by character
+    * It matters for ``doctest``, which compares two outputs character by character
+    * For multiline always use double quote characters to be consistent with the docstring convention :pep:`257`
 
 .. code-block:: python
-
-    name = "Jan Twardowski"
-    name = 'Jan Twardowski'
-    name = """Jan Twardowski"""
-    name = '''Jan Twardowski'''
-
-When use double quotes?
------------------------
-.. code-block:: python
+    :caption: When use double quotes?
 
     my_str = 'It\'s Twardowski\'s Moon.'
     my_str = "It's Twardowski's Moon."
 
-When use single quotes?
------------------------
 .. highlights::
     * HTML and XML uses double quotes
 
 .. code-block:: python
+    :caption: When use single quotes?
 
     my_str = '<a href="http://python.astrotech.io">Python and Machine Learning</a>'
 
-When use multiline?
--------------------
-.. highlights::
-    * Always use double quote characters to be consistent with the docstring convention :pep:`257`
-
 .. code-block:: python
+    :caption: For multiline always use double quote characters to be consistent with the docstring convention :pep:`257`
 
     my_str = """My name's "José Jiménez""""
-    my_str = '''My name's "José Jiménez"'''
-
-
-Type casting to ``str``
-=======================
-.. code-block:: python
-
-    str('hello')        # 'hello'
-    str(1969)           # '1969'
-    str(13.37)          # '13.37'
-
-Print converts argument to ``str`` before printing
---------------------------------------------------
-.. code-block:: python
-
-    print('hello')      # str('hello') -> 'hello'
-    # 'hello'
-
-.. code-block:: python
-
-    print(10)           # str(10) -> '10'
-    # '10'
+    my_str = '''My name\'s "José Jiménez"'''
 
 
 Escape characters

@@ -135,8 +135,8 @@ Python Console (REPL)
 
     $ python3
 
-    Python 3.7.4 (default, Jul  9 2019, 18:13:23)
-    [Clang 10.0.1 (clang-1001.0.46.4)] on darwin
+    Python 3.7.5 (default, Nov  1 2019, 02:16:23)
+    [Clang 11.0.0 (clang-1100.0.33.8)] on darwin
     Type "help", "copyright", "credits" or "license" for more information.
 
     >>> print('Ehlo World!')

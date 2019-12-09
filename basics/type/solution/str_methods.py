@@ -1,10 +1,16 @@
 expected = 'Jana Twardowskiego III'
 text = 'UL. jana \tTWArdoWskIEGO 3'
 
-text = text.title()
+text = text.upper()
+text = text.replace('UL.', '')
 text = text.replace('\t', '')
 text = text.replace('3', 'III')
-text = text.replace('Ul.', '')
+text = text.title()
+text = text.replace('Iii', 'III')
 text = text.strip()
 
-print(f'{text == expected}\t"{text}"')
+print('Matched:', text == expected)
+# Matched: True
+
+print(text)
+# Jana Twardowskiego III

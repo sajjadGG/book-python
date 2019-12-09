@@ -284,7 +284,7 @@ Unpacking from nested sequence
 
 :English:
     #. For input data (see below)
-    #. Separate header and rekordy
+    #. Separate header and records
     #. Use asterisk ``*`` notation
 
 :Polish:

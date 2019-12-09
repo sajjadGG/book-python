@@ -96,3 +96,29 @@ Linux
 #. Instalacja PyCharm:
 
     * Pobierz i zainstaluj najnowszy PyCharm Community (https://www.jetbrains.com/pycharm/download/)
+
+
+Assignments
+===========
+
+Check Python Version
+--------------------
+* Complexity level: easy
+* Lines of code to write: 0 lines
+* Estimated time of completion: 1 min
+
+#. Uruchom terminal i wpisz ``python3``
+#. Po uruchomieniu interpretera wpisz następujące linijki kodu:
+
+    .. code-block:: python
+
+        import sys
+
+        print(sys.version)
+
+#. Jaka wersja Python jest zainstalowana?
+
+:The whys and wherefores:
+    * Czy Python działa
+    * Jaka jest wersja Python
+    * Korzystanie z print

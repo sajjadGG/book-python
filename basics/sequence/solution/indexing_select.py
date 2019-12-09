@@ -25,7 +25,7 @@ INPUT = [
 
 header = INPUT[0]
 
-output = [
+OUTPUT = [
     list(INPUT[2]),
     list(INPUT[6]),
     list(INPUT[9]),
@@ -35,4 +35,11 @@ output = [
     set()
 ]
 
-print(output)
+print(OUTPUT)
+# [[5.1, 3.5, 1.4, 0.2, 'setosa'],
+#  [4.7, 3.2, 1.3, 0.2, 'setosa'],
+#  [4.9, 3.0, 1.4, 0.2, 'setosa'],
+#  (4.6, 3.4, 1.4, 0.3, 'setosa'),
+#  (5.0, 3.6, 1.4, 0.3, 'setosa'),
+#  (5.5, 2.3, 4.0, 1.3, 'versicolor'),
+#  set()]
