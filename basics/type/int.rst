@@ -36,19 +36,10 @@ Converting to ``int``
 .. code-block:: python
 
     int(10)                 # 10
-
-.. code-block:: python
-
     int(10.0)               # 10
     int(10.9)               # 10
-
-.. code-block:: python
-
-    int(13.37)              # 1
-    int(-13.37)             # -1
-
-.. code-block:: python
-
+    int(13.37)              # 13
+    int(-13.37)             # -13
     int('1')                # 1
     int('-1')               # -1
     int('13.37')            # ValueError: invalid literal for int() with base 10: '1.23'

@@ -32,15 +32,12 @@ Converting to ``int``
     int(10)                 # 10
     int(10.0)               # 10
     int(10.9)               # 10
-    int(13.37)              # 1
-    int(-13.37)             # -1
+    int(13.37)              # 13
+    int(-13.37)             # -13
     int('1')                # 1
     int('-1')               # -1
     int('13.37')            # ValueError: invalid literal for int() with base 10: '1.23'
     int('-13.37')           # ValueError: invalid literal for int() with base 10: '-1.23'
-
-
-
 
 Assignment
 ----------
@@ -114,12 +111,8 @@ Converting to ``float``
     float(-10.5)            # -10.5
     float(13.37)            # 13.37
     float(-13.37)           # -13.37
-
-.. code-block:: python
-
     float('+13.37')         # 13.37
     float('-13.37')         # -13.37
-
     float('13,37')          # ValueError: could not convert string to float: '13,37'
     float('-13,37')         # ValueError: could not convert string to float: '-13,37'
 
