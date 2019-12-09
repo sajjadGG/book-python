@@ -65,43 +65,37 @@ Numeric Functions
 
 .. code-block:: python
 
-    min(3, 1, 5)
-    # 1
-    min([1, 2, 3, 4, 5])
-    # 1
+    min(3, 1, 5)                # 1
+    min([1, 2, 3, 4, 5])        # 1
 
 .. code-block:: python
 
-    max(3, 1, 5)
-    # 5
-    max([1, 2, 3, 4, 5])
-    # 5
+    max(3, 1, 5)                # 5
+    max([1, 2, 3, 4, 5])        # 5
 
 .. code-block:: python
 
-    sum([1, 2, 3, 4, 5])
-    # 15
+    sum([1, 2, 3, 4, 5])        # 15
 
 .. code-block:: python
 
-    len([1, 2, 3])
-    # 3
+    len([1, 2, 3])              # 3
 
 .. code-block:: python
     :caption: Absolute value
 
-    abs(1)          # 1
-    abs(-1)         # 1
-    abs(13.37)              # 13.37
-    abs(-13.37)             # 13.37
+    abs(1)                      # 1
+    abs(-1)                     # 1
+    abs(13.37)                  # 13.37
+    abs(-13.37)                 # 13.37
 
 .. code-block:: python
     :caption: Number to the ``n-th`` power
 
-    pow(10, 2)      # 100
-    pow(3, 4)       # 81
-    pow(-1, 2)      # 1
-    pow(2, -1)              # 0.5
-    pow(1.337, 3)           # 2.389979753
-    pow(4, 0.5)             # 2.0
-    pow(2, 0.5)             # 1.4142135623730951
+    pow(10, 2)                  # 100
+    pow(3, 4)                   # 81
+    pow(-1, 2)                  # 1
+    pow(2, -1)                  # 0.5
+    pow(1.337, 3)               # 2.389979753
+    pow(4, 0.5)                 # 2.0
+    pow(2, 0.5)                 # 1.4142135623730951

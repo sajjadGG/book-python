@@ -10,27 +10,23 @@ Arithmetic Operators
 * ``*`` - Multiplication
 * ``**`` - Power
 * ``/`` - Division
+* ``//`` - True division
+* ``%`` - Modulo division (reminder)
 
 .. code-block:: python
 
     10 + 2              # 12
     10 - 2              # 8
     10 * 2              # 20
-    10 ** 2             # 100
     10 / 2              # 5
 
 .. code-block:: python
 
+    10 ** 2             # 100
     2 ** -1             # 0.5
     1.337 ** 3          # 2.389979753
     4 ** 0.5            # 2.0
     2 ** 0.5            # 1.4142135623730951
-
-
-Division operators
-==================
-* ``//`` - True division
-* ``%`` - Modulo division (reminder)
 
 .. code-block:: python
 
@@ -63,8 +59,8 @@ Logic operators
     10 is not None      # True
 
 
-Incremental Operators
-=====================
+Increment Operators
+===================
 * ``+=``
 * ``-=``
 * ``*=``

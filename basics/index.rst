@@ -17,10 +17,8 @@ Syntax
     :name: Basic Syntax
 
     /basics/syntax/syntax.rst
-
-    /basics/builtin/operators.rst
-    /basics/builtin/functions.rst
-    /basics/builtin/type-annotations.rst
+    /basics/syntax/operators.rst
+    /basics/syntax/builtins.rst
 
 *****
 Types
@@ -36,6 +34,7 @@ Types
     /basics/type/none.rst
     /basics/type/str.rst
     /basics/type/str-methods.rst
+    /basics/type/type-annotations.rst
 
 *********
 Sequences
