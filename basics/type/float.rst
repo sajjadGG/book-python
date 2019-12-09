@@ -8,6 +8,7 @@ Type Definition
 * Notation without leading or trailing zero is used by ``numpy``
 
 .. code-block:: python
+    :caption: ``float`` Type Definition
 
     value = 13.37           # 13.37
     value = -13.37          # -13.37
@@ -36,9 +37,29 @@ Type Definition
     1.337 * 1e-3            # 0.001337
 
 
+Type Casting
+============
+* ``float()`` converts argument to ``float``
+
+.. code-block:: python
+    :caption: ``float()`` converts argument to ``float``
+
+    float(10)                   # 10.0
+    float(-10)                  # -10.0
+    float(10.5)                 # 10.5
+    float(-10.5)                # -10.5
+    float(13.37)                # 13.37
+    float(-13.37)               # -13.37
+    float('+13.37')             # 13.37
+    float('-13.37')             # -13.37
+    float('13,37')              # ValueError: could not convert string to float: '13,37'
+    float('-13,37')             # ValueError: could not convert string to float: '-13,37'
+
+
 Rounding numbers
 ================
 .. code-block:: python
+    :caption: ``round()`` - Rounds a number
 
     pi = 3.14159265359
 

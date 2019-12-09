@@ -14,6 +14,7 @@ Defining ``None``
     * With ``if`` statements behaves like negative values
 
 .. code-block:: python
+    :caption: ``NoneType`` Type Definition
 
     my_var = None
 

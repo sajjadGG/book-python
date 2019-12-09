@@ -8,6 +8,7 @@ Type ``str``
 Type Definition
 ===============
 .. code-block:: python
+    :caption: ``str`` Type Definition
 
     my_str = ''
     my_str = 'Jan Twardowski'
@@ -32,6 +33,16 @@ Type Definition
         Third line
     """
     # '\n        First line\n        Second line\n        Third line\n    '
+
+
+Type Casting
+============
+.. code-block:: python
+    :caption: ``str()`` converts argument to ``str``
+
+    str('hello')        # 'hello'
+    str(1969)           # '1969'
+    str(13.37)          # '13.37'
 
 
 Single or double quote?
@@ -165,23 +176,20 @@ Raw String
     *  Escapes does not matters
 
 .. code-block:: python
+    :caption: In Regular Expressions
 
     r'[a-z0-9]\n'
 
 .. code-block:: python
     :emphasize-lines: 1
 
-    path = r'C:\Users\Admin\file.txt'
-
-    print(path)
+    print(r'C:\Users\Admin\file.txt')
     # C:\Users\Admin\file.txt
 
 .. code-block:: python
     :emphasize-lines: 1
 
-    path = 'C:\Users\Admin\file.txt'
-
-    print(path)
+    print('C:\Users\Admin\file.txt')
     # SyntaxError: (unicode error) 'unicodeescape'
     #   codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
 
@@ -198,32 +206,19 @@ Reading user input
 
 .. code-block:: python
 
-    name = input('Type your name: ')
-    # User inputs: Jan Twardowski
+    name = input('What is your name: ')
+    # What is your name: Jan Twardowski
 
     print(name)     # 'Jan Twardowski'
     type(name)      # <class 'str'>
 
 .. code-block:: python
 
-    age = input('Type your age: ')
-    # User inputs: 42
+    age = input('What is your age: ')
+    # What is your age: 42
 
     print(age)      # '42'
     type(age)       # <class 'str'>
-
-
-Length of a ``str``
-===================
-.. code-block:: python
-
-    len('Jan')      # 3
-    len('')         # 0
-
-.. code-block:: python
-
-    a = 'Jan'
-    len(a)          # 3
 
 
 Assignments

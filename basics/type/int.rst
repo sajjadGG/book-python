@@ -11,6 +11,7 @@ Type Definition
     * You can use ``_`` for easier read especially with big numbers
 
 .. code-block:: python
+    :caption: ``int`` Type Definition
 
     value = 30              # 30
     value = -30             # -30
@@ -21,21 +22,24 @@ Type Definition
     million = 1_000_000      # 1000000
 
 
-Arithmetic Operators
-====================
-* ``+`` - Addition
-* ``-`` - Subtraction
-* ``*`` - Multiplication
-* ``**`` - Power
-* ``/`` - Division
+Type Casting
+============
+.. highlights::
+    * ``int()`` converts argument to ``int``
+    * ``int()`` does not round numbers, it returns integer value
 
 .. code-block:: python
+    :caption: ``int()`` converts argument to ``int``
 
-    10 + 2      # 12
-    10 - 2      # 8
-    10 * 2      # 20
-    10 ** 2     # 100
-    10 / 2      # 5
+    int(10)                     # 10
+    int(10.0)                   # 10
+    int(10.9)                   # 10
+    int(13.37)                  # 13
+    int(-13.37)                 # -13
+    int('1')                    # 1
+    int('-1')                   # -1
+    int('13.37')                # ValueError: invalid literal for int() with base 10: '1.23'
+    int('-13.37')               # ValueError: invalid literal for int() with base 10: '-1.23'
 
 
 Assignments

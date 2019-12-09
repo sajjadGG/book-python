@@ -11,25 +11,43 @@ Type Definition
     * First letter capitalized, other are lower cased
 
 .. code-block:: python
+    :caption: ``bool`` Type Definition
 
     my_var = True               # True
     my_var = False              # False
 
 
-Negative values
-===============
-.. highlights::
-    * ``False``
-    * ``None``
-    * ``0``
-    * ``0.0``
-    * ``0+0j``
-    * ``0.0+0.0j``
-    * empty ``str()`` or ``''``
-    * empty ``tuple()`` or ``()``
-    * empty ``dict()`` or ``{}``
-    * empty ``list()`` or ``[]``
-    * empty ``set()``
+Type Casting
+============
+.. code-block:: python
+    :caption: ``bool()`` converts argument to ``bool``
+
+    bool(1)                     # True
+    bool(1.0)                   # True
+    bool('Jan Twardowski')      # True
+
+.. code-block:: python
+    :caption: Negative values
+
+    bool(bool())                # False
+    bool(False)                 # False
+    bool(None)                  # False
+    bool(int())                 # False
+    bool(0)                     # False
+    bool(float())               # False
+    bool(0.0)                   # False
+    bool(complex())             # False
+    bool(0+0j)                  # False
+    bool(0.0+0.0j)              # False
+    bool(str())                 # False
+    bool('')                    # False
+    bool(tuple())               # False
+    bool(())                    # False
+    bool(list())                # False
+    bool([])                    # False
+    bool(dict())                # False
+    bool({})                    # False
+    bool(set())                 # False
 
 
 Boolean logic
