@@ -5,8 +5,8 @@ Type ``None``
 *************
 
 
-Defining ``None``
-=================
+Type Definition
+===============
 .. highlights::
     * First letter capitalized, other are lower cased
     * Empty (null) or unknown (unset) value
@@ -19,8 +19,8 @@ Defining ``None``
     my_var = None
 
 
-Logic operators
-===============
+Comparision
+===========
 .. highlights::
     * Do not use ``==`` or ``!=`` to check ``None`` values
 

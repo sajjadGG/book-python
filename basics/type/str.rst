@@ -77,9 +77,6 @@ Single or double quote?
 
 Escape characters
 =================
-
-New lines
----------
 .. highlights::
     * ``\r\n`` - is used on windows
     * ``\n`` - is used everywhere else
@@ -90,8 +87,6 @@ New lines
 
     Why we have '\\r\\n' on Windows?
 
-Other escape characters
------------------------
 .. csv-table:: Frequently used escape characters
     :header: "Sequence", "Description"
     :widths: 15, 85
@@ -121,8 +116,8 @@ Other escape characters
     print('\U0001F680')     # 🚀
 
 
-Characters before strings
-=========================
+String Literals
+===============
 
 Format String
 -------------
@@ -146,7 +141,7 @@ Format String
     name = f'{first_name} {last_name}'
     # Jan Twardowski
 
-Unicode literals
+Unicode Literals
 ----------------
 .. highlights::
     * In Python 3 ``str`` is Unicode
@@ -157,7 +152,7 @@ Unicode literals
 
     u'zażółć gęślą jaźń'
 
-Bytes literals
+Bytes Literals
 --------------
 .. highlights::
     * Used while reading from low level devices and drivers
@@ -198,7 +193,7 @@ Raw String
 * ``s`` is invalid hexadecimal character
 
 
-Reading user input
+Reading User Input
 ==================
 .. highlights::
     * ``input()`` returns ``str``

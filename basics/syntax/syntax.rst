@@ -3,8 +3,8 @@ Syntax Basics
 *************
 
 
-Indentation instead of braces
-=============================
+Indentation
+===========
 .. highlights::
     * Python uses indentation instead of braces
     * :pep:`8`: 4 spaces indentation, `no tabs <https://youtu.be/SsoOG6ZeyUI>`_

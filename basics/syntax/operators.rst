@@ -36,7 +36,7 @@ Arithmetic Operators
     10 % 3              # 1
 
 
-Logic operators
+Logic Operators
 ===============
 * ``x < y`` - Less than
 * ``x <= y`` - Less or equal
