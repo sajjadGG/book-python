@@ -5,8 +5,22 @@ Comprehensions
 **************
 
 
-Syntax
-======
+Loop Information Recap
+======================
+.. code-block:: python
+    :caption: Iterative approach to applying function to elements
+
+    output = []
+
+    for x in range(0, 5):
+        output.append(x+10)
+
+    print(output)
+    # [10, 11, 12, 13, 14]
+
+
+Comprehensions Syntax
+=====================
 .. code-block:: python
 
     output = [<RETURN> for <VARIABLE> in <ITERABLE>]
@@ -23,21 +37,33 @@ Syntax
     # [0, 1, 2, 4, 16]
 
 
+Generator expressions vs. Comprehensions
+========================================
+.. highlights::
+    * Comprehensions executes instantly
+    * Generator expression executes lazily
+
+.. code-block:: python
+
+    list(x for x in range(0,5))        # [0, 1, 2, 3, 4]
+    [x for x in range(0,5)]            # [0, 1, 2, 3, 4]
+
+    set(x for x in range(0,5))         # {0, 1, 2, 3, 4}
+    {x for x in range(0,5)}            # {0, 1, 2, 3, 4}
+
+    dict((x,x) for x in range(0,5))    # {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
+    {x: x for x in range(0,5)}         # {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
+
+    tuple(x for x in range(0,5))       # (0, 1, 2, 3, 4)
+    (x for x in range(0,5))            # <generator object <genexpr> at 0x118c1aed0>
+
+    all(x for x in range(0,5))         # False
+    any(x for x in range(0,5))         # True
+    sum(x for x in range(0,5))         # 10
+
+
 Simple usage
 ============
-
-Traditional
------------
-.. code-block:: python
-    :caption: Iterative approach to applying function to elements
-
-    output = []
-
-    for x in range(0, 5):
-        output.append(x+10)
-
-    print(output)
-    # [10, 11, 12, 13, 14]
 
 List Comprehension
 ------------------
@@ -107,31 +133,6 @@ Tuple Comprehension?!
 
     (x+10 for x in range(0, 5))
     # <generator object <genexpr> at 0x11eaef570>
-
-
-Generator expressions vs. Comprehensions
-========================================
-.. highlights::
-    * Comprehensions executes instantly
-    * Generator expression executes lazily
-
-.. code-block:: python
-
-    [x for x in range(0,5)]            # [0, 1, 2, 3, 4]
-    list(x for x in range(0,5))        # [0, 1, 2, 3, 4]
-
-    {x for x in range(0,5)}            # {0, 1, 2, 3, 4}
-    set(x for x in range(0,5))         # {0, 1, 2, 3, 4}
-
-    {x: x for x in range(0,5)}         # {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
-    dict((x,x) for x in range(0,5))    # {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
-
-    (x for x in range(0,5))            # <generator object <genexpr> at 0x118c1aed0>
-    tuple(x for x in range(0,5))       # (0, 1, 2, 3, 4)
-
-    all(x for x in range(0,5))         # False
-    any(x for x in range(0,5))         # True
-    sum(x for x in range(0,5))         # 10
 
 
 Conditional Comprehension
