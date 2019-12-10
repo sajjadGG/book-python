@@ -96,8 +96,7 @@ Getting Items
 =============
 .. highlights::
     * ``[...]`` throws ``KeyError`` exception if key not found in ``dict``
-    * ``.get()`` returns None if not found
-, but also allows to set default value
+    * ``.get()`` returns None if not found, but also allows to set default value
 
 Getitem Method
 --------------
