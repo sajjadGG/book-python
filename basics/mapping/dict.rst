@@ -75,11 +75,9 @@ Type Annotation
         'Petal width': 1.9,
     }
 
-Keys, Values and Items
-======================
 
 Dict Keys
----------
+=========
 * Key can be any hashable object
 
 .. code-block:: python
@@ -117,8 +115,9 @@ Dict Keys
     list(my_dict.keys())
     # ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
 
+
 Dict values
------------
+===========
 * Value can be any object
 
 .. code-block:: python
@@ -133,8 +132,9 @@ Dict values
     list(my_dict.values())
     # [5.8, 2.7, 5.1, 1.9]
 
+
 Dict Items
-----------
+==========
 .. code-block:: python
 
     my_dict = {
@@ -176,9 +176,8 @@ Setting Items
     * Adds if value not exist
     * Updates if value exist
 
-Setitem Method
---------------
 .. code-block:: python
+    :caption: Setitem Method
 
     my_dict = {
         'first_name': 'Jan',
@@ -194,9 +193,8 @@ Setitem Method
     #   'agency': 'POLSA'
     # }
 
-Update Method
--------------
 .. code-block:: python
+    :caption: Update Method
 
     my_dict = {
         'first_name': 'Jan',
@@ -211,6 +209,7 @@ Update Method
     # }
 
 .. code-block:: python
+    :caption: Update Method
 
     my_dict = {
         'first_name': 'Jan',
@@ -225,6 +224,7 @@ Update Method
     # }
 
 .. code-block:: python
+    :caption: Update Method
 
     my_dict = {
         'first_name': 'Jan',
@@ -241,10 +241,8 @@ Update Method
 
 Deleting Items
 ==============
-
-Pop Method
-----------
 .. code-block:: python
+    :caption: Pop Method
 
     my_dict = {
         'first_name': 'Jan',
@@ -257,9 +255,8 @@ Pop Method
     my_dict  # {'first_name', 'Jan', 'last_name': 'Twardowski'}
     value    # 'POLSA'
 
-Del Keyword
------------
 .. code-block:: python
+    :caption: Del Keyword
 
     my_dict = {
         'first_name': 'Jan',
@@ -275,12 +272,13 @@ Del Keyword
 
 Getting Items
 =============
+.. highlights::
+    * ``[...]`` throws ``KeyError`` exception if key not found in ``dict``
+    * ``.get()`` returns None if not found
+, but also allows to set default value
 
 Getitem Method
 --------------
-.. highlights::
-    * ``[...]`` throws ``KeyError`` exception if key not found in ``dict``
-
 .. code-block:: python
 
     my_dict = {

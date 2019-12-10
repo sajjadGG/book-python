@@ -13,4 +13,3 @@ for row in INPUT:
     unique_keys.update(row.keys())
 
 print(sorted(unique_keys))
-

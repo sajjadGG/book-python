@@ -86,7 +86,7 @@ Append if object not in the list
 --------------------------------
 .. code-block:: python
 
-    %%timeit
+    %%timeit -r 10 -n 1000000
 
     fieldnames = list()
 
@@ -95,13 +95,13 @@ Append if object not in the list
             if key not in fieldnames:
                 fieldnames.append(key)
 
-    # 2.09 µs ± 46.2 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+    # 2.16 µs ± 26.5 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
 
 Append to list and deduplicate at the end
 -----------------------------------------
 .. code-block:: python
 
-    %%timeit
+    %%timeit -r 10 -n 1000000
 
     fieldnames = list()
 
@@ -111,13 +111,13 @@ Append to list and deduplicate at the end
 
     set(fieldnames)
 
-    # 2.28 µs ± 90.5 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+    # 2.5 µs ± 32.9 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
 
 Add to set
 ----------
 .. code-block:: python
 
-    %%timeit
+    %%timeit -r 10 -n 1000000
 
     fieldnames = set()
 
@@ -125,41 +125,41 @@ Add to set
         for key in row.keys():
             fieldnames.add(key)
 
-    # 2.01 µs ± 54.5 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+    # 2.12 µs ± 32.4 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
 
 Update set
 ----------
 .. code-block:: python
 
-    %%timeit
+    %%timeit -r 10 -n 1000000
 
-    fieldnames = set()
+    unique_keys = set()
 
     for row in DATA:
-        fieldnames.update(row.keys())
+        unique_keys.update(row.keys())
 
-    # 1.55 µs ± 12.9 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+    # 1.57 µs ± 26.7 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
 
 Set Comprehension
 -----------------
 .. code-block:: python
 
-    %%timeit
+    %%timeit -r 10 -n 1000000
 
     fieldnames = set(key
         for record in DATA
             for key in record.keys())
 
-    # 1.91 µs ± 16.7 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+    # 2.06 µs ± 79.7 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
 
 Add to Set Comprehension
 ------------------------
 .. highlights::
-    * Code 3 appends generator object not values, this is why it is so fast!
+    * Code appends generator object not values, this is why it is so fast!
 
 .. code-block:: python
 
-    %%timeit
+    %%timeit -r 10 -n 1000000
 
     fieldnames = set()
 
@@ -167,18 +167,53 @@ Add to Set Comprehension
         for record in DATA
            for key in record.keys())
 
-    # 416 ns ± 4.24 ns per loop (mean ± std. dev. of 7 runs, 1000000 loops each)
+    # 447 ns ± 9.52 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
 
 Update Set Comprehension
 ------------------------
 .. code-block:: python
 
-    %%timeit
+    %%timeit -r 10 -n 1000000
 
     fieldnames = set()
     fieldnames.update(tuple(x.keys()) for x in DATA)
 
-    # 2.05 µs ± 48.7 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
+    # 2.06 µs ± 45.9 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
+
+Others
+------
+.. code-block:: python
+
+    %%timeit -r 10 -n 1000000
+
+    unique_keys = set()
+
+    for row in DATA:
+        unique_keys.update(tuple(row))
+
+    # 2.09 µs ± 16.1 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
+
+.. code-block:: python
+
+    %%timeit -r 10 -n 1000000
+
+    unique_keys = set()
+
+    for row in DATA:
+        unique_keys.update(list(row))
+
+    # 2.33 µs ± 30.2 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
+
+.. code-block:: python
+
+    %%timeit -r 10 -n 1000000
+
+    unique_keys = set()
+
+    for row in DATA:
+        unique_keys.update(set(row))
+
+    # 1.71 µs ± 54 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
 
 
 Case Study - Fibonacci
