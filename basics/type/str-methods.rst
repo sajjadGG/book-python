@@ -98,7 +98,7 @@ Strip Whitespace
     name.rstrip()       # '\tJan Twardowski'
     name.lstrip()       # 'Jan Twardowski    \n'
 
-Checking if Starts or Ends with Value
+Checking If Starts or Ends with Value
 -------------------------------------
 .. highlights::
     * Understand this as "starts with" and "ends with"
@@ -171,7 +171,7 @@ Joining with String
     ','.join(setosa)
     # '5.1,3.5,1.4,0.2,setosa'
 
-Checking if Contains Only Whitespace
+Checking If Contains Only Whitespace
 ------------------------------------
 .. code-block:: python
 
@@ -180,7 +180,7 @@ Checking if Contains Only Whitespace
     '\t'.isspace()      # True
     '\n'.isspace()      # True
 
-Checking if Contains Only Alphabet Characters
+Checking If Contains Only Alphabet Characters
 ---------------------------------------------
 .. code-block:: python
 
@@ -197,7 +197,7 @@ Finding Starting Position of a Sub-string
     text.find('Moo')    # 23
     text.find('x')      # -1
 
-Check if is a Part of Another String
+Check If is a Part of Another String
 ------------------------------------
 .. code-block:: python
 
@@ -388,7 +388,7 @@ Example
     * Print formatting
     * Cleaning text input
 
-String cleaning
+String Cleaning
 ---------------
 * Complexity level: easy
 * Lines of code to write: 11 lines

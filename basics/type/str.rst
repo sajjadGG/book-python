@@ -45,8 +45,8 @@ Type Casting
     str(13.37)          # '13.37'
 
 
-Single or double quote?
-=======================
+Single or Double Quotes?
+========================
 .. highlights::
     * ``"`` and ``'`` works the same
     * Choose one and keep consistency in code
@@ -75,7 +75,7 @@ Single or double quote?
     my_str = '''My name\'s "José Jiménez"'''
 
 
-Escape characters
+Escape Characters
 =================
 .. highlights::
     * ``\r\n`` - is used on windows

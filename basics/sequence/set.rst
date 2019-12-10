@@ -76,10 +76,10 @@ Type Annotation
     my_set: Set[str] = {'a', 'b', 'c'}
 
 
-Adding items
+Adding Items
 ============
 
-Adding one element
+Adding Single Item
 ------------------
 .. code-block:: python
 
@@ -94,7 +94,7 @@ Adding one element
     my_set.add(4)
     # {1, 2, 3, 4}
 
-Adding many items
+Adding Many Items
 -----------------
 .. code-block:: python
 
@@ -111,7 +111,7 @@ Adding many items
     # {1, 2, 3, 4, 5, 6, 7, 8}
 
 
-Popping items
+Popping Items
 =============
 * Gets and remove items
 
@@ -125,11 +125,8 @@ Popping items
     value   # 3
 
 
-Converting to ``set`` deduplicate items
-=======================================
-
-Converting ``list`` to ``set``
-------------------------------
+Deduplicate Items
+=================
 .. code-block:: python
     :caption: Converting ``list`` to ``set`` deduplicate items
 
@@ -143,8 +140,6 @@ Converting ``list`` to ``set``
     unique_names = set(names)
     # {'Twardowski', 'Jiménez'}
 
-Converting ``tuple`` to ``set``
--------------------------------
 .. code-block:: python
     :caption: Converting ``tuple`` to ``set`` deduplicate items
 
@@ -161,24 +156,20 @@ Converting ``tuple`` to ``set``
 
 Membership Operators
 ====================
-
-Equals
-------
 .. code-block:: python
+    :caption: Equals
 
     {1, 2} == {1, 2}        # True
     {1, 2} == {2, 1}        # True
 
-Not equals
-----------
 .. code-block:: python
+    :caption: Not equals
 
     {1, 2} != {1, 2}        # False
     {1, 2, 3} != {1, 2}     # True
 
-Contains
---------
 .. code-block:: python
+    :caption: Contains
 
     1 in {1, 2}             # True
     3 in {1, 2}             # False
@@ -186,9 +177,8 @@ Contains
     {2} in {1, 2}           # False
     {1, 2} in {1, 2}        # False
 
-Missing
--------
 .. code-block:: python
+    :caption: Missing
 
     4 not in {1, 2}         # True
     1 not in {1, 2}         # False
@@ -197,21 +187,23 @@ Missing
     {1, 2} not in {1, 2}    # True
 
 
-``set`` Methods
-===============
+Membership
+==========
 
-``set.isdisjoint()``
---------------------
+Disjoint
+--------
 .. highlights::
+    * ``set.isdisjoint()``
     * No common elements
 
 .. code-block:: python
 
     {1,2}.isdisjoint({3,4})     # True
 
-``set.issubset()``
-------------------
+Subset
+------
 .. highlights::
+    * ``set.issubset()``
     * All elements in both
 
 .. code-block:: python
@@ -231,9 +223,10 @@ Missing
     {1,2} < {1,2,3}             # True
     {1,2,3} < {1,2}             # False
 
-``set.issuperset()``
---------------------
+Superset
+--------
 .. highlights::
+    * ``set.issuperset()``
     * All elements of ``b`` are in ``a``
 
 .. code-block:: python
@@ -248,9 +241,14 @@ Missing
     {1,2} >= {1,2,3}            # False
     {1,2,3} >= {1,2}            # True
 
-``set.union()``
----------------
+
+Basic Operations
+================
+
+Union
+-----
 .. highlights::
+    * ``set.union()``
     * add
 
 .. code-block:: python
@@ -260,9 +258,10 @@ Missing
     {1,2,3} | {1,2,4}           # {1, 2, 3, 4}
     {1,2} | {1,3} | {2,4}       # {1, 2, 3, 4}
 
-``set.difference()``
---------------------
+Difference
+----------
 .. highlights::
+    * ``set.difference()``
     * subtract
 
 .. code-block:: python
@@ -271,9 +270,10 @@ Missing
     {1,2} - {2,3} - {3}         # {1}
     {1,2} - {1,2,3}             # set()
 
-``set.symmetric_difference()``
-------------------------------
+Symmetric Difference
+--------------------
 .. highlights::
+    * ``set.symmetric_difference()``
     * not common elements from each
 
 .. code-block:: python
@@ -282,9 +282,10 @@ Missing
     {1,2} ^ {2,3}               # {1, 3}
     {1,2} ^ {1,3}               # {2, 3}
 
-``set.intersection()``
-----------------------
+Intersection
+------------
 .. highlights::
+    * ``set.intersection()``
     * common element from each
 
 .. code-block:: python
@@ -294,8 +295,8 @@ Missing
     {1,2} & {2,3} & {3}         # set()
 
 
-Length of a ``set``
-===================
+Cardinality
+===========
 .. code-block:: python
 
     my_set = {1, 2, 3}

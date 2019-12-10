@@ -21,7 +21,7 @@ Indentation
         print('This is false')
 
 
-End of lines
+End of Lines
 ============
 .. highlights::
     * No semicolon (``;``) at the end of lines
@@ -110,7 +110,7 @@ Docstring
         return a + b
 
 
-Variables and constants
+Variables and Constants
 =======================
 .. highlights::
     * ``NameError`` when using not declared variable
@@ -149,7 +149,7 @@ Variables and constants
     NAME = 'Иван Иванович'
 
 
-Printing values
+Printing Values
 ===============
 .. highlights::
     * ``print()`` adds ``'\n'`` at the end
