@@ -85,3 +85,7 @@ print(label_encoder)
 ## Alternative Version
 # In numerical analysis you can find this
 # label_encoder = dict(enumerate(set(x[-1] for x in INPUT[1:])))
+
+
+## Alternative Version
+# label_encoder = dict(zip(label_encoder.values(), label_encoder.keys()))
