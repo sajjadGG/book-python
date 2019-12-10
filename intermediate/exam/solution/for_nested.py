@@ -16,5 +16,5 @@ header, *data = INPUT
 for *_, species in data:
     species = species.pop()
 
-    if species.endswith('sa') or species.endswith('ca'):
+    if species.endswith('osa') or species.endswith('ca'):
         print(species)

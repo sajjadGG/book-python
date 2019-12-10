@@ -3,48 +3,6 @@ Pre-Intermediate
 ****************
 
 
-Create
-------
-* Complexity level: easy
-* Lines of code to write: 13 lines
-* Estimated time of completion: 5 min
-* Filename: :download:`solution/tuple_create.py`
-
-:English:
-    #. For given data input (see below)
-    #. Create a ``tuple`` representing all Species
-    #. Calculate mean for each numerical values column
-    #. To convert table use multiline select with ``alt`` key in your IDE
-
-:Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
-    #. Stwórz ``tuple`` z nazwami gatunków
-    #. Wylicz średnią arytmetyczną dla każdej z kolumn numerycznych
-    #. Do przekonwertowania tabelki wykorzystaj zaznaczanie wielu linijek za pomocą klawisza ``alt`` w Twoim IDE
-
-:Input:
-    .. code-block:: text
-
-        "Sepal length", "Sepal width", "Petal length", "Petal width", "Species"
-        "5.8", "2.7", "5.1", "1.9", "virginica"
-        "5.1", "3.5", "1.4", "0.2", "setosa"
-        "5.7", "2.8", "4.1", "1.3", "versicolor"
-        "6.3", "2.9", "5.6", "1.8", "virginica"
-        "6.4", "3.2", "4.5", "1.5", "versicolor"
-        "4.7", "3.2", "1.3", "0.2", "setosa"
-        "7.0", "3.2", "4.7", "1.4", "versicolor"
-        "7.6", "3.0", "6.6", "2.1", "virginica"
-        "4.9", "3.0", "1.4", "0.2", "setosa"
-        "4.9", "2.5", "4.5", "1.7", "virginica"
-        "7.1", "3.0", "5.9", "2.1", "virginica"
-
-:The whys and wherefores:
-    * Defining ``tuple``
-    * Learning IDE features
-
-:Hints:
-    * ``mean = sum(...) / len(...)``
-
 Select
 ------
 * Complexity level: easy
@@ -253,13 +211,13 @@ Get elements from nested data structure
     #. For input data (see below)
     #. Separate header from data
     #. Iterate over data
-    #. Print species names ending with "ca" or "sa"
+    #. Print species names ending with "ca" or "osa"
 
 :Polish:
     #. Dla danych wejściowych (patrz sekcja input)
     #. Oddziel nagłówek od danych
     #. Iteruj po danych
-    #. Wypisz nazwy gatunków kończące się na "ca" lub "sa"
+    #. Wypisz nazwy gatunków kończące się na "ca" lub "osa"
 
 :Input:
     .. code-block:: python
@@ -281,59 +239,101 @@ Get elements from nested data structure
     * Accessing ``dict`` keys
     * Iterating over nested structure
 
-String cleaning
----------------
-* Complexity level: easy
-* Lines of code to write: 11 lines
-* Estimated time of completion: 10 min
-* Filename: :download:`solution/str_cleaning.py`
+Label encoder
+-------------
+* Complexity level: medium
+* Lines of code to write: 13 lines
+* Estimated time of completion: 15 min
+* Filename: :download:`solution/loop_label_encoder.py`
 
 :English:
     #. For input data (see below)
-    #. Expected value is ``Jana III Sobieskiego``
-    #. Use only ``str`` methods to clean each variable
-    #. Compare with output data (see below)
-    #. Discuss how to create generic solution which fit all cases
-    #. Implementation of such generic function will be in :ref:`Function Basics` chapter
+    #. Define:
+
+        * ``features: List[tuple]`` - measurements
+        * ``labels: List[int]`` - species
+
+    #. Separate header from data
+    #. To encode and decode ``labels`` (species) we need ``label_encoder: Dict[int, str]``:
+
+        * key - id (incremented integer value)
+        * value - species name
+
+    #. ``label_encoder`` must be generated from ``INPUT``
+    #. For each row add appropriate data to ``features``, ``labels`` and ``label_encoder``
+    #. Print ``features``, ``labels`` and ``label_encoder``
+    #. Output must be identical to output data (see below)
 
 :Polish:
     #. Dla danych wejściowych (patrz sekcja input)
-    #. Oczekiwana wartość ``Jana III Sobieskiego``
-    #. Wykorzystaj tylko metody ``str`` do oczyszczenia każdej zmiennej
-    #. Porównaj wyniki z danymi wyjściowymi (patrz sekcja output)
-    #. Przeprowadź dyskusję jak zrobić rozwiązanie generyczne pasujące do wszystkich przypadków
-    #. Implementacja takiej generycznej funkcji będzie w rozdziale :ref:`Function Basics`
+    #. Zdefiniuj:
+
+        * ``features: List[tuple]`` - pomiary
+        * ``labels: List[int]`` - gatunki
+        * ``label_encoder: Dict[int, str]`` - słownik podmiany nazw gatunków
+
+    #. Odseparuj nagłówek od danych
+    #. Aby móc zakodować i odkodować ``labels`` (gatunki) potrzebny jest ``label_encoder: Dict[int, str]``:
+
+        * key - identyfikator (kolejna liczba rzeczywista)
+        * value - nazwa gatunku
+
+    #. ``label_encoder`` musi być wygenerowany z ``INPUT``
+    #. Dla każdego wiersza dodawaj odpowiednie dane do ``feature``, ``labels`` i ``label_encoder``
+    #. Wypisz ``feature``, ``labels`` i ``label_encoder``
+    #. Wynik ma być identyczny z danymi wyjściowymi (patrz sekcja output)
 
 :Input:
     .. code-block:: python
 
-        a = 'ul Jana III SobIESkiego'
-        b = '\tul. Jana trzeciego Sobieskiego'
-        c = 'ulicaJana III Sobieskiego'
-        d = 'UL. JANA 3 \nSOBIESKIEGO'
-        e = 'UL. jana III SOBiesKIEGO'
-        f = 'ULICA JANA III SOBIESKIEGO  '
-        g = 'ULICA. JANA III SOBIeskieGO'
-        h = ' Jana 3 Sobieskiego  '
-        i = 'Jana III Sobi\teskiego '
+        INPUT = [
+            ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+            (5.8, 2.7, 5.1, 1.9, 'virginica'),
+            (5.1, 3.5, 1.4, 0.2, 'setosa'),
+            (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+            (6.3, 2.9, 5.6, 1.8, 'virginica'),
+            (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+            (4.7, 3.2, 1.3, 0.2, 'setosa'),
+            (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+            (7.6, 3.0, 6.6, 2.1, 'virginica'),
+            (4.9, 3.0, 1.4, 0.2, 'setosa'),
+            (4.9, 2.5, 4.5, 1.7, 'virginica'),
+            (7.1, 3.0, 5.9, 2.1, 'virginica'),
+            (4.6, 3.4, 1.4, 0.3, 'setosa'),
+            (5.4, 3.9, 1.7, 0.4, 'setosa'),
+            (5.7, 2.8, 4.5, 1.3, 'versicolor'),
+            (5.0, 3.6, 1.4, 0.3, 'setosa'),
+            (5.5, 2.3, 4.0, 1.3, 'versicolor'),
+            (6.5, 3.0, 5.8, 2.2, 'virginica'),
+            (6.5, 2.8, 4.6, 1.5, 'versicolor'),
+            (6.3, 3.3, 6.0, 2.5, 'virginica'),
+            (6.9, 3.1, 4.9, 1.5, 'versicolor'),
+            (4.6, 3.1, 1.5, 0.2, 'setosa'),
+        ]
 
 :Output:
     .. code-block:: python
 
-        expected = 'Jana III Sobieskiego'
+        from typing import List, Dict
 
-        print(f'{a == expected}\t a: "{a}"')
-        print(f'{b == expected}\t b: "{b}"')
-        print(f'{c == expected}\t c: "{c}"')
-        print(f'{d == expected}\t d: "{d}"')
-        print(f'{e == expected}\t e: "{e}"')
-        print(f'{f == expected}\t f: "{f}"')
-        print(f'{g == expected}\t g: "{g}"')
-        print(f'{h == expected}\t h: "{h}"')
-        print(f'{i == expected}\t i: "{i}"')
+
+        features: List[tuple] = [
+            (5.8, 2.7, 5.1, 1.9),
+            (5.1, 3.5, 1.4, 0.2),
+            (5.7, 2.8, 4.1, 1.3),
+            (6.3, 2.9, 5.6, 1.8),
+            (6.4, 3.2, 4.5, 1.5),
+            (4.7, 3.2, 1.3, 0.2), ...]
+
+        labels: List[int] = [0, 1, 2, 1, 2, 0, ...]
+
+        label_encoder: Dict[int, str] = {
+            0: 'virginica',
+            1: 'setosa',
+            2: 'versicolor'}
+
 
 :The whys and wherefores:
-    * Variable definition
-    * Print formatting
-    * Cleaning text input
-
+    * ``dict`` lookups
+    * Dynamic ``dict`` generating
+    * ``dict`` reversal

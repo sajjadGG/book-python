@@ -128,13 +128,13 @@ Unpacking
     #. For input data (see below)
     #. Separate header from data
     #. Iterating over data unpack row to ``*features`` and ``label``
-    #. Print species names ending with "ca" or "sa"
+    #. Print species names ending with "ca" or "osa"
 
 :Polish:
     #. Dla danych wejściowych (patrz sekcja input)
     #. Oddziel nagłówek od danych
     #. Iterując po danych rozpakuj wiersz do ``*features`` oraz ``label``
-    #. Wypisz nazwy gatunków kończące się na "ca" lub "sa"
+    #. Wypisz nazwy gatunków kończące się na "ca" lub "osa"
 
 :Input:
     .. code-block:: python

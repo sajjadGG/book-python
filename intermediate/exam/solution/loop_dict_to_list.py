@@ -30,18 +30,4 @@ for values in data:
     pair = zip(header, values)
     OUTPUT.append(dict(pair))
 
-    ## Alternative solution
-    # OUTPUT.append({key: values[i] for i, key in enumerate(header)})
-
-    ## Alternative solution
-    # row = {}
-    #
-    # for i, _ in enumerate(header):
-    #     key = header[i]
-    #     value = values[i]
-    #     row[key] = value
-    #
-    # OUTPUT.append(row)
-
-
 print(OUTPUT)
