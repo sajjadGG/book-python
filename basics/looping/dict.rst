@@ -330,7 +330,7 @@ Label encoder
     #. For input data (see below)
     #. Define:
 
-        * ``features: List[Tuple[float]]`` - measurements
+        * ``features: List[tuple]`` - measurements
         * ``labels: List[int]`` - species
 
     #. Separate header from data
@@ -348,7 +348,7 @@ Label encoder
     #. Dla danych wejściowych (patrz sekcja input)
     #. Zdefiniuj:
 
-        * ``features: List[Tuple[float]]`` - pomiary
+        * ``features: List[tuple]`` - pomiary
         * ``labels: List[int]`` - gatunki
         * ``label_encoder: Dict[int, str]`` - słownik podmiany nazw gatunków
 

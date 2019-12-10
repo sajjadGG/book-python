@@ -76,8 +76,102 @@ Type Annotation
     }
 
 
-Dict Keys
-=========
+Contains
+========
+.. code-block:: python
+
+    my_dict = {
+        'first_name': 'Jan',
+        'last_name': 'Twardowski',
+    }
+
+    'first_name' in my_dict
+    # True
+
+    'agency' in my_dict
+    # False
+
+
+Getting Items
+=============
+.. highlights::
+    * ``[...]`` throws ``KeyError`` exception if key not found in ``dict``
+    * ``.get()`` returns None if not found
+, but also allows to set default value
+
+Getitem Method
+--------------
+.. code-block:: python
+
+    my_dict = {
+        'first_name': 'Jan',
+        'last_name': 'Twardowski',
+    }
+
+    my_dict['last_name']
+    # Twardowski
+
+.. code-block:: python
+
+    my_dict = {
+        1961: 'First Human Space Flight',
+        1969: 'First Step on the Moon',
+    }
+
+    my_dict[1961]
+    # 'First Human Space Flight'
+
+.. code-block:: python
+
+    my_dict = {
+        'first_name': 'Jan',
+        'last_name': 'Twardowski',
+    }
+
+    my_dict['agency']
+    # KeyError: 'agency'
+
+Get Method
+----------
+.. highlights::
+    * ``.get()`` returns ``None`` if key not found
+    * ``.get()`` can have default value, if key not found
+
+.. code-block:: python
+
+    my_dict = {
+        'first_name': 'Jan',
+        'last_name': 'Twardowski',
+    }
+
+    my_dict.get('last_name')
+    # Twardowski
+
+.. code-block:: python
+
+    my_dict = {
+        1961: 'First Human Space Flight',
+        1969: 'First Step on the Moon',
+    }
+
+    my_dict.get(1961)
+    # 'First Human Space Flight'
+
+.. code-block:: python
+
+    my_dict = {
+        'first_name': 'Jan',
+        'last_name': 'Twardowski',
+    }
+
+    my_dict.get('agency')
+    # None
+
+    my_dict.get('agency', 'n/a')
+    # 'n/a'
+
+Get Keys
+--------
 * Key can be any hashable object
 
 .. code-block:: python
@@ -115,9 +209,8 @@ Dict Keys
     list(my_dict.keys())
     # ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
 
-
-Dict values
-===========
+Get Values
+----------
 * Value can be any object
 
 .. code-block:: python
@@ -132,9 +225,8 @@ Dict values
     list(my_dict.values())
     # [5.8, 2.7, 5.1, 1.9]
 
-
-Dict Items
-==========
+Get Key-Value Pairs
+-------------------
 .. code-block:: python
 
     my_dict = {
@@ -152,22 +244,6 @@ Dict Items
     #     ('Petal width', 1.9),
     #     ('Species', 'virginica')
     # ]
-
-
-Contains
-========
-.. code-block:: python
-
-    my_dict = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski',
-    }
-
-    'first_name' in my_dict
-    # True
-
-    'agency' in my_dict
-    # False
 
 
 Setting Items
@@ -270,94 +346,16 @@ Deleting Items
     # {'first_name': 'Jan', 'last_name': 'Twardowski'}
 
 
-Getting Items
-=============
+Indexing and Slicing
+====================
 .. highlights::
-    * ``[...]`` throws ``KeyError`` exception if key not found in ``dict``
-    * ``.get()`` returns None if not found
-, but also allows to set default value
-
-Getitem Method
---------------
-.. code-block:: python
-
-    my_dict = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski',
-    }
-
-    my_dict['last_name']
-    # Twardowski
-
-.. code-block:: python
-
-    my_dict = {
-        1961: 'First Human Space Flight',
-        1969: 'First Step on the Moon',
-    }
-
-    my_dict[1961]
-    # 'First Human Space Flight'
-
-.. code-block:: python
-
-    my_dict = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski',
-    }
-
-    my_dict['agency']
-    # KeyError: 'agency'
-
-Get Method
-----------
-.. highlights::
-    * ``.get()`` returns ``None`` if key not found
-    * ``.get()`` can have default value, if key not found
-
-.. code-block:: python
-
-    my_dict = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski',
-    }
-
-    my_dict.get('last_name')
-    # Twardowski
-
-.. code-block:: python
-
-    my_dict = {
-        1961: 'First Human Space Flight',
-        1969: 'First Step on the Moon',
-    }
-
-    my_dict.get(1961)
-    # 'First Human Space Flight'
-
-.. code-block:: python
-
-    my_dict = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski',
-    }
-
-    my_dict.get('agency')
-    # None
-
-    my_dict.get('agency', 'n/a')
-    # 'n/a'
-
-
-Indexing
-========
-.. highlights::
-    * Indexes on ``dict`` are not possible
+    * Indexing on ``dict`` is not possible
+    * Slicing on ``dict`` is not possible
 
 .. code-block:: python
 
     DATA = {
-        'a': 0
+        'a': 0,
         'b': 1,
         'c': 2,
     }
@@ -369,6 +367,10 @@ Indexing
     DATA[-0]            # KeyError: 0
     DATA[-1]            # KeyError: -1
     DATA[-2]            # KeyError: -2
+
+    DATA[1:2]           # TypeError: unhashable type: 'slice'
+    DATA[:2]            # TypeError: unhashable type: 'slice'
+    DATA[::2]           # TypeError: unhashable type: 'slice'
 
 .. code-block:: python
 
@@ -387,7 +389,7 @@ Indexing
     DATA[-2]            # KeyError: -2
 
 
-``dict`` and ``set``
+``dict`` vs. ``set``
 ====================
 .. highlights::
     * Both ``set`` and ``dict`` keys must be hashable
@@ -442,8 +444,8 @@ Indexing
     isinstance(my_data, set)          # False
 
 
-Length of a ``dict``
-====================
+Length
+======
 .. code-block:: python
 
     my_dict = {
@@ -464,6 +466,7 @@ Length of a ``dict``
     len(my_dict.items())
     # 3
 
+
 Example
 =======
 .. code-block:: python
@@ -476,6 +479,7 @@ Example
         '4a92bc79': 'branch/master',
         'b3bbd85a': 'tag/v1.0',
     }
+
 
 Assignments
 ===========
