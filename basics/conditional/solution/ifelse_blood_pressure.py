@@ -29,7 +29,6 @@ print(status)
 
 
 # Alternative solution
-
 if 180 <= systolic or 120 <= diastolic:
     status = STATUS_HYPERTENSIVE_CRISIS
 elif 140 <= systolic or 90 <= diastolic:

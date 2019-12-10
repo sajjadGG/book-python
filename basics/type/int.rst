@@ -106,7 +106,7 @@ Time
     * 1 h = 60 min
     * 1 min = 60 s
 
-Download time
+Download Time
 -------------
 * Complexity level: medium
 * Lines of code to write: 10 lines

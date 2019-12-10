@@ -56,7 +56,7 @@ Type Casting
     float('-13,37')             # ValueError: could not convert string to float: '-13,37'
 
 
-Rounding numbers
+Rounding Numbers
 ================
 .. code-block:: python
     :caption: ``round()`` - Rounds a number
@@ -107,7 +107,7 @@ Example
     * Naming convention
     * Mathematical operations
 
-Handling user input and type casting
+Handling User Input and Type Casting
 ------------------------------------
 * Complexity level: easy
 * Lines of code to write: 4 lines

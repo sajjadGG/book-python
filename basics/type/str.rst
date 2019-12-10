@@ -238,7 +238,7 @@ Example
     .. literalinclude:: solution/str_example.py
         :language: python
 
-Emoticon print
+Emoticon Print
 --------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
@@ -268,7 +268,7 @@ Emoticon print
     * Print formatting
     * Reading input data from user
 
-Variables and types
+Variables and Types
 -------------------
 * Complexity level: easy
 * Lines of code to write: 3 lines

@@ -54,10 +54,10 @@ Iterating over sequence
 .. code-block:: python
 
     i = 0
-    numbers = ['a', 'b', 'c']
+    data = ['a', 'b', 'c']
 
-    while i <= len(numbers):
-        print(numbers[i])
+    while i <= len(data):
+        print(data[i])
         i += 1
 
     # 'a'
@@ -102,18 +102,20 @@ Skipping iterations
     i = 0
 
     while i < 10:
+        print(i, end=', ')
         i += 1
 
         if i % 2 == 0:
             continue
 
-        print(i)
+        print()
 
-    # 1
-    # 3
-    # 5
-    # 7
-    # 9
+    # 0,
+    # 1, 2,
+    # 3, 4,
+    # 5, 6,
+    # 7, 8,
+    # 9,
 
 Exiting the loop
 ----------------

@@ -10,42 +10,35 @@ Mapping ``dict``
     * Mutable - can add, remove, and modify items
 
 
-Initializing
-============
-
-Initialize empty
-----------------
+Type Definition
+===============
 .. highlights::
     * ``{}`` is used more often
     * ``dict()`` is more readable
+    * Comma after last element is optional
+    * Since Python 3.7 ``dict`` keeps order of elements
+    * Before Python 3.7 ``dict`` order is not ensured!!
 
 .. code-block:: python
 
     my_dict = {}
     my_dict = dict()
 
-Initialize with many elements
------------------------------
-.. highlights::
-    * Comma after last element is optional
-
 .. code-block:: python
+    :caption: Initialize with many elements
 
     my_dict = {
         'first_name': 'Jan',
         'last_name': 'Twardowski'
     }
 
-.. code-block:: python
-
     my_dict = dict(
         first_name='Jan',
         last_name='Twardowski'
     )
 
-Duplicating items are overridden by latter
-------------------------------------------
 .. code-block:: python
+    :caption: Duplicating items are overridden by latter
 
     my_dict = {
         'species': 'setosa',
@@ -53,137 +46,9 @@ Duplicating items are overridden by latter
     }
     # {'species': 'virginica'}
 
-Key can be any hashable object
-------------------------------
-.. code-block:: python
-
-    my_dict = {
-        'Sepal length': 5.8,
-        'Sepal width': 2.7,
-        'Petal length': 5.1,
-        'Petal width': 1.9,
-    }
-
-.. code-block:: python
-
-    my_dict = {
-        0: 'Setosa',
-        1: 'Versicolor',
-        2: 'Virginica'
-    }
-
-.. code-block:: python
-
-    my_dict = {
-        5.8: 'Sepal length',
-        2.7: 'Sepal width',
-        5.1: 'Petal length',
-        1.9: 'Petal width',
-    }
-
-.. code-block:: python
-
-    my_dict = {
-        (1,): 'setosa',
-        (2,): 'virginica',
-        (3,): 'versicolor',
-    }
-
-.. code-block:: python
-
-    my_dict = {
-        (5.8, 2.7, 5.1, 1.9): 'virginica',
-        (5.1, 3.5, 1.4, 0.2): 'setosa',
-        (5.7, 2.8, 4.1, 1.3): 'versicolor',
-    }
-
-.. code-block:: python
-
-    my_dict = {
-        {1}: 'setosa',
-    }
-    # TypeError: unhashable type: 'set'
-
-    my_dict = {
-        [1]: 'setosa',
-    }
-    # TypeError: unhashable type: 'list'
-
-Value can be any object
------------------------
-.. code-block:: python
-
-    my_dict = {
-        'Sepal length': 5.8,
-        'Sepal width': 2.7,
-        'Petal length': 5.1,
-        'Petal width': 1.9,
-    }
-
-.. code-block:: python
-
-    my_dict = {
-        'virginica': (5.8, 2.7, 5.1, 1.9),
-        'setosa': (5.1, 3.5, 1.4, 0.2),
-        'versicolor': (5.7, 2.8, 4.1, 1.3),
-    }
-
-.. code-block:: python
-
-    my_dict = {
-        'virginica': [5.8, 2.7, 5.1, 1.9],
-        'setosa': (5.1, 3.5, 1.4, 0.2),
-        'versicolor': {5.7, 2.8, 4.1, 1.3},
-    }
-
-.. code-block:: python
-
-    my_dict = {
-        'commander': {'first_name': 'Jan', 'last_name': 'Twardowski'},
-        'medical_officer': {'first_name': 'José', 'last_name': 'Jiménez'},
-        'flight_engineer': {'first_name': 'Иван', 'last_name': 'Иванович'},
-    }
-
-.. code-block:: python
-
-    my_dict = {
-        'date': '1969-07-21',
-        'age': 42,
-        'astronaut': {'name': 'Jan Twardowski', 'medals': {'Medal of Honor', 'Purple Heart'}},
-        'agency': ['POLSA', 'Roscosmos', 'ESA'],
-        'location': ('Baikonur', 'Johnson Space Center'),
-    }
-
-Convert list to dict
---------------------
-.. code-block:: python
-
-    a = [(1, 2)]
-
-    dict(a)
-    # {1: 2}
-
-.. code-block:: python
-
-    pairs = [
-        ('first_name', 'Jan'),
-        ('last_name', 'Twardowski'),
-    ]
-
-    dict(pairs)
-    # {
-    #   'first_name': 'Jan',
-    #   'last_name': 'Twardowski'
-    # }
-
-Order of ``dict`` elements
---------------------------
-.. highlights::
-    * Since Python 3.7 ``dict`` keeps order of elements
-    * Before Python 3.7 ``dict`` order is not ensured!!
 
 Type Annotation
----------------
+===============
 .. code-block:: python
 
     my_dict: dict = {}
@@ -195,18 +60,124 @@ Type Annotation
 
     my_dict: Dict[int, str] = {
         0: 'setosa',
-        1: 'virginica':
-        2: 'versicolor'
+        1: 'virginica',
+        2: 'versicolor',
     }
 
-Adding elements
-===============
+.. code-block:: python
+
+    from typing import Dict
+
+    my_dict: Dict[str, int] = {
+        'Sepal length': 5.8,
+        'Sepal width': 2.7,
+        'Petal length': 5.1,
+        'Petal width': 1.9,
+    }
+
+Keys, Values and Items
+======================
+
+Dict Keys
+---------
+* Key can be any hashable object
+
+.. code-block:: python
+
+    my_dict = {
+        0: 'Setosa',
+        1: 'Versicolor',
+        2: 'Virginica'
+    }
+
+    list(my_dict.keys())
+    # [0, 1, 2]
+
+.. code-block:: python
+
+    my_dict = {
+        5.8: 'Sepal length',
+        2.7: 'Sepal width',
+        5.1: 'Petal length',
+        1.9: 'Petal width',
+    }
+
+    list(my_dict.keys())
+    # [5.8, 2.7, 5.1, 1.9]
+
+.. code-block:: python
+
+    my_dict = {
+        'Sepal length': 5.8,
+        'Sepal width': 2.7,
+        'Petal length': 5.1,
+        'Petal width': 1.9,
+    }
+
+    list(my_dict.keys())
+    # ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
+
+Dict values
+-----------
+* Value can be any object
+
+.. code-block:: python
+
+    my_dict = {
+        'Sepal length': 5.8,
+        'Sepal width': 2.7,
+        'Petal length': 5.1,
+        'Petal width': 1.9,
+    }
+
+    list(my_dict.values())
+    # [5.8, 2.7, 5.1, 1.9]
+
+Dict Items
+----------
+.. code-block:: python
+
+    my_dict = {
+        'Sepal length': 5.8,
+        'Sepal width': 2.7,
+        'Petal length': 5.1,
+        'Petal width': 1.9,
+    }
+
+    list(my_dict.items())
+    # [
+    #     ('Sepal length', 5.8),
+    #     ('Sepal width', 2.7),
+    #     ('Petal length', 5.1),
+    #     ('Petal width', 1.9),
+    #     ('Species', 'virginica')
+    # ]
+
+
+Contains
+========
+.. code-block:: python
+
+    my_dict = {
+        'first_name': 'Jan',
+        'last_name': 'Twardowski',
+    }
+
+    'first_name' in my_dict
+    # True
+
+    'agency' in my_dict
+    # False
+
+
+Setting Items
+=============
 .. highlights::
     * Adds if value not exist
     * Updates if value exist
 
-Adding using ``[...]`` syntax
------------------------------
+Setitem Method
+--------------
 .. code-block:: python
 
     my_dict = {
@@ -223,8 +194,8 @@ Adding using ``[...]`` syntax
     #   'agency': 'POLSA'
     # }
 
-Adding using ``.update()`` method
----------------------------------
+Update Method
+-------------
 .. code-block:: python
 
     my_dict = {
@@ -268,10 +239,10 @@ Adding using ``.update()`` method
     # }
 
 
-Removing items
+Deleting Items
 ==============
 
-``.pop()``
+Pop Method
 ----------
 .. code-block:: python
 
@@ -286,8 +257,8 @@ Removing items
     my_dict  # {'first_name', 'Jan', 'last_name': 'Twardowski'}
     value    # 'POLSA'
 
-``del`` keyword
----------------
+Del Keyword
+-----------
 .. code-block:: python
 
     my_dict = {
@@ -301,26 +272,12 @@ Removing items
     my_dict
     # {'first_name': 'Jan', 'last_name': 'Twardowski'}
 
-Accessing elements
-==================
 
-Check if value in ``dict``
---------------------------
-.. code-block:: python
+Getting Items
+=============
 
-    my_dict = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski',
-    }
-
-    'first_name' in my_dict
-    # True
-
-    'agency' in my_dict
-    # False
-
-Accessing values with ``[...]``
--------------------------------
+Getitem Method
+--------------
 .. highlights::
     * ``[...]`` throws ``KeyError`` exception if key not found in ``dict``
 
@@ -354,8 +311,8 @@ Accessing values with ``[...]``
     my_dict['agency']
     # KeyError: 'agency'
 
-Accessing values with ``.get(...)``
------------------------------------
+Get Method
+----------
 .. highlights::
     * ``.get()`` returns ``None`` if key not found
     * ``.get()`` can have default value, if key not found
@@ -393,36 +350,9 @@ Accessing values with ``.get(...)``
     my_dict.get('agency', 'n/a')
     # 'n/a'
 
-Accessing ``dict`` keys, values and key-value pairs
----------------------------------------------------
-.. code-block:: python
 
-    iris = {
-        'Sepal length': 5.8,
-        'Sepal width': 2.7,
-        'Petal length': 5.1,
-        'Petal width': 1.9,
-        'Species': 'virginica'
-    }
-
-    list(iris.keys())
-    # ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
-
-    list(iris.values())
-    # [5.8, 2.7, 5.1, 1.9, 'virginica']
-
-    list(iris.items())
-    # [
-    #     ('Sepal length', 5.8),
-    #     ('Sepal width', 2.7),
-    #     ('Petal length', 5.1),
-    #     ('Petal width', 1.9),
-    #     ('Species', 'virginica')
-    # ]
-
-
-Indexing ``dict``
-=================
+Indexing
+========
 .. highlights::
     * Indexes on ``dict`` are not possible
 
@@ -459,64 +389,6 @@ Indexing ``dict``
     DATA[-2]            # KeyError: -2
 
 
-Create ``dict`` from two sequences
-==================================
-
-List of pairs
--------------
-.. code-block:: python
-
-    pairs = [
-        ('Sepal length', 5.8),
-        ('Sepal width', 2.7),
-        ('Petal length', 5.1),
-        ('Petal width', 1.9),
-        ('Species', 'virginica')
-    ]
-
-    dict(pairs)
-    # {
-    #     'Sepal length': 5.8,
-    #     'Sepal width': 2.7,
-    #     'Petal length': 5.1,
-    #     'Petal width': 1.9,
-    #     'Species': 'virginica'
-    # }
-
-Zip
----
-.. highlights::
-    * ``zip`` is a generator
-    * ``zip`` will create a list of pairs (like ``dict.items()``)
-
-.. code-block:: python
-
-    keys =  ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
-    values = [5.8, 2.7, 5.1, 1.9, 'virginica']
-
-    dict(zip(keys, values))
-    # {
-    #   'Sepal length': 5.8,
-    #   'Sepal width': 2.7,
-    #   'Petal length': 5.1,
-    #   'Petal width': 1.9,
-    #   'Species': 'virginica'
-    # }
-
-Enumerate
----------
-.. code-block:: python
-
-    labels = ['setosa', 'versicolor', 'virginica']
-
-    dict(enumerate(labels))
-    # {
-    #   0: 'setosa',
-    #   1: 'versicolor',
-    #   2: 'virginica'
-    # }
-
-
 ``dict`` and ``set``
 ====================
 .. highlights::
@@ -535,12 +407,8 @@ Enumerate
     {1, 2,}           # set
     {1: 2,}           # dict
 
-    {1}               # set
-    {}                # dict
-
-Empty ``dict``
---------------
 .. code-block:: python
+    :caption: Empty ``dict``
 
     my_data = {1: 1}
     # {1:1}
@@ -548,9 +416,8 @@ Empty ``dict``
     my_data.pop(1)
     # {}
 
-Empty ``set``
--------------
 .. code-block:: python
+    :caption: Empty ``set``
 
     my_data = {1}
     # {1}
@@ -558,22 +425,21 @@ Empty ``set``
     my_data.pop()
     # set()
 
-Differences
------------
 .. code-block:: python
+    :caption: Differences
 
     my_data = {1: 1}
-    isinstance(my_data, (set, dict))  # True
     isinstance(my_data, dict)         # True
     isinstance(my_data, set)          # False
 
     my_data = {1}
-    isinstance(my_data, (set, dict))  # True
     isinstance(my_data, dict)         # False
     isinstance(my_data, set)          # True
 
     my_data = {}
     isinstance(my_data, (set, dict))  # True
+
+    my_data = {}
     isinstance(my_data, dict)         # True
     isinstance(my_data, set)          # False
 
@@ -600,6 +466,18 @@ Length of a ``dict``
     len(my_dict.items())
     # 3
 
+Example
+=======
+.. code-block:: python
+
+    git = {
+        'ce16a8ce': 'commit/1',
+        'cae6b510': 'commit/2',
+        '895444a6': 'commit/3',
+        'aef731b5': 'commit/4',
+        '4a92bc79': 'branch/master',
+        'b3bbd85a': 'tag/v1.0',
+    }
 
 Assignments
 ===========

@@ -149,8 +149,8 @@ Variables and constants
     NAME = 'Иван Иванович'
 
 
-``print()``
-===========
+Printing values
+===============
 .. highlights::
     * ``print()`` adds ``'\n'`` at the end
     * Prints on the screen

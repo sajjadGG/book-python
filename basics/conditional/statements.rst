@@ -116,10 +116,10 @@ Checking if variable is certain value
     job = 'cosmonaut'
 
     if job == 'astronaut':
-        print('Yes')
+        print('NASA astronaut')
     else:
-        print('No')
-    # No
+        print('Roscosmos cosmonaut')
+    # Roscosmos cosmonaut
 
 .. code-block:: python
 
@@ -180,12 +180,14 @@ Inline ``if``
         print('Hello')
     elif language == 'Russian':
         print('Здравствуйте')
-    elif language == 'Germany':
-        print('Guten Tag!')
-    elif language == 'Poland':
-        print('Witaj!')
+    elif language == 'German':
+        print('Guten Tag')
+    elif language == 'Polish':
+        print('Witaj')
     else:
         print("I don't speak this language")
+
+    # Witaj
 
 Switch statement
 ----------------
@@ -203,9 +205,7 @@ Switch statement
         'Polish': 'Witaj',
     }
 
-
     language = 'French'
-
     switch.get(language, "I don't speak this language")
     # "I don't speak this language"
 
