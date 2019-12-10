@@ -61,6 +61,8 @@ Mappings
     :name: Basic Mappings
 
     /basics/mapping/dict.rst
+    /basics/mapping/generate.rst
+    /basics/mapping/nested.rst
 
 ************
 Conditionals

@@ -366,7 +366,7 @@ Text analysis
 
         Sentences: 7
         Words: 71
-        Characters: 348
+        Characters: 347
         Letters: 283
         Commas: 1
         Adverbs: 0

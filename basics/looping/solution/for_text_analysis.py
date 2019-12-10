@@ -11,12 +11,13 @@ total_adverbs = 0
 for sentence in TEXT.split('.'):
 
     sentence = sentence.strip()
-    words = sentence.split(' ')
-    letters = sentence.replace(' ', '').replace(',', '')
+    words = sentence.split()
+    characters = sentence.replace(',', '')
+    letters = characters.replace(' ', '')
 
     total_sentences += 1
     total_words += len(words)
-    total_chars += len(sentence)
+    total_chars += len(characters)
     total_letters += len(letters)
     total_commas += sentence.count(',')
 
