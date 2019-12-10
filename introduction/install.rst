@@ -23,102 +23,59 @@ Szkolenie z programowania w Python
 
 Szkolenie z Analizy Numerycznej lub Machine Learning
 ----------------------------------------------------
-.. warning:: Na chwilę obecną jest problem z uruchomieniem ``Jupyter Notebook`` na Python 3.8 na systemie Windows. Ma to związek ze zmianami w API biblioteki ``asyncio`` wykorzystywanej przez serwer ``Tornado``, na którym uruchamia się ``Jupyter``. Jeżeli szkolenie będzie z Machine Learning lub analizy numerycznej to zalecam najnowszą wersję gałęzi **Python 3.7**. Więcej szczegółów na https://stackoverflow.com/questions/58422817/jupyter-notebook-with-python-3-8-notimplementederror
-
 * Można korzystać ze swojego komputera
 * Dowolny system operacyjny wspierany przez Python
 * Zainstalowane najnowsze oficjalne wydanie Python 3.7 (https://www.python.org/downloads/)
 * Posiadać uprawnienia na komputerze do instalacji pakietów Python za pomocą ``pip``
 * Dostęp do internetu
 
+.. warning:: Na chwilę obecną jest problem z uruchomieniem ``Jupyter Notebook`` na Python 3.8 na systemie Windows. Ma to związek ze zmianami w API biblioteki ``asyncio`` wykorzystywanej przez serwer ``Tornado``, na którym uruchamia się ``Jupyter``. Jeżeli szkolenie będzie z Machine Learning lub analizy numerycznej to zalecam najnowszą wersję gałęzi **Python 3.7**. Więcej szczegółów na https://stackoverflow.com/questions/58422817/jupyter-notebook-with-python-3-8-notimplementederror
 
-Setting-up Environment
-======================
+
+Python Installation
+===================
 
 Windows
 -------
-#. Instalacja Python:
-
-    * Pozostaw domyślne opcje
-    * Dodaj do ``PATH`` (ważne! - inaczej nie uruchomi się w trybie poleceń ``cmd``)
-
-#. Weryfikacja instalacji (wykonaj polecenia w terminalu ``cmd``):
-
-    * ``python3 --version`` - sprawdzanie wersji Python
-    * ``pip3 --version`` - sprawdzanie wersji managera pakietów ``pip``
-    * ``python3`` - weryfikacja uruchomienia interpretera Python
-
-#. Instalacja PyCharm:
-
-    * Pobierz i zainstaluj najnowszy PyCharm Community (https://www.jetbrains.com/pycharm/download/)
-    * Zaznaczaj domyślne opcje dla PyCharm
-    * pamiętaj aby powiązać z plikami ``.py``
+* Pozostaw domyślne opcje
+* Dodaj do ``PATH`` (ważne! - inaczej nie uruchomi się w trybie poleceń ``cmd``)
 
 .. note:: Jeżeli zainstalujesz Python, ale nie zaznaczysz aby dodać go do ``PATH``, plik wykonywalny możesz znaleźć w ``C:\Users\%User_name%\AppData\Local\Programs\Python\Python_version\Scripts\``
 
 macOS
 -----
-#. Instalacja Python:
-
-    * Pobierz i zainstaluj najnowszą wersję Pythona z oficjalnej strony internetowej (https://www.python.org/downloads/)
-    * Alternatywnie użyj ``brew install python3`` - (opis instalacji brew: https://brew.sh)
-
-#. Weryfikacja instalacji (wykonaj polecenia w terminalu ``Terminal.app``):
-
-    * ``python3 --version`` - sprawdzanie wersji Python
-    * ``pip3 --version`` - sprawdzanie wersji managera pakietów ``pip``
-    * ``python3`` - weryfikacja uruchomienia interpretera Python
-
-#. Instalacja PyCharm:
-
-    * Pobierz i zainstaluj najnowszy PyCharm Community (https://www.jetbrains.com/pycharm/download/)
+* Pobierz i zainstaluj najnowszą wersję Pythona z oficjalnej strony internetowej (https://www.python.org/downloads/)
+* Alternatywnie użyj ``brew install python3`` - (opis instalacji brew: https://brew.sh)
 
 Linux
 -----
-#. Instalacja Python:
+* Niemalże wszystkie dystrybucje Linuxa posiadają zainstalowanego Pythona.
+* Pobierz i zainstaluj najnowszą wersję Pythona z oficjalnej strony internetowej (https://www.python.org/downloads/)
+* Alternatywnie zainstaluj używając managera pakietów dla dystrybucji z której korzystasz:
 
-    * Niemalże wszystkie dystrybucje Linuxa posiadają zainstalowanego Pythona.
-    * Pobierz i zainstaluj najnowszą wersję Pythona z oficjalnej strony internetowej (https://www.python.org/downloads/)
-    * Alternatywnie zainstaluj używając managera pakietów dla dystrybucji z której korzystasz:
-
-        * ``apt`` - Debian, Ubuntu
-        * ``snap`` - Ubuntu
-        * ``yum`` - Suse
-        * ``emerge`` - Gentoo
-        * ``rpm`` - Redhat, Fedora
-
-#. Weryfikacja instalacji (wykonaj polecenia w terminalu):
-
-    * ``python3 --version`` - sprawdzanie wersji Python
-    * ``pip3 --version`` - sprawdzanie wersji managera pakietów ``pip``
-    * ``python3`` - weryfikacja uruchomienia interpretera Python
-
-#. Instalacja PyCharm:
-
-    * Pobierz i zainstaluj najnowszy PyCharm Community (https://www.jetbrains.com/pycharm/download/)
+    * ``apt`` - Debian, Ubuntu
+    * ``snap`` - Ubuntu
+    * ``yum`` - SuSe
+    * ``emerge`` - Gentoo
+    * ``rpm`` - RedHat, Fedora
 
 
-Assignments
-===========
+Verification
+============
+#. Wykonaj w terminalu ``python3 --version`` - sprawdzanie wersji Python
+#. Wykonaj w terminalu ``pip3 --version`` - sprawdzanie wersji managera pakietów ``pip``
+#. Wykonaj w terminalu ``python3`` - weryfikacja uruchomienia interpretera Python
 
-Check Python Version
---------------------
-* Complexity level: easy
-* Lines of code to write: 0 lines
-* Estimated time of completion: 1 min
 
-#. Uruchom terminal i wpisz ``python3``
-#. Po uruchomieniu interpretera wpisz następujące linijki kodu:
+IDE Installation
+================
 
-    .. code-block:: python
+Szkolenie z programowania w Python
+----------------------------------
+#. Pobierz i zainstaluj najnowszy PyCharm Community (https://www.jetbrains.com/pycharm/download/)
+#. Zaznaczaj domyślne opcje dla PyCharm
+#. Pamiętaj aby powiązać z plikami ``.py``
 
-        import sys
-
-        print(sys.version)
-
-#. Jaka wersja Python jest zainstalowana?
-
-:The whys and wherefores:
-    * Czy Python działa
-    * Jaka jest wersja Python
-    * Korzystanie z print
+Szkolenie z Analizy Numerycznej lub Machine Learning
+----------------------------------------------------
+#. ``pip3 install jupyter``
