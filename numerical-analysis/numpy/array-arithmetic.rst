@@ -278,7 +278,8 @@ Matrix Multiplication
     # array([[22, 28],
     #        [49, 64]])
 
-.. code-block:: text
+.. code-block:: python
+    :force:
 
     import numpy as np
 
@@ -294,7 +295,8 @@ Matrix Multiplication
     # array([[22, 28],
     #        [49, 64]])
 
-.. code-block:: text
+.. code-block:: python
+    :force:
 
     import numpy as np
 

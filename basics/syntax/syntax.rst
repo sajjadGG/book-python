@@ -14,11 +14,11 @@ Indentation
 .. code-block:: python
 
     if True:
-        print('First line of the true statement')
-        print('Second line of the true statement')
-        print('Third line of the true statement')
+       print('First line of the true statement')
+       print('Second line of the true statement')
+       print('Third line of the true statement')
     else:
-        print('This is false')
+       print('This is false')
 
 
 End of Lines
@@ -28,11 +28,11 @@ End of Lines
     * ``\r\n`` and ``\n`` works
     * :pep:`8`: Use ``\n``
 
-.. code-block:: python
+.. doctest::
 
-    print('Hello!\nHow are you?')
-    print('Hello!\r\nHow are you?')
-
+    >>> print('Hello!\nHow are you?')
+    Hello!
+    How are you?
 
 Comments
 ========

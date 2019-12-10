@@ -13,16 +13,9 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.imgmath',
     # 'sphinx.ext.mathjax',
-    # 'sphinx.ext.autosectionlabel',
     # 'sphinx.ext.viewcode',
     # 'sphinx.ext.coverage',
-    # 'sphinx.ext.githubpages',
-    # 'sphinx.ext.autodoc',
-    # 'sphinx.ext.intersphinx',
     # 'sphinx.ext.graphviz',
-    # 'sphinxjp.themes.revealjs',
-    # 'nbsphinx',
-    # 'IPython.sphinxext.ipython_console_highlighting',
 ]
 
 language = 'en'

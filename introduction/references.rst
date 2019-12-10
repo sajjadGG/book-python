@@ -1,27 +1,6 @@
 **********************
-References in the book
+References in the Book
 **********************
-
-
-Iris Dataset
-============
-.. figure:: img/iris-species.jpg
-    :scale: 50%
-    :align: center
-
-    Iris Species
-
-.. figure:: img/iris-dataset.png
-    :scale: 50%
-    :align: center
-
-    Iris Dataset
-
-.. figure:: img/iris-grid.png
-    :scale: 50%
-    :align: center
-
-    Iris Grid
 
 
 Ehlo World!
@@ -30,6 +9,27 @@ W lekcjach programowania utarło się, że zawsze zaczynamy od już przysłowiow
 Tym razem jednak zaczniemy od 'Ehlo World!' i nie jest to pomyłka.
 Jest to przywitanie serwera SMTP.
 W tej książce znajdziesz kilka żartów informatycznych i nawiązań do starych
+
+
+Iris Dataset
+============
+.. figure:: img/iris-species.jpg
+    :scale: 50%
+    :align: center
+
+    Iris flower species
+
+.. figure:: img/iris-dataset.png
+    :scale: 50%
+    :align: center
+
+    Iris dataset
+
+.. figure:: img/iris-grid.png
+    :scale: 50%
+    :align: center
+
+    Iris features distribution
 
 
 Addresses
@@ -50,9 +50,9 @@ Addresses
     "ESA EAC", "Linder Hoehe", "Köln", "51147", "North Rhine-Westphalia", "Germany"
 
 
-Dates and timezones
+Dates and Timezones
 ===================
-* ``1957-10-04 19:28:34 UTC`` - Sputnik Launch
+* ``1957-10-04 19:28:34 UTC`` - Sputnik launch
 * ``1961-04-12 06:07:00 UTC`` - Yuri Gagarin's launch
 * ``1969-07-21 02:56:15 UTC`` - Apollo 11 Neil Armstrong's first step on the Moon
 
@@ -62,15 +62,14 @@ Main Characters
 
 Jan Twardowski
 --------------
-* Wizard from Polish Fairytale
-* Sits on the Moon
+* Wizard from Polish fairytale who escaped before the devil to the Moon
 * `Modern Film Adaptation by Allegro <https://www.youtube.com/watch?v=hRdYz8cnOW4>_`
 
 .. figure:: img/jan-twardowski.jpg
     :scale: 50%
     :align: center
 
-    Jan Twardowski
+    Jan Twardowski, wizard from Polish fairytale who escaped before the devil to the Moon
 
 Mark Watney
 -----------
@@ -80,7 +79,7 @@ Mark Watney
     :scale: 25%
     :align: center
 
-    Mark Watney
+    Mark Watney, NASA Astronaut from Andy Weir's book "The Martian"
 
 Иван Иванович
 -------------
@@ -90,7 +89,7 @@ Mark Watney
     :scale: 50%
     :align: center
 
-    Иван Иванович
+    Иван Иванович, dummy used in Soviet space program before Gagarin's Launch
 
 .. _José Jiménez:
 
@@ -110,7 +109,7 @@ José Jiménez
     :scale: 50%
     :align: center
 
-    Jiménez as an astronaut, 1963.
+    Jiménez as an astronaut, 1963. Fictional character created and performed by comedian Bill Dana
 
 Melissa Lewis
 -------------
@@ -120,7 +119,7 @@ Melissa Lewis
     :scale: 25%
     :align: center
 
-    Melissa Lewis
+    Melissa Lewis, NASA Astronaut from Andy Weir's book "The Martian"
 
 Ryan Stone
 ----------
@@ -130,7 +129,7 @@ Ryan Stone
     :scale: 50%
     :align: center
 
-    Ryan Stone
+    Ryan Stone, NASA Astronaut from the movie "Gravity"
 
 Matt Kowalski
 -------------
@@ -140,7 +139,7 @@ Matt Kowalski
     :scale: 50%
     :align: center
 
-    Matt Kowalski
+    Matt Kowalski, NASA Astronaut from the movie "Gravity"
 
 Alex Vogel
 ----------
@@ -150,7 +149,7 @@ Alex Vogel
     :scale: 25%
     :align: center
 
-    Alex Vogel
+    Alex Vogel, NASA Astronaut from Andy Weir's book "The Martian"
 
 National Geographic's Mars Crew Members
 ---------------------------------------
