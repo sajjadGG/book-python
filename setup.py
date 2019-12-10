@@ -17,5 +17,6 @@ rmtree(outputdir, ignore_errors=True)
 makedirs(outputdir, exist_ok=True)
 run('clear')
 
-cmd = split(f'sphinx-build -a -E -j auto --color -b {FORMAT} {sourcedir} {outputdir}')
-run(cmd)
+cmd = (f'sphinx-build -a -E -j auto --color -b {FORMAT} {sourcedir} {outputdir}')
+print(cmd)
+run(split(cmd))
