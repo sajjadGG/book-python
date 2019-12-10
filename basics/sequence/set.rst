@@ -9,8 +9,8 @@ Sequence ``set``
     * Can store elements of any **hashable** types
 
 
-Initializing
-============
+Type Definition
+===============
 .. highlights::
     * Do not record element position
     * Do not record order of insertion

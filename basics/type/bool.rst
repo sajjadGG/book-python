@@ -50,11 +50,11 @@ Type Casting
     bool(set())                 # False
 
 
-Boolean logic
-=============
+Boolean Algebra
+===============
 
-Using ``and``
--------------
+Conjunction
+-----------
 .. code-block:: python
 
     True and True               # True
@@ -83,8 +83,8 @@ Using ``and``
     0.0 and 'Jan'               # False
     1 and False                 # False
 
-Using ``or``
-------------
+Disjunction
+-----------
 .. code-block:: python
 
     True or True                # True
@@ -113,8 +113,8 @@ Using ``or``
     0 or True                   # True
     0.0 or False                # False
 
-Using both: ``or`` and ``and``
-------------------------------
+Complex Statements
+------------------
 .. code-block:: python
 
     True and True or False      # True

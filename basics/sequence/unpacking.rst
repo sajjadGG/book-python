@@ -3,7 +3,7 @@ Sequence Unpacking
 ******************
 
 
-Unpacking values
+Unpacking Values
 ================
 .. code-block:: python
 

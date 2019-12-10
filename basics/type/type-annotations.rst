@@ -16,9 +16,23 @@ Basic Type Annotations
     * More and more books and documentations use types
     * To type check use: ``mypy`` or ``pyre-check`` (more in :ref:`cicd-tools`)
 
+Why?
+====
+.. highlights::
+    * Good IDE will highlight, incorrect types
 
-Basic types
-===========
+.. code-block:: python
+
+    def add_numbers(a: int, b: float) -> int:
+        return int(a + b)
+
+
+    add_numbers(1, 2.5)
+    add_numbers('a', 'b')       # Good IDE should highlight the problem here
+
+
+Annotating Basic Types
+======================
 .. code-block:: python
 
     value: int = 30
@@ -40,8 +54,8 @@ Basic types
     my_var: bool = False
 
 
-Types do not enforce checking
-=============================
+Type Check is not Enforced
+==========================
 .. highlights::
     * This code will run without any problems
     * Although ``mypy`` or ``pyre-check`` will throw error
@@ -53,22 +67,7 @@ Types do not enforce checking
     is_adult: int = True
 
 
-Why?
-====
-.. highlights::
-    * Good IDE will highlight, incorrect types
-
-.. code-block:: python
-
-    def add_numbers(a: int, b: float) -> int:
-        return int(a + b)
-
-
-    add_numbers(1, 2.5)
-    add_numbers('a', 'b')       # Good IDE should highlight the problem here
-
-
-More advanced topics
+More Advanced Topics
 ====================
 .. note::
     The topic will be continued in chapter: :ref:`Type Annotation`

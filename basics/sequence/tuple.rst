@@ -8,48 +8,42 @@ Sequence ``tuple``
     * Immutable - cannot add, modify or remove items
 
 
-Initializing
-============
+Type Definition
+===============
 .. highlights::
     * ``()`` is used more often
     * ``tuple()`` is more readable
+    * Single element ``tuple`` require comma at the end (**important!**)
+    * Brackets are optional
+    * Comma after last element is optional
 
-Initialize empty
-----------------
 .. code-block:: python
+    :caption: Initialize empty
 
     my_tuple = ()
     my_tuple = tuple()
 
-Initialize with one element
----------------------------
-.. highlights::
-    * Single element ``tuple`` require comma at the end (**important!**)
-    * Brackets are optional
-
 .. code-block:: python
+    :caption: Initialize with one element
 
     my_tuple = 1,
     my_tuple = (1,)
 
-Initialize with many elements
------------------------------
-.. highlights::
-    * Comma after last element is optional
-    * Brackets are optional
-
 .. code-block:: python
+    :caption: Initialize with many elements
 
     my_tuple = 1, 2
     my_tuple = (1, 2)
 
 .. code-block:: python
+    :caption: Initialize with many elements
 
     my_tuple = 1, 2.0, None, False, 'Iris'
     my_tuple = (1, 2.0, None, False, 'Iris')
 
+
 Type Annotation
----------------
+===============
 .. code-block:: python
 
     my_tuple: tuple = ()
@@ -68,24 +62,20 @@ Type Annotation
 
 Membership Operators
 ====================
-
-Equals
-------
 .. code-block:: python
+    :caption: Equals
 
     (1, 2) == (1, 2)        # True
     (1, 2) == (2, 1)        # False
 
-Not equals
-----------
 .. code-block:: python
+    :caption: Not equals
 
     (1, 2, 3) != (1, 2)     # True
     (1, 2) != (1, 2)        # False
 
-Contains
---------
 .. code-block:: python
+    :caption: Contains
 
     1 in (1, 2)             # True
     3 in (1, 2)             # False
@@ -93,9 +83,8 @@ Contains
     (2) in (1, 2)           # True
     (1, 2) in (1, 2)        # False
 
-Missing
--------
 .. code-block:: python
+    :caption: Missing
 
     4 not in (1, 2)         # True
     1 not in (1, 2)         # False
@@ -104,8 +93,8 @@ Missing
     (1, 2) not in (1, 2)    # True
 
 
-Accessing elements
-==================
+Getting Items
+=============
 .. highlights::
     * More in :ref:`Sequence Indexing` and :ref:`Sequence Slicing`
 
@@ -127,6 +116,9 @@ Accessing elements
 
 ``tuple`` vs. others
 ====================
+
+``tuple`` vs. ``str``
+---------------------
 .. code-block:: python
 
     what = 'foo'      # str
@@ -194,8 +186,8 @@ Accessing elements
     what = (1.,.5)    # tuple with two floats
 
 
-Length of a ``tuple``
-=====================
+Length
+======
 .. code-block:: python
 
     my_tuple = (1, 2, 3)
@@ -204,7 +196,7 @@ Length of a ``tuple``
     # 3
 
 
-When use ``tuple`` or ``list``
+When Use ``tuple`` or ``list``
 ==============================
 
 Tuple

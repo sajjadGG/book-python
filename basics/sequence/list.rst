@@ -8,8 +8,8 @@ Sequence ``list``
     * Mutable - can add, remove, and modify items
 
 
-Initializing
-============
+Type Definition
+===============
 .. highlights::
     * ``[]`` is used more often
     * ``list()`` is more readable
@@ -60,7 +60,7 @@ Type Annotation
     my_list: List[str] = ['a', 'b', 'c', 'd']
 
 
-Adding elements
+Adding Elements
 ===============
 * ``list + list``
 * ``list.extend()``
@@ -97,7 +97,7 @@ Adding elements
     my_list.append([3, 4])
     # [1, 2, [3, 4]]
 
-Inserting elements at specific position
+Inserting Elements at Specific Position
 ---------------------------------------
 .. code-block:: python
 
@@ -117,7 +117,7 @@ Inserting elements at specific position
 Modification
 ============
 
-Getting items
+Getting Items
 -------------
 .. highlights::
     * More in :ref:`Sequence Indexing` and :ref:`Sequence Slicing`
@@ -131,7 +131,7 @@ Getting items
     my_list[2]         # 'c'
     my_list[3]         # 'd'
 
-Setting items
+Setting Items
 -------------
 .. code-block:: python
 
@@ -142,7 +142,7 @@ Setting items
     print(my_list)
     # ['x', 'b', 'c', 'd']
 
-Deleting items
+Deleting Items
 --------------
 .. code-block:: python
 
@@ -196,7 +196,7 @@ Sorting
     # None
 
 
-Multiple statements in one line
+Multiple Statements in One Line
 ===============================
 .. code-block:: python
 
@@ -246,7 +246,7 @@ Membership Operators
     [1, 2] not in [1, 2]    # True
 
 
-Built-in functions on sequences
+Built-in Functions on Sequences
 ===============================
 * ``min()`` - Minimal value
 * ``max()`` - Maximal value

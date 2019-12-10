@@ -5,7 +5,7 @@ Type ``str`` Methods
 ********************
 
 
-String immutability
+String Immutability
 ===================
 .. highlights::
     * ``str`` is immutable
@@ -53,11 +53,11 @@ String Arithmetic
     '-' * 10            # ----------
 
 
-``str`` methods
-===============
+String Methods
+==============
 
-Changing Character Case
------------------------
+Change Case
+-----------
 .. highlights::
     * Unify data format before analysis
 
@@ -79,8 +79,8 @@ Changing Character Case
     name.title()       # 'Angus Mcgyver'
     name.capitalize()  # 'Angus mcgyver'
 
-Replacing parts of the ``str``
-------------------------------
+Replace
+-------
 .. code-block:: python
 
     name = 'Jan Twardowski Iii'
@@ -88,8 +88,8 @@ Replacing parts of the ``str``
     name.replace('Iii', 'III')
     # 'Jan Twardowski III'
 
-Cleaning ``str`` from whitespaces
----------------------------------
+Strip Whitespace
+----------------
 .. code-block:: python
 
     name = '\tJan Twardowski    \n'
@@ -98,8 +98,8 @@ Cleaning ``str`` from whitespaces
     name.rstrip()       # '\tJan Twardowski'
     name.lstrip()       # 'Jan Twardowski    \n'
 
-Checking if ``str`` starts or ends with value
----------------------------------------------
+Checking if Starts or Ends with Value
+-------------------------------------
 .. highlights::
     * Understand this as "starts with" and "ends with"
 
@@ -110,7 +110,23 @@ Checking if ``str`` starts or ends with value
     name.startswith('Jan')  # True
     name.endswith(';')      # False
 
-Splitting by character or whitespace
+Splitting by Line
+-----------------
+.. code-block:: python
+
+    DATA = """First Line
+    Second Line
+    Third Line
+    """
+
+    DATA.splitlines()
+    # [
+    #   'First Line',
+    #   'Second Line',
+    #   'Third Line'
+    # ]
+
+Splitting by Character or Whitespace
 ------------------------------------
 .. code-block:: python
 
@@ -139,24 +155,8 @@ Splitting by character or whitespace
     text.split()
     # ['10.13.37.1', 'nasa.gov', 'esa.int', 'roscosmos.ru']
 
-Splitting by line
------------------
-.. code-block:: python
-
-    DATA = """First Line
-    Second Line
-    Third Line
-    """
-
-    DATA.splitlines()
-    # [
-    #   'First Line',
-    #   'Second Line',
-    #   'Third Line'
-    # ]
-
-Joining ``str``
----------------
+Joining with String
+-------------------
 .. code-block:: python
 
     text = ['We', 'choose', 'to', 'go', 'to', 'the', 'Moon']
@@ -171,8 +171,8 @@ Joining ``str``
     ','.join(setosa)
     # '5.1,3.5,1.4,0.2,setosa'
 
-Checking if ``str`` contains only whitespace
---------------------------------------------
+Checking if Contains Only Whitespace
+------------------------------------
 .. code-block:: python
 
     ''.isspace()        # False
@@ -180,14 +180,14 @@ Checking if ``str`` contains only whitespace
     '\t'.isspace()      # True
     '\n'.isspace()      # True
 
-Checking if ``str`` contains only alphabet characters
------------------------------------------------------
+Checking if Contains Only Alphabet Characters
+---------------------------------------------
 .. code-block:: python
 
     'hello'.isalpha()   # True
     'hello1'.isalpha()  # False
 
-Finding starting position of a sub-string
+Finding Starting Position of a Sub-string
 -----------------------------------------
 .. code-block:: python
 
@@ -197,14 +197,14 @@ Finding starting position of a sub-string
     text.find('Moo')    # 23
     text.find('x')      # -1
 
-Check if ``str`` is a part of another ``str``
----------------------------------------------
+Check if is a Part of Another String
+------------------------------------
 .. code-block:: python
 
     'Py' in 'Python'     # True
     'Monty' in 'Python'  # False
 
-Counting occurrences
+Counting Occurrences
 --------------------
 .. code-block:: python
 
@@ -215,7 +215,7 @@ Counting occurrences
     text.count('x')     # 0
 
 
-Multiple statements in one line
+Multiple Statements in One Line
 ===============================
 .. code-block:: python
 
@@ -233,12 +233,12 @@ Multiple statements in one line
     # AttributeError: 'bool' object has no attribute 'replace'
 
 
-Cleaning ``str`` from user input
-================================
+Cleaning User Input
+===================
 .. highlights::
     * 80% of machine learning and data science is cleaning data
 
-Is this the same address?
+Is This the Same Address?
 -------------------------
 .. highlights::
     * This is a dump of distinct records of a single address
@@ -264,8 +264,8 @@ Is this the same address?
     'Jana IIi Sobieskiego'
     'Jana lll Sobieskiego'  # three small letters 'L'
 
-Different way of spelling and abbreviating
-------------------------------------------
+Spelling and Abbreviations
+--------------------------
 .. code-block:: text
 
     'ul'
@@ -306,7 +306,7 @@ Different way of spelling and abbreviating
     'aleii'
     'aleji'
 
-House number and apartment
+House and Apartment Number
 --------------------------
 .. code-block:: text
 
@@ -333,7 +333,7 @@ House number and apartment
 
     '13d bud. A'
 
-Phone numbers
+Phone Numbers
 -------------
 .. code-block:: text
 

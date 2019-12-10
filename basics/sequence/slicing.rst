@@ -5,7 +5,7 @@ Sequence Slicing
 ****************
 
 
-Accessing range of elements
+Accessing Range of Elements
 ===========================
 .. highlights::
     * Slice Index must be positive or negative ``int`` or zero
@@ -25,7 +25,7 @@ Accessing range of elements
     # 28
 
 
-Accessing slice from start
+Accessing Slice from Start
 ==========================
 .. code-block:: python
 
@@ -55,7 +55,7 @@ Accessing slice from start
     text[23:]       # 'Moon!'
 
 
-Accessing slice from back
+Accessing Slice from Back
 =========================
 .. highlights::
     * Negative index starts from the end and go right to left
@@ -86,7 +86,7 @@ Accessing slice from back
     text[-5:5]      # ''
 
 
-Every ``n-th`` element
+Every ``n-th`` Element
 ======================
 .. code-block:: python
 
@@ -103,7 +103,7 @@ Every ``n-th`` element
     text[::-2]            # '!oMeto go soce'
 
 
-Accessing slice not existing elements
+Accessing Slice not Existing Elements
 =====================================
 .. code-block:: python
 
@@ -113,7 +113,7 @@ Accessing slice not existing elements
     text[100:]      # ''
 
 
-Accessing slice from all elements
+Accessing Slice from All Elements
 =================================
 * Used in ``numpy``
 
@@ -124,7 +124,7 @@ Accessing slice from all elements
     text[:]         # 'We choose to go to the Moon!'
 
 
-Arithmetic operations on slice indexes
+Arithmetic Operations on Slice Indexes
 ======================================
 .. code-block:: python
 
@@ -166,7 +166,7 @@ Arithmetic operations on slice indexes
     # Moo
 
 
-Slicing sequences
+Slicing Sequences
 =================
 
 Slicing ``str``
@@ -230,7 +230,7 @@ Slice ``dict``
     # TypeError: unhashable type: 'slice'
 
 
-Slicing nested sequences
+Slicing Nested Sequences
 ========================
 .. code-block:: python
 
@@ -247,7 +247,7 @@ Slicing nested sequences
     # ]
 
 
-Slice function
+Slice Function
 ==============
 .. highlights::
     * Slice object can be returned from function
