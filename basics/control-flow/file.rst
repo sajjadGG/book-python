@@ -19,10 +19,10 @@ Absolute path
 .. code-block:: python
     :caption: Windows paths
 
-    PATH = 'C:\\Temp\\iris.csv'
-    PATH = r'C:\Temp\iris.csv'
-    PATH = '/tmp/iris.csv'
-    PATH = r'/tmp/iris.csv'
+    FILE = 'C:\\Temp\\iris.csv'
+    FILE = r'C:\Temp\iris.csv'
+    FILE = '/tmp/iris.csv'
+    FILE = r'/tmp/iris.csv'
 
 Relative path
 -------------
@@ -61,11 +61,14 @@ Relative path
 
     from os.path import dirname, join
 
+
+    __file__
+    # /home/python/my_script.py
+
     dirname(__file__)
-    # '/home/python/my_script.py'
+    # /home/python/
 
     FILE = join(dirname(__file__), 'iris.csv')
-
     print(FILE)
     #'/home/python/iris.csv'
 
@@ -80,54 +83,44 @@ Read from file
     * ``mode`` parameter to ``open()`` function is optional (defaults to ``mode='r'``)
     * Reading access modes:
 
-        * ``mode='rt'`` - read in text mode
+        * ``mode='rt'`` - read in text mode (default)
         * ``mode='rb'`` - read in binary mode
-        * ``mode='r'`` - read in text mode (default)
+        * ``mode='r'`` - read in text mode
 
-Reading file line by line
--------------------------
 .. code-block:: python
-    :caption: ``file`` can be iterated line by line
+    :caption: Reading file line by line
 
     with open(r'/tmp/iris.csv') as file:
         for line in file:
             print(line)
 
-Reading whole file content
---------------------------
 .. code-block:: python
     :caption: Read whole file as a text to ``content`` variable
 
     with open(r'/tmp/iris.csv') as file:
         content = file.read()
 
-Reading file as ``list`` with lines
------------------------------------
 .. code-block:: python
-    :caption: Convert file to list by line
+    :caption: Reading file as ``list`` with lines
 
     with open(r'/tmp/iris.csv') as file:
         lines = file.readlines()
 
-Read selected lines from file
------------------------------
 .. code-block:: python
-    :caption: Convert file to list by line, select 1-30 lines
+    :caption: Read selected (1-30) lines from file
 
     with open(r'/tmp/iris.csv') as file:
         lines = file.readlines()[1:30]
 
 .. code-block:: python
-    :caption: Convert file to list by line, select 1-30 lines
+    :caption: Read selected (1-30) lines from file
 
     with open(r'/tmp/iris.csv') as file:
         for line in file.readlines()[1:30]:
             print(line)
 
-Read from file with header
---------------------------
 .. code-block:: python
-    :caption: Convert file to list by line, select 1-30 lines
+    :caption: Read whole file and split by lines, separate header from content
 
     with open(r'/tmp/iris.csv') as file:
         header, *content = file.readlines()
@@ -136,7 +129,7 @@ Read from file with header
             print(line)
 
 .. code-block:: python
-    :caption: Convert file to list by line, select 1-30 lines
+    :caption: Read header, and use generator to iterate over other lines
 
     with open(r'/tmp/iris.csv') as file:
         header = file.readline()
@@ -145,11 +138,8 @@ Read from file with header
             print(line)
 
 
-Writing
-=======
-
 Writing to file
----------------
+===============
 .. highlights::
     * Works with both relative and absolute path
     * Fails when directory with file cannot be accessed
@@ -169,7 +159,7 @@ Writing to file
         file.write('hello')
 
 Appending to file
------------------
+=================
 .. highlights::
     * Works with both relative and absolute path
     * Fails when directory with file cannot be accessed
@@ -243,7 +233,7 @@ Example
 
         try:
 
-            with open(filename) as file:
+            with open(filename, encoding='utf-8') as file:
                 for line in file:
                     print(line)
 

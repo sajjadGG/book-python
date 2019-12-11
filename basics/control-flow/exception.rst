@@ -27,11 +27,12 @@ AttributeError
 
 .. code-block:: python
     :caption: ``AttributeError`` exception
-    :emphasize-lines: 3
+    :emphasize-lines: 2
 
     name = 'Jan'
-
     name.append('Twardowski')
+    # Traceback (most recent call last):
+    #   File "<stdin>", line 1, in <module>
     # AttributeError: 'str' object has no attribute 'append'
 
 ImportError, ModuleNotFoundError
@@ -45,7 +46,9 @@ ImportError, ModuleNotFoundError
 
     import math
     import match
-    # ModuleNotFoundError
+    # Traceback (most recent call last):
+    #   File "<stdin>", line 1, in <module>
+    # ModuleNotFoundError: No module named 'match'
 
 IndexError
 ----------
@@ -54,11 +57,12 @@ IndexError
 
 .. code-block:: python
     :caption: ``IndexError`` exception
-    :emphasize-lines: 3
+    :emphasize-lines: 2
 
     DATA = ['a', 'b', 'c']
-
     DATA[100]
+    # Traceback (most recent call last):
+    #   File "<stdin>", line 1, in <module>
     # IndexError: list index out of range
 
 KeyError
@@ -68,11 +72,12 @@ KeyError
 
 .. code-block:: python
     :caption: ``KeyError`` exception
-    :emphasize-lines: 3
+    :emphasize-lines: 2
 
     DATA = {'a': 1, 'b': 2}
-
     DATA['x']
+    # Traceback (most recent call last):
+    #   File "<stdin>", line 1, in <module>
     # KeyError: 'x'
 
 NameError
@@ -85,6 +90,8 @@ NameError
     :emphasize-lines: 1
 
     print(first_name)
+    # Traceback (most recent call last):
+    #   File "<stdin>", line 1, in <module>
     # NameError: name 'first_name' is not defined
 
 SyntaxError
@@ -98,7 +105,10 @@ SyntaxError
 
     if True
         print('Yes')
-
+    # Traceback (most recent call last):
+    #   File "<stdin>", line 1
+    #     if True
+    #           ^
     # SyntaxError: invalid syntax
 
 IndentationError
@@ -114,7 +124,10 @@ IndentationError
        print('Hello!')
         print('My name...')
        print('Jose Jimenez')
-
+    # Traceback (most recent call last):
+    #   File "<stdin>", line 1
+    #     print('My name...')
+    #     ^
     # IndentationError: unexpected indent
 
 TypeError
@@ -126,7 +139,15 @@ TypeError
     :caption: ``TypeError`` exception
     :emphasize-lines: 2
 
-    42 + 'Answer to the Ultimate Question of Life, the Universe, and Everything'
+    42 + 1
+    # 43
+
+    'a' + 'b'
+    # 'ab'
+
+    42 + 'a'
+    # Traceback (most recent call last):
+    #   File "<stdin>", line 1, in <module>
     # TypeError: unsupported operand type(s) for +: 'int' and 'str'
 
 ValueError
@@ -138,8 +159,13 @@ ValueError
     :caption: ``ValueError`` exception
     :emphasize-lines: 1
 
-    float('Jan Twardowski')
-    # ValueError: could not convert string to float: 'Jan Twardowski'
+    float(1.2)
+    # 1.2
+
+    float(1,2)
+    # Traceback (most recent call last):
+    #   File "<stdin>", line 1, in <module>
+    # TypeError: float expected at most 1 arguments, got 2
 
 
 Raising exceptions
@@ -151,6 +177,9 @@ Raise Exception without message
     :caption: Raise Exception without message
 
     raise RuntimeError
+    # Traceback (most recent call last):
+    #   File "<stdin>", line 1, in <module>
+    # RuntimeError
 
 Exception with additional message
 ---------------------------------
@@ -158,20 +187,34 @@ Exception with additional message
     :caption: Exception with additional message
 
     raise RuntimeError('Some message')
+    # Traceback (most recent call last):
+    #   File "<stdin>", line 1, in <module>
+    # RuntimeError: Some message
+
 
 Use case
---------
+========
+.. code-block:: python
+
+    temperature = input('Type temperature [Kelvin]: ')
+    # Type temperature [Kelvin]: -10<ENTER>
+
+    if float(temperature) < 0:
+        raise ValueError
+    # Traceback (most recent call last):
+    #   File "<stdin>", line 2, in <module>
+    # ValueError
+
 .. code-block:: python
 
     def add_numbers(a, b):
-        if not isinstance(a, (float, int)):
-            raise ValueError('Argument ``a`` must be int or float')
+        if type(a) not in (float, int):
+            raise ValueError('Argument a must be int or float')
 
-        if not isinstance(b, (float, int)):
+        if type(a) not in (float, int):
             raise ValueError('Argument ``b`` must be int or float')
 
         return a + b
-
 
 .. code-block:: python
     :emphasize-lines: 2
@@ -179,8 +222,11 @@ Use case
     def apollo13():
         raise RuntimeError('Oxygen tank explosion')
 
-
     apollo13()
+    # Traceback (most recent call last):
+    #   File "<input>", line 5, in <module>
+    #   File "<input>", line 2, in apollo13
+    # RuntimeError: Oxygen tank explosion
 
 .. code-block:: python
     :emphasize-lines: 2
@@ -188,9 +234,11 @@ Use case
     def apollo18():
         raise NotImplementedError('Mission dropped due to budget cuts')
 
-
     apollo18()
-
+    # Traceback (most recent call last):
+    #   File "<input>", line 5, in <module>
+    #   File "<input>", line 2, in apollo18
+    # NotImplementedError: Mission dropped due to budget cuts
 
 Traceback
 =========
@@ -205,7 +253,7 @@ Traceback analysis
 
     raise RuntimeError
     # Traceback (most recent call last):
-    #   File "<input>", line 1, in <module>
+    #   File "<stdin>", line 1, in <module>
     # RuntimeError
 
 .. code-block:: python
@@ -213,8 +261,21 @@ Traceback analysis
 
     raise RuntimeError('Huston we have a problem')
     # Traceback (most recent call last):
-    #   File "<input>", line 1, in <module>
+    #   File "<stdin>", line 1, in <module>
     # RuntimeError: Huston we have a problem
+
+
+.. code-block:: python
+    :emphasize-lines: 6-8
+
+    def apollo13():
+        raise RuntimeError('Oxygen tank explosion')
+
+    apollo13()
+    # Traceback (most recent call last):
+    #   File "<stdin>", line 1, in <module>
+    #   File "<stdin>", line 2, in apollo13
+    # RuntimeError: Oxygen tank explosion
 
 .. code-block:: python
     :emphasize-lines: 11-15
@@ -500,7 +561,9 @@ Syntax
 
 
     raise MyError('More verbose description')
-
+    # Traceback (most recent call last):
+    #   File "<input>", line 5, in <module>
+    # MyError: More verbose description
 
 Real life use-case
 ==================
@@ -517,6 +580,7 @@ Real life use-case
     except User.DoesNotExists:
         print('Sorry, no such user in database')
 
+
 Exit
 ====
 .. highlights::
@@ -530,6 +594,7 @@ Exit
     except ValueError:
         print('Cannot type cast to float')
         exit(1)
+
 
 Assignments
 ===========
