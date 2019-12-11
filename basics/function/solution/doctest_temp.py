@@ -17,24 +17,26 @@ def celsius_to_kelvin(degrees):
     >>> celsius_to_kelvin({0, 1})
     {273.15, 274.15}
     """
-    if isinstance(degrees, (int, float)):
+    if type(degrees) in (int, float):
         return 273.15 + degrees
-    elif isinstance(degrees, tuple):
-        return tuple(x + 273.15 for x in degrees)
-    elif isinstance(degrees, list):
-        return list(x + 273.15 for x in degrees)
-    elif isinstance(degrees, set):
-        return set(x + 273.15 for x in degrees)
-    else:
-        raise TypeError('Invalid argument')
+
+    if type(degrees) is tuple:
+        return tuple(x+273.15 for x in degrees)
+
+    if type(degrees) is list:
+        return list(x+273.15 for x in degrees)
+
+    if type(degrees) is set:
+        return set(x+273.15 for x in degrees)
+
+    raise TypeError('Invalid argument')
 
     ## Alternative solution
-    # if isinstance(degrees, (int, float)):
+    # if type(degrees) in (int, float):
     #     return 273.15 + degrees
     #
-    # elif isinstance(degrees, (list, tuple, set)):
+    # if type(degrees) in (list, tuple, set):
     #     cls = type(degrees)
-    #     return cls(x + 273.15 for x in degrees)
+    #     return cls(x+273.15 for x in degrees)
     #
-    # else:
-    #     raise TypeError('Invalid argument')
+    # raise TypeError('Invalid argument')

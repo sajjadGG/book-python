@@ -111,7 +111,10 @@ Functions
     :name: Basic Functions
 
     /basics/function/basic.rst
-    /basics/function/types.rst
+    /basics/function/return.rst
+    /basics/function/arguments.rst
+    /basics/function/scope.rst
+    /basics/function/type-annotation.rst
     /basics/function/recurrence.rst
     /basics/function/doctest.rst
 
