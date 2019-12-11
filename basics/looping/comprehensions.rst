@@ -34,7 +34,7 @@ Comprehensions Syntax
     # [0, 1, 2, 3, 4]
 
     [x**2 for x in range(0,5)]
-    # [0, 1, 2, 4, 16]
+    # [0, 1, 4, 9, 16]
 
 
 Generator expressions vs. Comprehensions
@@ -74,7 +74,7 @@ List Comprehension
     # [10, 11, 12, 13, 14]
 
     list(x+10 for x in range(0,5))
-    [10, 11, 12, 13, 14]
+    # [10, 11, 12, 13, 14]
 
 Set Comprehension
 -----------------
@@ -168,8 +168,8 @@ Filtering ``dict`` items
     ]
 
     nasa_astronauts = [(astro['first_name'], astro['last_name'])
-                            for astro in DATA
-                                if astro['agency'] == 'NASA']
+                        for astro in DATA
+                            if astro['agency'] == 'NASA']
 
     print(nasa_astronauts)
     # [
@@ -227,7 +227,21 @@ Filtering results
         (7.0, 3.2, 4.7, 1.4, 'versicolor'),
     ]
 
-    [label for *features,label in DATA if label == 'setosa']
+    [features for *features,label in DATA if label == 'setosa']
+    # [
+    #   [5.1, 3.5, 1.4, 0.2],
+    #   [4.7, 3.2, 1.3, 0.2],
+    # ]
+
+    [features
+     for *features, label in DATA
+        if label == 'setosa']
+    # [
+    #   [5.1, 3.5, 1.4, 0.2],
+    #   [4.7, 3.2, 1.3, 0.2],
+    # ]
+
+    [f for *f,l in DATA if l == 'setosa']
     # [
     #   [5.1, 3.5, 1.4, 0.2],
     #   [4.7, 3.2, 1.3, 0.2],
@@ -263,7 +277,7 @@ Filtering with complex expressions
             return False
 
 
-    measurements = [X for *X,y in DATA if is_setosa(y)]
+    [X for *X,y in DATA if is_setosa(y)]
     # [
     #   [5.1, 3.5, 1.4, 0.2],
     #   [4.7, 3.2, 1.3, 0.2],
@@ -352,6 +366,36 @@ Reversing ``dict`` keys with values
     {v:k for k,v in DATA.items()}
     # {1:'a', 2:'c'}
 
+Nested
+------
+.. code-block:: python
+
+    INPUT = {
+        6: ['Doctorate', 'Prof-school'],
+        5: ['Masters', 'Bachelor', 'Engineer'],
+        4: ['HS-grad'],
+        3: ['Junior High'],
+        2: ['Primary School'],
+        1: ['Kindergarten'],
+    }
+
+    OUTPUT = {education: str(key)
+              for key, names in INPUT.items()
+                 for education in names}
+
+    print(OUTPUT)
+    # {
+    #   'Doctorate': '6',
+    #   'Prof-school': '6',
+    #   'Masters': '5',
+    #   'Bachelor': '5',
+    #   'Engineer': '5',
+    #   'HS-grad': '4',
+    #   'Junior High': '3',
+    #   'Primary School': '2',
+    #   'Kindergarten': '1'
+    # }
+
 
 Assignments
 ===========
@@ -437,28 +481,20 @@ Split train/test
         from typing import List, Dict
 
 
-        features: List[tuple] = [
-            (5.8, 2.7, 5.1, 1.9),
-            (5.1, 3.5, 1.4, 0.2),
-            (5.7, 2.8, 4.1, 1.3),
-            (6.3, 2.9, 5.6, 1.8),
-            (6.4, 3.2, 4.5, 1.5),
-            (4.7, 3.2, 1.3, 0.2), ...]
-
-        labels: List[str] = [
-            'virginica',
-            'setosa',
-            'versicolor',
-            'setosa',
-            'versicolor',
-            'virginica', ...]
-
         features_train: List[tuple]
+        # [(5.8, 2.7, 5.1, 1.9), (5.1, 3.5, 1.4, 0.2), (5.7, 2.8, 4.1, 1.3), (6.3, 2.9, 5.6, 1.8), (6.4, 3.2, 4.5, 1.5), (4.7, 3.2, 1.3, 0.2), (7.0, 3.2, 4.7, 1.4), (7.6, 3.0, 6.6, 2.1), (4.9, 3.0, 1.4, 0.2), (4.9, 2.5, 4.5, 1.7), (7.1, 3.0, 5.9, 2.1), (4.6, 3.4, 1.4, 0.3)]
+
         features_test: List[tuple]
+        # [(5.4, 3.9, 1.7, 0.4), (5.7, 2.8, 4.5, 1.3), (5.0, 3.6, 1.4, 0.3), (5.5, 2.3, 4.0, 1.3), (6.5, 3.0, 5.8, 2.2), (6.5, 2.8, 4.6, 1.5), (6.3, 3.3, 6.0, 2.5), (6.9, 3.1, 4.9, 1.5), (4.6, 3.1, 1.5, 0.2)]
+
         labels_train: List[str]
+        # ['virginica', 'setosa', 'versicolor', 'virginica', 'versicolor', 'setosa', 'versicolor', 'virginica', 'setosa', 'virginica', 'virginica', 'setosa']
+
         labels_test: List[str]
+        # ['setosa', 'versicolor', 'setosa', 'versicolor', 'virginica', 'versicolor', 'virginica', 'versicolor', 'setosa']
 
         OUTPUT: Tuple[list, list, list, list]
+        # ([(5.8, 2.7, 5.1, 1.9), (5.1, 3.5, 1.4, 0.2), (5.7, 2.8, 4.1, 1.3), (6.3, 2.9, 5.6, 1.8), (6.4, 3.2, 4.5, 1.5), (4.7, 3.2, 1.3, 0.2), (7.0, 3.2, 4.7, 1.4), (7.6, 3.0, 6.6, 2.1), (4.9, 3.0, 1.4, 0.2), (4.9, 2.5, 4.5, 1.7), (7.1, 3.0, 5.9, 2.1), (4.6, 3.4, 1.4, 0.3)], [(5.4, 3.9, 1.7, 0.4), (5.7, 2.8, 4.5, 1.3), (5.0, 3.6, 1.4, 0.3), (5.5, 2.3, 4.0, 1.3), (6.5, 3.0, 5.8, 2.2), (6.5, 2.8, 4.6, 1.5), (6.3, 3.3, 6.0, 2.5), (6.9, 3.1, 4.9, 1.5), (4.6, 3.1, 1.5, 0.2)], ['virginica', 'setosa', 'versicolor', 'virginica', 'versicolor', 'setosa', 'versicolor', 'virginica', 'setosa', 'virginica', 'virginica', 'setosa'], ['setosa', 'versicolor', 'setosa', 'versicolor', 'virginica', 'versicolor', 'virginica', 'versicolor', 'setosa'])
 
 :The whys and wherefores:
     * Iterating over nested data structures
