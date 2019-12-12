@@ -13,25 +13,26 @@ Simple inheritance
         def __init__(self, value):
             self.value = value
 
-        def show(self):
-            print(f'{self.value} {self.unit}')
+        def __str__(self):
+            return f'{self.value} {self.UNIT}'
 
-    class Kelvin:
-        unit = 'K'
 
-    class Celsius:
-        unit = 'C'
+    class Kelvin(Temperature):
+        UNIT = 'K'
+
+
+    class Celsius(Temperature):
+        UNIT = 'C'
 
 
     t1 = Kelvin(10)
     t2 = Celsius(20)
 
-    t1.show()
+    print(t1)
     # 10 K
 
-    t2.show()
+    print(t2)
     # 20 C
-
 
 .. code-block:: python
 

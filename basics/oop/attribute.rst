@@ -96,6 +96,7 @@ Access modifiers
     class Temperature:
         pass
 
+
     temp = Temperature()
     temp._value = 10
 
@@ -107,6 +108,7 @@ Access modifiers
 
     class Iris:
         pass
+
 
     flower = Iris()
     flower._sepal_length = 5.1
@@ -129,6 +131,7 @@ Access modifiers
 
     class Iris:
         pass
+
 
     flower = Iris()
     flower.sepal_length = 5.1
