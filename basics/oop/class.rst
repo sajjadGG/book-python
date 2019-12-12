@@ -5,11 +5,6 @@ OOP Classes and Instances
 *************************
 
 
-Object Paradigm
-===============
-.. highlights::
-    * Model world as objects that interacts with each other
-
 .. glossary::
 
     class
@@ -20,11 +15,23 @@ Object Paradigm
         Object created from class.
 
 
+Object Paradigm
+===============
+.. highlights::
+    * Model world as objects that interacts with each other
+
+
 Classes
 =======
 .. highlights::
     * Capitalized ``CamelCase`` name convention
     * Classes are templates for objects
+
+.. code-block:: python
+    :caption: Defining class. Classes should have capitalized name
+
+    class Astronaut:
+        pass
 
 .. code-block:: python
     :caption: Defining class. Classes should have capitalized name
@@ -46,6 +53,43 @@ Instances
     * Two newlines between class and code
     * ``snake_case`` names
 
+Example with Astronauts
+-----------------------
+.. code-block:: python
+    :caption: One class and one instance
+
+    class Astronaut:
+        pass
+
+
+    watney = Astronaut()
+
+.. code-block:: python
+    :caption: One class and three instances
+
+    class Astronaut:
+        pass
+
+
+    watney =  = Astronaut()
+    twardowski = Astronaut()
+    jimenez = Astronaut()
+
+.. code-block:: python
+    :caption: Three classes and four instances
+
+    class Astronaut:
+        pass
+
+    class Cosmonaut:
+        pass
+
+
+    mark = Astronaut()
+    ivan = Cosmonaut()
+
+Examples with Iris
+------------------
 .. code-block:: python
     :caption: One class and one instance
 
@@ -123,6 +167,32 @@ Good engineering practices
 Assignments
 ===========
 
+Example
+-------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/class_example.py`
+
+:English:
+    #. Define class ``Iris``
+    #. Create instance ``setosa`` of a class ``Iris``
+    #. Create instance ``virginica`` of a class ``Iris``
+    #. Create instance ``versicolor`` of a class ``Iris``
+
+:Polish:
+    #. Zdefiniuj klasę ``Iris``
+    #. Stwórz instancję ``setosa`` klasy ``Iris``
+    #. Stwórz instancję ``virginica`` klasy ``Iris``
+    #. Stwórz instancję ``versicolor`` klasy ``Iris``
+
+:Solution:
+    .. literalinclude:: class_example.py
+        :language: python
+
+:The whys and wherefores:
+    * :ref:`OOP Classes and Instances`
+
 Classes and instances
 ---------------------
 * Complexity level: easy
@@ -132,21 +202,21 @@ Classes and instances
 
 :English:
     #. Define class ``Astronaut``
-    #. Define class ``Location``
+    #. Define class ``SpaceAgency``
     #. Create instance ``twardowski`` of a class ``Astronaut``
     #. Create instance ``watney`` of a class ``Astronaut``
-    #. Create instance ``jsc`` of a class ``Location``
-    #. Create instance ``ksc`` of a class ``Location``
-    #. Create instance ``jpl`` of a class ``Location``
+    #. Create instance ``nasa`` of a class ``SpaceAgency``
+    #. Create instance ``esa`` of a class ``SpaceAgency``
+    #. Create instance ``roscosmos`` of a class ``SpaceAgency``
 
 :Polish:
     #. Zdefiniuj klasę ``Astronaut``
-    #. Zdefiniuj klasę ``Location``
+    #. Zdefiniuj klasę ``SpaceAgency``
     #. Stwórz instancję ``twardowski`` klasy ``Astronaut``
     #. Stwórz instancję ``watney`` klasy ``Astronaut``
-    #. Stwórz instancję ``jsc`` klasy ``Location``
-    #. Stwórz instancję ``ksc`` klasy ``Location``
-    #. Stwórz instancję ``jpl`` klasy ``Location``
+    #. Stwórz instancję ``jsc`` klasy ``SpaceAgency``
+    #. Stwórz instancję ``ksc`` klasy ``SpaceAgency``
+    #. Stwórz instancję ``jpl`` klasy ``SpaceAgency``
 
 :The whys and wherefores:
     * :ref:`OOP Classes and Instances`

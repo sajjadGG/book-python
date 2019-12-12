@@ -210,13 +210,29 @@ Address Book
 .. code-block:: python
 
     class Astronaut:
+        def __init__(self, name, locations):
+            self.name = name
+            self.locations = list(locations)
+
         def __str__(self):
             return f'{self.name}, {self.locations}'
 
+        def __iadd__(self, other):
+            ...
+
+        def __contains__(self, item):
+            ...
+
 
     class Location:
+        def __init__(self, name):
+            self.name = name
+
         def __repr__(self):
             return f'\n\t{self.name}'
+
+        def __eq__(self, other):
+            ...
 
 
     astro = Astronaut('Jan Twardowski', locations=[
