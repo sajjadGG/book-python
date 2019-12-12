@@ -19,14 +19,6 @@ Object Paradigm
     object
         Object created from class.
 
-    method
-        Function inside the class.
-
-    property
-    attribute
-    field
-        Variable inside the class.
-
 
 Classes
 =======
@@ -53,12 +45,6 @@ Instances
     * Instances are also known as Objects
     * Two newlines between class and code
     * ``snake_case`` names
-
-.. figure:: img/blueprint.png
-    :scale: 8%
-    :align: center
-
-    Intuition definition: Class is a blueprint, instances are homes made from this plan. Image source: :cite:`FigureBlueprintHouse`
 
 .. code-block:: python
     :caption: One class and one instance
@@ -97,6 +83,15 @@ Instances
     iris_setosa2 = IrisSetosa()
     iris_versicolor = IrisVersicolor()
     iris_virginica = IrisVirginica()
+
+
+Class vs Instance
+=================
+.. figure:: img/blueprint.png
+    :scale: 8%
+    :align: center
+
+    Intuition definition: Class is a blueprint, instances are homes made from this plan. Image source: :cite:`FigureBlueprintHouse`
 
 
 Good engineering practices

@@ -44,6 +44,37 @@ Initializer method with arguments
     iris = Iris()
     # TypeError: __init__() missing 1 required positional argument: 'species'
 
+.. code-block:: python
+    :caption: Initializing fields on instance creation
+
+    class Iris:
+        def __init__(self, species):
+            self.species = species
+
+
+    setosa = Iris(species='setosa')
+    print(setosa.species)
+    # setosa
+
+    virginica = Iris('virginica')
+    print(virginica.species)
+    # virginica
+
+    versicolor = Iris()
+    # TypeError: __init__() missing 1 required positional argument: 'species'
+
+.. code-block:: python
+    :caption: Method argument with default value
+
+    class Iris:
+        def __init__(self, species='versicolor'):
+            self.species = species
+
+
+    versicolor = Iris()
+    print(versicolor.species)
+    # versicolor
+
 
 Checking values
 ===============
@@ -62,6 +93,7 @@ Checking values
 
     not_existing = Kelvin(-300)
     # ValueError: Kelvin temperature must be greater than 0'
+
 
 Assignment
 ==========

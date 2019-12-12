@@ -4,6 +4,10 @@
 OOP Methods
 ***********
 
+.. glossary::
+
+    method
+        Function inside the class which takes ``self`` as a first argument.
 
 .. highlights::
     * Methods are functions in the class

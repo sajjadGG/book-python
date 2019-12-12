@@ -4,6 +4,14 @@
 OOP Attributes
 **************
 
+.. glossary::
+
+    property
+    attribute
+    field
+    state
+        Variable inside the class.
+
 
 .. highlights::
     * Attributes are also known as "Properties" or "Fields"
@@ -13,11 +21,21 @@ OOP Attributes
     * Access field values using dot (``.``) notation
 
 
-Setting attributes
+Dynamic Attributes
 ==================
+.. code-block:: python
+    :caption: Dynamic attributes
 
-Runtime attributes
-------------------
+    class Temperature:
+        pass
+
+
+    temp = Temperature()
+    temp.kelvin = 10
+
+    print(temp.kelvin)
+    # 10
+
 .. code-block:: python
     :caption: Dynamic attributes
 
@@ -39,10 +57,20 @@ Runtime attributes
     print(setosa.petal_width)       # 0.2
     print(setosa.species)           # setosa
 
-    print(setosa.xxx)               # AttributeError: 'Iris' object has no attribute 'xxx'
+.. code-block:: python
+    :caption: Dynamic attributes
 
-Init time attributes
---------------------
+    class MyClass:
+        pass
+
+
+    my_instance = MyClass()
+    print(my_instance.xxx)
+    # AttributeError: 'MyClass' object has no attribute 'xxx'
+
+
+Initial Attributes
+==================
 .. code-block:: python
     :caption: Init time attributes
 
@@ -161,39 +189,6 @@ Init time attributes
     print(virginica.petal_width)    # 1.9
     print(virginica.species)        # virginica
 
-Variable value attributes
--------------------------
-.. code-block:: python
-    :caption: Initializing fields on instance creation
-
-    class Iris:
-        def __init__(self, species):
-            self.species = species
-
-
-    setosa = Iris(species='setosa')
-    print(setosa.species)
-    # setosa
-
-    virginica = Iris('virginica')
-    print(virginica.species)
-    # virginica
-
-    versicolor = Iris()
-    # TypeError: __init__() missing 1 required positional argument: 'species'
-
-.. code-block:: python
-    :caption: Method argument with default value
-
-    class Iris:
-        def __init__(self, species='unknown'):
-            self.species = species
-
-
-    versicolor = Iris()
-    print(versicolor.species)
-    # unknown
-
 
 Access modifiers
 ================
@@ -266,12 +261,14 @@ Data Modeling
     #. Create instances for each record
     #. How many classes are there?
     #. How many instances are there?
+    #. Print any field from each instance
 
 :Polish:
     #. Zamodeluj dane za pomocą klas
     #. Stwórz instancje dla każdego wpisu
     #. Jak wiele klas możemy wyróżnić?
     #. Jak wiele instancji możemy wyróżnić?
+    #. Wypisz dowolne pole każdej z instancji
 
 :Input:
     .. code-block:: text

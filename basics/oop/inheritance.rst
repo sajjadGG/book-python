@@ -9,6 +9,32 @@ Simple inheritance
 ==================
 .. code-block:: python
 
+    class Temperature:
+        def __init__(self, value):
+            self.value = value
+
+        def show(self):
+            print(f'{self.value} {self.unit}')
+
+    class Kelvin:
+        unit = 'K'
+
+    class Celsius:
+        unit = 'C'
+
+
+    t1 = Kelvin(10)
+    t2 = Celsius(20)
+
+    t1.show()
+    # 10 K
+
+    t2.show()
+    # 20 C
+
+
+.. code-block:: python
+
     class Iris:
         def __init__(self, sepal_length, sepal_width,
                      petal_length, petal_width, species):

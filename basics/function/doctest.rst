@@ -11,7 +11,7 @@ Function Doctest
     * checks if function is outputs expected result
     * useful for regex modifications
     * can add text (i.e. explanations) between tests
-    * Case Study: https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/linear_model/base.py#L409
+    * Case Study: https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/linear_model/_base.py#L409
     * PyCharm doctest runner warns about ``DeprecationWarning``, fix in progress -  https://youtrack.jetbrains.com/issue/PY-31751
 
 
