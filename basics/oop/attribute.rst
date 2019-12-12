@@ -16,7 +16,7 @@ OOP Attributes
 .. highlights::
     * Attributes are also known as "Properties" or "Fields"
     * ``snake_case`` name convention
-    * Attributes should be defined only in ``__init__()`` method
+    * Attributes should be defined only in ``__init__()`` method (covered in :ref:`OOP Initializer Method`)
     * Attributes store information (state) for instances
     * Access field values using dot (``.``) notation
 
@@ -39,23 +39,35 @@ Dynamic Attributes
 .. code-block:: python
     :caption: Dynamic attributes
 
+    class Astronaut:
+        pass
+
+
+    astro = Astronaut()
+    astro.first_name = 'Jan'
+    astro.last_name = 'Twardowski'
+
+    print(f'Hello {astro.first_name} {astro.last_name}')
+
+.. code-block:: python
+    :caption: Dynamic attributes
+
     class Iris:
         pass
 
 
-    setosa = Iris()
+    flower = Iris()
+    flower.sepal_length = 5.1
+    flower.sepal_width = 3.5
+    flower.petal_length = 1.4
+    flower.petal_width = 0.2
+    flower.species = 'setosa'
 
-    setosa.sepal_length = 5.1
-    setosa.sepal_width = 3.5
-    setosa.petal_length = 1.4
-    setosa.petal_width = 0.2
-    setosa.species = 'setosa'
-
-    print(setosa.sepal_length)      # 5.1
-    print(setosa.sepal_width)       # 3.5
-    print(setosa.petal_length)      # 1.4
-    print(setosa.petal_width)       # 0.2
-    print(setosa.species)           # setosa
+    print(flower.sepal_length)      # 5.1
+    print(flower.sepal_width)       # 3.5
+    print(flower.petal_length)      # 1.4
+    print(flower.petal_width)       # 0.2
+    print(flower.species)           # setosa
 
 .. code-block:: python
     :caption: Dynamic attributes
@@ -69,132 +81,11 @@ Dynamic Attributes
     # AttributeError: 'MyClass' object has no attribute 'xxx'
 
 
-Initial Attributes
-==================
-.. code-block:: python
-    :caption: Init time attributes
-
-    class Iris:
-        def __init__(self):
-            self.sepal_length = 5.1
-            self.sepal_width = 3.5
-            self.petal_length = 1.4
-            self.petal_width = 0.2
-            self.species = 'setosa'
-
-
-    setosa = Iris()
-
-    print(setosa.sepal_length)      # 5.1
-    print(setosa.sepal_width)       # 3.5
-    print(setosa.petal_length)      # 1.4
-    print(setosa.petal_width)       # 0.2
-    print(setosa.species)           # setosa
-
-    print(setosa.xxx)               # AttributeError: 'Iris' object has no attribute 'xxx'
-
-
-.. code-block:: python
-    :caption: Init time attributes
-
-    class Iris:
-        def __init__(self):
-            self.sepal_length = 5.1
-            self.sepal_width = 3.5
-            self.petal_length = 1.4
-            self.petal_width = 0.2
-            self.species = 'setosa'
-
-
-    setosa = Iris()
-    virginica = Iris()
-
-    print(setosa.sepal_length)      # 5.1
-    print(setosa.sepal_width)       # 3.5
-    print(setosa.petal_length)      # 1.4
-    print(setosa.petal_width)       # 0.2
-    print(setosa.species)           # setosa
-
-    print(virginica.sepal_length)   # 5.1
-    print(virginica.sepal_width)    # 3.5
-    print(virginica.petal_length)   # 1.4
-    print(virginica.petal_width)    # 0.2
-    print(virginica.species)        # setosa
-
-.. code-block:: python
-    :caption: Init time attributes
-
-    class Iris:
-        def __init__(self, a, b, c, d, e):
-            self.sepal_length = a
-            self.sepal_width = b
-            self.petal_length = c
-            self.petal_width = d
-            self.species = e
-
-
-    setosa = Iris(5.1, 3.5, 1.4, 0.2, 'setosa')
-    virginica = Iris(5.8, 2.7, 5.1, 1.9, 'virginica')
-
-    print(setosa.sepal_length)      # 5.1
-    print(setosa.sepal_width)       # 3.5
-    print(setosa.petal_length)      # 1.4
-    print(setosa.petal_width)       # 0.2
-    print(setosa.species)           # setosa
-
-    print(virginica.sepal_length)   # 5.8
-    print(virginica.sepal_width)    # 2.7
-    print(virginica.petal_length)   # 5.1
-    print(virginica.petal_width)    # 1.9
-    print(virginica.species)        # virginica
-
-.. code-block:: python
-    :caption: Init time attributes
-
-    class Iris:
-        def __init__(self, sepal_length, sepal_width,
-                     petal_length, petal_width, species):
-
-            self.sepal_length = sepal_length
-            self.sepal_width = sepal_width
-            self.petal_length = petal_length
-            self.petal_width = petal_width
-            self.species = species
-
-
-    setosa = Iris(
-        sepal_length=5.1,
-        sepal_width=3.5,
-        petal_length=1.4,
-        petal_width=0.2,
-        species='setosa')
-
-    virginica = Iris(
-        sepal_length=5.8,
-        sepal_width=2.7,
-        petal_length=5.1,
-        petal_width=1.9,
-        species='virginica')
-
-
-    print(setosa.sepal_length)      # 5.1
-    print(setosa.sepal_width)       # 3.5
-    print(setosa.petal_length)      # 1.4
-    print(setosa.petal_width)       # 0.2
-    print(setosa.species)           # setosa
-
-    print(virginica.sepal_length)   # 5.8
-    print(virginica.sepal_width)    # 2.7
-    print(virginica.petal_length)   # 5.1
-    print(virginica.petal_width)    # 1.9
-    print(virginica.species)        # virginica
-
-
 Access modifiers
 ================
 .. highlights::
-    * All fields are always public
-    * No protected i private
+    * Fields are always public
+    * No protected and private
     * ``_name`` - protected field (by convention)
     * ``__name__`` - system field
     * ``name_`` - used while name collision
@@ -202,16 +93,27 @@ Access modifiers
 .. code-block:: python
     :caption: Access modifiers
 
-    class Iris:
-        def __init__(self):
-            self._sepal_length = 5.1
-            self._sepal_width = 3.5
-            self._petal_length = 1.4
-            self._petal_width = 0.2
-            self.species = 'setosa'
+    class Temperature:
+        pass
 
+    temp = Temperature()
+    temp._value = 10
+
+    print(temp._value)  # IDE should warn, that you access protected member
+    # 10
+
+.. code-block:: python
+    :caption: Access modifiers
+
+    class Iris:
+        pass
 
     flower = Iris()
+    flower._sepal_length = 5.1
+    flower._sepal_width = 3.5
+    flower._petal_length = 1.4
+    flower._petal_width = 0.2
+    flower.species = 'setosa'
 
     print(flower._sepal_length)     # 5.1       # IDE should warn, that you access protected member
     print(flower._sepal_width)      # 3.5       # IDE should warn, that you access protected member
@@ -226,24 +128,21 @@ Access modifiers
     :caption: ``__dict__`` - Getting dynamic fields and values
 
     class Iris:
-        def __init__(self, sepal_length, sepal_width,
-                     petal_length, petal_width, species):
+        pass
 
-            self.sepal_length = sepal_length
-            self.sepal_width = sepal_width
-            self.petal_length = petal_length
-            self.petal_width = petal_width
-            self.species = species
-
-
-    flower = Iris(5.1, 3.5, 1.4, 0.2, 'setosa')
+    flower = Iris()
+    flower.sepal_length = 5.1
+    flower.sepal_width = 3.5
+    flower.petal_length = 1.4
+    flower.petal_width = 0.2
+    flower.species = 'setosa'
 
     print(flower.__dict__)
     # {'sepal_length': 5.1,
-    # 'sepal_width': 3.5,
-    # 'petal_length': 1.4,
-    # 'petal_width': 0.2,
-    # 'species': 'setosa'}
+    #  'sepal_width': 3.5,
+    #  'petal_length': 1.4,
+    #  'petal_width': 0.2,
+    #  'species': 'setosa'}
 
 
 Assignment
@@ -268,7 +167,7 @@ Data Modeling
     #. Stwórz instancje dla każdego wpisu
     #. Jak wiele klas możemy wyróżnić?
     #. Jak wiele instancji możemy wyróżnić?
-    #. Wypisz dowolne pole każdej z instancji
+    #. Wypisz jedno dowolne pole każdej z instancji
 
 :Input:
     .. code-block:: text

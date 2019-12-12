@@ -76,6 +76,127 @@ Initializer method with arguments
     # versicolor
 
 
+Initializing Attributes
+=======================
+.. code-block:: python
+    :caption: Init time attributes
+
+    class Iris:
+        def __init__(self):
+            self.sepal_length = 5.1
+            self.sepal_width = 3.5
+            self.petal_length = 1.4
+            self.petal_width = 0.2
+            self.species = 'setosa'
+
+
+    setosa = Iris()
+
+    print(setosa.sepal_length)      # 5.1
+    print(setosa.sepal_width)       # 3.5
+    print(setosa.petal_length)      # 1.4
+    print(setosa.petal_width)       # 0.2
+    print(setosa.species)           # setosa
+
+    print(setosa.xxx)               # AttributeError: 'Iris' object has no attribute 'xxx'
+
+
+.. code-block:: python
+    :caption: Init time attributes
+
+    class Iris:
+        def __init__(self):
+            self.sepal_length = 5.1
+            self.sepal_width = 3.5
+            self.petal_length = 1.4
+            self.petal_width = 0.2
+            self.species = 'setosa'
+
+
+    setosa = Iris()
+    virginica = Iris()
+
+    print(setosa.sepal_length)      # 5.1
+    print(setosa.sepal_width)       # 3.5
+    print(setosa.petal_length)      # 1.4
+    print(setosa.petal_width)       # 0.2
+    print(setosa.species)           # setosa
+
+    print(virginica.sepal_length)   # 5.1
+    print(virginica.sepal_width)    # 3.5
+    print(virginica.petal_length)   # 1.4
+    print(virginica.petal_width)    # 0.2
+    print(virginica.species)        # setosa
+
+.. code-block:: python
+    :caption: Init time attributes
+
+    class Iris:
+        def __init__(self, a, b, c, d, e):
+            self.sepal_length = a
+            self.sepal_width = b
+            self.petal_length = c
+            self.petal_width = d
+            self.species = e
+
+
+    setosa = Iris(5.1, 3.5, 1.4, 0.2, 'setosa')
+    virginica = Iris(5.8, 2.7, 5.1, 1.9, 'virginica')
+
+    print(setosa.sepal_length)      # 5.1
+    print(setosa.sepal_width)       # 3.5
+    print(setosa.petal_length)      # 1.4
+    print(setosa.petal_width)       # 0.2
+    print(setosa.species)           # setosa
+
+    print(virginica.sepal_length)   # 5.8
+    print(virginica.sepal_width)    # 2.7
+    print(virginica.petal_length)   # 5.1
+    print(virginica.petal_width)    # 1.9
+    print(virginica.species)        # virginica
+
+.. code-block:: python
+    :caption: Init time attributes
+
+    class Iris:
+        def __init__(self, sepal_length, sepal_width,
+                     petal_length, petal_width, species):
+
+            self.sepal_length = sepal_length
+            self.sepal_width = sepal_width
+            self.petal_length = petal_length
+            self.petal_width = petal_width
+            self.species = species
+
+
+    setosa = Iris(
+        sepal_length=5.1,
+        sepal_width=3.5,
+        petal_length=1.4,
+        petal_width=0.2,
+        species='setosa')
+
+    virginica = Iris(
+        sepal_length=5.8,
+        sepal_width=2.7,
+        petal_length=5.1,
+        petal_width=1.9,
+        species='virginica')
+
+
+    print(setosa.sepal_length)      # 5.1
+    print(setosa.sepal_width)       # 3.5
+    print(setosa.petal_length)      # 1.4
+    print(setosa.petal_width)       # 0.2
+    print(setosa.species)           # setosa
+
+    print(virginica.sepal_length)   # 5.8
+    print(virginica.sepal_width)    # 2.7
+    print(virginica.petal_length)   # 5.1
+    print(virginica.petal_width)    # 1.9
+    print(virginica.species)        # virginica
+
+
 Checking values
 ===============
 .. code-block:: python

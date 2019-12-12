@@ -131,10 +131,10 @@ OOP Stringify Objects
         def __init__(self, name):
             self.name = name
 
-        def __format__(self, feeling):
-            if feeling == 'happy':
+        def __format__(self, mood):
+            if mood == 'happy':
                 return f"Yuppi, we're going to space!"
-            elif feeling == 'scared':
+            elif mood == 'scared':
                 return f"I hope we don't crash"
 
 
@@ -146,7 +146,6 @@ OOP Stringify Objects
      print(f'{astro:scared}')
      # I hope we don't crash
 
-
 .. code-block:: python
 
     class Point:
@@ -157,30 +156,30 @@ OOP Stringify Objects
 
         def __format__(self, name):
 
-            if name == '2D':
+            if name == 'in_2D':
                 return f"({self.x}, {self.y})"
 
-            if name == '3D':
+            if name == 'in_3D':
                 return f"({self.x}, {self.y}, {self.z})"
 
-            if name == 'dict':
+            if name == 'as_dict':
                 return str(self.__dict__)
 
-            if name == 'tuple':
+            if name == 'as_tuple':
                 return str(tuple(self.__dict__.values()))
 
-            if name == 'json':
+            if name == 'as_json':
                 import json
                 return json.dumps(self.__dict__)
 
 
     point = Point(x=1, y=2)
 
-    print(f'{point:2D}')           # '(1, 2)'
-    print(f'{point:3D}')           # '(1, 2, 0)'
-    print(f'{point:tuple}')        # '(1, 2, 0)'
-    print(f'{point:dict}')         # "{'x': 1, 'y': 2, 'z': 0}"
-    print(f'{point:json}')         # '{"x": 1, "y": 2, "z": 0}'
+    print(f'{point:in_2D}')           # '(1, 2)'
+    print(f'{point:in_3D}')           # '(1, 2, 0)'
+    print(f'{point:as_tuple}')        # '(1, 2, 0)'
+    print(f'{point:as_dict}')         # "{'x': 1, 'y': 2, 'z': 0}"
+    print(f'{point:as_json}')         # '{"x": 1, "y": 2, "z": 0}'
 
 
 Assignments
