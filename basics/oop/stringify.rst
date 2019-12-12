@@ -221,17 +221,29 @@ Stringify Object
             def __init__(self, name):
                 self.name = name
 
+:Output:
+    .. code-block:: python
 
         melissa = Astronaut('Melissa Lewis')
-        print(f'Commander: \n{melissa}\n')
 
+        print(f'Commander: \n{melissa}\n')
+        # Commander:
+        # Melissa Lewis
+
+    .. code-block:: python
 
         mark = Astronaut('Mark Watney', locations=[
             Location('Johnson Space Center'),
             Location('Kennedy Space Center')
         ])
-        print(f'Space Pirate: \n{mark}\n')
 
+        print(f'Space Pirate: \n{mark}\n')
+        # Space Pirate:
+        # Mark Watney [
+        # 	Johnson Space Center,
+        # 	Kennedy Space Center]
+
+    .. code-block:: python
 
         crew = Crew([
             Astronaut('Jan Twardowski', locations=[
@@ -243,25 +255,13 @@ Stringify Object
             Astronaut('José Jiménez'),
             Astronaut('Иван Иванович', locations=[]),
         ])
+
         print(f'Crew: \n{crew}')
-
-:Output:
-    .. code-block:: text
-
-        Commander:
-        Melissa Lewis
-
-        Space Pirate:
-        Mark Watney [
-        	Johnson Space Center,
-        	Kennedy Space Center]
-
-        Crew:
-        Jan Twardowski [
-        	Johnson Space Center,
-        	Kennedy Space Center,
-        	Jet Propulsion Laboratory,
-        	Armstrong Flight Research Center]
-        José Jiménez
-        Иван Иванович
-
+        # Crew:
+        # Jan Twardowski [
+        # 	Johnson Space Center,
+        # 	Kennedy Space Center,
+        # 	Jet Propulsion Laboratory,
+        # 	Armstrong Flight Research Center]
+        # José Jiménez
+        # Иван Иванович
