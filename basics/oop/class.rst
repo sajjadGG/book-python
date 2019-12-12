@@ -207,16 +207,16 @@ Classes and instances
     #. Create instance ``watney`` of a class ``Astronaut``
     #. Create instance ``nasa`` of a class ``SpaceAgency``
     #. Create instance ``esa`` of a class ``SpaceAgency``
-    #. Create instance ``roscosmos`` of a class ``SpaceAgency``
+    #. Create instance ``polsa`` of a class ``SpaceAgency``
 
 :Polish:
     #. Zdefiniuj klasę ``Astronaut``
     #. Zdefiniuj klasę ``SpaceAgency``
     #. Stwórz instancję ``twardowski`` klasy ``Astronaut``
     #. Stwórz instancję ``watney`` klasy ``Astronaut``
-    #. Stwórz instancję ``jsc`` klasy ``SpaceAgency``
-    #. Stwórz instancję ``ksc`` klasy ``SpaceAgency``
-    #. Stwórz instancję ``jpl`` klasy ``SpaceAgency``
+    #. Stwórz instancję ``nasa`` klasy ``SpaceAgency``
+    #. Stwórz instancję ``esa`` klasy ``SpaceAgency``
+    #. Stwórz instancję ``polsa`` klasy ``SpaceAgency``
 
 :The whys and wherefores:
     * :ref:`OOP Classes and Instances`

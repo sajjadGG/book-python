@@ -2,13 +2,13 @@ class Astronaut:
     pass
 
 
-class Location:
+class SpaceAgency:
     pass
 
 
 twardowski = Astronaut()
 watney = Astronaut()
 
-jsc = Location()
-ksc = Location()
-jpl = Location()
+nasa = SpaceAgency()
+esa = SpaceAgency()
+polsa = SpaceAgency()
