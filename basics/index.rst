@@ -128,8 +128,8 @@ Object Oriented Programming
 
     /basics/oop/class.rst
     /basics/oop/attribute.rst
-    /basics/oop/method.rst
     /basics/oop/init.rst
+    /basics/oop/method.rst
     /basics/oop/stringify.rst
     /basics/oop/inheritance.rst
     /basics/oop/operator-overload.rst

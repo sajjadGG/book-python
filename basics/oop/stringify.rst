@@ -132,13 +132,22 @@ OOP Stringify Objects
         def __init__(self, name):
             self.name = name
 
-        def __format__(self, format):
-            if
+        def __format__(self, feeling):
+
+            if feeling == 'happy':
+                return f"Yuppi, we're going to space!"
+
+            if feeling == 'scared':
+                return f"I hope we don't crash"
+
 
      astro = Astronaut('Jose Jimenez')
 
      print(f'{astro:happy}')
+     # Yuppi, we're going to space!
+
      print(f'{astro:scared}')
+     # I hope we don't crash
 
 
 .. code-block:: python
@@ -154,21 +163,18 @@ OOP Stringify Objects
             if name == '2D':
                 return f"({self.x}, {self.y})"
 
-            elif name == '3D':
+            if name == '3D':
                 return f"({self.x}, {self.y}, {self.z})"
 
-            elif name == 'dict':
+            if name == 'dict':
                 return str(self.__dict__)
 
-            elif name == 'tuple':
+            if name == 'tuple':
                 return str(tuple(self.__dict__.values()))
 
-            elif name == 'json':
+            if name == 'json':
                 import json
                 return json.dumps(self.__dict__)
-
-            else:
-                raise ValueError
 
 
     point = Point(x=1, y=2)
