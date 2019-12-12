@@ -4,6 +4,7 @@
 OOP Attributes
 **************
 
+
 .. glossary::
 
     property
@@ -13,6 +14,8 @@ OOP Attributes
         Variable inside the class.
 
 
+Object Paradigm
+===============
 .. highlights::
     * Attributes are also known as "Properties" or "Fields"
     * ``snake_case`` name convention
@@ -44,10 +47,11 @@ Dynamic Attributes
 
 
     astro = Astronaut()
-    astro.first_name = 'Jan'
-    astro.last_name = 'Twardowski'
+    astro.first_name = 'Jose'
+    astro.last_name = 'Jimenez'
 
-    print(f'Hello {astro.first_name} {astro.last_name}')
+    print(f'My name... {astro.first_name} {astro.last_name}')
+    # My name... Jose Jimenez
 
 .. code-block:: python
     :caption: Dynamic attributes
@@ -56,18 +60,15 @@ Dynamic Attributes
         pass
 
 
-    flower = Iris()
-    flower.sepal_length = 5.1
-    flower.sepal_width = 3.5
-    flower.petal_length = 1.4
-    flower.petal_width = 0.2
-    flower.species = 'setosa'
+    setosa = Iris()
+    setosa.features = [5.1, 3.5, 1.4, 0.2]
+    setosa.label = 'setosa'
 
-    print(flower.sepal_length)      # 5.1
-    print(flower.sepal_width)       # 3.5
-    print(flower.petal_length)      # 1.4
-    print(flower.petal_width)       # 0.2
-    print(flower.species)           # setosa
+    print(setosa.label)
+    # setosa
+
+    sum(setosa.features)
+    # 10.2
 
 .. code-block:: python
     :caption: Dynamic attributes
@@ -81,7 +82,7 @@ Dynamic Attributes
     # AttributeError: 'MyClass' object has no attribute 'xxx'
 
 
-Access modifiers
+Access Modifiers
 ================
 .. highlights::
     * Fields are always public
@@ -124,8 +125,10 @@ Access modifiers
     print(flower.species)           # setosa
 
 
-``__dict__`` - Getting dynamic fields and values
-================================================
+Get all dynamic fields and values
+=================================
+* ``obj.__dict__``
+
 .. code-block:: python
     :caption: ``__dict__`` - Getting dynamic fields and values
 
@@ -163,23 +166,27 @@ Data Modeling
     #. Create instances for each record
     #. How many classes are there?
     #. How many instances are there?
-    #. Print any field from each instance
+    #. Create instances of a first class using positional arguments
+    #. Create instances of a second class using keyword arguments
+    #. Print first field from each instance
 
 :Polish:
     #. Zamodeluj dane za pomocą klas
     #. Stwórz instancje dla każdego wpisu
     #. Jak wiele klas możemy wyróżnić?
     #. Jak wiele instancji możemy wyróżnić?
-    #. Wypisz jedno dowolne pole każdej z instancji
+    #. Twórz instancje pierwszej klasy używając argumentów pozycyjnych
+    #. Twórz instancje drugiej klasy używając argumentów nazwanych
+    #. Wypisz pierwsze pole każdej z instancji
 
 :Input:
     .. code-block:: text
 
         Jan, Twardowski, 1961-04-12
         Mark, Watney, 1969-07-21
-        Kennedy Space Center, Merritt Island, FL
-        Johnson Space Center, Houston, TX
-        Jet Propulsion Laboratory, Pasadena, CA
+        ESA, European Space Agency, Europe
+        NASA, National Aeronautics and Space Administration, USA
+        POLSA, Polish Space Agency, Poland
 
 :The whys and wherefores:
     * :ref:`OOP Classes and Instances`

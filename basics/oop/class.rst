@@ -33,14 +33,14 @@ Classes
     class Astronaut:
         pass
 
-.. code-block:: python
-    :caption: Defining class. Classes should have capitalized name
-
     class Iris:
         pass
 
 .. code-block:: python
     :caption: Multi-word class names should use ``CamelCase``
+
+    class MyClass:
+        pass
 
     class IrisSetosa:
         pass
@@ -187,7 +187,7 @@ Example
     #. Stwórz instancję ``versicolor`` klasy ``Iris``
 
 :Solution:
-    .. literalinclude:: class_example.py
+    .. literalinclude:: solution/class_example.py
         :language: python
 
 :The whys and wherefores:

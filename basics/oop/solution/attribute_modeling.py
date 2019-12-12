@@ -5,16 +5,16 @@ class Astronaut:
         self.date_of_birth: str = date_of_birth
 
 
-class Location:
-    def __init__(self, name, city, state):
-        self.name: str = name
-        self.city: str = city
-        self.state: str = state
+class SpaceAgency:
+    def __init__(self, short_name, long_name, location):
+        self.short_name: str = short_name
+        self.long_name: str = long_name
+        self.location: str = location
 
 
 twardowski = Astronaut('Jan', 'Twardowski', '1961-04-12')
 watney = Astronaut('Mark', 'Watney', '1969-07-21')
 
-ksc = Location('Kennedy Space Center', 'Merritt Island', 'Florida')
-jsc = Location('Johnson Space Center', 'Houston', 'Texas')
-jpl = Location('Jet Propulsion Laboratory', 'Pasadena', 'Texas')
+esa = SpaceAgency('ESA', 'European Space Agency', 'Europe')
+nasa = SpaceAgency('NASA', 'National Aeronautics and Space Administration', 'USA')
+polsa = SpaceAgency('POLSA', 'Polish Space Agency', 'Poland')
