@@ -66,7 +66,6 @@ OOP Stringify Objects
      repr(astro)        # 'Astronaut(name="Jose Jimenez")'
      astro              # Astronaut(name="Jose Jimenez")
 
-
 .. code-block:: python
     :caption: printing ``list`` will call ``__repr__`` on each element
 
@@ -133,11 +132,9 @@ OOP Stringify Objects
             self.name = name
 
         def __format__(self, feeling):
-
             if feeling == 'happy':
                 return f"Yuppi, we're going to space!"
-
-            if feeling == 'scared':
+            elif feeling == 'scared':
                 return f"I hope we don't crash"
 
 
@@ -189,8 +186,8 @@ OOP Stringify Objects
 Assignments
 ===========
 
-Address Book from API
----------------------
+Stringify Object
+----------------
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
@@ -216,9 +213,8 @@ Address Book from API
                 self.members = list(members)
 
         class Astronaut:
-            def __init__(self, first_name, last_name, locations=()):
-                self.first_name = first_name
-                self.last_name = last_name
+            def __init__(self, name, locations=()):
+                self.name = first_name
                 self.locations = list(locations)
 
         class Location:
@@ -226,24 +222,28 @@ Address Book from API
                 self.name = name
 
 
-        melissa = Astronaut(first_name='Melissa', last_name='Lewis')
+        melissa = Astronaut('Melissa Lewis')
         print(f'Commander: \n{melissa}\n')
 
-        mark = Astronaut(first_name='Mark', last_name='Watney', locations=[Location('Johnson Space Center'), Location('Kennedy Space Center')])
+
+        mark = Astronaut('Mark Watney', locations=[
+            Location('Johnson Space Center'),
+            Location('Kennedy Space Center')
+        ])
         print(f'Space Pirate: \n{mark}\n')
 
+
         crew = Crew([
-            Astronaut(first_name='Jan', last_name='Twardowski', locations=[
+            Astronaut('Jan Twardowski', locations=[
                 Location('Johnson Space Center'),
                 Location('Kennedy Space Center'),
                 Location('Jet Propulsion Laboratory'),
                 Location('Armstrong Flight Research Center'),
             ]),
-            Astronaut(first_name='José', last_name='Jiménez'),
-            Astronaut(first_name='Иван', last_name='Иванович', locations=[]),
+            Astronaut('José Jiménez'),
+            Astronaut('Иван Иванович', locations=[]),
         ])
-
-        print(f'Crew: {crew}')
+        print(f'Crew: \n{crew}')
 
 :Output:
     .. code-block:: text
@@ -252,14 +252,16 @@ Address Book from API
         Melissa Lewis
 
         Space Pirate:
-        Mark Watney [Johnson Space Center, Kennedy Space Center]
+        Mark Watney [
+        	Johnson Space Center,
+        	Kennedy Space Center]
 
-        Crew: [
-          Jan Twardowski [
-              Johnson Space Center,
-              Kennedy Space Center,
-              Jet Propulsion Laboratory,
-              Armstrong Flight Research Center],
-          José Jiménez,
-          Иван Иванович,
-        ]
+        Crew:
+        Jan Twardowski [
+        	Johnson Space Center,
+        	Kennedy Space Center,
+        	Jet Propulsion Laboratory,
+        	Armstrong Flight Research Center]
+        José Jiménez
+        Иван Иванович
+

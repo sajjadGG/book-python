@@ -3,29 +3,19 @@ class Crew:
         self.members = list(members)
 
     def __str__(self):
-        output = []
-        for astro in self.members:
-            output.append(f'{astro.first_name} {astro.last_name} {astro.locations}')
-        return '\n'.join(output)
-
-    def __repr__(self):
-        return str(self.members)
+        return '\n'.join(str(astro) for astro in self.members)
 
 
 class Astronaut:
-    def __init__(self, first_name, last_name, locations=()):
-        self.first_name = first_name
-        self.last_name = last_name
+    def __init__(self, name, locations=()):
+        self.name = name
         self.locations = list(locations)
 
     def __str__(self):
         if self.locations:
-            return f'{self.first_name} {self.last_name} {self.locations}'
+            return f'{self.name} {self.locations}'
         else:
-            return f'{self.first_name} {self.last_name}'
-
-    def __repr__(self):
-        return str(self)
+            return f'{self.name}'
 
 
 class Location:
@@ -36,27 +26,39 @@ class Location:
         return f'\n\t{self.name}'
 
 
-melissa = Astronaut(first_name='Melissa', last_name='Lewis')
+melissa = Astronaut('Melissa Lewis')
 print(f'Commander: \n{melissa}\n')
 # Commander:
 # Melissa Lewis
 
-mark = Astronaut(first_name='Mark', last_name='Watney', locations=[Location('Johnson Space Center'), Location('Kennedy Space Center')])
+
+mark = Astronaut('Mark Watney', locations=[
+    Location('Johnson Space Center'),
+    Location('Kennedy Space Center')
+])
 print(f'Space Pirate: \n{mark}\n')
 # Space Pirate:
-# Mark Watney [Johnson Space Center, Kennedy Space Center]
+# Mark Watney [
+# 	Johnson Space Center,
+# 	Kennedy Space Center]
+
 
 crew = Crew([
-    Astronaut(first_name='Jan', last_name='Twardowski', locations=[
+    Astronaut('Jan Twardowski', locations=[
         Location('Johnson Space Center'),
         Location('Kennedy Space Center'),
         Location('Jet Propulsion Laboratory'),
         Location('Armstrong Flight Research Center'),
     ]),
-    Astronaut(first_name='José', last_name='Jiménez'),
-    Astronaut(first_name='Иван', last_name='Иванович', locations=[]),
+    Astronaut('José Jiménez'),
+    Astronaut('Иван Иванович', locations=[]),
 ])
-
-print(f'Crew: {crew}')
-# Crew: [Jan Twardowski [Johnson Space Center, Kennedy Space Center, Jet Propulsion Laboratory, Armstrong Flight Research Center], José Jiménez, Иван Иванович]
-
+print(f'Crew: \n{crew}')
+# Crew:
+# Jan Twardowski [
+# 	Johnson Space Center,
+# 	Kennedy Space Center,
+# 	Jet Propulsion Laboratory,
+# 	Armstrong Flight Research Center]
+# José Jiménez
+# Иван Иванович

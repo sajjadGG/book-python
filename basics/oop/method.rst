@@ -20,6 +20,19 @@ Methods without arguments
 .. code-block:: python
     :caption: Methods without arguments
 
+    class Astronaut:
+        def say_hello(self)
+            print('My name... Jose Jimenez')
+
+
+    astro = Astronaut()
+
+    astro.say_hello()
+    # My name... Jose Jimenez
+
+.. code-block:: python
+    :caption: Methods without arguments
+
     class Iris:
         def latin_name(self):
             print(f'Latin name: Iris Setosa')
@@ -31,8 +44,44 @@ Methods without arguments
     # Latin name: Iris Setosa
 
 
-Methods with argument
-=====================
+Methods with required argument
+==============================
+.. code-block:: python
+    :caption: Method called without argument
+
+    class Astronaut:
+        def say_hello(self, name):
+            print(f'My name... {name}')
+
+
+    astro = Astronaut()
+    astro.say_hello()
+    # TypeError: say_hello() missing 1 required positional argument: 'name'
+
+.. code-block:: python
+    :caption: Method with positional argument
+
+    class Astronaut:
+        def say_hello(self, name):
+            print(f'My name... {name}')
+
+
+    astro = Astronaut()
+    astro.say_hello('Jose Jimenez')
+    # My name... Jose Jimenez
+
+.. code-block:: python
+    :caption: Method called with keyword argument
+
+    class Astronaut:
+        def say_hello(self, name):
+            print(f'My name... {name}')
+
+
+    astro = Astronaut()
+    astro.say_hello(name='Jose Jimenez')
+    # My name... Jose Jimenez
+
 .. code-block:: python
     :caption: Methods with arguments
 
@@ -53,8 +102,8 @@ Methods with argument
     # TypeError: latin_name() missing 1 required positional argument: 'species'
 
 
-Methods with arguments with default value
-=========================================
+Methods with optional argument (with default value)
+===================================================
 .. code-block:: python
     :caption: Methods with arguments with default value
 
