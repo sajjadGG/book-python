@@ -214,6 +214,8 @@ Date and time parsing and formatting parameters
     :widths: 5,35,60
     :file: data/datetime-formatting.csv
 
+.. todo:: Convert table into smaller parts, based on categories: months, day, hour etc.
+
 
 Date formatting
 ===============
