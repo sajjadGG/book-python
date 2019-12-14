@@ -3,5 +3,8 @@ def divide(a, b):
         return a / b
 
 
-print(divide(10, 3))
-print(divide(10, 0))
+print(divide(4, 2))
+# 2.0
+
+print(divide(4, 0))
+# None

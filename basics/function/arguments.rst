@@ -231,8 +231,8 @@ Divide
     #. Zdefiniuj funkcję ``divide``
     #. Funkcja przyjmuje dwa argumenty
     #. Funkcja zwraca wynik dzielenia jej argumentów
-    #. Wywołaj funkcję z ``divide(10, 3)``
-    #. Wywołaj funkcję z ``divide(10, 0)``
+    #. Wywołaj funkcję z ``divide(4, 2)``
+    #. Wywołaj funkcję z ``divide(4, 0)``
     #. Wypisz zwracane wartości
     #. Co zrobić w przypadku błędu?
 
@@ -262,15 +262,15 @@ Power
 :Output:
     .. code-block:: python
 
-        power(10, 2)
-        # 100
+        power(4, 3)
+        # 64
 
         power(3)
         # 27
 
 Cleaning text input
 -------------------
-* Complexity level: easy
+* Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/args_str_clean.py`
@@ -328,7 +328,7 @@ Cleaning text input
 
 Aviation numbers
 ----------------
-* Complexity level: easy
+* Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/args_aviation_numbers.py`
@@ -384,7 +384,7 @@ Aviation numbers
 
 Number to human readable
 ------------------------
-* Complexity level: medium
+* Complexity level: hard
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
 * Filename: :download:`solution/args_numstr_human.py`
