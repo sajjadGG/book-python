@@ -117,3 +117,25 @@ Returning nested types
             {'astro': 'Иванович', 'agency': {'name': 'Roscosmos'}},
             {'astro': 'Jiménez', 'missions': ('Mercury', 'Gemini', 'Apollo')},
         ]
+
+Assignments
+===========
+
+Return
+------
+* Complexity level: easy
+* Lines of code to write: 4 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/function_return.py`
+
+:English:
+    #. Define function ``add``
+    #. Function should return sum of ``1 + 2``
+    #. Call function and intercept returned value
+    #. Print value
+
+:Polish:
+    #. Zdefiniuj funkcję ``add``
+    #. Funkcja powinna zwracać sumę ``1 + 2``
+    #. Wywołaj funkcję i przechwyć zwracaną wartość
+    #. Wyświetl wartość

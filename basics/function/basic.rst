@@ -63,3 +63,23 @@ Naming convention
     def __import__(module_name):
         ...
 
+
+Assignments
+===========
+
+Define Function
+---------------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/function_define.py`
+
+:English:
+    #. Define function ``hello``
+    #. Print ``Ehlo World!`` on the screen
+    #. Call function three times
+
+:Polish:
+    #. Zdefiniuj funkcję ``hello``
+    #. Wypisz ``Ehlo World!`` na ekranie
+    #. Wywołaj funkcję trzy razy

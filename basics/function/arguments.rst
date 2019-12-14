@@ -224,6 +224,31 @@ Example
     .. literalinclude:: solution/functions_example.py
         :language: python
 
+Divide
+------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/function_divide.py`
+
+:English:
+    #. Define function ``divide``
+    #. Function takes two arguments
+    #. Function returns result of a division for its arguments
+    #. Call function with ``divide(10, 3)``
+    #. Call function with ``divide(10, 0)``
+    #. Print returned values
+    #. What to do in case of error?
+
+:Polish:
+    #. Zdefiniuj funkcję ``divide``
+    #. Funkcja przyjmuje dwa argumenty
+    #. Funkcja zwraca wynik dzielenia jej argumentów
+    #. Wywołaj funkcję z ``divide(10, 3)``
+    #. Wywołaj funkcję z ``divide(10, 0)``
+    #. Wypisz zwracane wartości
+    #. Co zrobić w przypadku błędu?
+
 Cleaning text input
 -------------------
 * Complexity level: easy
