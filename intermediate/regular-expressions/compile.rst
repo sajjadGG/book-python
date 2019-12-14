@@ -3,6 +3,8 @@ Regexp Pattern Compilation
 **************************
 
 
+About
+=====
 * ``re.compile()``
 
 

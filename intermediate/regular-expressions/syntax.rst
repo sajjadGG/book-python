@@ -3,8 +3,8 @@ Regexp Syntax
 *************
 
 
-About Regular Expressions
-=========================
+About
+=====
 * Also known as ``regexp``
 * Also known as ``regex``
 * Also known as ``re``
@@ -76,14 +76,19 @@ Quantifiers
     "``{m,n}?``", "Match from ``m`` to ``n`` repetitions of the preceding RE (as few as possible)"
 
 
-Greedy and Non-Greedy
-=====================
-``...?`` - as few repetitions as possible
+Non-Greedy
+==========
+* Adding ``?`` after the qualifier makes it non-greedy
+* Non-greedy - as few as possible
+* Greedy - as many as possible
 
 .. csv-table:: Regular Expression Greedy and Non-Greedy Qualifiers
     :widths: 15, 85
     :header: "Syntax", "Description"
 
+    "?", "zero or one (greedy)"
+    "*", "zero or more (greedy)"
+    "+", "one or more (greedy)"
     "``??``", "zero or one (non greedy)"
     "``*?``", "zero or more (non greedy)"
     "``+?``", "one or more (non greedy)"
@@ -131,13 +136,13 @@ Example:
     * ``(.+) \1`` not matches ``thethe`` (note the space after the group)
 
 
-Example
-=======
+Examples
+========
 * ``r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,20}$'``
 
 
-Visualizing RegExps
-===================
+Visualization
+=============
 * https://regexper.com/
 * https://regex101.com/
 

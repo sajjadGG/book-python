@@ -1,6 +1,6 @@
-********************************
-Regexp Match, search and Findall
-********************************
+*****************************
+Regexp Match, Search, Findall
+*****************************
 
 
 ``re.match()``
@@ -75,13 +75,12 @@ Comparision
     re.match(PATTERN, INPUT)             # None
 
 
-Good practices
-==============
+Good Engineering Practices
+==========================
+* Doctests
 
-Tests
------
 .. code-block:: python
-    :caption: Usage of ``re.match()``
+    :caption: Doctests
 
     import re
 
@@ -89,9 +88,7 @@ Tests
 
 
     def is_valid_email(email: str) -> bool:
-        """
-        Function check email address against Regular Expression
-
+        """Function check email address against Regular Expression
         >>> is_valid_email('jose.jimenez@nasa.gov')
         True
         >>> is_valid_email('Jose.Jimenez@nasa.gov')
@@ -114,8 +111,37 @@ Tests
         else:
             return False
 
+
 Assignments
 ===========
+
+Finding Dates
+-------------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 10 min
+* Filename: :download:`solution/regex_split.py`
+
+:English:
+    #. Download :download:`data/apollo11.txt` and save as ``regex_dates.txt``
+    #. Using regular expressions find dates in US format (example: "April 12, 1961")
+    #. Print all dates
+
+:Polish:
+    #. Pobierz :download:`data/apollo11.txt` i zapisz jako ``regex_dates.txt``
+    #. Używając wyrażeń regularnych wyszukaj dat w formacie US (przykład: "April 12, 1961")
+    #. Wyświetl wszystkie daty
+
+:Output:
+    .. code-block:: python
+
+        print(OUTPUT)
+        # ['October 4, 1957',
+        #  'April 12, 1961',
+        #  'May 5, 1961',
+        #  'May 25, 1961',
+        #  'September 12, 1962',
+        #  'September 12, 1962']
 
 PESEL Validation
 ----------------

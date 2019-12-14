@@ -1,11 +1,13 @@
-**************************
-Regexp Multi line searches
-**************************
+*************************
+Regexp Multiline Searches
+*************************
+
 
 .. code-block:: python
     :caption: Usage of regexp
 
     import re
+
 
     PATTERN = r'[A-Z]{2,10}-[0-9]{1,6}'
     TEXT = """
