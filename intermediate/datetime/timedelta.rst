@@ -3,8 +3,8 @@ Datetime Time Deltas
 ********************
 
 
-Time shifts
-===========
+Timedelta object
+================
 .. code-block:: python
     :caption: Shifting datetime objects
 
@@ -23,11 +23,11 @@ Time shifts
     between_dates.total_seconds()       # 261089355.0 (days * seconds per day + seconds)
 
 
-``timedelta``
-=============
+Time Shift
+==========
 
-Simple ``timedelta`` shifts
----------------------------
+Simple Shifts
+-------------
 .. code-block:: python
     :caption: Simple ``timedelta`` shifts
 
@@ -85,8 +85,8 @@ Simple ``timedelta`` shifts
     gagarin - timedelta(weeks=3)
     # datetime.datetime(1961, 3, 22, 0, 0)
 
-Complex ``timedelta`` shifts
-----------------------------
+Complex Shifts
+--------------
 .. code-block:: python
     :caption: Complex ``timedelta`` shifts
 
@@ -119,8 +119,8 @@ Complex ``timedelta`` shifts
     between_dates = armstrong - duration
     # datetime.datetime(1969, 6, 27, 5, 51, 2, 989945)
 
-``timedelta`` month shifts
---------------------------
+Month Shifts
+------------
 .. code-block:: python
     :caption: Subtract month from ``datetime``
 
@@ -150,10 +150,10 @@ Complex ``timedelta`` shifts
     # datetime.date(1961, 3, 13)
 
 
-Time diff
-=========
+Duration
+========
 .. code-block:: python
-    :caption: Diff between datetime objects
+    :caption: Duration between two datetimes
 
     from datetime import datetime
 

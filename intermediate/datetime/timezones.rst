@@ -3,8 +3,8 @@ Datetime Timezones
 ******************
 
 
-Time Zones in Stdlib
-====================
+Standard Library
+================
 * Always keep dates and times only in UTC (**important!**)
 * Datetimes should be converted to local time only when displaying to user
 * Computerphile Time & Time Zones :cite:`VideoComputerphileTimeZones`
