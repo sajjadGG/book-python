@@ -1,5 +1,5 @@
 def add():
-    return 1 + 2
+    return 42 + 13.37
 
 
 value = add()

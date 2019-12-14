@@ -72,14 +72,14 @@ Define Function
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/function_define.py`
+* Filename: :download:`solution/define_print.py`
 
 :English:
-    #. Define function ``hello``
-    #. Print ``Ehlo World!`` on the screen
+    #. Define function ``call``
+    #. Print ``Beetlejuice`` on the screen
     #. Call function three times
 
 :Polish:
-    #. Zdefiniuj funkcję ``hello``
-    #. Wypisz ``Ehlo World!`` na ekranie
+    #. Zdefiniuj funkcję ``call``
+    #. Wypisz ``Beetlejuice`` na ekranie
     #. Wywołaj funkcję trzy razy

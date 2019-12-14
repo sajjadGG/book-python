@@ -70,9 +70,8 @@ Make absolute from relative path
     dirname(__file__)
     # /home/python/
 
-    FILE = join(dirname(__file__), 'iris.csv')
-    print(FILE)
-    #'/home/python/iris.csv'
+    join(dirname(__file__), 'iris.csv')
+    # /home/python/iris.csv
 
 
 Read from file
@@ -227,8 +226,7 @@ Exception handling
 
     try:
         with open(r'/tmp/iris.csv') as file:
-            for line in file:
-                print(line)
+            print(file.read())
 
     except FileNotFoundError:
         print('File does not exist')

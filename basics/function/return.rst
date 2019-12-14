@@ -121,21 +121,21 @@ Returning nested types
 Assignments
 ===========
 
-Return
-------
+Return Numbers
+--------------
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/function_return.py`
+* Filename: :download:`solution/return_numbers.py`
 
 :English:
     #. Define function ``add``
-    #. Function should return sum of ``1 + 2``
+    #. Function should return sum of ``42 + 13.37``
     #. Call function and intercept returned value
     #. Print value
 
 :Polish:
     #. Zdefiniuj funkcję ``add``
-    #. Funkcja powinna zwracać sumę ``1 + 2``
+    #. Funkcja powinna zwracać sumę ``42 + 13.37``
     #. Wywołaj funkcję i przechwyć zwracaną wartość
     #. Wyświetl wartość

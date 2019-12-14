@@ -70,6 +70,16 @@ Arguments with default value
     def subtract(a, b=2):
         return a - b
 
+
+    subtract()
+    # TypeError: subtract() missing 1 required positional argument: 'a'
+
+    subtract(10)
+    # 8
+
+    subtract(10, 20)
+    # -10
+
 .. code-block:: python
 
     def subtract(a=1, b):
@@ -84,6 +94,7 @@ Positional arguments
 
     def subtract(a, b):
         return a - b
+
 
     subtract(2, 1)      # 1
     subtract(1, 2)      # -1
@@ -100,11 +111,14 @@ Keyword arguments
     def subtract(a, b):
         return a - b
 
+
     subtract(a=2, b=1)  # 1
     subtract(b=1, a=2)  # 1
+
     subtract(2, b=1)    # 1
-    subtract(2, a=1)    # TypeError: subtract() got multiple values for argument 'a'
     subtract(a=2, 1)    # SyntaxError: positional argument follows keyword argument
+
+    subtract(2, a=1)    # TypeError: subtract() got multiple values for argument 'a'
 
 .. code-block:: python
 
@@ -122,7 +136,8 @@ Example
 .. code-block:: python
 
     def connect(username, password, host='127.0.0.1',
-                port=80, ssl=True, keep_alive=1, persistent=False):
+                port=80, ssl=True, keep_alive=1,
+                persistent=False):
         print('Connecting...')
 
 
@@ -180,22 +195,20 @@ Example
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/function_example.py`
+* Filename: :download:`solution/args_example.py`
 
 :English:
     #. Define function which takes sequence of integers as an argument
-    #. User will not pass any other types than ``int``
     #. Sum only even numbers
     #. Print returned value
 
 :Polish:
-    #. Zdefiniuj funkcję biorącą sekwencję liczb naturalnych jako argument
-    #. Użytkownik nie będzie podawał innych typów niż ``int``
+    #. Zdefiniuj funkcję biorącą sekwencję liczb całkowitych jako argument
     #. Zsumuj tylko parzyste liczby
     #. Wypisz zwróconą wartość
 
 :Solution:
-    .. literalinclude:: solution/function_example.py
+    .. literalinclude:: solution/args_example.py
         :language: python
 
 Divide
@@ -203,7 +216,7 @@ Divide
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/function_divide.py`
+* Filename: :download:`solution/args_divide.py`
 
 :English:
     #. Define function ``divide``
@@ -228,7 +241,7 @@ Power
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/function_power.py`
+* Filename: :download:`solution/args_power.py`
 
 :English:
     #. Define function ``power``
@@ -260,7 +273,7 @@ Cleaning text input
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/functions_str_clean.py`
+* Filename: :download:`solution/args_str_clean.py`
 
 :English:
     #. For given input data (see below)
@@ -318,7 +331,7 @@ Aviation numbers
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/functions_aviation_numbers.py`
+* Filename: :download:`solution/args_aviation_numbers.py`
 
 :English:
     #. For input data (see below)
@@ -369,57 +382,12 @@ Aviation numbers
     * Cleaning data from user input
     * ``dict`` lookups
 
-Wanted
-------
-* Complexity level: easy
-* Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
-* Filename: :download:`solution/functions_wanted.py`
-
-:English:
-    #. For given input data (see below)
-    #. Define ``wanted: Set[str]`` with 'setosa' and 'versicolor'
-    #. Iterate over data and split row into ``features`` and ``label`` (last)
-    #. Define function which sums ``features``, only when ``label`` is in ``wanted``
-    #. When ``label`` is not in ``wanted`` return ``0`` (zero)
-    #. Print sum
-
-:Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
-    #. Zdefiniuj ``wanted: Set[str]`` z 'setosa' oraz 'versicolor'
-    #. Iterując po danych rozdziel wiersz na ``features`` i ``label`` (ostatni)
-    #. Zdefiniuj funkcję sumującą ``features``, tylko gdy ``label`` jest w ``wanted``
-    #. Gdy ``label`` nie występuje w ``wanted`` zwróć ``0`` (zero)
-    #. Wypisz sumę
-
-:Input:
-    .. code-block:: python
-
-        INPUT = [
-            ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-            (5.8, 2.7, 5.1, 1.9, 'virginica'),
-            (5.1, 3.5, 1.4, 0.2, 'setosa'),
-            (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-            (6.3, 2.9, 5.6, 1.8, 'virginica'),
-            (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-            (4.7, 3.2, 1.3, 0.2, 'setosa'),
-            (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-            (7.6, 3.0, 6.6, 2.1, 'virginica'),
-            (4.9, 3.0, 1.4, 0.2, 'setosa'),
-        ]
-
-:Output:
-    .. code-block:: python
-
-        OUTPUT: float
-        # 74.9
-
 Number to human readable
 ------------------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/functions_numstr_human.py`
+* Filename: :download:`solution/args_numstr_human.py`
 
 :English:
     #. For input data (see below)
@@ -459,55 +427,6 @@ Number to human readable
 
 :The whys and wherefores:
     * Defining and calling functions
-    * Passing function arguments
-    * Cleaning data from user input
-    * ``dict`` lookups
-
-Roman numbers
--------------
-* Complexity level: medium
-* Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
-* Filename: :download:`solution/functions_roman.py`
-
-:English:
-    #. Define function converting roman numerals to integer
-    #. Define function converting integer to roman numerals
-
-:Polish:
-    #. Zdefiniuj funkcję przeliczającą liczbę rzymską na całkowitą
-    #. Zdefiniuj funkcję przeliczającą liczbę całkowitą na rzymską
-
-:Input:
-    .. code-block:: python
-
-        CONVERSION_TABLE = {
-            'I': 1,
-            'II': 2,
-            'III': 3,
-            'IV': 4,
-            'V': 5,
-            'VI': 6,
-            'VII': 7,
-            'VIII': 8,
-            'IX': 9,
-            'X': 10,
-            'XX': 20,
-            'XXX': 30,
-            'XL': 40,
-            'L': 50,
-            'LX': 60,
-            'LXX': 70,
-            'LXXX': 80,
-            'XC': 90,
-            'C': 100,
-            'D': 500,
-            'M': 1000,
-        }
-
-:The whys and wherefores:
-    * Defining and calling functions
-    * Checking for corner cases
     * Passing function arguments
     * Cleaning data from user input
     * ``dict`` lookups
