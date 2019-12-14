@@ -137,7 +137,7 @@ TypeError
 
 .. code-block:: python
     :caption: ``TypeError`` exception
-    :emphasize-lines: 2
+    :emphasize-lines: 7
 
     42 + 1
     # 43
@@ -157,7 +157,7 @@ ValueError
 
 .. code-block:: python
     :caption: ``ValueError`` exception
-    :emphasize-lines: 1
+    :emphasize-lines: 4
 
     float(1.2)
     # 1.2
@@ -170,9 +170,6 @@ ValueError
 
 Raising exceptions
 ==================
-
-Raise Exception without message
--------------------------------
 .. code-block:: python
     :caption: Raise Exception without message
 
@@ -181,8 +178,6 @@ Raise Exception without message
     #   File "<stdin>", line 1, in <module>
     # RuntimeError
 
-Exception with additional message
----------------------------------
 .. code-block:: python
     :caption: Exception with additional message
 
@@ -207,14 +202,15 @@ Use case
 
 .. code-block:: python
 
-    def add_numbers(a, b):
-        if type(a) not in (float, int):
-            raise ValueError('Argument a must be int or float')
+    temperature = input('Type Temperature [Kelvin]: ')
 
-        if type(a) not in (float, int):
-            raise ValueError('Argument ``b`` must be int or float')
+    if type(temperature) not in (float, int):
+        raise TypeError('Argument ``a`` must be int or float')
 
-        return a + b
+    if float(temperature) < 0:
+        raise ValueError('Kelvin temperature cannot be negative')
+
+    print(temperature)
 
 .. code-block:: python
     :emphasize-lines: 2
@@ -263,7 +259,6 @@ Traceback analysis
     # Traceback (most recent call last):
     #   File "<stdin>", line 1, in <module>
     # RuntimeError: Huston we have a problem
-
 
 .. code-block:: python
     :emphasize-lines: 6-8
@@ -330,9 +325,8 @@ Catching exceptions
     * ``else``
     * ``finally``
 
-Catch single exception
-----------------------
 .. code-block:: python
+    :caption: Catch single exception
     :emphasize-lines: 7
 
     def apollo13():
@@ -344,9 +338,8 @@ Catch single exception
     except RuntimeError:
         print('Houston we have a problem!')
 
-Catch many exceptions with the same handling
---------------------------------------------
 .. code-block:: python
+    :caption: Catch many exceptions with the same handling
     :emphasize-lines: 7
 
     def apollo13():
@@ -358,9 +351,8 @@ Catch many exceptions with the same handling
     except (RuntimeError, TypeError, NameError):
         print('Houston we have a problem!')
 
-Catch many exceptions with different handling
----------------------------------------------
 .. code-block:: python
+    :caption: Catch many exceptions with different handling
 
     try:
         with open(r'/tmp/iris.csv') as file:
@@ -372,9 +364,8 @@ Catch many exceptions with different handling
     except PermissionError:
         print('Permission denied')
 
-Exceptions logging
-------------------
 .. code-block:: python
+    :caption: Exceptions logging
     :emphasize-lines: 8,9
 
     import logging
@@ -388,12 +379,15 @@ Exceptions logging
     except RuntimeError as err:
         logging.error(err)
 
-``else``
---------
-.. highlights::
-    * Executed when no exception occurred
+
+``else`` and ``finally``
+========================
+* ``else`` is executed when no exception occurred
+* ``finally`` is executed always (even if there was exception)
+* Used to close file, connection or transaction to database
 
 .. code-block:: python
+    :caption: ``else`` is executed when no exception occurred
 
     def apollo11():
         print('Try landing on the Moon')
@@ -405,13 +399,8 @@ Exceptions logging
     else:
         print('Landing a man on the Moon')
 
-``finally``
------------
-.. highlights::
-    * Executed always (even if there was exception)
-    * Used to close file, connection or transaction to database
-
 .. code-block:: python
+    :caption: ``finally`` is executed always (even if there was exception)
 
     def apollo11():
         print('Try landing on the Moon')
@@ -423,8 +412,6 @@ Exceptions logging
     finally:
         print('Returning safely to the Earth')
 
-``else`` and ``finally``
-------------------------
 .. code-block:: python
 
     def apollo11():
@@ -446,13 +433,15 @@ Exceptions logging
     finally:
         print('Returning safely to the Earth')
 
-Always catch exceptions!
-------------------------
-.. code-block:: python
-    :emphasize-lines: 6
 
-    # Problematic code which catches 'Ctrl-C'
-    # User cannot simply kill program
+Always catch exceptions!
+========================
+* ``Ctrl-C`` raises ``KeyboardInterrupt``
+
+.. code-block:: python
+    :caption: User cannot simply kill program with ``Ctrl-C``
+    :emphasize-lines: 3
+
     while True:
         try:
             number = float(input('Type number: '))
@@ -460,9 +449,9 @@ Always catch exceptions!
             continue
 
 .. code-block:: python
-    :emphasize-lines: 5
+    :caption: User can kill program with ``Ctrl-C``
+    :emphasize-lines: 4
 
-    # User can kill program with 'Ctrl-C'
     while True:
         try:
             number = float(input('Type number: '))
@@ -541,9 +530,6 @@ Exception hierarchy
 
 Defining own exceptions
 =======================
-
-Syntax
-------
 * class which inherits from ``Exception``
 
 .. code-block:: python
@@ -553,20 +539,17 @@ Syntax
 
 
     raise MyError
-
-.. code-block:: python
-
-    class MyError(Exception):
-        pass
-
+    # Traceback (most recent call last):
+    #   File "<input>", line 5, in <module>
+    # MyError
 
     raise MyError('More verbose description')
     # Traceback (most recent call last):
     #   File "<input>", line 5, in <module>
     # MyError: More verbose description
 
-Real life use-case
-==================
+Use-case
+--------
 .. code-block:: python
     :emphasize-lines: 9
 
@@ -581,8 +564,8 @@ Real life use-case
         print('Sorry, no such user in database')
 
 
-Exit
-====
+Exit Status Code
+================
 .. highlights::
     * exit with status ``0`` - no error
     * any other status - error
