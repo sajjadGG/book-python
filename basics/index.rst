@@ -147,5 +147,5 @@ Recap
     :name: Basic Recap
 
     /basics/about/exam.rst
-    /basics/about/agenda.rst
+    /basics/about/recap.rst
     /basics/about/certificate.rst

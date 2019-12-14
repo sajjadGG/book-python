@@ -5,96 +5,71 @@ Agenda
 
 Day 1
 =====
-1. About:
+.. csv-table::
+    :header-rows: 1
+    :widths: 15, 85
 
-    - Survey
-    - Agenda
-    - Installing Python
-    - Python Language
-    - Development Environment
-
-2. Syntax:
-
-    - Syntax Basics
-    - Operators
-    - Builtin Functions
-
-3. Types:
-
-    - Type int
-    - Type float
-    - Type bool
-    - Type None
-    - Type str
-    - Type str Methods
-    - Basic Type Annotations:
+    "Estimated Time", "Topic"
+    "15m", "Welcome message, course introduction, learning participants expectations"
+    "15m", "Python and IDE setup verification, IDE features and debugging",
+    "30m", "Python basic syntax, operators, builtins"
+    "60m", "Type int and float, bool, None"
+    "60m", "Type str and methods, basic type annotations"
+    "60m", "Sequences list and tuple"
+    "60m", "Sequences set, nested, "
+    "60m", "Sequence indexing, slicing and unpacking"
+    "60m", "Mapping type dict"
 
 
 Day 2
 =====
-4. Sequences:
+.. csv-table::
+    :header-rows: 1
+    :widths: 15, 85
 
-    - Sequence list
-    - Sequence tuple
-    - Sequence set
-    - Sequence Nesting
-    - Sequence Indexing
-    - Sequence Slicing
-    - Sequence Unpacking
-
-5. Mappings:
-
-    - Mapping dict
-    - Mapping Generate
-    - Mapping Nested
+    "Estimated Time", "Topic"
+    "15m", "Conditionals Operators"
+    "15m", "Conditional Statements",
+    "30m", "Conditional Expressions"
+    "60m", "Loop while"
+    "60m", "Loop for"
+    "60m", "Loop Nested Sequences"
+    "60m", "Loop Unpacking Sequences"
+    "60m", "Loop over dict"
+    "60m", "Comprehensions"
 
 
 Day 3
 =====
-6. Conditionals:
+.. csv-table::
+    :header-rows: 1
+    :widths: 15, 85
 
-    - Conditional Operators
-    - Conditional Statements
-    - Conditional Expressions
-
-7. Looping:
-
-    - Loop while
-    - Loop for
-    - Loop Nested Sequences
-    - Loop Unpacking Sequences
-    - Loop over dict
-    - Comprehensions
-
-8. Control Flow:
-
-    - Control Flow Exceptions
-    - Control Flow Files
-
-9. Functions:
-
-    - Function Basics
-    - Function Return
-    - Function Arguments
-    - Function Variables Scope
-    - Function Type Annotation
-    - Function Recurrence
-    - Function Doctest
+    "Estimated Time", "Topic"
+    "60m", "Control Flow Exceptions"
+    "90m", "Control Flow Files",
+    "30m", "Function Basics"
+    "30m", "Function Return"
+    "60m", "Function Arguments"
+    "15m", "Function Variables Scope"
+    "15m", "Function Type Annotation"
+    "30m", "Function Recurrence"
+    "90m", "Function Doctest"
 
 
 Day 4
 =====
-10. Object Oriented Programming:
+.. csv-table::
+    :header-rows: 1
+    :widths: 15, 85
 
-    - OOP Classes and Instances
-    - OOP Attributes
-    - OOP Initializer Method
-    - OOP Methods
-    - OOP Stringify Objects
-    - OOP Inheritance
-    - OOP Operator Overload
-
-11. Recap:
-
-    - Exam
-    - Certificate
+    "Estimated Time", "Topic"
+    "30m", "OOP Classes and Instances"
+    "60m", "OOP Attributes",
+    "30m", "OOP Initializer Method"
+    "60m", "OOP Methods"
+    "30m", "OOP Stringify Objects"
+    "15m", "OOP Inheritance"
+    "60m", "OOP Operator Overload"
+    "120m", "Exam"
+    "15m", "Recap, Certificates and Survey"
