@@ -271,7 +271,7 @@ Example
 
 :Solution:
     .. literalinclude:: solution/file_example.py
-        :laguage: python
+        :language: python
 
 Parsing simple CSV file
 -----------------------
