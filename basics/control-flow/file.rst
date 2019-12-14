@@ -255,7 +255,7 @@ Example
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/file_requested.py`
+* Filename: :download:`solution/file_example.py`
 
 :English:
     #. Using ``input()`` ask user for a file path
@@ -270,21 +270,8 @@ Example
     #. Obsłuż wyjątek dla braku wystarczających uprawnień
 
 :Solution:
-    .. code-block:: python
-
-        filename = input('Type filename: ')
-
-        try:
-
-            with open(filename, encoding='utf-8') as file:
-                for line in file:
-                    print(line)
-
-        except FileNotFoundError:
-            print('Sorry, file not found')
-
-        except PermissionError:
-            print('Sorry, not permitted')
+    .. literalinclude:: solution/file_example.py
+        :laguage: python
 
 Parsing simple CSV file
 -----------------------
