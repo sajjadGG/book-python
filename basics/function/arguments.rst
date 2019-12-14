@@ -249,6 +249,38 @@ Divide
     #. Wypisz zwracane wartości
     #. Co zrobić w przypadku błędu?
 
+Power
+-----
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/function_power.py`
+
+:English:
+    #. Define function ``power``
+    #. Function takes two arguments
+    #. Second argument is optional
+    #. Function returns power of the first argument to the second
+    #. If only one argument was passed, consider second equal to the first one
+    #. Print returned values
+
+:Polish:
+    #. Zdefiniuj funkcję ``power``
+    #. Funkcja przyjmuje dwa argumenty
+    #. Drugi argument jest opcjonalny
+    #. Funkcja zwraca wynik pierwszego argumentu do potęgi drugiego
+    #. Jeżeli tylko jeden argument był podany, przyjmij drugi równy pierwszemu
+    #. Wypisz zwracane wartości
+
+:Output:
+    .. code-block:: python
+
+        power(10, 2)
+        # 100
+
+        power(3)
+        # 27
+
 Cleaning text input
 -------------------
 * Complexity level: easy
