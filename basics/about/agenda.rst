@@ -11,12 +11,12 @@ Day 1
 
     "Estimated Time", "Topic"
     "15m", "Welcome message, course introduction, learning participants expectations"
-    "15m", "Python and IDE setup verification, IDE features and debugging",
+    "15m", "Python and IDE setup verification, IDE features and debugging"
     "30m", "Python basic syntax, operators, builtins"
     "60m", "Type int and float, bool, None"
     "60m", "Type str and methods, basic type annotations"
     "60m", "Sequences list and tuple"
-    "60m", "Sequences set, nested, "
+    "60m", "Sequences set, nested"
     "60m", "Sequence indexing, slicing and unpacking"
     "60m", "Mapping type dict"
 
@@ -29,7 +29,7 @@ Day 2
 
     "Estimated Time", "Topic"
     "15m", "Conditionals Operators"
-    "15m", "Conditional Statements",
+    "15m", "Conditional Statements"
     "30m", "Conditional Expressions"
     "60m", "Loop while"
     "60m", "Loop for"
@@ -47,7 +47,7 @@ Day 3
 
     "Estimated Time", "Topic"
     "60m", "Control Flow Exceptions"
-    "90m", "Control Flow Files",
+    "90m", "Control Flow Files"
     "30m", "Function Basics"
     "30m", "Function Return"
     "60m", "Function Arguments"
@@ -65,7 +65,7 @@ Day 4
 
     "Estimated Time", "Topic"
     "30m", "OOP Classes and Instances"
-    "60m", "OOP Attributes",
+    "60m", "OOP Attributes"
     "30m", "OOP Initializer Method"
     "60m", "OOP Methods"
     "30m", "OOP Stringify Objects"

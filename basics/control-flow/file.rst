@@ -11,8 +11,6 @@ Path
 Absolute path
 -------------
 .. highlights::
-    * ``FILE`` as constant (never hardcode paths)
-    * ``FILE`` as a raw string ``r'...'``
     * paths on Linux, macOS, BSD and other POSIX compliant OSes uses ``/``
     * paths on Windows uses ``\``
 
@@ -21,14 +19,16 @@ Absolute path
 
     FILE = 'C:\\Temp\\iris.csv'
     FILE = r'C:\Temp\iris.csv'
+
+.. code-block:: python
+    :caption: POSIX path
+
     FILE = '/tmp/iris.csv'
     FILE = r'/tmp/iris.csv'
 
 Relative path
 -------------
 .. highlights::
-    * ``FILE`` as constant (never hardcode paths)
-    * ``FILE`` as a raw string ``r'...'``
     * ``.`` - Current directory
     * ``..`` - Parent directory
 
@@ -56,8 +56,10 @@ Relative path
     FILE = r'../../iris.csv'
     FILE = r'../../tmp/iris.csv'
 
+Make absolute from relative path
+--------------------------------
 .. code-block:: python
-    :caption: File in the same directory as script
+    :caption: Make absolute from relative path
 
     from os.path import dirname, join
 
@@ -179,6 +181,45 @@ Appending to file
         file.write('hello')
 
 
+Encoding
+========
+* ``utf-8`` - Worldwide (default)
+* ``cp1251`` or ``windows-1251`` - Western European
+* ``cp1250`` or ``windows-1250`` - Central European
+* ``ASCII`` - ASCII characters only
+* ``iso-8859-1`` - Western European
+* ``iso-8859-2`` - Central European
+
+.. code-block:: python
+
+    with open(r'/tmp/example.txt', mode='w', encoding='utf-8') as file:
+        file.write('Иван Иванович')
+
+    with open(r'/tmp/example.txt', encoding='utf-8') as file:
+        print(file.read())
+    # Иван Иванович
+
+.. code-block:: python
+
+    with open(r'/tmp/example.txt', mode='w', encoding='cp1250') as file:
+        file.write('Иван Иванович')
+    # Traceback (most recent call last):
+    #   ...
+    # UnicodeEncodeError: 'charmap' codec can't encode characters in
+    # position 0-3: character maps to <undefined>
+
+.. code-block:: python
+
+    with open(r'/tmp/example.txt', mode='w', encoding='utf-8') as file:
+        file.write('Иван Иванович')
+
+    with open(r'/tmp/example.txt', encoding='cp1250') as file:
+        print(file.read())
+    # Traceback (most recent call last):
+    #   ...
+    # UnicodeDecodeError: 'charmap' codec can't decode byte 0x98 in position 1: character maps to <undefined>
+
+
 Exception handling
 ==================
 .. code-block:: python
@@ -199,7 +240,9 @@ Exception handling
 Good Engineering Practises
 ==========================
 .. highlights::
-    * ``FILE`` as a raw string ``r'...'`` constant
+    * Never hardcode paths
+    * ``FILE`` should be constant
+    * ``FILE`` as a raw string ``r'...'``
     * ``encoding='utf-8'``
     * Use context manager - ``with`` keyword
 
