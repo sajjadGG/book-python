@@ -1,8 +1,8 @@
 .. _Function Basics:
 
-***************
-Function Basics
-***************
+*******************
+Function Definition
+*******************
 
 
 Function definition
@@ -62,6 +62,31 @@ Naming convention
 
     def __import__(module_name):
         ...
+
+
+Docstring
+=========
+.. highlights::
+    * Docstring is a first multiline comment in:
+
+        * File / Module
+        * Class
+        * Method / Function
+
+    * It is accessible in ``__doc__`` property of an object
+    * Used for generating ``help()`` documentation
+    * Used for ``doctest`` (more in :ref:`Function Doctest`)
+    * :pep:`257` Docstring convention - For multiline always use three double quote (``"""``) characters
+
+.. code-block:: python
+    :caption: Docstring used for documentation
+
+    def apollo_dsky(noun, verb):
+        """
+        This is the Apollo Display Keyboard
+        It takes noun and verb
+        """
+        print(f'Program selected. Noun: {noun}, verb: {verb}')
 
 
 Assignments

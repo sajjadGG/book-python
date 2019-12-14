@@ -114,7 +114,7 @@ Functions
     :caption: Functions
     :name: Basic Functions
 
-    /basics/function/basic.rst
+    /basics/function/definition.rst
     /basics/function/return.rst
     /basics/function/arguments.rst
     /basics/function/scope.rst

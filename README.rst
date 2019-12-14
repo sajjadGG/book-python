@@ -31,18 +31,6 @@ You might also be interested in other book (http://dev.astrotech.io) on Software
     * Software Architecture with Cloud and Microservices
     * Linux and Shell Programming with Bash
 
-.. include:: LICENSE.rst
-
-**Workshop**
-
 .. warning:: Before training course please setup your environment as described here :ref:`Install`.
 
-* :ref:`Python Foundations`
-* :ref:`Python Intermediate`
-* :ref:`Python Advanced`
-* :ref:`Django Framework`
-* :ref:`Python in Networking`
-* :ref:`Python in Testing`
-* :ref:`Python in Science and Engineering`
-* :ref:`Python in Machine Learning`
-
+.. include:: LICENSE.rst
