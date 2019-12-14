@@ -12,11 +12,11 @@ INPUT = [
 ]
 
 header, *data = INPUT
-wanted = {'setosa', 'versicolor'}
+WANTED = {'setosa', 'versicolor'}
 
 
 def sum_if(features, label):
-    if label in wanted:
+    if label in WANTED:
         return sum(features)
     else:
         return 0
@@ -29,5 +29,4 @@ for *features, label in data:
 
 
 ## Alternative
-OUTPUT = sum(sum_if(X, y) for *X, y in data)
-print(OUTPUT)
+sum(sum_if(X, y) for *X, y in data)
