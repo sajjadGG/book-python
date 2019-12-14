@@ -180,48 +180,22 @@ Example
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/functions_example.py`
+* Filename: :download:`solution/function_example.py`
 
 :English:
-    #. For given input data (see below)
-    #. Define ``wanted: Set[str]`` with 'setosa' and 'versicolor'
-    #. Iterate over data and split row into ``features`` and ``label`` (last)
-    #. Define function which sums ``features``, only when ``label`` is in ``wanted``
-    #. When ``label`` is not in ``wanted`` return ``0`` (zero)
-    #. Print sum
+    #. Define function which takes sequence of integers as an argument
+    #. User will not pass any other types than ``int``
+    #. Sum only even numbers
+    #. Print returned value
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
-    #. Zdefiniuj ``wanted: Set[str]`` z 'setosa' oraz 'versicolor'
-    #. Iterując po danych rozdziel wiersz na ``features`` i ``label`` (ostatni)
-    #. Zdefiniuj funkcję sumującą ``features``, tylko gdy ``label`` jest w ``wanted``
-    #. Gdy ``label`` nie występuje w ``wanted`` zwróć ``0`` (zero)
-    #. Wypisz sumę
-
-:Input:
-    .. code-block:: python
-
-        INPUT = [
-            ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-            (5.8, 2.7, 5.1, 1.9, 'virginica'),
-            (5.1, 3.5, 1.4, 0.2, 'setosa'),
-            (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-            (6.3, 2.9, 5.6, 1.8, 'virginica'),
-            (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-            (4.7, 3.2, 1.3, 0.2, 'setosa'),
-            (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-            (7.6, 3.0, 6.6, 2.1, 'virginica'),
-            (4.9, 3.0, 1.4, 0.2, 'setosa'),
-        ]
-
-:Output:
-    .. code-block:: python
-
-        OUTPUT: float
-        # 74.9
+    #. Zdefiniuj funkcję biorącą sekwencję liczb naturalnych jako argument
+    #. Użytkownik nie będzie podawał innych typów niż ``int``
+    #. Zsumuj tylko parzyste liczby
+    #. Wypisz zwróconą wartość
 
 :Solution:
-    .. literalinclude:: solution/functions_example.py
+    .. literalinclude:: solution/function_example.py
         :language: python
 
 Divide
@@ -394,6 +368,51 @@ Aviation numbers
     * Passing function arguments
     * Cleaning data from user input
     * ``dict`` lookups
+
+Wanted
+------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 5 min
+* Filename: :download:`solution/functions_wanted.py`
+
+:English:
+    #. For given input data (see below)
+    #. Define ``wanted: Set[str]`` with 'setosa' and 'versicolor'
+    #. Iterate over data and split row into ``features`` and ``label`` (last)
+    #. Define function which sums ``features``, only when ``label`` is in ``wanted``
+    #. When ``label`` is not in ``wanted`` return ``0`` (zero)
+    #. Print sum
+
+:Polish:
+    #. Dla danych wejściowych (patrz sekcja input)
+    #. Zdefiniuj ``wanted: Set[str]`` z 'setosa' oraz 'versicolor'
+    #. Iterując po danych rozdziel wiersz na ``features`` i ``label`` (ostatni)
+    #. Zdefiniuj funkcję sumującą ``features``, tylko gdy ``label`` jest w ``wanted``
+    #. Gdy ``label`` nie występuje w ``wanted`` zwróć ``0`` (zero)
+    #. Wypisz sumę
+
+:Input:
+    .. code-block:: python
+
+        INPUT = [
+            ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+            (5.8, 2.7, 5.1, 1.9, 'virginica'),
+            (5.1, 3.5, 1.4, 0.2, 'setosa'),
+            (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+            (6.3, 2.9, 5.6, 1.8, 'virginica'),
+            (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+            (4.7, 3.2, 1.3, 0.2, 'setosa'),
+            (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+            (7.6, 3.0, 6.6, 2.1, 'virginica'),
+            (4.9, 3.0, 1.4, 0.2, 'setosa'),
+        ]
+
+:Output:
+    .. code-block:: python
+
+        OUTPUT: float
+        # 74.9
 
 Number to human readable
 ------------------------
