@@ -41,16 +41,16 @@ String Arithmetic
 
 .. code-block:: python
 
-    first_name = 'Jan'
-    last_name = 'Twardowski'
-
-    name = first_name + ' ' + last_name
-    # Jan Twardowski
+    'Ha' * 3            # HaHaHa
+    '-' * 10            # ----------
 
 .. code-block:: python
 
-    'Ha' * 3            # HaHaHa
-    '-' * 10            # ----------
+    first_name = 'Jan'
+    last_name = 'Twardowski'
+
+    first_name + ' ' + last_name
+    # Jan Twardowski
 
 .. code-block:: python
     :caption: How many string are there in a memory?
@@ -58,6 +58,9 @@ String Arithmetic
     first_name = 'Jan'
     last_name = 'Twardowski'
     age = 42
+
+    # How many string are there in a memory?
+    first_name + ' ' + last_name
 
     # How many string are there in a memory?
     'Hello ' + first_name + ' ' + last_name + ' ' + str(age) + '!'
