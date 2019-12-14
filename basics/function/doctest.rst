@@ -44,8 +44,41 @@ From command line
     python -m doctest -v example.py
 
 
-Test for ``bool`` return values
-===============================
+Test Numeric Values
+===================
+.. code-block:: python
+    :caption: ``int`` values
+
+    def add_numbers(a, b):
+        """
+        >>> add_numbers(1, 2)
+        3
+        >>> add_numbers(-1, 1)
+        0
+        >>> add_numbers(0, 0)
+        0
+        """
+        return a + b
+
+.. code-block:: python
+    :caption: ``float`` values
+
+    def add_numbers(a, b):
+        """
+        >>> add_numbers(2.5, 1.2)
+        3.7
+
+        >>> add_numbers(0.1, 0.2)
+        0.30000000000000004
+
+        >>> add_numbers(0.1, 0.2)  # doctest: +ELLIPSIS
+        0.3000...
+        """
+        return a + b
+
+
+Testing Logic Values
+====================
 .. code-block:: python
 
     AGE_ADULT = 18
@@ -66,47 +99,6 @@ Test for ``bool`` return values
         else:
             return False
 
-
-Test numeric return values
-==========================
-
-``int`` values
---------------
-.. code-block:: python
-
-    def add_numbers(a, b):
-        """
-        >>> add_numbers(1, 2)
-        3
-        >>> add_numbers(-1, 1)
-        0
-        >>> add_numbers(0, 0)
-        0
-        """
-        return a + b
-
-``float`` values
-----------------
-.. code-block:: python
-
-    def add_numbers(a, b):
-        """
-        >>> add_numbers(2.5, 1.2)
-        3.7
-
-        >>> add_numbers(0.1, 0.2)
-        0.30000000000000004
-
-        >>> add_numbers(0.1, 0.2)  # doctest: +ELLIPSIS
-        0.3000...
-        """
-        return a + b
-
-Testing logic values
-====================
-
-``isinstance()``
-----------------
 .. code-block:: python
     :caption: This test will fail. Expected exception, got 2.0
 
@@ -125,17 +117,13 @@ Testing logic values
 
         return a + b
 
-.. code-block:: text
+    # Expected:
+    #     Traceback (most recent call last):
+    #         ...
+    #     ValueError: not a number
+    # Got:
+    #     2.0
 
-    Expected:
-        Traceback (most recent call last):
-            ...
-        ValueError: not a number
-    Got:
-        2.0
-
-``type()``
-----------
 .. code-block:: python
     :caption: This test will pass.
 
@@ -154,17 +142,15 @@ Testing logic values
 
         return a + b
 
-Test for ``str`` return values
-==============================
 
-Returning ``str``
------------------
+Testing String Values
+=====================
 .. highlights::
     * Python will change to single quotes in most cases
     * Python will change to double quotes to avoid escapes
 
 .. code-block:: python
-    :caption: Python will change to single quotes in most cases
+    :caption: Returning ``str``. Python will change to single quotes in most cases
     :emphasize-lines: 3-4,7-8,11-12,15-16
 
     def echo(text):
