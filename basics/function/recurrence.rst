@@ -5,7 +5,8 @@ Function Recurrence
 *******************
 
 .. epigraph::
-    Aby zrozumieć rekurencję – musisz najpierw zrozumieć rekursję
+    Aby zrozumieć rekurencję – musisz najpierw zrozumieć rekursję.
+    Aby zrozumieć rekursję - musisz najpierw zrozumieć rekurencję.
 
 
 What is recurrence?
