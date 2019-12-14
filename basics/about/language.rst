@@ -1,6 +1,6 @@
-*********************
-About Python Language
-*********************
+***************
+Python Language
+***************
 
 
 What is Python?
@@ -82,18 +82,18 @@ File types and extensions
 -------------------------
 * Python files use ``.py`` as an extension
 * Compiled files are in ``__pycache__`` directory
-* Python also uses other extensions:
+* Python also uses other extensions
 
-    .. csv-table:: Python file types and extensions
-        :header-rows: 1
-        :widths: 15, 85
+.. csv-table:: Python file types and extensions
+    :header-rows: 1
+    :widths: 15, 85
 
-        "Extension", "Description"
-        "``.pyc``", "Compiled source code (bytecode)"
-        "``.pyd``", "Compiled Windows DLL file"
-        "``.pyw``", "Compiled Windows file. Executable with ``pythonw.exe``"
-        "``.pyx``", "cPythona source for C/C++ conversion"
-        "``.pyz``", "`zipapp <https://docs.python.org/3/library/zipapp.html>`_ compressed archive. Since Python 3.5"
+    "Extension", "Description"
+    "``.pyc``", "Compiled source code (bytecode)"
+    "``.pyd``", "Compiled Windows DLL file"
+    "``.pyw``", "Compiled Windows file. Executable with ``pythonw.exe``"
+    "``.pyx``", "cPythona source for C/C++ conversion"
+    "``.pyz``", "`zipapp <https://docs.python.org/3/library/zipapp.html>`_ compressed archive. Since Python 3.5"
 
 
 Minimal script
@@ -106,11 +106,11 @@ Interpreter declaration
 -----------------------
 * Declare interpreter for standalone scripts ``#!/usr/bin/env python3``
 
-    .. code-block:: python
+.. code-block:: python
 
-        #!/usr/bin/env python3
+    #!/usr/bin/env python3
 
-        print('Ehlo World!')
+    print('Ehlo World!')
 
 System environment variable ``PATH``
 ------------------------------------

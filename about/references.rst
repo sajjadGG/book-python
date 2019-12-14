@@ -11,8 +11,8 @@ Jest to przywitanie serwera SMTP.
 W tej książce znajdziesz kilka żartów informatycznych i nawiązań do starych
 
 
-Iris Dataset
-============
+Datasets
+========
 .. figure:: img/iris-species.jpg
     :scale: 50%
     :align: center
@@ -57,8 +57,8 @@ Dates and Timezones
 * ``1969-07-21 02:56:15 UTC`` - Apollo 11 Neil Armstrong's first step on the Moon
 
 
-Main Characters
-===============
+Characters
+==========
 
 Jan Twardowski
 --------------

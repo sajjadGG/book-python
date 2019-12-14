@@ -1,18 +1,22 @@
-**********
-Entry Test
-**********
+*****
+About
+*****
 .. toctree::
-    :maxdepth: 0
-    :caption: Entry Test
-    :name: Basic Entry Test
+    :maxdepth: 1
+    :caption: About
+    :name: Basics About
 
-    /basics/exam/entry.rst
+    /basics/about/survey.rst
+    /basics/about/agenda.rst
+    /basics/about/install.rst
+    /basics/about/language.rst
+    /basics/about/ide.rst
 
 ******
 Syntax
 ******
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Syntax
     :name: Basic Syntax
 
@@ -24,7 +28,7 @@ Syntax
 Types
 *****
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Types
     :name: Basic Types
 
@@ -40,7 +44,7 @@ Types
 Sequences
 *********
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Sequences
     :name: Basic Sequences
 
@@ -56,7 +60,7 @@ Sequences
 Mappings
 ********
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Mappings
     :name: Basic Mappings
 
@@ -68,7 +72,7 @@ Mappings
 Conditionals
 ************
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Mappings
     :name: Basic Conditionals
 
@@ -80,7 +84,7 @@ Conditionals
 Looping
 *******
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Looping
     :name: Basic Looping
 
@@ -95,7 +99,7 @@ Looping
 Control Flow
 ************
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Control Flow
     :name: Basic Control Flow
 
@@ -106,7 +110,7 @@ Control Flow
 Functions
 *********
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Functions
     :name: Basic Functions
 
@@ -122,7 +126,7 @@ Functions
 Object Oriented Programming
 ***************************
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Object Oriented Programming
     :name: Basic Object Oriented Programming
 
@@ -134,12 +138,14 @@ Object Oriented Programming
     /basics/oop/inheritance.rst
     /basics/oop/operator-overload.rst
 
-*********
-Exit Test
-*********
+*****
+Recap
+*****
 .. toctree::
-    :maxdepth: 0
-    :caption: Exit Test
-    :name: Basic Exit Test
+    :maxdepth: 1
+    :caption: Recap
+    :name: Basic Recap
 
-    /basics/exam/exit.rst
+    /basics/about/exam.rst
+    /basics/about/agenda.rst
+    /basics/about/certificate.rst

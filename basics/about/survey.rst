@@ -1,8 +1,9 @@
-.. _Basics Entry Exam:
+.. _Basics Survey:
 
-**********
-Entry Exam
-**********
+******
+Survey
+******
+
 
 English
 =======

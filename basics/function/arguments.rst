@@ -41,6 +41,7 @@ Required arguments
     subtract(10, 20)
     # -10
 
+
 Arguments with default value
 ============================
 .. highlights::

@@ -1,24 +1,20 @@
 .. include:: /README.rst
 
 
-************
-Introduction
-************
+*****
+About
+*****
 .. toctree::
     :maxdepth: 1
-    :numbered:
-    :caption: Introduction
 
-    /introduction/install.rst
-    /introduction/references.rst
-    /introduction/language.rst
-    /introduction/ide.rst
+    /LICENSE.rst
+    /about/references.rst
 
 *************
 Python Basics
 *************
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :numbered:
     :caption: Python Basics
     :name: Basics
@@ -29,7 +25,7 @@ Python Basics
 Python Intermediate
 *******************
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :numbered:
     :caption: Python Intermediate
     :name: Intermediate
@@ -40,7 +36,7 @@ Python Intermediate
 Python Advanced
 ***************
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :numbered:
     :caption: Python Advanced
     :name: Advanced
@@ -51,7 +47,7 @@ Python Advanced
 Quality and CI/CD
 *****************
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :numbered:
     :caption: Quality and CI/CD
 
@@ -90,7 +86,7 @@ Network and HTTP
 Numerical Analysis, Data Science
 ********************************
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :numbered:
     :caption: Numerical Analysis, Data Science
 
@@ -100,7 +96,7 @@ Numerical Analysis, Data Science
 Machine Learning
 ****************
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :numbered:
     :caption: Machine Learning
 
@@ -110,7 +106,7 @@ Machine Learning
 Blogposts
 *********
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :numbered:
     :caption: Blogposts
 
@@ -125,12 +121,11 @@ Appendixes
     :numbered:
     :caption: Appendixes
 
-    /appendix/history.rst
-    /appendix/further-reading.rst
-    /appendix/books.rst
-    /appendix/video.rst
-    /appendix/python-2vs3.rst
-    /appendix/workshop/foundations.rst
+    /about/history.rst
+    /about/further-reading.rst
+    /about/books.rst
+    /about/video.rst
+    /about/python-2vs3.rst
     /appendix/workshop/intermediate.rst
     /appendix/workshop/advanced.rst
     /appendix/workshop/network.rst
@@ -139,4 +134,3 @@ Appendixes
     /appendix/workshop/scientific.rst
     /appendix/workshop/machine-learning.rst
     /_references/references.rst
-    /LICENSE.rst

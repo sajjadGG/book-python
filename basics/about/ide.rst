@@ -1,10 +1,11 @@
-****************************************
-IDE - Integrated Development Environment
-****************************************
+***********************
+Development Environment
+***********************
 
 
 What is IDE?
 ============
+* Integrated Development Environment
 * Refactoring
 * Syntax helping and highlighting
 * Type hinting and checking
@@ -104,19 +105,27 @@ Check Python Version
 * Complexity level: easy
 * Lines of code to write: 0 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/python_version.py`
+* Filename: :download:`solution/about_version.py`
 
-#. Stwórz skrypt o nazwie ``python_version.py`` (nazwa skryptu będzie zawsze wpisana w sekcji "About")
-#. Plik ma mieć zawartość:
+:English:
+    #. Create file wih name ``about_version.py``
+    #. Copy contents of the "Input" section
+    #. Run code in your IDE (right click on code -> "Run File in Python Console")
+    #. What Python version is installed?
 
+:Polish:
+    #. Stwórz skrypt o nazwie ``about_version.py``
+    #. Skopiuj zawartość z sekcji "Input"
+    #. Uruchom kod swoim IDE (prawy klawisz myszy na kodzie -> "Run File in Python Console")
+    #. Jaka wersja Python jest zainstalowana?
+
+:Input:
     .. code-block:: python
 
         import sys
 
         print(sys.version)
 
-#. Uruchom go w swoim IDE (menu ``Run -> Run... -> nazwa Twojego skryptu``)
-#. Jaka wersja Python jest zainstalowana?
 
 :The whys and wherefores:
     * Czy Python działa
@@ -130,7 +139,7 @@ Check Python Environment
 * Complexity level: easy
 * Lines of code to write: 0 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/python_env.py`
+* Filename: :download:`solution/about_env.py`
 
 #. Stwórz plik o nazwie ``python_env.py``
 #. Plik ma mieć zawartość:
