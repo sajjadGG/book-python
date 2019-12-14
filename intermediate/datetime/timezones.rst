@@ -3,14 +3,14 @@ Datetime Timezones
 ******************
 
 
-Time zones in ``datetime`` library
-==================================
+Time Zones in Stdlib
+====================
 * Always keep dates and times only in UTC (**important!**)
 * Datetimes should be converted to local time only when displaying to user
 * Computerphile Time & Time Zones :cite:`VideoComputerphileTimeZones`
 * Refer to :ref:`Timezone Conversion` for automated solution
 
-Timezone naive
+Timezone Naive
 --------------
 * ``datetime.utcnow()`` - produces timezone naive date!
 
@@ -29,7 +29,7 @@ Timezone naive
     datetime.utcnow()
     # datetime.datetime(1957, 10, 4, 17, 28, 34)
 
-Timezone aware
+Timezone Aware
 --------------
 .. code-block:: python
     :caption: Timezone aware datetime
@@ -72,21 +72,7 @@ List of Timezones
     timezone('Europe/Warsaw')
     timezone('Asia/Almaty')
 
-From naive to local
--------------------
-.. code-block:: python
-    :caption: From naive to local time
-
-    from datetime import datetime
-    from pytz import timezone
-
-
-    my_date = datetime(1961, 4, 12, 6, 7)
-
-    timezone('Asia/Almaty').localize(my_date)
-    # datetime.datetime(1961, 4, 12, 6, 7, tzinfo=<DstTzInfo 'Asia/Almaty' +06+6:00:00 STD>)
-
-From naive to UTC
+From Naive to UTC
 -----------------
 .. code-block:: python
     :caption: From naive to local time
@@ -99,6 +85,20 @@ From naive to UTC
 
     timezone('UTC').localize(my_date)
     # datetime.datetime(1969, 7, 21, 2, 56, 15, tzinfo=<UTC>)
+
+From Naive to Local
+-------------------
+.. code-block:: python
+    :caption: From naive to local time
+
+    from datetime import datetime
+    from pytz import timezone
+
+
+    my_date = datetime(1961, 4, 12, 6, 7)
+
+    timezone('Asia/Almaty').localize(my_date)
+    # datetime.datetime(1961, 4, 12, 6, 7, tzinfo=<DstTzInfo 'Asia/Almaty' +06+6:00:00 STD>)
 
 From UTC to local time
 ----------------------

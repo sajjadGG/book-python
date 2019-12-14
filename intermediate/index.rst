@@ -57,22 +57,6 @@ Modules and Packages
     /intermediate/module/zipapp.rst
     /intermediate/module/distributing.rst
 
-***********
-Mathematics
-***********
-.. toctree::
-    :maxdepth: 0
-    :caption: Mathematics
-    :name: Intermediate Mathematics
-
-    /intermediate/math/math.rst
-    /intermediate/math/statistics.rst
-    /intermediate/math/random.rst
-    /intermediate/math/fractions.rst
-    /intermediate/math/precision.rst
-    /intermediate/math/plotting.rst
-    /intermediate/math/complex.rst
-
 **********************
 Datetime and Timezones
 **********************
@@ -137,6 +121,22 @@ Regular Expressions
     /intermediate/regular-expressions/greedy.rst
     /intermediate/regular-expressions/examples.rst
     /intermediate/regular-expressions/standards.rst
+
+***********
+Mathematics
+***********
+.. toctree::
+    :maxdepth: 0
+    :caption: Mathematics
+    :name: Intermediate Mathematics
+
+    /intermediate/math/math.rst
+    /intermediate/math/statistics.rst
+    /intermediate/math/random.rst
+    /intermediate/math/fractions.rst
+    /intermediate/math/precision.rst
+    /intermediate/math/plotting.rst
+    /intermediate/math/complex.rst
 
 ****************
 Operating System
