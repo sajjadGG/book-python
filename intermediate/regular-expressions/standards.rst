@@ -3,6 +3,11 @@ Regexp Standards
 ****************
 
 
+National Identification Numbers (Worldwide)
+===========================================
+* https://github.com/arthurdejong/python-stdnum/tree/master/stdnum/pl
+
+
 W3C HTML5 Standard regexp for email field
 =========================================
 .. code-block:: text
@@ -73,3 +78,44 @@ To parse a *URL* url into its component parts, the user agent must use the follo
 
         <host-specific>
             The substring that follows the substring matched by the <authority> production, or the whole string if the ``<authority>`` production wasn't matched.
+
+
+Assignments
+===========
+
+PESEL Validation
+----------------
+* Complexity level: medium
+* Lines of code to write: 0 lines (**discussion only**)
+* Estimated time of completion: 10 min
+
+:English:
+    .. todo:: English translation
+
+:Polish:
+    #. Przeprowadź eksperyment myślowy (**tylko dyskusja**)
+    #. Jak sprawdzić za pomocą wyrażeń regularnych czy:
+
+        * czy pesel jest poprawny?
+        * jaka jest data urodzenia? (podaj obiekt ``datetime.date``)
+        * płeć użytkownika który podał PESEL
+
+    #. Mając PESEL "69072101234"
+
+        #. Jakie wyrażenie może być na pierwszym miejscu w PESEL?
+        #. Jakie wyrażenie może być na drugim miejscu w PESEL?
+        #. Jakie wyrażenie może być na trzecim miejscu w PESEL?
+        #. Jakie wyrażenie może być na czwartym miejscu w PESEL?
+        #. Jakie wyrażenie może być na piątym miejscu w PESEL?
+        #. Jakie wyrażenie może być na szóstym miejscu w PESEL?
+
+    #. Mając PESEL "18220801234"
+
+        #. Jakie wyrażenie może być na pierwszym miejscu w PESEL?
+        #. Jakie wyrażenie może być na drugim miejscu w PESEL?
+        #. Jakie wyrażenie może być na trzecim miejscu w PESEL?
+        #. Jakie wyrażenie może być na czwartym miejscu w PESEL?
+        #. Jakie wyrażenie może być na piątym miejscu w PESEL?
+        #. Jakie wyrażenie może być na szóstym miejscu w PESEL?
+
+    #. Sprawdź sumę kontrolną

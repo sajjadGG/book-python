@@ -149,3 +149,4 @@ Recap
     /basics/about/exam.rst
     /basics/about/recap.rst
     /basics/about/certificate.rst
+    /basics/references.rst

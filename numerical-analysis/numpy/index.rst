@@ -68,8 +68,8 @@ Performance:
     * https://github.com/rougier/numpy-100
 
 
-Bibliography
-============
+References
+==========
 .. bibliography:: _references/bibliography.bib
     :style: plain
     :labelprefix: numpy

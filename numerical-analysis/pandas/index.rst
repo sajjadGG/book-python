@@ -49,8 +49,8 @@ Data Frame:
     "``DataFrame.iloc()``", "Access a group of rows and columns by integer position(s)"
 
 
-Bibliography
-============
+References
+==========
 .. bibliography:: _references/bibliography.bib
     :style: plain
     :labelprefix: pandas

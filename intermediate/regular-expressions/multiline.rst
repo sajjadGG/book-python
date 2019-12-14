@@ -1,8 +1,25 @@
-*************************
-Regexp Multiline Searches
-*************************
+****************
+Regexp Multiline
+****************
+
+About
+=====
+* ``re.MULTILINE`` - Flag turns on Multiline search
+* ``^`` - Matches the start of the string, and immediately after each newline
+* ``$`` - Matches the end of the string or just before the newline at the end of the string also matches before a newline
+
+.. csv-table:: Regular Expression Flags
+    :widths: 15, 85
+    :header: "Flag", "Description"
+
+    "``re.IGNORECASE``", "Case-insensitive (Unicode support i.e. Ü and ü)"
+    "``re.MULTILINE``",  "``^`` matches beginning of the string and each line"
+    "``re.MULTILINE``",  "``$`` matches end of the string and each line"
+    "``re.DOTALL``",     "``.`` matches newlines"
 
 
+Example
+=======
 .. code-block:: python
     :caption: Usage of regexp
 

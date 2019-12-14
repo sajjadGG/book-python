@@ -10,8 +10,8 @@ About
 * Also known as ``re``
 
 
-Pattern Matching
-================
+Matching
+========
 * ``\`` - Escapes special characters (allows matching ``*``, ``?``, etc)
 
 .. csv-table:: Regular Expression Pattern Matching
@@ -36,8 +36,8 @@ Negation
     "``^(?!.*word).*$``", "Not containing ``word``"
 
 
-Unicode Patterns
-================
+Unicode
+=======
 * ``\w`` - Includes most characters that can be part of a word in any language, as well as numbers and the underscore
 
 .. csv-table:: Regular Expression Patterns
@@ -86,9 +86,9 @@ Non-Greedy
     :widths: 15, 85
     :header: "Syntax", "Description"
 
-    "?", "zero or one (greedy)"
-    "*", "zero or more (greedy)"
-    "+", "one or more (greedy)"
+    "``?``", "zero or one (greedy)"
+    "``*``", "zero or more (greedy)"
+    "``+``", "one or more (greedy)"
     "``??``", "zero or one (non greedy)"
     "``*?``", "zero or more (non greedy)"
     "``+?``", "one or more (non greedy)"

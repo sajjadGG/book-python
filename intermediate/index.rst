@@ -113,14 +113,18 @@ Regular Expressions
     :name: Intermediate Regular Expressions
 
     /intermediate/regular-expressions/syntax.rst
-    /intermediate/regular-expressions/match-search-findall.rst
+    /intermediate/regular-expressions/match.rst
+    /intermediate/regular-expressions/search.rst
+    /intermediate/regular-expressions/find.rst
+    /intermediate/regular-expressions/compare.rst
     /intermediate/regular-expressions/compile.rst
     /intermediate/regular-expressions/groups.rst
     /intermediate/regular-expressions/multiline.rst
-    /intermediate/regular-expressions/sub-split.rst
+    /intermediate/regular-expressions/substitute.rst
+    /intermediate/regular-expressions/split.rst
     /intermediate/regular-expressions/greedy.rst
-    /intermediate/regular-expressions/examples.rst
     /intermediate/regular-expressions/standards.rst
+    /intermediate/regular-expressions/references/index.rst
 
 ***********
 Mathematics
@@ -169,3 +173,4 @@ Exit Test
     :name: Intermediate Exit Test
 
     /intermediate/exam/exit.rst
+

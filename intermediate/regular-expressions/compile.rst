@@ -1,15 +1,16 @@
-**************************
-Regexp Pattern Compilation
-**************************
+**************
+Regexp Compile
+**************
 
 
 About
 =====
 * ``re.compile()``
+* Used when pattern is reused (especially in the loop)
 
 
-Without compilation
-===================
+Example
+=======
 .. code-block:: python
     :caption: Compiles at every loop iteration, and then matches
     :emphasize-lines: 15
@@ -31,9 +32,6 @@ Without compilation
     for email in INPUT:
         re.match(PATTERN, email)
 
-
-With compilation
-================
 .. code-block:: python
     :caption: Compiling before loop, hence matching only inside
     :emphasize-lines: 15
