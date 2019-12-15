@@ -5,6 +5,13 @@ Classes and Instances
 *********************
 
 
+
+About
+=====
+.. highlights::
+    * Object Oriented Paradigm
+    * Model world as objects that interacts with each other
+
 .. glossary::
 
     class
@@ -13,12 +20,6 @@ Classes and Instances
     instance
     object
         Object created from class.
-
-
-Object Paradigm
-===============
-.. highlights::
-    * Model world as objects that interacts with each other
 
 
 Classes
@@ -76,7 +77,7 @@ Example with Astronauts
     jimenez = Astronaut()
 
 .. code-block:: python
-    :caption: Three classes and four instances
+    :caption: Two classes and two instances
 
     class Astronaut:
         pass
@@ -87,6 +88,21 @@ Example with Astronauts
 
     mark = Astronaut()
     ivan = Cosmonaut()
+
+.. code-block:: python
+    :caption: Two classes and four instances (two instances of an ``Astronaut`` class, and two of a ``Cosmonaut`` class)
+
+    class Astronaut:
+        pass
+
+    class Cosmonaut:
+        pass
+
+
+    mark = Astronaut()
+    melissa = Astronaut()
+    ivan = Cosmonaut()
+    jan = Cosmonaut()
 
 Examples with Iris
 ------------------
@@ -111,7 +127,7 @@ Examples with Iris
     virginica = Iris()
 
 .. code-block:: python
-    :caption: Three classes and four instances
+    :caption: Three classes and four instances (two instances of a one class)
 
     class IrisSetosa:
         pass

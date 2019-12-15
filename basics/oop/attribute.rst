@@ -5,6 +5,16 @@ Attributes
 **********
 
 
+About
+=====
+.. highlights::
+    * Attributes are also known as "Properties" or "Fields"
+    * ``snake_case`` name convention
+    * Attributes store information (state) for instances
+    * Access field values using dot (``.``) notation
+
+.. note:: Attributes should be defined only in ``__init__()`` method (covered in :ref:`OOP Initializer Method`)
+
 .. glossary::
 
     property
@@ -12,16 +22,6 @@ Attributes
     field
     state
         Variable inside the class.
-
-
-Object Paradigm
-===============
-.. highlights::
-    * Attributes are also known as "Properties" or "Fields"
-    * ``snake_case`` name convention
-    * Attributes should be defined only in ``__init__()`` method (covered in :ref:`OOP Initializer Method`)
-    * Attributes store information (state) for instances
-    * Access field values using dot (``.``) notation
 
 
 Dynamic Attributes
@@ -71,7 +71,7 @@ Dynamic Attributes
     # 10.2
 
 .. code-block:: python
-    :caption: Dynamic attributes
+    :caption: Accessing not existing attributes
 
     class MyClass:
         pass
@@ -80,49 +80,6 @@ Dynamic Attributes
     my_instance = MyClass()
     print(my_instance.xxx)
     # AttributeError: 'MyClass' object has no attribute 'xxx'
-
-
-Access Modifiers
-================
-.. highlights::
-    * Fields are always public
-    * No protected and private
-    * ``_name`` - protected field (by convention)
-    * ``__name__`` - system field
-    * ``name_`` - used while name collision
-
-.. code-block:: python
-    :caption: Access modifiers
-
-    class Temperature:
-        pass
-
-
-    temp = Temperature()
-    temp._value = 10
-
-    print(temp._value)  # IDE should warn, that you access protected member
-    # 10
-
-.. code-block:: python
-    :caption: Access modifiers
-
-    class Iris:
-        pass
-
-
-    flower = Iris()
-    flower._sepal_length = 5.1
-    flower._sepal_width = 3.5
-    flower._petal_length = 1.4
-    flower._petal_width = 0.2
-    flower.species = 'setosa'
-
-    print(flower._sepal_length)     # 5.1       # IDE should warn, that you access protected member
-    print(flower._sepal_width)      # 3.5       # IDE should warn, that you access protected member
-    print(flower._petal_length)     # 1.4       # IDE should warn, that you access protected member
-    print(flower._petal_width)      # 0.2       # IDE should warn, that you access protected member
-    print(flower.species)           # setosa
 
 
 Get all dynamic fields and values
@@ -166,14 +123,14 @@ Data Modeling
     #. Create instances for each record
     #. How many classes are there?
     #. How many instances are there?
-    #. Print first field from each instance
+    #. Print all fields from each instance
 
 :Polish:
     #. Zamodeluj dane za pomocą klas
     #. Stwórz instancje dla każdego wpisu
     #. Jak wiele klas możemy wyróżnić?
     #. Jak wiele instancji możemy wyróżnić?
-    #. Wypisz pierwsze pole każdej z instancji
+    #. Wypisz wszystkie pola każdej z instancji
 
 :Input:
     .. code-block:: text

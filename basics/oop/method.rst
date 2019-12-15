@@ -4,15 +4,22 @@
 Methods
 *******
 
-.. glossary::
 
-    method
-        Function inside the class which takes ``self`` as a first argument.
-
+About
+=====
 .. highlights::
     * Methods are functions in the class
     * First argument is always instance (``self``)
     * While calling function you never pass ``self``
+    * Prevents copy-paste code
+    * Improves readability
+    * Improves refactoring
+    * Decomposes bigger problem into smaller chunks
+
+.. glossary::
+
+    method
+        Function inside the class which takes ``self`` as a first argument.
 
 
 Methods without arguments
@@ -47,7 +54,7 @@ Methods without arguments
 Methods with required argument
 ==============================
 .. code-block:: python
-    :caption: Method called without argument
+    :caption: Methods with required argument
 
     class Astronaut:
         def say_hello(self, name):
@@ -55,35 +62,19 @@ Methods with required argument
 
 
     astro = Astronaut()
-    astro.say_hello()
-    # TypeError: say_hello() missing 1 required positional argument: 'name'
 
-.. code-block:: python
-    :caption: Method with positional argument
-
-    class Astronaut:
-        def say_hello(self, name):
-            print(f'My name... {name}')
-
-
-    astro = Astronaut()
-    astro.say_hello('Jose Jimenez')
-    # My name... Jose Jimenez
-
-.. code-block:: python
-    :caption: Method called with keyword argument
-
-    class Astronaut:
-        def say_hello(self, name):
-            print(f'My name... {name}')
-
-
-    astro = Astronaut()
     astro.say_hello(name='Jose Jimenez')
     # My name... Jose Jimenez
 
+    astro.say_hello('Jose Jimenez')
+    # My name... Jose Jimenez
+
+    astro.say_hello()
+    # TypeError: say_hello() missing 1 required positional argument: 'name'
+
+
 .. code-block:: python
-    :caption: Methods with arguments
+    :caption: Methods with required argument
 
     class Iris:
         def latin_name(self, species):
@@ -108,8 +99,8 @@ Methods with optional argument (with default value)
     :caption: Methods with arguments with default value
 
     class Iris:
-        def latin_name(self, species='unknown'):
-            print(f'Latin name: Iris {species}')
+        def latin_name(self, species='Unknown'):
+            print(f'Latin name: {species}')
 
 
     flower = Iris()
@@ -117,52 +108,76 @@ Methods with optional argument (with default value)
     flower.latin_name(species='Iris Setosa')
     # Latin name: Iris Setosa
 
-    flower.latin_name('setosa')
+    flower.latin_name('Iris Setosa')
     # Latin name: Iris Setosa
 
     flower.latin_name()
-    # Latin name: unknown
+    # Latin name: Unknown
 
 
-Methods calling other methods
-=============================
-.. code-block:: python
-    :caption: Methods calling other methods
-
-    class Iris:
-        def get_name(self):
-            return 'Iris Setosa'
-
-        def latin_name(self):
-            name = self.get_name()
-            return f'Latin name: {name}'
-
-
-    flower = Iris()
-
-    flower.latin_name()
-    # Latin name: Iris Setosa
-
-Methods accessing fields
+Methods Accessing Fields
 ========================
 .. code-block:: python
-    :caption: Methods accessing fields
+    :caption: Methods Accessing Fields
 
     class Iris:
-        def __init__(self, species='unknown'):
+        def __init__(self, species):
             self.species = species
 
         def latin_name(self):
             print(f'Latin name is: {self.species}')
 
 
-    setosa = Iris('Iris Setosa')
-    setosa.latin_name()
+    flower = Iris('Iris Setosa')
+    flower.latin_name()
     # Latin name is: Iris Setosa
 
-    unknown = Iris()
-    unknown.latin_name()
-    # Latin name is: unknown
+
+Methods Calling Other Methods
+=============================
+.. code-block:: python
+    :caption: Methods Calling Other Methods
+
+    class Astronaut:
+        def get_name(self):
+            return 'Jose Jimenez'
+
+        def say_hello(self):
+            name = self.get_name()
+            print(f'My name... {name}')
+
+
+    astro = Astronaut()
+
+    astro.say_hello()
+    # My name... Jose Jimenez
+
+.. code-block:: python
+    :caption: Methods calling other methods
+
+    class Iris:
+        def __init__(self):
+            self.sepal_length = 5.1
+            self.sepal_width = 3.5
+            self.petal_length = 1.4
+            self.petal_width = 0.2
+
+        def sepal_area(self):
+            return self.sepal_length * self.sepal_width
+
+        def petal_area(self):
+            return self.petal_length * self.petal_width
+
+        def total_area(self):
+            sepal_area = self.sepal_area()
+            petal_area = self.petal_area()
+            return sepal_area + petal_area
+
+
+    flower = Iris()
+
+    print(flower.total_area())
+    # Total area: 18.13
 
 
 Assignments

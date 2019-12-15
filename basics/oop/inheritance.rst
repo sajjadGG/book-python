@@ -5,7 +5,14 @@ Inheritance
 ***********
 
 
-Simple inheritance
+About
+=====
+* Parent - superclass
+* Child - subclass
+* Inherit all fields and methods from parent
+
+
+Simple Inheritance
 ==================
 .. code-block:: python
 

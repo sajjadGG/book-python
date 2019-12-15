@@ -39,6 +39,7 @@ Object Oriented Programming
     :caption: Object Oriented Programming
     :name: Intermediate Object Oriented Programming
 
+    /intermediate/oop/access-modifiers.rst
     /intermediate/oop/enum.rst
     /intermediate/oop/dataclass.rst
 
