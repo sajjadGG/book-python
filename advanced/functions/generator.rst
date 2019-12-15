@@ -41,6 +41,36 @@ Generator expressions vs. Comprehensions
     sum(x for x in range(0, 5))         # 10
 
 
+What is the difference?
+-----------------------
+* Execution and assignment
+
+    .. code-block:: python
+
+        a = [x for x in range(0, 5)]
+
+        print(a)
+        # [0, 1, 2, 3, 4]
+
+        print(a)
+        # [0, 1, 2, 3, 4]
+
+* Create generator object and assign pointer (do not execute)
+
+    .. code-block:: python
+
+        a = (x for x in range(0, 5))
+
+        print(a)
+        # <generator object <genexpr> at 0x111e7acd0>
+
+        print(list(a))
+        # [0, 1, 2, 3, 4]
+
+        print(list(a))
+        # []
+
+
 Lazy evaluation
 ===============
 .. highlights::
@@ -97,23 +127,6 @@ Evaluate generator iteratively
     # 3
     # 4
 
-Halting iteration
------------------
-.. highlights::
-    * Will generate only three numbers, then stop
-
-.. code-block:: python
-
-    a = (x for x in range(0,5))
-
-    for i in a:
-        print(i)
-        if i == 2:
-            break
-    # 0
-    # 1
-    # 2
-
 Halting and resuming iteration
 ------------------------------
 .. highlights::
@@ -122,49 +135,27 @@ Halting and resuming iteration
 
 .. code-block:: python
 
-    a = (x for x in range(0,5))
+    a = (x for x in range(0,10))
 
     for i in a:
         print(i)
-        if i == 2:
+        if i == 3:
             break
     # 0
     # 1
     # 2
+    # 3
 
     for i in a:
         print(i)
-    # 3
+        if i == 6:
+            break
     # 4
+    # 5
+    # 6
 
-What is the difference?
------------------------
-* Execution and assignment
-
-    .. code-block:: python
-
-        a = [x for x in range(0, 5)]
-
-        print(a)
-        # [0, 1, 2, 3, 4]
-
-        print(a)
-        # [0, 1, 2, 3, 4]
-
-* Create generator object and assign pointer (do not execute)
-
-    .. code-block:: python
-
-        a = (x for x in range(0, 5))
-
-        print(a)
-        # <generator object <genexpr> at 0x111e7acd0>
-
-        print(list(a))
-        # [0, 1, 2, 3, 4]
-
-        print(list(a))
-        # []
+    list(a)
+    # [7, 8, 9]
 
 Which one is better?
 --------------------
