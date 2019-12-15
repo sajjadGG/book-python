@@ -191,17 +191,29 @@ Methods
 * Filename: :download:`solution/syntax_methods.py`
 
 :English:
-    #. Create class ``Iris``
-    #. Create method ``total()`` which calculates sum of all numerical attributes of an object
-    #. Create method ``mean()`` which calculates mean of all numerical attributes of an object (assume length equal to 4)
+    #. Define class ``Iris``
+    #. Define method ``total()`` which calculates sum of all numerical attributes of an object
+
+        * "Sepal length"
+        * "Sepal width"
+        * "Petal length"
+        * "Petal width"
+
+    #. Define method ``mean()`` which calculates mean of all numerical attributes of an object (assume length equal to 4)
     #. Create ``setosa`` object with attributes set at the initialization (see input data)
     #. Create ``virginica`` object with attributes set at the initialization (see input data)
     #. Print species name, total and mean of each instance
 
 :Polish:
-    #. Stwórz klasę ``Iris``
-    #. Napisz metodę ``total()`` wyliczającą sumę wszystkich atrybutów numerycznych obiektu
-    #. Napisz metodę ``mean()`` wyliczającą średnią wszystkich atrybutów numerycznych obiektu (przyjmij długość równą 4)
+    #. Zdefiniuj klasę ``Iris``
+    #. Zdefiniuj metodę ``total()`` klasy ``Iris`` wyliczającą sumę wszystkich atrybutów numerycznych obiektu:
+
+        * "Sepal length"
+        * "Sepal width"
+        * "Petal length"
+        * "Petal width"
+
+    #. Zdefiniuj metodę ``mean()`` klasy ``Iris`` wyliczającą średnią wszystkich atrybutów numerycznych obiektu (przyjmij długość równą 4)
     #. Stwórz obiekt ``setosa`` z pomiarami podawanymi przy inicjalizacji (patrz dane wejściowe)
     #. Stwórz obiekt ``virginica`` z pomiarami podawanymi przy inicjalizacji (patrz dane wejściowe)
     #. Wypisz nazwę gatunku oraz sumę i średnią z pomiarów dla każdej instancji
@@ -211,5 +223,5 @@ Methods
         :header: "Sepal length", "Sepal width", "Petal length", "Petal width", "Species"
         :widths: 10, 10, 10, 10, 60
 
-        "5.8", "2.7", "5.1", "1.9", "virginica"
         "5.1", "3.5", "1.4", "0.2", "setosa"
+        "5.8", "2.7", "5.1", "1.9", "virginica"

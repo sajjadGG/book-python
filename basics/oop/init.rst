@@ -236,6 +236,9 @@ Classes and instances
         #. Instance ``fahrenheit`` prints temperature 97.88
         #. Instance ``kelvin`` prints temperature 309.75
 
+    #. Do not convert units
+    #. Do not store values in the instances
+
 :Polish:
     #. Stwórz jedną klasę ``Temperature``
     #. Stwórz trzy instancje klasy ``Temperature``
@@ -245,6 +248,9 @@ Classes and instances
         #. Instancja ``celsius`` wyświetla temperaturę 36.6
         #. Instancja ``fahrenheit`` wyświetla temperaturę 97.88
         #. Instancja ``kelvin`` wyświetla temperaturę 309.75
+
+    #. Nie konwertuj jednostek
+    #. Nie przechowuj informacji w instancjach
 
 Data Modeling
 -------------

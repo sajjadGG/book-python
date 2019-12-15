@@ -12,8 +12,7 @@ About
     * ``snake_case`` name convention
     * Attributes store information (state) for instances
     * Access field values using dot (``.``) notation
-
-.. note:: Attributes should be defined only in ``__init__()`` method (covered in :ref:`OOP Initializer Method`)
+    * Attributes should be defined only in ``__init__()`` method (covered in :ref:`OOP Initializer Method`)
 
 .. glossary::
 
