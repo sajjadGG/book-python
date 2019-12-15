@@ -278,6 +278,15 @@ Built-in generators
     tuple(zip(header, data))
     # (('a', 1), ('b', 2), ('c', 3))
 
+.. code-block:: python
+
+    header = ['a', 'b', 'c']
+    data = [1, 2, 3]
+    row = [77,88,99]
+
+    [(k,v,r) for k,v,r in zip(header, data, row)]
+    # [('a', 1, 77), ('b', 2, 88), ('c', 3, 99)]
+
 ``map()``
 ---------
 .. code-block:: python
@@ -324,6 +333,18 @@ Built-in generators
 
     list(filter(lambda x: not x%2, data))
     # [2, 4, 6]
+
+``enumerate()``
+---------------
+.. code-block:: python
+
+    header = ['a', 'b', 'c']
+
+    list(enumerate(header))
+    # [(0, 'a'), (1, 'b'), (2, 'c')]
+
+    dict(enumerate(header))
+    # {0: 'a', 1: 'b', 2: 'c'}
 
 
 Assignments
