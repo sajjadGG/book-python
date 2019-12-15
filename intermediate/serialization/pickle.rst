@@ -238,40 +238,59 @@ Pickle serialization
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/pickle_dump.py`
+* Filename: :download:`solution/pickle_dump_load.py`
 
 :English:
-    #. Use data input addressbook
+    #. Use data from input section (see below)
     #. Using ``pickle`` save data structure to file
     #. Recreate data structure from file
 
 :Polish:
-    #. Użyj obiektu książki adresowej z danych wejściowych
+    #. Użyj danych z sekcji input (see below)
     #. Za pomocą ``pickle`` zapisz strukturę danych do pliku
     #. Odtwórz strukturę danych na podstawie danych z pliku
 
 :Input:
     .. code-block:: python
 
-        class Contact:
-            def __init__(self, first_name, last_name, addresses=()):
-                self.first_name = first_name
-                self.last_name = last_name
-                self.addresses = addresses
+        from dataclasses import dataclass
+        from typing import List
 
 
-        class Address:
-            def __init__(self, location, city):
-                self.location = location
-                self.city = city
+        @dataclass
+        class Mission:
+            year: int
+            name: str
+
+
+        @dataclass
+        class Astronaut:
+            name: str
+            missions: List[Mission] = ()
 
 
         INPUT = [
-            Contact(first_name='Jan', last_name='Twardowski', addresses=(
-                Address(location='Johnson Space Center', city='Houston, TX'),
-                Address(location='Kennedy Space Center', city='Merritt Island, FL'),
-                Address(location='Jet Propulsion Laboratory', city='Pasadena, CA'),
-            )),
-            Contact(first_name='Mark', last_name='Watney'),
-            Contact(first_name='Melissa', last_name='Lewis', addresses=()),
+            Astronaut('Jan Twardowski', missions=[
+                Mission(1969, 'Apollo 11'),
+                Mission(2024, 'Artemis 3')]),
+
+            Astronaut('Mark Watney', missions=[
+                Mission(2035, 'Ares 3')]),
+
+            Astronaut('Melissa Lewis', missions=[]),
         ]
+
+:Output:
+    .. code-block:: python
+
+        OUTPUT: list[Astronaut]
+        # [
+        #   Astronaut(name='Jan Twardowski', missions=[
+        #       Mission(year=1969, name='Apollo 11'),
+        #       Mission(year=2024, name='Artemis 3')]),
+        #
+        #   Astronaut(name='Mark Watney', missions=[
+        #       Mission(year=2035, name='Ares 3')]),
+        #
+        #   Astronaut(name='Melissa Lewis', missions=[])
+        # ]
