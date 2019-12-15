@@ -1,5 +1,5 @@
 *************
-Syntax Basics
+Python Syntax
 *************
 
 

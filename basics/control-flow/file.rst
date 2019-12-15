@@ -1,8 +1,8 @@
 .. _Basic Files:
 
-******************
-Control Flow Files
-******************
+*****
+Files
+*****
 
 
 Path

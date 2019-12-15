@@ -1,8 +1,8 @@
 .. _Control Flow Exceptions:
 
-***********************
-Control Flow Exceptions
-***********************
+**********
+Exceptions
+**********
 
 
 What are and why to use exceptions?
