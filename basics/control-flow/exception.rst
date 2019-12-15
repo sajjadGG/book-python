@@ -150,6 +150,11 @@ TypeError
     #   File "<stdin>", line 1, in <module>
     # TypeError: unsupported operand type(s) for +: 'int' and 'str'
 
+    'a' + 42
+    # Traceback (most recent call last):
+    #   File "<stdin>", line 1, in <module>
+    # TypeError: can only concatenate str (not "int") to str
+
 ValueError
 ----------
 .. highlights::
@@ -220,8 +225,8 @@ Use case
 
     apollo13()
     # Traceback (most recent call last):
-    #   File "<input>", line 5, in <module>
-    #   File "<input>", line 2, in apollo13
+    #   File "<stdin>", line 5, in <module>
+    #   File "<stdin>", line 2, in apollo13
     # RuntimeError: Oxygen tank explosion
 
 .. code-block:: python
@@ -232,9 +237,30 @@ Use case
 
     apollo18()
     # Traceback (most recent call last):
-    #   File "<input>", line 5, in <module>
-    #   File "<input>", line 2, in apollo18
+    #   File "<stdin>", line 5, in <module>
+    #   File "<stdin>", line 2, in apollo18
     # NotImplementedError: Mission dropped due to budget cuts
+
+Assertion
+=========
+* Raises ``AssertionError`` if argument is ``False``
+* Can have optional message
+
+.. code-block:: python
+    :emphasize-lines: 2
+
+    import sys
+
+    assert sys.version_info >= (3, 8)
+    # Traceback (most recent call last):
+    #   File "<stdin>", line 1, in <module>
+    # AssertionError
+
+    assert sys.version_info >= (3, 8), "Python 3.8+ required."
+    # Traceback (most recent call last):
+    #   File "<stdin>", line 1, in <module>
+    # AssertionError: Python 3.8+ required.
+
 
 Traceback
 =========
@@ -338,6 +364,8 @@ Catching exceptions
     except RuntimeError:
         print('Houston we have a problem!')
 
+    # Houston we have a problem!
+
 .. code-block:: python
     :caption: Catch many exceptions with the same handling
     :emphasize-lines: 7
@@ -351,6 +379,8 @@ Catching exceptions
     except (RuntimeError, TypeError, NameError):
         print('Houston we have a problem!')
 
+    # Houston we have a problem!
+
 .. code-block:: python
     :caption: Catch many exceptions with different handling
 
@@ -363,6 +393,8 @@ Catching exceptions
 
     except PermissionError:
         print('Permission denied')
+
+    # File does not exist
 
 .. code-block:: python
     :caption: Exceptions logging
@@ -378,6 +410,8 @@ Catching exceptions
         apollo13()
     except RuntimeError as err:
         logging.error(err)
+
+    # ERROR:root:Oxygen tank explosion
 
 
 ``else`` and ``finally``
@@ -399,6 +433,9 @@ Catching exceptions
     else:
         print('Landing a man on the Moon')
 
+    # Try landing on the Moon
+    # Landing a man on the Moon
+
 .. code-block:: python
     :caption: ``finally`` is executed always (even if there was exception)
 
@@ -411,6 +448,9 @@ Catching exceptions
         print('Abort')
     finally:
         print('Returning safely to the Earth')
+
+    # Try landing on the Moon
+    # Returning safely to the Earth
 
 .. code-block:: python
 
@@ -432,6 +472,10 @@ Catching exceptions
         print('Landing a man on the Moon')
     finally:
         print('Returning safely to the Earth')
+
+    # Program P63 - Landing Manoeuvre Approach Phase
+    # Yo're GO for landing
+    # Returning safely to the Earth
 
 
 Always catch exceptions!
@@ -540,12 +584,12 @@ Defining own exceptions
 
     raise MyError
     # Traceback (most recent call last):
-    #   File "<input>", line 5, in <module>
+    #   File "<stdin>", line 5, in <module>
     # MyError
 
     raise MyError('More verbose description')
     # Traceback (most recent call last):
-    #   File "<input>", line 5, in <module>
+    #   File "<stdin>", line 5, in <module>
     # MyError: More verbose description
 
 Use-case
@@ -578,6 +622,8 @@ Exit Status Code
         print('Cannot type cast to float')
         exit(1)
 
+    # Cannot type cast to float
+    # [...] program exited with status 1
 
 Assignments
 ===========
