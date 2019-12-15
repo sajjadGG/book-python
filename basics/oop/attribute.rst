@@ -159,15 +159,13 @@ Data Modeling
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/attribute_modeling.py`
+* Filename: :download:`solution/attribute_model.py`
 
 :English:
     #. Model the data using classes
     #. Create instances for each record
     #. How many classes are there?
     #. How many instances are there?
-    #. Create instances of a first class using positional arguments
-    #. Create instances of a second class using keyword arguments
     #. Print first field from each instance
 
 :Polish:
@@ -175,8 +173,6 @@ Data Modeling
     #. Stwórz instancje dla każdego wpisu
     #. Jak wiele klas możemy wyróżnić?
     #. Jak wiele instancji możemy wyróżnić?
-    #. Twórz instancje pierwszej klasy używając argumentów pozycyjnych
-    #. Twórz instancje drugiej klasy używając argumentów nazwanych
     #. Wypisz pierwsze pole każdej z instancji
 
 :Input:
