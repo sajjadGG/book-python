@@ -72,6 +72,5 @@ References
 ==========
 .. bibliography:: _references/bibliography.bib
     :style: plain
-    :labelprefix: numpy
-    :keyprefix: numpy-
+    :labelprefix: NP
     :all:

@@ -149,4 +149,16 @@ Recap
     /basics/about/exam.rst
     /basics/about/recap.rst
     /basics/about/certificate.rst
-    /basics/references.rst
+
+
+**********
+References
+**********
+
+Bibliography
+============
+.. bibliography:: _references/bibliography.bib
+    :style: plain
+    :labelprefix: F
+    :all:
+

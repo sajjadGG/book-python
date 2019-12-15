@@ -1,8 +1,8 @@
 .. _OOP Operator Overload:
 
-*********************
-OOP Operator Overload
-*********************
+*****************
+Operator Overload
+*****************
 
 
 Why to use operator overload?

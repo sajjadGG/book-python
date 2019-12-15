@@ -1,8 +1,8 @@
 .. _OOP Initializer Method:
 
-**********************
-OOP Initializer Method
-**********************
+******************
+Initializer Method
+******************
 
 
 .. highlights::

@@ -1,8 +1,8 @@
 .. _OOP Inheritance:
 
-***************
-OOP Inheritance
-***************
+***********
+Inheritance
+***********
 
 
 Simple inheritance

@@ -21,7 +21,7 @@ Array Arithmetic
 
 Broadcasting Rules
 ==================
-* Source :cite:`numpy-BroadcastingRules`
+* Source :cite:`NumpyBroadcastingRules`
 
 #. Operations between multiple array objects are first checked for proper shape match
 #. Mathematical operators (``+``, ``-``, ``*``, ``/``, ``exp``, ``log``, ...) apply element by element, on values

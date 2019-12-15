@@ -1,8 +1,8 @@
 .. _OOP Classes and Instances:
 
-*************************
-OOP Classes and Instances
-*************************
+*********************
+Classes and Instances
+*********************
 
 
 .. glossary::

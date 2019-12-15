@@ -1,8 +1,8 @@
 .. _OOP Methods:
 
-***********
-OOP Methods
-***********
+*******
+Methods
+*******
 
 .. glossary::
 

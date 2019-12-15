@@ -13,7 +13,7 @@ About Axis
     :scale: 50%
     :align: center
 
-    Visualizing Multi-Dimensional Arrays :cite:`numpy-MultidimArrays`
+    Visualizing Multi-Dimensional Arrays :cite:`NumpyMultidimArrays`
 
 
 One Dimensional

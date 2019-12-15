@@ -1,8 +1,8 @@
 .. _OOP Attributes:
 
-**************
-OOP Attributes
-**************
+**********
+Attributes
+**********
 
 
 .. glossary::

@@ -5,7 +5,7 @@ DataFrame Aggregations
 
 Case Study
 ==========
-.. note:: Source :cite:`pandas-Aggregations`
+.. note:: Source :cite:`PandasAggregations`
 
 Load Data
 ---------

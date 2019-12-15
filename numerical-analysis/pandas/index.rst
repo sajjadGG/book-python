@@ -53,6 +53,5 @@ References
 ==========
 .. bibliography:: _references/bibliography.bib
     :style: plain
-    :labelprefix: pandas
-    :keyprefix: pandas-
+    :labelprefix: PD
     :all:
