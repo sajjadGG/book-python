@@ -4,6 +4,7 @@
 OOP Dataclass
 *************
 
+
 Syntax
 ======
 * This are not static fields!
@@ -364,16 +365,17 @@ Example
 
     @dataclass
     class Iris:
-        petal_width: int
-        petal_length: int
-        sepal_width: int
         sepal_length: int
+        sepal_width: int
+        petal_length: int
+        petal_width: int
         species: str
 
 
     header, *data = INPUT
     flowers = list(Iris(*row) for row in data)
     print(flowers)
+
 
 Assignments
 ===========
