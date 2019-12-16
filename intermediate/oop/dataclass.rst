@@ -374,7 +374,19 @@ Example
 
     header, *data = INPUT
     flowers = list(Iris(*row) for row in data)
+
     print(flowers)
+    # [
+    #   Iris(sepal_length=5.8, sepal_width=2.7, petal_length=5.1, petal_width=1.9, species='virginica'),
+    #   Iris(sepal_length=5.1, sepal_width=3.5, petal_length=1.4, petal_width=0.2, species='setosa'),
+    #   Iris(sepal_length=5.7, sepal_width=2.8, petal_length=4.1, petal_width=1.3, species='versicolor'),
+    #   Iris(sepal_length=6.3, sepal_width=2.9, petal_length=5.6, petal_width=1.8, species='virginica'),
+    #   Iris(sepal_length=6.4, sepal_width=3.2, petal_length=4.5, petal_width=1.5, species='versicolor'),
+    #   Iris(sepal_length=4.7, sepal_width=3.2, petal_length=1.3, petal_width=0.2, species='setosa'),
+    #   Iris(sepal_length=7.0, sepal_width=3.2, petal_length=4.7, petal_width=1.4, species='versicolor'),
+    #   Iris(sepal_length=7.6, sepal_width=3.0, petal_length=6.6, petal_width=2.1, species='virginica'),
+    #   Iris(sepal_length=4.6, sepal_width=3.1, petal_length=1.5, petal_width=0.2, species='setosa')
+    # ]
 
 
 Assignments
@@ -418,3 +430,37 @@ Address Book (dataclass)
             {"first_name": "Alex", "last_name": "Vogel", "addresses": [
                 {"street": "Linder Hoehe", "city": "Köln", "post_code": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}
         ]
+
+Deserialize data from API
+-------------------------
+* Complexity level: easy
+* Lines of code to write: 30 lines
+* Estimated time of completion: 30 min
+* Filename: :download:`solution/dataclass_json.py`
+
+:English:
+    #. You received input data in JSON format from the API
+    #. Using ``dataclass`` Model data as class ``User``
+    #. Parse fields with dates and store as ``datetime`` objects
+    #. Parse fields with ``true`` and ``false`` values and store as ``bool`` objects
+    #. Iterate over records and create instances of this class
+    #. Collect all instances to one list
+
+:Polish:
+    #. Otrzymałeś z API dane wejściowe w formacie JSON
+    #. Wykorzystując ``dataclass`` zamodeluj dane za pomocą klasy ``User``
+    #. Sparsuj pola zwierające daty i zapisz je jako obiekty ``datetime``
+    #. Sparsuj pola zawierające ``true`` lub ``false`` i zapamiętaj ich wartości jako obiekty ``bool``
+    #. Iterując po rekordach twórz instancje tej klasy
+    #. Zbierz wszystkie instancje do jednej listy
+
+:The whys and wherefores:
+    * Serializing nested data structures
+    * Using stdlib ``json`` library
+    * Serialize and deserialize nested objects
+    * Model data from API
+
+:Input:
+    .. code-block:: text
+
+        [{"model":"authorization.user","pk":1,"fields":{"password":"pbkdf2_sha256$120000$gvEBNiCeTrYa0$5C+NiCeTrYsha1PHogqvXNiCeTrY0CRSLYYAA90=","last_login":"1970-01-01T00:00:00.000Z","is_superuser":false,"username":"commander","first_name":"Иван","last_name":"Иванович","email":"","is_staff":true,"is_active":true,"date_joined":"1970-01-01T00:00:00.000Z","groups":[1],"user_permissions":[{"eclss":["add","modify","view"]},{"communication":["add","modify","view"]},{"medical":["add","modify","view"]},{"science":["add","modify","view"]}]}},{"model":"authorization.user","pk":2,"fields":{"password":"pbkdf2_sha256$120000$eUNiCeTrYHoh$X32NiCeTrYZOWFdBcVT1l3NiCeTrY4WJVhr+cKg=","last_login":null,"is_superuser":false,"username":"executive-officer","first_name":"José","last_name":"Jiménez","email":"","is_staff":true,"is_active":true,"date_joined":"1970-01-01T00:00:00.000Z","groups":[1],"user_permissions":[{"eclss":["add","modify","view"]},{"communication":["add","modify","view"]},{"medical":["add","modify","view"]},{"science":["add","modify","view"]}]}},{"model":"authorization.user","pk":3,"fields":{"password":"pbkdf2_sha256$120000$3G0RNiCeTrYlaV1$mVb62WNiCeTrYQ9aYzTsSh74NiCeTrY2+c9/M=","last_login":"1970-01-01T00:00:00.000Z","is_superuser":false,"username":"crew-medical-officer","first_name":"Melissa","last_name":"Lewis","email":"","is_staff":true,"is_active":true,"date_joined":"1970-01-01T00:00:00.000Z","groups":[1],"user_permissions":[{"communication":["add","view"]},{"medical":["add","modify","view"]},{"science":["add","modify","view"]}]}},{"model":"authorization.user","pk":4,"fields":{"password":"pbkdf2_sha256$120000$QmSNiCeTrYBv$Nt1jhVyacNiCeTrYSuKzJ//WdyjlNiCeTrYYZ3sB1r0g=","last_login":null,"is_superuser":false,"username":"science-data-officer","first_name":"Mark","last_name":"Watney","email":"","is_staff":true,"is_active":true,"date_joined":"1970-01-01T00:00:00.000Z","groups":[1],"user_permissions":[{"communication":["add","view"]},{"science":["add","modify","view"]}]}},{"model":"authorization.user","pk":5,"fields":{"password":"pbkdf2_sha256$120000$bxS4dNiCeTrY1n$Y8NiCeTrYRMa5bNJhTFjNiCeTrYp5swZni2RQbs=","last_login":null,"is_superuser":false,"username":"communication-officer","first_name":"Jan","last_name":"Twardowski","email":"","is_staff":true,"is_active":true,"date_joined":"1970-01-01T00:00:00.000Z","groups":[1],"user_permissions":[{"communication":["add","modify","view"]},{"science":["add","modify","view"]}]}},{"model":"authorization.user","pk":6,"fields":{"password":"pbkdf2_sha256$120000$aXNiCeTrY$UfCJrBh/qhXohNiCeTrYH8nsdANiCeTrYnShs9M/c=","last_login":null,"is_superuser":false,"username":"eclss-officer","first_name":"Harry","last_name":"Stamper","email":"","is_staff":true,"is_active":true,"date_joined":"1970-01-01T00:00:00.000Z","groups":[1],"user_permissions":[{"communication":["add","view"]},{"eclss":["add","modify","view"]},{"science":["add","modify","view"]}]}}]

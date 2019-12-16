@@ -85,3 +85,45 @@ Static vs. Dynamic Fields
     virginica.kingdom    # Iris
     Iris.kingdom         # Iris
 
+Static or Dynamic?
+==================
+.. code-block:: python
+
+    class Astronaut:
+        first_name = ...
+        last_name = ...
+
+.. code-block:: python
+
+    class Cosmonaut:
+        def __init__(self, first_name, last_name):
+            self.first_name = first_name
+            self.last_name = last_name
+
+.. code-block:: python
+
+    class Taikonaut:
+        pass
+
+    t = Taikonaut()
+    t.first_name = ...
+    t.last_name = ...
+
+.. code-block:: python
+
+    class Taikonaut:
+        pass
+
+    Taikonaut.first_name
+    Taikonaut.last_name
+
+.. code-block:: python
+
+    from dataclasses import dataclass
+
+
+    @dataclass
+    class Astronaut:
+        name: str
+        missions: list
+
