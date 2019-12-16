@@ -23,9 +23,9 @@ Dialects
 
 * Good practice is to always specify:
 
-    * ``quoting=csv.QUOTE_ALL`` to ``csv.DictReader()`` object
-    * ``quotechar='"'`` to ``csv.DictReader()`` object
     * ``delimiter=','`` to  ``csv.DictReader()`` object
+    * ``quotechar='"'`` to ``csv.DictReader()`` object
+    * ``quoting=csv.QUOTE_ALL`` to ``csv.DictReader()`` object
     * ``lineterminator='\n'`` to ``csv.DictReader()`` object
     * ``encoding='utf-8'`` to ``open()`` function (especially when working with Microsoft Excel)
 
@@ -44,6 +44,8 @@ Dialects
     * ``cp1250`` or ``windows-1250`` - Polish encoding on Windows
     * ``cp1251`` or ``windows-1251`` - Russian encoding on Windows
     * ``cp1252`` or ``windows-1252`` - Western European encoding on Windows
+    * ``ASCII`` - ASCII characters only
+
 
 Read data from CSV file
 =======================
@@ -173,6 +175,7 @@ Pandas
 ======
 * External library
 * Installation: ``pip install pandas``
+* More info in :ref:`Pandas DataFrame Plotting`
 
 .. code-block:: python
 
@@ -248,88 +251,53 @@ Pandas
     # 75%        6.400000     3.300000      5.100000     1.800000
     # max        7.900000     4.400000      6.900000     2.500000
 
-Hist
-----
-.. code-block:: python
 
-    import matplotlib.pyplot as plt
-    import pandas as pd
+    df.plot('hist')
 
-
-    INPUT = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris.csv'
-
-    df = pd.read_csv(INPUT)
-    df.hist()
-    plt.show()
-
-.. figure:: img/matplotlib-pd-hist.png
+.. figure:: img/pandas-plot-hist.png
     :scale: 40%
     :align: center
 
     Visualization using hist
 
-Density
--------
 .. code-block:: python
 
-    import matplotlib.pyplot as plt
-    import pandas as pd
+    df.plot('density')
 
+.. figure:: img/pandas-plot-density.png
+    :scale: 40%
+    :align: center
 
-    INPUT = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris.csv'
+    Visualization using density
 
+.. code-block:: python
 
-    df = pd.read_csv(INPUT)
     df.plot(kind='density', subplots=True, layout=(2,2), sharex=False)
-    plt.show()
 
-.. figure:: img/matplotlib-pd-density.png
+.. figure:: img/pandas-plot-density2.png
     :scale: 40%
     :align: center
 
     Visualization using density
 
-Box
----
 .. code-block:: python
 
-    import matplotlib.pyplot as plt
-    import pandas as pd
-
-
-    INPUT = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris.csv'
-
-
-    df = pd.read_csv(INPUT)
     df.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
-    plt.show()
 
-.. figure:: img/matplotlib-pd-box.png
+
+.. figure:: img/pandas-plot-box.png
     :scale: 40%
     :align: center
 
     Visualization using density
 
-Scatter matrix
---------------
-* The in ``pandas`` version ``0.22`` plotting module has been moved from ``pandas.tools.plotting`` to ``pandas.plotting``
-* As of version ``0.19``, the ``pandas.plotting`` library did not exist
-
 .. code-block:: python
 
-    import matplotlib.pyplot as plt
-    import pandas as pd
     from pandas.plotting import scatter_matrix
 
-
-    INPUT = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris.csv'
-
-
-    df = pd.read_csv(INPUT)
     scatter_matrix(df)
-    plt.show()
 
-.. figure:: img/matplotlib-pd-scatter-matrix.png
+.. figure:: img/pandas-plot-scatter-matrix.png
     :scale: 40%
     :align: center
 
@@ -495,7 +463,7 @@ Write variable schema data to file
 Object serialization to CSV
 ---------------------------
 * Complexity level: hard
-* Lines of code to write: 10 lines
+* Lines of code to write: 60 lines
 * Estimated time of completion: 20 min
 * Filename: :download:`solution/csv_relations.py`
 

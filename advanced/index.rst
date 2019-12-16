@@ -2,68 +2,17 @@
 Entry Test
 **********
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Entry Test
     :name: Advanced Entry Test
 
     /advanced/exam/entry.rst
 
-*****
-Recap
-*****
+************************
+Performance Optimization
+************************
 .. toctree::
-    :maxdepth: 0
-    :caption: Stdlib
-    :name: Advanced Recap
-
-    /intermediate/oop/dataclass.rst
-
-    /intermediate/module/venv.rst
-    /intermediate/module/install.rst
-    /intermediate/module/import.rst
-    /intermediate/module/tools.rst
-    /intermediate/module/zipapp.rst
-    /intermediate/module/distributing.rst
-
-
-    /intermediate/datetime/datetime.rst
-    /intermediate/datetime/parse-and-format.rst
-    /intermediate/datetime/timedelta.rst
-    /intermediate/datetime/timestamp.rst
-    /intermediate/datetime/utils.rst
-    /intermediate/datetime/timezones.rst
-
-    /intermediate/serialization/csv.rst
-    /intermediate/serialization/json.rst
-    /intermediate/serialization/pickle.rst
-    /intermediate/serialization/xml.rst
-
-    /intermediate/database/sqlite.rst
-    /intermediate/database/sql-injection.rst
-    /intermediate/database/data-exploration.rst
-
-
-
-*********
-Functions
-*********
-.. toctree::
-    :maxdepth: 0
-    :caption: Functions
-    :name: Advanced Functions
-
-    /advanced/functions/generator.rst
-    /advanced/functions/defining.rst
-    /advanced/functions/calling.rst
-    /advanced/functions/first-class.rst
-    /advanced/functions/closures.rst
-    /advanced/functions/decorator.rst
-
-***********
-Performance
-***********
-.. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Performance
     :name: Advanced Performance
 
@@ -75,11 +24,26 @@ Performance
     /advanced/performance/c-types.rst
     /advanced/performance/c-modules.rst
 
+*********
+Functions
+*********
+.. toctree::
+    :maxdepth: 1
+    :caption: Functions
+    :name: Advanced Functions
+
+    /advanced/functions/generator.rst
+    /advanced/functions/defining.rst
+    /advanced/functions/calling.rst
+    /advanced/functions/first-class.rst
+    /advanced/functions/closures.rst
+    /advanced/functions/decorator.rst
+
 ************
 OOP Paradigm
 ************
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: OOP Paradigm
     :name: Advanced OOP Paradigm
 
@@ -99,7 +63,7 @@ OOP Paradigm
 OOP Protocols
 *************
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: OOP Protocols
     :name: Advanced OOP Protocols
 
@@ -115,7 +79,7 @@ OOP Protocols
 Object Oriented Programming
 ***************************
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: OOP Advanced
     :name: Advanced Object Oriented Programming
 
@@ -130,7 +94,7 @@ Object Oriented Programming
 Design Patterns
 ***************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Design Patterns
     :name: Advanced Design Patterns
 
@@ -146,7 +110,7 @@ Design Patterns
 Paradigms
 *********
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Paradigms
 
     /advanced/paradigms/functional-programming.rst
@@ -156,7 +120,7 @@ Paradigms
 Concurrency
 ***********
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Concurrency
     :name: Advanced Concurrency
 
@@ -169,7 +133,7 @@ Concurrency
 Exit Test
 *********
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Exit Test
     :name: Advanced Exit Test
 

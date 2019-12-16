@@ -159,6 +159,7 @@ Writing to file
     with open(r'/tmp/iris.csv', mode='w') as file:
         file.write('hello')
 
+
 Appending to file
 =================
 .. highlights::
@@ -182,12 +183,13 @@ Appending to file
 
 Encoding
 ========
-* ``utf-8`` - Worldwide (default)
-* ``cp1251`` or ``windows-1251`` - Western European
-* ``cp1250`` or ``windows-1250`` - Central European
+* ``utf-8`` - international standard (should be always used!)
+* ``iso-8859-1`` - ISO standard for Western Europe and USA
+* ``iso-8859-2`` - ISO standard for Central Europe (including Poland)
+* ``cp1250`` or ``windows-1250`` - Polish encoding on Windows
+* ``cp1251`` or ``windows-1251`` - Russian encoding on Windows
+* ``cp1252`` or ``windows-1252`` - Western European encoding on Windows
 * ``ASCII`` - ASCII characters only
-* ``iso-8859-1`` - Western European
-* ``iso-8859-2`` - Central European
 
 .. code-block:: python
 

@@ -11,6 +11,9 @@ Book TODO
 Numerical Analysis
 ==================
 * Introduction to Python
+* Dask
+* Numba
+* Scipy
 
 Numpy
 -----
@@ -65,6 +68,7 @@ Pandas
 
 Python PEP
 ==========
+* datetime time.now()
 * type_check decorator, sprawdzający ``function.__annotations__``
 * dict(keys=[...], values=[...])
 * time().now()
