@@ -204,7 +204,7 @@ Trio
 
 .. code-block:: console
 
-    pip install trio
+    $ pip install trio
 
 .. code-block:: python
 

@@ -14,17 +14,17 @@ Install
 
     .. code-block:: console
 
-        pip install superset
+        $ pip install superset
 
 #. Create an admin user
 
     .. code-block:: console
 
-        fabmanager create-admin --app superset
+        $ fabmanager create-admin --app superset
 
 #. Initialize the database
 
-    .. code-block:: console
+    .. code-block:: sh
 
         superset db upgrade
 
@@ -32,19 +32,19 @@ Install
 
     .. code-block:: console
 
-        superset load_examples
+        $ superset load_examples
 
 #. Create default roles and permissions
 
     .. code-block:: console
 
-        superset init
+        $ superset init
 
 #. To start a development web server on port 8088, use -p to bind to another port
 
     .. code-block:: console
 
-        superset runserver -d
+        $ superset runserver -d
 
 Configuration
 -------------
@@ -74,7 +74,7 @@ Production setup
 ----------------
 .. code-block:: console
 
-    gunicorn \
+    $ gunicorn \
         -w 10 \
         -k gevent \
         --timeout 120 \

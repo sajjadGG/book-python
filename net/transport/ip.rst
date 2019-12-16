@@ -271,7 +271,7 @@ Installation
 ------------
 .. code-block:: console
 
-    pip install netaddr
+    $ pip install netaddr
 
 Layer 3 addressing (IP)
 -----------------------

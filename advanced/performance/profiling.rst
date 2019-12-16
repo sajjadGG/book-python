@@ -101,4 +101,4 @@ Profiling with cProfile
 
 .. code-block:: console
 
-    python -m cProfile [-o output_file] [-s sort_order] FILE.py
+    $ python -m cProfile [-o output_file] [-s sort_order] FILE.py

@@ -10,7 +10,7 @@ Installation
 ------------
 .. code-block:: console
 
-    pip install netifaces
+    $ pip install netifaces
 
 Basic operations
 ----------------

@@ -12,14 +12,14 @@ Installation
 ============
 .. code-block:: console
 
-    pip install scapy
+    $ pip install scapy
 
 
 Running
 =======
 .. code-block:: console
 
-    sudo scapy
+    $ sudo scapy
 
 
 Basic usage
@@ -44,7 +44,7 @@ Lists all command functions
 .. code-block:: console
     :caption: Lists all command functions
 
-    lsc()
+    $ lsc()
 
 .. csv-table:: Scapy functions
     :header: "Function", "Description"

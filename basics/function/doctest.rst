@@ -34,14 +34,10 @@ From code
 From command line
 -----------------
 .. code-block:: console
-    :caption: Display only errors
+    :caption: Display only errors. With ``-v`` display progress
 
-    python -m doctest example.py
-
-.. code-block:: console
-    :caption: With ``-v`` display progress
-
-    python -m doctest -v example.py
+    $ python -m doctest example.py
+    $ python -m doctest -v example.py
 
 
 Test Numeric Values

@@ -21,8 +21,8 @@ Create ``venv``
 
 .. code-block:: console
 
-    cd PROJECT
-    python3.7 -m venv DIRECTORY
+    $ cd PROJECT
+    $ python3.7 -m venv DIRECTORY
 
 Directory Naming Convention
 ---------------------------
@@ -34,7 +34,7 @@ Directory Naming Convention
 
 .. code-block:: text
     :caption: Explicitly states which Python version is installed
-    :emphasize-lines: 13
+    :emphasize-lines: 14
 
     .venv/
     venv/
@@ -78,8 +78,8 @@ Example
 -------
 .. code-block:: console
 
-    cd PROJECT
-    python3.7 -m venv venv-3.7.4
+    $ cd PROJECT
+    $ python3.7 -m venv venv-3.7.4
 
 
 Activate Virtualenv
@@ -89,15 +89,15 @@ Windows
 -------
 .. code-block:: console
 
-    cd PROJECT
-    venv-3.7.4\Scripts\activate.bat
+    $ cd PROJECT
+    $ venv-3.7.4\Scripts\activate.bat
 
 macOS, Linux, BSD
 -----------------
 .. code-block:: console
 
-    cd PROJECT
-    venv-3.7.4/bin/activate
+    $ cd PROJECT
+    $ venv-3.7.4/bin/activate
 
 
 Good practices

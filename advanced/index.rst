@@ -8,6 +8,42 @@ Entry Test
 
     /advanced/exam/entry.rst
 
+*****
+Recap
+*****
+.. toctree::
+    :maxdepth: 0
+    :caption: Stdlib
+    :name: Advanced Recap
+
+    /intermediate/oop/dataclass.rst
+
+    /intermediate/module/venv.rst
+    /intermediate/module/install.rst
+    /intermediate/module/import.rst
+    /intermediate/module/tools.rst
+    /intermediate/module/zipapp.rst
+    /intermediate/module/distributing.rst
+
+
+    /intermediate/datetime/datetime.rst
+    /intermediate/datetime/parse-and-format.rst
+    /intermediate/datetime/timedelta.rst
+    /intermediate/datetime/timestamp.rst
+    /intermediate/datetime/utils.rst
+    /intermediate/datetime/timezones.rst
+
+    /intermediate/serialization/csv.rst
+    /intermediate/serialization/json.rst
+    /intermediate/serialization/pickle.rst
+    /intermediate/serialization/xml.rst
+
+    /intermediate/database/sqlite.rst
+    /intermediate/database/sql-injection.rst
+    /intermediate/database/data-exploration.rst
+
+
+
 *********
 Functions
 *********

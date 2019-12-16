@@ -4,7 +4,7 @@ Pre-Intermediate
 
 
 Select
-------
+======
 * Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 5 min
@@ -72,8 +72,8 @@ Select
     * Type casting
 
 Iris dataset
-------------
-* Complexity level: medium
+============
+* Complexity level: easy
 * Lines of code to write: 20 lines
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/slice_iris.py`
@@ -135,8 +135,9 @@ Iris dataset
     * Defining and using ``list``, ``tuple``, ``set``
     * Slicing sequences
 
+
 ``List[tuple]`` to ``List[dict]``
----------------------------------
+=================================
 * Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 10 min
@@ -200,8 +201,9 @@ Iris dataset
     * Working with nested data structures
     * Iterating over dict and lists
 
+
 Get elements from nested data structure
----------------------------------------
+=======================================
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 10 min
@@ -240,7 +242,7 @@ Get elements from nested data structure
     * Iterating over nested structure
 
 Label encoder
--------------
+=============
 * Complexity level: medium
 * Lines of code to write: 13 lines
 * Estimated time of completion: 15 min

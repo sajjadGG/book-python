@@ -2,11 +2,12 @@
 Entry Exam
 **********
 
+
 ``List[tuple]`` to ``List[dict]``
----------------------------------
+=================================
 * Complexity level: easy
 * Lines of code to write: 8 lines
-* Estimated time of completion: 20 min
+* Estimated time of completion: 10 min
 * Filename: :download:`solution/loop_dict_to_list.py`
 
 :English:
@@ -67,24 +68,25 @@ Entry Exam
     * Working with nested data structures
     * Iterating over dict and lists
 
+
 Get elements from nested data structure
----------------------------------------
+=======================================
 * Complexity level: easy
 * Lines of code to write: 3 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 5 min
 * Filename: :download:`solution/for_nested.py`
 
 :English:
     #. For input data (see below)
     #. Separate header from data
     #. Iterate over data
-    #. Print species names ending with "ca" or "sa"
+    #. Print species names ending with "ica" or "sa"
 
 :Polish:
     #. Dla danych wejściowych (patrz sekcja input)
     #. Oddziel nagłówek od danych
     #. Iteruj po danych
-    #. Wypisz nazwy gatunków kończące się na "ca" lub "sa"
+    #. Wypisz nazwy gatunków kończące się na "ica" lub "sa"
 
 :Input:
     .. code-block:: python
@@ -106,11 +108,12 @@ Get elements from nested data structure
     * Accessing ``dict`` keys
     * Iterating over nested structure
 
+
 ``/etc/hosts`` - parsing to ``List[dict]``
-------------------------------------------
+==========================================
 * Complexity level: medium
 * Lines of code to write: 15 lines
-* Estimated time of completion: 20 min
+* Estimated time of completion: 10 min
 * Filename: :download:`solution/file_parsing_advanced.py`
 
 :English:
@@ -118,7 +121,7 @@ Get elements from nested data structure
     #. Copy also comments and empty lines
     #. For each line in file:
 
-        #. Skup line if it's empty, is whitespace or starts with comment ``#``
+        #. Skip line if it's empty, is whitespace or starts with comment ``#``
         #. Remove leading and trailing whitespaces
         #. Split line by whitespace
         #. Separate IP address and hosts names
@@ -132,7 +135,7 @@ Get elements from nested data structure
 :Polish:
     #. Skopiuj dane wejściowe z listingu poniżej i zapisz do pliku ``hosts.txt``
     #. Skopiuj również komentarz i pustą linię
-    #. Dla każdej lini w piku:
+    #. Dla każdej lini w pliku:
 
         #. Pomiń linię jeżeli jest pusta, jest białym znakiem lub zaczyna się od komentarza ``#``
         #. Usuń białe znaki na początku i końcu linii
@@ -152,7 +155,7 @@ Get elements from nested data structure
         # ``/etc/hosts`` structure:
         #   - IPv4 or IPv6
         #   - Hostnames
-        ##
+         ##
 
         127.0.0.1       localhost
         127.0.0.1       astromatt

@@ -144,11 +144,11 @@ Docker + Gunicorn
 
 .. code-block:: console
 
-    docker build -t django_gunicorn:v1 .
+    $ docker build -t django_gunicorn:v1 .
 
 .. code-block:: console
 
-    docker run --restart=always -p 8000:8000 -i -t django_gunicorn:v1
+    $ docker run --restart=always -p 8000:8000 -i -t django_gunicorn:v1
 
 Heroku
 ------

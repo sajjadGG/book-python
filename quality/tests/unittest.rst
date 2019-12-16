@@ -44,14 +44,10 @@ From code
 From command line
 -----------------
 .. code-block:: console
-    :caption: Display only errors
+    :caption: Display only errors. With ``-v`` display progress
 
     $ python -m unittest example.py
-
-.. code-block:: console
-    :caption: With ``-v`` display progress
-
-    python -m unittest -v example.py
+    $ python -m unittest -v example.py
 
 
 Example

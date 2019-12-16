@@ -108,7 +108,7 @@ SFTP
 ==========
 .. code-block:: console
 
-    pip install pysftp
+    $ pip install pysftp
 
 .. code-block:: python
 
@@ -136,7 +136,7 @@ SFTP
 
 .. code-block:: console
 
-    pip install fabric
+    $ pip install fabric
 
 Example
 -------
@@ -153,7 +153,7 @@ Example
 
 .. code-block:: console
 
-    fab -f fab_putfile.py put_file:file=./path/to/my/file
+    $ fab -f fab_putfile.py put_file:file=./path/to/my/file
 
 Local
 -----

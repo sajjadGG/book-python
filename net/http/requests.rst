@@ -266,7 +266,7 @@ Requests OAuth
 
 .. code-block:: console
 
-    pip install requests_oauthlib
+    $ pip install requests_oauthlib
 
 .. literalinclude:: src/requests-oauthlib.py
     :name: listing-requests-oauthlib

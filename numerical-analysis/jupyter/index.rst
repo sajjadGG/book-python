@@ -13,7 +13,7 @@ Install
 =======
 .. code-block:: console
 
-    pip install jupyter
+    $ pip install jupyter
 
 
 Run
@@ -286,7 +286,7 @@ Workflow
 ========
 .. code-block:: console
 
-    pip install pandas
+    $ pip install pandas
 
 .. code-block:: python
 
@@ -504,20 +504,18 @@ File -> Download as:
 
 Generate HTML
 -------------
-.. code-block:: python
+.. code-block:: console
 
-    jupyter nbconvert --to html --template basic mynotebook.ipynb
+    $ jupyter nbconvert --to html --template basic mynotebook.ipynb
 
 Slides
 ------
 View -> Cell Toolbar -> Slideshow
 
 .. code-block:: console
+    :caption: First run will generate config and may exit with error! In such case, rerun the line
 
-    # First run will generate config and may exit with error!
-    # In such case, rerun the line
-
-    jupyter nbconvert filename.ipynb --to slides --post serve
+    $ jupyter nbconvert filename.ipynb --to slides --post serve
 
 
 
@@ -525,11 +523,11 @@ Github pages with Jupyter Slides
 --------------------------------
 .. code-block:: console
 
-    git submodule add https://github.com/hakimel/reveal.js.git reveal.js
+    $ git submodule add https://github.com/hakimel/reveal.js.git reveal.js
 
-    jupyter nbconvert --to slides index.ipynb --reveal-prefix=reveal.js
+    $ jupyter nbconvert --to slides index.ipynb --reveal-prefix=reveal.js
 
-    jupyter nbconvert --to slides index.ipynb --reveal-prefix=reveal.js \
+    $ jupyter nbconvert --to slides index.ipynb --reveal-prefix=reveal.js \
         --SlidesExporter.reveal_theme=serif \
         --SlidesExporter.reveal_scroll=True \
         --SlidesExporter.reveal_transition=none

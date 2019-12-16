@@ -72,9 +72,7 @@ Execute
 .. code-block:: console
 
     $ python setup.py build
-
     $ cd build/lib*
-
     $ python
 
 Run

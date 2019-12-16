@@ -30,9 +30,9 @@ Uruchomienie:
 
     .. code-block:: console
 
-        cd PROJECT_DIRECTORY
-        docker run --rm -d --name sonarqube -p 9000:9000 -v $(pwd):/src sonarqube
-        docker exec -u 0 -it sonarqube bash
+        $ cd PROJECT_DIRECTORY
+        $ docker run --rm -d --name sonarqube -p 9000:9000 -v $(pwd):/src sonarqube
+        $ docker exec -u 0 -it sonarqube bash
 
             curl -sL https://deb.nodesource.com/setup_8.x -o /opt/node.sh
             bash /opt/node.sh
@@ -141,7 +141,7 @@ Multi-language
 ----------
 .. code-block:: console
 
-    pylama --linters pylint --skip='*/migrations/*' --abspath /src
+    $ pylama --linters pylint --skip='*/migrations/*' --abspath /src
 
 .. literalinclude:: src/pylama.ini
     :language: ini
@@ -153,24 +153,21 @@ Multi-language
 
 .. code-block:: console
 
-    pip install bandit
-
-.. code-block:: console
-
-    bandit --recursive /src/
+    $ pip install bandit
+    $ bandit --recursive /src/
 
 ``pycodestyle``
 ---------------
 .. code-block:: console
 
-    pip install pycodestyle
-    pycodestyle --max-line-length=79 --exclude=*/migrations/* .
+    $ pip install pycodestyle
+    $ pycodestyle --max-line-length=79 --exclude=*/migrations/* .
 
 ``safety``
 ----------
 .. code-block:: console
 
-    pip install safety
-    safety check -r /src/requirements.txt
+    $ pip install safety
+    $ safety check -r /src/requirements.txt
 
 

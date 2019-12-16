@@ -382,7 +382,7 @@ Parsing simple CSV file
     #. Copy also comments and empty lines
     #. For each line in file:
 
-        #. Skup line if it's empty, is whitespace or starts with comment ``#``
+        #. Skip line if it's empty, is whitespace or starts with comment ``#``
         #. Remove leading and trailing whitespaces
         #. Split line by whitespace
         #. Separate IP address and hosts names
