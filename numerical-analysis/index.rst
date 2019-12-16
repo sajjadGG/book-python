@@ -2,7 +2,7 @@
 Introduction
 ************
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Introduction
     :name: Numerical Analysis Introduction
 
@@ -12,7 +12,7 @@ Introduction
 Jupyter
 *******
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Jupyter
     :name: Numerical Analysis Jupyter
 
@@ -22,7 +22,7 @@ Jupyter
 Python
 ******
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Introduction
     :name: Numerical Analysis Python
 
@@ -45,7 +45,7 @@ Python
 Numpy
 *****
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Numpy
     :name: Numerical Analysis Numpy
 
@@ -80,7 +80,7 @@ Numpy
 Pandas
 ******
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Pandas
     :name: Numerical Analysis Pandas
 
@@ -123,7 +123,7 @@ Pandas
 Matplotlib
 **********
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Matplotlib
     :name: Numerical Analysis Matplotlib
 
@@ -137,7 +137,7 @@ Matplotlib
 Data Visualization
 ******************
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Data Visualization
     :name: Numerical Analysis Data Visualization
 
@@ -150,7 +150,7 @@ Data Visualization
 Scipy
 *****
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Scipy
     :name: Numerical Analysis Scipy
 

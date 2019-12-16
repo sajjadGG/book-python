@@ -2,7 +2,7 @@
 Entry Test
 **********
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Entry Test
     :name: Intermediate Entry Test
 
@@ -12,7 +12,7 @@ Entry Test
 Builtins
 ********
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Builtins
     :name: Intermediate Builtins
 
@@ -24,7 +24,7 @@ Builtins
 Looping
 *******
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Builtins
     :name: Intermediate Looping
 
@@ -35,7 +35,7 @@ Looping
 Object Oriented Programming
 ***************************
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Object Oriented Programming
     :name: Intermediate Object Oriented Programming
 
@@ -47,7 +47,7 @@ Object Oriented Programming
 Modules and Packages
 ********************
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Modules and Packages
     :name: Intermediate Modules and Packages
 
@@ -62,7 +62,7 @@ Modules and Packages
 Datetime and Timezones
 **********************
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Datetime and Timezones
     :name: Intermediate Datetime and Timezones
 
@@ -77,7 +77,7 @@ Datetime and Timezones
 Serialization
 *************
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Serialization
     :name: Intermediate Serialization
 
@@ -90,7 +90,7 @@ Serialization
 Database
 ********
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Database
     :name: Intermediate Database
 
@@ -109,7 +109,7 @@ Database
 Regular Expressions
 *******************
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Regular Expressions
     :name: Intermediate Regular Expressions
 
@@ -131,7 +131,7 @@ Regular Expressions
 Mathematics
 ***********
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Mathematics
     :name: Intermediate Mathematics
 
@@ -147,7 +147,7 @@ Mathematics
 Operating System
 ****************
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Operating System
     :name: Intermediate Operating System
 
@@ -159,7 +159,7 @@ Operating System
 GUI
 ***
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: GUI
     :name: Intermediate GUI
 
@@ -169,7 +169,7 @@ GUI
 Exit Test
 *********
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Exit Test
     :name: Intermediate Exit Test
 

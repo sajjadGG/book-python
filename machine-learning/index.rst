@@ -2,7 +2,7 @@
 Introduction
 ************
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Introduction
 
     /machine-learning/introduction/data.rst
@@ -19,7 +19,7 @@ Introduction
 Sklearn
 *******
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Sklearn
 
     /machine-learning/sklearn/sklearn.rst
@@ -28,7 +28,7 @@ Sklearn
 Model Quality
 *************
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Model Quality
 
     /machine-learning/model-quality/model-quality.rst
@@ -39,7 +39,7 @@ Model Quality
 Decision Trees
 **************
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Decision Trees
 
     /machine-learning/tree/decision-tree.rst
@@ -48,7 +48,7 @@ Decision Trees
 Regressions
 ***********
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Regressions
 
     /machine-learning/regression/linear.rst
@@ -58,7 +58,7 @@ Regressions
 K-Nearest Neighbors
 *******************
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: K-Nearest Neighbors
 
     /machine-learning/knn/k-nearest-neighbors.rst
@@ -67,7 +67,7 @@ K-Nearest Neighbors
 Bayes
 *****
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Bayes
 
     /machine-learning/bayes/naive.rst
@@ -76,7 +76,7 @@ Bayes
 Support Vector Machines
 ***********************
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Support Vector Machines
 
     /machine-learning/svm/support-vector-machines.rst
@@ -85,7 +85,7 @@ Support Vector Machines
 Clustering
 **********
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Clustering
 
     /machine-learning/clustering/k-means.rst
@@ -94,7 +94,7 @@ Clustering
 Neural Networks
 ***************
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: Neural Networks
 
     /machine-learning/neural-network/deep.rst
@@ -104,7 +104,7 @@ Neural Networks
 References
 **********
 .. toctree::
-    :maxdepth: 0
+    :maxdepth: 1
     :caption: References
 
     /machine-learning/introduction/references.rst
