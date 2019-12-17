@@ -83,7 +83,7 @@ Dragon v1.0
         #. You can introduce new fields, methods, functions, variables, constants, classes, objects, whatever you want
         #. Task is business requirements specification, not a technical documentation, i.e. "what Dragon has to do, not how to do it"
         #. You don't have to keep order of business specification while writing code
-        #. This is ``alpha`` version, so no new functionality like negative position checking
+        #. This is ``alpha`` version, so no new functionality like negative position checking etc.
         #. Do not read any future iterations of this exercise. This is a simulation of development process. If you read future tasks, you will spoil fun and learning.
 
 :Polish:
@@ -150,7 +150,7 @@ Dragon v1.0
         #. Możesz wprowadzać dodatkowe pola, metody, funkcje, zmienne, stały, klasy, obiekty, co tylko chcesz
         #. Zadanie jest specyfikacją wymagań biznesowych, a nie dokumentacją techniczną. tj. "co Smok ma robić, a nie jak to ma robić"
         #. Nie musisz trzymać się kolejności punktów i podpunktów w zadaniu
-        #. Jest to wersja ``alpha`` więc bez dodatkowych funkcjonalności (np. sprawdzanie koordynatów)
+        #. Jest to wersja ``alpha`` więc bez dodatkowych funkcjonalności (np. sprawdzanie koordynatów, wychodzenia poza planszę itp.)
         #. Nie przeglądaj kolejnych (przyszłych) części zadania. Zadanie jest symulacją procesu developmentu. Jeżeli zaglądniesz w przód, to zepsujesz sobie zabawę i naukę.
 
 :The whys and wherefores:
