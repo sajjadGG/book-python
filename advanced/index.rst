@@ -47,6 +47,7 @@ OOP Paradigm
     :caption: OOP Paradigm
     :name: Advanced OOP Paradigm
 
+    /advanced/exam/dragon.rst
     /advanced/oop-paradigm/fields-static-dynamic.rst
     /advanced/oop-paradigm/composition.rst
     /advanced/oop-paradigm/method-resolution-order.rst
