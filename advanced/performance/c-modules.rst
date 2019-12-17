@@ -32,7 +32,7 @@ Code
 
     static PyMethodDef HelloMethods[] = {
          {"say_hello", say_hello, METH_VARARGS, "Greet somebody."},
-         {"version"}, (PyCFunction)version, METH_NOARGS, "returns the version"},
+         {"version", (PyCFunction)version, METH_NOARGS, "returns the version"},
          {NULL, NULL, 0, NULL}
     };
 
@@ -82,6 +82,7 @@ Run
     import hello
 
     hello.say_hello('José Jiménez')
+    # José Jiménez
 
 
 Assignments

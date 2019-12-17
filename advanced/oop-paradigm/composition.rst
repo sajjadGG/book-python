@@ -71,6 +71,33 @@ Problem with inheritance
         def window_close(self):
             raise NotImplementedError
 
+.. code-block:: python
+
+    class Vehicle:
+        def run(self):
+            pass
+
+        def drive(self):
+            pass
+
+
+    class HasWindows:
+        def window_open(self):
+            pass
+
+        def window_close(self):
+            pass
+
+
+    class Car(Vehicle, HasWindows):
+        pass
+
+    class Truck(Vehicle, HasWindows):
+        pass
+
+    class Motorbike(Vehicle):
+        pass
+
 
 Multi level inheritance problem
 ===============================
