@@ -269,10 +269,12 @@ Average
 :English:
     #. Create function ``average()``, which calculates arithmetic mean
     #. Function can have arbitrary number of positional arguments
+    #. Don't use neither ``numpy`` nor ``statistics``
 
 :Polish:
     #. Napisz funkcję ``average()``, wyliczającą średnią arytmetyczną
     #. Funkcja przyjmuje dowolną ilość pozycyjnych argumentów
+    #. Nie używaj ``numpy`` ani ``statistics``
 
 args
 ----
