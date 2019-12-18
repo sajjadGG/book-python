@@ -91,7 +91,16 @@ Network and HTTP
     /net/protocols/index.rst
     /net/transport/index.rst
     /net/http/index.rst
-    /net/django/index.rst
+
+******
+Django
+******
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Django
+
+    /django/index.rst
 
 ********************************
 Numerical Analysis, Data Science

@@ -7,8 +7,14 @@ const PREFIX = {
     5: "6.",
     6: "7.",
     7: "8.",
-    8: "",
+    8: "9.",
     9: "",
+    10: "",
+    11: "",
+    12: "",
+    13: "",
+    14: "",
+    15: "",
 };
 
 const ALPHABET = {
@@ -21,6 +27,9 @@ const ALPHABET = {
     7: "g",
     8: "h",
     9: "i",
+    10: "j",
+    11: "k",
+    12: "l",
 };
 
 document.addEventListener("DOMContentLoaded", () => {
