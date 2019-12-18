@@ -8,6 +8,19 @@ Entry Test
 
     /intermediate/exam/entry.rst
 
+****************
+Type Annotations
+****************
+.. toctree::
+    :maxdepth: 1
+    :caption: Type Annotations
+    :name: Intermediate Type Annotations
+
+    /intermediate/type-annotation/types.rst
+    /intermediate/type-annotation/introspection.rst
+    /intermediate/type-annotation/checking.rst
+    /intermediate/type-annotation/annotating.rst
+
 ********
 Builtins
 ********

@@ -1,5 +1,7 @@
+import sys
 from dataclasses import dataclass
 
+CURRENT_MODULE = sys.modules[__name__]
 
 INPUT = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
@@ -67,14 +69,18 @@ print('-' * 22)
 
 
 for *measurements, species in data:
-    if species == 'setosa':
-        obj = Setosa(*measurements)
-        output.append(obj)
-    elif species == 'versicolor':
-        obj = Versicolor(*measurements)
-        output.append(obj)
-    elif species == 'virginica':
-        obj = Virginica(*measurements)
-        output.append(obj)
+    class_name = species.capitalize()
+    cls = getattr(CURRENT_MODULE, class_name)
+    iris = cls(*measurements)
+    output.append(iris)
 
-    print(f'{obj.species:>10} {obj.total():>5.1f} {obj.average():>5.2f}')
+    ## Alternative solution
+    # if species == 'setosa':
+    #     iris = Setosa(*measurements)
+    # elif species == 'versicolor':
+    #     iris = Versicolor(*measurements)
+    # elif species == 'virginica':
+    #     iris = Virginica(*measurements)
+    # output.append(iris)
+
+    print(f'{iris.species:>10} {iris.total():>5.1f} {iris.average():>5.2f}')

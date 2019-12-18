@@ -250,19 +250,19 @@ Bad
     :caption: Initial arguments mutability and shared state
 
     class Astronaut:
-        def __init__(self, name, locations=[]):
+        def __init__(self, name, missions=[]):
             self.name = name
-            self.locations = locations
+            self.missions = missions
 
 
     watney = Astronaut('Mark Watney')
-    watney.locations.append('Johnson Space Center')
-    print(watney.addresses)
-    # ['Johnson Space Center']
+    watney.missions.append('Ares 3')
+    print(watney.missions)
+    # ['Ares 3']
 
     twardowski = Astronaut('Jan Twardowski')
-    print(twardowski.locations)
-    # ['Johnson Space Center']
+    print(twardowski.missions)
+    # ['Ares 3']
 
 Good
 ----
@@ -270,18 +270,18 @@ Good
     :caption: Initial arguments mutability and shared state
 
     class Contact:
-        def __init__(self, name, locations=()):
+        def __init__(self, name, missions=()):
             self.name = name
-            self.locations = list(locations)
+            self.missions = list(missions)
 
 
     watney = Astronaut('Mark Watney')
-    watney.locations.append('Johnson Space Center')
-    print(watney.locations)
-    # ['Johnson Space Center']
+    watney.missions.append('Ares 3')
+    print(watney.missions)
+    # ['Ares 3']
 
     twardowski = Astronaut('Jan Twardowski')
-    print(twardowski.locations)
+    print(twardowski.missions)
     # []
 
 Do not run methods in ``__init__()``

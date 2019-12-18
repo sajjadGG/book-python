@@ -34,7 +34,6 @@ Generator expressions vs. Comprehensions
     any(x for x in range(0, 5))         # True
     sum(x for x in range(0, 5))         # 10
 
-
 What is the difference?
 -----------------------
 .. highlights::

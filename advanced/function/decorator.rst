@@ -348,22 +348,18 @@ Cache
 ``@functools.wraps(fn)``
 ------------------------
 .. code-block:: python
-    :emphasize-lines: 19,22
+    :emphasize-lines: 15,18
 
     def my_decorator(fn):
         def wrapper(*args, **kwargs):
-            """
-            wrapper docstring
-            """
+            """wrapper docstring"""
             return fn(*args, **kwargs)
         return wrapper
 
 
     @my_decorator
     def my_function(x):
-        """
-        my_function docstring
-        """
+        """my_function docstring"""
         print(x)
 
 
@@ -374,7 +370,7 @@ Cache
     # wrapper docstring
 
 .. code-block:: python
-    :emphasize-lines: 1,5,23,26
+    :emphasize-lines: 1,5,19,22
 
     from functools import wraps
 
@@ -382,18 +378,14 @@ Cache
     def my_decorator(fn):
         @wraps(fn)
         def wrapper(*args, **kwargs):
-            """
-            wrapper docstring
-            """
+            """wrapper docstring"""
             return fn(*args, **kwargs)
         return wrapper
 
 
     @my_decorator
     def my_function(x):
-        """
-        my_function docstring
-        """
+        """my_function docstring"""
         print(x)
 
 
@@ -407,20 +399,26 @@ Cache
 ------------------------------------
 .. code-block:: python
 
+    import statistics
     from functools import cached_property
 
 
-    class DataSet:
-        def __init__(self, sequence_of_numbers):
-            self._data = sequence_of_numbers
+    class Iris:
+        def __init__(self, *args):
+            self._measurements = args
+
+        @cached_property
+        def mean(self):
+            return statistics.mean(self._measurements)
 
         @cached_property
         def stdev(self):
-            return statistics.stdev(self._data)
+            return statistics.stdev(self._measurements)
 
-        @cached_property
-        def variance(self):
-            return statistics.variance(self._data)
+
+    flower = Iris(5.1, 3.5, 1.4, 0.2)
+    flower.stdev()
+    flower.mean()
 
 LRU (least recently used) cache
 -------------------------------
@@ -448,17 +446,17 @@ LRU (least recently used) cache
     from functools import wraps
 
 
-    def memoize(func):
-        cache = getattr(func, '__cache__', {})
+    def memoize(fn):
+        cache = getattr(fn, '__cache__', {})
 
-        @wraps(func)
-        def wrapper(*func_args):
-            if func_args in cache:
-                return cache[func_args]
+        @wraps(fn)
+        def wrapper(*args):
+            if args in cache:
+                return cache[args]
             else:
-                result = func(*func_args)
-                cache[func_args] = result
-                setattr(func, '__cache__', cache)
+                result = fn(*args)
+                cache[args] = result
+                setattr(fn, '__cache__', cache)
                 return result
 
         return wrapper

@@ -308,26 +308,26 @@ Own implementation
 
 
         @dataclass
-        class Contact:
+        class Astronaut:
             first_name: str
             last_name: str
-            addresses: tuple = ()
+            missions: tuple = ()
 
         @dataclass
-        class Address:
-            location: str
-            city: str
+        class Mission:
+            year: int
+            name: str
 
 
-        INPUT = Contact(first_name='Jan', last_name='Twardowski', addresses=(
-            Address(location='Johnson Space Center', city='Houston, TX'),
-            Address(location='Kennedy Space Center', city='Merritt Island, FL'),
-            Address(location='Jet Propulsion Laboratory', city='Pasadena, CA'),
+        twardowski = Astronaut(first_name='Jan', last_name='Twardowski', missions=(
+            Mission(1969, 'Apollo 11'),
+            Mission(2024, 'Artemis 3'),
+            Mission(2035, 'Ares 3'),
         ))
 
-        for address in INPUT:
-            print(address)
+        for experience in twardowski:
+            print(experience)
 
-        # Address(location='Johnson Space Center', city='Houston, TX')
-        # Address(location='Kennedy Space Center', city='Merritt Island, FL')
-        # Address(location='Jet Propulsion Laboratory', city='Pasadena, CA')
+        # Mission(year=1969, name='Apollo 11')
+        # Mission(year=2024, name='Artemis 3')
+        # Mission(year=2035, name='Ares 3')
