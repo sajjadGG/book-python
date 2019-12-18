@@ -89,32 +89,6 @@ Object Oriented Programming
     /advanced/oop/metaclass.rst
     /advanced/oop/exam.rst
 
-***************
-Design Patterns
-***************
-.. toctree::
-    :maxdepth: 1
-    :caption: Design Patterns
-    :name: Advanced Design Patterns
-
-    /advanced/design-patterns/dependency-injection.rst
-    /advanced/design-patterns/singleton.rst
-    /advanced/design-patterns/factory.rst
-    /advanced/design-patterns/gateway.rst
-    /advanced/design-patterns/callback.rst
-    /advanced/design-patterns/state-machine.rst
-    /advanced/design-patterns/gang-of-four.rst
-
-*********
-Paradigms
-*********
-.. toctree::
-    :maxdepth: 1
-    :caption: Paradigms
-
-    /advanced/paradigms/functional-programming.rst
-    /advanced/paradigms/event-programming.rst
-
 ***********
 Concurrency
 ***********

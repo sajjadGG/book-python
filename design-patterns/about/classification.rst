@@ -1,6 +1,6 @@
-************
-Gang of Four
-************
+**************
+Classification
+**************
 
 
 Examples
@@ -43,8 +43,8 @@ Behavioral Design Patterns
 - Odwiedzający (ang. Visitor) (obiektowy)
 
 
-Idiomy języka programowania
-===========================
+Paradigm
+========
 - Wzorzec EFAP (ang. It's easier to ask for forgiveness than permission)
 - Metaclasses
 - Borg

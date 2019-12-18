@@ -43,6 +43,17 @@ Python Advanced
 
     /advanced/index.rst
 
+***************
+Design Patterns
+***************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Design Patterns
+    :name: Design Patterns
+
+    /design-patterns/index.rst
+
 *****************
 Quality and CI/CD
 *****************

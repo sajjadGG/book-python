@@ -1,15 +1,13 @@
 FILE = r'../data/iris.csv'
-
 OUTPUT = []
 
 with open(FILE) as file:
-    header = file.readline()
-    *column_names, _ = header.strip().split(',')
+    *header, _ = file.readline().strip().split(',')
 
     for line in file:
         *measurements, _ = line.strip().split(',')
         measurements = map(float, measurements)
-        pairs = zip(column_names, measurements)
+        pairs = zip(header, measurements)
         OUTPUT.append(dict(pairs))
 
 
@@ -21,3 +19,7 @@ def mean(**kwargs):
 for row in OUTPUT:
     avg = mean(**row)
     print(avg)
+
+
+## Alternative
+list(map(lambda row: mean(**row), OUTPUT))
