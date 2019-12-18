@@ -20,6 +20,17 @@ Builtins
     /intermediate/builtin/keywords.rst
     /intermediate/builtin/print.rst
 
+*********
+Functions
+*********
+.. toctree::
+    :maxdepth: 1
+    :caption: Functions
+    :name: Intermediate Functions
+
+    /intermediate/function/defining.rst
+    /intermediate/function/calling.rst
+
 *******
 Looping
 *******

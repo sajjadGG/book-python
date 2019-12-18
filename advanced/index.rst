@@ -6,7 +6,8 @@ Entry Test
     :caption: Entry Test
     :name: Advanced Entry Test
 
-    /advanced/exam/entry.rst
+    /advanced/about/entry.rst
+    /advanced/about/dragon.rst
 
 ************************
 Performance Optimization
@@ -32,12 +33,10 @@ Functions
     :caption: Functions
     :name: Advanced Functions
 
-    /advanced/functions/generator.rst
-    /advanced/functions/defining.rst
-    /advanced/functions/calling.rst
-    /advanced/functions/first-class.rst
-    /advanced/functions/closures.rst
-    /advanced/functions/decorator.rst
+    /advanced/function/generator.rst
+    /advanced/function/first-class.rst
+    /advanced/function/closures.rst
+    /advanced/function/decorator.rst
 
 ************
 OOP Paradigm
@@ -47,7 +46,6 @@ OOP Paradigm
     :caption: OOP Paradigm
     :name: Advanced OOP Paradigm
 
-    /advanced/exam/dragon.rst
     /advanced/oop-paradigm/fields-static-dynamic.rst
     /advanced/oop-paradigm/composition.rst
     /advanced/oop-paradigm/method-resolution-order.rst
@@ -138,4 +136,4 @@ Exit Test
     :caption: Exit Test
     :name: Advanced Exit Test
 
-    /advanced/exam/exit.rst
+    /advanced/about/exit.rst

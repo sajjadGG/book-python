@@ -262,7 +262,7 @@ Assignments
 Average
 -------
 * Complexity level: easy
-* Lines of code to write: 3 lines
+* Lines of code to write: 4 lines + doctests
 * Estimated time of completion: 5 min
 * Filename: :download:`solution/defining_average.py`
 
@@ -277,8 +277,8 @@ Average
 args
 ----
 * Complexity level: easy
-* Lines of code to write: 5 lines
-* Estimated time of completion: 15 min
+* Lines of code to write: 7 lines + doctests
+* Estimated time of completion: 10 min
 * Filename: :download:`solution/defining_args.py`
 
 :English:
@@ -311,8 +311,8 @@ args
 args and kwargs
 ---------------
 * Complexity level: medium
-* Lines of code to write: 5 lines
-* Estimated time of completion: 15 min
+* Lines of code to write: 8 lines + doctests
+* Estimated time of completion: 10 min
 * Filename: :download:`solution/defining_kwargs.py`
 
 :English:

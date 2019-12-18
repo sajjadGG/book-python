@@ -1,7 +1,4 @@
-from typing import Any
-
-
-def is_numeric(*args: Any) -> bool:
+def is_numeric(*args) -> bool:
     """
     >>> is_numeric()
     False
