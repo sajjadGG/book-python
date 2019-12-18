@@ -46,3 +46,7 @@ Compiling
 * https://py2app.readthedocs.io/
 * http://www.py2exe.org/
 * http://www.pyinstaller.org/
+
+Assignments
+===========
+.. todo:: Create Assignments

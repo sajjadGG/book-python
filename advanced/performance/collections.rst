@@ -11,7 +11,7 @@ This module implements specialized container datatypes providing alternatives to
     ================  ====================================================================
     Name              Description
     ----------------  --------------------------------------------------------------------
-    ``namedtuple()``  factory function for creating tuple subclasses with named fields
+    ``namedtuple``    factory function for creating tuple subclasses with named fields
     ``deque``         list-like container with fast appends and pops on either end
     ``ChainMap``      dict-like class for creating a single view of multiple mappings
     ``Counter``       dict subclass for counting hashable objects
@@ -22,6 +22,9 @@ This module implements specialized container datatypes providing alternatives to
     ``UserString``    wrapper around string objects for easier string subclassing
     ================  ====================================================================
 
+
+``OrderedDict``
+===============
 .. code-block:: python
 
     jose = {'first_name': 'José', 'last_name': 'Jiménez', 'agency': 'NASA'}
@@ -32,18 +35,44 @@ This module implements specialized container datatypes providing alternatives to
     print(jose['first_name'], jose['last_name'], jose['agency'])
     # José Jiménez NASA
 
-``OrderedDict``
-===============
 .. code-block:: python
 
     from collections import OrderedDict
 
     jose = OrderedDict(first_name='José', last_name='Jiménez', agency='NASA')
     print(jose)
-    # OrderedDict([('first_name', 'José'), ('last_name', 'Jiménez'), ('agency', 'NASA')])
+    # OrderedDict([
+    #   ('first_name', 'José'),
+    #   ('last_name', 'Jiménez'),
+    #   ('agency', 'NASA')])
+
+    dict(jose)
+    {'first_name': 'José', 'last_name': 'Jiménez', 'agency': 'NASA'}
 
 ``namedtuple``
 ==============
+.. code-block:: python
+
+    from collections import namedtuple
+
+
+    Point = namedtuple('Point', ('x', 'y'))
+
+    p1 = Point(x=50, y=120)
+    p2 = Point(50, 120)
+
+    print(p1)
+    # Point(x=50, y=120)
+
+    print(p1.x)
+    # 50
+
+    print(p1.y)
+    # 120
+
+    print(p2)
+    # Point(x=50, y=120)
+
 .. code-block:: python
 
     from collections import namedtuple
@@ -57,8 +86,9 @@ This module implements specialized container datatypes providing alternatives to
     print(jose.first_name, jose.last_name, jose.agency)
     # José Jiménez NASA
 
-``collections.Counter``
-=======================
+
+Counter
+=======
 .. code-block:: python
 
     import random
@@ -87,3 +117,49 @@ This module implements specialized container datatypes providing alternatives to
 
     counter.most_common(5)
     # [(7, 12), (4, 8), (9, 6), (1, 5), (2, 4)]
+
+UserString
+==========
+.. code-block:: python
+
+    from collections import UserString
+
+
+    class str(UserString):
+        def __add__(self, other):
+            return f'{self} {other}'
+
+
+    output = str('Jose') + 42
+    print(output)
+    # Jose 42
+
+.. code-block:: python
+
+    from collections import UserString
+
+
+    class str(UserString):
+        def __add__(self, other):
+            return f'{self} {other}'
+
+
+    class Point:
+        def __init__(self, x, y):
+            self.x = x
+            self.y = y
+
+        def __str__(self):
+            return f'({self.x}, {self.y})'
+
+
+    p = Point(x=10, y=20)
+
+    out = str('Jose') + p
+    print(out)
+    # Jose (10, 20)\
+
+
+Assignments
+===========
+.. todo:: Create Assignments

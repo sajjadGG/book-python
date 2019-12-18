@@ -5,15 +5,9 @@ Generators
 **********
 
 
-.. note::
-    For information about Comprehensions, please refer to :ref:`Basic Comprehensions`
-
-
 Generator expressions vs. Comprehensions
 ========================================
-.. highlights::
-    * Comprehensions executes instantly
-    * Generators are lazy evaluated
+* For information about Comprehensions, please refer to :ref:`Basic Comprehensions`
 
 .. code-block:: python
 
@@ -43,7 +37,12 @@ Generator expressions vs. Comprehensions
 
 What is the difference?
 -----------------------
-* Execution and assignment
+.. highlights::
+    * Comprehensions executes instantly
+    * Generators are lazy evaluated
+    * Create generator object and assign pointer (do not execute)
+    * Comprehensions will be in the memory until end of a program
+    * Generators are cleared once they are executed
 
     .. code-block:: python
 
@@ -54,8 +53,6 @@ What is the difference?
 
         print(a)
         # [0, 1, 2, 3, 4]
-
-* Create generator object and assign pointer (do not execute)
 
     .. code-block:: python
 
@@ -120,7 +117,6 @@ Evaluate generator iteratively
 
     for i in a:
         print(i)
-
     # 0
     # 1
     # 2
@@ -134,28 +130,64 @@ Halting and resuming iteration
     * Forget generator
 
 .. code-block:: python
+    :caption: Comprehension will generate a sequence instantly, and iterate over it. It will be in the memory until end of a program
 
-    a = (x for x in range(0,10))
+    numbers = [x for x in range(0, 10)]
 
-    for i in a:
-        print(i)
-        if i == 3:
-            break
+    for x in numbers:
+       print(x)
+       if x == 3:
+           break
     # 0
     # 1
     # 2
     # 3
 
-    for i in a:
-        print(i)
-        if i == 6:
-            break
+    for x in numbers:
+       print(x)
+       if x == 6:
+           break
+    # 0
+    # 1
+    # 2
+    # 3
     # 4
     # 5
     # 6
 
-    list(a)
+    list(numbers)
+    # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    list(numbers)
+    # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+.. code-block:: python
+    :caption: Generator with generate numbers as it goes in the process
+
+    numbers = (x for x in range(0, 10))
+
+    for x in numbers:
+       print(x)
+       if x == 3:
+           break
+    # 0
+    # 1
+    # 2
+    # 3
+
+    for x in numbers:
+       print(x)
+       if x == 6:
+           break
+    # 4
+    # 5
+    # 6
+
+    list(numbers)
     # [7, 8, 9]
+
+    list(numbers)
+    # []
 
 Which one is better?
 --------------------
@@ -182,11 +214,9 @@ Which one is better?
 
     def get_species(species):
         output = []
-
-        for record in DATA:
-            if record[4] == species:
-                output.append(record)
-
+        for row in DATA:
+            if row[4] == species:
+                output.append(row)
         return output
 
 
@@ -218,9 +248,9 @@ Which one is better?
     ]
 
     def get_species(species):
-        for record in DATA:
-            if record[4] == species:
-                yield record
+        for row in DATA:
+            if row[4] == species:
+                yield row
 
     data = get_species('setosa')
 
@@ -281,6 +311,18 @@ Built-in generators
 ``map()``
 ---------
 .. code-block:: python
+    :caption: ``map()`` syntax
+
+    map(<callable>, <sequence>)
+
+.. code-block:: python
+
+    data = [1, 2, 3]
+
+    list(map(float, data))
+    # [1.0, 2.0, 3.0]
+
+.. code-block:: python
 
     map(float, [1, 2, 3])
     # <map object at 0x11d15a190>
@@ -291,18 +333,18 @@ Built-in generators
     tuple(map(float, [1, 2, 3]))
     # (1.0, 2.0, 3.0)
 
-.. code-block:: python
-
-    data = [1, 2, 3]
-
-    tuple(map(float, data))
-    # (1.0, 2.0, 3.0)
-
 ``filter()``
 ------------
 .. code-block:: python
+    :caption: ``filter()`` syntax
 
     filter(<callable>, <sequence>)
+
+.. code-block:: python
+    :caption: Show only even numbers
+
+    list(filter(lambda x: not x%2, data))
+    # [2, 4, 6]
 
 .. code-block:: python
 
@@ -320,13 +362,13 @@ Built-in generators
     list(filter(is_even, data))
     # [2, 4, 6]
 
-.. code-block:: python
-
-    list(filter(lambda x: not x%2, data))
-    # [2, 4, 6]
-
 ``enumerate()``
 ---------------
+.. code-block:: python
+    :caption: ``enumerate()`` syntax
+
+    enumerate(<sequence>)
+
 .. code-block:: python
 
     header = ['a', 'b', 'c']
