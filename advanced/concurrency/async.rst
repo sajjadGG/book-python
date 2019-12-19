@@ -17,6 +17,8 @@ References
 Async Programming
 =================
 * Source: https://www.youtube.com/watch?v=F19R_M4Nay4
+* Source: https://talkpython.fm/async
+* By Michael Kennedy
 
 .. figure:: img/sync-execution-sequence.png
     :align: center
@@ -117,10 +119,10 @@ Protocol
 
     class AsyncContextManager:
         async def __aenter__(self):
-            await log('entering context')
+            await print('entering context')
 
         async def __aexit__(self, exc_type, exc, tb):
-            await log('exiting context')
+            await print('exiting context')
 
 Low-level API
 -------------
@@ -201,13 +203,13 @@ Chain coroutines
     import asyncio
 
     async def compute(x, y):
-        print("Compute %s + %s ..." % (x, y))
+        print(f"Compute {x} + {y} ...")
         await asyncio.sleep(1.0)
         return x + y
 
     async def print_sum(x, y):
         result = await compute(x, y)
-        print("%s + %s = %s" % (x, y, result))
+        print(f"{x} + {y} = {result}")
 
     loop = asyncio.get_event_loop()
     loop.run_until_complete(print_sum(1, 2))
@@ -239,10 +241,10 @@ Parallel execution of tasks
     async def factorial(name, number):
         f = 1
         for i in range(2, number+1):
-            print("Task %s: Compute factorial(%s)..." % (name, i))
+            print(f"Task {name}: Compute factorial({i})...")
             await asyncio.sleep(1)
             f *= i
-        print("Task %s: factorial(%s) = %s" % (name, number, f))
+        print(f"Task {name}: factorial({number}) = {f}")
 
     loop = asyncio.get_event_loop()
     loop.run_until_complete(asyncio.gather(
@@ -310,7 +312,7 @@ Client
         print("sender: started!")
         while True:
             data = b"async can sometimes be confusing, but I believe in you!"
-            print("sender: sending {!r}".format(data))
+            print(f"sender: sending {data!r}")
             await client_stream.send_all(data)
             await trio.sleep(1)
 
@@ -318,13 +320,13 @@ Client
         print("receiver: started!")
         while True:
             data = await client_stream.receive_some(BUFSIZE)
-            print("receiver: got data {!r}".format(data))
+            print(f"receiver: got data {data!r}")
             if not data:
                 print("receiver: connection closed")
                 sys.exit()
 
     async def parent():
-        print("parent: connecting to 127.0.0.1:{}".format(PORT))
+        print(f"parent: connecting to 127.0.0.1:{PORT}")
         client_stream = await trio.open_tcp_stream("127.0.0.1", PORT)
         async with client_stream:
             async with trio.open_nursery() as nursery:
@@ -362,11 +364,11 @@ Server
         try:
             while True:
                 data = await server_stream.receive_some(BUFSIZE)
-                print("echo_server {}: received data {!r}".format(ident, data))
+                print(f"echo_server {ident}: received data {data!r}")
                 if not data:
-                    print("echo_server {}: connection closed".format(ident))
+                    print(f"echo_server {ident}: connection closed")
                     return
-                print("echo_server {}: sending data {!r}".format(ident, data))
+                print(f"echo_server {ident}: sending data {data!r}")
                 await server_stream.send_all(data)
         # FIXME: add discussion of MultiErrors to the tutorial, and use
         # MultiError.catch here. (Not important in this case, but important if the
@@ -375,7 +377,7 @@ Server
             # Unhandled exceptions will propagate into our parent and take
             # down the whole program. If the exception is KeyboardInterrupt,
             # that's what we want, but otherwise maybe not...
-            print("echo_server {}: crashed: {!r}".format(ident, exc))
+            print(f"echo_server {ident}: crashed: {exc!r}")
 
     async def main():
         await trio.serve_tcp(echo_server, PORT)
@@ -386,3 +388,16 @@ Server
     # just make it a standalone function from the beginning.
     trio.run(main)
 
+Unsync library
+==============
+* Library decides which to run, thread, asyncio or sync
+
+.. code-block:: console
+
+    $ pip install unsync
+
+.. code-block:: python
+
+    @unsync
+    def my_function():
+        pass
