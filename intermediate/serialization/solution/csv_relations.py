@@ -2,32 +2,33 @@ import csv
 
 OUTPUT = r'../../_tmp/csv_relations.csv'
 
-class Contact:
-    def __init__(self, first_name, last_name, addresses=()):
-        self.first_name = first_name
+
+class Astronaut:
+    def __init__(self, first_name, last_name, experience=()):
+        self.name = first_name
         self.last_name = last_name
-        self.addresses = addresses
+        self.experience = list(experience)
+
+class Mission:
+    def __init__(self, year, name):
+        self.year = year
+        self.name = name
 
 
-class Address:
-    def __init__(self, location, city):
-        self.location = location
-        self.city = city
+CREW = [
+    Astronaut('Jan Twardowski', experience=(
+        Mission(1969, 'Apollo 11'),
+        Mission(2024, 'Artemis 3'))),
 
+    Astronaut('Mark Watney', experience=(
+        Mission(2035, 'Ares 3'))),
 
-INPUT = [
-    Contact(first_name='Jan', last_name='Twardowski', addresses=(
-        Address(location='JSC', city='Houston, TX'),
-        Address(location='KSC', city='Merritt Island, FL'),
-        Address(location='JPL', city='Pasadena, CA'),
-    )),
-    Contact(first_name='Mark', last_name='Watney'),
-    Contact(first_name='Melissa', last_name='Lewis', addresses=()),
+    Astronaut('Melissa Lewis'),
 ]
 
 output = []
 
-for contact in INPUT:
+for contact in CREW:
     addresses = []
 
     for address in contact.addresses:

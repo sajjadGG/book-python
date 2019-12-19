@@ -217,29 +217,27 @@ Encoding nested objects with relations to JSON
     import json
 
 
-    class Contact:
-        def __init__(self, first_name, last_name, addresses=()):
+    class Astronaut:
+        def __init__(self, first_name, last_name, experience=()):
             self.first_name = first_name
             self.last_name = last_name
-            self.addresses = addresses
+            self.experience = experience
 
-
-    class Address:
-        def __init__(self, name, city, state):
+    class Mission:
+        def __init__(self, year, name):
+            self.year = year
             self.name = name
-            self.city = city
-            self.state = state
 
 
-    INPUT = [
-        Contact('Jan', 'Twardowski', addresses=(
-            Address('Johnson Space Center', 'Houston', 'TX'),
-            Address('Kennedy Space Center', 'Merritt Island', 'FL'))),
+    CREW = [
+        Astronaut('Jan', 'Twardowski', experience=(
+            Mission(1969, 'Apollo 18'),
+            Mission(2024, 'Artemis 3'))),
 
-        Contact('Mark', 'Watney', addresses=(
-            Address('Jet Propulsion Laboratory', 'Pasadena', 'CA'))),
+        Astronaut('Mark', 'Watney', experience=(
+            Mission(2035, 'Ares 3'))),
 
-        Contact('Melissa', 'Lewis', addresses=()),
+        Astronaut('Melissa', 'Lewis', experience=()),
     ]
 
 
@@ -249,18 +247,42 @@ Encoding nested objects with relations to JSON
             result['__class_name__'] = obj.__class__.__name__
             return result
 
-
-    output = json.dumps(INPUT, cls=JSONObjectEncoder)
+    output = json.dumps(CREW, cls=JSONObjectEncoder)
     print(output)
     # [
-    #    {"__class_name__":"Contact", "first_name":"Jan", "last_name":"Twardowski", "addresses":[
-    #          {"__class_name__":"Address", "name":"Johnson Space Center", "city":"Houston", "state":"TX"},
-    #          {"__class_name__":"Address", "name":"Kennedy Space Center", "city":"Merritt Island", "state":"FL"}],
-    #
-    #    {"__class_name__":"Contact", "first_name":"Mark", "last_name":"Watney", "addresses":[
-    #          {"__class_name__":"Address", "name":"Jet Propulsion Laboratory", "city":"Pasadena", "state":"CA"}]},
-    #
-    #    {"__class_name__":"Contact", "first_name":"Melissa", "last_name":"Lewis", "addresses":[]}
+    #     {
+    #         "__class_name__": "Astronaut",
+    #         "experience": [
+    #             {
+    #                 "__class_name__": "Mission",
+    #                 "name": "Apollo 18",
+    #                 "year": 1969
+    #             },
+    #             {
+    #                 "__class_name__": "Mission",
+    #                 "name": "Artemis 3",
+    #                 "year": 2024
+    #             }
+    #         ],
+    #         "first_name": "Jan",
+    #         "last_name": "Twardowski"
+    #     },
+    #     {
+    #         "__class_name__": "Astronaut",
+    #         "experience": {
+    #             "__class_name__": "Mission",
+    #             "name": "Ares 3",
+    #             "year": 2035
+    #         },
+    #         "first_name": "Mark",
+    #         "last_name": "Watney"
+    #     },
+    #     {
+    #         "__class_name__": "Astronaut",
+    #         "experience": [],
+    #         "first_name": "Melissa",
+    #         "last_name": "Lewis"
+    #     }
     # ]
 
 Decoding nested objects with relations to JSON
@@ -275,30 +297,52 @@ Decoding nested objects with relations to JSON
     CURRENT_MODULE = sys.modules[__name__]
     INPUT = """
     [
-       {"__class_name__":"Contact", "first_name":"Jan", "last_name":"Twardowski", "addresses":[
-             {"__class_name__":"Address", "name":"Johnson Space Center", "city":"Houston", "state":"TX"},
-             {"__class_name__":"Address", "name":"Kennedy Space Center", "city":"Merritt Island", "state":"FL"}],
-
-       {"__class_name__":"Contact", "first_name":"Mark", "last_name":"Watney", "addresses":[
-             {"__class_name__":"Address", "name":"Jet Propulsion Laboratory", "city":"Pasadena", "state":"CA"}]},
-
-       {"__class_name__":"Contact", "first_name":"Melissa", "last_name":"Lewis", "addresses":[]}
+        {
+            "__class_name__": "Astronaut",
+            "experience": [
+                {
+                    "__class_name__": "Mission",
+                    "name": "Apollo 18",
+                    "year": 1969
+                },
+                {
+                    "__class_name__": "Mission",
+                    "name": "Artemis 3",
+                    "year": 2024
+                }
+            ],
+            "first_name": "Jan",
+            "last_name": "Twardowski"
+        },
+        {
+            "__class_name__": "Astronaut",
+            "experience": {
+                "__class_name__": "Mission",
+                "name": "Ares 3",
+                "year": 2035
+            },
+            "first_name": "Mark",
+            "last_name": "Watney"
+        },
+        {
+            "__class_name__": "Astronaut",
+            "experience": [],
+            "first_name": "Melissa",
+            "last_name": "Lewis"
+        }
     ]
     """
 
-
-    class Contact:
-        def __init__(self, first_name, last_name, addresses=()):
+    class Astronaut:
+        def __init__(self, first_name, last_name, experience=()):
             self.first_name = first_name
             self.last_name = last_name
-            self.addresses = addresses
+            self.experience = experience
 
-
-    class Address:
-        def __init__(self, name, city, state):
+    class Mission:
+        def __init__(self, year, name):
+            self.year = year
             self.name = name
-            self.city = city
-            self.state = state
 
 
     class JSONObjectDecoder(json.JSONDecoder):

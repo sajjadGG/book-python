@@ -269,7 +269,7 @@ Good
 .. code-block:: python
     :caption: Initial arguments mutability and shared state
 
-    class Contact:
+    class Astronaut:
         def __init__(self, name, missions=()):
             self.name = name
             self.missions = list(missions)
@@ -284,8 +284,8 @@ Good
     print(twardowski.missions)
     # []
 
-Do not run methods in ``__init__()``
-====================================
+Do not trigger methods for user
+===============================
 * It is better when user can choose a moment when call ``.connect()`` method
 
 .. code-block:: python
