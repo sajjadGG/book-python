@@ -9,10 +9,46 @@ Concurrency
 * Twisted, Tornado
 * Curio, Trio
 
+References
+==========
+* https://www.youtube.com/watch?v=Pe3b9bdRtiE
+
+
+Async Programming
+=================
+* Source: https://www.youtube.com/watch?v=F19R_M4Nay4
+
+.. figure:: img/sync-execution-sequence.png
+    :align: center
+    :scale: 50%
+
+.. figure:: img/sync-execution-timeline.png
+    :align: center
+    :scale: 50%
+
+.. figure:: img/async-execution-sequence.png
+    :align: center
+    :scale: 50%
+
+.. figure:: img/async-execution-timeline.png
+    :align: center
+    :scale: 50%
+
+.. figure:: img/async-python.png
+    :align: center
+    :scale: 50%
+
+.. figure:: img/async-threads.png
+    :align: center
+    :scale: 50%
+
+.. figure:: img/async-gil.png
+    :align: center
+    :scale: 50%
+
 
 High-Level Concurrency
 ======================
-
 * CPU-bound Concurrency:
 
     * Using Queues and Multiprocessing
@@ -26,7 +62,6 @@ High-Level Concurrency
 
 Coroutine
 =========
-
 The word "coroutine", like the word "generator", is used for two different (though related) concepts:
 
 - The function that defines a coroutine (a function definition using async def or decorated with ``@asyncio.coroutine``). If disambiguation is needed we will call this a coroutine function (``iscoroutinefunction()`` returns ``True``).
@@ -331,7 +366,3 @@ Server
     # just make it a standalone function from the beginning.
     trio.run(main)
 
-
-References
-==========
-* https://www.youtube.com/watch?v=Pe3b9bdRtiE
