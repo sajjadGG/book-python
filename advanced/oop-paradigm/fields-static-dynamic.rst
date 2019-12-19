@@ -5,6 +5,7 @@ Static and Dynamic Fields
 
 Static Fields
 =============
+* Fields created on class
 * Simple to use
 * Must have default values
 * Share state
@@ -31,7 +32,10 @@ Static Fields
 
 Dynamic Fields
 ==============
-* Require ``__init__()``
+* Fields created on instance
+* Do not share state
+* By convention initialized in ``__init__()``
+* You can also initialize on living object directly
 
 .. code-block:: python
     :caption: Dynamic fields

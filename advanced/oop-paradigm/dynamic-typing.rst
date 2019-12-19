@@ -8,7 +8,7 @@ Duck typing
 * `The Unreasonable Effectiveness of Dynamic Typing for Practical Programs by Robert Smallshire <http://www.infoq.com/presentations/dynamic-static-typing>`_
 
 .. code-block:: python
-    :caption: Duck typing
+    :caption: Syntax similarities and Dynamic Typing
 
     {}              # dict
     {1}             # set

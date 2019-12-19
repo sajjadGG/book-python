@@ -153,17 +153,60 @@ Builtin Functions and Keywords
     abs(vector)
     # 5.0
 
+.. code-block:: python
+
+    class Astronaut:
+        def __int__(self) -> int:
+            return 1969
+
+        def __len__(self) -> int:
+            return 170
+
+        def __str__(self) -> str:
+            return 'My name... Jose Jimenez'
+
+
+    jose = Astronaut()
+
+    int(jose)
+    # 1969
+
+    len(jose)
+    # 170
+
+    str(jose)
+    # 'Jose Jimenez'
+
+    print(jose)
+    # My name... Jose Jimenez
+
 Accessors Overload
 ------------------
 .. csv-table:: Operator Overload
     :header: "Operator", "Method", "Description"
-    :widths: 15, 25, 60
+    :widths: 35, 65
 
     "``a(b)``",         "``a.__call__(b)``"
     "``a[b] = 10``",    "``a.__setitem__(b, 10)``"
     "``a[b]``",         "``a.__getitem__(b)``"
     "``b in a``",       "``a.__contains__(b)``"
-    "``a[b]``",         "``a.__missing__(b)``", "(when ``b`` is not in ``a``)"
+    "``a[b]`` (when ``b`` is not in ``a``)",         "``a.__missing__(b)``"
+
+.. code-block:: python
+
+    my_dict = dict()
+
+    my_dict['a'] = 10
+    # my_dict.__setitem__('a', 10) -> None
+
+    my_dict['a']
+    # my_dict.__getitem__('a') -> 10
+
+    my_dict['x']
+    # my_dict.__getitem__('x') -> my_dict.__missing__() -> KeyError: 'x'
+
+    my_dict()
+    # my_dict.__call__() -> TypeError: 'dict' object is not callable
 
 .. code-block:: python
     :caption: Contains in ``numpy``
@@ -204,6 +247,12 @@ Accessors Overload
 
     a[1:2]
     # a.__getitem__(1:2)
+
+.. code-block:: python
+
+    class Cache(dict):
+        def __missing__(self, key):
+            ...
 
 
 Assignment

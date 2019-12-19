@@ -33,7 +33,7 @@ Abstract classes and methods
 
         @abstractmethod
         def display(self):
-            return self.open()
+            pass
 
 
     class PDFDocument(Document):

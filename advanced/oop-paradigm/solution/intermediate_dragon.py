@@ -72,11 +72,13 @@ class Character(Dragon):
 
 class CharacterClass(Enum):
     WARRIOR = 'Warrior'
+    DRAGON = 'Dragon'
 
 
-class MediumDragon(Character):
+class Dragon(Character):
     HIT_POINTS_MIN = 100
     HIT_POINTS_MAX = 150
+    CHARACTER_CLASS = CharacterClass.DRAGON
 
 
 class Hero(Character):
@@ -90,7 +92,7 @@ class Hero(Character):
 
 
 def run():
-    dragon = MediumDragon(name='Wawelski')
+    dragon = Dragon(name='Wawelski')
     hero = Hero(name='Jan Twardowski')
 
     turn = 1

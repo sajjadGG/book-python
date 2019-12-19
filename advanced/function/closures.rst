@@ -52,3 +52,106 @@ What is closure?
         def g(y):
             return x + y
         return g
+
+
+Example
+=======
+.. code-block:: python
+    :caption: Functions has access to the outer scope
+
+    data = [1, 2, 3]
+
+    def add():
+        print('inside', data)
+
+    add()
+    # inside [1, 2, 3]
+
+    print('outside', data)
+    # outside [1, 2, 3]
+
+.. code-block:: python
+    :caption: Variables in functions can shadow outer scope. Outer scope is restored, when function returns
+
+    data = [1,2,3]
+
+    def add():
+        data = ['a', 'b', 'c']
+        print('inside', data)
+
+    add()
+    # inside ['a', 'b', 'c']
+
+    print('outside', data)
+    # outside [1, 2, 3]
+
+.. code-block:: python
+    :caption: Functions can modify outer scope
+
+    data = [1,2,3]
+
+    def add():
+        global data
+        data = ['a', 'b', 'c']
+        print('inside', data)
+
+    add()
+    # inside ['a', 'b', 'c']
+
+    print('outside', data)
+    # outside ['a', 'b', 'c']
+
+.. code-block:: python
+    :caption: ``inside`` function (closure) has access to its outer scope, that is ``outside`` function.
+
+    def outside():
+        data = ['a', 'b', 'c']
+
+        def inside():
+            print('inside', data)
+
+        inside()
+        print('outside', data)
+
+    outside()
+    # inside ['a', 'b', 'c']
+    # outside ['a', 'b', 'c']
+
+.. code-block:: python
+
+    def outside():
+        data = ['a', 'b', 'c']
+
+        def inside():
+            print('inside', data)
+
+        return inside
+
+
+    my_ptr = outside()
+
+    print(my_ptr)
+    # <function outside.<locals>.inside at 0x11bfb8560>
+
+    my_ptr()
+    # inside ['a', 'b', 'c']
+
+.. code-block:: python
+
+    def outside():
+        data = ['a', 'b', 'c']
+
+        def inside():
+            print('inside', data)
+
+        return bbb
+
+
+    my_ptr = add()
+    del add
+
+    print(my_ptr)
+    # <function add.<locals>.bbb at 0x11bfb85f0>
+
+    my_ptr()
+    # inside ['a', 'b', 'c']
