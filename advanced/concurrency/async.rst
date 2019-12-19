@@ -34,6 +34,14 @@ Async Programming
     :align: center
     :scale: 50%
 
+.. figure:: img/eventloop-sync.png
+    :align: center
+    :scale: 50%
+
+.. figure:: img/eventloop-async.png
+    :align: center
+    :scale: 50%
+
 .. figure:: img/async-python.png
     :align: center
     :scale: 50%
@@ -43,6 +51,18 @@ Async Programming
     :scale: 50%
 
 .. figure:: img/async-gil.png
+    :align: center
+    :scale: 50%
+
+.. figure:: img/async-anatomy.png
+    :align: center
+    :scale: 50%
+
+.. figure:: img/uvloop-doc.png
+    :align: center
+    :scale: 50%
+
+.. figure:: img/uvloop-using.png
     :align: center
     :scale: 50%
 
