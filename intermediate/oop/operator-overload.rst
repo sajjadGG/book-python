@@ -181,12 +181,29 @@ Accessors Overload
 
     class array(list):
         def __getitem__(key):
-            row = key[0]
-            col = key[1]
-            return super().__getitem__(row).__getitem__(col)
+            if isinstance(key, int):
+                return super().__getitem__(key)
 
-    # a[1,2]
-    a.__getitem__(key=(1,2))
+            if isinstance(key, tuple):
+                row = key[0]
+                col = key[1]
+                return super().__getitem__(row).__getitem__(col)
+
+            if isinstance(key, slice):
+                start = key[0]
+                stop = key[1]
+                step = key[2] if key[2] else 0
+                return ...
+
+
+    a[1]
+    # a.__getitem__(1)
+
+    a[1,2]
+    # a.__getitem__((1,2))
+
+    a[1:2]
+    # a.__getitem__(1:2)
 
 
 Assignment
@@ -201,56 +218,55 @@ Address Book
 
 :English:
     #. Use the code from listing below
-    #. Override operators of ``Astronaut`` and ``Location`` for code to work correctly
+    #. Override operators of ``Astronaut`` and ``Mission`` for code to work correctly
 
 :Polish:
     #. Użyj kodu z listingu poniżej
-    #. Nadpisz operatory ``Astronaut`` i ``Location`` aby poniższy kod zadziałał poprawnie
+    #. Nadpisz operatory ``Astronaut`` i ``Mission`` aby poniższy kod zadziałał poprawnie
 
 .. code-block:: python
 
     class Astronaut:
-        def __init__(self, name, locations):
+        def __init__(self, name, experience=()):
             self.name = name
-            self.locations = list(locations)
+            self.experience = list(experience)
 
         def __str__(self):
-            return f'{self.name}, {self.locations}'
+            return f'{self.name}, {self.experience}'
 
         def __iadd__(self, other):
-            ...
+            raise NotImplementedError
 
-        def __contains__(self, item):
-            ...
+        def __contains__(self, flight):
+            raise NotImplementedError
 
 
-    class Location:
-        def __init__(self, name):
+    class Mission:
+        def __init__(self, year, name):
+            self.year = year
             self.name = name
 
         def __repr__(self):
-            return f'\n\t{self.name}'
+            return f'\n\t{self.year}: {self.name}'
 
         def __eq__(self, other):
-            ...
+            raise NotImplementedError
 
 
-    astro = Astronaut('Jan Twardowski', locations=[
-        Location('Armstrong Flight Research Center'),
-        Location('Kennedy Space Center'),
+    astro = Astronaut('Jan Twardowski', experience=[
+        Mission(1969, 'Apollo 11'),
     ])
 
-    astro += Location('Jet Propulsion Laboratory')
-    astro += Location('Johnson Space Center')
+    astro += Mission(2024, 'Artemis 3')
+    astro += Mission(2035, 'Ares 3')
 
     print(astro)
     # Jan Twardowski, [
-    #     Armstrong Flight Research Center,
-    #     Kennedy Space Center,
-    #     Jet Propulsion Laboratory,
-    #     Johnson Space Center]
+    # 	1969: Apollo 11,
+    # 	2024: Artemis 3,
+    # 	2035: Ares 3]
 
-    if Location('Johnson Space Center') in astro:
+    if Mission(2024, 'Artemis 3') in astro:
         print(True)
     else:
         print(False)

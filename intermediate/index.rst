@@ -65,6 +65,7 @@ Object Oriented Programming
 
     /intermediate/oop/access-modifiers.rst
     /intermediate/oop/enum.rst
+    /intermediate/oop/operator-overload.rst
     /intermediate/oop/dataclass.rst
 
 ********************

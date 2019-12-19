@@ -190,7 +190,7 @@ Stringify Object
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/syntax_stringify.py`
+* Filename: :download:`solution/stringify_astro.py`
 
 :English:
     #. Modify code from input data (see below)
@@ -212,12 +212,13 @@ Stringify Object
                 self.members = list(members)
 
         class Astronaut:
-            def __init__(self, name, locations=()):
+            def __init__(self, name, experience=()):
                 self.name = first_name
-                self.locations = list(locations)
+                self.experience = list(experience)
 
-        class Location:
-            def __init__(self, name):
+        class Mission:
+            def __init__(self, year, name):
+                self.year = year
                 self.name = name
 
 :Output:
@@ -231,36 +232,33 @@ Stringify Object
 
     .. code-block:: python
 
-        mark = Astronaut('Mark Watney', locations=[
-            Location('Johnson Space Center'),
-            Location('Kennedy Space Center')
+        mark = Astronaut('Mark Watney', experience=[
+            Mission(2035, 'Ares 3'),
         ])
 
         print(f'Space Pirate: \n{mark}\n')
         # Space Pirate:
-        # Mark Watney [
-        # 	Johnson Space Center,
-        # 	Kennedy Space Center]
+        # Mark Watney veteran of [
+        # 	2035: Ares 3]
 
     .. code-block:: python
 
         crew = Crew([
-            Astronaut('Jan Twardowski', locations=[
-                Location('Johnson Space Center'),
-                Location('Kennedy Space Center'),
-                Location('Jet Propulsion Laboratory'),
-                Location('Armstrong Flight Research Center'),
+            Astronaut('Jan Twardowski', experience=[
+                Mission(1969, 'Apollo 11'),
+                Mission(2024, 'Artemis 3'),
             ]),
             Astronaut('José Jiménez'),
-            Astronaut('Иван Иванович', locations=[]),
+            Astronaut('Mark Watney', experience=[
+                Mission(2035, 'Ares 3'),
+            ]),
         ])
 
         print(f'Crew: \n{crew}')
         # Crew:
-        # Jan Twardowski [
-        # 	Johnson Space Center,
-        # 	Kennedy Space Center,
-        # 	Jet Propulsion Laboratory,
-        # 	Armstrong Flight Research Center]
+        # Jan Twardowski veteran of [
+        # 	1969: Apollo 11,
+        # 	2024: Artemis 3]
         # José Jiménez
-        # Иван Иванович
+        # Mark Watney veteran of [
+        # 	2035: Ares 3]

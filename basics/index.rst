@@ -136,7 +136,6 @@ Object Oriented Programming
     /basics/oop/method.rst
     /basics/oop/stringify.rst
     /basics/oop/inheritance.rst
-    /basics/oop/operator-overload.rst
 
 *****
 Recap
