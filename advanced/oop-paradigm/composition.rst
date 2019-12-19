@@ -60,10 +60,7 @@ Problem with inheritance
 
 
     class Motorbike(Vehicle):
-        """
-        Motorbike is a vehicle,
-        but doesn't have windows.
-        """
+        """Motorbike is a vehicle, but doesn't have windows."""
 
         def window_open(self):
             raise NotImplementedError

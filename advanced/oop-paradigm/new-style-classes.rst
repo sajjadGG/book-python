@@ -8,6 +8,19 @@ Rationale
 * https://docs.python.org/dev/tutorial/classes.html
 * The major motivation for introducing new-style classes is to provide a unified object model with a full meta-model
 
+Old Style classes
+=================
+* Not existing in Python 3
+* Don't inherit from ``object``
+
+.. code-block:: python
+    :caption: Python 2 Old Style Class
+
+    class MyClass:
+        pass
+
+.. note:: In Python 3, there are no old-style classes, and this code will produce new style class
+
 
 New Style Class
 ===============
@@ -21,6 +34,8 @@ New Style Class
 * new style class objects cannot be raised unless derived from Exception
 * ``__slots__`` added
 
+Python 2
+--------
 .. code-block:: python
     :caption: New Style Class
 
@@ -33,27 +48,16 @@ New Style Class
     class MyClass(object):
         pass
 
-    class OtherClass(MyClass):
+    class Child(MyClass):
         pass
 
+Python 3
+--------
 .. code-block:: python
     :caption: In Python 3, there are no old-style classes, and this code will produce new style class
 
-    class SomeObject:
+    class MyClass:
         pass
-
-
-Old Style classes
-=================
-* Not existing in Python 3
-* Don't inherit from ``object``
-
-.. code-block:: python
-
-    class SomeObject:
-        pass
-
-.. note:: In Python 3, there are no old-style classes, and this code will produce new style class
 
 
 Python 2 vs 3

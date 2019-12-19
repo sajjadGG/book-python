@@ -24,11 +24,12 @@ Relations
     CREW = [
         Astronaut('Jan Twardowski', experience=(
             Mission(1969, 'Apollo 11'),
-            Mission(2024, 'Artemis 3'),
-            Mission(2035, 'Ares 3'),
-        )),
-        Astronaut('Mark Watney'),
-        Astronaut('Melissa Lewis', experience=()),
+            Mission(2024, 'Artemis 3'))),
+
+        Astronaut('Mark Watney', experience=(
+            Mission(2035, 'Ares 3'))),
+
+        Astronaut('Melissa Lewis'),
     ]
 
 

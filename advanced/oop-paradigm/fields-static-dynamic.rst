@@ -12,16 +12,21 @@ Static Fields
 .. code-block:: python
     :caption: Static Fields
 
-    class Iris:
-        species = 'setosa'
+    class Astronaut:
+        agency = 'NASA'
 
 
-    setosa = Iris()
-    versicolor = Iris()
+    watney = Astronaut()
+    jimenez = Astronaut()
 
-    setosa.species      # setosa
-    versicolor.species  # setosa
-    Iris.species        # setosa
+    print(watney.agency)
+    # NASA
+
+    print(jimenez.agency)
+    # NASA
+
+    print(Astronaut.agency)
+    # NASA
 
 
 Dynamic Fields
@@ -31,17 +36,22 @@ Dynamic Fields
 .. code-block:: python
     :caption: Dynamic fields
 
-    class Iris:
-        def __init__(self, species):
-            self.species = species
+    class Astronaut:
+        def __init__(self, agency):
+            self.agency = agency
 
 
-    setosa = Iris('setosa')
-    versicolor = Iris('versicolor')
+    watney = Astronaut('NASA')
+    twardowski = Astronaut('POLSA')
 
-    setosa.species      # setosa
-    versicolor.species  # versicolor
-    Iris.species        # AttributeError: type object 'Iris' has no attribute 'species'
+    print(watney.agency)
+    # NASA
+
+    print(twardowski.agency)
+    # POLSA
+
+    print(Astronaut.agency)
+    # AttributeError: type object 'Astronaut' has no attribute 'agency'
 
 
 Static vs. Dynamic Fields
@@ -49,41 +59,36 @@ Static vs. Dynamic Fields
 .. code-block:: python
     :caption: Static vs. Dynamic fields
 
-    class Iris:
-        kingdom = 'Plantae'
-
-        def __init__(self, species):
-            self.species = species
+    class Astronaut:
+        agency = 'NASA'
 
 
-    setosa = Iris('setosa')
-    versicolor = Iris('versicolor')
-    virginica = Iris('virginica')
-
+    watney = Astronaut()
+    twardowski = Astronaut()
+    ivanovic = Astronaut()
 
     # Check value of field agency
-    setosa.kingdom       # Plantae
-    versicolor.kingdom   # Plantae
-    virginica.kingdom    # Plantae
-    Iris.kingdom         # Plantae
+    watney.agency       # NASA
+    twardowski.agency   # NASA
+    ivanovic.agency     # NASA
+    Astronaut.agency    # NASA
 
+    # Let's change ``agency`` of ``ivanovich`` object
+    ivanovic.agency = 'Roscosmos'
 
-    # Let's change ``kingdom`` of ``setosa`` object
-    setosa.kingdom = 'Flower'
+    watney.agency       # NASA
+    twardowski.agency   # NASA
+    ivanovic.agency     # Roscosmos
+    Astronaut.agency    # NASA
 
-    setosa.kingdom       # Flower
-    versicolor.kingdom   # Plantae
-    virginica.kingdom    # Plantae
-    Iris.kingdom         # Plantae
+    # Let's change ``agency`` of ``Astronaut`` class
+    Astronaut.agency = 'POLSA'
 
+    watney.agency       # POLSA
+    twardowski.agency   # POLSA
+    ivanovic.agency     # Roscosmos
+    Astronaut.agency    # POLSA
 
-    # Let's change ``kingdom`` of ``Iris`` class
-    Iris.kingdom = 'Iris'
-
-    setosa.kingdom       # Flower
-    versicolor.kingdom   # Iris
-    virginica.kingdom    # Iris
-    Iris.kingdom         # Iris
 
 Static or Dynamic?
 ==================

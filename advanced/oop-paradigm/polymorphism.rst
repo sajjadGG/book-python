@@ -8,78 +8,100 @@ Switch
 .. code-block:: python
     :caption: Switch moves business logic to the execution place
 
-    agency = 'NASA'
+    watney = 'Astronaut'
 
-    if agency == 'NASA':
-        print('Howdy from NASA')
-    elif agency == 'Roscosmos':
-        print('Privyet z Roscosmos')
-    elif agency == 'ESA':
-        print('Guten Tag aus ESA')
+    if watney == 'Astronaut':
+        print('Hello')
+    elif watney == 'Cosmonaut':
+        print('Привет!')
+    elif watney == 'Taikonaut':
+        print('你好')
     else:
-        raise NotImplementedError
+        print('Default Value')
+
+    # Hello
 
 .. code-block:: python
 
-    def switch(key=None):
+    def say_hello(key=None):
         return {
-            'NASA': 'Howdy from NASA',
-            'Roscosmos': 'Privyet z Roscosmos',
-            'ESA': 'Guten Tag aus ESA',
+            'Astronaut': 'Hello',
+            'Cosmonaut': 'Привет!',
+            'Taikonaut': '你好',
         }.get(key, 'Default Value')
 
 
-Polymorphism on Function
-========================
+    watney = 'Astronaut'
+    ivanovic = 'Cosmonaut'
+    twardowski = 'Sorcerer'
+
+    say_hello(watney)
+    # Hello
+
+    say_hello(ivanovic)
+    # Привет!
+
+    say_hello(twardowski):
+    # 'Default Value'
+
+
+Polymorphism in a Function
+==========================
 .. code-block:: python
     :caption: Polymorphism on Function
 
-    class Person:
-        def __init__(self, name):
-            self.name = name
+    class Sorcerer:
+        pass
 
-
-    class Astronaut(Person):
+    class Astronaut:
         def say_hello(self):
-            print('Howdy from NASA')
+            return 'Hello'
 
-    class Cosmonaut(Person):
+    class Cosmonaut:
         def say_hello(self):
-            print('Privyet z Roscosmos')
+            return 'Привет!'
 
 
-    def hello(spaceman):
-        spaceman.say_hello()
+    def say_hello(spaceman):
+        if hasattr(spaceman, 'say_hello')
+            return spaceman.say_hello()
+        else:
+            return 'Default Value'
 
 
-    watney = Astronaut('Mark Watney')
-    ivanovic = Cosmonaut('Ivan Ivanovic')
+    watney = Astronaut()
+    ivanovic = Cosmonaut()
+    twardowski = Sorcerer()
 
-    hello(watney)
-    # Howdy from NASA
+    say_hello(watney)
+    # Hello
 
-    hello(ivanovic)
-    # Privyet z Roscosmos
+    say_hello(ivanovic)
+    # Привет!
+
+    say_hello(twardowski)
+    # 'Default Value'
 
 
-Polymorphism on Classes
+Polymorphism on a Class
 =======================
 .. code-block:: python
     :caption: Polymorphism on Classes
 
-    class Person:
+    class Astronaut:
         def __init__(self, name):
             self.name = name
 
-
-    class Astronaut(Person):
         def say_hello(self):
-            print(f'Howdy from NASA')
+            return 'Hello'
 
 
-    class Cosmonaut(Person):
+    class Cosmonaut:
+        def __init__(self, name):
+            self.name = name
+
         def say_hello(self):
-            print(f'Privyet z Roscosmos')
+            return 'Привет!'
 
 
     crew = [
@@ -90,8 +112,8 @@ Polymorphism on Classes
     ]
 
     for member in crew:
-        member.say_hello()
-        # Howdy from NASA
-        # Privyet z Roscosmos
-        # Howdy from NASA
-        # Privyet z Roscosmos
+        print(member.say_hello())
+    # Hello
+    # Привет!
+    # Hello
+    # Привет!

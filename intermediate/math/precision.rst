@@ -137,7 +137,7 @@ doctests
         >>> add_numbers(0.1, 0.2)
         0.30000000000000004
 
-        >>> add_numbers(0.1, 0.2)
+        >>> add_numbers(0.1, 0.2)   # doctest: +ELLIPSIS
         0.1 + 0.2 == 0.3000...
         """
         return a + b
