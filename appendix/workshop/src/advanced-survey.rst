@@ -1,4 +1,4 @@
-.. note:: wymagana umiejętność tematów pokrytych w :ref:`Python Foundations`
+.. note:: wymagana umiejętność tematów pokrytych w :ref:`Python Basics Agenda`
 
 #. Jakie masz doświadczenie z programowaniem:
 

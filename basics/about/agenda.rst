@@ -1,3 +1,5 @@
+.. _Python Basics Agenda:
+
 ******
 Agenda
 ******
