@@ -93,6 +93,25 @@ The word "coroutine", like the word "generator", is used for two different (thou
 
 ``Asyncio``
 ===========
+.. code-block:: python
+    :caption: Python 3.7
+
+    async def my_function():
+        pass
+
+    result = asyncio.run(my_function())
+
+.. code-block:: python
+    :caption: Python 3.6
+
+    async def my_function():
+        pass
+
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    result = loop.run_until_complete(my_function())
+
+
 
 Protocol
 --------
