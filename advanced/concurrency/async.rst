@@ -96,6 +96,8 @@ The word "coroutine", like the word "generator", is used for two different (thou
 .. code-block:: python
     :caption: Python 3.7
 
+    import asyncio
+
     async def my_function():
         pass
 
@@ -103,6 +105,8 @@ The word "coroutine", like the word "generator", is used for two different (thou
 
 .. code-block:: python
     :caption: Python 3.6
+
+    import asyncio
 
     async def my_function():
         pass
