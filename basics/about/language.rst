@@ -41,7 +41,7 @@ What changed in Python 3?
 
 Why not Python 2?
 -----------------
-* Python 2 is no longer developed after 2020-04-01 [`1<https://www.python.org/psf/press-release/pr20191220/>`_, `2<https://mail.python.org/archives/list/python-dev@python.org/message/N6JIGTTJCJHS47AYSI76SJPCQS25EBWR/>_`]
+* Python 2 is no longer developed after 2020-04-01 [`1 <https://www.python.org/psf/press-release/pr20191220/>`_, `2 <https://mail.python.org/archives/list/python-dev@python.org/message/N6JIGTTJCJHS47AYSI76SJPCQS25EBWR/>`_]
 * Python 2.7 is the last in 2.x branch
 * There won't be Python 2.8 (`PEP 404 <https://legacy.python.org/dev/peps/pep-0404/>`_)
 * End of Life for Python 2.7 is 2020 (`PEP 373 <https://legacy.python.org/dev/peps/pep-0373/>`_)

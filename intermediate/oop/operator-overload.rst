@@ -183,7 +183,7 @@ Builtin Functions and Keywords
 Accessors Overload
 ------------------
 .. csv-table:: Operator Overload
-    :header: "Operator", "Method", "Description"
+    :header: "Operator", "Method"
     :widths: 35, 65
 
     "``a(b)``",         "``a.__call__(b)``"
