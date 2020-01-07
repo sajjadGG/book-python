@@ -5,6 +5,8 @@ DataFrame Plotting
 ******************
 
 
+* https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html
+
 Plot kinds
 ==========
 * ``line`` - Line Plot
