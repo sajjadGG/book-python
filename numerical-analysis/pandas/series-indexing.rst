@@ -3,6 +3,14 @@ Series Indexing
 ***************
 
 
+Indexes
+=======
+* Range Index
+* Numeric Index
+* String Index
+* Date Index
+
+
 Creating Index
 ==============
 
@@ -28,7 +36,7 @@ Range Index
     # dtype: float64
 
     s.index
-    # RangeIndex(start=0, stop=3, step=1)
+    # RangeIndex(start=0, stop=6, step=1)
 
 .. code-block:: python
 
@@ -92,7 +100,7 @@ String Index
     # dtype: float64
 
     s.index
-    # Index(['a', 'b', 'c'], dtype='object')
+    # Index(['a', 'b', 'c', 'd', 'e', 'f'], dtype='object')
 
 
 .. code-block:: python
@@ -110,7 +118,6 @@ String Index
     # c    5.0
     # d    NaN
     # e    6.0
-    # f    8.0
     # dtype: float64
 
 .. code-block:: python
@@ -153,7 +160,7 @@ Date Index
     import numpy as np
 
     data = [1, 3, 5, np.nan, 6, 8]
-    index = pd.date_range('1970-01-01', periods=6)
+    index = pd.date_range('1970-01-01', periods=data.size)
 
     s = pd.Series(data, index)
     # 1970-01-01    1.0
@@ -171,7 +178,7 @@ Date Index
     import numpy as np
 
     data = [1, 3, 5, np.nan, 6, 8]
-    index = pd.date_range('1970-01-01', periods=6, freq='Y')
+    index = pd.date_range('1970-01-01', freq='Y', periods=data.size)
 
     pd.Series(data, index)
     # 1970-12-31    1.0
@@ -189,7 +196,7 @@ Date Index
     import numpy as np
 
     data = [1, 3, 5, np.nan, 6, 8]
-    index = pd.date_range('1970-01-01', periods=6, freq='M')
+    index = pd.date_range('1970-01-01', freq='M', periods=data.size)
 
     pd.Series(data, index)
     # 1970-01-31    1.0
@@ -207,7 +214,7 @@ Date Index
     import numpy as np
 
     data = [1, 3, 5, np.nan, 6, 8]
-    index = pd.date_range('1970-01-01', periods=6, freq='D')
+    index = pd.date_range('1970-01-01', freq='D', periods=data.size)
 
     pd.Series(data, index)
     # 1970-01-01    1.0
@@ -225,7 +232,7 @@ Date Index
     import numpy as np
 
     data = [1, 3, 5, np.nan, 6, 8]
-    index = pd.date_range('1970-01-01', periods=6, freq='2D')
+    index = pd.date_range('1970-01-01', freq='2D', periods=data.size)
 
     pd.Series(data, index)
     # 1970-01-01    1.0
@@ -243,7 +250,7 @@ Date Index
     import numpy as np
 
     data = [1, 3, 5, np.nan, 6, 8]
-    index = pd.date_range('1970-01-01', periods=6, freq='2D')
+    index = pd.date_range('1970-01-01', freq='H', periods=data.size)
 
     pd.Series(data, index)
     # 1970-01-01 00:00:00    1.0
@@ -261,7 +268,7 @@ Date Index
     import numpy as np
 
     data = [1, 3, 5, np.nan, 6, 8]
-    index = pd.date_range('1970-01-01', periods=6, freq='T')
+    index = pd.date_range('1970-01-01', freq='T', periods=data.size)
 
     pd.Series(data, index)
     # 1970-01-01 00:00:00    1.0
@@ -279,7 +286,7 @@ Date Index
     import numpy as np
 
     data = [1, 3, 5, np.nan, 6, 8]
-    index = pd.date_range('1970-01-01', periods=6, freq='T')
+    index = pd.date_range('1970-01-01', freq='S', periods=data.size)
 
     pd.Series(data, index)
     # 1970-01-01 00:00:00    1.0
@@ -289,6 +296,7 @@ Date Index
     # 1970-01-01 00:00:04    6.0
     # 1970-01-01 00:00:05    8.0
     # Freq: S, dtype: float64
+
 
 Selecting by index
 ==================
@@ -353,7 +361,7 @@ Date Index
     import numpy as np
 
     data = np.arange(15)
-    index = pd.date_range('1969-12-25', periods=15, freq='D')
+    index = pd.date_range('1969-12-25', freq='D', periods=data.size)
 
     s = pd.Series(data, index)
 
@@ -407,4 +415,38 @@ Date Index
 
 Assignments
 ===========
-.. todo:: Create assignments
+
+Indexing Dates
+--------------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 10 min
+* Filename: :download:`solution/series_index.py`
+
+:English:
+    #. Set random seed to zero
+    #. Create ``pd.Series`` with 100 random numbers from standard distribution
+    #. Series Index are following dates since 2000
+    #. Print values:
+
+        * at 2000-01-05,
+        * at 2000-02-29,
+        * first in the series,
+        * last in the series,
+        * middle value in the series.
+
+:Polish:
+    #. Ustaw ziarno losowości na zero
+    #. Stwórz ``pd.Series`` z 100 losowymi liczbami z rozkładu normalnego
+    #. Indeksem w serii mają być kolejne dni od 2000 roku
+    #. Wypisz wartości:
+
+        * dnia 2000-01-05,
+        * dnia 2000-02-29,
+        * pierwszy w serii,
+        * ostatni w serii,
+        * środkowa wartość serii.
+
+:Hint:
+    * ``np.random.seed(0)``
+    * ``np.random.randn(10)``

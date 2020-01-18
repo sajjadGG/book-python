@@ -282,12 +282,37 @@ Date Index
 Assignments
 ===========
 
-Slicing
--------
+Slice Dates
+-----------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 10 min
+* Filename: :download:`solution/series_slicing_dates.py`
+
+:English:
+    #. Set random seed to zero
+    #. Create ``pd.Series`` with 100 random numbers from standard distribution
+    #. Series Index are following dates since 2000
+    #. Slice dates from 2000-02-14 to end of February 2000
+    #. Print results
+
+:Polish:
+    #. Ustaw ziarno losowości na zero
+    #. Stwórz ``pd.Series`` z 100 losowymi liczbami z rozkładu normalnego
+    #. Indeksem w serii mają być kolejne dni od 2000 roku
+    #. Wytnij daty od 2000-02-14 do końca lutego 2000
+    #. Wypisz wyniki
+
+:Hint:
+    * ``np.random.seed(0)``
+    * ``np.random.randn(10)``
+
+Slicing Alphabet
+----------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/series_slicing.py`
+* Filename: :download:`solution/series_slicing_string.py`
 
 :English:
     #. Create ``pd.Series`` with 26 random integers in range ``[10, 100)``
