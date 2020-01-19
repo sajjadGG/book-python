@@ -127,11 +127,28 @@ Matplotlib
     :caption: Matplotlib
     :name: Numerical Analysis Matplotlib
 
-    matplotlib/basics.rst
-    matplotlib/pandas.rst
-    matplotlib/charts.rst
-    matplotlib/lifecycle.rst
+    matplotlib/index.rst
+    matplotlib/import-export.rst
+    matplotlib/style-intro.rst
+    matplotlib/style-basic.rst
+
+    matplotlib/chart-line.rst
+    matplotlib/chart-bar.rst
+    matplotlib/chart-box.rst
+    matplotlib/chart-histogram.rst
+    matplotlib/chart-scatter.rst
+    matplotlib/chart-stacked.rst
+    matplotlib/chart-pie.rst
+    matplotlib/chart-3d.rst
+
+    matplotlib/style-advanced.rst
+    matplotlib/customization.rst
+    matplotlib/multiple-figures.rst
+    matplotlib/non-linear-axes.rst
     matplotlib/example.rst
+    matplotlib/lifecycle.rst
+    matplotlib/assignments.rst
+
 
 ******************
 Data Visualization
