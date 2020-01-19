@@ -1,131 +1,6 @@
-****************
-DataFrame Update
-****************
-
-Add column
-==========
-.. code-block:: python
-
-    import pandas as pd
-    import numpy as np
-
-
-    df = pd.DataFrame({
-        'A': [1, 2, np.nan, np.nan, 3, np.nan, 4],
-        'B': [1.1, 2.2, np.nan, np.nan, 3.3, np.nan, 4.4],
-        'C': ['a', 'b', np.nan, np.nan, 'c', np.nan, 'd'],
-        'D': [np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan],
-    })
-
-    df
-    #      A    B    C    D
-    # 0  1.0  1.1    a  NaN
-    # 1  2.0  2.2    b  NaN
-    # 2  NaN  NaN  NaN  NaN
-    # 3  NaN  NaN  NaN  NaN
-    # 4  3.0  3.3    c  NaN
-    # 5  NaN  NaN  NaN  NaN
-    # 6  4.0  4.4    d  NaN
-
-    df['X'] = 99
-    df
-    #      A    B    C   D   X
-    # 0  1.0  1.1    a NaN  99
-    # 1  2.0  2.2    b NaN  99
-    # 2  NaN  NaN  NaN NaN  99
-    # 3  NaN  NaN  NaN NaN  99
-    # 4  3.0  3.3    c NaN  99
-    # 5  NaN  NaN  NaN NaN  99
-    # 6  4.0  4.4    d NaN  99
-
-
-Update Column
-=============
-.. code-block:: python
-
-    import pandas as pd
-    import numpy as np
-
-
-    df = pd.DataFrame({
-        'A': [1, 2, np.nan, np.nan, 3, np.nan, 4],
-        'B': [1.1, 2.2, np.nan, np.nan, 3.3, np.nan, 4.4],
-        'C': ['a', 'b', np.nan, np.nan, 'c', np.nan, 'd'],
-        'D': [np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan],
-    })
-
-    df
-    #      A    B    C    D
-    # 0  1.0  1.1    a  NaN
-    # 1  2.0  2.2    b  NaN
-    # 2  NaN  NaN  NaN  NaN
-    # 3  NaN  NaN  NaN  NaN
-    # 4  3.0  3.3    c  NaN
-    # 5  NaN  NaN  NaN  NaN
-    # 6  4.0  4.4    d  NaN
-
-    df['D'] = 99
-    df
-    #      A    B    C   D
-    # 0  1.0  1.1    a  99
-    # 1  2.0  2.2    b  99
-    # 2  NaN  NaN  NaN  99
-    # 3  NaN  NaN  NaN  99
-    # 4  3.0  3.3    c  99
-    # 5  NaN  NaN  NaN  99
-    # 6  4.0  4.4    d  99
-
-
-Update Rows
-===========
-.. code-block:: python
-
-    import pandas as pd
-    import numpy as np
-
-
-    df = pd.DataFrame({
-        'A': [1, 2, np.nan, np.nan, 3, np.nan, 4],
-        'B': [1.1, 2.2, np.nan, np.nan, 3.3, np.nan, 4.4],
-        'C': ['a', 'b', np.nan, np.nan, 'c', np.nan, 'd'],
-        'D': [np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan],
-    })
-
-    df
-    #      A    B    C    D
-    # 0  1.0  1.1    a  NaN
-    # 1  2.0  2.2    b  NaN
-    # 2  NaN  NaN  NaN  NaN
-    # 3  NaN  NaN  NaN  NaN
-    # 4  3.0  3.3    c  NaN
-    # 5  NaN  NaN  NaN  NaN
-    # 6  4.0  4.4    d  NaN
-
-    df[1:4] = 99
-
-    df
-    #      A     B     C     D
-    # 0  1.0    1.1    a   NaN
-    # 1  99.0  99.0   99  99.0
-    # 2  99.0  99.0   99  99.0
-    # 3  99.0  99.0   99  99.0
-    # 4  3.0    3.3    c   NaN
-    # 5  NaN    NaN  NaN   NaN
-    # 6  4.0    4.4    d   NaN
-
-.. code-block:: python
-
-    df.loc[df['Species'] == 0, 'Species'] = 'Setosa'
-    df.loc[df['Species'] == 1, 'Species'] = 'Versicolor'
-    df.loc[df['Species'] == 2, 'Species'] = 'Virginica'
-
-.. code-block:: python
-
-    df['Species'].replace({
-        0: 'setosa',
-        1: 'versicolor',
-        2: 'virginica'
-    }, inplace=True)
+**************************
+DataFrame Dealing with NaN
+**************************
 
 
 Drop NaN - All
@@ -454,43 +329,6 @@ Fill NaN - Interpolate
     # 6  4.000000  4.400000    d  NaN
 
 
-Transpose
-=========
-.. code-block:: python
-
-    import numpy as np
-    import pandas as pd
-    np.random.seed(0)
-
-    data = np.random.randn(6, 4)
-    columns = ['Morning', 'Noon', 'Evening', 'Midnight']
-    index = pd.date_range('1970-01-01', periods=6)
-    df = pd.DataFrame(data, index, columns)
-
-    df
-    #               Morning       Noon    Evening   Midnight
-    # 1970-01-01   0.486726  -0.291364  -1.105248  -0.333574
-    # 1970-01-02   0.301838  -0.603001   0.069894   0.309209
-    # 1970-01-03  -0.424429   0.845898  -1.460294   0.109749
-    # 1970-01-04   0.909958  -0.986246   0.122176   1.205697
-    # 1970-01-05  -0.172540  -0.974159  -0.848519   1.691875
-    # 1970-01-06   0.047059   0.359687   0.531386  -0.587663
-
-    df.T
-    #          1970-01-01  1970-01-02  1970-01-03  1970-01-04  1970-01-05  1970-01-06
-    # Morning   -0.728881    1.242791   -0.300652    0.973488    0.527855    0.805407
-    # Noon       2.452567    0.595302   -0.272770   -2.083819   -0.911698   -0.931830
-    # Evening    0.911723    0.176457   -0.471503    0.402725   -0.842518   -0.063189
-    # Midnight  -0.849580   -0.560606   -0.852577   -0.331235    1.653468   -0.792088
-
-    df.transpose()
-    #          1970-01-01  1970-01-02  1970-01-03  1970-01-04  1970-01-05  1970-01-06
-    # Morning   -0.728881    1.242791   -0.300652    0.973488    0.527855    0.805407
-    # Noon       2.452567    0.595302   -0.272770   -2.083819   -0.911698   -0.931830
-    # Evening    0.911723    0.176457   -0.471503    0.402725   -0.842518   -0.063189
-    # Midnight  -0.849580   -0.560606   -0.852577   -0.331235    1.653468   -0.792088
-
-
 Assignments
 ===========
 
@@ -522,7 +360,6 @@ Iris Dirty
 #. Zastąp ustaw na ``NaN`` wszystkie wartości wartości w kolumnie 'Petal length' mniejsze od 4
 #. Interpoluj liniowo wszystkie wartości ``NaN``
 #. Usuń wiersze z pozostałymi wartościami ``NaN``
-#. Transponuj ``DataFrame``
 #. Wyświetl pierwsze 2 i ostatni wiersz
 #. Wykreśl podstawowe statystyki opisowe
 

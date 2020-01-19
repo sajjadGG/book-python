@@ -14,9 +14,7 @@ DataFrame Loc
 
     import numpy as np
     import pandas as pd
-
     np.random.seed(0)
-
 
     data = np.random.randn(6, 4)
     columns = ['Morning', 'Noon', 'Evening', 'Midnight']
@@ -88,7 +86,7 @@ Range of rows and single column
 
 Range of rows and single column
 -------------------------------
-.. todo:: naprawić to
+.. warning:: Bug in Pandas for DateTime Index only. Works with String index, etc.
 
 .. code-block:: python
 

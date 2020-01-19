@@ -104,7 +104,7 @@ Pandas
     pandas/df-select.rst
     pandas/df-indexing.rst
     pandas/df-slicing.rst
-    pandas/df-update.rst
+    pandas/df-nan.rst
     pandas/df-sample.rst
     pandas/df-plot.rst
     pandas/df-at.rst
