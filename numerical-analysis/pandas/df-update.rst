@@ -18,25 +18,25 @@ Add column
     })
 
     df
-    #      A    B    C   D
-    # 0  1.0  1.1    a NaN
-    # 1  2.0  2.2    b NaN
-    # 2  NaN  NaN  NaN NaN
-    # 3  NaN  NaN  NaN NaN
-    # 4  3.0  3.3    c NaN
-    # 5  NaN  NaN  NaN NaN
-    # 6  4.0  4.4    d NaN
+    #      A    B    C    D
+    # 0  1.0  1.1    a  NaN
+    # 1  2.0  2.2    b  NaN
+    # 2  NaN  NaN  NaN  NaN
+    # 3  NaN  NaN  NaN  NaN
+    # 4  3.0  3.3    c  NaN
+    # 5  NaN  NaN  NaN  NaN
+    # 6  4.0  4.4    d  NaN
 
-    df = df['A'] = 99
+    df['X'] = 99
     df
-    #      A    B    C  D
-    # 0  99  1.1    a  99
-    # 1  99  2.2    b  99
-    # 2  99  NaN  NaN  99
-    # 3  99  NaN  NaN  99
-    # 4  99  3.3    c  99
-    # 5  99  NaN  NaN  99
-    # 6  99  4.4    d  99
+    #      A    B    C   D   X
+    # 0  1.0  1.1    a NaN  99
+    # 1  2.0  2.2    b NaN  99
+    # 2  NaN  NaN  NaN NaN  99
+    # 3  NaN  NaN  NaN NaN  99
+    # 4  3.0  3.3    c NaN  99
+    # 5  NaN  NaN  NaN NaN  99
+    # 6  4.0  4.4    d NaN  99
 
 
 Update Column
@@ -55,18 +55,18 @@ Update Column
     })
 
     df
-    #      A    B    C   D
-    # 0  1.0  1.1    a NaN
-    # 1  2.0  2.2    b NaN
-    # 2  NaN  NaN  NaN NaN
-    # 3  NaN  NaN  NaN NaN
-    # 4  3.0  3.3    c NaN
-    # 5  NaN  NaN  NaN NaN
-    # 6  4.0  4.4    d NaN
+    #      A    B    C    D
+    # 0  1.0  1.1    a  NaN
+    # 1  2.0  2.2    b  NaN
+    # 2  NaN  NaN  NaN  NaN
+    # 3  NaN  NaN  NaN  NaN
+    # 4  3.0  3.3    c  NaN
+    # 5  NaN  NaN  NaN  NaN
+    # 6  4.0  4.4    d  NaN
 
-    df = df['D'] = 99
+    df['D'] = 99
     df
-    #      A    B    C  D
+    #      A    B    C   D
     # 0  1.0  1.1    a  99
     # 1  2.0  2.2    b  99
     # 2  NaN  NaN  NaN  99
@@ -92,14 +92,14 @@ Update Rows
     })
 
     df
-    #      A    B    C   D
-    # 0  1.0  1.1    a NaN
-    # 1  2.0  2.2    b NaN
-    # 2  NaN  NaN  NaN NaN
-    # 3  NaN  NaN  NaN NaN
-    # 4  3.0  3.3    c NaN
-    # 5  NaN  NaN  NaN NaN
-    # 6  4.0  4.4    d NaN
+    #      A    B    C    D
+    # 0  1.0  1.1    a  NaN
+    # 1  2.0  2.2    b  NaN
+    # 2  NaN  NaN  NaN  NaN
+    # 3  NaN  NaN  NaN  NaN
+    # 4  3.0  3.3    c  NaN
+    # 5  NaN  NaN  NaN  NaN
+    # 6  4.0  4.4    d  NaN
 
     df[1:4] = 99
 
@@ -147,28 +147,28 @@ Drop NaN - All
     })
 
     df
-    #      A    B    C   D
-    # 0  1.0  1.1    a NaN
-    # 1  2.0  2.2    b NaN
-    # 2  NaN  NaN  NaN NaN
-    # 3  NaN  NaN  NaN NaN
-    # 4  3.0  3.3    c NaN
-    # 5  NaN  NaN  NaN NaN
-    # 6  4.0  4.4    d NaN
+    #      A    B    C    D
+    # 0  1.0  1.1    a  NaN
+    # 1  2.0  2.2    b  NaN
+    # 2  NaN  NaN  NaN  NaN
+    # 3  NaN  NaN  NaN  NaN
+    # 4  3.0  3.3    c  NaN
+    # 5  NaN  NaN  NaN  NaN
+    # 6  4.0  4.4    d  NaN
 
     df.dropna(how='all')
-    #      A    B  C   D
-    # 0  1.0  1.1  a NaN
-    # 1  2.0  2.2  b NaN
-    # 4  3.0  3.3  c NaN
-    # 6  4.0  4.4  d NaN
+    #      A    B  C    D
+    # 0  1.0  1.1  a  NaN
+    # 1  2.0  2.2  b  NaN
+    # 4  3.0  3.3  c  NaN
+    # 6  4.0  4.4  d  NaN
 
     df.dropna(how='all', axis=0)
-    #      A    B  C   D
-    # 0  1.0  1.1  a NaN
-    # 1  2.0  2.2  b NaN
-    # 4  3.0  3.3  c NaN
-    # 6  4.0  4.4  d NaN
+    #      A    B  C    D
+    # 0  1.0  1.1  a  NaN
+    # 1  2.0  2.2  b  NaN
+    # 4  3.0  3.3  c  NaN
+    # 6  4.0  4.4  d  NaN
 
     df.dropna(how='all', axis=1)
     #      A    B    C
@@ -181,11 +181,11 @@ Drop NaN - All
     # 6  4.0  4.4    d
 
     df.dropna(how='all', axis='rows')
-    #      A    B  C   D
-    # 0  1.0  1.1  a NaN
-    # 1  2.0  2.2  b NaN
-    # 4  3.0  3.3  c NaN
-    # 6  4.0  4.4  d NaN
+    #      A    B  C    D
+    # 0  1.0  1.1  a  NaN
+    # 1  2.0  2.2  b  NaN
+    # 4  3.0  3.3  c  NaN
+    # 6  4.0  4.4  d  NaN
 
     df.dropna(how='all', axis='columns')
     #      A    B    C
@@ -220,14 +220,14 @@ Drop NaN - Any
     })
 
     df
-    #      A    B    C   D
-    # 0  1.0  1.1    a NaN
-    # 1  2.0  2.2    b NaN
-    # 2  NaN  NaN  NaN NaN
-    # 3  NaN  NaN  NaN NaN
-    # 4  3.0  3.3    c NaN
-    # 5  NaN  NaN  NaN NaN
-    # 6  4.0  4.4    d NaN
+    #      A    B    C    D
+    # 0  1.0  1.1    a  NaN
+    # 1  2.0  2.2    b  NaN
+    # 2  NaN  NaN  NaN  NaN
+    # 3  NaN  NaN  NaN  NaN
+    # 4  3.0  3.3    c  NaN
+    # 5  NaN  NaN  NaN  NaN
+    # 6  4.0  4.4    d  NaN
 
     df.dropna(how='any')
     # Empty DataFrame
@@ -277,14 +277,14 @@ Fill NaN - scalar value
     })
 
     df
-    #      A    B    C   D
-    # 0  1.0  1.1    a NaN
-    # 1  2.0  2.2    b NaN
-    # 2  NaN  NaN  NaN NaN
-    # 3  NaN  NaN  NaN NaN
-    # 4  3.0  3.3    c NaN
-    # 5  NaN  NaN  NaN NaN
-    # 6  4.0  4.4    d NaN
+    #      A    B    C    D
+    # 0  1.0  1.1    a  NaN
+    # 1  2.0  2.2    b  NaN
+    # 2  NaN  NaN  NaN  NaN
+    # 3  NaN  NaN  NaN  NaN
+    # 4  3.0  3.3    c  NaN
+    # 5  NaN  NaN  NaN  NaN
+    # 6  4.0  4.4    d  NaN
 
     df.fillna(0.0)
     #      A    B  C    D
@@ -316,28 +316,28 @@ Fill NaN - dict values
     })
 
     df
-    #      A    B    C   D
-    # 0  1.0  1.1    a NaN
-    # 1  2.0  2.2    b NaN
-    # 2  NaN  NaN  NaN NaN
-    # 3  NaN  NaN  NaN NaN
-    # 4  3.0  3.3    c NaN
-    # 5  NaN  NaN  NaN NaN
-    # 6  4.0  4.4    d NaN
+    #      A    B    C    D
+    # 0  1.0  1.1    a  NaN
+    # 1  2.0  2.2    b  NaN
+    # 2  NaN  NaN  NaN  NaN
+    # 3  NaN  NaN  NaN  NaN
+    # 4  3.0  3.3    c  NaN
+    # 5  NaN  NaN  NaN  NaN
+    # 6  4.0  4.4    d  NaN
 
     df.fillna({
         'A': 99,
         'B': 88,
         'C': 77
     })
-    #       A     B   C   D
-    # 0   1.0   1.1   a NaN
-    # 1   2.0   2.2   b NaN
-    # 2  99.0  88.0  77 NaN
-    # 3  99.0  88.0  77 NaN
-    # 4   3.0   3.3   c NaN
-    # 5  99.0  88.0  77 NaN
-    # 6   4.0   4.4   d NaN
+    #       A     B   C    D
+    # 0   1.0   1.1   a  NaN
+    # 1   2.0   2.2   b  NaN
+    # 2  99.0  88.0  77  NaN
+    # 3  99.0  88.0  77  NaN
+    # 4   3.0   3.3   c  NaN
+    # 5  99.0  88.0  77  NaN
+    # 6   4.0   4.4   d  NaN
 
 
 Fill NaN - Forward Fill
@@ -359,24 +359,24 @@ Fill NaN - Forward Fill
     })
 
     df
-    #      A    B    C   D
-    # 0  1.0  1.1    a NaN
-    # 1  2.0  2.2    b NaN
-    # 2  NaN  NaN  NaN NaN
-    # 3  NaN  NaN  NaN NaN
-    # 4  3.0  3.3    c NaN
-    # 5  NaN  NaN  NaN NaN
-    # 6  4.0  4.4    d NaN
+    #      A    B    C    D
+    # 0  1.0  1.1    a  NaN
+    # 1  2.0  2.2    b  NaN
+    # 2  NaN  NaN  NaN  NaN
+    # 3  NaN  NaN  NaN  NaN
+    # 4  3.0  3.3    c  NaN
+    # 5  NaN  NaN  NaN  NaN
+    # 6  4.0  4.4    d  NaN
 
     df.fillna(method='ffill')
-    #      A    B  C   D
-    # 0  1.0  1.1  a NaN
-    # 1  2.0  2.2  b NaN
-    # 2  2.0  2.2  b NaN
-    # 3  2.0  2.2  b NaN
-    # 4  3.0  3.3  c NaN
-    # 5  3.0  3.3  c NaN
-    # 6  4.0  4.4  d NaN
+    #      A    B  C    D
+    # 0  1.0  1.1  a  NaN
+    # 1  2.0  2.2  b  NaN
+    # 2  2.0  2.2  b  NaN
+    # 3  2.0  2.2  b  NaN
+    # 4  3.0  3.3  c  NaN
+    # 5  3.0  3.3  c  NaN
+    # 6  4.0  4.4  d  NaN
 
 
 Fill NaN - Backward Fill
@@ -398,24 +398,24 @@ Fill NaN - Backward Fill
     })
 
     df
-    #      A    B    C   D
-    # 0  1.0  1.1    a NaN
-    # 1  2.0  2.2    b NaN
-    # 2  NaN  NaN  NaN NaN
-    # 3  NaN  NaN  NaN NaN
-    # 4  3.0  3.3    c NaN
-    # 5  NaN  NaN  NaN NaN
-    # 6  4.0  4.4    d NaN
+    #      A    B    C    D
+    # 0  1.0  1.1    a  NaN
+    # 1  2.0  2.2    b  NaN
+    # 2  NaN  NaN  NaN  NaN
+    # 3  NaN  NaN  NaN  NaN
+    # 4  3.0  3.3    c  NaN
+    # 5  NaN  NaN  NaN  NaN
+    # 6  4.0  4.4    d  NaN
 
     df.fillna(method='bfill')
-    #      A    B  C   D
-    # 0  1.0  1.1  a NaN
-    # 1  2.0  2.2  b NaN
-    # 2  3.0  3.3  c NaN
-    # 3  3.0  3.3  c NaN
-    # 4  3.0  3.3  c NaN
-    # 5  4.0  4.4  d NaN
-    # 6  4.0  4.4  d NaN
+    #      A    B  C    D
+    # 0  1.0  1.1  a  NaN
+    # 1  2.0  2.2  b  NaN
+    # 2  3.0  3.3  c  NaN
+    # 3  3.0  3.3  c  NaN
+    # 4  3.0  3.3  c  NaN
+    # 5  4.0  4.4  d  NaN
+    # 6  4.0  4.4  d  NaN
 
 
 Fill NaN - Interpolate
@@ -434,24 +434,24 @@ Fill NaN - Interpolate
     })
 
     df
-    #      A    B    C   D
-    # 0  1.0  1.1    a NaN
-    # 1  2.0  2.2    b NaN
-    # 2  NaN  NaN  NaN NaN
-    # 3  NaN  NaN  NaN NaN
-    # 4  3.0  3.3    c NaN
-    # 5  NaN  NaN  NaN NaN
-    # 6  4.0  4.4    d NaN
+    #      A    B    C    D
+    # 0  1.0  1.1    a  NaN
+    # 1  2.0  2.2    b  NaN
+    # 2  NaN  NaN  NaN  NaN
+    # 3  NaN  NaN  NaN  NaN
+    # 4  3.0  3.3    c  NaN
+    # 5  NaN  NaN  NaN  NaN
+    # 6  4.0  4.4    d  NaN
 
     df.interpolate()
-    #           A         B    C   D
-    # 0  1.000000  1.100000    a NaN
-    # 1  2.000000  2.200000    b NaN
-    # 2  2.333333  2.566667  NaN NaN
-    # 3  2.666667  2.933333  NaN NaN
-    # 4  3.000000  3.300000    c NaN
-    # 5  3.500000  3.850000  NaN NaN
-    # 6  4.000000  4.400000    d NaN
+    #           A         B    C    D
+    # 0  1.000000  1.100000    a  NaN
+    # 1  2.000000  2.200000    b  NaN
+    # 2  2.333333  2.566667  NaN  NaN
+    # 3  2.666667  2.933333  NaN  NaN
+    # 4  3.000000  3.300000    c  NaN
+    # 5  3.500000  3.850000  NaN  NaN
+    # 6  4.000000  4.400000    d  NaN
 
 
 Transpose
@@ -461,7 +461,6 @@ Transpose
     import numpy as np
     import pandas as pd
     np.random.seed(0)
-
 
     data = np.random.randn(6, 4)
     columns = ['Morning', 'Noon', 'Evening', 'Midnight']
@@ -520,7 +519,10 @@ Iris Dirty
     - 1 -> 'versicolor',
     - 2 -> 'virginica'
 
-#. Ustaw wszystkie wiersze w losowej kolejności i zresetuj index
-#. Wyświetl pierwsze 5 i ostatnie 3 wiersze
+#. Zastąp ustaw na ``NaN`` wszystkie wartości wartości w kolumnie 'Petal length' mniejsze od 4
+#. Interpoluj liniowo wszystkie wartości ``NaN``
+#. Usuń wiersze z pozostałymi wartościami ``NaN``
+#. Transponuj ``DataFrame``
+#. Wyświetl pierwsze 2 i ostatni wiersz
 #. Wykreśl podstawowe statystyki opisowe
 
