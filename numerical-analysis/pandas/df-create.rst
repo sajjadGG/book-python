@@ -119,15 +119,26 @@ Assignments
 
 :Input:
     .. csv-table::
-        :header-rows: 1
+        :header: "Crew", "Role", "Astronaut"
 
-        "Załoga", "Rola", "Imię i Nazwisko"
-        "Główna", "Dowódca załogi", "Neil A. Armstrong"
-        "Główna", "Pilot Modułu Księżycowego", "Edwin E. 'Buzz' Aldrin, Jr."
-        "Główna", "Pilot Modułu Zarządzania", "Michael Collins"
-        "Zapasowa", "Dowódca załogi", "James A. Lovell Jr."
-        "Zapasowa", "Pilot Modułu Księżycowego", "William A. Anders"
-        "Zapasowa", "Pilot Modułu Zarządzania", "Fred W. Haise Jr."
+        "Prime", "CDR", "Neil Armstrong"
+        "Prime", "LMP", "Buzz Aldrin"
+        "Prime", "CMP", "Michael Collins"
+        "Backup", "CDR", "James Lovell"
+        "Backup", "LMP", "William Anders"
+        "Backup", "CMP", "Fred Haise"
 
 :Hint:
     * Use selection with ``alt`` key in your IDE
+    * If it's not working use CSV:
+
+        .. code-block:: csv
+
+            "Crew", "Role", "Astronaut"
+            "Prime", "CDR", "Neil Armstrong"
+            "Prime", "LMP", "Buzz Aldrin"
+            "Prime", "CMP", "Michael Collins"
+            "Backup", "CDR", "James Lovell"
+            "Backup", "LMP", "William Anders"
+            "Backup", "CMP", "Fred Haise"
+

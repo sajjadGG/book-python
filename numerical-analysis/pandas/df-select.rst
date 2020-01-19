@@ -146,16 +146,17 @@ Iris Clean
 * Estimated time of completion: 10 min
 * Filename: :download:`solution/df_select.py`
 
-#. Pobierz zbiór danych Iris Dataset :download:`data/iris.csv`
-#. Korzystając z Pandas i kodowania UTF-8 wczytaj plik
-#. Przekonwertuj dane na ``pd.DataFrame``
-#. Zmień nazwy kolejnych kolumn na:
+:Polish:
+    #. Pobierz zbiór danych Iris Dataset :download:`data/iris.csv`
+    #. Korzystając z Pandas i kodowania UTF-8 wczytaj plik
+    #. Przekonwertuj dane na ``pd.DataFrame``
+    #. Zmień nazwy kolejnych kolumn na:
 
-    * Sepal length
-    * Sepal width
-    * Petal length
-    * Petal width
-    * Species
+        * Sepal length
+        * Sepal width
+        * Petal length
+        * Petal width
+        * Species
 
-#. Przefiltruj ``inplace`` kolumnę 'Petal length' i pozostaw wartości powyżej 2.0
-#. Wyświetl 5 pierwszych wierszy
+    #. Przefiltruj ``inplace`` kolumnę 'Petal length' i pozostaw wartości powyżej 2.0
+    #. Wyświetl 5 pierwszych wierszy

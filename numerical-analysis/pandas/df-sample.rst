@@ -59,4 +59,16 @@ Sample ``n`` percent of elements
 
 Assignments
 ===========
-.. todo:: Create assignments
+
+Iris Clean
+----------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 10 min
+* Filename: :download:`solution/df_select.py`
+
+:Polish:
+    #. Pobierz zbiór danych Iris Dataset :download:`data/iris.csv`
+    #. Korzystając z Pandas do ``pd.DataFrame``
+    #. Ustaw wszystkie wiersze w losowej kolejności
+    #. Zresetuj index nie pozostawiając kopii zapasowej starego
