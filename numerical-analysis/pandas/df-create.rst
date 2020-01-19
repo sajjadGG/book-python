@@ -106,34 +106,28 @@ With multiple rows
 
 Assignments
 ===========
+* Complexity level: easy
+* Lines of code to write: 10 lines
+* Estimated time of completion: 10 min
+* Filename: :download:`solution/df_create.py`
 
-Cars
-----
-* Complexity level: medium
-* Lines of code to write: 15 lines
-* Estimated time of completion: 45 min
-* Filename: :download:`solution/pandas_df_cars.py`
+:English:
+    #. Create ``DataFrame`` for input data
 
-#. Stwórz ``DataFrame`` samochody z:
+:Polish:
+    #. Stwórz ``DataFrame`` dla danych wejściowych
 
-    - losową kolumną liczb całkowitych przebieg z przedziału [0, 200 000]
-    - losową kolumną spalanie z przedziału [2, 20]
+:Input:
+    .. csv-table::
+        :header-rows: 1
 
-#. Dodaj kolumnę marka:
+        "Załoga", "Rola", "Imię i Nazwisko"
+        "Główna", "Dowódca załogi", "Neil A. Armstrong"
+        "Główna", "Pilot Modułu Księżycowego", "Edwin E. 'Buzz' Aldrin, Jr."
+        "Główna", "Pilot Modułu Zarządzania", "Michael Collins"
+        "Zapasowa", "Dowódca załogi", "James A. Lovell Jr."
+        "Zapasowa", "Pilot Modułu Księżycowego", "William A. Anders"
+        "Zapasowa", "Pilot Modułu Zarządzania", "Fred W. Haise Jr."
 
-    - jeżeli samochód ma spalanie [0, 5] marka to VW
-    - jeżeli samochód ma spalanie [6, 10] marka to Ford
-    - jeżeli samochód ma spalanie 11 i więcej, marka to UAZ
-
-#. Dodaj kolumnę pochodzenie:
-
-    - jeżeli przebieg poniżej 100 km, pochodzenie nowy
-    - jeżeli przebieg powyżej 100 km, pochodzenie uzywany
-    - jeżeli przebieg powyżej 100 000 km, pochodzenie z niemiec
-
-#. Przeanalizuj dane statystycznie
-
-    - sprawdź liczność grup
-    - wykonaj analizę statystyczną
-
-#. Pogrupuj dane po marce i po pochodzenie
+:Hint:
+    * Use selection with ``alt`` key in your IDE

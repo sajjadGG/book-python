@@ -92,4 +92,39 @@ Example
 
 Assignments
 ===========
-.. todo:: Create assignments
+
+Astronauts
+----------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 10 min
+* Filename: :download:`solution/df_groupby_astronauts.py`
+
+:English:
+    #. Download astronauts dataset :download:`data/astronauts.csv`
+    #. Create ranking of the most experienced astronauts (number of flights)
+
+:Polish:
+    #. Pobierz zbiór danych astronautów :download:`data/astronauts.csv`
+    #. Stwórz ranking najbardziej doświadczonych astronautów (liczba lotów)
+
+EVA
+---
+* Complexity level: hard
+* Lines of code to write: 30 lines
+* Estimated time of completion: 40 min
+* Filename: :download:`solution/df_groupby_eva.py`
+
+:English:
+    #. Download spacewalk (EVA) dataset :download:`data/eva.csv`
+    #. Create ranking of astronauts with the most time spent on EVA
+
+:Polish:
+    #. Pobierz zbiór danych spacerów kosmicznych (EVA) :download:`data/eva.csv`
+    #. Stwórz ranking astronautów z największym czasem EVA
+
+:Hint:
+    * Parse CSV and replace newlines inside fields with ``","``
+    * Split names into separate columns for each spacewalker (first, second, third)
+    * Split names into separate rows for each spacewalker (use ffill)
+    * Split times into separate columns (hours, minutes)
