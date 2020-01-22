@@ -132,7 +132,7 @@ Assignments
     * Use selection with ``alt`` key in your IDE
     * If it's not working use CSV:
 
-        .. code-block:: csv
+        .. code-block:: text
 
             "Crew", "Role", "Astronaut"
             "Prime", "CDR", "Neil Armstrong"

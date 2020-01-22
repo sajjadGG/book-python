@@ -36,7 +36,6 @@ df.describe()
 # ======= =============== ==========
 
 
-
 df.loc[df.fuel_usage < 5, 'brand'] = 'VW'
 # == ======== ========== =====
 #    distance fuel usage brand

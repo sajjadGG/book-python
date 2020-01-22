@@ -71,7 +71,7 @@ OOP Protocols
     /advanced/protocols/staticmethod.rst
     /advanced/protocols/classmethod.rst
     /advanced/protocols/property.rst
-    /advanced/protocols/setattr-getattr.rst
+    /advanced/protocols/reflection.rst
     /advanced/protocols/descriptor.rst
 
 ***************************

@@ -103,13 +103,13 @@ Pandas
     pandas/df-attributes.rst
     pandas/df-select.rst
     pandas/df-indexing.rst
+    pandas/df-at.rst
     pandas/df-slicing.rst
+    pandas/df-loc.rst
+    pandas/df-alter.rst
     pandas/df-nan.rst
     pandas/df-sample.rst
     pandas/df-plot.rst
-    pandas/df-at.rst
-    pandas/df-loc.rst
-    pandas/df-alter.rst
     pandas/df-sort.rst
     pandas/df-statistics.rst
     pandas/df-groupby.rst
