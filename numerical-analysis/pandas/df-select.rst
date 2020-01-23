@@ -2,8 +2,7 @@
 DataFrame Select
 ****************
 
-Select Records
-==============
+
 .. code-block:: python
 
     import numpy as np
@@ -26,6 +25,10 @@ Select Records
     # 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
     # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
 
+
+Select Records
+==============
+
 First records
 -------------
 .. code-block:: python
@@ -38,6 +41,8 @@ First records
     df.head(n=1)
     #              Morning      Noon   Evening  Midnight
     # 1999-12-30  1.764052  0.400157  0.978738  2.240893
+
+.. code-block:: python
 
     df.first('Y')
     #              Morning      Noon   Evening  Midnight
@@ -73,6 +78,8 @@ Last records
     #              Morning      Noon   Evening  Midnight
     # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
 
+.. code-block:: python
+
     df.last('Y')
     #              Morning      Noon   Evening  Midnight
     # 2000-01-01 -0.103219  0.410599  0.144044  1.454274
@@ -100,31 +107,11 @@ Last records
     # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
 
 
-By Value
-========
+Query Records
+=============
 * ``df.where()`` Works with ``inplace=True``
-
-.. code-block:: python
-
-    import numpy as np
-    import pandas as pd
-
-    np.random.seed(0)
-
-    df = pd.DataFrame(
-        columns=['Morning', 'Noon', 'Evening', 'Midnight'],
-        index=pd.date_range('1999-12-30', periods=7),
-        data=np.random.randn(7, 4))
-
-    df
-    #              Morning      Noon   Evening  Midnight
-    # 1999-12-30  1.764052  0.400157  0.978738  2.240893
-    # 1999-12-31  1.867558 -0.977278  0.950088 -0.151357
-    # 2000-01-01 -0.103219  0.410599  0.144044  1.454274
-    # 2000-01-02  0.761038  0.121675  0.443863  0.333674
-    # 2000-01-03  1.494079 -0.205158  0.313068 -0.854096
-    # 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
-    # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
+* Use ``df.dropna()`` to remove ``NaN``
+* Use ``df.fillna()`` to substitute value for ``NaN``
 
 Simple select
 -------------
@@ -213,11 +200,6 @@ Logical AND
     #             Morning      Noon   Evening  Midnight
     # 2000-01-04 -2.55299  0.653619  0.864436 -0.742165
 
-.. code-block:: python
-
-    query1 = df['Morning'] < 0.0
-    query2 = df['Midnight'] < 0.0
-
     df.where(query1 & query2)
     #             Morning      Noon   Evening  Midnight
     # 1999-12-30      NaN       NaN       NaN       NaN
@@ -244,11 +226,6 @@ Logical OR
     # 2000-01-03  1.494079 -0.205158  0.313068 -0.854096
     # 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
     # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
-
-.. code-block:: python
-
-    query1 = df['Morning'] < 0.0
-    query2 = df['Midnight'] < 0.0
 
     df.where(query1 | query2)
     #              Morning      Noon   Evening  Midnight

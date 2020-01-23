@@ -3,46 +3,59 @@ DataFrame Create
 ****************
 
 
-Create DataFrame
-================
+Indexes
+=======
+
+Range Index
+-----------
 .. code-block:: python
 
     import pandas as pd
 
+    pd.DataFrame({
+        'A': [10, 11, 12],
+        'B': [20, 21, 22],
+        'C': [30, 31, 32]})
+    #     A   B   C
+    # 0  10  20  30
+    # 1  11  21  31
+    # 2  12  22  32
 
-    df = pd.DataFrame({'A': ['a', 'b', 'c', 'd'],
-                       'B': [0, 1, 2, 3],
-                       'C': [0., 1., 2., 3.]})
-    #    A  B    C
-    # 0  a  0  0.0
-    # 1  b  1  1.0
-    # 2  c  2  2.0
-    # 3  d  3  3.0
-
-
-Indexes
-=======
-
-Integer index
+Integer Index
 -------------
 .. code-block:: python
 
     import numpy as np
     import pandas as pd
 
-    np.random.seed(0)
+    data = np.arange(16).reshape(4,4)
+    index = [99, 88, 77, 66]
+    columns = ['A', 'B', 'C', 'D']
 
+    pd.DataFrame(data, index, columns)
+    #      A   B   C   D
+    # 99   0   1   2   3
+    # 88   4   5   6   7
+    # 77   8   9  10  11
+    # 66  12  13  14  15
 
-    data = np.arange(16).reshape(4, 4)
-    index = range(0, 4)
-    columns = range(0, 4)
+String Index
+------------
+.. code-block:: python
 
-    df = pd.DataFrame(data, index, columns)
-    #     0   1   2   3
-    # 0   0   1   2   3
-    # 1   4   5   6   7
-    # 2   8   9  10  11
-    # 3  12  13  14  15
+    import numpy as np
+    import pandas as pd
+
+    data = np.arange(16).reshape(4,4)
+    index = ['a', 'b', 'c', 'd']
+    columns = ['A', 'B', 'C', 'D']
+
+    pd.DataFrame(data, index, columns)
+    #     A   B   C   D
+    # a   0   1   2   3
+    # b   4   5   6   7
+    # c   8   9  10  11
+    # d  12  13  14  15
 
 Date indexes
 ------------
@@ -53,19 +66,19 @@ Date indexes
 
     np.random.seed(0)
 
-
-    data = np.random.randn(6, 4)
     columns = ['Morning', 'Noon', 'Evening', 'Midnight']
-    index = pd.date_range('1970-01-01', periods=6)
+    index = pd.date_range('1999-12-30', periods=7)
+    data = np.random.randn(7, 4)
 
-    df = pd.DataFrame(data, index, columns)
-    #                 Morning        Noon    Evening   Midnight
-    # 1970-01-01     2.269755   -1.454366   0.045759  -0.187184
-    # 1970-01-02     1.532779    1.469359   0.154947   0.378163
-    # 1970-01-03    -0.887786   -1.980796  -0.347912   0.156349
-    # 1970-01-04     1.230291    1.202380  -0.387327  -0.302303
-    # 1970-01-05    -1.048553   -1.420018  -1.706270   1.950775
-    # 1970-01-06    -0.509652   -0.438074  -1.252795   0.777490
+    pd.DataFrame(data, index, columns)
+    #              Morning      Noon   Evening  Midnight
+    # 1999-12-30  1.764052  0.400157  0.978738  2.240893
+    # 1999-12-31  1.867558 -0.977278  0.950088 -0.151357
+    # 2000-01-01 -0.103219  0.410599  0.144044  1.454274
+    # 2000-01-02  0.761038  0.121675  0.443863  0.333674
+    # 2000-01-03  1.494079 -0.205158  0.313068 -0.854096
+    # 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
+    # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
 
 
 Values
@@ -77,8 +90,6 @@ Custom values in columns
 
     import numpy as np
     import pandas as pd
-
-    np.random.seed(0)
 
     pd.DataFrame({'A' : 1.,
                   'B' : pd.Timestamp('1961-04-12'),
@@ -98,10 +109,13 @@ With multiple rows
 
     import pandas as pd
 
-    pd.DataFrame([{'A': 1, 'B': 2}, {'C': 3}])
+    pd.DataFrame([
+        {'A': 1.0, 'B': 2.0},
+        {'B': 3.0, 'C': 4.0},
+    ])
     #      A    B    C
     # 0  1.0  2.0  NaN
-    # 1  NaN  NaN  3.0
+    # 1  NaN  3.0  4.0
 
 
 Assignments

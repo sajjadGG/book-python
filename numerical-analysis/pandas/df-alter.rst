@@ -11,166 +11,59 @@ Add Column
 .. code-block:: python
 
     import pandas as pd
-    import numpy as np
-
 
     df = pd.DataFrame({
-        'A': [1, 2, np.nan, np.nan, 3, np.nan, 4],
-        'B': [1.1, 2.2, np.nan, np.nan, 3.3, np.nan, 4.4],
-        'C': ['a', 'b', np.nan, np.nan, 'c', np.nan, 'd'],
-        'D': [np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan],
-    })
+        'A': [10, 11, 12],
+        'B': [20, 21, 22],
+        'C': [30, 31, 32]})
 
     df
-    #      A    B    C   D
-    # 0  1.0  1.1    a NaN
-    # 1  2.0  2.2    b NaN
-    # 2  NaN  NaN  NaN NaN
-    # 3  NaN  NaN  NaN NaN
-    # 4  3.0  3.3    c NaN
-    # 5  NaN  NaN  NaN NaN
-    # 6  4.0  4.4    d NaN
+    #     A   B   C
+    # 0  10  20  30
+    # 1  11  21  31
+    # 2  12  22  32
 
-    df['Z'] = np.arange(7.0)
-    #      A    B    C   D    Z
-    # 0  1.0  1.1    a NaN  0.0
-    # 1  2.0  2.2    b NaN  1.0
-    # 2  NaN  NaN  NaN NaN  2.0
-    # 3  NaN  NaN  NaN NaN  3.0
-    # 4  3.0  3.3    c NaN  4.0
-    # 5  NaN  NaN  NaN NaN  5.0
-    # 6  4.0  4.4    d NaN  6.0
+    df['Z'] = np.arange(3.0)
+    #     A   B   C    Z
+    # 0  10  20  30  0.0
+    # 1  11  21  31  1.0
+    # 2  12  22  32  2.0
 
-    df['X'] = ['a', 'b', 'c']
+    df['X'] = ['a', 'b']
     # ValueError: Length of values does not match length of index
 
-    df['X'] = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
-    #      A    B    C   D    Z  X
-    # 0  1.0  1.1    a NaN  0.0  a
-    # 1  2.0  2.2    b NaN  1.0  b
-    # 2  NaN  NaN  NaN NaN  2.0  c
-    # 3  NaN  NaN  NaN NaN  3.0  d
-    # 4  3.0  3.3    c NaN  4.0  e
-    # 5  NaN  NaN  NaN NaN  5.0  f
-    # 6  4.0  4.4    d NaN  6.0  g
+    df['X'] = ['a', 'b', 'c']
+    #     A   B   C    Z  X
+    # 0  10  20  30  0.0  a
+    # 1  11  21  31  1.0  b
+    # 2  12  22  32  2.0  c
 
 Add Row
 -------
 .. code-block:: python
 
     import pandas as pd
-    import numpy as np
-
 
     df = pd.DataFrame({
-        'A': [1, 2, np.nan, np.nan, 3, np.nan, 4],
-        'B': [1.1, 2.2, np.nan, np.nan, 3.3, np.nan, 4.4],
-        'C': ['a', 'b', np.nan, np.nan, 'c', np.nan, 'd'],
-        'D': [np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan],
-    })
+        'A': [10, 11, 12],
+        'B': [20, 21, 22],
+        'C': [30, 31, 32]})
 
     df
-    #      A    B    C   D
-    # 0  1.0  1.1    a NaN
-    # 1  2.0  2.2    b NaN
-    # 2  NaN  NaN  NaN NaN
-    # 3  NaN  NaN  NaN NaN
-    # 4  3.0  3.3    c NaN
-    # 5  NaN  NaN  NaN NaN
-    # 6  4.0  4.4    d NaN
+    #     A   B   C
+    # 0  10  20  30
+    # 1  11  21  31
+    # 2  12  22  32
 
-    df.append({'A':1, 'B':2, 'C':3, 'D':4})
+    df.append({'A': 77, 'B': 88, 'C': 99})
     # TypeError: Can only append a Series if ignore_index=True or if the Series has a name
 
-    df.append({'A':1, 'B':2, 'C':3, 'D':4}, ignore_index=True)
-    #      A    B    C    D
-    # 0  1.0  1.1    a  NaN
-    # 1  2.0  2.2    b  NaN
-    # 2  NaN  NaN  NaN  NaN
-    # 3  NaN  NaN  NaN  NaN
-    # 4  3.0  3.3    c  NaN
-    # 5  NaN  NaN  NaN  NaN
-    # 6  4.0  4.4    d  NaN
-    # 7  1.0  2.0    3  4.0
-
-Drop
-====
-
-Drop Columns
-------------
-.. code-block:: python
-
-    import pandas as pd
-    import numpy as np
-
-
-    df = pd.DataFrame({
-        'A': [1, 2, np.nan, np.nan, 3, np.nan, 4],
-        'B': [1.1, 2.2, np.nan, np.nan, 3.3, np.nan, 4.4],
-        'C': ['a', 'b', np.nan, np.nan, 'c', np.nan, 'd'],
-        'D': [np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan],
-    })
-
-    df
-    #      A    B    C   D
-    # 0  1.0  1.1    a NaN
-    # 1  2.0  2.2    b NaN
-    # 2  NaN  NaN  NaN NaN
-    # 3  NaN  NaN  NaN NaN
-    # 4  3.0  3.3    c NaN
-    # 5  NaN  NaN  NaN NaN
-    # 6  4.0  4.4    d NaN
-
-    df.drop(columns=['A', 'B'])
-    #      C    D
-    # 0    a  NaN
-    # 1    0  0.0
-    # 2    0  0.0
-    # 3    0  0.0
-    # 4    c  NaN
-    # 5  NaN  NaN
-    # 6    d  NaN
-
-Drop Row
---------
-.. code-block:: python
-
-    import pandas as pd
-    import numpy as np
-
-
-    df = pd.DataFrame({
-        'A': [1, 2, np.nan, np.nan, 3, np.nan, 4],
-        'B': [1.1, 2.2, np.nan, np.nan, 3.3, np.nan, 4.4],
-        'C': ['a', 'b', np.nan, np.nan, 'c', np.nan, 'd'],
-        'D': [np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan],
-    })
-
-    df
-    #      A    B    C   D
-    # 0  1.0  1.1    a NaN
-    # 1  2.0  2.2    b NaN
-    # 2  NaN  NaN  NaN NaN
-    # 3  NaN  NaN  NaN NaN
-    # 4  3.0  3.3    c NaN
-    # 5  NaN  NaN  NaN NaN
-    # 6  4.0  4.4    d NaN
-
-    df.drop(1)
-    #      A    B    C    D
-    # 0  1.0  1.1    a  NaN
-    # 2  0.0  0.0    0  0.0
-    # 3  0.0  0.0    0  0.0
-    # 4  3.0  3.3    c  NaN
-    # 5  NaN  NaN  NaN  NaN
-    # 6  4.0  4.4    d  NaN
-
-    df.drop([1,2,3])
-    #      A    B    C   D
-    # 0  1.0  1.1    a NaN
-    # 4  3.0  3.3    c NaN
-    # 5  NaN  NaN  NaN NaN
-    # 6  4.0  4.4    d NaN
+    df.append({'A': 77, 'B': 88, 'C': 99}, ignore_index=True)
+    #     A   B   C
+    # 0  10  20  30
+    # 1  11  21  31
+    # 2  12  22  32
+    # 3  77  88  99
 
 
 Update
@@ -181,73 +74,56 @@ Update Column
 .. code-block:: python
 
     import pandas as pd
-    import numpy as np
 
 
     df = pd.DataFrame({
-        'A': [1, 2, np.nan, np.nan, 3, np.nan, 4],
-        'B': [1.1, 2.2, np.nan, np.nan, 3.3, np.nan, 4.4],
-        'C': ['a', 'b', np.nan, np.nan, 'c', np.nan, 'd'],
-        'D': [np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan],
-    })
+        'A': [10, 11, 12],
+        'B': [20, 21, 22],
+        'C': [30, 31, 32]})
 
     df
-    #      A    B    C    D
-    # 0  1.0  1.1    a  NaN
-    # 1  2.0  2.2    b  NaN
-    # 2  NaN  NaN  NaN  NaN
-    # 3  NaN  NaN  NaN  NaN
-    # 4  3.0  3.3    c  NaN
-    # 5  NaN  NaN  NaN  NaN
-    # 6  4.0  4.4    d  NaN
+    #     A   B   C
+    # 0  10  20  30
+    # 1  11  21  31
+    # 2  12  22  32
 
-    df['D'] = 99
+    df['C'] = 0
     df
-    #      A    B    C   D
-    # 0  1.0  1.1    a  99
-    # 1  2.0  2.2    b  99
-    # 2  NaN  NaN  NaN  99
-    # 3  NaN  NaN  NaN  99
-    # 4  3.0  3.3    c  99
-    # 5  NaN  NaN  NaN  99
-    # 6  4.0  4.4    d  99
+    #     A   B  C
+    # 0  10  20  0
+    # 1  11  21  0
+    # 2  12  22  0
 
-Update Rows
------------
+Update Row
+----------
 .. code-block:: python
 
     import pandas as pd
-    import numpy as np
-
 
     df = pd.DataFrame({
-        'A': [1, 2, np.nan, np.nan, 3, np.nan, 4],
-        'B': [1.1, 2.2, np.nan, np.nan, 3.3, np.nan, 4.4],
-        'C': ['a', 'b', np.nan, np.nan, 'c', np.nan, 'd'],
-        'D': [np.nan, np.nan, np.nan, np.nan, np.nan, np.nan, np.nan],
-    })
+        'A': [10, 11, 12],
+        'B': [20, 21, 22],
+        'C': [30, 31, 32]})
 
     df
-    #      A    B    C    D
-    # 0  1.0  1.1    a  NaN
-    # 1  2.0  2.2    b  NaN
-    # 2  NaN  NaN  NaN  NaN
-    # 3  NaN  NaN  NaN  NaN
-    # 4  3.0  3.3    c  NaN
-    # 5  NaN  NaN  NaN  NaN
-    # 6  4.0  4.4    d  NaN
+    #     A   B   C
+    # 0  10  20  30
+    # 1  11  21  31
+    # 2  12  22  32
 
-    df[1:4] = 99
-
+    df[1:2] = 0
     df
-    #      A     B     C     D
-    # 0  1.0    1.1    a   NaN
-    # 1  99.0  99.0   99  99.0
-    # 2  99.0  99.0   99  99.0
-    # 3  99.0  99.0   99  99.0
-    # 4  3.0    3.3    c   NaN
-    # 5  NaN    NaN  NaN   NaN
-    # 6  4.0    4.4    d   NaN
+    #     A   B   C
+    # 0  10  20  30
+    # 1   0   0   0
+    # 2  12  22  32
+
+    df[::2] = 99
+    df
+    #     A   B   C
+    # 0  99  99  99
+    # 1   0   0   0
+    # 2  99  99  99
 
 .. code-block:: python
 
@@ -264,41 +140,141 @@ Update Rows
     }, inplace=True)
 
 
+Drop
+====
+
+Drop Column
+-----------
+* Works with ``inplace=True``
+
+.. code-block:: python
+
+    import pandas as pd
+
+    df = pd.DataFrame({
+        'A': [10, 11, 12],
+        'B': [20, 21, 22],
+        'C': [30, 31, 32]})
+
+    df
+    #     A   B   C
+    # 0  10  20  30
+    # 1  11  21  31
+    # 2  12  22  32
+
+    df.drop('A', axis='columns')
+    #     B   C
+    # 0  20  30
+    # 1  21  31
+    # 2  22  32
+
+    df.drop(columns='A')
+    #     B   C
+    # 0  20  30
+    # 1  21  31
+    # 2  22  32
+
+    df.drop(columns=['A', 'B'])
+    #     C
+    # 0  30
+    # 1  31
+    # 2  32
+
+Drop Row
+--------
+* Works with ``inplace=True``
+
+.. code-block:: python
+
+    import pandas as pd
+
+    df = pd.DataFrame({
+        'A': [10, 11, 12],
+        'B': [20, 21, 22],
+        'C': [30, 31, 32]})
+
+    df
+    #     A   B   C
+    # 0  10  20  30
+    # 1  11  21  31
+    # 2  12  22  32
+
+    df.drop(1)
+    #     A   B   C
+    # 0  10  20  30
+    # 2  12  22  32
+
+    df.drop([0,2])
+    #     A   B   C
+    # 1  11  21  31
+
+    rows = df1[:2].index
+    df.drop(rows)
+    #     A   B   C
+    # 2  12  22  32
+
+.. code-block:: python
+    :caption: Drop from Timeseries
+
+    import numpy as np
+    import pandas as pd
+
+    np.random.seed(0)
+
+    df = pd.DataFrame(
+        columns=['Morning', 'Noon', 'Evening', 'Midnight'],
+        index=pd.date_range('1999-12-30', periods=7),
+        data=np.random.randn(7, 4))
+
+    df
+    #              Morning      Noon   Evening  Midnight
+    # 1999-12-30  1.764052  0.400157  0.978738  2.240893
+    # 1999-12-31  1.867558 -0.977278  0.950088 -0.151357
+    # 2000-01-01 -0.103219  0.410599  0.144044  1.454274
+    # 2000-01-02  0.761038  0.121675  0.443863  0.333674
+    # 2000-01-03  1.494079 -0.205158  0.313068 -0.854096
+    # 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
+    # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
+
+    df.drop(pd.Timestamp('1999-12-30'))
+    #              Morning      Noon   Evening  Midnight
+    # 1999-12-30  1.764052  0.400157  0.978738  2.240893
+    # 1999-12-31  1.867558 -0.977278  0.950088 -0.151357
+    # 2000-01-01 -0.103219  0.410599  0.144044  1.454274
+    # 2000-01-02  0.761038  0.121675  0.443863  0.333674
+    # 2000-01-03  1.494079 -0.205158  0.313068 -0.854096
+    # 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
+    # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
+
+
 Transpose
 =========
 .. code-block:: python
 
-    import numpy as np
     import pandas as pd
-    np.random.seed(0)
 
-    data = np.random.randn(6, 4)
-    columns = ['Morning', 'Noon', 'Evening', 'Midnight']
-    index = pd.date_range('1970-01-01', periods=6)
-    df = pd.DataFrame(data, index, columns)
+    df = pd.DataFrame({
+        'A': [10, 11, 12],
+        'B': [20, 21, 22],
+        'C': [30, 31, 32]})
 
     df
-    #               Morning       Noon    Evening   Midnight
-    # 1970-01-01   0.486726  -0.291364  -1.105248  -0.333574
-    # 1970-01-02   0.301838  -0.603001   0.069894   0.309209
-    # 1970-01-03  -0.424429   0.845898  -1.460294   0.109749
-    # 1970-01-04   0.909958  -0.986246   0.122176   1.205697
-    # 1970-01-05  -0.172540  -0.974159  -0.848519   1.691875
-    # 1970-01-06   0.047059   0.359687   0.531386  -0.587663
-
-    df.T
-    #          1970-01-01  1970-01-02  1970-01-03  1970-01-04  1970-01-05  1970-01-06
-    # Morning   -0.728881    1.242791   -0.300652    0.973488    0.527855    0.805407
-    # Noon       2.452567    0.595302   -0.272770   -2.083819   -0.911698   -0.931830
-    # Evening    0.911723    0.176457   -0.471503    0.402725   -0.842518   -0.063189
-    # Midnight  -0.849580   -0.560606   -0.852577   -0.331235    1.653468   -0.792088
+    #     A   B   C
+    # 0  10  20  30
+    # 1  11  21  31
+    # 2  12  22  32
 
     df.transpose()
-    #          1970-01-01  1970-01-02  1970-01-03  1970-01-04  1970-01-05  1970-01-06
-    # Morning   -0.728881    1.242791   -0.300652    0.973488    0.527855    0.805407
-    # Noon       2.452567    0.595302   -0.272770   -2.083819   -0.911698   -0.931830
-    # Evening    0.911723    0.176457   -0.471503    0.402725   -0.842518   -0.063189
-    # Midnight  -0.849580   -0.560606   -0.852577   -0.331235    1.653468   -0.792088
+    #     0   1   2
+    # A  10  11  12
+    # B  20  21  22
+    # C  30  31  32
+
+    df.T
+    #     0   1   2
+    # A  10  11  12
+    # B  20  21  22
+    # C  30  31  32
 
 
 Assignments
