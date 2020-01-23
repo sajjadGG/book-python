@@ -1,9 +1,9 @@
 import pandas as pd
 
 
-URL = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/iris.csv'
+DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/iris.csv'
 
-df = pd.read_csv(URL, encoding='utf-8')
+df = pd.read_csv(DATA, encoding='utf-8')
 
 df.columns = [
     'Sepal length',

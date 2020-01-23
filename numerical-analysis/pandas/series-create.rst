@@ -140,6 +140,7 @@ dates
 -----
 * From ``pd.Timestamp``
 * From ``pd.date_range()``
+* Read more in :ref:`Date and Time Types`
 
 .. code-block:: python
 

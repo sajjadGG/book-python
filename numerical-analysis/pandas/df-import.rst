@@ -1,6 +1,6 @@
-**********************
-Import and Export Data
-**********************
+****************
+DataFrame Import
+****************
 
 
 Import data
@@ -37,55 +37,16 @@ Import data
     pd.read_table()
 
 
-Export data
-===========
-* File paths works also with URLs
-* SQL functions uses SQLAlchemy, which supports many RDBMS
-
+Examples
+========
 .. code-block:: python
 
     import pandas as pd
 
 
-    df = pd.DataFrame()
+    DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/iris.csv'
 
-    # Important
-    df.to_csv()
-    df.to_dict()
-    df.to_excel()
-    df.to_json()
-    df.to_sql()
-
-    # Other
-    df.to_clipboard()
-    df.to_dense()
-    df.to_feather()
-    df.to_gbq()
-    df.to_hdf()
-    df.to_html()
-    df.to_latex()
-    df.to_msgpack()
-    df.to_numpy()
-    df.to_parquet()
-    df.to_period()
-    df.to_pickle()
-    df.to_records()
-    df.to_sparse()
-    df.to_stata()
-    df.to_string()
-    df.to_timestamp()
-    df.to_xarray()
-
-
-Usage
-=====
-.. code-block:: python
-
-    import pandas as pd
-
-    url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/iris.csv'
-
-    df = pd.read_csv(url)
+    df = pd.read_csv(DATA)
 
     df.head(3)
     #    sepal_length  sepal_width  petal_length  petal_width     species
@@ -97,9 +58,11 @@ Usage
 
     import pandas as pd
 
-    url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/iris-dirty.csv'
 
-    df = pd.read_csv(url)
+    DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/iris-dirty.csv'
+
+    df = pd.read_csv(DATA)
+
     df.head(3)
     #      150    4  setosa  versicolor  virginica
     # 0    5.4  3.9     1.3         0.4          0
@@ -153,7 +116,7 @@ Read
 :Input:
     .. code-block:: python
 
-        url = 'https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/breast_cancer.csv'
+        DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/breast-cancer.csv'
 
         column_names = ['mean radius', 'mean texture', 'mean perimeter', 'mean area',
                         'mean smoothness', 'mean compactness', 'mean concavity',

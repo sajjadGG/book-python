@@ -16,42 +16,25 @@ Pandas is a Python package providing fast, flexible, and expressive data structu
     - Robust IO tools for loading data from flat files (CSV and delimited), Excel files, databases, and saving/loading data from the ultrafast HDF5 format
     - Time series-specific functionality: date range generation and frequency conversion, moving window statistics, moving window linear regressions, date shifting and lagging, etc.
 
-    * http://pandas.pydata.org/
 
+Install
+=======
+.. code-block:: console
+
+    $ pip install pandas
+
+
+Import
+======
+.. code-block:: python
+
+    import pandas as pd
+
+
+Read More
+=========
 * http://pandas.pydata.org/
 * http://pandas.pydata.org/pandas-docs/stable/10min.html
 * http://pandas.pydata.org/pandas-docs/stable/index.html
 * https://github.com/pandas-dev/pandas/blob/master/doc/cheatsheet/Pandas_Cheat_Sheet.pdf
 
-.. code-block:: console
-
-    $ pip install pandas
-
-.. code-block:: python
-
-    import pandas as pd
-    import numpy as np
-
-Data Frame:
-
-    * 2-dimensional object
-    * Each column ``Series`` and have name
-    * All columns has common indexes
-    * Operations can be executed on columns or rows
-
-.. csv-table:: Pandas most commonly used functions
-    :header-rows: 1
-
-    "Method", "Description"
-    "``DataFrame.at()``", "Access a single value for a row/column label pair"
-    "``DataFrame.iat()``", "Access a single value for a row/column pair by integer position"
-    "``DataFrame.loc()``", "Access a group of rows and columns by label(s)"
-    "``DataFrame.iloc()``", "Access a group of rows and columns by integer position(s)"
-
-
-References
-==========
-.. bibliography:: _references/bibliography.bib
-    :style: plain
-    :labelprefix: PD
-    :all:

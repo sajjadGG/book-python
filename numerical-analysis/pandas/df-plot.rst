@@ -174,9 +174,10 @@ Prepare Data
 
     import pandas as pd
 
-    url = 'https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv'
 
-    df = pd.read_csv(url)
+    DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/iris.csv'
+
+    df = pd.read_csv(DATA)
     df.columns = [
         'Sepal length',
         'Sepal width',
@@ -329,9 +330,9 @@ Hist
     import pandas as pd
 
 
-    INPUT = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris.csv'
+    DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/iris.csv'
 
-    df = pd.read_csv(INPUT)
+    df = pd.read_csv(DATA)
     df.hist()
     plt.show()
 
@@ -349,10 +350,9 @@ Density
     import pandas as pd
 
 
-    INPUT = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris.csv'
+    DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/iris.csv'
 
-
-    df = pd.read_csv(INPUT)
+    df = pd.read_csv(DATA)
     df.plot(kind='density', subplots=True, layout=(2,2), sharex=False)
     plt.show()
 
@@ -370,10 +370,9 @@ Box
     import pandas as pd
 
 
-    INPUT = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris.csv'
+    DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/iris.csv'
 
-
-    df = pd.read_csv(INPUT)
+    df = pd.read_csv(DATA)
     df.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
     plt.show()
 
@@ -395,10 +394,9 @@ Scatter matrix
     from pandas.plotting import scatter_matrix
 
 
-    INPUT = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/serialization/data/iris.csv'
+    DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/iris.csv'
 
-
-    df = pd.read_csv(INPUT)
+    df = pd.read_csv(DATA)
     scatter_matrix(df)
     plt.show()
 

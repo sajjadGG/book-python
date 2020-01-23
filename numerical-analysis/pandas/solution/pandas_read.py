@@ -1,6 +1,7 @@
 import pandas as pd
 
-url = 'https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/breast_cancer.csv'
+
+DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/breast-cancer.csv'
 
 column_names = ['mean radius', 'mean texture', 'mean perimeter', 'mean area',
                 'mean smoothness', 'mean compactness', 'mean concavity',
@@ -15,8 +16,9 @@ column_names = ['mean radius', 'mean texture', 'mean perimeter', 'mean area',
 
 labels = ['malignant', 'benign']
 
-df = pd.read_csv(url, skiprows=1, names=column_names)
-to_replace = dict(enumerate(labels))
-# {0: 'malignant', 1: 'benign'}
+df = pd.read_csv(DATA, skiprows=1, names=column_names)
 
-df['label'].replace(to_replace, inplace=True)
+df['label'].replace(
+    to_replace=dict(enumerate(labels)),  # {0: 'malignant', 1: 'benign'}
+    inplace=True
+)

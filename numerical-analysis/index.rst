@@ -85,14 +85,13 @@ Pandas
     :name: Numerical Analysis Pandas
 
     pandas/index.rst
-    pandas/config.rst
-    pandas/import-export.rst
 
     pandas/types-data.rst
-    pandas/types-date.rst
+    pandas/types-advanced.rst
 
     pandas/series-create.rst
     pandas/series-attributes.rst
+    pandas/series-index.rst
     pandas/series-indexing.rst
     pandas/series-slicing.rst
     pandas/series-update.rst
@@ -100,6 +99,7 @@ Pandas
     pandas/series-arithmetic.rst
 
     pandas/df-create.rst
+    pandas/df-import.rst
     pandas/df-attributes.rst
     pandas/df-select.rst
     pandas/df-indexing.rst
@@ -115,9 +115,17 @@ Pandas
     pandas/df-groupby.rst
     pandas/df-aggregations.rst
     pandas/df-join.rst
+    pandas/df-export.rst
 
-    pandas/workflow.rst
-    pandas/example.rst
+    pandas/date-types.rst
+    pandas/date-timezone.rst
+    pandas/date-timedelta.rst
+    pandas/date-frequency.rst
+    pandas/date-calendar.rst
+
+    pandas/config.rst
+    pandas/example-workflows.rst
+    pandas/references/index.rst
 
 **********
 Matplotlib

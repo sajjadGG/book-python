@@ -16,9 +16,9 @@ Load Data
     import pandas as pd
 
 
-    url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/phones.csv'
+    DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/phones.csv'
 
-    df = pd.read_csv(url, parse_dates=['date'])
+    df = pd.read_csv(DATA, parse_dates=['date'])
     df.drop(columns='index', inplace=True)
 
 .. csv-table:: Data
