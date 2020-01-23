@@ -97,11 +97,26 @@ np.savetxt()
 
 Other
 =====
-* ``np.load()``, ``np.loads()`` - ``pickle``
-* ``np.fromstring()``
-* ``np.fromregex()``
-* ``np.genfromtxt()`` - Load data with missing values handled as specified
-* ``scipy.io.loadmat()`` - reads MATLAB data files
+.. csv-table:: NumPy Export methods
+    :header: "Method", "Data Type", "Format", "Description"
+    :widths: 15, 5, 5, 75
+
+    ``np.savetxt()``, "Text", "``.csv``, ``.txt``, ``.dat``", "Save in text format, such as CSV"
+    ``np.save()``, "Binary", ``.npy``, "Save in NumPy native format"
+    ``np.savez()``, "Binary",``.npz``, "Save multiple arrays to native format"
+    ``np.savez_compressed()``, "Compressed", ``.npz``, "Save multiple arrays to compressed native format"
+
+.. csv-table:: NumPy Import methods
+    :header: "Method", "Data Type", "Description"
+    :widths: 15, 5, 85
+
+    ``np.loadtxt()``, "Text", "Load data from text file such as ``.csv``"
+    ``np.load()``, "Binary", "Load data from ``.npy`` file"
+    ``np.loads()``, "Binary", "Load binary data from ``pickle`` string"
+    ``np.fromstring()``, "Text", "Load data from string"
+    ``np.fromregex()``, "Text", "Load data from file using regex to parse"
+    ``np.genfromtxt()``, "Text", "Load data with missing values handled as specified"
+    ``scipy.io.loadmat()``, "Binary", "reads MATLAB data files"
 
 
 Assignments

@@ -184,6 +184,9 @@ All
 
 Logical NOT
 -----------
+* ``np.logical_not(...)``
+* ``~(...)``
+
 .. code-block:: python
 
     import numpy as np
@@ -192,6 +195,9 @@ Logical NOT
     a = np.array([True, False, False])
 
     np.logical_not(a)
+    # array([False,  True,  True])
+
+    ~a
     # array([False,  True,  True])
 
 .. code-block:: python
@@ -203,6 +209,10 @@ Logical NOT
                   [True, True, True]])
 
     np.logical_not(a)
+    # array([[False,  True,  True],
+    #        [False, False, False]])
+
+    ~a
     # array([[False,  True,  True],
     #        [False, False, False]])
 
@@ -222,8 +232,15 @@ Logical NOT
     # array([[ True,  True, False],
     #        [False, False, False]])
 
+    ~ (a > 2)
+    # array([[ True,  True,  True],
+    #        [ True,  True,  True]])
+
 Logical AND
 -----------
+* ``np.logical_and(..., ...)``
+* ``(...) & (...)``
+
 .. code-block:: python
 
     import numpy as np
@@ -233,6 +250,9 @@ Logical AND
     b = np.array([True, True, False])
 
     np.logical_and(a, b)
+    # array([ True, False, False])
+
+    a & b
     # array([ True, False, False])
 
 .. code-block:: python
@@ -247,8 +267,15 @@ Logical AND
     # array([[False, False,  True],
     #        [ True, False, False]])
 
+    (a > 2) & (a < 5)
+    # array([[False, False,  True],
+    #        [ True, False, False]])
+
 Logical OR
 ----------
+* ``np.logical_or(..., ...)``
+* ``(...) | (...)``
+
 .. code-block:: python
 
     import numpy as np
@@ -258,6 +285,9 @@ Logical OR
     b = np.array([True, True, False])
 
     np.logical_or(a, b)
+    # array([ True,  True, False])
+
+    a | b
     # array([ True,  True, False])
 
 .. code-block:: python
@@ -272,6 +302,9 @@ Logical OR
     # array([[ True, False, False],
     #        [False,  True,  True]])
 
+    np.logical_or(a < 2, a > 4)
+    # array([[ True, False, False],
+    #        [False,  True,  True]])
 
 Infinite
 ========

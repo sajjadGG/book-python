@@ -207,7 +207,7 @@ Fancy indexing
     a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    a[np.logical_and(a > 2, a <= 5)]
+    a[ (a>2) & (a<=5) ]
     # array([3, 4, 5])
 
 .. code-block:: python
@@ -259,9 +259,80 @@ Fancy indexing
 
 .. code-block:: python
 
-    a[ [1,2] ]
-    array([[4, 5, 6],
-           [7, 8, 9]])
+    import numpy as np
+
+
+    index = np.array(['Twardowski', 'Watney', 'Ivanovich'])
+    a = np.array([1, 2, 3])
+
+    a[index == 'Watney']
+    # array([2])
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    index = np.array(['Twardowski', 'Watney', 'Ivanovich'])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
+
+
+    a[index == 'Watney']
+    # array([[4, 5, 6]])
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    index = np.array(['1970-01-01', '1970-01-02', '1970-01-03'])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
+
+
+    a[index == '1970-01-02']
+    # array([[4, 5, 6]])
+
+    a[index != '1970-01-02']
+    # array([[1, 2, 3],
+    #        [7, 8, 9]])
+
+    a[ (index=='1970-01-01') | (index=='1970-01-03') ]
+    # array([[1, 2, 3],
+    #        [7, 8, 9]])
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    index = np.array(['1970-01-01', '1970-01-02', '1970-01-03'])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
+
+    date1 = (index == '1970-01-01')
+    date2 = (index == '1970-01-03')
+
+    a[ date1 | date2 ]
+    # array([[1, 2, 3],
+    #        [7, 8, 9]])
+
+    a[ date1 | date2, 0 ]
+    # array([1, 7])
+
+    a[ date1 | date2, :2 ]
+    # array([[1, 2],
+    #        [7, 8]])
+
+    a[ date1 | date2, :2 ] = 0
+    a
+    # array([[0, 0, 3],
+    #        [4, 5, 6],
+    #        [0, 0, 9]])
 
 
 Take
