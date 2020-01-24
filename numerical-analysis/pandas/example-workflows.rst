@@ -109,6 +109,7 @@ Working with CSV
 
 .. csv-table:: Descriptive statistics
     :header: "Function", "Description"
+    :widths: 10, 90
 
     "``count``", "Number of non-null observations"
     "``sum``", "Sum of values"

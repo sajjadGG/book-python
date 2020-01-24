@@ -231,9 +231,9 @@ Describe
 Other methods
 =============
 .. csv-table:: Descriptive statistics
-    :header-rows: 1
+    :header: "Function", "Description"
+    :widths: 10, 90
 
-    "Function", "Description"
     "``count``", "Number of non-null observations"
     "``sum``", "Sum of values"
     "``mean``", "Mean of values"
