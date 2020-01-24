@@ -73,18 +73,18 @@ Add Series
     # dtype: float64
 
     b = pd.Series(
-        data = [5.0, np.nan, 7.0, np.nan],
+        data = [10.0, np.nan, 12.0, np.nan],
         index = ['a', 'b', 'x', 'y'])
-    # a    5.0
+    # a    10.0
     # b    NaN
-    # x    7.0
+    # x    12.0
     # y    NaN
     # dtype: float64
 
 .. code-block:: python
 
     a + b
-    # a    6.0
+    # a    11.0
     # b    NaN
     # c    NaN
     # d    NaN
@@ -96,12 +96,12 @@ Add Series
     :caption: ``fill_value``: If data in both corresponding ``Series`` locations is missing the result will be missing
 
     a.add(b, fill_value=0)
-    # a    6.0
-    # b    2.0
-    # c    3.0
-    # d    NaN
-    # x    7.0
-    # y    NaN
+    # a    11.0
+    # b     2.0
+    # c     3.0
+    # d     NaN
+    # x    12.0
+    # y     NaN
     # dtype: float64
 
 

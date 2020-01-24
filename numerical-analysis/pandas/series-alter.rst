@@ -6,99 +6,94 @@ Series Alter
 Drop
 ====
 * Drop element at index
-* Can use with ``inplace=True``
+* Works with ``inplace=True``
 
 .. code-block:: python
 
     import pandas as pd
+    import numpy as np
 
-    data = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
-    s = pd.Series(data)
+    s = pd.Series([1.0, 2.0, 3.0, np.nan, 5.0])
 
     s.drop(1)
     # 0    1.0
-    # 2    5.0
+    # 2    3.0
     # 3    NaN
-    # 4    1.0
-    # 5    2.0
-    # 6    1.0
-    # 7    inf
+    # 4    5.0
+    # dtype: float64
+
+    s.drop([0,2,4])
+    # 1    2.0
+    # 3    NaN
     # dtype: float64
 
 
 Drop duplicates
 ===============
-* Modifies inplace
+* Works with ``inplace=True``
 
 .. code-block:: python
 
     import pandas as pd
+    import numpy as np
 
-    data = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
-    s = pd.Series(data)
+    s = pd.Series([1.0, 2.0, 2.0, np.nan, 5.0])
 
     s.drop_duplicates()
     # 0    1.0
-    # 1    NaN
-    # 2    5.0
-    # 5    2.0
-    # 7    inf
+    # 1    2.0
+    # 3    NaN
+    # 4    5.0
     # dtype: float64
 
 
 Drop NaN
 ========
-* can use with ``inplace=True``
+* Works with ``inplace=True``
 
 .. code-block:: python
 
     import pandas as pd
+    import numpy as np
 
-    data = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
-    s = pd.Series(data)
+    s = pd.Series([1.0, 2.0, 3.0, np.nan, 5.0])
 
     s.dropna()
     # 0    1.0
-    # 2    5.0
-    # 4    1.0
-    # 5    2.0
-    # 6    1.0
-    # 7    inf
+    # 1    2.0
+    # 2    2.0
+    # 4    5.0
     # dtype: float64
 
 
 Reset Index
 ===========
-* ``drop=True`` to avoid the old index being added as a column
+* Works with ``inplace=True``
+* ``drop=True`` prevents the old index being added as a column
 
 .. code-block:: python
 
     import pandas as pd
+    import numpy as np
 
-    data = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
-    s = pd.Series(data)
-    s = s.drop_duplicates()
-    # 0    1.0
-    # 1    NaN
-    # 2    5.0
-    # 5    2.0
-    # 7    inf
+    s = pd.Series([1.0, 2.0, 3.0, np.nan, 5.0])
+
+    s.drop([0,1], inplace=True)
+    # 2    3.0
+    # 3    NaN
+    # 4    5.0
     # dtype: float64
 
     s.reset_index()
     #    index    0
-    # 0      0  1.0
-    # 1      1  NaN
-    # 2      2  5.0
-    # 3      5  2.0
-    # 4      7  inf
+    # 0      2  3.0
+    # 1      3  NaN
+    # 2      4  5.0
 
     s.reset_index(drop=True)
-    # 0    1.0
+    # 0    3.0
     # 1    NaN
     # 2    5.0
-    # 3    2.0
-    # 4    inf
     # dtype: float64
 
 

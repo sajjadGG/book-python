@@ -3,11 +3,8 @@ Series Create
 *************
 
 
-Creating
-========
-
 ``int``
--------
+=======
 * From Python sequence (``list``, ``tuple``, ``set``)
 * From Python range
 * From Numpy ``ndarray`` - most efficient
@@ -15,7 +12,6 @@ Creating
 .. code-block:: python
 
     import pandas as pd
-
 
     pd.Series([1, 2, 3, 4])
     # 0    1
@@ -47,8 +43,9 @@ Creating
     # 3    3
     # dtype: int64
 
+
 ``float``
----------
+=========
 * From Python sequence (``list``, ``tuple``, ``set``)
 * From Numpy ``ndarray`` - most efficient
 
@@ -99,8 +96,9 @@ Creating
     # 3    4.0
     # dtype: float64
 
+
 ``str``
--------
+=======
 * From Python sequence (``list``, ``tuple``, ``set``)
 * From Numpy ``ndarray`` - most efficient
 * From ``list(str)``
@@ -127,8 +125,9 @@ Creating
     # 3    d
     # dtype: object
 
+
 dates
------
+=====
 * From ``pd.Timestamp``
 * From ``pd.date_range()``
 * Read more in :ref:`Date and Time Types`

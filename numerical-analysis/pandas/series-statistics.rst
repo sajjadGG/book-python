@@ -9,14 +9,15 @@ Series Statistics
     import numpy as np
 
     s = pd.Series(
-        data = [1.0, 2.0, 3.0, np.nan],
-        index = ['a', 'b', 'c', 'd'])
+        data = [1.0, 2.0, 3.0, np.nan, 5.0],
+        index = ['a', 'b', 'c', 'd', 'e'])
 
     s
     # a    1.0
     # b    2.0
     # c    3.0
     # d    NaN
+    # e    5.0
     # dtype: float64
 
 
@@ -25,14 +26,14 @@ Count
 .. code-block:: python
 
     s.count()
-    # 3
+    # 4
 
 Sum
 ===
 .. code-block:: python
 
     s.sum()
-    # 6.0
+    # 11.0
 
 .. code-block:: python
 
@@ -41,6 +42,7 @@ Sum
     # b    3.0
     # c    6.0
     # d    NaN
+    # e    11.0
     # dtype: float64
 
 
@@ -49,7 +51,7 @@ Product
 .. code-block:: python
 
     s.prod()
-    # 6.0
+    # 30.0
 
 .. code-block:: python
 
@@ -58,6 +60,7 @@ Product
     # b    2.0
     # c    6.0
     # d    NaN
+    # e    30.0
     # dtype: float64
 
 
@@ -65,10 +68,10 @@ Minimal
 =======
 .. code-block:: python
 
-    a.min()
+    s.min()
     # 1.0
 
-    a.idxmin()
+    s.idxmin()
     # 'a'
 
 
@@ -76,32 +79,32 @@ Maximal
 =======
 .. code-block:: python
 
-    a.max()
-    # 3.0
+    s.max()
+    # 5.0
 
-    a.idxmax()
-    # 'c'
+    s.idxmax()
+    # 'e'
 
 
-Mean
-====
+Average
+=======
 .. code-block:: python
 
-    a.mean()
-    # 2.0
+    s.mean()
+    # 2.75
 
 .. code-block:: python
 
-    a.median()
-    # 2.0
+    s.median()
+    # 2.5
 
 
 Standard Deviation
 ==================
 .. code-block:: python
 
-    a.std()
-    # 1.0
+    s.std()
+    # 1.707825127659933
 
 
 Variance
@@ -109,7 +112,7 @@ Variance
 .. code-block:: python
 
     s.var()
-    # 1.0
+    # 2.9166666666666665
 
 
 Correlation Coefficient
@@ -127,13 +130,13 @@ Quantile
 .. code-block:: python
 
     s.quantile(.25)
-    # 1.5
+    # 1.75
 
     s.quantile(.5)
-    # 2.0
+    # 2.5
 
     s.quantile(.75)
-    # 2.5
+    # 3.5
 
 
 Describe
@@ -141,15 +144,16 @@ Describe
 .. code-block:: python
 
     s.describe()
-    # count    3.0
-    # mean     2.0
-    # std      1.0
-    # min      1.0
-    # 25%      1.5
-    # 50%      2.0
-    # 75%      2.5
-    # max      3.0
+    # count    4.000000
+    # mean     2.750000
+    # std      1.707825
+    # min      1.000000
+    # 25%      1.750000
+    # 50%      2.500000
+    # 75%      3.500000
+    # max      5.000000
     # dtype: float64
+
 
 Assignments
 ===========

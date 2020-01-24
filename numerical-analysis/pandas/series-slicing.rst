@@ -9,42 +9,42 @@ Numeric Index
 
     import pandas as pd
 
-    s = pd.Series([11, 22, 33, 44, 55])
+    s = pd.Series([1.0, 2.0, 3.0, 4.0, 5.0])
 
     s
-    # 0    11
-    # 1    22
-    # 2    33
-    # 3    44
-    # 4    55
-    # dtype: int64
+    # 0    1.0
+    # 1    2.0
+    # 2    3.0
+    # 3    4.0
+    # 4    5.0
+    # dtype: float64
 
     s[:2]
-    # 0    11
-    # 1    22
-    # dtype: int64
+    # 0    1.0
+    # 1    2.0
+    # dtype: float64
 
     s[2:]
-    # 2    33
-    # 3    44
-    # 4    55
-    # dtype: int64
+    # 2    3.0
+    # 3    4.0
+    # 4    5.0
+    # dtype: float64
 
     s[1:-2]
-    # 1    22
-    # 2    33
-    # dtype: int64
+    # 1    2.0
+    # 2    3.0
+    # dtype: float64
 
     s[::2]
-    # 0    11
-    # 2    33
-    # 4    55
-    # dtype: int64
+    # 0    1.0
+    # 2    3.0
+    # 4    5.0
+    # dtype: float64
 
     s[1::2]
-    # 1    22
-    # 3    44
-    # dtype: int64
+    # 1    2.0
+    # 3    4.0
+    # dtype: float64
 
 
 String Index
@@ -57,107 +57,107 @@ String Index
     import pandas as pd
 
     s = pd.Series(
-        data = [11, 22, 33, 44, 55],
+        data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = ['a', 'b', 'c', 'd', 'e'])
 
     s
-    # a    11
-    # b    22
-    # c    33
-    # d    44
-    # e    55
-    # dtype: int64
+    # a    1.0
+    # b    2.0
+    # c    3.0
+    # d    4.0
+    # e    5.0
+    # dtype: float64
 
     s['a':'b']
-    # a    11
-    # b    22
-    # dtype: int64
+    # a    1.0
+    # b    2.0
+    # dtype: float64
 
     s['a':'d']
-    # a    11
-    # b    22
-    # c    33
-    # d    44
-    # dtype: int64
+    # a    1.0
+    # b    2.0
+    # c    3.0
+    # d    4.0
+    # dtype: float64
 
     s['a':'d':2]
-    # a    11
-    # c    33
-    # dtype: int64
+    # a    1.0
+    # c    3.0
+    # dtype: float64
 
     s['a':'d':'b']
     # TypeError: '>=' not supported between instances of 'str' and 'int'
 
     s['d':'a']
-    # Series([], dtype: int64)
+    # Series([], dtype: float64)
 
 .. code-block:: python
 
     import pandas as pd
 
     s = pd.Series(
-        data = [11, 22, 33, 44, 55],
+        data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = ['a', 'b', 'c', 'd', 'e'])
 
     s
-    # a    11
-    # b    22
-    # c    33
-    # d    44
-    # e    55
-    # dtype: int64
+    # a    1.0
+    # b    2.0
+    # c    3.0
+    # d    4.0
+    # e    5.0
+    # dtype: float64
 
     s[:2]
-    # a    11
-    # b    22
-    # dtype: int64
+    # a    1.0
+    # b    2.0
+    # dtype: float64
 
     s[2:]
-    # c    33
-    # d    44
-    # e    55
-    # dtype: int64
+    # c    3.0
+    # d    4.0
+    # e    5.0
+    # dtype: float64
 
     s[1:-2]
-    # b    22
-    # c    33
-    # dtype: int64
+    # b    2.0
+    # c    3.0
+    # dtype: float64
 
     s[::2]
-    # a    11
-    # c    33
-    # e    55
-    # dtype: int64
+    # a    1.0
+    # c    3.0
+    # e    5.0
+    # dtype: float64
 
     s[1::2]
-    # b    22
-    # d    44
-    # dtype: int64
+    # b    2.0
+    # d    4.0
+    # dtype: float64
 
 .. code-block:: python
 
     import pandas as pd
 
     s = pd.Series(
-        data = [11, 22, 33, 44, 55],
+        data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = ['aaa', 'bbb', 'ccc', 'ddd', 'eee'])
 
     s
-    # aaa    11
-    # bbb    22
-    # ccc    33
-    # ddd    44
-    # eee    55
-    # dtype: int64
+    # aaa    1.0
+    # bbb    2.0
+    # ccc    3.0
+    # ddd    4.0
+    # eee    5.0
+    # dtype: float64
 
     s['a':'b']
-    # aaa    11
-    # dtype: int64
+    # aaa    1.0
+    # dtype: float64
 
     s['a':'c']
-    # aaa    11
-    # bbb    22
-    # dtype: int64
+    # aaa    1.0
+    # bbb    2.0
+    # dtype: float64
 
 
 Date Index
@@ -167,93 +167,93 @@ Date Index
     import pandas as pd
 
     s = pd.Series(
-        data = [11, 22, 33, 44, 55],
+        data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = pd.date_range('1999-12-30', periods=5))
 
     s
-    # 1999-12-30    11
-    # 1999-12-31    22
-    # 2000-01-01    33
-    # 2000-01-02    44
-    # 2000-01-03    55
-    # Freq: D, dtype: int64
+    # 1999-12-30    1.0
+    # 1999-12-31    2.0
+    # 2000-01-01    3.0
+    # 2000-01-02    4.0
+    # 2000-01-03    5.0
+    # Freq: D, dtype: float64
 
     s['2000-01-02':'2000-01-04']
-    # 2000-01-02    44
-    # 2000-01-03    55
-    # Freq: D, dtype: int64
+    # 2000-01-02    4.0
+    # 2000-01-03    5.0
+    # Freq: D, dtype: float64
 
     s['2000-01-02':'2000-01-04':2]
-    # 2000-01-02    44
-    # Freq: 2D, dtype: int64
+    # 2000-01-02    4.0
+    # Freq: 2D, dtype: float64
 
     s['2000-01-02':'2000-01-04':-1]
-    # Series([], Freq: -1D, dtype: int64)
+    # Series([], Freq: -1D, dtype: float64)
 
     s['2000-01-04':'2000-01-02':-1]
-    # 2000-01-03    55
-    # 2000-01-02    44
-    # Freq: -1D, dtype: int64
+    # 2000-01-03    5.0
+    # 2000-01-02    4.0
+    # Freq: -1D, dtype: float64
 
     s['1999-12':'1999-12']
-    # 1999-12-30    11
-    # 1999-12-31    22
-    # Freq: D, dtype: int64
+    # 1999-12-30    1.0
+    # 1999-12-31    2.0
+    # Freq: D, dtype: float64
 
     s['2000-01':'2000-01-05']
-    # 2000-01-01    33
-    # 2000-01-02    44
-    # 2000-01-03    55
-    # Freq: D, dtype: int64
+    # 2000-01-01    3.0
+    # 2000-01-02    4.0
+    # 2000-01-03    5.0
+    # Freq: D, dtype: float64
 
     s[:'2000-01-05':2]
-    # 1999-12-30    11
-    # 2000-01-01    33
-    # 2000-01-03    55
-    # Freq: 2D, dtype: int64
+    # 1999-12-30    1.0
+    # 2000-01-01    3.0
+    # 2000-01-03    5.0
+    # Freq: 2D, dtype: float64
 
     s[:'2000-01-03':-1]
-    # 2000-01-03    55
-    # Freq: -1D, dtype: int64
+    # 2000-01-03    5.0
+    # Freq: -1D, dtype: float64
 
 .. code-block:: python
 
     import pandas as pd
 
     s = pd.Series(
-        data = [11, 22, 33, 44, 55],
+        data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = pd.date_range('1999-12-30', periods=5))
 
     s
-    # 1999-12-30    11
-    # 1999-12-31    22
-    # 2000-01-01    33
-    # 2000-01-02    44
-    # 2000-01-03    55
+    # 1999-12-30    1.0
+    # 1999-12-31    2.0
+    # 2000-01-01    3.0
+    # 2000-01-02    4.0
+    # 2000-01-03    5.0
 
     s[1:3]
-    # 1999-12-31    22
-    # 2000-01-01    33
-    # Freq: D, dtype: int64
+    # 1999-12-31    2.0
+    # 2000-01-01    3.0
+    # Freq: D, dtype: float64
 
     s[:3]
-    # 1999-12-30    11
-    # 1999-12-31    22
-    # 2000-01-01    33
-    # Freq: D, dtype: int64
+    # 1999-12-30    1.0
+    # 1999-12-31    2.0
+    # 2000-01-01    3.0
+    # Freq: D, dtype: float64
 
     s[:3:2]
-    # 1999-12-30    11
-    # 2000-01-01    33
-    # Freq: 2D, dtype: int64
+    # 1999-12-30    1.0
+    # 2000-01-01    3.0
+    # Freq: 2D, dtype: float64
 
     s[::-1]
-    # 2000-01-03    55
-    # 2000-01-02    44
-    # 2000-01-01    33
-    # 1999-12-31    22
-    # 1999-12-30    11
-    # Freq: -1D, dtype: int64
+    # 2000-01-03    5.0
+    # 2000-01-02    4.0
+    # 2000-01-01    3.0
+    # 1999-12-31    2.0
+    # 1999-12-30    1.0
+    # Freq: -1D, dtype: float64
 
 
 Assignments
