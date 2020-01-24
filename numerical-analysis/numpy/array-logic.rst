@@ -192,19 +192,6 @@ Logical NOT
     import numpy as np
 
 
-    a = np.array([True, False, False])
-
-    np.logical_not(a)
-    # array([False,  True,  True])
-
-    ~a
-    # array([False,  True,  True])
-
-.. code-block:: python
-
-    import numpy as np
-
-
     a = np.array([[True, False, False],
                   [True, True, True]])
 
@@ -224,20 +211,18 @@ Logical NOT
     a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    np.logical_not(a == 2)
-    # array([[ True, False,  True],
-    #        [ True,  True,  True]])
-
     np.logical_not(a > 2)
     # array([[ True,  True, False],
     #        [False, False, False]])
 
-    ~ (a > 2)
-    # array([[ True,  True,  True],
-    #        [ True,  True,  True]])
+    ~(a > 2)
+    # array([[ True,  True, False],
+    #        [False, False, False]])
+
 
 Logical AND
 -----------
+* Meets first and second condition at the same time
 * ``np.logical_and(..., ...)``
 * ``(...) & (...)``
 
@@ -271,8 +256,10 @@ Logical AND
     # array([[False, False,  True],
     #        [ True, False, False]])
 
+
 Logical OR
 ----------
+* Meets first or second condition at the same time
 * ``np.logical_or(..., ...)``
 * ``(...) | (...)``
 
@@ -302,9 +289,32 @@ Logical OR
     # array([[ True, False, False],
     #        [False,  True,  True]])
 
-    np.logical_or(a < 2, a > 4)
+    (a < 2) | (a > 4)
     # array([[ True, False, False],
     #        [False,  True,  True]])
+
+Logical XOR
+-----------
+* Meets first or second condition, but not both at the same time
+* ``np.logical_xor(..., ...)``
+* ``(...) ^ (...)``
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
+
+    np.logical_xor(a < 2, a > 4)
+    # array([[ True, False, False],
+    #        [False,  True,  True]])
+
+    (a < 2) ^ (a > 4)
+    # array([[ True, False, False],
+    #        [False,  True,  True]])
+
 
 Infinite
 ========
