@@ -3,10 +3,10 @@ import numpy as np
 np.random.seed(0)
 
 
-data = np.random.randint(0, 9, size=100)
-data = data[data % 2 == 0]
+df = np.random.randint(0, 9, size=100)
+df = df[df % 2 == 0]
 
-s = pd.Series(data[:10])
+s = pd.Series(df[:10])
 # 0    8
 # 1    2
 # 2    0
@@ -18,15 +18,3 @@ s = pd.Series(data[:10])
 # 8    2
 # 9    6
 # dtype: int64
-
-
-## Alternative Solution
-from random import randint
-data = []
-
-while len(data) < 10:
-    n = randint(0, 9)
-    if n % 2 == 0:
-        data.append(n)
-
-pd.Series(data)
