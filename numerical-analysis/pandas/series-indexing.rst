@@ -61,45 +61,42 @@ Date Index
     import pandas as pd
 
     s = pd.Series(
-        data = list('abcde'),
+        data = [1.1, 2.2, 3.3, np.nan, 5.5],
         index = pd.date_range('1999-12-30', periods=5))
 
     s
-    # 1999-12-30    a
-    # 1999-12-31    b
-    # 2000-01-01    c
-    # 2000-01-02    d
-    # 2000-01-03    e
-    # Freq: D, dtype: object
+    # 1999-12-30    1.1
+    # 1999-12-31    2.2
+    # 2000-01-01    3.3
+    # 2000-01-02    NaN
+    # 2000-01-03    5.5
+    # Freq: D, dtype: float64
 
     s['a']
     # KeyError: 'a'
 
     s[0]
-    # 'a'
+    # 1.1
 
     s[1]
-    # 'b'
-
-    s[2]
-    # 'c'
+    # 2.2
 
     s[-1]
-    # 'e'
+    # 5.5
 
     s['2000-01-03']
-    # 'e'
+    # 5.5
 
     s['2000-01']
-    # 2000-01-01    c
-    # 2000-01-02    d
-    # 2000-01-03    e
-    # Freq: D, dtype: object
+    # 2000-01-01    3.3
+    # 2000-01-02    NaN
+    # 2000-01-03    5.5
+    # Freq: D, dtype: float64
 
     s['1999']
-    # 1999-12-30    a
-    # 1999-12-31    b
-    # Freq: D, dtype: object
+    # 1999-12-30    1.1
+    # 1999-12-31    2.2
+    # Freq: D, dtype: float64
 
 
 Assignments
