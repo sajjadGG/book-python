@@ -8,7 +8,6 @@ Numeric Index
 .. code-block:: python
 
     import pandas as pd
-    import numpy as np
 
     s = pd.Series([11, 22, 33, 44, 55])
 
@@ -220,7 +219,6 @@ Date Index
 .. code-block:: python
 
     import pandas as pd
-
 
     s = pd.Series(
         data = [11, 22, 33, 44, 55],
