@@ -1,6 +1,6 @@
-**************************
-DataFrame Dealing with NaN
-**************************
+*************
+DataFrame NaN
+*************
 
 
 .. code-block:: python

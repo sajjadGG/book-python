@@ -30,12 +30,12 @@ Grouping
 .. code-block:: python
 
     df.groupby('item')
-    <pandas.core.groupby.generic.DataFrameGroupBy object at 0x12975df90>
+    # <pandas.core.groupby.generic.DataFrameGroupBy object at 0x12975df90>
 
 .. code-block:: python
 
     df.groupby(['month', 'item'])
-    <pandas.core.groupby.generic.DataFrameGroupBy object at 0x12973aa10>
+    # <pandas.core.groupby.generic.DataFrameGroupBy object at 0x12973aa10>
 
 
 Groupby Methods
