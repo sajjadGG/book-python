@@ -42,7 +42,7 @@ Create from List of Dicts
         {'first_name': 'Melissa', 'last_name': 'Lewis'},
     ])
 
-    #       first_name   last_name
+    #   first_name   last_name
     # 0       Mark      Watney
     # 1        Jan  Twardowski
     # 2       Ivan    Ivanovic
@@ -74,7 +74,7 @@ Create from Dict
         'last_name': ['Watney', 'Twardowski', 'Ivanovic', 'Lewis'],
     })
 
-    #       first_name   last_name
+    #   first_name   last_name
     # 0       Mark      Watney
     # 1        Jan  Twardowski
     # 2       Ivan    Ivanovic
@@ -85,12 +85,15 @@ Create from Dict
     import pandas as pd
     import numpy as np
 
-    pd.DataFrame({'A' : 1.,
-                  'B' : pd.Timestamp('1961-04-12'),
-                  'C' : pd.Series(1, index=list(range(4)), dtype='float32'),
-                  'D' : np.array([3] * 4, dtype='int32'),
-                  'E' : pd.Categorical(["test", "train", "test", "train"]),
-                  'F' : 'foo' })
+    pd.DataFrame({
+        'A': 1.,
+        'B': pd.Timestamp('1961-04-12'),
+        'C': pd.Series(1, index=list(range(4)), dtype='float32'),
+        'D': np.array([3] * 4, dtype='int32'),
+        'E': pd.Categorical(["test", "train", "test", "train"]),
+        'F': 'foo',
+    })
+
     #      A           B    C  D      E    F
     # 0  1.0  1961-04-12  1.0  3   test  foo
     # 1  1.0  1961-04-12  1.0  3  train  foo

@@ -3,8 +3,11 @@ Series Arithmetic
 *****************
 
 
+Vectorized Operations
+=====================
+
 Scalar Arithmetic
-=================
+-----------------
 .. code-block:: python
 
     import pandas as pd
@@ -22,8 +25,6 @@ Scalar Arithmetic
     # e    5.0
     # dtype: float64
 
-Multiply by scalar
-------------------
 .. code-block:: python
 
     s * 5
@@ -34,11 +35,9 @@ Multiply by scalar
     # e    25.0
     # dtype: float64
 
-Multiply by itself
-------------------
 .. code-block:: python
 
-    s * s
+    s ** 2
     # a    1.0
     # b    4.0
     # c    9.0
@@ -57,8 +56,8 @@ Multiply by itself
     # dtype: float64
 
 
-Add Series
-==========
+Series Arithmetic
+=================
 * Uses inner join
 * ``fill_value``: If data in both corresponding ``Series`` locations is missing the result will be missing
 
