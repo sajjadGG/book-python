@@ -10,8 +10,7 @@ Numeric Index
     import pandas as pd
     import numpy as np
 
-    data = [1.1, 2.2, np.nan, 4.4]
-    s = pd.Series(data)
+    s = pd.Series([1.1, 2.2, np.nan, 4.4])
 
     s
     # 0    1.1
@@ -22,8 +21,9 @@ Numeric Index
 
     s[0]        # 1.1
     s[1]        # 2.2
-    s[2]        # nan
+    s[2]        # NaN
     s[3]        # 4.4
+
 
 String Index
 ============
@@ -32,9 +32,9 @@ String Index
     import pandas as pd
     import numpy as np
 
-    data = [1.1, 2.2, np.nan, 4.4]
-    index = ['a', 'b', 'c', 'd']
-    s = pd.Series(data, index)
+    s = pd.Series(
+        data = [1.1, 2.2, np.nan, 4.4],
+        index = ['a', 'b', 'c', 'd'])
 
     s
     # a    1.1
@@ -59,19 +59,17 @@ Date Index
 .. code-block:: python
 
     import pandas as pd
-    import numpy as np
 
-    data = list('abcdef')
-    index = pd.date_range('1999-12-28', freq='D', periods=len(data))
-    s = pd.Series(data, index)
+    s = pd.Series(
+        data = list('abcde'),
+        index = pd.date_range('1999-12-30', periods=5))
 
     s
-    # 1999-12-28    a
-    # 1999-12-29    b
-    # 1999-12-30    c
-    # 1999-12-31    d
-    # 2000-01-01    e
-    # 2000-01-02    f
+    # 1999-12-30    a
+    # 1999-12-31    b
+    # 2000-01-01    c
+    # 2000-01-02    d
+    # 2000-01-03    e
     # Freq: D, dtype: object
 
     s['a']
@@ -87,19 +85,20 @@ Date Index
     # 'c'
 
     s[-1]
-    # 'f'
+    # 'e'
 
-    s['2000-01-02']
-    # 'f'
+    s['2000-01-03']
+    # 'e'
 
     s['2000-01']
-    # 2000-01-01    e
-    # 2000-01-02    f
+    # 2000-01-01    c
+    # 2000-01-02    d
+    # 2000-01-03    e
     # Freq: D, dtype: object
 
-    s['2000']
-    # 2000-01-01    e
-    # 2000-01-02    f
+    s['1999']
+    # 1999-12-30    a
+    # 1999-12-31    b
     # Freq: D, dtype: object
 
 
