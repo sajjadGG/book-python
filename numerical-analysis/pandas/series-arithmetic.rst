@@ -11,14 +11,15 @@ Scalar Arithmetic
     import numpy as np
 
     s = pd.Series(
-        data = [1.0, 2.0, 3.0, np.nan],
-        index = ['a', 'b', 'c', 'd'])
+        data = [1.0, 2.0, 3.0, np.nan, 5.0],
+        index = ['a', 'b', 'c', 'd', 'e'])
 
     s
     # a    1.0
     # b    2.0
     # c    3.0
     # d    NaN
+    # e    5.0
     # dtype: float64
 
 Multiply by scalar
@@ -30,6 +31,7 @@ Multiply by scalar
     # b    10.0
     # c    15.0
     # d     NaN
+    # e    25.0
     # dtype: float64
 
 Multiply by itself
@@ -41,6 +43,7 @@ Multiply by itself
     # b    4.0
     # c    9.0
     # d    NaN
+    # e    25.0
     # dtype: float64
 
 .. code-block:: python
@@ -50,6 +53,7 @@ Multiply by itself
     # b     8.0
     # c    27.0
     # d     NaN
+    # e   125.0
     # dtype: float64
 
 
@@ -66,6 +70,8 @@ Add Series
     a = pd.Series(
         data = [1.0, 2.0, 3.0, np.nan],
         index = ['a', 'b', 'c', 'd'])
+
+    a
     # a    1.0
     # b    2.0
     # c    3.0
@@ -75,6 +81,8 @@ Add Series
     b = pd.Series(
         data = [10.0, np.nan, 12.0, np.nan],
         index = ['a', 'b', 'x', 'y'])
+
+    b
     # a    10.0
     # b    NaN
     # x    12.0
