@@ -9,75 +9,157 @@ DataFrame Sort
     import numpy as np
     np.random.seed(0)
 
-    data = np.random.randn(6, 4)
-    columns = ['Morning', 'Noon', 'Evening', 'Midnight']
-    index = pd.date_range('1970-01-01', periods=6)
+    df = pd.DataFrame(
+        columns = ['Morning', 'Noon', 'Evening', 'Midnight'],
+        index = pd.date_range('1999-12-30', periods=7),
+        data = np.random.randn(7, 4))
 
-    df = pd.DataFrame(data, index, columns)
-    #               Morning       Noon    Evening   Midnight
-    # 1970-01-01   0.486726  -0.291364  -1.105248  -0.333574
-    # 1970-01-02   0.301838  -0.603001   0.069894   0.309209
-    # 1970-01-03  -0.424429   0.845898  -1.460294   0.109749
-    # 1970-01-04   0.909958  -0.986246   0.122176   1.205697
-    # 1970-01-05  -0.172540  -0.974159  -0.848519   1.691875
-    # 1970-01-06   0.047059   0.359687   0.531386  -0.587663
+    df
+    #              Morning      Noon   Evening  Midnight
+    # 1999-12-30  1.764052  0.400157  0.978738  2.240893
+    # 1999-12-31  1.867558 -0.977278  0.950088 -0.151357
+    # 2000-01-01 -0.103219  0.410599  0.144044  1.454274
+    # 2000-01-02  0.761038  0.121675  0.443863  0.333674
+    # 2000-01-03  1.494079 -0.205158  0.313068 -0.854096
+    # 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
+    # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
+
+
+Sort by Index
+=============
+* Works with ``inplace=True``
+* ``axis=0`` - Rows
+* ``axis=1`` - Columns
+
+Sort Series
+-----------
+.. code-block:: python
+
+    df.loc['2000-01-01'].sort_index(ascending=True)
+    # Evening     0.144044
+    # Midnight    1.454274
+    # Morning    -0.103219
+    # Noon        0.410599
+    # Name: 2000-01-01 00:00:00, dtype: float64
 
 Sort Rows
-=========
-* Works with ``inplace=True``
-
+---------
 .. code-block:: python
-    :caption: Sort descending
 
     df.sort_index(ascending=False)
-    df.sort_index(ascending=False, axis=0)
+    #              Morning      Noon   Evening  Midnight
+    # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
+    # 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
+    # 2000-01-03  1.494079 -0.205158  0.313068 -0.854096
+    # 2000-01-02  0.761038  0.121675  0.443863  0.333674
+    # 2000-01-01 -0.103219  0.410599  0.144044  1.454274
+    # 1999-12-31  1.867558 -0.977278  0.950088 -0.151357
+    # 1999-12-30  1.764052  0.400157  0.978738  2.240893
+
     df.sort_index(ascending=False, axis='rows')
+    #              Morning      Noon   Evening  Midnight
+    # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
+    # 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
+    # 2000-01-03  1.494079 -0.205158  0.313068 -0.854096
+    # 2000-01-02  0.761038  0.121675  0.443863  0.333674
+    # 2000-01-01 -0.103219  0.410599  0.144044  1.454274
+    # 1999-12-31  1.867558 -0.977278  0.950088 -0.151357
+    # 1999-12-30  1.764052  0.400157  0.978738  2.240893
 
-.. code-block:: python
-    :caption: Sort ascending
-
-    df.sort_index(ascending=True)
-    df.sort_index(ascending=True, axis=0)
     df.sort_index(ascending=True, axis='rows')
+    #              Morning      Noon   Evening  Midnight
+    # 1999-12-30  1.764052  0.400157  0.978738  2.240893
+    # 1999-12-31  1.867558 -0.977278  0.950088 -0.151357
+    # 2000-01-01 -0.103219  0.410599  0.144044  1.454274
+    # 2000-01-02  0.761038  0.121675  0.443863  0.333674
+    # 2000-01-03  1.494079 -0.205158  0.313068 -0.854096
+    # 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
+    # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
 
 Sort Columns
-============
-* Works with ``inplace=True``
-
+------------
 .. code-block:: python
-    :caption: Sort descending
 
-    df.sort_index(ascending=False, axis=1)
     df.sort_index(ascending=False, axis='columns')
+    #                 Noon   Morning  Midnight   Evening
+    # 1999-12-30  0.400157  1.764052  2.240893  0.978738
+    # 1999-12-31 -0.977278  1.867558 -0.151357  0.950088
+    # 2000-01-01  0.410599 -0.103219  1.454274  0.144044
+    # 2000-01-02  0.121675  0.761038  0.333674  0.443863
+    # 2000-01-03 -0.205158  1.494079 -0.854096  0.313068
+    # 2000-01-04  0.653619 -2.552990 -0.742165  0.864436
+    # 2000-01-05 -1.454366  2.269755 -0.187184  0.045759
 
-.. code-block:: python
-    :caption: Sort ascending
-
-    df.sort_index(ascending=True, axis=1)
     df.sort_index(ascending=True, axis='columns')
+    #              Evening  Midnight   Morning      Noon
+    # 1999-12-30  0.978738  2.240893  1.764052  0.400157
+    # 1999-12-31  0.950088 -0.151357  1.867558 -0.977278
+    # 2000-01-01  0.144044  1.454274 -0.103219  0.410599
+    # 2000-01-02  0.443863  0.333674  0.761038  0.121675
+    # 2000-01-03  0.313068 -0.854096  1.494079 -0.205158
+    # 2000-01-04  0.864436 -0.742165 -2.552990  0.653619
+    # 2000-01-05  0.045759 -0.187184  2.269755 -1.454366
 
 
 Sort Values
 ===========
 * Works with ``inplace=True``
+* ``axis=0`` - Rows
+* ``axis=1`` - Columns
 
+Sorting Rows by Column Value
+----------------------------
 .. code-block:: python
     :caption: Sorting values by column
 
-    df.sort_values('Morning', ascending=True)
-    df.sort_values('Morning', ascending=False)
+    df.sort_values(by='Morning', ascending=True)
+    #              Morning      Noon   Evening  Midnight
+    # 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
+    # 2000-01-01 -0.103219  0.410599  0.144044  1.454274
+    # 2000-01-02  0.761038  0.121675  0.443863  0.333674
+    # 2000-01-03  1.494079 -0.205158  0.313068 -0.854096
+    # 1999-12-30  1.764052  0.400157  0.978738  2.240893
+    # 1999-12-31  1.867558 -0.977278  0.950088 -0.151357
+    # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
 
 .. code-block:: python
     :caption: Sorting values by multiple columns (if values are equal in first column, than compare second)
 
-    df.sort_values(['Morning', 'Evening'], ascending=True)
-    df.sort_values(['Morning', 'Evening'], ascending=False)
+    df.sort_values(by=['Morning', 'Evening'], ascending=True)
+    #              Morning      Noon   Evening  Midnight
+    # 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
+    # 2000-01-01 -0.103219  0.410599  0.144044  1.454274
+    # 2000-01-02  0.761038  0.121675  0.443863  0.333674
+    # 2000-01-03  1.494079 -0.205158  0.313068 -0.854096
+    # 1999-12-30  1.764052  0.400157  0.978738  2.240893
+    # 1999-12-31  1.867558 -0.977278  0.950088 -0.151357
+    # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
 
+Sorting Columns by Row Values
+-----------------------------
 .. code-block:: python
     :caption: Sorting whole DataFrame, according to values by in row (change column order)
 
-    df.sort_values('1970-01-05', ascending=True, axis=1)
-    df.sort_values('1970-01-05', ascending=True, axis='columns')
+    df.sort_values(by='2000-01-05', ascending=True, axis='columns')
+    #                 Noon  Midnight   Evening   Morning
+    # 1999-12-30  0.400157  2.240893  0.978738  1.764052
+    # 1999-12-31 -0.977278 -0.151357  0.950088  1.867558
+    # 2000-01-01  0.410599  1.454274  0.144044 -0.103219
+    # 2000-01-02  0.121675  0.333674  0.443863  0.761038
+    # 2000-01-03 -0.205158 -0.854096  0.313068  1.494079
+    # 2000-01-04  0.653619 -0.742165  0.864436 -2.552990
+    # 2000-01-05 -1.454366 -0.187184  0.045759  2.269755
+
+    df.sort_values(by=['1999-12-31', '2000-01-05'], ascending=False, axis='columns')
+    #              Morning   Evening  Midnight      Noon
+    # 1999-12-30  1.764052  0.978738  2.240893  0.400157
+    # 1999-12-31  1.867558  0.950088 -0.151357 -0.977278
+    # 2000-01-01 -0.103219  0.144044  1.454274  0.410599
+    # 2000-01-02  0.761038  0.443863  0.333674  0.121675
+    # 2000-01-03  1.494079  0.313068 -0.854096 -0.205158
+    # 2000-01-04 -2.552990  0.864436 -0.742165  0.653619
+    # 2000-01-05  2.269755  0.045759 -0.187184 -1.454366
+
 
 Assignments
 ===========

@@ -8,74 +8,228 @@ DataFrame Statistics
     import numpy as np
     np.random.seed(0)
 
-    data = np.random.randn(6, 4)
-    columns = ['A', 'B', 'C', 'D']
-    index = pd.date_range('1970-01-01', periods=6)
-    # DatetimeIndex(['1970-01-01',
-    #                '1970-01-02',
-    #                '1970-01-03',
-    #                '1970-01-04',
-    #                '1970-01-05',
-    #                '1970-01-06'], dtype='datetime64[ns]', freq='D')
+    df = pd.DataFrame(
+        columns = ['Morning', 'Noon', 'Evening', 'Midnight'],
+        index = pd.date_range('1999-12-30', periods=7),
+        data = np.random.randn(7, 4))
 
-    df = pd.DataFrame(data, index, columns)
+    df
+    #              Morning      Noon   Evening  Midnight
+    # 1999-12-30  1.764052  0.400157  0.978738  2.240893
+    # 1999-12-31  1.867558 -0.977278  0.950088 -0.151357
+    # 2000-01-01 -0.103219  0.410599  0.144044  1.454274
+    # 2000-01-02  0.761038  0.121675  0.443863  0.333674
+    # 2000-01-03  1.494079 -0.205158  0.313068 -0.854096
+    # 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
+    # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
 
-Arithmetic mean
----------------
+
+Count
+=====
+.. code-block:: python
+
+    df.count()
+    # Morning     7
+    # Noon        7
+    # Evening     7
+    # Midnight    7
+    # dtype: int64
+
+
+Sum
+===
+.. code-block:: python
+
+    df.sum()
+    # Morning     5.500273
+    # Noon       -1.050752
+    # Evening     3.739996
+    # Midnight    2.094039
+    # dtype: float64
+
+.. code-block:: python
+
+    df.cumsum()
+    #              Morning      Noon   Evening  Midnight
+    # 1999-12-30  1.764052  0.400157  0.978738  2.240893
+    # 1999-12-31  3.631610 -0.577121  1.928826  2.089536
+    # 2000-01-01  3.528391 -0.166522  2.072870  3.543809
+    # 2000-01-02  4.289429 -0.044847  2.516733  3.877484
+    # 2000-01-03  5.783508 -0.250005  2.829801  3.023388
+    # 2000-01-04  3.230518  0.403613  3.694237  2.281223
+    # 2000-01-05  5.500273 -1.050752  3.739996  2.094039
+
+
+Product
+=======
+.. code-block:: python
+
+    df.prod()
+    # Morning     2.240538
+    # Noon       -0.003810
+    # Evening     0.000736
+    # Midnight    0.019528
+    # dtype: float64
+
+.. code-block:: python
+
+    df.cumprod()
+    #              Morning      Noon   Evening  Midnight
+    # 1999-12-30  1.764052  0.400157  0.978738  2.240893
+    # 1999-12-31  3.294470 -0.391065  0.929888 -0.339175
+    # 2000-01-01 -0.340051 -0.160571  0.133944 -0.493254
+    # 2000-01-02 -0.258792 -0.019537  0.059453 -0.164586
+    # 2000-01-03 -0.386656  0.004008  0.018613  0.140572
+    # 2000-01-04  0.987128  0.002620  0.016090 -0.104328
+    # 2000-01-05  2.240538 -0.003810  0.000736  0.019528
+
+
+Extremes
+========
+
+Minimum
+-------
+.. code-block:: python
+
+    df.min()
+    # Morning    -2.552990
+    # Noon       -1.454366
+    # Evening     0.045759
+    # Midnight   -0.854096
+    # dtype: float64
+
+.. code-block:: python
+
+    df.idxmin()
+    # Morning    2000-01-04
+    # Noon       2000-01-05
+    # Evening    2000-01-05
+    # Midnight   2000-01-03
+    # dtype: datetime64[ns]
+
+Maximum
+-------
+.. code-block:: python
+
+    df.max()
+    # Morning     2.269755
+    # Noon        0.653619
+    # Evening     0.978738
+    # Midnight    2.240893
+    # dtype: float64
+
+.. code-block:: python
+
+    df.idxmax()
+    # Morning    2000-01-05
+    # Noon       2000-01-04
+    # Evening    1999-12-30
+    # Midnight   1999-12-30
+    # dtype: datetime64[ns]
+
+
+Average
+=======
+
+Mean
+----
 .. code-block:: python
 
     df.mean()
-    # A   -0.078742
-    # B    0.241929
-    # C    0.110231
-    # D   -0.092946
+    # Morning     0.785753
+    # Noon       -0.150107
+    # Evening     0.534285
+    # Midnight    0.299148
     # dtype: float64
 
-Descriptive stats
------------------
+Median
+------
+.. code-block:: python
+
+    df.median()
+    # Morning     1.494079
+    # Noon        0.121675
+    # Evening     0.443863
+    # Midnight   -0.151357
+    # dtype: float64
+
+Standard Deviation
+------------------
+.. code-block:: python
+
+    df.std()
+    # Morning     1.671798
+    # Noon        0.787967
+    # Evening     0.393169
+    # Midnight    1.151785
+    # dtype: float64
+
+
+Distribution
+============
+
+Quantile
+--------
+* A.K.A. Percentile
+
+.. code-block:: python
+
+    df.quantile(.33)
+    # Morning     0.743753
+    # Noon       -0.220601
+    # Evening     0.309687
+    # Midnight   -0.198283
+    # Name: 0.33, dtype: float64
+
+.. code-block:: python
+
+    df.quantile([.25, .5, .75])
+    #        Morning      Noon   Evening  Midnight
+    # 0.25  0.328909 -0.591218  0.228556 -0.464674
+    # 0.50  1.494079  0.121675  0.443863 -0.151357
+    # 0.75  1.815805  0.405378  0.907262  0.893974
+
+Variance
+--------
+.. code-block:: python
+
+    df.var()
+    # Morning     2.794907
+    # Noon        0.620892
+    # Evening     0.154582
+    # Midnight    1.326610
+    # dtype: float64
+
+Correlation Coefficient
+-----------------------
+.. code-block:: python
+
+    df.corr()
+    #            Morning      Noon   Evening  Midnight
+    # Morning   1.000000 -0.698340 -0.190219  0.201034
+    # Noon     -0.698340  1.000000  0.307686  0.359761
+    # Evening  -0.190219  0.307686  1.000000  0.136436
+    # Midnight  0.201034  0.359761  0.136436  1.000000
+
+
+Describe
+========
 .. code-block:: python
 
     df.describe()
-    #               A          B          C          D
-    # count  6.000000   6.000000   6.000000   6.000000
-    # mean  -0.078742   0.241929   0.110231  -0.092946
-    # std    0.690269   0.845521   0.746167   1.207483
-    # min   -0.928127  -0.931601  -0.812575  -1.789321
-    # 25%   -0.442016  -0.275899  -0.359650  -0.638282
-    # 50%   -0.202288   0.287667  -0.045933  -0.332729
-    # 75%    0.189195   0.882916   0.733453   0.902115
-    # max    1.062487   1.190259   1.036800   1.323504
+    #         Morning      Noon   Evening  Midnight
+    # count  7.000000  7.000000  7.000000  7.000000
+    # mean   0.785753 -0.150107  0.534285  0.299148
+    # std    1.671798  0.787967  0.393169  1.151785
+    # min   -2.552990 -1.454366  0.045759 -0.854096
+    # 25%    0.328909 -0.591218  0.228556 -0.464674
+    # 50%    1.494079  0.121675  0.443863 -0.151357
+    # 75%    1.815805  0.405378  0.907262  0.893974
+    # max    2.269755  0.653619  0.978738  2.240893
 
-Percentiles
------------
-.. code-block:: python
-
-    data = np.array([[1, 1], [2, 10], [3, 100], [4, 100]])
-    columns = ['a', 'b']
-
-    df = pd.DataFrame(data, columns)
-    #    a    b
-    # 0  1    1
-    # 1  2   10
-    # 2  3  100
-    # 3  4  100
-
-.. code-block:: python
-
-    df.quantile(.1)
-    # a    1.3
-    # b    3.7
-    # dtype: float64
-
-.. code-block:: python
-
-    df.quantile([.1, .5])
-    #        a     b
-    # 0.1  1.3   3.7
-    # 0.5  2.5  55.0
 
 Other methods
--------------
+=============
 .. csv-table:: Descriptive statistics
     :header-rows: 1
 

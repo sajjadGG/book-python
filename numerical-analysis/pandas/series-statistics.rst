@@ -64,23 +64,29 @@ Product
     # dtype: float64
 
 
-Minimal
-=======
+Extremes
+========
+
+Minimum
+-------
 .. code-block:: python
 
     s.min()
     # 1.0
 
+.. code-block:: python
+
     s.idxmin()
     # 'a'
 
-
-Maximal
-=======
+Maximum
+-------
 .. code-block:: python
 
     s.max()
     # 5.0
+
+.. code-block:: python
 
     s.idxmax()
     # 'e'
@@ -88,55 +94,60 @@ Maximal
 
 Average
 =======
+
+Mean
+----
 .. code-block:: python
 
     s.mean()
     # 2.75
 
+Median
+------
 .. code-block:: python
 
     s.median()
     # 2.5
 
-
 Standard Deviation
-==================
+------------------
 .. code-block:: python
 
     s.std()
     # 1.707825127659933
 
 
+Distribution
+============
+
+Quantile
+--------
+* A.K.A. Percentile
+
+.. code-block:: python
+
+    s.quantile(.3)
+    # 1.9
+
+    s.quantile([.25, .5, .75])
+    # 0.25    1.75
+    # 0.50    2.50
+    # 0.75    3.50
+    # dtype: float64
+
 Variance
-========
+--------
 .. code-block:: python
 
     s.var()
     # 2.9166666666666665
 
-
 Correlation Coefficient
-=======================
+-----------------------
 .. code-block:: python
 
     s.corr(s)
     # 1.0
-
-
-Quantile
-========
-* A.K.A. Percentile
-
-.. code-block:: python
-
-    s.quantile(.25)
-    # 1.75
-
-    s.quantile(.5)
-    # 2.5
-
-    s.quantile(.75)
-    # 3.5
 
 
 Describe
@@ -153,6 +164,34 @@ Describe
     # 75%      3.500000
     # max      5.000000
     # dtype: float64
+
+
+Other methods
+=============
+.. csv-table:: Descriptive statistics
+    :header-rows: 1
+
+    "Function", "Description"
+    "``count``", "Number of non-null observations"
+    "``sum``", "Sum of values"
+    "``mean``", "Mean of values"
+    "``mad``", "Mean absolute deviation"
+    "``median``", "Arithmetic median of values"
+    "``min``", "Minimum"
+    "``max``", "Maximum"
+    "``mode``", "Mode"
+    "``abs``", "Absolute Value"
+    "``prod``", "Product of values"
+    "``std``", "Unbiased standard deviation"
+    "``var``", "Unbiased variance"
+    "``sem``", "Unbiased standard error of the mean"
+    "``skew``", "Unbiased skewness (3rd moment)"
+    "``kurt``", "Unbiased kurtosis (4th moment)"
+    "``quantile``", "Sample quantile (value at %)"
+    "``cumsum``", "Cumulative sum"
+    "``cumprod``", "Cumulative product"
+    "``cummax``", "Cumulative maximum"
+    "``cummin``", "Cumulative minimum"
 
 
 Assignments

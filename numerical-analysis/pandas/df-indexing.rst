@@ -2,6 +2,29 @@
 DataFrame Indexing
 ******************
 
+
+.. code-block:: python
+
+    import pandas as pd
+    import numpy as np
+    np.random.seed(0)
+
+    df = pd.DataFrame(
+        columns = ['Morning', 'Noon', 'Evening', 'Midnight'],
+        index = pd.date_range('1999-12-30', periods=7),
+        data = np.random.randn(7, 4))
+
+    df
+    #              Morning      Noon   Evening  Midnight
+    # 1999-12-30  1.764052  0.400157  0.978738  2.240893
+    # 1999-12-31  1.867558 -0.977278  0.950088 -0.151357
+    # 2000-01-01 -0.103219  0.410599  0.144044  1.454274
+    # 2000-01-02  0.761038  0.121675  0.443863  0.333674
+    # 2000-01-03  1.494079 -0.205158  0.313068 -0.854096
+    # 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
+    # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
+
+
 Rows
 ====
 
@@ -9,34 +32,17 @@ Range Index
 -----------
 .. code-block:: python
 
-    import pandas as pd
-    import numpy as np
-    np.random.seed(0)
-
-    data = np.random.randn(6, 4)
-    columns = ['Morning', 'Noon', 'Evening', 'Midnight']
-    index = pd.date_range('1970-01-01', periods=6)
-
-    df = pd.DataFrame(data, index, columns)
-    #               Morning       Noon    Evening   Midnight
-    # 1970-01-01   0.486726  -0.291364  -1.105248  -0.333574
-    # 1970-01-02   0.301838  -0.603001   0.069894   0.309209
-    # 1970-01-03  -0.424429   0.845898  -1.460294   0.109749
-    # 1970-01-04   0.909958  -0.986246   0.122176   1.205697
-    # 1970-01-05  -0.172540  -0.974159  -0.848519   1.691875
-    # 1970-01-06   0.047059   0.359687   0.531386  -0.587663
-
     df.iloc[0]
     # Morning     1.764052
     # Noon        0.400157
     # Evening     0.978738
     # Midnight    2.240893
-    # Name: 1970-01-01 00:00:00, dtype: float64
+    # Name: 1999-12-30 00:00:00, dtype: float64
 
-    df.iloc[[1, 3]]
-    #               Morning      Noon   Evening   Midnight
-    # 1970-01-02  1.867558  -0.977278  0.950088  -0.151357
-    # 1970-01-04  0.761038   0.121675  0.443863   0.333674
+    df.iloc[[1,3]]
+    #              Morning      Noon   Evening  Midnight
+    # 1999-12-31  1.867558 -0.977278  0.950088 -0.151357
+    # 2000-01-02  0.761038  0.121675  0.443863  0.333674
 
     df[0]
     # KeyError: 0
@@ -48,35 +54,40 @@ Date Index
 ----------
 .. code-block:: python
 
-    import pandas as pd
-    import numpy as np
-    np.random.seed(0)
+    df.loc['2000-01-05']
+    # Morning     2.269755
+    # Noon       -1.454366
+    # Evening     0.045759
+    # Midnight   -0.187184
+    # Name: 2000-01-05 00:00:00, dtype: float64
 
-    data = np.random.randn(6, 4)
-    columns = ['Morning', 'Noon', 'Evening', 'Midnight']
-    index = pd.date_range('1970-01-01', periods=6)
+.. code-block:: python
 
-    df = pd.DataFrame(data, index, columns)
-    #               Morning       Noon    Evening   Midnight
-    # 1970-01-01   0.486726  -0.291364  -1.105248  -0.333574
-    # 1970-01-02   0.301838  -0.603001   0.069894   0.309209
-    # 1970-01-03  -0.424429   0.845898  -1.460294   0.109749
-    # 1970-01-04   0.909958  -0.986246   0.122176   1.205697
-    # 1970-01-05  -0.172540  -0.974159  -0.848519   1.691875
-    # 1970-01-06   0.047059   0.359687   0.531386  -0.587663
+    df['2000-01-05']
+    # KeyError: '2000-01-05'
 
-    df.loc['1970-01-02']
-    # Morning     1.867558
-    # Noon       -0.977278
-    # Evening     0.950088
-    # Midnight   -0.151357
-    # Name: 1970-01-02 00:00:00, dtype: float64
+    df[pd.Timestamp('2000-01-05')]
+    # KeyError: Timestamp('2000-01-05 00:00:00')
 
-    df['1970-01-02']
-    # KeyError: '1970-01-02'
+.. code-block:: python
 
-    df.loc[['1970-01-02', '1970-01-05']]
-    # KeyError: "None of [Index(['1970-01-02', '1970-01-05'], dtype='object')] are in the [index]"
+    df.loc[['2000-01-02', '2000-01-05']]
+    # KeyError: "None of [Index(['2000-01-02', '2000-01-05'], dtype='object')] are in the [index]"
+
+    df.loc[[pd.Timestamp('2000-01-02'), pd.Timestamp('2000-01-05')]]
+    #                  Morning      Noon   Evening  Midnight
+    # 2000-01-02  0.761038  0.121675  0.443863  0.333674
+    # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
+
+.. code-block:: python
+
+    date1 = pd.Timestamp('2000-01-02')
+    date2 = pd.Timestamp('2000-01-05')
+
+    df.loc[[date1, date2]]
+    #                  Morning      Noon   Evening  Midnight
+    # 2000-01-02  0.761038  0.121675  0.443863  0.333674
+    # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
 
 
 Columns
@@ -85,23 +96,6 @@ Columns
 Single Column
 -------------
 .. code-block:: python
-
-    import pandas as pd
-    import numpy as np
-    np.random.seed(0)
-
-    data = np.random.randn(6, 4)
-    columns = ['Morning', 'Noon', 'Evening', 'Midnight']
-    index = pd.date_range('1970-01-01', periods=6)
-
-    df = pd.DataFrame(data, index, columns)
-    #               Morning       Noon    Evening   Midnight
-    # 1970-01-01   0.486726  -0.291364  -1.105248  -0.333574
-    # 1970-01-02   0.301838  -0.603001   0.069894   0.309209
-    # 1970-01-03  -0.424429   0.845898  -1.460294   0.109749
-    # 1970-01-04   0.909958  -0.986246   0.122176   1.205697
-    # 1970-01-05  -0.172540  -0.974159  -0.848519   1.691875
-    # 1970-01-06   0.047059   0.359687   0.531386  -0.587663
 
     df.Morning
     # 1970-01-01   -0.438232
@@ -125,23 +119,6 @@ Multiple columns
 ----------------
 .. code-block:: python
 
-    import pandas as pd
-    import numpy as np
-    np.random.seed(0)
-
-    data = np.random.randn(6, 4)
-    columns = ['Morning', 'Noon', 'Evening', 'Midnight']
-    index = pd.date_range('1970-01-01', periods=6)
-
-    df = pd.DataFrame(data, index, columns)
-    #               Morning       Noon    Evening   Midnight
-    # 1970-01-01   0.486726  -0.291364  -1.105248  -0.333574
-    # 1970-01-02   0.301838  -0.603001   0.069894   0.309209
-    # 1970-01-03  -0.424429   0.845898  -1.460294   0.109749
-    # 1970-01-04   0.909958  -0.986246   0.122176   1.205697
-    # 1970-01-05  -0.172540  -0.974159  -0.848519   1.691875
-    # 1970-01-06   0.047059   0.359687   0.531386  -0.587663
-
     df[['Morning', 'Evening']]
     #               Morning    Evening
     # 1970-01-01  -0.438232  -1.113116
@@ -154,23 +131,6 @@ Multiple columns
 Columns by Index
 ----------------
 .. code-block:: python
-
-    import pandas as pd
-    import numpy as np
-    np.random.seed(0)
-
-    data = np.random.randn(6, 4)
-    columns = ['Morning', 'Noon', 'Evening', 'Midnight']
-    index = pd.date_range('1970-01-01', periods=6)
-
-    df = pd.DataFrame(data, index, columns)
-    #               Morning       Noon    Evening   Midnight
-    # 1970-01-01   0.486726  -0.291364  -1.105248  -0.333574
-    # 1970-01-02   0.301838  -0.603001   0.069894   0.309209
-    # 1970-01-03  -0.424429   0.845898  -1.460294   0.109749
-    # 1970-01-04   0.909958  -0.986246   0.122176   1.205697
-    # 1970-01-05  -0.172540  -0.974159  -0.848519   1.691875
-    # 1970-01-06   0.047059   0.359687   0.531386  -0.587663
 
     df.iloc[:, 1]
     # 1970-01-01    0.400157

@@ -2,88 +2,130 @@
 DataFrame Group By
 ******************
 
-* Group series using mapper (dict or key function, apply given function to group, return result as series) or by a series of columns
-* Check:
-
-    - ``.value_counts()``
-    - ``.nunique()``
-    - ``.sum()``
-    - ``.count()``
-    - ``.max()``
-    - ``.first()``
 
 .. code-block:: python
 
     import pandas as pd
-    import numpy as np
-    np.random.seed(0)
 
-    data = np.random.randn(6, 4)
-    columns = ['A', 'B', 'C', 'D']
-    index = pd.date_range('1970-01-01', periods=6)
-    # DatetimeIndex(['1970-01-01',
-    #                '1970-01-02',
-    #                '1970-01-03',
-    #                '1970-01-04',
-    #                '1970-01-05',
-    #                '1970-01-06'], dtype='datetime64[ns]', freq='D')
 
-    df = pd.DataFrame(data, index, columns)
+    DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/phones.csv'
 
-By count of elements
---------------------
+    df = pd.read_csv(DATA, parse_dates=['date'])
+    df.drop(columns='index', inplace=True)
+
+.. csv-table:: Data
+    :header: Column, Description
+    :widths: 10, 90
+
+    "date", "The date and time of the entry"
+    "duration", "The duration (in seconds) for each call, the amount of data (in MB) for each data entry, and the number of texts sent (usually 1) for each sms entry"
+    "item", "A description of the event occurring – can be one of call, sms, or data"
+    "month", "The billing month that each entry belongs to – of form ``YYYY-MM``"
+    "network", "The mobile network that was called/texted for each entry"
+    "network_type", "Whether the number being called was a mobile, international ('world'), voicemail, landline, or other ('special') number."
+
+
+Grouping
+========
 .. code-block:: python
 
-    df.groupby('D').size()
-    #         D
-    # -1.789321    1
-    # -0.709686    1
-    # -0.424071    1
-    # -0.241387    1
-    #  1.283282    1
-    #  1.323504    1
+    df.groupby('item')
+    <pandas.core.groupby.generic.DataFrameGroupBy object at 0x12975df90>
+
+.. code-block:: python
+
+    df.groupby(['month', 'item'])
+    <pandas.core.groupby.generic.DataFrameGroupBy object at 0x12973aa10>
+
+
+Groupby Methods
+===============
+* Group series using mapper (dict or key function, apply given function to group, return result as series) or by a series of columns
+* ``.size()``
+* ``.mean()``
+* ``.nunique()``
+* ``.sum()``
+* ``.count()``
+* ``.max()``
+* ``.first()``
+
+Size
+----
+.. code-block:: python
+
+    df.groupby('item').size()
+    # item
+    # call    388
+    # data    150
+    # sms     292
     # dtype: int64
 
-By mean of elements
--------------------
+Mean
+----
 .. code-block:: python
 
-    df.groupby('D').mean()
-    #         D          A          B          C
-    # -1.789321   0.257330   1.190259   0.074459
-    # -0.709686  -0.459565   0.827296   0.953118
-    # -0.424071   1.062487  -0.251961  -0.424092
-    # -0.241387  -0.928127  -0.931601   1.036800
-    # 1.283282   -0.015208   0.901456  -0.812575
-    # 1.323504   -0.389369  -0.283878  -0.166324
+    df.groupby('item').mean()
+    #         duration
+    # item
+    # call  237.940722
+    # data   34.429000
+    # sms     1.000000
 
-Example
+Number of Uniques
+-----------------
+.. code-block:: python
+
+    df.groupby('item').nunique()
+    #       date  duration  item  month  network  network_type
+    # item
+    # call   378       220     1      5        6             3
+    # data   150         1     1      5        1             1
+    # sms    222         1     1      5        6             3
+
+Sum
+---
+.. code-block:: python
+
+    df.groupby('item').sum()
+    #       duration
+    # item
+    # call  92321.00
+    # data   5164.35
+    # sms     292.00
+
+Count
+-----
+.. code-block:: python
+
+    df.groupby('item').count()
+    #       date  duration  month  network  network_type
+    # item
+    # call   388       388    388      388           388
+    # data   150       150    150      150           150
+    # sms    292       292    292      292           292
+
+Maximum
 -------
 .. code-block:: python
 
-    import pandas as pd
-    import numpy as np
-    np.random.seed(0)
+    df.groupby('item').max()
+    #                     date   duration    month    network network_type
+    # item
+    # call 2015-12-02 20:51:00  10528.000  2015-03  voicemail    voicemail
+    # data 2015-12-03 06:58:00     34.429  2015-03       data         data
+    # sms  2015-12-01 18:26:00      1.000  2015-03      world        world
 
-    df = pd.DataFrame({'A': ['foo', 'bar', 'foo', 'bar', 'foo', 'bar', 'foo', 'foo'],
-                       'B': ['one', 'one', 'two', 'three', 'two', 'two', 'one', 'three'],
-                       'C' : np.random.randn(8),
-                       'D' : np.random.randn(8)})
+First
+-----
+.. code-block:: python
 
-    #      A      B          C          D
-    # 0  foo    one   0.239653  -1.505271
-    # 1  bar    one   0.567327  -0.109503
-    # 2  foo    two   1.726200  -0.401514
-    # 3  bar  three  -1.145225   1.379611
-    # 4  foo    two  -0.808037   1.148953
-    # 5  bar    two   0.883013  -0.347327
-    # 6  foo    one   0.225142  -0.995694
-    # 7  foo  three  -0.484968  -0.547152
+    df.groupby('item').first()
+    #                     date  duration    month   network network_type
+    # item
+    # call 2014-10-15 06:58:00    13.000  2014-11  Vodafone       mobile
+    # data 2014-10-15 06:58:00    34.429  2014-11      data         data
+    # sms  2014-10-16 22:18:00     1.000  2014-11    Meteor       mobile
 
-    df.groupby('A').mean()
-    #   A         C          D
-    # bar  0.101705   0.307594
-    # foo  0.179598  -0.460136
 
 
 Assignments

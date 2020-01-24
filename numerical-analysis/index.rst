@@ -101,6 +101,7 @@ Pandas
 
     pandas/df-create.rst
     pandas/df-import.rst
+    pandas/df-index.rst
     pandas/df-attributes.rst
     pandas/df-select.rst
     pandas/df-indexing.rst

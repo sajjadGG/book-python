@@ -3,88 +3,83 @@ DataFrame Create
 ****************
 
 
-Indexes
-=======
+Create from List of Dicts
+=========================
+.. code-block:: python
 
-Range Index
------------
+    import pandas as pd
+
+    pd.DataFrame([
+        {'A': 1.0, 'B': 2.0},
+        {'A': 3.0, 'B': 4.0},
+    ])
+
+    #      A    B
+    # 0  1.0  2.0
+    # 1  3.0  4.0
+
+.. code-block:: python
+
+    import pandas as pd
+
+    pd.DataFrame([
+        {'A': 1.0, 'B': 2.0},
+        {'B': 3.0, 'C': 4.0},
+    ])
+
+    #      A    B    C
+    # 0  1.0  2.0  NaN
+    # 1  NaN  3.0  4.0
+
+.. code-block:: python
+
+    import pandas as pd
+
+    pd.DataFrame([
+        {'first_name': 'Mark', 'last_name': 'Watney'},
+        {'first_name': 'Jan', 'last_name': 'Twardowski'},
+        {'first_name': 'Ivan', 'last_name': 'Ivanovic'},
+        {'first_name': 'Melissa', 'last_name': 'Lewis'},
+    ])
+
+    #       first_name   last_name
+    # 0       Mark      Watney
+    # 1        Jan  Twardowski
+    # 2       Ivan    Ivanovic
+    # 3    Melissa       Lewis
+
+Create from Dict
+================
 .. code-block:: python
 
     import pandas as pd
 
     pd.DataFrame({
-        'A': [10, 11, 12],
-        'B': [20, 21, 22],
-        'C': [30, 31, 32]})
-    #     A   B   C
-    # 0  10  20  30
-    # 1  11  21  31
-    # 2  12  22  32
+        'A': ['a', 'b', 'c'],
+        'B': [1.0, 2.0, 3.0],
+        'C': [1, 2, 3],
+    })
 
-Integer Index
--------------
+    #    A    B  C
+    # 0  a  1.0  1
+    # 1  b  2.0  2
+    # 2  c  3.0  3
+
 .. code-block:: python
 
     import pandas as pd
-    import numpy as np
 
-    data = np.arange(16).reshape(4,4)
-    index = [99, 88, 77, 66]
-    columns = ['A', 'B', 'C', 'D']
+    pd.DataFrame({
+        'first_name': ['Mark', 'Jan', 'Ivan', 'Melissa'],
+        'last_name': ['Watney', 'Twardowski', 'Ivanovic', 'Lewis'],
+    })
 
-    pd.DataFrame(data, index, columns)
-    #      A   B   C   D
-    # 99   0   1   2   3
-    # 88   4   5   6   7
-    # 77   8   9  10  11
-    # 66  12  13  14  15
+    #       first_name   last_name
+    # 0       Mark      Watney
+    # 1        Jan  Twardowski
+    # 2       Ivan    Ivanovic
+    # 3    Melissa       Lewis
 
-String Index
-------------
-.. code-block:: python
-
-    import pandas as pd
-    import numpy as np
-
-    data = np.arange(16).reshape(4,4)
-    index = ['a', 'b', 'c', 'd']
-    columns = ['A', 'B', 'C', 'D']
-
-    pd.DataFrame(data, index, columns)
-    #     A   B   C   D
-    # a   0   1   2   3
-    # b   4   5   6   7
-    # c   8   9  10  11
-    # d  12  13  14  15
-
-Date indexes
-------------
-.. code-block:: python
-
-    import pandas as pd
-    import numpy as np
-    np.random.seed(0)
-
-    columns = ['Morning', 'Noon', 'Evening', 'Midnight']
-    index = pd.date_range('1999-12-30', periods=7)
-    data = np.random.randn(7, 4)
-
-    pd.DataFrame(data, index, columns)
-    #              Morning      Noon   Evening  Midnight
-    # 1999-12-30  1.764052  0.400157  0.978738  2.240893
-    # 1999-12-31  1.867558 -0.977278  0.950088 -0.151357
-    # 2000-01-01 -0.103219  0.410599  0.144044  1.454274
-    # 2000-01-02  0.761038  0.121675  0.443863  0.333674
-    # 2000-01-03  1.494079 -0.205158  0.313068 -0.854096
-    # 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
-    # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
-
-
-Values
-======
-
-Custom values in columns
-------------------------
 .. code-block:: python
 
     import pandas as pd
@@ -102,23 +97,12 @@ Custom values in columns
     # 2  1.0  1961-04-12  1.0  3   test  foo
     # 3  1.0  1961-04-12  1.0  3  train  foo
 
-With multiple rows
-------------------
-.. code-block:: python
-
-    import pandas as pd
-
-    pd.DataFrame([
-        {'A': 1.0, 'B': 2.0},
-        {'B': 3.0, 'C': 4.0},
-    ])
-    #      A    B    C
-    # 0  1.0  2.0  NaN
-    # 1  NaN  3.0  4.0
-
 
 Assignments
 ===========
+
+Create DataFrame
+----------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
