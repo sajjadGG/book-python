@@ -13,7 +13,6 @@ Sparse data with Series
 
     import pandas as pd
 
-
     sa = pd.SparseArray([1, 2, 3])
     # [1, 2, 3]
     # Fill: 0
@@ -24,9 +23,8 @@ Sparse data with DataFrame
 --------------------------
 .. code-block:: python
 
-    import numpy as np
     import pandas as pd
-
+    import numpy as np
 
     df = pd.DataFrame({
         'A': [1, 2, 3],

@@ -90,8 +90,8 @@ Add values
 
 .. code-block:: python
 
+    import pandas as pd
     import numpy as np
-
 
     a = pd.Series([1, 1, 1, np.nan], index=['a', 'b', 'c', 'd'])
     # a    1.0

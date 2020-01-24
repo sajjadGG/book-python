@@ -9,11 +9,9 @@ Range Index
 -----------
 .. code-block:: python
 
-    import numpy as np
     import pandas as pd
-
+    import numpy as np
     np.random.seed(0)
-
 
     data = np.random.randn(6, 4)
     columns = ['Morning', 'Noon', 'Evening', 'Midnight']
@@ -50,11 +48,9 @@ Date Index
 ----------
 .. code-block:: python
 
-    import numpy as np
     import pandas as pd
-
+    import numpy as np
     np.random.seed(0)
-
 
     data = np.random.randn(6, 4)
     columns = ['Morning', 'Noon', 'Evening', 'Midnight']
@@ -90,11 +86,9 @@ Single Column
 -------------
 .. code-block:: python
 
-    import numpy as np
     import pandas as pd
-
+    import numpy as np
     np.random.seed(0)
-
 
     data = np.random.randn(6, 4)
     columns = ['Morning', 'Noon', 'Evening', 'Midnight']
@@ -131,11 +125,9 @@ Multiple columns
 ----------------
 .. code-block:: python
 
-    import numpy as np
     import pandas as pd
-
+    import numpy as np
     np.random.seed(0)
-
 
     data = np.random.randn(6, 4)
     columns = ['Morning', 'Noon', 'Evening', 'Midnight']
@@ -163,11 +155,9 @@ Columns by Index
 ----------------
 .. code-block:: python
 
-    import numpy as np
     import pandas as pd
-
+    import numpy as np
     np.random.seed(0)
-
 
     data = np.random.randn(6, 4)
     columns = ['Morning', 'Noon', 'Evening', 'Midnight']

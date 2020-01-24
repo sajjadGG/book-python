@@ -12,7 +12,6 @@ Fill NaN - Scalar value
     import pandas as pd
     import numpy as np
 
-
     data = [1, np.nan, np.nan, np.nan, 2, np.nan, 3, np.inf]
     s = pd.Series(data)
 
@@ -48,7 +47,6 @@ Fill NaN - Forward Fill
     import pandas as pd
     import numpy as np
 
-
     data = [1, np.nan, np.nan, np.nan, 2, np.nan, 3, np.inf]
     s = pd.Series(data)
 
@@ -83,7 +81,6 @@ Fill NaN - Backward Fill
 
     import pandas as pd
     import numpy as np
-
 
     data = [1, np.nan, np.nan, np.nan, 2, np.nan, 3, np.inf]
     s = pd.Series(data)
@@ -147,7 +144,6 @@ Fill NaN - Interpolate
 
     import pandas as pd
     import numpy as np
-
 
     data = [1, np.nan, np.nan, np.nan, 2, np.nan, 3, np.inf]
     s = pd.Series(data)

@@ -13,7 +13,6 @@ Drop NaN - All
     import pandas as pd
     import numpy as np
 
-
     df = pd.DataFrame({
         'A': [1, 2, np.nan, np.nan, 3, np.nan, 4],
         'B': [1.1, 2.2, np.nan, np.nan, 3.3, np.nan, 4.4],
@@ -86,7 +85,6 @@ Drop NaN - Any
     import pandas as pd
     import numpy as np
 
-
     df = pd.DataFrame({
         'A': [1, 2, np.nan, np.nan, 3, np.nan, 4],
         'B': [1.1, 2.2, np.nan, np.nan, 3.3, np.nan, 4.4],
@@ -143,7 +141,6 @@ Fill NaN - scalar value
     import pandas as pd
     import numpy as np
 
-
     df = pd.DataFrame({
         'A': [1, 2, np.nan, np.nan, 3, np.nan, 4],
         'B': [1.1, 2.2, np.nan, np.nan, 3.3, np.nan, 4.4],
@@ -181,7 +178,6 @@ Fill NaN - dict values
 
     import pandas as pd
     import numpy as np
-
 
     df = pd.DataFrame({
         'A': [1, 2, np.nan, np.nan, 3, np.nan, 4],
@@ -225,7 +221,6 @@ Fill NaN - Forward Fill
     import pandas as pd
     import numpy as np
 
-
     df = pd.DataFrame({
         'A': [1, 2, np.nan, np.nan, 3, np.nan, 4],
         'B': [1.1, 2.2, np.nan, np.nan, 3.3, np.nan, 4.4],
@@ -264,7 +259,6 @@ Fill NaN - Backward Fill
     import pandas as pd
     import numpy as np
 
-
     df = pd.DataFrame({
         'A': [1, 2, np.nan, np.nan, 3, np.nan, 4],
         'B': [1.1, 2.2, np.nan, np.nan, 3.3, np.nan, 4.4],
@@ -299,7 +293,6 @@ Fill NaN - Interpolate
 
     import pandas as pd
     import numpy as np
-
 
     df = pd.DataFrame({
         'A': [1, 2, np.nan, np.nan, 3, np.nan, 4],

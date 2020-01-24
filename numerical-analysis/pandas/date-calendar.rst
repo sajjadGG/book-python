@@ -1,6 +1,8 @@
-***********************
-Date and Time Calendars
-***********************
+.. _Date and Time Calendar:
+
+**********************
+Date and Time Calendar
+**********************
 
 
 Business Days

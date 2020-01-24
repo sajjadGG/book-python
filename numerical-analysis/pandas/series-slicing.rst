@@ -10,7 +10,6 @@ Numeric Index
     import pandas as pd
     import numpy as np
 
-
     data = [11, 22, 33, 44, 55]
     s = pd.Series(data)
 
@@ -60,7 +59,6 @@ String Index
     import pandas as pd
     import numpy as np
 
-
     data = [11, 22, 33, 44, 55]
     index = ['a', 'b', 'c', 'd', 'e']
     s = pd.Series(data, index)
@@ -100,7 +98,6 @@ String Index
 
     import pandas as pd
     import numpy as np
-
 
     data = [11, 22, 33, 44, 55]
     index = ['a', 'b', 'c', 'd', 'e']
@@ -146,7 +143,6 @@ String Index
     import pandas as pd
     import numpy as np
 
-
     data = [11, 22, 33, 44, 55]
     index = ['aaa', 'bbb', 'ccc', 'ddd', 'eee']
     s = pd.Series(data, index)
@@ -175,7 +171,6 @@ Date Index
 
     import pandas as pd
     import numpy as np
-
 
     data = [11, 22, 33, 44, 55]
     index = pd.date_range('1970-01-01', periods=5, freq='D')
@@ -240,7 +235,6 @@ Date Index
 
     import pandas as pd
     import numpy as np
-
 
     data = [11, 22, 33, 44, 55]
     index = pd.date_range('1970-01-01', periods=5, freq='D')

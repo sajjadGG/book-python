@@ -61,7 +61,6 @@ Date Index
     import pandas as pd
     import numpy as np
 
-
     data = list('abcdef')
     index = pd.date_range('1999-12-28', freq='D', periods=len(data))
     s = pd.Series(data, index)

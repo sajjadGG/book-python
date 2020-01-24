@@ -14,11 +14,9 @@ DataFrame Group By
 
 .. code-block:: python
 
-    import numpy as np
     import pandas as pd
-
+    import numpy as np
     np.random.seed(0)
-
 
     data = np.random.randn(6, 4)
     columns = ['A', 'B', 'C', 'D']
@@ -63,11 +61,9 @@ Example
 -------
 .. code-block:: python
 
-    import numpy as np
     import pandas as pd
-
+    import numpy as np
     np.random.seed(0)
-
 
     df = pd.DataFrame({'A': ['foo', 'bar', 'foo', 'bar', 'foo', 'bar', 'foo', 'foo'],
                        'B': ['one', 'one', 'two', 'three', 'two', 'two', 'one', 'three'],

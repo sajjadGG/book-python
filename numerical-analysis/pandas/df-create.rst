@@ -25,8 +25,8 @@ Integer Index
 -------------
 .. code-block:: python
 
-    import numpy as np
     import pandas as pd
+    import numpy as np
 
     data = np.arange(16).reshape(4,4)
     index = [99, 88, 77, 66]
@@ -43,8 +43,8 @@ String Index
 ------------
 .. code-block:: python
 
-    import numpy as np
     import pandas as pd
+    import numpy as np
 
     data = np.arange(16).reshape(4,4)
     index = ['a', 'b', 'c', 'd']
@@ -61,9 +61,8 @@ Date indexes
 ------------
 .. code-block:: python
 
-    import numpy as np
     import pandas as pd
-
+    import numpy as np
     np.random.seed(0)
 
     columns = ['Morning', 'Noon', 'Evening', 'Midnight']
@@ -88,8 +87,8 @@ Custom values in columns
 ------------------------
 .. code-block:: python
 
-    import numpy as np
     import pandas as pd
+    import numpy as np
 
     pd.DataFrame({'A' : 1.,
                   'B' : pd.Timestamp('1961-04-12'),

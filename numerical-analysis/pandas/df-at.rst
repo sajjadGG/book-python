@@ -9,15 +9,14 @@ DataFrame At
 
 .. code-block:: python
 
-    import numpy as np
     import pandas as pd
-
+    import numpy as np
     np.random.seed(0)
 
     df = pd.DataFrame(
-        columns=['Morning', 'Noon', 'Evening', 'Midnight'],
-        index=pd.date_range('1999-12-30', periods=7),
-        data=np.random.randn(7, 4))
+        columns = ['Morning', 'Noon', 'Evening', 'Midnight'],
+        index = pd.date_range('1999-12-30', periods=7),
+        data = np.random.randn(7, 4))
 
     df
     #              Morning      Noon   Evening  Midnight

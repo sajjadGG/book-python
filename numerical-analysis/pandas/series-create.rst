@@ -27,8 +27,6 @@ Creating
 .. code-block:: python
 
     import pandas as pd
-    import numpy as np
-
 
     pd.Series(range(4))
     # 0    0
@@ -41,7 +39,6 @@ Creating
 
     import pandas as pd
     import numpy as np
-
 
     pd.Series(np.arange(4))
     # 0    0
@@ -59,7 +56,6 @@ Creating
 
     import pandas as pd
 
-
     pd.Series([1., 2., 3., 4.])
     # 0    1.0
     # 1    2.0
@@ -71,7 +67,6 @@ Creating
 
     import pandas as pd
     import numpy as np
-
 
     pd.Series(np.arange(4.0))
     # 0    0.0
@@ -85,7 +80,6 @@ Creating
     import pandas as pd
     import numpy as np
 
-
     pd.Series([1, 2, np.nan, 4])
     # 0    1.0
     # 1    2.0
@@ -97,7 +91,6 @@ Creating
 
     import pandas as pd
     import numpy as np
-
 
     pd.Series([1, 2, np.inf, 4])
     # 0    1.0
@@ -116,7 +109,6 @@ Creating
 
     import pandas as pd
 
-
     pd.Series(['a', 'b', 'c', 'd'])
     # 0    a
     # 1    b
@@ -127,7 +119,6 @@ Creating
 .. code-block:: python
 
     import pandas as pd
-
 
     pd.Series(list('abcd'))
     # 0    a
@@ -145,7 +136,6 @@ dates
 .. code-block:: python
 
     import pandas as pd
-
 
     apollo11 = pd.date_range(start='1969-07-16', end='1969-07-24')
     s = pd.Series(apollo11)
