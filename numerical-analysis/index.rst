@@ -97,6 +97,7 @@ Pandas
     pandas/series-update.rst
     pandas/series-alter.rst
     pandas/series-arithmetic.rst
+    pandas/series-statistics.rst
 
     pandas/df-create.rst
     pandas/df-import.rst

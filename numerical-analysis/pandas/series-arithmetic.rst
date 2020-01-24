@@ -3,88 +3,58 @@ Series Arithmetic
 *****************
 
 
+Scalar Arithmetic
+=================
 .. code-block:: python
 
-    data = np.random.randn(5)
-    index = ['a', 'b', 'c', 'd', 'e']
+    import pandas as pd
+    import numpy as np
 
-    s = pd.Series(data, index)
-    # a   -1.613898
-    # b   -0.212740
-    # c   -0.895467
-    # d    0.386902
-    # e   -0.510805
+    s = pd.Series(
+        data = [1.0, 2.0, 3.0, np.nan],
+        index = ['a', 'b', 'c', 'd'])
+
+    s
+    # a    1.0
+    # b    2.0
+    # c    3.0
+    # d    NaN
     # dtype: float64
 
-
 Multiply by scalar
-==================
+------------------
 .. code-block:: python
 
-    data = np.random.randn(5)
-    index = ['a', 'b', 'c', 'd', 'e']
-    s = pd.Series(data, index)
-
     s * 5
-    # a   -8.069489
-    # b   -1.063701
-    # c   -4.477333
-    # d    1.934512
-    # e   -2.554026
+    # a     5.0
+    # b    10.0
+    # c    15.0
+    # d     NaN
     # dtype: float64
 
 Multiply by itself
 ------------------
 .. code-block:: python
 
-    data = np.random.randn(5)
-    index = ['a', 'b', 'c', 'd', 'e']
-    s = pd.Series(data, index)
-
     s * s
-    # a    2.604666
-    # b    0.045258
-    # c    0.801860
-    # d    0.149694
-    # e    0.260922
+    # a    1.0
+    # b    4.0
+    # c    9.0
+    # d    NaN
     # dtype: float64
 
 .. code-block:: python
-
-    data = np.random.randn(5)
-    index = ['a', 'b', 'c', 'd', 'e']
-    s = pd.Series(data, index)
 
     s ** 3
-    # a   -4.203665
-    # b   -0.009628
-    # c   -0.718039
-    # d    0.057917
-    # e   -0.133280
+    # a     1.0
+    # b     8.0
+    # c    27.0
+    # d     NaN
     # dtype: float64
 
-Sum elements
-------------
-.. code-block:: python
 
-    data = np.random.randn(5)
-    index = ['a', 'b', 'c', 'd', 'e']
-    s = pd.Series(data, index)
-
-    s.sum()
-    # -2.846007328675207
-
-.. code-block:: python
-
-    data = np.random.randn(5)
-    index = ['a', 'b', 'c', 'd', 'e']
-    s = pd.Series(data, index)
-
-    sum(s)
-    # -2.846007328675207
-
-Add values
-----------
+Add Series
+==========
 * Uses inner join
 * ``fill_value``: If data in both corresponding ``Series`` locations is missing the result will be missing
 
@@ -93,27 +63,28 @@ Add values
     import pandas as pd
     import numpy as np
 
-    a = pd.Series([1, 1, 1, np.nan], index=['a', 'b', 'c', 'd'])
+    a = pd.Series(
+        data = [1.0, 2.0, 3.0, np.nan],
+        index = ['a', 'b', 'c', 'd'])
     # a    1.0
-    # b    1.0
-    # c    1.0
+    # b    2.0
+    # c    3.0
     # d    NaN
     # dtype: float64
 
-    b = pd.Series([1, np.nan, 1, np.nan], index=['a', 'b', 'x', 'y'])
-    # a    1.0
+    b = pd.Series(
+        data = [5.0, np.nan, 7.0, np.nan],
+        index = ['a', 'b', 'x', 'y'])
+    # a    5.0
     # b    NaN
-    # x    1.0
+    # x    7.0
     # y    NaN
     # dtype: float64
 
 .. code-block:: python
 
-    a = pd.Series([1, 1, 1, np.nan], index=['a', 'b', 'c', 'd'])
-    b = pd.Series([1, np.nan, 1, np.nan], index=['a', 'b', 'x', 'y'])
-
     a + b
-    # a    2.0
+    # a    6.0
     # b    NaN
     # c    NaN
     # d    NaN
@@ -124,15 +95,12 @@ Add values
 .. code-block:: python
     :caption: ``fill_value``: If data in both corresponding ``Series`` locations is missing the result will be missing
 
-    a = pd.Series([1, 1, 1, np.nan], index=['a', 'b', 'c', 'd'])
-    b = pd.Series([1, np.nan, 1, np.nan], index=['a', 'b', 'x', 'y'])
-
     a.add(b, fill_value=0)
-    # a    2.0
-    # b    1.0
-    # c    1.0
+    # a    6.0
+    # b    2.0
+    # c    3.0
     # d    NaN
-    # x    1.0
+    # x    7.0
     # y    NaN
     # dtype: float64
 
