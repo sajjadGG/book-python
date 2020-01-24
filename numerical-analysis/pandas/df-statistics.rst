@@ -256,6 +256,65 @@ Other methods
     "``cummin``", "Cumulative minimum"
 
 
+Example
+=======
+.. code-block:: python
+
+    import pandas as pd
+
+
+    DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/phones.csv'
+
+    df = pd.read_csv(DATA, parse_dates=['date'])
+    df.drop(columns='index', inplace=True)
+
+.. csv-table:: Data
+    :header: Column, Description
+    :widths: 10, 90
+
+    "date", "The date and time of the entry"
+    "duration", "The duration (in seconds) for each call, the amount of data (in MB) for each data entry, and the number of texts sent (usually 1) for each sms entry"
+    "item", "A description of the event occurring – can be one of call, sms, or data"
+    "month", "The billing month that each entry belongs to – of form ``YYYY-MM``"
+    "network", "The mobile network that was called/texted for each entry"
+    "network_type", "Whether the number being called was a mobile, international ('world'), voicemail, landline, or other ('special') number."
+
+.. code-block:: python
+    :caption: How many rows the dataset
+
+    df['item'].count()
+    # 830
+
+.. code-block:: python
+    :caption: What was the longest phone call / data entry?
+
+    df['duration'].max()
+    # 10528.0
+
+.. code-block:: python
+    :caption: How many seconds of phone calls are recorded in total?
+
+    df.loc[ df['item'] == 'call' ]['duration'].sum()
+    # 92321.0
+
+.. code-block:: python
+    :caption: How many entries are there for each month?
+
+    df['month'].value_counts()
+    # 2014-11  230
+    # 2015-01  205
+    # 2014-12  157
+    # 2015-02  137
+    # 2015-03  101
+    # dtype: int64
+
+.. code-block:: python
+    :caption: Number of non-null unique network entries
+
+    df['network'].nunique()
+    # 9
+
+
 Assignments
 ===========
 

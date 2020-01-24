@@ -3,14 +3,6 @@ DataFrame Aggregations
 **********************
 
 
-Case Study
-==========
-.. note:: Source :cite:`PandasAggregations`
-
-Load Data
----------
-* :download:`data/phones.csv`
-
 .. code-block:: python
 
     import pandas as pd
@@ -32,181 +24,12 @@ Load Data
     "network", "The mobile network that was called/texted for each entry"
     "network_type", "Whether the number being called was a mobile, international ('world'), voicemail, landline, or other ('special') number."
 
-Summarising the DataFrame
--------------------------
-.. code-block:: python
-    :caption: How many rows the dataset
 
-    df['item'].count()
-    # 830
+.. note:: Source :cite:`PandasAggregations`
 
-.. code-block:: python
-    :caption: What was the longest phone call / data entry?
 
-    df['duration'].max()
-    # 10528.0
-
-.. code-block:: python
-    :caption: How many seconds of phone calls are recorded in total?
-
-    df.loc[ df['item'] == 'call' ]['duration'].sum()
-    # 92321.0
-
-.. code-block:: python
-    :caption: How many entries are there for each month?
-
-    df['month'].value_counts()
-    # 2014-11  230
-    # 2015-01  205
-    # 2014-12  157
-    # 2015-02  137
-    # 2015-03  101
-    # dtype: int64
-
-.. code-block:: python
-    :caption: Number of non-null unique network entries
-
-    df['network'].nunique()
-    # 9
-
-Summarising Groups
-------------------
-.. code-block:: python
-
-    list(df.groupby(['month']).groups.keys())
-    # ['2014-11', '2014-12', '2015-01', '2015-02', '2015-03']
-
-    len(df.groupby(['month']).groups['2014-11'])
-    # 230
-
-.. code-block:: python
-    :caption: Get the first entry for each month
-
-    df.groupby('month').first()
-    #   month  date                 duration  item   network  network_type
-    # 2014-11  2014-10-15 06:58:00    34.429  data      data          data
-    # 2014-12  2014-11-13 06:58:00    34.429  data      data          data
-    # 2015-01  2014-12-13 06:58:00    34.429  data      data          data
-    # 2015-02  2015-01-13 06:58:00    34.429  data      data          data
-    # 2015-03  2015-02-12 20:15:00    69.000  call  landline      landline
-
-.. code-block:: python
-    :caption: Get the sum of the durations per month
-
-    df.groupby('month')['duration'].sum()
-    # month
-    # 2014-11  26639.441
-    # 2014-12  14641.870
-    # 2015-01  18223.299
-    # 2015-02  15522.299
-    # 2015-03  22750.441
-    # Name: duration, dtype: float64
-
-.. code-block:: python
-    :caption: Get the number of dates / entries in each month
-
-    df.groupby('month')['date'].count()
-    # month
-    # 2014-11  230
-    # 2014-12  157
-    # 2015-01  205
-    # 2015-02  137
-    # 2015-03  101
-    # Name: date, dtype: int64
-
-.. code-block:: python
-    :caption: What is the sum of durations, for calls only, to each network
-
-    df.loc[df['item'] == 'call'].groupby('network')['duration'].sum()
-    # network
-    # Meteor     7200.0
-    # Tesco      13828.0
-    # Three      36464.0
-    # Vodafone   14621.0
-    # landline   18433.0
-    # voicemail  1775.0
-    # Name: duration, dtype: float64
-
-.. code-block:: python
-    :caption: How many calls, sms, and data entries are in each month?
-
-    df.groupby(['month', 'item'])['date'].count()
-    # month    item
-    # 2014-11  call   107
-    #          data    29
-    #          sms     94
-    # 2014-12  call    79
-    #          data    30
-    #          sms     48
-    # 2015-01  call    88
-    #          data    31
-    #          sms     86
-    # 2015-02  call    67
-    #          data    31
-    #          sms     39
-    # 2015-03  call    47
-    #          data    29
-    #          sms     25
-    # Name: date, dtype: int64
-
-.. code-block:: python
-    :caption: How many calls, texts, and data are sent per month, split by network_type?
-
-    df.groupby(['month', 'network_type'])['date'].count()
-    # month    network_type
-    # 2014-11  data           29
-    #          landline        5
-    #          mobile        189
-    #          special         1
-    #          voicemail       6
-    # 2014-12  data           30
-    #          landline        7
-    #          mobile        108
-    #          voicemail       8
-    #          world           4
-    # 2015-01  data           31
-    #          landline       11
-    #          mobile        160
-    #          voicemail       3
-    # 2015-02  data           31
-    #          landline        8
-    #          mobile         90
-    #          special         2
-    #          voicemail       6
-    # 2015-03  data           29
-    #          landline       11
-    #          mobile         54
-    #          voicemail       4
-    #          world           3
-    # Name: date, dtype: int64
-
-Groupby output format
----------------------
-* Series or DataFrame?
-
-.. code-block:: python
-    :caption: produces Pandas Series
-
-    df.groupby('month')['duration'].sum()
-    # month
-    # 2014-11  26639.441
-    # 2014-12  14641.870
-    # 2015-01  18223.299
-    # 2015-02  15522.299
-    # 2015-03  22750.441
-    # Name: duration, dtype: float64
-
-.. code-block:: python
-    :caption: Produces Pandas DataFrame
-
-    df.groupby('month')[['duration']].sum()
-    #   month   duration
-    # 2014-11  26639.441
-    # 2014-12  14641.870
-    # 2015-01  18223.299
-    # 2015-02  15522.299
-    # 2015-03  22750.441
-
+Single Statistic
+================
 .. code-block:: python
     :caption: The groupby output will have an index or multi-index on rows corresponding to your chosen grouping variables. To avoid setting this index, pass ``as_index=False`` to the groupby operation.
 
@@ -218,8 +41,9 @@ Groupby output format
     # 3  2015-02  15522.299
     # 4  2015-03  22750.441
 
+
 Multiple Statistics per Group
------------------------------
+=============================
 .. code-block:: python
     :caption: Group the data frame by month and item and extract a number of stats from each group
 
@@ -260,8 +84,9 @@ Multiple Statistics per Group
     })
     # ValueError: Cannot add integral value to Timestamp without freq.
 
+
 Applying multiple functions to columns in groups
-------------------------------------------------
+================================================
 .. code-block:: python
     :caption: Group the data frame by month and item and extract a number of stats from each group
 
@@ -294,8 +119,9 @@ Applying multiple functions to columns in groups
     #          data  34.429     34.429    998.441         29     2015-02-13 06:58:00  2015-02-13 06:58:00       29
     #          sms    1.000      1.000     25.000         25     2015-02-19 18:46:00  2015-02-19 18:46:00       17
 
+
 Named Aggregations
-------------------
+==================
 .. code-block:: python
     :caption: Named Aggregations
 
@@ -320,10 +146,11 @@ Named Aggregations
     # 2015-02        1863.0           1.0         14416.0        25
     # 2015-03       10528.0           2.0         21727.0        19
 
+
 Renaming index
---------------
-* using droplevel and ravel
-* Dictionary groupby format is deprecated
+==============
+* using ``droplevel`` and ``ravel``
+* Dictionary ``groupby`` format is deprecated
 
 .. code-block:: python
     :caption: Drop the top level (using ``.droplevel()``) of the newly created multi-index on columns using
