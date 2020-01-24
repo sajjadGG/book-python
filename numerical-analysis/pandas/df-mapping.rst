@@ -2,6 +2,7 @@
 DataFrame Mapping
 *****************
 
+
 .. code-block:: python
 
     import pandas as pd
@@ -83,6 +84,60 @@ Apply
 Applymap
 ========
 * ``.applymap()`` works element-wise on a DataFrame
+
+
+Summary
+=======
+* ``Series.map`` works element-wise on a Series
+* ``Series.map`` operate on one element at time
+* ``Series.map`` https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.map.html
+
+* ``Series.apply`` operate on one element at time
+* ``Series.apply`` https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.apply.html
+
+* ``DataFrame.apply`` works on a row / column basis of a DataFrame
+* ``DataFrame.apply`` operates on entire rows or columns at a time
+* ``DataFrame.apply`` https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html
+
+* ``DataFrame.applymap`` works element-wise on a DataFrame
+* ``DataFrame.applymap`` operate on one element at time
+* ``DataFrame.applymap`` https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.applymap.html
+
+First major difference: **DEFINITION**
+
+    - ``map`` is defined on Series ONLY
+    - ``applymap`` is defined on DataFrames ONLY
+    - ``apply`` is defined on BOTH
+
+Second major difference: **INPUT ARGUMENT**
+
+    - ``map`` accepts ``dict``s, ``Series``, or callable
+    - ``applymap`` and ``apply`` accept callables only
+
+Third major difference: **BEHAVIOR**
+
+    - ``map`` is elementwise for Series
+    - ``applymap`` is elementwise for DataFrames
+    - ``apply`` also works elementwise but is suited to more complex operations and aggregation. The behaviour and return value depends on the function.
+
+Fourth major difference (the most important one): **USE CASE**
+
+    - ``map`` is meant for mapping values from one domain to another, so is optimised for performance (e.g., ``df['A'].map({1:'a', 2:'b', 3:'c'})``)
+    - ``applymap`` is good for elementwise transformations across multiple rows/columns (e.g., ``df[['A', 'B', 'C']].applymap(str.strip)``)
+    - ``apply`` is for applying any function that cannot be vectorised (e.g., ``df['sentences'].apply(nltk.sent_tokenize)``)
+
+Footnotes:
+
+    #. ``map`` when passed a dictionary/Series will map elements based on the keys in that dictionary/Series. Missing values will be recorded as NaN in the output.
+    #. ``applymap`` in more recent versions has been optimised for some operations. You will find ``applymap`` slightly faster than ``apply`` in some cases. My suggestion is to test them both and use whatever works better.
+    #. ``map`` is optimised for elementwise mappings and transformation. Operations that involve dictionaries or Series will enable pandas to use faster code paths for better performance.
+    #. ``Series.apply`` returns a scalar for aggregating operations, Series otherwise. Similarly for ``DataFrame.apply``. Note that ``apply`` also has fastpaths when called with certain NumPy functions such as ``mean``, ``sum``, etc.
+
+.. figure:: img/pd-mapping.png
+    :scale: 50%
+    :align: center
+
+.. note:: Source: https://stackoverflow.com/questions/19798153/difference-between-map-applymap-and-apply-methods-in-pandas
 
 
 Assignments
