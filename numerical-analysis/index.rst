@@ -113,6 +113,7 @@ Pandas
     pandas/df-sample.rst
     pandas/df-plot.rst
     pandas/df-sort.rst
+    pandas/df-mapping.rst
     pandas/df-statistics.rst
     pandas/df-groupby.rst
     pandas/df-aggregations.rst
