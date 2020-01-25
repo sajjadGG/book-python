@@ -257,21 +257,16 @@ Month number to text
     #. Download :download:`data/phones.csv`
     #. Add column ``year`` and ``month_name`` by parsing ``month`` column
     #. Month name must be a string month name, not a number (i.e.: 'January', 'May')
-    #. Example:
-
-        - if month column has value "2015-01"
-        - ``year``: 2015
-        - ``month_name``: January
 
 :Polish:
     #. Pobierz :download:`data/phones.csv`
     #. Dodaj kolumnę ``year`` i ``month_name`` poprzez sparsowanie kolumny ``month``
     #. Nazwa miesiąca musi być ciągiem znaków, a nie liczbą (i.e. 'January', 'May')
-    #. Przykład:
 
-        - Jeżeli kolumna ``month`` ma wartość "2015-01"
-        - ``year``: 2015
-        - ``month_name``: January
+:Example:
+    #. if ``month`` column is "2015-01"
+    #. ``year``: 2015
+    #. ``month_name``: January
 
 :Input:
     .. code-block:: text
@@ -296,19 +291,60 @@ Working with Excel
 ------------------
 * Complexity level: easy
 * Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 30 min
 * Filename: :download:`solution/df_workflow_excel.py`
 
 :English:
     #. Download :download:`data/optima-sensors.xlsx`
     #. Select ``Luminance`` stylesheet
+    #. For every location
     #. Display chart (histogram) with activity hours
+    #. Active is when ``Luminance`` is not zero
+    #. Easy: separate charts
+    #. Advanced: plot as subplots
 
 :Polish:
     #. Pobierz :download:`data/optima-sensors.xlsx`
     #. Wybierz arkusz ``Luminance``
+    #. Dla każdego pomieszczenia
+    #. Aktywność jest gdy ``Luminance`` jest różna od zera
     #. Wyświetl wykres (histogram) z godzinami aktywności
+    #. Łatwe: osobne wykresy
+    #. Zaawansowane: Jako subploty
 
 :Hint:
     ``.resample('H')``
-    ``.plot(kind='hist')``
+    ``.plot(kind, subplots, layout, sharex)``
+
+Replace Polish Diacritics
+-------------------------
+* Complexity level: easy
+* Lines of code to write: 15 lines
+* Estimated time of completion: 30 min
+* Filename: :download:`solution/df_workflow_plen.py`
+
+:English:
+    #. Download :download:`data/trl.xlsx`
+    #. Select ``Polish`` spreadsheet
+    #. Mind the encoding
+    #. Substitute Polish Diacritics to English alphabet letters
+
+:Polish:
+    #. Pobierz :download:`data/trl.xlsx`
+    #. Wybierz arkusz ``Polish``
+    #. Zwróć uwagę na encoding
+    #. Podmień polskie znaki diakrytyczne na litery z alfabetu angielskiego
+
+:Example:
+    .. code-block:: text
+        :caption: Polish -> English conversion table
+
+        ą: a
+        ć: c
+        ę: e
+        ł: l
+        ń: n
+        ó: o
+        ś: s
+        ż: z
+        ź: z
