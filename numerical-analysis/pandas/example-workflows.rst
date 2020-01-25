@@ -248,26 +248,44 @@ Month Names
     * ``.apply()``
     * ``pd.Timestamp``
 
-Split columns
--------------
+Replace Polish Diacritics
+-------------------------
 * Complexity level: easy
-* Lines of code to write: 10 lines
-* Estimated time of completion: 15 min
-* Filename: :download:`solution/df_workflow_split.py`
+* Lines of code to write: 15 lines
+* Estimated time of completion: 30 min
+* Filename: :download:`solution/df_workflow_translate.py`
 
 :English:
-    #. Download :download:`data/phones.csv`
-    #. Split column with datetime into two separate: date and time columns
-    #. Use lambda
+    #. Download :download:`data/trl.xlsx`
+    #. Select ``Polish`` spreadsheet
+    #. Set header and index to data from file
+    #. Mind the encoding
+    #. Substitute Polish Diacritics to English alphabet letters
 
 :Polish:
-    #. Pobierz :download:`data/phones.csv`
-    #. Podziel kolumnę z datetime na dwie osobne: datę i czas
-    #. Użyj lambdy
+    #. Pobierz :download:`data/trl.xlsx`
+    #. Wybierz arkusz ``Polish``
+    #. Ustaw nagłówek i index na dane zaczytane z pliku
+    #. Zwróć uwagę na encoding
+    #. Podmień polskie znaki diakrytyczne na litery z alfabetu angielskiego
+
+:Example:
+    .. code-block:: text
+        :caption: Polish -> English conversion table
+
+        ą: a
+        ć: c
+        ę: e
+        ł: l
+        ń: n
+        ó: o
+        ś: s
+        ż: z
+        ź: z
 
 :Hint:
-    * ``.apply()``
-    * ``.applymap()``
+        * ``.set_index()``
+        * ``.apply()``
 
 Month number to text
 --------------------
@@ -308,7 +326,28 @@ Month number to text
         12, December
 
 :Hint:
-    ``.apply()``
+    * ``Series.str.split()``
+
+Split columns
+-------------
+* Complexity level: easy
+* Lines of code to write: 10 lines
+* Estimated time of completion: 15 min
+* Filename: :download:`solution/df_workflow_split.py`
+
+:English:
+    #. Download :download:`data/phones.csv`
+    #. Split column with datetime into two separate: date and time columns
+    #. Use lambda
+
+:Polish:
+    #. Pobierz :download:`data/phones.csv`
+    #. Podziel kolumnę z datetime na dwie osobne: datę i czas
+    #. Użyj lambdy
+
+:Hint:
+    * ``.apply()``
+    * ``.applymap()``
 
 Working with Excel
 ------------------
@@ -340,42 +379,3 @@ Working with Excel
 :Hint:
     ``.resample('H')``
     ``.plot(kind, subplots, layout, sharex)``
-
-Replace Polish Diacritics
--------------------------
-* Complexity level: easy
-* Lines of code to write: 15 lines
-* Estimated time of completion: 30 min
-* Filename: :download:`solution/df_workflow_plen.py`
-
-:English:
-    #. Download :download:`data/trl.xlsx`
-    #. Select ``Polish`` spreadsheet
-    #. Set header and index to data from file
-    #. Mind the encoding
-    #. Substitute Polish Diacritics to English alphabet letters
-
-:Polish:
-    #. Pobierz :download:`data/trl.xlsx`
-    #. Wybierz arkusz ``Polish``
-    #. Ustaw nagłówek i index na dane zaczytane z pliku
-    #. Zwróć uwagę na encoding
-    #. Podmień polskie znaki diakrytyczne na litery z alfabetu angielskiego
-
-:Example:
-    .. code-block:: text
-        :caption: Polish -> English conversion table
-
-        ą: a
-        ć: c
-        ę: e
-        ł: l
-        ń: n
-        ó: o
-        ś: s
-        ż: z
-        ź: z
-
-:Hint:
-        * ``.set_index()``
-        * ``.apply()``
