@@ -98,6 +98,7 @@ Pandas
     pandas/series-alter.rst
     pandas/series-arithmetic.rst
     pandas/series-statistics.rst
+    pandas/series-cleaning.rst
 
     pandas/df-create.rst
     pandas/df-import.rst

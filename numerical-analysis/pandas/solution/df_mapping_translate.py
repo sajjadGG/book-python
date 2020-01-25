@@ -24,9 +24,9 @@ df['Mission Date'] = df['Mission Date'].apply(pd.Timestamp)
 print(df)
 
 
-
 ## Alternative solution
 import pandas as pd
+
 
 MONTHS = {
     'styczeń': 'January',
@@ -43,11 +43,13 @@ MONTHS = {
     'grudzień': 'December',
 }
 
-def substitute(text):
+
+def substitute(original):
     for pl, en in MONTHS.items():
-        result = text.replace(pl, en)
-        if text != result:
-            return result
+        translated = original.replace(pl, en)
+        if original != translated:
+            return translated
+
 
 # Read data
 df = pd.read_csv('../numerical-analysis/pandas/data/astro-dates.csv')
