@@ -496,6 +496,21 @@ Astronauts
     #. Pobierz zbiór danych astronautów :download:`data/astronauts.csv`
     #. Stwórz ranking najbardziej doświadczonych astronautów (liczba lotów)
 
+Phone Billing
+-------------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 15 min
+* Filename: :download:`solution/df_groupby_billing.py`
+
+:English:
+    #. Download :download:`data/phones.csv`
+    #. Give information about total number of all connection types for each month
+
+:Polish:
+    #. Pobierz :download:`data/phones.csv`
+    #. Podaj informacje o łącznej liczbie wszystkich połączeń dla każdego miesiąca
+
 EVA
 ---
 * Complexity level: hard
