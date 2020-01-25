@@ -225,6 +225,29 @@ Scatter matrix
 Assignments
 ===========
 
+Month Names
+-----------
+* Complexity level: easy
+* Lines of code to write: 10 lines
+* Estimated time of completion: 15 min
+* Filename: :download:`solution/df_workflow_month_sub.py`
+
+:English:
+    #. Download :download:`data/astro-dates.csv`
+    #. Set header and index to data from file
+    #. Convert Polish month names to English
+    #. Parse dates to ``datetime`` objects
+
+:Polish:
+    #. Pobierz :download:`data/astro-dates.csv`
+    #. Ustaw nagłówek i index na dane zaczytane z pliku
+    #. Przekonwertuj polskie nazwy miesięcy na angielskie
+    #. Sparsuj daty do obiektów ``datetime``
+
+:Hint:
+    * ``.apply()``
+    * ``pd.Timestamp``
+
 Split columns
 -------------
 * Complexity level: easy
@@ -251,7 +274,7 @@ Month number to text
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/df_workflow_month.py`
+* Filename: :download:`solution/df_workflow_month_text.py`
 
 :English:
     #. Download :download:`data/phones.csv`
@@ -297,6 +320,7 @@ Working with Excel
 :English:
     #. Download :download:`data/optima-sensors.xlsx`
     #. Select ``Luminance`` stylesheet
+    #. Parse column with dates
     #. For every location
     #. Display chart (histogram) with activity hours
     #. Active is when ``Luminance`` is not zero
@@ -306,6 +330,7 @@ Working with Excel
 :Polish:
     #. Pobierz :download:`data/optima-sensors.xlsx`
     #. Wybierz arkusz ``Luminance``
+    #. Sparsuj kolumny z datami
     #. Dla każdego pomieszczenia
     #. Aktywność jest gdy ``Luminance`` jest różna od zera
     #. Wyświetl wykres (histogram) z godzinami aktywności
@@ -326,12 +351,14 @@ Replace Polish Diacritics
 :English:
     #. Download :download:`data/trl.xlsx`
     #. Select ``Polish`` spreadsheet
+    #. Set header and index to data from file
     #. Mind the encoding
     #. Substitute Polish Diacritics to English alphabet letters
 
 :Polish:
     #. Pobierz :download:`data/trl.xlsx`
     #. Wybierz arkusz ``Polish``
+    #. Ustaw nagłówek i index na dane zaczytane z pliku
     #. Zwróć uwagę na encoding
     #. Podmień polskie znaki diakrytyczne na litery z alfabetu angielskiego
 
@@ -348,3 +375,7 @@ Replace Polish Diacritics
         ś: s
         ż: z
         ź: z
+
+:Hint:
+        * ``.set_index()``
+        * ``.apply()``
