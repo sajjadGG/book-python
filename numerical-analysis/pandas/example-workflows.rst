@@ -2,6 +2,7 @@
 Example Workflow
 ****************
 
+
 Working with Excel file
 =======================
 .. code-block:: python
@@ -223,4 +224,91 @@ Scatter matrix
 
 Assignments
 ===========
-.. todo:: Create assignments
+
+Split columns
+-------------
+* Complexity level: easy
+* Lines of code to write: 10 lines
+* Estimated time of completion: 15 min
+* Filename: :download:`solution/df_workflow_split.py`
+
+:English:
+    #. Download :download:`data/phones.csv`
+    #. Split column with datetime into two separate: date and time columns
+    #. Use lambda
+
+:Polish:
+    #. Pobierz :download:`data/phones.csv`
+    #. Podziel kolumnę z datetime na dwie osobne: datę i czas
+    #. Użyj lambdy
+
+:Hint:
+    * ``.apply()``
+    * ``.applymap()``
+
+Month number to text
+--------------------
+* Complexity level: easy
+* Lines of code to write: 10 lines
+* Estimated time of completion: 15 min
+* Filename: :download:`solution/df_workflow_month.py`
+
+:English:
+    #. Download :download:`data/phones.csv`
+    #. Add column ``year`` and ``month_name`` by parsing ``month`` column
+    #. Month name must be a string month name, not a number (i.e.: 'January', 'May')
+    #. Example:
+
+        - if month column has value "2015-01"
+        - ``year``: 2015
+        - ``month_name``: January
+
+:Polish:
+    #. Pobierz :download:`data/phones.csv`
+    #. Dodaj kolumnę ``year`` i ``month_name`` poprzez sparsowanie kolumny ``month``
+    #. Nazwa miesiąca musi być ciągiem znaków, a nie liczbą (i.e. 'January', 'May')
+    #. Przykład:
+
+        - Jeżeli kolumna ``month`` ma wartość "2015-01"
+        - ``year``: 2015
+        - ``month_name``: January
+
+:Input:
+    .. code-block:: text
+
+        1, January
+        2, February
+        3, March
+        4, April
+        5, May
+        6, June
+        7, July
+        8, August
+        9, September
+        10, October
+        11, November
+        12, December
+
+:Hint:
+    ``.apply()``
+
+Working with Excel
+------------------
+* Complexity level: easy
+* Lines of code to write: 15 lines
+* Estimated time of completion: 15 min
+* Filename: :download:`solution/df_workflow_excel.py`
+
+:English:
+    #. Download :download:`data/optima-sensors.xlsx`
+    #. Select ``Luminance`` stylesheet
+    #. Display chart (histogram) with activity hours
+
+:Polish:
+    #. Pobierz :download:`data/optima-sensors.xlsx`
+    #. Wybierz arkusz ``Luminance``
+    #. Wyświetl wykres (histogram) z godzinami aktywności
+
+:Hint:
+    ``.resample('H')``
+    ``.plot(kind='hist')``
