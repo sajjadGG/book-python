@@ -144,65 +144,26 @@ Footnotes:
 Assignments
 ===========
 
-Translate
----------
+Split columns
+-------------
 * Complexity level: easy
-* Lines of code to write: 10-15 lines
+* Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/df_mapping_substitute.py`
+* Filename: :download:`solution/df_workflow_split.py`
 
 :English:
-    #. Download :download:`data/astro-dates.csv`
-    #. Set header and index to data from file
-    #. Convert Polish month names to English
-    #. Parse dates to ``datetime`` objects
+    #. Download :download:`data/phones.csv`
+    #. Use ``parse_dates=['date']`` on reading file
+    #. Split column with datetime into two separate: date and time columns
+    #. Use lambda
 
 :Polish:
-    #. Pobierz :download:`data/astro-dates.csv`
-    #. Ustaw nagłówek i index na dane zaczytane z pliku
-    #. Przekonwertuj polskie nazwy miesięcy na angielskie
-    #. Sparsuj daty do obiektów ``datetime``
+    #. Pobierz :download:`data/phones.csv`
+    #. Użyj ``parse_dates=['date']`` przy wczytywaniu pliku
+    #. Podziel kolumnę z datetime na dwie osobne: datę i czas
+    #. Użyj lambdy
 
 :Hint:
-    * ``.replace(regex=True)``
     * ``.apply()``
-    * ``pd.Timestamp``
-
-Substitute
-----------
-* Complexity level: easy
-* Lines of code to write: 15 lines
-* Estimated time of completion: 30 min
-* Filename: :download:`solution/df_mapping_translate.py`
-
-:English:
-    #. Download :download:`data/trl.xlsx`
-    #. Select ``Polish`` spreadsheet
-    #. Set header and index to data from file
-    #. Mind the encoding
-    #. Substitute Polish Diacritics to English alphabet letters
-
-:Polish:
-    #. Pobierz :download:`data/trl.xlsx`
-    #. Wybierz arkusz ``Polish``
-    #. Ustaw nagłówek i index na dane zaczytane z pliku
-    #. Zwróć uwagę na encoding
-    #. Podmień polskie znaki diakrytyczne na litery z alfabetu angielskiego
-
-:Example:
-    .. code-block:: text
-        :caption: Polish -> English conversion table
-
-        ą: a
-        ć: c
-        ę: e
-        ł: l
-        ń: n
-        ó: o
-        ś: s
-        ż: z
-        ź: z
-
-:Hint:
-        * ``.set_index()``
-        * ``.apply()``
+    * ``.applymap()``
+    * ``df[ ['A', 'b'] ]``

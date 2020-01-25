@@ -405,3 +405,38 @@ Scatter matrix
     :align: center
 
     Visualization using density
+
+
+Assignments
+===========
+
+Working with Excel
+------------------
+* Complexity level: easy
+* Lines of code to write: 15 lines
+* Estimated time of completion: 30 min
+* Filename: :download:`solution/df_workflow_excel.py`
+
+:English:
+    #. Download :download:`data/optima-sensors.xlsx`
+    #. Select ``Luminance`` stylesheet
+    #. Parse column with dates
+    #. For every location
+    #. Display chart (histogram) with activity hours
+    #. Active is when ``Luminance`` is not zero
+    #. Easy: separate charts
+    #. Advanced: plot as subplots
+
+:Polish:
+    #. Pobierz :download:`data/optima-sensors.xlsx`
+    #. Wybierz arkusz ``Luminance``
+    #. Sparsuj kolumny z datami
+    #. Dla każdego pomieszczenia
+    #. Aktywność jest gdy ``Luminance`` jest różna od zera
+    #. Wyświetl wykres (histogram) z godzinami aktywności
+    #. Łatwe: osobne wykresy
+    #. Zaawansowane: Jako subploty
+
+:Hint:
+    * ``.resample('H')``
+    * ``.plot(kind, subplots, layout, sharex)``

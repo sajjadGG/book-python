@@ -98,6 +98,7 @@ Pandas
     pandas/series-alter.rst
     pandas/series-arithmetic.rst
     pandas/series-statistics.rst
+    pandas/series-mapping.rst
     pandas/series-cleaning.rst
 
     pandas/df-create.rst
@@ -114,8 +115,9 @@ Pandas
     pandas/df-sample.rst
     pandas/df-plot.rst
     pandas/df-sort.rst
-    pandas/df-mapping.rst
     pandas/df-statistics.rst
+    pandas/df-mapping.rst
+    pandas/df-cleaning.rst
     pandas/df-groupby.rst
     pandas/df-aggregations.rst
     pandas/df-join.rst
