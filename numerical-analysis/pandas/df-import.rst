@@ -135,3 +135,26 @@ Read
 :Hint:
     * ``pd.read_csv(url, nrows=0).columns``
     * ``df['label'].replace({'from': 'to'})``
+
+XSLT Transformation
+-------------------
+* Complexity level: medium
+* Lines of code to write: 5 lines
+* Estimated time of completion: 10 min
+* Filename: :download:`solution/df_import_xml_xslt.py`
+
+:English:
+    #. Download :download:`data/xml_plants.xml`
+    #. Read data from file
+    #. Using XSLT transformation convert it to pandas readable format
+    #. Read data to ``pd.DataFrame``
+    #. Make sure that columns and indexes are named properly
+    #. Calculate average cost of flower
+
+:Polish:
+    #. Pobierz dane z pliku :download:`data/plants.xml`
+    #. Zaczytaj dane z pliku
+    #. Używając transformaty XSLT sprowadź je do formatu zrozumiałego dla Pandas
+    #. Wczytaj dane do ``pd.DataFrame``
+    #. Upewnij się, że nazwy kolumn i indeks są dobrze ustawione
+    #. Wylicz średni koszt kwiatów dla każdej grupy

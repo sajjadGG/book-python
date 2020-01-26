@@ -254,7 +254,7 @@ EVA
 * Complexity level: medium
 * Lines of code to write: 25 lines
 * Estimated time of completion: 30 min
-* Filename: :download:`solution/pandas_df_eva.py`
+* Filename: :download:`solution/df_join_eva.py`
 
 #. Na podstawie podanych URL:
 

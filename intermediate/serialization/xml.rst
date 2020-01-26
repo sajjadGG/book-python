@@ -425,52 +425,64 @@ Serialization
 -------------
 .. code-block:: python
 
-    >>> root = etree.XML('<root><a><b/></a></root>')
+    from lxml.etree import tostring, XML
 
-    >>> etree.tostring(root)
-    b'<root><a><b/></a></root>'
 
-    >>> print(etree.tostring(root, xml_declaration=True))
-    <?xml version='1.0' encoding='ASCII'?>
-    <root><a><b/></a></root>
+    root = XML('<root><a><b/></a></root>')
 
-    >>> print(etree.tostring(root, encoding='iso-8859-1'))
-    <?xml version='1.0' encoding='iso-8859-1'?>
-    <root><a><b/></a></root>
+    tostring(root)
+    # b'<root><a><b/></a></root>'
 
-    >>> print(etree.tostring(root, pretty_print=True))
-    <root>
-      <a>
-        <b/>
-      </a>
-    </root>
+    print(tostring(root, xml_declaration=True))
+    # b"<?xml version='1.0' encoding='ASCII'?>\n<root><a><b/></a></root>"
+
+    print(tostring(root, encoding='utf-8'))
+    # b'<root><a><b/></a></root>'
+
+    print(tostring(root, encoding='iso-8859-2'))
+    # b"<?xml version='1.0' encoding='iso-8859-2'?>\n<root><a><b/></a></root>"
+
+    print(tostring(root, pretty_print=True))
+    # b'<root>\n  <a>\n    <b/>\n  </a>\n</root>\n'
+
+    print(tostring(root, pretty_print=True).decode())
+    # <root>
+    #   <a>
+    #     <b/>
+    #   </a>
+    # </root>
 
 .. code-block:: python
 
-    >>> root = etree.XML(
-    ...    '<html><head/><body><p>Hello<br/>World</p></body></html>')
+    from lxml.etree import tostring, XML
 
-    >>> etree.tostring(root) # default: method = 'xml'
-    b'<html><head/><body><p>Hello<br/>World</p></body></html>'
+    root = XML('<html><head/><body><p>Hello<br/>World</p></body></html>')
 
-    >>> etree.tostring(root, method='xml') # same as above
-    b'<html><head/><body><p>Hello<br/>World</p></body></html>'
+    # default: method = 'xml'
+    tostring(root)
+    # b'<html><head/><body><p>Hello<br/>World</p></body></html>'
 
-    >>> etree.tostring(root, method='html')
-    b'<html><head></head><body><p>Hello<br>World</p></body></html>'
+    tostring(root, method='xml')
+    # b'<html><head/><body><p>Hello<br/>World</p></body></html>'
 
-    >>> print(etree.tostring(root, method='html', pretty_print=True))
-    <html>
-    <head></head>
-    <body><p>Hello<br>World</p></body>
-    </html>
+    tostring(root, method='html')
+    # b'<html><head></head><body><p>Hello<br>World</p></body></html>'
 
-    >>> etree.tostring(root, method='text')
-    b'HelloWorld'
+    print(tostring(root, method='html', pretty_print=True))
+    # b'<html>\n<head></head>\n<body><p>Hello<br>World</p></body>\n</html>\n'
+
+    print(tostring(root, method='html', pretty_print=True).decode())
+    # <html>
+    # <head></head>
+    # <body><p>Hello<br>World</p></body>
+    # </html>
+
+    tostring(root, method='text')
+    # b'HelloWorld'
 
 
-HTML
-====
+Working with HTML
+=================
 * Using ``lxml`` module
 
 .. code-block:: html
@@ -518,71 +530,167 @@ Example 1
 ---------
 .. code-block:: python
 
-    import io
-    from lxml import etree
+    from io import StringIO
+    from lxml.etree import XML, XSLT, parse
 
 
-    XSLT = '''
-    <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-        <xsl:template match="/">
-        <foo><xsl:value-of select="/a/b/text()" /></foo>
-        </xsl:template>
-    </xsl:stylesheet>
-    '''
+    TEMPLATE = """
+        <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-    xslt_root = etree.XML(XSLT)
-    transform = etree.XSLT(xslt_root)
+            <xsl:template match="/">
+                <my_tag><xsl:value-of select="/outer/inner/text()" /></my_tag>
+            </xsl:template>
 
-    f = io.StringIO('<a><b>Text</b></a>')
-    doc = etree.parse(f)
-    result_tree = transform(doc)
+        </xsl:stylesheet>
+    """
 
-    print(result_tree)
+    DATA = """
+        <outer>
+            <inner>Hello World</inner>
+        </outer>
+    """
+
+    xslt_root = XML(TEMPLATE)
+    transform = XSLT(xslt_root)
+    output = transform(parse(StringIO(DATA)))
+
+    print(output)
+    # <?xml version="1.0"?>
+    # <my_tag>Hello World</my_tag>
 
 Example 2
 ---------
-.. code-block:: xml
+.. code-block:: python
 
-    <?xml version="1.0" encoding="UTF-8"?>
-    <CATALOG>
-        <PLANT>
-            <COMMON>Bloodroot</COMMON>
-            <BOTANICAL>Sanguinaria canadensis</BOTANICAL>
-            <ZONE>4</ZONE>
-            <LIGHT>Mostly Shady</LIGHT>
-            <PRICE>$2.44</PRICE>
-            <AVAILABILITY>031599</AVAILABILITY>
-        </PLANT>
-    </CATALOG>
+    from io import StringIO
+    from lxml.etree import XML, XSLT, parse
 
-.. code-block:: xslt
 
-    <html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    DATA = """
+        <astronauts>
+            <astro>
+                <firstname>Jan</firstname>
+                <lastname>Jan</lastname>
+            </astro>
+            <astro>
+                <firstname>Mark</firstname>
+                <lastname>Watney</lastname>
+            </astro>
+        </astronauts>
+    """
 
-    <style>
-        body {font-family: Arial; font-size: 1em; background-color: #EEEEEE}
-        div.title {background-color: teal; color: white; padding: 4px}
-        div.description {margin-left:20px;margin-bottom:1em;font-size:10pt}
-        span {font-weight: bold}
+    TEMPLATE = """
+        <html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+        <body>
+            <table>
 
-    </style>
+                <xsl:for-each select="astronauts/astro">
+                    <tr>
+                        <td><xsl:value-of select="firstname"/></td>
+                        <td><xsl:value-of select="lastname"/></td>
+                    </tr>
+                </xsl:for-each>
 
-    <body>
+            </table>
+        </body>
+        </html>
+    """
 
-    <xsl:for-each select="CATALOG/PLANT">
-      <div class="title">
-            <span><xsl:value-of select="BOTANICAL"/></span>
-            <xsl:value-of select="PRICE"/>
-        </div>
+    xslt_root = XML(TEMPLATE)
+    transform = XSLT(xslt_root)
+    output = transform(parse(StringIO(DATA)))
 
-      <div class="description">
-        <p>
-            <xsl:value-of select="description"/>
-            <span> (<xsl:value-of select="AVAILABILITY"/> will be available)</span>
-        </p>
-      </div>
+    print(output)
+    # <html><body><table>
+    # <tr>
+    # <td>Jan</td>
+    # <td>Jan</td>
+    # </tr>
+    # <tr>
+    # <td>Mark</td>
+    # <td>Watney</td>
+    # </tr>
+    # </table></body></html>
 
-    </xsl:for-each>
+Example 3
+---------
+.. code-block:: python
+
+    from io import StringIO
+    from lxml.etree import XML, XSLT, parse
+
+
+    DATA = """
+        <CATALOG>
+            <PLANT>
+                <COMMON>Bloodroot</COMMON>
+                <BOTANICAL>Sanguinaria canadensis</BOTANICAL>
+                <ZONE>4</ZONE>
+                <LIGHT>Mostly Shady</LIGHT>
+                <PRICE>$2.44</PRICE>
+                <AVAILABILITY>031599</AVAILABILITY>
+            </PLANT>
+            <PLANT>
+                <COMMON>Columbine</COMMON>
+                <BOTANICAL>Aquilegia canadensis</BOTANICAL>
+                <ZONE>3</ZONE>
+                <LIGHT>Mostly Shady</LIGHT>
+                <PRICE>$9.37</PRICE>
+                <AVAILABILITY>030699</AVAILABILITY>
+            </PLANT>
+        </CATALOG>
+    """
+
+    TEMPLATE = """
+        <html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+        <style>
+            body {font-family: Arial; font-size: 1em; background-color: #EEEEEE}
+            div.title {background-color: teal; color: white; padding: 4px}
+            div.description {margin-left:20px;margin-bottom:1em;font-size:10pt}
+            span {font-weight: bold}
+        </style>
+
+        <body>
+
+        <xsl:for-each select="CATALOG/PLANT">
+
+            <div class="title">
+                <span><xsl:value-of select="BOTANICAL"/></span>
+                <xsl:value-of select="PRICE"/>
+            </div>
+
+            <div class="description">
+                    <xsl:value-of select="description"/>
+                    <span> (<xsl:value-of select="AVAILABILITY"/> will be available)</span>
+            </div>
+
+        </xsl:for-each>
+        </body>
+        </html>
+    """
+
+    xslt_root = XML(TEMPLATE)
+    transform = XSLT(xslt_root)
+    output = transform(parse(StringIO(DATA)))
+
+    print(output)
+    # <html>
+    # <style>
+    #     body {font-family: Arial; font-size: 1em; background-color: #EEEEEE}
+    #     div.title {background-color: teal; color: white; padding: 4px}
+    #     div.description {margin-left:20px;margin-bottom:1em;font-size:10pt}
+    #     span {font-weight: bold}
+    # </style>
+    # <body>
+    # <div class="title">
+    # <span>Sanguinaria canadensis</span>$2.44</div>
+    # <div class="description"><span> (031599 will be available)</span></div>
+    # <div class="title">
+    # <span>Aquilegia canadensis</span>$9.37</div>
+    # <div class="description"><span> (030699 will be available)</span></div>
+    # </body>
+    # </html>
 
 
 Assignments
