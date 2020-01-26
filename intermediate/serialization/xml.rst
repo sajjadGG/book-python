@@ -516,10 +516,11 @@ XPATH
 
 .. code-block:: python
 
-    >>> print(html.xpath("string()")) # lxml.etree only!
-    TEXTTAIL
-    >>> print(html.xpath("//text()")) # lxml.etree only!
-    ['TEXT', 'TAIL']
+    print(html.xpath("string()")) # lxml.etree only!
+    # TEXTTAIL
+
+    print(html.xpath("//text()")) # lxml.etree only!
+    # ['TEXT', 'TAIL']
 
 
 XSLT
@@ -536,11 +537,13 @@ Example 1
 
     TEMPLATE = """
         <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-
             <xsl:template match="/">
-                <my_tag><xsl:value-of select="/outer/inner/text()" /></my_tag>
-            </xsl:template>
 
+                <my_tag>
+                    <xsl:value-of select="/outer/inner/text()" />
+                </my_tag>
+
+            </xsl:template>
         </xsl:stylesheet>
     """
 
@@ -550,9 +553,9 @@ Example 1
         </outer>
     """
 
-    xslt_root = XML(TEMPLATE)
-    transform = XSLT(xslt_root)
-    output = transform(parse(StringIO(DATA)))
+    transform = XSLT(XML(TEMPLATE))
+    data = parse(StringIO(DATA))
+    output = transform(data)
 
     print(output)
     # <?xml version="1.0"?>
@@ -570,7 +573,7 @@ Example 2
         <astronauts>
             <astro>
                 <firstname>Jan</firstname>
-                <lastname>Jan</lastname>
+                <lastname>Twardowski</lastname>
             </astro>
             <astro>
                 <firstname>Mark</firstname>
@@ -581,36 +584,48 @@ Example 2
 
     TEMPLATE = """
         <html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-        <body>
             <table>
-
-                <xsl:for-each select="astronauts/astro">
+                <thead>
                     <tr>
-                        <td><xsl:value-of select="firstname"/></td>
-                        <td><xsl:value-of select="lastname"/></td>
+                        <th>First Name</th>
+                        <th>Last Name</th>
                     </tr>
-                </xsl:for-each>
+                </thead>
+                <tbody>
 
+                    <xsl:for-each select="astronauts/astro">
+                        <tr>
+                            <td><xsl:value-of select="firstname"/></td>
+                            <td><xsl:value-of select="lastname"/></td>
+                        </tr>
+                    </xsl:for-each>
+
+                </tbody>
             </table>
-        </body>
         </html>
     """
 
-    xslt_root = XML(TEMPLATE)
-    transform = XSLT(xslt_root)
-    output = transform(parse(StringIO(DATA)))
+    transform = XSLT(XML(TEMPLATE))
+    data = parse(StringIO(DATA))
+    output = transform(data)
 
     print(output)
-    # <html><body><table>
+    # <html><table>
+    # <thead><tr>
+    # <th>First Name</th>
+    # <th>Last Name</th>
+    # </tr></thead>
+    # <tbody>
     # <tr>
     # <td>Jan</td>
-    # <td>Jan</td>
+    # <td>Twardowski</td>
     # </tr>
     # <tr>
     # <td>Mark</td>
     # <td>Watney</td>
     # </tr>
-    # </table></body></html>
+    # </tbody>
+    # </table></html>
 
 Example 3
 ---------
@@ -670,9 +685,9 @@ Example 3
         </html>
     """
 
-    xslt_root = XML(TEMPLATE)
-    transform = XSLT(xslt_root)
-    output = transform(parse(StringIO(DATA)))
+    transform = XSLT(XML(TEMPLATE))
+    data = parse(StringIO(DATA))
+    output = transform(data)
 
     print(output)
     # <html>

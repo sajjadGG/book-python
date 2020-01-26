@@ -5,7 +5,7 @@ XSLT
 * Using ``lxml`` module
 
 Example 1
----------
+=========
 .. code-block:: python
 
     from io import StringIO
@@ -28,16 +28,19 @@ Example 1
         </outer>
     """
 
-    xslt_root = XML(TEMPLATE)
-    transform = XSLT(xslt_root)
-    output = transform(parse(StringIO(DATA)))
+    template = XML(TEMPLATE)
+    data = parse(StringIO(DATA))
+
+    transform = XSLT(template)
+    output = transform(data)
 
     print(output)
     # <?xml version="1.0"?>
     # <my_tag>Hello World</my_tag>
 
+
 Example 2
----------
+=========
 .. code-block:: python
 
     from io import StringIO
@@ -74,9 +77,11 @@ Example 2
         </html>
     """
 
-    xslt_root = XML(TEMPLATE)
-    transform = XSLT(xslt_root)
-    output = transform(parse(StringIO(DATA)))
+    template = XML(TEMPLATE)
+    data = parse(StringIO(DATA))
+
+    transform = XSLT(template)
+    output = transform(data)
 
     print(output)
     # <html><body><table>
@@ -91,7 +96,7 @@ Example 2
     # </table></body></html>
 
 Example 3
----------
+=========
 .. code-block:: python
 
     from io import StringIO
@@ -119,7 +124,7 @@ Example 3
         </CATALOG>
     """
 
-    TEMPLATE = """
+    template = """
         <html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
         <style>
@@ -148,9 +153,9 @@ Example 3
         </html>
     """
 
-    xslt_root = XML(TEMPLATE)
-    transform = XSLT(xslt_root)
-    output = transform(parse(StringIO(DATA)))
+    transform = XSLT(XML(TEMPLATE))
+    data = parse(StringIO(DATA))
+    output = transform(data)
 
     print(output)
     # <html>
@@ -195,4 +200,4 @@ XSLT Transformation
     #. Używając transformaty XSLT sprowadź je do formatu zrozumiałego dla Pandas
     #. Wczytaj dane do ``pd.DataFrame``
     #. Upewnij się, że nazwy kolumn i indeks są dobrze ustawione
-    #. Wylicz średni koszt kwiatów dla każdej grupy
+    #. Wylicz średni koszt kwiatów

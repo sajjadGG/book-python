@@ -3,7 +3,6 @@ Database SQLite
 ***************
 
 
-
 SQL Syntax
 ==========
 .. note:: For SQL Syntax refer to :ref:`Database SQL`

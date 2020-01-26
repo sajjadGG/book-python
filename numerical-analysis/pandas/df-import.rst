@@ -144,7 +144,7 @@ XSLT Transformation
 * Filename: :download:`solution/df_import_xml_xslt.py`
 
 :English:
-    #. Download :download:`data/xml_plants.xml`
+    #. Download :download:`data/plants.xml`
     #. Read data from file
     #. Using XSLT transformation convert it to pandas readable format
     #. Read data to ``pd.DataFrame``
@@ -157,4 +157,4 @@ XSLT Transformation
     #. Używając transformaty XSLT sprowadź je do formatu zrozumiałego dla Pandas
     #. Wczytaj dane do ``pd.DataFrame``
     #. Upewnij się, że nazwy kolumn i indeks są dobrze ustawione
-    #. Wylicz średni koszt kwiatów dla każdej grupy
+    #. Wylicz średni koszt kwiatów

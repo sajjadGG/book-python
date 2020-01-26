@@ -298,8 +298,14 @@ DATA = """
 
 TEMPLATE = """
     <html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <body>
         <table>
+            <thead>
+                <tr>
+                    <th>English Name</th>
+                    <th>Latin Name</th>
+                    <th>Cost</th>
+                </tr>
+            </thead>
 
             <xsl:for-each select="CATALOG/PLANT">
                 <tr>
@@ -310,18 +316,15 @@ TEMPLATE = """
             </xsl:for-each>
 
         </table>
-    </body>
     </html>
 """
 
-xslt_root = XML(TEMPLATE)
-transform = XSLT(xslt_root)
-output = transform(parse(StringIO(DATA)))
+transform = XSLT(XML(TEMPLATE))
+data = parse(StringIO(DATA))
+output = transform(data)
 
 df = pd.read_html(str(output))[0]
-df.columns = ['english_name', 'latin_name', 'cost']
 
-df['cost'].apply(lambda x: float(x.replace('$','')))
-
-df['cost'].mean()
+df['Cost'] = df['Cost'].apply(lambda x: float(x.replace('$', '')))
+df['Cost'].mean()
 # 6.369166666666666
