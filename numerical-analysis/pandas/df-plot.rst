@@ -410,19 +410,19 @@ Scatter matrix
 Assignments
 ===========
 
-Working with Excel
-------------------
-* Complexity level: easy
+Activity
+--------
+* Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 30 min
-* Filename: :download:`solution/df_workflow_excel.py`
+* Filename: :download:`solution/df_plot_activity.py`
 
 :English:
     #. Download :download:`data/optima-sensors.xlsx`
     #. Select ``Luminance`` stylesheet
     #. Parse column with dates
     #. For every location
-    #. Display chart (histogram) with activity hours
+    #. Display chart (line) with activity hours
     #. Active is when ``Luminance`` is not zero
     #. Easy: separate charts
     #. Advanced: plot as subplots
@@ -433,10 +433,11 @@ Working with Excel
     #. Sparsuj kolumny z datami
     #. Dla każdego pomieszczenia
     #. Aktywność jest gdy ``Luminance`` jest różna od zera
-    #. Wyświetl wykres (histogram) z godzinami aktywności
+    #. Wyświetl wykres (line) z godzinami aktywności
     #. Łatwe: osobne wykresy
     #. Zaawansowane: Jako subploty
 
 :Hint:
+    * ``np.sign()``
     * ``.resample('H')``
     * ``.plot(kind, subplots, layout, sharex)``

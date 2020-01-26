@@ -87,6 +87,18 @@ Clip
     #        [4, 5, 5],
     #        [5, 5, 5]])
 
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[-2, -1, 0],
+                  [0, 1, 2]])
+
+    a.clip(0, 1)
+    # array([[0, 0, 0],
+    #        [0, 1, 1]])
+
 
 Assignments
 ===========

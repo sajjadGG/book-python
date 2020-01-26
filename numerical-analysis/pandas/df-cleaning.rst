@@ -203,7 +203,7 @@ Month number to text
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/df_workflow_month_text.py`
+* Filename: :download:`solution/df_cleaning_month.py`
 
 :English:
     #. Download :download:`data/phones.csv`

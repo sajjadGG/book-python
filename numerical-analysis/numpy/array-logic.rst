@@ -316,6 +316,21 @@ Logical XOR
     #        [False,  True,  True]])
 
 
+Signum
+======
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[-2, -1, 0],
+                  [0, 1, 2]])
+
+    np.sign(a)
+    # array([[-1, -1,  0],
+    #        [ 0,  1,  1]])
+
+
 Infinite
 ========
 .. code-block:: python
