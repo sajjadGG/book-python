@@ -188,6 +188,7 @@ EVA
     * https://www.worldspaceflight.com/bios/eva/eva3.php
     * https://www.worldspaceflight.com/bios/eva/eva4.php
 
+#. Aby uniknąć ciągłego przeładowywania strony i oczekiwania na dane: zapisz kod HTML strony jako plik ``.html`` na komputerze lokalnie
 #. Scrappuj stronę wykorzystując ``beautifulsoup4``
 #. Przygotuj plik CSV z danymi dotyczącymi spacerów kosmicznych
 #. Spróbuj to samo zrobić za pomocą ``pandas.read_html()``:

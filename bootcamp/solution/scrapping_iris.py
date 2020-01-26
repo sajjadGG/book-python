@@ -8,7 +8,7 @@ HEADER = ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species
 OUTPUT = list()
 
 
-with open('/tmp/iris-dirty.html', mode='rw') as file:
+with open('/tmp/iris-dirty.html', mode='w') as file:
     response = requests.get(URL)
     file.write(response.text)
 
