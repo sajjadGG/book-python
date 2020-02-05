@@ -4,7 +4,6 @@
 Basic Sequences
 ***************
 .. toctree::
-    :name: Basic Sequences
 
     list.rst
     tuple.rst
