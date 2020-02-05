@@ -7,7 +7,7 @@ About
 .. toctree::
     :maxdepth: 1
 
-    /LICENSE.rst
+    /LICENSE.txt
     /about/references.rst
 
 *************
@@ -155,14 +155,3 @@ Appendixes
     /appendix/workshop/machine-learning.rst
     /_references/references.rst
 
-
-********
-Bootcamp
-********
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Bootcamp
-    :name: Bootcamp
-
-    /bootcamp/index.rst

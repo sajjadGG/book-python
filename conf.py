@@ -8,13 +8,11 @@ todo_emit_warnings = False
 todo_include_todos = True
 
 extensions = [
-    'sphinxcontrib.bibtex',
     'sphinx.ext.doctest',
     'sphinx.ext.todo',
-    'sphinx.ext.imgmath',
-    # 'sphinx.ext.mathjax',
+    'sphinx.ext.mathjax',
+    'sphinxcontrib.bibtex',
     # 'sphinx.ext.viewcode',
-    # 'sphinx.ext.coverage',
     # 'sphinx.ext.graphviz',
 ]
 
@@ -26,10 +24,10 @@ numfig_format = {
     'code-block': 'Listing %s.',
 }
 
-
 exclude_patterns = [
-    '_book',
-    '**/_template.rst',
+]
+
+suppress_warnings = [
 ]
 
 # article - for articles in scientific journals, presentations, short reports, program documentation, invitations, ...
@@ -55,7 +53,11 @@ from datetime import date
 
 needs_sphinx = '2.2'
 
-mathjax_path = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML'
+imgmath_image_format = 'png'
+imgmath_latex = 'latex'
+
+# mathjax_path = '_static/mathjax.js'
+mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
 mathjax_config = {
     'extensions': ['tex2jax.js'],
     'jax': ['input/TeX', 'output/HTML-CSS'],
@@ -69,25 +71,27 @@ exclude_patterns += [
     '_extensions',
     '_img',
     '_slides',
+    '_i18n',
     '_static',
     '_themes',
     '_tmp',
     '**/contrib/*',
     '**/solution/*',
     '**/solutions/*',
+    '**/_template.rst',
     '**.ipynb_checkpoints',
     'README.rst',
     'TODO.rst',
+    '**/_TODO.rst',
     'Thumbs.db',
     '.DS_Store',
-
-    'basics/*/index.rst',
-    'stdlib/*/index.rst',
 ]
 
+master_doc = 'index'
 templates_path = ['_templates']
 highlight_language = 'python3'
 pygments_style = 'borland'
+autodoc_typehints = "description"
 sys.path.insert(0, os.path.abspath('_extensions'))
 
 
@@ -116,18 +120,19 @@ html_add_permalinks = ""
 html_theme_path = ['_themes']
 html_secnumber_suffix = '. '
 html_title = project
+html_favicon = '_static/favicon.png'
+html_static_path = ['_static']
 
-if os.path.isdir('_static'):
-    html_static_path = ['_static']
+if html_theme == 'sphinx_rtd_theme':
     html_context.update({
-        'css_files': [
-            '_static/screen.css',
-            '_static/print.css',
-        ],
-        'script_files': [
-            '_static/jquery.min.js',
-            '_static/onload.js',
-        ],
+        'css_files': ['_static/screen.css', '_static/print.css'],
+        'script_files': ['_static/jquery.min.js', '_static/onload.js', mathjax_path],
+    })
+
+if html_theme == 'thesis':
+    html_context.update({
+        'css_files': ['_static/theme-overrides.css'],
+        'script_files': [mathjax_path],
     })
 
 latex_documents = [('index', f'{project_slug}.tex', project, author, latex_documentclass)]
@@ -142,3 +147,17 @@ latex_elements = {
         \AtBeginEnvironment{figure}{\renewcommand{\phantomsection}{}}
     """
 }
+
+epub_title = project
+epub_author = author
+epub_publisher = author
+epub_copyright = copyright
+epub_exclude_files = ['search.html']
+
+man_pages = [
+    (master_doc, project_slug, project, [author], 1)
+]
+
+texinfo_documents = [
+  (master_doc, project_slug, project, author, project, '', 'Miscellaneous'),
+]
