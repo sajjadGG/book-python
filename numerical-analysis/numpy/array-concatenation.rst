@@ -78,7 +78,7 @@ Concatenation
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/numpy_concatenation.py`
+* Solution: :download:`solution/numpy_concatenation.py`
 
 :English:
     #. Given are one-dimensional: ``a: ndarray``, ``b: ndarray`` (see below)

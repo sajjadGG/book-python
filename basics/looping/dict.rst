@@ -204,7 +204,7 @@ Assignments
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/loop_dict_to_dict.py`
+* Solution: :download:`solution/loop_dict_to_dict.py`
 
 :English:
     #. For input data (see below)
@@ -256,7 +256,7 @@ Assignments
 * Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/loop_dict_to_list.py`
+* Solution: :download:`solution/loop_dict_to_list.py`
 
 :English:
     #. For input data (see below)
@@ -324,7 +324,7 @@ Label encoder
 * Complexity level: medium
 * Lines of code to write: 13 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/loop_label_encoder.py`
+* Solution: :download:`solution/loop_label_encoder.py`
 
 :English:
     #. For input data (see below)

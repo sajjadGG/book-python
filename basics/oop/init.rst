@@ -224,7 +224,7 @@ Classes and instances
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/syntax_instances.py`
+* Solution: :download:`solution/syntax_instances.py`
 
 :English:
     #. Create one class ``Temperature``
@@ -257,7 +257,7 @@ Data Modeling
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/init_model.py`
+* Solution: :download:`solution/init_model.py`
 
 :English:
     #. Model the data using classes

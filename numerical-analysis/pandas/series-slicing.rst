@@ -264,7 +264,7 @@ Slice Dates
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/series_slicing_dates.py`
+* Solution: :download:`solution/series_slicing_dates.py`
 
 :English:
     #. Set random seed to zero
@@ -289,7 +289,7 @@ Slicing Alphabet
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/series_slicing_string.py`
+* Solution: :download:`solution/series_slicing_string.py`
 
 :English:
     #. Create ``pd.Series`` with 26 random integers in range ``[10, 100)``

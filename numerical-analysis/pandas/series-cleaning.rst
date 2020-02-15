@@ -137,7 +137,7 @@ Cleaning text input
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/series_cleaning.py`
+* Solution: :download:`solution/series_cleaning.py`
 
 :English:
     #. For given input data (see below)

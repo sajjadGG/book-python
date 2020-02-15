@@ -655,7 +655,7 @@ Memoization
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/decorator_memoize.py`
+* Solution: :download:`solution/decorator_memoize.py`
 
 :English:
     .. todo:: English translation
@@ -712,7 +712,7 @@ Prosty dekorator
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/decorator_abspath.py`
+* Solution: :download:`solution/decorator_abspath.py`
 
 :English:
     .. todo:: English translation
@@ -727,7 +727,7 @@ Type Checking Decorator
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/decorator_check_types.py`
+* Solution: :download:`solution/decorator_check_types.py`
 
 :English:
     .. todo:: English translation

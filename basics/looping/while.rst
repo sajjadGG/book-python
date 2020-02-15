@@ -137,7 +137,7 @@ Report card
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/while_report_card.py`
+* Solution: :download:`solution/while_report_card.py`
 
 :English:
     #. For given grade scale in input data (see below)

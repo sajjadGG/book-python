@@ -202,7 +202,7 @@ Example
 * Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/for_counter.py`
+* Solution: :download:`solution/for_counter.py`
 
 :English:
     #. Iterate over data from "Input" section and count occurrences of each number
@@ -261,7 +261,7 @@ Segmentation
 * Complexity level: easy
 * Lines of code to write: 12 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/for_segmentation.py`
+* Solution: :download:`solution/for_segmentation.py`
 
 :English:
     #. For input data (see below)
@@ -321,7 +321,7 @@ Text analysis
 * Complexity level: medium or hard
 * Lines of code to write: 30 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/for_text_analysis.py`
+* Solution: :download:`solution/for_text_analysis.py`
 
 :English:
     #. Given is text of the "Moon Speech" by John F. Kennedy's (see below)

@@ -113,7 +113,7 @@ Create
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/numpy_attributes.py`
+* Solution: :download:`solution/numpy_attributes.py`
 
 :English:
     #. Set random seed to zero.

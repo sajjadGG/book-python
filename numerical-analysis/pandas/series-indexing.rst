@@ -111,7 +111,7 @@ Indexing Dates
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/series_index.py`
+* Solution: :download:`solution/series_index.py`
 
 :English:
     #. Set random seed to zero

@@ -261,7 +261,7 @@ Euclidean distance 2D
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/algebra_euclidean_2d.py`
+* Solution: :download:`solution/algebra_euclidean_2d.py`
 
 :English:
     #. Given are two points ``A: Tuple[int, int]`` and ``B: Tuple[int, int]``
@@ -319,7 +319,7 @@ Euclidean distance ``n`` dimensions
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/algebra_euclidean_multi_dim.py`
+* Solution: :download:`solution/algebra_euclidean_multi_dim.py`
 
 :English:
     #. Given are two points ``A: Sequence[int]`` and ``B: Sequence[int]``

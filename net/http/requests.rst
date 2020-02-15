@@ -282,7 +282,7 @@ REST API
 * Complexity level: medium
 * Lines of code to write: 35 lines
 * Estimated time of completion: 30 min
-* Filename: :download:`solution/requests_github.py`
+* Solution: :download:`solution/requests_github.py`
 
 #. Załóż darmowe konto na Github i potwierdź email
 #. Wejdź na stronę internetową https://github.com/settings/tokens

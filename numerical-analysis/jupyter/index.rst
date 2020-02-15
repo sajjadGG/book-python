@@ -540,7 +540,7 @@ Podstawy korzystania
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/jupyter_first.ipynb`
+* Solution: :download:`solution/jupyter_first.ipynb`
 
 #. Stwórz notebook jupyter o nazwie ``jupyter_first.ipynb``
 #. Dodaj tekst opisujący następne polecenia
@@ -554,6 +554,6 @@ Slajdy
 * Complexity level: easy
 * Lines of code to write: 1 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/jupyter_slides.py`
+* Solution: :download:`solution/jupyter_slides.py`
 
 #. Poprzedni skrypt przekonwertuj na slajdy i uruchom prezentację w przeglądarce

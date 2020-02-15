@@ -263,7 +263,7 @@ Address Book
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/operator_overload.py`
+* Solution: :download:`solution/operator_overload.py`
 
 :English:
     #. Use the code from listing below

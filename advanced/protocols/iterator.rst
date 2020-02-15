@@ -270,7 +270,7 @@ Range
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/iterator_range.py`
+* Solution: :download:`solution/iterator_range.py`
 
 :English:
     #. Write own implementation of a ``range()`` function
@@ -289,7 +289,7 @@ Own implementation
 * Complexity level: easy
 * Lines of code to write: 20 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/iterator_addressbook.py`
+* Solution: :download:`solution/iterator_addressbook.py`
 
 :English:
     #. For input data (see below)

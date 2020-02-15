@@ -188,7 +188,7 @@ Example
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/class_example.py`
+* Solution: :download:`solution/class_example.py`
 
 :English:
     #. Define class ``Iris``
@@ -214,7 +214,7 @@ Classes and instances
 * Complexity level: easy
 * Lines of code to write: 9 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/class_instance.py`
+* Solution: :download:`solution/class_instance.py`
 
 :English:
     #. Define class ``Astronaut``

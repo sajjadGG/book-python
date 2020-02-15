@@ -206,7 +206,7 @@ Index
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/numpy_indexing.py`
+* Solution: :download:`solution/numpy_indexing.py`
 
 :English:
     #. Create ``OUTPUT: ndarray``

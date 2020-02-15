@@ -267,7 +267,7 @@ Array Slicing
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/numpy_slicing.py`
+* Solution: :download:`solution/numpy_slicing.py`
 
 :English:
     #. Use input ndarray (see below)
@@ -307,7 +307,7 @@ Sum of inner elements
 * Complexity level: medium
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/numpy_inner_sum.py`
+* Solution: :download:`solution/numpy_inner_sum.py`
 
 :English:
     #. Use only random module from ``numpy`` module

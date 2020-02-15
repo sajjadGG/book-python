@@ -146,7 +146,7 @@ Objects and relations
 * Complexity level: medium
 * Lines of code to write: 60 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/basic_relations.py`
+* Solution: :download:`solution/basic_relations.py`
 
 :English:
     #. Client can open a bank account

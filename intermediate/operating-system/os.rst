@@ -650,7 +650,7 @@ Recursive folders walking
 * Complexity level: easy
 * Lines of code to write: 30 lines
 * Estimated time of completion: 30 min
-* Filename: :download:`solution/system_walk.py`
+* Solution: :download:`solution/system_walk.py`
 
 #. Sprawdź czy katalog "Python" już istnieje na pulpicie w Twoim systemie
 #. Jeżeli nie istnieje to za pomocą ``os.mkdir()`` stwórz go w tym miejscu
@@ -687,7 +687,7 @@ Tree
 * Complexity level: hard
 * Lines of code to write: 60 lines
 * Estimated time of completion: 60 min
-* Filename: :download:`solution/system_tree.py`
+* Solution: :download:`solution/system_tree.py`
 
 #. Za pomocą znaków unicode: "┣━", "┗━" , "┃  "
 #. Wygeneruj wynik przypominający wynik polecenia ``tree``.

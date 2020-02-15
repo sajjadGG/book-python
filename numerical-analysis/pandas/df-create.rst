@@ -109,7 +109,7 @@ Create DataFrame
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/df_create.py`
+* Solution: :download:`solution/df_create.py`
 
 :English:
     #. Create ``DataFrame`` for input data

@@ -333,7 +333,7 @@ Immutable classes
 * Complexity level: medium
 * Lines of code to write: 35 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/property_immutable.py`
+* Solution: :download:`solution/property_immutable.py`
 
 :English:
     #. Create class ``Point`` with ``x``, ``y``, ``z`` attributes

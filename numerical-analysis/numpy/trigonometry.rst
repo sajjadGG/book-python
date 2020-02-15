@@ -69,7 +69,7 @@ Trigonometry
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/numpy_trigonometry.py`
+* Solution: :download:`solution/numpy_trigonometry.py`
 
 :English:
     #. Read input (angle in degrees) from user

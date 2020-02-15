@@ -166,7 +166,7 @@ Create Int
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/series_create_int.py`
+* Solution: :download:`solution/series_create_int.py`
 
 :English:
     #. Set random seed to zero
@@ -186,7 +186,7 @@ Create Date
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/series_create_date.py`
+* Solution: :download:`solution/series_create_date.py`
 
 :English:
     #. Gagarin flown to space on 1961-04-12

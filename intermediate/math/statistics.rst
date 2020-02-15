@@ -222,7 +222,7 @@ Column Stats
 * Complexity level: easy
 * Lines of code to write: 30 lines
 * Estimated time of completion: 30 min
-* Filename: :download:`solution/statistics_column_stats.py`
+* Solution: :download:`solution/statistics_column_stats.py`
 
 :English:
     #. Use ``INPUT: List[tuple]`` from listing (see below)
@@ -292,7 +292,7 @@ Iris Stats
 * Complexity level: easy
 * Lines of code to write: 30 lines
 * Estimated time of completion: 30 min
-* Filename: :download:`solution/statistics_iris.py`
+* Solution: :download:`solution/statistics_iris.py`
 
 :English:
     #. Create dict ``OUTPUT: Dict[str, dict]``

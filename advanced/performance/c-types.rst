@@ -198,6 +198,6 @@ C Types
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/ctypes_datetime.py`
+* Solution: :download:`solution/ctypes_datetime.py`
 
 Wykorzystując C Types wypisz datę i czas, za pomocą funkcji zdefiniowanej w C ``<time.h>``

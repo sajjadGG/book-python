@@ -323,7 +323,7 @@ Cars
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 45 min
-* Filename: :download:`solution/df_cars.py`
+* Solution: :download:`solution/df_cars.py`
 
 #. Stwórz ``DataFrame`` samochody z:
 

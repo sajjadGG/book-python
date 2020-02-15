@@ -397,7 +397,7 @@ Address Book (dataclass)
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/dataclass_addressbook.py`
+* Solution: :download:`solution/dataclass_addressbook.py`
 
 :English:
     #. Model data using ``dataclasses``
@@ -436,7 +436,7 @@ Deserialize data from API
 * Complexity level: easy
 * Lines of code to write: 30 lines
 * Estimated time of completion: 30 min
-* Filename: :download:`solution/dataclass_json.py`
+* Solution: :download:`solution/dataclass_json.py`
 
 :English:
     #. You received input data in JSON format from the API

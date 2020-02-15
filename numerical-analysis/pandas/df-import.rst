@@ -96,7 +96,7 @@ Read
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/pandas_read.py`
+* Solution: :download:`solution/pandas_read.py`
 
 :English:
     #. Read data from given ``url`` (see below) to ``DataFrame``
@@ -141,7 +141,7 @@ XSLT Transformation
 * Complexity level: medium
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/df_import_xml_xslt.py`
+* Solution: :download:`solution/df_import_xml_xslt.py`
 
 :English:
     #. Download :download:`data/plants.xml`

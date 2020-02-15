@@ -378,7 +378,7 @@ Methods
 * Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/numpy_methods.py`
+* Solution: :download:`solution/numpy_methods.py`
 
 :English:
     #. Set random seed to zero

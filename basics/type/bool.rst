@@ -130,7 +130,7 @@ To ``bool`` or not to ``bool``
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/bool_simple.py`
+* Solution: :download:`solution/bool_simple.py`
 
 :English:
     #. Which variables are ``True``?
@@ -174,7 +174,7 @@ To ``bool`` or not to ``bool``
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/bool_true_or_false.py`
+* Solution: :download:`solution/bool_true_or_false.py`
 
 :English:
     #. What you need to put in expressions to get the expected outcome?

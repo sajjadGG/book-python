@@ -125,7 +125,7 @@ Iris Clean
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/df_select.py`
+* Solution: :download:`solution/df_select.py`
 
 :Polish:
     #. Pobierz zbiór danych Iris Dataset :download:`data/iris.csv`

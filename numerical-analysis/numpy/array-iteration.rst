@@ -136,7 +136,7 @@ Iteration
 * Complexity level: easy
 * Lines of code to write: 9 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/numpy_iteration.py`
+* Solution: :download:`solution/numpy_iteration.py`
 
 :English:
     #. Given ``a: ndarray`` (see below)

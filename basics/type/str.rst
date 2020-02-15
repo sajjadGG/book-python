@@ -224,7 +224,7 @@ Example
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 3 min
-* Filename: :download:`solution/str_example.py`
+* Solution: :download:`solution/str_example.py`
 
 :English:
     * Ask user to input text
@@ -243,7 +243,7 @@ Emoticon Print
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 3 min
-* Filename: :download:`solution/str_emoticon.py`
+* Solution: :download:`solution/str_emoticon.py`
 
 :English:
     #. Ask user to input name
@@ -273,7 +273,7 @@ Variables and Types
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/str_input.py`
+* Solution: :download:`solution/str_input.py`
 
 :English:
     #. Ask user to input name

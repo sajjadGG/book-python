@@ -300,7 +300,7 @@ Wielowątkowość
 * Complexity level: easy
 * Lines of code to write: 20 lines
 * Estimated time of completion: 30 min
-* Filename: :download:`solution/threading_timer.py`
+* Solution: :download:`solution/threading_timer.py`
 
 #. Stwórz kolejkę ``queue`` do której dodasz różne polecenia systemowe do wykonania, np.:
 

@@ -377,7 +377,7 @@ Select
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/numpy_select.py`
+* Solution: :download:`solution/numpy_select.py`
 
 :English:
     #. Set random seed to 0

@@ -149,7 +149,7 @@ Split columns
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/df_mapping_split.py`
+* Solution: :download:`solution/df_mapping_split.py`
 
 :English:
     #. Download :download:`data/phones.csv`

@@ -222,7 +222,7 @@ Trigonometry
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/math_trigonometry.py`
+* Solution: :download:`solution/math_trigonometry.py`
 
 :English:
     #. Read input (angle in degrees) from user
@@ -244,7 +244,7 @@ Euclidean distance 2D
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/math_euclidean_2d.py`
+* Solution: :download:`solution/math_euclidean_2d.py`
 
 :English:
     #. Given are two points ``A: Tuple[int, int]`` and ``B: Tuple[int, int]``
@@ -302,7 +302,7 @@ Euclidean distance ``n`` dimensions
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/math_euclidean_multi_dim.py`
+* Solution: :download:`solution/math_euclidean_multi_dim.py`
 
 :English:
     #. Given are two points ``A: Sequence[int]`` and ``B: Sequence[int]``
@@ -358,7 +358,7 @@ Matrix multiplication
 * Complexity level: hard
 * Lines of code to write: 6 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/math_matmul.py`
+* Solution: :download:`solution/math_matmul.py`
 
 :English:
     #. Multiply matrices using nested ``for`` loops
@@ -394,7 +394,7 @@ Triangle
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/math_triangle.py`
+* Solution: :download:`solution/math_triangle.py`
 
 :English:
     #. Calculate triangle area

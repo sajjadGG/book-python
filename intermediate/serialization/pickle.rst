@@ -238,7 +238,7 @@ Pickle serialization
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/pickle_dump_load.py`
+* Solution: :download:`solution/pickle_dump_load.py`
 
 :English:
     #. Use data from input section (see below)

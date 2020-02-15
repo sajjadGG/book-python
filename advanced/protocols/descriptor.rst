@@ -229,7 +229,7 @@ Temperature
 * Complexity level: easy
 * Lines of code to write: 9 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/descriptor_temperature.py`
+* Solution: :download:`solution/descriptor_temperature.py`
 
 :English:
     #. Create class ``KelvinTemperature``
@@ -262,7 +262,7 @@ Geographic Coordinates
 * Complexity level: medium
 * Lines of code to write: 25 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/descriptor_gps.py`
+* Solution: :download:`solution/descriptor_gps.py`
 
 :English:
     #. From input data (see below) model the class ``GeographicCoordinate``

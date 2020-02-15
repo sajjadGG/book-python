@@ -64,7 +64,7 @@ Pickle
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/classmethod_pickle.py`
+* Solution: :download:`solution/classmethod_pickle.py`
 
 :English:
     #. Model class based on input data (see below)

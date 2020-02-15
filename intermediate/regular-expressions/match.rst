@@ -76,7 +76,7 @@ Phone Number Validation
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/match_phones.py`
+* Solution: :download:`solution/match_phones.py`
 
 :English:
     #. Use regular expressions to validate phone numbers
@@ -110,7 +110,7 @@ Git Flow Branch Names
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/match_gitflow.py`
+* Solution: :download:`solution/match_gitflow.py`
 
 :English:
     #. Use regular expressions to validate Git branch names

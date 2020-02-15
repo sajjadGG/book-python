@@ -64,7 +64,7 @@ Create ``datetime`` object
 * Complexity level: easy
 * Lines of code to write: 1 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/datetime_timestamp.py`
+* Solution: :download:`solution/datetime_timestamp.py`
 
 :English:
     #. Convert given dates to ``datetime`` objects

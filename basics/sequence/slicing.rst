@@ -270,7 +270,7 @@ Simple collections
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/slice_every_nth.py`
+* Solution: :download:`solution/slice_every_nth.py`
 
 :English:
     #. Create tuple ``a`` with digits: 0, 1, 2, 3
@@ -300,7 +300,7 @@ Split train/test
 * Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/slice_split_train_test.py`
+* Solution: :download:`solution/slice_split_train_test.py`
 
 :English:
     #. For input data (see below)
@@ -398,7 +398,7 @@ Slicing text
 * Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/slice_text.py`
+* Solution: :download:`solution/slice_text.py`
 
 :English:
     #. For input data (see below)

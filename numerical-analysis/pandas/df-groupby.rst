@@ -486,7 +486,7 @@ Astronauts
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/df_groupby_astronauts.py`
+* Solution: :download:`solution/df_groupby_astronauts.py`
 
 :English:
     #. Download astronauts dataset :download:`data/astronauts.csv`
@@ -501,7 +501,7 @@ Phone Billing
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/df_groupby_billing.py`
+* Solution: :download:`solution/df_groupby_billing.py`
 
 :English:
     #. Download :download:`data/phones.csv`
@@ -516,7 +516,7 @@ EVA
 * Complexity level: hard
 * Lines of code to write: 30 lines
 * Estimated time of completion: 40 min
-* Filename: :download:`solution/df_groupby_eva.py`
+* Solution: :download:`solution/df_groupby_eva.py`
 
 :English:
     #. Download spacewalk (EVA) dataset :download:`data/eva.csv`

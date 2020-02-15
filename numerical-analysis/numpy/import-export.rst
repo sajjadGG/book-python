@@ -127,7 +127,7 @@ Load Dirty CSV
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/numpy_loadtext.py`
+* Solution: :download:`solution/numpy_loadtext.py`
 
 :English:
     #. Load text from URL given as input (see below)

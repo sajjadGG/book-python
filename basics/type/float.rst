@@ -79,7 +79,7 @@ Example
 * Complexity level: easy
 * Lines of code to write: 13 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/float_example.py`
+* Solution: :download:`solution/float_example.py`
 
 :English:
     #. Input data (see below)
@@ -112,7 +112,7 @@ Handling User Input and Type Casting
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/float_distance.py`
+* Solution: :download:`solution/float_distance.py`
 
 :English:
     #. Declare variable for holding value of 1337 meters
@@ -157,7 +157,7 @@ Spacesuit Pressures
 * Complexity level: medium
 * Lines of code to write: 20 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/float_pressure.py`
+* Solution: :download:`solution/float_pressure.py`
 
 :English:
     #. Operational pressure of EMU spacesuit: 4.3 PSI

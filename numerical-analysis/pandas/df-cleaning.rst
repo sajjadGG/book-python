@@ -137,7 +137,7 @@ Translate
 * Complexity level: easy
 * Lines of code to write: 10-15 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/df_mapping_substitute.py`
+* Solution: :download:`solution/df_mapping_substitute.py`
 
 :English:
     #. Download :download:`data/astro-dates.csv`
@@ -161,7 +161,7 @@ Substitute
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 30 min
-* Filename: :download:`solution/df_mapping_translate.py`
+* Solution: :download:`solution/df_mapping_translate.py`
 
 :English:
     #. Download :download:`data/trl.xlsx`
@@ -203,7 +203,7 @@ Month number to text
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/df_cleaning_month.py`
+* Solution: :download:`solution/df_cleaning_month.py`
 
 :English:
     #. Download :download:`data/phones.csv`

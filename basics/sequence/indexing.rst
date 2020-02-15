@@ -106,7 +106,7 @@ Select
 * Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/indexing_select.py`
+* Solution: :download:`solution/indexing_select.py`
 
 :English:
     #. For given data input (see below)

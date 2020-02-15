@@ -7,7 +7,7 @@ v1.0-alpha
 * Complexity level: medium
 * Lines of code to write: 120 lines
 * Estimated time of completion: 60 min (±15 min), then 60 min live coding with instructor
-* Filename: :download:`solution/dragon_advanced.py`
+* Solution: :download:`solution/dragon_advanced.py`
 * Warning: Don't delete code, assignment will be continued
 
 .. figure:: img/dragon.gif

@@ -132,7 +132,7 @@ Example
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/nested_example.py`
+* Solution: :download:`solution/nested_example.py`
 
 :English:
     #. For input data (see below)
@@ -172,7 +172,7 @@ Unique keys from schema-less database
 * Complexity level: medium
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/nested_unique_keys.py`
+* Solution: :download:`solution/nested_unique_keys.py`
 
 :English:
     #. For input data (see below)

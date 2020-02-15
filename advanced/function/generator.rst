@@ -387,7 +387,7 @@ Generators vs. Comprehensions - iris
 * Complexity level: medium
 * Lines of code to write: 40 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/generator_iris.py`
+* Solution: :download:`solution/generator_iris.py`
 
 :English:
     .. todo:: English translation
@@ -422,7 +422,7 @@ Generators vs. Comprehensions - passwd
 * Complexity level: medium
 * Lines of code to write: 40 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/generator_passwd.py`
+* Solution: :download:`solution/generator_passwd.py`
 
 :English:
     .. todo:: English translation

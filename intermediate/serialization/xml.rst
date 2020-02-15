@@ -716,7 +716,7 @@ XML Parsing
 * Complexity level: easy
 * Lines of code to write: 20 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/xml_parse.py`
+* Solution: :download:`solution/xml_parse.py`
 
 :English:
     #. Convert input data to Python ``List[dict]``
@@ -733,7 +733,7 @@ XSLT Transformation
 * Complexity level: medium
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/xml_xslt.py`
+* Solution: :download:`solution/xml_xslt.py`
 
 :English:
     #. Convert input data to Python ``List[dict]``

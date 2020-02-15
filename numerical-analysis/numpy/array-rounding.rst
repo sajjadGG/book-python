@@ -108,7 +108,7 @@ Clip
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/numpy_clip.py`
+* Solution: :download:`solution/numpy_clip.py`
 
 :English:
     #. Set random seed to zero

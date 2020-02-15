@@ -93,6 +93,6 @@ C Modules
 * Complexity level: medium
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/cmodules_datetime.py`
+* Solution: :download:`solution/cmodules_datetime.py`
 
 Wykorzystując C Modules wypisz datę i czas, za pomocą funkcji zdefiniowanej w C ``<time.h>``

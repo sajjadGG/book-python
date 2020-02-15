@@ -41,7 +41,7 @@ Basic Address Book
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/intermediate_addressbook.py`
+* Solution: :download:`solution/intermediate_addressbook.py`
 
 :English:
     #. Create Address Book based on input data (see below)

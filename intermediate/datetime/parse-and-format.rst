@@ -337,7 +337,7 @@ From ISO date format
 * Complexity level: easy
 * Lines of code to write: 1 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/datetime_from_iso.py`
+* Solution: :download:`solution/datetime_from_iso.py`
 
 :English:
     #. The date and time is given in ISO format:
@@ -357,7 +357,7 @@ To ISO date format
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/datetime_to_iso.py`
+* Solution: :download:`solution/datetime_to_iso.py`
 
 :Enlish:
     #. Create ``datetime`` object by parsing the given date
@@ -385,7 +385,7 @@ US date and time format
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/datetime_from_us.py`
+* Solution: :download:`solution/datetime_from_us.py`
 
 :English:
     #. Using given date and time from below (copy with quotes inside)
@@ -420,7 +420,7 @@ Log parsing
 * Complexity level: medium
 * Lines of code to write: 25 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/datetime_logs.py`
+* Solution: :download:`solution/datetime_logs.py`
 
 :English:
     #. Save input data to file ``apollo11-timeline.log``

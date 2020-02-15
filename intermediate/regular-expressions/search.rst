@@ -40,7 +40,7 @@ Search for Astronaut
 * Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/search_astronauts.py`
+* Solution: :download:`solution/search_astronauts.py`
 * References: First paragraph from Apollo 11 Wikipedia entry :cite:`RegexpWikipediaApollo11`
 
 :English:
@@ -70,7 +70,7 @@ Moon Speech (search)
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/search_moon_speech.py`
+* Solution: :download:`solution/search_moon_speech.py`
 * References: "Moon Speech" by John F. Kennedy at Rice Stadium, Houston, TX on 1962-09-12 :cite:`RegexpKennedy1962`
 
 :English:
@@ -90,7 +90,7 @@ Search for Any Time
 * Complexity level: medium
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/search_time_any.py`
+* Solution: :download:`solution/search_time_any.py`
 * References: First paragraph from Apollo 11 Wikipedia entry :cite:`RegexpWikipediaApollo11`
 
 :English:
@@ -110,7 +110,7 @@ Search for Valid Time
 * Complexity level: hard
 * Lines of code to write: 4 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/search_time_valid.py`
+* Solution: :download:`solution/search_time_valid.py`
 * References: (modified) First paragraph from Apollo 11 Wikipedia entry :cite:`RegexpWikipediaApollo11`
 
 :English:

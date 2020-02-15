@@ -334,7 +334,7 @@ Refactoring
 * Complexity level: easy
 * Lines of code to write: 5 lines of code
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/doctest_temp.py`
+* Solution: :download:`solution/doctest_temp.py`
 
 :English:
     #. Write implementation of a function from input code (see below)
@@ -373,7 +373,7 @@ Distance conversion doctest
 * Complexity level: easy
 * Lines of code to write: 5 lines of code + 16 lines of tests
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/doctest_distance.py`
+* Solution: :download:`solution/doctest_distance.py`
 
 :English:
     #. Write functions which convert distance given in kilometers to meters

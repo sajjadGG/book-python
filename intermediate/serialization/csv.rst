@@ -338,7 +338,7 @@ Read and parse data from CSV file
 * Complexity level: easy
 * Lines of code to write: 20 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/csv_dictreader.py`
+* Solution: :download:`solution/csv_dictreader.py`
 
 :English:
     #. Download :download:`data/iris.csv` file
@@ -370,7 +370,7 @@ Write fixed schema data to CSV file
 * Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/csv_dictwriter_fixed.py`
+* Solution: :download:`solution/csv_dictwriter_fixed.py`
 
 :English:
     #. Using ``csv.DictWriter()`` save ``INPUT`` (see below) to file
@@ -414,7 +414,7 @@ Write variable schema data to file
 * Complexity level: medium
 * Lines of code to write: 8 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/csv_dictwriter_variable.py`
+* Solution: :download:`solution/csv_dictwriter_variable.py`
 
 :English:
     #. Using ``csv.DictWriter()`` write variable schema data to CSV file
@@ -465,7 +465,7 @@ Object serialization to CSV
 * Complexity level: hard
 * Lines of code to write: 60 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/csv_relations.py`
+* Solution: :download:`solution/csv_relations.py`
 
 :English:
     #. Using ``csv.DictWriter()`` save contacts from addressbook to CSV file

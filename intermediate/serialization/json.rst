@@ -432,7 +432,7 @@ Serialize nested sequences to JSON
 * Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/json_dump.py`
+* Solution: :download:`solution/json_dump.py`
 
 :English:
     #. Extract from input a header and data
@@ -502,7 +502,7 @@ Deserialize nested sequences from JSON
 * Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/json_load.py`
+* Solution: :download:`solution/json_load.py`
 
 :English:
     #. Write input data to "iris_deserialize.json"
@@ -531,7 +531,7 @@ Serializing datetime to JSON
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/json_datetime.py`
+* Solution: :download:`solution/json_datetime.py`
 
 :Enlish:
     #. Copy input data to your script
@@ -630,7 +630,7 @@ Deserialize data from GitHub
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/json_github.py`
+* Solution: :download:`solution/json_github.py`
 
 :English:
     #. Use ``requests`` library (requires installation)

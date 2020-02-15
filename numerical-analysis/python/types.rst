@@ -44,7 +44,7 @@ Assignment
 * Complexity level: easy
 * Lines of code to write: 12 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/types_int.py`
+* Solution: :download:`solution/types_int.py`
 
 :English:
     #. Calculate how many seconds is five minutes
@@ -121,7 +121,7 @@ Assignment
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/types_float.py`
+* Solution: :download:`solution/types_float.py`
 
 :English:
     #. Declare variable for holding value of 1337 meters
@@ -332,7 +332,7 @@ Assignment
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 3 min
-* Filename: :download:`solution/types_str.py`
+* Solution: :download:`solution/types_str.py`
 
 :English:
     * Ask user to input text
@@ -473,7 +473,7 @@ To ``bool`` or not to ``bool``
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/types_bool.py`
+* Solution: :download:`solution/types_bool.py`
 
 :English:
     #. Which variables are ``True``?

@@ -94,7 +94,7 @@ SQLite Iris
 * Complexity level: easy
 * Lines of code to write: 30 lines
 * Estimated time of completion: 30 min
-* Filename: :download:`solution/sqlite_iris.py`
+* Solution: :download:`solution/sqlite_iris.py`
 
 :English:
     #. Save input data as ``sqlite_iris.csv`` file
@@ -197,7 +197,7 @@ Creating relations in database
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/sqlite_addressbook.py`
+* Solution: :download:`solution/sqlite_addressbook.py`
 
 :English:
     #. Create database for input data
@@ -327,7 +327,7 @@ Log parsing
 * Complexity level: medium
 * Lines of code to write: 25 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/sqlite_logs.py`
+* Solution: :download:`solution/sqlite_logs.py`
 
 :English:
     #. Save input data to file ``apollo11-timeline.log``

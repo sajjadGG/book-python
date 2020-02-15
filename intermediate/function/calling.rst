@@ -267,7 +267,7 @@ Iris
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/calling_kwargs.py`
+* Solution: :download:`solution/calling_kwargs.py`
 
 :English:
     #. Download :download:`data/iris.csv` and save as ``iris.csv``

@@ -255,7 +255,7 @@ Example
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/file_example.py`
+* Solution: :download:`solution/file_example.py`
 
 :English:
     #. Using ``input()`` ask user for a file path
@@ -278,7 +278,7 @@ Parsing simple CSV file
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/file_parsing_csv.py`
+* Solution: :download:`solution/file_parsing_csv.py`
 
 :English:
     #. Download :download:`data/iris.csv` save as ``iris.csv``
@@ -323,7 +323,7 @@ Parsing simple CSV file
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/file_parsing_simple.py`
+* Solution: :download:`solution/file_parsing_simple.py`
 
 :English:
     #. Copy input data from listing below and save to file ``hosts.txt``
@@ -377,7 +377,7 @@ Parsing simple CSV file
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/file_parsing_advanced.py`
+* Solution: :download:`solution/file_parsing_advanced.py`
 
 :English:
     #. Copy input data from listing below and save to file ``hosts.txt``

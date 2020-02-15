@@ -122,7 +122,7 @@ Unpacking
 * Complexity level: medium
 * Lines of code to write: 3 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/unpacking_endswith.py`
+* Solution: :download:`solution/unpacking_endswith.py`
 
 :English:
     #. For input data (see below)

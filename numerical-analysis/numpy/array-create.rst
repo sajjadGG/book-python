@@ -322,7 +322,7 @@ Create
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/numpy_create_arange.py`
+* Solution: :download:`solution/numpy_create_arange.py`
 
 :English:
     #. Create ``a: ndarray`` with even numbers from 0 to 100

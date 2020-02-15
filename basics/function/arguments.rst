@@ -195,7 +195,7 @@ Example
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/args_example.py`
+* Solution: :download:`solution/args_example.py`
 
 :English:
     #. Define function which takes sequence of integers as an argument
@@ -216,7 +216,7 @@ Divide
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/args_divide.py`
+* Solution: :download:`solution/args_divide.py`
 
 :English:
     #. Define function ``divide``
@@ -241,7 +241,7 @@ Power
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/args_power.py`
+* Solution: :download:`solution/args_power.py`
 
 :English:
     #. Define function ``power``
@@ -273,7 +273,7 @@ Cleaning text input
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/args_str_clean.py`
+* Solution: :download:`solution/args_str_clean.py`
 
 :English:
     #. For given input data (see below)
@@ -331,7 +331,7 @@ Aviation numbers
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/args_aviation_numbers.py`
+* Solution: :download:`solution/args_aviation_numbers.py`
 
 :English:
     #. For input data (see below)
@@ -387,7 +387,7 @@ Number to human readable
 * Complexity level: hard
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/args_numstr_human.py`
+* Solution: :download:`solution/args_numstr_human.py`
 
 :English:
     #. For input data (see below)

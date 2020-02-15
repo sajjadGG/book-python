@@ -295,7 +295,7 @@ Average
 * Complexity level: easy
 * Lines of code to write: 12 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/builtin_average.py`
+* Solution: :download:`solution/builtin_average.py`
 
 :English:
     #. For given ``INPUT`` (see below)

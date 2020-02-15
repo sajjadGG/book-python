@@ -52,7 +52,7 @@ Defining Classes
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/modifiers_iris.py`
+* Solution: :download:`solution/modifiers_iris.py`
 
 :English:
     #. Create ``flowers: list``

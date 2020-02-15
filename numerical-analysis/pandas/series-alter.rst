@@ -105,7 +105,7 @@ Update
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/series_update.py`
+* Solution: :download:`solution/series_update.py`
 
 :English:
     #. From input data create ``pd.Series``

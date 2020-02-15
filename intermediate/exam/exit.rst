@@ -10,7 +10,7 @@ Label encoder
 * Complexity level: medium
 * Lines of code to write: 13 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/loop_label_encoder.py`
+* Solution: :download:`solution/loop_label_encoder.py`
 
 :English:
     #. For input data (see below)
@@ -110,7 +110,7 @@ Relational Files Database
 * Complexity level: medium
 * Lines of code to write: 100-150 lines
 * Estimated time of completion: 60 min
-* Filename: :download:`solution/exam.py`
+* Solution: :download:`solution/exam.py`
 
 :English:
     #. Save listings content to files:

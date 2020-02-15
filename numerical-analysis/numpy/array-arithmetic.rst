@@ -365,7 +365,7 @@ Arithmetic operations
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/numpy_arithmetic.py`
+* Solution: :download:`solution/numpy_arithmetic.py`
 
 :English:
     #. For given: ``a: ndarray``, ``b: ndarray``, ``c: ndarray`` (see below)
@@ -399,7 +399,7 @@ Addition
 * Complexity level: easy
 * Lines of code to write: 2 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/numpy_arithmetic_add.py`
+* Solution: :download:`solution/numpy_arithmetic_add.py`
 
 :English:
     #. Add ``a`` and ``b``
@@ -423,7 +423,7 @@ Multiplication
 * Complexity level: easy
 * Lines of code to write: 2 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/numpy_arithmetic_matmul.py`
+* Solution: :download:`solution/numpy_arithmetic_matmul.py`
 
 :English:
     #. Multiply ``a`` and ``b`` using scalar multiplication

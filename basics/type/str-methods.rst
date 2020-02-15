@@ -383,7 +383,7 @@ Example
 * Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/str_methods.py`
+* Solution: :download:`solution/str_methods.py`
 
 :English:
     #. For given text: ``UL. jana \tTWArdoWskIEGO 3``
@@ -409,7 +409,7 @@ String Cleaning
 * Complexity level: easy
 * Lines of code to write: 11 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/str_cleaning.py`
+* Solution: :download:`solution/str_cleaning.py`
 
 :English:
     #. For input data (see below)

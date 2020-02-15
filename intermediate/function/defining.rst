@@ -264,7 +264,7 @@ Average
 * Complexity level: easy
 * Lines of code to write: 4 lines + doctests
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/defining_average.py`
+* Solution: :download:`solution/defining_average.py`
 
 :English:
     #. Create function ``average()``, which calculates arithmetic mean
@@ -281,7 +281,7 @@ args
 * Complexity level: easy
 * Lines of code to write: 7 lines + doctests
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/defining_args.py`
+* Solution: :download:`solution/defining_args.py`
 
 :English:
     #. Create function ``is_numeric``
@@ -315,7 +315,7 @@ args and kwargs
 * Complexity level: medium
 * Lines of code to write: 8 lines + doctests
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/defining_kwargs.py`
+* Solution: :download:`solution/defining_kwargs.py`
 
 :English:
     #. Create function ``is_numeric``

@@ -521,7 +521,7 @@ Powielanie napisów
 * Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/print_lines.py`
+* Solution: :download:`solution/print_lines.py`
 
 :English:
     .. todo:: English translation
@@ -548,7 +548,7 @@ Przeliczanie temperatury
 * Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/print_formatting.py`
+* Solution: :download:`solution/print_formatting.py`
 
 :English:
     .. todo:: English translation

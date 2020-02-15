@@ -126,7 +126,7 @@ Return Numbers
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/return_numbers.py`
+* Solution: :download:`solution/return_numbers.py`
 
 :English:
     #. Define function ``add``

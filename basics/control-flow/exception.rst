@@ -633,7 +633,7 @@ Example
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/exception_example.py`
+* Solution: :download:`solution/exception_example.py`
 
 :English:
     #. Ask user to input angle in degrees
@@ -656,7 +656,7 @@ Raise Exception
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/exception_raise.py`
+* Solution: :download:`solution/exception_raise.py`
 
 :English:
     #. Ask user to input age
@@ -673,7 +673,7 @@ Catch Exception
 * Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/exception_catch.py`
+* Solution: :download:`solution/exception_catch.py`
 
 :English:
     #. Ask user to input temperature in Kelvins
@@ -692,7 +692,7 @@ Define Exception
 * Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/exception_define.py`
+* Solution: :download:`solution/exception_define.py`
 
 :English:
     #. Ask user to input temperature in Kelvins

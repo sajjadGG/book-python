@@ -105,7 +105,7 @@ Check Python Version
 * Complexity level: easy
 * Lines of code to write: 0 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/about_version.py`
+* Solution: :download:`solution/about_version.py`
 
 :English:
     #. Create file wih name ``about_version.py``
@@ -139,7 +139,7 @@ Check Python Environment
 * Complexity level: easy
 * Lines of code to write: 0 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/about_env.py`
+* Solution: :download:`solution/about_env.py`
 
 #. Stwórz plik o nazwie ``python_env.py``
 #. Plik ma mieć zawartość:

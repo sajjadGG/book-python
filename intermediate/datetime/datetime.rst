@@ -210,7 +210,7 @@ Create ``date``, ``time`` and ``datetime`` objects
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/datetime_create_custom.py`
+* Solution: :download:`solution/datetime_create_custom.py`
 
 :English:
     #. Create ``date`` object with date of your birth
@@ -227,7 +227,7 @@ Create current ``date`` and ``datetime`` objects
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/datetime_create_current.py`
+* Solution: :download:`solution/datetime_create_current.py`
 
 :English:
     #. Create ``date`` object with current date

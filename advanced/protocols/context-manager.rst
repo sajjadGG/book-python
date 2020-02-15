@@ -246,7 +246,7 @@ Buffered file
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/context_manager_file.py`
+* Solution: :download:`solution/context_manager_file.py`
 
 :English:
     #. Take input code from listing below

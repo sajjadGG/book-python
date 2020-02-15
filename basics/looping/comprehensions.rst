@@ -405,7 +405,7 @@ Split train/test
 * Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/comprehension_split_train_test.py`
+* Solution: :download:`solution/comprehension_split_train_test.py`
 
 :English:
     #. For given data structure ``INPUT: List[tuple]`` (see below)

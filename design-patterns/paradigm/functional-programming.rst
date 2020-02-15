@@ -392,7 +392,7 @@ Assignments
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/functional_map_filter_lambda.py`
+* Solution: :download:`solution/functional_map_filter_lambda.py`
 
 #. Używając generatora zbuduj listę zawierającą wszystkie liczby podzielne przez 3 z zakresu od 1 do 33:
 #. Używając funkcji ``filter()`` usuń z niej wszystkie liczby parzyste
@@ -404,7 +404,7 @@ Zbalansowanie nawiasów
 * Complexity level: medium
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/functional_brackets.py`
+* Solution: :download:`solution/functional_brackets.py`
 
 #. Napisz kod, który za pomocą rekurencji sprawdzi zbalansowanie nawiasów, tzn. czy ilość otwieranych nawiasów jest równa ilości nawiasów zamykanych.
 #. Zwórć uwagę, że mogą być cztery typy nawiasów:

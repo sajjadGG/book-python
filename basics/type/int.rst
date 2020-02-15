@@ -50,7 +50,7 @@ Example
 * Complexity level: medium
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/int_example.py`
+* Solution: :download:`solution/int_example.py`
 
 :English:
     #. Calculate how many bits is one Megabyte
@@ -81,7 +81,7 @@ Time
 * Complexity level: easy
 * Lines of code to write: 12 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/int_time.py`
+* Solution: :download:`solution/int_time.py`
 
 :English:
     #. Calculate how many seconds is five minutes
@@ -111,7 +111,7 @@ Download Time
 * Complexity level: medium
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/int_download_time.py`
+* Solution: :download:`solution/int_download_time.py`
 
 :English:
     #. Having internet connection with speed up to 100 Mb/s
@@ -138,7 +138,7 @@ Temperature
 * Complexity level: medium
 * Lines of code to write: 18 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/int_temperature.py`
+* Solution: :download:`solution/int_temperature.py`
 
 :English:
     #. One Kelvin is equal to 1 Celsius degree (1K = 1°C)

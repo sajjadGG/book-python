@@ -188,7 +188,7 @@ Methods
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Filename: :download:`solution/syntax_methods.py`
+* Solution: :download:`solution/syntax_methods.py`
 
 :English:
     #. Define class ``Iris``

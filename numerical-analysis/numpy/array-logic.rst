@@ -395,7 +395,7 @@ Logic
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/numpy_logic.py`
+* Solution: :download:`solution/numpy_logic.py`
 
 :English:
     #. Set random seed to zero
@@ -416,7 +416,7 @@ Is in
 * Complexity level: easy
 * Lines of code to write: 9 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/numpy_isin.py`
+* Solution: :download:`solution/numpy_isin.py`
 
 :English:
     #. Set random seed to zero

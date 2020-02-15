@@ -270,7 +270,7 @@ Iris Dirty
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
-* Filename: :download:`solution/df_update.py`
+* Solution: :download:`solution/df_update.py`
 
 
 #. Pobierz dane Irysów: :download:`data/iris-dirty.csv`

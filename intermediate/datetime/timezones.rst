@@ -139,7 +139,7 @@ Time zone converting
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
-* Filename: :download:`solution/datetime_tz.py`
+* Solution: :download:`solution/datetime_tz.py`
 
 :English:
     #. Convert given date to ``datetime`` objects

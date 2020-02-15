@@ -120,7 +120,7 @@ Arithmetic
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Filename: :download:`solution/series_arithmetic.py`
+* Solution: :download:`solution/series_arithmetic.py`
 
 :English:
     #. Set random seed to zero

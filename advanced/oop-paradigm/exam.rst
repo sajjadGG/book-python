@@ -8,7 +8,7 @@ Dragon (version beta)
 * Complexity level: medium
 * Lines of code to write: 120 lines
 * Estimated time of completion: 60 min (±10 min), then 30 min live coding with instructor
-* Filename: :download:`solution/intermediate_dragon.py`
+* Solution: :download:`solution/intermediate_dragon.py`
 * Warning: Don't delete code, assignment will be continued
 
 .. figure:: img/dragon.gif

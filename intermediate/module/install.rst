@@ -34,7 +34,7 @@ Installing from ``requirements.txt``
 * Complexity level: easy
 * Lines of code to write: 1 line
 * Estimated time of completion: 5 min
-* Filename: ``requirements.txt``
+* Solution: ``requirements.txt``
 
 :English:
     #. Create ``requirements.txt`` file
