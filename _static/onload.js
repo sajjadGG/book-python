@@ -66,10 +66,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     try {
-        let currentSectionNumber = document.querySelector('#assignments h2').innerText.split(' ')[0];
-
+        let sectionNumber = document.querySelector('#assignments h2').innerText.split(' ')[0];
         document.querySelectorAll('#assignments h3 span').forEach((taskNumber, num) => {
-          taskNumber.innerHTML = `${currentSectionNumber}${ALPHABET[num]}. `;
+          taskNumber.innerHTML = `${sectionNumber}${ALPHABET[num]}. `;
         });
     } catch (e) {}
 
