@@ -18,18 +18,18 @@ const PREFIX = {
 };
 
 const ALPHABET = {
-    1: "a",
-    2: "b",
-    3: "c",
-    4: "d",
-    5: "e",
-    6: "f",
-    7: "g",
-    8: "h",
-    9: "i",
-    10: "j",
-    11: "k",
-    12: "l",
+    0: "a",
+    1: "b",
+    2: "c",
+    3: "d",
+    4: "e",
+    5: "f",
+    6: "g",
+    7: "h",
+    8: "i",
+    9: "j",
+    10: "k",
+    11: "l",
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -65,16 +65,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // try {
-    //     let current_section_number = document.querySelector('#assignments h2').innerText.split(' ')[0];
-    //     document.querySelectorAll('#assignments h3').forEach((h3) => {
-    //         let title = h3.innerHTML.slice(current_section_number.length);
-    //         let num = parseInt(title.substr(0, 1));
-    //         let name = title.substr(3);
-    //         let alpha = ALPHABET[num];
-    //         h3.innerHTML = `<h3>${current_section_number}${alpha}. ${name}</h3>`
-    //     });
-    // } catch (e) {}
+    try {
+        let currentSectionNumber = document.querySelector('#assignments h2').innerText.split(' ')[0];
+
+        document.querySelectorAll('#assignments h3 span').forEach((taskNumber, num) => {
+          taskNumber.innerHTML = `${currentSectionNumber}${ALPHABET[num]}. `;
+        });
+    } catch (e) {}
 
     let search_input = '<iframe src="https://duckduckgo.com/search.html?site=python.astrotech.io&prefill=Search..." style="overflow:hidden;margin:0;padding:0;width:200px;height:40px;" frameborder="0"></iframe>';
     document.querySelectorAll('div[role="search"]')[0].innerHTML = search_input;
