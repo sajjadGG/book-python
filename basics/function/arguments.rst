@@ -268,6 +268,8 @@ Power
         power(3)
         # 27
 
+.. _Cleaning text input:
+
 Cleaning text input
 -------------------
 * Complexity level: medium
