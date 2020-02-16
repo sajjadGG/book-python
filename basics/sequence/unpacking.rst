@@ -101,6 +101,11 @@ Unpacking from variable length
     print(b)        # []
     print(c)        # 2
 
+.. code-block:: python
+
+    a, *b, c = [1,]
+    # ValueError: not enough values to unpack (expected at least 2, got 1)
+
 
 Naming convention
 =================
@@ -130,21 +135,21 @@ Naming convention
 
 .. code-block:: python
 
+    line = 'Apollo11,Twardowski,Watney,Ivanovic'
+
+    mission, *members = line.split(',')
+
+    group_name      # Apollo11
+    members         # ['Twardowski', 'Watney', 'Ivanovic']
+
+.. code-block:: python
+
     line = '4.9,3.1,1.5,0.1,setosa'
 
     *features, label = line.split(',')
 
     features         # ['4.9', '3.1', '1.5', '0.1']
     label            # 'setosa'
-
-.. code-block:: python
-
-    line = 'astronauts,twardowski,watney,ivanovic'
-
-    group_name, *members = line.split(',')
-
-    group_name      # astronauts
-    members         # ['twardowski', 'watney', 'ivanovic']
 
 .. code-block:: python
 

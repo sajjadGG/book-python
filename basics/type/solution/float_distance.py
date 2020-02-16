@@ -1,11 +1,11 @@
-meters = 1337
-km = int(meters / 1000)
-miles = float(meters / 1608)
-nm = float(meters / 1852)
+m = 1337
+km = m / 1000
+mi = m / 1608
+nm = m / 1852
 
 
-print(f'Meters: {meters}')
+print(f'Meters: {m}')
 print(f'Kilometers: {km}')
-print(f'Miles: {miles}')
-print(f'Nautical Miles: {nm}')
-print(f'All: {meters}, {km}, {miles}, {nm}')
+print(f'Miles: {mi:.2}')
+print(f'Nautical Miles: {nm:.2}')
+print(f'All: {m}, {int(km)}, {mi:.1}, {nm:.1}')

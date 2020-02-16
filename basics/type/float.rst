@@ -135,10 +135,10 @@ Handling User Input and Type Casting
     .. code-block:: python
 
         print(f'Meters: {...}')                              # int
-        print(f'Kilometers: {...}')                          # int
-        print(f'Miles: {...}')                               # float
-        print(f'Nautical Miles: {...}')                      # float
-        print(f'm: {...}, km: {...}, mi: {...}, nm: {...}')  # int, int, float, float
+        print(f'Kilometers: {...}')                          # float
+        print(f'Miles: {...}')                               # float (two decimal places)
+        print(f'Nautical Miles: {...}')                      # float (two decimal places)
+        print(f'm: {...}, km: {...}, mi: {...}, nm: {...}')  # int, int, float (one decimal place), float (one decimal place)
 
 :The whys and wherefores:
     * Defining constants and variables
