@@ -68,7 +68,18 @@ Type Annotation
 
     from typing import Dict
 
-    my_dict: Dict[str, int] = {
+    my_dict: Dict[float, str] = {
+        5.8: 'Sepal length',
+        2.7: 'Sepal width',
+        5.1: 'Petal length',
+        1.9: 'Petal width',
+    }
+
+.. code-block:: python
+
+    from typing import Dict
+
+    my_dict: Dict[str, float] = {
         'Sepal length': 5.8,
         'Sepal width': 2.7,
         'Petal length': 5.1,
@@ -176,29 +187,6 @@ Get Keys
 .. code-block:: python
 
     my_dict = {
-        0: 'Setosa',
-        1: 'Versicolor',
-        2: 'Virginica'
-    }
-
-    list(my_dict.keys())
-    # [0, 1, 2]
-
-.. code-block:: python
-
-    my_dict = {
-        5.8: 'Sepal length',
-        2.7: 'Sepal width',
-        5.1: 'Petal length',
-        1.9: 'Petal width',
-    }
-
-    list(my_dict.keys())
-    # [5.8, 2.7, 5.1, 1.9]
-
-.. code-block:: python
-
-    my_dict = {
         'Sepal length': 5.8,
         'Sepal width': 2.7,
         'Petal length': 5.1,
@@ -277,6 +265,8 @@ Setting Items
     }
 
     my_dict.update(agency='POLSA')
+
+    print(my_dict)
     # {
     #   'first_name': 'Jan',
     #   'last_name': 'Twardowski',
@@ -292,6 +282,8 @@ Setting Items
     }
 
     my_dict.update(agency=['POLSA', 'ESA', 'Roscosmos'])
+
+    print(my_dict)
     # {
     #   'first_name': 'Jan',
     #   'last_name': 'Twardowski',
@@ -307,6 +299,8 @@ Setting Items
     }
 
     my_dict.update({'agency': 'POLSA'})
+
+    print(my_dict)
     # {
     #   'first_name': 'Jan',
     #   'last_name': 'Twardowski',
@@ -327,8 +321,11 @@ Deleting Items
 
     value = my_dict.pop('agency')
 
-    my_dict  # {'first_name', 'Jan', 'last_name': 'Twardowski'}
-    value    # 'POLSA'
+    print(my_dict)
+    # {'first_name', 'Jan', 'last_name': 'Twardowski'}
+
+    print(value)
+    # 'POLSA'
 
 .. code-block:: python
     :caption: Del Keyword
@@ -341,7 +338,7 @@ Deleting Items
 
     del my_dict['agency']
 
-    my_dict
+    print(my_dict)
     # {'first_name': 'Jan', 'last_name': 'Twardowski'}
 
 
@@ -397,11 +394,13 @@ Indexing and Slicing
 
 .. code-block:: python
 
-    {1, 2, 3, 4}      # set
-    {1: 2, 3: 4}      # dict
-
     {1, 2}            # set
     {1: 2}            # dict
+
+.. code-block:: python
+
+    {1, 2, 3, 4}      # set
+    {1: 2, 3: 4}      # dict
 
     {1, 2,}           # set
     {1: 2,}           # dict
