@@ -112,8 +112,8 @@ Select
     #. For given data input (see below)
     #. Write header (first line) to ``header: tuple`` variable
     #. Create ``OUTPUT: list``
-    #. Convert to ``list`` data from row 2, 6, 9 and add to ``OUTPUT``
-    #. Convert to ``tuple`` data from row 12, 15, 16 and add to ``OUTPUT``
+    #. Convert to ``list`` data from row at index 2, 6, 9 and add to ``OUTPUT``
+    #. Convert to ``tuple`` data from row at index 12, 15, 16 and add to ``OUTPUT``
     #. Add empty ``set`` to ``OUTPUT``
     #. Use only indexes
     #. Do not use ``for``, ``while`` or ``slice()``
@@ -122,8 +122,8 @@ Select
     #. Dla danych wejściowych (patrz sekcja input)
     #. Zapisz nagłówek (pierwsza linia) do zmiennej ``header: tuple``
     #. Stwórz ``OUTPUT: list``
-    #. Przekonwertuj do ``list`` dane z wierszy 2, 6, 9 i dodaj do ``OUTPUT``
-    #. Przekonwertuj do ``tuple`` dane z wierszy 12, 15, 16 i dodaj do ``OUTPUT``
+    #. Przekonwertuj do ``list`` dane z wierszy o indeksach 2, 6, 9 i dodaj do ``OUTPUT``
+    #. Przekonwertuj do ``tuple`` dane z wierszy o indeksach 12, 15, 16 i dodaj do ``OUTPUT``
     #. Dodaj pusty ``set`` do ``OUTPUT``
     #. Użyj tylko indeksów
     #. Nie używaj ``for``, ``while`` lub ``slice()``

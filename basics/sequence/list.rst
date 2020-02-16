@@ -227,8 +227,8 @@ Membership Operators
     [1, 2] == [1, 2]        # True
     [1, 2] == [2, 1]        # False
 
-    [1, 2, 3] != [1, 2]     # True
     [1, 2] != [1, 2]        # False
+    [1, 2, 3] != [1, 2]     # True
 
     1 in [1, 2]             # True
     3 in [1, 2]             # False
@@ -236,11 +236,11 @@ Membership Operators
     [2] in [1, 2]           # False
     [1, 2] in [1, 2]        # False
 
-    [2] in [1, [2]]         # False
+    [2] in [1, [2]]         # True
     [1, 2] in [[1,2], 3]    # True
 
-    4 not in [1, 2]         # True
     1 not in [1, 2]         # False
+    3 not in [1, 2]         # True
 
     [2] not in [1, 2]       # True
     [1, 2] not in [1, 2]    # True

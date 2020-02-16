@@ -71,8 +71,8 @@ Membership Operators
 .. code-block:: python
     :caption: Not equals
 
-    (1, 2, 3) != (1, 2)     # True
     (1, 2) != (1, 2)        # False
+    (1, 2, 3) != (1, 2)     # True
 
 .. code-block:: python
     :caption: Contains
@@ -86,8 +86,8 @@ Membership Operators
 .. code-block:: python
     :caption: Missing
 
-    4 not in (1, 2)         # True
     1 not in (1, 2)         # False
+    3 not in (1, 2)         # True
 
     (2) not in (1, 2)       # False
     (1, 2) not in (1, 2)    # True

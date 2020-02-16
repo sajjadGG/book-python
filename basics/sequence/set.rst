@@ -180,8 +180,8 @@ Membership Operators
 .. code-block:: python
     :caption: Missing
 
-    4 not in {1, 2}         # True
     1 not in {1, 2}         # False
+    3 not in {1, 2}         # True
 
     {2} not in {1, 2}       # True
     {1, 2} not in {1, 2}    # True
