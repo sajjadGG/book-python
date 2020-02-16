@@ -36,7 +36,7 @@ Stop conditions
 
     i = 0
 
-    while i <= 3:
+    while i < 3:
         print(i)
         i += 1
 
@@ -56,7 +56,7 @@ Iterating over sequence
     i = 0
     data = ['a', 'b', 'c']
 
-    while i <= len(data):
+    while i < len(data):
         print(data[i])
         i += 1
 
@@ -105,16 +105,14 @@ Skipping iterations
         print(i, end=', ')
         i += 1
 
-        if i % 2 == 0:
+        if i % 3:
             continue
+        else:
+            print()
 
-        print()
-
-    # 0,
-    # 1, 2,
-    # 3, 4,
-    # 5, 6,
-    # 7, 8,
+    # 0, 1, 2,
+    # 3, 4, 5,
+    # 6, 7, 8,
     # 9,
 
 Exiting the loop
@@ -124,8 +122,9 @@ Exiting the loop
     while True:
         number = input('Type number: ')
 
-        # if user hit enter, without typing number
         if not number:
+            # if user hit enter
+            # without typing a number
             break
 
 
@@ -176,5 +175,5 @@ Report card
     * Using built-in functions
 
 :Hints:
-    * ``input('...')``
+    * ``input(...)``
     * ``mean = sum(...) / len(...)``
