@@ -1,5 +1,3 @@
 my_list1 = [5.8, 2.7, 5.1, 1.9, 'virginica']
 my_list2 = [5.1, 3.5, 1.4, 0.2, 'setosa']
 my_list3 = [5.7, 2.8, 4.1, 1.3, 'versicolor']
-my_list4 = [6.3, 2.9, 5.6, 1.8, 'virginica']
-my_list5 = [6.4, 3.2, 4.5, 1.5, 'versicolor']

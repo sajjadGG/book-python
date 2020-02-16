@@ -334,6 +334,7 @@ Create
 :Input:
     .. csv-table:: Input data
         :header: "Row", "Sepal length", "Sepal width", "Petal length", "Petal width", "Species"
+        :stub-columns: 1
 
         "1", "5.8", "2.7", "5.1", "1.9", "virginica"
         "2", "5.1", "3.5", "1.4", "0.2", "setosa"

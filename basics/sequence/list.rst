@@ -281,12 +281,10 @@ Create
 :English:
     #. For given data input (see below)
     #. Create a ``list`` representing each row
-    #. To convert table use multiline select with ``alt`` key in your IDE
 
 :Polish:
     #. Dla danych wejściowych (patrz sekcja input)
     #. Stwórz ``list`` reprezentujący każdy wiersz
-    #. Do przekonwertowania tabelki wykorzystaj zaznaczanie wielu linijek za pomocą klawisza ``alt`` w Twoim IDE
 
 :Input:
     .. csv-table:: Input data
@@ -295,8 +293,6 @@ Create
         "5.8", "2.7", "5.1", "1.9", "virginica"
         "5.1", "3.5", "1.4", "0.2", "setosa"
         "5.7", "2.8", "4.1", "1.3", "versicolor"
-        "6.3", "2.9", "5.6", "1.8", "virginica"
-        "6.4", "3.2", "4.5", "1.5", "versicolor"
 
 :Output:
     .. code-block:: python
@@ -304,8 +300,6 @@ Create
         a = [5.8, 2.7, 5.1, 1.9, 'virginica']
         b = [5.1, 3.5, 1.4, 0.2, 'setosa']
         c = [5.7, 2.8, 4.1, 1.3, 'versicolor']
-        d = [6.3, 2.9, 5.6, 1.8, 'virginica']
-        e = [6.4, 3.2, 4.5, 1.5, 'versicolor']
 
 :The whys and wherefores:
     * Defining ``list``

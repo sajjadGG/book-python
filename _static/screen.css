@@ -80,6 +80,8 @@
     table tr:hover td {background: #eee !important}
     table thead {text-align: left !important; vertical-align: middle !important}
     table thead p {margin-bottom: 0}
+    table thead th.stub {text-align: center; border-right: 0; border-bottom: 1px solid #000; }
+    table tbody th.stub {text-align: center; border-bottom: 0 !important; border-right: 1px solid #000 !important;}
     .wy-table-responsive table td {white-space: normal}
     .wy-table-responsive {overflow: auto}
     .rst-content table.docutils caption {text-align: left; font-size: 100%}

@@ -32,7 +32,9 @@ OUTPUT = [
     tuple(INPUT[12]),
     tuple(INPUT[15]),
     tuple(INPUT[16]),
-    set()
+    set(),
+    list(),
+    tuple(),
 ]
 
 print(OUTPUT)
@@ -42,4 +44,4 @@ print(OUTPUT)
 #  (4.6, 3.4, 1.4, 0.3, 'setosa'),
 #  (5.0, 3.6, 1.4, 0.3, 'setosa'),
 #  (5.5, 2.3, 4.0, 1.3, 'versicolor'),
-#  set()]
+#  set(), [], ()]

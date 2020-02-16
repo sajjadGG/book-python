@@ -114,7 +114,7 @@ Select
     #. Create ``OUTPUT: list``
     #. Convert to ``list`` data from row at index 2, 6, 9 and add to ``OUTPUT``
     #. Convert to ``tuple`` data from row at index 12, 15, 16 and add to ``OUTPUT``
-    #. Add empty ``set`` to ``OUTPUT``
+    #. Add empty ``set``, ``list`` and ``tuple`` to ``OUTPUT``
     #. Use only indexes
     #. Do not use ``for``, ``while`` or ``slice()``
 
@@ -124,7 +124,7 @@ Select
     #. Stwórz ``OUTPUT: list``
     #. Przekonwertuj do ``list`` dane z wierszy o indeksach 2, 6, 9 i dodaj do ``OUTPUT``
     #. Przekonwertuj do ``tuple`` dane z wierszy o indeksach 12, 15, 16 i dodaj do ``OUTPUT``
-    #. Dodaj pusty ``set`` do ``OUTPUT``
+    #. Dodaj pusty ``set``, ``list`` oraz ``tuple`` do ``OUTPUT``
     #. Użyj tylko indeksów
     #. Nie używaj ``for``, ``while`` lub ``slice()``
 
@@ -166,7 +166,7 @@ Select
         #  (4.6, 3.4, 1.4, 0.3, 'setosa'),
         #  (5.0, 3.6, 1.4, 0.3, 'setosa'),
         #  (5.5, 2.3, 4.0, 1.3, 'versicolor'),
-        #  set()]
+        #  set(), [], ()]
 
 :The whys and wherefores:
     * Using nested data structures
