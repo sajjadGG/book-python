@@ -1,3 +1,22 @@
+blood_pressure = input('What is your Blood Pressure?: ')
+sys, dia = blood_pressure.strip().split('/')
+sys = int(sys)
+dia = int(dia)
+
+if sys < 120 and dia < 80:
+    print('Normal')
+elif 120 <= sys < 129 and dia < 80:
+    print('Elevated')
+elif 130 <= sys <= 139 or 80 <= dia <= 89:
+    print('Hypertension stage 1')
+elif sys >= 140 or dia >= 90:
+    print('Hypertension stage 2')
+
+if sys >= 180 or dia >= 120:
+    print('Hypertensive Crisis')
+
+
+## Alternative
 STATUS_NORMAL = 'Normal'
 STATUS_ELEVATED = 'Elevated'
 STATUS_HYPERTENSION_STAGE_1 = 'Hypertension stage 1'

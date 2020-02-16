@@ -306,7 +306,7 @@ Split train/test
     #. For input data (see below)
     #. Write header (first line) to ``header`` variable
     #. Write data without header to ``data`` variable
-    #. Calculate pivot point: number records in ``data`` multiplied by PERCENT
+    #. Calculate pivot point: number records in ``data`` multiplied by PERCENT (division ratio below)
     #. Divide ``data`` into two lists:
 
         * ``train``: 60% - training data
@@ -319,7 +319,7 @@ Split train/test
     #. Dla danych wejściowych (patrz sekcja input)
     #. Zapisz nagłówek (pierwsza linia) do zmiennej ``header``
     #. Zapisz dane bez nagłówka do zmiennej ``data``
-    #. Wylicz punkt podziału: ilość rekordów w ``data`` razy PROCENT
+    #. Wylicz punkt podziału: ilość rekordów w ``data`` razy PROCENT (proporcja podziału poniżej)
     #. Podziel ``data`` na dwie listy:
 
         * ``train``: 60% - dane do uczenia
