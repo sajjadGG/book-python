@@ -129,9 +129,9 @@ Control Statements
     crew = {'José', 'Max', 'Иван'}
 
     if 'Jan' not in crew:
-        print('You are not an astronaut')
+        print('You are not assigned to the crew')
 
-    # You are not an astronaut
+    # You are not assigned to the crew
 
 .. code-block:: python
 
@@ -170,10 +170,10 @@ Classification of blood pressure in adults
 :English:
     #. Table contains classification of input data (see below)
     #. Blood Pressure classification according to American Heart Association
-    #. User inputs blood pressure in ``XXX/YY`` format, where:
+    #. User inputs blood pressure in ``XXX/YY`` or ``XXX/YYY`` format, where:
 
         - ``XXX: int`` systolic pressure
-        - ``YY: int`` diastolic pressure
+        - ``YY: int`` or ``YYY: int`` diastolic pressure
 
     #. Print status of given blood pressure
     #. If systolic and diastolic values are in different categories, assume worst case
@@ -181,10 +181,10 @@ Classification of blood pressure in adults
 :Polish:
     #. Tabela zawiera klasyfikację danych wejściowych (patrz sekcja input)
     #. Klasyfikacja ciśnienia krwi wg. American Heart Association
-    #. Użytkownik wprowadza ciśnienie krwi w formacie ``XXX/YY``, gdzie:
+    #. Użytkownik wprowadza ciśnienie krwi w formacie ``XXX/YY`` lub ``XXX/YYY``, gdzie:
 
         - ``XXX: int`` to wartość ciśnienia skurczowego (ang. *systolic*)
-        - ``YY: int`` to wartość ciśnienia rozkurczowego (ang. *diastolic*)
+        - ``YY: int`` lub ``YYY: int`` to wartość ciśnienia rozkurczowego (ang. *diastolic*)
 
     #. Wypisz status wprowadzonego ciśnienia krwi
     #. Gdy wartości ciśnienia skurczowego i rozkurczowego należą do różnych kategorii, przyjmij gorszy przypadek

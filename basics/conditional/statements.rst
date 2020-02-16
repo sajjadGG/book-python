@@ -5,29 +5,8 @@ Conditional Statements
 **********************
 
 
-``if``
-======
-.. highlights::
-    * The same indent level
-
-Simple syntax
--------------
-.. code-block:: python
-
-    if True:
-        print('First line of the true statement')
-
-Multiline blocks
-----------------
-.. code-block:: python
-
-    if True:
-        print('First line of the true statement')
-        print('Second line of the true statement')
-        print('Third line of the true statement')
-
 Positive and negative values
-----------------------------
+============================
 .. highlights::
     Negative values:
 
@@ -46,6 +25,28 @@ Positive and negative values
     Positive values:
 
         * any other
+
+
+``if``
+======
+.. highlights::
+    * The same indent level
+
+Syntax
+------
+.. code-block:: python
+    :caption: Single line statements
+
+    if True:
+        print('First line of the true statement')
+
+.. code-block:: python
+    :caption: Multiline blocks
+
+    if True:
+        print('First line of the true statement')
+        print('Second line of the true statement')
+        print('Third line of the true statement')
 
 Checking for simple value
 -------------------------
@@ -109,6 +110,28 @@ Checking if has value
     * Optional
     * Executed when condition is not met
 
+Syntax
+------
+.. code-block:: python
+    :caption: Single line statements
+
+    if True:
+        print('First line of the true statement')
+    else:
+        print('First line of the false statement')
+
+.. code-block:: python
+    :caption: Multiline blocks
+
+    if True:
+        print('First line of the true statement')
+        print('Second line of the true statement')
+        print('Third line of the true statement')
+    else:
+        print('First line of the false statement')
+        print('Second line of the false statement')
+        print('Third line of the false statement')
+
 Checking if variable is certain value
 -------------------------------------
 .. code-block:: python
@@ -131,19 +154,6 @@ Checking if variable is certain value
     else:
         print('Did you forget to type your name?')
     # Did you forget to type your name?
-
-Multiline blocks
-----------------
-.. code-block:: python
-
-    if True:
-        print('First line of the true statement')
-        print('Second line of the true statement')
-        print('Third line of the true statement')
-    else:
-        print('First line of the false statement')
-        print('Second line of the false statement')
-        print('Third line of the false statement')
 
 
 Inline ``if``

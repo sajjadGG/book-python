@@ -40,24 +40,26 @@ Operator precedence
 Assignments
 ===========
 
-Is odd number
--------------
+Is even number
+--------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/operators_is_odd.py`
+* Solution: :download:`solution/operators_is_even.py`
 
 :English:
     #. Read a number from user
     #. User will pass only valid ``int``
+    #. Number is even, when divided modulo (``%``) by 2 has no reminder
     #. Print whether number is odd
-    #. Number is odd, when divided modulo (``%``) by 2 has a reminder
+    #. Do not use ``if`` statement
 
 :Polish:
     #. Wczytaj liczbę od użytkownika
     #. Użytkownika poda tylko poprawne ``int``
+    #. Liczba jest nieparzysta, gdy dzielona modulo (``%``) przez 2 nie ma reszty
     #. Wypisz czy liczba jest nieparzysta
-    #. Liczba jest nieparzysta, gdy dzielona modulo (``%``) przez 2 ma resztę
+    #. Nie używaj instrukcji ``if``
 
 :The whys and wherefores:
     * Reading input from user
