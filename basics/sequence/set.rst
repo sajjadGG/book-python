@@ -60,6 +60,9 @@ Type Definition
     {1, 1.0}
     # {1}
 
+    {1.0, 1}
+    # {1.0}
+
 
 Type Annotation
 ===============
@@ -121,8 +124,11 @@ Popping Items
 
     value = my_set.pop()
 
-    my_set  # {1, 2}
-    value   # 3
+    print(my_set)
+    # {1, 2}
+
+    print(value)
+    # 3
 
 
 Deduplicate Items
@@ -157,34 +163,40 @@ Deduplicate Items
 Membership Operators
 ====================
 .. code-block:: python
-    :caption: Equals
+    :caption: Equals and Not-equals
 
-    {1, 2} == {1, 2}        # True
-    {1, 2} == {2, 1}        # True
+    {1, 2} == {1, 2}          # True
+    {1, 2} == {2, 1}          # True
 
-.. code-block:: python
-    :caption: Not equals
-
-    {1, 2} != {1, 2}        # False
-    {1, 2, 3} != {1, 2}     # True
+    {1, 2} != {1, 2}          # False
+    {1, 2, 3} != {1, 2}       # True
 
 .. code-block:: python
     :caption: Contains
 
-    1 in {1, 2}             # True
-    3 in {1, 2}             # False
+    1 in {1, 2}               # True
+    2 in {1, 2}               # True
+    3 in {1, 2}               # False
 
-    {2} in {1, 2}           # False
-    {1, 2} in {1, 2}        # False
+    {1} in {1, 2}             # False
+    {2} in {1, 2}             # False
+    {3} in {1, 2}             # False
+
+    {1,} in {1, 2}            # False
+    {2,} in {1, 2}            # False
+    {3,} in {1, 2}            # False
+
+    {1, 2} in {1, 2}          # False
+    {3, 4} in {1,2, {3, 4}}   # True
 
 .. code-block:: python
     :caption: Missing
 
-    1 not in {1, 2}         # False
-    3 not in {1, 2}         # True
+    1 not in {1, 2}           # False
+    3 not in {1, 2}           # True
 
-    {2} not in {1, 2}       # True
-    {1, 2} not in {1, 2}    # True
+    {2} not in {1, 2}         # True
+    {1, 2} not in {1, 2}      # True
 
 
 Membership

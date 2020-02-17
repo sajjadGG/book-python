@@ -139,17 +139,8 @@ Naming convention
 
     mission, *members = line.split(',')
 
-    group_name      # Apollo11
+    mission         # Apollo11
     members         # ['Twardowski', 'Watney', 'Ivanovic']
-
-.. code-block:: python
-
-    line = '4.9,3.1,1.5,0.1,setosa'
-
-    *features, label = line.split(',')
-
-    features         # ['4.9', '3.1', '1.5', '0.1']
-    label            # 'setosa'
 
 .. code-block:: python
 
@@ -224,11 +215,12 @@ Using in a loop
     ]
 
     for *features, label in DATA:
-        print(features)
+        avg = sum(features) / len(features)
+        print(label, avg)
 
-    # [5.8, 2.7, 5.1, 1.9]
-    # [5.1, 3.5, 1.4, 0.2]
-    # [5.7, 2.8, 4.1, 1.3]
+    # virginica 3.875
+    # setosa 2.55
+    # versicolor 3.475
 
 .. code-block:: python
 

@@ -63,34 +63,40 @@ Type Annotation
 Membership Operators
 ====================
 .. code-block:: python
-    :caption: Equals
+    :caption: Equals and Not-equals
 
-    (1, 2) == (1, 2)        # True
-    (1, 2) == (2, 1)        # False
+    (1, 2) == (1, 2)          # True
+    (1, 2) == (2, 1)          # False
 
-.. code-block:: python
-    :caption: Not equals
-
-    (1, 2) != (1, 2)        # False
-    (1, 2, 3) != (1, 2)     # True
+    (1, 2) != (1, 2)          # False
+    (1, 2, 3) != (1, 2)       # True
 
 .. code-block:: python
     :caption: Contains
 
-    1 in (1, 2)             # True
-    3 in (1, 2)             # False
+    1 in (1, 2)               # True
+    2 in (1, 2)               # True
+    3 in (1, 2)               # False
 
-    (2) in (1, 2)           # True
-    (1, 2) in (1, 2)        # False
+    (1) in (1, 2)             # True
+    (2) in (1, 2)             # True
+    (3) in (1, 2)             # False
+
+    (1,) in (1, 2)            # False
+    (2,) in (1, 2)            # False
+    (3,) in (1, 2)            # False
+
+    (1, 2) in (1, 2)          # False
+    (3, 4) in (1, 2, (3, 4))  # True
 
 .. code-block:: python
     :caption: Missing
 
-    1 not in (1, 2)         # False
-    3 not in (1, 2)         # True
+    1 not in (1, 2)           # False
+    3 not in (1, 2)           # True
 
-    (2) not in (1, 2)       # False
-    (1, 2) not in (1, 2)    # True
+    (2) not in (1, 2)        # False
+    (1, 2) not in (1, 2)     # True
 
 
 Getting Items
@@ -106,16 +112,34 @@ Getting Items
     my_tuple[1]         # 'b'
     my_tuple[3]         # 'd'
 
-.. code-block:: python
-
-    my_tuple = ('a', 'b', 'c', 'd')
-
-    my_tuple[-1]        # 'd'
-    my_tuple[-3]        # 'b'
-
 
 ``tuple`` vs. others
 ====================
+
+``tuple`` vs. ``float`` and ``int``
+-----------------------------------
+.. code-block:: python
+
+    what = 1.2        # float
+    what = 1,2        # tuple with two int
+    what = 1.2,       # tuple with float
+    what = 1,2.3      # tuple with int and float
+
+.. code-block:: python
+
+    what = 1.         # float
+    what = 1,         # tuple with int
+    what = 1.,        # tuple with float
+    what = .2         # float
+    what = .2,        # tuple with float
+    what = 1.2        # float
+    what = 1          # int
+
+.. code-block:: python
+
+    what = 1.,1.      # tuple with two floats
+    what = .2,.2      # tuple with two floats
+    what = 1.,.2      # tuple with two floats
 
 ``tuple`` vs. ``str``
 ---------------------
@@ -124,66 +148,6 @@ Getting Items
     what = 'foo'      # str
     what = 'foo',     # tuple with str
     what = 'foo'.     # SyntaxError: invalid syntax
-
-.. code-block:: python
-
-    what = ('foo')    # str
-    what = ('foo',)   # tuple with str
-    what = ('foo'.)   # SyntaxError: invalid syntax
-
-``tuple`` vs. ``float`` and ``int``
------------------------------------
-.. code-block:: python
-
-    what = 1.2        # float
-    what = 1,2        # tuple with two int
-
-    what = (1.2)      # float
-    what = (1,2)      # tuple with two int
-
-.. code-block:: python
-
-    what = 1.2,       # tuple with float
-    what = 1,2.3      # tuple with int and float
-
-    what = (1.2,)     # tuple with float
-    what = (1,2.3)    # tuple with int and float
-
-.. code-block:: python
-
-    what = 1.         # float
-    what = .5         # float
-    what = 1.0        # float
-    what = 1          # int
-
-    what = (1.)       # float
-    what = (.5)       # float
-    what = (1.0)      # float
-    what = (1)        # int
-
-.. code-block:: python
-
-    what = 10.5       # float
-    what = 10,5       # tuple with two ints
-    what = 10.        # float
-    what = 10,        # tuple with int
-    what = 10         # int
-
-    what = (10.5)     # float
-    what = (10,5)     # tuple with two ints
-    what = (10.)      # float
-    what = (10,)      # tuple with int
-    what = (10)       # int
-
-.. code-block:: python
-
-    what = 1.,1.      # tuple with two floats
-    what = .5,.5      # tuple with two floats
-    what = 1.,.5      # tuple with two floats
-
-    what = (1.,1.)    # tuple with two floats
-    what = (.5,.5)    # tuple with two floats
-    what = (1.,.5)    # tuple with two floats
 
 
 Length

@@ -8,6 +8,7 @@ g = 'ULICA. JANA III SOBIeskieGO'
 h = ' Jana 3 Sobieskiego  '
 i = 'Jana III\tSobieskiego '
 
+expected = 'Jana III Sobieskiego'
 
 a = a.upper().replace('UL', '').strip().title().replace('Iii', 'III')
 b = b.upper().replace('UL.', '').strip().title().replace('Trzeciego', 'III')
@@ -19,15 +20,12 @@ g = g.upper().replace('ULICA.', '').strip().title().replace('Iii', 'III')
 h = h.upper().replace('3', 'III').strip().title().replace('Iii', 'III')
 i = i.upper().replace('\t', ' ').strip().title().replace('Iii', 'III')
 
-
-expected = 'Jana III Sobieskiego'
-
-print('a:', a == expected, a, sep='\t')
-print('b:', b == expected, b, sep='\t')
-print('c:', c == expected, c, sep='\t')
-print('d:', d == expected, d, sep='\t')
-print('e:', e == expected, e, sep='\t')
-print('f:', f == expected, f, sep='\t')
-print('g:', g == expected, g, sep='\t')
-print('h:', h == expected, h, sep='\t')
-print('i:', i == expected, i, sep='\t')
+print(f'{a == expected}\ta = "{a}"')
+print(f'{b == expected}\tb = "{b}"')
+print(f'{c == expected}\tc = "{c}"')
+print(f'{d == expected}\td = "{d}"')
+print(f'{e == expected}\te = "{e}"')
+print(f'{f == expected}\tf = "{f}"')
+print(f'{g == expected}\tg = "{g}"')
+print(f'{h == expected}\th = "{h}"')
+print(f'{i == expected}\ti = "{i}"')

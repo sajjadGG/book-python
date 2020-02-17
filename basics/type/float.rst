@@ -129,7 +129,7 @@ Distance Conversion
     #. Zamiast ``...`` podstaw wyliczone i przekonwertowane wartości
 
 :Non-functional requirements:
-    #. Do not use ``input()``
+    * Do not use ``input()``
 
 :Input:
     .. code-block:: python

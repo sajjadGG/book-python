@@ -157,12 +157,13 @@ Deleting Items
 
     my_list = ['a', 'b', 'c', 'd']
 
-    my_list.pop()
-    # 'd'
+    value = my_list.pop()
 
     print(my_list)
     # ['a', 'b', 'c']
 
+    print(value)
+    # 'd'
 
 Sorting
 =======
@@ -223,6 +224,7 @@ Membership Operators
 * ``not in`` - Missing
 
 .. code-block:: python
+    :caption: Equals and Not-equals
 
     [1, 2] == [1, 2]        # True
     [1, 2] == [2, 1]        # False
@@ -230,20 +232,32 @@ Membership Operators
     [1, 2] != [1, 2]        # False
     [1, 2, 3] != [1, 2]     # True
 
-    1 in [1, 2]             # True
-    3 in [1, 2]             # False
+.. code-block:: python
+    :caption: Contains
 
-    [2] in [1, 2]           # False
-    [1, 2] in [1, 2]        # False
+    1 in [1, 2]               # True
+    2 in [1, 2]               # True
+    3 in [1, 2]               # False
 
-    [2] in [1, [2]]         # True
-    [1, 2] in [[1,2], 3]    # True
+    [1] in [1, 2]             # False
+    [2] in [1, 2]             # False
+    [3] in [1, 2]             # False
 
-    1 not in [1, 2]         # False
-    3 not in [1, 2]         # True
+    [1,] in [1, 2]            # False
+    [2,] in [1, 2]            # False
+    [3,] in [1, 2]            # False
 
-    [2] not in [1, 2]       # True
-    [1, 2] not in [1, 2]    # True
+    [1, 2] in [1, 2]          # False
+    [3, 4] in [1, 2, [3, 4]]  # True
+
+.. code-block:: python
+    :caption: Missing
+
+    1 not in [1, 2]           # False
+    3 not in [1, 2]           # True
+
+    [2] not in [1, 2]         # True
+    [1, 2] not in [1, 2]      # True
 
 
 Built-in Functions on Sequences
@@ -293,13 +307,6 @@ Create
         "5.8", "2.7", "5.1", "1.9", "virginica"
         "5.1", "3.5", "1.4", "0.2", "setosa"
         "5.7", "2.8", "4.1", "1.3", "versicolor"
-
-:Output:
-    .. code-block:: python
-
-        a = [5.8, 2.7, 5.1, 1.9, 'virginica']
-        b = [5.1, 3.5, 1.4, 0.2, 'setosa']
-        c = [5.7, 2.8, 4.1, 1.3, 'versicolor']
 
 :The whys and wherefores:
     * Defining ``list``

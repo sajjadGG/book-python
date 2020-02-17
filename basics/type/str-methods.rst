@@ -440,20 +440,35 @@ String Cleaning
         h = ' Jana 3 Sobieskiego  '
         i = 'Jana III Sobi\teskiego '
 
-:Output:
-    .. code-block:: python
+        a = a.replace('Ul', '').title().replace('Iii', 'III').strip()
+        b = ...
+        c = ...
+        d = ...
 
         expected = 'Jana III Sobieskiego'
 
-        print('a:', a == expected, a, sep='\t')
-        print('b:', b == expected, b, sep='\t')
-        print('c:', c == expected, c, sep='\t')
-        print('d:', d == expected, d, sep='\t')
-        print('e:', e == expected, e, sep='\t')
-        print('f:', f == expected, f, sep='\t')
-        print('g:', g == expected, g, sep='\t')
-        print('h:', h == expected, h, sep='\t')
-        print('i:', i == expected, i, sep='\t')
+        print(f'{a == expected}\ta = "{a}"')
+        print(f'{b == expected}\tb = "{b}"')
+        print(f'{c == expected}\tc = "{c}"')
+        print(f'{d == expected}\td = "{d}"')
+        print(f'{e == expected}\te = "{e}"')
+        print(f'{f == expected}\tf = "{f}"')
+        print(f'{g == expected}\tg = "{g}"')
+        print(f'{h == expected}\th = "{h}"')
+        print(f'{i == expected}\ti = "{i}"')
+
+:Output:
+    .. code-block:: text
+
+        True	a = "Jana III Sobieskiego"
+        True	b = "Jana III Sobieskiego"
+        True	c = "Jana III Sobieskiego"
+        True	d = "Jana III Sobieskiego"
+        True	e = "Jana III Sobieskiego"
+        True	f = "Jana III Sobieskiego"
+        True	g = "Jana III Sobieskiego"
+        True	h = "Jana III Sobieskiego"
+        True	i = "Jana III Sobieskiego"
 
 :The whys and wherefores:
     * Variable definition
