@@ -34,6 +34,7 @@ End of Lines
     Hello!
     How are you?
 
+
 Comments
 ========
 .. highlights::
@@ -69,45 +70,6 @@ Comments
     because that challenge is one that we are willing to accept, one we are unwilling to postpone,
     and one we intend to win, and the others, too.
     """
-
-
-Docstring
-=========
-.. highlights::
-    * Docstring is a first multiline comment in:
-
-        * File / Module
-        * Class
-        * Method / Function
-
-    * It is accessible in ``__doc__`` property of an object
-    * Used for generating ``help()`` documentation
-    * Used for ``doctest``
-    * :pep:`257` Docstring convention - For multiline always use three double quote (``"""``) characters
-
-.. code-block:: python
-    :caption: Docstring used for documentation
-
-    def apollo_dsky(noun, verb):
-        """
-        This is the Apollo Display Keyboard
-        It takes noun and verb
-        """
-        print(f'Program selected. Noun: {noun}, verb: {verb}')
-
-.. code-block:: python
-    :caption: Docstring used for doctest
-
-    def add(a, b):
-        """
-        Sums two numbers.
-
-        >>> add(1, 2)
-        3
-        >>> add(-1, 1)
-        0
-        """
-        return a + b
 
 
 Variables and Constants
@@ -189,14 +151,20 @@ Meet Python
 * Estimated time of completion: 5 min
 * Solution: :download:`solution/syntax_python.py`
 
-#. Create Python script
-#. Add interpreter declaration
-#. Under interpreter declaration add multiline comment with program description (copy-paste from book)
-#. Declare variable ``name`` and set its value to your name
-#. Add inline comment to variable declaration with text: "This is my name"
-#. Print variable
-#. Next line under ``print`` statement add line comment, with expected output
-#. Run script
+:English:
+    #. Create Python script
+    #. At at top, add a multiline comment with program description (todo from this assignments)
+    #. Declare variable ``name`` and set its value to your name
+    #. Add inline comment to variable declaration with text: "This is my name"
+    #. Print "Hello World NAME", where NAME is your name (variable ``name``)
+    #. Next line under ``print`` statement add line comment, with expected output
+
+:Polish:
+    #. Stwórz skrypt Python
+    #. Na górze pliku dodaj wielolinijkowy komentarz z opisem programu (punkty do wykonia z tego zadania)
+    #. Zadeklaruj zmienną ``name`` i ustaw jej wartość na Twoje imię
+    #. Dodaj komentarz "inline" do zmiennej o treści: "This is my name"
+    #. Wypisz "Hello World NAME", gdzie NAME to Twoje imię (zmienna ``name``)
 
 :The whys and wherefores:
     * Tworzenie skryptów Python

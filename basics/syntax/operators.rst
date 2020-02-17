@@ -30,7 +30,7 @@ Arithmetic Operators
 
 .. code-block:: python
 
-    10 // 2             # 2
+    10 // 2             # 5
     10 // 3             # 3
     10 % 2              # 0
     10 % 3              # 1

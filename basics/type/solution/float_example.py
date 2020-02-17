@@ -2,7 +2,6 @@ SECOND = 1
 MINUTE = 60 * SECOND
 HOUR = 60 * MINUTE
 
-
 M = 1
 KM = 1000 * M
 FT = 0.3048 * M

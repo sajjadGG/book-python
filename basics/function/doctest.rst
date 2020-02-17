@@ -14,6 +14,44 @@ Function Doctest
     * Case Study: https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/linear_model/_base.py#L409
     * PyCharm doctest runner warns about ``DeprecationWarning``, fix in progress -  https://youtrack.jetbrains.com/issue/PY-31751
 
+Syntax
+======
+.. highlights::
+    * Docstring is a first multiline comment in:
+
+        * File / Module
+        * Class
+        * Method / Function
+
+    * It is accessible in ``__doc__`` property of an object
+    * Used for generating ``help()`` documentation
+    * Used for ``doctest``
+    * :pep:`257` Docstring convention - For multiline always use three double quote (``"""``) characters
+
+.. code-block:: python
+    :caption: Docstring used for documentation
+
+    def apollo_dsky(noun, verb):
+        """
+        This is the Apollo Display Keyboard
+        It takes noun and verb
+        """
+        print(f'Program selected. Noun: {noun}, verb: {verb}')
+
+.. code-block:: python
+    :caption: Docstring used for doctest
+
+    def add(a, b):
+        """
+        Sums two numbers.
+
+        >>> add(1, 2)
+        3
+        >>> add(-1, 1)
+        0
+        """
+        return a + b
+
 
 Running tests
 =============
