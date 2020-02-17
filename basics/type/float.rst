@@ -107,15 +107,15 @@ Example
     * Naming convention
     * Mathematical operations
 
-Handling User Input and Type Casting
-------------------------------------
+Distance Conversion
+-------------------
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
 * Solution: :download:`solution/float_distance.py`
 
 :English:
-    #. Declare variable for holding value of 1337 meters
+    #. Declare variable for storing value of 1337 meters
     #. Print values in other units
     #. Use code output (see below) as a template
     #. Convert data to types shown in comments at the right side
