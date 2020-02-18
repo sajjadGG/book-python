@@ -1,6 +1,7 @@
 project = 'Python 3: from None to Machine Learning'
 author = 'Matt Harasymczuk'
 email = 'matt@astrotech.io'
+language = 'en'
 
 html_theme = 'sphinx_rtd_theme'
 
@@ -16,7 +17,6 @@ extensions = [
     # 'sphinx.ext.graphviz',
 ]
 
-language = 'en'
 numfig_format = {
     'section': 'Section %s.',
     'figure': 'Figure %s.',
@@ -24,11 +24,9 @@ numfig_format = {
     'code-block': 'Listing %s.',
 }
 
-exclude_patterns = [
-]
-
-suppress_warnings = [
-]
+exclude_patterns = []
+suppress_warnings = []
+html_context = {}
 
 # article - for articles in scientific journals, presentations, short reports, program documentation, invitations, ...
 # proc - a class for proceedings based on the article class.
@@ -41,7 +39,6 @@ suppress_warnings = [
 # beamer - For writing presentations (see LaTeX/Presentations).
 latex_documentclass = 'report'
 
-html_context = {}
 
 # -- Standard book config -----------------------------------------------------
 

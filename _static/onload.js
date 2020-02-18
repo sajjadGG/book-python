@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
         let sectionNumber = document.querySelector('#assignments h2').innerText.split(' ')[0];
-        document.querySelectorAll('#assignments h3 span').forEach((taskNumber, num) => {
+        document.querySelectorAll('#assignments h3 .section-number').forEach((taskNumber, num) => {
           taskNumber.innerHTML = `${sectionNumber}${ALPHABET[num]}. `;
         });
     } catch (e) {}
