@@ -193,6 +193,7 @@ Classification of blood pressure in adults
 
     #. Wypisz status wprowadzonego ciśnienia krwi
     #. Gdy wartości ciśnienia skurczowego i rozkurczowego należą do różnych kategorii, przyjmij gorszy przypadek
+    #. (z gwiazdką)
 
 .. csv-table:: Classification of blood pressure in adults :cite:`Whelton2018`
     :header-rows: 1
@@ -203,6 +204,21 @@ Classification of blood pressure in adults
     "Hypertension stage 1", "130-139", "or", "80-89"
     "Hypertension stage 2", "140 or higher", "or", "90 or higher"
     "Hypertensive Crisis", "Higher than 180", "and/or", "Higher than 120"
+
+:Input:
+    .. code-block:: text
+
+        '119/79': 'Normal',
+        '120/80': 'Hypertension stage 1',
+        '121/79': 'Elevated',
+        '120/81': 'Hypertension stage 1',
+        '130/80': 'Hypertension stage 1',
+        '130/89': 'Hypertension stage 1',
+        '140/85': 'Hypertension stage 2',
+        '140/89': 'Hypertension stage 2',
+        '141/90': 'Hypertension stage 2',
+        '141/91': 'Hypertension stage 2',
+        '180/120': ('Hypertension stage 2', 'Hypertensive Crisis')
 
 :The whys and wherefores:
     * Reading user input

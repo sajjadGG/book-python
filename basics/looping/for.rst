@@ -7,9 +7,6 @@ Loop ``for``
 
 Syntax
 ======
-
-Generic syntax
---------------
 .. highlights::
     * ``ITERABLE`` must implement ``iterator`` interface
     * More on iterators in chapter :ref:`Iterators`
@@ -19,32 +16,6 @@ Generic syntax
 
     for <VARIABLE> in <ITERABLE> :
         ...
-
-Example
--------
-.. code-block:: python
-    :caption: ``for`` loop syntax: printing each number from ``list``
-    :emphasize-lines: 3
-
-    DATA = ['a', 'b', 'c']
-
-    for letter in DATA:
-        print(letter)
-
-    # a
-    # b
-    # c
-
-.. code-block:: python
-    :caption: ``for`` loop syntax: data can be inline
-    :emphasize-lines: 1
-
-    for letter in ['a', 'b', 'c']:
-        print(letter)
-
-    # a
-    # b
-    # c
 
 
 Iterating over ``str``
@@ -206,28 +177,28 @@ Example
 
 :English:
     #. Iterate over data from "Input" section and count occurrences of each number
-    #. Create empty ``OUTPUT: Dict[int, int]``:
+    #. Create empty ``counter: Dict[int, int]``:
 
         * key - digit
         * value - number of occurrences
 
-    #. Iterating over numbers check if number is already in ``OUTPUT``
+    #. Iterating over numbers check if number is already in ``counter``
 
-        * If first occurrence, then add it to ``OUTPUT`` with value 1
+        * If first occurrence, then add it to ``counter`` with value 1
         * If exists, then increment the value by 1
 
     #. Compare results with "Output" section below
 
 :Polish:
     #. Iterując po danych wejściowych z sekcji "Input" policz wystąpienia każdej z cyfr
-    #. Stwórz pusty ``OUTPUT: Dict[int, int]``:
+    #. Stwórz pusty ``counter: Dict[int, int]``:
 
         * klucz - cyfra
         * wartość - liczba wystąpień
 
-    #. Iterując po cyfrach sprawdź czy cyfra znajduje się już w ``OUTPUT``
+    #. Iterując po cyfrach sprawdź czy cyfra znajduje się już w ``counter``
 
-        * Jeżeli pierwsze wystąpienie, to dodaj ją do ``OUTPUT`` z wartością 1
+        * Jeżeli pierwsze wystąpienie, to dodaj ją do ``counter`` z wartością 1
         * Jeżeli istnieje, to zwiększ w wartość o 1
 
     #. Porównaj wynik z sekcją "Output" poniżej
@@ -244,7 +215,7 @@ Example
 
         from typing import Dict
 
-        OUTPUT: Dict[int, int]
+        counter: Dict[int, int]
         # {1: 7, 4: 8, 6: 4, 7: 4, 5: 4, 0: 7, 9: 5, 8: 6, 2: 2, 3: 3}
 
 :Solution:
@@ -272,7 +243,7 @@ Segmentation
         * ``medium`` - numbers in range [3-7]
         * ``large`` - numbers in range [8-9]
 
-    #. Print ``OUTPUT: Dict[str, int]``:
+    #. Print ``counter: Dict[str, int]``:
 
         * key - group
         * value - number of occurrences
@@ -288,7 +259,7 @@ Segmentation
         * ``medium`` - liczby z przedziału [3-7]
         * ``large`` - liczby z przedziału [8-9]
 
-    #. Wypisz ``OUTPUT: Dict[str, int]``:
+    #. Wypisz ``counter: Dict[str, int]``:
 
         * klucz - grupa
         * wartość - liczba wystąpień
@@ -307,8 +278,7 @@ Segmentation
 
         from typing import Dict
 
-
-        OUTPUT: Dict[str, int]
+        counter: Dict[str, int]
         # {'small': 16, 'medium': 23, 'large': 11}
 
 :The whys and wherefores:

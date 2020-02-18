@@ -11,8 +11,6 @@ Syntax
     * Continue execution when argument is ``True``
     * Stops if argument is ``False``
 
-Generic syntax
---------------
 .. code-block:: python
     :caption: ``while`` loop generic syntax
 
@@ -20,12 +18,13 @@ Generic syntax
         ...
 
 
-Example
-=======
+Use Cases
+=========
 
 Never ending loop
 -----------------
 .. code-block:: python
+    :caption: Never ending loop
 
     while True:
         print('hello')
@@ -33,6 +32,7 @@ Never ending loop
 Stop conditions
 ---------------
 .. code-block:: python
+    :caption: Stop conditions
 
     i = 0
 
@@ -52,6 +52,7 @@ Iterating over sequence
     * ``len()`` must write all ``numbers`` to memory, to calculate its length
 
 .. code-block:: python
+    :caption: Iterating over sequence
 
     i = 0
     data = ['a', 'b', 'c']
@@ -70,6 +71,7 @@ Exit flag
     * Exit flag pattern is useful if you have for example multi-threaded application
 
 .. code-block:: python
+    :caption: Exit flag
 
     i = 10
     abort = False
@@ -98,6 +100,7 @@ Skipping iterations
     * if ``continue`` is encountered, it will jump to next loop iteration
 
 .. code-block:: python
+    :caption: Skipping iterations using ``continue`` keyword
 
     i = 0
 
@@ -108,7 +111,7 @@ Skipping iterations
         if i % 3:
             continue
         else:
-            print()
+            print(end='\n')
 
     # 0, 1, 2,
     # 3, 4, 5,
@@ -118,6 +121,7 @@ Skipping iterations
 Exiting the loop
 ----------------
 .. code-block:: python
+    :caption: Exiting the loop using ``break`` keyword
 
     while True:
         number = input('Type number: ')

@@ -50,7 +50,8 @@ print(status)
 # Alternative solution
 if 180 <= systolic or 120 <= diastolic:
     status = STATUS_HYPERTENSIVE_CRISIS
-elif 140 <= systolic or 90 <= diastolic:
+
+if 140 <= systolic or 90 <= diastolic:
     status = STATUS_HYPERTENSION_STAGE_2
 elif 130 <= systolic <= 139 or 80 <= diastolic <= 89:
     status = STATUS_HYPERTENSION_STAGE_1
