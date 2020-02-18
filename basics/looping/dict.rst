@@ -208,12 +208,12 @@ Assignments
 
 :English:
     #. For input data (see below)
-    #. Convert to ``Dict[str, str]``
+    #. Convert to ``output: Dict[str, str]``
     #. Results should be identical to output (see below)
 
 :Polish:
     #. Dla danych wejściowych (patrz sekcja input)
-    #. Przekonwertuj do ``Dict[str, str]``
+    #. Przekonwertuj do ``output: Dict[str, str]``
     #. Rezultat powinien być identyczny do wyjściowego (patrz sekcja output)
 
 :Input:
@@ -234,7 +234,7 @@ Assignments
         from typing import Dict
 
 
-        OUTPUT: Dict[str, str] = {
+        output: Dict[str, str] = {
             'Doctorate': '6',
             'Prof-school': '6',
             'Masters': '5',
@@ -254,7 +254,7 @@ Assignments
 ``List[tuple]`` to ``List[dict]``
 ---------------------------------
 * Complexity level: easy
-* Lines of code to write: 8 lines
+* Lines of code to write: 6 lines
 * Estimated time of completion: 20 min
 * Solution: :download:`solution/loop_dict_to_list.py`
 

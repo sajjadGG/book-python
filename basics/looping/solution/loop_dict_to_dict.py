@@ -9,15 +9,15 @@ INPUT = {
 
 output = {}
 
-for key, value in INPUT.items():
-    for education in value:
-        output[education] = str(key)
+for level, degrees in INPUT.items():
+    for education in degrees:
+        output[education] = str(level)
 
 print(output)
 
 
 ## Alternative version
-# output = {education: str(key)
-#     for key, value in INPUT.items()
-#         for education in value
+# output = {education: str(level)
+#     for level, degrees in INPUT.items()
+#         for education in degrees
 # }

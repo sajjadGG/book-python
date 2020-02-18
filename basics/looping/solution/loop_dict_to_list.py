@@ -23,26 +23,25 @@ INPUT = [
     (4.6, 3.1, 1.5, 0.2, 'setosa'),
 ]
 
-header = INPUT[0]
-data = INPUT[1:]
+header, *data = INPUT
 OUTPUT = []
 
 for values in data:
-    row = {}
+    pair = zip(header, values)
+    OUTPUT.append(dict(pair))
 
-    for i, _ in enumerate(header):
-        key = header[i]
-        value = values[i]
-        row[key] = value
-
-    OUTPUT.append(row)
+    ## Alternative solution
+    # row = {}
+    #
+    # for i, _ in enumerate(header):
+    #     key = header[i]
+    #     value = values[i]
+    #     row[key] = value
+    #
+    # OUTPUT.append(row)
 
     ## Alternative solution
     # OUTPUT.append({key: values[i] for i, key in enumerate(header)})
-
-    ## Alternative solution
-    # pair = zip(header, values)
-    # OUTPUT.append(dict(pair))
 
 
 print(OUTPUT)
