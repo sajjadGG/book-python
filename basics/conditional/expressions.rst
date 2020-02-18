@@ -13,27 +13,25 @@ Complex expressions
 .. code-block:: python
     :caption: Inside joke (see :ref:`José Jiménez`)
 
-    first_name = 'José'
-    last_name = 'Jiménez'
+    firstname = 'Mark'
+    lastname = 'Watney'
 
-    if first_name == 'José' and last_name == 'Jiménez':
-        print('My name... José Jiménez')
+    if firstname == 'Mark' and lastname == 'Watney':
+        print('Hello Space Pirate')
     else:
-        print("I don't know this catchphrase")
-
-    # My name... José Jiménez
+        print('Sorry, astronauts only')
+    # Hello Space Pirate
 
 ``or``
 ------
 .. code-block:: python
 
-    name = 'Jan'
+    name = 'Watney'
 
-    if name == 'Jan' or name == 'Melissa':
+    if name == 'Watney' or name == 'Twardowski':
         print('Hello astronaut')
     else:
         print('Sorry, astronauts only')
-
     # Hello astronaut
 
 ``and`` and ``or``
@@ -43,11 +41,12 @@ Complex expressions
 
 .. code-block:: python
 
-    first_name = 'José'
-    last_name = 'Jiménez'
+    firstname = 'José'
+    lastname = 'Jiménez'
 
-    if (first_name == 'Jan' and last_name == 'Twardowski')
-            or (first_name == 'Mark' and last_name == 'Watney'):
+    if (firstname == 'Mark' and lastname == 'Watney') \
+            or (firstname == 'Jan' and lastname == 'Twardowski') \
+            or (firstname == 'Melissa' and lastname == 'Lewis'):
         print('Hello astronaut')
     else:
         print('Sorry, astronauts only')
@@ -84,29 +83,13 @@ Defining exit conditions first
 Control Statements
 ==================
 
-``in`` with ``tuple``, ``dict``, ``list``, ``set``
---------------------------------------------------
+``in``
+------
 .. highlights::
-    * ``in`` checks whether value is in collection
-    * works with ``tuple``, ``dict``, ``list``, ``set``
+    * ``in`` checks whether value is in sequence
+    * works with ``tuple``, ``dict``, ``list``, ``set``, ``str``
     * Checking if something in ``set`` - O(1) :ref:`Performance Optimization Contains`
     * Checking if something in ``list`` - O(n) :ref:`Performance Optimization Contains`
-
-.. code-block:: python
-
-    crew = {'Jan Twardowski', 'Mark Watney', 'Melissa Lewis'}
-
-    if 'José Jiménez' in crew:
-        print('Yes')
-    else:
-        print('No')
-
-    # No
-
-``in`` with ``str``
--------------------
-.. highlights::
-    * ``in`` checks whether ``str`` is a part of another ``str``
 
 .. code-block:: python
 
@@ -116,29 +99,27 @@ Control Statements
         print('Yes')
     else:
         print('No')
-
     # Yes
 
-``not``
--------
-.. highlights::
-    * ``not`` negates (logically inverts) condition
+.. code-block:: python
+
+    crew = ['Watney', 'Twardowski', 'Lewis']
+
+    if 'Jiménez' in crew:
+        print('Yes')
+    else:
+        print('No')
+    # No
 
 .. code-block:: python
 
-    crew = {'José', 'Max', 'Иван'}
+    crew = {'Watney', 'Twardowski', 'Lewis'}
 
-    if 'Jan' not in crew:
-        print('You are not assigned to the crew')
-
-    # You are not assigned to the crew
-
-.. code-block:: python
-
-    name = None
-
-    if not name:
-        print('Name is empty')
+    if 'Jiménez' in crew:
+        print('Yes')
+    else:
+        print('No')
+    # No
 
 ``is``
 ------
@@ -148,6 +129,26 @@ Control Statements
 
     if name is None:
         print('Name is empty')
+
+``not``
+-------
+.. highlights::
+    * ``not`` negates (logically inverts) condition
+
+.. code-block:: python
+
+    crew = None
+
+    if not name:
+        print('Name is empty')
+
+.. code-block:: python
+
+    crew = {'Watney', 'Twardowski', 'Lewis'}
+
+    if 'Ivanovich' not in crew:
+        print('You are not assigned to the crew')
+    # You are not assigned to the crew
 
 .. code-block:: python
 
@@ -170,7 +171,9 @@ Classification of blood pressure in adults
 :English:
     #. Table contains classification of input data (see below)
     #. Blood Pressure classification according to American Heart Association
-    #. User inputs blood pressure in ``XXX/YY`` or ``XXX/YYY`` format, where:
+    #. User inputs blood pressure in ``XXX/YY`` or ``XXX/YYY`` format
+    #. User will not input invalid data
+    #. Data format:
 
         - ``XXX: int`` systolic pressure
         - ``YY: int`` or ``YYY: int`` diastolic pressure
@@ -181,7 +184,9 @@ Classification of blood pressure in adults
 :Polish:
     #. Tabela zawiera klasyfikację danych wejściowych (patrz sekcja input)
     #. Klasyfikacja ciśnienia krwi wg. American Heart Association
-    #. Użytkownik wprowadza ciśnienie krwi w formacie ``XXX/YY`` lub ``XXX/YYY``, gdzie:
+    #. Użytkownik wprowadza ciśnienie krwi w formacie ``XXX/YY`` lub ``XXX/YYY``
+    #. Użtkownik nie będzie wprowadzał danych niepoprawnych
+    #. Format danych:
 
         - ``XXX: int`` to wartość ciśnienia skurczowego (ang. *systolic*)
         - ``YY: int`` lub ``YYY: int`` to wartość ciśnienia rozkurczowego (ang. *diastolic*)

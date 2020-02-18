@@ -8,11 +8,11 @@ List of pairs
 .. code-block:: python
 
     pairs = [
-        (1, 2)
+        ('a', 1)
     ]
 
     dict(pairs)
-    # {1: 2}
+    # {'a': 1}
 
 .. code-block:: python
 
@@ -36,6 +36,19 @@ List of pairs
     #   'first_name': 'Jan',
     #   'last_name': 'Twardowski'
     # }
+
+.. code-block:: python
+
+    pairs = [
+         {'a', 1},
+         {'b', 2},
+    ]
+
+    pairs
+    # [{1, 'a'}, {'b', 2}]
+
+    dict(pairs)
+    # {1: 'a', 'b': 2}
 
 .. code-block:: python
 

@@ -311,3 +311,33 @@ Create
 :The whys and wherefores:
     * Defining ``list``
     * Learning IDE features
+
+Modify
+------
+* Complexity level: easy
+* Lines of code to write: 3 lines
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/list_modify.py`
+
+:English:
+    #. For given data input (see below)
+    #. Insert at index zero of ``a`` list species name from ``b`` (setosa)
+    #. Append to the ``b`` list species name popped from ``a`` (virginica)
+    #. From list ``c`` delete species
+
+:Polish:
+    #. Dla danych wejściowych (patrz sekcja input)
+    #. Na listę ``a`` na pozycję o indeksie 0 wstaw gatunek pobrany z listy ``b`` (setosa)
+    #. Na koniec listy ``b`` wstaw gatunek pobrany z listy ``a`` (virginica)
+    #. Z listy ``c`` usuń gatunek
+
+:Input:
+    .. code-block:: python
+
+        a = [5.8, 2.7, 5.1, 1.9, 'virginica']
+        b = [5.1, 3.5, 1.4, 0.2, 'setosa']
+        c = [5.7, 2.8, 4.1, 1.3, 'versicolor']
+
+:The whys and wherefores:
+    * Defining ``list``
+    * Learning IDE features

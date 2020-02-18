@@ -63,7 +63,7 @@ Checking for simple value
     job = 'astronaut'
 
     if job == 'astronaut':
-        print('My name... José Jiménez')
+        print('Astronauts are from USA')
 
 .. code-block:: python
 
@@ -139,10 +139,10 @@ Checking if variable is certain value
     job = 'cosmonaut'
 
     if job == 'astronaut':
-        print('NASA astronaut')
+        print('Astronauts are from USA')
     else:
-        print('Roscosmos cosmonaut')
-    # Roscosmos cosmonaut
+        print('Cosmonauts are from Russia')
+    # Cosmonauts are from Russia
 
 .. code-block:: python
 
@@ -161,19 +161,19 @@ Inline ``if``
 .. code-block:: python
     :caption: Normal ``if``
 
-    ip = '127.0.0.1'
+    agency = 'Russia'
 
-    if '.' in ip:
-        protocol = 'IPv4'
+    if country == 'Russia':
+        job = 'cosmonaut'
     else:
-        protocol = 'IPv6'
+        job = 'astronaut'
 
 .. code-block:: python
     :caption: One line version
 
-    ip = '127.0.0.1'
+    agency = 'Russia'
 
-    protocol = 'IPv4' if '.' in ip else 'IPv6'
+    job = 'cosmonaut' if conutry == 'Russia' else 'astronaut'
 
 
 ``elif``

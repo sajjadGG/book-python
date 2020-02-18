@@ -50,14 +50,14 @@ Is even number
 :English:
     #. Read a number from user
     #. User will pass only valid ``int``
-    #. Number is even, when divided modulo (``%``) by 2 has no reminder
+    #. Number is even, when divided modulo (``%``) by 2 reminder equal to 0
     #. Print whether number is odd
     #. Do not use ``if`` statement
 
 :Polish:
     #. Wczytaj liczbę od użytkownika
     #. Użytkownika poda tylko poprawne ``int``
-    #. Liczba jest nieparzysta, gdy dzielona modulo (``%``) przez 2 nie ma reszty
+    #. Liczba jest parzysta, gdy dzielona modulo (``%``) przez 2 ma resztę równą 0
     #. Wypisz czy liczba jest nieparzysta
     #. Nie używaj instrukcji ``if``
 

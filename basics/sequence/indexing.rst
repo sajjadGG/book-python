@@ -121,10 +121,10 @@ Select
 :Polish:
     #. Dla danych wejściowych (patrz sekcja input)
     #. Zapisz nagłówek (pierwsza linia) do zmiennej ``header: tuple``
-    #. Stwórz ``OUTPUT: list``
-    #. Przekonwertuj do ``list`` dane z wierszy o indeksach 2, 6, 9 i dodaj do ``OUTPUT``
-    #. Przekonwertuj do ``tuple`` dane z wierszy o indeksach 12, 15, 16 i dodaj do ``OUTPUT``
-    #. Dodaj pusty ``set``, ``list`` oraz ``tuple`` do ``OUTPUT``
+    #. Stwórz ``data: list``
+    #. Przekonwertuj do ``list`` dane z wierszy o indeksach 2, 6, 9 i dodaj do ``data``
+    #. Przekonwertuj do ``tuple`` dane z wierszy o indeksach 12, 15, 16 i dodaj do ``data``
+    #. Dodaj pusty ``set``, ``list`` oraz ``tuple`` do ``data``
     #. Użyj tylko indeksów
     #. Nie używaj ``for``, ``while`` lub ``slice()``
 
@@ -159,7 +159,10 @@ Select
 :Output:
     .. code-block:: python
 
-        OUTPUT: list
+        header: tuple
+        # ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
+
+        data: list
         # [[5.1, 3.5, 1.4, 0.2, 'setosa'],
         #  [4.7, 3.2, 1.3, 0.2, 'setosa'],
         #  [4.9, 3.0, 1.4, 0.2, 'setosa'],

@@ -121,6 +121,9 @@ Getitem Method
     my_dict['last_name']
     # Twardowski
 
+    my_dict['agency']
+    # KeyError: 'agency'
+
 .. code-block:: python
 
     my_dict = {
@@ -131,15 +134,8 @@ Getitem Method
     my_dict[1961]
     # 'First Human Space Flight'
 
-.. code-block:: python
-
-    my_dict = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski',
-    }
-
-    my_dict['agency']
-    # KeyError: 'agency'
+    my_dict['1961']
+    # KeyError: '1961'
 
 Get Method
 ----------
@@ -157,6 +153,12 @@ Get Method
     my_dict.get('last_name')
     # Twardowski
 
+    my_dict.get('agency')
+    # None
+
+    my_dict.get('agency', 'n/a')
+    # 'n/a'
+
 .. code-block:: python
 
     my_dict = {
@@ -167,21 +169,14 @@ Get Method
     my_dict.get(1961)
     # 'First Human Space Flight'
 
-.. code-block:: python
-
-    my_dict = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski',
-    }
-
-    my_dict.get('agency')
+    my_dict.get('1961')
     # None
 
-    my_dict.get('agency', 'n/a')
-    # 'n/a'
+    my_dict.get('1961', 'unknown')
+    # 'unknown'
 
-Get Keys
---------
+Get Keys, Values and Key-Value Pairs
+------------------------------------
 * Key can be any hashable object
 
 .. code-block:: python
@@ -193,35 +188,25 @@ Get Keys
         'Petal width': 1.9,
     }
 
+    my_dict.keys()
+    # dict_keys(['Sepal length', 'Sepal width', 'Petal length', 'Petal width'])
+
     list(my_dict.keys())
     # ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
 
-Get Values
-----------
-* Value can be any object
-
-.. code-block:: python
-
-    my_dict = {
-        'Sepal length': 5.8,
-        'Sepal width': 2.7,
-        'Petal length': 5.1,
-        'Petal width': 1.9,
-    }
+    my_dict.values()
+    # dict_values([5.8, 2.7, 5.1, 1.9])
 
     list(my_dict.values())
     # [5.8, 2.7, 5.1, 1.9]
 
-Get Key-Value Pairs
--------------------
-.. code-block:: python
-
-    my_dict = {
-        'Sepal length': 5.8,
-        'Sepal width': 2.7,
-        'Petal length': 5.1,
-        'Petal width': 1.9,
-    }
+    my_dict.items()
+    # dict_items([
+    #     ('Sepal length', 5.8),
+    #     ('Sepal width', 2.7),
+    #     ('Petal length', 5.1),
+    #     ('Petal width', 1.9),
+    # ])
 
     list(my_dict.items())
     # [
@@ -229,7 +214,7 @@ Get Key-Value Pairs
     #     ('Sepal width', 2.7),
     #     ('Petal length', 5.1),
     #     ('Petal width', 1.9),
-    #     ('Species', 'virginica')
+    #     ('Species', 'virginica'),
     # ]
 
 
@@ -265,12 +250,20 @@ Setting Items
     }
 
     my_dict.update(agency='POLSA')
-
     print(my_dict)
     # {
     #   'first_name': 'Jan',
     #   'last_name': 'Twardowski',
     #   'agency': 'POLSA'
+    # }
+
+    my_dict.update(mission=['Apollo', 'Artemis', 'Ares'])
+    print(my_dict)
+    # {
+    #   'first_name': 'Jan',
+    #   'last_name': 'Twardowski',
+    #   'agency': 'POLSA',
+    #   'mission': ['Apollo', 'Artemis', 'Ares']
     # }
 
 .. code-block:: python
@@ -281,30 +274,18 @@ Setting Items
         'last_name': 'Twardowski',
     }
 
-    my_dict.update(agency=['POLSA', 'ESA', 'Roscosmos'])
-
-    print(my_dict)
-    # {
-    #   'first_name': 'Jan',
-    #   'last_name': 'Twardowski',
-    #   'agency': ['POLSA', 'ESA', 'Roscosmos']
-    # }
-
-.. code-block:: python
-    :caption: Update Method
-
-    my_dict = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski',
+    data = {
+        'agency': 'POLSA',
+        'mission': ['Apollo', 'Artemis', 'Ares'],
     }
 
-    my_dict.update({'agency': 'POLSA'})
-
+    my_dict.update(data)
     print(my_dict)
     # {
     #   'first_name': 'Jan',
     #   'last_name': 'Twardowski',
-    #   'agency': 'POLSA'
+    #   'agency': 'POLSA',
+    #   'mission': ['Apollo', 'Artemis', 'Ares']
     # }
 
 
@@ -322,7 +303,8 @@ Deleting Items
     value = my_dict.pop('agency')
 
     print(my_dict)
-    # {'first_name', 'Jan', 'last_name': 'Twardowski'}
+    # {'first_name', 'Jan',
+    #  'last_name': 'Twardowski'}
 
     print(value)
     # 'POLSA'
@@ -339,7 +321,8 @@ Deleting Items
     del my_dict['agency']
 
     print(my_dict)
-    # {'first_name': 'Jan', 'last_name': 'Twardowski'}
+    # {'first_name': 'Jan',
+    #  'last_name': 'Twardowski'}
 
 
 Indexing and Slicing
@@ -383,6 +366,10 @@ Indexing and Slicing
     DATA[-0]            # 'a'
     DATA[-1]            # KeyError: -1
     DATA[-2]            # KeyError: -2
+
+    DATA[1:2]           # TypeError: unhashable type: 'slice'
+    DATA[:2]            # TypeError: unhashable type: 'slice'
+    DATA[::2]           # TypeError: unhashable type: 'slice'
 
 
 ``dict`` vs. ``set``
@@ -436,8 +423,6 @@ Indexing and Slicing
 
     my_data = {}
     isinstance(my_data, (set, dict))  # True
-
-    my_data = {}
     isinstance(my_data, dict)         # True
     isinstance(my_data, set)          # False
 

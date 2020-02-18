@@ -30,4 +30,3 @@ letter = input('Type letter: ')
 output = ALPHABET.get(letter, "Pilots don't say that")
 
 print(output)
-
