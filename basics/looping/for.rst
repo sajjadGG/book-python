@@ -18,13 +18,10 @@ Syntax
         ...
 
 
-Iterating over ``str``
-======================
-.. highlights::
-    * Iterating ``str`` will get character on each iteration
-
+Iterating sequences
+===================
 .. code-block:: python
-    :caption: Iterating over ``str``
+    :caption: Iterating over ``str`` will get character on each iteration
 
     for letter in 'setosa':
         print(letter)
@@ -36,14 +33,8 @@ Iterating over ``str``
     # s
     # a
 
-
-Iterating simple collections
-============================
-
-Iterating over ``list``
------------------------
 .. code-block:: python
-    :caption: Iterating over ``list``
+    :caption: Iterating over ``list`` will get one element on each iteration
 
     DATA = [5.1, 3.5, 1.4, 0.2, 'setosa']
 
@@ -56,10 +47,8 @@ Iterating over ``list``
     # 0.2
     # 'setosa'
 
-Iterating over ``tuple``
-------------------------
 .. code-block:: python
-    :caption: Iterating over ``tuple``
+    :caption: Iterating over ``tuple`` will get one element on each iteration
 
     DATA = (5.1, 3.5, 1.4, 0.2, 'setosa')
 
@@ -72,10 +61,8 @@ Iterating over ``tuple``
     # 0.2
     # 'setosa'
 
-Iterating over ``set``
-----------------------
 .. code-block:: python
-    :caption: Iterating over ``set``
+    :caption: Iterating over ``set`` will get one element on each iteration
 
     DATA = {5.1, 3.5, 1.4, 0.2, 'setosa'}
 
