@@ -206,8 +206,10 @@ Example
 :Input:
     .. code-block:: python
 
-        INPUT = [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0, 0, 6, 5, 0, 0, 9, 7, 0, 4, 4, 8,
-                 2, 4, 0, 0, 1, 9, 1, 7, 8, 8, 9, 1, 3, 5, 6, 8, 2, 8, 1, 3, 9, 5,
+        INPUT = [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0,
+                 0, 6, 5, 0, 0, 9, 7, 0, 4, 4, 8,
+                 2, 4, 0, 0, 1, 9, 1, 7, 8, 8, 9,
+                 1, 3, 5, 6, 8, 2, 8, 1, 3, 9, 5,
                  4, 8, 1, 9, 6, 3]
 
 :Output:
@@ -239,8 +241,8 @@ Segmentation
     #. Count occurrences of each group
     #. Define groups:
 
-        * ``small`` - numbers in range [0-2]
-        * ``medium`` - numbers in range [3-7]
+        * ``small`` - numbers in range [0-3)
+        * ``medium`` - numbers in range [3-7)
         * ``large`` - numbers in range [8-9]
 
     #. Print ``counter: Dict[str, int]``:
@@ -255,9 +257,9 @@ Segmentation
     #. Policz wystąpienia każdej z group
     #. Zdefiniuj grupy
 
-        * ``small`` - liczby z przedziału [0-2]
-        * ``medium`` - liczby z przedziału [3-7]
-        * ``large`` - liczby z przedziału [8-9]
+        * ``small`` - liczby z przedziału <0-3)
+        * ``medium`` - liczby z przedziału <3-7)
+        * ``large`` - liczby z przedziału <7-9>
 
     #. Wypisz ``counter: Dict[str, int]``:
 
@@ -269,8 +271,10 @@ Segmentation
 :Input:
     .. code-block:: python
 
-        INPUT = [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0, 0, 6, 5, 0, 0, 9, 7, 0, 4, 4, 8,
-                 2, 4, 0, 0, 1, 9, 1, 7, 8, 8, 9, 1, 3, 5, 6, 8, 2, 8, 1, 3, 9, 5,
+        INPUT = [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0,
+                 0, 6, 5, 0, 0, 9, 7, 0, 4, 4, 8,
+                 2, 4, 0, 0, 1, 9, 1, 7, 8, 8, 9,
+                 1, 3, 5, 6, 8, 2, 8, 1, 3, 9, 5,
                  4, 8, 1, 9, 6, 3]
 
 :Output:
@@ -279,7 +283,7 @@ Segmentation
         from typing import Dict
 
         counter: Dict[str, int]
-        # {'small': 16, 'medium': 23, 'large': 11}
+        # {'small': 16, 'medium': 19, 'large': 15}
 
 :The whys and wherefores:
     * Defining ``dict``
