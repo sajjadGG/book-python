@@ -66,8 +66,24 @@ Unpacking ``list`` of sequences
     ]
 
     # sepal_len, sepal_wid, petal_len, petal_wid, species = (5.1, 3.5, 1.4, 0.2, 'setosa')
-
     for sepal_len, sepal_wid, petal_len, petal_wid, species in DATA:
+        print(f'{species} -> {sepal_len}')
+
+    # setosa -> 5.1
+    # versicolor -> 5.7
+    # virginica -> 6.3
+
+.. code-block:: python
+    :caption: Unpacking values in loop
+
+    DATA = [
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+    ]
+
+    # sepal_len, *_, species = (5.1, 3.5, 1.4, 0.2, 'setosa')
+    for sepal_len, *_, species in DATA:
         print(f'{species} -> {sepal_len}')
 
     # setosa -> 5.1
@@ -156,3 +172,8 @@ Unpacking
     * Accessing ``set`` items
     * Iterating over nested structure
     * Unpacking in ``for`` loop
+
+:Hint:
+    * ``str.endswith()``
+    * ``set.pop()``
+    * ``isinstance`` or ``type``

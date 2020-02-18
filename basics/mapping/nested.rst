@@ -2,6 +2,7 @@
 Mapping Nested
 **************
 
+
 Dict keys
 =========
 .. code-block:: python
@@ -80,6 +81,32 @@ Dict values
         'location': ('Baikonur', 'Johnson Space Center'),
     }
 
+.. code-block:: python
+
+    my_dict = [
+        {'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
+        {'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
+        {'Sepal length': 6.3, 'Petal width': 1.8, 'Species': 'virginica'},
+        {'Sepal length': 5.0, 'Petal width': 0.2, 'Species': 'setosa'},
+        {'Sepal width': 2.8, 'Petal length': 4.1, 'Species': 'versicolor'},
+        {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'},
+    ]
+
+.. code-block:: python
+
+    my_dict = [
+        {'sepal_length': 5.4, 'sepal_width': 3.9, 'petal_length': 1.3, 'petal_width': 0.4, 'species': 'setosa'},
+        {'sepal_length': 5.9, 'sepal_width': 3.0, 'petal_length': 5.1, 'petal_width': 1.8, 'species': 'virginica'},
+        {'sepal_length': 6.0, 'sepal_width': 3.4, 'petal_length': 4.5, 'petal_width': 1.6, 'species': 'versicolor'},
+    ]
+
+.. code-block:: python
+
+    my_dict = [
+        {'measurements': [4.7, 3.2, 1.3, 0.2], 'species': 'setosa'},
+        {'measurements': [7.0, 3.2, 4.7, 1.4], 'species': 'versicolor'},
+        {'measurements': [7.6, 3.0, 6.6, 2.1], 'species': 'virginica'},
+    ]
 
 ``list`` of ``dict``
 ====================
