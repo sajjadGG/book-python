@@ -94,7 +94,6 @@ pygments_style = 'borland'
 autodoc_typehints = "description"
 sys.path.insert(0, os.path.abspath('_extensions'))
 
-
 # 0 - sequence number of image in whole document
 # 1 - sequence number of image in header level 1 (only if :numbered: option is present at toctree directive)
 # 2 - sequence number of image in header level 2
