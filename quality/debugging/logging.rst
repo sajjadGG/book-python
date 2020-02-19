@@ -2,43 +2,74 @@
 Logging
 *******
 
-
-Korzystanie z ``logging``
-=========================
-
-Poziomy logowania
------------------
-* Critical
-* Error
-* Warning
-* Info
-* Debug
+Logging levels
+==============
+* Critical - Critical Error, and cannot continue
+* Error - Error, but can continue
+* Warning - Warning, will do something important
+* Info - I will do something
+* Debug - This is how I am doing this
 
 .. code-block:: python
 
     import logging
 
-    logging.critical('Błąd krytyczny, kończę.')
-    logging.error('Błąd, ale kontynuuję.')
-    logging.warning('Uwaga będę coś robił')
-    logging.info('Będę coś robił')
-    logging.debug('Robię to tak')
+    logging.critical('Permission Denied, cannot continue')
+    logging.error('File not found, will create a new one')
+    logging.warning('Warning, will overwrite the file')
+    logging.info('Writing to file')
+    logging.debug('Data {DATA} will be written to file {path}')
+
+
+Use Case
+========
+.. code-block:: python
+
+    import logging
+
+
+    logging.warning('Program start')
+
+    for number in range(0,3):
+        logging.debug(f'Current number: {number}')
+
+    logging.warning('Program end')
+
+    # WARNING:root:Program start
+    # WARNING:root:Program end
+
+
+
+
 
 Konfiguracja logowania
 ----------------------
+
 .. code-block:: python
 
     import logging
 
+    logging.basicConfig(level=logging.INFO)
+    log = logging.getLogger(__name__)
 
-    logging.info('Rozpoczynam pętlę')
+    log.warning('warning!')  # zostanie zapisana do pliku
+    log.debug('wiadomosc debuggingowa')  # nie zostanie zapisana, bo level jest INFO, czyli powyżej DEBUG
 
-    i = 0
-    while i <= 3:
-        logging.info(f'Przetwarzam {i}')
-        i += 1
+.. code-block:: python
 
-    logging.info('Skończyłem pętlę')
+    import logging
+
+    logging.basicConfig(
+        level=logging.INFO,
+        filename='/tmp/logging.csv',
+        format='"%(asctime).19s", "%(levelname)s", "%(message)s"'
+    )
+
+    log = logging.getLogger(__name__)
+
+    log.warning('warning!')  # zostanie zapisana do pliku
+    log.debug('wiadomosc debuggingowa')  # nie zostanie zapisana, bo level jest INFO, czyli powyżej DEBUG
+
 
 .. code-block:: python
 

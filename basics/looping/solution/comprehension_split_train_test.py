@@ -41,11 +41,27 @@ result = features_train, features_test, labels_train, labels_test
 # print(result)
 
 ## Alternative - but not optimized (4 loops)
-#
 # features_train = [m for *m,s in data[:pivot]]
 # features_test = [m for *m,s in data[pivot:]]
 # labels_train = [s for *m,s in data[:pivot]]
 # labels_test = [s for *m,s in data[pivot:]]
+# result = features_train, features_test, labels_train, labels_test
+# print(result)
 
 
-print(labels_test)
+## Alternative - but not optimized (4 loops)
+# result = (
+#     [m for *m,s in data[:pivot]],
+#     [m for *m,s in data[pivot:]],
+#     [s for *m,s in data[:pivot]],
+#     [s for *m,s in data[pivot:]],
+# )
+# print(result)
+
+## Alternative - but not optimized (4 loops)
+# print(
+#     [m for *m,s in data[:pivot]],
+#     [m for *m,s in data[pivot:]],
+#     [s for *m,s in data[:pivot]],
+#     [s for *m,s in data[pivot:]],
+# )
