@@ -89,6 +89,17 @@ Docstring
         print(f'Program selected. Noun: {noun}, verb: {verb}')
 
 
+    print(apollo_dsky.__doc__)
+    # This is the Apollo Display Keyboard
+    # It takes noun and verb
+
+    help(apollo_dsky)
+    # Help on function apollo_dsky in module __main__:
+    # apollo_dsky(noun, verb)
+    #    This is the Apollo Display Keyboard
+    #    It takes noun and verb
+
+
 Assignments
 ===========
 

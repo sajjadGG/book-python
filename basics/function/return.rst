@@ -118,6 +118,7 @@ Returning nested types
             {'astro': 'Jiménez', 'missions': ('Mercury', 'Gemini', 'Apollo')},
         ]
 
+
 Assignments
 ===========
 
@@ -130,12 +131,12 @@ Return Numbers
 
 :English:
     #. Define function ``add``
-    #. Function should return sum of ``42 + 13.37``
+    #. Function should return sum of ``42`` and ``13.37``
     #. Call function and intercept returned value
     #. Print value
 
 :Polish:
     #. Zdefiniuj funkcję ``add``
-    #. Funkcja powinna zwracać sumę ``42 + 13.37``
+    #. Funkcja powinna zwracać sumę ``42`` and ``13.37``
     #. Wywołaj funkcję i przechwyć zwracaną wartość
     #. Wyświetl wartość

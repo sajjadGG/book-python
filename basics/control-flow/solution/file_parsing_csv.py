@@ -4,11 +4,13 @@ labels = []
 
 
 with open(FILE) as file:
-    header = file.readline()
+    header = file.readline().strip()
 
     for line in file:
         *measurements, species = line.strip().split(',')
-        features.append(tuple(measurements))
+        measurements = tuple(float(x) for x in measurements)
+
+        features.append(measurements)
         labels.append(species)
 
 

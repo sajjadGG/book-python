@@ -3,8 +3,14 @@ Function Arguments
 ******************
 
 
-Simple Usage
-============
+Arguments vs Parameters
+=======================
+* argument is the value/variable/reference being passed to the function
+* parameter is the receiving variable used within the function/block
+
+
+Function Parameters
+===================
 .. code-block:: python
 
     def add(a, b):
@@ -24,9 +30,8 @@ Simple Usage
     echo('hello')
     # hello
 
-
-Required arguments
-==================
+Required Parameters
+-------------------
 .. code-block:: python
 
     def subtract(a, b):
@@ -41,14 +46,16 @@ Required arguments
     subtract(10, 20)
     # -10
 
+    subtract(10, 20, 30)
+    # TypeError: subtract() takes 2 positional arguments but 3 were given
 
-Arguments with default value
-============================
+Parameters with Default Value
+-----------------------------
 .. highlights::
-    * Arguments without default values are required
+    * Parameters without default values are required
     * Function will take default value if not overwritten by user
-    * Arguments with default values must be at the right side
-    * Arguments with default values can be omitted while executing
+    * Parameters with default values must be at the right side
+    * Parameters with default values can be omitted while executing
 
 .. code-block:: python
 
@@ -65,6 +72,9 @@ Arguments with default value
     subtract(10, 20)
     # -10
 
+    subtract(10, 20, 30)
+    # TypeError: subtract() takes from 0 to 2 positional arguments but 3 were given
+
 .. code-block:: python
 
     def subtract(a, b=2):
@@ -80,6 +90,9 @@ Arguments with default value
     subtract(10, 20)
     # -10
 
+    subtract(10, 20, 30)
+    # TypeError: subtract() takes from 1 to 2 positional arguments but 3 were given
+
 .. code-block:: python
 
     def subtract(a=1, b):
@@ -88,8 +101,11 @@ Arguments with default value
     # SyntaxError: non-default argument follows default argument
 
 
-Positional arguments
-====================
+Function Arguments
+==================
+
+Positional Arguments
+--------------------
 .. code-block:: python
 
     def subtract(a, b):
@@ -99,9 +115,8 @@ Positional arguments
     subtract(2, 1)      # 1
     subtract(1, 2)      # -1
 
-
 Keyword arguments
-=================
+-----------------
 .. highlights::
     * Arguments without default values are required
     * Order of keyword arguments has no significance
@@ -131,20 +146,19 @@ Keyword arguments
     hello()                       # My name... José Jiménez
 
 
-Example
-=======
+Use Cases
+=========
 .. code-block:: python
 
     def connect(username, password, host='127.0.0.1',
-                port=80, ssl=True, keep_alive=1,
+                port=22, ssl=True, keep_alive=1,
                 persistent=False):
         print('Connecting...')
 
 
-    connect('admin', 'admin', 'localhost', 80, False, 1, True)
-
-    connect(host='localhost', username='admin', password='admin', ssl=True, persistent=True, keep_alive=1)
-
+    connect('admin', 'admin')
+    connect('admin', 'admin', 'localhost', 22, False, 1, True)
+    connect(host='localhost', username='admin', password='admin')
     connect(
         host='localhost',
         username='admin',
@@ -268,66 +282,6 @@ Power
         power(3)
         # 27
 
-.. _Cleaning text input:
-
-Cleaning text input
--------------------
-* Complexity level: medium
-* Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
-* Solution: :download:`solution/args_str_clean.py`
-
-:English:
-    #. For given input data (see below)
-    #. Write function cleaning up data
-    #. Function takes one argument of type ``str``
-    #. Function returns cleaned text
-
-:Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
-    #. Napisz funkcję czyszczącą dane
-    #. Funkcja przyjmuje jeden argument typu ``str``
-    #. Funkcja zwraca oczyszczony tekst
-
-:Input:
-    .. code-block:: python
-
-        INPUT = [
-            'ul.Mieszka II',
-            'UL. Zygmunta III WaZY',
-            '  bolesława chrobrego ',
-            'ul Jana III SobIESkiego',
-            '\tul. Jana trzeciego Sobieskiego',
-            'ulicaJana III Sobieskiego',
-            'UL. JA    NA 3 SOBIES  KIEGO',
-            'ULICA JANA III SOBIESKIEGO  ',
-            'ULICA. JANA III SOBIeskieGO',
-            ' Jana 3 Sobieskiego  ',
-            'Jana III Sobi  eskiego ',
-        ]
-
-:Output:
-    .. code-block:: python
-
-        'Mieszka II'
-        'Zygmunta III Wazy'
-        'Bolesława Chrobrego'
-        'Jana III Sobieskiego'
-        'Jana III Sobieskiego'
-        'Jana III Sobieskiego'
-        'Jana III Sobieskiego'
-        'Jana III Sobieskiego'
-        'Jana III Sobieskiego'
-        'Jana III Sobieskiego'
-        'Jana III Sobieskiego'
-
-:The whys and wherefores:
-    * Defining and calling functions
-    * Passing function arguments
-    * Cleaning data from user input
-
-.. todo:: Translate input data to English
-
 Aviation numbers
 ----------------
 * Complexity level: medium
@@ -336,27 +290,32 @@ Aviation numbers
 * Solution: :download:`solution/args_aviation_numbers.py`
 
 :English:
-    #. For input data (see below)
+    #. Given is pilot's alphabet for numbers (see boilerplate section below)
+    #. For input data (see input section below)
     #. Define function converting ``int`` or ``float`` to text form in Pilot's Speak
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Dany jest alfabet pilotów dla numerów (patrz sekcja boilerplate)
+    #. Dla danych wejściowych (patrz sekcja input poniżej)
     #. Zdefiniuj funkcję konwertującą ``int`` lub ``float`` na formę tekstową w mowie pilotów
 
+:Boilerplace:
+    .. code-block:: python
+
+        CONVERSION = {
+            0: 'zero',
+            1: 'one',
+            2: 'two',
+            3: 'tree',
+            4: 'fower',
+            5: 'fife',
+            6: 'six',
+            7: 'seven',
+            8: 'ait',
+            9: 'niner',
+        }
+
 :Input:
-    .. code-block:: text
-
-        0, "zero"
-        1, "one"
-        2, "two"
-        3, "tree"
-        4, "fower"
-        5, "fife"
-        6, "six"
-        7, "seven"
-        8, "ait"
-        9, "niner"
-
     .. code-block:: python
 
         1969
@@ -432,3 +391,63 @@ Number to human readable
     * Passing function arguments
     * Cleaning data from user input
     * ``dict`` lookups
+
+.. _Cleaning text input:
+
+Cleaning text input
+-------------------
+* Complexity level: medium
+* Lines of code to write: 15 lines
+* Estimated time of completion: 15 min
+* Solution: :download:`solution/args_str_clean.py`
+
+:English:
+    #. For given input data (see below)
+    #. Write function cleaning up data
+    #. Function takes one argument of type ``str``
+    #. Function returns cleaned text
+
+:Polish:
+    #. Dla danych wejściowych (patrz sekcja input)
+    #. Napisz funkcję czyszczącą dane
+    #. Funkcja przyjmuje jeden argument typu ``str``
+    #. Funkcja zwraca oczyszczony tekst
+
+:Input:
+    .. code-block:: python
+
+        INPUT = [
+            'ul.Mieszka II',
+            'UL. Zygmunta III WaZY',
+            '  bolesława chrobrego ',
+            'ul Jana III SobIESkiego',
+            '\tul. Jana trzeciego Sobieskiego',
+            'ulicaJana III Sobieskiego',
+            'UL. JA    NA 3 SOBIES  KIEGO',
+            'ULICA JANA III SOBIESKIEGO  ',
+            'ULICA. JANA III SOBIeskieGO',
+            ' Jana 3 Sobieskiego  ',
+            'Jana III Sobi  eskiego ',
+        ]
+
+:Output:
+    .. code-block:: python
+
+        'Mieszka II'
+        'Zygmunta III Wazy'
+        'Bolesława Chrobrego'
+        'Jana III Sobieskiego'
+        'Jana III Sobieskiego'
+        'Jana III Sobieskiego'
+        'Jana III Sobieskiego'
+        'Jana III Sobieskiego'
+        'Jana III Sobieskiego'
+        'Jana III Sobieskiego'
+        'Jana III Sobieskiego'
+
+:The whys and wherefores:
+    * Defining and calling functions
+    * Passing function arguments
+    * Cleaning data from user input
+
+.. todo:: Translate input data to English

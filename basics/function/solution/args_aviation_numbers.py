@@ -42,12 +42,10 @@ def aviation_numbers(number):
 
 def convert(number):
     """
-    >>> convert(1969)
-    'one niner six niner'
     >>> TEST = [
     ...     1969,
     ...     31337,
-    ...     13.37,
+    ...     13.377,
     ...     31.337,
     ...     -1969,
     ...     -31.337,

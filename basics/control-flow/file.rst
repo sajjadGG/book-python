@@ -15,13 +15,10 @@ Absolute path
     * paths on Windows uses ``\``
 
 .. code-block:: python
-    :caption: Windows paths
+    :caption: Windows and POSIX absolute paths
 
     FILE = 'C:\\Temp\\iris.csv'
     FILE = r'C:\Temp\iris.csv'
-
-.. code-block:: python
-    :caption: POSIX path
 
     FILE = '/tmp/iris.csv'
     FILE = r'/tmp/iris.csv'
@@ -38,20 +35,11 @@ Relative path
     FILE = r'iris.csv'
     FILE = r'./iris.csv'
 
-.. code-block:: python
-    :caption: File in the child directory
-
     FILE = r'tmp/iris.csv'
     FILE = r'./tmp/iris.csv'
 
-.. code-block:: python
-    :caption: File in parent directory
-
     FILE = r'../iris.csv'
     FILE = r'../tmp/iris.csv'
-
-.. code-block:: python
-    :caption: File in two directories up directory
 
     FILE = r'../../iris.csv'
     FILE = r'../../tmp/iris.csv'
@@ -62,7 +50,6 @@ Make absolute from relative path
     :caption: Make absolute from relative path
 
     from os.path import dirname, join
-
 
     __file__
     # /home/python/my_script.py
@@ -372,6 +359,9 @@ Parsing simple CSV file
     * String methods
     * Working with nested sequences
 
+:Hint:
+    * ``str.split()``
+
 ``/etc/hosts`` - parsing to ``List[dict]``
 ------------------------------------------
 * Complexity level: medium
@@ -445,5 +435,6 @@ Parsing simple CSV file
     * praca ze ścieżkami w systemie operacyjnym
 
 :Hints:
+    * ``str.split()``
     * ``str.isspace()``
     * ``value = True if ... else False``

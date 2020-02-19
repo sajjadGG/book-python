@@ -272,16 +272,18 @@ Wanted
 * Solution: :download:`solution/scope_wanted.py`
 
 :English:
+    #. Separate header (first line) from data
     #. For given input data (see below)
-    #. Define ``WANTED: Set[str]`` with 'setosa' and 'versicolor'
+    #. Define ``wanted: Set[str]`` with 'setosa' and 'versicolor'
     #. Iterate over data and split row into ``features`` and ``label`` (last)
     #. Define function which sums ``features``, only when ``label`` is in ``wanted``
     #. When ``label`` is not in ``wanted`` return ``0`` (zero)
     #. Print sum
 
 :Polish:
+    #. Oddziel nagłówek (pierwsza linia) od danych
     #. Dla danych wejściowych (patrz sekcja input)
-    #. Zdefiniuj ``WANTED: Set[str]`` z 'setosa' oraz 'versicolor'
+    #. Zdefiniuj ``wanted: Set[str]`` z 'setosa' oraz 'versicolor'
     #. Iterując po danych rozdziel wiersz na ``features`` i ``label`` (ostatni)
     #. Zdefiniuj funkcję sumującą ``features``, tylko gdy ``label`` jest w ``wanted``
     #. Gdy ``label`` nie występuje w ``wanted`` zwróć ``0`` (zero)

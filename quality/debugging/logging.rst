@@ -2,6 +2,7 @@
 Logging
 *******
 
+
 Logging levels
 ==============
 * Critical - Critical Error, and cannot continue
@@ -28,6 +29,24 @@ Use Case
     import logging
 
 
+    print('Program start')
+
+    for number in range(0,3):
+        print(f'Current number: {number}')
+
+    print('Program end')
+
+    # Program start
+    # Current number: 0
+    # Current number: 1
+    # Current number: 2
+    # Program end
+
+.. code-block:: python
+
+    import logging
+
+
     logging.warning('Program start')
 
     for number in range(0,3):
@@ -37,10 +56,6 @@ Use Case
 
     # WARNING:root:Program start
     # WARNING:root:Program end
-
-
-
-
 
 Konfiguracja logowania
 ----------------------
