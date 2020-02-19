@@ -332,6 +332,7 @@ Label encoder
 
         * ``features: List[tuple]`` - measurements
         * ``labels: List[int]`` - species
+        * ``label_encoder: Dict[int, str]`` - dictionary with encoded (as numbers) species names
 
     #. Separate header from data
     #. To encode and decode ``labels`` (species) we need ``label_encoder: Dict[int, str]``:
@@ -350,7 +351,7 @@ Label encoder
 
         * ``features: List[tuple]`` - pomiary
         * ``labels: List[int]`` - gatunki
-        * ``label_encoder: Dict[int, str]`` - słownik podmiany nazw gatunków
+        * ``label_encoder: Dict[int, str]`` - słownik zakodowanych (jako cyfry) nazw gatunków
 
     #. Odseparuj nagłówek od danych
     #. Aby móc zakodować i odkodować ``labels`` (gatunki) potrzebny jest ``label_encoder: Dict[int, str]``:
