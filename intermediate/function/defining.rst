@@ -165,7 +165,18 @@ Keyword only
 
 .. code-block:: python
 
-    def echo(a, *, b):
+    def echo(a, b, c):
+         print(a, b, c)
+
+    echo(1, 2, 3)
+    echo(1, 2, 3)
+    echo(1, 2, 3)
+    echo(1, 2, 3)
+    echo(1, 2, 3)
+
+.. code-block:: python
+
+    def echo(a, *, b, c):
         print(a)
         print(b)
 
@@ -187,6 +198,43 @@ Keyword only
     echo(1, 2, c=3)      # is valid
     echo(1, 2, 3)        # TypeError: echo() takes 2 positional arguments but 3 were given
     echo(1, b=2, c=3)    # TypeError: echo() takes 2 positional arguments but 1 positional arguments (and 2 keyword-only argument) were given
+
+.. code-block:: python
+
+    def add(a, b):
+        print(a+b)
+
+    add(1, 2)
+    add(1, b=2)
+    add(a=1, b=2)
+    add(b=2, a=1)
+
+
+    def add(a, *, b):
+        print(a+b)
+
+    add(1, 2)
+    add(1, b=2)
+    add(a=1, b=2)
+    add(b=2, a=1)
+
+
+    def add(a, /, b):
+        print(a+b)
+
+    add(1, 2)
+    add(1, b=2)
+    add(a=1, b=2)
+    add(b=2, a=1)
+
+
+    def add(a, b, /):
+        print(a+b)
+
+    add(1, 2)
+    add(1, b=2)
+    add(a=1, b=2)
+    add(b=2, a=1)
 
 
 Use cases

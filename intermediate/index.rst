@@ -67,6 +67,7 @@ Object Oriented Programming
     /intermediate/oop/enum.rst
     /intermediate/oop/operator-overload.rst
     /intermediate/oop/dataclass.rst
+    /intermediate/oop/inner-classes.rst
 
 ********************
 Modules and Packages

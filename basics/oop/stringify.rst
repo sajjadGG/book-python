@@ -21,8 +21,9 @@ Stringify Objects
 
     astro = Astronaut('Jose Jimenez')
 
-    str(astro)          # '<__main__.Astronaut object at 0x114175dd0>'
     print(astro)        # <__main__.Astronaut object at 0x114175dd0>
+    str(astro)          # '<__main__.Astronaut object at 0x114175dd0>'
+    astro.__str__()     # '<__main__.Astronaut object at 0x114175dd0>'
 
 .. code-block:: python
     :caption: Objects can verbose print if ``__str__()`` method is present
@@ -37,8 +38,9 @@ Stringify Objects
 
     astro = Astronaut('Jose Jimenez')
 
-    str(astro)          # 'My name... Jose Jimenez'
     print(astro)        # My name... Jose Jimenez
+    str(astro)          # 'My name... Jose Jimenez'
+    astro.__str__()     # 'My name... Jose Jimenez'
 
 
 ``__repr__()``
@@ -148,6 +150,62 @@ Stringify Objects
 
 .. code-block:: python
 
+    SECOND = 1
+    MINUTE = 60 * SECOND
+    HOUR = 60 * MINUTE
+    DAY = 24 * HOUR
+
+
+    class Time:
+        def __init__(self, seconds):
+            self.seconds = seconds
+
+        def __format__(self, unit):
+            if unit == 'minutes':
+                return str(self.seconds / MINUTE)
+
+            if unit == 'hours':
+                return str(self.seconds / HOUR)
+
+            if unit == 'days':
+                return str(self.seconds / DAY)
+
+
+     duration = Time(seconds=3600)
+
+     print(f'{duration:minutes}')       # 60.0
+     print(f'{duration:hours}')         # 1.0
+     print(f'{duration:days}')          # 0.041666666666666664
+
+.. code-block:: python
+
+    class Temperature:
+        def __init__(self, kelvin):
+            self.kelvin = kelvin
+
+        def __format__(self, unit):
+
+            if unit == 'in_kelvin':
+                value = self.kelvin
+
+            elif unit == 'in_celsius':
+                value = self.kelvin - 273.15
+
+            elif unit == 'in_fahrenheit':
+                value = (self.kelvin-273.15) * 9/5 + 32
+
+            value = round(value, 2)
+            return str(value)
+
+
+    temp = Temperature(309.75)
+
+    print(f'{temp:in_kelvin}')       # 309.75
+    print(f'{temp:in_celsius}')      # 36.6
+    print(f'{temp:in_fahrenheit}')   # 97.88
+
+.. code-block:: python
+
     class Point:
         def __init__(self, x, y, z=0):
             self.x = x
@@ -187,8 +245,8 @@ Assignments
 
 Stringify Object
 ----------------
-* Complexity level: easy
-* Lines of code to write: 15 lines
+* Complexity level: medium
+* Lines of code to write: 9 lines
 * Estimated time of completion: 20 min
 * Solution: :download:`solution/stringify_astro.py`
 
@@ -213,7 +271,7 @@ Stringify Object
 
         class Astronaut:
             def __init__(self, name, experience=()):
-                self.name = first_name
+                self.name = name
                 self.experience = list(experience)
 
         class Mission:
@@ -262,3 +320,8 @@ Stringify Object
         # José Jiménez
         # Mark Watney veteran of [
         # 	2035: Ares 3]
+
+:Hint:
+    * Define ``Crew.__str__()``
+    * Define ``Astronaut.__str__()``
+    * Define ``Mission.__repr__()``

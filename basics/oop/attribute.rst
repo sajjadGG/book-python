@@ -67,7 +67,7 @@ Dynamic Attributes
     # setosa
 
     sum(setosa.features)
-    # 10.2
+    # [5.1, 3.5, 1.4, 0.2]
 
 .. code-block:: python
     :caption: Accessing not existing attributes
