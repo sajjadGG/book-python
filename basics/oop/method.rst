@@ -28,27 +28,13 @@ Methods without arguments
     :caption: Methods without arguments
 
     class Astronaut:
-        def say_hello(self)
+        def say_hello(self):
             print('My name... Jose Jimenez')
 
 
     astro = Astronaut()
-
     astro.say_hello()
     # My name... Jose Jimenez
-
-.. code-block:: python
-    :caption: Methods without arguments
-
-    class Iris:
-        def latin_name(self):
-            print(f'Latin name: Iris Setosa')
-
-
-    flower = Iris()
-
-    flower.latin_name()
-    # Latin name: Iris Setosa
 
 
 Methods with required argument
@@ -73,46 +59,26 @@ Methods with required argument
     # TypeError: say_hello() missing 1 required positional argument: 'name'
 
 
-.. code-block:: python
-    :caption: Methods with required argument
-
-    class Iris:
-        def latin_name(self, species):
-            print(f'Latin name: {species}')
-
-
-    flower = Iris()
-
-    flower.latin_name(species='Iris Setosa')
-    # Latin name: Iris Setosa
-
-    flower.latin_name('Iris Setosa')
-    # Latin name: Iris Setosa
-
-    flower.latin_name()
-    # TypeError: latin_name() missing 1 required positional argument: 'species'
-
-
 Methods with optional argument (with default value)
 ===================================================
 .. code-block:: python
     :caption: Methods with arguments with default value
 
-    class Iris:
-        def latin_name(self, species='Unknown'):
-            print(f'Latin name: {species}')
+    class Astronaut:
+        def say_hello(self, name='Unknown'):
+            print(f'My name... {name}')
 
 
-    flower = Iris()
+    astro = Astronaut()
 
-    flower.latin_name(species='Iris Setosa')
-    # Latin name: Iris Setosa
+    astro.say_hello(name='Jose Jimenez')
+    # My name... Jose Jimenez
 
-    flower.latin_name('Iris Setosa')
-    # Latin name: Iris Setosa
+    astro.say_hello('Jose Jimenez')
+    # My name... Jose Jimenez
 
-    flower.latin_name()
-    # Latin name: Unknown
+    astro.say_hello()
+    # My name... Unknown
 
 
 Methods Accessing Fields
@@ -120,17 +86,17 @@ Methods Accessing Fields
 .. code-block:: python
     :caption: Methods Accessing Fields
 
-    class Iris:
-        def __init__(self, species):
-            self.species = species
+    class Astronaut:
+        def __init__(self, name):
+            self.name = name
 
-        def latin_name(self):
-            print(f'Latin name is: {self.species}')
+        def say_hello(self):
+            print(f'My name... {self.name}')
 
 
-    flower = Iris('Iris Setosa')
-    flower.latin_name()
-    # Latin name is: Iris Setosa
+    astro = Astronaut('Jose Jimenez')
+    astro.say_hello()
+    # My name... Jose Jimenez
 
 
 Methods Calling Other Methods
@@ -148,7 +114,6 @@ Methods Calling Other Methods
 
 
     astro = Astronaut()
-
     astro.say_hello()
     # My name... Jose Jimenez
 
@@ -169,13 +134,10 @@ Methods Calling Other Methods
             return self.petal_length * self.petal_width
 
         def total_area(self):
-            sepal_area = self.sepal_area()
-            petal_area = self.petal_area()
-            return sepal_area + petal_area
+            return self.sepal_area() + self.petal_area()
 
 
     flower = Iris()
-
     print(flower.total_area())
     # Total area: 18.13
 

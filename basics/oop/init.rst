@@ -139,6 +139,37 @@ Initializing Attributes
 .. code-block:: python
     :caption: Init time attributes
 
+    class Astro:
+        def __init__(self, firstname, lastname):
+            self.full_name = f'{firstname} {lastname}'
+
+
+    mark = Astro('Mark', 'Watney')
+
+    print(mark.full_name)       # Mark Watney
+    print(mark.firstname)       # AttributeError: 'Astro' object has no attribute 'firstname'
+    print(mark.lastname)        # AttributeError: 'Astro' object has no attribute 'lastname'
+
+.. code-block:: python
+    :caption: Init time attributes
+
+    class Point:
+        def __init__(self, x, y, z=0):
+            self.x = x
+            self.y = y
+            self.z = z
+
+
+    p1 = Point(10, 20)
+    p2 = Point(x=10, y=20)
+
+    p3 = Point(10, 20, 30)
+    p4 = Point(10, 20, z=30)
+    p5 = Point(x=10, y=20, z=30)
+
+.. code-block:: python
+    :caption: Init time attributes
+
     class Iris:
         def __init__(self, sepal_length, sepal_width,
                      petal_length, petal_width, species):
@@ -177,7 +208,7 @@ Initializing Attributes
     print(virginica.petal_width)    # 1.9
     print(virginica.species)        # virginica
 
-.. note:: In Python 3.7 and newer there is a ``dataclass`` decorator, which automaticaly generates ``__init__()`` arguments and fields. Dataclasses are described in :ref:`OOP Dataclass`.
+.. note:: Since Python 3.7 there is a ``@dataclass`` decorator, which automaticaly generates ``__init__()`` arguments and fields. Dataclasses are described in :ref:`OOP Dataclass`.
 
 
 Checking values

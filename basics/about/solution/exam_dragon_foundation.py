@@ -25,8 +25,9 @@ class Dragon:
         self.update_status()
 
     def set_position(self, x, y):
-        self.position_x = x
-        self.position_y = y
+        if self.is_alive():
+            self.position_x = x
+            self.position_y = y
 
     def get_position(self):
         return self.position_x, self.position_y

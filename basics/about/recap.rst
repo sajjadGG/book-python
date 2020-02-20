@@ -25,7 +25,7 @@ Summary
     - Type None
     - Type str
     - Type str Methods
-    - Basic Type Annotations:
+    - Basic Type Annotations
 
 4. Sequences:
 
@@ -81,7 +81,6 @@ Summary
     - OOP Methods
     - OOP Stringify Objects
     - OOP Inheritance
-    - OOP Operator Overload
 
 11. Recap:
 

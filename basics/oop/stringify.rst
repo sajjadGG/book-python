@@ -116,10 +116,10 @@ Stringify Objects
     import datetime
 
     str(datetime.datetime.now())
-    # 2019-01-05 20:15:00.927387
+    # 1961-04-12 6:07:00.000000
 
     repr(datetime.datetime.now())
-    # datetime.datetime(2019, 1, 5, 20, 15, 0, 684972)
+    # datetime.datetime(1961, 4, 12, 6, 7, 0, 000000)
 
 
 ``__format__()``

@@ -16,11 +16,39 @@ About
 
 .. glossary::
 
-    property
     attribute
     field
+        Variable inside the class.
+        Can be used as a synonym of :term:`property` or :term:`state`.
+
+    property
+        Variable inside the class.
+        Should not change during lifetime of an object.
+
     state
         Variable inside the class.
+        Changes during lifetime of an object.
+        Represents current state of an object.
+
+.. code-block:: text
+
+    Bucket with Water
+
+        Properties
+        - color
+        - width
+        - height
+        - radius
+        - capacity
+        - net mass (without water)
+
+        State
+        - volume  (how much water is currenty in bucket)
+        - gross mass = net mass + water mass (water mass depends on its volume used))
+
+.. figure:: img/bucket.jpg
+    :scale: 100%
+    :align: center
 
 
 Dynamic Attributes
