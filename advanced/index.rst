@@ -9,22 +9,6 @@ Entry Test
     /advanced/about/entry.rst
     /advanced/about/dragon.rst
 
-************************
-Performance Optimization
-************************
-.. toctree::
-    :maxdepth: 1
-    :caption: Performance
-    :name: Advanced Performance
-
-    /advanced/performance/optimization.rst
-    /advanced/performance/micro-benchmarking.rst
-    /advanced/performance/profiling.rst
-    /advanced/performance/compilers.rst
-    /advanced/performance/collections.rst
-    /advanced/performance/c-types.rst
-    /advanced/performance/c-modules.rst
-
 *********
 Functions
 *********
@@ -88,6 +72,23 @@ Object Oriented Programming
     /advanced/oop/slots.rst
     /advanced/oop/metaclass.rst
     /advanced/oop/exam.rst
+
+************************
+Performance Optimization
+************************
+.. toctree::
+    :maxdepth: 1
+    :caption: Performance
+    :name: Advanced Performance
+
+    /advanced/performance/optimization.rst
+    /advanced/performance/micro-benchmarking.rst
+    /advanced/performance/profiling.rst
+    /advanced/performance/compilers.rst
+    /advanced/performance/collections.rst
+    /advanced/performance/c-types.rst
+    /advanced/performance/c-modules.rst
+
 
 ***********
 Concurrency
