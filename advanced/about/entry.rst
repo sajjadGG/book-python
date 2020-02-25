@@ -174,12 +174,12 @@ Get elements from nested data structure
         ]
 
 :The whys and wherefores:
-    * czytanie i parsowanie pliku
-    * nieregularne pliki konfiguracyjne (struktura może się zmieniać)
-    * filtrowanie elementów
-    * korzystanie z pętli i instrukcji warunkowych
-    * parsowanie stringów
-    * praca ze ścieżkami w systemie operacyjnym
+    * Reading and parsing files
+    * Irregular configuration files
+    * Filtering results
+    * Using loops and conditional statements
+    * String parsing
+    * Working with paths in operating system
 
 :Hints:
     * ``str.isspace()``
