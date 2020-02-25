@@ -7,32 +7,23 @@ Generators
 
 Generator expressions vs. Comprehensions
 ========================================
-* For information about Comprehensions, please refer to :ref:`Basic Comprehensions`
-
 .. code-block:: python
 
-    list(x for x in range(0, 5))        # [0, 1, 2, 3, 4]
-    [x for x in range(0, 5)]            # [0, 1, 2, 3, 4]
+    list(x for x in range(0,5))        # [0, 1, 2, 3, 4]
+    [x for x in range(0,5)]            # [0, 1, 2, 3, 4]
 
-.. code-block:: python
+    set(x for x in range(0,5))         # {0, 1, 2, 3, 4}
+    {x for x in range(0,5)}            # {0, 1, 2, 3, 4}
 
-    set(x for x in range(0, 5))         # {0, 1, 2, 3, 4}
-    {x for x in range(0, 5)}            # {0, 1, 2, 3, 4}
+    dict((x,x) for x in range(0,5))    # {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
+    {x: x for x in range(0,5)}         # {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
 
-.. code-block:: python
+    tuple(x for x in range(0,5))       # (0, 1, 2, 3, 4)
+    (x for x in range(0,5))            # <generator object <genexpr> at 0x118c1aed0>
 
-    {x: x for x in range(0, 5)}         # {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
-
-.. code-block:: python
-
-    tuple(x for x in range(0, 5))       # (0, 1, 2, 3, 4)
-    (x for x in range(0, 5))            # <generator object <genexpr> at 0x1197032a0>
-
-.. code-block:: python
-
-    all(x for x in range(0, 5))         # False
-    any(x for x in range(0, 5))         # True
-    sum(x for x in range(0, 5))         # 10
+    all(x for x in range(0,5))         # False
+    any(x for x in range(0,5))         # True
+    sum(x for x in range(0,5))         # 10
 
 What is the difference?
 -----------------------
@@ -282,6 +273,11 @@ Built-in generators
 ``zip()``
 ---------
 .. code-block:: python
+    :caption: ``map()`` syntax
+
+    zip(<sequence>, <sequence>, ...)
+
+.. code-block:: python
 
     header = ['a', 'b', 'c']
     data = [1, 2, 3]
@@ -342,7 +338,7 @@ Built-in generators
 .. code-block:: python
     :caption: Show only even numbers
 
-    list(filter(lambda x: not x%2, data))
+    list(filter(lambda x: x % 2 == 0, data))
     # [2, 4, 6]
 
 .. code-block:: python
@@ -386,27 +382,35 @@ Generators vs. Comprehensions - iris
 ------------------------------------
 * Complexity level: medium
 * Lines of code to write: 40 lines
-* Estimated time of completion: 20 min
+* Estimated time of completion: 15 min
 * Solution: :download:`solution/generator_iris.py`
 
 :English:
-    .. todo:: English translation
+    #. Download :download:`data/iris.csv` and save as `generator_iris.csv`
+    #. Read data skipping header
+    #. Create function with returns all measurements for given species
+    #. Species will be passed as an ``str`` argument to the function
+    #. Implement solution using normal function
+    #. Implement solution using generator and ``yield`` keyword
+    #. Compare results of both using ``sys.getsizeof()``
+    #. What will happen if input data will be bigger?
 
 :Polish:
-    #. Zapisz dane :download:`data/iris.csv` do pliku "generator_iris.csv"
+    #. Pobierz :download:`data/iris.csv` i zapisz jako `generator_iris.csv`
     #. Zaczytaj dane pomijając nagłówek
     #. Napisz funkcję która zwraca wszystkie pomiary dla danego gatunku
-    #. Gatunek będzie podawany jako ``str`` do funkcji
+    #. Gatunek będzie podawany jako argument typu ``str`` do funkcji
     #. Zaimplementuj rozwiązanie wykorzystując zwykłą funkcję
     #. Zaimplementuj rozwiązanie wykorzystując generator i słówko kluczowe ``yield``
-    #. Porównaj wyniki jednego i drugiego rozwiązania przez użycie ``sys.getsizeof()``
+    #. Porównaj wyniki obu używając ``sys.getsizeof()``
+    #. Co się stanie, gdy ilość danych będzie większa?
 
 :The whys and wherefores:
-    * Wykorzystanie generatorów
-    * Odbieranie danych z lazy evaluation
-    * Porównanie wielkości struktur danych
-    * Parsowanie pliku
-    * Filtrowanie treści w locie
+    * Using generators
+    * Unpacking lazy evaluated code
+    * Comparing size of objects
+    * Parsing CSV file
+    * Filtering file content
 
 :Hint:
     .. code-block:: python
@@ -425,48 +429,28 @@ Generators vs. Comprehensions - passwd
 * Solution: :download:`solution/generator_passwd.py`
 
 :English:
-    .. todo:: English translation
+    #. Download :download:`data/hosts.txt` and save as `generator_iris.csv`
+    #. Iterating over lines, filter out comments, empty lines, etc.
+    #. Extract system accounts (users with UID [third field] is less than 1000)
+    #. Return list of system account logins
+    #. Implement solution using normal function
+    #. Implement solution using generator and ``yield`` keyword
+    #. Compare results of both using ``sys.getsizeof()``
+    #. What will happen if input data will be bigger?
 
 :Polish:
-    #. Napisz program, który wczyta plik z danymi wejściowymi (patrz sekcja input)
-    #. Przefiltruj linie, tak aby nie zawierały komentarzy (zaczynające się od ``#``) oraz pustych linii
-    #. Przefiltruj linie, aby wyciągnąć konta systemowe - użytkowników, którzy mają UID (trzecie pole) mniejsze niż 1000
+    #. Pobierz :download:`data/hosts.txt` i zapisz jako `hosts.txt`
+    #. Iterując po liniaj, odfiltruj komentarze, puste linie itp.
+    #. Wyciągnnij konta systemowe (użytkownicy z UID (trzecie pole) mniejszym niż 1000)
     #. Zwróć listę loginów użytkowników systemowych
     #. Zaimplementuj rozwiązanie wykorzystując zwykłą funkcję
     #. Zaimplementuj rozwiązanie wykorzystując generator i słówko kluczowe ``yield``
-    #. Porównaj wyniki jednego i drugiego rozwiązania przez użycie ``sys.getsizeof()``
-    #. Dlaczego różnice są tak niewielkie?
-    #. Co się stanie, gdy ilość danych się zwiększy?
+    #. Porównaj wyniki obu używając ``sys.getsizeof()``
+    #. Co się stanie, gdy ilość danych będzie większa?
 
 :The whys and wherefores:
-    * Wykorzystanie generatorów
-    * Odbieranie danych z lazy evaluation
-    * Porównanie wielkości struktur danych
-    * Parsowanie pliku
-    * Filtrowanie treści w locie
-
-:Input:
-    .. code-block:: text
-
-        ##
-        # User Database
-        #   - User name
-        #   - Encrypted password
-        #   - User ID number (UID)
-        #   - User's group ID number (GID)
-        #   - Full name of the user (GECOS)
-        #   - User home directory
-        #   - Login shell
-        ##
-
-        root:x:0:0:root:/root:/bin/bash
-        bin:x:1:1:bin:/bin:/sbin/nologin
-        daemon:x:2:2:daemon:/sbin:/sbin/nologin
-        adm:x:3:4:adm:/var/adm:/sbin/nologin
-        shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
-        halt:x:7:0:halt:/sbin:/sbin/halt
-        nobody:x:99:99:Nobody:/:/sbin/nologin
-        sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
-        peck:x:1000:1000:Max Peck:/home/peck:/bin/bash
-        jimenez:x:1001:1001:José Jiménez:/home/jimenez:/bin/bash
-        ivanovic:x:1002:1002:Ivan Иванович:/home/ivanovic:/bin/bash
+    * Using generators
+    * Unpacking lazy evaluated code
+    * Comparing size of objects
+    * Parsing CSV file
+    * Filtering file content

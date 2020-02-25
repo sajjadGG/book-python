@@ -402,14 +402,14 @@ Slicing text
 
 :English:
     #. For input data (see below)
-    #. Expected value is ``Jana III Sobieskiego``
-    #. Use only ``slice`` to clean each variable
+    #. Remove title and military rank in each variable
+    #. Use only ``slice`` to clean text
     #. Compare with output data (see below)
 
 :Polish:
     #. Dla danych wejściowych (patrz sekcja input)
-    #. Oczekiwana wartość ``Jana III Sobieskiego``
-    #. Wykorzystaj tylko ``slice`` do oczyszczenia każdej zmiennej
+    #. Usuń tytuł naukowy i stopień wojskowy z każdej zmiennej
+    #. Użyj tylko ``slice`` do oczyszczenia tekstu
     #. Porównaj wyniki z danymi wyjściowymi (patrz sekcja output)
 
 :Input:
@@ -423,6 +423,18 @@ Slicing text
         f = 'lt. col. ret. Melissa Lewis'
         g = 'dr n. med. Ryan Stone'
         h = 'Ryan Stone, MD-PhD'
+
+:Output:
+    .. code-block:: python
+
+        a = 'Mark Watney'
+        b = 'Jan Twardowski'
+        c = 'Jan Twardowski'
+        d = 'Jan Twardowski'
+        e = 'Mark Watney'
+        f = 'Melissa Lewis'
+        g = 'Ryan Stone'
+        h = 'Ryan Stone'
 
 :The whys and wherefores:
     * Variable definition
