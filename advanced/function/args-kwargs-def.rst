@@ -1,6 +1,6 @@
-****************************************************
-Defining function with arbitrary number of arguments
-****************************************************
+******************************
+Arbitrary Number of Parameters
+******************************
 
 
 Recap information about function parameters
@@ -25,8 +25,8 @@ Recap information about function parameters
     echo(a=1, 2)     # SyntaxError: positional argument follows keyword argument
 
 
-Arbitrary number of positional arguments
-========================================
+Positional Parameters
+=====================
 - ``*`` in this context, is not multiplication in mathematical sense
 - ``*`` is used for positional arguments
 - ``args`` is a convention, but you can use any name
@@ -67,8 +67,8 @@ Arbitrary number of positional arguments
     echo(1, 2, 3, 4, 5, 6)
 
 
-Arbitrary number of keyword arguments
-=====================================
+Keyword Parameters
+==================
 - ``**`` in this context, is not power in mathematical sense
 - ``**`` is used for keyword arguments
 - ``kwargs`` is a convention, but you can use any name
@@ -107,8 +107,8 @@ Arbitrary number of keyword arguments
     echo(1, 2, 3, d=7, e=8)
 
 
-Arbitrary number of positional and named arguments
-==================================================
+Positional and Keyword Parameters
+=================================
 .. code-block:: python
 
     def echo(a, b, c=0, *args, **kwargs):
@@ -158,87 +158,11 @@ Arbitrary number of positional and named arguments
     echo(1, 2, 3, 4, 5, 6, d=7, e=8)
 
 
-Keyword only
-============
-* All arguments after ``*`` is keyword only
-* Since Python 3.8 there will be ``/`` to indicate positional only arguments
+Examples
+========
 
-.. code-block:: python
-
-    def echo(a, b, c):
-         print(a, b, c)
-
-    echo(1, 2, 3)
-    echo(1, 2, 3)
-    echo(1, 2, 3)
-    echo(1, 2, 3)
-    echo(1, 2, 3)
-
-.. code-block:: python
-
-    def echo(a, *, b, c):
-        print(a)
-        print(b)
-
-    echo(1, b=2)
-    # 1
-    # 2
-
-    echo(1, 2)
-    # TypeError: echo() takes 1 positional argument but 2 were given
-
-    echo(1)
-    # TypeError: echo() missing 1 required keyword-only argument: 'b'
-
-.. code-block:: python
-
-    def echo(a, /, b, *, c):
-        print(a, b, c)
-
-    echo(1, 2, c=3)      # is valid
-    echo(1, 2, 3)        # TypeError: echo() takes 2 positional arguments but 3 were given
-    echo(1, b=2, c=3)    # TypeError: echo() takes 2 positional arguments but 1 positional arguments (and 2 keyword-only argument) were given
-
-.. code-block:: python
-
-    def add(a, b):
-        print(a+b)
-
-    add(1, 2)
-    add(1, b=2)
-    add(a=1, b=2)
-    add(b=2, a=1)
-
-
-    def add(a, *, b):
-        print(a+b)
-
-    add(1, 2)
-    add(1, b=2)
-    add(a=1, b=2)
-    add(b=2, a=1)
-
-
-    def add(a, /, b):
-        print(a+b)
-
-    add(1, 2)
-    add(1, b=2)
-    add(a=1, b=2)
-    add(b=2, a=1)
-
-
-    def add(a, b, /):
-        print(a+b)
-
-    add(1, 2)
-    add(1, b=2)
-    add(a=1, b=2)
-    add(b=2, a=1)
-
-
-Use cases
-=========
+Sum
+---
 .. code-block:: python
 
     def add(*args):
@@ -256,6 +180,8 @@ Use cases
     add(3, 1)        # 4
     add(1, 2, 3, 4)  # 10
 
+Kelvin to Celsius
+-----------------
 .. code-block:: python
     :caption: Converts arguments between different units
 
@@ -269,7 +195,8 @@ Use cases
     kelvin_to_celsius(1, 2, 3, 4, 5)
     # [274.15, 275.15, 276.15, 277.15, 278.15]
 
-
+HTML List Generator
+-------------------
 .. code-block:: python
     :caption: Generate HTML list from function arguments
 
@@ -289,20 +216,29 @@ Use cases
     # <li>orange</li>
     # </ul>
 
+Print
+-----
 .. code-block:: python
     :caption: Intuitive definition of ``print`` function
 
     def print(*values, sep=' ', end='\n', ...):
         return sep.join(values) + end
 
+Line Parser
+-----------
 .. code-block:: python
 
     def parse(line):
-        group_name, *members = line.split(',')
-        return group_name.upper(), *members
+        mission, *crew = line.split(',')
+        crew = ' and '.join(name.title() for name in crew)
+        print(mission.upper(), crew)
 
-    parse('astronauts,twardowski,watney,ivanovic')
-    # ('ASTRONAUTS', 'twardowski', 'watney', 'ivanovic')
+    parse('ares3,watney,lewis,vogel,johanssen')
+    # ARES3 Watney and Lewis and Vogel and Johanssen
+
+    parse('apollo18,twardowski,ivanovic')
+    # APOLLO18 Twardowski and Ivanovic
+
 
 Assignments
 ===========

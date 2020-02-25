@@ -65,3 +65,9 @@ Absolute
 
     abs(3+4j)
     # 5.0
+
+
+``cmath``
+=========
+* mathematical functions for complex numbers
+* Python complex number z is stored internally using rectangular or Cartesian coordinates

@@ -35,8 +35,9 @@ Constants
 
     import math
 
-    math.pi
-    math.e
+    math.pi         # The mathematical constant π = 3.141592…, to available precision.
+    math.e          # The mathematical constant e = 2.718281…, to available precision.
+    math.tau        # The mathematical constant τ = 6.283185…, to available precision.
 
 Degree/Radians Conversion
 -------------------------
@@ -44,8 +45,8 @@ Degree/Radians Conversion
 
     import math
 
-    math.degrees(x)
-    math.radians(x)
+    math.degrees(x)     # Convert angle x from radians to degrees.
+    math.radians(x)     # Convert angle x from degrees to radians.
 
 Rounding to lower
 -----------------
@@ -78,7 +79,8 @@ Logarithms
     math.log(x)     # if base is not set, then ``e``
     math.log(x, base=2)
     math.log(x, base=10)
-    math.log10()
+    math.log10()    # Return the base-10 logarithm of x. This is usually more accurate than log(x, 10).
+    math.log2(x)    # Return the base-2 logarithm of x. This is usually more accurate than log(x, 2).
 
     math.exp(x)
 
@@ -88,15 +90,20 @@ Linear Algebra
 
     import math
 
-    math.sqrt()
-    math.pow(x, y)
+    math.sqrt(x)     # Return the square root of x.
+    math.pow(x, y)   # Return x raised to the power y.
 
 .. code-block:: python
 
     import math
 
-    math.hypot()    # 2D, since Python 3.8 also multiple dimensions
-    math.dist()     # Euclidean distance, Since Python 3.8
+    math.hypot(*coordinates)    # 2D, since Python 3.8 also multiple dimensions
+    math.dist(p, q)             # Euclidean distance, since Python 3.8
+    math.gcd(*integers)         # Greatest common divisor
+    math.lcm(*integers)         # Least common multiple, since Python 3.9
+    math.perm(n, k=None)        # Return the number of ways to choose k items from n items without repetition and with order.
+    math.prod(iterable, *, start=1)  # Calculate the product of all the elements in the input iterable. The default start value for the product is 1., since Python 3.8
+    math.remainder(x, y)        # Return the IEEE 754-style remainder of x with respect to y.
 
 Trigonometry
 ------------
@@ -108,36 +115,36 @@ Trigonometry
     math.cos()
     math.tan()
 
-.. code-block:: python
-
-    import math
-
-    math.sinh()
-    math.cosh()
-    math.tanh()
-
-.. code-block:: python
-
-    import math
-
     math.asin(x)
     math.acos(x)
     math.atan(x)
     math.atan2(x)
 
 .. code-block:: python
+    :caption: Hyperbolic functions
 
     import math
 
-    math.asinh(x)
-    math.acosh(x)
+    math.sinh()         # Return the hyperbolic sine of x.
+    math.cosh()         # Return the hyperbolic cosine of x.
+    math.tanh()         # Return the hyperbolic tangent of x.
+
+    math.asinh(x)       # Return the inverse hyperbolic sine of x.
+    math.acosh(x)       # Return the inverse hyperbolic cosine of x.
+    math.atanh(x)       # Return the inverse hyperbolic tangent of x.
 
 Infinity
 --------
 .. code-block:: python
 
-    from math import isinf
+    float('inf')                # inf
+    float('-inf')               # -inf
+    float('Infinity')           # inf
+    float('-Infinity')          # -inf
 
+.. code-block:: python
+
+    from math import isinf
 
     isinf(float('inf'))         # True
     isinf(float('Infinity'))    # True

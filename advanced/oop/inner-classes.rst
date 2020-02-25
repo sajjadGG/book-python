@@ -6,9 +6,6 @@ Inner Classes
 .. code-block:: python
 
     class User:
-        class DoesNotExists(Exception):
-            pass
-
         def __init__(self, firstname, lastname):
             self.firstname = firstname
             self.lastname = lastname
@@ -16,6 +13,9 @@ Inner Classes
         def find_in_databse(self):
             if not in DATABASE:
                 raise User.DoesNotExists
+
+        class DoesNotExists(Exception):
+            pass
 
 
     try:

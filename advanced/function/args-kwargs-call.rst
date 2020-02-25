@@ -1,10 +1,10 @@
-**********************
-Passing many arguments
-**********************
+*****************************
+Arbitrary Number of Arguments
+*****************************
 
 
-Arbitrary number of positional arguments
-========================================
+Positional arguments
+====================
 - ``*`` in this context, is not multiplication in mathematical sense
 - ``*`` is used for positional arguments
 - ``args`` is a convention, but you can use any name
@@ -32,8 +32,8 @@ Arbitrary number of positional arguments
     echo(*args)
 
 
-Arbitrary number of keyword arguments
-=====================================
+Keyword Arguments
+=================
 - ``**`` in this context, is not power in mathematical sense
 - ``**`` is used for keyword arguments
 - ``kwargs`` is a convention, but you can use any name
@@ -61,8 +61,8 @@ Arbitrary number of keyword arguments
     echo(**kwargs)
 
 
-Arbitrary number of positional and keyword arguments
-====================================================
+Positional and Keyword Arguments
+================================
 .. code-block:: python
     :caption: Positional and keyword arguments passed directly
 

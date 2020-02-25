@@ -7,7 +7,6 @@ Entry Test
     :name: Advanced Entry Test
 
     /advanced/about/entry.rst
-    /advanced/about/dragon.rst
 
 *********
 Functions
@@ -17,10 +16,31 @@ Functions
     :caption: Functions
     :name: Advanced Functions
 
+    /advanced/function/args-kwargs-def.rst
+    /advanced/function/args-kwargs-call.rst
+    /advanced/function/parameter-syntax.rst
     /advanced/function/generator.rst
     /advanced/function/first-class.rst
     /advanced/function/closures.rst
-    /advanced/function/decorator.rst
+
+**********
+Decorators
+**********
+.. toctree::
+    :maxdepth: 1
+    :caption: Decorators
+    :name: Decorators
+
+    /advanced/decorators/about.rst
+    /advanced/decorators/function-decorator-functions.rst
+    /advanced/decorators/function-decorator-classes.rst
+    /advanced/decorators/function-decorator-methods.rst
+    /advanced/decorators/class-decorator-functions.rst
+    /advanced/decorators/class-decorator-classes.rst
+    /advanced/decorators/class-decorator-methods.rst
+    /advanced/decorators/decorator-arguments.rst
+    /advanced/decorators/functools.rst
+
 
 ************
 OOP Paradigm
@@ -30,6 +50,8 @@ OOP Paradigm
     :caption: OOP Paradigm
     :name: Advanced OOP Paradigm
 
+    /advanced/oop-paradigm/access-modifiers.rst
+    /advanced/oop-paradigm/operator-overload.rst
     /advanced/oop-paradigm/fields-static-dynamic.rst
     /advanced/oop-paradigm/composition.rst
     /advanced/oop-paradigm/method-resolution-order.rst
@@ -66,6 +88,7 @@ Object Oriented Programming
     :caption: OOP Advanced
     :name: Advanced Object Oriented Programming
 
+    /advanced/oop/inner-classes.rst
     /advanced/oop/constructor.rst
     /advanced/oop/placeholder-class.rst
     /advanced/oop/object-identity.rst

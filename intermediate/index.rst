@@ -8,67 +8,6 @@ Entry Test
 
     /intermediate/exam/entry.rst
 
-****************
-Type Annotations
-****************
-.. toctree::
-    :maxdepth: 1
-    :caption: Type Annotations
-    :name: Intermediate Type Annotations
-
-    /intermediate/type-annotation/types.rst
-    /intermediate/type-annotation/introspection.rst
-    /intermediate/type-annotation/checking.rst
-    /intermediate/type-annotation/annotating.rst
-
-********
-Builtins
-********
-.. toctree::
-    :maxdepth: 1
-    :caption: Builtins
-    :name: Intermediate Builtins
-
-    /intermediate/builtin/functions.rst
-    /intermediate/builtin/keywords.rst
-    /intermediate/builtin/print.rst
-
-*********
-Functions
-*********
-.. toctree::
-    :maxdepth: 1
-    :caption: Functions
-    :name: Intermediate Functions
-
-    /intermediate/function/defining.rst
-    /intermediate/function/calling.rst
-
-*******
-Looping
-*******
-.. toctree::
-    :maxdepth: 1
-    :caption: Builtins
-    :name: Intermediate Looping
-
-    /intermediate/looping/comprehensions.rst
-    /intermediate/looping/else.rst
-
-***************************
-Object Oriented Programming
-***************************
-.. toctree::
-    :maxdepth: 1
-    :caption: Object Oriented Programming
-    :name: Intermediate Object Oriented Programming
-
-    /intermediate/oop/access-modifiers.rst
-    /intermediate/oop/enum.rst
-    /intermediate/oop/operator-overload.rst
-    /intermediate/oop/dataclass.rst
-    /intermediate/oop/inner-classes.rst
-
 ********************
 Modules and Packages
 ********************
@@ -83,6 +22,69 @@ Modules and Packages
     /intermediate/module/tools.rst
     /intermediate/module/zipapp.rst
     /intermediate/module/distributing.rst
+
+********
+Builtins
+********
+.. toctree::
+    :maxdepth: 1
+    :caption: Builtins
+    :name: Intermediate Builtins
+
+    /intermediate/builtin/functions.rst
+    /intermediate/builtin/keywords.rst
+    /intermediate/builtin/print.rst
+
+*******
+Looping
+*******
+.. toctree::
+    :maxdepth: 1
+    :caption: Builtins
+    :name: Intermediate Looping
+
+    /intermediate/looping/comprehensions.rst
+    /intermediate/looping/else.rst
+
+****************
+Type Annotations
+****************
+.. toctree::
+    :maxdepth: 1
+    :caption: Type Annotations
+    :name: Intermediate Type Annotations
+
+    /intermediate/type-annotation/types.rst
+    /intermediate/type-annotation/introspection.rst
+    /intermediate/type-annotation/checking.rst
+    /intermediate/type-annotation/annotating.rst
+
+***************************
+Object Oriented Programming
+***************************
+.. toctree::
+    :maxdepth: 1
+    :caption: Object Oriented Programming
+    :name: Intermediate Object Oriented Programming
+
+    /intermediate/oop/enum.rst
+    /intermediate/oop/dataclass.rst
+
+***********
+Mathematics
+***********
+.. toctree::
+    :maxdepth: 1
+    :caption: Mathematics
+    :name: Intermediate Mathematics
+
+    /intermediate/math/math.rst
+    /intermediate/math/statistics.rst
+    /intermediate/math/random.rst
+    /intermediate/math/fractions.rst
+    /intermediate/math/precision.rst
+    /intermediate/math/plotting.rst
+    /intermediate/math/complex.rst
 
 **********************
 Datetime and Timezones
@@ -152,22 +154,6 @@ Regular Expressions
     /intermediate/regular-expressions/greedy.rst
     /intermediate/regular-expressions/standards.rst
     /intermediate/regular-expressions/references/index.rst
-
-***********
-Mathematics
-***********
-.. toctree::
-    :maxdepth: 1
-    :caption: Mathematics
-    :name: Intermediate Mathematics
-
-    /intermediate/math/math.rst
-    /intermediate/math/statistics.rst
-    /intermediate/math/random.rst
-    /intermediate/math/fractions.rst
-    /intermediate/math/precision.rst
-    /intermediate/math/plotting.rst
-    /intermediate/math/complex.rst
 
 ****************
 Operating System
