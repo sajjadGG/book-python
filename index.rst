@@ -7,7 +7,7 @@ About
 .. toctree::
     :maxdepth: 1
 
-    /LICENSE.txt
+    /LICENSE.rst
     /about/references.rst
 
 *************
@@ -21,16 +21,16 @@ Python Basics
 
     /basics/index.rst
 
-*******************
-Python Intermediate
-*******************
+***********************
+Python Standard Library
+***********************
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Python Intermediate
-    :name: Intermediate
+    :caption: Python Standard Library
+    :name: Stdlib
 
-    /intermediate/index.rst
+    /stdlib/index.rst
 
 ***************
 Python Advanced

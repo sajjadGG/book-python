@@ -1,6 +1,6 @@
-*******
-Threads
-*******
+**************
+Multithreading
+**************
 
 
 Threads vs processes

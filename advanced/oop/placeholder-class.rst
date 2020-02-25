@@ -1,5 +1,5 @@
 *****************
-Placeholder class
+Placeholder Class
 *****************
 
 

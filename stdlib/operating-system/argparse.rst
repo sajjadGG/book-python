@@ -1,6 +1,6 @@
-****************************
-Commandline argument parsing
-****************************
+*********************
+Commandline Arguments
+*********************
 
 
 ``argparse``

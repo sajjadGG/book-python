@@ -1,5 +1,5 @@
 *************************
-New and Old style classes
+New and Old Style Classes
 *************************
 
 

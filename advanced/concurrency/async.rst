@@ -1,6 +1,6 @@
-***********
-Concurrency
-***********
+*****************
+Async Programming
+*****************
 
 * Promises and Futures
 * ``yield from``
