@@ -375,6 +375,27 @@ Built-in generators
     # {0: 'a', 1: 'b', 2: 'c'}
 
 
+Generator as Iterator
+=====================
+.. code-block:: python
+
+    a = (x for x in range(0,3))
+
+    next(a)
+    # 0
+
+    next(a)
+    # 1
+
+    next(a)
+    # 2
+
+    next(a)
+    # Traceback (most recent call last):
+    #   File "<input>", line 1, in <module>
+    # StopIteration
+
+
 Assignments
 ===========
 
