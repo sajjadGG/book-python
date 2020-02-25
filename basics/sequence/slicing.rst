@@ -403,12 +403,14 @@ Slicing text
 :English:
     #. For input data (see below)
     #. Remove title and military rank in each variable
+    #. Remove also whitespaces at the beginning and end of a text
     #. Use only ``slice`` to clean text
     #. Compare with output data (see below)
 
 :Polish:
     #. Dla danych wejściowych (patrz sekcja input)
     #. Usuń tytuł naukowy i stopień wojskowy z każdej zmiennej
+    #. Usuń również białe znaki na początku i końcu tekstu
     #. Użyj tylko ``slice`` do oczyszczenia tekstu
     #. Porównaj wyniki z danymi wyjściowymi (patrz sekcja output)
 
