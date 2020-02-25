@@ -33,8 +33,10 @@ What is closure?
 .. code-block:: python
 
     def outer(message):
+
         def inner():
             print(message)
+
         return inner
 
 
@@ -61,97 +63,101 @@ Example
 
     data = [1, 2, 3]
 
-    def add():
-        print('inside', data)
+    def outer():
+        print('inner', data)
 
-    add()
-    # inside [1, 2, 3]
+    outer()
+    # inner [1, 2, 3]
 
-    print('outside', data)
-    # outside [1, 2, 3]
+    print('outer', data)
+    # outer [1, 2, 3]
 
 .. code-block:: python
     :caption: Variables in functions can shadow outer scope. Outer scope is restored, when function returns
 
     data = [1,2,3]
 
-    def add():
+    def outer():
         data = ['a', 'b', 'c']
-        print('inside', data)
+        print('inner', data)
 
-    add()
-    # inside ['a', 'b', 'c']
+    outer()
+    # inner ['a', 'b', 'c']
 
-    print('outside', data)
-    # outside [1, 2, 3]
+    print('outer', data)
+    # outer [1, 2, 3]
 
 .. code-block:: python
     :caption: Functions can modify outer scope
 
     data = [1,2,3]
 
-    def add():
+    def outer():
         global data
         data = ['a', 'b', 'c']
-        print('inside', data)
+        print('inner', data)
 
-    add()
-    # inside ['a', 'b', 'c']
+    outer()
+    # inner ['a', 'b', 'c']
 
-    print('outside', data)
-    # outside ['a', 'b', 'c']
-
-.. code-block:: python
-    :caption: ``inside`` function (closure) has access to its outer scope, that is ``outside`` function.
-
-    def outside():
-        data = ['a', 'b', 'c']
-
-        def inside():
-            print('inside', data)
-
-        inside()
-        print('outside', data)
-
-    outside()
-    # inside ['a', 'b', 'c']
-    # outside ['a', 'b', 'c']
+    print('outer', data)
+    # outer ['a', 'b', 'c']
 
 .. code-block:: python
+    :caption: ``inner`` function (closure) has access to its outer scope, that is ``outer`` function.
 
-    def outside():
+    def outer():
         data = ['a', 'b', 'c']
 
-        def inside():
-            print('inside', data)
+        def inner():
+            print('inner', data)
 
-        return inside
+        inner()
+        print('outer', data)
+
+    outer()
+    # inner ['a', 'b', 'c']
+    # outer ['a', 'b', 'c']
+
+.. code-block:: python
+
+    def outer():
+        data = ['a', 'b', 'c']
+
+        def inner():
+            print('inner', data)
+
+        return inner
 
 
-    my_ptr = outside()
+    my_ptr = outer()
 
     print(my_ptr)
-    # <function outside.<locals>.inside at 0x11bfb8560>
+    # <function outer.<locals>.inner at 0x11bfb8560>
 
     my_ptr()
-    # inside ['a', 'b', 'c']
+    # inner ['a', 'b', 'c']
 
 .. code-block:: python
 
-    def outside():
+    def outer():
         data = ['a', 'b', 'c']
 
-        def inside():
-            print('inside', data)
+        def inner():
+            print('inner', data)
 
-        return bbb
+        return inner
 
 
-    my_ptr = add()
-    del add
+    my_ptr = outer()
 
     print(my_ptr)
-    # <function add.<locals>.bbb at 0x11bfb85f0>
+    # <function outer.<locals>.inner at 0x10617c8b0>
+
+    del outer
+
+    print(my_ptr)
+    # <function outer.<locals>.inner at 0x10617c940>
 
     my_ptr()
-    # inside ['a', 'b', 'c']
+    # inner ['a', 'b', 'c']

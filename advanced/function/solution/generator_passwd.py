@@ -1,6 +1,5 @@
 import sys
 
-
 FILE = 'etc-passwd.txt'
 
 
