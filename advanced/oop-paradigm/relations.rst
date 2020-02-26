@@ -84,3 +84,52 @@ Basic Address Book
             {"first_name": "Alex", "last_name": "Vogel", "addresses": [
                 {"street": "Linder Hoehe", "city": "Köln", "post_code": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}
         ]
+
+Object serialization to CSV
+---------------------------
+* Complexity level: hard
+* Lines of code to write: 60 lines
+* Estimated time of completion: 20 min
+* Solution: :download:`solution/relations_flat.py`
+
+:English:
+    #. Using ``csv.DictWriter()`` save contacts from addressbook to CSV file
+    #. How to write relations to CSV file (contact has many addresses)?
+    #. Recreate object structure from CSV file
+
+:Polish:
+    #. Za pomocą ``csv.DictWriter()`` zapisz kontakty z książki adresowej w pliku
+    #. Jak zapisać w CSV dane relacyjne (kontakt ma wiele adresów)?
+    #. Odtwórz strukturę obiektów na podstawie danych odczytanych z pliku
+
+:Non functional requirements:
+    #. All fields must be enclosed by double quote ``"`` character
+    #. Use ``;`` to separate columns
+    #. Use ``utf-8`` encoding
+    #. Use Unix newline
+
+:Input:
+    .. code-block:: python
+
+       class Contact:
+            def __init__(self, first_name, last_name, addresses=()):
+                self.first_name = first_name
+                self.last_name = last_name
+                self.addresses = addresses
+
+
+        class Address:
+            def __init__(self, location, city):
+                self.location = location
+                self.city = city
+
+
+        INPUT = [
+            Contact(first_name='Jan', last_name='Twardowski', addresses=(
+                Address(location='Johnson Space Center', city='Houston, TX'),
+                Address(location='Kennedy Space Center', city='Merritt Island, FL'),
+                Address(location='Jet Propulsion Laboratory', city='Pasadena, CA'),
+            )),
+            Contact(first_name='Mark', last_name='Watney'),
+            Contact(first_name='Melissa', last_name='Lewis', addresses=()),
+        ]
