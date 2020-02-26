@@ -26,8 +26,8 @@ Cannot calculate
 ----------------
 * Mean
 
-Example
--------
+Examples
+--------
 * Colors
 * Weather
 * Player numbers in football (cannot order, or cannot say that player 8 is better than 11)
@@ -47,8 +47,8 @@ Cannot calculate
 ----------------
 * Distance between things
 
-Example
--------
+Examples
+--------
 * Runners at the finish (they have oder, but position doesn't say about the distance)
 * Humidity
 * Rating system (5 stars movie is better than 4 stars, but there is no information how much better)
@@ -91,8 +91,8 @@ Can Calculate
 * maximum
 * T-test
 
-Example
--------
+Examples
+--------
 * Kelvin temperature
 * Wind
 * Number of children

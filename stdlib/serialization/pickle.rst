@@ -171,8 +171,8 @@ Load from file
     print(OUTPUT)
 
 
-Advanced Example
-================
+Examples
+========
 .. code-block:: python
     :caption: Advanced Example
 

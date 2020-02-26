@@ -450,8 +450,8 @@ Length
     # 3
 
 
-Example
-=======
+Examples
+========
 .. code-block:: python
 
     git = {

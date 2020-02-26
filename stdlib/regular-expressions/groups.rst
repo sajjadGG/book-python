@@ -26,8 +26,8 @@ Example:
     * ``(.+) \1`` not matches ``thethe`` (note the space after the group)
 
 
-Example
-=======
+Examples
+========
 .. code-block:: python
     :caption: Usage of group in ``re.match()``
 

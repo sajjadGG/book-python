@@ -113,8 +113,8 @@ File handling
         output.write(content)
 
 
-Example
-=======
+Examples
+========
 .. code-block:: python
 
     import argparse

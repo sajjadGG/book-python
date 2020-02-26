@@ -9,8 +9,8 @@ About
 * Replace matched substring with text
 
 
-Example
-=======
+Examples
+========
 .. code-block:: python
     :caption: Usage of ``re.sub()``
 

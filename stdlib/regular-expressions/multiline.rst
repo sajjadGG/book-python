@@ -18,8 +18,8 @@ About
     "``re.DOTALL``",     "``.`` matches newlines"
 
 
-Example
-=======
+Examples
+========
 .. code-block:: python
     :caption: Usage of regexp
 

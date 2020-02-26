@@ -126,8 +126,8 @@ Importing from own modules
     from game import run
 
 
-Example
-=======
+Examples
+========
 .. code-block:: text
 
     game

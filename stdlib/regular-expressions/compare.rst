@@ -3,8 +3,8 @@ Regexp Compare
 **************
 
 
-Example
-=======
+Examples
+========
 .. code-block:: python
     :caption: Comparision between ``re.match()``, ``re.search()`` and ``re.findall()``
 

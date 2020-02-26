@@ -50,8 +50,8 @@ From command line
     $ python -m unittest -v example.py
 
 
-Example
-=======
+Examples
+========
 
 Example 1
 ---------

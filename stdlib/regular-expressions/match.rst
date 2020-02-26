@@ -10,8 +10,8 @@ About
 * Checking if user input is correct (email, url, NIP, VAT ID, PESEL)
 
 
-Example
-=======
+Examples
+========
 .. code-block:: python
     :caption: Usage of ``re.match()``
 

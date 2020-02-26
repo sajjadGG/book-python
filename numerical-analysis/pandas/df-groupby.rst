@@ -338,8 +338,8 @@ Last
     #         sms  2015-03-14 00:16:00      1.000     world        world
 
 
-Example
-=======
+Examples
+========
 .. code-block:: python
 
     list(df.groupby(['month']).groups.keys())

@@ -256,8 +256,8 @@ Other methods
     "``cummin``", "Cumulative minimum"
 
 
-Example
-=======
+Examples
+========
 .. code-block:: python
 
     import pandas as pd

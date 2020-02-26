@@ -9,8 +9,8 @@ About
 * ``re.finditer()``
 
 
-Example
-=======
+Examples
+========
 .. code-block:: python
     :caption: Usage of ``re.findall()`` and ``re.finditer()``
 

@@ -83,8 +83,8 @@ Use case
     Calculator.sub(8, 4)
 
 
-Example
-=======
+Examples
+========
 .. code-block:: python
     :caption: `HabitatOS <https://www.habitatos.space>`_ Z-Wave sensor model
 

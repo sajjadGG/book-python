@@ -306,8 +306,8 @@ Parsing dates
     print(output)
     # 1957-10-04 19:28:34
 
-Example
-=======
+Examples
+========
 .. code-block:: python
 
     from datetime import datetime

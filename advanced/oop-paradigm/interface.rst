@@ -29,8 +29,8 @@ When use it?
 ============
 
 
-Example
-=======
+Examples
+========
 .. code-block:: python
     :caption: Interfaces
 

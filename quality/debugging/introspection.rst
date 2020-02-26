@@ -290,9 +290,8 @@ Introspecting Docstrings
     # 'logs-in to the server'
 
 
-Example
-=======
-
+Examples
+========
 .. code-block:: python
 
     import settings

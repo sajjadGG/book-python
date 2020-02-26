@@ -23,8 +23,8 @@ Builtin Descriptor Object Examples
 * functions in general
 
 
-Example
-=======
+Examples
+========
 
 Outside class
 -------------

@@ -332,8 +332,8 @@ to disk. Note that there are several useful flags we'll show below:
 
     fig.savefig('sales.png', transparent=False, dpi=80, bbox_inches="tight")
 
-Assignment
-==========
+Assignments
+===========
 
 Iris transformations
 --------------------

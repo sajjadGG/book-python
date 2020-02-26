@@ -43,8 +43,8 @@ Main Structure
     </definitions>
 
 
-Example
--------
+Examples
+--------
 * In this example the <portType> element defines "glossaryTerms" as the name of a port, and "getTerm" as the name of an operation.
 * The "getTerm" operation has an input message called "getTermRequest" and an output message called "getTermResponse".
 * The <message> elements define the parts of each message and the associated data types.

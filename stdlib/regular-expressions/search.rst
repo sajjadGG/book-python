@@ -9,8 +9,8 @@ About
 * Searches if pattern contains a string
 
 
-Example
-=======
+Examples
+========
 .. code-block:: python
     :caption: Usage of ``re.search()``
 

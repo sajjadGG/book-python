@@ -9,8 +9,8 @@ About
 * Used when pattern is reused (especially in the loop)
 
 
-Example
-=======
+Examples
+========
 .. code-block:: python
     :caption: Compiles at every loop iteration, and then matches
     :emphasize-lines: 15

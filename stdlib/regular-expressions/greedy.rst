@@ -21,8 +21,8 @@ About
     "``+?``", "one or more (non greedy)"
 
 
-Example
-=======
+Examples
+========
 .. code-block:: python
     :caption: Usage of greedy and non-greedy search in ``re.findall()``
 

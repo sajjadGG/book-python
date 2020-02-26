@@ -84,8 +84,8 @@ Objects
     type(type)      # <class 'type'>
 
 
-Example
-=======
+Examples
+========
 .. code-block:: python
 
     class Iris:

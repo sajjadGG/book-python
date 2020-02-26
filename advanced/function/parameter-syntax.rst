@@ -68,8 +68,8 @@ Positional and Keyword parameters
     echo(1, b=2, c=3)       # 1 2 3
     echo(a=1, b=2, c=3)     # TypeError: echo() got some positional-only arguments passed as keyword arguments: 'a'
 
-Example
-=======
+Examples
+========
 .. code-block:: python
 
     def pow(x, y, z=None, /):

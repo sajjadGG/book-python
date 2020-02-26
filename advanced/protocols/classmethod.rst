@@ -14,8 +14,8 @@ When use it?
 ============
 
 
-Example
-=======
+Examples
+========
 .. code-block:: python
     :emphasize-lines: 8-11,22,25,31,32
 

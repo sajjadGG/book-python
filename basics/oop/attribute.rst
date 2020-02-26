@@ -135,8 +135,8 @@ Get all dynamic fields and values
     #  'species': 'setosa'}
 
 
-Assignment
-==========
+Assignments
+===========
 
 Data Modeling
 -------------

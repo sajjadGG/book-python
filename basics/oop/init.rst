@@ -234,8 +234,8 @@ Checking values
     # ValueError: Temperature must be greater than 0
 
 
-Assignment
-==========
+Assignments
+===========
 
 Classes and instances
 ---------------------

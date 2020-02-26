@@ -184,8 +184,8 @@ Variance
     # 1.25
 
 
-Example
-=======
+Examples
+========
 .. code-block:: python
 
     temperature_feb = NormalDist.from_samples([4, 12, -3, 2, 7, 14])

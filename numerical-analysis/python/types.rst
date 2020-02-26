@@ -39,8 +39,8 @@ Converting to ``int``
     int('13.37')            # ValueError: invalid literal for int() with base 10: '1.23'
     int('-13.37')           # ValueError: invalid literal for int() with base 10: '-1.23'
 
-Assignment
-----------
+Assignments
+-----------
 * Complexity level: easy
 * Lines of code to write: 12 lines
 * Estimated time of completion: 5 min
@@ -116,8 +116,8 @@ Converting to ``float``
     float('13,37')          # ValueError: could not convert string to float: '13,37'
     float('-13,37')         # ValueError: could not convert string to float: '-13,37'
 
-Assignment
-----------
+Assignments
+-----------
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
@@ -327,8 +327,8 @@ Methods
     len('Jan')      # 3
     len('')         # 0
 
-Assignment
-----------
+Assignments
+-----------
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 3 min

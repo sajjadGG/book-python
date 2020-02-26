@@ -207,8 +207,8 @@ Wyciszanie logowania
     log.debug('to jest moja debugowa wiadomosc')
 
 
-Assignment
-==========
+Assignments
+===========
 
 Own ``doctest``
 ---------------

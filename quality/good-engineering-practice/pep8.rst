@@ -837,8 +837,8 @@ Configuration
     ignore = E402,W391
 
 
-Assignment
-==========
+Assignments
+===========
 
 Cleanup your file
 -----------------

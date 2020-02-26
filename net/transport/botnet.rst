@@ -3,8 +3,8 @@ Mini Botnet
 ***********
 
 
-Assignment
-==========
+Assignments
+===========
 
 Mini Botnet
 -----------

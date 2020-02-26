@@ -138,8 +138,8 @@ SFTP
 
     $ pip install fabric
 
-Example
--------
+Examples
+--------
 .. code-block:: python
 
     from fabric.api import *

@@ -56,8 +56,8 @@ What is closure?
         return g
 
 
-Example
-=======
+Examples
+========
 .. code-block:: python
     :caption: Functions has access to the outer scope
 

@@ -96,8 +96,8 @@ pip-tools
 
 ``pip-compile`` will produce your ``requirements.txt``, with all dependencies (and all underlying dependencies) frozen. You should put ``requirements.txt`` under version control.
 
-Example
--------
+Examples
+--------
 .. code-block:: text
     :caption: requirements.in
 

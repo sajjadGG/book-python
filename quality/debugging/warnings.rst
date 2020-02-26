@@ -36,8 +36,8 @@ Running
       warnings.warn('You should english name ``sum()``.', PendingDeprecationWarning)
 
 
-Example
-=======
+Examples
+========
 .. code-block:: python
 
     import warnings

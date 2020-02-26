@@ -9,8 +9,8 @@ About
 * Split text by pattern
 
 
-Example
-=======
+Examples
+========
 .. code-block:: python
     :caption: Usage of ``re.split()``
 
