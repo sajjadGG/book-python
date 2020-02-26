@@ -175,7 +175,7 @@ Builtin Functions and Keywords
     # 170
 
     str(jose)
-    # 'Jose Jimenez'
+    # 'My name... Jose Jimenez'
 
     print(jose)
     # My name... Jose Jimenez
@@ -183,14 +183,14 @@ Builtin Functions and Keywords
 Accessors Overload
 ------------------
 .. csv-table:: Operator Overload
-    :header: "Operator", "Method"
+    :header: "Operator", "Method", "Description"
     :widths: 35, 65
 
     "``a(b)``",         "``a.__call__(b)``"
-    "``a[b] = 10``",    "``a.__setitem__(b, 10)``"
     "``a[b]``",         "``a.__getitem__(b)``"
+    "``a[b]``",         "``a.__missing__(b)``", "(when ``b`` is not in ``a``)"
+    "``a[b] = 10``",    "``a.__setitem__(b, 10)``"
     "``b in a``",       "``a.__contains__(b)``"
-    "``a[b]`` (when ``b`` is not in ``a``)",         "``a.__missing__(b)``"
 
 .. code-block:: python
 
