@@ -137,7 +137,7 @@ Control Statements
 
 .. code-block:: python
 
-    crew = None
+    name = None
 
     if not name:
         print('Name is empty')
@@ -183,9 +183,9 @@ Classification of blood pressure in adults
 
 :Polish:
     #. Tabela zawiera klasyfikację danych wejściowych (patrz sekcja input)
-    #. Klasyfikacja ciśnienia krwi wg. American Heart Association
+    #. Klasyfikacja ciśnienia krwi wg American Heart Association
     #. Użytkownik wprowadza ciśnienie krwi w formacie ``XXX/YY`` lub ``XXX/YYY``
-    #. Użtkownik nie będzie wprowadzał danych niepoprawnych
+    #. Użytkownik nie będzie wprowadzał danych niepoprawnych
     #. Format danych:
 
         - ``XXX: int`` to wartość ciśnienia skurczowego (ang. *systolic*)

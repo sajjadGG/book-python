@@ -161,7 +161,7 @@ Inline ``if``
 .. code-block:: python
     :caption: Normal ``if``
 
-    agency = 'Russia'
+    country = 'Russia'
 
     if country == 'Russia':
         job = 'cosmonaut'
@@ -171,9 +171,9 @@ Inline ``if``
 .. code-block:: python
     :caption: One line version
 
-    agency = 'Russia'
+    country = 'Russia'
 
-    job = 'cosmonaut' if conutry == 'Russia' else 'astronaut'
+    job = 'cosmonaut' if country == 'Russia' else 'astronaut'
 
 
 ``elif``
