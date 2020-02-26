@@ -9,8 +9,8 @@ Syntax
 ======
 * This are not static fields!
 * Dataclasses require Type Annotations
-* Introduced in Pyton 3.7
-* Backported to Python 3.6 via ``pip install dataclasses``
+* Introduced in Python 3.7
+* Backported to Python 3.6 via ``python3 -m pip install dataclasses``
 
 
 Examples
@@ -19,12 +19,23 @@ Examples
     :caption: Defining classes
 
     class Point:
-        def __init__(self, x=0, y=0, z=0):
+        def __init__(self, x, y, z=0):
             self.x = x
             self.y = y
             self.z = z
 
-    p = Point(x=10, y=20, z=30)
+
+    p0 = Point()
+    # TypeError: __init__() missing 2 required positional arguments: 'x' and 'y'
+
+    p1 = Point(10)
+    # TypeError: __init__() missing 1 required positional argument: 'y'
+
+    p2 = Point(10, 20)
+    p3 = Point(10, 20, 30)
+    p4 = Point(10, 20, z=30)
+    p5 = Point(10, 20, z=30)
+    p6 = Point(x=10, y=20, z=30)
 
 .. code-block:: python
     :caption: Defining dataclasses
@@ -36,9 +47,20 @@ Examples
     class Point:
         x: int
         y: int
-        z: int
+        z: int = 0
 
-    p = Point(x=10, y=20, z=30)
+
+    p0 = Point()
+    # TypeError: __init__() missing 2 required positional arguments: 'x' and 'y'
+
+    p1 = Point(10)
+    # TypeError: __init__() missing 1 required positional argument: 'y'
+
+    p2 = Point(10, 20)
+    p3 = Point(10, 20, 30)
+    p4 = Point(10, 20, z=30)
+    p5 = Point(10, 20, z=30)
+    p6 = Point(x=10, y=20, z=30)
 
 Example 2
 ---------
@@ -54,9 +76,9 @@ Example 2
 
     twardowski = Astronaut(first_name='Jan', last_name='Twardowski')
 
-    twardowski.first_name   # Jan
-    twardowski.last_name    # Twardowski
-    twardowski.agency       # POLSA
+    print(twardowski.first_name)   # Jan
+    print(twardowski.last_name)    # Twardowski
+    print(twardowski.agency)       # POLSA
 
 .. code-block:: python
     :caption: Defining dataclasses
@@ -73,9 +95,9 @@ Example 2
 
     twardowski = Astronaut(first_name='Jan', last_name='Twardowski')
 
-    twardowski.first_name   # Jan
-    twardowski.last_name    # Twardowski
-    twardowski.agency       # POLSA
+    print(twardowski.first_name)   # Jan
+    print(twardowski.last_name)    # Twardowski
+    print(twardowski.agency)       # POLSA
 
 
 ``__init__`` vs. ``__post_init__``
@@ -93,7 +115,12 @@ Classes
                 self.value = value
 
 
-    temp = Kelvin(-300)
+    t1 = Kelvin(273.15)
+    print(t1.value)
+    # 273.15
+
+    t2 = Kelvin(-10)
+    # ValueError: Temperature must be greater than 0
 
 Dataclasses
 -----------
@@ -111,7 +138,12 @@ Dataclasses
                 raise ValueError('Temperature must be greater than 0')
 
 
-    temp = Kelvin(-300)
+    t1 = Kelvin(273.15)
+    print(t1.value)
+    # 273.15
+
+    t2 = Kelvin(-10)
+    # ValueError: Temperature must be greater than 0
 
 
 Field Factory
@@ -122,7 +154,7 @@ Field Factory
 
 
     @dataclass
-    class C:
+    class Point:
         x: int
         y: int = field(repr=False)
         z: int = field(repr=False, default=10)
@@ -134,13 +166,12 @@ Field Factory
 
 
     @dataclass
-    class C:
-        my_list: list = field(default_factory=list)
+    class Container:
+        data: list = field(default_factory=list)
 
 
-    c = C([1, 2, 3])
-    c.my_list += [4]
-
+    c = Container([1, 2, 3])
+    c.data += [4]
 
 .. code-block:: python
 
@@ -149,11 +180,11 @@ Field Factory
 
 
     @dataclass
-    class C:
-        my_list: List[int] = field(default_factory=list)
+    class Container:
+        data: List[int] = field(default_factory=list)
 
-    c = C()
-    c.my_list += [1, 2, 3]
+    c = Container()
+    c.data += [1, 2, 3]
 
 Why?
 ----
@@ -161,26 +192,25 @@ Why?
 
 .. code-block:: python
 
-    class Contact:
-        def __init__(self, name, addresses=[]):
+    class Astronaut:
+        def __init__(self, name, missions=[]):
             self.name = name
-            self.addresses = addresses
+            self.missions = missions
 
 
-    twardowski = Contact(name='Jan Twardowski')
-    twardowski.addresses.append('Johnson Space Center')
-    print(twardowski.addresses)
-    # [Johnson Space Center]
+    twardowski = Astronaut('Mark Watney')
+    twardowski.missions.append('Ares 3')
+    print(twardowski.missions)
+    # [Ares 3]
 
-    watney = Contact(name='Mark Watney')
-    print(watney.addresses)
-    # [Johnson Space Center]
+    watney = Astronaut('Jan Twardowski')
+    print(watney.missions)
+    # [Ares 3]
 
 So what?
 --------
 * ``field()`` creates new empty ``list`` for each object
 * It does not reuse pointer
-
 
 
 Use cases
@@ -265,6 +295,7 @@ More advanced options
 
 .. csv-table:: More advanced options
     :header: "Option", "Default", "Description (if True)"
+    :widths: 10, 10, 80
 
     "``init``", "``True``", "Generate ``__init__()`` method"
     "``repr``", "``True``", "Generate ``__repr__()`` method"
@@ -272,7 +303,6 @@ More advanced options
     "``order``", "``False``", "Generate ``__lt__()``, ``__le__()``, ``__gt__()``, and ``__ge__()`` methods"
     "``unsafe_hash``", "``False``", "if False: the ``__hash__()`` method is generated according to how eq and frozen are set"
     "``frozen``", "``False``", "if ``True``: assigning to fields will generate an exception"
-
 
 
 Under the hood
@@ -372,9 +402,7 @@ Examples
         species: str
 
 
-    header, *data = INPUT
-    flowers = list(Iris(*row) for row in data)
-
+    flowers = list(Iris(*row) for row in INPUT[1:])
     print(flowers)
     # [
     #   Iris(sepal_length=5.8, sepal_width=2.7, petal_length=5.1, petal_width=1.9, species='virginica'),
