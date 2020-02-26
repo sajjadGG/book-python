@@ -20,9 +20,11 @@ def check_types(func):
     return check
 
 
+@cache
 @check_types
 def my_function(a: str, b: int) -> bool:
     return bool(a * b)
 
 
-my_function('hello', 3.5, 3)
+a = my_function('hello', 3.5)
+print(a)

@@ -253,6 +253,7 @@ Django Login Required
         else:
             return render(request, 'templates/edit-profile.html')
 
+
     def delete_profile(request):
         if not request.user.is_authenticated:
             return render(request, 'templates/login_error.html')
@@ -269,39 +270,10 @@ Django Login Required
     def edit_profile(request):
         return render(request, 'templates/edit-profile.html')
 
+
     @login_required
     def delete_profile(request):
         return render(request, 'templates/delete-profile.html')
-
-Singleton
----------
-.. code-block:: python
-
-    def singleton(cls):
-
-        def wrapper(*args, **kwargs):
-            if not hasattr(cls, '_instance'):
-                print('First use, creating instance')
-                instance = object.__new__(cls, *args, **kwargs)
-                setattr(cls, '_instance', instance)
-            else:
-                print('Reusing instance')
-            return getattr(cls, '_instance')
-
-        return wrapper
-
-
-    @singleton
-    class DatabaseConnection:
-        def connect(self):
-            print(f'Connecting... using {self._instance}')
-
-
-    a = DatabaseConnection()    # First use, creating instance
-    a.connect()                 # Connecting... using <__main__.singleton.<locals>.Wrapper object at 0x10372d310>
-
-    b = DatabaseConnection()    # Reusing instance
-    b.connect()                 # Connecting... using <__main__.singleton.<locals>.Wrapper object at 0x10372d310>
 
 
 Assignments
@@ -315,17 +287,29 @@ Memoization
 * Solution: :download:`solution/decorator_memoize.py`
 
 :English:
-    .. todo:: English translation
+    #. Create function ``factorial_cache(n: int) -> int``
+    #. Create ``CACHE: Dict[int, int]`` with computation results from function
+
+        - key: function argument
+        - value: computation result
+
+    #. Create decorator ``@cache``
+    #. Decorator must check before running function, if for given argument the computation was already done:
+
+        - if yes, return from ``CACHE``
+        - if not, calculate new result, update cache and return computed value
+
+    #. Using ``timeit``
 
 :Polish:
-    #. Dla danego kodu funkcji ``factorial`` (patrz sekcja input)
+    #. Stwórz funkcję ``factorial_cache(n: int) -> int``
     #. Stwórz ``CACHE: Dict[int, int]`` z wynikami wyliczenia funkcji
 
         - klucz: argument funkcji
         - wartość: wynik obliczeń
 
-    #. Dodaj dekorator do funkcji ``factorial(n: int)`` z listingu poniżej
-    #. Decorator ma sprawdzać przed uruchomieniem funkcji, sprawdź czy wynik został już wcześniej obliczony:
+    #. Stwórz dekorator ``@cache``
+    #. Decorator ma sprawdzać przed uruchomieniem funkcji, czy dla danego argumenu wynik został już wcześniej obliczony:
 
         - jeżeli tak, to zwraca dane z ``CACHE``
         - jeżeli nie, to oblicza, aktualizuje ``CACHE``, a następnie zwraca wartość

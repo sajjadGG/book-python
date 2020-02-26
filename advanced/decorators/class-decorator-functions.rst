@@ -146,10 +146,17 @@ Simple decorator
 * Solution: :download:`solution/decorator_abspath.py`
 
 :English:
-    .. todo:: English translation
+    #. Create function ``print_file(filename: str) -> str`` which prints file content (filename given as an argument)
+    #. Create decorator ``to_absolute_path``
+    #. Decorator converts to absolute path (``path`` + ``filename``), if filename given as an argument is a relative path
 
 :Polish:
-    #. Program przechodzi przez pliki i katalogi wykorzystując ``os.walk``
-    #. Wypisz nazwę pliku lub katalogu
-    #. Stwórz dekorator do funkcji, który przed wypisaniem podmieni ścieżkę na bezwzględną (``path`` + ``filename``).
+    #. Stwórz funkcję ``print_file(filename: str) -> str`` która wyświetla zawartość pliku (nazwa pliku podana jako argument)
+    #. Stwórz dekorator ``to_absolute_path``
+    #. Dekorator zamienia ścieżkę na bezwzględną (``path`` + ``filename``), jeżeli nazwa pliku podana jako argument jest względna
 
+:Hint:
+    * ``__file__``
+    * ``os.path.dirname()``
+    * ``os.path.basename()``
+    * ``os.path.join()``
