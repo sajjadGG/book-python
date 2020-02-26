@@ -62,7 +62,6 @@ OOP Paradigm
     /advanced/oop-paradigm/interface.rst
     /advanced/oop-paradigm/abstract-class.rst
     /advanced/oop-paradigm/good-practices.rst
-    /advanced/oop-paradigm/exam.rst
 
 *************
 OOP Protocols
@@ -112,7 +111,6 @@ Performance Optimization
     /advanced/performance/c-types.rst
     /advanced/performance/c-modules.rst
 
-
 ***********
 Concurrency
 ***********
@@ -134,4 +132,5 @@ Exit Test
     :caption: Exit Test
     :name: Advanced Exit Test
 
-    /advanced/about/exit.rst
+    /advanced/about/exit-1.rst
+    /advanced/about/exit-2.rst

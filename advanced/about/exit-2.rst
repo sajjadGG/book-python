@@ -1,6 +1,6 @@
-*****************
-OOP Advanced Exam
-*****************
+*********
+Exit Exam
+*********
 
 
 Dragon (version release candidate)
