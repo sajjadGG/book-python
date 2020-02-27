@@ -58,6 +58,7 @@ OOP Paradigm
     /advanced/oop-paradigm/relations.rst
     /advanced/oop-paradigm/polymorphism.rst
     /advanced/oop-paradigm/dynamic-typing.rst
+    /advanced/oop-paradigm/monkey-patching.rst
     /advanced/oop-paradigm/new-style-classes.rst
     /advanced/oop-paradigm/interface.rst
     /advanced/oop-paradigm/abstract-class.rst
