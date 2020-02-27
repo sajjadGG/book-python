@@ -31,20 +31,20 @@ Intuitive implementation of the ``for`` loop
 
     DATA = [1, 2, 3]
 
+    iterator = DATA.__iter__()
+
     try:
-
-        current = DATA.__next__()
+        current = iterator.__next__()
         print(current)
 
-        current = DATA.__next__()
+        current = iterator.__next__()
         print(current)
 
-        current = DATA.__next__()
+        current = iterator.__next__()
         print(current)
 
-        current = DATA.__next__()
+        current = iterator.__next__()
         print(current)
-
     except StopIteration:
         pass
 
@@ -301,8 +301,6 @@ Own implementation
 
 :Input:
     .. code-block:: python
-        :name: listing-iterators-ksiazka-adresowa
-        :caption: Struktury danych książki adresowej
 
         from dataclasses import dataclass
 
@@ -319,7 +317,7 @@ Own implementation
             name: str
 
 
-        twardowski = Astronaut(first_name='Jan', last_name='Twardowski', missions=(
+        twardowski = Astronaut('Jan', 'Twardowski', missions=(
             Mission(1969, 'Apollo 11'),
             Mission(2024, 'Artemis 3'),
             Mission(2035, 'Ares 3'),

@@ -55,9 +55,11 @@ Type Annotations
     :name: Stdlib Type Annotations
 
     /stdlib/type-annotation/about.rst
+    /stdlib/type-annotation/vars.rst
     /stdlib/type-annotation/sequences.rst
     /stdlib/type-annotation/mapping.rst
     /stdlib/type-annotation/special.rst
+    /stdlib/type-annotation/classes.rst
     /stdlib/type-annotation/functions-methods.rst
     /stdlib/type-annotation/aliases.rst
     /stdlib/type-annotation/introspection.rst
