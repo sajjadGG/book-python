@@ -9,17 +9,18 @@ Protocol
 * ``__set__(self, parent, new_value) -> None``
 * ``__delete__(self, parent) -> None``
 
+
 Rationale
 =========
 * Add managed attributes to objects
 * Outsource functionality into specialized classes
 
 
-Builtin Descriptor Object Examples
-==================================
-* classmethod
-* staticmethod
-* property
+Builtin Descriptors
+===================
+* ``@classmethod``
+* ``@staticmethod``
+* ``@property``
 * functions in general
 
 

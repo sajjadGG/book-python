@@ -5,8 +5,8 @@ OOP Enum
 ********
 
 
-Why?
-====
+Rationale
+=========
 * List of finite choices
 * Enumerations
 

@@ -16,8 +16,8 @@ Basic Type Annotations
     * More and more books and documentations use types
     * To type check use: ``mypy`` or ``pyre-check`` (more in :ref:`cicd-tools`)
 
-Why?
-====
+Rationale
+=========
 .. highlights::
     * Good IDE will highlight, incorrect types
 

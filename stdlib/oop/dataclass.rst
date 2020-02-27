@@ -186,8 +186,8 @@ Field Factory
     c = Container()
     c.data += [1, 2, 3]
 
-Why?
-----
+Rationale
+---------
 * :ref:`Initial arguments mutability and shared state`
 
 .. code-block:: python

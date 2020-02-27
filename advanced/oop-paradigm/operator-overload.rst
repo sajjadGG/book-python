@@ -5,12 +5,15 @@ Operator Overload
 *****************
 
 
-Why to use operator overload?
-=============================
+Rationale
+=========
 .. highlights::
     * Readable syntax
     * Simpler operations
 
+
+Example
+=======
 .. code-block:: python
 
     class Vector:
