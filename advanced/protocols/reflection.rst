@@ -23,12 +23,18 @@ Protocol
 
 Definition
 ----------
-* ``astro.name = 'Mark Watney'`` => ``setattr(astro, 'name', 'Mark Watney')`` => ``obj.__setattr__('name', 'Mark Watney')``
-* ``del astro.name`` => ``delattr(astro, 'name')`` => ``astro.__delattr__(name)``
-* ``astro.name`` => ``getattr(astro, 'name')``
+* ``astro.name = 'Mark Watney'``
+* => ``setattr(astro, 'name', 'Mark Watney')``
+* => ``obj.__setattr__('name', 'Mark Watney')``
 
-    * if ``obj`` has ``name`` => ``astro.__getattribute__('name')``
-    * if ``obj`` doesn't have ``name`` => ``astro.__getattr__('name')``
+* ``del astro.name``
+* => ``delattr(astro, 'name')``
+* => ``astro.__delattr__(name)``
+
+* ``astro.name``
+* => ``getattr(astro, 'name')``
+* if ``obj`` has ``name`` => ``astro.__getattribute__('name')``
+* if ``obj`` doesn't have ``name`` => ``astro.__getattr__('name')``
 
 
 ``__setattr__()``
