@@ -59,13 +59,9 @@ Nested Problem
         def __repr__(self):
             return f'{self.species}'
 
-    flowers = []
 
-    for row in DATA:
-        iris = Iris(**row)
-        flowers.append(iris)
-
-    print(flowers)
+    output = [Iris(**row) for row in DATA]
+    print(output)
     # ['versicolor', 'setosa']
 
 

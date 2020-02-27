@@ -20,24 +20,26 @@ Using
 =====
 .. code-block:: python
 
-    class Iris:
+    class Astronaut:
         __slots__ = ()
 
-    flower = Iris()
 
-    flower.species = 'setosa'
-    # AttributeError: 'Iris' object has no attribute 'species'
+    astro = Astronaut()
+
+    astro.name = 'Mark Watney'
+    # AttributeError: 'Astronaut' object has no attribute 'name'
 
 .. code-block:: python
 
-    class Iris:
-        __slots__ = ('species',)
+    class Astronaut:
+        __slots__ = ('firstname',)
 
-    flower = Iris()
 
-    flower.species = 'setosa'
-    flower.kingdom = 'plantae'
-    # AttributeError: 'Iris' object has no attribute 'kingdom'
+    astro = Astronaut()
+
+    astro.firstname = 'Mark'
+    astro.lastname = 'Watney'
+    # AttributeError: 'Astronaut' object has no attribute 'lastname'
 
 
 ``__slots__`` and ``__dict__``
@@ -45,29 +47,37 @@ Using
 .. code-block:: python
     :caption: Using ``__slots__`` will prevent from creating ``__dict__``
 
-    class Iris:
-        __slots__ = ('species', 'kingdom')
+    class Astronaut:
+        __slots__ = ('firstname', 'lastname')
 
-    flower = Iris()
 
-    flower.species = 'setosa'
-    flower.kingdom = 'plantae'
+    astro = Astronaut()
 
-    flower.__dict__
-    # AttributeError: 'Iris' object has no attribute '__dict__'
+    astro.firstname = 'Mark'
+    astro.lastname = 'Watney'
+
+    print(astro.__slots__)
+    # ('firstname', 'lastname')
+
+    print(astro.__dict__)
+    # AttributeError: 'Astronaut' object has no attribute '__dict__'
 
 .. code-block:: python
 
-    class Iris:
-        __slots__ = ('__dict__', 'species')
+    class Astronaut:
+        __slots__ = ('__dict__', 'firstname')
 
-    flower = Iris()
 
-    flower.species = 'setosa'   # will use slots
-    flower.kingdom = 'plantae'  # not in __slots__, will use __dict__
+    astro = Astronaut()
 
-    flower.__dict__
-    # {'kingdom': 'plantae'}
+    astro.firstname = 'Mark'   # will use __slots__
+    astro.lastname = 'Watney'  # not in __slots__, will use __dict__
+
+    print(astro.__slots__)
+    # ('__dict__', 'firstname')
+
+    print(astro.__dict__)
+    # {'lastname': 'Watney'}
 
 
 Inheritance

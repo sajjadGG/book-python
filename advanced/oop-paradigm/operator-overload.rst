@@ -80,6 +80,7 @@ Numerical Operators
     "``a / b``",        "``a.__div__(b)``"
     "``a /= b``",       "``a.__idiv__(b)``"
     "``a % b``",        "``a.__mod__(b)``"
+    "``a @ b``",        "``a.__matmul__(b)``"
 
 .. code-block:: python
     :caption: Modulo operator for ``int`` and ``str``
@@ -109,8 +110,9 @@ Boolean Operators
 .. csv-table:: Boolean Operators Overload
     :header: "Operator", "Method"
 
-    "``-a``",           "``a.__neg__(b)``"
-    "``+a``",           "``a.__pos__(b)``"
+    "``-a``",           "``a.__neg__()``"
+    "``+a``",           "``a.__pos__()``"
+    "``~a``",           "``a.__invert__()``"
     "``a & b``",        "``a.__and__(b)``"
     "``a | b``",        "``a.__or__(b)``"
     "``a ^ b``",        "``a.__xor__(b)``"
@@ -191,6 +193,7 @@ Accessors Overload
 
     "``a(b)``",      "``a.__call__(b)``"
     "``a[b]``",      "``a.__getitem__(b)``"
+    "``del a[b]``",  "``a.__delitem__(b)``"
     "``a[b]``",      "``a.__missing__(b)``", "(when ``b`` is not in ``a``)"
     "``a[b] = 10``", "``a.__setitem__(b, 10)``"
     "``b in a``",    "``a.__contains__(b)``"
@@ -257,6 +260,9 @@ Accessors Overload
         def __missing__(self, key):
             ...
 
+Further Reading
+===============
+* https://docs.python.org/3/reference/datamodel.html#emulating-numeric-types
 
 Assignments
 ===========

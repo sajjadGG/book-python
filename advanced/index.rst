@@ -88,7 +88,7 @@ Object Oriented Programming
     :name: Advanced Object Oriented Programming
 
     /advanced/oop/inner-classes.rst
-    /advanced/oop/constructor.rst
+    /advanced/oop/object-initialization.rst
     /advanced/oop/placeholder-class.rst
     /advanced/oop/object-identity.rst
     /advanced/oop/slots.rst

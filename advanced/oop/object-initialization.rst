@@ -13,10 +13,10 @@ Object Initialization
 .. code-block:: python
     :caption: Intuition definition of ``__new__()`` and ``__init__()``
 
-    class Iris:
+    class Astronaut:
         def __call__(cls):
-            iris = Iris.__new__(cls)
-            iris.__init__()
+            astro = Astronaut.__new__(cls)
+            astro.__init__()
 
 .. code-block:: python
 
@@ -24,10 +24,10 @@ Object Initialization
         pass
 
 
-    twardowski = Astronaut      # Creates alias to class (not an instance)
-    twardowski()                # Creates instance by calling ``.__call__()``
+    watney = Astronaut      # Creates alias to class (not an instance)
+    watney()                # Creates instance by calling ``.__call__()``
 
-    twardowski = Astronaut()    # Creates instance by calling ``.__call__()``
+    watney = Astronaut()    # Creates instance by calling ``.__call__()``
 
 
 ``__new__()``
@@ -41,13 +41,13 @@ Object Initialization
 .. code-block:: python
     :emphasize-lines: 2,3,4
 
-    class Iris:
+    class Astronaut:
         def __new__(cls):
-            print("Iris.__new__() called")
-            return super().__new__(cls)
+            print(f'Astronaut.__new__() called')
+            return object.__new__(cls)
 
-    Iris()
-    # Iris.__new__() called
+    Astronaut()
+    # Astronaut.__new__() called
 
 
 ``__init__()``
@@ -62,33 +62,34 @@ Object Initialization
 .. code-block:: python
     :emphasize-lines: 2,3
 
-    class Iris:
+    class Astronaut:
         def __init__(self):
-            print("Iris.__init__() called")
+            print('Astronaut.__init__() called')
 
-    Iris()
-    # Iris.__init__() called
+    Astronaut()
+    # Astronaut.__init__() called
 
-Example usage
-=============
+
+Examples
+========
 .. code-block:: python
     :emphasize-lines: 3,4
 
-    class Iris:
+    class Astronaut:
         def __call__(cls):
-            iris = Iris.__new__(cls)
-            iris.__init__()
+            obj = Astronaut.__new__(cls)
+            obj.__init__()
 
         def __new__(cls):
-            print("Iris.__new__() called")
-            return super().__new__(cls)
+            print('Astronaut.__new__() called')
+            return object.__new__(cls)
 
         def __init__(self):
-            print("Iris.__init__() called")
+            print('Astronaut.__init__() called')
 
-    Iris()
-    # Iris.__new__() called
-    # Iris.__init__() called
+    Astronaut()
+    # Astronaut.__new__() called
+    # Astronaut.__init__() called
 
 
 Returning values
@@ -99,16 +100,15 @@ Missing ``return`` from constructor
 .. code-block:: python
     :emphasize-lines: 3
 
-    class Iris:
+    class Astronaut:
         def __new__(cls):
-            print("Iris.__new__() called")
+            print('Astronaut.__new__() called')
 
         def __init__(self):
-            print("Iris.__init__() called")  # -> is actually never called
+            print('Astronaut.__init__() called')  # -> is actually never called
 
-    Iris()
-    # Iris.__new__() called
-    # None
+    Astronaut()
+    # Astronaut.__new__() called
 
 The instantiation is evaluated to ``None`` since we don't return anything from the constructor.
 
@@ -117,27 +117,27 @@ Return invalid from constructor
 .. code-block:: python
     :emphasize-lines: 4
 
-    class Iris:
+    class Astronaut:
         def __new__(cls):
-            print("Iris.__new__() called")
-            return 29
+            print('Astronaut.__new__() called')
+            return 1337
 
-    Iris()
-    # Iris.__new__() called
-    # 29
+    Astronaut()
+    # Astronaut.__new__() called
+    # 1337
 
 Return invalid from initializer
 -------------------------------
 .. code-block:: python
     :emphasize-lines: 4
 
-    class Iris:
+    class Astronaut:
         def __init__(self):
-            print("Iris.__new__() called")
-            return 33
+            print('Astronaut.__new__() called')
+            return 1337
 
-    Iris()
-    # TypeError: __init__ should return None
+    Astronaut()
+    # TypeError: __init__() should return None, not 'int'
 
 Examples
 ========
@@ -154,7 +154,8 @@ Examples
 
     class Document:
         def __call__(self, *args, **kwargs):
-            Document.__new__(*args, **kwargs)
+            obj = Document.__new__(*args, **kwargs)
+            obj.__init__()
 
         def __new__(cls, *args, **kwargs):
             filename, extension = args[0].split('.')
@@ -166,10 +167,13 @@ Examples
 
 
     file1 = Document('myfile.pdf')
-    # <__main__.PDF object at 0x1092460f0>
-
     file2 = Document('myfile.docx')
-    # <__main__.DOCX object at 0x107a6c160>
+
+    print(file1)
+    # <__main__.PDF object at 0x10f89afa0>
+
+    print(file2)
+    # <__main__.Docx object at 0x10f6fe9a0>
 
 .. code-block:: python
 
@@ -215,12 +219,16 @@ Examples
 
         def __init__(self, sepal_length, sepal_width,
                      petal_length, petal_width, species):
+
             self.sepal_length = sepal_length
             self.sepal_width = sepal_width
             self.petal_length = petal_length
             self.petal_width = petal_width
-            self.species = species
 
+        def __repr__(self):
+            cls = self.__class__.__name__
+            args = tuple(self.__dict__.values())
+            return f'\n{cls}{args}'
 
     class Setosa(Iris):
         pass
@@ -232,11 +240,30 @@ Examples
         pass
 
 
-    OUTPUT = []
-
-    for row in INPUT:
-        iris = Iris(*row)
-        OUTPUT.append(iris)
+    output = [Iris(*row) for row in INPUT]
+    print(output)
+    # [
+    # Virginica(5.8, 2.7, 5.1, 1.9),
+    # Setosa(5.1, 3.5, 1.4, 0.2),
+    # Versicolor(5.7, 2.8, 4.1, 1.3),
+    # Virginica(6.3, 2.9, 5.6, 1.8),
+    # Versicolor(6.4, 3.2, 4.5, 1.5),
+    # Setosa(4.7, 3.2, 1.3, 0.2),
+    # Versicolor(7.0, 3.2, 4.7, 1.4),
+    # Virginica(7.6, 3.0, 6.6, 2.1),
+    # Setosa(4.9, 3.0, 1.4, 0.2),
+    # Virginica(4.9, 2.5, 4.5, 1.7),
+    # Virginica(7.1, 3.0, 5.9, 2.1),
+    # Setosa(4.6, 3.4, 1.4, 0.3),
+    # Setosa(5.4, 3.9, 1.7, 0.4),
+    # Versicolor(5.7, 2.8, 4.5, 1.3),
+    # Setosa(5.0, 3.6, 1.4, 0.3),
+    # Versicolor(5.5, 2.3, 4.0, 1.3),
+    # Virginica(6.5, 3.0, 5.8, 2.2),
+    # Versicolor(6.5, 2.8, 4.6, 1.5),
+    # Virginica(6.3, 3.3, 6.0, 2.5),
+    # Versicolor(6.9, 3.1, 4.9, 1.5),
+    # Setosa(4.6, 3.1, 1.5, 0.2)]
 
 
 Initial arguments mutability and shared state
@@ -284,6 +311,7 @@ Good
     print(twardowski.missions)
     # []
 
+
 Do not trigger methods for user
 ===============================
 * It is better when user can choose a moment when call ``.connect()`` method
@@ -292,7 +320,6 @@ Do not trigger methods for user
     :caption: Let user to call method
 
     class Server:
-
         def __init__(self, host, username, password=None):
             self.host = host
             self.username = username
@@ -306,8 +333,24 @@ Do not trigger methods for user
     localhost = Server(
         host='localhost',
         username='admin',
-        password='admin'
-    )
+        password='admin')
 
-    # This is better
+.. code-block:: python
+    :caption: Let user to call method
+
+    class Server:
+        def __init__(self, host, username, password=None):
+            self.host = host
+            self.username = username
+            self.password = password
+
+        def connect(self):
+            print(f'Logging to {self.host} using: {self.username}:{self.password}')
+
+
+    localhost = Server(
+        host='localhost',
+        username='admin',
+        password='admin')
+
     localhost.connect()
