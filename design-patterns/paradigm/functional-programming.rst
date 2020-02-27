@@ -387,62 +387,77 @@ Callback
 Assignments
 ===========
 
-``map()``, ``filter()`` i ``lambda``
-------------------------------------
+``map()``, ``filter()`` and ``lambda``
+--------------------------------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 * Solution: :download:`solution/functional_map_filter_lambda.py`
 
-#. Używając generatora zbuduj listę zawierającą wszystkie liczby podzielne przez 3 z zakresu od 1 do 33:
-#. Używając funkcji ``filter()`` usuń z niej wszystkie liczby parzyste
-#. Używając wyrażenia ``lambda`` i funkcji ``map()`` podnieś wszystkie elementy tak otrzymanej listy do sześcianu
-#. Odpowiednio używając funkcji ``sum()``  i ``len()`` oblicz średnią arytmetyczną z elementów tak otrzymanej listy.
+:Polish:
+    #. Używając generatora zbuduj listę zawierającą wszystkie liczby podzielne przez 3 z zakresu od 1 do 33:
+    #. Używając funkcji ``filter()`` usuń z niej wszystkie liczby parzyste
+    #. Używając wyrażenia ``lambda`` i funkcji ``map()`` podnieś wszystkie elementy tak otrzymanej listy do sześcianu
+    #. Odpowiednio używając funkcji ``sum()``  i ``len()`` oblicz średnią arytmetyczną z elementów tak otrzymanej listy.
 
-Zbalansowanie nawiasów
-----------------------
+Balanced Brackets
+-----------------
 * Complexity level: medium
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 * Solution: :download:`solution/functional_brackets.py`
 
-#. Napisz kod, który za pomocą rekurencji sprawdzi zbalansowanie nawiasów, tzn. czy ilość otwieranych nawiasów jest równa ilości nawiasów zamykanych.
-#. Zwórć uwagę, że mogą być cztery typy nawiasów:
+:English:
+    #. Create function which checks if brackets are balanced
+    #. Brackets are balanced, when each opening bracket has closing pair
+    #. Use recursion
+    #. Types of brackets:
 
-    #. okrągłe: ``(`` i ``)``
-    #. kwadratowe: ``[`` i ``]``
-    #. klamrowe ``{`` i ``}``
-    #. trójkątne ``<`` i ``>``
+        * round: ``(`` i ``)``
+        * square: ``[`` i ``]``
+        * curly ``{`` i ``}``
+        * angle ``<`` i ``>``
+
+:Polish:
+    #. Stwórz funkcję, która sprawdzi czy nawiasy są zbalansowane
+    #. Nawiasy są zbalansowane, gdy każdy otwierany nawias ma zamykającą parę
+    #. Użyj rekurencji
+    #. Typy nawiasów:
+
+        * okrągłe: ``(`` i ``)``
+        * kwadratowe: ``[`` i ``]``
+        * klamrowe ``{`` i ``}``
+        * trójkątne ``<`` i ``>``
 
 .. code-block:: python
 
-    def zbalansowanie_nawiasow(ciag_znakow: str) -> bool:
+    def is_bracket_balanced(text: str) -> bool:
         """
-        >>> zbalansowanie_nawiasow('{}')
+        >>> is_bracket_balanced('{}')
         True
-        >>> zbalansowanie_nawiasow('()')
+        >>> is_bracket_balanced('()')
         True
-        >>> zbalansowanie_nawiasow('[]')
+        >>> is_bracket_balanced('[]')
         True
-        >>> zbalansowanie_nawiasow('<>')
+        >>> is_bracket_balanced('<>')
         True
-        >>> zbalansowanie_nawiasow('')
+        >>> is_bracket_balanced('')
         True
-        >>> zbalansowanie_nawiasow('(')
+        >>> is_bracket_balanced('(')
         False
-        >>> zbalansowanie_nawiasow('}')
+        >>> is_bracket_balanced('}')
         False
-        >>> zbalansowanie_nawiasow('(]')
+        >>> is_bracket_balanced('(]')
         False
-        >>> zbalansowanie_nawiasow('([)')
+        >>> is_bracket_balanced('([)')
         False
-        >>> zbalansowanie_nawiasow('[()')
+        >>> is_bracket_balanced('[()')
         False
-        >>> zbalansowanie_nawiasow('{()[]}')
+        >>> is_bracket_balanced('{()[]}')
         True
-        >>> zbalansowanie_nawiasow('() [] () ([]()[])')
+        >>> is_bracket_balanced('() [] () ([]()[])')
         True
-        >>> zbalansowanie_nawiasow("( (] ([)]")
+        >>> is_bracket_balanced("( (] ([)]")
         False
         """
         pass

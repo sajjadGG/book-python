@@ -19,7 +19,7 @@ Parameter Syntax
 
 Keyword-only parameters
 =======================
-* All arguments after ``*`` is keyword only
+* All parameters after ``*`` must be keyword-only
 
 .. code-block:: python
 
@@ -37,7 +37,10 @@ Keyword-only parameters
 
 Positional-only parameters
 ==========================
-* Since Python 3.8 there will be ``/`` to indicate positional only arguments
+.. versionadded:: Python 3.8
+    See :pep:`570` Python Positional-Only Parameters
+
+* All parameters before ``/`` must be positional-only
 
 .. code-block:: python
 

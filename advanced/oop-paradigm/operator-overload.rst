@@ -183,14 +183,14 @@ Builtin Functions and Keywords
 Accessors Overload
 ------------------
 .. csv-table:: Operator Overload
-    :header: "Operator", "Method", "Description"
-    :widths: 35, 65
+    :header: "Operator", "Method", "Remarks"
+    :widths: 15, 45, 40
 
-    "``a(b)``",         "``a.__call__(b)``"
-    "``a[b]``",         "``a.__getitem__(b)``"
-    "``a[b]``",         "``a.__missing__(b)``", "(when ``b`` is not in ``a``)"
-    "``a[b] = 10``",    "``a.__setitem__(b, 10)``"
-    "``b in a``",       "``a.__contains__(b)``"
+    "``a(b)``",      "``a.__call__(b)``"
+    "``a[b]``",      "``a.__getitem__(b)``"
+    "``a[b]``",      "``a.__missing__(b)``", "(when ``b`` is not in ``a``)"
+    "``a[b] = 10``", "``a.__setitem__(b, 10)``"
+    "``b in a``",    "``a.__contains__(b)``"
 
 .. code-block:: python
 

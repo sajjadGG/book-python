@@ -460,7 +460,9 @@ Custom object formatting
 
 Quick and easy debugging
 ------------------------
-* since Python 3.8
+.. versionadded:: Python 3.8
+    See https://bugs.python.org/issue36817
+
 * ``f'{expr=}'`` expands to the text of the expression, an equal sign, then the repr of the evaluated expression
 
 .. code-block:: python

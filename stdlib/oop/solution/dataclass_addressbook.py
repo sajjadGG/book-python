@@ -1,26 +1,5 @@
-from dataclasses import dataclass
-
-
-@dataclass
-class Address:
-    street: str = ''
-    city: str = ''
-    post_code: str = ''
-    region: str = ''
-    country: str = ''
-
-
-@dataclass
-class Astronaut:
-    first_name: str
-    last_name: str
-    addresses: tuple = ()
-
-
-@dataclass
-class Crew:
-    members: tuple
-
+from dataclasses import dataclass, field
+from typing import List
 
 DATA = [
     {"first_name": "Jan", "last_name": "Twardowski", "addresses": [
@@ -38,8 +17,29 @@ DATA = [
         {"street": "", "city": "Космодро́м Байкону́р", "post_code": "", "region": "Кызылординская область", "country": "Қазақстан"},
         {"street": "", "city": "Звёздный городо́к", "post_code": 141160, "region": "Московская область", "country": "Россия"}]},
 
-    {"first_name": "Melissa", "last_name": "Lewis", "addresses": []},
+    {"first_name": "Melissa", "last_name": "Lewis"},
 
     {"first_name": "Alex", "last_name": "Vogel", "addresses": [
         {"street": "Linder Hoehe", "city": "Köln", "post_code": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}
 ]
+
+
+@dataclass
+class Address:
+    street: str = ''
+    city: str = ''
+    post_code: str = ''
+    region: str = ''
+    country: str = ''
+
+
+@dataclass
+class Astronaut:
+    first_name: str = ''
+    last_name: str = ''
+    addresses: List[Address] = field(default_factory=list)
+
+
+@dataclass
+class Crew:
+    members: List[Astronaut] = field(default_factory=list)

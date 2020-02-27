@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 import json
 from dataclasses import dataclass
 from pprint import pprint
@@ -38,39 +38,42 @@ class User:
             setattr(self, key, value)
 
 
-for user in json.loads(DATA):
-    u = User(**user['fields'])
-    print(u)
+users = [User(**record['fields'])
+           for record in json.loads(DATA)]
+
+print(users)
+
 
 
 ## Alternative
+def _clean_time(text: Optional[datetime]) -> Optional[datetime]:
+    try:
+        return datetime.strptime(text, '%Y-%m-%dT%H:%M:%S.%fZ').replace(tzinfo=timezone.utc)
+    except ValueError:
+        return None
+
 
 @dataclass
 class User:
-    model: str
-    pk: int
-
-    date_joined: Union[datetime, str]
-    email: str
+    username: str
+    password: str
     first_name: str
+    email: str
+    last_name: str
     groups: List[int]
+    last_login: Optional[datetime]
+    date_joined: Optional[datetime]
     is_active: bool
     is_staff: bool
     is_superuser: bool
-    last_login: Optional[Union[str, datetime]]
-    last_name: str
-    password: str
     user_permissions: List[Dict[str, List[str]]]
-    username: str
 
     def __post_init__(self):
-        self.date_joined = datetime.strptime(self.date_joined, '%Y-%m-%dT%H:%M:%S.%f%z')
-
-        if self.last_login:
-            self.last_login = datetime.strptime(self.last_login, '%Y-%m-%dT%H:%M:%S.%f%z')
+        self.date_joined = _clean_time(self.date_joined)
+        self.last_login = _clean_time(self.last_login)
 
 
-for user in json.loads(DATA):
-    u = User(**user['fields'])
-    print(u)
+users = [User(**record['fields'])
+           for record in json.loads(DATA)]
 
+print(users)

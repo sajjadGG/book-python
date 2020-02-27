@@ -121,6 +121,8 @@ Functions
     /basics/function/type-annotation.rst
     /basics/function/recurrence.rst
     /basics/function/doctest.rst
+    /basics/function/generators.rst
+    /basics/function/lambda.rst
 
 ***************************
 Object Oriented Programming
@@ -145,7 +147,6 @@ Recap
     :caption: Recap
     :name: Basic Recap
 
-    /basics/about/exam.rst
     /basics/about/recap.rst
     /basics/about/certificate.rst
 

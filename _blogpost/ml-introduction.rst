@@ -60,9 +60,9 @@ Elementy języka Python i biblioteki standardowej
 * :ref:`Basic Control Flow`
 * :ref:`Basic Functions`
 * :ref:`Basic Object Oriented Programming`
-* :ref:`Intermediate Mathematics`
-* :ref:`Intermediate Serialization`
-* :ref:`Intermediate Modules and Packages`
+* :ref:`Stdlib Mathematics`
+* :ref:`Stdlib Serialization`
+* :ref:`Stdlib Modules and Packages`
 * :ref:`Advanced Performance`
 
 Środowisko

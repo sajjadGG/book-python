@@ -43,6 +43,19 @@ Python Advanced
 
     /advanced/index.rst
 
+******
+Dragon
+******
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Dragon
+    :name: Dragon
+
+    /dragon/alpha.rst
+    /dragon/beta.rst
+    /dragon/rc.rst
+
 ***************
 Design Patterns
 ***************

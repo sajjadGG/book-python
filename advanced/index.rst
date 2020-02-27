@@ -93,7 +93,6 @@ Object Oriented Programming
     /advanced/oop/object-identity.rst
     /advanced/oop/slots.rst
     /advanced/oop/metaclass.rst
-    /advanced/oop/exam.rst
 
 ************************
 Performance Optimization
@@ -123,14 +122,3 @@ Concurrency
     /advanced/concurrency/threading.rst
     /advanced/concurrency/multiprocessing.rst
     /advanced/concurrency/async.rst
-
-*********
-Exit Test
-*********
-.. toctree::
-    :maxdepth: 1
-    :caption: Exit Test
-    :name: Advanced Exit Test
-
-    /advanced/about/exit-1.rst
-    /advanced/about/exit-2.rst

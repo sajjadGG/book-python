@@ -1,16 +1,17 @@
-.. _Basics Exit Exam:
+.. _Dragon Alpha:
 
-**********
+*********
 Exit Exam
-**********
+*********
 
 
-Dragon v1.0
-===========
+Dragon (version alpha)
+======================
 * Complexity level: medium
 * Lines of code to write: 120 lines
-* Estimated time of completion: 60 min (±15 min), then 60 min live coding with instructor
-* Solution: :download:`solution/exam_dragon_foundation.py` or :download:`solution/exam_dragon_advanced.py`
+* Estimated time of completion: 45-60 min, then 60-90 min live coding with instructor
+* Solution (basic): :download:`solution/dragon_alpha_basic.py`
+* Solution (advanced): :download:`solution/dragon_alpha_adv.py`
 * Warning: Don't delete code, assignment will be continued
 
 .. figure:: img/dragon.gif

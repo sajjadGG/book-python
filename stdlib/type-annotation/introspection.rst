@@ -2,6 +2,7 @@
 Introspection
 *************
 
+
 .. code-block:: python
 
     def annotated(x: int, y: str) -> bool:

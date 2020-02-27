@@ -269,9 +269,8 @@ Overload
 
 Final
 =====
-* Since Python 3.8
-* :pep:`591`
-* https://www.python.org/dev/peps/pep-0591/
+.. versionadded:: Python 3.8
+    See :pep:`591`
 
 .. code-block:: python
 
@@ -342,8 +341,8 @@ Final
 
 Literal
 =======
-* Since Python 3.8
-* https://www.python.org/dev/peps/pep-0586/
+.. versionadded:: Python 3.8
+    See :pep:`586`
 
 .. code-block:: python
 
@@ -374,8 +373,8 @@ Literal
 
 TypedDict
 =========
-* Since Python 3.8
-* https://www.python.org/dev/peps/pep-0589/
+.. versionadded:: Python 3.8
+    See :pep:`589`
 
 .. code-block:: python
 

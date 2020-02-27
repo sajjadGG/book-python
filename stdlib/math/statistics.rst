@@ -14,9 +14,9 @@ Mean
     :header: "Function", "Description"
 
     "``statistics.mean()``", "Arithmetic mean ('average') of data"
-    "``statistics.fmean()``", "faster, floating point variant of ``statistics.mean()``, since Python 3.8"
+    "``statistics.fmean()``", "faster, floating point variant of ``statistics.mean()``, since .. versionadded:: Python 3.8"
     "``statistics.harmonic_mean()``", "Harmonic mean of data"
-    "``statistics.geometric_mean()``", "Since Python 3.8"
+    "``statistics.geometric_mean()``", " .. versionadded:: Python 3.8"
 
 .. code-block:: python
     :caption: Arithmetic mean ('average') of data
@@ -103,8 +103,8 @@ Mode
     :header: "Function", "Description"
 
     "``statistics.mode()``", "Mode (most common value) of discrete data"
-    "``statistics.multimode()``", "returns a list of the most common values, since Python 3.8"
-    "``statistics.quantiles()``", "divides data or a distribution in to equiprobable intervals (e.g. quartiles, deciles, or percentiles), since Python 3.8"
+    "``statistics.multimode()``", "returns a list of the most common values, .. versionadded:: Python 3.8"
+    "``statistics.quantiles()``", "divides data or a distribution in to equiprobable intervals (e.g. quartiles, deciles, or percentiles), .. versionadded:: Python 3.8"
 
 .. code-block:: python
     :caption: Mode (most common value) of discrete data

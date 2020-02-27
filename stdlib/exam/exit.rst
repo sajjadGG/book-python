@@ -179,4 +179,4 @@ Relational Files Database
     * :ref:`Basic Comprehensions`
     * :ref:`Basic Looping`
     * :ref:`Basic String Methods`
-    * :ref:`Intermediate Datetime and Timezones`
+    * :ref:`Stdlib Datetime and Timezones`
