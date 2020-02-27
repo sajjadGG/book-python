@@ -1,12 +1,10 @@
 .. _Dragon Alpha:
 
-*********
-Exit Exam
-*********
-
-
+**********************
 Dragon (version alpha)
-======================
+**********************
+
+
 * Complexity level: medium
 * Lines of code to write: 120 lines
 * Estimated time of completion: 45-60 min, then 60-90 min live coding with instructor

@@ -1,12 +1,10 @@
 .. _Dragon Beta:
 
-*********
-Exit Exam
-*********
-
-
+*********************
 Dragon (version beta)
-=====================
+*********************
+
+
 * Complexity level: medium
 * Lines of code to write: 120 lines
 * Estimated time of completion: 60 min (±10 min), then 30 min live coding with instructor
