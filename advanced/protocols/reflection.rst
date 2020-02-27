@@ -33,8 +33,8 @@ Definition
 
 * ``astro.name``
 * => ``getattr(astro, 'name')``
-* if ``obj`` has ``name`` => ``astro.__getattribute__('name')``
-* if ``obj`` doesn't have ``name`` => ``astro.__getattr__('name')``
+* => ``astro.__getattribute__('name')`` (if ``obj`` has ``name``)
+* => ``astro.__getattr__('name')`` (if ``obj`` doesn't have ``name``)
 
 
 ``__setattr__()``
