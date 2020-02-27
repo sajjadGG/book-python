@@ -15,20 +15,21 @@ Setter and Getter methods
     :caption: Accessing class fields using setter and getter
 
     class Astronaut:
-        name = ''
-
-        def set_name(self, name):
-            print('Log, that value is being changed')
+        def __init__(self, name=None):
             self.name = name
 
+        def set_name(self, name):
+            self._name = name
+
         def get_name(self):
-            return self.name
+            return self._name
 
 
     astro = Astronaut()
-    astro.set_name('Jan Twardowski')
+    astro.set_name('Mark Watney')
 
     print(astro.get_name())
+    # Mark Watney
 
 Then your code starts to look like this:
 
@@ -37,6 +38,7 @@ Then your code starts to look like this:
         class MyClass:
             def __init__(self):
                 self._x = None
+                self._y = None
 
             def get_x(self):
                 return self._x
@@ -46,6 +48,16 @@ Then your code starts to look like this:
 
             def del_x(self):
                 del self._x
+
+            def get_y(self):
+                return self._y
+
+            def set_y(self, value):
+                self._x = value
+
+            def del_y(self):
+                del self._y
+
 
 Rationale for setter and getter methods
 ---------------------------------------
@@ -82,7 +94,7 @@ Direct attribute access
     :caption: Accessing class fields
 
     class Astronaut:
-        def __init__(self, name=''):
+        def __init__(self, name=None):
             self.name = name
 
 
@@ -125,84 +137,86 @@ Property decorator
 
     .. code-block:: python
 
-        @property
-        def x(self):
-            return self._x
+        class MyClass:
+            @property
+            def attribute(self):
+                return self._attribute
 
 * really means the same thing as
 
     .. code-block:: python
 
-        def x(self):
-            return self._x
+        class MyClass:
+            def attribute(self):
+                return self._attribute
 
-        x = property(x)
+            attribute = property(attribute)
 
 Creating properties with ``property`` class
 -------------------------------------------
-* Property's arguments are method pointers ``get_x``, ``set_x``, ``del_x`` and a docstring
+* Property's arguments are method pointers ``get_name``, ``set_name``, ``del_name`` and a docstring
 
 .. code-block:: python
     :caption: Properties
 
-    class MyClass:
+    class Astronaut:
         def __init__(self):
             self._protected = None
 
-        def get_x(self):
+        def get_name(self):
             return self._protected
 
-        def set_x(self, value):
+        def set_name(self, value):
             self._protected = value
 
-        def del_x(self):
+        def del_name(self):
             del self._protected
 
-        x = property(get_x, set_x, del_x, "I am the 'x' property.")
+        name = property(get_name, set_name, del_name, "I am the 'name' property.")
 
 Creating properties with ``@property`` decorator
 ------------------------------------------------
 .. code-block:: python
     :emphasize-lines: 5-11
 
-    class MyClass:
+    class Astronaut:
         def __init__(self):
             self._protected = None
 
         @property
-        def x(self):
+        def name(self):
             pass
 
-        @x.getter
-        def x(self):
+        @name.getter
+        def name(self):
             return self._protected
 
-        @x.setter
-        def x(self, value):
+        @name.setter
+        def name(self, value):
             self._protected = value
 
-        @x.deleter
-        def x(self):
+        @name.deleter
+        def name(self):
             del self._protected
 
 .. code-block:: python
     :caption: Properties as a decorators
     :emphasize-lines: 5-7
 
-    class MyClass:
+    class Astronaut:
         def __init__(self):
             self._protected = None
 
         @property
-        def x(self):
+        def name(self):
             return self._protected
 
-        @x.setter
-        def x(self, value):
+        @name.setter
+        def name(self, value):
             self._protected = value
 
-        @x.deleter
-        def x(self):
+        @name.deleter
+        def name(self):
             del self._protected
 
 
@@ -257,8 +271,8 @@ Getter
 
 Setter
 ------
-* ``@x.setter`` - defining setter for field ``x``
-* Require field to be ``@property``
+* ``@value.setter`` - defining setter for field ``value``
+* Require ``value`` to be ``@property``
 
 .. code-block:: python
     :caption: ``@x.setter``
@@ -269,33 +283,26 @@ Setter
 
         @property
         def value(self):
-            pass
-
-        @value.getter
-        def value(self):
             return self._protected
 
         @value.setter
         def value(self, new_value):
             if new_value < 0.0:
-                raise ValueError('Kelvin Temperature cannot be below zero')
+                raise ValueError('Kelvin Temperature cannot be negative')
             else:
                 self._protected = new_value
 
 
     t = Temperature(100)
 
-    print(t.value)
-    # 100
-
     t.value = -10
-    # ValueError: Kelvin Temperature cannot be below zero
+    # ValueError: Kelvin Temperature cannot be negative
 
 
 Deleter
 -------
-* ``@x.deleter`` - for defining deleter for field ``x``
-* Require field to be ``@property``
+* ``@value.deleter`` - for defining deleter for field ``value``
+* Require ``value`` to be ``@property``
 
 .. code-block:: python
     :caption: ``@x.deleter``
@@ -306,23 +313,21 @@ Deleter
 
         @property
         def value(self):
-            pass
-
-        @value.getter
-        def value(self):
             return self._protected
 
         @value.deleter
         def value(self):
+            print('Resetting temperature')
             self._protected = 0.0
 
 
     t = Temperature(100)
 
     del t.value
+    # Resetting temperature
 
     print(t.value)
-    # 0
+    # 0.0
 
 
 Assignments

@@ -41,7 +41,6 @@ Decorators
     /advanced/decorators/decorator-arguments.rst
     /advanced/decorators/functools.rst
 
-
 ************
 OOP Paradigm
 ************

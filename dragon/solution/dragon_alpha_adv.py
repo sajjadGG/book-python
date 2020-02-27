@@ -1,13 +1,26 @@
-import logging
+from functools import wraps
+from logging import getLogger, DEBUG
 from dataclasses import dataclass
 from random import randint
-from typing import Optional, Dict, Any, NoReturn
+from typing import Dict, Any, NoReturn
+
+log = getLogger(__name__)
+log.setLevel(DEBUG)
+
+
+def debug(method):
+    @wraps(method)
+    def wrapper(instance, *args, **kwargs):
+        log.debug(f'{instance} {method.__name__}(args={args}, kwargs={kwargs})')
+        return method(instance, *args, **kwargs)
+    return wrapper
 
 
 def if_alive(method):
-    def wrapper(dragon, *args, **kwargs):
-        if dragon.is_alive():
-            return method(dragon, *args, **kwargs)
+    @wraps(method)
+    def wrapper(instance, *args, **kwargs):
+        if instance.is_alive():
+            return method(instance, *args, **kwargs)
     return wrapper
 
 
@@ -40,8 +53,7 @@ class Movable:
         return self._position
 
     def __str__(self) -> str:
-        current_position: Point = self.get_position()
-        return f'Movable(x={current_position.x}, y={current_position.y})'
+        return str(self.get_position())
 
 
 class Status:
@@ -70,6 +82,9 @@ class Dragon(Movable):
         self.update_status()
         self.set_position(position)
 
+    def __str__(self):
+        return f'{self.name} (Status: {self.status}, HP: {self.health_current})'
+
     def is_dead(self) -> bool:
         if self.status == Status.DEAD:
             return True
@@ -94,18 +109,18 @@ class Dragon(Movable):
         return drop
 
     @if_alive
-    def make_damage(self) -> Optional[int]:
+    def make_damage(self) -> int:
         return randint(self.DAMAGE_MIN, self.DAMAGE_MAX)
 
     def make_dead(self) -> NoReturn:
         self.texture = self.TEXTURE_DEAD
-        raise Dragon.IsDead
+        raise self.IsDead
 
+    @debug
     @if_alive
-    def take_damage(self, damage: int) -> Optional[NoReturn]:
+    def take_damage(self, damage: int) -> None:
         self.health_current -= damage
         self.update_status()
-        logging.info(f'{self.name} got: {damage}, HP left: {self.health_current}')
 
         if self.is_dead():
             self.make_dead()

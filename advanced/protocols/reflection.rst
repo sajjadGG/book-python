@@ -4,29 +4,36 @@ Reflection
 
 
 
+Syntax
+======
+
 Built-in Functions
-==================
+------------------
+* ``hasattr(obj, 'attribute_name') -> bool``
 * ``setattr(obj, 'attribute_name', 'new value') -> None``
 * ``getattr(obj, 'attribute_name', 'default value') -> Any``
-* ``hasattr(obj, 'attribute_name') -> bool``
 * ``delattr(obj, 'attribute_name') -> None``
-* ``getattr(x, 'name')`` is equivalent to ``x.name``
-
 
 Protocol
-========
+--------
 * ``__setattr__(self, attribute_name, value)``
 * ``__getattribute__(self, attribute_name, default)``
 * ``__getattr__(self, attribute_name, default)``
 * ``__delattr__(self, attribute_name)``
 
+Definition
+----------
+* ``astro.name = 'Mark Watney'`` => ``setattr(astro, 'name', 'Mark Watney')`` => ``obj.__setattr__('name', 'Mark Watney')``
+* ``del astro.name`` => ``delattr(astro, 'name')`` => ``astro.__delattr__(name)``
+* ``astro.name`` => ``getattr(astro, 'name')``
+
+    * if ``obj`` has ``name`` => ``astro.__getattribute__('name')``
+    * if ``obj`` doesn't have ``name`` => ``astro.__getattr__('name')``
+
 
 ``__setattr__()``
 =================
-* ``setattr(x, 'name', 'value')``
-
 .. code-block:: python
-    :caption: Example ``__setattr__()``
 
     class Temperature:
         def __init__(self, initial_temperature):
@@ -55,7 +62,6 @@ Protocol
 * ``delattr(x, 'name')``
 
 .. code-block:: python
-    :caption: Example ``__delattr__()``
 
     class Temperature:
         def __init__(self, initial_temperature):
