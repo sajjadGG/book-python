@@ -138,26 +138,8 @@ Creating ``datetime`` objects
         second=t.second)
     # datetime.datetime(1969, 7, 21, 2, 56, 15)
 
-.. code-block:: python
-    :caption: Create ``datetime`` from ``date`` and ``time`` objects
-
-    from datetime import datetime, date, time
-
-
-    d = date(1969, 7, 21)
-    t = time(2, 56, 15)
-
     datetime(d.year, d.month, d.day, t.hour, t. minute, t.second)
     # datetime.datetime(1969, 7, 21, 2, 56, 15)
-
-.. code-block:: python
-    :caption: Create ``datetime`` from ``date`` and ``time`` objects
-
-    from datetime import datetime, date, time
-
-
-    d = date(1969, 7, 21)
-    t = time(2, 56, 15)
 
     datetime.combine(d, t)
     # datetime.datetime(1969, 7, 21, 2, 56, 15)

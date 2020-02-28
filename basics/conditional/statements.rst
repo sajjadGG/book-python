@@ -81,6 +81,16 @@ Checking if value is in range
 
     if 0 <= age < 18:
         print('Age is between [0, 18)')
+    # Age is between [0, 18)
+
+.. code-block:: python
+
+    a = 10
+    b = 100
+
+    if 0 <= a <= 50 < b:
+        print('Yes')
+    # Yes
 
 Checking if has value
 ---------------------
