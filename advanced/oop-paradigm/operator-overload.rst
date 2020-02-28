@@ -11,9 +11,6 @@ Rationale
     * Readable syntax
     * Simpler operations
 
-
-Example
-=======
 .. code-block:: python
 
     class Vector:
@@ -63,8 +60,8 @@ Example
     # Vector(x=9, y=12)
 
 
-Operator Overload
-=================
+Syntax
+======
 
 Numerical Operators
 -------------------
@@ -260,9 +257,11 @@ Accessors Overload
         def __missing__(self, key):
             ...
 
+
 Further Reading
 ===============
 * https://docs.python.org/3/reference/datamodel.html#emulating-numeric-types
+
 
 Assignments
 ===========

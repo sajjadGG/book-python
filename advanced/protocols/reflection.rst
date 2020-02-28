@@ -3,6 +3,10 @@ Reflection
 **********
 
 
+Rationale
+=========
+* Act, when someone is trying to access an attribute
+
 
 Syntax
 ======
@@ -21,24 +25,17 @@ Protocol
 * ``__getattr__(self, attribute_name, default)``
 * ``__delattr__(self, attribute_name)``
 
-Definition
-----------
-* ``astro.name = 'Mark Watney'``
-* => ``setattr(astro, 'name', 'Mark Watney')``
-* => ``obj.__setattr__('name', 'Mark Watney')``
-
-* ``del astro.name``
-* => ``delattr(astro, 'name')``
-* => ``astro.__delattr__(name)``
-
-* ``astro.name``
-* => ``getattr(astro, 'name')``
-* => ``astro.__getattribute__('name')`` (if ``obj`` has ``name``)
-* => ``astro.__getattr__('name')`` (if ``obj`` doesn't have ``name``)
-
 
 ``__setattr__()``
 =================
+* Called when trying to set attribute to a value
+* ``setattr(x, 'name', 'value')`` is equivalent to ``x.name = 'value'``
+* Call Stack:
+
+    * ``astro.name = 'Mark Watney'``
+    * => ``setattr(astro, 'name', 'Mark Watney')``
+    * => ``obj.__setattr__('name', 'Mark Watney')``
+
 .. code-block:: python
 
     class Temperature:
@@ -64,8 +61,13 @@ Definition
 
 ``__delattr__()``
 =================
-* ``del x.name``
-* ``delattr(x, 'name')``
+* Called when trying to delete attribute
+* ``delattr(x, 'name')`` is equivalent to ``del x.name``
+* Call stack:
+
+    * ``del astro.name``
+    * => ``delattr(astro, 'name')``
+    * => ``astro.__delattr__(name)``
 
 .. code-block:: python
 
@@ -90,9 +92,17 @@ Definition
 ``__getattribute__()``
 ======================
 * Called for every time, when you want to access any attribute
+* ``getattr(x, 'name')`` is equivalent to ``x.name``
 * Before even checking if this attribute exists
-* ``__getattribute__()`` is called before ``__getattr__()``
-* if ``__getattribute__()`` raises ``AttributeError`` exception, then the exception will be ignored and ``__getattr__()`` method will be invoked
+* if ``__getattribute__()`` raises ``AttributeError`` it calls ``__getattr__()``
+* Call stack:
+
+    * ``astro.name``
+    * => ``getattr(astro, 'name')``
+    * => ``astro.__getattribute__('name')``
+    * if ``astro.__getattribute__(name)`` raise ``AttributeError``
+    * => ``astro.__getattr__('name')``
+
 
 .. code-block:: python
     :caption: Example ``__getattribute__()``
@@ -118,8 +128,7 @@ Definition
 ``__getattr__()``
 =================
 * Called whenever you request an attribute that hasn't already been defined
-* ``getattr(x, 'name')`` is equivalent to ``x.name``
-* When ``__getattribute__()`` raised an ``AttributeError``
+* if ``__getattribute__()`` raises ``AttributeError`` it calls ``__getattr__()``
 * Implementing a fallback for missing attributes
 
 
@@ -127,7 +136,25 @@ Definition
 =============
 * Check if object has attribute
 * There is no ``__hasattr__()`` method
-* Triggers ``__getattribute__()``
+* Calls ``__getattribute__()`` and checks if raises ``AttributeError``
+
+.. code-block:: python
+
+    class Temperature:
+        def __init__(self, initial_temperature):
+            self.value = initial_temperature
+
+
+    t = Temperature(100)
+
+    hasattr(t, 'kelvin')
+    # False
+
+    hasattr(t, 'initial_temperature')
+    # False
+
+    hasattr(t, 'value')
+    # True
 
 
 Assignments

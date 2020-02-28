@@ -3,17 +3,17 @@ Descriptor
 **********
 
 
+Rationale
+=========
+* Add managed attributes to objects
+* Outsource functionality into specialized classes
+
+
 Protocol
 ========
 * ``__get__(self, parent, parent_type=None) -> self``
 * ``__set__(self, parent, new_value) -> None``
 * ``__delete__(self, parent) -> None``
-
-
-Rationale
-=========
-* Add managed attributes to objects
-* Outsource functionality into specialized classes
 
 
 Builtin Descriptors
@@ -24,11 +24,86 @@ Builtin Descriptors
 * functions in general
 
 
+Syntax
+======
+.. code-block:: python
+    :caption: Outside class
+
+    class Kelvin:
+        def __get__(self, parent, parent_type):
+            print('Calling Kelvin.__get__()')
+            return round(parent._current_value, 2)
+
+        def __set__(self, parent, new_value):
+            print('Calling Kelvin.__set__()')
+            parent._current_value = new_value
+
+        def __delete__(self, parent):
+            print('Calling Kelvin.__del__()')
+            parent._current_value = 0.0
+
+
+    class Temperature:
+        kelvin = Kelvin()
+
+        def __init__(self):
+            self._current_value = 0.0
+
+
+    t = Temperature()
+
+    t.kelvin = 10
+    # Calling Kelvin.__set__()
+
+    print(t.kelvin)
+    # Calling Kelvin.__get__()
+    # 10
+
+    del t.kelvin
+    # Calling Kelvin.__del__()
+
+.. code-block:: python
+    :caption: Inside class
+
+    class Temperature:
+
+        class Kelvin:
+            def __get__(self, parent, parent_type):
+                print('Calling Kelvin.__get__()')
+                return round(parent._current_value, 2)
+
+            def __set__(self, parent, new_value):
+                print('Calling Kelvin.__set__()')
+                parent._current_value = new_value
+
+            def __delete__(self, parent):
+                print('Calling Kelvin.__del__()')
+                parent._current_value = 0.0
+
+        kelvin = Kelvin()
+
+        def __init__(self):
+            self._current_value = 0.0
+
+
+    t = Temperature()
+
+    t.kelvin = 10
+    # Calling Kelvin.__set__()
+
+    print(t.kelvin)
+    # Calling Kelvin.__get__()
+    # 10
+
+    del t.kelvin
+    # Calling Kelvin.__del__()
+
+
 Examples
 ========
 
-Outside class
--------------
+Temperature Conversion
+----------------------
 .. code-block:: python
 
     class Kelvin:
@@ -39,132 +114,78 @@ Outside class
             parent._current_value = new_value
 
         def __delete__(self, parent):
-            parent._current_value = 0.0
+            parent._current_value = 0
+
+
+    class Celsius:
+        def __get__(self, parent, parent_type):
+            temp = parent._current_value - 273.15
+            return round(temp, 2)
+
+        def __set__(self, parent, new_value):
+            temp = new_value + 273.15
+            parent._current_value = temp
+
+        def __delete__(self, parent):
+            self.__set__(parent, 0)
+
+
+    class Fahrenheit:
+        def __get__(self, parent, parent_type):
+            temp = (parent._current_value - 273.15) * 9 / 5 + 32
+            return round(temp, 2)
+
+        def __set__(self, parent, fahrenheit):
+            temp = (fahrenheit - 32) * 5 / 9 + 273.15
+            parent._current_value = temp
+
+        def __delete__(self, parent):
+            self.__set__(parent, 0)
 
 
     class Temperature:
+        kelvin = Kelvin()
+        celsius = Celsius()
+        fahrenheit = Fahrenheit()
+
         def __init__(self):
             self._current_value = 0.0
-            self.kelvin = Kelvin()
-
-
-    t = Temperature()
-
-    t.kelvin = 10        # Will trigger ``Kelvin.__set__()``
-    print(t.kelvin)      # Will trigger ``Kelvin.__get__()``
-    del t.kelvin         # Will trigger ``Kelvin.__delete__()``
-
-Inside class
-------------
-.. code-block:: python
-
-    class Temperature:
-        def __init__(self):
-            self._current_value = 0.0
-            self.kelvin = Temperature.Kelvin()
-
-        class Kelvin:
-            def __get__(self, parent, parent_type):
-                return round(parent._current_value, 2)
-
-            def __set__(self, parent, new_value):
-                parent._current_value = new_value
-
-            def __delete__(self, parent):
-                parent._current_value = 0.0
-
-
-
-    t = Temperature()
-
-    t.kelvin = 10        # Will trigger ``Kelvin.__set__()``
-    print(t.kelvin)      # Will trigger ``Kelvin.__get__()``
-    del t.kelvin         # Will trigger ``Kelvin.__delete__()``
-
-
-Case Study
-==========
-
-Temperature Conversion
-----------------------
-.. code-block:: python
-
-    class Temperature:
-        def __init__(self):
-            self._current_value = 0.0
-            self.kelvin = Temperature.Kelvin()
-            self.celsius = Temperature.Celsius()
-            self.fahrenheit = Temperature.Fahrenheit()
-
-        class Kelvin:
-            def __get__(self, parent, parent_type):
-                return round(parent._current_value, 2)
-
-            def __set__(self, parent, new_value):
-                parent._current_value = new_value
-
-            def __delete__(self, parent):
-                parent._current_value = 0
-
-        class Celsius:
-            def __get__(self, parent, parent_type):
-                temp = parent._current_value - 273.15
-                return round(temp, 2)
-
-            def __set__(self, parent, new_value):
-                temp = new_value + 273.15
-                parent._current_value = temp
-
-            def __delete__(self, parent):
-                self.__set__(parent, 0)
-
-        class Fahrenheit:
-            def __get__(self, parent, parent_type):
-                temp = (parent._current_value - 273.15) * 9 / 5 + 32
-                return round(temp, 2)
-
-            def __set__(self, parent, fahrenheit):
-                temp = (fahrenheit - 32) * 5 / 9 + 273.15
-                parent._current_value = temp
-
-            def __delete__(self, parent):
-                self.__set__(parent, 0)
 
 
     t = Temperature()
 
     t.kelvin = 273.15
-    print(f'K: {t.kelvin}')      # 273.15
-    print(f'C: {t.celsius}')     # 0.0
-    print(f'F: {t.fahrenheit}')  # 32.0
+    print(f'K: {t.kelvin}')         # 273.15
+    print(f'C: {t.celsius}')        # 0.0
+    print(f'F: {t.fahrenheit}')     # 32.0
 
     print()
 
     t.fahrenheit = 100
-    print(f'K: {t.kelvin}')      # 310.93
-    print(f'C: {t.celsius}')     # 37.78
-    print(f'F: {t.fahrenheit}')  # 100.0
+    print(f'K: {t.kelvin}')         # 310.93
+    print(f'C: {t.celsius}')        # 37.78
+    print(f'F: {t.fahrenheit}')     # 100.0
 
     print()
 
     t.celsius = 100
-    print(f'K: {t.kelvin}')      # 373.15
-    print(f'C: {t.celsius}')     # 100.0
-    print(f'F: {t.fahrenheit}')  # 212.0
+    print(f'K: {t.kelvin}')         # 373.15
+    print(f'C: {t.celsius}')        # 100.0
+    print(f'F: {t.fahrenheit}')     # 212.0
 
     print()
 
     del t.celsius
-    print(f'K: {t.kelvin}')      # 273.15
-    print(f'C: {t.celsius}')     # 0.0
-    print(f'F: {t.fahrenheit}')  # 32.0
+    print(f'K: {t.kelvin}')         # 273.15
+    print(f'C: {t.celsius}')        # 0.0
+    print(f'F: {t.fahrenheit}')     # 32.0
 
     print()
 
     del t.fahrenheit
-    print(f'K: {t.kelvin}')      # 255.37
-    print(f'C: {t.celsius}')     # -17.78
-    print(f'F: {t.fahrenheit}')  # 0
+    print(f'K: {t.kelvin}')         # 255.37
+    print(f'C: {t.celsius}')        # -17.78
+    print(f'F: {t.fahrenheit}')     # 0
 
 
 .. _Timezone Conversion:
@@ -216,10 +237,10 @@ Timezone Conversion
     t = Time()
 
     t.warsaw = datetime(1969, 7, 21, 3, 56, 15)
-    print(t.utc)      # 1969-07-21 02:56:15+00:00
-    print(t.moscow)   # 1969-07-21 05:56:15+03:00
-    print(t.est)      # 1969-07-20 22:56:15-04:00
-    print(t.pdt)      # 1969-07-20 19:56:15-07:00
+    print(t.utc)        # 1969-07-21 02:56:15+00:00
+    print(t.moscow)     # 1969-07-21 05:56:15+03:00
+    print(t.est)        # 1969-07-20 22:56:15-04:00
+    print(t.pdt)        # 1969-07-20 19:56:15-07:00
 
 
 Assignments

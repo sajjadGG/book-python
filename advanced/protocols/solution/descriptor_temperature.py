@@ -1,13 +1,15 @@
-class Temperature:
-    class Value:
-        def __set__(self, parent, new_value):
-            if new_value < 0:
-                raise ValueError('Negative temperature')
-            else:
-                parent._value = new_value
+class Value:
+    def __get__(self, parent, parent_type):
+        return parent._value
 
-    def __init__(self):
-        self.value = Temperature.Value()
+    def __set__(self, parent, new_value):
+        if new_value < 0:
+            raise ValueError('Negative temperature')
+        else:
+            parent._value = new_value
+
+class Temperature:
+    value = Value()
 
 
 t = Temperature()
