@@ -1,4 +1,0 @@
-django
-django-debug-toolbar
-pillow
-requests

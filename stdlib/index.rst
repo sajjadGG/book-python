@@ -6,7 +6,7 @@ Entry Test
     :caption: Entry Test
     :name: Stdlib Entry Test
 
-    /stdlib/exam/entry.rst
+    exam/entry.rst
 
 ********************
 Modules and Packages
@@ -16,12 +16,12 @@ Modules and Packages
     :caption: Modules and Packages
     :name: Stdlib Modules and Packages
 
-    /stdlib/module/venv.rst
-    /stdlib/module/install.rst
-    /stdlib/module/import.rst
-    /stdlib/module/tools.rst
-    /stdlib/module/zipapp.rst
-    /stdlib/module/distributing.rst
+    module/venv.rst
+    module/install.rst
+    module/import.rst
+    module/tools.rst
+    module/zipapp.rst
+    module/distributing.rst
 
 ********
 Builtins
@@ -31,9 +31,9 @@ Builtins
     :caption: Builtins
     :name: Stdlib Builtins
 
-    /stdlib/builtin/functions.rst
-    /stdlib/builtin/keywords.rst
-    /stdlib/builtin/print.rst
+    builtin/functions.rst
+    builtin/keywords.rst
+    builtin/print.rst
 
 *******
 Looping
@@ -43,8 +43,8 @@ Looping
     :caption: Builtins
     :name: Stdlib Looping
 
-    /stdlib/looping/comprehensions.rst
-    /stdlib/looping/else.rst
+    looping/comprehensions.rst
+    looping/else.rst
 
 ****************
 Type Annotations
@@ -54,17 +54,17 @@ Type Annotations
     :caption: Type Annotations
     :name: Stdlib Type Annotations
 
-    /stdlib/type-annotation/about.rst
-    /stdlib/type-annotation/vars.rst
-    /stdlib/type-annotation/sequences.rst
-    /stdlib/type-annotation/mapping.rst
-    /stdlib/type-annotation/special.rst
-    /stdlib/type-annotation/classes.rst
-    /stdlib/type-annotation/functions-methods.rst
-    /stdlib/type-annotation/aliases.rst
-    /stdlib/type-annotation/introspection.rst
-    /stdlib/type-annotation/checking.rst
-    /stdlib/type-annotation/annotate-existing.rst
+    type-annotation/about.rst
+    type-annotation/vars.rst
+    type-annotation/sequences.rst
+    type-annotation/mapping.rst
+    type-annotation/special.rst
+    type-annotation/classes.rst
+    type-annotation/functions-methods.rst
+    type-annotation/aliases.rst
+    type-annotation/introspection.rst
+    type-annotation/checking.rst
+    type-annotation/annotate-existing.rst
 
 ***************************
 Object Oriented Programming
@@ -74,8 +74,8 @@ Object Oriented Programming
     :caption: Object Oriented Programming
     :name: Stdlib Object Oriented Programming
 
-    /stdlib/oop/enum.rst
-    /stdlib/oop/dataclass.rst
+    oop/enum.rst
+    oop/dataclass.rst
 
 ***********
 Mathematics
@@ -85,13 +85,13 @@ Mathematics
     :caption: Mathematics
     :name: Stdlib Mathematics
 
-    /stdlib/math/math.rst
-    /stdlib/math/statistics.rst
-    /stdlib/math/random.rst
-    /stdlib/math/fractions.rst
-    /stdlib/math/precision.rst
-    /stdlib/math/plotting.rst
-    /stdlib/math/complex.rst
+    math/math.rst
+    math/statistics.rst
+    math/random.rst
+    math/fractions.rst
+    math/precision.rst
+    math/plotting.rst
+    math/complex.rst
 
 **********************
 Datetime and Timezones
@@ -101,12 +101,12 @@ Datetime and Timezones
     :caption: Datetime and Timezones
     :name: Stdlib Datetime and Timezones
 
-    /stdlib/datetime/datetime.rst
-    /stdlib/datetime/parse-and-format.rst
-    /stdlib/datetime/timedelta.rst
-    /stdlib/datetime/timestamp.rst
-    /stdlib/datetime/utils.rst
-    /stdlib/datetime/timezones.rst
+    datetime/datetime.rst
+    datetime/parse-and-format.rst
+    datetime/timedelta.rst
+    datetime/timestamp.rst
+    datetime/utils.rst
+    datetime/timezones.rst
 
 *************
 Serialization
@@ -116,10 +116,10 @@ Serialization
     :caption: Serialization
     :name: Stdlib Serialization
 
-    /stdlib/serialization/csv.rst
-    /stdlib/serialization/json.rst
-    /stdlib/serialization/pickle.rst
-    /stdlib/serialization/xml.rst
+    serialization/csv.rst
+    serialization/json.rst
+    serialization/pickle.rst
+    serialization/xml.rst
 
 ********
 Database
@@ -129,16 +129,16 @@ Database
     :caption: Database
     :name: Stdlib Database
 
-    /stdlib/database/db-api.rst
-    /stdlib/database/sqlite.rst
-    /stdlib/database/mysql.rst
-    /stdlib/database/postgresql.rst
-    /stdlib/database/mongodb.rst
-    /stdlib/database/orm.rst
-    /stdlib/database/migrations.rst
-    /stdlib/database/data-exploration.rst
-    /stdlib/database/sql-injection.rst
-    /stdlib/database/sql.rst
+    database/db-api.rst
+    database/sqlite.rst
+    database/mysql.rst
+    database/postgresql.rst
+    database/mongodb.rst
+    database/orm.rst
+    database/migrations.rst
+    database/data-exploration.rst
+    database/sql-injection.rst
+    database/sql.rst
 
 *******************
 Regular Expressions
@@ -148,19 +148,19 @@ Regular Expressions
     :caption: Regular Expressions
     :name: Stdlib Regular Expressions
 
-    /stdlib/regular-expressions/syntax.rst
-    /stdlib/regular-expressions/match.rst
-    /stdlib/regular-expressions/search.rst
-    /stdlib/regular-expressions/find.rst
-    /stdlib/regular-expressions/compare.rst
-    /stdlib/regular-expressions/compile.rst
-    /stdlib/regular-expressions/groups.rst
-    /stdlib/regular-expressions/multiline.rst
-    /stdlib/regular-expressions/substitute.rst
-    /stdlib/regular-expressions/split.rst
-    /stdlib/regular-expressions/greedy.rst
-    /stdlib/regular-expressions/standards.rst
-    /stdlib/regular-expressions/references/index.rst
+    regular-expressions/syntax.rst
+    regular-expressions/match.rst
+    regular-expressions/search.rst
+    regular-expressions/find.rst
+    regular-expressions/compare.rst
+    regular-expressions/compile.rst
+    regular-expressions/groups.rst
+    regular-expressions/multiline.rst
+    regular-expressions/substitute.rst
+    regular-expressions/split.rst
+    regular-expressions/greedy.rst
+    regular-expressions/standards.rst
+    regular-expressions/references/index.rst
 
 ****************
 Operating System
@@ -170,9 +170,9 @@ Operating System
     :caption: Operating System
     :name: Stdlib Operating System
 
-    /stdlib/operating-system/argparse.rst
-    /stdlib/operating-system/os.rst
-    /stdlib/operating-system/pathlib.rst
+    operating-system/argparse.rst
+    operating-system/os.rst
+    operating-system/pathlib.rst
 
 ***
 GUI
@@ -182,7 +182,7 @@ GUI
     :caption: GUI
     :name: Stdlib GUI
 
-    /stdlib/gui/tkinter.rst
+    gui/tkinter.rst
 
 *********
 Exit Test
@@ -192,5 +192,5 @@ Exit Test
     :caption: Exit Test
     :name: Stdlib Exit Test
 
-    /stdlib/exam/exit.rst
+    exam/exit.rst
 

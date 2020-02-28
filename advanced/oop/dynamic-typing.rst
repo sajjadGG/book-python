@@ -106,3 +106,73 @@ Injecting methods
     # My name... Jose Jimenez
 
 
+Proxy methods
+=============
+.. code-block:: python
+    :caption: One of the most common use of ``*args``, ``**kwargs`` is for proxy methods.
+
+    class Point2D:
+        def __init__(self, x, y):
+            self.x = x
+            self.y = y
+
+
+    class Point3D(Point2D):
+        def __init__(self, z, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            self.z = z
+
+
+Placeholder class
+=================
+.. code-block:: python
+    :caption: Dynamically creating fields
+
+    class MyClass:
+        def __init__(self, **kwargs):
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+
+    a = MyClass(first_name='Jan', last_name='Twardowski')
+    a.first_name          # Jan
+    a.last_name           # 'Twardowski'
+
+    b = MyClass(species='Setosa')
+    b.species            # 'Setosa'
+
+.. code-block:: python
+    :caption: Dynamically creating fields
+
+    class Astronaut:
+        def __init__(self, last_name, **kwargs):
+            self.last_name = last_name
+
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+
+    jan = Astronaut(last_name='Twardowski', addresses=())
+    ivan = Astronaut(first_name='Иван', last_name='Иванович', agency='Roscosmos')
+
+    print(jan.last_name)   # Twardowski
+    print(ivan.first_name)  # Иван
+
+    print(jan.__dict__)    # {'last_name': 'Twardowski', 'addresses': ()}
+    print(ivan.__dict__)    # {'last_name': 'Иванович', 'first_name': 'Иван', 'agency': 'Roscosmos'}
+
+.. code-block:: python
+
+    class MyClass:
+        def __init__(self, **kwargs):
+            self.__dict__ = kwargs
+
+
+    a = MyClass(first_name='Jan', last_name='Twardowski')
+    print(a.first_name)          # Jan
+    print(a.last_name)           # 'Twardowski'
+
+    b = MyClass(species='Setosa')
+    print(b.species)             # 'Setosa'
+    print(b.first_name)          # AttributeError: 'MyClass' object has no attribute 'first_name'
+    print(b.last_name)           # AttributeError: 'MyClass' object has no attribute 'last_name'

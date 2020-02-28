@@ -5,10 +5,7 @@ sphinxcontrib-bibtex
 # sphinxcontrib-book
 # sphinxjp.themes.revealjs
 
-matplotlib
-numpy
-scikit-learn
-scipy
-jupyter
-pandas
-plotly
+django
+django-debug-toolbar
+pillow
+requests

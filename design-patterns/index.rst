@@ -6,9 +6,9 @@ Entry Test
     :caption: Entry Test
     :name: Design Patterns Entry Test
 
-    /design-patterns/about/entry.rst
-    /design-patterns/about/dragon.rst
-    /design-patterns/about/classification.rst
+    about/entry.rst
+    about/dragon.rst
+    about/classification.rst
 
 **********
 Creational
@@ -18,8 +18,8 @@ Creational
     :caption: Creational
     :name: Design Patterns Creational
 
-    /design-patterns/creational/singleton.rst
-    /design-patterns/creational/factory.rst
+    creational/singleton.rst
+    creational/factory.rst
 
 **********
 Structural
@@ -29,7 +29,7 @@ Structural
     :caption: Structural
     :name: Design Patterns Structural
 
-    /design-patterns/structural/dependency-injection.rst
+    structural/dependency-injection.rst
 
 **********
 Behavioral
@@ -39,8 +39,8 @@ Behavioral
     :caption: Behavioral
     :name: Design Patterns Behavioral
 
-    /design-patterns/behavioral/gateway.rst
-    /design-patterns/behavioral/state-machine.rst
+    behavioral/gateway.rst
+    behavioral/state-machine.rst
 
 *********
 Paradigms
@@ -50,9 +50,9 @@ Paradigms
     :caption: Paradigms
     :name: Design Patterns Paradigms
 
-    /design-patterns/paradigm/callback.rst
-    /design-patterns/paradigm/functional-programming.rst
-    /design-patterns/paradigm/event-programming.rst
+    paradigm/callback.rst
+    paradigm/functional-programming.rst
+    paradigm/event-programming.rst
 
 *********
 Exit Test
@@ -62,4 +62,4 @@ Exit Test
     :caption: Exit Test
     :name: Design Patterns Exit Test
 
-    /design-patterns/about/exit.rst
+    about/exit.rst

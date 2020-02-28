@@ -87,6 +87,91 @@ Positional and Keyword Arguments
     echo(*args, **kwargs)
 
 
+Dynamically create objects
+==========================
+
+From sequence
+-------------
+.. code-block:: python
+
+    DATA = (6.0, 3.4, 4.5, 1.6, 'versicolor')
+
+    class Iris:
+        def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
+            self.sepal_length = sepal_length
+            self.sepal_width = sepal_width
+            self.petal_length = petal_length
+            self.petal_width = petal_width
+            self.species = species
+
+    iris = Iris(*DATA)
+    iris.species
+    # 'versicolor'
+
+.. code-block:: python
+
+    DATA = [
+        (6.0, 3.4, 4.5, 1.6, 'versicolor'),
+        (4.9, 3.1, 1.5, 0.1, "setosa"),
+    ]
+
+    class Iris:
+        def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
+            self.sepal_length = sepal_length
+            self.sepal_width = sepal_width
+            self.petal_length = petal_length
+            self.petal_width = petal_width
+            self.species = species
+
+        def __repr__(self):
+            return f'{self.species}'
+
+    output = [Iris(*row) for row in DATA]
+    print(output)
+    # [versicolor, setosa]
+
+From mapping
+------------
+.. code-block:: python
+
+    DATA = {"sepal_length": 6.0, "sepal_width": 3.4, "petal_length": 4.5, "petal_width": 1.6, "species": "versicolor"}
+
+    class Iris:
+        def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
+            self.sepal_length = sepal_length
+            self.sepal_width = sepal_width
+            self.petal_length = petal_length
+            self.petal_width = petal_width
+            self.species = species
+
+    iris = Iris(**DATA)
+    iris.species
+    # 'versicolor'
+
+.. code-block:: python
+
+    DATA = [
+        {"sepal_length": 6.0, "sepal_width": 3.4, "petal_length": 4.5, "petal_width": 1.6, "species": "versicolor"},
+        {"sepal_length": 4.9, "sepal_width": 3.1, "petal_length": 1.5, "petal_width": 0.1, "species": "setosa"},
+    ]
+
+    class Iris:
+        def __init__(self, sepal_length, sepal_width, petal_length, petal_width, species):
+            self.sepal_length = sepal_length
+            self.sepal_width = sepal_width
+            self.petal_length = petal_length
+            self.petal_width = petal_width
+            self.species = species
+
+        def __repr__(self):
+            return f'{self.species}'
+
+
+    output = [Iris(**row) for row in DATA]
+    print(output)
+    # ['versicolor', 'setosa']
+
+
 Examples
 ========
 

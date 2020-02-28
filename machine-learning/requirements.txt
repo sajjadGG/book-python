@@ -11,4 +11,7 @@ scikit-learn
 scipy
 jupyter
 pandas
+tensorflow
+keras
+pytorch
 plotly

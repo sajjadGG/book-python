@@ -6,11 +6,11 @@ About
     :caption: About
     :name: Basics About
 
-    /basics/about/survey.rst
-    /basics/about/agenda.rst
-    /basics/about/install.rst
-    /basics/about/language.rst
-    /basics/about/ide.rst
+    about/survey.rst
+    about/agenda.rst
+    about/install.rst
+    about/language.rst
+    about/ide.rst
 
 ******
 Syntax
@@ -20,9 +20,9 @@ Syntax
     :caption: Syntax
     :name: Basic Syntax
 
-    /basics/syntax/syntax.rst
-    /basics/syntax/operators.rst
-    /basics/syntax/builtins.rst
+    syntax/syntax.rst
+    syntax/operators.rst
+    syntax/builtins.rst
 
 *****
 Types
@@ -32,13 +32,13 @@ Types
     :caption: Types
     :name: Basic Types
 
-    /basics/type/int.rst
-    /basics/type/float.rst
-    /basics/type/bool.rst
-    /basics/type/none.rst
-    /basics/type/str.rst
-    /basics/type/str-methods.rst
-    /basics/type/type-annotations.rst
+    type/int.rst
+    type/float.rst
+    type/bool.rst
+    type/none.rst
+    type/str.rst
+    type/str-methods.rst
+    type/type-annotations.rst
 
 *********
 Sequences
@@ -48,13 +48,13 @@ Sequences
     :caption: Sequences
     :name: Basic Sequences
 
-    /basics/sequence/list.rst
-    /basics/sequence/tuple.rst
-    /basics/sequence/set.rst
-    /basics/sequence/nesting.rst
-    /basics/sequence/indexing.rst
-    /basics/sequence/slicing.rst
-    /basics/sequence/unpacking.rst
+    sequence/list.rst
+    sequence/tuple.rst
+    sequence/set.rst
+    sequence/nesting.rst
+    sequence/indexing.rst
+    sequence/slicing.rst
+    sequence/unpacking.rst
 
 ********
 Mappings
@@ -64,9 +64,9 @@ Mappings
     :caption: Mappings
     :name: Basic Mappings
 
-    /basics/mapping/dict.rst
-    /basics/mapping/generate.rst
-    /basics/mapping/nested.rst
+    mapping/dict.rst
+    mapping/generate.rst
+    mapping/nested.rst
 
 ************
 Conditionals
@@ -76,9 +76,9 @@ Conditionals
     :caption: Mappings
     :name: Basic Conditionals
 
-    /basics/conditional/operators.rst
-    /basics/conditional/statements.rst
-    /basics/conditional/expressions.rst
+    conditional/operators.rst
+    conditional/statements.rst
+    conditional/expressions.rst
 
 *******
 Looping
@@ -88,12 +88,12 @@ Looping
     :caption: Looping
     :name: Basic Looping
 
-    /basics/looping/while.rst
-    /basics/looping/for.rst
-    /basics/looping/nested.rst
-    /basics/looping/unpacking.rst
-    /basics/looping/dict.rst
-    /basics/looping/comprehensions.rst
+    looping/while.rst
+    looping/for.rst
+    looping/nested.rst
+    looping/unpacking.rst
+    looping/dict.rst
+    looping/comprehensions.rst
 
 ************
 Control Flow
@@ -103,8 +103,8 @@ Control Flow
     :caption: Control Flow
     :name: Basic Control Flow
 
-    /basics/control-flow/exception.rst
-    /basics/control-flow/file.rst
+    control-flow/exception.rst
+    control-flow/file.rst
 
 *********
 Functions
@@ -114,15 +114,15 @@ Functions
     :caption: Functions
     :name: Basic Functions
 
-    /basics/function/definition.rst
-    /basics/function/return.rst
-    /basics/function/arguments.rst
-    /basics/function/scope.rst
-    /basics/function/type-annotation.rst
-    /basics/function/recurrence.rst
-    /basics/function/doctest.rst
-    /basics/function/generators.rst
-    /basics/function/lambda.rst
+    function/definition.rst
+    function/return.rst
+    function/arguments.rst
+    function/scope.rst
+    function/type-annotation.rst
+    function/recurrence.rst
+    function/doctest.rst
+    function/generators.rst
+    function/lambda.rst
 
 ***************************
 Object Oriented Programming
@@ -132,12 +132,12 @@ Object Oriented Programming
     :caption: Object Oriented Programming
     :name: Basic Object Oriented Programming
 
-    /basics/oop/class.rst
-    /basics/oop/attribute.rst
-    /basics/oop/init.rst
-    /basics/oop/method.rst
-    /basics/oop/stringify.rst
-    /basics/oop/inheritance.rst
+    oop/class.rst
+    oop/attribute.rst
+    oop/init.rst
+    oop/method.rst
+    oop/stringify.rst
+    oop/inheritance.rst
 
 *****
 Recap
@@ -147,8 +147,8 @@ Recap
     :caption: Recap
     :name: Basic Recap
 
-    /basics/about/recap.rst
-    /basics/about/certificate.rst
+    about/recap.rst
+    about/certificate.rst
 
 
 **********
