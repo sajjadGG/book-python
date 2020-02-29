@@ -660,13 +660,13 @@ Raise Exception
 
 :English:
     #. Ask user to input age
-    #. If user has more than 18 years
-    #. Raise an exception ``PermissionError`` with message "Only for kids"
+    #. If user has less than 18 years
+    #. Raise an exception ``PermissionError`` with message "Adults only"
 
 :Polish:
     #. Poproś użytkownika o wprowadzenie wieku
-    #. Jeżeli użytkownik ma więcej niż 18 lat
-    #. Wyrzuć wyjątek ``PermissionError`` z komunikatem "Only for kids"
+    #. Jeżeli użytkownik ma mniej niż 18 lat
+    #. Wyrzuć wyjątek ``PermissionError`` z komunikatem "Adults only"
 
 Catch Exception
 ---------------

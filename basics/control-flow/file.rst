@@ -78,39 +78,51 @@ Read from file
 .. code-block:: python
     :caption: Reading file line by line
 
-    with open(r'/tmp/iris.csv') as file:
+    FILE = r'/tmp/iris.csv'
+
+    with open(FILE) as file:
         for line in file:
             print(line)
 
 .. code-block:: python
     :caption: Read whole file as a text to ``content`` variable
 
-    with open(r'/tmp/iris.csv') as file:
+    FILE = r'/tmp/iris.csv'
+
+    with open(FILE) as file:
         content = file.read()
 
 .. code-block:: python
     :caption: Reading file as ``list`` with lines
 
-    with open(r'/tmp/iris.csv') as file:
+    FILE = r'/tmp/iris.csv'
+
+    with open(FILE) as file:
         lines = file.readlines()
 
 .. code-block:: python
     :caption: Read selected (1-30) lines from file
 
-    with open(r'/tmp/iris.csv') as file:
+    FILE = r'/tmp/iris.csv'
+
+    with open(FILE) as file:
         lines = file.readlines()[1:30]
 
 .. code-block:: python
     :caption: Read selected (1-30) lines from file
 
-    with open(r'/tmp/iris.csv') as file:
+    FILE = r'/tmp/iris.csv'
+
+    with open(FILE) as file:
         for line in file.readlines()[1:30]:
             print(line)
 
 .. code-block:: python
     :caption: Read whole file and split by lines, separate header from content
 
-    with open(r'/tmp/iris.csv') as file:
+    FILE = r'/tmp/iris.csv'
+
+    with open(FILE) as file:
         header, *content = file.readlines()
 
         for line in content:
@@ -119,7 +131,9 @@ Read from file
 .. code-block:: python
     :caption: Read header, and use generator to iterate over other lines
 
-    with open(r'/tmp/iris.csv') as file:
+    FILE = r'/tmp/iris.csv'
+
+    with open(FILE) as file:
         header = file.readline()
 
         for line in file:
@@ -143,7 +157,9 @@ Writing to file
 .. code-block:: python
     :caption: Writing to file
 
-    with open(r'/tmp/iris.csv', mode='w') as file:
+    FILE = r'/tmp/iris.csv'
+
+    with open(FILE, mode='w') as file:
         file.write('hello')
 
 
@@ -164,7 +180,9 @@ Appending to file
 .. code-block:: python
     :caption: Appending to file
 
-    with open(r'/tmp/iris.csv', mode='a') as file:
+    FILE = r'/tmp/iris.csv'
+
+    with open(FILE, mode='a') as file:
         file.write('hello')
 
 
@@ -180,16 +198,20 @@ Encoding
 
 .. code-block:: python
 
-    with open(r'/tmp/example.txt', mode='w', encoding='utf-8') as file:
+    FILE = r'/tmp/example.txt'
+
+    with open(FILE, mode='w', encoding='utf-8') as file:
         file.write('Иван Иванович')
 
-    with open(r'/tmp/example.txt', encoding='utf-8') as file:
+    with open(FILE, encoding='utf-8') as file:
         print(file.read())
     # Иван Иванович
 
 .. code-block:: python
 
-    with open(r'/tmp/example.txt', mode='w', encoding='cp1250') as file:
+    FILE = r'/tmp/example.txt'
+
+    with open(FILE, mode='w', encoding='cp1250') as file:
         file.write('Иван Иванович')
     # Traceback (most recent call last):
     #   ...
@@ -198,10 +220,12 @@ Encoding
 
 .. code-block:: python
 
-    with open(r'/tmp/example.txt', mode='w', encoding='utf-8') as file:
+    FILE = r'/tmp/example.txt'
+
+    with open(FILE, mode='w', encoding='utf-8') as file:
         file.write('Иван Иванович')
 
-    with open(r'/tmp/example.txt', encoding='cp1250') as file:
+    with open(FILE, encoding='cp1250') as file:
         print(file.read())
     # Traceback (most recent call last):
     #   ...
@@ -213,8 +237,10 @@ Exception handling
 .. code-block:: python
     :caption: Exception handling while accessing files
 
+    FILE = r'/tmp/example.txt'
+
     try:
-        with open(r'/tmp/iris.csv') as file:
+        with open(FILE) as file:
             print(file.read())
 
     except FileNotFoundError:
@@ -227,7 +253,7 @@ Exception handling
 Good Engineering Practises
 ==========================
 .. highlights::
-    * Never hardcode paths
+    * Never hardcode paths, always use ``FILE`` or similar
     * ``FILE`` should be constant
     * ``FILE`` as a raw string ``r'...'``
     * ``encoding='utf-8'``
@@ -274,7 +300,7 @@ Parsing simple CSV file
             * ``features: List[tuple]`` - list of measurements (each row is a tuple)
             * ``labels: List[str]`` - list of species names
 
-    #. For each line in file:
+    #. Read file and for each line:
 
         #. Remove whitespaces
         #. Split line by coma ``,``
@@ -290,7 +316,7 @@ Parsing simple CSV file
             - ``features: List[tuple]`` - lista pomiarów (każdy wiersz to tuple)
             - ``labels: List[str]`` - lista nazw gatunków
 
-    #. Dla każdej linii:
+    #. Zaczytaj plik i dla każdej linii:
 
         #. Usuń białe znaki
         #. Podziel linię po przecinku ``,``
@@ -314,7 +340,7 @@ Parsing simple CSV file
 
 :English:
     #. Copy input data from listing below and save to file ``hosts.txt``
-    #. For each line in file:
+    #. Read file and for each line:
 
         #. Remove leading and trailing whitespaces
         #. Split line by whitespace
@@ -325,7 +351,7 @@ Parsing simple CSV file
 
 :Polish:
     #. Skopiuj dane wejściowe z listingu poniżej i zapisz do pliku ``hosts.txt``
-    #. Dla każdej lini w pliku:
+    #. Zaczytaj plik i dla każdej lini:
 
         #. Usuń białe znaki na początku i końcu linii
         #. Podziel linię po białych znakach
@@ -372,7 +398,7 @@ Parsing simple CSV file
 :English:
     #. Copy input data from listing below and save to file ``hosts.txt``
     #. Copy also comments and empty lines
-    #. For each line in file:
+    #. Read file and for each line:
 
         #. Skip line if it's empty, is whitespace or starts with comment ``#``
         #. Remove leading and trailing whitespaces
@@ -388,7 +414,7 @@ Parsing simple CSV file
 :Polish:
     #. Skopiuj dane wejściowe z listingu poniżej i zapisz do pliku ``hosts.txt``
     #. Skopiuj również komentarz i pustą linię
-    #. Dla każdej lini w pliku:
+    #. Przeczytaj plik i dla każdej lini:
 
         #. Pomiń linię jeżeli jest pusta, jest białym znakiem lub zaczyna się od komentarza ``#``
         #. Usuń białe znaki na początku i końcu linii
