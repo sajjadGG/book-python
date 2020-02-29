@@ -1,6 +1,14 @@
 import re
 
 
+PATTERN = r'^'                      # Start String
+PATTERN += r'\+\d{2} ('             # Country Code
+PATTERN += r'(\d{2} \d{3} \d{4})'   # Work Phone
+PATTERN += r'|'                     # Or
+PATTERN += r'(\d{3} \d{3} \d{3})'   # Mobile
+PATTERN += r')$'                    # End String
+
+
 def is_valid_phone(number):
     """
     >>> is_valid_phone('+48 (12) 355 5678')
@@ -30,25 +38,6 @@ def is_valid_phone(number):
     >>> is_valid_phone('+48 123555678,1,2,3')
     False
     """
-
-    # Start String
-    PATTERN = r'^'
-
-    # Country Code
-    PATTERN += r'\+\d{2} ('
-
-    # Work Phone
-    PATTERN += r'(\d{2} \d{3} \d{4})'
-
-    # Or
-    PATTERN += r'|'
-
-    # Mobile
-    PATTERN += r'(\d{3} \d{3} \d{3})'
-
-    # End String
-    PATTERN += r')$'
-
     if re.match(PATTERN, number):
         return True
     else:

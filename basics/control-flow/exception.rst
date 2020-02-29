@@ -27,7 +27,7 @@ AttributeError
 
 .. code-block:: python
     :caption: ``AttributeError`` exception
-    :emphasize-lines: 2
+    :emphasize-lines: 5
 
     name = 'Jan'
     name.append('Twardowski')
@@ -42,7 +42,7 @@ ImportError, ModuleNotFoundError
 
 .. code-block:: python
     :caption: ``ModuleNotFoundError`` exception
-    :emphasize-lines: 2
+    :emphasize-lines: 5
 
     import math
     import match
@@ -57,7 +57,7 @@ IndexError
 
 .. code-block:: python
     :caption: ``IndexError`` exception
-    :emphasize-lines: 2
+    :emphasize-lines: 5
 
     DATA = ['a', 'b', 'c']
     DATA[100]
@@ -72,7 +72,7 @@ KeyError
 
 .. code-block:: python
     :caption: ``KeyError`` exception
-    :emphasize-lines: 2
+    :emphasize-lines: 5
 
     DATA = {'a': 1, 'b': 2}
     DATA['x']
@@ -87,7 +87,7 @@ NameError
 
 .. code-block:: python
     :caption: ``KeyError`` exception
-    :emphasize-lines: 1
+    :emphasize-lines: 4
 
     print(first_name)
     # Traceback (most recent call last):
@@ -101,7 +101,7 @@ SyntaxError
 
 .. code-block:: python
     :caption: ``SyntaxError`` exception
-    :emphasize-lines: 1
+    :emphasize-lines: 7
 
     if True
         print('Yes')
@@ -118,7 +118,7 @@ IndentationError
 
 .. code-block:: python
     :caption: ``IndentationError`` exception
-    :emphasize-lines: 3
+    :emphasize-lines: 9
 
     if True:
        print('Hello!')
@@ -137,18 +137,16 @@ TypeError
 
 .. code-block:: python
     :caption: ``TypeError`` exception
-    :emphasize-lines: 7
-
-    42 + 1
-    # 43
-
-    'a' + 'b'
-    # 'ab'
+    :emphasize-lines: 4
 
     42 + 'a'
     # Traceback (most recent call last):
     #   File "<stdin>", line 1, in <module>
     # TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+.. code-block:: python
+    :caption: ``TypeError`` exception
+    :emphasize-lines: 4
 
     'a' + 42
     # Traceback (most recent call last):
@@ -162,7 +160,7 @@ ValueError
 
 .. code-block:: python
     :caption: ``ValueError`` exception
-    :emphasize-lines: 4
+    :emphasize-lines: 7
 
     float(1.2)
     # 1.2
@@ -173,10 +171,80 @@ ValueError
     # TypeError: float expected at most 1 arguments, got 2
 
 
+Exception hierarchy
+===================
+.. code-block:: text
+
+    BaseException
+     +-- SystemExit
+     +-- KeyboardInterrupt
+     +-- GeneratorExit
+     +-- Exception
+          +-- StopIteration
+          +-- StopAsyncIteration
+          +-- ArithmeticError
+          |    +-- FloatingPointError
+          |    +-- OverflowError
+          |    +-- ZeroDivisionError
+          +-- AssertionError
+          +-- AttributeError
+          +-- BufferError
+          +-- EOFError
+          +-- ImportError
+          +-- LookupError
+          |    +-- IndexError
+          |    +-- KeyError
+          +-- MemoryError
+          +-- NameError
+          |    +-- UnboundLocalError
+          +-- OSError
+          |    +-- BlockingIOError
+          |    +-- ChildProcessError
+          |    +-- ConnectionError
+          |    |    +-- BrokenPipeError
+          |    |    +-- ConnectionAbortedError
+          |    |    +-- ConnectionRefusedError
+          |    |    +-- ConnectionResetError
+          |    +-- FileExistsError
+          |    +-- FileNotFoundError
+          |    +-- InterruptedError
+          |    +-- IsADirectoryError
+          |    +-- NotADirectoryError
+          |    +-- PermissionError
+          |    +-- ProcessLookupError
+          |    +-- TimeoutError
+          +-- ReferenceError
+          +-- RuntimeError
+          |    +-- NotImplementedError
+          |    +-- RecursionError
+          +-- SyntaxError
+          |    +-- IndentationError
+          |         +-- TabError
+          +-- SystemError
+          +-- TypeError
+          +-- ValueError
+          |    +-- UnicodeError
+          |         +-- UnicodeDecodeError
+          |         +-- UnicodeEncodeError
+          |         +-- UnicodeTranslateError
+          +-- Warning
+               +-- DeprecationWarning
+               +-- PendingDeprecationWarning
+               +-- RuntimeWarning
+               +-- SyntaxWarning
+               +-- UserWarning
+               +-- FutureWarning
+               +-- ImportWarning
+               +-- UnicodeWarning
+               +-- BytesWarning
+               +-- ResourceWarning
+
+
 Raising exceptions
 ==================
 .. code-block:: python
     :caption: Raise Exception without message
+    :emphasize-lines: 4
 
     raise RuntimeError
     # Traceback (most recent call last):
@@ -185,6 +253,7 @@ Raising exceptions
 
 .. code-block:: python
     :caption: Exception with additional message
+    :emphasize-lines: 4
 
     raise RuntimeError('Some message')
     # Traceback (most recent call last):
@@ -195,6 +264,7 @@ Raising exceptions
 Use case
 ========
 .. code-block:: python
+    :emphasize-lines: 5
 
     temperature = input('Type temperature [Kelvin]: ')
     # Type temperature [Kelvin]: -10<ENTER>
@@ -206,6 +276,7 @@ Use case
     # ValueError
 
 .. code-block:: python
+    :emphasize-lines: 4,7
 
     temperature = input('Type Temperature [Kelvin]: ')
 
@@ -241,13 +312,14 @@ Use case
     #   File "<stdin>", line 2, in apollo18
     # NotImplementedError: Mission dropped due to budget cuts
 
+
 Assertion
 =========
 * Raises ``AssertionError`` if argument is ``False``
 * Can have optional message
 
 .. code-block:: python
-    :emphasize-lines: 2
+    :emphasize-lines: 3,8
 
     import sys
 
@@ -271,7 +343,7 @@ Traceback analysis
     * Stacktrace is 8 levels deep, it's not Java's 200 ;)
 
 .. code-block:: python
-    :emphasize-lines: 4
+    :emphasize-lines: 3,4
 
     raise RuntimeError
     # Traceback (most recent call last):
@@ -279,7 +351,7 @@ Traceback analysis
     # RuntimeError
 
 .. code-block:: python
-    :emphasize-lines: 4
+    :emphasize-lines: 3,4
 
     raise RuntimeError('Huston we have a problem')
     # Traceback (most recent call last):
@@ -383,6 +455,7 @@ Catching exceptions
 
 .. code-block:: python
     :caption: Catch many exceptions with different handling
+    :emphasize-lines: 5,8
 
     try:
         with open(r'/tmp/iris.csv') as file:
@@ -398,7 +471,7 @@ Catching exceptions
 
 .. code-block:: python
     :caption: Exceptions logging
-    :emphasize-lines: 8,9
+    :emphasize-lines: 9,10
 
     import logging
 
@@ -422,6 +495,7 @@ Catching exceptions
 
 .. code-block:: python
     :caption: ``else`` is executed when no exception occurred
+    :emphasize-lines: 8,9
 
     def apollo11():
         print('Try landing on the Moon')
@@ -438,6 +512,7 @@ Catching exceptions
 
 .. code-block:: python
     :caption: ``finally`` is executed always (even if there was exception)
+    :emphasize-lines: 8,9
 
     def apollo11():
         print('Try landing on the Moon')
@@ -453,6 +528,7 @@ Catching exceptions
     # Returning safely to the Earth
 
 .. code-block:: python
+    :emphasize-lines: 11,13,15,17
 
     def apollo11():
         print('Program P63 - Landing Manoeuvre Approach Phase')
@@ -503,80 +579,12 @@ Always catch exceptions!
             continue
 
 
-Exception hierarchy
-===================
-.. code-block:: text
-
-    BaseException
-     +-- SystemExit
-     +-- KeyboardInterrupt
-     +-- GeneratorExit
-     +-- Exception
-          +-- StopIteration
-          +-- StopAsyncIteration
-          +-- ArithmeticError
-          |    +-- FloatingPointError
-          |    +-- OverflowError
-          |    +-- ZeroDivisionError
-          +-- AssertionError
-          +-- AttributeError
-          +-- BufferError
-          +-- EOFError
-          +-- ImportError
-          +-- LookupError
-          |    +-- IndexError
-          |    +-- KeyError
-          +-- MemoryError
-          +-- NameError
-          |    +-- UnboundLocalError
-          +-- OSError
-          |    +-- BlockingIOError
-          |    +-- ChildProcessError
-          |    +-- ConnectionError
-          |    |    +-- BrokenPipeError
-          |    |    +-- ConnectionAbortedError
-          |    |    +-- ConnectionRefusedError
-          |    |    +-- ConnectionResetError
-          |    +-- FileExistsError
-          |    +-- FileNotFoundError
-          |    +-- InterruptedError
-          |    +-- IsADirectoryError
-          |    +-- NotADirectoryError
-          |    +-- PermissionError
-          |    +-- ProcessLookupError
-          |    +-- TimeoutError
-          +-- ReferenceError
-          +-- RuntimeError
-          |    +-- NotImplementedError
-          |    +-- RecursionError
-          +-- SyntaxError
-          |    +-- IndentationError
-          |         +-- TabError
-          +-- SystemError
-          +-- TypeError
-          +-- ValueError
-          |    +-- UnicodeError
-          |         +-- UnicodeDecodeError
-          |         +-- UnicodeEncodeError
-          |         +-- UnicodeTranslateError
-          +-- Warning
-               +-- DeprecationWarning
-               +-- PendingDeprecationWarning
-               +-- RuntimeWarning
-               +-- SyntaxWarning
-               +-- UserWarning
-               +-- FutureWarning
-               +-- ImportWarning
-               +-- UnicodeWarning
-               +-- BytesWarning
-               +-- ResourceWarning
-
-
 Defining own exceptions
 =======================
 * class which inherits from ``Exception``
 
 .. code-block:: python
+    :emphasize-lines: 1,2
 
     class MyError(Exception):
         pass
@@ -599,13 +607,15 @@ Use-case
 
     from django.contrib.auth.models import User
 
-    try:
-        user = User.objects.get(
-            username=POST.get('username'),
-            password=POST.get('password'),
-        )
-    except User.DoesNotExists:
-        print('Sorry, no such user in database')
+
+    def login(request):
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        try:
+            user = User.objects.get(username, password)
+        except User.DoesNotExists:
+            print('Sorry, no such user in database')
 
 
 Exit Status Code
@@ -613,6 +623,7 @@ Exit Status Code
 .. highlights::
     * exit with status ``0`` - no error
     * any other status - error
+    * This will not work in Jupyter
 
 .. code-block:: python
 

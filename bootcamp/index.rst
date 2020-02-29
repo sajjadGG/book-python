@@ -24,6 +24,27 @@ Datetime and Timezones
     datetime/utils.rst
     datetime/timezones.rst
 
+*************
+Serialization
+*************
+.. toctree::
+    :maxdepth: 1
+    :caption: Serialization
+    :name: Stdlib Serialization
+
+    serialization/pickle.rst
+
+*********
+Functions
+*********
+.. toctree::
+    :maxdepth: 1
+    :caption: Functions
+    :name: Advanced Functions
+
+    function/args-kwargs-def.rst
+    function/args-kwargs-call.rst
+
 *******************
 Regular Expressions
 *******************
@@ -45,24 +66,3 @@ Regular Expressions
     regular-expressions/greedy.rst
     regular-expressions/standards.rst
     regular-expressions/references/index.rst
-
-*************
-Serialization
-*************
-.. toctree::
-    :maxdepth: 1
-    :caption: Serialization
-    :name: Stdlib Serialization
-
-    serialization/pickle.rst
-
-*********
-Functions
-*********
-.. toctree::
-    :maxdepth: 1
-    :caption: Functions
-    :name: Advanced Functions
-
-    function/args-kwargs-def.rst
-    function/args-kwargs-call.rst

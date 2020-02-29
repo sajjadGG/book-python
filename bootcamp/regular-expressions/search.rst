@@ -45,7 +45,7 @@ Search for Astronaut
 
 :English:
     #. Download :download:`data/apollo11-header.txt` and save as ``search_astronauts.txt``
-    #. Use regular expressions to check if Astronaut first and last names are in the text
+    #. Use ``re.search()`` to check if Astronaut first and last names are in the text
     #. Astronauts to find:
 
         * Neil Armstrong
@@ -56,7 +56,7 @@ Search for Astronaut
 
 :Polish:
     #. Pobierz :download:`data/apollo11-header.txt` i zapisz jako ``search_astronauts.txt``
-    #. Użyj wyrażeń regularnych do sprawdzenia czy imiona i nazwiska Astronautów występują w tekście
+    #. Użyj ``re.search()`` do sprawdzenia czy imiona i nazwiska Astronautów występują w tekście
     #. Astronauts do znalezienia:
 
         * Neil Armstrong
