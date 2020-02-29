@@ -1,4 +1,4 @@
-FILE = r'../data/etc-hosts.txt'
+FILE = r'hosts-adv.txt'
 output = []
 
 
@@ -24,14 +24,14 @@ for line in hosts_file:
 
     for host in output:
         if host['ip'] == ip:
-            host['hostnames'] += hostnames
+            host['hostnames'].update(hostnames)
             found = True
             break
 
     if not found:
-        hostnames.append({
+        output.append({
             'ip': ip,
-            'hostnames': hostnames,
+            'hostnames': set(hostnames),
             'protocol': 'IPv4' if '.' in ip else 'IPv6'
         })
 
@@ -49,3 +49,4 @@ print(output)
 #         'protocol': 'IPv4' if '.' in ip else 'IPv6',
 #         'ip': ip,
 #     })
+
