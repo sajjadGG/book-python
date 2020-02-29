@@ -79,11 +79,36 @@ class Dragon(Movable):
         self.texture: str = self.TEXTURE_ALIVE
         self.health_current: int = randint(self.HEALTH_MIN, self.HEALTH_MAX)
         self.gold: int = randint(self.GOLD_MIN, self.GOLD_MAX)
-        self.update_status()
+        self._update_status()
         self.set_position(position)
 
     def __str__(self):
         return f'{self.name} (Status: {self.status}, HP: {self.health_current})'
+
+    @if_alive
+    def make_damage(self) -> int:
+        return randint(self.DAMAGE_MIN, self.DAMAGE_MAX)
+
+    @debug
+    @if_alive
+    def take_damage(self, damage: int) -> None:
+        self.health_current -= damage
+        self._update_status()
+
+        if self.is_dead():
+            self._make_dead()
+
+    def get_drop(self) -> Dict[str, Any]:
+        drop = {
+            'gold': self.gold,
+            'position': self.get_position(),
+        }
+        self.gold = 0
+        return drop
+
+    def _make_dead(self) -> NoReturn:
+        self.texture = self.TEXTURE_DEAD
+        raise self.IsDead
 
     def is_dead(self) -> bool:
         if self.status == Status.DEAD:
@@ -94,37 +119,11 @@ class Dragon(Movable):
     def is_alive(self) -> bool:
         return not self.is_dead()
 
-    def update_status(self) -> None:
+    def _update_status(self) -> None:
         if self.health_current > 0:
             self.status: str = Status.ALIVE
         else:
             self.status: str = Status.DEAD
-
-    def get_drop(self) -> Dict[str, Any]:
-        drop = {
-            'gold': self.gold,
-            'position': self.get_position(),
-        }
-        self.gold = 0
-        return drop
-
-    @if_alive
-    def make_damage(self) -> int:
-        return randint(self.DAMAGE_MIN, self.DAMAGE_MAX)
-
-    def make_dead(self) -> NoReturn:
-        self.texture = self.TEXTURE_DEAD
-        raise self.IsDead
-
-    @debug
-    @if_alive
-    def take_damage(self, damage: int) -> None:
-        self.health_current -= damage
-        self.update_status()
-
-        if self.is_dead():
-            self.make_dead()
-
 
 dragon: Dragon = Dragon(name='Wawelski', position=Point(x=50, y=120))
 
