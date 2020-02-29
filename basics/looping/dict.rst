@@ -253,7 +253,7 @@ Assignments
 
 ``List[tuple]`` to ``List[dict]``
 ---------------------------------
-* Complexity level: easy
+* Complexity level: medium
 * Lines of code to write: 6 lines
 * Estimated time of completion: 20 min
 * Solution: :download:`solution/loop_dict_to_list.py`
@@ -321,7 +321,7 @@ Assignments
 
 Label encoder
 -------------
-* Complexity level: medium
+* Complexity level: hard
 * Lines of code to write: 13 lines
 * Estimated time of completion: 15 min
 * Solution: :download:`solution/loop_label_encoder.py`
