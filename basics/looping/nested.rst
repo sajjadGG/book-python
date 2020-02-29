@@ -176,14 +176,14 @@ Unique keys from schema-less database
 
 :English:
     #. For input data (see below)
-    #. Collect keys from all rows in one sequence ``OUTPUT``
-    #. Sort ``OUTPUT``
+    #. Collect keys from all rows in one sequence ``output``
+    #. Sort ``output``
     #. Print unique keys
 
 :Polish:
     #. Dla danych wejściowych (patrz sekcja input)
-    #. Zbierz klucze z wszystkich wierszy w jednej sekwencji ``OUTPUT``
-    #. Sort ``OUTPUT``
+    #. Zbierz klucze z wszystkich wierszy w jednej sekwencji ``output``
+    #. Posortuj ``output``
     #. Wypisz unikalne klucze
 
 :Input:

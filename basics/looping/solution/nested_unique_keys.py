@@ -7,9 +7,9 @@ INPUT = [
     {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'},
 ]
 
-unique_keys = set()
+output = set()
 
 for row in INPUT:
-    unique_keys.update(row.keys())
+    output.update(row.keys())
 
-print(sorted(unique_keys))
+print(sorted(output))
