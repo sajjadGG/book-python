@@ -1,6 +1,21 @@
-FILE = r'hosts-adv.txt'
+FILE = r'/tmp/hosts-advanced.txt'
+INPUT = """
+##
+# ``/etc/hosts`` structure:
+#   - IPv4 or IPv6
+#   - Hostnames
+ ##
+
+127.0.0.1       localhost
+127.0.0.1       astromatt
+10.13.37.1      nasa.gov esa.int roscosmos.ru
+255.255.255.255 broadcasthost
+::1             localhost
+"""
 output = []
 
+with open(FILE, mode='w') as file:
+    file.write(INPUT)
 
 try:
     with open(FILE) as file:
@@ -36,6 +51,10 @@ for line in hosts_file:
         })
 
 print(output)
+# [{'ip': '127.0.0.1', 'hostnames': {'astromatt', 'localhost'}, 'protocol': 'IPv4'},
+#  {'ip': '10.13.37.1', 'hostnames': {'nasa.gov', 'esa.int', 'roscosmos.ru'}, 'protocol': 'IPv4'},
+#  {'ip': '255.255.255.255', 'hostnames': {'broadcasthost'}, 'protocol': 'IPv4'},
+#  {'ip': '::1', 'hostnames': {'localhost'}, 'protocol': 'IPv6'}]
 
 
 ## Alternative solution

@@ -390,9 +390,10 @@ Parsing simple CSV file
 * Solution: :download:`solution/file_parsing_simple.py`
 
 :English:
-    #. Copy input data from listing below and save to file ``hosts.txt``
+    #. Using ``file.write()`` save input data from listing below to file ``hosts-simple.txt``
     #. Read file and for each line:
 
+        #. Skip line if contains only whitespaces (``str.isspace()``)
         #. Remove leading and trailing whitespaces
         #. Split line by whitespace
         #. Separate IP address and hosts names
@@ -401,9 +402,10 @@ Parsing simple CSV file
     #. Merge hostnames for the same IP
 
 :Polish:
-    #. Skopiuj dane wejściowe z listingu poniżej i zapisz do pliku ``hosts.txt``
+    #. Używając ``file.write()`` zapisz dane wejściowe z listingu poniżej do pliku ``hosts-simple.txt``
     #. Zaczytaj plik i dla każdej lini:
 
+        #. Pomiń linię, jeżeli zawiera tylko białe znaki (``str.isspace()``)
         #. Usuń białe znaki na początku i końcu linii
         #. Podziel linię po białych znakach
         #. Odseparuj adres IP i nazwy hostów
@@ -412,13 +414,15 @@ Parsing simple CSV file
     #. Scal nazwy hostów dla tego samego IP
 
 :Input:
-    .. code-block:: text
+    .. code-block:: python
 
+        INPUT = """
         127.0.0.1       localhost
         127.0.0.1       astromatt
         10.13.37.1      nasa.gov esa.int roscosmos.ru
         255.255.255.255 broadcasthost
-        ::1             localhost
+        ::1 `            localhost
+        """
 
 :Output:
     .. code-block:: python
@@ -437,6 +441,7 @@ Parsing simple CSV file
     * Working with nested sequences
 
 :Hint:
+    * ``str.isspace()``
     * ``str.split()``
 
 ``/etc/hosts`` - parsing to ``List[dict]``
@@ -447,8 +452,7 @@ Parsing simple CSV file
 * Solution: :download:`solution/file_parsing_advanced.py`
 
 :English:
-    #. Copy input data from listing below and save to file ``hosts.txt``
-    #. Copy also comments and empty lines
+    #. Using ``file.write()`` save input data from listing below to file ``hosts-advanced.txt``
     #. Read file and for each line:
 
         #. Skip line if it's empty, is whitespace or starts with comment ``#``
@@ -463,8 +467,7 @@ Parsing simple CSV file
     #. ``output`` must be list of dicts (``List[dict]``)
 
 :Polish:
-    #. Skopiuj dane wejściowe z listingu poniżej i zapisz do pliku ``hosts.txt``
-    #. Skopiuj również komentarz i pustą linię
+    #. Używając ``file.write()`` zapisz dane wejściowe z listingu poniżej do pliku ``hosts-advanced.txt``
     #. Przeczytaj plik i dla każdej lini:
 
         #. Pomiń linię jeżeli jest pusta, jest białym znakiem lub zaczyna się od komentarza ``#``
@@ -479,8 +482,9 @@ Parsing simple CSV file
     #. ``output`` ma być listą dictów (``List[dict]``)
 
 :Input:
-    .. code-block:: text
+    .. code-block:: python
 
+        INPUT = """
         ##
         # ``/etc/hosts`` structure:
         #   - IPv4 or IPv6
@@ -492,6 +496,7 @@ Parsing simple CSV file
         10.13.37.1      nasa.gov esa.int roscosmos.ru
         255.255.255.255 broadcasthost
         ::1             localhost
+        """
 
 :Output:
     .. code-block:: python

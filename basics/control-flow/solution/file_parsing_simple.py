@@ -1,9 +1,22 @@
-FILE = r'../data/etc-hosts-simple.txt'
+FILE = r'/tmp/hosts-simple.txt'
+INPUT = """
+127.0.0.1       localhost
+127.0.0.1       astromatt
+10.13.37.1      nasa.gov esa.int roscosmos.ru
+255.255.255.255 broadcasthost
+::1             localhost
+"""
+
 output = {}
 
+with open(FILE, mode='w') as file:
+    file.write(INPUT)
 
 with open(FILE) as file:
     for line in file:
+        if line.isspace():
+            continue
+
         ip, *hosts = line.strip().split()
 
         if ip in output:
@@ -13,3 +26,7 @@ with open(FILE) as file:
 
 
 print(output)
+# {'127.0.0.1': ['localhost', 'astromatt'],
+#  '10.13.37.1': ['nasa.gov', 'esa.int', 'roscosmos.ru'],
+#  '255.255.255.255': ['broadcasthost'],
+#  '::1': ['localhost']}
