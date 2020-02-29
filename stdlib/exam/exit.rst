@@ -120,7 +120,7 @@ Relational Files Database
         - ``etc_group.txt`` - :numref:`code-exam-etc-group`
 
     #. Copy also comments and empty lines
-    #. Parse files and convert it to ``OUTPUT: List[dict]``
+    #. Parse files and convert it to ``output: List[dict]``
     #. Return list of users with ``UID`` greater than 1000
     #. User dict should contains data collected from all files
 
@@ -132,7 +132,7 @@ Relational Files Database
         - ``etc_group.txt`` - :numref:`code-exam-etc-group`
 
     #. Skopiuj również komentarze i puste linie
-    #. Sparsuj plik i przedstaw go w formacie ``OUTPUT: List[dict]``
+    #. Sparsuj plik i przedstaw go w formacie ``output: List[dict]``
     #. Zwróć listę użytkowników, których ``UID`` jest większy niż 1000
     #. Dict użytkownika powinien zawierać dane z wszystkich plików
 
@@ -155,7 +155,7 @@ Relational Files Database
 :Output:
     .. code-block:: python
 
-        OUTPUT: List[dict] = [
+        output: List[dict] = [
             {
                 'username': 'twardowski',
                 'uid': 1001,

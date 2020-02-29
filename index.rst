@@ -101,9 +101,7 @@ Network and HTTP
     :numbered:
     :caption: Network and HTTP
 
-    /net/protocols/index.rst
-    /net/transport/index.rst
-    /net/http/index.rst
+    /network/index.rst
 
 ******
 Django

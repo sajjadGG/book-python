@@ -60,7 +60,7 @@ Finding Dates
 :Output:
     .. code-block:: python
 
-        print(OUTPUT)
+        print(output)
         # ['October 4, 1957',
         #  'April 12, 1961',
         #  'May 5, 1961',

@@ -271,13 +271,13 @@ Array Slicing
 
 :English:
     #. Use input ndarray (see below)
-    #. Select inner 3x3 and save to ``OUTPUT: ndarray``
-    #. Print ``OUTPUT``
+    #. Select inner 3x3 and save to ``output: ndarray``
+    #. Print ``output``
 
 :Polish:
     #. Użyj wejściowej ndarray (patrz sekcja input)
-    #. Wybierz wewnętrzne 3x3 i zapisz do ``OUTPUT: ndarray``
-    #. Wypisz ``OUTPUT``
+    #. Wybierz wewnętrzne 3x3 i zapisz do ``output: ndarray``
+    #. Wypisz ``output``
 
 :Input:
     .. code-block:: python
@@ -293,7 +293,7 @@ Array Slicing
 :Output:
     .. code-block:: python
 
-        print(OUTPUT)
+        print(output)
         # [[2 8 1]
         #  [8 8 4]
         #  [5 5 2]]

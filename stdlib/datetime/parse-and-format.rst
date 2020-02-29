@@ -425,14 +425,14 @@ Log parsing
 :English:
     #. Save input data to file ``apollo11-timeline.log``
     #. Extract ``datetime`` object, level name and message from each line
-    #. Collect data to ``OUTPUT: List[dict]`` (see below)
-    #. Print ``OUTPUT``
+    #. Collect data to ``output: List[dict]`` (see below)
+    #. Print ``output``
 
 :Polish:
     #. Zapisz dane wejściowe do pliku ``apollo11-timeline.log``
     #. Wyciągnij obiekt ``datetime``, poziom logowania oraz wiadomość z każdej linii
-    #. Zbierz dane do ``OUTPUT: List[dict]`` (patrz sekcja output)
-    #. Wyświetl ``OUTPUT``
+    #. Zbierz dane do ``output: List[dict]`` (patrz sekcja output)
+    #. Wyświetl ``output``
 
 :Input:
     .. code-block:: text
@@ -470,7 +470,7 @@ Log parsing
 :Output:
     .. code-block:: python
 
-        OUTPUT: List[dict] = [
+        output: List[dict] = [
 
              {'date': datetime.datetime(1969, 7, 14, 21, 0),
               'level': 'INFO',

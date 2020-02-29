@@ -359,13 +359,13 @@ Iris
     #. Remove ``species`` column
     #. Separate header from measurements
     #. For each line extract values by splitting lines by coma ``,``
-    #. Create ``OUTPUT: List[dict]`` by zipping header and measurements:
+    #. Create ``output: List[dict]`` by zipping header and measurements:
 
         - key: column name from the header
         - value: measurement at the position
 
     #. Create function ``mean(**kwargs)``, function
-    #. Iterate over ``OUTPUT`` and call ``mean()`` by passing arguments as keywords
+    #. Iterate over ``output`` and call ``mean()`` by passing arguments as keywords
     #. Print mean for each row
 
 :Polish:
@@ -373,13 +373,13 @@ Iris
     #. Usuń kolumnę ``species``
     #. Odseparuj nagłówek od pomiarów
     #. Wyciągnij wartości z każdej linii przez podział jej po przecinku ``,``
-    #. Stwórz ``OUTPUT: List[dict]`` poprzez scalenie nagłówka i pomiarów z każdego wiersza
+    #. Stwórz ``output: List[dict]`` poprzez scalenie nagłówka i pomiarów z każdego wiersza
 
         - klucz: nazwa kolumny z nagłówka
         - wartość: pomiar z odpowiedniej kolumny
 
     #. Stwórz funkcję ``mean(**kwargs)``
-    #. Iterując po ``OUTPUT`` wywołuj ``mean()`` podając argumenty nazwanie
+    #. Iterując po ``output`` wywołuj ``mean()`` podając argumenty nazwanie
     #. Wypisz średnią dla każdego wiersza
 
 :Non-functional requirements:
@@ -392,7 +392,7 @@ Iris
         header: list
         # ['sepal_length', 'sepal_width' ,'petal_length', 'petal_width']
 
-        OUTPUT: List[Dict[str, float]] = [
+        output: List[Dict[str, float]] = [
             {'sepal_length': 5.4, 'sepal_width': 3.9, 'petal_length': 1.3, 'petal_width': 0.4},
             {'sepal_length': 5.9, 'sepal_width': 3.0, 'petal_length': 5.1, 'petal_width': 1.8},
             {'sepal_length': 6.0, 'sepal_width': 3.4, 'petal_length': 4.5, 'petal_width': 1.6},

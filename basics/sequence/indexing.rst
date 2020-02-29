@@ -111,10 +111,10 @@ Select
 :English:
     #. For given data input (see below)
     #. Write header (first line) to ``header: tuple`` variable
-    #. Create ``OUTPUT: list``
-    #. Convert to ``list`` data from row at index 2, 6, 9 and add to ``OUTPUT``
-    #. Convert to ``tuple`` data from row at index 12, 15, 16 and add to ``OUTPUT``
-    #. Add empty ``set``, ``list`` and ``tuple`` to ``OUTPUT``
+    #. Create ``output: list``
+    #. Convert to ``list`` data from row at index 2, 6, 9 and add to ``output``
+    #. Convert to ``tuple`` data from row at index 12, 15, 16 and add to ``output``
+    #. Add empty ``set``, ``list`` and ``tuple`` to ``output``
     #. Use only indexes
     #. Do not use ``for``, ``while`` or ``slice()``
 

@@ -5,7 +5,7 @@ import requests
 
 URL = 'https://github.com/AstroMatt/book-python/blob/master/numerical-analysis/data/iris-dirty.csv'
 HEADER = ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
-OUTPUT = list()
+output = list()
 
 
 with open('/tmp/iris-dirty.html', mode='rw') as file:
@@ -29,6 +29,6 @@ for cell in table_body:
     values = dict(zip(HEADER, values))
     species_id = int(values['Species'])
     values['Species'] = species[species_id]
-    OUTPUT.append(values)
+    output.append(values)
 
-pprint(OUTPUT)
+pprint(output)

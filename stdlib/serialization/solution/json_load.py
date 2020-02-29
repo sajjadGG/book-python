@@ -22,18 +22,18 @@ pprint(output)
 
 ## Proper solution
 header = set()
-OUTPUT = list()
+output = list()
 
 for row in DATA:
     header.update(row.keys())
 
 
-OUTPUT.append(header)
+output.append(header)
 
 for row in DATA:
-    OUTPUT.append(tuple(
+    output.append(tuple(
         row.get(head, None)
             for head in header
     ))
 
-print(OUTPUT)
+print(output)

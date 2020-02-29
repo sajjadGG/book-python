@@ -319,7 +319,7 @@ Parsing simple CSV file
         #. Remove leading and trailing whitespaces
         #. Split line by whitespace
         #. Separate IP address and hosts names
-        #. Append IP address and hosts names to ``OUTPUT``
+        #. Append IP address and hosts names to ``output``
 
     #. Merge hostnames for the same IP
 
@@ -330,7 +330,7 @@ Parsing simple CSV file
         #. Usuń białe znaki na początku i końcu linii
         #. Podziel linię po białych znakach
         #. Odseparuj adres IP i nazwy hostów
-        #. Dodaj adres IP i nazwy hostów do ``OUTPUT``
+        #. Dodaj adres IP i nazwy hostów do ``output``
 
     #. Scal nazwy hostów dla tego samego IP
 
@@ -346,7 +346,7 @@ Parsing simple CSV file
 :Output:
     .. code-block:: python
 
-        OUTPUT: Dict[str, List[str]] = {
+        output: Dict[str, List[str]] = {
             '127.0.0.1': ['localhost', 'astromatt'],
             '10.13.37.1': ['nasa.gov', 'esa.int', 'roscosmos.ru'],
             '255.255.255.255': ['broadcasthost'],
@@ -380,10 +380,10 @@ Parsing simple CSV file
         #. Separate IP address and hosts names
         #. Use one line ``if`` to check whether dot ``.`` is in the IP address
         #. If is present then protocol is IPv4 otherwise IPv6
-        #. Append IP address and hosts names to ``OUTPUT``
+        #. Append IP address and hosts names to ``output``
 
     #. Merge hostnames for the same IP
-    #. ``OUTPUT`` must be list of dicts (``List[dict]``)
+    #. ``output`` must be list of dicts (``List[dict]``)
 
 :Polish:
     #. Skopiuj dane wejściowe z listingu poniżej i zapisz do pliku ``hosts.txt``
@@ -396,10 +396,10 @@ Parsing simple CSV file
         #. Odseparuj adres IP i nazwy hostów
         #. Wykorzystaj jednolinikowego ``if`` do sprawdzenia czy jest kropka ``.`` w adresie IP
         #. Jeżeli jest obecna to protokół  jest IPv4, w przeciwnym przypadku IPv6
-        #. Dodaj adres IP i nazwy hostów do ``OUTPUT``
+        #. Dodaj adres IP i nazwy hostów do ``output``
 
     #. Scal nazwy hostów dla tego samego IP
-    #. ``OUTPUT`` ma być listą dictów (``List[dict]``)
+    #. ``output`` ma być listą dictów (``List[dict]``)
 
 :Input:
     .. code-block:: text
@@ -419,7 +419,7 @@ Parsing simple CSV file
 :Output:
     .. code-block:: python
 
-        OUTPUT: List[Dict[str, Union[str, Set[str]]] = [
+        output: List[Dict[str, Union[str, Set[str]]] = [
             {'ip': '127.0.0.1', 'protocol': 'ipv4', 'hostnames': {'localhost', 'astromatt'}},
             {'ip': '10.13.37.1', 'protocol': 'ipv4', 'hostnames': {'nasa.gov', 'esa.int', 'roscosmos.ru'}},
             {'ip': '255.255.255.255', 'protocol': 'ipv4', 'hostnames': {'broadcasthost'}},

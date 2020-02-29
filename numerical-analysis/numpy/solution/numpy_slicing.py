@@ -9,5 +9,5 @@ INPUT = np.array([
     [0, 1, 0, 6, 0],
 ])
 
-OUTPUT = INPUT[1:4,1:4]
-print(OUTPUT)
+output = INPUT[1:4,1:4]
+print(output)

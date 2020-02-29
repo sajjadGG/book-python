@@ -337,7 +337,7 @@ Log parsing
     #. Add all logs to database
     #. Select only ``WARNING`` logs between 1969-07-20 and 1969-07-21
     #. Order logs by datetime descending
-    #. Print ``OUTPUT: List[dict]``
+    #. Print ``output: List[dict]``
 
 :Polish:
     #. Zapisz dane wejściowe do pliku ``apollo11-timeline.log``
@@ -347,7 +347,7 @@ Log parsing
     #. Dodaj wszystkie linie do bazy danych
     #. Wybierz tylko logi ``WARNING`` z przedziału 1969-07-20 i 1969-07-21
     #. Posortuj logi w kolejności datetime malejąco
-    #. Wyświetl ``OUTPUT: List[dict]``
+    #. Wyświetl ``output: List[dict]``
 
 :Input:
     .. code-block:: text
@@ -384,7 +384,7 @@ Log parsing
 :Output:
     .. code-block:: python
 
-        OUTPUT: List[dict] = [
+        output: List[dict] = [
 
             {'date': datetime.datetime(1969, 7, 21, 17, 54, 00, tzinfo=datetime.timezone.utc),
              'level': 'WARNING',

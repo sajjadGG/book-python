@@ -209,28 +209,28 @@ Index
 * Solution: :download:`solution/numpy_indexing.py`
 
 :English:
-    #. Create ``OUTPUT: ndarray``
-    #. Add to ``OUTPUT`` elements from ``INPUT`` (see below) at indexes:
+    #. Create ``output: ndarray``
+    #. Add to ``output`` elements from ``INPUT`` (see below) at indexes:
 
         - row 0, column 2
         - row 2, column 2
         - row 0, column 0
         - row 1, column 0
 
-    #. ``OUTPUT`` size must be 2x2
-    #. ``OUTPUT`` type must be float
+    #. ``output`` size must be 2x2
+    #. ``output`` type must be float
 
 :Polish:
-    #. Stwórz ``OUTPUT: ndarray``
-    #. Dodaj do ``OUTPUT`` elementy z ``INPUT`` (patrz sekcja input) o indeksach:
+    #. Stwórz ``output: ndarray``
+    #. Dodaj do ``output`` elementy z ``INPUT`` (patrz sekcja input) o indeksach:
 
         - wiersz 0, kolumna 2
         - wiersz 2, kolumna 2
         - wiersz 0, kolumna 0
         - wiersz 1, kolumna 0
 
-    #. Rozmiar ``OUTPUT`` musi być 2x2
-    #. Typ ``OUTPUT`` musi być float
+    #. Rozmiar ``output`` musi być 2x2
+    #. Typ ``output`` musi być float
 
 :Input:
     .. code-block:: python
@@ -244,7 +244,7 @@ Index
 :Output:
     .. code-block:: python
 
-        OUTPUT: ndarray
+        output: ndarray
         # array([[3, 9],
         #        [1, 4]])
 

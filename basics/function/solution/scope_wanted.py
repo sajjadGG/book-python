@@ -22,10 +22,10 @@ def sum_if(features, label):
         return 0
 
 
-OUTPUT = 0
+output = 0
 
 for *features, label in data:
-    OUTPUT += sum_if(features, label)
+    output += sum_if(features, label)
 
 
 ## Alternative

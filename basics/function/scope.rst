@@ -308,7 +308,7 @@ Wanted
 :Output:
     .. code-block:: python
 
-        OUTPUT: float
+        output: float
         # 74.9
 
 Roman numbers

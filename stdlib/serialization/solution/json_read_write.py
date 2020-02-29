@@ -29,19 +29,19 @@ INPUT = [
 
 
 header, *data = INPUT
-OUTPUT = []
+output = []
 
 
 for row in data:
     pairs = zip(header, row)
-    OUTPUT.append(dict(pairs))
+    output.append(dict(pairs))
 
 
 with open(FILE, mode='w') as file:
-    json.dump(OUTPUT, file)
+    json.dump(output, file)
 
 
-OUTPUT = []
+output = []
 header = set()
 
 with open(FILE) as file:
@@ -51,9 +51,9 @@ with open(FILE) as file:
         header.update(row.keys())
 
     header = sorted(header)
-    OUTPUT.append(tuple(header))
+    output.append(tuple(header))
 
     for row in data:
-        OUTPUT.append(tuple(row.get(key) for key in header))
+        output.append(tuple(row.get(key) for key in header))
 
-print(OUTPUT)
+print(output)

@@ -1,6 +1,6 @@
 import csv
 
-OUTPUT = r'../../_tmp/csv_relations.csv'
+output = r'../../_tmp/csv_relations.csv'
 
 
 class Astronaut:
@@ -48,7 +48,7 @@ for contact in output:
         fieldnames.add(field_name)
 
 
-with open(OUTPUT, mode='w', encoding='utf-8') as file:
+with open(output, mode='w', encoding='utf-8') as file:
 
     writer = csv.DictWriter(
         f=file,

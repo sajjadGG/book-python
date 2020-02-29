@@ -127,12 +127,12 @@ Nested sequence of objects of many types
 Assignments
 ===========
 
-Example
--------
+Mean
+----
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/nested_example.py`
+* Solution: :download:`solution/nested_mean.py`
 
 :English:
     #. For input data (see below)
@@ -159,10 +159,6 @@ Example
             (7.6, 3.0, 6.6, 2.1, 'virginica'),
             (4.6, 3.1, 1.5, 0.2, 'setosa'),
         ]
-
-:Solution:
-    .. literalinclude:: solution/nested_example.py
-        :language: python
 
 :The whys and wherefores:
     * Iterating over nested structure
@@ -215,4 +211,5 @@ Unique keys from schema-less database
     * Updating ``set``
 
 :Hint:
+    * ``for key in row.keys()``
     * Compare solutions with :numref:`Micro-benchmarking use case`

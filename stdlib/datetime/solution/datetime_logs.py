@@ -34,7 +34,7 @@ INPUT = """
 1969-07-24, 17:29, INFO, Crew egress
 """
 
-OUTPUT = []
+output = []
 
 
 for line in INPUT.splitlines():
@@ -49,10 +49,10 @@ for line in INPUT.splitlines():
     except ValueError:
         time = datetime.strptime(time, '%H:%M').time()
 
-    OUTPUT.append({
+    output.append({
         'date': datetime.combine(date, time),
         'level': level,
         'message': message,
     })
 
-pprint(OUTPUT)
+pprint(output)

@@ -261,7 +261,7 @@ Assignments
 :English:
     #. For input data (see below)
     #. Separate header and data
-    #. Print ``List[dict]``
+    #. Print ``List[dict]``:
 
         - key - name from the header
         - value - measurement or species
@@ -269,7 +269,7 @@ Assignments
 :Polish:
     #. Dla danych wejściowych (patrz sekcja input)
     #. Odseparuj nagłówek i dane
-    #. Wypisz ``List[dict]``
+    #. Wypisz ``List[dict]``:
 
         - klucz: nazwa z nagłówka
         - wartość: wyniki pomiarów lub gatunek
@@ -308,7 +308,7 @@ Assignments
         from typing import List
 
 
-        OUTPUT: List[dict] = [
+        output: List[dict] = [
             {'Sepal length': 5.8, 'Sepal width': 2.7, 'Petal length': 5.1, 'Petal width': 1.9, 'Species': 'virginica'},
             {'Sepal length': 5.1, 'Sepal width': 3.5, 'Petal length': 1.4, 'Petal width': 0.2, 'Species': 'setosa'},
             {'Sepal length': 5.7, 'Sepal width': 2.8, 'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},

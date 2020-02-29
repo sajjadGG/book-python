@@ -6,7 +6,9 @@ Entry Test
     :caption: Entry Test
     :name: Advanced Entry Test
 
+    about/survey.rst
     about/entry.rst
+    about/agenda.rst
 
 *********
 Functions
@@ -112,3 +114,27 @@ Concurrency
     concurrency/threading.rst
     concurrency/multiprocessing.rst
     concurrency/async.rst
+
+*****
+Recap
+*****
+.. toctree::
+    :maxdepth: 1
+    :caption: Recap
+    :name: Basic Recap
+
+    about/recap.rst
+    about/certificate.rst
+
+
+**********
+References
+**********
+
+Bibliography
+============
+.. bibliography:: _references/bibliography.bib
+    :style: plain
+    :labelprefix: ADV
+    :all:
+

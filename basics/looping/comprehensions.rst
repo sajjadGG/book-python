@@ -12,7 +12,7 @@ Loop Information Recap
 
     output = []
 
-    for x in range(0, 5):
+    for x in range(0,5):
         output.append(x+10)
 
     print(output)
@@ -57,10 +57,6 @@ Generator expressions vs. Comprehensions
     tuple(x for x in range(0,5))       # (0, 1, 2, 3, 4)
     (x for x in range(0,5))            # <generator object <genexpr> at 0x118c1aed0>
 
-    all(x for x in range(0,5))         # False
-    any(x for x in range(0,5))         # True
-    sum(x for x in range(0,5))         # 10
-
 
 Simple usage
 ============
@@ -92,7 +88,7 @@ Dict Comprehension
 .. code-block:: python
     :caption: ``dict`` Comprehension approach to applying function to elements
 
-    {x: x+10 for x in range(0, 5)}
+    {x:x+10 for x in range(0,5)}
     # {0:10, 1:11, 2:12, 3:13, 4:14}
 
     dict((x,x+10) for x in range(0,5))
@@ -101,7 +97,7 @@ Dict Comprehension
 .. code-block:: python
     :caption: ``dict`` Comprehension approach to applying function to elements
 
-    {x+10: x for x in range(0, 5)}
+    {x+10:x for x in range(0,5)}
     # {10:0, 11:1, 12:2, 13:3, 14:4}
 
     dict((x+10,x) for x in range(0,5))
@@ -110,10 +106,10 @@ Dict Comprehension
 .. code-block:: python
     :caption: ``dict`` Comprehension approach to applying function to elements
 
-    {x+10: x+10 for x in range(0, 5)}
+    {x+10:x+10 for x in range(0,5)}
     # {10:10, 11:11, 12:12, 13:13, 14:14}
 
-    dict((x+10: x+10) for x in range(0,5))
+    dict((x+10:x+10) for x in range(0,5))
     # {10:10, 11:11, 12:12, 13:13, 14:14}
 
 Tuple Comprehension?!
@@ -167,11 +163,22 @@ Filtering ``dict`` items
         {'first_name': 'Mark', 'last_name': 'Watney', 'agency': 'NASA'},
     ]
 
-    nasa_astronauts = [(astro['first_name'], astro['last_name'])
+    astronauts = [astro for astro in DATA if astro['agency'] == 'NASA']
+    print(astronauts)
+    # [{'first_name': 'Jose', 'last_name': 'Jimenez', 'agency': 'NASA'},
+    #  {'first_name': 'Melissa', 'last_name': 'Lewis', 'agency': 'NASA'},
+    #  {'first_name': 'Mark', 'last_name': 'Watney', 'agency': 'NASA'}]
+
+
+    astronauts = [astro['last_name'] for astro in DATA if astro['agency'] == 'NASA']
+    print(astronauts)
+    # ['Jimenez', 'Lewis', 'Watney']
+
+
+    astronauts = [(astro['first_name'], astro['last_name'])
                         for astro in DATA
                             if astro['agency'] == 'NASA']
-
-    print(nasa_astronauts)
+    print(astronauts)
     # [
     #   ('Jose', 'Jimenez'),
     #   ('Melissa', 'Lewis'),
@@ -184,25 +191,25 @@ Applying function
 .. code-block:: python
     :caption: Applying function to each output element
 
-    [float(x) for x in range(0, 5)]
+    [float(x) for x in range(0,5)]
     # [0.0, 1.0, 2.0, 3.0, 4.0]
 
-    [float(x) for x in range(0, 5) if x % 2 == 0]
+    [float(x) for x in range(0,5) if x % 2 == 0]
     # [0.0, 2.0, 4.0]
 
 .. code-block:: python
     :caption: Applying function to each output element
 
-    [pow(2, x) for x in range(0, 5)]
+    [pow(2, x) for x in range(0,5)]
     # [1, 2, 4, 8, 16]
 
-    [pow(2, x) for x in range(0, 5) if x % 2 == 0]
+    [pow(2, x) for x in range(0,5) if x % 2 == 0]
     # [1, 4, 16]
 
 .. code-block:: python
 
     [pow(2, x)
-        for x in range(0, 5)
+        for x in range(0,5)
             if x % 2 == 0
     ]
     # [1, 4, 16]
@@ -210,6 +217,17 @@ Applying function
 
 Examples
 ========
+
+Sum
+---
+.. code-block:: python
+
+    sum(x for x in range(0,5))         # 10
+
+.. code-block:: python
+
+    all(x for x in range(0,5))         # False
+    any(x for x in range(0,5))         # True
 
 Filtering results
 -----------------
@@ -350,11 +368,6 @@ Reversing ``dict`` keys with values
     #    (2, 'b'),
     # ]
 
-.. code-block:: python
-    :caption: Reversing ``dict`` keys with values
-
-    DATA = {'a': 1, 'b': 2}
-
     {v:k for k,v in DATA.items()}
     # {1:'a', 2:'b'}
 
@@ -379,11 +392,11 @@ Nested
         1: ['Kindergarten'],
     }
 
-    OUTPUT = {education: str(key)
+    output = {education: str(key)
               for key, names in INPUT.items()
                  for education in names}
 
-    print(OUTPUT)
+    print(output)
     # {
     #   'Doctorate': '6',
     #   'Prof-school': '6',
@@ -423,8 +436,8 @@ Split train/test
         * ``labels_train: List[str]`` - labels to train - 60%
         * ``labels_test: List[str]`` - labels to test - 40%
 
-    #. Create ``OUTPUT: Tuple[list, list, list, list]`` with features (training and test) and labels (training and test)
-    #. Print ``OUTPUT``
+    #. Create ``output: Tuple[list, list, list, list]`` with features (training and test) and labels (training and test)
+    #. Print ``output``
     #. Compare results with "Output" section below
 
 :Polish:
@@ -443,8 +456,8 @@ Split train/test
         - ``labels_train: List[str]`` - labels do uczenia - 60%
         - ``labels_test: List[str]`` - labels do testów - 40%
 
-    #. Stwórz ``OUTPUT: Tuple[list, list, list, list]`` z cechami (treningowymi i testowymi) oraz labelkami (treningowymi i testowymi)
-    #. Wypisz ``OUTPUT``
+    #. Stwórz ``output: Tuple[list, list, list, list]`` z cechami (treningowymi i testowymi) oraz labelkami (treningowymi i testowymi)
+    #. Wypisz ``output``
     #. Porównaj wynik z sekcją "Output" poniżej
 
 :Input:
@@ -501,7 +514,7 @@ Split train/test
         # ['setosa', 'versicolor', 'setosa', 'versicolor', 'virginica',
         #  'versicolor', 'virginica', 'versicolor', 'setosa']
 
-        OUTPUT: Tuple[list, list, list, list]
+        output: Tuple[list, list, list, list]
         # ([(5.8, 2.7, 5.1, 1.9), (5.1, 3.5, 1.4, 0.2), (5.7, 2.8, 4.1, 1.3),
         #   (6.3, 2.9, 5.6, 1.8), (6.4, 3.2, 4.5, 1.5), (4.7, 3.2, 1.3, 0.2),
         #   (7.0, 3.2, 4.7, 1.4), (7.6, 3.0, 6.6, 2.1), (4.9, 3.0, 1.4, 0.2),

@@ -27,29 +27,29 @@ INPUT = [
     (4.6, 3.1, 1.5, 0.2, 'setosa'),
 ]
 
-OUTPUT = {}
+output = {}
 header, *data = INPUT
 *attributes, _ = header
 
 
 for *measurements, species in data:
-    if species not in OUTPUT:
-        OUTPUT[species] = dict()
+    if species not in output:
+        output[species] = dict()
 
     for i, column in enumerate(attributes):
-        if column not in OUTPUT[species]:
-            OUTPUT[species][column] = dict(values=[])
+        if column not in output[species]:
+            output[species][column] = dict(values=[])
 
-        OUTPUT[species][column]['values'].append(measurements[i])
+        output[species][column]['values'].append(measurements[i])
 
 
-for species, attributes in OUTPUT.items():
+for species, attributes in output.items():
     for attribute_name in attributes.keys():
-        values = OUTPUT[species][attribute_name]['values']
-        OUTPUT[species][attribute_name]['mean'] = mean(values)
-        OUTPUT[species][attribute_name]['median'] = median(values)
-        OUTPUT[species][attribute_name]['stdev'] = stdev(values)
-        OUTPUT[species][attribute_name]['variance'] = variance(values)
+        values = output[species][attribute_name]['values']
+        output[species][attribute_name]['mean'] = mean(values)
+        output[species][attribute_name]['median'] = median(values)
+        output[species][attribute_name]['stdev'] = stdev(values)
+        output[species][attribute_name]['variance'] = variance(values)
 
 
-pprint(OUTPUT)
+pprint(output)

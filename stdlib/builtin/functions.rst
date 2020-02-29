@@ -300,22 +300,22 @@ Average
 :English:
     #. For given ``INPUT`` (see below)
     #. Separate header and data
-    #. Define dict ``OUTPUT: Dict[str, list]``, keys are column names from header
-    #. For each row in data, add values to proper lists in ``OUTPUT``
+    #. Define dict ``output: Dict[str, list]``, keys are column names from header
+    #. For each row in data, add values to proper lists in ``output``
     #. Define function ``mean()``, calculating mean for arbitrary number of arguments
     #. Return ``None`` if any argument to the function is not ``float`` or ``int``
     #. To calculate mean use built-in functions
-    #. Iterating over ``OUTPUT`` print column name and calculated average
+    #. Iterating over ``output`` print column name and calculated average
 
 :Polish:
     #. Dla danych ``INPUT`` (patrz sekcja input)
     #. Odseparuj nagłówek od danych
-    #. Zdefiniuj słownik ``OUTPUT: Dict[str, list]``, klucze to nazwy kolumn z nagłówka
-    #. Dla każdego wiersza w danych, dodawaj wartości do odpowiednich list w ``OUTPUT``
+    #. Zdefiniuj słownik ``output: Dict[str, list]``, klucze to nazwy kolumn z nagłówka
+    #. Dla każdego wiersza w danych, dodawaj wartości do odpowiednich list w ``output``
     #. Zdefiniuj funkcję ``mean()``, liczącą średnią dla dowolnej ilości argumentów
     #. Zwróć ``None`` jeżeli którykolwiek z argumentów do funkcji nie jest ``float`` lub ``int``
     #. Do wyliczenia średniej wykorzystaj wbudowane funkcje
-    #. Iterując po ``OUTPUT`` wypisz nazwę kolumny oraz wyliczoną średnią
+    #. Iterując po ``output`` wypisz nazwę kolumny oraz wyliczoną średnią
 
 :Input:
     .. code-block:: python
@@ -348,7 +348,7 @@ Average
 :Output:
     .. code-block:: python
 
-        OUTPUT: Dict[str, list] = {
+        output: Dict[str, list] = {
             'Sepal length': [5.8, 5.1, ...],
             'Sepal width': [2.7, 3.5, ...],
             'Petal length': [5.1, 1.4, ...],

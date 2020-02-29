@@ -166,9 +166,9 @@ Load from file
 
 
     with open('filename.pkl', mode='rb') as file:
-        OUTPUT = pickle.load(file)
+        output = pickle.load(file)
 
-    print(OUTPUT)
+    print(output)
 
 
 Examples
@@ -283,7 +283,7 @@ Pickle serialization
 :Output:
     .. code-block:: python
 
-        OUTPUT: list[Astronaut]
+        output: list[Astronaut]
         # [
         #   Astronaut(name='Jan Twardowski', missions=[
         #       Mission(year=1969, name='Apollo 11'),

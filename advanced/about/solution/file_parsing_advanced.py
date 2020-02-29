@@ -1,5 +1,5 @@
 FILE = r'../data/etc-hosts.txt'
-OUTPUT = []
+output = []
 
 
 with open(FILE) as file:
@@ -14,29 +14,29 @@ with open(FILE) as file:
 
         ip, *hosts = line.split()
 
-        for record in OUTPUT:
+        for record in output:
             if record['ip'] == ip:
                 record['hostnames'].update(hosts)
                 break
         else:
-            OUTPUT.append({
+            output.append({
                 'hostnames': set(hosts),
                 'protocol': 'IPv4' if '.' in ip else 'IPv6',
                 'ip': ip,
             })
 
-print(OUTPUT)
+print(output)
 
 ## Alternative solution
 # found = False
 #
 # for x in hosts:
-#     if OUTPUT['ip'] == ip:
+#     if output['ip'] == ip:
 #         found = True
-#         OUTPUT['hostnames'].update(hosts)
+#         output['hostnames'].update(hosts)
 #
 # if not found:
-#     OUTPUT.append({
+#     output.append({
 #         'ip': ip,
 #         'hostnames': set(hostnames),
 #         'protocol': 'IPv4' if '.' in ip else 'IPv6'

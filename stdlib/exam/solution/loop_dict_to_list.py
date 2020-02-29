@@ -24,10 +24,10 @@ INPUT = [
 ]
 
 header, *data = INPUT
-OUTPUT = []
+output = []
 
 for values in data:
     pair = zip(header, values)
-    OUTPUT.append(dict(pair))
+    output.append(dict(pair))
 
-print(OUTPUT)
+print(output)

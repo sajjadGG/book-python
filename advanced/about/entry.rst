@@ -57,7 +57,7 @@ Entry Exam
 :Output:
     .. code-block:: python
 
-        OUTPUT: List[dict] = [
+        output: List[dict] = [
             {'Sepal length': 5.8, 'Sepal width': 2.7, 'Petal length': 5.1, 'Petal width': 1.9, 'Species': 'virginica'},
             {'Sepal length': 5.1, 'Sepal width': 3.5, 'Petal length': 1.4, 'Petal width': 0.2, 'Species': 'setosa'},
             {'Sepal length': 5.7, 'Sepal width': 2.8, 'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
@@ -127,10 +127,10 @@ Get elements from nested data structure
         #. Separate IP address and hosts names
         #. Use one line ``if`` to check whether dot ``.`` is in the IP address
         #. If is present then protocol is IPv4 otherwise IPv6
-        #. Append IP address and hosts names to ``OUTPUT``
+        #. Append IP address and hosts names to ``output``
 
     #. Merge hostnames for the same IP
-    #. ``OUTPUT`` must be list of dicts (``List[dict]``)
+    #. ``output`` must be list of dicts (``List[dict]``)
 
 :Polish:
     #. Skopiuj dane wejściowe z listingu poniżej i zapisz do pliku ``hosts.txt``
@@ -143,10 +143,10 @@ Get elements from nested data structure
         #. Odseparuj adres IP i nazwy hostów
         #. Wykorzystaj jednolinikowego ``if`` do sprawdzenia czy jest kropka ``.`` w adresie IP
         #. Jeżeli jest obecna to protokół  jest IPv4, w przeciwnym przypadku IPv6
-        #. Dodaj adres IP i nazwy hostów do ``OUTPUT``
+        #. Dodaj adres IP i nazwy hostów do ``output``
 
     #. Scal nazwy hostów dla tego samego IP
-    #. ``OUTPUT`` ma być listą dictów (``List[dict]``)
+    #. ``output`` ma być listą dictów (``List[dict]``)
 
 :Input:
     .. code-block:: text
@@ -166,7 +166,7 @@ Get elements from nested data structure
 :Output:
     .. code-block:: python
 
-        OUTPUT: List[Dict[str, Union[str, Set[str]]] = [
+        output: List[Dict[str, Union[str, Set[str]]] = [
             {'ip': '127.0.0.1', 'protocol': 'ipv4', 'hostnames': {'localhost', 'astromatt'}},
             {'ip': '10.13.37.1', 'protocol': 'ipv4', 'hostnames': {'nasa.gov', 'esa.int', 'roscosmos.ru'}},
             {'ip': '255.255.255.255', 'protocol': 'ipv4', 'hostnames': {'broadcasthost'}},

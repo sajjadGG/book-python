@@ -20,7 +20,7 @@ def clean_value(text):
 
 
 URL = 'https://pl.wikipedia.org/wiki/Temperatura_odczuwalna'
-OUTPUT = list()
+output = list()
 
 response = requests.get(URL)
 html = BeautifulSoup(response.text, 'html.parser')
@@ -45,14 +45,14 @@ for tr in table_rows:
         value = row_cells[i]
         row_dict[key] = value
 
-    OUTPUT.append(row_dict)
+    output.append(row_dict)
 
 
-pprint(OUTPUT)
+pprint(output)
 
 
 import pandas as pd
 
-df = pd.DataFrame(OUTPUT)
+df = pd.DataFrame(output)
 df.set_index('wind speed', inplace=True)
 

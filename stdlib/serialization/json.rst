@@ -490,7 +490,7 @@ Serialize nested sequences to JSON
     .. code-block:: python
         :caption: Output
 
-        OUTPUT: List[dict] = [
+        output: List[dict] = [
             {'Sepal length': 5.8, 'Sepal width': 2.7, 'Petal length': 5.1, 'Petal width': 1.9, 'Species': 'virginica'},
             {'Sepal length': 5.1, 'Sepal width': 3.5, 'Petal length': 1.4, 'Petal width': 0.2, 'Species': 'setosa'},
             {'Sepal length': 5.7, 'Sepal width': 2.8, 'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},

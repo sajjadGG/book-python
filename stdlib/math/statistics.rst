@@ -295,7 +295,7 @@ Iris Stats
 * Solution: :download:`solution/statistics_iris.py`
 
 :English:
-    #. Create dict ``OUTPUT: Dict[str, dict]``
+    #. Create dict ``output: Dict[str, dict]``
     #. For each species calculate for numerical values:
 
             - mean,
@@ -303,10 +303,10 @@ Iris Stats
             - standard deviation,
             - variance.
 
-    #. Save data to ``OUTPUT`` dict
+    #. Save data to ``output`` dict
 
 :Polish:
-    #. Stwórz słownik ``OUTPUT: Dict[str, dict]``
+    #. Stwórz słownik ``output: Dict[str, dict]``
     #. Dla każdego gatunku wylicz dla wartości numerycznych:
 
             - średnią,
@@ -314,7 +314,7 @@ Iris Stats
             - odchylenie standardowe,
             - wariancję.
 
-    #. Dane zapisz w słowniku ``OUTPUT``
+    #. Dane zapisz w słowniku ``output``
 
 :Non-functional requirements:
     #. Use ``statistics``
@@ -350,7 +350,7 @@ Iris Stats
 :Output:
     .. code-block:: python
 
-        OUTPUT: Dict[str, dict] = {
+        output: Dict[str, dict] = {
             'setosa': {
                 'Sepal length': {'mean': 4.9,
                                  'median': 4.9,

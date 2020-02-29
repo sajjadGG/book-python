@@ -29,25 +29,25 @@ INPUT: List[tuple] = [
 ]
 
 header, *data = INPUT
-OUTPUT = [dict(zip(header, values)) for values in data]
+output = [dict(zip(header, values)) for values in data]
 
 
 ## Alternative solution
-# OUTPUT = []
+# output = []
 # for values in data:
-#     OUTPUT.append({zip(header, values)})
+#     output.append({zip(header, values)})
 
 
 ## Alternative solution
-# OUTPUT = []
+# output = []
 # for values in data:
-#     OUTPUT.append({key: values[i] for i, key in enumerate(header)})
+#     output.append({key: values[i] for i, key in enumerate(header)})
 
 
 ## Alternative solution
-# OUTPUT = []
+# output = []
 # for values in data:
-#     OUTPUT.append({
+#     output.append({
 #         'Sepal length': values[0],
 #         'Sepal width': values[1],
 #         'Petal length': values[2],
@@ -58,7 +58,7 @@ OUTPUT = [dict(zip(header, values)) for values in data]
 
 
 with open(r'../tmp/iris.json', mode='w') as file:
-    json.dump(OUTPUT, file)
+    json.dump(output, file)
 
 
 with open(r'../tmp/iris.json') as file:
