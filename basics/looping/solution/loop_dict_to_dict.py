@@ -16,7 +16,7 @@ for level, degrees in INPUT.items():
 print(output)
 
 
-## Alternative version
+## Alternative solution
 # output = {education: str(level)
 #     for level, degrees in INPUT.items()
 #         for education in degrees

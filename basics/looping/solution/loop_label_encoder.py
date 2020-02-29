@@ -57,7 +57,7 @@ print()
 print(label_encoder)
 
 
-## Alternative Version
+## Alternative solution
 # header, *data = INPUT
 #
 # features = []
@@ -77,15 +77,16 @@ print(label_encoder)
 # print(labels)
 # print(species)
 
-## Alternative Version
+
+## Alternative solution
 # s = set(x[-1] for x in INPUT[1:])
 # label_encoder = dict(zip(s, range(0, len(s))))
 
 
-## Alternative Version
+## Alternative solution
 # In numerical analysis you can find this
 # label_encoder = dict(enumerate(set(x[-1] for x in INPUT[1:])))
 
 
-## Alternative Version
+## Alternative solution
 # label_encoder = dict(zip(label_encoder.values(), label_encoder.keys()))

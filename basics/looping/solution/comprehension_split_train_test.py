@@ -38,30 +38,34 @@ labels_train = labels[:pivot]
 labels_test = labels[pivot:]
 
 result = features_train, features_test, labels_train, labels_test
-# print(result)
+print(result)
 
-## Alternative - but not optimized (4 loops)
-# features_train = [m for *m,s in data[:pivot]]
-# features_test = [m for *m,s in data[pivot:]]
-# labels_train = [s for *m,s in data[:pivot]]
-# labels_test = [s for *m,s in data[pivot:]]
+
+## Alternative solution
+## not optimized (4 loops)
+# features_train = [X for *X,y in data[:pivot]]
+# features_test = [X for *X,y in data[pivot:]]
+# labels_train = [y for *X,y in data[:pivot]]
+# labels_test = [y for *X,y in data[pivot:]]
 # result = features_train, features_test, labels_train, labels_test
 # print(result)
 
 
-## Alternative - but not optimized (4 loops)
-# result = (
-#     [m for *m,s in data[:pivot]],
-#     [m for *m,s in data[pivot:]],
-#     [s for *m,s in data[:pivot]],
-#     [s for *m,s in data[pivot:]],
+## Alternative solution
+## not optimized (4 loops)
+#     [X for *X,y in data[:pivot]],
+#     [X for *X,y in data[pivot:]],
+#     [y for *X,y in data[:pivot]],
+#     [y for *X,y in data[pivot:]],
 # )
 # print(result)
 
-## Alternative - but not optimized (4 loops)
+
+## Alternative solution
+## not optimized (4 loops)
 # print(
-#     [m for *m,s in data[:pivot]],
-#     [m for *m,s in data[pivot:]],
-#     [s for *m,s in data[:pivot]],
-#     [s for *m,s in data[pivot:]],
+#     [X for *X,y in data[:pivot]],
+#     [X for *X,y in data[pivot:]],
+#     [y for *X,y in data[:pivot]],
+#     [y for *X,y in data[pivot:]],
 # )

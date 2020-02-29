@@ -20,6 +20,7 @@ for row in data:
         print(species)
 
 
+## Alternative Solution
 # for *_, species in data:
 #     species = species.pop()
 #
