@@ -118,9 +118,31 @@ Proxy methods
 
 
     class Point3D(Point2D):
-        def __init__(self, z, *args, **kwargs):
+        def __init__(self, *args, **kwargs):
+            if 'z' in kwargs:
+                z = kwargs.pop('z')
+            else:
+                *args, z = args
+
             super().__init__(*args, **kwargs)
             self.z = z
+
+        def __str__(self):
+            return f'Point3D(x={self.x}, y={self.y}, z={self.z})'
+
+
+    p1 = Point3D(x=1, y=2, z=3)
+    p2 = Point3D(1, 2, 3)
+    p3 = Point3D(1, 2, z=3)
+
+    print(p1)
+    # Point3D(x=1, y=2, z=3)
+
+    print(p2)
+    # Point3D(x=1, y=2, z=3)
+
+    print(p3)
+    # Point3D(x=1, y=2, z=3)
 
 
 Placeholder class

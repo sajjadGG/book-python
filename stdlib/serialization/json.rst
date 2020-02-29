@@ -218,10 +218,10 @@ Encoding nested objects with relations to JSON
 
 
     class Astronaut:
-        def __init__(self, first_name, last_name, experience=()):
-            self.first_name = first_name
-            self.last_name = last_name
-            self.experience = experience
+        def __init__(self, name, missions=()):
+            self.name = name
+            self.missions = missions
+
 
     class Mission:
         def __init__(self, year, name):
@@ -230,14 +230,14 @@ Encoding nested objects with relations to JSON
 
 
     CREW = [
-        Astronaut('Jan', 'Twardowski', experience=(
+        Astronaut('Jan Twardowski', missions=(
             Mission(1969, 'Apollo 18'),
             Mission(2024, 'Artemis 3'))),
 
-        Astronaut('Mark', 'Watney', experience=(
+        Astronaut('Mark Watney', missions=(
             Mission(2035, 'Ares 3'))),
 
-        Astronaut('Melissa', 'Lewis', experience=()),
+        Astronaut('Melissa Lewis'),
     ]
 
 
@@ -247,42 +247,40 @@ Encoding nested objects with relations to JSON
             result['__class_name__'] = obj.__class__.__name__
             return result
 
-    output = json.dumps(CREW, cls=JSONObjectEncoder)
+
+    output = json.dumps(CREW, cls=JSONObjectEncoder, sort_keys=True, indent=2)
     print(output)
     # [
-    #     {
-    #         "__class_name__": "Astronaut",
-    #         "experience": [
-    #             {
-    #                 "__class_name__": "Mission",
-    #                 "name": "Apollo 18",
-    #                 "year": 1969
-    #             },
-    #             {
-    #                 "__class_name__": "Mission",
-    #                 "name": "Artemis 3",
-    #                 "year": 2024
-    #             }
-    #         ],
-    #         "first_name": "Jan",
-    #         "last_name": "Twardowski"
+    #   {
+    #     "name": "Jan Twardowski",
+    #     "missions": [
+    #       {
+    #         "year": 1969,
+    #         "name": "Apollo 18",
+    #         "__class_name__": "Mission"
+    #       },
+    #       {
+    #         "year": 2024,
+    #         "name": "Artemis 3",
+    #         "__class_name__": "Mission"
+    #       }
+    #     ],
+    #     "__class_name__": "Astronaut"
+    #   },
+    #   {
+    #     "name": "Mark Watney",
+    #     "missions": {
+    #       "year": 2035,
+    #       "name": "Ares 3",
+    #       "__class_name__": "Mission"
     #     },
-    #     {
-    #         "__class_name__": "Astronaut",
-    #         "experience": {
-    #             "__class_name__": "Mission",
-    #             "name": "Ares 3",
-    #             "year": 2035
-    #         },
-    #         "first_name": "Mark",
-    #         "last_name": "Watney"
-    #     },
-    #     {
-    #         "__class_name__": "Astronaut",
-    #         "experience": [],
-    #         "first_name": "Melissa",
-    #         "last_name": "Lewis"
-    #     }
+    #     "__class_name__": "Astronaut"
+    #   },
+    #   {
+    #     "name": "Melissa Lewis",
+    #     "missions": [],
+    #     "__class_name__": "Astronaut"
+    #   }
     # ]
 
 Decoding nested objects with relations to JSON
@@ -293,56 +291,25 @@ Decoding nested objects with relations to JSON
     import json
     import sys
 
+    INPUT = """[{"name": "Jan Twardowski", "missions": [{"year": 1969, "name": "Apollo 18", "__class_name__": "Mission"}, {"year": 2024, "name": "Artemis 3", "__class_name__": "Mission"}], "__class_name__": "Astronaut"}, {"name": "Mark Watney", "missions": {"year": 2035, "name": "Ares 3", "__class_name__": "Mission"}, "__class_name__": "Astronaut"}, {"name": "Melissa Lewis", "missions": [], "__class_name__": "Astronaut"}]"""
 
-    CURRENT_MODULE = sys.modules[__name__]
-    INPUT = """
-    [
-        {
-            "__class_name__": "Astronaut",
-            "experience": [
-                {
-                    "__class_name__": "Mission",
-                    "name": "Apollo 18",
-                    "year": 1969
-                },
-                {
-                    "__class_name__": "Mission",
-                    "name": "Artemis 3",
-                    "year": 2024
-                }
-            ],
-            "first_name": "Jan",
-            "last_name": "Twardowski"
-        },
-        {
-            "__class_name__": "Astronaut",
-            "experience": {
-                "__class_name__": "Mission",
-                "name": "Ares 3",
-                "year": 2035
-            },
-            "first_name": "Mark",
-            "last_name": "Watney"
-        },
-        {
-            "__class_name__": "Astronaut",
-            "experience": [],
-            "first_name": "Melissa",
-            "last_name": "Lewis"
-        }
-    ]
-    """
 
     class Astronaut:
-        def __init__(self, first_name, last_name, experience=()):
-            self.first_name = first_name
-            self.last_name = last_name
-            self.experience = experience
+        def __init__(self, name, missions=()):
+            self.name = name
+            self.missions = missions
+
+        def __repr__(self):
+            return f'\n\nAstronaut(name="{self.name}", missions={self.missions})'
+
 
     class Mission:
         def __init__(self, year, name):
             self.year = year
             self.name = name
+
+        def __repr__(self):
+            return f'\n\tMission(year={self.year}, name="{self.name}")'
 
 
     class JSONObjectDecoder(json.JSONDecoder):
@@ -351,22 +318,20 @@ Decoding nested objects with relations to JSON
 
         def default(self, obj):
             class_name = obj.pop('__class_name__')
-            cls = getattr(CURRENT_MODULE, class_name)
+            cls = getattr(sys.modules[__name__], class_name)
             return cls(**obj)
 
 
     output = json.loads(INPUT, cls=JSONObjectDecoder)
     print(output)
-    # [
-    #     Contact('Jan', 'Twardowski', addresses=(
-    #         Address('Johnson Space Center', 'Houston', 'TX'),
-    #         Address('Kennedy Space Center', 'Merritt Island', 'FL'))),
+    # Astronaut(name="Jan Twardowski", missions=[
+    #    Mission(year=1969, name="Apollo 18"),
+    #    Mission(year=2024, name="Artemis 3")]),
     #
-    #     Contact('Mark', 'Watney', addresses=(
-    #         Address('Jet Propulsion Laboratory', 'Pasadena', 'CA'))),
+    # Astronaut(name="Mark Watney", missions=
+    #    Mission(year=2035, name="Ares 3")),
     #
-    #     Contact('Melissa', 'Lewis', addresses=()),
-    # ]
+    # Astronaut(name="Melissa Lewis", missions=[])]
 
 
 Pretty Printing JSON

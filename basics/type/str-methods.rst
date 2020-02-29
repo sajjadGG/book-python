@@ -41,8 +41,9 @@ String Arithmetic
 
 .. code-block:: python
 
-    'Ha' * 3            # HaHaHa
+    'Beetlejuice' * 3   # BeetlejuiceBeetlejuiceBeetlejuice
     '-' * 10            # ----------
+    'Mua' + 'Ha' * 2    # 'MuaHaHa'
 
 .. code-block:: python
 

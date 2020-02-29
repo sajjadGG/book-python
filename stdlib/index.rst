@@ -16,12 +16,12 @@ Modules and Packages
     :caption: Modules and Packages
     :name: Stdlib Modules and Packages
 
-    module/venv.rst
-    module/install.rst
-    module/import.rst
-    module/tools.rst
-    module/zipapp.rst
-    module/distributing.rst
+    modules/venv.rst
+    modules/install.rst
+    modules/import.rst
+    modules/tools.rst
+    modules/zipapp.rst
+    modules/distributing.rst
 
 ********
 Builtins
