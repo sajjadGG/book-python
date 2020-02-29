@@ -137,7 +137,7 @@ Contextmanager decorator
 
 
     @contextmanager
-    def MicroBenchmark():
+    def benchmark():
         start_time = time.time()
         yield
         end_time = time.time()
@@ -145,10 +145,29 @@ Contextmanager decorator
         print(f'Duration {duration:.4f} seconds')
 
 
-    with MicroBenchmark():
+    with benchmark():
         list(range(100_000_000))
 
     # Duration 3.3795 seconds
+
+.. code-block:: python
+
+    from contextlib import contextmanager
+
+
+    @contextmanager
+    def tag(name):
+        print(f"<{name}>")
+        yield
+        print(f"</{name}>")
+
+
+    with tag("p"):
+        print("foo")
+
+    # <p>
+    # foo
+    # </p>
 
 ``ContextDecorator`` class
 --------------------------
@@ -216,26 +235,32 @@ Contextmanager decorator
     # Duration of str.format() is 0.000003 seconds
     # Duration of %-style is 0.000002 seconds
 
-Use Case
---------
 .. code-block:: python
 
-    from contextlib import contextmanager
+    class Timeit:
+        def __init__(self, name):
+            self.name = name
+
+        def __enter__(self):
+            self.start_time = datetime.now().timestamp()
+
+        def __exit__(self, *arg, **kwargs):
+            self.end_time = datetime.now().timestamp()
+            duration = self.end_time - self.start_time
+            print(f"Duration of {self.name} is {duration:f} seconds")
 
 
-    @contextmanager
-    def tag(name):
-        print(f"<{name}>")
-        yield
-        print(f"</{name}>")
+    with Timeit("function"):
+        list(get_for_species_function(data, "setosa"))
 
+    with Timeit("comprehension"):
+        list([row for row in data if row[4] == "setosa"])
 
-    with tag("p"):
-        print("foo")
+    with Timeit("generator short"):
+        list((row for row in data if row[4] == "setosa"))
 
-    # <p>
-    # foo
-    # </p>
+    with Timeit("generator"):
+        list(get_for_species_generator(data, "setosa"))
 
 
 Assignments
