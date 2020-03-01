@@ -194,28 +194,30 @@ Methods
 
 :English:
     #. Define class ``Iris``
-    #. Define method ``total()`` which calculates sum of all numerical attributes of an object
+    #. Define method ``total()`` which returns sum of all numerical attributes of an object
 
         * "Sepal length"
         * "Sepal width"
         * "Petal length"
         * "Petal width"
 
-    #. Define method ``mean()`` which calculates mean of all numerical attributes of an object (assume length equal to 4)
+    #. Define method ``get_length()`` which returns number of numerical fields (use: ``self.__dict__``)
+    #. Define method ``mean()`` which calculates mean of all numerical attributes of an object
     #. Create ``setosa`` object with attributes set at the initialization (see input data)
     #. Create ``virginica`` object with attributes set at the initialization (see input data)
     #. Print species name, total and mean of each instance
 
 :Polish:
     #. Zdefiniuj klasę ``Iris``
-    #. Zdefiniuj metodę ``total()`` klasy ``Iris`` wyliczającą sumę wszystkich atrybutów numerycznych obiektu:
+    #. Zdefiniuj metodę ``total()`` klasy ``Iris`` zwracającą sumę wszystkich atrybutów numerycznych obiektu:
 
         * "Sepal length"
         * "Sepal width"
         * "Petal length"
         * "Petal width"
 
-    #. Zdefiniuj metodę ``mean()`` klasy ``Iris`` wyliczającą średnią wszystkich atrybutów numerycznych obiektu (przyjmij długość równą 4)
+    #. Zdefiniuj metodę ``get_length()`` która zwraca ilość pól numerycznych (użyj: ``self.__dict__``)
+    #. Zdefiniuj metodę ``mean()`` klasy ``Iris`` wyliczającą średnią wszystkich atrybutów numerycznych obiektu
     #. Stwórz obiekt ``setosa`` z pomiarami podawanymi przy inicjalizacji (patrz dane wejściowe)
     #. Stwórz obiekt ``virginica`` z pomiarami podawanymi przy inicjalizacji (patrz dane wejściowe)
     #. Wypisz nazwę gatunku oraz sumę i średnią z pomiarów dla każdej instancji

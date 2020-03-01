@@ -172,7 +172,7 @@ Bootcamp
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Dragon
-    :name: Dragon
+    :caption: Bootcamp
+    :name: Bootcamp
 
     /bootcamp/index.rst
