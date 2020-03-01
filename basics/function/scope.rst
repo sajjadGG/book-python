@@ -1,6 +1,6 @@
-************************
-Function Variables Scope
-************************
+**************
+Function Scope
+**************
 
 
 Access Scope

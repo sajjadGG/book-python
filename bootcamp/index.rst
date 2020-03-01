@@ -9,6 +9,16 @@ Modules and Packages
     modules/install.rst
     modules/import.rst
 
+*************
+Serialization
+*************
+.. toctree::
+    :maxdepth: 1
+    :caption: Serialization
+    :name: Stdlib Serialization
+
+    serialization/pickle.rst
+
 **********************
 Datetime and Timezones
 **********************
@@ -23,16 +33,6 @@ Datetime and Timezones
     datetime/timestamp.rst
     datetime/utils.rst
     datetime/timezones.rst
-
-*************
-Serialization
-*************
-.. toctree::
-    :maxdepth: 1
-    :caption: Serialization
-    :name: Stdlib Serialization
-
-    serialization/pickle.rst
 
 *********
 Functions

@@ -332,8 +332,8 @@ Examples
 Assignments
 ===========
 
-From ISO date format
---------------------
+Example
+-------
 * Complexity level: easy
 * Lines of code to write: 1 lines
 * Estimated time of completion: 5 min
@@ -351,6 +351,10 @@ From ISO date format
     .. code-block:: text
 
         1969-07-21T02:56:15.123Z
+
+Solution:
+    .. literalinclude:: solution/datetime_from_iso.py
+        :language: python
 
 To ISO date format
 ------------------

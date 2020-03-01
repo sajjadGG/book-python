@@ -237,7 +237,7 @@ Checking values
 Assignments
 ===========
 
-Classes and instances
+Object Initialization
 ---------------------
 * Complexity level: easy
 * Lines of code to write: 10 lines

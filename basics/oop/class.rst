@@ -209,8 +209,8 @@ Example
 :The whys and wherefores:
     * :ref:`OOP Classes and Instances`
 
-Classes and instances
----------------------
+Class instantiation
+-------------------
 * Complexity level: easy
 * Lines of code to write: 9 lines
 * Estimated time of completion: 5 min

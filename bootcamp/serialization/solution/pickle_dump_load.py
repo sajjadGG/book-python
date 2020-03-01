@@ -30,11 +30,14 @@ CREW = [
     Astronaut('Melissa Lewis'),
 ]
 
-with open(r'/tmp/astronauts.pkl', mode='wb') as file:
+
+FILE = r'/tmp/astronauts.pkl'
+
+with open(FILE, mode='wb') as file:
     pickle.dump(CREW, file)
 
 
-with open(r'/tmp/astronauts.pkl', mode='rb') as file:
+with open(FILE, mode='rb') as file:
     output = pickle.load(file)
 
 

@@ -111,12 +111,6 @@ Built-in Generators
     filter(<callable>, <sequence>)
 
 .. code-block:: python
-    :caption: ``filter()`` definition
-
-    list(filter(lambda x: x % 2 == 0, data))
-    # [2, 4, 6]
-
-.. code-block:: python
     :caption: ``filter()`` example
 
     DATA = [
@@ -236,16 +230,17 @@ Built-in Generators
 * Solution: :download:`solution/generators_task.py`
 
 :English:
-    #. Using comprehension generate ``output: List[int]`` with numbers from 1 to 33 which are divisible by 3
+    #. Using generator expression to create ``output: List[int]`` with numbers from 1 to 33 which are divisible by 3
     #. Filter ``output`` to contain only odd numbers
     #. Cube all numbers in ``output``
     #. Calculate arithmetic mean from ``output``
 
 :Polish:
-    #. Używając comprehension wygeneruj ``output: List[int]`` z liczbami z zakresu 1 do 33 podzielnymi przez 3
+    #. Używając wyrażenia generatorowego stwórz ``output: List[int]`` z liczbami z zakresu 1 do 33 podzielnymi przez 3
     #. Przefiltruj ``output`` aby zawierał tylko liczby nieparzyste
     #. Podnieś wszystkie liczby w ``output`` do sześcianu
     #. Oblicz średnią arytmetyczną z ``output``
 
 :Hint:
     * ``mean = sum(...) / len(...)``
+    * type cast to ``list()`` before calculating mean to expand generator
