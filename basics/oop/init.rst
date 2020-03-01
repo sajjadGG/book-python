@@ -69,86 +69,86 @@ Initializing Attributes
 
     class Astronaut:
         def __init__(self):
-            self.firstname = 'Mark'
-            self.lastname = 'Watney'
+            self.first_name = 'Mark'
+            self.last_name = 'Watney'
 
 
     mark = Astronaut()
 
-    print(mark.firstname)      # Mark
-    print(mark.lastname)       # Watney
-    print(mark.mission)        # AttributeError: 'Astronaut' object has no attribute 'mission'
+    print(mark.first_name)      # Mark
+    print(mark.last_name)       # Watney
+    print(mark.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
 
 .. code-block:: python
     :caption: Init time attributes
 
     class Astronaut:
         def __init__(self):
-            self.firstname = 'Mark'
+            self.first_name = 'Mark'
             self.lastname = 'Watney'
 
 
     mark = Astronaut()
-    print(mark.firstname)      # Mark
-    print(mark.lastname)       # Watney
-    print(mark.mission)        # AttributeError: 'Astronaut' object has no attribute 'mission'
+    print(mark.first_name)      # Mark
+    print(mark.last_name)       # Watney
+    print(mark.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
 
     ivan = Astronaut()
-    print(ivan.firstname)      # Mark
-    print(ivan.lastname)       # Watney
-    print(ivan.mission)        # AttributeError: 'Astronaut' object has no attribute 'mission'
+    print(ivan.first_name)      # Mark
+    print(ivan.last_name)       # Watney
+    print(ivan.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
 
 .. code-block:: python
     :caption: Init time attributes
 
     class Astronaut:
         def __init__(self, a, b):
-            self.firstname = a
-            self.lastname = b
+            self.first_name = a
+            self.last_name = b
 
 
     mark = Astronaut('Mark', 'Watney')
-    print(mark.firstname)      # Mark
-    print(mark.lastname)       # Watney
-    print(mark.mission)        # AttributeError: 'Astronaut' object has no attribute 'mission'
+    print(mark.first_name)      # Mark
+    print(mark.last_name)       # Watney
+    print(mark.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
 
     ivan = Astronaut(firstname='Ivan', lastname='Ivanovich')
-    print(ivan.firstname)      # Ivan
-    print(ivan.lastname)       # Ivanovich
-    print(ivan.mission)        # AttributeError: 'Astronaut' object has no attribute 'mission'
+    print(ivan.first_name)      # Ivan
+    print(ivan.last_name)       # Ivanovich
+    print(ivan.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
 
 .. code-block:: python
     :caption: Init time attributes
 
     class Astronaut:
-        def __init__(self, firstname, lastname):
-            self.firstname = firstname
-            self.lastname = lastname
+        def __init__(self, first_name, last_name):
+            self.first_name = first_name
+            self.last_name = last_name
 
 
     mark = Astronaut('Mark', 'Watney')
-    print(mark.firstname)      # Mark
-    print(mark.lastname)       # Watney
-    print(mark.mission)        # AttributeError: 'Astronaut' object has no attribute 'mission'
+    print(mark.first_name)      # Mark
+    print(mark.last_name)       # Watney
+    print(mark.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
 
     ivan = Astronaut(firstname='Ivan', lastname='Ivanovich')
-    print(ivan.firstname)      # Ivan
-    print(ivan.lastname)       # Ivanovich
-    print(ivan.mission)        # AttributeError: 'Astronaut' object has no attribute 'mission'
+    print(ivan.first_name)      # Ivan
+    print(ivan.last_name)       # Ivanovich
+    print(ivan.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
 
 .. code-block:: python
     :caption: Init time attributes
 
     class Astro:
-        def __init__(self, firstname, lastname):
-            self.full_name = f'{firstname} {lastname}'
+        def __init__(self, first_name, last_name):
+            self.full_name = f'{first_name} {last_name}'
 
 
     mark = Astro('Mark', 'Watney')
 
     print(mark.full_name)       # Mark Watney
-    print(mark.firstname)       # AttributeError: 'Astro' object has no attribute 'firstname'
-    print(mark.lastname)        # AttributeError: 'Astro' object has no attribute 'lastname'
+    print(mark.first_name)      # AttributeError: 'Astro' object has no attribute 'firstname'
+    print(mark.last_name)       # AttributeError: 'Astro' object has no attribute 'lastname'
 
 .. code-block:: python
     :caption: Init time attributes
@@ -208,7 +208,7 @@ Initializing Attributes
     print(virginica.petal_width)    # 1.9
     print(virginica.species)        # virginica
 
-.. note:: Since Python 3.7 there is a ``@dataclass`` decorator, which automaticaly generates ``__init__()`` arguments and fields. Dataclasses are described in :ref:`OOP Dataclass`.
+.. note:: Since Python 3.7 there is a ``@dataclass`` decorator, which automatically generates ``__init__()`` arguments and fields. Dataclasses are described in :ref:`OOP Dataclass`.
 
 
 Checking values
@@ -227,7 +227,7 @@ Checking values
 
 
     ice = Kelvin(273.15)
-    print(ice)
+    print(ice.value)
     # 273.15
 
     not_existing = Kelvin(-300)
@@ -280,20 +280,16 @@ Data Modeling
 :English:
     #. Model the data using classes
     #. Create instances for each record
-    #. How many classes are there?
-    #. How many instances are there?
     #. Create instances of a first class using positional arguments
     #. Create instances of a second class using keyword arguments
-    #. Print first field from each instance
+    #. Using ``__dict__`` print all fields from each instance
 
 :Polish:
     #. Zamodeluj dane za pomocą klas
     #. Stwórz instancje dla każdego wpisu
-    #. Jak wiele klas możemy wyróżnić?
-    #. Jak wiele instancji możemy wyróżnić?
     #. Twórz instancje pierwszej klasy używając argumentów pozycyjnych
     #. Twórz instancje drugiej klasy używając argumentów nazwanych
-    #. Wypisz pierwsze pole każdej z instancji
+    #. Za pomocą ``__dict__`` wypisz wszystkie pola każdej z instancji
 
 :Input:
     .. code-block:: text

@@ -16,6 +16,9 @@ Access Scope
     print(add())
     # 6
 
+    print(DATA)
+    # [1, 2, 3]
+
 .. code-block:: python
     :caption: Shadowing
 
@@ -40,7 +43,6 @@ Access Scope
         global DATA
         DATA = [10, 20, 30]
         return sum(DATA)
-
 
     print(add())
     # 60
@@ -272,8 +274,8 @@ Wanted
 * Solution: :download:`solution/scope_wanted.py`
 
 :English:
-    #. Separate header (first line) from data
     #. For given input data (see below)
+    #. Separate header (first line) from data
     #. Define ``wanted: Set[str]`` with 'setosa' and 'versicolor'
     #. Iterate over data and split row into ``features`` and ``label`` (last)
     #. Define function which sums ``features``, only when ``label`` is in ``wanted``
@@ -281,8 +283,8 @@ Wanted
     #. Print sum
 
 :Polish:
-    #. Oddziel nagłówek (pierwsza linia) od danych
     #. Dla danych wejściowych (patrz sekcja input)
+    #. Oddziel nagłówek (pierwsza linia) od danych
     #. Zdefiniuj ``wanted: Set[str]`` z 'setosa' oraz 'versicolor'
     #. Iterując po danych rozdziel wiersz na ``features`` i ``label`` (ostatni)
     #. Zdefiniuj funkcję sumującą ``features``, tylko gdy ``label`` jest w ``wanted``

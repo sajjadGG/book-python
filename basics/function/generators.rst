@@ -1,5 +1,5 @@
 *******************
-Built-in generators
+Built-in Generators
 *******************
 
 
@@ -8,7 +8,7 @@ Built-in generators
 .. highlights::
     * optional ``start``, inclusive, default: ``0``
     * required ``stop``, exclusive,
-    * optional``step``, default: ``1``
+    * optional ``step``, default: ``1``
 
 .. code-block:: python
     :caption: ``range()`` syntax
@@ -228,18 +228,24 @@ Return True if any element of the iterable is true. If the iterable is empty, re
 Assignments
 ===========
 
-``map()``, ``filter()`` and ``lambda``
---------------------------------------
+Built-in Generators
+-------------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
 * Solution: :download:`solution/generators_task.py`
 
 :English:
-    .. todo:: Translate to English
+    #. Using comprehension generate ``output: List[int]`` with numbers from 1 to 33 which are divisible by 3
+    #. Filter ``output`` to contain only odd numbers
+    #. Cube all numbers in ``output``
+    #. Calculate arithmetic mean from ``output``
 
 :Polish:
-    #. Używając generatora zbuduj listę zawierającą wszystkie liczby podzielne przez 3 z zakresu od 1 do 33:
-    #. Używając funkcji ``filter()`` usuń z niej wszystkie liczby parzyste
-    #. Używając wyrażenia ``lambda`` i funkcji ``map()`` podnieś wszystkie elementy tak otrzymanej listy do sześcianu
-    #. Odpowiednio używając funkcji ``sum()``  i ``len()`` oblicz średnią arytmetyczną z elementów tak otrzymanej listy.
+    #. Używając comprehension wygeneruj ``output: List[int]`` z liczbami z zakresu 1 do 33 podzielnymi przez 3
+    #. Przefiltruj ``output`` aby zawierał tylko liczby nieparzyste
+    #. Podnieś wszystkie liczby w ``output`` do sześcianu
+    #. Oblicz średnią arytmetyczną z ``output``
+
+:Hint:
+    * ``mean = sum(...) / len(...)``

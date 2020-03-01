@@ -57,6 +57,69 @@ Generator expressions vs. Comprehensions
     tuple(x for x in range(0,5))       # (0, 1, 2, 3, 4)
     (x for x in range(0,5))            # <generator object <genexpr> at 0x118c1aed0>
 
+.. code-block:: python
+    :caption: Comprehension
+
+    data = [x for x in range(0,10)]
+
+    for x in data:
+        print(x)
+        if x == 3:
+            break
+
+    # 0
+    # 1
+    # 2
+    # 3
+
+    for x in data:
+        print(x)
+        if x == 6:
+            break
+    # 0
+    # 1
+    # 2
+    # 3
+    # 4
+    # 5
+    # 6
+
+    print(list(data))
+    # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    print(list(data))
+    # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+.. code-block:: python
+    :caption: Generator
+
+    data = (x for x in range(0,10))
+
+    for x in data:
+        print(x)
+        if x == 3:
+            break
+
+    # 0
+    # 1
+    # 2
+    # 3
+
+    for x in data:
+        print(x)
+        if x == 6:
+            break
+
+    # 4
+    # 5
+    # 6
+
+    print(list(data))
+    # [7, 8, 9]
+
+    print(list(data))
+    # []
+
 
 Simple usage
 ============

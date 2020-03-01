@@ -81,23 +81,21 @@ Docstring
 .. code-block:: python
     :caption: Docstring used for documentation
 
-    def apollo_dsky(noun, verb):
+    def my_function():
         """
-        This is the Apollo Display Keyboard
-        It takes noun and verb
+        This is the My Function
         """
-        print(f'Program selected. Noun: {noun}, verb: {verb}')
+        print('Hello')
 
 
-    print(apollo_dsky.__doc__)
-    # This is the Apollo Display Keyboard
-    # It takes noun and verb
+    help(my_function)
+    # Help on function my_function in module __main__:
+    #
+    # my_function()
+    #     This is the My Function
 
-    help(apollo_dsky)
-    # Help on function apollo_dsky in module __main__:
-    # apollo_dsky(noun, verb)
-    #    This is the Apollo Display Keyboard
-    #    It takes noun and verb
+    print(my_function.__doc__)
+    # This is the My Function
 
 
 Assignments
@@ -111,11 +109,11 @@ Define Function
 * Solution: :download:`solution/define_print.py`
 
 :English:
-    #. Define function ``call``
+    #. Define function ``call`` without parameters
     #. Print ``Beetlejuice`` on the screen
     #. Call function three times
 
 :Polish:
-    #. Zdefiniuj funkcję ``call``
+    #. Zdefiniuj funkcję ``call`` bez parametrów
     #. Wypisz ``Beetlejuice`` na ekranie
     #. Wywołaj funkcję trzy razy

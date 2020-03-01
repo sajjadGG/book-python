@@ -1,18 +1,18 @@
-NUMBERS = range(1, 34)
+def is_odd(x):
+    if x % 2:
+        return True
+    else:
+        return False
 
-output = [x for x in NUMBERS if x % 3 == 0]
-# [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33]
 
-output = filter(lambda x: not x % 2 == 0, output)
-# <filter object at 0x117c639d0>
-# [3, 9, 15, 21, 27, 33]
+def cube(x):
+    return x ** 3
 
-output = map(lambda x: pow(x, 3), output)
-# <map object at 0x117c7ac10>
-# [3, 9, 15, 21, 27, 33]
 
-numbers = list(output)
-# [27, 729, 3375, 9261, 19683, 35937]
-
+numbers = (x for x in range(1, 34) if x % 3 == 0)
+numbers = filter(is_odd, numbers)
+numbers = map(cube, numbers)
+numbers = list(numbers)
 mean = sum(numbers) / len(numbers)
+print(mean)
 # 11502.0

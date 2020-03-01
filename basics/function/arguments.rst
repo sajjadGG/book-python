@@ -291,13 +291,19 @@ Aviation numbers
 
 :English:
     #. Given is pilot's alphabet for numbers (see boilerplate section below)
+    #. Convert ``CONVERSION: Dict[int, str]`` to ``ALPHABET: Dict[str, str]`` (keys as ``str``)
     #. For input data (see input section below)
     #. Define function converting ``int`` or ``float`` to text form in Pilot's Speak
+    #. You can modify ``ALPHABET``
+    #. You cannot change ``CONVERSION``
 
 :Polish:
     #. Dany jest alfabet pilotów dla numerów (patrz sekcja boilerplate)
+    #. Przekonwertuj ``CONVERSION: Dict[int, str]`` na ``ALPHABET: Dict[str, str]`` (klucze jako ``str``)
     #. Dla danych wejściowych (patrz sekcja input poniżej)
     #. Zdefiniuj funkcję konwertującą ``int`` lub ``float`` na formę tekstową w mowie pilotów
+    #. Możesz modyfikować ``ALPHABET``
+    #. Nie możesz zmieniać ``CONVERSION``
 
 :Boilerplace:
     .. code-block:: python
@@ -336,55 +342,6 @@ Aviation numbers
         'minus one niner six niner'
         'minus tree one and tree tree seven'
         'minus fower niner and tree fife'
-
-:The whys and wherefores:
-    * Defining and calling functions
-    * Passing function arguments
-    * Cleaning data from user input
-    * ``dict`` lookups
-
-Number to human readable
-------------------------
-* Complexity level: hard
-* Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
-* Solution: :download:`solution/args_numstr_human.py`
-
-:English:
-    #. For input data (see below)
-    #. Define function converting ``int`` or ``float`` to text form
-    #. Text form must be in proper grammar form
-    #. Max 6 digits before decimal separator (point ``.``)
-    #. Max 5 digits after decimal separator (point ``.``)
-
-:Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
-    #. Zdefiniuj funkcję konwertującą ``int`` lub ``float`` na formę tekstową
-    #. Forma tekstowa musi być poprawna gramatycznie
-    #. Max 6 cyfr przed separatorem dziesiętnym (point ``.``)
-    #. Max 5 cyfr po separatorze dziesiętnym (point ``.``)
-
-:Input:
-    .. code-block:: python
-
-        1969
-        31337
-        13.37
-        31.337
-        -1969
-        -31.337
-        -49.35
-
-:Output:
-    .. code-block:: python
-
-        'one thousand nine hundred sixty nine'
-        'thirty one thousand three hundred thirty seven'
-        'thirteen and thirty seven hundredths'
-        'thirty one three hundreds thirty seven thousands'
-        'minus one thousand nine hundred sixty nine'
-        'minus thirty one and three hundreds thirty seven thousands'
-        'minus forty nine and thirty five hundreds'
 
 :The whys and wherefores:
     * Defining and calling functions
@@ -451,3 +408,52 @@ Cleaning text input
     * Cleaning data from user input
 
 .. todo:: Translate input data to English
+
+Number to human readable
+------------------------
+* Complexity level: hard
+* Lines of code to write: 15 lines
+* Estimated time of completion: 15 min
+* Solution: :download:`solution/args_numstr_human.py`
+
+:English:
+    #. For input data (see below)
+    #. Define function converting ``int`` or ``float`` to text form
+    #. Text form must be in proper grammar form
+    #. Max 6 digits before decimal separator (point ``.``)
+    #. Max 5 digits after decimal separator (point ``.``)
+
+:Polish:
+    #. Dla danych wejściowych (patrz sekcja input)
+    #. Zdefiniuj funkcję konwertującą ``int`` lub ``float`` na formę tekstową
+    #. Forma tekstowa musi być poprawna gramatycznie
+    #. Max 6 cyfr przed separatorem dziesiętnym (point ``.``)
+    #. Max 5 cyfr po separatorze dziesiętnym (point ``.``)
+
+:Input:
+    .. code-block:: python
+
+        1969
+        31337
+        13.37
+        31.337
+        -1969
+        -31.337
+        -49.35
+
+:Output:
+    .. code-block:: python
+
+        'one thousand nine hundred sixty nine'
+        'thirty one thousand three hundred thirty seven'
+        'thirteen and thirty seven hundredths'
+        'thirty one three hundreds thirty seven thousands'
+        'minus one thousand nine hundred sixty nine'
+        'minus thirty one and three hundreds thirty seven thousands'
+        'minus forty nine and thirty five hundreds'
+
+:The whys and wherefores:
+    * Defining and calling functions
+    * Passing function arguments
+    * Cleaning data from user input
+    * ``dict`` lookups

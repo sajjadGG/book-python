@@ -21,6 +21,46 @@ About
     method
         Function inside the class which takes ``self`` as a first argument.
 
+Rationale
+=========
+.. code-block:: python
+
+    point_x = 1
+    point_y = 2
+    point_z = 3
+
+    print(point_x)
+    print(point_y)
+    print(point_z)
+
+.. code-block:: python
+
+    class Point:
+        def __init__(self, x, y, z):
+            self.x = x
+            self.y = y
+            self.z = z
+
+        def get_coordinates(self):
+            return self.x, self.y, self.z
+
+        def to_string(self):
+            print(f'Point(x={self.x}, y={self.y}, z={self.z})')
+
+
+    point = Point(x=1, y=2, z=3)
+
+    print(point.x)      # 1
+    print(point.y)      # 2
+    print(point.z)      # 3
+
+    point.to_string()
+    # Point(x=1, y=2, z=3)
+
+    p = point.get_coordinates()
+    print(p)
+    # (1, 2, 3)
+
 
 Methods without arguments
 =========================

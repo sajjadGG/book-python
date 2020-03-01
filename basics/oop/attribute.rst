@@ -50,7 +50,6 @@ About
     :scale: 100%
     :align: center
 
-
 Dynamic Attributes
 ==================
 .. code-block:: python
@@ -100,13 +99,56 @@ Dynamic Attributes
 .. code-block:: python
     :caption: Accessing not existing attributes
 
-    class MyClass:
+    class Astronaut:
         pass
 
 
-    my_instance = MyClass()
-    print(my_instance.xxx)
-    # AttributeError: 'MyClass' object has no attribute 'xxx'
+    astro = Astronaut()
+
+    print(astro.missions)
+    # AttributeError: 'MyClass' object has no attribute 'missions'
+
+.. code-block:: python
+
+    class Astronaut:
+        pass
+
+
+    jose = Astronaut()
+    jose.name = 'Jose Jimenez'
+    print(f'My name... {jose.name}')
+    # My name... Jose Jimenez
+
+    mark = Astronaut()
+    print(f'My name... {mark.name}')
+    # AttributeError: 'Astronaut' object has no attribute 'name'
+
+
+Rationale
+=========
+.. code-block:: python
+
+    point_x = 1
+    point_y = 2
+    point_z = 3
+
+    print(point_x)
+    print(point_y)
+    print(point_z)
+
+.. code-block:: python
+
+    class Point:
+        pass
+
+    point = Point()
+    point.x = 1
+    point.y = 2
+    point.z = 3
+
+    print(point.x)
+    print(point.y)
+    print(point.z)
 
 
 Get all dynamic fields and values

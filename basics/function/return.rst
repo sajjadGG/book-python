@@ -130,13 +130,13 @@ Return Numbers
 * Solution: :download:`solution/return_numbers.py`
 
 :English:
-    #. Define function ``add``
+    #. Define function ``add`` without parameters
     #. Function should return sum of ``42`` and ``13.37``
     #. Call function and intercept returned value
     #. Print value
 
 :Polish:
-    #. Zdefiniuj funkcję ``add``
+    #. Zdefiniuj funkcję ``add`` bez parametrów
     #. Funkcja powinna zwracać sumę ``42`` and ``13.37``
     #. Wywołaj funkcję i przechwyć zwracaną wartość
     #. Wyświetl wartość
