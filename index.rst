@@ -166,3 +166,13 @@ Appendixes
     /appendix/workshop/machine-learning.rst
     /_references/references.rst
 
+********
+Bootcamp
+********
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Dragon
+    :name: Dragon
+
+    /bootcamp/index.rst
