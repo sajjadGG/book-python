@@ -124,18 +124,10 @@ Date and time
 * "T" separates date and time
 
 .. code-block:: text
-    :caption: Date and time with second precision
+    :caption: Date and time
 
     1961-04-12T06:07:00Z
-
-.. code-block:: text
-    :caption: Date and time with with millisecond precision
-
     1961-04-12T06:07:00.123Z
-
-.. code-block:: text
-    :caption: Date and time with microsecond precision
-
     1961-04-12T06:07:00.123456Z
 
 Noon and Midnight
@@ -159,8 +151,9 @@ Timezone
 
 .. code-block:: text
     :caption: Time zone notation
-    :emphasize-lines: 1,2
+    :emphasize-lines: 1-3
 
+    <time>UTC
     <time>Z
     <time>±hh:mm
     <time>±hhmm
@@ -379,7 +372,7 @@ To ISO date format
 :Output:
     .. code-block:: text
 
-        1969-04-12T06:07:00.000Z
+        1969-04-12T06:07:00.000000Z
 
 :Hint:
     * Add string ``local time`` to format statement
