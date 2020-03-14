@@ -60,9 +60,10 @@ Numpy
     numpy/array-shape.rst
     numpy/array-indexing.rst
     numpy/array-slicing.rst
-    numpy/array-axis.rst
     numpy/array-iteration.rst
     numpy/array-rounding.rst
+    numpy/array-axis.rst
+    numpy/array-array-sort.rst
     numpy/array-methods.rst
     numpy/array-arithmetic.rst
     numpy/array-concatenation.rst
