@@ -201,8 +201,8 @@ Substituting items
 Assignments
 ===========
 
-Index
------
+Indexing
+--------
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min

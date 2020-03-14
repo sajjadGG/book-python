@@ -58,9 +58,9 @@ Numpy
     numpy/array-dtype.rst
     numpy/array-attributes.rst
     numpy/array-shape.rst
-    numpy/array-axis.rst
     numpy/array-indexing.rst
     numpy/array-slicing.rst
+    numpy/array-axis.rst
     numpy/array-iteration.rst
     numpy/array-rounding.rst
     numpy/array-methods.rst

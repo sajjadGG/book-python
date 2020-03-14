@@ -112,7 +112,7 @@ Columns
     a[:, 1]
     # array([2, 5, 8])
 
-    a[: ,2]
+    a[:, 2]
     # array([3, 6, 9])
 
     a[:, -1]
@@ -271,32 +271,28 @@ Array Slicing
 
 :English:
     #. Use input ndarray (see below)
-    #. Select inner 3x3 and save to ``output: ndarray``
-    #. Print ``output``
+    #. Print inner 2x2 elements
 
 :Polish:
     #. Użyj wejściowej ndarray (patrz sekcja input)
-    #. Wybierz wewnętrzne 3x3 i zapisz do ``output: ndarray``
-    #. Wypisz ``output``
+    #. Wybierz wewnętrzne 2x2 elementy
 
 :Input:
     .. code-block:: python
 
         INPUT = np.array([
-            [7, 5, 3, 4, 5],
-            [2, 2, 8, 1, 5],
-            [3, 8, 8, 4, 4],
-            [5, 5, 5, 2, 5],
-            [0, 1, 0, 6, 0],
+            [2, 8, 1, 5],
+            [8, 8, 4, 4],
+            [5, 5, 2, 5],
+            [1, 0, 6, 0],
         ])
 
 :Output:
     .. code-block:: python
 
         print(output)
-        # [[2 8 1]
-        #  [8 8 4]
-        #  [5 5 2]]
+        # [[8 4]
+        #  [5 2]]
 
 :The whys and wherefores:
     * Defining ``np.array``
@@ -310,14 +306,14 @@ Sum of inner elements
 * Solution: :download:`solution/numpy_inner_sum.py`
 
 :English:
-    #. Use only random module from ``numpy`` module
+    #. Use only ``random`` module from ``numpy`` library
     #. Set random seed to zero
     #. Generate ``INPUT: ndarray`` with 16x16 random digits (0-9 inclusive)
     #. Calculate sum of inner 4x4 elements
     #. Inner matrix is exactly in the middle of outer
 
 :Polish:
-    #. Używaj tylko modułu random z modułu ``numpy``
+    #. Użyj tylko funkcji z modułu ``random`` biblioteki ``numpy``
     #. Ustaw ziarno losowości na zero
     #. Wygeneruj ``INPUT: ndarray`` z 16x16 losowych cyfr (0-9 włącznie)
     #. Policz sumę środkowych 4x4 elementów

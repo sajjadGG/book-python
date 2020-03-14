@@ -95,9 +95,18 @@ Clip
     a = np.array([[-2, -1, 0],
                   [0, 1, 2]])
 
+
+    a.astype(bool)
+    # array([[ True,  True, False],
+    #        [False,  True,  True]])
+
     a.clip(0, 1)
     # array([[0, 0, 0],
     #        [0, 1, 1]])
+
+    a.clip(0, 1).astype(bool)
+    # array([[False, False, False],
+    #        [False,  True,  True]])
 
 
 Assignments
