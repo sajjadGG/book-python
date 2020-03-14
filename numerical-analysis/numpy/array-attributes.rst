@@ -108,8 +108,8 @@ Data
 Assignments
 ===========
 
-Create
-------
+Array Attributes
+----------------
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
@@ -119,23 +119,27 @@ Create
     #. Set random seed to zero.
     #. Create ``a: ndarray`` with size 16x16.
     #. Structure must contains random integers (0-9).
-    #. Print number of:
+    #. Print:
 
-        * dimensions;
-        * columns;
-        * rows;
-        * element count.
+        * number of dimensions;
+        * number of elements;
+        * data type;
+        * element size;
+        * shape;
+        * strides.
 
 :Polish:
     #. Ustaw ziarno losowości na zero.
     #. Stwórz ``a: ndarray`` o rozmiarze 16x16.
     #. Struktura musi zawierać losowe liczby (0-9).
-    #. Wypisz liczbę:
+    #. Wypisz:
 
-        * wymiarów,
-        * kolumn,
-        * wierszy,
-        * ilość elementów.
+        * liczbę wymiarów,
+        * liczbę elementów,
+        * typ danych,
+        * rozmiar elementu,
+        * kształt,
+        * przeskoki (strides).
 
 :The whys and wherefores:
     * Defining ``ndarray``

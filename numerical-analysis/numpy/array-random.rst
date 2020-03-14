@@ -13,6 +13,49 @@ Seed
 
 .. code-block:: python
 
+    from datetime import datetime
+
+    def seed():
+        timestamp = datetime.now().timestamp()
+        return int(timestamp)
+
+    seed() % 10     # 3
+    seed() % 10     # 4
+    seed() % 10     # 5
+    seed() % 10     # 6
+
+.. code-block:: python
+
+    from datetime import datetime
+
+    def seed():
+        timestamp = datetime.now().timestamp()
+        cpu_temperature = 52.4
+        return int(timestamp + cpu_temperature)
+
+    seed() % 10     # 7
+    seed() % 10     # 2
+    seed() % 10     # 5
+    seed() % 10     # 1
+
+.. code-block:: python
+
+    from datetime import datetime
+
+    def seed():
+        timestamp = datetime.now().timestamp()
+        cpu_temperature = 52.4
+        ram_voltage = 68.8
+        network_card_crc = 9876
+        return int(timestamp + cpu_temperature + ram_voltage + network_card_crc)
+
+    seed() % 10     # 3
+    seed() % 10     # 0
+    seed() % 10     # 2
+    seed() % 10     # 8
+
+.. code-block:: python
+
     import numpy as np
 
 
@@ -309,7 +352,7 @@ Random Sample
 -------------
 * Complexity level: medium
 * Lines of code to write: 5 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 5 min
 * Solution: :download:`solution/numpy_random_sample.py`
 
 :English:

@@ -317,19 +317,19 @@ Identity
 Assignments
 ===========
 
-Create
-------
+Array Create
+------------
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
 * Solution: :download:`solution/numpy_create_arange.py`
 
 :English:
-    #. Create ``a: ndarray`` with even numbers from 0 to 100
+    #. Create ``a: ndarray`` with even numbers from 0 to 100 (without 100)
     #. Numbers must be ``float`` type
 
 :Polish:
-    #. Stwórz ``a: ndarray`` z liczbami parzystymi od 0 do 100
+    #. Stwórz ``a: ndarray`` z liczbami parzystymi od 0 do 100 (bez 100)
     #. Liczby muszą być typu ``float``
 
 :The whys and wherefores:
