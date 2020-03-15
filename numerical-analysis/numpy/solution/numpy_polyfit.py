@@ -1,6 +1,5 @@
 import numpy as np
 
-
 INPUT = [
     ('x', 'y'),
     (-4.0, 0.0),
@@ -12,13 +11,9 @@ INPUT = [
 ]
 
 header, *data = INPUT
-x = []
-y = []
 
-for coord_x, coord_y in data:
-    x.append(coord_x)
-    y.append(coord_y)
-
+x = [x for x, y in data]
+y = [y for x, y in data]
 a = np.polyfit(x, y, deg=3)
 
 print(a)
@@ -27,8 +22,13 @@ print(a)
 
 ## Alternative
 header, *data = INPUT
-x = [x for x, y in data]
-y = [y for x, y in data]
+x = []
+y = []
+
+for coord_x, coord_y in data:
+    x.append(coord_x)
+    y.append(coord_y)
+
 a = np.polyfit(x, y, deg=3)
 
 print(a)
