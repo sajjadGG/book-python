@@ -186,9 +186,9 @@ Creating complex numbers
 .. code-block:: python
     :caption: Defining complex number by passing keyword arguments in ``dict``
 
-    kwargs = {'real': 3, 'imag': 5}
+    number = {'real': 3, 'imag': 5}
 
-    complex(**kwargs)
+    complex(**number)
     # (3+5j)
 
 Vectors
@@ -206,6 +206,22 @@ Vectors
 
     cartesian_coordinates(*vector)
 
+Point
+-----
+.. code-block:: python
+    :caption: Passing vector to the function
+
+    def cartesian_coordinates(x, y, z):
+        print(x)    # 1
+        print(y)    # 0
+        print(z)    # 1
+
+
+    point = {'x': 1, 'y': 0, 'z': 1}
+
+    cartesian_coordinates(**point)
+
+
 Print formatting
 ----------------
 * Now f-string formatting is preferred
@@ -213,12 +229,13 @@ Print formatting
 .. code-block:: python
     :caption: ``str.format()`` expects keyword arguments, which keys are used in string. It is cumbersome to pass ``format(name=name, agency=agency)`` for every variable in the code.
 
-    name = 'Jan Twardowski'
-    agency = 'POLSA'
+    firstname = 'Jan'
+    lastname = 'Twardowski'
+    location = 'Moon'
 
-    output = "{agency} astronaut {name} first on the Moon".format(**locals())
+    output = 'Astronaut {firstname} {lastname} on the {location}'.format(**locals())
     print(output)
-    # POLSA astronaut Jan Twardowski first on the Moon
+    # Astronaut Jan Twardowski on the Moon
 
 Common configuration
 --------------------
@@ -274,18 +291,31 @@ Calling function with all variables from higher order function
 .. code-block:: python
     :caption: Passing arguments to lower order function. ``locals()`` will return a ``dict`` with all the variables in local scope of the function.
 
-    def lower(a, b, c, d, e):
-        print(a, b, c, d, e)
-
-    def higher(a, b, c=0):
-        d = 4
-        e = 5
-        lower(**locals())
-        # lower(a=1, b=2, c=0, d=4, e=5)
+    def template(template, **user_data):
+        print('Template:', template)
+        print('Data:', user_data)
 
 
-    higher(1, 2)
-    # 1 2 0 4 5
+    def controller(firstname, lastname, uid=0):
+        groups = ['admins', 'astronauts']
+        permission = ['all', 'everywhere']
+        return template('user_details.html', **locals())
+
+        # template('user_details.html',
+        #    firstname='Jan',
+        #    lastname='Twardowski',
+        #    uid=0,
+        #    groups=['admins', 'astronauts'],
+        #    permission=['all', 'everywhere'])
+
+
+    controller('Jan', 'Twardowski')
+    # Template: user_details.html
+    # Data: {'firstname': 'Jan',
+    #        'lastname': 'Twardowski',
+    #        'uid': 0,
+    #        'groups': ['admins', 'astronauts'],
+    #        'permission': ['all', 'everywhere']}
 
 Proxy functions
 ---------------
@@ -313,7 +343,8 @@ Proxy functions
 
 
     def my_csv(file, encoding='utf-8', decimal=b',', lineterminator='\n', *args, **kwargs):
-        return read_csv(file, encoding=encoding, *args, **kwargs)
+        return read_csv(file, encoding=encoding, decimal=decimal,
+                        lineterminator=lineterminator, *args, **kwargs)
 
 
     my_csv('iris1.csv')
