@@ -248,6 +248,9 @@ Array Multiplication
 
 Matrix Multiplication
 =====================
+.. figure:: img/arithmetic-matmul.gif
+    :scale: 100%
+
 .. code-block:: python
 
     import numpy as np
