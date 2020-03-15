@@ -75,12 +75,14 @@ Trigonometry
     #. Read input (angle in degrees) from user
     #. User will type ``int`` or ``float``
     #. Print all trigonometric functions (sin, cos, tg, ctg)
+    #. Ctg for 180 degrees does not exists
     #. If there is no value for this angle, raise an exception
 
 :Polish:
     #. Program wczytuje od użytkownika wielkość kąta w stopniach
     #. Użytkownik zawsze podaje ``int`` albo ``float``
     #. Wyświetl wartość funkcji trygonometrycznych (sin, cos, tg, ctg)
+    #. Ctg dla wartości 180 stopni nie istnieje
     #. Jeżeli funkcja trygonometryczna nie istnieje dla danego kąta podnieś stosowny wyjątek
 
 :Hint:

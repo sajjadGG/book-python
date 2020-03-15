@@ -63,6 +63,17 @@ Diagonal
 
 Nonzero
 =======
+* Each element of the tuple contains one of the indices for each nonzero value.
+* Therefore, the length of each tuple element is the number of nonzeros in the array.
+* The first element of the tuple is the first index for each of the nonzero values: (``[0, 0, 1, 1]``).
+* The second element of the tuple is the second index for each of the nonzero values: (``[0, 2, 0, 2]``).
+* Pairs are zipped (first and second tuple):
+
+    * ``0, 0``
+    * ``0, 2``
+    * ``1, 0``
+    * ``1, 2``
+
 .. code-block:: python
 
     import numpy as np
@@ -72,8 +83,11 @@ Nonzero
                   [3, 0, 4]])
 
     a.nonzero()
-    # (array([0, 0, 1, 1]), array([0, 2, 0, 2]))
+    # (array([0, 0, 1, 1]),
+    #  array([0, 2, 0, 2]))
 
+    a[a.nonzero()]
+    # array([1, 2, 3, 4])
 
 Where
 =====
@@ -109,10 +123,12 @@ Single argument
                   [4, 5, 6]])
 
     np.where(a != 3)
-    # (array([0, 0, 1, 1, 1]), array([0, 1, 0, 1, 2]))
+    # (array([0, 0, 1, 1, 1]),
+    #  array([0, 1, 0, 1, 2]))
 
     np.where(a % 2 != 0)
-    # (array([0, 0, 1]), array([0, 2, 1]))
+    # (array([0, 0, 1]),
+    #  array([0, 2, 1]))
 
 Multiple argument
 -----------------
@@ -195,6 +211,9 @@ Fancy indexing
     a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
+    a[a % 2 == 0]
+    # array([2, 4, 6])
+
     even = (a % 2 == 0)
     a[even]
     # array([2, 4, 6])
@@ -207,8 +226,20 @@ Fancy indexing
     a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    a[ (a>2) & (a<=5) ]
-    # array([3, 4, 5])
+    a[ (a>2) & (a<=5) & (a%2==1) ]
+    # array([3, 5])
+
+    query1 = (a > 2)
+    query2 = (a <= 5)
+    query3 = (a % 2 == 1)
+    a[query1 & query2 & query3]
+    # array([3, 5])
+
+    large = (a > 2)
+    small = (a <= 5)
+    odd = (a % 2 == 1)
+    a[large & small & odd]
+    # array([3, 5])
 
 .. code-block:: python
 
@@ -251,36 +282,19 @@ Fancy indexing
 
 
     a = np.array([[1, 4], [9, 16]], float)
-    b = np.array([0, 0, 1, 1, 0], int)
-    c = np.array([0, 1, 1, 1, 1], int)
 
-    a[b,c]
-    # array([ 1., 4., 16., 16., 4.])
+    rows = np.array([0, 0, 1, 1, 0], int)
+    cols = np.array([0, 1, 0, 1, 1], int)
 
-.. code-block:: python
+    a[rows]
+    # array([[ 1.,  4.],
+    #        [ 1.,  4.],
+    #        [ 9., 16.],
+    #        [ 9., 16.],
+    #        [ 1.,  4.]])
 
-    import numpy as np
-
-
-    index = np.array(['Twardowski', 'Watney', 'Ivanovich'])
-    a = np.array([1, 2, 3])
-
-    a[index == 'Watney']
-    # array([2])
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    index = np.array(['Twardowski', 'Watney', 'Ivanovich'])
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
-
-    a[index == 'Watney']
-    # array([[4, 5, 6]])
+    a[rows,cols]
+    # array([ 1.,  4.,  9., 16.,  4.])
 
 .. code-block:: python
 
@@ -292,6 +306,17 @@ Fancy indexing
                   [4, 5, 6],
                   [7, 8, 9]])
 
+    # Intuitive understanding:
+    # '1970-01-01' -> [1, 2, 3]
+    # '1970-01-02' -> [4, 5, 6]
+    # '1970-01-03' -> [7, 8, 9]
+
+
+    index == '1970-01-02'
+    # array([False,  True, False])
+
+
+    data[index == '1970-01-02']
 
     a[index == '1970-01-02']
     # array([[4, 5, 6]])
@@ -333,6 +358,53 @@ Fancy indexing
     # array([[0, 0, 3],
     #        [4, 5, 6],
     #        [0, 0, 9]])
+
+.. code-block:: python
+
+    import numpy as np
+
+    index = np.array([
+        '1999-12-30',
+        '1999-12-31',
+        '2000-01-01',
+        '2000-01-02'])
+
+    columns = np.array(['Morning', 'Noon', 'Evening'])
+
+    data = np.array([[ 1.76405235,  0.40015721,  0.97873798],
+                     [ 2.2408932 ,  1.86755799, -0.97727788],
+                     [ 0.95008842, -0.15135721, -0.10321885],
+                     [ 0.4105985 ,  0.14404357,  1.45427351]])
+
+    ## Intuitive understanding
+    #                Morning         Noon      Evening
+    # 1999-12-30  1.76405235,  0.40015721,  0.97873798,
+    # 1999-12-31  2.2408932 ,  1.86755799, -0.97727788,
+    # 2000-01-01  0.95008842, -0.15135721, -0.10321885,
+    # 2000-01-02  0.4105985 ,  0.14404357,  1.45427351,
+
+
+    when1 = (index == '1999-12-31')   # array([False,  True, False, False])
+    when2 = (index == '2000-01-01')   # array([False, False,  True, False])
+    data[when1 | when2]
+    # array([[ 2.2408932 ,  1.86755799, -0.97727788],
+    #        [ 0.95008842, -0.15135721, -0.10321885]])
+
+
+    when = (when1 | when2)           # array([False,  True,  True, False])
+    data[when]
+    # array([[ 2.2408932 ,  1.86755799, -0.97727788],
+    #        [ 0.95008842, -0.15135721, -0.10321885]])
+
+
+    data[when1 | when2, (columns == 'Morning')]
+    # array([2.2408932 , 0.95008842])
+
+
+    times = (columns == 'Morning') | (columns == 'Evening')
+    dates = (when1 | when2)
+    data[dates, times]
+    # array([ 2.2408932 , -0.10321885])
 
 
 Take

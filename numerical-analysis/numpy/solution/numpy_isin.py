@@ -3,10 +3,16 @@ np.random.seed(0)
 
 
 a = np.random.randint(0, 100, size=50)
-b = 2 ** np.arange(7)
 
-# Alternative
+# %%timeit -r 10 -n 1_000_000
+b = 2 ** np.arange(7)
+# 1.73 µs ± 36.4 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
+
+
+# Alternative solution
+# %%timeit -r 10 -n 1_000_000
 b = np.array([np.power(2, x) for x in range(0, 7)])
+# 10 µs ± 122 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
 
 print(np.isin(a, b))
 # [False False  True False False False False False False False False False
