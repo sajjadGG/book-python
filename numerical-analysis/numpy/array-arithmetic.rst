@@ -391,8 +391,8 @@ Arithmetic operations
 :Output:
     .. code-block:: python
 
-        array([[0.34657359, 1.00505254],
-               [3.81230949,       -inf]])
+        array([[ 1.41421356,  2.73205081],
+               [45.254834  ,  0.        ]])
 
 Array Addition
 --------------

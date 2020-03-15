@@ -70,6 +70,7 @@ Numpy
     numpy/array-serialize.rst
     numpy/array-statistics.rst
     numpy/array-logic.rst
+    numpy/array-inf-nan.rst
     numpy/array-select.rst
 
     numpy/statistics.rst

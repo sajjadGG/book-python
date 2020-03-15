@@ -372,8 +372,8 @@ Take
 Assignments
 ===========
 
-Select
-------
+Array Select
+------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min

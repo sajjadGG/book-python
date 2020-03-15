@@ -331,67 +331,11 @@ Signum
     #        [ 0,  1,  1]])
 
 
-Infinite
-========
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([1, 2, np.Inf])
-    # array([ 1.,  2., inf])
-
-    np.isfinite(a)
-    # array([ True,  True, False])
-
-    np.isinf(a)
-    # array([False, False,  True])
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([1, 2, np.Inf])
-    # array([ 1.,  2., inf])
-
-    np.isnan(a)
-    # array([False, False, False])
-
-
-Not-a-Number
-============
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([1, 2, np.NaN])
-    # array([ 1.,  2., nan])
-
-    np.isnan(a)
-    # array([False, False,  True])
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([1, 2, np.NaN])
-    # array([ 1.,  2., nan])
-
-    np.isfinite(a)
-    # array([ True,  True, False])
-
-    np.isinf(a)
-    # array([False, False, False])
-
-
 Assignments
 ===========
 
-Logic
------
+Array Logic
+-----------
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
@@ -411,8 +355,8 @@ Logic
     #. Sprawdź czy wszystkie liczby spełniają ten warunek
     #. Sprawdź czy jakakolwiek liczba spełnia ten warunek
 
-Is in
------
+Is in Array
+-----------
 * Complexity level: easy
 * Lines of code to write: 9 lines
 * Estimated time of completion: 5 min
