@@ -251,6 +251,9 @@ Matrix Multiplication
 .. figure:: img/arithmetic-matmul.gif
     :scale: 100%
 
+.. figure:: img/arithmetic-matmul.jpg
+    :scale: 25%
+
 .. code-block:: python
 
     import numpy as np
