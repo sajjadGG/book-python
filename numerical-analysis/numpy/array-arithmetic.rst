@@ -394,19 +394,21 @@ Arithmetic operations
         array([[0.34657359, 1.00505254],
                [3.81230949,       -inf]])
 
-Addition
---------
+Array Addition
+--------------
 * Complexity level: easy
 * Lines of code to write: 2 lines
 * Estimated time of completion: 5 min
 * Solution: :download:`solution/numpy_arithmetic_add.py`
 
 :English:
+    #. For given: ``a: ndarray``, ``b: ndarray`` (see below)
     #. Add ``a`` and ``b``
     #. Add ``b`` and ``a``
     #. What happened?
 
 :Polish:
+    #. Dla danych: ``a: ndarray``, ``b: ndarray`` (patrz sekcja input)
     #. Dodaj ``a`` i ``b``
     #. Dodaj ``b`` i ``a``
     #. Co się stało?
@@ -418,14 +420,15 @@ Addition
         a = np.array([[1, 0], [0, 1]])
         b = [[4, 1], [2, 2]]
 
-Multiplication
---------------
+Array Multiplication
+--------------------
 * Complexity level: easy
 * Lines of code to write: 2 lines
 * Estimated time of completion: 5 min
 * Solution: :download:`solution/numpy_arithmetic_matmul.py`
 
 :English:
+    #. For given: ``a: ndarray``, ``b: ndarray`` (see below)
     #. Multiply ``a`` and ``b`` using scalar multiplication
     #. Multiply ``a`` and ``b`` using matrix multiplication
     #. Multiply ``b`` and ``a`` using scalar multiplication
@@ -433,6 +436,7 @@ Multiplication
     #. Discuss results
 
 :Polish:
+    #. Dla danych: ``a: ndarray``, ``b: ndarray`` (patrz sekcja input)
     #. Przemnóż ``a`` i ``b`` używając mnożenia skalarnego
     #. Przemnóż ``a`` i ``b`` używając mnożenia macierzowego
     #. Przemnóż ``b`` i ``a`` używając mnożenia skalarnego
@@ -448,8 +452,7 @@ Multiplication
                       [3,2,1,0],
                       [4,1,2,0]])
 
-        b = np.array([
-                     [4,1],
-                     [2,2],
-                     [5,1],
-                     [2,3]])
+        b = np.array([[4,1],
+                      [2,2],
+                      [5,1],
+                      [2,3]])
