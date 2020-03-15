@@ -318,6 +318,9 @@ Logical XOR
 
 Signum
 ======
+.. figure:: img/logic-signum.png
+    :scale: 50%
+
 .. code-block:: python
 
     import numpy as np
