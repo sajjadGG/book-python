@@ -1,6 +1,6 @@
-********************************
-Python Numerical Analysis Survey
-********************************
+***************
+Analysis Survey
+***************
 
 
 #. Ile masz lat doświadczenia z programowaniem (poza programowaniem w Pythonie)?
