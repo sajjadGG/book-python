@@ -3,9 +3,6 @@ Python Numerical Analysis Program
 *********************************
 
 
-Polish
-======
-
 1. Biblioteki używane w analizie numerycznej i Data Science
 
     - Scipy: wprowadzenie do ekosystemu narzędzi

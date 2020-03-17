@@ -3,8 +3,6 @@ Python Numerical Analysis Agenda
 ********************************
 
 
-Agenda
-------
 Breaks:
 
     - 5 min every hour

@@ -3,9 +3,6 @@ Python Numerical Analysis Survey
 ********************************
 
 
-Polish
-======
-
 #. Ile masz lat doświadczenia z programowaniem (poza programowaniem w Pythonie)?
 
     - 0 - 1 lat
