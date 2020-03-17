@@ -6,7 +6,10 @@ Introduction
     :caption: Introduction
     :name: Numerical Analysis Introduction
 
+    introduction/description.rst
     introduction/program.rst
+    introduction/agenda.rst
+    introduction/survey.rst
 
 *******
 Jupyter
