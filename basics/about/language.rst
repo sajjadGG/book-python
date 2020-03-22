@@ -51,8 +51,8 @@ Currently supported versions
 .. csv-table::
     :header: "Version", "PEP", "Status", "Release", "End-of-life", "Release Manager"
 
-    "3.10", "-",          "future",       "2020-10-05", "2025-10",     ""
-    "3.9",  "-",          "development",  "2020-10-05", "2025-10",     ""
+    "3.10", "TBA",        "future",       "2020-10-05", "2025-10",     "TBA"
+    "3.9",  ":pep:`596`", "development",  "2020-10-05", "2025-10",     "Łukasz Langa"
     "3.8",  ":pep:`569`", "features",     "2019-10-20", "2024-10",     "Łukasz Langa"
     "3.7",  ":pep:`537`", "bugfix",       "2018-06-27", "2023-06-27",  "Ned Deily"
     "3.6",  ":pep:`494`", "security",     "2016-12-23", "2021-12-23",  "Ned Deily"
