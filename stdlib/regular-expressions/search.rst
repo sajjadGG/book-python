@@ -35,8 +35,8 @@ Examples
 Assignments
 ===========
 
-Search for Astronaut
---------------------
+Regexp Search
+-------------
 * Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 5 min

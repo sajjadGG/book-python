@@ -106,8 +106,8 @@ Date Index
 Assignments
 ===========
 
-Indexing Dates
---------------
+Series Indexing
+---------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min

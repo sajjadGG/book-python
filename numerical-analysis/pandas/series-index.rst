@@ -140,7 +140,7 @@ Date Index
     import pandas as pd
 
     s = pd.Series(
-        data=[1.0, 2.0, 3.0, 4.0, 5.0],
+        data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = pd.date_range('1999-12-30', periods=5))
 
     s
@@ -162,7 +162,7 @@ Date Index
     import pandas as pd
 
     s = pd.Series(
-        data=[1.0, 2.0, 3.0, 4.0, 5.0],
+        data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = pd.date_range('1999-12-30', periods=5, freq='Y'))
 
     s
@@ -184,8 +184,8 @@ Date Index
     import pandas as pd
 
     s = pd.Series(
-        data=[1.0, 2.0, 3.0, 4.0, 5.0],
-        index=pd.date_range('1999-12-30', periods=5, freq='Q'))
+        data = [1.0, 2.0, 3.0, 4.0, 5.0],
+        index = pd.date_range('1999-12-30', periods=5, freq='Q'))
 
     s
     # 1999-12-31    1.0
@@ -206,7 +206,7 @@ Date Index
     import pandas as pd
 
     s = pd.Series(
-        data=[1.0, 2.0, 3.0, 4.0, 5.0],
+        data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = pd.date_range('1999-12-30', periods=5, freq='M'))
 
     s
@@ -228,7 +228,7 @@ Date Index
     import pandas as pd
 
     s = pd.Series(
-        data=[1.0, 2.0, 3.0, 4.0, 5.0],
+        data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = pd.date_range('1999-12-30', periods=5, freq='D'))
 
     s
@@ -250,7 +250,7 @@ Date Index
     import pandas as pd
 
     s = pd.Series(
-        data=[1.0, 2.0, 3.0, 4.0, 5.0],
+        data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = pd.date_range('1999-12-30', periods=5, freq='2D'))
 
     s
@@ -272,7 +272,7 @@ Date Index
     import pandas as pd
 
     s = pd.Series(
-        data=[1.0, 2.0, 3.0, 4.0, 5.0],
+        data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = pd.date_range('1999-12-30', periods=5, freq='H'))
 
     s
@@ -295,7 +295,7 @@ Date Index
     import pandas as pd
 
     s = pd.Series(
-        data=[1.0, 2.0, 3.0, 4.0, 5.0],
+        data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = pd.date_range('1999-12-30', periods=5, freq='T'))
 
     s
@@ -318,7 +318,7 @@ Date Index
     import pandas as pd
 
     s = pd.Series(
-        data=[1.0, 2.0, 3.0, 4.0, 5.0],
+        data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = pd.date_range('1999-12-30', periods=5, freq='S'))
 
     s
@@ -341,8 +341,8 @@ Date Index
     import pandas as pd
 
     s = pd.Series(
-        data=[1.0, 2.0, 3.0, 4.0, 5.0],
-        index=pd.date_range('1999-12-30', periods=5, freq='B'))
+        data = [1.0, 2.0, 3.0, 4.0, 5.0],
+        index = pd.date_range('1999-12-30', periods=5, freq='B'))
 
     s
     # 1999-12-30    1.0
@@ -356,3 +356,8 @@ Date Index
     # DatetimeIndex(['1999-12-30', '1999-12-31', '2000-01-03',
     #                '2000-01-04', '2000-01-05'],
     #               dtype='datetime64[ns]', freq='B')
+
+
+Assignments
+===========
+.. todo:: Create Assignments

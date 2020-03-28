@@ -161,8 +161,8 @@ dates
 Assignments
 ===========
 
-Create Int
-----------
+Series Create
+-------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
@@ -181,8 +181,8 @@ Create Int
     * ``np.random.randint(0, 9, size=10)``
     * ``a[a % 2 == 0]``
 
-Create Date
------------
+Series Create Timeseries
+------------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min

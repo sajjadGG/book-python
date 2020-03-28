@@ -80,3 +80,8 @@ Apply
     # 2000-01-04   -0.98
     # 2000-01-05    0.95
     # Freq: D, dtype: float64
+
+
+Assignments
+===========
+.. todo:: Create Assignments

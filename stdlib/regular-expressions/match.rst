@@ -81,29 +81,58 @@ Phone Number Validation
 :English:
     #. Use regular expressions to validate phone numbers
     #. Check all given numbers (see input section)
-    #. Valid phone number formats: ``+## ### ### ###`` or ``+## ## ### ####``
+    #. Valid phone number formats:
+
+        - Easy version: ``+## ### ### ###``
+        - Harder version: ``+## ### ### ###`` or ``+## ## ### ####``
 
 :Polish:
     #. Użyj wyrażeń regularnych do walidacji numeru telefonu
     #. Sprawdź wszystkie podane numery (patrz sekcja input)
-    #. Poprawne formaty numeru: ``+## ### ### ###`` lub ``+## ## ### ####``
+    # . Poprawne formaty numeru:
+
+        - Wersja łatwa: ``+## ### ### ###``
+        - Wersja trudniejsza: ``+## ### ### ###`` lub ``+## ## ### ####``
 
 :Input:
+    .. code-block:: python
+
+        INPUT = [
+            '+48 (12) 355 5678',
+            '+48 123 555 678',
+            '123 555 678',
+            '+48 12 355 5678',
+            '+48 123-555-678',
+            '+48 123 555 6789',
+            '+1 (123) 555-6789',
+            '+1 (123).555.6789',
+            '+1 800-python',
+            '+48123555678',
+            '+48 123 555 678 wew. 1337',
+            '+48 123555678,1',
+            '+48 123555678,1,2,3',
+        ]
+
+        for number in INPUT:
+            result = is_valid_phone(number)
+            print(f'{result}\t{number}')
+
+:Output:
     .. code-block:: text
 
-        +48 (12) 355 5678
-        +48 123 555 678
-        123 555 678
-        +48 12 355 5678
-        +48 123-555-678
-        +48 123 555 6789
-        +1 (123) 555-6789
-        +1 (123).555.6789
-        +1 800-python
-        +48123555678
-        +48 123 555 678 wew. 1337
-        +48 123555678,1
-        +48 123555678,1,2,3
+        False	+48 (12) 355 5678
+        True	+48 123 555 678
+        False	123 555 678
+        True	+48 12 355 5678
+        False	+48 123-555-678
+        True	+48 123 555 6789
+        False	+1 (123) 555-6789
+        False	+1 (123).555.6789
+        False	+1 800-python
+        False	+48123555678
+        True	+48 123 555 678 wew. 1337
+        False	+48 123555678,1
+        False	+48 123555678,1,2,3
 
 Git Flow Branch Names
 ---------------------

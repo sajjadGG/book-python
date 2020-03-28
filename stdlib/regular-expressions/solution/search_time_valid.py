@@ -4,7 +4,7 @@ TEXT = """Apollo 11 was the spaceflight that first landed humans on the Moon. Co
 import re
 
 
-PATTERN = '([01][0-9]|[2][0-4]):[0-5][0-9] UTC'
+PATTERN = r'([01][0-9]|[2][0-4]):[0-5][0-9] UTC'
 
 re.search(PATTERN, TEXT)
 # <re.Match object; span=(337, 346), match='02:56 UTC'>

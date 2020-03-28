@@ -1,6 +1,6 @@
-******************
-DataFrame Cleaning
-******************
+***************
+Series Cleaning
+***************
 
 
 Cleaning User Input
@@ -132,8 +132,8 @@ Phone Numbers
 Assignments
 ===========
 
-Cleaning text input
--------------------
+Series Cleaning
+---------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
@@ -141,12 +141,14 @@ Cleaning text input
 
 :English:
     #. For given input data (see below)
+    #. Create ``pd.Series``
     #. Write function cleaning up data
     #. Function takes one argument of type ``str``
     #. Function returns cleaned text
 
 :Polish:
     #. Dla danych wejściowych (patrz sekcja input)
+    #. Stwórz ``pd.Series``
     #. Napisz funkcję czyszczącą dane
     #. Funkcja przyjmuje jeden argument typu ``str``
     #. Funkcja zwraca oczyszczony tekst
@@ -154,9 +156,7 @@ Cleaning text input
 :Input:
     .. code-block:: python
 
-        import pandas as pd
-
-        s = pd.Series([
+        INPUT = [
             'ul.Mieszka II',
             'UL. Zygmunta III WaZY',
             '  bolesława chrobrego ',
@@ -168,7 +168,7 @@ Cleaning text input
             'ULICA. JANA III SOBIeskieGO',
             ' Jana 3 Sobieskiego  ',
             'Jana III Sobi  eskiego ',
-        ])
+        ]
 
 :Output:
     .. code-block:: python

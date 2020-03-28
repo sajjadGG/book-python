@@ -1,5 +1,42 @@
 import re
 
+MOBILE = r'(\+\d\d \d\d\d \d\d\d \d\d\d)'
+WORK = r'(\+\d\d \d\d \d\d\d \d\d\d\d)'
+PATTERN = f'^{MOBILE}|{WORK}$'
+
+
+def is_valid_phone(number):
+    if re.match(PATTERN, number):
+        return True
+    else:
+        return False
+
+
+numery = [
+    '+48 (12) 355 5678',
+    '+48 123 555 678',
+    '123 555 678',
+    '+48 12 355 5678',
+    '+48 123-555-678',
+    '+48 123 555 6789',
+    '+1 (123) 555-6789',
+    '+1 (123).555.6789',
+    '+1 800-python',
+    '+48123555678',
+    '+48 123 555 678 wew. 1337',
+    '+48 123555678,1',
+    '+48 123555678,1,2,3',
+]
+
+for numer in numery:
+    print(is_valid_phone(numer), numer)
+
+
+
+
+## Alternative solution
+import re
+
 
 PATTERN = r'^'                      # Start String
 PATTERN += r'\+\d{2} ('             # Country Code
