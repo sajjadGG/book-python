@@ -104,7 +104,7 @@ Create from Dict
 Assignments
 ===========
 
-Create DataFrame
+DataFrame Create
 ----------------
 * Complexity level: easy
 * Lines of code to write: 10 lines

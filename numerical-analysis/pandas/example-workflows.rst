@@ -41,6 +41,22 @@ Working with Excel file
     print( df[columns] )
 
 
+Working with dirty CSV
+======================
+.. code-block:: python
+
+    url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/iris-dirty.csv'
+
+    nrows, nfeatures, *species = pd.read_csv(url, nrows=0).columns
+    species = dict(enumerate(species))
+
+    df = pd.read_csv(url, skiprows=1, names=['sepal_length', 'sepal_width',
+                                             'petal_length', 'petal_width', 'species'])
+
+    df['species'].replace(species, inplace=True)
+    df.plot(kind='density')
+
+
 Working with CSV
 ================
 .. code-block:: python

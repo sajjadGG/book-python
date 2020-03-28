@@ -283,7 +283,7 @@ Slicing Alphabet
 ----------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
-* Estimated time of completion: 20 min
+* Estimated time of completion: 15 min
 * Solution: :download:`solution/series_slicing_string.py`
 
 :English:

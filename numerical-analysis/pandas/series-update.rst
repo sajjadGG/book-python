@@ -128,3 +128,8 @@ Fill NaN - Interpolate
     # 4    5.0
     # 5    6.0
     # dtype: float64
+
+
+Assignments
+===========
+.. todo:: Create Assignments

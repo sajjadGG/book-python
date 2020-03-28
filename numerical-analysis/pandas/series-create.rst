@@ -165,7 +165,7 @@ Series Create
 -------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 5 min
 * Solution: :download:`solution/series_create_int.py`
 
 :English:
