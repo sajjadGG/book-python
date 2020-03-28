@@ -140,18 +140,19 @@ Series Cleaning
 * Solution: :download:`solution/series_cleaning.py`
 
 :English:
-    #. For given input data (see below)
+    #. Convert ``INPUT`` (see input section) to `pd.Series``
     #. Create ``pd.Series``
-    #. Write function cleaning up data
-    #. Function takes one argument of type ``str``
+    #. Write function to clean up data
+    #. Function takes one ``str`` argument
     #. Function returns cleaned text
+    #. Apply function to all elements of ``pd.Series``
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
-    #. Stwórz ``pd.Series``
+    #. Przekonwertuj ``INPUT`` (patrz sekcja input) do ``pd.Series``
     #. Napisz funkcję czyszczącą dane
     #. Funkcja przyjmuje jeden argument typu ``str``
     #. Funkcja zwraca oczyszczony tekst
+    #. Zaaplikuj funkcję na wszystkich elementach ``pd.Series``
 
 :Input:
     .. code-block:: python
@@ -189,5 +190,8 @@ Series Cleaning
     * Defining and calling functions
     * Passing function arguments
     * Cleaning data from user input
+
+:Hint:
+    * :ref:`Cleaning text input`
 
 .. todo:: Translate input data to English
