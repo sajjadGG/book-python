@@ -166,6 +166,7 @@ Matplotlib
     matplotlib/non-linear-axes.rst
     matplotlib/example.rst
     matplotlib/lifecycle.rst
+    matplotlib/covid-19.rst
     matplotlib/assignments.rst
 
 

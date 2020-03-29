@@ -48,8 +48,11 @@ def remove_pl_diacritics(text):
     return ''.join(TRANSLATE.get(letter, letter) for letter in str(text))
 
 
-df = pd.read_excel('../numerical-analysis/pandas/data/trl.xlsx', sheet_name=['Polish'], header=1, index_col=0)
-df = df['Polish']
+df = pd.read_excel(
+    io='../numerical-analysis/pandas/data/trl.xlsx',
+    sheet_name='Polish',
+    header=1,
+    index_col=0)
 
 df = df.applymap(remove_pl_diacritics)
 df.columns = df.columns.map(remove_pl_diacritics)

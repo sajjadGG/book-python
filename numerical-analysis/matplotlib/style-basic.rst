@@ -116,11 +116,19 @@ Colors
 
 Line styles
 ===========
-.. figure:: img/matplotlib-line-style.png
+* Other line styles https://matplotlib.org/gallery/lines_bars_and_markers/linestyles.html#sphx-glr-gallery-lines-bars-and-markers-linestyles-py
+
+.. figure:: img/style-line-basic.png
     :scale: 100%
     :align: center
 
-    Line styles
+    Basic line styles
+
+.. figure:: img/style-line-advanced.png
+    :scale: 100%
+    :align: center
+
+    Advanced line styles
 
 .. code-block:: python
 
