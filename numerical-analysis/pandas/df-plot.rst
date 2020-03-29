@@ -7,6 +7,10 @@ DataFrame Plotting
 
 * https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html
 
+.. figure:: img/matplotlib-figure-anatomy.png
+    :scale: 80%
+    :align: center
+
 Plot kinds
 ==========
 * ``line`` - Line Plot
@@ -203,7 +207,7 @@ Line Plot
 
 .. figure:: img/plot-line.png
     :align: center
-    :scale: 100
+    :scale: 100%
 
     Line Plot
 
@@ -215,7 +219,7 @@ Vertical Bar Plot
 
 .. figure:: img/plot-bar.png
     :align: center
-    :scale: 100
+    :scale: 100%
 
     Vertical Bar Plot
 
@@ -227,7 +231,7 @@ Horizontal Bar Plot
 
 .. figure:: img/plot-barh.png
     :align: center
-    :scale: 100
+    :scale: 100%
 
     Horizontal Bar Plot
 
@@ -239,7 +243,7 @@ Histogram
 
 .. figure:: img/plot-hist.png
     :align: center
-    :scale: 100
+    :scale: 100%
 
     Histogram
 
@@ -251,7 +255,7 @@ Boxplot
 
 .. figure:: img/plot-box.png
     :align: center
-    :scale: 100
+    :scale: 100%
 
     Boxplot
 
@@ -267,7 +271,7 @@ Kernel Density Estimation Plot
 
 .. figure:: img/plot-density.png
     :align: center
-    :scale: 100
+    :scale: 100%
 
     Kernel Density Estimation Plot
 
@@ -279,9 +283,15 @@ Area Plot
 
 .. figure:: img/plot-area.png
     :align: center
-    :scale: 100
+    :scale: 100%
 
     Area Plot
+
+.. figure:: img/plot-cumulative-flow-diagram.png
+    :align: center
+    :scale: 50%
+
+    Cumulative Flow Diagram in Atlassian Jira
 
 Pie Plot
 --------
@@ -291,7 +301,7 @@ Pie Plot
 
 .. figure:: img/plot-pie.png
     :align: center
-    :scale: 100
+    :scale: 100%
 
     Pie Plot
 
@@ -303,7 +313,7 @@ Scatter Plot
 
 .. figure:: img/plot-scatter.png
     :align: center
-    :scale: 100
+    :scale: 100%
 
     Scatter Plot
 
@@ -315,7 +325,7 @@ Hexbin Plot
 
 .. figure:: img/plot-hexbin.png
     :align: center
-    :scale: 100
+    :scale: 100%
 
     Hexbin Plot
 
@@ -405,6 +415,17 @@ Scatter matrix
     :align: center
 
     Visualization using density
+
+
+Actinograms
+===========
+.. figure:: img/actinogram-1.png
+    :scale: 75%
+    :align: center
+
+.. figure:: img/actinogram-2.png
+    :scale: 75%
+    :align: center
 
 
 Assignments
