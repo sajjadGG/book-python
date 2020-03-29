@@ -8,6 +8,10 @@ DataFrame Loc
 * ``df.loc`` - start and stop are included!!
 * ``df.iloc`` - behaves like Python slices
 
+.. figure:: img/pandas-iat-iloc.png
+    :scale: 75%
+    :align: center
+
 .. code-block:: python
 
     import pandas as pd

@@ -459,6 +459,5 @@ DataFrame Plot
     #. Zaawansowane: dla wszystkich dni, jako subploty
 
 :Hint:
-    * ``np.sign()`` :ref:`Numpy signum`
-    * ``.resample('H')``
-    * ``.plot(kind, subplots, layout, sharex)``
+    * ``pd.Series.apply(np.sign)`` :ref:`Numpy signum`
+    * ``pd.Series.resample('H').sum()``
