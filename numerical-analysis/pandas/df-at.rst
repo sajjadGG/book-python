@@ -8,7 +8,7 @@ DataFrame At
 * ``iat`` integer at (no fancy indexing)
 
 .. figure:: img/pandas-iat-iloc.png
-    :scale: 75%
+    :scale: 33%
     :align: center
 
 .. code-block:: python

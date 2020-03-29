@@ -9,7 +9,7 @@ DataFrame Loc
 * ``df.iloc`` - behaves like Python slices
 
 .. figure:: img/pandas-iat-iloc.png
-    :scale: 75%
+    :scale: 33%
     :align: center
 
 .. code-block:: python
