@@ -148,7 +148,7 @@ Examples with Iris
 Class vs Instance
 =================
 .. figure:: img/blueprint.png
-    :scale: 8%
+    :width: 75%
     :align: center
 
     Intuition definition: Class is a blueprint, instances are homes made from this plan. Image source: :cite:`FigureBlueprintHouse`

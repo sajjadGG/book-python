@@ -10,7 +10,7 @@ About Axis
 * https://youtu.be/ZB7BZMhfPgk?t=4738
 
 .. figure:: img/array-axis.png
-    :scale: 50%
+    :width: 75%
     :align: center
 
     Visualizing Multi-Dimensional Arrays :cite:`NumpyMultidimArrays`

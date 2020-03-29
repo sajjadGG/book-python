@@ -16,7 +16,7 @@ Mini Botnet
 
 .. figure:: img/botnet.png
     :name: figure-botnet
-    :scale: 75%
+    :width: 75%
     :align: center
 
     Architektura botnet

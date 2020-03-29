@@ -167,7 +167,7 @@ Join
 * ``lfuffix`` - If two columns has the same name, add suffix to left
 
 .. figure:: img/sql-joins.png
-    :scale: 50%
+    :width: 75%
     :align: center
 
     Joins

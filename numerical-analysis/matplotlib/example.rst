@@ -33,7 +33,7 @@ Examples
     plt.show()
 
 .. figure:: img/matplotlib-multiple.png
-    :scale: 75%
+    :width: 75%
     :align: center
 
     Multiple lines on one chart
@@ -51,7 +51,7 @@ Scales
     :caption: Scales
 
 .. figure:: img/example-scales.png
-    :scale: 100%
+    :width: 75%
     :align: center
 
 
@@ -62,7 +62,7 @@ Grid
     :caption: Grid
 
 .. figure:: img/example-grid.png
-    :scale: 100%
+    :width: 75%
     :align: center
 
 
@@ -73,7 +73,7 @@ Legend using pre-defined labels
     :caption: Legend using pre-defined labels
 
 .. figure:: img/example-legend.png
-    :scale: 100%
+    :width: 75%
     :align: center
 
 
@@ -84,5 +84,5 @@ Radar Chart
     :caption: Radar Chart
 
 .. figure:: img/example-radar.png
-    :scale: 100%
+    :width: 75%
     :align: center

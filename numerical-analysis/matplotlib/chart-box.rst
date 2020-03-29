@@ -24,7 +24,7 @@ Simple Box Charts
     plt.show()
 
 .. figure:: img/chart-box-simple.png
-    :scale: 100%
+    :width: 75%
     :align: center
 
 Hide Outliers
@@ -53,7 +53,7 @@ Hide Outliers
     plt.show()
 
 .. figure:: img/chart-box-outliers.png
-    :scale: 100%
+    :width: 75%
     :align: center
 
 Multiple Box Charts
@@ -82,5 +82,5 @@ Multiple Box Charts
     plt.show()
 
 .. figure:: img/chart-box-multiple.png
-    :scale: 100%
+    :width: 75%
     :align: center

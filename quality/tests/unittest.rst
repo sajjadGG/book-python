@@ -4,7 +4,7 @@ Unit Testing
 
 .. figure:: img/geek-and-poke-development-driven-tests.jpg
     :align: center
-    :scale: 12%
+    :width: 75%
 
     Development driven tests
 

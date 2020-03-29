@@ -87,7 +87,7 @@ Problem
 What is ``float``
 -----------------
 .. figure:: img/float-anatomy.png
-    :scale: 100%
+    :width: 75%
     :align: center
 
     What is ``float``
@@ -95,7 +95,7 @@ What is ``float``
 Points chart
 ------------
 .. figure:: img/float-expression.png
-    :scale: 50%
+    :width: 75%
     :align: center
 
     Points chart
@@ -103,7 +103,7 @@ Points chart
 How computer store ``float``?
 -----------------------------
 .. figure:: img/float-mantissa-1.png
-    :scale: 50%
+    :width: 75%
     :align: center
 
     How computer store ``float``?
@@ -111,7 +111,7 @@ How computer store ``float``?
 How to read/write ``float`` from/to memory?
 -------------------------------------------
 .. figure:: img/float-mantissa-2.png
-    :scale: 50%
+    :width: 75%
     :align: center
 
     How to read/write ``float`` from/to memory?
@@ -119,7 +119,7 @@ How to read/write ``float`` from/to memory?
 Normalized Line
 ---------------
 .. figure:: img/float-normalized.png
-    :scale: 50%
+    :width: 75%
     :align: center
 
     Normalized Line

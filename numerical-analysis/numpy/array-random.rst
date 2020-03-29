@@ -230,13 +230,13 @@ Normal (Gaussian) distribution
     #        [-1.25088622,  0.92525075, -0.90478616]])
 
 .. figure:: img/normal-distribution.png
-    :scale: 50%
+    :width: 75%
     :align: center
 
     Normal (Gaussian) distribution :cite:`NumpyNormalDistribution`
 
 .. figure:: img/normal-distribution-scale.gif
-    :scale: 50%
+    :width: 75%
     :align: center
 
     Normal (Gaussian) distribution scale :cite:`NumpyNormalDistribution`
@@ -269,7 +269,7 @@ Poisson distribution
     #        [8, 5, 5]])
 
 .. figure:: img/poisson-distribution.png
-    :scale: 50%
+    :width: 75%
     :align: center
 
     Poisson distribution :cite:`NumpyPoissonDistribution`

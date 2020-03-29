@@ -23,7 +23,7 @@ Multiple Plots on one Figure
     plt.show()
 
 .. figure:: img/multi-sine.png
-    :scale: 100%
+    :width: 75%
     :align: center
 
 
@@ -49,7 +49,7 @@ Multiple Figures with single Plots
     plt.show()
 
 .. figure:: img/matplotlib-plt-subplot.png
-    :scale: 100%
+    :width: 75%
     :align: center
 
     Working with multiple figures and axes
@@ -62,7 +62,7 @@ Multiple Charts in Grid
     :caption: Multiple Charts in Grid
 
 .. figure:: img/subplot-multiple.png
-    :scale: 100%
+    :width: 75%
     :align: center
 
 

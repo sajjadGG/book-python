@@ -321,7 +321,7 @@ Logical XOR
 Signum
 ======
 .. figure:: img/logic-signum.png
-    :scale: 50%
+    :width: 75%
 
 .. code-block:: python
 

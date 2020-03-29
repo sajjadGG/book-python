@@ -605,15 +605,15 @@ Running commands in parallel across many hosts
 
 .. figure:: img/system-pssh-1.jpg
     :align: center
-    :scale: 75%
+    :width: 75%
 
 .. figure:: img/system-pssh-2.jpg
     :align: center
-    :scale: 50%
+    :width: 75%
 
 .. figure:: img/system-pssh-3.png
     :align: center
-    :scale: 75%
+    :width: 75%
 
 
 Passwords and secrets

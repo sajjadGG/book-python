@@ -12,7 +12,7 @@ Dragon (version beta)
 * Warning: Don't delete code, assignment will be continued
 
 .. figure:: img/dragon.gif
-    :scale: 100%
+    :width: 75%
     :align: center
 
     Firkraag dragon from game Baldur's Gate II: Shadows of Amn

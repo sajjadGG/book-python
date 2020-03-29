@@ -78,7 +78,7 @@ Simple
     plt.hist(ages, bins, histtype='bar', rwidth=0.8)
 
 .. figure:: img/matplotlib-plt-hist.png
-    :scale: 100%
+    :width: 75%
     :align: center
 
     Histogram
@@ -109,7 +109,7 @@ Normal Distribution
     plt.show()
 
 .. figure:: img/matplotlib-plt-hist-text.png
-    :scale: 100%
+    :width: 75%
     :align: center
 
     Working with text

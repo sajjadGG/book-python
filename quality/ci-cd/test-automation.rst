@@ -19,12 +19,12 @@ Test Automation
 
 .. figure:: img/ssh-pssh-1.jpg
     :align: center
-    :scale: 100%
+    :width: 75%
 
 .. figure:: img/ssh-pssh-2.png
     :align: center
-    :scale: 75%
+    :width: 75%
 
 .. figure:: img/ssh-pssh-3.png
     :align: center
-    :scale: 100%
+    :width: 75%

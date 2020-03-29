@@ -9,7 +9,7 @@ Libraries in Data Science and Machine Learning
 Ecosystem
 ---------
 .. figure:: img/scipy-ecosystem.png
-    :scale: 50%
+    :width: 75%
     :align: center
 
     Scipy Ecosystem

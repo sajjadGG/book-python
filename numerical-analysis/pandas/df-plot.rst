@@ -8,7 +8,7 @@ DataFrame Plotting
 * https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html
 
 .. figure:: img/matplotlib-figure-anatomy.png
-    :scale: 80%
+    :width: 75%
     :align: center
 
 Plot kinds
@@ -207,7 +207,7 @@ Line Plot
 
 .. figure:: img/plot-line.png
     :align: center
-    :scale: 100%
+    :width: 75%
 
     Line Plot
 
@@ -219,7 +219,7 @@ Vertical Bar Plot
 
 .. figure:: img/plot-bar.png
     :align: center
-    :scale: 100%
+    :width: 75%
 
     Vertical Bar Plot
 
@@ -231,7 +231,7 @@ Horizontal Bar Plot
 
 .. figure:: img/plot-barh.png
     :align: center
-    :scale: 100%
+    :width: 75%
 
     Horizontal Bar Plot
 
@@ -243,7 +243,7 @@ Histogram
 
 .. figure:: img/plot-hist.png
     :align: center
-    :scale: 100%
+    :width: 75%
 
     Histogram
 
@@ -255,7 +255,7 @@ Boxplot
 
 .. figure:: img/plot-box.png
     :align: center
-    :scale: 100%
+    :width: 75%
 
     Boxplot
 
@@ -271,7 +271,7 @@ Kernel Density Estimation Plot
 
 .. figure:: img/plot-density.png
     :align: center
-    :scale: 100%
+    :width: 75%
 
     Kernel Density Estimation Plot
 
@@ -283,13 +283,13 @@ Area Plot
 
 .. figure:: img/plot-area.png
     :align: center
-    :scale: 100%
+    :width: 75%
 
     Area Plot
 
 .. figure:: img/plot-cumulative-flow-diagram.png
     :align: center
-    :scale: 50%
+    :width: 75%
 
     Cumulative Flow Diagram in Atlassian Jira
 
@@ -301,7 +301,7 @@ Pie Plot
 
 .. figure:: img/plot-pie.png
     :align: center
-    :scale: 100%
+    :width: 75%
 
     Pie Plot
 
@@ -313,7 +313,7 @@ Scatter Plot
 
 .. figure:: img/plot-scatter.png
     :align: center
-    :scale: 100%
+    :width: 75%
 
     Scatter Plot
 
@@ -325,7 +325,7 @@ Hexbin Plot
 
 .. figure:: img/plot-hexbin.png
     :align: center
-    :scale: 100%
+    :width: 75%
 
     Hexbin Plot
 
@@ -347,7 +347,7 @@ Hist
     plt.show()
 
 .. figure:: img/matplotlib-pd-hist.png
-    :scale: 40%
+    :width: 75%
     :align: center
 
     Visualization using hist
@@ -367,7 +367,7 @@ Density
     plt.show()
 
 .. figure:: img/matplotlib-pd-density.png
-    :scale: 40%
+    :width: 75%
     :align: center
 
     Visualization using density
@@ -387,7 +387,7 @@ Box
     plt.show()
 
 .. figure:: img/matplotlib-pd-box.png
-    :scale: 40%
+    :width: 75%
     :align: center
 
     Visualization using density
@@ -411,7 +411,7 @@ Scatter matrix
     plt.show()
 
 .. figure:: img/matplotlib-pd-scatter-matrix.png
-    :scale: 40%
+    :width: 75%
     :align: center
 
     Visualization using density
@@ -420,11 +420,11 @@ Scatter matrix
 Actinograms
 ===========
 .. figure:: img/actinogram-1.png
-    :scale: 75%
+    :width: 75%
     :align: center
 
 .. figure:: img/actinogram-2.png
-    :scale: 75%
+    :width: 75%
     :align: center
 
 

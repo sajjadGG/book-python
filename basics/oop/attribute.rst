@@ -47,7 +47,7 @@ About
         - gross mass = net mass + water mass (water mass depends on its volume used))
 
 .. figure:: img/bucket.jpg
-    :scale: 100%
+    :width: 75%
     :align: center
 
 Dynamic Attributes

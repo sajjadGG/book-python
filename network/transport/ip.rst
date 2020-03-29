@@ -11,7 +11,7 @@ IPv4
 * ``socket.AF_INET``
 
 .. figure:: img/tcp-ipv4-packet.png
-    :scale: 50%
+    :width: 75%
     :align: center
 
     IPv4 packet
@@ -21,7 +21,7 @@ IPv6
 * ``socket.AF_INET6``
 
 .. figure:: img/tcp-ipv6-packet.png
-    :scale: 50%
+    :width: 75%
     :align: center
 
     IPv6 packet

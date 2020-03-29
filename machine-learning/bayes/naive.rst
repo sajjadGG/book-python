@@ -22,7 +22,7 @@ Co to jest dokładnie?
 ---------------------
 .. figure:: img/naive-bayes.png
     :name: naive-bayes
-    :scale: 100%
+    :width: 75%
     :align: center
 
     Naive Bayes
@@ -66,7 +66,7 @@ Przykład: Apple
 ---------------
 .. figure:: img/naive-bayes-apple.jpg
     :name: bayes-apple
-    :scale: 75%
+    :width: 75%
     :align: center
 
     Naive Bayes

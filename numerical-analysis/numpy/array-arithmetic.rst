@@ -249,10 +249,10 @@ Array Multiplication
 Matrix Multiplication
 =====================
 .. figure:: img/arithmetic-matmul.gif
-    :scale: 100%
+    :width: 75%
 
 .. figure:: img/arithmetic-matmul.jpg
-    :scale: 25%
+    :width: 75%
 
 .. code-block:: python
 

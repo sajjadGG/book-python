@@ -17,7 +17,7 @@ Algorytm polega na:
 #. uśrednieniu wartości zmiennej objaśnianej dla wybranych obserwacji, w wyniku czego uzyskujemy prognozę.
 
 .. figure:: img/k-nearest-neighbors-territory.png
-    :scale: 75%
+    :width: 75%
     :align: center
 
     Predykcja obszaru przynależności w algorytmie "K najbliższych sąsiadów".
@@ -136,7 +136,7 @@ Określanie przynależności do zbioru
 ===================================
 
 .. figure:: img/k-nearest-neighbors-membership.png
-    :scale: 100%
+    :width: 75%
     :align: center
 
     Przynależność do zbioru
@@ -145,7 +145,7 @@ Wyznaczanie odległości
 ======================
 
 .. figure:: img/k-nearest-neighbors-euclidean-distance.png
-    :scale: 100%
+    :width: 75%
     :align: center
 
     Wyliczanie odległości w celu oszacowania przynależności do zbioru. Zwróć uwagę, że bez względu na ilość wymiarów wzór się niewiele różni.

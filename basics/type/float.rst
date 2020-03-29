@@ -187,7 +187,7 @@ Spacesuit Pressures
     * Separation of business logic and view
 
 .. figure:: img/spacesuits.png
-    :scale: 25%
+    :width: 75%
     :align: center
 
     EMU and Orlan

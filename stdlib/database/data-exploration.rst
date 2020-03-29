@@ -91,7 +91,7 @@ Dashboard
 ^^^^^^^^^
 .. figure:: img/superset-01.png
     :align: center
-    :scale: 25%
+    :width: 75%
 
     Dashboard
 
@@ -99,7 +99,7 @@ Data exploration
 ^^^^^^^^^^^^^^^^
 .. figure:: img/superset-02.png
     :align: center
-    :scale: 25%
+    :width: 75%
 
     Data exploration
 
@@ -107,7 +107,7 @@ SQL IDE
 ^^^^^^^
 .. figure:: img/superset-03.png
     :align: center
-    :scale: 25%
+    :width: 75%
 
     SQL IDE
 
@@ -115,6 +115,6 @@ GIS and spatial data
 ^^^^^^^^^^^^^^^^^^^^
 .. figure:: img/superset-04.png
     :align: center
-    :scale: 25%
+    :width: 75%
 
     GIS and spatial data

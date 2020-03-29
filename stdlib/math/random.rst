@@ -65,7 +65,7 @@ Sum of inner elements
     #. Środkowa macierz jest dokładnie w środku większej
 
 .. figure:: img/random-inner-sum.png
-    :scale: 25%
+    :width: 75%
     :align: center
 
     Sum of inner elements

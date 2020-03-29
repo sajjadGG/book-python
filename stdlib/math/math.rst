@@ -296,7 +296,7 @@ Euclidean distance 2D
             return ...
 
 .. figure:: img/math-euclidean-distance.png
-    :scale: 100%
+    :width: 75%
     :align: center
 
     Calculate Euclidean distance in Cartesian coordinate system

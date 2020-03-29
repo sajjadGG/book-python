@@ -19,7 +19,7 @@ Simple Points
     plt.show()
 
 .. figure:: img/chart-scatter-points.png
-    :scale: 100%
+    :width: 75%
     :align: center
 
 
@@ -122,7 +122,7 @@ Examples
     plt.show()
 
 .. figure:: img/matplotlib-plt-scatter.png
-    :scale: 100%
+    :width: 75%
     :align: center
 
 Multiple Points
@@ -132,7 +132,7 @@ Multiple Points
     :caption: Multiple Points
 
 .. figure:: img/chart-scatter-multiple.png
-    :scale: 100%
+    :width: 75%
     :align: center
 
 Points with Labels
@@ -142,5 +142,5 @@ Points with Labels
     :caption: Points with Labels
 
 .. figure:: img/chart-scatter-labels.png
-    :scale: 100%
+    :width: 75%
     :align: center

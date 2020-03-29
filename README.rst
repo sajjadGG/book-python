@@ -5,7 +5,7 @@ Python 3: from None to Machine Learning
 
 .. figure:: /_static/AstroMatt.jpg
     :align: left
-    :scale: 39%
+    :width: 75%
 
 .. csv-table::
     :widths: 15, 65

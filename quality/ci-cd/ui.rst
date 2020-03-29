@@ -30,5 +30,5 @@ WebDriver is the name of the key interface against which tests should be written
 
 .. figure:: img/selenium-ide.png
     :align: center
-    :scale: 100%
+    :width: 75%
 

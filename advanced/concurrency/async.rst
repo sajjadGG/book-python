@@ -22,51 +22,51 @@ Async Programming
 
 .. figure:: img/sync-execution-sequence.png
     :align: center
-    :scale: 50%
+    :width: 75%
 
 .. figure:: img/sync-execution-timeline.png
     :align: center
-    :scale: 50%
+    :width: 75%
 
 .. figure:: img/async-execution-sequence.png
     :align: center
-    :scale: 50%
+    :width: 75%
 
 .. figure:: img/async-execution-timeline.png
     :align: center
-    :scale: 50%
+    :width: 75%
 
 .. figure:: img/eventloop-sync.png
     :align: center
-    :scale: 50%
+    :width: 75%
 
 .. figure:: img/eventloop-async.png
     :align: center
-    :scale: 50%
+    :width: 75%
 
 .. figure:: img/async-python.png
     :align: center
-    :scale: 50%
+    :width: 75%
 
 .. figure:: img/async-threads.png
     :align: center
-    :scale: 50%
+    :width: 75%
 
 .. figure:: img/async-gil.png
     :align: center
-    :scale: 50%
+    :width: 75%
 
 .. figure:: img/async-anatomy.png
     :align: center
-    :scale: 50%
+    :width: 75%
 
 .. figure:: img/uvloop-doc.png
     :align: center
-    :scale: 50%
+    :width: 75%
 
 .. figure:: img/uvloop-using.png
     :align: center
-    :scale: 50%
+    :width: 75%
 
 
 High-Level Concurrency

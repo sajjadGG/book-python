@@ -388,7 +388,7 @@ Correlation coefficient
 * bivariate correlation
 
 .. figure:: img/correlation-coefficient.png
-    :scale: 75%
+    :width: 75%
     :align: center
 
     Examples of scatter diagrams with different values of correlation coefficient (ρ) :cite:`NumpyPearsonCorrelationCoefficient`

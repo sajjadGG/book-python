@@ -16,7 +16,7 @@ Schemat działania classifiera
 #. Make Predictions
 
 .. figure:: img/classification-spam.png
-    :scale: 75%
+    :width: 75%
     :align: center
 
     Schemat działania classifiera. Wiadomości email przechodząc przez classifer są oznaczane jako spam, lub nie spam.

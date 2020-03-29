@@ -64,7 +64,7 @@ Logarithmic and other nonlinear axes
     plt.show()
 
 .. figure:: img/matplotlib-plt-scale.png
-    :scale: 100%
+    :width: 75%
     :align: center
 
     Logarithmic and other nonlinear axes

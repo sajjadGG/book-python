@@ -40,7 +40,7 @@ Inheritance Method Resolution
 Inheritance Diamond
 ===================
 .. figure:: img/inheritance-diamond.jpg
-    :scale: 75%
+    :width: 75%
     :align: center
 
     Inheritance Diamond

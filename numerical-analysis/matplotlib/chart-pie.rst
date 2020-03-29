@@ -75,7 +75,7 @@ Donut Pie Chart
     plt.show()
 
 .. figure:: img/matplotlib-plt-pie-nested.png
-    :scale: 100%
+    :width: 75%
     :align: center
 
     Pie chart

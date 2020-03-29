@@ -135,7 +135,7 @@ Footnotes:
     #. ``Series.apply`` returns a scalar for aggregating operations, Series otherwise. Similarly for ``DataFrame.apply``. Note that ``apply`` also has fastpaths when called with certain NumPy functions such as ``mean``, ``sum``, etc.
 
 .. figure:: img/pd-mapping.png
-    :scale: 50%
+    :width: 75%
     :align: center
 
 .. note:: Source: https://stackoverflow.com/questions/19798153/difference-between-map-applymap-and-apply-methods-in-pandas

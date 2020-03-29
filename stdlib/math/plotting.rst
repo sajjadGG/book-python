@@ -21,7 +21,7 @@ Math Plotting
 Points
 ------
 .. figure:: img/matplotlib-01.png
-    :scale: 50%
+    :width: 75%
     :align: center
 
     Points chart
@@ -39,7 +39,7 @@ Points
 Sinusoid on grid
 ----------------
 .. figure:: img/matplotlib-02.png
-    :scale: 50%
+    :width: 75%
     :align: center
 
     Sinusoid on grid
@@ -68,7 +68,7 @@ Sinusoid on grid
 Multiple charts
 ---------------
 .. figure:: img/matplotlib-03.png
-    :scale: 50%
+    :width: 75%
     :align: center
 
     Multiple charts

@@ -19,7 +19,7 @@ What are Metaclasses?
     * Metaclass defines how a class behaves
 
 .. figure:: img/metaclass-instances.png
-    :scale: 75%
+    :width: 75%
     :align: center
 
     Class is an instance of a metaclass.
@@ -57,7 +57,7 @@ Types
     type(type)      # <class 'type'>
 
 .. figure:: img/metaclass-class-chain.png
-    :scale: 75%
+    :width: 75%
     :align: center
 
     Class is an instance of a metaclass.

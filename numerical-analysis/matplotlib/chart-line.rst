@@ -114,7 +114,7 @@ Exponential functions
     plt.show()
 
 .. figure:: img/matplotlib-exponentials.png
-    :scale: 100%
+    :width: 75%
     :align: center
 
 Sin wave
@@ -131,7 +131,7 @@ Sin wave
     plt.show()
 
 .. figure:: img/matplotlib-sin-wave.png
-    :scale: 75%
+    :width: 75%
     :align: center
 
     Sin wave

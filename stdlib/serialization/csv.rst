@@ -255,7 +255,7 @@ Pandas
     df.plot('hist')
 
 .. figure:: img/pandas-plot-hist.png
-    :scale: 40%
+    :width: 75%
     :align: center
 
     Visualization using hist
@@ -265,7 +265,7 @@ Pandas
     df.plot('density')
 
 .. figure:: img/pandas-plot-density.png
-    :scale: 40%
+    :width: 75%
     :align: center
 
     Visualization using density
@@ -275,7 +275,7 @@ Pandas
     df.plot(kind='density', subplots=True, layout=(2,2), sharex=False)
 
 .. figure:: img/pandas-plot-density2.png
-    :scale: 40%
+    :width: 75%
     :align: center
 
     Visualization using density
@@ -286,7 +286,7 @@ Pandas
 
 
 .. figure:: img/pandas-plot-box.png
-    :scale: 40%
+    :width: 75%
     :align: center
 
     Visualization using density
@@ -298,7 +298,7 @@ Pandas
     scatter_matrix(df)
 
 .. figure:: img/pandas-plot-scatter-matrix.png
-    :scale: 40%
+    :width: 75%
     :align: center
 
     Visualization using density
