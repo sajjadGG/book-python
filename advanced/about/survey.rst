@@ -1,3 +1,7 @@
+******
+Survey
+******
+
 .. note:: wymagana umiejętność tematów pokrytych w :ref:`Python Basics Agenda`
 
 #. Jakie masz doświadczenie z programowaniem:

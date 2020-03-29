@@ -4,7 +4,7 @@ Modules and Packages
 .. toctree::
     :maxdepth: 1
     :caption: Modules and Packages
-    :name: Stdlib Modules and Packages
+    :name: Bootcamp Modules and Packages
 
     modules/install.rst
     modules/import.rst
@@ -15,7 +15,7 @@ Serialization
 .. toctree::
     :maxdepth: 1
     :caption: Serialization
-    :name: Stdlib Serialization
+    :name: Bootcamp Serialization
 
     serialization/pickle.rst
 
@@ -25,7 +25,7 @@ Datetime and Timezones
 .. toctree::
     :maxdepth: 1
     :caption: Datetime and Timezones
-    :name: Stdlib Datetime and Timezones
+    :name: Bootcamp Datetime and Timezones
 
     datetime/datetime.rst
     datetime/parse-and-format.rst
@@ -40,7 +40,7 @@ Functions
 .. toctree::
     :maxdepth: 1
     :caption: Functions
-    :name: Advanced Functions
+    :name: Bootcamp Functions
 
     function/args-kwargs-def.rst
     function/args-kwargs-call.rst
@@ -51,7 +51,7 @@ Regular Expressions
 .. toctree::
     :maxdepth: 1
     :caption: Regular Expressions
-    :name: Stdlib Regular Expressions
+    :name: Bootcamp Regular Expressions
 
     regular-expressions/syntax.rst
     regular-expressions/match.rst

@@ -121,7 +121,7 @@ Recap
 .. toctree::
     :maxdepth: 1
     :caption: Recap
-    :name: Basic Recap
+    :name: Advanced Recap
 
     about/recap.rst
     about/certificate.rst

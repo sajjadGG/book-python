@@ -66,7 +66,7 @@ Numpy
     numpy/array-iteration.rst
     numpy/array-rounding.rst
     numpy/array-axis.rst
-    numpy/array-array-sort.rst
+    numpy/array-sort.rst
     numpy/array-methods.rst
     numpy/array-arithmetic.rst
     numpy/array-concatenation.rst

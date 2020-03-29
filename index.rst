@@ -158,7 +158,6 @@ Appendixes
     /about/video.rst
     /about/python-2vs3.rst
     /appendix/workshop/intermediate.rst
-    /appendix/workshop/advanced.rst
     /appendix/workshop/network.rst
     /appendix/workshop/django.rst
     /appendix/workshop/testing.rst

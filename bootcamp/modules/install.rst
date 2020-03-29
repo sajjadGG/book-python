@@ -1,5 +1,3 @@
-.. _Module Install:
-
 **************
 Module Install
 **************

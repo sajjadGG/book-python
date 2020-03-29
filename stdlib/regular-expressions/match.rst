@@ -89,7 +89,7 @@ Phone Number Validation
 :Polish:
     #. Użyj wyrażeń regularnych do walidacji numeru telefonu
     #. Sprawdź wszystkie podane numery (patrz sekcja input)
-    # . Poprawne formaty numeru:
+    #. Poprawne formaty numeru:
 
         - Wersja łatwa: ``+## ### ### ###``
         - Wersja trudniejsza: ``+## ### ### ###`` lub ``+## ## ### ####``
