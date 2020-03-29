@@ -316,6 +316,8 @@ Logical XOR
     #        [False,  True,  True]])
 
 
+.. _Numpy signum:
+
 Signum
 ======
 .. figure:: img/logic-signum.png

@@ -421,23 +421,23 @@ DataFrame Plot
     #. Download :download:`data/optima-sensors.xlsx`
     #. Select ``Luminance`` stylesheet
     #. Parse column with dates
-    #. For every location
-    #. Display chart (line) with activity hours
+    #. Select desired date and location, then resample by hour
+    #. Display chart (line) with activity hours in "Sleeping Quarters upper" location
     #. Active is when ``Luminance`` is not zero
-    #. Easy: separate charts
-    #. Advanced: plot as subplots
+    #. Easy: for day 2019-09-28
+    #. Advanced: for each day, as subplots
 
 :Polish:
     #. Pobierz :download:`data/optima-sensors.xlsx`
     #. Wybierz arkusz ``Luminance``
     #. Sparsuj kolumny z datami
-    #. Dla każdego pomieszczenia
+    #. Wybierz pożądaną datę i lokację, następnie próbkuj co godzinę
     #. Aktywność jest gdy ``Luminance`` jest różna od zera
-    #. Wyświetl wykres (line) z godzinami aktywności
-    #. Łatwe: osobne wykresy
-    #. Zaawansowane: Jako subploty
+    #. Wyświetl wykres (line) z godzinami aktywności w dla lokacji "Sleeping Quarters upper"
+    #. Łatwe: dla dnia 2019-09-28
+    #. Zaawansowane: dla wszystkich dni, jako subploty
 
 :Hint:
-    * ``np.sign()``
+    * ``np.sign()`` :ref:`Numpy signum`
     * ``.resample('H')``
     * ``.plot(kind, subplots, layout, sharex)``
