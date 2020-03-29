@@ -410,12 +410,12 @@ Scatter matrix
 Assignments
 ===========
 
-Activity
---------
+DataFrame Plot
+--------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 30 min
-* Solution: :download:`solution/df_plot_activity.py`
+* Solution: :download:`solution/df_plot.py`
 
 :English:
     #. Download :download:`data/optima-sensors.xlsx`

@@ -318,33 +318,37 @@ Examples
 Assignments
 ===========
 
-Cars
-----
+DataFrame Statistics
+--------------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 45 min
 * Solution: :download:`solution/df_cars.py`
 
-#. Stwórz ``DataFrame`` samochody z:
+:English:
+    .. todo:: English Translation
 
-    - losową kolumną liczb całkowitych przebieg z przedziału [0, 200 000]
-    - losową kolumną spalanie z przedziału [2, 20]
+:Polish:
+    #. Stwórz ``DataFrame`` samochody z:
 
-#. Dodaj kolumnę marka:
+        - losową kolumną liczb całkowitych przebieg z przedziału [0, 200 000]
+        - losową kolumną spalanie z przedziału [2, 20]
 
-    - jeżeli samochód ma spalanie [0, 5] marka to VW
-    - jeżeli samochód ma spalanie [6, 10] marka to Ford
-    - jeżeli samochód ma spalanie 11 i więcej, marka to UAZ
+    #. Dodaj kolumnę marka:
 
-#. Dodaj kolumnę pochodzenie:
+        - jeżeli samochód ma spalanie [0, 5] marka to VW
+        - jeżeli samochód ma spalanie [6, 10] marka to Ford
+        - jeżeli samochód ma spalanie 11 i więcej, marka to UAZ
 
-    - jeżeli przebieg poniżej 100 km, pochodzenie nowy
-    - jeżeli przebieg powyżej 100 km, pochodzenie uzywany
-    - jeżeli przebieg powyżej 100 000 km, pochodzenie z niemiec
+    #. Dodaj kolumnę pochodzenie:
 
-#. Przeanalizuj dane statystycznie
+        - jeżeli przebieg poniżej 100 km, pochodzenie nowy
+        - jeżeli przebieg powyżej 100 km, pochodzenie uzywany
+        - jeżeli przebieg powyżej 100 000 km, pochodzenie z niemiec
 
-    - sprawdź liczność grup
-    - wykonaj analizę statystyczną
+    #. Przeanalizuj dane statystycznie
 
-#. Pogrupuj dane po marce i po pochodzenie
+        - sprawdź liczność grup
+        - wykonaj analizę statystyczną
+
+    #. Pogrupuj dane po marce i po pochodzenie

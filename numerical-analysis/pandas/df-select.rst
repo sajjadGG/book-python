@@ -266,8 +266,8 @@ Logical XOR
 Assignments
 ===========
 
-Iris Clean
-----------
+DataFrame Select
+----------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
@@ -287,3 +287,5 @@ Iris Clean
 
     #. Przefiltruj ``inplace`` kolumnę 'Petal length' i pozostaw wartości powyżej 2.0
     #. Wyświetl 5 pierwszych wierszy
+
+.. todo:: Translate to English
