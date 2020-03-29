@@ -132,8 +132,8 @@ Phone Numbers
 Assignments
 ===========
 
-Translate
----------
+DataFrame Cleaning Translate
+----------------------------
 * Complexity level: easy
 * Lines of code to write: 10-15 lines
 * Estimated time of completion: 15 min
@@ -156,8 +156,8 @@ Translate
     * ``df['column'].apply()``
     * ``pd.Timestamp``
 
-Substitute
-----------
+DataFrame Cleaning Substitute
+-----------------------------
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 30 min
@@ -198,8 +198,8 @@ Substitute
         * ``df.applymap()``
         * ``s.map()``
 
-Month number to text
---------------------
+DataFrame Cleaning Month number to text
+---------------------------------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min

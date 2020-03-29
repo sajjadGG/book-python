@@ -124,14 +124,15 @@ DataFrame Sample
 ----------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 5 min
 * Solution: :download:`solution/df_select.py`
 
 :English:
     .. todo:: English translation
 
 :Polish:
-    #. Pobierz zbiór danych Iris Dataset :download:`data/iris.csv`
+    #. Pobierz zbiór danych Iris Dataset :download:`data/astronauts.csv`
     #. Korzystając z Pandas do ``pd.DataFrame``
+    #. Wypełnij brakujące indeksy stosując ``ffill``
     #. Ustaw wszystkie wiersze w losowej kolejności
     #. Zresetuj index nie pozostawiając kopii zapasowej starego

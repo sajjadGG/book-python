@@ -269,8 +269,8 @@ DataFrame NaN
 -------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
-* Estimated time of completion: 20 min
-* Solution: :download:`solution/df_update.py`
+* Estimated time of completion: 15 min
+* Solution: :download:`solution/df_nan.py`
 
 :English:
     .. todo:: English Translation
@@ -289,13 +289,15 @@ DataFrame NaN
 
     #. Podmień wartości w kolumnie species
 
-        - 0 -> 'setosa',
-        - 1 -> 'versicolor',
-        - 2 -> 'virginica'
+        * 0 -> 'setosa',
+        * 1 -> 'versicolor',
+        * 2 -> 'virginica'
 
-    #. Zastąp ustaw na ``NaN`` wszystkie wartości wartości w kolumnie 'Petal length' mniejsze od 4
+    #. Wybierz wartości w kolumnie 'Petal length' mniejsze od 4
+    #. Wybrane wartości ustaw na ``NaN``
     #. Interpoluj liniowo wszystkie wartości ``NaN``
     #. Usuń wiersze z pozostałymi wartościami ``NaN``
-    #. Wyświetl pierwsze 2 i ostatni wiersz
-    #. Wykreśl podstawowe statystyki opisowe
+    #. Wyświetl pierwsze dwa wiersze
+    #. Wyświetl jeden ostatni wiersz
+    #. Wyświetl podstawowe statystyki opisowe
 

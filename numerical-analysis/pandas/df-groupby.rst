@@ -481,8 +481,8 @@ Output format
 Assignments
 ===========
 
-Astronauts
-----------
+DataFrame Groupby Astronauts
+----------------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
@@ -496,11 +496,11 @@ Astronauts
     #. Pobierz zbiór danych astronautów :download:`data/astronauts.csv`
     #. Stwórz ranking najbardziej doświadczonych astronautów (liczba lotów)
 
-Phone Billing
--------------
+DataFrame Groupby Phone Billing
+-------------------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 10 min
 * Solution: :download:`solution/df_groupby_billing.py`
 
 :English:
@@ -511,8 +511,8 @@ Phone Billing
     #. Pobierz :download:`data/phones.csv`
     #. Podaj informacje o łącznej liczbie wszystkich połączeń dla każdego miesiąca
 
-EVA
----
+DataFrame Groupby EVA
+---------------------
 * Complexity level: hard
 * Lines of code to write: 30 lines
 * Estimated time of completion: 40 min

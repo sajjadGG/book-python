@@ -249,21 +249,25 @@ Join
 Assignments
 ===========
 
-EVA
----
+DataFrame Join
+--------------
 * Complexity level: medium
 * Lines of code to write: 25 lines
 * Estimated time of completion: 30 min
 * Solution: :download:`solution/df_join_eva.py`
 
-#. Na podstawie podanych URL:
+:English:
+    .. todo:: Translate to English
 
-    * https://www.worldspaceflight.com/bios/eva/eva.php
-    * https://www.worldspaceflight.com/bios/eva/eva2.php
-    * https://www.worldspaceflight.com/bios/eva/eva3.php
-    * https://www.worldspaceflight.com/bios/eva/eva4.php
+:Polish:
+    #. Na podstawie podanych URL:
 
-#. Scrappuj stronę wykorzystując ``pandas.read_html()``
-#. Połącz dane wykorzystując ``pd.concat``
-#. Przygotuj plik ``CSV`` z danymi dotyczącymi spacerów kosmicznych
-#. Zapisz dane do pliku
+        * https://www.worldspaceflight.com/bios/eva/eva.php
+        * https://www.worldspaceflight.com/bios/eva/eva2.php
+        * https://www.worldspaceflight.com/bios/eva/eva3.php
+        * https://www.worldspaceflight.com/bios/eva/eva4.php
+
+    #. Scrappuj stronę wykorzystując ``pandas.read_html()``
+    #. Połącz dane wykorzystując ``pd.concat``
+    #. Przygotuj plik ``CSV`` z danymi dotyczącymi spacerów kosmicznych
+    #. Zapisz dane do pliku

@@ -144,8 +144,8 @@ Footnotes:
 Assignments
 ===========
 
-Split columns
--------------
+DataFrame Mapping
+-----------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
