@@ -22,19 +22,21 @@ Python 3: from None to Machine Learning
 
 For consulting or training course requests please email matt@astrotech.io
 
-You might also be interested in other book (http://dev.astrotech.io) on Software Engineering covering topics of:
+.. csv-table:: Other books from author
+    :widths: 30, 70
+    :header: "URL", "ISBN",  "Title"
 
-    * DevOps and CI/CD with Docker
-    * Jira and Atlassian Ecosystem
-    * Git and Git Flow in CI/CD
-    * Agile Software Engineering: CI/CD with Scrum, Kanban, XP and Lean Startup
-    * Software Architecture with Cloud and Microservices
-    * Linux and Shell Programming with Bash
-
-.. warning:: Before training course please setup your environment as described here :ref:`Install`.
-
+    "978-83-957186-2-5", "https://python.astrotech.io", "Python 3: from None to Machine Learning"
+    "978-83-957186-3-2", "https://dev.astrotech.io", "The Software Engineering: DevOps, CI/CD, Docker, Provisioning and Git Flow"
+    "", "", ""
+    "978-83-957186-0-1", "https://www.astronaut.pl", "Astronaut Selection and Training for Long Duration Spaceflight and Extraterrestrial Activity"
+    "978-83-956752-0-1", "https://www.astronaut.center/books", "Space in Practice: How to Prepare and Conduct Stratospheric Balloon Mission"
+    "978-83-957186-4-9", "https://pl.habitatos.space", "HabitatOS - Development of operating system prototype for Lunar and Martian habitats"
+    "978-83-957186-1-8", "https://alsep.astronaut.center", "Geophysics experiments from Apollo Lunar Surface Experiments Package"
 
 This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
+
+.. warning:: Before training course please setup your environment as described here :ref:`Install`.
 
 .. raw:: html
 
