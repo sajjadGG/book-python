@@ -496,13 +496,15 @@ Execute terminal commands
 * ``!``
 * ``!pwd``
 * ``!ls``
-* .. code-block:: text
+* .. code-block:: python
+    :force:
 
     dirs = !ls
 
     for file in dirs:
         if file.find("1_") >= 0:
             print(file)
+
 
 Output to different formats
 ===========================
@@ -519,20 +521,15 @@ File -> Download as:
 
 Generate HTML
 -------------
-.. code-block:: console
-
-    $ jupyter nbconvert --to html --template basic mynotebook.ipynb
+#. File -> Save and Checkpoint
+#. File -> Download as -> HTML (.html)
 
 Slides
 ------
-View -> Cell Toolbar -> Slideshow
-
-.. code-block:: console
-    :caption: First run will generate config and may exit with error! In such case, rerun the line
-
-    $ jupyter nbconvert filename.ipynb --to slides --post serve
-
-
+#. View -> Cell Toolbar -> Slideshow
+#. Select slides, subslides and speaker notes
+#. File -> Save and Checkpoint
+#. File -> Download as -> Reveal.js slides (.slides.html)
 
 Github pages with Jupyter Slides
 --------------------------------
