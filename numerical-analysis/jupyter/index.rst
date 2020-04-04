@@ -228,12 +228,22 @@ LaTeX
 
 .. code-block:: python
 
-    from IPython.display import display, Math, Latex
+    from IPython.display import Latex
 
-    display(Math(r'F(k) = \int_{-\infty}^{\infty} f(x) e^{2\pi i k} dx'))
+    Latex(r'F(k) = \int_{-\infty}^{\infty} f(x) e^{2\pi i k} dx')
+    Latex(r'$\lim_{x \to 0} (1+x)^{1/x} = e$')
+
 
 Matplotlib charts
 -----------------
+.. code-block:: python
+
+    x = np.linspace(-5, 5, 100)  # vector z 100 równo odległymi wartościami od -5 do 5
+    y = np.sin(X)                # sinus wszystkich wartości x
+
+    plt.plot(x, y);               # wykres liniowy
+
+
 .. code-block:: text
 
     %matplotlib inline
@@ -272,6 +282,11 @@ JavaScript
 
 Image
 -----
+.. code-block:: python
+
+    from IPython.display import Image
+
+    Image(url="https://python.astrotech.io/_static/favicon.png")
 
 YouTube
 -------
@@ -279,7 +294,7 @@ YouTube
 
     from IPython.display import YouTubeVideo
 
-    YouTubeVideo("wupToqz1e2g")
+    YouTubeVideo("h8mDUc5L0XM")
 
 
 Workflow
