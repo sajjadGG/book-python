@@ -144,8 +144,8 @@ Printing Values
 Assignments
 ===========
 
-Meet Python
------------
+Pyton Syntax
+------------
 * Complexity level: easy
 * Lines of code to write: 2 lines + 2 lines of comment
 * Estimated time of completion: 5 min

@@ -3,17 +3,6 @@ Builtin Functions
 *****************
 
 
-Generic Functions
-=================
-* ``len()`` - Length of a list
-
-.. code-block:: python
-    :caption: ``len()`` - Length of a list
-
-    len('hello')                # 5
-    len([1, 2, 3])              # 3
-
-
 Numeric Functions
 =================
 * ``abs()`` - Absolute value
@@ -52,6 +41,13 @@ Sequence Functions
 * ``min()`` - Minimal value
 * ``max()`` - Maximal value
 * ``sum()`` - Sum of elements
+* ``len()`` - Length of a list
+
+.. code-block:: python
+    :caption: ``len()`` - Length of a list
+
+    len('hello')                # 5
+    len([1, 2, 3])              # 3
 
 .. code-block:: python
     :caption: ``min()`` - Minimal value
