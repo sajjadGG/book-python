@@ -21,7 +21,7 @@ Loop Information Recap
 
 Comprehensions Syntax
 =====================
-.. code-block:: python
+.. code-block:: text
 
     output = [<RETURN> for <VARIABLE> in <ITERABLE>]
 
@@ -476,12 +476,12 @@ Nested
 Assignments
 ===========
 
-Split train/test
-----------------
+Comprehensions
+--------------
 * Complexity level: medium
 * Lines of code to write: 8 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/comprehension_split_train_test.py`
+* Solution: :download:`solution/loop_comprehension.py`
 
 :English:
     #. For given data structure ``INPUT: List[tuple]`` (see below)
@@ -505,7 +505,7 @@ Split train/test
 
 :Polish:
     #. Dana jest struktura danych ``INPUT: List[tuple]`` (patrz sekcja input)
-    #. Odseparuj nagłówek do danych
+    #. Odseparuj nagłówek od danych
     #. Wylicz punkt podziału: długość danych razy zadany procent
     #. Używając List Comprehension podziel dane na:
 
