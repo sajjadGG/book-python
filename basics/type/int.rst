@@ -76,12 +76,12 @@ Example
     * 1 KB = 1024 B
     * 1 MB = 1024 KB
 
-Time
-----
+Int Calculation
+---------------
 * Complexity level: easy
 * Lines of code to write: 12 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/int_time.py`
+* Solution: :download:`solution/int_calculation.py`
 
 :English:
     #. Calculate how many seconds is five minutes
@@ -106,12 +106,12 @@ Time
     * 1 h = 60 min
     * 1 min = 60 s
 
-Download Time
--------------
+Int Ratio
+---------
 * Complexity level: medium
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/int_download_time.py`
+* Solution: :download:`solution/int_ratio.py`
 
 :English:
     #. Having internet connection with speed up to 100 Mb/s
@@ -133,8 +133,8 @@ Download Time
     * 1 KB = 1024 B
     * 1 MB = 1024 KB
 
-Temperature
------------
+Int Temperature
+---------------
 * Complexity level: medium
 * Lines of code to write: 18 lines
 * Estimated time of completion: 15 min

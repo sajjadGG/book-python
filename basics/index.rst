@@ -22,7 +22,6 @@ Syntax
 
     syntax/syntax.rst
     syntax/operators.rst
-    syntax/builtins.rst
 
 *****
 Types

@@ -150,16 +150,6 @@ Getting Items
     what = 'foo'.     # SyntaxError: invalid syntax
 
 
-Length
-======
-.. code-block:: python
-
-    my_tuple = (1, 2, 3)
-
-    len(my_tuple)
-    # 3
-
-
 When Use ``tuple`` or ``list``
 ==============================
 

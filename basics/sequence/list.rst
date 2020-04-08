@@ -269,17 +269,12 @@ Built-in Functions on Sequences
 
 .. code-block:: python
 
-    min([1, 2, 3, 4, 5])
-    # 1
+    a = [1, 2, 3, 4, 5]
 
-    max([1, 2, 3, 4, 5])
-    # 5
-
-    sum([1, 2, 3, 4, 5])
-    # 15
-
-    len([1, 2, 3])
-    # 3
+    min(a)      # 1
+    max(a)      # 5
+    sum(a)      # 15
+    len(a)      # 5
 
 
 Assignments

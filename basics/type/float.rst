@@ -58,6 +58,16 @@ Type Casting
 
 Rounding Numbers
 ================
+.. highlights::
+    * ``round()`` - Rounds a number
+
+.. code-block:: python
+    :caption: ``round()`` - Rounds a number
+
+    round(3.1415926)        # 3
+    round(3.1415926, 2)     # 3.14
+    round(3.1415926, 4)     # 3.1416
+
 .. code-block:: python
     :caption: ``round()`` - Rounds a number
 
@@ -71,11 +81,25 @@ Rounding Numbers
     print(f'{pi:.4f}')      # 3.1416
 
 
+Numeric Functions
+=================
+* ``abs()`` - Absolute value
+* ``pow()`` - Number to the ``n-th`` power
+
+.. code-block:: python
+    :caption: ``abs()`` - Absolute value
+
+    abs(1)                      # 1
+    abs(-1)                     # 1
+    abs(13.37)                  # 13.37
+    abs(-13.37)                 # 13.37
+
+
 Assignments
 ===========
 
-Example
--------
+Float Example
+-------------
 * Complexity level: easy
 * Lines of code to write: 13 lines
 * Estimated time of completion: 5 min
@@ -107,12 +131,12 @@ Example
     * Naming convention
     * Mathematical operations
 
-Distance Conversion
--------------------
+Float Casting
+-------------
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/float_distance.py`
+* Solution: :download:`solution/float_casting.py`
 
 :English:
     #. Declare variable for storing value of 1337 meters
@@ -152,12 +176,12 @@ Distance Conversion
     * 1608 m = 1 mile
     * 1852 m = 1 nautical mile
 
-Spacesuit Pressures
--------------------
+Float Calculation
+-----------------
 * Complexity level: medium
 * Lines of code to write: 20 lines
 * Estimated time of completion: 20 min
-* Solution: :download:`solution/float_pressure.py`
+* Solution: :download:`solution/float_calculation.py`
 
 :English:
     #. Operational pressure of EMU spacesuit: 4.3 PSI

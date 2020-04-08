@@ -3,93 +3,37 @@ Python Syntax
 *************
 
 
-Indentation
-===========
+Variables
+=========
 .. highlights::
-    * Python uses indentation instead of braces
-    * :pep:`8`: 4 spaces indentation, `no tabs <https://youtu.be/SsoOG6ZeyUI>`_
-    * Python throws ``IndentationError`` exception on problem
-    * Code indented on the same level belongs to block
-
-.. code-block:: python
-
-    if True:
-       print('First line of the true statement')
-       print('Second line of the true statement')
-       print('Third line of the true statement')
-    else:
-       print('This is false')
-
-
-End of Lines
-============
-.. highlights::
-    * No semicolon (``;``) at the end of lines
-    * ``\r\n`` and ``\n`` works
-    * :pep:`8`: Use ``\n``
-
-.. doctest::
-
-    >>> print('Hello!\nHow are you?')
-    Hello!
-    How are you?
-
-
-Comments
-========
-.. highlights::
-    * Indent must be on the same level as block indent
-    * :pep:`8` - Line comments: Hash (``#``), space and then comment
-    * :pep:`8` - Inline comments: code, two spaces, hash (``#``), space and then comment
-    * :pep:`8` - Multiline comments: If assigned to variable, it serves as multiline ``str``
-    * Commented out code:
-
-        * Never!
-        * Use Version Control System instead - e.g.: ``git blame``
-        * IDE has Local history (modifications) and you can compare file
-
-.. code-block:: python
-    :caption: Line comments
-
-    # José Jiménez says hello
-    print('My name... José Jiménez')
-
-.. code-block:: python
-    :caption: Inline comments
-
-    print('My name... José Jiménez')  # José Jiménez says hello
-
-.. code-block:: python
-    :caption: Multiline comments
-
-    """
-    We choose to go to the Moon!
-    We choose to go to the Moon in this decade and do the other things,
-    not because they are easy, but because they are hard;
-    because that goal will serve to organize and measure the best of our energies and skills,
-    because that challenge is one that we are willing to accept, one we are unwilling to postpone,
-    and one we intend to win, and the others, too.
-    """
-
-
-Variables and Constants
-=======================
-.. highlights::
+    * Names are case sensitive
+    * Lowercase letters for variable names
+    * Underscore ``_`` is used for multi-word names
     * ``NameError`` when using not declared variable
     * ``AttributeError`` when cannot assign to variables
-    * Names are case sensitive
-    * Python do not distinguish between variables and constants
-    * Python allows you to change "constants" but it's a bad practice (good IDE will tell you)
-    * Lowercase letters for variable names
-    * Uppercase letters for "constant" names
-    * Underscore ``_`` is used for multi-word names
 
 .. code-block:: python
     :caption: Variable declaration
 
-    name = 'José Jiménez'
-    first_name = 'José'
-    last_name = 'Jiménez'
+    name = 'Mark Watney'
+    first_name = 'Mark'
+    last_name = 'Watney'
+
+.. code-block:: python
+    :caption: Variables vs. constants - Names are case sensitive
+
+    name = 'Mark Watney'
+    Name = 'Jan Twardowski'
+
+
+Constants
+=========
+.. highlights::
+    * Names are case sensitive
+    * Underscore ``_`` is used for multi-word names
+    * Uppercase letters for "constant" names
+    * Python do not distinguish between variables and constants
+    * Python allows you to change "constants" but it's a bad practice (good IDE will tell you)
 
 .. code-block:: python
     :caption: "Constant" declaration
@@ -98,26 +42,26 @@ Variables and Constants
     FILE_NAME = '/etc/shadow'
 
 .. code-block:: python
-    :caption: Variables vs. constants - Names are case sensitive
-
-    name = 'José Jiménez'
-    NAME = 'Иван Иванович'
-    Name = 'Jan Twardowski'
-
-.. code-block:: python
     :caption: Python allows you to change "constants" but it's a bad practice (good IDE will tell you)
 
-    NAME = 'José Jiménez'
-    NAME = 'Иван Иванович'
+    NAME = 'Mark Watney'
+    NAME = 'Jan Twardowski'
+
+.. code-block:: python
+    :caption: Variables vs. constants - Names are case sensitive
+
+    name = 'Mark Watney'
+    NAME = 'Jan Twardowski'
+    Name = 'José Jiménez'
 
 
 Printing Values
 ===============
 .. highlights::
-    * ``print()`` adds ``'\n'`` at the end
     * Prints on the screen
-    * Variable substitution
-    * Special characters
+    * f-string formatting for variable substitution
+    * ``\n`` - Escape character for newline
+    * ``print()`` adds ``'\n'`` at the end
     * More in :ref:`Builtin Printing`
 
 .. code-block:: python
@@ -139,6 +83,78 @@ Printing Values
     print(f'My name...\n\t{name}')
     # My name...
     #     José Jiménez
+
+
+End of Lines
+============
+.. highlights::
+    * No semicolon (``;``) at the end of lines
+    * ``\r\n`` and ``\n`` works
+    * :pep:`8`: Use ``\n``
+
+.. doctest::
+
+    >>> print('Hello!\nHow are you?')
+    Hello!
+    How are you?
+
+
+Comments
+========
+.. highlights::
+    * :pep:`8` for line comments: Hash (``#``), space and then comment
+    * :pep:`8` for inline comments: code, two spaces, hash (``#``), space and then comment
+    * Commented out code:
+
+        * Never!
+        * Use Version Control System instead - e.g.: ``git blame``
+        * IDE has Local history (modifications) and you can compare file
+
+.. code-block:: python
+    :caption: Line comments
+
+    # Mark thinks he is...
+    print('Mark Watney: Space Pirate')
+
+.. code-block:: python
+    :caption: Inline comments
+
+    print('Mark Watney: Space Pirate')  # This is who Mark Watney is
+
+
+Indentation
+===========
+.. highlights::
+    * Python uses indentation instead of braces
+    * Code indented on the same level belongs to block
+    * :pep:`8`: 4 spaces indentation, `no tabs <https://youtu.be/SsoOG6ZeyUI>`_
+    * Python throws ``IndentationError`` exception on problem
+
+.. code-block:: python
+
+    if True:
+        print('True statement, first line')
+        print('True statement, second line')
+    else:
+        print('Else statement, first line')
+        print('Else statement, second line')
+
+.. code-block:: python
+
+    if True:
+        print('Outer block, true statement, first line')
+        print('Outer block, true statement, second line')
+
+        if True:
+            print('Inner block, true statement, first line')
+            print('Inner block, true statement, second line')
+        else:
+            print('Inner block, else statement, fist line')
+            print('Inner block, else statement, second line')
+
+    else:
+        print('Outer block, else statement, first line')
+        print('Outer block, else statement, second line')
 
 
 Assignments
