@@ -277,6 +277,7 @@ Fancy indexing
     #        [5, 6]])
 
 .. code-block:: python
+    :caption: ``rows,cols`` creates coordinate system for selecting values (like ``zip()``). For example: ``(0,0); (0,1); (1,0); (1,1); (0,1)``, as in this example.
 
     import numpy as np
 
@@ -359,7 +360,9 @@ Fancy indexing
     #        [4, 5, 6],
     #        [0, 0, 9]])
 
+
 .. code-block:: python
+    :emphasize-lines: 44,45,47,48,49
 
     import numpy as np
 
@@ -384,27 +387,82 @@ Fancy indexing
     # 2000-01-02  0.4105985 ,  0.14404357,  1.45427351,
 
 
-    when1 = (index == '1999-12-31')   # array([False,  True, False, False])
-    when2 = (index == '2000-01-01')   # array([False, False,  True, False])
-    data[when1 | when2]
+    dec31 = (index == '1999-12-31')   # array([False,  True, False, False])
+    jan01 = (index == '2000-01-01')   # array([False, False,  True, False])
+
+    data[dec31 | jan01]
     # array([[ 2.2408932 ,  1.86755799, -0.97727788],
     #        [ 0.95008842, -0.15135721, -0.10321885]])
 
-
-    when = (when1 | when2)           # array([False,  True,  True, False])
-    data[when]
-    # array([[ 2.2408932 ,  1.86755799, -0.97727788],
-    #        [ 0.95008842, -0.15135721, -0.10321885]])
-
-
-    data[when1 | when2, (columns == 'Morning')]
+    data[dec31 | jan01, (columns == 'Morning')]
     # array([2.2408932 , 0.95008842])
 
 
-    times = (columns == 'Morning') | (columns == 'Evening')
-    dates = (when1 | when2)
-    data[dates, times]
+    days = (dec31 | jan01)           # array([False,  True,  True, False])
+    morning = (columns == 'Morning')  # array([ True, False, False])
+
+    data[days]
+    # array([[ 2.2408932 ,  1.86755799, -0.97727788],
+    #        [ 0.95008842, -0.15135721, -0.10321885]])
+
+    data[days, morning]
+    # array([2.2408932 , 0.95008842])
+
+
+Diagonal problem
+----------------
+.. warning:: Without the ``np.ix_`` call, only the diagonal elements would be selected. This difference is the most important thing to remember about indexing with multiple advanced indexes.
+
+.. code-block:: python
+    :emphasize-lines: 42,43,45,46,47
+
+    import numpy as np
+
+    index = np.array([
+        '1999-12-30',
+        '1999-12-31',
+        '2000-01-01',
+        '2000-01-02'])
+
+    columns = np.array(['Morning', 'Noon', 'Evening'])
+
+    data = np.array([[ 1.76405235,  0.40015721,  0.97873798],
+                     [ 2.2408932 ,  1.86755799, -0.97727788],
+                     [ 0.95008842, -0.15135721, -0.10321885],
+                     [ 0.4105985 ,  0.14404357,  1.45427351]])
+
+    ## Intuitive understanding
+    #                Morning         Noon      Evening
+    # 1999-12-30  1.76405235,  0.40015721,  0.97873798,
+    # 1999-12-31  2.2408932 ,  1.86755799, -0.97727788,
+    # 2000-01-01  0.95008842, -0.15135721, -0.10321885,
+    # 2000-01-02  0.4105985 ,  0.14404357,  1.45427351,
+
+
+    dec31 = (index == '1999-12-31')     # array([False,  True, False, False])
+    jan01 = (index == '2000-01-01')     # array([False, False,  True, False])
+    days = (dec31 | jan01)              # array([False,  True,  True, False])
+
+    morning = (columns == 'Morning')    # array([ True, False, False])
+    evening = (columns == 'Evening')    # array([False, False,  True])
+    when = (morning | evening)          # array([ True, False,  True])
+
+    data
+    # array([[ 1.76405235,  0.40015721,  0.97873798],
+    #        [ 2.2408932 ,  1.86755799, -0.97727788],
+    #        [ 0.95008842, -0.15135721, -0.10321885],
+    #        [ 0.4105985 ,  0.14404357,  1.45427351]])
+
+    data[days]
+    # array([[ 2.2408932 ,  1.86755799, -0.97727788],
+    #        [ 0.95008842, -0.15135721, -0.10321885]])
+
+    data[days, when]
     # array([ 2.2408932 , -0.10321885])
+
+    data[np.ix_(days, when)]
+    # array([[ 2.2408932 , -0.97727788],
+    #        [ 0.95008842, -0.10321885]])
 
 
 Take
