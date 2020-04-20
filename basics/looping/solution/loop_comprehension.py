@@ -41,6 +41,8 @@ result = features_train, features_test, labels_train, labels_test
 print(result)
 
 
+
+
 ## Alternative solution
 ## not optimized (4 loops)
 # features_train = [X for *X,y in data[:pivot]]

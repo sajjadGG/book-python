@@ -302,7 +302,11 @@ Fancy indexing
     import numpy as np
 
 
-    index = np.array(['1970-01-01', '1970-01-02', '1970-01-03'])
+    date = np.array([
+        '1970-01-01',
+        '1970-01-02',
+        '1970-01-03'])
+
     a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
@@ -313,20 +317,19 @@ Fancy indexing
     # '1970-01-03' -> [7, 8, 9]
 
 
-    index == '1970-01-02'
+    date == '1970-01-02'
     # array([False,  True, False])
 
+    a[date == '1970-01-02']
 
-    data[index == '1970-01-02']
-
-    a[index == '1970-01-02']
+    a[date == '1970-01-02']
     # array([[4, 5, 6]])
 
-    a[index != '1970-01-02']
+    a[date != '1970-01-02']
     # array([[1, 2, 3],
     #        [7, 8, 9]])
 
-    a[ (index=='1970-01-01') | (index=='1970-01-03') ]
+    a[ (date=='1970-01-01') | (date=='1970-01-03') ]
     # array([[1, 2, 3],
     #        [7, 8, 9]])
 
@@ -340,21 +343,21 @@ Fancy indexing
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    date1 = (index == '1970-01-01')
-    date2 = (index == '1970-01-03')
+    jan01 = (index == '1970-01-01')
+    jan03 = (index == '1970-01-03')
 
-    a[ date1 | date2 ]
+    a[ jan01 | jan03 ]
     # array([[1, 2, 3],
     #        [7, 8, 9]])
 
-    a[ date1 | date2, 0 ]
-    # array([1, 7])
+    a[ jan01 | jan03, 0 ]
+    # array([1, 7])s
 
-    a[ date1 | date2, :2 ]
+    a[ jan01 | jan03, :2 ]
     # array([[1, 2],
     #        [7, 8]])
 
-    a[ date1 | date2, :2 ] = 0
+    a[ jan01 | jan03, :2 ] = 0
     a
     # array([[0, 0, 3],
     #        [4, 5, 6],
@@ -389,6 +392,8 @@ Fancy indexing
 
     dec31 = (index == '1999-12-31')   # array([False,  True, False, False])
     jan01 = (index == '2000-01-01')   # array([False, False,  True, False])
+    days = (dec31 | jan01)            # array([False,  True,  True, False])
+    morning = (columns == 'Morning')  # array([ True, False, False])
 
     data[dec31 | jan01]
     # array([[ 2.2408932 ,  1.86755799, -0.97727788],
@@ -397,17 +402,12 @@ Fancy indexing
     data[dec31 | jan01, (columns == 'Morning')]
     # array([2.2408932 , 0.95008842])
 
-
-    days = (dec31 | jan01)           # array([False,  True,  True, False])
-    morning = (columns == 'Morning')  # array([ True, False, False])
-
     data[days]
     # array([[ 2.2408932 ,  1.86755799, -0.97727788],
     #        [ 0.95008842, -0.15135721, -0.10321885]])
 
     data[days, morning]
     # array([2.2408932 , 0.95008842])
-
 
 Diagonal problem
 ----------------
