@@ -224,21 +224,6 @@ Print
     def print(*values, sep=' ', end='\n', ...):
         return sep.join(values) + end
 
-Line Parser
------------
-.. code-block:: python
-
-    def parse(line):
-        mission, *crew = line.split(',')
-        crew = ' and '.join(name.title() for name in crew)
-        print(mission.upper(), crew)
-
-    parse('ares3,watney,lewis,vogel,johanssen')
-    # ARES3 Watney and Lewis and Vogel and Johanssen
-
-    parse('apollo18,twardowski,ivanovic')
-    # APOLLO18 Twardowski and Ivanovic
-
 
 Assignments
 ===========

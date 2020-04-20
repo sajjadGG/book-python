@@ -135,12 +135,12 @@ Naming convention
 
 .. code-block:: python
 
-    line = 'Apollo11,Twardowski,Watney,Ivanovic'
+    line = 'ares3,watney,lewis,vogel,johanssen'
 
     mission, *members = line.split(',')
 
-    mission         # Apollo11
-    members         # ['Twardowski', 'Watney', 'Ivanovic']
+    mission         # ares3
+    members         # ['watney', 'lewis', 'vogel', 'johanssen']
 
 .. code-block:: python
 
@@ -236,6 +236,23 @@ Using in a loop
     # virginica
     # setosa
     # versicolor
+
+
+Using in a function
+===================
+.. code-block:: python
+
+    def parse(line):
+        mission, *crew = line.split(',')
+        crew = ' and '.join(name.title() for name in crew)
+        print(mission.upper(), crew)
+
+
+    parse('ares3,watney,lewis,vogel,johanssen')
+    # ARES3 Watney and Lewis and Vogel and Johanssen
+
+    parse('apollo18,twardowski,ivanovic')
+    # APOLLO18 Twardowski and Ivanovic
 
 
 Assignments
