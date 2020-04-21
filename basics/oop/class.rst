@@ -179,6 +179,18 @@ Good engineering practices
     versicolor = IrisVersicolor()
     virginica = IrisVirginica()
 
+.. code-block:: python
+
+    def hello():
+        pass
+
+    class Astronaut:
+        pass
+
+
+    mark = Astronaut()
+    jose = Astronaut()
+
 
 Assignments
 ===========

@@ -94,7 +94,7 @@ Dynamic Attributes
     # setosa
 
     sum(setosa.features)
-    # [5.1, 3.5, 1.4, 0.2]
+    # 10.2
 
 .. code-block:: python
     :caption: Accessing not existing attributes
@@ -115,11 +115,13 @@ Dynamic Attributes
 
 
     jose = Astronaut()
+    mark = Astronaut()
+
     jose.name = 'Jose Jimenez'
+
     print(f'My name... {jose.name}')
     # My name... Jose Jimenez
 
-    mark = Astronaut()
     print(f'My name... {mark.name}')
     # AttributeError: 'Astronaut' object has no attribute 'name'
 
