@@ -412,12 +412,12 @@ Decorators
 Assignments
 ===========
 
-Iris
-----
+Function Args/Kwargs Arguments
+------------------------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
-* Solution: :download:`solution/calling_kwargs.py`
+* Solution: :download:`solution/function_argskwargs_arguments.py`
 
 :English:
     #. Download :download:`data/iris.csv` and save as ``iris.csv``

@@ -1,5 +1,5 @@
 ****************
-Access Modifiers
+Attribute Access
 ****************
 
 
@@ -47,12 +47,12 @@ Access Modifiers
 Assignments
 ===========
 
-Defining Classes
-----------------
+OOP Attribute Access
+--------------------
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/modifiers_iris.py`
+* Solution: :download:`solution/oop_attribute_access.py`
 
 :English:
     #. Create ``flowers: list``

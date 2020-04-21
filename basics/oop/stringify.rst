@@ -243,7 +243,7 @@ Stringify Objects
 Assignments
 ===========
 
-Stringify Object
+OOP Stringify Object
 ----------------
 * Complexity level: medium
 * Lines of code to write: 9 lines
@@ -257,9 +257,6 @@ Stringify Object
 :Polish:
     #. Zmodyfikuj kod z danych wejściowych (patrz sekcja input)
     #. Przeciąż ``str`` i ``repr`` aby osiągnąć rezultat wyświetlania
-
-:The whys and wherefores:
-    * :ref:`OOP Stringify Objects`
 
 :Input:
     .. code-block:: python
@@ -320,6 +317,9 @@ Stringify Object
         # José Jiménez
         # Mark Watney veteran of [
         # 	2035: Ares 3]
+
+:The whys and wherefores:
+    * :ref:`OOP Stringify Objects`
 
 :Hint:
     * Define ``Crew.__str__()``

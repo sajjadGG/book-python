@@ -265,12 +265,12 @@ Own Implementation
 Assignments
 ===========
 
-Range
------
+Protocol Iterator Usage
+-----------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/iterator_range.py`
+* Solution: :download:`solution/protocol_iterator_usage.py`
 
 :English:
     #. Write own implementation of a ``range()`` function
@@ -284,12 +284,12 @@ Range
     #. Argumenty: początek, koniec, krok
     #. Jak zaimplementować możliwość podawania tylko końca?
 
-Own implementation
-------------------
+Protocol Iterator Implementation
+--------------------------------
 * Complexity level: easy
 * Lines of code to write: 20 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/iterator_addressbook.py`
+* Solution: :download:`solution/protocol_iterator_implementation.py`
 
 :English:
     #. For input data (see below)

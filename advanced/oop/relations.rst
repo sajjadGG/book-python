@@ -36,12 +36,12 @@ Relations
 Assignments
 ===========
 
-Basic Address Book
-------------------
+OOP Relations
+-------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 20 min
-* Solution: :download:`solution/intermediate_addressbook.py`
+* Solution: :download:`solution/oop_relations.py`
 
 :English:
     #. Create Address Book based on input data (see below)
@@ -85,12 +85,12 @@ Basic Address Book
                 {"street": "Linder Hoehe", "city": "Köln", "post_code": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}
         ]
 
-Object serialization to CSV
----------------------------
+OOP Relations Flatten
+---------------------
 * Complexity level: hard
 * Lines of code to write: 60 lines
 * Estimated time of completion: 20 min
-* Solution: :download:`solution/relations_flat.py`
+* Solution: :download:`solution/oop_relations_flatten.py`
 
 :English:
     #. Using ``csv.DictWriter()`` save contacts from addressbook to CSV file
@@ -133,3 +133,28 @@ Object serialization to CSV
             Contact(first_name='Mark', last_name='Watney'),
             Contact(first_name='Melissa', last_name='Lewis', addresses=()),
         ]
+
+OOP Relations Nested
+--------------------
+* Complexity level: medium
+* Lines of code to write: 60 lines
+* Estimated time of completion: 20 min
+* Solution: :download:`solution/oop_relations_nested.py`
+
+:English:
+    #. Client can open a bank account
+    #. Client can have many accounts
+    #. Bank has many clients
+    #. Each account has unique number generated when opening an account
+    #. Client can ask about number of all of his accounts
+    #. Client can add money to the account
+    #. Client can withdraw money from the account
+
+:Polish:
+    #. Klient może otworzyć konto w banku
+    #. Klient może mieć wiele kont
+    #. Bank może mieć wielu klientów
+    #. Każde konto ma unikalny numer, który jest generowany przy zakładaniu
+    #. Klient może odpytać o numery wszystkich swoich kont
+    #. Klient może wpłacić pieniądze na swoje konto
+    #. Klient może wybrać pieniądze z bankomatu

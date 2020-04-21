@@ -266,12 +266,12 @@ Contextmanager decorator
 Assignments
 ===========
 
-Buffered file
--------------
+Protocol Context Manager
+------------------------
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/context_manager_file.py`
+* Solution: :download:`solution/protocol_context_manager.py`
 
 :English:
     #. Take input code from listing below

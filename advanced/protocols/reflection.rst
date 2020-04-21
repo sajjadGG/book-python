@@ -160,12 +160,12 @@ Protocol
 Assignments
 ===========
 
-Immutable classes
------------------
+Protocol Reflection
+-------------------
 * Complexity level: medium
 * Lines of code to write: 30 lines
 * Estimated time of completion: 20 min
-* Solution: :download:`solution/setattr_getattr_immutable.py`
+* Solution: :download:`solution/protocol_reflection.py`
 
 :English:
     #. Create class ``Point`` with ``x``, ``y``, ``z`` attributes

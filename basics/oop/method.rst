@@ -185,8 +185,8 @@ Methods Calling Other Methods
 Assignments
 ===========
 
-Methods
--------
+OOP Methods
+-----------
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min

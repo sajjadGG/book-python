@@ -236,8 +236,8 @@ Checking values
 Assignments
 ===========
 
-Object Initialization
----------------------
+OOP Object Initialization
+-------------------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 5 min
@@ -269,8 +269,8 @@ Object Initialization
     #. Nie konwertuj jednostek (użyj tylko podanych numerów)
     #. Nie przechowuj informacji w instancjach (tylko wypisz przy inicjalizacji)
 
-Data Modeling
--------------
+OOP Data Modeling
+-----------------
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min

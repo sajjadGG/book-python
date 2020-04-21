@@ -228,12 +228,12 @@ Print
 Assignments
 ===========
 
-Average
--------
+Function Args/Kwargs Define
+---------------------------
 * Complexity level: easy
 * Lines of code to write: 4 lines + doctests
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/defining_average.py`
+* Solution: :download:`solution/function_argskwargs_parameters.py`
 
 :English:
     #. Create function ``average()``, which calculates arithmetic mean
@@ -245,12 +245,12 @@ Average
     #. Funkcja przyjmuje dowolną ilość pozycyjnych argumentów
     #. Nie używaj ``numpy`` ani ``statistics``
 
-args
-----
+Function Args/Kwargs Args
+-------------------------
 * Complexity level: easy
 * Lines of code to write: 7 lines + doctests
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/defining_args.py`
+* Solution: :download:`solution/function_argskwargs_args.py`
 
 :English:
     #. Create function ``is_numeric``
@@ -279,12 +279,12 @@ args
     * Function arguments checking
     * Type casting
 
-args and kwargs
----------------
+Function Args/Kwargs Kwargs
+---------------------------
 * Complexity level: medium
 * Lines of code to write: 8 lines + doctests
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/defining_kwargs.py`
+* Solution: :download:`solution/function_argskwargs_kwargs.py`
 
 :English:
     #. Create function ``is_numeric``

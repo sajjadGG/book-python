@@ -59,12 +59,12 @@ Examples
 Assignments
 ===========
 
-Pickle
-------
+Protocol Classmethod
+--------------------
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/classmethod_pickle.py`
+* Solution: :download:`solution/protocol_classmethod.py`
 
 :English:
     #. Model class based on input data (see below)
