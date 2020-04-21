@@ -85,7 +85,7 @@ Initializing Attributes
     class Astronaut:
         def __init__(self):
             self.first_name = 'Mark'
-            self.lastname = 'Watney'
+            self.last_name = 'Watney'
 
 
     mark = Astronaut()
@@ -112,7 +112,7 @@ Initializing Attributes
     print(mark.last_name)       # Watney
     print(mark.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
 
-    ivan = Astronaut(firstname='Ivan', lastname='Ivanovich')
+    ivan = Astronaut(a='Ivan', b='Ivanovich')
     print(ivan.first_name)      # Ivan
     print(ivan.last_name)       # Ivanovich
     print(ivan.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
@@ -131,7 +131,7 @@ Initializing Attributes
     print(mark.last_name)       # Watney
     print(mark.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
 
-    ivan = Astronaut(firstname='Ivan', lastname='Ivanovich')
+    ivan = Astronaut(first_name='Ivan', last_name='Ivanovich')
     print(ivan.first_name)      # Ivan
     print(ivan.last_name)       # Ivanovich
     print(ivan.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
@@ -139,16 +139,16 @@ Initializing Attributes
 .. code-block:: python
     :caption: Init time attributes
 
-    class Astro:
+    class Astronaut:
         def __init__(self, first_name, last_name):
             self.full_name = f'{first_name} {last_name}'
 
 
-    mark = Astro('Mark', 'Watney')
+    mark = Astronaut('Mark', 'Watney')
 
     print(mark.full_name)       # Mark Watney
-    print(mark.first_name)      # AttributeError: 'Astro' object has no attribute 'firstname'
-    print(mark.last_name)       # AttributeError: 'Astro' object has no attribute 'lastname'
+    print(mark.first_name)      # AttributeError: 'Astronaut' object has no attribute 'first_name'
+    print(mark.last_name)       # AttributeError: 'Astronaut' object has no attribute 'last_name'
 
 .. code-block:: python
     :caption: Init time attributes
@@ -162,7 +162,6 @@ Initializing Attributes
 
     p1 = Point(10, 20)
     p2 = Point(x=10, y=20)
-
     p3 = Point(10, 20, 30)
     p4 = Point(10, 20, z=30)
     p5 = Point(x=10, y=20, z=30)
@@ -217,7 +216,7 @@ Checking values
 
     class Kelvin:
         def __init__(self, value):
-            if not isinstance(value, (float, int)):
+            if type(value) not in (float, int):
                 raise TypeError('Temperature must be int or float')
 
             if value < 0.0:

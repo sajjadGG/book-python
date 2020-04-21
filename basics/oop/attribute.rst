@@ -50,6 +50,7 @@ About
     :width: 75%
     :align: center
 
+
 Dynamic Attributes
 ==================
 .. code-block:: python

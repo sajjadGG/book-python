@@ -140,12 +140,12 @@ Stringify Objects
                 return f"I hope we don't crash"
 
 
-     astro = Astronaut('Jose Jimenez')
+     jose = Astronaut('Jose Jimenez')
 
-     print(f'{astro:happy}')
+     print(f'{jose:happy}')
      # Yuppi, we're going to space!
 
-     print(f'{astro:scared}')
+     print(f'{jose:scared}')
      # I hope we don't crash
 
 .. code-block:: python
