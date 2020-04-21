@@ -188,7 +188,7 @@ Data Modeling
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/attribute_model.py`
+* Solution: :download:`solution/oop_attribute_model.py`
 
 :English:
     #. Model the data using classes

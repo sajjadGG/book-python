@@ -248,7 +248,7 @@ Stringify Object
 * Complexity level: medium
 * Lines of code to write: 9 lines
 * Estimated time of completion: 20 min
-* Solution: :download:`solution/stringify_astro.py`
+* Solution: :download:`solution/oop_stringify.py`
 
 :English:
     #. Modify code from input data (see below)

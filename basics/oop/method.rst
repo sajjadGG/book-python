@@ -190,36 +190,38 @@ Methods
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/syntax_methods.py`
+* Solution: :download:`solution/oop_methods.py`
 
 :English:
     #. Define class ``Iris``
     #. Define method ``total()`` which returns sum of all numerical attributes of an object
+    #. Numerical attributes are:
 
         * "Sepal length"
         * "Sepal width"
         * "Petal length"
         * "Petal width"
 
-    #. Define method ``get_length()`` which returns number of numerical fields (use: ``self.__dict__``)
+    #. Define method ``get_length()`` which returns number of numerical fields (count: ``self.__dict__``)
     #. Define method ``mean()`` which calculates mean of all numerical attributes of an object
-    #. Create ``setosa`` object with attributes set at the initialization (see input data)
-    #. Create ``virginica`` object with attributes set at the initialization (see input data)
+    #. Create ``setosa`` object with attributes set at the initialization using positional arguments (see input data)
+    #. Create ``virginica`` object with attributes set at the initialization using keyword arguments (see input data)
     #. Print species name, total and mean of each instance
 
 :Polish:
     #. Zdefiniuj klasę ``Iris``
-    #. Zdefiniuj metodę ``total()`` klasy ``Iris`` zwracającą sumę wszystkich atrybutów numerycznych obiektu:
+    #. Zdefiniuj metodę ``total()`` klasy ``Iris`` zwracającą sumę wszystkich atrybutów numerycznych obiektu
+    #. Atrybutami numerycznymi są:
 
         * "Sepal length"
         * "Sepal width"
         * "Petal length"
         * "Petal width"
 
-    #. Zdefiniuj metodę ``get_length()`` która zwraca ilość pól numerycznych (użyj: ``self.__dict__``)
+    #. Zdefiniuj metodę ``get_length()``, która zwraca ilość pól numerycznych (przelicz: ``self.__dict__``)
     #. Zdefiniuj metodę ``mean()`` klasy ``Iris`` wyliczającą średnią wszystkich atrybutów numerycznych obiektu
-    #. Stwórz obiekt ``setosa`` z pomiarami podawanymi przy inicjalizacji (patrz dane wejściowe)
-    #. Stwórz obiekt ``virginica`` z pomiarami podawanymi przy inicjalizacji (patrz dane wejściowe)
+    #. Stwórz obiekt ``setosa`` z atrybutami ustawionymi przy inicjalizacji używając argumentów pozycyjnych (patrz dane wejściowe)
+    #. Stwórz obiekt ``virginica`` z atrybutami ustawionymi przy inicjalizacji używając argumentów nazwanych (patrz dane wejściowe)
     #. Wypisz nazwę gatunku oraz sumę i średnią z pomiarów dla każdej instancji
 
 :Input:
