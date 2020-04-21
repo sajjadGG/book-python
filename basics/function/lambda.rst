@@ -68,6 +68,19 @@ Example 2
 
     DATA = [1, 2, 3, 4]
 
+
+    def is_even(x):
+        return x % 2 == 0
+
+
+    output = filter(is_even, DATA)
+    print(list(output))
+    # [2, 4]
+
+.. code-block:: python
+
+    DATA = [1, 2, 3, 4]
+
     output = filter(lambda x: x % 2 == 0, DATA)
     print(list(output))
     # [2, 4]

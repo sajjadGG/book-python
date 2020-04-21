@@ -38,6 +38,20 @@ Built-in Generators
     # 8
     # 10
 
+.. code-block:: python
+
+    header = ['a', 'b', 'c']
+    data = [1, 2, 3]
+    output = {}
+
+    for i in range(len(header)):
+        key = header[i]
+        value = data[i]
+        output[key] = value
+
+    print(output)
+    # {'a': 1, 'b': 2, 'c': 3}
+
 
 ``zip()``
 =========
@@ -58,11 +72,11 @@ Built-in Generators
     list(zip(header, data))
     # [('a', 1), ('b', 2), ('c', 3)]
 
-    dict(zip(header, data))
-    # {'a': 1, 'b': 2, 'c': 3}
-
     tuple(zip(header, data))
     # (('a', 1), ('b', 2), ('c', 3))
+
+    dict(zip(header, data))
+    # {'a': 1, 'b': 2, 'c': 3}
 
 .. code-block:: python
     :caption: ``zip()`` examples
@@ -71,7 +85,7 @@ Built-in Generators
     data = [1, 2, 3]
     row = [77,88,99]
 
-    [(k,v,r) for k,v,r in zip(header, data, row)]
+    [(h,d,r) for h,d,r in zip(header, data, row)]
     # [('a', 1, 77), ('b', 2, 88), ('c', 3, 99)]
 
 
@@ -150,6 +164,19 @@ Built-in Generators
     list(filter(is_even, data))
     # [2, 4, 6]
 
+.. code-block:: python
+
+    data = [1, 2, 3, 4, 5, 6]
+
+    def is_even(x):
+        return x % 2 == 0
+
+    filter(is_even, data)
+    # <filter object at 0x11d182990>
+
+    list(filter(is_even, data))
+    # [2, 4, 6]
+
 
 ``enumerate()``
 ===============
@@ -169,6 +196,12 @@ Built-in Generators
     dict(enumerate(header))
     # {0: 'a', 1: 'b', 2: 'c'}
 
+    dict((v,k) for k,v in enumerate(data))
+    # {'a': 0, 'b': 1, 'c': 2}
+
+    {v:k for k,v in enumerate(data, start=5)}
+    # {'a': 5, 'b': 6, 'c': 7}
+
 .. code-block:: python
     :caption: ``enumerate()`` example
 
@@ -180,6 +213,18 @@ Built-in Generators
         key = header[i]
         value = data[i]
         output[key] = value
+
+    print(output)
+    # {'a': 1, 'b': 2, 'c': 3}
+
+.. code-block:: python
+
+    header = ['a', 'b', 'c']
+    data = [1, 2, 3]
+    output = {}
+
+    for i, header in enumerate(header):
+        output[header] = data[i]
 
     print(output)
     # {'a': 1, 'b': 2, 'c': 3}

@@ -90,6 +90,40 @@ Positional and Keyword Arguments
 Dynamically create objects
 ==========================
 
+.. code-block:: python
+
+    from dataclasses import dataclass
+
+    MOVEMENT = [
+        (0,0),
+        (1,0),
+        (2,1,1),
+        (3,2),
+        (3,3,-1),
+        (2,3),
+    ]
+
+    @dataclass
+    class Point:
+        x: int
+        y: int
+        z: int = 0
+
+    movement = [Point(x,y) for x,y in MOVEMENT]
+    # ValueError: too many values to unpack (expected 2)
+
+    movement = [Point(*coordinates) for coordinates in MOVEMENT]
+
+    movement
+    # [
+    #   Point(x=0, y=0, z=0),
+    #   Point(x=1, y=0, z=0),
+    #   Point(x=2, y=1, z=1),
+    #   Point(x=3, y=2, z=0),
+    #   Point(x=3, y=3, z=-1),
+    #   Point(x=2, y=3, z=0)
+    # ]
+
 From sequence
 -------------
 .. code-block:: python

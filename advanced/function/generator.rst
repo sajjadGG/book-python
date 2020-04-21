@@ -256,19 +256,6 @@ Which one is better?
 
 Built-in generators
 ===================
-.. code-block:: python
-
-    header = ['a', 'b', 'c']
-    data = [1, 2, 3]
-    output = {}
-
-    for i, _ in enumerate(header):
-        key = header[i]
-        value = data[i]
-        output[key] = value
-
-    print(output)
-    # {'a': 1, 'b': 2, 'c': 3}
 
 ``zip()``
 ---------
@@ -288,11 +275,11 @@ Built-in generators
     list(zip(header, data))
     # [('a', 1), ('b', 2), ('c', 3)]
 
-    dict(zip(header, data))
-    # {'a': 1, 'b': 2, 'c': 3}
-
     tuple(zip(header, data))
     # (('a', 1), ('b', 2), ('c', 3))
+
+    dict(zip(header, data))
+    # {'a': 1, 'b': 2, 'c': 3}
 
 .. code-block:: python
 
@@ -300,7 +287,7 @@ Built-in generators
     data = [1, 2, 3]
     row = [77,88,99]
 
-    [(k,v,r) for k,v,r in zip(header, data, row)]
+    [(h,d,r) for h,d,r in zip(header, data, row)]
     # [('a', 1, 77), ('b', 2, 88), ('c', 3, 99)]
 
 ``map()``
@@ -338,7 +325,22 @@ Built-in generators
 .. code-block:: python
     :caption: Show only even numbers
 
+    data = [1, 2, 3, 4, 5, 6]
+
     list(filter(lambda x: x % 2 == 0, data))
+    # [2, 4, 6]
+
+.. code-block:: python
+
+    data = [1, 2, 3, 4, 5, 6]
+
+    def is_even(x):
+        return x % 2 == 0
+
+    filter(is_even, data)
+    # <filter object at 0x11d182990>
+
+    list(filter(is_even, data))
     # [2, 4, 6]
 
 .. code-block:: python
@@ -357,6 +359,29 @@ Built-in generators
     list(filter(is_even, data))
     # [2, 4, 6]
 
+.. code-block:: python
+    :caption: ``filter()`` example
+
+    DATA = [
+        {'name': 'Jan Twardowski', 'age': 21},
+        {'name': 'Mark Watney', 'age': 25},
+        {'name': 'Melissa Lewis', 'age': 18},
+    ]
+
+    def is_adult(person):
+        if person['age'] >= 21:
+            return True
+        else:
+            return False
+
+
+    output = filter(is_adult, DATA)
+    print(list(output))
+    # [
+    #   {'name': 'Jan Twardowski', 'age': 21},
+    #   {'name': 'Mark Watney', 'age': 25},
+    # ]
+
 ``enumerate()``
 ---------------
 .. code-block:: python
@@ -366,13 +391,45 @@ Built-in generators
 
 .. code-block:: python
 
-    header = ['a', 'b', 'c']
+    data = ['a', 'b', 'c']
 
-    list(enumerate(header))
+    list(enumerate(data))
     # [(0, 'a'), (1, 'b'), (2, 'c')]
 
-    dict(enumerate(header))
+    dict(enumerate(data))
     # {0: 'a', 1: 'b', 2: 'c'}
+
+    dict((v,k) for k,v in enumerate(data))
+    # {'a': 0, 'b': 1, 'c': 2}
+
+    {v:k for k,v in enumerate(data, start=5)}
+    # {'a': 5, 'b': 6, 'c': 7}
+
+.. code-block:: python
+
+    header = ['a', 'b', 'c']
+    data = [1, 2, 3]
+    output = {}
+
+    for i, _ in enumerate(header):
+        key = header[i]
+        value = data[i]
+        output[key] = value
+
+    print(output)
+    # {'a': 1, 'b': 2, 'c': 3}
+
+.. code-block:: python
+
+    header = ['a', 'b', 'c']
+    data = [1, 2, 3]
+    output = {}
+
+    for i, header in enumerate(header):
+        output[header] = data[i]
+
+    print(output)
+    # {'a': 1, 'b': 2, 'c': 3}
 
 
 Generator as Iterator
@@ -396,6 +453,35 @@ Generator as Iterator
     # StopIteration
 
 
+.. code-block:: python
+
+    data = (x for x in range(0,3))
+
+    for a in data:
+        print(a)
+
+    # is analogous to:
+    try:
+        i = iter(data)
+
+        a = next(i)
+        print(a)
+
+        a = next(i)
+        print(a)
+
+        a = next(i)
+        print(a)
+
+        a = next(i)
+        print(a)
+
+        a = next(i)
+        print(a)
+    except StopIteration:
+        pass
+
+
 Assignments
 ===========
 
@@ -407,7 +493,7 @@ Generators vs. Comprehensions - iris
 * Solution: :download:`solution/generator_iris.py`
 
 :English:
-    #. Download :download:`data/iris.csv` and save as `generator_iris.csv`
+    #. Download :download:`data/iris.csv` and save as `iris.csv`
     #. Read data skipping header
     #. Create function with returns all measurements for given species
     #. Species will be passed as an ``str`` argument to the function
@@ -417,7 +503,7 @@ Generators vs. Comprehensions - iris
     #. What will happen if input data will be bigger?
 
 :Polish:
-    #. Pobierz :download:`data/iris.csv` i zapisz jako `generator_iris.csv`
+    #. Pobierz :download:`data/iris.csv` i zapisz jako `iris.csv`
     #. Zaczytaj dane pomijając nagłówek
     #. Napisz funkcję która zwraca wszystkie pomiary dla danego gatunku
     #. Gatunek będzie podawany jako argument typu ``str`` do funkcji
@@ -433,11 +519,14 @@ Generators vs. Comprehensions - iris
     * Parsing CSV file
     * Filtering file content
 
-:Hint:
+:Input:
     .. code-block:: python
 
-        fun = function_filter('setosa')
-        gen = generator_filter('setosa')
+        with open(r'iris.csv') as file:
+            data = file.read()
+
+        fun = function_filter(data, 'setosa')
+        gen = generator_filter(data, 'setosa')
 
         print('Function', sys.getsizeof(fun))
         print('Generator', sys.getsizeof(gen))
@@ -450,7 +539,7 @@ Generators vs. Comprehensions - passwd
 * Solution: :download:`solution/generator_passwd.py`
 
 :English:
-    #. Download :download:`data/hosts.txt` and save as `generator_iris.csv`
+    #. Download :download:`data/hosts.txt` and save as `hosts.txt`
     #. Iterating over lines, filter out comments, empty lines, etc.
     #. Extract system accounts (users with UID [third field] is less than 1000)
     #. Return list of system account logins

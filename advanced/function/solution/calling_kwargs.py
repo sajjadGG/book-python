@@ -3,6 +3,7 @@ output = []
 
 with open(FILE) as file:
     *header, _ = file.readline().strip().split(',')
+    # header = file.readline().strip().split(',')[0:4]
 
     for line in file:
         *measurements, _ = line.strip().split(',')
