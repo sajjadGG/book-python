@@ -41,10 +41,10 @@ What changed in Python 3?
 
 Why not Python 2?
 -----------------
-* Python 2 is no longer developed after 2020-04-01 [`1 <https://www.python.org/psf/press-release/pr20191220/>`_, `2 <https://mail.python.org/archives/list/python-dev@python.org/message/N6JIGTTJCJHS47AYSI76SJPCQS25EBWR/>`_]
-* Python 2.7 is the last in 2.x branch
-* There won't be Python 2.8 :pep:`404`
-* End of Life for Python 2.7 is 2020 :pep:`373`
+* 2020-04-20 - end of Life for Python 2.7 :pep:`373`
+* Python 2 is no longer developed [`1 <https://www.python.org/psf/press-release/pr20191220/>`_, `2 <https://mail.python.org/archives/list/python-dev@python.org/message/N6JIGTTJCJHS47AYSI76SJPCQS25EBWR/>`_]
+* Python 2.7 is the last in 2.x branch, and there won't be Python 2.8 :pep:`404`
+* Python 2.7.18, the last release of Python 2 [`3 <https://pythoninsider.blogspot.com/2020/04/python-2718-last-release-of-python-2.html>`_]
 
 Currently supported versions
 ----------------------------
@@ -62,7 +62,7 @@ Currently supported versions
     "3.2",  ":pep:`392`", "end of life",  "2011-02-20", "2016-02-20",  "Georg Brandl"
     "3.1",  ":pep:`375`", "end of life",  "2009-06-27", "2012-04-09",  "Benjamin Peterson"
     "3.0",  ":pep:`361`", "end of life",  "2008-12-03", "2009-01-13",  "Barry Warsaw"
-    "2.7",  ":pep:`373`", "bugfix",       "2010-07-03", "2020-04-01",  "Benjamin Peterson"
+    "2.7",  ":pep:`373`", "end of life",  "2010-07-03", "2020-04-20",  "Benjamin Peterson"
     "2.6",  ":pep:`361`", "end of life",  "2008-10-01", "2013-10-29",  "Barry Warsaw"
 
 
