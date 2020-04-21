@@ -253,6 +253,22 @@ Type casting
     f'{text:d}'                     # ValueError: Unknown format code 'd' for object of type 'str'
     f'{text:f}'                     # ValueError: Unknown format code 'f' for object of type 'str'
 
+.. code-block:: python
+
+    f'{14:#b}'                      # '0b1110'
+    f'{14:b}'                       # '1110'
+
+.. code-block:: python
+
+    f'{10:#o}'                      # '0o12'
+    f'{10:o}'                       # '12'
+
+.. code-block:: python
+
+    f'{255:#x}'                     # '0xff'
+    f'{255:x}'                      # 'ff'
+    f'{255:X}'                      # 'FF'
+
 Truncating and rounding
 -----------------------
 .. code-block:: python

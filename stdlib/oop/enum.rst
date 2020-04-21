@@ -88,6 +88,8 @@ Identity check
 
 Use cases
 =========
+* https://docs.python.org/3/library/os.html#os.stat
+
 .. code-block:: python
     :caption: ``enum`` - Example usage
 
@@ -103,6 +105,53 @@ Use cases
         EXECUTE = 0b001
         NONE = 0b000
 
+.. code-block:: python
+
+    import os
+    from enum import Enum
+
+    class Permission(Enum):
+        READ_WRITE_EXECUTE = 0b111
+        READ_WRITE = 0b110
+        READ_EXECUTE = 0b101
+        READ = 0b100
+        WRITE_EXECUTE = 0b011
+        WRITE = 0b010
+        EXECUTE = 0b001
+        NONE = 0b000
+
+
+    os.stat('/tmp/myfile.txt')
+    # os.stat_result(
+    #   st_mode=33260,
+    #   st_ino=44792722,
+    #   st_dev=16777222,
+    #   st_nlink=1,
+    #   st_uid=501,
+    #   st_gid=0,
+    #   st_size=2930,
+    #   st_atime=1587481434,
+    #   st_mtime=1587481422,
+    #   st_ctime=1587484635)
+
+    permissions = os.stat('/tmp/myfile.txt').st_mode
+
+    print(f'dec={permissions}, oct={oct(permissions)}, bin={bin(permissions)}')
+    # dec=33260, oct=0o100754, bin=0b1000000111101100
+
+    *_, user, group, others = oct(permissions)
+
+    print(f'{user=} {group=} {others=}')
+    # user='7' group='5' others='4'
+
+    Permission(int(user))
+    # <Permission.READ_WRITE_EXECUTE: 7>
+
+    Permission(int(group))
+    # <Permission.READ_EXECUTE: 5>
+
+    Permission(int(others))
+    # <Permission.READ: 4>
 
 .. code-block:: python
     :caption: ``enum`` - Example usage
