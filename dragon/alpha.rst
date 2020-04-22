@@ -78,8 +78,9 @@ Dragon (version alpha)
     #. Non-functional requirements:
 
         #. Task is a narrative story telling to demonstrate OOP and good engineering practices
-        #. Last position should be x=20, y=40
+        #. Calculated last position of the game should be x=20, y=40
         #. You can introduce new fields, methods, functions, variables, constants, classes, objects, whatever you want
+        #. Don't use modules form outside the Python Standard Library
         #. Task is business requirements specification, not a technical documentation, i.e. "what Dragon has to do, not how to do it"
         #. You don't have to keep order of business specification while writing code
         #. This is ``alpha`` version, so no new functionality like negative position checking etc.
@@ -145,8 +146,9 @@ Dragon (version alpha)
     #. Wymagania niefunkcjonalne:
 
         #. Zadanie jest tylko narracją do demonstracji OOP i dobrych praktyk programowania
-        #. Pozycja Smoka na końcu powinna być x=20, y=40
+        #. Wyliczona pozycja Smoka na końcu gry powinna być x=20, y=40
         #. Możesz wprowadzać dodatkowe pola, metody, funkcje, zmienne, stały, klasy, obiekty, co tylko chcesz
+        #. Nie korzystaj z modułów spoza standardowej biblioteki Pythona
         #. Zadanie jest specyfikacją wymagań biznesowych, a nie dokumentacją techniczną. tj. "co Smok ma robić, a nie jak to ma robić"
         #. Nie musisz trzymać się kolejności punktów i podpunktów w zadaniu
         #. Jest to wersja ``alpha`` więc bez dodatkowych funkcjonalności (np. sprawdzanie koordynatów, wychodzenia poza planszę itp.)
