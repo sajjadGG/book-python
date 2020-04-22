@@ -15,8 +15,11 @@ Syntax
 
 Examples
 ========
+
+Example 1
+---------
 .. code-block:: python
-    :caption: Defining classes
+    :caption: ``class``
 
     class Point:
         def __init__(self, x, y, z=0):
@@ -38,7 +41,7 @@ Examples
     p6 = Point(x=10, y=20, z=30)
 
 .. code-block:: python
-    :caption: Defining dataclasses
+    :caption: ``dataclass``
 
     from dataclasses import dataclass
 
@@ -65,7 +68,7 @@ Examples
 Example 2
 ---------
 .. code-block:: python
-    :caption: Defining classes
+    :caption: ``class``
 
     class Astronaut:
         def __init__(self, first_name: str, last_name: str, agency: str = 'POLSA'):
@@ -74,14 +77,14 @@ Example 2
             self.agency = agency
 
 
-    twardowski = Astronaut(first_name='Jan', last_name='Twardowski')
+    twardowski = Astronaut('Jan', 'Twardowski')
 
     print(twardowski.first_name)   # Jan
     print(twardowski.last_name)    # Twardowski
     print(twardowski.agency)       # POLSA
 
 .. code-block:: python
-    :caption: Defining dataclasses
+    :caption: ``dataclass``
 
     from dataclasses import dataclass
 
@@ -93,132 +96,16 @@ Example 2
         agency: str = 'POLSA'
 
 
-    twardowski = Astronaut(first_name='Jan', last_name='Twardowski')
+    twardowski = Astronaut('Jan', 'Twardowski')
 
     print(twardowski.first_name)   # Jan
     print(twardowski.last_name)    # Twardowski
     print(twardowski.agency)       # POLSA
 
-
-``__init__`` vs. ``__post_init__``
-==================================
-
-Classes
--------
-.. code-block:: python
-
-    class Kelvin:
-        def __init__(self, value):
-            if value < 0.0:
-                raise ValueError('Temperature must be greater than 0')
-            else:
-                self.value = value
-
-
-    t1 = Kelvin(273.15)
-    print(t1.value)
-    # 273.15
-
-    t2 = Kelvin(-10)
-    # ValueError: Temperature must be greater than 0
-
-Dataclasses
------------
-.. code-block:: python
-
-    from dataclasses import dataclass
-
-
-    @dataclass
-    class Kelvin:
-        value: float = 0.0
-
-        def __post_init__(self):
-            if self.value < 0.0:
-                raise ValueError('Temperature must be greater than 0')
-
-
-    t1 = Kelvin(273.15)
-    print(t1.value)
-    # 273.15
-
-    t2 = Kelvin(-10)
-    # ValueError: Temperature must be greater than 0
-
-
-Field Factory
-=============
-.. code-block:: python
-
-    from dataclasses import dataclass, field
-
-
-    @dataclass
-    class Point:
-        x: int
-        y: int = field(repr=False)
-        z: int = field(repr=False, default=10)
-        t: int = 20
-
-.. code-block:: python
-
-    from dataclasses import dataclass, field
-
-
-    @dataclass
-    class Container:
-        data: list = field(default_factory=list)
-
-
-    c = Container([1, 2, 3])
-    c.data += [4]
-
-.. code-block:: python
-
-    from dataclasses import dataclass, field
-    from typing import List
-
-
-    @dataclass
-    class Container:
-        data: List[int] = field(default_factory=list)
-
-    c = Container()
-    c.data += [1, 2, 3]
-
-Rationale
+Example 3
 ---------
-* :ref:`Initial arguments mutability and shared state`
-
 .. code-block:: python
-
-    class Astronaut:
-        def __init__(self, name, missions=[]):
-            self.name = name
-            self.missions = missions
-
-
-    twardowski = Astronaut('Mark Watney')
-    twardowski.missions.append('Ares 3')
-    print(twardowski.missions)
-    # [Ares 3]
-
-    watney = Astronaut('Jan Twardowski')
-    print(watney.missions)
-    # [Ares 3]
-
-So what?
---------
-* ``field()`` creates new empty ``list`` for each object
-* It does not reuse pointer
-
-
-Use cases
-=========
-
-Old style classes
------------------
-.. code-block:: python
+    :caption: ``class``
 
     class StarWarsMovie:
 
@@ -243,18 +130,8 @@ Old style classes
             self.edited = edited
             self.url = url
 
-            if type(self.release_date) is str:
-                self.release_date = dateutil.parser.parse(self.release_date)
-
-            if type(self.created) is str:
-                self.created = dateutil.parser.parse(self.created)
-
-            if type(self.edited) is str:
-                self.edited = dateutil.parser.parse(self.edited)
-
-Dataclasses
------------
 .. code-block:: python
+    :caption: ``dataclass``
 
     from dataclasses import dataclass
 
@@ -276,41 +153,264 @@ Dataclasses
         edited: datetime
         url: str
 
+
+``__init__`` vs. ``__post_init__``
+==================================
+.. code-block:: python
+    :caption: ``class``
+
+    class Kelvin:
+        def __init__(self, value):
+            if value < 0.0:
+                raise ValueError('Temperature must be greater than 0')
+            else:
+                self.value = value
+
+
+    t1 = Kelvin(273.15)
+
+    print(t1.value)
+    # 273.15
+
+    t2 = Kelvin(-10)
+    # ValueError: Temperature must be greater than 0
+
+.. code-block:: python
+    :caption: ``dataclass``
+
+    from dataclasses import dataclass
+
+
+    @dataclass
+    class Kelvin:
+        value: float = 0.0
+
         def __post_init__(self):
-            if type(self.release_date) is str:
-                self.release_date = dateutil.parser.parse(self.release_date)
-
-            if type(self.created) is str:
-                self.created = dateutil.parser.parse(self.created)
-
-            if type(self.edited) is str:
-                self.edited = dateutil.parser.parse(self.edited)
+            if self.value < 0.0:
+                raise ValueError('Temperature must be greater than 0')
 
 
-More advanced options
-=====================
+    t1 = Kelvin(273.15)
+
+    print(t1.value)
+    # 273.15
+
+    t2 = Kelvin(-10)
+    # ValueError: Temperature must be greater than 0
+
+
+Field Factory
+=============
 .. code-block:: python
 
-    @dataclass(init=True, repr=True, eq=True, order=False, unsafe_hash=False, frozen=False)
+    from dataclasses import dataclass, field
 
-.. csv-table:: More advanced options
+
+    @dataclass
+    class Point:
+        x: int
+        y: int = field(repr=False)
+        z: int = field(repr=False, default=10)
+        t: int = 20
+
+
+List attributes
+===============
+* You should not set mutable objects as a default function argument
+* ``field()`` creates new empty ``list`` for each object
+* It does not reuse pointer
+
+.. warning:: Note, :ref:`Initial arguments mutability and shared state`
+    .. code-block:: python
+        :emphasize-lines: 2,10,14
+
+        class Astronaut:
+            def __init__(self, name, missions=[]):
+                self.name = name
+                self.missions = missions
+
+
+        watney = Astronaut('Mark Watney')
+        watney.missions.append('Ares 3')
+        print(watney.missions)
+        # [Ares 3]
+
+        twardowski = Astronaut('Jan Twardowski')
+        print(twardowski.missions)
+        # [Ares 3]
+
+.. code-block:: python
+    :emphasize-lines: 7
+
+    from dataclasses import dataclass, field
+    from typing import List
+
+
+    @dataclass
+    class Container:
+        data: List[int] = field(default_factory=list)
+
+    c = Container([1, 2, 3])
+    c.data += [4, 5, 6]
+
+
+Dataclass parameters
+====================
+.. csv-table:: Dataclass options
     :header: "Option", "Default", "Description (if True)"
     :widths: 10, 10, 80
 
     "``init``", "``True``", "Generate ``__init__()`` method"
     "``repr``", "``True``", "Generate ``__repr__()`` method"
-    "``eq``", "``True``", "Generate ``__eq__()`` method"
+    "``eq``", "``True``", "Generate ``__eq__()`` and ``__ne__()`` methods"
     "``order``", "``False``", "Generate ``__lt__()``, ``__le__()``, ``__gt__()``, and ``__ge__()`` methods"
     "``unsafe_hash``", "``False``", "if False: the ``__hash__()`` method is generated according to how eq and frozen are set"
     "``frozen``", "``False``", "if ``True``: assigning to fields will generate an exception"
 
+init
+----
+* Generate ``__init__()`` method
+
+.. code-block:: python
+
+    from dataclasses import dataclass
+
+
+    @dataclass(init=False)
+    class Point:
+        x: int
+        y: int
+
+
+    p = Point(10, 20)
+    # TypeError: Point() takes no arguments
+
+repr
+----
+* ``repr=True`` by default
+* Generate ``__repr__()`` for pretty printing
+
+.. code-block:: python
+
+    from dataclasses import dataclass
+
+    @dataclass(repr=True)
+    class Point:
+        x: int
+        y: int
+
+
+    p = Point(10, 20)
+
+    print(p)
+    # Point(x=10, y=20)
+
+.. code-block:: python
+
+    from dataclasses import dataclass
+
+    @dataclass(repr=False)
+    class Point:
+        x: int
+        y: int
+
+
+    p = Point(10, 20)
+
+    print(p)
+    # <__main__.Point object at 0x110bf5550>
+
+frozen
+------
+* ``frozen=False`` by default
+* Prevents object from modifications
+
+.. code-block:: python
+
+    from dataclasses import dataclass
+
+    @dataclass(frozen=True)
+    class Point:
+        x: int
+        y: int
+
+
+    p = Point(10, 20)
+
+    p.x = 30
+    # dataclasses.FrozenInstanceError: cannot assign to field 'x'
+
+eq
+--
+* ``eq=True`` by default
+* when ``eq=False`` compare objects by ``id()`` not values
+* when ``eq=True`` compare objects by value not ``id()``
+
+.. code-block:: python
+
+    from dataclasses import dataclass
+
+    @dataclass(eq=True)
+    class Astronaut:
+        first_name: str
+        last_name: str
+
+
+    astro1 = Astronaut('Mark', 'Watney')
+    astro2 = Astronaut('Mark', 'Watney')
+    astro3 = Astronaut('Jan', 'Twardowski')
+
+    astro1 == astro1    # True
+    astro1 == astro2    # True
+    astro1 == astro3    # False
+
+    astro1 != astro1    # False
+    astro1 != astro2    # False
+    astro1 != astro3    # True
+
+
+.. code-block:: python
+
+    from dataclasses import dataclass
+
+    @dataclass(eq=False)
+    class Astronaut:
+        first_name: str
+        last_name: str
+
+
+    astro1 = Astronaut('Mark', 'Watney')
+    astro2 = Astronaut('Mark', 'Watney')
+    astro3 = Astronaut('Jan', 'Twardowski')
+
+    astro1 == astro1    # True
+    astro1 == astro2    # False
+    astro1 == astro3    # False
+
+    astro1 != astro1    # False
+    astro1 != astro2    # True
+    astro1 != astro3    # True
+
+other flags
+-----------
+.. code-block:: python
+
+    from dataclasses import dataclass
+
+    @dataclass(init=True, repr=True, eq=True, order=False, unsafe_hash=False, frozen=False)
+    class Astronaut:
+        first_name: str
+        last_name: str
+
+    astro1 = Astronaut('Mark', 'Watney')
+    astro2 = Astronaut('Mark', 'Watney')
+    astro3 = Astronaut('Jan', 'Twardowski')
+
 
 Under the hood
 ==============
-
-Write
------
 .. code-block:: python
+    :caption: Your code
 
     from dataclasses import dataclass
 
@@ -324,9 +424,8 @@ Write
         def total_cost(self) -> float:
             return self.unit_price * self.quantity
 
-Dataclass will add
-------------------
 .. code-block:: python
+    :caption: Dataclass will generate
     :emphasize-lines: 6-
 
     class ShoppingCartItem:

@@ -16,30 +16,32 @@ Simple Inheritance
 ==================
 .. code-block:: python
 
-    class Temperature:
-        def __init__(self, value):
-            self.value = value
+    class Engineer:
+        def __init__(self, first_name, last_name):
+            self.first_name = first_name
+            self.last_name = last_name
 
-        def __str__(self):
-            return f'{self.value} {self.UNIT}'
+    class Astronaut(Engineer):
+        pass
 
-
-    class Kelvin(Temperature):
-        UNIT = 'K'
-
-
-    class Celsius(Temperature):
-        UNIT = 'C'
+    class Cosmonaut(Engineer):
+        pass
 
 
-    t1 = Kelvin(10)
-    t2 = Celsius(20)
+    mark = Astronaut('Mark', 'Watney')
+    ivan = Cosmonaut('Ivan', 'Ivanovic')
 
-    print(t1)
-    # 10 K
+.. code-block:: python
 
-    print(t2)
-    # 20 C
+    class Vehicle:
+        pass
+
+
+    class Car(Vehicle):
+        pass
+
+    class Truck(Vehicle):
+        pass
 
 .. code-block:: python
 
@@ -57,6 +59,12 @@ Simple Inheritance
     class Setosa(Iris):
         pass
 
+    class Versicolor(Iris):
+        pass
+
+    class Virginica(Iris):
+        pass
+
 
     setosa = Setosa(
         sepal_length=5.1,
@@ -72,71 +80,110 @@ Multilevel Inheritance
 .. code-block:: python
     :caption: Multilevel Inheritance
 
-    class Flower:
-        kingdom = 'plantae'
+    class Scientist:
+        pass
 
-    class Iris(Flower):
-        genus = 'iris'
+    class Engineer(Scientist):
+        pass
 
-    class Setosa(Iris):
-        species = 'setosa'
+    class Astronaut(Engineer):
+        pass
 
 
-    setosa = Setosa()
+    watney = Astronaut()
 
-    setosa.species     # setosa
-    setosa.genus       # iris
-    setosa.kingdom     # plantae
+    isinstance(watney, Scientist)   # True
+    isinstance(watney, Engineer)    # True
+    isinstance(watney, Astronaut)   # True
 
+    type(watney)                    # <class '__main__.Astronaut'>
+
+.. code-block:: python
+
+    class Vehicle:
+        pass
+
+    class VehicleWithWindows(Vehicle):
+        pass
+
+
+    class Car(VehicleWithWindows):
+        pass
+
+    class Truck(VehicleWithWindows):
+        pass
+
+    class Motorcycle(Vehicle):
+        pass
 
 Multiple Inheritance
 ====================
 .. code-block:: python
+    :caption: Multiple Inheritance
 
-    class Flower:
-        kingdom = 'plantae'
+    class Scientist:
+        pass
 
-    class Iris:
-        genus = 'iris'
+    class Engineer:
+        pass
 
-    class Setosa(Flower, Iris):
-        species = 'setosa'
+    class Astronaut(Scientist, Engineer):
+        pass
 
 
-    setosa = Setosa()
+    watney = Astronaut()
 
-    setosa.species     # setosa
-    setosa.genus       # iris
-    setosa.kingdom     # plantae
+    isinstance(watney, Scientist)   # True
+    isinstance(watney, Engineer)    # True
+    isinstance(watney, Astronaut)   # True
+
+    type(watney)                    # <class '__main__.Astronaut'>
+
+.. code-block:: python
+
+    class Vehicle:
+        pass
+
+    class HasWindows:
+        pass
+
+
+    class Car(Vehicle, HasWindows):
+        pass
+
+    class Truck(Vehicle, HasWindows):
+        pass
+
+    class Motorcycle(Vehicle):
+        pass
 
 
 Calling parent methods
 ======================
 .. code-block:: python
-    :caption: Using ``super()`` on a class
 
-    class Iris:
-        def __init__(self):
-            self.sepal_length=5.1
-            self.sepal_width=3.5
-            self.petal_length=1.4
-            self.petal_width=0.2
+    class Engineer:
+        def __init__(self, first_name, last_name):
+            self.first_name = first_name
+            self.last_name = last_name
+            self.education = 'Engineer'
+            self.profession = 'Engineer'
 
-
-    class Setosa(Iris):
-        def __init__(self):
-            super().__init__()
-            self.species = 'setosa'
+    class Astronaut(Engineer):
+        def __init__(self, first_name, last_name):
+            super().__init__(first_name, last_name)
+            self.profession = 'Astronaut'
 
 
-    flower = Setosa()
+    mark = Astronaut('Mark', 'Watney')
 
-    flower.sepal_length     # 5.1
-    flower.sepal_width      # 3.4
-    flower.petal_length     # 1.4
-    flower.petal_width      # 0.2
-    flower.species          # setosa
+    print(mark.__dict__)
+    # {'first_name': 'Mark',
+    #  'last_name': 'Watney',
+    #  'education': 'Engineer',
+    #  'profession': 'Astronaut'}
 
 
 Assignments
 ===========
+.. todo:: Create Assignments

@@ -1,25 +1,38 @@
-import os
-import logging
+from os.path import dirname, join
 
 
-def if_file_exists(function):
+class ToAbsolutePath:
+    def __init__(self, function):
+        self._function = function
 
-    def check(filename):
-        if os.path.exists(filename):
-            function(filename)
-        else:
-            logging.error('File "%(filename)s" does not exists, will not execute!', locals())
+    def __call__(self, filename):
+        path = dirname(__file__)
 
-    return check
+        if path not in filename:
+            filename = join(path, filename)
+
+        return self._function(filename)
 
 
-@if_file_exists
-def print_file(filename):
+def to_absolute_path(fn):
+    def wrapper(filename):
+        path = dirname(__file__)
+
+        if path not in filename:
+            filename = join(path, filename)
+
+        return fn(filename)
+    return wrapper
+
+
+@ToAbsolutePath
+def print_file(filename: str) -> str:
+    print(f'{filename=}\n\n')
+
     with open(filename) as file:
-        content = file.read()
-        print(content)
+        return file.read()
 
 
 if __name__ == '__main__':
-    print_file('/etc/passwd')
-    print_file('/tmp/passwd')
+    output = print_file('iris.csv')
+    print(output)

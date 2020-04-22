@@ -46,7 +46,6 @@ Pandas
 * series.plot(kind)
 * series.describe() - inaczej się zachowuje dla indeksów numerycznych a inaczej dla timeseries; describe ignores NaN values
 * series.describe(percentiles)
-* series.ffil(), bfill() Interpolate values
 * grouping by multiple series
 * series.isnull()
 * series.isnull().any()

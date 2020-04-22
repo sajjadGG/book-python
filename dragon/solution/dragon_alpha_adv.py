@@ -1,31 +1,48 @@
-from functools import wraps
-from logging import getLogger, DEBUG
+import logging
 from dataclasses import dataclass
+from functools import wraps
 from random import randint
-from typing import Dict, Any, NoReturn
+from typing import TypedDict, NoReturn
 
-log = getLogger(__name__)
-log.setLevel(DEBUG)
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='"%(asctime).19s", "%(levelname)4.4s", "%(message)s"',
+    # filename='/tmp/game.csv',
+)
 
 
 def debug(method):
     @wraps(method)
     def wrapper(instance, *args, **kwargs):
-        log.debug(f'{instance} {method.__name__}(args={args}, kwargs={kwargs})')
+        logging.debug(f'{instance} {method.__name__}(args={args}, kwargs={kwargs})')
         return method(instance, *args, **kwargs)
     return wrapper
 
 
-def if_alive(method):
-    @wraps(method)
-    def wrapper(instance, *args, **kwargs):
-        if instance.is_alive():
-            return method(instance, *args, **kwargs)
+def if_alive(action):
+    @wraps(action)
+    def wrapper(creature, *args, **kwargs):
+        if creature.is_alive():
+            action(creature, *args, **kwargs)
     return wrapper
 
 
+def if_dead(action):
+    @wraps(action)
+    def wrapper(creature, *args, **kwargs):
+        if creature.is_dead():
+            action(creature, *args, **kwargs)
+    return wrapper
+
+
+class Status:
+    ALIVE: str = 'alive'
+    DEAD: str = 'dead'
+
+
 @dataclass(frozen=True)
-class Point:
+class Position:
     x: int = 0
     y: int = 0
 
@@ -39,79 +56,52 @@ class Point:
 
 class Movable:
     @if_alive
-    def set_position(self, position: Point = Point()) -> None:
-        self._position: Point = position
+    def position_set(self, position: Position = Position()) -> None:
+        self._position = position
 
-    @if_alive
-    def change_position(self, left: int = 0, down: int = 0, up: int = 0, right: int = 0) -> None:
-        current_position: Point = self.get_position()
-        x: int = current_position.x + right - left
-        y: int = current_position.y + down - up
-        self.set_position(Point(x, y))
-
-    def get_position(self) -> Point:
+    def position_get(self):
         return self._position
 
-    def __str__(self) -> str:
-        return str(self.get_position())
+    def position_change(self, left: int = 0, right: int = 0, down: int = 0, up: int = 0) -> None:
+        current_position = self.position_get()
+        new_position = Position(
+            x = current_position.x + right - left,
+            y = current_position.y + down - up)
+        self.position_set(new_position)
 
 
-class Status:
-    DEAD: str = 'dead'
-    ALIVE: str = 'alive'
+class Drop(TypedDict):
+    gold: int
+    position: Position
 
 
 class Dragon(Movable):
-    HEALTH_MIN: int = 50
-    HEALTH_MAX: int = 100
     DAMAGE_MIN: int = 5
     DAMAGE_MAX: int = 20
+    HEALTH_MIN: int = 50
+    HEALTH_MAX: int = 100
     GOLD_MIN: int = 1
     GOLD_MAX: int = 100
-    TEXTURE_ALIVE: str = r'img/dragon/alive.png'
-    TEXTURE_DEAD: str = r'img/dragon/dead.png'
+    TEXTURE_ALIVE: str = 'img/dragon/alive.png'
+    TEXTURE_DEAD: str = 'img/dragon/dead.png'
 
     class IsDead(Exception):
         pass
 
-    def __init__(self, name: str, position: Point = Point()):
-        self.name: str = name
-        self.texture: str = self.TEXTURE_ALIVE
-        self.health_current: int = randint(self.HEALTH_MIN, self.HEALTH_MAX)
-        self.gold: int = randint(self.GOLD_MIN, self.GOLD_MAX)
+    def __init__(self, name: str, position: Position = Position()) -> None:
+        self._name: str = name
+        self._texture: str = self.TEXTURE_ALIVE
+        self._gold: int = randint(self.GOLD_MIN, self.GOLD_MAX)
+        self._health_current: int = randint(self.HEALTH_MIN, self.HEALTH_MAX)
         self._update_status()
-        self.set_position(position)
-
-    def __str__(self):
-        return f'{self.name} (Status: {self.status}, HP: {self.health_current})'
+        self.position_set(position)
 
     @if_alive
     def make_damage(self) -> int:
         return randint(self.DAMAGE_MIN, self.DAMAGE_MAX)
 
-    @debug
-    @if_alive
-    def take_damage(self, damage: int) -> None:
-        self.health_current -= damage
-        self._update_status()
-
-        if self.is_dead():
-            self._make_dead()
-
-    def get_drop(self) -> Dict[str, Any]:
-        drop = {
-            'gold': self.gold,
-            'position': self.get_position(),
-        }
-        self.gold = 0
-        return drop
-
-    def _make_dead(self) -> NoReturn:
-        self.texture = self.TEXTURE_DEAD
-        raise self.IsDead
-
     def is_dead(self) -> bool:
-        if self.status == Status.DEAD:
+        if self._status == Status.DEAD:
             return True
         else:
             return False
@@ -119,68 +109,100 @@ class Dragon(Movable):
     def is_alive(self) -> bool:
         return not self.is_dead()
 
-    def _update_status(self) -> None:
-        if self.health_current > 0:
-            self.status: str = Status.ALIVE
+    @debug
+    @if_alive
+    def take_damage(self, damage: int):
+        self._health_current -= damage
+        logging.info(f'Damage taken: {damage}, {self:status}')
+        self._update_status()
+
+        if self.is_dead():
+            self._make_dead()
+
+    @if_dead
+    def _make_dead(self) -> NoReturn:
+        self._texture = self.TEXTURE_DEAD
+        raise self.IsDead
+
+    def get_drop(self) -> Drop:
+        gold = self._gold
+        self._gold = 0
+        return Drop(gold=gold, position=self.position_get())
+
+    def _update_status(self):
+        if self._health_current < 0:
+            self._status: str = Status.DEAD
         else:
-            self.status: str = Status.DEAD
+            self._status: str = Status.ALIVE
 
-dragon: Dragon = Dragon(name='Wawelski', position=Point(x=50, y=120))
+    def __format__(self, message):
+        if message == Status.DEAD:
+            return f'{self} is dead'
+        elif message == 'status':
+            return f'{self._name} (Status: {self._status}, HP: {self._health_current})'
+        else:
+            return f'{self._name}'
 
-dragon.set_position(Point(x=10, y=20))
-dragon.change_position(left=10, down=20)
-dragon.change_position(left=10, right=15)
-dragon.change_position(right=15, up=5)
-dragon.change_position(down=5)
+
+wawelski = Dragon('Wawelski', position=Position(x=50, y=120))
+wawelski.position_set(Position(x=10, y=20))
+
+wawelski.position_change(left=10, down=20)
+wawelski.position_change(left=10, right=15)
+wawelski.position_change(right=15, up=5)
+wawelski.position_change(down=5)
 
 try:
-    dragon.take_damage(10)
-    dragon.take_damage(5)
-    dragon.take_damage(3)
-    dragon.take_damage(2)
-    dragon.take_damage(15)
-    dragon.take_damage(25)
-    dragon.take_damage(75)
+    wawelski.take_damage(10)
+    wawelski.take_damage(5)
+    wawelski.take_damage(3)
+    wawelski.take_damage(2)
+    wawelski.take_damage(15)
+    wawelski.take_damage(25)
+    wawelski.take_damage(75)
+except wawelski.IsDead:
+    drop: Drop = wawelski.get_drop()
 
-except Dragon.IsDead:
-    drop: Dict[str, Any] = dragon.get_drop()
-
-    print(f'{dragon.name} is dead')
-    print(f'Gold dropped: {drop["gold"]}')
-    print(f'Position: {drop["position"]}')
+    logging.warning(f'{wawelski:dead}')
+    logging.info(f'Gold dropped: {drop["gold"]}')
+    logging.info(drop["position"])
 
 
-## Alternative Solution
-# wawelski = Dragon('Wawelski', 50, 120)
+
+""" Alternative interface options
+
+#-> wawelski = Dragon('Wawelski', position_x=50, position_y=120)
+#-> wawelski = Dragon('Wawelski', position=Position(50, 120))
+#-> wawelski = Dragon('Wawelski', position=Position(x=50, y=120))
 # wawelski = Dragon('Wawelski', x=50, y=120)
 # wawelski = Dragon('Wawelski', pos_x=50, pos_y=120)
-# -> wawelski = Dragon('Wawelski', position_x=50, position_y=120)
-# wawelski = Dragon('Wawelski', xy=(50, 120))
-# wawelski = Dragon('Wawelski', pos=(50, 120))
-# wawelski = Dragon('Wawelski', pos_xy=(50, 120))
-# wawelski = Dragon('Wawelski', position=(50, 120))
-# wawelski = Dragon('Wawelski', position_xy=(50, 120))
-# wawelski = Dragon('Wawelski', position_xy=(50, 120))
+# wawelski = Dragon('Wawelski', xy=(50,120))
+# wawelski = Dragon('Wawelski', pos=(50,120))
+# wawelski = Dragon('Wawelski', position=(50,120))
+# wawelski = Dragon('Wawelski', position_xy=(50,120))
 # wawelski = Dragon('Wawelski', position={'x':50, 'y':120})
-# wawelski = Dragon('Wawelski', position=Position(50, 120))
-# -> wawelski = Dragon('Wawelski', position=Position(x=50, y=120))
+# wawelski = Dragon('Wawelski', position=Position(position_x=50, position_y=120))
 
-# wawelski.position = Position(x=10, y=20)
-# wawelski.teleport(x=10, y=20)
-# -> wawelski.set_position(10, 20)
-# wawelski.position_set(x=10, y=20)
-# wawelski.set_position((10, 20))
-# wawelski.set_position({'x':50, 'y':120})
+#-> wawelski.set_position(x=10, y=20)
+# wawelski.set_position(10, 20)
+# wawelski.x = 10
+# wawelski.y = 20
+# wawelski.position_x = 10
+# wawelski.position_y = 20
+# wawelski._position_x = 10
+# wawelski._position_y = 20
 
-# wawelski.goto(x=10, y=20)
-# wawelski.position_change(left=10, down=20)
-# -> wawelski.move(left=10, right=20)
-# wawelski.move(dx=10, dy=20)
-# wawelski.move_to(x=10, y=20)
+#-> wawelski.move(left=10, down=20)
+# wawelski.move(0, 10, 0, 20)
 # wawelski.move_left(10)
-# wawelski.move_right(20)
-# wawelski.left(10)
-# wawelski.right(20)
+# wawelski.move_right(10)
+# wawelski.move([
+#     (0, 10, 0, 20),
+#     (0, 10, 0, 20)])
+# wawelski.move(dx=10, dy=-20)
+# wawelski.move(vertical=10, horizontal=-20)
+# wawelski.move(x=10, y=-20)
+# wawelski.move_to(x=10, y=20)
 # wawelski.move_x(10)
 # wawelski.move_y(20)
 # wawelski.move_xy(10, 20)
@@ -189,11 +211,23 @@ except Dragon.IsDead:
 # wawelski.move([
 #     {'left':50, 'down':120},
 #     {'left':50, 'right':120},
-#     {'down':50},
-# ])
+#     {'down':50}])
 # wawelski.move([
 #     (10, 20),
 #     (50, 120),
-#     (5),
-# ])
+#     (5)])
+# wawelski.move([
+#     (10, 20),
+#     (10, 15)])
+# wawelski.move([
+#     {'x':10, 'y':20},
+#     {'x':10, 'y':15}])
+# wawelski.move([
+#     Position(x=10, y=20),
+#     Position(x=10, y=15)])
+# wawelski.change_position(left=10, down=20)
 
+#-> wawelski.take_damage()
+# wawelski.attack()
+# wawelski.hit()
+"""
