@@ -221,6 +221,7 @@ List attributes
 * It does not reuse pointer
 
 .. warning:: Note, :ref:`Initial arguments mutability and shared state`
+
     .. code-block:: python
         :emphasize-lines: 2,10,14
 

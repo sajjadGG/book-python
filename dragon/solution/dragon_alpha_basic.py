@@ -103,37 +103,40 @@ wawelski.take_damage(25)
 wawelski.take_damage(75)
 
 
-## Alternative Solution
-# wawelski = Dragon('Wawelski', 50, 120)
+""" Alternative interface options
+
+#-> wawelski = Dragon('Wawelski', position_x=50, position_y=120)
+#-> wawelski = Dragon('Wawelski', position=Position(50, 120))
+#-> wawelski = Dragon('Wawelski', position=Position(x=50, y=120))
 # wawelski = Dragon('Wawelski', x=50, y=120)
 # wawelski = Dragon('Wawelski', pos_x=50, pos_y=120)
-# -> wawelski = Dragon('Wawelski', position_x=50, position_y=120)
-# wawelski = Dragon('Wawelski', xy=(50, 120))
-# wawelski = Dragon('Wawelski', pos=(50, 120))
-# wawelski = Dragon('Wawelski', pos_xy=(50, 120))
-# wawelski = Dragon('Wawelski', position=(50, 120))
-# wawelski = Dragon('Wawelski', position_xy=(50, 120))
-# wawelski = Dragon('Wawelski', position_xy=(50, 120))
+# wawelski = Dragon('Wawelski', xy=(50,120))
+# wawelski = Dragon('Wawelski', pos=(50,120))
+# wawelski = Dragon('Wawelski', position=(50,120))
+# wawelski = Dragon('Wawelski', position_xy=(50,120))
 # wawelski = Dragon('Wawelski', position={'x':50, 'y':120})
-# wawelski = Dragon('Wawelski', position=Position(50, 120))
-# -> wawelski = Dragon('Wawelski', position=Position(x=50, y=120))
+# wawelski = Dragon('Wawelski', position=Position(position_x=50, position_y=120))
 
-# wawelski.position = Position(x=10, y=20)
-# wawelski.teleport(x=10, y=20)
-# -> wawelski.set_position(10, 20)
-# wawelski.position_set(x=10, y=20)
-# wawelski.set_position((10, 20))
-# wawelski.set_position({'x':50, 'y':120})
+#-> wawelski.set_position(x=10, y=20)
+# wawelski.set_position(10, 20)
+# wawelski.x = 10
+# wawelski.y = 20
+# wawelski.position_x = 10
+# wawelski.position_y = 20
+# wawelski._position_x = 10
+# wawelski._position_y = 20
 
-# wawelski.goto(x=10, y=20)
-# wawelski.position_change(left=10, down=20)
-# -> wawelski.move(left=10, right=20)
-# wawelski.move(dx=10, dy=20)
-# wawelski.move_to(x=10, y=20)
+#-> wawelski.move(left=10, down=20)
+# wawelski.move(0, 10, 0, 20)
 # wawelski.move_left(10)
-# wawelski.move_right(20)
-# wawelski.left(10)
-# wawelski.right(20)
+# wawelski.move_right(10)
+# wawelski.move([
+#     (0, 10, 0, 20),
+#     (0, 10, 0, 20)])
+# wawelski.move(dx=10, dy=-20)
+# wawelski.move(vertical=10, horizontal=-20)
+# wawelski.move(x=10, y=-20)
+# wawelski.move_to(x=10, y=20)
 # wawelski.move_x(10)
 # wawelski.move_y(20)
 # wawelski.move_xy(10, 20)
@@ -142,11 +145,23 @@ wawelski.take_damage(75)
 # wawelski.move([
 #     {'left':50, 'down':120},
 #     {'left':50, 'right':120},
-#     {'down':50},
-# ])
+#     {'down':50}])
 # wawelski.move([
 #     (10, 20),
 #     (50, 120),
-#     (5),
-# ])
+#     (5)])
+# wawelski.move([
+#     (10, 20),
+#     (10, 15)])
+# wawelski.move([
+#     {'x':10, 'y':20},
+#     {'x':10, 'y':15}])
+# wawelski.move([
+#     Position(x=10, y=20),
+#     Position(x=10, y=15)])
+# wawelski.change_position(left=10, down=20)
 
+#-> wawelski.take_damage()
+# wawelski.attack()
+# wawelski.hit()
+"""

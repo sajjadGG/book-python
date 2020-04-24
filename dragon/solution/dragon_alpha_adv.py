@@ -168,7 +168,6 @@ except wawelski.IsDead:
     logging.info(drop["position"])
 
 
-
 """ Alternative interface options
 
 #-> wawelski = Dragon('Wawelski', position_x=50, position_y=120)

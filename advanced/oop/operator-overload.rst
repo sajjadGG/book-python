@@ -116,6 +116,26 @@ Boolean Operators
     "``a << b``",       "``a.__lshift__(b)``"
     "``a >> b``",       "``a.__rshift__(b)``"
 
+.. code-block:: python
+
+    class Digit:
+        def __init__(self, initial_value):
+            self.value = initial_value
+
+        def __str__(self):
+            return str(self.value)
+
+        def __rshift__(self, other):
+            return Digit(self.value + other.value)
+
+
+    a = Digit(1)
+    b = Digit(3)
+
+    print(a >> b)
+    # 4
+
+
 Builtin Functions and Keywords
 ------------------------------
 .. csv-table:: Builtin Functions Overload
