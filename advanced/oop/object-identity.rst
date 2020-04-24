@@ -174,7 +174,7 @@ Using ``is`` in script
 .. highlights::
     * both objects has the same ``id``.
 
- .. code-block:: python
+.. code-block:: python
 
     a = 'Jan Twardowski'
     b = 'Jan Twardowski'

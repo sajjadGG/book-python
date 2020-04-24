@@ -10,7 +10,7 @@ Inner Classes
             self.firstname = firstname
             self.lastname = lastname
 
-        def find_in_databse(self):
+        def find_in_database(self):
             if not in DATABASE:
                 raise User.DoesNotExists
 
