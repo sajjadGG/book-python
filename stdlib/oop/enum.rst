@@ -36,6 +36,7 @@ Definition
         ALIVE = 'alive'
         DEAD = 'dead'
 
+
 Accessing names and values
 ==========================
 .. code-block:: python
@@ -52,7 +53,6 @@ Accessing names and values
     print(Color.RED)        # Color.RED
     print(Color.RED.name)   # RED
     print(Color.RED.value)  # '#FF0000'
-
 
 .. code-block:: python
 
