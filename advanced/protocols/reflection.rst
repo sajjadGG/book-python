@@ -38,6 +38,26 @@ Protocol
 
 .. code-block:: python
 
+    class Astronaut:
+
+        def __setattr__(self, attribute_name, new_value):
+            if attribute_name.startswith('_'):
+                raise PermissionError(f'Field "{attribute_name}" is protected, cannot "set" value.')
+            else:
+                return object.__setattr__(self, attribute_name, new_value)
+
+
+    watney = Astronaut()
+
+    watney.name = 'Mark Watney'
+    print(watney.name)
+    # Mark Watney
+
+    watney._salary = 100
+    # PermissionError: Field "_salary" is protected, cannot "set" value.
+
+.. code-block:: python
+
     class Temperature:
         def __init__(self, initial_temperature):
             self.value = initial_temperature
@@ -68,6 +88,26 @@ Protocol
     * ``del astro.name``
     * => ``delattr(astro, 'name')``
     * => ``astro.__delattr__(name)``
+
+.. code-block:: python
+
+    class Astronaut:
+
+        def __delattr__(self, attribute_name):
+            if attribute_name.startswith('_'):
+                raise PermissionError(f'Field "{attribute_name}" is protected, cannot "delete" value.')
+            else:
+                return object.__delattr__(self, attribute_name)
+
+
+    watney = Astronaut()
+
+    watney.name = 'Mark Watney'
+    watney._salary = 100
+
+    del watney.name
+    del watney._salary
+    # PermissionError: Field "_salary" is protected, cannot "delete" value.
 
 .. code-block:: python
 
@@ -103,6 +143,26 @@ Protocol
     * if ``astro.__getattribute__(name)`` raise ``AttributeError``
     * => ``astro.__getattr__('name')``
 
+.. code-block:: python
+    :caption: Example ``__getattribute__()``
+
+    class Astronaut:
+
+        def __getattribute__(self, attribute_name):
+            if attribute_name.startswith('_'):
+                raise PermissionError(f'Field "{attribute_name}" is protected, cannot "get" value.')
+            else:
+                return object.__getattribute__(self, attribute_name)
+
+
+    watney = Astronaut()
+
+    watney.name = 'Mark Watney'
+    print(watney.name)
+    # Mark Watney
+
+    print(watney._salary)
+    # PermissionError: Field "_salary" is protected, cannot "get" value.
 
 .. code-block:: python
     :caption: Example ``__getattribute__()``
@@ -155,6 +215,38 @@ Protocol
 
     hasattr(t, 'value')
     # True
+
+
+Example
+=======
+.. code-block:: python
+
+    class Astronaut:
+
+        def __getattribute__(self, attribute_name):
+            if attribute_name.startswith('_'):
+                raise PermissionError(f'Field "{attribute_name}" is protected, cannot "get" value.')
+            else:
+                return object.__getattribute__(self, attribute_name)
+
+        def __setattr__(self, attribute_name, new_value):
+            if attribute_name.startswith('_'):
+                raise PermissionError(f'Field "{attribute_name}" is protected, cannot "set" value.')
+            else:
+                return object.__setattr__(self, attribute_name, new_value)
+
+
+    watney = Astronaut()
+
+    watney.name = 'Mark Watney'
+    print(watney.name)
+    # Mark Watney
+
+    watney._salary = 100
+    # PermissionError: Field "_salary" is protected, cannot "set" value.
+
+    print(watney._salary)
+    # PermissionError: Field "_salary" is protected, cannot "get" value.
 
 
 Assignments
