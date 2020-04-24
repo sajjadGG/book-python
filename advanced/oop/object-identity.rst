@@ -175,10 +175,11 @@ Using ``is`` in script
     * both objects has the same ``id``.
 
  .. code-block:: python
-    :caption: Using this code in script.
 
     a = 'Jan Twardowski'
     b = 'Jan Twardowski'
+
+.. code-block:: python
 
     print(a)        # Jan Twardowski
     print(b)        # Jan Twardowski
@@ -192,10 +193,14 @@ Using ``is`` in script
 Using ``is`` in REPL (evaluated line by line)
 ---------------------------------------------
 .. code-block:: python
-    :caption: Evaluated in REPL line by line.
 
     a = 'Jan Twardowski'
+
+.. code-block:: python
+
     b = 'Jan Twardowski'
+
+.. code-block:: python
 
     print(a)        # Jan Twardowski
     print(b)        # Jan Twardowski
@@ -209,10 +214,11 @@ Using ``is`` in REPL (evaluated line by line)
 Using ``is`` in REPL (evaluated at once)
 ----------------------------------------
 .. code-block:: python
-    :caption: Evaluated in REPL at once.
 
     a = 'Jan Twardowski'
     b = 'Jan Twardowski'
+
+.. code-block:: python
 
     print(a)        # Jan Twardowski
     print(b)        # Jan Twardowski
