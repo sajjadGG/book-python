@@ -8,6 +8,7 @@ class Value:
         else:
             parent._value = new_value
 
+
 class Temperature:
     value = Value()
 
