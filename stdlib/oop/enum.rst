@@ -36,7 +36,6 @@ Definition
         ALIVE = 'alive'
         DEAD = 'dead'
 
-
 Accessing names and values
 ==========================
 .. code-block:: python
@@ -45,14 +44,36 @@ Accessing names and values
     from enum import Enum
 
     class Color(Enum):
-        RED = '#00FF00'
+        RED = '#FF0000'
         GREEN = '#00FF00'
         BLUE = '#0000FF'
 
 
     print(Color.RED)        # Color.RED
     print(Color.RED.name)   # RED
-    print(Color.RED.value)  # '#00FF00'
+    print(Color.RED.value)  # '#FF0000'
+
+
+.. code-block:: python
+
+    from enum import Enum
+
+
+    class Status(Enum):
+        FULL_HEALTH = 100
+        DEAD = 0
+
+
+    hit_points = 100
+    status = Status(hit_points)
+    print(status)
+    # Status.FULL_HEALTH
+
+
+    hit_points = 0
+    status = Status(hit_points)
+    print(status)
+    # Status.DEAD
 
 
 Iterating over ``Enum``
