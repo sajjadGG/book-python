@@ -250,6 +250,12 @@ Multiple Statements in One Line
     # AttributeError: 'bool' object has no attribute 'replace'
 
 
+New Features
+============
+.. versionadded:: Python 3.9
+    :pep:`616` New ``str.removeprefix()`` and ``str.removesuffix()`` string methods
+
+
 Cleaning User Input
 ===================
 .. highlights::

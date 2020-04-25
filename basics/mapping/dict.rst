@@ -463,6 +463,11 @@ Examples
         'b3bbd85a': 'tag/v1.0',
     }
 
+New features
+============
+.. versionadded:: Python 3.9
+    :pep:`584` merge (``|``) and update (``|=``) operators have been added to the built-in dict class.
+
 
 Assignments
 ===========

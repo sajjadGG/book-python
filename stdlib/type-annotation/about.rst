@@ -89,3 +89,16 @@ Final
     RATE = 300  # Error: can't assign to final attribute
     Base.DEFAULT_ID = 1  # Error: can't override a final attribute
 
+
+New Features
+============
+.. versionadded:: Python 3.9
+    :pep:`585` Builtin Generic Types
+
+In type annotations you can now use built-in collection types such as list and dict as generic types instead of importing the corresponding capitalized types (e.g. List or Dict) from typing. Some other types in the standard library are also now generic, for example queue.Queue.
+
+.. code-block:: python
+
+    def greet_all(names: list[str]) -> None:
+        for name in names:
+            print("Hello", name)
