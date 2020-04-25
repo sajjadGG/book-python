@@ -186,8 +186,11 @@ Multiple argument
     # array([3, 6])
 
 
-Fancy indexing
-==============
+Advanced indexing
+=================
+* two types of indexes: int, bool
+* Also known as Fancy indexing
+
 .. code-block:: python
 
     import numpy as np
