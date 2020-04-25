@@ -85,6 +85,44 @@ Use case
 
 Examples
 ========
+
+Example 1
+---------
+.. code-block:: python
+
+    def say_hello(self):
+        print('hello')
+
+    class Astronaut:
+        pass
+
+
+    a = Astronaut()
+    say_hello()
+
+.. code-block:: python
+
+    class Astronaut:
+        def say_hello(self):
+            print('hello')
+
+
+    a = Astronaut()
+    a.say_hello()
+
+.. code-block:: python
+
+    class Astronaut:
+
+        @staticmethod
+        def say_hello():
+            print('hello')
+
+
+    Astronaut.say_hello()
+
+Example 2
+---------
 .. code-block:: python
     :caption: `HabitatOS <https://www.habitatos.space>`_ Z-Wave sensor model
 

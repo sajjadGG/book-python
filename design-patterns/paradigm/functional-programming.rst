@@ -334,8 +334,50 @@ memoize
 
     fibonacci(25)
 
+partial
+-------
+* Create alias function and its arguments
+* Useful when you need to pass function with arguments to for example ``map`` or ``filter``
+
+.. code-block:: python
+
+    from functools import partial
+
+
+    basetwo = partial(int, base=2)
+    basetwo.__doc__ = 'Convert base 2 string to an int.'
+    basetwo('10010')
+    # 18
+
+partialmethod
+-------------
+.. code-block:: python
+
+    class Cell(object):
+        def __init__(self):
+            self._alive = False
+
+        @property
+        def alive(self):
+            return self._alive
+
+        def set_state(self, state):
+            self._alive = bool(state)
+
+        set_alive = partialmethod(set_state, True)
+        set_dead = partialmethod(set_state, False)
+
+    c = Cell()
+
+    c.alive
+    # False
+
+    c.set_alive()
+    c.alive
+    # True
+
 reduce
-======
+------
 Apply function of two arguments cumulatively to the items of iterable, from left to right, so as to reduce the iterable to a single value. For example, reduce(lambda x, y: x+y, [1, 2, 3, 4, 5]) calculates ((((1+2)+3)+4)+5). The left argument, x, is the accumulated value and the right argument, y, is the update value from the iterable. If the optional initializer is present, it is placed before the items of the iterable in the calculation, and serves as a default when the iterable is empty. If initializer is not given and iterable contains only one item, the first item is returned.
 
 Roughly equivalent to:
@@ -351,6 +393,78 @@ Roughly equivalent to:
         for element in it:
             value = function(value, element)
         return value
+
+singledispatch
+--------------
+.. versionadded:: Python 3.4
+* Overload a method
+* Python will choose function to run based on argument type
+
+.. code-block:: python
+
+    from functools import singledispatch
+
+
+    @singledispatch
+    def celsius_to_kelvin(arg):
+        raise NotImplementedError('Argument must be int or list')
+
+    @celsius_to_kelvin.register
+    def _(degree: int):
+        return degree + 273.15
+
+    @celsius_to_kelvin.register
+    def _(degrees: list):
+        return [d+273.15 for d in degrees]
+
+
+    celsius_to_kelvin(1)
+    # 274.15
+
+    celsius_to_kelvin([1,2])
+    # [274.15, 275.15]
+
+    celsius_to_kelvin((1,2))
+    # NotImplementedError: Argument must be int or list
+
+singledispatchmethod
+--------------------
+.. versionadded:: Python 3.8
+* Overload a method
+* Python will choose method to run based on argument type
+
+.. code-block:: python
+
+    from functools import singledispatchmethod
+
+
+    class Converter:
+
+        @singledispatchmethod
+        def celsius_to_kelvin(arg):
+            raise NotImplementedError('Argument must be int or list')
+
+        @celsius_to_kelvin.register
+        def _(self, degree: int):
+            return degree + 273.15
+
+        @celsius_to_kelvin.register
+        def _(self, degrees: list):
+            return [d+273.15 for d in degrees]
+
+
+    conv = Converter()
+
+    conv.celsius_to_kelvin(1)
+    # 274.15
+
+    conv.celsius_to_kelvin([1,2])
+    # [274.15, 275.15]
+
+    conv.celsius_to_kelvin((1,2))
+    # NotImplementedError: Argument must be int or list
+
+
 
 Callback
 ========
