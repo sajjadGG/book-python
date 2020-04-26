@@ -132,7 +132,7 @@ Mean
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/nested_mean.py`
+* Solution: :download:`solution/loop_nested_mean.py`
 
 :English:
     #. For input data (see below)
@@ -168,7 +168,7 @@ Unique keys from schema-less database
 * Complexity level: medium
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/nested_unique_keys.py`
+* Solution: :download:`solution/loop_nested_unique_keys.py`
 
 :English:
     #. For input data (see below)

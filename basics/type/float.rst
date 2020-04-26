@@ -103,7 +103,7 @@ Float Example
 * Complexity level: easy
 * Lines of code to write: 13 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/float_example.py`
+* Solution: :download:`solution/type_float_example.py`
 
 :English:
     #. Input data (see below)
@@ -123,7 +123,7 @@ Float Example
     * Speed limit: 75 mph
 
 :Solution:
-    .. literalinclude:: solution/float_example.py
+    .. literalinclude:: solution/type_float_example.py
         :language: python
 
 :The whys and wherefores:
@@ -136,7 +136,7 @@ Float Casting
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/float_casting.py`
+* Solution: :download:`solution/type_float_casting.py`
 
 :English:
     #. Declare variable for storing value of 1337 meters
@@ -181,7 +181,7 @@ Float Calculation
 * Complexity level: medium
 * Lines of code to write: 20 lines
 * Estimated time of completion: 20 min
-* Solution: :download:`solution/float_calculation.py`
+* Solution: :download:`solution/type_float_calculation.py`
 
 :English:
     #. Operational pressure of EMU spacesuit: 4.3 PSI

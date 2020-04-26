@@ -325,7 +325,7 @@ Create
 * Complexity level: easy
 * Lines of code to write: 13 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/set_create.py`
+* Solution: :download:`solution/sequence_set_create.py`
 
 :English:
     #. For given data input (see below)

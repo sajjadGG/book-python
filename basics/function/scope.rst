@@ -271,7 +271,7 @@ Wanted
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/scope_wanted.py`
+* Solution: :download:`solution/function_scope_wanted.py`
 
 :English:
     #. For given input data (see below)
@@ -318,7 +318,7 @@ Roman numbers
 * Complexity level: hard
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/scope_roman.py`
+* Solution: :download:`solution/function_scope_roman.py`
 
 :English:
     #. Define function converting roman numerals to integer

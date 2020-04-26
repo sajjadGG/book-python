@@ -477,7 +477,7 @@ Aviation Language
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/dict_alphabet.py`
+* Solution: :download:`solution/mapping_dict_get.py`
 
 :English:
     #. Create translator of pilot's alphabet

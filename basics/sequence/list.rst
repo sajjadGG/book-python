@@ -285,7 +285,7 @@ Create
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/list_create.py`
+* Solution: :download:`solution/sequence_list_create.py`
 
 :English:
     #. For given data input (see below)
@@ -312,7 +312,7 @@ Modify
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/list_modify.py`
+* Solution: :download:`solution/sequence_list_modify.py`
 
 :English:
     #. For given data input (see below)

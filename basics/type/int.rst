@@ -50,7 +50,7 @@ Example
 * Complexity level: medium
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/int_example.py`
+* Solution: :download:`solution/type_int_example.py`
 
 :English:
     #. Calculate how many bits is one Megabyte
@@ -61,7 +61,7 @@ Example
     #. Ile razy Megabajt jest większy od Megabita?
 
 :Solution:
-    .. literalinclude:: solution/int_example.py
+    .. literalinclude:: solution/type_int_example.py
         :language: python
 
 :The whys and wherefores:
@@ -81,7 +81,7 @@ Int Calculation
 * Complexity level: easy
 * Lines of code to write: 12 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/int_calculation.py`
+* Solution: :download:`solution/type_int_calculation.py`
 
 :English:
     #. Calculate how many seconds is five minutes
@@ -111,7 +111,7 @@ Int Ratio
 * Complexity level: medium
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/int_ratio.py`
+* Solution: :download:`solution/type_int_ratio.py`
 
 :English:
     #. Having internet connection with speed up to 100 Mb/s
@@ -138,7 +138,7 @@ Int Temperature
 * Complexity level: medium
 * Lines of code to write: 18 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/int_temperature.py`
+* Solution: :download:`solution/type_int_temperature.py`
 
 :English:
     #. One Kelvin is equal to 1 Celsius degree (1K = 1°C)

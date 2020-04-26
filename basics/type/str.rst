@@ -7,6 +7,8 @@ Type ``str``
 
 Type Definition
 ===============
+* ``str`` is a sequence
+
 .. code-block:: python
     :caption: ``str`` Type Definition
 
@@ -236,7 +238,7 @@ Example
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 3 min
-* Solution: :download:`solution/str_example.py`
+* Solution: :download:`solution/type_str_example.py`
 
 :English:
     * Ask user to input text
@@ -247,7 +249,7 @@ Example
     * Wypisz liczbę znaków
 
 :Solution:
-    .. literalinclude:: solution/str_example.py
+    .. literalinclude:: solution/type_str_example.py
         :language: python
 
 Emoticon Print
@@ -255,7 +257,7 @@ Emoticon Print
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 3 min
-* Solution: :download:`solution/str_emoticon.py`
+* Solution: :download:`solution/type_str_emoticon.py`
 
 :English:
     #. Ask user to input name
@@ -285,7 +287,7 @@ Variables and Types
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/str_input.py`
+* Solution: :download:`solution/type_str_input.py`
 
 :English:
     #. Ask user to input name

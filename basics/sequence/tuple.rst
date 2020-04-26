@@ -175,7 +175,7 @@ Create
 * Complexity level: easy
 * Lines of code to write: 13 lines
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/tuple_create.py`
+* Solution: :download:`solution/sequence_tuple_create.py`
 
 :English:
     #. For given data input (see below)

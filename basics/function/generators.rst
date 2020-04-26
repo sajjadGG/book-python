@@ -272,7 +272,7 @@ Built-in Generators
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/generators_task.py`
+* Solution: :download:`solution/function_generators_task.py`
 
 :English:
     #. Using generator expression to create ``output: List[int]`` with numbers from 1 to 33 which are divisible by 3

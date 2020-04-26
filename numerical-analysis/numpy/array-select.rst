@@ -368,7 +368,6 @@ Advanced indexing
 
 
 .. code-block:: python
-    :emphasize-lines: 44,45,47,48,49
 
     import numpy as np
 

@@ -263,7 +263,7 @@ Unpacking from sequence
 * Complexity level: easy
 * Lines of code to write: 1 lines
 * Estimated time of completion: 3 min
-* Solution: :download:`solution/unpacking_hosts.py`
+* Solution: :download:`solution/sequence_unpacking_hosts.py`
 
 :English:
     #. Split input data (see below) by white space
@@ -294,7 +294,7 @@ Unpacking from nested sequence
 * Complexity level: easy
 * Lines of code to write: 1 lines
 * Estimated time of completion: 3 min
-* Solution: :download:`solution/unpacking_iris.py`
+* Solution: :download:`solution/sequence_unpacking_iris.py`
 
 :English:
     #. For input data (see below)

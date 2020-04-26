@@ -40,7 +40,7 @@ Is ``None`` or ``not``
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/none.py`
+* Solution: :download:`solution/type_none.py`
 
 :English:
     #. What you need to put in expressions to get the expected outcome?

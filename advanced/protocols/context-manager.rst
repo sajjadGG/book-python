@@ -56,13 +56,16 @@ Files
 .. code-block:: python
 
     f = open(FILE)
-    # ...
-    f.close()
+
+    try:
+        content = f.read()
+    finally:
+        f.close()
 
 .. code-block:: python
 
-    with open(FILE) as file:
-        # ...
+    with open(FILE) as f:
+        content = f.read()
 
 Database
 --------
@@ -103,23 +106,29 @@ Lock
 
     from threading import Lock
 
-    my_list = [1, 2, 3]
+    # Make lock
+    lock = Lock()
 
+    # Use lock
+    lock.acquire()
 
-    with Lock() as lock:
-        my_list.append(4)
-
+    try:
+        print('Critical section 1')
+        print('Critical section 2')
+    finally:
+        lock.release()
 
 .. code-block:: python
 
     from threading import Lock
 
-    my_list = [1, 2, 3]
+    # Make lock
     lock = Lock()
 
-
+    # Use lock
     with lock:
-        my_list.append(4)
+        print('Critical section 1')
+        print('Critical section 2')
 
 
 Contextmanager decorator

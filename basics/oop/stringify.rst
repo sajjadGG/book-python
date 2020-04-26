@@ -244,7 +244,7 @@ Assignments
 ===========
 
 OOP Stringify Object
-----------------
+--------------------
 * Complexity level: medium
 * Lines of code to write: 9 lines
 * Estimated time of completion: 20 min

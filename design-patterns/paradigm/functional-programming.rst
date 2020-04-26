@@ -3,6 +3,13 @@ Functional Programming
 **********************
 
 
+Pure function
+=============
+* Function which returns always the same results based on the same argument.
+* ``random.randint()`` - Not pure
+* ``pow()`` - Pure
+
+
 Lambda - Anonymous functions
 ============================
 
@@ -397,6 +404,7 @@ Roughly equivalent to:
 singledispatch
 --------------
 .. versionadded:: Python 3.4
+
 * Overload a method
 * Python will choose function to run based on argument type
 
@@ -430,6 +438,7 @@ singledispatch
 singledispatchmethod
 --------------------
 .. versionadded:: Python 3.8
+
 * Overload a method
 * Python will choose method to run based on argument type
 

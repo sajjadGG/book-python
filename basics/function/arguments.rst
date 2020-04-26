@@ -209,7 +209,7 @@ Example
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/args_example.py`
+* Solution: :download:`solution/function_args_example.py`
 
 :English:
     #. Define function which takes sequence of integers as an argument
@@ -222,7 +222,7 @@ Example
     #. Wypisz zwróconą wartość
 
 :Solution:
-    .. literalinclude:: solution/args_example.py
+    .. literalinclude:: solution/function_args_example.py
         :language: python
 
 Divide
@@ -230,7 +230,7 @@ Divide
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/args_divide.py`
+* Solution: :download:`solution/function_args_divide.py`
 
 :English:
     #. Define function ``divide``
@@ -255,7 +255,7 @@ Power
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/args_power.py`
+* Solution: :download:`solution/function_args_power.py`
 
 :English:
     #. Define function ``power``
@@ -287,7 +287,7 @@ Aviation numbers
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/args_aviation_numbers.py`
+* Solution: :download:`solution/function_args_aviation_numbers.py`
 
 :English:
     #. Given is pilot's alphabet for numbers (see boilerplate section below)
@@ -356,7 +356,7 @@ Cleaning text input
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/args_str_clean.py`
+* Solution: :download:`solution/function_args_str_clean.py`
 
 :English:
     #. For given input data (see below)
@@ -414,7 +414,7 @@ Number to human readable
 * Complexity level: hard
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/args_numstr_human.py`
+* Solution: :download:`solution/function_args_numstr_human.py`
 
 :English:
     #. For input data (see below)

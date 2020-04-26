@@ -390,7 +390,7 @@ Example
 * Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/str_methods.py`
+* Solution: :download:`solution/type_str_methods.py`
 
 :English:
     #. For given text: ``UL. jana \tTWArdoWskIEGO 3``
@@ -403,7 +403,7 @@ Example
     #. Oczekiwana wartość ``Jana Twardowskiego III``
 
 :Solution:
-    .. literalinclude:: solution/str_methods.py
+    .. literalinclude:: solution/type_str_methods.py
         :language: python
 
 :The whys and wherefores:
@@ -416,7 +416,7 @@ String Cleaning
 * Complexity level: easy
 * Lines of code to write: 11 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/str_cleaning.py`
+* Solution: :download:`solution/type_str_cleaning.py`
 
 :English:
     #. For input data (see below)

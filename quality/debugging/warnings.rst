@@ -102,6 +102,7 @@ Example 2
 Example 3
 ---------
 .. code-block:: python
+
     def deprecated(removed_in_version=None):
         def decorator(fn):
             def write_message(*args, **kwargs):
@@ -138,8 +139,6 @@ Example 3
     # myfile.py:14: DeprecationWarning: Call to deprecated function move_dragon in scratch.py at line 26
     # It will be removed in 2.0
     #   warnings.warn(message, DeprecationWarning)
-
-
 
 Example 4
 ---------

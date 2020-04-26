@@ -59,7 +59,7 @@ Balanced Brackets
 * Complexity level: medium
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/recurrence_brackets.py`
+* Solution: :download:`solution/function_recurrence_brackets.py`
 
 :English:
     #. Create function which checks if brackets are balanced

@@ -45,7 +45,7 @@ Is even number
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/operators_is_even.py`
+* Solution: :download:`solution/conditional_operators_modulo.py`
 
 :English:
     #. Read a number from user

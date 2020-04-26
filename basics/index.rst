@@ -79,20 +79,20 @@ Conditionals
     conditional/statements.rst
     conditional/expressions.rst
 
-*******
-Looping
-*******
+*****
+Loops
+*****
 .. toctree::
     :maxdepth: 1
     :caption: Looping
-    :name: Basic Looping
+    :name: Basic Loops
 
-    looping/while.rst
-    looping/for.rst
-    looping/nested.rst
-    looping/unpacking.rst
-    looping/dict.rst
-    looping/comprehensions.rst
+    loop/while.rst
+    loop/for.rst
+    loop/nested.rst
+    loop/unpacking.rst
+    loop/dict.rst
+    loop/comprehensions.rst
 
 ************
 Control Flow

@@ -215,7 +215,7 @@ Example
     #. Stwórz instancję ``versicolor`` klasy ``Iris``
 
 :Solution:
-    .. literalinclude:: solution/class_example.py
+    .. literalinclude:: solution/oop_class_example.py
         :language: python
 
 :The whys and wherefores:

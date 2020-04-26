@@ -9,10 +9,12 @@ todo_emit_warnings = False
 todo_include_todos = True
 
 extensions = [
-    'sphinx.ext.doctest',
-    'sphinx.ext.todo',
+    'sphinx.ext.autosectionlabel',
+    'sphinx.ext.duration',
     'sphinx.ext.mathjax',
+    'sphinx.ext.todo',
     'sphinxcontrib.bibtex',
+    'sphinx.ext.doctest',
     # 'sphinx.ext.viewcode',
     # 'sphinx.ext.graphviz',
 ]
@@ -25,7 +27,11 @@ numfig_format = {
 }
 
 exclude_patterns = []
-suppress_warnings = []
+
+suppress_warnings = [
+    'autosectionlabel.*',
+]
+
 html_context = {}
 
 # article - for articles in scientific journals, presentations, short reports, program documentation, invitations, ...
@@ -89,6 +95,8 @@ templates_path = ['_templates']
 highlight_language = 'python3'
 pygments_style = 'borland'
 autodoc_typehints = "description"
+autosectionlabel_maxdepth = 4
+
 sys.path.insert(0, os.path.abspath('_extensions'))
 
 # 0 - sequence number of image in whole document

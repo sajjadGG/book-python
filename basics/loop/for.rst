@@ -160,7 +160,31 @@ Example
 * Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/for_counter.py`
+* Solution: :download:`solution/loop_for_example.py`
+
+:English:
+    #. Use ``DATA`` from "Input" section below
+    #. Count occurrences of each color
+
+:Polish:
+    #. Użyj ``DATA`` z sekcji "Input" poniżej
+    #. Zlicz wystąpienia każdego z kolorów
+
+:Input:
+    .. code-block:: python
+
+        DATA = ['red', 'green', 'blue', 'red', 'green', 'red', 'blue']
+
+:Solution:
+    .. literalinclude:: solution/loop_for_example.py
+        :language: python
+
+Counter
+-------
+* Complexity level: easy
+* Lines of code to write: 6 lines
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/loop_for_counter.py`
 
 :English:
     #. Iterate over data from "Input" section and count occurrences of each number
@@ -207,10 +231,6 @@ Example
         counter: Dict[int, int]
         # {1: 7, 4: 8, 6: 4, 7: 4, 5: 4, 0: 7, 9: 5, 8: 6, 2: 2, 3: 3}
 
-:Solution:
-    .. literalinclude:: solution/for_counter.py
-        :language: python
-
 :The whys and wherefores:
     * Defining ``dict`` :ref:`Mapping Dict`
     * Updating ``dict``
@@ -221,7 +241,7 @@ Segmentation
 * Complexity level: easy
 * Lines of code to write: 12 lines
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/for_segmentation.py`
+* Solution: :download:`solution/loop_for_segmentation.py`
 
 :English:
     #. For input data (see below)
@@ -282,7 +302,7 @@ Text analysis
 * Complexity level: medium or hard
 * Lines of code to write: 30 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/for_text_analysis.py`
+* Solution: :download:`solution/loop_for_text_analysis.py`
 
 :English:
     #. Given is text of the "Moon Speech" by John F. Kennedy's (see below)

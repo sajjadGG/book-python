@@ -146,6 +146,29 @@ Cache
     print(CACHE)
     # {0: 1, 1: 1, 2: 2, 3: 6, 4: 24, 5: 120}
 
+.. code-block:: python
+
+    def cache(fn):
+        _cache = {}
+        def wrapper(n):
+            if n not in _cache:
+                _cache[n] = fn(n)
+            return _cache[n]
+        return wrapper
+
+
+    @cache
+    def factorial(n):
+        if n == 0:
+            return 1
+        else:
+            return n * factorial(n - 1)
+
+
+    factorial(5)
+    # 120
+
+
 Memoize
 -------
 .. code-block:: python

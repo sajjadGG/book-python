@@ -106,7 +106,7 @@ Define Function
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/define_print.py`
+* Solution: :download:`solution/function_define_print.py`
 
 :English:
     #. Define function ``call`` without parameters
