@@ -92,35 +92,80 @@ Timeout
 .. code-block:: python
     :caption: Decorator usage
 
-    import signal
+    from signal import signal, alarm, SIGALRM
     from time import sleep
 
 
-    def timeout(fn, seconds=2, error_message='Timeout'):
+    def timeout(seconds=2.0, error_message='Timeout'):
+        def on_timeout(signum, frame):
+            raise TimeoutError
 
-        def wrapper(*args, **kwargs):
+        def decorator(func):
+            def wrapper(*args, **kwargs):
+                signal(SIGALRM, on_timeout)
+                alarm(int(seconds))
 
-            def handler(signum, frame):
-                raise TimeoutError
+                try:
+                    func(*args, **kwargs)
+                except TimeoutError:
+                    print(error_message)
+                finally:
+                    alarm(0)
 
-            signal.signal(signal.SIGALRM, handler)
-            signal.alarm(seconds)
-
-            try:
-                fn(*args, **kwargs)
-            except TimeoutError:
-                print(error_message)
-            finally:
-                signal.alarm(0)
-
-        return wrapper
-
-
-    @timeout
-    def connect(username, password, host='127.0.0.1', port='80'):
-        print('Connecting...')
-        sleep(5)
-        print('Connected')
+            return wrapper
+        return decorator
 
 
-    connect('admin', 'admin')
+    @timeout(seconds=3.0, error_message='Sorry, timeout')
+    def countdown(n):
+        for i in reversed(range(n)):
+            print(i)
+            sleep(1)
+        print('countdown finished')
+
+
+    if __name__ == '__main__':
+        countdown(5)
+    # 4
+    # 3
+    # 2
+    # Sorry, timeout
+
+
+.. code-block:: python
+
+    from _thread import interrupt_main
+    from threading import Timer
+    from time import sleep
+
+
+    def timeout(seconds=3.0, error_message='Timeout'):
+        def decorator(func):
+            def wrapper(*args, **kwargs):
+                timer = Timer(seconds, interrupt_main)
+                timer.start()
+                try:
+                    result = func(*args, **kwargs)
+                except KeyboardInterrupt:
+                    raise TimeoutError(error_message)
+                finally:
+                    timer.cancel()
+                return result
+            return wrapper
+        return decorator
+
+
+    @timeout(seconds=3.0, error_message='Sorry, timeout')
+    def countdown(n):
+        for i in reversed(range(n)):
+            print(i)
+            sleep(1)
+        print('countdown finished')
+
+
+    if __name__ == '__main__':
+        countdown(5)
+    # 4
+    # 3
+    # 2
+    # TimeoutError: Timeout

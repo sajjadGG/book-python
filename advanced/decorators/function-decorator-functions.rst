@@ -34,9 +34,9 @@ Definition
 
 .. code-block:: python
 
-    def decorator(function):
+    def decorator(func):
         def wrapper(*args, **kwargs):
-            return function(*args, **kwargs)
+            return func(*args, **kwargs)
         return wrapper
 
 
@@ -44,9 +44,9 @@ Usage
 =====
 .. code-block:: python
 
-    def decorator(function):
+    def decorator(func):
         def wrapper(*args, **kwargs):
-            return function(*args, **kwargs)
+            return func(*args, **kwargs)
         return wrapper
 
     @my_decorator
@@ -68,10 +68,10 @@ File exists
     import os
 
 
-    def if_file_exists(fn):
+    def if_file_exists(func):
         def check_path(filename):
             if os.path.exists(filename):
-                return fn(filename)
+                return func(filename)
             else:
                 print(f'File "{filename}" does not exists')
         return check_path
@@ -92,10 +92,10 @@ Debug
 -----
 .. code-block:: python
 
-    def debug(fn):
+    def debug(func):
         def wrapper(*args, **kwargs):
-            print(f'Calling "{fn.__name__}()", args: {args}, kwargs: {kwargs}')
-            result = fn(*args, **kwargs)
+            print(f'Calling "{func.__name__}()", args: {args}, kwargs: {kwargs}')
+            result = func(*args, **kwargs)
             print(f'Result is {result}')
             return result
         return wrapper
@@ -124,10 +124,10 @@ Cache
 
     CACHE = {}
 
-    def cache(fn):
+    def cache(func):
         def wrapper(n):
             if n not in CACHE:
-                CACHE[n] = fn(n)
+                CACHE[n] = func(n)
             return CACHE[n]
         return wrapper
 
@@ -148,11 +148,11 @@ Cache
 
 .. code-block:: python
 
-    def cache(fn):
+    def cache(func):
         _cache = {}
         def wrapper(n):
             if n not in _cache:
-                _cache[n] = fn(n)
+                _cache[n] = func(n)
             return _cache[n]
         return wrapper
 
@@ -173,12 +173,12 @@ Memoize
 -------
 .. code-block:: python
 
-    def cache(fn):
+    def cache(func):
         def wrapper(n):
             cache = getattr(wrapper, '__cache__', {})
             if n not in cache:
                 print(f'"n={n}" Not in cache. Calculating...')
-                cache[n] = fn(n)
+                cache[n] = func(n)
                 setattr(wrapper, '__cache__', cache)
             else:
                 print(f'"n={n}" Found in cache. Fetching...')

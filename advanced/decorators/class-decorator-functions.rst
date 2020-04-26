@@ -26,11 +26,11 @@ Definition
 .. code-block:: python
 
     class Decorator:
-        def __init__(self, function):
-            self._function = function
+        def __init__(self, func):
+            self._func = func
 
         def __call__(self, *args, **kwargs):
-            return self._function(*args, **kwargs)
+            return self._func(*args, **kwargs)
 
 
 Usage
@@ -38,11 +38,11 @@ Usage
 .. code-block:: python
 
     class Decorator:
-        def __init__(self, function):
-            self._function = function
+        def __init__(self, func):
+            self._func = func
 
         def __call__(self, *args, **kwargs):
-            return self._function(*args, **kwargs)
+            return self._func(*args, **kwargs)
 
 
     @Decorator
@@ -70,12 +70,12 @@ Login Check
 
 
     class LoginCheck:
-        def __init__(self, function):
-            self._function = function
+        def __init__(self, func):
+            self._func = func
 
         def __call__(self, *args, **kwargs):
             if user.is_authenticated:
-                return self._function(*args, **kwargs)
+                return self._func(*args, **kwargs)
             else:
                 print('Permission Denied')
 
@@ -100,14 +100,14 @@ Dict Cache
 .. code-block:: python
 
     class Cache(dict):
-        def __init__(self, function):
-            self._function = function
+        def __init__(self, func):
+            self._func = func
 
         def __call__(self, *args):
             return self[args]
 
         def __missing__(self, key):
-            self[key] = self._function(*key)
+            self[key] = self._func(*key)
             return self[key]
 
 
