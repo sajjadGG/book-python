@@ -125,14 +125,15 @@ DataFrame Sample
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/df_select.py`
+* Solution: :download:`solution/df_sample.py`
 
 :English:
     .. todo:: English translation
 
 :Polish:
     #. Pobierz zbiór danych Iris Dataset :download:`data/astronauts.csv`
-    #. Korzystając z Pandas do ``pd.DataFrame``
-    #. Wypełnij brakujące indeksy stosując ``ffill``
+    #. Korzystając z Pandas wczytaj go do ``pd.DataFrame``
+    #. W danych kolumna "Order" kolejność astronauty/kosmonauty w kosmosie (czasami kilka osób leciało tym samym statkiem i ich numery powinny być takie same, a w danych jest ``pd.Na``).
+    #. Wypełnij brakujące indeksy (kolumna "Order") stosując ``ffill``
     #. Ustaw wszystkie wiersze w losowej kolejności
     #. Zresetuj index nie pozostawiając kopii zapasowej starego
