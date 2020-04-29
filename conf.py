@@ -1,6 +1,6 @@
 project = 'Python 3: from None to Machine Learning'
 author = 'Matt Harasymczuk'
-email = 'matt@astrotech.io'
+email = 'book-python@astronaut.center'
 language = 'en'
 
 html_theme = 'sphinx_rtd_theme'
@@ -11,12 +11,13 @@ todo_include_todos = True
 extensions = [
     'sphinx.ext.autosectionlabel',
     'sphinx.ext.duration',
+    'sphinx.ext.doctest',
+    'sphinx.ext.extlinks',
+    # 'sphinx.ext.graphviz',
     'sphinx.ext.mathjax',
     'sphinx.ext.todo',
-    'sphinxcontrib.bibtex',
-    'sphinx.ext.doctest',
     # 'sphinx.ext.viewcode',
-    # 'sphinx.ext.graphviz',
+    'sphinxcontrib.bibtex',
 ]
 
 numfig_format = {
@@ -26,9 +27,11 @@ numfig_format = {
     'code-block': 'Listing %s.',
 }
 
-exclude_patterns = []
+exclude_patterns = [
+]
 
 suppress_warnings = [
+    'toc.secnum',
     'autosectionlabel.*',
 ]
 
@@ -73,6 +76,7 @@ exclude_patterns += [
     '_build',
     '_extensions',
     '_img',
+    '_data',
     '_slides',
     '_i18n',
     '_static',
@@ -99,12 +103,14 @@ autosectionlabel_maxdepth = 4
 
 sys.path.insert(0, os.path.abspath('_extensions'))
 
+extlinks = {'isbn': ('https://e-isbn.pl/IsbnWeb/start/search.html?szukaj_fraza=%s', 'ISBN: ')}
+
 # 0 - sequence number of image in whole document
 # 1 - sequence number of image in header level 1 (only if :numbered: option is present at toctree directive)
 # 2 - sequence number of image in header level 2
 #       will use x.1, x.2, … if located directly under a header level 1,
 #       will use 1, 2, … if at the document level
-numfig_secnum_depth = 0
+numfig_secnum_depth = 1
 numfig = True
 smartquotes = False
 
@@ -115,12 +121,12 @@ today = date.today().strftime('%Y-%m-%d')
 
 version = f'#{sha1}, {today}'
 release = f'#{sha1}, {today}'
-copyright = f'{year}, {author} <{email}>'
+copyright = f'{year}, CC-BY-SA-4.0, {author} <{email}>, version: #{sha1}, last update: {today}'
 
 html_show_sphinx = False
 html_use_smartypants = False
 html_search_language = language
-html_add_permalinks = ""
+html_add_permalinks = '¶'
 html_theme_path = ['_themes']
 html_secnumber_suffix = '. '
 html_title = project
@@ -143,10 +149,11 @@ latex_documents = [('index', f'{project_slug}.tex', project, author, latex_docum
 latex_elements = {
     'papersize': 'a4paper',
     'pointsize': '10pt',
-    'figure_align': 'htbp',
+    'figure_align': 'H', # 'htbp',
 
     # Fix for: LaTeX Backend Fails with Citations In Figure Captions
     'preamble': r"""
+        \usepackage{float}
         \usepackage{etoolbox}
         \AtBeginEnvironment{figure}{\renewcommand{\phantomsection}{}}
     """

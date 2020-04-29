@@ -2,6 +2,19 @@
 Python 3: from None to Machine Learning
 #######################################
 
+
+:Original Title: Python 3: from None to Machine Learning
+:English Title: Python 3: from None to Machine Learning
+:Author: Matt Harasymczuk
+:Language: English
+:ISBN: :isbn:`978-83-957186-2-5`
+:Year: 2019-2020
+:Online Access: https://python.astrotech.io
+:License: Creative Commons Attribution-ShareAlike 4.0 International License
+
+
+Author
+======
 .. figure:: /_static/AstroMatt.jpg
     :align: left
     :scale: 39%
@@ -9,19 +22,17 @@ Python 3: from None to Machine Learning
 .. csv-table::
     :widths: 15, 65
 
-    "author", "`Matt Harasymczuk <http://astrotech.io>`_"
-    "email", "matt@astrotech.io"
-    "www", "http://www.astrotech.io"
+    "author", "`Matt Harasymczuk <https://www.astronaut.center>`_"
+    "email", "book-python@astronaut.center"
+    "www", "https://www.astronaut.center"
     "github", "https://github.com/astromatt"
     "linkedin", "https://linkedin.com/in/mattharasymczuk"
     "facebook", "https://facebook.com/matt.harasymczuk"
     "slideshare", "https://www.slideshare.net/astrotech/presentations"
 
-.. hint:: This book is free and open source at https://python.astrotech.io
-
-.. csv-table:: Other books from author
+.. csv-table:: Other Books from Author. More information at https://www.astronaut.center/books
     :widths: 25, 20, 55
-    :header: "ISBN", "URL", "Title"
+    :header: "ISBN", "Online Access", "Title"
 
     "978-83-957186-2-5", "https://python.astrotech.io", "Python 3: from None to Machine Learning"
     "978-83-957186-3-2", "https://dev.astrotech.io", "The Software Engineering: DevOps, CI/CD, Docker, Provisioning and Git Flow"
@@ -30,16 +41,8 @@ Python 3: from None to Machine Learning
     "978-83-957186-4-9", "https://pl.habitatos.space", "HabitatOS - Development of operating system prototype for Lunar and Martian habitats"
     "978-83-957186-1-8", "https://alsep.astronaut.center", "Geophysics experiments from Apollo Lunar Surface Experiments Package"
 
-This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
 
-.. note:: For consulting or training course requests please email matt@astrotech.io
-
-.. warning:: Before training course please setup your environment as described here :ref:`Install`.
-
-.. raw:: html
-
-    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-        <img alt="Creative Commons License"
-             style="border-width:0"
-             src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
-    </a>
+Note
+====
+* For consulting or training course requests please email book-python@astronaut.center
+* Before training course please setup your environment as described here :ref:`Install`.

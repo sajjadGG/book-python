@@ -202,7 +202,7 @@ Packaging
 
         # Author details
         author='Matt Harasymczuk',
-        author_email='habitatOS@astrotech.io',
+        author_email='dev@habitatos.space',
 
         # Choose your license
         license='MIT',

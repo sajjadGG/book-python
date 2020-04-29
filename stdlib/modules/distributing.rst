@@ -121,7 +121,7 @@ Setuptools is a fully-featured, actively-maintained, and stable library designed
 
         # Author details
         author='Matt Harasymczuk',
-        author_email='habitatOS@astrotech.io',
+        author_email='dev@habitatos.space',
 
         # Choose your license
         license='MIT',

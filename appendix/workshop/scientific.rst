@@ -12,7 +12,7 @@ Description
 ===========
 .. include:: src/scientific-description.rst
 
-.. tip:: If you're interested in this training course, please email me at matt@astrotech.io
+.. tip:: If you're interested in this training course, please email me at book-python@astronaut.center
 
 
 Agenda
