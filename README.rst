@@ -39,12 +39,12 @@ Other Books from Author
     :widths: 25, 20, 55
     :header: "ISBN", "Online Access", "Title"
 
-    "978-83-957186-2-5", "https://python.astrotech.io", "Python 3: from None to Machine Learning"
-    "978-83-957186-3-2", "https://dev.astrotech.io", "The Software Engineering: DevOps, CI/CD, Docker, Provisioning and Git Flow"
-    "978-83-957186-0-1", "https://www.astronaut.pl", "Astronaut Selection and Training for Long Duration Spaceflight and Extraterrestrial Activity"
-    "978-83-956752-0-1", "https://www.astronaut.center/books", "Space in Practice: How to Prepare and Conduct Stratospheric Balloon Mission"
-    "978-83-957186-4-9", "https://pl.habitatos.space", "HabitatOS - Development of operating system prototype for Lunar and Martian habitats"
-    "978-83-957186-1-8", "https://alsep.astronaut.center", "Geophysics experiments from Apollo Lunar Surface Experiments Package"
+    "9788395718625", "https://python.astrotech.io", "Python 3: from None to Machine Learning"
+    "9788395718632", "https://dev.astrotech.io", "The Software Engineering: DevOps, CI/CD, Docker, Provisioning and Git Flow"
+    "9788395718601", "https://www.astronaut.pl", "Astronaut Selection and Training for Long Duration Spaceflight and Extraterrestrial Activity"
+    "9788395675201", "https://www.astronaut.center/books", "Space in Practice: How to Prepare and Conduct Stratospheric Balloon Mission"
+    "9788395718649", "https://pl.habitatos.space", "HabitatOS - Development of operating system prototype for Lunar and Martian habitats"
+    "9788395718618", "https://alsep.astronaut.center", "Geophysics experiments from Apollo Lunar Surface Experiments Package"
 
 
 Note
