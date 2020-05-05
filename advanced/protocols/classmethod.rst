@@ -47,10 +47,10 @@ Examples
         pass
 
 
-    INPUT = '{"first_name": "Jan", "last_name": "Twardowski"}'
+    DATA = '{"first_name": "Jan", "last_name": "Twardowski"}'
 
-    guest = Guest.from_json(INPUT)
-    admin = Admin.from_json(INPUT)
+    guest = Guest.from_json(DATA)
+    admin = Admin.from_json(DATA)
 
     type(guest)     # <class '__main__.Guest'>
     type(admin)      # <class '__main__.Admin'>

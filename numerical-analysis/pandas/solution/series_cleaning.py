@@ -1,6 +1,6 @@
 def clean(text: str) -> str:
     """
-    >>> INPUT = [
+    >>> DATA = [
     ...     'ul.Mieszka II',
     ...     'UL. Zygmunta III WaZY',
     ...     '  bolesława chrobrego ',
@@ -13,7 +13,7 @@ def clean(text: str) -> str:
     ...     ' Jana 3 Sobieskiego  ',
     ...     'Jana III Sobi  eskiego ',
     ... ]
-    >>> for address in INPUT:
+    >>> for address in DATA:
     ...     clean(address)
     'Mieszka II'
     'Zygmunta III Wazy'

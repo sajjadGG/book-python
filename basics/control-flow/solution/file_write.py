@@ -1,5 +1,5 @@
 FILE = r'/tmp/iris.csv'
-INPUT = [
+DATA = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, 'virginica'),
     (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -25,6 +25,6 @@ INPUT = [
 ]
 
 with open(FILE, encoding='utf-8', mode='w', newline='\n') as file:
-    for line in INPUT:
+    for line in DATA:
         line = ','.join(str(field) for field in line) + '\n'
         file.write(line)

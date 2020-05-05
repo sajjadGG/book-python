@@ -20,7 +20,7 @@ Select
         * key -> index number (18 or 21)
         * value -> species name
 
-    #. Add empty ``set`` to ``output``
+    #. Add empty ``set`` to ``result``
     #. Use only indexes
     #. Do not use ``for``, ``while`` or ``slice()``
 
@@ -34,14 +34,14 @@ Select
         * klucz -> numer indeksu (18 or 21)
         * wartość -> nazwa gatunku
 
-     #. Dodaj pusty ``set`` do ``output``
+     #. Dodaj pusty ``set`` do ``result``
      #. Użyj tylko indeksów
      #. Nie używaj ``for``, ``while`` lub ``slice()``
 
 :Input:
     .. code-block:: python
 
-        INPUT = [
+        DATA = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, 'virginica'),
             (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -71,6 +71,7 @@ Select
     * Using indexes
     * Type casting
 
+
 Iris dataset
 ============
 * Complexity level: easy
@@ -95,7 +96,7 @@ Iris dataset
 :Input:
     .. code-block:: python
 
-        INPUT = (
+        DATA = (
             5.8, 2.7, 5.1, 1.9, 'virginica',
             5.1, 3.5, 1.4, 0.2, 'setosa',
             5.7, 2.8, 4.1, 1.3, 'versicolor',
@@ -162,7 +163,7 @@ Iris dataset
 :Input:
     .. code-block:: python
 
-        INPUT = [
+        DATA = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, 'virginica'),
             (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -190,7 +191,7 @@ Iris dataset
 :Output:
     .. code-block:: python
 
-        output: List[dict] = [
+        result: List[dict] = [
             {'Sepal length': 5.8, 'Sepal width': 2.7, 'Petal length': 5.1, 'Petal width': 1.9, 'Species': 'virginica'},
             {'Sepal length': 5.1, 'Sepal width': 3.5, 'Petal length': 1.4, 'Petal width': 0.2, 'Species': 'setosa'},
             {'Sepal length': 5.7, 'Sepal width': 2.8, 'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
@@ -224,7 +225,7 @@ Get elements from nested data structure
 :Input:
     .. code-block:: python
 
-        INPUT = [
+        DATA = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, {'virginica'}),
             (5.1, 3.5, 1.4, 0.2, {'setosa'}),
@@ -261,7 +262,7 @@ Label encoder
         * key - id (incremented integer value)
         * value - species name
 
-    #. ``label_encoder`` must be generated from ``INPUT``
+    #. ``label_encoder`` must be generated from ``DATA``
     #. For each row add appropriate data to ``features``, ``labels`` and ``label_encoder``
     #. Print ``features``, ``labels`` and ``label_encoder``
     #. Output must be identical to output data (see below)
@@ -280,7 +281,7 @@ Label encoder
         * key - identyfikator (kolejna liczba rzeczywista)
         * value - nazwa gatunku
 
-    #. ``label_encoder`` musi być wygenerowany z ``INPUT``
+    #. ``label_encoder`` musi być wygenerowany z ``DATA``
     #. Dla każdego wiersza dodawaj odpowiednie dane do ``feature``, ``labels`` i ``label_encoder``
     #. Wypisz ``feature``, ``labels`` i ``label_encoder``
     #. Wynik ma być identyczny z danymi wyjściowymi (patrz sekcja output)
@@ -288,7 +289,7 @@ Label encoder
 :Input:
     .. code-block:: python
 
-        INPUT = [
+        DATA = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, 'virginica'),
             (5.1, 3.5, 1.4, 0.2, 'setosa'),

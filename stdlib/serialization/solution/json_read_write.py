@@ -2,7 +2,7 @@ import json
 
 FILE = r'/tmp/json_read_write.json'
 
-INPUT = [
+DATA = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, 'virginica'),
     (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -28,7 +28,7 @@ INPUT = [
 ]
 
 
-header, *data = INPUT
+header, *data = DATA
 output = []
 
 

@@ -280,7 +280,7 @@ Array Slicing
 :Input:
     .. code-block:: python
 
-        INPUT = np.array([
+        DATA = np.array([
             [2, 8, 1, 5],
             [8, 8, 4, 4],
             [5, 5, 2, 5],
@@ -308,14 +308,14 @@ Sum of inner elements
 :English:
     #. Use only ``random`` module from ``numpy`` library
     #. Set random seed to zero
-    #. Generate ``INPUT: ndarray`` with 16x16 random digits (0-9 inclusive)
+    #. Generate ``DATA: ndarray`` with 16x16 random digits (0-9 inclusive)
     #. Calculate sum of inner 4x4 elements
     #. Inner matrix is exactly in the middle of outer
 
 :Polish:
     #. Użyj tylko funkcji z modułu ``random`` biblioteki ``numpy``
     #. Ustaw ziarno losowości na zero
-    #. Wygeneruj ``INPUT: ndarray`` z 16x16 losowych cyfr (0-9 włącznie)
+    #. Wygeneruj ``DATA: ndarray`` z 16x16 losowych cyfr (0-9 włącznie)
     #. Policz sumę środkowych 4x4 elementów
     #. Środkowa macierz jest dokładnie w środku większej
 

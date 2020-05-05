@@ -1,11 +1,11 @@
-INPUT = (2, 3, 3.5, 4, 4.5, 5)
+DATA = (2, 3, 3.5, 4, 4.5, 5)
 GRADE_SCALE = []
 report_card = []
 
 i = 0
 
-while i < len(INPUT):
-    grade = float(INPUT[i])
+while i < len(DATA):
+    grade = float(DATA[i])
     GRADE_SCALE.append(grade)
     i += 1
 

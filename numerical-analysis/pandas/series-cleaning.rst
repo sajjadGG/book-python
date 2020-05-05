@@ -140,7 +140,7 @@ Series Cleaning
 * Solution: :download:`solution/series_cleaning.py`
 
 :English:
-    #. Convert ``INPUT`` (see input section) to `pd.Series``
+    #. Convert ``DATA`` (see input section) to `pd.Series``
     #. Create ``pd.Series``
     #. Write function to clean up data
     #. Function takes one ``str`` argument
@@ -148,7 +148,7 @@ Series Cleaning
     #. Apply function to all elements of ``pd.Series``
 
 :Polish:
-    #. Przekonwertuj ``INPUT`` (patrz sekcja input) do ``pd.Series``
+    #. Przekonwertuj ``DATA`` (patrz sekcja input) do ``pd.Series``
     #. Napisz funkcję czyszczącą dane
     #. Funkcja przyjmuje jeden argument typu ``str``
     #. Funkcja zwraca oczyszczony tekst
@@ -157,7 +157,7 @@ Series Cleaning
 :Input:
     .. code-block:: python
 
-        INPUT = [
+        DATA = [
             'ul.Mieszka II',
             'UL. Zygmunta III WaZY',
             '  bolesława chrobrego ',

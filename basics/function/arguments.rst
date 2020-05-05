@@ -235,7 +235,7 @@ Divide
 :English:
     #. Define function ``divide``
     #. Function takes two arguments
-    #. Function returns result of a division for its arguments
+    #. Function divides its arguments and returns the result
     #. Call function with ``divide(10, 3)``
     #. Call function with ``divide(10, 0)``
     #. Print returned values
@@ -244,7 +244,7 @@ Divide
 :Polish:
     #. Zdefiniuj funkcję ``divide``
     #. Funkcja przyjmuje dwa argumenty
-    #. Funkcja zwraca wynik dzielenia jej argumentów
+    #. Funkcja dzieli oba argumenty przez siebie i zwraca wynik dzielenia
     #. Wywołaj funkcję z ``divide(4, 2)``
     #. Wywołaj funkcję z ``divide(4, 0)``
     #. Wypisz zwracane wartości
@@ -373,7 +373,7 @@ Cleaning text input
 :Input:
     .. code-block:: python
 
-        INPUT = [
+        DATA = [
             'ul.Mieszka II',
             'UL. Zygmunta III WaZY',
             '  bolesława chrobrego ',

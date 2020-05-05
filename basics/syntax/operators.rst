@@ -40,8 +40,8 @@ Arithmetic Operators
     10 * 2              # 20
     10 / 2              # 5
 
-Multiplication, Power and Root
-==============================
+Power and Root
+==============
 * ``**`` - Power
 
 .. code-block:: python
@@ -51,18 +51,11 @@ Multiplication, Power and Root
     2 ** -1             # 0.5
     1.337 ** 3          # 2.389979753
 
-    pow(10, 2)          # 100
-    pow(2, -1)          # 0.5
-    pow(1.337, 3)       # 2.389979753
-
 .. code-block:: python
     :caption: ``n-th`` root of the number
 
     4 ** 0.5            # 2.0
     2 ** 0.5            # 1.4142135623730951
-
-    pow(4, 0.5)         # 2.0
-    pow(2, 0.5)         # 1.4142135623730951
 
 
 Divisions

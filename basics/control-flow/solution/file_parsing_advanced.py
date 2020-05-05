@@ -1,5 +1,5 @@
 FILE = r'/tmp/hosts-advanced.txt'
-INPUT = """
+DATA = """
 ##
 # ``/etc/hosts`` structure:
 #   - IPv4 or IPv6
@@ -15,7 +15,7 @@ INPUT = """
 output = []
 
 with open(FILE, mode='w') as file:
-    file.write(INPUT)
+    file.write(DATA)
 
 try:
     with open(FILE) as file:

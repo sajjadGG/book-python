@@ -1,4 +1,4 @@
-INPUT = [
+DATA = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, 'virginica'),
     (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -26,7 +26,7 @@ INPUT = [
 
 RATIO = 0.6
 
-header, *data = INPUT
+header, *data = DATA
 pivot = int(len(data) * RATIO)
 
 features = [tuple(measurements) for *measurements,_ in data]
@@ -37,8 +37,8 @@ labels = [species for *_,species in data]
 labels_train = labels[:pivot]
 labels_test = labels[pivot:]
 
-result = features_train, features_test, labels_train, labels_test
-print(result)
+output = features_train, features_test, labels_train, labels_test
+print(output)
 
 
 
@@ -49,18 +49,19 @@ print(result)
 # features_test = [X for *X,y in data[pivot:]]
 # labels_train = [y for *X,y in data[:pivot]]
 # labels_test = [y for *X,y in data[pivot:]]
-# result = features_train, features_test, labels_train, labels_test
-# print(result)
+# output = features_train, features_test, labels_train, labels_test
+# print(output)
 
 
 ## Alternative solution
 ## not optimized (4 loops)
+# output = (
 #     [X for *X,y in data[:pivot]],
 #     [X for *X,y in data[pivot:]],
 #     [y for *X,y in data[:pivot]],
 #     [y for *X,y in data[pivot:]],
 # )
-# print(result)
+# print(output)
 
 
 ## Alternative solution

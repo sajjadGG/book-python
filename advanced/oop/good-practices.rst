@@ -81,9 +81,10 @@ The single responsibility principle is a computer programming principle that sta
 
 Open/closed principle
 ---------------------
-software entities … should be open for extension, but closed for modification
+software entities ... should be open for extension, but closed for modification
 
-The name open/closed principle has been used in two ways. Both ways use generalizations (for instance, inheritance or delegate functions) to resolve the apparent dilemma, but the goals, techniques, and results are different.
+The name open/closed principle has been used in two ways.
+Both ways use generalizations (for instance, inheritance or delegate functions) to resolve the apparent dilemma, but the goals, techniques, and results are different.
 
 .. code-block:: python
 

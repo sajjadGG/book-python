@@ -17,13 +17,13 @@ Examples
     import re
 
     PATTERN = r'\s[a-z]{3}\s'
-    INPUT = 'Baked Beans And Spam'
+    DATA = 'Baked Beans And Spam'
 
-    re.split(PATTERN, INPUT, flags=re.IGNORECASE)
+    re.split(PATTERN, DATA, flags=re.IGNORECASE)
     # ['Baked Beans', 'Spam']
 
 .. code-block:: python
-    :caption: Making a Phonebook
+    :caption: Making a Phone-book
 
     import re
 

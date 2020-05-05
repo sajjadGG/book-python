@@ -97,7 +97,7 @@ Phone Number Validation
 :Input:
     .. code-block:: python
 
-        INPUT = [
+        DATA = [
             '+48 (12) 355 5678',
             '+48 123 555 678',
             '123 555 678',
@@ -113,7 +113,7 @@ Phone Number Validation
             '+48 123555678,1,2,3',
         ]
 
-        for number in INPUT:
+        for number in DATA:
             result = is_valid_phone(number)
             print(f'{result}\t{number}')
 

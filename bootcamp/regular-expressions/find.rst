@@ -18,9 +18,9 @@ Examples
 
 
     PATTERN = r'[A-Z]{2,10}-[0-9]{1,6}'
-    INPUT = 'MYPROJ-1337, MYPROJ-997 removed obsolete comments'
+    DATA = 'MYPROJ-1337, MYPROJ-997 removed obsolete comments'
 
-    re.findall(PATTERN, INPUT)
+    re.findall(PATTERN, DATA)
     # ['MYPROJ-1337', 'MYPROJ-997']
 
 .. code-block:: python

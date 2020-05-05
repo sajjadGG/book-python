@@ -44,14 +44,14 @@ Type Casting
 .. code-block:: python
     :caption: ``float()`` converts argument to ``float``
 
-    float(10)                   # 10.0
-    float(-10)                  # -10.0
-    float(10.5)                 # 10.5
-    float(-10.5)                # -10.5
+    float(13)                   # 13.0
+    float(-13)                  # -13.0
     float(13.37)                # 13.37
     float(-13.37)               # -13.37
+
     float('+13.37')             # 13.37
     float('-13.37')             # -13.37
+
     float('13,37')              # ValueError: could not convert string to float: '13,37'
     float('-13,37')             # ValueError: could not convert string to float: '-13,37'
 
@@ -87,11 +87,22 @@ Numeric Functions
 * ``pow()`` - Number to the ``n-th`` power
 
 .. code-block:: python
+    :caption: ``pow()`` - Number to the ``n-th`` power
+
+    pow(10, 2)          # 100
+    pow(2, -1)          # 0.5
+
+    pow(1.337, 3)       # 2.389979753
+    pow(4, 0.5)         # 2.0
+    pow(2, 0.5)         # 1.4142135623730951
+
+.. code-block:: python
     :caption: ``abs()`` - Absolute value
 
     abs(1)                      # 1
-    abs(-1)                     # 1
     abs(13.37)                  # 13.37
+
+    abs(-1)                     # 1
     abs(-13.37)                 # 13.37
 
 
@@ -191,7 +202,7 @@ Float Calculation
     #. Calculate International Standard Atmosphere pressure at sea level
     #. Calculate partial pressure of Oxygen at sea level
     #. At what altitude above sea level, pressure is equal to partial pressure of Oxygen
-    #. All results print in kPa and PSI rounding to two decimal places
+    #. Print all results in kPa and PSI rounding to two decimal places
 
 :Polish:
     #. Ciśnienie operacyjne skafandra kosmicznego EMU: 4.3 PSI
@@ -201,7 +212,7 @@ Float Calculation
     #. Oblicz ciśnienie standardowej atmosfery na poziomie morza
     #. Oblicz ciśnienie parcjalne tlenu na poziomie morza
     #. Na jakiej wysokości nad poziomem morza panuje ciśnienie równe ciśnieniu parcjalnemu tlenu?
-    #. Wszystkie wyniki podaj w kPa oraz w PSI zaokrąglając do dwóch miejsc po przecinku
+    #. Wypisz wszystkie wyniki w kPa oraz PSI zaokrąglając do dwóch miejsc po przecinku
 
 :The whys and wherefores:
     * Defining constants and variables

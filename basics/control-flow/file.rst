@@ -294,7 +294,7 @@ Save to CSV file
 * Solution: :download:`solution/file_write.py`
 
 :English:
-    #. For given data structure ``INPUT: List[tuple]`` (see below)
+    #. For given data structure ``DATA: List[tuple]`` (see below)
     #. Separate header from data
     #. Write data to file: ``iris.csv``
     #. First line in file must be a header
@@ -302,7 +302,7 @@ Save to CSV file
     #. Use ``utf-8`` encoding and ``\n`` for line terminator
 
 :Polish:
-    #. Dana jest struktura danych ``INPUT: List[tuple]`` (patrz sekcja input)
+    #. Dana jest struktura danych ``DATA: List[tuple]`` (patrz sekcja input)
     #. Odseparuj nagłówek do danych
     #. Zapisz dane do pliku: ``iris.csv``
     #. Pierwsza linią w pliku musi być nagłówkiem
@@ -312,7 +312,7 @@ Save to CSV file
 :Input:
     .. code-block:: python
 
-        INPUT = [
+        DATA = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, 'virginica'),
             (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -416,7 +416,7 @@ Parsing simple CSV file
 :Input:
     .. code-block:: python
 
-        INPUT = """
+        DATA = """
         127.0.0.1       localhost
         127.0.0.1       astromatt
         10.13.37.1      nasa.gov esa.int roscosmos.ru
@@ -484,7 +484,7 @@ Parsing simple CSV file
 :Input:
     .. code-block:: python
 
-        INPUT = """
+        DATA = """
         ##
         # ``/etc/hosts`` structure:
         #   - IPv4 or IPv6

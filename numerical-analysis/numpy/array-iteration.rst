@@ -145,13 +145,13 @@ Iteration
 
 :Polish:
     #. Dany ``a: ndarray`` (patrz sekcja input)
-    #. Używając ``for`` iteruj po ``INPUT``
+    #. Używając ``for`` iteruj po ``DATA``
     #. Wypisz liczby parzyste
 
 :Input:
     .. code-block:: python
 
-        INPUT = np.array([[1, 2, 3],
+        DATA = np.array([[1, 2, 3],
                           [4, 5, 6],
                           [7, 8, 9]])
 

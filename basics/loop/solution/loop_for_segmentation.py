@@ -1,4 +1,4 @@
-INPUT = [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0,
+DATA = [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0,
          0, 6, 5, 0, 0, 9, 7, 0, 4, 4, 8,
          2, 4, 0, 0, 1, 9, 1, 7, 8, 8, 9,
          1, 3, 5, 6, 8, 2, 8, 1, 3, 9, 5,
@@ -14,7 +14,7 @@ counter = {
     'large': 0,
 }
 
-for digit in INPUT:
+for digit in DATA:
     if digit in SMALL:
         counter['small'] += 1
     elif digit in MEDIUM:
@@ -26,7 +26,7 @@ print(counter)
 
 
 ## Alternative solution
-# INPUT = [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0,
+# DATA = [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0,
 #          0, 6, 5, 0, 0, 9, 7, 0, 4, 4, 8,
 #          2, 4, 0, 0, 1, 9, 1, 7, 8, 8, 9,
 #          1, 3, 5, 6, 8, 2, 8, 1, 3, 9, 5,
@@ -41,7 +41,7 @@ print(counter)
 #     {'name': 'custom', 'range': [1, 2, 9], 'count': 0, 'digits': [], 'indexes': []},
 # ]
 #
-# for idx, digit in enumerate(INPUT):
+# for idx, digit in enumerate(DATA):
 #     for counter in COUNTERS:
 #         if digit in counter['range']:
 #             counter['indexes'].append(idx)

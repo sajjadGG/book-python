@@ -18,8 +18,8 @@ Examples
 
 
     PATTERN = r'\s[a-z]{3}\s'
-    INPUT = 'Baked Beans And Spam'
+    DATA = 'Baked Beans And Spam'
 
-    re.sub(PATTERN, ' & ', INPUT, flags=re.IGNORECASE)
+    re.sub(PATTERN, ' & ', DATA, flags=re.IGNORECASE)
     # 'Baked Beans & Spam'
 

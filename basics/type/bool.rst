@@ -29,25 +29,27 @@ Type Casting
 .. code-block:: python
     :caption: Negative values
 
-    bool(bool())                # False
-    bool(False)                 # False
-    bool(None)                  # False
     bool(int())                 # False
-    bool(0)                     # False
     bool(float())               # False
-    bool(0.0)                   # False
     bool(complex())             # False
+    bool(bool())                # False
+    bool(str())                 # False
+    bool(tuple())               # False
+    bool(list())                # False
+    bool(dict())                # False
+    bool(set())                 # False
+    bool(frozenset())           # False
+
+    bool(0)                     # False
+    bool(0.0)                   # False
     bool(0+0j)                  # False
     bool(0.0+0.0j)              # False
-    bool(str())                 # False
+    bool(False)                 # False
+    bool(None)                  # False
     bool('')                    # False
-    bool(tuple())               # False
     bool(())                    # False
-    bool(list())                # False
     bool([])                    # False
-    bool(dict())                # False
     bool({})                    # False
-    bool(set())                 # False
 
 
 Boolean Algebra

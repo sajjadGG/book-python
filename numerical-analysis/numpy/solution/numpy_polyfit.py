@@ -1,6 +1,6 @@
 import numpy as np
 
-INPUT = [
+DATA = [
     ('x', 'y'),
     (-4.0, 0.0),
     (-3.0, 2.5),
@@ -10,7 +10,7 @@ INPUT = [
     (3.0, 7.0)
 ]
 
-header, *data = INPUT
+header, *data = DATA
 
 x = [x for x, y in data]
 y = [y for x, y in data]
@@ -21,7 +21,7 @@ print(a)
 
 
 ## Alternative
-header, *data = INPUT
+header, *data = DATA
 x = []
 y = []
 

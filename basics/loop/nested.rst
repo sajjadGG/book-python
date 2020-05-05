@@ -147,7 +147,7 @@ Mean
 :Input:
     .. code-block:: python
 
-        INPUT = [
+        DATA = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, 'virginica'),
             (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -185,7 +185,7 @@ Unique keys from schema-less database
 :Input:
     .. code-block:: python
 
-        INPUT = [
+        DATA = [
             {'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
             {'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
             {'Sepal length': 6.3, 'Petal width': 1.8, 'Species': 'virginica'},

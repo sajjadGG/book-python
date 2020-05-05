@@ -2,7 +2,7 @@ from pprint import pprint
 from statistics import mean, stdev, median, variance
 
 
-INPUT = [
+DATA = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, 'virginica'),
     (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -28,7 +28,7 @@ INPUT = [
 ]
 
 output = {}
-header, *data = INPUT
+header, *data = DATA
 *attributes, _ = header
 
 

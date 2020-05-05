@@ -1,4 +1,4 @@
-INPUT = [
+DATA = [
     {'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
     {'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
     {'Sepal length': 6.3, 'Petal width': 1.8, 'Species': 'virginica'},
@@ -9,7 +9,7 @@ INPUT = [
 
 output = set()
 
-for row in INPUT:
+for row in DATA:
     output.update(row.keys())
 
 print(sorted(output))

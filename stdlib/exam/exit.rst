@@ -25,7 +25,7 @@ Label encoder
         * key - id (incremented integer value)
         * value - species name
 
-    #. ``label_encoder`` must be generated from ``INPUT``
+    #. ``label_encoder`` must be generated from ``DATA``
     #. For each row add appropriate data to ``features``, ``labels`` and ``label_encoder``
     #. Print ``features``, ``labels`` and ``label_encoder``
     #. Output must be identical to output data (see below)
@@ -44,7 +44,7 @@ Label encoder
         * key - identyfikator (kolejna liczba rzeczywista)
         * value - nazwa gatunku
 
-    #. ``label_encoder`` musi być wygenerowany z ``INPUT``
+    #. ``label_encoder`` musi być wygenerowany z ``DATA``
     #. Dla każdego wiersza dodawaj odpowiednie dane do ``feature``, ``labels`` i ``label_encoder``
     #. Wypisz ``feature``, ``labels`` i ``label_encoder``
     #. Wynik ma być identyczny z danymi wyjściowymi (patrz sekcja output)
@@ -52,7 +52,7 @@ Label encoder
 :Input:
     .. code-block:: python
 
-        INPUT = [
+        DATA = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, 'virginica'),
             (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -120,7 +120,7 @@ Relational Files Database
         - ``etc_group.txt`` - :numref:`code-exam-etc-group`
 
     #. Copy also comments and empty lines
-    #. Parse files and convert it to ``output: List[dict]``
+    #. Parse files and convert it to ``result: List[dict]``
     #. Return list of users with ``UID`` greater than 1000
     #. User dict should contains data collected from all files
 
@@ -132,7 +132,7 @@ Relational Files Database
         - ``etc_group.txt`` - :numref:`code-exam-etc-group`
 
     #. Skopiuj również komentarze i puste linie
-    #. Sparsuj plik i przedstaw go w formacie ``output: List[dict]``
+    #. Sparsuj plik i przedstaw go w formacie ``result: List[dict]``
     #. Zwróć listę użytkowników, których ``UID`` jest większy niż 1000
     #. Dict użytkownika powinien zawierać dane z wszystkich plików
 

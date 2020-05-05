@@ -252,11 +252,11 @@ OOP Stringify Object
 
 :English:
     #. Modify code from input data (see below)
-    #. Overload ``str`` and ``repr`` to achieve result of printing
+    #. Overload ``str`` and ``repr`` to achieve desired printing output
 
 :Polish:
     #. Zmodyfikuj kod z danych wejściowych (patrz sekcja input)
-    #. Przeciąż ``str`` i ``repr`` aby osiągnąć rezultat wyświetlania
+    #. Przeciąż ``str`` i ``repr`` aby osiągnąć oczekiwany rezultat wypisywania
 
 :Input:
     .. code-block:: python

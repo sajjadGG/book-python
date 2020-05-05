@@ -77,12 +77,12 @@ Use better names, rather than comments
 --------------------------------------
 .. code-block:: python
 
-    def cal_var(results):
+    def cal_var(data):
         """Calculate variance"""
-        return sum((Xi-m) ** 2 for Xi in results) / len(results)
+        return sum((Xi-m) ** 2 for Xi in data) / len(data)
 
-    def calculate_variance(results):
-        return sum((Xi-m) ** 2 for Xi in results) / len(results)
+    def calculate_variance(data):
+        return sum((Xi-m) ** 2 for Xi in data) / len(data)
 
 .. code-block:: python
 

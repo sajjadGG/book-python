@@ -287,10 +287,10 @@ Sum
 
     sum(x for x in range(0,5))         # 10
 
-Filtering results
------------------
+Filtering
+---------
 .. code-block:: python
-    :caption: Using ``list`` comprehension for result filtering
+    :caption: Using ``list`` comprehension for filtering
 
     DATA = [
         ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
@@ -332,7 +332,7 @@ Filtering results
 Filtering with complex expressions
 ----------------------------------
 .. code-block:: python
-    :caption: Using ``list`` comprehension for result filtering with more complex expression
+    :caption: Using ``list`` comprehension for filtering with more complex expression
 
     DATA = [
         ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
@@ -441,7 +441,7 @@ Nested
 ------
 .. code-block:: python
 
-    INPUT = {
+    DATA = {
         6: ['Doctorate', 'Prof-school'],
         5: ['Masters', 'Bachelor', 'Engineer'],
         4: ['HS-grad'],
@@ -451,7 +451,7 @@ Nested
     }
 
     output = {education: str(key)
-              for key, names in INPUT.items()
+              for key, names in DATA.items()
                  for education in names}
 
     print(output)
@@ -511,7 +511,7 @@ Comprehensions
 * Solution: :download:`solution/loop_comprehension.py`
 
 :English:
-    #. For given data structure ``INPUT: List[tuple]`` (see below)
+    #. For given data structure ``DATA: List[tuple]`` (see below)
     #. Separate header from data
     #. Calculate pivot point: length of data times given percent
     #. Using List Comprehension split data to:
@@ -531,7 +531,7 @@ Comprehensions
     #. Compare results with "Output" section below
 
 :Polish:
-    #. Dana jest struktura danych ``INPUT: List[tuple]`` (patrz sekcja input)
+    #. Dana jest struktura danych ``DATA: List[tuple]`` (patrz sekcja input)
     #. Odseparuj nagłówek od danych
     #. Wylicz punkt podziału: długość danych razy zadany procent
     #. Używając List Comprehension podziel dane na:
@@ -553,7 +553,7 @@ Comprehensions
 :Input:
     .. code-block:: python
 
-        INPUT = [
+        DATA = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, 'virginica'),
             (5.1, 3.5, 1.4, 0.2, 'setosa'),

@@ -44,12 +44,12 @@ Naming convention
 .. code-block:: python
     :caption: Use better names, rather than comments
 
-    def cal_var(results, m):
+    def cal_var(data, m):
         """Calculate variance"""
-        return sum((Xi-m) ** 2 for Xi in results) / len(results)
+        return sum((Xi-m) ** 2 for Xi in data) / len(data)
 
-    def calculate_variance(results, m):
-        return sum((Xi-m) ** 2 for Xi in results) / len(results)
+    def calculate_variance(data, m):
+        return sum((Xi-m) ** 2 for Xi in data) / len(data)
 
 .. code-block:: python
     :caption: Add underscore (``_``) at the end of name when name collide

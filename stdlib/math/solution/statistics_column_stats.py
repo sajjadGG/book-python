@@ -1,7 +1,7 @@
 from statistics import mean, stdev, variance, median
 
 
-INPUT = [
+DATA = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, 'virginica'),
     (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -26,7 +26,7 @@ INPUT = [
     (4.6, 3.1, 1.5, 0.2, 'setosa'),
 ]
 
-header, *data = INPUT
+header, *data = DATA
 sepal_length = [row[0] for row in data]
 sepal_width = [row[1] for row in data]
 petal_length = [row[2] for row in data]

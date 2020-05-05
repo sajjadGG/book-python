@@ -555,9 +555,9 @@ Example 1
 
     transform = XSLT(XML(TEMPLATE))
     data = parse(StringIO(DATA))
-    output = transform(data)
+    result = transform(data)
 
-    print(output)
+    print(result)
     # <?xml version="1.0"?>
     # <my_tag>Hello World</my_tag>
 
@@ -607,9 +607,9 @@ Example 2
 
     transform = XSLT(XML(TEMPLATE))
     data = parse(StringIO(DATA))
-    output = transform(data)
+    result = transform(data)
 
-    print(output)
+    print(result)
     # <html><table>
     # <thead><tr>
     # <th>First Name</th>
@@ -687,9 +687,9 @@ Example 3
 
     transform = XSLT(XML(TEMPLATE))
     data = parse(StringIO(DATA))
-    output = transform(data)
+    result = transform(data)
 
-    print(output)
+    print(result)
     # <html>
     # <style>
     #     body {font-family: Arial; font-size: 1em; background-color: #EEEEEE}

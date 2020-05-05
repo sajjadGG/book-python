@@ -110,7 +110,7 @@ First major difference: **DEFINITION**
     - ``applymap`` is defined on DataFrames ONLY
     - ``apply`` is defined on BOTH
 
-Second major difference: **INPUT ARGUMENT**
+Second major difference: **ARGUMENT TYPE**
 
     - ``map`` accepts ``dict``s, ``Series``, or callable
     - ``applymap`` and ``apply`` accept callables only

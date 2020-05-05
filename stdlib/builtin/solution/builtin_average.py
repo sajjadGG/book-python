@@ -3,7 +3,7 @@ def average(args):
         return sum(args) / len(args)
 
 
-INPUT = [
+DATA = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, 'virginica'),
     (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -28,8 +28,8 @@ INPUT = [
     (4.6, 3.1, 1.5, 0.2, 'setosa'),
 ]
 
-header = INPUT[0]
-data = INPUT[1:]
+header = DATA[0]
+data = DATA[1:]
 values = {}
 
 
@@ -45,7 +45,7 @@ for row in data:
 
 
 ## Alternative version
-# header, *data = INPUT
+# header, *data = DATA
 # values = {name: list() for name in header}
 #
 # for row in data:

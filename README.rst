@@ -18,7 +18,7 @@ Author
 .. figure:: /_static/AstroMatt.jpg
     :align: left
     :scale: 39%
-
+§
 .. csv-table::
     :widths: 15, 65
 

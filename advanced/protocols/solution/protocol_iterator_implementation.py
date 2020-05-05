@@ -26,7 +26,7 @@ class Address:
     city: str
 
 
-INPUT = [
+DATA = [
     Contact(first_name='Jan', last_name='Twardowski', addresses=(
         Address(location='Johnson Space Center', city='Houston, TX'),
         Address(location='Kennedy Space Center', city='Merritt Island, FL'),
@@ -36,7 +36,7 @@ INPUT = [
     Contact(first_name='Melissa', last_name='Lewis', addresses=()),
 ]
 
-for contact in INPUT:
+for contact in DATA:
     print(contact)
 
 # Address(location='Johnson Space Center', city='Houston, TX')

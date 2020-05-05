@@ -68,12 +68,12 @@ Serialize to JSON
     import json
 
 
-    INPUT = {
+    DATA = {
         'first_name': 'Jan',
         'last_name': 'Twardowski'
     }
 
-    output = json.dumps(INPUT)
+    output = json.dumps(DATA)
     print(output)
     # '{"first_name": "Jan", "last_name": "Twardowski"}'
 
@@ -85,9 +85,9 @@ Deserialize from JSON
     import json
 
 
-    INPUT = '{"first_name": "Jan", "last_name": "Twardowski"}'
+    DATA = '{"first_name": "Jan", "last_name": "Twardowski"}'
 
-    output = json.loads(INPUT)
+    output = json.loads(DATA)
     print(output)
     # {
     #     'first_name': 'Jan',
@@ -109,13 +109,13 @@ Encoding ``datetime`` and ``date``
     import json
 
 
-    INPUT = {
+    DATA = {
         'name': 'Jan Twardowski',
         'date': date(1961, 4, 12),
         'datetime': datetime(1969, 7, 21, 2, 56, 15),
     }
 
-    output = json.dumps(INPUT)
+    output = json.dumps(DATA)
     # TypeError: Object of type date is not JSON serializable
 
 .. code-block:: python
@@ -125,7 +125,7 @@ Encoding ``datetime`` and ``date``
     import json
 
 
-    INPUT = {
+    DATA = {
         'name': 'Jan Twardowski',
         'date': date(1961, 4, 12),
         'datetime': datetime(1969, 7, 21, 2, 56, 15),
@@ -142,7 +142,7 @@ Encoding ``datetime`` and ``date``
                 return value.strftime('%Y-%m-%d')
 
 
-    output = json.dumps(INPUT, cls=JSONDatetimeEncoder)
+    output = json.dumps(DATA, cls=JSONDatetimeEncoder)
     print(output)
     # '{"name": "Jan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T02:56:15.000Z"}'
 
@@ -155,9 +155,9 @@ Decoding ``datetime`` and ``date``
     import json
 
 
-    INPUT = '{"name": "Jan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T02:56:15.000Z"}'
+    DATA = '{"name": "Jan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T02:56:15.000Z"}'
 
-    output = json.loads(INPUT)
+    output = json.loads(DATA)
     print(output)
     # {
     #     'name': 'Jan Twardowski',
@@ -172,7 +172,7 @@ Decoding ``datetime`` and ``date``
     import json
 
 
-    INPUT = '{"name": "Jan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T02:56:15.000Z"}'
+    DATA = '{"name": "Jan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T02:56:15.000Z"}'
 
 
     class JSONDatetimeDecoder(json.JSONDecoder):
@@ -195,7 +195,7 @@ Decoding ``datetime`` and ``date``
             return output
 
 
-    output = json.loads(INPUT, cls=JSONDatetimeDecoder)
+    output = json.loads(DATA, cls=JSONDatetimeDecoder)
     print(output)
     # {
     #     'name': 'Jan Twardowski',
@@ -291,7 +291,7 @@ Decoding nested objects with relations to JSON
     import json
     import sys
 
-    INPUT = """[{"name": "Jan Twardowski", "missions": [{"year": 1969, "name": "Apollo 18", "__class_name__": "Mission"}, {"year": 2024, "name": "Artemis 3", "__class_name__": "Mission"}], "__class_name__": "Astronaut"}, {"name": "Mark Watney", "missions": {"year": 2035, "name": "Ares 3", "__class_name__": "Mission"}, "__class_name__": "Astronaut"}, {"name": "Melissa Lewis", "missions": [], "__class_name__": "Astronaut"}]"""
+    DATA = """[{"name": "Jan Twardowski", "missions": [{"year": 1969, "name": "Apollo 18", "__class_name__": "Mission"}, {"year": 2024, "name": "Artemis 3", "__class_name__": "Mission"}], "__class_name__": "Astronaut"}, {"name": "Mark Watney", "missions": {"year": 2035, "name": "Ares 3", "__class_name__": "Mission"}, "__class_name__": "Astronaut"}, {"name": "Melissa Lewis", "missions": [], "__class_name__": "Astronaut"}]"""
 
 
     class Astronaut:
@@ -322,7 +322,7 @@ Decoding nested objects with relations to JSON
             return cls(**obj)
 
 
-    output = json.loads(INPUT, cls=JSONObjectDecoder)
+    output = json.loads(DATA, cls=JSONObjectDecoder)
     print(output)
     # Astronaut(name="Jan Twardowski", missions=[
     #    Mission(year=1969, name="Apollo 18"),
@@ -345,8 +345,8 @@ JSON can be minified
 .. code-block:: console
     :caption: Minified JSON file
 
-    $ INPUT='https://raw.githubusercontent.com/AstroMatt/book-python/master/stdlib/serialization/data/iris.json'
-    $ curl $INPUT
+    $ DATA='https://raw.githubusercontent.com/AstroMatt/book-python/master/stdlib/serialization/data/iris.json'
+    $ curl $DATA
     [{"sepalLength":5.1,"sepalWidth":3.5,"petalLength":1.4,"petalWidth":0.2,"species":"setosa"},{"sepalLength":4.9,"sepalWidth":3,"petalLength":1.4,"petalWidth":0.2,"species":"setosa"},{"sepalLength":4.7,"sepalWidth":3.2,"petalLength":1.3,"petalWidth":0.2,"species":"setosa"},{"sepalLength":4.6,"sepalWidth":3.1,"petalLength":1.5,"petalWidth":0.2,"species":"setosa"},{"sepalLength":5,"sepalWidth":3.6,"petalLength":1.4,"petalWidth":0.2,"species":"setosa"},{"sepalLength":5.4,"sepalWidth":3.9,"petalLength":1.7,"petalWidth":0.4,"species":"setosa"},{"sepalLength":4.6,"sepalWidth":3.4,"petalLength":1.4,"petalWidth":0.3,"species":"setosa"},{"sepalLength":5,"sepalWidth":3.4,"petalLength":1.5,"petalWidth":0.2,"species":"setosa"},{"sepalLength":4.4,"sepalWidth":2.9,"petalLength":1.4,"petalWidth":0.2,"species":"setosa"},{"sepalLength":4.9,"sepalWidth":3.1,"petalLength":1.5,"petalWidth":0.1,"species":"setosa"},{"sepalLength":7,"sepalWidth":3.2,"petalLength":4.7,"petalWidth":1.4,"species":"versicolor"},{"sepalLength":6.4,"sepalWidth":3.2,"petalLength":4.5,"petalWidth":1.5,"species":"versicolor"},{"sepalLength":6.9,"sepalWidth":3.1,"petalLength":4.9,"petalWidth":1.5,"species":"versicolor"},{"sepalLength":5.5,"sepalWidth":2.3,"petalLength":4,"petalWidth":1.3,"species":"versicolor"},{"sepalLength":6.5,"sepalWidth":2.8,"petalLength":4.6,"petalWidth":1.5,"species":"versicolor"},{"sepalLength":5.7,"sepalWidth":2.8,"petalLength":4.5,"petalWidth":1.3,"species":"versicolor"},{"sepalLength":6.3,"sepalWidth":3.3,"petalLength":4.7,"petalWidth":1.6,"species":"versicolor"},{"sepalLength":4.9,"sepalWidth":2.4,"petalLength":3.3,"petalWidth":1,"species":"versicolor"},{"sepalLength":6.6,"sepalWidth":2.9,"petalLength":4.6,"petalWidth":1.3,"species":"versicolor"},{"sepalLength":5.2,"sepalWidth":2.7,"petalLength":3.9,"petalWidth":1.4,"species":"versicolor"},{"sepalLength":6.3,"sepalWidth":3.3,"petalLength":6,"petalWidth":2.5,"species":"virginica"},{"sepalLength":5.8,"sepalWidth":2.7,"petalLength":5.1,"petalWidth":1.9,"species":"virginica"},{"sepalLength":7.1,"sepalWidth":3,"petalLength":5.9,"petalWidth":2.1,"species":"virginica"},{"sepalLength":6.3,"sepalWidth":2.9,"petalLength":5.6,"petalWidth":1.8,"species":"virginica"},{"sepalLength":6.5,"sepalWidth":3,"petalLength":5.8,"petalWidth":2.2,"species":"virginica"},{"sepalLength":7.6,"sepalWidth":3,"petalLength":6.6,"petalWidth":2.1,"species":"virginica"},{"sepalLength":4.9,"sepalWidth":2.5,"petalLength":4.5,"petalWidth":1.7,"species":"virginica"},{"sepalLength":7.3,"sepalWidth":2.9,"petalLength":6.3,"petalWidth":1.8,"species":"virginica"},{"sepalLength":6.7,"sepalWidth":2.5,"petalLength":5.8,"petalWidth":1.8,"species":"virginica"},{"sepalLength":7.2,"sepalWidth":3.6,"petalLength":6.1,"petalWidth":2.5,"species":"virginica"}]
 
 Pretty Printing JSON
@@ -354,8 +354,8 @@ Pretty Printing JSON
 .. code-block:: console
     :caption: Pretty Printing JSON
 
-    $ INPUT='https://raw.githubusercontent.com/AstroMatt/book-python/master/stdlib/serialization/data/iris.json'
-    $ curl $INPUT |python -m json.tool
+    $ DATA='https://raw.githubusercontent.com/AstroMatt/book-python/master/stdlib/serialization/data/iris.json'
+    $ curl $DATA |python -m json.tool
     [
         {
             "petalLength": 1.4,
@@ -426,7 +426,7 @@ Serialize nested sequences to JSON
 :Input:
     .. code-block:: python
 
-        INPUT = [
+        DATA = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, 'virginica'),
             (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -521,7 +521,7 @@ Serializing datetime to JSON
         from datetime import datetime, date
 
 
-        INPUT = {
+        DATA = {
             "astronaut": {
                 "date": date(1961, 4, 12),
                 "person": "jose.jimenez@nasa.gov"

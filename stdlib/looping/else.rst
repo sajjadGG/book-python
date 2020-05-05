@@ -35,7 +35,7 @@ Loop ``else``
 
 .. code-block:: python
 
-    INPUT = """
+    DATA = """
     127.0.0.1       localhost
     127.0.0.1       astromatt
     10.13.37.1      nasa.gov esa.int roscosmos.ru
@@ -44,7 +44,7 @@ Loop ``else``
     """
     DNS = []
 
-    for line in INPUT.splitlines():
+    for line in DATA.splitlines():
         if not line:
             continue
 

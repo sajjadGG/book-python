@@ -479,7 +479,7 @@ Examples
     from dataclasses import dataclass
 
 
-    INPUT = [
+    DATA = [
         ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
         (5.8, 2.7, 5.1, 1.9, 'virginica'),
         (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -502,7 +502,7 @@ Examples
         species: str
 
 
-    flowers = list(Iris(*row) for row in INPUT[1:])
+    flowers = list(Iris(*row) for row in DATA[1:])
     print(flowers)
     # [
     #   Iris(sepal_length=5.8, sepal_width=2.7, petal_length=5.1, petal_width=1.9, species='virginica'),

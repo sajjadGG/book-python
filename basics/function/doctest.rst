@@ -8,7 +8,7 @@ Function Doctest
 .. highlights::
     * tests are always the most up-to-date code documentation
     * tests cannot get out of sync from code
-    * checks if function is outputs expected result
+    * checks if function output is exactly as expected
     * useful for regex modifications
     * can add text (i.e. explanations) between tests
     * Case Study: https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/linear_model/_base.py#L409
@@ -209,10 +209,10 @@ Testing String Values
 Testing ``print()``
 -------------------
 .. highlights::
-    * ``print()`` function results, don't have quotes
+    * ``print()`` function output, don't have quotes
 
 .. code-block:: python
-    :caption: ``print()`` function results, don't have quotes
+    :caption: There are no quotes in ``print()`` function output
     :emphasize-lines: 4
 
     def echo(text):

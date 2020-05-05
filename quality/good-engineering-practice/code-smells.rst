@@ -108,7 +108,7 @@ Example 2
 
 .. code-block:: python
 
-    INPUT = [
+    DATA = [
      (5.8, 2.7, 5.1, 1.9, 'virginica'),
      (5.1, 3.5, 1.4, 0.2, 'setosa'),
      (5.7, 2.8, 4.1, 1.3, 'versicolor'),
@@ -124,7 +124,7 @@ Example 2
     features=[]
     species=[]
 
-    for i in INPUT:
+    for i in DATA:
         fet=(str(i)[1:19],)
         spe=str(i)[22:-2]
         features.append(fet)

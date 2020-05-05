@@ -332,7 +332,7 @@ Log parsing
 :English:
     #. Save input data to file ``apollo11-timeline.log``
     #. Extract ``datetime`` object, level name and message from each line
-    #. Collect data to ``INPUT: List[dict]`` (see below)
+    #. Collect data to ``DATA: List[dict]`` (see below)
     #. Create database schema for logs
     #. Add all logs to database
     #. Select only ``WARNING`` logs between 1969-07-20 and 1969-07-21
@@ -342,7 +342,7 @@ Log parsing
 :Polish:
     #. Zapisz dane wejściowe do pliku ``apollo11-timeline.log``
     #. Wyciągnij obiekt ``datetime``, poziom logowania oraz wiadomość z każdej linii
-    #. Zbierz dane do ``INPUT: List[dict]`` (patrz sekcja input)
+    #. Zbierz dane do ``DATA: List[dict]`` (patrz sekcja input)
     #. Stwórz schemat bazy danych dla logów
     #. Dodaj wszystkie linie do bazy danych
     #. Wybierz tylko logi ``WARNING`` z przedziału 1969-07-20 i 1969-07-21

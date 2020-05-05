@@ -19,7 +19,7 @@ Examples
 
 
     PATTERN = r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,}$'
-    INPUT = [
+    DATA = [
         'mark.watney@nasa.gov',
         'Mark.Watney@nasa.gov',
         '+mark.watney@nasa.gov',
@@ -29,7 +29,7 @@ Examples
         '@nasa.gov',
         'mark.watney@nasa.g']
 
-    for email in INPUT:
+    for email in DATA:
         re.match(PATTERN, email)
 
 .. code-block:: python
@@ -40,7 +40,7 @@ Examples
 
 
     PATTERN = re.compile(r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,}$')
-    INPUT = [
+    DATA = [
         'mark.watney@nasa.gov',
         'Mark.Watney@nasa.gov',
         '+mark.watney@nasa.gov',
@@ -50,5 +50,5 @@ Examples
         '@nasa.gov',
         'mark.watney@nasa.g']
 
-    for email in INPUT:
+    for email in DATA:
         PATTERN.match(email)

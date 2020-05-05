@@ -82,7 +82,7 @@ Write data to CSV file
     import csv
 
     FILE = r'iris.csv'
-    INPUT = [
+    DATA = [
         {'sepal_length': 5.4, 'sepal_width': 3.9, 'petal_length': 1.3, 'petal_width': 0.4, 'species': 'setosa'},
         {'sepal_length': 5.9, 'sepal_width': 3.0, 'petal_length': 5.1, 'petal_width': 1.8, 'species': 'virginica'},
         {'sepal_length': 6.0, 'sepal_width': 3.4, 'petal_length': 4.5, 'petal_width': 1.6, 'species': 'versicolor'},
@@ -100,7 +100,7 @@ Write data to CSV file
 
         writer.writeheader()
 
-        for row in INPUT:
+        for row in DATA:
             writer.writerow(row)
 
 
@@ -373,12 +373,12 @@ Write fixed schema data to CSV file
 * Solution: :download:`solution/csv_dictwriter_fixed.py`
 
 :English:
-    #. Using ``csv.DictWriter()`` save ``INPUT`` (see below) to file
+    #. Using ``csv.DictWriter()`` save ``DATA`` (see below) to file
     #. Open file in your spreadsheet program like Microsoft Excel / Libre Office / Numbers etc.
     #. Open file in simple in your IDE and simple text editor (like Notepad, vim, gedit)
 
 :Polish:
-    #. Za pomocą ``csv.DictWriter()`` zapisz ``INPUT`` (patrz sekcja input) do pliku
+    #. Za pomocą ``csv.DictWriter()`` zapisz ``DATA`` (patrz sekcja input) do pliku
     #. Spróbuj otworzyć plik w arkuszu kalkulacyjnym tj. Microsoft Excel / Libre Office / Numbers itp
     #. Spróbuj otworzyć plik w IDE i prostym edytorze tekstu tj. Notepad, vim lub gedit
 
@@ -391,7 +391,7 @@ Write fixed schema data to CSV file
 :Input:
     .. code-block:: python
 
-        INPUT = [
+        DATA = [
             {'first_name': 'Jan',  'last_name': 'Twardowski'},
             {'first_name': 'Jose', 'last_name': 'Jimenez'},
             {'first_name': 'Mark', 'last_name': 'Watney'},
@@ -418,12 +418,12 @@ Write variable schema data to file
 
 :English:
     #. Using ``csv.DictWriter()`` write variable schema data to CSV file
-    #. ``fieldnames`` must be automatically generated from ``INPUT``
+    #. ``fieldnames`` must be automatically generated from ``DATA``
     #. ``fieldnames`` must always be in the same order
 
 :Polish:
     #. Za pomocą ``csv.DictWriter()`` zapisz do pliku CSV dane o zmiennej strukturze
-    #. ``fieldnames`` musi być generowane automatycznie na podstawie ``INPUT``
+    #. ``fieldnames`` musi być generowane automatycznie na podstawie ``DATA``
     #. ``fieldnames`` ma być zawsze w takiej samej kolejności
 
 :Non functional requirements:
@@ -440,7 +440,7 @@ Write variable schema data to file
 :Input:
     .. code-block:: python
 
-        INPUT = [
+        DATA = [
             {'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
             {'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
             {'Sepal length': 6.3, 'Petal width': 1.8, 'Species': 'virginica'},
@@ -499,7 +499,7 @@ Object serialization to CSV
                 self.city = city
 
 
-        INPUT = [
+        DATA = [
             Contact(first_name='Jan', last_name='Twardowski', addresses=(
                 Address(location='Johnson Space Center', city='Houston, TX'),
                 Address(location='Kennedy Space Center', city='Merritt Island, FL'),

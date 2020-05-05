@@ -210,7 +210,7 @@ Indexing
 
 :English:
     #. Create ``output: ndarray``
-    #. Add to ``output`` elements from ``INPUT`` (see below) at indexes:
+    #. Add to ``output`` elements from ``DATA`` (see below) at indexes:
 
         - row 0, column 2
         - row 2, column 2
@@ -222,7 +222,7 @@ Indexing
 
 :Polish:
     #. Stwórz ``output: ndarray``
-    #. Dodaj do ``output`` elementy z ``INPUT`` (patrz sekcja input) o indeksach:
+    #. Dodaj do ``output`` elementy z ``DATA`` (patrz sekcja input) o indeksach:
 
         - wiersz 0, kolumna 2
         - wiersz 2, kolumna 2
@@ -235,7 +235,7 @@ Indexing
 :Input:
     .. code-block:: python
 
-        INPUT = np.array([
+        DATA = np.array([
             [1, 2, 3],
             [4, 5, 6],
             [7, 8, 9]

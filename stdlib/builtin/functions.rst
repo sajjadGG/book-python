@@ -298,7 +298,7 @@ Average
 * Solution: :download:`solution/builtin_average.py`
 
 :English:
-    #. For given ``INPUT`` (see below)
+    #. For given ``DATA`` (see below)
     #. Separate header and data
     #. Define dict ``output: Dict[str, list]``, keys are column names from header
     #. For each row in data, add values to proper lists in ``output``
@@ -308,7 +308,7 @@ Average
     #. Iterating over ``output`` print column name and calculated average
 
 :Polish:
-    #. Dla danych ``INPUT`` (patrz sekcja input)
+    #. Dla danych ``DATA`` (patrz sekcja input)
     #. Odseparuj nagłówek od danych
     #. Zdefiniuj słownik ``output: Dict[str, list]``, klucze to nazwy kolumn z nagłówka
     #. Dla każdego wiersza w danych, dodawaj wartości do odpowiednich list w ``output``
@@ -320,7 +320,7 @@ Average
 :Input:
     .. code-block:: python
 
-        INPUT = [
+        DATA = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, 'virginica'),
             (5.1, 3.5, 1.4, 0.2, 'setosa'),

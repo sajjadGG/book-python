@@ -124,7 +124,7 @@ OOP Relations Flatten
                 self.city = city
 
 
-        INPUT = [
+        DATA = [
             Contact(first_name='Jan', last_name='Twardowski', addresses=(
                 Address(location='Johnson Space Center', city='Houston, TX'),
                 Address(location='Kennedy Space Center', city='Merritt Island, FL'),

@@ -230,6 +230,42 @@ Reading User Input
     type(age)       # <class 'str'>
 
 
+Concatenation
+=============
+.. highlights::
+    * Preferred string concatenation is using ``f-string`` formatting
+
+.. code-block:: python
+
+    'Beetlejuice' * 3   # BeetlejuiceBeetlejuiceBeetlejuice
+    '-' * 10            # ----------
+    'Mua' + 'Ha' * 2    # 'MuaHaHa'
+
+.. code-block:: python
+
+    first_name = 'Jan'
+    last_name = 'Twardowski'
+
+    first_name + ' ' + last_name
+    # Jan Twardowski
+
+.. code-block:: python
+    :caption: How many string are there in a memory?
+
+    first_name = 'Jan'
+    last_name = 'Twardowski'
+    age = 42
+
+    # How many string are there in a memory?
+    first_name + ' ' + last_name
+
+    # How many string are there in a memory?
+    'Hello ' + first_name + ' ' + last_name + ' ' + str(age) + '!'
+
+    # How many string are there in a memory?
+    f'Hello {first_name} {last_name} {age}!'
+
+
 Assignments
 ===========
 

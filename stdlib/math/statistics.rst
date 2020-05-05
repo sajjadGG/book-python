@@ -225,7 +225,7 @@ Column Stats
 * Solution: :download:`solution/statistics_column_stats.py`
 
 :English:
-    #. Use ``INPUT: List[tuple]`` from listing (see below)
+    #. Use ``DATA: List[tuple]`` from listing (see below)
     #. For columns:
 
         - Sepal length,
@@ -241,7 +241,7 @@ Column Stats
         - variance.
 
 :Polish:
-    #. Użyj ``INPUT: List[tuple]`` z listingu (patrz sekcja input)
+    #. Użyj ``DATA: List[tuple]`` z listingu (patrz sekcja input)
     #. Dla kolumn:
 
         - Sepal length,
@@ -262,7 +262,7 @@ Column Stats
 :Input:
     .. code-block:: python
 
-        INPUT = [
+        DATA = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, 'virginica'),
             (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -295,7 +295,7 @@ Iris Stats
 * Solution: :download:`solution/statistics_iris.py`
 
 :English:
-    #. Create dict ``output: Dict[str, dict]``
+    #. Create dict ``result: Dict[str, dict]``
     #. For each species calculate for numerical values:
 
             - mean,
@@ -303,10 +303,10 @@ Iris Stats
             - standard deviation,
             - variance.
 
-    #. Save data to ``output`` dict
+    #. Save data to ``result`` dict
 
 :Polish:
-    #. Stwórz słownik ``output: Dict[str, dict]``
+    #. Stwórz słownik ``result: Dict[str, dict]``
     #. Dla każdego gatunku wylicz dla wartości numerycznych:
 
             - średnią,
@@ -314,7 +314,7 @@ Iris Stats
             - odchylenie standardowe,
             - wariancję.
 
-    #. Dane zapisz w słowniku ``output``
+    #. Dane zapisz w słowniku ``result``
 
 :Non-functional requirements:
     #. Use ``statistics``
@@ -322,7 +322,7 @@ Iris Stats
 :Input:
     .. code-block:: python
 
-        INPUT = [
+        DATA = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, 'virginica'),
             (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -350,7 +350,7 @@ Iris Stats
 :Output:
     .. code-block:: python
 
-        output: Dict[str, dict] = {
+        result: Dict[str, dict] = {
             'setosa': {
                 'Sepal length': {'mean': 4.9,
                                  'median': 4.9,

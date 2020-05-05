@@ -1,5 +1,5 @@
 FILE = r'/tmp/hosts-simple.txt'
-INPUT = """
+DATA = """
 127.0.0.1       localhost
 127.0.0.1       astromatt
 10.13.37.1      nasa.gov esa.int roscosmos.ru
@@ -10,7 +10,7 @@ INPUT = """
 output = {}
 
 with open(FILE, mode='w') as file:
-    file.write(INPUT)
+    file.write(DATA)
 
 with open(FILE) as file:
     for line in file:

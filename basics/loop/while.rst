@@ -167,7 +167,7 @@ Report card
 :Input:
     .. code-block:: python
 
-        INPUT = (2, 3, 3.5, 4, 4.5, 5)
+        DATA = (2, 3, 3.5, 4, 4.5, 5)
 
 :The whys and wherefores:
     * Reading user input
