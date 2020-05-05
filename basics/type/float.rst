@@ -51,7 +51,6 @@ Type Casting
 
     float('+13.37')             # 13.37
     float('-13.37')             # -13.37
-
     float('13,37')              # ValueError: could not convert string to float: '13,37'
     float('-13,37')             # ValueError: could not convert string to float: '-13,37'
 

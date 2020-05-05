@@ -31,6 +31,9 @@ Type Definition
     my_set = {1}
     my_set = {1,}
 
+    set([1])
+    set([1,])
+
 .. code-block:: python
     :caption: Initialize with many elements. Stores only unique values.
 
@@ -77,6 +80,17 @@ Type Annotation
     my_set: Set[int] = {1, 2, 3}
     my_set: Set[float] = {0.0, 1.1, 2.2}
     my_set: Set[str] = {'a', 'b', 'c'}
+
+
+frozenset
+=========
+* Immutable ``set``
+* Has all set methods such as ``.intersect()``, ``.subset()`` ``.union()``, etc.
+* One solid block in memory
+
+.. code-block:: python
+
+    a = frozenset([1, 2, 3])
 
 
 Adding Items
