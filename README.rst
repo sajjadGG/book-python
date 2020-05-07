@@ -18,8 +18,8 @@ Author
 .. figure:: /_static/AstroMatt.jpg
     :align: left
     :scale: 39%
-§
-.. csv-table::
+
+.. csv-table:: Contact author
     :widths: 15, 65
 
     "author", "`Matt Harasymczuk <https://www.astronaut.center>`_"

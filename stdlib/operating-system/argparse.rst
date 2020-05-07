@@ -60,7 +60,7 @@ Typer
       hello
 
 .. code-block:: console
-    :captiion: Now get the --help for hello
+    :caption: Now get the --help for hello
 
     $ python main.py hello --help
 
