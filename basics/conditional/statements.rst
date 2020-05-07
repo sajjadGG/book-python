@@ -255,12 +255,12 @@ Conditioning on user input
 * Solution: :download:`solution/conditional_ifelse.py`
 
 :English:
-    #. Ask user for age
+    #. Ask user to input age
     #. User will pass only valid ``int``
     #. Print whether user is adult
 
 :Polish:
-    #. Poproś użytkownika o wiek
+    #. Poproś użytkownika o wprowadzenie swojego wieku
     #. Użytkownika poda tylko poprawne ``int``
     #. Wypisz czy użytkownik jest pełnoletni
 

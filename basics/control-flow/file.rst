@@ -294,7 +294,7 @@ Save to CSV file
 * Solution: :download:`solution/file_write.py`
 
 :English:
-    #. For given data structure ``DATA: List[tuple]`` (see below)
+    #. Use ``DATA`` from "Input" section (see below)
     #. Separate header from data
     #. Write data to file: ``iris.csv``
     #. First line in file must be a header
@@ -302,7 +302,7 @@ Save to CSV file
     #. Use ``utf-8`` encoding and ``\n`` for line terminator
 
 :Polish:
-    #. Dana jest struktura danych ``DATA: List[tuple]`` (patrz sekcja input)
+    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
     #. Odseparuj nagłówek do danych
     #. Zapisz dane do pliku: ``iris.csv``
     #. Pierwsza linią w pliku musi być nagłówkiem
@@ -397,7 +397,7 @@ Parsing simple CSV file
         #. Remove leading and trailing whitespaces
         #. Split line by whitespace
         #. Separate IP address and hosts names
-        #. Append IP address and hosts names to ``output``
+        #. Append IP address and hosts names to ``result``
 
     #. Merge hostnames for the same IP
 
@@ -409,7 +409,7 @@ Parsing simple CSV file
         #. Usuń białe znaki na początku i końcu linii
         #. Podziel linię po białych znakach
         #. Odseparuj adres IP i nazwy hostów
-        #. Dodaj adres IP i nazwy hostów do ``output``
+        #. Dodaj adres IP i nazwy hostów do ``result``
 
     #. Scal nazwy hostów dla tego samego IP
 
@@ -427,7 +427,7 @@ Parsing simple CSV file
 :Output:
     .. code-block:: python
 
-        output: Dict[str, List[str]] = {
+        result: Dict[str, List[str]] = {
             '127.0.0.1': ['localhost', 'astromatt'],
             '10.13.37.1': ['nasa.gov', 'esa.int', 'roscosmos.ru'],
             '255.255.255.255': ['broadcasthost'],
@@ -461,10 +461,10 @@ Parsing simple CSV file
         #. Separate IP address and hosts names
         #. Use one line ``if`` to check whether dot ``.`` is in the IP address
         #. If is present then protocol is IPv4 otherwise IPv6
-        #. Append IP address and hosts names to ``output``
+        #. Append IP address and hosts names to ``result``
 
     #. Merge hostnames for the same IP
-    #. ``output`` must be list of dicts (``List[dict]``)
+    #. ``result`` must be list of dicts (``List[dict]``)
 
 :Polish:
     #. Używając ``file.write()`` zapisz dane wejściowe z listingu poniżej do pliku ``hosts-advanced.txt``
@@ -476,10 +476,10 @@ Parsing simple CSV file
         #. Odseparuj adres IP i nazwy hostów
         #. Wykorzystaj jednolinikowego ``if`` do sprawdzenia czy jest kropka ``.`` w adresie IP
         #. Jeżeli jest obecna to protokół  jest IPv4, w przeciwnym przypadku IPv6
-        #. Dodaj adres IP i nazwy hostów do ``output``
+        #. Dodaj adres IP i nazwy hostów do ``result``
 
     #. Scal nazwy hostów dla tego samego IP
-    #. ``output`` ma być listą dictów (``List[dict]``)
+    #. ``result`` ma być listą dictów (``List[dict]``)
 
 :Input:
     .. code-block:: python
@@ -501,7 +501,7 @@ Parsing simple CSV file
 :Output:
     .. code-block:: python
 
-        output: List[Dict[str, Union[str, Set[str]]] = [
+        result: List[Dict[str, Union[str, Set[str]]] = [
             {'ip': '127.0.0.1', 'protocol': 'ipv4', 'hostnames': {'localhost', 'astromatt'}},
             {'ip': '10.13.37.1', 'protocol': 'ipv4', 'hostnames': {'nasa.gov', 'esa.int', 'roscosmos.ru'}},
             {'ip': '255.255.255.255', 'protocol': 'ipv4', 'hostnames': {'broadcasthost'}},

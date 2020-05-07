@@ -12,6 +12,6 @@ letter_position = median_low(alphabet)
 position = alphabet.index(letter_position)
 
 s = pd.Series(data, alphabet)
-output = s[position-3:position+4].sum()
+result = s[position-3:position+4].sum()
 
-print(output)
+print(result)

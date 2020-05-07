@@ -163,11 +163,11 @@ Example
 * Solution: :download:`solution/loop_for_example.py`
 
 :English:
-    #. Use ``DATA`` from "Input" section below
+    #. Use ``DATA`` from "Input" section (see below)
     #. Count occurrences of each color
 
 :Polish:
-    #. Użyj ``DATA`` z sekcji "Input" poniżej
+    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
     #. Zlicz wystąpienia każdego z kolorów
 
 :Input:
@@ -187,7 +187,9 @@ Counter
 * Solution: :download:`solution/loop_for_counter.py`
 
 :English:
-    #. Iterate over data from "Input" section and count occurrences of each number
+    #. Use ``DATA`` from "Input" section (see below)
+    #. Iterate over ``DATA``
+    #. Count occurrences of each number
     #. Create empty ``counter: Dict[int, int]``:
 
         * key - digit
@@ -201,7 +203,9 @@ Counter
     #. Compare results with "Output" section below
 
 :Polish:
-    #. Iterując po danych wejściowych z sekcji "Input" policz wystąpienia każdej z cyfr
+    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
+    #. Iteruj po ``DATA``
+    #. Policz wystąpienia każdej z cyfr
     #. Stwórz pusty ``counter: Dict[int, int]``:
 
         * klucz - cyfra
@@ -218,10 +222,10 @@ Counter
     .. code-block:: python
 
         DATA = [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0,
-                 0, 6, 5, 0, 0, 9, 7, 0, 4, 4, 8,
-                 2, 4, 0, 0, 1, 9, 1, 7, 8, 8, 9,
-                 1, 3, 5, 6, 8, 2, 8, 1, 3, 9, 5,
-                 4, 8, 1, 9, 6, 3]
+                0, 6, 5, 0, 0, 9, 7, 0, 4, 4, 8,
+                2, 4, 0, 0, 1, 9, 1, 7, 8, 8, 9,
+                1, 3, 5, 6, 8, 2, 8, 1, 3, 9, 5,
+                4, 8, 1, 9, 6, 3]
 
 :Output:
     .. code-block:: python
@@ -244,7 +248,7 @@ Segmentation
 * Solution: :download:`solution/loop_for_segmentation.py`
 
 :English:
-    #. For input data (see below)
+    #. Use ``DATA`` from "Input" section (see below)
     #. Count occurrences of each group
     #. Define groups:
 
@@ -260,7 +264,7 @@ Segmentation
     #. Compare results with "Output" section below
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+   #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
     #. Policz wystąpienia każdej z group
     #. Zdefiniuj grupy
 
@@ -279,10 +283,10 @@ Segmentation
     .. code-block:: python
 
         DATA = [1, 4, 6, 7, 4, 4, 4, 5, 1, 7, 0,
-                 0, 6, 5, 0, 0, 9, 7, 0, 4, 4, 8,
-                 2, 4, 0, 0, 1, 9, 1, 7, 8, 8, 9,
-                 1, 3, 5, 6, 8, 2, 8, 1, 3, 9, 5,
-                 4, 8, 1, 9, 6, 3]
+                0, 6, 5, 0, 0, 9, 7, 0, 4, 4, 8,
+                2, 4, 0, 0, 1, 9, 1, 7, 8, 8, 9,
+                1, 3, 5, 6, 8, 2, 8, 1, 3, 9, 5,
+                4, 8, 1, 9, 6, 3]
 
 :Output:
     .. code-block:: python

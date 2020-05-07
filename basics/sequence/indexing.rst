@@ -109,22 +109,22 @@ Select
 * Solution: :download:`solution/sequence_indexing_select.py`
 
 :English:
-    #. For given data input (see below)
+    #. Use ``DATA`` from "Input" section (see below)
     #. Write header (first line) to ``header: tuple`` variable
-    #. Create ``output: list``
-    #. Convert to ``list`` data from row at index 2, 6, 9 and add to ``output``
-    #. Convert to ``tuple`` data from row at index 12, 15, 16 and add to ``output``
-    #. Add empty ``set``, ``list`` and ``tuple`` to ``output``
+    #. Create ``result: list``
+    #. Convert to ``list`` data from row at index 2, 6, 9 and add to ``result``
+    #. Convert to ``tuple`` data from row at index 12, 15, 16 and add to ``result``
+    #. Add empty ``set``, ``list`` and ``tuple`` to ``result``
     #. Use only indexes
     #. Do not use ``for``, ``while`` or ``slice()``
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
     #. Zapisz nagłówek (pierwsza linia) do zmiennej ``header: tuple``
-    #. Stwórz ``data: list``
-    #. Przekonwertuj do ``list`` dane z wierszy o indeksach 2, 6, 9 i dodaj do ``data``
-    #. Przekonwertuj do ``tuple`` dane z wierszy o indeksach 12, 15, 16 i dodaj do ``data``
-    #. Dodaj pusty ``set``, ``list`` oraz ``tuple`` do ``data``
+    #. Stwórz ``result: list``
+    #. Przekonwertuj do ``list`` dane z wierszy o indeksach 2, 6, 9 i dodaj do ``result``
+    #. Przekonwertuj do ``tuple`` dane z wierszy o indeksach 12, 15, 16 i dodaj do ``result``
+    #. Dodaj pusty ``set``, ``list`` oraz ``tuple`` do ``result``
     #. Użyj tylko indeksów
     #. Nie używaj ``for``, ``while`` lub ``slice()``
 

@@ -135,12 +135,12 @@ Mean
 * Solution: :download:`solution/loop_nested_mean.py`
 
 :English:
-    #. For input data (see below)
+    #. Use ``DATA`` from "Input" section (see below)
     #. Separate header from data
     #. Calculate mean `Sepal length` value
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
     #. Oddziel nagłówek od danych
     #. Wylicz średnią wartość `Sepal length`
 
@@ -171,15 +171,15 @@ Unique keys from schema-less database
 * Solution: :download:`solution/loop_nested_unique_keys.py`
 
 :English:
-    #. For input data (see below)
-    #. Collect keys from all rows in one sequence ``output``
-    #. Sort ``output``
+    #. Use ``DATA`` from "Input" section (see below)
+    #. Collect keys from all rows in one sequence ``result``
+    #. Sort ``result``
     #. Print unique keys
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
-    #. Zbierz klucze z wszystkich wierszy w jednej sekwencji ``output``
-    #. Posortuj ``output``
+    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
+    #. Zbierz klucze z wszystkich wierszy w jednej sekwencji ``result``
+    #. Posortuj ``result``
     #. Wypisz unikalne klucze
 
 :Input:

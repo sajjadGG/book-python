@@ -8,5 +8,6 @@ DATA = np.array([
     [1, 0, 6, 0],
 ])
 
-output = DATA[1:4,1:4]
-print(output)
+result = DATA[1:4,1:4]
+
+print(result)

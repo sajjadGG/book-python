@@ -133,14 +133,14 @@ Create ``dict`` from two sequences
 
     header = ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
     data = [5.1, 3.5, 1.4, 0.2, 'setosa']
-    output = {}
+    result = {}
 
     for i in range(len(header)):
         key = header[i]
         value = data[i]
-        output[key] = value
+        result[key] = value
 
-    print(output)
+    print(result)
     # {
     #   'Sepal length': 5.1,
     #   'Sepal width': 3.5,
@@ -160,12 +160,12 @@ Create ``dict`` from two sequences
 
     header = ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
     data = [5.1, 3.5, 1.4, 0.2, 'setosa']
-    output = {}
+    result = {}
 
     for i, key in enumerate(header):
-        output[key] = data[i]
+        result[key] = data[i]
 
-    print(output)
+    print(result)
     # {
     #   'Sepal length': 5.1,
     #   'Sepal width': 3.5,
@@ -184,9 +184,9 @@ Create ``dict`` from two sequences
     header = ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
     data = [5.1, 3.5, 1.4, 0.2, 'setosa']
 
-    output = dict(zip(header, data))
+    result = dict(zip(header, data))
 
-    print(output)
+    print(result)
     # {
     #   'Sepal length': 5.1,
     #   'Sepal width': 3.5,
@@ -207,13 +207,13 @@ Assignments
 * Solution: :download:`solution/loop_dict_to_dict.py`
 
 :English:
-    #. For input data (see below)
-    #. Convert to ``output: Dict[str, str]``
+    #. Use ``DATA`` from "Input" section (see below)
+    #. Convert to ``result: Dict[str, str]``
     #. Results should be identical to output (see below)
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
-    #. Przekonwertuj do ``output: Dict[str, str]``
+    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
+    #. Przekonwertuj do ``result: Dict[str, str]``
     #. Rezultat powinien być identyczny do wyjściowego (patrz sekcja output)
 
 :Input:
@@ -234,7 +234,7 @@ Assignments
         from typing import Dict
 
 
-        output: Dict[str, str] = {
+        result: Dict[str, str] = {
             'Doctorate': '6',
             'Prof-school': '6',
             'Masters': '5',
@@ -259,7 +259,7 @@ Assignments
 * Solution: :download:`solution/loop_dict_to_list.py`
 
 :English:
-    #. For input data (see below)
+    #. Use ``DATA`` from "Input" section (see below)
     #. Separate header and data
     #. Print ``List[dict]``:
 
@@ -267,7 +267,7 @@ Assignments
         - value - measurement or species
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
     #. Odseparuj nagłówek i dane
     #. Wypisz ``List[dict]``:
 
@@ -308,7 +308,7 @@ Assignments
         from typing import List
 
 
-        output: List[dict] = [
+        result: List[dict] = [
             {'Sepal length': 5.8, 'Sepal width': 2.7, 'Petal length': 5.1, 'Petal width': 1.9, 'Species': 'virginica'},
             {'Sepal length': 5.1, 'Sepal width': 3.5, 'Petal length': 1.4, 'Petal width': 0.2, 'Species': 'setosa'},
             {'Sepal length': 5.7, 'Sepal width': 2.8, 'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
@@ -327,7 +327,7 @@ Label encoder
 * Solution: :download:`solution/loop_label_encoder.py`
 
 :English:
-    #. For input data (see below)
+    #. Use ``DATA`` from "Input" section (see below)
     #. Define:
 
         * ``features: List[tuple]`` - measurements
@@ -346,7 +346,7 @@ Label encoder
     #. Output must be identical to output data (see below)
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
     #. Zdefiniuj:
 
         * ``features: List[tuple]`` - pomiary

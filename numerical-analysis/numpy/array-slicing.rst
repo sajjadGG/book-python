@@ -290,9 +290,9 @@ Array Slicing
 :Output:
     .. code-block:: python
 
-        print(output)
-        # [[8 4]
-        #  [5 2]]
+        result: ndarray
+        # array([[8, 4],
+        #        [5, 2]])
 
 :The whys and wherefores:
     * Defining ``np.array``

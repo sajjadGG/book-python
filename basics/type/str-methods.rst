@@ -383,18 +383,18 @@ String Cleaning
 * Solution: :download:`solution/type_str_cleaning.py`
 
 :English:
-    #. For input data (see below)
+    #. Use data from "Input" section (see below)
     #. Expected value is ``Jana III Sobieskiego``
     #. Use only ``str`` methods to clean each variable
-    #. Compare with output data (see below)
+    #. Compare with output data (see "Output" section below)
     #. Discuss how to create generic solution which fit all cases
     #. Implementation of such generic function will be in :ref:`Cleaning text input` chapter
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Oczekiwana wartość ``Jana III Sobieskiego``
     #. Wykorzystaj tylko metody ``str`` do oczyszczenia każdej zmiennej
-    #. Porównaj wyniki z danymi wyjściowymi (patrz sekcja output)
+    #. Porównaj wyniki z danymi wyjściowymi (patrz sekcja "Output")
     #. Przeprowadź dyskusję jak zrobić rozwiązanie generyczne pasujące do wszystkich przypadków
     #. Implementacja takiej generycznej funkcji będzie w rozdziale :ref:`Cleaning text input`
 

@@ -321,9 +321,9 @@ TEMPLATE = """
 
 transform = XSLT(XML(TEMPLATE))
 data = parse(StringIO(DATA))
-output = transform(data)
+result = transform(data)
 
-df = pd.read_html(str(output))[0]
+df = pd.read_html(str(result))[0]
 
 df['Cost'] = df['Cost'].apply(lambda x: float(x.replace('$', '')))
 df['Cost'].mean()

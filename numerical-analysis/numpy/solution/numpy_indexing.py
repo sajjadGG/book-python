@@ -25,11 +25,12 @@ np.array([
 #        [1., 6.]])
 
 
-output = np.zeros(shape=(2,2), dtype=float)
-output[0,0] = DATA[0,2]
-output[0,1] = DATA[2,2]
-output[1,0] = DATA[0,0]
-output[1,1] = DATA[1,0]
-print(output)
+result = np.zeros(shape=(2,2), dtype=float)
+result[0,0] = DATA[0,2]
+result[0,1] = DATA[2,2]
+result[1,0] = DATA[0,0]
+result[1,1] = DATA[1,0]
+
+print(result)
 # array([[3., 9.],
 #        [1., 6.]])

@@ -42,14 +42,14 @@ Built-in Generators
 
     header = ['a', 'b', 'c']
     data = [1, 2, 3]
-    output = {}
+    result = {}
 
     for i in range(len(header)):
         key = header[i]
         value = data[i]
-        output[key] = value
+        result[key] = value
 
-    print(output)
+    print(result)
     # {'a': 1, 'b': 2, 'c': 3}
 
 
@@ -140,8 +140,8 @@ Built-in Generators
             return False
 
 
-    output = filter(is_adult, DATA)
-    print(list(output))
+    result = filter(is_adult, DATA)
+    print(list(result))
     # [
     #   {'name': 'Jan Twardowski', 'age': 21},
     #   {'name': 'Mark Watney', 'age': 25},
@@ -207,26 +207,26 @@ Built-in Generators
 
     header = ['a', 'b', 'c']
     data = [1, 2, 3]
-    output = {}
+    result = {}
 
     for i, _ in enumerate(header):
         key = header[i]
         value = data[i]
-        output[key] = value
+        result[key] = value
 
-    print(output)
+    print(result)
     # {'a': 1, 'b': 2, 'c': 3}
 
 .. code-block:: python
 
     header = ['a', 'b', 'c']
     data = [1, 2, 3]
-    output = {}
+    result = {}
 
     for i, header in enumerate(header):
-        output[header] = data[i]
+        result[header] = data[i]
 
-    print(output)
+    print(result)
     # {'a': 1, 'b': 2, 'c': 3}
 
 
@@ -275,16 +275,16 @@ Built-in Generators
 * Solution: :download:`solution/function_generators_task.py`
 
 :English:
-    #. Using generator expression to create ``output: List[int]`` with numbers from 1 to 33 which are divisible by 3
-    #. Filter ``output`` to contain only odd numbers
-    #. Cube all numbers in ``output``
-    #. Calculate arithmetic mean from ``output``
+    #. Using generator expression to create ``result: List[int]`` with numbers from 1 to 33 which are divisible by 3
+    #. Filter ``result`` to contain only odd numbers
+    #. Cube all numbers in ``result``
+    #. Calculate arithmetic mean from ``result``
 
 :Polish:
-    #. Używając wyrażenia generatorowego stwórz ``output: List[int]`` z liczbami z zakresu 1 do 33 podzielnymi przez 3
-    #. Przefiltruj ``output`` aby zawierał tylko liczby nieparzyste
-    #. Podnieś wszystkie liczby w ``output`` do sześcianu
-    #. Oblicz średnią arytmetyczną z ``output``
+    #. Używając wyrażenia generatorowego stwórz ``result: List[int]`` z liczbami z zakresu 1 do 33 podzielnymi przez 3
+    #. Przefiltruj ``result`` aby zawierał tylko liczby nieparzyste
+    #. Podnieś wszystkie liczby w ``result`` do sześcianu
+    #. Oblicz średnią arytmetyczną z ``result``
 
 :Hint:
     * ``mean = sum(...) / len(...)``

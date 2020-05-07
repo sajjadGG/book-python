@@ -25,7 +25,7 @@ DATA = [
 
 header = DATA[0]
 
-output = [
+result = [
     list(DATA[2]),
     list(DATA[6]),
     list(DATA[9]),
@@ -37,7 +37,7 @@ output = [
     tuple(),
 ]
 
-print(output)
+print(result)
 # [[5.1, 3.5, 1.4, 0.2, 'setosa'],
 #  [4.7, 3.2, 1.3, 0.2, 'setosa'],
 #  [4.9, 3.0, 1.4, 0.2, 'setosa'],

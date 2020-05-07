@@ -12,12 +12,12 @@ DATA = [
 ]
 
 header, *data = DATA
-output = []
+result = []
 
 for sepal_length, *others in data:
-    output.append(sepal_length)
+    result.append(sepal_length)
 
-mean = sum(output) / len(output)
+mean = sum(result) / len(result)
 
 print(mean)
 # 5.911111111111111

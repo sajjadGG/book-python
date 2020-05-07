@@ -1,13 +1,14 @@
 import csv
 
-output = r'../../_tmp/csv_relations.csv'
+FILE = r'/tmp/csv_relations.csv'
 
 
 class Astronaut:
-    def __init__(self, first_name, last_name, experience=()):
-        self.name = first_name
+    def __init__(self, first_name, last_name, missions=None):
+        self.first_name = first_name
         self.last_name = last_name
-        self.experience = list(experience)
+        self.missions = missions if missions else []
+
 
 class Mission:
     def __init__(self, year, name):
@@ -16,43 +17,35 @@ class Mission:
 
 
 CREW = [
-    Astronaut('Jan Twardowski', experience=(
+    Astronaut('Jan', 'Twardowski', missions=[
         Mission(1969, 'Apollo 11'),
-        Mission(2024, 'Artemis 3'))),
+        Mission(2024, 'Artemis 3')]),
 
-    Astronaut('Mark Watney', experience=(
-        Mission(2035, 'Ares 3'))),
+    Astronaut('Mark', 'Watney', missions=[
+        Mission(2035, 'Ares 3')]),
 
-    Astronaut('Melissa Lewis'),
+    Astronaut('Melissa', 'Lewis'),
 ]
 
-output = []
 
-for contact in CREW:
-    addresses = []
+result = []
 
-    for address in contact.addresses:
-        dane = address.__dict__.values()
-        address = ', '.join([str(x) for x in dane])
-        addresses.append(address)
-
-    contact_data = contact.__dict__
-    contact_data['addresses'] = '; '.join(addresses)
-    output.append(contact_data)
+for astronaut in CREW:
+    astro = astronaut.__dict__
+    missions = [list(x.__dict__.values()) for x in astronaut.missions]
+    astro['missions'] = ', '.join(map(str, missions))
+    result.append(astro)
 
 
-fieldnames = set()
-
-for contact in output:
-    for field_name in contact.keys():
-        fieldnames.add(field_name)
+header = set(key for key in astro.keys()
+                    for astro in result)
 
 
-with open(output, mode='w', encoding='utf-8') as file:
+with open(FILE, mode='w') as file:
 
     writer = csv.DictWriter(
         f=file,
-        fieldnames=sorted(fieldnames, reverse=True),
+        fieldnames=sorted(header, reverse=True),
         delimiter=',',
         quotechar='"',
         quoting=csv.QUOTE_ALL,
@@ -60,5 +53,5 @@ with open(output, mode='w', encoding='utf-8') as file:
 
     writer.writeheader()
 
-    for row in output:
+    for row in result:
         writer.writerow(row)

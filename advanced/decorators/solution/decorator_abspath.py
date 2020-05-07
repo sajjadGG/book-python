@@ -34,5 +34,5 @@ def print_file(filename: str) -> str:
 
 
 if __name__ == '__main__':
-    output = print_file('iris.csv')
-    print(output)
+    result = print_file('iris.csv')
+    print(result)

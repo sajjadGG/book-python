@@ -27,6 +27,6 @@ ALPHABET = {
 }
 
 letter = input('Type letter: ')
-output = ALPHABET.get(letter, "Pilots don't say that")
+result = ALPHABET.get(letter, "Pilots don't say that")
 
-print(output)
+print(result)

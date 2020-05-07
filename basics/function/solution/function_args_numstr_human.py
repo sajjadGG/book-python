@@ -14,6 +14,9 @@ NUMBER_DICT = {
     '.': 'and',
 }
 
+DATA = [1969, 31337, 13.37, 31.337, -1969, -31.337, -49.35]
+
+
 
 def number_to_str(number: Union[int, float]) -> str:
     """

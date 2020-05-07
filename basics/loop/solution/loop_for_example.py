@@ -1,23 +1,23 @@
 DATA = ['red', 'green', 'blue', 'red', 'green', 'red', 'blue']
 
-output = {}
+result = {}
 
 for color in DATA:
-    if color not in output:
-        output[color] = 1
+    if color not in result:
+        result[color] = 1
     else:
-        output[color] += 1
+        result[color] += 1
 
-print(output)
+print(result)
 # {'red': 3, 'green': 2, 'blue': 2}
 
 
 ## Alternative solution
 DATA = ['red', 'green', 'blue', 'red', 'green', 'red', 'blue']
-output = []
+result = []
 
 for color in DATA:
-    output[color] = DATA.get(color, 0) + 1
+    result[color] = DATA.get(color, 0) + 1
 
-print(output)
+print(result)
 # {'red': 3, 'green': 2, 'blue': 2}

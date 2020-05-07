@@ -359,13 +359,13 @@ Cleaning text input
 * Solution: :download:`solution/function_args_str_clean.py`
 
 :English:
-    #. For given input data (see below)
+    #. Use ``DATA`` from "Input" section (see below)
     #. Write function cleaning up data
     #. Function takes one argument of type ``str``
     #. Function returns cleaned text
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
     #. Napisz funkcję czyszczącą dane
     #. Funkcja przyjmuje jeden argument typu ``str``
     #. Funkcja zwraca oczyszczony tekst
@@ -417,14 +417,14 @@ Number to human readable
 * Solution: :download:`solution/function_args_numstr_human.py`
 
 :English:
-    #. For input data (see below)
+    #. Use data from "Input" section (see below)
     #. Define function converting ``int`` or ``float`` to text form
     #. Text form must be in proper grammar form
     #. Max 6 digits before decimal separator (point ``.``)
     #. Max 5 digits after decimal separator (point ``.``)
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zdefiniuj funkcję konwertującą ``int`` lub ``float`` na formę tekstową
     #. Forma tekstowa musi być poprawna gramatycznie
     #. Max 6 cyfr przed separatorem dziesiętnym (point ``.``)

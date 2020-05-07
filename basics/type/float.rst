@@ -116,13 +116,13 @@ Float Example
 * Solution: :download:`solution/type_float_example.py`
 
 :English:
-    #. Input data (see below)
+    #. Use data from "Input" section (see below)
     #. Use Imperial (US) measurements system
     #. Convert to metric (SI) system
     #. Speed limit round to one decimal place
 
 :Polish:
-    #. Dane wejściowe (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Używają system Imperialny (US)
     #. Przelicz je na system metryczny (układ SI)
     #. Ograniczenie prędkości zaokrąglij do jednego miejsca po przecinku

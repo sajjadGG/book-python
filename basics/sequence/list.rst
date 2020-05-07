@@ -288,11 +288,11 @@ Create
 * Solution: :download:`solution/sequence_list_create.py`
 
 :English:
-    #. For given data input (see below)
+    #. Use data from "Input" section (see below)
     #. Create a ``list`` representing each row
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Stwórz ``list`` reprezentujący każdy wiersz
 
 :Input:
@@ -315,13 +315,13 @@ Modify
 * Solution: :download:`solution/sequence_list_modify.py`
 
 :English:
-    #. For given data input (see below)
+    #. Use data from "Input" section (see below)
     #. Insert at index zero of ``a`` list species name from ``b`` (setosa)
     #. Append to the ``b`` list species name popped from ``a`` (virginica)
     #. From list ``c`` delete species
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Na listę ``a`` na pozycję o indeksie 0 wstaw gatunek pobrany z listy ``b`` (setosa)
     #. Na koniec listy ``b`` wstaw gatunek pobrany z listy ``a`` (virginica)
     #. Z listy ``c`` usuń gatunek

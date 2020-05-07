@@ -37,8 +37,8 @@ labels = [species for *_,species in data]
 labels_train = labels[:pivot]
 labels_test = labels[pivot:]
 
-output = features_train, features_test, labels_train, labels_test
-print(output)
+result = features_train, features_test, labels_train, labels_test
+print(result)
 
 
 
@@ -49,19 +49,19 @@ print(output)
 # features_test = [X for *X,y in data[pivot:]]
 # labels_train = [y for *X,y in data[:pivot]]
 # labels_test = [y for *X,y in data[pivot:]]
-# output = features_train, features_test, labels_train, labels_test
-# print(output)
+# result = features_train, features_test, labels_train, labels_test
+# print(result)
 
 
 ## Alternative solution
 ## not optimized (4 loops)
-# output = (
+# result = (
 #     [X for *X,y in data[:pivot]],
 #     [X for *X,y in data[pivot:]],
 #     [y for *X,y in data[:pivot]],
 #     [y for *X,y in data[pivot:]],
 # )
-# print(output)
+# print(result)
 
 
 ## Alternative solution

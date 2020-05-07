@@ -7,9 +7,9 @@ DATA = [
     {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'},
 ]
 
-output = set()
+result = set()
 
 for row in DATA:
-    output.update(row.keys())
+    result.update(row.keys())
 
-print(sorted(output))
+print(sorted(result))

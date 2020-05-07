@@ -178,13 +178,13 @@ Create
 * Solution: :download:`solution/sequence_tuple_create.py`
 
 :English:
-    #. For given data input (see below)
+    #. Use data from "Input" section (see below)
     #. Create a ``tuple`` representing all Species
     #. Calculate mean for each numerical values column
     #. To convert table use multiline select with ``alt`` key in your IDE
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Stwórz ``tuple`` z nazwami gatunków
     #. Wylicz średnią arytmetyczną dla każdej z kolumn numerycznych
     #. Do przekonwertowania tabelki wykorzystaj zaznaczanie wielu linijek za pomocą klawisza ``alt`` w Twoim IDE

@@ -7,17 +7,17 @@ DATA = {
     1: ['Kindergarten'],
 }
 
-output = {}
+result = {}
 
 for level, degrees in DATA.items():
     for education in degrees:
-        output[education] = str(level)
+        result[education] = str(level)
 
-print(output)
+print(result)
 
 
 ## Alternative solution
-# output = {education: str(level)
+# result = {education: str(level)
 #     for level, degrees in DATA.items()
 #         for education in degrees
 # }

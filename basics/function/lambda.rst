@@ -60,8 +60,8 @@ Example 2
             return False
 
 
-    output = filter(is_even, DATA)
-    print(list(output))
+    result = filter(is_even, DATA)
+    print(list(result))
     # [2, 4]
 
 .. code-block:: python
@@ -73,16 +73,16 @@ Example 2
         return x % 2 == 0
 
 
-    output = filter(is_even, DATA)
-    print(list(output))
+    result = filter(is_even, DATA)
+    print(list(result))
     # [2, 4]
 
 .. code-block:: python
 
     DATA = [1, 2, 3, 4]
 
-    output = filter(lambda x: x % 2 == 0, DATA)
-    print(list(output))
+    result = filter(lambda x: x % 2 == 0, DATA)
+    print(list(result))
     # [2, 4]
 
 Example 3
@@ -100,13 +100,13 @@ Example 3
         else:
             return False
 
-    system_users = []
+    result = []
 
     for user in DATA:
         if is_system_user(user):
-            system_users.append(user)
+            result.append(user)
 
-    print(system_users)
+    print(result)
     # [{'user': 'root', 'uid': 0}]
 
 
@@ -118,9 +118,9 @@ Example 3
     ]
 
 
-    system_users = filter(lambda x: x['uid'] < 1000, DATA)
+    result = filter(lambda x: x['uid'] < 1000, DATA)
 
-    print(list(system_users))
+    print(list(result))
     # [{'user': 'root', 'uid': 0}]
 
 Assignments
@@ -134,17 +134,17 @@ Built-in Generators
 * Solution: :download:`solution/function_lambda_task.py`
 
 :English:
-    #. Using generator expression to create ``output: List[int]`` with numbers from 1 to 33 which are divisible by 3
-    #. Filter ``output`` to contain only odd numbers
-    #. Cube all numbers in ``output``
-    #. Calculate arithmetic mean from ``output``
+    #. Using generator expression to create ``result: List[int]`` with numbers from 1 to 33 which are divisible by 3
+    #. Filter ``result`` to contain only odd numbers
+    #. Cube all numbers in ``result``
+    #. Calculate arithmetic mean from ``result``
     #. Użyj funkcji ``lambda``
 
 :Polish:
-    #. Używając wyrażenia generatorowego stwórz ``output: List[int]`` z liczbami z zakresu 1 do 33 podzielnymi przez 3
-    #. Przefiltruj ``output`` aby zawierał tylko liczby nieparzyste
-    #. Podnieś wszystkie liczby w ``output`` do sześcianu
-    #. Oblicz średnią arytmetyczną z ``output``
+    #. Używając wyrażenia generatorowego stwórz ``result: List[int]`` z liczbami z zakresu 1 do 33 podzielnymi przez 3
+    #. Przefiltruj ``result`` aby zawierał tylko liczby nieparzyste
+    #. Podnieś wszystkie liczby w ``result`` do sześcianu
+    #. Oblicz średnią arytmetyczną z ``result``
     #. Użyj funkcji ``lambda``
 
 :Hint:

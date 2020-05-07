@@ -160,8 +160,8 @@ From sequence
         def __repr__(self):
             return f'{self.species}'
 
-    output = [Iris(*row) for row in DATA]
-    print(output)
+    result = [Iris(*row) for row in DATA]
+    print(result)
     # [versicolor, setosa]
 
 From mapping
@@ -201,8 +201,8 @@ From mapping
             return f'{self.species}'
 
 
-    output = [Iris(**row) for row in DATA]
-    print(output)
+    result = [Iris(**row) for row in DATA]
+    print(result)
     # ['versicolor', 'setosa']
 
 
@@ -267,8 +267,8 @@ Print formatting
     lastname = 'Twardowski'
     location = 'Moon'
 
-    output = 'Astronaut {firstname} {lastname} on the {location}'.format(**locals())
-    print(output)
+    result = 'Astronaut {firstname} {lastname} on the {location}'.format(**locals())
+    print(result)
     # Astronaut Jan Twardowski on the Moon
 
 Common configuration
@@ -424,13 +424,13 @@ Function Args/Kwargs Arguments
     #. Remove ``species`` column
     #. Separate header from measurements
     #. For each line extract values by splitting lines by coma ``,``
-    #. Create ``output: List[dict]`` by zipping header and measurements:
+    #. Create ``result: List[dict]`` by zipping header and measurements:
 
         - key: column name from the header
         - value: measurement at the position
 
     #. Create function ``mean(**kwargs)``, function
-    #. Iterate over ``output`` and call ``mean()`` by passing arguments as keywords
+    #. Iterate over ``result`` and call ``mean()`` by passing arguments as keywords
     #. Print mean for each row
 
 :Polish:
@@ -438,13 +438,13 @@ Function Args/Kwargs Arguments
     #. Usuń kolumnę ``species``
     #. Odseparuj nagłówek od pomiarów
     #. Wyciągnij wartości z każdej linii przez podział jej po przecinku ``,``
-    #. Stwórz ``output: List[dict]`` poprzez scalenie nagłówka i pomiarów z każdego wiersza
+    #. Stwórz ``result: List[dict]`` poprzez scalenie nagłówka i pomiarów z każdego wiersza
 
         - klucz: nazwa kolumny z nagłówka
         - wartość: pomiar z odpowiedniej kolumny
 
     #. Stwórz funkcję ``mean(**kwargs)``
-    #. Iterując po ``output`` wywołuj ``mean()`` podając argumenty nazwanie
+    #. Iterując po ``result`` wywołuj ``mean()`` podając argumenty nazwanie
     #. Wypisz średnią dla każdego wiersza
 
 :Non-functional requirements:
@@ -457,7 +457,7 @@ Function Args/Kwargs Arguments
         header: list
         # ['sepal_length', 'sepal_width' ,'petal_length', 'petal_width']
 
-        output: List[Dict[str, float]] = [
+        result: List[Dict[str, float]] = [
             {'sepal_length': 5.4, 'sepal_width': 3.9, 'petal_length': 1.3, 'petal_width': 0.4},
             {'sepal_length': 5.9, 'sepal_width': 3.0, 'petal_length': 5.1, 'petal_width': 1.8},
             {'sepal_length': 6.0, 'sepal_width': 3.4, 'petal_length': 4.5, 'petal_width': 1.6},

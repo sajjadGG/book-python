@@ -24,11 +24,11 @@ DATA = [
 ]
 
 header, *data = DATA
-output = []
+result = []
 
 for values in data:
     pair = zip(header, values)
-    output.append(dict(pair))
+    result.append(dict(pair))
 
     ## Alternative solution
     # row = {}
@@ -38,10 +38,10 @@ for values in data:
     #     value = values[i]
     #     row[key] = value
     #
-    # output.append(row)
+    # result.append(row)
 
     ## Alternative solution
-    # output.append({key: values[i] for i, key in enumerate(header)})
+    # result.append({key: values[i] for i, key in enumerate(header)})
 
 
-print(output)
+print(result)

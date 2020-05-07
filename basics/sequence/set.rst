@@ -342,7 +342,7 @@ Create
 * Solution: :download:`solution/sequence_set_create.py`
 
 :English:
-    #. For given data input (see below)
+    #. Use data from "Input" section (see below)
     #. Create ``set`` representing first row
     #. Values from second row add to ``set`` using ``.add()``
     #. From third row create ``set`` and add it with ``.update()``
@@ -350,7 +350,7 @@ Create
     #. From fifth row create ``list`` and add it with ``.update()``
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Stwórz ``my_set: set`` reprezentujący pierwszy wiersz
     #. Wartości z drugiego wiersza dodawaj do ``my_set`` za pomocą ``.add()``
     #. Na podstawie trzeciego wiersza stwórz ``set`` i dodaj go za pomocą ``.update()``

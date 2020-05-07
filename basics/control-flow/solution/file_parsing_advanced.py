@@ -12,7 +12,7 @@ DATA = """
 255.255.255.255 broadcasthost
 ::1             localhost
 """
-output = []
+result = []
 
 with open(FILE, mode='w') as file:
     file.write(DATA)
@@ -37,20 +37,20 @@ for line in hosts_file:
     ip, *hostnames = line.split()
     found = False
 
-    for host in output:
+    for host in result:
         if host['ip'] == ip:
             host['hostnames'].update(hostnames)
             found = True
             break
 
     if not found:
-        output.append({
+        result.append({
             'ip': ip,
             'hostnames': set(hostnames),
             'protocol': 'IPv4' if '.' in ip else 'IPv6'
         })
 
-print(output)
+print(result)
 # [{'ip': '127.0.0.1', 'hostnames': {'astromatt', 'localhost'}, 'protocol': 'IPv4'},
 #  {'ip': '10.13.37.1', 'hostnames': {'nasa.gov', 'esa.int', 'roscosmos.ru'}, 'protocol': 'IPv4'},
 #  {'ip': '255.255.255.255', 'hostnames': {'broadcasthost'}, 'protocol': 'IPv4'},
@@ -58,12 +58,12 @@ print(output)
 
 
 ## Alternative solution
-# for record in output:
+# for record in result:
 #     if record['ip'] == ip:
 #         record['hostnames'].update(hostnames)
 #         break
 # else:
-#     output.append({
+#     result.append({
 #         'hostnames': set(hostnames),
 #         'protocol': 'IPv4' if '.' in ip else 'IPv6',
 #         'ip': ip,

@@ -266,26 +266,26 @@ Local Scope
 Assignments
 ===========
 
-Wanted
+Filter
 ------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/function_scope_wanted.py`
+* Solution: :download:`solution/function_scope_filter.py`
 
 :English:
-    #. For given input data (see below)
+    #. Use ``DATA`` from "Input" section (see below)
     #. Separate header (first line) from data
-    #. Define ``wanted: Set[str]`` with 'setosa' and 'versicolor'
+    #. Define ``select: Set[str]`` with 'setosa' and 'versicolor'
     #. Iterate over data and split row into ``features`` and ``label`` (last)
     #. Define function which sums ``features``, only when ``label`` is in ``wanted``
     #. When ``label`` is not in ``wanted`` return ``0`` (zero)
     #. Print sum
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
     #. Oddziel nagłówek (pierwsza linia) od danych
-    #. Zdefiniuj ``wanted: Set[str]`` z 'setosa' oraz 'versicolor'
+    #. Zdefiniuj ``select: Set[str]`` z 'setosa' oraz 'versicolor'
     #. Iterując po danych rozdziel wiersz na ``features`` i ``label`` (ostatni)
     #. Zdefiniuj funkcję sumującą ``features``, tylko gdy ``label`` jest w ``wanted``
     #. Gdy ``label`` nie występuje w ``wanted`` zwróć ``0`` (zero)
@@ -310,7 +310,7 @@ Wanted
 :Output:
     .. code-block:: python
 
-        output: float
+        result: float
         # 74.9
 
 Roman numbers
@@ -331,7 +331,7 @@ Roman numbers
 :Input:
     .. code-block:: python
 
-        CONVERSION_TABLE = {
+        CONVERSION = {
             'I': 1,
             'II': 2,
             'III': 3,

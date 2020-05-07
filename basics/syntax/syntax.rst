@@ -177,7 +177,7 @@ Pyton Syntax
 
 :Polish:
     #. Stwórz skrypt Python
-    #. Na górze pliku dodaj wielolinijkowy komentarz z opisem programu (punkty do wykonia z tego zadania)
+    #. Na górze pliku dodaj wieloliniowy komentarz z opisem programu (punkty do wykonania z tego zadania)
     #. Zadeklaruj zmienną ``name`` i ustaw jej wartość na Twoje imię
     #. Dodaj komentarz "inline" do zmiennej o treści: "This is my name"
     #. Wypisz "Hello World NAME", gdzie NAME to Twoje imię (zmienna ``name``)

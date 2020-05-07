@@ -303,7 +303,7 @@ Split train/test
 * Solution: :download:`solution/sequence_slice_split_train_test.py`
 
 :English:
-    #. For input data (see below)
+    #. Use ``DATA`` from "Input" section (see below)
     #. Write header (first line) to ``header`` variable
     #. Write data without header to ``data`` variable
     #. Calculate pivot point: number records in ``data`` multiplied by PERCENT (division ratio below)
@@ -316,7 +316,7 @@ Split train/test
     #. From ``data`` write test data from pivot to end
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
     #. Zapisz nagłówek (pierwsza linia) do zmiennej ``header``
     #. Zapisz dane bez nagłówka do zmiennej ``data``
     #. Wylicz punkt podziału: ilość rekordów w ``data`` razy PROCENT (proporcja podziału poniżej)
@@ -401,14 +401,14 @@ Slicing text
 * Solution: :download:`solution/sequence_slice_text.py`
 
 :English:
-    #. For input data (see below)
+    #. Use data from "Input" section (see below)
     #. Remove title and military rank in each variable
     #. Remove also whitespaces at the beginning and end of a text
     #. Use only ``slice`` to clean text
     #. Compare with output data (see below)
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Usuń tytuł naukowy i stopień wojskowy z każdej zmiennej
     #. Usuń również białe znaki na początku i końcu tekstu
     #. Użyj tylko ``slice`` do oczyszczenia tekstu

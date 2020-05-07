@@ -12,20 +12,20 @@ DATA = [
 ]
 
 header, *data = DATA
-wanted = {'setosa', 'versicolor'}
+select = {'setosa', 'versicolor'}
 
 
 def sum_if(features, label):
-    if label in wanted:
+    if label in select:
         return sum(features)
     else:
         return 0
 
 
-output = 0
+result = 0
 
 for *features, label in data:
-    output += sum_if(features, label)
+    result += sum_if(features, label)
 
 
 ## Alternative

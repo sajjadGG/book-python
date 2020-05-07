@@ -7,7 +7,7 @@ DATA = """
 ::1             localhost
 """
 
-output = {}
+result = {}
 
 with open(FILE, mode='w') as file:
     file.write(DATA)
@@ -19,13 +19,13 @@ with open(FILE) as file:
 
         ip, *hosts = line.strip().split()
 
-        if ip in output:
-            output[ip] += hosts
+        if ip in result:
+            result[ip] += hosts
         else:
-            output[ip] = hosts
+            result[ip] = hosts
 
 
-print(output)
+print(result)
 # {'127.0.0.1': ['localhost', 'astromatt'],
 #  '10.13.37.1': ['nasa.gov', 'esa.int', 'roscosmos.ru'],
 #  '255.255.255.255': ['broadcasthost'],

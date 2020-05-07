@@ -10,12 +10,12 @@ Loop Information Recap
 .. code-block:: python
     :caption: Iterative approach to applying function to elements
 
-    output = []
+    result = []
 
     for x in range(0,5):
-        output.append(x+10)
+        result.append(x+10)
 
-    print(output)
+    print(result)
     # [10, 11, 12, 13, 14]
 
 
@@ -23,7 +23,7 @@ Comprehensions Syntax
 =====================
 .. code-block:: text
 
-    output = [<RETURN> for <VARIABLE> in <ITERABLE>]
+    result = [<RETURN> for <VARIABLE> in <ITERABLE>]
 
 .. code-block:: python
 
@@ -199,13 +199,13 @@ Conditional Comprehension
 .. code-block:: python
     :caption: Iterative approach to applying function to selected elements
 
-    output = []
+    result = []
 
     for x in range(0, 5):
         if x % 2 == 0:
-            output.append(x)
+            result.append(x)
 
-    print(output)
+    print(result)
     # [0, 2, 4]
 
 .. code-block:: python
@@ -370,13 +370,13 @@ Quick parsing lines
         '5.7,2.8,4.1,1.3,versicolor',
     ]
 
-    output = []
+    result = []
 
     for row in DATA:
         row = row.split(',')
-        output.append(row)
+        result.append(row)
 
-    print(output)
+    print(result)
     # [
     #   ['5.8', '2.7', '5.1', '1.9', 'virginica'],
     #   ['5.1', '3.5', '1.4', '0.2', 'setosa'],
@@ -392,9 +392,9 @@ Quick parsing lines
         '5.7,2.8,4.1,1.3,versicolor',
     ]
 
-    output = [row.split(',') for row in DATA]
+    result = [row.split(',') for row in DATA]
 
-    print(output)
+    print(result)
     # [
     #   ['5.8', '2.7', '5.1', '1.9', 'virginica'],
     #   ['5.1', '3.5', '1.4', '0.2', 'setosa'],
@@ -450,11 +450,11 @@ Nested
         1: ['Kindergarten'],
     }
 
-    output = {education: str(key)
+    result = {education: str(key)
               for key, names in DATA.items()
                  for education in names}
 
-    print(output)
+    print(result)
     # {
     #   'Doctorate': '6',
     #   'Prof-school': '6',
@@ -511,7 +511,7 @@ Comprehensions
 * Solution: :download:`solution/loop_comprehension.py`
 
 :English:
-    #. For given data structure ``DATA: List[tuple]`` (see below)
+    #. Use ``DATA`` from "Input" section (see below)
     #. Separate header from data
     #. Calculate pivot point: length of data times given percent
     #. Using List Comprehension split data to:
@@ -526,12 +526,12 @@ Comprehensions
         * ``labels_train: List[str]`` - labels to train - 60%
         * ``labels_test: List[str]`` - labels to test - 40%
 
-    #. Create ``output: Tuple[list, list, list, list]`` with features (training and test) and labels (training and test)
-    #. Print ``output``
+    #. Create ``result: Tuple[list, list, list, list]`` with features (training and test) and labels (training and test)
+    #. Print ``result``
     #. Compare results with "Output" section below
 
 :Polish:
-    #. Dana jest struktura danych ``DATA: List[tuple]`` (patrz sekcja input)
+    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
     #. Odseparuj nagłówek od danych
     #. Wylicz punkt podziału: długość danych razy zadany procent
     #. Używając List Comprehension podziel dane na:
@@ -546,8 +546,8 @@ Comprehensions
         - ``labels_train: List[str]`` - labels do uczenia - 60%
         - ``labels_test: List[str]`` - labels do testów - 40%
 
-    #. Stwórz ``output: Tuple[list, list, list, list]`` z cechami (treningowymi i testowymi) oraz labelkami (treningowymi i testowymi)
-    #. Wypisz ``output``
+    #. Stwórz ``result: Tuple[list, list, list, list]`` z cechami (treningowymi i testowymi) oraz labelkami (treningowymi i testowymi)
+    #. Wypisz ``result``
     #. Porównaj wynik z sekcją "Output" poniżej
 
 :Input:
@@ -604,7 +604,7 @@ Comprehensions
         # ['setosa', 'versicolor', 'setosa', 'versicolor', 'virginica',
         #  'versicolor', 'virginica', 'versicolor', 'setosa']
 
-        output: Tuple[list, list, list, list]
+        result: Tuple[list, list, list, list]
         # ([(5.8, 2.7, 5.1, 1.9), (5.1, 3.5, 1.4, 0.2), (5.7, 2.8, 4.1, 1.3),
         #   (6.3, 2.9, 5.6, 1.8), (6.4, 3.2, 4.5, 1.5), (4.7, 3.2, 1.3, 0.2),
         #   (7.0, 3.2, 4.7, 1.4), (7.6, 3.0, 6.6, 2.1), (4.9, 3.0, 1.4, 0.2),
