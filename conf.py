@@ -57,7 +57,7 @@ import subprocess
 import sys
 from datetime import date
 
-needs_sphinx = '2.4'
+needs_sphinx = '3.0'
 
 imgmath_image_format = 'png'
 imgmath_latex = 'latex'
