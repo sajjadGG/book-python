@@ -2,6 +2,102 @@
 Commandline Arguments
 *********************
 
+Alternatives
+============
+
+Typer
+-----
+* https://typer.tiangolo.com
+* Typer is library for building CLI applications that users will love using and developers will love creating. Based on Python 3.6+ type hints.
+* The key features are:
+
+    * Intuitive to write: Great editor support. Completion everywhere. Less time debugging. Designed to be easy to use and learn. Less time reading docs.
+    * Easy to use: It's easy to use for the final users. Automatic help, and automatic completion for all shells.
+    * Short: Minimize code duplication. Multiple features from each parameter declaration. Fewer bugs.
+    * Start simple: The simplest example adds only 2 lines of code to your app: 1 import, 1 function call.
+    * Grow large: Grow in complexity as much as you want, create arbitrarily complex trees of commands and groups of subcommands, with options and arguments.
+
+.. code-block:: console
+
+    $ pip install typer
+
+.. code-block:: python
+
+    import typer
+
+    app = typer.Typer()
+
+
+    @app.command()
+    def hello(name: str):
+        typer.echo(f"Hello {name}")
+
+
+    @app.command()
+    def goodbye(name: str, formal: bool = False):
+        if formal:
+            typer.echo(f"Goodbye Ms. {name}. Have a good day.")
+        else:
+            typer.echo(f"Bye {name}!")
+
+
+    if __name__ == "__main__":
+        app()
+
+.. code-block:: console
+    :caption: You have 2 subcommands (the 2 functions): goodbye and hello
+
+    $ python main.py --help
+    Usage: main.py [OPTIONS] COMMAND [ARGS]...
+
+    Options:
+      --install-completion  Install completion for the current shell.
+      --show-completion     Show completion for the current shell, to copy it or customize the installation.
+      --help                Show this message and exit.
+
+    Commands:
+      goodbye
+      hello
+
+.. code-block:: console
+    :captiion: Now get the --help for hello
+
+    $ python main.py hello --help
+
+    Usage: main.py hello [OPTIONS] NAME
+
+    Options:
+      --help  Show this message and exit.
+
+.. code-block:: console
+    :caption: And now get the --help for goodbye. Automatic --formal and --no-formal for the bool option
+
+    $ python main.py goodbye --help
+
+    Usage: main.py goodbye [OPTIONS] NAME
+
+    Options:
+      --formal / --no-formal
+      --help                  Show this message and exit.
+
+.. code-block:: console
+    :caption: And if you use it with the hello command
+
+    $ python main.py hello Camila
+    Hello Camila
+
+    # And with the goodbye command
+    $ python main.py goodbye Camila
+    Bye Camila!
+
+    # And with --formal
+    $ python main.py goodbye --formal Camila
+    Goodbye Ms. Camila. Have a good day.
+
+
+docopt
+------
+
 
 ``argparse``
 ============
