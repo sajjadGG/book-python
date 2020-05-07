@@ -277,6 +277,7 @@ OOP Data Modeling
 * Solution: :download:`solution/oop_init_model.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Model the data using classes
     #. Create instances for each record
     #. Create instances of a first class using positional arguments
@@ -284,6 +285,7 @@ OOP Data Modeling
     #. Using ``__dict__`` print all fields from each instance
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zamodeluj dane za pomocą klas
     #. Stwórz instancje dla każdego wpisu
     #. Twórz instancje pierwszej klasy używając argumentów pozycyjnych

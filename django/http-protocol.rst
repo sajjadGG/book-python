@@ -16,8 +16,8 @@ wget
 
 DNS
 ===
-- /etc/hosts
-- DNS
+* /etc/hosts
+* DNS
 
 HTTP Protocol
 =============
@@ -30,7 +30,7 @@ HTTP/1.1 vs. HTTP/2.0
 
 URI vs URL
 ----------
-- SEO friendly URL
+* SEO friendly URL
 
 text protocol
 -------------
@@ -46,18 +46,18 @@ Status Code
 
 Header
 ------
-- Host
-- ETag
-- Last-Modified
-- Accept
-- Accept-Encoding
-- Accept-Language
-- Referer
-- Cache-Control
-- Cookie
-- DNT
-- User-Agent
-- X-*
+* Host
+* ETag
+* Last-Modified
+* Accept
+* Accept-Encoding
+* Accept-Language
+* Referer
+* Cache-Control
+* Cookie
+* DNT
+* User-Agent
+* X-*
 
 ``q=...`` parameters
 --------------------
@@ -101,14 +101,14 @@ stateless
 
 sessions
 --------
-- bazy danych
-- cache
-- pliki
-- memory
+* bazy danych
+* cache
+* pliki
+* memory
 
 Cookies
 -------
-- ustawa o cookies
+* ustawa o cookies
 
 HTTP Methods
 ============
@@ -119,18 +119,18 @@ HTTP Methods
 
 GET vs POST
 -----------
-- przekazywanie parametrów
-- ``?zmienna1=wartosc&zmienna2=wartosc``
-- przesylanie plikow
-- przesylanie tablicy zmiennych
-- bezpieczeństwo
+* przekazywanie parametrów
+* ``?zmienna1=wartosc&zmienna2=wartosc``
+* przesylanie plikow
+* przesylanie tablicy zmiennych
+* bezpieczeństwo
 
 POST vs. PUT
 ------------
 
 POST and CSRF
 -------------
-- csrf_token
+* csrf_token
 
 PATCH?!
 -------

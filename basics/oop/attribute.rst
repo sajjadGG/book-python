@@ -34,17 +34,17 @@ About
 
     Bucket with Water
 
-        Properties
-        - color
-        - width
-        - height
-        - radius
-        - capacity
-        - net mass (without water)
+        Properties:
+            - color
+            - width
+            - height
+            - radius
+            - capacity
+            - net mass (without water)
 
-        State
-        - volume  (how much water is currenty in bucket)
-        - gross mass = net mass + water mass (water mass depends on its volume used))
+        State:
+            - volume  (how much water is currenty in bucket)
+            - gross mass = net mass + water mass (water mass depends on its volume used))
 
 .. figure:: img/bucket.jpg
     :width: 75%
@@ -191,6 +191,7 @@ Data Modeling
 * Solution: :download:`solution/oop_attribute_model.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Model the data using classes
     #. Create instances for each record
     #. How many classes are there?
@@ -198,6 +199,7 @@ Data Modeling
     #. Print all fields from each instance
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zamodeluj dane za pomocą klas
     #. Stwórz instancje dla każdego wpisu
     #. Jak wiele klas możemy wyróżnić?

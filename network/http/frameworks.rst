@@ -56,9 +56,9 @@ Where WSGI provided a standard for synchronous Python apps, ASGI provides one fo
 
 Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.
 
-- **Ridiculously fast** - Django was designed to help developers take applications from concept to completion as quickly as possible.
-- **Reassuringly secure** - Django takes security seriously and helps developers avoid many common security mistakes.
-- **Exceedingly scalable** - Some of the busiest sites on the Web leverage Django’s ability to quickly and flexibly scale.
+* **Ridiculously fast** - Django was designed to help developers take applications from concept to completion as quickly as possible.
+* **Reassuringly secure** - Django takes security seriously and helps developers avoid many common security mistakes.
+* **Exceedingly scalable** - Some of the busiest sites on the Web leverage Django’s ability to quickly and flexibly scale.
 
 .. code-block:: console
 
@@ -94,8 +94,8 @@ FastAPI
 
 *  Automatic API doc generated:
 
-    - OpenAPI (Swagger UI) http://127.0.0.1:8000/docs
-    - Redoc http://127.0.0.1:8000/redoc
+    * OpenAPI (Swagger UI) http://127.0.0.1:8000/docs
+    * Redoc http://127.0.0.1:8000/redoc
 
 Examples
 --------
@@ -167,9 +167,9 @@ Flask is a microframework for Python based on Werkzeug, Jinja 2 and good intenti
 
 webapp2 is a lightweight Python web framework compatible with Google App Engine’s webapp.
 
-- **webapp2 is a simple** - it follows the simplicity of webapp, but improves it in some ways: it adds better URI routing and exception handling, a full featured response object and a more flexible dispatching mechanism.
-- **webapp2 also offers the package webapp2_extras** - with several optional utilities: sessions, localization, internationalization, domain and subdomain routing, secure cookies and others.
-- **webapp2 can also be used outside of Google App Engine**, independently of the App Engine SDK.
+* **webapp2 is a simple** - it follows the simplicity of webapp, but improves it in some ways: it adds better URI routing and exception handling, a full featured response object and a more flexible dispatching mechanism.
+* **webapp2 also offers the package webapp2_extras** - with several optional utilities: sessions, localization, internationalization, domain and subdomain routing, secure cookies and others.
+* **webapp2 can also be used outside of Google App Engine**, independently of the App Engine SDK.
 
 .. code-block:: yaml
 

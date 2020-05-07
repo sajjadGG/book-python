@@ -46,7 +46,7 @@ RESTful Views
 =======================
 Alternatywa:
 
-- https://github.com/axnsan12/drf-yasg/
+* https://github.com/axnsan12/drf-yasg/
 
 :admin.py:
     .. code-block:: python

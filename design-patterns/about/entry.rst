@@ -11,20 +11,24 @@ Entry Exam
 * Solution: :download:`solution/loop_dict_to_list.py`
 
 :English:
-    #. For input data (see below)
+    #. Use data from "Input" section (see below)
     #. Separate header and data
-    #. Print ``List[dict]``
+    #. Print ``result: List[dict]``
 
-        - key - name from the header
-        - value - measurement or species
+        * key - name from the header
+        * value - measurement or species
+
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Odseparuj nagłówek i dane
-    #. Wypisz ``List[dict]``
+    #. Wypisz ``result: List[dict]``
 
-        - klucz: nazwa z nagłówka
-        - wartość: wyniki pomiarów lub gatunek
+        * klucz: nazwa z nagłówka
+        * wartość: wyniki pomiarów lub gatunek
+
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
@@ -57,7 +61,7 @@ Entry Exam
 :Output:
     .. code-block:: python
 
-        output: List[dict] = [
+        result: List[dict] = [
             {'Sepal length': 5.8, 'Sepal width': 2.7, 'Petal length': 5.1, 'Petal width': 1.9, 'Species': 'virginica'},
             {'Sepal length': 5.1, 'Sepal width': 3.5, 'Petal length': 1.4, 'Petal width': 0.2, 'Species': 'setosa'},
             {'Sepal length': 5.7, 'Sepal width': 2.8, 'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
@@ -77,13 +81,13 @@ Get elements from nested data structure
 * Solution: :download:`solution/for_nested.py`
 
 :English:
-    #. For input data (see below)
+    #. Use data from "Input" section (see below)
     #. Separate header from data
     #. Iterate over data
     #. Print species names ending with "ica" or "sa"
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Oddziel nagłówek od danych
     #. Iteruj po danych
     #. Wypisz nazwy gatunków kończące się na "ica" lub "sa"
@@ -117,7 +121,8 @@ Get elements from nested data structure
 * Solution: :download:`solution/file_parsing_advanced.py`
 
 :English:
-    #. Copy input data from listing below and save to file ``hosts.txt``
+    #. Use data from "Input" section (see below)
+    #. Save input data to file ``hosts.txt``
     #. Copy also comments and empty lines
     #. For each line in file:
 
@@ -127,13 +132,14 @@ Get elements from nested data structure
         #. Separate IP address and hosts names
         #. Use one line ``if`` to check whether dot ``.`` is in the IP address
         #. If is present then protocol is IPv4 otherwise IPv6
-        #. Append IP address and hosts names to ``output``
+        #. Append IP address and hosts names to ``result: List[dict]``
 
     #. Merge hostnames for the same IP
-    #. ``output`` must be list of dicts (``List[dict]``)
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Skopiuj dane wejściowe z listingu poniżej i zapisz do pliku ``hosts.txt``
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Zapisz dane wejściowe do pliku ``hosts.txt``
     #. Skopiuj również komentarz i pustą linię
     #. Dla każdej lini w pliku:
 
@@ -143,10 +149,10 @@ Get elements from nested data structure
         #. Odseparuj adres IP i nazwy hostów
         #. Wykorzystaj jednolinikowego ``if`` do sprawdzenia czy jest kropka ``.`` w adresie IP
         #. Jeżeli jest obecna to protokół  jest IPv4, w przeciwnym przypadku IPv6
-        #. Dodaj adres IP i nazwy hostów do ``output``
+        #. Dodaj adres IP i nazwy hostów do ``result: List[dict]``
 
     #. Scal nazwy hostów dla tego samego IP
-    #. ``output`` ma być listą dictów (``List[dict]``)
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: text
@@ -166,7 +172,7 @@ Get elements from nested data structure
 :Output:
     .. code-block:: python
 
-        output: List[Dict[str, Union[str, Set[str]]] = [
+        result: List[dict] = [
             {'ip': '127.0.0.1', 'protocol': 'ipv4', 'hostnames': {'localhost', 'astromatt'}},
             {'ip': '10.13.37.1', 'protocol': 'ipv4', 'hostnames': {'nasa.gov', 'esa.int', 'roscosmos.ru'}},
             {'ip': '255.255.255.255', 'protocol': 'ipv4', 'hostnames': {'broadcasthost'}},

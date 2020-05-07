@@ -112,9 +112,11 @@ DataFrame Create
 * Solution: :download:`solution/df_create.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Create ``DataFrame`` for input data
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Stwórz ``DataFrame`` dla danych wejściowych
 
 :Input:

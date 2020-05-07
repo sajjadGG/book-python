@@ -166,9 +166,9 @@ Load from file
 
 
     with open('filename.pkl', mode='rb') as file:
-        output = pickle.load(file)
+        result = pickle.load(file)
 
-    print(output)
+    print(result)
 
 
 Examples
@@ -241,14 +241,16 @@ Pickle serialization
 * Solution: :download:`solution/pickle_dump_load.py`
 
 :English:
-    #. Use data from input section (see below)
+    #. Use data from "Input" section (see below)
     #. Using ``pickle`` save data structure to file
     #. Recreate data structure from file
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Użyj danych z sekcji input (see below)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Za pomocą ``pickle`` zapisz strukturę danych do pliku
     #. Odtwórz strukturę danych na podstawie danych z pliku
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
@@ -286,7 +288,7 @@ Pickle serialization
 :Output:
     .. code-block:: python
 
-        output: list[Astronaut]
+        result: list[Astronaut]
         # [
         #   Astronaut(name='Jan Twardowski', missions=[
         #       Mission(year=1969, name='Apollo 11'),

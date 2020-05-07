@@ -44,12 +44,12 @@ Regression methods are a workhorse of statistics and have been co-opted into sta
 
 The most popular regression algorithms are:
 
-    - Ordinary Least Squares Regression (OLSR)
-    - Linear Regression
-    - Logistic Regression
-    - Stepwise Regression
-    - Multivariate Adaptive Regression Splines (MARS)
-    - Locally Estimated Scatterplot Smoothing (LOESS)
+    * Ordinary Least Squares Regression (OLSR)
+    * Linear Regression
+    * Logistic Regression
+    * Stepwise Regression
+    * Multivariate Adaptive Regression Splines (MARS)
+    * Locally Estimated Scatterplot Smoothing (LOESS)
 
 Instance-based Algorithms
 =========================
@@ -65,11 +65,11 @@ Such methods typically build up a database of example data and compare new data 
 
 The most popular instance-based algorithms are:
 
-    - k-Nearest Neighbor (kNN)
-    - Learning Vector Quantization (LVQ)
-    - Self-Organizing Map (SOM)
-    - Locally Weighted Learning (LWL)
-    - Regularization Algorithms
+    * k-Nearest Neighbor (kNN)
+    * Learning Vector Quantization (LVQ)
+    * Self-Organizing Map (SOM)
+    * Locally Weighted Learning (LWL)
+    * Regularization Algorithms
 
 Regularization Algorithms
 =========================
@@ -85,11 +85,11 @@ I have listed regularization algorithms separately here because they are popular
 
 The most popular regularization algorithms are:
 
-- Ridge Regression
-- Least Absolute Shrinkage and Selection Operator (LASSO)
-- Elastic Net
-- Least-Angle Regression (LARS)
-- Decision Tree Algorithms
+* Ridge Regression
+* Least Absolute Shrinkage and Selection Operator (LASSO)
+* Elastic Net
+* Least-Angle Regression (LARS)
+* Decision Tree Algorithms
 
 Decision Tree Algorithms
 ========================
@@ -105,14 +105,14 @@ Decisions fork in tree structures until a prediction decision is made for a give
 
 The most popular decision tree algorithms are:
 
-    - Classification and Regression Tree (CART)
-    - Iterative Dichotomiser 3 (ID3)
-    - C4.5 and C5.0 (different versions of a powerful approach)
-    - Chi-squared Automatic Interaction Detection (CHAID)
-    - Decision Stump
-    - M5
-    - Conditional Decision Trees
-    - Bayesian Algorithms
+    * Classification and Regression Tree (CART)
+    * Iterative Dichotomiser 3 (ID3)
+    * C4.5 and C5.0 (different versions of a powerful approach)
+    * Chi-squared Automatic Interaction Detection (CHAID)
+    * Decision Stump
+    * M5
+    * Conditional Decision Trees
+    * Bayesian Algorithms
 
 Bayesian Algorithms
 ===================
@@ -126,13 +126,13 @@ Bayesian methods are those that explicitly apply Bayes' Theorem for problems suc
 
 The most popular Bayesian algorithms are:
 
-    - Naive Bayes
-    - Gaussian Naive Bayes
-    - Multinomial Naive Bayes
-    - Averaged One-Dependence Estimators (AODE)
-    - Bayesian Belief Network (BBN)
-    - Bayesian Network (BN)
-    - Clustering Algorithms
+    * Naive Bayes
+    * Gaussian Naive Bayes
+    * Multinomial Naive Bayes
+    * Averaged One-Dependence Estimators (AODE)
+    * Bayesian Belief Network (BBN)
+    * Bayesian Network (BN)
+    * Clustering Algorithms
 
 Clustering Algorithms
 =====================
@@ -148,11 +148,11 @@ Clustering methods are typically organized by the modeling approaches such as ce
 
 The most popular clustering algorithms are:
 
-    - k-Means
-    - k-Medians
-    - Expectation Maximisation (EM)
-    - Hierarchical Clustering
-    - Association Rule Learning Algorithms
+    * k-Means
+    * k-Medians
+    * Expectation Maximisation (EM)
+    * Hierarchical Clustering
+    * Association Rule Learning Algorithms
 
 Assoication Rule Learning Algorithms
 ====================================
@@ -168,9 +168,9 @@ These rules can discover important and commercially useful associations in large
 
 The most popular association rule learning algorithms are:
 
-    - Apriori algorithm
-    - Eclat algorithm
-    - Artificial Neural Network Algorithms
+    * Apriori algorithm
+    * Eclat algorithm
+    * Artificial Neural Network Algorithms
 
 Artificial Neural Network Algorithms
 ====================================
@@ -188,11 +188,11 @@ Note that I have separated out Deep Learning from neural networks because of the
 
 The most popular artificial neural network algorithms are:
 
-    - Perceptron
-    - Back-Propagation
-    - Hopfield Network
-    - Radial Basis Function Network (RBFN)
-    - Deep Learning Algorithms
+    * Perceptron
+    * Back-Propagation
+    * Hopfield Network
+    * Radial Basis Function Network (RBFN)
+    * Deep Learning Algorithms
 
 Deep Learning Algorithms
 ========================
@@ -208,11 +208,11 @@ They are concerned with building much larger and more complex neural networks an
 
 The most popular deep learning algorithms are:
 
-    - Deep Boltzmann Machine (DBM)
-    - Deep Belief Networks (DBN)
-    - Convolutional Neural Network (CNN)
-    - Stacked Auto-Encoders
-    - Dimensionality Reduction Algorithms
+    * Deep Boltzmann Machine (DBM)
+    * Deep Belief Networks (DBN)
+    * Convolutional Neural Network (CNN)
+    * Stacked Auto-Encoders
+    * Dimensionality Reduction Algorithms
 
 Dimensional Reduction Algorithms
 ================================
@@ -226,17 +226,17 @@ Like clustering methods, dimensionality reduction seek and exploit the inherent 
 
 This can be useful to visualize dimensional data or to simplify data which can then be used in a supervised learning method. Many of these methods can be adapted for use in classification and regression.
 
-    - Principal Component Analysis (PCA)
-    - Principal Component Regression (PCR)
-    - Partial Least Squares Regression (PLSR)
-    - Sammon Mapping
-    - Multidimensional Scaling (MDS)
-    - Projection Pursuit
-    - Linear Discriminant Analysis (LDA)
-    - Mixture Discriminant Analysis (MDA)
-    - Quadratic Discriminant Analysis (QDA)
-    - Flexible Discriminant Analysis (FDA)
-    - Ensemble Algorithms
+    * Principal Component Analysis (PCA)
+    * Principal Component Regression (PCR)
+    * Partial Least Squares Regression (PLSR)
+    * Sammon Mapping
+    * Multidimensional Scaling (MDS)
+    * Projection Pursuit
+    * Linear Discriminant Analysis (LDA)
+    * Mixture Discriminant Analysis (MDA)
+    * Quadratic Discriminant Analysis (QDA)
+    * Flexible Discriminant Analysis (FDA)
+    * Ensemble Algorithms
 
 Ensemble Algorithms
 ===================
@@ -250,13 +250,13 @@ Ensemble methods are models composed of multiple weaker models that are independ
 
 Much effort is put into what types of weak learners to combine and the ways in which to combine them. This is a very powerful class of techniques and as such is very popular.
 
-- Boosting
-- Bootstrapped Aggregation (Bagging)
-- AdaBoost
-- Stacked Generalization (blending)
-- Gradient Boosting Machines (GBM)
-- Gradient Boosted Regression Trees (GBRT)
-- Random Forest
+* Boosting
+* Bootstrapped Aggregation (Bagging)
+* AdaBoost
+* Stacked Generalization (blending)
+* Gradient Boosting Machines (GBM)
+* Gradient Boosted Regression Trees (GBRT)
+* Random Forest
 
 Other Algorithms
 ================
@@ -266,19 +266,19 @@ For example, what group would Support Vector Machines go into? Its own?
 
 I did not cover algorithms from specialty tasks in the process of machine learning, such as:
 
-- Feature selection algorithms
-- Algorithm accuracy evaluation
-- Performance measures
+* Feature selection algorithms
+* Algorithm accuracy evaluation
+* Performance measures
 
 I also did not cover algorithms from specialty subfields of machine learning, such as:
 
-- Computational intelligence (evolutionary algorithms, etc.)
-- Computer Vision (CV)
-- Natural Language Processing (NLP)
-- Recommender Systems
-- Reinforcement Learning
-- Graphical Models
-- And more...
+* Computational intelligence (evolutionary algorithms, etc.)
+* Computer Vision (CV)
+* Natural Language Processing (NLP)
+* Recommender Systems
+* Reinforcement Learning
+* Graphical Models
+* And more...
 
 
 .. note:: Source: http://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/

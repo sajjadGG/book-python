@@ -13,7 +13,7 @@ Label encoder
 * Solution: :download:`solution/loop_label_encoder.py`
 
 :English:
-    #. For input data (see below)
+    #. Use data from "Input" section (see below)
     #. Define:
 
         * ``features: List[tuple]`` - measurements
@@ -28,10 +28,10 @@ Label encoder
     #. ``label_encoder`` must be generated from ``DATA``
     #. For each row add appropriate data to ``features``, ``labels`` and ``label_encoder``
     #. Print ``features``, ``labels`` and ``label_encoder``
-    #. Output must be identical to output data (see below)
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zdefiniuj:
 
         * ``features: List[tuple]`` - pomiary
@@ -47,7 +47,7 @@ Label encoder
     #. ``label_encoder`` musi być wygenerowany z ``DATA``
     #. Dla każdego wiersza dodawaj odpowiednie dane do ``feature``, ``labels`` i ``label_encoder``
     #. Wypisz ``feature``, ``labels`` i ``label_encoder``
-    #. Wynik ma być identyczny z danymi wyjściowymi (patrz sekcja output)
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
@@ -113,28 +113,32 @@ Relational Files Database
 * Solution: :download:`solution/exam.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Save listings content to files:
 
-        - ``etc_passwd.txt`` - :numref:`code-exam-etc-passwd`
-        - ``etc_shadow.txt`` - :numref:`code-exam-etc-shadow`
-        - ``etc_group.txt`` - :numref:`code-exam-etc-group`
+        * ``etc_passwd.txt`` - :numref:`code-exam-etc-passwd`
+        * ``etc_shadow.txt`` - :numref:`code-exam-etc-shadow`
+        * ``etc_group.txt`` - :numref:`code-exam-etc-group`
 
     #. Copy also comments and empty lines
     #. Parse files and convert it to ``result: List[dict]``
     #. Return list of users with ``UID`` greater than 1000
     #. User dict should contains data collected from all files
+    #. Compare result with "Output" section (see below)
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zapisz treści listingów do plików:
 
-        - ``etc_passwd.txt`` - :numref:`code-exam-etc-passwd`
-        - ``etc_shadow.txt`` - :numref:`code-exam-etc-shadow`
-        - ``etc_group.txt`` - :numref:`code-exam-etc-group`
+        * ``etc_passwd.txt`` - :numref:`code-exam-etc-passwd`
+        * ``etc_shadow.txt`` - :numref:`code-exam-etc-shadow`
+        * ``etc_group.txt`` - :numref:`code-exam-etc-group`
 
     #. Skopiuj również komentarze i puste linie
     #. Sparsuj plik i przedstaw go w formacie ``result: List[dict]``
     #. Zwróć listę użytkowników, których ``UID`` jest większy niż 1000
     #. Dict użytkownika powinien zawierać dane z wszystkich plików
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. literalinclude:: data/etc-passwd.txt
@@ -155,7 +159,7 @@ Relational Files Database
 :Output:
     .. code-block:: python
 
-        output: List[dict] = [
+        result: List[dict] = [
             {
                 'username': 'twardowski',
                 'uid': 1001,

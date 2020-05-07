@@ -203,11 +203,11 @@ Which one is better?
     ]
 
     def get_species(species):
-        output = []
+        result = []
         for row in DATA:
             if row[4] == species:
-                output.append(row)
-        return output
+                result.append(row)
+        return result
 
 
     data = get_species('setosa')
@@ -375,8 +375,8 @@ Built-in generators
             return False
 
 
-    output = filter(is_adult, DATA)
-    print(list(output))
+    result = filter(is_adult, DATA)
+    print(list(result))
     # [
     #   {'name': 'Jan Twardowski', 'age': 21},
     #   {'name': 'Mark Watney', 'age': 25},
@@ -409,26 +409,26 @@ Built-in generators
 
     header = ['a', 'b', 'c']
     data = [1, 2, 3]
-    output = {}
+    result = {}
 
     for i, _ in enumerate(header):
         key = header[i]
         value = data[i]
-        output[key] = value
+        result[key] = value
 
-    print(output)
+    print(result)
     # {'a': 1, 'b': 2, 'c': 3}
 
 .. code-block:: python
 
     header = ['a', 'b', 'c']
     data = [1, 2, 3]
-    output = {}
+    result = {}
 
     for i, header in enumerate(header):
-        output[header] = data[i]
+        result[header] = data[i]
 
-    print(output)
+    print(result)
     # {'a': 1, 'b': 2, 'c': 3}
 
 
@@ -493,6 +493,7 @@ Function Generator Generators vs. Comprehensions
 * Solution: :download:`solution/function_generator_vs_comprehension.py`
 
 :English:
+    #. Use code from "Input" section (see below)
     #. Download :download:`data/iris.csv` and save as `iris.csv`
     #. Read data skipping header
     #. Create function with returns all measurements for given species
@@ -503,6 +504,7 @@ Function Generator Generators vs. Comprehensions
     #. What will happen if input data will be bigger?
 
 :Polish:
+    #. Użyj kodu z sekcji "Input" (patrz poniżej)
     #. Pobierz :download:`data/iris.csv` i zapisz jako `iris.csv`
     #. Zaczytaj dane pomijając nagłówek
     #. Napisz funkcję która zwraca wszystkie pomiary dla danego gatunku

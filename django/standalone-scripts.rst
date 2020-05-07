@@ -2,7 +2,7 @@
 Standalone scripts
 ******************
 
-- lepiej management commands
+* lepiej management commands
 
 .. code-block:: python
 

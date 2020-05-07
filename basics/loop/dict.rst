@@ -207,14 +207,14 @@ Assignments
 * Solution: :download:`solution/loop_dict_to_dict.py`
 
 :English:
-    #. Use ``DATA`` from "Input" section (see below)
+    #. Use data from "Input" section (see below)
     #. Convert to ``result: Dict[str, str]``
-    #. Results should be identical to output (see below)
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Przekonwertuj do ``result: Dict[str, str]``
-    #. Rezultat powinien być identyczny do wyjściowego (patrz sekcja output)
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
@@ -259,20 +259,24 @@ Assignments
 * Solution: :download:`solution/loop_dict_to_list.py`
 
 :English:
-    #. Use ``DATA`` from "Input" section (see below)
+    #. Use data from "Input" section (see below)
     #. Separate header and data
     #. Print ``List[dict]``:
 
-        - key - name from the header
-        - value - measurement or species
+        * key - name from the header
+        * value - measurement or species
+
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Odseparuj nagłówek i dane
     #. Wypisz ``List[dict]``:
 
-        - klucz: nazwa z nagłówka
-        - wartość: wyniki pomiarów lub gatunek
+        * klucz: nazwa z nagłówka
+        * wartość: wyniki pomiarów lub gatunek
+
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
@@ -327,7 +331,7 @@ Label encoder
 * Solution: :download:`solution/loop_label_encoder.py`
 
 :English:
-    #. Use ``DATA`` from "Input" section (see below)
+    #. Use data from "Input" section (see below)
     #. Define:
 
         * ``features: List[tuple]`` - measurements
@@ -343,10 +347,10 @@ Label encoder
     #. ``label_encoder`` must be generated from ``DATA``
     #. For each row add appropriate data to ``features``, ``labels`` and ``label_encoder``
     #. Print ``features``, ``labels`` and ``label_encoder``
-    #. Output must be identical to output data (see below)
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zdefiniuj:
 
         * ``features: List[tuple]`` - pomiary
@@ -362,7 +366,7 @@ Label encoder
     #. ``label_encoder`` musi być wygenerowany z ``DATA``
     #. Dla każdego wiersza dodawaj odpowiednie dane do ``feature``, ``labels`` i ``label_encoder``
     #. Wypisz ``feature``, ``labels`` i ``label_encoder``
-    #. Wynik ma być identyczny z danymi wyjściowymi (patrz sekcja output)
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python

@@ -202,13 +202,25 @@ Date manipulation
 * Solution: :download:`solution/datetime_deltas.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Given period is the time between Gagarin launch and Armstrong first step on the Moon
+    #. Assume:
+
+        * year = 365.2425 days
+        * month = 30.436875 days
+
     #. From current date subtract this period
     #. Print calculated date
     #. How old were you at the given moment?
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Podany jest czas, który upłynął między startem Gagarina a pierwszym krokiem Armstronga na Księżycu
+    #. Uwzględnij założenie:
+
+        * rok = 365.2425 dni
+        * miesiąc = 30.436875 dni
+
     #. Od obecnej chwili odejmij ten czas
     #. Wyświetl wyliczoną datę
     #. Ile miałeś wtedy lat?
@@ -220,7 +232,3 @@ Date manipulation
     * 20 hours
     * 49 minutes
     * 15 seconds
-
-:Assumption:
-    * year = 365.2425 days
-    * month = 30.436875 days

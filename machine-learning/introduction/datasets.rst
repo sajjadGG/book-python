@@ -61,15 +61,15 @@ Dataset:
 
 This problem is comprised of 768 observations of medical details for Pima indians patents. The records describe instantaneous measurements taken from the patient such as their age, the number of times pregnant and blood workup. All patients are women aged 21 or older. All attributes are numeric, and their units vary from attribute to attribute.
 
-    - Number of times pregnant
-    - Plasma glucose concentration a 2 hours in an oral glucose tolerance test
-    - Diastolic blood pressure (mm Hg)
-    - Triceps skin fold thickness (mm)
-    - 2-Hour serum insulin (mu U/ml)
-    - Body mass index (weight in kg/(height in m)^2)
-    - Diabetes pedigree function
-    - Age (years)
-    - Class variable (0 or 1)
+    * Number of times pregnant
+    * Plasma glucose concentration a 2 hours in an oral glucose tolerance test
+    * Diastolic blood pressure (mm Hg)
+    * Triceps skin fold thickness (mm)
+    * 2-Hour serum insulin (mu U/ml)
+    * Body mass index (weight in kg/(height in m)^2)
+    * Diabetes pedigree function
+    * Age (years)
+    * Class variable (0 or 1)
 
 Each record has a class value that indicates whether the patient suffered an onset of diabetes within 5 years of when the measurements were taken (1) or not (0).
 
@@ -111,27 +111,27 @@ Package for quandl API access https://www.quandl.com/topics
 
 SPAM Dataset
 ------------
-- https://archive.ics.uci.edu/ml/datasets/Spambase
-- http://www.aueb.gr/users/ion/data/lingspam_public.tar.gz
-- http://spamassassin.apache.org/publiccorpus/
-- http://www.aueb.gr/users/ion/data/PU123ACorpora.tar.gz
-- https://cs224d.stanford.edu/reports/EugeneLouis.pdf
-- http://trec.nist.gov/data/spam.html
-- http://www.aueb.gr/users/ion/data/lingspam_public.tar.gz
-- http://www.aueb.gr/users/ion/data/enron-spam/
-- https://github.com/ParakweetLabs/EmailIntentDataSet
-- http://home.iitk.ac.in/~vtantia/cs365/project/Poster.pdf
-- http://cs229.stanford.edu/proj2013/BrombergShutzberg-PredictionofUserIntenttoReplytoIncomingEmails.pdf
-- https://inclass.kaggle.com/c/adcg-ss14-challenge-02-spam-mails-detection/data
-- http://www.aclweb.org/aclwiki/index.php?title=Spam_filtering_datasets
-- http://opendata.stackexchange.com/questions/1776/publicly-available-spam-dataset-of-social-networks
-- http://plg.uwaterloo.ca/cgi-bin/cgiwrap/gvcormac/foo
-- http://cdn.intechopen.com/pdfs/9172.pdf
-- https://www.safaribooksonline.com/library/view/doing-data-science/9781449363871/ch04.html
-- https://www2.stat.duke.edu/courses/Spring13/sta102.001/Lab/Lab13.pdf
-- http://www.nargund.com/gsu/mgs8040/Sample%20Project%201%20-%20Restrepo%20Gies%20Labbe.pdf
-- https://dit.ie/computing/staff/sjdelany/datasets/
-- http://spamassassin.apache.org/publiccorpus/
+* https://archive.ics.uci.edu/ml/datasets/Spambase
+* http://www.aueb.gr/users/ion/data/lingspam_public.tar.gz
+* http://spamassassin.apache.org/publiccorpus/
+* http://www.aueb.gr/users/ion/data/PU123ACorpora.tar.gz
+* https://cs224d.stanford.edu/reports/EugeneLouis.pdf
+* http://trec.nist.gov/data/spam.html
+* http://www.aueb.gr/users/ion/data/lingspam_public.tar.gz
+* http://www.aueb.gr/users/ion/data/enron-spam/
+* https://github.com/ParakweetLabs/EmailIntentDataSet
+* http://home.iitk.ac.in/~vtantia/cs365/project/Poster.pdf
+* http://cs229.stanford.edu/proj2013/BrombergShutzberg-PredictionofUserIntenttoReplytoIncomingEmails.pdf
+* https://inclass.kaggle.com/c/adcg-ss14-challenge-02-spam-mails-detection/data
+* http://www.aclweb.org/aclwiki/index.php?title=Spam_filtering_datasets
+* http://opendata.stackexchange.com/questions/1776/publicly-available-spam-dataset-of-social-networks
+* http://plg.uwaterloo.ca/cgi-bin/cgiwrap/gvcormac/foo
+* http://cdn.intechopen.com/pdfs/9172.pdf
+* https://www.safaribooksonline.com/library/view/doing-data-science/9781449363871/ch04.html
+* https://www2.stat.duke.edu/courses/Spring13/sta102.001/Lab/Lab13.pdf
+* http://www.nargund.com/gsu/mgs8040/Sample%20Project%201%20-%20Restrepo%20Gies%20Labbe.pdf
+* https://dit.ie/computing/staff/sjdelany/datasets/
+* http://spamassassin.apache.org/publiccorpus/
 
 
 SCI-Kit Datasets

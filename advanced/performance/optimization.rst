@@ -207,14 +207,14 @@ Memoization
 #. Stwórz pusty ``dict`` o nazwie ``CACHE``
 #. W słowniku będziemy przechowywali wyniki wyliczenia funkcji dla zadanych parametrów:
 
-    - klucz: argument funkcji
-    - wartość: wynik obliczeń
+    * klucz: argument funkcji
+    * wartość: wynik obliczeń
 
 #. Zmodyfikuj funkcję ``factorial_cache(n: int)``
 #. Przed uruchomieniem funkcji, sprawdź czy wynik został już wcześniej obliczony:
 
-    - jeżeli tak, to zwraca dane z ``CACHE``
-    - jeżeli nie, to oblicza, aktualizuje ``CACHE``, a następnie zwraca wartość
+    * jeżeli tak, to zwraca dane z ``CACHE``
+    * jeżeli nie, to oblicza, aktualizuje ``CACHE``, a następnie zwraca wartość
 
 #. Porównaj prędkość działania
 

@@ -7,69 +7,69 @@ Model Fields
 
 Text fields
 -----------
-- ``CharField``
-- ``TextField``
-- ``SlugField``
-- ``URLField``
+* ``CharField``
+* ``TextField``
+* ``SlugField``
+* ``URLField``
 
 Numeric fields
 --------------
-- ``DecimalField``
-- ``IntegerField``
-- ``PositiveIntegerField``
-- ``PositiveSmallIntegerField``
+* ``DecimalField``
+* ``IntegerField``
+* ``PositiveIntegerField``
+* ``PositiveSmallIntegerField``
 
 Logic fields
 ------------
-- ``BooleanField``
+* ``BooleanField``
 
 Date and time fields
 --------------------
-- ``DateField``
-- ``DateTimeField``
-- ``DurationField``
-- ``TimeField``
+* ``DateField``
+* ``DateTimeField``
+* ``DurationField``
+* ``TimeField``
 
 File fields
 -----------
-- ``FileField``
-- ``ImageField``
+* ``FileField``
+* ``ImageField``
 
 Relations
 ---------
-- ``ForeignKeyField``
-- ``ManyToManyField``
+* ``ForeignKeyField``
+* ``ManyToManyField``
 
 Model field arguments
 =====================
 
 All
 ---
-- ``verbose_name``
-- ``max_length``
-- ``choices``
-- ``validators``
-- ``help_text``
-- ``null``
-- ``blank``
-- ``default``
-- ``db_index``
+* ``verbose_name``
+* ``max_length``
+* ``choices``
+* ``validators``
+* ``help_text``
+* ``null``
+* ``blank``
+* ``default``
+* ``db_index``
 
 Relations
 ---------
-- ``to`` (ForeignKey, ManyToManyField)
-- ``related_name`` (ForeignKey, ManyToManyField)
-- ``on_delete`` (ForeignKey, ManyToManyField)
+* ``to`` (ForeignKey, ManyToManyField)
+* ``related_name`` (ForeignKey, ManyToManyField)
+* ``on_delete`` (ForeignKey, ManyToManyField)
 
 Date and time
 -------------
-- ``auto_add`` (DateField, DateTimeField)
-- ``auto_add_now`` (DateField, DateTimeField)
+* ``auto_add`` (DateField, DateTimeField)
+* ``auto_add_now`` (DateField, DateTimeField)
 
 Numeric
 -------
-- ``decimal_places`` (DecimalField)
-- ``max_digits`` (DecimalField)
+* ``decimal_places`` (DecimalField)
+* ``max_digits`` (DecimalField)
 
 Abstract Models
 ===============
@@ -80,14 +80,14 @@ Abstract Models
 
 Architecture
 ============
-- Fat model architecture
+* Fat model architecture
 
 Single File vs. Models per file
 ===============================
 
 Reverse engineering database
 ============================
-- ``python manage.py inspectdb``
+* ``python manage.py inspectdb``
 
 Database schema migration
 =========================
@@ -130,24 +130,24 @@ Address Book
 #. Stwórz apkę ``contact``
 #. Stwórz model ``Address`` z polami:
 
-    - Typ (do wyboru typ: domowy, praca, komórka)
-    - Ulica
-    - Numer bloku
-    - Numer mieszkania
-    - Kod pocztowy
-    - Miasto
-    - Region
-    - Kraj
+    * Typ (do wyboru typ: domowy, praca, komórka)
+    * Ulica
+    * Numer bloku
+    * Numer mieszkania
+    * Kod pocztowy
+    * Miasto
+    * Region
+    * Kraj
 
 #. Stwórz model ``Person`` z polami:
 
-    - Imię
-    - Nazwisko
-    - Data Urodzenia
-    - Zdjęcie
-    - Telefon (do wyboru typ: domowy, praca, komórka)
-    - Email (do wyboru typ: domowy, praca, komórka)
-    - Adres
+    * Imię
+    * Nazwisko
+    * Data Urodzenia
+    * Zdjęcie
+    * Telefon (do wyboru typ: domowy, praca, komórka)
+    * Email (do wyboru typ: domowy, praca, komórka)
+    * Adres
 
 #. Osoba może mieć wiele adresów, telefonów i emaili
 #. Wygeneruj panel administracyjny

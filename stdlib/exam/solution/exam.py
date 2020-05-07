@@ -19,10 +19,10 @@ ALGORITHMS = {
     '6': 'SHA-512',
 }
 
-output_group = {}
-output_shadow = {}
-output_passwd = {}
-output = []
+result_group = {}
+result_shadow = {}
+result_passwd = {}
+result = []
 
 try:
     with open(ETC_GROUP, encoding='utf-8') as file:
@@ -63,10 +63,10 @@ for line in etc_groups:
         continue
 
     for member in members.split(','):
-        if member not in output_group.keys():
-            output_group[member] = set()
+        if member not in result_group.keys():
+            result_group[member] = set()
 
-        output_group[member].add(group_name)
+        result_group[member].add(group_name)
 
 
 for line in etc_shadow:
@@ -91,7 +91,7 @@ for line in etc_shadow:
         password_salt = None
         password_password = None
 
-    output_shadow[username] = {
+    result_shadow[username] = {
         'password': password_password,
         'salt': password_salt,
         'algorithm': password_algorithm,
@@ -109,7 +109,7 @@ for line in etc_passwd:
     record = line.split(':')
     username = record[0]
 
-    output_passwd[username] = {
+    result_passwd[username] = {
         'password': record[1],
         'uid': int(record[2]),
         'gid': int(record[3]),
@@ -119,15 +119,15 @@ for line in etc_passwd:
     }
 
 
-for user in output_passwd:
-    passwd = output_passwd.get(user)
-    groups = output_group.get(user)
-    shadow = output_shadow.get(user)
+for user in result_passwd:
+    passwd = result_passwd.get(user)
+    groups = result_group.get(user)
+    shadow = result_shadow.get(user)
 
     if passwd['uid'] < 1000:
         continue
 
-    output.append({
+    result.append({
         'username': user,
         'uid': passwd['uid'],
         'gid': passwd['gid'],
@@ -141,4 +141,4 @@ for user in output_passwd:
     })
 
 
-pprint(output)
+pprint(result)

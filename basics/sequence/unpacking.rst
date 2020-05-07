@@ -266,16 +266,18 @@ Unpacking from sequence
 * Solution: :download:`solution/sequence_unpacking_hosts.py`
 
 :English:
-    #. Use ``DATA`` from "Input" section (see below)
+    #. Use data from "Input" section (see below)
     #. Split input data (see below) by white space
     #. Separate ip address and host names
     #. Use asterisk ``*`` notation
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Podziel dane wejściowe (patrz sekcja input) po białych znakach
     #. Odseparuj adres ip i nazw hostów
     #. Skorzystaj z notacji z gwiazdką ``*``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
@@ -299,14 +301,16 @@ Unpacking from nested sequence
 * Solution: :download:`solution/sequence_unpacking_iris.py`
 
 :English:
-    #. Use ``DATA`` from "Input" section (see below)
+    #. Use data from "Input" section (see below)
     #. Separate header and records
     #. Use asterisk ``*`` notation
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Oddziel nagłówek i rekordy
     #. Skorzystaj z konstrukcji z gwiazdką ``*``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python

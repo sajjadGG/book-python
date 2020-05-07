@@ -298,24 +298,26 @@ Average
 * Solution: :download:`solution/builtin_average.py`
 
 :English:
-    #. For given ``DATA`` (see below)
+    #. Use data from "Input" section (see below)
     #. Separate header and data
-    #. Define dict ``output: Dict[str, list]``, keys are column names from header
-    #. For each row in data, add values to proper lists in ``output``
+    #. Define dict ``result: Dict[str, list]``, keys are column names from header
+    #. For each row in data, add values to proper lists in ``result``
     #. Define function ``mean()``, calculating mean for arbitrary number of arguments
     #. Return ``None`` if any argument to the function is not ``float`` or ``int``
     #. To calculate mean use built-in functions
-    #. Iterating over ``output`` print column name and calculated average
+    #. Iterating over ``result`` print column name and calculated average
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Dla danych ``DATA`` (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Odseparuj nagłówek od danych
-    #. Zdefiniuj słownik ``output: Dict[str, list]``, klucze to nazwy kolumn z nagłówka
-    #. Dla każdego wiersza w danych, dodawaj wartości do odpowiednich list w ``output``
+    #. Zdefiniuj słownik ``result: Dict[str, list]``, klucze to nazwy kolumn z nagłówka
+    #. Dla każdego wiersza w danych, dodawaj wartości do odpowiednich list w ``result``
     #. Zdefiniuj funkcję ``mean()``, liczącą średnią dla dowolnej ilości argumentów
     #. Zwróć ``None`` jeżeli którykolwiek z argumentów do funkcji nie jest ``float`` lub ``int``
     #. Do wyliczenia średniej wykorzystaj wbudowane funkcje
-    #. Iterując po ``output`` wypisz nazwę kolumny oraz wyliczoną średnią
+    #. Iterując po ``result`` wypisz nazwę kolumny oraz wyliczoną średnią
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
@@ -348,7 +350,7 @@ Average
 :Output:
     .. code-block:: python
 
-        output: Dict[str, list] = {
+        result: Dict[str, list] = {
             'Sepal length': [5.8, 5.1, ...],
             'Sepal width': [2.7, 3.5, ...],
             'Petal length': [5.1, 1.4, ...],

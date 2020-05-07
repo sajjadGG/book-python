@@ -109,7 +109,7 @@ Select
 * Solution: :download:`solution/sequence_indexing_select.py`
 
 :English:
-    #. Use ``DATA`` from "Input" section (see below)
+    #. Use data from "Input" section (see below)
     #. Write header (first line) to ``header: tuple`` variable
     #. Create ``result: list``
     #. Convert to ``list`` data from row at index 2, 6, 9 and add to ``result``
@@ -117,9 +117,10 @@ Select
     #. Add empty ``set``, ``list`` and ``tuple`` to ``result``
     #. Use only indexes
     #. Do not use ``for``, ``while`` or ``slice()``
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zapisz nagłówek (pierwsza linia) do zmiennej ``header: tuple``
     #. Stwórz ``result: list``
     #. Przekonwertuj do ``list`` dane z wierszy o indeksach 2, 6, 9 i dodaj do ``result``
@@ -127,6 +128,7 @@ Select
     #. Dodaj pusty ``set``, ``list`` oraz ``tuple`` do ``result``
     #. Użyj tylko indeksów
     #. Nie używaj ``for``, ``while`` lub ``slice()``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python

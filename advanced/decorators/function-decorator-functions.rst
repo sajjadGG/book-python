@@ -310,32 +310,34 @@ Memoization
 * Solution: :download:`solution/decorator_memoize.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Create function ``factorial_cache(n: int) -> int``
     #. Create ``CACHE: Dict[int, int]`` with computation results from function
 
-        - key: function argument
-        - value: computation result
+        * key: function argument
+        * value: computation result
 
     #. Create decorator ``@cache``
     #. Decorator must check before running function, if for given argument the computation was already done:
 
-        - if yes, return from ``CACHE``
-        - if not, calculate new result, update cache and return computed value
+        * if yes, return from ``CACHE``
+        * if not, calculate new result, update cache and return computed value
 
     #. Using ``timeit``
 
 :Polish:
+    #. Użyj kodu z sekcji "Input" (patrz poniżej)
     #. Stwórz funkcję ``factorial_cache(n: int) -> int``
     #. Stwórz ``CACHE: Dict[int, int]`` z wynikami wyliczenia funkcji
 
-        - klucz: argument funkcji
-        - wartość: wynik obliczeń
+        * klucz: argument funkcji
+        * wartość: wynik obliczeń
 
     #. Stwórz dekorator ``@cache``
     #. Decorator ma sprawdzać przed uruchomieniem funkcji, czy dla danego argumenu wynik został już wcześniej obliczony:
 
-        - jeżeli tak, to zwraca dane z ``CACHE``
-        - jeżeli nie, to oblicza, aktualizuje ``CACHE``, a następnie zwraca wartość
+        * jeżeli tak, to zwraca dane z ``CACHE``
+        * jeżeli nie, to oblicza, aktualizuje ``CACHE``, a następnie zwraca wartość
 
     #. Wykorzystując ``timeit`` porównaj prędkość działania z obliczaniem na bieżąco dla parametru 100
 
@@ -382,14 +384,14 @@ Type Checking Decorator
     .. todo:: English translation
 
 :Polish:
-    #. Na podstawie kodu (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Stwórz dekorator ``check_types``
     #. Dekorator ma sprawdzać typy danych, wszystkich parametrów wchodzących do funkcji
     #. Jeżeli, którykolwiek się nie zgadza, wyrzuć wyjątek ``TypeError``
     #. Wyjątek ma wypisywać:
 
-        - nazwę parametru, który ma nieprawidłowy typ,
-        - listę dozwolonych typów.
+        * nazwę parametru, który ma nieprawidłowy typ,
+        * listę dozwolonych typów.
 
 :Input:
     .. code-block:: python

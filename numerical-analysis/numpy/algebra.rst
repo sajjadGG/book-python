@@ -264,6 +264,7 @@ Euclidean distance 2D
 * Solution: :download:`solution/algebra_euclidean_2d.py`
 
 :English:
+    #. Use code from "Input" section (see below)
     #. Given are two points ``A: Tuple[int, int]`` and ``B: Tuple[int, int]``
     #. Coordinates are in cartesian system
     #. Points ``A`` and ``B`` are in two dimensional space
@@ -271,6 +272,7 @@ Euclidean distance 2D
     #. Function must pass ``doctest``
 
 :Polish:
+    #. Użyj kodu z sekcji "Input" (patrz poniżej)
     #. Dane są dwa punkty ``A: Tuple[int, int]`` i ``B: Tuple[int, int]``
     #. Koordynaty są w systemie kartezjańskim
     #. Punkty ``A`` i ``B`` są w dwuwymiarowej przestrzeni
@@ -322,6 +324,7 @@ Euclidean distance ``n`` dimensions
 * Solution: :download:`solution/algebra_euclidean_multi_dim.py`
 
 :English:
+    #. Use code from "Input" section (see below)
     #. Given are two points ``A: Sequence[int]`` and ``B: Sequence[int]``
     #. Coordinates are in cartesian system
     #. Points ``A`` and ``B`` are in ``N``-dimensional space
@@ -330,6 +333,7 @@ Euclidean distance ``n`` dimensions
     #. Function must pass ``doctest``
 
 :Polish:
+    #. Użyj kodu z sekcji "Input" (patrz poniżej)
     #. Dane są dwa punkty ``A: Sequence[int]`` i ``B: Sequence[int]``
     #. Koordynaty są w systemie kartezjańskim
     #. Punkty ``A`` i ``B`` są w ``N``-wymiarowej przestrzeni

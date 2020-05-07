@@ -193,6 +193,7 @@ OOP Methods
 * Solution: :download:`solution/oop_methods.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Define class ``Iris``
     #. Define method ``total()`` which returns sum of all numerical attributes of an object
     #. Numerical attributes are:
@@ -209,6 +210,7 @@ OOP Methods
     #. Print species name, total and mean of each instance
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zdefiniuj klasę ``Iris``
     #. Zdefiniuj metodę ``total()`` klasy ``Iris`` zwracającą sumę wszystkich atrybutów numerycznych obiektu
     #. Atrybutami numerycznymi są:

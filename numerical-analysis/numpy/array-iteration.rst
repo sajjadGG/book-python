@@ -139,11 +139,13 @@ Iteration
 * Solution: :download:`solution/numpy_iteration.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Given ``a: ndarray`` (see below)
     #. Use ``for`` to iterate over ``a``
     #. Print even numbers
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Dany ``a: ndarray`` (patrz sekcja input)
     #. Używając ``for`` iteruj po ``DATA``
     #. Wypisz liczby parzyste

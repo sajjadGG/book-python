@@ -49,9 +49,9 @@ Decision Tree
     clf = clf.fit(features, labels)
 
     # use classifier to predict
-    output = clf.predict([[160, 0]])
+    result = clf.predict([[160, 0]])
 
-    print(output)
+    print(result)
     # should be: [1]
 
 
@@ -85,8 +85,8 @@ Decision Tree
 
     # How accurate was classifier on testing set
     # Because of some variation for each run, it might give different results
-    output = accuracy_score(y_test, predictions)
-    print(output)
+    result = accuracy_score(y_test, predictions)
+    print(result)
     # Output: 0.96
 
 .. note:: Note identical API for classifiers!
@@ -122,22 +122,22 @@ Visualizing a Decision Tree
 
 
     print(test_target)
-    # Output: [0 1 2]
+    # [0 1 2]
 
-    output = clf.predict(test_data)
-    print(output)
-    # Output: [0 1 2]
+    result = clf.predict(test_data)
+    print(result)
+    # [0 1 2]
 
 
     print(test_data[0], test_target[0])
-    # output: [ 5.1  3.5  1.4  0.2] 0
+    # [ 5.1  3.5  1.4  0.2] 0
 
 
     print(iris.feature_names)
-    # output: ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']
+    # ['sepal length (cm)', 'sepal width (cm)', 'petal length (cm)', 'petal width (cm)']
 
     print(iris.target_names)
-    # output: ['setosa' 'versicolor' 'virginica']
+    # ['setosa' 'versicolor' 'virginica']
 
 
     # Vizualization of Decision Tree Classifier
@@ -189,9 +189,9 @@ Stwórz Classifier dla podanych poniżej danych testowych:
 
 Jaką płeć ma osoba o parametrach?:
 
-    - Height: 6
-    - Weight: 130
-    - Foot Size: 8
+    * Height: 6
+    * Weight: 130
+    * Foot Size: 8
 
 Zwizualizuj drzewo decyzyjne
 
@@ -202,11 +202,11 @@ Banknoty
 --------
 Na podstawie datasetu 1372 banknotów z 5 wartościami numerycznymi pobranymi z obrazu odpowiedz czy dany banknot jest prawdziwy wykorzystując algorymt drzewa decyzyjnego.
 
-    - variance of Wavelet Transformed image (continuous).
-    - skewness of Wavelet Transformed image (continuous).
-    - kurtosis of Wavelet Transformed image (continuous).
-    - entropy of image (continuous).
-    - class (integer).
+    * variance of Wavelet Transformed image (continuous).
+    * skewness of Wavelet Transformed image (continuous).
+    * kurtosis of Wavelet Transformed image (continuous).
+    * entropy of image (continuous).
+    * class (integer).
 
 :Dataset:
     * https://archive.ics.uci.edu/ml/machine-learning-databases/00267/data_banknote_authentication.txt

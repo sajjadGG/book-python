@@ -5,12 +5,12 @@ Operating System
 
 Bitwise operators
 =================
-- ``|`` - OR
-- ``&`` - AND
-- ``~`` - NOT
-- ``^`` - XOR
-- ``<<`` - Shift left
-- ``>>`` - Shift right
+* ``|`` - OR
+* ``&`` - AND
+* ``~`` - NOT
+* ``^`` - XOR
+* ``<<`` - Shift left
+* ``>>`` - Shift right
 
 .. code-block:: python
 
@@ -222,9 +222,9 @@ Stats and permissions
 
     import os
 
-    output = os.stat(r'c:\Python\__notepad__.py')
+    file = os.stat(r'/tmp/myfile.py')
 
-    print(output)
+    print(file)
     # os.stat_result(
     #     st_mode=33206,
     #     st_ino=3659174697409906,
@@ -237,7 +237,7 @@ Stats and permissions
     #     st_mtime=1530775767,
     #     st_ctime=1523261133)
 
-    oct(output.st_mode)
+    oct(file.st_mode)
     # 0o100666
 
 Permissions
@@ -329,15 +329,15 @@ Execute command in OS
 
     cmd = 'dir ..'
 
-    output = subprocess.run(
+    result = subprocess.run(
         cmd,
         timeout=2,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         encoding='utf-8')
 
-    print(output.stdout)
-    print(output.stderr)
+    print(result.stdout)
+    print(result.stderr)
 
 .. code-block:: python
 
@@ -416,15 +416,15 @@ Parsing and sanitizing arguments
 
     cmd = 'dir ..'
 
-    output = subprocess.run(
+    result = subprocess.run(
         shlex.split(cmd),  # ['dir', '..']
         timeout=2,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
         encoding='utf-8')
 
-    print(output.stdout)
-    print(output.stderr)
+    print(result.stdout)
+    print(result.stderr)
 
 
 ``tempfile``
@@ -479,24 +479,24 @@ Creating temporary directories
 
     import io
 
-    output = io.StringIO()
-    output.write('First line.\n')
-    print('Second line.', file=output)
+    result = io.StringIO()
+    result.write('First line.\n')
+    print('Second line.', file=result)
 
     # Retrieve file contents -- this will be
     # 'First line.\nSecond line.\n'
-    contents = output.getvalue()
+    contents = result.getvalue()
 
     # Close object and discard memory buffer --
     # .getvalue() will now raise an exception.
-    output.close()
+    result.close()
 
 .. code-block:: python
 
-    b = io.BytesIO(b"abcdef")
-    view = b.getbuffer()
+    result = io.BytesIO(b"abcdef")
+    view = result.getbuffer()
     view[2:4] = b"56"
-    b.getvalue()  # b'ab56ef'
+    result.getvalue()  # b'ab56ef'
 
 
 ``configparser``

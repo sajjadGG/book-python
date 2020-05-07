@@ -240,8 +240,8 @@ Examples
         pass
 
 
-    output = [Iris(*row) for row in DATA]
-    print(output)
+    result = [Iris(*row) for row in DATA]
+    print(result)
     # [
     # Virginica(5.8, 2.7, 5.1, 1.9),
     # Setosa(5.1, 3.5, 1.4, 0.2),

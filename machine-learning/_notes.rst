@@ -23,24 +23,24 @@ Tensorflow
 ----------
 #. Budowa i podstawy
 
-    - Core (Python)
-    - Estimators
-    - Experiments
-    - Keras
+    * Core (Python)
+    * Estimators
+    * Experiments
+    * Keras
 
 #. Budowa modeli podstawy
 
-    - Feature Engineering
-    - Regularyzacja
-    - Embeddings
+    * Feature Engineering
+    * Regularyzacja
+    * Embeddings
 
 #. Optymalizacje
 
-    - Głębokie sieci neuronowe
-    - Funkcje aktywacji
-    - Learning Rate
-    - Dropout
-    - Overfitting
+    * Głębokie sieci neuronowe
+    * Funkcje aktywacji
+    * Learning Rate
+    * Dropout
+    * Overfitting
 
 #. Convolutional Neural Networks
 #. Recurrent Neural Networks
@@ -80,93 +80,93 @@ Dzień 2
 Notatki
 =======
 .. todo::
-    - Luźne notatki
-    - tensorFlow
-    - pyTorch
-    - Julia (język programowania)
-    - funkcyjne: higher order function -> przekazywanie funkcji jako argument
-    - ``nltk`` - natural language toolkit
-    - dodać algorytmy genetyczne
-    - sklearn ma wiele datasetów, a te które mają prefix ``fetch_`` zaciągają dane z internetu bo są większe
+    * Luźne notatki
+    * tensorFlow
+    * pyTorch
+    * Julia (język programowania)
+    * funkcyjne: higher order function -> przekazywanie funkcji jako argument
+    * ``nltk`` - natural language toolkit
+    * dodać algorytmy genetyczne
+    * sklearn ma wiele datasetów, a te które mają prefix ``fetch_`` zaciągają dane z internetu bo są większe
 
 .. todo::
-    - selekcja features
-    - LDA, QDA, KNN. KNN akurat jest, i go wykorzystam
-    - ROC, AUC
-    - niezbalansowane klasy
-    - Bagging, VotingClassifier
-    - XGBoost
-    - braki w danych
+    * selekcja features
+    * LDA, QDA, KNN. KNN akurat jest, i go wykorzystam
+    * ROC, AUC
+    * niezbalansowane klasy
+    * Bagging, VotingClassifier
+    * XGBoost
+    * braki w danych
 
 Data Science
 ============
-- Scientific Computing (stara nazwa Data Science)
-- analiza danych
-- łączenie danych z różnych źródeł
+* Scientific Computing (stara nazwa Data Science)
+* analiza danych
+* łączenie danych z różnych źródeł
 
 Machine Learning - uczymy konkretne modele przewidywać
 Budowa danych do uczenia modelu to jest zupełnie inna sprawa.
 
 Eksploracja danych - poszukiwania trendów:
 
-    - metody statystyczne
-    - proste statystyki opisowe (kwantyle)
-    - grupowania i opisowe statystyki
-    - czy masz wartości wystające (nietypowe - outlayers)
-    - odchylenia standardowe (czy obserwacje są 3 razy odchylenie)
-    - czy to jest rozkład
-    - można liczyć kurtozę
-    - można liczyć średnie itp
-    - rozkład Studenta-t stosujesz do 30 próbek, a w Machine Learning zwykle masz dużo więcej
-    - czy rozkład jest gausem (czy jest wielomodalnym - złożeniem dwóch lub więcej rozkładów), np. wiek - gaus dla mężczyzn i dla kobiet, będzie inny
-    - gaussian mixture models (model szuka ile modeli gaussowskich jest w danych)
+    * metody statystyczne
+    * proste statystyki opisowe (kwantyle)
+    * grupowania i opisowe statystyki
+    * czy masz wartości wystające (nietypowe - outlayers)
+    * odchylenia standardowe (czy obserwacje są 3 razy odchylenie)
+    * czy to jest rozkład
+    * można liczyć kurtozę
+    * można liczyć średnie itp
+    * rozkład Studenta-t stosujesz do 30 próbek, a w Machine Learning zwykle masz dużo więcej
+    * czy rozkład jest gausem (czy jest wielomodalnym - złożeniem dwóch lub więcej rozkładów), np. wiek - gaus dla mężczyzn i dla kobiet, będzie inny
+    * gaussian mixture models (model szuka ile modeli gaussowskich jest w danych)
 
 Badacz Danych
 
 
 Trzy dziedziny Data Science
 ---------------------------
-- Data Science (wymaga trochę programowania, ale mniej niż Engineering)
-- Data Engineering (przerzucanie danych z lewa na prawo - więcej programowania)
-- Statystyk (budowanie rozbudowanych modelów danych)
+* Data Science (wymaga trochę programowania, ale mniej niż Engineering)
+* Data Engineering (przerzucanie danych z lewa na prawo - więcej programowania)
+* Statystyk (budowanie rozbudowanych modelów danych)
 
 Różne źródła danych:
 
-    - rozmawianie po api
-    - różne formaty
-    - pochodzenie
+    * rozmawianie po api
+    * różne formaty
+    * pochodzenie
 
 Jupyter
 =======
-- średnik usuwa wyświetlanie linii
-- zamykanie kerneli
-- instalowanie pluginów - spellchecker
-- list.pop? - znak zapytania wyświetla help do obiektu
-- %%timeit
-- % - globalne
-- %% - dla komorki
-- ! uruchamianie terminala pod spodem (interoperacyjne z pythonem)
+* średnik usuwa wyświetlanie linii
+* zamykanie kerneli
+* instalowanie pluginów - spellchecker
+* list.pop? - znak zapytania wyświetla help do obiektu
+* %%timeit
+* % - globalne
+* %% - dla komorki
+* ! uruchamianie terminala pod spodem (interoperacyjne z pythonem)
 
 Machine Learning
 ================
 bez nadzoru:
 
-    - Poszukiwanie wzorców
-    - najczęściej to jakiś rodzaj klastrowania
-    - zmniejsza wymiarowość danych
-    - wykrywanie anomalii
-    - klastrowanie hierarchiczne
+    * Poszukiwanie wzorców
+    * najczęściej to jakiś rodzaj klastrowania
+    * zmniejsza wymiarowość danych
+    * wykrywanie anomalii
+    * klastrowanie hierarchiczne
 
 z nadzorem:
 
-    - Przewidujemy trend w danych, które otrzymujemy
+    * Przewidujemy trend w danych, które otrzymujemy
 
 
 Musimy mieć więcej niż 50 próbek. Poniżej tej ilości można bawić się w statystykę ale nie w machine learning:
 
-    - czy idziemy w stronę regresji czy klasyfikacji
-    - czy mamy oznaczone dane czy nie (idziemy w unsupervised learning)
-    - czy mamy więcej czy mniej niż 100k próbek
+    * czy idziemy w stronę regresji czy klasyfikacji
+    * czy mamy oznaczone dane czy nie (idziemy w unsupervised learning)
+    * czy mamy więcej czy mniej niż 100k próbek
 
 Pierwszy wybór jeżeli chodzi o klasyfikator to Regresja Logistyczna.
 
@@ -184,8 +184,8 @@ SGD - Stochastic Gradient Descent
 
 Not working:
 
-    - niestabilny algorytm (może nie zbiegać)
-    - nie daje jakości klasyfikacji
+    * niestabilny algorytm (może nie zbiegać)
+    * nie daje jakości klasyfikacji
 
 Klastry
 -------
@@ -195,9 +195,9 @@ Dużo algorytmów stosuje odwracanie macierzy, a komputery mają z tym problem, 
 
 PCA - Twój model będzie działał lepiej, ale nie wiesz który parametr ma większy wpływ na jakość, np:
 
-    - długość, szerokość i położenie działki zamienia w jeden wektor
-    - porównuje dane według tego wektora
-    - ale nie wiadomo które z długość, szerokość i położenie działki ma największy wpływ
+    * długość, szerokość i położenie działki zamienia w jeden wektor
+    * porównuje dane według tego wektora
+    * ale nie wiadomo które z długość, szerokość i położenie działki ma największy wpływ
 
 Sieci Neuronowe
 ---------------
@@ -214,30 +214,30 @@ Regresja jest liniowa (mamy nieskończoną listę klas)
 
 Regresja liniowa
 ----------------
-- Odczytywanie wartości z wykresu dla linii wykreślonej na podstawie danych.
-- Minimalna funkcja, która daje nam poprawną predykcję.
-- Mało podatna na overfitting
-- Podatna na underfitting
-- Dobra wartość dobroci w stosunku do trudności.
-- Bardzo często wykorzystywana.
-- Szczególnie często wykorzystywane w systemach RTB (Realtime Bidding) czyli system aukcji dla reklam na stronach, który musi wyrobić się w 100-200ms (trzeba uwzględnić narzut sieciowy). Dla takich przypadków stosuje się regresję liniową albo logistyczną, bo decyzja musi być podjęta bardzo szybko (wykorzystanie sieci neuronowych byłoby zbyt czasochłonne).
+* Odczytywanie wartości z wykresu dla linii wykreślonej na podstawie danych.
+* Minimalna funkcja, która daje nam poprawną predykcję.
+* Mało podatna na overfitting
+* Podatna na underfitting
+* Dobra wartość dobroci w stosunku do trudności.
+* Bardzo często wykorzystywana.
+* Szczególnie często wykorzystywane w systemach RTB (Realtime Bidding) czyli system aukcji dla reklam na stronach, który musi wyrobić się w 100-200ms (trzeba uwzględnić narzut sieciowy). Dla takich przypadków stosuje się regresję liniową albo logistyczną, bo decyzja musi być podjęta bardzo szybko (wykorzystanie sieci neuronowych byłoby zbyt czasochłonne).
 
-- Przykładowy dataset: Diabetes (http://www4.stat.ncsu.edu/~boos/var.select/diabetes.html)
-- Sklearn wykorzystuje tablice numpy
-- Target - zmienna opisywana (y)
+* Przykładowy dataset: Diabetes (http://www4.stat.ncsu.edu/~boos/var.select/diabetes.html)
+* Sklearn wykorzystuje tablice numpy
+* Target - zmienna opisywana (y)
 
 .. code-block:: python
 
     diabetes_X = diabetes.data[:, np.newaxis, 2]  # wyciągamy jako wektor kolumnowy (nie trzeba tego robić jak mamy więcej niż jedną kolumnę)
 
-- do cech (x) sklearn oczekuje wektora kolumnowego
-- ilość wierszy w wektorze (y) musi być taka sama
+* do cech (x) sklearn oczekuje wektora kolumnowego
+* ilość wierszy w wektorze (y) musi być taka sama
 
-- Zmienna opisująca
-- Zmienna opisywana
+* Zmienna opisująca
+* Zmienna opisywana
 
-- Im R2 jest bliżej 1 tym lepiej
-- wykres dla danych trenowanych
+* Im R2 jest bliżej 1 tym lepiej
+* wykres dla danych trenowanych
 
 .. code-block:: python
 
@@ -251,10 +251,10 @@ Regresja liniowa
     plt.plot(diabetes_X_test, diabetes_y_pred, color='blue', linewidth=3)
     plt.show()
 
-- Zmienne lepiej opisujące (BMI) - mocny współczynnik mówiący o modelu
-- Zmienne gorzej opisujące (sex) kiepsko determinuje czy ktoś ma cukrzycę
-- W zależności od zmiennej regresja działa lepiej albo gorzej
-- Funkcja kosztu to nie tylko błąd średniokwadratowy ale również współczynnik wag.
+* Zmienne lepiej opisujące (BMI) - mocny współczynnik mówiący o modelu
+* Zmienne gorzej opisujące (sex) kiepsko determinuje czy ktoś ma cukrzycę
+* W zależności od zmiennej regresja działa lepiej albo gorzej
+* Funkcja kosztu to nie tylko błąd średniokwadratowy ale również współczynnik wag.
 
 Zadanie
 ^^^^^^^
@@ -328,9 +328,9 @@ Zadanie
 
 Ciąg dalszy
 ^^^^^^^^^^^
-- Regresję logistyczną można wykorzystać dla tzw. okien danych. Gdy wykres rośnie a później maleje, to regresja liniowa byłaby linią prostą, a tak gdy podzieli się wykres na połowę (rosnącą i malejącą) i stworzy się regresję dla przedziału.
-- Można to łatwiej zrobić tworząc ``pandas.DataFrame`` i przekazując je do ``sklearn``
-- Przypadek dla wielu zmiennych opisujących:
+* Regresję logistyczną można wykorzystać dla tzw. okien danych. Gdy wykres rośnie a później maleje, to regresja liniowa byłaby linią prostą, a tak gdy podzieli się wykres na połowę (rosnącą i malejącą) i stworzy się regresję dla przedziału.
+* Można to łatwiej zrobić tworząc ``pandas.DataFrame`` i przekazując je do ``sklearn``
+* Przypadek dla wielu zmiennych opisujących:
 
 .. code-block:: python
 
@@ -353,7 +353,7 @@ Ciąg dalszy
           % mean_squared_error(dia_test['target'], lr.predict(dia_test[['age', 'sex', 'bmi']])))
     print('Metryka R2 (wariancji): %.2f' % r2_score(dia_test['target'], dia_test['predict']))
 
-- Przypadek dla jednej zmiennej opisującej:
+* Przypadek dla jednej zmiennej opisującej:
 
 .. code-block:: python
 
@@ -380,18 +380,18 @@ Modele Chernove
 ---------------
 * Czy klient przedłuży umowę mając jakieś dane (analityk Ci mówi, bo dzwonił do 1000 osób i wie, że najczęściej zmieniają umowę gdy...):
 
-    - czy przedłużał wcześniej
-    - od kiedy jest
-    - czy zgłaszał jakieś problemy z umową
-    - jaka jest wartość abonamentu
-    - ile dzwoni
-    - możesz mierzyć dobroć oferty 0-100 czy np. nowa oferta jest dla klienta
+    * czy przedłużał wcześniej
+    * od kiedy jest
+    * czy zgłaszał jakieś problemy z umową
+    * jaka jest wartość abonamentu
+    * ile dzwoni
+    * możesz mierzyć dobroć oferty 0-100 czy np. nowa oferta jest dla klienta
 
 * Jak sprawdzić czy klient jest zadowolony? (np. śledzić trendy na FB, czy napisał, że jest niezadowolony):
 
-    - Named Entity Recognition
-    - Analiza Sentymentu (jak nacechowana jest wiadomość na social media)
-    - Inżynieria cech z innych źródeł (typowy Data Science)
+    * Named Entity Recognition
+    * Analiza Sentymentu (jak nacechowana jest wiadomość na social media)
+    * Inżynieria cech z innych źródeł (typowy Data Science)
 
 * Mogą wystąpić dyskretne eventy, które wpływają na ofertę. Np jakieś wydarzenia na świecie itp które wpływają na model. np. premier brał łapówki a to jest firma publiczna, jej akcje spadną, więc trzeba uwzględnić w modelu możliwość wprowadzenia dyskretnych eventów wraz z wagą wydarzenia i wpływem na model. Tu wchodzi teoria gier i Nash
 
@@ -412,22 +412,22 @@ Regularyzacja
 
 * Regularyzacja Ridge lub Lasso:
 
-    - parametr alfa to waga regularyzacji, jak bardzo wagi wpływają na funkcję kosztu
-    - jak dochodzą nam parametry do modelu to trzeba zmieniać parametr alfa
-    - regularyzacja L1 często wywala parametry nieistotne do zera
-    - Czasami parametr alfa=1.0 to wyniki mogą być gorsze.
-    - Samo użycie regularyzacji w regresji liniowej sprowadza się do użycia modelu o innej nazwie
-    - Czasami dobierając parametr alfa np. 0.5 to może polepszyć wynik
+    * parametr alfa to waga regularyzacji, jak bardzo wagi wpływają na funkcję kosztu
+    * jak dochodzą nam parametry do modelu to trzeba zmieniać parametr alfa
+    * regularyzacja L1 często wywala parametry nieistotne do zera
+    * Czasami parametr alfa=1.0 to wyniki mogą być gorsze.
+    * Samo użycie regularyzacji w regresji liniowej sprowadza się do użycia modelu o innej nazwie
+    * Czasami dobierając parametr alfa np. 0.5 to może polepszyć wynik
 
 Jest wersja modeli które mają CV w nazwie (Cross Validation):
 
-    - LassoCV()
-    - oprócz podziału na treningowy i testowy to dzielimy jeszcze na x małych części
-    - trenujemy każdy przedział osobno i sprawdzamy jak błędy się rozkładają
-    - domyślnie jest cv=3, cv=5 daje dobre wyniki
-    - trzeba pamiętać, aby zbiór mógł się na tyle podzielić, aby nie było tam zerowych wartości
-    - sam z siebie zmienia parametr alfa i próbuje znaleźć wartość dla której model będzie najlepszy na podstawie wyliczania Mean Square Errors
-    - ``lasso.alpha_`` można zobaczyć jaki parametr jest najlepszy
+    * LassoCV()
+    * oprócz podziału na treningowy i testowy to dzielimy jeszcze na x małych części
+    * trenujemy każdy przedział osobno i sprawdzamy jak błędy się rozkładają
+    * domyślnie jest cv=3, cv=5 daje dobre wyniki
+    * trzeba pamiętać, aby zbiór mógł się na tyle podzielić, aby nie było tam zerowych wartości
+    * sam z siebie zmienia parametr alfa i próbuje znaleźć wartość dla której model będzie najlepszy na podstawie wyliczania Mean Square Errors
+    * ``lasso.alpha_`` można zobaczyć jaki parametr jest najlepszy
 
 * Elastic Net - ważona regularyzacja L1 i L2, i sprawdzanie która lepiej działa.
 * Cechy binarne w modelach liniowych działają tak sobie, modele drzewiaste dobrze sobie z nią radzą.
@@ -485,17 +485,17 @@ Jest wersja modeli które mają CV w nazwie (Cross Validation):
 
 SVM
 ---
-- Kiedyś bardziej rozpowszechnione obecnie trochę mniej
-- Krenel Tricks (trik jądrowy)
-- Jeżeli dane nie są liniowo separowalne (tzn można przeprowadzić linię, która rozdzieli zbiór na dwie części)
-- Mapuje coś na jakąś funkcję np. koła i tak rozdziela punkty sprowadzając odległości od okręgu na płaszczyznę liniową (odległość punktu od okręgu)
-- Funkcji się raczej nie pisze, używamy już istniejące.
-- Sara się znaleźć taką linię, która nie tylko najlepiej aproksymuje punkty, ale także stara się by punkty graniczne były równoodległe od linii.
-- Funkcja Sinus jest przedziałami liniowa. Model wielomianowy jest lepiej dopasowany.
-- Lepiej jest zastosować OLS i dopasować sinusoidę (np. do sygnałów z szumem warto dopasować sinusoidę)
-- Zwykle jednak nie znamy jaka to funkcja i trzeba szukać.
-- Modele wielomianowe są dużo bardziej złożone obliczeniowo.
-- SVM jest przydatny kiedy mamy ładne nieliniowe granice.
+* Kiedyś bardziej rozpowszechnione obecnie trochę mniej
+* Krenel Tricks (trik jądrowy)
+* Jeżeli dane nie są liniowo separowalne (tzn można przeprowadzić linię, która rozdzieli zbiór na dwie części)
+* Mapuje coś na jakąś funkcję np. koła i tak rozdziela punkty sprowadzając odległości od okręgu na płaszczyznę liniową (odległość punktu od okręgu)
+* Funkcji się raczej nie pisze, używamy już istniejące.
+* Stara się znaleźć taką linię, która nie tylko najlepiej aproksymuje punkty, ale także stara się by punkty graniczne były równoodległe od linii.
+* Funkcja Sinus jest przedziałami liniowa. Model wielomianowy jest lepiej dopasowany.
+* Lepiej jest zastosować OLS i dopasować sinusoidę (np. do sygnałów z szumem warto dopasować sinusoidę)
+* Zwykle jednak nie znamy jaka to funkcja i trzeba szukać.
+* Modele wielomianowe są dużo bardziej złożone obliczeniowo.
+* SVM jest przydatny kiedy mamy ładne nieliniowe granice.
 
 .. code-block:: python
 
@@ -588,50 +588,50 @@ Wyświetlanie nazw targetów:
 Uwaga na ``train_test_split(iris, test_size=0.2)`` kiepsko działa, jeżeli jedna cecha jest słabo reprezentowana.
 Np ilość osób które mają raka. Zdecydowana większość nie ma raka.
 
-- Optymalizować nie tylko na Recall ale również F1
-- Dzielisz próbki by ilość była równo reprezentowana (ale trzeba losować w zależności od wielu zmiennych opisujących)
-- Szczególnie w tematach medycznych (neurologicznych) jest to często występujące: wtedy optymalizować Recall a nie precyzję.
-- Trzeba losować próbki tak, by rozkład był jak najbardziej podobny do rozkładu zbioru oryginalnego
-- Sprawdzasz jak bardzo zbiór oryginalny jest skrzywiony, a później coś robisz. zawsze popełniasz błąd, ale kwestia jak wielki
-- Decydujesz się którą rzecz optymalizujesz, false positive czy false negative
-- Recall = minimalizacja false negativów (lepiej zrobić fałszywy alarm, niż nie wykryć)
+* Optymalizować nie tylko na Recall ale również F1
+* Dzielisz próbki by ilość była równo reprezentowana (ale trzeba losować w zależności od wielu zmiennych opisujących)
+* Szczególnie w tematach medycznych (neurologicznych) jest to często występujące: wtedy optymalizować Recall a nie precyzję.
+* Trzeba losować próbki tak, by rozkład był jak najbardziej podobny do rozkładu zbioru oryginalnego
+* Sprawdzasz jak bardzo zbiór oryginalny jest skrzywiony, a później coś robisz. zawsze popełniasz błąd, ale kwestia jak wielki
+* Decydujesz się którą rzecz optymalizujesz, false positive czy false negative
+* Recall = minimalizacja false negativów (lepiej zrobić fałszywy alarm, niż nie wykryć)
 
 Łańcuchy Markova
 ----------------
-- konwersja z reklam
-- totalnie nie interesuje Cię co nie konwertuje
-- patrzysz na to na czym ludzie odpadają (np. układ strony, pozycja itp)
+* konwersja z reklam
+* totalnie nie interesuje Cię co nie konwertuje
+* patrzysz na to na czym ludzie odpadają (np. układ strony, pozycja itp)
 
 Regresja logistyczna
 --------------------
-- 1 / exp(...)
-- klasyfikuje na dwie części
-- Jeżeli mamy problem wieloklasowy, to możemy zastosować model (OVR) 1 vs rest.
-- Mamy klasa numer jeden (pierwszy zbiór) i reszta.
-- A reszta znów jest podzielona na jeden i reszta.
+* 1 / exp(...)
+* klasyfikuje na dwie części
+* Jeżeli mamy problem wieloklasowy, to możemy zastosować model (OVR) 1 vs rest.
+* Mamy klasa numer jeden (pierwszy zbiór) i reszta.
+* A reszta znów jest podzielona na jeden i reszta.
 
     * https://en.wikipedia.org/wiki/Precision_and_recall
     * https://en.wikipedia.org/wiki/Precision_and_recall#/media/File:Precisionrecall.svg
 
 Recall
 ------
-- Liczymy to ilościowo, tzn. czy zgadł czy nie
-- Precision - ile zgadł poprawnie z wszystkich
-- Recall - ile false positiwów wystąpiło
-- F1 - średnia precyzji i recall
-- ``F1 = 2 * (precision * recall) / (precision + recall)``
+* Liczymy to ilościowo, tzn. czy zgadł czy nie
+* Precision - ile zgadł poprawnie z wszystkich
+* Recall - ile false positiwów wystąpiło
+* F1 - średnia precyzji i recall
+* ``F1 = 2 * (precision * recall) / (precision + recall)``
 
     * tp = true positives
     * fn = false negatives
 
-- Recall = tp / tp + fn
-- Type 1 i Type 2 error (częste pytanie na rozmowach kwalifikacyjnych):
+* Recall = tp / tp + fn
+* Type 1 i Type 2 error (częste pytanie na rozmowach kwalifikacyjnych):
 
-    - Type 1 czyli tzw. false positive - powiedzieć mężczyźnie że jest w ciąży
-    - Type 2 czyli tzw. false negative - ciężarnej kobiecie powiedzieć, że nie jest w ciąży
+    * Type 1 czyli tzw. false positive - powiedzieć mężczyźnie że jest w ciąży
+    * Type 2 czyli tzw. false negative - ciężarnej kobiecie powiedzieć, że nie jest w ciąży
 
-- False negativy staramy się eliminować, szczególnie w systemach medycznych
-- Support = ile mamy elementów w naszym zbiorze testowym
+* False negativy staramy się eliminować, szczególnie w systemach medycznych
+* Support = ile mamy elementów w naszym zbiorze testowym
 
 .. code-block:: python
 
@@ -640,36 +640,36 @@ Recall
     logreg.fit(iris_train[features], iris_train['target'])
     print(classification_report(iris_test['target'], logreg.predict(iris_test[features])))
 
-- Jak użyjemy płatków, to nasz problem jest dużo lepiej liniowo separowalny.
-- Jeżeli użyjemy kielichów, to cenchy bardziej się se sobą mieszają.
-- Dla problemów muiltiklasowych, można zamienić model na:
+* Jak użyjemy płatków, to nasz problem jest dużo lepiej liniowo separowalny.
+* Jeżeli użyjemy kielichów, to cenchy bardziej się se sobą mieszają.
+* Dla problemów muiltiklasowych, można zamienić model na:
 
 .. code-block:: python
 
     logreg = linear_model.LogisticRegression(C=1e5, multi_class='multinomial', solver='sag')
 
-- Konwergencja = zbieżność
-- Przy minimalizacji Epsilon określa zbieżność
-- Jeżeli docierając do maksymalnej iteracji gradient będzie zbyt stromy, to wywali error konwergencji
-- Wtedy trzeba zwiększyć ilość iteracji
+* Konwergencja = zbieżność
+* Przy minimalizacji Epsilon określa zbieżność
+* Jeżeli docierając do maksymalnej iteracji gradient będzie zbyt stromy, to wywali error konwergencji
+* Wtedy trzeba zwiększyć ilość iteracji
 
 .. code-block:: python
 
     logreg = linear_model.LogisticRegression(C=1e5, multi_class='multinomial', solver='sag', max_iter=1e6)
 
-- Model ``sag`` dobrze działa dla dużych dancyh, i wtedy dobrze zbiega i nie trzeba zwiększać ``max_iter``
+* Model ``sag`` dobrze działa dla dużych dancyh, i wtedy dobrze zbiega i nie trzeba zwiększać ``max_iter``
 
 .. code-block:: python
 
     logreg = linear_model.LogisticRegression(C=1e5, multi_class='multinomial', solver='lbfgs')
 
-- Jest szybszy, ale nie jest lepszy w optymalizacji globalnej. może błędnie wykryć minimum lokalne funkcji i błędnie pomyśleć, że jest to minimum globalne wielomianu.
-- Zamiana petal z sepal w tym przypadku jest dużo ważniejsze niż zmiana solvera.
+* Jest szybszy, ale nie jest lepszy w optymalizacji globalnej. może błędnie wykryć minimum lokalne funkcji i błędnie pomyśleć, że jest to minimum globalne wielomianu.
+* Zamiana petal z sepal w tym przypadku jest dużo ważniejsze niż zmiana solvera.
 
-- SVC - modele support vector classifier
-- SVR - support vector regression
-- OVR - One vs Rest
-- Przestrzeń decyzyjna = pole na wykresie
+* SVC - modele support vector classifier
+* SVR - support vector regression
+* OVR - One vs Rest
+* Przestrzeń decyzyjna = pole na wykresie
 
 .. code-block:: python
 
@@ -682,25 +682,25 @@ Recall
 
     svc = svm.SVC(kernel='rbf', C=1)
 
-- Mapuje funkcję nieliniową na płaszczyznę.
-- Ten problem jest rozsądnie liniowo separowalny i nie warto używać bardziej skąplikowanych modelów, bo może skutkować to przeuczaniem.
-- Teraz są popularne modele XGBoost (model drzewiasty)
-- Modele drzewiaste dobrze sobie radzą z cechami dyskretnymi.
-- Cecha dla zgadnięcia tego wyniku jest bardzo silna.
+* Mapuje funkcję nieliniową na płaszczyznę.
+* Ten problem jest rozsądnie liniowo separowalny i nie warto używać bardziej skąplikowanych modelów, bo może skutkować to przeuczaniem.
+* Teraz są popularne modele XGBoost (model drzewiasty)
+* Modele drzewiaste dobrze sobie radzą z cechami dyskretnymi.
+* Cecha dla zgadnięcia tego wyniku jest bardzo silna.
 
 Ensamble
 --------
-- Ensamble to jest połączenie wielu modeli.
-- Najczęściej się to stosuje w połączeniu Modeli drzewiastych.
+* Ensamble to jest połączenie wielu modeli.
+* Najczęściej się to stosuje w połączeniu Modeli drzewiastych.
 
 K-Nearest Neighbors
 -------------------
-- To bardziej algorytm niż model. Programiści go lubią bo jest mniej matematyki.
-- Jest bardzo prosty.
-- Uczy się danych na pamięć.
-- Jest parametr, ``weights='uniform'`` (niezależnie od tego jak są daleko)
-- Ale możemy też ważyć ilu jest bliskich sąsiadów a ilu dalekich (``weights='distance'``).
-- Można także użyć [callable] tj. przekazać funkcję, która liczy wagi
+* To bardziej algorytm niż model. Programiści go lubią bo jest mniej matematyki.
+* Jest bardzo prosty.
+* Uczy się danych na pamięć.
+* Jest parametr, ``weights='uniform'`` (niezależnie od tego jak są daleko)
+* Ale możemy też ważyć ilu jest bliskich sąsiadów a ilu dalekich (``weights='distance'``).
+* Można także użyć [callable] tj. przekazać funkcję, która liczy wagi
 
 .. code-block:: python
 
@@ -711,23 +711,23 @@ K-Nearest Neighbors
 
 Zalety:
 
-- Super prosta
-- Dane reprezentują co dostaniemy (nie ma koncepcji funkcji)
-- Jeżeli problem jest super nieliniowy, to będzie działało dobrze
-- zapamiętuje dane, więc jak problem będzie duży to zapamięta dużo danych
-- łatwo douczać
-- jest bardzo szybki
+* Super prosta
+* Dane reprezentują co dostaniemy (nie ma koncepcji funkcji)
+* Jeżeli problem jest super nieliniowy, to będzie działało dobrze
+* zapamiętuje dane, więc jak problem będzie duży to zapamięta dużo danych
+* łatwo douczać
+* jest bardzo szybki
 
 Model najczęściej wykorzystuje się w analizie danych strumieniowych:
 
-    - uczymy model, analizujemy
-    - dostajemy nowe dane, uczymy model i znów analizujemy
-    - model adaptacyjny
+    * uczymy model, analizujemy
+    * dostajemy nowe dane, uczymy model i znów analizujemy
+    * model adaptacyjny
 
 Modele strumieniowe:
 
-    - uczone raz, tzw. offline'owe
-    - douczane w trakcie, tzw. online (adaptują się do naszych danych) - ciężej nad nimi panować. Jeżeli się doucza sam, to ciężko panować nad jakością tego, więc trzeba monitorować.
+    * uczone raz, tzw. offline'owe
+    * douczane w trakcie, tzw. online (adaptują się do naszych danych) - ciężej nad nimi panować. Jeżeli się doucza sam, to ciężko panować nad jakością tego, więc trzeba monitorować.
 
 .. note:: ``KNeighborsClassifier()`` i ``n_neighbors`` - pisownia amerykańska, bo angielska ma u w środku
 
@@ -735,47 +735,47 @@ Duży model SVM może być wolniejszy
 
 Dobór parametru ``n_neighbors`` zwykle jest na czuja:
 
-    - im więcej punktów tym więcej można sąsiadów dobrać
-    - standardowo zaczayna się od 5 lub 3 ale częściej 5
-    - różnica pomiędzy 5 a 10 mówi o gęstości punków
-    - zbyt duże wartości parametrów niekoniecznie wpływa na jakość
+    * im więcej punktów tym więcej można sąsiadów dobrać
+    * standardowo zaczayna się od 5 lub 3 ale częściej 5
+    * różnica pomiędzy 5 a 10 mówi o gęstości punków
+    * zbyt duże wartości parametrów niekoniecznie wpływa na jakość
 
 Model bardzo szybko się uczy i klasyfikuje, więc można zmieniać parametry w trakcie i monitorować.
 
 Drzewa decyzyjne
 ----------------
-- Najszczęściej w postaci drzewa binarnego - z dwoma opcjami:
+* Najszczęściej w postaci drzewa binarnego - z dwoma opcjami:
 
-    - znajdują nam formę klastrów związane z danymi
-    - odzworowują procesy biznesowe
+    * znajdują nam formę klastrów związane z danymi
+    * odzworowują procesy biznesowe
 
-- Entropia - uporządkowanie lub chaotyczność układu
-- Gini Index - używa się jako index ekonomiczny w konktekście nierówności społecznych
+* Entropia - uporządkowanie lub chaotyczność układu
+* Gini Index - używa się jako index ekonomiczny w konktekście nierówności społecznych
 
-- Criterion # Indeks informacyjności  # The function to measure the quality of a split:
+* Criterion # Indeks informacyjności  # The function to measure the quality of a split:
 
-    - criterion='gini'  # Gini impurity (nierówności)
-    - critetion='entropy'  # for the information gain
+    * criterion='gini'  # Gini impurity (nierówności)
+    * critetion='entropy'  # for the information gain
 
-- Albo chcesz dużą informacyjność albo dużą nierówność.
-- Przestrzenie decyzyjne są w formie prostokątów ze względu na binarność decyzji:
+* Albo chcesz dużą informacyjność albo dużą nierówność.
+* Przestrzenie decyzyjne są w formie prostokątów ze względu na binarność decyzji:
 
-    - inaczej rosną przyrosty wartości
-    - może to powodować zmniejszanie dokładności
+    * inaczej rosną przyrosty wartości
+    * może to powodować zmniejszanie dokładności
 
 Zalety:
 
-    - dobrze działają z wartościami kategorycznymi (lewo-prawo, mężczyzna-kobieta)
-    - w miarę szybkie (tak naprawdę to wiele zagnieżdżonych ifów)
-    - generują algorytm biznesowy pod spodem dla naszej logiki (bardzo często drzewa stosuje się tylko po to, aby odkryć klasę problemów)
+    * dobrze działają z wartościami kategorycznymi (lewo-prawo, mężczyzna-kobieta)
+    * w miarę szybkie (tak naprawdę to wiele zagnieżdżonych ifów)
+    * generują algorytm biznesowy pod spodem dla naszej logiki (bardzo często drzewa stosuje się tylko po to, aby odkryć klasę problemów)
 
 Wady:
 
-    - rzadziej używane jako klasyfikatory
-    - przestrzenie klasyfikacyjne są prostokątne co kiepsko oddaje charakter liniowych danych
-    - mają tendencję do przeuczania się (ma problemy z generalizacją)
-    - zbyt dużo parametrów, którymi można sterować, co powoduje, że musimy sprawdzić bardzo dużo przypadków
-    - best jest greedy algorytm, ale czasami ten podział późniejszy jest istotniejszy niż ten który dopasował na początku.
+    * rzadziej używane jako klasyfikatory
+    * przestrzenie klasyfikacyjne są prostokątne co kiepsko oddaje charakter liniowych danych
+    * mają tendencję do przeuczania się (ma problemy z generalizacją)
+    * zbyt dużo parametrów, którymi można sterować, co powoduje, że musimy sprawdzić bardzo dużo przypadków
+    * best jest greedy algorytm, ale czasami ten podział późniejszy jest istotniejszy niż ten który dopasował na początku.
 
 Zawsze bierze ten który ma najwięszą wartość na wyższym stopniu.
 
@@ -783,17 +783,17 @@ CART - Classification and Regression Trees
 ------------------------------------------
 W drzewach jest dużo parametrów:
 
-    - ograniczanie rozbudowy drzewa
-    - podejmowanie losowych decyzji
-    - feature_importance
-    - drzewa można nauczyć największej ilości featerów
+    * ograniczanie rozbudowy drzewa
+    * podejmowanie losowych decyzji
+    * feature_importance
+    * drzewa można nauczyć największej ilości featerów
 
 Kalibracja parametrów modeli
 ----------------------------
 Greed search CV:
 
-    - przeszukiwanie przestrzeni hiperparametrów
-    - cross validation
+    * przeszukiwanie przestrzeni hiperparametrów
+    * cross validation
 
 .. code-block:: python
 
@@ -869,19 +869,19 @@ Lub dla każdej klasy jak w raporcie:
 
 Confusion matrix:
 
-    - pokazuje jak zgadywaliśmy
-    - najlepiej jeżeli na diagonalach jest 0 (to znaczy, że nie popełniliśmy błędów)
+    * pokazuje jak zgadywaliśmy
+    * najlepiej jeżeli na diagonalach jest 0 (to znaczy, że nie popełniliśmy błędów)
 
 
 Jaccard similarity score:
 
-    - ile mamy elementów w części wspólnej (unii) zbirów
+    * ile mamy elementów w części wspólnej (unii) zbirów
 
 ROC (receiver operating characteristic):
 
-    - stosuje się dla problemów dwuklasowych
-    - dla wieloklasowych jest problematyczne bo trzeba podzielić na OVR
-    - pokazuje jak bardzo klasy są od siebie oddalone
+    * stosuje się dla problemów dwuklasowych
+    * dla wieloklasowych jest problematyczne bo trzeba podzielić na OVR
+    * pokazuje jak bardzo klasy są od siebie oddalone
 
 (linia konwolucji - splotu) czyli nachodzenie na siebie rozkładów na wykresie
 miara AUC - Aread under the curve - im bliżej 1.0 tym lepiej
@@ -891,29 +891,29 @@ Zgadywnie jak bardzo dobrze potrafimy klasyfikować poszczególne klasy
 Jeżeli mamy wiele klas to najczęściej je uśredniamy
 
 Najczęściej:
-- confusion matrix
-- zmieniamy miarę, którą optymalizujemy i wtedy dostajemy trochę inny model
+* confusion matrix
+* zmieniamy miarę, którą optymalizujemy i wtedy dostajemy trochę inny model
 
 Dane tekstowe
 -------------
-- Jak zareprezentować tekst, aby można było coś na jego temat powiedzieć?
-- Dane tekstowe zazwyczaj przychodzą w formie dokumentów
-- Najczęściej klasyfikujemy dokumenty i przypisujemy im klasy (spam - nie spam, pozytywny tekst - negatywny)
+* Jak zareprezentować tekst, aby można było coś na jego temat powiedzieć?
+* Dane tekstowe zazwyczaj przychodzą w formie dokumentów
+* Najczęściej klasyfikujemy dokumenty i przypisujemy im klasy (spam - nie spam, pozytywny tekst - negatywny)
 
 MTD - Macierz TD (Term-Document):
 
-    - budowanie macieży z każdego słowa w zdaniu
-    - bardzo dużo wierszy i kolumn
-    - każde słowo to osobna kolumna, a wartość to ile razy w zdaniu
-    - dużo rzadkich danych - słowa wspólne rzadko występują we wszystkich zdaniach
-    - trzeba wszystkie dane sprowadzić do małych znaków (inaczej będziemy mieli dużo wersji)
-    - odmiana wyrazów ma znaczenie (usuwanie liczb mnogich, fleksja - odmiana słów itp)
-    - trzeba uwzględnić, że w dancyh mogą być literówki
-    - stemer - odcinanie końcówek (databases utnie do database) - zależne od języka
-    - lematyzator - hasłowanie
-    - part of speach tagger - rozpoznawanie części mowy
-    - używając stemerów i lemazytorów powoduje utratę informacji (np. zamieniając databases na database, gubimy info o liczbach mnogich)
-    - wordnet - słowniki
+    * budowanie macieży z każdego słowa w zdaniu
+    * bardzo dużo wierszy i kolumn
+    * każde słowo to osobna kolumna, a wartość to ile razy w zdaniu
+    * dużo rzadkich danych - słowa wspólne rzadko występują we wszystkich zdaniach
+    * trzeba wszystkie dane sprowadzić do małych znaków (inaczej będziemy mieli dużo wersji)
+    * odmiana wyrazów ma znaczenie (usuwanie liczb mnogich, fleksja - odmiana słów itp)
+    * trzeba uwzględnić, że w dancyh mogą być literówki
+    * stemer - odcinanie końcówek (databases utnie do database) - zależne od języka
+    * lematyzator - hasłowanie
+    * part of speach tagger - rozpoznawanie części mowy
+    * używając stemerów i lemazytorów powoduje utratę informacji (np. zamieniając databases na database, gubimy info o liczbach mnogich)
+    * wordnet - słowniki
 
 W klasyfikacji spamu, wielkość liter ma znaczenie
 
@@ -933,7 +933,7 @@ Tokenizacja - podził na wyrazy
 NLTK - standardowy do analizy mowy języka polskiego
 Dużo narzędzi do języka polskiego jest w Javie:
 
-    - np morfeusz (analizator morfologiczny) daje nam nie tylko części mowy ale również morfen - umie rozmawiać z pythonem
+    * np morfeusz (analizator morfologiczny) daje nam nie tylko części mowy ale również morfen - umie rozmawiać z pythonem
 
 Słowosieć PLWORDNET
 
@@ -946,72 +946,72 @@ Term Frequency–Inverse Document Frequency (TF-IDF)
 --------------------------------------------------
 ma w sobie countVectorizer() oraz TfidfTransformer():
 
-    - liczy ile razy coś się pojawiło (dzieli przez ile wyrazów pojawiło się w danym dokumencie)
-    - waży się jeszcze przez to ile razy to się pojawiło we wszystkich dokumentach
-    - im częściej coś się pojawia we wszystkich dokumentach tym wyraz jest ważniejszy
-    - im żadziej w danym dokumencie coś się pojawiło tym ważniejsze
+    * liczy ile razy coś się pojawiło (dzieli przez ile wyrazów pojawiło się w danym dokumencie)
+    * waży się jeszcze przez to ile razy to się pojawiło we wszystkich dokumentach
+    * im częściej coś się pojawia we wszystkich dokumentach tym wyraz jest ważniejszy
+    * im żadziej w danym dokumencie coś się pojawiło tym ważniejsze
 
 Nas interesuje jak często wyraz pojawia się w książce, ale nie ile razy:
 
-    - książka 200 stron może mieć większą ilość wystąpień (proporcjonalnie) do książki 1000 stron
+    * książka 200 stron może mieć większą ilość wystąpień (proporcjonalnie) do książki 1000 stron
 
 Zbiór jest zbalansowany do uczenia (wagi są od 0.0-1.0)
 
 Cosine Similarity
 ^^^^^^^^^^^^^^^^^
-- długie wektory wielowymiarowe
-- Czy dokumenty są podobne do siebie? - liczymy cosinus konta wektorów
-- Jeżli naszymi cechami są słowa, to jeżeli w dokuemntach są te same ilości słów - to dokumenty są takie same
-- uwaga, bo słowa mogą mieć różną kolejność
-- dostajemy macierz (nasze dokumenty) na diagonalach dostajemy podobieństwo dokumentów
-- każdy wiersz tabelki TF-IDF to wektor (ilość słów to liczba wymiarów), wartości to częstości występowania
-- często używana w modelach
+* długie wektory wielowymiarowe
+* Czy dokumenty są podobne do siebie? - liczymy cosinus konta wektorów
+* Jeżli naszymi cechami są słowa, to jeżeli w dokuemntach są te same ilości słów - to dokumenty są takie same
+* uwaga, bo słowa mogą mieć różną kolejność
+* dostajemy macierz (nasze dokumenty) na diagonalach dostajemy podobieństwo dokumentów
+* każdy wiersz tabelki TF-IDF to wektor (ilość słów to liczba wymiarów), wartości to częstości występowania
+* często używana w modelach
 
 Miara Levensteina
 ^^^^^^^^^^^^^^^^^
-- jak bardzo jedna sekwencja jest podobna do drugiej
-- nie obchodzi jej gdzie ta sekwencja występuje
-- wykorzystanie difflib.SequenceMatcher(None, tekst_a, tekst_b).ratio()
-- czy te literki występują na tych samych miejscach, kompletnie nie ma znaczenia znaczenie (cat i caterpillar)
-- ile trzeba wprowadzić modyfikacji, aby stringi wyglądały tak samo
-- często się stosuje do tekstów
-- jest miarą pozycyjną
+* jak bardzo jedna sekwencja jest podobna do drugiej
+* nie obchodzi jej gdzie ta sekwencja występuje
+* wykorzystanie difflib.SequenceMatcher(None, tekst_a, tekst_b).ratio()
+* czy te literki występują na tych samych miejscach, kompletnie nie ma znaczenia znaczenie (cat i caterpillar)
+* ile trzeba wprowadzić modyfikacji, aby stringi wyglądały tak samo
+* często się stosuje do tekstów
+* jest miarą pozycyjną
 
 Miara Jaccarda
 ^^^^^^^^^^^^^^
-- można liczyć na wiele sposobów
-- ile mamy elementów na przecięciu setu
+* można liczyć na wiele sposobów
+* ile mamy elementów na przecięciu setu
 
 Transformatory i pipeline
 -------------------------
-- Transformer - jak transformujemy dane
-- Pipeline - łączy transformatory
-- Estimator - model
+* Transformer - jak transformujemy dane
+* Pipeline - łączy transformatory
+* Estimator - model
 
 Sposób na rozszerzanie sklearn
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- kolejność elementów w pipeline jest ważna
-- składa się ze steps
-- na każdym obiekcie wykona pipeline.fit_transform()
-- można nazywać kolejne elementy pipeline
-- można je podawać jako słownik (uwaga na zmieniającą się kolejność, lepiej użyć OrderedDict)
-- aby uciszyć error ``sklearn.preprocessing.FunctionTransformer()`` trzeba dać ``validate=False``, ma to związek z tym, że oczekuje wartości ``float``. Transformer jest w pełni gotowy do przetwarzania danych tekstowych
+* kolejność elementów w pipeline jest ważna
+* składa się ze steps
+* na każdym obiekcie wykona pipeline.fit_transform()
+* można nazywać kolejne elementy pipeline
+* można je podawać jako słownik (uwaga na zmieniającą się kolejność, lepiej użyć OrderedDict)
+* aby uciszyć error ``sklearn.preprocessing.FunctionTransformer()`` trzeba dać ``validate=False``, ma to związek z tym, że oczekuje wartości ``float``. Transformer jest w pełni gotowy do przetwarzania danych tekstowych
 
 Pipeline
 ^^^^^^^^
-- stosowane do oczyszczania dancyh, np. usuwania liczb mnogich, usuwania ul. os. pl. itp z nazw ulic
-- jezeli jest coś bardziej skomplikowanego, to lepiej użyć klasy dziedziczącej po BaseEstimator i FunctionTransformer
+* stosowane do oczyszczania dancyh, np. usuwania liczb mnogich, usuwania ul. os. pl. itp z nazw ulic
+* jezeli jest coś bardziej skomplikowanego, to lepiej użyć klasy dziedziczącej po BaseEstimator i FunctionTransformer
 
 Klasyfikacja dancyh tekstowych
 ------------------------------
-- SMS Spam Collection (https://archive.ics.uci.edu/ml/machine-learning-databases/00228/smsspamcollection.zip)
-- Dane są jako TSV (Tab Separated Values)
+* SMS Spam Collection (https://archive.ics.uci.edu/ml/machine-learning-databases/00228/smsspamcollection.zip)
+* Dane są jako TSV (Tab Separated Values)
 
 Naive Bayes
 -----------
-- Naive dlatego, że uznaje wszystkie cechy za liniowo niezależne
-- dla dokumentów tekstowych jest to bardzo poprawne
-- prawdopodobieństwo jest nie tylko zależne od tego ile razy wystąpiło, ale również z naszą wiedzą ekspertcką
+* Naive dlatego, że uznaje wszystkie cechy za liniowo niezależne
+* dla dokumentów tekstowych jest to bardzo poprawne
+* prawdopodobieństwo jest nie tylko zależne od tego ile razy wystąpiło, ale również z naszą wiedzą ekspertcką
 
 .. code-block:: python
 
@@ -1039,77 +1039,77 @@ Naive Bayes
 
 Modelowanie tematów
 -------------------
-- uczenie bez nadzoru
-- gensim i model LDA (Latent Dirichlet Allocation)
-- pakiet nie usuwa stopwordów
+* uczenie bez nadzoru
+* gensim i model LDA (Latent Dirichlet Allocation)
+* pakiet nie usuwa stopwordów
 
 Metody bez nadzoru
 ==================
-- Klastrowanie - Minus: musimy powiedzieć ile chcemy mieć klastrów
-- Algorytm K-Means bardzo często wykorzystywany (liczą gdzie jest środek geometryczny punktów, a później klasyfikuje
-- Batch k-means - nie bierze wszystkich danych na raz, tylko dane po kawałku
-- K-Means można użyć do danych dużych (batch) oraz dla danych strumieniowych (przychodzących)
-- K-Means z pamięcią i z zapominaniem
-- W k-means nie przywiązywać się do nazwy klastrów (mogą być przydzielane losowo) ale zawsze ilość klastrów będzie się zgadzała
-- ``MiniBatchKMeans()``
-- K-Means nie bardzo sobie radzi z tym jak klastry są podzielone
-- Jeżeli odległość między dwoma centroidami jest niewielka to opisują ten sam klaster
-- K-Means jest prosty obliczeniowo
+* Klastrowanie - Minus: musimy powiedzieć ile chcemy mieć klastrów
+* Algorytm K-Means bardzo często wykorzystywany (liczą gdzie jest środek geometryczny punktów, a później klasyfikuje
+* Batch k-means - nie bierze wszystkich danych na raz, tylko dane po kawałku
+* K-Means można użyć do danych dużych (batch) oraz dla danych strumieniowych (przychodzących)
+* K-Means z pamięcią i z zapominaniem
+* W k-means nie przywiązywać się do nazwy klastrów (mogą być przydzielane losowo) ale zawsze ilość klastrów będzie się zgadzała
+* ``MiniBatchKMeans()``
+* K-Means nie bardzo sobie radzi z tym jak klastry są podzielone
+* Jeżeli odległość między dwoma centroidami jest niewielka to opisują ten sam klaster
+* K-Means jest prosty obliczeniowo
 
-- Dendrogramy - drzewa - przy klastrowaniu hierarchicznym możemy odcinać drzewa klastrów w hierarchii na interesującym nas poziomie zagnieżdżenia
-- Dendrogram - rysunej hierarhiczności klastrów w postaci drzewa
+* Dendrogramy - drzewa - przy klastrowaniu hierarchicznym możemy odcinać drzewa klastrów w hierarchii na interesującym nas poziomie zagnieżdżenia
+* Dendrogram - rysunej hierarhiczności klastrów w postaci drzewa
 
-- Jeżeli nie wiemy ile klastrów, to lepiej zacząć od budowania dendrogramów i zobaczenie jak dane są połączone
+* Jeżeli nie wiemy ile klastrów, to lepiej zacząć od budowania dendrogramów i zobaczenie jak dane są połączone
 
-- K-Means nie bierze geometrii - tylko odległość
-- Klastry Aglomeracyjne
+* K-Means nie bierze geometrii - tylko odległość
+* Klastry Aglomeracyjne
 
 Dryft - zmiana w danych (np. przy mierzeniu ilości ruchu (w ciągu dnia możemy mnieć mniej wrażliwy system, a w nocy bardziej wrażliwy na pojedyńcze alarmy)
 
-- Stabilizacja klastrów
-- Adaptowanie modelu
+* Stabilizacja klastrów
+* Adaptowanie modelu
 
 PCA
 ---
-- Analiza wektorów własnych macierzy kowariancji, które rozpinają system bazowy
-- gdy mamy dużo zmiennych które są skorelowane (np. Naive Bayes nie lubi tego)
-- często stosuje się do rysowania wielowymiarowych danych
-- Word to weg generuje 100-300 stopni swobody i można zastosować PCA aby sprowadzić do 2 lub 3 wymiarów
-- PCA jest transformatorem a nie modelem
+* Analiza wektorów własnych macierzy kowariancji, które rozpinają system bazowy
+* gdy mamy dużo zmiennych które są skorelowane (np. Naive Bayes nie lubi tego)
+* często stosuje się do rysowania wielowymiarowych danych
+* Word to weg generuje 100-300 stopni swobody i można zastosować PCA aby sprowadzić do 2 lub 3 wymiarów
+* PCA jest transformatorem a nie modelem
 
 .. code-block:: python
 
     # Jak dobrze wektor tłumaczy wariancję
     pca.explained_variance_ratio_
 
-- System jest odwrócony względem wektorów
-- Składa ze sobą wartości skorelowane, np. jeżeli długość działki rośnie to prawdopodonie i szerokość również, PCA złączy je ze sobą
+* System jest odwrócony względem wektorów
+* Składa ze sobą wartości skorelowane, np. jeżeli długość działki rośnie to prawdopodonie i szerokość również, PCA złączy je ze sobą
 
 Sieci neuronowe
 ---------------
-- Detekcja sentymentów na podstawie wyrazu twarzy która patrzy na reklamę
-- SKLearn nie jest narzędziem deeplearningowym, ale ma w sobie zaimplementowane sieci neuronowe
-- Sieci neuronowe są dość trudne w porównaniu z innymi rodzajami
-- Przy analizie obrazu na wejściu są pixele w skali szarości.
-- ``matshow`` (część ``plt.subplot`` pokazuje macież jako obrazek
-- Sieć neuronowa uczy się backpropagation w każdym przejściu sieci
-- Większość sieci bazuje na obrazkach 300x300 px
-- Preprocessing:
+* Detekcja sentymentów na podstawie wyrazu twarzy która patrzy na reklamę
+* SKLearn nie jest narzędziem deeplearningowym, ale ma w sobie zaimplementowane sieci neuronowe
+* Sieci neuronowe są dość trudne w porównaniu z innymi rodzajami
+* Przy analizie obrazu na wejściu są pixele w skali szarości.
+* ``matshow`` (część ``plt.subplot`` pokazuje macież jako obrazek
+* Sieć neuronowa uczy się backpropagation w każdym przejściu sieci
+* Większość sieci bazuje na obrazkach 300x300 px
+* Preprocessing:
 
-    - usuwanie kolorów
-    - zmniejszanie do wspólnych rozmiarów
+    * usuwanie kolorów
+    * zmniejszanie do wspólnych rozmiarów
 
-- TensorFlow
-- PyTorch
-- Caffe
+* TensorFlow
+* PyTorch
+* Caffe
 
 Pojęcia
 ^^^^^^^
-- warstwa wejściowa
-- warstwy ukryte
-- warstwa wyjściowa
-- Przestrzeń wag
-- SGD - Stocastic Gradient Descent
-- Backpopagation
-- Epoki (kolejne przejścia dla propagacji)
-- Label detection - wykrywanie cech z obrazka
+* warstwa wejściowa
+* warstwy ukryte
+* warstwa wyjściowa
+* Przestrzeń wag
+* SGD - Stocastic Gradient Descent
+* Backpopagation
+* Epoki (kolejne przejścia dla propagacji)
+* Label detection - wykrywanie cech z obrazka

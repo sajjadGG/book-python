@@ -34,8 +34,8 @@ Jak to działa na przykładzie Iris
 #. Poszukujemy :math:`k` obserwacji, które są najbliższe nieznanemu gatunkowi Iris.
 #. Użyj najczęściej pojawiającej się wartości z ":math:`k` najbliższych sąsiadów" jako wartość dla nieznanego Iris.
 
-    - tzn. jeżeli np. dla :math:`k=5` (czyli wśród 5 najbliżyszch Irisów) było 3 Iris Setosa, i po jednym z innych gatunków
-    - to naszemu nieznanemu gatunkowi przypiszemy Iris Setosa.
+    * tzn. jeżeli np. dla :math:`k=5` (czyli wśród 5 najbliżyszch Irisów) było 3 Iris Setosa, i po jednym z innych gatunków
+    * to naszemu nieznanemu gatunkowi przypiszemy Iris Setosa.
 
 #. Najczęściej stosuje się algorytm Eukleidesa do wyznaczania odległości, ale można również i inne algorytmy.
 
@@ -66,8 +66,8 @@ Wykorzystanie ``sklearn.neighbors.KNeighborsClassifier``
     predictions = model.predict(features_test)
 
     # How accurate was classifier on testing set
-    output = accuracy_score(labels_test, predictions)
-    print(output)
+    result = accuracy_score(labels_test, predictions)
+    print(result)
     # Output: 0.947368421053
 
 .. note:: Because of some variation for each run, it might give different results.
@@ -124,8 +124,8 @@ Własna implementacja
     predictions = model.predict(features_test)
 
     # How accurate was classifier on testing set
-    output = accuracy_score(labels_test, predictions)
-    print(output)
+    result = accuracy_score(labels_test, predictions)
+    print(result)
     # Output: 0.96
 
 
@@ -199,18 +199,18 @@ Płeć
 
 #. Odpowie na pytanie jaką płeć ma osoba o parametrach:
 
-    - Height: 6
-    - Weight: 130
-    - Foot Size: 8
+    * Height: 6
+    * Weight: 130
+    * Foot Size: 8
 
 #. Jaki jest najlepszy parametr :math:`k` dla tego zadania?
 #. Która z cech ma najwięszy wpływ?
 #. Czy algorytm lepiej działa z:
 
-    - normalizacją i skalownaiem?
-    - bez normalizacji i skalowania?
-    - tylko z normalizacją?
-    - tylko skalowaniem?
+    * normalizacją i skalownaiem?
+    * bez normalizacji i skalowania?
+    * tylko z normalizacją?
+    * tylko skalowaniem?
 
 :Hints:
     * ``preprocessing.LabelEncoder()``

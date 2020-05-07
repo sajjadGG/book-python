@@ -13,9 +13,9 @@ Accessing Range of Elements
     * ``my_sequence[start:stop]``
     * Slice has three indexes:
 
-        - start (inclusive), default: 0
-        - stop (exclusive), default: len(...)
-        - step, default: 1
+        * start (inclusive), default: 0
+        * stop (exclusive), default: len(...)
+        * step, default: 1
 
 .. code-block:: python
 
@@ -277,12 +277,14 @@ Simple collections
     #. Create list ``b`` with digits: 2, 3, 4, 5
     #. Create set ``c`` with every second element from ``a`` and ``b``
     #. Print ``c``
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Stwórz tuplę ``a`` z cyframi: 0, 1, 2, 3
     #. Stwórz listę ``b`` z cyframi: 2, 3, 4, 5
     #. Stwórz zbiór ``c`` z co drugim elementem ``a`` i ``b``
     #. Wypisz ``c``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Output:
     .. code-block:: python
@@ -303,7 +305,7 @@ Split train/test
 * Solution: :download:`solution/sequence_slice_split_train_test.py`
 
 :English:
-    #. Use ``DATA`` from "Input" section (see below)
+    #. Use data from "Input" section (see below)
     #. Write header (first line) to ``header`` variable
     #. Write data without header to ``data`` variable
     #. Calculate pivot point: number records in ``data`` multiplied by PERCENT (division ratio below)
@@ -314,9 +316,10 @@ Split train/test
 
     #. From ``data`` write training data from start to pivot
     #. From ``data`` write test data from pivot to end
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zapisz nagłówek (pierwsza linia) do zmiennej ``header``
     #. Zapisz dane bez nagłówka do zmiennej ``data``
     #. Wylicz punkt podziału: ilość rekordów w ``data`` razy PROCENT (proporcja podziału poniżej)
@@ -327,6 +330,7 @@ Split train/test
 
     #. Z ``data`` zapisz do uczenia rekordy od początku do punktu podziału
     #. Z ``data`` zapisz do testów rekordy od punktu podziału do końca
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
@@ -405,14 +409,14 @@ Slicing text
     #. Remove title and military rank in each variable
     #. Remove also whitespaces at the beginning and end of a text
     #. Use only ``slice`` to clean text
-    #. Compare with output data (see below)
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Usuń tytuł naukowy i stopień wojskowy z każdej zmiennej
     #. Usuń również białe znaki na początku i końcu tekstu
     #. Użyj tylko ``slice`` do oczyszczenia tekstu
-    #. Porównaj wyniki z danymi wyjściowymi (patrz sekcja output)
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python

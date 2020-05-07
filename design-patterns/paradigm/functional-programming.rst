@@ -27,16 +27,16 @@ Example 1
             return False
 
 
-    output = filter(is_even, DATA)
-    print(list(output))
+    result = filter(is_even, DATA)
+    print(list(result))
     # [2, 4]
 
 .. code-block:: python
 
     DATA = [1, 2, 3, 4]
 
-    output = filter(lambda x: x % 2 == 0, DATA)
-    print(list(output))
+    result = filter(lambda x: x % 2 == 0, DATA)
+    print(list(result))
     # [2, 4]
 
 Example 2
@@ -54,13 +54,13 @@ Example 2
         else:
             return False
 
-    system_users = []
+    result = []
 
     for user in DATA:
         if is_system_user(user):
-            system_users.append(user)
+            result.append(user)
 
-    print(system_users)
+    print(result)
     # [{'user': 'root', 'uid': 0}]
 
 
@@ -72,9 +72,9 @@ Example 2
     ]
 
 
-    system_users = filter(lambda x: x['uid'] < 1000, DATA)
+    result = filter(lambda x: x['uid'] < 1000, DATA)
 
-    print(list(system_users))
+    print(list(result))
     # [{'user': 'root', 'uid': 0}]
 
 Monkey patching
@@ -98,12 +98,12 @@ Built-in functions
 
     DATA = [1, 2, 3]
 
-    output = map(float, DATA)
+    result = map(float, DATA)
 
-    print(output)
+    print(result)
     # <map object at 0x11d2241d0>
 
-    print(list(output))
+    print(list(result))
     # [1.0, 2.0, 3.0]
 
 .. code-block:: python
@@ -113,18 +113,18 @@ Built-in functions
     def square(x):
         return pow(x, 2)
 
-    output = map(square, DATA)
+    result = map(square, DATA)
 
-    print(list(output))
+    print(list(result))
     # [1, 4, 9]
 
 .. code-block:: python
 
     DATA = [1, 2, 3]
 
-    output = map(lambda x: pow(x, 2), DATA)
+    result = map(lambda x: pow(x, 2), DATA)
 
-    print(list(output))
+    print(list(result))
     # [1, 4, 9]
 
 ``zip()``
@@ -134,12 +134,12 @@ Built-in functions
     keys = ['a', 'b', 'c']
     values = [1, 2, 3]
 
-    output = zip(keys, values)
+    result = zip(keys, values)
 
-    print(output)
+    print(result)
     # <zip object at 0x11cfea280>
 
-    print(list(output))
+    print(list(result))
     # [('a', 1), ('b', 2), ('c', 3)]
 
 .. code-block:: python
@@ -147,9 +147,9 @@ Built-in functions
     keys = ['a', 'b', 'c']
     values = [1, 2, 3]
 
-    output = zip(keys, values)
+    result = zip(keys, values)
 
-    print(dict(output))
+    print(dict(result))
     # {'a': 1, 'b': 2, 'c': 3}
 
 ``filter()``
@@ -169,8 +169,8 @@ Built-in functions
             return False
 
 
-    output = filter(is_adult, DATA)
-    print(list(output))
+    result = filter(is_adult, DATA)
+    print(list(result))
     # [
     #   {'name': 'Jan Twardowski', 'age': 21},
     #   {'name': 'Mark Watney', 'age': 25},
@@ -187,26 +187,26 @@ Built-in functions
 
     DATA = range(0, 10)
 
-    output = filter(is_even, DATA)
+    result = filter(is_even, DATA)
 
-    print(list(output))
+    print(list(result))
     # [0, 2, 4, 6, 8]
 
 .. code-block:: python
 
     DATA = range(0, 10)
 
-    output = filter(lambda x: x % 2 == 0, DATA)
+    result = filter(lambda x: x % 2 == 0, DATA)
 
-    print(list(output))
+    print(list(result))
     # [0, 2, 4, 6, 8]
 
 
 .. code-block:: python
 
-    output = filter(lambda x: x % 2 == 0, range(0, 10))
+    result = filter(lambda x: x % 2 == 0, range(0, 10))
 
-    print(list(output))
+    print(list(result))
     # [0, 2, 4, 6, 8]
 
 ``all()``
@@ -255,9 +255,9 @@ Return True if any element of the iterable is true. If the iterable is empty, re
     def add(x, y):
         return (x + y)
 
-    output = reduce(add, DATA)
+    result = reduce(add, DATA)
 
-    print(output)
+    print(result)
     # 15
 
 .. code-block:: python
@@ -267,9 +267,9 @@ Return True if any element of the iterable is true. If the iterable is empty, re
 
     DATA = [1, 2, 3, 4, 5]
 
-    output = reduce(lambda x, y: x + y, DATA)
+    result = reduce(lambda x, y: x + y, DATA)
 
-    print(output)
+    print(result)
     # 15
 
 ``lru_cache``
@@ -373,6 +373,7 @@ partialmethod
 
         set_alive = partialmethod(set_state, True)
         set_dead = partialmethod(set_state, False)
+
 
     c = Cell()
 

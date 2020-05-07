@@ -58,25 +58,25 @@ Podstawowe pojęcia
 
 Przykład zastosowania
 =====================
-- whether an email is SPAM(y=1) OR NOT(y=0)
+* whether an email is SPAM(y=1) OR NOT(y=0)
 
-- whether a person will vote or not in upcoming elections
+* whether a person will vote or not in upcoming elections
 
-- classifying a set of words as nouns, pronouns, adjectives etc.
+* classifying a set of words as nouns, pronouns, adjectives etc.
 
-- application in Information extraction
+* application in Information extraction
 
-- in speech recognition systems
+* in speech recognition systems
 
-- Life insurance actuaries use logistic regression to predict, based on given data on a policy holder (e.g. age, gender, results from a physical examination) the chances that the policy holder will die before the term of the policy expires.
+* Life insurance actuaries use logistic regression to predict, based on given data on a policy holder (e.g. age, gender, results from a physical examination) the chances that the policy holder will die before the term of the policy expires.
 
-- Political campaigns try to predict the chances that a voter will vote for their candidate (or do something else desirable, such as donate to the campaign).
+* Political campaigns try to predict the chances that a voter will vote for their candidate (or do something else desirable, such as donate to the campaign).
 
-- Bankers use it to predict the chances that a loan applicant will default on the loan.
+* Bankers use it to predict the chances that a loan applicant will default on the loan.
 
-- Marketers use it to predict whether a customer will respond to a particular ad (whether by clicking on a link or sending back a self-enclosed mailer).
+* Marketers use it to predict whether a customer will respond to a particular ad (whether by clicking on a link or sending back a self-enclosed mailer).
 
-- Weather forecasters use it to predict the "chance of rain" you see every morning.
+* Weather forecasters use it to predict the "chance of rain" you see every morning.
 
 
 Assignments

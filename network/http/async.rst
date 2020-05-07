@@ -41,8 +41,8 @@ Celerybeat
 * cron like
 * example execution:
 
-    - at time intervals (every 5 seconds or once a week),
-    - on a specific date or time (at 5:03pm every Sunday)
+    * at time intervals (every 5 seconds or once a week),
+    * on a specific date or time (at 5:03pm every Sunday)
 
 Install
 -------
@@ -50,7 +50,7 @@ Install
 
 .. code-block:: console
 
-    pip install celery
+    $ pip install celery
 
 Basic usage
 -----------
@@ -71,7 +71,7 @@ Basic usage
 
     .. code-block:: console
 
-        celery -A tasks worker --loglevel=info
+        $ celery -A tasks worker --loglevel=info
 
 #. Call function asynchronously by using ``.delay()`` special method added by Celery
 
@@ -132,22 +132,22 @@ Using Docker:
 
     .. code-block:: console
 
-        docker run -d -p 5462:5462 rabbitmq
+        $ docker run -d -p 5462:5462 rabbitmq
 
 Ubuntu or Debian package:
 
     .. code-block:: console
 
-        echo "deb http://www.rabbitmq.com/debian/ testing main" >> /etc/apt/sources.list
-        curl http://www.rabbitmq.com/rabbitmq-signing-key-public.asc | sudo apt-key add -
-        sudo apt-get update
-        sudo apt-get install -y rabbitmq-server
+        $ echo "deb http://www.rabbitmq.com/debian/ testing main" >> /etc/apt/sources.list
+        $ curl http://www.rabbitmq.com/rabbitmq-signing-key-public.asc | sudo apt-key add -
+        $ sudo apt-get update
+        $ sudo apt-get install -y rabbitmq-server
 
 Config
 ------
 .. code-block:: console
 
-    vim /etc/default/rabbitmq-server
+    $ vim /etc/default/rabbitmq-server
 
 Management Console
 ------------------
@@ -160,43 +160,43 @@ Management Console
 
 .. code-block:: console
 
-    sudo rabbitmq-plugins enable rabbitmq_management
+    $ sudo rabbitmq-plugins enable rabbitmq_management
 
 .. code-block:: console
 
-    open http://localhost:15672/
+    $ open http://localhost:15672/
 
 Default credentials is:
 
-    - username: ``guest``
-    - password: ``guest``
+    * username: ``guest``
+    * password: ``guest``
 
 Change this:
 
     .. code-block:: console
 
-        sudo rabbitmqctl add_user admin password
-        sudo rabbitmqctl set_user_tags admin administrator
-        sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
+        $ sudo rabbitmqctl add_user admin password
+        $ sudo rabbitmqctl set_user_tags admin administrator
+        $ sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
 
 Manage RabbitMQ
 ---------------
 .. code-block:: console
     :caption: Start the service
 
-    service rabbitmq-server start
+    $ service rabbitmq-server start
 
 .. code-block:: console
     :caption: Stop the service
 
-    service rabbitmq-server stop
+    $ service rabbitmq-server stop
 
 .. code-block:: console
     :caption: Restart the service
 
-    service rabbitmq-server restart
+    $ service rabbitmq-server restart
 
 .. code-block:: console
     :caption: Check the status
 
-    service rabbitmq-server status
+    $ service rabbitmq-server status

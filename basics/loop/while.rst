@@ -143,7 +143,7 @@ Report card
 * Solution: :download:`solution/loop_while_report_card.py`
 
 :English:
-    #. Use ``DATA`` from "Input" section (see below)
+    #. Use data from "Input" section (see below)
     #. Convert ``DATA`` to ``List[float]`` using ``while`` loop and name it ``grade_scale``
     #. Ask user about grade, one at a time
     #. User will type only valid ``int`` or ``float``
@@ -154,7 +154,7 @@ Report card
     #. Test case when report list is empty
 
 :Polish:
-    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Przekonwertuj ``DATA`` do ``List[float]`` używając pętli ``while`` i nazwij ``grade_scale``
     #. Poproś użytkownika o ocenę, jedną na raz
     #. Użytkownik poda tylko poprawne ``int`` lub ``float``

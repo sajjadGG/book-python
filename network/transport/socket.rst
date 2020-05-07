@@ -142,8 +142,8 @@ Heartbeat
 #. Klient ma co 5 sekund wysyłać informację do serwera o swoim IP i PORT
 #. Wypisz:
 
-    - datę UTC przyjścia pakietu,
-    - IP i PORT przesłany przez klienta.
+    * datę UTC przyjścia pakietu,
+    * IP i PORT przesłany przez klienta.
 
 :Hints:
     * ``threading.Timer(frequency: int, fn: Callable).start()``
@@ -162,19 +162,19 @@ Backdoor
 #. Wyciągnij informację o adresie IP i PORT na którym nasłuchuje serwer
 #. Serwer oczekuje na komunikaty w formacie JSON:
 
-    - ``date: datetime`` (UTC),
-    - ``command: str``,
-    - ``timeout: int``.
+    * ``date: datetime`` (UTC),
+    * ``command: str``,
+    * ``timeout: int``.
 
 #. Serwer wykonuje polecenie zapisane w ``command`` w systemie operacyjnym uwzględniając ``timeout``
 #. Prześlij nadawcy JSON z wynikiem wykonania polecenia, tj.:
 
-    - ``date: datetime`` (UTC),
-    - ``host: str``,
-    - ``port: int``,
-    - ``stdout: str``,
-    - ``stderr: str``,
-    - ``exit_code: int``
+    * ``date: datetime`` (UTC),
+    * ``host: str``,
+    * ``port: int``,
+    * ``stdout: str``,
+    * ``stderr: str``,
+    * ``exit_code: int``
 
 :Hints:
     * ``random.randint()``

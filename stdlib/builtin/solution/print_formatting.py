@@ -11,7 +11,7 @@ def celsius_to_fahrenheit(degree: Union[int, float]) -> float:
 
 for celsius in range(MIN, MAX, STEP):
     fahrenheit = celsius_to_fahrenheit(celsius)
-    output = f'| Temperature | {celsius:=+8d}°C | {fahrenheit:.^+10.0f}°F |'
+    result = f'| Temperature | {celsius:=+8d}°C | {fahrenheit:.^+10.0f}°F |'
 
-    print('-' * len(output))
-    print(output)
+    print('-' * len(result))
+    print(result)

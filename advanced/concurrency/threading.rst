@@ -35,19 +35,19 @@ Threads vs processes
 
 Problemy z wątkami
 ==================
-- Zakleszczania
-- Race Condition
-- Głodzenie
-- Problem 5 filozofów:
+* Zakleszczania
+* Race Condition
+* Głodzenie
+* Problem 5 filozofów:
 
-    - 5 filozofów (albo rozmyśla, albo je)
-    - 5 misek ze spaghetti,
-    - 5 widelców,
-    - 2 widelce potrzebne aby zjeść,
-    - problem zakleszczania
+    * 5 filozofów (albo rozmyśla, albo je)
+    * 5 misek ze spaghetti,
+    * 5 widelców,
+    * 2 widelce potrzebne aby zjeść,
+    * problem zakleszczania
 
-- Problem producenta i konsumenta
-- Problem czytelników i pisarzy
+* Problem producenta i konsumenta
+* Problem czytelników i pisarzy
 
 ``threading``
 =============
@@ -304,8 +304,8 @@ Wielowątkowość
 
 #. Stwórz kolejkę ``queue`` do której dodasz różne polecenia systemowe do wykonania, np.:
 
-    - Linux/macOS: ``['/bin/ls /etc/', '/bin/echo "test"', '/bin/sleep 2']``,
-    - Windows: ``['dir c:\\Users', 'echo "test"', 'type %HOMEPATH%\Desktop\README.txt']``.
+    * Linux/macOS: ``['/bin/ls /etc/', '/bin/echo "test"', '/bin/sleep 2']``,
+    * Windows: ``['dir c:\\Users', 'echo "test"', 'type %HOMEPATH%\Desktop\README.txt']``.
 
 #. Następnie przygotuj trzy wątki workerów, które będą wykonywały polecenia z kolejki
 #. Wątki powinny być uruchamiane jako ``subprocess.run()`` w systemie operacyjnym z timeoutem równym ``TIMEOUT = 2.0`` sekundy

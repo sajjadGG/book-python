@@ -62,7 +62,7 @@ class Setosa(Iris):
 
 
 header, *data = DATA
-output = []
+result = []
 
 print('Species    Total   Avg')
 print('-' * 22)
@@ -72,7 +72,7 @@ for *measurements, species in data:
     class_name = species.capitalize()
     cls = getattr(CURRENT_MODULE, class_name)
     iris = cls(*measurements)
-    output.append(iris)
+    result.append(iris)
 
     ## Alternative solution
     # if species == 'setosa':
@@ -81,6 +81,6 @@ for *measurements, species in data:
     #     iris = Versicolor(*measurements)
     # elif species == 'virginica':
     #     iris = Virginica(*measurements)
-    # output.append(iris)
+    # result.append(iris)
 
     print(f'{iris.species:>10} {iris.total():>5.1f} {iris.average():>5.2f}')

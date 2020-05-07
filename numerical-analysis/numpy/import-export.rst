@@ -130,7 +130,8 @@ Load Dirty CSV
 * Solution: :download:`solution/numpy_loadtext.py`
 
 :English:
-    #. Load text from URL given as input (see below)
+    #. Use data from "Input" section (see below)
+    #. Load text from ``URL``
     #. From the first line select Iris species names and save as ``species: ndarray``
     #. For other lines:
 
@@ -138,9 +139,11 @@ Load Dirty CSV
         #. Read last column with species numbers and save to ``labels: ndarray``
 
     #. Print ``species``, ``labels`` and ``features``
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Wczytaj tekst z URL podanego na wejściu (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Wczytaj tekst z ``URL``
     #. Z pierwszej linii wybierz nazwy gatunków Irysów i zapisz rezultat jako ``species: ndarray``
     #. W pozostałych linii:
 
@@ -148,11 +151,12 @@ Load Dirty CSV
         * Wczytaj ostatnią kolumnę z numerami gatunków i zapisz do ``labels: ndarray``
 
     #. Wyświetl ``species``, ``labels`` i ``features``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
-    .. code-block:: text
+    .. code-block:: python
 
-        https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/numpy/data/iris-dirty.csv
+        URL = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/numpy/data/iris-dirty.csv'
 
 :Output:
     .. code-block:: python

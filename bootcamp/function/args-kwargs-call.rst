@@ -5,10 +5,10 @@ Arbitrary Number of Arguments
 
 Positional arguments
 ====================
-- ``*`` in this context, is not multiplication in mathematical sense
-- ``*`` is used for positional arguments
-- ``args`` is a convention, but you can use any name
-- ``*args`` unpacks from ``tuple``, ``list`` or ``set``
+* ``*`` in this context, is not multiplication in mathematical sense
+* ``*`` is used for positional arguments
+* ``args`` is a convention, but you can use any name
+* ``*args`` unpacks from ``tuple``, ``list`` or ``set``
 
 .. code-block:: python
     :caption: Positional arguments passed directly
@@ -34,10 +34,10 @@ Positional arguments
 
 Keyword Arguments
 =================
-- ``**`` in this context, is not power in mathematical sense
-- ``**`` is used for keyword arguments
-- ``kwargs`` is a convention, but you can use any name
-- ``**kwargs`` unpacks from ``dict``
+* ``**`` in this context, is not power in mathematical sense
+* ``**`` is used for keyword arguments
+* ``kwargs`` is a convention, but you can use any name
+* ``**kwargs`` unpacks from ``dict``
 
 .. code-block:: python
     :caption: Keyword arguments passed directly
@@ -126,8 +126,8 @@ From sequence
         def __repr__(self):
             return f'{self.species}'
 
-    output = [Iris(*row) for row in DATA]
-    print(output)
+    result = [Iris(*row) for row in DATA]
+    print(result)
     # [versicolor, setosa]
 
 From mapping
@@ -167,8 +167,8 @@ From mapping
             return f'{self.species}'
 
 
-    output = [Iris(**row) for row in DATA]
-    print(output)
+    result = [Iris(**row) for row in DATA]
+    print(result)
     # ['versicolor', 'setosa']
 
 
@@ -216,8 +216,8 @@ Print formatting
     name = 'Jan Twardowski'
     agency = 'POLSA'
 
-    output = "{agency} astronaut {name} first on the Moon".format(**locals())
-    print(output)
+    result = "{agency} astronaut {name} first on the Moon".format(**locals())
+    print(result)
     # POLSA astronaut Jan Twardowski first on the Moon
 
 Common configuration
@@ -355,36 +355,43 @@ Iris
 * Solution: :download:`solution/calling_kwargs.py`
 
 :English:
+    #. Mind the non-functional requirements (see below)
     #. Download :download:`data/iris.csv` and save as ``iris.csv``
     #. Remove ``species`` column
     #. Separate header from measurements
     #. For each line extract values by splitting lines by coma ``,``
-    #. Create ``output: List[dict]`` by zipping header and measurements:
+    #. Create ``result: List[dict]`` by zipping header and measurements:
 
-        - key: column name from the header
-        - value: measurement at the position
+        * key: column name from the header
+        * value: measurement at the position
 
     #. Create function ``mean(**kwargs)``, function
-    #. Iterate over ``output`` and call ``mean()`` by passing arguments as keywords
+    #. Iterate over ``result`` and call ``mean()`` by passing arguments as keywords
     #. Print mean for each row
+    #. Compare result with "Output" section (see below)
+    #. Non-functional requirements:
+
+        * Use only ``str.split()`` method
+        * Don't use ``pandas``, ``numpy``, ``csv`` etc.
 
 :Polish:
     #. Pobierz plik :download:`data/iris.csv` i zapisz jako ``iris.csv``
     #. Usuń kolumnę ``species``
     #. Odseparuj nagłówek od pomiarów
     #. Wyciągnij wartości z każdej linii przez podział jej po przecinku ``,``
-    #. Stwórz ``output: List[dict]`` poprzez scalenie nagłówka i pomiarów z każdego wiersza
+    #. Stwórz ``result: List[dict]`` poprzez scalenie nagłówka i pomiarów z każdego wiersza
 
-        - klucz: nazwa kolumny z nagłówka
-        - wartość: pomiar z odpowiedniej kolumny
+        * klucz: nazwa kolumny z nagłówka
+        * wartość: pomiar z odpowiedniej kolumny
 
     #. Stwórz funkcję ``mean(**kwargs)``
-    #. Iterując po ``output`` wywołuj ``mean()`` podając argumenty nazwanie
+    #. Iterując po ``result`` wywołuj ``mean()`` podając argumenty nazwanie
     #. Wypisz średnią dla każdego wiersza
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+    #. Wymagania niefunkcjonalne:
 
-:Non-functional requirements:
-    * Use only ``str.split()`` method
-    * Don't use ``pandas``, ``numpy`` or ``csv`` etc.
+        * Użyj tylko metody ``str.split()``
+        * Nie używaj ``pandas``, ``numpy``, ``csv`` itp.
 
 :Output:
     .. code-block:: python
@@ -392,7 +399,7 @@ Iris
         header: list
         # ['sepal_length', 'sepal_width' ,'petal_length', 'petal_width']
 
-        output: List[Dict[str, float]] = [
+        result: List[Dict[str, float]] = [
             {'sepal_length': 5.4, 'sepal_width': 3.9, 'petal_length': 1.3, 'petal_width': 0.4},
             {'sepal_length': 5.9, 'sepal_width': 3.0, 'petal_length': 5.1, 'petal_width': 1.8},
             {'sepal_length': 6.0, 'sepal_width': 3.4, 'petal_length': 4.5, 'petal_width': 1.6},

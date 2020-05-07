@@ -44,12 +44,14 @@ OOP Relations
 * Solution: :download:`solution/oop_relations.py`
 
 :English:
-    #. Create Address Book based on input data (see below)
+    #. Use data from "Input" section (see below)
+    #. Create Address Book
     #. Model data using classes and relations
     #. We should have three classes, name it
 
 :Polish:
-    #. Dla danych z listingu poniżej napisz książkę adresową
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Napisz książkę adresową
     #. W zadaniu mamy do czynienia z trzema klasami, wymień je.
     #. Zamodeluj problem wykorzystując trzy klasy i relacje między nimi
 
@@ -93,20 +95,29 @@ OOP Relations Flatten
 * Solution: :download:`solution/oop_relations_flatten.py`
 
 :English:
+    #. Use code from "Input" section (see below)
     #. Using ``csv.DictWriter()`` save contacts from addressbook to CSV file
     #. How to write relations to CSV file (contact has many addresses)?
     #. Recreate object structure from CSV file
+    #. Non-functional requirements:
+
+        * All fields must be enclosed by double quote ``"`` character
+        * Use ``;`` to separate columns
+        * Use ``utf-8`` encoding
+        * Use Unix ``\n`` newline
 
 :Polish:
+    #. Użyj kodu z sekcji "Input" (patrz poniżej)
     #. Za pomocą ``csv.DictWriter()`` zapisz kontakty z książki adresowej w pliku
     #. Jak zapisać w CSV dane relacyjne (kontakt ma wiele adresów)?
     #. Odtwórz strukturę obiektów na podstawie danych odczytanych z pliku
+    #. Wymagania niefunkcjonalne:
 
-:Non functional requirements:
-    #. All fields must be enclosed by double quote ``"`` character
-    #. Use ``;`` to separate columns
-    #. Use ``utf-8`` encoding
-    #. Use Unix newline
+        * Wszystkie pola muszą być otoczone znakiem cudzysłowu ``"``
+        * Użyj ``;`` do oddzielenia kolumn
+        * Użyj kodowania ``utf-8``
+        * Użyj zakończenia linii Unix ``\n``
+
 
 :Input:
     .. code-block:: python

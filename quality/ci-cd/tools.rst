@@ -159,7 +159,7 @@ Running
             logging.info(cmd)
 
             try:
-                output = subprocess.run(
+                result = subprocess.run(
                     cmd,
                     shell=True,
                     timeout=command['timeout'],
@@ -170,11 +170,11 @@ Running
                 logging.error('Timeout exceeded')
                 continue
 
-            if output.stderr:
-                logging.debug(output.stderr)
+            if result.stderr:
+                logging.debug(result.stderr)
 
             with open(stdout_file, mode='w') as file:
-                file.write(output.stdout)
+                file.write(result.stdout)
 
 
     HEADER = """

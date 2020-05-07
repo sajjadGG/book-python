@@ -528,9 +528,11 @@ Address Book (dataclass)
 * Solution: :download:`solution/dataclass_addressbook.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Model data using ``dataclasses``
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zamodeluj dane wykorzystując ``dataclass``
 
 :Input:
@@ -567,6 +569,7 @@ Deserialize data from API
 * Solution: :download:`solution/dataclass_json.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. You received input data in JSON format from the API
     #. Using ``dataclass`` Model data as class ``User``
     #. Parse fields with dates and store as ``datetime`` objects
@@ -575,6 +578,7 @@ Deserialize data from API
     #. Collect all instances to one list
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Otrzymałeś z API dane wejściowe w formacie JSON
     #. Wykorzystując ``dataclass`` zamodeluj dane za pomocą klasy ``User``
     #. Sparsuj pola zwierające daty i zapisz je jako obiekty ``datetime``

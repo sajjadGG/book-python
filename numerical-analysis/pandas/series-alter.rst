@@ -108,6 +108,7 @@ Series Update
 * Solution: :download:`solution/series_update.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. From input data create ``pd.Series``
     #. Fill empty values with zero
     #. Drop values at index 2, 4, 6
@@ -116,6 +117,7 @@ Series Update
     #. Print series
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Z danych wejściowych stwórz ``pd.Series``
     #. Wypełnij puste wartości zerami
     #. Usuń wartości na indeksach 2, 4, 6
@@ -126,4 +128,4 @@ Series Update
 :Input:
     .. code-block:: python
 
-        [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
+        DATA = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]

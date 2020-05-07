@@ -7,16 +7,16 @@ Module Install
 
 Searching
 =========
-- https://pypi.org
-- ``pip search ...``
+* https://pypi.org
+* ``pip search ...``
 
 
 Installing
 ==========
-- ``Alt+Enter`` on not existing ``import`` -> Install Package
-- ``pip install ...``
-- ``requirements.txt``
-- ``pip install -r requirements.txt``
+* ``Alt+Enter`` on not existing ``import`` -> Install Package
+* ``pip install ...``
+* ``requirements.txt``
+* ``pip install -r requirements.txt``
 
 
 List requirements

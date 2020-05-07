@@ -55,9 +55,10 @@ OOP Attribute Access
 * Solution: :download:`solution/oop_attribute_access.py`
 
 :English:
-    #. Create ``flowers: list``
+    #. Use data from "Input" section (see below)
     #. Create classes ``Virginica``, ``Versicolor``, ``Setosa`` identical to ``Iris``
-    #. Iterate over input data (see below)
+    #. Create ``flowers: list[Iris]``
+    #. Iterate over input data
 
         #. Create object of a class based on last element of a tuple (Species column)
         #. Initialize objects with data from measurements
@@ -66,11 +67,14 @@ OOP Attribute Access
         #. Add instances to ``flowers``
 
     #. Print instance class name (from species field) and then both sum and mean of the measurements
-    #. Format output to receive a table as shown in output data (see below)
+    #. Format output to receive a table as shown in output data
+    #. Compare result with "Output" section (see below)
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Stwórz klasy ``Virginica``, ``Versicolor``, ``Setosa``, które będą identyczne do ``Iris``
-    #. Iterując po danych wejściowych (patrz niżej)
+    #. Stwórz ``flowers: list[Iris]``
+    #. Iterując po danych wejściowych
 
         #. Twórz obiekty klasy odpowiedniej dla nazwy gatunku (ostatni rekord każdej z krotek)
         #. Obiekt inicjalizuj danymi z pomiarów
@@ -79,7 +83,8 @@ OOP Attribute Access
         #. Obiekt instancje do ``flowers``
 
     #. Wypisz nazwę stworzonej klasy (z pola species) oraz sumę i średnią z pomiarów
-    #. Wynik sformatuj aby wyglądał jak tabelka z danych wyjściowych (patrz sekcja output)
+    #. Wynik sformatuj aby wyglądał jak tabelka z danych wyjściowych
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python

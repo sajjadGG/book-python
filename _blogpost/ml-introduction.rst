@@ -6,23 +6,23 @@ Wraz ze wzrostem ilości przetwarzania i gromadzenia danych pojawiła się potrz
 
 Dzięki specjalnym algorytmom komputery będą w stanie z coraz większą dokładnością przewidywać rozwiązanie problemów. Bez względu na to czy mamy zamiar wykryć:
 
-- trend w danych marketingowych,
-- przewidzieć sprzedaż danego produktu,
-- przewidzieć wynik wyborów,
-- anomalię w logach płatności i danych kredytowych,
-- wykryć oszustwa (ang. fraud),
-- wykryć nietypowe odczyty urządzeń,
-- skategoryzować chorych wg. klas i stanu zdrowia,
+* trend w danych marketingowych,
+* przewidzieć sprzedaż danego produktu,
+* przewidzieć wynik wyborów,
+* anomalię w logach płatności i danych kredytowych,
+* wykryć oszustwa (ang. fraud),
+* wykryć nietypowe odczyty urządzeń,
+* skategoryzować chorych wg. klas i stanu zdrowia,
 
 komputer zrobi to szybciej i dokładniej niż człowiek. Do każdego z wyżej wymienionych tematów możemy zastosować odpowiedni model, który podpowie nam odpowiedź.
 
-- Czym jest Machine Learning?
-- Czy temat rzeczywiście wymaga znajomości zaawansowanej matematyki?
-- Jak określić problem i tworzyć zbiór danych?
-- Jak wyselekcjonować dobre cechy?
-- Jak wybrać a później dostosować model?
-- Jak przedstawić go graficznie i zinterpretować wyniki?
-- Jak konstruować sieci neuronowe i jak wykorzystywać istniejące biblioteki?
+* Czym jest Machine Learning?
+* Czy temat rzeczywiście wymaga znajomości zaawansowanej matematyki?
+* Jak określić problem i tworzyć zbiór danych?
+* Jak wyselekcjonować dobre cechy?
+* Jak wybrać a później dostosować model?
+* Jak przedstawić go graficznie i zinterpretować wyniki?
+* Jak konstruować sieci neuronowe i jak wykorzystywać istniejące biblioteki?
 
 O klasach algorytmów i ich trafnym doborze do odpowiedniego problemu, jak również ich przykładowej implementacji opowiemy w trakcie cyklu Machine Learning w Pythonie. Zapraszam do artykułu gdzie odpowiemy na powyższe zagadnienia!
 
@@ -83,10 +83,10 @@ Biblioteki zewnętrzne do nauczania maszynowego
 ``Scikit-learn``
     A set of python modules for machine learning and data mining. It features various classification, regression and clustering algorithms including support vector machines, random forests, gradient boosting, k-means and DBSCAN, and is designed to interoperate with the Python numerical and scientific libraries NumPy and SciPy.
 
-        - Simple and efficient tools for data mining and data analysis
-        - Accessible to everybody, and reusable in various contexts
-        - Built on NumPy, SciPy, and matplotlib
-        - Open source, commercially usable - BSD license
+        * Simple and efficient tools for data mining and data analysis
+        * Accessible to everybody, and reusable in various contexts
+        * Built on NumPy, SciPy, and matplotlib
+        * Open source, commercially usable - BSD license
 
     * `Scikit-learn Github <https://github.com/scikit-learn/scikit-learn>`_
     * `Scikit-learn Website <http://scikit-learn.org>`_
@@ -113,27 +113,27 @@ Biblioteki do obsługi danych
 ``Pandas``
     pandas is a Python package providing fast, flexible, and expressive data structures designed to make working with "relational" or "labeled" data both easy and intuitive. It aims to be the fundamental high-level building block for doing practical, real world data analysis in Python. Additionally, it has the broader goal of becoming the most powerful and flexible open source data analysis / manipulation tool available in any language. It is already well on its way toward this goal. Here are just a few of the things that pandas does well:
 
-        - Easy handling of missing data (represented as NaN) in floating point as well as non-floating point data
-        - Size mutability: columns can be inserted and deleted from DataFrame and higher dimensional objects
-        - Automatic and explicit data alignment: objects can be explicitly aligned to a set of labels, or the user can simply ignore the labels and let Series, DataFrame, etc. automatically align the data for you in computations
-        - Powerful, flexible group by functionality to perform split-apply-combine operations on data sets, for both aggregating and transforming data
-        - Make it easy to convert ragged, differently-indexed data in other Python and NumPy data structures into DataFrame objects
-        - Intelligent label-based slicing, fancy indexing, and subsetting of large data sets
-        - Intuitive merging and joining data sets
-        - Flexible reshaping and pivoting of data sets
-        - Hierarchical labeling of axes (possible to have multiple labels per tick)
-        - Robust IO tools for loading data from flat files (CSV and delimited), Excel files, databases, and saving/loading data from the ultrafast HDF5 format
-        - Time series-specific functionality: date range generation and frequency conversion, moving window statistics, moving window linear regressions, date shifting and lagging, etc.
+        * Easy handling of missing data (represented as NaN) in floating point as well as non-floating point data
+        * Size mutability: columns can be inserted and deleted from DataFrame and higher dimensional objects
+        * Automatic and explicit data alignment: objects can be explicitly aligned to a set of labels, or the user can simply ignore the labels and let Series, DataFrame, etc. automatically align the data for you in computations
+        * Powerful, flexible group by functionality to perform split-apply-combine operations on data sets, for both aggregating and transforming data
+        * Make it easy to convert ragged, differently-indexed data in other Python and NumPy data structures into DataFrame objects
+        * Intelligent label-based slicing, fancy indexing, and subsetting of large data sets
+        * Intuitive merging and joining data sets
+        * Flexible reshaping and pivoting of data sets
+        * Hierarchical labeling of axes (possible to have multiple labels per tick)
+        * Robust IO tools for loading data from flat files (CSV and delimited), Excel files, databases, and saving/loading data from the ultrafast HDF5 format
+        * Time series-specific functionality: date range generation and frequency conversion, moving window statistics, moving window linear regressions, date shifting and lagging, etc.
 
     * http://pandas.pydata.org/
 
 ``NumPy``
     NumPy is the fundamental package for scientific computing with Python. It contains among other things:
 
-        - a powerful N-dimensional array object
-        - sophisticated (broadcasting) functions
-        - tools for integrating C/C++ and Fortran code
-        - useful linear algebra, Fourier transform, and random number capabilities
+        * a powerful N-dimensional array object
+        * sophisticated (broadcasting) functions
+        * tools for integrating C/C++ and Fortran code
+        * useful linear algebra, Fourier transform, and random number capabilities
 
     Besides its obvious scientific uses, NumPy can also be used as an efficient multi-dimensional container of generic data. Arbitrary data-types can be defined. This allows NumPy to seamlessly and speedily integrate with a wide variety of databases.
 
@@ -253,23 +253,23 @@ Przykład pracy z ``scikit-learn``
 #. Import the class you plan to use
 #. Instanciate the estimator
 
-    - Estimator is the ``scikit-learn`` word for model
-    - Instanciate means create an object from the class
-    - Name of the object does not matter
-    - Can specify the tunning parameters also known as "hyperparameters" during this step
-    - All parameters not specified are set to their defaults
+    * Estimator is the ``scikit-learn`` word for model
+    * Instanciate means create an object from the class
+    * Name of the object does not matter
+    * Can specify the tunning parameters also known as "hyperparameters" during this step
+    * All parameters not specified are set to their defaults
 
 #. Fit the model with data (aka "model training")
 
-    - Models is learning the relationship between :math:`X` and :math:`Y` (features and labels)
-    - Occurs in-place (aka change object state - mutate object)
+    * Models is learning the relationship between :math:`X` and :math:`Y` (features and labels)
+    * Occurs in-place (aka change object state - mutate object)
 
 #. Predict the response for a new observation
 
-    - New observations are called "out-of-sample" data
-    - Uses the information it learned during the model training process
-    - Returns a ``NumPy`` array
-    - Can predict for multiple observations at once
+    * New observations are called "out-of-sample" data
+    * Uses the information it learned during the model training process
+    * Returns a ``NumPy`` array
+    * Can predict for multiple observations at once
 
 .. code-block:: python
 
@@ -333,10 +333,6 @@ Kategorie algorytmów uczenia maszynowego
 
 Supervised Learning
 -------------------
-Also known as:
-
-    - Supervised Learning
-
 Input data is called training data and has a known label or result such as spam/not-spam or a stock price at a time.
 
 A model is prepared through a training process in which it is required to make predictions and is corrected when those predictions are wrong. The training process continues until the model achieves a desired level of accuracy on the training data.
@@ -358,11 +354,7 @@ Example problems are classification and regression.
 * Sztuczne sieci neuronowe (ang. neural networks)
 
 Unsupervised Learning
------------------------------------
-Also known as:
-
-    - Bez nadzoru
-
+---------------------
 Input data is not labeled and does not have a known result.
 
 A model is prepared by deducing structures present in the input data. This may be to extract general rules. It may be through a mathematical process to systematically reduce redundancy, or it may be to organize data by similarity.
@@ -379,12 +371,8 @@ Example problems are clustering, dimensionality reduction and association rule l
 * Principal Component Analysis (PCA)
 * Sztuczne sieci neuronowe (ang. neural networks)
 
-Semi-Supervised Learning
-------------------------
-Also known as:
-
-    - Reinforcement learning
-
+Semi-Supervised Learning (Reinforcement learning)
+-------------------------------------------------
 Input data is a mixture of labeled and unlabelled examples.
 
 There is a desired prediction problem but the model must learn the structures to organize the data as well as make predictions.

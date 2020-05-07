@@ -577,6 +577,7 @@ Przeliczanie temperatury
     #. Znak ma być zawsze wyświetlany
     #. Zwróć uwagę na wyjustowanie tekstu
     #. Zwróć uwagę na wypełnienie miejsca niezajętego przez cyfry
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Output:
     .. code-block:: text

@@ -327,23 +327,23 @@ Variables and Types
 
 :English:
     #. Ask user to input name
-    #. Print text identical to output code (see "Output" section below)
     #. To print use f-string formatting
     #. Note, that second line starts with tab
     #. Value in double quotes is a name read from user (in output user typed ``José Jiménez``)
     #. Mind the different quotes, apostrophes, tabs and newlines
     #. Do not use neither space not enter - use ``\n`` and ``\t``
     #. Do not use string addition (``str + str``)
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Poproś użytkownika o wprowadzenie imienia
-    #. Wypisz tekst identyczny do kodu wyjścia (patrz sekcja "Output")
     #. Do wypisania użyj f-string formatting
     #. Zauważ, że druga linijka zaczyna się od tabulacji
     #. Wartość w podwójnych cudzysłowach to ciąg od użytkownika (w przykładzie użytkownik wpisał ``José Jiménez``)
     #. Zwróć uwagę na znaki apostrofów, cudzysłowów, tabulacji i nowych linii
     #. Nie używaj spacji ani entera - użyj ``\n`` i ``\t``
     #. Nie korzystaj z dodawania stringów (``str + str``)
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Output:
     .. code-block:: text

@@ -292,12 +292,18 @@ Protocol Iterator Implementation
 * Solution: :download:`solution/protocol_iterator_implementation.py`
 
 :English:
-    #. For input data (see below)
+    #. Use data from "Input" section (see below)
     #. Modify classes to implement iterator
+    #. Iterate over object using ``for`` loop
+    #. Print data
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Użyj data z sekcji "Input" (patrz poniżej)
     #. Zmodyfikuj klasy aby zaimplementować protokół iterator
+    #. Iteruj po obiekcie używając pętli ``for``
+    #. Wypisz dane
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
@@ -323,9 +329,9 @@ Protocol Iterator Implementation
             Mission(2035, 'Ares 3'),
         ))
 
-        for experience in twardowski:
-            print(experience)
+:Output:
+    .. code-block:: python
 
-        # Mission(year=1969, name='Apollo 11')
-        # Mission(year=2024, name='Artemis 3')
-        # Mission(year=2035, name='Ares 3')
+        Mission(year=1969, name='Apollo 11')
+        Mission(year=2024, name='Artemis 3')
+        Mission(year=2035, name='Ares 3')

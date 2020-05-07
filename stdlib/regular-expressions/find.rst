@@ -51,16 +51,18 @@ Finding Dates
     #. Download :download:`data/apollo11-content.txt` and save as ``regex_dates.txt``
     #. Using regular expressions find dates in US format (example: "April 12, 1961")
     #. Print all dates
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Pobierz :download:`data/apollo11-content.txt` i zapisz jako ``regex_dates.txt``
     #. Używając wyrażeń regularnych wyszukaj dat w formacie US (przykład: "April 12, 1961")
     #. Wyświetl wszystkie daty
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Output:
     .. code-block:: python
 
-        print(output)
+        result: List[str]
         # ['October 4, 1957',
         #  'April 12, 1961',
         #  'May 5, 1961',

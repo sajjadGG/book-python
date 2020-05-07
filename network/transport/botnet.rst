@@ -10,9 +10,9 @@ Mini Botnet
 -----------
 #. Stwórz mini botnet o architekturze podanej :numref:`figure-botnet`. Mini botnet składa się z trzech części:
 
-    - Heartbeat Receiver - server przyjmujący informacje o ofiarach (czy wciąż żyją i jakie mają backdoory),
-    - Victim - ofiara,
-    - Attacket - atakujący.
+    * Heartbeat Receiver - server przyjmujący informacje o ofiarach (czy wciąż żyją i jakie mają backdoory),
+    * Victim - ofiara,
+    * Attacket - atakujący.
 
 .. figure:: img/botnet.png
     :name: figure-botnet
@@ -22,7 +22,7 @@ Mini Botnet
     Architektura botnet
 
 :Hints:
-    - Do weryfikacji czy port jest otwarty możesz użyć ``telnet`` albo ``netcat``
+    * Do weryfikacji czy port jest otwarty możesz użyć ``telnet`` albo ``netcat``
 
 Heartbeat Receiver
 ------------------
@@ -34,9 +34,9 @@ Heartbeat Receiver
 #. Server ma przyjmować komunikaty UDP na porcie 1337
 #. Datę UTC przyjścia pakietu, IP i port backdoora zapisuje do bazy danych ``sqlite3`` jako pola:
 
-    - ``datetime DATETIME``,
-    - ``host TEXT``,
-    - ``port INTEGER``.
+    * ``datetime DATETIME``,
+    * ``host TEXT``,
+    * ``port INTEGER``.
 
 :Hints:
     * ``socketserver.UDPServer``
@@ -54,11 +54,11 @@ Victim
 #. Po otrzymaniu komunikatu XML na port backdoora wykonuje operację w nim zawarte
 #. Ofiara ma przesyłać JSON atakującemu w formacie:
 
-    - ``date: datetime`` (UTC),
-    - ``host: str``,
-    - ``port: int``,
-    - ``stdout: str``,
-    - ``stderror: str``.
+    * ``date: datetime`` (UTC),
+    * ``host: str``,
+    * ``port: int``,
+    * ``stdout: str``,
+    * ``stderror: str``.
 
 #. Stwórz dekorator ``is_valid_xml``, który sprawdzi czy XML się waliduje (czy ma poprawną strukturę) i tylko wtedy wykona polecenia
 #. Stwórz dekorator ``log_incoming_requests``, który zapisze do pliku ``botnet.log`` logi w formacie ``Request from IP:PORT to execute COMMAND ARGUMENTS`` dla każdego polecenia wykonywanego na systemie ofiary
@@ -82,20 +82,20 @@ Attacker
 #. Skopiuj zawartość :numref:`listing-botnet-commands` do pliku ``botnet-commands.xml``
 #. Skrypt można wywoływać z parametrami linii poleceń:
 
-    - ``--xml FILENAME``, domyślnie ``botnet-commands.xml``, opcjonalny (jeżeli podano inne parametry),
-    - ``--exec COMMAND`` - opcjonalny,
-    - ``--cat FILENAME`` - opcjonalny,
-    - ``--ls PATH`` - opcjonalny,
-    - ``--eval CODE`` - opcjonalny.
+    * ``--xml FILENAME``, domyślnie ``botnet-commands.xml``, opcjonalny (jeżeli podano inne parametry),
+    * ``--exec COMMAND`` - opcjonalny,
+    * ``--cat FILENAME`` - opcjonalny,
+    * ``--ls PATH`` - opcjonalny,
+    * ``--eval CODE`` - opcjonalny.
 
 #. Skrypt ma do wszystkich botów (ofiar), które pingnęły serwer heartbeat w ciągu godziny wysyłać (IP ofiary, port backdoor) polecenia do wykonania
 #. Polecenia są:
 
-    - w pliku XML podanym jako parametr (jeżeli podano flagę ``--xml``),
-    - podane jako parametr do ``--exec``,
-    - wyświetlanie zawartości pliku podanego jako parametr ``--cat``,
-    - listowanie zawartości katalogu podanego jako parametr ``--ls``,
-    - wykonywanie kodu Python i zwracanie wyników, jeżeli podano ``--eval``.
+    * w pliku XML podanym jako parametr (jeżeli podano flagę ``--xml``),
+    * podane jako parametr do ``--exec``,
+    * wyświetlanie zawartości pliku podanego jako parametr ``--cat``,
+    * listowanie zawartości katalogu podanego jako parametr ``--ls``,
+    * wykonywanie kodu Python i zwracanie wyników, jeżeli podano ``--eval``.
 
 #. Polecenia do wykonania bez względu na flagę muszą być przesłane za pomocą komunikatów XML
 #. Datę, komunikat XML, oraz listę hostów do których poszło zapytanie zapisuj w bazie ``sqlite3`` w charakterze logów

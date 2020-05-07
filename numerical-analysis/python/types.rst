@@ -124,21 +124,24 @@ Assignments
 * Solution: :download:`solution/types_float.py`
 
 :English:
+    #. Use code from "Input" section (see below)
     #. Declare variable for holding value of 1337 meters
     #. Print values in other units
-    #. Use code output (see below) as a template
     #. Convert data to types shown in comments at the right side
     #. Instead ``...`` substitute calculated and converted values
+    #. Non-functional requirements:
+
+        * Do not use ``input()``
 
 :Polish:
+    #. Użyj kodu z sekcji "Input" (patrz poniżej)
     #. Zdefiniuj zmienną dla przechowywania wartości 1337 metrów
     #. Wypisz wartość w różnych jednostkach
-    #. Użyj kodu wyjściowego (patrz sekcja input) jako szablonu
     #. Przekonwertuj dane do typów podanych w komentarzu po prawej stronie
     #. Zamiast ``...`` podstaw wyliczone i przekonwertowane wartości
+    #. Wymagania niefunkcjonalne:
 
-:Non-functional requirements:
-    #. Do not use ``input()``
+        * Nie używaj ``input()``
 
 :Input:
     .. code-block:: python
@@ -476,10 +479,12 @@ To ``bool`` or not to ``bool``
 * Solution: :download:`solution/types_bool.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Which variables are ``True``?
     #. Which variables are ``False``?
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Które zmienne są ``True``?
     #. Które zmienne są ``False``?
 

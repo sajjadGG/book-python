@@ -511,7 +511,7 @@ Comprehensions
 * Solution: :download:`solution/loop_comprehension.py`
 
 :English:
-    #. Use ``DATA`` from "Input" section (see below)
+    #. Use data from "Input" section (see below)
     #. Separate header from data
     #. Calculate pivot point: length of data times given percent
     #. Using List Comprehension split data to:
@@ -531,20 +531,20 @@ Comprehensions
     #. Compare results with "Output" section below
 
 :Polish:
-    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Odseparuj nagłówek od danych
     #. Wylicz punkt podziału: długość danych razy zadany procent
     #. Używając List Comprehension podziel dane na:
 
-        - ``features: List[tuple]`` - lista pomiarów (każdy wiersz z pomiarami ma być tuple)
-        - ``labels: List[str]`` - lista nazw gatunków
+        * ``features: List[tuple]`` - lista pomiarów (każdy wiersz z pomiarami ma być tuple)
+        * ``labels: List[str]`` - lista nazw gatunków
 
     #. Podziel te struktury danych w proporcji:
 
-        - ``features_train: List[tuple]`` - features do uczenia - 60%
-        - ``features_test: List[tuple]`` - features do testów - 40%
-        - ``labels_train: List[str]`` - labels do uczenia - 60%
-        - ``labels_test: List[str]`` - labels do testów - 40%
+        * ``features_train: List[tuple]`` - features do uczenia - 60%
+        * ``features_test: List[tuple]`` - features do testów - 40%
+        * ``labels_train: List[str]`` - labels do uczenia - 60%
+        * ``labels_test: List[str]`` - labels do testów - 40%
 
     #. Stwórz ``result: Tuple[list, list, list, list]`` z cechami (treningowymi i testowymi) oraz labelkami (treningowymi i testowymi)
     #. Wypisz ``result``

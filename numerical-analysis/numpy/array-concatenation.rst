@@ -81,14 +81,18 @@ Array Concatenation
 * Solution: :download:`solution/numpy_concatenation.py`
 
 :English:
-    #. Given are one-dimensional: ``a: ndarray``, ``b: ndarray`` (see below)
+    #. Use data from "Input" section (see below)
+    #. Given are one-dimensional: ``a: ndarray``, ``b: ndarray``
     #. Concatenate them
     #. Represent the result as ``ndarray``: two rows and three columns
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Dane są jednowymiarowe: ``a: ndarray``, ``b: ndarray`` (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Dane są jednowymiarowe: ``a: ndarray``, ``b: ndarray``
     #. Połącz je ze sobą
     #. Przedstaw wynik jako ``ndarray``: dwa wiersze na trzy kolumny
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python

@@ -270,12 +270,14 @@ Array Slicing
 * Solution: :download:`solution/numpy_slicing_1.py`
 
 :English:
-    #. Use input ndarray (see below)
+    #. Use data from "Input" section (see below)
     #. Print inner 2x2 elements
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Użyj wejściowej ndarray (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Wybierz wewnętrzne 2x2 elementy
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python

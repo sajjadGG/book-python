@@ -43,7 +43,7 @@ inspectdb
 
 makemigrations
 --------------
-- ``--squash``
+* ``--squash``
 
 migrate
 -------

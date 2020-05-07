@@ -257,11 +257,13 @@ Protocol Descriptor Simple
     #. Create class ``KelvinTemperature``
     #. Temperature must always be positive
     #. Use descriptors to check boundaries at each value modification
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Stwórz klasę ``KelvinTemperature``
     #. Temperatura musi być zawsze być dodatnia
     #. Użyj deskryptorów do sprawdzania wartości granicznych przy każdej modyfikacji
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Output:
     .. code-block:: python
@@ -287,14 +289,16 @@ Protocol Descriptor Inheritance
 * Solution: :download:`solution/protocol_descriptor_inheritance.py`
 
 :English:
-    #. From input data (see below) model the class ``GeographicCoordinate``
+    #. Use data from "Input" section (see below)
+    #. Model the class ``GeographicCoordinate``
     #. Use descriptors to check value boundaries
     #. Deleting field should set it to ``None``
     #. Disable modification of ``elevation`` field
     #. Allow to set ``elevation`` field at the class initialization
 
 :Polish:
-    #. Na podstawie danych wejściowych (patrz sekcja input) zamodeluj klasę ``GeographicCoordinate``
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Zamodeluj klasę ``GeographicCoordinate``
     #. Użyj deskryptory do sprawdzania wartości brzegowych
     #. Kasowanie pola powinno ustawiać jego wartość na ``None``
     #. Zablokuj modyfikację pola ``elevation``

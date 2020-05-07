@@ -4,8 +4,8 @@ TODO
 
 Book TODO
 =========
-- Machine Learning rewrite
-- Newsletter, once a month, what changed in the book
+* Machine Learning rewrite
+* Newsletter, once a month, what changed in the book
 
 
 Numerical Analysis

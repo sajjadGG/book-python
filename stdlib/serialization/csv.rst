@@ -348,6 +348,7 @@ Read and parse data from CSV file
     #. Replace column names (see output data)
     #. Skip the first line (header)
     #. Print rows
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Pobierz plik :download:`data/iris.csv`
@@ -357,6 +358,7 @@ Read and parse data from CSV file
     #. Podmień nazwy kolumn (patrz dane wyjściowe)
     #. Pomiń pierwszą linię (nagłówek)
     #. Wypisz wiersze
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Output:
     .. code-block:: python
@@ -373,20 +375,30 @@ Write fixed schema data to CSV file
 * Solution: :download:`solution/csv_dictwriter_fixed.py`
 
 :English:
-    #. Using ``csv.DictWriter()`` save ``DATA`` (see below) to file
+    #. Use data from "Input" section (see below)
+    #. Using ``csv.DictWriter()`` save ``DATA`` to file
     #. Open file in your spreadsheet program like Microsoft Excel / Libre Office / Numbers etc.
     #. Open file in simple in your IDE and simple text editor (like Notepad, vim, gedit)
+    #. Compare result with "Output" section (see below)
+    #. Non functional requirements:
+
+        * All fields must be enclosed by double quote ``"`` character
+        * Use ``;`` to separate columns
+        * Use ``utf-8`` encoding
+        * Use Unix ``\n`` newline
 
 :Polish:
-    #. Za pomocą ``csv.DictWriter()`` zapisz ``DATA`` (patrz sekcja input) do pliku
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Za pomocą ``csv.DictWriter()`` zapisz ``DATA`` do pliku
     #. Spróbuj otworzyć plik w arkuszu kalkulacyjnym tj. Microsoft Excel / Libre Office / Numbers itp
     #. Spróbuj otworzyć plik w IDE i prostym edytorze tekstu tj. Notepad, vim lub gedit
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+    #. Wymagania niefunkcjonalne:
 
-:Non functional requirements:
-    #. All fields must be enclosed by double quote ``"`` character
-    #. Use ``;`` to separate columns
-    #. Use ``utf-8`` encoding
-    #. Use Unix newline
+        * Wszystkie pola muszą być otoczone znakiem cudzysłowu ``"``
+        * Użyj ``;`` do oddzielenia kolumn
+        * Użyj kodowania ``utf-8``
+        * Użyj zakończenia linii Unix ``\n``
 
 :Input:
     .. code-block:: python
@@ -417,20 +429,30 @@ Write variable schema data to file
 * Solution: :download:`solution/csv_dictwriter_variable.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Using ``csv.DictWriter()`` write variable schema data to CSV file
     #. ``fieldnames`` must be automatically generated from ``DATA``
     #. ``fieldnames`` must always be in the same order
+    #. Compare result with "Output" section (see below)
+    #. Non functional requirements:
+
+        * All fields must be enclosed by double quote ``"`` character
+        * Use ``;`` to separate columns
+        * Use ``utf-8`` encoding
+        * Use Unix ``\n`` newline
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Za pomocą ``csv.DictWriter()`` zapisz do pliku CSV dane o zmiennej strukturze
     #. ``fieldnames`` musi być generowane automatycznie na podstawie ``DATA``
     #. ``fieldnames`` ma być zawsze w takiej samej kolejności
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+    #. Wymagania niefunkcjonalne:
 
-:Non functional requirements:
-    #. All fields must be enclosed by double quote ``"`` character
-    #. Use ``;`` to separate columns
-    #. Use ``utf-8`` encoding
-    #. Use Unix newline
+        * Wszystkie pola muszą być otoczone znakiem cudzysłowu ``"``
+        * Użyj ``;`` do oddzielenia kolumn
+        * Użyj kodowania ``utf-8``
+        * Użyj zakończenia linii Unix ``\n``
 
 :The whys and wherefores:
     * Ability to use ``csv`` module to write data
@@ -468,20 +490,27 @@ Object serialization to CSV
 * Solution: :download:`solution/csv_relations.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Using ``csv.DictWriter()`` save contacts from addressbook to CSV file
     #. How to write relations to CSV file (contact has many addresses)?
     #. Recreate object structure from CSV file
+    #. Non functional requirements:
 
+        * All fields must be enclosed by double quote ``"`` character
+        * Use ``;`` to separate columns
+        * Use ``utf-8`` encoding
+        * Use Unix ``\n`` newline
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Za pomocą ``csv.DictWriter()`` zapisz kontakty z książki adresowej w pliku
     #. Jak zapisać w CSV dane relacyjne (kontakt ma wiele adresów)?
     #. Odtwórz strukturę obiektów na podstawie danych odczytanych z pliku
+    #. Wymagania niefunkcjonalne:
 
-:Non functional requirements:
-    #. All fields must be enclosed by double quote ``"`` character
-    #. Use ``;`` to separate columns
-    #. Use ``utf-8`` encoding
-    #. Use Unix newline
+        * Wszystkie pola muszą być otoczone znakiem cudzysłowu ``"``
+        * Użyj ``;`` do oddzielenia kolumn
+        * Użyj kodowania ``utf-8``
+        * Użyj zakończenia linii Unix ``\n``
 
 :Input:
     .. code-block:: python

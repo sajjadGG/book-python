@@ -331,24 +331,24 @@ DataFrame Statistics
 :Polish:
     #. Stwórz ``DataFrame`` samochody z:
 
-        - losową kolumną liczb całkowitych przebieg z przedziału [0, 200 000]
-        - losową kolumną spalanie z przedziału [2, 20]
+        * losową kolumną liczb całkowitych przebieg z przedziału [0, 200 000]
+        * losową kolumną spalanie z przedziału [2, 20]
 
     #. Dodaj kolumnę marka:
 
-        - jeżeli samochód ma spalanie [0, 5] marka to VW
-        - jeżeli samochód ma spalanie [6, 10] marka to Ford
-        - jeżeli samochód ma spalanie 11 i więcej, marka to UAZ
+        * jeżeli samochód ma spalanie [0, 5] marka to VW
+        * jeżeli samochód ma spalanie [6, 10] marka to Ford
+        * jeżeli samochód ma spalanie 11 i więcej, marka to UAZ
 
     #. Dodaj kolumnę pochodzenie:
 
-        - jeżeli przebieg poniżej 100 km, pochodzenie nowy
-        - jeżeli przebieg powyżej 100 km, pochodzenie uzywany
-        - jeżeli przebieg powyżej 100 000 km, pochodzenie z niemiec
+        * jeżeli przebieg poniżej 100 km, pochodzenie nowy
+        * jeżeli przebieg powyżej 100 km, pochodzenie uzywany
+        * jeżeli przebieg powyżej 100 000 km, pochodzenie z niemiec
 
     #. Przeanalizuj dane statystycznie
 
-        - sprawdź liczność grup
-        - wykonaj analizę statystyczną
+        * sprawdź liczność grup
+        * wykonaj analizę statystyczną
 
     #. Pogrupuj dane po marce i po pochodzenie

@@ -35,24 +35,24 @@ Przykład praktyczny
 * Wyobraźmy sobie ofertę domu.
 * Każdy z elementów oferty ma swoje atrybuty:
 
-    - basen
-    - ilość sypialni
-    - rok budowy
-    - ogród
-    - domek dla gości
-    - garaż
-    - lokacja
-    - powierzchnia
-    - wyposażenie
+    * basen
+    * ilość sypialni
+    * rok budowy
+    * ogród
+    * domek dla gości
+    * garaż
+    * lokacja
+    * powierzchnia
+    * wyposażenie
 
 * Wpływa na cenę domu w różnym stopniu
 * Niektóre rzeczy mają większą wagę, tzn. lokacja mocno podnosi cenę, a garaż zdecydowanie mniej
 * Wewnątrz sieci, neurony składają się z pewnych liniowych lub nieliniowych zależności pomiędzy poszczególnymi atrybutami oferty
 * Przykład poziomu hidden layer:
 
-    - mały dom w dobrej lokalizacji
-    - duży dom w gorszej lokalizacji
-    - umiarkowana lokalizacja i rozmiar plus basen
+    * mały dom w dobrej lokalizacji
+    * duży dom w gorszej lokalizacji
+    * umiarkowana lokalizacja i rozmiar plus basen
 
 * Cena domu wpłwa na sumę wszyskich kombinacji elementów i ich wag z poprzedniech stopni.
 
@@ -357,9 +357,9 @@ Kto jest na zdjęciu? - używanie ``TensorFlow for Poets``
 
 #. Stwórz zbiór obrazów zawierający zwierzęta:
 
-    - tygrysy,
-    - lwy,
-    - pantery
-    - koty.
+    * tygrysy,
+    * lwy,
+    * pantery
+    * koty.
 
 #. Naucz algorytm ich rozpoznawania i przedstaw Mu jakieś nowe zwierze i zobacz czy potrafi rozpoznać i z jaką dokładnością.

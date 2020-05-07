@@ -147,8 +147,8 @@ What Makes a Good Feature?
 * Independent features are the best. Aviod redundant features.
 * Dependent features looks like this:
 
-    - Height in inches
-    - Height in centimeters
+    * Height in inches
+    * Height in centimeters
 
 * Easy to understand features.
 * Look for informative features.
@@ -169,8 +169,8 @@ Feature Engineering
 #. Dane kontr-argumentowe możesz dobrać dowolnie
 #. Na podstawie danych wybranych astronautów:
 
-    - https://github.com/AstroMatt/astroBio/tree/master/raw
-    - https://github.com/AstroMatt/astroBio/tree/master/dat
+    * https://github.com/AstroMatt/astroBio/tree/master/raw
+    * https://github.com/AstroMatt/astroBio/tree/master/dat
 
 #. Stwórz listę features dla kilkunastu cech osób
 #. Stwórz CSV z wybranych przez Ciebie danych i załaduj za pomocą biblioteki ``pandas``

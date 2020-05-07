@@ -86,9 +86,8 @@ Coroutine
 =========
 The word "coroutine", like the word "generator", is used for two different (though related) concepts:
 
-- The function that defines a coroutine (a function definition using async def or decorated with ``@asyncio.coroutine``). If disambiguation is needed we will call this a coroutine function (``iscoroutinefunction()`` returns ``True``).
-
-- The object obtained by calling a coroutine function. This object represents a computation or an I/O operation (usually a combination) that will complete eventually. If disambiguation is needed we will call it a coroutine object (``iscoroutine()`` returns ``True``).
+    * The function that defines a coroutine (a function definition using async def or decorated with ``@asyncio.coroutine``). If disambiguation is needed we will call this a coroutine function (``iscoroutinefunction()`` returns ``True``).
+    * The object obtained by calling a coroutine function. This object represents a computation or an I/O operation (usually a combination) that will complete eventually. If disambiguation is needed we will call it a coroutine object (``iscoroutine()`` returns ``True``).
 
 
 ``Asyncio``
@@ -149,27 +148,27 @@ Protocol
 
 Low-level API
 -------------
-- callbacks
-- Transport and Protocols
-- network, subprocesses, signals
+* callbacks
+* Transport and Protocols
+* network, subprocesses, signals
 
 ``async``/``await``
 -------------------
-- run coroutines
-- streams, sockets, subprocesses, locks, timeouts, cancelations
+* run coroutines
+* streams, sockets, subprocesses, locks, timeouts, cancelations
 
 Mainstream
 ----------
-- in standard library since Python 3.5
-- stable and supported
-- healthy ecosystem
-- HTTP: aiohttp, Sanic
-- DBs: asyncpg, aio-libs, aiomysql
+* in standard library since Python 3.5
+* stable and supported
+* healthy ecosystem
+* HTTP: aiohttp, Sanic
+* DBs: asyncpg, aio-libs, aiomysql
 
 Pluggable event loop
 --------------------
-- uvloop - makes asyncio 2-4x faster
-- PyO3
+* uvloop - makes asyncio 2-4x faster
+* PyO3
 
 .. code-block:: python
 

@@ -20,8 +20,8 @@ Documentation
 
 Working with Excel
 ==================
-- https://www.pyxll.com/blog/tools-for-working-with-excel-and-python/
-- Comprehensive list of tools for working with Python and Excel. It covers writing Excel Add-Ins in Python, reading and writing Excel files, and interacting with Excel. It's a great resource for understanding the differences between all the different Python/Excel tools out there.
+* https://www.pyxll.com/blog/tools-for-working-with-excel-and-python/
+* Comprehensive list of tools for working with Python and Excel. It covers writing Excel Add-Ins in Python, reading and writing Excel files, and interacting with Excel. It's a great resource for understanding the differences between all the different Python/Excel tools out there.
 
 
 IDE - Integrated Development Environment

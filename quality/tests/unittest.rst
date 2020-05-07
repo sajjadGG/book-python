@@ -8,8 +8,8 @@ Unit Testing
 
     Development driven tests
 
-- https://martinfowler.com/articles/microservice-testing/#testing-component-out-of-process-diagram
-- https://docs.python.org/3/library/unittest.mock.html
+* https://martinfowler.com/articles/microservice-testing/#testing-component-out-of-process-diagram
+* https://docs.python.org/3/library/unittest.mock.html
 
 
 Glossary

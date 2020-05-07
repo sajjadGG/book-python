@@ -27,10 +27,10 @@ Recap information about function parameters
 
 Positional Parameters
 =====================
-- ``*`` in this context, is not multiplication in mathematical sense
-- ``*`` is used for positional arguments
-- ``args`` is a convention, but you can use any name
-- ``*args`` unpacks to ``tuple``
+* ``*`` in this context, is not multiplication in mathematical sense
+* ``*`` is used for positional arguments
+* ``args`` is a convention, but you can use any name
+* ``*args`` unpacks to ``tuple``
 
 .. code-block:: python
 
@@ -69,10 +69,10 @@ Positional Parameters
 
 Keyword Parameters
 ==================
-- ``**`` in this context, is not power in mathematical sense
-- ``**`` is used for keyword arguments
-- ``kwargs`` is a convention, but you can use any name
-- ``**kwargs`` unpacks to ``dict``
+* ``**`` in this context, is not power in mathematical sense
+* ``**`` is used for keyword arguments
+* ``kwargs`` is a convention, but you can use any name
+* ``**kwargs`` unpacks to ``dict``
 
 .. code-block:: python
 

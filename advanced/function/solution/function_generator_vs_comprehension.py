@@ -4,12 +4,12 @@ FILE = r'../data/iris.csv'
 
 
 def function_filter(file, selected_species):
-    output = []
+    result = []
     for line in file:
         *measurements, species = line.strip().split(',')
         if species == selected_species:
-            output.append(measurements)
-    return output
+            result.append(measurements)
+    return result
 
 
 def generator_filter(file, selected_species):

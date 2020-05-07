@@ -386,17 +386,17 @@ String Cleaning
     #. Use data from "Input" section (see below)
     #. Expected value is ``Jana III Sobieskiego``
     #. Use only ``str`` methods to clean each variable
-    #. Compare with output data (see "Output" section below)
     #. Discuss how to create generic solution which fit all cases
     #. Implementation of such generic function will be in :ref:`Cleaning text input` chapter
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Oczekiwana wartość ``Jana III Sobieskiego``
     #. Wykorzystaj tylko metody ``str`` do oczyszczenia każdej zmiennej
-    #. Porównaj wyniki z danymi wyjściowymi (patrz sekcja "Output")
     #. Przeprowadź dyskusję jak zrobić rozwiązanie generyczne pasujące do wszystkich przypadków
     #. Implementacja takiej generycznej funkcji będzie w rozdziale :ref:`Cleaning text input`
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python

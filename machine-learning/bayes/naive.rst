@@ -13,10 +13,10 @@ Naiwny klasyfikator Bayesowski, bazujący na twierdzeniu Bayesa, nadaje się szc
 
     P(A|B) = \frac{P(B|A)P(A)}{P(B)}
 
-- :math:`P(A|B)` - Jak prawdopodobna jest hipoteza, mając skutek. Prawdopodobieństwo warunkowe.
-- :math:`P(B|A)` - Jak prawdopodobny jest dowód, zakładając że nasza hipoteza jest prawdziwa
-- :math:`P(A)` - Jak prawdopodobna była nasza hipoteza przed zaobserwowaniem dowodów.
-- :math:`P(B)` - Suma prawdopodobieństw wszystkich potencjalnych skutków zdarzenia: :math:`P(B) = \sum P(B|A)P(B)`
+* :math:`P(A|B)` - Jak prawdopodobna jest hipoteza, mając skutek. Prawdopodobieństwo warunkowe.
+* :math:`P(B|A)` - Jak prawdopodobny jest dowód, zakładając że nasza hipoteza jest prawdziwa
+* :math:`P(A)` - Jak prawdopodobna była nasza hipoteza przed zaobserwowaniem dowodów.
+* :math:`P(B)` - Suma prawdopodobieństw wszystkich potencjalnych skutków zdarzenia: :math:`P(B) = \sum P(B|A)P(B)`
 
 Co to jest dokładnie?
 ---------------------
@@ -56,8 +56,8 @@ Przykład: Spam
 
     P(spam|words) = \frac{P(words|spam)P(spam)}{P(words)}
 
-- P(spam) - prawdopodobieństwo, że wiadomość jest spamem
-- P(spam|words) - prawdopodobieństwo, że wiadomość jest spamem, gdy słowo należy do czarnej listy
+* P(spam) - prawdopodobieństwo, że wiadomość jest spamem
+* P(spam|words) - prawdopodobieństwo, że wiadomość jest spamem, gdy słowo należy do czarnej listy
 
 
 Spam filtering based on a blacklist is flawed — it’s too restrictive and false positives are too great. But Bayesian filtering gives us a middle ground — we use probabilities. As we analyze the words in a message, we can compute the chance it is spam (rather than making a yes/no decision). If a message has a 99.9% chance of being spam, it probably is. As the filter gets trained with more and more messages, it updates the probabilities that certain words lead to spam messages. Advanced Bayesian filters can examine multiple words in a row, as another data point.
@@ -77,20 +77,20 @@ Plusy i minusy Naiwnego Bayesa
 
 Plusy
 -----
-- Można łatwo i szybko przewidzieć kategorie testów w zestawie danych. Również dobrze się sprawdza w przewidywaniu wielu kategorii.
+* Można łatwo i szybko przewidzieć kategorie testów w zestawie danych. Również dobrze się sprawdza w przewidywaniu wielu kategorii.
 
-- Mając na uwadze założenie o niezależności, Naiwny klasyfikator Bayesa wypada lepiej w porównaniu z innymi modelami, takimi jak regresja logistyczna i wymaga mniej danych treningowych.
+* Mając na uwadze założenie o niezależności, Naiwny klasyfikator Bayesa wypada lepiej w porównaniu z innymi modelami, takimi jak regresja logistyczna i wymaga mniej danych treningowych.
 
-- Dobrze wypada w przypadku kategorialnego wkładu zmiennych porównanych do zmiennych liczbowych. Dla zmiennej liczbowej, założona jest rozkład normalny, co jest silnym założeniem.
+* Dobrze wypada w przypadku kategorialnego wkładu zmiennych porównanych do zmiennych liczbowych. Dla zmiennej liczbowej, założona jest rozkład normalny, co jest silnym założeniem.
 
 
 Minusy
 ------
-- Jeżeli zmienna kategorialna ma kategorię (w testowanym zestawie danych), która nie została zaobserwowana w treningowym zestawie danych, wtedy model ustali zerowe prawdopodobieństwo i nie będzie w stanie niczego przewidzieć. Taką sytuację nazywa się często „Zerową Frekwencją”. By to rozwiązać, możemy użyć techniki wygładzającej. Jedną z najprostszych technik wygładzających jest tzw. oszacowanie Laplace’a.
+* Jeżeli zmienna kategorialna ma kategorię (w testowanym zestawie danych), która nie została zaobserwowana w treningowym zestawie danych, wtedy model ustali zerowe prawdopodobieństwo i nie będzie w stanie niczego przewidzieć. Taką sytuację nazywa się często „Zerową Frekwencją”. By to rozwiązać, możemy użyć techniki wygładzającej. Jedną z najprostszych technik wygładzających jest tzw. oszacowanie Laplace’a.
 
-- Z drugiej strony Naiwny Bayes jest także znany jako kiepski oszacowywacz, więc nie zawsze należy na jego podstawie wnioskować ze śmiertelną powagą.
+* Z drugiej strony Naiwny Bayes jest także znany jako kiepski oszacowywacz, więc nie zawsze należy na jego podstawie wnioskować ze śmiertelną powagą.
 
-- Innym ograniczeniem Naiwnego Bayesa jest założenie o niezależności wskaźników. W prawdziwym życiu, w zasadzie niemożliwym jest uzyskanie zestawu wskaźników kompletnie od siebie niezależnych.
+* Innym ograniczeniem Naiwnego Bayesa jest założenie o niezależności wskaźników. W prawdziwym życiu, w zasadzie niemożliwym jest uzyskanie zestawu wskaźników kompletnie od siebie niezależnych.
 
 Aplikacje Naiwnego klasyfikatora Bayesa
 =======================================
@@ -146,9 +146,9 @@ Jakie jest prawdopodobieństwo zachorowania na nowotwór przy pozytywnym wyniku 
 
 Na etapie testów klinicznych nowego mammografu przeprowadzono statystykę, której wyniki pokazują sprawność testu:
 
-    - 1% kobiet poddanych badaniom ma raka, stąd 99% nie ma.
-    - 90% przypadków, kiedy kobieta ma raka jest wykrywana prawidłowo, 10% z nich nie
-    - U 20% zdrowych osób test wykrywa nowotwór.
+    * 1% kobiet poddanych badaniom ma raka, stąd 99% nie ma.
+    * 90% przypadków, kiedy kobieta ma raka jest wykrywana prawidłowo, 10% z nich nie
+    * U 20% zdrowych osób test wykrywa nowotwór.
 
 .. csv-table:: Nowotwory
     :header: "Wynik testu", "Chory (1%)", "Zdrowy (99%)"

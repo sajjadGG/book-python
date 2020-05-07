@@ -37,7 +37,7 @@ Working with Excel file
     # Select columns
     columns = ['name', 'date_start', 'date_end', 'blacklist']
 
-    # Print output
+    # Print results
     print( df[columns] )
 
 

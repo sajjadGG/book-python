@@ -225,39 +225,44 @@ Column Stats
 * Solution: :download:`solution/statistics_column_stats.py`
 
 :English:
-    #. Use ``DATA: List[tuple]`` from listing (see below)
+    #. Use data from "Input" section (see below)
     #. For columns:
 
-        - Sepal length,
-        - Sepal width,
-        - Petal length,
-        - Petal width.
+        * Sepal length,
+        * Sepal width,
+        * Petal length,
+        * Petal width.
 
     #. Print calculated values:
 
-        - mean,
-        - median,
-        - standard deviation,
-        - variance.
+        * mean,
+        * median,
+        * standard deviation,
+        * variance.
+
+    #. Non-functional requirements:
+
+        * Use ``statistics`` module from Python standard library
 
 :Polish:
-    #. Użyj ``DATA: List[tuple]`` z listingu (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Dla kolumn:
 
-        - Sepal length,
-        - Sepal width,
-        - Petal length,
-        - Petal width.
+        * Sepal length,
+        * Sepal width,
+        * Petal length,
+        * Petal width.
 
     #. Wypisz wyliczone wartości:
 
-            - średnią,
-            - medianę,
-            - odchylenie standardowe,
-            - wariancję.
+        * średnią,
+        * medianę,
+        * odchylenie standardowe,
+        * wariancję.
 
-:Non-functional requirements:
-    #. Use ``statistics``
+    #. Wymagania niefunkcjonalne:
+
+        * Użyj modułu ``statistics`` z biblioteki standardowej Python
 
 :Input:
     .. code-block:: python
@@ -295,29 +300,36 @@ Iris Stats
 * Solution: :download:`solution/statistics_iris.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Create dict ``result: Dict[str, dict]``
     #. For each species calculate for numerical values:
 
-            - mean,
-            - median,
-            - standard deviation,
-            - variance.
+            * mean,
+            * median,
+            * standard deviation,
+            * variance.
 
     #. Save data to ``result`` dict
+    #. Compare result with "Output" section (see below)
+    #. Non-functional requirements:
+
+        * Use ``statistics`` module from Python standard library
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Stwórz słownik ``result: Dict[str, dict]``
     #. Dla każdego gatunku wylicz dla wartości numerycznych:
 
-            - średnią,
-            - medianę,
-            - odchylenie standardowe,
-            - wariancję.
+            * średnią,
+            * medianę,
+            * odchylenie standardowe,
+            * wariancję.
 
     #. Dane zapisz w słowniku ``result``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+    #. Wymagania niefunkcjonalne:
 
-:Non-functional requirements:
-    #. Use ``statistics``
+        * Użyj modułu ``statistics`` z biblioteki standardowej Python
 
 :Input:
     .. code-block:: python

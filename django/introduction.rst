@@ -8,28 +8,28 @@ Web Framework
 
 Dokumentacja
 ============
-- jedna z najlepszych dokumentacji
+* jedna z najlepszych dokumentacji
 
 Wersjonowanie
 =============
-- Semantic Versioning
-- Bugfix releases
-- alpha - feature freeze
-- beta - code freeze
-- rc - translation freeze
-- 1.0
-- 1.1
-- ...
-- 1.10
-- 1.11
-- 2.0 (new features)
-- 2.1 (maturing features)
-- 2.2 (LTS)
-- 3.0 (new features)
-- 3.1 (maturing features)
-- 3.2 (LTS)
-- 4.0 (new features)
-- ...
+* Semantic Versioning
+* Bugfix releases
+* alpha - feature freeze
+* beta - code freeze
+* rc - translation freeze
+* 1.0
+* 1.1
+* ...
+* 1.10
+* 1.11
+* 2.0 (new features)
+* 2.1 (maturing features)
+* 2.2 (LTS)
+* 3.0 (new features)
+* 3.1 (maturing features)
+* 3.2 (LTS)
+* 4.0 (new features)
+* ...
 
 LTS - Long Time Support
 -----------------------
@@ -80,6 +80,6 @@ Mark as Sources Root
 
 Podpowiadanie składni
 ---------------------
-- Template
-- templatetags
-- filters
+* Template
+* templatetags
+* filters

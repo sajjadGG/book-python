@@ -264,6 +264,7 @@ Power
     #. Function returns power of the first argument to the second
     #. If only one argument was passed, consider second equal to the first one
     #. Print returned values
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Zdefiniuj funkcję ``power``
@@ -272,6 +273,7 @@ Power
     #. Funkcja zwraca wynik pierwszego argumentu do potęgi drugiego
     #. Jeżeli tylko jeden argument był podany, przyjmij drugi równy pierwszemu
     #. Wypisz zwracane wartości
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Output:
     .. code-block:: python
@@ -290,22 +292,26 @@ Aviation numbers
 * Solution: :download:`solution/function_args_aviation_numbers.py`
 
 :English:
-    #. Given is pilot's alphabet for numbers (see boilerplate section below)
+    #. Use data from "Input" section (see below)
+    #. Given is pilot's alphabet for numbers
     #. Convert ``CONVERSION: Dict[int, str]`` to ``ALPHABET: Dict[str, str]`` (keys as ``str``)
     #. For input data (see input section below)
     #. Define function converting ``int`` or ``float`` to text form in Pilot's Speak
     #. You can modify ``ALPHABET``
     #. You cannot change ``CONVERSION``
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Dany jest alfabet pilotów dla numerów (patrz sekcja boilerplate)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Dany jest alfabet pilotów dla numerów
     #. Przekonwertuj ``CONVERSION: Dict[int, str]`` na ``ALPHABET: Dict[str, str]`` (klucze jako ``str``)
     #. Dla danych wejściowych (patrz sekcja input poniżej)
     #. Zdefiniuj funkcję konwertującą ``int`` lub ``float`` na formę tekstową w mowie pilotów
     #. Możesz modyfikować ``ALPHABET``
     #. Nie możesz zmieniać ``CONVERSION``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
-:Boilerplace:
+:Input:
     .. code-block:: python
 
         CONVERSION = {
@@ -321,16 +327,13 @@ Aviation numbers
             9: 'niner',
         }
 
-:Input:
-    .. code-block:: python
-
-        1969
-        31337
-        13.37
-        31.337
-        -1969
-        -31.337
-        -49.35
+        pilot_say(1969)
+        pilot_say(31337)
+        pilot_say(13.37)
+        pilot_say(31.337)
+        pilot_say(-1969)
+        pilot_say(-31.337)
+        pilot_say(-49.35)
 
 :Output:
     .. code-block:: python
@@ -359,16 +362,18 @@ Cleaning text input
 * Solution: :download:`solution/function_args_str_clean.py`
 
 :English:
-    #. Use ``DATA`` from "Input" section (see below)
+    #. Use data from "Input" section (see below)
     #. Write function cleaning up data
     #. Function takes one argument of type ``str``
     #. Function returns cleaned text
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Napisz funkcję czyszczącą dane
     #. Funkcja przyjmuje jeden argument typu ``str``
     #. Funkcja zwraca oczyszczony tekst
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
@@ -422,6 +427,7 @@ Number to human readable
     #. Text form must be in proper grammar form
     #. Max 6 digits before decimal separator (point ``.``)
     #. Max 5 digits after decimal separator (point ``.``)
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
@@ -429,6 +435,7 @@ Number to human readable
     #. Forma tekstowa musi być poprawna gramatycznie
     #. Max 6 cyfr przed separatorem dziesiętnym (point ``.``)
     #. Max 5 cyfr po separatorze dziesiętnym (point ``.``)
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python

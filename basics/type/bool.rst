@@ -135,10 +135,12 @@ To ``bool`` or not to ``bool``
 * Solution: :download:`solution/type_bool_simple.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Which variables are ``True``?
     #. Which variables are ``False``?
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Które zmienne są ``True``?
     #. Które zmienne są ``False``?
 
@@ -179,12 +181,16 @@ To ``bool`` or not to ``bool``
 * Solution: :download:`solution/type_bool_true_or_false.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. What you need to put in expressions to get the expected outcome?
     #. Insert only ``True`` or ``False``
+    #. Compare result with "Output" section (see below)
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Co należy podstawić w wyrażeniach aby otrzymać wartość oczekiwaną?
     #. Wstawiaj tylko ``True`` lub ``False``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python

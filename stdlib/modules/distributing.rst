@@ -70,11 +70,11 @@ Setuptools is a fully-featured, actively-maintained, and stable library designed
 
 .. code-block:: console
 
-    python setup.py sdist bdist_wheel
+    $ python setup.py sdist bdist_wheel
 
 .. code-block:: console
 
-    python setup.py sdist bdist_wheel --universal
+    $ python setup.py sdist bdist_wheel --universal
 
 ``requirements.txt`` vs ``setup.py``
 ------------------------------------
@@ -264,30 +264,30 @@ Setuptools is a fully-featured, actively-maintained, and stable library designed
 .. code-block:: console
 
     pip install twine
-    python setup.py sdist bdist_wheel
+    $ python setup.py sdist bdist_wheel
 
     # Upload with twine to Test PyPI and verify things look right.
-    twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+    $ twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 
     # Upload to PyPI
-    twine upload dist/*
+    $ twine upload dist/*
 
 Signing packages
 ----------------
 .. code-block:: console
 
     # Remove any old distributions
-    rm -rf dist/
+    $ rm -rf dist/
 
     # Create new tar.gz and wheel files
     # Only create a universal wheel if py2/py3 compatible and no C extensions
-    python setup.py bdist_wheel --universal
+    $ python setup.py bdist_wheel --universal
 
     # Sign the distributions
-    gpg --detach-sign -a dist/*
+    $ gpg --detach-sign -a dist/*
 
     # Upload to PyPI
-    twine upload dist/*
+    $ twine upload dist/*
 
 Artifactory
 -----------
@@ -317,15 +317,15 @@ Artifactory
 
 .. code-block:: console
 
-    python setup.py sdist upload -r local
-    python setup.py bdist_wheel upload -r local
-    python setup.py sdist bdist_wheel upload -r local
+    $ python setup.py sdist upload -r local
+    $ python setup.py bdist_wheel upload -r local
+    $ python setup.py sdist bdist_wheel upload -r local
 
 .. code-block:: console
     :caption: Search
 
-    pip search myapp --index http://localhost:8081/artifactory/api/pypi/pypi-local/
-    # myapp                   - My Simple App
+    $ pip search myapp --index http://localhost:8081/artifactory/api/pypi/pypi-local/
+    myapp                   - My Simple App
 
 
 Future of packaging and distribution

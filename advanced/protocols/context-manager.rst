@@ -283,7 +283,7 @@ Protocol Context Manager
 * Solution: :download:`solution/protocol_context_manager.py`
 
 :English:
-    #. Take input code from listing below
+    #. Use kodu from "Input" section (see below)
     #. Create Context manager for file which buffers data before save
     #. When block closes, then open file and write data
     #. How to make buffer save data every X bytes?
@@ -291,7 +291,7 @@ Protocol Context Manager
     #. How to make buffer save data in the background, but it could be still used?
 
 :Polish:
-    #. Weź kod wejściowy z listingu poniżej
+    #. Użyj kodu z sekcji "Input" (patrz poniżej)
     #. Stwórz Context Manager dla plików, który buforuje dane przed zapisem
     #. Gdy nastąpi wyjście z bloku context managera, to otwórz plik i zapisz dane
     #. Jak zrobić, aby bufor zapisywał dane na dysku co X bajtów?

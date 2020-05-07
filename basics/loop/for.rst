@@ -163,11 +163,11 @@ Example
 * Solution: :download:`solution/loop_for_example.py`
 
 :English:
-    #. Use ``DATA`` from "Input" section (see below)
+    #. Use data from "Input" section (see below)
     #. Count occurrences of each color
 
 :Polish:
-    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zlicz wystąpienia każdego z kolorów
 
 :Input:
@@ -187,7 +187,7 @@ Counter
 * Solution: :download:`solution/loop_for_counter.py`
 
 :English:
-    #. Use ``DATA`` from "Input" section (see below)
+    #. Use data from "Input" section (see below)
     #. Iterate over ``DATA``
     #. Count occurrences of each number
     #. Create empty ``counter: Dict[int, int]``:
@@ -203,7 +203,7 @@ Counter
     #. Compare results with "Output" section below
 
 :Polish:
-    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Iteruj po ``DATA``
     #. Policz wystąpienia każdej z cyfr
     #. Stwórz pusty ``counter: Dict[int, int]``:
@@ -248,7 +248,7 @@ Segmentation
 * Solution: :download:`solution/loop_for_segmentation.py`
 
 :English:
-    #. Use ``DATA`` from "Input" section (see below)
+    #. Use data from "Input" section (see below)
     #. Count occurrences of each group
     #. Define groups:
 
@@ -264,7 +264,7 @@ Segmentation
     #. Compare results with "Output" section below
 
 :Polish:
-   #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Policz wystąpienia każdej z group
     #. Zdefiniuj grupy
 
@@ -309,7 +309,8 @@ Text analysis
 * Solution: :download:`solution/loop_for_text_analysis.py`
 
 :English:
-    #. Given is text of the "Moon Speech" by John F. Kennedy's (see below)
+    #. Use data from "Input" section (see below)
+    #. Given is text of the "Moon Speech" by John F. Kennedy's  :cite:`BasicKennedy1962`
     #. Sentences are separated by period (``.``)
     #. Clean each sentence from whitespaces at the beginning and at the end
     #. Words are separated by spaces
@@ -325,7 +326,8 @@ Text analysis
     #. Compare results with "Output" section below
 
 :Polish:
-    #. Dany jest tekst przemówienia "Moon Speech" wygłoszonej przez John F. Kennedy'ego (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Dany jest tekst przemówienia "Moon Speech" wygłoszonej przez John F. Kennedy'ego :cite:`BasicKennedy1962`
     #. Zdania oddzielone są kropkami (``.``)
     #. Każde zdanie oczyść z białych znaków na początku i końcu
     #. Słowa oddzielone są spacjami

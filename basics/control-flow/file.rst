@@ -294,7 +294,7 @@ Save to CSV file
 * Solution: :download:`solution/file_write.py`
 
 :English:
-    #. Use ``DATA`` from "Input" section (see below)
+    #. Use data from "Input" section (see below)
     #. Separate header from data
     #. Write data to file: ``iris.csv``
     #. First line in file must be a header
@@ -302,7 +302,7 @@ Save to CSV file
     #. Use ``utf-8`` encoding and ``\n`` for line terminator
 
 :Polish:
-    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Odseparuj nagłówek do danych
     #. Zapisz dane do pliku: ``iris.csv``
     #. Pierwsza linią w pliku musi być nagłówkiem
@@ -364,8 +364,8 @@ Parsing simple CSV file
     #. Ściągnij :download:`data/iris.csv` i zapisz jako ``iris.csv``
     #. Zdefiniuj:
 
-            - ``features: List[tuple]`` - lista pomiarów (każdy wiersz to tuple)
-            - ``labels: List[str]`` - lista nazw gatunków
+            * ``features: List[tuple]`` - lista pomiarów (każdy wiersz to tuple)
+            * ``labels: List[str]`` - lista nazw gatunków
 
     #. Zaczytaj plik i dla każdej linii:
 
@@ -390,6 +390,7 @@ Parsing simple CSV file
 * Solution: :download:`solution/file_parsing_simple.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Using ``file.write()`` save input data from listing below to file ``hosts-simple.txt``
     #. Read file and for each line:
 
@@ -400,8 +401,10 @@ Parsing simple CSV file
         #. Append IP address and hosts names to ``result``
 
     #. Merge hostnames for the same IP
+    #. Compare result with "Output" section (see below)
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Używając ``file.write()`` zapisz dane wejściowe z listingu poniżej do pliku ``hosts-simple.txt``
     #. Zaczytaj plik i dla każdej lini:
 
@@ -412,6 +415,7 @@ Parsing simple CSV file
         #. Dodaj adres IP i nazwy hostów do ``result``
 
     #. Scal nazwy hostów dla tego samego IP
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
@@ -452,6 +456,7 @@ Parsing simple CSV file
 * Solution: :download:`solution/file_parsing_advanced.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Using ``file.write()`` save input data from listing below to file ``hosts-advanced.txt``
     #. Read file and for each line:
 
@@ -465,8 +470,10 @@ Parsing simple CSV file
 
     #. Merge hostnames for the same IP
     #. ``result`` must be list of dicts (``List[dict]``)
+    #. Compare result with "Output" section (see below)
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Używając ``file.write()`` zapisz dane wejściowe z listingu poniżej do pliku ``hosts-advanced.txt``
     #. Przeczytaj plik i dla każdej lini:
 
@@ -480,6 +487,7 @@ Parsing simple CSV file
 
     #. Scal nazwy hostów dla tego samego IP
     #. ``result`` ma być listą dictów (``List[dict]``)
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python

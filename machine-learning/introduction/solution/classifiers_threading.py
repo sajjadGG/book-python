@@ -34,8 +34,8 @@ class Worker(threading.Thread):
             job.fit(x_train, y_train)
             predictions = job.predict(x_test)
 
-            output = accuracy_score(y_test, predictions)
-            print(output, job)
+            result = accuracy_score(y_test, predictions)
+            print(result, job)
             print('\n')
 
             # Indicate that a formerly enqueued task is complete.

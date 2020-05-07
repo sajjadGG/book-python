@@ -11,11 +11,11 @@ Select
 * Solution: :download:`solution/nested_select.py`
 
 :English:
-    #. For given data input (see below)
+    #. Use data from "Input" section (see below)
     #. Write header (first line) to ``header`` variable
-    #. Convert to ``list`` data from row 2, 6, 9 and add to ``output``
-    #. Convert to ``tuple`` data from row 12, 15, 16 and add to ``output``
-    #. Convert to ``dict`` data from row 18, 21 and add to ``output``:
+    #. Convert to ``list`` data from row 2, 6, 9 and add to ``result``
+    #. Convert to ``tuple`` data from row 12, 15, 16 and add to ``result``
+    #. Convert to ``dict`` data from row 18, 21 and add to ``result``:
 
         * key -> index number (18 or 21)
         * value -> species name
@@ -25,11 +25,11 @@ Select
     #. Do not use ``for``, ``while`` or ``slice()``
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zapisz nagłówek (pierwsza linia) do zmiennej ``header``
-    #. Przekonwertuj do ``list`` dane z wierszy 2, 6, 9 i dodaj do ``output``
-    #. Przekonwertuj do ``tuple`` dane z wierszy 12, 15, 16 i dodaj do ``output``
-    #. Przekonwertuj do ``dict`` dane z wierszy 18, 21 i dodaj do ``output``:
+    #. Przekonwertuj do ``list`` dane z wierszy 2, 6, 9 i dodaj do ``result``
+    #. Przekonwertuj do ``tuple`` dane z wierszy 12, 15, 16 i dodaj do ``result``
+    #. Przekonwertuj do ``dict`` dane z wierszy 18, 21 i dodaj do ``result``:
 
         * klucz -> numer indeksu (18 or 21)
         * wartość -> nazwa gatunku
@@ -80,18 +80,20 @@ Iris dataset
 * Solution: :download:`solution/slice_iris.py`
 
 :English:
-    #. For input data (see below)
+    #. Use data from "Input" section (see below)
     #. Use only ``slice``
     #. Extract list ``features`` with measurements (every row must be tuple)
     #. Extract species name (every fifth element) and write to ``labels`` list
     #. Write unique species names to ``species`` set
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Użyj tylko ``slice``
     #. Wyodrębnij listę ``features`` w pomiarami (każdy wiersz ma być krotką)
     #. Wyodrębnij nazwę gatunku (co piąty element) i zapisz do listy ``labels``
     #. Zapisz unikalne nazwy gatunków do zbioru ``species``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
@@ -145,20 +147,24 @@ Iris dataset
 * Solution: :download:`solution/loop_dict_to_list.py`
 
 :English:
-    #. For input data (see below)
+    #. Use data from "Input" section (see below)
     #. Separate header and data
     #. Print ``List[dict]``
 
-        - key - name from the header
-        - value - measurement or species
+        * key - name from the header
+        * value - measurement or species
+
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Odseparuj nagłówek i dane
     #. Wypisz ``List[dict]``
 
-        - klucz: nazwa z nagłówka
-        - wartość: wyniki pomiarów lub gatunek
+        * klucz: nazwa z nagłówka
+        * wartość: wyniki pomiarów lub gatunek
+
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
@@ -211,13 +217,13 @@ Get elements from nested data structure
 * Solution: :download:`solution/for_nested.py`
 
 :English:
-    #. For input data (see below)
+    #. Use data from "Input" section (see below)
     #. Separate header from data
     #. Iterate over data
     #. Print species names ending with "ca" or "osa"
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Oddziel nagłówek od danych
     #. Iteruj po danych
     #. Wypisz nazwy gatunków kończące się na "ca" lub "osa"
@@ -250,7 +256,7 @@ Label encoder
 * Solution: :download:`solution/loop_label_encoder.py`
 
 :English:
-    #. For input data (see below)
+    #. Use data from "Input" section (see below)
     #. Define:
 
         * ``features: List[tuple]`` - measurements
@@ -265,10 +271,10 @@ Label encoder
     #. ``label_encoder`` must be generated from ``DATA``
     #. For each row add appropriate data to ``features``, ``labels`` and ``label_encoder``
     #. Print ``features``, ``labels`` and ``label_encoder``
-    #. Output must be identical to output data (see below)
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Dla danych wejściowych (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zdefiniuj:
 
         * ``features: List[tuple]`` - pomiary
@@ -284,7 +290,7 @@ Label encoder
     #. ``label_encoder`` musi być wygenerowany z ``DATA``
     #. Dla każdego wiersza dodawaj odpowiednie dane do ``feature``, ``labels`` i ``label_encoder``
     #. Wypisz ``feature``, ``labels`` i ``label_encoder``
-    #. Wynik ma być identyczny z danymi wyjściowymi (patrz sekcja output)
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python

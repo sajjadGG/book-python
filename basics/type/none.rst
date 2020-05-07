@@ -43,10 +43,14 @@ Is ``None`` or ``not``
 * Solution: :download:`solution/type_none.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. What you need to put in expressions to get the expected outcome?
+    #. Compare result with "Output" section (see below)
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Co należy podstawić w wyrażeniach aby otrzymać wartość oczekiwaną?
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python

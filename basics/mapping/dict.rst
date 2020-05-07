@@ -480,6 +480,7 @@ Aviation Language
 * Solution: :download:`solution/mapping_dict_get.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Create translator of pilot's alphabet
     #. Each letter has it's phonetic counterpart
     #. To convert table use multiline select with ``alt`` key in your IDE (if shortcut key is not working in your IDE, use only first four letters)
@@ -490,6 +491,7 @@ Aviation Language
     #. Do not use ``if``, ``try``, and ``except``
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Stwórz tłumacza alfabetu pilotów
     #. Pojedynczym literom przyporządkuj ich fonetyczne odpowiedniki
     #. Do przekonwertowania tabelki wykorzystaj zaznaczanie wielu linijek za pomocą klawisza ``alt`` w Twoim IDE (jeżeli skrót klawiszowy nie działa w Twoim IDE, użyj tylko cztery pierwsze litery)

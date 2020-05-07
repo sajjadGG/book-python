@@ -125,6 +125,7 @@ Clip
     #. Change shape to 7x3
     #. Clip numbers only in first column to 50 (inclusive) to 80 (exclusive)
     #. Print ``a``
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Ustaw ziarno losowości na zero
@@ -132,6 +133,7 @@ Clip
     #. Zmień kształt na 7x3
     #. Przytnij liczby w pierwszej kolumnie od 50 (włącznie) do 80 (rozłącznie)
     #. Wypisz ``a``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Output:
     .. code-block:: python

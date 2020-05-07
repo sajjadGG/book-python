@@ -99,16 +99,18 @@ DataFrame Read CSV
 * Solution: :download:`solution/pandas_read.py`
 
 :English:
-    #. Read data from given ``url`` (see below) to ``DataFrame``
-    #. Use provided column names
+    #. Use data from "Input" section (see below)
+    #. Read data from ``URL`` to ``DataFrame``
+    #. Use provided column names in ``COLUMNS``
     #. Read labels from the first row
     #. Replace data in ``label`` column with values extracted above
     #. Print ``DataFrame``
     #. Print first 5 and last 10 rows from ``DataFrame``
 
 :Polish:
-    #. Wczytaj dane z danego ``url`` (patrz poniżej) do ``DataFrame``
-    #. Użyj podanych nazw kolumn
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Wczytaj dane z ``URL`` do ``DataFrame``
+    #. Użyj podanych w ``COLUMNS`` nazw kolumn
     #. Wczytaj nazwy labeli z pierwszego wiersza
     #. Podmień dane w kolumnie ``label`` na wartości wyciągnięte powyżej
     #. Wypisz pierwsze 5 i ostatnie 10 wierszy z ``DataFrame``
@@ -116,18 +118,18 @@ DataFrame Read CSV
 :Input:
     .. code-block:: python
 
-        DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/breast-cancer.csv'
+        URL = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/breast-cancer.csv'
 
-        column_names = ['mean radius', 'mean texture', 'mean perimeter', 'mean area',
-                        'mean smoothness', 'mean compactness', 'mean concavity',
-                        'mean concave points', 'mean symmetry', 'mean fractal dimension',
-                        'radius error', 'texture error', 'perimeter error', 'area error',
-                        'smoothness error', 'compactness error', 'concavity error',
-                        'concave points error', 'symmetry error',
-                        'fractal dimension error', 'worst radius', 'worst texture',
-                        'worst perimeter', 'worst area', 'worst smoothness',
-                        'worst compactness', 'worst concavity', 'worst concave points',
-                        'worst symmetry', 'worst fractal dimension', 'label']
+        COLUMNS = ['mean radius', 'mean texture', 'mean perimeter', 'mean area',
+                   'mean smoothness', 'mean compactness', 'mean concavity',
+                   'mean concave points', 'mean symmetry', 'mean fractal dimension',
+                   'radius error', 'texture error', 'perimeter error', 'area error',
+                   'smoothness error', 'compactness error', 'concavity error',
+                   'concave points error', 'symmetry error',
+                   'fractal dimension error', 'worst radius', 'worst texture',
+                   'worst perimeter', 'worst area', 'worst smoothness',
+                   'worst compactness', 'worst concavity', 'worst concave points',
+                   'worst symmetry', 'worst fractal dimension', 'label']
 
 :The whys and wherefores:
     * Read Pandas ``DataFrame``

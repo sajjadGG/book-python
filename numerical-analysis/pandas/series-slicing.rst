@@ -287,6 +287,7 @@ Slicing Alphabet
 * Solution: :download:`solution/series_slicing_string.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Create ``pd.Series`` with 26 random integers in range ``[10, 100)``
     #. Name indexes like letters from english alphabet
     #. Using ``statistics`` library find median of alphabet
@@ -296,6 +297,7 @@ Slicing Alphabet
     #. Sum results
 
 :Polish:
+    #. Użyj data z sekcji "Input" (patrz poniżej)
     #. Stwórz ``pd.Series`` z 26 losowymi liczbami całkowitymi z przedziału ``<10; 100)``
     #. Nazwij indeksy jak kolejne litery alfabetu angielskiego
     #. Za pomocą biblioteki ``statistics`` znajdź medianę alfabetu

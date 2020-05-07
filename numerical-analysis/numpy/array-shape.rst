@@ -245,6 +245,7 @@ Shape
 * Solution: :download:`solution/numpy_shape.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Given ``a: ndarray`` (see below)
     #. Flatten using method ``.ravel()``
     #. Print ``a``
@@ -252,6 +253,7 @@ Shape
     #. Print ``a``
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Dany ``a: ndarray`` (patrz sekcja input)
     #. Spłaszcz używając metody ``.ravel()``
     #. Wypisz ``a``

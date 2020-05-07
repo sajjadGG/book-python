@@ -719,9 +719,11 @@ XML Parsing
 * Solution: :download:`solution/xml_parse.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Convert input data to Python ``List[dict]``
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Przekonwertuj dane wejściowe do Pythonowego ``List[dict]``
 
 :Input:
@@ -736,9 +738,11 @@ XSLT Transformation
 * Solution: :download:`solution/xml_xslt.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Convert input data to Python ``List[dict]``
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Przekonwertuj dane wejściowe do Pythonowego ``List[dict]``
 
 :Input:

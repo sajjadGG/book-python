@@ -374,18 +374,22 @@ Arithmetic operations
 * Solution: :download:`solution/numpy_arithmetic.py`
 
 :English:
-    #. For given: ``a: ndarray``, ``b: ndarray``, ``c: ndarray`` (see below)
+    #. Use data from "Input" section (see below)
+    #. For given: ``a: ndarray``, ``b: ndarray``, ``c: ndarray``
     #. Calculate square root of each element in ``a`` and ``b``
     #. Calculate second power (square) of each element in ``c``
     #. Add elements from ``a`` to ``b``
     #. Multiply the result by ``c``
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Dla danych: ``a: ndarray``, ``b: ndarray``, ``c: ndarray`` (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Dla danych: ``a: ndarray``, ``b: ndarray``, ``c: ndarray``
     #. Oblicz pierwiastek kwadratowy każdego z elementu w ``a`` i ``b``
     #. Oblicz drugą potęgę (kwadrat) każdego z elementu w ``c``
     #. Dodaj elementy z ``a`` do ``b``
     #. Przemnóż wynik przez ``c``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python

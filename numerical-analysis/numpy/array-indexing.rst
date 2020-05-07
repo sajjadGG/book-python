@@ -209,28 +209,32 @@ Indexing
 * Solution: :download:`solution/numpy_indexing.py`
 
 :English:
-    #. Create ``output: ndarray``
-    #. Add to ``output`` elements from ``DATA`` (see below) at indexes:
+    #. Use data from "Input" section (see below)
+    #. Create ``result: ndarray``
+    #. Add to ``result`` elements from ``DATA`` (see below) at indexes:
 
-        - row 0, column 2
-        - row 2, column 2
-        - row 0, column 0
-        - row 1, column 0
+        * row 0, column 2
+        * row 2, column 2
+        * row 0, column 0
+        * row 1, column 0
 
-    #. ``output`` size must be 2x2
-    #. ``output`` type must be float
+    #. ``result`` size must be 2x2
+    #. ``result`` type must be float
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Stwórz ``output: ndarray``
-    #. Dodaj do ``output`` elementy z ``DATA`` (patrz sekcja input) o indeksach:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Stwórz ``result: ndarray``
+    #. Dodaj do ``result`` elementy z ``DATA`` (patrz sekcja input) o indeksach:
 
-        - wiersz 0, kolumna 2
-        - wiersz 2, kolumna 2
-        - wiersz 0, kolumna 0
-        - wiersz 1, kolumna 0
+        * wiersz 0, kolumna 2
+        * wiersz 2, kolumna 2
+        * wiersz 0, kolumna 0
+        * wiersz 1, kolumna 0
 
-    #. Rozmiar ``output`` musi być 2x2
-    #. Typ ``output`` musi być float
+    #. Rozmiar ``result`` musi być 2x2
+    #. Typ ``result`` musi być float
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
@@ -244,7 +248,7 @@ Indexing
 :Output:
     .. code-block:: python
 
-        output: ndarray
+        result: ndarray
         # array([[3, 9],
         #        [1, 4]])
 

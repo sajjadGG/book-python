@@ -145,8 +145,8 @@ Nearest Neighbor Classifier
 #. Dla zbioru Iris ma osiągać accuracy na poziomie powyżej 90%
 #. Klasa ``NearestNeighborClassifier`` powinna mieć interfejs zgodny z ``scikit-learn``:
 
-    - ``.fit()`` - do uczenia funkcji
-    - ``.predict()`` - do predykcji
+    * ``.fit()`` - do uczenia funkcji
+    * ``.predict()`` - do predykcji
 
 #. Do porównania użyj ``accuracy = metrics.accuracy_score(labels_test, labels_predicted)``
 

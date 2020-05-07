@@ -251,12 +251,14 @@ OOP Stringify Object
 * Solution: :download:`solution/oop_stringify.py`
 
 :English:
-    #. Modify code from input data (see below)
+    #. Use code from "Input" section (see below)
     #. Overload ``str`` and ``repr`` to achieve desired printing output
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Zmodyfikuj kod z danych wejściowych (patrz sekcja input)
+    #. Użyj kodu z sekcji "Input" (patrz poniżej)
     #. Przeciąż ``str`` i ``repr`` aby osiągnąć oczekiwany rezultat wypisywania
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python

@@ -9,5 +9,5 @@ parser = ArgumentParser()
 parser.add_argument('--numbers', nargs='+', type=float)
 args = parser.parse_args()
 
-output = avg(*args.numbers)
-print(output)
+result = avg(*args.numbers)
+print(result)

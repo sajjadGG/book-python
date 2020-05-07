@@ -10,8 +10,8 @@ for root, dirs, files in os.walk(PATH):
         if 'README' in name:
             absolute_path = os.path.join(root, name)
             cmd = ['type', absolute_path]
-            output = subprocess.run(cmd, stdout=subprocess.PIPE, shell=True)
-            print(output.stdout)
+            result = subprocess.run(cmd, stdout=subprocess.PIPE, shell=True)
+            print(result.stdout)
             readme_found = True
 
 if not readme_found:

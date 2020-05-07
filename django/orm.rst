@@ -4,9 +4,9 @@ ORM
 
 QuerySet
 ========
-- sklejanie zapytań
-- Tworzenie obiektów
-- Zapisywanie ``save()`` ForeignKey
+* sklejanie zapytań
+* Tworzenie obiektów
+* Zapisywanie ``save()`` ForeignKey
 
 .. code-block:: python
 

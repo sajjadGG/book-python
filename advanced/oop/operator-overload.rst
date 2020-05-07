@@ -25,10 +25,10 @@ Rationale
     vector2 = Vector(x=3, y=4)
     vector3 = Vector(x=5, y=6)
 
-    output = vector1 + vector2
+    result = vector1 + vector2
     # TypeError: unsupported operand type(s) for +: 'Vector' and 'Vector'
 
-    output = vector1 + vector2 + vector3
+    result = vector1 + vector2 + vector3
     # TypeError: unsupported operand type(s) for +: 'Vector' and 'Vector'
 
 .. code-block:: python
@@ -51,12 +51,12 @@ Rationale
     vector2 = Vector(x=3, y=4)
     vector3 = Vector(x=5, y=6)
 
-    output = vector1 + vector2
-    print(output)
+    result = vector1 + vector2
+    print(result)
     # Vector(x=4, y=6)
 
-    output = vector1 + vector2 + vector3
-    print(output)
+    result = vector1 + vector2 + vector3
+    print(result)
     # Vector(x=9, y=12)
 
 
@@ -294,11 +294,11 @@ OOP Operator Overload
 * Solution: :download:`solution/oop_operator_overload.py`
 
 :English:
-    #. Use the code from listing below
+    #. Use code from "Input" section (see below)
     #. Override operators of ``Astronaut`` and ``Mission`` for code to work correctly
 
 :Polish:
-    #. Użyj kodu z listingu poniżej
+    #. Użyj kodu z sekcji "Input" (patrz poniżej)
     #. Nadpisz operatory ``Astronaut`` i ``Mission`` aby poniższy kod zadziałał poprawnie
 
 .. code-block:: python

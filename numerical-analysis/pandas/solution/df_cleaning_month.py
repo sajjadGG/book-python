@@ -23,7 +23,7 @@ df['month_name'].replace({
     '12': 'December',
 }, inplace=True)
 
-# Print output
+# Print result
 print(df)
 
 

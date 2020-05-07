@@ -38,10 +38,10 @@ with open(FILE, mode='wb') as file:
 
 
 with open(FILE, mode='rb') as file:
-    output = pickle.load(file)
+    result = pickle.load(file)
 
 
-print(output)
+print(result)
 # [
 #
 # Astronaut(name="Jan Twardowski", missions=(

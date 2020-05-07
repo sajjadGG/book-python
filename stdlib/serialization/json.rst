@@ -73,8 +73,8 @@ Serialize to JSON
         'last_name': 'Twardowski'
     }
 
-    output = json.dumps(DATA)
-    print(output)
+    result = json.dumps(DATA)
+    print(result)
     # '{"first_name": "Jan", "last_name": "Twardowski"}'
 
 Deserialize from JSON
@@ -87,8 +87,8 @@ Deserialize from JSON
 
     DATA = '{"first_name": "Jan", "last_name": "Twardowski"}'
 
-    output = json.loads(DATA)
-    print(output)
+    result = json.loads(DATA)
+    print(result)
     # {
     #     'first_name': 'Jan',
     #     'last_name': 'Twardowski'
@@ -115,7 +115,7 @@ Encoding ``datetime`` and ``date``
         'datetime': datetime(1969, 7, 21, 2, 56, 15),
     }
 
-    output = json.dumps(DATA)
+    result = json.dumps(DATA)
     # TypeError: Object of type date is not JSON serializable
 
 .. code-block:: python
@@ -142,8 +142,8 @@ Encoding ``datetime`` and ``date``
                 return value.strftime('%Y-%m-%d')
 
 
-    output = json.dumps(DATA, cls=JSONDatetimeEncoder)
-    print(output)
+    result = json.dumps(DATA, cls=JSONDatetimeEncoder)
+    print(result)
     # '{"name": "Jan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T02:56:15.000Z"}'
 
 
@@ -157,8 +157,8 @@ Decoding ``datetime`` and ``date``
 
     DATA = '{"name": "Jan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T02:56:15.000Z"}'
 
-    output = json.loads(DATA)
-    print(output)
+    result = json.loads(DATA)
+    print(result)
     # {
     #     'name': 'Jan Twardowski',
     #     'date': '1961-04-12',
@@ -182,8 +182,8 @@ Decoding ``datetime`` and ``date``
         def __init__(self):
             super().__init__(object_hook=self.default)
 
-        def default(self, output: dict) -> dict:
-            for field, value in output.items():
+        def default(self, result: dict) -> dict:
+            for field, value in result.items():
 
                 if field in self.DATE_FIELDS:
                     value = datetime.strptime(value, '%Y-%m-%d').date()
@@ -191,12 +191,12 @@ Decoding ``datetime`` and ``date``
                 if field in self.DATETIME_FIELDS:
                     value = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%fZ').replace(tzinfo=timezone.utc)
 
-                output[field] = value
-            return output
+                result[field] = value
+            return result
 
 
-    output = json.loads(DATA, cls=JSONDatetimeDecoder)
-    print(output)
+    result = json.loads(DATA, cls=JSONDatetimeDecoder)
+    print(result)
     # {
     #     'name': 'Jan Twardowski',
     #     'date': date(1961, 4, 12),
@@ -248,8 +248,8 @@ Encoding nested objects with relations to JSON
             return result
 
 
-    output = json.dumps(CREW, cls=JSONObjectEncoder, sort_keys=True, indent=2)
-    print(output)
+    result = json.dumps(CREW, cls=JSONObjectEncoder, sort_keys=True, indent=2)
+    print(result)
     # [
     #   {
     #     "name": "Jan Twardowski",
@@ -322,8 +322,8 @@ Decoding nested objects with relations to JSON
             return cls(**obj)
 
 
-    output = json.loads(DATA, cls=JSONObjectDecoder)
-    print(output)
+    result = json.loads(DATA, cls=JSONObjectDecoder)
+    print(result)
     # Astronaut(name="Jan Twardowski", missions=[
     #    Mission(year=1969, name="Apollo 18"),
     #    Mission(year=2024, name="Artemis 3")]),
@@ -400,22 +400,26 @@ Serialize nested sequences to JSON
 * Solution: :download:`solution/json_dump.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Extract from input a header and data
     #. Create ``List[dict]``
 
-        - key: name from the header
-        - value: measurement or species
+        * key: name from the header
+        * value: measurement or species
 
     #. Write structure to file ``iris_serialize.json`` in JSON format
+    #. Compare result with "Output" section (see below)
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Z danych wydziel nagłówek i pomiary
     #. Wygeneruj ``List[dict]``
 
-        - klucz: nazwa z nagłówka
-        - wartość: wyniki pomiarów lub gatunek
+        * klucz: nazwa z nagłówka
+        * wartość: wyniki pomiarów lub gatunek
 
     #. Zapisz strukturę do pliku ``iris_serialize.json`` w formacie JSON
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :The whys and wherefores:
     * Serializing nested data structures
@@ -455,7 +459,7 @@ Serialize nested sequences to JSON
     .. code-block:: python
         :caption: Output
 
-        output: List[dict] = [
+        result: List[dict] = [
             {'Sepal length': 5.8, 'Sepal width': 2.7, 'Petal length': 5.1, 'Petal width': 1.9, 'Species': 'virginica'},
             {'Sepal length': 5.1, 'Sepal width': 3.5, 'Petal length': 1.4, 'Petal width': 0.2, 'Species': 'setosa'},
             {'Sepal length': 5.7, 'Sepal width': 2.8, 'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
@@ -470,13 +474,15 @@ Deserialize nested sequences from JSON
 * Solution: :download:`solution/json_load.py`
 
 :English:
-    #. Write input data to "iris_deserialize.json"
+    #. Use data from "Input" section (see below)
+    #. Save input data to "iris_deserialize.json" file
     #. Read file and print data in ``List[tuple]`` format
     #. First line must be a header
     #. Other lines must contain data
 
 :Polish:
-    #. Dane z listingu poniżej skopiuj do pliku "iris_deserialize.json"
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Zapisz dane wejściowe do pliku "iris_deserialize.json"
     #. Odczytaj dane z pliku, i wyświetl je w formacie ``List[tuple]``
     #. Pierwsza linijka ma zawierać nagłówek
     #. Kolejne linie mają mieć dane
@@ -499,13 +505,13 @@ Serializing datetime to JSON
 * Solution: :download:`solution/json_datetime.py`
 
 :Enlish:
-    #. Copy input data to your script
+    #. Use data from "Input" section (see below)
     #. Save data to file in JSON format
     #. Read data from file
     #. Recreate data structure
 
 :Polish:
-    #. Skopiuj dane wejściowe do swojego skryptu
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zapisz dane do pliku w formacie JSON
     #. Odczytaj dane z pliku
     #. Odtwórz strukturę danych
@@ -538,13 +544,13 @@ Serializing objects to JSON
 * Estimated time of completion: 20 min
 
 :English:
-    #. Copy input data in JSON format to your script
+    #. Use data from "Input" section (see below)
     #. Convert from JSON format to Python
     #. Create classes ``Setosa``, ``Virginica``, ``Versicolor`` representing data
     #. Reading file create instances of those classes based on value in field "species"
 
 :Polish:
-    #. Skopiuj dane wejściowe w formacie JSON do swojego skryptu
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Przekonwertuj dane z JSON do Python
     #. Stwórz klasy ``Setosa``, ``Virginica``, ``Versicolor`` reprezentujące dane
     #. Czytając plik twórz obiekty powyższych klas w zależności od wartości pola "species"

@@ -97,19 +97,21 @@ SQLite Iris
 * Solution: :download:`solution/sqlite_iris.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Save input data as ``sqlite_iris.csv`` file
     #. Read data from file (don't use ``csv`` or ``pandas`` library)
     #. Connect to the ``sqlite3`` using context manager (``with``)
-    #. Create table ``iris``, column names are specified in output data (see below)
+    #. Create table ``iris``, column names are specified in "Input" section (see below)
     #. Replace ``int`` to ``str`` according to ``SPECIES`` conversion table (see input data)
     #. Save data to database table
     #. Print results using ``SELECT * FROM iris ORDER BY datetime DESC``
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zapisz dane wejściowe do pliku ``sqlite_iris.csv``
     #. Wczytaj dane z pliku (nie używaj biblioteki ``csv`` lub ``pandas``)
     #. Połącz się do bazy danych ``sqlite3`` używając context managera (``with``)
-    #. Stwórz tabelę ``iris`` o kolumnach podanych w sekcji dane wyjściowe (patrz sekcja output)
+    #. Stwórz tabelę ``iris`` o kolumnach podanych w sekcji "Input" (patrz poniżej)
     #. Podmień ``int`` na ``str`` zgodnie z tabelą podstawień ``SPECIES`` (patrz dane wejściowe)
     #. Zapisz dane do tabeli w bazie danych
     #. Wypisz wyniki z bazy danych ``SELECT * FROM iris ORDER BY datetime DESC``
@@ -200,12 +202,14 @@ Creating relations in database
 * Solution: :download:`solution/sqlite_addressbook.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Create database for input data
     #. Add support for many addresses
     #. Insert data to database
     #. Select data from database using JOIN relations
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Stwórz bazę danych na podstawie danych wejściowych
     #. Dodaj obsługę dla wielu adresów
     #. Zapisz dane do bazy
@@ -291,12 +295,14 @@ Relational data in one table
 * Estimated time of completion: 15 min
 
 :English:
+    #. Use data from "Input" section (see below)
     #. How to write input data in one table without using relations?
     #. There are at least four methods
     #. Discuss pros and cons of each method
     #. Which methods is ACID compliant?
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Jak zapisać w jednej tabeli bez wykorzystania relacji?
     #. Są przynajmniej cztery metody
     #. Przeprowadź dyskusję na temat zalet i wad każdej metody
@@ -330,6 +336,7 @@ Log parsing
 * Solution: :download:`solution/sqlite_logs.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Save input data to file ``apollo11-timeline.log``
     #. Extract ``datetime`` object, level name and message from each line
     #. Collect data to ``DATA: List[dict]`` (see below)
@@ -337,9 +344,11 @@ Log parsing
     #. Add all logs to database
     #. Select only ``WARNING`` logs between 1969-07-20 and 1969-07-21
     #. Order logs by datetime descending
-    #. Print ``output: List[dict]``
+    #. Print ``result: List[dict]``
+    #. Compare result with "Output" section (see below)
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zapisz dane wejściowe do pliku ``apollo11-timeline.log``
     #. Wyciągnij obiekt ``datetime``, poziom logowania oraz wiadomość z każdej linii
     #. Zbierz dane do ``DATA: List[dict]`` (patrz sekcja input)
@@ -347,7 +356,8 @@ Log parsing
     #. Dodaj wszystkie linie do bazy danych
     #. Wybierz tylko logi ``WARNING`` z przedziału 1969-07-20 i 1969-07-21
     #. Posortuj logi w kolejności datetime malejąco
-    #. Wyświetl ``output: List[dict]``
+    #. Wyświetl ``result: List[dict]``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: text
@@ -384,7 +394,7 @@ Log parsing
 :Output:
     .. code-block:: python
 
-        output: List[dict] = [
+        result: List[dict] = [
 
             {'date': datetime.datetime(1969, 7, 21, 17, 54, 00, tzinfo=datetime.timezone.utc),
              'level': 'WARNING',

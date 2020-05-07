@@ -19,9 +19,9 @@ import re
 
 
 PATTERN = '[A-Z][a-z]+ [0-9]+, [0-9]+'
-output = re.findall(PATTERN, TEXT)
+result = re.findall(PATTERN, TEXT)
 
-print(output)
+print(result)
 # ['October 4, 1957',
 #  'April 12, 1961',
 #  'May 5, 1961',

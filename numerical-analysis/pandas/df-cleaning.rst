@@ -206,11 +206,13 @@ DataFrame Cleaning Month number to text
 * Solution: :download:`solution/df_cleaning_month.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Download :download:`data/phones.csv`
     #. Add column ``year`` and ``month_name`` by parsing ``month`` column
     #. Month name must be a string month name, not a number (i.e.: 'January', 'May')
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Pobierz :download:`data/phones.csv`
     #. Dodaj kolumnę ``year`` i ``month_name`` poprzez sparsowanie kolumny ``month``
     #. Nazwa miesiąca musi być ciągiem znaków, a nie liczbą (i.e. 'January', 'May')

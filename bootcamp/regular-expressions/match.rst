@@ -79,11 +79,13 @@ Phone Number Validation
 * Solution: :download:`solution/match_phones.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Use regular expressions to validate phone numbers
     #. Check all given numbers (see input section)
     #. Valid phone number formats: ``+## ### ### ###`` or ``+## ## ### ####``
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Użyj wyrażeń regularnych do walidacji numeru telefonu
     #. Sprawdź wszystkie podane numery (patrz sekcja input)
     #. Poprawne formaty numeru: ``+## ### ### ###`` lub ``+## ## ### ####``

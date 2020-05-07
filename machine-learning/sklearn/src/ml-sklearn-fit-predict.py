@@ -33,6 +33,6 @@ to_predict = [
     (5.6, 2.3, 4.1, 2.9)
 ]
 
-output = model.predict(to_predict)
-print(output)
+result = model.predict(to_predict)
+print(result)
 # ['virginica']

@@ -6,13 +6,13 @@ Support Vector Machines
 
 TL;DR
 =====
-- Jeden z najbardziej popularnych algorytmów Machine Learning
-- Dzieli :term:`vector space` za pomocą linii
-- Wyszukuje linię taką linię, która ma największy margines pomiędzy wszystkimi punktami tzw. :term:`Best separating hyperplane`
-- Dla nieznanego punktu sprawdza po której stronie krzywej się znajduje i na podstawie tego określa przynależność
-- Linia prosta jest najprostszym przypadkiem
-- Może się okazać, że konieczne będzie przeprowadzenie bardzo skomplikowanej krzywej
-- Jeżeli dane są zgrupowane w wielowymiarowej przestrzeni, trzeba będzie użyć zbioru
+* Jeden z najbardziej popularnych algorytmów Machine Learning
+* Dzieli :term:`vector space` za pomocą linii
+* Wyszukuje linię taką linię, która ma największy margines pomiędzy wszystkimi punktami tzw. :term:`Best separating hyperplane`
+* Dla nieznanego punktu sprawdza po której stronie krzywej się znajduje i na podstawie tego określa przynależność
+* Linia prosta jest najprostszym przypadkiem
+* Może się okazać, że konieczne będzie przeprowadzenie bardzo skomplikowanej krzywej
+* Jeżeli dane są zgrupowane w wielowymiarowej przestrzeni, trzeba będzie użyć zbioru
 
 
 Charakterystyka algorytmu
@@ -23,17 +23,17 @@ Przeznaczenie
 
 Zalety algorytmu
 ----------------
-- Guaranteed Optimality: Due to the nature of Convex Optimization, the solution is guaranteed to be the global minimum not a local minimum.
+* Guaranteed Optimality: Due to the nature of Convex Optimization, the solution is guaranteed to be the global minimum not a local minimum.
 
-- Conformity with Semi-Supervised Learning: It may be used in a dataset where some of the data are labeled and some are not. You only add an additional condition to the minimization problem and it is called Transductive SVM.
+* Conformity with Semi-Supervised Learning: It may be used in a dataset where some of the data are labeled and some are not. You only add an additional condition to the minimization problem and it is called Transductive SVM.
 
-- Feature Mapping might have been a burden on the computational complexity of the overall training performance; however, thanks to the ‘Kernel Trick’ the feature mapping is implicitly carried out via simple dot products.
+* Feature Mapping might have been a burden on the computational complexity of the overall training performance; however, thanks to the ‘Kernel Trick’ the feature mapping is implicitly carried out via simple dot products.
 
 Wady algorytmu
 --------------
-- In Natural Language Processing, structured representations of text yield better performances. Sadly, SVMs can not accomodate such structures(word embeddings) and are used through Bag-of-Words representation which loses sequantiality information and leads to worse performance.
+* In Natural Language Processing, structured representations of text yield better performances. Sadly, SVMs can not accomodate such structures(word embeddings) and are used through Bag-of-Words representation which loses sequantiality information and leads to worse performance.
 
-- SVM in its vanilla form cannot return a probabilistic confidence value like logistic regression does, in some sense it’s not ‘explanatory’ enough.
+* SVM in its vanilla form cannot return a probabilistic confidence value like logistic regression does, in some sense it’s not ‘explanatory’ enough.
 
 
 Opis algorytmu
@@ -54,8 +54,8 @@ Powyższy rysunek jest ilustracją bardzo prostego przykładu klasyfikatora lini
 
 Definicja formalna
 ------------------
-- Tą metodą wykonuje się regresję i klasyfikację, konstruując nieliniowe granice decyzyjne.
-- Istnieje kilka typów wektorów nośnych, z różnymi funkcjami bazowymi:
+* Tą metodą wykonuje się regresję i klasyfikację, konstruując nieliniowe granice decyzyjne.
+* Istnieje kilka typów wektorów nośnych, z różnymi funkcjami bazowymi:
 
     * liniową, wielomianową,
     * RBF (radialne funkcje bazowe)
@@ -65,7 +65,7 @@ Support Vector Machines (Kernels)
 =================================
 * :math:`f(x) = B0 + sum(ai * (x,xi))`
 
-- The equation for making a prediction for a new input using the dot product between the input (x) and each support vector (xi)
+* The equation for making a prediction for a new input using the dot product between the input (x) and each support vector (xi)
 
 Linear Kernel SVM
 -----------------
@@ -84,10 +84,10 @@ Polynomial Kernel SVM
 ---------------------
 * :math:`K(x,xi) = 1 + sum(x * xi)^d`
 
-- Polynomial kernel
-- Where the degree of the polynomial must be specified by hand to the learning algorithm.
-- When :math:`d=1` this is the same as the linear kernel.
-- The polynomial kernel allows for curved lines in the input space.
+* Polynomial kernel
+* Where the degree of the polynomial must be specified by hand to the learning algorithm.
+* When :math:`d=1` this is the same as the linear kernel.
+* The polynomial kernel allows for curved lines in the input space.
 
 .. figure:: img/svm-hyperplane-polynomial.png
     :name: svm-hyperplane-polynomial
@@ -101,9 +101,9 @@ Radial Kernel SVM
 -----------------
 * :math:`K(x,xi) = exp(-gamma * sum((x – xi^2))`
 
-- Where gamma is a parameter that must be specified to the learning algorithm.
-- A good default value for gamma is 0.1, where gamma is often 0 < gamma < 1.
-- The radial kernel is very local and can create complex regions within the feature space, like closed polygons in two-dimensional space.
+* Where gamma is a parameter that must be specified to the learning algorithm.
+* A good default value for gamma is 0.1, where gamma is often 0 < gamma < 1.
+* The radial kernel is very local and can create complex regions within the feature space, like closed polygons in two-dimensional space.
 
 .. figure:: img/support-vector-machines-9.png
     :name: 2D Radial Kernel SVM

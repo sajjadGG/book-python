@@ -30,6 +30,6 @@ to_predict = [
     (6, 130, 8)
 ]
 
-output = model.predict(to_predict)
-print(output)
+result = model.predict(to_predict)
+print(result)
 # ['female']

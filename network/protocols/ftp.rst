@@ -44,8 +44,8 @@ FTP Download
 
 #. Stwórz na swoim komputerze plik o nazwie ``imie-nazwisko.txt``, gdzie:
 
-    - zamiast ``imie`` wpisz swoje imię
-    - zamiast ``nazwisko`` wpisz swoje nazwisko
+    * zamiast ``imie`` wpisz swoje imię
+    * zamiast ``nazwisko`` wpisz swoje nazwisko
 
 #. Do pliku wklej treść tekstu :pep:`20` (wynik polecenia ``import this``)
 #. Połącz się z serwerem podanym przez prowadzącego
@@ -63,8 +63,8 @@ FTP Upload
 #. Pobierz na swój komputer plik :download:`http://python.astrotech.io/_static/favicon.png`
 #. Nazwij plik ``imie-nazwisko.png``, gdzie:
 
-    - zamiast ``imie`` wpisz swoje imię
-    - zamiast ``nazwisko`` wpisz swoje nazwisko
+    * zamiast ``imie`` wpisz swoje imię
+    * zamiast ``nazwisko`` wpisz swoje nazwisko
 
 #. Połącz się z serwerem podanym przez prowadzącego
 #. Do katalogu ``img`` uploaduj plik pobrany w poprzednim kroku

@@ -60,14 +60,14 @@ Pylint is a Python source code analyzer which looks for programming errors, help
 
 Coding Standard:
 
-- checking line-code's length,
-- checking if variable names are well-formed according to your coding standard
-- checking if imported modules are used
+* checking line-code's length,
+* checking if variable names are well-formed according to your coding standard
+* checking if imported modules are used
 
 Error detection:
 
-- checking if declared interfaces are truly implemented
-- checking if modules are imported and much more (see the complete check list)
+* checking if declared interfaces are truly implemented
+* checking if modules are imported and much more (see the complete check list)
 
 ``Pylint`` is shipped with ``Pyreverse`` which creates UML diagrams for python code.
 

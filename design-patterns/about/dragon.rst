@@ -17,6 +17,7 @@ v1.0-alpha
     Firkraag dragon from game Baldur's Gate II: Shadows of Amn
 
 :English:
+    #. Mind the non-functional requirements (see below)
     #. Dragon has:
 
         #. name

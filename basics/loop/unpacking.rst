@@ -141,13 +141,13 @@ Unpacking
 * Solution: :download:`solution/loop_unpacking_endswith.py`
 
 :English:
-    #. Use ``DATA`` from "Input" section (see below)
+    #. Use data from "Input" section (see below)
     #. Separate header from data
     #. Iterating over data unpack row to ``*features`` and ``label``
     #. Print species names ending with "ca" or "osa"
 
 :Polish:
-    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Oddziel nagłówek od danych
     #. Iterując po danych rozpakuj wiersz do ``*features`` oraz ``label``
     #. Wypisz nazwy gatunków kończące się na "ca" lub "osa"

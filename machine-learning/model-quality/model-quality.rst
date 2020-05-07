@@ -21,19 +21,19 @@ Słownictwo
     Loss function
         is used to measure the degree of fit. So for machine learning a few elements are:
 
-            - Hypothesis space: e.g. parametric form of the function such as linear regression, logistic regression, svm, etc.
-            - Measure of fit: loss function, likelihood
-            - Tradeoff between bias vs. variance: regularization. Or bayesian estimator (MAP)
-            - Find a good h in hypothesis space: optimization. convex - global. non-convex - multiple starts
-            - Verification of h: predict on test data. cross validation.
+            * Hypothesis space: e.g. parametric form of the function such as linear regression, logistic regression, svm, etc.
+            * Measure of fit: loss function, likelihood
+            * Tradeoff between bias vs. variance: regularization. Or bayesian estimator (MAP)
+            * Find a good h in hypothesis space: optimization. convex - global. non-convex - multiple starts
+            * Verification of h: predict on test data. cross validation.
 
 
 Diagnostyka Bias vs. Wariancja
 ==============================
 Osiąganie kiepskich rezultatów na zbiorze testowym wiąże się zazwyczaj z jednym z dwóch zjawisk:
 
-- wysoki bias - niedopasowanie (under fitting)
-- wysoka wariancja - nadmierne dopasowanie (over fitting)
+* wysoki bias - niedopasowanie (under fitting)
+* wysoka wariancja - nadmierne dopasowanie (over fitting)
 
 .. figure:: img/model-quality-variance-bias.png
     :width: 75%
@@ -55,18 +55,18 @@ Decydowanie o kolejnym kroku
 ----------------------------
 Jakich zmian dokonać w naszym algorytmie, jeżeli błędy są za duże? Możliwe rozwiązania to:
 
-- Stworzyć więcej przypadków testowych (pomaga przy nadmiernym dopasowaniu)
-- Zmniejszyć zbiór wykorzystywanych cech (pomaga przy nadmiernym dopasowaniu)
-- Wykorzystać dodatkowe cechy (pomaga przy słabym dopasowaniu)
-- Dodać cechy wielomianowe (pomaga przy słabym dopasowaniu)
-- Zmniejszyć lambdę (pomaga przy słabym dopasowaniu)
-- Zwiększyć lambdę (pomaga przy nadmiernym dopasowaniu)
+    * Stworzyć więcej przypadków testowych (pomaga przy nadmiernym dopasowaniu)
+    * Zmniejszyć zbiór wykorzystywanych cech (pomaga przy nadmiernym dopasowaniu)
+    * Wykorzystać dodatkowe cechy (pomaga przy słabym dopasowaniu)
+    * Dodać cechy wielomianowe (pomaga przy słabym dopasowaniu)
+    * Zmniejszyć lambdę (pomaga przy słabym dopasowaniu)
+    * Zwiększyć lambdę (pomaga przy nadmiernym dopasowaniu)
 
 Overfitting w sieciach neuronowych
 ----------------------------------
 Tworząc sieci neuronowe mamy dwie opcje:
 
-- Możemy wykorzystać mniejszą sieć z niewielką liczbą ukrytych warstw i ukrytych jednostek. Jest ona bardziej podatna na underfitting. Jej główną zaletą jest niewielka złożoność obliczeniowa.
+* Możemy wykorzystać mniejszą sieć z niewielką liczbą ukrytych warstw i ukrytych jednostek. Jest ona bardziej podatna na underfitting. Jej główną zaletą jest niewielka złożoność obliczeniowa.
 
 .. figure:: img/model-quality-nn-simple.png
     :width: 75%
@@ -74,7 +74,7 @@ Tworząc sieci neuronowe mamy dwie opcje:
 
     Prosta jednowarstwowa sieć neuronowa.
 
-- Możemy wykorzystać relatywnie dużą sieć neuronową, która zawiera więcej ukrytych jednostek lub więcej ukrytych warstw. Jest bardziej podatna na overfitting oraz ma większą złożoność.
+* Możemy wykorzystać relatywnie dużą sieć neuronową, która zawiera więcej ukrytych jednostek lub więcej ukrytych warstw. Jest bardziej podatna na overfitting oraz ma większą złożoność.
 
 .. figure:: img/model-quality-nn-deep.png
     :width: 75%
@@ -82,7 +82,7 @@ Tworząc sieci neuronowe mamy dwie opcje:
 
     Głęboka sieć neuronowa.
 
-- Najczęściej wykorzystanie dużej sieci neuronowej z regularyzacją (w celu zmniejszenia overfittingu) jest bardziej efektywne od stworzenia małej sieci. Decyzję o liczbie ukrytych warstw można podjąć mierząc błąd zbioru testowego dla różnych wariantów i wybierając liczbę warstw przy której błąd ten jest najmniejszy.
+* Najczęściej wykorzystanie dużej sieci neuronowej z regularyzacją (w celu zmniejszenia overfittingu) jest bardziej efektywne od stworzenia małej sieci. Decyzję o liczbie ukrytych warstw można podjąć mierząc błąd zbioru testowego dla różnych wariantów i wybierając liczbę warstw przy której błąd ten jest najmniejszy.
 
 Model Evaluation Procedure
 ==========================
@@ -103,18 +103,18 @@ Train and test on entire dataset
 
 #. Classification accuracy
 
-    - **Proportion** of correct predictions
-    - Common **evaluation metric** for classification problems
-    - Known as **training accuracy** when you train and test the model on the same data
+    * **Proportion** of correct predictions
+    * Common **evaluation metric** for classification problems
+    * Known as **training accuracy** when you train and test the model on the same data
 
 #. Problems with training and testing on the same data
 
-    - Goal is to estimate likely performance of a model on **out-of-sample data**
-    - But, maximizing training accuracy rewards **overly complex models** that won't necessarily generalize
-    - Unnecessarily complex models **overfit** the data
-    - Models that **overfit** learns to recognize noise from the signal, than the data
-    - ``KNeighborsClassifier(n_neighbors=1)`` memorizes training data and uses test data to check the same places
-    - Very low :math:`k` values creates complicated **overfit** model
+    * Goal is to estimate likely performance of a model on **out-of-sample data**
+    * But, maximizing training accuracy rewards **overly complex models** that won't necessarily generalize
+    * Unnecessarily complex models **overfit** the data
+    * Models that **overfit** learns to recognize noise from the signal, than the data
+    * ``KNeighborsClassifier(n_neighbors=1)`` memorizes training data and uses test data to check the same places
+    * Very low :math:`k` values creates complicated **overfit** model
 
 .. figure:: img/model-quality-overfitting.png
     :width: 75%
@@ -171,13 +171,13 @@ Train/test split
 ----------------
 Also known as:
 
-    - Test set approach
-    - Validation set approach
+    * Test set approach
+    * Validation set approach
 
 #. Split the dataset into two pieces:
 
-    - a training set
-    - a testing set
+    * a training set
+    * a testing set
 
 #. Train the model on a **training set**.
 #. Test the model on a **testing set**, and evaluate how well we did.

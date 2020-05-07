@@ -130,8 +130,8 @@ UserString
             return f'{self} {other}'
 
 
-    output = str('Jose') + 42
-    print(output)
+    result = str('Jose') + 42
+    print(result)
     # Jose 42
 
 .. code-block:: python

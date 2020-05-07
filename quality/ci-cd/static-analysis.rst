@@ -59,7 +59,7 @@ Konfiguracja:
 
 #. Administration -> Marketplace
 
-    - Zainstalować plugin HTML
+    * Zainstalować plugin HTML
 
 Python
 ------

@@ -55,16 +55,16 @@ def clean_Participants(text):
 
 def clean_Duration(text):
     hours, minutes = text.split(':')
-    output = ''
+    result = ''
 
     if int(hours) != 0:
-        output += f'{hours}h '
+        result += f'{hours}h '
 
     if int(minutes[0]) == 0:
         minutes = minutes[1]
 
-    output += f'{minutes}m'
-    return output
+    result += f'{minutes}m'
+    return result
 
 
 def clean_Notes(text):

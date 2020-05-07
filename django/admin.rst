@@ -28,18 +28,18 @@ Content Types
 
 Model Admin
 ===========
-- ``admin.ModelAdmin``
+* ``admin.ModelAdmin``
 
 Model registering
 -----------------
-- ``@admin.register(...)``
+* ``@admin.register(...)``
 
 Admin fields
 ------------
-- readonly_fields
-- search (``^``, ``=``, ``@``)
-- ordering
-- list_filter
+* readonly_fields
+* search (``^``, ``=``, ``@``)
+* ordering
+* list_filter
 
 Writing own ``list_filter``
 ---------------------------
@@ -110,7 +110,7 @@ Installation
 
     $ pip install django-grapelli
 
-- dodanie do INSTALLED_APPS
+* dodanie do INSTALLED_APPS
 
 .. code-block:: python
 
@@ -119,7 +119,7 @@ Installation
         'grappelli',
     ]
 
-- dodanie do urls
+* dodanie do urls
 
 .. code-block:: python
 

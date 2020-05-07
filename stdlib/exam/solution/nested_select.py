@@ -25,7 +25,7 @@ DATA = [
 
 header = DATA[0]
 
-output = [
+result = [
     list(DATA[2]),
     list(DATA[6]),
     list(DATA[9]),
@@ -37,4 +37,4 @@ output = [
     set()
 ]
 
-print(output)
+print(result)

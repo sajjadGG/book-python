@@ -2,17 +2,17 @@
 Templates
 *********
 
-- dir convention
+* dir convention
 
-- staticfiles
-- url reversing
-- simpletags
-- templatetags
-- using filters
-- importing modules
-- localizing
-- extending templates
-- importing templates
+* staticfiles
+* url reversing
+* simpletags
+* templatetags
+* using filters
+* importing modules
+* localizing
+* extending templates
+* importing templates
 
 .. code-block:: html
 

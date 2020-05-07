@@ -1,6 +1,6 @@
 import csv
 
-output = r'../../_tmp/csv_relations.csv'
+FILE = r'../../_tmp/csv_relations.csv'
 
 
 class Astronaut:
@@ -16,39 +16,38 @@ class Mission:
 
 
 CREW = [
-    Astronaut('Jan Twardowski', experience=(
+    Astronaut('Jan', 'Twardowski', experience=(
         Mission(1969, 'Apollo 11'),
         Mission(2024, 'Artemis 3'))),
 
-    Astronaut('Mark Watney', experience=(
+    Astronaut('Mark', 'Watney', experience=(
         Mission(2035, 'Ares 3'))),
 
-    Astronaut('Melissa Lewis'),
+    Astronaut('Melissa', 'Lewis'),
 ]
 
-output = []
+result = []
 
-for contact in CREW:
-    addresses = []
+for astronaut in CREW:
+    experience = []
 
-    for address in contact.addresses:
-        dane = address.__dict__.values()
-        address = ', '.join([str(x) for x in dane])
-        addresses.append(address)
+    for mission in astronaut.experience:
+        exp = ', '.join([str(x) for x in astro.__dict__.values()])
+        experience.append(exp)
 
-    contact_data = contact.__dict__
-    contact_data['addresses'] = '; '.join(addresses)
-    output.append(contact_data)
+    astro = astronaut.__dict__
+    astro['experience'] = '; '.join(experience)
+    result.append(astro)
 
 
 fieldnames = set()
 
-for contact in output:
+for contact in result:
     for field_name in contact.keys():
         fieldnames.add(field_name)
 
 
-with open(output, mode='w', encoding='utf-8') as file:
+with open(FILE, mode='w', encoding='utf-8') as file:
 
     writer = csv.DictWriter(
         f=file,
@@ -60,5 +59,5 @@ with open(output, mode='w', encoding='utf-8') as file:
 
     writer.writeheader()
 
-    for row in output:
+    for row in result:
         writer.writerow(row)

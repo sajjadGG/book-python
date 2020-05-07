@@ -114,6 +114,7 @@ Search for Valid Time
 * References: (modified) First paragraph from Apollo 11 Wikipedia entry :cite:`RegexpWikipediaApollo11`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Use regular expressions to check text contains time in UTC (format: ``%H:%M UTC``)
     #. Note, that this is slightly modified text than previously
     #. Check if text contains time in UTC (format: ``%H:%M UTC``)
@@ -121,6 +122,7 @@ Search for Valid Time
     #. Print found time
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Użyj wyrażeń regularnych do sprawdzenia czy tekst zawiera godzinę w UTC (format: ``%H:%M UTC``)
     #. Zwróć uwagę, że to lekko zmodyfikowany tekst niż poprzednio
     #. Sprawdź czy tekst zawiera godzinę w UTC (format: ``%H:%M UTC``)

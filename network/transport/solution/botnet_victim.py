@@ -31,21 +31,21 @@ class Executor(socketserver.BaseRequestHandler):
         log.debug('Parse XML file for commands to execute')
         xml_file = io.StringIO(request)
         root = xml.etree.ElementTree.parse(xml_file).getroot()
-        output = []
+        result = []
 
         log.debug('Execute commands from file')
         for command in root.findall('./command'):
             cmd = command.text.split()
             timeout = float(command.get('timeout', 1))
             stdout = self.execute(cmd, timeout)
-            output.append({
+            result.append({
                 'datetime': datetime.datetime.utcnow(tz=datetime.timezone.utc),
                 'command': cmd,
                 'timeout': timeout,
                 'stdout': stdout,
             })
 
-        return json.dumps(output)
+        return json.dumps(result)
 
     def execute(self, command, timeout):
         log.debug('Executing command: %s with timeout: %s', command, timeout)
@@ -53,7 +53,7 @@ class Executor(socketserver.BaseRequestHandler):
         with subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True) as proc:
 
             try:
-                output, errors = proc.communicate(timeout=timeout)
+                result, errors = proc.communicate(timeout=timeout)
             except subprocess.TimeoutExpired:
                 log.error('Timeout %s exceeded for command: %s' % (timeout, command))
                 return proc.kill()
@@ -61,12 +61,12 @@ class Executor(socketserver.BaseRequestHandler):
             if errors:
                 log.error(errors.decode())
 
-            if output:
+            if result:
                 # red = '\033[00;31m'
                 # green = '\033[00;32m'
                 # blue = '\033[00;36m'
                 # white = '\033[00;39m'
-                message = output.decode()
+                message = result.decode()
 
                 log.debug('Output: {message}'.format(**locals()))
                 return message

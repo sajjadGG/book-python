@@ -67,7 +67,8 @@ Protocol Classmethod
 * Solution: :download:`solution/protocol_classmethod.py`
 
 :English:
-    #. Model class based on input data (see below)
+    #. Use data from "Input" section (see below)
+    #. Model class based on input data
     #. Create class ``PickleSerializable`` with methods ``.to_pickle()`` and ``.from_pickle()``
     #. Use ``@classmethod`` decorator
     #. Create instances for input data
@@ -75,7 +76,8 @@ Protocol Classmethod
     #. Unpickle data from file
 
 :Polish:
-    #. Zamodeluj klasę na podstawie danych wejściowych (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Zamodeluj klasę na podstawie danych wejściowych
     #. Stwórz klasę ``PickleSerializable`` z metodami ``.to_pickle()`` i ``.from_pickle()``
     #. Użyj dekoratora ``@classmethod``
     #. Stwórz instancje dla danych wejściowych (see below)

@@ -375,11 +375,13 @@ Refactoring
 * Solution: :download:`solution/function_doctest_temp.py`
 
 :English:
-    #. Write implementation of a function from input code (see below)
+    #. Use data from "Input" section (see below)
+    #. Write implementation of a function ``celsius_to_kelvin``
     #. All tests must pass
 
 :Polish:
-    #. Napisz implementację funkcji z kodu wejściowego (patrz sekcja input)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Napisz implementację funkcji ``celsius_to_kelvin``
     #. Wszystkie testy muszą przechodzić
 
 :Input:
@@ -419,6 +421,7 @@ Distance conversion doctest
     #. Distance cannot be negative
     #. Returned value must by float
     #. Write doctests
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Napisz funkcję, która przeliczy dystans podany w kilometrach na metry
@@ -426,6 +429,7 @@ Distance conversion doctest
     #. Dystans nie może być ujemny
     #. Zwracany dystans musi być float
     #. Napisz doctesty
+    #. Compare result with "Output" section (see below)
 
 :Output:
     * Test arguments:
@@ -446,13 +450,13 @@ Fix URL Regex
 * Estimated time of completion: 5 min
 
 :English:
-    #. Copy code input from listing below
+    #. Use data from "Input" section (see below)
     #. Pattern incorrectly classifies ``https://foo_bar.example.com/`` as invalid
     #. Fix pattern without automated tests
     #. Don't break classification of the other cases
 
 :Polish:
-    #. Skopiuj kod z listingu poniżej
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Wyrażenie niepoprawnie klasyfikuje ``https://foo_bar.example.com/`` jako nieprawidłowy
     #. Popraw wyrażenie bez testów automatycznych
     #. Nie zepsuj klasyfikacji pozostałych przypadków
@@ -462,8 +466,6 @@ Fix URL Regex
         :caption: @diegoperini --  https://mathiasbynens.be/demo/url-regex
 
         PATTERN = r'_^(?:(?:https?|ftp)://)(?:\S+(?::\S*)?@)?(?:(?!10(?:\.\d{1,3}){3})(?!127(?:\.\d{1,3}){3})(?!169\.254(?:\.\d{1,3}){2})(?!192\.168(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)(?:\.(?:[a-z\x{00a1}-\x{ffff}0-9]+-?)*[a-z\x{00a1}-\x{ffff}0-9]+)*(?:\.(?:[a-z\x{00a1}-\x{ffff}]{2,})))(?::\d{2,5})?(?:/[^\s]*)?$_iuS'
-
-    .. code-block:: python
 
         VALID = [
             'http://foo.com/blah_blah',
@@ -504,8 +506,6 @@ Fix URL Regex
             'http://223.255.255.254',
             'https://foo_bar.example.com/',
         ]
-
-    .. code-block:: python
 
         INVALID = [
             'http://',

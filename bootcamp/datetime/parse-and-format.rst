@@ -300,10 +300,10 @@ Parsing dates
 
     sputnik = '4 October 1957, 19:28:34 [UTC]'
 
-    output = datetime.strptime(sputnik, '%d %B %Y, %H:%M:%S [%Z]')
+    result = datetime.strptime(sputnik, '%d %B %Y, %H:%M:%S [%Z]')
     # datetime.datetime(1957, 10, 4, 19, 28, 34)
 
-    print(output)
+    print(result)
     # 1957-10-04 19:28:34
 
 Examples
@@ -362,10 +362,12 @@ To ISO date format
 :Enlish:
     #. Create ``datetime`` object by parsing the given date
     #. Using formatting parameters print the date and time in ISO format
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Podaną datę przekonwertuj do obiektu ``datetime``
     #. Używając parametrów formatujących wyświetl datę i czas w formacie ISO
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
@@ -392,13 +394,14 @@ US date and time format
     #. Create ``datetime`` object by parsing the date
     #. Using formatting parameters print american short date format
     #. Make sure, that hour is without leading zero
-
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Używając podaną poniżej datę i czas (skopiuj z cudzysłowami)
     #. Parsując stwórz obiekt ``datetime``
     #. Używając parametrów formatowania wyświetl datę w formacie amerykańskim krótkim
     #. Upewnij się, że godzina jest bez wiodącego zera
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
@@ -425,14 +428,16 @@ Log parsing
 :English:
     #. Save input data to file ``apollo11-timeline.log``
     #. Extract ``datetime`` object, level name and message from each line
-    #. Collect data to ``output: List[dict]`` (see below)
-    #. Print ``output``
+    #. Collect data to ``result: List[dict]`` (see below)
+    #. Print ``result``
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Zapisz dane wejściowe do pliku ``apollo11-timeline.log``
     #. Wyciągnij obiekt ``datetime``, poziom logowania oraz wiadomość z każdej linii
-    #. Zbierz dane do ``output: List[dict]`` (patrz sekcja output)
-    #. Wyświetl ``output``
+    #. Zbierz dane do ``result: List[dict]`` (patrz sekcja output)
+    #. Wyświetl ``result``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: text
@@ -470,7 +475,7 @@ Log parsing
 :Output:
     .. code-block:: python
 
-        output: List[dict] = [
+        result: List[dict] = [
 
              {'date': datetime.datetime(1969, 7, 14, 21, 0),
               'level': 'INFO',

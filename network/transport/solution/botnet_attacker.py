@@ -28,12 +28,12 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
 
     log.debug('Receive data from the server and shut down')
     received = str(sock.recv(1024), 'utf-8')
-    output = json.loads(received)
+    result = json.loads(received)
 
 
 print(f'Sent:     {commands}')
-print(f'Received: {output}')
+print(f'Received: {result}')
 print('\n\n')
 
-for executed in output:
+for executed in result:
     pprint(executed)

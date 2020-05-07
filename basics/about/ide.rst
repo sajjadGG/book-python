@@ -109,13 +109,13 @@ Check Python Version
 
 :English:
     #. Create file wih name ``about_version.py``
-    #. Copy contents of the "Input" section
+    #. Use code from "Input" section (see below)
     #. Run code in your IDE (right click on code -> "Run File in Python Console")
     #. What Python version is installed?
 
 :Polish:
     #. Stwórz skrypt o nazwie ``about_version.py``
-    #. Skopiuj zawartość z sekcji "Input"
+    #. Użyj kodu z sekcji "Input" (patrz poniżej)
     #. Uruchom kod swoim IDE (prawy klawisz myszy na kodzie -> "Run File in Python Console")
     #. Jaka wersja Python jest zainstalowana?
 

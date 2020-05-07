@@ -274,22 +274,24 @@ Filter
 * Solution: :download:`solution/function_scope_filter.py`
 
 :English:
-    #. Use ``DATA`` from "Input" section (see below)
+    #. Use data from "Input" section (see below)
     #. Separate header (first line) from data
     #. Define ``select: Set[str]`` with 'setosa' and 'versicolor'
     #. Iterate over data and split row into ``features`` and ``label`` (last)
     #. Define function which sums ``features``, only when ``label`` is in ``wanted``
     #. When ``label`` is not in ``wanted`` return ``0`` (zero)
     #. Print sum
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Użyj ``DATA`` z sekcji "Input" (patrz poniżej)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Oddziel nagłówek (pierwsza linia) od danych
     #. Zdefiniuj ``select: Set[str]`` z 'setosa' oraz 'versicolor'
     #. Iterując po danych rozdziel wiersz na ``features`` i ``label`` (ostatni)
     #. Zdefiniuj funkcję sumującą ``features``, tylko gdy ``label`` jest w ``wanted``
     #. Gdy ``label`` nie występuje w ``wanted`` zwróć ``0`` (zero)
     #. Wypisz sumę
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
@@ -321,10 +323,12 @@ Roman numbers
 * Solution: :download:`solution/function_scope_roman.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Define function converting roman numerals to integer
     #. Define function converting integer to roman numerals
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zdefiniuj funkcję przeliczającą liczbę rzymską na całkowitą
     #. Zdefiniuj funkcję przeliczającą liczbę całkowitą na rzymską
 

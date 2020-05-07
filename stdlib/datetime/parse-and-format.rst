@@ -293,10 +293,10 @@ Parsing dates
 
     sputnik = '4 October 1957, 19:28:34 [UTC]'
 
-    output = datetime.strptime(sputnik, '%d %B %Y, %H:%M:%S [%Z]')
+    result = datetime.strptime(sputnik, '%d %B %Y, %H:%M:%S [%Z]')
     # datetime.datetime(1957, 10, 4, 19, 28, 34)
 
-    print(output)
+    print(result)
     # 1957-10-04 19:28:34
 
 Examples
@@ -333,17 +333,19 @@ Example
 * Solution: :download:`solution/datetime_from_iso.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. The date and time is given in ISO format:
     #. Convert it to ``datetime`` object
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Dana jest data w formacie ISO
     #. Przedstaw datę jako obiekt ``datetime``
 
 :Input:
-    .. code-block:: text
+    .. code-block:: python
 
-        1969-07-21T02:56:15.123Z
+        DATA = '1969-07-21T02:56:15.123Z'
 
 Solution:
     .. literalinclude:: solution/datetime_from_iso.py
@@ -357,22 +359,30 @@ To ISO date format
 * Solution: :download:`solution/datetime_to_iso.py`
 
 :Enlish:
+    #. Use data from "Input" section (see below)
     #. Create ``datetime`` object by parsing the given date
     #. Using formatting parameters print the date and time in ISO format
+    #. Compare result with "Output" section (see below)
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Podaną datę przekonwertuj do obiektu ``datetime``
     #. Używając parametrów formatujących wyświetl datę i czas w formacie ISO
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
 
-        gagarin = 'April 12, 1961 6:07 local time'
+        DATA = 'April 12, 1961 6:07 local time'
 
 :Output:
-    .. code-block:: text
+    .. code-block:: python
 
-        1969-04-12T06:07:00.000000Z
+        data: datetime
+        # datetime.datetime(1961, 4, 12, 6, 7)
+
+        print(result)
+        # 1961-04-12T06:07:00.000000Z
 
 :Hint:
     * Add string ``local time`` to format statement
@@ -385,27 +395,35 @@ US date and time format
 * Solution: :download:`solution/datetime_from_us.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Using given date and time from below (copy with quotes inside)
     #. Create ``datetime`` object by parsing the date
     #. Using formatting parameters print american short date format
     #. Make sure, that hour is without leading zero
+    #. Compare result with "Output" section (see below)
 
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Używając podaną poniżej datę i czas (skopiuj z cudzysłowami)
     #. Parsując stwórz obiekt ``datetime``
     #. Używając parametrów formatowania wyświetl datę w formacie amerykańskim krótkim
     #. Upewnij się, że godzina jest bez wiodącego zera
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
 
-        armstrong = '"July 21st, 1969 2:56:15 AM UTC"'
+        DATA = '"July 21st, 1969 2:56:15 AM UTC"'
 
 :Output:
-    .. code-block:: text
+    .. code-block:: python
 
-        7/21/69 2:56 AM
+        data: datetime
+        # datetime.datetime(1969, 7, 21, 2, 56)
+
+        print(result)
+        # 7/21/69 2:56 AM
 
 :Hint:
     * Add quote sign ``"`` like normal text to ``fmt`` parameter of ``.strptime()``
@@ -420,16 +438,20 @@ Log parsing
 * Solution: :download:`solution/datetime_logs.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Save input data to file ``apollo11-timeline.log``
     #. Extract ``datetime`` object, level name and message from each line
-    #. Collect data to ``output: List[dict]`` (see below)
-    #. Print ``output``
+    #. Collect data to ``result: List[dict]``
+    #. Print ``result``
+    #. Compare result with "Output" section (see below)
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zapisz dane wejściowe do pliku ``apollo11-timeline.log``
     #. Wyciągnij obiekt ``datetime``, poziom logowania oraz wiadomość z każdej linii
-    #. Zbierz dane do ``output: List[dict]`` (patrz sekcja output)
-    #. Wyświetl ``output``
+    #. Zbierz dane do ``result: List[dict]``
+    #. Wyświetl ``result``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: text
@@ -467,7 +489,7 @@ Log parsing
 :Output:
     .. code-block:: python
 
-        output: List[dict] = [
+        result: List[dict] = [
 
              {'date': datetime.datetime(1969, 7, 14, 21, 0),
               'level': 'INFO',

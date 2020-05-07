@@ -220,6 +220,8 @@ As Type
 * Solution: :download:`solution/numpy_astype.py`
 
 :English:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Use data from "Input" section (see below)
     #. Given ``a: ndarray`` (see below)
     #. Convert to ``int`` type
     #. The result convert to ``bool`` type

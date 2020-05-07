@@ -4,8 +4,8 @@ i18n and l10n
 
 Timezone
 ========
-- django.utils.timezone
-- from django.conf.locale.en import formats as en_formats
+* django.utils.timezone
+* from django.conf.locale.en import formats as en_formats
 
 .. code-block:: python
 
@@ -17,14 +17,14 @@ Timezone
 
 i18n - internationalization
 ===========================
-- makemessages -l en
-- compilemessages
-- blocktrans
-- trans templatetag
-- ``from django.utils.translation import gettext_lazy as _``
-- transifex-client
-- gettext
-- poedit
+* makemessages -l en
+* compilemessages
+* blocktrans
+* trans templatetag
+* ``from django.utils.translation import gettext_lazy as _``
+* transifex-client
+* gettext
+* poedit
 
 .. code-block:: python
 

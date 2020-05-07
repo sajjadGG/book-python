@@ -169,27 +169,27 @@ Classification of blood pressure in adults
 * Solution: :download:`solution/conditional_nested.py`
 
 :English:
-    #. Table contains classification of input data (see below)
-    #. Blood Pressure classification according to American Heart Association
+    #. Use data from "Input" section (see below)
+    #. Table contains Blood Pressure classification according to American Heart Association :cite:`Whelton2018`
     #. User inputs blood pressure in ``XXX/YY`` or ``XXX/YYY`` format
     #. User will not input invalid data
     #. Data format:
 
-        - ``XXX: int`` systolic pressure
-        - ``YY: int`` or ``YYY: int`` diastolic pressure
+        * ``XXX: int`` systolic pressure
+        * ``YY: int`` or ``YYY: int`` diastolic pressure
 
     #. Print status of given blood pressure
     #. If systolic and diastolic values are in different categories, assume worst case
 
 :Polish:
-    #. Tabela zawiera klasyfikację danych wejściowych (patrz sekcja input)
-    #. Klasyfikacja ciśnienia krwi wg American Heart Association
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Tabela zawiera klasyfikację ciśnienia krwi wg American Heart Association :cite:`Whelton2018`
     #. Użytkownik wprowadza ciśnienie krwi w formacie ``XXX/YY`` lub ``XXX/YYY``
     #. Użytkownik nie będzie wprowadzał danych niepoprawnych
     #. Format danych:
 
-        - ``XXX: int`` to wartość ciśnienia skurczowego (ang. *systolic*)
-        - ``YY: int`` lub ``YYY: int`` to wartość ciśnienia rozkurczowego (ang. *diastolic*)
+        * ``XXX: int`` to wartość ciśnienia skurczowego (ang. *systolic*)
+        * ``YY: int`` lub ``YYY: int`` to wartość ciśnienia rozkurczowego (ang. *diastolic*)
 
     #. Wypisz status wprowadzonego ciśnienia krwi
     #. Gdy wartości ciśnienia skurczowego i rozkurczowego należą do różnych kategorii, przyjmij gorszy przypadek

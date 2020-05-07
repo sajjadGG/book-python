@@ -123,8 +123,8 @@ Close and Halt
 
 Performance and profiling
 =========================
-- ``%%timeit``
-- ``%%timeit -n 1000 -r 7``
+* ``%%timeit``
+* ``%%timeit -n 1000 -r 7``
 
 
 Markdown

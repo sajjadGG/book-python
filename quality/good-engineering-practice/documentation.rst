@@ -15,55 +15,55 @@ Po co?
 
 Paragrafy
 ---------
-- newline
+* newline
 
 Nagłówki
 --------
-- Tytuł
-- Nagłówek pierwszego poziomu
-- Nagłówek drugiego poziomu
-- Nagłówek trzeciego poziomu
-- Nagłówek czwartego poziomu (czy stosować?)
+* Tytuł
+* Nagłówek pierwszego poziomu
+* Nagłówek drugiego poziomu
+* Nagłówek trzeciego poziomu
+* Nagłówek czwartego poziomu (czy stosować?)
 
 Odnośniki
 ---------
-- Wewnątrz dokumentu
-- numref
-- na zewnątrz dokumentu
+* Wewnątrz dokumentu
+* numref
+* na zewnątrz dokumentu
 
 Obrazki i media
 ---------------
-- figure (scale, name, align, podpisy pod obrazkami)
+* figure (scale, name, align, podpisy pod obrazkami)
 
 Specjalne wstawki
 -----------------
-- ``.. todo::``
+* ``.. todo::``
 
 Listingi kodu
 -------------
-- Osadzone
-- Z plików zewnętrznych
+* Osadzone
+* Z plików zewnętrznych
 
 TODO
 ----
 
 Listy
 -----
-- listy nieuporządkowane
-- listy numerowane
-- jednopoziomowe i zagnieżdżone
-- listy mieszane
+* listy nieuporządkowane
+* listy numerowane
+* jednopoziomowe i zagnieżdżone
+* listy mieszane
 
 Tabele
 ------
-- Table
-- List Table
-- CSV Table
+* Table
+* List Table
+* CSV Table
 
 Cytowanie
 ---------
-- ``cite``
-- bibtex
+* ``cite``
+* bibtex
 
 
 Sphinx
@@ -89,21 +89,21 @@ Zależności
 
 Config
 ------
-- Wersja na podstawie hasha git
+* Wersja na podstawie hasha git
 
 Dobre praktyki
 --------------
-- podział na rozdziały
-- rozkład katalogów
-- listingi kodu
-- zdjęcia
-- dane w tabelkach CSV
-- konwencja nazewnicza plików
-- konwencja nazewnicza figure, csv-table, literalinclude
+* podział na rozdziały
+* rozkład katalogów
+* listingi kodu
+* zdjęcia
+* dane w tabelkach CSV
+* konwencja nazewnicza plików
+* konwencja nazewnicza figure, csv-table, literalinclude
 
 Generowanie dokumentacji
 ------------------------
-- Table of Contents
+* Table of Contents
 
 toctree
 -------
@@ -116,11 +116,11 @@ Osadzanie LaTeX
 
 Budowanie
 ---------
-- make html
-- make singlehtml
-- make pdf
+* make html
+* make singlehtml
+* make pdf
 
-- generowanie Word (docx) -> pandoc
+* generowanie Word (docx) -> pandoc
 
 Read the docs
 =============
@@ -145,9 +145,9 @@ Dokumentacja
 #. Stwórz nagłówek pierwszego poziomu i zamieść tabelę Irysów na podstawie danych Iris Dataset
 #. Stwórz nagłówek pierwszego poziomu "Listingi kodu" i osadź dwa swoje skrypty z poprzednich zadań:
 
-    - książka adresowa jako ``literalinclude`` w nagłówku drugiego poziomu "Książka Adresowa"
-    - prosty skrypt jako ``code-block`` w nagłówku drugiego poziomu "Pozostałe przykłady"
-    - które podejście jest lepsze?
+    * książka adresowa jako ``literalinclude`` w nagłówku drugiego poziomu "Książka Adresowa"
+    * prosty skrypt jako ``code-block`` w nagłówku drugiego poziomu "Pozostałe przykłady"
+    * które podejście jest lepsze?
 
 #. Tekst lorem ipsum oznacz jako cytowanie cycerona wykorzystując bibtext
 

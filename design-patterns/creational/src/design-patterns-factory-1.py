@@ -39,13 +39,13 @@ class HttpClientFactory:
 
 
 client = HttpClientFactory()
-output = client.GET()
-print(output)
+result = client.GET()
+print(result)
 
 
 client2 = HttpClientFactory()
-output1 = client2.GET()
-output2 = client2.POST()
+result1 = client2.GET()
+result2 = client2.POST()
 
-print(output1)
-print(output2)
+print(result1)
+print(result2)

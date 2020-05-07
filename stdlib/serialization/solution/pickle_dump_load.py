@@ -35,10 +35,10 @@ with open(r'/tmp/astronauts.pkl', mode='wb') as file:
 
 
 with open(r'/tmp/astronauts.pkl', mode='rb') as file:
-    output = pickle.load(file)
+    result = pickle.load(file)
 
 
-print(output)
+print(result)
 # [
 #
 # Astronaut(name="Jan Twardowski", missions=(

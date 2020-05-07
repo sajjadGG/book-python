@@ -67,16 +67,20 @@ Create ``datetime`` object
 * Solution: :download:`solution/datetime_timestamp.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Convert given dates to ``datetime`` objects
     #. Print timestamp for each date
     #. What is special about those dates?
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Przekonwertuj podane daty do obiektów ``datetime``
     #. Wypisz timestamp każdej daty
     #. Co to za daty?
 
 :Input:
-    * 1902-12-13 20:45:53 UTC
-    * 1970-01-01 00:00:00 UTC
-    * 2038-01-19 03:14:07 UTC
+    .. code-block:: python
+
+        a = '1902-12-13 20:45:53 UTC'
+        b = '1970-01-01 00:00:00 UTC'
+        c = '2038-01-19 03:14:07 UTC'
