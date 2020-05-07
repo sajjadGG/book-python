@@ -2,7 +2,7 @@ import os
 import subprocess
 import logging
 
-PATH = os.path.join('c:', os.sep, 'Users', 'Matt Harasymczuk', 'Desktop')
+PATH = os.path.join('Users', 'matt', 'Desktop')
 readme_found = False
 
 for root, dirs, files in os.walk(PATH):

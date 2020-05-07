@@ -1,11 +1,8 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-"""FileTreeMaker.py: ..."""
 
 import os
 import argparse
-import time
+
 
 class FileTreeMaker:
 
@@ -48,10 +45,12 @@ class FileTreeMaker:
         self._recurse(self.root, os.listdir(self.root), "", buf, 0)
 
         output_str = "\n".join(buf)
+
         if len(args.output) != 0:
             with open(args.output, 'w') as of:
                 of.write(output_str)
         return output_str
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -59,7 +58,6 @@ if __name__ == "__main__":
     parser.add_argument("-o", "--output", help="output file name", default="")
     parser.add_argument("-xf", "--exclude_folder", nargs='*', help="exclude folder", default=[])
     parser.add_argument("-xn", "--exclude_name", nargs='*', help="exclude name", default=[])
-    parser.add_argument("-m", "--max_level", help="max level",
-                        type=int, default=-1)
+    parser.add_argument("-m", "--max_level", help="max level", type=int, default=-1)
     args = parser.parse_args()
     print(FileTreeMaker().make(args))

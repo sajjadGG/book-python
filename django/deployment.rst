@@ -108,9 +108,6 @@ Docker + Gunicorn
         # Set the base image to Ubuntu
         FROM ubuntu:lts
 
-        # File Author / Maintainer
-        MAINTAINER Matt Harasymczuk
-
         # Update the default application repository sources list
         RUN apt-get update && apt-get install -y \
             python-dev \
@@ -263,7 +260,7 @@ Packaging
         # pip to create the appropriate form of executable for the target platform.
         entry_points={
             'console_scripts': [
-                'habitatOS = habitatOS.manage',
+                'habitatOS = habitat:manage',
             ],
         },
     )

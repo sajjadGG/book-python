@@ -187,7 +187,7 @@ Setuptools is a fully-featured, actively-maintained, and stable library designed
         # pip to create the appropriate form of executable for the target platform.
         entry_points={
             'console_scripts': [
-                'sample=sample:main',
+                'habitatOS=habitat:manage',
             ],
         },
     )
