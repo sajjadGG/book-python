@@ -2,8 +2,10 @@
 Commandline Arguments
 *********************
 
+
 Alternatives
 ============
+.. note:: Check ``colorama`` - coloring terminal output
 
 Typer
 -----
