@@ -14,7 +14,7 @@ k = bool(-0)
 l = bool(-0.0)
 
 m = bool(int('0'))
-n = bool(float('-0'))
+n = bool(bool(float(str(-0))))
 
 o = bool(-0.0+0.0j)
 p = bool('-0.0+0.0j')
