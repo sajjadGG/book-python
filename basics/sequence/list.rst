@@ -289,11 +289,11 @@ Create
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Create a ``list`` representing each row
+    #. Create lists ``a``, ``b``, ``c`` representing each row
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Stwórz ``list`` reprezentujący każdy wiersz
+    #. Stwórz listy ``a``, ``b``, ``c`` reprezentujące każdy wierszy
 
 :Input:
     .. csv-table:: Input data
