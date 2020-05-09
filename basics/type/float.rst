@@ -63,13 +63,6 @@ Rounding Numbers
 .. code-block:: python
     :caption: ``round()`` - Rounds a number
 
-    round(3.1415926)        # 3
-    round(3.1415926, 2)     # 3.14
-    round(3.1415926, 4)     # 3.1416
-
-.. code-block:: python
-    :caption: ``round()`` - Rounds a number
-
     pi = 3.14159265359
 
     round(pi)               # 3
@@ -117,13 +110,13 @@ Float Example
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Use Imperial (US) measurements system
+    #. Data uses imperial (US) system
     #. Convert to metric (SI) system
     #. Speed limit round to one decimal place
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Używają system Imperialny (US)
+    #. Dane używają systemu imperialnego (US)
     #. Przelicz je na system metryczny (układ SI)
     #. Ograniczenie prędkości zaokrąglij do jednego miejsca po przecinku
 
@@ -150,26 +143,22 @@ Float Casting
 
 :English:
     #. Use code from "Input" section (see below)
-    #. Declare variable for storing value of 1337 meters
     #. Print values in other units
     #. Convert data to types shown in comments at the right side
     #. Instead ``...`` substitute calculated and converted values
-    #. Non-functional requirements:
-
-        * Do not use ``input()``
+    #. Do not use ``input()``
 
 :Polish:
     #. Użyj kodu z sekcji "Input" (patrz poniżej)
-    #. Zdefiniuj zmienną dla przechowywania wartości 1337 metrów
     #. Wypisz wartość w różnych jednostkach
     #. Przekonwertuj dane do typów podanych w komentarzu po prawej stronie
     #. Zamiast ``...`` podstaw wyliczone i przekonwertowane wartości
-    #. Wymagania niefunkcjonalne:
-
-        * Nie używaj ``input()``
+    #. Nie używaj ``input()``
 
 :Input:
     .. code-block:: python
+
+        m = 1337
 
         print(f'Meters: {...}')                              # int
         print(f'Kilometers: {...}')                          # float
