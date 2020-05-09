@@ -257,7 +257,7 @@ Concatenation
     age = 42
 
     # How many string are there in a memory?
-    first_name + ' ' + last_name
+    first_name + last_name
 
     # How many string are there in a memory?
     'Hello ' + first_name + ' ' + last_name + ' ' + str(age) + '!'
