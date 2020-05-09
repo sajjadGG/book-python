@@ -132,7 +132,7 @@ To ``bool`` or not to ``bool``
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/type_bool_simple.py`
+* Solution: :download:`solution/type_bool_true_or_false.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -173,12 +173,12 @@ To ``bool`` or not to ``bool``
     * Type casting
     * Logic types
 
-``True`` of ``False``
+``True`` or ``False``
 ---------------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/type_bool_true_or_false.py`
+* Solution: :download:`solution/type_bool_simple.py`
 
 :English:
     #. Use data from "Input" section (see below)
