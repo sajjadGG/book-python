@@ -17,47 +17,21 @@ Type Definition
     * Brackets are required
 
 .. code-block:: python
-    :caption: Initialize empty
+    :caption: ``list`` type definition
 
-    my_list = []
-    my_list = list()
+    data = list()
+    data = []
 
-.. code-block:: python
-    :caption: Initialize with one element
+    data = [1]
+    data = [1,]
 
-    my_list = [1]
-    my_list = [1,]
-
-.. code-block:: python
-    :caption: Initialize with many elements
-
-    my_list = [1, 2.0, None, False, 'Iris']
-    my_list = [1, 2.0, None, False, 'Iris',]
+    data = [1, 2.0, None, False, 'Iris']
+    data = [1, 2.0, None, False, 'Iris',]
 
 .. code-block:: python
 
     alphabet = list('ABCDE')
     # ['A', 'B', 'C', 'D', 'E']
-
-
-Type Annotation
-===============
-.. code-block:: python
-
-    my_list: list = list()
-    my_list: list = []
-
-.. code-block:: python
-
-    my_list: list = ['a', 1, 2.2]
-
-.. code-block:: python
-
-    from typing import List
-
-    my_list: List[int] = [1, 2, 3, 4]
-    my_list: List[float] = [5.8, 2.7, 5.1, 1.9]
-    my_list: List[str] = ['a', 'b', 'c', 'd']
 
 
 Adding Elements
@@ -67,50 +41,51 @@ Adding Elements
 * ``list.append()``
 
 .. code-block:: python
+    :caption: Adding two lists
 
-    my_list = [1, 2]
+    data = [1, 2]
 
-    my_list + [3, 4]
+    data + [3, 4]
     # [1, 2, 3, 4]
 
 .. code-block:: python
     :caption: Extending lists
 
-    my_list = [1, 2]
+    data = [1, 2]
 
-    my_list.extend([3, 4])
+    data.extend([3, 4])
     # [1, 2, 3, 4]
 
 .. code-block:: python
     :caption: Appending single item
 
-    my_list = [1, 2]
+    data = [1, 2]
 
-    my_list.append(3)
+    data.append(3)
     # [1, 2, 3]
 
 .. code-block:: python
     :caption: Appending multiple items
 
-    my_list = [1, 2]
+    data = [1, 2]
 
-    my_list.append([3, 4])
+    data.append([3, 4])
     # [1, 2, [3, 4]]
 
 Inserting Elements at Specific Position
 ---------------------------------------
 .. code-block:: python
 
-    my_list = [1, 2]
+    data = [1, 2]
 
-    my_list.insert(0, 'a')
+    data.insert(0, 'a')
     # ['a', 1, 2]
 
 .. code-block:: python
 
-    my_list = [1, 2]
+    data = [1, 2]
 
-    my_list.insert(1, 'a')
+    data.insert(1, 'a')
     # [1, 'a', 2]
 
 
@@ -124,46 +99,47 @@ Getting Items
 
 .. code-block:: python
 
-    my_list = ['a', 'b', 'c', 'd']
+    data = ['a', 'b', 'c', 'd']
 
-    my_list[0]         # 'a'
-    my_list[1]         # 'b'
-    my_list[2]         # 'c'
-    my_list[3]         # 'd'
+    data[0]         # 'a'
+    data[1]         # 'b'
+    data[2]         # 'c'
+    data[3]         # 'd'
 
 Setting Items
 -------------
 .. code-block:: python
 
-    my_list = ['a', 'b', 'c', 'd']
+    data = ['a', 'b', 'c', 'd']
 
-    my_list[0] = 'x'
+    data[0] = 'x'
 
-    print(my_list)
+    print(data)
     # ['x', 'b', 'c', 'd']
 
 Deleting Items
 --------------
 .. code-block:: python
 
-    my_list = ['a', 'b', 'c', 'd']
+    data = ['a', 'b', 'c', 'd']
 
-    del my_list[3]
+    del data[3]
 
-    print(my_list)
+    print(data)
     # ['a', 'b', 'c']
 
 .. code-block:: python
 
-    my_list = ['a', 'b', 'c', 'd']
+    data = ['a', 'b', 'c', 'd']
 
-    value = my_list.pop()
+    value = data.pop()
 
-    print(my_list)
+    print(data)
     # ['a', 'b', 'c']
 
     print(value)
     # 'd'
+
 
 Sorting
 =======
@@ -201,63 +177,19 @@ Multiple Statements in One Line
 ===============================
 .. code-block:: python
 
-    my_list = [3, 1, 2]
+    data = [3, 1, 2]
 
-    my_list.sort().append(4)
+    data.sort().append(4)
     # AttributeError: 'NoneType' object has no attribute 'append'
 
 .. code-block:: python
 
-    my_list = [3, 1, 2]
-    my_list.sort()
-    my_list.append(4)
+    data = [3, 1, 2]
+    data.sort()
+    data.append(4)
 
-    print(my_list)
+    print(data)
     # [1, 2, 3, 4]
-
-
-Membership Operators
-====================
-* ``==`` - Eq (equals)
-* ``!=`` - Ne (not-equals)
-* ``in`` - Contains
-* ``not in`` - Missing
-
-.. code-block:: python
-    :caption: Equals and Not-equals
-
-    [1, 2] == [1, 2]        # True
-    [1, 2] == [2, 1]        # False
-
-    [1, 2] != [1, 2]        # False
-    [1, 2, 3] != [1, 2]     # True
-
-.. code-block:: python
-    :caption: Contains
-
-    1 in [1, 2]               # True
-    2 in [1, 2]               # True
-    3 in [1, 2]               # False
-
-    [1] in [1, 2]             # False
-    [2] in [1, 2]             # False
-    [3] in [1, 2]             # False
-
-    [1,] in [1, 2]            # False
-    [2,] in [1, 2]            # False
-    [3,] in [1, 2]            # False
-
-    [1, 2] in [1, 2]          # False
-    [3, 4] in [1, 2, [3, 4]]  # True
-
-.. code-block:: python
-    :caption: Missing
-
-    1 not in [1, 2]           # False
-    3 not in [1, 2]           # True
-
-    [2] not in [1, 2]         # True
-    [1, 2] not in [1, 2]      # True
 
 
 Built-in Functions on Sequences
@@ -280,12 +212,39 @@ Built-in Functions on Sequences
 Assignments
 ===========
 
-Create
-------
+List Create
+-----------
+* Complexity level: easy
+* Lines of code to write: 3 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/sequence_list_create.py`
+
+:English:
+    #. Create list ``result`` with elements:
+
+        * 1
+        * 1.1
+        * 'Mark Watney'
+
+    #. Print ``result``
+    #. Print number of elements in ``result``
+
+:Polish:
+    #. Stwórz listę ``result`` z elementami:
+
+        * 1
+        * 1.1
+        * 'Mark Watney'
+
+    #. Wypisz ``result``
+    #. Wypisz liczbę elementów ``result``
+
+List Many
+---------
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/sequence_list_create.py`
+* Solution: :download:`solution/sequence_list_many.py`
 
 :English:
     #. Use data from "Input" section (see below)

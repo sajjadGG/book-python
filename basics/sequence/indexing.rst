@@ -171,7 +171,9 @@ Select
         #  (4.6, 3.4, 1.4, 0.3, 'setosa'),
         #  (5.0, 3.6, 1.4, 0.3, 'setosa'),
         #  (5.5, 2.3, 4.0, 1.3, 'versicolor'),
-        #  set(), [], ()]
+        #  set(),
+        #  [],
+        #  ()]
 
 :The whys and wherefores:
     * Using nested data structures

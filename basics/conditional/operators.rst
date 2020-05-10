@@ -5,6 +5,56 @@ Operators
 *********
 
 
+Comparision
+===========
+* ``==`` - ``eq`` (equals)
+* ``!=`` - ``ne`` (not-equals)
+
+String
+------
+.. code-block:: python
+    :caption: Equals and Not-equals
+
+    'Python' == 'Python'            # True
+    'Monty Python' == 'Python'      # False
+
+    'Python' != 'Python'            # False
+    'Monty Python' != 'Python'      # True
+
+Tuple
+-----
+.. code-block:: python
+    :caption: Equals and Not-equals
+
+    (1, 2) == (1, 2)                # True
+    (1, 2) == (2, 1)                # False
+
+    (1, 2) != (1, 2)                # False
+    (1, 2, 3) != (1, 2)             # True
+
+List
+----
+.. code-block:: python
+    :caption: Equals and Not-equals
+
+    [1, 2] == [1, 2]                # True
+    [1, 2] == [2, 1]                # False
+
+    [1, 2] != [1, 2]                # False
+    [1, 2, 3] != [1, 2]             # True
+
+Set
+---
+.. code-block:: python
+    :caption: Equals and Not-equals
+
+    {1, 2} == {1, 2}                # True
+    {1, 2} == {2, 1}                # True
+
+    {1, 2} != {1, 2}                # False
+    {1, 2, 3} != {1, 2}             # True
+
+
 Operator precedence
 ===================
 .. csv-table:: Operator precedence
@@ -35,6 +85,7 @@ Operator precedence
     "``(expressions...)``, ``[expressions...]``,
 
     ``{key: value...}``, ``{expressions...}``", "Binding or tuple display, list display, dictionary display, set display"
+
 
 
 Assignments

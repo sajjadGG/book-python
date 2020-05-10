@@ -18,85 +18,19 @@ Type Definition
     * Comma after last element is optional
 
 .. code-block:: python
-    :caption: Initialize empty
+    :caption: ``tuple`` type definition
 
-    my_tuple = ()
-    my_tuple = tuple()
+    data = ()
+    data = tuple()
 
-.. code-block:: python
-    :caption: Initialize with one element
+    data = 1,
+    data = (1,)
 
-    my_tuple = 1,
-    my_tuple = (1,)
+    data = 1, 2
+    data = (1, 2)
 
-.. code-block:: python
-    :caption: Initialize with many elements
-
-    my_tuple = 1, 2
-    my_tuple = (1, 2)
-
-.. code-block:: python
-    :caption: Initialize with many elements
-
-    my_tuple = 1, 2.0, None, False, 'Iris'
-    my_tuple = (1, 2.0, None, False, 'Iris')
-
-
-Type Annotation
-===============
-.. code-block:: python
-
-    my_tuple: tuple = ()
-    my_tuple: tuple = tuple()
-
-    my_tuple: tuple = ('a', 2, 3.3)
-
-.. code-block:: python
-
-    from typing import Tuple
-
-    my_tuple: Tuple[int, int, int] = (1, 2, 3)
-    my_tuple: Tuple[str, str, str] = ('setosa', 'virginica', 'versicolor')
-    my_tuple: Tuple[str, int, float] = ('a', 2, 3.3)
-
-
-Membership Operators
-====================
-.. code-block:: python
-    :caption: Equals and Not-equals
-
-    (1, 2) == (1, 2)          # True
-    (1, 2) == (2, 1)          # False
-
-    (1, 2) != (1, 2)          # False
-    (1, 2, 3) != (1, 2)       # True
-
-.. code-block:: python
-    :caption: Contains
-
-    1 in (1, 2)               # True
-    2 in (1, 2)               # True
-    3 in (1, 2)               # False
-
-    (1) in (1, 2)             # True
-    (2) in (1, 2)             # True
-    (3) in (1, 2)             # False
-
-    (1,) in (1, 2)            # False
-    (2,) in (1, 2)            # False
-    (3,) in (1, 2)            # False
-
-    (1, 2) in (1, 2)          # False
-    (3, 4) in (1, 2, (3, 4))  # True
-
-.. code-block:: python
-    :caption: Missing
-
-    1 not in (1, 2)           # False
-    3 not in (1, 2)           # True
-
-    (2) not in (1, 2)        # False
-    (1, 2) not in (1, 2)     # True
+    data = 1, 2.0, None, False, 'Iris'
+    data = (1, 2.0, None, False, 'Iris')
 
 
 Getting Items
@@ -106,62 +40,48 @@ Getting Items
 
 .. code-block:: python
 
-    my_tuple = ('a', 'b', 'c', 'd')
+    data = ('a', 'b', 'c', 'd')
 
-    my_tuple[0]         # 'a'
-    my_tuple[1]         # 'b'
-    my_tuple[3]         # 'd'
+    data[0]         # 'a'
+    data[1]         # 'b'
+    data[3]         # 'd'
 
 
 ``tuple`` vs. others
 ====================
-
-``tuple`` vs. ``float`` and ``int``
------------------------------------
 .. code-block:: python
 
-    what = 1.2        # float
-    what = 1,2        # tuple with two int
-    what = 1.2,       # tuple with float
-    what = 1,2.3      # tuple with int and float
+    type(1.2)        # float
+    type(1,2)        # tuple
+    type(1.2,)       # tuple
+    type(1,2.3)      # tuple
 
-.. code-block:: python
+    type(1.)         # float
+    type(1,)         # tuple
+    type(1.,)        # tuple
+    type(.2)         # float
+    type(.2,)        # tuple
+    type(1.2)        # float
+    type(1)          # int
 
-    what = 1.         # float
-    what = 1,         # tuple with int
-    what = 1.,        # tuple with float
-    what = .2         # float
-    what = .2,        # tuple with float
-    what = 1.2        # float
-    what = 1          # int
+    type(1.,1.)      # tuple
+    type(.2,.2)      # tuple
+    type(1.,.2)      # tuple
 
-.. code-block:: python
-
-    what = 1.,1.      # tuple with two floats
-    what = .2,.2      # tuple with two floats
-    what = 1.,.2      # tuple with two floats
-
-``tuple`` vs. ``str``
----------------------
-.. code-block:: python
-
-    what = 'foo'      # str
-    what = 'foo',     # tuple with str
-    what = 'foo'.     # SyntaxError: invalid syntax
+    type('foo')      # str
+    type('foo',)     # tuple
+    type('foo'.)     # SyntaxError: invalid syntax
 
 
 When Use ``tuple`` or ``list``
 ==============================
+Tuple:
 
-Tuple
------
-.. highlights::
     * is immutable
     * one contingent block of data in memory
 
-List
-----
-.. highlights::
+List:
+
     * mutable
     * implemented in memory as list of pointers to objects
     * objects are scattered in memory
@@ -170,12 +90,39 @@ List
 Assignments
 ===========
 
-Create
-------
+Tuple Create
+------------
 * Complexity level: easy
+* Lines of code to write: 3 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/sequence_tuple_create.py`
+
+:English:
+    #. Create tuple ``result`` with elements:
+
+        * 1
+        * 1.1
+        * 'Mark Watney'
+
+    #. Print ``result``
+    #. Print number of elements in ``result``
+
+:Polish:
+    #. Stwórz tuple ``result`` z elementami:
+
+        * 1
+        * 1.1
+        * 'Mark Watney'
+
+    #. Wypisz ``result``
+    #. Wypisz liczbę elementów ``result``
+
+Tuple Many
+----------
+* Complexity level: medium
 * Lines of code to write: 13 lines
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/sequence_tuple_create.py`
+* Solution: :download:`solution/sequence_tuple_many.py`
 
 :English:
     #. Use data from "Input" section (see below)

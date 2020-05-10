@@ -267,14 +267,14 @@ Unpacking from sequence
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Split input data (see below) by white space
+    #. Using ``str.split()`` split input data by white space
     #. Separate ip address and host names
     #. Use asterisk ``*`` notation
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Podziel dane wejściowe (patrz sekcja input) po białych znakach
+    #. Używając ``str.split()`` podziel dane wejściowe po białych znakach
     #. Odseparuj adres ip i nazw hostów
     #. Skorzystaj z notacji z gwiazdką ``*``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
@@ -292,6 +292,9 @@ Unpacking from sequence
 
         hosts: list
         # ['nasa.gov', 'esa.int', 'roscosmos.ru']
+
+:Hint:
+    * Use ``str.split()`` without any argument
 
 Unpacking from nested sequence
 ------------------------------

@@ -54,6 +54,7 @@ Sequences
     sequence/indexing.rst
     sequence/slicing.rst
     sequence/unpacking.rst
+    sequence/type-annotations.rst
 
 ********
 Mappings
@@ -76,6 +77,7 @@ Conditionals
     :name: Basic Conditionals
 
     conditional/operators.rst
+    conditional/membership.rst
     conditional/statements.rst
     conditional/expressions.rst
 

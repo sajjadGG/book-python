@@ -21,38 +21,34 @@ Type Definition
     * Brackets are required
 
 .. code-block:: python
-    :caption: Initialize empty
+    :caption: ``set`` type definition
 
-    my_set = set()
+    data = set()
 
-.. code-block:: python
-    :caption: Initialize with one element
-
-    my_set = {1}
-    my_set = {1,}
-
-    set([1])
-    set([1,])
+    data = {1}
+    data = {1,}
+    data = {1,2}
 
 .. code-block:: python
-    :caption: Initialize with many elements. Stores only unique values.
+    :caption: ``set`` stores only unique values.
 
-    my_set = {1, 3, 1}
+    data = {1, 3, 1}
     # {1, 3}
 
-    my_set = {1, 2.0, 'Jan'}
+    data = {1, 2.0, 'Jan'}
     # {1, 2.0, 'Jan'}
 
-    my_set = {1, 2.0, (3, 4)}
+    data = {1, 2.0, (3, 4)}
     # {1, 2.0, (3, 4)}
 
-    my_set = {1, 2.0, [3, 4]}
+    data = {1, 2.0, [3, 4]}
     # TypeError: unhashable type: 'list'
 
-    my_set = {1, 2.0, {3, 4}}
+    data = {1, 2.0, {3, 4}}
     # TypeError: unhashable type: 'set'
 
 .. code-block:: python
+    :caption: ``set`` compares by values, not types
 
     {1}
     # {1}
@@ -65,21 +61,6 @@ Type Definition
 
     {1.0, 1}
     # {1.0}
-
-
-Type Annotation
-===============
-.. code-block:: python
-
-    my_set: set = set()
-
-.. code-block:: python
-
-    from typing import Set
-
-    my_set: Set[int] = {1, 2, 3}
-    my_set: Set[float] = {0.0, 1.1, 2.2}
-    my_set: Set[str] = {'a', 'b', 'c'}
 
 
 frozenset
@@ -100,31 +81,31 @@ Adding Single Item
 ------------------
 .. code-block:: python
 
-    my_set = {1, 2}
+    data = {1, 2}
 
-    my_set.add(3)
+    data.add(3)
     # {1, 2, 3}
 
-    my_set.add(3)
+    data.add(3)
     # {1, 2, 3}
 
-    my_set.add(4)
+    data.add(4)
     # {1, 2, 3, 4}
 
 Adding Many Items
 -----------------
 .. code-block:: python
 
-    my_set = {1, 2}
+    data = {1, 2}
     # {1, 2}
 
-    my_set.update({3, 4})
+    data.update({3, 4})
     # {1, 2, 3, 4}
 
-    my_set.update([5, 6])
+    data.update([5, 6])
     # {1, 2, 3, 4, 5, 6}
 
-    my_set.update((7, 8))
+    data.update((7, 8))
     # {1, 2, 3, 4, 5, 6, 7, 8}
 
 
@@ -134,11 +115,11 @@ Popping Items
 
 .. code-block:: python
 
-    my_set = {1, 2, 3}
+    data = {1, 2, 3}
 
-    value = my_set.pop()
+    value = data.pop()
 
-    print(my_set)
+    print(data)
     # {1, 2}
 
     print(value)
@@ -174,86 +155,64 @@ Deduplicate Items
     # {'Twardowski', 'Jiménez'}
 
 
-Membership Operators
-====================
-.. code-block:: python
-    :caption: Equals and Not-equals
-
-    {1, 2} == {1, 2}          # True
-    {1, 2} == {2, 1}          # True
-
-    {1, 2} != {1, 2}          # False
-    {1, 2, 3} != {1, 2}       # True
-
-.. code-block:: python
-    :caption: Contains
-
-    1 in {1, 2}               # True
-    2 in {1, 2}               # True
-    3 in {1, 2}               # False
-
-    {1} in {1, 2}             # False
-    {2} in {1, 2}             # False
-    {3} in {1, 2}             # False
-
-    {1,} in {1, 2}            # False
-    {2,} in {1, 2}            # False
-    {3,} in {1, 2}            # False
-
-    {1, 2} in {1, 2}          # False
-    {3, 4} in {1,2, {3, 4}}   # True
-
-.. code-block:: python
-    :caption: Missing
-
-    1 not in {1, 2}           # False
-    3 not in {1, 2}           # True
-
-    {2} not in {1, 2}         # True
-    {1, 2} not in {1, 2}      # True
-
-
 Membership
 ==========
 
-Disjoint
---------
+Is Disjoint?
+------------
 .. highlights::
-    * ``set.isdisjoint()``
     * No common elements
 
 .. code-block:: python
 
-    {1,2}.isdisjoint({3,4})     # True
+    data = {1,2}
 
-Subset
-------
+    data.isdisjoint({1,2})     # False
+    data.isdisjoint({1,3})     # False
+    data.isdisjoint({3,4})     # True
+
+Is Subset?
+----------
 .. highlights::
-    * ``set.issubset()``
     * All elements in both
 
 .. code-block:: python
 
-    {1,2} <= {3,4}              # False
+    data = {1,2}
+
+    data.issubset({1})          # False
+    data.issubset({1,2})        # True
+    data.issubset({1,2,3})      # True
+    data.issubset({1,3,4})      # False
+
+.. code-block:: python
+
     {1,2} < {3,4}               # False
-
-.. code-block:: python
-
-    {1,2} <= {1,2}              # True
-    {1,2} <= {1,2,3}            # True
-    {1,2,3} <= {1,2}            # False
-
-.. code-block:: python
-
     {1,2} < {1,2}               # False
     {1,2} < {1,2,3}             # True
     {1,2,3} < {1,2}             # False
 
-Superset
---------
+.. code-block:: python
+
+    {1,2} <= {3,4}              # False
+    {1,2} <= {1,2}              # True
+    {1,2} <= {1,2,3}            # True
+    {1,2,3} <= {1,2}            # False
+
+Is Superset?
+------------
 .. highlights::
-    * ``set.issuperset()``
     * All elements of ``b`` are in ``a``
+
+.. code-block:: python
+
+    data = {1,2}
+
+    data.issuperset({1})        # True
+    data.issuperset({1,2})      # True
+    data.issuperset({1,2,3})    # False
+    data.issuperset({1,3})      # False
+    data.issuperset({2,1})      # True
 
 .. code-block:: python
 
@@ -274,8 +233,16 @@ Basic Operations
 Union
 -----
 .. highlights::
-    * ``set.union()``
-    * add
+    * returns elements from ``a`` and ``b``
+
+.. code-block:: python
+
+    data = {1,2}
+
+    data.union({1,2})           # {1, 2}
+    data.union({1,2,3})         # {1, 2, 3}
+    data.union({1,2,4})         # {1, 2, 4}
+    data.union({1,3}, {2,4})    # {1, 2, 3, 4}
 
 .. code-block:: python
 
@@ -287,20 +254,38 @@ Union
 Difference
 ----------
 .. highlights::
-    * ``set.difference()``
-    * subtract
+    * returns elements from ``a`` which are not in ``b``
 
 .. code-block:: python
 
-    {1,2} - {2,3}               # {1}
-    {1,2} - {2,3} - {3}         # {1}
-    {1,2} - {1,2,3}             # set()
+    data = {1,2}
+
+    data.difference({1,2})          # set()
+    data.difference({1,2,3})        # set()
+    data.difference({1,4})          # {2}
+    data.difference({1,3}, {2,4})   # set()
+    data.difference({3,4})          # {1, 2}
+
+.. code-block:: python
+
+    {1,2} - {2,3}                   # {1}
+    {1,2} - {2,3} - {3}             # {1}
+    {1,2} - {1,2,3}                 # set()
 
 Symmetric Difference
 --------------------
 .. highlights::
-    * ``set.symmetric_difference()``
-    * not common elements from each
+    * returns elements from ``a`` and ``b``, but without common
+
+.. code-block:: python
+
+    data = {1,2}
+
+    data.symmetric_difference({1,2})           # set()
+    data.symmetric_difference({1,2,3})         # {3}
+    data.symmetric_difference({1,4})           # {2, 4}
+    data.symmetric_difference({1,3}, {2,4})    # TypeError: symmetric_difference() takes exactly one argument (2 given)
+    data.symmetric_difference({3,4})           # {1, 2, 3, 4}
 
 .. code-block:: python
 
@@ -311,51 +296,91 @@ Symmetric Difference
 Intersection
 ------------
 .. highlights::
-    * ``set.intersection()``
     * common element from each
 
 .. code-block:: python
 
-    {1,2} & {2,3}               # {2}
-    {1,2} & {2,3} & {2,4}       # {2}
-    {1,2} & {2,3} & {3}         # set()
+    data = {1,2}
+
+    data.intersection({1,2})           # {1, 2}
+    data.intersection({1,2,3})         # {1, 2}
+    data.intersection({1,4})           # {1}
+    data.intersection({1,3}, {2,4})    # set()
+    data.intersection({1,3}, {1,4})    # {1}
+    data.intersection({3,4})           # set()
+
+
+.. code-block:: python
+
+    {1,2} & {2,3}                       # {2}
+    {1,2} & {2,3} & {2,4}               # {2}
+    {1,2} & {2,3} & {3}                 # set()
 
 
 Cardinality
 ===========
 .. code-block:: python
 
-    my_set = {1, 2, 3}
+    data = {1, 2, 3}
 
-    len(my_set)
+    len(data)
     # 3
 
 
 Assignments
 ===========
 
-Create
-------
+Set Create
+----------
 * Complexity level: easy
-* Lines of code to write: 13 lines
-* Estimated time of completion: 5 min
+* Lines of code to write: 3 lines
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/sequence_set_create.py`
 
 :English:
+    #. Create set ``result`` with elements:
+
+        * 1
+        * 1.1
+        * 'Mark Watney'
+
+    #. Print ``result``
+    #. Print number of elements in ``result``
+
+:Polish:
+    #. Stwórz zbiór ``result`` z elementami:
+
+        * 1
+        * 1.1
+        * 'Mark Watney'
+
+    #. Wypisz ``result``
+    #. Wypisz liczbę elementów ``result``
+
+Set Many
+--------
+* Complexity level: easy
+* Lines of code to write: 13 lines
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/sequence_set_many.py`
+
+:English:
     #. Use data from "Input" section (see below)
-    #. Create ``set`` representing first row
+    #. Create set ``result`` representing first row
     #. Values from second row add to ``set`` using ``.add()``
-    #. From third row create ``set`` and add it with ``.update()``
-    #. From fourth row create ``tuple`` and add it with ``.update()``
-    #. From fifth row create ``list`` and add it with ``.update()``
+    #. From third row create ``set`` and add it to ``result`` using ``.update()``
+    #. From fourth row create ``tuple`` and add it to ``result`` using ``.update()``
+    #. From fifth row create ``list`` and add it to ``result`` using ``.update()``
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Stwórz ``my_set: set`` reprezentujący pierwszy wiersz
-    #. Wartości z drugiego wiersza dodawaj do ``my_set`` za pomocą ``.add()``
-    #. Na podstawie trzeciego wiersza stwórz ``set`` i dodaj go za pomocą ``.update()``
-    #. Na podstawie czwartego wiersza stwórz ``tuple`` i dodaj go za pomocą ``.update()``
-    #. Na podstawie piątego wiersza stwórz ``list`` i dodaj go za pomocą ``.update()``
+    #. Stwórz zbiór ``result`` reprezentujący pierwszy wiersz
+    #. Wartości z drugiego wiersza dodawaj do ``result`` używając ``.add()``
+    #. Na podstawie trzeciego wiersza stwórz ``set`` i dodaj go do ``result`` używając ``.update()``
+    #. Na podstawie czwartego wiersza stwórz ``tuple`` i dodaj go do ``result`` używając ``.update()``
+    #. Na podstawie piątego wiersza stwórz ``list`` i dodaj go do ``result`` używając ``.update()``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. csv-table:: Input data
@@ -367,6 +392,12 @@ Create
         "3", "5.7", "2.8", "4.1", "1.3", "versicolor"
         "4", "6.3", "2.9", "5.6", "1.8", "virginica"
         "5", "6.4", "3.2", "4.5", "1.5", "versicolor"
+
+:Output:
+    .. code-block:: python
+
+        result: set
+        # {0.2, 1.9, 2.7, 3.5, 1.4, 5.8, 5.1, 1.3, 2.8, 4.1, 5.7, 6.3, 6.4, 5.6, 1.5, 4.5, 'versicolor', 'setosa', 3.2, 1.8, 'virginica', 2.9}
 
 :The whys and wherefores:
     * Defining ``set``

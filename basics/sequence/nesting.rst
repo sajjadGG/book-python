@@ -7,10 +7,8 @@ Sequence Nesting
 
 ``list`` of ``tuple``
 =====================
-
-Getting elements
-----------------
 .. code-block:: python
+    :caption: Get elements from ``list`` of ``tuple``
 
     DATA = [
         (4.7, 3.2, 1.3, 0.2, 'setosa'),
@@ -24,9 +22,8 @@ Getting elements
     DATA[2][1]
     # 3.0
 
-Appending elements
-------------------
 .. code-block:: python
+    :caption: Append elements using ``list.append()``
 
     DATA = [
         (4.7, 3.2, 1.3, 0.2, 'setosa'),
@@ -41,8 +38,8 @@ Appending elements
     #  (7.6, 3.0, 6.6, 2.1, 'virginica'),
     #  (4.9, 2.5, 4.5, 1.7, 'virginica')]
 
-
 .. code-block:: python
+    :caption: Append elements using ``list.extend()``
 
     DATA = [
         (4.7, 3.2, 1.3, 0.2, 'setosa'),
@@ -61,9 +58,8 @@ Appending elements
     #  1.7,
     #  'virginica']
 
-Length
-------
 .. code-block:: python
+    :caption: ``list`` of ``tuple`` length
 
     DATA = [
         (4.7, 3.2, 1.3, 0.2, 'setosa'),
@@ -77,30 +73,6 @@ Length
     len(DATA[2])
     # 5
 
-Type Annotation
----------------
-.. code-block:: python
-
-    from typing import List
-
-
-    DATA: List[tuple] = [
-        (4.7, 3.2, 1.3, 0.2, 'setosa'),
-        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-        (7.6, 3.0, 6.6, 2.1, 'virginica'),
-    ]
-
-.. code-block:: python
-
-    from typing import List, Tuple
-
-
-    DATA: List[Tuple[float, float, float, float, str]] = [
-        (4.7, 3.2, 1.3, 0.2, 'setosa'),
-        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-        (7.6, 3.0, 6.6, 2.1, 'virginica'),
-    ]
-
 
 ``list`` of ``list``
 ====================
@@ -108,28 +80,22 @@ Type Annotation
     * Multidimensional lists
 
 .. code-block:: python
+    :caption: Lists ``a``, ``b``, ``c``, ``d`` contains the same values, but readability differs depending on whitespaces.
 
-    DATA = [[1,2,3],[4,5,6],[7,8,9]]
+    a = [[1,2,3],[4,5,6],[7,8,9]]
 
-.. code-block:: python
+    b = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
-    DATA = [[1,2,3], [4,5,6], [7,8,9]]
+    c = [[1,2,3], [4,5,6], [7,8,9]]
 
-.. code-block:: python
-
-    DATA = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-
-.. code-block:: python
-
-    DATA = [
+    d = [
         [1, 2, 3],
         [4, 5, 6],
         [7, 8, 9],
     ]
 
-Getting elements
-----------------
 .. code-block:: python
+    :caption: Get elements from ``list`` of ``list``
 
     DATA = [
         [1, 2, 3],
@@ -146,9 +112,8 @@ Getting elements
     DATA[2][1]
     # 8
 
-Length
-------
 .. code-block:: python
+    :caption: ``list`` of ``list`` length
 
     DATA = [
         [1, 2, 3],
@@ -162,35 +127,11 @@ Length
     len(DATA[2])
     # 3
 
-Type Annotations
-----------------
+
+Unions
+======
 .. code-block:: python
-
-    from typing import List
-
-    DATA: List[list] = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
-    ]
-
-.. code-block:: python
-
-    from typing import List
-
-    DATA: List[List[int]] = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
-    ]
-
-
-Mixed types
-===========
-
-Getting elements
-----------------
-.. code-block:: python
+    :caption: Get elements from union
 
     DATA = [
         [1, 2, 3],
@@ -207,9 +148,8 @@ Getting elements
     DATA[2]
     # {7, 8, 9}
 
-Length
-------
 .. code-block:: python
+    :caption: Union length
 
     DATA = [
         [1, 2],
@@ -229,31 +169,33 @@ Length
     len(DATA[2])
     # 5
 
-Type Annotations
-----------------
-.. code-block:: python
-
-    from typing import Set, List, Union, Tuple
-
-
-    DATA: List[Union[List[int], Tuple[int, int, int], Set[int]]] = [
-        [1, 2, 3],
-        (4, 5, 6),
-        {7, 8, 9},
-    ]
-
-.. code-block:: python
-
-    from typing import List
-
-
-    DATA: List[Union[list, tuple, set]] = [
-        [1, 2, 3],
-        (4, 5, 6),
-        {7, 8, 9},
-    ]
-
 
 Assignments
 ===========
-.. todo:: Create assignments
+
+Nesting Create
+--------------
+* Complexity level: easy
+* Lines of code to write: 3 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/sequence_nesting_create.py`
+
+:English:
+    #. Create nested sequence ``result`` with elements:
+
+        * tuple: 1, 2, 3
+        * list: 1.1, 2.2, 3.3
+        * set: 'Mark Watney', 'Melissa Lewis', 'Jan Twardowski'
+
+    #. Print ``result``
+    #. Print number of elements in ``result``
+
+:Polish:
+    #. Stwórz zagnieżdżoną sekwencję ``result`` z elementami:
+
+        * krotka: 1, 2, 3
+        * lista: 1.1, 2.2, 3.3
+        * zbiór: 'Mark Watney', 'Melissa Lewis', 'Jan Twardowski'
+
+    #. Wypisz ``result``
+    #. Wypisz liczbę elementów ``result``
