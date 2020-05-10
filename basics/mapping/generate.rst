@@ -8,7 +8,7 @@ List of pairs
 .. code-block:: python
 
     pairs = [
-        ('a', 1)
+        ('a', 1),
     ]
 
     dict(pairs)
@@ -18,7 +18,7 @@ List of pairs
 
     pairs = [
         ('a', 1),
-        ('b', 2)
+        ('b', 2),
     ]
 
     dict(pairs)
@@ -36,19 +36,6 @@ List of pairs
     #   'first_name': 'Jan',
     #   'last_name': 'Twardowski'
     # }
-
-.. code-block:: python
-
-    pairs = [
-         {'a', 1},
-         {'b', 2},
-    ]
-
-    pairs
-    # [{1, 'a'}, {'b', 2}]
-
-    dict(pairs)
-    # {1: 'a', 'b': 2}
 
 .. code-block:: python
 
@@ -81,6 +68,15 @@ Zip
     keys =  ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
     values = [5.8, 2.7, 5.1, 1.9, 'virginica']
 
+    list(zip(keys, values))
+    # [
+    #   ('Sepal length', 5.8),
+    #   ('Sepal width', 2.7),
+    #   ('Petal length', 5.1),
+    #   ('Petal width', 1.9),
+    #   ('Species', 'virginica')
+    # ]
+
     dict(zip(keys, values))
     # {
     #   'Sepal length': 5.8,
@@ -96,6 +92,13 @@ Enumerate
 .. code-block:: python
 
     labels = ['setosa', 'versicolor', 'virginica']
+
+    list(enumerate(labels))
+    # [
+    #   (0, 'setosa'),
+    #   (1, 'versicolor'),
+    #   (2, 'virginica')
+    # ]
 
     dict(enumerate(labels))
     # {

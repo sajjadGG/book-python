@@ -21,18 +21,21 @@ Type Definition
 
 .. code-block:: python
 
-    my_dict = {}
-    my_dict = dict()
+    data = {}
+    data = dict()
 
 .. code-block:: python
-    :caption: Initialize with many elements
+    :caption: Initialize with many elements using short notation
 
-    my_dict = {
+    data = {
         'first_name': 'Jan',
         'last_name': 'Twardowski'
     }
 
-    my_dict = dict(
+.. code-block:: python
+    :caption: Initialize with many elements using dict function
+
+    data = dict(
         first_name='Jan',
         last_name='Twardowski'
     )
@@ -40,66 +43,26 @@ Type Definition
 .. code-block:: python
     :caption: Duplicating items are overridden by latter
 
-    my_dict = {
+    data = {
         'species': 'setosa',
         'species': 'virginica',
     }
     # {'species': 'virginica'}
 
 
-Type Annotation
-===============
-.. code-block:: python
-
-    my_dict: dict = {}
-    my_dict: dict = dict()
-
-.. code-block:: python
-
-    from typing import Dict
-
-    my_dict: Dict[int, str] = {
-        0: 'setosa',
-        1: 'virginica',
-        2: 'versicolor',
-    }
-
-.. code-block:: python
-
-    from typing import Dict
-
-    my_dict: Dict[float, str] = {
-        5.8: 'Sepal length',
-        2.7: 'Sepal width',
-        5.1: 'Petal length',
-        1.9: 'Petal width',
-    }
-
-.. code-block:: python
-
-    from typing import Dict
-
-    my_dict: Dict[str, float] = {
-        'Sepal length': 5.8,
-        'Sepal width': 2.7,
-        'Petal length': 5.1,
-        'Petal width': 1.9,
-    }
-
-
 Contains
 ========
 .. code-block:: python
 
-    my_dict = {
+    data = {
         'first_name': 'Jan',
         'last_name': 'Twardowski',
     }
 
-    'first_name' in my_dict
+    'first_name' in data
     # True
 
-    'agency' in my_dict
+    'agency' in data
     # False
 
 
@@ -113,28 +76,28 @@ Getitem Method
 --------------
 .. code-block:: python
 
-    my_dict = {
+    data = {
         'first_name': 'Jan',
         'last_name': 'Twardowski',
     }
 
-    my_dict['last_name']
+    data['last_name']
     # Twardowski
 
-    my_dict['agency']
+    data['agency']
     # KeyError: 'agency'
 
 .. code-block:: python
 
-    my_dict = {
+    data = {
         1961: 'First Human Space Flight',
         1969: 'First Step on the Moon',
     }
 
-    my_dict[1961]
+    data[1961]
     # 'First Human Space Flight'
 
-    my_dict['1961']
+    data['1961']
     # KeyError: '1961'
 
 Get Method
@@ -145,34 +108,34 @@ Get Method
 
 .. code-block:: python
 
-    my_dict = {
+    data = {
         'first_name': 'Jan',
         'last_name': 'Twardowski',
     }
 
-    my_dict.get('last_name')
+    data.get('last_name')
     # Twardowski
 
-    my_dict.get('agency')
+    data.get('agency')
     # None
 
-    my_dict.get('agency', 'n/a')
+    data.get('agency', 'n/a')
     # 'n/a'
 
 .. code-block:: python
 
-    my_dict = {
+    data = {
         1961: 'First Human Space Flight',
         1969: 'First Step on the Moon',
     }
 
-    my_dict.get(1961)
+    data.get(1961)
     # 'First Human Space Flight'
 
-    my_dict.get('1961')
+    data.get('1961')
     # None
 
-    my_dict.get('1961', 'unknown')
+    data.get('1961', 'unknown')
     # 'unknown'
 
 Get Keys, Values and Key-Value Pairs
@@ -181,34 +144,20 @@ Get Keys, Values and Key-Value Pairs
 
 .. code-block:: python
 
-    my_dict = {
+    data = {
         'Sepal length': 5.8,
         'Sepal width': 2.7,
         'Petal length': 5.1,
         'Petal width': 1.9,
     }
 
-    my_dict.keys()
-    # dict_keys(['Sepal length', 'Sepal width', 'Petal length', 'Petal width'])
-
-    list(my_dict.keys())
+    list(data.keys())
     # ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
 
-    my_dict.values()
-    # dict_values([5.8, 2.7, 5.1, 1.9])
-
-    list(my_dict.values())
+    list(data.values())
     # [5.8, 2.7, 5.1, 1.9]
 
-    my_dict.items()
-    # dict_items([
-    #     ('Sepal length', 5.8),
-    #     ('Sepal width', 2.7),
-    #     ('Petal length', 5.1),
-    #     ('Petal width', 1.9),
-    # ])
-
-    list(my_dict.items())
+    list(data.items())
     # [
     #     ('Sepal length', 5.8),
     #     ('Sepal width', 2.7),
@@ -227,14 +176,14 @@ Setting Items
 .. code-block:: python
     :caption: Setitem Method
 
-    my_dict = {
+    data = {
         'first_name': 'Jan',
         'last_name': 'Twardowski',
     }
 
-    my_dict['agency'] = 'POLSA'
+    data['agency'] = 'POLSA'
 
-    print(my_dict)
+    print(data)
     # {
     #   'first_name': 'Jan',
     #   'last_name': 'Twardowski',
@@ -244,21 +193,21 @@ Setting Items
 .. code-block:: python
     :caption: Update Method
 
-    my_dict = {
+    data = {
         'first_name': 'Jan',
         'last_name': 'Twardowski',
     }
 
-    my_dict.update(agency='POLSA')
-    print(my_dict)
+    data.update(agency='POLSA')
+    print(data)
     # {
     #   'first_name': 'Jan',
     #   'last_name': 'Twardowski',
     #   'agency': 'POLSA'
     # }
 
-    my_dict.update(mission=['Apollo', 'Artemis', 'Ares'])
-    print(my_dict)
+    data.update(mission=['Apollo', 'Artemis', 'Ares'])
+    print(data)
     # {
     #   'first_name': 'Jan',
     #   'last_name': 'Twardowski',
@@ -269,18 +218,18 @@ Setting Items
 .. code-block:: python
     :caption: Update Method
 
-    my_dict = {
+    data = {
         'first_name': 'Jan',
         'last_name': 'Twardowski',
     }
 
-    data = {
+    more = {
         'agency': 'POLSA',
         'mission': ['Apollo', 'Artemis', 'Ares'],
     }
 
-    my_dict.update(data)
-    print(my_dict)
+    data.update(more)
+    print(data)
     # {
     #   'first_name': 'Jan',
     #   'last_name': 'Twardowski',
@@ -294,15 +243,15 @@ Deleting Items
 .. code-block:: python
     :caption: Pop Method
 
-    my_dict = {
+    data = {
         'first_name': 'Jan',
         'last_name': 'Twardowski',
         'agency': 'POLSA',
     }
 
-    value = my_dict.pop('agency')
+    value = data.pop('agency')
 
-    print(my_dict)
+    print(data)
     # {'first_name', 'Jan',
     #  'last_name': 'Twardowski'}
 
@@ -312,15 +261,15 @@ Deleting Items
 .. code-block:: python
     :caption: Del Keyword
 
-    my_dict = {
+    data = {
         'first_name': 'Jan',
         'last_name': 'Twardowski',
         'agency': 'POLSA',
     }
 
-    del my_dict['agency']
+    del data['agency']
 
-    print(my_dict)
+    print(data)
     # {'first_name': 'Jan',
     #  'last_name': 'Twardowski'}
 
@@ -333,43 +282,43 @@ Indexing and Slicing
 
 .. code-block:: python
 
-    DATA = {
+    data = {
         'a': 0,
         'b': 1,
         'c': 2,
     }
 
-    DATA[0]             # KeyError: 0
-    DATA[1]             # KeyError: 1
-    DATA[2]             # KeyError: 2
+    data[0]             # KeyError: 0
+    data[1]             # KeyError: 1
+    data[2]             # KeyError: 2
 
-    DATA[-0]            # KeyError: 0
-    DATA[-1]            # KeyError: -1
-    DATA[-2]            # KeyError: -2
+    data[-0]            # KeyError: 0
+    data[-1]            # KeyError: -1
+    data[-2]            # KeyError: -2
 
-    DATA[1:2]           # TypeError: unhashable type: 'slice'
-    DATA[:2]            # TypeError: unhashable type: 'slice'
-    DATA[::2]           # TypeError: unhashable type: 'slice'
+    data[1:2]           # TypeError: unhashable type: 'slice'
+    data[:2]            # TypeError: unhashable type: 'slice'
+    data[::2]           # TypeError: unhashable type: 'slice'
 
 .. code-block:: python
 
-    DATA = {
+    data = {
         0: 'a',
         1: 'b',
         2: 'c',
     }
 
-    DATA[0]             # 'a'
-    DATA[1]             # 'b'
-    DATA[2]             # 'c'
+    data[0]             # 'a'
+    data[1]             # 'b'
+    data[2]             # 'c'
 
-    DATA[-0]            # 'a'
-    DATA[-1]            # KeyError: -1
-    DATA[-2]            # KeyError: -2
+    data[-0]            # 'a'
+    data[-1]            # KeyError: -1
+    data[-2]            # KeyError: -2
 
-    DATA[1:2]           # TypeError: unhashable type: 'slice'
-    DATA[:2]            # TypeError: unhashable type: 'slice'
-    DATA[::2]           # TypeError: unhashable type: 'slice'
+    data[1:2]           # TypeError: unhashable type: 'slice'
+    data[:2]            # TypeError: unhashable type: 'slice'
+    data[::2]           # TypeError: unhashable type: 'slice'
 
 
 ``dict`` vs. ``set``
@@ -384,8 +333,6 @@ Indexing and Slicing
     {1, 2}            # set
     {1: 2}            # dict
 
-.. code-block:: python
-
     {1, 2, 3, 4}      # set
     {1: 2, 3: 4}      # dict
 
@@ -393,60 +340,51 @@ Indexing and Slicing
     {1: 2,}           # dict
 
 .. code-block:: python
-    :caption: Empty ``dict``
+    :caption: Empty ``dict`` and empty ``set``
 
-    my_data = {1: 1}
-    # {1:1}
+    data = {1: 1}       # {1:1}
+    data.pop(1)         # {}
 
-    my_data.pop(1)
-    # {}
-
-.. code-block:: python
-    :caption: Empty ``set``
-
-    my_data = {1}
-    # {1}
-
-    my_data.pop()
-    # set()
+    data = {1}          # {1}
+    data.pop()          # set()
 
 .. code-block:: python
     :caption: Differences
 
-    my_data = {1: 1}
-    isinstance(my_data, dict)         # True
-    isinstance(my_data, set)          # False
+    data = {1: 1}
+    isinstance(data, dict)         # True
+    isinstance(data, set)          # False
 
-    my_data = {1}
-    isinstance(my_data, dict)         # False
-    isinstance(my_data, set)          # True
+    data = {1}
+    isinstance(data, dict)         # False
+    isinstance(data, set)          # True
 
-    my_data = {}
-    isinstance(my_data, (set, dict))  # True
-    isinstance(my_data, dict)         # True
-    isinstance(my_data, set)          # False
+    data = {}
+    isinstance(data, (set, dict))  # True
+    isinstance(data, dict)         # True
+    isinstance(data, set)          # False
 
 
 Length
 ======
 .. code-block:: python
 
-    my_dict = {
+    data = {
         'first_name': 'Jan',
         'last_name': 'Twardowski',
         'age': 42,
     }
 
-    len(my_dict)
+    len(data)
     # 3
 
-    len(my_dict.keys())
+    len(data.keys())
     # 3
 
-    len(my_dict.values())
+    len(data.values())
     # 3
 
-    len(my_dict.items())
+    len(data.items())
     # 3
 
 

@@ -128,31 +128,28 @@ Popping Items
 
 Deduplicate Items
 =================
-.. code-block:: python
-    :caption: Converting ``list`` to ``set`` deduplicate items
+.. highlight::
+    * Works with ``tuple``, ``list``, ``str``
 
-    names = [
+.. code-block:: python
+
+    data = [1,2,3,1,1,2,4]
+
+    set(data)
+    # {1, 2, 3, 4}
+
+.. code-block:: python
+    :caption: Converting ``set`` deduplicate items
+
+    data = [
         'Twardowski',
         'Twardowski',
-        'Jiménez',
+        'Watney',
         'Twardowski'
     ]
 
-    unique_names = set(names)
-    # {'Twardowski', 'Jiménez'}
-
-.. code-block:: python
-    :caption: Converting ``tuple`` to ``set`` deduplicate items
-
-    names = (
-        'Twardowski',
-        'Twardowski',
-        'Jiménez',
-        'Twardowski'
-    )
-
-    unique_names = set(names)
-    # {'Twardowski', 'Jiménez'}
+    set(data)
+    # {'Twardowski', 'Watney'}
 
 
 Membership

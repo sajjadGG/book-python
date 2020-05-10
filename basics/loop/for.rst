@@ -190,14 +190,14 @@ Counter
     #. Use data from "Input" section (see below)
     #. Iterate over ``DATA``
     #. Count occurrences of each number
-    #. Create empty ``counter: Dict[int, int]``:
+    #. Create empty ``result: Dict[int, int]``:
 
         * key - digit
         * value - number of occurrences
 
-    #. Iterating over numbers check if number is already in ``counter``
+    #. Iterating over numbers check if number is already in ``result``
 
-        * If first occurrence, then add it to ``counter`` with value 1
+        * If first occurrence, then add it to ``result`` with value 1
         * If exists, then increment the value by 1
 
     #. Compare results with "Output" section below
@@ -206,14 +206,14 @@ Counter
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Iteruj po ``DATA``
     #. Policz wystąpienia każdej z cyfr
-    #. Stwórz pusty ``counter: Dict[int, int]``:
+    #. Stwórz pusty ``result: Dict[int, int]``:
 
         * klucz - cyfra
         * wartość - liczba wystąpień
 
-    #. Iterując po cyfrach sprawdź czy cyfra znajduje się już w ``counter``
+    #. Iterując po cyfrach sprawdź czy cyfra znajduje się już w ``result``
 
-        * Jeżeli pierwsze wystąpienie, to dodaj ją do ``counter`` z wartością 1
+        * Jeżeli pierwsze wystąpienie, to dodaj ją do ``result`` z wartością 1
         * Jeżeli istnieje, to zwiększ w wartość o 1
 
     #. Porównaj wynik z sekcją "Output" poniżej
@@ -232,7 +232,7 @@ Counter
 
         from typing import Dict
 
-        counter: Dict[int, int]
+        result: Dict[int, int]
         # {1: 7, 4: 8, 6: 4, 7: 4, 5: 4, 0: 7, 9: 5, 8: 6, 2: 2, 3: 3}
 
 :The whys and wherefores:
@@ -256,7 +256,7 @@ Segmentation
         * ``medium`` - numbers in range [3-7)
         * ``large`` - numbers in range [8-9]
 
-    #. Print ``counter: Dict[str, int]``:
+    #. Print ``result: Dict[str, int]``:
 
         * key - group
         * value - number of occurrences
@@ -272,7 +272,7 @@ Segmentation
         * ``medium`` - liczby z przedziału <3-7)
         * ``large`` - liczby z przedziału <7-9>
 
-    #. Wypisz ``counter: Dict[str, int]``:
+    #. Wypisz ``result: Dict[str, int]``:
 
         * klucz - grupa
         * wartość - liczba wystąpień
@@ -293,7 +293,7 @@ Segmentation
 
         from typing import Dict
 
-        counter: Dict[str, int]
+        result: Dict[str, int]
         # {'small': 16, 'medium': 19, 'large': 15}
 
 :The whys and wherefores:

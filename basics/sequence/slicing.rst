@@ -37,16 +37,8 @@ Accessing Slice from Start
     text[16:28]     # 'to the Moon!'
     text[23:28]     # 'Moon!'
 
-.. code-block:: python
-
-    text = 'We choose to go to the Moon!'
-
     text[3:9]       # 'choose'
     text[23:27]     # 'Moon'
-
-.. code-block:: python
-
-    text = 'We choose to go to the Moon!'
 
     text[:2]        # 'We'
     text[:9]        # 'We choose'
@@ -73,10 +65,6 @@ Accessing Slice from Back
     text[-12:-6]    # 'to the'
     text[-5:-1]     # 'Moon'
 
-.. code-block:: python
-
-    text = 'We choose to go to the Moon!'
-
     text[23:-2]     # 'Moo'
     text[13:-2]     # 'go to the Moo'
 
@@ -94,11 +82,6 @@ Every ``n-th`` Element
 
     text[::2]             # 'W hoet ot h on'
 
-.. code-block:: python
-    :caption: Reversing
-
-    text = 'We choose to go to the Moon!'
-
     text[::-1]            # '!nooM eht ot og ot esoohc eW'
     text[::-2]            # '!oMeto go soce'
 
@@ -115,7 +98,7 @@ Accessing Slice not Existing Elements
 
 Accessing Slice from All Elements
 =================================
-* Used in ``numpy``
+* Used in ``numpy`` to get all rows or columns
 
 .. code-block:: python
 
@@ -154,16 +137,6 @@ Arithmetic Operations on Slice Indexes
 
     text[first:last:step]       # ' soc!'
     text[first-1:last:step]     # 'eoh'
-
-.. code-block:: python
-
-    text = 'We choose to go to the Moon!'
-
-    start = text.find('Moon')   # 23
-    stop = start + 4
-
-    text[start:stop]
-    # Moo
 
 
 Slicing Sequences
@@ -208,8 +181,8 @@ Slicing ``list``
     DATA[::2]           # ['a', 'c', 'e']
     DATA[::-1]          # ['e', 'd', 'c', 'b', 'a']
 
-Slice ``set``
--------------
+Slicing ``set``
+---------------
 .. highlights::
     * Slicing ``set`` is not possible
 
@@ -219,15 +192,6 @@ Slice ``set``
 
     DATA[:3]
     # TypeError: 'set' object is not subscriptable
-
-Slice ``dict``
---------------
-.. code-block:: python
-
-    DATA = {'a': 1, 'b': 2}
-
-    DATA[:3]
-    # TypeError: unhashable type: 'slice'
 
 
 Slicing Nested Sequences
@@ -264,6 +228,36 @@ Slice Function
 
 Assignments
 ===========
+
+Example
+-------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/sequence_slice_example.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Using ``str.find()`` and slicing
+    #. Print ``DATA`` without text in ``REMOVE``
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Używając ``str.find()`` oraz wycinania
+    #. Wypisz ``DATA`` bez tekstu z ``REMOVE``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        DATA = 'We choose to go to the Moon!'
+        REMOVE = 'to go to '
+
+:Solution:
+    .. literalinclude:: solution/sequence_slice_example.py
+        :language: python
+
 
 Simple collections
 ------------------
