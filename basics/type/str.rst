@@ -49,16 +49,6 @@ Type Definition
     """
 
 
-Type Casting
-============
-.. code-block:: python
-    :caption: ``str()`` converts argument to ``str``
-
-    str('hello')        # 'hello'
-    str(1969)           # '1969'
-    str(13.37)          # '13.37'
-
-
 Single or Double Quotes?
 ========================
 .. highlights::
@@ -87,6 +77,16 @@ Single or Double Quotes?
 
     my_str = """My name's "José Jiménez""""
     my_str = '''My name\'s "José Jiménez"'''
+
+
+Type Casting
+============
+.. code-block:: python
+    :caption: ``str()`` converts argument to ``str``
+
+    str('hello')        # 'hello'
+    str(1969)           # '1969'
+    str(13.37)          # '13.37'
 
 
 Escape Characters
@@ -216,7 +216,7 @@ Reading User Input
 .. code-block:: python
 
     name = input('What is your name: ')
-    # What is your name: Jan Twardowski
+    # What is your name: Jan Twardowski<ENTER>
 
     print(name)     # 'Jan Twardowski'
     type(name)      # <class 'str'>
@@ -224,10 +224,39 @@ Reading User Input
 .. code-block:: python
 
     age = input('What is your age: ')
-    # What is your age: 42
+    # What is your age: 42<ENTER>
 
     print(age)      # '42'
     type(age)       # <class 'str'>
+
+.. code-block:: python
+
+    age = input('What is your age: ')
+    # What is your age: 42<ENTER>
+
+    age = int(age)
+
+    print(age)      # 42
+    type(age)       # <class 'int'>
+
+.. code-block:: python
+
+    age = input('What is your age: ')
+    # What is your age: 42.5<ENTER>
+
+    age = int(age)      # ValueError: invalid literal for int() with base 10: '42.5'
+    age = float(age)    # 42.5
+
+    print(age)          # 42.5
+    type(age)           # <class 'int'>
+
+.. code-block:: python
+
+    age = input('What is your age: ')
+    # What is your age: 42,5<ENTER>
+
+    age = int(age)      # ValueError: invalid literal for int() with base 10: '45,5'
+    age = float(age)    # ValueError: could not convert string to float: '45,5'
 
 
 Concatenation
@@ -237,14 +266,24 @@ Concatenation
 
 .. code-block:: python
 
-    'Beetlejuice' * 3   # BeetlejuiceBeetlejuiceBeetlejuice
-    '-' * 10            # ----------
-    'Mua' + 'Ha' * 2    # 'MuaHaHa'
+    'a' + 'b'
+    # 'ab'
+
+.. code-block:: python
+
+    text1 = 'a'
+    text2 = 'b'
+
+    text1 + text2
+    # 'ab'
 
 .. code-block:: python
 
     first_name = 'Jan'
     last_name = 'Twardowski'
+
+    first_name + last_name
+    # Jan Twardowski
 
     first_name + ' ' + last_name
     # Jan Twardowski
@@ -264,6 +303,13 @@ Concatenation
 
     # How many string are there in a memory?
     f'Hello {first_name} {last_name} {age}!'
+
+.. code-block:: python
+
+    '-' * 10            # ----------
+    'Beetlejuice' * 3   # BeetlejuiceBeetlejuiceBeetlejuice
+
+    'Mua' + 'Ha' * 2    # 'MuaHaHa'
 
 
 Assignments

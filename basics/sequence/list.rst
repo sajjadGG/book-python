@@ -179,14 +179,14 @@ Multiple Statements in One Line
 
     data = [3, 1, 2]
 
-    data.sort().append(4)
-    # AttributeError: 'NoneType' object has no attribute 'append'
+    data.append(4).sort()
+    # AttributeError: 'NoneType' object has no attribute 'sort'
 
 .. code-block:: python
 
     data = [3, 1, 2]
-    data.sort()
     data.append(4)
+    data.sort()
 
     print(data)
     # [1, 2, 3, 4]

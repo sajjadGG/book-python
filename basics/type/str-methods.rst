@@ -53,12 +53,12 @@ Change Case
 
 .. code-block:: python
 
-    name = 'Angus McGyver'
+    name = 'Angus MacGyver'
 
-    name.upper()       # 'ANGUS MCGYVER'
-    name.lower()       # 'angus mcgyver'
-    name.title()       # 'Angus Mcgyver'
-    name.capitalize()  # 'Angus mcgyver'
+    name.upper()       # 'ANGUS MACGYVER'
+    name.lower()       # 'angus macgyver'
+    name.title()       # 'Angus Macgyver'
+    name.capitalize()  # 'Angus macgyver'
 
 Replace
 -------
@@ -160,6 +160,12 @@ Checking If Contains Only Whitespace
     ' '.isspace()       # True
     '\t'.isspace()      # True
     '\n'.isspace()      # True
+
+.. figure:: img/iss.jpg
+    :align: center
+    :scale: 30%
+
+    Credits: NASA/Crew of STS-132 (img: s132e012208).
 
 Checking If Contains Only Alphabet Characters
 ---------------------------------------------
@@ -411,7 +417,7 @@ String Cleaning
         h = ' Jana 3 Sobieskiego  '
         i = 'Jana III Sobi\teskiego '
 
-        a = a.replace('Ul', '').title().replace('Iii', 'III').strip()
+        a = a.replace('ul', '').title().replace('Iii', 'III').strip()
         b = ...
         c = ...
         d = ...
