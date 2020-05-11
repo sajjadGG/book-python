@@ -13,8 +13,8 @@ Type Definition
 .. code-block:: python
     :caption: ``bool`` Type Definition
 
-    my_var = True               # True
-    my_var = False              # False
+    data = True               # True
+    data = False              # False
 
 
 Type Casting
@@ -120,8 +120,15 @@ Complex Statements
 .. code-block:: python
 
     True and True or False      # True
-    True and False or False     # False
     False and False or True     # True
+
+.. code-block:: python
+
+    (True and True) or False    # True
+    True and (True or False)    # True
+
+    True and False or False     # False
+    True and (False or False)   # False
 
 
 Assignments
