@@ -66,6 +66,15 @@ Verification
 #. Wykonaj w terminalu ``pip3 --version`` - sprawdzanie wersji managera pakietów ``pip``
 #. Wykonaj w terminalu ``python3`` - weryfikacja uruchomienia interpretera Python
 
+System environment variable ``PATH``
+------------------------------------
+* While installing Python, add its executable to one of system ``$PATH`` directories
+
+System environment variable ``PYTHON_PATH``
+-------------------------------------------
+* Python search for libraries and modules in directories listed in system ``$PYTHON_PATH``
+* ``$PYTHON_PATH`` is a base for ``sys.path``
+
 
 IDE Installation
 ================

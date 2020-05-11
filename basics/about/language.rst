@@ -102,7 +102,6 @@ File types and extensions
     "``.pyx``", "cPythona source for C/C++ conversion"
     "``.pyz``", "`zipapp <https://docs.python.org/3/library/zipapp.html>`_ compressed archive. Since Python 3.5"
 
-
 Minimal script
 --------------
 .. code-block:: python
@@ -119,15 +118,6 @@ Interpreter declaration
 
     print('Ehlo World!')
 
-System environment variable ``PATH``
-------------------------------------
-* While installing Python, add its executable to one of system ``$PATH`` directories
-
-System environment variable ``PYTHON_PATH``
--------------------------------------------
-* Python search for libraries and modules in directories listed in system ``$PYTHON_PATH``
-* ``$PYTHON_PATH`` is a base for ``sys.path``
-
 
 Python Console (REPL)
 =====================
@@ -141,8 +131,8 @@ Python Console (REPL)
 .. code-block:: console
 
     $ python3
-    Python 3.7.5 (default, Nov  1 2019, 02:16:23)
-    [Clang 11.0.0 (clang-1100.0.33.8)] on darwin
+    3.8.2 (default, Mar 11 2020, 00:29:50)
+    [Clang 11.0.0 (clang-1100.0.33.17)]
     Type "help", "copyright", "credits" or "license" for more information.
 
     >>> print('Ehlo World!')
@@ -165,3 +155,82 @@ Jupyter
 * Very popular in Machine Learning and Data Science world
 * Create and share documents that contain live code, equations, visualizations and narrative text
 * Uses include: data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, etc
+
+
+Assignments
+===========
+
+Check Python Version
+--------------------
+* Complexity level: easy
+* Lines of code to write: 0 lines
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/about_version.py`
+
+:English:
+    #. Create file wih name ``about_version.py``
+    #. Use code from "Input" section (see below)
+    #. Run code in your IDE (right click on code -> "Run File in Python Console")
+    #. What Python version is installed?
+    #. Newest official Python is recommended
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Stwórz skrypt o nazwie ``about_version.py``
+    #. Użyj kodu z sekcji "Input" (patrz poniżej)
+    #. Uruchom kod swoim IDE (prawy klawisz myszy na kodzie -> "Run File in Python Console")
+    #. Jaka wersja Python jest zainstalowana?
+    #. Zalecana jest najnowasza oficjalna wersja Python
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        import sys
+
+        print(sys.version)
+
+:Output:
+    .. code-block:: text
+
+        3.8.2 (default, Mar 11 2020, 00:29:50)
+        [Clang 11.0.0 (clang-1100.0.33.17)]
+
+:The whys and wherefores:
+    * Czy Python działa
+    * Jaka jest wersja Python
+    * Korzystanie z print
+    * Umiejętność uruchamiania skryptów
+    * Szukanie rozwiązań zadań z książki
+
+Check Python Environment
+------------------------
+* Complexity level: easy
+* Lines of code to write: 0 lines
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/about_env.py`
+
+#. Stwórz plik o nazwie ``about_env.py``
+#. Plik ma mieć zawartość:
+
+    .. code-block:: python
+
+        import sys
+        import os
+
+        print(f'Python Executable: {sys.executable}')
+        print(f'Python Version: {sys.version}')
+        print(f'Virtualenv: {os.getenv("VIRTUAL_ENV")}')
+
+#. Uruchom go w swoim IDE (menu ``Run -> Run... -> nazwa Twojego skryptu``)
+#. Gdzie Python jest zainstalowany?
+#. Czy korzystasz z "Virtualenv"?
+#. Upewnij się, że w linijce z "Virtualenv" nie masz ``None``
+
+:The whys and wherefores:
+    * Czy Python działa
+    * Jaka jest wersja Python
+    * Czy korzystasz z Virtualenv
+    * Korzystanie z print
+    * Umiejętność uruchamiania skryptów
+    * Szukanie rozwiązań zadań z książki

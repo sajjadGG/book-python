@@ -65,18 +65,21 @@ Rounding Numbers
 
     pi = 3.14159265359
 
-    round(pi)               # 3
-    round(pi, 2)            # 3.14
     round(pi, 4)            # 3.1416
+    round(pi, 2)            # 3.14
+    round(pi)               # 3
 
-    print(f'{pi:.2f}')      # 3.14
-    print(f'{pi:.4f}')      # 3.1416
+    print(f'Pi number is {pi}')         # Pi number is 3.14159265359
+    print(f'Pi number is {pi:f}')       # Pi number is 3.141593
+    print(f'Pi number is {pi:.4f}')     # Pi number is 3.1416
+    print(f'Pi number is {pi:.2f}')     # Pi number is 3.14
 
 
 Numeric Functions
 =================
 * ``abs()`` - Absolute value
 * ``pow()`` - Number to the ``n-th`` power
+* Note, that arithetic operator ``**`` also raises number to the power
 
 .. code-block:: python
     :caption: ``pow()`` - Number to the ``n-th`` power

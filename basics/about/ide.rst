@@ -36,23 +36,23 @@ Which one is the best?
 Open Source
 -----------
 #. `PyCharm Community <https://www.jetbrains.com/pycharm/download/>`_
+#. Visual Studio Code
+#. Jupyter Notebook
 #. `PyDev <http://www.pydev.org/download.html>`_
 #. Spyder
 #. Atom
-#. Jupyter Notebook
 #. Rodeo
 
 Not-free
 --------
 #. `PyCharm Professional <https://www.jetbrains.com/pycharm/download/>`_
-#. Visual Studio Code
 
-
-PyCharm
-=======
 
 Keyboard shortcuts
-------------------
+==================
+
+PyCharm
+-------
 .. csv-table:: Keyboard shortcuts
     :header-rows: 1
     :widths: 25, 75
@@ -75,118 +75,57 @@ Keyboard shortcuts
 Assignments
 ===========
 
-Create Project in Pure Python
------------------------------
-* Lines of code to write: 0 lines
-* Estimated time of completion: 2 min
-
-#. Stwórz projekt w Twoim IDE
-#. Wybierz "Pure Python" (opcja dostępna tylko w Pycharm Professional)
-#. Rozwiń listę Project Interpreter i ustaw aby korzystać z "Virtualenv"
-#. WAŻNE: Upewnij się, że masz Python 3.7 lub nowszy
-#. Po stworzeniu projektu, załóż katalog o nazwie jak twoje nazwisko i imie ``nazwisko_imie``
-#. WAŻNE: Już do końca książki w nim będą tworzone rozwiązania do wszystkich zadań
-
 Create Project from Git
 -----------------------
 * Lines of code to write: 0 lines
 * Estimated time of completion: 2 min
 
-#. Stwórz projekt w Twoim IDE
-#. Wykorzystaj opcję 'Create from VCS'
-#. WAŻNE: Upewnij się, że masz Python 3.7 lub nowszy
-#. Stwórz plik ``.gitignore``
-#. Wpisz linię ``.idea/`` do pliku
-#. Po stworzeniu projektu, załóż katalog o nazwie jak twoje nazwisko i imie ``nazwisko_imie``
-#. WAŻNE: Już do końca książki w nim będą tworzone rozwiązania do wszystkich zadań
+:Polish:
+    #. Stwórz projekt w Twoim IDE wykorzystując opcję 'Create from VCS'
+    #. Trener poda Ci link do repozytorium
+    #. Sugestia: możesz zapisać katalog z projektem na pulpicie, aby łatwiej było znaleźć pliki
+    #. Kliknij "clone" i zaczekaj na pobranie repozytorium
+    #. Upewnij się, że w repozytorium jest plik ``.gitignore`` i ma zawartość
+    #. Po stworzeniu projektu, załóż katalog o nazwie jak twoje nazwisko i imie ``nazwisko_imie``
+    #. WAŻNE: Już do końca książki w nim będą tworzone rozwiązania do wszystkich zadań
+    #. Dzięki oddzielnym katalogom dla każdego uczestnika unikinemy konfliktów w Git
 
-Check Python Version
---------------------
-* Complexity level: easy
+Create Project in Pure Python
+-----------------------------
 * Lines of code to write: 0 lines
-* Estimated time of completion: 5 min
-* Solution: :download:`solution/about_version.py`
-
-:English:
-    #. Create file wih name ``about_version.py``
-    #. Use code from "Input" section (see below)
-    #. Run code in your IDE (right click on code -> "Run File in Python Console")
-    #. What Python version is installed?
+* Estimated time of completion: 2 min
 
 :Polish:
-    #. Stwórz skrypt o nazwie ``about_version.py``
-    #. Użyj kodu z sekcji "Input" (patrz poniżej)
-    #. Uruchom kod swoim IDE (prawy klawisz myszy na kodzie -> "Run File in Python Console")
-    #. Jaka wersja Python jest zainstalowana?
-
-:Input:
-    .. code-block:: python
-
-        import sys
-
-        print(sys.version)
-
-
-:The whys and wherefores:
-    * Czy Python działa
-    * Jaka jest wersja Python
-    * Korzystanie z print
-    * Umiejętność uruchamiania skryptów
-    * Szukanie rozwiązań zadań z książki
-
-Check Python Environment
-------------------------
-* Complexity level: easy
-* Lines of code to write: 0 lines
-* Estimated time of completion: 5 min
-* Solution: :download:`solution/about_env.py`
-
-#. Stwórz plik o nazwie ``python_env.py``
-#. Plik ma mieć zawartość:
-
-    .. code-block:: python
-
-        import sys
-        import os
-
-        print(f'Installation: {sys.executable}')
-        print(f'Virtualenv: {os.getenv("VIRTUAL_ENV")}')
-
-#. Uruchom go w swoim IDE (menu ``Run -> Run... -> nazwa Twojego skryptu``)
-#. Gdzie Python jest zainstalowany?
-#. Czy korzystasz z "Virtualenv"?
-#. Upewnij się, że w linijce z "Virtualenv" nie masz ``None``
-
-:The whys and wherefores:
-    * Czy Python działa
-    * Jaka jest wersja Python
-    * Czy korzystasz z Virtualenv
-    * Korzystanie z print
-    * Umiejętność uruchamiania skryptów
-    * Szukanie rozwiązań zadań z książki
+    #. Stwórz projekt w Twoim IDE
+    #. Wybierz "Pure Python" (opcja dostępna tylko w Pycharm Professional)
+    #. Rozwiń listę Project Interpreter i ustaw aby korzystać z "Virtualenv"
+    #. WAŻNE: Upewnij się, że masz Python 3.7 lub nowszy
+    #. Po stworzeniu projektu, załóż katalog o nazwie jak twoje nazwisko i imie ``nazwisko_imie``
+    #. WAŻNE: Już do końca książki w nim będą tworzone rozwiązania do wszystkich zadań
 
 Know thou IDE
 -------------
 * Lines of code to write: 0 lines
 * Estimated time of completion: 10 min
 
-#. Jak zrobić w Twoim IDE:
+:Polish:
+    #. Jak zrobić w Twoim IDE:
 
-    * Run...
-    * Run in console
-    * Debug...
-    * Python Console
-    * Terminal
-    * Full Screen
-    * Distraction Free Mode
-    * Reformat Code
-    * Scope
+        * Run...
+        * Run in console
+        * Debug...
+        * Python Console
+        * Terminal
+        * Full Screen
+        * Distraction Free Mode
+        * Reformat Code
+        * Scope
 
-#. Jakie są skróty klawiszowe do poszczególnych opcji?
-#. Czym się różni ``Run...`` od ``Debug...``?
-#. Czym się różni ``Python Console`` od ``Terminal``
-#. Czym się różni ``Distraction Free Mode`` od ``Full Screen``
-#. Ustaw Scope tak, aby ukryć katalog z Virtualenv
+    #. Jakie są skróty klawiszowe do poszczególnych opcji?
+    #. Czym się różni ``Run...`` od ``Debug...``?
+    #. Czym się różni ``Python Console`` od ``Terminal``
+    #. Czym się różni ``Distraction Free Mode`` od ``Full Screen``
+    #. Ustaw Scope tak, aby ukryć katalog z Virtualenv
 
 :The whys and wherefores:
     * Korzystanie z IDE
@@ -199,9 +138,10 @@ Spellchecker
 * Lines of code to write: 0 lines
 * Estimated time of completion: 3 min
 
-#. Zainstaluj plugin 'Hunspell'
-#. Pobierz z https://github.com/LibreOffice/dictionaries słownik ``.dic`` oraz ``.aff`` dla języka polskiego
-#. Skonfiguruj IDE do korzystania z tego słownika
+:Polish:
+    #. Zainstaluj plugin 'Hunspell'
+    #. Pobierz z https://github.com/LibreOffice/dictionaries słownik ``.dic`` oraz ``.aff`` dla języka polskiego
+    #. Skonfiguruj IDE do korzystania z tego słownika
 
 :The whys and wherefores:
     * Korzystanie z IDE

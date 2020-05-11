@@ -36,8 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* Replace solution links to chapter */
     document.querySelectorAll('a.download').forEach( (a) => {
-        let chapter = window.location.pathname.split('/')[1];
-        a.innerHTML = a.innerHTML.replace('solution',  chapter);
+        // let chapter = window.location.pathname.split('/')[1];
+        // a.innerHTML = a.innerHTML.replace('solution',  chapter);
+        a.innerHTML = a.innerHTML.replace('solution/', '');
     });
 
 
