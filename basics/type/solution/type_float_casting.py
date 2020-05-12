@@ -1,7 +1,8 @@
 m = 1337
 km = m / 1000
-mi = m / 1608
+mi = m / 1609.344
 nm = m / 1852
+
 
 print(f'Meters: {m}')
 print(f'Kilometers: {km}')

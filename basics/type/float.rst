@@ -177,9 +177,9 @@ Float Casting
     * Separation of business logic and view
 
 :Hints:
-    * 1000 m = 1 km
-    * 1608 m = 1 mile
-    * 1852 m = 1 nautical mile
+    * 1 km = 1000 m
+    * 1 mile = 1609.344 m
+    * 1 nautical mile = 1852 m
 
 Float Calculation
 -----------------
