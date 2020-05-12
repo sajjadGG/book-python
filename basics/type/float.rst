@@ -234,7 +234,7 @@ Float Calculation
     * 1 hPa = 100 Pa
     * 1 psi = 6894.757 Pa
 
-Flat Percent
+Float Percent
 ------------
 * Complexity level: medium
 * Lines of code to write: 9 lines
