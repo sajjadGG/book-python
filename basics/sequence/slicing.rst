@@ -5,8 +5,8 @@ Sequence Slicing
 ****************
 
 
-Slicing Sequences
-=================
+Slice Sequences
+===============
 .. code-block:: python
     :caption: Slicing ``str``
 
@@ -58,21 +58,11 @@ Slicing Sequences
     # TypeError: 'frozenset' object is not subscriptable
 
 
-Accessing Range of Elements
-===========================
+Slice Forwards
+==============
 .. highlights::
     * ``my_sequence[start:stop]``
 
-.. code-block:: python
-
-    text = 'We choose to go to the Moon!'
-
-    len(text)
-    # 28
-
-
-Accessing Slice from Start
-==========================
 .. code-block:: python
 
     text = 'We choose to go to the Moon!'
@@ -87,8 +77,8 @@ Accessing Slice from Start
     text[23:]       # 'Moon!'
 
 
-Accessing Slice from Back
-=========================
+Slice Backwards
+===============
 .. highlights::
     * Negative index starts from the end and go right to left
 
@@ -114,8 +104,8 @@ Accessing Slice from Back
     text[-5:5]      # ''
 
 
-Every ``n-th`` Element
-======================
+Slice Every ``n-th``
+====================
 .. highlights::
     * ``my_sequence[start:stop:step]``
 
@@ -129,25 +119,14 @@ Every ``n-th`` Element
     text[::-2]            # '!oMeto go soce'
 
 
-Accessing Slice not Existing Elements
-=====================================
+Slice Missing
+=============
 .. code-block:: python
 
     text = 'We choose to go to the Moon!'
 
     text[:100]      # 'We choose to go to the Moon!'
     text[100:]      # ''
-
-
-Accessing Slice from All Elements
-=================================
-* Used in ``numpy`` to get all rows or columns
-
-.. code-block:: python
-
-    text = 'We choose to go to the Moon!'
-
-    text[:]         # 'We choose to go to the Moon!'
 
 
 Arithmetic Operations on Slice Indexes
@@ -197,6 +176,55 @@ Slicing Nested Sequences
     #   [1, 2, 3],
     #   [7, 8, 9],
     # ]
+
+    data[::2][1]
+    # [7, 8, 9]
+
+    data[::2][:1]
+    # [[1, 2, 3]]
+
+    data[::2][1][1:]
+    # [8, 9]
+
+Slice All
+=========
+.. code-block:: python
+
+    text = 'We choose to go to the Moon!'
+
+    text[:]         # 'We choose to go to the Moon!'
+
+.. code-block:: python
+    :caption: Used in ``numpy`` to get all rows or columns
+
+    import numpy as np
+
+    data = np.array([
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+    ])
+
+    data[:, 1]
+    # array([2, 5, 8])
+
+.. code-block:: python
+    :caption: This unfortunately does not work on ``list``
+
+    data = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+    ]
+
+    data[:]
+    # [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+    data[:, 1]
+    # TypeError: list indices must be integers or slices, not tuple
+
+    data[:][1]
+    # [4, 5, 6]
 
 
 Slice Function
