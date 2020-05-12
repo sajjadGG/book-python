@@ -200,20 +200,22 @@ Float Calculation
     #. Operational pressure of ORLAN spacesuit: 400 hPa
     #. Calculate operational pressure in kPa for EMU
     #. Calculate operational pressure in PSI for Orlan
-    #. Calculate International Standard Atmosphere pressure at sea level
-    #. Calculate partial pressure of Oxygen at sea level
-    #. At what altitude above sea level, pressure is equal to partial pressure of Oxygen
     #. Print all results in kPa and PSI rounding to two decimal places
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Ciśnienie operacyjne skafandra kosmicznego EMU: 4.3 PSI
     #. Ciśnienie operacyjne skafandra kosmicznego ORLAN: 400 hPa
     #. Oblicz ciśnienie operacyjne skafandra EMU w kPa
     #. Oblicz ciśnienie operacyjne skafandra Orlan w PSI
-    #. Oblicz ciśnienie standardowej atmosfery na poziomie morza
-    #. Oblicz ciśnienie parcjalne tlenu na poziomie morza
-    #. Na jakiej wysokości nad poziomem morza panuje ciśnienie równe ciśnieniu parcjalnemu tlenu?
     #. Wypisz wszystkie wyniki w kPa oraz PSI zaokrąglając do dwóch miejsc po przecinku
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Output:
+    .. code-block:: text
+
+        EMU operating pressure: 29.65 kPa, 4.30 psi
+        Orlan operating pressure: 40.00 kPa, 5.80 psi
 
 :The whys and wherefores:
     * Defining constants and variables
@@ -229,9 +231,48 @@ Float Calculation
     EMU and Orlan
 
 :Hint:
-    * 1 ata = 1013.25 hPa (ISA - International Standard Atmosphere)
+    * 1 hPa = 100 Pa
     * 1 psi = 6894.757 Pa
-    * pressure gradient = -11.3 Pa / 1 meter
+
+Flat Percent
+------------
+* Complexity level: medium
+* Lines of code to write: 9 lines
+* Estimated time of completion: 10 min
+* Solution: :download:`solution/type_float_percent.py`
+
+:English:
+    #. Calculate International Standard Atmosphere pressure at sea level
+    #. Calculate partial pressure of Oxygen at sea level
+    #. At what altitude above sea level, pressure is equal to partial pressure of Oxygen
+    #. Print all results in kPa rounding to two decimal places
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Oblicz ciśnienie standardowej atmosfery na poziomie morza
+    #. Oblicz ciśnienie parcjalne tlenu na poziomie morza
+    #. Na jakiej wysokości nad poziomem morza panuje ciśnienie równe ciśnieniu parcjalnemu tlenu?
+    #. Wypisz wszystkie wyniki w kPa zaokrąglając do dwóch miejsc po przecinku
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Output:
+    .. code-block:: text
+
+        O2 partial pressure at sea level: 212.24 hPa
+        International Standard Atmosphere: 1013.25 hPa
+        Death altitude: 7088.63 m
+
+:The whys and wherefores:
+    * Defining constants and variables
+    * Naming convention
+    * Print formatting
+    * Mathematical operations
+    * Separation of business logic and view
+
+:Hint:
+    * 1 hPa = 100 Pa
+    * 1 ata = 1013.25 hPa (ISA - International Standard Atmosphere)
+    * pressure gradient = -11.3 Pa / 1 m
     * Atmosphere gas composition:
 
         * Nitrogen 78.084%
