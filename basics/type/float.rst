@@ -146,28 +146,35 @@ Float Casting
 
 :English:
     #. Use code from "Input" section (see below)
-    #. Print values in other units
-    #. Convert data to types shown in comments at the right side
+    #. Convert units
     #. Instead ``...`` substitute calculated and converted values
-    #. Do not use ``input()``
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj kodu z sekcji "Input" (patrz poniżej)
-    #. Wypisz wartość w różnych jednostkach
-    #. Przekonwertuj dane do typów podanych w komentarzu po prawej stronie
+    #. Przekonwertuj jednostki
     #. Zamiast ``...`` podstaw wyliczone i przekonwertowane wartości
-    #. Nie używaj ``input()``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
 
         m = 1337
 
-        print(f'Meters: {...}')                              # int
-        print(f'Kilometers: {...}')                          # float
-        print(f'Miles: {...}')                               # float (two decimal places)
-        print(f'Nautical Miles: {...}')                      # float (two decimal places)
-        print(f'm: {...}, km: {...}, mi: {...}, nm: {...}')  # int, int, float (one decimal place), float (one decimal place)
+        print(f'Meters: {...}')
+        print(f'Kilometers: {...}')
+        print(f'Miles: {...}')
+        print(f'Nautical Miles: {...}')
+        print(f'm: {...}, km: {...}, mi: {...}, nm: {...}')
+
+:Output:
+    .. code-block:: text
+
+        Meters: 1337
+        Kilometers: 1.337
+        Miles: 0.83
+        Nautical Miles: 0.72
+        All: 1337, 1, 0.8, 0.7
 
 :The whys and wherefores:
     * Defining constants and variables

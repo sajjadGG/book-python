@@ -418,9 +418,14 @@ String Cleaning
         i = 'Jana III Sobi\teskiego '
 
         a = a.replace('ul', '').title().replace('Iii', 'III').strip()
-        b = ...
-        c = ...
-        d = ...
+        b = b
+        c = c
+        d = d
+        e = e
+        f = f
+        g = g
+        h = h
+        i = i
 
         expected = 'Jana III Sobieskiego'
 
