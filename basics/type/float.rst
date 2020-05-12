@@ -192,7 +192,7 @@ Float Calculation
 -----------------
 * Complexity level: medium
 * Lines of code to write: 20 lines
-* Estimated time of completion: 20 min
+* Estimated time of completion: 10 min
 * Solution: :download:`solution/type_float_calculation.py`
 
 :English:
