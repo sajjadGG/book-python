@@ -33,6 +33,12 @@ Positive and negative values
 Syntax
 ------
 .. code-block:: python
+    :caption: ``while`` loop generic syntax
+
+    if <CONDITION>:
+        <todo when CONDITION is True>
+
+.. code-block:: python
     :caption: Single line statements
 
     if True:

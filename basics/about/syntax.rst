@@ -16,8 +16,12 @@ Variables
     :caption: Variable declaration
 
     name = 'Mark Watney'
+
     first_name = 'Mark'
     last_name = 'Watney'
+
+    firstname = 'Mark'
+    lastname = 'Watney'
 
 .. code-block:: python
     :caption: Variables vs. constants - Names are case sensitive
@@ -38,8 +42,9 @@ Constants
 .. code-block:: python
     :caption: "Constant" declaration
 
-    PATH = '/etc/passwd'
+    FILE = '/etc/passwd'
     FILE_NAME = '/etc/shadow'
+    FILENAME = '/etc/group'
 
 .. code-block:: python
     :caption: Python allows you to change "constants" but it's a bad practice (good IDE will tell you)
@@ -60,8 +65,6 @@ Printing Values
 .. highlights::
     * Prints on the screen
     * f-string formatting for variable substitution
-    * ``\n`` - Escape character for newline
-    * ``print()`` adds ``'\n'`` at the end
     * More in :ref:`Builtin Printing`
 
 .. code-block:: python
@@ -79,10 +82,6 @@ Printing Values
 
     print(f'My name... {name}')
     # My name... José Jiménez
-
-    print(f'My name...\n\t{name}')
-    # My name...
-    #     José Jiménez
 
 
 End of Lines

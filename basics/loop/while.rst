@@ -15,7 +15,7 @@ Syntax
     :caption: ``while`` loop generic syntax
 
     while <CONDITION>:
-        ...
+        <todo when CONDITION is True>
 
 
 Use Cases
@@ -23,6 +23,8 @@ Use Cases
 
 Never ending loop
 -----------------
+* Used in servers to wait forever for incommig connections
+
 .. code-block:: python
     :caption: Never ending loop
 
@@ -58,12 +60,12 @@ Iterating over sequence
     data = ['a', 'b', 'c']
 
     while i < len(data):
-        print(data[i])
+        print(i, data[i])
         i += 1
 
-    # 'a'
-    # 'b'
-    # 'c'
+    # 0 'a'
+    # 1 'b'
+    # 2 'c'
 
 Exit flag
 ---------
@@ -73,53 +75,49 @@ Exit flag
 .. code-block:: python
     :caption: Exit flag
 
-    i = 10
+    print('Ignition sequence started')
     abort = False
+    i = 10
 
     while not abort:
         print(i)
         i -= 1
 
         if i == 6:
-            print('Abort, Abort, Abort!')
+            print('Fuel leak detected. Abort, Abort, Abort!')
             abort = True
 
+    # Ignition sequence started
     # 10
     # 9
     # 8
     # 7
-    # Abort, Abort, Abort!
+    # Fuel leak detected. Abort, Abort, Abort!
 
 
-``break`` and ``continue``
-==========================
-
-Skipping iterations
--------------------
-.. highlights::
-    * if ``continue`` is encountered, it will jump to next loop iteration
-
+Force exit the loop
+===================
 .. code-block:: python
-    :caption: Skipping iterations using ``continue`` keyword
+    :caption: Force exit the loop using ``break`` keyword
 
-    i = 0
+    print('Ignition sequence started')
+    i = 10
 
-    while i < 10:
-        print(i, end=', ')
-        i += 1
+    while True:
+        print(i)
+        i -= 1
 
-        if i % 3:
-            continue
-        else:
-            print(end='\n')
+        if i == 6:
+            print('Fuel leak detected. Abort, Abort, Abort!')
+            break
 
-    # 0, 1, 2,
-    # 3, 4, 5,
-    # 6, 7, 8,
-    # 9,
+    # Ignition sequence started
+    # 10
+    # 9
+    # 8
+    # 7
+    # Fuel leak detected. Abort, Abort, Abort!
 
-Exiting the loop
-----------------
 .. code-block:: python
     :caption: Exiting the loop using ``break`` keyword
 
@@ -131,6 +129,49 @@ Exiting the loop
             # without typing a number
             break
 
+Force skip iteration
+--------------------
+.. highlights::
+    * if ``continue`` is encountered, it will jump to next loop iteration
+
+.. code-block:: python
+    :caption: Force skip iteration using ``continue`` keyword
+
+    all_astronauts = ['Mark Watney', 'Jan Twardowski', 'Melissa Lewis', 'Jose Jimenez']
+    assigned_to_mission = ['Mark Watney', 'Melissa Lewis']
+    i = 0
+
+    while i < len(all_astronauts):
+        name = all_astronauts[i]
+        i += 1
+
+        if name not in assigned_to_mission:
+            continue
+
+        print(name)
+
+    # Mark Watney
+    # Melissa Lewis
+
+.. code-block:: python
+    :caption: Force skip iteration using ``continue`` keyword
+
+    i = 0
+
+    while i < 10:
+        print(i, end=', ')
+        i += 1
+
+        if i % 3:
+            continue
+
+        print(end='\n')
+
+    # 0, 1, 2,
+    # 3, 4, 5,
+    # 6, 7, 8,
+    # 9,
+
 
 Assignments
 ===========
@@ -139,7 +180,7 @@ Report card
 -----------
 * Complexity level: medium
 * Lines of code to write: 15 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 15 min
 * Solution: :download:`solution/loop_while_report_card.py`
 
 :English:
@@ -158,8 +199,8 @@ Report card
     #. Przekonwertuj ``DATA`` do ``List[float]`` używając pętli ``while`` i nazwij ``grade_scale``
     #. Poproś użytkownika o ocenę, jedną na raz
     #. Użytkownik poda tylko poprawne ``int`` lub ``float``
-    #. Jeżeli ocena jest na nowej skali - dodaj ją do dzienniczka
-    #. Jeżeli oceny nie ma na liście - wyświetl "Grade is not allowed" i kontynuuj wpisywanie
+    #. Jeżeli ocena jest w ``grade_scale`` - dodaj ją do dzienniczka
+    #. Jeżeli oceny nie ma w ``grade_scale`` - wyświetl "Grade is not allowed" i kontynuuj wpisywanie
     #. Jeżeli użytkownik wcisnął Enter, zakończ wprowadzanie danych
     #. Na zakończenie wyświetl wyliczoną dla dzienniczka średnią arytmetyczną
     #. Przetestuj przypadek, gdy dzienniczek jest pusty
