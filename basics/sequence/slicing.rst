@@ -5,59 +5,62 @@ Sequence Slicing
 ****************
 
 
-Slice Function
-==============
-.. highlights::
-    * ``slice()`` arguments must be ``int`` (positive, negative or zero)
-    * start (inclusive), default: 0
-    * stop (exclusive), default: len(...)
-    * step, default: 1
+Slicing Sequences
+=================
+.. code-block:: python
+    :caption: Slicing ``str``
+
+    data = 'abcde'
+
+    data[:3]            # 'abc'
+    data[3:]            # 'de'
+    data[1:4]           # 'bcd'
+    data[::2]           # 'ace'
+    data[::-1]          # 'edcba'
 
 .. code-block:: python
+    :caption: Slicing ``tuple``
 
-    data = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+    data = ('a', 'b', 'c', 'd', 'e')
 
-    get =
-    data[slice(1)]
-    # ['a']
-
-    get = slice(2, 7)
-    data[get]
-    # ['c', 'd', 'e', 'f', 'g']
-
-    get = slice(2, 7, 2)
-    data[get]
-    # ['c', 'e', 'g']
+    data[:3]            # ('a', 'b', 'c')
+    data[3:]            # ('d', 'e')
+    data[1:4]           # ('b', 'c', 'd')
+    data[::2]           # ('a', 'c', 'e')
+    data[::-1]          # ('e', 'd', 'c', 'b', 'a')
 
 .. code-block:: python
+    :caption: Slicing ``list``
 
-    data = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    data = ['a', 'b', 'c', 'd', 'e']
 
-    get = slice(1)
-    data[get]
-    # [0]
+    data[:3]            # ['a', 'b', 'c']
+    data[3:]            # ['d', 'e']
+    data[1:4]           # ['b', 'c', 'd']
+    data[::2]           # ['a', 'c', 'e']
+    data[::-1]          # ['e', 'd', 'c', 'b', 'a']
 
-    get = slice(2, 7)
-    data[get]
-    # [2, 3, 4, 5, 6]
-
-    get = slice(2, 7, 2)
-    data[get]
-    # [2, 4, 6]
 
 .. code-block:: python
+    :caption: Slicing ``set`` is not possible
 
-    text = 'We choose to go to the Moon!'
-    get = slice(23, 28)
+    data = {'a', 'b', 'c', 'd', 'e'}
 
-    text[get]
-    # 'Moon!'
+    data[:3]
+    # TypeError: 'set' object is not subscriptable
+
+.. code-block:: python
+    :caption: Slicing ``set`` is not possible
+
+    data = frozenset({'a', 'b', 'c', 'd', 'e'})
+
+    data[:3]
+    # TypeError: 'frozenset' object is not subscriptable
 
 
 Accessing Range of Elements
 ===========================
 .. highlights::
-    * Definitely more common syntax
     * ``my_sequence[start:stop]``
 
 .. code-block:: python
@@ -75,18 +78,12 @@ Accessing Slice from Start
     text = 'We choose to go to the Moon!'
 
     text[0:2]       # 'We'
-    text[0:9]       # 'We choose'
-
-    text[16:28]     # 'to the Moon!'
-    text[23:28]     # 'Moon!'
-
-    text[3:9]       # 'choose'
-    text[23:27]     # 'Moon'
-
     text[:2]        # 'We'
+
+    text[0:9]       # 'We choose'
     text[:9]        # 'We choose'
 
-    text[16:]       # 'to the Moon!'
+    text[23:28]     # 'Moon!'
     text[23:]       # 'Moon!'
 
 
@@ -185,61 +182,6 @@ Arithmetic Operations on Slice Indexes
     text[first-1:last:step]     # 'eoh'
 
 
-Slicing Sequences
-=================
-
-Slicing ``str``
----------------
-.. code-block:: python
-
-    data = 'abcde'
-
-    data[:3]            # 'abc'
-    data[3:]            # 'de'
-    data[1:4]           # 'bcd'
-    data[::2]           # 'ace'
-    data[::-1]          # 'edcba'
-
-Slicing ``tuple``
------------------
-.. code-block:: python
-
-    data = ('a', 'b', 'c', 'd', 'e')
-
-    data[:3]            # ('a', 'b', 'c')
-    data[3:]            # ('d', 'e')
-    data[1:4]           # ('b', 'c', 'd')
-    data[::2]           # ('a', 'c', 'e')
-    data[::-1]          # ('e', 'd', 'c', 'b', 'a')
-
-Slicing ``list``
-----------------
-.. highlights::
-    * Slicing works the same as for ``str``
-
-.. code-block:: python
-
-    data = ['a', 'b', 'c', 'd', 'e']
-
-    data[:3]            # ['a', 'b', 'c']
-    data[3:]            # ['d', 'e']
-    data[1:4]           # ['b', 'c', 'd']
-    data[::2]           # ['a', 'c', 'e']
-    data[::-1]          # ['e', 'd', 'c', 'b', 'a']
-
-Slicing ``set``
----------------
-.. highlights::
-    * Slicing ``set`` is not possible
-
-.. code-block:: python
-
-    data = {'a', 'b', 'c', 'd', 'e'}
-
-    data[:3]
-    # TypeError: 'set' object is not subscriptable
-
-
 Slicing Nested Sequences
 ========================
 .. code-block:: python
@@ -255,6 +197,63 @@ Slicing Nested Sequences
     #   [1, 2, 3],
     #   [7, 8, 9],
     # ]
+
+
+Slice Function
+==============
+.. highlights::
+    * ``slice()`` arguments must be ``int`` (positive, negative or zero)
+    * start (inclusive), default: 0
+    * stop (exclusive), default: len(...)
+    * step, default: 1
+
+.. code-block:: python
+
+    data = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+    get = slice(1)
+
+    data[get]
+    # ['a']
+
+.. code-block:: python
+
+    data = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+    get = slice(2, 7)
+
+    data[get]
+    # ['c', 'd', 'e', 'f', 'g']
+
+.. code-block:: python
+
+    data = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+    get = slice(2, 7, 2)
+
+    data[get]
+    # ['c', 'e', 'g']
+
+.. code-block:: python
+
+    data = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    get = slice(1)
+    data[get]
+    # [0]
+
+    get = slice(2, 7)
+    data[get]
+    # [2, 3, 4, 5, 6]
+
+    get = slice(2, 7, 2)
+    data[get]
+    # [2, 4, 6]
+
+.. code-block:: python
+
+    text = 'We choose to go to the Moon!'
+    get = slice(23, 28)
+
+    text[get]
+    # 'Moon!'
 
 
 Assignments

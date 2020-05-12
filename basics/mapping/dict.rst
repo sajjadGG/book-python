@@ -24,21 +24,19 @@ Type Definition
     data = {}
     data = dict()
 
-.. code-block:: python
-    :caption: Initialize with many elements using short notation
+    data = {'a': 1, 'b': 2}
+
+    data = {
+        1: 'Mark Watney',
+        2: 'Jan Twardowski'}
 
     data = {
         'first_name': 'Jan',
-        'last_name': 'Twardowski'
-    }
-
-.. code-block:: python
-    :caption: Initialize with many elements using dict function
+        'last_name': 'Twardowski'}
 
     data = dict(
         first_name='Jan',
-        last_name='Twardowski'
-    )
+        last_name='Twardowski')
 
 .. code-block:: python
     :caption: Duplicating items are overridden by latter
@@ -50,31 +48,15 @@ Type Definition
     # {'species': 'virginica'}
 
 
-Contains
-========
-.. code-block:: python
-
-    data = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski',
-    }
-
-    'first_name' in data
-    # True
-
-    'agency' in data
-    # False
-
-
 Getting Items
 =============
 .. highlights::
     * ``[...]`` throws ``KeyError`` exception if key not found in ``dict``
-    * ``.get()`` returns None if not found, but also allows to set default value
+    * ``.get()`` returns ``None`` if key not found
+    * ``.get()`` can have default value, if key not found
 
-Getitem Method
---------------
 .. code-block:: python
+    :caption: Getitem Method
 
     data = {
         'first_name': 'Jan',
@@ -88,25 +70,7 @@ Getitem Method
     # KeyError: 'agency'
 
 .. code-block:: python
-
-    data = {
-        1961: 'First Human Space Flight',
-        1969: 'First Step on the Moon',
-    }
-
-    data[1961]
-    # 'First Human Space Flight'
-
-    data['1961']
-    # KeyError: '1961'
-
-Get Method
-----------
-.. highlights::
-    * ``.get()`` returns ``None`` if key not found
-    * ``.get()`` can have default value, if key not found
-
-.. code-block:: python
+    :caption: Get Method
 
     data = {
         'first_name': 'Jan',
@@ -119,18 +83,25 @@ Get Method
     data.get('agency')
     # None
 
-    data.get('agency', 'n/a')
-    # 'n/a'
+    data.get('agency', 'unknown')
+    # 'unknown'
 
 .. code-block:: python
+    :caption: Getting keys other than ``str``
 
     data = {
         1961: 'First Human Space Flight',
         1969: 'First Step on the Moon',
     }
 
+    data[1961]
+    # 'First Human Space Flight'
+
     data.get(1961)
     # 'First Human Space Flight'
+
+    data['1961']
+    # KeyError: '1961'
 
     data.get('1961')
     # None
@@ -152,7 +123,7 @@ Get Keys, Values and Key-Value Pairs
     }
 
     list(data.keys())
-    # ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
+    # ['Sepal length', 'Sepal width', 'Petal length', 'Petal width']
 
     list(data.values())
     # [5.8, 2.7, 5.1, 1.9]
@@ -163,7 +134,6 @@ Get Keys, Values and Key-Value Pairs
     #     ('Sepal width', 2.7),
     #     ('Petal length', 5.1),
     #     ('Petal width', 1.9),
-    #     ('Species', 'virginica'),
     # ]
 
 
@@ -259,6 +229,24 @@ Deleting Items
     # 'POLSA'
 
 .. code-block:: python
+    :caption: Popiitem Method
+
+    data = {
+        'first_name': 'Jan',
+        'last_name': 'Twardowski',
+        'agency': 'POLSA',
+    }
+
+    value = data.popitem()
+
+    print(data)
+    # {'first_name', 'Jan',
+    #  'last_name': 'Twardowski'}
+
+    print(value)
+    # ('agency', 'POLSA')
+
+.. code-block:: python
     :caption: Del Keyword
 
     data = {
@@ -336,9 +324,6 @@ Indexing and Slicing
     {1, 2, 3, 4}      # set
     {1: 2, 3: 4}      # dict
 
-    {1, 2,}           # set
-    {1: 2,}           # dict
-
 .. code-block:: python
     :caption: Empty ``dict`` and empty ``set``
 
@@ -352,17 +337,17 @@ Indexing and Slicing
     :caption: Differences
 
     data = {1: 1}
-    isinstance(data, dict)         # True
     isinstance(data, set)          # False
+    isinstance(data, dict)         # True
 
     data = {1}
-    isinstance(data, dict)         # False
     isinstance(data, set)          # True
+    isinstance(data, dict)         # False
 
     data = {}
     isinstance(data, (set, dict))  # True
-    isinstance(data, dict)         # True
     isinstance(data, set)          # False
+    isinstance(data, dict)         # True
 
 
 Length
@@ -372,7 +357,7 @@ Length
     data = {
         'first_name': 'Jan',
         'last_name': 'Twardowski',
-        'age': 42,
+        'agency': 'POLSA',
     }
 
     len(data)

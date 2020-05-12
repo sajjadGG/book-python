@@ -10,17 +10,17 @@ Positive and negative values
 .. highlights::
     Negative values:
 
-        * ``False``
-        * ``None``
-        * ``0``
-        * ``0.0``
-        * ``0+0j``
-        * ``0.0+0.0j``
+        * empty ``bool()`` or ``False``
+        * empty ``int()`` or ``0``
+        * empty ``float()`` or ``0.0``
+        * empty ``complex()`` or ``0+0j`` or ``0.0+0.0j``
         * empty ``str()`` or ``''``
         * empty ``tuple()`` or ``()``
-        * empty ``dict()`` or ``{}``
         * empty ``list()`` or ``[]``
         * empty ``set()``
+        * empty ``frozenset()``
+        * empty ``dict()`` or ``{}``
+        * ``None``
 
     Positive values:
 
@@ -29,8 +29,6 @@ Positive and negative values
 
 ``if``
 ======
-.. highlights::
-    * The same indent level
 
 Syntax
 ------
@@ -60,9 +58,9 @@ Checking for simple value
 .. code-block:: python
     :caption: Inside joke (see :ref:`José Jiménez`)
 
-    job = 'astronaut'
+    country = 'USA'
 
-    if job == 'astronaut':
+    if country == 'USA':
         print('Astronauts are from USA')
 
 .. code-block:: python
@@ -100,7 +98,7 @@ Checking if has value
 .. code-block:: python
 
     name = input('What is your name?: ')
-    # What is your name?: Jan Twardowski<Enter key>
+    # Jan Twardowski<ENTER>
 
     if name:
         print(f'My name is... {name}')
@@ -108,7 +106,8 @@ Checking if has value
 
 .. code-block:: python
 
-    name = None
+    name = input('What is your name?: ')
+    # <ENTER>
 
     if name:
         print(f'My name... {name}')
@@ -126,29 +125,44 @@ Syntax
     :caption: Single line statements
 
     if True:
-        print('First line of the true statement')
+        print('True statement')
     else:
-        print('First line of the false statement')
+        print('Else statement')
 
 .. code-block:: python
     :caption: Multiline blocks
 
     if True:
-        print('First line of the true statement')
-        print('Second line of the true statement')
-        print('Third line of the true statement')
+        print('True statement, first line')
+        print('True statement, second line')
     else:
-        print('First line of the false statement')
-        print('Second line of the false statement')
-        print('Third line of the false statement')
+        print('Else statement, first line')
+        print('Else statement, second line')
+
+.. code-block:: python
+
+    if True:
+        print('Outer block, true statement, first line')
+        print('Outer block, true statement, second line')
+
+        if True:
+            print('Inner block, true statement, first line')
+            print('Inner block, true statement, second line')
+        else:
+            print('Inner block, else statement, fist line')
+            print('Inner block, else statement, second line')
+
+    else:
+        print('Outer block, else statement, first line')
+        print('Outer block, else statement, second line')
 
 Checking if variable is certain value
 -------------------------------------
 .. code-block:: python
 
-    job = 'cosmonaut'
+    country = 'Russia'
 
-    if job == 'astronaut':
+    if country == 'USA':
         print('Astronauts are from USA')
     else:
         print('Cosmonauts are from Russia')
@@ -157,7 +171,7 @@ Checking if variable is certain value
 .. code-block:: python
 
     name = input('What is your name?: ')
-    # What is your name?: <Enter key>
+    # <ENTER>
 
     if name:
         print(f'My name is... {name}')
@@ -194,7 +208,8 @@ Inline ``if``
 
 .. code-block:: python
 
-    language = 'Polish'
+    language = input('What is your name?: ')
+    # Polish<ENTER>
 
     if language == 'English':
         print('Hello')
@@ -218,26 +233,29 @@ Switch statement
 
 .. code-block:: python
 
+    language = input('What is your name?: ')
+    # French<ENTER>
+
     switch = {
         'English': 'Hello',
         'Russian': 'Здравствуйте',
         'German': 'Guten Tag',
         'Polish': 'Witaj',
-    }
+        'default': "I don't speak this language"}
 
-    language = 'French'
-    switch.get(language, "I don't speak this language")
+    switch.get(language, switch['default'])
     # "I don't speak this language"
 
 .. code-block:: python
 
     def switch(key):
-        return {
+        data = {
             'English': 'Hello',
             'Russian': 'Здравствуйте',
             'German': 'Guten Tag',
             'Polish': 'Witaj',
-        }.get(key, "I don't speak this language")
+            'default': "I don't speak this language"}
+        return data.get(language, data['default'])
 
 
     switch('Russian')       # 'Здравствуйте'

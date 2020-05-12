@@ -2,24 +2,25 @@
 Type Annotations
 ****************
 
+
 Tuple
 =====
 .. code-block:: python
     :caption: Generic type annotation
 
-    my_tuple: tuple = ()
-    my_tuple: tuple = tuple()
+    data: tuple = ()
+    data: tuple = tuple()
 
-    my_tuple: tuple = ('a', 2, 3.3)
+    data: tuple = ('a', 2, 3.3)
 
 .. code-block:: python
     :caption: Explicit type annotation
 
     from typing import Tuple
 
-    my_tuple: Tuple[int, int, int] = (1, 2, 3)
-    my_tuple: Tuple[str, str, str] = ('setosa', 'virginica', 'versicolor')
-    my_tuple: Tuple[str, int, float] = ('a', 2, 3.3)
+    data: Tuple[int, int, int] = (1, 2, 3)
+    data: Tuple[str, str, str] = ('setosa', 'virginica', 'versicolor')
+    data: Tuple[str, int, float] = ('a', 2, 3.3)
 
 
 List
@@ -33,9 +34,9 @@ List
     data: list = ['a', 1, 2.2]
 
 .. code-block:: python
+    :caption: Explicit type annotation
 
     from typing import List
-    :caption: Explicit type annotation
 
     data: List[int] = [1, 2, 3, 4]
     data: List[float] = [5.8, 2.7, 5.1, 1.9]
@@ -88,7 +89,7 @@ Frozenset
     from typing import List
 
 
-    DATA: List[tuple] = [
+    data: List[tuple] = [
         (4.7, 3.2, 1.3, 0.2, 'setosa'),
         (7.0, 3.2, 4.7, 1.4, 'versicolor'),
         (7.6, 3.0, 6.6, 2.1, 'virginica'),
@@ -100,7 +101,20 @@ Frozenset
     from typing import List, Tuple
 
 
-    DATA: List[Tuple[float, float, float, float, str]] = [
+    data: List[Tuple[float, float, float, float, str]] = [
+        (4.7, 3.2, 1.3, 0.2, 'setosa'),
+        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+        (7.6, 3.0, 6.6, 2.1, 'virginica'),
+    ]
+
+.. code-block:: python
+    :caption: Explicit type annotation
+
+    from typing import List, Tuple
+
+    Iris = Tuple[float, float, float, float, str]
+
+    data: List[Iris] = [
         (4.7, 3.2, 1.3, 0.2, 'setosa'),
         (7.0, 3.2, 4.7, 1.4, 'versicolor'),
         (7.6, 3.0, 6.6, 2.1, 'virginica'),
@@ -114,7 +128,7 @@ Frozenset
 
     from typing import List
 
-    DATA: List[list] = [
+    data: List[list] = [
         [1, 2, 3],
         [4, 5, 6],
         [7, 8, 9],
@@ -125,7 +139,7 @@ Frozenset
 
     from typing import List
 
-    DATA: List[List[int]] = [
+    data: List[List[int]] = [
         [1, 2, 3],
         [4, 5, 6],
         [7, 8, 9],
@@ -133,14 +147,13 @@ Frozenset
 
 Unions
 ======
-
 .. code-block:: python
     :caption: Generic type annotation
 
-    from typing import List
+    from typing import Union
 
 
-    DATA: List[Union[list, tuple, set]] = [
+    data: List[Union[list, tuple, set]] = [
         [1, 2, 3],
         (4, 5, 6),
         {7, 8, 9},
@@ -149,11 +162,30 @@ Unions
 .. code-block:: python
     :caption: Explicit type annotation
 
-    from typing import Set, List, Union, Tuple
+    from typing import Union, List, Tuple, Set
 
 
-    DATA: List[Union[List[int], Tuple[int, int, int], Set[int]]] = [
+    data: List[Union[List[int], Tuple[int, int, int], Set[int]]] = [
         [1, 2, 3],
         (4, 5, 6),
         {7, 8, 9},
     ]
+
+.. code-block:: python
+    :caption: Explicit type annotation
+
+    from typing import Union, List, Tuple, Set
+
+
+    Row = Union[List[int], Tuple[int, int, int], Set[int]]
+
+    data: List[Row] = [
+        [1, 2, 3],
+        (4, 5, 6),
+        {7, 8, 9},
+    ]
+
+New Features
+============
+.. versionadded:: Python 3.9
+    :pep:`585` Will be possible to use ``list[int]``, ``set[int]`` etc without importing from ``typing``

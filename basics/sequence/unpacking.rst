@@ -15,10 +15,6 @@ Unpacking Values
 
     a, b, c = 1, 2, 3
     a, b, c = (1, 2, 3)
-
-.. code-block:: python
-
-    a, b, c = (1, 2, 3)
     a, b, c = [1, 2, 3]
     a, b, c = {1, 2, 3}
 
@@ -27,25 +23,25 @@ Unpacking Values
     (a, b, c) = (1, 2, 3)
     (a, b, c) = [1, 2, 3]
 
+.. code-block:: python
+
     [a, b, c] = [1, 2, 3]
     [a, b, c] = (1, 2, 3)
+
+.. code-block:: python
+    :caption: Note, that ``set`` is unordered collection
 
     {a, b, c} = {1, 2, 3}
     # SyntaxError: can't assign to literal
 
-.. note::
-    Note, that ``set`` is unordered collection
-
-Too many values to unpack
--------------------------
 .. code-block:: python
+    :caption: Too many values to unpack
 
     a, b, c = [1, 2, 3, 4]
     # ValueError: too many values to unpack (expected 3)
 
-Not enough values to unpack
----------------------------
 .. code-block:: python
+    :caption: Not enough values to unpack
 
     a, b, c, d = [1, 2, 3]
     # ValueError: not enough values to unpack (expected 4, got 3)
@@ -53,10 +49,8 @@ Not enough values to unpack
 
 Unpacking arbitrary number of arguments
 =======================================
-
-Unpacking values at the right side
-----------------------------------
 .. code-block:: python
+    :caption: Unpacking values at the right side
 
     a, b, *c = [1, 2, 3, 4]
 
@@ -64,9 +58,8 @@ Unpacking values at the right side
     b               # 2
     c               # [3, 4]
 
-Unpacking values at the left side
----------------------------------
 .. code-block:: python
+    :caption: Unpacking values at the left side
 
     *a, b, c = [1, 2, 3, 4]
 
@@ -74,9 +67,8 @@ Unpacking values at the left side
     b               # 3
     c               # 4
 
-Unpacking values from both sides at once
-----------------------------------------
 .. code-block:: python
+    :caption: Unpacking values from both sides at once
 
     a, *b, c = [1, 2, 3, 4]
 
@@ -84,16 +76,14 @@ Unpacking values from both sides at once
     b               # [2, 3]
     c               # 4
 
-Cannot unpack from both sides at once
--------------------------------------
 .. code-block:: python
+    :caption: Cannot unpack from both sides at once
 
     *a, b, *c = [1, 2, 3, 4]
     # SyntaxError: two starred expressions in assignment
 
-Unpacking from variable length
-------------------------------
 .. code-block:: python
+    :caption: Unpacking from variable length
 
     a, *b, c = [1, 2]
 
@@ -102,8 +92,9 @@ Unpacking from variable length
     print(c)        # 2
 
 .. code-block:: python
+    :caption: Unpacking requires values for required arguments
 
-    a, *b, c = [1,]
+    a, *b, c = [1]
     # ValueError: not enough values to unpack (expected at least 2, got 1)
 
 
@@ -124,33 +115,6 @@ Naming convention
     first           # 1
     second          # 2
     others          # [3, 4]
-
-.. code-block:: python
-
-    first, second, *others = range(10)
-
-    first           # 0
-    second          # 1
-    others          # [2, 3, 4, 5, 6, 7, 8, 9]
-
-.. code-block:: python
-
-    line = 'ares3,watney,lewis,vogel,johanssen'
-
-    mission, *members = line.split(',')
-
-    mission         # ares3
-    members         # ['watney', 'lewis', 'vogel', 'johanssen']
-
-.. code-block:: python
-
-    line = '5.4,3.9,1.3,0.4,setosa'
-
-    *features, label = line.split(',')
-    avg = sum(features) / len(features)
-
-    label           # 'setosa'
-    avg             # 2.75
 
 
 Omitting values
@@ -208,6 +172,13 @@ Using in a loop
 ===============
 .. code-block:: python
 
+    *features, label = (5.8, 2.7, 5.1, 1.9, 'virginica')
+
+    features        # [5.8, 2.7, 5.1, 1.9]
+    label           # 'virginica'
+
+.. code-block:: python
+
     DATA = [
         (5.8, 2.7, 5.1, 1.9, 'virginica'),
         (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -238,8 +209,34 @@ Using in a loop
     # versicolor
 
 
-Using in a function
-===================
+Examples
+========
+.. code-block:: python
+
+    *features, label = (5.8, 2.7, 5.1, 1.9, 'virginica')
+
+    features        # [5.8, 2.7, 5.1, 1.9]
+    label           # 'virginica'
+
+.. code-block:: python
+
+    line = '5.4,3.9,1.3,0.4,setosa'
+
+    *features, label = line.split(',')
+    avg = sum(features) / len(features)
+
+    label           # 'setosa'
+    avg             # 2.75
+
+.. code-block:: python
+
+    line = 'ares3,watney,lewis,vogel,johanssen'
+
+    mission, *crew = line.split(',')
+
+    mission         # ares3
+    crew            # ['watney', 'lewis', 'vogel', 'johanssen']
+
 .. code-block:: python
 
     def parse(line):
@@ -253,6 +250,14 @@ Using in a function
 
     parse('apollo18,twardowski,ivanovic')
     # APOLLO18 Twardowski and Ivanovic
+
+.. code-block:: python
+
+    first, second, *others = range(10)
+
+    first           # 0
+    second          # 1
+    others          # [2, 3, 4, 5, 6, 7, 8, 9]
 
 
 Assignments

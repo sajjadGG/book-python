@@ -11,17 +11,9 @@ About
     about/ide.rst
     about/install.rst
     about/language.rst
+    about/syntax.rst
+    about/operators.rst
 
-******
-Syntax
-******
-.. toctree::
-    :maxdepth: 1
-    :caption: Syntax
-    :name: Basic Syntax
-
-    syntax/syntax.rst
-    syntax/operators.rst
 
 *****
 Types
@@ -68,6 +60,7 @@ Mappings
     mapping/dict.rst
     mapping/generate.rst
     mapping/nested.rst
+    mapping/type-annotations.rst
 
 ************
 Conditionals

@@ -85,12 +85,6 @@ Control Statements
 
 ``in``
 ------
-.. highlights::
-    * ``in`` checks whether value is in sequence
-    * works with ``tuple``, ``dict``, ``list``, ``set``, ``str``
-    * Checking if something in ``set`` - O(1) :ref:`Performance Optimization Contains`
-    * Checking if something in ``list`` - O(n) :ref:`Performance Optimization Contains`
-
 .. code-block:: python
 
     text = 'Monty Python'

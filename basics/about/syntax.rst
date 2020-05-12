@@ -165,7 +165,7 @@ Pyton Syntax
 * Complexity level: easy
 * Lines of code to write: 2 lines + 2 lines of comment
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/syntax_python.py`
+* Solution: :download:`solution/about_syntax.py`
 
 :English:
     #. Create Python script
