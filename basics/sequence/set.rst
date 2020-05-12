@@ -12,6 +12,7 @@ Sequence ``set``
 Type Definition
 ===============
 .. highlights::
+    * Set is unordered data structure (each time order differs)
     * Do not record element position
     * Do not record order of insertion
     * Do not support indexing
@@ -26,26 +27,32 @@ Type Definition
     data = set()
 
     data = {1}
-    data = {1,}
-    data = {1,2}
+    data = {1, 2, 3}
+    data = {1.1, 2.2, 3.3}
+    data = {True, False}
+    data = {'a', 'b', 'c'}
+    data = {'a', 1, 2.2, True, None}
 
 .. code-block:: python
     :caption: ``set`` stores only unique values.
 
-    data = {1, 3, 1}
-    # {1, 3}
+    {1, 2, 1}
+    # {1, 2}
 
-    data = {1, 2.0, 'Jan'}
-    # {1, 2.0, 'Jan'}
+    {1, 2, 'a'}
+    # {1, 2, 'a'}
 
-    data = {1, 2.0, (3, 4)}
-    # {1, 2.0, (3, 4)}
+    {1, 2, (3, 4)}
+    # {1, 2, (3, 4)}
 
-    data = {1, 2.0, [3, 4]}
+    {1, 2, [3, 4]}
     # TypeError: unhashable type: 'list'
 
-    data = {1, 2.0, {3, 4}}
+    {1, 2, {3, 4}}
     # TypeError: unhashable type: 'set'
+
+    {1, 2, frozenset({3, 4})}
+    # {1, 2, frozenset({3, 4})}
 
 .. code-block:: python
     :caption: ``set`` compares by values, not types
@@ -63,15 +70,35 @@ Type Definition
     # {1.0}
 
 
-frozenset
-=========
-* Immutable ``set``
-* Has all set methods such as ``.intersect()``, ``.subset()`` ``.union()``, etc.
-* One solid block in memory
+Type Casting
+============
+* ``set()`` converts argument to ``set``
 
 .. code-block:: python
 
-    a = frozenset([1, 2, 3])
+    data = [1, 2, 3]
+    set(data)
+    # {1, 2, 3}
+
+.. code-block:: python
+
+    data = (1, 2, 3)
+    set(data)
+    # {1, 2, 3}
+
+.. code-block:: python
+
+    data = {1, 2, 3}
+    set(data)
+    # {1, 2, 3}
+
+.. code-block:: python
+
+    data = frozenset({1, 2, 3})
+    set(data)
+    # {1, 2, 3}
+
+
 
 
 Adding Items
@@ -91,6 +118,30 @@ Adding Single Item
 
     data.add(4)
     # {1, 2, 3, 4}
+
+.. code-block:: python
+
+    data = {1, 2}
+    data.add([3, 4])
+    # TypeError: unhashable type: 'list'
+
+.. code-block:: python
+
+    data = {1, 2}
+    data.add((3, 4))
+    # {1, 2, (3, 4)}
+
+.. code-block:: python
+
+    data = {1, 2}
+    data.add({3, 4})
+    # TypeError: unhashable type: 'set'
+
+.. code-block:: python
+
+    data = {1, 2}
+    data.add(frozenset({3,4}))
+    # {frozenset({3, 4}), 1, 2}
 
 Adding Many Items
 -----------------
@@ -158,7 +209,8 @@ Membership
 Is Disjoint?
 ------------
 .. highlights::
-    * No common elements
+    * ``True`` - if thre are no common elements in ``data`` and ``x``
+    * ``False`` - if any ``x`` element are in data
 
 .. code-block:: python
 
@@ -171,7 +223,8 @@ Is Disjoint?
 Is Subset?
 ----------
 .. highlights::
-    * All elements in both
+    * ``True`` - if ``x`` has all elements from ``data``
+    * ``False`` - if ``x`` don't have element from ``data``
 
 .. code-block:: python
 
@@ -199,7 +252,8 @@ Is Subset?
 Is Superset?
 ------------
 .. highlights::
-    * All elements of ``b`` are in ``a``
+    * ``True`` - if ``data`` has all elements from ``x``
+    * ``False`` - if ``data`` don't have element from ``x``
 
 .. code-block:: python
 
@@ -230,7 +284,7 @@ Basic Operations
 Union
 -----
 .. highlights::
-    * returns elements from ``a`` and ``b``
+    * returns sum of elements from ``data`` and ``x``
 
 .. code-block:: python
 
@@ -251,7 +305,7 @@ Union
 Difference
 ----------
 .. highlights::
-    * returns elements from ``a`` which are not in ``b``
+    * returns elements from ``data`` which are not in ``x``
 
 .. code-block:: python
 
@@ -272,7 +326,7 @@ Difference
 Symmetric Difference
 --------------------
 .. highlights::
-    * returns elements from ``a`` and ``b``, but without common
+    * returns elements from ``data`` and ``x``, but without common
 
 .. code-block:: python
 
@@ -293,7 +347,7 @@ Symmetric Difference
 Intersection
 ------------
 .. highlights::
-    * common element from each
+    * common element from in ``data`` and ``x``
 
 .. code-block:: python
 
@@ -337,9 +391,9 @@ Set Create
 :English:
     #. Create set ``result`` with elements:
 
+        * 'a'
         * 1
-        * 1.1
-        * 'Mark Watney'
+        * 2.2
 
     #. Print ``result``
     #. Print number of elements in ``result``
@@ -347,9 +401,9 @@ Set Create
 :Polish:
     #. Stwórz zbiór ``result`` z elementami:
 
+        * 'a'
         * 1
-        * 1.1
-        * 'Mark Watney'
+        * 2.2
 
     #. Wypisz ``result``
     #. Wypisz liczbę elementów ``result``
@@ -358,7 +412,7 @@ Set Many
 --------
 * Complexity level: easy
 * Lines of code to write: 13 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 7 min
 * Solution: :download:`solution/sequence_set_many.py`
 
 :English:
@@ -368,6 +422,7 @@ Set Many
     #. From third row create ``set`` and add it to ``result`` using ``.update()``
     #. From fourth row create ``tuple`` and add it to ``result`` using ``.update()``
     #. From fifth row create ``list`` and add it to ``result`` using ``.update()``
+    #. Print sorted ``result``
     #. Compare result with "Output" section (see below)
 
 :Polish:
@@ -377,24 +432,25 @@ Set Many
     #. Na podstawie trzeciego wiersza stwórz ``set`` i dodaj go do ``result`` używając ``.update()``
     #. Na podstawie czwartego wiersza stwórz ``tuple`` i dodaj go do ``result`` używając ``.update()``
     #. Na podstawie piątego wiersza stwórz ``list`` i dodaj go do ``result`` używając ``.update()``
+    #. Wypis posortowany ``result``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. csv-table:: Input data
-        :header: "Row", "Sepal length", "Sepal width", "Petal length", "Petal width", "Species"
+        :header: "Row", "Sepal length", "Sepal width", "Petal length", "Petal width"
         :stub-columns: 1
 
-        "1", "5.8", "2.7", "5.1", "1.9", "virginica"
-        "2", "5.1", "3.5", "1.4", "0.2", "setosa"
-        "3", "5.7", "2.8", "4.1", "1.3", "versicolor"
-        "4", "6.3", "2.9", "5.6", "1.8", "virginica"
-        "5", "6.4", "3.2", "4.5", "1.5", "versicolor"
+        "1", "5.8", "2.7", "5.1", "1.9"
+        "2", "5.1", "3.5", "1.4", "0.2"
+        "3", "5.7", "2.8", "4.1", "1.3"
+        "4", "6.3", "2.9", "5.6", "1.8"
+        "5", "6.4", "3.2", "4.5", "1.5"
 
 :Output:
     .. code-block:: python
 
         result: set
-        # {0.2, 1.9, 2.7, 3.5, 1.4, 5.8, 5.1, 1.3, 2.8, 4.1, 5.7, 6.3, 6.4, 5.6, 1.5, 4.5, 'versicolor', 'setosa', 3.2, 1.8, 'virginica', 2.9}
+        # {0.2, 1.3, 1.4, 1.5, 1.8, 1.9, 2.7, 2.8, 2.9, 3.2, 3.5, 4.1, 4.5, 5.1, 5.6, 5.7, 5.8, 6.3, 6.4}
 
 :The whys and wherefores:
     * Defining ``set``

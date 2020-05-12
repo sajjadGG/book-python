@@ -23,15 +23,101 @@ Type Definition
     data = []
 
     data = [1]
-    data = [1,]
-
-    data = [1, 2.0, None, False, 'Iris']
-    data = [1, 2.0, None, False, 'Iris',]
+    data = [1, 2, 3]
+    data = [1.1, 2.2, 3.3]
+    data = [True, False]
+    data = ['a', 'b', 'c']
+    data = ['a', 1, 2.2, True, None]
 
 .. code-block:: python
 
-    alphabet = list('ABCDE')
-    # ['A', 'B', 'C', 'D', 'E']
+    list('hello')
+    # ['h', 'e', 'l', 'l', 'o']
+
+    list('ABCD')
+    # ['A', 'B', 'C', 'D']
+
+
+Type Casting
+============
+* ``list()`` converts argument to ``list``
+
+.. code-block:: python
+
+    data = [1, 2, 3]
+    list(data)
+    # [1, 2, 3]
+
+.. code-block:: python
+
+    data = (1, 2, 3)
+    list(data)
+    # [1, 2, 3]
+
+.. code-block:: python
+
+    data = {1, 2, 3}
+    list(data)
+    # [1, 2, 3]
+
+.. code-block:: python
+
+    data = frozenset({1, 2, 3})
+    list(data)
+    # [1, 2, 3]
+
+
+Getting Items
+=============
+.. highlights::
+    * More about indexing in chapter :ref:`Sequence Indexing`
+    * More about slicing in chapter :ref:`Sequence Slicing`
+
+.. code-block:: python
+
+    data = ['a', 'b', 'c', 'd']
+
+    data[0]         # 'a'
+    data[1]         # 'b'
+    data[2]         # 'c'
+    data[3]         # 'd'
+
+
+Setting Items
+=============
+.. code-block:: python
+
+    data = ['a', 'b', 'c', 'd']
+
+    data[0] = 'x'
+    print(data)
+    # ['x', 'b', 'c', 'd']
+
+    data[4] = 'x'
+    # IndexError: list assignment index out of range
+
+Deleting Items
+==============
+.. code-block:: python
+
+    data = ['a', 'b', 'c', 'd']
+
+    del data[3]
+
+    print(data)
+    # ['a', 'b', 'c']
+
+.. code-block:: python
+
+    data = ['a', 'b', 'c', 'd']
+
+    value = data.pop()
+
+    print(data)
+    # ['a', 'b', 'c']
+
+    print(value)
+    # 'd'
 
 
 Adding Elements
@@ -87,58 +173,6 @@ Inserting Elements at Specific Position
 
     data.insert(1, 'a')
     # [1, 'a', 2]
-
-
-Modification
-============
-
-Getting Items
--------------
-.. highlights::
-    * More in :ref:`Sequence Indexing` and :ref:`Sequence Slicing`
-
-.. code-block:: python
-
-    data = ['a', 'b', 'c', 'd']
-
-    data[0]         # 'a'
-    data[1]         # 'b'
-    data[2]         # 'c'
-    data[3]         # 'd'
-
-Setting Items
--------------
-.. code-block:: python
-
-    data = ['a', 'b', 'c', 'd']
-
-    data[0] = 'x'
-
-    print(data)
-    # ['x', 'b', 'c', 'd']
-
-Deleting Items
---------------
-.. code-block:: python
-
-    data = ['a', 'b', 'c', 'd']
-
-    del data[3]
-
-    print(data)
-    # ['a', 'b', 'c']
-
-.. code-block:: python
-
-    data = ['a', 'b', 'c', 'd']
-
-    value = data.pop()
-
-    print(data)
-    # ['a', 'b', 'c']
-
-    print(value)
-    # 'd'
 
 
 Sorting
@@ -201,12 +235,12 @@ Built-in Functions on Sequences
 
 .. code-block:: python
 
-    a = [1, 2, 3, 4, 5]
+    data = [3, 1, 2]
 
-    min(a)      # 1
-    max(a)      # 5
-    sum(a)      # 15
-    len(a)      # 5
+    min(data)      # 1
+    max(data)      # 3
+    sum(data)      # 6
+    len(data)      # 3
 
 
 Assignments
@@ -222,9 +256,9 @@ List Create
 :English:
     #. Create list ``result`` with elements:
 
+        * 'a'
         * 1
-        * 1.1
-        * 'Mark Watney'
+        * 2.2
 
     #. Print ``result``
     #. Print number of elements in ``result``
@@ -232,9 +266,9 @@ List Create
 :Polish:
     #. Stwórz listę ``result`` z elementami:
 
+        * 'a'
         * 1
-        * 1.1
-        * 'Mark Watney'
+        * 2.2
 
     #. Wypisz ``result``
     #. Wypisz liczbę elementów ``result``
@@ -249,18 +283,25 @@ List Many
 :English:
     #. Use data from "Input" section (see below)
     #. Create lists ``a``, ``b``, ``c`` representing each row
+    #. ``a`` with data from row 1
+    #. ``b`` with data from row 2
+    #. ``c`` with data from row 3
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Stwórz listy ``a``, ``b``, ``c`` reprezentujące każdy wierszy
+    #. ``a`` z danymi z wiersza 1
+    #. ``b`` z danymi z wiersza 2
+    #. ``c`` z danymi z wiersza 3
 
 :Input:
     .. csv-table:: Input data
-        :header: "Sepal length", "Sepal width", "Petal length", "Petal width", "Species"
+        :header: "Row", "Sepal length", "Sepal width", "Petal length", "Petal width", "Species"
+        :stub-columns: 1
 
-        "5.8", "2.7", "5.1", "1.9", "virginica"
-        "5.1", "3.5", "1.4", "0.2", "setosa"
-        "5.7", "2.8", "4.1", "1.3", "versicolor"
+        "1", "5.8", "2.7", "5.1", "1.9", "virginica"
+        "2", "5.1", "3.5", "1.4", "0.2", "setosa"
+        "3", "5.7", "2.8", "4.1", "1.3", "versicolor"
 
 :The whys and wherefores:
     * Defining ``list``
@@ -275,22 +316,34 @@ Modify
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Insert at index zero of ``a`` list species name from ``b`` (setosa)
-    #. Append to the ``b`` list species name popped from ``a`` (virginica)
-    #. From list ``c`` delete species
+    #. Insert at the begin of ``a`` last element popped from ``b``
+    #. Append to the ``b`` last element popped from ``a``
+    #. For getting elements use ``list.pop()``
+    #. From list ``c`` using ``del`` delete last element
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Na listę ``a`` na pozycję o indeksie 0 wstaw gatunek pobrany z listy ``b`` (setosa)
-    #. Na koniec listy ``b`` wstaw gatunek pobrany z listy ``a`` (virginica)
-    #. Z listy ``c`` usuń gatunek
+    #. Na początek ``a`` wstaw ostatni element wyciągnięty z ``b``
+    #. Na koniec ``b`` wstaw ostatni element wyciągnięty z ``a``
+    #. Do wyciągnięcia używaj ``list.pop()``
+    #. Z listy ``c`` za pomocą ``del`` usuń last element
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
 
-        a = [5.8, 2.7, 5.1, 1.9, 'virginica']
-        b = [5.1, 3.5, 1.4, 0.2, 'setosa']
-        c = [5.7, 2.8, 4.1, 1.3, 'versicolor']
+        a = [4.7, 3.2, 1.3, 0.2, 'setosa']
+        b = [7.0, 3.2, 4.7, 1.4, 'versicolor']
+        c = [7.6, 3.0, 6.6, 2.1, 'virginica']
+
+:Output:
+    .. code-block:: python
+
+        a = ['versicolor', 4.7, 3.2, 1.3, 0.2]
+        b = [7.0, 3.2, 4.7, 1.4, 'setosa']
+        c = [7.6, 3.0, 6.6, 2.1]
+
 
 :The whys and wherefores:
     * Defining ``list``

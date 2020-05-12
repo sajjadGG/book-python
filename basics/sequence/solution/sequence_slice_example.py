@@ -1,11 +1,11 @@
-DATA = 'We choose to go to the Moon!'
+TEXT = 'We choose to go to the Moon!'
 REMOVE = 'to go to '
 
-before_end = DATA.find(REMOVE)  # 23
-after_start = before_end + len(REMOVE)  # 27
+a = TEXT.find(REMOVE)   # 10
+b = a + len(REMOVE)     # 19
 
-before = DATA[:before_end]  # 'We choose '
-after = DATA[after_start:]  # 'the Moon!'
+first_part = TEXT[:a]   # 'We choose '
+second_part = TEXT[b:]  # 'the Moon!'
 
-print(before + after)
+print(first_part + second_part)
 # 'We choose the Moon!'

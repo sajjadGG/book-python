@@ -23,14 +23,47 @@ Type Definition
     data = ()
     data = tuple()
 
-    data = 1,
     data = (1,)
+    data = (1, 2, 3)
+    data = (1.1, 2.2, 3.3)
+    data = (True, False)
+    data = ('a', 'b', 'c')
+    data = ('a', 1, 2.2, True, None)
 
-    data = 1, 2
-    data = (1, 2)
+    data = 1,
+    data = 1, 2, 3
+    data = 1.1, 2.2, 3.3
+    data = True, False
+    data = 'a', 'b', 'c'
+    data = 'a', 1, 2.2, True, None
 
-    data = 1, 2.0, None, False, 'Iris'
-    data = (1, 2.0, None, False, 'Iris')
+Type Casting
+============
+* ``tuple()`` converts argument to ``tuple``
+
+.. code-block:: python
+
+    data = [1, 2, 3]
+    tuple(data)
+    # (1, 2, 3)
+
+.. code-block:: python
+
+    data = (1, 2, 3)
+    tuple(data)
+    # (1, 2, 3)
+
+.. code-block:: python
+
+    data = {1, 2, 3}
+    tuple(data)
+    # (1, 2, 3)
+
+.. code-block:: python
+
+    data = frozenset({1, 2, 3})
+    tuple(data)
+    # (1, 2, 3)
 
 
 Getting Items
@@ -75,9 +108,15 @@ Getting Items
 
 When Use ``tuple`` or ``list``
 ==============================
+Both:
+
+    * ordered
+    * elements can be duplicated
+    * elements of any types
+
 Tuple:
 
-    * is immutable
+    * immutable
     * one contingent block of data in memory
 
 List:
@@ -100,9 +139,9 @@ Tuple Create
 :English:
     #. Create tuple ``result`` with elements:
 
+        * 'a'
         * 1
-        * 1.1
-        * 'Mark Watney'
+        * 2.2
 
     #. Print ``result``
     #. Print number of elements in ``result``
@@ -110,9 +149,9 @@ Tuple Create
 :Polish:
     #. Stwórz tuple ``result`` z elementami:
 
+        * 'a'
         * 1
-        * 1.1
-        * 'Mark Watney'
+        * 2.2
 
     #. Wypisz ``result``
     #. Wypisz liczbę elementów ``result``

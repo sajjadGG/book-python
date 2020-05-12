@@ -61,6 +61,25 @@ Set
     data: Set[str] = {'a', 'b', 'c'}
 
 
+Frozenset
+=========
+.. code-block:: python
+    :caption: Generic type annotation
+
+    data: frozenset = set()
+
+    data: frozenset = {'a', 1, 2.2}
+
+.. code-block:: python
+    :caption: Explicit type annotation
+
+    from typing import FrozenSet
+
+    data: FrozenSet[int] = {1, 2, 3}
+    data: FrozenSet[float] = {0.0, 1.1, 2.2}
+    data: FrozenSet[str] = {'a', 'b', 'c'}
+
+
 ``list`` of ``tuple``
 =====================
 .. code-block:: python

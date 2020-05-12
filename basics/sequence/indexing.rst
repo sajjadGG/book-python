@@ -48,54 +48,54 @@ Indexing sequences
 .. code-block:: python
     :caption: Indexing ``str``
 
-    DATA = 'abcde'
+    data = 'abcde'
 
-    DATA[0]             # 'a'
-    DATA[1]             # 'b'
-    DATA[2]             # 'c'
+    data[0]             # 'a'
+    data[1]             # 'b'
+    data[2]             # 'c'
 
-    DATA[-0]            # 'a'
-    DATA[-1]            # 'e'
-    DATA[-2]            # 'd'
+    data[-0]            # 'a'
+    data[-1]            # 'e'
+    data[-2]            # 'd'
 
 .. code-block:: python
     :caption: Indexing ``list``
 
-    DATA = ['a', 'b', 'c', 'd', 'e']
+    data = ['a', 'b', 'c', 'd', 'e']
 
-    DATA[0]             # 'a'
-    DATA[1]             # 'b'
-    DATA[2]             # 'c'
+    data[0]             # 'a'
+    data[1]             # 'b'
+    data[2]             # 'c'
 
-    DATA[-0]            # 'a'
-    DATA[-1]            # 'e'
-    DATA[-2]            # 'd'
+    data[-0]            # 'a'
+    data[-1]            # 'e'
+    data[-2]            # 'd'
 
 .. code-block:: python
     :caption: Indexing ``tuple``
 
-    DATA = ('a', 'b', 'c', 'd', 'e')
+    data = ('a', 'b', 'c', 'd', 'e')
 
-    DATA[0]             # 'a'
-    DATA[1]             # 'b'
-    DATA[2]             # 'c'
+    data[0]             # 'a'
+    data[1]             # 'b'
+    data[2]             # 'c'
 
-    DATA[-0]            # 'a'
-    DATA[-1]            # 'e'
-    DATA[-2]            # 'd'
+    data[-0]            # 'a'
+    data[-1]            # 'e'
+    data[-2]            # 'd'
 
 .. code-block:: python
     :caption: Indexing ``set``. Indexes on ``set`` are not possible
 
-    DATA = {'a', 'b', 'c', 'd', 'e'}
+    data = {'a', 'b', 'c', 'd', 'e'}
 
-    DATA[0]             # TypeError: 'set' object is not subscriptable
-    DATA[1]             # TypeError: 'set' object is not subscriptable
-    DATA[2]             # TypeError: 'set' object is not subscriptable
+    data[0]             # TypeError: 'set' object is not subscriptable
+    data[1]             # TypeError: 'set' object is not subscriptable
+    data[2]             # TypeError: 'set' object is not subscriptable
 
-    DATA[-0]            # TypeError: 'set' object is not subscriptable
-    DATA[-1]            # TypeError: 'set' object is not subscriptable
-    DATA[-2]            # TypeError: 'set' object is not subscriptable
+    data[-0]            # TypeError: 'set' object is not subscriptable
+    data[-1]            # TypeError: 'set' object is not subscriptable
+    data[-2]            # TypeError: 'set' object is not subscriptable
 
 
 Assignments

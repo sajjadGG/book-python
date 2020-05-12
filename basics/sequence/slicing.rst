@@ -5,17 +5,60 @@ Sequence Slicing
 ****************
 
 
+Slice Function
+==============
+.. highlights::
+    * ``slice()`` arguments must be ``int`` (positive, negative or zero)
+    * start (inclusive), default: 0
+    * stop (exclusive), default: len(...)
+    * step, default: 1
+
+.. code-block:: python
+
+    data = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+
+    get =
+    data[slice(1)]
+    # ['a']
+
+    get = slice(2, 7)
+    data[get]
+    # ['c', 'd', 'e', 'f', 'g']
+
+    get = slice(2, 7, 2)
+    data[get]
+    # ['c', 'e', 'g']
+
+.. code-block:: python
+
+    data = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    get = slice(1)
+    data[get]
+    # [0]
+
+    get = slice(2, 7)
+    data[get]
+    # [2, 3, 4, 5, 6]
+
+    get = slice(2, 7, 2)
+    data[get]
+    # [2, 4, 6]
+
+.. code-block:: python
+
+    text = 'We choose to go to the Moon!'
+    get = slice(23, 28)
+
+    text[get]
+    # 'Moon!'
+
+
 Accessing Range of Elements
 ===========================
 .. highlights::
-    * Slice Index must be positive or negative ``int`` or zero
-    * ``my_sequence[start:stop:step]``
+    * Definitely more common syntax
     * ``my_sequence[start:stop]``
-    * Slice has three indexes:
-
-        * start (inclusive), default: 0
-        * stop (exclusive), default: len(...)
-        * step, default: 1
 
 .. code-block:: python
 
@@ -76,6 +119,9 @@ Accessing Slice from Back
 
 Every ``n-th`` Element
 ======================
+.. highlights::
+    * ``my_sequence[start:stop:step]``
+
 .. code-block:: python
 
     text = 'We choose to go to the Moon!'
@@ -146,25 +192,25 @@ Slicing ``str``
 ---------------
 .. code-block:: python
 
-    DATA = 'abcde'
+    data = 'abcde'
 
-    DATA[:3]            # 'abc'
-    DATA[3:]            # 'de'
-    DATA[1:4]           # 'bcd'
-    DATA[::2]           # 'ace'
-    DATA[::-1]          # 'edcba'
+    data[:3]            # 'abc'
+    data[3:]            # 'de'
+    data[1:4]           # 'bcd'
+    data[::2]           # 'ace'
+    data[::-1]          # 'edcba'
 
 Slicing ``tuple``
 -----------------
 .. code-block:: python
 
-    DATA = ('a', 'b', 'c', 'd', 'e')
+    data = ('a', 'b', 'c', 'd', 'e')
 
-    DATA[:3]            # ('a', 'b', 'c')
-    DATA[3:]            # ('d', 'e')
-    DATA[1:4]           # ('b', 'c', 'd')
-    DATA[::2]           # ('a', 'c', 'e')
-    DATA[::-1]          # ('e', 'd', 'c', 'b', 'a')
+    data[:3]            # ('a', 'b', 'c')
+    data[3:]            # ('d', 'e')
+    data[1:4]           # ('b', 'c', 'd')
+    data[::2]           # ('a', 'c', 'e')
+    data[::-1]          # ('e', 'd', 'c', 'b', 'a')
 
 Slicing ``list``
 ----------------
@@ -173,13 +219,13 @@ Slicing ``list``
 
 .. code-block:: python
 
-    DATA = ['a', 'b', 'c', 'd', 'e']
+    data = ['a', 'b', 'c', 'd', 'e']
 
-    DATA[:3]            # ['a', 'b', 'c']
-    DATA[3:]            # ['d', 'e']
-    DATA[1:4]           # ['b', 'c', 'd']
-    DATA[::2]           # ['a', 'c', 'e']
-    DATA[::-1]          # ['e', 'd', 'c', 'b', 'a']
+    data[:3]            # ['a', 'b', 'c']
+    data[3:]            # ['d', 'e']
+    data[1:4]           # ['b', 'c', 'd']
+    data[::2]           # ['a', 'c', 'e']
+    data[::-1]          # ['e', 'd', 'c', 'b', 'a']
 
 Slicing ``set``
 ---------------
@@ -188,9 +234,9 @@ Slicing ``set``
 
 .. code-block:: python
 
-    DATA = {'a', 'b', 'c', 'd', 'e'}
+    data = {'a', 'b', 'c', 'd', 'e'}
 
-    DATA[:3]
+    data[:3]
     # TypeError: 'set' object is not subscriptable
 
 
@@ -198,39 +244,24 @@ Slicing Nested Sequences
 ========================
 .. code-block:: python
 
-    DATA = [
+    data = [
         [1, 2, 3],
         [4, 5, 6],
         [7, 8, 9],
     ]
 
-    DATA[::2]
+    data[::2]
     # [
     #   [1, 2, 3],
     #   [7, 8, 9],
     # ]
 
 
-Slice Function
-==============
-.. highlights::
-    * Slice object can be returned from function
-    * Function can, for example, calculate starting point of a sub-string
-
-.. code-block:: python
-
-    text = 'We choose to go to the Moon!'
-
-    between = slice(23, 28)
-    text[between]
-    # 'Moon!'
-
-
 Assignments
 ===========
 
-Example
--------
+Slicing Example
+---------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
@@ -239,32 +270,31 @@ Example
 :English:
     #. Use data from "Input" section (see below)
     #. Using ``str.find()`` and slicing
-    #. Print ``DATA`` without text in ``REMOVE``
+    #. Print ``TEXT`` without text in ``REMOVE``
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Używając ``str.find()`` oraz wycinania
-    #. Wypisz ``DATA`` bez tekstu z ``REMOVE``
+    #. Wypisz ``TEXT`` bez tekstu z ``REMOVE``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
 
-        DATA = 'We choose to go to the Moon!'
+        TEXT = 'We choose to go to the Moon!'
         REMOVE = 'to go to '
 
 :Solution:
     .. literalinclude:: solution/sequence_slice_example.py
         :language: python
 
-
-Simple collections
-------------------
+Slicing Collections
+-------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/sequence_slice_every_nth.py`
+* Solution: :download:`solution/sequence_slice_collections.py`
 
 :English:
     #. Create tuple ``a`` with digits: 0, 1, 2, 3
@@ -276,14 +306,14 @@ Simple collections
 :Polish:
     #. Stwórz tuplę ``a`` z cyframi: 0, 1, 2, 3
     #. Stwórz listę ``b`` z cyframi: 2, 3, 4, 5
-    #. Stwórz zbiór ``c`` z co drugim elementem ``a`` i ``b``
-    #. Wypisz ``c``
+    #. Stwórz zbiór ``result`` z co drugim elementem ``a`` i ``b``
+    #. Wypisz ``result``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Output:
     .. code-block:: python
 
-        c: set
+        result: set
         # {0, 2, 4}
 
 :The whys and wherefores:
@@ -291,12 +321,12 @@ Simple collections
     * Slice data structures
     * Type casting
 
-Split train/test
-----------------
+Slicing Split train/test
+------------------------
 * Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/sequence_slice_split_train_test.py`
+* Solution: :download:`solution/sequence_slice_split.py`
 
 :English:
     #. Use data from "Input" section (see below)

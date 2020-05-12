@@ -1,7 +1,7 @@
-result = [1, 1.1, 'Mark Watney']
+result = ['a', 1, 2.2]
 
 print('Result', result)
-# Result [1, 1.1, 'Mark Watney']
+# Result ['a', 1, 2.2]
 
 print('Length', len(result))
 # Length 3
