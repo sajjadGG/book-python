@@ -17,11 +17,11 @@ Absolute path
 .. code-block:: python
     :caption: Windows and POSIX absolute paths
 
-    FILE = 'C:\\Temp\\iris.csv'
-    FILE = r'C:\Temp\iris.csv'
+    FILE = 'C:\\Temp\\myfile.txt'
+    FILE = r'C:\Temp\myfile.txt'
 
-    FILE = '/tmp/iris.csv'
-    FILE = r'/tmp/iris.csv'
+    FILE = '/tmp/myfile.txt'
+    FILE = r'/tmp/myfile.txt'
 
 Relative path
 -------------
@@ -32,17 +32,17 @@ Relative path
 .. code-block:: python
     :caption: File in the same directory
 
-    FILE = r'iris.csv'
-    FILE = r'./iris.csv'
+    FILE = r'myfile.txt'
+    FILE = r'./myfile.txt'
 
-    FILE = r'tmp/iris.csv'
-    FILE = r'./tmp/iris.csv'
+    FILE = r'tmp/myfile.txt'
+    FILE = r'./tmp/myfile.txt'
 
-    FILE = r'../iris.csv'
-    FILE = r'../tmp/iris.csv'
+    FILE = r'../myfile.txt'
+    FILE = r'../tmp/myfile.txt'
 
-    FILE = r'../../iris.csv'
-    FILE = r'../../tmp/iris.csv'
+    FILE = r'../../myfile.txt'
+    FILE = r'../../tmp/myfile.txt'
 
 Make absolute from relative path
 --------------------------------
@@ -51,14 +51,60 @@ Make absolute from relative path
 
     from os.path import dirname, join
 
-    __file__
+    print(__file__)
     # /home/python/my_script.py
 
     dirname(__file__)
     # /home/python/
 
-    join(dirname(__file__), 'iris.csv')
-    # /home/python/iris.csv
+    join(dirname(__file__), 'myfile.txt')
+    # /home/python/myfile.txt
+
+
+Escape Characters
+=================
+.. highlights::
+    * ``\r\n`` - is used on windows
+    * ``\n`` - is used everywhere else
+
+.. figure:: img/type-machine.jpg
+    :width: 75%
+    :align: center
+
+    Why we have '\\r\\n' on Windows?
+
+.. csv-table:: Frequently used escape characters
+    :header: "Sequence", "Description"
+    :widths: 15, 85
+
+    "``\n``", "New line  (LF - Linefeed)"
+    "``\r``", "Carriage Return (CR)"
+    "``\t``", "Horizontal Tab (TAB)"
+    "``\'``", "Single quote ``'``"
+    "``\""``", "Double quote ``""``"
+    "``\\``", "Backslash ``\``"
+
+.. csv-table:: Less frequently used escape characters
+    :header: "Sequence", "Description"
+    :widths: 15, 85
+
+    "``\a``", "Bell (BEL)"
+    "``\b``", "Backspace (BS)"
+    "``\f``", "New page (FF - Form Feed)"
+    "``\v``", "Vertical Tab (VT)"
+    "``\uF680``", "Character with 16-bit (2 bytes) hex value ``F680``"
+    "``\U0001F680``", "Character with 32-bit (4 bytes) hex value ``0001F680``"
+    "``\o755``", "ASCII character with octal value ``755``"
+    "``\x1F680``", "ASCII character with hex value ``1F680``"
+
+.. code-block:: python
+
+    print('\U0001F680')     # 🚀
+
+
+General Issues
+==============
+* Text I/O over a binary storage (such as a file) is significantly slower than binary I/O over the same storage, because it requires conversions between unicode and binary data using a character codec. This can become noticeable handling huge amounts of text data like large log files. Source: https://docs.python.org/3/library/io.html#id3
 
 
 Read from file
@@ -78,7 +124,7 @@ Read from file
 .. code-block:: python
     :caption: Reading file line by line
 
-    FILE = r'/tmp/iris.csv'
+    FILE = r'/tmp/myfile.txt'
 
     with open(FILE) as file:
         for line in file:
@@ -87,7 +133,7 @@ Read from file
 .. code-block:: python
     :caption: Read whole file as a text to ``content`` variable
 
-    FILE = r'/tmp/iris.csv'
+    FILE = r'/tmp/myfile.txt'
 
     with open(FILE) as file:
         content = file.read()
@@ -95,7 +141,7 @@ Read from file
 .. code-block:: python
     :caption: Reading file as ``list`` with lines
 
-    FILE = r'/tmp/iris.csv'
+    FILE = r'/tmp/myfile.txt'
 
     with open(FILE) as file:
         lines = file.readlines()
@@ -103,7 +149,7 @@ Read from file
 .. code-block:: python
     :caption: Read selected (1-30) lines from file
 
-    FILE = r'/tmp/iris.csv'
+    FILE = r'/tmp/myfile.txt'
 
     with open(FILE) as file:
         lines = file.readlines()[1:30]
@@ -111,7 +157,7 @@ Read from file
 .. code-block:: python
     :caption: Read selected (1-30) lines from file
 
-    FILE = r'/tmp/iris.csv'
+    FILE = r'/tmp/myfile.txt'
 
     with open(FILE) as file:
         for line in file.readlines()[1:30]:
@@ -120,7 +166,7 @@ Read from file
 .. code-block:: python
     :caption: Read whole file and split by lines, separate header from content
 
-    FILE = r'/tmp/iris.csv'
+    FILE = r'/tmp/myfile.txt'
 
     with open(FILE) as file:
         header, *content = file.readlines()
@@ -131,7 +177,7 @@ Read from file
 .. code-block:: python
     :caption: Read header, and use generator to iterate over other lines
 
-    FILE = r'/tmp/iris.csv'
+    FILE = r'/tmp/myfile.txt'
 
     with open(FILE) as file:
         header = file.readline()
@@ -148,6 +194,7 @@ Writing to file
     * Creates file if not exists
     * Truncate the file before writing
     * ``mode`` parameter to ``open()`` function is required
+    * ``.writelines()`` does not add a line separator!!
     * Writing modes:
 
         * ``mode='wt'`` - write in text mode
@@ -157,11 +204,35 @@ Writing to file
 .. code-block:: python
     :caption: Writing to file
 
-    FILE = r'/tmp/iris.csv'
+    FILE = r'/tmp/myfile.txt'
 
     with open(FILE, mode='w') as file:
         file.write('hello')
 
+.. code-block:: python
+    :caption: Write a list of lines to the file. Line separators are not added. Each line must add a sperarator at the end.
+
+    FILE = r'/tmp/myfile.txt'
+    DATA = [
+        'We choose to go to the Moon.',
+        'We choose to go to the Moon in this decade and do the other things.',
+        'Not because they are easy, but because they are hard.']
+
+    with open(FILE, mode='w') as file:
+        content = '\n'.join(DATA)
+        file.writelines(content)
+
+.. code-block:: python
+    :caption: Write a list of lines to the file. Join works only for strings, hence conversion must be performed before adding a separator and writing to file.
+
+    FILE = r'/tmp/myfile.txt'
+    DATA = [1, 2, 3]
+
+    with open(FILE, mode='w') as file:
+        content = '\n'.join(str(x) for x in DATA)
+        file.writelines(content)
+
+.. note:: When writing output to the stream, if newline is None, any '\n' characters written are translated to the system default line separator, os.linesep. If newline is '' or '\n', no translation takes place. If newline is any of the other legal values, any '\n' characters written are translated to the given string. Source: https://docs.python.org/3/library/io.html#io.TextIOWrapper
 
 Appending to file
 =================
@@ -180,7 +251,7 @@ Appending to file
 .. code-block:: python
     :caption: Appending to file
 
-    FILE = r'/tmp/iris.csv'
+    FILE = r'/tmp/myfile.txt'
 
     with open(FILE, mode='a') as file:
         file.write('hello')
@@ -198,7 +269,7 @@ Encoding
 
 .. code-block:: python
 
-    FILE = r'/tmp/example.txt'
+    FILE = r'/tmp/myfile.txt'
 
     with open(FILE, mode='w', encoding='utf-8') as file:
         file.write('Иван Иванович')
@@ -209,7 +280,7 @@ Encoding
 
 .. code-block:: python
 
-    FILE = r'/tmp/example.txt'
+    FILE = r'/tmp/myfile.txt'
 
     with open(FILE, mode='w', encoding='cp1250') as file:
         file.write('Иван Иванович')
@@ -220,7 +291,7 @@ Encoding
 
 .. code-block:: python
 
-    FILE = r'/tmp/example.txt'
+    FILE = r'/tmp/myfile.txt'
 
     with open(FILE, mode='w', encoding='utf-8') as file:
         file.write('Иван Иванович')
@@ -237,7 +308,7 @@ Exception handling
 .. code-block:: python
     :caption: Exception handling while accessing files
 
-    FILE = r'/tmp/example.txt'
+    FILE = r'/tmp/myfile.txt'
 
     try:
         with open(FILE) as file:
@@ -248,6 +319,20 @@ Exception handling
 
     except PermissionError:
         print('Permission denied')
+
+
+Reading from one file and writing to another
+============================================
+.. code-block:: python
+
+    FILE_READ = r'/tmp/myfile.in'
+    FILE_WRITE = r'/tmp/myfile.out'
+
+    with open(FILE_READ) as infile, \
+         open(FILE_WRITE, mode='w') as outfile:
+
+        for line in infile:
+            outfile.write(line)
 
 
 Good Engineering Practises
@@ -298,15 +383,15 @@ Save to CSV file
     #. Separate header from data
     #. Write data to file: ``iris.csv``
     #. First line in file must be a header
-    #. Use coma (``,``) as a separator
+    #. Use coma (``,``) as a value separator
     #. Use ``utf-8`` encoding and ``\n`` for line terminator
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Odseparuj nagłówek do danych
     #. Zapisz dane do pliku: ``iris.csv``
-    #. Pierwsza linią w pliku musi być nagłówkiem
-    #. Użyj przecinka (``,``) jako separatora
+    #. Pierwsza linia w pliku musi być nagłówkiem
+    #. Użyj przecinka (``,``) jako separatora wartości
     #. Użyj kodowania ``utf-8`` i ``\n`` jako koniec linii
 
 :Input:
