@@ -30,7 +30,7 @@ Generic Syntax
 Naming Convention
 -----------------
 * Use shorter variable names
-* ``x`` is common
+* ``x`` is common name
 
 Example
 -------
@@ -225,79 +225,7 @@ Conditional Comprehension
 
 Filtering ``dict`` items
 ------------------------
-.. code-block:: python
 
-    DATA = [
-        {'first_name': 'Иван', 'last_name': 'Иванович', 'agency': 'Roscosmos'},
-        {'first_name': 'Jose', 'last_name': 'Jimenez', 'agency': 'NASA'},
-        {'first_name': 'Melissa', 'last_name': 'Lewis', 'agency': 'NASA'},
-        {'first_name': 'Alex', 'last_name': 'Vogel', 'agency': 'ESA'},
-        {'first_name': 'Mark', 'last_name': 'Watney', 'agency': 'NASA'},
-    ]
-
-    astronauts = [astro for astro in DATA if astro['agency'] == 'NASA']
-    print(astronauts)
-    # [{'first_name': 'Jose', 'last_name': 'Jimenez', 'agency': 'NASA'},
-    #  {'first_name': 'Melissa', 'last_name': 'Lewis', 'agency': 'NASA'},
-    #  {'first_name': 'Mark', 'last_name': 'Watney', 'agency': 'NASA'}]
-
-
-    astronauts = [astro['last_name'] for astro in DATA if astro['agency'] == 'NASA']
-    print(astronauts)
-    # ['Jimenez', 'Lewis', 'Watney']
-
-
-    astronauts = [(astro['first_name'], astro['last_name'])
-                        for astro in DATA
-                            if astro['agency'] == 'NASA']
-    print(astronauts)
-    # [
-    #   ('Jose', 'Jimenez'),
-    #   ('Melissa', 'Lewis'),
-    #   ('Mark', 'Watney')
-    # ]
-
-
-Applying function
-=================
-.. code-block:: python
-    :caption: Applying function to each output element
-
-    [float(x) for x in range(0,5)]
-    # [0.0, 1.0, 2.0, 3.0, 4.0]
-
-    [float(x) for x in range(0,5) if x % 2 == 0]
-    # [0.0, 2.0, 4.0]
-
-.. code-block:: python
-    :caption: Applying function to each output element
-
-    [pow(2, x) for x in range(0,5)]
-    # [1, 2, 4, 8, 16]
-
-    [pow(2, x) for x in range(0,5) if x % 2 == 0]
-    # [1, 4, 16]
-
-.. code-block:: python
-
-    [pow(2, x)
-        for x in range(0,5)
-            if x % 2 == 0
-    ]
-    # [1, 4, 16]
-
-
-Examples
-========
-
-Sum
----
-.. code-block:: python
-
-    sum(x for x in range(0,5))         # 10
-
-Filtering
----------
 .. code-block:: python
     :caption: Using ``list`` comprehension for filtering
 
@@ -318,25 +246,134 @@ Filtering
     #   [4.7, 3.2, 1.3, 0.2],
     # ]
 
-    [features
-     for *features, label in DATA
-        if label == 'setosa']
-    # [
-    #   [5.1, 3.5, 1.4, 0.2],
-    #   [4.7, 3.2, 1.3, 0.2],
-    # ]
-
-    [f for *f,l in DATA if l == 'setosa']
-    # [
-    #   [5.1, 3.5, 1.4, 0.2],
-    #   [4.7, 3.2, 1.3, 0.2],
-    # ]
-
     [X for *X,y in DATA if y == 'setosa']
     # [
     #   [5.1, 3.5, 1.4, 0.2],
     #   [4.7, 3.2, 1.3, 0.2],
     # ]
+
+
+Applying function
+=================
+.. code-block:: python
+    :caption: Applying function to each output element
+
+    [float(x) for x in range(0,5)]
+    # [0.0, 1.0, 2.0, 3.0, 4.0]
+
+    [float(x) for x in range(0,5) if x % 2 == 0]
+    # [0.0, 2.0, 4.0]
+
+.. code-block:: python
+    :caption: Applying function to each output element
+
+    [pow(2,x) for x in range(0,5)]
+    # [1, 2, 4, 8, 16]
+
+    [pow(2,x) for x in range(0,5) if x % 2 == 0]
+    # [1, 4, 16]
+
+
+Indent
+======
+.. code-block:: python
+
+    result = [pow(x,2) for x in range(0,5)]
+
+.. code-block:: python
+
+    result = [pow(x,2)
+                for x in range(0,5)]
+
+.. code-block:: python
+
+    result = [pow(x,2) for x in range(0,5) if x % 2 == 0]
+
+.. code-block:: python
+
+    result = [pow(x,2)
+                for x in range(0,5)
+                    if x % 2 == 0]
+
+
+Examples
+========
+
+Sum
+---
+.. code-block:: python
+
+    sum(x for x in range(0,5))
+    # 10
+
+Power
+-----
+.. code-block:: python
+
+    result = []
+
+    for x in range(0,5):
+        result.append(2**x)
+
+    print(result)
+    # [1, 2, 4, 8, 16]
+
+.. code-block:: python
+
+    [2**x for x in range(0,5)]
+    # [1, 2, 4, 8, 16]
+
+Even or Odd
+-----------
+.. code-block:: python
+
+    result = {}
+
+    for x in range(0,5):
+        is_even = (x % 2 == 0)
+        result.update({x: is_even})
+
+    print(result)
+    # {0: True, 1: False, 2: True, 3: False, 4: True}
+
+.. code-block:: python
+
+    {x: (x%2==0) for x in range(0,5)}
+    # {0: True, 1: False, 2: True, 3: False, 4: True}
+
+Filtering
+---------
+.. code-block:: python
+
+    DATA = [
+        {'is_astronaut': True,  'name': 'Jan Twardowski'},
+        {'is_astronaut': True,  'name': 'Mark Watney'},
+        {'is_astronaut': False, 'name': 'Jose Jimenez'},
+        {'is_astronaut': True,  'name': 'Melissa Lewis'},
+        {'is_astronaut': False, 'name': 'Alex Vogel'},
+    ]
+
+    astronauts = [person for person in DATA if person['is_astronaut']]
+    print(astronauts)
+    # [{'is_astronaut': True, 'name': 'Jan Twardowski'},
+    #  {'is_astronaut': True, 'name': 'Mark Watney'},
+    #  {'is_astronaut': True, 'name': 'Melissa Lewis'}]
+
+
+    astronauts = [person['name'] for person in DATA if person['is_astronaut']]
+    print(astronauts)
+    # ['Jan Twardowski', 'Mark Watney', 'Melissa Lewis']
+
+
+    astronauts = [{'firstname': person['name'].split()[0],
+                   'lastname': person['name'].split()[1]}
+
+                   for person in DATA
+                        if person['is_astronaut']]
+
+    # [{'firstname': 'Jan', 'lastname': 'Twardowski'},
+    #  {'firstname': 'Mark', 'lastname': 'Watney'},
+    #  {'firstname': 'Melissa', 'lastname': 'Lewis'}]
 
 Filtering with complex expressions
 ----------------------------------
@@ -486,6 +523,36 @@ All and Any
 .. code-block:: python
 
     DATA = [
+        {'is_astronaut': True,  'name': 'Jan Twardowski'},
+        {'is_astronaut': True,  'name': 'Mark Watney'},
+        {'is_astronaut': False, 'name': 'Jose Jimenez'},
+        {'is_astronaut': True,  'name': 'Melissa Lewis'},
+        {'is_astronaut': False, 'name': 'Alex Vogel'},
+    ]
+
+    if all(person['is_astronaut'] for person in DATA):
+        print('Everyone is astronaut')
+    else:
+        print('Not everyone is astronaut')
+
+.. code-block:: python
+
+    DATA = [
+        {'is_astronaut': True,  'name': 'Jan Twardowski'},
+        {'is_astronaut': True,  'name': 'Mark Watney'},
+        {'is_astronaut': False, 'name': 'Jose Jimenez'},
+        {'is_astronaut': True,  'name': 'Melissa Lewis'},
+        {'is_astronaut': False, 'name': 'Alex Vogel'},
+    ]
+
+    if any(person['is_astronaut'] for person in DATA):
+        print('At least one person is astronaut')
+    else:
+        print('There are no astronauts')
+
+.. code-block:: python
+
+    DATA = [
         ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
         (5.8, 2.7, 5.1, 1.9, 'virginica'),
         (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -538,12 +605,29 @@ Assignment Expressions
 Assignments
 ===========
 
-Comprehensions
---------------
+Comprehensions Create
+---------------------
+* Complexity level: easy
+* Lines of code to write: 2 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/loop_comprehension_create.py`
+
+:English:
+    #. Use list comprehension
+    #. Generate ``result: List[int]`` of even numbers from 5 to 20
+    #. Print ``result``
+
+:Polish:
+    #. Użyj rozwinięcia listowego
+    #. Wygeneruj ``result: List[int]`` parzystych liczb z przedziału 5 do 20
+    #. Wypisz ``result``
+
+Comprehensions Split
+--------------------
 * Complexity level: medium
 * Lines of code to write: 8 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/loop_comprehension.py`
+* Solution: :download:`solution/loop_comprehension_split.py`
 
 :English:
     #. Use data from "Input" section (see below)

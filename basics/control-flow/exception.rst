@@ -160,16 +160,12 @@ ValueError
 
 .. code-block:: python
     :caption: ``ValueError`` exception
-    :emphasize-lines: 7
+    :emphasize-lines: 4
 
-    float(1.2)
-    # 1.2
-
-    float(1,2)
+    float('a')
     # Traceback (most recent call last):
-    #   File "<stdin>", line 1, in <module>
-    # TypeError: float expected at most 1 arguments, got 2
-
+    #   File "<input>", line 1, in <module>
+    # ValueError: could not convert string to float: 'a'
 
 Exception hierarchy
 ===================
@@ -270,23 +266,23 @@ Use case
     # Type temperature [Kelvin]: -10<ENTER>
 
     if float(temperature) < 0:
-        raise ValueError
+        raise ValueError('Kelvin temperature cannot be negative')
     # Traceback (most recent call last):
     #   File "<stdin>", line 2, in <module>
-    # ValueError
+    # ValueError: Kelvin temperature cannot be negative
 
 .. code-block:: python
     :emphasize-lines: 4,7
 
-    temperature = input('Type Temperature [Kelvin]: ')
+    def convert(temperature):
 
-    if type(temperature) not in (float, int):
-        raise TypeError('Argument ``a`` must be int or float')
+        if type(temperature) not in (float, int):
+            raise TypeError('Temperature must be int or float')
 
-    if float(temperature) < 0:
-        raise ValueError('Kelvin temperature cannot be negative')
+        if temperature < 0:
+            raise ValueError('Kelvin temperature cannot be negative')
 
-    print(temperature)
+        return temperature
 
 .. code-block:: python
     :emphasize-lines: 2
@@ -343,7 +339,7 @@ Traceback analysis
     * Stacktrace is 8 levels deep, it's not Java's 200 ;)
 
 .. code-block:: python
-    :emphasize-lines: 3,4
+    :emphasize-lines: 3
 
     raise RuntimeError
     # Traceback (most recent call last):
@@ -351,7 +347,7 @@ Traceback analysis
     # RuntimeError
 
 .. code-block:: python
-    :emphasize-lines: 3,4
+    :emphasize-lines: 3
 
     raise RuntimeError('Huston we have a problem')
     # Traceback (most recent call last):
@@ -359,7 +355,7 @@ Traceback analysis
     # RuntimeError: Huston we have a problem
 
 .. code-block:: python
-    :emphasize-lines: 6-8
+    :emphasize-lines: 6-7
 
     def apollo13():
         raise RuntimeError('Oxygen tank explosion')
@@ -371,7 +367,7 @@ Traceback analysis
     # RuntimeError: Oxygen tank explosion
 
 .. code-block:: python
-    :emphasize-lines: 11-15
+    :emphasize-lines: 11-14
 
     def apollo13():
         raise RuntimeError('Oxygen tank explosion')
