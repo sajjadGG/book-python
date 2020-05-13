@@ -5,10 +5,9 @@ Comprehensions
 **************
 
 
-Loop Information Recap
-======================
+Recap
+=====
 .. code-block:: python
-    :caption: Iterative approach to applying function to elements
 
     result = []
 
@@ -19,12 +18,22 @@ Loop Information Recap
     # [10, 11, 12, 13, 14]
 
 
-Comprehensions Syntax
-=====================
-.. code-block:: text
+Syntax
+======
+
+Generic Syntax
+--------------
+.. code-block:: python
 
     result = [<RETURN> for <VARIABLE> in <ITERABLE>]
 
+Naming Convention
+-----------------
+* Use shorter variable names
+* ``x`` is common
+
+Example
+-------
 .. code-block:: python
 
     [x for x in (0,1,2,3,4)]
@@ -129,7 +138,7 @@ List Comprehension
 .. code-block:: python
     :caption: ``list`` Comprehension approach to applying function to elements
 
-    [x+10 for x in range(0, 5)]
+    [x+10 for x in range(0,5)]
     # [10, 11, 12, 13, 14]
 
     list(x+10 for x in range(0,5))
@@ -190,7 +199,7 @@ Tuple Comprehension?!
 .. code-block:: python
     :caption: Generator Expression
 
-    (x+10 for x in range(0, 5))
+    (x+10 for x in range(0,5))
     # <generator object <genexpr> at 0x11eaef570>
 
 
@@ -201,7 +210,7 @@ Conditional Comprehension
 
     result = []
 
-    for x in range(0, 5):
+    for x in range(0,5):
         if x % 2 == 0:
             result.append(x)
 
@@ -211,7 +220,7 @@ Conditional Comprehension
 .. code-block:: python
     :caption: ``list`` Comprehensions approach to applying function to selected elements
 
-    [x for x in range(0, 5) if x % 2 == 0]
+    [x for x in range(0,5) if x % 2 == 0]
     # [0, 2, 4]
 
 Filtering ``dict`` items
@@ -498,6 +507,32 @@ All and Any
         for *X,y in DATA[1:]
             for x in X if isinstance(x, float))
     # False
+
+
+Assignment Expressions
+======================
+.. versionadded:: Python 3.8
+    :pep:`572` Assignment Expressions (walrus operator)
+
+.. code-block:: python
+    :caption: Compute partial sums in a list comprehension using Assignment Expressions (since Python 3.8)
+
+    total = 0
+    partial_sums = [total := total + v for v in range(0,5)]
+
+    print(partial_sums)
+    # [0, 1, 3, 6, 10]
+
+    print(total)
+    # 10
+
+.. code-block:: python
+
+    [ (x, y, x/y)
+        for x in range(0,5)
+            if (y := x**2) > 0]
+
+    # [(1, 1, 1.0), (2, 4, 0.5), (3, 9, 0.3333333333333333), (4, 16, 0.25)]
 
 
 Assignments

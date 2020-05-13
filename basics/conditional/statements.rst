@@ -185,6 +185,28 @@ Checking if variable is certain value
         print('Did you forget to type your name?')
     # Did you forget to type your name?
 
+.. code-block:: python
+
+    data = [True, False, True]
+
+    if any(data):
+        print('Yes')
+    else:
+        print('No')
+
+    # Yes
+
+.. code-block:: python
+
+    data = [True, False, True]
+
+    if all(data):
+        print('Yes')
+    else:
+        print('No')
+
+    # No
+
 
 Inline ``if``
 =============

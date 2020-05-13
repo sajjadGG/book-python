@@ -232,15 +232,32 @@ Built-in Functions on Sequences
 * ``max()`` - Maximal value
 * ``sum()`` - Sum of elements
 * ``len()`` - Length of a list
+* ``all()`` - All values are ``True``
+* ``any()`` - Any values is ``True``
+* ``isinstance(a, b)`` - If ``a`` is instance of ``b``
+* ``isinstance(a, (b,c))`` - If ``a`` is instance of ``b`` or ``c``
 
 .. code-block:: python
 
-    data = [3, 1, 2]
+    data = [2, 0, 1]
 
-    min(data)      # 1
-    max(data)      # 3
-    sum(data)      # 6
-    len(data)      # 3
+    min(data)       # 0
+    max(data)       # 2
+    sum(data)       # 3
+    len(data)       # 3
+    any(data)       # True
+    all(data)       # False
+
+.. code-block:: python
+
+    data = [True, False, True]
+
+    min(data)       # False
+    max(data)       # True
+    sum(data)       # 2
+    len(data)       # 3
+    any(data)       # True
+    all(data)       # False
 
 
 Assignments
