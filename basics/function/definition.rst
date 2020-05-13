@@ -5,6 +5,20 @@ Function Definition
 *******************
 
 
+Syntax
+======
+.. code-block:: python
+    :caption: Function definition without parameters
+
+    def <name>():
+        <do something>
+
+.. code-block:: python
+
+    def hello():
+        print('Hello World')
+
+
 Function definition
 ===================
 .. highlights::

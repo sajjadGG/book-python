@@ -5,21 +5,19 @@ Loop Unpacking Sequences
 ************************
 
 
-Unpacking values in loop
-========================
-
-Recap information about unpacking
----------------------------------
+Recap
+=====
 .. code-block:: python
-    :caption: Unpacking values
+    :caption: Recap information about unpacking
 
     a, b = 1, 2
     a, b = (1, 2)
     k, v = (1, 2)
     key, value = (1, 2)
 
+
 Unpacking ``list`` of pairs
----------------------------
+===========================
 .. code-block:: python
     :caption: Unpacking values in loop
 
@@ -36,14 +34,129 @@ Unpacking ``list`` of pairs
     # b -> 2
     # c -> 3
 
+
+Unpacking ``list`` of sequence
+==============================
 .. code-block:: python
-    :caption: Unpacking values in loop
+
+    DATA = [
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+    ]
+
+    for sepal_len, sepal_wid, petal_len, petal_wid, species in DATA:
+        print(f'{species} -> {sepal_len}')
+
+    # setosa -> 5.1
+    # versicolor -> 5.7
+    # virginica -> 6.3
+
+.. code-block:: python
+
+    DATA = [
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+    ]
+
+    for sl, sw, pl, pw, s in DATA:
+        print(f'{s} -> {sl}')
+
+    # setosa -> 5.1
+    # versicolor -> 5.7
+    # virginica -> 6.3
+
+.. code-block:: python
+
+    DATA = [
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+    ]
+
+    for row in DATA:
+        featuers = row[0:4]
+        label = row[4]
+        print(f'{label} -> {featuers}')
+
+    # setosa -> (5.1, 3.5, 1.4, 0.2)
+    # versicolor -> (5.7, 2.8, 4.1, 1.3)
+    # virginica -> (6.3, 2.9, 5.6, 1.8)
+
+.. code-block:: python
+
+    DATA = [
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+    ]
+
+    for row in DATA:
+        *featuers, label = row
+        print(f'{label} -> {featuers}')
+
+    # setosa -> [5.1, 3.5, 1.4, 0.2]
+    # versicolor -> [5.7, 2.8, 4.1, 1.3]
+    # virginica -> [6.3, 2.9, 5.6, 1.8]
+
+.. code-block:: python
+
+    DATA = [
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+    ]
+
+    for *featuers, label in DATA:
+        print(f'{label} -> {featuers}')
+
+    # setosa -> [5.1, 3.5, 1.4, 0.2]
+    # versicolor -> [5.7, 2.8, 4.1, 1.3]
+    # virginica -> [6.3, 2.9, 5.6, 1.8]
+
+.. code-block:: python
+
+    DATA = [
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+    ]
+
+    for *X,y in DATA:
+        print(f'{y} -> {X}')
+
+    # setosa -> [5.1, 3.5, 1.4, 0.2]
+    # versicolor -> [5.7, 2.8, 4.1, 1.3]
+    # virginica -> [6.3, 2.9, 5.6, 1.8]
+
+.. code-block:: python
+
+    DATA = [
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+    ]
+
+    for sepal_length, *_, species in DATA:
+        print(f'{species} -> {sepal_length}')
+
+    # setosa -> 5.1
+    # versicolor -> 5.7
+    # virginica -> 6.3
+
+
+Unpacking nested
+================
+.. code-block:: python
+    :caption: Unpacking nested sequence
 
     DATA = [
         (1, 2),
         ('name', 'Jan Twardowski'),
         ('species', ['setosa', 'versicolor', 'virginica']),
         ((1, 2), ['Johnson Space Center', 'Kennedy Space Center']),
+        (['NASA', 'ESA', 'Roscosmos'], 1),
     ]
 
     for key, value in DATA:
@@ -53,47 +166,13 @@ Unpacking ``list`` of pairs
     # name -> Jan Twardowski
     # species -> ['setosa', 'versicolor', 'virginica']
     # (1, 2) -> ['Johnson Space Center', 'Kennedy Space Center']
+    # ['NASA', 'ESA', 'Roscosmos'] -> 1
 
-Unpacking ``list`` of sequences
--------------------------------
+
+Unpacking ``list`` of ``dict``
+==============================
 .. code-block:: python
-    :caption: Unpacking values in loop
-
-    DATA = [
-        (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-        (6.3, 2.9, 5.6, 1.8, 'virginica'),
-    ]
-
-    # sepal_len, sepal_wid, petal_len, petal_wid, species = (5.1, 3.5, 1.4, 0.2, 'setosa')
-    for sepal_len, sepal_wid, petal_len, petal_wid, species in DATA:
-        print(f'{species} -> {sepal_len}')
-
-    # setosa -> 5.1
-    # versicolor -> 5.7
-    # virginica -> 6.3
-
-.. code-block:: python
-    :caption: Unpacking values in loop
-
-    DATA = [
-        (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-        (6.3, 2.9, 5.6, 1.8, 'virginica'),
-    ]
-
-    # sepal_len, *_, species = (5.1, 3.5, 1.4, 0.2, 'setosa')
-    for sepal_len, *_, species in DATA:
-        print(f'{species} -> {sepal_len}')
-
-    # setosa -> 5.1
-    # versicolor -> 5.7
-    # virginica -> 6.3
-
-``list`` of ``dict``
---------------------
-.. code-block:: python
-    :caption: ``list`` of ``dict``
+    :caption: Unpacking ``list`` of ``dict``
 
     DATA = [
         {'Sepal length': 5.1, 'Sepal width': 3.5, 'Petal length': 1.4, 'Petal width': 0.2, 'Species': 'setosa'},
@@ -109,25 +188,6 @@ Unpacking ``list`` of sequences
     # setosa -> 5.1
     # versicolor -> 5.7
     # virginica -> 6.3
-
-
-Enumerating and item index
-==========================
-.. code-block:: python
-    :caption: Enumerating and item index
-
-    DATA = [
-        (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-        (6.3, 2.9, 5.6, 1.8, 'virginica'),
-    ]
-
-    for i, row in enumerate(DATA):
-        print(f'{i} -> {row}')
-
-    # 0 -> (5.1, 3.5, 1.4, 0.2, 'setosa')
-    # 1 -> (5.7, 2.8, 4.1, 1.3, 'versicolor')
-    # 2 -> (6.3, 2.9, 5.6, 1.8, 'virginica')
 
 
 Assignments

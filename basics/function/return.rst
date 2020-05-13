@@ -3,6 +3,25 @@ Function Return
 ***************
 
 
+Syntax
+======
+.. code-block:: python
+    :caption: Function definition with parameters
+
+    def <name>(<parameters>):
+        return <do something>
+
+.. code-block:: python
+
+    def add_numbers(a, b):
+        return a + b
+
+.. code-block:: python
+
+    def mean(a, b):
+        mean = (a+b) / 2
+        return mean
+
 Return Keyword
 ==============
 .. highlights::

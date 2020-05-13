@@ -35,8 +35,8 @@ Syntax
 .. code-block:: python
     :caption: ``while`` loop generic syntax
 
-    if <CONDITION>:
-        <todo when CONDITION is True>
+    if <condition>:
+        <do something>
 
 .. code-block:: python
     :caption: Single line statements

@@ -258,9 +258,9 @@ Float Percent
 :Output:
     .. code-block:: text
 
-        O2 partial pressure at sea level: 212.24 hPa
         International Standard Atmosphere: 1013.25 hPa
-        Death altitude: 7088.63 m
+        O2 partial pressure at sea level: 212.24 hPa
+        Oxygen starvation altitude: 7088.63 m
 
 :The whys and wherefores:
     * Defining constants and variables

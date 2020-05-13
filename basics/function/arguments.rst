@@ -9,6 +9,20 @@ Arguments vs Parameters
 * parameter is the receiving variable used within the function/block
 
 
+Syntax
+======
+.. code-block:: python
+    :caption: Function definition with parameters
+
+    def <name>(<parameters>):
+        <do something>
+
+.. code-block:: python
+
+    def add_numbers(a, b):
+        print(a + b)
+
+
 Function Parameters
 ===================
 .. code-block:: python

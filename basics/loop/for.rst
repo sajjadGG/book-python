@@ -7,6 +7,9 @@ Loop ``for``
 
 Syntax
 ======
+
+Generic Syntax
+--------------
 .. highlights::
     * ``ITERABLE`` must implement ``iterator`` interface
     * More on iterators in chapter :ref:`Iterators`
@@ -14,8 +17,61 @@ Syntax
 .. code-block:: python
     :caption: ``for`` loop syntax
 
-    for <VARIABLE> in <ITERABLE> :
-        ...
+    for <variable> in <iterable> :
+        <do something>
+
+Naming Convention
+-----------------
+* The longer the loop scope, the longer the variable name should be
+* Avoid one letters if scope is longer than one line
+* Prefer locally meaningfull name over generic names
+* Generic names:
+
+    * ``obj`` - generic name (in Python everything is an object)
+    * ``element`` - generic name
+    * ``item`` - generic name
+    * ``e`` - bad, if scope is more than one line
+    * ``l`` - bad, for letter
+    * ``o`` - bad
+    * ``d`` - for digit
+
+* Locally meaningfull name:
+
+    * ``letter``
+    * ``feature``
+    * ``digit``
+    * ``person``
+    * ``color``
+    * ``username``
+    * etc.
+
+* Special meaning:
+
+    * ``i`` - for loop counter
+
+Examples
+--------
+.. code-block:: python
+
+    for letter in ['a', 'b', 'c']:
+        print(letter)
+
+    # a
+    # b
+    # c
+
+.. code-block:: python
+
+    DATA = [5.1, 3.5, 1.4, 0.2, 'setosa']
+
+    for element in DATA:
+        print(obj)
+
+    # 5.1
+    # 3.5
+    # 1.4
+    # 0.2
+    # 'setosa'
 
 
 Iterating sequences
@@ -23,8 +79,8 @@ Iterating sequences
 .. code-block:: python
     :caption: Iterating over ``str`` will get character on each iteration
 
-    for letter in 'setosa':
-        print(letter)
+    for obj in 'setosa':
+        print(obj)
 
     # s
     # e
@@ -65,6 +121,20 @@ Iterating sequences
     :caption: Iterating over ``set`` will get one element on each iteration
 
     DATA = {5.1, 3.5, 1.4, 0.2, 'setosa'}
+
+    for obj in DATA:
+        print(obj)
+
+    # 5.1
+    # 3.5
+    # 1.4
+    # 0.2
+    # 'setosa'
+
+.. code-block:: python
+    :caption: Iterating over ``frozenset`` will get one element on each iteration
+
+    DATA = frozenset({5.1, 3.5, 1.4, 0.2, 'setosa'})
 
     for obj in DATA:
         print(obj)
@@ -165,22 +235,30 @@ Example
 :English:
     #. Use data from "Input" section (see below)
     #. Count occurrences of each color
+    #. Compare results with "Output" section below
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zlicz wystąpienia każdego z kolorów
+    #. Porównaj wynik z sekcją "Output" poniżej
 
 :Input:
     .. code-block:: python
 
         DATA = ['red', 'green', 'blue', 'red', 'green', 'red', 'blue']
 
+:Output:
+    .. code-block:: python
+
+        result: Dict[str, int]
+        # {'red': 3, 'green': 2, 'blue': 2}
+
 :Solution:
     .. literalinclude:: solution/loop_for_example.py
         :language: python
 
-Counter
--------
+Loop For Counter
+----------------
 * Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 5 min
@@ -230,8 +308,6 @@ Counter
 :Output:
     .. code-block:: python
 
-        from typing import Dict
-
         result: Dict[int, int]
         # {1: 7, 4: 8, 6: 4, 7: 4, 5: 4, 0: 7, 9: 5, 8: 6, 2: 2, 3: 3}
 
@@ -240,8 +316,8 @@ Counter
     * Updating ``dict``
     * Iterating over sequences
 
-Segmentation
-------------
+Loop For Segmentation
+---------------------
 * Complexity level: easy
 * Lines of code to write: 12 lines
 * Estimated time of completion: 10 min
@@ -301,12 +377,12 @@ Segmentation
     * Updating ``dict``
     * Iterating over sequences
 
-Text analysis
+Loop For Text
 -------------
 * Complexity level: medium or hard
 * Lines of code to write: 30 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/loop_for_text_analysis.py`
+* Solution: :download:`solution/loop_for_text.py`
 
 :English:
     #. Use data from "Input" section (see below)

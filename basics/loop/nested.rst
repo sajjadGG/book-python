@@ -5,6 +5,75 @@ Loop Nested Sequences
 *********************
 
 
+Syntax
+======
+
+Generic Syntax
+--------------
+.. code-block:: python
+    :caption: Iterating over nested sequence
+
+    DATA = [<obj>, <obj>, <obj>]
+
+    for obj in DATA:
+        print(obj)
+
+    # <obj>
+    # <obj>
+    # <obj>
+
+Naming Convention
+-----------------
+* ``row`` - best for nested loops with sequence inside
+* Conventions for rows and columns:
+
+    * ``row`` - row (all elements)
+    * ``column`` - current column element from ``row`` sequence
+    * ``i`` - row number
+    * ``j`` - column number
+    * ``x`` - row number
+    * ``y`` - column number
+    * ``outer`` - for outer loop element
+    * ``inner`` - for inner loop element
+
+* Note that ``i`` may interfere with ``i`` used as loop counter
+
+Examples
+--------
+.. code-block:: python
+
+    DATA = [
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+    ]
+
+    for row in DATA:
+        print(row)
+
+    # (5.1, 3.5, 1.4, 0.2, 'setosa')
+    # (5.7, 2.8, 4.1, 1.3, 'versicolor')
+    # (6.3, 2.9, 5.6, 1.8, 'virginica')
+
+.. code-block:: python
+
+    DATA = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+    ]
+
+    for row in DATA:
+        for column in row:
+            print(column, end=', ')
+
+        print()
+
+    # 1, 2, 3,
+    # 4, 5, 6,
+    # 7, 8, 9,
+
+
 Nested sequence of objects of one type
 ======================================
 .. code-block:: python
@@ -124,11 +193,30 @@ Nested sequence of objects of many types
     # None
 
 
+Enumerating and item index
+==========================
+.. code-block:: python
+    :caption: Enumerating and item index
+
+    DATA = [
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+    ]
+
+    for i, row in enumerate(DATA):
+        print(f'{i} -> {row}')
+
+    # 0 -> (5.1, 3.5, 1.4, 0.2, 'setosa')
+    # 1 -> (5.7, 2.8, 4.1, 1.3, 'versicolor')
+    # 2 -> (6.3, 2.9, 5.6, 1.8, 'virginica')
+
+
 Assignments
 ===========
 
-Mean
-----
+Loop Nested Mean
+----------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 10 min
@@ -163,11 +251,11 @@ Mean
 :The whys and wherefores:
     * Iterating over nested structure
 
-Unique keys from schema-less database
--------------------------------------
+Loop Nested Unique Keys
+-----------------------
 * Complexity level: medium
 * Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 10 min
 * Solution: :download:`solution/loop_nested_unique_keys.py`
 
 :English:

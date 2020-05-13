@@ -14,8 +14,18 @@ Syntax
 .. code-block:: python
     :caption: ``while`` loop generic syntax
 
-    while <CONDITION>:
-        <todo when CONDITION is True>
+    while <condition>:
+        <do something>
+
+Naming Convention
+-----------------
+* The longer the loop scope, the longer the variable name should be
+* Avoid one letters if scope is longer than one line
+* Generic names:
+
+    * ``i`` - for loop counter
+    * ``abort`` - for abort flags
+    * ``abort_flag`` - for abort flags
 
 
 Use Cases
@@ -176,18 +186,104 @@ Force skip iteration
 Assignments
 ===========
 
-Report card
------------
-* Complexity level: medium
-* Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
-* Solution: :download:`solution/loop_while_report_card.py`
+Example
+-------
+* Complexity level: easy
+* Lines of code to write: 8 lines
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/loop_while_example.py`
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Convert ``DATA`` to ``List[float]`` using ``while`` loop and name it ``grade_scale``
-    #. Ask user about grade, one at a time
+    #. Create ``result: List[int]``
+    #. Use ``while`` to iterate over ``DATA``
+    #. Convert all elements of ``DATA`` to ``int``
+    #. Converted values add to ``result``
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Stwórz ``result: List[int]``
+    #. Użyj ``while`` do iterowania po ``DATA``
+    #. Przekonwertuj wszystkie elementy ``DATA`` do ``int``
+    #. Przekonwertowane wartości dodaj do ``result``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        DATA = ['1', '2', '3']
+
+:Output:
+    .. code-block:: python
+
+        result: List[int]
+        # [1, 2, 3]
+
+:Solution:
+    .. literalinclude:: solution/loop_while_example.py
+        :language: python
+
+Loop While Convert
+------------------
+* Complexity level: easy
+* Lines of code to write: 8 lines
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/loop_while_convert.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Create ``result: List[int]``
+    #. Use ``while`` to iterate over ``DATA``
+    #. Convert all elements of ``DATA`` to ``int``
+    #. Converted values add to ``result``
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Stwórz ``result: List[int]``
+    #. Użyj ``while`` do iterowania po ``DATA``
+    #. Przekonwertuj wszystkie elementy ``DATA`` do ``int``
+    #. Przekonwertowane wartości dodaj do ``result``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        DATA = (2, 3, 3.5, 4, 4.5, 5)
+
+:Output:
+    .. code-block:: python
+
+        result: List[int]
+        # [2.0, 3.0, 3.5, 4.0, 4.5, 5.0]
+
+:The whys and wherefores:
+    * Reading user input
+    * Input validation
+    * Type casting
+    * Sequences
+    * Using while loop
+    * Breaking loop
+    * Using built-in functions
+
+:Hints:
+    * ``input(...)``
+    * ``mean = sum(...) / len(...)``
+
+Loop While Input
+----------------
+* Complexity level: medium
+* Lines of code to write: 15 lines
+* Estimated time of completion: 15 min
+* Solution: :download:`solution/loop_while_input.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Using ``while`` Create ``grade_scale: List[float]`` from ``DATA`` (convert values to ``float``)
+    #. Using ``input()`` ask user about grade, one at a time
     #. User will type only valid ``int`` or ``float``
+    #. To iterate use only ``while`` loop
     #. If grade is on a new grade scale - add it to report card
     #. If grade is not on a new grade scale - print "Grade is not allowed" and continue input
     #. If user pressed Enter key, end inserting data
@@ -196,8 +292,9 @@ Report card
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Przekonwertuj ``DATA`` do ``List[float]`` używając pętli ``while`` i nazwij ``grade_scale``
-    #. Poproś użytkownika o ocenę, jedną na raz
+    #. Używając ``while`` stwórz ``grade_scale: List[float]`` z ``DATA`` (przekonwertuj wartości do ``float``)
+    #. Do iterowania użyj tylko pętli ``while``
+    #. Używając ``input()`` poproś użytkownika o ocenę, jedną na raz
     #. Użytkownik poda tylko poprawne ``int`` lub ``float``
     #. Jeżeli ocena jest w ``grade_scale`` - dodaj ją do dzienniczka
     #. Jeżeli oceny nie ma w ``grade_scale`` - wyświetl "Grade is not allowed" i kontynuuj wpisywanie
@@ -220,5 +317,4 @@ Report card
     * Using built-in functions
 
 :Hints:
-    * ``input(...)``
     * ``mean = sum(...) / len(...)``
