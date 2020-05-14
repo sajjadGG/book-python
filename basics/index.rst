@@ -114,11 +114,11 @@ Functions
     function/parameters.rst
     function/arguments.rst
     function/scope.rst
-    function/type-annotation.rst
     function/recurrence.rst
     function/doctest.rst
     function/generators.rst
     function/lambda.rst
+    function/type-annotation.rst
 
 ***************************
 Object Oriented Programming
