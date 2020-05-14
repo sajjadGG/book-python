@@ -157,6 +157,11 @@ Jupyter
 * Uses include: data cleaning and transformation, numerical simulation, statistical modeling, data visualization, machine learning, etc
 
 
+Python Developer Survey
+=======================
+* Annual
+* https://www.jetbrains.com/lp/python-developers-survey-2019
+
 Assignments
 ===========
 
