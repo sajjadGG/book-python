@@ -18,7 +18,9 @@ Syntax
 
 .. code-block:: python
 
-    add_numbers(a, b)
+    say_hello(name)
+
+    add(a, b)
 
 
 Positional Arguments
