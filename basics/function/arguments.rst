@@ -25,20 +25,22 @@ Syntax
 
 Positional Arguments
 ====================
+.. highlights::
+    * Order of positional arguments has significance
+
 .. code-block:: python
 
-    def subtract(a, b):
+    def add(a, b):
         return a - b
 
 
-    subtract(2, 1)      # 1
-    subtract(1, 2)      # -1
+    subtract(2, 1)          # 1
+    subtract(1, 2)          # -1
 
 
-Keyword arguments
+Keyword Arguments
 =================
 .. highlights::
-    * Arguments without default values are required
     * Order of keyword arguments has no significance
 
 .. code-block:: python
@@ -47,14 +49,32 @@ Keyword arguments
         return a - b
 
 
-    subtract(a=2, b=1)  # 1
-    subtract(b=1, a=2)  # 1
+    subtract(a=2, b=1)      # 1
+    subtract(b=1, a=2)      # 1
 
-    subtract(2, b=1)    # 1
-    subtract(a=2, 1)    # SyntaxError: positional argument follows keyword argument
 
-    subtract(2, a=1)    # TypeError: subtract() got multiple values for argument 'a'
+Positional and Keyword Arguments
+================================
+.. highlight::
+    * Positional arguments must be at the left side
+    * Keyword arguments must be at the right side
 
+.. code-block:: python
+
+    def subtract(a, b):
+        return a - b
+
+
+    subtract(2, b=1)        # 1
+    subtract(a=2, 1)        # SyntaxError: positional argument follows keyword argument
+    subtract(2, a=1)        # TypeError: subtract() got multiple values for argument 'a'
+
+
+Examples
+========
+
+Example 1
+---------
 .. code-block:: python
 
     def hello(name='José Jiménez'):
@@ -65,11 +85,7 @@ Keyword arguments
     hello(name='Mark Watney')     # My name... Mark Watney
     hello()                       # My name... José Jiménez
 
-
-Examples
-========
-
-Example 1
+Example 2
 ---------
 .. code-block:: python
 
@@ -94,7 +110,7 @@ Example 1
         persistent=True,
     )
 
-Example 2
+Example 3
 ---------
 .. code-block:: python
 
@@ -205,184 +221,3 @@ Power
 
         power(3)
         # 27
-
-Aviation numbers
-----------------
-* Complexity level: medium
-* Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
-* Solution: :download:`solution/function_args_aviation_numbers.py`
-
-:English:
-    #. Use data from "Input" section (see below)
-    #. Given is pilot's alphabet for numbers
-    #. Convert ``CONVERSION: Dict[int, str]`` to ``ALPHABET: Dict[str, str]`` (keys as ``str``)
-    #. For input data (see input section below)
-    #. Define function converting ``int`` or ``float`` to text form in Pilot's Speak
-    #. You can modify ``ALPHABET``
-    #. You cannot change ``CONVERSION``
-    #. Compare result with "Output" section (see below)
-
-:Polish:
-    #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Dany jest alfabet pilotów dla numerów
-    #. Przekonwertuj ``CONVERSION: Dict[int, str]`` na ``ALPHABET: Dict[str, str]`` (klucze jako ``str``)
-    #. Dla danych wejściowych (patrz sekcja input poniżej)
-    #. Zdefiniuj funkcję konwertującą ``int`` lub ``float`` na formę tekstową w mowie pilotów
-    #. Możesz modyfikować ``ALPHABET``
-    #. Nie możesz zmieniać ``CONVERSION``
-    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
-
-:Input:
-    .. code-block:: python
-
-        CONVERSION = {
-            0: 'zero',
-            1: 'one',
-            2: 'two',
-            3: 'tree',
-            4: 'fower',
-            5: 'fife',
-            6: 'six',
-            7: 'seven',
-            8: 'ait',
-            9: 'niner',
-        }
-
-        pilot_say(1969)
-        pilot_say(31337)
-        pilot_say(13.37)
-        pilot_say(31.337)
-        pilot_say(-1969)
-        pilot_say(-31.337)
-        pilot_say(-49.35)
-
-:Output:
-    .. code-block:: python
-
-        'one niner six niner'
-        'tree one tree tree seven'
-        'one tree and tree seven'
-        'tree one and tree tree seven'
-        'minus one niner six niner'
-        'minus tree one and tree tree seven'
-        'minus fower niner and tree fife'
-
-:The whys and wherefores:
-    * Defining and calling functions
-    * Passing function arguments
-    * Cleaning data from user input
-    * ``dict`` lookups
-
-.. _Cleaning text input:
-
-Cleaning text input
--------------------
-* Complexity level: medium
-* Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
-* Solution: :download:`solution/function_args_str_clean.py`
-
-:English:
-    #. Use data from "Input" section (see below)
-    #. Write function cleaning up data
-    #. Function takes one argument of type ``str``
-    #. Function returns cleaned text
-    #. Compare result with "Output" section (see below)
-
-:Polish:
-    #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Napisz funkcję czyszczącą dane
-    #. Funkcja przyjmuje jeden argument typu ``str``
-    #. Funkcja zwraca oczyszczony tekst
-    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
-
-:Input:
-    .. code-block:: python
-
-        DATA = [
-            'ul.Mieszka II',
-            'UL. Zygmunta III WaZY',
-            '  bolesława chrobrego ',
-            'ul Jana III SobIESkiego',
-            '\tul. Jana trzeciego Sobieskiego',
-            'ulicaJana III Sobieskiego',
-            'UL. JA    NA 3 SOBIES  KIEGO',
-            'ULICA JANA III SOBIESKIEGO  ',
-            'ULICA. JANA III SOBIeskieGO',
-            ' Jana 3 Sobieskiego  ',
-            'Jana III Sobi  eskiego ',
-        ]
-
-:Output:
-    .. code-block:: python
-
-        'Mieszka II'
-        'Zygmunta III Wazy'
-        'Bolesława Chrobrego'
-        'Jana III Sobieskiego'
-        'Jana III Sobieskiego'
-        'Jana III Sobieskiego'
-        'Jana III Sobieskiego'
-        'Jana III Sobieskiego'
-        'Jana III Sobieskiego'
-        'Jana III Sobieskiego'
-        'Jana III Sobieskiego'
-
-:The whys and wherefores:
-    * Defining and calling functions
-    * Passing function arguments
-    * Cleaning data from user input
-
-.. todo:: Translate input data to English
-
-Number to human readable
-------------------------
-* Complexity level: hard
-* Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
-* Solution: :download:`solution/function_args_numstr_human.py`
-
-:English:
-    #. Use data from "Input" section (see below)
-    #. Define function converting ``int`` or ``float`` to text form
-    #. Text form must be in proper grammar form
-    #. Max 6 digits before decimal separator (point ``.``)
-    #. Max 5 digits after decimal separator (point ``.``)
-    #. Compare result with "Output" section (see below)
-
-:Polish:
-    #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Zdefiniuj funkcję konwertującą ``int`` lub ``float`` na formę tekstową
-    #. Forma tekstowa musi być poprawna gramatycznie
-    #. Max 6 cyfr przed separatorem dziesiętnym (point ``.``)
-    #. Max 5 cyfr po separatorze dziesiętnym (point ``.``)
-    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
-
-:Input:
-    .. code-block:: python
-
-        1969
-        31337
-        13.37
-        31.337
-        -1969
-        -31.337
-        -49.35
-
-:Output:
-    .. code-block:: python
-
-        'one thousand nine hundred sixty nine'
-        'thirty one thousand three hundred thirty seven'
-        'thirteen and thirty seven hundredths'
-        'thirty one three hundreds thirty seven thousands'
-        'minus one thousand nine hundred sixty nine'
-        'minus thirty one and three hundreds thirty seven thousands'
-        'minus forty nine and thirty five hundreds'
-
-:The whys and wherefores:
-    * Defining and calling functions
-    * Passing function arguments
-    * Cleaning data from user input
-    * ``dict`` lookups
