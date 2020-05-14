@@ -5,12 +5,12 @@ Function Recurrence
 *******************
 
 .. epigraph::
-    Aby zrozumieć rekurencję – musisz najpierw zrozumieć rekursję.
-    Aby zrozumieć rekursję - musisz najpierw zrozumieć rekurencję.
+    * Aby zrozumieć rekurencję – musisz najpierw zrozumieć rekursję.
+    * Aby zrozumieć rekursję - musisz najpierw zrozumieć rekurencję.
 
 
-What is recurrence?
-===================
+Rationale
+=========
 .. highlights::
     * Also known as recursion
     * Python isn't a functional language
@@ -19,6 +19,9 @@ What is recurrence?
     * Unbridled recursion causes stack overflows!
     * Rewriting the algorithm iteratively, is generally a better idea
 
+
+Example
+=======
 .. code-block:: python
 
     def factorial(n: int) -> int:
@@ -38,8 +41,8 @@ What is recurrence?
                             return 1                # 1
 
 
-Limit
-=====
+Recursion Depth Limit
+=====================
 .. highlights::
     * Default recursion depth limit is 1000
     * Warning: Anaconda sets default recursion depth limit to 2000

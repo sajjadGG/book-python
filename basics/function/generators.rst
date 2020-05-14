@@ -19,24 +19,24 @@ Built-in Generators
     :caption: ``range()`` definition
 
     range(0,3)
-    # range(0,3)
+    # range(0, 3)
 
     list(range(0,3))
     # [0, 1, 2]
 
-    tuple([0, 1, 2])
+    tuple(range(0,3))
     # (0, 1, 2)
 
+    set(range(0,3))
+    # {0, 1, 2}
+
+    frozenset(range(0,3))
+    # frozenset({0, 1, 2})
+
 .. code-block:: python
-    :caption: ``range()`` examples
 
-    for number in range(4, 11, 2):
-        print(number)
-
-    # 4
-    # 6
-    # 8
-    # 10
+    list(range(4, 11, 2))
+    # [4, 6, 8, 10]
 
 .. code-block:: python
 
@@ -75,17 +75,36 @@ Built-in Generators
     tuple(zip(header, data))
     # (('a', 1), ('b', 2), ('c', 3))
 
+    set(zip(header, data))
+    # {('b', 2), ('a', 1), ('c', 3)}
+
+    frozenset(zip(header, data))
+    # frozenset({('b', 2), ('a', 1), ('c', 3)})
+
     dict(zip(header, data))
     # {'a': 1, 'b': 2, 'c': 3}
+
+.. code-block:: python
+    :caption: ``zip()`` adjust to shortest sequence
+
+    header = ['a', 'b', 'c']
+    data = [1, 2, 3, 4, 5, 6]
+
+    result = zip(header, data)
+
+    print(list(result))
+    # [('a', 1), ('b', 2), ('c', 3)]
 
 .. code-block:: python
     :caption: ``zip()`` examples
 
     header = ['a', 'b', 'c']
     data = [1, 2, 3]
-    row = [77,88,99]
+    row = [77, 88, 99]
 
-    [(h,d,r) for h,d,r in zip(header, data, row)]
+    result = [(h,d,r) for h,d,r in zip(header, data, row)]
+
+    print(result)
     # [('a', 1, 77), ('b', 2, 88), ('c', 3, 99)]
 
 
@@ -101,20 +120,33 @@ Built-in Generators
 
     data = [1, 2, 3]
 
+    map(float, data)
+    # <map object at 0x11d15a190>
+
     list(map(float, data))
     # [1.0, 2.0, 3.0]
+
+    tuple(map(float, data))
+    # (1.0, 2.0, 3.0)
+
+    set(map(float, data))
+    # {1.0, 2.0, 3.0}
+
+    frozenset(map(float, data))
+    # frozenset({1.0, 2.0, 3.0})
 
 .. code-block:: python
     :caption: ``map()`` examples
 
-    map(float, [1, 2, 3])
-    # <map object at 0x11d15a190>
+    def square(x):
+        return x ** 2
 
-    list(map(float, [1, 2, 3]))
-    # [1.0, 2.0, 3.0]
 
-    tuple(map(float, [1, 2, 3]))
-    # (1.0, 2.0, 3.0)
+    data = [1, 2, 3]
+    result = map(square, data)
+
+    list(result)
+    # [1, 4, 9]
 
 
 ``filter()``
@@ -127,55 +159,73 @@ Built-in Generators
 .. code-block:: python
     :caption: ``filter()`` example
 
-    DATA = [
-        {'name': 'Jan Twardowski', 'age': 21},
-        {'name': 'Mark Watney', 'age': 25},
-        {'name': 'Melissa Lewis', 'age': 18},
-    ]
-
-    def is_adult(person):
-        if person['age'] >= 21:
-            return True
-        else:
-            return False
-
-
-    result = filter(is_adult, DATA)
-    print(list(result))
-    # [
-    #   {'name': 'Jan Twardowski', 'age': 21},
-    #   {'name': 'Mark Watney', 'age': 25},
-    # ]
-
-.. code-block:: python
-    :caption: ``filter()`` example
-
-    data = [1, 2, 3, 4, 5, 6]
-
     def is_even(x):
         if x % 2 == 0:
             return True
         else:
             return False
 
+
+    data = [1, 2, 3, 4, 5, 6]
+
     filter(is_even, data)
     # <filter object at 0x11d182990>
 
-    list(filter(is_even, data))
+    result = filter(is_even, data)
+    list(result)
     # [2, 4, 6]
 
 .. code-block:: python
 
-    data = [1, 2, 3, 4, 5, 6]
-
     def is_even(x):
         return x % 2 == 0
 
-    filter(is_even, data)
-    # <filter object at 0x11d182990>
 
-    list(filter(is_even, data))
+    data = [1, 2, 3, 4, 5, 6]
+    result = filter(is_even, data)
+
+    list(result)
     # [2, 4, 6]
+
+.. code-block:: python
+    :caption: ``filter()`` example
+
+
+    def adult(person):
+        if person['age'] >= 21:
+            return True
+        else:
+            return False
+
+
+    people = [
+        {'age': 21, 'name': 'Jan Twardowski'},
+        {'age': 25, 'name': 'Mark Watney'},
+        {'age': 18, 'name': 'Melissa Lewis'}]
+
+    result = filter(adult, people)
+
+    print(list(result))
+    # [{'age': 21, 'name': 'Jan Twardowski'},
+    #  {'age': 25, 'name': 'Mark Watney'}]
+
+.. code-block:: python
+    :caption: ``filter()`` example
+
+    def astronaut(person):
+        return person['is_astronaut']
+
+
+    people = [
+        {'is_astronaut': False, 'name': 'Jan Twardowski'},
+        {'is_astronaut': True, 'name': 'Mark Watney'},
+        {'is_astronaut': True, 'name': 'Melissa Lewis'}]
+
+    result = filter(astronaut, people)
+
+    print(list(result))
+    # [{'is_astronaut': True, 'name': 'Mark Watney'},
+    #  {'is_astronaut': True, 'name': 'Melissa Lewis'}]
 
 
 ``enumerate()``
@@ -232,7 +282,8 @@ Built-in Generators
 
 ``all()``
 =========
-Return True if all elements of the iterable are true (or if the iterable is empty). Equivalent to:
+* Return True if all elements of the iterable are true (or if the iterable is empty).
+* Equivalent to:
 
 .. code-block:: python
 
@@ -249,7 +300,8 @@ Return True if all elements of the iterable are true (or if the iterable is empt
 
 ``any()``
 =========
-Return True if any element of the iterable is true. If the iterable is empty, return False. Equivalent to:
+* Return True if any element of the iterable is true. If the iterable is empty, return False.
+* Equivalent to:
 
 .. code-block:: python
 
@@ -267,24 +319,34 @@ Return True if any element of the iterable is true. If the iterable is empty, re
 Assignments
 ===========
 
-Built-in Generators
--------------------
+Function Generator Chain
+------------------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
-* Estimated time of completion: 15 min
-* Solution: :download:`solution/function_generators_task.py`
+* Estimated time of completion: 10 min
+* Solution: :download:`solution/function_generators_chain.py`
 
 :English:
-    #. Using generator expression to create ``result: List[int]`` with numbers from 1 to 33 which are divisible by 3
-    #. Filter ``result`` to contain only odd numbers
-    #. Cube all numbers in ``result``
-    #. Calculate arithmetic mean from ``result``
+    #. Use generator expression to create ``numbers: List[int]``
+    #. In generator use ``range()`` to get numbers from 1 to 33 (inclusive) divisible by 3
+    #. Use ``filter()`` to get odd numbers from ``numbers``
+    #. Use ``map()`` to cube all numbers in ``numbers``
+    #. Create ``result: float`` with arithmetic mean of ``numbers``
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Używając wyrażenia generatorowego stwórz ``result: List[int]`` z liczbami z zakresu 1 do 33 podzielnymi przez 3
-    #. Przefiltruj ``result`` aby zawierał tylko liczby nieparzyste
-    #. Podnieś wszystkie liczby w ``result`` do sześcianu
-    #. Oblicz średnią arytmetyczną z ``result``
+    #. Użyj wyrażenia generatorowego do stworzenia ``numbers: List[int]``
+    #. W generatorze użyj ``range()`` aby otrzymać liczby od 1 do 33 (włącznie) podzielne przez 3
+    #. Użyj ``filter()`` aby otrzymać liczby nieparzyste z ``numbers``
+    #. Użyj ``map()`` aby podnieść wszystkie liczby w ``numbers`` do sześcianu
+    #. Stwórz ``result: float`` ze średnią arytmetyczną z ``numbers``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Output:
+    .. code-block:: python
+
+        result: float
+        # 11502.0
 
 :Hint:
     * ``mean = sum(...) / len(...)``

@@ -5,81 +5,69 @@ Function Doctest
 ****************
 
 
+Rationale
+=========
 .. highlights::
-    * tests are always the most up-to-date code documentation
-    * tests cannot get out of sync from code
-    * checks if function output is exactly as expected
-    * useful for regex modifications
-    * can add text (i.e. explanations) between tests
+    * Tests are always the most up-to-date code documentation
+    * Tests cannot get out of sync from code
+    * Checks if function output is exactly as expected
+    * Useful for regex modifications
+    * Can add text (i.e. explanations) between tests
     * Case Study: https://github.com/scikit-learn/scikit-learn/blob/master/sklearn/linear_model/_base.py#L409
-    * PyCharm doctest runner warns about ``DeprecationWarning``, fix in progress -  https://youtrack.jetbrains.com/issue/PY-31751
+
 
 Syntax
 ======
 .. highlights::
-    * Docstring is a first multiline comment in:
-
-        * File / Module
-        * Class
-        * Method / Function
-
-    * It is accessible in ``__doc__`` property of an object
+    * Docstring is a first multiline comment in: File/Module, Class, Method/Function
     * Used for generating ``help()`` documentation
-    * Used for ``doctest``
+    * It is accessible in ``__doc__`` property of an object
+    * Used for ``doctest`` (more in :ref:`Function Doctest`)
     * :pep:`257` Docstring convention - For multiline always use three double quote (``"""``) characters
 
 .. code-block:: python
-    :caption: Docstring used for documentation
+    :caption: Docstring used for doctest
 
     def apollo_dsky(noun, verb):
         """
         This is the Apollo Display Keyboard
         It takes noun and verb
-        """
-        print(f'Program selected. Noun: {noun}, verb: {verb}')
 
-.. code-block:: python
-    :caption: Docstring used for doctest
+        >>> apollo_dsky(6, 61)
+        Program selected. Noun: 06, verb: 61
 
-    def add(a, b):
+        >>> apollo_dsky(16, 68)
+        Program selected. Noun: 16, verb: 68
         """
-        Sums two numbers.
-
-        >>> add(1, 2)
-        3
-        >>> add(-1, 1)
-        0
-        """
-        return a + b
+        print(f'Program selected. Noun: {noun:02}, verb: {verb:02}')
 
 
 Running tests
 =============
+#. Running tests in Pycharm IDE (either option):
 
-Running tests with your IDE
----------------------------
-.. highlights::
+    * Right click on source code with doctests -> Run 'Doctest for ...'
     * View menu -> Run... -> Doctest in ``my_function``
 
-From code
----------
-.. code-block:: python
+#. Running Tests from Python Code:
 
-    if __name__ == "__main__":
-        import doctest
-        doctest.testmod()
+    .. code-block:: python
 
-From command line
------------------
-.. code-block:: console
-    :caption: Display only errors. With ``-v`` display progress
+        if __name__ == "__main__":
+            import doctest
+            doctest.testmod()
 
-    $ python -m doctest example.py
-    $ python -m doctest -v example.py
+#. Running tests from command line:
+
+    .. code-block:: console
+        :caption: Display only errors. With ``-v`` display progress
+
+        $ python -m doctest example.py
+        $ python -m doctest -v example.py
 
 
-Test Numeric Values
-===================
+Test ``int``, ``float``
+=======================
 .. code-block:: python
     :caption: ``int`` values
 
@@ -111,8 +99,8 @@ Test Numeric Values
         return a + b
 
 
-Testing Logic Values
-====================
+Test ``bool``
+=============
 .. code-block:: python
 
     AGE_ADULT = 18
@@ -132,6 +120,89 @@ Testing Logic Values
             return True
         else:
             return False
+
+
+Test ``str``
+============
+.. highlights::
+    * Python will change to single quotes in most cases
+    * Python will change to double quotes to avoid escapes
+    * ``print()`` function output, don't have quotes
+
+.. code-block:: python
+    :caption: Returning ``str``. Python will change to single quotes in most cases
+    :emphasize-lines: 3-4,7-8,11-12,15-16
+
+    def echo(text):
+        """
+        >>> echo('hello')
+        'hello'
+
+        # Python will change to single quotes in most cases
+        >>> echo("hello")
+        'hello'
+
+        Following test will fail
+        >>> echo('hello')
+        "hello"
+
+        Python will change to double quotes to avoid escapes
+        >>> echo('It\\'s Twardowski\\'s Moon')
+        "It's Twardowski's Moon"
+        """
+        return text
+
+.. code-block:: python
+    :caption: There are no quotes in ``print()`` function output
+    :emphasize-lines: 4
+
+    def echo(text):
+        """
+        >>> echo('hello')
+        hello
+        """
+        print(text)
+
+.. code-block:: python
+    :caption: Testing ``print(str)`` with newlines
+    :emphasize-lines: 7
+
+    def echo(text):
+        """
+        >>> echo('hello')
+        hello
+        hello
+        hello
+        <BLANKLINE>
+        """
+        print(f'{text}\n' * 3)
+
+
+Test Sequences
+==============
+.. todo:: Test Sequences
+
+
+Test Exceptions
+===============
+.. code-block:: python
+    :caption: Testing for exceptions
+    :emphasize-lines: 3-6
+
+    def add_numbers(a, b):
+        """
+        >>> add_numbers('one', 'two')
+        Traceback (most recent call last):
+            ...
+        TypeError: Argument must be int or float
+        """
+        if not isinstance(a, (int, float)):
+            raise TypeError('Argument must be int or float')
+
+        if not isinstance(b, (int, float)):
+            raise TypeError('Argument must be int or float')
+
+        return a + b
 
 .. code-block:: python
     :caption: This test will fail. Expected exception, got 2.0
@@ -177,89 +248,7 @@ Testing Logic Values
         return a + b
 
 
-Testing String Values
-=====================
-.. highlights::
-    * Python will change to single quotes in most cases
-    * Python will change to double quotes to avoid escapes
-
-.. code-block:: python
-    :caption: Returning ``str``. Python will change to single quotes in most cases
-    :emphasize-lines: 3-4,7-8,11-12,15-16
-
-    def echo(text):
-        """
-        >>> echo('hello')
-        'hello'
-
-        # Python will change to single quotes in most cases
-        >>> echo("hello")
-        'hello'
-
-        Following test will fail
-        >>> echo('hello')
-        "hello"
-
-        Python will change to double quotes to avoid escapes
-        >>> echo('It\\'s Twardowski\\'s Moon')
-        "It's Twardowski's Moon"
-        """
-        return text
-
-Testing ``print()``
--------------------
-.. highlights::
-    * ``print()`` function output, don't have quotes
-
-.. code-block:: python
-    :caption: There are no quotes in ``print()`` function output
-    :emphasize-lines: 4
-
-    def echo(text):
-        """
-        >>> echo('hello')
-        hello
-        """
-        print(text)
-
-.. code-block:: python
-    :caption: Testing ``print(str)`` with newlines
-    :emphasize-lines: 7
-
-    def echo(text):
-        """
-        >>> echo('hello')
-        hello
-        hello
-        hello
-        <BLANKLINE>
-        """
-        print(f'{text}\n' * 3)
-
-
-Testing for exceptions
-======================
-.. code-block:: python
-    :caption: Testing for exceptions
-    :emphasize-lines: 3-6
-
-    def add_numbers(a, b):
-        """
-        >>> add_numbers('one', 'two')
-        Traceback (most recent call last):
-            ...
-        TypeError: Argument must be int or float
-        """
-        if not isinstance(a, (int, float)):
-            raise TypeError('Argument must be int or float')
-
-        if not isinstance(b, (int, float)):
-            raise TypeError('Argument must be int or float')
-
-        return a + b
-
-
-Using python statements
+Test Python Expressions
 =======================
 .. code-block:: python
     :caption: Using python statements in ``doctest``
@@ -326,7 +315,35 @@ Celsius to Kelvin temperature conversion
 .. code-block:: python
     :caption: Celsius to Kelvin temperature conversion
 
-    def celsius_to_kelvin(temperature_in_celsius):
+    def celsius_to_kelvin(celsius):
+        """
+        >>> celsius_to_kelvin(0)
+        273.15
+
+        >>> celsius_to_kelvin(1)
+        274.15
+
+        >>> celsius_to_kelvin(-1)
+        272.15
+
+        >>> celsius_to_kelvin(-273.15)
+        0.0
+        """
+        kelvin = celsius + 273.15
+
+        if kelvin < 0:
+            raise ValueError('Negative Kelvin')
+
+        return kelvin
+
+.. code-block:: python
+
+    from typing import Union, Sequence
+
+    Number = Union[int, float]
+    AllowedType = Union[Number, Sequence[Number]]
+
+    def celsius_to_kelvin(celsius: AllowedType) -> AllowedType:
         """
         >>> celsius_to_kelvin(0)
         273.15
@@ -340,28 +357,49 @@ Celsius to Kelvin temperature conversion
         >>> celsius_to_kelvin(-273.15)
         0.0
 
-        >>> celsius_to_kelvin(-274.15)
+        >>> celsius_to_kelvin(-273.16)
         Traceback (most recent call last):
             ...
-        ValueError: Argument must be greater than -273.15
+        ValueError: Negative Kelvin
 
-        >>> celsius_to_kelvin([-1, 0, 1])
+        >>> celsius_to_kelvin(-300)
         Traceback (most recent call last):
             ...
-        ValueError: Argument must be int or float
+        ValueError: Negative Kelvin
 
-        >>> celsius_to_kelvin('one')
+        >>> celsius_to_kelvin(True)
         Traceback (most recent call last):
             ...
-        ValueError: Argument must be int or float
+        TypeError: Argument must be: int, float or Sequence[int, float]
+
+        >>> celsius_to_kelvin([0, 1, 2, 3])
+        [273.15, 274.15, 275.15, 276.15]
+
+        >>> celsius_to_kelvin({0, 1, 2, 3})
+        {273.15, 274.15, 275.15, 276.15}
+
+        >>> celsius_to_kelvin([0, 1, 2, -300])
+        Traceback (most recent call last):
+            ...
+        ValueError: Negative Kelvin
+
+        >>> celsius_to_kelvin([0, 1, [2, 3], 3])
+        [273.15, 274.15, [275.15, 276.15], 276.15]
         """
-        if not isinstance(temperature_in_celsius, (float, int)):
-            raise ValueError('Argument must be int or float')
+        datatype = type(celsius)
 
-        if temperature_in_celsius < -273.15:
-            raise ValueError('Argument must be greater than -273.15')
+        if type(celsius) in {list, tuple, set, frozenset}:
+            return datatype(celsius_to_kelvin(x) for x in celsius)
 
-        return float(temperature_in_celsius + 273.15)
+        if datatype not in {int, float}:
+            raise TypeError('Argument must be: int, float or Sequence[int, float]')
+
+        kelvin = celsius + 273.15
+
+        if kelvin < 0.0:
+            raise ValueError('Negative Kelvin')
+
+        return float(kelvin)
 
 
 Assignments

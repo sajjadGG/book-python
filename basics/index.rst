@@ -111,6 +111,7 @@ Functions
 
     function/definition.rst
     function/return.rst
+    function/parameters.rst
     function/arguments.rst
     function/scope.rst
     function/type-annotation.rst

@@ -19,8 +19,8 @@ Syntax
 .. code-block:: python
 
     def mean(a, b):
-        mean = (a+b) / 2
-        return mean
+        c = (a+b) / 2
+        return c
 
 Return Keyword
 ==============
@@ -99,14 +99,7 @@ Return Sequences
 .. code-block:: python
 
     def my_function():
-        return 42, 13.37, 'Mark Watney'
-
-.. code-block:: python
-
-    def my_function():
-        return (42, 13.37, 'Mark Watney')
-
-.. code-block:: python
+        return list(42, 13.37, 'Mark Watney')
 
     def my_function():
         return [42, 13.37, 'Mark Watney']
@@ -114,12 +107,33 @@ Return Sequences
 .. code-block:: python
 
     def my_function():
+        return tuple(42, 13.37, 'Mark Watney')
+
+    def my_function():
+        return (42, 13.37, 'Mark Watney')
+
+    def my_function():
+        return 42, 13.37, 'Mark Watney'
+
+.. code-block:: python
+
+    def my_function():
+        return set({42, 13.37, 'Mark Watney'})
+
+    def my_function():
         return {42, 13.37, 'Mark Watney'}
 
+.. code-block:: python
+
+    def my_function():
+        return frozenset({42, 13.37, 'Mark Watney'})
 
 Return Mapping
 ==============
 .. code-block:: python
+
+    def my_function():
+        return dict(first_name='Mark', last_name='Watney')
 
     def my_function():
         return {'first_name': 'Mark', 'last_name': 'Watney'}
@@ -135,6 +149,7 @@ Returning nested types
             {'Jan Twardowski', 'Melissa Lewis'},
             {'astro': 'Иванович', 'agency': {'name': 'Roscosmos'}},
             {'astro': 'Jiménez', 'missions': ('Mercury', 'Gemini', 'Apollo')},
+            {'astro': 'Vogel', 'missions': (set(), tuple(), list())},
         ]
 
 

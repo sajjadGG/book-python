@@ -8,46 +8,46 @@ Access Scope
 .. code-block:: python
     :caption: Functions has access to global values
 
-    DATA = [1, 2, 3]
+    data = [1, 2, 3]
 
     def add():
-        return sum(DATA)
+        return sum(data)
 
     print(add())
     # 6
 
-    print(DATA)
+    print(data)
     # [1, 2, 3]
 
 .. code-block:: python
     :caption: Shadowing
 
-    DATA = [1, 2, 3]
+    data = [1, 2, 3]
 
     def add():
-        DATA = [10, 20, 30]
-        return sum(DATA)
+        data = [10, 20, 30]
+        return sum(data)
 
     print(add())
     # 60
 
-    print(DATA)
+    print(data)
     # [1, 2, 3]
 
 .. code-block:: python
     :caption: Modify global, BAD PRACTICE!!
 
-    DATA = [1, 2, 3]
+    data = [1, 2, 3]
 
     def add():
-        global DATA
-        DATA = [10, 20, 30]
-        return sum(DATA)
+        global data
+        data = [10, 20, 30]
+        return sum(data)
 
     print(add())
     # 60
 
-    print(DATA)
+    print(data)
     # [10, 20, 30]
 
 
@@ -266,8 +266,8 @@ Local Scope
 Assignments
 ===========
 
-Filter
-------
+Function Scope Filter
+---------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
@@ -275,21 +275,23 @@ Filter
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Separate header (first line) from data
-    #. Define ``select: Set[str]`` with 'setosa' and 'versicolor'
+    #. Separate header from data
+    #. Define ``select: Set[str]`` with values 'setosa' and 'versicolor'
     #. Iterate over data and split row into ``features`` and ``label`` (last)
-    #. Define function which sums ``features``, only when ``label`` is in ``wanted``
-    #. When ``label`` is not in ``wanted`` return ``0`` (zero)
+    #. Define function ``sum_if(features, label)``
+    #. Function sums ``features``, only when ``label`` is in ``select``
+    #. When ``label`` is not in ``select`` return ``0`` (zero)
     #. Print sum
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Oddziel nagłówek (pierwsza linia) od danych
-    #. Zdefiniuj ``select: Set[str]`` z 'setosa' oraz 'versicolor'
+    #. Oddziel nagłówek od danych
+    #. Zdefiniuj ``select: Set[str]`` z wartościami 'setosa' oraz 'versicolor'
     #. Iterując po danych rozdziel wiersz na ``features`` i ``label`` (ostatni)
-    #. Zdefiniuj funkcję sumującą ``features``, tylko gdy ``label`` jest w ``wanted``
-    #. Gdy ``label`` nie występuje w ``wanted`` zwróć ``0`` (zero)
+    #. Zdefiniuj funkcję ``sum_if(features, label)``
+    #. Funkcja sumuje ``features``, tylko gdy ``label`` jest w ``select``
+    #. Gdy ``label`` nie występuje w ``select`` zwróć ``0`` (zero)
     #. Wypisz sumę
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
@@ -315,21 +317,68 @@ Filter
         result: float
         # 74.9
 
-Roman numbers
--------------
-* Complexity level: hard
+Function Scope Roman to Int
+---------------------------
+* Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/function_scope_roman.py`
+* Solution: :download:`solution/function_scope_romanint.py`
 
 :English:
     #. Use data from "Input" section (see below)
     #. Define function converting roman numerals to integer
-    #. Define function converting integer to roman numerals
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zdefiniuj funkcję przeliczającą liczbę rzymską na całkowitą
+
+:Input:
+    .. code-block:: python
+
+        CONVERSION = {
+            'I': 1,
+            'II': 2,
+            'III': 3,
+            'IV': 4,
+            'V': 5,
+            'VI': 6,
+            'VII': 7,
+            'VIII': 8,
+            'IX': 9,
+            'X': 10,
+            'XX': 20,
+            'XXX': 30,
+            'XL': 40,
+            'L': 50,
+            'LX': 60,
+            'LXX': 70,
+            'LXXX': 80,
+            'XC': 90,
+            'C': 100,
+            'D': 500,
+            'M': 1000,
+        }
+
+:The whys and wherefores:
+    * Defining and calling functions
+    * Checking for corner cases
+    * Passing function arguments
+    * Cleaning data from user input
+    * ``dict`` lookups
+
+Function Scope Int To Roman
+---------------------------
+* Complexity level: medium
+* Lines of code to write: 15 lines
+* Estimated time of completion: 15 min
+* Solution: :download:`solution/function_scope_introman.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Define function converting integer to roman numerals
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zdefiniuj funkcję przeliczającą liczbę całkowitą na rzymską
 
 :Input:

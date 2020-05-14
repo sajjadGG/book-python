@@ -1,6 +1,6 @@
-******************
-Function Arguments
-******************
+*******************
+Function Parameters
+*******************
 
 
 Arguments vs Parameters
@@ -14,111 +14,140 @@ Syntax
 .. code-block:: python
     :caption: Function definition with parameters
 
-    my_function(<arguments>)
+    def <name>(<parameters>):
+        <do something>
 
 .. code-block:: python
 
-    add_numbers(a, b)
+    def add_numbers(a, b):
+        print(a + b)
 
 
-Positional Arguments
-====================
+Function Parameters
+===================
+.. code-block:: python
+
+    def add(a, b):
+        print(a + b)
+
+    add(1, 2)
+    # 3
+
+    add(1.5, 2.5)
+    # 4.0
+
+.. code-block:: python
+
+    def echo(text):
+        print(text)
+
+    echo('hello')
+    # hello
+
+Required Parameters
+-------------------
 .. code-block:: python
 
     def subtract(a, b):
         return a - b
 
+    subtract()
+    # TypeError: subtract() missing 2 required positional arguments: 'a' and 'b'
 
-    subtract(2, 1)      # 1
-    subtract(1, 2)      # -1
+    subtract(10)
+    # TypeError: subtract() missing 1 required positional argument: 'b'
 
+    subtract(10, 20)
+    # -10
 
-Keyword arguments
-=================
+    subtract(10, 20, 30)
+    # TypeError: subtract() takes 2 positional arguments but 3 were given
+
+Parameters with Default Value
+-----------------------------
 .. highlights::
-    * Arguments without default values are required
-    * Order of keyword arguments has no significance
+    * Parameters without default values are required
+    * Function will take default value if not overwritten by user
+    * Parameters with default values must be at the right side
+    * Parameters with default values can be omitted while executing
 
 .. code-block:: python
 
-    def subtract(a, b):
+    def subtract(a=1, b=2):
         return a - b
 
 
-    subtract(a=2, b=1)  # 1
-    subtract(b=1, a=2)  # 1
+    subtract()
+    # -1
 
-    subtract(2, b=1)    # 1
-    subtract(a=2, 1)    # SyntaxError: positional argument follows keyword argument
+    subtract(10)
+    # 8
 
-    subtract(2, a=1)    # TypeError: subtract() got multiple values for argument 'a'
+    subtract(10, 20)
+    # -10
+
+    subtract(10, 20, 30)
+    # TypeError: subtract() takes from 0 to 2 positional arguments but 3 were given
 
 .. code-block:: python
 
-    def hello(name='José Jiménez'):
-         print(f'My name... {name}')
+    def subtract(a, b=2):
+        return a - b
 
 
-    hello('Mark Watney')          # My name... Mark Watney
-    hello(name='Mark Watney')     # My name... Mark Watney
-    hello()                       # My name... José Jiménez
+    subtract()
+    # TypeError: subtract() missing 1 required positional argument: 'a'
+
+    subtract(10)
+    # 8
+
+    subtract(10, 20)
+    # -10
+
+    subtract(10, 20, 30)
+    # TypeError: subtract() takes from 1 to 2 positional arguments but 3 were given
+
+.. code-block:: python
+
+    def subtract(a=1, b):
+        return a - b
+
+    # SyntaxError: non-default argument follows default argument
 
 
-Examples
-========
+Use Cases
+=========
 
 Example 1
 ---------
 .. code-block:: python
 
-    connect('admin', 'admin')
-
-.. code-block:: python
-
-    connect('admin', 'admin', 'localhost', 22, False, 1, True)
-
-.. code-block:: python
-
-    connect(host='localhost', username='admin', password='admin')
-
-.. code-block:: python
-
-    connect(
-        host='localhost',
-        username='admin',
-        password='admin',
-        port=443,
-        ssl=True,
-        persistent=True,
-    )
+    def connect(username, password, host='127.0.0.1', port=22,
+                ssl=True, keep_alive=1, persistent=False):
+        ...
 
 Example 2
 ---------
-.. code-block:: python
-
-    read_csv('iris.csv')
-
-.. code-block:: python
-
-    read_csv('iris.csv', encoding='utf-8')
+* Definition of pandas.read_csv() function.
+* Source:  https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html
 
 .. code-block:: python
 
-    read_csv('iris.csv', encoding='utf-8', parse_dates=['date_of_birth'])
+    def read_csv(filepath_or_buffer, sep=', ', delimiter=None, header='infer',
+                 names=None, index_col=None, usecols=None, squeeze=False, prefix=None,
+                 mangle_dupe_cols=True, dtype=None, engine=None, converters=None,
+                 true_values=None, false_values=None, skipinitialspace=False,
+                 skiprows=None, nrows=None, na_values=None, keep_default_na=True,
+                 na_filter=True, verbose=False, skip_blank_lines=True, parse_dates=False,
+                 infer_datetime_format=False, keep_date_col=False, date_parser=None,
+                 dayfirst=False, iterator=False, chunksize=None, compression='infer',
+                 thousands=None, decimal=b'.', lineterminator=None, quotechar='"',
+                 quoting=0, escapechar=None, comment=None, encoding=None, dialect=None,
+                 tupleize_cols=None, error_bad_lines=True, warn_bad_lines=True,
+                 skipfooter=0, doublequote=True, delim_whitespace=False, low_memory=True,
+                 memory_map=False, float_precision=None):
+        ...
 
-.. code-block:: python
-
-    read_csv('iris.csv', skiprows=3, delimiter=';')
-
-.. code-block:: python
-
-    read_csv('iris.csv',
-        encoding='utf-8',
-        skiprows=3,
-        delimiter=';',
-        usecols=['Sepal Length', 'Species'],
-        parse_dates=['date_of_birth']
-    )
 
 
 Assignments

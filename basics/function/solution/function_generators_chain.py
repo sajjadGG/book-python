@@ -1,4 +1,4 @@
-def is_odd(x):
+def odd(x):
     if x % 2:
         return True
     else:
@@ -10,9 +10,10 @@ def cube(x):
 
 
 numbers = (x for x in range(1, 34) if x % 3 == 0)
-numbers = filter(is_odd, numbers)
+numbers = filter(odd, numbers)
 numbers = map(cube, numbers)
 numbers = list(numbers)
 mean = sum(numbers) / len(numbers)
+
 print(mean)
 # 11502.0

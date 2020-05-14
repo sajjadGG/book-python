@@ -5,28 +5,25 @@ Function Definition
 *******************
 
 
-Syntax
-======
-.. code-block:: python
-    :caption: Function definition without parameters
-
-    def <name>():
-        <do something>
-
-.. code-block:: python
-
-    def hello():
-        print('Hello World')
-
-
-Function definition
-===================
+Rationale
+=========
 .. highlights::
     * Reuse code
     * Improves code readability
     * Clean-up code
     * Allows for easier refactoring
 
+
+Syntax
+======
+.. code-block:: python
+
+    def <name>():
+        <do something>
+
+
+Definition
+==========
 .. code-block:: python
 
     def hello():
@@ -49,26 +46,33 @@ Naming convention
 .. code-block:: python
     :caption: Do not use ``camelCase``, CamelCase is reserved for class names. Use ``snake_case``
 
-    def addNumbers(a, b):
-        return a + b
+    def sayHello():
+        print('This is camelCase() name')
+        print('It is c/c++/Java/JavaScript convention')
 
-    def add_numbers(a, b):
-        return a + b
+    def say_hello():
+        print('This is snake_case() name')
+        print('It is Pythonic way')
 
 .. code-block:: python
     :caption: Use better names, rather than comments
 
     def cal_var(data, m):
-        """Calculate variance"""
+        # Calculate variance
         return sum((Xi-m) ** 2 for Xi in data) / len(data)
 
     def calculate_variance(data, m):
         return sum((Xi-m) ** 2 for Xi in data) / len(data)
 
 .. code-block:: python
-    :caption: Add underscore (``_``) at the end of name when name collide
+    :caption: Add underscore (``_``) at the end of name when name collide. Although prefer naming it differently.
 
     def print_(text):
+        # Add underscore (``_``) at the end of name when name collide.
+        print(f'<strong>{text}</strong>')
+
+    def print_html(text):
+        # Although prefer naming it differently.
         print(f'<strong>{text}</strong>')
 
 .. code-block:: python
@@ -81,14 +85,9 @@ Naming convention
 Docstring
 =========
 .. highlights::
-    * Docstring is a first multiline comment in:
-
-        * File / Module
-        * Class
-        * Method / Function
-
-    * It is accessible in ``__doc__`` property of an object
+    * Docstring is a first multiline comment in: File/Module, Class, Method/Function
     * Used for generating ``help()`` documentation
+    * It is accessible in ``__doc__`` property of an object
     * Used for ``doctest`` (more in :ref:`Function Doctest`)
     * :pep:`257` Docstring convention - For multiline always use three double quote (``"""``) characters
 
@@ -96,8 +95,26 @@ Docstring
     :caption: Docstring used for documentation
 
     def my_function():
+        """This is the my function"""
+        print('Hello')
+
+
+    help(my_function)
+    # Help on function my_function in module __main__:
+    #
+    # my_function()
+    #     This is the my function
+
+    print(my_function.__doc__)
+    # This is the my function
+
+.. code-block:: python
+    :caption: Docstring used for documentation
+
+    def my_function():
         """
-        This is the My Function
+        This is the my function
+        And the description is longer then one line
         """
         print('Hello')
 
@@ -106,10 +123,12 @@ Docstring
     # Help on function my_function in module __main__:
     #
     # my_function()
-    #     This is the My Function
+    #     This is the my function
+    #     And the description is longer then one line
 
     print(my_function.__doc__)
-    # This is the My Function
+    #    This is the my function
+    #    And the description is longer then one line
 
 
 Assignments
@@ -119,7 +138,7 @@ Define Function
 ---------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/function_define_print.py`
 
 :English:

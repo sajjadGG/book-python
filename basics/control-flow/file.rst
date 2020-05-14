@@ -375,7 +375,7 @@ Save to CSV file
 ----------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 15 min
 * Solution: :download:`solution/file_write.py`
 
 :English:
@@ -426,7 +426,7 @@ Parsing simple CSV file
 -----------------------
 * Complexity level: easy
 * Lines of code to write: 15 lines
-* Estimated time of completion: 20 min
+* Estimated time of completion: 15 min
 * Solution: :download:`solution/file_parsing_csv.py`
 
 :English:
@@ -471,7 +471,7 @@ Parsing simple CSV file
 ------------------------------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 15 min
 * Solution: :download:`solution/file_parsing_simple.py`
 
 :English:
