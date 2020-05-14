@@ -14,21 +14,116 @@ Syntax
 .. code-block:: python
     :caption: Function definition with parameters
 
-    def <name>(<parameters>):
+    def my_function(<parameters>):
         <do something>
 
 .. code-block:: python
 
-    def add_numbers(a, b):
+    def add(a, b):
         print(a + b)
 
 
-Function Parameters
+Required Parameters
 ===================
+.. highlights::
+    * Parameters without default values are required
+    *
+
 .. code-block:: python
 
     def add(a, b):
         print(a + b)
+
+
+    add()
+    # TypeError: add() missing 2 required positional arguments: 'a' and 'b'
+
+    add(1)
+    # TypeError: add() missing 1 required positional argument: 'b'
+
+    add(1, 2)
+    # 3
+
+    add(1, 2, 3)
+    # TypeError: add() takes 2 positional arguments but 3 were given
+
+
+Optional Parameters
+===================
+.. highlights::
+    * Optional parameters has default value
+    * Function will use default value if not overwritten by user
+    * Parameters with default values can be omitted while executing
+
+.. code-block:: python
+
+    def add(a=10, b=20):
+        print(a + b)
+
+
+    add()
+    # 30
+
+    add(1)
+    # 21
+
+    add(10, 20)
+    # 30
+
+    add(10, 20, 30)
+    # TypeError: add() takes from 0 to 2 positional arguments but 3 were given
+
+
+Required and Optional Parameters
+================================
+.. highlights::
+    * Required parameters must be at the left side
+    * Optional parameters must be at the right side
+    * There cannot be required parameter after optional
+
+.. code-block:: python
+
+    def add(a, b=20):
+        print(a + b)
+
+
+    add()
+    # TypeError: add() missing 1 required positional argument: 'a'
+
+    add(1)
+    # 21
+
+    add(1, 2)
+    # 3
+
+    add(1, 2, 3)
+    # TypeError: add() takes from 1 to 2 positional arguments but 3 were given
+
+.. code-block:: python
+
+    def add(a=1, b):
+        print(a + b)
+
+    # SyntaxError: non-default argument follows default argument
+
+.. code-block:: python
+
+    def add(a, b=1, c):
+        print(a + b + c)
+
+    # SyntaxError: non-default argument follows default argument
+
+
+Examples
+========
+
+Example 1
+---------
+.. code-block:: python
+
+    def add(a, b):
+        print(a + b)
+
 
     add(1, 2)
     # 3
@@ -36,97 +131,30 @@ Function Parameters
     add(1.5, 2.5)
     # 4.0
 
+    add('a', 'b')
+    # 'ab'
+
+Example 2
+---------
 .. code-block:: python
 
     def echo(text):
         print(text)
 
+
     echo('hello')
     # hello
 
-Required Parameters
--------------------
-.. code-block:: python
-
-    def subtract(a, b):
-        return a - b
-
-    subtract()
-    # TypeError: subtract() missing 2 required positional arguments: 'a' and 'b'
-
-    subtract(10)
-    # TypeError: subtract() missing 1 required positional argument: 'b'
-
-    subtract(10, 20)
-    # -10
-
-    subtract(10, 20, 30)
-    # TypeError: subtract() takes 2 positional arguments but 3 were given
-
-Parameters with Default Value
------------------------------
-.. highlights::
-    * Parameters without default values are required
-    * Function will take default value if not overwritten by user
-    * Parameters with default values must be at the right side
-    * Parameters with default values can be omitted while executing
-
-.. code-block:: python
-
-    def subtract(a=1, b=2):
-        return a - b
-
-
-    subtract()
-    # -1
-
-    subtract(10)
-    # 8
-
-    subtract(10, 20)
-    # -10
-
-    subtract(10, 20, 30)
-    # TypeError: subtract() takes from 0 to 2 positional arguments but 3 were given
-
-.. code-block:: python
-
-    def subtract(a, b=2):
-        return a - b
-
-
-    subtract()
-    # TypeError: subtract() missing 1 required positional argument: 'a'
-
-    subtract(10)
-    # 8
-
-    subtract(10, 20)
-    # -10
-
-    subtract(10, 20, 30)
-    # TypeError: subtract() takes from 1 to 2 positional arguments but 3 were given
-
-.. code-block:: python
-
-    def subtract(a=1, b):
-        return a - b
-
-    # SyntaxError: non-default argument follows default argument
-
-
-Use Cases
-=========
-
-Example 1
+Example 3
 ---------
 .. code-block:: python
 
     def connect(username, password, host='127.0.0.1', port=22,
                 ssl=True, keep_alive=1, persistent=False):
-        ...
 
-Example 2
+        print('Connecting...')
+
+Example 4
 ---------
 * Definition of pandas.read_csv() function.
 * Source:  https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html
@@ -146,92 +174,96 @@ Example 2
                  tupleize_cols=None, error_bad_lines=True, warn_bad_lines=True,
                  skipfooter=0, doublequote=True, delim_whitespace=False, low_memory=True,
                  memory_map=False, float_precision=None):
-        ...
 
+        print('Reading CSV...')
 
 
 Assignments
 ===========
 
-Example
--------
+Function Parameters Example
+---------------------------
 * Complexity level: easy
-* Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
-* Solution: :download:`solution/function_args_example.py`
+* Lines of code to write: 2 lines
+* Estimated time of completion: 1 min
+* Solution: :download:`solution/function_parameters_example.py`
 
 :English:
-    #. Define function which takes sequence of integers as an argument
-    #. Sum only even numbers
-    #. Print returned value
+    #. Define function ``add``
+    #. Function parameter is sequence of integers
+    #. Print sum of all sequence values
 
 :Polish:
-    #. Zdefiniuj funkcję biorącą sekwencję liczb całkowitych jako argument
-    #. Zsumuj tylko parzyste liczby
-    #. Wypisz zwróconą wartość
+    #. Zdefiniuj funkcję ``add``
+    #. Parametrem do funkcji ma być sekwencja liczb całkowitych
+    #. Wypisz sumę wszystkich wartości sekwencji
 
 :Solution:
-    .. literalinclude:: solution/function_args_example.py
+    .. literalinclude:: solution/function_params_example.py
         :language: python
 
-Divide
-------
+Function Parameters Echo
+------------------------
 * Complexity level: easy
-* Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
-* Solution: :download:`solution/function_args_divide.py`
+* Lines of code to write: 2 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/function_parameters_echo.py`
 
 :English:
-    #. Define function ``divide``
-    #. Function takes two arguments
-    #. Function divides its arguments and returns the result
-    #. Call function with ``divide(10, 3)``
-    #. Call function with ``divide(10, 0)``
-    #. Print returned values
-    #. What to do in case of error?
-
-:Polish:
-    #. Zdefiniuj funkcję ``divide``
-    #. Funkcja przyjmuje dwa argumenty
-    #. Funkcja dzieli oba argumenty przez siebie i zwraca wynik dzielenia
-    #. Wywołaj funkcję z ``divide(4, 2)``
-    #. Wywołaj funkcję z ``divide(4, 0)``
-    #. Wypisz zwracane wartości
-    #. Co zrobić w przypadku błędu?
-
-Power
------
-* Complexity level: easy
-* Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
-* Solution: :download:`solution/function_args_power.py`
-
-:English:
-    #. Define function ``power``
-    #. Function takes two arguments
-    #. Second argument is optional
-    #. Function returns power of the first argument to the second
-    #. If only one argument was passed, consider second equal to the first one
-    #. Print returned values
+    #. Define function ``echo`` with two parameters
+    #. Parameter ``a`` is required
+    #. Parameter ``b`` is required
+    #. Wypisz ``a`` i ``b``
     #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Zdefiniuj funkcję ``power``
-    #. Funkcja przyjmuje dwa argumenty
-    #. Drugi argument jest opcjonalny
-    #. Funkcja zwraca wynik pierwszego argumentu do potęgi drugiego
-    #. Jeżeli tylko jeden argument był podany, przyjmij drugi równy pierwszemu
-    #. Wypisz zwracane wartości
+    #. Zdefiniuj funkcję ``echo`` z dwoma parametrami
+    #. Parametr ``a`` jest wymagany
+    #. Parametr ``b`` jest wymagany
+    #. Wypisz ``a`` i ``b``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Output:
     .. code-block:: python
 
-        power(4, 3)
-        # 64
+        echo(1, 2)
+        # a=1 b=2
 
-        power(3)
-        # 27
+        echo(3, 4)
+        # a=3 b=4
+
+Function Parameters Default
+---------------------------
+* Complexity level: easy
+* Lines of code to write: 4 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/function_parameters_default.py`
+
+:English:
+    #. Define function ``default`` with two parameters
+    #. Parameter ``a`` is required
+    #. Parameter ``b`` is optional and has default value ``None``
+    #. If only one argument was passed, consider second equal to the first one
+    #. Wypisz ``a`` i ``b``
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Zdefiniuj funkcję ``default`` z dwoma parametrami
+    #. Parametr ``a`` jest wymagany
+    #. Parametr ``b`` jest opcjonalny i ma domyślną wartość ``None``
+    #. Funkcja zwraca wynik pierwszego argumentu do potęgi drugiego
+    #. Jeżeli tylko jeden argument był podany, przyjmij drugi równy pierwszemu
+    #. Wypisz ``a`` i ``b``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Output:
+    .. code-block:: python
+
+        default(1)
+        # a=1 b=1
+
+        default(2, 3)
+        # a=2 b=3
 
 Aviation numbers
 ----------------
@@ -276,13 +308,28 @@ Aviation numbers
             9: 'niner',
         }
 
-        pilot_say(1969)
-        pilot_say(31337)
-        pilot_say(13.37)
-        pilot_say(31.337)
-        pilot_say(-1969)
-        pilot_say(-31.337)
-        pilot_say(-49.35)
+    .. code-block:: python
+
+        >>> pilot_say(1969)
+        'one niner six niner'
+
+        >>> pilot_say(31337)
+        'tree one tree tree seven'
+
+        >>> pilot_say(13.37)
+        'one tree and tree seven'
+
+        >>> pilot_say(31.337)
+        'tree one and tree tree seven'
+
+        >>> pilot_say(-1969)
+        'minus one niner six niner'
+
+        >>> pilot_say(-31.337)
+        'minus tree one and tree tree seven'
+
+        >>> pilot_say(-49.35)
+        'minus fower niner and tree fife'
 
 :Output:
     .. code-block:: python
@@ -327,19 +374,38 @@ Cleaning text input
 :Input:
     .. code-block:: python
 
-        DATA = [
-            'ul.Mieszka II',
-            'UL. Zygmunta III WaZY',
-            '  bolesława chrobrego ',
-            'ul Jana III SobIESkiego',
-            '\tul. Jana trzeciego Sobieskiego',
-            'ulicaJana III Sobieskiego',
-            'UL. JA    NA 3 SOBIES  KIEGO',
-            'ULICA JANA III SOBIESKIEGO  ',
-            'ULICA. JANA III SOBIeskieGO',
-            ' Jana 3 Sobieskiego  ',
-            'Jana III Sobi  eskiego ',
-        ]
+        >>> clean('ul.Mieszka II')
+        'Mieszka II'
+
+        >>> clean('UL. Zygmunta III WaZY')
+        'Zygmunta III Wazy'
+
+        >>> clean('  bolesława chrobrego ')
+        'Bolesława Chrobrego'
+
+        >>> clean('ul Jana III SobIESkiego')
+        'Jana III Sobieskiego'
+
+        >>> clean('\tul. Jana trzeciego Sobieskiego')
+        'Jana III Sobieskiego'
+
+        >>> clean('ulicaJana III Sobieskiego')
+        'Jana III Sobieskiego'
+
+        >>> clean('UL. JA    NA 3 SOBIES  KIEGO')
+        'Jana III Sobieskiego'
+
+        >>> clean('ULICA JANA III SOBIESKIEGO  ')
+        'Jana III Sobieskiego'
+
+        >>> clean('ULICA. JANA III SOBIeskieGO')
+        'Jana III Sobieskiego'
+
+        >>> clean(' Jana 3 Sobieskiego  ')
+        'Jana III Sobieskiego'
+
+        >>> clean('Jana III Sobi  eskiego ')
+        'Jana III Sobieskiego'
 
 :Output:
     .. code-block:: python

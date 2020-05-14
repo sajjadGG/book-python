@@ -26,12 +26,12 @@ Definition
 ==========
 .. code-block:: python
 
-    def hello():
+    def say_hello():
         print('My name... José Jiménez')
 
-    hello()     # My name... José Jiménez
-    hello()     # My name... José Jiménez
-    hello()     # My name... José Jiménez
+    say_hello()     # My name... José Jiménez
+    say_hello()     # My name... José Jiménez
+    say_hello()     # My name... José Jiménez
 
 
 Naming convention
@@ -94,40 +94,40 @@ Docstring
 .. code-block:: python
     :caption: Docstring used for documentation
 
-    def my_function():
-        """This is the my function"""
+    def say_hello():
+        """This is the say_hello function"""
         print('Hello')
 
 
-    help(my_function)
-    # Help on function my_function in module __main__:
+    help(say_hello)
+    # Help on function say_hello in module __main__:
     #
-    # my_function()
-    #     This is the my function
+    # say_hello()
+    #     This is the say_hello function
 
-    print(my_function.__doc__)
-    # This is the my function
+    print(say_hello.__doc__)
+    # This is the say_hello function
 
 .. code-block:: python
     :caption: Docstring used for documentation
 
-    def my_function():
+    def say_hello():
         """
-        This is the my function
+        This is the say_hello function
         And the description is longer then one line
         """
         print('Hello')
 
 
-    help(my_function)
-    # Help on function my_function in module __main__:
+    help(say_hello)
+    # Help on function say_hello in module __main__:
     #
-    # my_function()
-    #     This is the my function
+    # say_hello()
+    #     This is the say_hello function
     #     And the description is longer then one line
 
-    print(my_function.__doc__)
-    #    This is the my function
+    print(say_hello.__doc__)
+    #    This is the say_hello function
     #    And the description is longer then one line
 
 
