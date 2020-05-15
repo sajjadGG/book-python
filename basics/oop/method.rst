@@ -69,8 +69,8 @@ Methods without arguments
             print('My name... José Jiménez')
 
 
-    astro = Astronaut()
-    astro.say_hello()
+    jose = Astronaut()
+    jose.say_hello()
     # My name... José Jiménez
 
 
@@ -84,15 +84,15 @@ Methods with required argument
             print(f'My name... {name}')
 
 
-    astro = Astronaut()
+    jose = Astronaut()
 
-    astro.say_hello(name='José Jiménez')
+    jose.say_hello(name='José Jiménez')
     # My name... José Jiménez
 
-    astro.say_hello('José Jiménez')
+    jose.say_hello('José Jiménez')
     # My name... José Jiménez
 
-    astro.say_hello()
+    jose.say_hello()
     # TypeError: say_hello() missing 1 required positional argument: 'name'
 
 
@@ -106,15 +106,15 @@ Methods with optional argument (default value)
             print(f'My name... {name}')
 
 
-    astro = Astronaut()
+    jose = Astronaut()
 
-    astro.say_hello(name='José Jiménez')
+    jose.say_hello(name='José Jiménez')
     # My name... José Jiménez
 
-    astro.say_hello('José Jiménez')
+    jose.say_hello('José Jiménez')
     # My name... José Jiménez
 
-    astro.say_hello()
+    jose.say_hello()
     # My name... Unknown
 
 
@@ -131,8 +131,8 @@ Methods Accessing Fields
             print(f'My name... {self.name}')
 
 
-    astro = Astronaut('José Jiménez')
-    astro.say_hello()
+    jose = Astronaut('José Jiménez')
+    jose.say_hello()
     # My name... José Jiménez
 
 .. code-block:: python
@@ -143,8 +143,8 @@ Methods Accessing Fields
             print(f'My name... {self.name}')
 
 
-    astro = Astronaut()
-    astro.say_hello()
+    jose = Astronaut()
+    jose.say_hello()
     # AttributeError: 'Astronaut' object has no attribute 'name'
 
 
@@ -162,8 +162,8 @@ Methods Calling Other Methods
             print(f'My name... {name}')
 
 
-    astro = Astronaut()
-    astro.say_hello()
+    jose = Astronaut()
+    jose.say_hello()
     # My name... José Jiménez
 
 .. code-block:: python

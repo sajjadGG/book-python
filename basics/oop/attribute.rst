@@ -97,11 +97,11 @@ Dynamic attributes
         pass
 
 
-    astro = Astronaut()
-    astro.first_name = 'José'
-    astro.last_name = 'Jiménez'
+    jose = Astronaut()
+    jose.first_name = 'José'
+    jose.last_name = 'Jiménez'
 
-    print(f'My name... {astro.first_name} {astro.last_name}')
+    print(f'My name... {jose.first_name} {jose.last_name}')
     # My name... José Jiménez
 
 .. code-block:: python
