@@ -6,7 +6,7 @@ Dragon (version alpha)
 
 
 * Complexity level: medium
-* Lines of code to write: 120 lines
+* Lines of code to write: 100-120 lines
 * Estimated time of completion: 45-60 min, then 60-90 min live coding with instructor
 * Solution (basic): :download:`solution/dragon_alpha_basic.py`
 * Solution (advanced): :download:`solution/dragon_alpha_adv.py`
@@ -19,7 +19,7 @@ Dragon (version alpha)
     Firkraag dragon from game Baldur's Gate II: Shadows of Amn
 
 :English:
-    #. Dragon has:
+    #. Dragon has (attributes):
 
         #. name
         #. position ``x`` on the screen
@@ -27,7 +27,7 @@ Dragon (version alpha)
         #. texture file name, default ``img/dragon/alive.png``
         #. health points, default random ``int`` in range from 50 to 100
 
-    #. Dragon can:
+    #. Dragon can (methods):
 
         #. have position set to any place on the screen
         #. make damage in range from 5 to 20
@@ -77,6 +77,9 @@ Dragon (version alpha)
 
     #. Non-functional requirements:
 
+        #. This is a simulation of development process
+        #. Trainer act as Product Owner with little technical knowledge
+        #. You are the software engineer who need to decide and live with consequences of your choices
         #. Task is a narrative story telling to demonstrate OOP and good engineering practices
         #. Calculated last position of the game should be x=20, y=40
         #. You can introduce new fields, methods, functions, variables, constants, classes, objects, whatever you want
@@ -84,10 +87,11 @@ Dragon (version alpha)
         #. Task is business requirements specification, not a technical documentation, i.e. "what Dragon has to do, not how to do it"
         #. You don't have to keep order of business specification while writing code
         #. This is ``alpha`` version, so no new functionality like negative position checking etc.
-        #. Do not read any future iterations of this exercise. This is a simulation of development process. If you read future tasks, you will spoil fun and learning.
+        #. Do not read solution or any future iterations of this exercise.
+        #. If you read future tasks, you will spoil fun and what is the most important: learning.
 
 :Polish:
-    #. Smok ma:
+    #. Smok (atrybuty):
 
         #. nazwę
         #. pozycję ``x`` na ekranie
@@ -95,7 +99,7 @@ Dragon (version alpha)
         #. nazwę pliku tekstury, domyślnie ``img/dragon/alive.png``
         #. punkty życia, domyślnie losowy ``int`` z zakresu od 50 do 100
 
-    #. Smok może:
+    #. Smok może (metody):
 
         #. być ustawiony w dowolne miejsce ekranu
         #. zadawać komuś losowe obrażenia z przedziału od 5 do 20
@@ -145,6 +149,9 @@ Dragon (version alpha)
 
     #. Wymagania niefunkcjonalne:
 
+        #. Zadanie jest symulacją procesu developmentu
+        #. Trener zachowuje się jak Product Owner z niewielką techniczną wiedzą
+        #. Ty jesteś inżynierem oprogramowania, który musis podejmować decyzje i ponosić ich konsekwencje
         #. Zadanie jest tylko narracją do demonstracji OOP i dobrych praktyk programowania
         #. Wyliczona pozycja Smoka na końcu gry powinna być x=20, y=40
         #. Możesz wprowadzać dodatkowe pola, metody, funkcje, zmienne, stały, klasy, obiekty, co tylko chcesz
@@ -152,7 +159,8 @@ Dragon (version alpha)
         #. Zadanie jest specyfikacją wymagań biznesowych, a nie dokumentacją techniczną. tj. "co Smok ma robić, a nie jak to ma robić"
         #. Nie musisz trzymać się kolejności punktów i podpunktów w zadaniu
         #. Jest to wersja ``alpha`` więc bez dodatkowych funkcjonalności (np. sprawdzanie koordynatów, wychodzenia poza planszę itp.)
-        #. Nie przeglądaj kolejnych (przyszłych) części zadania. Zadanie jest symulacją procesu developmentu. Jeżeli zaglądniesz w przód, to zepsujesz sobie zabawę i naukę.
+        #. Nie przeglądaj rozwiązań ani treści kolejnych (przyszłych) części zadania.
+        #. Jeżeli zaglądniesz w przód, to zepsujesz sobie zabawę i co najważniejsze naukę.
 
 :The whys and wherefores:
     * Object oriented thinking

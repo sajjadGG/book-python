@@ -263,53 +263,110 @@ Examples
 Assignments
 ===========
 
+OOP Method Sequence
+-------------------
+* Complexity level: easy
+* Lines of code to write: 18 lines
+* Estimated time of completion: 10 min
+* Solution: :download:`solution/oop_method_sequence.py`
+
+:English:
+    #. Create class ``Iris`` with ``features: List[float]`` and ``label: str`` attributes
+    #. For each row in ``DATA`` create ``Iris`` instance with row values
+    #. Set class attributes at the initialization from positional arguments
+    #. Create method which sums values of all ``features``
+    #. Print species name and a sum method result
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Stwórz klasę ``Iris`` z atrybutami ``features: List[float]`` i ``label: str``
+    #. Dla każdego wiersza w ``DATA`` twórz instancję ``Iris`` z danymi z wiersza
+    #. Ustaw atrybuty klasy przy iniclalizacji z argumentów pozycyjnych
+    #. Stwórz metodę sumującą wartości wszystkich ``features``
+    #. Wyisz nazwę gatunku i wynik metody sumującej
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        DATA = [
+            (4.7, 3.2, 1.3, 0.2, 'setosa'),
+            (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+            (7.6, 3.0, 6.6, 2.1, 'virginica'),
+        ]
+
+:Output:
+    .. code-block:: text
+
+        setosa 9.4
+        versicolor 16.299999999999997
+        virginica 19.3
+
 OOP Methods
 -----------
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/oop_methods.py`
+* Solution: :download:`solution/oop_method_nested.py`
 
 :English:
     #. Use data from "Input" section (see below)
     #. Define class ``Iris``
-    #. Define method ``total()`` which returns sum of all numerical attributes of an object
-    #. Numerical attributes are:
+    #. ``Iris`` has:
 
-        * "Sepal length"
-        * "Sepal width"
-        * "Petal length"
-        * "Petal width"
+        * "Sepal length" type ``float``
+        * "Sepal width" type ``float``
+        * "Petal length" type ``float``
+        * "Petal width" type ``float``
+        * "Species" type ``str``
 
-    #. Define method ``get_length()`` which returns number of numerical fields (count: ``self.__dict__``)
-    #. Define method ``mean()`` which calculates mean of all numerical attributes of an object
-    #. Create ``setosa`` object with attributes set at the initialization using positional arguments (see input data)
-    #. Create ``virginica`` object with attributes set at the initialization using keyword arguments (see input data)
-    #. Print species name, total and mean of each instance
+    #. ``Iris`` can:
+
+        * Return number of ``float`` type attributes
+        * Return list of all ``float`` type attributes
+        * Return sum of values of all ``float`` type attributes
+        * Return mean of all ``float`` type attributes
+
+    #. Use values from ``self.__dict__`` to check for type or length
+    #. Create ``setosa`` object with attributes set at the initialization
+    #. Create ``virginica`` object with attributes set at the initialization
+    #. Print sum, mean and name of each objects
     #. Do not use ``@dataclass``
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zdefiniuj klasę ``Iris``
-    #. Zdefiniuj metodę ``total()`` klasy ``Iris`` zwracającą sumę wszystkich atrybutów numerycznych obiektu
-    #. Atrybutami numerycznymi są:
+    #. ``Iris`` ma:
 
-        * "Sepal length"
-        * "Sepal width"
-        * "Petal length"
-        * "Petal width"
+        * "Sepal length" typu ``float``
+        * "Sepal width" typu ``float``
+        * "Petal length" typu ``float``
+        * "Petal width" typu ``float``
+        * "Species" typu ``str``
 
-    #. Zdefiniuj metodę ``get_length()``, która zwraca ilość pól numerycznych (przelicz: ``self.__dict__``)
-    #. Zdefiniuj metodę ``mean()`` klasy ``Iris`` wyliczającą średnią wszystkich atrybutów numerycznych obiektu
-    #. Stwórz obiekt ``setosa`` z atrybutami ustawionymi przy inicjalizacji używając argumentów pozycyjnych (patrz dane wejściowe)
-    #. Stwórz obiekt ``virginica`` z atrybutami ustawionymi przy inicjalizacji używając argumentów nazwanych (patrz dane wejściowe)
-    #. Wypisz nazwę gatunku oraz sumę i średnią z pomiarów dla każdej instancji
+    #. ``Iris`` może:
+
+        * Zwrócić liczbę pól typu ``float``
+        * Zwrócić listę wartości wszystkich pól typu ``float``
+        * Zwrócić sumę wartości pól typu ``float``
+        * Zwrócić średnią arytmetyczną wartość pól typu ``float``
+
+    #. Użyj wartości ``self.__dict__`` do sprawdzania typu lub długości
+    #. Stwórz obiekt ``setosa`` z atrybutami ustawionymi przy inicjalizacji
+    #. Stwórz obiekt ``virginica`` z atrybutami ustawionymi przy inicjalizacji
+    #. Wypisz sumę, średnią oraz nazwę każdego z obiektów
     #. Nie używaj ``@dataclass``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
-    .. csv-table:: Initial values
-        :header: "Sepal length", "Sepal width", "Petal length", "Petal width", "Species"
-        :widths: 10, 10, 10, 10, 60
+    .. code-block:: python
 
-        "5.1", "3.5", "1.4", "0.2", "setosa"
-        "5.8", "2.7", "5.1", "1.9", "virginica"
+        setosa = Iris(5.1, 3.5, 1.4, 0.2, 'setosa')
+        virginica = Iris(5.8, 2.7, 5.1, 1.9, 'virginica')
+
+:Output:
+    .. code-block:: text
+
+        total=10.20 mean=2.55 setosa
+        total=15.50 mean=3.88 virginica

@@ -156,7 +156,7 @@ Stringify Objects
     DAY = 24 * HOUR
 
 
-    class Time:
+    class Duration:
         def __init__(self, seconds):
             self.seconds = seconds
 
@@ -168,14 +168,15 @@ Stringify Objects
                 return str(self.seconds / HOUR)
 
             if unit == 'days':
-                return str(self.seconds / DAY)
+                return str(round(self.seconds / DAY, 2))
 
 
-     duration = Time(seconds=3600)
+    duration = Duration(seconds=3600)
 
-     print(f'{duration:minutes}')       # 60.0
-     print(f'{duration:hours}')         # 1.0
-     print(f'{duration:days}')          # 0.041666666666666664
+    print(f'Duration was {duration:minutes} min')       # Duration was 60.0 min
+    print(f'Duration was {duration:hours} hour')        # Duration was 1.0 hour
+    print(f'Duration was {duration:days} day')          # Duration was 0.04 day
+
 
 .. code-block:: python
 
@@ -185,13 +186,13 @@ Stringify Objects
 
         def __format__(self, unit):
 
-            if unit == 'in_kelvin':
+            if unit == 'kelvin':
                 value = self.kelvin
 
-            elif unit == 'in_celsius':
+            elif unit == 'celsius':
                 value = self.kelvin - 273.15
 
-            elif unit == 'in_fahrenheit':
+            elif unit == 'fahrenheit':
                 value = (self.kelvin-273.15) * 9/5 + 32
 
             value = round(value, 2)
@@ -200,9 +201,9 @@ Stringify Objects
 
     temp = Temperature(309.75)
 
-    print(f'{temp:in_kelvin}')       # 309.75
-    print(f'{temp:in_celsius}')      # 36.6
-    print(f'{temp:in_fahrenheit}')   # 97.88
+    print(f'Temperature is {temp:kelvin} K')       # Temperature is 309.75 K
+    print(f'Temperature is {temp:celsius} C')      # Temperature is 36.6 C
+    print(f'Temperature is {temp:fahrenheit} F')   # Temperature is 97.88 F
 
 .. code-block:: python
 
@@ -243,12 +244,90 @@ Stringify Objects
 Assignments
 ===========
 
-OOP Stringify Object
---------------------
+OOP Stringify Str
+-----------------
+* Complexity level: easy
+* Lines of code to write: 18 lines
+* Estimated time of completion: 10 min
+* Solution: :download:`solution/oop_stringify_str.py`
+
+:English:
+    #. Create class ``Iris`` with ``features: List[float]`` and ``label: str`` attributes
+    #. For each row in ``DATA`` create ``Iris`` instance with row values
+    #. Set class attributes at the initialization from positional arguments
+    #. Create method which sums values of all ``features``
+    #. While printing object show: species name and a sum method result
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Stwórz klasę ``Iris`` z atrybutami ``features: List[float]`` i ``label: str``
+    #. Dla każdego wiersza w ``DATA`` twórz instancję ``Iris`` z danymi z wiersza
+    #. Ustaw atrybuty klasy przy iniclalizacji z argumentów pozycyjnych
+    #. Stwórz metodę sumującą wartości wszystkich ``features``
+    #. Przy wypisywaniu obiektu pokaż: nazwę gatunku i wynik metody sumującej
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        DATA = [
+            (4.7, 3.2, 1.3, 0.2, 'setosa'),
+            (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+            (7.6, 3.0, 6.6, 2.1, 'virginica'),
+        ]
+
+:Output:
+    .. code-block:: text
+
+        setosa 9.4
+        versicolor 16.299999999999997
+        virginica 19.3
+
+OOP Stringify Repr
+------------------
+* Complexity level: easy
+* Lines of code to write: 9 lines
+* Estimated time of completion: 10 min
+* Solution: :download:`solution/oop_stringify_repr.py`
+
+:English:
+    #. Use code from "Input" section (see below)
+    #. Create class ``Iris`` with ``features: List[float]`` and ``label: str`` attributes
+    #. For each row in ``DATA`` create ``Iris`` instance with row values
+    #. Set class attributes at the initialization from positional arguments
+    #. Print representation of each instance with values (use ``repr()``)
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj kodu z sekcji "Input" (patrz poniżej)
+    #. Stwórz klasę ``Iris`` z atrybutami ``features: List[float]`` i ``label: str``
+    #. Dla każdego wiersza w ``DATA`` twórz instancję ``Iris`` z danymi z wiersza
+    #. Ustaw atrybuty klasy przy iniclalizacji z argumentów pozycyjnych
+    #. Wypisz reprezentację każdej z instancji z wartościami (użyj ``repr()``)
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        DATA = [
+            (4.7, 3.2, 1.3, 0.2, 'setosa'),
+            (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+            (7.6, 3.0, 6.6, 2.1, 'virginica'),
+        ]
+
+:Output:
+    .. code-block:: text
+
+        Iris(features=[4.7, 3.2, 1.3, 0.2], label='setosa')
+        Iris(features=[7.0, 3.2, 4.7, 1.4], label='versicolor')
+        Iris(features=[7.6, 3.0, 6.6, 2.1], label='virginica')
+
+OOP Stringify Complex
+---------------------
 * Complexity level: medium
 * Lines of code to write: 9 lines
 * Estimated time of completion: 20 min
-* Solution: :download:`solution/oop_stringify.py`
+* Solution: :download:`solution/oop_stringify_complex.py`
 
 :English:
     #. Use code from "Input" section (see below)
@@ -325,5 +404,5 @@ OOP Stringify Object
 
 :Hint:
     * Define ``Crew.__str__()``
-    * Define ``Astronaut.__str__()``
+    * Define ``Astronaut.__str__()`` and ``Astronaut.__repr__()``
     * Define ``Mission.__repr__()``
