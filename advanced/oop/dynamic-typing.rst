@@ -102,8 +102,8 @@ Injecting methods
 
     add_numbers.say_hello = lambda name: print(f'My name... {name}')
 
-    add_numbers.say_hello('Jose Jimenez')
-    # My name... Jose Jimenez
+    add_numbers.say_hello('José Jiménez')
+    # My name... José Jiménez
 
 
 Proxy methods

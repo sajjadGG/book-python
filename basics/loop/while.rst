@@ -147,7 +147,7 @@ Force skip iteration
 .. code-block:: python
     :caption: Force skip iteration using ``continue`` keyword
 
-    all_astronauts = ['Mark Watney', 'Jan Twardowski', 'Melissa Lewis', 'Jose Jimenez']
+    all_astronauts = ['Mark Watney', 'Jan Twardowski', 'Melissa Lewis', 'José Jiménez']
     assigned_to_mission = ['Mark Watney', 'Melissa Lewis']
     i = 0
 

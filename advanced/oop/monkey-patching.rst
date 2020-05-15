@@ -9,20 +9,20 @@ Recap information about classes and objects
 
     class User:
         def __init__(self):
-            self.name = 'Jose Jimenez'
+            self.name = 'José Jiménez'
 
         def hello(self):
             print(f'My name... {self.name}')
 
     u = User()
     u.hello()
-    # My name... Jose Jimenez
+    # My name... José Jiménez
 
 .. code-block:: python
 
     class User:
         def __init__(self):
-            self.name = 'Jose Jimenez'
+            self.name = 'José Jiménez'
 
         def hello(self):
             print(f'My name... {self.name}')
@@ -37,7 +37,7 @@ Injecting fields
 
     class User:
         def __init__(self):
-            self.name = 'Jose Jimenez'
+            self.name = 'José Jiménez'
 
         def hello(self):
             print(f'My name... {self.name}')
@@ -158,8 +158,8 @@ Dynamic Methods
     u = User()
     u.hello = lambda name: print(f'My name... {name}')
 
-    u.hello('Jose Jimenez')
-    # My name... Jose Jimenez
+    u.hello('José Jiménez')
+    # My name... José Jiménez
 
 .. code-block:: python
     :caption: Note, although there is ``self`` in ``lambda``, it is not passed as an argument
@@ -175,7 +175,7 @@ Dynamic Methods
     u.hello()
     # TypeError: <lambda>() missing 1 required positional argument: 'self'
 
-    u.hello('Jose Jimenez')
+    u.hello('José Jiménez')
     # AttributeError: 'str' object has no attribute 'name'
 
 .. code-block:: python
@@ -188,10 +188,10 @@ Dynamic Methods
     User.hello = lambda self: print(f'My name... {self.name}')
 
     u = User()
-    u.name = 'Jose Jimenez'
+    u.name = 'José Jiménez'
 
     u.hello()
-    # My name... Jose Jimenez
+    # My name... José Jiménez
 
 
 Examples

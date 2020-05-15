@@ -102,7 +102,7 @@ POST Request with data
     import requests
 
 
-    data = {'first_name': 'Jose', 'last_name': 'Jimenez'}
+    data = {'first_name': 'José', 'last_name': 'Jiménez'}
 
     response = requests.post('https://httpbin.org/post', data=data)
     # <Response [200]>
@@ -146,8 +146,8 @@ POST Request with JSON
 
 
     data = {
-        'first_name': 'Jose',
-        'last_name': 'Jimenez',
+        'first_name': 'José',
+        'last_name': 'Jiménez',
     }
 
     response = requests.post('https://httpbin.org/post', data=json.dumps(data))
@@ -164,8 +164,8 @@ POST Request with JSON
 
 
     data = {
-        'first_name': 'Jose',
-        'last_name': 'Jimenez',
+        'first_name': 'José',
+        'last_name': 'Jiménez',
     }
 
     response = requests.post('https://httpbin.org/post', json=data)

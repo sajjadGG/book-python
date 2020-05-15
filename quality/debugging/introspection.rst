@@ -203,10 +203,10 @@ Introspecting Objects
             return f'My name... {first_name} {last_name}'
 
 
-     jose = Astronaut(first_name='Jose', last_name='Jimenez')
+     jose = Astronaut(first_name='José', last_name='Jiménez')
 
      print(jose)
-     # My name... Jose Jimenez
+     # My name... José Jiménez
 
 ``inspect`` module
 ------------------

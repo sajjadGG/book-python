@@ -5,14 +5,38 @@ Attributes
 **********
 
 
-About
-=====
+Rationale
+=========
 .. highlights::
     * Attributes are also known as "Properties" or "Fields"
     * ``snake_case`` name convention
     * Attributes store information (state) for instances
     * Access field values using dot (``.``) notation
     * Attributes should be defined only in ``__init__()`` method (covered in :ref:`OOP Initializer Method`)
+
+.. code-block:: python
+
+    point_x = 1
+    point_y = 2
+    point_z = 3
+
+    print(point_x)
+    print(point_y)
+    print(point_z)
+
+.. code-block:: python
+
+    class Point:
+        pass
+
+    point = Point()
+    point.x = 1
+    point.y = 2
+    point.z = 3
+
+    print(point.x)
+    print(point.y)
+    print(point.z)
 
 .. glossary::
 
@@ -51,7 +75,7 @@ About
     :align: center
 
 
-Dynamic Attributes
+Dynamic attributes
 ==================
 .. code-block:: python
     :caption: Dynamic attributes
@@ -74,11 +98,11 @@ Dynamic Attributes
 
 
     astro = Astronaut()
-    astro.first_name = 'Jose'
-    astro.last_name = 'Jimenez'
+    astro.first_name = 'José'
+    astro.last_name = 'Jiménez'
 
     print(f'My name... {astro.first_name} {astro.last_name}')
-    # My name... Jose Jimenez
+    # My name... José Jiménez
 
 .. code-block:: python
     :caption: Dynamic attributes
@@ -107,7 +131,7 @@ Dynamic Attributes
     astro = Astronaut()
 
     print(astro.missions)
-    # AttributeError: 'MyClass' object has no attribute 'missions'
+    # AttributeError: 'Astronaut' object has no attribute 'missions'
 
 .. code-block:: python
 
@@ -118,44 +142,17 @@ Dynamic Attributes
     jose = Astronaut()
     mark = Astronaut()
 
-    jose.name = 'Jose Jimenez'
+    jose.name = 'José Jiménez'
 
     print(f'My name... {jose.name}')
-    # My name... Jose Jimenez
+    # My name... José Jiménez
 
     print(f'My name... {mark.name}')
     # AttributeError: 'Astronaut' object has no attribute 'name'
 
 
-Rationale
-=========
-.. code-block:: python
-
-    point_x = 1
-    point_y = 2
-    point_z = 3
-
-    print(point_x)
-    print(point_y)
-    print(point_z)
-
-.. code-block:: python
-
-    class Point:
-        pass
-
-    point = Point()
-    point.x = 1
-    point.y = 2
-    point.z = 3
-
-    print(point.x)
-    print(point.y)
-    print(point.z)
-
-
-Get all dynamic fields and values
-=================================
+Get all dynamic attrubutes and values
+=====================================
 * ``obj.__dict__``
 
 .. code-block:: python

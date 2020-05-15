@@ -130,9 +130,9 @@ UserString
             return f'{self} {other}'
 
 
-    result = str('Jose') + 42
+    result = str('José') + 42
     print(result)
-    # Jose 42
+    # José 42
 
 .. code-block:: python
 
@@ -155,9 +155,9 @@ UserString
 
     p = Point(x=10, y=20)
 
-    out = str('Jose') + p
+    out = str('José') + p
     print(out)
-    # Jose (10, 20)\
+    # José (10, 20)\
 
 
 Assignments

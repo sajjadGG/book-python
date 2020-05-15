@@ -190,8 +190,8 @@ Threaded server with JSON response
     class RequestHandler(BaseHTTPRequestHandler):
         def do_GET(self):
             data = {
-                'first_name': 'Jose',
-                'last_name': 'Jimenez'
+                'first_name': 'José',
+                'last_name': 'Jiménez'
             }
             response = bytes(json.dumps(data), 'UTF-8')
 

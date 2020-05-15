@@ -191,7 +191,7 @@ Examples
             self.name = name
 
 
-    jose = Astronaut(name='Jose Jimenez')
+    jose = Astronaut(name='José Jiménez')
     now = datetime.now(tz=timezone.utc)
 
 

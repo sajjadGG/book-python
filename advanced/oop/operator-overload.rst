@@ -185,7 +185,7 @@ Builtin Functions and Keywords
             return 170
 
         def __str__(self) -> str:
-            return 'My name... Jose Jimenez'
+            return 'My name... José Jiménez'
 
 
     jose = Astronaut()
@@ -197,10 +197,10 @@ Builtin Functions and Keywords
     # 170
 
     str(jose)
-    # 'My name... Jose Jimenez'
+    # 'My name... José Jiménez'
 
     print(jose)
-    # My name... Jose Jimenez
+    # My name... José Jiménez
 
 Accessors Overload
 ------------------

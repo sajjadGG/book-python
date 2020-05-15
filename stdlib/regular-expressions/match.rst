@@ -45,7 +45,7 @@ Good Engineering Practices
         """Function check email address against Regular Expression
         >>> is_valid_email('jose.jimenez@nasa.gov')
         True
-        >>> is_valid_email('Jose.Jimenez@nasa.gov')
+        >>> is_valid_email('José.Jiménez@nasa.gov')
         True
         >>> is_valid_email('+jose.jimenez@nasa.gov')
         False

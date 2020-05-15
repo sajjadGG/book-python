@@ -5,8 +5,8 @@ Methods
 *******
 
 
-About
-=====
+Rationale
+=========
 .. highlights::
     * Methods are functions in the class
     * First argument is always instance (``self``)
@@ -21,17 +21,15 @@ About
     method
         Function inside the class which takes ``self`` as a first argument.
 
-Rationale
-=========
 .. code-block:: python
 
     point_x = 1
     point_y = 2
     point_z = 3
 
-    print(point_x)
-    print(point_y)
-    print(point_z)
+    print(point_x, point_y, point_z)
+    # 1 2 3
+
 
 .. code-block:: python
 
@@ -54,12 +52,11 @@ Rationale
     print(point.y)      # 2
     print(point.z)      # 3
 
+    point.get_coordinates()
+    # (1, 2, 3)
+
     point.to_string()
     # Point(x=1, y=2, z=3)
-
-    p = point.get_coordinates()
-    print(p)
-    # (1, 2, 3)
 
 
 Methods without arguments
@@ -69,12 +66,12 @@ Methods without arguments
 
     class Astronaut:
         def say_hello(self):
-            print('My name... Jose Jimenez')
+            print('My name... José Jiménez')
 
 
     astro = Astronaut()
     astro.say_hello()
-    # My name... Jose Jimenez
+    # My name... José Jiménez
 
 
 Methods with required argument
@@ -89,18 +86,18 @@ Methods with required argument
 
     astro = Astronaut()
 
-    astro.say_hello(name='Jose Jimenez')
-    # My name... Jose Jimenez
+    astro.say_hello(name='José Jiménez')
+    # My name... José Jiménez
 
-    astro.say_hello('Jose Jimenez')
-    # My name... Jose Jimenez
+    astro.say_hello('José Jiménez')
+    # My name... José Jiménez
 
     astro.say_hello()
     # TypeError: say_hello() missing 1 required positional argument: 'name'
 
 
-Methods with optional argument (with default value)
-===================================================
+Methods with optional argument (default value)
+==============================================
 .. code-block:: python
     :caption: Methods with arguments with default value
 
@@ -111,11 +108,11 @@ Methods with optional argument (with default value)
 
     astro = Astronaut()
 
-    astro.say_hello(name='Jose Jimenez')
-    # My name... Jose Jimenez
+    astro.say_hello(name='José Jiménez')
+    # My name... José Jiménez
 
-    astro.say_hello('Jose Jimenez')
-    # My name... Jose Jimenez
+    astro.say_hello('José Jiménez')
+    # My name... José Jiménez
 
     astro.say_hello()
     # My name... Unknown
@@ -134,9 +131,21 @@ Methods Accessing Fields
             print(f'My name... {self.name}')
 
 
-    astro = Astronaut('Jose Jimenez')
+    astro = Astronaut('José Jiménez')
     astro.say_hello()
-    # My name... Jose Jimenez
+    # My name... José Jiménez
+
+.. code-block:: python
+    :caption: ``self.name`` must be defined before accessing.
+
+    class Astronaut:
+        def say_hello(self):
+            print(f'My name... {self.name}')
+
+
+    astro = Astronaut()
+    astro.say_hello()
+    # AttributeError: 'Astronaut' object has no attribute 'name'
 
 
 Methods Calling Other Methods
@@ -146,7 +155,7 @@ Methods Calling Other Methods
 
     class Astronaut:
         def get_name(self):
-            return 'Jose Jimenez'
+            return 'José Jiménez'
 
         def say_hello(self):
             name = self.get_name()
@@ -155,7 +164,7 @@ Methods Calling Other Methods
 
     astro = Astronaut()
     astro.say_hello()
-    # My name... Jose Jimenez
+    # My name... José Jiménez
 
 .. code-block:: python
     :caption: Methods calling other methods
@@ -180,6 +189,75 @@ Methods Calling Other Methods
     flower = Iris()
     print(flower.total_area())
     # Total area: 18.13
+
+.. code-block:: python
+    :caption: Since Python 3.7 there is a ``@dataclass`` decorator, which automatically generates ``__init__()`` arguments and fields. Dataclasses are described in :ref:`OOP Dataclass`.
+
+    from dataclasses import dataclass
+
+
+    @dataclass
+    class Iris:
+        sepal_length: float = 5.8
+        sepal_width: float = 2.7
+        petal_length: float = 5.1
+        petal_width: float = 1.9
+        species: str = 'Iris'
+
+        def sepal_area(self):
+            return self.sepal_length * self.sepal_width
+
+        def petal_area(self):
+            return self.petal_length * self.petal_width
+
+        def total_area(self):
+            return self.sepal_area() + self.petal_area()
+
+
+    flower = Iris()
+    print(flower.total_area())
+    # Total area: 18.13
+
+
+Examples
+========
+* Documentation: https://atlassian-python-api.readthedocs.io
+* Source Code: https://github.com/atlassian-api/atlassian-python-api
+* Examples: https://github.com/atlassian-api/atlassian-python-api/tree/master/examples
+
+.. code-block:: console
+
+    $ pip install atlassian-python-api
+
+.. code-block:: python
+
+    from atlassian import Jira
+
+    jira = Jira(
+        url='http://localhost:8080',
+        username='admin',
+        password='admin')
+
+    JQL = 'project = DEMO AND status IN ("To Do", "In Progress") ORDER BY issuekey'
+
+    result = jira.jql(JQL)
+    print(result)
+
+.. code-block:: python
+
+    from atlassian import Confluence
+
+    confluence = Confluence(
+        url='http://localhost:8090',
+        username='admin',
+        password='admin')
+
+    result = confluence.create_page(
+        space='DEMO',
+        title='This is the title',
+        body='This is the body. You can use <strong>HTML tags</strong>!')
+
+    print(result)
 
 
 Assignments
@@ -208,6 +286,7 @@ OOP Methods
     #. Create ``setosa`` object with attributes set at the initialization using positional arguments (see input data)
     #. Create ``virginica`` object with attributes set at the initialization using keyword arguments (see input data)
     #. Print species name, total and mean of each instance
+    #. Do not use ``@dataclass``
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
@@ -225,6 +304,7 @@ OOP Methods
     #. Stwórz obiekt ``setosa`` z atrybutami ustawionymi przy inicjalizacji używając argumentów pozycyjnych (patrz dane wejściowe)
     #. Stwórz obiekt ``virginica`` z atrybutami ustawionymi przy inicjalizacji używając argumentów nazwanych (patrz dane wejściowe)
     #. Wypisz nazwę gatunku oraz sumę i średnią z pomiarów dla każdej instancji
+    #. Nie używaj ``@dataclass``
 
 :Input:
     .. csv-table:: Initial values

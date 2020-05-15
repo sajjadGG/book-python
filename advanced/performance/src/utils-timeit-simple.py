@@ -1,7 +1,7 @@
 from timeit import timeit
 
 
-setup = """name = 'Jose Jimenez'"""
+setup = """name = 'José Jiménez'"""
 stmt = """result = f'My name... {name}'"""
 
 duration = timeit(stmt, setup, number=10000)

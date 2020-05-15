@@ -181,7 +181,7 @@ Code blocks
 .. code-block:: md
 
     ```python
-    name = 'Jose Jimenez'
+    name = 'José Jiménez'
     print(f'My name... {name}')
     ```
 

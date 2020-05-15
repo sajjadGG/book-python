@@ -123,7 +123,7 @@ IndentationError
     if True:
        print('Hello!')
         print('My name...')
-       print('Jose Jimenez')
+       print('José Jiménez')
     # Traceback (most recent call last):
     #   File "<stdin>", line 1
     #     print('My name...')

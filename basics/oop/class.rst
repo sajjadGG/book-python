@@ -6,8 +6,8 @@ Classes and Instances
 
 
 
-About
-=====
+Rationale
+=========
 .. highlights::
     * Object Oriented Paradigm
     * Model world as objects that interacts with each other
@@ -20,6 +20,20 @@ About
     instance
     object
         Object created from class.
+
+.. code-block:: python
+
+    class <name>:
+        pass
+
+    <instance> = <name>()
+
+.. code-block:: python
+
+    class MyClass:
+        pass
+
+    my = MyClass()
 
 
 Classes

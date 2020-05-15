@@ -18,11 +18,11 @@ Initializer method without arguments
 
     class Astronaut:
         def __init__(self):
-            print('My name... Jose Jimenez')
+            print('My name... José Jiménez')
 
 
     jose = Astronaut()
-    # My name... Jose Jimenez
+    # My name... José Jiménez
 
 
 Initializer method with arguments
@@ -35,8 +35,8 @@ Initializer method with arguments
             print(f'My name... {name}')
 
 
-    jose = Astronaut('Jose Jimenez')
-    # My name... Jose Jimenez
+    jose = Astronaut('José Jiménez')
+    # My name... José Jiménez
 
     mark = Astronaut(name='Mark Watney')
     # My name... Mark Watney
@@ -52,8 +52,8 @@ Initializer method with arguments
             print(f'My name... {name}')
 
 
-    jose = Astronaut('Jose Jimenez')
-    # My name... Jose Jimenez
+    jose = Astronaut('José Jiménez')
+    # My name... José Jiménez
 
     mark = Astronaut(name='Mark Watney')
     # My name... Mark Watney
@@ -180,12 +180,14 @@ Initializing Attributes
             self.species = species
 
 
-    setosa = Iris(
-        sepal_length=5.1,
-        sepal_width=3.5,
-        petal_length=1.4,
-        petal_width=0.2,
-        species='setosa')
+    setosa = Iris(5.1, 3.5, 1.4, 0.2, 'setosa')
+
+    print(setosa.sepal_length)      # 5.1
+    print(setosa.sepal_width)       # 3.5
+    print(setosa.petal_length)      # 1.4
+    print(setosa.petal_width)       # 0.2
+    print(setosa.species)           # setosa
+
 
     virginica = Iris(
         sepal_length=5.8,
@@ -194,6 +196,29 @@ Initializing Attributes
         petal_width=1.9,
         species='virginica')
 
+    print(virginica.__dict__)
+    # {'sepal_length': 5.8,
+    #  'sepal_width': 2.7,
+    #  'petal_length': 5.1,
+    #  'petal_width': 1.9,
+    #  'species': 'virginica'}
+
+.. code-block:: python
+    :caption: Since Python 3.7 there is a ``@dataclass`` decorator, which automatically generates ``__init__()`` arguments and fields. Dataclasses are described in :ref:`OOP Dataclass`.
+
+    from dataclasses import dataclass
+
+
+    @dataclass
+    class Iris:
+        sepal_length: float
+        sepal_width: float
+        petal_length: float
+        petal_width: float
+        species: str = 'Iris'
+
+
+    setosa = Iris(5.1, 3.5, 1.4, 0.2, 'setosa')
 
     print(setosa.sepal_length)      # 5.1
     print(setosa.sepal_width)       # 3.5
@@ -201,13 +226,20 @@ Initializing Attributes
     print(setosa.petal_width)       # 0.2
     print(setosa.species)           # setosa
 
-    print(virginica.sepal_length)   # 5.8
-    print(virginica.sepal_width)    # 2.7
-    print(virginica.petal_length)   # 5.1
-    print(virginica.petal_width)    # 1.9
-    print(virginica.species)        # virginica
 
-.. note:: Since Python 3.7 there is a ``@dataclass`` decorator, which automatically generates ``__init__()`` arguments and fields. Dataclasses are described in :ref:`OOP Dataclass`.
+    virginica = Iris(
+        sepal_length=5.8,
+        sepal_width=2.7,
+        petal_length=5.1,
+        petal_width=1.9,
+        species='virginica')
+
+    print(virginica.__dict__)
+    # {'sepal_length': 5.8,
+    #  'sepal_width': 2.7,
+    #  'petal_length': 5.1,
+    #  'petal_width': 1.9,
+    #  'species': 'virginica'}
 
 
 Checking values
@@ -216,6 +248,7 @@ Checking values
 
     class Kelvin:
         def __init__(self, value):
+
             if type(value) not in (float, int):
                 raise TypeError('Temperature must be int or float')
 
@@ -225,11 +258,11 @@ Checking values
             self.value = value
 
 
-    ice = Kelvin(273.15)
-    print(ice.value)
+    a = Kelvin(273.15)
+    print(a.value)
     # 273.15
 
-    not_existing = Kelvin(-300)
+    b = Kelvin(-300)
     # ValueError: Temperature must be greater than 0
 
 
@@ -241,7 +274,7 @@ OOP Object Initialization
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/oop_init_instances.py`
+* Solution: :download:`solution/oop_init_print.py`
 
 :English:
     #. Create one class ``Temperature``
@@ -255,6 +288,8 @@ OOP Object Initialization
 
     #. Do not convert units (print only given numbers)
     #. Do not store values in the instances (only print on instance creation)
+    #. Do not use ``@dataclass``
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Stwórz jedną klasę ``Temperature``
@@ -268,6 +303,15 @@ OOP Object Initialization
 
     #. Nie konwertuj jednostek (użyj tylko podanych numerów)
     #. Nie przechowuj informacji w instancjach (tylko wypisz przy inicjalizacji)
+    #. Nie używaj ``@dataclass``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Output:
+    .. code-block:: text
+
+        36.6
+        97.88
+        309.75
 
 OOP Data Modeling
 -----------------
@@ -280,17 +324,21 @@ OOP Data Modeling
     #. Use data from "Input" section (see below)
     #. Model the data using classes
     #. Create instances for each record
+    #. Values must be passed at the initialization
     #. Create instances of a first class using positional arguments
     #. Create instances of a second class using keyword arguments
     #. Using ``__dict__`` print all fields from each instance
+    #. Do not use ``@dataclass``
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zamodeluj dane za pomocą klas
     #. Stwórz instancje dla każdego wpisu
+    #. Wartości mają być podawane przy inicjalizacji
     #. Twórz instancje pierwszej klasy używając argumentów pozycyjnych
     #. Twórz instancje drugiej klasy używając argumentów nazwanych
     #. Za pomocą ``__dict__`` wypisz wszystkie pola każdej z instancji
+    #. Nie używaj ``@dataclass``
 
 :Input:
     .. code-block:: text

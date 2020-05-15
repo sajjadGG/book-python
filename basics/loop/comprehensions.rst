@@ -348,7 +348,7 @@ Filtering
     DATA = [
         {'is_astronaut': True,  'name': 'Jan Twardowski'},
         {'is_astronaut': True,  'name': 'Mark Watney'},
-        {'is_astronaut': False, 'name': 'Jose Jimenez'},
+        {'is_astronaut': False, 'name': 'José Jiménez'},
         {'is_astronaut': True,  'name': 'Melissa Lewis'},
         {'is_astronaut': False, 'name': 'Alex Vogel'},
     ]
@@ -525,7 +525,7 @@ All and Any
     DATA = [
         {'is_astronaut': True,  'name': 'Jan Twardowski'},
         {'is_astronaut': True,  'name': 'Mark Watney'},
-        {'is_astronaut': False, 'name': 'Jose Jimenez'},
+        {'is_astronaut': False, 'name': 'José Jiménez'},
         {'is_astronaut': True,  'name': 'Melissa Lewis'},
         {'is_astronaut': False, 'name': 'Alex Vogel'},
     ]
@@ -540,7 +540,7 @@ All and Any
     DATA = [
         {'is_astronaut': True,  'name': 'Jan Twardowski'},
         {'is_astronaut': True,  'name': 'Mark Watney'},
-        {'is_astronaut': False, 'name': 'Jose Jimenez'},
+        {'is_astronaut': False, 'name': 'José Jiménez'},
         {'is_astronaut': True,  'name': 'Melissa Lewis'},
         {'is_astronaut': False, 'name': 'Alex Vogel'},
     ]
@@ -645,8 +645,6 @@ Comprehensions Split
         * ``labels_train: List[str]`` - labels to train - 60%
         * ``labels_test: List[str]`` - labels to test - 40%
 
-    #. Create ``result: Tuple[list, list, list, list]`` with features (training and test) and labels (training and test)
-    #. Print ``result``
     #. Compare results with "Output" section below
 
 :Polish:
@@ -665,8 +663,6 @@ Comprehensions Split
         * ``labels_train: List[str]`` - labels do uczenia - 60%
         * ``labels_test: List[str]`` - labels do testów - 40%
 
-    #. Stwórz ``result: Tuple[list, list, list, list]`` z cechami (treningowymi i testowymi) oraz labelkami (treningowymi i testowymi)
-    #. Wypisz ``result``
     #. Porównaj wynik z sekcją "Output" poniżej
 
 :Input:
@@ -722,23 +718,6 @@ Comprehensions Split
         labels_test: List[str]
         # ['setosa', 'versicolor', 'setosa', 'versicolor', 'virginica',
         #  'versicolor', 'virginica', 'versicolor', 'setosa']
-
-        result: Tuple[list, list, list, list]
-        # ([(5.8, 2.7, 5.1, 1.9), (5.1, 3.5, 1.4, 0.2), (5.7, 2.8, 4.1, 1.3),
-        #   (6.3, 2.9, 5.6, 1.8), (6.4, 3.2, 4.5, 1.5), (4.7, 3.2, 1.3, 0.2),
-        #   (7.0, 3.2, 4.7, 1.4), (7.6, 3.0, 6.6, 2.1), (4.9, 3.0, 1.4, 0.2),
-        #   (4.9, 2.5, 4.5, 1.7), (7.1, 3.0, 5.9, 2.1), (4.6, 3.4, 1.4, 0.3)],
-        #
-        #  [(5.4, 3.9, 1.7, 0.4), (5.7, 2.8, 4.5, 1.3), (5.0, 3.6, 1.4, 0.3),
-        #   (5.5, 2.3, 4.0, 1.3), (6.5, 3.0, 5.8, 2.2), (6.5, 2.8, 4.6, 1.5),
-        #   (6.3, 3.3, 6.0, 2.5), (6.9, 3.1, 4.9, 1.5), (4.6, 3.1, 1.5, 0.2)],
-        #
-        #  ['virginica', 'setosa', 'versicolor', 'virginica', 'versicolor',
-        #   'setosa', 'versicolor', 'virginica', 'setosa', 'virginica',
-        #   'virginica', 'setosa'],
-        #
-        #  ['setosa', 'versicolor', 'setosa', 'versicolor', 'virginica',
-        #   'versicolor', 'virginica', 'versicolor', 'setosa'])
 
 :The whys and wherefores:
     * Iterating over nested data structures

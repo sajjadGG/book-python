@@ -21,30 +21,30 @@ class Astronaut:
 
 class AstronautTest(TestCase):
     def setUp(self):
-        self.astro = Astronaut(name='Jose Jimenez', agency='NASA')
+        self.astro = Astronaut(name='José Jiménez', agency='NASA')
 
     def test_recruiting_new_astronaut(self):
-        jose = Astronaut(name='Jose Jimenez')
-        self.assertEqual(jose.name, 'Jose Jimenez')
+        jose = Astronaut(name='José Jiménez')
+        self.assertEqual(jose.name, 'José Jiménez')
 
     def test_default_agency(self):
-        jose = Astronaut(name='Jose Jimenez')
+        jose = Astronaut(name='José Jiménez')
         self.assertEqual(jose.agency, 'NASA')
 
     def test_date_of_birth(self):
-        jose = Astronaut(name='Jose Jimenez', date_of_birth=date(1961, 4, 12))
+        jose = Astronaut(name='José Jiménez', date_of_birth=date(1961, 4, 12))
         self.assertEqual(jose.date_of_birth, date(1961, 4, 12))
 
     def test_first_step_in_utc(self):
         step = datetime(1969, 7, 21, 14, tzinfo=timezone.utc)
-        jose = Astronaut(name='Jose Jimenez', first_step=step)
+        jose = Astronaut(name='José Jiménez', first_step=step)
         self.assertEqual(jose.first_step.tzinfo, timezone.utc)
 
     def test_first_step_not_in_utc(self):
         step = datetime(1969, 7, 21, 14)
 
         with self.assertRaises(ValueError):
-            Astronaut(name='Jose Jimenez', first_step=step)
+            Astronaut(name='José Jiménez', first_step=step)
 
     def test_hello(self):
-        self.assertEqual(str(self.astro), 'My name... Jose Jimenez')
+        self.assertEqual(str(self.astro), 'My name... José Jiménez')

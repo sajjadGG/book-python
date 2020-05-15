@@ -19,7 +19,7 @@ Stringify Objects
             self.name = name
 
 
-    astro = Astronaut('Jose Jimenez')
+    astro = Astronaut('José Jiménez')
 
     print(astro)        # <__main__.Astronaut object at 0x114175dd0>
     str(astro)          # '<__main__.Astronaut object at 0x114175dd0>'
@@ -36,11 +36,11 @@ Stringify Objects
             return f'My name... {self.name}'
 
 
-    astro = Astronaut('Jose Jimenez')
+    astro = Astronaut('José Jiménez')
 
-    print(astro)        # My name... Jose Jimenez
-    str(astro)          # 'My name... Jose Jimenez'
-    astro.__str__()     # 'My name... Jose Jimenez'
+    print(astro)        # My name... José Jiménez
+    str(astro)          # 'My name... José Jiménez'
+    astro.__str__()     # 'My name... José Jiménez'
 
 
 ``__repr__()``
@@ -63,10 +63,10 @@ Stringify Objects
             return f'Astronaut(name="{self.name}")'
 
 
-     astro = Astronaut('Jose Jimenez')
+     astro = Astronaut('José Jiménez')
 
-     repr(astro)        # 'Astronaut(name="Jose Jimenez")'
-     astro              # Astronaut(name="Jose Jimenez")
+     repr(astro)        # 'Astronaut(name="José Jiménez")'
+     astro              # Astronaut(name="José Jiménez")
 
 .. code-block:: python
     :caption: printing ``list`` will call ``__repr__`` on each element
@@ -140,7 +140,7 @@ Stringify Objects
                 return f"I hope we don't crash"
 
 
-     jose = Astronaut('Jose Jimenez')
+     jose = Astronaut('José Jiménez')
 
      print(f'{jose:happy}')
      # Yuppi, we're going to space!
