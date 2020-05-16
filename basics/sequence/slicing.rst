@@ -208,6 +208,9 @@ Slice All
     data[:, 1]
     # array([2, 5, 8])
 
+    data[1, :]
+    # array([4, 5, 6])
+
 .. code-block:: python
     :caption: This unfortunately does not work on ``list``
 
@@ -226,6 +229,28 @@ Slice All
     data[:][1]
     # [4, 5, 6]
 
+.. code-block:: python
+    :caption: Used in ``pandas`` to get all rows or columns
+
+    import pandas as pd
+
+    df = pd.DataFrame({
+        'A': [1, 2, 3],
+        'B': [4, 5, 6],
+        'C': [7, 8, 9],
+    })
+
+    df.loc[:, ('A','B')]
+    #    A  B
+    # 0  1  4
+    # 1  2  5
+    # 2  3  6
+
+    df.loc[1, :]
+    # A    2
+    # B    5
+    # C    8
+    # Name: 1, dtype: int64
 
 Slice Function
 ==============
