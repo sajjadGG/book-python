@@ -252,6 +252,7 @@ Slice All
     # C    8
     # Name: 1, dtype: int64
 
+
 Slice Function
 ==============
 .. highlights::

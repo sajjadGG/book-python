@@ -87,15 +87,26 @@ Unpacking arbitrary number of arguments
 
     a, *b, c = [1, 2]
 
-    print(a)        # 1
-    print(b)        # []
-    print(c)        # 2
+    a               # 1
+    b               # []
+    c               # 2
 
 .. code-block:: python
     :caption: Unpacking requires values for required arguments
 
     a, *b, c = [1]
     # ValueError: not enough values to unpack (expected at least 2, got 1)
+
+
+Unpacking nested
+================
+.. code-block:: python
+
+    a, (b, c) = [1, (2, 3)]
+
+    a               # 1
+    b               # 2
+    c               # 3
 
 
 Naming convention
