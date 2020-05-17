@@ -178,6 +178,12 @@ Omitting values
     username        # twardowski
     home            # /home/twardowski
 
+.. code-block:: python
+
+    _, (b, _) = [1, (2, 3)]
+
+    b               # 2
+
 
 Using in a loop
 ===============
