@@ -235,7 +235,7 @@ Float Calculation
     * 1 psi = 6894.757 Pa
 
 Float Percent
-------------
+-------------
 * Complexity level: medium
 * Lines of code to write: 9 lines
 * Estimated time of completion: 10 min

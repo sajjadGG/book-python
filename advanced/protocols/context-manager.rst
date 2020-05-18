@@ -1,3 +1,5 @@
+.. _Context Managers:
+
 ****************
 Context Managers
 ****************

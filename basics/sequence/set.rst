@@ -72,7 +72,8 @@ Type Definition
 
 Type Casting
 ============
-* ``set()`` converts argument to ``set``
+.. highlights::
+    * ``set()`` converts argument to ``set``
 
 .. code-block:: python
 
@@ -162,7 +163,8 @@ Adding Many Items
 
 Popping Items
 =============
-* Gets and remove items
+.. highlights::
+    * Gets and remove items
 
 .. code-block:: python
 
@@ -179,7 +181,7 @@ Popping Items
 
 Deduplicate Items
 =================
-.. highlight::
+.. highlights::
     * Works with ``tuple``, ``list``, ``str``
 
 .. code-block:: python

@@ -204,7 +204,7 @@ Function Parameters Example
     #. Wypisz sumę wszystkich wartości sekwencji
 
 :Solution:
-    .. literalinclude:: solution/function_params_example.py
+    .. literalinclude:: solution/function_parameters_example.py
         :language: python
 
 Function Parameters Echo

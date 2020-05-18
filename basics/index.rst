@@ -29,7 +29,7 @@ Types
     type/none.rst
     type/str.rst
     type/str-methods.rst
-    type/type-annotations.rst
+    type/type-annotation.rst
 
 *********
 Sequences
@@ -47,7 +47,7 @@ Sequences
     sequence/indexing.rst
     sequence/slicing.rst
     sequence/unpacking.rst
-    sequence/type-annotations.rst
+    sequence/type-annotation.rst
 
 ********
 Mappings
@@ -60,20 +60,21 @@ Mappings
     mapping/dict.rst
     mapping/generate.rst
     mapping/nested.rst
-    mapping/type-annotations.rst
+    mapping/type-annotation.rst
 
 ************
-Conditionals
+Control Flow
 ************
 .. toctree::
     :maxdepth: 1
     :caption: Mappings
-    :name: Basic Conditionals
+    :name: Basic Control Flow
 
-    conditional/operators.rst
-    conditional/membership.rst
-    conditional/statements.rst
-    conditional/expressions.rst
+    control-flow/operators.rst
+    control-flow/membership.rst
+    control-flow/statements.rst
+    control-flow/expressions.rst
+    control-flow/exception.rst
 
 *****
 Loops
@@ -90,16 +91,21 @@ Loops
     loop/dict.rst
     loop/comprehensions.rst
 
-************
-Control Flow
-************
+*****
+Files
+*****
 .. toctree::
     :maxdepth: 1
-    :caption: Control Flow
-    :name: Basic Control Flow
+    :caption: Files
+    :name: Basic Files
 
-    control-flow/exception.rst
-    control-flow/file.rst
+    files/path.rst
+    files/access.rst
+    files/write.rst
+    files/append.rst
+    files/read.rst
+    files/encoding.rst
+    files/binary.rst
 
 *********
 Functions
@@ -134,6 +140,7 @@ Object Oriented Programming
     oop/method.rst
     oop/stringify.rst
     oop/inheritance.rst
+    oop/type-annotation.rst
 
 *****
 Recap

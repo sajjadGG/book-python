@@ -70,6 +70,8 @@ Objects and instances
     str.split('Jan,Twardowski', ',')    # ['Jan', 'Twardowski']
 
 
+.. _OOP SOLID:
+
 S.O.L.I.D.
 ==========
 

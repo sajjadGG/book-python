@@ -1,3 +1,5 @@
+.. _Serialization Pickle:
+
 ********************
 Serialization Pickle
 ********************

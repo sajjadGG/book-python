@@ -69,57 +69,57 @@ Contains
 .. code-block:: python
     :caption: ``list`` contains
 
-   data = 'abc'
+    data = 'abc'
 
-   'x' in data                      # False
-   'a' in data                      # True
+    'x' in data                      # False
+    'a' in data                      # True
 
-   'x' not in data                  # True
-   'a' not in data                  # False
+    'x' not in data                  # True
+    'a' not in data                  # False
 
 .. code-block:: python
     :caption: ``list`` contains
 
-   data = [1, 2, 3]
+    data = [1, 2, 3]
 
-   0 in data                        # False
-   1 in data                        # True
+    0 in data                        # False
+    1 in data                        # True
 
-   0 not in data                    # True
-   1 not in data                    # False
+    0 not in data                    # True
+    1 not in data                    # False
 
 .. code-block:: python
     :caption: ``tuple`` contains
 
-   data = (1, 2, 3)
+    data = (1, 2, 3)
 
-   0 in data                        # False
-   1 in data                        # True
+    0 in data                        # False
+    1 in data                        # True
 
-   0 not in data                    # True
-   1 not in data                    # False
+    0 not in data                    # True
+    1 not in data                    # False
 
 .. code-block:: python
     :caption: ``set`` contains
 
-   data = {1, 2, 3}
+    data = {1, 2, 3}
 
-   0 in data                        # False
-   1 in data                        # True
+    0 in data                        # False
+    1 in data                        # True
 
-   0 not in data                    # True
-   1 not in data                    # False
+    0 not in data                    # True
+    1 not in data                    # False
 
 .. code-block:: python
     :caption: ``frozenset`` contains
 
-   data = frozenset({1, 2, 3})
+    data = frozenset({1, 2, 3})
 
-   0 in data                        # False
-   1 in data                        # True
+    0 in data                        # False
+    1 in data                        # True
 
-   0 not in data                    # True
-   1 not in data                    # False
+    0 not in data                    # True
+    1 not in data                    # False
 
 .. code-block:: python
 

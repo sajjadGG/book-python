@@ -55,7 +55,7 @@ Keyword Arguments
 
 Positional and Keyword Arguments
 ================================
-.. highlight::
+.. highlights::
     * Positional arguments must be at the left side
     * Keyword arguments must be at the right side
 

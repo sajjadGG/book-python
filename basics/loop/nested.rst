@@ -302,4 +302,4 @@ Loop Nested Unique Keys
 
 :Hint:
     * ``for key in row.keys()``
-    * Compare solutions with :numref:`Micro-benchmarking use case`
+    * Compare solutions with :ref:`Micro-benchmarking use case`
