@@ -7,9 +7,6 @@ Loop Nested Sequences
 
 Syntax
 ======
-
-Generic Syntax
---------------
 .. code-block:: python
     :caption: Iterating over nested sequence
 
@@ -23,7 +20,7 @@ Generic Syntax
     # <obj>
 
 Naming Convention
------------------
+=================
 * ``row`` - best for nested loops with sequence inside
 * Conventions for rows and columns:
 
@@ -38,8 +35,9 @@ Naming Convention
 
 * Note that ``i`` may interfere with ``i`` used as loop counter
 
+
 Examples
---------
+========
 .. code-block:: python
 
     DATA = [

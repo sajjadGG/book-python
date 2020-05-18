@@ -17,8 +17,9 @@ Syntax
     while <condition>:
         <do something>
 
+
 Naming Convention
------------------
+=================
 * The longer the loop scope, the longer the variable name should be
 * Avoid one letters if scope is longer than one line
 * Generic names:
@@ -30,19 +31,12 @@ Naming Convention
 
 Use Cases
 =========
-
-Never ending loop
------------------
-* Used in servers to wait forever for incommig connections
-
 .. code-block:: python
-    :caption: Never ending loop
+    :caption: Never ending loop. Used in servers to wait forever for incoming connections
 
     while True:
         print('hello')
 
-Stop conditions
----------------
 .. code-block:: python
     :caption: Stop conditions
 
@@ -56,15 +50,8 @@ Stop conditions
     # 1
     # 2
 
-Iterating over sequence
------------------------
-.. highlights::
-    * Better idea for this is to use ``for`` loop
-    * ``for`` loop supports Iterators
-    * ``len()`` must write all ``numbers`` to memory, to calculate its length
-
 .. code-block:: python
-    :caption: Iterating over sequence
+    :caption: Iterating over sequence. Better idea for this is to use ``for`` loop. ``for`` loop supports Iterators. ``len()`` must write all ``numbers`` to memory, to calculate its length
 
     i = 0
     data = ['a', 'b', 'c']
@@ -77,13 +64,8 @@ Iterating over sequence
     # 1 'b'
     # 2 'c'
 
-Exit flag
----------
-.. highlights::
-    * Exit flag pattern is useful if you have for example multi-threaded application
-
 .. code-block:: python
-    :caption: Exit flag
+    :caption: Exit flag. Exit flag pattern is useful if you have for example multi-threaded application
 
     print('Ignition sequence started')
     abort = False
@@ -139,8 +121,9 @@ Force exit the loop
             # without typing a number
             break
 
+
 Force skip iteration
---------------------
+====================
 .. highlights::
     * if ``continue`` is encountered, it will jump to next loop iteration
 

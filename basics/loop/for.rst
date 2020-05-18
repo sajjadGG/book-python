@@ -7,9 +7,6 @@ Loop ``for``
 
 Syntax
 ======
-
-Generic Syntax
---------------
 .. highlights::
     * ``ITERABLE`` must implement ``iterator`` interface
     * More on iterators in chapter :ref:`Iterators`
@@ -20,8 +17,9 @@ Generic Syntax
     for <variable> in <iterable> :
         <do something>
 
+
 Naming Convention
------------------
+=================
 * The longer the loop scope, the longer the variable name should be
 * Avoid one letters if scope is longer than one line
 * Prefer locally meaningfull name over generic names
@@ -48,31 +46,6 @@ Naming Convention
 * Special meaning:
 
     * ``i`` - for loop counter
-
-Examples
---------
-.. code-block:: python
-
-    for letter in ['a', 'b', 'c']:
-        print(letter)
-
-    # a
-    # b
-    # c
-
-.. code-block:: python
-
-    DATA = [5.1, 3.5, 1.4, 0.2, 'setosa']
-
-    for element in DATA:
-        print(obj)
-
-    # 5.1
-    # 3.5
-    # 1.4
-    # 0.2
-    # 'setosa'
-
 
 Iterating sequences
 ===================
