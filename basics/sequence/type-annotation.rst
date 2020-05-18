@@ -1,6 +1,8 @@
-****************
-Type Annotations
-****************
+.. _Sequence Type Annotation:
+
+************************
+Sequence Type Annotation
+************************
 
 
 Tuple

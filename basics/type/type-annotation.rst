@@ -1,3 +1,5 @@
+.. _Basic Type Annotations:
+
 **********************
 Basic Type Annotations
 **********************
@@ -6,6 +8,7 @@ Basic Type Annotations
 .. epigraph::
     Types are not required, and never will be
     -- Guido van Rossum, Python BDFL
+
 
 Rationale
 =========

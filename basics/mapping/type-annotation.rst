@@ -1,6 +1,8 @@
-***************
-Type Annotation
-***************
+.. _Mapping Type Annotation:
+
+***********************
+Mapping Type Annotation
+***********************
 
 Dict
 ====

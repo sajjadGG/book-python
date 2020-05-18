@@ -1,6 +1,8 @@
-****************
-Type Annotations
-****************
+.. _OOP Type Annotation:
+
+*******************
+OOP Type Annotation
+*******************
 
 
 Rationale
