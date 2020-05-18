@@ -1,8 +1,8 @@
 .. _Basic Type Annotations:
 
-**********************
-Basic Type Annotations
-**********************
+***************
+Type Annotation
+***************
 
 
 .. epigraph::
