@@ -5,13 +5,16 @@ Sequence Indexing
 *****************
 
 
-Accessing element with index
-============================
+Rationale
+=========
 .. highlights::
     * Index must be positive or negative ``int`` or zero
     * Index must be less or equal to length of object
     * Negative index starts from the end and go right to left
 
+
+Index string
+============
 .. code-block:: python
     :caption: Indexing from start
 
@@ -101,8 +104,8 @@ Indexing sequences
 Assignments
 ===========
 
-Select
-------
+Index Select
+------------
 * Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 10 min

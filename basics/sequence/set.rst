@@ -100,13 +100,8 @@ Type Casting
     # {1, 2, 3}
 
 
-
-
-Adding Items
-============
-
 Adding Single Item
-------------------
+==================
 .. code-block:: python
 
     data = {1, 2}
@@ -144,8 +139,9 @@ Adding Single Item
     data.add(frozenset({3,4}))
     # {frozenset({3, 4}), 1, 2}
 
+
 Adding Many Items
------------------
+=================
 .. code-block:: python
 
     data = {1, 2}

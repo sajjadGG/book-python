@@ -7,51 +7,60 @@ Basic Type Annotations
     Types are not required, and never will be
     -- Guido van Rossum, Python BDFL
 
+Rationale
+=========
 .. highlights::
     * Since Python 3.5
     * ``SyntaxError`` in Python before 3.5
-    * Sometimes called "type hints"
+    * Also known as "type hints"
     * Good IDE will give you hints
     * Types are used extensively in system libraries
     * More and more books and documentations use types
     * To type check use: ``mypy`` or ``pyre-check`` (more in :ref:`cicd-tools`)
 
-Rationale
-=========
-.. highlights::
-    * Good IDE will highlight, incorrect types
 
+Int
+===
 .. code-block:: python
 
-    def add_numbers(a: int, b: float) -> int:
-        return int(a + b)
+    data: int = 30
+    data: int = -30
 
 
-    add_numbers(1, 2.5)
-    add_numbers('a', 'b')       # Good IDE should highlight the problem here
-
-
-Annotating Basic Types
-======================
+Float
+=====
 .. code-block:: python
 
-    value: int = 30
-    value: int = -30
+    data: float = 13.37
+    data: float = -13.37
 
-.. code-block:: python
-    :caption: Type Annotations
 
-    value: float = 13.37
-
+Str
+===
 .. code-block:: python
 
-    my_str: str = ''
-    my_str: str = 'Jan Twardowski'
+    data: str = ''
+    data: str = 'Jan Twardowski'
 
+
+Bool
+====
 .. code-block:: python
 
-    my_var: bool = True
-    my_var: bool = False
+    data: bool = True
+    data: bool = False
+
+
+Optional
+========
+.. code-block:: python
+
+    from typing import Optional
+
+
+    firstname: str = 'Melissa'
+    lastname: str = 'Lewis'
+    age: Optional[float] = None
 
 
 Type Check is not Enforced

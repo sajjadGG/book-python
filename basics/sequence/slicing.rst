@@ -129,8 +129,8 @@ Slice Missing
     text[100:]      # ''
 
 
-Arithmetic Operations on Slice Indexes
-======================================
+Slice Index Arithmetic
+======================
 .. code-block:: python
 
     text = 'We choose to go to the Moon!'
@@ -161,8 +161,8 @@ Arithmetic Operations on Slice Indexes
     text[first-1:last:step]     # 'eoh'
 
 
-Slicing Nested Sequences
-========================
+Slice Nested Sequences
+======================
 .. code-block:: python
 
     data = [
@@ -313,8 +313,8 @@ Slice Function
 Assignments
 ===========
 
-Slicing Example
----------------
+Slice Example
+-------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
@@ -342,8 +342,8 @@ Slicing Example
     .. literalinclude:: solution/sequence_slice_example.py
         :language: python
 
-Slicing Collections
--------------------
+Slice Collections
+-----------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
@@ -374,8 +374,8 @@ Slicing Collections
     * Slice data structures
     * Type casting
 
-Slicing Split train/test
-------------------------
+Slice Split
+-----------
 * Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 15 min
@@ -474,8 +474,8 @@ Slicing Split train/test
     * Type casting
     * Magic Number
 
-Slicing text
-------------
+Slice Text
+----------
 * Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 10 min

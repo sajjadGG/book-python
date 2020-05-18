@@ -75,8 +75,8 @@ Type Casting
     # frozenset({(4, 5), 1, 2, 3})
 
 
-When Use ``set`` or ``frozenset``
-=================================
+``frozenset`` or ``set``
+========================
 Both:
 
     * unique elements

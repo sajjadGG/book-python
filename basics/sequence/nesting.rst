@@ -172,11 +172,12 @@ Many types
     len(data[2])
     # 5
 
+
 Assignments
 ===========
 
-Nesting Create
---------------
+Sequence Nesting Create
+-----------------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 3 min

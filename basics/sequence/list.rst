@@ -158,8 +158,11 @@ Adding Elements
     data.append([3, 4])
     # [1, 2, [3, 4]]
 
-Inserting Elements at Specific Position
----------------------------------------
+
+Inserting Elements
+==================
+* Insert at specific position
+
 .. code-block:: python
 
     data = [1, 2]

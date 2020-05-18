@@ -49,7 +49,7 @@ Type Definition
     """
 
 
-Single or Double Quotes?
+Single and Double Quotes
 ========================
 .. highlights::
     * ``"`` and ``'`` works the same
