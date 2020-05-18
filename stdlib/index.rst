@@ -170,6 +170,7 @@ Operating System
     :caption: Operating System
     :name: Stdlib Operating System
 
+    operating-system/about.rst
     operating-system/argparse.rst
     operating-system/os.rst
     operating-system/pathlib.rst

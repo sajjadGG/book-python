@@ -3,32 +3,28 @@ Python Language
 ***************
 
 
-What is Python?
-===============
 .. figure:: img/python-logo.png
     :width: 75%
     :align: center
 
     Python Logo
 
-Python as a Language
---------------------
+
+Rationale
+=========
 * Turing complete, general purpose language
 * Multi platform
 * Dynamic typing with automatic memory allocation and GC
 * Code readability and simplicity is important
 * White space are important
 * Everything is an object, but you can write functional code too
-
-Python as a Community
----------------------
 * Standard language in Machine Learning and Data Science
 * Very good standard system library
 * Huge ecosystem of external open source libraries
 * Open Source created by non-profit Python Software Foundation
 
 
-Which version?
+Which Version?
 ==============
 * newest Python 3
 
@@ -46,8 +42,9 @@ Why not Python 2?
 * Python 2.7 is the last in 2.x branch, and there won't be Python 2.8 :pep:`404`
 * Python 2.7.18, the last release of Python 2 [`3 <https://pythoninsider.blogspot.com/2020/04/python-2718-last-release-of-python-2.html>`_]
 
+
 Currently supported versions
-----------------------------
+============================
 .. csv-table::
     :header: "Version", "PEP", "Status", "Release", "End-of-life", "Release Manager"
 
@@ -102,19 +99,8 @@ File types and extensions
     "``.pyx``", "cPythona source for C/C++ conversion"
     "``.pyz``", "`zipapp <https://docs.python.org/3/library/zipapp.html>`_ compressed archive. Since Python 3.5"
 
-Minimal script
---------------
 .. code-block:: python
-
-    print('Ehlo World!')
-
-Interpreter declaration
------------------------
-* Declare interpreter for standalone scripts ``#!/usr/bin/env python3``
-
-.. code-block:: python
-
-    #!/usr/bin/env python3
+    :caption: Minimal script
 
     print('Ehlo World!')
 

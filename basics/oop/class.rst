@@ -48,16 +48,10 @@ Classes
     class Astronaut:
         pass
 
-    class Iris:
-        pass
-
 .. code-block:: python
     :caption: Multi-word class names should use ``CamelCase``
 
-    class MyClass:
-        pass
-
-    class IrisSetosa:
+    class AstronautPilot:
         pass
 
 
@@ -68,8 +62,6 @@ Instances
     * Two newlines between class and code
     * ``snake_case`` names
 
-Example with Astronauts
------------------------
 .. code-block:: python
     :caption: One class and one instance
 
@@ -118,46 +110,6 @@ Example with Astronauts
     ivan = Cosmonaut()
     jan = Cosmonaut()
 
-Examples with Iris
-------------------
-.. code-block:: python
-    :caption: One class and one instance
-
-    class Iris:
-        pass
-
-
-    flower = Iris()
-
-.. code-block:: python
-    :caption: One class and three instances
-
-    class Iris:
-        pass
-
-
-    setosa = Iris()
-    versicolor = Iris()
-    virginica = Iris()
-
-.. code-block:: python
-    :caption: Three classes and four instances (two instances of a one class)
-
-    class IrisSetosa:
-        pass
-
-    class IrisVersicolor:
-        pass
-
-    class IrisVirginica:
-        pass
-
-
-    iris_setosa1 = IrisSetosa()
-    iris_setosa2 = IrisSetosa()
-    iris_versicolor = IrisVersicolor()
-    iris_virginica = IrisVirginica()
-
 
 Class vs Instance
 =================
@@ -179,19 +131,20 @@ Good engineering practices
 .. code-block:: python
     :caption: Classes and Objects
 
-    class IrisSetosa:
+    class AstronautEngineer:
         pass
 
-    class IrisVersicolor:
+    class AstronautScientist:
         pass
 
-    class IrisVirginica:
+    class AstronautPilot:
         pass
 
 
-    setosa = IrisSetosa()
-    versicolor = IrisVersicolor()
-    virginica = IrisVirginica()
+    mark_watney = AstronautScientist()
+    melissa_lewis = AstronautScientist()
+    jose_jimenez = AstronautEngineer()
+    jan_twardowski = AstronautPilot()
 
 .. code-block:: python
 

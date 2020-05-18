@@ -32,28 +32,18 @@ How to choose?
 
 Which one is the best?
 ======================
-
-Open Source
------------
+#. `PyCharm Professional <https://www.jetbrains.com/pycharm/download/>`_ (Not-free)
 #. `PyCharm Community <https://www.jetbrains.com/pycharm/download/>`_
-#. Visual Studio Code
 #. Jupyter Notebook
+#. Visual Studio Code
 #. `PyDev <http://www.pydev.org/download.html>`_
 #. Spyder
 #. Atom
-#. Rodeo
-
-Not-free
---------
-#. `PyCharm Professional <https://www.jetbrains.com/pycharm/download/>`_
 
 
 Keyboard shortcuts
 ==================
-
-PyCharm
--------
-.. csv-table:: Keyboard shortcuts
+.. csv-table:: PyCharm Keyboard shortcuts
     :header-rows: 1
     :widths: 25, 75
 

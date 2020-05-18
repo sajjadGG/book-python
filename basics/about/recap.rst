@@ -14,7 +14,6 @@ Summary
 2. Syntax:
 
     * Syntax Basics
-    * Operators
     * Builtin Functions
 
 3. Types:
@@ -25,7 +24,7 @@ Summary
     * Type None
     * Type str
     * Type str Methods
-    * Basic Type Annotations
+    * Type Annotation
 
 4. Sequences:
 
@@ -36,18 +35,21 @@ Summary
     * Sequence Indexing
     * Sequence Slicing
     * Sequence Unpacking
+    * Type Annotation
 
 5. Mappings:
 
     * Mapping dict
     * Mapping Generate
     * Mapping Nested
+    * Type Annotation
 
-6. Conditionals:
+6. Control Flow :
 
-    * Conditional Operators
-    * Conditional Statements
-    * Conditional Expressions
+    * Control Flow Operators
+    * Control Flow Statements
+    * Control Flow Expressions
+    * Control Flow Exceptions
 
 7. Looping:
 
@@ -58,20 +60,28 @@ Summary
     * Loop over dict
     * Comprehensions
 
-8. Control Flow:
+8. Files:
 
-    * Control Flow Exceptions
-    * Control Flow Files
+    * File Path
+    * File Access
+    * File Write
+    * File Append
+    * File Read
+    * File Encoding
+    * File Binary
+
 
 9. Functions:
 
     * Function Basics
     * Function Return
+    * Function Parameters
     * Function Arguments
-    * Function Variables Scope
+    * Function Scope
     * Function Type Annotation
     * Function Recurrence
     * Function Doctest
+    * Type Annotation
 
 10. Object Oriented Programming:
 
@@ -81,6 +91,7 @@ Summary
     * OOP Methods
     * OOP Stringify Objects
     * OOP Inheritance
+    * Type Annotation
 
 11. Recap:
 
