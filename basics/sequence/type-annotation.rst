@@ -152,9 +152,9 @@ Aliases
     ]
 
 .. code-block:: python
-    :caption: Explicit type annotation
 
     from typing import List, Tuple
+
 
     Iris = Tuple[float, float, float, float, str]
 

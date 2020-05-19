@@ -82,8 +82,8 @@ Get Item
     data[3]         # 'd'
 
 
-``tuple`` vs. others
-====================
+Tuple or Int, Float, Str
+=========================
 .. code-block:: python
 
     type(1.2)        # <class 'float'>
@@ -108,8 +108,8 @@ Get Item
     type('foo'.)     # SyntaxError: invalid syntax
 
 
-When Use ``tuple`` or ``list``
-==============================
+Tuple or List
+=============
 Both:
 
     * ordered

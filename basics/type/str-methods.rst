@@ -166,9 +166,10 @@ Is Whitespace
     '\n'.isspace()      # True
 
 .. figure:: img/iss.jpg
-    :width: 75%
+    :width: 40%
     :align: center
 
+    ISS - International Space Station.
     Credits: NASA/Crew of STS-132 (img: s132e012208).
 
 

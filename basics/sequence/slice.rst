@@ -12,8 +12,8 @@ Rationale
     * Index must be less or equal to length of object
     * Negative index starts from the end and go right to left
 
-Slice Sequences
-===============
+Sequences
+=========
 .. code-block:: python
     :caption: Slicing ``str``
 
@@ -65,8 +65,8 @@ Slice Sequences
     # TypeError: 'frozenset' object is not subscriptable
 
 
-Slice Forwards
-==============
+Forwards
+========
 .. highlights::
     * ``my_sequence[start:stop]``
 
@@ -84,8 +84,8 @@ Slice Forwards
     text[23:]       # 'Moon!'
 
 
-Slice Backwards
-===============
+Backwards
+=========
 .. highlights::
     * Negative index starts from the end and go right to left
 
@@ -111,8 +111,8 @@ Slice Backwards
     text[-5:5]      # ''
 
 
-Slice Every ``n-th``
-====================
+Every ``n-th``
+==============
 .. highlights::
     * ``my_sequence[start:stop:step]``
 
@@ -126,8 +126,8 @@ Slice Every ``n-th``
     text[::-2]            # '!oMeto go soce'
 
 
-Slice Missing
-=============
+Out of Range
+============
 .. code-block:: python
 
     text = 'We choose to go to the Moon!'
@@ -136,8 +136,8 @@ Slice Missing
     text[100:]      # ''
 
 
-Slice Index Arithmetic
-======================
+Index Arithmetic
+================
 .. code-block:: python
 
     text = 'We choose to go to the Moon!'

@@ -42,7 +42,7 @@ Which Version?
     "3.6",  ":pep:`494`", "security",     "2016-12-23", "2021-12-23",  "Ned Deily"
     "3.5",  ":pep:`478`", "security",     "2015-09-13", "2020-09-13",  "Larry Hastings"
 
-.. csv-table:: Deprecated Versions
+.. csv-table:: Unsupported Versions
     :header: "Version", "PEP", "Status", "Release", "End-of-life", "Release Manager"
 
     "3.4",  ":pep:`429`", "end of life",  "2014-03-16", "2019-03-16",  "Larry Hastings"

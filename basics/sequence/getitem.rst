@@ -13,8 +13,8 @@ Rationale
     * Negative index starts from the end and go right to left
 
 
-Get Item at Positive Index
-==========================
+Positive Index
+==============
 .. code-block:: python
 
     data = ['a', 'b', 'c', 'd', 'e']
@@ -24,8 +24,8 @@ Get Item at Positive Index
     data[2]             # 'c'
 
 
-Get Item at Negative Index
-==========================
+Negative Index
+==============
 .. code-block:: python
 
     data = ['a', 'b', 'c', 'd', 'e']
@@ -35,8 +35,8 @@ Get Item at Negative Index
     data[-2]            # 'd'
 
 
-Get Item Out of Range
-=====================
+Out of Range
+============
 .. code-block:: python
     :caption: Accessing not existing element
 
@@ -46,8 +46,8 @@ Get Item Out of Range
     data[-100]          # IndexError: string index out of range
 
 
-Get Item from Ordered Sequence
-==============================
+Ordered Sequence
+================
 .. code-block:: python
     :caption: Get item from ``str``
 
@@ -88,8 +88,8 @@ Get Item from Ordered Sequence
     data[-2]            # 'd'
 
 
-Get Item from Unordered Sequence
-================================
+Unordered Sequence
+==================
 .. code-block:: python
     :caption: Get item from ``set`` is impossible. ``set`` is unordered data structure.
 

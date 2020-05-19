@@ -22,9 +22,19 @@ Type Definition
 Comparision
 ===========
 .. highlights::
-    * Do not use ``==`` or ``!=`` to check ``None`` values
+    * Do not use ``==`` or ``!=`` to check ``None`` values (it works, but you shouldn't)
     * ``x is None`` - ``x`` is the same object as ``y``
     * ``x is not None`` - ``x`` is not the same object as ``y``
+
+.. code-block:: python
+
+    age = None
+
+    age == None             # True
+    age != None             # False
+
+    age is None             # True
+    age is not None         # False
 
 
 Assignments

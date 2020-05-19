@@ -3,8 +3,8 @@ Sequence Unpacking
 ******************
 
 
-Unpacking Values
-================
+Rationale
+=========
 .. code-block:: python
 
     a = 1
@@ -23,6 +23,9 @@ Unpacking Values
     [a, b, c] = [1, 2, 3]
     [a, b, c] = (1, 2, 3)
 
+
+Errors
+======
 .. code-block:: python
     :caption: Note, that ``set`` is unordered collection
 
@@ -42,8 +45,8 @@ Unpacking Values
     # ValueError: not enough values to unpack (expected 4, got 3)
 
 
-Unpacking arbitrary number of arguments
-=======================================
+Arbitrary number of arguments
+=============================
 .. code-block:: python
     :caption: Unpacking values at the right side
 
@@ -93,8 +96,8 @@ Unpacking arbitrary number of arguments
     # ValueError: not enough values to unpack (expected at least 2, got 1)
 
 
-Unpacking nested
-================
+Nested
+======
 .. code-block:: python
 
     a, (b, c) = [1, (2, 3)]
@@ -123,7 +126,7 @@ Naming convention
     others              # [3, 4]
 
 
-Omitting values
+Omitting Values
 ===============
 .. highlights::
     * ``_`` is regular variable name, not a special Python syntax
@@ -180,7 +183,7 @@ Omitting values
     interesting         # 2
 
 
-Using in a loop
+Using in a Loop
 ===============
 .. code-block:: python
 

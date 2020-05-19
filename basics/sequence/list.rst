@@ -212,8 +212,8 @@ Sort
     # None
 
 
-Methods Chaining
-================
+Method Chaining
+===============
 .. code-block:: python
 
     data = [3, 1, 2]
