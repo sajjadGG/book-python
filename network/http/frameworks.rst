@@ -1,4 +1,4 @@
-***************
+q***************
 HTTP Frameworks
 ***************
 
@@ -68,7 +68,7 @@ FastAPI
 =======
 * https://github.com/tiangolo/fastapi
 
-.. code-block:: consonle
+.. code-block:: console
 
     $ pip install fastapi uvicorn
 

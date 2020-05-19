@@ -361,4 +361,4 @@ Average
 :The whys and wherefores:
     * :ref:`Builtin Functions`
     * :ref:`Loop Nested Sequences`
-    * :ref:`Sequence Slicing`
+    * :ref:`Sequence Slice`

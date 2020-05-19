@@ -22,6 +22,7 @@ Rationale
         Object created from class.
 
 .. code-block:: python
+    :force:
 
     class <name>:
         pass

@@ -386,8 +386,8 @@ Proxy functions
     my_csv('iris3.csv', encoding='cp1250', verbose=True)
     my_csv('iris4.csv', verbose=True, usecols=['Sepal Length', 'Species'])
 
-Decorators
-----------
+Decorator
+---------
 .. code-block:: python
     :caption: Decorators are functions, which get pointer to the decorated function as it's argument, and has closure which gets original function arguments as positional and keyword arguments.
 

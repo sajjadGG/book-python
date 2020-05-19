@@ -247,14 +247,13 @@ Checking values
 .. code-block:: python
 
     class Kelvin:
-        def __init__(self, value):
+        MINIMAL_VALUE = 0.0
 
+        def __init__(self, value):
             if type(value) not in (float, int):
                 raise TypeError('Temperature must be int or float')
-
-            if value < 0.0:
+            if value < self.MINIMAL_VALUE:
                 raise ValueError('Temperature must be greater than 0')
-
             self.value = value
 
 

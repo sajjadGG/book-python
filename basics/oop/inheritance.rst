@@ -12,14 +12,14 @@ Rationale
 
 .. glossary::
 
-    Parent
-    Superclass
-    Base Class
+    parent
+    superclass
+    base class
         Class from other classes inherits
 
-    Child
-    Subclass
-        Class which inherits from :term:`parent``
+    child
+    subclass
+        Class which inherits from :term:`parent`
 
 
 Syntax

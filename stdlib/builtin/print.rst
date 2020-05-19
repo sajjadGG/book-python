@@ -1,4 +1,4 @@
-.. _Builtin Printing:
+.. _Stdlib Builtin Printing:
 
 ****************
 Builtin Printing

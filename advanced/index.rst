@@ -86,9 +86,9 @@ OOP Protocols
     protocols/reflection.rst
     protocols/descriptor.rst
 
-************************
-Performance Optimization
-************************
+***********
+Performance
+***********
 .. toctree::
     :maxdepth: 1
     :caption: Performance

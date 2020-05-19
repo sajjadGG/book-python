@@ -68,6 +68,20 @@ Optional
     age: Optional[float] = None
 
 
+Final
+=====
+.. versionadded:: Python 3.8
+    See :pep:`591`
+
+.. code-block:: python
+
+    from typing import Final
+
+
+    METER: Final = 1
+    KILOMETER: Final[int] = 1000 * METER
+
+
 Type Check is not Enforced
 ==========================
 .. highlights::

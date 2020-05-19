@@ -44,8 +44,8 @@ Sequences
     sequence/set.rst
     sequence/frozenset.rst
     sequence/nesting.rst
-    sequence/indexing.rst
-    sequence/slicing.rst
+    sequence/getitem.rst
+    sequence/slice.rst
     sequence/unpacking.rst
     sequence/type-annotation.rst
 

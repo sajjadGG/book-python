@@ -36,8 +36,8 @@ Dict
     }
 
 
-``list`` of ``dict``
-====================
+List of Dicts
+=============
 .. code-block:: python
     :caption: Generic type annotation
 
@@ -89,6 +89,38 @@ Dict
         {'measurements': [7.0, 3.2, 4.7, 1.4], 'species': 'versicolor'},
         {'measurements': [7.6, 3.0, 6.6, 2.1], 'species': 'virginica'},
     ]
+
+
+Typed Dict
+==========
+.. versionadded:: Python 3.8
+    See :pep:`589`
+
+.. code-block:: python
+
+    from typing import TypedDict
+
+
+    class Point(TypedDict):
+        x: int
+        y: int
+
+
+    pt1: Point = {'x':1, 'y':2}           # Ok
+    pt2: Point = {'x':1, 'y':2, 'z':0}    # Error
+
+.. code-block:: python
+
+    from typing import TypedDict
+
+
+    class Point(TypedDict):
+        x: int
+        y: int
+
+
+    pt1 = Point(x=1, y=2)                   # Ok
+    pt2 = Point(x=1, y=2, z=0)              # Error
 
 
 New Features

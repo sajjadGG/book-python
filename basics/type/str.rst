@@ -188,7 +188,7 @@ Reading User Input
     * Good practice: always sanitize values from user prompt
 
 .. code-block:: python
-    :caption: ``input()`` function argument is prompt text, which "invites" user to enter specific information. Note ``: `` at the end. Space is needed to separate user input from prompt.
+    :caption: ``input()`` function argument is prompt text, which "invites" user to enter specific information. Note colon space (": ") at the end. Space is needed to separate user input from prompt.
 
     name = input('What is your name: ')
     # What is your name: Jan Twardowski<ENTER>

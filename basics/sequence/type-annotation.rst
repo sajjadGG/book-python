@@ -110,19 +110,6 @@ List of Tuples
         (7.6, 3.0, 6.6, 2.1, 'virginica'),
     ]
 
-.. code-block:: python
-    :caption: Explicit type annotation
-
-    from typing import List, Tuple
-
-    Iris = Tuple[float, float, float, float, str]
-
-    data: List[Iris] = [
-        (4.7, 3.2, 1.3, 0.2, 'setosa'),
-        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-        (7.6, 3.0, 6.6, 2.1, 'virginica'),
-    ]
-
 
 List of Lists
 =============
@@ -147,6 +134,36 @@ List of Lists
         [4, 5, 6],
         [7, 8, 9],
     ]
+
+
+Aliases
+=======
+.. code-block:: python
+
+    from typing import List, Tuple
+
+
+    GeographicCoordinate = Tuple[float, float]
+
+    locations: List[GeographicCoordinate] = [
+        (25.91375, -60.15503),
+        (-11.01983, -166.48477),
+        (-11.01983, -166.48477)
+    ]
+
+.. code-block:: python
+    :caption: Explicit type annotation
+
+    from typing import List, Tuple
+
+    Iris = Tuple[float, float, float, float, str]
+
+    data: List[Iris] = [
+        (4.7, 3.2, 1.3, 0.2, 'setosa'),
+        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+        (7.6, 3.0, 6.6, 2.1, 'virginica'),
+    ]
+
 
 Unions
 ======

@@ -164,14 +164,3 @@ Appendixes
     /appendix/workshop/scientific.rst
     /appendix/workshop/machine-learning.rst
     /_references/references.rst
-
-********
-Bootcamp
-********
-.. toctree::
-    :maxdepth: 2
-    :numbered:
-    :caption: Bootcamp
-    :name: Bootcamp
-
-    /bootcamp/index.rst

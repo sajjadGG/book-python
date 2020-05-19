@@ -2,16 +2,19 @@
 Books
 *****
 
+
 Algorithms
 ==========
 * http://www.amazon.com/Introduction-Algorithms-Edition-Thomas-Cormen/dp/0262033844/
 * http://www.amazon.com/Algorithms-4th-Edition-Robert-Sedgewick/dp/032157351X/
+
 
 Databases
 =========
 * http://www.amazon.com/Database-Design-Mere-Mortals-Hands-/dp/0321884493/
 * http://www.amazon.com/SQL-Antipatterns-Programming-Pragmatic-Programmers/dp/1934356557/
 * http://www.amazon.com/C.-J.-Date/e/B000AQ6OJA/
+
 
 Software Engineering Practises
 ==============================
@@ -20,14 +23,17 @@ Software Engineering Practises
 * http://www.amazon.com/Code-Complete-Practical-Handbook-Construction/dp/0735619670/
 * http://www.amazon.com/The-Mythical-Man-Month-Engineering-Anniversary/dp/0201835959/
 
-Design patterns
-===============
+
+Design pattern
+==============
 * Design Patterns: Elements of Reusable Object-Oriented Software
 * http://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612/
+
 
 Refactoring
 ===========
 * Working effectively with legacy code - Michael Feathers
+
 
 Python
 ======

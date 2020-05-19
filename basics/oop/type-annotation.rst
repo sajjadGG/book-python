@@ -156,6 +156,125 @@ Nested
     ]
 
 
+Final Class
+===========
+.. versionadded:: Python 3.8
+    See :pep:`591`
+
+.. code-block:: python
+
+    from typing import final
+
+
+    @final
+    class Astronaut:
+        pass
+
+.. code-block:: python
+    :caption: Error: Cannot inherit from final class "Base"
+
+    from typing import final
+
+
+    @final
+    class Astronaut:
+        pass
+
+    class Pilot(Astronaut):
+        pass
+
+
+Final Method
+============
+.. versionadded:: Python 3.8
+    See :pep:`591`
+
+.. code-block:: python
+
+    from typing import final
+
+
+    class Astronaut:
+
+        @final
+        def say_hello(self) -> None:
+            pass
+
+
+.. code-block:: python
+    :caption: Error: Cannot override final attribute "foo" (previously declared in base class "Base")
+
+    from typing import final
+
+
+    class Astronaut:
+        @final
+        def say_hello(self) -> None:
+            pass
+
+    class Pilot(Astronaut):
+        def say_hello(self) -> None:    # Error: Cannot override final attribute
+            pass
+
+
+Final Attribute
+===============
+.. code-block:: python
+
+    from typing import Final
+
+
+    class Position:
+        x: Final[int]
+        y: Final[int]
+
+        def __init__(self) -> None:
+            self.x = 1
+            self.y = 2
+
+.. code-block:: python
+    :caption: Error: final attribute (``y``) without an initializer
+
+    from typing import Final
+
+
+    class Position:
+        x: Final[int]
+        y: Final[int]       # Error: final attribute 'y' without an initializer
+
+        def __init__(self) -> None:
+            self.x = 1
+
+.. code-block:: python
+    :caption: Error: can't override a final attribute
+
+    from typing import Final
+
+
+    class Settings:
+        RESOLUTION_X_MIN: Final[int] = 0
+        RESOLUTION_X_MAX: Final[int] = 1024
+        RESOLUTION_Y_MIN: Final[int] = 0
+        RESOLUTION_Y_MAX: Final[int] = 768
+
+
+    class Game(Settings):
+        RESOLUTION_X_MIN = 3        # Error: can't override a final attribute
+
+.. code-block:: python
+    :caption: Error: can't override a final attribute
+
+    from typing import Final
+
+
+    class Hero:
+        DAMAGE_MIN: Final[int] = 10
+        DAMAGE_MAX: Final[int] = 20
+
+
+    Hero.DAMAGE_MIN = 1             # Error: can't override a final attribute
+
+
 More Information
 ================
 .. note:: More Information in :ref:`Stdlib Type Annotation`

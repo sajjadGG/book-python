@@ -26,34 +26,25 @@ Rationale
 
 Which Version?
 ==============
-* newest Python 3
+* You should use newest official Python version
 
-What changed in Python 3?
--------------------------
-* All strings are Unicode
-* Changes in standard library naming
-* In Python 3 ``print()`` is a function, not a keyword
-* New string formatting
-
-Why not Python 2?
------------------
-* 2020-04-20 - end of Life for Python 2.7 :pep:`373`
-* Python 2 is no longer developed [`1 <https://www.python.org/psf/press-release/pr20191220/>`_, `2 <https://mail.python.org/archives/list/python-dev@python.org/message/N6JIGTTJCJHS47AYSI76SJPCQS25EBWR/>`_]
-* Python 2.7 is the last in 2.x branch, and there won't be Python 2.8 :pep:`404`
-* Python 2.7.18, the last release of Python 2 [`3 <https://pythoninsider.blogspot.com/2020/04/python-2718-last-release-of-python-2.html>`_]
-
-
-Currently supported versions
-============================
-.. csv-table::
+.. csv-table:: Future Versions
     :header: "Version", "PEP", "Status", "Release", "End-of-life", "Release Manager"
 
     "3.10", "TBA",        "future",       "2020-10-05", "2025-10",     "TBA"
     "3.9",  ":pep:`596`", "development",  "2020-10-05", "2025-10",     "Łukasz Langa"
+
+.. csv-table:: Currently Supported Versions
+    :header: "Version", "PEP", "Status", "Release", "End-of-life", "Release Manager"
+
     "3.8",  ":pep:`569`", "features",     "2019-10-20", "2024-10",     "Łukasz Langa"
     "3.7",  ":pep:`537`", "bugfix",       "2018-06-27", "2023-06-27",  "Ned Deily"
     "3.6",  ":pep:`494`", "security",     "2016-12-23", "2021-12-23",  "Ned Deily"
     "3.5",  ":pep:`478`", "security",     "2015-09-13", "2020-09-13",  "Larry Hastings"
+
+.. csv-table:: Deprecated Versions
+    :header: "Version", "PEP", "Status", "Release", "End-of-life", "Release Manager"
+
     "3.4",  ":pep:`429`", "end of life",  "2014-03-16", "2019-03-16",  "Larry Hastings"
     "3.3",  ":pep:`398`", "end of life",  "2012-09-29", "2017-09-29",  "Georg Brandl"
     "3.2",  ":pep:`392`", "end of life",  "2011-02-20", "2016-02-20",  "Georg Brandl"
@@ -63,8 +54,24 @@ Currently supported versions
     "2.6",  ":pep:`361`", "end of life",  "2008-10-01", "2013-10-29",  "Barry Warsaw"
 
 
-Release Cycle
-=============
+Why not Python 2?
+=================
+* 2020-04-20 - end of Life for Python 2.7 :pep:`373`
+* Python 2 is no longer developed [`1 <https://www.python.org/psf/press-release/pr20191220/>`_, `2 <https://mail.python.org/archives/list/python-dev@python.org/message/N6JIGTTJCJHS47AYSI76SJPCQS25EBWR/>`_]
+* Python 2.7 is the last in 2.x branch, and there won't be Python 2.8 :pep:`404`
+* Python 2.7.18, the last release of Python 2 [`3 <https://pythoninsider.blogspot.com/2020/04/python-2718-last-release-of-python-2.html>`_]
+
+
+Changes in Python 3
+===================
+* All strings are Unicode
+* In Python 3 ``print()`` is a function, not a keyword
+* Changes in standard library modules naming and location
+* New string formatting
+
+
+Python Release Cycle
+====================
 .. versionadded:: Python 3.9
     See :pep:`602`
 

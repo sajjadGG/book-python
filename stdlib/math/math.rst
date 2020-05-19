@@ -1,4 +1,4 @@
-.. _Mathematics:
+.. _Math Stdlib:
 
 ***********
 Math Stdlib

@@ -13,6 +13,7 @@ Syntax
 
 .. code-block:: python
     :caption: ``for`` loop syntax
+    :force:
 
     for <variable> in <iterable> :
         <do something>

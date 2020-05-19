@@ -13,6 +13,7 @@ Syntax
 
 .. code-block:: python
     :caption: ``while`` loop generic syntax
+    :force:
 
     while <condition>:
         <do something>

@@ -1,4 +1,4 @@
-.. _Serialization Pickle:
+.. _Stdlib Serialization Pickle:
 
 ********************
 Serialization Pickle
@@ -235,7 +235,7 @@ Examples
 Assignments
 ===========
 
-Pickle serialization
+Pickle Serialization
 --------------------
 * Complexity level: easy
 * Lines of code to write: 10 lines

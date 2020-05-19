@@ -60,7 +60,7 @@ Relative path
 
 Escaping characters in path
 ===========================
-* ``\\ `` (slash space) - escapes space
+* "\\ " (slash space) - escapes space
 * Note escapes are not needed
 
 .. code-block:: python

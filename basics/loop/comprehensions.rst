@@ -20,20 +20,20 @@ Recap
 
 Syntax
 ======
-
-Generic Syntax
---------------
 .. code-block:: python
+    :force:
 
     result = [<RETURN> for <VARIABLE> in <ITERABLE>]
 
+
 Naming Convention
------------------
+=================
 * Use shorter variable names
 * ``x`` is common name
 
-Example
--------
+
+Comprehension
+=============
 .. code-block:: python
 
     [x for x in (0,1,2,3,4)]
@@ -46,8 +46,8 @@ Example
     # [0, 1, 4, 9, 16]
 
 
-Generator expressions vs. Comprehensions
-========================================
+Comprehensions and Generator Expression
+=======================================
 .. highlights::
     * Comprehensions executes instantly
     * Generator expression executes lazily
@@ -66,6 +66,9 @@ Generator expressions vs. Comprehensions
     tuple(x for x in range(0,5))       # (0, 1, 2, 3, 4)
     (x for x in range(0,5))            # <generator object <genexpr> at 0x118c1aed0>
 
+
+Comprehensions or Generator Expression
+======================================
 .. code-block:: python
     :caption: Comprehension
 
@@ -130,8 +133,8 @@ Generator expressions vs. Comprehensions
     # []
 
 
-Simple usage
-============
+Usage
+=====
 
 List Comprehension
 ------------------

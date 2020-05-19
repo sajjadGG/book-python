@@ -7,7 +7,6 @@ Entry Test
     :name: Design Patterns Entry Test
 
     about/entry.rst
-    about/dragon.rst
     about/classification.rst
 
 **********

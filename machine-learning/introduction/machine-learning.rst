@@ -18,9 +18,9 @@ Elementy języka Python i biblioteki standardowej
 * :ref:`Basic Types`
 * :ref:`Basic Sequences`
 * :ref:`Basic Mappings`
-* :ref:`Basic Conditionals`
-* :ref:`Basic Looping`
 * :ref:`Basic Control Flow`
+* :ref:`Basic Loops`
+* :ref:`Basic Files`
 * :ref:`Basic Functions`
 * :ref:`Basic Object Oriented Programming`
 * :ref:`Stdlib Mathematics`

@@ -1,8 +1,8 @@
-.. _Type Annotation:
+.. _Type Annotations:
 
-***************
-Type Annotation
-***************
+****************
+Type Annotations
+****************
 
 
 What are Type Annotations?
@@ -274,6 +274,14 @@ Final
 
 .. code-block:: python
 
+    from typing import Final
+
+
+    ID: Final = 1
+    ID: Final[float] = 1
+
+.. code-block:: python
+
     from typing import final
 
     @final
@@ -296,14 +304,6 @@ Final
         def foo(self) -> None:  # Error: Cannot override final attribute "foo"
                                 # (previously declared in base class "Base")
             ...
-
-.. code-block:: python
-
-    from typing import Final
-
-
-    ID: Final = 1
-    ID: Final[float] = 1
 
 .. code-block:: python
 

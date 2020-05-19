@@ -177,10 +177,10 @@ Relational Files Database
         ]
 
 :The whys and wherefores:
-    * :ref:`Basic Conditionals`
+    * :ref:`Basic Control Flow`
     * :ref:`Basic Files`
     * :ref:`Basic Sequences`
     * :ref:`Basic Comprehensions`
-    * :ref:`Basic Looping`
+    * :ref:`Basic Loops`
     * :ref:`Basic String Methods`
     * :ref:`Stdlib Datetime and Timezones`
