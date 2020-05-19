@@ -98,13 +98,10 @@ Checking if value is in range
 
 Checking if has value
 ---------------------
-.. highlights::
-    * More advanced examples will be covered latter
-
 .. code-block:: python
 
     name = input('What is your name?: ')
-    # Jan Twardowski<ENTER>
+    # What is your name?: Jan Twardowski<ENTER>
 
     if name:
         print(f'My name is... {name}')
@@ -113,7 +110,7 @@ Checking if has value
 .. code-block:: python
 
     name = input('What is your name?: ')
-    # <ENTER>
+    # What is your name?: <ENTER>
 
     if name:
         print(f'My name... {name}')
@@ -177,7 +174,7 @@ Checking if variable is certain value
 .. code-block:: python
 
     name = input('What is your name?: ')
-    # <ENTER>
+    # What is your name?: <ENTER>
 
     if name:
         print(f'My name is... {name}')
@@ -237,7 +234,7 @@ Inline ``if``
 .. code-block:: python
 
     language = input('What is your name?: ')
-    # Polish<ENTER>
+    # What is your name?: Polish<ENTER>
 
     if language == 'English':
         print('Hello')
@@ -261,15 +258,16 @@ Switch statement
 
 .. code-block:: python
 
-    language = input('What is your name?: ')
-    # French<ENTER>
-
     switch = {
         'English': 'Hello',
         'Russian': 'Здравствуйте',
         'German': 'Guten Tag',
         'Polish': 'Witaj',
         'default': "I don't speak this language"}
+
+
+    language = input('What is your name?: ')
+    # What is your name?: French<ENTER>
 
     switch.get(language, switch['default'])
     # "I don't speak this language"

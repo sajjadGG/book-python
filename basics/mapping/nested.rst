@@ -110,12 +110,11 @@ Dict Values
         {'measurements': [7.6, 3.0, 6.6, 2.1], 'species': 'virginica'},
     ]
 
-``list`` of ``dict``
-====================
 
-Getting elements
-----------------
+List of Dicts
+=============
 .. code-block:: python
+    :caption: Get Item
 
     data = [
         {'measurements': [4.7, 3.2, 1.3, 0.2], 'species': 'setosa'},
@@ -135,14 +134,6 @@ Getting elements
     data[0]['species']
     # 'setosa'
 
-.. code-block:: python
-
-    data = [
-        {'measurements': [4.7, 3.2, 1.3, 0.2], 'species': 'setosa'},
-        {'measurements': [7.0, 3.2, 4.7, 1.4], 'species': 'versicolor'},
-        {'measurements': [7.6, 3.0, 6.6, 2.1], 'species': 'virginica'},
-    ]
-
     data[0].get('kind')
     # None
 
@@ -155,9 +146,8 @@ Getting elements
     data[2].get('measurements')[1]
     # 3.0
 
-Length
-------
 .. code-block:: python
+    :caption: Length
 
     data = [
         {'measurements': [4.7, 3.2, 1.3, 0.2], 'species': 'setosa'},
