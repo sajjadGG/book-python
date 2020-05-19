@@ -135,3 +135,27 @@ Classes
 
     print(pos.get_coordinates())
     # Point(x=0, y=0)
+
+
+Nested
+======
+.. code-block:: python
+
+    from typing import List
+
+
+    class Iris:
+        def __init__(self, features: List[float], label: str) -> None:
+            self.features: List[float] = features
+            self.label: str = label
+
+    data: List[Iris] = [
+        Iris([4.7, 3.2, 1.3, 0.2], 'setosa'),
+        Iris([7.0, 3.2, 4.7, 1.4], 'versicolor'),
+        Iris([7.6, 3.0, 6.6, 2.1], 'virginica'),
+    ]
+
+
+More Information
+================
+.. note:: More Information in :ref:`Stdlib Type Annotation`

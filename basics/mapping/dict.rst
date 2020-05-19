@@ -5,8 +5,11 @@ Mapping ``dict``
 ****************
 
 
+Rationale
+=========
 .. highlights::
     * ``dict`` are key-value storage
+    * key lookup is very efficient ``O(1)``
     * Mutable - can add, remove, and modify items
 
 
@@ -24,32 +27,33 @@ Type Definition
     data = {}
     data = dict()
 
-    data = {'a': 1, 'b': 2}
-
     data = {
+        0: 'Melissa Lewis'
         1: 'Mark Watney',
-        2: 'Jan Twardowski'}
+        2: 'Alex Vogel'}
 
     data = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski'}
+        'commander': 'Melissa Lewis',
+        'botanist': 'Mark Watney',
+        'chemist': 'Alex Vogel'}
 
     data = dict(
-        first_name='Jan',
-        last_name='Twardowski')
+        commander='Melissa Lewis',
+        botanist='Mark Watney',
+        chemist='Alex Vogel')
 
 .. code-block:: python
     :caption: Duplicating items are overridden by latter
 
     data = {
-        'species': 'setosa',
-        'species': 'virginica',
+        'commander': 'Melissa Lewis',
+        'commander': 'Jan Twardowski',
     }
-    # {'species': 'virginica'}
+    # {'commander': 'Jan Twardowski'}
 
 
-Getting Items
-=============
+Get Item
+========
 .. highlights::
     * ``[...]`` throws ``KeyError`` exception if key not found in ``dict``
     * ``.get()`` returns ``None`` if key not found
@@ -58,259 +62,253 @@ Getting Items
 .. code-block:: python
     :caption: Getitem Method
 
-    data = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski',
-    }
+    crew = {
+        'commander': 'Melissa Lewis',
+        'botanist': 'Mark Watney',
+        'chemist': 'Alex Vogel'}
 
-    data['last_name']
-    # Twardowski
+    crew['commander']
+    # Melissa Lewis
 
-    data['agency']
-    # KeyError: 'agency'
+    crew['pilot']
+    # KeyError: 'pilot'
 
 .. code-block:: python
     :caption: Get Method
 
-    data = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski',
-    }
+    crew = {
+        'commander': 'Melissa Lewis',
+        'botanist': 'Mark Watney',
+        'chemist': 'Alex Vogel'}
 
-    data.get('last_name')
-    # Twardowski
+    crew.get('commander')
+    # Melissa Lewis
 
-    data.get('agency')
+    crew.get('pilot')
     # None
 
-    data.get('agency', 'unknown')
-    # 'unknown'
+    crew.get('pilot', 'not assigned')
+    # 'not assigned'
 
 .. code-block:: python
     :caption: Getting keys other than ``str``
 
-    data = {
+    calendarium = {
         1961: 'First Human Space Flight',
         1969: 'First Step on the Moon',
     }
 
-    data[1961]
+    calendarium[1961]
     # 'First Human Space Flight'
 
-    data.get(1961)
+    calendarium.get(1961)
     # 'First Human Space Flight'
 
-    data['1961']
+    calendarium['1961']
     # KeyError: '1961'
 
-    data.get('1961')
+    calendarium.get('1961')
     # None
 
-    data.get('1961', 'unknown')
+    calendarium.get('1961', 'unknown')
     # 'unknown'
 
+
 Get Keys, Values and Key-Value Pairs
-------------------------------------
+====================================
 * Key can be any hashable object
 
 .. code-block:: python
 
-    data = {
-        'Sepal length': 5.8,
-        'Sepal width': 2.7,
-        'Petal length': 5.1,
-        'Petal width': 1.9,
-    }
+    crew = {
+        'commander': 'Melissa Lewis',
+        'botanist': 'Mark Watney',
+        'chemist': 'Alex Vogel'}
 
-    list(data.keys())
-    # ['Sepal length', 'Sepal width', 'Petal length', 'Petal width']
+    list(crew.keys())
+    # ['commander', 'botanist', 'chemist']
 
-    list(data.values())
-    # [5.8, 2.7, 5.1, 1.9]
+    list(crew.values())
+    # ['Melissa Lewis', 'Mark Watney', 'Alex Vogel']
 
-    list(data.items())
-    # [
-    #     ('Sepal length', 5.8),
-    #     ('Sepal width', 2.7),
-    #     ('Petal length', 5.1),
-    #     ('Petal width', 1.9),
-    # ]
+    list(crew.items())
+    # [('commander', 'Melissa Lewis'),
+    #  ('botanist', 'Mark Watney'),
+    #  ('chemist', 'Alex Vogel')]
 
 
-Setting Items
-=============
+Set Item
+========
 .. highlights::
     * Adds if value not exist
     * Updates if value exist
 
 .. code-block:: python
-    :caption: Setitem Method
+    :caption: Set Item Method
 
-    data = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski',
-    }
+    crew = {
+        'commander': 'Melissa Lewis',
+        'botanist': 'Mark Watney',
+        'chemist': 'Alex Vogel'}
 
-    data['agency'] = 'POLSA'
+    crew['pilot'] = 'Rick Martinez'
 
-    print(data)
-    # {
-    #   'first_name': 'Jan',
-    #   'last_name': 'Twardowski',
-    #   'agency': 'POLSA'
-    # }
-
-.. code-block:: python
-    :caption: Update Method
-
-    data = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski',
-    }
-
-    data.update(agency='POLSA')
-    print(data)
-    # {
-    #   'first_name': 'Jan',
-    #   'last_name': 'Twardowski',
-    #   'agency': 'POLSA'
-    # }
-
-    data.update(mission=['Apollo', 'Artemis', 'Ares'])
-    print(data)
-    # {
-    #   'first_name': 'Jan',
-    #   'last_name': 'Twardowski',
-    #   'agency': 'POLSA',
-    #   'mission': ['Apollo', 'Artemis', 'Ares']
-    # }
+    print(crew)
+    # {'commander': 'Melissa Lewis',
+    #  'botanist': 'Mark Watney',
+    #  'chemist': 'Alex Vogel',
+    #  'pilot': 'Rick Martinez'}
 
 .. code-block:: python
     :caption: Update Method
 
-    data = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski',
-    }
+    crew = {
+        'commander': 'Melissa Lewis',
+        'botanist': 'Mark Watney',
+        'chemist': 'Alex Vogel'}
 
-    more = {
-        'agency': 'POLSA',
-        'mission': ['Apollo', 'Artemis', 'Ares'],
-    }
+    crew.update(pilot='Rick Martinez')
+    print(crew)
+    # {'commander': 'Melissa Lewis',
+    #  'botanist': 'Mark Watney',
+    #  'chemist': 'Alex Vogel',
+    #  'pilot': 'Rick Martinez'}
 
-    data.update(more)
-    print(data)
-    # {
-    #   'first_name': 'Jan',
-    #   'last_name': 'Twardowski',
-    #   'agency': 'POLSA',
-    #   'mission': ['Apollo', 'Artemis', 'Ares']
-    # }
+    crew.update(mission=['Artemis', 'Ares III'])
+    print(crew)
+    # {'commander': 'Melissa Lewis',
+    #  'botanist': 'Mark Watney',
+    #  'chemist': 'Alex Vogel',
+    #  'pilot': 'Rick Martinez',
+    #  'mission': ['Artemis', 'Ares III']}
+
+.. code-block:: python
+    :caption: Update Method
+
+    crew = {
+        'commander': 'Melissa Lewis',
+        'botanist': 'Mark Watney',
+        'chemist': 'Alex Vogel'}
+
+    new = {
+        'pilot': 'Rick Martinez',
+        'surgeon': 'Chris Beck',
+        'engineer': 'Beth Johanssen'}
+
+    crew.update(new)
+    print(crew)
+    # {'commander': 'Melissa Lewis',
+    #  'botanist': 'Mark Watney',
+    #  'chemist': 'Alex Vogel',
+    #  'pilot': 'Rick Martinez',
+    #  'surgeon': 'Chris Beck',
+    #  'engineer': 'Beth Johanssen'}
 
 
-Deleting Items
-==============
+Delete Item
+===========
 .. code-block:: python
     :caption: Pop Method
 
-    data = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski',
-        'agency': 'POLSA',
-    }
+    crew = {
+        'commander': 'Melissa Lewis',
+        'botanist': 'Mark Watney',
+        'chemist': 'Alex Vogel',
+        'pilot': 'Rick Martinez',
+        'surgeon': 'Chris Beck',
+        'engineer': 'Beth Johanssen'}
 
-    value = data.pop('agency')
+    left_alone_on_mars = crew.pop('botanist')
 
-    print(data)
-    # {'first_name', 'Jan',
-    #  'last_name': 'Twardowski'}
+    print(crew)
+    # {'commander': 'Melissa Lewis',
+    #  'chemist': 'Alex Vogel',
+    #  'pilot': 'Rick Martinez',
+    #  'surgeon': 'Chris Beck',
+    #  'engineer': 'Beth Johanssen'}
 
-    print(value)
-    # 'POLSA'
+    print(left_alone_on_mars)
+    # 'Mark Watney'
 
 .. code-block:: python
-    :caption: Popiitem Method
+    :caption: Popitem Method
 
-    data = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski',
-        'agency': 'POLSA',
-    }
+    crew = {
+        'commander': 'Melissa Lewis',
+        'botanist': 'Mark Watney',
+        'chemist': 'Alex Vogel'}
 
-    value = data.popitem()
+    last = crew.popitem()
 
-    print(data)
-    # {'first_name', 'Jan',
-    #  'last_name': 'Twardowski'}
+    print(crew)
+    # {'commander': 'Melissa Lewis',
+    #  'botanist': 'Mark Watney'}
 
-    print(value)
-    # ('agency', 'POLSA')
+    print(last)
+    # ('chemist', 'Alex Vogel')
 
 .. code-block:: python
     :caption: Del Keyword
 
-    data = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski',
-        'agency': 'POLSA',
-    }
+    crew = {
+        'commander': 'Melissa Lewis',
+        'botanist': 'Mark Watney',
+        'chemist': 'Alex Vogel'}
 
-    del data['agency']
+    del crew['chemist']
 
-    print(data)
-    # {'first_name': 'Jan',
-    #  'last_name': 'Twardowski'}
+    print(crew)
+    # {'commander': 'Melissa Lewis',
+    #  'botanist': 'Mark Watney'}
 
 
-Indexing and Slicing
-====================
+Get Item and Slice
+==================
 .. highlights::
-    * Indexing on ``dict`` is not possible
+    * Get item with index on ``dict`` is not possible
     * Slicing on ``dict`` is not possible
 
 .. code-block:: python
 
-    data = {
-        'a': 0,
-        'b': 1,
-        'c': 2,
-    }
+    crew = {
+        'commander': 'Melissa Lewis',
+        'botanist': 'Mark Watney',
+        'chemist': 'Alex Vogel'}
 
-    data[0]             # KeyError: 0
-    data[1]             # KeyError: 1
-    data[2]             # KeyError: 2
+    crew[0]             # KeyError: 0
+    crew[1]             # KeyError: 1
+    crew[2]             # KeyError: 2
 
-    data[-0]            # KeyError: 0
-    data[-1]            # KeyError: -1
-    data[-2]            # KeyError: -2
+    crew[-0]            # KeyError: 0
+    crew[-1]            # KeyError: -1
+    crew[-2]            # KeyError: -2
 
-    data[1:2]           # TypeError: unhashable type: 'slice'
-    data[:2]            # TypeError: unhashable type: 'slice'
-    data[::2]           # TypeError: unhashable type: 'slice'
+    crew[1:2]           # TypeError: unhashable type: 'slice'
+    crew[:2]            # TypeError: unhashable type: 'slice'
+    crew[::2]           # TypeError: unhashable type: 'slice'
 
 .. code-block:: python
 
-    data = {
-        0: 'a',
-        1: 'b',
-        2: 'c',
-    }
+    crew = {
+        0: 'Melissa Lewis',
+        1: 'Mark Watney',
+        2: 'Alex Vogel'}
 
-    data[0]             # 'a'
-    data[1]             # 'b'
-    data[2]             # 'c'
+    crew[0]             # 'Melissa Lewis'
+    crew[1]             # 'Mark Watney'
+    crew[2]             # 'Alex Vogel'
 
-    data[-0]            # 'a'
-    data[-1]            # KeyError: -1
-    data[-2]            # KeyError: -2
+    crew[-0]            # 'Melissa Lewis'
+    crew[-1]            # KeyError: -1
+    crew[-2]            # KeyError: -2
 
-    data[1:2]           # TypeError: unhashable type: 'slice'
-    data[:2]            # TypeError: unhashable type: 'slice'
-    data[::2]           # TypeError: unhashable type: 'slice'
+    crew[1:2]           # TypeError: unhashable type: 'slice'
+    crew[:2]            # TypeError: unhashable type: 'slice'
+    crew[::2]           # TypeError: unhashable type: 'slice'
 
 
-``dict`` vs. ``set``
-====================
+Dict or Set
+===========
 .. highlights::
     * Both ``set`` and ``dict`` keys must be hashable
     * Both ``set`` and ``dict`` uses the same ``{`` and ``}`` braces
@@ -354,22 +352,22 @@ Length
 ======
 .. code-block:: python
 
-    data = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski',
-        'agency': 'POLSA',
-    }
+    crew = {
+        'commander': 'Melissa Lewis',
+        'botanist': 'Mark Watney',
+        'chemist': 'Alex Vogel'}
 
-    len(data)
+
+    len(crew)
     # 3
 
-    len(data.keys())
+    len(crew.keys())
     # 3
 
-    len(data.values())
+    len(crew.values())
     # 3
 
-    len(data.items())
+    len(crew.items())
     # 3
 
 
@@ -395,8 +393,80 @@ New features
 Assignments
 ===========
 
-Aviation Language
------------------
+Mapping Dict Create
+-------------------
+* Complexity level: easy
+* Lines of code to write: 3 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/mapping_dict_create.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Create ``result: dict`` representing input data
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Stwórz ``result: dict`` reprezentujący dane wejściowe
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: text
+
+        First Name: Jan
+        Last Name: Twardowski
+        Missions: Apollo, Artemis
+
+Mapping Dict Items
+------------------
+* Complexity level: easy
+* Lines of code to write: 3 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/mapping_dict_items.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Print ``DATA`` keys
+    #. Print ``DATA`` values
+    #. Print ``DATA`` key-value pairs
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Wypisz klucze z ``DATA``
+    #. Wypisz wartości z ``DATA``
+    #. Wypisz pary klucz-wartość z ``DATA``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        DATA = {
+            'Sepal length': 5.8,
+            'Sepal width': 2.7,
+            'Petal length': 5.1,
+            'Petal width': 1.9,
+        }
+
+:Output:
+    .. code-block:: python
+
+        keys: list
+        # ['Sepal length', 'Sepal width', 'Petal length', 'Petal width']
+
+        values: list
+        # [5.8, 2.7, 5.1, 1.9]
+
+        items: List[tuple]
+        # [
+        #     ('Sepal length', 5.8),
+        #     ('Sepal width', 2.7),
+        #     ('Petal length', 5.1),
+        #     ('Petal width', 1.9),
+        # ]
+
+Mapping Aviation Language
+-------------------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min

@@ -1,55 +1,55 @@
-.. _Sequence Indexing:
+.. _Sequence Getitem:
 
 *****************
-Sequence Indexing
+Sequence Get Item
 *****************
 
 
 Rationale
 =========
 .. highlights::
-    * Index must be positive or negative ``int`` or zero
+    * Index must ``int`` (positive, negative or zero)
     * Index must be less or equal to length of object
     * Negative index starts from the end and go right to left
 
 
-Index string
-============
+Get Item at Positive Index
+==========================
 .. code-block:: python
-    :caption: Indexing from start
 
-    text = 'We choose to go to the Moon!'
+    data = ['a', 'b', 'c', 'd', 'e']
 
-    text[0]         # 'W'
-    text[1]         # 'e'
-    text[23]        # 'M'
+    data[0]             # 'a'
+    data[1]             # 'b'
+    data[2]             # 'c'
 
+
+Get Item at Negative Index
+==========================
 .. code-block:: python
-    :caption: Indexing from the end
 
-    text = 'We choose to go to the Moon!'
+    data = ['a', 'b', 'c', 'd', 'e']
 
-    text[-1]        # '!'
-    text[-5]        # 'M'
+    data[-0]            # 'a'
+    data[-1]            # 'e'
+    data[-2]            # 'd'
 
+
+Get Item Out of Range
+=====================
 .. code-block:: python
     :caption: Accessing not existing element
 
-    text = 'We choose to go to the Moon!'
+    data = ['a', 'b', 'c', 'd', 'e']
 
-    text[100]
-    # IndexError: string index out of range
-
-    text[-100]
-    # IndexError: string index out of range
+    data[100]           # IndexError: string index out of range
+    data[-100]          # IndexError: string index out of range
 
 
-Indexing sequences
-==================
-* Indexes on ``set`` are not possible
-
+Get Item from Ordered Sequence
+==============================
 .. code-block:: python
-    :caption: Indexing ``str``
+    :caption: Get item from ``str``
 
     data = 'abcde'
 
@@ -62,7 +62,7 @@ Indexing sequences
     data[-2]            # 'd'
 
 .. code-block:: python
-    :caption: Indexing ``list``
+    :caption: Get item from ``list``
 
     data = ['a', 'b', 'c', 'd', 'e']
 
@@ -75,7 +75,7 @@ Indexing sequences
     data[-2]            # 'd'
 
 .. code-block:: python
-    :caption: Indexing ``tuple``
+    :caption: Get item from ``tuple``
 
     data = ('a', 'b', 'c', 'd', 'e')
 
@@ -87,8 +87,11 @@ Indexing sequences
     data[-1]            # 'e'
     data[-2]            # 'd'
 
+
+Get Item from Unordered Sequence
+================================
 .. code-block:: python
-    :caption: Indexing ``set``. Indexes on ``set`` are not possible
+    :caption: Get item from ``set`` is impossible. ``set`` is unordered data structure.
 
     data = {'a', 'b', 'c', 'd', 'e'}
 
@@ -100,16 +103,29 @@ Indexing sequences
     data[-1]            # TypeError: 'set' object is not subscriptable
     data[-2]            # TypeError: 'set' object is not subscriptable
 
+.. code-block:: python
+    :caption: Get item from ``frozenset`` is impossible. ``frozenset`` is unordered data structure.
+
+    data = {'a', 'b', 'c', 'd', 'e'}
+
+    data[0]             # TypeError: 'frozenset' object is not subscriptable
+    data[1]             # TypeError: 'frozenset' object is not subscriptable
+    data[2]             # TypeError: 'frozenset' object is not subscriptable
+
+    data[-0]            # TypeError: 'frozenset' object is not subscriptable
+    data[-1]            # TypeError: 'frozenset' object is not subscriptable
+    data[-2]            # TypeError: 'frozenset' object is not subscriptable
+
 
 Assignments
 ===========
 
-Index Select
-------------
+Get Item Select
+---------------
 * Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/sequence_indexing_select.py`
+* Solution: :download:`solution/sequence_getitem_select.py`
 
 :English:
     #. Use data from "Input" section (see below)

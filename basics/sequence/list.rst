@@ -3,6 +3,8 @@ Sequence ``list``
 *****************
 
 
+Rationale
+=========
 .. highlights::
     * Can store elements of any types
     * Mutable - can add, remove, and modify items
@@ -17,7 +19,6 @@ Type Definition
     * Brackets are required
 
 .. code-block:: python
-    :caption: ``list`` type definition
 
     data = list()
     data = []
@@ -67,11 +68,11 @@ Type Casting
     # [1, 2, 3]
 
 
-Getting Items
-=============
+Get Item
+========
 .. highlights::
-    * More about indexing in chapter :ref:`Sequence Indexing`
-    * More about slicing in chapter :ref:`Sequence Slicing`
+    * More about getting items chapter :ref:`Sequence Get Item`
+    * More about slicing in chapter :ref:`Sequence Slice`
 
 .. code-block:: python
 
@@ -83,8 +84,8 @@ Getting Items
     data[3]         # 'd'
 
 
-Setting Items
-=============
+Set Item
+========
 .. code-block:: python
 
     data = ['a', 'b', 'c', 'd']
@@ -96,8 +97,9 @@ Setting Items
     data[4] = 'x'
     # IndexError: list assignment index out of range
 
-Deleting Items
-==============
+
+Del Item
+========
 .. code-block:: python
 
     data = ['a', 'b', 'c', 'd']
@@ -120,8 +122,8 @@ Deleting Items
     # 'd'
 
 
-Adding Elements
-===============
+Append
+======
 * ``list + list``
 * ``list.extend()``
 * ``list.append()``
@@ -159,8 +161,8 @@ Adding Elements
     # [1, 2, [3, 4]]
 
 
-Inserting Elements
-==================
+Insert
+======
 * Insert at specific position
 
 .. code-block:: python
@@ -178,8 +180,8 @@ Inserting Elements
     # [1, 'a', 2]
 
 
-Sorting
-=======
+Sort
+====
 .. epigraph::
     Timsort is a hybrid sorting algorithm, derived from merge sort and insertion sort, designed to perform well on many kinds of real-world data. It was invented by Tim Peters in 2002 for use in the Python programming language. The algorithm finds subsets of the data that are already ordered, and uses the subsets to sort the data more efficiently. This is done by merging an identified subset, called a run, with existing runs until certain criteria are fulfilled. Timsort has been Python's standard sorting algorithm since version 2.3. It is now also used to sort arrays in Java SE 7, and on the Android platform.
 
@@ -210,8 +212,8 @@ Sorting
     # None
 
 
-Multiple Statements in One Line
-===============================
+Methods Chaining
+================
 .. code-block:: python
 
     data = [3, 1, 2]
@@ -229,16 +231,14 @@ Multiple Statements in One Line
     # [1, 2, 3, 4]
 
 
-Built-in Functions on Sequences
-===============================
+Built-in Sequences Functions
+============================
 * ``min()`` - Minimal value
 * ``max()`` - Maximal value
 * ``sum()`` - Sum of elements
 * ``len()`` - Length of a list
 * ``all()`` - All values are ``True``
 * ``any()`` - Any values is ``True``
-* ``isinstance(a, b)`` - If ``a`` is instance of ``b``
-* ``isinstance(a, (b,c))`` - If ``a`` is instance of ``b`` or ``c``
 
 .. code-block:: python
 

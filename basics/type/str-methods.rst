@@ -5,8 +5,8 @@ Type ``str`` Methods
 ********************
 
 
-String Immutability
-===================
+Rationale
+=========
 .. highlights::
     * ``str`` is immutable
     * ``str`` methods create a new modified ``str``
@@ -34,11 +34,8 @@ String Immutability
     print(a)  # Jython
 
 
-String Methods
-==============
-
 Change Case
------------
+===========
 .. highlights::
     * Unify data format before analysis
 
@@ -61,7 +58,7 @@ Change Case
     name.capitalize()  # 'Angus macgyver'
 
 Replace
--------
+=======
 .. code-block:: python
 
     name = 'Jan Twardowski Iii'
@@ -69,8 +66,9 @@ Replace
     name.replace('Iii', 'III')
     # 'Jan Twardowski III'
 
+
 Strip Whitespace
-----------------
+================
 .. code-block:: python
 
     name = '\tJan Twardowski    \n'
@@ -79,8 +77,9 @@ Strip Whitespace
     name.rstrip()       # '\tJan Twardowski'
     name.lstrip()       # 'Jan Twardowski    \n'
 
-Checking If Starts or Ends with Value
--------------------------------------
+
+Starts or Ends With
+===================
 .. highlights::
     * Understand this as "starts with" and "ends with"
 
@@ -91,8 +90,9 @@ Checking If Starts or Ends with Value
     name.startswith('Jan')  # True
     name.endswith(';')      # False
 
-Splitting by Line
------------------
+
+Split by Line
+=============
 .. code-block:: python
 
     DATA = """First Line
@@ -107,8 +107,10 @@ Splitting by Line
     #   'Third Line'
     # ]
 
-Splitting by Character or Whitespace
-------------------------------------
+Split by Character
+==================
+* No argument - any number of whitespaces
+
 .. code-block:: python
 
     setosa = '5.1,3.5,1.4,0.2,setosa'
@@ -136,8 +138,9 @@ Splitting by Character or Whitespace
     text.split()
     # ['10.13.37.1', 'nasa.gov', 'esa.int', 'roscosmos.ru']
 
-Joining with String
--------------------
+
+Join
+====
 .. code-block:: python
 
     text = ['We', 'choose', 'to', 'go', 'to', 'the', 'Moon']
@@ -152,8 +155,9 @@ Joining with String
     ','.join(setosa)
     # '5.1,3.5,1.4,0.2,setosa'
 
-Checking If Contains Only Whitespace
-------------------------------------
+
+Is Whitespace
+=============
 .. code-block:: python
 
     ''.isspace()        # False
@@ -162,20 +166,22 @@ Checking If Contains Only Whitespace
     '\n'.isspace()      # True
 
 .. figure:: img/iss.jpg
+    :width: 75%
     :align: center
-    :scale: 30%
 
     Credits: NASA/Crew of STS-132 (img: s132e012208).
 
-Checking If Contains Only Alphabet Characters
----------------------------------------------
+
+Is Alphabet Characters
+======================
 .. code-block:: python
 
     'hello'.isalpha()   # True
     'hello1'.isalpha()  # False
 
-Finding Starting Position of a Sub-string
------------------------------------------
+
+Find Sub-string Position
+========================
 .. code-block:: python
 
     text = 'We choose to go to the Moon'
@@ -184,15 +190,17 @@ Finding Starting Position of a Sub-string
     text.find('Moo')    # 23
     text.find('x')      # -1
 
-Check If is a Part of Another String
-------------------------------------
+
+Contains
+========
 .. code-block:: python
 
     'Py' in 'Python'     # True
     'Monty' in 'Python'  # False
 
-Counting Occurrences
---------------------
+
+Count Occurrences
+=================
 .. code-block:: python
 
     text = 'Moon'
@@ -202,8 +210,14 @@ Counting Occurrences
     text.count('x')     # 0
 
 
-Multiple Statements in One Line
-===============================
+Remove Prefix or Suffix
+=======================
+.. versionadded:: Python 3.9
+    :pep:`616` New ``str.removeprefix()`` and ``str.removesuffix()`` string methods
+
+
+Methods Chaining
+================
 .. code-block:: python
 
     a = 'Python'
@@ -220,20 +234,15 @@ Multiple Statements in One Line
     # AttributeError: 'bool' object has no attribute 'replace'
 
 
-New Features
-============
-.. versionadded:: Python 3.9
-    :pep:`616` New ``str.removeprefix()`` and ``str.removesuffix()`` string methods
-
-
 Cleaning User Input
 ===================
 .. highlights::
     * 80% of machine learning and data science is cleaning data
 
-Is This the Same Address?
--------------------------
+Addresses
+---------
 .. highlights::
+    * Is This the Same Address?
     * This is a dump of distinct records of a single address
     * Which one of the below is a true address?
 
@@ -257,8 +266,8 @@ Is This the Same Address?
     'Jana IIi Sobieskiego'
     'Jana lll Sobieskiego'  # three small letters 'L'
 
-Spelling and Abbreviations
---------------------------
+Streets
+-------
 .. code-block:: text
 
     'ul'

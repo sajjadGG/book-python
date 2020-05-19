@@ -26,16 +26,18 @@ Int
 ===
 .. code-block:: python
 
-    data: int = 30
-    data: int = -30
+    data: int = 0
+    data: int = 1
+    data: int = -1
 
 
 Float
 =====
 .. code-block:: python
 
-    data: float = 13.37
-    data: float = -13.37
+    data: float = 0.0
+    data: float = 1.23
+    data: float = -1.23
 
 
 Str
@@ -79,7 +81,6 @@ Type Check is not Enforced
     is_adult: int = True
 
 
-More Advanced Topics
-====================
-.. note::
-    The topic will be continued in chapter: :ref:`Type Annotation`
+More Information
+================
+.. note:: More Information in :ref:`Stdlib Type Annotation`

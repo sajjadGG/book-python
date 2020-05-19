@@ -350,6 +350,88 @@ Loop For Segmentation
     * Updating ``dict``
     * Iterating over sequences
 
+Loop For Newline
+----------------
+* Complexity level: easy
+* Lines of code to write: 4 lines
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/loop_for_newline.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Define ``result: str``
+    #. Use ``for`` to iterate over ``DATA``
+    #. Join lines of text with newline (``\n``) character
+    #. Do not use ``str.join()``
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Zdefiniuj ``result: str``
+    #. Użyj ``for`` do iterowania po ``DATA``
+    #. Połącz linie tekstu znakiem końca linii (``\n``)
+    #. Nie używaj ``str.join()``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Innput:
+    .. code-block:: python
+
+        DATA = [
+            'We choose to go to the Moon.',
+            'We choose to go to the Moon in this decade and do the other things.',
+            'Not because they are easy, but because they are hard.']
+
+:Output:
+    .. code-block:: python
+
+        result: str
+        # 'We choose to go to the Moon.\nWe choose to go to the Moon in this decade and do the other things.\nNot because they are easy, but because they are hard.'
+
+Loop For Substitute
+-------------------
+* Complexity level: easy
+* Lines of code to write: 6 lines
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/loop_for_substitute.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Define ``result: list``
+    #. Use ``for`` to iterate over ``DATA``
+    #. If letter is in ``PL_ASCII`` then use conversion value as letter
+    #. Add letter to ``result``
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Użyj ``for`` do iteracji po ``DATA``
+    #. Jeżeli litera jest w ``PL_ASCII`` to użyj przekonwertowanej wartości jako litera
+    #. Dodaj literę do ``result``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        PL_TO_ASCII = {
+            'ą': 'a',
+            'ć': 'c',
+            'ę': 'e',
+            'ł': 'l',
+            'ń': 'n',
+            'ó': 'o',
+            'ś': 's',
+            'ż': 'z',
+            'ź': 'z',
+        }
+
+        DATA = 'zażółć gęślą jaźń'
+
+:Output:
+    .. code-block:: python
+
+        result: str
+        # 'zazolc gesla jazn'
+
 Loop For Text
 -------------
 * Complexity level: medium or hard

@@ -12,24 +12,21 @@ Type Definition
 .. code-block:: python
     :caption: ``str`` Type Definition
 
-    my_str = ''
-    my_str = 'Jan Twardowski'
-    my_str = "Jan Twardowski"
-    my_str = '''Jan Twardowski'''
-    my_str = """Jan Twardowski"""
+    data = ''
+    data = 'Jan Twardowski'
+    data = "Jan Twardowski"
+    data = '''Jan Twardowski'''
+    data = """Jan Twardowski"""
 
 .. code-block:: python
     :caption: Multiline ``str``
 
-    my_str = """First line
+    data = """First line
     Second line
     Third line"""
     # 'First line\nSecond line\nThird line'
 
-.. code-block:: python
-    :caption: Multiline ``str``
-
-    my_str = """
+    data = """
         First line
         Second line
         Third line
@@ -54,29 +51,32 @@ Single and Double Quotes
 .. highlights::
     * ``"`` and ``'`` works the same
     * Choose one and keep consistency in code
-    * Python console uses ``'``
+    * Python console prefers single quote (``'``) character
     * It matters for ``doctest``, which compares two outputs character by character
     * For multiline always use double quote characters to be consistent with the docstring convention :pep:`257`
 
 .. code-block:: python
-    :caption: When use double quotes?
+    :caption: Python console prefers single quote (``'``)
 
-    my_str = 'It\'s Twardowski\'s Moon.'
-    my_str = "It's Twardowski's Moon."
-
-.. highlights::
-    * HTML and XML uses double quotes
+    data = "We choose to go to the Moon!"
+    # 'We choose to go to the Moon!'
 
 .. code-block:: python
-    :caption: When use single quotes?
+    :caption: It's better to use double quotes, when text has apostrophes. This is the behavior of Python console.
 
-    my_str = '<a href="http://python.astrotech.io">Python and Machine Learning</a>'
+    data = 'It\'s Twardowski\'s Moon.'
+    # "It's Twardowski's Moon."
+
+.. code-block:: python
+    :caption: HTML and XML uses double quotes to enclose attribute values, hence it's better to use single quotes for the string.
+
+    data = '<a href="http://python.astrotech.io">Python and Machine Learning</a>'
 
 .. code-block:: python
     :caption: For multiline always use double quote characters to be consistent with the docstring convention :pep:`257`
 
-    my_str = """My name's "José Jiménez""""
-    my_str = '''My name\'s "José Jiménez"'''
+    data = """My name's "José Jiménez""""
+    data = '''My name\'s "José Jiménez"'''
 
 
 Type Casting
@@ -92,38 +92,13 @@ Type Casting
 Escape Characters
 =================
 .. highlights::
-    * ``\r\n`` - is used on windows
-    * ``\n`` - is used everywhere else
-
-.. figure:: img/type-machine.jpg
-    :width: 75%
-    :align: center
-
-    Why we have '\\r\\n' on Windows?
-
-.. csv-table:: Frequently used escape characters
-    :header: "Sequence", "Description"
-    :widths: 15, 85
-
-    "``\n``", "New line  (LF - Linefeed)"
-    "``\r``", "Carriage Return (CR)"
-    "``\t``", "Horizontal Tab (TAB)"
-    "``\'``", "Single quote ``'``"
-    "``\""``", "Double quote ``""``"
-    "``\\``", "Backslash ``\``"
-
-.. csv-table:: Less frequently used escape characters
-    :header: "Sequence", "Description"
-    :widths: 15, 85
-
-    "``\a``", "Bell (BEL)"
-    "``\b``", "Backspace (BS)"
-    "``\f``", "New page (FF - Form Feed)"
-    "``\v``", "Vertical Tab (VT)"
-    "``\uF680``", "Character with 16-bit (2 bytes) hex value ``F680``"
-    "``\U0001F680``", "Character with 32-bit (4 bytes) hex value ``0001F680``"
-    "``\o755``", "ASCII character with octal value ``755``"
-    "``\x1F680``", "ASCII character with hex value ``1F680``"
+    * ``\r\n`` - New line used on Windows (CR LF)
+    * ``\n`` - New line used on Linux, macOS and other ``*nix`` systems (CR)
+    * ``\t`` - Horizontal Tab (TAB)
+    * ``\'`` - Single quote ``'`` (escape in single quoted strings)
+    * ``\"`` - Double quote ``"`` (escape in double quoted strings)
+    * ``\\`` - Backslash ``\`` (to indicate, that this is not escape char)
+    * More info: :ref:`Builtin Printing`
 
 .. code-block:: python
 
@@ -152,7 +127,7 @@ Format String
     first_name = 'Jan'
     last_name = 'Twardowski'
 
-    name = f'{first_name} {last_name}'
+    result = f'My name... {first_name} {last_name}'
     # Jan Twardowski
 
 Unicode Literals
@@ -190,13 +165,10 @@ Raw String
     r'[a-z0-9]\n'
 
 .. code-block:: python
-    :emphasize-lines: 1
+    :emphasize-lines: 1,4
 
     print(r'C:\Users\Admin\file.txt')
     # C:\Users\Admin\file.txt
-
-.. code-block:: python
-    :emphasize-lines: 1
 
     print('C:\Users\Admin\file.txt')
     # SyntaxError: (unicode error) 'unicodeescape'
@@ -212,8 +184,11 @@ Reading User Input
 .. highlights::
     * ``input()`` returns ``str``
     * Good practice: add space at the end of prompt
+    * Good practice: always ``.strip()`` text from user input
+    * Good practice: always sanitize values from user prompt
 
 .. code-block:: python
+    :caption: ``input()`` function argument is prompt text, which "invites" user to enter specific information. Note ``: `` at the end. Space is needed to separate user input from prompt.
 
     name = input('What is your name: ')
     # What is your name: Jan Twardowski<ENTER>
@@ -222,6 +197,7 @@ Reading User Input
     type(name)      # <class 'str'>
 
 .. code-block:: python
+    :caption: ``input()`` always returns a ``str``. To get numeric value type casting to ``int`` is needed.
 
     age = input('What is your age: ')
     # What is your age: 42<ENTER>
@@ -229,17 +205,12 @@ Reading User Input
     print(age)      # '42'
     type(age)       # <class 'str'>
 
-.. code-block:: python
-
-    age = input('What is your age: ')
-    # What is your age: 42<ENTER>
-
     age = int(age)
-
     print(age)      # 42
     type(age)       # <class 'int'>
 
 .. code-block:: python
+    :caption: Conversion to ``float`` handles decimals, which ``int`` does not support
 
     age = input('What is your age: ')
     # What is your age: 42.5<ENTER>
@@ -251,6 +222,7 @@ Reading User Input
     type(age)           # <class 'int'>
 
 .. code-block:: python
+    :caption: Conversion to ``float`` cannot handle comma (',') as a decimal separator
 
     age = input('What is your age: ')
     # What is your age: 42,5<ENTER>
@@ -346,7 +318,7 @@ Emoticon Print
     #. Print ``hello NAME EMOTICON``, where:
 
         * NAME is a name read from user
-        * EMOTICON is Unicode Codepoint "U+1F642"
+        * EMOTICON is Unicode Codepoint "\U0001F642"
 
     #. Print length of a name, which was read from user
 
@@ -355,7 +327,7 @@ Emoticon Print
     #. Wypisz ``hello NAME EMOTICON``, gdzie:
 
         * NAME to imię wczytane od użytkownika
-        * EMOTICON to Unicode Codepoint "U+1F642"
+        * EMOTICON to Unicode Codepoint "\U0001F642"
 
     #. Wyświetl długość imienia, wczytanego od użytkownika
 

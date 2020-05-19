@@ -1,4 +1,4 @@
-.. _Intermediate Type Annotation Types:
+.. _Stdlib Type Annotation:
 
 ***************
 Type Annotation

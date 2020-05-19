@@ -5,6 +5,47 @@ Builtin Printing
 ****************
 
 
+Escape Characters
+=================
+.. highlights::
+    * ``\r\n`` - is used on windows
+    * ``\n`` - is used everywhere else
+
+.. figure:: img/type-machine.jpg
+    :width: 75%
+    :align: center
+
+    Why we have '\\r\\n' on Windows?
+
+.. csv-table:: Frequently used escape characters
+    :header: "Sequence", "Description"
+    :widths: 15, 85
+
+    "``\n``", "New line  (LF - Linefeed)"
+    "``\r``", "Carriage Return (CR)"
+    "``\t``", "Horizontal Tab (TAB)"
+    "``\'``", "Single quote ``'``"
+    "``\""``", "Double quote ``""``"
+    "``\\``", "Backslash ``\``"
+
+.. csv-table:: Less frequently used escape characters
+    :header: "Sequence", "Description"
+    :widths: 15, 85
+
+    "``\a``", "Bell (BEL)"
+    "``\b``", "Backspace (BS)"
+    "``\f``", "New page (FF - Form Feed)"
+    "``\v``", "Vertical Tab (VT)"
+    "``\uF680``", "Character with 16-bit (2 bytes) hex value ``F680``"
+    "``\U0001F680``", "Character with 32-bit (4 bytes) hex value ``0001F680``"
+    "``\o755``", "ASCII character with octal value ``755``"
+    "``\x1F680``", "ASCII character with hex value ``1F680``"
+
+.. code-block:: python
+
+    print('\U0001F680')     # 🚀
+
+
 ``print`` function
 ==================
 

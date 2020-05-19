@@ -11,9 +11,6 @@ Unpacking Values
     a, b = 1, 2
     a, b, c = 1, 2, 3
 
-.. code-block:: python
-
-    a, b, c = 1, 2, 3
     a, b, c = (1, 2, 3)
     a, b, c = [1, 2, 3]
     a, b, c = {1, 2, 3}
@@ -22,8 +19,6 @@ Unpacking Values
 
     (a, b, c) = (1, 2, 3)
     (a, b, c) = [1, 2, 3]
-
-.. code-block:: python
 
     [a, b, c] = [1, 2, 3]
     [a, b, c] = (1, 2, 3)
@@ -123,9 +118,9 @@ Naming convention
 
     first, second, *others = [1, 2, 3, 4]
 
-    first           # 1
-    second          # 2
-    others          # [3, 4]
+    first               # 1
+    second              # 2
+    others              # [3, 4]
 
 
 Omitting values
@@ -144,7 +139,7 @@ Omitting values
 
     a, _, _ = 1, 2, 3
 
-    print(a)        # 1
+    print(a)            # 1
 
 .. code-block:: python
 
@@ -158,7 +153,7 @@ Omitting values
 
     *_, label = line.split(',')
 
-    label           # setosa
+    label               # setosa
 
 .. code-block:: python
 
@@ -166,8 +161,8 @@ Omitting values
 
     username, _, _, _, full_name, *_ = line.split(':')
 
-    username        # twardowski
-    full_name       # Jan Twardowski
+    username            # twardowski
+    full_name           # Jan Twardowski
 
 .. code-block:: python
 
@@ -175,14 +170,14 @@ Omitting values
 
     username, *_, home, _ = line.split(':')
 
-    username        # twardowski
-    home            # /home/twardowski
+    username            # twardowski
+    home                # /home/twardowski
 
 .. code-block:: python
 
-    _, (b, _) = [1, (2, 3)]
+    _, (interesting, _) = [1, (2, 3)]
 
-    b               # 2
+    interesting         # 2
 
 
 Using in a loop
@@ -191,8 +186,8 @@ Using in a loop
 
     *features, label = (5.8, 2.7, 5.1, 1.9, 'virginica')
 
-    features        # [5.8, 2.7, 5.1, 1.9]
-    label           # 'virginica'
+    features            # [5.8, 2.7, 5.1, 1.9]
+    label               # 'virginica'
 
 .. code-block:: python
 

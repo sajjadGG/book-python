@@ -3,6 +3,8 @@ Sequence ``tuple``
 ******************
 
 
+Rationale
+=========
 .. highlights::
     * Can store elements of any types
     * Immutable - cannot add, modify or remove items
@@ -18,7 +20,6 @@ Type Definition
     * Comma after last element is optional
 
 .. code-block:: python
-    :caption: ``tuple`` type definition
 
     data = ()
     data = tuple()
@@ -66,10 +67,11 @@ Type Casting
     # (1, 2, 3)
 
 
-Getting Items
-=============
+Get Item
+========
 .. highlights::
-    * More in :ref:`Sequence Indexing` and :ref:`Sequence Slicing`
+    * More about getting items chapter :ref:`Sequence Get Item`
+    * More about slicing in chapter :ref:`Sequence Slice`
 
 .. code-block:: python
 
@@ -84,25 +86,25 @@ Getting Items
 ====================
 .. code-block:: python
 
-    type(1.2)        # float
-    type(1,2)        # tuple
-    type(1.2,)       # tuple
-    type(1,2.3)      # tuple
+    type(1.2)        # <class 'float'>
+    type(1,2)        # <class 'tuple'>
+    type(1.2,)       # <class 'tuple'>
+    type(1,2.3)      # <class 'tuple'>
 
-    type(1.)         # float
-    type(1,)         # tuple
-    type(1.,)        # tuple
-    type(.2)         # float
-    type(.2,)        # tuple
-    type(1.2)        # float
-    type(1)          # int
+    type(1.)         # <class 'float'>
+    type(1,)         # <class 'tuple'>
+    type(1.,)        # <class 'tuple'>
+    type(.2)         # <class 'float'>
+    type(.2,)        # <class 'tuple'>
+    type(1.2)        # <class 'float'>
+    type(1)          # <class 'int'>
 
-    type(1.,1.)      # tuple
-    type(.2,.2)      # tuple
-    type(1.,.2)      # tuple
+    type(1.,1.)      # <class 'tuple'>
+    type(.2,.2)      # <class 'tuple'>
+    type(1.,.2)      # <class 'tuple'>
 
-    type('foo')      # str
-    type('foo',)     # tuple
+    type('foo')      # <class 'str'>
+    type('foo',)     # <class 'tuple'>
     type('foo'.)     # SyntaxError: invalid syntax
 
 

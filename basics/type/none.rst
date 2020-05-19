@@ -16,20 +16,15 @@ Type Definition
 .. code-block:: python
     :caption: ``NoneType`` Type Definition
 
-    my_var = None
+    data = None
 
 
 Comparision
 ===========
 .. highlights::
     * Do not use ``==`` or ``!=`` to check ``None`` values
-
-.. csv-table:: Logic operators
-    :header: "Operand", "Description"
-    :widths: 15, 85
-
-    "``x is None``", "``x`` is the same object as ``y``"
-    "``x is not None``", "``x`` is not the same object as ``y``"
+    * ``x is None`` - ``x`` is the same object as ``y``
+    * ``x is not None`` - ``x`` is not the same object as ``y``
 
 
 Assignments

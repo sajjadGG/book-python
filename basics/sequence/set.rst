@@ -3,6 +3,8 @@ Sequence ``set``
 ****************
 
 
+Rationale
+=========
 .. highlights::
     * Only unique values
     * Mutable - can add, remove, and modify items
@@ -15,8 +17,8 @@ Type Definition
     * Set is unordered data structure (each time order differs)
     * Do not record element position
     * Do not record order of insertion
-    * Do not support indexing
-    * Do not support slicing
+    * Do not support getitem
+    * Do not support slice
     * Defining only with ``set()`` - no short syntax
     * Comma after last element is optional
     * Brackets are required
@@ -36,38 +38,20 @@ Type Definition
 .. code-block:: python
     :caption: ``set`` stores only unique values.
 
-    {1, 2, 1}
-    # {1, 2}
-
-    {1, 2, 'a'}
-    # {1, 2, 'a'}
-
-    {1, 2, (3, 4)}
-    # {1, 2, (3, 4)}
-
-    {1, 2, [3, 4]}
-    # TypeError: unhashable type: 'list'
-
-    {1, 2, {3, 4}}
-    # TypeError: unhashable type: 'set'
-
-    {1, 2, frozenset({3, 4})}
-    # {1, 2, frozenset({3, 4})}
+    {1, 2, 1}                       # {1, 2}
+    {1, 2, 'a'}                     # {1, 2, 'a'}
+    {1, 2, (3, 4)}                  # {1, 2, (3, 4)}
+    {1, 2, [3, 4]}                  # TypeError: unhashable type: 'list'
+    {1, 2, {3, 4}}                  # TypeError: unhashable type: 'set'
+    {1, 2, frozenset({3, 4})}       # {1, 2, frozenset({3, 4})}
 
 .. code-block:: python
     :caption: ``set`` compares by values, not types
 
-    {1}
-    # {1}
-
-    {1.0}
-    # {1.0}
-
-    {1, 1.0}
-    # {1}
-
-    {1.0, 1}
-    # {1.0}
+    {1}                             # {1}
+    {1.0}                           # {1.0}
+    {1, 1.0}                        # {1}
+    {1.0, 1}                        # {1.0}
 
 
 Type Casting
@@ -100,8 +84,8 @@ Type Casting
     # {1, 2, 3}
 
 
-Adding Single Item
-==================
+Add
+===
 .. code-block:: python
 
     data = {1, 2}
@@ -140,8 +124,8 @@ Adding Single Item
     # {frozenset({3, 4}), 1, 2}
 
 
-Adding Many Items
-=================
+Update
+======
 .. code-block:: python
 
     data = {1, 2}
@@ -157,8 +141,8 @@ Adding Many Items
     # {1, 2, 3, 4, 5, 6, 7, 8}
 
 
-Popping Items
-=============
+Pop
+===
 .. highlights::
     * Gets and remove items
 
@@ -175,8 +159,8 @@ Popping Items
     # 3
 
 
-Deduplicate Items
-=================
+Deduplicate
+===========
 .. highlights::
     * Works with ``tuple``, ``list``, ``str``
 

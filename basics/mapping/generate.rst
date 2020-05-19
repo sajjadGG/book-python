@@ -3,57 +3,33 @@ Mapping Generate
 ****************
 
 
+Pair
+====
+.. code-block:: python
+
+    pair = [
+        ('commander', 'Melissa Lewis'),
+    ]
+
+    dict(pair)
+    # {'commander': 'Melissa Lewis'}
+
+
 List of pairs
 =============
 .. code-block:: python
 
     pairs = [
-        ('a', 1),
-    ]
-
-    dict(pairs)
-    # {'a': 1}
-
-.. code-block:: python
-
-    pairs = [
-        ('a', 1),
-        ('b', 2),
-    ]
-
-    dict(pairs)
-    # {'a': 1, 'b': 2}
-
-.. code-block:: python
-
-    pairs = [
-        ('first_name', 'Jan'),
-        ('last_name', 'Twardowski'),
+        ('commander', 'Melissa Lewis'),
+        ('botanist', 'Mark Watney'),
+        ('chemist', 'Alex Vogel'),
     ]
 
     dict(pairs)
     # {
-    #   'first_name': 'Jan',
-    #   'last_name': 'Twardowski'
-    # }
-
-.. code-block:: python
-
-    pairs = [
-        ('Sepal length', 5.8),
-        ('Sepal width', 2.7),
-        ('Petal length', 5.1),
-        ('Petal width', 1.9),
-        ('Species', 'virginica')
-    ]
-
-    dict(pairs)
-    # {
-    #     'Sepal length': 5.8,
-    #     'Sepal width': 2.7,
-    #     'Petal length': 5.1,
-    #     'Petal width': 1.9,
-    #     'Species': 'virginica'
+    #   'commander': 'Melissa Lewis',
+    #   'botanist': 'Mark Watney',
+    #   'chemist': 'Alex Vogel',
     # }
 
 
@@ -65,49 +41,143 @@ Zip
 
 .. code-block:: python
 
-    keys =  ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
-    values = [5.8, 2.7, 5.1, 1.9, 'virginica']
+    crew = ['Melissa Lewis', 'Mark Watney', 'Alex Vogel']
+    roles = ['commander', 'botanist', 'chemist']
 
-    list(zip(keys, values))
-    # [
-    #   ('Sepal length', 5.8),
-    #   ('Sepal width', 2.7),
-    #   ('Petal length', 5.1),
-    #   ('Petal width', 1.9),
-    #   ('Species', 'virginica')
-    # ]
+    list(zip(roles, crew))
+    # [('commander', 'Melissa Lewis'),
+    #  ('botanist', 'Mark Watney'),
+    #  ('chemist', 'Alex Vogel')]
 
-    dict(zip(keys, values))
-    # {
-    #   'Sepal length': 5.8,
-    #   'Sepal width': 2.7,
-    #   'Petal length': 5.1,
-    #   'Petal width': 1.9,
-    #   'Species': 'virginica'
-    # }
+    dict(zip(roles, crew))
+    # {'commander': 'Melissa Lewis',
+    #  'botanist': 'Mark Watney',
+    #  'chemist': 'Alex Vogel'}
 
 
 Enumerate
 =========
 .. code-block:: python
 
-    labels = ['setosa', 'versicolor', 'virginica']
+    crew = ['Melissa Lewis', 'Mark Watney', 'Alex Vogel']
 
-    list(enumerate(labels))
-    # [
-    #   (0, 'setosa'),
-    #   (1, 'versicolor'),
-    #   (2, 'virginica')
-    # ]
+    list(enumerate(crew))
+    # [(0, 'Melissa Lewis'),
+    #  (1, 'Mark Watney'),
+    #  (2, 'Alex Vogel')]
 
-    dict(enumerate(labels))
-    # {
-    #   0: 'setosa',
-    #   1: 'versicolor',
-    #   2: 'virginica'
-    # }
+    dict(enumerate(crew))
+    # {0: 'Melissa Lewis',
+    #  1: 'Mark Watney',
+    #  2: 'Alex Vogel'}
 
 
 Assignments
 ===========
-.. todo:: Create assignments
+
+Mapping Generate Pairs
+----------------------
+* Complexity level: easy
+* Lines of code to write: 1 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/mapping_generate_pairs.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Create ``result: dict``
+    #. Convert ``DATA`` to ``dict`` and assign to ``result``
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Stwórz ``result: dict``
+    #. Przekonwertuj ``DATA`` do ``dict`` i przypisz do ``result``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        DATA = [
+            ('Sepal length', 5.8),
+            ('Sepal width', 2.7),
+            ('Petal length', 5.1),
+            ('Petal width', 1.9),
+            ('Species', 'virginica')
+        ]
+
+:Output:
+    .. code-block:: python
+
+        result: dict
+        # {'Sepal length': 5.8,
+        #  'Sepal width': 2.7,
+        #  'Petal length': 5.1,
+        #  'Petal width': 1.9,
+        #  'Species': 'virginica'}
+
+Mapping Generate Zip
+--------------------
+* Complexity level: easy
+* Lines of code to write: 3 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/mapping_generate_zip.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Create ``result: dict``
+    #. Using ``zip()`` convert data to ``dict`` and assign to ``result``
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Stwórz ``result: dict``
+    #. Używając ``zip()`` przekonwertuj dane do ``dict`` i przypisz do ``result``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        KEYS =  ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
+        VALUES = [5.8, 2.7, 5.1, 1.9, 'virginica']
+
+:Output:
+    .. code-block:: python
+
+        result: dict
+        # {'Sepal length': 5.8,
+        #  'Sepal width': 2.7,
+        #  'Petal length': 5.1,
+        #  'Petal width': 1.9,
+        #  'Species': 'virginica'}
+
+Mapping Generate Enumerate
+--------------------------
+* Complexity level: easy
+* Lines of code to write: 3 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/mapping_generate_enumerate.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Create ``result: dict``
+    #. Using ``enumerate()`` convert data to ``dict`` and assign to ``result``
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Stwórz ``result: dict``
+    #. Używając ``enumerate()`` przekonwertuj dane do ``dict`` i przypisz do ``result``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        DATA = ['setosa', 'versicolor', 'virginica']
+
+:Output:
+    .. code-block:: python
+
+        result: dict
+        # {0: 'setosa',
+        #  1: 'versicolor',
+        #  2: 'virginica'}

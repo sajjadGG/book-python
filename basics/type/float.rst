@@ -10,14 +10,14 @@ Type Definition
 .. code-block:: python
     :caption: ``float`` Type Definition
 
-    value = 13.37           # 13.37
-    value = -13.37          # -13.37
+    data = 13.37             # 13.37
+    data = -13.37            # -13.37
 
 .. code-block:: python
     :caption: Notation without leading or trailing zero
 
-    value = 10.             # 10.0
-    value = .44             # 0.44
+    data = 10.               # 10.0
+    data = .44                # 0.44
 
 .. code-block:: python
     :caption: Engineering notation
@@ -44,15 +44,15 @@ Type Casting
 .. code-block:: python
     :caption: ``float()`` converts argument to ``float``
 
-    float(13)                   # 13.0
-    float(-13)                  # -13.0
-    float(13.37)                # 13.37
-    float(-13.37)               # -13.37
+    float(13)               # 13.0
+    float(-13)              # -13.0
+    float(13.37)            # 13.37
+    float(-13.37)           # -13.37
 
-    float('+13.37')             # 13.37
-    float('-13.37')             # -13.37
-    float('13,37')              # ValueError: could not convert string to float: '13,37'
-    float('-13,37')             # ValueError: could not convert string to float: '-13,37'
+    float('+13.37')         # 13.37
+    float('-13.37')         # -13.37
+    float('13,37')          # ValueError: could not convert string to float: '13,37'
+    float('-13,37')         # ValueError: could not convert string to float: '-13,37'
 
 
 Rounding Numbers
@@ -75,11 +75,11 @@ Rounding Numbers
     print(f'Pi number is {pi:.2f}')     # Pi number is 3.14
 
 
-Numeric Functions
-=================
+Built-in Functions
+==================
 * ``abs()`` - Absolute value
 * ``pow()`` - Number to the ``n-th`` power
-* Note, that arithetic operator ``**`` also raises number to the power
+* Note, that arithmetic operator ``**`` also raises number to the power
 
 .. code-block:: python
     :caption: ``pow()`` - Number to the ``n-th`` power

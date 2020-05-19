@@ -5,8 +5,8 @@ Sequence Nesting
 ****************
 
 
-``list`` of ``tuple``
-=====================
+List of Tuples
+==============
 .. code-block:: python
     :caption: Get elements from ``list`` of ``tuple``
 
@@ -74,8 +74,8 @@ Sequence Nesting
     # 5
 
 
-``list`` of ``list``
-====================
+List of Lists
+=============
 .. highlights::
     * Multidimensional lists
 

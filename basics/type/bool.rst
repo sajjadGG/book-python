@@ -131,6 +131,36 @@ Complex Statements
     True and (False or False)   # False
 
 
+Built-in Functions
+==================
+* ``type()`` - Checks type of an object
+* ``isinstance(a, b)`` - If ``a`` is instance of ``b``
+* ``isinstance(a, (b,c))`` - If ``a`` is instance of ``b`` or ``c``
+
+.. code-block:: python
+
+    type(True)                      # <class 'bool'>
+    type(False)                     # <class 'bool'>
+
+.. code-block:: python
+
+    isinstance(1, bool)             # False
+    isinstance(1, int)              # True
+    isinstance(1, float)            # False
+
+    isinstance(1.23, bool)          # False
+    isinstance(1.23, int)           # False
+    isinstance(1.23, float)         # True
+
+    isinstance(True, bool)          # True
+    isinstance(True, int)           # True
+    isinstance(True, float)         # False
+
+    isinstance(False, bool)         # True
+    isinstance(False, int)          # True
+    isinstance(False, float)        # False
+
+
 Assignments
 ===========
 

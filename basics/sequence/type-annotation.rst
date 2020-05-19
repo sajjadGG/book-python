@@ -13,6 +13,7 @@ Tuple
     data: tuple = ()
     data: tuple = tuple()
 
+    data: tuple = 'a', 2, 3.3
     data: tuple = ('a', 2, 3.3)
 
 .. code-block:: python
@@ -83,8 +84,8 @@ Frozenset
     data: FrozenSet[str] = {'a', 'b', 'c'}
 
 
-``list`` of ``tuple``
-=====================
+List of Tuples
+==============
 .. code-block:: python
     :caption: Generic type annotation
 
@@ -123,8 +124,8 @@ Frozenset
     ]
 
 
-``list`` of ``list``
-====================
+List of Lists
+=============
 .. code-block:: python
     :caption: Generic type annotation
 
@@ -187,7 +188,18 @@ Unions
         {7, 8, 9},
     ]
 
+
 New Features
 ============
 .. versionadded:: Python 3.9
     :pep:`585` Will be possible to use ``list[int]``, ``set[int]`` etc without importing from ``typing``
+
+.. code-block:: python
+
+    data: list[int] = [1, 2, 3]
+    data: set[int] = {1, 2, 3}
+
+
+More Information
+================
+.. note:: More Information in :ref:`Stdlib Type Annotation`

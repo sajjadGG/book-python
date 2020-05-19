@@ -81,9 +81,6 @@ Release Cycle
 
 Scripts
 =======
-
-File types and extensions
--------------------------
 * Python files use ``.py`` as an extension
 * Compiled files are in ``__pycache__`` directory
 * Python also uses other extensions
@@ -145,8 +142,9 @@ Jupyter
 
 Python Developer Survey
 =======================
-* Annual
+* Annual survey
 * https://www.jetbrains.com/lp/python-developers-survey-2019
+
 
 Assignments
 ===========

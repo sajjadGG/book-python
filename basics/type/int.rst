@@ -13,13 +13,13 @@ Type Definition
 .. code-block:: python
     :caption: ``int`` Type Definition
 
-    value = 30              # 30
-    value = -30             # -30
+    data = 30                   # 30
+    data = -30                  # -30
 
 .. code-block:: python
 
-    million = 1000000        # 1000000
-    million = 1_000_000      # 1000000
+    million = 1000000           # 1000000
+    million = 1_000_000         # 1000000
 
 
 Type Casting
@@ -42,6 +42,18 @@ Type Casting
     int('1_000_000')            # 1000000
     int('13.37')                # ValueError: invalid literal for int() with base 10: '1.23'
     int('-13.37')               # ValueError: invalid literal for int() with base 10: '-1.23'
+
+
+Built-in function
+=================
+* ``type()``
+
+.. code-block:: python
+
+    type(1)                     # <class 'int'>
+    type(-1)                    # <class 'int'>
+    type(0)                     # <class 'int'>
+    type(-0)                    # <class 'int'>
 
 
 Assignments

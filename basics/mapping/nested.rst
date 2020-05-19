@@ -3,7 +3,7 @@ Mapping Nested
 **************
 
 
-Dict keys
+Dict Keys
 =========
 .. code-block:: python
 
@@ -36,7 +36,7 @@ Dict keys
     # TypeError: unhashable type: 'list'
 
 
-Dict values
+Dict Values
 ===========
 * Value can be any object
 
