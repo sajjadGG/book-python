@@ -4,11 +4,27 @@
 Support Vector Machines
 ***********************
 
+
+.. glossary::
+
+    positive
+    negative
+    cluster
+    vector space
+    best separating hyperplane
+    classification
+    regression
+    generative model
+    decision boundary
+    discriminative model
+    distribution
+
+
 TL;DR
 =====
 * Jeden z najbardziej popularnych algorytmów Machine Learning
 * Dzieli :term:`vector space` za pomocą linii
-* Wyszukuje linię taką linię, która ma największy margines pomiędzy wszystkimi punktami tzw. :term:`Best separating hyperplane`
+* Wyszukuje linię taką linię, która ma największy margines pomiędzy wszystkimi punktami tzw. :term:`best separating hyperplane`
 * Dla nieznanego punktu sprawdza po której stronie krzywej się znajduje i na podstawie tego określa przynależność
 * Linia prosta jest najprostszym przypadkiem
 * Może się okazać, że konieczne będzie przeprowadzenie bardzo skomplikowanej krzywej
@@ -439,7 +455,7 @@ Słownictwo
         Grupa zbioru
 
     Discriminative Classifier
-        Draws a boundary between :term:`clusters <Cluster>` of data. For tasks such as :term:`classification` and :term:`regression` that do not require the joint :term:`distribution`. :term:`Discriminative model` can yield superior performance over :term:`Generative model`.
+        Draws a boundary between :term:`clusters <cluster>` of data. For tasks such as :term:`classification` and :term:`regression` that do not require the joint :term:`distribution`. :term:`discriminative model` can yield superior performance over :term:`generative model`.
 
     Support Vector
         Punkty które leżą na linii "marginesu"
@@ -448,7 +464,7 @@ Słownictwo
         Przestrzeń w której znajdują się dane. Dla danych (wektorów) dwuwymiarowych przestrzeń można zobrazować za pomocą wykresu 2D z kartezjańskim układem współrzędnych.
 
     Binary classifier
-        Dzieli zbiór na dwie części :term:`Positive` i :term:`Negative`
+        Dzieli zbiór na dwie części :term:`positive` i :term:`negative`
 
     Best separating hyperplane
-        Line that separates two :term:`Decision boundary`
+        Line that separates two :term:`decision boundary`

@@ -14,7 +14,7 @@ Co trzeba wiedzieć przed rozpoczęciem pracy?
 
 Elementy języka Python i biblioteki standardowej
 ------------------------------------------------
-* :ref:`Basic Syntax`
+* :ref:`Python Syntax`
 * :ref:`Basic Types`
 * :ref:`Basic Sequences`
 * :ref:`Basic Mappings`

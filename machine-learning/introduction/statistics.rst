@@ -37,7 +37,7 @@ Podstawowe pojęcia
         :math:`f(x) = ax + b` lub :math:`f(x) = mx + b`
 
 
-    Model
+    Models
         Prototype for or the the rules that defines a body of classifier function. Typicly models have parameters that allows to adjust the data. We use the training data to adjust the parameters of a model.
 
     Standard Deviation

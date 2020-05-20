@@ -4,6 +4,7 @@
 Deep Neural Network
 *******************
 
+
 What Is a Neural Network?
 =========================
 It’s a technique for building a computer program that learns from data. It is based very loosely on how we think the human brain works. First, a collection of software "neurons" are created and connected together, allowing them to send messages to each other. Next, the network is asked to solve a problem, which it attempts to do over and over, each time strengthening the connections that lead to success and diminishing those that lead to failure. For a more detailed introduction to neural networks, `Michael Nielsen’s Neural Networks <http://neuralnetworksanddeeplearning.com/index.html>`_ and `Deep Learning <http://www.deeplearningbook.org/>`_ is a good place to start. For a more technical overview, try Deep Learning by Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
@@ -16,19 +17,30 @@ Neural Networks are the best Machine Learning algorithm so far.
 
     Neural Network
 
+
 Słownictwo
 ==========
-.. todo:: make this as a ``glossary`` items
+.. glossary::
 
-* Neuron
-* Dendrite
-* Weight
-* Input Layer
-* Hidden Layer
-* Output Layer
-* Fully Connected Layer
-* Backpropagation
-* Activation function
+    overfitting
+        gdy sieć neuronowa jest tak dobrze nauczona, że dane które przychodzą mają problem z byciem dobrze sklasyfikowanymi
+
+    shallow learning
+        Gdy wartość output zależy od jednego poziomu parametrów. Sumujemy wagi i wartości i dostajemy liczbę na końcu. Można wykreślić prostą funkcję liniową lub kwadratową. Należy zwrócić uwagę aby nie doprowadzić do overfitting.
+
+    deep Learning
+        Wartość zależy od kilku poziomów sieci.
+
+    back propagation
+        zmiana wartości wag w sieci neuronowej na niższych warstwach - propagacja w dół sieci
+
+    neuron
+    weight
+    input Layer
+    hidden Layer
+    output Layer
+    fully connected layer
+    activation function
 
 Przykład praktyczny
 ===================
@@ -84,23 +96,9 @@ Construction
 
 Learning
 --------
-.. glossary::
-
-    Overfitting
-        gdy sieć neuronowa jest tak dobrze nauczona, że dane które przychodzą mają problem z byciem dobrze sklasyfikowanymi
-
-    Shallow Learing
-        Gdy wartość output zależy od jednego poziomu parametrów. Sumujemy wagi i wartości i dostajemy liczbę na końcu. Można wykreślić prostą funkcję liniową lub kwadratową. Należy zwrócić uwagę aby nie doprowadzić do overfitting.
-
-    Deep Learning
-        Wartość zależy od kilku poziomów sieci.
 
 Optimizing
 ----------
-.. glossary::
-
-    Back propagation
-        zmiana wartości wag w sieci neuronowej na niższych warstwach - propagacja w dół sieci
 
 Retraining
 ----------

@@ -31,9 +31,9 @@ Builtins
     :caption: Builtins
     :name: Stdlib Builtins
 
-    builtin/functions.rst
-    builtin/keywords.rst
-    builtin/operators.rst
+    builtin/function.rst
+    builtin/keyword.rst
+    builtin/operator.rst
     builtin/print.rst
 
 *******

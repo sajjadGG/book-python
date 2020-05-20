@@ -5,21 +5,8 @@ Type Annotations
 ****************
 
 
-.. glossary::
-
-    Generic
-        A type that can be parameterized, typically a container.
-        Also known as a parametric type or a generic type.
-        For example: ``dict``.
-
-    Parameterized Generic
-        A specific instance of a generic with the expected types for container elements provided.
-        Also known as a parameterized type.
-        For example: ``dict[str, int]``.
-
-
-What are Type Annotations?
-==========================
+Rationale
+=========
 .. versionadded:: Python 3.5
     See :pep:`484`
 
@@ -33,6 +20,21 @@ What are Type Annotations?
 * Gradual typing and the full type system are explained in :pep:`483`
 
 .. warning:: It should also be emphasized that Python will remain a dynamically typed language, and the authors have no desire to ever make type hints mandatory, even by convention.
+
+
+Glossary
+========
+.. glossary::
+
+    Generic
+        A type that can be parameterized, typically a container.
+        Also known as a parametric type or a generic type.
+        For example: ``dict``.
+
+    Parameterized Generic
+        A specific instance of a generic with the expected types for container elements provided.
+        Also known as a parameterized type.
+        For example: ``dict[str, int]``.
 
 
 Data types

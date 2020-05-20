@@ -26,8 +26,6 @@ Exporting
 =========
 .. glossary::
 
-    agg
-    cairo
     eps
     pdf
     png
@@ -36,21 +34,13 @@ Exporting
     raster graphics
     vector graphics
 
+.. csv-table::
+    :header: "Renderer", "Filetypes", "Type", "Description"
 
-=============   ============   ================================================
-Renderer        Filetypes      Description
-=============   ============   ================================================
-:term:`AGG`     :term:`png`    :term:`raster graphics` -- high quality images
-                               using the Anti-Grain Geometry engine
-PS              :term:`ps`     :term:`vector graphics` -- Postscript output
-                :term:`eps`
-PDF             :term:`pdf`    :term:`vector graphics` --
-                               Portable Document Format
-SVG             :term:`svg`    :term:`vector graphics` --
-                               Scalable Vector Graphics
-:term:`Cairo`   :term:`png`    :term:`raster graphics` and
-                :term:`ps`     :term:`vector graphics` -- using the
-                :term:`pdf`    Cairo graphics library
-                :term:`svg`
-=============   ============   ================================================
+    "AGG", ":term:`png`", ":term:`raster graphics`", "High quality images using the Anti-Grain Geometry engine"
+    "PS", ":term:`ps`, :term:`eps`", ":term:`vector graphics`", "Postscript output"
+    "PDF", ":term:`pdf`", ":term:`vector graphics`", "Portable Document Format"
+    "SVG", ":term:`svg`", ":term:`vector graphics`", "Scalable Vector Graphics"
+    "Cairo", ":term:`png`, :term:`svg`", ":term:`raster graphics`, :term:`vector graphics`", "using the Cairo graphics library"
+
 
