@@ -1,4 +1,4 @@
-.. _Basic Comprehensions:
+.. _Comprehensions:
 
 **************
 Comprehensions
@@ -191,7 +191,7 @@ Tuple Comprehension?!
 =====================
 .. highlights::
     * Tuple Comprehension vs. Generator Expression
-    * More in chapter :ref:`Generators`
+    * More information in :ref:`Generators`
 
 .. code-block:: python
     :caption: Tuple Comprehension

@@ -1,4 +1,4 @@
-.. _Basic Type Int:
+.. _Type Int:
 
 ********
 Type Int

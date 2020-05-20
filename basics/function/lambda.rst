@@ -1,6 +1,8 @@
-******
-Lambda
-******
+.. _Function Lambda:
+
+***************
+Function Lambda
+***************
 
 
 Rationale

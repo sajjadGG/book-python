@@ -79,9 +79,9 @@ Overload
 ========
 .. glossary::
 
-    Overload
-        :term:`Child` has method or attribute with the same name as :term:`Parent`.
-        In that case :term:`Child` attribute will be used.
+    overload
+        When :term:`child` has method or attribute with the same name as :term:`parent`.
+        In such case :term:`child` attribute will be used (will overload :term:`parent`).
 
 .. code-block:: python
 

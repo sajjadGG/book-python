@@ -1,4 +1,4 @@
-.. _Basic Sequence Frozenset:
+.. _Sequence Frozenset:
 
 ******************
 Sequence Frozenset

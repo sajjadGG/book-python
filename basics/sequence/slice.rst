@@ -1,4 +1,4 @@
-.. _Basic Sequence Slice:
+.. _Sequence Slice:
 
 **************
 Sequence Slice

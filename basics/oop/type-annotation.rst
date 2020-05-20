@@ -9,7 +9,7 @@ Rationale
 =========
 .. highlights::
     * All classes are types
-    * Always depend upon abstraction not an implementation (SOLID Dependency Inversion Principle). More info :ref:`OOP SOLID`
+    * Always depend upon abstraction not an implementation (SOLID Dependency Inversion Principle). More information in :ref:`OOP SOLID`
 
 .. code-block:: python
 
@@ -277,4 +277,4 @@ Final Attribute
 
 More Information
 ================
-.. note:: More Information in :ref:`Stdlib Type Annotation`
+.. note:: More information in :ref:`Type Annotations`

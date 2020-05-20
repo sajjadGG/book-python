@@ -1,4 +1,4 @@
-.. _Basic Type Float:
+.. _Type Float:
 
 **********
 Type Float

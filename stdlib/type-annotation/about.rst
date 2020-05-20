@@ -1,8 +1,8 @@
-.. _Stdlib Type Annotation:
+.. _Type Annotations:
 
-***************
-Type Annotation
-***************
+****************
+Type Annotations
+****************
 
 
 .. glossary::

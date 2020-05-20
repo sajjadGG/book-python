@@ -1,4 +1,4 @@
-.. _Basic Type Annotations:
+.. _Type Annotation:
 
 ***************
 Type Annotation
@@ -19,7 +19,8 @@ Rationale
     * Good IDE will give you hints
     * Types are used extensively in system libraries
     * More and more books and documentations use types
-    * To type check use: ``mypy`` or ``pyre-check`` (more in :ref:`cicd-tools`)
+    * To type check use: ``mypy`` or ``pyre-check``
+    * More information in :ref:`cicd-tools`
 
 
 Int
@@ -97,4 +98,4 @@ Type Check is not Enforced
 
 More Information
 ================
-.. note:: More Information in :ref:`Stdlib Type Annotation`
+.. note:: More information in :ref:`Type Annotations`

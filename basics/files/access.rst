@@ -1,4 +1,4 @@
-.. _Basic Files Access Modes:
+.. _Files Access Modes:
 
 *****************
 File Access Modes

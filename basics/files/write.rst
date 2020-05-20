@@ -1,4 +1,4 @@
-.. _Basic Files Write:
+.. _Files Write:
 
 **********
 File Write

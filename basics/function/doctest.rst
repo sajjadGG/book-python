@@ -22,8 +22,9 @@ Syntax
     * Docstring is a first multiline comment in: File/Module, Class, Method/Function
     * Used for generating ``help()`` documentation
     * It is accessible in ``__doc__`` property of an object
-    * Used for ``doctest`` (more in :ref:`Function Doctest`)
+    * Used for ``doctest``
     * :pep:`257` Docstring convention - For multiline always use three double quote (``"""``) characters
+    * More information in :ref:`Function Doctest`
 
 .. code-block:: python
     :caption: Docstring used for doctest
@@ -224,8 +225,8 @@ Test Sequences
 Test Exceptions
 ===============
 .. code-block:: python
-        :caption: Testing for exceptions
-        :emphasize-lines: 3-6
+    :caption: Testing for exceptions
+    :emphasize-lines: 3-6
 
     def add_numbers(a, b):
         """

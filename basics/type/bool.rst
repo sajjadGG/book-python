@@ -1,4 +1,4 @@
-.. _Basic Type Bool:
+.. _Type Bool:
 
 *********
 Type Bool

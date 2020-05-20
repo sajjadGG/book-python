@@ -1,4 +1,4 @@
-.. _Basic Sequence Set:
+.. _Sequence Set:
 
 ************
 Sequence Set

@@ -1,3 +1,5 @@
+.. _Function Scope:
+
 **************
 Function Scope
 **************

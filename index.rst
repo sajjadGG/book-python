@@ -68,12 +68,12 @@ Design Patterns
     /design-patterns/index.rst
 
 *****************
-Quality and CI/CD
+CI/CD and Quality
 *****************
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Quality and CI/CD
+    :caption: CI/CD and Quality
 
     /quality/good-engineering-practice/pep8.rst
     /quality/good-engineering-practice/pep20.rst
@@ -87,7 +87,6 @@ Quality and CI/CD
     /quality/debugging/debugging-basic.rst
     /quality/debugging/debugging-advanced.rst
     /quality/debugging/introspection.rst
-    /quality/type-annotation/types.rst
     /quality/type-annotation/introspection.rst
     /quality/type-annotation/checking.rst
     /quality/type-annotation/annotating.rst

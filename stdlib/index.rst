@@ -33,6 +33,7 @@ Builtins
 
     builtin/functions.rst
     builtin/keywords.rst
+    builtin/operators.rst
     builtin/print.rst
 
 *******

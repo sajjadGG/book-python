@@ -204,7 +204,7 @@ Initializing Attributes
     #  'species': 'virginica'}
 
 .. code-block:: python
-    :caption: Since Python 3.7 there is a ``@dataclass`` decorator, which automatically generates ``__init__()`` arguments and fields. Dataclasses are described in :ref:`OOP Dataclass`.
+    :caption: Since Python 3.7 there is a ``@dataclass`` decorator, which automatically generates ``__init__()`` arguments and fields. More information in :ref:`OOP Dataclass`.
 
     from dataclasses import dataclass
 

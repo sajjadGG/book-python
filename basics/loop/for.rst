@@ -9,7 +9,7 @@ Syntax
 ======
 .. highlights::
     * ``ITERABLE`` must implement ``iterator`` interface
-    * More on iterators in chapter :ref:`Iterators`
+    * More information in :ref:`Iterators`
 
 .. code-block:: python
     :caption: ``for`` loop syntax

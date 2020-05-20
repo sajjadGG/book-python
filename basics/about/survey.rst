@@ -1,8 +1,8 @@
-.. _Basics Survey:
+.. _Basic Survey:
 
-******
-Survey
-******
+************
+Basic Survey
+************
 
 
 English

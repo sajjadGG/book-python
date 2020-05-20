@@ -1,4 +1,4 @@
-.. _Basic Files Binary:
+.. _Files Binary:
 
 ************
 Files Binary
@@ -59,7 +59,7 @@ Read Binary
 Pickle
 ======
 * Works with any Python object (variables, functions, classes, nested objects)
-* More info :ref:`Serialization Pickle`
+* More information in :ref:`Serialization Pickle`
 
 .. code-block:: python
     :caption: Write binary data to file

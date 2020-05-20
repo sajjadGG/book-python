@@ -1,4 +1,4 @@
-.. _Stdlib Operator Library:
+.. _Operator Library:
 
 ****************
 Operator Library

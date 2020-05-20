@@ -1,4 +1,4 @@
-.. _Basic Sequence Nested:
+.. _Sequence Nested:
 
 ***************
 Sequence Nested

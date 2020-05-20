@@ -1,3 +1,5 @@
+.. _Function Arguments:
+
 ******************
 Function Arguments
 ******************

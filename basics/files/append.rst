@@ -1,4 +1,4 @@
-.. _Basic Files Append:
+.. _Files Append:
 
 ***********
 File Append

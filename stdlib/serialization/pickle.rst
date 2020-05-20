@@ -1,4 +1,4 @@
-.. _Stdlib Serialization Pickle:
+.. _Serialization Pickle:
 
 ********************
 Serialization Pickle

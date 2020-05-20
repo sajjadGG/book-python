@@ -1,4 +1,4 @@
-.. _Basic Files Path:
+.. _Files Path:
 
 *********
 File Path

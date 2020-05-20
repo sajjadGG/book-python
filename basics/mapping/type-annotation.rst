@@ -131,4 +131,4 @@ New Features
 
 More Information
 ================
-.. note:: More Information in :ref:`Stdlib Type Annotation`
+.. note:: More information in :ref:`Type Annotations`

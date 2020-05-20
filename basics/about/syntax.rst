@@ -1,4 +1,4 @@
-.. _Basic Syntax:
+.. _Python Syntax:
 
 *************
 Python Syntax
@@ -67,7 +67,7 @@ Printing Values
 .. highlights::
     * Prints on the screen
     * f-string formatting for variable substitution
-    * More in :ref:`Stdlib Builtin Printing`
+    * More information in :ref:`Builtin Printing`
 
 .. code-block:: python
 

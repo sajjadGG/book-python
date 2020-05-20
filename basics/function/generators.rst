@@ -1,5 +1,7 @@
+.. _Function Generators:
+
 *******************
-Built-in Generators
+Function Generators
 *******************
 
 

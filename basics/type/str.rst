@@ -1,4 +1,4 @@
-.. _Basic Type Str:
+.. _Type Str:
 
 ********
 Type Str
@@ -98,7 +98,7 @@ Escape Characters
     * ``\'`` - Single quote ``'`` (escape in single quoted strings)
     * ``\"`` - Double quote ``"`` (escape in double quoted strings)
     * ``\\`` - Backslash ``\`` (to indicate, that this is not escape char)
-    * More info: :ref:`Builtin Printing`
+    * More information in :ref:`Builtin Printing`
 
 .. code-block:: python
 

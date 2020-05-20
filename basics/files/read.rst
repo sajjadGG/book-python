@@ -1,4 +1,4 @@
-.. _Basic Files Read:
+.. _Files Read:
 
 *********
 File Read
@@ -32,8 +32,8 @@ Read using context manager
 ==========================
 * Context managers use ``with ... as ...:`` syntax
 * It closes file automatically upon block exit (dedent)
-* More about context managers in :ref:`Context Managers`
 * Using context manager is best practice
+* More information in :ref:`Context Managers`
 
 .. code-block:: python
 

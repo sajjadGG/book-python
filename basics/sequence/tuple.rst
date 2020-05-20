@@ -1,4 +1,4 @@
-.. _Basic Sequence Tuple:
+.. _Sequence Tuple:
 
 **************
 Sequence Tuple
@@ -72,8 +72,7 @@ Type Casting
 Get Item
 ========
 .. highlights::
-    * More about getting items chapter :ref:`Sequence Get Item`
-    * More about slicing in chapter :ref:`Sequence Slice`
+    * More information in :ref:`Sequence Get Item` and :ref:`Sequence Slice`
 
 .. code-block:: python
 

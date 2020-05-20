@@ -1,4 +1,4 @@
-.. _Basic Type None:
+.. _Type None:
 
 *********
 Type None

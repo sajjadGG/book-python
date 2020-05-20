@@ -1,4 +1,4 @@
-.. _Basic Type Str Methods:
+.. _Type Str Methods:
 
 ****************
 Type Str Methods

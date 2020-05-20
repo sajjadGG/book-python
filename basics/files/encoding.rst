@@ -1,4 +1,4 @@
-.. _Basic Files Encoding:
+.. _Files Encoding:
 
 *************
 File Encoding
