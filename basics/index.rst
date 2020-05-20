@@ -19,7 +19,7 @@ About
 Types
 *****
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :caption: Types
     :name: Basic Types
 
@@ -35,7 +35,7 @@ Types
 Sequences
 *********
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :caption: Sequences
     :name: Basic Sequences
 
@@ -53,7 +53,7 @@ Sequences
 Mappings
 ********
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :caption: Mappings
     :name: Basic Mappings
 
@@ -66,7 +66,7 @@ Mappings
 Control Flow
 ************
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :caption: Mappings
     :name: Basic Control Flow
 
@@ -80,7 +80,7 @@ Control Flow
 Loops
 *****
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :caption: Looping
     :name: Basic Loops
 
@@ -95,7 +95,7 @@ Loops
 Files
 *****
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :caption: Files
     :name: Basic Files
 
@@ -111,7 +111,7 @@ Files
 Functions
 *********
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :caption: Functions
     :name: Basic Functions
 
@@ -130,7 +130,7 @@ Functions
 Object Oriented Programming
 ***************************
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :caption: Object Oriented Programming
     :name: Basic Object Oriented Programming
 
@@ -146,7 +146,7 @@ Object Oriented Programming
 Recap
 *****
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :caption: Recap
     :name: Basic Recap
 

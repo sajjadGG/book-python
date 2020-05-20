@@ -453,8 +453,8 @@ Catching exceptions
     # ERROR:root:Oxygen tank explosion
 
 
-``else`` and ``finally``
-========================
+Else and Finally
+================
 * ``else`` is executed when no exception occurred
 * ``finally`` is executed always (even if there was exception)
 * Used to close file, connection or transaction to database

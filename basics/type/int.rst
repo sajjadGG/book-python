@@ -46,8 +46,8 @@ Type Casting
     int('-13.37')               # ValueError: invalid literal for int() with base 10: '-1.23'
 
 
-Built-in function
-=================
+Type Checking
+=============
 * ``type()``
 
 .. code-block:: python

@@ -57,8 +57,8 @@ Type Casting
     float('-13,37')         # ValueError: could not convert string to float: '-13,37'
 
 
-Rounding Numbers
-================
+Round Number
+============
 .. highlights::
     * ``round()`` - Rounds a number
 

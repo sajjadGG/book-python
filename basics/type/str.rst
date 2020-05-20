@@ -18,9 +18,6 @@ Type Definition
     data = '''Jan Twardowski'''
     data = """Jan Twardowski"""
 
-.. code-block:: python
-    :caption: Multiline ``str``
-
     data = """First line
     Second line
     Third line"""
@@ -33,17 +30,16 @@ Type Definition
     """
     # '\n        First line\n        Second line\n        Third line\n    '
 
-.. code-block:: python
-    :caption: If assigned to variable, it serves as multiline ``str`` otherwise it's a docstring.
 
-    """
-    We choose to go to the Moon!
-    We choose to go to the Moon in this decade and do the other things,
-    not because they are easy, but because they are hard;
-    because that goal will serve to organize and measure the best of our energies and skills,
-    because that challenge is one that we are willing to accept, one we are unwilling to postpone,
-    and one we intend to win, and the others, too.
-    """
+Type Casting
+============
+.. code-block:: python
+    :caption: ``str()`` converts argument to ``str``
+
+    str('Moon')                     # 'Moon'
+    str('Twardowski\'s Moon.')      # "Twardowski's Moon."
+    str(1969)                       # '1969'
+    str(13.37)                      # '13.37'
 
 
 Single and Double Quotes
@@ -59,18 +55,25 @@ Single and Double Quotes
     :caption: Python console prefers single quote (``'``)
 
     data = "We choose to go to the Moon!"
+
+    print(data)
     # 'We choose to go to the Moon!'
 
 .. code-block:: python
     :caption: It's better to use double quotes, when text has apostrophes. This is the behavior of Python console.
 
     data = 'It\'s Twardowski\'s Moon.'
+
+    print(data)
     # "It's Twardowski's Moon."
 
 .. code-block:: python
     :caption: HTML and XML uses double quotes to enclose attribute values, hence it's better to use single quotes for the string.
 
     data = '<a href="http://python.astrotech.io">Python and Machine Learning</a>'
+
+    print(data)
+    # '<a href="http://python.astrotech.io">Python and Machine Learning</a>'
 
 .. code-block:: python
     :caption: For multiline always use double quote characters to be consistent with the docstring convention :pep:`257`
@@ -79,14 +82,22 @@ Single and Double Quotes
     data = '''My name\'s "José Jiménez"'''
 
 
-Type Casting
-============
-.. code-block:: python
-    :caption: ``str()`` converts argument to ``str``
+Docstring
+=========
+* For multiline always use double quote characters to be consistent with the docstring convention :pep:`257`
+* More information in :ref:`Function Doctest`
 
-    str('hello')        # 'hello'
-    str(1969)           # '1969'
-    str(13.37)          # '13.37'
+.. code-block:: python
+    :caption: If assigned to variable, it serves as multiline ``str`` otherwise it's a docstring.
+
+    """
+    We choose to go to the Moon!
+    We choose to go to the Moon in this decade and do the other things,
+    not because they are easy, but because they are hard;
+    because that goal will serve to organize and measure the best of our energies and skills,
+    because that challenge is one that we are willing to accept, one we are unwilling to postpone,
+    and one we intend to win, and the others, too.
+    """
 
 
 Escape Characters
@@ -105,11 +116,8 @@ Escape Characters
     print('\U0001F680')     # 🚀
 
 
-String Literals
-===============
-
 Format String
--------------
+=============
 .. highlights::
     * String interpolation (variable substitution)
     * Since Python 3.6
@@ -130,8 +138,9 @@ Format String
     result = f'My name... {first_name} {last_name}'
     # Jan Twardowski
 
-Unicode Literals
-----------------
+
+Unicode Literal
+===============
 .. highlights::
     * In Python 3 ``str`` is Unicode
     * In Python 2 ``str`` is Bytes
@@ -141,8 +150,9 @@ Unicode Literals
 
     u'zażółć gęślą jaźń'
 
-Bytes Literals
---------------
+
+Bytes Literal
+=============
 .. highlights::
     * Used while reading from low level devices and drivers
     * Used in sockets and HTTP connections
@@ -155,7 +165,7 @@ Bytes Literals
     b'this is bytes literals'
 
 Raw String
-----------
+==========
 .. highlights::
     *  Escapes does not matters
 
@@ -179,8 +189,8 @@ Raw String
 * ``s`` is invalid hexadecimal character
 
 
-Reading User Input
-==================
+Reading Input
+=============
 .. highlights::
     * ``input()`` returns ``str``
     * Good practice: add space at the end of prompt

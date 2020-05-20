@@ -130,8 +130,8 @@ Return Nested Sequence
         ]
 
 
-Return ``None``
-===============
+Return None
+===========
 * Python will ``return None`` if no explicit return is specified
 
 .. code-block:: python

@@ -27,8 +27,8 @@ Positive and negative values
         * any other
 
 
-``if``
-======
+If
+==
 .. code-block:: python
     :caption: ``if`` generic syntax
     :force:
@@ -114,8 +114,8 @@ Positive and negative values
         print(f'My name... {name}')
 
 
-``else``
-========
+Else
+====
 .. highlights::
     * Optional
     * Executed when condition is not met

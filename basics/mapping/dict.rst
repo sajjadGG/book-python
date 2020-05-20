@@ -1,8 +1,8 @@
 .. _Mapping Dict:
 
-****************
-Mapping ``dict``
-****************
+************
+Mapping Dict
+************
 
 
 Rationale
