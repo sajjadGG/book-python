@@ -17,7 +17,8 @@ Rationale
 
 Read from file
 ==============
-* Always remember to close file
+.. highlights::
+    * Always remember to close file
 
 .. code-block:: python
 
@@ -30,10 +31,11 @@ Read from file
 
 Read using context manager
 ==========================
-* Context managers use ``with ... as ...:`` syntax
-* It closes file automatically upon block exit (dedent)
-* Using context manager is best practice
-* More information in :ref:`Context Managers`
+.. highlights::
+    * Context managers use ``with ... as ...:`` syntax
+    * It closes file automatically upon block exit (dedent)
+    * Using context manager is best practice
+    * More information in :ref:`Context Managers`
 
 .. code-block:: python
 
@@ -45,7 +47,8 @@ Read using context manager
 
 Read file at once
 =================
-* Note, that whole file must fit into memory
+.. highlights::
+    * Note, that whole file must fit into memory
 
 .. code-block:: python
 
@@ -57,7 +60,8 @@ Read file at once
 
 Read file as list of lines
 ==========================
-* Note, that whole file must fit into memory
+.. highlights::
+    * Note, that whole file must fit into memory
 
 .. code-block:: python
 
@@ -97,8 +101,9 @@ Read file as list of lines
 
 Reading file as generator
 =========================
-* Use generator to iterate over other lines
-* In those examples, ``file`` is a generator
+.. highlights::
+    * Use generator to iterate over other lines
+    * In those examples, ``file`` is a generator
 
 .. code-block:: python
 

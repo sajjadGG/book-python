@@ -16,10 +16,10 @@ Day 1
     "60 min", "Python basic syntax, operators, builtins"
     "45 min", "Type Int"
     "45 min", "Type Float"
-    "45 min", "Type Bool",
+    "45 min", "Type Bool"
     "30 min", "Type None"
     "60 min", "Type Str"
-    "60 min"  "Type Str Methods"
+    "60 min", "Type Str Methods"
     "15 min", "Type Annotations"
 
 

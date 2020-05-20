@@ -56,6 +56,7 @@ Rationale
         Represents current state of an object.
 
 .. code-block:: text
+    :caption: Class example with distinction of properties and state attributes
 
     Bucket with Water
 
@@ -68,7 +69,7 @@ Rationale
             - net mass (without water)
 
         State:
-            - volume  (how much water is currenty in bucket)
+            - volume  (how much water is currently in bucket)
             - gross mass = net mass + water mass (water mass depends on its volume used))
 
 .. figure:: img/bucket.jpg
@@ -76,7 +77,7 @@ Rationale
     :align: center
 
 
-Dynamic attributes
+Dynamic Attributes
 ==================
 .. code-block:: python
     :caption: Dynamic attributes
@@ -152,7 +153,7 @@ Dynamic attributes
     # AttributeError: 'Astronaut' object has no attribute 'name'
 
 
-Get all dynamic attrubutes and values
+Get all dynamic attributes and values
 =====================================
 * ``obj.__dict__``
 

@@ -42,7 +42,8 @@ Type Definition
 
 Type Casting
 ============
-* ``tuple()`` converts argument to ``tuple``
+.. highlights::
+    * ``tuple()`` converts argument to ``tuple``
 
 .. code-block:: python
 

@@ -125,6 +125,7 @@ html_secnumber_suffix = '. '
 html_title = project
 html_favicon = '_static/favicon.png'
 html_static_path = ['_static']
+html_context = {}
 
 if html_theme == 'sphinx_rtd_theme':
     html_context.update({

@@ -116,7 +116,8 @@ Get Item
 
 Get Keys, Values and Key-Value Pairs
 ====================================
-* Key can be any hashable object
+.. highlights::
+    * Key can be any hashable object
 
 .. code-block:: python
 

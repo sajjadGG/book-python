@@ -123,6 +123,7 @@ Literal
 
     from typing import Literal
 
+
     def allow_access(who: Literal['Cosmonaut', 'Astronaut']) -> None:
         pass
 
@@ -135,18 +136,22 @@ Literal
 
     from typing import Literal
 
+
     def open(filename: str, mode: Literal['r','w','a']) -> None:
         pass
 
+
 Errors
 ======
-* Python will execute without even warning.
-* Your IDE and ``mypy`` will yield errors.
+.. highlights::
+    * Python will execute without even warning
+    * Your IDE and ``mypy`` will yield errors
 
 .. code-block:: python
 
     def add_numbers(a: int, b: int) -> int:
         return a + b
+
 
     add_numbers('Jan', 'Twardowski')
     # 'JanTwardowski'
@@ -154,4 +159,4 @@ Errors
 
 More Information
 ================
-.. note:: More information in :ref:`Type Annotations`
+.. note:: More information in :ref:`Type Annotations` and :ref:`CI/CD Type Checking`

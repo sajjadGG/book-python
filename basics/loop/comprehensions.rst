@@ -28,8 +28,9 @@ Syntax
 
 Naming Convention
 =================
-* Use shorter variable names
-* ``x`` is common name
+.. highlights::
+    * Use shorter variable names
+    * ``x`` is common name
 
 
 Comprehension

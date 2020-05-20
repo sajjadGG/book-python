@@ -37,10 +37,11 @@ Definition
 
 Naming Convention
 =================
-* Usually parameters are named ``x`` and ``y``
-* Use shortest code possible
-* Do not assign ``lambda`` to variable
-* Usually there are no spaces in lambda expressions (to make code shorter)
+.. highlights::
+    * Usually parameters are named ``x`` and ``y``
+    * Use shortest code possible
+    * Do not assign ``lambda`` to variable
+    * Usually there are no spaces in lambda expressions (to make code shorter)
 
 .. code-block:: python
 

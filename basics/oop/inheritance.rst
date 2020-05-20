@@ -7,8 +7,9 @@ Inheritance
 
 Rationale
 =========
-* Child inherits all fields and methods from parent
-* Used to avoid code duplication
+.. highlights::
+    * Child inherits all fields and methods from parent
+    * Used to avoid code duplication
 
 .. glossary::
 
@@ -20,6 +21,10 @@ Rationale
     child
     subclass
         Class which inherits from :term:`parent`
+
+    overload
+        When :term:`child` has method or attribute with the same name as :term:`parent`.
+        In such case :term:`child` attribute will be used (will overload :term:`parent`).
 
 
 Syntax
@@ -77,12 +82,6 @@ Example
 
 Overload
 ========
-.. glossary::
-
-    overload
-        When :term:`child` has method or attribute with the same name as :term:`parent`.
-        In such case :term:`child` attribute will be used (will overload :term:`parent`).
-
 .. code-block:: python
 
     class A:

@@ -219,4 +219,4 @@ New Features
 
 More Information
 ================
-.. note:: More information in :ref:`Type Annotations`
+.. note:: More information in :ref:`Type Annotations` and :ref:`CI/CD Type Checking`

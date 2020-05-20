@@ -7,8 +7,9 @@ Function Arguments
 
 Arguments vs Parameters
 =======================
-* argument is the value/variable/reference being passed to the function
-* parameter is the receiving variable used within the function/block
+.. highlights::
+    * argument is the value/variable/reference being passed to the function
+    * parameter is the receiving variable used within the function/block
 
 
 Syntax

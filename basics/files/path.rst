@@ -60,8 +60,9 @@ Relative path
 
 Escaping characters in path
 ===========================
-* "\\ " (slash space) - escapes space
-* Note escapes are not needed
+.. highlights::
+    * "\\ " (slash space) - escapes space
+    * Note escapes are not needed
 
 .. code-block:: python
 
@@ -84,7 +85,8 @@ Escaping characters in path
 
 Current script path
 ===================
-* Returns an absolute path to currently running script
+.. highlights::
+    * Returns an absolute path to currently running script
 
 .. code-block:: python
 
@@ -94,8 +96,9 @@ Current script path
 
 Convert relative path to absolute
 =================================
-* ``os.path.join()`` adds OS dependent directory separator
-* ``os.path.dirname()`` gets the absolute path of the argument
+.. highlights::
+    * ``os.path.join()`` - adds OS dependent directory separator
+    * ``os.path.dirname()`` - gets the absolute path of the argument
 
 .. code-block:: python
 

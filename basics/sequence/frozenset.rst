@@ -40,7 +40,8 @@ Type Definition
 
 Type Casting
 ============
-* ``frozenset()`` converts argument to ``frozenset``
+.. highlights::
+    * ``frozenset()`` converts argument to ``frozenset``
 
 .. code-block:: python
 

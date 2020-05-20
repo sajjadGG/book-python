@@ -17,7 +17,8 @@ Rationale
 
 Write to file
 =============
-* Always remember to close file
+.. highlights::
+    * Always remember to close file
 
 .. code-block:: python
 
@@ -42,9 +43,10 @@ Write one line
 
 Write multiple lines
 ====================
-* Write a list of lines to the file.
-* ``.writelines()`` does not add a line separator (``\n``)!!
-*  Each line must add a separator at the end.
+.. highlights::
+    * Write a list of lines to the file.
+    * ``.writelines()`` does not add a line separator (``\n``)!!
+    *  Each line must add a separator at the end.
 
 .. code-block:: python
 
@@ -63,8 +65,9 @@ Write multiple lines
 
 Write non-str data
 ==================
-* Join works only for strings
-* Conversion to ``str`` must be performed before adding a separator and writing to file.
+.. highlights::
+    * Join works only for strings
+    * Conversion to ``str`` must be performed before adding a separator and writing to file.
 
 .. code-block:: python
 

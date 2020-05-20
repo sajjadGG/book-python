@@ -87,9 +87,9 @@ CI/CD and Quality
     /quality/debugging/debugging-basic.rst
     /quality/debugging/debugging-advanced.rst
     /quality/debugging/introspection.rst
-    /quality/type-annotation/introspection.rst
     /quality/type-annotation/checking.rst
     /quality/type-annotation/annotating.rst
+    /quality/type-annotation/introspection.rst
     /quality/ci-cd/index.rst
 
 ****************

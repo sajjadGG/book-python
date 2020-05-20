@@ -43,7 +43,8 @@ Type Definition
 
 Type Casting
 ============
-* ``list()`` converts argument to ``list``
+.. highlights::
+    * ``list()`` converts argument to ``list``
 
 .. code-block:: python
 
@@ -125,9 +126,10 @@ Del Item
 
 Append
 ======
-* ``list + list``
-* ``list.extend()``
-* ``list.append()``
+.. highlights::
+    * ``list + list``
+    * ``list.extend()``
+    * ``list.append()``
 
 .. code-block:: python
     :caption: Adding two lists
@@ -164,7 +166,8 @@ Append
 
 Insert
 ======
-* Insert at specific position
+.. highlights::
+    * Insert at specific position
 
 .. code-block:: python
 
@@ -234,12 +237,13 @@ Method Chaining
 
 Built-in Sequences Functions
 ============================
-* ``min()`` - Minimal value
-* ``max()`` - Maximal value
-* ``sum()`` - Sum of elements
-* ``len()`` - Length of a list
-* ``all()`` - All values are ``True``
-* ``any()`` - Any values is ``True``
+.. highlights::
+    * ``min()`` - Minimal value
+    * ``max()`` - Maximal value
+    * ``sum()`` - Sum of elements
+    * ``len()`` - Length of a list
+    * ``all()`` - All values are ``True``
+    * ``any()`` - Any values is ``True``
 
 .. code-block:: python
 

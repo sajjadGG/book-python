@@ -7,12 +7,13 @@ File Access Modes
 
 Write
 =====
-* ``mode='wt'`` - write in text mode
-* ``mode='wb'`` - write in binary mode
-* ``mode='w'`` - write in text mode (alias to "wt")
-* ``mode='wt+'`` - open for updating (reading and writing)
-* ``mode='wb+'`` - open for updating (reading and writing)
-* ``mode='w+'`` - open for updating (reading and writing) (alias to "wt+")
+.. highlights::
+    * ``mode='wt'`` - write in text mode
+    * ``mode='wb'`` - write in binary mode
+    * ``mode='w'`` - write in text mode (alias to "wt")
+    * ``mode='wt+'`` - open for updating (reading and writing)
+    * ``mode='wb+'`` - open for updating (reading and writing)
+    * ``mode='w+'`` - open for updating (reading and writing) (alias to "wt+")
 
 .. code-block:: python
 
@@ -25,12 +26,13 @@ Write
 
 Append
 ======
-* ``mode='at'`` - append in text mode
-* ``mode='ab'`` - append in binary mode
-* ``mode='a'`` - append in text mode (alias to "at")
-* ``mode='at+'`` - open for updating (reading and writing)
-* ``mode='ab+'`` - open for updating (reading and writing)
-* ``mode='a+'`` - open for updating (reading and writing) (alias to "at+")
+.. highlights::
+    * ``mode='at'`` - append in text mode
+    * ``mode='ab'`` - append in binary mode
+    * ``mode='a'`` - append in text mode (alias to "at")
+    * ``mode='at+'`` - open for updating (reading and writing)
+    * ``mode='ab+'`` - open for updating (reading and writing)
+    * ``mode='a+'`` - open for updating (reading and writing) (alias to "at+")
 
 .. code-block:: python
 
@@ -43,13 +45,14 @@ Append
 
 Read
 ====
-* ``mode='rt'`` - read in text mode (default)
-* ``mode='rb'`` - read in binary mode
-* ``mode='r'`` - read in text mode (alias to "wt")
-* ``mode='rt+'`` - open for updating (reading and writing)
-* ``mode='rb+'`` - open for updating (reading and writing)
-* ``mode='r+'`` - open for updating (reading and writing) (alias to "rt+")
-* If no mode is specified, the default mode is "rt"
+.. highlights::
+    * ``mode='rt'`` - read in text mode (default)
+    * ``mode='rb'`` - read in binary mode
+    * ``mode='r'`` - read in text mode (alias to "wt")
+    * ``mode='rt+'`` - open for updating (reading and writing)
+    * ``mode='rb+'`` - open for updating (reading and writing)
+    * ``mode='r+'`` - open for updating (reading and writing) (alias to "rt+")
+    * If no mode is specified, the default mode is "rt"
 
 .. code-block:: python
 

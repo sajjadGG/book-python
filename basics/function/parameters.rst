@@ -7,13 +7,15 @@ Function Parameters
 
 Arguments vs Parameters
 =======================
-* argument is the value/variable/reference being passed to the function
-* parameter is the receiving variable used within the function/block
+.. highlights::
+    * argument is the value/variable/reference being passed to the function
+    * parameter is the receiving variable used within the function/block
 
 
 Syntax
 ======
-* ``pass`` - does nothing and is used to avoid ``IndentationError``
+.. highlights::
+    * ``pass`` - does nothing and is used to avoid ``IndentationError``
 
 .. code-block:: python
     :caption: Function definition with parameters
@@ -34,7 +36,6 @@ Required Parameters
 ===================
 .. highlights::
     * Parameters without default values are required
-    *
 
 .. code-block:: python
 
