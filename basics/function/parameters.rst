@@ -121,10 +121,8 @@ Required and Optional Parameters
 
 Examples
 ========
-
-Example 1
----------
 .. code-block:: python
+    :caption: Example 1
 
     def add(a, b):
         print(a + b)
@@ -139,9 +137,8 @@ Example 1
     add('a', 'b')
     # 'ab'
 
-Example 2
----------
 .. code-block:: python
+    :caption: Example 2
 
     def echo(text):
         print(text)
@@ -150,21 +147,16 @@ Example 2
     echo('hello')
     # hello
 
-Example 3
----------
 .. code-block:: python
+    :caption: Example 3
 
     def connect(username, password, host='127.0.0.1', port=22,
                 ssl=True, keep_alive=1, persistent=False):
 
         print('Connecting...')
 
-Example 4
----------
-* Definition of pandas.read_csv() function.
-* Source:  https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html
-
 .. code-block:: python
+    :caption: Example 4. Definition of pandas.read_csv() function. Source:  https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html
 
     def read_csv(filepath_or_buffer, sep=', ', delimiter=None, header='infer',
                  names=None, index_col=None, usecols=None, squeeze=False, prefix=None,

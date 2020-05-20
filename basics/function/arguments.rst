@@ -72,10 +72,8 @@ Positional and Keyword Arguments
 
 Examples
 ========
-
-Example 1
----------
 .. code-block:: python
+    :caption: Example 1
 
     def hello(name='José Jiménez'):
          print(f'My name... {name}')
@@ -85,21 +83,14 @@ Example 1
     hello(name='Mark Watney')     # My name... Mark Watney
     hello()                       # My name... José Jiménez
 
-Example 2
----------
 .. code-block:: python
+    :caption: Example 2
 
     connect('admin', 'admin')
 
-.. code-block:: python
-
     connect('admin', 'admin', 'localhost', 22, False, 1, True)
 
-.. code-block:: python
-
     connect(host='localhost', username='admin', password='admin')
-
-.. code-block:: python
 
     connect(
         host='localhost',
@@ -110,25 +101,16 @@ Example 2
         persistent=True,
     )
 
-Example 3
----------
 .. code-block:: python
+    :caption: Example 3s
 
     read_csv('iris.csv')
 
-.. code-block:: python
-
     read_csv('iris.csv', encoding='utf-8')
-
-.. code-block:: python
 
     read_csv('iris.csv', encoding='utf-8', parse_dates=['date_of_birth'])
 
-.. code-block:: python
-
     read_csv('iris.csv', skiprows=3, delimiter=';')
-
-.. code-block:: python
 
     read_csv('iris.csv',
         encoding='utf-8',

@@ -1,8 +1,8 @@
-.. _Character Types:
+.. _Basic Type Str:
 
-************
-Type ``str``
-************
+********
+Type Str
+********
 
 
 Type Definition

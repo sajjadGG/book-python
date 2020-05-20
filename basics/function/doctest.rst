@@ -44,6 +44,7 @@ Syntax
 
 Running tests
 =============
+#. Note, that doctests are not discovered in scratch files in PyCharm
 #. Running tests in Pycharm IDE (either option):
 
     * Right click on source code with doctests -> Run 'Doctest for ...'
@@ -66,8 +67,8 @@ Running tests
         $ python -m doctest -v example.py
 
 
-Test ``int``, ``float``
-=======================
+Test int, float
+===============
 .. code-block:: python
     :caption: ``int`` values
 
@@ -99,8 +100,8 @@ Test ``int``, ``float``
         return a + b
 
 
-Test ``bool``
-=============
+Test bool
+=========
 .. code-block:: python
 
     AGE_ADULT = 18
@@ -122,8 +123,8 @@ Test ``bool``
             return False
 
 
-Test ``str``
-============
+Test str
+========
 .. highlights::
     * Python will change to single quotes in most cases
     * Python will change to double quotes to avoid escapes
@@ -180,14 +181,51 @@ Test ``str``
 
 Test Sequences
 ==============
-.. todo:: Test Sequences
+.. code-block:: python
+    :caption: Test Sequences
+
+    def celsius_to_kelvin(sequence):
+        """
+        >>> celsius_to_kelvin([1,2,3])
+        [274.15, 275.15, 276.15]
+
+        >>> celsius_to_kelvin((1,2,3))
+        [274.15, 275.15, 276.15]
+
+        >>> celsius_to_kelvin({1,2,3})
+        [274.15, 275.15, 276.15]
+
+        >>> celsius_to_kelvin(frozenset({1,2,3}))
+        [274.15, 275.15, 276.15]
+        """
+        return [x + 273.15 for x in sequence]
+
+.. code-block:: python
+    :caption: Test Sequences
+
+    def celsius_to_kelvin(sequence):
+        """
+        >>> celsius_to_kelvin([1,2,3])
+        [274.15, 275.15, 276.15]
+
+        >>> celsius_to_kelvin((1,2,3))
+        (274.15, 275.15, 276.15)
+
+        >>> celsius_to_kelvin({1,2,3})
+        {274.15, 275.15, 276.15}
+
+        >>> celsius_to_kelvin(frozenset({1,2,3}))
+        frozenset({274.15, 275.15, 276.15})
+        """
+        cls = type(sequence)
+        return cls(x + 273.15 for x in sequence)
 
 
 Test Exceptions
 ===============
 .. code-block:: python
-    :caption: Testing for exceptions
-    :emphasize-lines: 3-6
+        :caption: Testing for exceptions
+        :emphasize-lines: 3-6
 
     def add_numbers(a, b):
         """
@@ -232,7 +270,7 @@ Test Exceptions
 .. code-block:: python
     :caption: This test will pass.
 
-    def add_numbers(a: float, b: float) -> float:
+    def add_numbers(a, b):
         """
         >>> add_numbers(True, 1)
         Traceback (most recent call last):
@@ -266,13 +304,10 @@ Test Python Expressions
 
 Examples
 ========
-
-Adding two numbers
-------------------
 .. code-block:: python
     :caption: Adding two numbers
 
-    def add_numbers(a: float, b: float) -> float:
+    def add_numbers(a, b):
         """
         >>> add_numbers(1, 2)
         3.0
@@ -309,41 +344,10 @@ Adding two numbers
 
         return float(a + b)
 
-
-Celsius to Kelvin temperature conversion
-----------------------------------------
 .. code-block:: python
     :caption: Celsius to Kelvin temperature conversion
 
     def celsius_to_kelvin(celsius):
-        """
-        >>> celsius_to_kelvin(0)
-        273.15
-
-        >>> celsius_to_kelvin(1)
-        274.15
-
-        >>> celsius_to_kelvin(-1)
-        272.15
-
-        >>> celsius_to_kelvin(-273.15)
-        0.0
-        """
-        kelvin = celsius + 273.15
-
-        if kelvin < 0:
-            raise ValueError('Negative Kelvin')
-
-        return kelvin
-
-.. code-block:: python
-
-    from typing import Union, Sequence
-
-    Number = Union[int, float]
-    AllowedType = Union[Number, Sequence[Number]]
-
-    def celsius_to_kelvin(celsius: AllowedType) -> AllowedType:
         """
         >>> celsius_to_kelvin(0)
         273.15

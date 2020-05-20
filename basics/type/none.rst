@@ -1,8 +1,8 @@
-.. _Logical Types:
+.. _Basic Type None:
 
-*************
-Type ``None``
-*************
+*********
+Type None
+*********
 
 
 Type Definition

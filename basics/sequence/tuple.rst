@@ -1,6 +1,8 @@
-******************
-Sequence ``tuple``
-******************
+.. _Basic Sequence Tuple:
+
+**************
+Sequence Tuple
+**************
 
 
 Rationale

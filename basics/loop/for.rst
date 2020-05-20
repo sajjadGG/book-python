@@ -1,8 +1,8 @@
 .. _Loop For:
 
-************
-Loop ``for``
-************
+********
+Loop For
+********
 
 
 Syntax
@@ -47,6 +47,7 @@ Naming Convention
 * Special meaning:
 
     * ``i`` - for loop counter
+
 
 Iterating sequences
 ===================
@@ -120,11 +121,8 @@ Iterating sequences
     # 'setosa'
 
 
-Working with Generators and Iterators
-=====================================
-
-Loops with ``range``
---------------------
+Range
+=====
 .. highlights::
     * ``range(start, stop, step)``
     * ``range(0, 3)`` will generate ``(0, 1, 2)``
@@ -153,8 +151,9 @@ Loops with ``range``
     # 8
     # 10
 
-``enumerate``
--------------
+
+Enumerate
+=========
 .. highlights::
     * Pythonic way
     * Preferred over ``i=0`` and ``i+=1`` for every iteration

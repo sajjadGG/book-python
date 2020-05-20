@@ -1,6 +1,8 @@
-**********************
-Sequence ``frozenset``
-**********************
+.. _Basic Sequence Frozenset:
+
+******************
+Sequence Frozenset
+******************
 
 
 Rationale

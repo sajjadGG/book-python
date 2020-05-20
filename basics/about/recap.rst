@@ -18,46 +18,48 @@ Summary
 
 3. Types:
 
-    * Type int
-    * Type float
-    * Type bool
+    * Type Int
+    * Type Float
+    * Type Bool
     * Type None
-    * Type str
-    * Type str Methods
+    * Type Str
+    * Type Str Methods
     * Type Annotation
 
 4. Sequences:
 
-    * Sequence list
-    * Sequence tuple
-    * Sequence set
-    * Sequence Nesting
-    * Sequence Indexing
-    * Sequence Slicing
+    * Sequence List
+    * Sequence Tuple
+    * Sequence Set
+    * Sequence Frozenset
+    * Sequence Nested
+    * Sequence Get Item
+    * Sequence Slice
     * Sequence Unpacking
-    * Type Annotation
+    * Sequence Type Annotation
 
 5. Mappings:
 
-    * Mapping dict
+    * Mapping Dict
     * Mapping Generate
     * Mapping Nested
-    * Type Annotation
+    * Mapping Type Annotation
 
 6. Control Flow :
 
     * Control Flow Operators
+    * Control Flow Membership
     * Control Flow Statements
     * Control Flow Expressions
     * Control Flow Exceptions
 
-7. Looping:
+7. Loops:
 
     * Loop while
     * Loop for
-    * Loop Nested Sequences
-    * Loop Unpacking Sequences
-    * Loop over dict
+    * Loop Nested
+    * Loop Unpacking
+    * Loop over Dict
     * Comprehensions
 
 8. Files:
@@ -73,15 +75,16 @@ Summary
 
 9. Functions:
 
-    * Function Basics
+    * Function Definition
     * Function Return
     * Function Parameters
     * Function Arguments
     * Function Scope
-    * Function Type Annotation
     * Function Recurrence
     * Function Doctest
-    * Type Annotation
+    * Function Generators
+    * Function Lambda
+    * Function Type Annotation
 
 10. Object Oriented Programming:
 
@@ -91,7 +94,7 @@ Summary
     * OOP Methods
     * OOP Stringify Objects
     * OOP Inheritance
-    * Type Annotation
+    * OOP Type Annotation
 
 11. Recap:
 

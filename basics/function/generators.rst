@@ -3,8 +3,8 @@ Built-in Generators
 *******************
 
 
-``range()``
-===========
+Range
+=====
 .. highlights::
     * optional ``start``, inclusive, default: ``0``
     * required ``stop``, exclusive,
@@ -53,8 +53,8 @@ Built-in Generators
     # {'a': 1, 'b': 2, 'c': 3}
 
 
-``zip()``
-=========
+Zip
+===
 .. code-block:: python
     :caption: ``zip()`` syntax
 
@@ -108,8 +108,60 @@ Built-in Generators
     # [('a', 1, 77), ('b', 2, 88), ('c', 3, 99)]
 
 
-``map()``
+Enumerate
 =========
+.. code-block:: python
+    :caption: ``enumerate()`` syntax
+
+    enumerate(<sequence>)
+
+.. code-block:: python
+    :caption: ``enumerate()`` definition
+
+    header = ['a', 'b', 'c']
+
+    list(enumerate(header))
+    # [(0, 'a'), (1, 'b'), (2, 'c')]
+
+    dict(enumerate(header))
+    # {0: 'a', 1: 'b', 2: 'c'}
+
+    dict((v,k) for k,v in enumerate(data))
+    # {'a': 0, 'b': 1, 'c': 2}
+
+    {v:k for k,v in enumerate(data, start=5)}
+    # {'a': 5, 'b': 6, 'c': 7}
+
+.. code-block:: python
+    :caption: ``enumerate()`` example
+
+    header = ['a', 'b', 'c']
+    data = [1, 2, 3]
+    result = {}
+
+    for i, _ in enumerate(header):
+        key = header[i]
+        value = data[i]
+        result[key] = value
+
+    print(result)
+    # {'a': 1, 'b': 2, 'c': 3}
+
+.. code-block:: python
+
+    header = ['a', 'b', 'c']
+    data = [1, 2, 3]
+    result = {}
+
+    for i, header in enumerate(header):
+        result[header] = data[i]
+
+    print(result)
+    # {'a': 1, 'b': 2, 'c': 3}
+
+
+Map
+===
 .. code-block:: python
     :caption: ``map()`` syntax
 
@@ -149,8 +201,8 @@ Built-in Generators
     # [1, 4, 9]
 
 
-``filter()``
-============
+Filter
+======
 .. code-block:: python
     :caption: ``filter()`` syntax
 
@@ -226,94 +278,6 @@ Built-in Generators
     print(list(result))
     # [{'is_astronaut': True, 'name': 'Mark Watney'},
     #  {'is_astronaut': True, 'name': 'Melissa Lewis'}]
-
-
-``enumerate()``
-===============
-.. code-block:: python
-    :caption: ``enumerate()`` syntax
-
-    enumerate(<sequence>)
-
-.. code-block:: python
-    :caption: ``enumerate()`` definition
-
-    header = ['a', 'b', 'c']
-
-    list(enumerate(header))
-    # [(0, 'a'), (1, 'b'), (2, 'c')]
-
-    dict(enumerate(header))
-    # {0: 'a', 1: 'b', 2: 'c'}
-
-    dict((v,k) for k,v in enumerate(data))
-    # {'a': 0, 'b': 1, 'c': 2}
-
-    {v:k for k,v in enumerate(data, start=5)}
-    # {'a': 5, 'b': 6, 'c': 7}
-
-.. code-block:: python
-    :caption: ``enumerate()`` example
-
-    header = ['a', 'b', 'c']
-    data = [1, 2, 3]
-    result = {}
-
-    for i, _ in enumerate(header):
-        key = header[i]
-        value = data[i]
-        result[key] = value
-
-    print(result)
-    # {'a': 1, 'b': 2, 'c': 3}
-
-.. code-block:: python
-
-    header = ['a', 'b', 'c']
-    data = [1, 2, 3]
-    result = {}
-
-    for i, header in enumerate(header):
-        result[header] = data[i]
-
-    print(result)
-    # {'a': 1, 'b': 2, 'c': 3}
-
-
-``all()``
-=========
-* Return True if all elements of the iterable are true (or if the iterable is empty).
-* Equivalent to:
-
-.. code-block:: python
-
-    def all(iterable):
-        if not iterable:
-            return False
-
-        for element in iterable:
-            if not element:
-                return False
-
-        return True
-
-
-``any()``
-=========
-* Return True if any element of the iterable is true. If the iterable is empty, return False.
-* Equivalent to:
-
-.. code-block:: python
-
-    def any(iterable):
-        if not iterable:
-            return False
-
-        for element in iterable:
-            if element:
-                return True
-
-        return False
 
 
 Assignments

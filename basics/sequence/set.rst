@@ -1,6 +1,8 @@
-****************
-Sequence ``set``
-****************
+.. _Basic Sequence Set:
+
+************
+Sequence Set
+************
 
 
 Rationale

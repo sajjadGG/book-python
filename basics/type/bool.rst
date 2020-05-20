@@ -1,6 +1,8 @@
-*************
-Type ``bool``
-*************
+.. _Basic Type Bool:
+
+*********
+Type Bool
+*********
 
 
 Type Definition
@@ -52,11 +54,8 @@ Type Casting
     bool({})                    # False
 
 
-Boolean Algebra
-===============
-
 Conjunction
------------
+===========
 .. code-block:: python
 
     True and True               # True
@@ -85,8 +84,9 @@ Conjunction
     0.0 and 'Jan'               # False
     1 and False                 # False
 
+
 Disjunction
------------
+===========
 .. code-block:: python
 
     True or True                # True
@@ -115,8 +115,9 @@ Disjunction
     0 or True                   # True
     0.0 or False                # False
 
-Complex Statements
-------------------
+
+Boolean Algebra
+===============
 .. code-block:: python
 
     True and True or False      # True

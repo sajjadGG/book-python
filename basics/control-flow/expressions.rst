@@ -5,11 +5,8 @@ Conditional Expressions
 ***********************
 
 
-Complex expressions
-===================
-
-``and``
--------
+Conjunction
+===========
 .. code-block:: python
     :caption: Inside joke (see :ref:`José Jiménez`)
 
@@ -22,8 +19,9 @@ Complex expressions
         print('Sorry, astronauts only')
     # Hello Space Pirate
 
-``or``
-------
+
+Disjunction
+===========
 .. code-block:: python
 
     name = 'Watney'
@@ -34,8 +32,9 @@ Complex expressions
         print('Sorry, astronauts only')
     # Hello astronaut
 
-``and`` and ``or``
-------------------
+
+Boolean Algebra
+===============
 .. highlights::
     * Use parenthesis for explicit order
 
@@ -53,20 +52,13 @@ Complex expressions
 
     # Sorry, astronauts only
 
-Good practice
-=============
-
-Complex conditions
-------------------
 .. code-block:: python
+    :caption: Complex conditions
 
     for line in file:
         if line and not line.startswith('#') or not line.isspace():
             ...
 
-Defining exit conditions first
-------------------------------
-.. code-block:: python
 
     for line in file:
         line = line.strip()
@@ -80,11 +72,8 @@ Defining exit conditions first
         ...
 
 
-Control Statements
-==================
-
-``in``
-------
+Contains
+========
 .. code-block:: python
 
     text = 'Monty Python'
@@ -97,7 +86,7 @@ Control Statements
 
 .. code-block:: python
 
-    crew = ['Watney', 'Twardowski', 'Lewis']
+    crew = ['Lewis', 'Watney', 'Twardowski']
 
     if 'Jiménez' in crew:
         print('Yes')
@@ -107,7 +96,7 @@ Control Statements
 
 .. code-block:: python
 
-    crew = {'Watney', 'Twardowski', 'Lewis'}
+    crew = {'Lewis', 'Watney', 'Twardowski'}
 
     if 'Jiménez' in crew:
         print('Yes')
@@ -115,8 +104,9 @@ Control Statements
         print('No')
     # No
 
-``is``
-------
+
+Identity
+========
 .. code-block:: python
 
     name = None
@@ -124,8 +114,9 @@ Control Statements
     if name is None:
         print('Name is empty')
 
-``not``
--------
+
+Negation
+========
 .. highlights::
     * ``not`` negates (logically inverts) condition
 
@@ -138,7 +129,7 @@ Control Statements
 
 .. code-block:: python
 
-    crew = {'Watney', 'Twardowski', 'Lewis'}
+    crew = {'Lewis', 'Watney', 'Twardowski'}
 
     if 'Ivanovich' not in crew:
         print('You are not assigned to the crew')
@@ -150,6 +141,7 @@ Control Statements
 
     if name is not None:
         print(name)
+
 
 
 Assignments

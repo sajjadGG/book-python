@@ -1,3 +1,5 @@
+.. _Basic Sequence Unpacking:
+
 ******************
 Sequence Unpacking
 ******************

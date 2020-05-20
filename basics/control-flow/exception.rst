@@ -5,8 +5,8 @@ Exceptions
 **********
 
 
-What are and why to use exceptions?
-===================================
+Rationale
+=========
 .. highlights::
     * Used when error occurs
     * You can catch exception and handles erroneous situation
@@ -19,14 +19,8 @@ What are and why to use exceptions?
 
 Most common exceptions
 ======================
-
-AttributeError
---------------
-.. highlights::
-    * Attribute reference or assignment fails
-
 .. code-block:: python
-    :caption: ``AttributeError`` exception
+    :caption: ``AttributeError`` - Attribute reference or assignment fails
     :emphasize-lines: 5
 
     name = 'Jan'
@@ -35,13 +29,8 @@ AttributeError
     #   File "<stdin>", line 1, in <module>
     # AttributeError: 'str' object has no attribute 'append'
 
-ImportError, ModuleNotFoundError
---------------------------------
-.. highlights::
-    * Module could not be located
-
 .. code-block:: python
-    :caption: ``ModuleNotFoundError`` exception
+    :caption: ``ImportError``, ``ModuleNotFoundError`` - Module could not be located
     :emphasize-lines: 5
 
     import math
@@ -50,13 +39,8 @@ ImportError, ModuleNotFoundError
     #   File "<stdin>", line 1, in <module>
     # ModuleNotFoundError: No module named 'match'
 
-IndexError
-----------
-.. highlights::
-    * Sequence subscript is out of range
-
 .. code-block:: python
-    :caption: ``IndexError`` exception
+    :caption: ``IndexError`` - Sequence subscript is out of range
     :emphasize-lines: 5
 
     DATA = ['a', 'b', 'c']
@@ -65,13 +49,8 @@ IndexError
     #   File "<stdin>", line 1, in <module>
     # IndexError: list index out of range
 
-KeyError
---------
-.. highlights::
-    * Dictionary key is not found
-
 .. code-block:: python
-    :caption: ``KeyError`` exception
+    :caption: ``KeyError`` - Dictionary key is not found
     :emphasize-lines: 5
 
     DATA = {'a': 1, 'b': 2}
@@ -80,27 +59,17 @@ KeyError
     #   File "<stdin>", line 1, in <module>
     # KeyError: 'x'
 
-NameError
----------
-.. highlights::
-    * Local or global name is not found
-
 .. code-block:: python
-    :caption: ``KeyError`` exception
+    :caption: ``NameError`` - Local or global name is not found
     :emphasize-lines: 4
 
-    print(first_name)
+    print(firstname)
     # Traceback (most recent call last):
     #   File "<stdin>", line 1, in <module>
-    # NameError: name 'first_name' is not defined
-
-SyntaxError
------------
-.. highlights::
-    * Parser encounters a syntax error
+    # NameError: name 'firstname' is not defined
 
 .. code-block:: python
-    :caption: ``SyntaxError`` exception
+    :caption: ``SyntaxError`` - Parser encounters a syntax error
     :emphasize-lines: 7
 
     if True
@@ -111,13 +80,8 @@ SyntaxError
     #           ^
     # SyntaxError: invalid syntax
 
-IndentationError
-----------------
-.. highlights::
-    * Syntax errors related to incorrect indentation
-
 .. code-block:: python
-    :caption: ``IndentationError`` exception
+    :caption: ``IndentationError`` - Syntax errors related to incorrect indentation
     :emphasize-lines: 9
 
     if True:
@@ -130,42 +94,54 @@ IndentationError
     #     ^
     # IndentationError: unexpected indent
 
-TypeError
----------
-.. highlights::
-    * Operation or function is applied to an object of inappropriate type
-
 .. code-block:: python
-    :caption: ``TypeError`` exception
-    :emphasize-lines: 4
+    :caption: ``TypeError`` - Operation or function is applied to an object of inappropriate type
+    :emphasize-lines: 4,9,14,19
 
     42 + 'a'
     # Traceback (most recent call last):
     #   File "<stdin>", line 1, in <module>
     # TypeError: unsupported operand type(s) for +: 'int' and 'str'
 
-.. code-block:: python
-    :caption: ``TypeError`` exception
-    :emphasize-lines: 4
-
     'a' + 42
     # Traceback (most recent call last):
     #   File "<stdin>", line 1, in <module>
     # TypeError: can only concatenate str (not "int") to str
 
-ValueError
-----------
-.. highlights::
-    * Argument is right type but an inappropriate value
+    a[1.5]
+    # Traceback (most recent call last):
+    #   File "<stdin>", line 1, in <module>
+    # TypeError: list indices must be integers or slices, not float
+
+    a, b = 1
+    # Traceback (most recent call last):
+    #   File "<input>", line 1, in <module>
+    # TypeError: cannot unpack non-iterable int object
 
 .. code-block:: python
-    :caption: ``ValueError`` exception
-    :emphasize-lines: 4
+    :caption: ``ValueError`` Argument has an invalid value
+    :emphasize-lines: 4,9,14,19
+
+    a, b, c = 1, 2
+    # Traceback (most recent call last):
+    #   File "<stdin>", line 1, in <module>
+    # ValueError: not enough values to unpack (expected 3, got 2)
+
+    a, b = 1, 2, 3
+    # Traceback (most recent call last):
+    #   File "<stdin>", line 1, in <module>
+    # ValueError: too many values to unpack (expected 2)
 
     float('a')
     # Traceback (most recent call last):
-    #   File "<input>", line 1, in <module>
+    #   File "<stdin>", line 1, in <module>
     # ValueError: could not convert string to float: 'a'
+
+    int('a')
+    # Traceback (most recent call last):
+    #   File "<stdin>", line 1, in <module>
+    # ValueError: invalid literal for int() with base 10: 'a'
+
 
 Exception hierarchy
 ===================
@@ -275,10 +251,8 @@ Use case
     :emphasize-lines: 4,7
 
     def convert(temperature):
-
-        if type(temperature) not in (float, int):
+        if type(temperature) not in {float, int}:
             raise TypeError('Temperature must be int or float')
-
         if temperature < 0:
             raise ValueError('Kelvin temperature cannot be negative')
 
@@ -454,12 +428,10 @@ Catching exceptions
     :emphasize-lines: 5,8
 
     try:
-        with open(r'/tmp/iris.csv') as file:
+        with open(r'/tmp/my-file.txt') as file:
             print(file.read())
-
     except FileNotFoundError:
         print('File does not exist')
-
     except PermissionError:
         print('Permission denied')
 
@@ -596,9 +568,8 @@ Defining own exceptions
     #   File "<stdin>", line 5, in <module>
     # MyError: More verbose description
 
-Use-case
---------
 .. code-block:: python
+    :caption: Django Framework Use-case of Custom Exceptions
     :emphasize-lines: 9
 
     from django.contrib.auth.models import User
@@ -613,12 +584,31 @@ Use-case
         except User.DoesNotExists:
             print('Sorry, no such user in database')
 
+.. code-block:: python
+    :caption: Django Framework Use-case of Custom Exceptions
+    :emphasize-lines: 9
+
+    class Dragon:
+        def take_damage(self, damage):
+            raise self.IsDead
+
+        class IsDead(Exception):
+            pass
+
+
+    try:
+        wawelski = Dragon()
+        wawelski.take_damage(10)
+    except Dragon.IsDead:
+        print('Dragon is dead')
+
+
 
 Exit Status Code
 ================
 .. highlights::
-    * exit with status ``0`` - no error
-    * any other status - error
+    * exit status ``0`` - no error
+    * any other exit status - error
     * This will not work in Jupyter
 
 .. code-block:: python
@@ -631,6 +621,7 @@ Exit Status Code
 
     # Cannot type cast to float
     # [...] program exited with status 1
+
 
 Assignments
 ===========

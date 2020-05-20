@@ -1,4 +1,4 @@
-.. _Sequence Type Annotation:
+.. _Basic Sequence Type Annotation:
 
 ************************
 Sequence Type Annotation

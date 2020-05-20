@@ -1,6 +1,8 @@
-*****************
-Sequence ``list``
-*****************
+.. _Basic Sequence List:
+
+*************
+Sequence List
+*************
 
 
 Rationale

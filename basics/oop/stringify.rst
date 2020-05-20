@@ -5,8 +5,8 @@ Stringify Objects
 *****************
 
 
-``__str__()``
-=============
+String
+======
 .. highlights::
     * for end-user
     * ``print`` converts it's arguments to ``str()`` before printing
@@ -43,7 +43,7 @@ Stringify Objects
     astro.__str__()     # 'My name... José Jiménez'
 
 
-``__repr__()``
+Representation
 ==============
 .. highlights::
     * for developers
@@ -108,8 +108,8 @@ Stringify Objects
     # [Jan Twardowski, Mark Watney, Melissa Lewis]
 
 
-``__str__()`` vs. ``__repr__()``
-================================
+String vs Representation
+========================
 .. code-block:: python
     :caption: ``__str__`` and ``__repr__``
 
@@ -122,8 +122,8 @@ Stringify Objects
     # datetime.datetime(1961, 4, 12, 6, 7, 0, 000000)
 
 
-``__format__()``
-================
+Format
+======
 .. highlights::
     * Used for advanced formatting
 

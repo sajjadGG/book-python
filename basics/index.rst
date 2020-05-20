@@ -43,7 +43,7 @@ Sequences
     sequence/tuple.rst
     sequence/set.rst
     sequence/frozenset.rst
-    sequence/nesting.rst
+    sequence/nested.rst
     sequence/getitem.rst
     sequence/slice.rst
     sequence/unpacking.rst

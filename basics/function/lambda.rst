@@ -51,35 +51,11 @@ Naming Convention
     squre(4)
     # 16
 
-
-Examples
+Use Case
 ========
-
-Example 1
----------
 .. code-block:: python
 
-    def increment(x):
-        return x + 1
-
-
-    data = [1, 2, 3, 4]
-    result = map(increment, data)
-
-    print(list(result))
-    # [2, 4]
-
-.. code-block:: python
-
-    data = [1, 2, 3, 4]
-    result = map(lambda x: x+1, data)
-
-    print(list(result))
-    # [2, 3, 4, 5]
-
-Example 2
----------
-.. code-block:: python
+    DATA = [1, 2, 3, 4]
 
     def is_even(x):
         if x % 2 == 0:
@@ -87,37 +63,51 @@ Example 2
         else:
             return False
 
-
-    data = [1, 2, 3, 4]
-    result = filter(is_even, data)
-
-    print(list(result))
+    list(filter(is_even, DATA))
     # [2, 4]
 
 .. code-block:: python
+
+    DATA = [1, 2, 3, 4]
 
     def is_even(x):
         return x % 2 == 0
 
-
-    data = [1, 2, 3, 4]
-    result = filter(is_even, data)
-
-    print(list(result))
+    list(filter(is_even, DATA))
     # [2, 4]
 
 .. code-block:: python
 
-    data = [1, 2, 3, 4]
-    result = filter(lambda x: x%2==0, data)
+    DATA = [1, 2, 3, 4]
 
-    print(list(result))
+    list(filter(lambda x: x%2==0, DATA))
     # [2, 4]
 
-Example 3
----------
+
+Examples
+========
 .. code-block:: python
-    :caption: ``filter()`` example
+    :caption: Example 1
+
+    data = [1, 2, 3, 4]
+
+    def increment(x):
+        return x + 1
+
+
+    list(map(increment, data))
+    # [2, 3, 4, 5]
+
+    list(map(lambda x: x+1, data))
+    # [2, 3, 4, 5]
+
+.. code-block:: python
+    :caption: Example 2
+
+    people = [
+        {'age': 21, 'name': 'Jan Twardowski'},
+        {'age': 25, 'name': 'Mark Watney'},
+        {'age': 18, 'name': 'Melissa Lewis'}]
 
     def adult(person):
         if person['age'] >= 21:
@@ -126,31 +116,22 @@ Example 3
             return False
 
 
-    people = [
-        {'age': 21, 'name': 'Jan Twardowski'},
-        {'age': 25, 'name': 'Mark Watney'},
-        {'age': 18, 'name': 'Melissa Lewis'}]
-
-    result = filter(lambda x: x['age'] >= 21, people)
-
-    print(list(result))
+    list(filter(lambda x: x['age'] >= 21, people))
     # [{'age': 21, 'name': 'Jan Twardowski'},
     #  {'age': 25, 'name': 'Mark Watney'}]
 
 .. code-block:: python
     :caption: ``filter()`` example
 
-    def astronaut(person):
-        return person['is_astronaut']
-
     people = [
         {'is_astronaut': False, 'name': 'Jan Twardowski'},
         {'is_astronaut': True, 'name': 'Mark Watney'},
         {'is_astronaut': True, 'name': 'Melissa Lewis'}]
 
-    result = filter(lambda x: x['is_astronaut'], people)
+    def astronaut(person):
+        return person['is_astronaut']
 
-    print(list(result))
+    list(filter(lambda x: x['is_astronaut'], people))
     # [{'is_astronaut': True, 'name': 'Mark Watney'},
     #  {'is_astronaut': True, 'name': 'Melissa Lewis'}]
 

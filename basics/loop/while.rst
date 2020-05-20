@@ -1,8 +1,8 @@
 .. _Loop While:
 
-**************
-Loop ``while``
-**************
+**********
+Loop While
+**********
 
 
 Syntax

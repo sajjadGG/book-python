@@ -133,13 +133,10 @@ Comprehensions or Generator Expression
     # []
 
 
-Usage
-=====
-
 List Comprehension
-------------------
+==================
 .. code-block:: python
-    :caption: ``list`` Comprehension approach to applying function to elements
+    :caption: ``list`` comprehension approach to applying function to elements
 
     [x+10 for x in range(0,5)]
     # [10, 11, 12, 13, 14]
@@ -147,10 +144,11 @@ List Comprehension
     list(x+10 for x in range(0,5))
     # [10, 11, 12, 13, 14]
 
+
 Set Comprehension
------------------
+=================
 .. code-block:: python
-    :caption: ``set`` Comprehension approach to applying function to elements
+    :caption: ``set`` comprehension approach to applying function to elements
 
     {x+10 for x in range(0, 5)}
     # {10, 11, 12, 13, 14}
@@ -158,10 +156,11 @@ Set Comprehension
     set(x+10 for x in range(0, 5))
     # {10, 11, 12, 13, 14}
 
+
 Dict Comprehension
-------------------
+==================
 .. code-block:: python
-    :caption: ``dict`` Comprehension approach to applying function to elements
+    :caption: ``dict`` comprehension approach to applying function to elements
 
     {x:x+10 for x in range(0,5)}
     # {0:10, 1:11, 2:12, 3:13, 4:14}
@@ -170,7 +169,7 @@ Dict Comprehension
     # {0:10, 1:11, 2:12, 3:13, 4:14}
 
 .. code-block:: python
-    :caption: ``dict`` Comprehension approach to applying function to elements
+    :caption: ``dict`` comprehension approach to applying function to elements
 
     {x+10:x for x in range(0,5)}
     # {10:0, 11:1, 12:2, 13:3, 14:4}
@@ -187,8 +186,9 @@ Dict Comprehension
     dict((x+10:x+10) for x in range(0,5))
     # {10:10, 11:11, 12:12, 13:13, 14:14}
 
+
 Tuple Comprehension?!
----------------------
+=====================
 .. highlights::
     * Tuple Comprehension vs. Generator Expression
     * More in chapter :ref:`Generators`
@@ -226,9 +226,6 @@ Conditional Comprehension
     [x for x in range(0,5) if x % 2 == 0]
     # [0, 2, 4]
 
-Filtering ``dict`` items
-------------------------
-
 .. code-block:: python
     :caption: Using ``list`` comprehension for filtering
 
@@ -249,7 +246,7 @@ Filtering ``dict`` items
     #   [4.7, 3.2, 1.3, 0.2],
     # ]
 
-    [X for *X,y in DATA if y == 'setosa']
+    [X for *X,y in DATA if y=='setosa']
     # [
     #   [5.1, 3.5, 1.4, 0.2],
     #   [4.7, 3.2, 1.3, 0.2],
@@ -301,34 +298,20 @@ Indent
 
 Examples
 ========
-
-Sum
----
 .. code-block:: python
+    :caption: Sum
 
     sum(x for x in range(0,5))
     # 10
 
-Power
------
 .. code-block:: python
-
-    result = []
-
-    for x in range(0,5):
-        result.append(2**x)
-
-    print(result)
-    # [1, 2, 4, 8, 16]
-
-.. code-block:: python
+    :caption: Power
 
     [2**x for x in range(0,5)]
     # [1, 2, 4, 8, 16]
 
-Even or Odd
------------
 .. code-block:: python
+    :caption: Even or Odd
 
     result = {}
 
@@ -339,14 +322,12 @@ Even or Odd
     print(result)
     # {0: True, 1: False, 2: True, 3: False, 4: True}
 
-.. code-block:: python
 
     {x: (x%2==0) for x in range(0,5)}
     # {0: True, 1: False, 2: True, 3: False, 4: True}
 
-Filtering
----------
 .. code-block:: python
+    :caption: Filtering
 
     DATA = [
         {'is_astronaut': True,  'name': 'Jan Twardowski'},
@@ -378,8 +359,6 @@ Filtering
     #  {'firstname': 'Mark', 'lastname': 'Watney'},
     #  {'firstname': 'Melissa', 'lastname': 'Lewis'}]
 
-Filtering with complex expressions
-----------------------------------
 .. code-block:: python
     :caption: Using ``list`` comprehension for filtering with more complex expression
 
@@ -408,8 +387,6 @@ Filtering with complex expressions
     #   [4.7, 3.2, 1.3, 0.2],
     # ]
 
-Quick parsing lines
--------------------
 .. code-block:: python
     :caption: Quick parsing lines
 
@@ -432,26 +409,14 @@ Quick parsing lines
     #   ['5.7', '2.8', '4.1', '1.3', 'versicolor']
     # ]
 
-.. code-block:: python
-    :caption: Quick parsing lines
 
-    DATA = [
-        '5.8,2.7,5.1,1.9,virginica',
-        '5.1,3.5,1.4,0.2,setosa',
-        '5.7,2.8,4.1,1.3,versicolor',
-    ]
-
-    result = [row.split(',') for row in DATA]
-
-    print(result)
+    [row.split(',') for row in DATA]
     # [
     #   ['5.8', '2.7', '5.1', '1.9', 'virginica'],
     #   ['5.1', '3.5', '1.4', '0.2', 'setosa'],
     #   ['5.7', '2.8', '4.1', '1.3', 'versicolor']
     # ]
 
-Reversing ``dict`` keys with values
------------------------------------
 .. code-block:: python
     :caption: Reversing ``dict`` keys with values
 
@@ -486,8 +451,9 @@ Reversing ``dict`` keys with values
     {v:k for k,v in DATA.items()}
     # {1:'a', 2:'c'}
 
+
 Nested
-------
+======
 .. code-block:: python
 
     DATA = {
@@ -516,8 +482,9 @@ Nested
     #   'Kindergarten': '1'
     # }
 
+
 All and Any
------------
+===========
 .. code-block:: python
 
     all(x for x in range(0,5))         # False

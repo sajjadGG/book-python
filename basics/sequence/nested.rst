@@ -1,8 +1,8 @@
-.. _Sequence Nesting:
+.. _Basic Sequence Nested:
 
-****************
-Sequence Nesting
-****************
+***************
+Sequence Nested
+***************
 
 
 List of Tuples

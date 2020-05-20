@@ -1,6 +1,8 @@
-**************
-Type ``float``
-**************
+.. _Basic Type Float:
+
+**********
+Type Float
+**********
 
 
 Type Definition

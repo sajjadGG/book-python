@@ -280,7 +280,8 @@ Accessors Overload
 
 Further Reading
 ===============
-* https://docs.python.org/3/reference/datamodel.html#emulating-numeric-types
+* :ref:`Stdlib Operator Library`
+* https://docs.python.org/reference/datamodel.html#emulating-numeric-types
 
 
 Assignments

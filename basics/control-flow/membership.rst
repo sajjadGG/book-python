@@ -3,10 +3,12 @@ Membership
 **********
 
 
-Str
-===
+Contains
+========
+* ``in`` - Contains
+
 .. code-block:: python
-    :caption: Contains
+    :caption: ``str``
 
     'x' in 'Python'                 # False
     'P' in 'Python'                 # True
@@ -24,51 +26,7 @@ Str
     'Py' in 'Python'                # True
 
 .. code-block:: python
-    :caption: Missing
-
-    'P' not in 'Python'             # False
-    'p' not in 'Python'             # True
-    'py' not in 'Python'            # True
-    'Py' not in 'Python'            # False
-
-
-Tuple
-=====
-.. code-block:: python
-    :caption: Contains
-
-    1 in (1, 2)               # True
-    2 in (1, 2)               # True
-    3 in (1, 2)               # False
-
-    (1) in (1, 2)             # True
-    (2) in (1, 2)             # True
-    (3) in (1, 2)             # False
-
-    (1,) in (1, 2)            # False
-    (2,) in (1, 2)            # False
-    (3,) in (1, 2)            # False
-
-    (1, 2) in (1, 2)          # False
-    (3, 4) in (1, 2, (3, 4))  # True
-
-.. code-block:: python
-    :caption: Missing
-
-    1 not in (1, 2)           # False
-    3 not in (1, 2)           # True
-
-    (2) not in (1, 2)        # False
-    (1, 2) not in (1, 2)     # True
-
-
-List
-====
-* ``in`` - Contains
-* ``not in`` - Missing
-
-.. code-block:: python
-    :caption: Contains
+    :caption: ``list``
 
     1 in [1, 2]               # True
     2 in [1, 2]               # True
@@ -86,19 +44,25 @@ List
     [3, 4] in [1, 2, [3, 4]]  # True
 
 .. code-block:: python
-    :caption: Missing
+    :caption: ``tuple``
 
-    1 not in [1, 2]           # False
-    3 not in [1, 2]           # True
+    1 in (1, 2)               # True
+    2 in (1, 2)               # True
+    3 in (1, 2)               # False
 
-    [2] not in [1, 2]         # True
-    [1, 2] not in [1, 2]      # True
+    (1) in (1, 2)             # True
+    (2) in (1, 2)             # True
+    (3) in (1, 2)             # False
 
+    (1,) in (1, 2)            # False
+    (2,) in (1, 2)            # False
+    (3,) in (1, 2)            # False
 
-Set
-===
+    (1, 2) in (1, 2)          # False
+    (3, 4) in (1, 2, (3, 4))  # True
+
 .. code-block:: python
-    :caption: Contains
+    :caption: ``set``
 
     1 in {1, 2}               # True
     2 in {1, 2}               # True
@@ -115,8 +79,39 @@ Set
     {1, 2} in {1, 2}          # False
     {3, 4} in {1,2, {3, 4}}   # True
 
+
+Missing
+=======
+* ``not in`` - Missing
+
 .. code-block:: python
-    :caption: Missing
+    :caption: ``str``
+
+    'P' not in 'Python'             # False
+    'p' not in 'Python'             # True
+    'py' not in 'Python'            # True
+    'Py' not in 'Python'            # False
+
+.. code-block:: python
+    :caption: ``list``
+
+    1 not in [1, 2]           # False
+    3 not in [1, 2]           # True
+
+    [2] not in [1, 2]         # True
+    [1, 2] not in [1, 2]      # True
+
+.. code-block:: python
+    :caption: ``tuple``
+
+    1 not in (1, 2)           # False
+    3 not in (1, 2)           # True
+
+    (2) not in (1, 2)        # False
+    (1, 2) not in (1, 2)     # True
+
+.. code-block:: python
+    :caption: ``set``
 
     1 not in {1, 2}           # False
     3 not in {1, 2}           # True

@@ -1,18 +1,19 @@
 .. _Loop Dict:
 
-******************
-Loop over ``dict``
-******************
+**************
+Loop over Dict
+**************
 
 
-Looping over ``dict``
-=====================
+Rationale
+=========
 .. highlights::
     * Since Python 3.7 ``dict`` keeps order
     * Before Python 3.7 ``dict`` order is not ensured!!
 
-Iterating
----------
+
+Iterate
+=======
 .. code-block:: python
     :caption: By default ``dict`` iterates over keys
 
@@ -33,8 +34,9 @@ Iterating
     # 'Petal width'
     # 'Species'
 
-Iterating keys
---------------
+
+Iterate Keys
+============
 .. code-block:: python
     :caption: Iterating over ``dict`` items
 
@@ -58,8 +60,9 @@ Iterating keys
     # 'Petal width'
     # 'Species'
 
-Iterating values
-----------------
+
+Iterate Values
+==============
 .. code-block:: python
     :caption: Iterating over ``dict`` items
 
@@ -83,8 +86,9 @@ Iterating values
     # 0.2
     # 'setosa'
 
-Iterating key-value pairs
--------------------------
+
+Iterate Key-Value Pairs
+=======================
 .. highlights::
     * list of pairs ``key``, ``value``
 
@@ -119,12 +123,10 @@ Iterating key-value pairs
     # Species -> setosa
 
 
-Create ``dict`` from two sequences
-==================================
-
-``range()``
------------
+Generate Dict with Range
+========================
 .. highlights::
+    * ``range()``
     * Pythonic way is to use ``zip()``
     * Don't use ``len(range(...))`` - it evaluates generator
 
@@ -149,9 +151,10 @@ Create ``dict`` from two sequences
     #   'Species': 'setosa',
     # }
 
-``enumerate()``
----------------
+Generate Dict with Enumerate
+============================
 .. highlights::
+    * ``enumerate()``
     * ``_`` regular variable name (not a special syntax)
     * ``_`` by convention is used when variable will not be referenced
 
@@ -174,9 +177,11 @@ Create ``dict`` from two sequences
     #   'Species': 'setosa',
     # }
 
-``zip()``
----------
+
+Generate Dict with Zip
+======================
 .. highlights::
+    * ``zip()``
     * The most Pythonic way
 
 .. code-block:: python

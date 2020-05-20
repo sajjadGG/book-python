@@ -16,8 +16,8 @@ Recap
     key, value = (1, 2)
 
 
-Unpacking ``list`` of pairs
-===========================
+List of pairs
+=================
 .. code-block:: python
     :caption: Unpacking values in loop
 
@@ -35,8 +35,8 @@ Unpacking ``list`` of pairs
     # c -> 3
 
 
-Unpacking ``list`` of sequence
-==============================
+List of sequence
+================
 .. code-block:: python
 
     DATA = [
@@ -146,8 +146,8 @@ Unpacking ``list`` of sequence
     # virginica -> 6.3
 
 
-Unpacking nested
-================
+Nested
+======
 .. code-block:: python
     :caption: Unpacking nested sequence
 
@@ -169,8 +169,8 @@ Unpacking nested
     # ['NASA', 'ESA', 'Roscosmos'] -> 1
 
 
-Unpacking ``list`` of ``dict``
-==============================
+List of Dicts
+=============
 .. code-block:: python
     :caption: Unpacking ``list`` of ``dict``
 

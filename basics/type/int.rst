@@ -1,6 +1,8 @@
-************
-Type ``int``
-************
+.. _Basic Type Int:
+
+********
+Type Int
+********
 
 
 Type Definition

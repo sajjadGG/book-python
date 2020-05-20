@@ -1,8 +1,8 @@
-.. _Basic String Methods:
+.. _Basic Type Str Methods:
 
-********************
-Type ``str`` Methods
-********************
+****************
+Type Str Methods
+****************
 
 
 Rationale

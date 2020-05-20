@@ -29,11 +29,9 @@ Positive and negative values
 
 ``if``
 ======
-
-Syntax
-------
 .. code-block:: python
-    :caption: ``while`` loop generic syntax
+    :caption: ``if`` generic syntax
+    :force:
 
     if <condition>:
         <do something>
@@ -52,9 +50,8 @@ Syntax
         print('Second line of the true statement')
         print('Third line of the true statement')
 
-Checking for simple value
--------------------------
 .. code-block:: python
+    :caption: Checking for simple value
 
     age = 7
 
@@ -62,7 +59,7 @@ Checking for simple value
         print('Go to school')
 
 .. code-block:: python
-    :caption: Inside joke (see :ref:`José Jiménez`)
+    :caption: Checking for simple value.
 
     country = 'USA'
 
@@ -70,6 +67,7 @@ Checking for simple value
         print('Astronauts are from USA')
 
 .. code-block:: python
+    :caption: Checking for simple value
 
     number = 6
 
@@ -77,9 +75,8 @@ Checking for simple value
         print('Even')
     # Even
 
-Checking if value is in range
------------------------------
 .. code-block:: python
+    :caption: Checking if value is in range
 
     age = 7
 
@@ -88,6 +85,7 @@ Checking if value is in range
     # Age is between [0, 18)
 
 .. code-block:: python
+    :caption: Checking if value is in range
 
     a = 10
     b = 100
@@ -96,9 +94,8 @@ Checking if value is in range
         print('Yes')
     # Yes
 
-Checking if has value
----------------------
 .. code-block:: python
+    :caption: Checking if has value
 
     name = input('What is your name?: ')
     # What is your name?: Jan Twardowski<ENTER>
@@ -108,6 +105,7 @@ Checking if has value
     # My name is Jan Twardowski
 
 .. code-block:: python
+    :caption: Checking if has value
 
     name = input('What is your name?: ')
     # What is your name?: <ENTER>
@@ -122,8 +120,15 @@ Checking if has value
     * Optional
     * Executed when condition is not met
 
-Syntax
-------
+.. code-block:: python
+    :caption: ``else`` generic syntax
+    :force:
+
+    if <condition>:
+        <do something>
+    else:
+        <do something>
+
 .. code-block:: python
     :caption: Single line statements
 
@@ -143,6 +148,7 @@ Syntax
         print('Else statement, second line')
 
 .. code-block:: python
+    :caption: Nested multiline blocks
 
     if True:
         print('Outer block, true statement, first line')
@@ -159,9 +165,8 @@ Syntax
         print('Outer block, else statement, first line')
         print('Outer block, else statement, second line')
 
-Checking if variable is certain value
--------------------------------------
 .. code-block:: python
+    :caption: Checking if variable is certain value
 
     country = 'Russia'
 
@@ -172,6 +177,7 @@ Checking if variable is certain value
     # Cosmonauts are from Russia
 
 .. code-block:: python
+    :caption: Checking if variable is certain value
 
     name = input('What is your name?: ')
     # What is your name?: <ENTER>
@@ -205,8 +211,8 @@ Checking if variable is certain value
     # No
 
 
-Inline ``if``
-=============
+Inline If
+=========
 .. code-block:: python
     :caption: Normal ``if``
 
@@ -218,18 +224,29 @@ Inline ``if``
         job = 'astronaut'
 
 .. code-block:: python
-    :caption: One line version
+    :caption: Inline ``if``
 
     country = 'Russia'
 
     job = 'cosmonaut' if country == 'Russia' else 'astronaut'
 
 
-``elif``
-========
+Elif
+====
 .. highlights::
     * Used to check for additional condition if first is not met
     * In other languages is known as ``else if``
+
+.. code-block:: python
+    :caption: ``elif`` generic syntax
+    :force:
+
+    if <condition>:
+        <do something>
+    elif <condition>:
+        <do something>
+    else:
+        <do something>
 
 .. code-block:: python
 
@@ -249,8 +266,9 @@ Inline ``if``
 
     # Witaj
 
-Switch statement
-----------------
+
+Switch
+======
 .. highlights::
     * No ``switch`` statement in Python!
     * ``switch`` in Object Oriented Programming is considered a bad practise
