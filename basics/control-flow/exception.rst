@@ -304,11 +304,8 @@ Assertion
     # AssertionError: Python 3.8+ required.
 
 
-Traceback
-=========
-
 Traceback analysis
-------------------
+==================
 .. highlights::
     * Stacktrace is 8 levels deep, it's not Java's 200 ;)
 
@@ -359,8 +356,9 @@ Traceback analysis
     #     raise RuntimeError('Oxygen tank explosion')
     # RuntimeError: Oxygen tank explosion
 
-Change verbosity level
-----------------------
+
+Change Verbosity Level
+======================
 .. highlights::
     * Change level with ``sys.tracebacklimit``
     * From time to time you can have problems somewhere in the middle, but it's rare
