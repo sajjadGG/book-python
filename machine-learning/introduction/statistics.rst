@@ -26,6 +26,9 @@ Podstawowe pojęcia
 ==================
 .. glossary::
 
+    Auto-regression Time Series
+        Value of the current time depends on the value of previous times.
+
     Funkcja
         .. figure:: img/statistics-function.png
             :width: 75%
