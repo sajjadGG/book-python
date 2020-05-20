@@ -2,7 +2,7 @@
 About
 *****
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :caption: About
     :name: Basics About
 
