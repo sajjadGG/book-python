@@ -8,70 +8,88 @@ Agenda
 Day 1
 =====
 .. csv-table::
-    :header-rows: 1
     :widths: 15, 85
+    :header: "Estimated Time", "Topic"
 
-    "Estimated Time", "Topic"
-    "15m", "Welcome message, course introduction, learning participants expectations"
-    "15m", "Python and IDE setup verification, IDE features and debugging"
-    "30m", "Python basic syntax, operators, builtins"
-    "60m", "Type int and float, bool, None"
-    "60m", "Type str and methods, basic type annotations"
-    "60m", "Sequences list and tuple"
-    "60m", "Sequences set, nested"
-    "60m", "Sequence indexing, slicing and unpacking"
-    "60m", "Mapping type dict"
+    "10 min", "Welcome message, course introduction, learning participants expectations"
+    "50 min", "Python and IDE setup verification, IDE features and debugging"
+    "60 min", "Python basic syntax, operators, builtins"
+    "45 min", "Type Int"
+    "45 min", "Type Float"
+    "45 min", "Type Bool",
+    "30 min", "Type None"
+    "60 min", "Type Str"
+    "60 min"  "Type Str Methods"
+    "15 min", "Type Annotations"
 
 
 Day 2
 =====
 .. csv-table::
-    :header-rows: 1
     :widths: 15, 85
+    :header: "Estimated Time", "Topic"
 
-    "Estimated Time", "Topic"
-    "15m", "Conditionals Operators"
-    "15m", "Conditional Statements"
-    "30m", "Conditional Expressions"
-    "60m", "Loop while"
-    "60m", "Loop for"
-    "60m", "Loop Nested Sequences"
-    "60m", "Loop Unpacking Sequences"
-    "60m", "Loop over dict"
-    "60m", "Comprehensions"
+    "45 min", "Sequence List"
+    "45 min", "Sequence Tuple"
+    "30 min", "Sequence Set"
+    "15 min", "Sequence Frozenset"
+    "30 min", "Sequence Nested"
+    "30 min", "Sequence Get Item"
+    "30 min", "Sequence Slice"
+    "30 min", "Sequence Unpack"
+    "15 min", "Sequence Type Annotation"
+    "45 min", "Mapping Dict"
+    "45 min", "Mapping Generate"
+    "45 min", "Mapping Nested"
+    "15 min", "Mapping Type Annotation"
 
 
 Day 3
 =====
 .. csv-table::
-    :header-rows: 1
     :widths: 15, 85
+    :header: "Estimated Time", "Topic"
 
-    "Estimated Time", "Topic"
-    "60m", "Control Flow Exceptions"
-    "90m", "Control Flow Files"
-    "30m", "Function Basics"
-    "30m", "Function Return"
-    "60m", "Function Arguments"
-    "15m", "Function Variables Scope"
-    "15m", "Function Type Annotation"
-    "30m", "Function Recurrence"
-    "90m", "Function Doctest"
-
+    "15 min", "Control Flow Operators"
+    "15 min", "Control Flow Membership"
+    "45 min", "Control Flow Statements"
+    "45 min", "Control Flow Expressions"
+    "45 min", "Control Flow Exceptions"
+    "45 min", "Loop While"
+    "45 min", "Loop For"
+    "45 min", "Loop Nested"
+    "30 min", "Loop Unpack"
+    "45 min", "Loop Dict"
+    "45 min", "Comprehensions"
 
 Day 4
 =====
 .. csv-table::
-    :header-rows: 1
     :widths: 15, 85
+    :header: "Estimated Time", "Topic"
 
-    "Estimated Time", "Topic"
-    "30m", "OOP Classes and Instances"
-    "60m", "OOP Attributes"
-    "30m", "OOP Initializer Method"
-    "60m", "OOP Methods"
-    "30m", "OOP Stringify Objects"
-    "15m", "OOP Inheritance"
-    "60m", "OOP Operator Overload"
-    "120m", "Exam"
-    "15m", "Recap, Certificates and Survey"
+    "45 min", "Function Definition"
+    "45 min", "Function Return"
+    "45 min", "Function Parameters"
+    "45 min", "Function Arguments"
+    "20 min", "Function Scope"
+    "20 min", "Function Recurrence"
+    "60 min", "Function Doctest"
+    "60 min", "Function Lambda"
+    "60 min", "Function Generator"
+    "20 min", "Function Type Annotation"
+
+Day 5
+=====
+.. csv-table::
+    :widths: 15, 85
+    :header: "Estimated Time", "Topic"
+
+    "45 min", "OOP Classes and Instances"
+    "45 min", "OOP Attributes"
+    "45 min", "OOP Initializer Method"
+    "45 min", "OOP Methods"
+    "45 min", "OOP Stringify Objects"
+    "45 min", "OOP Inheritance"
+    "140 min", "Exam"
+    "10 min", "Recap, Certificates and Survey"
