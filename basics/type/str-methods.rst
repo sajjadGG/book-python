@@ -109,7 +109,8 @@ Split by Line
 
 Split by Character
 ==================
-* No argument - any number of whitespaces
+.. highlights::
+    * No argument - any number of whitespaces
 
 .. code-block:: python
 
@@ -166,7 +167,7 @@ Is Whitespace
     '\n'.isspace()      # True
 
 .. figure:: img/iss.jpg
-    :width: 40%
+    :width: 50%
     :align: center
 
     ISS - International Space Station.

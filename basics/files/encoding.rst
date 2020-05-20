@@ -67,7 +67,7 @@ Escape Characters
     * ``\n`` - is used everywhere else
 
 .. figure:: img/type-machine.jpg
-    :width: 75%
+    :width: 50%
     :align: center
 
     Why we have '\\r\\n' on Windows?

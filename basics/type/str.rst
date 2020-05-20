@@ -7,7 +7,8 @@ Type Str
 
 Type Definition
 ===============
-* ``str`` is a sequence
+.. highlights::
+    * ``str`` is a sequence
 
 .. code-block:: python
     :caption: ``str`` Type Definition
@@ -84,8 +85,9 @@ Single and Double Quotes
 
 Docstring
 =========
-* For multiline always use double quote characters to be consistent with the docstring convention :pep:`257`
-* More information in :ref:`Function Doctest`
+.. highlights::
+    * For multiline always use double quote characters to be consistent with the docstring convention :pep:`257`
+    * More information in :ref:`Function Doctest`
 
 .. code-block:: python
     :caption: If assigned to variable, it serves as multiline ``str`` otherwise it's a docstring.

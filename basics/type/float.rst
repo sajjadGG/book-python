@@ -7,7 +7,8 @@ Type Float
 
 Type Definition
 ===============
-* Notation without leading or trailing zero is used by ``numpy``
+.. highlights::
+    * Notation without leading or trailing zero is used by ``numpy``
 
 .. code-block:: python
     :caption: ``float`` Type Definition
@@ -41,7 +42,8 @@ Type Definition
 
 Type Casting
 ============
-* ``float()`` converts argument to ``float``
+.. highlights::
+    * ``float()`` converts argument to ``float``
 
 .. code-block:: python
     :caption: ``float()`` converts argument to ``float``
@@ -79,9 +81,10 @@ Round Number
 
 Built-in Functions
 ==================
-* ``abs()`` - Absolute value
-* ``pow()`` - Number to the ``n-th`` power
-* Note, that arithmetic operator ``**`` also raises number to the power
+.. highlights::
+    * ``abs()`` - Absolute value
+    * ``pow()`` - Number to the ``n-th`` power
+    * Note, that arithmetic operator ``**`` also raises number to the power
 
 .. code-block:: python
     :caption: ``pow()`` - Number to the ``n-th`` power
@@ -227,7 +230,7 @@ Float Calculation
     * Separation of business logic and view
 
 .. figure:: img/spacesuits.png
-    :width: 75%
+    :width: 50%
     :align: center
 
     EMU and Orlan

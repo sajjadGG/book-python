@@ -80,7 +80,7 @@ Python Release Cycle
 * 42 months (3.5 year) of security updates
 
 .. figure:: img/pep602-release-calendar.png
-    :width: 75%
+    :width: 85%
     :align: center
 
     Python 12 months release cycle.

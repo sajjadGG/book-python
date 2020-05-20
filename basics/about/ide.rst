@@ -39,6 +39,9 @@ Which one is the best?
 #. `PyDev <http://www.pydev.org/download.html>`_
 #. Spyder
 #. Atom
+#. Vim
+
+.. note:: This are my preferences. Choosing best IDE is very opinionated.
 
 
 Keyboard shortcuts

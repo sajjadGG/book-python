@@ -27,8 +27,8 @@ Type Definition
 Type Casting
 ============
 .. highlights::
-    * ``int()`` converts argument to ``int``
-    * ``int()`` does not round numbers, it returns integer value
+    * ``int()`` - converts argument to ``int``
+    * ``int()`` - does not round numbers
 
 .. code-block:: python
     :caption: ``int()`` converts argument to ``int``
@@ -48,7 +48,8 @@ Type Casting
 
 Type Checking
 =============
-* ``type()``
+.. highlights::
+    * ``type()`` - Returns type of an argument
 
 .. code-block:: python
 
