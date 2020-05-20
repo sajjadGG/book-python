@@ -1,8 +1,8 @@
-.. _Sequence Unpacking:
+.. _Sequence Unpack:
 
-******************
-Sequence Unpacking
-******************
+***************
+Sequence Unpack
+***************
 
 
 Rationale

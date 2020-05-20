@@ -35,7 +35,7 @@ Summary
     * Sequence Nested
     * Sequence Get Item
     * Sequence Slice
-    * Sequence Unpacking
+    * Sequence Unpack
     * Sequence Type Annotation
 
 5. Mappings:

@@ -46,7 +46,7 @@ Sequences
     sequence/nested.rst
     sequence/getitem.rst
     sequence/slice.rst
-    sequence/unpacking.rst
+    sequence/unpack.rst
     sequence/type-annotation.rst
 
 ********

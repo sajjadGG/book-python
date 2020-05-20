@@ -1,8 +1,8 @@
 project = 'Python 3: from None to Machine Learning'
 author = 'Matt Harasymczuk'
 email = 'book-python@astronaut.center'
-language = 'en'
 
+language = 'en'
 html_theme = 'sphinx_rtd_theme'
 
 todo_emit_warnings = False
@@ -20,24 +20,13 @@ extensions = [
     'sphinxcontrib.bibtex',
 ]
 
-numfig_format = {
-    'section': 'Section %s.',
-    'figure': 'Figure %s.',
-    'table': 'Table %s.',
-    'code-block': 'Listing %s.',
-}
-
-exclude_patterns = [
-]
-
 suppress_warnings = [
     'toc.secnum',
     'autosectionlabel.*',
 ]
 
-html_context = {}
-
-# article - for articles in scientific journals, presentations, short reports, program documentation, invitations, ...
+latex_documentclass = 'report'
+# article - for articles in scientific journals, presentations, short reports, program documentation, invitations, etc
 # proc - a class for proceedings based on the article class.
 # minimal - is as small as it can get. It only sets a page size and a base font. It is mainly used for debugging purposes.
 # report - for longer reports containing several chapters, small books, thesis, ...
@@ -46,7 +35,6 @@ html_context = {}
 # memoir - for changing sensibly the output of the document. It is based on the book class, but you can create any kind of document with it (1)
 # letter - For writing letters.
 # beamer - For writing presentations (see LaTeX/Presentations).
-latex_documentclass = 'report'
 
 
 # -- Standard book config -----------------------------------------------------
@@ -69,7 +57,7 @@ mathjax_config = {
     'jax': ['input/TeX', 'output/HTML-CSS'],
 }
 
-exclude_patterns += [
+exclude_patterns = [
     '.*',
     'venv*',
     'virtualenv*',
@@ -113,6 +101,11 @@ extlinks = {'isbn': ('https://e-isbn.pl/IsbnWeb/start/search.html?szukaj_fraza=%
 numfig_secnum_depth = 1
 numfig = True
 smartquotes = False
+numfig_format = {
+    'section': 'Section %s.',
+    'figure': 'Figure %s.',
+    'table': 'Table %s.',
+    'code-block': 'Listing %s.'}
 
 project_slug = re.sub(r'[\W]+', '', project)
 sha1 = subprocess.run('git log -1 --format="%h"', stdout=subprocess.PIPE, shell=True, encoding='utf-8').stdout.strip()
@@ -121,7 +114,7 @@ today = date.today().strftime('%Y-%m-%d')
 
 version = f'#{sha1}, {today}'
 release = f'#{sha1}, {today}'
-copyright = f'{year}, CC-BY-SA-4.0, {author} <{email}>, version: #{sha1}, last update: {today}'
+copyright = f'{year}, CC-BY-SA-4.0, {author} <{email}>, last update: {today}'
 
 html_show_sphinx = False
 html_use_smartypants = False
@@ -136,14 +129,12 @@ html_static_path = ['_static']
 if html_theme == 'sphinx_rtd_theme':
     html_context.update({
         'css_files': ['_static/screen.css', '_static/print.css'],
-        'script_files': ['_static/jquery.min.js', '_static/onload.js', mathjax_path],
-    })
+        'script_files': ['_static/jquery.min.js', '_static/onload.js', mathjax_path]})
 
 if html_theme == 'thesis':
     html_context.update({
         'css_files': ['_static/theme-overrides.css'],
-        'script_files': [mathjax_path],
-    })
+        'script_files': [mathjax_path]})
 
 latex_documents = [('index', f'{project_slug}.tex', project, author, latex_documentclass)]
 latex_elements = {
@@ -156,8 +147,7 @@ latex_elements = {
         \usepackage{float}
         \usepackage{etoolbox}
         \AtBeginEnvironment{figure}{\renewcommand{\phantomsection}{}}
-    """
-}
+    """}
 
 epub_title = project
 epub_author = author
