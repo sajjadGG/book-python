@@ -19,7 +19,7 @@ Author
     :align: left
     :scale: 39%
 
-.. csv-table:: Contact author
+.. csv-table::
     :widths: 15, 65
 
     "author", "`Matt Harasymczuk <https://www.astronaut.center>`_"
@@ -29,6 +29,24 @@ Author
     "linkedin", "https://linkedin.com/in/mattharasymczuk"
     "facebook", "https://facebook.com/matt.harasymczuk"
     "slideshare", "https://www.slideshare.net/astrotech/presentations"
+
+
+Progress
+========
+.. csv-table::
+    :widths: 50, 10, 10, 10, 10, 10
+    :header: "Chapter", "Structure", "Code Examples", "Assignments", "TL;DR", "Text"
+
+    "Python Basics",                    "100%", "100%", "100%", "100%", "10%"
+    "Python Standard Library",          "100%", "75%",  "75%",  "75%",  "10%"
+    "Python Advanced",                  "100%", "90%",  "90%",  "100%", "10%"
+    "Dragon",                           "100%", "100%", "100%", "100%", "100%"
+    "Design Patterns",                  "66%",  "50%",  "50%",  "66%",  "0%"
+    "CI/CD and Quality",                "75%",  "66%",  "33%",  "50%",  "0%"
+    "Network and Http",                 "75%",  "66%",  "33%",  "50%",  "0%"
+    "Django",                           "75%",  "66%",  "33%",  "50%",  "0%"
+    "Numerical Analysis, Data Science", "80%",  "80%",  "80%",  "80%",  "10%"
+    "Machine Learning",                 "75%",  "50%",  "25%",  "50%",  "50%"
 
 
 Other Books from Author
