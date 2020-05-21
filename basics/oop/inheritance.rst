@@ -278,7 +278,7 @@ Multiple Inheritance
         pass
 
 
-Calling parent methods
+Calling Parent Methods
 ======================
 .. code-block:: python
 

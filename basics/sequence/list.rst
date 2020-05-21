@@ -235,8 +235,8 @@ Method Chaining
     # [1, 2, 3, 4]
 
 
-Built-in Sequences Functions
-============================
+Built-in Functions
+==================
 .. highlights::
     * ``min()`` - Minimal value
     * ``max()`` - Maximal value

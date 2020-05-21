@@ -15,7 +15,7 @@ Pair
     # {'commander': 'Melissa Lewis'}
 
 
-List of pairs
+List of Pairs
 =============
 .. code-block:: python
 

@@ -35,8 +35,8 @@ Definition
     lambda x,y: x+y
 
 
-Naming Convention
-=================
+Convention
+==========
 .. highlights::
     * Usually parameters are named ``x`` and ``y``
     * Use shortest code possible

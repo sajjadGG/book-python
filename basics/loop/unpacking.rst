@@ -16,8 +16,8 @@ Recap
     key, value = (1, 2)
 
 
-List of pairs
-=================
+List of Pairs
+=============
 .. code-block:: python
     :caption: Unpacking values in loop
 
@@ -35,7 +35,7 @@ List of pairs
     # c -> 3
 
 
-List of sequence
+List of Sequence
 ================
 .. code-block:: python
 

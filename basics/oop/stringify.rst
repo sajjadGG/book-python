@@ -177,7 +177,6 @@ Format
     print(f'Duration was {duration:hours} hour')        # Duration was 1.0 hour
     print(f'Duration was {duration:days} day')          # Duration was 0.04 day
 
-
 .. code-block:: python
 
     class Temperature:

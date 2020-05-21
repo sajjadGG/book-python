@@ -206,8 +206,8 @@ Unions
     ]
 
 
-New Features
-============
+Future
+======
 .. versionadded:: Python 3.9
     :pep:`585` Will be possible to use ``list[int]``, ``set[int]`` etc without importing from ``typing``
 

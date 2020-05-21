@@ -47,7 +47,7 @@ Errors
     # ValueError: not enough values to unpack (expected 4, got 3)
 
 
-Arbitrary number of arguments
+Arbitrary Number of Arguments
 =============================
 .. code-block:: python
     :caption: Unpacking values at the right side
@@ -109,8 +109,8 @@ Nested
     c               # 3
 
 
-Naming convention
-=================
+Convention
+==========
 .. code-block:: python
 
     first, *middle, last = [1, 2, 3, 4]

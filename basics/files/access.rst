@@ -69,7 +69,7 @@ Read
         data = file.read()
 
 
-Exception handling
+Exception Handling
 ==================
 .. code-block:: python
 

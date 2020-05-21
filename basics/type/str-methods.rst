@@ -57,6 +57,7 @@ Change Case
     name.title()       # 'Angus Macgyver'
     name.capitalize()  # 'Angus macgyver'
 
+
 Replace
 =======
 .. code-block:: python
@@ -106,6 +107,7 @@ Split by Line
     #   'Second Line',
     #   'Third Line'
     # ]
+
 
 Split by Character
 ==================
@@ -182,7 +184,7 @@ Is Alphabet Characters
     'hello1'.isalpha()  # False
 
 
-Find Sub-string Position
+Find Sub-String Position
 ========================
 .. code-block:: python
 

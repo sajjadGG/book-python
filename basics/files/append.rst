@@ -16,7 +16,7 @@ Rationale
     * ``.writelines()`` does not add a line separator!!
 
 
-Appending to file
+Appending to File
 =================
 .. highlights::
     * Append to the end of file

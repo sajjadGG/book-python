@@ -34,8 +34,8 @@ Definition
     say_hello()     # My name... José Jiménez
 
 
-Naming convention
-=================
+Convention
+==========
 .. highlights::
     * Do not use ``camelCase`` names
     * ``CamelCase`` is reserved for class names

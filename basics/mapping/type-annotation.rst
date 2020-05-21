@@ -123,8 +123,8 @@ Typed Dict
     pt2 = Point(x=1, y=2, z=0)              # Error
 
 
-New Features
-============
+Future
+======
 .. versionadded:: Python 3.9
     :pep:`585` Will be possible to use ``dict[str, int]``, ``dict[str, list[float]]`` etc without importing from ``typing``
 

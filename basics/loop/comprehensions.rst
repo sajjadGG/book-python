@@ -26,8 +26,8 @@ Syntax
     result = [<RETURN> for <VARIABLE> in <ITERABLE>]
 
 
-Naming Convention
-=================
+Convention
+==========
 .. highlights::
     * Use shorter variable names
     * ``x`` is common name
@@ -254,8 +254,8 @@ Conditional Comprehension
     # ]
 
 
-Applying function
-=================
+Apply Function
+==============
 .. code-block:: python
     :caption: Applying function to each output element
 

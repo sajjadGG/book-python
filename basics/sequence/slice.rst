@@ -111,9 +111,10 @@ Backwards
     text[-5:5]      # ''
 
 
-Every ``n-th``
-==============
+Step
+====
 .. highlights::
+    * Every ``n``-th element
     * ``my_sequence[start:stop:step]``
 
 .. code-block:: python
@@ -168,8 +169,8 @@ Index Arithmetic
     text[first-1:last:step]     # 'eoh'
 
 
-Slice Nested Sequences
-======================
+Nested Sequences
+================
 .. code-block:: python
 
     data = [

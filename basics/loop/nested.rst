@@ -19,8 +19,8 @@ Syntax
     # <obj>
     # <obj>
 
-Naming Convention
-=================
+Convention
+==========
 * ``row`` - best for nested loops with sequence inside
 * Conventions for rows and columns:
 
@@ -72,8 +72,8 @@ Examples
     # 7, 8, 9,
 
 
-Nested sequence of objects of one type
-======================================
+Nested Sequence with One Type
+=============================
 .. code-block:: python
     :caption: Iterating over sequence
 
@@ -131,8 +131,8 @@ Nested sequence of objects of one type
     # (6.3, 2.9, 5.6, 1.8, 'virginica')
 
 
-Nested sequence of objects of many types
-========================================
+Nested Sequence with Many Types
+===============================
 .. code-block:: python
     :caption: Iterating over ``list`` with scalar and vector values - simple loop
 
@@ -191,8 +191,8 @@ Nested sequence of objects of many types
     # None
 
 
-Enumerating and item index
-==========================
+Enumerate
+=========
 .. code-block:: python
     :caption: Enumerating and item index
 

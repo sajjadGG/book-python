@@ -59,7 +59,7 @@ Rationale
     # Point(x=1, y=2, z=3)
 
 
-Methods without arguments
+Methods Without Arguments
 =========================
 .. code-block:: python
     :caption: Methods without arguments
@@ -74,7 +74,7 @@ Methods without arguments
     # My name... José Jiménez
 
 
-Methods with required argument
+Methods With Required Argument
 ==============================
 .. code-block:: python
     :caption: Methods with required argument
@@ -96,8 +96,8 @@ Methods with required argument
     # TypeError: say_hello() missing 1 required positional argument: 'name'
 
 
-Methods with optional argument (default value)
-==============================================
+Methods With Optional Argument
+==============================
 .. code-block:: python
     :caption: Methods with arguments with default value
 

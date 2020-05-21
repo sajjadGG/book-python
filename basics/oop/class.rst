@@ -121,8 +121,8 @@ Class vs Instance
     Intuition definition: Class is a blueprint, instances are homes made from this plan. Image source: :cite:`FigureBlueprintHouse`
 
 
-Good engineering practices
-==========================
+Convention
+==========
 .. highlights::
     * Never print in a class
     * One class per file - when classes are long

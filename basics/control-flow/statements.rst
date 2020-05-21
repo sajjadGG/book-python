@@ -5,7 +5,7 @@ Conditional Statements
 **********************
 
 
-Positive and negative values
+Positive and Negative Values
 ============================
 .. highlights::
     Negative values:

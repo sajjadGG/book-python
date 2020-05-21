@@ -153,7 +153,7 @@ Dynamic Attributes
     # AttributeError: 'Astronaut' object has no attribute 'name'
 
 
-Get all dynamic attributes and values
+Get All Dynamic Attributes and Values
 =====================================
 * ``obj.__dict__``
 

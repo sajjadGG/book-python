@@ -17,7 +17,7 @@ Rationale
         * Network or database connection could not be established
 
 
-Most common exceptions
+Most Common Exceptions
 ======================
 .. code-block:: python
     :caption: ``AttributeError`` - Attribute reference or assignment fails
@@ -143,7 +143,7 @@ Most common exceptions
     # ValueError: invalid literal for int() with base 10: 'a'
 
 
-Exception hierarchy
+Exception Hierarchy
 ===================
 .. code-block:: text
 
@@ -212,7 +212,7 @@ Exception hierarchy
                +-- ResourceWarning
 
 
-Raising exceptions
+Raising Exceptions
 ==================
 .. code-block:: python
     :caption: Raise Exception without message
@@ -233,7 +233,7 @@ Raising exceptions
     # RuntimeError: Some message
 
 
-Use case
+Use Case
 ========
 .. code-block:: python
     :emphasize-lines: 5
@@ -304,7 +304,7 @@ Assertion
     # AssertionError: Python 3.8+ required.
 
 
-Traceback analysis
+Traceback Analysis
 ==================
 .. highlights::
     * Stacktrace is 8 levels deep, it's not Java's 200 ;)
@@ -383,7 +383,7 @@ Change Verbosity Level
     # RuntimeError: Oxygen tank explosion
 
 
-Catching exceptions
+Catching Exceptions
 ===================
 .. highlights::
     * ``try``
@@ -520,7 +520,7 @@ Else and Finally
     # Returning safely to the Earth
 
 
-Always catch exceptions!
+Always Catch Exceptions!
 ========================
 * ``Ctrl-C`` raises ``KeyboardInterrupt``
 
@@ -545,7 +545,7 @@ Always catch exceptions!
             continue
 
 
-Defining own exceptions
+Defining Own Exceptions
 =======================
 * class which inherits from ``Exception``
 

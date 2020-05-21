@@ -43,7 +43,7 @@ Syntax
         print(f'Program selected. Noun: {noun:02}, verb: {verb:02}')
 
 
-Running tests
+Running Tests
 =============
 #. Note, that doctests are not discovered in scratch files in PyCharm
 #. Running tests in Pycharm IDE (either option):
@@ -68,7 +68,7 @@ Running tests
         $ python -m doctest -v example.py
 
 
-Test int, float
+Test Int, Float
 ===============
 .. code-block:: python
     :caption: ``int`` values
@@ -101,7 +101,7 @@ Test int, float
         return a + b
 
 
-Test bool
+Test Bool
 =========
 .. code-block:: python
 
@@ -124,7 +124,7 @@ Test bool
             return False
 
 
-Test str
+Test Str
 ========
 .. highlights::
     * Python will change to single quotes in most cases

@@ -19,8 +19,8 @@ Syntax
         <do something>
 
 
-Naming Convention
-=================
+Convention
+==========
 * The longer the loop scope, the longer the variable name should be
 * Avoid one letters if scope is longer than one line
 * Generic names:
@@ -88,7 +88,7 @@ Use Cases
     # Fuel leak detected. Abort, Abort, Abort!
 
 
-Force exit the loop
+Force Exit the Loop
 ===================
 .. code-block:: python
     :caption: Force exit the loop using ``break`` keyword
@@ -123,7 +123,7 @@ Force exit the loop
             break
 
 
-Force skip iteration
+Force Skip Iteration
 ====================
 .. highlights::
     * if ``continue`` is encountered, it will jump to next loop iteration

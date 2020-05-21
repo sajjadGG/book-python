@@ -11,7 +11,7 @@ Initializer Method
     * ``__init__()`` is not a constructor!
 
 
-Initializer method without arguments
+Initializer Method Without Arguments
 ====================================
 .. code-block:: python
     :caption: Initializer method without arguments
@@ -25,7 +25,7 @@ Initializer method without arguments
     # My name... José Jiménez
 
 
-Initializer method with arguments
+Initializer Method With Arguments
 =================================
 .. code-block:: python
     :caption: Initializer method with arguments
@@ -242,7 +242,7 @@ Initializing Attributes
     #  'species': 'virginica'}
 
 
-Checking values
+Checking Values
 ===============
 .. code-block:: python
 

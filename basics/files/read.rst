@@ -15,7 +15,7 @@ Rationale
     * ``mode`` parameter to ``open()`` function is optional (defaults to ``mode='rt'``)
 
 
-Read from file
+Read From File
 ==============
 .. highlights::
     * Always remember to close file
@@ -29,7 +29,7 @@ Read from file
     file.close()
 
 
-Read using context manager
+Read Using Context Manager
 ==========================
 .. highlights::
     * Context managers use ``with ... as ...:`` syntax
@@ -45,7 +45,7 @@ Read using context manager
         data = file.read()
 
 
-Read file at once
+Read File at Once
 =================
 .. highlights::
     * Note, that whole file must fit into memory
@@ -58,7 +58,7 @@ Read file at once
         data = file.read()
 
 
-Read file as list of lines
+Read File as List of Lines
 ==========================
 .. highlights::
     * Note, that whole file must fit into memory
@@ -99,7 +99,7 @@ Read file as list of lines
             print(line)
 
 
-Reading file as generator
+Reading File as Generator
 =========================
 .. highlights::
     * Use generator to iterate over other lines

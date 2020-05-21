@@ -10,7 +10,7 @@ Rationale
 .. highlights::
     * Never hardcode paths (put path directly to open function)
     * Use constant as a file name or file path
-    * Naming convention ``FILE``, ``FILENAME``, ``FILEPATH``, ``PATH``
+    * Convention ``FILE``, ``FILENAME``, ``FILEPATH``, ``PATH``
     * Or their respective plural forms for multiple files
     * Note, that ``PATH`` is usually used for other purposes (``sys.path`` or ``os.getenv('PATH')``)
     * Always use raw-strings ``r"..."``
@@ -20,7 +20,7 @@ Rationale
     * In newer Windows versions both ``\`` and ``/`` works
 
 
-Absolute path
+Absolute Path
 =============
 .. highlights::
     * Absolute path on Windows starts with drive letter
@@ -36,7 +36,7 @@ Absolute path
     FILE = r'/tmp/myfile.txt'
 
 
-Relative path
+Relative Path
 =============
 .. highlights::
     * Path is relative to currently running script
@@ -58,7 +58,7 @@ Relative path
     FILE = r'../../tmp/myfile.txt'
 
 
-Escaping characters in path
+Escaping Characters in Path
 ===========================
 .. highlights::
     * "\\ " (slash space) - escapes space
@@ -83,8 +83,8 @@ Escaping characters in path
     # Success!
 
 
-Current script path
-===================
+Script Path
+===========
 .. highlights::
     * Returns an absolute path to currently running script
 
@@ -94,7 +94,7 @@ Current script path
     # /home/python/myscript.py
 
 
-Convert relative path to absolute
+Convert Relative Path to Absolute
 =================================
 .. highlights::
     * ``os.path.join()`` - adds OS dependent directory separator

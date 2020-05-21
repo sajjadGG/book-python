@@ -19,8 +19,8 @@ Syntax
         <do something>
 
 
-Naming Convention
-=================
+Convention
+==========
 * The longer the loop scope, the longer the variable name should be
 * Avoid one letters if scope is longer than one line
 * Prefer locally meaningfull name over generic names
@@ -49,7 +49,7 @@ Naming Convention
     * ``i`` - for loop counter
 
 
-Iterating sequences
+Iterating Sequences
 ===================
 .. code-block:: python
     :caption: Iterating over ``str`` will get character on each iteration
@@ -499,5 +499,5 @@ Loop For Text
     * String splitting
     * Calculating lengths
     * Iterating over string
-    * Variable naming convention
+    * Naming convention
     * Good variable names

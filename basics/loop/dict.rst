@@ -123,8 +123,8 @@ Iterate Key-Value Pairs
     # Species -> setosa
 
 
-Generate Dict with Range
-========================
+Generate with Range
+===================
 .. highlights::
     * ``range()``
     * Pythonic way is to use ``zip()``
@@ -151,8 +151,8 @@ Generate Dict with Range
     #   'Species': 'setosa',
     # }
 
-Generate Dict with Enumerate
-============================
+Generate with Enumerate
+=======================
 .. highlights::
     * ``enumerate()``
     * ``_`` regular variable name (not a special syntax)
@@ -178,8 +178,8 @@ Generate Dict with Enumerate
     # }
 
 
-Generate Dict with Zip
-======================
+Generate with Zip
+=================
 .. highlights::
     * ``zip()``
     * The most Pythonic way

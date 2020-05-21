@@ -135,7 +135,7 @@ Contains
     'agency' not in data            # True
 
 
-Operator precedence
+Operator Precedence
 ===================
 .. csv-table:: Operator precedence
     :header-rows: 1

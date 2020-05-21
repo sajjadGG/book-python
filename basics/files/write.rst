@@ -15,7 +15,7 @@ Rationale
     * ``mode`` parameter to ``open()`` function is required
 
 
-Write to file
+Write to File
 =============
 .. highlights::
     * Always remember to close file
@@ -30,7 +30,7 @@ Write to file
     file.close
 
 
-Write one line
+Write One Line
 ==============
 .. code-block:: python
 
@@ -41,7 +41,7 @@ Write one line
         file.write(DATA)
 
 
-Write multiple lines
+Write Multiple Lines
 ====================
 .. highlights::
     * Write a list of lines to the file.
@@ -63,7 +63,7 @@ Write multiple lines
         file.writelines(data)
 
 
-Write non-str data
+Write Non-Str Data
 ==================
 .. highlights::
     * Join works only for strings
@@ -83,7 +83,7 @@ Write non-str data
 .. note:: When writing output to the stream, if newline is ``None``, any ``'\n'`` characters written are translated to the system default line separator, ``os.linesep``. If newline is ``''`` or ``'\n'``, no translation takes place. If newline is any of the other legal values, any ``'\n'`` characters written are translated to the given string. Source: https://docs.python.org/3/library/io.html#io.TextIOWrapper
 
 
-Reading from one file and writing to another
+Reading From One File and Writing to Another
 ============================================
 .. code-block:: python
 
