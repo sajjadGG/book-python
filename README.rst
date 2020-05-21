@@ -1,5 +1,5 @@
 #######################################
-Python 3: from None to Machine Learning
+Python 3: From None to Machine Learning
 #######################################
 
 
@@ -31,9 +31,7 @@ Author
     "slideshare", "https://www.slideshare.net/astrotech/presentations"
 
 
-Progress
-========
-.. csv-table::
+.. csv-table:: Python: From None to Machine Learning writing progress
     :widths: 50, 10, 10, 10, 10, 10
     :header: "Chapter", "Structure", "Code Examples", "Assignments", "TL;DR", "Text"
 
@@ -48,12 +46,7 @@ Progress
     "Numerical Analysis, Data Science", "80%",  "80%",  "80%",  "80%",  "10%"
     "Machine Learning",                 "75%",  "50%",  "25%",  "50%",  "50%"
 
-
-Other Books from Author
-=======================
-* More information at https://www.astronaut.center/books
-
-.. csv-table::
+.. csv-table:: Other Books from Author. More information at https://www.astronaut.center/books
     :widths: 25, 20, 55
     :header: "ISBN", "Online Access", "Title"
 

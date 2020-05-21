@@ -1,4 +1,4 @@
-project = 'Python 3: from None to Machine Learning'
+project = 'Python 3: From None to Machine Learning'
 author = 'Matt Harasymczuk'
 email = 'book-python@astronaut.center'
 
@@ -25,7 +25,6 @@ suppress_warnings = [
     'autosectionlabel.*',
 ]
 
-latex_documentclass = 'report'
 # article - for articles in scientific journals, presentations, short reports, program documentation, invitations, etc
 # proc - a class for proceedings based on the article class.
 # minimal - is as small as it can get. It only sets a page size and a base font. It is mainly used for debugging purposes.
@@ -35,6 +34,7 @@ latex_documentclass = 'report'
 # memoir - for changing sensibly the output of the document. It is based on the book class, but you can create any kind of document with it (1)
 # letter - For writing letters.
 # beamer - For writing presentations (see LaTeX/Presentations).
+latex_documentclass = 'report'
 
 
 # -- Standard book config -----------------------------------------------------
