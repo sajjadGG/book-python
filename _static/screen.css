@@ -17,7 +17,7 @@
     body {color: var(--text)}
 
     /* RTD theme's default is 800px as max width for the content */
-    .wy-nav-content {max-width: 1000px}
+    .wy-nav-content {max-width: 1100px}
     .wy-nav-content-wrap {background: none}
 
     /* hide double entries on main page toc-tree */
