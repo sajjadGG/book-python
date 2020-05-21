@@ -62,6 +62,7 @@ Day 3
     "45 min", "Loop Dict"
     "45 min", "Comprehensions"
 
+
 Day 4
 =====
 .. csv-table::
@@ -78,6 +79,7 @@ Day 4
     "60 min", "Function Lambda"
     "60 min", "Function Generator"
     "20 min", "Function Type Annotation"
+
 
 Day 5
 =====

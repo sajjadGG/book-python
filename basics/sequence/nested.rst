@@ -128,7 +128,7 @@ List of Lists
     # 3
 
 
-Many types
+Many Types
 ==========
 .. code-block:: python
     :caption: Get elements from union

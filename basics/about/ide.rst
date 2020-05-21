@@ -20,7 +20,7 @@ What is IDE?
 * Jump to line in exceptions
 
 
-How to choose?
+How to Choose?
 ==============
 * Nie ma znaczenia z jakiego IDE skorzystasz!
 * Do edycji skryptów Pythona wystarczy sam Notatnik lub Jupyter
@@ -30,7 +30,7 @@ How to choose?
 * Ciekawą alternatywą może być PyDev - plugin do środowiska Eclipse
 
 
-Which one is the best?
+Which One is the Best?
 ======================
 #. `PyCharm Professional <https://www.jetbrains.com/pycharm/download/>`_ (Not-free)
 #. `PyCharm Community <https://www.jetbrains.com/pycharm/download/>`_
@@ -44,7 +44,7 @@ Which one is the best?
 .. note:: This are my preferences. Choosing best IDE is very opinionated.
 
 
-Keyboard shortcuts
+Keyboard Shortcuts
 ==================
 .. csv-table:: PyCharm Keyboard shortcuts
     :header-rows: 1
