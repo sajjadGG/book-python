@@ -49,7 +49,7 @@
     .wy-side-nav-search input[type=text] {border: none !important; border-radius: 0}
 
     /* left vertical menu */
-    .wy-nav-side {background: var(--menu-background)}
+    .wy-nav-side {background: var(--menu-background); width: 300px;}
     .wy-nav-side a {color: var(--menu-header) !important}
     .wy-nav-side a:before {content: none !important}
 
