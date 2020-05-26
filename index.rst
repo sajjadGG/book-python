@@ -8,6 +8,7 @@ About
     :maxdepth: 1
 
     /LICENSE.rst
+    /PROGRESS.rst
     /about/references.rst
 
 *************
