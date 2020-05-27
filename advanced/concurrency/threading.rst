@@ -89,6 +89,7 @@ Async
 * Coding is easier to get right, than threads
 * Disadvantage: create event loop, acquire, crate non-blocking versions of your code
 * Disadvantage: You think you know Python, there is a second half to learn (async).
+* Async is the future of programming
 
 Threads vs processes
 --------------------
@@ -104,6 +105,29 @@ Threads vs Async
 * For complex systems, async is much easier to get right than threads with locks
 * Threads require very little tooling (locks and queues)
 * Async needs a great deal of tooling (futures, event loops, and non-blocking version of just about everything.
+
+Source: [Hettinger2017]_
+
+Context Switching
+-----------------
+* Za każdym razem kiedy robisz ``print()`` kod automatycznie wykonuje Context Switch
+
+Testing
+-------
+* In concurrent programs (threading, multiprocessing) testing can hide bugs and errors
+* Some lines of code works so fast, that it requires million runs to make errors to appear
+* But if you put ``sleep()`` than errors will show up
+* In Internet of Things (IoT) I'd prefer to stand in front of a car which has code written in async way, than a threaded way
+* Async is profoundly easier to debug and get it right
+
+Source: [Hettinger2017]_
+
+Rules
+-----
+#. If step A and B must be run sequentially, put them in the same thread
+#. If there is several parallel threads launched and you want to be sure that all are complete, just ``join()`` all of the threads. It's called "barrier". Example: Several programmers make improvements to the website, they has to merge their work, before releasing website to the public.
+#. Daemon thread is a service worker, a task which never suppose to finish (by infinite loop). Instead you ``join()`` on the queue itself. It waits until all the requested tasks are marked as being done. Example: a printer sits in the office, it waits for documents, when document arrives, printer prints it, and wait for another job, printer never finish
+
 
 Source: [Hettinger2017]_
 
@@ -123,6 +147,8 @@ Problemy z wątkami
 
 * Problem producenta i konsumenta
 * Problem czytelników i pisarzy
+
+
 
 ``threading``
 =============
