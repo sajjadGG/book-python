@@ -1,23 +1,28 @@
-**************
-Multithreading
-**************
+*********
+Threading
+*********
 
 
+.. glossary::
 
+    thread
+    lock
+    daemon
+    worker
+    timer
 
-``threading``
-=============
 
 ``daemon`` flag
----------------
+===============
 * https://stackoverflow.com/a/190017/228517
 
 Some threads do background tasks, like sending keepalive packets, or performing periodic garbage collection, or whatever. These are only useful when the main program is running, and it's okay to kill them off once the other, non-daemon, threads have exited.
 
 Without daemon threads, you'd have to keep track of them, and tell them to exit, before your program can completely quit. By setting them as daemon threads, you can let them run and forget about them, and when your program quits, any daemon threads are killed automatically.
 
+
 Delay execution
----------------
+===============
 * dlaczego nie ``time.sleep()``
 * rekurencyjny timer
 
@@ -38,9 +43,6 @@ Delay execution
 
     print('Main Thread')
 
-
-Recurrent timer
----------------
 .. code-block:: python
     :caption: Recurrent timer
 
@@ -59,7 +61,8 @@ Recurrent timer
 
     print('Main Thread')
 
-Tworzenie wątków
+
+Creating Threads
 ================
 .. code-block:: python
 
@@ -75,8 +78,8 @@ Tworzenie wątków
     t.start()
 
 
-Synchronizacja wątków
-=====================
+Thread Synchronisation
+======================
 .. code-block:: python
 
     from threading import Thread
@@ -145,10 +148,10 @@ Synchronizacja wątków
         thread.join()
 
 
-Zamykanie wątków
-================
+Joining Threads
+===============
 .. code-block:: python
-    :caption: Synchronizacja wątków
+    :caption: Joining Threads
 
     from queue import Queue
     from threading import Thread, Lock
@@ -207,10 +210,10 @@ Zamykanie wątków
         print(f'Exiting Main Thread')
 
 
-Workery
+Workers
 =======
 .. code-block:: python
-    :caption: Model Workerów
+    :caption: Worker model
 
     from queue import Queue
     from threading import Thread
@@ -246,6 +249,7 @@ Workery
 
         # wait to complete all tasks
         TODO.join()
+
 
 References
 ==========

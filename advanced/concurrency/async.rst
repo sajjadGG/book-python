@@ -4,10 +4,11 @@ Async Programming
 
 .. glossary::
 
-    Promises
-    Futures
-    Coroutines
-    Awaitable
+    promises
+    futures
+    coroutines
+    awaitable
+    queue
 
 
 Built-in Keywords
