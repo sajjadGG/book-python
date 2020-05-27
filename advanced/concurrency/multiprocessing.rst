@@ -3,6 +3,17 @@ Multiprocessing
 ***************
 
 
+.. glossary::
+
+    IPC
+        Inter Process Communication
+
+    Process
+    Daemon
+    Dead Lock
+    Race Condition
+    Starvation
+
 Problems
 ========
 * Zakleszczania

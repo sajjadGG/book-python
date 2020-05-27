@@ -2,16 +2,22 @@
 Async Programming
 *****************
 
-* Promises and Futures
+.. glossary::
+
+    Promises
+    Futures
+    Coroutines
+    Awaitable
+
+
+Built-in Keywords
+=================
 * ``yield from``
 * ``asyncio``
 * ``async``/``await``
-* Twisted, Tornado
-* Curio, Trio
 
-References
-==========
-* https://www.youtube.com/watch?v=Pe3b9bdRtiE
+* old fashion: Twisted, Tornado
+* Curio, Trio
 
 
 Async Programming
@@ -423,3 +429,8 @@ Unsync library
     @unsync
     def my_function():
         pass
+
+
+References
+==========
+* https://www.youtube.com/watch?v=Pe3b9bdRtiE

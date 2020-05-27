@@ -110,6 +110,7 @@ Concurrency
     :caption: Concurrency
     :name: Advanced Concurrency
 
+    concurrency/models.rst
     concurrency/queues.rst
     concurrency/threading.rst
     concurrency/multiprocessing.rst
