@@ -12,8 +12,8 @@ Threading
     timer
 
 
-``daemon`` flag
-===============
+Daemon
+======
 * https://stackoverflow.com/a/190017/228517
 
 Some threads do background tasks, like sending keepalive packets, or performing periodic garbage collection, or whatever. These are only useful when the main program is running, and it's okay to kill them off once the other, non-daemon, threads have exited.
