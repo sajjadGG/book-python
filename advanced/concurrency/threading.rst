@@ -3,8 +3,33 @@ Multithreading
 **************
 
 
-Threads vs processes
-====================
+Classification of concurrency problems
+======================================
+* Martelli Model of Scalability
+* 1 core: Single thread and single process
+* 2-8 cores: Multiple threads and multiple processes
+* 9+ cores: Distributed processing
+
+Martelli's observation: As time goes on, the second category becomes less common and relevant.
+Single cores become more powerful. Big datasets grow ever larger [to use 2-8 cores].
+
+Source: [Hettinger2017]_
+
+GIL
+===
+* Global Interpreter Lock
+* CPython has a lock for its internal shared global state
+* One lock insteads of hundreds smaller
+* The unfortunate effect of GIL is that no more than one thread can run at a time
+* For I/O bound applications, GIL doesn't present much of an issue
+* For CPU bound applications, using threads makes the application speed worse
+* Accordingly, that drives us to multiprocessing to gain more CPU cycles
+
+Source: [Hettinger2017]_
+
+
+Concurrency Models
+==================
 
 Process
 -------
@@ -14,6 +39,13 @@ Process
 #. Ile może być równoległych procesów?
 #. Co to jest ``nice``
 #. Jak komunikować się między procesami?
+
+#. Procesy są w pełni niezależne między sobą.
+#. Nie trzeba stawiać locków, bo nie wchodzą sobie w grę
+#. Działanie jednego nie wpływa na drugi
+#. Pamięć jest odseparowana
+#. Wadą procesów jest brak komunikacji (dlatego potrzebne są metody IPC, np. pickle)
+#. Bardzo duży koszt związany z komunikacją i serializacją
 
 Thread
 ------
@@ -25,6 +57,39 @@ Thread
 #. Jak komunikować się między wątkami?
 #. Czy współdzielenie pamięci przez wątki jest dobre czy złe?
 
+* Zaletą wątków jest to, że mają współdzielony stan
+* Jeden wątek może zapisać kod do pamięci a drugi odczytać bez narzutu komunikacyjnego
+* Wadą jest również współdzielony stan i race condition
+* Ideą wątków jest tani dostęp do współdzielonej pamięci, tylko trzeba wszędzie wstawiać locki
+* Run very fast, but hard to get correct
+* It's insanely difficult to create large multi-threaded programs with multiple locks
+* Even if you lock resource, there is no protection if other parts of the system do not even try to acquire the lock
+* Threads switch preemptively
+* Preemptively means that the thread manager decides to switch tasks for you (you don't have to explicitly say to do so). Programmer has to do very little.
+* This is convenient because you dont need to add explicit code to cause a task switch
+* The cost of this convenience is that you have to assume a switch can happen at any time
+* Accordingly, critical sections have to be a guarded with locks
+*The limit on threads is total CPU power minus the cost of tasks switches and synchronization overhead
+
+
+Source: [Hettinger2017]_
+
+Async
+-----
+* Disadvantage: Async switches cooperatively, so you do need to add explicit code ``yield`` or ``await`` to cause a task to switch.
+* Now you control when tasks switches occur, so locks and other synchronization are no longer needed.
+* Also, cost task switches is incredibly low. Calling a pure Python function has more overhead than restarting a generator or awaitable.
+* Function builds stack each time it's called, whereas async uses generators underneath, which already has stack created
+* This is the cheapest way to task switch
+* In terms of speed async servers blows threaded servers in means of thousands
+* This means that ``async`` is very cheap
+* Disadvantage: Everything you will do need a non-blocking version of just about everything you do (for example ``open()``)
+* Accordingly, the async world has a huge ecosystem of support tools.
+* Disadvantage: this increases the learning curve
+* Coding is easier to get right, than threads
+* Disadvantage: create event loop, acquire, crate non-blocking versions of your code
+* Disadvantage: You think you know Python, there is a second half to learn (async).
+
 Threads vs processes
 --------------------
 #. Czym się różnią wątki od procesów?
@@ -32,12 +97,22 @@ Threads vs processes
 #. Ile może być procesów przetwarzanych równolegle na procesorze czterordzeniowym (z i bez Hyper Threading)?
 #. Jak na wątki i procesy wpływa GIL?
 
+Threads vs Async
+----------------
+* Async maximizes CPU utilization because it has less overhead than threads.
+* Threading typically works with existing code and tools as long as locks are added around critical sections
+* For complex systems, async is much easier to get right than threads with locks
+* Threads require very little tooling (locks and queues)
+* Async needs a great deal of tooling (futures, event loops, and non-blocking version of just about everything.
+
+Source: [Hettinger2017]_
+
 
 Problemy z wątkami
 ==================
-* Zakleszczania
+* Dead Lock (Zakleszczania)
 * Race Condition
-* Głodzenie
+* Starvation (Głodzenie)
 * Problem 5 filozofów:
 
     * 5 filozofów (albo rozmyśla, albo je)
@@ -290,6 +365,10 @@ Workery
 
         # wait to complete all tasks
         TODO.join()
+
+References
+==========
+.. [Hettinger2017] Hettinger, Raymond. Keynote on Concurrency. PyBay 2017. https://youtu.be/9zinZmE3Ogk?t=1243
 
 
 Assignments
