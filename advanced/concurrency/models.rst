@@ -45,6 +45,7 @@ Process
 #. Wadą procesów jest brak komunikacji (dlatego potrzebne są metody IPC, np. pickle)
 #. Bardzo duży koszt związany z komunikacją i serializacją
 
+
 Thread
 ======
 #. Co to jest wątek?
@@ -139,6 +140,15 @@ Rules
 #. Never try to kill a thread from something external to that thread. You never know if that thread is holding a lock. Python doesn't provide direct mechanism for kill threads externally; however, you can do it using ctypes, but that is a recipe for a deadlock.
 #. Reason for threads is a shared state. When you have shared state, you've got race conditions. And you manage this race conditions through a locks. You acquire a lock, do stuff and release. What if you get killed, between acquire and release. You never know if this thread acquired a lock. If you kill it, it will become a deadlock for all other threads. That's the reason why there is no API for killing a thread.
 #. For large systems when you need to isolate parts of the running code, use processes, because you can kill them.
+
+Source: [Hettinger2017]_
+
+
+Locks
+=====
+* Locks don't lock anything. They are just flags and can be ignored. It is a cooperative tool, not an enforced tool
+* IIn general, locks should be considered a low level primitive that is difficult to reason about nontrivial examples. For more complex applications, you're almost always better of with using atomic message queues.
+* The more locks you acquire at one time, the more you loose the advantages of concurrency
 
 Source: [Hettinger2017]_
 
