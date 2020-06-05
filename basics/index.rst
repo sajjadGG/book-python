@@ -9,7 +9,6 @@ About
     about/survey.rst
     about/agenda.rst
     about/ide.rst
-    about/install.rst
     about/language.rst
     about/syntax.rst
     about/operators.rst
