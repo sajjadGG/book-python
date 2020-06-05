@@ -9,6 +9,7 @@ About
 
     /LICENSE.rst
     /PROGRESS.rst
+    /install.rst
     /about/references.rst
 
 *************
