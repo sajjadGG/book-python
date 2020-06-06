@@ -73,10 +73,20 @@ Round Number
     round(pi, 2)            # 3.14
     round(pi)               # 3
 
+.. code-block:: python
+    :caption: Rounds a number in print formatting
+
+    pi = 3.14159265359
+
     print(f'Pi number is {pi}')         # Pi number is 3.14159265359
     print(f'Pi number is {pi:f}')       # Pi number is 3.141593
     print(f'Pi number is {pi:.4f}')     # Pi number is 3.1416
     print(f'Pi number is {pi:.2f}')     # Pi number is 3.14
+
+.. code-block:: python
+
+    round(10.5)             # 10
+    round(10.51)            # 11
 
 
 Built-in Functions

@@ -169,18 +169,18 @@ Pyton Syntax
 * Solution: :download:`solution/about_syntax.py`
 
 :English:
-    #. Create Python script
-    #. At at top, add a multiline comment with program description (todo from this assignments)
+    #. Write a multiline comment with program description (todo from this assignments)
     #. Declare variable ``name`` and set its value to your name
     #. Add inline comment to variable declaration with text: "This is my name"
     #. Print "Hello World NAME", where NAME is your name (variable ``name``)
+    #. Use f-string
 
 :Polish:
-    #. Stwórz skrypt Python
-    #. Na górze pliku dodaj wieloliniowy komentarz z opisem programu (punkty do wykonania z tego zadania)
+    #. Napisz wieloliniowy komentarz z opisem programu (punkty do wykonania z tego zadania)
     #. Zadeklaruj zmienną ``name`` i ustaw jej wartość na Twoje imię
     #. Dodaj komentarz "inline" do zmiennej o treści: "This is my name"
     #. Wypisz "Hello World NAME", gdzie NAME to Twoje imię (zmienna ``name``)
+    #. Zastosuj f-string
 
 :The whys and wherefores:
     * Tworzenie skryptów Python
@@ -188,5 +188,3 @@ Pyton Syntax
     * Komentowanie kodu
     * Wyświetlanie wartości zmiennych
 
-:Hint:
-    * ``print()``
