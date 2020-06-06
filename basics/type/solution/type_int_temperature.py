@@ -1,15 +1,20 @@
 OFFSET = 273
 
 moon_day_celsius = 180
-moon_day_kelvin = OFFSET + moon_day_celsius
+moon_day_kelvin = moon_day_celsius + OFFSET
+
 moon_night_kelvin = 93
 moon_night_celsius = moon_night_kelvin - OFFSET
+
 mars_avg_celsius = -63
-mars_avg_kelvin = OFFSET + mars_avg_celsius
+mars_avg_kelvin = mars_avg_celsius + OFFSET
+
 mars_high_celsius = 20
-mars_high_kelvin = OFFSET + mars_high_celsius
+mars_high_kelvin = mars_high_celsius + OFFSET
+
 mars_low_kelvin = 120
 mars_low_celsius = mars_low_kelvin - OFFSET
+
 
 print(f'Moon day: {moon_day_kelvin}K, {moon_day_celsius}°C')        # Moon day: 453K, 180°C
 print(f'Moon night: {moon_night_kelvin}K, {moon_night_celsius}°C')  # Moon night: 93K, -180°C
