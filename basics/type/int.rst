@@ -70,12 +70,15 @@ Example
 * Solution: :download:`solution/type_int_example.py`
 
 :English:
-    #. Calculate how many bits is one Megabyte
-    #. How many times Megabyte is larger than Megabit?
+    #. File size is one megabyte
+    #. Calculate size in bits
+    #. Calculate size in megabits
+
 
 :Polish:
-    #. Oblicz ile bitów to jeden Megabajt
-    #. Ile razy Megabajt jest większy od Megabita?
+    #. Wielkość pliku to jeden megabajt
+    #. Oblicz wielkość w bitach
+    #. Oblicz wielkość w megabitach
 
 :Solution:
     .. literalinclude:: solution/type_int_example.py
