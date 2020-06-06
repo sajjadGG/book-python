@@ -180,7 +180,7 @@ Float Casting
         print(f'Kilometers: {...}')
         print(f'Miles: {...}')
         print(f'Nautical Miles: {...}')
-        print(f'm: {...}, km: {...}, mi: {...}, nm: {...}')
+        print(f'All: km: {...}, mi: {...}, nm: {...}')
 
 :Output:
     .. code-block:: text
@@ -188,8 +188,8 @@ Float Casting
         Meters: 1337
         Kilometers: 1.337
         Miles: 0.83
-        Nautical Miles: 0.72
-        All: 1337, 1, 0.8, 0.7
+        Nautical Miles: 0.722
+        m: 1337, km: 1, mi: 0.8, nm: 0.72
 
 :The whys and wherefores:
     * Defining constants and variables

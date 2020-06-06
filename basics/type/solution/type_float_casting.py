@@ -6,6 +6,6 @@ nm = m / 1852
 
 print(f'Meters: {m}')
 print(f'Kilometers: {km}')
-print(f'Miles: {mi:.2}')
-print(f'Nautical Miles: {nm:.2}')
-print(f'All: {m}, {int(km)}, {mi:.1}, {nm:.1}')
+print(f'Miles: {mi:.2f}')
+print(f'Nautical Miles: {nm:.3f}')
+print(f'All: km: {km:.0f}, mi: {mi:.1f}, nm: {nm:.2f}')
