@@ -65,8 +65,8 @@ Assignments
 Example
 -------
 * Complexity level: medium
-* Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
+* Lines of code to write: 9 lines
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/type_int_example.py`
 
 :English:
@@ -127,7 +127,7 @@ Int Ratio
 ---------
 * Complexity level: medium
 * Lines of code to write: 10 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 5 min
 * Solution: :download:`solution/type_int_ratio.py`
 
 :English:
@@ -154,7 +154,7 @@ Int Temperature
 ---------------
 * Complexity level: medium
 * Lines of code to write: 18 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 10 min
 * Solution: :download:`solution/type_int_temperature.py`
 
 :English:
