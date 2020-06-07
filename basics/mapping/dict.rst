@@ -28,7 +28,7 @@ Type Definition
     data = dict()
 
     data = {
-        0: 'Melissa Lewis'
+        0: 'Melissa Lewis',
         1: 'Mark Watney',
         2: 'Alex Vogel'}
 
@@ -390,6 +390,65 @@ Future
 ======
 .. versionadded:: Python 3.9
     :pep:`584` merge (``|``) and update (``|=``) operators have been added to the built-in dict class.
+
+.. code-block:: python
+
+    crew = {
+        'commander': 'Melissa Lewis',
+        'botanist': 'Mark Watney',
+        'chemist': 'Alex Vogel'}
+
+    new = {
+        'pilot': 'Rick Martinez',
+        'surgeon': 'Chris Beck',
+        'engineer': 'Beth Johanssen'}
+
+    everyone = crew | new
+
+    print(crew)
+    # {'commander': 'Melissa Lewis',
+    #  'botanist': 'Mark Watney',
+    #  'chemist': 'Alex Vogel'}
+
+    print(new)
+    # {'pilot': 'Rick Martinez',
+    #  'surgeon': 'Chris Beck',
+    #  'engineer': 'Beth Johanssen'}
+
+    print(everyone)
+    # {'commander': 'Melissa Lewis',
+    #  'botanist': 'Mark Watney',
+    #  'chemist': 'Alex Vogel',
+    #  'pilot': 'Rick Martinez',
+    #  'surgeon': 'Chris Beck',
+    #  'engineer': 'Beth Johanssen'}
+
+.. code-block:: python
+
+    crew = {
+        'commander': 'Melissa Lewis',
+        'botanist': 'Mark Watney',
+        'chemist': 'Alex Vogel'}
+
+    new = {
+        'pilot': 'Rick Martinez',
+        'surgeon': 'Chris Beck',
+        'engineer': 'Beth Johanssen'}
+
+    crew |= new
+
+    print(crew)
+    # {'commander': 'Melissa Lewis',
+    #  'botanist': 'Mark Watney',
+    #  'chemist': 'Alex Vogel',
+    #  'pilot': 'Rick Martinez',
+    #  'surgeon': 'Chris Beck',
+    #  'engineer': 'Beth Johanssen'}
+
+    print(new)
+    # {'pilot': 'Rick Martinez',
+    #  'surgeon': 'Chris Beck',
+    #  'engineer': 'Beth Johanssen'}
 
 
 Assignments

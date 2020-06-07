@@ -503,29 +503,34 @@ Slice Text
     #. Użyj tylko ``slice`` do oczyszczenia tekstu
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
+:Example:
+    .. code-block:: python
+
+        example = 'lt. Mark Watney, PhD'
+        example[4:-5]
+        # 'Mark Watney'
+
 :Input:
     .. code-block:: python
 
-        a = 'lt. Mark Watney'
-        b = 'lt. col. Jan Twardowski\t'
-        c = 'dr hab. inż. Jan Twardowski, prof. LAW'
-        d = 'gen. pil. Jan Twardowski'
-        e = 'Mark Watney, PhD'
-        f = 'lt. col. ret. Melissa Lewis'
-        g = 'dr n. med. Ryan Stone'
-        h = 'Ryan Stone, MD-PhD'
+        a = 'dr hab. inż. Jan Twardowski, prof. AATC'
+        b = 'gen. pil. Jan Twardowski'
+        c = 'Mark Watney, PhD'
+        d = 'lt. col. ret. Melissa Lewis'
+        e = 'dr n. med. Ryan Stone'
+        f = 'Ryan Stone, MD-PhD'
+        g = 'lt. col. Jan Twardowski\t'
 
 :Output:
     .. code-block:: python
 
-        a = 'Mark Watney'
-        b = 'Jan Twardowski'
-        c = 'Jan Twardowski'
-        d = 'Jan Twardowski'
-        e = 'Mark Watney'
-        f = 'Melissa Lewis'
-        g = 'Ryan Stone'
-        h = 'Ryan Stone'
+        b == 'Jan Twardowski'       # True
+        c == 'Jan Twardowski'       # True
+        d == 'Mark Watney'          # True
+        e == 'Melissa Lewis'        # True
+        f == 'Ryan Stone'           # True
+        g == 'Ryan Stone'           # True
+        h == 'Jan Twardowski'       # True
 
 :The whys and wherefores:
     * Variable definition
