@@ -147,12 +147,12 @@ Negation
 Assignments
 ===========
 
-Classification of blood pressure in adults
-------------------------------------------
+Conditional Expression
+----------------------
 * Complexity level: medium
 * Lines of code to write: 25 lines
 * Estimated time of completion: 25 min
-* Solution: :download:`solution/conditional_nested.py`
+* Solution: :download:`solution/conditional_expression.py`
 
 :English:
     #. Use data from "Input" section (see below)

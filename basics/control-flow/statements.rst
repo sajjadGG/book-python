@@ -320,12 +320,12 @@ Switch
 Assignments
 ===========
 
-Conditioning on user input
---------------------------
+Conditional Statements
+----------------------
 * Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 3 min
-* Solution: :download:`solution/conditional_ifelse.py`
+* Solution: :download:`solution/conditional_statements.py`
 
 :English:
     #. Ask user to input age

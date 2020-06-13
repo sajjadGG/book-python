@@ -1,8 +1,8 @@
 .. _Conditional Operators:
 
-*********
-Operators
-*********
+*********************
+Conditional Operators
+*********************
 
 
 Comparision
@@ -170,8 +170,8 @@ Operator Precedence
 Assignments
 ===========
 
-Is even number
---------------
+Conditional Operators Modulo
+----------------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 3 min

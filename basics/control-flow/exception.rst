@@ -648,7 +648,7 @@ Example
     .. literalinclude:: solution/exception_example.py
         :language: python
 
-Raise Exception
+Exception Raise
 ---------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
@@ -665,7 +665,7 @@ Raise Exception
     #. Jeżeli użytkownik ma mniej niż 18 lat
     #. Wyrzuć wyjątek ``PermissionError`` z komunikatem "Adults only"
 
-Catch Exception
+Exception Catch
 ---------------
 * Complexity level: easy
 * Lines of code to write: 6 lines
@@ -684,7 +684,7 @@ Catch Exception
     #. Wypisz "Invalid temperature" jak nie można rzutować do ``float``
     #. Wypisz temperaturę
 
-Define Exception
+Exception Define
 ----------------
 * Complexity level: easy
 * Lines of code to write: 6 lines
