@@ -51,6 +51,17 @@ If
         print('Third line of the true statement')
 
 .. code-block:: python
+    :caption: Multiline blocks
+
+    if True:
+        print('First line of the true statement')
+        print('Second line of the true statement')
+
+        if True:
+            print('First line of inner true statement')
+
+
+.. code-block:: python
     :caption: Checking for simple value
 
     age = 7
@@ -250,8 +261,8 @@ Elif
 
 .. code-block:: python
 
-    language = input('What is your name?: ')
-    # What is your name?: Polish<ENTER>
+    language = input('What is your language?: ')
+    # What is your language?: Polish<ENTER>
 
     if language == 'English':
         print('Hello')
@@ -284,8 +295,8 @@ Switch
         'default': "I don't speak this language"}
 
 
-    language = input('What is your name?: ')
-    # What is your name?: French<ENTER>
+    language = input('What is your language?: ')
+    # What is your language?: French<ENTER>
 
     switch.get(language, switch['default'])
     # "I don't speak this language"
@@ -313,7 +324,7 @@ Conditioning on user input
 --------------------------
 * Complexity level: easy
 * Lines of code to write: 6 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/conditional_ifelse.py`
 
 :English:

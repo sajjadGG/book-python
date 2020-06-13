@@ -123,16 +123,16 @@ Contains
 
 .. code-block:: python
 
-    data = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski',
-    }
+    crew = {
+        'commander': 'Melissa Lewis',
+        'botanist': 'Mark Watney',
+        'chemist': 'Alex Vogel'}
 
-    'first_name' in data            # True
-    'agency' in data                # False
+    'commander' in crew             # True
+    'pilot' in data                 # False
 
-    'first_name' not in data        # False
-    'agency' not in data            # True
+    'commander' not in crew         # False
+    'pilot' not in crew             # True
 
 
 Operator Precedence
@@ -174,7 +174,7 @@ Is even number
 --------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/conditional_operators_modulo.py`
 
 :English:

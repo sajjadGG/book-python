@@ -248,11 +248,12 @@ Use Case
     # ValueError: Kelvin temperature cannot be negative
 
 .. code-block:: python
-    :emphasize-lines: 4,7
 
     def convert(temperature):
+
         if type(temperature) not in {float, int}:
             raise TypeError('Temperature must be int or float')
+
         if temperature < 0:
             raise ValueError('Kelvin temperature cannot be negative')
 
@@ -393,7 +394,7 @@ Catching Exceptions
 
 .. code-block:: python
     :caption: Catch single exception
-    :emphasize-lines: 7
+    :emphasize-lines: 7-8
 
     def apollo13():
         raise RuntimeError('Oxygen tank explosion')
@@ -408,7 +409,7 @@ Catching Exceptions
 
 .. code-block:: python
     :caption: Catch many exceptions with the same handling
-    :emphasize-lines: 7
+    :emphasize-lines: 7-8
 
     def apollo13():
         raise RuntimeError('Oxygen tank explosion')
@@ -423,7 +424,7 @@ Catching Exceptions
 
 .. code-block:: python
     :caption: Catch many exceptions with different handling
-    :emphasize-lines: 5,8
+    :emphasize-lines: 4-7
 
     try:
         with open(r'/tmp/my-file.txt') as file:
@@ -494,7 +495,7 @@ Else and Finally
     # Returning safely to the Earth
 
 .. code-block:: python
-    :emphasize-lines: 11,13,15,17
+    :emphasize-lines: 11-18
 
     def apollo11():
         print('Program P63 - Landing Manoeuvre Approach Phase')
@@ -526,7 +527,7 @@ Always Catch Exceptions!
 
 .. code-block:: python
     :caption: User cannot simply kill program with ``Ctrl-C``
-    :emphasize-lines: 3
+    :emphasize-lines: 4
 
     while True:
         try:
