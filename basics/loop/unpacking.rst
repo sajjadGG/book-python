@@ -76,9 +76,9 @@ List of Sequence
     ]
 
     for row in DATA:
-        featuers = row[0:4]
+        features = row[0:4]
         label = row[4]
-        print(f'{label} -> {featuers}')
+        print(f'{label} -> {features}')
 
     # setosa -> (5.1, 3.5, 1.4, 0.2)
     # versicolor -> (5.7, 2.8, 4.1, 1.3)
@@ -93,8 +93,8 @@ List of Sequence
     ]
 
     for row in DATA:
-        *featuers, label = row
-        print(f'{label} -> {featuers}')
+        *features, label = row
+        print(f'{label} -> {features}')
 
     # setosa -> [5.1, 3.5, 1.4, 0.2]
     # versicolor -> [5.7, 2.8, 4.1, 1.3]
@@ -108,8 +108,8 @@ List of Sequence
         (6.3, 2.9, 5.6, 1.8, 'virginica'),
     ]
 
-    for *featuers, label in DATA:
-        print(f'{label} -> {featuers}')
+    for *features, label in DATA:
+        print(f'{label} -> {features}')
 
     # setosa -> [5.1, 3.5, 1.4, 0.2]
     # versicolor -> [5.7, 2.8, 4.1, 1.3]

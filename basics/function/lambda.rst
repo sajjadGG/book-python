@@ -50,8 +50,8 @@ Convention
 .. code-block:: python
     :caption: Lambda is anonymous function and it should stay anonymous. Do not name it.
 
-    squre = lambda x: x**2
-    squre(4)
+    square = lambda x: x**2
+    square(4)
     # 16
 
 Use Case

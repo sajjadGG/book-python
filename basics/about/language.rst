@@ -176,7 +176,7 @@ Check Python Version
     #. Użyj kodu z sekcji "Input" (patrz poniżej)
     #. Uruchom kod swoim IDE (prawy klawisz myszy na kodzie -> "Run File in Python Console")
     #. Jaka wersja Python jest zainstalowana?
-    #. Zalecana jest najnowasza oficjalna wersja Python
+    #. Zalecana jest najnowsza oficjalna wersja Python
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:

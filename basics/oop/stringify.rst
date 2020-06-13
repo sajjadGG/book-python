@@ -261,7 +261,7 @@ OOP Stringify Str
 :Polish:
     #. Stwórz klasę ``Iris`` z atrybutami ``features: List[float]`` i ``label: str``
     #. Dla każdego wiersza w ``DATA`` twórz instancję ``Iris`` z danymi z wiersza
-    #. Ustaw atrybuty klasy przy iniclalizacji z argumentów pozycyjnych
+    #. Ustaw atrybuty klasy przy inicjalizacji z argumentów pozycyjnych
     #. Stwórz metodę sumującą wartości wszystkich ``features``
     #. Przy wypisywaniu obiektu pokaż: nazwę gatunku i wynik metody sumującej
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
@@ -301,7 +301,7 @@ OOP Stringify Repr
     #. Użyj kodu z sekcji "Input" (patrz poniżej)
     #. Stwórz klasę ``Iris`` z atrybutami ``features: List[float]`` i ``label: str``
     #. Dla każdego wiersza w ``DATA`` twórz instancję ``Iris`` z danymi z wiersza
-    #. Ustaw atrybuty klasy przy iniclalizacji z argumentów pozycyjnych
+    #. Ustaw atrybuty klasy przy inicjalizacji z argumentów pozycyjnych
     #. Wypisz reprezentację każdej z instancji z wartościami (użyj ``repr()``)
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 

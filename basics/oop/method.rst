@@ -281,9 +281,9 @@ OOP Method Sequence
 :Polish:
     #. Stwórz klasę ``Iris`` z atrybutami ``features: List[float]`` i ``label: str``
     #. Dla każdego wiersza w ``DATA`` twórz instancję ``Iris`` z danymi z wiersza
-    #. Ustaw atrybuty klasy przy iniclalizacji z argumentów pozycyjnych
+    #. Ustaw atrybuty klasy przy inicjalizacji z argumentów pozycyjnych
     #. Stwórz metodę sumującą wartości wszystkich ``features``
-    #. Wyisz nazwę gatunku i wynik metody sumującej
+    #. Wypisz nazwę gatunku i wynik metody sumującej
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:

@@ -23,7 +23,7 @@ Convention
 ==========
 * The longer the loop scope, the longer the variable name should be
 * Avoid one letters if scope is longer than one line
-* Prefer locally meaningfull name over generic names
+* Prefer locally meaningful name over generic names
 * Generic names:
 
     * ``obj`` - generic name (in Python everything is an object)
@@ -34,7 +34,7 @@ Convention
     * ``o`` - bad
     * ``d`` - for digit
 
-* Locally meaningfull name:
+* Locally meaningful name:
 
     * ``letter``
     * ``feature``

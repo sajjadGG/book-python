@@ -25,7 +25,7 @@ How to Choose?
 * Nie ma znaczenia z jakiego IDE skorzystasz!
 * Do edycji skryptów Pythona wystarczy sam Notatnik lub Jupyter
 * W miarę rośnięcia złożoności projektu oraz ilości plików przyda nam się coś co ułatwi nam pracę
-* Dobre IDE pomoże Ci w Refactoringu, podpowiedziach typów, debuggingu oraz pracy z systemem kontroli wersji
+* Dobre IDE pomoże Ci w refaktoringu, podpowiedziach typów, debuggingu oraz pracy z systemem kontroli wersji
 * PyCharm ma dwie wersję płatną oraz darmową, wersja darmowa w zupełności nam wystarczy
 * Ciekawą alternatywą może być PyDev - plugin do środowiska Eclipse
 
@@ -79,9 +79,9 @@ Create Project from Git
     #. Sugestia: możesz zapisać katalog z projektem na pulpicie, aby łatwiej było znaleźć pliki
     #. Kliknij "clone" i zaczekaj na pobranie repozytorium
     #. Upewnij się, że w repozytorium jest plik ``.gitignore`` i ma zawartość
-    #. Po stworzeniu projektu, załóż katalog o nazwie jak twoje nazwisko i imie ``nazwisko_imie``
+    #. Po stworzeniu projektu, załóż katalog o nazwie jak twoje nazwisko i imię ``nazwisko_imie``
     #. WAŻNE: Już do końca książki w nim będą tworzone rozwiązania do wszystkich zadań
-    #. Dzięki oddzielnym katalogom dla każdego uczestnika unikinemy konfliktów w Git
+    #. Dzięki oddzielnym katalogom dla każdego uczestnika unikniemy konfliktów w Git
 
 Create Project in Pure Python
 -----------------------------
@@ -93,7 +93,7 @@ Create Project in Pure Python
     #. Wybierz "Pure Python" (opcja dostępna tylko w Pycharm Professional)
     #. Rozwiń listę Project Interpreter i ustaw aby korzystać z "Virtualenv"
     #. WAŻNE: Upewnij się, że masz Python 3.7 lub nowszy
-    #. Po stworzeniu projektu, załóż katalog o nazwie jak twoje nazwisko i imie ``nazwisko_imie``
+    #. Po stworzeniu projektu, załóż katalog o nazwie jak twoje nazwisko i imię ``nazwisko_imie``
     #. WAŻNE: Już do końca książki w nim będą tworzone rozwiązania do wszystkich zadań
 
 Know thou IDE
