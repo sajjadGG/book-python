@@ -262,17 +262,17 @@ Loop While Convert
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Create ``result: List[int]``
+    #. Create ``result: List[float]``
     #. Use ``while`` to iterate over ``DATA``
-    #. Convert all elements of ``DATA`` to ``int``
+    #. Convert all elements of ``DATA`` to ``float``
     #. Converted values add to ``result``
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Stwórz ``result: List[int]``
+    #. Stwórz ``result: List[float]``
     #. Użyj ``while`` do iterowania po ``DATA``
-    #. Przekonwertuj wszystkie elementy ``DATA`` do ``int``
+    #. Przekonwertuj wszystkie elementy ``DATA`` do ``float``
     #. Przekonwertowane wartości dodaj do ``result``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
@@ -284,27 +284,20 @@ Loop While Convert
 :Output:
     .. code-block:: python
 
-        result: List[int]
+        result: List[float]
         # [2.0, 3.0, 3.5, 4.0, 4.5, 5.0]
 
 :The whys and wherefores:
-    * Reading user input
-    * Input validation
     * Type casting
     * Sequences
     * Using while loop
-    * Breaking loop
     * Using built-in functions
-
-:Hints:
-    * ``input(...)``
-    * ``mean = sum(...) / len(...)``
 
 Loop While Input
 ----------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 10 min
 * Solution: :download:`solution/loop_while_input.py`
 
 :English:
