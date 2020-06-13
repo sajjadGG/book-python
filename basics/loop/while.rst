@@ -297,29 +297,27 @@ Loop While Input
 ----------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 15 min
 * Solution: :download:`solution/loop_while_input.py`
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Using ``while`` Create ``grade_scale: List[float]`` from ``DATA`` (convert values to ``float``)
     #. Using ``input()`` ask user about grade, one at a time
     #. User will type only valid ``int`` or ``float``
     #. To iterate use only ``while`` loop
-    #. If grade is on a new grade scale - add it to report card
-    #. If grade is not on a new grade scale - print "Grade is not allowed" and continue input
+    #. If grade is in ``GRADE_SCALE`` - add it to report card
+    #. If grade is not in ``GRADE_SCALE`` - print "Grade is not allowed" and continue input
     #. If user pressed Enter key, end inserting data
     #. At the end, print calculated mean
     #. Test case when report list is empty
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Używając ``while`` stwórz ``grade_scale: List[float]`` z ``DATA`` (przekonwertuj wartości do ``float``)
     #. Do iterowania użyj tylko pętli ``while``
     #. Używając ``input()`` poproś użytkownika o ocenę, jedną na raz
     #. Użytkownik poda tylko poprawne ``int`` lub ``float``
-    #. Jeżeli ocena jest w ``grade_scale`` - dodaj ją do dzienniczka
-    #. Jeżeli oceny nie ma w ``grade_scale`` - wyświetl "Grade is not allowed" i kontynuuj wpisywanie
+    #. Jeżeli ocena jest w ``GRADE_SCALE`` - dodaj ją do dzienniczka
+    #. Jeżeli oceny nie ma w ``GRADE_SCALE`` - wyświetl "Grade is not allowed" i kontynuuj wpisywanie
     #. Jeżeli użytkownik wcisnął Enter, zakończ wprowadzanie danych
     #. Na zakończenie wyświetl wyliczoną dla dzienniczka średnią arytmetyczną
     #. Przetestuj przypadek, gdy dzienniczek jest pusty
@@ -327,7 +325,7 @@ Loop While Input
 :Input:
     .. code-block:: python
 
-        DATA = (2, 3, 3.5, 4, 4.5, 5)
+        GRADE_SCALE = (2.0, 3.0, 3.5, 4.0, 4.5, 5.0)
 
 :The whys and wherefores:
     * Reading user input

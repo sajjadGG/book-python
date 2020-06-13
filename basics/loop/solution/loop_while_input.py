@@ -1,13 +1,5 @@
-DATA = (2, 3, 3.5, 4, 4.5, 5)
-GRADE_SCALE = []
+GRADE_SCALE = (2.0, 3.0, 3.5, 4.0, 4.5, 5.0)
 report_card = []
-
-i = 0
-
-while i < len(DATA):
-    grade = float(DATA[i])
-    GRADE_SCALE.append(grade)
-    i += 1
 
 while True:
     grade = input('What grade you received?: ')

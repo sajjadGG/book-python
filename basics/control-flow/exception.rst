@@ -675,13 +675,13 @@ Exception Catch
 :English:
     #. Ask user to input temperature in Kelvins
     #. Convert temperature to ``float``
-    #. Print 'Invalid temperature' if cannot type cast to ``float``
+    #. If cannot type cast to ``float``, then print 'Invalid temperature' and exit with status code 1
     #. Print temperature
 
 :Polish:
     #. Poproś użytkownika o wprowadzenie temperatury w Kelwinach
     #. Przekonwertuj temperaturę do ``float``
-    #. Wypisz "Invalid temperature" jak nie można rzutować do ``float``
+    #. Jeżeli nie można rzutować do ``float``, to wypisz "Invalid temperature" i wyjdź z kodem błędu 1
     #. Wypisz temperaturę
 
 Exception Define
