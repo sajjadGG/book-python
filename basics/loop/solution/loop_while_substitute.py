@@ -1,3 +1,5 @@
+DATA = 'zażółć gęślą jaźń'
+
 PL_ASCII = {
     'ą': 'a',
     'ć': 'c',
@@ -9,8 +11,6 @@ PL_ASCII = {
     'ż': 'z',
     'ź': 'z',
 }
-
-DATA = 'zażółć gęślą jaźń'
 
 result = []
 i = 0

@@ -217,7 +217,7 @@ Loop Nested Mean
 ----------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 7 min
 * Solution: :download:`solution/loop_nested_mean.py`
 
 :English:
@@ -253,7 +253,7 @@ Loop Nested Unique Keys
 -----------------------
 * Complexity level: medium
 * Lines of code to write: 5 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/loop_nested_unique_keys.py`
 
 :English:

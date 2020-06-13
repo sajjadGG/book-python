@@ -412,7 +412,9 @@ Loop For Substitute
 :Input:
     .. code-block:: python
 
-        PL_TO_ASCII = {
+        DATA = 'zażółć gęślą jaźń'
+
+        PL_ASCII = {
             'ą': 'a',
             'ć': 'c',
             'ę': 'e',
@@ -423,8 +425,6 @@ Loop For Substitute
             'ż': 'z',
             'ź': 'z',
         }
-
-        DATA = 'zażółć gęślą jaźń'
 
 :Output:
     .. code-block:: python
