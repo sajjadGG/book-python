@@ -182,8 +182,8 @@ Get All Dynamic Attributes and Values
 Assignments
 ===========
 
-Data Modeling
--------------
+OOP Attribute Model
+-------------------
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min

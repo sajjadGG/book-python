@@ -268,8 +268,8 @@ Checking Values
 Assignments
 ===========
 
-OOP Object Initialization
--------------------------
+OOP Initialization Print
+------------------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 5 min
@@ -312,8 +312,8 @@ OOP Object Initialization
         97.88
         309.75
 
-OOP Data Modeling
------------------
+OOP Initialization Model
+------------------------
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min

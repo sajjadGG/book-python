@@ -302,8 +302,8 @@ OOP Method Sequence
         versicolor 16.299999999999997
         virginica 19.3
 
-OOP Methods
------------
+OOP Method Nested
+-----------------
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
