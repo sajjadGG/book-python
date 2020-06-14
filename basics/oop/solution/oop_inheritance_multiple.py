@@ -1,11 +1,14 @@
 class Scientist:
     pass
 
+
 class Engineer:
     pass
 
+
 class Pilot:
     pass
+
 
 class MedicalDoctor:
     pass

@@ -193,7 +193,7 @@ Membership
 Is Disjoint?
 ------------
 .. highlights::
-    * ``True`` - if thre are no common elements in ``data`` and ``x``
+    * ``True`` - if there are no common elements in ``data`` and ``x``
     * ``False`` - if any ``x`` element are in data
 
 .. code-block:: python
