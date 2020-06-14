@@ -204,8 +204,8 @@ Generate with Zip
 Assignments
 ===========
 
-``dict`` to ``dict``
---------------------
+Loop Dict from Dict to Dict
+---------------------------
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 10 min
@@ -256,8 +256,8 @@ Assignments
     * Iterating over ``dict``
     * Updating ``dict``
 
-``List[tuple]`` to ``List[dict]``
----------------------------------
+Loop Dict from List to Dict
+---------------------------
 * Complexity level: medium
 * Lines of code to write: 6 lines
 * Estimated time of completion: 10 min
@@ -328,8 +328,8 @@ Assignments
     * Working with nested data structures
     * Iterating over dict and lists
 
-Label encoder
--------------
+Loop Dict Label Encoder
+-----------------------
 * Complexity level: hard
 * Lines of code to write: 13 lines
 * Estimated time of completion: 15 min

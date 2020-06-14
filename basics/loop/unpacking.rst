@@ -193,8 +193,8 @@ List of Dicts
 Assignments
 ===========
 
-Unpacking
----------
+Loop Unpacking Endswith
+-----------------------
 * Complexity level: medium
 * Lines of code to write: 3 lines
 * Estimated time of completion: 10 min

@@ -208,8 +208,8 @@ Example
     .. literalinclude:: solution/loop_while_example.py
         :language: python
 
-Loop For Substitute
--------------------
+Loop While Substitute
+---------------------
 * Complexity level: easy
 * Lines of code to write: 9 lines
 * Estimated time of completion: 5 min
