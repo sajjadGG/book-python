@@ -454,12 +454,12 @@ Future
 Assignments
 ===========
 
-Mapping Dict Create
+Mapping Dict Define
 -------------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 3 min
-* Solution: :download:`solution/mapping_dict_create.py`
+* Solution: :download:`solution/mapping_dict_define.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -526,8 +526,8 @@ Mapping Dict Items
         #     ('Petal width', 1.9),
         # ]
 
-Mapping Aviation Language
--------------------------
+Mapping Dict Get
+----------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
