@@ -129,7 +129,7 @@ Example
 -------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/function_args_example.py`
 
 :English:
@@ -150,7 +150,7 @@ Function Arguments Divide
 -------------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/function_args_divide.py`
 
 :English:
@@ -175,7 +175,7 @@ Function Arguments Power
 ------------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/function_args_power.py`
 
 :English:

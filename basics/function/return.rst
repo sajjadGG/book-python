@@ -163,7 +163,7 @@ Function Return Numbers
 -----------------------
 * Complexity level: easy
 * Lines of code to write: 4 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/function_return_numbers.py`
 
 :English:

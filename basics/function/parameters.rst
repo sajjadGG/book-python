@@ -182,7 +182,7 @@ Function Parameters Example
 ---------------------------
 * Complexity level: easy
 * Lines of code to write: 2 lines
-* Estimated time of completion: 1 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/function_parameters_example.py`
 
 :English:
