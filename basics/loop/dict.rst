@@ -260,7 +260,7 @@ Assignments
 ---------------------------------
 * Complexity level: medium
 * Lines of code to write: 6 lines
-* Estimated time of completion: 20 min
+* Estimated time of completion: 10 min
 * Solution: :download:`solution/loop_dict_to_list.py`
 
 :English:

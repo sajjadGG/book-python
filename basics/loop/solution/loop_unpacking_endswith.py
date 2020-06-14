@@ -1,3 +1,5 @@
+ENDINGS = ('ca', 'osa')
+
 DATA = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, {'virginica'}),
@@ -13,11 +15,19 @@ DATA = [
 
 header, *data = DATA
 
-for row in data:
-    species = row[4].pop()
+for *features, label in data:
+    species = label.pop()
 
-    if species.endswith('ca') or species.endswith('sa'):
+    if species.endswith(ENDINGS):
         print(species)
+
+
+## Alternative Solution
+# for row in data:
+#     species = row[4].pop()
+#
+#     if species.endswith('ca') or species.endswith('sa'):
+#         print(species)
 
 
 ## Alternative Solution
@@ -25,4 +35,12 @@ for row in data:
 #     species = species.pop()
 #
 #     if species.endswith('ca') or species.endswith('sa'):
+#         print(species)
+
+
+## Alternative solution
+# for *features, label in data:
+#     species = label.pop()
+#
+#     if any(species.endswith(x) for x in ENDINGS):
 #         print(species)

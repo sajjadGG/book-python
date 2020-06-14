@@ -88,8 +88,24 @@ Starts or Ends With
 
     name = 'Jan Twardowski'
 
-    name.startswith('Jan')  # True
-    name.endswith(';')      # False
+    name.startswith('Jan')              # True
+    name.endswith(';')                  # False
+
+.. code-block:: python
+
+    START = ('ver', 'vir')
+
+    'virginica'.startswith(START)       # True
+    'versicolor'.startswith(START)      # True
+    'setosa'.startswith(START)          # False
+
+.. code-block:: python
+
+    TLD = ('gov', 'int')
+
+    'nasa.gov'.endswith(TLD)            # True
+    'esa.int'.endswith(TLD)             # True
+    'roscosmos.ru'.endswith(TLD)        # False
 
 
 Split by Line
