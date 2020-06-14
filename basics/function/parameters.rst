@@ -28,9 +28,6 @@ Syntax
     def add(a, b):
         pass
 
-    def add(a, b):
-        pass
-
 
 Required Parameters
 ===================
@@ -75,10 +72,10 @@ Optional Parameters
     add(1)
     # 21
 
-    add(10, 20)
-    # 30
+    add(1, 2)
+    # 3
 
-    add(10, 20, 30)
+    add(1, 2, 3)
     # TypeError: add() takes from 0 to 2 positional arguments but 3 were given
 
 
@@ -244,14 +241,13 @@ Function Parameters Default
     #. Parameter ``a`` is required
     #. Parameter ``b`` is optional and has default value ``None``
     #. If only one argument was passed, consider second equal to the first one
-    #. Wypisz ``a`` i ``b``
+    #. Print ``a`` i ``b``
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Zdefiniuj funkcję ``default`` z dwoma parametrami
     #. Parametr ``a`` jest wymagany
     #. Parametr ``b`` jest opcjonalny i ma domyślną wartość ``None``
-    #. Funkcja zwraca wynik pierwszego argumentu do potęgi drugiego
     #. Jeżeli tylko jeden argument był podany, przyjmij drugi równy pierwszemu
     #. Wypisz ``a`` i ``b``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)

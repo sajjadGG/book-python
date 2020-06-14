@@ -135,12 +135,12 @@ Docstring
 Assignments
 ===========
 
-Define Function
----------------
+Function Definition Print
+-------------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 3 min
-* Solution: :download:`solution/function_define_print.py`
+* Solution: :download:`solution/function_definition_print.py`
 
 :English:
     #. Define function ``call`` without parameters

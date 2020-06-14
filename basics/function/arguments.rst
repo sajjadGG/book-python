@@ -21,8 +21,6 @@ Syntax
 
 .. code-block:: python
 
-    say_hello(name)
-
     add(a, b)
 
 
@@ -33,7 +31,7 @@ Positional Arguments
 
 .. code-block:: python
 
-    def add(a, b):
+    def subtract(a, b):
         return a - b
 
 
@@ -105,7 +103,7 @@ Examples
     )
 
 .. code-block:: python
-    :caption: Example 3s
+    :caption: Example 3
 
     read_csv('iris.csv')
 
@@ -148,8 +146,8 @@ Example
     .. literalinclude:: solution/function_args_example.py
         :language: python
 
-Divide
-------
+Function Arguments Divide
+-------------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
@@ -173,8 +171,8 @@ Divide
     #. Wypisz zwracane wartości
     #. Co zrobić w przypadku błędu?
 
-Power
------
+Function Arguments Power
+------------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
@@ -209,12 +207,12 @@ Power
 
 .. _Cleaning text input:
 
-Cleaning text input
--------------------
+Function Arguments Clean
+------------------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/function_args_str_clean.py`
+* Solution: :download:`solution/function_args_clean.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -288,12 +286,12 @@ Cleaning text input
 
 .. todo:: Translate input data to English
 
-Aviation numbers
-----------------
+Function Arguments Numbers to Str
+---------------------------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/function_args_aviation_numbers.py`
+* Solution: :download:`solution/function_args_numstr.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -371,8 +369,8 @@ Aviation numbers
     * Cleaning data from user input
     * ``dict`` lookups
 
-Number to human readable
-------------------------
+Function Arguments Numbers to Human
+-----------------------------------
 * Complexity level: hard
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
