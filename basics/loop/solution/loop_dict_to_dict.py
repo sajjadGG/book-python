@@ -9,15 +9,14 @@ DATA = {
 
 result = {}
 
-for level, degrees in DATA.items():
-    for education in degrees:
-        result[education] = str(level)
+for idx, titles in DATA.items():
+    for title in titles:
+        result[title] = str(idx)
 
 print(result)
 
 
 ## Alternative solution
-# result = {education: str(level)
-#     for level, degrees in DATA.items()
-#         for education in degrees
-# }
+# result = {title: str(idx)
+#           for idx, titles in DATA.items()
+#               for title in titles}

@@ -466,9 +466,9 @@ Nested
         1: ['Kindergarten'],
     }
 
-    result = {education: str(key)
-              for key, names in DATA.items()
-                 for education in names}
+    result = {title: str(idx)
+              for idx, titles in DATA.items()
+                 for title in titles}
 
     print(result)
     # {
@@ -553,16 +553,12 @@ Assignment Expressions
     :pep:`572` Assignment Expressions (walrus operator)
 
 .. code-block:: python
-    :caption: Compute partial sums in a list comprehension using Assignment Expressions (since Python 3.8)
 
-    total = 0
-    partial_sums = [total := total + v for v in range(0,5)]
+    [ (x, x**2, x/(x**2))
+        for x in range(0,5)
+            if x**2 > 0]
 
-    print(partial_sums)
-    # [0, 1, 3, 6, 10]
-
-    print(total)
-    # 10
+    # [(1, 1, 1.0), (2, 4, 0.5), (3, 9, 0.3333333333333333), (4, 16, 0.25)]
 
 .. code-block:: python
 
@@ -618,17 +614,9 @@ Comprehensions Substitute
 :Input:
     .. code-block:: python
 
-        PL_ASCII = {
-            'ą': 'a',
-            'ć': 'c',
-            'ę': 'e',
-            'ł': 'l',
-            'ń': 'n',
-            'ó': 'o',
-            'ś': 's',
-            'ż': 'z',
-            'ź': 'z',
-        }
+        PL_ASCII = {'ą': 'a', 'ć': 'c', 'ę': 'e',
+                    'ł': 'l', 'ń': 'n', 'ó': 'o',
+                    'ś': 's', 'ż': 'z', 'ź': 'z'}
 
         DATA = 'zażółć gęślą jaźń'
 
