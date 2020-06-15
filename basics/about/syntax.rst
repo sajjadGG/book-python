@@ -28,8 +28,8 @@ Variables
 .. code-block:: python
     :caption: Variables vs. constants - Names are case sensitive
 
-    name = 'Mark Watney'
-    Name = 'Jan Twardowski'
+    name = 'Mark Watney'        # lower cased names are reserved for variables
+    Name = 'Jan Twardowski'     # Capitalized names are reserved for classes
 
 
 Constants
@@ -54,12 +54,34 @@ Constants
     NAME = 'Mark Watney'
     NAME = 'Jan Twardowski'
 
+
+Variables vs. Constants
+=======================
 .. code-block:: python
     :caption: Variables vs. constants - Names are case sensitive
 
-    name = 'Mark Watney'
-    NAME = 'Jan Twardowski'
-    Name = 'José Jiménez'
+    name = 'Mark Watney'        # variable
+    NAME = 'Jan Twardowski'     # constant
+    Name = 'José Jiménez'       # class
+
+.. code-block:: python
+    :caption: Variables vs. constants - Definition of second, minute or hour does not change based on location or country (those values should be constants). Definition of workday, workweek and workmonth differs based on location - each country can have different work times (those values should be variables).
+
+    SECOND = 1
+    MINUTE = 60 * SECOND
+    HOUR = 60 * MINUTE
+
+    workday = 8 * HOUR
+    workweek = 5 * workday
+    workmonth = 4 * workweek
+
+.. code-block:: python
+    :caption: For physical units it is ok to use proper cased names. It is better to be compliant with well known standard, than to enforce something which will mislead everyone.
+
+    Pa = 1
+    hPa = 100 * Pa
+    kPa = 1000 * Pa
+    MPa = 1000 * kPa
 
 
 Printing Values
@@ -90,14 +112,22 @@ End of Lines
 ============
 .. highlights::
     * No semicolon (``;``) at the end of lines
-    * ``\r\n`` and ``\n`` works
-    * :pep:`8`: Use ``\n``
+    * :pep:`8`: Use ``\n`` for newline
 
 .. doctest::
 
     >>> print('Hello!\nHow are you?')
     Hello!
     How are you?
+
+
+Line Length
+===========
+* Most controversial rule
+* :pep:`8`: 79 for line with code
+* :pep:`8`: 72 for line with comment
+* ``black``: 90-ish
+* ``django``: 120 for code, 300 for models
 
 
 Comments

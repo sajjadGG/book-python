@@ -91,32 +91,32 @@ Increment Operators
 
 .. code-block:: python
 
-    value = 10
-    value += 1
+    x = 10
+    x += 1
 
-    print(value)
+    print(x)
     # 11
 
 .. code-block:: python
 
-    value = 10
-    value -= 1
+    x = 10
+    x -= 1
 
-    print(value)
+    print(x)
     # 9
 
 .. code-block:: python
 
-    value = 10
-    value *= 2
+    x = 10
+    x *= 2
 
-    print(value)
+    print(x)
     # 20
 
 .. code-block:: python
 
-    value = 10
-    value /= 2
+    x = 10
+    x /= 2
 
-    print(value)
+    print(x)
     # 5
