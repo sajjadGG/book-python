@@ -271,8 +271,8 @@ Built-in Functions
 Assignments
 ===========
 
-List Create
------------
+Sequence List Create
+--------------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 3 min
@@ -298,8 +298,8 @@ List Create
     #. Wypisz ``result``
     #. Wypisz liczbę elementów ``result``
 
-List Many
----------
+Sequence List Many
+------------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
@@ -332,8 +332,8 @@ List Many
     * Defining ``list``
     * Learning IDE features
 
-Modify
-------
+Sequence List Modify
+--------------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min

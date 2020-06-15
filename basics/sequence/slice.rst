@@ -321,8 +321,8 @@ Slice Function
 Assignments
 ===========
 
-Slice Example
--------------
+Sequence Slice Example
+----------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
@@ -350,12 +350,12 @@ Slice Example
     .. literalinclude:: solution/sequence_slice_example.py
         :language: python
 
-Slice Collections
------------------
+Sequence Slice Sequence
+-----------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/sequence_slice_collections.py`
+* Solution: :download:`solution/sequence_slice_sequence.py`
 
 :English:
     #. Create tuple ``a`` with digits: 0, 1, 2, 3
@@ -382,8 +382,8 @@ Slice Collections
     * Slice data structures
     * Type casting
 
-Slice Split
------------
+Sequence Slice Split
+--------------------
 * Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 15 min
@@ -482,8 +482,8 @@ Slice Split
     * Type casting
     * Magic Number
 
-Slice Text
-----------
+Sequence Slice Text
+-------------------
 * Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 10 min

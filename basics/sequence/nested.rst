@@ -176,12 +176,12 @@ Many Types
 Assignments
 ===========
 
-Sequence Nesting Create
------------------------
+Sequence Nested Create
+----------------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 3 min
-* Solution: :download:`solution/sequence_nesting_create.py`
+* Solution: :download:`solution/sequence_nested_create.py`
 
 :English:
     #. Create nested sequence ``result`` with elements:

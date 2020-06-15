@@ -41,21 +41,12 @@ Change Case
 
 .. code-block:: python
 
-    name = 'jAn TwARDowSKi III'
+    name = 'Angus MacGyver III'
 
-    name.upper()       # 'JAN TWARDOWSKI III'
-    name.lower()       # 'jan twardowski iii'
-    name.title()       # 'Jan Twardowski Iii'
-    name.capitalize()  # 'Jan twardowski iii'
-
-.. code-block:: python
-
-    name = 'Angus MacGyver'
-
-    name.upper()       # 'ANGUS MACGYVER'
-    name.lower()       # 'angus macgyver'
-    name.title()       # 'Angus Macgyver'
-    name.capitalize()  # 'Angus macgyver'
+    name.upper()       # 'ANGUS MACGYVER III'
+    name.lower()       # 'angus macgyver iii'
+    name.title()       # 'Angus Macgyver Iii'
+    name.capitalize()  # 'Angus macgyver iii'
 
 
 Replace
@@ -79,17 +70,11 @@ Strip Whitespace
     name.lstrip()       # 'Jan Twardowski    \n'
 
 
-Starts or Ends With
-===================
-.. highlights::
-    * Understand this as "starts with" and "ends with"
-
+Starts With
+===========
 .. code-block:: python
 
-    name = 'Jan Twardowski'
-
-    name.startswith('Jan')              # True
-    name.endswith(';')                  # False
+    'Jan Twardowski'.startswith('Jan')  # True
 
 .. code-block:: python
 
@@ -98,6 +83,13 @@ Starts or Ends With
     'virginica'.startswith(START)       # True
     'versicolor'.startswith(START)      # True
     'setosa'.startswith(START)          # False
+
+
+Ends With
+=========
+.. code-block:: python
+
+    'Jan Twardowski'.endswith(';')      # False
 
 .. code-block:: python
 
@@ -158,8 +150,8 @@ Split by Character
     # ['10.13.37.1', 'nasa.gov', 'esa.int', 'roscosmos.ru']
 
 
-Join
-====
+Join by Character
+=================
 .. code-block:: python
 
     text = ['We', 'choose', 'to', 'go', 'to', 'the', 'Moon']
@@ -169,10 +161,22 @@ Join
 
 .. code-block:: python
 
-    setosa = [5.1, 3.5, 1.4, 0.2, 'setosa']
+    setosa = ['5.1', '3.5', '1.4', '0.2', 'setosa']
 
     ','.join(setosa)
     # '5.1,3.5,1.4,0.2,setosa'
+
+.. code-block:: python
+
+    crew = ['Mark Watney', 'Jan Twardowski', 'Melissa Lewis']
+
+    '\n'.join(crew)
+    # 'Mark Watney\nJan Twardowski\nMelissa Lewis'
+
+    print('\n'.join(crew))
+    # Mark Watney
+    # Jan Twardowski
+    # Melissa Lewis
 
 
 Is Whitespace
@@ -215,8 +219,9 @@ Contains
 ========
 .. code-block:: python
 
-    'Py' in 'Python'     # True
     'Monty' in 'Python'  # False
+    'Py' in 'Python'     # True
+    'py' in 'Python'     # False
 
 
 Count Occurrences
@@ -332,18 +337,13 @@ House and Apartment Number
 --------------------------
 .. code-block:: text
 
-    '1/2'
-    '1 / 2'
-    '1/ 2'
-    '1 /2'
-    '3/5/7'
-
-.. code-block:: text
-
-    '1 m. 2'
-    '1 m 2'
-    '1 apt 2'
-    '1 apt. 2'
+    'Ćwiartki 3/4'
+    'Ćwiartki 3 / 4'
+    'Ćwiartki 1 m. 2'
+    'Ćwiartki 1 m 2'
+    'Brighton Beach 1st apt 2'
+    'Brighton Beach 1st apt. 2'
+    'Myśliwiecka 3/5/7'
 
 .. code-block:: text
 
@@ -353,7 +353,8 @@ House and Apartment Number
 
 .. code-block:: text
 
-    '13d bud. A'
+    'Jana Twardowskiego III 3 m. 3'
+    'Jana Twardowskiego 13d bud. A piętro II sala 3'
 
 Phone Numbers
 -------------
@@ -378,7 +379,7 @@ Phone Numbers
 
     +48 123 555 678 wew. 1337
     +48 123555678,1
-    +48 123555678,1,2,3
+    +48 123555678,1,,2
 
 
 Assignments

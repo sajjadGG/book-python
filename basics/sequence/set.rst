@@ -365,8 +365,8 @@ Cardinality
 Assignments
 ===========
 
-Set Create
-----------
+Sequence Set Create
+-------------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 3 min
@@ -392,8 +392,8 @@ Set Create
     #. Wypisz ``result``
     #. Wypisz liczbę elementów ``result``
 
-Set Many
---------
+Sequence Set Many
+-----------------
 * Complexity level: easy
 * Lines of code to write: 13 lines
 * Estimated time of completion: 7 min

@@ -120,8 +120,8 @@ Unordered Sequence
 Assignments
 ===========
 
-Get Item Select
----------------
+Sequence Getitem Select
+------------------------
 * Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 10 min

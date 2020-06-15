@@ -133,8 +133,8 @@ List:
 Assignments
 ===========
 
-Tuple Create
-------------
+Sequence Tuple Create
+---------------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 3 min
@@ -160,8 +160,8 @@ Tuple Create
     #. Wypisz ``result``
     #. Wypisz liczbę elementów ``result``
 
-Tuple Many
-----------
+Sequence Tuple Many
+-------------------
 * Complexity level: medium
 * Lines of code to write: 13 lines
 * Estimated time of completion: 10 min

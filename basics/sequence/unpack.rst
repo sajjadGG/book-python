@@ -280,7 +280,7 @@ Examples
 Assignments
 ===========
 
-Unpacking from sequence
+Sequence Unpacking Flat
 -----------------------
 * Complexity level: easy
 * Lines of code to write: 1 lines
@@ -318,8 +318,8 @@ Unpacking from sequence
 :Hint:
     * Use ``str.split()`` without any argument
 
-Unpacking from nested sequence
-------------------------------
+Sequence Unpacking Nested
+-------------------------
 * Complexity level: easy
 * Lines of code to write: 1 lines
 * Estimated time of completion: 3 min

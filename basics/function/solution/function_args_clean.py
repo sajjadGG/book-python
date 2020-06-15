@@ -28,7 +28,7 @@ def clean(text: str) -> str:
     'Jana III Sobieskiego'
     """
 
-    # Common format
+    # Convert to common format
     text = text.upper()
 
     # Remove unwanted whitespaces
