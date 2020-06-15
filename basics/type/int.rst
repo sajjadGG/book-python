@@ -62,8 +62,8 @@ Type Checking
 Assignments
 ===========
 
-Example
--------
+Type Int Example
+----------------
 * Complexity level: medium
 * Lines of code to write: 9 lines
 * Estimated time of completion: 3 min
@@ -96,8 +96,8 @@ Example
     * 1 KB = 1024 B
     * 1 MB = 1024 KB
 
-Int Calculation
----------------
+Type Int Calculation
+--------------------
 * Complexity level: easy
 * Lines of code to write: 12 lines
 * Estimated time of completion: 5 min
@@ -126,8 +126,8 @@ Int Calculation
     * 1 h = 60 min
     * 1 min = 60 s
 
-Int Ratio
----------
+Type Int Ratio
+--------------
 * Complexity level: medium
 * Lines of code to write: 10 lines
 * Estimated time of completion: 5 min
@@ -138,7 +138,7 @@ Int Ratio
     #. How long will take to download 100 MB?
 
 :Polish:
-    #. Mając łącze internetowe do 100 Mb/s
+    #. Mając łącze internetowe "do 100 Mb/s"
     #. Ile zajmie ściągnięcie pliku 100 MB?
 
 :The whys and wherefores:
@@ -153,8 +153,8 @@ Int Ratio
     * 1 KB = 1024 B
     * 1 MB = 1024 KB
 
-Int Temperature
----------------
+Type Int Temperature
+--------------------
 * Complexity level: medium
 * Lines of code to write: 18 lines
 * Estimated time of completion: 10 min

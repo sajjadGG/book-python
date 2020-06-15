@@ -119,29 +119,24 @@ Built-in Functions
 Assignments
 ===========
 
-Float Example
--------------
+Type Float Example
+------------------
 * Complexity level: easy
 * Lines of code to write: 13 lines
 * Estimated time of completion: 5 min
 * Solution: :download:`solution/type_float_example.py`
 
 :English:
-    #. Use data from "Input" section (see below)
+    #. Speed limit is 75 MPH
     #. Data uses imperial (US) system
     #. Convert to metric (SI) system
     #. Speed limit round to one decimal place
 
 :Polish:
-    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Ograniczenie prędkości wynosi 75 MPH
     #. Dane używają systemu imperialnego (US)
     #. Przelicz je na system metryczny (układ SI)
     #. Ograniczenie prędkości zaokrąglij do jednego miejsca po przecinku
-
-:Input:
-    * Plane altitude: 10.000 ft
-    * Bottle volume: 20 Fl Oz
-    * Speed limit: 75 mph
 
 :Solution:
     .. literalinclude:: solution/type_float_example.py
@@ -152,12 +147,80 @@ Float Example
     * Naming convention
     * Mathematical operations
 
-Float Casting
--------------
+Type Float Altitude
+-------------------
+* Complexity level: easy
+* Lines of code to write: 4 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/type_float_altitude.py`
+
+:English:
+    #. Plane altitude is 10.000 ft
+    #. Data uses imperial (US) system
+    #. Convert to metric (SI) system
+    #. Speed limit round to one decimal place
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Wysokość lotu samolotem wynosi 10 000 ft
+    #. Dane używają systemu imperialnego (US)
+    #. Przelicz je na system metryczny (układ SI)
+    #. Ograniczenie prędkości zaokrąglij do jednego miejsca po przecinku
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Output:
+    .. code-block:: text
+
+        Plane altitude: 3048.0 m
+
+:The whys and wherefores:
+    * Defining constants and variables
+    * Naming convention
+    * Mathematical operations
+
+:Hint:
+    * 1 ft = 0.3048 m
+
+Type Float Volume
+------------------
+* Complexity level: easy
+* Lines of code to write: 4 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/type_float_volume.py`
+
+:English:
+    #. Bottle volume is 20 Fl Oz
+    #. Data uses imperial (US) system
+    #. Convert to metric (SI) system
+    #. Speed limit round to one decimal place
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Objętość butelki wynosi 20 Fl Oz
+    #. Dane używają systemu imperialnego (US)
+    #. Przelicz je na system metryczny (układ SI)
+    #. Ograniczenie prędkości zaokrąglij do jednego miejsca po przecinku
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Output:
+    .. code-block:: text
+
+        Bottle volume: 0.5914688 l
+
+:The whys and wherefores:
+    * Defining constants and variables
+    * Naming convention
+    * Mathematical operations
+
+:Hint:
+    * 1 Fl Oz = 0.02957344 l
+
+Type Float Distance
+-------------------
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/type_float_casting.py`
+* Solution: :download:`solution/type_float_distance.py`
 
 :English:
     #. Use code from "Input" section (see below)
@@ -203,12 +266,12 @@ Float Casting
     * 1 mile = 1609.344 m
     * 1 nautical mile = 1852 m
 
-Float Calculation
------------------
+Type Float Pressure
+-------------------
 * Complexity level: medium
-* Lines of code to write: 20 lines
+* Lines of code to write: 8 lines
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/type_float_calculation.py`
+* Solution: :download:`solution/type_float_pressure.py`
 
 :English:
     #. Operational pressure of EMU spacesuit: 4.3 PSI
@@ -249,25 +312,23 @@ Float Calculation
     * 1 hPa = 100 Pa
     * 1 psi = 6894.757 Pa
 
-Float Percent
--------------
+Type Float Percent
+------------------
 * Complexity level: medium
-* Lines of code to write: 9 lines
+* Lines of code to write: 6 lines
 * Estimated time of completion: 10 min
 * Solution: :download:`solution/type_float_percent.py`
 
 :English:
     #. Calculate International Standard Atmosphere pressure at sea level
     #. Calculate partial pressure of Oxygen at sea level
-    #. At what altitude above sea level, pressure is equal to partial pressure of Oxygen
-    #. Print all results in kPa rounding to two decimal places
+    #. Print all results in hPa rounding to two decimal places
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Oblicz ciśnienie standardowej atmosfery na poziomie morza
     #. Oblicz ciśnienie parcjalne tlenu na poziomie morza
-    #. Na jakiej wysokości nad poziomem morza panuje ciśnienie równe ciśnieniu parcjalnemu tlenu?
-    #. Wypisz wszystkie wyniki w kPa zaokrąglając do dwóch miejsc po przecinku
+    #. Wypisz wszystkie wyniki w hPa zaokrąglając do dwóch miejsc po przecinku
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Output:
@@ -275,7 +336,6 @@ Float Percent
 
         International Standard Atmosphere: 1013.25 hPa
         O2 partial pressure at sea level: 212.24 hPa
-        Oxygen starvation altitude: 7088.63 m
 
 :The whys and wherefores:
     * Defining constants and variables
@@ -287,7 +347,47 @@ Float Percent
 :Hint:
     * 1 hPa = 100 Pa
     * 1 ata = 1013.25 hPa (ISA - International Standard Atmosphere)
-    * pressure gradient = -11.3 Pa / 1 m
+    * Atmosphere gas composition:
+
+        * Nitrogen 78.084%
+        * Oxygen 20.946%
+        * Argon 0.9340%
+        * Carbon Dioxide 0.0407%
+        * Others 0.001%
+
+Type Float Gradient
+-------------------
+* Complexity level: medium
+* Lines of code to write: 9 lines
+* Estimated time of completion: 10 min
+* Solution: :download:`solution/type_float_gradient.py`
+
+:English:
+    #. At what altitude above sea level, pressure is equal to partial pressure of Oxygen
+    #. Print result in meters rounding to two decimal places
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Na jakiej wysokości nad poziomem morza panuje ciśnienie równe ciśnieniu parcjalnemu tlenu?
+    #. Wypisz rezultat w metrach zaokrąglając do dwóch miejsc po przecinku
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Output:
+    .. code-block:: text
+
+        Oxygen starvation altitude: 7088.63 m
+
+:The whys and wherefores:
+    * Defining constants and variables
+    * Naming convention
+    * Print formatting
+    * Mathematical operations
+    * Separation of business logic and view
+
+:Hint:
+    * pressure gradient (decrease) = 11.3 Pa / 1 m
+    * 1 hPa = 100 Pa
+    * 1 ata = 1013.25 hPa (ISA - International Standard Atmosphere)
     * Atmosphere gas composition:
 
         * Nitrogen 78.084%
