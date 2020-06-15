@@ -15,21 +15,11 @@ Type Definition
 
     data = ''
     data = 'Jan Twardowski'
-    data = "Jan Twardowski"
-    data = '''Jan Twardowski'''
-    data = """Jan Twardowski"""
 
     data = """First line
     Second line
     Third line"""
     # 'First line\nSecond line\nThird line'
-
-    data = """
-        First line
-        Second line
-        Third line
-    """
-    # '\n        First line\n        Second line\n        Third line\n    '
 
 
 Type Casting
@@ -38,7 +28,6 @@ Type Casting
     :caption: ``str()`` converts argument to ``str``
 
     str('Moon')                     # 'Moon'
-    str('Twardowski\'s Moon.')      # "Twardowski's Moon."
     str(1969)                       # '1969'
     str(13.37)                      # '13.37'
 
@@ -55,18 +44,18 @@ Single and Double Quotes
 .. code-block:: python
     :caption: Python console prefers single quote (``'``)
 
-    data = "We choose to go to the Moon!"
+    data = "My name is José Jiménez"
 
     print(data)
-    # 'We choose to go to the Moon!'
+    # 'My name is José Jiménez'
 
 .. code-block:: python
     :caption: It's better to use double quotes, when text has apostrophes. This is the behavior of Python console.
 
-    data = 'It\'s Twardowski\'s Moon.'
+    data = 'My name\'s José Jiménez'
 
     print(data)
-    # "It's Twardowski's Moon."
+    # "My name's José Jiménez"
 
 .. code-block:: python
     :caption: HTML and XML uses double quotes to enclose attribute values, hence it's better to use single quotes for the string.
@@ -105,8 +94,7 @@ Docstring
 Escape Characters
 =================
 .. highlights::
-    * ``\r\n`` - New line used on Windows (CR LF)
-    * ``\n`` - New line used on Linux, macOS and other ``*nix`` systems (CR)
+    * ``\n`` - New line (ENTER)
     * ``\t`` - Horizontal Tab (TAB)
     * ``\'`` - Single quote ``'`` (escape in single quoted strings)
     * ``\"`` - Double quote ``"`` (escape in double quoted strings)
@@ -164,7 +152,14 @@ Bytes Literal
 
 .. code-block:: python
 
-    b'this is bytes literals'
+    'Moon'              # Unicode (in Python 3)
+    b'Moon'             # Bytes Literal
+
+.. code-block:: python
+
+    'Moon'.encode()     # b'Moon'
+    b'Moon'.decode()    # 'Moon'
+
 
 Raw String
 ==========
@@ -263,11 +258,20 @@ Concatenation
 
 .. code-block:: python
 
+    '-' * 10                # ----------
+    'Beetlejuice' * 3       # BeetlejuiceBeetlejuiceBeetlejuice
+    'Mua' + 'Ha' * 2        # 'MuaHaHa'
+
+
+String Immutability
+===================
+.. code-block:: python
+
     first_name = 'Jan'
     last_name = 'Twardowski'
 
     first_name + last_name
-    # Jan Twardowski
+    # JanTwardowski
 
     first_name + ' ' + last_name
     # Jan Twardowski
@@ -277,23 +281,26 @@ Concatenation
 
     first_name = 'Jan'
     last_name = 'Twardowski'
-    age = 42
 
-    # How many string are there in a memory?
     first_name + last_name
 
-    # How many string are there in a memory?
+.. code-block:: python
+    :caption: How many string are there in a memory?
+
+    first_name = 'Jan'
+    last_name = 'Twardowski'
+    age = 42
+
     'Hello ' + first_name + ' ' + last_name + ' ' + str(age) + '!'
 
-    # How many string are there in a memory?
-    f'Hello {first_name} {last_name} {age}!'
-
 .. code-block:: python
+    :caption: How many string are there in a memory?
 
-    '-' * 10            # ----------
-    'Beetlejuice' * 3   # BeetlejuiceBeetlejuiceBeetlejuice
+    first_name = 'Jan'
+    last_name = 'Twardowski'
+    age = 42
 
-    'Mua' + 'Ha' * 2    # 'MuaHaHa'
+    f'Hello {first_name} {last_name} {age}!'
 
 
 Assignments
@@ -318,8 +325,8 @@ Example
     .. literalinclude:: solution/type_str_example.py
         :language: python
 
-Emoticon Print
---------------
+Type String Emoticon
+--------------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 3 min
@@ -348,12 +355,12 @@ Emoticon Print
     * Print formatting
     * Reading input data from user
 
-Variables and Types
--------------------
+Type String Quotes
+------------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/type_str_input.py`
+* Solution: :download:`solution/type_str_quotes.py`
 
 :English:
     #. Ask user to input name

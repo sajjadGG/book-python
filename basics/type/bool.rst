@@ -165,8 +165,8 @@ Built-in Functions
 Assignments
 ===========
 
-To ``bool`` or not to ``bool``
-------------------------------
+Type Bool True or False
+-----------------------
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
@@ -211,8 +211,8 @@ To ``bool`` or not to ``bool``
     * Type casting
     * Logic types
 
-``True`` or ``False``
----------------------
+Type Bool Simple
+----------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 5 min

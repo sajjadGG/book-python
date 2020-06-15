@@ -49,8 +49,8 @@ Identity
 Assignments
 ===========
 
-Is ``None`` or ``not``
-----------------------
+Type None
+---------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min

@@ -410,12 +410,12 @@ Example
     * Print formatting
     * Cleaning text input
 
-String Cleaning
----------------
+Type String Clean
+-----------------
 * Complexity level: easy
 * Lines of code to write: 11 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/type_str_cleaning.py`
+* Solution: :download:`solution/type_str_clean.py`
 
 :English:
     #. Use data from "Input" section (see below)
