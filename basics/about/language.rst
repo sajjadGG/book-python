@@ -31,7 +31,7 @@ Which Version?
 .. csv-table:: Future Versions
     :header: "Version", "PEP", "Status", "Release", "End-of-life", "Release Manager"
 
-    "3.10", "TBA",        "future",       "2020-10-05", "2025-10",     "TBA"
+    "3.10", "TBA",        "future",       "2021-10",    "2025-10",     "TBA"
     "3.9",  ":pep:`596`", "development",  "2020-10-05", "2025-10",     "Łukasz Langa"
 
 .. csv-table:: Currently Supported Versions
@@ -156,8 +156,8 @@ Python Developer Survey
 Assignments
 ===========
 
-Check Python Version
---------------------
+About Version
+-------------
 * Complexity level: easy
 * Lines of code to write: 0 lines
 * Estimated time of completion: 5 min
@@ -199,12 +199,12 @@ Check Python Version
     * Umiejętność uruchamiania skryptów
     * Szukanie rozwiązań zadań z książki
 
-Check Python Environment
-------------------------
+About Environment
+-----------------
 * Complexity level: easy
 * Lines of code to write: 0 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/about_env.py`
+* Solution: :download:`solution/about_environment.py`
 
 #. Stwórz plik o nazwie ``about_env.py``
 #. Plik ma mieć zawartość:

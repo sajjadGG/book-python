@@ -161,7 +161,7 @@ Indentation
 Assignments
 ===========
 
-Pyton Syntax
+About Syntax
 ------------
 * Complexity level: easy
 * Lines of code to write: 2 lines + 2 lines of comment
