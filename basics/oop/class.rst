@@ -21,11 +21,11 @@ Rationale
     object
         Object created from class.
 
-.. code-block:: python
-    :force:
+.. code-block:: text
 
     class <name>:
         pass
+
 
     <instance> = <name>()
 
@@ -33,6 +33,7 @@ Rationale
 
     class MyClass:
         pass
+
 
     my = MyClass()
 
@@ -119,6 +120,46 @@ Class vs Instance
     :align: center
 
     Intuition definition: Class is a blueprint, instances are homes made from this plan. Image source: :cite:`FigureBlueprintHouse`
+
+.. image:: img/uml-class-diagram-1.jpg
+    :width: 20%
+    :class: inline
+
+.. image:: img/uml-class-diagram-2.png
+    :width: 20%
+    :class: inline
+
+.. image:: img/uml-class-diagram-3.png
+    :width: 20%
+    :class: inline
+
+.. image:: img/uml-class-diagram-4.png
+    :width: 20%
+    :class: inline
+
+.. image:: img/uml-class-diagram-5.png
+    :width: 20%
+    :class: inline
+
+.. image:: img/uml-class-diagram-6.png
+    :width: 20%
+    :class: inline
+
+.. image:: img/uml-class-diagram-7.png
+    :width: 20%
+    :class: inline
+
+.. image:: img/uml-class-diagram-8.jpg
+    :width: 20%
+    :class: inline
+
+.. image:: img/uml-class-diagram-9.jpg
+    :width: 20%
+    :class: inline
+
+.. image:: img/uml-class-diagram-10.png
+    :width: 20%
+    :class: inline
 
 
 Convention

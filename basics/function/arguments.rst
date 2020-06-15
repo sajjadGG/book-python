@@ -291,7 +291,7 @@ Function Arguments Numbers to Str
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/function_args_numstr.py`
+* Solution: :download:`solution/function_args_numstr_simple.py`
 
 :English:
     #. Use data from "Input" section (see below)

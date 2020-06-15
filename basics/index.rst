@@ -66,7 +66,7 @@ Control Flow
 ************
 .. toctree::
     :maxdepth: 2
-    :caption: Mappings
+    :caption: Control Flow
     :name: Basic Control Flow
 
     control-flow/operators.rst
@@ -80,7 +80,7 @@ Loops
 *****
 .. toctree::
     :maxdepth: 2
-    :caption: Looping
+    :caption: Loops
     :name: Basic Loops
 
     loop/while.rst

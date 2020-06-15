@@ -20,8 +20,7 @@ Recap
 
 Syntax
 ======
-.. code-block:: python
-    :force:
+.. code-block:: text
 
     result = [<RETURN> for <VARIABLE> in <ITERABLE>]
 

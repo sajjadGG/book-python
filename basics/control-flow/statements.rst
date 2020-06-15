@@ -29,9 +29,8 @@ Positive and Negative Values
 
 If
 ==
-.. code-block:: python
+.. code-block:: text
     :caption: ``if`` generic syntax
-    :force:
 
     if <condition>:
         <do something>
@@ -131,9 +130,8 @@ Else
     * Optional
     * Executed when condition is not met
 
-.. code-block:: python
+.. code-block:: text
     :caption: ``else`` generic syntax
-    :force:
 
     if <condition>:
         <do something>
@@ -248,9 +246,8 @@ Elif
     * Used to check for additional condition if first is not met
     * In other languages is known as ``else if``
 
-.. code-block:: python
+.. code-block:: text
     :caption: ``elif`` generic syntax
-    :force:
 
     if <condition>:
         <do something>

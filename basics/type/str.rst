@@ -366,7 +366,7 @@ Type String Quotes
     #. Ask user to input name
     #. To print use f-string formatting
     #. Note, that second line starts with tab
-    #. Value in double quotes is a name read from user (in output user typed ``José Jiménez``)
+    #. Value ``NAME`` in double quotes is a name read from user
     #. Mind the different quotes, apostrophes, tabs and newlines
     #. Do not use neither space not enter - use ``\n`` and ``\t``
     #. Do not use string addition (``str + str``)
@@ -376,7 +376,7 @@ Type String Quotes
     #. Poproś użytkownika o wprowadzenie imienia
     #. Do wypisania użyj f-string formatting
     #. Zauważ, że druga linijka zaczyna się od tabulacji
-    #. Wartość w podwójnych cudzysłowach to ciąg od użytkownika (w przykładzie użytkownik wpisał ``José Jiménez``)
+    #. Wartość ``NAME`` w podwójnych cudzysłowach to ciąg od użytkownika
     #. Zwróć uwagę na znaki apostrofów, cudzysłowów, tabulacji i nowych linii
     #. Nie używaj spacji ani entera - użyj ``\n`` i ``\t``
     #. Nie korzystaj z dodawania stringów (``str + str``)
@@ -385,7 +385,7 @@ Type String Quotes
 :Output:
     .. code-block:: text
 
-        '''My name... "José Jiménez".
+        '''My name... "NAME".
             I'm an """astronaut!"""'''
 
 :The whys and wherefores:

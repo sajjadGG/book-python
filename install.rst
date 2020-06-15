@@ -34,10 +34,8 @@ Install on macOS
 #. macOS domyślnie ma zainstalowaną starą wersję Pythona 2 (nie będziemy z niej korzystać)
 #. Pobierz i zainstaluj najnowszą wersję Pythona
 #. Alternatywnie użyj Brew (https://brew.sh) i zainstaluj Python za pomocą: ``brew install python3``
-#. Wykonaj w terminalu ``python3 --version`` - sprawdzanie wersji Python
-#. Wykonaj w terminalu ``pip3 --version`` - sprawdzanie wersji managera pakietów ``pip``
-#. Wersja Python powinna być zgodna z wymaganiami kursu
-#. Wersja ``pip`` w nie ma większego znaczenia, ale ważne aby polecenie nie wyrzuciło błędu (tzn. ``pip`` by był poprawnie zainstalowany)
+#. Wykonaj w terminalu ``python --version`` - powinno wyświetlić wersję Python zgodną z wymaganiami kursu
+#. Wykonaj w terminalu ``pip --version`` - wersja ``pip`` w nie ma większego znaczenia, ale ważne aby polecenie nie wyrzuciło błędu (tzn. ``pip`` by był poprawnie zainstalowany)
 
 
 Install on Linux
@@ -52,28 +50,30 @@ Install on Linux
     * ``emerge`` - Gentoo
     * ``rpm`` - RedHat, Fedora
 
-#. Wykonaj w terminalu ``python3 --version`` - sprawdzanie wersji Python
-#. Wykonaj w terminalu ``pip3 --version`` - sprawdzanie wersji managera pakietów ``pip``
-#. Wersja Python powinna być zgodna z wymaganiami kursu
-#. Wersja ``pip`` w nie ma większego znaczenia, ale ważne aby polecenie nie wyrzuciło błędu (tzn. ``pip`` by był poprawnie zainstalowany)
+#. Wykonaj w terminalu ``python3 --version`` - powinno wyświetlić wersję Python zgodną z wymaganiami kursu
+#. Wykonaj w terminalu ``pip3 --version`` - wersja ``pip`` w nie ma większego znaczenia, ale ważne aby polecenie nie wyrzuciło błędu (tzn. ``pip`` by był poprawnie zainstalowany)
 
 .. note:: W Ubuntu może nie być ``pip`` wtedy trzeba uruchomić ``sudo apt update; sudo apt install --yes python3-pip``
 
 
 Install on Windows
 ==================
-#. Pobierz i zainstaluj najnowszą wersję Pythona
-#. Podczas instalacji pozostaw domyślne opcje
-#. Wykonaj w terminalu ``python3 --version`` - sprawdzanie wersji Python
-#. Wykonaj w terminalu ``pip3 --version`` - sprawdzanie wersji managera pakietów ``pip``
-#. Wersja Python powinna być zgodna z wymaganiami kursu
-#. Wersja ``pip`` w nie ma większego znaczenia, ale ważne aby polecenie nie wyrzuciło błędu (tzn. ``pip`` by był poprawnie zainstalowany)
+.. figure:: _img/python-install-1c.png
+    :width: 60%
+    :align: center
 
-.. note:: Uwaga do starszych wersji Windows:
+    Podczas instalacji Python zaznacz opcję (1) "Add Python to ``PATH``" a następnie kontynuuj instalację z zalecanymi opcjami (2).
 
-    * Podczas instalacji Python zaznacz opcję "Dodaj Python do zmiennej ``PATH``"
-    * Jest to ważne, gdyż inaczej interpreter nie uruchomi się w trybie poleceń ``cmd``!
-    * Jeżeli nie zaznaczysz tej opcji podczas instalacji, trzeba będzie to zrobić ręcznie:
+#. Pobierz zgodną z wymaganiami kursu wersję Pythona
+#. Podczas instalacji Python zaznacz opcję "Add Python to ``PATH``"
+#. Zainstaluj Python używając opcji "Install now", która ustawi domyślne opcje
+#. Wykonaj w terminalu ``python --version`` - powinno wyświetlić wersję Python zgodną z wymaganiami kursu
+#. Wykonaj w terminalu ``pip --version`` - wersja ``pip`` w nie ma większego znaczenia, ale ważne aby polecenie nie wyrzuciło błędu (tzn. ``pip`` by był poprawnie zainstalowany)
+
+.. note:: Uwaga, jeżeli opcja "Add Python to ``PATH``" nie została zaznaczona podczas instalacji:
+
+    * ``cmd`` nie wykryje polecenia ``python`` oraz ``pip``
+    * Trzeba będzie to dodać Python do ``PATH`` ręcznie:
 
         #. Kliknij przycisk start
         #. Kliknij prawym przyciskiem myszy na "Komputer" i wybierz z menu: "Właściwości"
@@ -88,6 +88,7 @@ Install on Windows
             * ``%USERPROFILE%\AppData\Local\Programs\Python\Python38\``
             * ``%USERPROFILE%\AppData\Local\Programs\Python\Python38\Scripts\``
 
+        #. Sprawdź ścieżki przed dodaniem, gdyż w zależności od wersji katalog instalacji może się nieznacznie różnić (np. katalog ``Python38`` w ścieżce)
         #. Po wprowadzeniu modyfikacji kliknij "OK", następnie "OK" dla okienka ze zmiennymi środowiskowymi oraz "OK" w okienku "Właściwości systemu"
         #. Trzeba zamknąć i uruchomić ``cmd`` ponownie
         #. Starsze wersje Windows wymagają wylogowania użytkownika i zalogowania się ponownie

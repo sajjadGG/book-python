@@ -11,9 +11,8 @@ Syntax
     * ``ITERABLE`` must implement ``iterator`` interface
     * More information in :ref:`Iterators`
 
-.. code-block:: python
+.. code-block:: text
     :caption: ``for`` loop syntax
-    :force:
 
     for <variable> in <iterable> :
         <do something>

@@ -11,9 +11,8 @@ Syntax
     * Continue execution when argument is ``True``
     * Stops if argument is ``False``
 
-.. code-block:: python
+.. code-block:: text
     :caption: ``while`` loop generic syntax
-    :force:
 
     while <condition>:
         <do something>
