@@ -85,6 +85,7 @@ Frozenset or Set
 Both:
 
     * unordered
+    * impossible to getitem and slice
     * unique elements
     * only **hashable** elements
 

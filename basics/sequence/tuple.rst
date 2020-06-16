@@ -81,6 +81,7 @@ Get Item
 
     data[0]         # 'a'
     data[1]         # 'b'
+    data[2]         # 'c'
     data[3]         # 'd'
 
 
@@ -115,6 +116,7 @@ Tuple or List
 Both:
 
     * ordered
+    * possible to getitem and slice
     * elements can be duplicated
     * elements of any types
 

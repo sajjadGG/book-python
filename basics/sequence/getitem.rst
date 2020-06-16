@@ -17,7 +17,7 @@ Positive Index
 ==============
 .. code-block:: python
 
-    data = ['a', 'b', 'c', 'd', 'e']
+    data = ['a', 'b', 'c', 'd']
 
     data[0]             # 'a'
     data[1]             # 'b'
@@ -28,11 +28,11 @@ Negative Index
 ==============
 .. code-block:: python
 
-    data = ['a', 'b', 'c', 'd', 'e']
+    data = ['a', 'b', 'c', 'd']
 
     data[-0]            # 'a'
-    data[-1]            # 'e'
-    data[-2]            # 'd'
+    data[-1]            # 'd'
+    data[-2]            # 'c'
 
 
 Out of Range
@@ -40,7 +40,7 @@ Out of Range
 .. code-block:: python
     :caption: Accessing not existing element
 
-    data = ['a', 'b', 'c', 'd', 'e']
+    data = ['a', 'b', 'c', 'd']
 
     data[100]           # IndexError: string index out of range
     data[-100]          # IndexError: string index out of range
@@ -51,41 +51,41 @@ Ordered Sequence
 .. code-block:: python
     :caption: Get item from ``str``
 
-    data = 'abcde'
+    data = 'abcd'
 
     data[0]             # 'a'
     data[1]             # 'b'
     data[2]             # 'c'
 
     data[-0]            # 'a'
-    data[-1]            # 'e'
-    data[-2]            # 'd'
+    data[-1]            # 'd'
+    data[-2]            # 'c'
 
 .. code-block:: python
     :caption: Get item from ``list``
 
-    data = ['a', 'b', 'c', 'd', 'e']
+    data = ['a', 'b', 'c', 'd']
 
     data[0]             # 'a'
     data[1]             # 'b'
     data[2]             # 'c'
 
     data[-0]            # 'a'
-    data[-1]            # 'e'
-    data[-2]            # 'd'
+    data[-1]            # 'd'
+    data[-2]            # 'c'
 
 .. code-block:: python
     :caption: Get item from ``tuple``
 
-    data = ('a', 'b', 'c', 'd', 'e')
+    data = ('a', 'b', 'c', 'd')
 
     data[0]             # 'a'
     data[1]             # 'b'
     data[2]             # 'c'
 
     data[-0]            # 'a'
-    data[-1]            # 'e'
-    data[-2]            # 'd'
+    data[-1]            # 'd'
+    data[-2]            # 'c'
 
 
 Unordered Sequence
@@ -93,7 +93,7 @@ Unordered Sequence
 .. code-block:: python
     :caption: Get item from ``set`` is impossible. ``set`` is unordered data structure.
 
-    data = {'a', 'b', 'c', 'd', 'e'}
+    data = {'a', 'b', 'c', 'd'}
 
     data[0]             # TypeError: 'set' object is not subscriptable
     data[1]             # TypeError: 'set' object is not subscriptable
@@ -106,7 +106,7 @@ Unordered Sequence
 .. code-block:: python
     :caption: Get item from ``frozenset`` is impossible. ``frozenset`` is unordered data structure.
 
-    data = {'a', 'b', 'c', 'd', 'e'}
+    data = frozenset({'a', 'b', 'c', 'd'})
 
     data[0]             # TypeError: 'frozenset' object is not subscriptable
     data[1]             # TypeError: 'frozenset' object is not subscriptable
@@ -183,7 +183,7 @@ Sequence Getitem Select
         header: tuple
         # ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
 
-        data: list
+        result: list
         # [[5.1, 3.5, 1.4, 0.2, 'setosa'],
         #  [4.7, 3.2, 1.3, 0.2, 'setosa'],
         #  [4.9, 3.0, 1.4, 0.2, 'setosa'],
@@ -199,3 +199,5 @@ Sequence Getitem Select
     * Using indexes
     * Type casting
 
+:Hint:
+    * To pretty print use ``pprint(result)`` (requires ``from pprint import pprint``)
