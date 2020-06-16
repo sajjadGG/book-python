@@ -150,6 +150,62 @@ Działania na kolekcjach
     len(DATA)
     # 3
 
+``slice()``
+-----------
+.. highlights::
+    * ``slice()`` arguments must be ``int`` (positive, negative or zero)
+    * start (inclusive), default: 0
+    * stop (exclusive), default: len(...)
+    * step, default: 1
+
+.. code-block:: python
+
+    data = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+    get = slice(1)
+
+    data[get]
+    # ['a']
+
+.. code-block:: python
+
+    data = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+    get = slice(2, 7)
+
+    data[get]
+    # ['c', 'd', 'e', 'f', 'g']
+
+.. code-block:: python
+
+    data = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+    get = slice(2, 7, 2)
+
+    data[get]
+    # ['c', 'e', 'g']
+
+.. code-block:: python
+
+    data = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    get = slice(1)
+    data[get]
+    # [0]
+
+    get = slice(2, 7)
+    data[get]
+    # [2, 3, 4, 5, 6]
+
+    get = slice(2, 7, 2)
+    data[get]
+    # [2, 4, 6]
+
+.. code-block:: python
+
+    text = 'We choose to go to the Moon!'
+    get = slice(23, 28)
+
+    text[get]
+    # 'Moon!'
+
 
 Konwersje typów
 ===============

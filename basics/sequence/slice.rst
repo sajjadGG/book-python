@@ -19,11 +19,17 @@ Sequences
 
     data = 'abcde'
 
+    data[0:3]           # 'abc'
+    data[3:5]           # 'de'
+    data[1:4]           # 'bcd'
+
     data[:3]            # 'abc'
     data[3:]            # 'de'
-    data[1:4]           # 'bcd'
+
     data[::2]           # 'ace'
     data[::-1]          # 'edcba'
+    data[1::2]          # 'bd'
+    data[1:4:2]         # 'bd'
 
 .. code-block:: python
     :caption: Slicing ``tuple``
@@ -261,63 +267,6 @@ Slice All
     # Name: 1, dtype: int64
 
 
-Slice Function
-==============
-.. highlights::
-    * ``slice()`` arguments must be ``int`` (positive, negative or zero)
-    * start (inclusive), default: 0
-    * stop (exclusive), default: len(...)
-    * step, default: 1
-
-.. code-block:: python
-
-    data = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
-    get = slice(1)
-
-    data[get]
-    # ['a']
-
-.. code-block:: python
-
-    data = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
-    get = slice(2, 7)
-
-    data[get]
-    # ['c', 'd', 'e', 'f', 'g']
-
-.. code-block:: python
-
-    data = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
-    get = slice(2, 7, 2)
-
-    data[get]
-    # ['c', 'e', 'g']
-
-.. code-block:: python
-
-    data = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-    get = slice(1)
-    data[get]
-    # [0]
-
-    get = slice(2, 7)
-    data[get]
-    # [2, 3, 4, 5, 6]
-
-    get = slice(2, 7, 2)
-    data[get]
-    # [2, 4, 6]
-
-.. code-block:: python
-
-    text = 'We choose to go to the Moon!'
-    get = slice(23, 28)
-
-    text[get]
-    # 'Moon!'
-
-
 Assignments
 ===========
 
@@ -381,6 +330,62 @@ Sequence Slice Sequence
     * Defining and using ``list``, ``tuple``, ``set``
     * Slice data structures
     * Type casting
+
+Sequence Slice Text
+-------------------
+* Complexity level: easy
+* Lines of code to write: 8 lines
+* Estimated time of completion: 10 min
+* Solution: :download:`solution/sequence_slice_text.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Remove title and military rank in each variable
+    #. Remove also whitespaces at the beginning and end of a text
+    #. Use only ``slice`` to clean text
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Usuń tytuł naukowy i stopień wojskowy z każdej zmiennej
+    #. Usuń również białe znaki na początku i końcu tekstu
+    #. Użyj tylko ``slice`` do oczyszczenia tekstu
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Example:
+    .. code-block:: python
+
+        example = 'lt. Mark Watney, PhD'
+        example[4:-5]
+        # 'Mark Watney'
+
+:Input:
+    .. code-block:: python
+
+        a = 'dr hab. inż. Jan Twardowski, prof. AATC'
+        b = 'gen. pil. Jan Twardowski'
+        c = 'Mark Watney, PhD'
+        d = 'lt. col. ret. Melissa Lewis'
+        e = 'dr n. med. Ryan Stone'
+        f = 'Ryan Stone, MD-PhD'
+        g = 'lt. col. Jan Twardowski\t'
+
+:Output:
+    .. code-block:: python
+
+        b == 'Jan Twardowski'       # True
+        c == 'Jan Twardowski'       # True
+        d == 'Mark Watney'          # True
+        e == 'Melissa Lewis'        # True
+        f == 'Ryan Stone'           # True
+        g == 'Ryan Stone'           # True
+        h == 'Jan Twardowski'       # True
+
+:The whys and wherefores:
+    * Variable definition
+    * Print formatting
+    * Slicing strings
+    * Cleaning text input
 
 Sequence Slice Split
 --------------------
@@ -481,59 +486,3 @@ Sequence Slice Split
     * Using slices
     * Type casting
     * Magic Number
-
-Sequence Slice Text
--------------------
-* Complexity level: easy
-* Lines of code to write: 8 lines
-* Estimated time of completion: 10 min
-* Solution: :download:`solution/sequence_slice_text.py`
-
-:English:
-    #. Use data from "Input" section (see below)
-    #. Remove title and military rank in each variable
-    #. Remove also whitespaces at the beginning and end of a text
-    #. Use only ``slice`` to clean text
-    #. Compare result with "Output" section (see below)
-
-:Polish:
-    #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Usuń tytuł naukowy i stopień wojskowy z każdej zmiennej
-    #. Usuń również białe znaki na początku i końcu tekstu
-    #. Użyj tylko ``slice`` do oczyszczenia tekstu
-    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
-
-:Example:
-    .. code-block:: python
-
-        example = 'lt. Mark Watney, PhD'
-        example[4:-5]
-        # 'Mark Watney'
-
-:Input:
-    .. code-block:: python
-
-        a = 'dr hab. inż. Jan Twardowski, prof. AATC'
-        b = 'gen. pil. Jan Twardowski'
-        c = 'Mark Watney, PhD'
-        d = 'lt. col. ret. Melissa Lewis'
-        e = 'dr n. med. Ryan Stone'
-        f = 'Ryan Stone, MD-PhD'
-        g = 'lt. col. Jan Twardowski\t'
-
-:Output:
-    .. code-block:: python
-
-        b == 'Jan Twardowski'       # True
-        c == 'Jan Twardowski'       # True
-        d == 'Mark Watney'          # True
-        e == 'Melissa Lewis'        # True
-        f == 'Ryan Stone'           # True
-        g == 'Ryan Stone'           # True
-        h == 'Jan Twardowski'       # True
-
-:The whys and wherefores:
-    * Variable definition
-    * Print formatting
-    * Slicing strings
-    * Cleaning text input
