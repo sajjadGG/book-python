@@ -185,47 +185,6 @@ Omitting Values
     interesting         # 2
 
 
-Using in a Loop
-===============
-.. code-block:: python
-
-    *features, label = (5.8, 2.7, 5.1, 1.9, 'virginica')
-
-    features            # [5.8, 2.7, 5.1, 1.9]
-    label               # 'virginica'
-
-.. code-block:: python
-
-    DATA = [
-        (5.8, 2.7, 5.1, 1.9, 'virginica'),
-        (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-    ]
-
-    for *features, label in DATA:
-        avg = sum(features) / len(features)
-        print(label, avg)
-
-    # virginica 3.875
-    # setosa 2.55
-    # versicolor 3.475
-
-.. code-block:: python
-
-    DATA = [
-        (5.8, 2.7, 5.1, 1.9, 'virginica'),
-        (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-    ]
-
-    for *_, label in DATA:
-        print(label)
-
-    # virginica
-    # setosa
-    # versicolor
-
-
 Examples
 ========
 .. code-block:: python
@@ -275,6 +234,47 @@ Examples
     first           # 0
     second          # 1
     others          # [2, 3, 4, 5, 6, 7, 8, 9]
+
+
+Using in a Loop
+===============
+.. code-block:: python
+
+    *features, label = (5.8, 2.7, 5.1, 1.9, 'virginica')
+
+    features            # [5.8, 2.7, 5.1, 1.9]
+    label               # 'virginica'
+
+.. code-block:: python
+
+    DATA = [
+        (5.8, 2.7, 5.1, 1.9, 'virginica'),
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+    ]
+
+    for *features, label in DATA:
+        avg = sum(features) / len(features)
+        print(label, avg)
+
+    # virginica 3.875
+    # setosa 2.55
+    # versicolor 3.475
+
+.. code-block:: python
+
+    DATA = [
+        (5.8, 2.7, 5.1, 1.9, 'virginica'),
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+    ]
+
+    for *_, label in DATA:
+        print(label)
+
+    # virginica
+    # setosa
+    # versicolor
 
 
 Assignments

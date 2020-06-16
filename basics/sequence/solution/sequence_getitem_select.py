@@ -32,9 +32,10 @@ result = [
     tuple(DATA[12]),
     tuple(DATA[15]),
     tuple(DATA[16]),
-    set(),
     list(),
     tuple(),
+    set(),
+    frozenset()
 ]
 
 print(result)
@@ -44,4 +45,4 @@ print(result)
 #  (4.6, 3.4, 1.4, 0.3, 'setosa'),
 #  (5.0, 3.6, 1.4, 0.3, 'setosa'),
 #  (5.5, 2.3, 4.0, 1.3, 'versicolor'),
-#  set(), [], ()]
+#  [], (), set(), frozenset()]

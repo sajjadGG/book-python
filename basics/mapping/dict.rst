@@ -28,9 +28,8 @@ Type Definition
     data = dict()
 
     data = {
-        0: 'Melissa Lewis',
-        1: 'Mark Watney',
-        2: 'Alex Vogel'}
+        1961: 'First Human Space Flight',
+        1969: 'First Step on the Moon'}
 
     data = {
         'commander': 'Melissa Lewis',
@@ -95,8 +94,7 @@ Get Item
 
     calendarium = {
         1961: 'First Human Space Flight',
-        1969: 'First Step on the Moon',
-    }
+        1969: 'First Step on the Moon'}
 
     calendarium[1961]
     # 'First Human Space Flight'
@@ -464,12 +462,10 @@ Mapping Dict Define
 :English:
     #. Use data from "Input" section (see below)
     #. Create ``result: dict`` representing input data
-    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Stwórz ``result: dict`` reprezentujący dane wejściowe
-    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: text
@@ -487,16 +483,16 @@ Mapping Dict Items
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Print ``DATA`` keys
-    #. Print ``DATA`` values
-    #. Print ``DATA`` key-value pairs
+    #. Print list of ``DATA`` keys
+    #. Print list of ``DATA`` values
+    #. Print list of ``DATA`` key-value pairs
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Wypisz klucze z ``DATA``
-    #. Wypisz wartości z ``DATA``
-    #. Wypisz pary klucz-wartość z ``DATA``
+    #. Wypisz listę kluczy z ``DATA``
+    #. Wypisz listę wartości z ``DATA``
+    #. Wypisz listę pary klucz-wartość z ``DATA``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
@@ -519,12 +515,38 @@ Mapping Dict Items
         # [5.8, 2.7, 5.1, 1.9]
 
         items: List[tuple]
-        # [
-        #     ('Sepal length', 5.8),
-        #     ('Sepal width', 2.7),
-        #     ('Petal length', 5.1),
-        #     ('Petal width', 1.9),
-        # ]
+        # [('Sepal length', 5.8),
+        #  ('Sepal width', 2.7),
+        #  ('Petal length', 5.1),
+        #  ('Petal width', 1.9)]
+
+Mapping Dict Substitute
+-----------------------
+* Complexity level: easy
+* Lines of code to write: 3 lines
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/mappting_dict_substitute.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Ask user to input single letter
+    #. Convert to lowercase
+    #. If letter is in ``PL_ASCII`` then use conversion value as letter
+    #. Print letter
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Poproś użytkownika o wprowadzenie jednej litery
+    #. Przekonwertuj literę na małą
+    #. Jeżeli litera jest w ``PL_ASCII`` to użyj przekonwertowanej wartości jako litera
+    #. Wypisz literę
+
+:Input:
+    .. code-block:: python
+
+        PL_ASCII = {'ą': 'a', 'ć': 'c', 'ę': 'e',
+                    'ł': 'l', 'ń': 'n', 'ó': 'o',
+                    'ś': 's', 'ż': 'z', 'ź': 'z'}
 
 Mapping Dict Get
 ----------------

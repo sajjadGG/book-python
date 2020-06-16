@@ -131,9 +131,9 @@ Sequence Getitem Select
     #. Use data from "Input" section (see below)
     #. Write header (first line) to ``header: tuple`` variable
     #. Create ``result: list``
-    #. Convert to ``list`` data from row at index 2, 6, 9 and add to ``result``
-    #. Convert to ``tuple`` data from row at index 12, 15, 16 and add to ``result``
-    #. Add empty ``set``, ``list`` and ``tuple`` to ``result``
+    #. Add to ``result`` converted to ``list`` values from row at index 2, 6, 9 (each row is a separate list)
+    #. Add to ``result`` converted to ``tuple`` values from row at index 12, 15, 16 (each row is a separate tuple)
+    #. Append to ``result``: empty ``list``, empty ``tuple``, empty ``set`` and empty ``frozenset``
     #. Use only indexes
     #. Do not use ``for``, ``while`` or ``slice()``
     #. Compare result with "Output" section (see below)
@@ -142,9 +142,9 @@ Sequence Getitem Select
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zapisz nagłówek (pierwsza linia) do zmiennej ``header: tuple``
     #. Stwórz ``result: list``
-    #. Przekonwertuj do ``list`` dane z wierszy o indeksach 2, 6, 9 i dodaj do ``result``
-    #. Przekonwertuj do ``tuple`` dane z wierszy o indeksach 12, 15, 16 i dodaj do ``result``
-    #. Dodaj pusty ``set``, ``list`` oraz ``tuple`` do ``result``
+    #. Dodaj do ``result`` przekonwertowane do ``list`` wartości z wierszy o indeksach 2, 6, 9 (każdy wiersz to osobna lista)
+    #. Dodaj do ``result`` przekonwertowane do ``tuple`` wartości z wierszy o indeksach 12, 15, 16  (każdy wiersz to osobna krotka)
+    #. Dodaj na koniec ``result``: pustą ``list``, pustą ``tuple``, pusty ``set``, pusty ``frozenset``
     #. Użyj tylko indeksów
     #. Nie używaj ``for``, ``while`` lub ``slice()``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
@@ -190,9 +190,10 @@ Sequence Getitem Select
         #  (4.6, 3.4, 1.4, 0.3, 'setosa'),
         #  (5.0, 3.6, 1.4, 0.3, 'setosa'),
         #  (5.5, 2.3, 4.0, 1.3, 'versicolor'),
-        #  set(),
         #  [],
-        #  ()]
+        #  (),
+        #  set(),
+        #  frozenset()]
 
 :The whys and wherefores:
     * Using nested data structures

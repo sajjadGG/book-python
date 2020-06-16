@@ -373,13 +373,13 @@ Sequence Slice Text
 :Output:
     .. code-block:: python
 
-        b == 'Jan Twardowski'       # True
-        c == 'Jan Twardowski'       # True
-        d == 'Mark Watney'          # True
-        e == 'Melissa Lewis'        # True
-        f == 'Ryan Stone'           # True
-        g == 'Ryan Stone'           # True
-        h == 'Jan Twardowski'       # True
+        print(a == 'Jan Twardowski')       # True
+        print(b == 'Jan Twardowski')       # True
+        print(c == 'Jan Twardowski')       # True
+        print(d == 'Mark Watney')          # True
+        print(e == 'Melissa Lewis')        # True
+        print(f == 'Ryan Stone')           # True
+        print(g == 'Ryan Stone')           # True
 
 :The whys and wherefores:
     * Variable definition
