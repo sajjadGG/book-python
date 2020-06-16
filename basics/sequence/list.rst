@@ -221,18 +221,18 @@ Method Chaining
 .. code-block:: python
 
     data = [3, 1, 2]
-
-    data.append(4).sort()
-    # AttributeError: 'NoneType' object has no attribute 'sort'
-
-.. code-block:: python
-
-    data = [3, 1, 2]
     data.append(4)
     data.sort()
 
     print(data)
     # [1, 2, 3, 4]
+
+.. code-block:: python
+
+    data = [3, 1, 2]
+
+    data.append(4).sort()
+    # AttributeError: 'NoneType' object has no attribute 'sort'
 
 
 Built-in Functions

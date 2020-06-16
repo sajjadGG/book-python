@@ -406,7 +406,7 @@ Sequence Set Many
     #. From third row create ``set`` and add it to ``result`` using ``.update()``
     #. From fourth row create ``tuple`` and add it to ``result`` using ``.update()``
     #. From fifth row create ``list`` and add it to ``result`` using ``.update()``
-    #. Print sorted ``result``
+    #. Print ``result``
     #. Compare result with "Output" section (see below)
 
 :Polish:
@@ -416,7 +416,7 @@ Sequence Set Many
     #. Na podstawie trzeciego wiersza stwórz ``set`` i dodaj go do ``result`` używając ``.update()``
     #. Na podstawie czwartego wiersza stwórz ``tuple`` i dodaj go do ``result`` używając ``.update()``
     #. Na podstawie piątego wiersza stwórz ``list`` i dodaj go do ``result`` używając ``.update()``
-    #. Wypis posortowany ``result``
+    #. Wypis ``result``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
@@ -434,7 +434,7 @@ Sequence Set Many
     .. code-block:: python
 
         result: set
-        # {0.2, 1.3, 1.4, 1.5, 1.8, 1.9, 2.7, 2.8, 2.9, 3.2, 3.5, 4.1, 4.5, 5.1, 5.6, 5.7, 5.8, 6.3, 6.4}
+        # {0.2, 1.9, 2.7, 3.5, 1.4, 5.8, 5.1, 1.3, 2.8, 4.1, 5.7, 6.3, 5.6, 6.4, 1.5, 4.5, 3.2, 1.8, 2.9}
 
 :The whys and wherefores:
     * Defining ``set``
