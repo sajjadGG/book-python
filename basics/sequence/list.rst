@@ -298,6 +298,9 @@ Sequence List Create
     #. Wypisz ``result``
     #. Wypisz liczbę elementów ``result``
 
+:The whys and wherefores:
+    * Defining ``list``
+
 Sequence List Many
 ------------------
 * Complexity level: easy
@@ -307,17 +310,17 @@ Sequence List Many
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Create lists ``a``, ``b``, ``c`` representing each row
-    #. ``a`` with data from row 1
-    #. ``b`` with data from row 2
-    #. ``c`` with data from row 3
+    #. Create list ``a`` with data from row 1
+    #. Create list ``b`` with data from row 2
+    #. Create list ``c`` with data from row 3
+    #. Do not use values from "Row" column
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Stwórz listy ``a``, ``b``, ``c`` reprezentujące każdy wierszy
-    #. ``a`` z danymi z wiersza 1
-    #. ``b`` z danymi z wiersza 2
-    #. ``c`` z danymi z wiersza 3
+    #. Stwórz listę ``a`` z danymi z wiersza 1
+    #. Stwórz listę ``b`` z danymi z wiersza 2
+    #. Stwórz listę ``c`` z danymi z wiersza 3
+    #. Nie używaj wartości z kolumny "Row"
 
 :Input:
     .. csv-table:: Input data
@@ -330,7 +333,6 @@ Sequence List Many
 
 :The whys and wherefores:
     * Defining ``list``
-    * Learning IDE features
 
 Sequence List Modify
 --------------------
@@ -369,7 +371,5 @@ Sequence List Modify
         b = [7.0, 3.2, 4.7, 1.4, 'setosa']
         c = [7.6, 3.0, 6.6, 2.1]
 
-
 :The whys and wherefores:
     * Defining ``list``
-    * Learning IDE features
