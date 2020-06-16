@@ -33,30 +33,28 @@ List of Pairs
     # }
 
 
-Zip
-===
-.. highlights::
-    * ``zip`` is a generator
-    * ``zip`` will create a list of pairs (like ``dict.items()``)
-
+Enumerate
+=========
 .. code-block:: python
 
     crew = ['Melissa Lewis', 'Mark Watney', 'Alex Vogel']
-    roles = ['commander', 'botanist', 'chemist']
 
-    list(zip(roles, crew))
-    # [('commander', 'Melissa Lewis'),
-    #  ('botanist', 'Mark Watney'),
-    #  ('chemist', 'Alex Vogel')]
+    astronaut = enumerate(crew)
 
-    dict(zip(roles, crew))
-    # {'commander': 'Melissa Lewis',
-    #  'botanist': 'Mark Watney',
-    #  'chemist': 'Alex Vogel'}
+    next(astronaut)
+    # (0, 'Melissa Lewis')
 
+    next(astronaut)
+    # (1, 'Mark Watney')
 
-Enumerate
-=========
+    next(astronaut)
+    # (2, 'Alex Vogel')
+
+    next(astronaut)
+    # Traceback (most recent call last):
+    #   File "<input>", line 1, in <module>
+    # StopIteration
+
 .. code-block:: python
 
     crew = ['Melissa Lewis', 'Mark Watney', 'Alex Vogel']
@@ -70,6 +68,49 @@ Enumerate
     # {0: 'Melissa Lewis',
     #  1: 'Mark Watney',
     #  2: 'Alex Vogel'}
+
+
+Zip
+===
+.. highlights::
+    * ``zip`` is a generator
+    * ``zip`` will create a list of pairs (like ``dict.items()``)
+
+.. code-block:: python
+
+    roles = ['commander', 'botanist', 'chemist']
+    crew = ['Melissa Lewis', 'Mark Watney', 'Alex Vogel']
+
+    astronaut = zip(roles, crew)
+
+    next(astronaut)
+    # ('commander', 'Melissa Lewis')
+
+    next(astronaut)
+    # ('botanist', 'Mark Watney')
+
+    next(astronaut)
+    # ('chemist', 'Alex Vogel')
+
+    next(astronaut)
+    # Traceback (most recent call last):
+    #   File "<input>", line 1, in <module>
+    # StopIteration
+
+.. code-block:: python
+
+    roles = ['commander', 'botanist', 'chemist']
+    crew = ['Melissa Lewis', 'Mark Watney', 'Alex Vogel']
+
+    list(zip(roles, crew))
+    # [('commander', 'Melissa Lewis'),
+    #  ('botanist', 'Mark Watney'),
+    #  ('chemist', 'Alex Vogel')]
+
+    dict(zip(roles, crew))
+    # {'commander': 'Melissa Lewis',
+    #  'botanist': 'Mark Watney',
+    #  'chemist': 'Alex Vogel'}
 
 
 Assignments
@@ -115,6 +156,38 @@ Mapping Generate Pairs
         #  'Petal width': 1.9,
         #  'Species': 'virginica'}
 
+Mapping Generate Enumerate
+--------------------------
+* Complexity level: easy
+* Lines of code to write: 3 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/mapping_generate_enumerate.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Create ``result: dict``
+    #. Using ``enumerate()`` convert data to ``dict`` and assign to ``result``
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Stwórz ``result: dict``
+    #. Używając ``enumerate()`` przekonwertuj dane do ``dict`` i przypisz do ``result``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        DATA = ['setosa', 'versicolor', 'virginica']
+
+:Output:
+    .. code-block:: python
+
+        result: dict
+        # {0: 'setosa',
+        #  1: 'versicolor',
+        #  2: 'virginica'}
+
 Mapping Generate Zip
 --------------------
 * Complexity level: easy
@@ -149,35 +222,3 @@ Mapping Generate Zip
         #  'Petal length': 5.1,
         #  'Petal width': 1.9,
         #  'Species': 'virginica'}
-
-Mapping Generate Enumerate
---------------------------
-* Complexity level: easy
-* Lines of code to write: 3 lines
-* Estimated time of completion: 3 min
-* Solution: :download:`solution/mapping_generate_enumerate.py`
-
-:English:
-    #. Use data from "Input" section (see below)
-    #. Create ``result: dict``
-    #. Using ``enumerate()`` convert data to ``dict`` and assign to ``result``
-    #. Compare result with "Output" section (see below)
-
-:Polish:
-    #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Stwórz ``result: dict``
-    #. Używając ``enumerate()`` przekonwertuj dane do ``dict`` i przypisz do ``result``
-    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
-
-:Input:
-    .. code-block:: python
-
-        DATA = ['setosa', 'versicolor', 'virginica']
-
-:Output:
-    .. code-block:: python
-
-        result: dict
-        # {0: 'setosa',
-        #  1: 'versicolor',
-        #  2: 'virginica'}
