@@ -12,8 +12,9 @@ Rationale
     * Index must be less or equal to length of object
     * Negative index starts from the end and go right to left
 
-Sequences
-=========
+
+Ordered Sequences
+=================
 .. code-block:: python
     :caption: Slicing ``str``
 
@@ -21,8 +22,6 @@ Sequences
 
     data[0:3]           # 'abc'
     data[3:5]           # 'de'
-    data[1:4]           # 'bcd'
-
     data[:3]            # 'abc'
     data[3:]            # 'de'
 
@@ -36,24 +35,34 @@ Sequences
 
     data = ('a', 'b', 'c', 'd', 'e')
 
+    data[0:3]           # ('a', 'b', 'c')
+    data[3:5]           # ('d', 'e')
     data[:3]            # ('a', 'b', 'c')
     data[3:]            # ('d', 'e')
-    data[1:4]           # ('b', 'c', 'd')
+
     data[::2]           # ('a', 'c', 'e')
     data[::-1]          # ('e', 'd', 'c', 'b', 'a')
+    data[1::2]          # ('b', 'd')
+    data[1:4:2]         # ('b', 'd')
 
 .. code-block:: python
     :caption: Slicing ``list``
 
     data = ['a', 'b', 'c', 'd', 'e']
 
+    data[0:3]           # ['a', 'b', 'c']
+    data[3:5]           # ['d', 'e']
     data[:3]            # ['a', 'b', 'c']
     data[3:]            # ['d', 'e']
-    data[1:4]           # ['b', 'c', 'd']
+
     data[::2]           # ['a', 'c', 'e']
     data[::-1]          # ['e', 'd', 'c', 'b', 'a']
+    data[1::2]          # ['b', 'd']
+    data[1:4:2]         # ['b', 'd']
 
 
+Unordered Sequences
+=================
 .. code-block:: python
     :caption: Slicing ``set`` is not possible
 
@@ -71,8 +80,8 @@ Sequences
     # TypeError: 'frozenset' object is not subscriptable
 
 
-Forwards
-========
+Slice Forwards
+==============
 .. highlights::
     * ``my_sequence[start:stop]``
 
@@ -90,8 +99,8 @@ Forwards
     text[23:]       # 'Moon!'
 
 
-Backwards
-=========
+Slice Backwards
+===============
 .. highlights::
     * Negative index starts from the end and go right to left
 
@@ -164,16 +173,6 @@ Index Arithmetic
     text[first:last:step]       # 'Mo!'
     text[first:last-1:step]     # 'Mo'
 
-.. code-block:: python
-
-    text = 'We choose to go to the Moon!'
-    first = 9
-    last = 2
-    step = -2
-
-    text[first:last:step]       # ' soc!'
-    text[first-1:last:step]     # 'eoh'
-
 
 Nested Sequences
 ================
@@ -199,6 +198,7 @@ Nested Sequences
 
     data[::2][1][1:]
     # [8, 9]
+
 
 Slice All
 =========
