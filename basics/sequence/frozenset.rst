@@ -18,7 +18,7 @@ Rationale
 Type Definition
 ===============
 .. highlights::
-    * Set is ordered data structure
+    * Frozenset is unordered data structure
     * Do not support getitem
     * Do not support slice
     * Defining only with ``frozenset()`` - no short syntax
@@ -84,18 +84,17 @@ Frozenset or Set
 ================
 Both:
 
+    * unordered
     * unique elements
     * only **hashable** elements
 
 Frozenset:
 
-    * ordered
     * immutable
     * one contingent block of data in memory
 
 Set:
 
-    * unordered
     * mutable
     * implemented in memory as list of pointers to objects
     * objects are scattered in memory
@@ -104,11 +103,41 @@ Set:
 Assignments
 ===========
 
+Sequence Frozenset Create
+-------------------------
+* Complexity level: easy
+* Lines of code to write: 3 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/sequence_frozenset_create.py`
+
+:English:
+    #. Create frozenset ``result`` with elements:
+
+        * 'a'
+        * 1
+        * 2.2
+
+    #. Print ``result``
+    #. Print number of elements in ``result``
+
+:Polish:
+    #. Stwórz frozenset ``result`` z elementami:
+
+        * 'a'
+        * 1
+        * 2.2
+
+    #. Wypisz ``result``
+    #. Wypisz liczbę elementów ``result``
+
+:The whys and wherefores:
+    * Defining ``list``
+
 Sequence Frozenset Newline
 --------------------------
 * Complexity level: easy
 * Lines of code to write: 2 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/sequence_frozenset_newline.py`
 
 :English:
@@ -123,7 +152,7 @@ Sequence Frozenset Newline
     #. Użyj ``str.join()`` aby połączyć linie tekstu znakiem końca linii (``\n``)
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
-:Innput:
+:Input:
     .. code-block:: python
 
         DATA = frozenset({
