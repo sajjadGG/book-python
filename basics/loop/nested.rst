@@ -36,68 +36,8 @@ Convention
 * Note that ``i`` may interfere with ``i`` used as loop counter
 
 
-Examples
-========
-.. code-block:: python
-
-    DATA = [
-        (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-        (6.3, 2.9, 5.6, 1.8, 'virginica'),
-    ]
-
-    for row in DATA:
-        print(row)
-
-    # (5.1, 3.5, 1.4, 0.2, 'setosa')
-    # (5.7, 2.8, 4.1, 1.3, 'versicolor')
-    # (6.3, 2.9, 5.6, 1.8, 'virginica')
-
-.. code-block:: python
-
-    DATA = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
-    ]
-
-    for row in DATA:
-        for column in row:
-            print(column, end=', ')
-
-        print()
-
-    # 1, 2, 3,
-    # 4, 5, 6,
-    # 7, 8, 9,
-
-
 Nested Sequence with One Type
 =============================
-.. code-block:: python
-    :caption: Iterating over sequence
-
-    DATA = [1, 2, 3]
-
-    for obj in DATA:
-        print(obj)
-
-    # 1
-    # 2
-    # 3
-
-.. code-block:: python
-    :caption: Iterating over nested sequence
-
-    DATA = [(...), (...), (...)]
-
-    for obj in DATA:
-        print(obj)
-
-    # (...)
-    # (...)
-    # (...)
-
 .. code-block:: python
     :caption: Iterating over nested sequence
 
@@ -129,6 +69,27 @@ Nested Sequence with One Type
     # (5.1, 3.5, 1.4, 0.2, 'setosa')
     # (5.7, 2.8, 4.1, 1.3, 'versicolor')
     # (6.3, 2.9, 5.6, 1.8, 'virginica')
+
+
+Nested Loop
+===========
+.. code-block:: python
+
+    DATA = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+    ]
+
+    for row in DATA:
+        for column in row:
+            print(column, end=', ')
+
+        print()
+
+    # 1, 2, 3,
+    # 4, 5, 6,
+    # 7, 8, 9,
 
 
 Nested Sequence with Many Types
@@ -253,7 +214,7 @@ Loop Nested Unique Keys
 -----------------------
 * Complexity level: medium
 * Lines of code to write: 5 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 7 min
 * Solution: :download:`solution/loop_nested_unique_keys.py`
 
 :English:
