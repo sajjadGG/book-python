@@ -3,6 +3,23 @@ Membership
 **********
 
 
+Rationale
+=========
+.. highlights::
+    * ``in`` checks whether value is in sequence
+    * works with ``str``, ``list``, ``tuple``, ``set``, ``frozenset``, ``dict``
+    * Computational complexity for checking if sequence "contains":
+
+        * O(n) - ``in str``
+        * O(n) - ``in list``
+        * O(n) - ``in tuple``
+        * O(1) - ``in set``
+        * O(1) - ``in frozenset``
+        * O(1) - ``in dict``
+
+    * More information in :ref:`Performance Optimization Contains`
+
+
 Contains
 ========
 * ``in`` - Contains
@@ -79,6 +96,16 @@ Contains
     {1, 2} in {1, 2}          # False
     {3, 4} in {1,2, {3, 4}}   # True
 
+.. code-block:: python
+
+    crew = {
+        'commander': 'Melissa Lewis',
+        'botanist': 'Mark Watney',
+        'chemist': 'Alex Vogel'}
+
+    'commander' in crew             # True
+    'pilot' in data                 # False
+
 
 Missing
 =======
@@ -118,3 +145,13 @@ Missing
 
     {2} not in {1, 2}         # True
     {1, 2} not in {1, 2}      # True
+
+.. code-block:: python
+
+    crew = {
+        'commander': 'Melissa Lewis',
+        'botanist': 'Mark Watney',
+        'chemist': 'Alex Vogel'}
+
+    'commander' not in crew         # False
+    'pilot' not in crew             # True

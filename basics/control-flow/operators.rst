@@ -5,29 +5,21 @@ Conditional Operators
 *********************
 
 
-Comparision
-===========
+Equals
+======
 * ``==`` - ``eq`` (equals)
-* ``!=`` - ``ne`` (not-equals)
 
 .. code-block:: python
     :caption: Comparing ``str``
 
     'Monty Python' == 'Python'      # False
-    'Monty Python' != 'Python'      # True
-
     'Python' == 'Python'            # True
-    'Python' != 'Python'            # False
-
     'python' == 'Python'            # False
-    'python' != 'Python'            # True
 
 .. code-block:: python
     :caption: Comparing ``tuple``
 
     (1, 2, 3) == (1, 2)             # False
-    (1, 2, 3) != (1, 2)             # True
-
     (1, 2) == (1, 2)                # True
     (1, 2) == (2, 1)                # False
 
@@ -35,8 +27,6 @@ Comparision
     :caption: Comparing ``list``
 
     [1, 2, 3] == [1, 2]             # False
-    [1, 2, 3] != [1, 2]             # True
-
     [1, 2] == [1, 2]                # True
     [1, 2] == [2, 1]                # False
 
@@ -44,95 +34,72 @@ Comparision
     :caption: Comparing ``set``
 
     {1, 2, 3} == {1, 2}             # False
-    {1, 2, 3} != {1, 2}             # True
-
     {1, 2} == {1, 2}                # True
     {1, 2} == {2, 1}                # True
 
 
-Contains
-========
-.. highlights::
-    * ``in`` checks whether value is in sequence
-    * works with ``str``, ``list``, ``tuple``, ``set``, ``frozenset``, ``dict``
-    * Computational complexity for checking if sequence "contains":
-
-        * O(n) - ``in str``
-        * O(n) - ``in list``
-        * O(n) - ``in tuple``
-        * O(1) - ``in set``
-        * O(1) - ``in frozenset``
-        * O(1) - ``in dict``
-
-    * More information in :ref:`Performance Optimization Contains`
+Not-Equals
+==========
+* ``!=`` - ``ne`` (not-equals)
 
 .. code-block:: python
-    :caption: ``list`` contains
+    :caption: Comparing ``str``
 
-    data = 'abc'
-
-    'x' in data                      # False
-    'a' in data                      # True
-
-    'x' not in data                  # True
-    'a' not in data                  # False
+    'Monty Python' != 'Python'      # True
+    'Python' != 'Python'            # False
+    'python' != 'Python'            # True
 
 .. code-block:: python
-    :caption: ``list`` contains
+    :caption: Comparing ``tuple``
 
-    data = [1, 2, 3]
-
-    0 in data                        # False
-    1 in data                        # True
-
-    0 not in data                    # True
-    1 not in data                    # False
+    (1, 2, 3) != (1, 2)             # True
 
 .. code-block:: python
-    :caption: ``tuple`` contains
+    :caption: Comparing ``list``
 
-    data = (1, 2, 3)
-
-    0 in data                        # False
-    1 in data                        # True
-
-    0 not in data                    # True
-    1 not in data                    # False
+    [1, 2, 3] != [1, 2]             # True
 
 .. code-block:: python
-    :caption: ``set`` contains
+    :caption: Comparing ``set``
 
-    data = {1, 2, 3}
+    {1, 2, 3} != {1, 2}             # True
 
-    0 in data                        # False
-    1 in data                        # True
 
-    0 not in data                    # True
-    1 not in data                    # False
-
-.. code-block:: python
-    :caption: ``frozenset`` contains
-
-    data = frozenset({1, 2, 3})
-
-    0 in data                        # False
-    1 in data                        # True
-
-    0 not in data                    # True
-    1 not in data                    # False
+Greater Than
+============
+* ``>`` - ``gt`` (greater than)
+* Set uses ``>`` for ``set.issuperset()``. More information in :ref:`Sequence Set`
 
 .. code-block:: python
 
-    crew = {
-        'commander': 'Melissa Lewis',
-        'botanist': 'Mark Watney',
-        'chemist': 'Alex Vogel'}
+    'a' > 'b'       # False
+    'b' > 'a'       # True
 
-    'commander' in crew             # True
-    'pilot' in data                 # False
+    'abc' > 'ab'    # True
+    'abc' > 'abc'   # False
+    'abc' > 'abcd'  # False
 
-    'commander' not in crew         # False
-    'pilot' not in crew             # True
+    'def' > 'abc'   # True
+    'abc' > 'xy'    # False
+    'abc' > 'xyz'   # False
+
+.. code-block:: python
+
+    (3, 9) > (3, 8)         # True
+    (3, 8, 3) > (3, 7, 6)   # True
+    (3, 8) > (3, 9)         # False
+
+    (2, 7) > (3, 6)         # False
+    (3, 6) > (2, 7)         # True
+
+.. code-block:: python
+
+    [3, 9] > [3, 8]         # True
+    [3, 8, 3] > [3, 7, 6]   # True
+    [3, 8] > [3, 9]         # False
+
+    [2, 7] > [3, 6]         # False
+    [3, 6] > [2, 7]         # True
 
 
 Operator Precedence
@@ -173,22 +140,24 @@ Assignments
 Conditional Operators Modulo
 ----------------------------
 * Complexity level: easy
-* Lines of code to write: 5 lines
+* Lines of code to write: 3 lines
 * Estimated time of completion: 3 min
-* Solution: :download:`solution/conditional_operators_modulo.py`
+* Solution: :download:`solution/csonditional_operators_modulo.py`
 
 :English:
     #. Read a number from user
-    #. User will pass only valid ``int``
+    #. User will input ``int`` and will not input invalid data
+    #. Define ``result: bool`` with parity check of input number
     #. Number is even, when divided modulo (``%``) by 2 reminder equal to 0
-    #. Print whether number is odd
+    #. Print ``result``
     #. Do not use ``if`` statement
 
 :Polish:
     #. Wczytaj liczbę od użytkownika
-    #. Użytkownika poda tylko poprawne ``int``
+    #. Użytkownika poda ``int`` i nie będzie wprowadzał danych niepoprawnych
+    #. Zdefiniuj ``result: bool`` z wynikiem sprawdzania parzystości liczby wprowadzonej
     #. Liczba jest parzysta, gdy dzielona modulo (``%``) przez 2 ma resztę równą 0
-    #. Wypisz czy liczba jest nieparzysta
+    #. Wypisz ``result``
     #. Nie używaj instrukcji ``if``
 
 :The whys and wherefores:

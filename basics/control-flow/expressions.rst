@@ -46,6 +46,7 @@ Boolean Algebra
     if (firstname == 'Mark' and lastname == 'Watney') \
             or (firstname == 'Jan' and lastname == 'Twardowski') \
             or (firstname == 'Melissa' and lastname == 'Lewis'):
+
         print('Hello astronaut')
     else:
         print('Sorry, astronauts only')
@@ -56,12 +57,13 @@ Boolean Algebra
     :caption: Complex conditions
 
     for line in file:
-        if line and not line.startswith('#') or not line.isspace():
+        if line and (not line.startswith('#') or not line.isspace()):
             ...
 
 
     for line in file:
-        line = line.strip()
+        if len(line) == 0:
+            continue
 
         if line.startswith('#'):
             continue

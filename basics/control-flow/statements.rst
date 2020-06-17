@@ -74,7 +74,7 @@ If
     country = 'USA'
 
     if country == 'USA':
-        print('Astronauts are from USA')
+        job = 'astronaut'
 
 .. code-block:: python
     :caption: Checking for simple value
@@ -177,13 +177,12 @@ Else
 .. code-block:: python
     :caption: Checking if variable is certain value
 
-    country = 'Russia'
+    country = 'USA'
 
-    if country == 'USA':
-        print('Astronauts are from USA')
+    if country == 'Russia':
+        job = 'cosmonaut'
     else:
-        print('Cosmonauts are from Russia')
-    # Cosmonauts are from Russia
+        job = 'astronaut'
 
 .. code-block:: python
     :caption: Checking if variable is certain value
