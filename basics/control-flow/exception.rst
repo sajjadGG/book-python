@@ -339,6 +339,20 @@ Traceback Analysis
     # RuntimeError: Oxygen tank explosion
 
 .. code-block:: python
+    :emphasize-lines: 6-9
+
+    def apollo13():
+        raise RuntimeError('Oxygen tank explosion')
+
+    apollo13()
+    # Traceback (most recent call last):
+    #   File "/home/python/my_script.py", line 4, in <module>
+    #     apollo13()
+    #   File "/home/python/my_script.py", line 2, in apollo13
+    #     raise RuntimeError('Oxygen tank explosion')
+    # RuntimeError: Oxygen tank explosion
+
+.. code-block:: python
     :emphasize-lines: 11-14
 
     def apollo13():
