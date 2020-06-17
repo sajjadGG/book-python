@@ -249,7 +249,7 @@ Loop While Convert
 
 Loop While Substitute
 ---------------------
-* Complexity level: easy
+* Complexity level: medium
 * Lines of code to write: 9 lines
 * Estimated time of completion: 5 min
 * Solution: :download:`solution/loop_while_substitute.py`
