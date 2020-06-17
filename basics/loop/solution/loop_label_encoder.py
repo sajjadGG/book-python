@@ -26,57 +26,31 @@ DATA = [
     (4.6, 3.1, 1.5, 0.2, 'setosa'),
 ]
 
+## Alternative solution
+header, *data = DATA
 
-header = DATA[0]
-data = DATA[1:]
+features = []
+labels = []
+label_encoder = {}
+label_encoder_reversed = {}
 
-features: List[Tuple[float]] = []
-labels: List[int] = []
+for *measurements, kind in data:
+    if kind not in label_encoder_reversed:
+        label_encoder_reversed[kind] = len(label_encoder_reversed)
 
-label_encoder: Dict[int, str] = {}
-
-
-for row in data:
-    measurements = row[0:4]
-    species = row[4]
     features.append(tuple(measurements))
+    labels.append(label_encoder_reversed[kind])
 
-    if species not in label_encoder.values():
-        number = len(label_encoder)
-        label_encoder[number] = species
-
-    for number, name in label_encoder.items():
-        if name == species:
-            labels.append(number)
+for key, value in label_encoder_reversed.items():
+    label_encoder[value] = key
 
 
 print(features)
-print()
 print(labels)
-print()
 print(label_encoder)
 
-
 ## Alternative solution
-# header, *data = DATA
-#
-# features = []
-# labels = []
-# species = {}
-#
-# for *measurements, kind in data:
-#     if kind not in species:
-#         species[kind] = len(species)
-#
-#     features.append(tuple(measurements))
-#     labels.append(species[kind])
-#
-# species = {v:k for k,v in species.items()}
-#
-# print(features)
-# print(labels)
-# print(species)
-
+# label_encoder = {v:k for k,v in label_encoder.items()}
 
 ## Alternative solution
 # s = set(x[-1] for x in DATA[1:])

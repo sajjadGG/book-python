@@ -208,7 +208,7 @@ Loop Dict from Dict to Dict
 ---------------------------
 * Complexity level: easy
 * Lines of code to write: 4 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 7 min
 * Solution: :download:`solution/loop_dict_to_dict.py`
 
 :English:
@@ -236,20 +236,16 @@ Loop Dict from Dict to Dict
 :Output:
     .. code-block:: python
 
-        from typing import Dict
-
-
-        result: Dict[str, str] = {
-            'Doctorate': '6',
-            'Prof-school': '6',
-            'Masters': '5',
-            'Bachelor': '5',
-            'Engineer': '5',
-            'HS-grad': '4',
-            'Junior High': '3',
-            'Primary School': '2',
-            'Kindergarten': '1'
-        }
+        result: Dict[str, str]
+        # {'Doctorate': '6',
+        #  'Prof-school': '6',
+        #  'Masters': '5',
+        #  'Bachelor': '5',
+        #  'Engineer': '5',
+        #  'HS-grad': '4',
+        #  'Junior High': '3',
+        #  'Primary School': '2',
+        #  'Kindergarten': '1'}
 
 :The whys and wherefores:
     * Accessing ``dict`` items
@@ -314,15 +310,11 @@ Loop Dict from List to Dict
 :Output:
     .. code-block:: python
 
-        from typing import List
-
-
-        result: List[dict] = [
-            {'Sepal length': 5.8, 'Sepal width': 2.7, 'Petal length': 5.1, 'Petal width': 1.9, 'Species': 'virginica'},
-            {'Sepal length': 5.1, 'Sepal width': 3.5, 'Petal length': 1.4, 'Petal width': 0.2, 'Species': 'setosa'},
-            {'Sepal length': 5.7, 'Sepal width': 2.8, 'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
-            ...
-        ]
+        result: List[dict]
+        # [{'Sepal length': 5.8, 'Sepal width': 2.7, 'Petal length': 5.1, 'Petal width': 1.9, 'Species': 'virginica'},
+        #  {'Sepal length': 5.1, 'Sepal width': 3.5, 'Petal length': 1.4, 'Petal width': 0.2, 'Species': 'setosa'},
+        #  {'Sepal length': 5.7, 'Sepal width': 2.8, 'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
+        #  ...]
 
 :The whys and wherefores:
     * Working with nested data structures
@@ -404,24 +396,21 @@ Loop Dict Label Encoder
 :Output:
     .. code-block:: python
 
-        from typing import List, Dict
+        features: List[tuple]
+        # [(5.8, 2.7, 5.1, 1.9),
+        #  (5.1, 3.5, 1.4, 0.2),
+        #  (5.7, 2.8, 4.1, 1.3),
+        #  (6.3, 2.9, 5.6, 1.8),
+        #  (6.4, 3.2, 4.5, 1.5),
+        #  (4.7, 3.2, 1.3, 0.2), ...]
 
+        labels: List[int]
+        # [0, 1, 2, 0, 2, 1, 2, 0, 1, 0, 0, 1, 1, 2, 1, 2, 0, 2, 0, 2, 1]
 
-        features: List[tuple] = [
-            (5.8, 2.7, 5.1, 1.9),
-            (5.1, 3.5, 1.4, 0.2),
-            (5.7, 2.8, 4.1, 1.3),
-            (6.3, 2.9, 5.6, 1.8),
-            (6.4, 3.2, 4.5, 1.5),
-            (4.7, 3.2, 1.3, 0.2), ...]
-
-        labels: List[int] = [0, 1, 2, 0, 2, 1, 2, 0, 1, 0, 0, 1, 1, 2, 1, 2, 0, 2, 0, 2, 1]
-
-        label_encoder: Dict[int, str] = {
-            0: 'virginica',
-            1: 'setosa',
-            2: 'versicolor'}
-
+        label_encoder: Dict[int, str]
+        # {0: 'virginica',
+        #  1: 'setosa',
+        #  2: 'versicolor'}
 
 :The whys and wherefores:
     * ``dict`` lookups
