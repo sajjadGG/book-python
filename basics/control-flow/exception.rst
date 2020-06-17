@@ -594,7 +594,7 @@ Defining Own Exceptions
 
         try:
             user = User.objects.get(username, password)
-        except User.DoesNotExists:
+        except User.DoesNotExist:
             print('Sorry, no such user in database')
 
 .. code-block:: python

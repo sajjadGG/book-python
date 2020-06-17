@@ -146,7 +146,7 @@ Conditional Operators Modulo
 
 :English:
     #. Read a number from user
-    #. User will input ``int`` and will not input invalid data
+    #. User will input ``int`` and will not try to input invalid data
     #. Define ``result: bool`` with parity check of input number
     #. Number is even, when divided modulo (``%``) by 2 reminder equal to 0
     #. Print ``result``
@@ -154,7 +154,7 @@ Conditional Operators Modulo
 
 :Polish:
     #. Wczytaj liczbę od użytkownika
-    #. Użytkownika poda ``int`` i nie będzie wprowadzał danych niepoprawnych
+    #. Użytkownika poda ``int`` i nie będzie próbował wprowadzać niepoprawnych danych
     #. Zdefiniuj ``result: bool`` z wynikiem sprawdzania parzystości liczby wprowadzonej
     #. Liczba jest parzysta, gdy dzielona modulo (``%``) przez 2 ma resztę równą 0
     #. Wypisz ``result``

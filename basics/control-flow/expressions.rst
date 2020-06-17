@@ -160,7 +160,7 @@ Conditional Expression
     #. Use data from "Input" section (see below)
     #. Table contains Blood Pressure classification according to American Heart Association :cite:`Whelton2018`
     #. User inputs blood pressure in ``XXX/YY`` or ``XXX/YYY`` format
-    #. User will not input invalid data
+    #. User will not try to input invalid data
     #. Data format:
 
         * ``XXX: int`` systolic pressure
@@ -173,7 +173,7 @@ Conditional Expression
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Tabela zawiera klasyfikację ciśnienia krwi wg American Heart Association :cite:`Whelton2018`
     #. Użytkownik wprowadza ciśnienie krwi w formacie ``XXX/YY`` lub ``XXX/YYY``
-    #. Użytkownik nie będzie wprowadzał danych niepoprawnych
+    #. Użytkownik nie będzie próbował wprowadzać danych niepoprawnych
     #. Format danych:
 
         * ``XXX: int`` to wartość ciśnienia skurczowego (ang. *systolic*)
