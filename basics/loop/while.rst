@@ -173,7 +173,7 @@ Example
 -------
 * Complexity level: easy
 * Lines of code to write: 8 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/loop_while_example.py`
 
 :English:
@@ -206,6 +206,46 @@ Example
 :Solution:
     .. literalinclude:: solution/loop_while_example.py
         :language: python
+
+Loop While Convert
+------------------
+* Complexity level: easy
+* Lines of code to write: 8 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/loop_while_convert.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Create ``result: List[float]``
+    #. Use ``while`` to iterate over ``DATA``
+    #. Convert all elements of ``DATA`` to ``float``
+    #. Converted values add to ``result``
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Stwórz ``result: List[float]``
+    #. Użyj ``while`` do iterowania po ``DATA``
+    #. Przekonwertuj wszystkie elementy ``DATA`` do ``float``
+    #. Przekonwertowane wartości dodaj do ``result``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        DATA = (2, 3, 3.5, 4, 4.5, 5)
+
+:Output:
+    .. code-block:: python
+
+        result: List[float]
+        # [2.0, 3.0, 3.5, 4.0, 4.5, 5.0]
+
+:The whys and wherefores:
+    * Type casting
+    * Sequences
+    * Using while loop
+    * Using built-in functions
 
 Loop While Substitute
 ---------------------
@@ -244,51 +284,11 @@ Loop While Substitute
         result: str
         # 'zazolc gesla jazn'
 
-Loop While Convert
-------------------
-* Complexity level: easy
-* Lines of code to write: 8 lines
-* Estimated time of completion: 5 min
-* Solution: :download:`solution/loop_while_convert.py`
-
-:English:
-    #. Use data from "Input" section (see below)
-    #. Create ``result: List[float]``
-    #. Use ``while`` to iterate over ``DATA``
-    #. Convert all elements of ``DATA`` to ``float``
-    #. Converted values add to ``result``
-    #. Compare result with "Output" section (see below)
-
-:Polish:
-    #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Stwórz ``result: List[float]``
-    #. Użyj ``while`` do iterowania po ``DATA``
-    #. Przekonwertuj wszystkie elementy ``DATA`` do ``float``
-    #. Przekonwertowane wartości dodaj do ``result``
-    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
-
-:Input:
-    .. code-block:: python
-
-        DATA = (2, 3, 3.5, 4, 4.5, 5)
-
-:Output:
-    .. code-block:: python
-
-        result: List[float]
-        # [2.0, 3.0, 3.5, 4.0, 4.5, 5.0]
-
-:The whys and wherefores:
-    * Type casting
-    * Sequences
-    * Using while loop
-    * Using built-in functions
-
 Loop While Input
 ----------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 10 min
 * Solution: :download:`solution/loop_while_input.py`
 
 :English:
