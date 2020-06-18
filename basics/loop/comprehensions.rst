@@ -61,7 +61,7 @@ Comprehensions and Generator Expression
     {x for x in range(0,5)}            # {0, 1, 2, 3, 4}
 
     dict((x,x) for x in range(0,5))    # {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
-    {x: x for x in range(0,5)}         # {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
+    {x:x for x in range(0,5)}          # {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
 
     tuple(x for x in range(0,5))       # (0, 1, 2, 3, 4)
     (x for x in range(0,5))            # <generator object <genexpr> at 0x118c1aed0>
@@ -223,7 +223,7 @@ Conditional Comprehension
 .. code-block:: python
     :caption: ``list`` Comprehensions approach to applying function to selected elements
 
-    [x for x in range(0,5) if x % 2 == 0]
+    [x for x in range(0,5) if x%2==0]
     # [0, 2, 4]
 
 .. code-block:: python
@@ -261,7 +261,7 @@ Apply Function
     [float(x) for x in range(0,5)]
     # [0.0, 1.0, 2.0, 3.0, 4.0]
 
-    [float(x) for x in range(0,5) if x % 2 == 0]
+    [float(x) for x in range(0,5) if x%2==0]
     # [0.0, 2.0, 4.0]
 
 .. code-block:: python
@@ -270,7 +270,7 @@ Apply Function
     [pow(2,x) for x in range(0,5)]
     # [1, 2, 4, 8, 16]
 
-    [pow(2,x) for x in range(0,5) if x % 2 == 0]
+    [pow(2,x) for x in range(0,5) if x%2==0]
     # [1, 4, 16]
 
 
@@ -287,7 +287,7 @@ Indent
 
 .. code-block:: python
 
-    result = [pow(x,2) for x in range(0,5) if x % 2 == 0]
+    result = [pow(x,2) for x in range(0,5) if x%2==0]
 
 .. code-block:: python
 
@@ -465,8 +465,8 @@ Nested
         1: ['Kindergarten'],
     }
 
-    result = {title: str(idx)
-              for idx, titles in DATA.items()
+    result = {title: str(i)
+              for i, titles in DATA.items()
                  for title in titles}
 
     print(result)
