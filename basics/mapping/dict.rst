@@ -531,22 +531,22 @@ Mapping Dict Substitute
     #. Use data from "Input" section (see below)
     #. Ask user to input single letter
     #. Convert to lowercase
-    #. If letter is in ``PL_ASCII`` then use conversion value as letter
+    #. If letter is in ``PL`` then use conversion value as letter
     #. Print letter
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Poproś użytkownika o wprowadzenie jednej litery
     #. Przekonwertuj literę na małą
-    #. Jeżeli litera jest w ``PL_ASCII`` to użyj przekonwertowanej wartości jako litera
+    #. Jeżeli litera jest w ``PL`` to użyj przekonwertowanej wartości jako litera
     #. Wypisz literę
 
 :Input:
     .. code-block:: python
 
-        PL_ASCII = {'ą': 'a', 'ć': 'c', 'ę': 'e',
-                    'ł': 'l', 'ń': 'n', 'ó': 'o',
-                    'ś': 's', 'ż': 'z', 'ź': 'z'}
+        PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
+              'ł': 'l', 'ń': 'n', 'ó': 'o',
+              'ś': 's', 'ż': 'z', 'ź': 'z'}
 
 Mapping Dict Get
 ----------------

@@ -1,6 +1,6 @@
-PL_ASCII = {'ą': 'a', 'ć': 'c', 'ę': 'e',
-            'ł': 'l', 'ń': 'n', 'ó': 'o',
-            'ś': 's', 'ż': 'z', 'ź': 'z'}
+PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
+      'ł': 'l', 'ń': 'n', 'ó': 'o',
+      'ś': 's', 'ż': 'z', 'ź': 'z'}
 
 DATA = 'zażółć gęślą jaźń'
 
@@ -9,7 +9,7 @@ i = 0
 
 while i < len(DATA):
     letter = DATA[i]
-    letter = PL_ASCII.get(letter, letter)
+    letter = PL.get(letter, letter)
     result.append(letter)
     i += 1
 

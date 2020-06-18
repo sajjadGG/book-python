@@ -599,23 +599,23 @@ Comprehensions Substitute
     #. Use data from "Input" section (see below)
     #. Define ``result: list``
     #. Use list comprehension to iterate over ``DATA``
-    #. If letter is in ``PL_ASCII`` then use conversion value as letter
+    #. If letter is in ``PL`` then use conversion value as letter
     #. Add letter to ``result``
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Użyj rozwinięcia listowego do iteracji po ``DATA``
-    #. Jeżeli litera jest w ``PL_ASCII`` to użyj przekonwertowanej wartości jako litera
+    #. Jeżeli litera jest w ``PL`` to użyj przekonwertowanej wartości jako litera
     #. Dodaj literę do ``result``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
 
-        PL_ASCII = {'ą': 'a', 'ć': 'c', 'ę': 'e',
-                    'ł': 'l', 'ń': 'n', 'ó': 'o',
-                    'ś': 's', 'ż': 'z', 'ź': 'z'}
+        PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
+              'ł': 'l', 'ń': 'n', 'ó': 'o',
+              'ś': 's', 'ż': 'z', 'ź': 'z'}
 
         DATA = 'zażółć gęślą jaźń'
 
