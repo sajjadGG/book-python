@@ -24,7 +24,10 @@ DATA = [
     (4.6, 3.1, 1.5, 0.2, 'setosa'),
 ]
 
-with open(FILE, encoding='utf-8', mode='w', newline='\n') as file:
-    for line in DATA:
-        line = ','.join(str(field) for field in line) + '\n'
-        file.write(line)
+header, *data = DATA
+header = ','.join(header) + '\n'
+data = [','.join(map(str, row))+'\n' for row in data]
+
+with open(FILE, mode='w') as file:
+    file.write(header)
+    file.writelines(data)

@@ -127,12 +127,12 @@ Reading File as Generator
 Assignments
 ===========
 
-Parsing simple CSV file
------------------------
+File Read CSV
+-------------
 * Complexity level: easy
 * Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
-* Solution: :download:`solution/file_read.py`
+* Estimated time of completion: 10 min
+* Solution: :download:`solution/file_read_csv.py`
 
 :English:
     #. Download :download:`data/iris.csv` save as ``iris.csv``
@@ -172,11 +172,11 @@ Parsing simple CSV file
     * String methods
     * Working with nested sequences
 
-``/etc/hosts`` - parsing to ``dict``
-------------------------------------
-* Complexity level: easy
+File Read Parsing Dict
+----------------------
+* Complexity level: medium
 * Lines of code to write: 10 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 10 min
 * Solution: :download:`solution/file_read_parsing_dict.py`
 
 :English:
@@ -215,18 +215,17 @@ Parsing simple CSV file
         127.0.0.1       astromatt
         10.13.37.1      nasa.gov esa.int roscosmos.ru
         255.255.255.255 broadcasthost
-        ::1 `            localhost
+        ::1             localhost
         """
 
 :Output:
     .. code-block:: python
 
-        result: Dict[str, List[str]] = {
-            '127.0.0.1': ['localhost', 'astromatt'],
-            '10.13.37.1': ['nasa.gov', 'esa.int', 'roscosmos.ru'],
-            '255.255.255.255': ['broadcasthost'],
-            '::1': ['localhost'],
-        }
+        result: dict
+        # {'127.0.0.1': ['localhost', 'astromatt'],
+        #  '10.13.37.1': ['nasa.gov', 'esa.int', 'roscosmos.ru'],
+        #  '255.255.255.255': ['broadcasthost'],
+        #  '::1': ['localhost']}
 
 :The whys and wherefores:
     * Reading file
@@ -238,11 +237,11 @@ Parsing simple CSV file
     * ``str.isspace()``
     * ``str.split()``
 
-``/etc/hosts`` - parsing to ``List[dict]``
-------------------------------------------
-* Complexity level: medium
+File Read Parsing List of Dicts
+-------------------------------
+* Complexity level: hard
 * Lines of code to write: 15 lines
-* Estimated time of completion: 20 min
+* Estimated time of completion: 15 min
 * Solution: :download:`solution/file_read_parsing_listdict.py`
 
 :English:
@@ -299,12 +298,11 @@ Parsing simple CSV file
 :Output:
     .. code-block:: python
 
-        result: List[Dict[str, Union[str, Set[str]]] = [
-            {'ip': '127.0.0.1', 'protocol': 'ipv4', 'hostnames': {'localhost', 'astromatt'}},
-            {'ip': '10.13.37.1', 'protocol': 'ipv4', 'hostnames': {'nasa.gov', 'esa.int', 'roscosmos.ru'}},
-            {'ip': '255.255.255.255', 'protocol': 'ipv4', 'hostnames': {'broadcasthost'}},
-            {'ip': '::1', 'protocol': 'ipv6', 'hostnames': {'localhost'}}
-        ]
+        result: List[dict]
+        # [{'ip': '127.0.0.1', 'protocol': 'ipv4', 'hostnames': {'localhost', 'astromatt'}},
+        #  {'ip': '10.13.37.1', 'protocol': 'ipv4', 'hostnames': {'nasa.gov', 'esa.int', 'roscosmos.ru'}},
+        #  {'ip': '255.255.255.255', 'protocol': 'ipv4', 'hostnames': {'broadcasthost'}},
+        #  {'ip': '::1', 'protocol': 'ipv6', 'hostnames': {'localhost'}}]
 
 :The whys and wherefores:
     * czytanie i parsowanie pliku

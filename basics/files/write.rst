@@ -125,7 +125,7 @@ File Write CSV
     #. Dla każdego wiersza przekonwertuj jego wartości do ``str``
     #. Użyj przecinka (``,``) jako separatora wartości
     #. Użyj ``\n`` jako koniec linii w każdym wierszu
-    # Zapisz do pliku wartości z wiersza
+    #. Zapisz do pliku wartości z wiersza
 
 :Input:
     .. code-block:: python
@@ -154,3 +154,6 @@ File Write CSV
             (6.9, 3.1, 4.9, 1.5, 'versicolor'),
             (4.6, 3.1, 1.5, 0.2, 'setosa'),
         ]
+
+:Hint:
+    * ``map(str, row)``
