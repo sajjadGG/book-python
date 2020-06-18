@@ -68,8 +68,8 @@ Keyboard Shortcuts
 Assignments
 ===========
 
-Create Project from Git
------------------------
+About IDE Create from VCS
+-------------------------
 * Lines of code to write: 0 lines
 * Estimated time of completion: 2 min
 
@@ -83,8 +83,8 @@ Create Project from Git
     #. WAŻNE: Już do końca książki w nim będą tworzone rozwiązania do wszystkich zadań
     #. Dzięki oddzielnym katalogom dla każdego uczestnika unikniemy konfliktów w Git
 
-Create Project in Pure Python
------------------------------
+About IDE Create Project
+------------------------
 * Lines of code to write: 0 lines
 * Estimated time of completion: 2 min
 
@@ -96,8 +96,8 @@ Create Project in Pure Python
     #. Po stworzeniu projektu, załóż katalog o nazwie jak twoje nazwisko i imię ``nazwisko_imie``
     #. WAŻNE: Już do końca książki w nim będą tworzone rozwiązania do wszystkich zadań
 
-Know thou IDE
--------------
+About IDE Usage
+---------------
 * Lines of code to write: 0 lines
 * Estimated time of completion: 10 min
 
@@ -126,15 +126,15 @@ Know thou IDE
     * Znajomość różnicy między uruchamianiem i debuggingiem
     * Znajomość różnicy między terminalem i konsolą
 
-Spellchecker
-------------
+About IDE Spellchecker
+----------------------
 * Lines of code to write: 0 lines
-* Estimated time of completion: 3 min
+* Estimated time of completion: 5 min
 
 :Polish:
-    #. Zainstaluj plugin 'Hunspell'
-    #. Pobierz z https://github.com/LibreOffice/dictionaries słownik ``.dic`` oraz ``.aff`` dla języka polskiego
-    #. Skonfiguruj IDE do korzystania z tego słownika
+    #. Zainstaluj w PyCharm plugin 'Hunspell' (File -> Settings -> Plugins -> Marketplace -> 'Hunspell')
+    #. Pobierz z https://github.com/LibreOffice/dictionaries/tree/master/pl_PL słownik ``.dic`` oraz ``.aff`` dla języka polskiego
+    #. Skonfiguruj IDE do korzystania z tego słownika (File -> Settings -> Editor -> Spelling -> Add custom dictionary)
 
 :The whys and wherefores:
     * Korzystanie z IDE
