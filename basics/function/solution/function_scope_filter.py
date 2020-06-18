@@ -11,12 +11,12 @@ DATA = [
     (4.9, 3.0, 1.4, 0.2, 'setosa'),
 ]
 
-header, *data = DATA
-select = {'setosa', 'versicolor'}
+SELECT = {'setosa', 'versicolor'}
 
+header, *data = DATA
 
 def sum_if(features, label):
-    if label in select:
+    if label in SELECT:
         return sum(features)
     else:
         return 0

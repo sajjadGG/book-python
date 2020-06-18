@@ -278,10 +278,10 @@ Function Scope Filter
 :English:
     #. Use data from "Input" section (see below)
     #. Separate header from data
-    #. Define ``select: Set[str]`` with values 'setosa' and 'versicolor'
+    #. Define in global scope ``SELECT: Set[str]`` with values 'setosa' and 'versicolor'
     #. Iterate over data and split row into ``features`` and ``label`` (last)
     #. Define function ``sum_if(features, label)``
-    #. Function sums ``features``, only when ``label`` is in ``select``
+    #. Function sums ``features``, only when ``label`` is in ``SELECT``
     #. When ``label`` is not in ``select`` return ``0`` (zero)
     #. Print sum
     #. Compare result with "Output" section (see below)
@@ -289,10 +289,10 @@ Function Scope Filter
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Odseparuj nagłówek od danych
-    #. Zdefiniuj ``select: Set[str]`` z wartościami 'setosa' oraz 'versicolor'
+    #. Zdefiniuj w przestrzeni globalnej ``SELECT: Set[str]`` z wartościami 'setosa' oraz 'versicolor'
     #. Iterując po danych rozdziel wiersz na ``features`` i ``label`` (ostatni)
     #. Zdefiniuj funkcję ``sum_if(features, label)``
-    #. Funkcja sumuje ``features``, tylko gdy ``label`` jest w ``select``
+    #. Funkcja sumuje ``features``, tylko gdy ``label`` jest w ``SELECT``
     #. Gdy ``label`` nie występuje w ``select`` zwróć ``0`` (zero)
     #. Wypisz sumę
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
