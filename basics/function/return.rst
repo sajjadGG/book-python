@@ -14,14 +14,15 @@ Syntax
 
 .. code-block:: python
 
-    def add_numbers(a, b):
-        return a + b
+    def mean():
+        return (1+2) / 3
 
 .. code-block:: python
 
-    def mean(a, b):
-        c = (a+b) / 2
-        return c
+    def add():
+        a = 1
+        b = 2
+        return a + b
 
 
 Return Keyword
@@ -76,7 +77,7 @@ Return Sequence
 .. code-block:: python
 
     def my_function():
-        return list(42, 13.37, 'Mark Watney')
+        return list([42, 13.37, 'Mark Watney'])
 
     def my_function():
         return [42, 13.37, 'Mark Watney']
@@ -84,7 +85,7 @@ Return Sequence
 .. code-block:: python
 
     def my_function():
-        return tuple(42, 13.37, 'Mark Watney')
+        return tuple((42, 13.37, 'Mark Watney'))
 
     def my_function():
         return (42, 13.37, 'Mark Watney')
@@ -104,6 +105,7 @@ Return Sequence
 
     def my_function():
         return frozenset({42, 13.37, 'Mark Watney'})
+
 
 Return Mapping
 ==============
@@ -126,7 +128,7 @@ Return Nested Sequence
             {'Jan Twardowski', 'Melissa Lewis'},
             {'astro': 'Иванович', 'agency': {'name': 'Roscosmos'}},
             {'astro': 'Jiménez', 'missions': ('Mercury', 'Gemini', 'Apollo')},
-            {'astro': 'Vogel', 'missions': (set(), tuple(), list())},
+            {'astro': 'Vogel', 'missions': (list(), tuple(), set(),  frozenset())},
         ]
 
 
@@ -156,6 +158,19 @@ Return None
         """My function"""
 
 
+Intercept returned value
+========================
+.. code-block:: python
+
+    def my_function():
+        return 1
+
+
+    result = my_function()
+    print(result)
+    # 1
+
+
 Assignments
 ===========
 
@@ -174,6 +189,6 @@ Function Return Numbers
 
 :Polish:
     #. Zdefiniuj funkcję ``add`` bez parametrów
-    #. Funkcja powinna zwracać sumę ``42`` and ``13.37``
+    #. Funkcja powinna zwracać sumę ``42`` i ``13.37``
     #. Wywołaj funkcję i przechwyć zwracaną wartość
     #. Wyświetl wartość

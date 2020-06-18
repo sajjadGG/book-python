@@ -1,4 +1,4 @@
-CONVERSION = {
+NUMBER = {
     0: 'zero',
     1: 'one',
     2: 'two',
@@ -11,9 +11,9 @@ CONVERSION = {
     9: 'niner',
 }
 
-CONVERSION = {str(k):v for k,v in CONVERSION.items()}
-CONVERSION['-'] = 'minus'
-CONVERSION['.'] = 'and'
+NUMBER = {str(k):v for k,v in NUMBER.items()}
+NUMBER['-'] = 'minus'
+NUMBER['.'] = 'and'
 
 
 def translate(number):
@@ -39,35 +39,4 @@ def translate(number):
     >>> translate(-49.35)
     'minus fower niner and tree fife'
     """
-    return ' '.join(CONVERSION[c] for c in str(number))
-
-## Alternative solution
-#
-# def translate(number):
-#     """
-#     >>> TEST = [
-#     ...     1969,
-#     ...     31337,
-#     ...     13.37,
-#     ...     31.337,
-#     ...     -1969,
-#     ...     -31.337,
-#     ...     -49.35,
-#     ... ]
-#     >>> for number in TEST:
-#     ...     translate(number)
-#     'one niner six niner'
-#     'tree one tree tree seven'
-#     'one tree and tree seven'
-#     'tree one and tree tree seven'
-#     'minus one niner six niner'
-#     'minus tree one and tree tree seven'
-#     'minus fower niner and tree fife'
-#     """
-#     sentence = []
-#
-#     for character in str(number):
-#         word = CONVERSION.get(character)
-#         sentence.append(word)
-#
-#     return ' '.join(sentence)
+    return ' '.join(NUMBER[c] for c in str(number))

@@ -247,12 +247,12 @@ Loop While Convert
     * Using while loop
     * Using built-in functions
 
-Loop While Substitute
----------------------
+Loop While Translate
+--------------------
 * Complexity level: medium
 * Lines of code to write: 9 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/loop_while_substitute.py`
+* Solution: :download:`solution/loop_while_translate.py`
 
 :English:
     #. Use data from "Input" section (see below)

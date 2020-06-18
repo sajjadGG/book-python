@@ -386,12 +386,12 @@ Loop For Newline
         result: str
         # 'We choose to go to the Moon.\nWe choose to go to the Moon in this decade and do the other things.\nNot because they are easy, but because they are hard.'
 
-Loop For Substitute
--------------------
+Loop For Translate
+------------------
 * Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/loop_for_substitute.py`
+* Solution: :download:`solution/loop_for_translate.py`
 
 :English:
     #. Use data from "Input" section (see below)

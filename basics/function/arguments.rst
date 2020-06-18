@@ -21,8 +21,9 @@ Syntax
 
 .. code-block:: python
 
-    add(a, b)
-
+    add(1, 2)
+    add(a=1, b=2)
+    add(1, b=2)
 
 Positional Arguments
 ====================
@@ -205,6 +206,47 @@ Function Arguments Power
         power(3)
         # 27
 
+Function Arguments Translate
+----------------------------
+* Complexity level: easy
+* Lines of code to write: 4 lines
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/function_args_translate.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Define function ``translate`` with parameter ``text``
+    #. Use ``str.join()`` with generator expression to iterate over ``text``
+    #. If letter is in ``PL`` then use conversion value as letter, otherwise take letter
+    #. Return from function translated ``text``
+    #. Define ``result: list`` with results from ``translate(DATA)``
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Zdefiniuj funkcję ``translate`` przyjmującą parametr ``text``
+    #. Użyj ``str.join()`` z wyrażeniem generatorowym do iteracji po ``text``
+    #. Jeżeli litera jest w ``PL`` to użyj przekonwertowanej wartości jako litera, w przeciwnym przypadku to weź literę
+    #. Zwróć z funkcji przetłumaczony ``text``
+    #. Zdefiniuj ``result: list``, z wynikiem ``translate(DATA)``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
+              'ł': 'l', 'ń': 'n', 'ó': 'o',
+              'ś': 's', 'ż': 'z', 'ź': 'z'}
+
+        DATA = 'zażółć gęślą jaźń'
+
+:Output:
+    .. code-block:: python
+
+        result: str
+        # 'zazolc gesla jazn'
+
+
 .. _Cleaning text input:
 
 Function Arguments Clean
@@ -289,8 +331,8 @@ Function Arguments Clean
 Function Arguments Numbers to Str
 ---------------------------------
 * Complexity level: medium
-* Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
+* Lines of code to write: 5 lines
+* Estimated time of completion: 10 min
 * Solution: :download:`solution/function_args_numstr_simple.py`
 
 :English:
@@ -316,7 +358,7 @@ Function Arguments Numbers to Str
 :Input:
     .. code-block:: python
 
-        CONVERSION = {
+        NUMBER = {
             0: 'zero',
             1: 'one',
             2: 'two',

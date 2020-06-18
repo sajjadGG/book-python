@@ -14,9 +14,6 @@ Arguments vs Parameters
 
 Syntax
 ======
-.. highlights::
-    * ``pass`` - does nothing and is used to avoid ``IndentationError``
-
 .. code-block:: python
     :caption: Function definition with parameters
 
@@ -26,7 +23,7 @@ Syntax
 .. code-block:: python
 
     def add(a, b):
-        pass
+        print(a + b)
 
 
 Required Parameters

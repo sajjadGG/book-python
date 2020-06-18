@@ -588,12 +588,12 @@ Comprehensions Create
     #. Wygeneruj ``result: List[int]`` parzystych liczb z przedziału 5 do 20
     #. Wypisz ``result``
 
-Comprehensions Substitute
--------------------------
+Comprehensions Translate
+------------------------
 * Complexity level: easy
 * Lines of code to write: 2 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/loop_comprehension_substitute.py`
+* Solution: :download:`solution/loop_comprehension_translate.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -605,6 +605,7 @@ Comprehensions Substitute
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Zdefiniuj ``result: list``
     #. Użyj rozwinięcia listowego do iteracji po ``DATA``
     #. Jeżeli litera jest w ``PL`` to użyj przekonwertowanej wartości jako litera
     #. Dodaj literę do ``result``

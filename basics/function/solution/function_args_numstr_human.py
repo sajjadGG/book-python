@@ -1,6 +1,4 @@
-from typing import Union
-
-NUMBER_DICT = {
+NUMBER = {
     '0': 'zero',
     '1': 'one',
     '2': 'two',
@@ -12,23 +10,30 @@ NUMBER_DICT = {
     '8': 'eight',
     '9': 'nine',
     '.': 'and',
+    '-': 'minus',
 }
 
-DATA = [1969, 31337, 13.37, 31.337, -1969, -31.337, -49.35]
-
-
-def number_to_str(number: Union[int, float]) -> str:
+def number_to_str(number):
     """
-    >>> number_to_str(1969)
-    'one thousand nine hundred sixty nine'
+    >>> pilot_say(1969)
+    'one niner six niner'
 
-    >>> number_to_str(31337)
-    'thirty one thousand three hundred thirty seven'
+    >>> pilot_say(31337)
+    'tree one tree tree seven'
 
-    >>> number_to_str(13.37)
-    'thirteen and thirty seven hundredths'
+    >>> pilot_say(13.37)
+    'one tree and tree seven'
 
-    >>> number_to_str(31.337)
-    'thirty one three hundreds thirty seven thousands'
+    >>> pilot_say(31.337)
+    'tree one and tree tree seven'
+
+    >>> pilot_say(-1969)
+    'minus one niner six niner'
+
+    >>> pilot_say(-31.337)
+    'minus tree one and tree tree seven'
+
+    >>> pilot_say(-49.35)
+    'minus fower niner and tree fife'
     """
     pass
