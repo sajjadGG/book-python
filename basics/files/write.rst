@@ -119,7 +119,7 @@ File Write CSV
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Odseparuj nagłówek do danych
+    #. Odseparuj nagłówek od danych
     #. Zapisz dane do pliku: ``iris.csv``
     #. Pierwsza linia w pliku musi być nagłówkiem (pierwsza linia ``DATA``)
     #. Dla każdego wiersza przekonwertuj jego wartości do ``str``

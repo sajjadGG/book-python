@@ -396,6 +396,7 @@ Sequence Slice Split
 
 :English:
     #. Use data from "Input" section (see below)
+    #. Separate header from data
     #. Write header (first line) to ``header`` variable
     #. Write data without header to ``data`` variable
     #. Calculate pivot point: number records in ``data`` multiplied by PERCENT (division ratio below)
@@ -410,6 +411,7 @@ Sequence Slice Split
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Odseparuj nagłówek od danych
     #. Zapisz nagłówek (pierwsza linia) do zmiennej ``header``
     #. Zapisz dane bez nagłówka do zmiennej ``data``
     #. Wylicz punkt podziału: ilość rekordów w ``data`` razy PROCENT (proporcja podziału poniżej)

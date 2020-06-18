@@ -129,6 +129,7 @@ Sequence Getitem Select
 
 :English:
     #. Use data from "Input" section (see below)
+    #. Separate header from data
     #. Write header (first line) to ``header: tuple`` variable
     #. Create ``result: list``
     #. Add to ``result`` converted to ``list`` values from row at index 2, 6, 9 (each row is a separate list)
@@ -140,6 +141,7 @@ Sequence Getitem Select
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Odseparuj nagłówek od danych
     #. Zapisz nagłówek (pierwsza linia) do zmiennej ``header: tuple``
     #. Stwórz ``result: list``
     #. Dodaj do ``result`` przekonwertowane do ``list`` wartości z wierszy o indeksach 2, 6, 9 (każdy wiersz to osobna lista)

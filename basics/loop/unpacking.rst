@@ -208,7 +208,7 @@ Loop Unpacking Endswith
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Oddziel nagłówek od danych
+    #. Odseparuj nagłówek od danych
     #. Iterując po danych rozpakuj wiersz do ``*features`` oraz ``label``
     #. Wypisz nazwy gatunków kończące się na "ca" lub "osa"
 

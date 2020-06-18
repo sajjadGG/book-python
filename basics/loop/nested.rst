@@ -188,7 +188,7 @@ Loop Nested Mean
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Oddziel nagłówek od danych
+    #. Odseparuj nagłówek od danych
     #. Wylicz średnią wartość `Sepal length`
 
 :Input:

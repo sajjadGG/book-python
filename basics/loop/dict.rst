@@ -271,7 +271,7 @@ Loop Dict from List to Dict
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Odseparuj nagłówek i dane
+    #. Odseparuj nagłówek od danych
     #. Wypisz ``List[dict]``:
 
         * klucz: nazwa z nagłówka

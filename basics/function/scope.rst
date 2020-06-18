@@ -288,7 +288,7 @@ Function Scope Filter
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Oddziel nagłówek od danych
+    #. Odseparuj nagłówek od danych
     #. Zdefiniuj ``select: Set[str]`` z wartościami 'setosa' oraz 'versicolor'
     #. Iterując po danych rozdziel wiersz na ``features`` i ``label`` (ostatni)
     #. Zdefiniuj funkcję ``sum_if(features, label)``

@@ -71,7 +71,7 @@ Assignments
 About IDE Create from VCS
 -------------------------
 * Lines of code to write: 0 lines
-* Estimated time of completion: 2 min
+* Estimated time of completion: 5 min
 
 :Polish:
     #. Stwórz projekt w Twoim IDE wykorzystując opcję 'Create from VCS'
@@ -86,7 +86,7 @@ About IDE Create from VCS
 About IDE Create Project
 ------------------------
 * Lines of code to write: 0 lines
-* Estimated time of completion: 2 min
+* Estimated time of completion: 5 min
 
 :Polish:
     #. Stwórz projekt w Twoim IDE
@@ -134,6 +134,10 @@ About IDE Spellchecker
 :Polish:
     #. Zainstaluj w PyCharm plugin 'Hunspell' (File -> Settings -> Plugins -> Marketplace -> 'Hunspell')
     #. Pobierz z https://github.com/LibreOffice/dictionaries/tree/master/pl_PL słownik ``.dic`` oraz ``.aff`` dla języka polskiego
+
+        * https://raw.githubusercontent.com/LibreOffice/dictionaries/master/pl_PL/pl_PL.aff
+        * https://raw.githubusercontent.com/LibreOffice/dictionaries/master/pl_PL/pl_PL.dic
+
     #. Skonfiguruj IDE do korzystania z tego słownika (File -> Settings -> Editor -> Spelling -> Add custom dictionary)
 
 :The whys and wherefores:

@@ -333,7 +333,7 @@ Sequence Unpacking Nested
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Oddziel nagłówek i rekordy
+    #. Odseparuj nagłówek od danych
     #. Skorzystaj z konstrukcji z gwiazdką ``*``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 

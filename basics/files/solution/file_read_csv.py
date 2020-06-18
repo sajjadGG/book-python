@@ -1,18 +1,20 @@
-FILE = r'../data/iris.csv'
+FILE = r'/tmp/iris.csv'
 features = []
-labels = []
+label = []
 
 
 with open(FILE) as file:
-    header = file.readline().strip()
+    header = file.readline().strip().split(',')
 
     for line in file:
-        *measurements, species = line.strip().split(',')
-        measurements = tuple(float(x) for x in measurements)
+        *X,y = line.strip().split(',')
+        X = [float(x) for x in X]
+        # X = map(float, X)
 
-        features.append(measurements)
-        labels.append(species)
+        features.append(tuple(X))
+        label.append(y)
 
 
+print(header)
 print(features)
-print(labels)
+print(label)

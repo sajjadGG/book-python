@@ -194,8 +194,8 @@ Assignments
 About Syntax
 ------------
 * Complexity level: easy
-* Lines of code to write: 2 lines + 2 lines of comment
-* Estimated time of completion: 5 min
+* Lines of code to write: 2 lines + 6 lines of comment
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/about_syntax.py`
 
 :English:
