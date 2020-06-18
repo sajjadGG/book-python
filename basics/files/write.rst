@@ -27,7 +27,7 @@ Write to File
 
     file = open(FILE, mode='w')
     file.write(DATA)
-    file.close
+    file.close()
 
 
 Write One Line
@@ -100,28 +100,32 @@ Reading From One File and Writing to Another
 Assignments
 ===========
 
-Save to CSV file
-----------------
+File Write CSV
+--------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 15 min
-* Solution: :download:`solution/file_write.py`
+* Estimated time of completion: 10 min
+* Solution: :download:`solution/file_write_csv.py`
 
 :English:
     #. Use data from "Input" section (see below)
     #. Separate header from data
     #. Write data to file: ``iris.csv``
-    #. First line in file must be a header
+    #. First line in file must be a header (first line of ``DATA``)
+    #. For each row, convert it's values to ``str``
     #. Use coma (``,``) as a value separator
-    #. Use ``utf-8`` encoding and ``\n`` for line terminator
+    #. Add line terminator (``\n``) to each row
+    #. Save row values to file
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Odseparuj nagłówek do danych
     #. Zapisz dane do pliku: ``iris.csv``
-    #. Pierwsza linia w pliku musi być nagłówkiem
+    #. Pierwsza linia w pliku musi być nagłówkiem (pierwsza linia ``DATA``)
+    #. Dla każdego wiersza przekonwertuj jego wartości do ``str``
     #. Użyj przecinka (``,``) jako separatora wartości
-    #. Użyj kodowania ``utf-8`` i ``\n`` jako koniec linii
+    #. Użyj ``\n`` jako koniec linii w każdym wierszu
+    # Zapisz do pliku wartości z wiersza
 
 :Input:
     .. code-block:: python
