@@ -220,11 +220,11 @@ Function Parameters Echo
 :Output:
     .. code-block:: python
 
-        echo(1, 2)
-        # a=1 b=2
+        >>> echo(1, 2)
+        a=1 b=2
 
-        echo(3, 4)
-        # a=3 b=4
+        >>> echo(3, 4)
+        a=3 b=4
 
 Function Parameters Default
 ---------------------------
@@ -252,8 +252,8 @@ Function Parameters Default
 :Output:
     .. code-block:: python
 
-        default(1)
-        # a=1 b=1
+        >>> default(1)
+        a=1 b=1
 
-        default(2, 3)
-        # a=2 b=3
+        >>> default(2, 3)
+        a=2 b=3

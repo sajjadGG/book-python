@@ -53,7 +53,7 @@ Type None
 ---------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/type_none.py`
 
 :English:

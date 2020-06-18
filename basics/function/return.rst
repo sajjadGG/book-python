@@ -183,12 +183,12 @@ Function Return Numbers
 
 :English:
     #. Define function ``add`` without parameters
-    #. Function should return sum of ``42`` and ``13.37``
+    #. Function should return sum of ``1`` and ``2``
     #. Call function and intercept returned value
     #. Print value
 
 :Polish:
     #. Zdefiniuj funkcję ``add`` bez parametrów
-    #. Funkcja powinna zwracać sumę ``42`` i ``13.37``
+    #. Funkcja powinna zwracać sumę ``1`` i ``2``
     #. Wywołaj funkcję i przechwyć zwracaną wartość
     #. Wyświetl wartość

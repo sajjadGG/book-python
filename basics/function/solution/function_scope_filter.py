@@ -28,7 +28,7 @@ print(result)
 # Alternative solution
 # result = 0
 #
-# for *features, label in data:
+# for *X,y in data:
 #     result += sum_if(features, label)
 #
 # print(result)

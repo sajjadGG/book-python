@@ -122,8 +122,8 @@ Assignments
 Type Float Example
 ------------------
 * Complexity level: easy
-* Lines of code to write: 13 lines
-* Estimated time of completion: 5 min
+* Lines of code to write: 10 lines
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/type_float_example.py`
 
 :English:
@@ -270,7 +270,7 @@ Type Float Pressure
 -------------------
 * Complexity level: medium
 * Lines of code to write: 8 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 5 min
 * Solution: :download:`solution/type_float_pressure.py`
 
 :English:
@@ -316,7 +316,7 @@ Type Float Percent
 ------------------
 * Complexity level: medium
 * Lines of code to write: 6 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/type_float_percent.py`
 
 :English:

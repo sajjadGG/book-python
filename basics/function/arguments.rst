@@ -158,8 +158,8 @@ Function Arguments Divide
     #. Define function ``divide``
     #. Function takes two arguments
     #. Function divides its arguments and returns the result
-    #. Call function with ``divide(10, 3)``
-    #. Call function with ``divide(10, 0)``
+    #. Call function with ``divide(4, 2)``
+    #. Call function with ``divide(4, 0)``
     #. Print returned values
     #. What to do in case of error?
 
@@ -171,6 +171,15 @@ Function Arguments Divide
     #. Wywołaj funkcję z ``divide(4, 0)``
     #. Wypisz zwracane wartości
     #. Co zrobić w przypadku błędu?
+
+:Output:
+    .. code-block:: python
+
+        >>> divide(4, 2)
+        2
+
+        >>> divide(4, 0)
+        None
 
 Function Arguments Power
 ------------------------
@@ -200,11 +209,11 @@ Function Arguments Power
 :Output:
     .. code-block:: python
 
-        power(4, 3)
-        # 64
+        >>> power(4, 3)
+        64
 
-        power(3)
-        # 27
+        >>> power(3)
+        27
 
 Function Arguments Translate
 ----------------------------
@@ -219,7 +228,9 @@ Function Arguments Translate
     #. Use ``str.join()`` with generator expression to iterate over ``text``
     #. If letter is in ``PL`` then use conversion value as letter, otherwise take letter
     #. Return from function translated ``text``
-    #. Define ``result: list`` with results from ``translate(DATA)``
+    #. Call ``translate('zażółć')``
+    #. Call ``translate('gęślą')``
+    #. Call ``translate('jaźń')``
     #. Compare result with "Output" section (see below)
 
 :Polish:
@@ -228,7 +239,9 @@ Function Arguments Translate
     #. Użyj ``str.join()`` z wyrażeniem generatorowym do iteracji po ``text``
     #. Jeżeli litera jest w ``PL`` to użyj przekonwertowanej wartości jako litera, w przeciwnym przypadku to weź literę
     #. Zwróć z funkcji przetłumaczony ``text``
-    #. Zdefiniuj ``result: list``, z wynikiem ``translate(DATA)``
+    #. Uruchom ``translate('zażółć')``
+    #. Uruchom ``translate('gęślą')``
+    #. Uruchom ``translate('jaźń')``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
@@ -238,13 +251,17 @@ Function Arguments Translate
               'ł': 'l', 'ń': 'n', 'ó': 'o',
               'ś': 's', 'ż': 'z', 'ź': 'z'}
 
-        DATA = 'zażółć gęślą jaźń'
-
 :Output:
     .. code-block:: python
 
-        result: str
-        # 'zazolc gesla jazn'
+        >>> translate('zażółć')
+        'zazolc'
+
+        >>> translate('gęślą')
+        'gesla'
+
+        >>> translate('jaźń')
+        'jazn'
 
 
 .. _Cleaning text input:

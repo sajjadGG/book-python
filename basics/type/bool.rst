@@ -168,8 +168,8 @@ Assignments
 Type Bool True or False
 -----------------------
 * Complexity level: easy
-* Lines of code to write: 15 lines
-* Estimated time of completion: 10 min
+* Lines of code to write: 16 lines
+* Estimated time of completion: 5 min
 * Solution: :download:`solution/type_bool_true_or_false.py`
 
 :English:
@@ -214,7 +214,7 @@ Type Bool True or False
 Type Bool Simple
 ----------------
 * Complexity level: easy
-* Lines of code to write: 10 lines
+* Lines of code to write: 8 lines
 * Estimated time of completion: 5 min
 * Solution: :download:`solution/type_bool_simple.py`
 

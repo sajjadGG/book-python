@@ -1,5 +1,5 @@
 def add():
-    return 42 + 13.37
+    return 1 + 2
 
 
 print(add())
