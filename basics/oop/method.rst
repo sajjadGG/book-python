@@ -327,7 +327,7 @@ OOP Method Nested
         * Return sum of values of all ``float`` type attributes
         * Return mean of all ``float`` type attributes
 
-    #. Use values from ``self.__dict__`` to check for type or length
+    #. Use ``self.__dict__`` iteration to return values of numeric fields
     #. Create ``setosa`` object with attributes set at the initialization
     #. Create ``virginica`` object with attributes set at the initialization
     #. Print sum, mean and species name of each objects
@@ -352,7 +352,7 @@ OOP Method Nested
         * Zwrócić sumę wartości pól typu ``float``
         * Zwrócić średnią arytmetyczną wartość pól typu ``float``
 
-    #. Użyj wartości ``self.__dict__`` do sprawdzania typu lub długości
+    #. Użyj iterowania po ``self.__dict__`` do zwrócenia wartości pól numerycznych
     #. Stwórz obiekt ``setosa`` z atrybutami ustawionymi przy inicjalizacji
     #. Stwórz obiekt ``virginica`` z atrybutami ustawionymi przy inicjalizacji
     #. Wypisz sumę, średnią oraz nazwę gatunku każdego z obiektów
@@ -370,3 +370,6 @@ OOP Method Nested
 
         total=10.20 mean=2.55 setosa
         total=15.50 mean=3.88 virginica
+
+:Hint:
+    * ``isinstance(value, float)``
