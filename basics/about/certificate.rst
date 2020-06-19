@@ -3,7 +3,7 @@ Certificate
 ***********
 
 
-Szkolenie obejmowało 32 godziny wykładów oraz warsztatów. Zagadnienia poruszone na szkoleniu:
+Szkolenie obejmowało 40 godzin wykładów oraz warsztatów. Zagadnienia poruszone na szkoleniu:
 
     * tworzenie aplikacji w języku Python,
     * tworzenie i korzystanie ze struktur danych,
