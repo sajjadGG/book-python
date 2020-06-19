@@ -14,6 +14,10 @@ class Iris:
         return f'Iris({features=}, {label=})'
 
 
+result = []
+
 for *features, label in DATA:
     iris = Iris(features, label)
-    print(repr(iris))
+    result.append(iris)
+
+print(result)

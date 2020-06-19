@@ -247,33 +247,38 @@ OOP Stringify Str
 -----------------
 * Complexity level: easy
 * Lines of code to write: 18 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 5 min
 * Solution: :download:`solution/oop_stringify_str.py`
 
 :English:
-    #. Create class ``Iris`` with ``features: List[float]`` and ``label: str`` attributes
-    #. For each row in ``DATA`` create ``Iris`` instance with row values
-    #. Set class attributes at the initialization from positional arguments
-    #. Create method which sums values of all ``features``
+    #. Use code from "Input" section (see below)
     #. While printing object show: species name and a sum method result
     #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Stwórz klasę ``Iris`` z atrybutami ``features: List[float]`` i ``label: str``
-    #. Dla każdego wiersza w ``DATA`` twórz instancję ``Iris`` z danymi z wiersza
-    #. Ustaw atrybuty klasy przy inicjalizacji z argumentów pozycyjnych
-    #. Stwórz metodę sumującą wartości wszystkich ``features``
+    #. Użyj kodu z sekcji "Input" (patrz poniżej)
     #. Przy wypisywaniu obiektu pokaż: nazwę gatunku i wynik metody sumującej
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
 
-        DATA = [
-            (4.7, 3.2, 1.3, 0.2, 'setosa'),
-            (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-            (7.6, 3.0, 6.6, 2.1, 'virginica'),
-        ]
+    DATA = [
+        (4.7, 3.2, 1.3, 0.2, 'setosa'),
+        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+        (7.6, 3.0, 6.6, 2.1, 'virginica'),
+    ]
+
+
+    class Iris:
+        def __init__(self, features, label):
+            self.features = features
+            self.label = label
+
+
+    for *features, labels in DATA:
+        iris = Iris(features, label)
+        print(iris)
 
 :Output:
     .. code-block:: text
@@ -286,40 +291,50 @@ OOP Stringify Repr
 ------------------
 * Complexity level: easy
 * Lines of code to write: 9 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 5 min
 * Solution: :download:`solution/oop_stringify_repr.py`
 
 :English:
     #. Use code from "Input" section (see below)
-    #. Create class ``Iris`` with ``features: List[float]`` and ``label: str`` attributes
-    #. For each row in ``DATA`` create ``Iris`` instance with row values
-    #. Set class attributes at the initialization from positional arguments
     #. Print representation of each instance with values (use ``repr()``)
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj kodu z sekcji "Input" (patrz poniżej)
-    #. Stwórz klasę ``Iris`` z atrybutami ``features: List[float]`` i ``label: str``
-    #. Dla każdego wiersza w ``DATA`` twórz instancję ``Iris`` z danymi z wiersza
-    #. Ustaw atrybuty klasy przy inicjalizacji z argumentów pozycyjnych
     #. Wypisz reprezentację każdej z instancji z wartościami (użyj ``repr()``)
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
 
-        DATA = [
-            (4.7, 3.2, 1.3, 0.2, 'setosa'),
-            (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-            (7.6, 3.0, 6.6, 2.1, 'virginica'),
-        ]
+    DATA = [
+        (4.7, 3.2, 1.3, 0.2, 'setosa'),
+        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+        (7.6, 3.0, 6.6, 2.1, 'virginica'),
+    ]
+
+
+    class Iris:
+        def __init__(self, features, label):
+            self.features = features
+            self.label = label
+
+
+    result = []
+
+    for *features, labels in DATA:
+        iris = Iris(features, label)
+        result.append(iris)
+
+    print(result)
 
 :Output:
-    .. code-block:: text
+    .. code-block:: python
 
-        Iris(features=[4.7, 3.2, 1.3, 0.2], label='setosa')
-        Iris(features=[7.0, 3.2, 4.7, 1.4], label='versicolor')
-        Iris(features=[7.6, 3.0, 6.6, 2.1], label='virginica')
+        result: List[Iris]
+        # [Iris(features=[7.6, 3.0, 6.6, 2.1], label='virginica'),
+        #  Iris(features=[7.6, 3.0, 6.6, 2.1], label='virginica'),
+        #  Iris(features=[7.6, 3.0, 6.6, 2.1], label='virginica')]
 
 OOP Stringify Complex
 ---------------------
