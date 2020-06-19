@@ -1,34 +1,35 @@
 class Astronaut:
-    def __init__(self, first_name, last_name, date_of_birth):
-        self.first_name = first_name
-        self.last_name = last_name
+    def __init__(self, firstname, lastname, date_of_birth):
+        self.firstname = firstname
+        self.lastname = lastname
         self.date_of_birth = date_of_birth
 
 
 class SpaceAgency:
-    def __init__(self, short_name, long_name, location):
-        self.short_name = short_name
-        self.long_name = long_name
+    def __init__(self, name, location, formation):
+        self.name = name
         self.location = location
+        self.formation = formation
 
 
 twardowski = Astronaut('Jan', 'Twardowski', '1961-04-12')
 watney = Astronaut('Mark', 'Watney', '1969-07-21')
 
 esa = SpaceAgency(
-    short_name='ESA',
-    long_name='European Space Agency',
-    location='Europe')
+    name='European Space Agency',
+    location='Europe',
+    formation='1975-05-30')
 
 nasa = SpaceAgency(
-    short_name='NASA',
-    long_name='National Aeronautics and Space Administration',
-    location='USA')
+     name='National Aeronautics and Space Administration',
+    location='USA',
+    formation='1958-07-29')
 
 polsa = SpaceAgency(
-    short_name='POLSA',
-    long_name='Polish Space Agency',
-    location='Poland')
+    name='Polish Space Agency',
+    location='Poland',
+    formation='2014-09-26')
+
 
 print(twardowski.__dict__)
 print(watney.__dict__)

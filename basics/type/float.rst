@@ -357,7 +357,7 @@ Type Float Percent
 
 Type Float Gradient
 -------------------
-* Complexity level: medium
+* Complexity level: hard
 * Lines of code to write: 9 lines
 * Estimated time of completion: 10 min
 * Solution: :download:`solution/type_float_gradient.py`

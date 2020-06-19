@@ -100,10 +100,10 @@ Dynamic Attributes
 
 
     jose = Astronaut()
-    jose.first_name = 'José'
-    jose.last_name = 'Jiménez'
+    jose.firstname = 'José'
+    jose.lastname = 'Jiménez'
 
-    print(f'My name... {jose.first_name} {jose.last_name}')
+    print(f'My name... {jose.firstname} {jose.lastname}')
     # My name... José Jiménez
 
 .. code-block:: python
@@ -208,11 +208,11 @@ OOP Attribute Model
 :Input:
     .. code-block:: text
 
-        Jan, Twardowski, 1961-04-12
-        Mark, Watney, 1969-07-21
-        ESA, European Space Agency, Europe
-        NASA, National Aeronautics and Space Administration, USA
-        POLSA, Polish Space Agency, Poland
+        Jan Twardowski, Poland, 1961-04-12
+        Mark Watney, USA, 1969-07-21
+        European Space Agency, Europe, 1975-05-30
+        National Aeronautics and Space Administration, USA, 1958-07-29
+        Polish Space Agency, Poland, 2014-09-26
 
 :The whys and wherefores:
     * :ref:`OOP Classes and Instances`

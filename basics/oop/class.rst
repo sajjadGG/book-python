@@ -80,7 +80,7 @@ Instances
         pass
 
 
-    watney =  = Astronaut()
+    watney = Astronaut()
     twardowski = Astronaut()
     jimenez = Astronaut()
 
@@ -100,17 +100,17 @@ Instances
 .. code-block:: python
     :caption: Two classes and four instances (two instances of an ``Astronaut`` class, and two of a ``Cosmonaut`` class)
 
-    class Astronaut:
+    class AstronautPilot:
         pass
 
-    class Cosmonaut:
+    class CosmonautPilot:
         pass
 
 
-    mark = Astronaut()
-    melissa = Astronaut()
-    ivan = Cosmonaut()
-    jan = Cosmonaut()
+    mark_watney = AstronautPilot()
+    melissa_lewis = AstronautPilot()
+    ivan_ivanovich = CosmonautPilot()
+    jan_twardowski = CosmonautPilot()
 
 
 Class vs Instance
@@ -234,7 +234,7 @@ OOP Class Instantiation
 -----------------------
 * Complexity level: easy
 * Lines of code to write: 9 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/oop_class_instance.py`
 
 :English:

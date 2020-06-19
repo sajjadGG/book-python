@@ -31,35 +31,27 @@ Initializer Method With Arguments
     :caption: Initializer method with arguments
 
     class Astronaut:
-        def __init__(self, name):
-            print(f'My name... {name}')
+        def __init__(self, firstname, lastname='Unknown'):
+            print(f'My name... {firstname} {lastname}')
 
 
-    jose = Astronaut('José Jiménez')
+    jan = Astronaut('Jan')
+    # My name... Jan
+
+    jose = Astronaut('José', 'Jiménez')
     # My name... José Jiménez
 
-    mark = Astronaut(name='Mark Watney')
-    # My name... Mark Watney
-
-    ivan = Astronaut()
-    # TypeError: __init__() missing 1 required positional argument: 'name'
-
-.. code-block:: python
-    :caption: Method argument with default value
-
-    class Astronaut:
-        def __init__(self, name='Unknown'):
-            print(f'My name... {name}')
-
-
-    jose = Astronaut('José Jiménez')
+    mark = Astronaut(firstname='José', lastname='Jiménez')
     # My name... José Jiménez
 
-    mark = Astronaut(name='Mark Watney')
-    # My name... Mark Watney
+    melissa = Astronaut('Melissa', lastname='Lewis')
+    # My name... José Jiménez
+
+    ryan = Astronaut(lastname='Stone', firstname='Ryan')
+    # My name... José Jiménez
 
     ivan = Astronaut()
-    # My name... Unknown
+    # TypeError: __init__() missing 1 required positional argument: 'firstname'
 
 
 Initializing Attributes
@@ -69,14 +61,14 @@ Initializing Attributes
 
     class Astronaut:
         def __init__(self):
-            self.first_name = 'Mark'
-            self.last_name = 'Watney'
+            self.firstname = 'Mark'
+            self.lastname = 'Watney'
 
 
     mark = Astronaut()
 
-    print(mark.first_name)      # Mark
-    print(mark.last_name)       # Watney
+    print(mark.firstname)       # Mark
+    print(mark.lastname)        # Watney
     print(mark.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
 
 .. code-block:: python
@@ -84,18 +76,18 @@ Initializing Attributes
 
     class Astronaut:
         def __init__(self):
-            self.first_name = 'Mark'
-            self.last_name = 'Watney'
+            self.firstname = 'Mark'
+            self.lastname = 'Watney'
 
 
     mark = Astronaut()
-    print(mark.first_name)      # Mark
-    print(mark.last_name)       # Watney
+    print(mark.firstname)       # Mark
+    print(mark.lastname)        # Watney
     print(mark.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
 
     ivan = Astronaut()
-    print(ivan.first_name)      # Mark
-    print(ivan.last_name)       # Watney
+    print(ivan.firstname)       # Mark
+    print(ivan.lastname)        # Watney
     print(ivan.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
 
 .. code-block:: python
@@ -103,52 +95,52 @@ Initializing Attributes
 
     class Astronaut:
         def __init__(self, a, b):
-            self.first_name = a
-            self.last_name = b
+            self.firstname = a
+            self.lastname = b
 
 
     mark = Astronaut('Mark', 'Watney')
-    print(mark.first_name)      # Mark
-    print(mark.last_name)       # Watney
+    print(mark.firstname)       # Mark
+    print(mark.lastname)        # Watney
     print(mark.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
 
     ivan = Astronaut(a='Ivan', b='Ivanovich')
-    print(ivan.first_name)      # Ivan
-    print(ivan.last_name)       # Ivanovich
+    print(ivan.firstname)       # Ivan
+    print(ivan.lastname)        # Ivanovich
     print(ivan.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
 
 .. code-block:: python
     :caption: Init time attributes
 
     class Astronaut:
-        def __init__(self, first_name, last_name):
-            self.first_name = first_name
-            self.last_name = last_name
+        def __init__(self, firstname, lastname):
+            self.firstname = firstname
+            self.lastname = lastname
 
 
     mark = Astronaut('Mark', 'Watney')
-    print(mark.first_name)      # Mark
-    print(mark.last_name)       # Watney
+    print(mark.firstname)       # Mark
+    print(mark.lastname)        # Watney
     print(mark.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
 
-    ivan = Astronaut(first_name='Ivan', last_name='Ivanovich')
-    print(ivan.first_name)      # Ivan
-    print(ivan.last_name)       # Ivanovich
+    ivan = Astronaut(firstname='Ivan', lastname='Ivanovich')
+    print(ivan.firstname)       # Ivan
+    print(ivan.lastname)        # Ivanovich
     print(ivan.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
 
 .. code-block:: python
     :caption: Init time attributes
 
     class Astronaut:
-        def __init__(self, first_name, last_name):
-            self.full_name = f'{first_name} {last_name}'
+        def __init__(self, firstname, lastname):
+            self.name = f'{firstname} {lastname}'
 
 
     mark = Astronaut('Mark', 'Watney')
 
-    print(mark.full_name)       # Mark Watney
-    print(mark.first_name)      # AttributeError: 'Astronaut' object has no attribute 'first_name'
-    print(mark.last_name)       # AttributeError: 'Astronaut' object has no attribute 'last_name'
+    print(mark.name)           # Mark Watney
+    print(mark.firstname)      # AttributeError: 'Astronaut' object has no attribute 'firstname'
+    print(mark.lastname)       # AttributeError: 'Astronaut' object has no attribute 'lastname'
 
 .. code-block:: python
     :caption: Init time attributes
@@ -272,7 +264,7 @@ OOP Initialization Print
 ------------------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/oop_init_print.py`
 
 :English:
@@ -316,7 +308,7 @@ OOP Initialization Model
 ------------------------
 * Complexity level: easy
 * Lines of code to write: 15 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 7 min
 * Solution: :download:`solution/oop_init_model.py`
 
 :English:
@@ -342,11 +334,11 @@ OOP Initialization Model
 :Input:
     .. code-block:: text
 
-        Jan, Twardowski, 1961-04-12
-        Mark, Watney, 1969-07-21
-        ESA, European Space Agency, Europe
-        NASA, National Aeronautics and Space Administration, USA
-        POLSA, Polish Space Agency, Poland
+        Jan Twardowski, Poland, 1961-04-12
+        Mark Watney, USA, 1969-07-21
+        European Space Agency, Europe, 1975-05-30
+        National Aeronautics and Space Administration, USA, 1958-07-29
+        Polish Space Agency, Poland, 2014-09-26
 
 :The whys and wherefores:
     * :ref:`OOP Classes and Instances`

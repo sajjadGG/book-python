@@ -304,7 +304,7 @@ OOP Method Sequence
 
 OOP Method Nested
 -----------------
-* Complexity level: easy
+* Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
 * Solution: :download:`solution/oop_method_nested.py`
@@ -330,7 +330,7 @@ OOP Method Nested
     #. Use values from ``self.__dict__`` to check for type or length
     #. Create ``setosa`` object with attributes set at the initialization
     #. Create ``virginica`` object with attributes set at the initialization
-    #. Print sum, mean and name of each objects
+    #. Print sum, mean and species name of each objects
     #. Do not use ``@dataclass``
     #. Compare result with "Output" section (see below)
 
@@ -355,7 +355,7 @@ OOP Method Nested
     #. Użyj wartości ``self.__dict__`` do sprawdzania typu lub długości
     #. Stwórz obiekt ``setosa`` z atrybutami ustawionymi przy inicjalizacji
     #. Stwórz obiekt ``virginica`` z atrybutami ustawionymi przy inicjalizacji
-    #. Wypisz sumę, średnią oraz nazwę każdego z obiektów
+    #. Wypisz sumę, średnią oraz nazwę gatunku każdego z obiektów
     #. Nie używaj ``@dataclass``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 

@@ -70,6 +70,7 @@ Assignments
 
 About IDE Create from VCS
 -------------------------
+* Complexity level: easy
 * Lines of code to write: 0 lines
 * Estimated time of completion: 5 min
 
@@ -85,6 +86,7 @@ About IDE Create from VCS
 
 About IDE Create Project
 ------------------------
+* Complexity level: easy
 * Lines of code to write: 0 lines
 * Estimated time of completion: 5 min
 
@@ -98,6 +100,7 @@ About IDE Create Project
 
 About IDE Usage
 ---------------
+* Complexity level: easy
 * Lines of code to write: 0 lines
 * Estimated time of completion: 10 min
 
@@ -128,6 +131,7 @@ About IDE Usage
 
 About IDE Spellchecker
 ----------------------
+* Complexity level: easy
 * Lines of code to write: 0 lines
 * Estimated time of completion: 5 min
 

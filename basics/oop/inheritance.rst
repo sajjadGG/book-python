@@ -130,9 +130,9 @@ Simple Inheritance
 .. code-block:: python
 
     class Engineer:
-        def __init__(self, first_name, last_name):
-            self.first_name = first_name
-            self.last_name = last_name
+        def __init__(self, firstname, lastname):
+            self.firstname = firstname
+            self.lastname = lastname
 
     class Astronaut(Engineer):
         pass
@@ -337,23 +337,23 @@ Calling Parent Methods
 .. code-block:: python
 
     class Engineer:
-        def __init__(self, first_name, last_name):
-            self.first_name = first_name
-            self.last_name = last_name
+        def __init__(self, firstname, lastname):
+            self.firstname = firstname
+            self.lastname = lastname
             self.education = 'Engineer'
             self.profession = 'Engineer'
 
     class Astronaut(Engineer):
-        def __init__(self, first_name, last_name):
-            super().__init__(first_name, last_name)
+        def __init__(self, firstname, lastname):
+            super().__init__(firstname, lastname)
             self.profession = 'Astronaut'
 
 
     mark = Astronaut('Mark', 'Watney')
 
     print(mark.__dict__)
-    # {'first_name': 'Mark',
-    #  'last_name': 'Watney',
+    # {'firstname': 'Mark',
+    #  'lastname': 'Watney',
     #  'education': 'Engineer',
     #  'profession': 'Astronaut'}
 
