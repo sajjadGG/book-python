@@ -410,12 +410,12 @@ Examples
 Assignments
 ===========
 
-Refactoring
------------
+Function Doctest Temperature
+----------------------------
 * Complexity level: easy
-* Lines of code to write: 5 lines of code
+* Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/function_doctest_temp.py`
+* Solution: :download:`solution/function_doctest_temperature.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -451,10 +451,10 @@ Refactoring
             """
             return ...
 
-Distance conversion doctest
----------------------------
+Function Doctest Distance
+-------------------------
 * Complexity level: easy
-* Lines of code to write: 5 lines of code + 16 lines of tests
+* Lines of code to write: 21 lines
 * Estimated time of completion: 10 min
 * Solution: :download:`solution/function_doctest_distance.py`
 
@@ -486,8 +486,8 @@ Distance conversion doctest
         * any other type -> expect ``TypeError``
         * True
 
-Fix URL Regex
--------------
+Function Doctest Regexp
+-----------------------
 * Complexity level: hard
 * Lines of code to write: 0 lines (**discussion only**)
 * Estimated time of completion: 5 min

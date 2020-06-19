@@ -230,8 +230,8 @@ OOP Class Example
 :The whys and wherefores:
     * :ref:`OOP Classes and Instances`
 
-Instantiation
--------------
+OOP Class Instance
+------------------
 * Complexity level: easy
 * Lines of code to write: 9 lines
 * Estimated time of completion: 3 min

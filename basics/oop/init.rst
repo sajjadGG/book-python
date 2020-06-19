@@ -1,8 +1,8 @@
-.. _OOP Initializer Method:
+.. _OOP Init Method:
 
-******************
-Initializer Method
-******************
+***********
+Init Method
+***********
 
 
 .. highlights::
@@ -260,8 +260,8 @@ Checking Values
 Assignments
 ===========
 
-OOP Initialization Print
-------------------------
+OOP Init Print
+--------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 3 min
@@ -304,8 +304,8 @@ OOP Initialization Print
         97.88
         309.75
 
-OOP Initialization Model
-------------------------
+OOP Init Model
+--------------
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 7 min

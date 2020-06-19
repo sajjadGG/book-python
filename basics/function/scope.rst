@@ -321,7 +321,7 @@ Function Scope Filter
 
 Function Scope Roman to Int
 ---------------------------
-* Complexity level: medium
+* Complexity level: hard
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
 * Solution: :download:`solution/function_scope_romanint.py`
@@ -370,7 +370,7 @@ Function Scope Roman to Int
 
 Function Scope Int To Roman
 ---------------------------
-* Complexity level: medium
+* Complexity level: hard
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
 * Solution: :download:`solution/function_scope_introman.py`

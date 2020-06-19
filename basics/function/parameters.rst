@@ -229,7 +229,7 @@ Function Parameters Echo
 Function Parameters Default
 ---------------------------
 * Complexity level: easy
-* Lines of code to write: 4 lines
+* Lines of code to write: 6 lines
 * Estimated time of completion: 3 min
 * Solution: :download:`solution/function_parameters_default.py`
 

@@ -57,8 +57,8 @@ Recursion Depth Limit
 Assignments
 ===========
 
-Balanced Brackets
------------------
+Function Recurrence Brackets
+----------------------------
 * Complexity level: medium
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min

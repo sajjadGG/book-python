@@ -336,12 +336,12 @@ OOP Stringify Repr
         #  Iris(features=[7.6, 3.0, 6.6, 2.1], label='virginica'),
         #  Iris(features=[7.6, 3.0, 6.6, 2.1], label='virginica')]
 
-OOP Stringify Complex
----------------------
+OOP Stringify Nested
+--------------------
 * Complexity level: medium
 * Lines of code to write: 9 lines
 * Estimated time of completion: 20 min
-* Solution: :download:`solution/oop_stringify_complex.py`
+* Solution: :download:`solution/oop_stringify_nested.py`
 
 :English:
     #. Use code from "Input" section (see below)

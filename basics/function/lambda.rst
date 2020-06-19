@@ -146,26 +146,36 @@ Function Lambda Chain
 ---------------------
 * Complexity level: easy
 * Lines of code to write: 6 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 5 min
 * Solution: :download:`solution/function_lambda_chain.py`
 
 :English:
-    #. Use generator expression to create ``numbers: List[int]``
-    #. In generator use ``range()`` to get numbers from 1 to 33 (inclusive) divisible by 3
-    #. Use ``filter()`` to get odd numbers from ``numbers``
-    #. Use ``map()`` to cube all numbers in ``numbers``
-    #. Use only ``lambda`` function in ``map()`` and ``filter()``
-    #. Create ``result: float`` with arithmetic mean of ``numbers``
+    #. Use data from "Input" section (see below)
+    #. Inline functions ``odd()`` and ``cube()`` with ``lambda`` expressions
     #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Użyj wyrażenia generatorowego do stworzenia ``numbers: List[int]``
-    #. W generatorze użyj ``range()`` aby otrzymać liczby od 1 do 33 (włącznie) podzielne przez 3
-    #. Użyj ``filter()`` aby otrzymać liczby nieparzyste z ``numbers``
-    #. Użyj ``map()`` aby podnieść wszystkie liczby w ``numbers`` do sześcianu
-    #. Użyj tylko funkcji ``lambda`` w ``map()`` i ``filter()``
-    #. Stwórz ``result: float`` ze średnią arytmetyczną z ``numbers``
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Wciel kod ``odd()`` i ``cube()`` wykorzystując wyrażenia ``lambda``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        def odd(x):
+            return x % 2 != 0
+
+        def cube(x):
+            return x ** 3
+
+
+        numbers = (x for x in range(1, 34) if x % 3 == 0)
+        numbers = filter(odd, numbers)
+        numbers = map(cube, numbers)
+        numbers = list(numbers)
+        result = sum(numbers) / len(numbers)
+
+        print(result)
 
 :Output:
     .. code-block:: python
