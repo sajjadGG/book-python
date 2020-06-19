@@ -169,8 +169,8 @@ Force Skip Iteration
 Assignments
 ===========
 
-Example
--------
+Loop While Example
+------------------
 * Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 3 min

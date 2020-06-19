@@ -365,7 +365,7 @@ OOP Inheritance Simple
 ----------------------
 * Complexity level: easy
 * Lines of code to write: 8 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/oop_inheritance_simple.py`
 
 :English:
@@ -395,12 +395,12 @@ OOP Inheritance Multiple
     #. Stwórz klasy ``Engineer``, ``Scientist``, ``Pilot``, ``MedicalDoctor``
     #. Stwórz klasę ``Astronaut``, która dziedziczy po tych wszystkich klasach
 
-OOP Inheritance Init
---------------------
+OOP Inheritance Super
+---------------------
 * Complexity level: easy
 * Lines of code to write: 8 lines
-* Estimated time of completion: 10 min
-* Solution: :download:`solution/oop_inheritance_init.py`
+* Estimated time of completion: 7 min
+* Solution: :download:`solution/oop_inheritance_super.py`
 
 :English:
     #. Use data from "Input" section (see below)

@@ -197,8 +197,8 @@ Enumerate
 Assignments
 ===========
 
-Example
--------
+Loop For Example
+----------------
 * Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 5 min

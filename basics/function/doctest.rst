@@ -64,8 +64,8 @@ Running Tests
     .. code-block:: console
         :caption: Display only errors. With ``-v`` display progress
 
-        $ python -m doctest example.py
-        $ python -m doctest -v example.py
+        $ python -m doctest myfile.py
+        $ python -m doctest -v myfile.py
 
 
 Test Int, Float

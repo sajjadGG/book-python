@@ -204,8 +204,8 @@ Convention
 Assignments
 ===========
 
-Example
--------
+OOP Class Example
+-----------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
@@ -230,8 +230,8 @@ Example
 :The whys and wherefores:
     * :ref:`OOP Classes and Instances`
 
-OOP Class Instantiation
------------------------
+Instantiation
+-------------
 * Complexity level: easy
 * Lines of code to write: 9 lines
 * Estimated time of completion: 3 min
