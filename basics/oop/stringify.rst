@@ -263,22 +263,22 @@ OOP Stringify Str
 :Input:
     .. code-block:: python
 
-    DATA = [
-        (4.7, 3.2, 1.3, 0.2, 'setosa'),
-        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-        (7.6, 3.0, 6.6, 2.1, 'virginica'),
-    ]
+        DATA = [
+            (4.7, 3.2, 1.3, 0.2, 'setosa'),
+            (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+            (7.6, 3.0, 6.6, 2.1, 'virginica'),
+        ]
 
 
-    class Iris:
-        def __init__(self, features, label):
-            self.features = features
-            self.label = label
+        class Iris:
+            def __init__(self, features, label):
+                self.features = features
+                self.label = label
 
 
-    for *features, labels in DATA:
-        iris = Iris(features, label)
-        print(iris)
+        for *features, labels in DATA:
+            iris = Iris(features, label)
+            print(iris)
 
 :Output:
     .. code-block:: text
@@ -307,26 +307,26 @@ OOP Stringify Repr
 :Input:
     .. code-block:: python
 
-    DATA = [
-        (4.7, 3.2, 1.3, 0.2, 'setosa'),
-        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-        (7.6, 3.0, 6.6, 2.1, 'virginica'),
-    ]
+        DATA = [
+            (4.7, 3.2, 1.3, 0.2, 'setosa'),
+            (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+            (7.6, 3.0, 6.6, 2.1, 'virginica'),
+        ]
 
 
-    class Iris:
-        def __init__(self, features, label):
-            self.features = features
-            self.label = label
+        class Iris:
+            def __init__(self, features, label):
+                self.features = features
+                self.label = label
 
 
-    result = []
+        result = []
 
-    for *features, labels in DATA:
-        iris = Iris(features, label)
-        result.append(iris)
+        for *features, labels in DATA:
+            iris = Iris(features, label)
+            result.append(iris)
 
-    print(result)
+        print(result)
 
 :Output:
     .. code-block:: python

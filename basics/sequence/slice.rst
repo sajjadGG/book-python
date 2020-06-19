@@ -62,7 +62,7 @@ Ordered Sequences
 
 
 Unordered Sequences
-=================
+===================
 .. code-block:: python
     :caption: Slicing ``set`` is not possible
 

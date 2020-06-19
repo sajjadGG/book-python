@@ -83,7 +83,7 @@ Install on Windows
         #. Na końcu pola "Wartość zmiennej" dopisać poniższe wartości
         #. Uwaga, nie kasować tego co już jest tylko dopisać na koniec
         #. Ścieżki muszą być rozdzielone średnikiem ";", tzn. dopisać na końcu pola, za pozostałymi wpisami treść ``;ścieżka1;ścieżka2``
-       #. Ścieżki do dopisania:
+        #. Ścieżki do dopisania:
 
             * ``%USERPROFILE%\AppData\Local\Programs\Python\Python38\``
             * ``%USERPROFILE%\AppData\Local\Programs\Python\Python38\Scripts\``

@@ -173,20 +173,20 @@ File Read CSV
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Output:
-.. code-block:: python
+    .. code-block:: python
 
-    header: List[str]
-    # ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
+        header: List[str]
+        # ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
 
-    features: List[tuple]
-    # [(5.4, 3.9, 1.3, 0.4), (5.9, 3.0, 5.1, 1.8), (6.0, 3.4, 4.5, 1.6),
-    #  (7.3, 2.9, 6.3, 1.8), (5.6, 2.5, 3.9, 1.1), (5.4, 3.9, 1.3, 0.4),
-    #  (5.5, 2.6, 4.4, 1.2), (5.7, 2.9, 4.2, 1.3), (4.9, 3.1, 1.5, 0.1), ...]
+        features: List[tuple]
+        # [(5.4, 3.9, 1.3, 0.4), (5.9, 3.0, 5.1, 1.8), (6.0, 3.4, 4.5, 1.6),
+        #  (7.3, 2.9, 6.3, 1.8), (5.6, 2.5, 3.9, 1.1), (5.4, 3.9, 1.3, 0.4),
+        #  (5.5, 2.6, 4.4, 1.2), (5.7, 2.9, 4.2, 1.3), (4.9, 3.1, 1.5, 0.1), ...]
 
-    labels: list
-    # ['setosa', 'virginica', 'versicolor', 'virginica', 'versicolor',
-    #  'setosa', 'versicolor', 'versicolor', 'setosa', 'virginica',
-    #  'virginica', 'setosa', 'setosa', ...]
+        labels: list
+        # ['setosa', 'virginica', 'versicolor', 'virginica', 'versicolor',
+        #  'setosa', 'versicolor', 'versicolor', 'setosa', 'virginica',
+        #  'virginica', 'setosa', 'setosa', ...]
 
 
 :The whys and wherefores:
