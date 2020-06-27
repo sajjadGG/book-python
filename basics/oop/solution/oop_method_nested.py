@@ -20,11 +20,15 @@ class Iris:
     def mean(self):
         return self.total() / self.length()
 
+    def show(self):
+        return f'total={self.total():.2f} mean={self.mean():.2f} {self.species}'
+
 
 setosa = Iris(5.1, 3.5, 1.4, 0.2, 'setosa')
-print(f'total={setosa.total():.2f} mean={setosa.mean():.2f} {setosa.species}')
-# total=10.20 mean=2.55 setosa
-
 virginica = Iris(5.8, 2.7, 5.1, 1.9, 'virginica')
-print(f'total={virginica.total():.2f} mean={virginica.mean():.2f} {virginica.species}')
+
+print(f'{setosa.show()}')
+print(f'{virginica.show()}')
+
+# total=10.20 mean=2.55 setosa
 # total=15.50 mean=3.88 virginica

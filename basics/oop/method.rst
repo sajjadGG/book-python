@@ -42,7 +42,7 @@ Rationale
         def get_coordinates(self):
             return self.x, self.y, self.z
 
-        def to_string(self):
+        def show(self):
             print(f'Point(x={self.x}, y={self.y}, z={self.z})')
 
 
@@ -55,7 +55,7 @@ Rationale
     point.get_coordinates()
     # (1, 2, 3)
 
-    point.to_string()
+    point.show()
     # Point(x=1, y=2, z=3)
 
 
@@ -362,8 +362,22 @@ OOP Method Nested
 :Input:
     .. code-block:: python
 
+        class Iris:
+            def __init__(self, sepal_length, sepal_width,
+                        petal_length, petal_width, species):
+
+                self.sepal_length = sepal_length
+                self.sepal_width = sepal_width
+                self.petal_length = petal_length
+                self.petal_width = petal_width
+                self.species = species
+
+
         setosa = Iris(5.1, 3.5, 1.4, 0.2, 'setosa')
         virginica = Iris(5.8, 2.7, 5.1, 1.9, 'virginica')
+
+        print(f'{setosa.show()}')
+        print(f'{virginica.show()}')
 
 :Output:
     .. code-block:: text

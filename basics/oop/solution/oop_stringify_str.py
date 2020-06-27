@@ -14,7 +14,7 @@ class Iris:
         return sum(features)
 
     def __str__(self):
-        return f'{self.label} {self.total()}'
+        return f'{self.label} {self.total():.1f}'
 
 
 for *features, label in DATA:
@@ -22,5 +22,5 @@ for *features, label in DATA:
     print(iris)
 
 # setosa 9.4
-# versicolor 16.299999999999997
+# versicolor 16.3
 # virginica 19.3

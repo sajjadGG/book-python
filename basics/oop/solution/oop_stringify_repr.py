@@ -10,14 +10,13 @@ class Iris:
         self.features = features
         self.label = label
 
+    def total(self):
+        return sum(self.features)
+
     def __repr__(self):
-        return f'Iris({features=}, {label=})'
+        return f'{self.label} {self.total():.2f}'
 
 
-result = []
-
-for *features, label in DATA:
-    iris = Iris(features, label)
-    result.append(iris)
-
+result = [Iris(X,y) for *X,y in DATA]
 print(result)
+

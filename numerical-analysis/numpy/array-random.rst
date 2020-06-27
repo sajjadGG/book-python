@@ -317,7 +317,7 @@ Random Float
 ------------
 * Complexity level: medium
 * Lines of code to write: 3 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/numpy_random_float.py`
 
 :English:
@@ -332,7 +332,7 @@ Random Int
 ----------
 * Complexity level: easy
 * Lines of code to write: 4 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/numpy_random_int.py`
 
 :English:

@@ -183,19 +183,21 @@ Format
         def __init__(self, kelvin):
             self.kelvin = kelvin
 
-        def __format__(self, unit):
+        def to_fahrenheit(self):
+            return (self.kelvin-273.15) * 9/5 + 32
 
+        def to_celsius(self):
+            return self.kelvin - 273.15
+
+        def __format__(self, unit):
             if unit == 'kelvin':
                 value = self.kelvin
-
             elif unit == 'celsius':
-                value = self.kelvin - 273.15
-
+                value = self.to_celsius()
             elif unit == 'fahrenheit':
-                value = (self.kelvin-273.15) * 9/5 + 32
+                value = self.to_fahrenheit()
 
-            value = round(value, 2)
-            return str(value)
+            return f'{value:.2f}'
 
 
     temp = Temperature(309.75)
@@ -215,16 +217,16 @@ Format
         def __format__(self, name):
 
             if name == 'in_2D':
-                return f"({self.x}, {self.y})"
+                return f"Point(x={self.x}, y={self.y})"
 
             if name == 'in_3D':
-                return f"({self.x}, {self.y}, {self.z})"
-
-            if name == 'as_dict':
-                return str(self.__dict__)
+                return f"Point(x={self.x}, y={self.y}, z={self.z})"
 
             if name == 'as_tuple':
                 return str(tuple(self.__dict__.values()))
+
+            if name == 'as_dict':
+                return str(self.__dict__)
 
             if name == 'as_json':
                 import json
@@ -233,8 +235,8 @@ Format
 
     point = Point(x=1, y=2)
 
-    print(f'{point:in_2D}')           # '(1, 2)'
-    print(f'{point:in_3D}')           # '(1, 2, 0)'
+    print(f'{point:in_2D}')           # 'Point(x=1, y=2)'
+    print(f'{point:in_3D}')           # 'Point(x=1, y=2, z=0)'
     print(f'{point:as_tuple}')        # '(1, 2, 0)'
     print(f'{point:as_dict}')         # "{'x': 1, 'y': 2, 'z': 0}"
     print(f'{point:as_json}')         # '{"x": 1, "y": 2, "z": 0}'
@@ -253,11 +255,13 @@ OOP Stringify Str
 :English:
     #. Use code from "Input" section (see below)
     #. While printing object show: species name and a sum method result
+    #. Result of sum round to one decimal place
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj kodu z sekcji "Input" (patrz poniżej)
     #. Przy wypisywaniu obiektu pokaż: nazwę gatunku i wynik metody sumującej
+    #. Wynik sumowania zaokrąglij do jednego miejsca po przecinku
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
@@ -276,7 +280,7 @@ OOP Stringify Str
                 self.label = label
 
 
-        for *features, labels in DATA:
+        for *features, label in DATA:
             iris = Iris(features, label)
             print(iris)
 
@@ -284,7 +288,7 @@ OOP Stringify Str
     .. code-block:: text
 
         setosa 9.4
-        versicolor 16.299999999999997
+        versicolor 16.3
         virginica 19.3
 
 OOP Stringify Repr
@@ -297,11 +301,13 @@ OOP Stringify Repr
 :English:
     #. Use code from "Input" section (see below)
     #. Print representation of each instance with values (use ``repr()``)
+    #. Result of sum round to two decimal places
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj kodu z sekcji "Input" (patrz poniżej)
     #. Wypisz reprezentację każdej z instancji z wartościami (użyj ``repr()``)
+    #. Wynik sumowania zaokrąglij do dwóch miejsc po przecinku
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
@@ -320,12 +326,7 @@ OOP Stringify Repr
                 self.label = label
 
 
-        result = []
-
-        for *features, labels in DATA:
-            iris = Iris(features, label)
-            result.append(iris)
-
+        result = [Iris(X,y) for *X,y in DATA]
         print(result)
 
 :Output:
