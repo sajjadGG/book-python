@@ -112,13 +112,13 @@ Array Attributes
 ----------------
 * Complexity level: easy
 * Lines of code to write: 4 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/numpy_attributes.py`
 
 :English:
     #. Set random seed to zero.
     #. Create ``a: ndarray`` with size 16x16.
-    #. Structure must contains random integers (0-9).
+    #. Structure must contains random digits 0-9 (inclusive).
     #. Print:
 
         * number of dimensions;
@@ -131,10 +131,10 @@ Array Attributes
 :Polish:
     #. Ustaw ziarno losowości na zero.
     #. Stwórz ``a: ndarray`` o rozmiarze 16x16.
-    #. Struktura musi zawierać losowe liczby (0-9).
+    #. Struktura musi zawierać losowe cyfry 0-9 (włącznie).
     #. Wypisz:
 
-        * liczbę wymiarów,
+        * liczbę wymiarów,
         * liczbę elementów,
         * typ danych,
         * rozmiar elementu,
