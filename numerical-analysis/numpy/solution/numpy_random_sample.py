@@ -2,7 +2,11 @@ import numpy as np
 np.random.seed(0)
 
 
-np.random.choice(range(1, 49), size=6, replace=False)
+np.random.choice(np.arange(1, 50), size=6, replace=False)
+
+
+## Alternative Solution
+np.random.choice(np.random.randint(49), size=6, replace=False)
 
 
 ## Alternative Solution
@@ -11,7 +15,7 @@ np.random.choice(np.unique(a), size=6, replace=False)
 
 
 ## Alternative Solution
-np.random.choice(np.random.randint(49), size=6, replace=False)
+np.random.choice(range(1, 50), size=6, replace=False)
 
 
 ## Alternative Solution
