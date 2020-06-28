@@ -256,12 +256,12 @@ Linear Algebra
 Assignments
 ===========
 
-Euclidean distance 2D
----------------------
+Numpy Algebra Euclidean 2D
+--------------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 15 min
-* Solution: :download:`solution/algebra_euclidean_2d.py`
+* Estimated time of completion: 7 min
+* Solution: :download:`solution/numpy_algebra_euclidean_2d.py`
 
 :English:
     #. Use code from "Input" section (see below)
@@ -316,12 +316,12 @@ Euclidean distance 2D
 :Hint:
     * :math:`distance(a, b) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}`
 
-Euclidean distance ``n`` dimensions
------------------------------------
+Numpy Algebra Euclidean Ndim
+----------------------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
-* Estimated time of completion: 15 min
-* Solution: :download:`solution/algebra_euclidean_multi_dim.py`
+* Estimated time of completion: 7 min
+* Solution: :download:`solution/numpy_algebra_euclidean_ndim.py`
 
 :English:
     #. Use code from "Input" section (see below)
