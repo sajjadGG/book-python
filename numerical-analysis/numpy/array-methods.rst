@@ -256,22 +256,29 @@ To list
 Assignments
 ===========
 
-Array Methods
+Numpy Methods
 -------------
 * Complexity level: easy
 * Lines of code to write: 6 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/numpy_methods.py`
 
 :English:
     #. Set random seed to zero
-    #. Generate ``a: ndarray`` of 12 random integers from 0 to 100 (exclusive)
-    #. Reshape ``a`` to 3x4
-    #. Print ``a``
+    #. Generate ``result: ndarray`` of 12 random integers from 0 to 100 (exclusive)
+    #. Reshape ``result`` to 3x4
+    #. Fill last column with zeros (0)
+    #. Transpose ``result``
+    #. Convert ``result`` to float
+    #. Fill first row with ``np.nan``
+    #. Print ``result``
 
 :Polish:
     #. Ustaw ziarno losowości na zero
-    #. Wygeneruj ``a: ndarray`` z 12 losowymi liczbami całkowitymi od 0 do 100 (rozłącznie)
+    #. Wygeneruj ``result: ndarray`` z 12 losowymi liczbami całkowitymi od 0 do 100 (rozłącznie)
     #. Zmień kształt na 3x4
-    #. Transponuj ``a``
-    #. Wypisz ``a``
+    #. Wypełnij ostatnią kolumnę zerami (0)
+    #. Transponuj ``result``
+    #. Przekonwertuj ``result`` do float
+    #. Wypełnij pierwszy wiersz ``np.nan``
+    #. Wypisz ``result``

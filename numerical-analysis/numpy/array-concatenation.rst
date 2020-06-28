@@ -73,7 +73,7 @@ Array Concatenation
 Assignments
 ===========
 
-Array Concatenation
+Numpy Concatenation
 -------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines

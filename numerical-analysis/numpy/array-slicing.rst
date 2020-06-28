@@ -262,12 +262,12 @@ Newaxis
 Assignments
 ===========
 
-Array Slicing
+Numpy Slice 1
 -------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
-* Estimated time of completion: 5 min
-* Solution: :download:`solution/numpy_slicing_1.py`
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/numpy_slice_1.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -300,32 +300,29 @@ Array Slicing
     * Defining ``np.array``
     * Generating random ``np.array``
 
-Sum of inner elements
----------------------
-* Complexity level: medium
+Numpy Slice 2
+-------------
+* Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 10 min
-* Solution: :download:`solution/numpy_slicing_2.py`
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/numpy_slice_2.py`
 
 :English:
     #. Use only ``random`` module from ``numpy`` library
     #. Set random seed to zero
     #. Generate ``DATA: ndarray`` with 16x16 random digits (0-9 inclusive)
-    #. Calculate sum of inner 4x4 elements
+    #. Print inner 4x4 elements
     #. Inner matrix is exactly in the middle of outer
 
 :Polish:
     #. Użyj tylko funkcji z modułu ``random`` biblioteki ``numpy``
     #. Ustaw ziarno losowości na zero
     #. Wygeneruj ``DATA: ndarray`` z 16x16 losowych cyfr (0-9 włącznie)
-    #. Policz sumę środkowych 4x4 elementów
+    #. Wypisz środkowe 4x4 elementy
     #. Środkowa macierz jest dokładnie w środku większej
 
 .. figure:: img/random-inner-sum.png
     :width: 75%
     :align: center
 
-    Sum of inner elements
-
-:Hint:
-    * ``ndarray.sum()``
+    Inner 4x4 elements

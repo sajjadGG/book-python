@@ -433,7 +433,7 @@ US date and time format
 Log parsing
 -----------
 * Complexity level: medium
-* Lines of code to write: 25 lines
+* Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
 * Solution: :download:`solution/datetime_logs.py`
 

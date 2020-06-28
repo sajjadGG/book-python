@@ -313,8 +313,8 @@ Shuffle
 Assignments
 ===========
 
-Random Float
-------------
+Numpy Random Float
+------------------
 * Complexity level: medium
 * Lines of code to write: 3 lines
 * Estimated time of completion: 3 min
@@ -328,8 +328,8 @@ Random Float
     #. Ustaw ziarno losowości na zero
     #. Wypisz ``ndarray`` z 10 losowymi liczbami zmiennoprzecinkowymi
 
-Random Int
-----------
+Numpy Random Int
+----------------
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 3 min
@@ -348,8 +348,8 @@ Random Int
     * Using ``np.random.seed()``
     * Generating random ``np.array``
 
-Random Sample
--------------
+Numpy Random Sample
+-------------------
 * Complexity level: medium
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min

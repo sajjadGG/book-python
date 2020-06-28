@@ -339,7 +339,7 @@ Signum
 Assignments
 ===========
 
-Array Logic
+Numpy Logic
 -----------
 * Complexity level: easy
 * Lines of code to write: 4 lines
@@ -360,8 +360,8 @@ Array Logic
     #. Sprawdź czy wszystkie liczby spełniają ten warunek
     #. Sprawdź czy jakakolwiek liczba spełnia ten warunek
 
-Is in Array
------------
+Numpy Isin
+----------
 * Complexity level: easy
 * Lines of code to write: 9 lines
 * Estimated time of completion: 5 min

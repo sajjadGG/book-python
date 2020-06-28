@@ -119,26 +119,29 @@ Flip
     # array([[3, 2, 1],
     #        [6, 5, 4]])
 
+
 Assignments
 ===========
 
-Sort
-----
+Numpy Sort
+----------
 * Complexity level: easy
-* Lines of code to write: 6 lines
-* Estimated time of completion: 5 min
+* Lines of code to write: 4 lines
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/numpy_sort.py`
 
 :English:
     #. Set random seed to zero
-    #. Generate ``a: ndarray`` of 12 random integers from 0 to 100 (exclusive)
-    #. Reshape ``a`` to 3x4
-    #. Sort ``a`` in columns
-    #. Print ``a``
+    #. Generate ``result: ndarray`` of 12 random integers from 0 to 100 (exclusive)
+    #. Reshape ``result`` to 3x4
+    #. Sort ``result`` in columns
+    #. Flip ``result`` in rows
+    #. Print ``result``
 
 :Polish:
     #. Ustaw ziarno losowości na zero
-    #. Wygeneruj ``a: ndarray`` z 12 losowymi liczbami całkowitymi od 0 do 100 (rozłącznie)
+    #. Wygeneruj ``result: ndarray`` z 12 losowymi liczbami całkowitymi od 0 do 100 (rozłącznie)
     #. Zmień kształt na 3x4
-    #. Posortuj ``a`` w kolumnach
-    #. Wypisz ``a``
+    #. Posortuj ``result`` w kolumnach
+    #. Flipnij ``result`` w wierszach
+    #. Wypisz ``result``

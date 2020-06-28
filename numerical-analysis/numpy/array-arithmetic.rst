@@ -366,11 +366,11 @@ Matrix Multiplication
 Assignments
 ===========
 
-Arithmetic operations
----------------------
+Numpy Arithmetic
+----------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/numpy_arithmetic.py`
 
 :English:
@@ -404,11 +404,11 @@ Arithmetic operations
         array([[ 1.41421356,  2.73205081],
                [45.254834  ,  0.        ]])
 
-Array Addition
---------------
+Array Arithmetic Add
+--------------------
 * Complexity level: easy
 * Lines of code to write: 2 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/numpy_arithmetic_add.py`
 
 :English:
@@ -430,11 +430,11 @@ Array Addition
         a = np.array([[1, 0], [0, 1]])
         b = [[4, 1], [2, 2]]
 
-Array Multiplication
---------------------
+Array Arithmetic Matmul
+-----------------------
 * Complexity level: easy
-* Lines of code to write: 2 lines
-* Estimated time of completion: 5 min
+* Lines of code to write: 4 lines
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/numpy_arithmetic_matmul.py`
 
 :English:

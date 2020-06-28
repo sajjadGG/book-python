@@ -237,3 +237,8 @@ Columns
 =================
 * ``axis`` is an index in ``a.shape``
 * Columns are always last
+
+
+Assignments
+===========
+.. todo:: Create Assignments

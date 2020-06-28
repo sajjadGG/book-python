@@ -116,12 +116,12 @@ Selecting items
     import numpy as np
 
 
-    a = array([[[ 1,  2,  3],
-                [ 4,  5,  6],
-                [ 5,  6,  7]],
-               [[11, 22, 33],
-                [44, 55, 66],
-                [77, 88, 99]]])
+    a = np.array([[[ 1,  2,  3],
+                   [ 4,  5,  6],
+                   [ 5,  6,  7]],
+                  [[11, 22, 33],
+                   [44, 55, 66],
+                   [77, 88, 99]]])
 
     a[0,0,0]    # 1
     a[0,0,1]    # 2
@@ -201,17 +201,17 @@ Substituting items
 Assignments
 ===========
 
-Indexing
---------
+Numpy Indexing
+--------------
 * Complexity level: easy
 * Lines of code to write: 4 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/numpy_indexing.py`
 
 :English:
     #. Use data from "Input" section (see below)
     #. Create ``result: ndarray``
-    #. Add to ``result`` elements from ``DATA`` (see below) at indexes:
+    #. Add to ``result`` elements from ``DATA`` at indexes:
 
         * row 0, column 2
         * row 2, column 2
@@ -225,7 +225,7 @@ Indexing
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Stwórz ``result: ndarray``
-    #. Dodaj do ``result`` elementy z ``DATA`` (patrz sekcja input) o indeksach:
+    #. Dodaj do ``result`` elementy z ``DATA`` o indeksach:
 
         * wiersz 0, kolumna 2
         * wiersz 2, kolumna 2

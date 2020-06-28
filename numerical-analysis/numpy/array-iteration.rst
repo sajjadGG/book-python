@@ -131,22 +131,20 @@ Enumerate
 Assignments
 ===========
 
-Iteration
----------
+Numpy Iteration
+---------------
 * Complexity level: easy
 * Lines of code to write: 9 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/numpy_iteration.py`
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Given ``a: ndarray`` (see below)
     #. Use ``for`` to iterate over ``a``
     #. Print even numbers
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Dany ``a: ndarray`` (patrz sekcja input)
     #. Używając ``for`` iteruj po ``DATA``
     #. Wypisz liczby parzyste
 

@@ -64,8 +64,8 @@ Arcus hyperbolic functions
 Assignments
 ===========
 
-Trigonometry
-------------
+Numpy Trigonometry
+------------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min

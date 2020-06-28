@@ -198,7 +198,7 @@ Date manipulation
 ------------------
 * Complexity level: easy
 * Lines of code to write: 15 lines
-* Estimated time of completion: 20 min
+* Estimated time of completion: 10 min
 * Solution: :download:`solution/datetime_deltas.py`
 
 :English:

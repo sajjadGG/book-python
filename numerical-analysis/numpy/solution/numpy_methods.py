@@ -1,11 +1,11 @@
 import numpy as np
 np.random.seed(0)
 
+a = np.random.randint(0, 99, size=12).reshape((3, 4))
 
-a = np.random.randint(0, 99, size=(3, 4))
+a[:, -1].fill(0)
+a = a.transpose()
+a = a.astype(float)
+a[0].fill(np.nan)
 
-print(a.transpose())
-# array([[23, 11, 45],
-#        [63, 24, 49],
-#        [64, 29, 78],
-#        [74, 44, 93]])
+print(a)

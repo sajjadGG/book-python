@@ -237,8 +237,8 @@ Ravel
 Assignments
 ===========
 
-Shape
------
+Numpy Shape
+-----------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min

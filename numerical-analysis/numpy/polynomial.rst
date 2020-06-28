@@ -173,8 +173,8 @@ Sum of two polynomials
 Assignments
 ===========
 
-Polynomial Polyfit
-------------------
+Numpy Polyfit
+-------------
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min

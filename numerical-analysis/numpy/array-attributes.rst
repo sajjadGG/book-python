@@ -108,7 +108,7 @@ Data
 Assignments
 ===========
 
-Array Attributes
+Numpy Attributes
 ----------------
 * Complexity level: easy
 * Lines of code to write: 4 lines

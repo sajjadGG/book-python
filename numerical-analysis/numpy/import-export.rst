@@ -122,7 +122,7 @@ Other
 Assignments
 ===========
 
-Load Dirty CSV
+Numpy Loadtext
 --------------
 * Complexity level: easy
 * Lines of code to write: 4 lines
@@ -132,11 +132,11 @@ Load Dirty CSV
 :English:
     #. Use data from "Input" section (see below)
     #. Load text from ``URL``
-    #. From the first line select Iris species names and save as ``species: ndarray``
+    #. From the first line select Iris species names and save as str to ``species: ndarray``
     #. For other lines:
 
-        #. Read columns with data and save to ``features: ndarray``
-        #. Read last column with species numbers and save to ``labels: ndarray``
+        #. Read columns with data and save as float to ``features: ndarray``
+        #. Read last column with species numbers and save as int to ``labels: ndarray``
 
     #. Print ``species``, ``labels`` and ``features``
     #. Compare result with "Output" section (see below)
@@ -144,11 +144,11 @@ Load Dirty CSV
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Wczytaj tekst z ``URL``
-    #. Z pierwszej linii wybierz nazwy gatunków Irysów i zapisz rezultat jako ``species: ndarray``
+    #. Z pierwszej linii wybierz nazwy gatunków Irysów i zapisz rezultat jako str do ``species: ndarray``
     #. W pozostałych linii:
 
-        * Wczytaj kolumny z danymi i zapisz do ``features: ndarray``
-        * Wczytaj ostatnią kolumnę z numerami gatunków i zapisz do ``labels: ndarray``
+        * Wczytaj kolumny z danymi i zapisz jako float do ``features: ndarray``
+        * Wczytaj ostatnią kolumnę z numerami gatunków i zapisz jako int do ``labels: ndarray``
 
     #. Wyświetl ``species``, ``labels`` i ``features``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
@@ -173,5 +173,5 @@ Load Dirty CSV
         #        [6.8, 3.2, 5.9, 2.3]])
 
         labels: ndarray
-        # array([0., 2., 1., 2., ..., 0., 2., 2., 2.])
+        # array([0, 2, 1, 2, ..., 0, 2, 2, 2])
 

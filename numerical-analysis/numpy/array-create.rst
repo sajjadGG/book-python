@@ -317,8 +317,8 @@ Identity
 Assignments
 ===========
 
-Array Create
-------------
+Numpy Create Arange
+-------------------
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 3 min
