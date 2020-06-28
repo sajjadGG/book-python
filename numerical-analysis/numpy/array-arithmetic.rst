@@ -404,7 +404,7 @@ Numpy Arithmetic
         array([[ 1.41421356,  2.73205081],
                [45.254834  ,  0.        ]])
 
-Array Arithmetic Add
+Numpy Arithmetic Add
 --------------------
 * Complexity level: easy
 * Lines of code to write: 2 lines
@@ -430,7 +430,7 @@ Array Arithmetic Add
         a = np.array([[1, 0], [0, 1]])
         b = [[4, 1], [2, 2]]
 
-Array Arithmetic Matmul
+Numpy Arithmetic Matmul
 -----------------------
 * Complexity level: easy
 * Lines of code to write: 4 lines
