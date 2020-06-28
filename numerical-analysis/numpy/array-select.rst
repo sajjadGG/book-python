@@ -443,11 +443,9 @@ Diagonal problem
 
     dec31 = (index == '1999-12-31')     # array([False,  True, False, False])
     jan01 = (index == '2000-01-01')     # array([False, False,  True, False])
-    days = (dec31 | jan01)              # array([False,  True,  True, False])
 
     morning = (columns == 'Morning')    # array([ True, False, False])
     evening = (columns == 'Evening')    # array([False, False,  True])
-    when = (morning | evening)          # array([ True, False,  True])
 
     data
     # array([[ 1.76405235,  0.40015721,  0.97873798],
@@ -455,14 +453,14 @@ Diagonal problem
     #        [ 0.95008842, -0.15135721, -0.10321885],
     #        [ 0.4105985 ,  0.14404357,  1.45427351]])
 
-    data[days]
+    data[dec31|jan01]
     # array([[ 2.2408932 ,  1.86755799, -0.97727788],
     #        [ 0.95008842, -0.15135721, -0.10321885]])
 
-    data[days, when]
+    data[(dec31|jan01), (morning|evening)]
     # array([ 2.2408932 , -0.10321885])
 
-    data[np.ix_(days, when)]
+    data[np.ix_((dec31|jan01), (morning|evening))]
     # array([[ 2.2408932 , -0.97727788],
     #        [ 0.95008842, -0.10321885]])
 
@@ -508,24 +506,24 @@ Numpy Select
 ------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
-* Estimated time of completion: 20 min
+* Estimated time of completion: 5 min
 * Solution: :download:`solution/numpy_select.py`
 
 :English:
     #. Set random seed to 0
     #. Generate ``a: ndarray`` of size 50x50
     #. ``a`` must contains random integers from 0 to 1024 inclusive
-    #. Create ``b: ndarray`` with elements selected from ``a`` which are power of two
-    #. Sort ``b`` in descending order
-    #. Print ``b``
+    #. Create ``result: ndarray`` with elements selected from ``a`` which are power of two
+    #. Sort ``result`` in descending order
+    #. Print ``result``
 
 :Polish:
     #. Ustaw ziarno losowości na 0
     #. Wygeneruj ``a: ndarray`` rozmiaru 50x50
     #. ``a`` musi zawierać losowe liczby całkowite z zakresu od 0 do 1024 włącznie
-    #. Stwórz ``b: ndarray`` z elementami wybranymi z ``a``, które są potęgami dwójki
-    #. Posortuj ``b`` w kolejności malejącej
-    #. Wypisz ``b``
+    #. Stwórz ``result: ndarray`` z elementami wybranymi z ``a``, które są potęgami dwójki
+    #. Posortuj ``result`` w kolejności malejącej
+    #. Wypisz ``result``
 
 :Hint:
     * ``np.isin(a, b)``
