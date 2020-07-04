@@ -160,14 +160,14 @@ Type Float VAT
 * Solution: :download:`solution/type_float_tax.py`
 
 :English:
-    * Cost of the service is 100 PLN net
-    * Service has value added tax (VAT) rate of 23%
-    * Calculate tax and gross values
+    #. Cost of the service is 100 PLN net
+    #. Service has value added tax (VAT) rate of 23%
+    #. Calculate tax and gross values
 
 :Polish:
-    * Cena usługi wynosi 100 PLN netto
-    * Usługa objęta jest 23% stawką VAT
-    * Oblicz wartości podatku oraz cenę brutto
+    #. Cena usługi wynosi 100 PLN netto
+    #. Usługa objęta jest 23% stawką VAT
+    #. Oblicz wartości podatku oraz cenę brutto
 
 :Output:
     .. code-block:: text
