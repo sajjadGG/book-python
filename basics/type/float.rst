@@ -20,7 +20,7 @@ Type Definition
     :caption: Notation without leading or trailing zero
 
     data = 10.               # 10.0
-    data = .44                # 0.44
+    data = .44               # 0.44
 
 .. code-block:: python
     :caption: Engineering notation
@@ -56,6 +56,7 @@ Type Casting
     float('+13.37')         # 13.37
     float('-13.37')         # -13.37
     float('13,37')          # ValueError: could not convert string to float: '13,37'
+    float('+13,37')         # ValueError: could not convert string to float: '+13,37'
     float('-13,37')         # ValueError: could not convert string to float: '-13,37'
 
 
@@ -106,6 +107,10 @@ Built-in Functions
     pow(4, 0.5)         # 2.0
     pow(2, 0.5)         # 1.4142135623730951
 
+    pow(4, 1/2)         # 2.0
+    pow(2, 1/2)         # 1.4142135623730951
+    pow(27, 1/3)        # 3.0
+
 .. code-block:: python
     :caption: ``abs()`` - Absolute value
 
@@ -147,6 +152,28 @@ Type Float Example
     * Naming convention
     * Mathematical operations
 
+Type Float VAT
+--------------
+* Complexity level: easy
+* Lines of code to write: 6 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/type_float_tax.py`
+
+:English:
+    * Cost of the service is 100 PLN net
+    * Service has value added tax (VAT) rate of 23%
+    * Calculate tax and gross values
+
+:Polish:
+    * Cena usługi wynosi 100 PLN netto
+    * Usługa objęta jest 23% stawką VAT
+    * Oblicz wartości podatku oraz cenę brutto
+
+:Output:
+    .. code-block:: text
+
+        Result [PLN]: net=100 tax=23.0 gross=123.0
+
 Type Float Altitude
 -------------------
 * Complexity level: easy
@@ -158,14 +185,14 @@ Type Float Altitude
     #. Plane altitude is 10.000 ft
     #. Data uses imperial (US) system
     #. Convert to metric (SI) system
-    #. Speed limit round to one decimal place
+    #. Result round to one decimal place
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Wysokość lotu samolotem wynosi 10 000 ft
     #. Dane używają systemu imperialnego (US)
     #. Przelicz je na system metryczny (układ SI)
-    #. Ograniczenie prędkości zaokrąglij do jednego miejsca po przecinku
+    #. Wynik zaokrąglij do jednego miejsca po przecinku
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Output:
@@ -192,14 +219,12 @@ Type Float Volume
     #. Bottle volume is 20 Fl Oz
     #. Data uses imperial (US) system
     #. Convert to metric (SI) system
-    #. Speed limit round to one decimal place
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Objętość butelki wynosi 20 Fl Oz
     #. Dane używają systemu imperialnego (US)
     #. Przelicz je na system metryczny (układ SI)
-    #. Ograniczenie prędkości zaokrąglij do jednego miejsca po przecinku
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Output:
@@ -226,12 +251,14 @@ Type Float Distance
     #. Use code from "Input" section (see below)
     #. Convert units
     #. Instead ``...`` substitute calculated and converted values
+    #. Note the number of decimal places
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj kodu z sekcji "Input" (patrz poniżej)
     #. Przekonwertuj jednostki
     #. Zamiast ``...`` podstaw wyliczone i przekonwertowane wartości
+    #. Zwróć uwagę na ilość miejsc po przecinku
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
@@ -282,8 +309,8 @@ Type Float Pressure
     #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Ciśnienie operacyjne skafandra kosmicznego EMU: 4.3 PSI
-    #. Ciśnienie operacyjne skafandra kosmicznego ORLAN: 400 hPa
+    #. Ciśnienie operacyjne skafandra kosmicznego EMU (NASA): 4.3 PSI
+    #. Ciśnienie operacyjne skafandra kosmicznego ORLAN (Roscosmos): 400 hPa
     #. Oblicz ciśnienie operacyjne skafandra EMU w kPa
     #. Oblicz ciśnienie operacyjne skafandra Orlan w PSI
     #. Wypisz wszystkie wyniki w kPa oraz PSI zaokrąglając do dwóch miejsc po przecinku
@@ -310,6 +337,7 @@ Type Float Pressure
 
 :Hint:
     * 1 hPa = 100 Pa
+    * 1 kPa = 1000 Pa
     * 1 psi = 6894.757 Pa
 
 Type Float Percent
@@ -322,20 +350,20 @@ Type Float Percent
 :English:
     #. Calculate International Standard Atmosphere pressure at sea level
     #. Calculate partial pressure of Oxygen at sea level
-    #. Print all results in hPa rounding to two decimal places
+    #. Print all results in kPa rounding to two decimal places
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Oblicz ciśnienie standardowej atmosfery na poziomie morza
     #. Oblicz ciśnienie parcjalne tlenu na poziomie morza
-    #. Wypisz wszystkie wyniki w hPa zaokrąglając do dwóch miejsc po przecinku
+    #. Wypisz wszystkie wyniki w kPa zaokrąglając do dwóch miejsc po przecinku
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Output:
     .. code-block:: text
 
-        International Standard Atmosphere: 1013.25 hPa
-        O2 partial pressure at sea level: 212.24 hPa
+        International Standard Atmosphere: 101.33 hPa
+        O2 partial pressure at sea level: 21.22 hPa
 
 :The whys and wherefores:
     * Defining constants and variables
@@ -346,6 +374,7 @@ Type Float Percent
 
 :Hint:
     * 1 hPa = 100 Pa
+    * 1 kPa = 1000 Pa
     * 1 ata = 1013.25 hPa (ISA - International Standard Atmosphere)
     * Atmosphere gas composition:
 
@@ -387,6 +416,7 @@ Type Float Gradient
 :Hint:
     * pressure gradient (decrease) = 11.3 Pa / 1 m
     * 1 hPa = 100 Pa
+    * 1 kPa = 1000 Pa
     * 1 ata = 1013.25 hPa (ISA - International Standard Atmosphere)
     * Atmosphere gas composition:
 

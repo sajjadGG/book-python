@@ -15,8 +15,8 @@ Type Definition
 .. code-block:: python
     :caption: ``int`` Type Definition
 
-    data = 30                   # 30
-    data = -30                  # -30
+    data = 1337                 # 133
+    data = -1337                # -30
 
 .. code-block:: python
 
@@ -40,6 +40,7 @@ Type Casting
     int(-13.37)                 # -13
 
     int('1')                    # 1
+    int('+1')                   # 1
     int('-1')                   # -1
     int('1_000_000')            # 1000000
     int('13.37')                # ValueError: invalid literal for int() with base 10: '1.23'
@@ -96,26 +97,26 @@ Type Int Example
     * 1 KB = 1024 B
     * 1 MB = 1024 KB
 
-Type Int Calculation
---------------------
+Type Int Time
+-------------
 * Complexity level: easy
 * Lines of code to write: 12 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/type_int_calculation.py`
+* Solution: :download:`solution/type_int_time.py`
 
 :English:
     #. Calculate how many seconds is five minutes
     #. Calculate how many seconds is one hour
     #. Calculate how many seconds is work day (8 hours)
     #. Calculate how many hours is work month (22 work days)
-    #. Calculate how many minutes is work week (40 hours)
+    #. Calculate how many minutes is work week (5 work days)
 
 :Polish:
     #. Oblicz ile sekund to pięć minut
     #. Oblicz ile sekund to jedna godzina
     #. Oblicz ile sekund to dzień pracy (8 godzin)
     #. Oblicz ile godzin to miesiąc pracy (22 dni pracy)
-    #. Oblicz ile minut to tydzień pracy (40 godzin)
+    #. Oblicz ile minut to tydzień pracy (5 dni pracy)
 
 :The whys and wherefores:
     * Defining constants and variables
@@ -126,12 +127,12 @@ Type Int Calculation
     * 1 h = 60 min
     * 1 min = 60 s
 
-Type Int Ratio
---------------
-* Complexity level: medium
+Type Int Bandwidth
+------------------
+* Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/type_int_ratio.py`
+* Solution: :download:`solution/type_int_bandwidth.py`
 
 :English:
     #. Having internet connection with speed up to 100 Mb/s
@@ -166,11 +167,11 @@ Type Int Temperature
     #. For calculation use round number -273 (0K = -273°C)
     #. How many Kelvins and Celsius degrees has average temperatures at surface :cite:`MSL_REMS`:
 
-        * Lunar day: 180 °C
+        * Lunar day: 453 K
         * Lunar night: 93 K
-        * Mars average: −63 °C
         * Mars highest: 20 °C
-        * Mars lowest: 120 K
+        * Mars lowest: -153 °C
+        * Mars average: −63 °C
 
 :Polish:
     #. Jeden Kelwin to jeden stopień Celsiusza (1K = 1°C)
@@ -178,11 +179,11 @@ Type Int Temperature
     #. W zadaniu przyjmij równe -273°C (0K = -273°C)
     #. Ile Kelwinów, a ile stopni Celsiusza wynoszą średnie temperatury powierzchni :cite:`MSL_REMS`:
 
-        * Księżyca w dzień: 180 °C
+        * Księżyca w dzień: 453 K
         * Księżyca w nocy: 93 K
-        * Mars średnia: −63 °C
         * Mars najwyższa: 20 °C
-        * Mars najniższa: 120 K
+        * Mars najniższa: -153 °C
+        * Mars średnia: −63 °C
 
 :The whys and wherefores:
     * Defining constants and variables

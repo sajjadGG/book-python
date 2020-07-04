@@ -3,16 +3,14 @@ Operators
 *********
 
 
-Logic Operators
-===============
+Comparison Operators
+====================
 * ``x < y`` - Less than
 * ``x <= y`` - Less or equal
 * ``x > y`` - Greater than
 * ``x >= y`` - Greater or equal
 * ``x == y`` - Equals
 * ``x != y`` - Not Equals
-* ``x is None`` - Object has value
-* ``x is not None`` - Object don't have value
 
 .. code-block:: python
 
@@ -22,8 +20,14 @@ Logic Operators
     10 >= 2             # True
     10 == 2             # False
     10 != 2             # True
-    10 is None          # False
-    10 is not None      # True
+
+.. code-block:: python
+
+    x = 10
+    y = 2
+
+    x >= 2
+    # True
 
 
 Arithmetic Operators
@@ -38,7 +42,16 @@ Arithmetic Operators
     10 + 2              # 12
     10 - 2              # 8
     10 * 2              # 20
-    10 / 2              # 5
+    10 / 2              # 5.0
+
+.. code-block:: python
+
+    x = 10
+    y = 2
+
+    x + y
+    # 12
+
 
 Power and Root
 ==============
@@ -54,8 +67,13 @@ Power and Root
 .. code-block:: python
     :caption: ``n-th`` root of the number
 
+    4 ** (1/2)          # 2.0
+    2 ** (1/2)          # 1.4142135623730951
+    27 ** (1/3)         # 3.0
+
     4 ** 0.5            # 2.0
     2 ** 0.5            # 1.4142135623730951
+    27 ** 0.333         # 2.9967059728946346
 
 
 Divisions
@@ -66,19 +84,19 @@ Divisions
 
 .. code-block:: python
 
-    10 / 2              # 5
-    10 / 4              # 2.5
+    12 / 6              # 2
+    12 / 5              # 2.4
 
-    10 // 2             # 5
-    10 // 4             # 2
+    12 // 6             # 2
+    12 // 5             # 2
 
-    10 % 2              # 0
-    10 % 4              # 2
+    12 % 6              # 0
+    12 % 5              # 2
 
 .. code-block:: python
     :caption: Even vs odd
 
-    10 % 2 == 0         # True
+    12 % 2 == 0         # True
     11 % 2 == 0         # False
 
 
@@ -88,6 +106,14 @@ Increment Operators
 * ``-=`` - Incremental subtraction
 * ``*=`` - Incremental multiplication
 * ``/=`` - Incremental division
+
+.. code-block:: python
+
+    x = 10
+    x = x + 1
+
+    print(x)
+    # 11
 
 .. code-block:: python
 
@@ -105,18 +131,20 @@ Increment Operators
     print(x)
     # 9
 
-.. code-block:: python
+.. doctest::
 
-    x = 10
-    x *= 2
+    >>> x++
+      File "<stdin>", line 1
+        x++
+          ^
+    SyntaxError: invalid syntax
 
-    print(x)
-    # 20
+.. doctest::
 
-.. code-block:: python
-
-    x = 10
-    x /= 2
-
-    print(x)
-    # 5
+    >>> ++x
+    Traceback (most recent call last):
+      File "<stdin>", line 1, in <module>
+    NameError: name 'x' is not defined
+    >>> x = 1
+    >>> ++x
+    1

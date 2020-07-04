@@ -160,7 +160,7 @@ About Version
 -------------
 * Complexity level: easy
 * Lines of code to write: 0 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/about_version.py`
 
 :English:
@@ -203,7 +203,7 @@ About Environment
 -----------------
 * Complexity level: easy
 * Lines of code to write: 0 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/about_environment.py`
 
 #. Stwórz plik o nazwie ``about_env.py``
