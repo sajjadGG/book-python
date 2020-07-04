@@ -152,7 +152,7 @@ Type Float Example
     * Naming convention
     * Mathematical operations
 
-Type Float VAT
+Type Float Tax
 --------------
 * Complexity level: easy
 * Lines of code to write: 6 lines
