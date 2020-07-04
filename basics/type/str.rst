@@ -44,6 +44,14 @@ Single and Double Quotes
 .. code-block:: python
     :caption: Python console prefers single quote (``'``)
 
+    data = 'My name is José Jiménez'
+
+    print(data)
+    # 'My name is José Jiménez'
+
+.. code-block:: python
+    :caption: Python console prefers single quote (``'``)
+
     data = "My name is José Jiménez"
 
     print(data)
@@ -122,11 +130,12 @@ Format String
 
 .. code-block:: python
 
-    first_name = 'Jan'
-    last_name = 'Twardowski'
+    firstname = 'José'
+    lastname = 'Jiménez'
+    result = f'My name... {firstname} {lastname}'
 
-    result = f'My name... {first_name} {last_name}'
-    # Jan Twardowski
+    print(result)
+    # My name... José Jiménez
 
 
 Unicode Literal
@@ -177,6 +186,9 @@ Raw String
     print(r'C:\Users\Admin\file.txt')
     # C:\Users\Admin\file.txt
 
+    print('C:\\Users\\Admin\\file.txt')
+    # C:\Users\Admin\file.txt
+
     print('C:\Users\Admin\file.txt')
     # SyntaxError: (unicode error) 'unicodeescape'
     #   codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
@@ -197,8 +209,7 @@ Reading Input
 .. code-block:: python
     :caption: ``input()`` function argument is prompt text, which "invites" user to enter specific information. Note colon space (": ") at the end. Space is needed to separate user input from prompt.
 
-    name = input('What is your name: ')
-    # What is your name: Jan Twardowski<ENTER>
+    name = input('What is your name: ')  # Jan Twardowski<ENTER>
 
     print(name)     # 'Jan Twardowski'
     type(name)      # <class 'str'>
@@ -206,8 +217,7 @@ Reading Input
 .. code-block:: python
     :caption: ``input()`` always returns a ``str``. To get numeric value type casting to ``int`` is needed.
 
-    age = input('What is your age: ')
-    # What is your age: 42<ENTER>
+    age = input('What is your age: ')  # 42<ENTER>
 
     print(age)      # '42'
     type(age)       # <class 'str'>
@@ -219,8 +229,7 @@ Reading Input
 .. code-block:: python
     :caption: Conversion to ``float`` handles decimals, which ``int`` does not support
 
-    age = input('What is your age: ')
-    # What is your age: 42.5<ENTER>
+    age = input('What is your age: ')  # 42.5<ENTER>
 
     age = int(age)      # ValueError: invalid literal for int() with base 10: '42.5'
     age = float(age)    # 42.5
@@ -231,11 +240,18 @@ Reading Input
 .. code-block:: python
     :caption: Conversion to ``float`` cannot handle comma (',') as a decimal separator
 
-    age = input('What is your age: ')
-    # What is your age: 42,5<ENTER>
+    age = input('What is your age: ')  # 42,5<ENTER>
 
     age = int(age)      # ValueError: invalid literal for int() with base 10: '45,5'
     age = float(age)    # ValueError: could not convert string to float: '45,5'
+
+
+Length
+======
+.. code-block:: python
+
+    len('hello')
+    # 5
 
 
 Concatenation
@@ -248,6 +264,9 @@ Concatenation
     'a' + 'b'
     # 'ab'
 
+    '1' + '2'
+    # '12'
+
 .. code-block:: python
 
     text1 = 'a'
@@ -258,8 +277,16 @@ Concatenation
 
 .. code-block:: python
 
-    '-' * 10                # ----------
-    'Beetlejuice' * 3       # BeetlejuiceBeetlejuiceBeetlejuice
+    a = '1'
+    b = '2'
+
+    a + b
+    '12'
+
+.. code-block:: python
+
+    '-' * 10                # '----------'
+    'Beetlejuice' * 3       # 'BeetlejuiceBeetlejuiceBeetlejuice'
     'Mua' + 'Ha' * 2        # 'MuaHaHa'
 
 
@@ -267,40 +294,40 @@ String Immutability
 ===================
 .. code-block:: python
 
-    first_name = 'Jan'
-    last_name = 'Twardowski'
+    firstname = 'Jan'
+    lastname = 'Twardowski'
 
-    first_name + last_name
+    firstname + lastname
     # JanTwardowski
 
-    first_name + ' ' + last_name
+    firstname + ' ' + lastname
     # Jan Twardowski
 
 .. code-block:: python
     :caption: How many string are there in a memory?
 
-    first_name = 'Jan'
-    last_name = 'Twardowski'
+    firstname = 'Jan'
+    lastname = 'Twardowski'
 
-    first_name + last_name
-
-.. code-block:: python
-    :caption: How many string are there in a memory?
-
-    first_name = 'Jan'
-    last_name = 'Twardowski'
-    age = 42
-
-    'Hello ' + first_name + ' ' + last_name + ' ' + str(age) + '!'
+    firstname + lastname
 
 .. code-block:: python
     :caption: How many string are there in a memory?
 
-    first_name = 'Jan'
-    last_name = 'Twardowski'
+    firstname = 'Jan'
+    lastname = 'Twardowski'
     age = 42
 
-    f'Hello {first_name} {last_name} {age}!'
+    'Hello ' + firstname + ' ' + lastname + ' ' + str(age) + '!'
+
+.. code-block:: python
+    :caption: How many string are there in a memory?
+
+    firstname = 'Jan'
+    lastname = 'Twardowski'
+    age = 42
+
+    f'Hello {firstname} {lastname} {age}!'
 
 
 Assignments

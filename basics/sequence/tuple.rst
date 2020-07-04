@@ -40,6 +40,7 @@ Type Definition
     data = 'a', 'b', 'c'
     data = 'a', 1, 2.2, True, None
 
+
 Type Casting
 ============
 .. highlights::
@@ -89,8 +90,25 @@ Tuple or Int, Float, Str
 =========================
 .. code-block:: python
 
+    data = (1,)
+    type(data)
+    # <class 'tuple'>
+
+    data = (1)
+    type(data)
+    # <class 'int'>
+
+    data = (1.)
+    type(data)
+    # <class 'float'>
+
+.. code-block:: python
+
     type(1.2)        # <class 'float'>
     type(1,2)        # <class 'tuple'>
+
+.. code-block:: python
+
     type(1.2,)       # <class 'tuple'>
     type(1,2.3)      # <class 'tuple'>
 

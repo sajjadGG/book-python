@@ -224,6 +224,28 @@ Good practices
 Assignments
 ===========
 
+About Print
+------------
+* Complexity level: easy
+* Lines of code to write: 1 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/about_print.py`
+
+:English:
+    #. Print "Hello World" on the screen
+    #. "Hello" must be in a first line
+    #. "Wold" must be in a second line
+    #. Use only one ``print()`` function call
+
+:Polish:
+    #. Wypisz "Hello World" na ekranie
+    #. "Hello" ma być w pierwszej linii
+    #. "World" ma być w drugiej linii
+    #. Użyj tylko jednego wywołania funkcji ``print()``
+
+:The whys and wherefores:
+    * Wyświetlanie na ekranie
+
 About Syntax
 ------------
 * Complexity level: easy

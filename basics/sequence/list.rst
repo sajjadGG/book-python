@@ -91,11 +91,14 @@ Set Item
 .. code-block:: python
 
     data = ['a', 'b', 'c', 'd']
-
     data[0] = 'x'
+
     print(data)
     # ['x', 'b', 'c', 'd']
 
+.. code-block:: python
+
+    data = ['a', 'b', 'c', 'd']
     data[4] = 'x'
     # IndexError: list assignment index out of range
 
@@ -105,7 +108,6 @@ Del Item
 .. code-block:: python
 
     data = ['a', 'b', 'c', 'd']
-
     del data[3]
 
     print(data)
@@ -114,7 +116,6 @@ Del Item
 .. code-block:: python
 
     data = ['a', 'b', 'c', 'd']
-
     value = data.pop()
 
     print(data)
@@ -135,32 +136,36 @@ Append
     :caption: Adding two lists
 
     data = [1, 2]
+    data = data + [3, 4]
 
-    data + [3, 4]
+    print(data)
     # [1, 2, 3, 4]
 
 .. code-block:: python
     :caption: Extending lists
 
     data = [1, 2]
-
     data.extend([3, 4])
+
+    print(data)
     # [1, 2, 3, 4]
 
 .. code-block:: python
     :caption: Appending single item
 
     data = [1, 2]
-
     data.append(3)
+
+    print(data)
     # [1, 2, 3]
 
 .. code-block:: python
     :caption: Appending multiple items
 
     data = [1, 2]
-
     data.append([3, 4])
+
+    print(data)
     # [1, 2, [3, 4]]
 
 
@@ -172,15 +177,17 @@ Insert
 .. code-block:: python
 
     data = [1, 2]
-
     data.insert(0, 'a')
+
+    print(data)
     # ['a', 1, 2]
 
 .. code-block:: python
 
     data = [1, 2]
-
     data.insert(1, 'a')
+
+    print(data)
     # [1, 'a', 2]
 
 
@@ -221,8 +228,8 @@ Method Chaining
 .. code-block:: python
 
     data = [3, 1, 2]
-    data.append(4)
     data.sort()
+    data.append(4)
 
     print(data)
     # [1, 2, 3, 4]
@@ -231,7 +238,7 @@ Method Chaining
 
     data = [3, 1, 2]
 
-    data.append(4).sort()
+    data.sort().append(4)
     # AttributeError: 'NoneType' object has no attribute 'sort'
 
 

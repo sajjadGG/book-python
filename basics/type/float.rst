@@ -348,22 +348,22 @@ Type Float Percent
 * Solution: :download:`solution/type_float_percent.py`
 
 :English:
-    #. Calculate International Standard Atmosphere pressure at sea level
+    #. International Standard Atmosphere (ISA) at sea level is 1013.25 hPa
     #. Calculate partial pressure of Oxygen at sea level
-    #. Print all results in kPa rounding to two decimal places
+    #. Print ISA and partial O2 pressure in kPa rounding to two decimal places
     #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Oblicz ciśnienie standardowej atmosfery na poziomie morza
+    #. International Standard Atmosphere (ISA) na poziomie morza wynosi 1013.25 hPa
     #. Oblicz ciśnienie parcjalne tlenu na poziomie morza
-    #. Wypisz wszystkie wyniki w kPa zaokrąglając do dwóch miejsc po przecinku
+    #. Wypisz ISA oraz ciśnienie parcjalne O2 wyniki w kPa zaokrąglając do dwóch miejsc po przecinku
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Output:
     .. code-block:: text
 
-        International Standard Atmosphere: 101.33 hPa
-        O2 partial pressure at sea level: 21.22 hPa
+        International Standard Atmosphere: 101.33 kPa
+        O2 partial pressure at sea level: 21.22 kPa
 
 :The whys and wherefores:
     * Defining constants and variables
