@@ -292,7 +292,7 @@ Loop For Segmentation
 ---------------------
 * Complexity level: easy
 * Lines of code to write: 12 lines
-* Estimated time of completion: 7 min
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/loop_for_segmentation.py`
 
 :English:
@@ -353,7 +353,7 @@ Loop For Newline
 ----------------
 * Complexity level: easy
 * Lines of code to write: 4 lines
-* Estimated time of completion: 3 min
+* Estimated time of completion: 5 min
 * Solution: :download:`solution/loop_for_newline.py`
 
 :English:
@@ -427,7 +427,7 @@ Loop For Text
 -------------
 * Complexity level: medium or hard
 * Lines of code to write: 30 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/loop_for_text.py`
 
 :English:

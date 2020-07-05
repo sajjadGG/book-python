@@ -308,7 +308,7 @@ OOP Init Model
 --------------
 * Complexity level: easy
 * Lines of code to write: 15 lines
-* Estimated time of completion: 7 min
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/oop_init_model.py`
 
 :English:

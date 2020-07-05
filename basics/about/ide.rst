@@ -102,7 +102,7 @@ About IDE Usage
 ---------------
 * Complexity level: easy
 * Lines of code to write: 0 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 8 min
 
 :Polish:
     #. Jak zrobić w Twoim IDE:

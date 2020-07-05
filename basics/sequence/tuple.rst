@@ -184,7 +184,7 @@ Sequence Tuple Many
 -------------------
 * Complexity level: medium
 * Lines of code to write: 13 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/sequence_tuple_many.py`
 
 :English:

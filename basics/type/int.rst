@@ -158,7 +158,7 @@ Type Int Temperature
 --------------------
 * Complexity level: medium
 * Lines of code to write: 18 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/type_int_temperature.py`
 
 :English:

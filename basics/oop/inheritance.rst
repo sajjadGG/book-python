@@ -399,7 +399,7 @@ OOP Inheritance Super
 ---------------------
 * Complexity level: easy
 * Lines of code to write: 8 lines
-* Estimated time of completion: 7 min
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/oop_inheritance_super.py`
 
 :English:

@@ -15,7 +15,7 @@ Syntax
 .. code-block:: python
 
     def mean():
-        return (1+2) / 3
+        return (1+2) / 2
 
 .. code-block:: python
 
@@ -128,7 +128,7 @@ Return Nested Sequence
             {'Jan Twardowski', 'Melissa Lewis'},
             {'astro': 'Иванович', 'agency': {'name': 'Roscosmos'}},
             {'astro': 'Jiménez', 'missions': ('Mercury', 'Gemini', 'Apollo')},
-            {'astro': 'Vogel', 'missions': (list(), tuple(), set(),  frozenset())},
+            {'astro': 'Vogel', 'missions': (list(), tuple(), set(), frozenset())},
         ]
 
 

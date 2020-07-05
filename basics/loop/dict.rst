@@ -208,7 +208,7 @@ Loop Dict from Dict to Dict
 ---------------------------
 * Complexity level: easy
 * Lines of code to write: 4 lines
-* Estimated time of completion: 7 min
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/loop_dict_to_dict.py`
 
 :English:

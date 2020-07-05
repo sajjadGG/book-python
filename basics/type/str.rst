@@ -386,7 +386,7 @@ Type String Quotes
 ------------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
-* Estimated time of completion: 7 min
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/type_str_quotes.py`
 
 :English:

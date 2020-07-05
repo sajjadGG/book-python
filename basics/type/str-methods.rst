@@ -415,7 +415,7 @@ Type String Clean
 -----------------
 * Complexity level: easy
 * Lines of code to write: 11 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/type_str_clean.py`
 
 :English:

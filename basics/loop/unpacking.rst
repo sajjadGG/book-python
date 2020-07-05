@@ -197,7 +197,7 @@ Loop Unpacking Endswith
 -----------------------
 * Complexity level: medium
 * Lines of code to write: 3 lines
-* Estimated time of completion: 7 min
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/loop_unpacking_endswith.py`
 
 :English:

@@ -388,7 +388,7 @@ Type Float Gradient
 -------------------
 * Complexity level: hard
 * Lines of code to write: 9 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/type_float_gradient.py`
 
 :English:

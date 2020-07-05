@@ -396,7 +396,7 @@ Sequence Set Many
 -----------------
 * Complexity level: easy
 * Lines of code to write: 9 lines
-* Estimated time of completion: 7 min
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/sequence_set_many.py`
 
 :English:
