@@ -666,7 +666,7 @@ Exception Raise
 ---------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 3 min
+* Estimated time of completion: 5 min
 * Solution: :download:`solution/exception_raise.py`
 
 :English:
@@ -683,7 +683,7 @@ Exception Catch
 ---------------
 * Complexity level: easy
 * Lines of code to write: 6 lines
-* Estimated time of completion: 3 min
+* Estimated time of completion: 5 min
 * Solution: :download:`solution/exception_catch.py`
 
 :English:
@@ -702,7 +702,7 @@ Exception Define
 ----------------
 * Complexity level: easy
 * Lines of code to write: 6 lines
-* Estimated time of completion: 3 min
+* Estimated time of completion: 5 min
 * Solution: :download:`solution/exception_define.py`
 
 :English:
