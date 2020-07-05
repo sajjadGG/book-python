@@ -131,6 +131,12 @@ Boolean Algebra
     True and False or False     # False
     True and (False or False)   # False
 
+.. code-block:: python
+
+    (firstname == 'Mark' and lastname == 'Watney') \
+        or (firstname == 'Jan' and lastname == 'Twardowski') \
+        or (firstname == 'Melissa' and lastname == 'Lewis')
+
 
 Built-in Functions
 ==================

@@ -41,6 +41,8 @@ If
     if True:
         print('First line of the true statement')
 
+    # First line of the true statement
+
 .. code-block:: python
     :caption: Multiline blocks
 
@@ -48,6 +50,10 @@ If
         print('First line of the true statement')
         print('Second line of the true statement')
         print('Third line of the true statement')
+
+    # First line of the true statement
+    # Second line of the true statement
+    # Third line of the true statement
 
 .. code-block:: python
     :caption: Multiline blocks
@@ -59,6 +65,9 @@ If
         if True:
             print('First line of inner true statement')
 
+    # First line of the true statement
+    # Second line of the true statement
+    # First line of inner true statement
 
 .. code-block:: python
     :caption: Checking for simple value
@@ -68,6 +77,8 @@ If
     if age == 7:
         print('Go to school')
 
+    # Go to school
+
 .. code-block:: python
     :caption: Checking for simple value.
 
@@ -76,13 +87,17 @@ If
     if country == 'USA':
         job = 'astronaut'
 
+    print(job)
+    # astronaut
+
 .. code-block:: python
     :caption: Checking for simple value
 
-    number = 6
+    number = 4
 
     if number % 2 == 0:
         print('Even')
+
     # Even
 
 .. code-block:: python
@@ -92,6 +107,7 @@ If
 
     if 0 <= age < 18:
         print('Age is between [0, 18)')
+
     # Age is between [0, 18)
 
 .. code-block:: python
@@ -102,6 +118,7 @@ If
 
     if 0 <= a <= 50 < b:
         print('Yes')
+
     # Yes
 
 .. code-block:: python
@@ -112,6 +129,7 @@ If
 
     if name:
         print(f'My name is... {name}')
+
     # My name is Jan Twardowski
 
 .. code-block:: python
@@ -146,6 +164,8 @@ Else
     else:
         print('Else statement')
 
+    # True statement
+
 .. code-block:: python
     :caption: Multiline blocks
 
@@ -155,6 +175,9 @@ Else
     else:
         print('Else statement, first line')
         print('Else statement, second line')
+
+    # True statement, first line
+    # True statement, second line
 
 .. code-block:: python
     :caption: Nested multiline blocks
@@ -174,6 +197,22 @@ Else
         print('Outer block, else statement, first line')
         print('Outer block, else statement, second line')
 
+    # Outer block, true statement, first line
+    # Outer block, true statement, second line
+    # Inner block, true statement, first line
+    # Inner block, true statement, second line
+
+.. code-block:: python
+
+    number = 3
+
+    if number % 2 == 0:
+        print('Even')
+    else:
+        print('Odd')
+
+    # Odd
+
 .. code-block:: python
     :caption: Checking if variable is certain value
 
@@ -183,6 +222,9 @@ Else
         job = 'cosmonaut'
     else:
         job = 'astronaut'
+
+    print(job)
+    # astronaut
 
 .. code-block:: python
     :caption: Checking if variable is certain value
@@ -194,6 +236,7 @@ Else
         print(f'My name is... {name}')
     else:
         print('Did you forget to type your name?')
+
     # Did you forget to type your name?
 
 .. code-block:: python
@@ -224,19 +267,24 @@ Inline If
 .. code-block:: python
     :caption: Normal ``if``
 
-    country = 'Russia'
+    country = 'USA'
 
     if country == 'Russia':
         job = 'cosmonaut'
     else:
         job = 'astronaut'
 
+    print(job)
+    # astronaut
+
 .. code-block:: python
     :caption: Inline ``if``
 
-    country = 'Russia'
-
+    country = 'USA'
     job = 'cosmonaut' if country == 'Russia' else 'astronaut'
+
+    print(job)
+    # astronaut
 
 
 Elif
@@ -309,8 +357,11 @@ Switch
         return data.get(language, data['default'])
 
 
-    switch('Russian')       # 'Здравствуйте'
-    switch('French')        # "I don't speak this language"
+    switch('Russian')
+    # 'Здравствуйте'
+
+    switch('French')
+    # "I don't speak this language"
 
 
 Assignments

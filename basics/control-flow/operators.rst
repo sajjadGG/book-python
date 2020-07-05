@@ -37,6 +37,12 @@ Equals
     {1, 2} == {1, 2}                # True
     {1, 2} == {2, 1}                # True
 
+.. code-block:: python
+
+    (1,2) == [1,2]                  # False
+    (1,2) == {1,2}                  # False
+    1,2 == {1,2}                    # (1, False)
+
 
 Not-Equals
 ==========
@@ -100,6 +106,24 @@ Greater Than
 
     [2, 7] > [3, 6]         # False
     [3, 6] > [2, 7]         # True
+
+
+Examples
+========
+.. code-block:: python
+
+    import sys
+
+    print(sys.version_info)
+    # sys.version_info(major=3, minor=8, micro=3, releaselevel='final', serial=0)
+
+    sys.version_info > (3, 7)       # True
+    sys.version_info > (3, 8)       # True
+    sys.version_info > (3, 9)       # False
+
+    sys.version_info > (3, 8, 2)    # True
+    sys.version_info > (3, 8, 3)    # True
+    sys.version_info > (3, 8, 4)    # False
 
 
 Operator Precedence
