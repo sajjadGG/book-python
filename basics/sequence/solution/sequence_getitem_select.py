@@ -24,25 +24,24 @@ DATA = [
 ]
 
 header = DATA[0]
+result = []
 
-result = [
-    list(DATA[2]),
-    list(DATA[6]),
-    list(DATA[9]),
-    tuple(DATA[12]),
-    tuple(DATA[15]),
-    tuple(DATA[16]),
-    list(),
-    tuple(),
-    set(),
-    frozenset()
-]
+result.append(list(DATA[5]))
+result.append(tuple(DATA[10]))
+result.append(set(DATA[-10]))
+result.append(frozenset(DATA[-5]))
+
+result.append(list())
+result.append(tuple())
+result.append(set())
+result.append(frozenset())
 
 print(result)
-# [[5.1, 3.5, 1.4, 0.2, 'setosa'],
-#  [4.7, 3.2, 1.3, 0.2, 'setosa'],
-#  [4.9, 3.0, 1.4, 0.2, 'setosa'],
-#  (4.6, 3.4, 1.4, 0.3, 'setosa'),
-#  (5.0, 3.6, 1.4, 0.3, 'setosa'),
-#  (5.5, 2.3, 4.0, 1.3, 'versicolor'),
-#  [], (), set(), frozenset()]
+# [[6.4, 3.2, 4.5, 1.5, 'versicolor'],
+#  (4.9, 2.5, 4.5, 1.7, 'virginica'),
+#  {0.3, 1.4, 3.4, 4.6, 'setosa'},
+#  frozenset({2.2, 3.0, 5.8, 6.5, 'virginica'}),
+#  [],
+#  (),
+#  set(),
+#  frozenset()]

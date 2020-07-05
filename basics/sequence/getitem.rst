@@ -129,26 +129,28 @@ Sequence Getitem Select
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Separate header from data
+    #. Separate header from data (row with index 0)
     #. Write header (first line) to ``header: tuple`` variable
     #. Create ``result: list``
-    #. Add to ``result`` converted to ``list`` values from row at index 2, 6, 9 (each row is a separate list)
-    #. Add to ``result`` converted to ``tuple`` values from row at index 12, 15, 16 (each row is a separate tuple)
+    #. Select row at index 5, convert it to list and add to ``result``
+    #. Select row at index 10, convert it to tuple and add to ``result``
+    #. Select row at index -10, convert it to set and add to ``result``
+    #. Select row at index -5, convert it to frozenset and add to ``result``
     #. Append to ``result``: empty ``list``, empty ``tuple``, empty ``set`` and empty ``frozenset``
-    #. Use only indexes
-    #. Do not use ``for``, ``while`` or ``slice()``
+    #. Use only indexes and do not use ``for``, ``while`` or ``slice()``
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Odseparuj nagłówek od danych
+    #. Odseparuj nagłówek od danych (wiersz o indeksie 0)
     #. Zapisz nagłówek (pierwsza linia) do zmiennej ``header: tuple``
     #. Stwórz ``result: list``
-    #. Dodaj do ``result`` przekonwertowane do ``list`` wartości z wierszy o indeksach 2, 6, 9 (każdy wiersz to osobna lista)
-    #. Dodaj do ``result`` przekonwertowane do ``tuple`` wartości z wierszy o indeksach 12, 15, 16  (każdy wiersz to osobna krotka)
+    #. Wybierz wiersz o indeksie 5, przekonwertuj go do listy i dodaj do ``result``
+    #. Wybierz wiersz o indeksie 10, przekonwertuj go do tuple i dodaj do ``result``
+    #. Wybierz wiersz o indeksie -10, przekonwertuj go do set i dodaj do ``result``
+    #. Wybierz wiersz o indeksie -5, przekonwertuj go do frozenset i dodaj do ``result``
     #. Dodaj na koniec ``result``: pustą ``list``, pustą ``tuple``, pusty ``set``, pusty ``frozenset``
-    #. Użyj tylko indeksów
-    #. Nie używaj ``for``, ``while`` lub ``slice()``
+    #. Korzystaj tylko z indeksów i nie używaj ``for``, ``while`` lub ``slice()``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
@@ -186,16 +188,15 @@ Sequence Getitem Select
         # ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
 
         result: list
-        # [[5.1, 3.5, 1.4, 0.2, 'setosa'],
-        #  [4.7, 3.2, 1.3, 0.2, 'setosa'],
-        #  [4.9, 3.0, 1.4, 0.2, 'setosa'],
-        #  (4.6, 3.4, 1.4, 0.3, 'setosa'),
-        #  (5.0, 3.6, 1.4, 0.3, 'setosa'),
-        #  (5.5, 2.3, 4.0, 1.3, 'versicolor'),
+        # [[6.4, 3.2, 4.5, 1.5, 'versicolor'],
+        #  (4.9, 2.5, 4.5, 1.7, 'virginica'),
+        #  {0.3, 1.4, 3.4, 4.6, 'setosa'},
+        #  frozenset({2.2, 3.0, 5.8, 6.5, 'virginica'}),
         #  [],
         #  (),
         #  set(),
         #  frozenset()]
+
 
 :The whys and wherefores:
     * Using nested data structures

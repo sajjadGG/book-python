@@ -128,7 +128,7 @@ Convention
     others              # [3, 4]
 
 
-Omitting Values
+Skipping Values
 ===============
 .. highlights::
     * ``_`` is regular variable name, not a special Python syntax
@@ -136,21 +136,32 @@ Omitting Values
 
 .. code-block:: python
 
-    line = 'Jan,Twardowski'
+    _ = 'Jan Twardowski'
 
-    a, _ = line.split(',')
-
-.. code-block:: python
-
-    a, _, _ = 1, 2, 3
-
-    print(a)            # 1
+    print(_)
+    # Jan Twardowski
 
 .. code-block:: python
 
-    _, interesting, _ = 1, 2, 3
+    line = 'Jan,Twardowski,44'
 
-    print(interesting)  # 2
+    firstname, lastname, _ = line.split(',')
+
+    print(firstname)        # Jan
+    print(lastname)         # Twardowski
+
+.. code-block:: python
+
+    a, _, c = 1, 2, 3
+
+    print(a)                # 1
+    print(c)                # 3
+
+.. code-block:: python
+
+    _, b, _ = 1, 2, 3
+
+    print(b)                # 2
 
 .. code-block:: python
 
@@ -158,7 +169,7 @@ Omitting Values
 
     *_, label = line.split(',')
 
-    label               # setosa
+    label                   # setosa
 
 .. code-block:: python
 
@@ -166,8 +177,8 @@ Omitting Values
 
     username, _, _, _, full_name, *_ = line.split(':')
 
-    username            # twardowski
-    full_name           # Jan Twardowski
+    username                # twardowski
+    full_name               # Jan Twardowski
 
 .. code-block:: python
 
@@ -175,14 +186,14 @@ Omitting Values
 
     username, *_, home, _ = line.split(':')
 
-    username            # twardowski
-    home                # /home/twardowski
+    username                # twardowski
+    home                    # /home/twardowski
 
 .. code-block:: python
 
     _, (interesting, _) = [1, (2, 3)]
 
-    interesting         # 2
+    interesting             # 2
 
 
 Examples
@@ -191,8 +202,8 @@ Examples
 
     *features, label = (5.8, 2.7, 5.1, 1.9, 'virginica')
 
-    features        # [5.8, 2.7, 5.1, 1.9]
-    label           # 'virginica'
+    features                # [5.8, 2.7, 5.1, 1.9]
+    label                   # 'virginica'
 
 .. code-block:: python
 
@@ -201,8 +212,8 @@ Examples
     *features, label = line.split(',')
     avg = sum(features) / len(features)
 
-    label           # 'setosa'
-    avg             # 2.75
+    label                   # 'setosa'
+    avg                     # 2.75
 
 .. code-block:: python
 
@@ -210,8 +221,8 @@ Examples
 
     mission, *crew = line.split(',')
 
-    mission         # ares3
-    crew            # ['watney', 'lewis', 'vogel', 'johanssen']
+    mission                 # ares3
+    crew                    # ['watney', 'lewis', 'vogel', 'johanssen']
 
 .. code-block:: python
 
@@ -231,9 +242,9 @@ Examples
 
     first, second, *others = range(10)
 
-    first           # 0
-    second          # 1
-    others          # [2, 3, 4, 5, 6, 7, 8, 9]
+    first                   # 0
+    second                  # 1
+    others                  # [2, 3, 4, 5, 6, 7, 8, 9]
 
 
 Using in a Loop
@@ -242,8 +253,8 @@ Using in a Loop
 
     *features, label = (5.8, 2.7, 5.1, 1.9, 'virginica')
 
-    features            # [5.8, 2.7, 5.1, 1.9]
-    label               # 'virginica'
+    features                # [5.8, 2.7, 5.1, 1.9]
+    label                   # 'virginica'
 
 .. code-block:: python
 

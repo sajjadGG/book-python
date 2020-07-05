@@ -25,8 +25,10 @@ Ordered Sequences
     data[:3]            # 'abc'
     data[3:]            # 'de'
 
-    data[::2]           # 'ace'
+    data[::1]           # 'abcde'
     data[::-1]          # 'edcba'
+    data[::2]           # 'ace'
+    data[::-2]          # 'eca'
     data[1::2]          # 'bd'
     data[1:4:2]         # 'bd'
 
@@ -159,17 +161,10 @@ Index Arithmetic
     text = 'We choose to go to the Moon!'
     first = 23
     last = 28
-
-    text[first:last]       # 'Moon!'
-    text[first:last-1]     # 'Moon'
-
-.. code-block:: python
-
-    text = 'We choose to go to the Moon!'
-    first = 23
-    last = 28
     step = 2
 
+    text[first:last]            # 'Moon!'
+    text[first:last-1]          # 'Moon'
     text[first:last:step]       # 'Mo!'
     text[first:last-1:step]     # 'Mo'
 
@@ -178,11 +173,9 @@ Nested Sequences
 ================
 .. code-block:: python
 
-    data = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
-    ]
+    data = [[1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]]
 
     data[::2]
     # [
@@ -213,11 +206,9 @@ Slice All
 
     import numpy as np
 
-    data = np.array([
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
-    ])
+    data = np.array([[1, 2, 3],
+                     [4, 5, 6],
+                     [7, 8, 9]])
 
     data[:, 1]
     # array([2, 5, 8])
@@ -228,11 +219,9 @@ Slice All
 .. code-block:: python
     :caption: This unfortunately does not work on ``list``
 
-    data = [
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
-    ]
+    data = [[1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9]]
 
     data[:]
     # [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
@@ -251,8 +240,7 @@ Slice All
     df = pd.DataFrame({
         'A': [1, 2, 3],
         'B': [4, 5, 6],
-        'C': [7, 8, 9],
-    })
+        'C': [7, 8, 9]})
 
     df.loc[:, ('A','B')]
     #    A  B
@@ -267,14 +255,58 @@ Slice All
     # Name: 1, dtype: int64
 
 
+Example
+=======
+.. code-block:: python
+
+    from pprint import pprint
+
+    DATA = [
+        ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+        (5.8, 2.7, 5.1, 1.9, 'virginica'),
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+        (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+        (4.7, 3.2, 1.3, 0.2, 'setosa'),
+    ]
+
+    pprint(DATA[1:])
+    # [(5.8, 2.7, 5.1, 1.9, 'virginica'),
+    #  (5.1, 3.5, 1.4, 0.2, 'setosa'),
+    #  (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+    #  (6.3, 2.9, 5.6, 1.8, 'virginica'),
+    #  (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+    #  (4.7, 3.2, 1.3, 0.2, 'setosa')]
+
+    pprint(DATA[1::2])
+    # [(5.8, 2.7, 5.1, 1.9, 'virginica'),
+    #  (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+    #  (6.4, 3.2, 4.5, 1.5, 'versicolor')]
+
+    pprint(DATA[1::-2])
+    # [(5.8, 2.7, 5.1, 1.9, 'virginica')]
+
+    pprint(DATA[:1:-2])
+    # [(4.7, 3.2, 1.3, 0.2, 'setosa'),
+    #  (6.3, 2.9, 5.6, 1.8, 'virginica'),
+    #  (5.1, 3.5, 1.4, 0.2, 'setosa')]
+
+    pprint(DATA[:-5:-2])
+    # [(4.7, 3.2, 1.3, 0.2, 'setosa'), (6.3, 2.9, 5.6, 1.8, 'virginica')]
+
+    pprint(DATA[1:-5:-2])
+    # []
+
+
 Assignments
 ===========
 
 Sequence Slice Example
 ----------------------
 * Complexity level: easy
-* Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
+* Lines of code to write: 0 lines
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/sequence_slice_example.py`
 
 :English:
@@ -303,7 +335,7 @@ Sequence Slice Sequence
 -----------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/sequence_slice_sequence.py`
 
 :English:
@@ -375,11 +407,11 @@ Sequence Slice Text
 
         print(a == 'Jan Twardowski')       # True
         print(b == 'Jan Twardowski')       # True
-        print(c == 'Jan Twardowski')       # True
-        print(d == 'Mark Watney')          # True
-        print(e == 'Melissa Lewis')        # True
+        print(c == 'Mark Watney')          # True
+        print(d == 'Melissa Lewis')        # True
+        print(e == 'Ryan Stone')           # True
         print(f == 'Ryan Stone')           # True
-        print(g == 'Ryan Stone')           # True
+        print(g == 'Jan Twardowski')       # True
 
 :The whys and wherefores:
     * Variable definition
@@ -391,7 +423,7 @@ Sequence Slice Split
 --------------------
 * Complexity level: easy
 * Lines of code to write: 6 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 10 min
 * Solution: :download:`solution/sequence_slice_split.py`
 
 :English:

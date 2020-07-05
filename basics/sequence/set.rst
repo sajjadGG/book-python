@@ -86,6 +86,32 @@ Type Casting
     # {1, 2, 3}
 
 
+Deduplicate
+===========
+.. highlights::
+    * Works with ``tuple``, ``list``, ``str``
+
+.. code-block:: python
+
+    data = [1,2,3,1,1,2,4]
+
+    set(data)
+    # {1, 2, 3, 4}
+
+.. code-block:: python
+    :caption: Converting ``set`` deduplicate items
+
+    data = [
+        'Twardowski',
+        'Twardowski',
+        'Watney',
+        'Twardowski'
+    ]
+
+    set(data)
+    # {'Twardowski', 'Watney'}
+
+
 Add
 ===
 .. code-block:: python
@@ -159,32 +185,6 @@ Pop
 
     print(value)
     # 3
-
-
-Deduplicate
-===========
-.. highlights::
-    * Works with ``tuple``, ``list``, ``str``
-
-.. code-block:: python
-
-    data = [1,2,3,1,1,2,4]
-
-    set(data)
-    # {1, 2, 3, 4}
-
-.. code-block:: python
-    :caption: Converting ``set`` deduplicate items
-
-    data = [
-        'Twardowski',
-        'Twardowski',
-        'Watney',
-        'Twardowski'
-    ]
-
-    set(data)
-    # {'Twardowski', 'Watney'}
 
 
 Membership
@@ -395,7 +395,7 @@ Sequence Set Create
 Sequence Set Many
 -----------------
 * Complexity level: easy
-* Lines of code to write: 13 lines
+* Lines of code to write: 9 lines
 * Estimated time of completion: 7 min
 * Solution: :download:`solution/sequence_set_many.py`
 

@@ -94,6 +94,10 @@ List of Lists
         [7, 8, 9],
     ]
 
+    e = [[1, 2, 3],
+         [4, 5, 6],
+         [7, 8, 9]]
+
 .. code-block:: python
     :caption: Get elements from ``list`` of ``list``
 
