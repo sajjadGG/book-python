@@ -583,7 +583,7 @@ Defining Own Exceptions
 
 .. code-block:: python
     :caption: Django Framework Use-case of Custom Exceptions
-    :emphasize-lines: 9
+    :emphasize-lines: 10
 
     from django.contrib.auth.models import User
 
@@ -599,7 +599,7 @@ Defining Own Exceptions
 
 .. code-block:: python
     :caption: Django Framework Use-case of Custom Exceptions
-    :emphasize-lines: 9
+    :emphasize-lines: 13
 
     class Dragon:
         def take_damage(self, damage):
@@ -609,12 +609,12 @@ Defining Own Exceptions
             pass
 
 
+    wawelski = Dragon()
+
     try:
-        wawelski = Dragon()
         wawelski.take_damage(10)
     except Dragon.IsDead:
         print('Dragon is dead')
-
 
 
 Exit Status Code
@@ -625,6 +625,7 @@ Exit Status Code
     * This will not work in Jupyter
 
 .. code-block:: python
+    :emphasize-lines: 5
 
     try:
         float('hello')
