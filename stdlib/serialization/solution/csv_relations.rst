@@ -20,7 +20,7 @@
         "4", "Mark", "Watney", "", ""
         "5", "Melissa", "Lewis", "", ""
 
-#. dodawanie kolumn (miasto_1, panstwo_1, miasto_2, panstwo_2) i automatyczne generowanie fieldnames
+#. dodawanie kolumn (Address1_Location", "Address1_City", "Address2_Location) i automatyczne generowanie fieldnames
 
     .. csv-table::
         :header: "id", "First Name", "Last Name", "Address1_Location", "Address1_City", "Address2_Location", "Address2_City", ...

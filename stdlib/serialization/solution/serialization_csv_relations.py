@@ -4,9 +4,9 @@ FILE = r'../../_tmp/csv_relations.csv'
 
 
 class Astronaut:
-    def __init__(self, first_name, last_name, experience=()):
-        self.name = first_name
-        self.last_name = last_name
+    def __init__(self, firstname, lastname, experience=()):
+        self.name = firstname
+        self.lastname = lastname
         self.experience = list(experience)
 
 class Mission:

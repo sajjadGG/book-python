@@ -27,24 +27,24 @@ JSON syntax
     :caption: JSON or Python ``List[dict]``?
 
     [
-        {"first_name": "Jan", "last_name": "Twardowski", "addresses": [
+        {"firstname": "Jan", "lastname": "Twardowski", "addresses": [
             {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków", "post_code": "31-008", "region": "Małopolskie", "country": "Poland"}]},
 
-        {"first_name": "José", "last_name": "Jiménez", "addresses": [
+        {"firstname": "José", "lastname": "Jiménez", "addresses": [
             {"street": "2101 E NASA Pkwy", "city": "Houston", "post_code": 77058, "region": "Texas", "country": "USA"},
             {"street": "", "city": "Kennedy Space Center", "post_code": 32899, "region": "Florida", "country": "USA"}]},
 
-        {"first_name": "Mark", "last_name": "Watney", "addresses": [
+        {"firstname": "Mark", "lastname": "Watney", "addresses": [
             {"street": "4800 Oak Grove Dr", "city": "Pasadena", "post_code": 91109, "region": "California", "country": "USA"},
             {"street": "2825 E Ave P", "city": "Palmdale", "post_code": 93550, "region": "California", "country": "USA"}]},
 
-        {"first_name": "Иван", "last_name": "Иванович", "addresses": [
+        {"firstname": "Иван", "lastname": "Иванович", "addresses": [
             {"street": "", "city": "Космодро́м Байкону́р", "post_code": "", "region": "Кызылординская область", "country": "Қазақстан"},
             {"street": "", "city": "Звёздный городо́к", "post_code": 141160, "region": "Московская область", "country": "Россия"}]},
 
-        {"first_name": "Melissa", "last_name": "Lewis", "addresses": []},
+        {"firstname": "Melissa", "lastname": "Lewis", "addresses": []},
 
-        {"first_name": "Alex", "last_name": "Vogel", "addresses": [
+        {"firstname": "Alex", "lastname": "Vogel", "addresses": [
             {"street": "Linder Hoehe", "city": "Köln", "post_code": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}
     ]
 
@@ -69,13 +69,13 @@ Serialize to JSON
 
 
     DATA = {
-        'first_name': 'Jan',
-        'last_name': 'Twardowski'
+        'firstname': 'Jan',
+        'lastname': 'Twardowski'
     }
 
     result = json.dumps(DATA)
     print(result)
-    # '{"first_name": "Jan", "last_name": "Twardowski"}'
+    # '{"firstname": "Jan", "lastname": "Twardowski"}'
 
 Deserialize from JSON
 ---------------------
@@ -85,13 +85,13 @@ Deserialize from JSON
     import json
 
 
-    DATA = '{"first_name": "Jan", "last_name": "Twardowski"}'
+    DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
 
     result = json.loads(DATA)
     print(result)
     # {
-    #     'first_name': 'Jan',
-    #     'last_name': 'Twardowski'
+    #     'firstname': 'Jan',
+    #     'lastname': 'Twardowski'
     # }
 
 
@@ -392,12 +392,12 @@ Check JSON syntax validity
 Assignments
 ===========
 
-Serialize nested sequences to JSON
-----------------------------------
+Serialization JSON Dump
+-----------------------
 * Complexity level: easy
 * Lines of code to write: 8 lines
-* Estimated time of completion: 20 min
-* Solution: :download:`solution/json_dump.py`
+* Estimated time of completion: 13 min
+* Solution: :download:`solution/serialize_json_dump.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -466,12 +466,12 @@ Serialize nested sequences to JSON
             ...
         ]
 
-Deserialize nested sequences from JSON
---------------------------------------
+Serialization JSON Load
+-----------------------
 * Complexity level: easy
 * Lines of code to write: 8 lines
-* Estimated time of completion: 20 min
-* Solution: :download:`solution/json_load.py`
+* Estimated time of completion: 13 min
+* Solution: :download:`solution/serialization_json_load.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -497,12 +497,12 @@ Deserialize nested sequences from JSON
     .. literalinclude:: data/iris.json
         :language: json
 
-Serializing datetime to JSON
-----------------------------
+Serialization JSON Datetime
+---------------------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
-* Estimated time of completion: 15 min
-* Solution: :download:`solution/json_datetime.py`
+* Estimated time of completion: 13 min
+* Solution: :download:`solution/serialization_json_datetime.py`
 
 :Enlish:
     #. Use data from "Input" section (see below)
@@ -537,11 +537,12 @@ Serializing datetime to JSON
             ]
         }
 
-Serializing objects to JSON
----------------------------
+Serialization JSON Object
+-------------------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
-* Estimated time of completion: 20 min
+* Estimated time of completion: 13 min
+* Solution: :download:`solution/serialization_json_object.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -596,12 +597,12 @@ Serializing objects to JSON
             {"sepalLength": 5.7, "sepalWidth": 2.8, "petalLength": 4.5, "petalWidth": 1.3, "species": "versicolor"}
         ]
 
-Deserialize data from GitHub
-----------------------------
-* Complexity level: medium
+Serialization JSON HTTP
+-----------------------
+* Complexity level: hard
 * Lines of code to write: 15 lines
-* Estimated time of completion: 20 min
-* Solution: :download:`solution/json_github.py`
+* Estimated time of completion: 13 min
+* Solution: :download:`solution/serialization_json_http.py`
 
 :English:
     #. Use ``requests`` library (requires installation)

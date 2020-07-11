@@ -129,16 +129,16 @@ Serialize and deserialize objects
 
 
     class Astronaut:
-        def __init__(self, first_name, last_name):
-            self.first_name = first_name
-            self.last_name = last_name
+        def __init__(self, firstname, lastname):
+            self.firstname = firstname
+            self.lastname = lastname
 
     jan = Astronaut('Jan', 'Twardowski')
 
     pickle.dumps(jan)
-    # b'\x80\x03c__main__\nAstronaut\nq\x00)\x81q\x01}q\x02(X\n\x00\x00\x00first_nameq\x03X\x03\x00\x00\x00Janq\x04X\t\x00\x00\x00last_nameq\x05X\n\x00\x00\x00Twardowskiq\x06ub.'
+    # b'\x80\x03c__main__\nAstronaut\nq\x00)\x81q\x01}q\x02(X\n\x00\x00\x00firstnameq\x03X\x03\x00\x00\x00Janq\x04X\t\x00\x00\x00lastnameq\x05X\n\x00\x00\x00Twardowskiq\x06ub.'
 
-    pickle.loads(b'\x80\x03c__main__\nAstronaut\nq\x00)\x81q\x01}q\x02(X\n\x00\x00\x00first_nameq\x03X\x03\x00\x00\x00Janq\x04X\t\x00\x00\x00last_nameq\x05X\n\x00\x00\x00Twardowskiq\x06ub.')
+    pickle.loads(b'\x80\x03c__main__\nAstronaut\nq\x00)\x81q\x01}q\x02(X\n\x00\x00\x00firstnameq\x03X\x03\x00\x00\x00Janq\x04X\t\x00\x00\x00lastnameq\x05X\n\x00\x00\x00Twardowskiq\x06ub.')
     # <__main__.Astronaut object at 0x10585f8d0>
 
 
@@ -240,7 +240,7 @@ Pickle Serialization
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/pickle_dump_load.py`
+* Solution: :download:`solution/serialization_pickle_dump_load.py`
 
 :English:
     #. Use data from "Input" section (see below)

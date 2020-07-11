@@ -1,5 +1,6 @@
 import pickle
 
+FILE = r'/tmp/serialization_pickle_dump_load.pkl'
 
 class Astronaut:
     def __init__(self, name, missions=()):

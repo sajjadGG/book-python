@@ -54,7 +54,7 @@ Read data from CSV file
 
     import csv
 
-    FILE = r'iris.csv'
+    FILE = r'/tmp/iris.csv'
     # sepal_length,sepal_width,petal_length,petal_width,species
     # 5.4,3.9,1.3,0.4,setosa
     # 5.9,3.0,5.1,1.8,virginica
@@ -62,46 +62,127 @@ Read data from CSV file
 
 
     with open(FILE) as file:
-        data = csv.DictReader(file, delimiter=',', quotechar='"')
+        data = csv.DictReader(file, delimiter=',')
 
         for line in data:
-            print(dict(line))
+            print(line)
 
     # {'sepal_length': '5.4', 'sepal_width': '3.9', 'petal_length': '1.3', 'petal_width': '0.4', 'species': 'setosa'}
     # {'sepal_length': '5.9', 'sepal_width': '3.0', 'petal_length': '5.1', 'petal_width': '1.8', 'species': 'virginica'}
     # {'sepal_length': '6.0', 'sepal_width': '3.4', 'petal_length': '4.5', 'petal_width': '1.6', 'species': 'versicolor'}
 
+.. code-block:: python
+    :caption: Read data from CSV file using ``csv.DictReader()``
+
+    import csv
+
+    FILE = r'/tmp/iris.csv'
+    # 'sepal_length';'sepal_width';'petal_length';'petal_width';'species'
+    # '5,4';'3,9';'1,3';'0,4';'setosa'
+    # '5,9';'3,0';'5,1';'1,8';'virginica'
+    # '6,0';'3,4';'4,5';'1,6';'versicolor'
+
+
+    def isnumeric(value):
+        try:
+            float(value)
+            return True
+        except ValueError:
+            return False
+
+
+    def clean(line):
+        return {key: float(v) if isnumeric(v) else v
+                for key, value in line.items()
+                if (v := value.replace(',', '.'))}
+
+
+    with open(FILE) as file:
+        data = csv.DictReader(file, delimiter=';', quotechar="'")
+
+        for line in data:
+            print(clean(line))
+
+
+    # {'sepal_length': 5.4, 'sepal_width': 3.9, 'petal_length': 1.3, 'petal_width': 0.4, 'species': 'setosa'}
+    # {'sepal_length': 5.9, 'sepal_width': 3.0, 'petal_length': 5.1, 'petal_width': 1.8, 'species': 'virginica'}
+    # {'sepal_length': 6.0, 'sepal_width': 3.4, 'petal_length': 4.5, 'petal_width': 1.6, 'species': 'versicolor'}
+
+
+.. code-block:: python
+    :caption: Read data from CSV file using ``csv.DictReader()``. While giving custom names note, that first line (typically a header) will be treated like normal data. Therefore we skip it using ``header = file.readline()``
+
+    import csv
+
+    FILE = r'/tmp/iris.csv'
+    # sepal_length,sepal_width,petal_length,petal_width,species
+    # 5.4,3.9,1.3,0.4,setosa
+    # 5.9,3.0,5.1,1.8,virginica
+    # 6.0,3.4,4.5,1.6,versicolor
+
+    FIELDNAMES = [
+        'Sepal Length',
+        'Sepal Width',
+        'Petal Length',
+        'Petal Width',
+        'Species',
+    ]
+
+
+    with open(FILE) as file:
+        data = csv.DictReader(file, fieldnames=FIELDNAMES, delimiter=',')
+        header = file.readline()
+
+        for line in data:
+            print(line)
+
+    # {'Sepal Length': '5.4', 'Sepal Width': '3.9', 'Petal Length': '1.3', 'Petal Width': '0.4', 'Species': 'setosa'}
+    # {'Sepal Length': '5.9', 'Sepal Width': '3.0', 'Petal Length': '5.1', 'Petal Width': '1.8', 'Species': 'virginica'}
+    # {'Sepal Length': '6.0', 'Sepal Width': '3.4', 'Petal Length': '4.5', 'Petal Width': '1.6', 'Species': 'versicolor'}
+
 
 Write data to CSV file
 ======================
 * Remember to add ``mode='w'`` to ``open()`` function
+* Default encoding is ``encoding='utf-8'``
 
 .. code-block:: python
     :caption: Write data to CSV file using ``csv.DictWriter()``
 
     import csv
 
-    FILE = r'iris.csv'
+    FILE = r'/tmp/iris.csv'
+
     DATA = [
         {'sepal_length': 5.4, 'sepal_width': 3.9, 'petal_length': 1.3, 'petal_width': 0.4, 'species': 'setosa'},
         {'sepal_length': 5.9, 'sepal_width': 3.0, 'petal_length': 5.1, 'petal_width': 1.8, 'species': 'virginica'},
         {'sepal_length': 6.0, 'sepal_width': 3.4, 'petal_length': 4.5, 'petal_width': 1.6, 'species': 'versicolor'},
     ]
 
+    FIELDNAMES = [
+        'sepal_length',
+        'sepal_width',
+        'petal_length',
+        'petal_width',
+        'species'
+    ]
 
-    with open(FILE, mode='w') as file:
+    with open(FILE, mode='w', encoding='utf-8') as file:
         writer = csv.DictWriter(
             f=file,
-            fieldnames=['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species'],
+            fieldnames=FIELDNAMES,
             delimiter=',',
             quotechar='"',
             quoting=csv.QUOTE_ALL,
             lineterminator='\n')
 
         writer.writeheader()
+        writer.writerows(DATA)
 
-        for row in DATA:
-            writer.writerow(row)
+    # "sepal_length","sepal_width","petal_length","petal_width","species"
+    # "5.4","3.9","1.3","0.4","setosa"
+    # "5.9","3.0","5.1","1.8","virginica"
+    # "6.0","3.4","4.5","1.6","versicolor"
 
 
 Parsing non-CSV files
@@ -115,7 +196,7 @@ Parsing ``/etc/passwd``
     import csv
 
 
-    FILE = r'etc-passwd.txt'
+    FILE = r'/tmp/etc-passwd.txt'
     # root:x:0:0:root:/root:/bin/bash
     # watney:x:1000:1000:Mark Watney:/home/watney:/bin/bash
     # jimenez:x:1001:1001:José Jiménez:/home/jimenez:/bin/bash
@@ -130,7 +211,7 @@ Parsing ``/etc/passwd``
             quoting=csv.QUOTE_NONE)
 
         for line in data:
-            print(dict(line))
+            print(line)
 
     # {'username': 'root', 'password': 'x', 'uid': '0',...}
     # {'username': 'watney', 'password': 'x', 'uid': '1000',...}
@@ -145,7 +226,7 @@ Parsing Java properties file
     import csv
 
 
-    FILE = r'sonar-project.properties'
+    FILE = r'/tmp/sonar-project.properties'
     # sonar.projectKey=habitatOS
     # sonar.projectName=habitatOS
     # sonar.language=py
@@ -162,7 +243,7 @@ Parsing Java properties file
             quoting=csv.QUOTE_NONE)
 
         for line in data:
-            print(dict(line))
+            print(line)
 
     # {'property': 'sonar.projectKey', 'value': 'habitatOS'}
     # {'property': 'sonar.projectName', 'value': 'habitatOS'}
@@ -171,208 +252,61 @@ Parsing Java properties file
     # {'property': 'sonar.verbose', 'value': 'true'}
 
 
-Pandas
-======
-* External library
-* Installation: ``pip install pandas``
-* More info in :ref:`Pandas DataFrame Plotting`
-
-.. code-block:: python
-
-    import pandas as pd
-
-
-    FILE = 'https://raw.githubusercontent.com/scikit-learn/scikit-learn/master/sklearn/datasets/data/iris.csv'
-
-    df = pd.read_csv(FILE, skiprows=1)
-
-    df.head(5)
-    #      5.1  3.5  1.4  0.2  0
-    # 0    4.9  3.0  1.4  0.2  0
-    # 1    4.7  3.2  1.3  0.2  0
-    # 2    4.6  3.1  1.5  0.2  0
-    # 3    5.0  3.6  1.4  0.2  0
-    # 4    5.4  3.9  1.7  0.4  0
-
-    df.columns = [
-        'Sepal length',
-        'Sepal width',
-        'Petal length',
-        'Petal width',
-        'Species'
-    ]
-
-    df.head(5)
-    #    Sepal length  Sepal width  Petal length  Petal width  Species
-    # 0           5.1          3.5           1.4          0.2        0
-    # 1           4.9          3.0           1.4          0.2        0
-    # 2           4.7          3.2           1.3          0.2        0
-    # 3           4.6          3.1           1.5          0.2        0
-    # 4           5.0          3.6           1.4          0.2        0
-
-    df.tail(3)
-    #      Sepal length  Sepal width  Petal length  Petal width  Species
-    # 147           6.5          3.0           5.2          2.0        2
-    # 148           6.2          3.4           5.4          2.3        2
-    # 149           5.9          3.0           5.1          1.8        2
-
-    df['Species'].replace({
-        0: 'setosa',
-        1: 'versicolor',
-        2: 'virginica'
-    }, inplace=True)
-
-    df = df.sample(frac=1.0)
-    #      Sepal length  Sepal width  Petal length  Petal width     Species
-    # 120           5.6          2.8           4.9          2.0   virginica
-    # 9             5.4          3.7           1.5          0.2      setosa
-    # 54            5.7          2.8           4.5          1.3  versicolor
-    # 46            4.6          3.2           1.4          0.2      setosa
-    # 2             4.6          3.1           1.5          0.2      setosa
-    # ...
-
-    df.reset_index(drop=True)
-    #      Sepal length  Sepal width     ...      Petal width     Species
-    # 0             5.0          2.0     ...              1.0  versicolor
-    # 1             6.4          2.7     ...              1.9   virginica
-    # 2             5.6          3.0     ...              1.5  versicolor
-    # 3             5.7          2.6     ...              1.0  versicolor
-    # 4             6.4          3.1     ...              1.8   virginica
-    # ...
-
-    df.describe()
-    #        Sepal length  Sepal width  Petal length  Petal width
-    # count    150.000000   150.000000    150.000000   150.000000
-    # mean       5.843333     3.057333      3.758000     1.199333
-    # std        0.828066     0.435866      1.765298     0.762238
-    # min        4.300000     2.000000      1.000000     0.100000
-    # 25%        5.100000     2.800000      1.600000     0.300000
-    # 50%        5.800000     3.000000      4.350000     1.300000
-    # 75%        6.400000     3.300000      5.100000     1.800000
-    # max        7.900000     4.400000      6.900000     2.500000
-
-
-    df.plot('hist')
-
-.. figure:: img/pandas-plot-hist.png
-    :width: 75%
-    :align: center
-
-    Visualization using hist
-
-.. code-block:: python
-
-    df.plot('density')
-
-.. figure:: img/pandas-plot-density.png
-    :width: 75%
-    :align: center
-
-    Visualization using density
-
-.. code-block:: python
-
-    df.plot(kind='density', subplots=True, layout=(2,2), sharex=False)
-
-.. figure:: img/pandas-plot-density2.png
-    :width: 75%
-    :align: center
-
-    Visualization using density
-
-.. code-block:: python
-
-    df.plot(kind='box', subplots=True, layout=(2,2), sharex=False, sharey=False)
-
-
-.. figure:: img/pandas-plot-box.png
-    :width: 75%
-    :align: center
-
-    Visualization using density
-
-.. code-block:: python
-
-    from pandas.plotting import scatter_matrix
-
-    scatter_matrix(df)
-
-.. figure:: img/pandas-plot-scatter-matrix.png
-    :width: 75%
-    :align: center
-
-    Visualization using density
-
-Descriptive statistics
-----------------------
-.. csv-table:: Descriptive statistics
-    :header: "Function", "Description"
-
-    "``count``", "Number of non-null observations"
-    "``sum``", "Sum of values"
-    "``mean``", "Mean of values"
-    "``mad``", "Mean absolute deviation"
-    "``median``", "Arithmetic median of values"
-    "``min``", "Minimum"
-    "``max``", "Maximum"
-    "``mode``", "Mode"
-    "``abs``", "Absolute Value"
-    "``prod``", "Product of values"
-    "``std``", "Unbiased standard deviation"
-    "``var``", "Unbiased variance"
-    "``sem``", "Unbiased standard error of the mean"
-    "``skew``", "Unbiased skewness (3rd moment)"
-    "``kurt``", "Unbiased kurtosis (4th moment)"
-    "``quantile``", "Sample quantile (value at %)"
-    "``cumsum``", "Cumulative sum"
-    "``cumprod``", "Cumulative product"
-    "``cummax``", "Cumulative maximum"
-    "``cummin``", "Cumulative minimum"
-
-
 Assignments
 ===========
 
-Read and parse data from CSV file
----------------------------------
+Serialization CSV DictReader
+----------------------------
 * Complexity level: easy
 * Lines of code to write: 20 lines
-* Estimated time of completion: 10 min
-* Solution: :download:`solution/csv_dictreader.py`
+* Estimated time of completion: 7 min
+* Solution: :download:`solution/serialization_csv_dictreader.py`
 
 :English:
-    #. Download :download:`data/iris.csv` file
-    #. Save data to ``iris.csv`` in your script folder
+    #. Use data from "Input" section (see below)
+    #. Download :download:`data/iris.csv` file and save as ``iris.csv`` in your script folder
     #. Using ``csv.DictReader`` read the content
     #. Use explicit ``encoding``, ``delimiter`` and ``quotechar``
-    #. Replace column names (see output data)
+    #. Replace column names to ``FIELDNAMES``
     #. Skip the first line (header)
-    #. Print rows
+    #. Print rows with data
     #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Pobierz plik :download:`data/iris.csv`
-    #. Zapisz jego zawartość na dysku w miejscu gdzie masz skrypty
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Pobierz plik :download:`data/iris.csv` i zapisz go jako ``iris.csv`` w katalogu ze skryptami
     #. Korzystając z ``csv.DictReader`` wczytaj zawartość pliku
     #. Podaj jawnie ``encoding``, ``delimiter`` oraz ``quotechar``
-    #. Podmień nazwy kolumn (patrz dane wyjściowe)
+    #. Podmień nazwy kolumn na ``FIELDNAMES``
     #. Pomiń pierwszą linię (nagłówek)
-    #. Wypisz wiersze
+    #. Wypisz wiersze z danymi
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        FIELDNAMES = [
+            'Sepal Length',
+            'Sepal Width',
+            'Petal Length',
+            'Petal Width',
+            'Species',
+        ]
 
 :Output:
     .. code-block:: python
 
-        {'Sepal length': '5.4', 'Sepal width': '3.9', 'Petal length': '1.3', 'Petal width': '0.4', 'Species': 'setosa'}
-        {'Sepal length': '5.9', 'Sepal width': '3.0', 'Petal length': '5.1', 'Petal width': '1.8', 'Species': 'virginica'}
-        {'Sepal length': '6.0', 'Sepal width': '3.4', 'Petal length': '4.5', 'Petal width': '1.6', 'Species': 'versicolor'}
+        {'Sepal Length': '5.4', 'Sepal Width': '3.9', 'Petal Length': '1.3', 'Petal Width': '0.4', 'Species': 'setosa'}
+        {'Sepal Length': '5.9', 'Sepal Width': '3.0', 'Petal Length': '5.1', 'Petal Width': '1.8', 'Species': 'virginica'}
+        {'Sepal Length': '6.0', 'Sepal Width': '3.4', 'Petal Length': '4.5', 'Petal Width': '1.6', 'Species': 'versicolor'}
+        ...
 
-Write fixed schema data to CSV file
------------------------------------
+Serialization CSV DictWriter
+----------------------------
 * Complexity level: easy
 * Lines of code to write: 8 lines
-* Estimated time of completion: 10 min
-* Solution: :download:`solution/csv_dictwriter_fixed.py`
+* Estimated time of completion: 7 min
+* Solution: :download:`solution/serialization_csv_dictwriter.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -383,7 +317,7 @@ Write fixed schema data to CSV file
     #. Non functional requirements:
 
         * All fields must be enclosed by double quote ``"`` character
-        * Use ``;`` to separate columns
+        * Use ``,`` to separate columns
         * Use ``utf-8`` encoding
         * Use Unix ``\n`` newline
 
@@ -396,7 +330,7 @@ Write fixed schema data to CSV file
     #. Wymagania niefunkcjonalne:
 
         * Wszystkie pola muszą być otoczone znakiem cudzysłowu ``"``
-        * Użyj ``;`` do oddzielenia kolumn
+        * Użyj ``,`` do oddzielenia kolumn
         * Użyj kodowania ``utf-8``
         * Użyj zakończenia linii Unix ``\n``
 
@@ -404,29 +338,112 @@ Write fixed schema data to CSV file
     .. code-block:: python
 
         DATA = [
-            {'first_name': 'Jan',  'last_name': 'Twardowski'},
-            {'first_name': 'José', 'last_name': 'Jiménez'},
-            {'first_name': 'Mark', 'last_name': 'Watney'},
-            {'first_name': 'Ivan', 'last_name': 'Ivanovic'},
-            {'first_name': 'Melissa', 'last_name': 'Lewis'},
+            {'firstname': 'Jan',  'lastname': 'Twardowski'},
+            {'firstname': 'José', 'lastname': 'Jiménez'},
+            {'firstname': 'Mark', 'lastname': 'Watney'},
+            {'firstname': 'Ivan', 'lastname': 'Ivanovic'},
+            {'firstname': 'Melissa', 'lastname': 'Lewis'},
         ]
 
 :Output:
     .. code-block:: text
 
-        "first_name";"last_name"
-        "Jan";"Twardowski"
-        "José";"Jiménez"
-        "Mark";"Watney"
-        "Ivan";"Ivanovic"
-        "Melissa";"Lewis"
+        "firstname","lastname"
+        "Jan","Twardowski"
+        "José","Jiménez"
+        "Mark","Watney"
+        "Ivan","Ivanovic"
+        "Melissa","Lewis"
 
-Write variable schema data to file
-----------------------------------
+Serialization CSV List of Tuples
+--------------------------------
+* Complexity level: easy
+* Lines of code to write: 8 lines
+* Estimated time of completion: 7 min
+* Solution: :download:`solution/serialization_csv_list_of_tuple.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Using ``csv.DictWriter()`` save ``DATA`` to file
+    #. Compare result with "Output" section (see below)
+    #. Non functional requirements:
+
+        * Do not use quotes in output CSV file
+        * Use ``,`` to separate columns
+        * Use ``utf-8`` encoding
+        * Use Unix ``\n`` newline
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Za pomocą ``csv.DictWriter()`` zapisz ``DATA`` do pliku
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+    #. Wymagania niefunkcjonalne:
+
+        * Nie używaj cudzysłowów w wynikowym pliku CSV
+        * Użyj ``,`` do oddzielenia kolumn
+        * Użyj kodowania ``utf-8``
+        * Użyj zakończenia linii Unix ``\n``
+
+:Input:
+    .. code-block:: python
+
+        DATA = [
+            ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+            (5.8, 2.7, 5.1, 1.9, 'virginica'),
+            (5.1, 3.5, 1.4, 0.2, 'setosa'),
+            (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+            (6.3, 2.9, 5.6, 1.8, 'virginica'),
+            (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+            (4.7, 3.2, 1.3, 0.2, 'setosa'),
+            (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+            (7.6, 3.0, 6.6, 2.1, 'virginica'),
+            (4.9, 3.0, 1.4, 0.2, 'setosa'),
+            (4.9, 2.5, 4.5, 1.7, 'virginica'),
+            (7.1, 3.0, 5.9, 2.1, 'virginica'),
+            (4.6, 3.4, 1.4, 0.3, 'setosa'),
+            (5.4, 3.9, 1.7, 0.4, 'setosa'),
+            (5.7, 2.8, 4.5, 1.3, 'versicolor'),
+            (5.0, 3.6, 1.4, 0.3, 'setosa'),
+            (5.5, 2.3, 4.0, 1.3, 'versicolor'),
+            (6.5, 3.0, 5.8, 2.2, 'virginica'),
+            (6.5, 2.8, 4.6, 1.5, 'versicolor'),
+            (6.3, 3.3, 6.0, 2.5, 'virginica'),
+            (6.9, 3.1, 4.9, 1.5, 'versicolor'),
+            (4.6, 3.1, 1.5, 0.2, 'setosa'),
+        ]
+
+:Output:
+    .. code-block:: text
+
+        Sepal length,Sepal width,Petal length,Petal width,Species
+        5.8,2.7,5.1,1.9,virginica
+        5.1,3.5,1.4,0.2,setosa
+        5.7,2.8,4.1,1.3,versicolor
+        6.3,2.9,5.6,1.8,virginica
+        6.4,3.2,4.5,1.5,versicolor
+        4.7,3.2,1.3,0.2,setosa
+        7.0,3.2,4.7,1.4,versicolor
+        7.6,3.0,6.6,2.1,virginica
+        4.9,3.0,1.4,0.2,setosa
+        4.9,2.5,4.5,1.7,virginica
+        7.1,3.0,5.9,2.1,virginica
+        4.6,3.4,1.4,0.3,setosa
+        5.4,3.9,1.7,0.4,setosa
+        5.7,2.8,4.5,1.3,versicolor
+        5.0,3.6,1.4,0.3,setosa
+        5.5,2.3,4.0,1.3,versicolor
+        6.5,3.0,5.8,2.2,virginica
+        6.5,2.8,4.6,1.5,versicolor
+        6.3,3.3,6.0,2.5,virginica
+        6.9,3.1,4.9,1.5,versicolor
+        4.6,3.1,1.5,0.2,setosa
+
+Serialization CSV Schemaless
+-----------------------------
 * Complexity level: medium
 * Lines of code to write: 8 lines
-* Estimated time of completion: 10 min
-* Solution: :download:`solution/csv_dictwriter_variable.py`
+* Estimated time of completion: 7 min
+* Solution: :download:`solution/serialization_csv_schemaless.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -450,7 +467,7 @@ Write variable schema data to file
     #. Wymagania niefunkcjonalne:
 
         * Wszystkie pola muszą być otoczone znakiem cudzysłowu ``"``
-        * Użyj ``;`` do oddzielenia kolumn
+        * Użyj ``,`` do oddzielenia kolumn
         * Użyj kodowania ``utf-8``
         * Użyj zakończenia linii Unix ``\n``
 
@@ -482,12 +499,62 @@ Write variable schema data to file
         "4.1", "", "", "2.8", "versicolor"
         "", "1.8", "", "2.9", "virginica"
 
-Object serialization to CSV
+Serialization CSV Objects
+-------------------------
+* Complexity level: medium
+* Lines of code to write: 6 lines
+* Estimated time of completion: 13 min
+* Solution: :download:`solution/serialization_csv_objects.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Using ``csv.DictWriter()`` save data to CSV file
+    #. Non functional requirements:
+
+        * All fields must be enclosed by double quote ``"`` character
+        * Use ``,`` to separate columns
+        * Use ``utf-8`` encoding
+        * Use Unix ``\n`` newline
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Za pomocą ``csv.DictWriter()`` zapisz dane do pliku CSV
+    #. Wymagania niefunkcjonalne:
+
+        * Wszystkie pola muszą być otoczone znakiem cudzysłowu ``"``
+        * Użyj ``,`` do oddzielenia kolumn
+        * Użyj kodowania ``utf-8``
+        * Użyj zakończenia linii Unix ``\n``
+
+:Input:
+    .. code-block:: python
+
+        class Iris:
+            def __init__(self, sepal_length, sepal_width,
+                         petal_length, petal_width, species):
+
+                self.sepal_length = sepal_length
+                self.sepal_width = sepal_width
+                self.petal_length = petal_length
+                self.petal_width = petal_width
+                self.species = species
+
+
+        DATA = [
+            Iris(5.1, 3.5, 1.4, 0.2, 'setosa'),
+            Iris(5.8, 2.7, 5.1, 1.9, 'virginica'),
+            Iris(5.1, 3.5, 1.4, 0.2, 'setosa'),
+            Iris(5.7, 2.8, 4.1, 1.3, 'versicolor'),
+            Iris(6.3, 2.9, 5.6, 1.8, 'virginica'),
+            Iris(6.4, 3.2, 4.5, 1.5, 'versicolor'),
+        ]
+
+Serialization CSV Relations
 ---------------------------
 * Complexity level: hard
 * Lines of code to write: 60 lines
-* Estimated time of completion: 20 min
-* Solution: :download:`solution/csv_relations.py`
+* Estimated time of completion: 21 min
+* Solution: :download:`solution/serialization_csv_relations.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -516,9 +583,9 @@ Object serialization to CSV
     .. code-block:: python
 
        class Contact:
-            def __init__(self, first_name, last_name, addresses=()):
-                self.first_name = first_name
-                self.last_name = last_name
+            def __init__(self, firstname, lastname, addresses=()):
+                self.firstname = firstname
+                self.lastname = lastname
                 self.addresses = addresses
 
 
@@ -529,11 +596,11 @@ Object serialization to CSV
 
 
         DATA = [
-            Contact(first_name='Jan', last_name='Twardowski', addresses=(
+            Contact(firstname='Jan', lastname='Twardowski', addresses=(
                 Address(location='Johnson Space Center', city='Houston, TX'),
                 Address(location='Kennedy Space Center', city='Merritt Island, FL'),
                 Address(location='Jet Propulsion Laboratory', city='Pasadena, CA'),
             )),
-            Contact(first_name='Mark', last_name='Watney'),
-            Contact(first_name='Melissa', last_name='Lewis', addresses=()),
+            Contact(firstname='Mark', lastname='Watney'),
+            Contact(firstname='Melissa', lastname='Lewis', addresses=()),
         ]
