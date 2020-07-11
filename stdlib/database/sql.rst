@@ -164,3 +164,47 @@ TRUNCATE
 .. literalinclude:: src/sql-truncate.sql
     :language: sql
     :caption: TRUNCATE
+
+
+Assignments
+===========
+
+Database SQL Relations
+----------------------
+* Complexity level: medium
+* Lines of code to write: 0 lines
+* Estimated time of completion: 13 min
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. How to write input data in one table without using relations?
+    #. There are at least four methods
+    #. Discuss pros and cons of each method
+    #. Which methods is ACID compliant?
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Jak zapisać w jednej tabeli bez wykorzystania relacji?
+    #. Są przynajmniej cztery metody
+    #. Przeprowadź dyskusję na temat zalet i wad każdej metody
+    #. Która metody jest zgodna z ACID?
+
+:Input:
+    .. code-block:: text
+
+        José, Jiménez
+            2101 E NASA Pkwy, 77058, Houston, Texas, USA
+            , Kennedy Space Center, 32899, Florida, USA
+
+        Mark, Watney
+            4800 Oak Grove Dr, 91109, Pasadena, California, USA
+            2825 E Ave P, 93550, Palmdale, California, USA
+
+        Иван, Иванович
+            Kosmodrom Bajkonur, Bajkonur, Kazachstan
+
+        Melissa Lewis,
+            <NO ADDRESS>
+
+        Alex Vogel
+            Linder Hoehe, 51147, Köln, Germany

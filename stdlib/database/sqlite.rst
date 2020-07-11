@@ -89,16 +89,16 @@ Use cases
 Assignments
 ===========
 
-SQLite Iris
------------
+Database SQLite Iris
+--------------------
 * Complexity level: easy
 * Lines of code to write: 30 lines
-* Estimated time of completion: 30 min
-* Solution: :download:`solution/sqlite_iris.py`
+* Estimated time of completion: 21 min
+* Solution: :download:`solution/database_sqlite_iris.py`
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Save input data as ``sqlite_iris.csv`` file
+    #. Save input data as ``database-sqlite-iris.csv`` file
     #. Read data from file (don't use ``csv`` or ``pandas`` library)
     #. Connect to the ``sqlite3`` using context manager (``with``)
     #. Create table ``iris``, column names are specified in "Input" section (see below)
@@ -108,7 +108,7 @@ SQLite Iris
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Zapisz dane wejściowe do pliku ``sqlite_iris.csv``
+    #. Zapisz dane wejściowe do pliku ``database-sqlite-iris.csv``
     #. Wczytaj dane z pliku (nie używaj biblioteki ``csv`` lub ``pandas``)
     #. Połącz się do bazy danych ``sqlite3`` używając context managera (``with``)
     #. Stwórz tabelę ``iris`` o kolumnach podanych w sekcji "Input" (patrz poniżej)
@@ -194,12 +194,12 @@ SQLite Iris
 
         SELECT * FROM iris ORDER BY datetime DESC
 
-Creating relations in database
-------------------------------
+Database SQLite Relations
+-------------------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
-* Estimated time of completion: 20 min
-* Solution: :download:`solution/sqlite_addressbook.py`
+* Estimated time of completion: 21 min
+* Solution: :download:`solution/database_sqlite_relations.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -288,52 +288,12 @@ Creating relations in database
 
         SELECT * FROM contact;
 
-Relational data in one table
-----------------------------
-* Complexity level: easy
-* Lines of code to write: 0 lines
-* Estimated time of completion: 15 min
-
-:English:
-    #. Use data from "Input" section (see below)
-    #. How to write input data in one table without using relations?
-    #. There are at least four methods
-    #. Discuss pros and cons of each method
-    #. Which methods is ACID compliant?
-
-:Polish:
-    #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Jak zapisać w jednej tabeli bez wykorzystania relacji?
-    #. Są przynajmniej cztery metody
-    #. Przeprowadź dyskusję na temat zalet i wad każdej metody
-    #. Która metody jest zgodna z ACID?
-
-:Input:
-    .. code-block:: text
-
-        José, Jiménez
-            2101 E NASA Pkwy, 77058, Houston, Texas, USA
-            , Kennedy Space Center, 32899, Florida, USA
-
-        Mark, Watney
-            4800 Oak Grove Dr, 91109, Pasadena, California, USA
-            2825 E Ave P, 93550, Palmdale, California, USA
-
-        Иван, Иванович
-            Kosmodrom Bajkonur, Bajkonur, Kazachstan
-
-        Melissa Lewis,
-            <NO ADDRESS>
-
-        Alex Vogel
-            Linder Hoehe, 51147, Köln, Germany
-
-Log parsing
------------
+Database SQLite Logs
+--------------------
 * Complexity level: medium
 * Lines of code to write: 25 lines
-* Estimated time of completion: 20 min
-* Solution: :download:`solution/sqlite_logs.py`
+* Estimated time of completion: 21 min
+* Solution: :download:`solution/database_sqlite_logs.py`
 
 :English:
     #. Use data from "Input" section (see below)

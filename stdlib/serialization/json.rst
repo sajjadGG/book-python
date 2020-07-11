@@ -298,8 +298,8 @@ JSON to Datetime
     #  'name': 'Jan Twardowski'}
 
 
-Python Objects to JSON
-======================
+Python Object to JSON
+=====================
 .. code-block:: python
     :caption: Encoding nested objects with relations to JSON
 
