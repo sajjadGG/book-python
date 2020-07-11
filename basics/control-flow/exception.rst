@@ -535,8 +535,9 @@ Else and Finally
     # Returning safely to the Earth
 
 
-Always Catch Exceptions!
-========================
+Pokemon Exception Handling
+==========================
+* "Gotta catch 'em all"
 * ``Ctrl-C`` raises ``KeyboardInterrupt``
 
 .. code-block:: python
