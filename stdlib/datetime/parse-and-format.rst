@@ -325,12 +325,12 @@ Examples
 Assignments
 ===========
 
-Example
--------
+Datetime Parse ISO
+------------------
 * Complexity level: easy
 * Lines of code to write: 1 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/datetime_from_iso.py`
+* Solution: :download:`solution/datetime_parse_iso.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -347,16 +347,12 @@ Example
 
         DATA = '1969-07-21T02:56:15.123Z'
 
-Solution:
-    .. literalinclude:: solution/datetime_from_iso.py
-        :language: python
-
-To ISO date format
-------------------
+Datetime Parse Local
+--------------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/datetime_to_iso.py`
+* Solution: :download:`solution/datetime_parse_local.py`
 
 :Enlish:
     #. Use data from "Input" section (see below)
@@ -387,12 +383,12 @@ To ISO date format
 :Hint:
     * Add string ``local time`` to format statement
 
-US date and time format
------------------------
+Datetime Parse US
+-----------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/datetime_from_us.py`
+* Solution: :download:`solution/datetime_parse_us.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -401,7 +397,6 @@ US date and time format
     #. Using formatting parameters print american short date format
     #. Make sure, that hour is without leading zero
     #. Compare result with "Output" section (see below)
-
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
@@ -430,12 +425,12 @@ US date and time format
     * Use ``%-I`` or ``%_I`` on \*nix systems (macOS, BSD, Linux) to remove leading zero
     * Use ``%#I`` on Windows to remove leading zero
 
-Log parsing
------------
+Datetime Parse Logs
+-------------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/datetime_logs.py`
+* Solution: :download:`solution/datetime_parse_logs.py`
 
 :English:
     #. Use data from "Input" section (see below)

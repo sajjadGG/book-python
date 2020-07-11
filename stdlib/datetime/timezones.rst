@@ -134,12 +134,12 @@ Between timezones
 Assignments
 ===========
 
-Time zone converting
---------------------
+Datetime Timezone Convert
+-------------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/datetime_tz.py`
+* Solution: :download:`solution/datetime_timezone_convert.py`
 
 :English:
     #. Use data from "Input" section (see below)

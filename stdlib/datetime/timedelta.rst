@@ -194,12 +194,12 @@ Duration
 Assignments
 ===========
 
-Date manipulation
-------------------
+Datetime Timedelta Period
+-------------------------
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/datetime_deltas.py`
+* Solution: :download:`solution/datetime_timedelta_period.py`
 
 :English:
     #. Use data from "Input" section (see below)

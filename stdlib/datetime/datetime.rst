@@ -187,8 +187,8 @@ Current ``datetime`` in local time
 Assignments
 ===========
 
-Create ``date``, ``time`` and ``datetime`` objects
---------------------------------------------------
+Datetime Create Custom
+----------------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
@@ -204,8 +204,8 @@ Create ``date``, ``time`` and ``datetime`` objects
     #. Stwórz obiekt ``time`` z czasem Twojego urodzenia
     #. Stwórz obiekt ``datetime`` z datą i czasem Twojego urodzenia
 
-Create current ``date`` and ``datetime`` objects
-------------------------------------------------
+Datetime Create Current
+-----------------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min

@@ -59,12 +59,12 @@ Convert timestamp to ``datetime``
 Assignments
 ===========
 
-Create ``datetime`` object
---------------------------
+Datetime Timestamp Limits
+-------------------------
 * Complexity level: easy
 * Lines of code to write: 1 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/datetime_timestamp.py`
+* Solution: :download:`solution/datetime_timestamp_limits.py`
 
 :English:
     #. Use data from "Input" section (see below)

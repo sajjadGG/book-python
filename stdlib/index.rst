@@ -8,6 +8,75 @@ Entry Test
 
     exam/entry.rst
 
+**********************
+Datetime and Timezones
+**********************
+.. toctree::
+    :maxdepth: 1
+    :caption: Datetime and Timezones
+    :name: Stdlib Datetime and Timezones
+
+    datetime/datetime.rst
+    datetime/parse-and-format.rst
+    datetime/timedelta.rst
+    datetime/timestamp.rst
+    datetime/utils.rst
+    datetime/timezones.rst
+
+*************
+Serialization
+*************
+.. toctree::
+    :maxdepth: 1
+    :caption: Serialization
+    :name: Stdlib Serialization
+
+    serialization/csv.rst
+    serialization/json.rst
+    serialization/pickle.rst
+    serialization/xml.rst
+
+********
+Database
+********
+.. toctree::
+    :maxdepth: 1
+    :caption: Database
+    :name: Stdlib Database
+
+    database/db-api.rst
+    database/sqlite.rst
+    database/mysql.rst
+    database/postgresql.rst
+    database/mongodb.rst
+    database/orm.rst
+    database/migrations.rst
+    database/data-exploration.rst
+    database/sql-injection.rst
+    database/sql.rst
+
+*******************
+Regular Expressions
+*******************
+.. toctree::
+    :maxdepth: 1
+    :caption: Regular Expressions
+    :name: Stdlib Regular Expressions
+
+    regular-expressions/syntax.rst
+    regular-expressions/match.rst
+    regular-expressions/search.rst
+    regular-expressions/find.rst
+    regular-expressions/compare.rst
+    regular-expressions/compile.rst
+    regular-expressions/groups.rst
+    regular-expressions/multiline.rst
+    regular-expressions/substitute.rst
+    regular-expressions/split.rst
+    regular-expressions/greedy.rst
+    regular-expressions/standards.rst
+    regular-expressions/references/index.rst
+
 ********************
 Modules and Packages
 ********************
@@ -93,75 +162,6 @@ Mathematics
     math/precision.rst
     math/plotting.rst
     math/complex.rst
-
-**********************
-Datetime and Timezones
-**********************
-.. toctree::
-    :maxdepth: 1
-    :caption: Datetime and Timezones
-    :name: Stdlib Datetime and Timezones
-
-    datetime/datetime.rst
-    datetime/parse-and-format.rst
-    datetime/timedelta.rst
-    datetime/timestamp.rst
-    datetime/utils.rst
-    datetime/timezones.rst
-
-*************
-Serialization
-*************
-.. toctree::
-    :maxdepth: 1
-    :caption: Serialization
-    :name: Stdlib Serialization
-
-    serialization/csv.rst
-    serialization/json.rst
-    serialization/pickle.rst
-    serialization/xml.rst
-
-********
-Database
-********
-.. toctree::
-    :maxdepth: 1
-    :caption: Database
-    :name: Stdlib Database
-
-    database/db-api.rst
-    database/sqlite.rst
-    database/mysql.rst
-    database/postgresql.rst
-    database/mongodb.rst
-    database/orm.rst
-    database/migrations.rst
-    database/data-exploration.rst
-    database/sql-injection.rst
-    database/sql.rst
-
-*******************
-Regular Expressions
-*******************
-.. toctree::
-    :maxdepth: 1
-    :caption: Regular Expressions
-    :name: Stdlib Regular Expressions
-
-    regular-expressions/syntax.rst
-    regular-expressions/match.rst
-    regular-expressions/search.rst
-    regular-expressions/find.rst
-    regular-expressions/compare.rst
-    regular-expressions/compile.rst
-    regular-expressions/groups.rst
-    regular-expressions/multiline.rst
-    regular-expressions/substitute.rst
-    regular-expressions/split.rst
-    regular-expressions/greedy.rst
-    regular-expressions/standards.rst
-    regular-expressions/references/index.rst
 
 ****************
 Operating System
