@@ -269,7 +269,7 @@ DictWriter
     # "6.0","3.4","4.5","1.6","versicolor"
 
 
-Parsing non-CSV files
+Parsing Non-CSV Files
 =====================
 .. code-block:: python
     :caption: Parsing ``/etc/passwd`` file with ``csv.DictReader()``
@@ -330,8 +330,8 @@ Parsing non-CSV files
     # {'property': 'sonar.verbose', 'value': 'true'}
 
 
-Good Practice
-=============
+Good Practices
+==============
 * Always specify:
 
     * ``delimiter=','`` to  ``csv.DictReader()`` object
@@ -347,7 +347,7 @@ Assignments
 Serialization CSV DictReader
 ----------------------------
 * Complexity level: easy
-* Lines of code to write: 20 lines
+* Lines of code to write: 6 lines
 * Estimated time of completion: 7 min
 * Solution: :download:`solution/serialization_csv_dictreader.py`
 
@@ -393,7 +393,7 @@ Serialization CSV DictReader
 Serialization CSV DictWriter
 ----------------------------
 * Complexity level: easy
-* Lines of code to write: 8 lines
+* Lines of code to write: 5 lines
 * Estimated time of completion: 7 min
 * Solution: :download:`solution/serialization_csv_dictwriter.py`
 
@@ -447,7 +447,7 @@ Serialization CSV DictWriter
 Serialization CSV List of Tuples
 --------------------------------
 * Complexity level: easy
-* Lines of code to write: 8 lines
+* Lines of code to write: 7 lines
 * Estimated time of completion: 7 min
 * Solution: :download:`solution/serialization_csv_list_of_tuple.py`
 
@@ -591,7 +591,7 @@ Serialization CSV Schemaless
 Serialization CSV Objects
 -------------------------
 * Complexity level: medium
-* Lines of code to write: 6 lines
+* Lines of code to write: 7 lines
 * Estimated time of completion: 13 min
 * Solution: :download:`solution/serialization_csv_objects.py`
 
@@ -641,7 +641,7 @@ Serialization CSV Objects
 Serialization CSV Relations
 ---------------------------
 * Complexity level: hard
-* Lines of code to write: 60 lines
+* Lines of code to write: 18 lines
 * Estimated time of completion: 21 min
 * Solution: :download:`solution/serialization_csv_relations.py`
 

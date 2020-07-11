@@ -50,12 +50,13 @@ JSON Syntax
     ]
 
 
-Serialize Object to JSON String
-===============================
+Mapping to JSON
+===============
 * ``json.dumps(DATA: dict) -> str``
+* ``json.loads(DATA: str) -> dict``
 
 .. code-block:: python
-    :caption: Serialize to JSON
+    :caption: Serializing mapping to JSON
 
     import json
 
@@ -68,13 +69,8 @@ Serialize Object to JSON String
     print(result)
     # '{"firstname": "Jan", "lastname": "Twardowski"}'
 
-
-Deserialize Objects from JSON String
-====================================
-* ``json.loads(DATA: str) -> dict``
-
 .. code-block:: python
-    :caption: Deserialize from JSON
+    :caption: Deserializing mapping from JSON
 
     import json
 
@@ -87,8 +83,80 @@ Deserialize Objects from JSON String
     #  'lastname': 'Twardowski'}
 
 
-Serialize Object to JSON File
-=============================
+Sequence to JSON
+================
+* ``json.dumps(DATA: Sequence[dict]) -> str``
+* ``json.loads(DATA: str) -> List[dict]``
+
+.. code-block:: python
+    :caption: Serializing sequence to JSON
+
+    import json
+
+
+    DATA = [
+        {'firstname': 'Jan', 'lastname': 'Twardowski'},
+        {'firstname': 'Melissa', 'lastname': 'Lewis'},
+        {'firstname': 'Mark', 'lastname': 'Watney'},
+    ]
+
+    result = json.dumps(DATA)
+    print(result)
+    # [{"firstname": "Jan", "lastname": "Twardowski"},
+    #  {"firstname": "Melissa", "lastname": "Lewis"},
+    #  {"firstname": "Mark", "lastname": "Watney"}]
+
+.. code-block:: python
+
+    import json
+    from pprint import pprint
+
+
+    DATA = '[{"firstname": "Jan", "lastname": "Twardowski"}, {"firstname": "Melissa", "lastname": "Lewis"}, {"firstname": "Mark", "lastname": "Watney"}]'
+
+    result = json.loads(DATA)
+    pprint(result)
+    # [{'firstname': 'Jan', 'lastname': 'Twardowski'},
+    #  {'firstname': 'Melissa', 'lastname': 'Lewis'},
+    #  {'firstname': 'Mark', 'lastname': 'Watney'}]
+
+
+.. code-block:: python
+
+    import json
+
+    DATA = [
+        ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+        (5.8, 2.7, 5.1, 1.9, 'virginica'),
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+    ]
+
+    result = json.dumps(DATA)
+    print(result)
+    # [["Sepal length", "Sepal width", "Petal length", "Petal width", "Species"],
+    #  [5.8, 2.7, 5.1, 1.9, "virginica"], [5.1, 3.5, 1.4, 0.2, "setosa"],
+    #  [5.7, 2.8, 4.1, 1.3, "versicolor"], [6.3, 2.9, 5.6, 1.8, "virginica"],
+    #  [6.4, 3.2, 4.5, 1.5, "versicolor"], [4.7, 3.2, 1.3, 0.2, "setosa"]]
+
+.. code-block:: python
+
+    import json
+    from pprint import pprint
+
+
+    DATA = '[["Sepal length", "Sepal width", "Petal length", "Petal width", "Species"], [5.8, 2.7, 5.1, 1.9, "virginica"], [5.1, 3.5, 1.4, 0.2, "setosa"], [5.7, 2.8, 4.1, 1.3, "versicolor"]]'
+
+    result = json.loads(DATA)
+    pprint(result)
+    # [['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'],
+    #  [5.8, 2.7, 5.1, 1.9, 'virginica'],
+    #  [5.1, 3.5, 1.4, 0.2, 'setosa'],
+    #  [5.7, 2.8, 4.1, 1.3, 'versicolor']]
+
+
+Write JSON File
+===============
 * ``json.dump(DATA: dict, file: TextIOWrapper) -> None``
 * file extension ``.json``
 
@@ -109,8 +177,8 @@ Serialize Object to JSON File
     # {"firstname": "Jan", "lastname": "Twardowski"}
 
 
-Deserialize Object from JSON File
-=================================
+Read JSON File
+==============
 * ``json.load(file: TextIOWrapper) -> dict``
 * file extension ``.json``
 
@@ -129,8 +197,8 @@ Deserialize Object from JSON File
     # {'firstname': 'Jan', 'lastname': 'Twardowski'}
 
 
-Serializing Datetime and Date Objects
-=====================================
+Datetime to JSON
+================
 .. code-block:: python
     :caption: Exception during encoding datetime
 
@@ -175,8 +243,8 @@ Serializing Datetime and Date Objects
     print(result)
     # '{"name": "Jan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T02:56:15.000Z"}'
 
-Deserializing Datetime and Date Objects
-=======================================
+JSON to Datetime
+================
 .. code-block:: python
     :caption: Simple loading returns ``str`` not ``datetime`` or ``date``
 
@@ -230,8 +298,8 @@ Deserializing Datetime and Date Objects
     #  'name': 'Jan Twardowski'}
 
 
-Serializing Objects
-===================
+Python Objects to JSON
+======================
 .. code-block:: python
     :caption: Encoding nested objects with relations to JSON
 
@@ -276,6 +344,9 @@ Serializing Objects
     #       {"__class_name__": "Mission", "name": "Apollo 18", "year": 1969},
     #       {"__class_name__": "Mission", "name": "Artemis 3", "year": 2024}]}]
 
+
+JSON to Python Object
+=====================
 .. code-block:: python
     :caption:  Encoding nested objects with relations to JSON
 
