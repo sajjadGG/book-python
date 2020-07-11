@@ -35,12 +35,12 @@ Examples
 Assignments
 ===========
 
-Regexp Search
--------------
+Regexp Search Astronauts
+------------------------
 * Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/search_astronauts.py`
+* Solution: :download:`solution/regexp_search_astronauts.py`
 * References: First paragraph from Apollo 11 Wikipedia entry :cite:`RegexpWikipediaApollo11`
 
 :English:
@@ -65,12 +65,12 @@ Regexp Search
         * Jan Twardowski
         * Mark Watney
 
-Moon Speech (search)
---------------------
+Regexp Search Moon Speech
+-------------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/search_moon_speech.py`
+* Solution: :download:`solution/regexp_search_moon_speech.py`
 * References: "Moon Speech" by John F. Kennedy at Rice Stadium, Houston, TX on 1962-09-12 :cite:`RegexpKennedy1962`
 
 :English:
@@ -85,12 +85,12 @@ Moon Speech (search)
     #. Za pomocą ``re.search()`` podziel tekst na paragrafy
     #. Wyświetl paragraf zaczynający się od słów "We choose to go to the moon"
 
-Search for Any Time
--------------------
+Regexp Search Time
+------------------
 * Complexity level: medium
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/search_time_any.py`
+* Solution: :download:`solution/regexp_search_time.py`
 * References: First paragraph from Apollo 11 Wikipedia entry :cite:`RegexpWikipediaApollo11`
 
 :English:
@@ -105,12 +105,12 @@ Search for Any Time
     #. Użyj uproszczonego sprawdzania: ``##:## UTC``, gdzie ``#`` to dowolna cyfra
     #. Print found time
 
-Search for Valid Time
----------------------
+Regexp Search Datetime
+----------------------
 * Complexity level: hard
 * Lines of code to write: 4 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/search_time_valid.py`
+* Solution: :download:`solution/regexp_search_datetime.py`
 * References: (modified) First paragraph from Apollo 11 Wikipedia entry :cite:`RegexpWikipediaApollo11`
 
 :English:

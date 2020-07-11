@@ -83,11 +83,12 @@ To parse a *URL* url into its component parts, the user agent must use the follo
 Assignments
 ===========
 
-PESEL Validation
-----------------
+Regexp Standards PESEL
+----------------------
 * Complexity level: medium
 * Lines of code to write: 0 lines (**discussion only**)
 * Estimated time of completion: 10 min
+* Solution: :download:`solution/regexp_standards_pesel.py` (naive implementation)
 
 :English:
     .. todo:: English translation

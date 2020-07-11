@@ -71,12 +71,12 @@ Good Engineering Practices
 Assignments
 ===========
 
-Phone Number Validation
------------------------
+Regexp Match Phones
+-------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/match_phones.py`
+* Solution: :download:`solution/regexp_match_phones.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -140,12 +140,12 @@ Phone Number Validation
         False	+48 123555678,1
         False	+48 123555678,1,2,3
 
-Git Flow Branch Names
+Regexp Match Git Flow
 ---------------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
-* Solution: :download:`solution/match_gitflow.py`
+* Solution: :download:`solution/regexp_match_gitflow.py`
 
 :English:
     #. Use regular expressions to validate Git branch names

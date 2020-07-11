@@ -39,12 +39,12 @@ Examples
 Assignments
 ===========
 
-Finding Dates
--------------
+Regexp Find Dates
+-----------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/find_dates.py`
+* Solution: :download:`solution/regexp_find_dates.py`
 * References: :cite:`RegexpWikipediaApollo11`
 
 :English:
