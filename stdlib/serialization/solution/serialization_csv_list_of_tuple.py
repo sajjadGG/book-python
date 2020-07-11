@@ -31,6 +31,6 @@ header, *data = DATA
 data = [dict(zip(header, row)) for row in data]
 
 with open(FILE, mode='w', encoding='utf-8') as file:
-    writer = csv.DictWriter(file, fieldnames=header, delimiter=',', quotechar='"')
-    writer.writeheader()
-    writer.writerows(data)
+    result = csv.DictWriter(file, fieldnames=header, delimiter=',', quotechar='"')
+    result.writeheader()
+    result.writerows(data)

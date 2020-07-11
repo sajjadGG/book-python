@@ -26,7 +26,7 @@ CREW = [
     Astronaut('Melissa', 'Lewis'),
 ]
 
-result = []
+astronauts = []
 
 for astronaut in CREW:
     experience = []
@@ -37,19 +37,18 @@ for astronaut in CREW:
 
     astro = astronaut.__dict__
     astro['experience'] = '; '.join(experience)
-    result.append(astro)
+    astronauts.append(astro)
 
 
 fieldnames = set()
 
-for contact in result:
+for contact in astronauts:
     for field_name in contact.keys():
         fieldnames.add(field_name)
 
 
 with open(FILE, mode='w', encoding='utf-8') as file:
-
-    writer = csv.DictWriter(
+    result = csv.DictWriter(
         f=file,
         fieldnames=sorted(fieldnames, reverse=True),
         delimiter=',',
@@ -57,7 +56,5 @@ with open(FILE, mode='w', encoding='utf-8') as file:
         quoting=csv.QUOTE_ALL,
         lineterminator='\n')
 
-    writer.writeheader()
-
-    for row in result:
-        writer.writerow(row)
+    result.writeheader()
+    result.writerows(astronauts)

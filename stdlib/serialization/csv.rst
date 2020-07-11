@@ -14,29 +14,27 @@ Dialects
     csv.list_dialects()
     # ['excel', 'excel-tab', 'unix']
 
-* CSV quoting options:
+* ``quoting`` options:
 
-    * ``csv.QUOTE_ALL``
-    * ``csv.QUOTE_MINIMAL``
+    * ``csv.QUOTE_ALL`` (safest)
+    * ``csv.QUOTE_MINIMAL`` (best)
     * ``csv.QUOTE_NONE``
     * ``csv.QUOTE_NONNUMERIC``
 
-* Good practice is to always specify:
+* ``quotechar`` options:
 
-    * ``delimiter=','`` to  ``csv.DictReader()`` object
-    * ``quotechar='"'`` to ``csv.DictReader()`` object
-    * ``quoting=csv.QUOTE_ALL`` to ``csv.DictReader()`` object
-    * ``lineterminator='\n'`` to ``csv.DictReader()`` object
-    * ``encoding='utf-8'`` to ``open()`` function (especially when working with Microsoft Excel)
+    * ``'`` - apostrophe
+    * ``"`` - quote char (best)
+    * ``|`` - pipe
+    * None - no delimeter
 
-* Microsoft Excel 2016 uses:
+* ``lineterminator`` options:
 
-    * ``quotechar='"'``
-    * ``delimiter=','``
-    * ``lineterminator='\n'``
-    * ``encoding='...'`` - depends on Windows version and settings
+    * ``\r\n`` - New line on Windows
+    * ``\n`` - New line on ``*nix``
+    * ``*nix`` operating systems: Linux, macOS, BSD and other POSIX compliant OSes (excluding Windows)
 
-* Encoding:
+* ``encoding`` options:
 
     * ``utf-8`` - international standard (should be always used!)
     * ``iso-8859-1`` - ISO standard for Western Europe and USA
@@ -46,15 +44,22 @@ Dialects
     * ``cp1252`` or ``windows-1252`` - Western European encoding on Windows
     * ``ASCII`` - ASCII characters only
 
+* Microsoft Excel 2016 uses:
 
-Read data from CSV file
-=======================
+    * ``quotechar='"'``
+    * ``delimiter=','``
+    * ``lineterminator='\n'``
+    * ``encoding='...'`` - depends on Windows version and settings typically ``windows-*``
+
+
+Reader Object
+=============
 .. code-block:: python
-    :caption: Read data from CSV file using ``csv.DictReader()``
+    :caption: Read data from CSV file using ``csv.reader()``
 
     import csv
 
-    FILE = r'/tmp/iris.csv'
+    FILE = r'/tmp/csv-reader.csv'
     # sepal_length,sepal_width,petal_length,petal_width,species
     # 5.4,3.9,1.3,0.4,setosa
     # 5.9,3.0,5.1,1.8,virginica
@@ -62,9 +67,62 @@ Read data from CSV file
 
 
     with open(FILE) as file:
-        data = csv.DictReader(file, delimiter=',')
+        result = csv.reader(file)
 
-        for line in data:
+        for line in result:
+            print(line)
+
+    # ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
+    # ['5.4', '3.9', '1.3', '0.4', 'setosa']
+    # ['5.9', '3.0', '5.1', '1.8', 'virginica']
+    # ['6.0', '3.4', '4.5', '1.6', 'versicolor']
+
+
+Writer Object
+=============
+.. code-block:: python
+    :caption: Writing data to CSV file using ``csv.writer()``
+
+    import csv
+
+    FILE = r'/tmp/csv-writer.csv'
+
+    DATA = [
+        ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+        (5.8, 2.7, 5.1, 1.9, 'virginica'),
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+    ]
+
+    with open(FILE, mode='w') as file:
+        result = csv.writer(file)
+        result.writerows(DATA)
+
+
+    # Sepal length,Sepal width,Petal length,Petal width,Species
+    # 5.8,2.7,5.1,1.9,virginica
+    # 5.1,3.5,1.4,0.2,setosa
+    # 5.7,2.8,4.1,1.3,versicolor
+
+
+DictReader
+==========
+.. code-block:: python
+    :caption: Read data from CSV file using ``csv.DictReader()``
+
+    import csv
+
+    FILE = r'/tmp/csv-dictreader.csv'
+    # sepal_length,sepal_width,petal_length,petal_width,species
+    # 5.4,3.9,1.3,0.4,setosa
+    # 5.9,3.0,5.1,1.8,virginica
+    # 6.0,3.4,4.5,1.6,versicolor
+
+
+    with open(FILE) as file:
+        result = csv.DictReader(file)
+
+        for line in result:
             print(line)
 
     # {'sepal_length': '5.4', 'sepal_width': '3.9', 'petal_length': '1.3', 'petal_width': '0.4', 'species': 'setosa'}
@@ -76,7 +134,7 @@ Read data from CSV file
 
     import csv
 
-    FILE = r'/tmp/iris.csv'
+    FILE = r'/tmp/csv-dictreader.csv'
     # 'sepal_length';'sepal_width';'petal_length';'petal_width';'species'
     # '5,4';'3,9';'1,3';'0,4';'setosa'
     # '5,9';'3,0';'5,1';'1,8';'virginica'
@@ -98,9 +156,9 @@ Read data from CSV file
 
 
     with open(FILE) as file:
-        data = csv.DictReader(file, delimiter=';', quotechar="'")
+        result = csv.DictReader(file, delimiter=';', quotechar="'")
 
-        for line in data:
+        for line in result:
             print(clean(line))
 
 
@@ -114,7 +172,7 @@ Read data from CSV file
 
     import csv
 
-    FILE = r'/tmp/iris.csv'
+    FILE = r'/tmp/csv-dictreader.csv'
     # sepal_length,sepal_width,petal_length,petal_width,species
     # 5.4,3.9,1.3,0.4,setosa
     # 5.9,3.0,5.1,1.8,virginica
@@ -130,10 +188,10 @@ Read data from CSV file
 
 
     with open(FILE) as file:
-        data = csv.DictReader(file, fieldnames=FIELDNAMES, delimiter=',')
-        header = file.readline()
+        result = csv.DictReader(file, fieldnames=FIELDNAMES, delimiter=',')
+        file.readline()  # skip first line
 
-        for line in data:
+        for line in result:
             print(line)
 
     # {'Sepal Length': '5.4', 'Sepal Width': '3.9', 'Petal Length': '1.3', 'Petal Width': '0.4', 'Species': 'setosa'}
@@ -141,17 +199,43 @@ Read data from CSV file
     # {'Sepal Length': '6.0', 'Sepal Width': '3.4', 'Petal Length': '4.5', 'Petal Width': '1.6', 'Species': 'versicolor'}
 
 
-Write data to CSV file
-======================
+DictWriter
+==========
 * Remember to add ``mode='w'`` to ``open()`` function
 * Default encoding is ``encoding='utf-8'``
+
+.. code-block:: python
+
+    import csv
+
+    FILE = r'/tmp/csv-dictwriter.csv'
+
+    DATA = [
+        {'Sepal Length': 5.4, 'Sepal Width': 3.9, 'Petal Length': 1.3, 'Petal Width': 0.4, 'Species': 'setosa'},
+        {'Sepal Length': 5.9, 'Sepal Width': 3.0, 'Petal Length': 5.1, 'Petal Width': 1.8, 'Species': 'virginica'},
+        {'Sepal Length': 6.0, 'Sepal Width': 3.4, 'Petal Length': 4.5, 'Petal Width': 1.6, 'Species': 'versicolor'},
+    ]
+
+    header = DATA[0].keys()
+
+    with open(FILE, mode='w') as file:
+        result = csv.DictWriter(file, fieldnames=header)
+        result.writeheader()
+        result.writerows(DATA)
+
+
+    # Sepal Length,Sepal Width,Petal Length,Petal Width,Species
+    # 5.4,3.9,1.3,0.4,setosa
+    # 5.9,3.0,5.1,1.8,virginica
+    # 6.0,3.4,4.5,1.6,versicolor
+
 
 .. code-block:: python
     :caption: Write data to CSV file using ``csv.DictWriter()``
 
     import csv
 
-    FILE = r'/tmp/iris.csv'
+    FILE = r'/tmp/csv-dictwriter.csv'
 
     DATA = [
         {'sepal_length': 5.4, 'sepal_width': 3.9, 'petal_length': 1.3, 'petal_width': 0.4, 'species': 'setosa'},
@@ -168,7 +252,7 @@ Write data to CSV file
     ]
 
     with open(FILE, mode='w', encoding='utf-8') as file:
-        writer = csv.DictWriter(
+        result = csv.DictWriter(
             f=file,
             fieldnames=FIELDNAMES,
             delimiter=',',
@@ -176,8 +260,8 @@ Write data to CSV file
             quoting=csv.QUOTE_ALL,
             lineterminator='\n')
 
-        writer.writeheader()
-        writer.writerows(DATA)
+        result.writeheader()
+        result.writerows(DATA)
 
     # "sepal_length","sepal_width","petal_length","petal_width","species"
     # "5.4","3.9","1.3","0.4","setosa"
@@ -187,9 +271,6 @@ Write data to CSV file
 
 Parsing non-CSV files
 =====================
-
-Parsing ``/etc/passwd``
------------------------
 .. code-block:: python
     :caption: Parsing ``/etc/passwd`` file with ``csv.DictReader()``
 
@@ -203,14 +284,14 @@ Parsing ``/etc/passwd``
     # twardowski:x:1002:1002:Jan Twardowski:/home/twardowski:/bin/bash
 
     with open(FILE) as file:
-        data = csv.DictReader(
+        result = csv.DictReader(
             file,
             fieldnames=['username', 'password', 'uid', 'gid', 'full_name', 'home', 'shell'],
             delimiter=':',
             lineterminator='\n',
             quoting=csv.QUOTE_NONE)
 
-        for line in data:
+        for line in result:
             print(line)
 
     # {'username': 'root', 'password': 'x', 'uid': '0',...}
@@ -218,8 +299,6 @@ Parsing ``/etc/passwd``
     # {'username': 'jimenez', 'password': 'x', 'uid': '1001',...}
     # {'username': 'twardowski', 'password': 'x', 'uid': '1002',...}
 
-Parsing Java properties file
-----------------------------
 .. code-block:: python
     :caption: Parsing Java properties file with ``csv.DictReader()``
 
@@ -234,15 +313,14 @@ Parsing Java properties file
     # sonar.verbose=true
 
     with open(FILE) as file:
-
-        data = csv.DictReader(
+        result = csv.DictReader(
             file,
             fieldnames=['property', 'value'],
             delimiter='=',
             lineterminator='\n',
             quoting=csv.QUOTE_NONE)
 
-        for line in data:
+        for line in result:
             print(line)
 
     # {'property': 'sonar.projectKey', 'value': 'habitatOS'}
@@ -250,6 +328,17 @@ Parsing Java properties file
     # {'property': 'sonar.language', 'value': 'py'}
     # {'property': 'sonar.sourceEncoding', 'value': 'UTF-8'}
     # {'property': 'sonar.verbose', 'value': 'true'}
+
+
+Good Practice
+=============
+* Always specify:
+
+    * ``delimiter=','`` to  ``csv.DictReader()`` object
+    * ``quotechar='"'`` to ``csv.DictReader()`` object
+    * ``quoting=csv.QUOTE_ALL`` to ``csv.DictReader()`` object
+    * ``lineterminator='\n'`` to ``csv.DictReader()`` object
+    * ``encoding='utf-8'`` to ``open()`` function (especially when working with Microsoft Excel)
 
 
 Assignments

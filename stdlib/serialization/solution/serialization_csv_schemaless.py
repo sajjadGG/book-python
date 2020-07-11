@@ -18,7 +18,7 @@ for row in DATA:
 # fieldnames == {'Sepal length', 'Sepal width', 'Petal length', 'Species', 'Petal width'}
 
 with open(FILENAME, mode='w') as file:
-    writer = DictWriter(
+    result = DictWriter(
         f=file,
         fieldnames=sorted(fieldnames),
         delimiter=',',
@@ -26,7 +26,5 @@ with open(FILENAME, mode='w') as file:
         quoting=QUOTE_ALL,
         lineterminator='\n')
 
-    writer.writeheader()
-
-    for row in DATA:
-        writer.writerow(row)
+    result.writeheader()
+    result.writerows(DATA)

@@ -16,7 +16,7 @@ Rationale
     * Always use raw-strings ``r"..."``
     * Paths on Windows uses ``\``
     * Paths on ``*nix`` uses ``/``
-    * ``*nix`` operating systems: Linux, macOS, BSD and other POSIX compliant OSes
+    * ``*nix`` operating systems: Linux, macOS, BSD and other POSIX compliant OSes (excluding Windows)
     * In newer Windows versions both ``\`` and ``/`` works
 
 

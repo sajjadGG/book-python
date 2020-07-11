@@ -14,11 +14,11 @@ FIELDNAMES = [
 with open(FILE) as file:
     header = file.readline()
 
-    data = DictReader(
+    result = DictReader(
         f=file,
         fieldnames=FIELDNAMES,
         delimiter=',',
         quoting=QUOTE_NONE)
 
-    for row in data:
+    for row in result:
         print(row)

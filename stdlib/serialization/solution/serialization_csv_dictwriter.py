@@ -12,7 +12,7 @@ DATA = [
 
 
 with open(FILE, mode='w', encoding='utf-8') as file:
-    writer = DictWriter(
+    result = DictWriter(
         f=file,
         fieldnames=['firstname', 'lastname'],
         delimiter=',',
@@ -20,5 +20,5 @@ with open(FILE, mode='w', encoding='utf-8') as file:
         quoting=QUOTE_ALL,
         lineterminator='\n')
 
-    writer.writeheader()
-    writer.writerows(DATA)
+    result.writeheader()
+    result.writerows(DATA)
