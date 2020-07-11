@@ -3,8 +3,9 @@ Serialization JSON
 ******************
 
 
-JSON syntax
+JSON Syntax
 ===========
+* JavaScript Object Notation
 * JSON format is similar to ``dict`` notation in Python
 * Differences:
 
@@ -48,20 +49,11 @@ JSON syntax
             {"street": "Linder Hoehe", "city": "Köln", "post_code": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}
     ]
 
-JSON Serialization of simple objects
-====================================
-To file:
 
-    * ``json.dump(DATA: dict, file: TextIOWrapper) -> None``
-    * ``json.load(file: TextIOWrapper) -> None``
+Serialize Object to JSON String
+===============================
+* ``json.dumps(DATA: dict) -> str``
 
-To string:
-
-    * ``json.dumps(DATA: dict) -> str``
-    * ``json.loads(DATA: str) -> dict``
-
-Serialize to JSON
------------------
 .. code-block:: python
     :caption: Serialize to JSON
 
@@ -70,15 +62,17 @@ Serialize to JSON
 
     DATA = {
         'firstname': 'Jan',
-        'lastname': 'Twardowski'
-    }
+        'lastname': 'Twardowski'}
 
     result = json.dumps(DATA)
     print(result)
     # '{"firstname": "Jan", "lastname": "Twardowski"}'
 
-Deserialize from JSON
----------------------
+
+Deserialize Objects from JSON String
+====================================
+* ``json.loads(DATA: str) -> dict``
+
 .. code-block:: python
     :caption: Deserialize from JSON
 
@@ -89,19 +83,54 @@ Deserialize from JSON
 
     result = json.loads(DATA)
     print(result)
-    # {
-    #     'firstname': 'Jan',
-    #     'lastname': 'Twardowski'
-    # }
+    # {'firstname': 'Jan',
+    #  'lastname': 'Twardowski'}
 
 
-Serializing ``datetime`` and ``date``
+Serialize Object to JSON File
+=============================
+* ``json.dump(DATA: dict, file: TextIOWrapper) -> None``
+* file extension ``.json``
+
+.. code-block:: python
+    :caption: Serialize to JSON
+
+    import json
+
+
+    FILE = '/tmp/json-dump.json'
+    DATA = {
+        'firstname': 'Jan',
+        'lastname': 'Twardowski'}
+
+    with open(FILE, mode='w') as file:
+        json.dump(DATA, file)
+
+    # {"firstname": "Jan", "lastname": "Twardowski"}
+
+
+Deserialize Object from JSON File
+=================================
+* ``json.load(file: TextIOWrapper) -> dict``
+* file extension ``.json``
+
+.. code-block:: python
+    :caption: Serialize to JSON
+
+    import json
+
+
+    FILE = '/tmp/json-loads.json'
+
+
+    with open(FILE) as file:
+        result = json.load(file)
+
+    # {'firstname': 'Jan', 'lastname': 'Twardowski'}
+
+
+Serializing Datetime and Date Objects
 =====================================
-
-Encoding ``datetime`` and ``date``
-----------------------------------
-* Encoder will be used, when standard procedure fails
-
 .. code-block:: python
     :caption: Exception during encoding datetime
 
@@ -119,7 +148,7 @@ Encoding ``datetime`` and ``date``
     # TypeError: Object of type date is not JSON serializable
 
 .. code-block:: python
-    :caption: Encoding ``datetime`` and ``date``
+    :caption: Encoding ``datetime`` and ``date``. Encoder will be used, when standard procedure fails
 
     from datetime import datetime, date
     import json
@@ -146,30 +175,29 @@ Encoding ``datetime`` and ``date``
     print(result)
     # '{"name": "Jan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T02:56:15.000Z"}'
 
-
-Decoding ``datetime`` and ``date``
-----------------------------------
+Deserializing Datetime and Date Objects
+=======================================
 .. code-block:: python
     :caption: Simple loading returns ``str`` not ``datetime`` or ``date``
 
     import json
+    from pprint import pprint
 
 
     DATA = '{"name": "Jan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T02:56:15.000Z"}'
 
     result = json.loads(DATA)
-    print(result)
-    # {
-    #     'name': 'Jan Twardowski',
-    #     'date': '1961-04-12',
-    #     'datetime': '1969-07-21T02:56:15.000Z',
-    # }
+    pprint(result)
+    # {'date': '1961-04-12',
+    #  'datetime': '1969-07-21T02:56:15.000Z',
+    #  'name': 'Jan Twardowski'}
 
 .. code-block:: python
     :caption: Decoding ``datetime`` and ``date``
 
     from datetime import datetime, timezone
     import json
+    from pprint import pprint
 
 
     DATA = '{"name": "Jan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T02:56:15.000Z"}'
@@ -196,21 +224,14 @@ Decoding ``datetime`` and ``date``
 
 
     result = json.loads(DATA, cls=JSONDatetimeDecoder)
-    print(result)
-    # {
-    #     'name': 'Jan Twardowski',
-    #     'date': date(1961, 4, 12),
-    #     'datetime': datetime(1969, 7, 21, 2, 56, 15, tzinfo=datetime.timezone.utc),
-    # }
+    pprint(result)
+    # {'date': datetime.date(1961, 4, 12),
+    #  'datetime': datetime.datetime(1969, 7, 21, 2, 56, 15, tzinfo=datetime.timezone.utc),
+    #  'name': 'Jan Twardowski'}
 
 
-Serializing objects
+Serializing Objects
 ===================
-
-Encoding nested objects with relations to JSON
-----------------------------------------------
-* Encoder will be used, when standard procedure fails
-
 .. code-block:: python
     :caption: Encoding nested objects with relations to JSON
 
@@ -230,14 +251,12 @@ Encoding nested objects with relations to JSON
 
 
     CREW = [
+        Astronaut('Melissa Lewis'),
+        Astronaut('Mark Watney', missions=(
+            Mission(2035, 'Ares 3'))),
         Astronaut('Jan Twardowski', missions=(
             Mission(1969, 'Apollo 18'),
             Mission(2024, 'Artemis 3'))),
-
-        Astronaut('Mark Watney', missions=(
-            Mission(2035, 'Ares 3'))),
-
-        Astronaut('Melissa Lewis'),
     ]
 
 
@@ -250,48 +269,23 @@ Encoding nested objects with relations to JSON
 
     result = json.dumps(CREW, cls=JSONObjectEncoder, sort_keys=True, indent=2)
     print(result)
-    # [
-    #   {
-    #     "name": "Jan Twardowski",
-    #     "missions": [
-    #       {
-    #         "year": 1969,
-    #         "name": "Apollo 18",
-    #         "__class_name__": "Mission"
-    #       },
-    #       {
-    #         "year": 2024,
-    #         "name": "Artemis 3",
-    #         "__class_name__": "Mission"
-    #       }
-    #     ],
-    #     "__class_name__": "Astronaut"
-    #   },
-    #   {
-    #     "name": "Mark Watney",
-    #     "missions": {
-    #       "year": 2035,
-    #       "name": "Ares 3",
-    #       "__class_name__": "Mission"
-    #     },
-    #     "__class_name__": "Astronaut"
-    #   },
-    #   {
-    #     "name": "Melissa Lewis",
-    #     "missions": [],
-    #     "__class_name__": "Astronaut"
-    #   }
-    # ]
+    # [{"__class_name__": "Astronaut", "name": "Melissa Lewis", "missions": []},
+    #  {"__class_name__": "Astronaut", "name": "Mark Watney", "missions": [
+    #       {"__class_name__": "Mission", "name": "Ares 3", "year": 2035}]},
+    #  {"__class_name__": "Astronaut", "name": "Jan Twardowski", "missions": [
+    #       {"__class_name__": "Mission", "name": "Apollo 18", "year": 1969},
+    #       {"__class_name__": "Mission", "name": "Artemis 3", "year": 2024}]}]
 
-Decoding nested objects with relations to JSON
-----------------------------------------------
 .. code-block:: python
     :caption:  Encoding nested objects with relations to JSON
 
     import json
     import sys
 
-    DATA = """[{"name": "Jan Twardowski", "missions": [{"year": 1969, "name": "Apollo 18", "__class_name__": "Mission"}, {"year": 2024, "name": "Artemis 3", "__class_name__": "Mission"}], "__class_name__": "Astronaut"}, {"name": "Mark Watney", "missions": {"year": 2035, "name": "Ares 3", "__class_name__": "Mission"}, "__class_name__": "Astronaut"}, {"name": "Melissa Lewis", "missions": [], "__class_name__": "Astronaut"}]"""
+    DATA = """[{"__class_name__": "Astronaut", "missions": [], "name": "Melissa Lewis"}, {"__class_name__": "Astronaut",
+    "missions": {"__class_name__": "Mission", "name": "Ares 3", "year": 2035}, "name": "Mark Watney"}, {"__class_name__":
+    "Astronaut", "missions": [{"__class_name__": "Mission", "name": "Apollo 18", "year": 1969}, {"__class_name__": "Mission",
+    "name": "Artemis 3", "year": 2024}], "name": "Jan Twardowski"}]"""
 
 
     class Astronaut:
@@ -300,7 +294,7 @@ Decoding nested objects with relations to JSON
             self.missions = missions
 
         def __repr__(self):
-            return f'\n\nAstronaut(name="{self.name}", missions={self.missions})'
+            return f'\nAstronaut(name="{self.name}", missions={self.missions})'
 
 
     class Mission:
@@ -324,22 +318,18 @@ Decoding nested objects with relations to JSON
 
     result = json.loads(DATA, cls=JSONObjectDecoder)
     print(result)
-    # Astronaut(name="Jan Twardowski", missions=[
-    #    Mission(year=1969, name="Apollo 18"),
-    #    Mission(year=2024, name="Artemis 3")]),
-    #
+    # [
+    # Astronaut(name="Melissa Lewis", missions=[]),
     # Astronaut(name="Mark Watney", missions=
-    #    Mission(year=2035, name="Ares 3")),
-    #
-    # Astronaut(name="Melissa Lewis", missions=[])]
+    #     Mission(year=2035, name="Ares 3")),
+    # Astronaut(name="Jan Twardowski", missions=[
+    #     Mission(year=1969, name="Apollo 18"),
+    #     Mission(year=2024, name="Artemis 3")])]
 
 
 Pretty Printing JSON
 ====================
-
-JSON can be minified
---------------------
-* Save space for network transmission
+* JSON can be minified to save space for network transmission
 * It is not very readable
 
 .. code-block:: console
@@ -349,8 +339,6 @@ JSON can be minified
     $ curl $DATA
     [{"sepalLength":5.1,"sepalWidth":3.5,"petalLength":1.4,"petalWidth":0.2,"species":"setosa"},{"sepalLength":4.9,"sepalWidth":3,"petalLength":1.4,"petalWidth":0.2,"species":"setosa"},{"sepalLength":4.7,"sepalWidth":3.2,"petalLength":1.3,"petalWidth":0.2,"species":"setosa"},{"sepalLength":4.6,"sepalWidth":3.1,"petalLength":1.5,"petalWidth":0.2,"species":"setosa"},{"sepalLength":5,"sepalWidth":3.6,"petalLength":1.4,"petalWidth":0.2,"species":"setosa"},{"sepalLength":5.4,"sepalWidth":3.9,"petalLength":1.7,"petalWidth":0.4,"species":"setosa"},{"sepalLength":4.6,"sepalWidth":3.4,"petalLength":1.4,"petalWidth":0.3,"species":"setosa"},{"sepalLength":5,"sepalWidth":3.4,"petalLength":1.5,"petalWidth":0.2,"species":"setosa"},{"sepalLength":4.4,"sepalWidth":2.9,"petalLength":1.4,"petalWidth":0.2,"species":"setosa"},{"sepalLength":4.9,"sepalWidth":3.1,"petalLength":1.5,"petalWidth":0.1,"species":"setosa"},{"sepalLength":7,"sepalWidth":3.2,"petalLength":4.7,"petalWidth":1.4,"species":"versicolor"},{"sepalLength":6.4,"sepalWidth":3.2,"petalLength":4.5,"petalWidth":1.5,"species":"versicolor"},{"sepalLength":6.9,"sepalWidth":3.1,"petalLength":4.9,"petalWidth":1.5,"species":"versicolor"},{"sepalLength":5.5,"sepalWidth":2.3,"petalLength":4,"petalWidth":1.3,"species":"versicolor"},{"sepalLength":6.5,"sepalWidth":2.8,"petalLength":4.6,"petalWidth":1.5,"species":"versicolor"},{"sepalLength":5.7,"sepalWidth":2.8,"petalLength":4.5,"petalWidth":1.3,"species":"versicolor"},{"sepalLength":6.3,"sepalWidth":3.3,"petalLength":4.7,"petalWidth":1.6,"species":"versicolor"},{"sepalLength":4.9,"sepalWidth":2.4,"petalLength":3.3,"petalWidth":1,"species":"versicolor"},{"sepalLength":6.6,"sepalWidth":2.9,"petalLength":4.6,"petalWidth":1.3,"species":"versicolor"},{"sepalLength":5.2,"sepalWidth":2.7,"petalLength":3.9,"petalWidth":1.4,"species":"versicolor"},{"sepalLength":6.3,"sepalWidth":3.3,"petalLength":6,"petalWidth":2.5,"species":"virginica"},{"sepalLength":5.8,"sepalWidth":2.7,"petalLength":5.1,"petalWidth":1.9,"species":"virginica"},{"sepalLength":7.1,"sepalWidth":3,"petalLength":5.9,"petalWidth":2.1,"species":"virginica"},{"sepalLength":6.3,"sepalWidth":2.9,"petalLength":5.6,"petalWidth":1.8,"species":"virginica"},{"sepalLength":6.5,"sepalWidth":3,"petalLength":5.8,"petalWidth":2.2,"species":"virginica"},{"sepalLength":7.6,"sepalWidth":3,"petalLength":6.6,"petalWidth":2.1,"species":"virginica"},{"sepalLength":4.9,"sepalWidth":2.5,"petalLength":4.5,"petalWidth":1.7,"species":"virginica"},{"sepalLength":7.3,"sepalWidth":2.9,"petalLength":6.3,"petalWidth":1.8,"species":"virginica"},{"sepalLength":6.7,"sepalWidth":2.5,"petalLength":5.8,"petalWidth":1.8,"species":"virginica"},{"sepalLength":7.2,"sepalWidth":3.6,"petalLength":6.1,"petalWidth":2.5,"species":"virginica"}]
 
-Pretty Printing JSON
---------------------
 .. code-block:: console
     :caption: Pretty Printing JSON
 
@@ -371,17 +359,8 @@ Pretty Printing JSON
             "sepalWidth": 3,
             "species": "setosa"
         },
-        {
-            "petalLength": 1.3,
-            "petalWidth": 0.2,
-            "sepalLength": 4.7,
-            "sepalWidth": 3.2,
-            "species": "setosa"
-        },
     ...
 
-Check JSON syntax validity
---------------------------
 .. code-block:: console
     :caption: ``json.tool`` checks JSON syntax validity
 
