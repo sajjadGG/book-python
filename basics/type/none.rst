@@ -19,26 +19,23 @@ Type Definition
     data = None
 
 
-Comparision
-===========
+Comparison
+==========
 .. highlights::
     * Do not use ``==`` or ``!=`` to check ``None`` values (it works, but you shouldn't)
+    * ``x is None`` - ``x`` is the same object as ``y``
+    * ``x is not None`` - ``x`` is not the same object as ``y``
 
 .. code-block:: python
+    :caption: Do not use ``==`` or ``!=`` to check ``None`` values (it works, but you shouldn't)
 
     age = None
 
     age == None             # True
     age != None             # False
 
-
-Identity
-========
-.. highlights::
-    * ``x is None`` - ``x`` is the same object as ``y``
-    * ``x is not None`` - ``x`` is not the same object as ``y``
-
 .. code-block:: python
+    :caption: Use identity checking for ``None`` values
 
     age = None
 
