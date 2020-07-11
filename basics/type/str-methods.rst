@@ -179,6 +179,17 @@ Join by Character
     # Melissa Lewis
 
 
+Expand Tabs
+===========
+.. code-block:: python
+
+    '01\t012\t0123\t01234'.expandtabs()
+    # '01      012     0123    01234'
+
+    '01\t012\t0123\t01234'.expandtabs(4)
+    #'01  012 0123    01234'
+
+
 Is Whitespace
 =============
 .. code-block:: python
@@ -195,13 +206,61 @@ Is Whitespace
     ISS - International Space Station.
     Credits: NASA/Crew of STS-132 (img: s132e012208).
 
-
 Is Alphabet Characters
 ======================
 .. code-block:: python
 
     'hello'.isalpha()   # True
     'hello1'.isalpha()  # False
+
+
+Is Numeric
+==========
+* https://docs.python.org/library/stdtypes.html#str.isdecimal
+* https://docs.python.org/library/stdtypes.html#str.isdigit
+* https://docs.python.org/library/stdtypes.html#str.isnumeric
+* https://docs.python.org/library/stdtypes.html#str.isalnum
+
+.. code-block:: python
+
+    '1'.isdecimal()     # True
+    '+1'.isdecimal()    # False
+    '-1'.isdecimal()    # False
+    '1.'.isdecimal()    # False
+    '1,'.isdecimal()    # False
+    '1.0'.isdecimal()   # False
+    '1,0'.isdecimal()   # False
+    '1_0'.isdecimal()   # False
+    '10'.isdecimal()    # True
+
+    '1'.isdigit()       # True
+    '+1'.isdigit()      # False
+    '-1'.isdigit()      # False
+    '1.'.isdigit()      # False
+    '1,'.isdigit()      # False
+    '1.0'.isdigit()     # False
+    '1,0'.isdigit()     # False
+    '1_0'.isdigit()     # False
+    '10'.isdigit()      # True
+
+    '1'.isnumeric()     # True
+    '+1'.isnumeric()    # False
+    '-1'.isnumeric()    # False
+    '1.'.isnumeric()    # False
+    '1.0'.isnumeric()   # False
+    '1,0'.isnumeric()   # False
+    '1_0'.isnumeric()   # False
+    '10'.isnumeric()    # True
+
+    '1'.isalnum()       # True
+    '+1'.isalnum()      # False
+    '-1'.isalnum()      # False
+    '1.'.isalnum()      # False
+    '1,'.isalnum()      # False
+    '1.0'.isalnum()     # False
+    '1,0'.isalnum()     # False
+    '1_0'.isalnum()     # False
+    '10'.isalnum()      # True
 
 
 Find Sub-String Position

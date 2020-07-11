@@ -67,6 +67,8 @@ Pandas
 
 Python PEP
 ==========
+* str.isfloat()
+* str.isint()
 * datetime time.now()
 * type_check decorator, sprawdzający ``function.__annotations__``
 * dict(keys=[...], values=[...])

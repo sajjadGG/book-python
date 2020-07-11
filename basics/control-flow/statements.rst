@@ -262,8 +262,8 @@ Else
     # No
 
 
-Inline If
-=========
+Conditional Expression
+======================
 .. code-block:: python
     :caption: Normal ``if``
 
@@ -285,6 +285,13 @@ Inline If
 
     print(job)
     # astronaut
+
+.. code-block:: python
+    :caption: :ref:`https://python.astrotech.io/basics/type/str-methods.html#is-numeric`
+
+    age = input('What is your age?: ')
+    age = float(age) if age.isnumeric() else None
+    print(age)
 
 
 Elif

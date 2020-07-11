@@ -124,6 +124,59 @@ Reading File as Generator
             print(line)
 
 
+Examples
+========
+.. code-block:: python
+
+    def isnumeric(x):
+        try:
+            float(x)
+            return True
+        except ValueError:
+            return False
+
+
+    def clean(line):
+        line = line.strip().split(',')
+        line = map(lambda x: float(x) if isnumeric(x) else x, line)
+        return tuple(line)
+
+
+    with open(FILE) as file:
+        header = clean(file.readline())
+
+        for line in file:
+            line = clean(line)
+            print(line)
+
+.. code-block:: python
+
+    total = 0
+
+    with open(FILE) as file:
+        for line in file;
+            total += sum(line)
+
+    print(total)
+
+.. code-block:: python
+
+    moving_average = 0
+    tmp = []
+
+    with open(FILE) as file:
+        for i, line in enumerate(file):
+            line = line.strip().split(',')
+            values = [x for x in line if x.isnumeric()]
+            tmp.append(sum(values) / len(values))
+
+            if i % 100_000 == 0:
+                moving_average += sum(tmp) / len(tmp)
+                tmp = []
+
+    print(mean)
+
+
 Assignments
 ===========
 

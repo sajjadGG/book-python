@@ -4,6 +4,11 @@
 File Access Modes
 *****************
 
+Text and Binary
+===============
+* Text - easy to read and write
+* Binary - Fast and efficient
+
 
 Write
 =====
@@ -20,7 +25,7 @@ Write
     FILE = r'/tmp/myfile.txt'
     data = 'We choose to go to the Moon...'
 
-    with open(FILE, mode='w'):
+    with open(FILE, mode='w') as file:
         file.write(data)
 
 
@@ -39,13 +44,14 @@ Append
     FILE = r'/tmp/myfile.txt'
     data = 'We choose to go to the Moon...'
 
-    with open(FILE, mode='a'):
+    with open(FILE, mode='a') as file:
         file.write(data)
 
 
 Read
 ====
 .. highlights::
+    * file must exists prior reading
     * ``mode='rt'`` - read in text mode (default)
     * ``mode='rb'`` - read in binary mode
     * ``mode='r'`` - read in text mode (alias to "wt")
@@ -58,14 +64,14 @@ Read
 
     FILE = r'/tmp/myfile.txt'
 
-    with open(FILE):
+    with open(FILE) as file:
         data = file.read()
 
 .. code-block:: python
 
     FILE = r'/tmp/myfile.txt'
 
-    with open(FILE, mode='r'):
+    with open(FILE, mode='r') as file:
         data = file.read()
 
 

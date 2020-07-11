@@ -82,6 +82,69 @@ Escaping Characters in Path
 
     # Success!
 
+.. code-block:: python
+
+    FILE = r'C:\Users\Admin\myfile.txt'
+
+    repr(FILE)
+    # "'C:\\\\Users\\\\Admin\\\\myfile.txt'"
+
+    str(FILE)
+    # 'C:\\Users\\Admin\\myfile.txt'
+
+    print(repr(FILE))
+    # 'C:\\Users\\Admin\\myfile.txt'
+
+    print(FILE)
+    # C:\Users\Admin\myfile.txt
+
+Create Directories
+==================
+.. code-block:: python
+
+    from os import mkdir
+
+
+    mkdir('/tmp/a')
+    # directory /tmp/a created
+
+    mkdir('/tmp/a/b/c')
+    # FileNotFoundError: [Errno 2] No such file or directory: '/tmp/a/b/c'
+
+.. code-block:: python
+
+    from os import makedirs
+
+
+    makedirs('/tmp/a')
+    # directory /tmp/a created
+
+    makedirs('/tmp/a')
+    # FileExistsError: [Errno 17] File exists: '/tmp/a'
+
+    makedirs('/tmp/a', exist_ok=True)
+    # No error
+
+    makedirs('/tmp/a/b/c')
+    # directory /tmp/a/b/c created
+
+
+Exists and is Directory or File
+===============================
+.. code-block:: python
+
+    from os.path import isfile, isdir, exists
+
+
+    exists('/tmp/')
+    # True
+
+    isfile('/tmp/')
+    # False
+
+    isdir('/tmp/')
+    # True
+
 
 Script Path
 ===========

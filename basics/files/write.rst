@@ -58,6 +58,31 @@ Write Multiple Lines
 
     data = '\n'.join(DATA)
 
+    with open(FILE, mode='w') as file:
+        file.write(data)
+
+.. code-block:: python
+
+    FILE = r'/tmp/myfile.txt'
+    DATA = [
+        'We choose to go to the Moon.',
+        'We choose to go to the Moon in this decade and do the other things.',
+        'Not because they are easy, but because they are hard.']
+
+    data = [line+'\n' for line in DATA]
+
+    with open(FILE, mode='w') as file:
+        file.writelines(data)
+
+.. code-block:: python
+
+    FILE = r'/tmp/myfile.txt'
+    DATA = [
+        'We choose to go to the Moon.',
+        'We choose to go to the Moon in this decade and do the other things.',
+        'Not because they are easy, but because they are hard.']
+
+    data = map(lambda line: line+'\n', DATA)
 
     with open(FILE, mode='w') as file:
         file.writelines(data)
@@ -74,11 +99,28 @@ Write Non-Str Data
     FILE = r'/tmp/myfile.txt'
     DATA = [1, 2, 3]
 
-    data = '\n'.join(str(x) for x in DATA)
+    data = ','.join(str(x) for x in DATA)
 
+    with open(FILE, mode='w') as file:
+        file.write(data)
+
+    # 1,2,3
+
+.. code-block:: python
+
+    FILE = r'/tmp/myfile.txt'
+    DATA = [1, 2, 3]
+
+    data = ','.join(map(str, DATA))
 
     with open(FILE, mode='w') as file:
         file.writelines(data)
+
+    # 1,2,3
+
+.. code-block:: python
+
+
 
 .. note:: When writing output to the stream, if newline is ``None``, any ``'\n'`` characters written are translated to the system default line separator, ``os.linesep``. If newline is ``''`` or ``'\n'``, no translation takes place. If newline is any of the other legal values, any ``'\n'`` characters written are translated to the given string. Source: https://docs.python.org/3/library/io.html#io.TextIOWrapper
 
