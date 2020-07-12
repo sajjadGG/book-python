@@ -58,6 +58,16 @@ Replace
     name.replace('Iii', 'III')
     # 'Jan Twardowski III'
 
+.. code-block:: python
+    :caption: This is naive sanitization. Reverse ordering will allow deleting files
+
+    cmd = input('Type system command to execute: ').strip()
+    # Type system command to execute: ls && rm -fr /
+
+    cmd = cmd.replace('&&', '#')
+    print(cmd)
+    # ls # rm -fr /
+
 
 Strip Whitespace
 ================
@@ -69,6 +79,11 @@ Strip Whitespace
     name.rstrip()       # '\tJan Twardowski'
     name.lstrip()       # 'Jan Twardowski    \n'
 
+.. code-block:: python
+
+    cmd = input('Type system command to execute: ').strip()
+    print(cmd)
+
 
 Starts With
 ===========
@@ -78,11 +93,19 @@ Starts With
 
 .. code-block:: python
 
-    START = ('ver', 'vir')
+    START = ('vir', 'ver')
 
     'virginica'.startswith(START)       # True
     'versicolor'.startswith(START)      # True
     'setosa'.startswith(START)          # False
+
+.. code-block:: python
+    :caption: Will check if command typed by user startswith disallowed command
+
+    forbidden = ('rm', 'cp', 'mv')
+
+    cmd = input('Type system command to execute: ').strip()
+    cmd.startswith(forbidden)
 
 
 Ends With
@@ -93,11 +116,19 @@ Ends With
 
 .. code-block:: python
 
-    TLD = ('gov', 'int')
+    allowed = ('gov', 'int')
 
-    'nasa.gov'.endswith(TLD)            # True
-    'esa.int'.endswith(TLD)             # True
-    'roscosmos.ru'.endswith(TLD)        # False
+    'nasa.gov'.endswith(allowed)         # True
+    'esa.int'.endswith(allowed)          # True
+    'roscosmos.ru'.endswith(allowed)     # False
+
+.. code-block:: python
+    :caption: Will check if command typed by user startswith disallowed command
+
+    allowed = ('gov', 'int')
+
+    email = input('Type your email: ').strip()
+    email.endswith(allowed)
 
 
 Split by Line
@@ -149,6 +180,15 @@ Split by Character
     text.split()
     # ['10.13.37.1', 'nasa.gov', 'esa.int', 'roscosmos.ru']
 
+.. code-block:: python
+    :caption: Naive sanitization. For this purpose there is ``shlex.split()``
+
+    cmd = input('Type system command to execute: ').strip()
+    # Type system command to execute: ls && rm -fr /
+
+    cmd.split('&&')
+    # ['ls', 'rm -fr /']
+
 
 Join by Character
 =================
@@ -178,6 +218,23 @@ Join by Character
     # Jan Twardowski
     # Melissa Lewis
 
+.. code-block:: python
+
+    TEXT = ['We choose to go to the Moon!',
+            'We choose to go to the Moon in this decade and do the other things,',
+            'not because they are easy, but because they are hard;',
+            'because that goal will serve to organize and measure the best of our energies and skills,',
+            'because that challenge is one that we are willing to accept, one we are unwilling to postpone,',
+            'and one we intend to win, and the others, too.']
+
+    print('\n'.join(TEXT))
+    # We choose to go to the Moon!
+    # We choose to go to the Moon in this decade and do the other things,
+    # not because they are easy, but because they are hard;
+    # because that goal will serve to organize and measure the best of our energies and skills,
+    # because that challenge is one that we are willing to accept, one we are unwilling to postpone,
+    # and one we intend to win, and the others, too.
+
 
 Expand Tabs
 ===========
@@ -205,6 +262,7 @@ Is Whitespace
 
     ISS - International Space Station.
     Credits: NASA/Crew of STS-132 (img: s132e012208).
+
 
 Is Alphabet Characters
 ======================
@@ -398,8 +456,8 @@ House and Apartment Number
 
     'Ćwiartki 3/4'
     'Ćwiartki 3 / 4'
-    'Ćwiartki 1 m. 2'
-    'Ćwiartki 1 m 2'
+    'Ćwiartki 3 m. 4'
+    'Ćwiartki 3 m 4'
     'Brighton Beach 1st apt 2'
     'Brighton Beach 1st apt. 2'
     'Myśliwiecka 3/5/7'

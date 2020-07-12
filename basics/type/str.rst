@@ -24,6 +24,9 @@ Type Definition
 
 Type Casting
 ============
+* ``str()`` converts argument to ``str``
+* ``print()`` before printing on the screen runs ``str()`` on its arguments
+
 .. code-block:: python
     :caption: ``str()`` converts argument to ``str``
 
