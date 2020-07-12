@@ -19,7 +19,7 @@ Type Definition
     * ``tuple()`` is more readable
     * Single element ``tuple`` require comma at the end (**important!**)
     * Brackets are optional
-    * Comma after last element is optional
+    * Comma after last element of one element tuple is optional
 
 .. code-block:: python
 

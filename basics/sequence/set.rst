@@ -22,7 +22,7 @@ Type Definition
     * Do not support getitem
     * Do not support slice
     * Defining only with ``set()`` - no short syntax
-    * Comma after last element is optional
+    * Comma after last element of a one element set is optional
     * Brackets are required
 
 .. code-block:: python

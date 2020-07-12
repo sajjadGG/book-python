@@ -9,8 +9,7 @@ Rationale
 =========
 .. highlights::
     * Slice argument must be ``int`` (positive, negative or zero)
-    * Index must be less or equal to length of object
-    * Negative index starts from the end and go right to left
+    * Negative slices starts from the end and go right to left
 
 
 Ordered Sequences

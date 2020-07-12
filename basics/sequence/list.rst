@@ -17,7 +17,7 @@ Type Definition
 .. highlights::
     * ``[]`` is used more often
     * ``list()`` is more readable
-    * Comma after last element is optional
+    * Comma after last element of a one element list is optional
     * Brackets are required
 
 .. code-block:: python
