@@ -18,8 +18,8 @@ Functions
     :caption: Functions
     :name: Advanced Functions
 
-    function/args-kwargs-def.rst
-    function/args-kwargs-call.rst
+    function/args-kwargs-parameters.rst
+    function/args-kwargs-arguments.rst
     function/parameter-syntax.rst
     function/generator.rst
     function/first-class.rst

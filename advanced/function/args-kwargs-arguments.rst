@@ -412,12 +412,12 @@ Decorator
 Assignments
 ===========
 
-Function Args/Kwargs Arguments
-------------------------------
+Function Args/Kwargs Arguments Define
+-------------------------------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
-* Solution: :download:`solution/function_argskwargs_arguments.py`
+* Solution: :download:`solution/function_argskwargs_arguments_define.py`
 
 :English:
     #. Mind the non-functional requirements (see below)
