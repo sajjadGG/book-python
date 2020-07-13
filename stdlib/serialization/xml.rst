@@ -47,6 +47,8 @@ Serialization XML, XSLT, XPath
 ``lxml`` module
 ===============
 
+* ``pip install lxml``
+
 Creating elements
 -----------------
 .. code-block:: python

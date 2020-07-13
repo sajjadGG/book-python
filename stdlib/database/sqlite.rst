@@ -3,6 +3,25 @@ Database SQLite
 ***************
 
 
+Installation
+============
+#. Check if Sqlite3 is already installed:
+
+    .. code-block:: console
+
+        $ sqlite3 --version
+
+#. If not, then:
+
+        * Download from https://sqlite.org/download.html
+        * Add to ``$PATH`` directory
+
+                * ``C:\Program Files\Git\cmd`` on Windows
+                * ``/usr/local/bin/`` on *nix
+
+        * Check if Sqlite3 is installed (Point 1.)
+
+
 
 SQL Syntax
 ==========

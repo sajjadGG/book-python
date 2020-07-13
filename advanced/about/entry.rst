@@ -3,17 +3,17 @@ Entry Exam
 **********
 
 
-``List[tuple]`` to ``List[dict]``
-=================================
+Loop Dict from List to Dict
+===========================
 * Complexity level: easy
-* Lines of code to write: 8 lines
-* Estimated time of completion: 10 min
+* Lines of code to write: 6 lines
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/loop_dict_to_list.py`
 
 :English:
     #. Use data from "Input" section (see below)
     #. Separate header and data
-    #. Print ``List[dict]``
+    #. Print ``List[dict]``:
 
         * key - name from the header
         * value - measurement or species
@@ -22,8 +22,8 @@ Entry Exam
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Odseparuj nagłówek i dane
-    #. Wypisz ``List[dict]``
+    #. Odseparuj nagłówek od danych
+    #. Wypisz ``List[dict]``:
 
         * klucz: nazwa z nagłówka
         * wartość: wyniki pomiarów lub gatunek
@@ -61,36 +61,35 @@ Entry Exam
 :Output:
     .. code-block:: python
 
-        result: List[dict] = [
-            {'Sepal length': 5.8, 'Sepal width': 2.7, 'Petal length': 5.1, 'Petal width': 1.9, 'Species': 'virginica'},
-            {'Sepal length': 5.1, 'Sepal width': 3.5, 'Petal length': 1.4, 'Petal width': 0.2, 'Species': 'setosa'},
-            {'Sepal length': 5.7, 'Sepal width': 2.8, 'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
-            ...
-        ]
+        result: List[dict]
+        # [{'Sepal length': 5.8, 'Sepal width': 2.7, 'Petal length': 5.1, 'Petal width': 1.9, 'Species': 'virginica'},
+        #  {'Sepal length': 5.1, 'Sepal width': 3.5, 'Petal length': 1.4, 'Petal width': 0.2, 'Species': 'setosa'},
+        #  {'Sepal length': 5.7, 'Sepal width': 2.8, 'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
+        #  ...]
 
 :The whys and wherefores:
     * Working with nested data structures
     * Iterating over dict and lists
 
 
-Get elements from nested data structure
-=======================================
+Loop Unpacking Endswith
+=======================
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/for_nested.py`
+* Solution: :download:`solution/loop_unpacking_endswith.py`
 
 :English:
     #. Use data from "Input" section (see below)
     #. Separate header from data
-    #. Iterate over data
-    #. Print species names ending with "ica" or "sa"
+    #. Iterating over data unpack row to ``*features`` and ``label``
+    #. Print species names ending with "ca" or "osa"
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Oddziel nagłówek od danych
-    #. Iteruj po danych
-    #. Wypisz nazwy gatunków kończące się na "ica" lub "sa"
+    #. Odseparuj nagłówek od danych
+    #. Iterując po danych rozpakuj wiersz do ``*features`` oraz ``label``
+    #. Wypisz nazwy gatunków kończące się na "ca" lub "osa"
 
 :Input:
     .. code-block:: python
@@ -109,22 +108,27 @@ Get elements from nested data structure
         ]
 
 :The whys and wherefores:
-    * Accessing ``dict`` keys
+    * Accessing ``set`` items
     * Iterating over nested structure
+    * Unpacking in ``for`` loop
+
+:Hint:
+    * ``str.endswith()``
+    * ``set.pop()``
+    * ``isinstance`` or ``type``
 
 
-``/etc/hosts`` - parsing to ``List[dict]``
-==========================================
-* Complexity level: medium
+File Read Parsing List of Dicts
+===============================
+* Complexity level: hard
 * Lines of code to write: 15 lines
-* Estimated time of completion: 10 min
-* Solution: :download:`solution/file_parsing_advanced.py`
+* Estimated time of completion: 15 min
+* Solution: :download:`solution/file_read_parsing_listdict.py`
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Copy input data from listing below and save to file ``hosts.txt``
-    #. Copy also comments and empty lines
-    #. For each line in file:
+    #. Using ``file.write()`` save input data from listing below to file ``hosts-advanced.txt``
+    #. Read file and for each line:
 
         #. Skip line if it's empty, is whitespace or starts with comment ``#``
         #. Remove leading and trailing whitespaces
@@ -132,17 +136,16 @@ Get elements from nested data structure
         #. Separate IP address and hosts names
         #. Use one line ``if`` to check whether dot ``.`` is in the IP address
         #. If is present then protocol is IPv4 otherwise IPv6
-        #. Append IP address and hosts names to ``result: List[dict]``
+        #. Append IP address and hosts names to ``result``
 
     #. Merge hostnames for the same IP
-    #. Print ``result``
+    #. ``result`` must be list of dicts (``List[dict]``)
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Skopiuj dane wejściowe z listingu poniżej i zapisz do pliku ``hosts.txt``
-    #. Skopiuj również komentarz i pustą linię
-    #. Dla każdej lini w pliku:
+    #. Używając ``file.write()`` zapisz dane wejściowe z listingu poniżej do pliku ``hosts-advanced.txt``
+    #. Przeczytaj plik i dla każdej lini:
 
         #. Pomiń linię jeżeli jest pusta, jest białym znakiem lub zaczyna się od komentarza ``#``
         #. Usuń białe znaki na początku i końcu linii
@@ -150,15 +153,16 @@ Get elements from nested data structure
         #. Odseparuj adres IP i nazwy hostów
         #. Wykorzystaj jednolinikowego ``if`` do sprawdzenia czy jest kropka ``.`` w adresie IP
         #. Jeżeli jest obecna to protokół  jest IPv4, w przeciwnym przypadku IPv6
-        #. Dodaj adres IP i nazwy hostów do ``result: List[dict]``
+        #. Dodaj adres IP i nazwy hostów do ``result``
 
     #. Scal nazwy hostów dla tego samego IP
-    #. Wypisz ``result``
+    #. ``result`` ma być listą dictów (``List[dict]``)
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
-    .. code-block:: text
+    .. code-block:: python
 
+        DATA = """
         ##
         # ``/etc/hosts`` structure:
         #   - IPv4 or IPv6
@@ -170,25 +174,21 @@ Get elements from nested data structure
         10.13.37.1      nasa.gov esa.int roscosmos.ru
         255.255.255.255 broadcasthost
         ::1             localhost
+        """
 
 :Output:
     .. code-block:: python
 
-        result: List[Dict[str, Union[str, Set[str]]] = [
-            {'ip': '127.0.0.1', 'protocol': 'ipv4', 'hostnames': {'localhost', 'astromatt'}},
-            {'ip': '10.13.37.1', 'protocol': 'ipv4', 'hostnames': {'nasa.gov', 'esa.int', 'roscosmos.ru'}},
-            {'ip': '255.255.255.255', 'protocol': 'ipv4', 'hostnames': {'broadcasthost'}},
-            {'ip': '::1', 'protocol': 'ipv6', 'hostnames': {'localhost'}}
-        ]
+        result: List[dict]
+        # [{'ip': '127.0.0.1', 'protocol': 'ipv4', 'hostnames': {'localhost', 'astromatt'}},
+        #  {'ip': '10.13.37.1', 'protocol': 'ipv4', 'hostnames': {'nasa.gov', 'esa.int', 'roscosmos.ru'}},
+        #  {'ip': '255.255.255.255', 'protocol': 'ipv4', 'hostnames': {'broadcasthost'}},
+        #  {'ip': '::1', 'protocol': 'ipv6', 'hostnames': {'localhost'}}]
 
 :The whys and wherefores:
-    * Reading and parsing files
-    * Irregular configuration files
-    * Filtering results
-    * Using loops and conditional statements
-    * String parsing
-    * Working with paths in operating system
-
-:Hints:
-    * ``str.isspace()``
-    * ``value = True if ... else False``
+    * czytanie i parsowanie pliku
+    * nieregularne pliki konfiguracyjne (struktura może się zmieniać)
+    * filtrowanie elementów
+    * korzystanie z pętli i instrukcji warunkowych
+    * parsowanie stringów
+    * praca ze ścieżkami w systemie operacyjnym
