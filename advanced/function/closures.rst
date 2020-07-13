@@ -10,13 +10,23 @@ Nested Function
 
 .. code-block:: python
 
-    def outer(message):
+    def run():
+        lastname = 'Twardowski'
 
-        def inner():
-            print(message)
+        def hello():
+            print(lastname)
 
-        return inner
+        return hello
 
+    hello()
+    # NameError: name 'hello' is not defined
+
+    run()
+    # <function __main__.run.<locals>.hello()>
+
+    hello = run()
+    hello()
+    # Twardowski
 
 What is closure?
 ================
@@ -32,21 +42,55 @@ What is closure?
 
 .. code-block:: python
 
-    def outer(message):
+    firstname = 'Jan'
+    lastname = 'Twardowski'
 
-        def inner():
-            print(message)
+    def hello():
+        print(firstname)
+        print(lastname)
 
-        return inner
+    hello()
+    # Jan
+    # Twardowski
+
+.. code-block:: python
+
+    firstname = 'Jan'
+
+    def run():
+        lastname = 'Twardowski'
+
+        def hello():
+            print(firstname)
+            print(lastname)
+
+        return hello
 
 
-    todo = outer('hello')
-    todo()
-    # hello
+    hello = run()
+    hello()
+    # Jan
+    # Twardowski
 
-    del outer
-    todo()
-    # hello
+.. code-block:: python
+
+    firstname = 'Jan'
+
+    def run():
+        lastname = 'Twardowski'
+
+        def hello():
+            print(firstname)
+            print(lastname)
+
+        return hello
+
+
+    hello = run()
+    del run
+    hello()
+    # Jan
+    # Twardowski
 
 .. code-block:: python
 
@@ -54,110 +98,3 @@ What is closure?
         def g(y):
             return x + y
         return g
-
-
-Examples
-========
-.. code-block:: python
-    :caption: Functions has access to the outer scope
-
-    data = [1, 2, 3]
-
-    def outer():
-        print('inner', data)
-
-    outer()
-    # inner [1, 2, 3]
-
-    print('outer', data)
-    # outer [1, 2, 3]
-
-.. code-block:: python
-    :caption: Variables in functions can shadow outer scope. Outer scope is restored, when function returns
-
-    data = [1,2,3]
-
-    def outer():
-        data = ['a', 'b', 'c']
-        print('inner', data)
-
-    outer()
-    # inner ['a', 'b', 'c']
-
-    print('outer', data)
-    # outer [1, 2, 3]
-
-.. code-block:: python
-    :caption: Functions can modify outer scope
-
-    data = [1,2,3]
-
-    def outer():
-        global data
-        data = ['a', 'b', 'c']
-        print('inner', data)
-
-    outer()
-    # inner ['a', 'b', 'c']
-
-    print('outer', data)
-    # outer ['a', 'b', 'c']
-
-.. code-block:: python
-    :caption: ``inner`` function (closure) has access to its outer scope, that is ``outer`` function.
-
-    def outer():
-        data = ['a', 'b', 'c']
-
-        def inner():
-            print('inner', data)
-
-        inner()
-        print('outer', data)
-
-    outer()
-    # inner ['a', 'b', 'c']
-    # outer ['a', 'b', 'c']
-
-.. code-block:: python
-
-    def outer():
-        data = ['a', 'b', 'c']
-
-        def inner():
-            print('inner', data)
-
-        return inner
-
-
-    my_ptr = outer()
-
-    print(my_ptr)
-    # <function outer.<locals>.inner at 0x11bfb8560>
-
-    my_ptr()
-    # inner ['a', 'b', 'c']
-
-.. code-block:: python
-
-    def outer():
-        data = ['a', 'b', 'c']
-
-        def inner():
-            print('inner', data)
-
-        return inner
-
-
-    my_ptr = outer()
-
-    print(my_ptr)
-    # <function outer.<locals>.inner at 0x10617c8b0>
-
-    del outer
-
-    print(my_ptr)
-    # <function outer.<locals>.inner at 0x10617c940>
-
-    my_ptr()
-    # inner ['a', 'b', 'c']

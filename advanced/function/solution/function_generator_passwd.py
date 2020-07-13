@@ -1,14 +1,16 @@
 import sys
 
-FILE = 'etc-passwd.txt'
+FILE = '../data/hosts.txt'
 
 
 def function():
     accounts = []
 
-    with open(FILE) as file:
+    with open(FILE, encoding='utf-8') as file:
         for line in file:
-            if line.isspace() or line.startswith('#'):
+            line = line.strip()
+
+            if len(line) == 0 or line.startswith('#'):
                 continue
 
             username, _, uid, *_ = line.split(':')
@@ -20,9 +22,10 @@ def function():
 
 
 def generator():
-    with open(FILE) as file:
+    with open(FILE, encoding='utf-8') as file:
         for line in file:
-            if line.isspace() or line.startswith('#'):
+            line = line.strip()
+            if len(line) == 0 or line.startswith('#'):
                 continue
 
             username, _, uid, *_ = line.split(':')

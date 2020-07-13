@@ -485,12 +485,12 @@ Generator as Iterator
 Assignments
 ===========
 
-Function Generator Generators vs. Comprehensions
-------------------------------------------------
-* Complexity level: medium
-* Lines of code to write: 40 lines
-* Estimated time of completion: 15 min
-* Solution: :download:`solution/function_generator_vs_comprehension.py`
+Function Generator Iris
+-----------------------
+* Complexity level: easy
+* Lines of code to write: 10 lines
+* Estimated time of completion: 13 min
+* Solution: :download:`solution/function_generator_iris.py`
 
 :English:
     #. Use code from "Input" section (see below)
@@ -533,11 +533,11 @@ Function Generator Generators vs. Comprehensions
         print('Function', sys.getsizeof(fun))
         print('Generator', sys.getsizeof(gen))
 
-Function Generators vs. Comprehensions - passwd
------------------------------------------------
+Function Generator Passwd
+-------------------------
 * Complexity level: medium
-* Lines of code to write: 40 lines
-* Estimated time of completion: 20 min
+* Lines of code to write: 10 lines
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/function_generator_passwd.py`
 
 :English:

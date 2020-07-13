@@ -416,7 +416,7 @@ Function Args/Kwargs Arguments Define
 -------------------------------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
-* Estimated time of completion: 20 min
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/function_argskwargs_arguments_define.py`
 
 :English:
