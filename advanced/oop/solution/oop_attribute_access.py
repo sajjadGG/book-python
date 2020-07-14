@@ -1,7 +1,4 @@
 import sys
-from dataclasses import dataclass
-
-CURRENT_MODULE = sys.modules[__name__]
 
 DATA = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
@@ -29,58 +26,61 @@ DATA = [
 ]
 
 
-@dataclass
 class Iris:
-    sepal_length: float
-    sepal_width: float
-    petal_length: float
-    petal_width: float
+    def __init__(self, sepal_length, sepal_width, petal_length, petal_width):
+        self.sepal_length = sepal_length
+        self.sepal_width = sepal_width
+        self.petal_length = petal_length
+        self.petal_width = petal_width
 
-    def __post_init__(self):
-        self.species = self.__class__.__name__
+    def __repr__(self):
+        name = self.__class__.__name__
+        total = self.sum()
+        avg = self.mean()
+        return f'\n{name:>10} {total:>5.1f} {avg:>5.2f}'
 
-    def total(self):
-        return self.sepal_length \
-               + self.sepal_width \
-               + self.petal_length \
-               + self.petal_width
+    def length(self):
+        return len(self.__dict__.values())
 
-    def average(self):
-        return self.total() / 4
+    def sum(self):
+        return sum(self.__dict__.values())
 
-
-class Virginica(Iris):
-    pass
-
-
-class Versicolor(Iris):
-    pass
+    def mean(self):
+        return self.sum() / self.length()
 
 
 class Setosa(Iris):
     pass
 
+class Versicolor(Iris):
+    pass
+
+class Virginica(Iris):
+    pass
+
+
+CURRENT_MODULE = sys.modules[__name__]
 
 header, *data = DATA
+*header, _ = tuple(x.replace(' ', '_').lower() for x in header)
 result = []
+
+result = [cls(**row)
+          for *features, species in data
+          if (cls := getattr(CURRENT_MODULE, species.capitalize()))
+          and (row := dict(zip(header, features)))]
+
 
 print('Species    Total   Avg')
 print('-' * 22)
+print(result)
 
 
-for *measurements, species in data:
-    class_name = species.capitalize()
-    cls = getattr(CURRENT_MODULE, class_name)
-    iris = cls(*measurements)
-    result.append(iris)
-
-    ## Alternative solution
-    # if species == 'setosa':
-    #     iris = Setosa(*measurements)
-    # elif species == 'versicolor':
-    #     iris = Versicolor(*measurements)
-    # elif species == 'virginica':
-    #     iris = Virginica(*measurements)
-    # result.append(iris)
-
-    print(f'{iris.species:>10} {iris.total():>5.1f} {iris.average():>5.2f}')
+# for *features, species in data:
+#     row = dict(zip(header, features))
+#     species = species.capitalize()
+#     current_module = sys.modules[__name__]
+#     cls = getattr(current_module, species)
+#     result.append(cls(**row))
+#
+# print(result)
