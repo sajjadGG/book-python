@@ -6,7 +6,6 @@ Static and Dynamic Fields
 Static Fields
 =============
 * Fields created on class
-* Simple to use
 * Must have default values
 * Share state
 
@@ -41,18 +40,18 @@ Dynamic Fields
     :caption: Dynamic fields
 
     class Astronaut:
-        def __init__(self, agency):
+        def __init__(self, agency='NASA'):
             self.agency = agency
 
 
-    watney = Astronaut('NASA')
-    twardowski = Astronaut('POLSA')
+    watney = Astronaut()
+    twardowski = Astronaut()
 
     print(watney.agency)
     # NASA
 
     print(twardowski.agency)
-    # POLSA
+    # NASA
 
     print(Astronaut.agency)
     # AttributeError: type object 'Astronaut' has no attribute 'agency'
@@ -71,27 +70,29 @@ Static vs. Dynamic Fields
     twardowski = Astronaut()
     ivanovic = Astronaut()
 
-    # Check value of field agency
-    watney.agency       # NASA
-    twardowski.agency   # NASA
-    ivanovic.agency     # NASA
-    Astronaut.agency    # NASA
+    # Print field
+    print(watney.agency)           # NASA
+    print(twardowski.agency)       # NASA
+    print(ivanovic.agency)         # NASA
+    print(Astronaut.agency)        # NASA
 
-    # Let's change ``agency`` of ``ivanovich`` object
+    # Change field on the instance
     ivanovic.agency = 'Roscosmos'
 
-    watney.agency       # NASA
-    twardowski.agency   # NASA
-    ivanovic.agency     # Roscosmos
-    Astronaut.agency    # NASA
+    # Print field
+    print(watney.agency)           # NASA
+    print(twardowski.agency)       # NASA
+    print(ivanovic.agency)         # Roscosmos
+    print(Astronaut.agency)        # NASA
 
-    # Let's change ``agency`` of ``Astronaut`` class
+    # Change field on a class
     Astronaut.agency = 'POLSA'
 
-    watney.agency       # POLSA
-    twardowski.agency   # POLSA
-    ivanovic.agency     # Roscosmos
-    Astronaut.agency    # POLSA
+    # Print field
+    print(watney.agency)           # POLSA
+    print(twardowski.agency)       # POLSA
+    print(ivanovic.agency)         # Roscosmos
+    print(Astronaut.agency)        # POLSA
 
 
 Static or Dynamic?
@@ -99,15 +100,15 @@ Static or Dynamic?
 .. code-block:: python
 
     class Astronaut:
-        first_name = ...
-        last_name = ...
+        firstname = ...
+        lastname = ...
 
 .. code-block:: python
 
     class Cosmonaut:
-        def __init__(self, first_name, last_name):
-            self.first_name = first_name
-            self.last_name = last_name
+        def __init__(self, firstname, lastname):
+            self.firstname = firstname
+            self.lastname = lastname
 
 .. code-block:: python
 
@@ -115,16 +116,16 @@ Static or Dynamic?
         pass
 
     t = Taikonaut()
-    t.first_name = ...
-    t.last_name = ...
+    t.firstname = ...
+    t.lastname = ...
 
 .. code-block:: python
 
     class Taikonaut:
         pass
 
-    Taikonaut.first_name
-    Taikonaut.last_name
+    Taikonaut.firstname
+    Taikonaut.lastname
 
 .. code-block:: python
 
@@ -132,7 +133,7 @@ Static or Dynamic?
 
 
     @dataclass
-    class Astronaut:
-        name: str
-        missions: list
+    class GaganYatri:
+        firstname: str
+        lastname: list
 
