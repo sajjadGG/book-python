@@ -56,10 +56,8 @@ Usage
 
 Examples
 ========
-
-Login Check
------------
 .. code-block:: python
+    :caption: Login Check
 
     class User:
         def __init__(self):
@@ -95,9 +93,8 @@ Login Check
     edit_profile()
     # Editing profile...
 
-Dict Cache
-----------
 .. code-block:: python
+    :caption: Dict Cache
 
     class Cache(dict):
         def __init__(self, func):

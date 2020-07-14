@@ -60,10 +60,8 @@ Usage
 
 Examples
 ========
-
-Singleton
----------
 .. code-block:: python
+    :caption: Singleton using functional wrapper
 
     def singleton(cls):
 
@@ -91,10 +89,8 @@ Singleton
     b = DatabaseConnection()    # Reusing instance
     b.connect()                 # Connecting... using <__main__.singleton.<locals>.Wrapper object at 0x10372d310>
 
-
-Singleton
----------
 .. code-block:: python
+    :caption: Singleton using class wrapper
 
     def singleton(cls):
 
@@ -123,3 +119,9 @@ Singleton
 
     b = DatabaseConnection()    # Reusing instance
     b.connect()                 # Connecting... using <__main__.singleton.<locals>.Wrapper object at 0x10372d310>
+
+
+Assignments
+===========
+.. todo:: Create assignments
+

@@ -90,9 +90,6 @@ Usage
 
 Examples
 ========
-
-Make Paragraph
---------------
 .. code-block:: python
 
     def make_paragraph(method):
@@ -121,7 +118,11 @@ Make Paragraph
         x.first_method()
         x.second_method()
 
-    """
-    <p>First Method</p>
-    <p>Second Method</p>
-    """
+
+    # <p>First Method</p>
+    # <p>Second Method</p>
+
+
+Assignments
+===========
+.. todo:: Create assignments

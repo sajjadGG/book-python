@@ -36,36 +36,51 @@ By number of arguments:
     * With arguments
 
 
-How decorator works
-===================
+Function Decorate Function
+==========================
+.. code-block:: python
 
-Without arguments
------------------
-Decorator:
-    .. code-block:: python
+    @decorator
+    def my_function(*args, **kwargs):
+        pass
 
-        @my_decorator
-        def my_function(*args, **kwargs):
+
+Function Decorate Method
+========================
+.. code-block:: python
+
+    class MyClass:
+        @decorator
+        def my_method(self, *args, **kwargs):
             pass
 
-Is equivalent to:
-    .. code-block:: python
 
-        my_function = my_decorator(my_function)
+Function Decorate Class
+=======================
+.. code-block:: python
 
-With arguments
---------------
-Decorator:
-    .. code-block:: python
+    @decorator
+    class MyClass:
+        pass
 
-        @my_decorator(a, b)
-        def my_function(*args, **kwargs):
-            pass
 
-Is equivalent to:
-    .. code-block:: python
+Class Decorate Function
+=======================
+.. code-block:: python
 
-        my_function = my_decorator(a, b)(my_function)
+    @Decorator
+    def my_function(*args, **kwargs):
+        pass
+
+
+Decorator with arguments
+========================
+.. code-block:: python
+    :caption: Decorator with arguments
+
+    @decorator(a, b)
+    def my_function(*args, **kwargs):
+        pass
 
 
 Decorator library

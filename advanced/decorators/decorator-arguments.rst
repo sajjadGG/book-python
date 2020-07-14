@@ -56,10 +56,8 @@ Usage
 
 Examples
 ========
-
-Deprecated
-----------
 .. code-block:: python
+    :caption: Deprecated
 
     def deprecated(removed_in_version=None):
         def decorator(fn):
@@ -87,10 +85,8 @@ Deprecated
     # /tmp/my_script.py:11: DeprecationWarning: Call to deprecated function my_function in /tmp/my_script.py at line 19
     # It will be removed in 2.0
 
-Timeout
--------
 .. code-block:: python
-    :caption: Decorator usage
+    :caption: Timeout
 
     from signal import signal, alarm, SIGALRM
     from time import sleep
@@ -131,8 +127,8 @@ Timeout
     # 2
     # Sorry, timeout
 
-
 .. code-block:: python
+    :caption: Timeout
 
     from _thread import interrupt_main
     from threading import Timer
@@ -169,3 +165,8 @@ Timeout
     # 3
     # 2
     # TimeoutError: Timeout
+
+
+Assignments
+===========
+.. todo:: Create assignments

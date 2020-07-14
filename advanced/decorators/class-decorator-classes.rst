@@ -17,3 +17,8 @@ Usage
 
 Examples
 ========
+
+
+Assignments
+===========
+.. todo:: Create assignments
