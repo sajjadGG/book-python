@@ -92,31 +92,55 @@ Debug
 -----
 .. code-block:: python
 
-    def debug(func):
+    from datetime import datetime
+    import logging
+
+    log = logging.getLogger(__name__)
+    log.setLevel('DEBUG')
+
+
+    def timeit(func):
         def wrapper(*args, **kwargs):
-            print(f'Calling "{func.__name__}()", args: {args}, kwargs: {kwargs}')
+            time_start = datetime.now()
             result = func(*args, **kwargs)
-            print(f'Result is {result}')
+            time_end = datetime.now()
+            time = time_end - time_start
+            log.debug(f'Time: {time}\n')
             return result
         return wrapper
 
 
+    def debug(func):
+        def wrapper(*args, **kwargs):
+            function = func.__name__
+            log.debug(f'Calling: {function=}, {args=}, {kwargs=}')
+            result = func(*args, **kwargs)
+            log.debug(f'Result: {result}')
+            return result
+        return wrapper
+
+
+    @timeit
     @debug
     def add_numbers(a, b):
         return a + b
 
 
     add_numbers(1, 2)
-    # Calling "add_numbers()", args: (1, 2), kwargs: {}
-    # Result is 3
+    # DEBUG:__main__:Calling: function='add_numbers', args=(1, 2), kwargs={}
+    # DEBUG:__main__:Result: 3
+    # DEBUG:__main__:Time: 0:00:00.000117
 
     add_numbers(1, b=2)
-    # Calling "add_numbers()", args: (1,), kwargs: {'b': 2}
-    # Result is 3
+    # DEBUG:__main__:Calling: function='add_numbers', args=(1,), kwargs={'b': 2}
+    # DEBUG:__main__:Result: 3
+    # DEBUG:__main__:Time: 0:00:00.000059
 
     add_numbers(a=1, b=2)
-    # Calling "add_numbers()", args: (), kwargs: {'a': 1, 'b': 2}
-    # Result is 3
+    # DEBUG:__main__:Calling: function='add_numbers', args=(), kwargs={'a': 1, 'b': 2}
+    # DEBUG:__main__:Result: 3
+    # DEBUG:__main__:Time: 0:00:00.000044
+
 
 Cache
 -----
@@ -390,14 +414,28 @@ Type Checking Decorator
     #. Jeżeli, którykolwiek się nie zgadza, wyrzuć wyjątek ``TypeError``
     #. Wyjątek ma wypisywać:
 
-        * nazwę parametru, który ma nieprawidłowy typ,
-        * listę dozwolonych typów.
+        * nazwę parametru
+        * typ, który parametr ma (nieprawidłowy)
+        * typ, który był oczekiwany
 
 :Input:
     .. code-block:: python
 
-        def function(a: str, b: int) -> bool:
+        @check_types
+        def echo(a: str, b: int, c: int = 0) -> bool:
+            print('Function run as expected')
             return bool(a * b)
 
-        print(function.__annotations__)
+
+        echo('a', 2)
+        echo('a', 2)
+        echo('b', 2)
+        echo(a='b', b=2)
+        echo(b=2, a='b')
+        echo('b', b=2)
+
+:Hint:
+    .. code-block:: python
+
+        echo.__annotations__
         # {'a': <class 'str'>, 'return': <class 'bool'>, 'b': <class 'int'>}
