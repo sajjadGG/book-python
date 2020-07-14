@@ -138,21 +138,21 @@ Dict Cache
 Assignments
 ===========
 
-Simple decorator
-----------------
+Decorator Class Abspath
+-----------------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/decorator_abspath.py`
+* Solution: :download:`solution/decorator_cls_abspath.py`
 
 :English:
     #. Create function ``print_file(filename: str) -> str`` which prints file content (filename given as an argument)
-    #. Create decorator ``to_absolute_path``
+    #. Create decorator ``ToAbsolutePath``
     #. Decorator converts to absolute path (``path`` + ``filename``), if filename given as an argument is a relative path
 
 :Polish:
     #. Stwórz funkcję ``print_file(filename: str) -> str`` która wyświetla zawartość pliku (nazwa pliku podana jako argument)
-    #. Stwórz dekorator ``to_absolute_path``
+    #. Stwórz dekorator ``ToAbsolutePath``
     #. Dekorator zamienia ścieżkę na bezwzględną (``path`` + ``filename``), jeżeli nazwa pliku podana jako argument jest względna
 
 :Hint:
@@ -160,3 +160,46 @@ Simple decorator
     * ``os.path.dirname()``
     * ``os.path.basename()``
     * ``os.path.join()``
+
+Decorator Class Type Check
+--------------------------
+* Complexity level: medium
+* Lines of code to write: 15 lines
+* Estimated time of completion: 20 min
+* Solution: :download:`solution/decorator_cls_typecheck.py`
+
+:English:
+    .. todo:: English translation
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Stwórz dekorator - klasę ``CheckTypes``
+    #. Dekorator ma sprawdzać typy danych, wszystkich parametrów wchodzących do funkcji
+    #. Jeżeli, którykolwiek się nie zgadza, wyrzuć wyjątek ``TypeError``
+    #. Wyjątek ma wypisywać:
+
+        * nazwę parametru
+        * typ, który parametr ma (nieprawidłowy)
+        * typ, który był oczekiwany
+
+:Input:
+    .. code-block:: python
+
+        @check_types
+        def echo(a: str, b: int, c: int = 0) -> bool:
+            print('Function run as expected')
+            return bool(a * b)
+
+
+        echo('a', 2)
+        echo('a', 2)
+        echo('b', 2)
+        echo(a='b', b=2)
+        echo(b=2, a='b')
+        echo('b', b=2)
+
+:Hint:
+    .. code-block:: python
+
+        echo.__annotations__
+        # {'a': <class 'str'>, 'return': <class 'bool'>, 'b': <class 'int'>}

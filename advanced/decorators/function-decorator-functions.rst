@@ -326,12 +326,12 @@ Django Login Required
 Assignments
 ===========
 
-Memoization
------------
+Decorator Function Memoization
+------------------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/decorator_memoize.py`
+* Solution: :download:`solution/decorator_func_memoization.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -375,34 +375,57 @@ Memoization
         sys.setrecursionlimit(5000)
 
 
-        def factorial_nocache(n: int) -> int:
+        @cache
+        def fn1(n):
             if n == 0:
                 return 1
             else:
-                return n * factorial_nocache(n-1)
+                return n * fn1(n-1)
 
-        duration_cache = timeit(
-            stmt='factorial_cache(500); factorial_cache(400); factorial_cache(450); factorial_cache(350)',
-            globals=globals(),
-            number=10000,
-        )
 
-        duration_nocache = timeit(
-            stmt='factorial_nocache(500); factorial_nocache(400); factorial_nocache(450); factorial_nocache(350)',
-            globals=globals(),
-            number=10000
-        )
+        def fn2(n):
+            if n == 0:
+                return 1
+            else:
+                return n * fn2(n-1)
 
-        print(f'factorial_cache time: {round(duration_cache, 4)} seconds')
-        print(f'factorial_nocache time: {round(duration_nocache, 3)} seconds')
-        print(f'Cached solution is {round(duration_nocache / duration_cache, 1)} times faster')
 
-Type Checking Decorator
------------------------
+        duration_cache = timeit(stmt='fn1(500); fn1(400); fn1(450); fn1(350)', globals=globals(), number=100_000)
+        duration_nocache = timeit(stmt='fn2(500); fn2(400); fn2(450); fn2(350)', globals=globals(), number=100_000)
+        duration_ratio = duration_nocache / duration_cache
+
+        print(f'With Cache time: {duration_cache:.4f} seconds')
+        print(f'Without Cache time: {duration_nocache:.3f} seconds')
+        print(f'Cached solution is {duration_ratio:.1f} times faster')
+
+Decorator Function Abspath
+--------------------------
+* Complexity level: easy
+* Lines of code to write: 10 lines
+* Estimated time of completion: 15 min
+* Solution: :download:`solution/decorator_func_abspath.py`
+
+:English:
+    #. Create function ``print_file(filename: str) -> str`` which prints file content (filename given as an argument)
+    #. Create decorator ``to_absolute_path``
+    #. Decorator converts to absolute path (``path`` + ``filename``), if filename given as an argument is a relative path
+
+:Polish:
+    #. Stwórz funkcję ``print_file(filename: str) -> str`` która wyświetla zawartość pliku (nazwa pliku podana jako argument)
+    #. Stwórz dekorator ``to_absolute_path``
+    #. Dekorator zamienia ścieżkę na bezwzględną (``path`` + ``filename``), jeżeli nazwa pliku podana jako argument jest względna
+
+:Hint:
+    * ``__file__``
+    * ``os.path.dirname()``
+    * ``os.path.join()``
+
+Decorator Function Type Check
+-----------------------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
 * Estimated time of completion: 20 min
-* Solution: :download:`solution/decorator_check_types.py`
+* Solution: :download:`solution/decorator_func_typecheck.py`
 
 :English:
     .. todo:: English translation
