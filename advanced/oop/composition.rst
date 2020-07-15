@@ -179,9 +179,9 @@ OOP Composition Mars
 * Solution: :download:`solution/oop_composition_mars.py`
 
 :English:
-    #. Stwórz klasę ``Habitat``
-    #. Stwórz klasę ``Rocket``
-    #. Stwórz klasę ``Astronaut``
+    #. Create class ``Habitat``
+    #. Create class ``Rocket``
+    #. Create class ``Astronaut``
     #. Compose class ``MarsMission`` from ``Habitat``, ``Rocket``, ``Astronaut``
 
 :Polish:
@@ -189,3 +189,22 @@ OOP Composition Mars
     #. Stwórz klasę ``Rocket``
     #. Stwórz klasę ``Astronaut``
     #. Skomponuj klasę ``MarsMission`` z ``Habitat``, ``Rocket``, ``Astronaut``
+
+OOP Composition Moveable
+------------------------
+* Complexity level: easy
+* Lines of code to write: 8 lines
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/oop_composition_moveable.py`
+
+:English:
+    #. Create immutable class ``Point``
+    #. Create class ``Movable``
+    #. Add methods ``get_position()``, ``set_position()``, ``print_position()``, ``change_position()`` to ``Movable``
+    #. Each method creates new ``Point`` and stores it in ``Movable`` class
+
+:Polish:
+    #. Stwórz niemutowalną klasę ``Point``
+    #. Stwórz klasę ``Movable``
+    #. Dodaj metody ``get_position()``, ``set_position()``, ``print_position()``, ``change_position()`` do ``Movable``
+    #. Każda metoda generuje nowy ``Point`` i zapamiętuje go w klasie ``Movable``
