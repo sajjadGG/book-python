@@ -102,3 +102,125 @@ LRU (least recently used) cache
 
     fib.cache_info()
     # CacheInfo(hits=28, misses=16, maxsize=None, currsize=16)
+
+
+Assignments
+===========
+
+Decorator Functools Func
+------------------------
+* Complexity level: easy
+* Lines of code to write: 2 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/decorator_functools_func.py`
+
+:English:
+    #. Use code from "Input" section (see below)
+    #. Use ``functools.wraps`` in correct place
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj kodu z sekcji "Input" (patrz poniżej)
+    #. Użyj ``functools.wraps`` w odpowiednim miejscu
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+.. code-block:: python
+
+    def mydecorator(func):
+        def wrapper(*args, **kwargs):
+            return func(*args, **kwargs)
+        return wrapper
+
+
+    @mydecorator
+    def hello(name):
+        """Some documentation"""
+        return f'My name... {name}'
+
+    print('Function:', hello.__name__)
+    print('Doctring:', hello.__doc__)
+
+:Ouput:
+    .. code-block:: python
+
+        Function: hello
+        Doctring: Some documentation
+
+Decorator Functools Args
+------------------------
+* Complexity level: easy
+* Lines of code to write: 2 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/decorator_functools_args.py`
+
+:English:
+    #. Use code from "Input" section (see below)
+    #. Use ``functools.wraps`` in correct place
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj kodu z sekcji "Input" (patrz poniżej)
+    #. Użyj ``functools.wraps`` w odpowiednim miejscu
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+.. code-block:: python
+
+    def mydecorator(happy=True):
+        def decorator(func):
+            def wrapper(*args, **kwargs):
+                return func(*args, **kwargs)
+            return wrapper
+        return decorator
+
+
+    @mydecorator(happy=False)
+    def hello(name):
+        """Some documentation"""
+        return f'My name... {name}'
+
+    print('Function:', hello.__name__)
+    print('Doctring:', hello.__doc__)
+
+:Ouput:
+    .. code-block:: python
+
+        Function: hello
+        Doctring: Some documentation
+
+Decorator Functools Cls
+-----------------------
+* Complexity level: easy
+* Lines of code to write: 2 lines
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/decorator_functools_cls.py`
+
+:English:
+    #. Use code from "Input" section (see below)
+    #. Modify code to restore docstring and name from decorated class
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj kodu z sekcji "Input" (patrz poniżej)
+    #. Zmodyfikuj kod aby przywrócić doctring oraz nazwę z dekorowanej klasy
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+.. code-block:: python
+
+    def mydecorator(cls):
+        class Wrapper(cls):
+            attribute = 'some value...'
+        return Wrapper
+
+
+    @mydecorator
+    class Hello:
+        """Some documentation"""
+
+    hello = Hello()
+    print('Class:', hello.__name__)
+    print('Doctring:', hello.__doc__)
+
+.. code-block:: python
+
+    Class: Hello
+    Doctring: Some documentation

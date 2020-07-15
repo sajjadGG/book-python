@@ -188,12 +188,12 @@ Decorator Class Type Check
             return bool(a * b)
 
 
-        echo('a', 2)
-        echo('a', 2)
-        echo('b', 2)
-        echo(a='b', b=2)
-        echo(b=2, a='b')
-        echo('b', b=2)
+        print(echo('a', 2))
+        print(echo('a', 2))
+        print(echo('b', 2))
+        print(echo(a='b', b=2))
+        print(echo(b=2, a='b'))
+        print(echo('b', b=2))
 
 :Hint:
     .. code-block:: python

@@ -169,4 +169,49 @@ Examples
 
 Assignments
 ===========
-.. todo:: Create assignments
+
+Decorator Arguments Type Check
+------------------------------
+* Complexity level: medium
+* Lines of code to write: 20 lines
+* Estimated time of completion: 10 min
+* Solution: :download:`solution/decorator_arguments_typecheck.py`
+
+:English:
+    .. todo:: English translation
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Stwórz dekorator do sprawdzania typów
+    #. Dekorator ma sprawdzać typy danych, wszystkich parametrów wchodzących do funkcji
+    #. Jeżeli, którykolwiek się nie zgadza, wyrzuć wyjątek ``TypeError``
+    #. Dekorator może przyjmować argument ``check_return: bool``
+    #. Jeżeli argument jest ``True`` to sprawdź również poprawność typu danych zwracanych przez funkcję
+    #. Wyjątek ma wypisywać:
+
+        * nazwę parametru
+        * typ, który parametr ma (nieprawidłowy)
+        * typ, który był oczekiwany
+
+:Input:
+    .. code-block:: python
+
+        @check_types(check_return=True)
+        def echo(a: str, b: int, c: int = 0) -> bool:
+            print('Function run as expected')
+            return a * b
+
+
+        print(echo('a', 2))
+        print(echo('a', 2))
+        print(echo('b', 2))
+        print(echo(a='b', b=2))
+        print(echo(b=2, a='b'))
+        print(echo('b', b=2))
+
+:Hint:
+    .. code-block:: python
+
+        echo.__annotations__
+        # {'a': <class 'str'>, 'return': <class 'bool'>, 'b': <class 'int'>}
+

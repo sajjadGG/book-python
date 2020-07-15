@@ -19,15 +19,29 @@ def check_keyword(func: Callable, kwargs: dict) -> NoReturn:
             raise TypeError(f'Argument {argname} is {type(argname)}, but {exp} was expected')
 
 
-def check_types(func: Callable) -> Callable:
-    def wrapper(*args, **kwargs):
-        check_positional(func, args)
-        check_keyword(func, kwargs)
-        return func(*args, **kwargs)
-    return wrapper
+def check_result(func, argvalue):
+    expected = func.__annotations__['return']
+
+    if not isinstance(argvalue, expected):
+        raise TypeError(f'Return is {type(argvalue)}, but {expected} was expected')
 
 
-@check_types
+def check_types(check_return: bool = False):
+    def decorator(func: Callable) -> Callable:
+        def wrapper(*args, **kwargs):
+            check_positional(func, args)
+            check_keyword(func, kwargs)
+            result = func(*args, **kwargs)
+
+            if check_return:
+                check_result(func, result)
+
+            return result
+        return wrapper
+    return decorator
+
+
+@check_types(check_return=False)
 def echo(a: str, b: int, c: int = 0) -> bool:
     return a * b
 
