@@ -51,9 +51,9 @@ Object Oriented Programming
     :caption: Object Oriented Programming
     :name: Advanced Object Oriented Programming
 
-    oop/access-modifiers.rst
-    oop/operator-overload.rst
     oop/fields-static-dynamic.rst
+    oop/attribute-access-modifiers.rst
+    oop/operator-overload.rst
     oop/composition.rst
     oop/inner-classes.rst
     oop/method-resolution-order.rst

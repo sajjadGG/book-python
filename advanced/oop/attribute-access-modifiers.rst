@@ -1,6 +1,6 @@
-****************
-Attribute Access
-****************
+**************************
+Attribute Access Modifiers
+**************************
 
 
 .. highlights::
@@ -26,33 +26,108 @@ Attribute Access
 .. code-block:: python
     :caption: Access modifiers
 
-    class Iris:
-        pass
+    class Astronaut:
+        def __init__(self, firstname, lastname):
+            self._firstname = firstname
+            self._lastname = lastname
+            self.publicname = f'{firstname} {lastname[0]}.'
 
 
-    flower = Iris()
-    flower._sepal_length = 5.1
-    flower._sepal_width = 3.5
-    flower._petal_length = 1.4
-    flower._petal_width = 0.2
-    flower.species = 'setosa'
+    mark = Astronaut('Mark', 'Watney')
 
-    print(flower._sepal_length)     # 5.1       # IDE should warn, that you access protected member
-    print(flower._sepal_width)      # 3.5       # IDE should warn, that you access protected member
-    print(flower._petal_length)     # 1.4       # IDE should warn, that you access protected member
-    print(flower._petal_width)      # 0.2       # IDE should warn, that you access protected member
-    print(flower.species)           # setosa
+    print(mark.firstname)
+    # AttributeError: 'Astronaut' object has no attribute 'firstname'
+
+    print(mark.lastname)
+    # AttributeError: 'Astronaut' object has no attribute 'lastname'
+
+    print(mark._firstname)      # IDE should warn: "Access to a protected member _firstname of a class "
+    # Mark
+
+    print(mark._lastname)       # IDE should warn: "Access to a protected member _lastname of a class "
+    # Watney
+
+    print(mark.publicname)
+    # Mark W.
+
+
+Get All Dynamic Attributes and Values
+=====================================
+* ``obj.__dict__``
+
+.. code-block:: python
+    :caption: ``__dict__`` - Getting dynamic fields and values
+
+    class Astronaut:
+        def __init__(self, firstname, lastname):
+            self._firstname = firstname
+            self._lastname = lastname
+            self.publicname = f'{firstname} {lastname[0]}.'
+
+
+    mark = Astronaut('Mark', 'Watney')
+
+
+    print(mark.__dict__)
+    # {'_firstname': 'Mark',
+    #  '_lastname': 'Watney',
+    #  'publicname': 'Mark W.'}
+
+    public_attrs = {k:v for k,v in mark.__dict__.items() if not k.startswith('_')}
+    print(public_attrs)
+    # {'publicname': 'Mark W.'}
 
 
 Assignments
 ===========
 
-OOP Attribute Access
---------------------
+OOP Attribute Access Modifiers
+------------------------------
 * Complexity level: easy
-* Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
-* Solution: :download:`solution/oop_attribute_access.py`
+* Lines of code to write: 20 lines
+* Estimated time of completion: 8 min
+* Solution: :download:`solution/oop_attribute_access_modifiers.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Create class ``Iris``
+    #. In ``Iris._init__()`` add protected attributes ``sepal_length``, ``sepal_width``, ``petal_length``, ``petal_width``
+    #. In ``Iris._init__()`` add public attribute ``setosa``
+    #. Create class ``Setosa``, ``Versicolor``, ``Virginica`` inheriting from ``Iris``
+    #. Iterate over ``result`` and print all public fields of each element
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Stwórz klasę ``Iris``
+    #. W ``Iris._init__()`` dodaj chronione atrybuty ``sepal_length``, ``sepal_width``, ``petal_length``, ``petal_width``
+    #. W ``Iris._init__()`` dodaj publiczny atrybut ``setosa``
+    #. Stwórz klasy ``Setosa``, ``Versicolor``, ``Virginica`` dziedziczące po ``Iris``
+    #. Iteruj po ``result`` i wypisz wszystkie publiczne pola każdego elementu
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        result = [
+            Virginica(5.8, 2.7, 5.1, 1.9, 'virginica'),
+            Setosa(5.1, 3.5, 1.4, 0.2, 'setosa'),
+            Versicolor(5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        ]
+
+:Output:
+    .. code-block:: python
+
+        {'setosa': 'virginica'}
+        {'setosa': 'setosa'}
+        {'setosa': 'versicolor'}
+
+OOP Attribute Access Dict
+-------------------------
+* Complexity level: medium
+* Lines of code to write: 35 lines
+* Estimated time of completion: 21 min
+* Solution: :download:`solution/oop_attribute_access_dict.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -118,10 +193,10 @@ OOP Attribute Access
 
         class Iris:
             def __init__(self, sepal_length, sepal_width, petal_length, petal_width):
-                self.sepal_length = sepal_length
-                self.sepal_width = sepal_width
-                self.petal_length = petal_length
-                self.petal_width = petal_width
+                self._sepal_length = sepal_length
+                self._sepal_width = sepal_width
+                self._petal_length = petal_length
+                self._petal_width = petal_width
 
             def __repr__(self):
                 raise NotImplementedError
