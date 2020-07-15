@@ -12,9 +12,9 @@ Inner Classes
 
         def find_in_database(self):
             if not in DATABASE:
-                raise User.DoesNotExists
+                raise User.DoesNotExist
 
-        class DoesNotExists(Exception):
+        class DoesNotExist(Exception):
             pass
 
 
@@ -22,4 +22,13 @@ Inner Classes
         user = User('Mark', 'Watney')
         user.find_in_database()
     except User.DoesNotExists:
-        print('User does not exists')
+        print('User does not exist')
+
+.. code-block:: python
+
+    class Person(models.Model):
+        firstname = ...
+        lastname = ...
+
+        class Meta:
+            ordering = ['lastname']
