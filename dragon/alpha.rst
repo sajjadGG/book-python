@@ -91,7 +91,7 @@ Dragon (version alpha)
         #. If you read future tasks, you will spoil fun and what is the most important: learning.
 
 :Polish:
-    #. Smok (atrybuty):
+    #. Smok ma (atrybuty):
 
         #. nazwę
         #. pozycję ``x`` na ekranie
@@ -151,7 +151,7 @@ Dragon (version alpha)
 
         #. Zadanie jest symulacją procesu developmentu
         #. Trener zachowuje się jak Product Owner z niewielką techniczną wiedzą
-        #. Ty jesteś inżynierem oprogramowania, który musis podejmować decyzje i ponosić ich konsekwencje
+        #. Ty jesteś inżynierem oprogramowania, który musi podejmować decyzje i ponosić ich konsekwencje
         #. Zadanie jest tylko narracją do demonstracji OOP i dobrych praktyk programowania
         #. Wyliczona pozycja Smoka na końcu gry powinna być x=20, y=40
         #. Możesz wprowadzać dodatkowe pola, metody, funkcje, zmienne, stały, klasy, obiekty, co tylko chcesz
