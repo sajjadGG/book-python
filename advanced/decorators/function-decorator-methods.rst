@@ -5,7 +5,7 @@ Function Decorator with Methods
 
 Syntax
 ======
-* ``decorator`` is a decorator name
+* ``mydecorator`` is a decorator name
 * ``method`` is a method name
 * ``instance`` is an instance
 * ``args`` arbitrary number of positional arguments
@@ -15,7 +15,7 @@ Syntax:
     .. code-block:: python
 
         class MyClass:
-            @decorator
+            @mydecorator
             def my_method(self, *args, **kwargs):
                 pass
 
@@ -32,7 +32,7 @@ Is equivalent to:
 
 
         obj = MyClass()
-        obj.my_method = decorator(obj.my_method)
+        obj.my_method = mydecorator(obj.my_method)
 
 
 Definition

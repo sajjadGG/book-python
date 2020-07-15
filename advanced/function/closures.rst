@@ -28,6 +28,7 @@ Nested Function
     hello()
     # Twardowski
 
+
 What is closure?
 ================
 * technique by which the data is attached to some code even after end of those other original functions is called as closures
@@ -98,3 +99,26 @@ What is closure?
         def g(y):
             return x + y
         return g
+
+
+Assignments
+===========
+
+Function Closure Check
+----------------------
+* Complexity level: easy
+* Lines of code to write: 4 lines
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/function_closure_check.py`
+
+:English:
+    #. Define function ``check`` which takes ``func: Callable`` as an argument
+    #. Define closure function ``wrapper`` inside ``check``
+    #. ``wrapper`` function takes ``*args`` and ``**kwargs`` as arguments
+    #. Function ``check`` must return ``wrapper: Callable``
+
+:Polish:
+    #. Zdefiniuj funlcję ``check``, która przyjmuje ``func: Callable`` jako argument
+    #. Zdefiniuj funkcję closure ``wrapper`` wewnątrz ``check``
+    #. Funkcja ``wrapper`` przyjmuje ``*args`` i ``**kwargs`` jako argumenty
+    #. Funkcja ``check`` ma zwracać ``wrapper: Callable``

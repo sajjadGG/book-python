@@ -1,6 +1,6 @@
 import sys
 
-FILE = '../data/hosts.txt'
+FILE = '../data/etc-passwd.txt'
 
 
 def function():
@@ -35,8 +35,8 @@ def generator():
 
 
 if __name__ == '__main__':
-    fn = function()
-    gene = generator()
+    fun = function()
+    gen = generator()
 
-    print(f'Function: {sys.getsizeof(fn)}')
-    print(f'Generator: {sys.getsizeof(gene)}')
+    print('Function', sys.getsizeof(fun))
+    print('Generator', sys.getsizeof(gen))

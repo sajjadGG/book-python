@@ -69,9 +69,9 @@ Object Identity
     :caption: Generating hash and object comparision
 
     class Astronaut:
-        def __init__(self, first_name, last_name):
-            self.first_name = first_name
-            self.last_name = last_name
+        def __init__(self, firstname, lastname):
+            self.firstname = firstname
+            self.lastname = lastname
 
         def __hash__(self, *args, **kwargs):
             """
@@ -79,11 +79,11 @@ Object Identity
             It also shouldn't change over the lifetime of the object;
             generally you only implement it for immutable objects.
             """
-            return hash(self.first_name) + hash(self.last_name)
+            return hash(self.firstname) + hash(self.lastname)
 
         def __eq__(self, other):
-            if self.first_name == other.first_name and \
-                    self.last_name == other.last_name:
+            if self.firstname == other.firstname and \
+                    self.lastname == other.lastname:
                 return True
             else:
                 return False
@@ -92,9 +92,9 @@ Object Identity
     :caption: Generating hash and object comparision. Since Python 3.7 ``dict`` has fixed order
 
     class Astronaut:
-        def __init__(self, first_name, last_name):
-            self.first_name = first_name
-            self.last_name = last_name
+        def __init__(self, firstname, lastname):
+            self.firstname = firstname
+            self.lastname = lastname
 
         def __hash__(self):
             return hash(self.__dict__)

@@ -5,8 +5,8 @@ Class Decorator with Functions
 
 Syntax
 ======
-* ``decorator`` is a decorator name
-* ``MyClass`` is a class name
+* ``Decorator`` is a decorator name
+* ``my_function`` is a function name
 
 Syntax:
     .. code-block:: python
@@ -182,7 +182,7 @@ Decorator Class Type Check
 :Input:
     .. code-block:: python
 
-        @check_types
+        @CheckTypes
         def echo(a: str, b: int, c: int = 0) -> bool:
             print('Function run as expected')
             return bool(a * b)

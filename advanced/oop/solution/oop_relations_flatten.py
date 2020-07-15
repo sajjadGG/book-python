@@ -4,9 +4,9 @@ FILE = r'/tmp/csv_relations.csv'
 
 
 class Astronaut:
-    def __init__(self, first_name, last_name, missions=None):
-        self.first_name = first_name
-        self.last_name = last_name
+    def __init__(self, firstname, lastname, missions=None):
+        self.firstname = firstname
+        self.lastname = lastname
         self.missions = missions if missions else []
 
 
@@ -37,8 +37,9 @@ for astronaut in CREW:
     result.append(astro)
 
 
-header = set(key for key in astro.keys()
-                    for astro in result)
+header = set(key
+             for key in astro.keys()
+             for astro in result)
 
 
 with open(FILE, mode='w') as file:

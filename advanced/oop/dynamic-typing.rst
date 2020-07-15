@@ -156,9 +156,9 @@ Placeholder class
                 setattr(self, key, value)
 
 
-    a = MyClass(first_name='Jan', last_name='Twardowski')
-    a.first_name          # Jan
-    a.last_name           # 'Twardowski'
+    a = MyClass(firstname='Jan', lastname='Twardowski')
+    a.firstname          # Jan
+    a.lastname           # 'Twardowski'
 
     b = MyClass(species='Setosa')
     b.species            # 'Setosa'
@@ -167,21 +167,21 @@ Placeholder class
     :caption: Dynamically creating fields
 
     class Astronaut:
-        def __init__(self, last_name, **kwargs):
-            self.last_name = last_name
+        def __init__(self, lastname, **kwargs):
+            self.lastname = lastname
 
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
 
-    jan = Astronaut(last_name='Twardowski', addresses=())
-    ivan = Astronaut(first_name='Иван', last_name='Иванович', agency='Roscosmos')
+    jan = Astronaut(lastname='Twardowski', addresses=())
+    ivan = Astronaut(firstname='Иван', lastname='Иванович', agency='Roscosmos')
 
-    print(jan.last_name)   # Twardowski
-    print(ivan.first_name)  # Иван
+    print(jan.lastname)   # Twardowski
+    print(ivan.firstname)  # Иван
 
-    print(jan.__dict__)    # {'last_name': 'Twardowski', 'addresses': ()}
-    print(ivan.__dict__)    # {'last_name': 'Иванович', 'first_name': 'Иван', 'agency': 'Roscosmos'}
+    print(jan.__dict__)    # {'lastname': 'Twardowski', 'addresses': ()}
+    print(ivan.__dict__)    # {'lastname': 'Иванович', 'firstname': 'Иван', 'agency': 'Roscosmos'}
 
 .. code-block:: python
 
@@ -190,11 +190,11 @@ Placeholder class
             self.__dict__ = kwargs
 
 
-    a = MyClass(first_name='Jan', last_name='Twardowski')
-    print(a.first_name)          # Jan
-    print(a.last_name)           # 'Twardowski'
+    a = MyClass(firstname='Jan', lastname='Twardowski')
+    print(a.firstname)          # Jan
+    print(a.lastname)           # 'Twardowski'
 
     b = MyClass(species='Setosa')
     print(b.species)             # 'Setosa'
-    print(b.first_name)          # AttributeError: 'MyClass' object has no attribute 'first_name'
-    print(b.last_name)           # AttributeError: 'MyClass' object has no attribute 'last_name'
+    print(b.firstname)          # AttributeError: 'MyClass' object has no attribute 'firstname'
+    print(b.lastname)           # AttributeError: 'MyClass' object has no attribute 'lastname'

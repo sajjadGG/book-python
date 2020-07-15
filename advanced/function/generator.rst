@@ -488,31 +488,60 @@ Assignments
 Function Generator Iris
 -----------------------
 * Complexity level: easy
-* Lines of code to write: 10 lines
+* Lines of code to write: 14 lines
 * Estimated time of completion: 13 min
 * Solution: :download:`solution/function_generator_iris.py`
 
 :English:
     #. Use code from "Input" section (see below)
-    #. Download :download:`data/iris.csv` and save as `iris.csv`
-    #. Read data skipping header
-    #. Create function with returns all measurements for given species
+    #. Download :download:`data/iris.csv` and save as ``iris.csv``
+    #. Iterate over file lines
+    #. Read header from first line
+    #. Create function which returns all features for given species
     #. Species will be passed as an ``str`` argument to the function
-    #. Implement solution using normal function
+    #. Implement solution using function
     #. Implement solution using generator and ``yield`` keyword
     #. Compare results of both using ``sys.getsizeof()``
     #. What will happen if input data will be bigger?
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj kodu z sekcji "Input" (patrz poniżej)
-    #. Pobierz :download:`data/iris.csv` i zapisz jako `iris.csv`
-    #. Zaczytaj dane pomijając nagłówek
+    #. Pobierz :download:`data/iris.csv` i zapisz jako ``iris.csv``
+    #. Iteruj po liniach pliku
+    #. Wczytaj header z pierwszej linii
     #. Napisz funkcję która zwraca wszystkie pomiary dla danego gatunku
     #. Gatunek będzie podawany jako argument typu ``str`` do funkcji
-    #. Zaimplementuj rozwiązanie wykorzystując zwykłą funkcję
+    #. Zaimplementuj rozwiązanie wykorzystując funkcję
     #. Zaimplementuj rozwiązanie wykorzystując generator i słówko kluczowe ``yield``
     #. Porównaj wyniki obu używając ``sys.getsizeof()``
     #. Co się stanie, gdy ilość danych będzie większa?
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+    import sys
+
+    FILE = r'iris.csv'
+
+
+    def function(species):
+        raise NotImplementedError
+
+    def generator(species):
+        raise NotImplementedError
+
+
+    fun = function('setosa')
+    gen = generator('setosa')
+
+    print('Function', sys.getsizeof(fun))
+    print('Generator', sys.getsizeof(gen))
+
+:Output:
+    Function 520
+    Generator 112
 
 :The whys and wherefores:
     * Using generators
@@ -521,44 +550,38 @@ Function Generator Iris
     * Parsing CSV file
     * Filtering file content
 
-:Input:
-    .. code-block:: python
-
-        with open(r'iris.csv') as file:
-            data = file.read()
-
-        fun = function_filter(data, 'setosa')
-        gen = generator_filter(data, 'setosa')
-
-        print('Function', sys.getsizeof(fun))
-        print('Generator', sys.getsizeof(gen))
-
 Function Generator Passwd
 -------------------------
 * Complexity level: medium
-* Lines of code to write: 10 lines
+* Lines of code to write: 27 lines
 * Estimated time of completion: 13 min
 * Solution: :download:`solution/function_generator_passwd.py`
 
 :English:
-    #. Download :download:`data/hosts.txt` and save as `hosts.txt`
+    #. Download :download:`data/etc-passwd.txt` and save as ``etc-passwd.txt``
     #. Iterating over lines, filter out comments, empty lines, etc.
     #. Extract system accounts (users with UID [third field] is less than 1000)
     #. Return list of system account logins
-    #. Implement solution using normal function
+    #. Implement solution using function
     #. Implement solution using generator and ``yield`` keyword
     #. Compare results of both using ``sys.getsizeof()``
-    #. What will happen if input data will be bigger?
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Pobierz :download:`data/hosts.txt` i zapisz jako `hosts.txt`
+    #. Pobierz :download:`data/etc-passwd.txt` i zapisz jako ``etc-passwd.txt``
     #. Iterując po liniaj, odfiltruj komentarze, puste linie itp.
     #. Wyciągnnij konta systemowe (użytkownicy z UID (trzecie pole) mniejszym niż 1000)
     #. Zwróć listę loginów użytkowników systemowych
-    #. Zaimplementuj rozwiązanie wykorzystując zwykłą funkcję
+    #. Zaimplementuj rozwiązanie wykorzystując funkcję
     #. Zaimplementuj rozwiązanie wykorzystując generator i słówko kluczowe ``yield``
     #. Porównaj wyniki obu używając ``sys.getsizeof()``
-    #. Co się stanie, gdy ilość danych będzie większa?
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Output:
+    .. code-block:: text
+
+        Function 120
+        Generator 112
 
 :The whys and wherefores:
     * Using generators

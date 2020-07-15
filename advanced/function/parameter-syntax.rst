@@ -71,6 +71,7 @@ Positional and Keyword parameters
     echo(1, b=2, c=3)       # 1 2 3
     echo(a=1, b=2, c=3)     # TypeError: echo() got some positional-only arguments passed as keyword arguments: 'a'
 
+
 Examples
 ========
 .. code-block:: python
@@ -88,3 +89,52 @@ Examples
      def add(a, b, /, **kwargs):
         ...
 
+
+Assignments
+===========
+
+Function Parameter Syntax Args
+------------------------------
+* Complexity level: easy
+* Lines of code to write: 4 lines
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/function_parameter_syntax_args.py`
+
+:English:
+    #. Create function ``take_damage``
+    #. Function takes one argument ``dmg``
+    #. Argument must be passed only as positional
+    #. Function does nothing
+    #. Test function by running with keyword arguments
+    #. Test function by running with positional arguments
+
+:Polish:
+    #. Stwórz funckję ``set_position``
+    #. Funkcja przyjmuje dwa argumenty ``x`` i ``y``
+    #. Argument można podawać tylko pozycyjnie
+    #. Function does nothing
+    #. Przetestuj funkcję uruchamiając z nazwanymi parametrami
+    #. Przetestuj funkcję uruchamiając z pozycyjnymi parametrami
+
+Function Parameter Syntax Kwargs
+--------------------------------
+* Complexity level: easy
+* Lines of code to write: 4 lines
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/function_parameter_syntax_kwargs.py`
+
+:English:
+    #. Create function ``set_position``
+    #. Function takes two arguments ``x`` and ``y``
+    #. Arguments must be passed only as keywords
+    #. Function does nothing
+    #. Test function by running with keyword arguments
+    #. Test function by running with positional arguments
+
+:Polish:
+    #. Stwórz funckję ``set_position``
+    #. Funkcja przyjmuje dwa argumenty ``x`` i ``y``
+    #. Argumenty można podawać tylko nazwanie (keyword)
+    #. Funkcja nic nie robi
+    #. Przetestuj funkcję uruchamiając z nazwanymi parametrami
+    #. Przetestuj funkcję uruchamiając z pozycyjnymi parametrami

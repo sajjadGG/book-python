@@ -8,18 +8,18 @@ class Address:
         self.city = city
 
 class Astronaut:
-    def __init__(self, first_name, last_name, addresses=()):
-        self.first_name = first_name
-        self.last_name = last_name
+    def __init__(self, firstname, lastname, addresses=()):
+        self.firstname = firstname
+        self.lastname = lastname
         self.addresses = addresses
 
 
 crew = Crew([
-    Astronaut(first_name='Jan', last_name='Twardowski', addresses=(
+    Astronaut(firstname='Jan', lastname='Twardowski', addresses=(
         Address(location='Johnson Space Center', city='Houston, TX'),
         Address(location='Kennedy Space Center', city='Merritt Island, FL'),
         Address(location='Jet Propulsion Laboratory', city='Pasadena, CA'),
     )),
-    Astronaut(first_name='Mark', last_name='Watney'),
-    Astronaut(first_name='Melissa', last_name='Lewis', addresses=()),
+    Astronaut(firstname='Mark', lastname='Watney'),
+    Astronaut(firstname='Melissa', lastname='Lewis', addresses=()),
 ])

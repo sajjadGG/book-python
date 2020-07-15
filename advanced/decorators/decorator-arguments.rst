@@ -8,44 +8,44 @@ Syntax
 Decorator:
     .. code-block:: python
 
-        @decorator(a, b)
-        def function(*args, **kwargs):
+        @mydecorator(a, b)
+        def my_function(*args, **kwargs):
             pass
 
 Is equivalent to:
     .. code-block:: python
 
-        decorator = decorator(a, b)(function)
+        mydecorator = mydecorator(a, b)(my_function)
 
 
 Definition
 ==========
 .. code-block:: python
 
-    def decorator(a=1, b=2):
-        def function_wrapper(function):
+    def mydecorator(a=1, b=2):
+        def decorator(func):
 
-            def args_wrapper(*args, **kwargs):
-                return function(*args, **kwargs)
-            return args_wrapper
+            def wrapper(*args, **kwargs):
+                return func(*args, **kwargs)
+            return wrapper
 
-        return function_wrapper
+        return decorator
 
 Usage
 =====
 .. code-block:: python
 
-    def decorator(a=1, b=2):
-        def function_wrapper(function):
+    def mydecorator(a=1, b=2):
+        def decorator(func):
 
-            def args_wrapper(*args, **kwargs):
-                return function(*args, **kwargs)
-            return args_wrapper
+            def wrapper(*args, **kwargs):
+                return func(*args, **kwargs)
+            return wrapper
 
-        return function_wrapper
+        return decorator
 
 
-    @decorator(a=0)
+    @mydecorator(a=0)
     def echo(name):
         print(name)
 
@@ -60,19 +60,19 @@ Examples
     :caption: Deprecated
 
     def deprecated(removed_in_version=None):
-        def decorator(fn):
-            def write_message(*args, **kwargs):
-                name = fn.__name__
-                file = fn.__code__.co_filename
-                line = fn.__code__.co_firstlineno + 1
+        def decorator(func):
+            def wrapper(*args, **kwargs):
+                name = func.__name__
+                file = func.__code__.co_filename
+                line = func.__code__.co_firstlineno + 1
                 message = f"Call to deprecated function {name} in {file} at line {line}"
                 message += f'\nIt will be removed in {removed_in_version}'
 
                 import warnings
                 warnings.warn(message, DeprecationWarning)
-                return fn(*args, **kwargs)
+                return func(*args, **kwargs)
 
-            return write_message
+            return wrapper
         return decorator
 
 

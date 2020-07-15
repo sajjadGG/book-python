@@ -5,28 +5,28 @@ Function Decorator with Functions
 
 Syntax
 ======
-* ``decorator`` is a decorator name
-* ``function`` is a function name
+* ``mydecorator`` is a decorator name
+* ``my_function`` is a function name
 * ``args`` arbitrary number of positional arguments
 * ``kwargs`` arbitrary number of keyword arguments
 
 Syntax:
     .. code-block:: python
 
-        @decorator
+        @mydecorator
         def my_function(*args, **kwargs):
             pass
 
 Is equivalent to:
     .. code-block:: python
 
-        my_function = decorator(my_function)
+        my_function = mydecorator(my_function)
 
 
 Definition
 ==========
-* ``function`` is a pointer to function which is being decorated
-* By calling ``function(*args, **kwargs)`` you actually run original (wrapped) function with it's original arguments
+* ``func`` is a pointer to function which is being decorated
+* By calling ``func(*args, **kwargs)`` you actually run original (wrapped) function with it's original arguments
 * Decorator must return pointer to ``wrapper``
 * ``wrapper`` is a closure function
 * ``wrapper`` name is a convention, but you can name it anyhow
@@ -34,47 +34,39 @@ Definition
 
 .. code-block:: python
 
-    def decorator(func):
+    def mydecorator(func):
         def wrapper(*args, **kwargs):
             return func(*args, **kwargs)
         return wrapper
-
 
 Usage
 =====
 .. code-block:: python
 
-    def decorator(func):
-        def wrapper(*args, **kwargs):
-            return func(*args, **kwargs)
-        return wrapper
-
-    @my_decorator
-    def my_function(x):
+    @mydecorator
+    def echo(x):
         print(x)
 
 
-    my_function('hello')
+    echo('hello')
     # hello
 
 
 Examples
 ========
-
-File exists
------------
 .. code-block:: python
+    :caption: File exists
 
     import os
 
 
     def if_file_exists(func):
-        def check_path(filename):
+        def wrapper(filename):
             if os.path.exists(filename):
                 return func(filename)
             else:
                 print(f'File "{filename}" does not exists')
-        return check_path
+        return wrapper
 
 
     @if_file_exists
@@ -88,9 +80,8 @@ File exists
         print_file('/etc/passwd')
         print_file('/tmp/passwd')
 
-Debug
------
 .. code-block:: python
+    :caption: Debug
 
     from datetime import datetime
     import logging
@@ -141,18 +132,16 @@ Debug
     # DEBUG:__main__:Result: 3
     # DEBUG:__main__:Time: 0:00:00.000044
 
-
-Cache
------
 .. code-block:: python
+    :caption: Cache with exposed cache
 
-    CACHE = {}
+    _cache = {}
 
     def cache(func):
         def wrapper(n):
-            if n not in CACHE:
-                CACHE[n] = func(n)
-            return CACHE[n]
+            if n not in _cache:
+                _cache[n] = func(n)
+            return _cache[n]
         return wrapper
 
 
@@ -171,6 +160,7 @@ Cache
     # {0: 1, 1: 1, 2: 2, 3: 6, 4: 24, 5: 120}
 
 .. code-block:: python
+    :caption: Cache with hidden cache
 
     def cache(func):
         _cache = {}
@@ -192,10 +182,8 @@ Cache
     factorial(5)
     # 120
 
-
-Memoize
--------
 .. code-block:: python
+    :caption: Memoize
 
     def cache(func):
         def wrapper(n):
@@ -252,10 +240,8 @@ Memoize
     print(factorial.__cache__)
     # {3: 6, 4: 24, 5: 120, 6: 720}
 
-Flask URL Routing
------------------
 .. code-block:: python
-    :caption: Use case wykorzystania dekotatorów do poprawienia czytelności kodu Flask
+    :caption: Flask URL Routing
 
     from flask import json
     from flask import Response
@@ -284,12 +270,8 @@ Flask URL Routing
     def hello(name=None):
         return render_template('hello.html', name=name)
 
-Django Login Required
----------------------
-* Decorator checks whether user is_authenticated.
-* If not, user will be redirected to login page.
-
 .. code-block:: python
+    :caption: Django Login Required. Decorator checks whether user is_authenticated. If not, user will be redirected to login page.
 
     from django.shortcuts import render
 
