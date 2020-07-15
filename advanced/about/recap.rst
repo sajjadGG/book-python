@@ -2,74 +2,80 @@
 Recap
 *****
 
-Day 1
------
-.. csv-table::
-    :header-rows: 1
-    :widths: 15, 85
 
-    "Estimated Time", "Topic"
-    "30m", "Korzystanie z ustawień IDE: Docker, refactoring, debugging"
-    "180m", "Podsumowanie zagadnień podstawowych"
-    "60m", "Zaawansowane struktury danych i kolekcje"
-    "30m", "Optymalizacja kodu i złożoność obliczeniowa struktur danych"
-    "30m", "Funkcje matematyczne"
-    "30m", "Debugging, unittest, doctest, TDD"
-    "30m", "Dobre praktyki i standardy kodowania"
-    "30m", "Modularyzacja i Virtualenv"
+1. Entry Test
 
-Day 2
------
-.. csv-table::
-    :header-rows: 1
-    :widths: 15, 85
+    1.1. Survey
+    1.2. Entry Exam
+    1.3. Agenda
 
-    "Estimated Time", "Topic"
-    "180m", "Programowanie obiektowe i dataclass"
-    "60m", "Przetwarzanie i transformacja danych JSON, XML, CSV"
-    "60m", "Operacje na datach, czasie i strefach czasowych"
-    "30m", "Generators i List Comprehensions"
-    "30m", "Decorators"
-    "30m", "Context Managers"
-    "30m", "Biblioteka standardowa i biblioteki zewnętrzne"
+2. Functions
 
-Day 3
------
-.. csv-table::
-    :header-rows: 1
-    :widths: 15, 85
+    2.1. Arbitrary Number of Parameters
+    2.2. Arbitrary Number of Arguments
+    2.3. Parameter Syntax
+    2.4. Generators
+    2.5. Callable
+    2.6. Closures
 
-    "Estimated Time", "Topic"
-    "30m", "Refaktoryzacja kodu na przykładach"
-    "15m", "Alternatywne wersje interpretera/kompilatora"
-    "45m", "Programowanie wielowątkowe"
-    "30m", "Python - moduły w języku C i C++"
-    "60m", "Programowanie sieciowe"
-    "120m", "Programowanie HTTP i projektowanie REST API, dobre praktyki, wersjonowanie, dokumentacja API"
-    "120m", "Wprowadzenie do Django ORM, widoki, routing, translation, modele, admin itp"
+3. Decorators
 
-Day 4
------
-.. csv-table::
-    :header-rows: 1
-    :widths: 15, 85
+    3.1. About Decorators
+    3.2. Function Decorator with Functions
+    3.3. Function Decorator with Classes
+    3.4. Function Decorator with Methods
+    3.5. Class Decorator with Functions
+    3.6. Class Decorator with Classes
+    3.7. Class Decorator with Methods
+    3.8. Decorator with Arguments
+    3.9. Functools
 
-    "Estimated Time", "Topic"
-    "120m", "CI/CD i testowanie aplikacji"
-    "60m", "Python w środowisku produkcyjnym"
-    "60m", "Wzorce projektowe w Python"
-    "180m", "Implementacja wybranych wzorców na przykładach"
+4. Object Oriented Programming
 
-Day 5
------
-.. csv-table::
-    :header-rows: 1
-    :widths: 15, 85
+    4.1. Static and Dynamic Fields
+    4.2. Attribute Access Modifiers
+    4.3. Operator Overload
+    4.4. Inheritance vs. Composition
+    4.5. Inner Classes
+    4.6. Method Resolution Order
+    4.7. Relations
+    4.8. Polymorphism
+    4.9. Dynamic Typing
+    4.10. Monkey Patching
+    4.11. New and Old Style Classes
+    4.12. Interfaces
+    4.13. Abstract Classes
+    4.14. Object Identity
+    4.15. Object Initialization
+    4.16. Slots
+    4.17. Metaclass
+    4.18. Good Engineering Practises
 
-    "Estimated Time", "Topic"
-    "30m", "Jupyter (Enhanced Interactive Console)"
-    "60m", "NumPy (Base N-dimensional array package)"
-    "30m", "Pandas (Data structures & analysis)"
-    "30m", "SciPy (scientific computing)"
-    "30m", "Matplotlib (Comprehensive 2D Plotting)"
-    "240m", "Scikit-learn (Machine Learning Library)"
+5. OOP Protocols
+
+    5.1. Iterators
+    5.2. Context Managers
+    5.3. staticmethod
+    5.4. classmethod
+    5.5. Properties
+    5.6. Reflection
+    5.7. Descriptor
+
+6. Performance
+
+    6.1. Performance Optimization
+    6.2. Micro-benchmarking
+    6.3. Profiling
+    6.4. Compilers and Interpreters
+    6.5. Collections
+    6.6. C Types
+    6.7. C Modules
+
+7. Concurrency
+
+    7.1. Concurrency Models
+    7.2. Queues
+    7.3. Threading
+    7.4. Multiprocessing
+    7.5. Async Programming
+

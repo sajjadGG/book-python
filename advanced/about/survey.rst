@@ -2,102 +2,89 @@
 Survey
 ******
 
-.. note:: wymagana umiejętność tematów pokrytych w :ref:`Python Basics Agenda`
 
-#. Jakie masz doświadczenie z programowaniem:
+English
+=======
+#. How many years have you been programming in Python:
 
-    * żadnego
-    * tworzyłem pomniejsze programy / skrypty
-    * mam na koncie kilka aplikacji, ale raczej nic dużego
-    * w ciągu ostatnich dwóch lat byłem współautorem większego systemu (ponad 500k LOC)
-    * programuję na codzień
-    * jestem zaawansowanym programistą i programuję systemy rozproszone
+    * 0-1
+    * 1-3
+    * 3-5
+    * 5-10
+    * 10 or more
 
-#. Doświadczenie z paradygmatem obiektowym:
+#. How many years have you been programming in languages other than Python:
 
-    * żadnego
-    * kiedyś coś było, ale nie wykorzystuję tego na codzień
-    * programuję obiektowo codziennie, wiem co to klasa, metody, właściwości (pola), dziedziczenie, kompozycja, polimorfizm,
-    * wykorzystuję polimorfizm i dziedziczenie / kompozycję na co dzień
+    * 0-1
+    * 1-3
+    * 3-5
+    * 5-10
+    * 10 or more
 
-#. Doświadczenie z paradygmatem funkcyjnym:
+#. For what reason you would like to use Python [you can select many]:
 
-    * żadnego
-    * rozumiem na czym polega domknięcie
-    * wiem co to domknięcie i rekursja - stosuję to w praktyce
-    * wiem co to rachunek domknięcie, lambda, złożenie funkcji i rekursja i jestem w stanie zastosować je w praktyce
-    * programuję funkcyjnie rozproszone systemy
-    * Alonzo Church razem ze mną formułował rachunek lambda
+    * numerical analysis
+    * machine learning or data science
+    * web development
+    * operating system administration
+    * test automation and CI/CD
+    * scientific or engineering
+    * general purpose programming
+    * fun or learning programming
 
-#. Doświadczenie z Pythonem:
+#. Which topics in the agenda are the most important for you:
 
-    * żadnego
-    * pisałem skrypty
-    * mam na koncie kilka aplikacji, ale raczej nic super dużego
-    * tworzyłem większe aplikacje
-    * programuję w tym języku od kilku lat
-    * Guido van Rossum to mój kolega ze szkolnej ławki
+    * [open question]
 
-#. Czy miałeś styczność z programowaniem okienkowym:
+#. What are the other things you'd like to be mentioned:
 
-    * Nie i nie chcę mieć nic z tym wspólnego
-    * Nie, ale chcę się nauczyć
-    * Tak, miałem kiedyś okazję stworzyć taki program
-    * Tak, tworzę je często
-    * Tak, tworzę je na codzień
-    * Pracowałem w Xerox jak Steve Jobs wpadł z wizytą
+    * [open question]
 
-#. Jakie masz doświadczenie z systemem Linux:
+#. Agreements [required]:
 
-    * nigdy nie korzystałem
-    * słabe, umiem się poruszać w trybie graficznym
-    * znam Linuxa i korzystam z wiersza poleceń
-    * wykorzystuję Linuxa na codzień
-    * koduję kernela razem w piwnicy z Linusem Torvaldsem
+    * I have read and understood the training course program
+    * I have all skills and experience listed in participation requirements
 
-#. Czy tworzyłeś systemy webowe:
 
-    * Tak, tworzę je często
-    * Tak, miałem kiedyś okazję stworzyć taki system
-    * Nie, ale chcę się nauczyć
-    * Nie i nie chcę mieć nic z tym wspólnego
-    * Moje strony testowałem w Mozaic
+Polish
+======
+#. Ile lat programujesz w Pythonie:
 
-#. Do jakich zastosowań chciałbyś wykorzystać Pythona [można zaznaczyć wiele]:
+    * 0-1
+    * 1-3
+    * 3-5
+    * 5-10
+    * 10 lub więcej
 
-    * do zabawy / nauki programowania
-    * do skryptowania środowiska
-    * tworzenia narzędzi developerskich
-    * tworzenia stron internetowych
-    * tworzenia aplikacji i narzędzi naukowych
+#. Ile lat programujesz w innych językach niż Python:
+
+    * 0-1
+    * 1-3
+    * 3-5
+    * 5-10
+    * 10 or more
+
+#. Do jakich zastosowań chciałbyś wykorzystać Pythona [możesz zaznaczyć wiele]:
+
+    * analiza numeryczna
+    * machine learning lub data science
+    * tworzenie aplikacji webowych
+    * administracja systemami operacyjnymi
+    * automatyzacja testów i CI/CD
+    * naukowe lub inżynieryjne
+    * programowanie ogólne
+    * zabawy lub nauki programowania
     * inne...
 
-#. Na co chciałbyś abym zwrócił szczególną uwagę podczas szkolenia:
+#. Jakie tematy z agendy są najważniejsze dla Ciebie:
 
     * [pytanie otwarte]
 
-#. Jakie elementy z poza programu szkolenia chciałbyś aby zostały poruszone:
+#. Jakie inne kwestie mogłyby być poruszone:
 
     * [pytanie otwarte]
 
-#. Czy piszesz testy jednostkowe oraz integracyjne?:
+#. Zgody [wymagane]:
 
-    * nigdy
-    * bardzo rzadko
-    * czasami
-    * zawsze
-    * Uncle Bob to mój bohater
-
-#. Doświadczenie z refactoringiem:
-
-    * nie robię
-    * robię raczej jak jest potrzeba
-    * codziennie refaktoruję kod
-    * skróty klawiszowe do refaktoringu w moim IDE znam na pamięć
-    * pisałem książkę z Michael Feathers
-
-#. Czy chciałbyś aby w ramach szkolenia zostały poruszone kwestie dotyczące narzędzi automatyzujących budowanie aplikacji (Jenkins), Git i Git Flow oraz innych elementów ekosystemu developerskiego i dobrych praktyk programowania?:
-
-    * Tak!
-    * Nie mam zdania - zdam się na decyzję większości
-    * Nie, wolę by szkolenie dotyczyło tylko Pythona
+    * Przeczytałem/am i zrozumiałem/am program szkolenia
+    * Mam wszystkie wymagania i doświadczenie wymienione w wymaganiach uczestnictwa

@@ -7,7 +7,7 @@ Entry Test
     :name: Advanced Entry Test
 
     about/survey.rst
-    about/entry.rst
+    about/entry-test.rst
     about/agenda.rst
 
 *********

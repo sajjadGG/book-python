@@ -26,7 +26,7 @@ English
 #. For what reason you would like to use Python [you can select many]:
 
     * numerical analysis
-    * machine learning or data science
+    * machine learning or data science
     * web development
     * operating system administration
     * test automation and CI/CD
