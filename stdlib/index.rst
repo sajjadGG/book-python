@@ -1,12 +1,13 @@
-**********
-Entry Test
-**********
+*****
+About
+*****
 .. toctree::
     :maxdepth: 1
-    :caption: Entry Test
-    :name: Stdlib Entry Test
+    :caption: About
+    :name: Stdlib About
 
-    exam/entry.rst
+    about/agenda.rst
+    about/entry-test.rst
 
 **********************
 Datetime and Timezones
@@ -186,13 +187,23 @@ GUI
 
     gui/tkinter.rst
 
-*********
-Exit Test
-*********
+*****
+Recap
+*****
 .. toctree::
     :maxdepth: 1
-    :caption: Exit Test
-    :name: Stdlib Exit Test
+    :caption: Recap
+    :name: Stdlib Recap
 
-    exam/exit.rst
+    about/exit-test.rst
 
+**********
+References
+**********
+
+Bibliography
+============
+.. bibliography:: _references/bibliography.bib
+    :style: plain
+    :labelprefix: F
+    :all:

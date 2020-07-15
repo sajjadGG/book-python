@@ -162,7 +162,7 @@ Function First Class Check
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/function_firstclass_check.py.py`
+* Solution: :download:`solution/function_firstclass_check.py`
 
 :English:
     #. Define function ``wrapper``

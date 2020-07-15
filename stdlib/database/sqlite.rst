@@ -17,7 +17,7 @@ Installation
         * Add to ``$PATH`` directory
 
                 * ``C:\Program Files\Git\cmd`` on Windows
-                * ``/usr/local/bin/`` on *nix
+                * ``/usr/local/bin/`` on \*nix
 
         * Check if Sqlite3 is installed (Point 1.)
 

@@ -416,7 +416,6 @@ Diagonal problem
 .. warning:: Without the ``np.ix_`` call, only the diagonal elements would be selected. This difference is the most important thing to remember about indexing with multiple advanced indexes.
 
 .. code-block:: python
-    :emphasize-lines: 42,43,45,46,47
 
     import numpy as np
 

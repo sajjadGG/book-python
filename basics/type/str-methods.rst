@@ -272,6 +272,8 @@ Is Alphabet Characters
     'hello1'.isalpha()  # False
 
 
+.. _Type Str Methods is Numeric:
+
 Is Numeric
 ==========
 * https://docs.python.org/library/stdtypes.html#str.isdecimal

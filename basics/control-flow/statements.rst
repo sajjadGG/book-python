@@ -287,7 +287,7 @@ Conditional Expression
     # astronaut
 
 .. code-block:: python
-    :caption: :ref:`https://python.astrotech.io/basics/type/str-methods.html#is-numeric`
+    :caption: :ref:`Type Str Methods is Numeric`
 
     age = input('What is your age?: ')
     age = float(age) if age.isnumeric() else None

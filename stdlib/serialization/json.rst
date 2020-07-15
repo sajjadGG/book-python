@@ -447,7 +447,7 @@ Serialization JSON Dump
 * Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 13 min
-* Solution: :download:`solution/serialize_json_dump.py`
+* Solution: :download:`solution/serialization_json_dump.py`
 
 :English:
     #. Use data from "Input" section (see below)
