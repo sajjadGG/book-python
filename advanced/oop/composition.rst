@@ -192,9 +192,9 @@ OOP Composition Mars
 
 OOP Composition Moveable
 ------------------------
-* Complexity level: easy
-* Lines of code to write: 8 lines
-* Estimated time of completion: 5 min
+* Complexity level: medium
+* Lines of code to write: 20 lines
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/oop_composition_moveable.py`
 
 :English:
