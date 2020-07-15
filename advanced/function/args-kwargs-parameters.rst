@@ -160,10 +160,8 @@ Positional and Keyword Parameters
 
 Examples
 ========
-
-Sum
----
 .. code-block:: python
+    :caption: Sum
 
     def add(*args):
         total = 0
@@ -180,10 +178,8 @@ Sum
     add(3, 1)        # 4
     add(1, 2, 3, 4)  # 10
 
-Kelvin to Celsius
------------------
 .. code-block:: python
-    :caption: Converts arguments between different units
+    :caption: Kelvin to Celsius
 
     def kelvin_to_celsius(*degrees):
         return [x+273.15 for x in degrees]
@@ -195,8 +191,6 @@ Kelvin to Celsius
     kelvin_to_celsius(1, 2, 3, 4, 5)
     # [274.15, 275.15, 276.15, 277.15, 278.15]
 
-HTML List Generator
--------------------
 .. code-block:: python
     :caption: Generate HTML list from function arguments
 
@@ -216,8 +210,6 @@ HTML List Generator
     # <li>orange</li>
     # </ul>
 
-Print
------
 .. code-block:: python
     :caption: Intuitive definition of ``print`` function
 

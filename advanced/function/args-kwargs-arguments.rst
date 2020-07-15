@@ -3,7 +3,7 @@ Arbitrary Number of Arguments
 *****************************
 
 
-Positional arguments
+Positional Arguments
 ====================
 * ``*`` in this context, is not multiplication in mathematical sense
 * ``*`` is used for positional arguments
@@ -87,45 +87,8 @@ Positional and Keyword Arguments
     echo(*args, **kwargs)
 
 
-Dynamically create objects
-==========================
-
-.. code-block:: python
-
-    from dataclasses import dataclass
-
-    MOVEMENT = [
-        (0,0),
-        (1,0),
-        (2,1,1),
-        (3,2),
-        (3,3,-1),
-        (2,3),
-    ]
-
-    @dataclass
-    class Point:
-        x: int
-        y: int
-        z: int = 0
-
-    movement = [Point(x,y) for x,y in MOVEMENT]
-    # ValueError: too many values to unpack (expected 2)
-
-    movement = [Point(*coordinates) for coordinates in MOVEMENT]
-
-    movement
-    # [
-    #   Point(x=0, y=0, z=0),
-    #   Point(x=1, y=0, z=0),
-    #   Point(x=2, y=1, z=1),
-    #   Point(x=3, y=2, z=0),
-    #   Point(x=3, y=3, z=-1),
-    #   Point(x=2, y=3, z=0)
-    # ]
-
-From sequence
--------------
+Objects From Sequence
+=====================
 .. code-block:: python
 
     DATA = (6.0, 3.4, 4.5, 1.6, 'versicolor')
@@ -164,8 +127,41 @@ From sequence
     print(result)
     # [versicolor, setosa]
 
-From mapping
-------------
+.. code-block:: python
+
+    from dataclasses import dataclass
+
+    MOVEMENT = [
+        (0, 0),
+        (1, 0),
+        (2, 1, 1),
+        (3, 2),
+        (3, 3, -1),
+        (2, 3),
+    ]
+
+    @dataclass
+    class Point:
+        x: int
+        y: int
+        z: int = 0
+
+    movement = [Point(x,y) for x,y in MOVEMENT]
+    # ValueError: too many values to unpack (expected 2)
+
+    movement = [Point(*coordinates) for coordinates in MOVEMENT]
+
+    movement
+    # [Point(x=0, y=0, z=0),
+    #  Point(x=1, y=0, z=0),
+    #  Point(x=2, y=1, z=1),
+    #  Point(x=3, y=2, z=0),
+    #  Point(x=3, y=3, z=-1),
+    #  Point(x=2, y=3, z=0)]
+
+
+Objects From Mappings
+=====================
 .. code-block:: python
 
     DATA = {"sepal_length": 6.0, "sepal_width": 3.4, "petal_length": 4.5, "petal_width": 1.6, "species": "versicolor"}
@@ -208,25 +204,18 @@ From mapping
 
 Examples
 ========
-
-Creating complex numbers
-------------------------
 .. code-block:: python
     :caption: Defining complex number by passing keyword arguments directly
 
     complex(real=3, imag=5)
     # (3+5j)
 
-.. code-block:: python
-    :caption: Defining complex number by passing keyword arguments in ``dict``
 
     number = {'real': 3, 'imag': 5}
-
     complex(**number)
     # (3+5j)
 
-Vectors
--------
+
 .. code-block:: python
     :caption: Passing vector to the function
 
@@ -237,13 +226,10 @@ Vectors
 
 
     vector = (1, 0, 1)
-
     cartesian_coordinates(*vector)
 
-Point
------
 .. code-block:: python
-    :caption: Passing vector to the function
+    :caption: Passing point to the function
 
     def cartesian_coordinates(x, y, z):
         print(x)    # 1
@@ -252,16 +238,10 @@ Point
 
 
     point = {'x': 1, 'y': 0, 'z': 1}
-
     cartesian_coordinates(**point)
 
-
-Print formatting
-----------------
-* Now f-string formatting is preferred
-
 .. code-block:: python
-    :caption: ``str.format()`` expects keyword arguments, which keys are used in string. It is cumbersome to pass ``format(name=name, agency=agency)`` for every variable in the code.
+    :caption: ``str.format()`` expects keyword arguments, which keys are used in string. It is cumbersome to pass ``format(name=name, agency=agency)`` for every variable in the code. Since Python 3.6 f-string formatting are preferred.
 
     firstname = 'Jan'
     lastname = 'Twardowski'
@@ -271,10 +251,8 @@ Print formatting
     print(result)
     # Astronaut Jan Twardowski on the Moon
 
-Common configuration
---------------------
 .. code-block:: python
-    :caption: Calling a function which has similar parameters
+    :caption: Calling a function which has similar parameters. Passing configuration to the function, which sets parameters from the config
 
     def draw_line(x, y, color, type, width, markers):
         ...
@@ -284,19 +262,11 @@ Common configuration
     draw_line(x=3, y=4, color='red', type='dashed', width='2px', markers='disc')
     draw_line(x=5, y=6, color='red', type='dashed', width='2px', markers='disc')
 
-.. code-block:: python
-    :caption: Passing configuration to the function, which sets parameters from the config
 
-    def draw_line(x, y, color, type, width, markers):
-        ...
-
-
-    style = {
-        'color': 'red',
-        'type': 'dashed',
-        'width': '2px',
-        'markers': 'disc',
-    }
+    style = {'color': 'red',
+             'type': 'dashed',
+             'width': '2px',
+             'markers': 'disc'}
 
     draw_line(x=1, y=2, **style)
     draw_line(x=3, y=4, **style)
@@ -310,8 +280,7 @@ Common configuration
         'port': 5432,
         'username': 'my_username',
         'password': 'my_password',
-        'database': 'my_database',
-    }
+        'database': 'my_database'}
 
 
     def database_connect(host, port, username, password, database):
@@ -320,10 +289,8 @@ Common configuration
 
     connection = database_connect(**config)
 
-Calling function with all variables from higher order function
---------------------------------------------------------------
 .. code-block:: python
-    :caption: Passing arguments to lower order function. ``locals()`` will return a ``dict`` with all the variables in local scope of the function.
+    :caption: Calling function with all variables from higher order function. ``locals()`` will return a ``dict`` with all the variables in local scope of the function.
 
     def template(template, **user_data):
         print('Template:', template)
@@ -351,10 +318,8 @@ Calling function with all variables from higher order function
     #        'groups': ['admins', 'astronauts'],
     #        'permission': ['all', 'everywhere']}
 
-Proxy functions
----------------
 .. code-block:: python
-    :caption: One of the most common use of ``*args``, ``**kwargs`` is for proxy methods.
+    :caption: Proxy functions. One of the most common use of ``*args``, ``**kwargs``.
     :emphasize-lines: 2,6,10
 
     def read_csv(filepath_or_buffer, sep=', ', delimiter=None, header='infer',
@@ -386,10 +351,8 @@ Proxy functions
     my_csv('iris3.csv', encoding='cp1250', verbose=True)
     my_csv('iris4.csv', verbose=True, usecols=['Sepal Length', 'Species'])
 
-Decorator
----------
 .. code-block:: python
-    :caption: Decorators are functions, which get pointer to the decorated function as it's argument, and has closure which gets original function arguments as positional and keyword arguments.
+    :caption: Decorators. Decorators are functions, which get pointer to the decorated function as it's argument, and has closure which gets original function arguments as positional and keyword arguments.
 
     def login_required(original_function):
 

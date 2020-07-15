@@ -3,6 +3,8 @@ Parameter Syntax
 ****************
 
 
+Recap
+=====
 .. code-block:: python
 
     def echo(a, b, c=3):
