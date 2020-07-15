@@ -167,3 +167,25 @@ Composition using Mixin classes
     print(user.to_pickle())
     # b'\x80\x03c__main__\nUser\nq\x00)\x81q\x01}q\x02(X\n\x00\x00\x00first_nameq\x03X\x03\x00\x00\x00Janq\x04X\t\x00\x00\x00last_nameq\x05X\n\x00\x00\x00Twardowskiq\x06X\x07\x00\x00\x00addressq\x07X\x17\x00\x00\x00Copernicus Crater, Moonq\x08ub.'
 
+
+Assignments
+===========
+
+OOP Composition Mars
+--------------------
+* Complexity level: easy
+* Lines of code to write: 8 lines
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/oop_composition_mars.py`
+
+:English:
+    #. Stwórz klasę ``Habitat``
+    #. Stwórz klasę ``Rocket``
+    #. Stwórz klasę ``Astronaut``
+    #. Compose class ``MarsMission`` from ``Habitat``, ``Rocket``, ``Astronaut``
+
+:Polish:
+    #. Stwórz klasę ``Habitat``
+    #. Stwórz klasę ``Rocket``
+    #. Stwórz klasę ``Astronaut``
+    #. Skomponuj klasę ``MarsMission`` z ``Habitat``, ``Rocket``, ``Astronaut``
