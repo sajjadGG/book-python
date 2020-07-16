@@ -111,10 +111,10 @@ Function Parameter Syntax Args
     #. Test function by running with positional arguments
 
 :Polish:
-    #. Stwórz funckję ``set_position``
-    #. Funkcja przyjmuje dwa argumenty ``x`` i ``y``
+    #. Stwórz funckję ``take_damage``
+    #. Funkcja przyjmuje jeden argument ``dmg``
     #. Argument można podawać tylko pozycyjnie
-    #. Function does nothing
+    #. Funkcja nic nie robi
     #. Przetestuj funkcję uruchamiając z nazwanymi parametrami
     #. Przetestuj funkcję uruchamiając z pozycyjnymi parametrami
 

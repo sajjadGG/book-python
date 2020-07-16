@@ -1,6 +1,6 @@
 import csv
 
-FILE = r'/tmp/csv_relations.csv'
+FILE = r'/tmp/oop-relations.csv'
 
 
 class Astronaut:

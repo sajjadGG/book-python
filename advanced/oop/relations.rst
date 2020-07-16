@@ -47,15 +47,15 @@ OOP Relations Model
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Create Address Book
     #. Model data using classes and relations
     #. We should have three classes, name it
+    #. Create instances dynamically based on ``DATA``
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Napisz książkę adresową
-    #. W zadaniu mamy do czynienia z trzema klasami, wymień je.
-    #. Zamodeluj problem wykorzystując trzy klasy i relacje między nimi
+    #. Zamodeluj problem wykorzystując klasy i relacje między nimi
+    #. W zadaniu mamy do czynienia z trzema klasami, wymień je
+    #. Twórz instancje dynamicznie na podstawie ``DATA``
 
 :The whys and wherefores:
     * OOP modeling
@@ -65,7 +65,7 @@ OOP Relations Model
 
 :Input:
     .. code-block:: json
-        :caption: Address Book
+        :caption: Python List[dict] or JSON?
 
         [
             {"firstname": "Jan", "lastname": "Twardowski", "addresses": [
@@ -92,8 +92,8 @@ OOP Relations Model
 OOP Relations Flatten
 ---------------------
 * Complexity level: hard
-* Lines of code to write: 60 lines
-* Estimated time of completion: 20 min
+* Lines of code to write: 20 lines
+* Estimated time of completion: 21 min
 * Solution: :download:`solution/oop_relations_flatten.py`
 
 :English:
@@ -150,8 +150,8 @@ OOP Relations Flatten
 OOP Relations Nested
 --------------------
 * Complexity level: medium
-* Lines of code to write: 60 lines
-* Estimated time of completion: 20 min
+* Lines of code to write: 45 lines
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/oop_relations_nested.py`
 
 :English:
