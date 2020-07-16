@@ -154,3 +154,6 @@ OOP Interface Iris
         # Traceback (most recent call last):
         #    ...
         # NotImplementedError
+
+:Hint:
+    * ``self.__dict__``

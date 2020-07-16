@@ -354,3 +354,79 @@ Do not trigger methods for user
         password='admin')
 
     localhost.connect()
+
+
+Assignments
+===========
+
+OOP Constructor Passwd
+----------------------
+* Complexity level: easy
+* Lines of code to write: 21 lines
+* Estimated time of completion: 13 min
+* Solution: :download:`solution/oop_constructor_passwd.py`
+
+:English:
+    #. Use code from "Input" section (see below)
+    .. todo:: English translation
+
+:Polish:
+    #. Użyj kodu z sekcji "Input" (patrz poniżej)
+    #. Zapisz ``DATA`` do pliku ``etc-passwd.txt``
+    #. Wczytaj plik i iteruj po liniach
+    #. Odrzuć puste linie i komentarze
+    #. Stwórz klasę ``Parser``, która:
+
+        #. Podzieli linię po dwukropku
+        #. Klasa ``Parser`` zwraca instancje klas ``UserAccount`` lub ``SystemAccount`` w zależności od wartości pola UID
+
+    #. User ID (UID) to trzecie pole, np. "root:x:0:0:root:/root:/bin/bash" to UID jest równy ``0``
+    #. Konta systemowe (``SystemAccount``) to takie, które w polu UID mają wartość poniżej 1000
+    #. Konta użytkowników (``UserAccount``) to takie, które w polu UID mają wartość 1000 lub więcej
+
+:Input:
+    .. code-block:: python
+
+        DATA = """
+        ##
+        # User Database
+        #   - User name
+        #   - Encrypted password
+        #   - User ID number (UID)
+        #   - User's group ID number (GID)
+        #   - Full name of the user (GECOS)
+        #   - User home directory
+        #   - Login shell
+        ##
+
+        root:x:0:0:root:/root:/bin/bash
+        bin:x:1:1:bin:/bin:/sbin/nologin
+        daemon:x:2:2:daemon:/sbin:/sbin/nologin
+        adm:x:3:4:adm:/var/adm:/sbin/nologin
+        shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+        halt:x:7:0:halt:/sbin:/sbin/halt
+        nobody:x:99:99:Nobody:/:/sbin/nologin
+        sshd:x:74:74:Privilege-separated SSH:/var/empty/sshd:/sbin/nologin
+        peck:x:1000:1000:Max Peck:/home/peck:/bin/bash
+        jimenez:x:1001:1001:José Jiménez:/home/jimenez:/bin/bash
+        ivanovic:x:1002:1002:Ivan Иванович:/home/ivanovic:/bin/bash
+        """
+
+:Output:
+    .. code-block:: python
+
+        result: List[Union[UserAccount, SystemAccount]]
+        # [SystemAccount(username='root'),
+        #  SystemAccount(username='bin'),
+        #  SystemAccount(username='daemon'),
+        #  SystemAccount(username='adm'),
+        #  SystemAccount(username='shutdown'),
+        #  SystemAccount(username='halt'),
+        #  SystemAccount(username='nobody'),
+        #  SystemAccount(username='sshd'),
+        #  UserAccount(username='peck'),
+        #  UserAccount(username='jimenez'),
+        #  UserAccount(username='ivanovic')]
+
+:Hint:
+    * ``open(..., encoding='utf-8')``
