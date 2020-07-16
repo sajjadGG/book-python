@@ -5,29 +5,31 @@ Relations
 
 Relations
 =========
+* :ref:`Initial arguments mutability and shared state`
+
 .. code-block:: python
 
-    from typing import List
+    from typing import Sequence, List
 
-
-    class Astronaut:
-        def __init__(self, name: str, experience: List[Missions] = ()) -> None:
-            self.name = name
-            self.experience = experience
 
     class Mission:
         def __init__(self, year: int, name: str) -> None:
-            self.year = year
-            self.name = name
+            self.year: int = year
+            self.name: str = name
+
+    class Astronaut:
+        def __init__(self, name: str, experience: Sequence[Mission] = ()) -> None:
+            self.name: str = name
+            self.experience: List[Mission] = list(experience)
 
 
-    CREW = [
-        Astronaut('Jan Twardowski', experience=(
+    CREW: List[Astronaut] = [
+        Astronaut('Jan Twardowski', experience=[
             Mission(1969, 'Apollo 11'),
-            Mission(2024, 'Artemis 3'))),
+            Mission(2024, 'Artemis 3')]),
 
-        Astronaut('Mark Watney', experience=(
-            Mission(2035, 'Ares 3'))),
+        Astronaut('Mark Watney', experience=[
+            Mission(2035, 'Ares 3')]),
 
         Astronaut('Melissa Lewis'),
     ]
@@ -36,12 +38,12 @@ Relations
 Assignments
 ===========
 
-OOP Relations
--------------
+OOP Relations Model
+-------------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
-* Estimated time of completion: 20 min
-* Solution: :download:`solution/oop_relations.py`
+* Estimated time of completion: 13 min
+* Solution: :download:`solution/oop_relations_model.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -67,24 +69,24 @@ OOP Relations
 
         [
             {"firstname": "Jan", "lastname": "Twardowski", "addresses": [
-                {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków", "post_code": "31-008", "region": "Małopolskie", "country": "Poland"}]},
+                {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków", "postcode": "31-008", "region": "Małopolskie", "country": "Poland"}]},
 
             {"firstname": "José", "lastname": "Jiménez", "addresses": [
-                {"street": "2101 E NASA Pkwy", "city": "Houston", "post_code": 77058, "region": "Texas", "country": "USA"},
-                {"street": "", "city": "Kennedy Space Center", "post_code": 32899, "region": "Florida", "country": "USA"}]},
+                {"street": "2101 E NASA Pkwy", "city": "Houston", "postcode": 77058, "region": "Texas", "country": "USA"},
+                {"street": "", "city": "Kennedy Space Center", "postcode": 32899, "region": "Florida", "country": "USA"}]},
 
             {"firstname": "Mark", "lastname": "Watney", "addresses": [
-                {"street": "4800 Oak Grove Dr", "city": "Pasadena", "post_code": 91109, "region": "California", "country": "USA"},
-                {"street": "2825 E Ave P", "city": "Palmdale", "post_code": 93550, "region": "California", "country": "USA"}]},
+                {"street": "4800 Oak Grove Dr", "city": "Pasadena", "postcode": 91109, "region": "California", "country": "USA"},
+                {"street": "2825 E Ave P", "city": "Palmdale", "postcode": 93550, "region": "California", "country": "USA"}]},
 
             {"firstname": "Иван", "lastname": "Иванович", "addresses": [
-                {"street": "", "city": "Космодро́м Байкону́р", "post_code": "", "region": "Кызылординская область", "country": "Қазақстан"},
-                {"street": "", "city": "Звёздный городо́к", "post_code": 141160, "region": "Московская область", "country": "Россия"}]},
+                {"street": "", "city": "Космодро́м Байкону́р", "postcode": "", "region": "Кызылординская область", "country": "Қазақстан"},
+                {"street": "", "city": "Звёздный городо́к", "postcode": 141160, "region": "Московская область", "country": "Россия"}]},
 
             {"firstname": "Melissa", "lastname": "Lewis", "addresses": []},
 
             {"firstname": "Alex", "lastname": "Vogel", "addresses": [
-                {"street": "Linder Hoehe", "city": "Köln", "post_code": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}
+                {"street": "Linder Hoehe", "city": "Köln", "postcode": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}
         ]
 
 OOP Relations Flatten

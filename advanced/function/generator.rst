@@ -521,23 +521,23 @@ Function Generator Iris
 :Input:
     .. code-block:: python
 
-    import sys
+        import sys
 
-    FILE = r'iris.csv'
-
-
-    def function(species):
-        raise NotImplementedError
-
-    def generator(species):
-        raise NotImplementedError
+        FILE = r'iris.csv'
 
 
-    fun = function('setosa')
-    gen = generator('setosa')
+        def function(species):
+            raise NotImplementedError
 
-    print('Function', sys.getsizeof(fun))
-    print('Generator', sys.getsizeof(gen))
+        def generator(species):
+            raise NotImplementedError
+
+
+        fun = function('setosa')
+        gen = generator('setosa')
+
+        print('Function', sys.getsizeof(fun))
+        print('Generator', sys.getsizeof(gen))
 
 :Output:
     Function 520
