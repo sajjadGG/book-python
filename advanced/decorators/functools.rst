@@ -1,11 +1,12 @@
-*********
-Functools
-*********
+**************************
+Standard Library Functools
+**************************
 
 
 Wraps
 =====
-* ``@functools.wraps(fn)``
+* ``from functools import wraps``
+* ``@wraps(func)``
 
 .. code-block:: python
     :emphasize-lines: 15,18
@@ -58,7 +59,8 @@ Wraps
 
 Cached Property
 ===============
-* ``@functools.cached_property(fn)``
+* ``from functools import cached_property``
+* ``@cached_property(func)``
 
 .. code-block:: python
 
@@ -86,6 +88,9 @@ Cached Property
 
 LRU (least recently used) cache
 ===============================
+* ``from functools import lru_cache``
+* ``@lru_cache(maxsize=None)``
+
 .. code-block:: python
 
     from functools import lru_cache

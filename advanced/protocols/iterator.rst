@@ -181,8 +181,10 @@ Implementation
     # Toyota
 
 
-``itertools``
-=============
+Standard Library Itertools
+==========================
+* ``import itertools``
+
 .. code-block:: python
     :caption: ``itertools.chain()``
 
@@ -200,7 +202,7 @@ Implementation
     # 3
 
 .. code-block:: python
-    :caption: ``chain()``
+    :caption: ``itertools.chain()``
 
     from itertools import chain
 
@@ -287,12 +289,12 @@ Implementation
 Assignments
 ===========
 
-Protocol Iterator Usage
+Protocol Iterator Range
 -----------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 8 min
-* Solution: :download:`solution/protocol_iterator_usage.py`
+* Solution: :download:`solution/protocol_iterator_range.py`
 
 :English:
     #. Write own implementation of a ``range()`` function
