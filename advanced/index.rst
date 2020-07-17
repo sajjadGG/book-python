@@ -52,7 +52,7 @@ Object Oriented Programming
     :name: Advanced Object Oriented Programming
 
     oop/fields-static-dynamic.rst
-    oop/attribute-access-modifiers.rst
+    oop/access-modifiers.rst
     oop/operator-overload.rst
     oop/composition.rst
     oop/inner-classes.rst

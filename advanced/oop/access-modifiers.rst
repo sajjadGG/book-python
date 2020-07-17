@@ -1,15 +1,20 @@
-**************************
-Attribute Access Modifiers
-**************************
+****************
+Access Modifiers
+****************
 
 
+Rationale
+=========
 .. highlights::
-    * Fields are always public
+    * Attributes and methods are always public
     * No protected and private
-    * ``_name`` - protected field (by convention)
-    * ``__name__`` - system field
+    * ``_name`` - protected attribute or method (by convention)
+    * ``__name__`` - system attribute or method
     * ``name_`` - used while name collision
 
+
+Attributes
+==========
 .. code-block:: python
     :caption: Access modifiers
 
@@ -48,6 +53,27 @@ Attribute Access Modifiers
     # Watney
 
     print(mark.publicname)
+    # Mark W.
+
+
+Methods
+=======
+.. code-block:: python
+
+    class Astronaut:
+        def __init__(self, firstname, lastname):
+            self._firstname = firstname
+            self._lastname = lastname
+
+        def _get_fullname(self):
+            return f'{self._firstname} {self._lastname}'
+
+        def get_publicname(self):
+            return f'{firstname} {lastname[0]}.'
+
+
+    mark = Astronaut('Mark', 'Watney')
+    mark.get_publicname()
     # Mark W.
 
 
