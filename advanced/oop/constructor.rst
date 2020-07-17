@@ -1,37 +1,24 @@
-*********************
-Object Initialization
-*********************
+***********
+Constructor
+***********
 
 
-``__call__()``
-==============
-* ``__call__()`` method invokes the following:
-
-    * ``__new__()``
-    * ``__init__()``
-
+Rationale
+=========
 .. code-block:: python
-    :caption: Intuition definition of ``__new__()`` and ``__init__()``
 
-    class Astronaut:
-        def __call__(cls):
-            astro = Astronaut.__new__(cls)
-            astro.__init__()
+    my = MyClass()
+
+    # instance = MyClass.__new__()
+    # instance.__init__()
 
 .. code-block:: python
 
-    class Astronaut:
-        pass
+    __new__() -> __init__()
 
 
-    watney = Astronaut      # Creates alias to class (not an instance)
-    watney()                # Creates instance by calling ``.__call__()``
-
-    watney = Astronaut()    # Creates instance by calling ``.__call__()``
-
-
-``__new__()``
-=============
+New Method
+==========
 .. highlights::
     * the constructor
     * solely for creating the object
@@ -50,8 +37,8 @@ Object Initialization
     # Astronaut.__new__() called
 
 
-``__init__()``
-==============
+Init Method
+===========
 .. highlights::
     * the initializer
     * for initializing object with data
@@ -76,10 +63,6 @@ Examples
     :emphasize-lines: 3,4
 
     class Astronaut:
-        def __call__(cls):
-            obj = Astronaut.__new__(cls)
-            obj.__init__()
-
         def __new__(cls):
             print('Astronaut.__new__() called')
             return object.__new__(cls)
@@ -153,10 +136,6 @@ Examples
         pass
 
     class Document:
-        def __call__(self, *args, **kwargs):
-            obj = Document.__new__(*args, **kwargs)
-            obj.__init__()
-
         def __new__(cls, *args, **kwargs):
             filename, extension = args[0].split('.')
 

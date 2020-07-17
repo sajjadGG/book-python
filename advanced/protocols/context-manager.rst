@@ -10,6 +10,20 @@ Protocol
 * ``__enter__(self) -> self``
 * ``__exit__(self, *args) -> None``
 
+.. code-block:: python
+    :caption: How to create Context Managers
+
+    class ContextManager:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *args):
+            return None
+
+
+    with ContextManager() as cm:
+        pass
+
 
 Application
 ===========
@@ -42,8 +56,8 @@ Implementation
             print('I am inside')
 
 
-    with MyClass() as cls:
-        cls.do_something()
+    with MyClass() as my:
+        my.do_something()
 
     # Entering the block
     # I am inside
@@ -277,12 +291,12 @@ Contextmanager decorator
 Assignments
 ===========
 
-Protocol Context Manager
-------------------------
+Protocol Context Manager File
+-----------------------------
 * Complexity level: easy
 * Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
-* Solution: :download:`solution/protocol_context_manager.py`
+* Estimated time of completion: 13 min
+* Solution: :download:`solution/protocol_contextmanager_file.py`
 
 :English:
     #. Use kodu from "Input" section (see below)
@@ -303,7 +317,7 @@ Protocol Context Manager
 :Input:
     .. code-block:: python
 
-        FILENAME = '/tmp/context-manager.txt'
+        FILENAME = r'/tmp/context-manager.txt'
 
         class File:
             pass

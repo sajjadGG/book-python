@@ -482,6 +482,31 @@ Generator as Iterator
         pass
 
 
+Is Generator
+============
+.. code-block:: python
+
+    import inspect
+
+    a = [x for x in range(0,5)]
+    b = (x for x in range(0,5))
+
+    inspect.isgenerator(a)
+    # False
+
+    inspect.isgenerator(b)
+    # True
+
+.. code-block:: python
+
+    import inspect
+
+    data = range(0, 10)
+
+    inspect.isgenerator(data)
+    # False
+
+
 Assignments
 ===========
 

@@ -74,6 +74,8 @@ Aliases
 
 Callable
 ========
+* ``__call__()`` method makes object callable
+
 .. code-block:: python
 
     def hello():
@@ -86,9 +88,30 @@ Callable
     type(hello)           # <class 'function'>
     hello                 # <function hello at 0x0C55D420>
 
-    type('hello')         # <class 'str'>
-    'hello'               # 'hello'
-    'hello'()             # TypeError: 'str' object is not callable
+.. code-block:: python
+
+    astro = str('Mark Watney')
+
+    type(astro)
+    # <class 'str'>
+
+    astro()
+    # TypeError: 'str' object is not callable
+
+.. code-block:: python
+
+    class str(str):
+        def __call__(self):
+            print('hello')
+
+
+    astro = str('Mark Watney')
+
+    type(astro)
+    # <class '__main__.str'>
+
+    astro()
+    # hello
 
 
 Callbacks
