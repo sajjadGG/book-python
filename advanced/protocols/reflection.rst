@@ -5,84 +5,61 @@ Reflection
 
 Rationale
 =========
-* Act, when someone is trying to access an attribute
+* Act on accessing an attribute
 
 
 Syntax
 ======
+Built-in Functions:
 
-Built-in Functions
-------------------
-* ``hasattr(obj, 'attribute_name') -> bool``
-* ``setattr(obj, 'attribute_name', 'new value') -> None``
-* ``getattr(obj, 'attribute_name', 'default value') -> Any``
-* ``delattr(obj, 'attribute_name') -> None``
+    * ``setattr(obj, 'attribute_name', 'new value') -> None``
+    * ``delattr(obj, 'attribute_name') -> None``
+    * ``getattr(obj, 'attribute_name', 'default value') -> Any``
+    * ``hasattr(obj, 'attribute_name') -> bool``
 
-Protocol
---------
-* ``__setattr__(self, attribute_name, value)``
-* ``__getattribute__(self, attribute_name, default)``
-* ``__getattr__(self, attribute_name, default)``
-* ``__delattr__(self, attribute_name)``
+Protocol:
+
+    * ``__setattr__(self, attribute_name, value)``
+    * ``__delattr__(self, attribute_name)``
+    * ``__getattr__(self, attribute_name, default)``
+    * ``__getattribute__(self, attribute_name, default)``
 
 
-``__setattr__()``
-=================
+Set Attribute
+=============
 * Called when trying to set attribute to a value
-* ``setattr(x, 'name', 'value')`` is equivalent to ``x.name = 'value'``
+* ``setattr(astro, 'name', 'value')`` is equivalent to ``astro.name = 'value'``
 * Call Stack:
 
     * ``astro.name = 'Mark Watney'``
     * => ``setattr(astro, 'name', 'Mark Watney')``
-    * => ``obj.__setattr__('name', 'Mark Watney')``
+    * => ``astro.__setattr__('name', 'Mark Watney')``
 
 .. code-block:: python
 
     class Astronaut:
 
-        def __setattr__(self, attribute_name, new_value):
-            if attribute_name.startswith('_'):
-                raise PermissionError(f'Field "{attribute_name}" is protected, cannot "set" value.')
+        def __setattr__(self, name, value):
+            if name.startswith('_'):
+                raise PermissionError(f'Field "{name}" is protected, cannot "set" value.')
             else:
-                return object.__setattr__(self, attribute_name, new_value)
+                return super().__setattr__(name, value)
 
 
     watney = Astronaut()
 
-    watney.name = 'Mark Watney'
-    print(watney.name)
+    watney.fullname = 'Mark Watney'
+    print(watney.fullname)
     # Mark Watney
 
     watney._salary = 100
     # PermissionError: Field "_salary" is protected, cannot "set" value.
 
-.. code-block:: python
 
-    class Temperature:
-        def __init__(self, initial_temperature):
-            self.value = initial_temperature
-
-        def __setattr__(self, attribute_name, new_value):
-            if attribute_name == 'value' and new_value < 0.0:
-                raise ValueError('Kelvin temperature cannot be negative')
-            else:
-                object.__setattr__(self, attribute_name, new_value)
-
-
-    t = Temperature(100)
-
-    t.value = 20
-    print(t.value)
-    # 20
-
-    t.value = -10
-    # ValueError: Kelvin temperature cannot be negative
-
-
-``__delattr__()``
-=================
+Delete Attribute
+================
 * Called when trying to delete attribute
-* ``delattr(x, 'name')`` is equivalent to ``del x.name``
+* ``delattr(astro, 'name')`` is equivalent to ``del astro.name``
 * Call stack:
 
     * ``del astro.name``
@@ -93,46 +70,27 @@ Protocol
 
     class Astronaut:
 
-        def __delattr__(self, attribute_name):
-            if attribute_name.startswith('_'):
-                raise PermissionError(f'Field "{attribute_name}" is protected, cannot "delete" value.')
+        def __delattr__(self, name):
+            if name.startswith('_'):
+                raise PermissionError(f'Field "{name}" is protected, cannot "delete" value.')
             else:
-                return object.__delattr__(self, attribute_name)
+                return super().__delattr__(name)
 
 
     watney = Astronaut()
 
-    watney.name = 'Mark Watney'
+    watney.fullname = 'Mark Watney'
     watney._salary = 100
 
-    del watney.name
+    del watney.fullname
     del watney._salary
     # PermissionError: Field "_salary" is protected, cannot "delete" value.
 
-.. code-block:: python
 
-    class Temperature:
-        def __init__(self, initial_temperature):
-            self.value = initial_temperature
-
-        def __delattr__(self, attribute_name):
-            if attribute_name == 'value':
-                self.value = 0.0
-            else:
-                object.__delattr__(self, attribute_name)
-
-
-    t = Temperature(100)
-
-    del t.value
-    print(t.value)
-    # 0.0
-
-
-``__getattribute__()``
-======================
+Get Attribute
+=============
 * Called for every time, when you want to access any attribute
-* ``getattr(x, 'name')`` is equivalent to ``x.name``
+* ``getattr(astro, 'name')`` is equivalent to ``astro.name``
 * Before even checking if this attribute exists
 * if ``__getattribute__()`` raises ``AttributeError`` it calls ``__getattr__()``
 * Call stack:
@@ -140,7 +98,7 @@ Protocol
     * ``astro.name``
     * => ``getattr(astro, 'name')``
     * => ``astro.__getattribute__('name')``
-    * if ``astro.__getattribute__(name)`` raise ``AttributeError``
+    * if ``astro.__getattribute__('name')`` raise ``AttributeError``
     * => ``astro.__getattr__('name')``
 
 .. code-block:: python
@@ -148,51 +106,57 @@ Protocol
 
     class Astronaut:
 
-        def __getattribute__(self, attribute_name):
-            if attribute_name.startswith('_'):
-                raise PermissionError(f'Field "{attribute_name}" is protected, cannot "get" value.')
+        def __getattribute__(self, name):
+            if name.startswith('_'):
+                raise PermissionError(f'Field "{name}" is protected, cannot "get" value.')
             else:
-                return object.__getattribute__(self, attribute_name)
+                return super().__getattribute__(name)
 
 
     watney = Astronaut()
 
-    watney.name = 'Mark Watney'
-    print(watney.name)
+    watney.fullname = 'Mark Watney'
+    print(watney.fullname)
     # Mark Watney
 
     print(watney._salary)
     # PermissionError: Field "_salary" is protected, cannot "get" value.
 
-.. code-block:: python
-    :caption: Example ``__getattribute__()``
 
-    class Temperature:
-        def __init__(self, initial_temperature):
-            self.value = initial_temperature
-
-        def __getattribute__(self, attribute_name):
-            if attribute_name == 'value':
-                raise PermissionError('Field is private')
-            else:
-                return object.__getattribute__(self, attribute_name)
-
-
-    temp = Temperature(273)
-
-    temp.value = 20
-    print(temp.value)
-    # PermissionError: Field is private
-
-
-``__getattr__()``
-=================
+Get Attribute if Does Not Exist
+===============================
 * Called whenever you request an attribute that hasn't already been defined
 * if ``__getattribute__()`` raises ``AttributeError`` it calls ``__getattr__()``
 * Implementing a fallback for missing attributes
 
+.. code-block:: python
+    :caption: Example ``__getattr__()``
 
-``hasattr()``
+    class Astronaut:
+        def __init__(self):
+            self.fullname = None
+
+        def __getattr__(self, name):
+            print('Getattr called')
+
+            if name.startswith('_'):
+                raise PermissionError(f'Field "{name}" is protected, cannot "get" value.')
+            else:
+                return super().__getattr__(name)
+
+
+    watney = Astronaut()
+
+    watney.fullname = 'Mark Watney'
+    print(watney.fullname)
+    # Mark Watney
+
+    print(watney._salary)
+    # Getattr called
+    # PermissionError: Field "_salary" is protected, cannot "get" value.
+
+
+Has Attribute
 =============
 * Check if object has attribute
 * There is no ``__hasattr__()`` method
@@ -200,46 +164,47 @@ Protocol
 
 .. code-block:: python
 
-    class Temperature:
-        def __init__(self, initial_temperature):
-            self.value = initial_temperature
+    class Astronaut:
+        def __init__(self, firstname, lastname):
+            self.firstname = firstname
+            self.lastname = lastname
 
 
-    t = Temperature(100)
+    watney = Astronaut('Mark', 'Watney')
 
-    hasattr(t, 'kelvin')
-    # False
+    print(hasattr(watney, 'firstname'))     # True
+    print(hasattr(watney, 'lastname'))      # True
+    print(hasattr(watney, 'fullname'))      # False
 
-    hasattr(t, 'initial_temperature')
-    # False
+    watney.fullname = 'Mark Watney'
 
-    hasattr(t, 'value')
+    print(hasattr(watney, 'fullname'))
     # True
 
 
-Example
-=======
+Examples
+========
 .. code-block:: python
 
     class Astronaut:
 
-        def __getattribute__(self, attribute_name):
-            if attribute_name.startswith('_'):
-                raise PermissionError(f'Field "{attribute_name}" is protected, cannot "get" value.')
+        def __getattribute__(self, name):
+            if name.startswith('_'):
+                raise PermissionError(f'Field "{name}" is protected, cannot "get" value.')
             else:
-                return object.__getattribute__(self, attribute_name)
+                return super().__getattribute__(name)
 
-        def __setattr__(self, attribute_name, new_value):
-            if attribute_name.startswith('_'):
-                raise PermissionError(f'Field "{attribute_name}" is protected, cannot "set" value.')
+        def __setattr__(self, name, value):
+            if name.startswith('_'):
+                raise PermissionError(f'Field "{name}" is protected, cannot "set" value.')
             else:
-                return object.__setattr__(self, attribute_name, new_value)
+                return super().__setattr__(name, value)
 
 
     watney = Astronaut()
 
-    watney.name = 'Mark Watney'
-    print(watney.name)
+    watney.fullname = 'Mark Watney'
+    print(watney.fullname)
     # Mark Watney
 
     watney._salary = 100
@@ -247,6 +212,54 @@ Example
 
     print(watney._salary)
     # PermissionError: Field "_salary" is protected, cannot "get" value.
+
+.. code-block:: python
+
+    class Temperature:
+        def __init__(self, kelvin):
+            self.kelvin = kelvin
+
+        def __setattr__(self, name, value):
+            if value < 0.0:
+                raise ValueError('Kelvin temperature cannot be negative')
+            else:
+                return super().__setattr__(name, value)
+
+
+    t = Temperature(100)
+
+    t.kelvin = 20
+    print(t.kelvin)
+    # 20
+
+    t.kelvin = -10
+    # ValueError: Kelvin temperature cannot be negative
+
+.. code-block:: python
+
+    class Temperature:
+        def __init__(self, kelvin):
+            self.kelvin = kelvin
+
+        def __setattr__(self, name, value):
+            super().__setattr__(name, value)
+
+            if name == 'kelvin':
+                super().__setattr__(name, value)
+                self.celsius = 273.15 + self.kelvin
+                self.fahrenheit = (self.kelvin-273.15) * 1.8 + 32
+
+
+    t = Temperature(100)
+
+    print(t.kelvin)
+    # 100
+
+    print(t.celsius)
+    # 373.15
+
+    print(t.fahrenheit)
+    # -279.66999999999996
 
 
 Assignments

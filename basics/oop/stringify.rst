@@ -184,7 +184,7 @@ Format
             self.kelvin = kelvin
 
         def to_fahrenheit(self):
-            return (self.kelvin-273.15) * 9/5 + 32
+            return (self.kelvin-273.15) * 1.8 + 32
 
         def to_celsius(self):
             return self.kelvin - 273.15
