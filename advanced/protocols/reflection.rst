@@ -256,7 +256,7 @@ Protocol Reflection
 -------------------
 * Complexity level: medium
 * Lines of code to write: 30 lines
-* Estimated time of completion: 20 min
+* Estimated time of completion: 21 min
 * Solution: :download:`solution/protocol_reflection.py`
 
 :English:
@@ -269,6 +269,6 @@ Protocol Reflection
 :Polish:
     #. Stwórz klasę ``Point`` z atrybutami ``x``, ``y``, ``z``
     #. Zablokuj możliwość dodawania nowych atrybutów
-    #. Zablokuj możliwość usuwania atrybutów
+    #. Zablokuj możliwość usuwania atrybutów
     #. Zablokuj edycję atrybutów
     #. Pozwól na ustawianie atrybutów tylko przy inicjalizacji klasy
