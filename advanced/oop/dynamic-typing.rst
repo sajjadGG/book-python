@@ -198,3 +198,8 @@ Placeholder class
     print(b.species)             # 'Setosa'
     print(b.firstname)          # AttributeError: 'MyClass' object has no attribute 'firstname'
     print(b.lastname)           # AttributeError: 'MyClass' object has no attribute 'lastname'
+
+
+Assignments
+===========
+.. todo:: Create Assignments

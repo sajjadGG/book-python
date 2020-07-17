@@ -213,3 +213,8 @@ Examples
     result = {"datetime": datetime.date(1961, 4, 12)}
     json.dumps(result)
     # {"datetime": "1961-04-12"}
+
+
+Assignments
+===========
+.. todo:: Create Assignments

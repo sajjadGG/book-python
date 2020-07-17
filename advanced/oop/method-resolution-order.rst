@@ -78,3 +78,8 @@ Inheritance Diamond
     #  <class '__main__.C'>,
     #  <class '__main__.A'>,
     #  <class 'object'>)
+
+
+Assignments
+===========
+.. todo:: Create Assignments

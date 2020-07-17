@@ -254,28 +254,36 @@ Protocol Descriptor Simple
 * Solution: :download:`solution/protocol_descriptor_simple.py`
 
 :English:
-    #. Create class ``KelvinTemperature``
+    #. Use data from "Input" section (see below)
+    #. Implement class ``Temperature``
+    #. Class stores values in Kelvins using descriptor
     #. Temperature must always be positive
     #. Use descriptors to check boundaries at each value modification
-    #. Compare result with "Output" section (see below)
+    #. All tests must pass
 
 :Polish:
-    #. Stwórz klasę ``KelvinTemperature``
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Zaimplementuj klasę ``Temperature``
+    #. Klasa przetrzymuje wartości jako Kelwiny używając deskryptora
     #. Temperatura musi być zawsze być dodatnia
     #. Użyj deskryptorów do sprawdzania wartości granicznych przy każdej modyfikacji
-    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+    #. Wszystkie testy muszą przejść
 
-:Output:
+:Input:
     .. code-block:: python
 
-        t = KelvinTemperature()
-
-        t.value = 1
-        print(t.value)
-        # 1
-
-        t.value = -1
-        # ValueError: Negative temperature
+        class Temperature:
+            """
+            >>> t = Temperature()
+            >>> t.kelvin = 1
+            >>> t.kelvin
+            1
+            >>> t.kelvin = -1
+            Traceback (most recent call last):
+                ...
+            ValueError: Negative temperature
+            """
+            raise NotImplementedError
 
 :The whys and wherefores:
     * Using descriptors
@@ -295,6 +303,7 @@ Protocol Descriptor Inheritance
     #. Deleting field should set it to ``None``
     #. Disable modification of ``elevation`` field
     #. Allow to set ``elevation`` field at the class initialization
+    #. All tests must pass
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
@@ -303,6 +312,7 @@ Protocol Descriptor Inheritance
     #. Kasowanie pola powinno ustawiać jego wartość na ``None``
     #. Zablokuj modyfikację pola ``elevation``
     #. Zezwól na ustawianie pola ``elevation`` podczas inicjalizacji
+    #. Wszystkie testy muszą przejść
 
 :Input Data:
     .. code-block:: text
@@ -314,35 +324,30 @@ Protocol Descriptor Inheritance
     .. code-block:: python
 
         class GeographicCoordinate:
-            raise NotImplementedError
+            """
+            >>> place1 = GeographicCoordinate(50, 120, 8000)
+            >>> str(place1)
+            'Latitude: 50, Longitude: 120, Elevation: 8000'
 
-        geo1 = GeographicCoordinate(50, 120, 8000)
-        print(f'GEO1: {geo1}')
-        # GEO1: Latitude: 50, Longitude: 120, Elevation: 8000
+            >>> place2 = GeographicCoordinate(22, 33, 44)
+            >>> str(place2)
+            'Latitude: 22, Longitude: 33, Elevation: 44'
 
-        geo2 = GeographicCoordinate(22, 33, 44)
-        print(f'GEO2: {geo2}')
-        # GEO2: Latitude: 22, Longitude: 33, Elevation: 44
+            >>> place1.latitude = 1
+            >>> place1.longitude = 11
+            >>> str(place1)
+            'Latitude: 1, Longitude: 11, Elevation: 8000'
 
-        print('-' * 55)
-        # -------------------------------------------------------
+            >>> str(place2)
+            'Latitude: 22, Longitude: 33, Elevation: 44'
 
-        geo1.latitude = 1
-        geo1.longitude = 11
-
-        print(f'GEO1: {geo1}')
-        # GEO1: Latitude: 1, Longitude: 11, Elevation: 8000
-
-        print(f'GEO2: {geo2}')
-        # GEO2: Latitude: 22, Longitude: 33, Elevation: 44
-
-        print('-' * 55)
-        # -------------------------------------------------------
-
-        geo1.elevation = 999
-        # Traceback (most recent call last):
-        #   ...
-        # PermissionError: Changing value is prohibited.
+            >>> place1.elevation = 999
+            Traceback (most recent call last):
+              ...
+            PermissionError: Changing value is prohibited.
+            """
+            def __str__(self):
+                return f'Latitude: {self.latitude}, Longitude: {self.longitude}, Elevation: {self.elevation}'
 
 
 :The whys and wherefores:

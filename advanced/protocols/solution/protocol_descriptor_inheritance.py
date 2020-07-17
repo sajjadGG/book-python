@@ -38,6 +38,29 @@ class Elevation(GEOProperty):
 
 
 class GeographicCoordinate:
+    """
+    >>> place1 = GeographicCoordinate(50, 120, 8000)
+    >>> str(place1)
+    'Latitude: 50, Longitude: 120, Elevation: 8000'
+
+    >>> place2 = GeographicCoordinate(22, 33, 44)
+    >>> str(place2)
+    'Latitude: 22, Longitude: 33, Elevation: 44'
+
+    >>> place1.latitude = 1
+    >>> place1.longitude = 11
+    >>> str(place1)
+    'Latitude: 1, Longitude: 11, Elevation: 8000'
+
+    >>> str(place2)
+    'Latitude: 22, Longitude: 33, Elevation: 44'
+
+    >>> place1.elevation = 999
+    Traceback (most recent call last):
+      ...
+    PermissionError: Changing value is prohibited.
+    """
+
     latitude: Latitude = Latitude()
     longitude: Longitude = Longitude()
     elevation: Elevation = Elevation()
@@ -50,32 +73,3 @@ class GeographicCoordinate:
 
     def __str__(self):
         return f'Latitude: {self.latitude}, Longitude: {self.longitude}, Elevation: {self.elevation}'
-
-
-geo1 = GeographicCoordinate(50, 120, 8000)
-print(f'GEO1: {geo1}')
-# GEO1: Latitude: 50, Longitude: 120, Elevation: 8000
-
-geo2 = GeographicCoordinate(22, 33, 44)
-print(f'GEO2: {geo2}')
-# GEO2: Latitude: 22, Longitude: 33, Elevation: 44
-
-print('-' * 55)
-# -------------------------------------------------------
-
-geo1.latitude = 1
-geo1.longitude = 11
-
-print(f'GEO1: {geo1}')
-# GEO1: Latitude: 1, Longitude: 11, Elevation: 8000
-
-print(f'GEO2: {geo2}')
-# GEO2: Latitude: 22, Longitude: 33, Elevation: 44
-
-print('-' * 55)
-# -------------------------------------------------------
-
-geo1.elevation = 999
-# Traceback (most recent call last):
-#   ...
-# PermissionError: Changing value is prohibited.

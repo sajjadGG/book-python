@@ -1,4 +1,16 @@
 class Point:
+    """
+    >>> pt = Point(x=1, y=2, z=3)
+    >>> pt.position
+    (1, 2, 3)
+    >>> del pt.position
+    >>> pt.position
+    (0, 0, 0)
+    >>> pt.position = (4, 5, 6)
+    Traceback (most recent call last):
+        ...
+    PermissionError: Cannot modify values
+    """
     position = property()
 
     def __init__(self, x, y, z):
@@ -20,15 +32,3 @@ class Point:
         self._y = 0
         self._z = 0
 
-
-pt = Point(x=1, y=2, z=3)
-
-print(pt.position)
-# (1, 2, 3)
-
-del pt.position
-print(pt.position)
-# (0, 0, 0)
-
-pt.position = (4, 5, 6)
-# PermissionError: Cannot modify values

@@ -65,3 +65,8 @@ Python 2 vs 3
 * Old style classes are **only** in Python 2
 * New style classes works in Python 2 (when inherit from object)
 * In Python 3 all classes always inherit from object, hence they are new style classes
+
+
+Assignments
+===========
+.. todo:: Create Assignments

@@ -85,10 +85,15 @@ Inheritance
 .. code-block:: python
 
     class Iris:
-        __slots__ = 'species', 'kingdom'
+        __slots__ = ('species', 'kingdom')
 
     class Setosa(Iris):
-        __slots__ = 'name',
+        __slots__ = ('name',)
 
     class Virginica(Iris):
-        __slots__ = 'species', 'kingdom', 'name'  # redundant species and kingdom
+        __slots__ = ('species', 'kingdom', 'name')  # redundant species and kingdom
+
+
+Assignments
+===========
+.. todo:: Create Assignments

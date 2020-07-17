@@ -281,3 +281,8 @@ Example 2
 .. code-block:: python
 
     ZWaveSensor.add(datetime, device, type, value, unit)
+
+
+Assignments
+===========
+.. todo:: Create Assignments

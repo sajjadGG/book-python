@@ -1,4 +1,4 @@
-class Value:
+class Kelvin:
     def __get__(self, parent, parent_type):
         return parent._value
 
@@ -10,13 +10,15 @@ class Value:
 
 
 class Temperature:
-    value = Value()
+    """
+    >>> t = Temperature()
+    >>> t.kelvin = 1
+    >>> t.kelvin
+    1
+    >>> t.kelvin = -1
+    Traceback (most recent call last):
+        ...
+    ValueError: Negative temperature
+    """
 
-
-t = Temperature()
-
-t.value = 1
-print(t.value)
-
-t.value = -1
-# ValueError: Negative temperature
+    kelvin = Kelvin()

@@ -3,7 +3,7 @@ Object Identity
 ***************
 
 
-``id()``
+Identity
 ========
 .. highlights::
     * ``id()`` will change every time you execute script
@@ -11,8 +11,20 @@ Object Identity
     * Two objects with non-overlapping lifetimes may have the same id() value.
     * In CPython it's also the memory address of the corresponding C object
 
-``hash()``
-==========
+.. code-block:: python
+    :caption: Note, that ``id()`` will change every time you execute script
+
+    a = 'str'
+
+    id(a)
+    # 4499664048
+
+    hex(id(a))
+    # '0x10c336cb0'
+
+
+Hash
+====
 .. highlights::
     * Return the hash value of the object (if it has one)
     * ``hash() ->  int``
@@ -104,6 +116,7 @@ Object Identity
                 return True
             else:
                 return False
+
 
 .. _String interning:
 
@@ -228,3 +241,8 @@ Using ``is`` in REPL (evaluated at once)
 
     print(id(a))    # 4784833072
     print(id(b))    # 4784833072
+
+
+Assignments
+===========
+.. todo:: Create Assignments

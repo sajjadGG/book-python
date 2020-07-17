@@ -302,22 +302,16 @@ Protocol Context Manager File
     #. Use kodu from "Input" section (see below)
     #. Create Context manager for file which buffers data before save
     #. When block closes, then open file and write data
-    #. How to make buffer save data every X bytes?
-    #. How to make buffer save data every X seconds?
-    #. How to make buffer save data in the background, but it could be still used?
 
 :Polish:
     #. Użyj kodu z sekcji "Input" (patrz poniżej)
     #. Stwórz Context Manager dla plików, który buforuje dane przed zapisem
     #. Gdy nastąpi wyjście z bloku context managera, to otwórz plik i zapisz dane
-    #. Jak zrobić, aby bufor zapisywał dane na dysku co X bajtów?
-    #. Jak zrobić, aby bufor zapisywał dane na dysku co X sekund?
-    #. Jak zrobić, aby do bufora podczas zapisu na dysk, nadal można było pisać?
 
 :Input:
     .. code-block:: python
 
-        FILE = r'/tmp/context-manager.txt'
+        FILE = r'/tmp/protocol_contextmanager_file.txt'
 
 
         class BufferedFile:
@@ -356,7 +350,7 @@ Protocol Context Manager File
 :Input:
     .. code-block:: python
 
-        FILE = r'/tmp/context-manager.txt'
+        FILE = r'/tmp/protocol_contextmanager_buffer.txt'
 
 
         class BufferedFile:

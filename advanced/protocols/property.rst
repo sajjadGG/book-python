@@ -391,13 +391,35 @@ Protocol Property
 * Solution: :download:`solution/protocol_property.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Create class ``Point`` with ``x``, ``y``, ``z`` attributes
     #. Add ``position`` property which returns tuple ``(x, y, z)``
     #. Deleting ``position`` sets all attributes to 0 (``x=0``, ``y=0``, ``z=0``)
     #. Prevent setting position
+    #. All tests must pass
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Stwórz klasę ``Point`` z atrybutami ``x``, ``y``, ``z``
     #. Dodaj property ``position``, który zwraca tuple ``(x, y, z)``
     #. Usunięcie ``position`` ustawia wszystkie atrybuty na 0 (``x=0``, ``y=0``, ``z=0``)
     #. Zablokuj edycję atrybutów
+    #. Wszystkie testy muszą przejść
+
+:Input:
+    .. code-block:: python
+
+        class Point:
+            """
+            >>> pt = Point(x=1, y=2, z=3)
+            >>> pt.position
+            (1, 2, 3)
+            >>> del pt.position
+            >>> pt.position
+            (0, 0, 0)
+            >>> pt.position = (4, 5, 6)
+            Traceback (most recent call last):
+                ...
+            PermissionError: Cannot modify values
+            """
+            raise NotImplementedError

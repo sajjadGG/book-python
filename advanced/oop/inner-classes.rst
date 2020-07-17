@@ -32,3 +32,8 @@ Inner Classes
 
         class Meta:
             ordering = ['lastname']
+
+
+Assignments
+===========
+.. todo:: Create Assignments

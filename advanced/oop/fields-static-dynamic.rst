@@ -137,3 +137,8 @@ Static or Dynamic?
         firstname: str
         lastname: list
 
+
+
+Assignments
+===========
+.. todo:: Create Assignments
