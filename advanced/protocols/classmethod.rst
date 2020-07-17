@@ -61,6 +61,9 @@ Protocol Classmethod
 * Estimated time of completion: 13 min
 * Solution: :download:`solution/protocol_classmethod.py`
 
+.. warning:: Assinmnent is to complex and has issues with pickling object, with does not demonstrate ``@classmethod``
+.. todo:: Rewrite the assignment
+
 :English:
     #. Use data from "Input" section (see below)
     #. Model class based on input data

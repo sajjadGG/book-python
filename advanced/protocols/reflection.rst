@@ -285,3 +285,10 @@ Protocol Reflection
     #. Zablokuj możliwość usuwania atrybutów
     #. Zablokuj edycję atrybutów
     #. Pozwól na ustawianie atrybutów tylko przy inicjalizacji klasy
+
+:Input:
+    .. code-block:: python
+
+        class Point:
+            def __str__(self):
+                return f'Point(x={self.x}, y={self.y}, z={self.z}')

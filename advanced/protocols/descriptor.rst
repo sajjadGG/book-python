@@ -311,6 +311,40 @@ Protocol Descriptor Inheritance
         longitude - type: float, min: -180, max: 180
         elevation - type: float, min: -10994, max: 8848
 
+    .. code-block:: python
+
+        class GeographicCoordinate:
+            raise NotImplementedError
+
+        geo1 = GeographicCoordinate(50, 120, 8000)
+        print(f'GEO1: {geo1}')
+        # GEO1: Latitude: 50, Longitude: 120, Elevation: 8000
+
+        geo2 = GeographicCoordinate(22, 33, 44)
+        print(f'GEO2: {geo2}')
+        # GEO2: Latitude: 22, Longitude: 33, Elevation: 44
+
+        print('-' * 55)
+        # -------------------------------------------------------
+
+        geo1.latitude = 1
+        geo1.longitude = 11
+
+        print(f'GEO1: {geo1}')
+        # GEO1: Latitude: 1, Longitude: 11, Elevation: 8000
+
+        print(f'GEO2: {geo2}')
+        # GEO2: Latitude: 22, Longitude: 33, Elevation: 44
+
+        print('-' * 55)
+        # -------------------------------------------------------
+
+        geo1.elevation = 999
+        # Traceback (most recent call last):
+        #   ...
+        # PermissionError: Changing value is prohibited.
+
+
 :The whys and wherefores:
     * Using descriptors
     * Data validation

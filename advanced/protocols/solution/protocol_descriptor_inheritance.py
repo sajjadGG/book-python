@@ -58,16 +58,24 @@ print(f'GEO1: {geo1}')
 
 geo2 = GeographicCoordinate(22, 33, 44)
 print(f'GEO2: {geo2}')
-# GEO2: Latitude: 1, Longitude: 2, Elevation: 3
+# GEO2: Latitude: 22, Longitude: 33, Elevation: 44
 
 print('-' * 55)
+# -------------------------------------------------------
 
 geo1.latitude = 1
 geo1.longitude = 11
+
 print(f'GEO1: {geo1}')
+# GEO1: Latitude: 1, Longitude: 11, Elevation: 8000
+
 print(f'GEO2: {geo2}')
+# GEO2: Latitude: 22, Longitude: 33, Elevation: 44
 
 print('-' * 55)
+# -------------------------------------------------------
 
 geo1.elevation = 999
+# Traceback (most recent call last):
+#   ...
 # PermissionError: Changing value is prohibited.

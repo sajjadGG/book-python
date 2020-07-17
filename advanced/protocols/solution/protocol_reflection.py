@@ -1,28 +1,5 @@
 class Point:
     def __init__(self, x, y, z):
-        object.__setattr__(self, 'x', x)
-        object.__setattr__(self, 'y', y)
-        object.__setattr__(self, 'z', z)
-
-    def __delattr__(self, item):
-        raise PermissionError
-
-    def __setattr__(self, key, value):
-        raise PermissionError
-
-p = Point(x=1, y=2, z=3)
-
-print(p.x)
-print(p.y)
-print(p.z)
-
-# del p.x
-
-
-## Alternative
-
-class Point:
-    def __init__(self, x, y, z):
         self.x = x
         self.y = y
         self.z = z
@@ -30,16 +7,28 @@ class Point:
     def __delattr__(self, item):
         raise PermissionError
 
-    def __setattr__(self, key, value):
-        if not hasattr(self, key) and key in {'x', 'y', 'z'}:
-            object.__setattr__(self, key, value)
-        else:
+    def __setattr__(self, name, value):
+        if name not in ('x', 'y', 'z'):
             raise PermissionError
 
-p = Point(x=1, y=2, z=3)
+        if hasattr(self, name):
+            raise PermissionError
 
-print(p.x)
-print(p.y)
-print(p.z)
+        return super().__setattr__(name, value)
 
-# del p.x
+    def __str__(self):
+        return str((self.x, self.y, self.z))
+
+
+pt = Point(1, 2, 3)
+
+print(pt)
+
+# pt.a = 0
+# PermissionError
+
+# pt.x = 0
+# PermissionError
+
+del pt.x
+# PermissionError

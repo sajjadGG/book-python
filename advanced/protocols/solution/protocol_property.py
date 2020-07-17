@@ -21,14 +21,14 @@ class Point:
         self._z = 0
 
 
-my = Point(x=1, y=2, z=3)
+pt = Point(x=1, y=2, z=3)
 
-print(my.position)
+print(pt.position)
 # (1, 2, 3)
 
-del my.position
-print(my.position)
+del pt.position
+print(pt.position)
 # (0, 0, 0)
 
-my.position = (4, 5, 6)
+pt.position = (4, 5, 6)
 # PermissionError: Cannot modify values
