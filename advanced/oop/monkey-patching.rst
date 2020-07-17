@@ -90,6 +90,50 @@ Static Methods
     # New version
 
 .. code-block:: python
+
+    class User:
+        def hello(self):
+            print('Old version')
+
+
+    def my_function(self):
+        print('New version')
+
+
+    u1 = User()
+    u2 = User()
+
+    u1.hello()      # Old version
+    u2.hello()      # Old version
+
+    User.hello = my_function
+
+    u1.hello()      # New version
+    u2.hello()      # New version
+
+.. code-block:: python
+
+    class User:
+        def hello(self):
+            print('Old version')
+
+
+    def my_function():
+        print('New version')
+
+
+    u1 = User()
+    u2 = User()
+
+    u1.hello()      # Old version
+    u2.hello()      # Old version
+
+    u1.hello = my_function
+
+    u1.hello()      # New version
+    u2.hello()      # Old version
+
+.. code-block:: python
     :caption: Injecting static and dynamic methods to class
 
     class User:

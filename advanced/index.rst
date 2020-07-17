@@ -64,7 +64,8 @@ Object Oriented Programming
     oop/new-style-classes.rst
     oop/interface.rst
     oop/abstract-class.rst
-    oop/object-identity.rst
+    oop/identity.rst
+    oop/hash.rst
     oop/constructor.rst
     oop/slots.rst
     oop/metaclass.rst

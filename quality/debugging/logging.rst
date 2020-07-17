@@ -303,6 +303,34 @@ Rotate
     #LOG_ROTATE = midnight
     #set your log format
 
+Examples
+========
+.. code-block:: python
+
+    import logging
+    import os
+
+    logging.basicConfig(
+        format='"{asctime}", "{levelname}", "{message}"',
+        filename='...',
+        style='{'
+    )
+
+    log = logging.getLogger(__name__)
+    level = os.getenv('LOG_LEVEL', 'INFO')
+    log.setLevel(level)
+
+
+    log.critical('Błąd krytyczny')
+    log.error('Błąd')
+    log.warning('Uwaga')
+    log.info('Informacja')
+    log.debug('Wiadomość debugowa')
+
+
+    logging.getLogger('requests').setLevel('DEBUG')
+    logging.getLogger('_tmp').setLevel('ERROR')
+
 
 Further Reading
 ===============

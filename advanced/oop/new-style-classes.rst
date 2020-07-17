@@ -66,6 +66,25 @@ Python 2 vs 3
 * New style classes works in Python 2 (when inherit from object)
 * In Python 3 all classes always inherit from object, hence they are new style classes
 
+.. code-block:: python
+
+    # (Python 2.x) -> Old style class
+    class Astronaut:
+        pass
+
+
+    # (Python 2.x) -> New style class
+    class Astronaut(object):
+        pass
+
+
+    # (Python 3.x) -> New style class
+    class Astronaut:
+        pass
+
+
+    # python 3 there IS NOT old style class!
+
 
 Assignments
 ===========
