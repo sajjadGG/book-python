@@ -5,7 +5,7 @@ FILE = r'/tmp/context-manager.txt'
 
 
 @dataclass
-class File:
+class BufferedFile:
     name: str
     content: List[str] = field(default_factory=[])
 
@@ -23,7 +23,7 @@ class File:
             file.writelines(self.content)
 
 
-with File(FILE) as file:
+with BufferedFile(FILE) as file:
     file.append_line('first line')
     file.append_line('second line')
     file.append_line('third line')

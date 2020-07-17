@@ -320,11 +320,11 @@ Protocol Context Manager File
         FILE = r'/tmp/context-manager.txt'
 
 
-        class File:
+        class BufferedFile:
             raise NotImplementedError
 
 
-        with File(FILE) as file:
+        with BufferedFile(FILE) as file:
             file.append_line('One')
             file.append_line('Two')
             file.append_line('Three')
@@ -337,7 +337,7 @@ Protocol Context Manager File
 * Complexity level: easy
 * Lines of code to write: 15 lines
 * Estimated time of completion: 13 min
-* Solution: :download:`solution/protocol_contextmanager_file.py`
+* Solution: :download:`solution/protocol_contextmanager_buffer.py`
 
 :English:
     #. Use kodu from "Input" section (see below)
@@ -359,11 +359,11 @@ Protocol Context Manager File
         FILE = r'/tmp/context-manager.txt'
 
 
-        class File:
+        class BufferedFile:
             raise NotImplementedError
 
 
-        with File(FILE) as file:
+        with BufferedFile(FILE) as file:
             file.append_line('One')
             file.append_line('Two')
             file.append_line('Three')
