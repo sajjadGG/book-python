@@ -2,43 +2,39 @@ from dataclasses import dataclass
 
 
 @dataclass
-class Contact:
+class Astronaut:
     first_name: str
     last_name: str
-    addresses: tuple = ()
+    missions: tuple = ()
 
     def __iter__(self):
-        self._current_element = 0
+        self._iter_index = 0
         return self
 
     def __next__(self):
-        if self._current_element >= len(self.addresses):
+        if self._iter_index >= len(self.missions):
             raise StopIteration
 
-        result = self.addresses[self._current_element]
-        self._current_element += 1
+        result = self.missions[self._iter_index]
+        self._iter_index += 1
         return result
 
 
 @dataclass
-class Address:
-    location: str
-    city: str
+class Mission:
+    year: int
+    name: str
 
 
-DATA = [
-    Contact(first_name='Jan', last_name='Twardowski', addresses=(
-        Address(location='Johnson Space Center', city='Houston, TX'),
-        Address(location='Kennedy Space Center', city='Merritt Island, FL'),
-        Address(location='Jet Propulsion Laboratory', city='Pasadena, CA'),
-    )),
-    Contact(first_name='Mark', last_name='Watney'),
-    Contact(first_name='Melissa', last_name='Lewis', addresses=()),
-]
+twardowski = Astronaut('Jan', 'Twardowski', missions=(
+    Mission(1969, 'Apollo 11'),
+    Mission(2024, 'Artemis 3'),
+    Mission(2035, 'Ares 3'),
+))
 
-for contact in DATA:
-    print(contact)
+for mission in twardowski:
+    print(mission)
 
-# Address(location='Johnson Space Center', city='Houston, TX')
-# Address(location='Kennedy Space Center', city='Merritt Island, FL')
-# Address(location='Jet Propulsion Laboratory', city='Pasadena, CA')
+# Mission(year=1969, name='Apollo 11')
+# Mission(year=2024, name='Artemis 3')
+# Mission(year=2035, name='Ares 3')

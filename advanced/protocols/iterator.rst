@@ -289,30 +289,11 @@ Standard Library Itertools
 Assignments
 ===========
 
-Protocol Iterator Range
------------------------
-* Complexity level: easy
-* Lines of code to write: 5 lines
-* Estimated time of completion: 8 min
-* Solution: :download:`solution/protocol_iterator_range.py`
-
-:English:
-    #. Write own implementation of a ``range()`` function
-    #. Use iterator protocol
-    #. Arguments: start, stop, step
-    #. How to implement passing only stop argument?
-
-:Polish:
-    #. Zaimplementuj własne rozwiązanie ``range()``
-    #. Use iterator protocol
-    #. Argumenty: początek, koniec, krok
-    #. Jak zaimplementować możliwość podawania tylko końca?
-
 Protocol Iterator Implementation
 --------------------------------
 * Complexity level: easy
-* Lines of code to write: 20 lines
-* Estimated time of completion: 13 min
+* Lines of code to write: 9 lines
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/protocol_iterator_implementation.py`
 
 :English:
@@ -359,3 +340,49 @@ Protocol Iterator Implementation
         Mission(year=1969, name='Apollo 11')
         Mission(year=2024, name='Artemis 3')
         Mission(year=2035, name='Ares 3')
+
+Protocol Iterator Range
+-----------------------
+* Complexity level: medium
+* Lines of code to write: 25 lines
+* Estimated time of completion: 21 min
+* Solution: :download:`solution/protocol_iterator_range.py`
+
+:English:
+    #. Use code from "Input" section (see below)
+    #. Write own implementation of a ``range()`` function
+    #. Use iterator protocol
+    #. Arguments: start, stop, step
+    #. How to implement passing only stop argument?
+
+:Polish:
+    #. Użyj kodu z sekcji "Input" (patrz poniżej)
+    #. Zaimplementuj własne rozwiązanie ``range()``
+    #. Use iterator protocol
+    #. Argumenty: początek, koniec, krok
+    #. Jak zaimplementować możliwość podawania tylko końca?
+
+:Input:
+    .. code-block:: python
+
+        class Range:
+            """
+            >>> list(Range(0, 10, 2))
+            [0, 2, 4, 6, 8]
+
+            >>> list(Range(0, 5))
+            [0, 1, 2, 3, 4]
+
+            >>> list(Range(5))
+            [0, 1, 2, 3, 4]
+
+            >>> list(Range())
+            Traceback (most recent call last):
+              ...
+            ValueError: Invalid arguments
+
+            >>> list(Range(1,2,3,4))
+            Traceback (most recent call last):
+              ...
+            ValueError: Invalid arguments
+            """

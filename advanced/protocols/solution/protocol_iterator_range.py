@@ -1,17 +1,45 @@
-class range:
-    def __init__(self, start: int, stop: int, step: int = 1):
-        self.start = start
-        self.stop = stop
-        self.step = step
+class Range:
+    """
+    >>> list(Range(0, 10, 2))
+    [0, 2, 4, 6, 8]
+    >>> list(Range(0, 5))
+    [0, 1, 2, 3, 4]
+    >>> list(Range(5))
+    [0, 1, 2, 3, 4]
+    >>> list(Range())
+    Traceback (most recent call last):
+      ...
+    ValueError: Invalid arguments
+    >>> list(Range(1,2,3,4))
+    Traceback (most recent call last):
+      ...
+    ValueError: Invalid arguments
+    """
+
+    def __init__(self, *args):
+        if len(args) == 3:
+            self.start = args[0]
+            self.stop = args[1]
+            self.step = args[2]
+        elif len(args) == 2:
+            self.start = args[0]
+            self.stop = args[1]
+            self.step = 1
+        elif len(args) == 1:
+            self.start = 0
+            self.stop = args[0]
+            self.step = 1
+        else:
+            raise ValueError('Invalid arguments')
 
     def __iter__(self):
-        self._current_element = self.start
+        self._iter_index = self.start
         return self
 
     def __next__(self):
-        if self._current_element >= self.stop:
+        if self._iter_index >= self.stop:
             raise StopIteration
 
-        return_value = self._current_element
-        self._current_element += self.step
-        return return_value
+        result = self._iter_index
+        self._iter_index += self.step
+        return result
