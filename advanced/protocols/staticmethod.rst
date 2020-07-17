@@ -20,11 +20,11 @@ Implementation
     class MyClass:
 
         @staticmethod
-        def say_hello():
-            print('hello')
+        def mymethod():
+            pass
 
 
-     MyClass.say_hello()
+     MyClass.mymethod()
 
 
 Use Case
@@ -86,15 +86,24 @@ Example 1
 ---------
 .. code-block:: python
 
-    def say_hello(self):
+    def astronaut_say_hello():
         print('hello')
+
+    def astronaut_say_goodbye():
+        print('goodbye')
+
 
     class Astronaut:
         pass
 
 
     a = Astronaut()
-    say_hello()
+
+    astronaut_say_hello()
+    # hello
+
+    astronaut_say_goodbye()
+    # 'goodbye'
 
 .. code-block:: python
 
@@ -102,9 +111,17 @@ Example 1
         def say_hello(self):
             print('hello')
 
+        def say_goodbye(self):
+            print('goodbye')
+
 
     a = Astronaut()
+
     a.say_hello()
+    # hello
+
+    a.say_goodbye()
+    # 'goodbye'
 
 .. code-block:: python
 
@@ -114,16 +131,24 @@ Example 1
         def say_hello():
             print('hello')
 
+        @staticmethod
+        def say_goodbye():
+            print('goodbye')
+
 
     Astronaut.say_hello()
+    # hello
+
+    Astronaut.say_goodbye()
+    # 'goodbye'
 
 Example 2
 ---------
 .. code-block:: python
     :caption: `HabitatOS <https://www.habitatos.space>`_ Z-Wave sensor model
 
-    import datetime
-    import decimal
+    from datetime import datetime, timezone
+    from decimal import Decimal, InvalidOperation
     import logging
 
     from django.db import models
@@ -136,7 +161,7 @@ Example 2
     log = logging.getLogger('habitat.sensor')
 
 
-    def clean_unit(unit):
+    def clean_unit(unit: str) -> str:
         try:
             return {
                 'C': 'celsius',
@@ -149,26 +174,26 @@ Example 2
             return None
 
 
-    def clean_type(type):
+    def clean_type(type: str) -> str:
         return type.lower().replace(' ', '-')
 
 
-    def clean_value(value):
+    def clean_value(value: str) -> Decimal:
         try:
-            return decimal.Decimal(value)
-        except decimal.InvalidOperation:
-            return decimal.Decimal(0)
+            return Decimal(value)
+        except InvalidOperation:
+            return Decimal(0)
 
 
-    def clean_device(device):
+    def clean_device(device: str) -> str:
         return device
 
 
-    def clean_datetime(dt):
+    def clean_datetime(dt: str) -> datetime:
         try:
-            return datetime.datetime.strptime(dt, '%Y-%m-%d %H:%M:%S.%f+00:00').replace(tzinfo=datetime.timezone.utc)
+            return datetime.strptime(dt, '%Y-%m-%d %H:%M:%S.%f+00:00').replace(tzinfo=timezone.utc)
         except ValueError:
-            return datetime.datetime.strptime(dt, '%Y-%m-%d %H:%M:%S.%f')
+            return datetime.strptime(dt, '%Y-%m-%d %H:%M:%S.%f')
 
 
     class ZWaveSensor(HabitatModel, MissionDateTime):
@@ -229,7 +254,7 @@ Example 2
         value = models.DecimalField(verbose_name=_('Value'), max_digits=7, decimal_places=2, default=None)
         unit = models.CharField(verbose_name=_('Unit'), max_length=15, choices=UNIT_CHOICES, null=True, blank=True, default=None)
 
-        def __str__(self):
+        def __str__(self) -> str:
             return f'[{self.date} {self.time}] (device: {self.device}) {self.type}: {self.value} {self.unit}'
 
         class Meta:
@@ -237,7 +262,7 @@ Example 2
             verbose_name_plural = _('Zwave Sensors')
 
         @staticmethod
-        def add(datetime, device, type, value, unit):
+        def add(datetime: str, device: str, type: str, value: str, unit: str):
             dt = clean_datetime(datetime)
             time = MissionTime().get_time_dict(from_datetime=dt)
 

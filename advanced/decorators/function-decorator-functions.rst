@@ -253,7 +253,7 @@ Examples
 
     @app.route('/summary')
     def summary():
-        data = {'first_name': 'Jan', 'last_name': 'Twardowski'}
+        data = {'firstname': 'Jan', 'lastname': 'Twardowski'}
         return Response(
             response=json.dumps(data),
             status=200,

@@ -13,7 +13,6 @@ Rationale
 Examples
 ========
 .. code-block:: python
-    :emphasize-lines: 8-11,22,25,31,32
 
     import json
 
@@ -29,12 +28,12 @@ Examples
 
 
     class User:
-        def __init__(self, first_name, last_name):
-            self.first_name = first_name
-            self.last_name = last_name
+        def __init__(self, firstname, lastname):
+            self.firstname = firstname
+            self.lastname = lastname
 
         def __str__(self):
-            return f'{self.first_name} {self.last_name}'
+            return f'{self.firstname} {self.lastname}'
 
     class Guest(User, JSONSerializable):
         pass
@@ -43,7 +42,7 @@ Examples
         pass
 
 
-    DATA = '{"first_name": "Jan", "last_name": "Twardowski"}'
+    DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
 
     guest = Guest.from_json(DATA)
     admin = Admin.from_json(DATA)

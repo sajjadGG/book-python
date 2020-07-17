@@ -82,7 +82,7 @@ Keyword Parameters
 
     echo(a=1)                                       # {'a': 1}
     echo(color='red')                               # {'color': 'red'}
-    echo(first_name='Jan', last_name='Twardowski')  # {'first_name': 'Jan', 'last_name': Twardowski}
+    echo(firstname='Jan', lastname='Twardowski')  # {'firstname': 'Jan', 'lastname': Twardowski}
 
 .. code-block:: python
 

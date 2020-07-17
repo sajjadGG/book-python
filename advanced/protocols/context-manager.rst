@@ -94,18 +94,18 @@ Database
         CREATE TABLE IF NOT EXISTS astronauts (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             pesel INTEGER UNIQUE,
-            first_name TEXT,
-            last_name TEXT)"""
-    SQL_INSERT = 'INSERT INTO astronauts VALUES (NULL, :pesel, :first_name, :last_name)'
+            firstname TEXT,
+            lastname TEXT)"""
+    SQL_INSERT = 'INSERT INTO astronauts VALUES (NULL, :pesel, :firstname, :lastname)'
     SQL_SELECT = 'SELECT * from astronauts'
 
 
     astronauts = [
-        {'pesel': '61041212345', 'first_name': 'José', 'last_name': 'Jiménez'},
-        {'pesel': '61041212346', 'first_name': 'Jan', 'last_name': 'Twardowski'},
-        {'pesel': '61041212347', 'first_name': 'Melissa', 'last_name': 'Lewis'},
-        {'pesel': '61041212348', 'first_name': 'Alex', 'last_name': 'Vogel'},
-        {'pesel': '61041212349', 'first_name': 'Ryan', 'last_name': 'Stone'},
+        {'pesel': '61041212345', 'firstname': 'José', 'lastname': 'Jiménez'},
+        {'pesel': '61041212346', 'firstname': 'Jan', 'lastname': 'Twardowski'},
+        {'pesel': '61041212347', 'firstname': 'Melissa', 'lastname': 'Lewis'},
+        {'pesel': '61041212348', 'firstname': 'Alex', 'lastname': 'Vogel'},
+        {'pesel': '61041212349', 'firstname': 'Ryan', 'lastname': 'Stone'},
     ]
 
 
@@ -317,14 +317,57 @@ Protocol Context Manager File
 :Input:
     .. code-block:: python
 
-        FILENAME = r'/tmp/context-manager.txt'
+        FILE = r'/tmp/context-manager.txt'
+
 
         class File:
-            pass
+            raise NotImplementedError
 
 
-        with File(FILENAME) as file:
-            file.append_line(...)
-            file.append_line(...)
-            file.append_line(...)
+        with File(FILE) as file:
+            file.append_line('One')
+            file.append_line('Two')
+            file.append_line('Three')
+            file.append_line('Four')
+            file.append_line('Five')
+            file.append_line('Six')
+
+Protocol Context Manager File
+-----------------------------
+* Complexity level: easy
+* Lines of code to write: 15 lines
+* Estimated time of completion: 13 min
+* Solution: :download:`solution/protocol_contextmanager_file.py`
+
+:English:
+    #. Use kodu from "Input" section (see below)
+    #. Set max buffer limit to 100 bytes
+    #. File has to be written to disk every X bytes of buffer
+    #. How to make buffer save data every X seconds?
+    #. Writing and reading takes time, how to make buffer save data in the background, but it could be still used?
+
+:Polish:
+    #. Użyj kodu z sekcji "Input" (patrz poniżej)
+    #. Ustaw maksymalny limit bufora na 100 bajtów
+    #. Plik na dysku ma być zapisywany co X bajtów bufora
+    #. Jak zrobić, aby bufor zapisywał dane na dysku co X sekund?
+    #. Operacje zapisu i odczytu trwają, jak zrobić, aby do bufora podczas zapisu na dysk, nadal można było pisać?
+
+:Input:
+    .. code-block:: python
+
+        FILE = r'/tmp/context-manager.txt'
+
+
+        class File:
+            raise NotImplementedError
+
+
+        with File(FILE) as file:
+            file.append_line('One')
+            file.append_line('Two')
+            file.append_line('Three')
+            file.append_line('Four')
+            file.append_line('Five')
+            file.append_line('Six')
 

@@ -27,27 +27,27 @@ This module implements specialized container datatypes providing alternatives to
 ===============
 .. code-block:: python
 
-    jose = {'first_name': 'José', 'last_name': 'Jiménez', 'agency': 'NASA'}
+    jose = {'firstname': 'José', 'lastname': 'Jiménez', 'agency': 'NASA'}
 
     print(jose)
-    # {'first_name': 'José', 'last_name': 'Jiménez', 'agency': 'NASA'}
+    # {'firstname': 'José', 'lastname': 'Jiménez', 'agency': 'NASA'}
 
-    print(jose['first_name'], jose['last_name'], jose['agency'])
+    print(jose['firstname'], jose['lastname'], jose['agency'])
     # José Jiménez NASA
 
 .. code-block:: python
 
     from collections import OrderedDict
 
-    jose = OrderedDict(first_name='José', last_name='Jiménez', agency='NASA')
+    jose = OrderedDict(firstname='José', lastname='Jiménez', agency='NASA')
     print(jose)
     # OrderedDict([
-    #   ('first_name', 'José'),
-    #   ('last_name', 'Jiménez'),
+    #   ('firstname', 'José'),
+    #   ('lastname', 'Jiménez'),
     #   ('agency', 'NASA')])
 
     dict(jose)
-    {'first_name': 'José', 'last_name': 'Jiménez', 'agency': 'NASA'}
+    {'firstname': 'José', 'lastname': 'Jiménez', 'agency': 'NASA'}
 
 ``namedtuple``
 ==============
@@ -77,13 +77,13 @@ This module implements specialized container datatypes providing alternatives to
 
     from collections import namedtuple
 
-    Astronaut = namedtuple('Astronaut', ['first_name', 'last_name', 'agency'])
-    jose = Astronaut(first_name='José', last_name='Jiménez', agency='NASA')
+    Astronaut = namedtuple('Astronaut', ['firstname', 'lastname', 'agency'])
+    jose = Astronaut(firstname='José', lastname='Jiménez', agency='NASA')
 
     print(jose)
-    # Astronaut(first_name='José', last_name='Jiménez', agency='NASA')
+    # Astronaut(firstname='José', lastname='Jiménez', agency='NASA')
 
-    print(jose.first_name, jose.last_name, jose.agency)
+    print(jose.firstname, jose.lastname, jose.agency)
     # José Jiménez NASA
 
 
