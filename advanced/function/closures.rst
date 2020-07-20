@@ -116,9 +116,15 @@ Function Closure Check
     #. Define closure function ``wrapper`` inside ``check``
     #. ``wrapper`` function takes ``*args`` and ``**kwargs`` as arguments
     #. Function ``check`` must return ``wrapper: Callable``
+    #. Call ``check`` and get pointer to ``wrapper``
+    #. Delete ``check`` using ``del`` keyword
+    #. Call pointer
 
 :Polish:
-    #. Zdefiniuj funlcję ``check``, która przyjmuje ``func: Callable`` jako argument
+    #. Zdefiniuj funkcję ``check``, która przyjmuje ``func: Callable`` jako argument
     #. Zdefiniuj funkcję closure ``wrapper`` wewnątrz ``check``
     #. Funkcja ``wrapper`` przyjmuje ``*args`` i ``**kwargs`` jako argumenty
     #. Funkcja ``check`` ma zwracać ``wrapper: Callable``
+    #. Wywołaj ``check`` i przechwyć wskaźnik do ``wrapper``
+    #. Skasuj ``check`` za pomocą słowa kluczowego ``del``
+    #. Wywołaj wskaźnik
