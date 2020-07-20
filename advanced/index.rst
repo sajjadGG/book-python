@@ -1,10 +1,10 @@
-**********
-Entry Test
-**********
+*****
+About
+*****
 .. toctree::
     :maxdepth: 1
-    :caption: Entry Test
-    :name: Advanced Entry Test
+    :caption: About
+    :name: Advanced About
 
     about/survey.rst
     about/entry-test.rst
