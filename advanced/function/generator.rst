@@ -507,6 +507,38 @@ Is Generator
     # False
 
 
+Introspection
+=============
+.. code-block:: python
+
+    a = (x for x in range(0,10))
+
+    next(a)
+    # 0
+
+    a.gi_code
+    # <code object <genexpr> at 0x11fc4dc90, file "<input>", line 1>
+
+    a.gi_running
+    # False
+
+    a.gi_yieldfrom
+
+    a.gi_frame
+    # <frame at 0x7f93a1723200, file '<input>', line 1, code <genexpr>>
+
+    a.gi_frame.f_locals
+    # {'.0': <range_iterator object at 0x11fc4c840>, 'x': 0}
+
+    a.gi_frame.f_code
+    # <code object <genexpr> at 0x11fc4dc90, file "<input>", line 1>
+
+    a.gi_frame.f_lineno
+    # 1
+
+    a.gi_frame.f_lasti
+    # 8
+
 Assignments
 ===========
 
@@ -540,7 +572,7 @@ Function Generator Iris
     #. Zaimplementuj rozwiązanie wykorzystując funkcję
     #. Zaimplementuj rozwiązanie wykorzystując generator i słówko kluczowe ``yield``
     #. Porównaj wyniki obu używając ``sys.getsizeof()``
-    #. Co się stanie, gdy ilość danych będzie większa?
+    #. Co się stanie, gdy ilość danych będzie większa?
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
