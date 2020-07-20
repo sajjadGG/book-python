@@ -393,8 +393,8 @@ Function Args/Kwargs Arguments Define
         * key: column name from the header
         * value: measurement at the position
 
-    #. Create function ``mean(**kwargs)``, function
-    #. Iterate over ``result`` and call ``mean()`` by passing arguments as keywords
+    #. Create function ``mean(*values)``, function
+    #. Iterate over ``result`` and call ``mean()`` by passing arguments positionally
     #. Print mean for each row
     #. Compare result with "Output" section (see below)
     #. Non-functional requirements:
@@ -412,8 +412,8 @@ Function Args/Kwargs Arguments Define
         * klucz: nazwa kolumny z nagłówka
         * wartość: pomiar z odpowiedniej kolumny
 
-    #. Stwórz funkcję ``mean(**kwargs)``
-    #. Iterując po ``result`` wywołuj ``mean()`` podając argumenty nazwanie
+    #. Stwórz funkcję ``mean(**values)``
+    #. Iterując po ``result`` wywołuj ``mean()`` podając argumenty pozycyjnie
     #. Wypisz średnią dla każdego wiersza
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
     #. Wymagania niefunkcjonalne:

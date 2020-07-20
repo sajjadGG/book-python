@@ -12,15 +12,14 @@ with open(FILE) as file:
         result.append(dict(pairs))
 
 
-def mean(**kwargs):
-    values = kwargs.values()
+def mean(*values):
     return sum(values) / len(values)
 
 
 for row in result:
-    avg = mean(**row)
+    avg = mean(*row)
     print(avg)
 
 
 ## Alternative
-list(map(lambda row: mean(**row), result))
+list(map(lambda row: mean(*row), result))
