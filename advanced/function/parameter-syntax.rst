@@ -102,6 +102,8 @@ Function Parameter Syntax Args
 * Estimated time of completion: 5 min
 * Solution: :download:`solution/function_parameter_syntax_args.py`
 
+.. note:: This assignment will work only in Python 3.8+
+
 :English:
     #. Create function ``take_damage``
     #. Function takes one argument ``dmg``
