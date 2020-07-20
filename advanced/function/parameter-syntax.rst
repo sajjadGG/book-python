@@ -109,16 +109,16 @@ Function Parameter Syntax Args
     #. Function takes one argument ``dmg``
     #. Argument must be passed only as positional
     #. Function does nothing
-    #. Test function by running with keyword arguments
     #. Test function by running with positional arguments
+    #. Test function by running with keyword arguments
 
 :Polish:
     #. Stwórz funckję ``take_damage``
     #. Funkcja przyjmuje jeden argument ``dmg``
     #. Argument można podawać tylko pozycyjnie
     #. Funkcja nic nie robi
-    #. Przetestuj funkcję uruchamiając z nazwanymi parametrami
     #. Przetestuj funkcję uruchamiając z pozycyjnymi parametrami
+    #. Przetestuj funkcję uruchamiając z nazwanymi parametrami
 
 Function Parameter Syntax Kwargs
 --------------------------------
