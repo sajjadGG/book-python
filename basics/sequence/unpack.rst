@@ -77,12 +77,6 @@ Arbitrary Number of Arguments
     c               # 4
 
 .. code-block:: python
-    :caption: Cannot unpack from both sides at once
-
-    *a, b, *c = [1, 2, 3, 4]
-    # SyntaxError: two starred expressions in assignment
-
-.. code-block:: python
     :caption: Unpacking from variable length
 
     a, *b, c = [1, 2]
@@ -90,6 +84,12 @@ Arbitrary Number of Arguments
     a               # 1
     b               # []
     c               # 2
+
+.. code-block:: python
+    :caption: Cannot unpack from both sides at once
+
+    *a, b, *c = [1, 2, 3, 4]
+    # SyntaxError: two starred expressions in assignment
 
 .. code-block:: python
     :caption: Unpacking requires values for required arguments
@@ -327,7 +327,7 @@ Sequence Unpacking Flat
         # ['nasa.gov', 'esa.int', 'roscosmos.ru']
 
 :Hint:
-    * ``str.split()``
+    * ``help(str.split)``
 
 Sequence Unpacking Nested
 -------------------------
@@ -383,9 +383,11 @@ Sequence Unpacking Nested
         # ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species')
 
         data: list
-        # [
-        #   (5.8, 2.7, 5.1, 1.9, 'virginica'),
-        #   (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        #   (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-        #   ...
-        # ]
+        # [(5.8, 2.7, 5.1, 1.9, 'virginica'),
+        #  (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        #  (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        #  ... ]
+
+:Hint:
+    * ``from pprint import pprint``
+    * ``pprint(data)``

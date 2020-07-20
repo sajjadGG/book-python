@@ -237,6 +237,9 @@ Function Args/Kwargs Parameters Define
     #. Funkcja przyjmuje dowolną ilość pozycyjnych argumentów
     #. Nie używaj ``numpy`` ani ``statistics``
 
+:Hint:
+    * ``mean = sum(...) / len(...)``
+
 Function Args/Kwargs Parameters Args
 ------------------------------------
 * Complexity level: easy
@@ -271,6 +274,10 @@ Function Args/Kwargs Parameters Args
     * Function arguments checking
     * Type casting
 
+:Hint:
+    * ``isinstance(obj, (type1, type2))``
+    * ``type(obj)``
+
 Function Args/Kwargs Parameters Kwargs
 --------------------------------------
 * Complexity level: medium
@@ -304,3 +311,7 @@ Function Args/Kwargs Parameters Kwargs
     * Corner case checking
     * Function arguments checking
     * Type casting
+
+:Hint:
+    * ``isinstance(obj, (type1, type2))``
+    * ``type(obj)``
