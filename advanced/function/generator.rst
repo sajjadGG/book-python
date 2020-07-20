@@ -539,6 +539,29 @@ Introspection
     a.gi_frame.f_lasti
     # 8
 
+
+Memory Size
+===========
+* ``sys.getsizeof(object)`` returns the size of an object in bytes
+* ``sys.getsizeof(object)`` calls the object's ``__sizeof__`` method
+* ``sys.getsizeof(object)`` adds an additional garbage collector overhead if the object is managed by the garbage collector
+* More info: https://stackoverflow.com/a/30316760
+
+.. code-block:: python
+
+    import sys
+
+
+    genexpr = (x for x in range(0,10))
+    listcomp = [x for x in range(0,10)]
+
+    sys.getsizeof(genexpr)
+    # 112
+
+    sys.getsizeof(listcomp)
+    # 184
+
+
 Assignments
 ===========
 
@@ -597,8 +620,10 @@ Function Generator Iris
         print('Generator', sys.getsizeof(gen))
 
 :Output:
-    Function 520
-    Generator 112
+    .. code-block:: text
+
+        Function 520
+        Generator 112
 
 :The whys and wherefores:
     * Using generators
