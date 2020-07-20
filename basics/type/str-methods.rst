@@ -504,12 +504,12 @@ Phone Numbers
 Assignments
 ===========
 
-Type String Example
--------------------
+Type String Normalize
+---------------------
 * Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 3 min
-* Solution: :download:`solution/type_str_methods.py`
+* Solution: :download:`solution/type_str_normalize.py`
 
 :English:
     #. For given text: ``UL. jana \tTWArdoWskIEGO 3``
@@ -520,10 +520,6 @@ Type String Example
     #. Dla danego tekstu: ``UL. jana \tTWArdoWskIEGO 3``
     #. Wykorzystaj metody ``str`` do oczyszczenia
     #. Oczekiwana wartość ``Jana Twardowskiego III``
-
-:Solution:
-    .. literalinclude:: solution/type_str_methods.py
-        :language: python
 
 :The whys and wherefores:
     * Variable definition

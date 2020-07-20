@@ -327,7 +327,7 @@ Sequence Unpacking Flat
         # ['nasa.gov', 'esa.int', 'roscosmos.ru']
 
 :Hint:
-    * Use ``str.split()`` without any argument
+    * ``str.split()``
 
 Sequence Unpacking Nested
 -------------------------

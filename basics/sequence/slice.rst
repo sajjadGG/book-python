@@ -301,12 +301,12 @@ Example
 Assignments
 ===========
 
-Sequence Slice Example
-----------------------
+Sequence Slice Substr
+---------------------
 * Complexity level: easy
-* Lines of code to write: 0 lines
+* Lines of code to write: 5 lines
 * Estimated time of completion: 3 min
-* Solution: :download:`solution/sequence_slice_example.py`
+* Solution: :download:`solution/sequence_slice_substr.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -325,10 +325,6 @@ Sequence Slice Example
 
         TEXT = 'We choose to go to the Moon!'
         REMOVE = 'to go to '
-
-:Solution:
-    .. literalinclude:: solution/sequence_slice_example.py
-        :language: python
 
 Sequence Slice Sequence
 -----------------------
@@ -386,8 +382,8 @@ Sequence Slice Text
 :Example:
     .. code-block:: python
 
-        example = 'lt. Mark Watney, PhD'
-        example[4:-5]
+        text = 'lt. Mark Watney, PhD'
+        text[4:-5]
         # 'Mark Watney'
 
 :Input:

@@ -204,4 +204,5 @@ Sequence Getitem Select
     * Type casting
 
 :Hint:
-    * To pretty print use ``pprint(result)`` (requires ``from pprint import pprint``)
+    * ``from pprint import pprint``
+    * ``pprint(result)``

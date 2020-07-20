@@ -27,8 +27,8 @@ Positive and Negative Values
         * any other
 
 
-If
-==
+Conditional Statement
+=====================
 .. code-block:: text
     :caption: ``if`` generic syntax
 
@@ -142,8 +142,8 @@ If
         print(f'My name... {name}')
 
 
-Else
-====
+Unconditional Alternative
+=========================
 .. highlights::
     * Optional
     * Executed when condition is not met
@@ -262,40 +262,8 @@ Else
     # No
 
 
-Conditional Expression
-======================
-.. code-block:: python
-    :caption: Normal ``if``
-
-    country = 'USA'
-
-    if country == 'Russia':
-        job = 'cosmonaut'
-    else:
-        job = 'astronaut'
-
-    print(job)
-    # astronaut
-
-.. code-block:: python
-    :caption: Inline ``if``
-
-    country = 'USA'
-    job = 'cosmonaut' if country == 'Russia' else 'astronaut'
-
-    print(job)
-    # astronaut
-
-.. code-block:: python
-    :caption: :ref:`Type Str Methods is Numeric`
-
-    age = input('What is your age?: ')
-    age = float(age) if age.isnumeric() else None
-    print(age)
-
-
-Elif
-====
+Conditional Alternative
+=======================
 .. highlights::
     * Used to check for additional condition if first is not met
     * In other languages is known as ``else if``
@@ -327,6 +295,38 @@ Elif
         print("I don't speak this language")
 
     # Witaj
+
+
+Conditional Expression
+======================
+.. code-block:: python
+    :caption: Normal ``if``
+
+    country = 'USA'
+
+    if country == 'Russia':
+        job = 'cosmonaut'
+    else:
+        job = 'astronaut'
+
+    print(job)
+    # astronaut
+
+.. code-block:: python
+    :caption: Inline ``if``
+
+    country = 'USA'
+    job = 'cosmonaut' if country == 'Russia' else 'astronaut'
+
+    print(job)
+    # astronaut
+
+.. code-block:: python
+    :caption: :ref:`Type Str Methods is Numeric`
+
+    age = input('What is your age?: ')
+    age = float(age) if age.isnumeric() else None
+    print(age)
 
 
 Switch

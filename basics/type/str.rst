@@ -336,29 +336,25 @@ String Immutability
 Assignments
 ===========
 
-Type String Example
--------------------
+Type String Input
+-----------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 3 min
-* Solution: :download:`solution/type_str_example.py`
+* Solution: :download:`solution/type_str_input.py`
 
 :English:
-    * Ask user to input text
-    * Print number of characters
+    #. Ask user to input text
+    #. Print number of characters
 
 :Polish:
-    * Poproś użytkownika o wprowadzenie tekstu
-    * Wypisz liczbę znaków
-
-:Solution:
-    .. literalinclude:: solution/type_str_example.py
-        :language: python
+    #. Poproś użytkownika o wprowadzenie tekstu
+    #. Wypisz liczbę znaków
 
 Type String Emoticon
 --------------------
 * Complexity level: easy
-* Lines of code to write: 3 lines
+* Lines of code to write: 2 lines
 * Estimated time of completion: 3 min
 * Solution: :download:`solution/type_str_emoticon.py`
 
@@ -369,16 +365,12 @@ Type String Emoticon
         * NAME is a name read from user
         * EMOTICON is Unicode Codepoint "\U0001F642"
 
-    #. Print length of a name, which was read from user
-
 :Polish:
     #. Poproś użytkownika o wprowadzenie imienia
     #. Wypisz ``hello NAME EMOTICON``, gdzie:
 
         * NAME to imię wczytane od użytkownika
         * EMOTICON to Unicode Codepoint "\U0001F642"
-
-    #. Wyświetl długość imienia, wczytanego od użytkownika
 
 :The whys and wherefores:
     * Variable declaration

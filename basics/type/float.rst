@@ -124,34 +124,6 @@ Built-in Functions
 Assignments
 ===========
 
-Type Float Example
-------------------
-* Complexity level: easy
-* Lines of code to write: 10 lines
-* Estimated time of completion: 3 min
-* Solution: :download:`solution/type_float_example.py`
-
-:English:
-    #. Speed limit is 75 MPH
-    #. Data uses imperial (US) system
-    #. Convert to metric (SI) system
-    #. Speed limit round to one decimal place
-
-:Polish:
-    #. Ograniczenie prędkości wynosi 75 MPH
-    #. Dane używają systemu imperialnego (US)
-    #. Przelicz je na system metryczny (układ SI)
-    #. Ograniczenie prędkości zaokrąglij do jednego miejsca po przecinku
-
-:Solution:
-    .. literalinclude:: solution/type_float_example.py
-        :language: python
-
-:The whys and wherefores:
-    * Defining constants and variables
-    * Naming convention
-    * Mathematical operations
-
 Type Float Tax
 --------------
 * Complexity level: easy
@@ -163,16 +135,26 @@ Type Float Tax
     #. Cost of the service is 100 PLN net
     #. Service has value added tax (VAT) rate of 23%
     #. Calculate tax and gross values
+    #. To calculate tax, multiply net times VAT
+    #. To calculate gross multiply net times VAT plus 1
+    #. Mind the operator precedence
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Cena usługi wynosi 100 PLN netto
     #. Usługa objęta jest 23% stawką VAT
     #. Oblicz wartości podatku oraz cenę brutto
+    #. Aby obliczyć podatek, pomnóż cenę netto razy stawkę VAT
+    #. Aby obliczyć cenę brutto pomnóż cenę netto razy stawka VAT plus 1
+    #. Zwróć uwagę na kolejność wykonywania działań
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Output:
     .. code-block:: text
 
-        Result [PLN]: net=100 tax=23.0 gross=123.0
+        net=100 PLN
+        tax=23.0 PLN
+        gross=123.0 PLN
 
 Type Float Altitude
 -------------------
@@ -198,7 +180,7 @@ Type Float Altitude
 :Output:
     .. code-block:: text
 
-        Plane altitude: 3048.0 m
+        altitude=3048.0 m
 
 :The whys and wherefores:
     * Defining constants and variables
@@ -230,7 +212,7 @@ Type Float Volume
 :Output:
     .. code-block:: text
 
-        Bottle volume: 0.5914688 l
+        volume=0.5914688 l
 
 :The whys and wherefores:
     * Defining constants and variables
@@ -270,7 +252,7 @@ Type Float Distance
         print(f'Kilometers: {...}')
         print(f'Miles: {...}')
         print(f'Nautical Miles: {...}')
-        print(f'All: km: {...}, mi: {...}, nm: {...}')
+        print(f'm: {...}, km: {...}, mi: {...}, nm: {...}')
 
 :Output:
     .. code-block:: text
@@ -292,6 +274,37 @@ Type Float Distance
     * 1 km = 1000 m
     * 1 mile = 1609.344 m
     * 1 nautical mile = 1852 m
+
+Type Float Velocity
+-------------------
+* Complexity level: easy
+* Lines of code to write: 10 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/type_float_velocity.py`
+
+:English:
+    #. Speed limit is 75 MPH
+    #. Data uses imperial (US) system
+    #. Convert to metric (SI) system
+    #. Speed limit print in KPH (km/h)
+    #. Result round to one decimal place
+
+:Polish:
+    #. Ograniczenie prędkości wynosi 75 MPH
+    #. Dane używają systemu imperialnego (US)
+    #. Przelicz je na system metryczny (układ SI)
+    #. Ograniczenie prędkości wypisz w KPH (km/h)
+    #. Wynik zaokrąglij do jednego miejsca po przecinku
+
+:Output:
+    .. code-block:: text
+
+        speed_limit=120.7 km/h
+
+:The whys and wherefores:
+    * Defining constants and variables
+    * Naming convention
+    * Mathematical operations
 
 Type Float Pressure
 -------------------
@@ -319,8 +332,8 @@ Type Float Pressure
 :Output:
     .. code-block:: text
 
-        EMU operating pressure: 29.65 kPa, 4.30 psi
-        Orlan operating pressure: 40.00 kPa, 5.80 psi
+        EMU: 29.65 kPa, 4.30 psi
+        Orlan: 40.00 kPa, 5.80 psi
 
 :The whys and wherefores:
     * Defining constants and variables
@@ -351,12 +364,14 @@ Type Float Percent
     #. International Standard Atmosphere (ISA) at sea level is 1013.25 hPa
     #. Calculate partial pressure of Oxygen at sea level
     #. Print ISA and partial O2 pressure in kPa rounding to two decimal places
+    #. To calculate partial pressure use ratio (100% is 1013.25 hPa, 20.946% is how many hPa?)
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. International Standard Atmosphere (ISA) na poziomie morza wynosi 1013.25 hPa
     #. Oblicz ciśnienie parcjalne tlenu na poziomie morza
     #. Wypisz ISA oraz ciśnienie parcjalne O2 wyniki w kPa zaokrąglając do dwóch miejsc po przecinku
+    #. Aby policzyć ciśnienie parcialne skorzystaj z proporcji (100% to 1013.25 hPa, 20.946% to ile hPa?)
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Output:
@@ -394,11 +409,18 @@ Type Float Gradient
 :English:
     #. At what altitude above sea level, pressure is equal to partial pressure of Oxygen
     #. Print result in meters rounding to two decimal places
+    #. To calculate partial pressure use ratio (100% is 1013.25 hPa, 20.946% is how many hPa?)
+    #. Calculated altitude is pressure at sea level minis oxygen partial pressure divided by gradient
+    #. Mind the operator precedence
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Na jakiej wysokości nad poziomem morza panuje ciśnienie równe ciśnieniu parcjalnemu tlenu?
     #. Wypisz rezultat w metrach zaokrąglając do dwóch miejsc po przecinku
+    #. Aby policzyć ciśnienie parcialne skorzystaj z proporcji (100% to 1013.25 hPa, 20.946% to ile hPa?)
+    #. Wyliczona wysokość to ciśnienie atmosferyczne na poziomie morza minus ciśnienie parcialne tlenu podzielone przez
+gradient
+    #. Zwróć uwagę na kolejność wykonywania działań
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Output:

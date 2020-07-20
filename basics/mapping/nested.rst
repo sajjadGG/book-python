@@ -170,3 +170,8 @@ List of Dicts
 
     len(data[1]['measurements'])
     # 4
+
+
+Assignments
+===========
+.. todo:: Create assignments

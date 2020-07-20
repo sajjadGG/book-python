@@ -63,40 +63,6 @@ Type Checking
 Assignments
 ===========
 
-Type Int Example
-----------------
-* Complexity level: medium
-* Lines of code to write: 9 lines
-* Estimated time of completion: 3 min
-* Solution: :download:`solution/type_int_example.py`
-
-:English:
-    #. File size is one megabyte
-    #. Calculate size in bits
-    #. Calculate size in megabits
-
-
-:Polish:
-    #. Wielkość pliku to jeden megabajt
-    #. Oblicz wielkość w bitach
-    #. Oblicz wielkość w megabitach
-
-:Solution:
-    .. literalinclude:: solution/type_int_example.py
-        :language: python
-
-:The whys and wherefores:
-    * Defining constants and variables
-    * Naming convention
-    * Mathematical operations
-
-:Hint:
-    * 1 Kb = 1024 b
-    * 1 Mb = 1024 Kb
-    * 1 B = 8 b
-    * 1 KB = 1024 B
-    * 1 MB = 1024 KB
-
 Type Int Time
 -------------
 * Complexity level: easy
@@ -126,6 +92,35 @@ Type Int Time
 :Hint:
     * 1 h = 60 min
     * 1 min = 60 s
+
+Type Int Bytes
+--------------
+* Complexity level: medium
+* Lines of code to write: 9 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/type_int_bytes.py`
+
+:English:
+    #. File size is one megabyte
+    #. Calculate size in bits
+    #. Calculate size in megabits
+
+:Polish:
+    #. Wielkość pliku to jeden megabajt
+    #. Oblicz wielkość w bitach
+    #. Oblicz wielkość w megabitach
+
+:The whys and wherefores:
+    * Defining constants and variables
+    * Naming convention
+    * Mathematical operations
+
+:Hint:
+    * 1 Kb = 1024 b
+    * 1 Mb = 1024 Kb
+    * 1 B = 8 b
+    * 1 KB = 1024 B
+    * 1 MB = 1024 KB
 
 Type Int Bandwidth
 ------------------
