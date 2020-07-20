@@ -18,6 +18,7 @@ Functions
     :caption: Functions
     :name: Advanced Functions
 
+    function/unpack.rst
     function/args-kwargs-parameters.rst
     function/args-kwargs-arguments.rst
     function/parameter-syntax.rst

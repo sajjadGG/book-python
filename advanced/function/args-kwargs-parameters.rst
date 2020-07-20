@@ -244,7 +244,7 @@ Function Args/Kwargs Parameters Args
 ------------------------------------
 * Complexity level: easy
 * Lines of code to write: 7 lines + doctests
-* Estimated time of completion: 8 min
+* Estimated time of completion: 5 min
 * Solution: :download:`solution/function_argskwargs_parameters_args.py`
 
 :English:
@@ -282,7 +282,7 @@ Function Args/Kwargs Parameters Kwargs
 --------------------------------------
 * Complexity level: medium
 * Lines of code to write: 8 lines + doctests
-* Estimated time of completion: 8 min
+* Estimated time of completion: 5 min
 * Solution: :download:`solution/function_argskwargs_parameters_kwargs.py`
 
 :English:

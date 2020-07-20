@@ -412,7 +412,7 @@ Function Args/Kwargs Arguments Define
         * klucz: nazwa kolumny z nagłówka
         * wartość: pomiar z odpowiedniej kolumny
 
-    #. Stwórz funkcję ``mean(**values)``
+    #. Stwórz funkcję ``mean(*values)``
     #. Iterując po ``result`` wywołuj ``mean()`` podając argumenty pozycyjnie
     #. Wypisz średnią dla każdego wiersza
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)

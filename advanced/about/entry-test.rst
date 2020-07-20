@@ -3,12 +3,12 @@ Entry Test
 **********
 
 
-Loop Dict from List to Dict
-===========================
+Entry Test List of Dict
+=======================
 * Complexity level: easy
 * Lines of code to write: 6 lines
 * Estimated time of completion: 8 min
-* Solution: :download:`solution/loop_dict_to_list.py`
+* Solution: :download:`solution/entry_test_listdict.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -72,12 +72,12 @@ Loop Dict from List to Dict
     * Iterating over dict and lists
 
 
-Loop Unpacking Endswith
-=======================
+Entry Test Endswith
+===================
 * Complexity level: easy
 * Lines of code to write: 3 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/loop_unpacking_endswith.py`
+* Solution: :download:`solution/entry_test_endswith.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -118,12 +118,12 @@ Loop Unpacking Endswith
     * ``isinstance`` or ``type``
 
 
-File Read Parsing List of Dicts
-===============================
+Entry Test File
+===============
 * Complexity level: hard
 * Lines of code to write: 15 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/file_read_parsing_listdict.py`
+* Solution: :download:`solution/entry_test_file.py`
 
 :English:
     #. Use data from "Input" section (see below)

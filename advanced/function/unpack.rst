@@ -1,7 +1,7 @@
-.. _Sequence Unpack:
+.. _Function Unpack:
 
 ***************
-Sequence Unpack
+Function Unpack
 ***************
 
 
@@ -291,12 +291,12 @@ Using in a Loop
 Assignments
 ===========
 
-Sequence Unpack Flat
+Function Unpack Flat
 --------------------
 * Complexity level: easy
 * Lines of code to write: 1 lines
 * Estimated time of completion: 3 min
-* Solution: :download:`solution/sequence_unpack_flat.py`
+* Solution: :download:`solution/function_unpack_flat.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -329,12 +329,12 @@ Sequence Unpack Flat
 :Hint:
     * ``help(str.split)``
 
-Sequence Unpack Nested
+Function Unpack Nested
 ----------------------
 * Complexity level: easy
 * Lines of code to write: 1 lines
 * Estimated time of completion: 3 min
-* Solution: :download:`solution/sequence_unpack_nested.py`
+* Solution: :download:`solution/function_unpack_nested.py`
 
 :English:
     #. Use data from "Input" section (see below)
