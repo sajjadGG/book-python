@@ -121,10 +121,19 @@ Konfiguracja logowania
     log.warning('warning!')  # zostanie zapisana do pliku
     log.debug('wiadomosc debuggingowa')  # nie zostanie zapisana, bo level jest INFO, czyli powyżej DEBUG
 
+.. code-block:: python
+
+    import logging
+
+    logging.basicConfig(
+        level='DEBUG',
+        datefmt='"%Y-%m-%d" "%H:%M:%S"',
+        format='{asctime}, "{levelname}", "{message}"',
+        style='{'
+    )
 
 Logowanie zdarzeń
 -----------------
-
 .. code-block:: python
 
     import logging
@@ -330,6 +339,65 @@ Examples
 
     logging.getLogger('requests').setLevel('DEBUG')
     logging.getLogger('_tmp').setLevel('ERROR')
+
+
+.. code-block:: python
+    :caption: Decorators
+
+    from datetime import datetime
+    import logging
+
+    logging.basicConfig(
+        level='DEBUG',
+        datefmt='%Y-%m-%d %H:%M:%S',
+        format='[{levelname}] {message}',
+        style='{'
+    )
+
+
+    def timeit(func):
+        def wrapper(*args, **kwargs):
+            time_start = datetime.now()
+            result = func(*args, **kwargs)
+            time_end = datetime.now()
+            time = time_end - time_start
+            logging.debug(f'Time: {time}')
+            return result
+
+        return wrapper
+
+
+    def debug(func):
+        def wrapper(*args, **kwargs):
+            function = func.__name__
+            logging.debug(f'Calling: {function=}, {args=}, {kwargs=}')
+            result = func(*args, **kwargs)
+            logging.debug(f'Result: {result}')
+            return result
+
+        return wrapper
+
+
+    @timeit
+    @debug
+    def add_numbers(a, b):
+        return a + b
+
+
+    add_numbers(1, 2)
+    # [DEBUG] Calling: function='add_numbers', args=(1, 2), kwargs={}
+    # [DEBUG] Result: 3
+    # [DEBUG] Time: 0:00:00.000105
+
+    add_numbers(1, b=2)
+    # [DEBUG] Calling: function='add_numbers', args=(1,), kwargs={'b': 2}
+    # [DEBUG] Result: 3
+    # [DEBUG] Time: 0:00:00.000042
+
+    add_numbers(a=1, b=2)
+    # [DEBUG] Calling: function='add_numbers', args=(), kwargs={'a': 1, 'b': 2}
+    # [DEBUG] Result: 3
+    # [DEBUG] Time: 0:00:00.000040
 
 
 Further Reading

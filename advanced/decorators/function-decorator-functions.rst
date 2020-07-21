@@ -86,8 +86,12 @@ Examples
     from datetime import datetime
     import logging
 
-    log = logging.getLogger(__name__)
-    log.setLevel('DEBUG')
+    logging.basicConfig(
+        level='DEBUG',
+        datefmt='"%Y-%m-%d", "%H:%M:%S"',
+        format='{asctime}, "{levelname}", "{message}"',
+        style='{'
+    )
 
 
     def timeit(func):
@@ -96,18 +100,20 @@ Examples
             result = func(*args, **kwargs)
             time_end = datetime.now()
             time = time_end - time_start
-            log.debug(f'Time: {time}\n')
+            logging.debug(f'Time: {time}')
             return result
+
         return wrapper
 
 
     def debug(func):
         def wrapper(*args, **kwargs):
             function = func.__name__
-            log.debug(f'Calling: {function=}, {args=}, {kwargs=}')
+            logging.debug(f'Calling: {function=}, {args=}, {kwargs=}')
             result = func(*args, **kwargs)
-            log.debug(f'Result: {result}')
+            logging.debug(f'Result: {result}')
             return result
+
         return wrapper
 
 
@@ -118,19 +124,19 @@ Examples
 
 
     add_numbers(1, 2)
-    # DEBUG:__main__:Calling: function='add_numbers', args=(1, 2), kwargs={}
-    # DEBUG:__main__:Result: 3
-    # DEBUG:__main__:Time: 0:00:00.000117
+    # [DEBUG] Calling: function='add_numbers', args=(1, 2), kwargs={}
+    # [DEBUG] Result: 3
+    # [DEBUG] Time: 0:00:00.000105
 
     add_numbers(1, b=2)
-    # DEBUG:__main__:Calling: function='add_numbers', args=(1,), kwargs={'b': 2}
-    # DEBUG:__main__:Result: 3
-    # DEBUG:__main__:Time: 0:00:00.000059
+    # [DEBUG] Calling: function='add_numbers', args=(1,), kwargs={'b': 2}
+    # [DEBUG] Result: 3
+    # [DEBUG] Time: 0:00:00.000042
 
     add_numbers(a=1, b=2)
-    # DEBUG:__main__:Calling: function='add_numbers', args=(), kwargs={'a': 1, 'b': 2}
-    # DEBUG:__main__:Result: 3
-    # DEBUG:__main__:Time: 0:00:00.000044
+    # [DEBUG] Calling: function='add_numbers', args=(), kwargs={'a': 1, 'b': 2}
+    # [DEBUG] Result: 3
+    # [DEBUG] Time: 0:00:00.000040
 
 .. code-block:: python
     :caption: Cache with exposed cache
@@ -156,7 +162,7 @@ Examples
     factorial(5)
     # 120
 
-    print(CACHE)
+    print(_cache)
     # {0: 1, 1: 1, 2: 2, 3: 6, 4: 24, 5: 120}
 
 .. code-block:: python
@@ -308,17 +314,42 @@ Examples
 Assignments
 ===========
 
+Decorator Function Allowed
+--------------------------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 8 min
+* Solution: :download:`solution/decorator_func_allowed.py`
+
+:English:
+    #. Define variable ``_allowed: bool = True``
+    #. Create decorattor ``check``
+    #. Decorator calls function, only when ``_allowed`` is ``True``
+    #. Else raise an exception ``PermissionError``
+    #. Run program and check what happend
+    #. Change variable ``_allowed`` to ``False``
+    #. Run program and check what happend
+
+:Polish:
+    #. Zdefinuj zmienną ``_allowed: bool = True``
+    #. Stwórz dekorator ``check``
+    #. Dekorator wywołuje funkcję, tylko gdy ``_allowed`` jest ``True``
+    #. W przeciwnym przypadku podnieś wyjątek ``PermissionError``
+    #. Uruchom program i sprawdź co się stało
+    #. Zmień zmienną ``_allowed`` na ``False``
+    #. Uruchom program i sprawdź co się stało
+
 Decorator Function Memoization
 ------------------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/decorator_func_memoization.py`
 
 :English:
     #. Use data from "Input" section (see below)
     #. Create function ``factorial_cache(n: int) -> int``
-    #. Create ``CACHE: Dict[int, int]`` with computation results from function
+    #. Create ``_cache: Dict[int, int]`` with computation results from function
 
         * key: function argument
         * value: computation result
@@ -326,7 +357,7 @@ Decorator Function Memoization
     #. Create decorator ``@cache``
     #. Decorator must check before running function, if for given argument the computation was already done:
 
-        * if yes, return from ``CACHE``
+        * if yes, return from ``_cache``
         * if not, calculate new result, update cache and return computed value
 
     #. Using ``timeit``
@@ -334,7 +365,7 @@ Decorator Function Memoization
 :Polish:
     #. Użyj kodu z sekcji "Input" (patrz poniżej)
     #. Stwórz funkcję ``factorial_cache(n: int) -> int``
-    #. Stwórz ``CACHE: Dict[int, int]`` z wynikami wyliczenia funkcji
+    #. Stwórz ``_cache: Dict[int, int]`` z wynikami wyliczenia funkcji
 
         * klucz: argument funkcji
         * wartość: wynik obliczeń
@@ -342,8 +373,8 @@ Decorator Function Memoization
     #. Stwórz dekorator ``@cache``
     #. Decorator ma sprawdzać przed uruchomieniem funkcji, czy dla danego argumenu wynik został już wcześniej obliczony:
 
-        * jeżeli tak, to zwraca dane z ``CACHE``
-        * jeżeli nie, to oblicza, aktualizuje ``CACHE``, a następnie zwraca wartość
+        * jeżeli tak, to zwraca dane z ``_cache``
+        * jeżeli nie, to oblicza, aktualizuje ``_cache``, a następnie zwraca wartość
 
     #. Wykorzystując ``timeit`` porównaj prędkość działania z obliczaniem na bieżąco dla parametru 100
 
@@ -353,8 +384,11 @@ Decorator Function Memoization
 
         import sys
         from timeit import timeit
-
         sys.setrecursionlimit(5000)
+
+
+        def cache(func):
+            raise NotImplementedError
 
 
         @cache
@@ -364,13 +398,11 @@ Decorator Function Memoization
             else:
                 return n * fn1(n-1)
 
-
         def fn2(n):
             if n == 0:
                 return 1
             else:
                 return n * fn2(n-1)
-
 
         duration_cache = timeit(stmt='fn1(500); fn1(400); fn1(450); fn1(350)', globals=globals(), number=100_000)
         duration_nocache = timeit(stmt='fn2(500); fn2(400); fn2(450); fn2(350)', globals=globals(), number=100_000)
@@ -384,29 +416,29 @@ Decorator Function Abspath
 --------------------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/decorator_func_abspath.py`
 
 :English:
     #. Create function ``print_file(filename: str) -> str`` which prints file content (filename given as an argument)
     #. Create decorator ``to_absolute_path``
-    #. Decorator converts to absolute path (``path`` + ``filename``), if filename given as an argument is a relative path
+    #. Decorator converts to absolute path (``current_directory`` + ``filename``), if filename given as an argument is a relative path
 
 :Polish:
     #. Stwórz funkcję ``print_file(filename: str) -> str`` która wyświetla zawartość pliku (nazwa pliku podana jako argument)
     #. Stwórz dekorator ``to_absolute_path``
-    #. Dekorator zamienia ścieżkę na bezwzględną (``path`` + ``filename``), jeżeli nazwa pliku podana jako argument jest względna
+    #. Dekorator zamienia ścieżkę na bezwzględną (``current_directory`` + ``filename``), jeżeli nazwa pliku podana jako argument jest względna
 
 :Hint:
-    * ``__file__``
-    * ``os.path.dirname()``
-    * ``os.path.join()``
+    * ``from pathlib import Path``
+    * ``current_directory = Path.cwd()``
+    * ``path = Path(current_directory, filename)``
 
 Decorator Function Type Check
 -----------------------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
-* Estimated time of completion: 20 min
+* Estimated time of completion: 21 min
 * Solution: :download:`solution/decorator_func_typecheck.py`
 
 :English:
@@ -427,7 +459,7 @@ Decorator Function Type Check
     .. code-block:: python
 
         @check_types
-        def echo(a: str, b: int, c: int = 0) -> bool:
+        def echo(a: str, b: int, c: float = 0.0) -> bool:
             print('Function run as expected')
             return bool(a * b)
 
@@ -443,4 +475,4 @@ Decorator Function Type Check
     .. code-block:: python
 
         echo.__annotations__
-        # {'a': <class 'str'>, 'return': <class 'bool'>, 'b': <class 'int'>}
+        # {'a': <class 'str'>, 'return': <class 'bool'>, 'b': <class 'int'>, 'c': <class 'float'>}

@@ -4,14 +4,14 @@ import sys
 sys.setrecursionlimit(5000)
 
 
-_CACHE = {}
+_cache = {}
 
 
 def cache(func):
     def wrapper(n):
-        if n not in _CACHE:
-            _CACHE[n] = func(n)
-        return _CACHE[n]
+        if n not in _cache:
+            _cache[n] = func(n)
+        return _cache[n]
     return wrapper
 
 
