@@ -371,8 +371,9 @@ Decorator Function All
     .. todo:: English translation
 
 :Polish:
-    #. Stwórz dekorator który uruchomi funkcję, tylko gdy wszyscy członkowe załogi są astronautami
-    #. Jeżeli, którykolwiek członek nie jest astronautą, podnieś wyjątek ``PermissionError`` i wypisz jego imię i nazwisko
+    #. Stwórz dekorator ``check_astronauts``
+    #. Dekorator uruchomi funkcję, tylko gdy wszyscy członkowe załogi są astronautami (mają ``'is_astronaut': True``)
+    #. Jeżeli, którykolwiek członek nie jest astronautą ``'is_astronaut': False``, podnieś wyjątek ``PermissionError`` i wypisz jego imię i nazwisko
 
 :Input:
     .. code-block:: python
@@ -388,7 +389,7 @@ Decorator Function All
             {'is_astronaut': True, 'name': 'Alex Vogel'}]
 
 
-        @check_astronaut
+        @check_astronauts
         def launch(crew):
             print('Launch')
 
