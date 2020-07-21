@@ -125,4 +125,37 @@ Examples
 
 Assignments
 ===========
-.. todo:: Create assignments
+
+Decorator Methods Alive
+-----------------------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 13 min
+* Solution: :download:`solution/decorator_method_alive.py`
+
+:Polish:
+    #. Stwórz dekorator ``if_alive``
+    #. Dekotrator pozwoli na wykonanie metody ``make_damage``, tylko gdy punkty życia są większe niż 0
+
+:Input:
+    .. code-block:: python
+
+        class Hero:
+            def __init__(self, name):
+                self.name = name
+                self.current_health = 100
+
+            @if_alive
+            def make_damage(self):
+                return 10
+
+
+        hero = Hero('Jan Twardowski')
+        print(hero.make_damage())
+        # 10
+
+        hero.current_health = -10
+        print(hero.make_damage())
+        # Traceback (most recent call last):
+        #     ...
+        # RuntimeError: Hero is dead and cannot make damage

@@ -157,6 +157,46 @@ Examples
 Assignments
 ===========
 
+Decorator Arguments List of Dicts
+---------------------------------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 13 min
+* Solution: :download:`solution/decorator_arguments_listdict.py`
+
+:English:
+    .. todo:: English translation
+
+:Polish:
+    #. Stwórz dekorator ``check``
+    #. Funkcja ``launch`` przyjmuje ``crew: List[dict]`` jako argument
+    #. Dekorator sprawdza, czy w każdym ``dict`` wewnątrz ``crew``
+    #. znajduje się pole o wartości
+    #. Zarówno nazwa pola jak i wartość jest podawana jako argument do dekoratora
+    #. Jeżeli coś się nie zgadza, podnieś wyjątek ``PermissionError`` i wypisz nazwę pola i obecną oraz oczekiwaną wartość
+
+:Input:
+    .. code-block:: python
+
+        CREW_PRIMARY = [
+            {'is_astronaut': True, 'name': 'Jan Twardowski'},
+            {'is_astronaut': True, 'name': 'Mark Watney'},
+            {'is_astronaut': True, 'name': 'Melissa Lewis'}]
+
+        CREW_BACKUP = [
+            {'is_astronaut': True, 'name': 'Melissa Lewis'},
+            {'is_astronaut': True, 'name': 'Mark Watney'},
+            {'is_astronaut': False, 'name': 'Alex Vogel'}]
+
+
+        @check(field='is_astronaut', value=True)
+        def launch(crew):
+            print('Launch')
+
+
+        launch(CREW_PRIMARY)
+        launch(CREW_BACKUP)
+
 Decorator Arguments Type Check
 ------------------------------
 * Complexity level: medium
@@ -189,55 +229,15 @@ Decorator Arguments Type Check
             return a * b
 
 
-        print(echo('a', 2))
-        print(echo('a', 2))
-        print(echo('b', 2))
-        print(echo(a='b', b=2))
-        print(echo(b=2, a='b'))
-        print(echo('b', b=2))
+        echo('a', 2)
+        echo('a', 2)
+        echo('b', 2)
+        echo(a='b', b=2)
+        echo(b=2, a='b')
+        echo('b', b=2)
 
 :Hint:
     .. code-block:: python
 
         echo.__annotations__
-        # {'a': <class 'str'>, 'b': <class 'int'>, 'c': <class 'float'>, 'return': <class 'bool'>,}
-
-Decorator Function All
-----------------------
-* Complexity level: easy
-* Lines of code to write: 5 lines
-* Estimated time of completion: 13 min
-* Solution: :download:`solution/decorator_func_all.py`
-
-:English:
-    .. todo:: English translation
-
-:Polish:
-    #. Stwórz dekorator ``check``
-    #. Funkcja ``launch`` przyjmuje ``crew: List[dict]`` jako argument
-    #. Dekorator sprawdza, czy w każdym ``dict`` wewnątrz ``crew``
-    #. znajduje się pole o wartości
-    #. Zarówno nazwa pola jak i wartość jest podawana jako argument do dekoratora
-    #. Jeżeli coś się nie zgadza, podnieś wyjątek ``PermissionError`` i wypisz nazwę pola i obecną oraz oczekiwaną wartość
-
-:Input:
-    .. code-block:: python
-
-        CREW_PRIMARY = [
-            {'is_astronaut': False, 'name': 'Jan Twardowski'},
-            {'is_astronaut': True, 'name': 'Mark Watney'},
-            {'is_astronaut': True, 'name': 'Melissa Lewis'}]
-
-        CREW_BACKUP = [
-            {'is_astronaut': True, 'name': 'Melissa Lewis'},
-            {'is_astronaut': True, 'name': 'Mark Watney'},
-            {'is_astronaut': True, 'name': 'Alex Vogel'}]
-
-
-        @check(field='is_astronaut', value=True)
-        def launch(crew):
-            print('Launch')
-
-
-        launch(CREW_PRIMARY)
-        launch(CREW_BACKUP)
+        # {'a': <class 'str'>, 'b': <class 'int'>, 'c': <class 'float'>, 'return': <class 'bool'>}

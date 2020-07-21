@@ -275,6 +275,24 @@ Examples
         return render_template('hello.html', name=name)
 
 .. code-block:: python
+    :caption: FastAPI URL routing
+
+    from typing import Optional
+    from fastapi import FastAPI
+
+    app = FastAPI()
+
+
+    @app.get("/")
+    async def read_root():
+        return {"Hello": "World"}
+
+
+    @app.get("/items/{item_id}")
+    async def read_item(item_id: int, q: Optional[str] = None):
+        return {"item_id": item_id, "q": q}
+
+.. code-block:: python
     :caption: Django Login Required. Decorator checks whether user is_authenticated. If not, user will be redirected to login page.
 
     from django.shortcuts import render
@@ -358,12 +376,12 @@ Decorator Function Allowed
             #     ...
             # PermissionError
 
-Decorator Function All
-----------------------
+Decorator Function List of Dict
+-------------------------------
 * Complexity level: easy
 * Lines of code to write: 7 lines
 * Estimated time of completion: 8 min
-* Solution: :download:`solution/decorator_func_all.py`
+* Solution: :download:`solution/decorator_func_listdict.py`
 
 :English:
     .. todo:: English translation

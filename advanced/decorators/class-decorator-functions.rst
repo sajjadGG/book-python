@@ -171,20 +171,46 @@ Decorator Class Type Check
     .. code-block:: python
 
         @CheckTypes
-        def echo(a: str, b: int, c: int = 0) -> bool:
-            print('Function run as expected')
-            return bool(a * b)
+        def isworking(a: str, b: int, c: float = 0) -> bool:
+            return True
 
+:Tests:
+    .. doctest::
 
-        print(echo('a', 2))
-        print(echo('a', 2))
-        print(echo('b', 2))
-        print(echo(a='b', b=2))
-        print(echo(b=2, a='b'))
-        print(echo('b', b=2))
+        >>> isworking('hello', 1)
+        True
+
+        >>> isworking('hello', b=1)
+        True
+
+        >>> isworking(a='hello', b=1)
+        True
+
+        >>> isworking(b=1, a='hello')
+        True
+
+        >>> isworking(1, 'hello')
+        Traceback (most recent call last):
+            ...
+        TypeError: Argument 1 is <class 'int'>, but <class 'str'> was expected
+
+        >>> isworking(1, b='hello')
+        Traceback (most recent call last):
+            ...
+        TypeError: Argument 1 is <class 'int'>, but <class 'str'> was expected
+
+        >>> isworking(a=1, b='hello')
+        Traceback (most recent call last):
+            ...
+        TypeError: Argument a is <class 'str'>, but <class 'str'> was expected
+
+        >>> isworking(b='hello', a=1)
+        Traceback (most recent call last):
+            ...
+        TypeError: Argument b is <class 'str'>, but <class 'int'> was expected
 
 :Hint:
     .. code-block:: python
 
         echo.__annotations__
-        # {'a': <class 'str'>, 'return': <class 'bool'>, 'b': <class 'int'>}
+        # {'a': <class 'str'>, 'b': <class 'int'>, 'c':  <class 'float'>, 'return': <class 'bool'>}
