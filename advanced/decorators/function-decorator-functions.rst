@@ -322,22 +322,79 @@ Decorator Function Allowed
 * Solution: :download:`solution/decorator_func_allowed.py`
 
 :English:
-    #. Define variable ``_allowed: bool = True``
-    #. Create decorattor ``check``
+    #. Use data from "Input" section (see below)
+    #. Create decorattor ``if_allowed``
     #. Decorator calls function, only when ``_allowed`` is ``True``
     #. Else raise an exception ``PermissionError``
     #. Run program and check what happend
-    #. Change variable ``_allowed`` to ``False``
-    #. Run program and check what happend
+    #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Zdefinuj zmienną ``_allowed: bool = True``
-    #. Stwórz dekorator ``check``
+    #. Użyj kodu z sekcji "Input" (patrz poniżej)
+    #. Stwórz dekorator ``if_allowed``
     #. Dekorator wywołuje funkcję, tylko gdy ``_allowed`` jest ``True``
     #. W przeciwnym przypadku podnieś wyjątek ``PermissionError``
-    #. Uruchom program i sprawdź co się stało
-    #. Zmień zmienną ``_allowed`` na ``False``
-    #. Uruchom program i sprawdź co się stało
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        @if_allowed
+        def echo(text):
+            print(text)
+
+:Output:
+    .. code-block:: python
+
+            _allowed = True
+
+            echo('hello')
+            # hello
+
+    .. code-block:: python
+
+            _allowed = False
+
+            echo('hello')
+            # Traceback (most recent call last):
+            #     ...
+            # PermissionError
+
+Decorator Function All
+----------------------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 13 min
+* Solution: :download:`solution/decorator_func_all.py`
+
+:English:
+    .. todo:: English translation
+
+:Polish:
+    #. Stwórz dekorator który uruchomi funkcję, tylko gdy wszyscy członkowe załogi są astronautami
+    #. Jeżeli, którykolwiek członek nie jest astronautą, podnieś wyjątek ``PermissionError`` i wypisz jego imię i nazwisko
+
+:Input:
+    .. code-block:: python
+
+        CREW_PRIMARY = [
+            {'is_astronaut': False, 'name': 'Jan Twardowski'},
+            {'is_astronaut': True, 'name': 'Mark Watney'},
+            {'is_astronaut': True, 'name': 'Melissa Lewis'}]
+
+        CREW_BACKUP = [
+            {'is_astronaut': True, 'name': 'Melissa Lewis'},
+            {'is_astronaut': True, 'name': 'Mark Watney'},
+            {'is_astronaut': True, 'name': 'Alex Vogel'}]
+
+
+        @check_astronaut
+        def launch(crew):
+            print('Launch')
+
+
+        launch(CREW_PRIMARY)
+        launch(CREW_BACKUP)
 
 Decorator Function Memoization
 ------------------------------
@@ -475,4 +532,4 @@ Decorator Function Type Check
     .. code-block:: python
 
         echo.__annotations__
-        # {'a': <class 'str'>, 'return': <class 'bool'>, 'b': <class 'int'>, 'c': <class 'float'>}
+        # {'a': <class 'str'>, 'b': <class 'int'>, 'c': <class 'float'>, 'return': <class 'bool'>}

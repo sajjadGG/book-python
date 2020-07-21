@@ -197,7 +197,7 @@ Decorator Arguments Type Check
     .. code-block:: python
 
         @check_types(check_return=True)
-        def echo(a: str, b: int, c: int = 0) -> bool:
+        def echo(a: str, b: int, c: float = 0) -> bool:
             print('Function run as expected')
             return a * b
 
@@ -213,5 +213,44 @@ Decorator Arguments Type Check
     .. code-block:: python
 
         echo.__annotations__
-        # {'a': <class 'str'>, 'return': <class 'bool'>, 'b': <class 'int'>}
+        # {'a': <class 'str'>, 'b': <class 'int'>, 'c': <class 'float'>, 'return': <class 'bool'>,}
 
+Decorator Function All
+----------------------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 13 min
+* Solution: :download:`solution/decorator_func_all.py`
+
+:English:
+    .. todo:: English translation
+
+:Polish:
+    #. Stwórz dekorator ``check``
+    #. Funkcja ``launch`` przyjmuje ``crew: List[dict]`` jako argument
+    #. Dekorator sprawdza, czy w każdym ``dict`` wewnątrz ``crew``
+    #. znajduje się pole o wartości
+    #. Zarówno nazwa pola jak i wartość jest podawana jako argument do dekoratora
+    #. Jeżeli coś się nie zgadza, podnieś wyjątek ``PermissionError`` i wypisz nazwę pola i obecną oraz oczekiwaną wartość
+
+:Input:
+    .. code-block:: python
+
+        CREW_PRIMARY = [
+            {'is_astronaut': False, 'name': 'Jan Twardowski'},
+            {'is_astronaut': True, 'name': 'Mark Watney'},
+            {'is_astronaut': True, 'name': 'Melissa Lewis'}]
+
+        CREW_BACKUP = [
+            {'is_astronaut': True, 'name': 'Melissa Lewis'},
+            {'is_astronaut': True, 'name': 'Mark Watney'},
+            {'is_astronaut': True, 'name': 'Alex Vogel'}]
+
+
+        @check(field='is_astronaut', value=True)
+        def launch(crew):
+            print('Launch')
+
+
+        launch(CREW_PRIMARY)
+        launch(CREW_BACKUP)
