@@ -43,6 +43,7 @@ Decorators
     decorators/class-decorator-methods.rst
     decorators/decorator-arguments.rst
     decorators/functools.rst
+    decorators/recap.rst
 
 ***************************
 Object Oriented Programming

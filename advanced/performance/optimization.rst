@@ -122,8 +122,6 @@ Numba gives you the power to speed up your applications with high performance fu
     def add(x, y):
         return x + y
 
-
-
 Dask
 ----
 Dask natively scales Python. Dask provides advanced parallelism for analytics, enabling performance at scale for the tools you love

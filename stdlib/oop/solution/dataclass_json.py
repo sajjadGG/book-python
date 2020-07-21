@@ -43,6 +43,6 @@ class User:
 
 
 users = [User(**u['fields'])
-            for u in json.loads(DATA)]
+         for u in json.loads(DATA)]
 
 pprint(users)
