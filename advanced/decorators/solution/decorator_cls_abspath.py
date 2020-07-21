@@ -1,27 +1,23 @@
-from os.path import dirname, join
+from pathlib import Path
 
 
-class ToAbsolutePath:
-    def __init__(self, function):
-        self._function = function
+class Abspath:
+    def __init__(self, func):
+        self._func = func
 
-    def __call__(self, filename):
-        path = dirname(__file__)
-
-        if path not in filename:
-            filename = join(path, filename)
-
-        return self._function(filename)
+    def __call__(self, file):
+        current_directory = Path().cwd()
+        file = Path(current_directory, file)
+        return self._func(file)
 
 
-@ToAbsolutePath
-def print_file(filename: str) -> str:
-    print(f'{filename=}\n\n')
-
-    with open(filename) as file:
-        return file.read()
+@Abspath
+def display(file):
+    print(f'Reading file {file}')
 
 
-if __name__ == '__main__':
-    result = print_file('iris.csv')
-    print(result)
+display('iris.csv')
+# Reading file /home/python/iris.csv
+
+display('/home/python/iris.csv')
+# Reading file /home/python/iris.csv

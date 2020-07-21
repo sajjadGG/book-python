@@ -1,3 +1,13 @@
+"""
+>>> launch(CREW_PRIMARY)
+Launching Jan Twardowski, Mark Watney, Melissa Lewis
+
+>>> launch(CREW_BACKUP)
+Traceback (most recent call last):
+    ...
+PermissionError: Alex Vogel is not an astronaut
+"""
+
 CREW_PRIMARY = [
     {'is_astronaut': True, 'name': 'Jan Twardowski'},
     {'is_astronaut': True, 'name': 'Mark Watney'},
@@ -22,7 +32,3 @@ def check_astronauts(func):
 def launch(crew):
     crew = ', '.join(astro['name'] for astro in crew)
     print(f'Launching {crew}')
-
-
-launch(CREW_PRIMARY)
-launch(CREW_BACKUP)

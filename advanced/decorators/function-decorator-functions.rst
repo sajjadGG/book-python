@@ -374,20 +374,28 @@ Decorator Function Allowed
         PermissionError
         """
 
-Decorator Function List of Dict
--------------------------------
+Decorator Function Astronauts
+-----------------------------
 * Complexity level: easy
 * Lines of code to write: 7 lines
 * Estimated time of completion: 8 min
-* Solution: :download:`solution/decorator_func_listdict.py`
+* Solution: :download:`solution/decorator_func_astronauts.py`
 
 :English:
-    .. todo:: English translation
+    #. Use data from "Input" section (see below)
+    #. Create decorator ``check_astronauts``
+    #. To answer if person is an astronaut check field ``is_astronaut`` in ``crew: List[dict]``
+    #. Decorator will call decorated function, only if all crew members are astronauts
+    #. If any member is not an astronaut raise ``PermissionError`` and print his first name and last name
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Polish:
+    #. Użyj kodu z sekcji "Input" (patrz poniżej)
     #. Stwórz dekorator ``check_astronauts``
-    #. Dekorator uruchomi funkcję, tylko gdy wszyscy członkowe załogi są astronautami (mają ``'is_astronaut': True``)
-    #. Jeżeli, którykolwiek członek nie jest astronautą ``'is_astronaut': False``, podnieś wyjątek ``PermissionError`` i wypisz jego imię i nazwisko
+    #. Aby odpowiedzieć czy osoba jest astronautą sprawdź pole ``is_astronaut`` in ``crew: List[dict]``
+    #. Dekorator wywoła dekorowaną funkcję, tylko gdy wszyscy członkowe załogi są astronautami
+    #. Jeżeli, jakikolwiek członek nie jest astronautą, podnieś wyjątek ``PermissionError`` i wypisz jego imię i nazwisko
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python

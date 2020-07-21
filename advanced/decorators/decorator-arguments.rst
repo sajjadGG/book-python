@@ -157,23 +157,31 @@ Examples
 Assignments
 ===========
 
-Decorator Arguments List of Dicts
----------------------------------
+Decorator Arguments Astronauts
+------------------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 13 min
-* Solution: :download:`solution/decorator_arguments_listdict.py`
+* Solution: :download:`solution/decorator_arguments_astronauts.py`
+
 
 :English:
-    .. todo:: English translation
+    #. Use data from "Input" section (see below)
+    #. Create decorator ``check_astronauts``
+    #. To answer if person is an astronaut check field ``is_astronaut`` in ``crew: List[dict]``
+    #. Decorator will call decorated function, only if all crew members has field with specified value
+    #. Both field name and value are given as keyword arguments to decorator
+    #. If any member is not an astronaut raise ``PermissionError`` and print his first name and last name
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Polish:
-    #. Stwórz dekorator ``check``
-    #. Funkcja ``launch`` przyjmuje ``crew: List[dict]`` jako argument
-    #. Dekorator sprawdza, czy w każdym ``dict`` wewnątrz ``crew``
-    #. znajduje się pole o wartości
-    #. Zarówno nazwa pola jak i wartość jest podawana jako argument do dekoratora
-    #. Jeżeli coś się nie zgadza, podnieś wyjątek ``PermissionError`` i wypisz nazwę pola i obecną oraz oczekiwaną wartość
+    #. Użyj kodu z sekcji "Input" (patrz poniżej)
+    #. Stwórz dekorator ``check_astronauts``
+    #. Aby odpowiedzieć czy osoba jest astronautą sprawdź pole ``is_astronaut`` in ``crew: List[dict]``
+    #. Dekorator wywoła dekorowaną funkcję tylko wtedy, gdy każdy członek załogi ma pole o podanej wartości
+    #. Zarówno nazwa pola jak i wartość są podawane jako argumenty nazwane do dekoratora
+    #. Jeżeli, jakikolwiek członek nie jest astronautą, podnieś wyjątek ``PermissionError`` i wypisz jego imię i nazwisko
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
@@ -196,6 +204,19 @@ Decorator Arguments List of Dicts
 
         launch(CREW_PRIMARY)
         launch(CREW_BACKUP)
+
+:Output:
+    .. code-block:: python
+
+        """
+        >>> launch(CREW_PRIMARY)
+        Launching Jan Twardowski, Mark Watney, Melissa Lewis
+
+        >>> launch(CREW_BACKUP)
+        Traceback (most recent call last):
+            ...
+        PermissionError: Alex Vogel is not an astronaut
+        """
 
 Decorator Arguments Type Check
 ------------------------------
