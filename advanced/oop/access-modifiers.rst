@@ -7,14 +7,17 @@ Rationale
 =========
 .. highlights::
     * Attributes and methods are always public
-    * No protected and private
-    * ``_name`` - protected attribute or method (by convention)
+    * No protected and private keywords
+    * ``_name()`` - protected attribute or method (by convention)
+    * ``__name`` - private attribute or method (by convention)
     * ``__name__`` - system attribute or method
     * ``name_`` - used while name collision
 
 
-Attributes
-==========
+Protected Attribute
+===================
+* ``_name`` - protected attribute (by convention)
+
 .. code-block:: python
     :caption: Access modifiers
 
@@ -41,9 +44,13 @@ Attributes
     mark = Astronaut('Mark', 'Watney')
 
     print(mark.firstname)
+    # Traceback (most recent call last):
+    #    ...
     # AttributeError: 'Astronaut' object has no attribute 'firstname'
 
     print(mark.lastname)
+    # Traceback (most recent call last):
+    #    ...
     # AttributeError: 'Astronaut' object has no attribute 'lastname'
 
     print(mark._firstname)      # IDE should warn: "Access to a protected member _firstname of a class "
@@ -56,33 +63,56 @@ Attributes
     # Mark W.
 
 
-Methods
-=======
+Private Attribute
+=================
+* ``__name`` - private attribute
+
 .. code-block:: python
 
     class Astronaut:
         def __init__(self, firstname, lastname):
-            self._firstname = firstname
-            self._lastname = lastname
-
-        def _get_fullname(self):
-            return f'{self._firstname} {self._lastname}'
-
-        def get_publicname(self):
-            return f'{firstname} {lastname[0]}.'
+            self.__firstname = firstname
+            self.__lastname = lastname
+            self.publicname = f'{firstname} {lastname[0]}.'
 
 
     mark = Astronaut('Mark', 'Watney')
-    mark.get_publicname()
+
+    print(mark.publicname)
     # Mark W.
 
+    print(mark.__firstname)
+    # Traceback (most recent call last):
+    #    ...
+    # AttributeError: 'Astronaut' object has no attribute '__firstname'
 
-Get All Dynamic Attributes and Values
-=====================================
-* ``obj.__dict__``
+    print(mark.__lastname)
+    # Traceback (most recent call last):
+    #    ...
+    # AttributeError: 'Astronaut' object has no attribute '__firstname'
+
+
+System Attributes
+=================
+* ``__name__`` - system attribute
 
 .. code-block:: python
-    :caption: ``__dict__`` - Getting dynamic fields and values
+    :caption: ``obj.__dict__`` - Getting dynamic fields and values
+
+    class Astronaut:
+        def __init__(self, firstname, lastname):
+            self.firstname = firstname
+            self.lastname = lastname
+
+
+    mark = Astronaut('Mark', 'Watney')
+
+    print(mark.__dict__)
+    # {'firstname': 'Mark',
+    #  'lastname': 'Watney'}
+
+.. code-block:: python
+    :caption: ``obj.__dict__`` - Getting dynamic fields and values
 
     class Astronaut:
         def __init__(self, firstname, lastname):
@@ -104,6 +134,96 @@ Get All Dynamic Attributes and Values
     # {'publicname': 'Mark W.'}
 
 
+Protected Method
+================
+.. code-block:: python
+
+    class Astronaut:
+        def __init__(self, firstname, lastname):
+            self._firstname = firstname
+            self._lastname = lastname
+
+        def _get_fullname(self):
+            return f'{self._firstname} {self._lastname}'
+
+        def get_publicname(self):
+            return f'{self._firstname} {self._lastname[0]}.'
+
+
+    mark = Astronaut('Mark', 'Watney')
+
+    print(dir(mark))
+    # ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__',
+    # '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__',
+    # '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_firstname',
+    # '_get_fullname', '_lastname', 'get_publicname']
+
+    public_methods = [mth for mth in dir(mark) if not mth.startswith('_')]
+    print(public_methods)
+    # ['get_publicname']
+
+
+Private Method
+==============
+.. code-block:: python
+
+    class Astronaut:
+        def __init__(self, firstname, lastname):
+            self._firstname = firstname
+            self._lastname = lastname
+
+        def __get_fullname(self):
+            return f'{self._firstname} {self._lastname}'
+
+        def get_publicname(self):
+            return f'{self._firstname} {self._lastname[0]}.'
+
+
+    mark = Astronaut('Mark', 'Watney')
+
+    print(dir(mark))
+    # ['_Astronaut__get_fullname', '__class__', '__delattr__', '__dict__',
+    #  '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__',
+    #  '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__',
+    #  '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__',
+    #  '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__',
+    #  '__weakref__', '_firstname', '_lastname', 'get_publicname']
+
+    public_methods = [mth for mth in dir(mark) if not mth.startswith('_')]
+    print(public_methods)
+    # ['get_publicname']
+
+    mark.__get_fullname()
+    # Traceback (most recent call last):
+    #   ...
+    # AttributeError: 'Astronaut' object has no attribute '__get_fullname'
+
+
+System Method
+=============
+.. code-block:: python
+
+    class Astronaut:
+        def __init__(self, firstname, lastname):
+            self._firstname = firstname
+            self._lastname = lastname
+
+        def __str__(self):
+            return 'stringification'
+
+        def __repr__(self):
+            return 'representation'
+
+
+    mark = Astronaut('Mark', 'Watney')
+
+    print(str(mark))
+    # stringification
+
+    print(repr(mark))
+    # representation
+
+
 Assignments
 ===========
 
@@ -118,7 +238,7 @@ OOP Attribute Access Modifiers
     #. Use data from "Input" section (see below)
     #. Create class ``Iris``
     #. In ``Iris._init__()`` add protected attributes ``sepal_length``, ``sepal_width``, ``petal_length``, ``petal_width``
-    #. In ``Iris._init__()`` add public attribute ``setosa``
+    #. In ``Iris._init__()`` add public attribute ``species``
     #. Create class ``Setosa``, ``Versicolor``, ``Virginica`` inheriting from ``Iris``
     #. Iterate over ``result`` and print all public fields of each element
     #. Compare result with "Output" section (see below)
@@ -127,7 +247,7 @@ OOP Attribute Access Modifiers
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Stwórz klasę ``Iris``
     #. W ``Iris._init__()`` dodaj chronione atrybuty ``sepal_length``, ``sepal_width``, ``petal_length``, ``petal_width``
-    #. W ``Iris._init__()`` dodaj publiczny atrybut ``setosa``
+    #. W ``Iris._init__()`` dodaj publiczny atrybut ``species``
     #. Stwórz klasy ``Setosa``, ``Versicolor``, ``Virginica`` dziedziczące po ``Iris``
     #. Iteruj po ``result`` i wypisz wszystkie publiczne pola każdego elementu
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
@@ -144,9 +264,9 @@ OOP Attribute Access Modifiers
 :Output:
     .. code-block:: python
 
-        {'setosa': 'virginica'}
-        {'setosa': 'setosa'}
-        {'setosa': 'versicolor'}
+        {'species': 'virginica'}
+        {'species': 'setosa'}
+        {'species': 'versicolor'}
 
 OOP Attribute Access Dict
 -------------------------
