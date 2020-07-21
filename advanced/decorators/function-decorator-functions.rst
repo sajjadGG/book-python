@@ -362,19 +362,17 @@ Decorator Function Allowed
 :Output:
     .. code-block:: python
 
-            _allowed = True
+        """
+        >>> _allowed = True
+        >>> echo('hello')
+        hello
 
-            echo('hello')
-            # hello
-
-    .. code-block:: python
-
-            _allowed = False
-
-            echo('hello')
-            # Traceback (most recent call last):
-            #     ...
-            # PermissionError
+        >>> _allowed = False
+        >>> echo('hello')
+        Traceback (most recent call last):
+            ...
+        PermissionError
+        """
 
 Decorator Function List of Dict
 -------------------------------
@@ -410,14 +408,18 @@ Decorator Function List of Dict
             crew = ', '.join(astro['name'] for astro in crew)
             print(f'Launching {crew}')
 
+:Output:
+    .. code-block:: python
 
-        launch(CREW_PRIMARY)
-        # Launching Jan Twardowski, Mark Watney, Melissa Lewis
+        """
+        >>> launch(CREW_PRIMARY)
+        Launching Jan Twardowski, Mark Watney, Melissa Lewis
 
-        launch(CREW_BACKUP)
-        # Traceback (most recent call last):
-        #     ...
-        # PermissionError: Alex Vogel is not an astronaut
+        >>> launch(CREW_BACKUP)
+        Traceback (most recent call last):
+            ...
+        PermissionError: Alex Vogel is not an astronaut
+        """
 
 Decorator Function Memoization
 ------------------------------
@@ -428,35 +430,23 @@ Decorator Function Memoization
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Create function ``factorial_cache(n: int) -> int``
-    #. Create ``_cache: Dict[int, int]`` with computation results from function
-
-        * key: function argument
-        * value: computation result
-
     #. Create decorator ``@cache``
     #. Decorator must check before running function, if for given argument the computation was already done:
 
         * if yes, return from ``_cache``
         * if not, calculate new result, update cache and return computed value
 
-    #. Using ``timeit``
+    #. Compare execution time using ``timeit``
 
 :Polish:
     #. Użyj kodu z sekcji "Input" (patrz poniżej)
-    #. Stwórz funkcję ``factorial_cache(n: int) -> int``
-    #. Stwórz ``_cache: Dict[int, int]`` z wynikami wyliczenia funkcji
-
-        * klucz: argument funkcji
-        * wartość: wynik obliczeń
-
     #. Stwórz dekorator ``@cache``
     #. Decorator ma sprawdzać przed uruchomieniem funkcji, czy dla danego argumenu wynik został już wcześniej obliczony:
 
         * jeżeli tak, to zwraca dane z ``_cache``
         * jeżeli nie, to oblicza, aktualizuje ``_cache``, a następnie zwraca wartość
 
-    #. Wykorzystując ``timeit`` porównaj prędkość działania z obliczaniem na bieżąco dla parametru 100
+    #. Porównaj prędkość działania za pomocą ``timeit``
 
 :Input:
     .. code-block:: python
@@ -467,6 +457,7 @@ Decorator Function Memoization
 
 
         def cache(func):
+            _cache = {}
             raise NotImplementedError
 
 
@@ -477,11 +468,13 @@ Decorator Function Memoization
             else:
                 return n * fn1(n-1)
 
+
         def fn2(n):
             if n == 0:
                 return 1
             else:
                 return n * fn2(n-1)
+
 
         duration_cache = timeit(stmt='fn1(500); fn1(400); fn1(450); fn1(350)', globals=globals(), number=100_000)
         duration_nocache = timeit(stmt='fn2(500); fn2(400); fn2(450); fn2(350)', globals=globals(), number=100_000)
@@ -494,21 +487,38 @@ Decorator Function Memoization
 Decorator Function Abspath
 --------------------------
 * Complexity level: easy
-* Lines of code to write: 10 lines
+* Lines of code to write: 7 lines
 * Estimated time of completion: 13 min
 * Solution: :download:`solution/decorator_func_abspath.py`
 
 :English:
-    #. Create function ``print_file(filename: str) -> str`` which prints file content (filename given as an argument)
-    #. Create decorator ``to_absolute_path``
+    #. Ask user to input file path
+    #. Create function ``display(file: str) -> str`` which prints file content
+    #. Create decorator ``abspath``
     #. Decorator converts to absolute path (``current_directory`` + ``filename``), if filename given as an argument is a relative path
 
 :Polish:
-    #. Stwórz funkcję ``print_file(filename: str) -> str`` która wyświetla zawartość pliku (nazwa pliku podana jako argument)
-    #. Stwórz dekorator ``to_absolute_path``
+    #. Poproś użytkownika o podanie ścieżki do pliku
+    #. Stwórz funkcję ``display(file: str) -> str`` która wyświetla zawartość pliku
+    #. Stwórz dekorator ``abspath``
     #. Dekorator zamienia ścieżkę na bezwzględną (``current_directory`` + ``filename``), jeżeli nazwa pliku podana jako argument jest względna
 
+:Output:
+    .. code-block:: python
+
+        @abspath
+        def display(file):
+            print(f'Reading file {file}')
+
+
+        display('iris.csv')
+        # Reading file /home/python/iris.csv
+
+        display('/home/python/iris.csv')
+        # Reading file /home/python/iris.csv
+
 :Hint:
+    * ``intput()``
     * ``from pathlib import Path``
     * ``current_directory = Path.cwd()``
     * ``path = Path(current_directory, filename)``

@@ -11,12 +11,13 @@ def mydecorator(happy=True):
 
 
 @mydecorator(happy=False)
-def hello(name):
-    """Hello docstring"""
-    return f'My name is... {name}'
+def hello():
+    """Hello Docstring"""
+    pass
 
 
-name = hello('José Jiménez')
+print('Function:', hello.__name__)
+# Function: hello
 
-print(hello.__doc__)
-print(hello.__name__)
+print('Doctring:', hello.__doc__)
+# Doctring: Hello Docstring

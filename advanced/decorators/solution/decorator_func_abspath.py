@@ -1,25 +1,21 @@
-from os.path import dirname, join
+from pathlib import Path
 
 
-def to_absolute_path(fn):
-    def wrapper(filename):
-        path = dirname(__file__)
-
-        if path not in filename:
-            filename = join(path, filename)
-
-        return fn(filename)
+def abspath(func):
+    def wrapper(file):
+        current_directory = Path().cwd()
+        file = Path(current_directory, file)
+        return func(file)
     return wrapper
 
 
-@to_absolute_path
-def print_file(filename: str) -> str:
-    print(f'{filename=}\n\n')
-
-    with open(filename) as file:
-        return file.read()
+@abspath
+def display(file):
+    print(f'Reading file {file}')
 
 
-if __name__ == '__main__':
-    result = print_file('iris.csv')
-    print(result)
+display('iris.csv')
+# Reading file /home/python/iris.csv
+
+display('/home/python/iris.csv')
+# Reading file /home/python/iris.csv

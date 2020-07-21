@@ -1,6 +1,5 @@
 def mydecorator(cls):
     class Wrapper(cls):
-        attribute = 'some value...'
         __doc__ = cls.__doc__
         __name__ = cls.__name__
     return Wrapper
@@ -8,9 +7,13 @@ def mydecorator(cls):
 
 @mydecorator
 class Hello:
-    """Some documentation"""
+    """Hello Docstring"""
 
 
 hello = Hello()
+
 print('Class:', hello.__name__)
+# Class: Hello
+
 print('Doctring:', hello.__doc__)
+# Doctring: Hello Docstring

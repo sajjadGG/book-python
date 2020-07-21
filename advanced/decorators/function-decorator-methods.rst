@@ -133,9 +133,17 @@ Decorator Methods Alive
 * Estimated time of completion: 13 min
 * Solution: :download:`solution/decorator_method_alive.py`
 
+:English:
+    #. Use data from "Input" section (see below)
+    #. Create ``if_alive`` method decorator
+    #. Decorator will allow running ``make_damage`` method only if ``current_health`` is greater than 0
+    #. Compare result with "Output" section (see below)
+
 :Polish:
-    #. Stwórz dekorator ``if_alive``
-    #. Dekotrator pozwoli na wykonanie metody ``make_damage``, tylko gdy punkty życia są większe niż 0
+    #. Użyj kodu z sekcji "Input" (patrz poniżej)
+    #. Stwórz dekorator metod ``if_alive``
+    #. Dekotrator pozwoli na wykonanie metody ``make_damage``, tylko gdy ``current_health`` jest większe niż 0
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python

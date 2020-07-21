@@ -138,18 +138,18 @@ Decorator Functools Func
 
 
     @mydecorator
-    def hello(name):
-        """Some documentation"""
-        return f'My name... {name}'
-
-    print('Function:', hello.__name__)
-    print('Doctring:', hello.__doc__)
+    def hello():
+        """Hello Docstring"""
+        pass
 
 :Ouput:
     .. code-block:: python
 
-        Function: hello
-        Doctring: Some documentation
+        print('Function:', hello.__name__)
+        # Function: hello
+
+        print('Doctring:', hello.__doc__)
+        # Doctring: Hello Docstring
 
 Decorator Functools Args
 ------------------------
@@ -179,18 +179,18 @@ Decorator Functools Args
 
 
     @mydecorator(happy=False)
-    def hello(name):
-        """Some documentation"""
-        return f'My name... {name}'
-
-    print('Function:', hello.__name__)
-    print('Doctring:', hello.__doc__)
+    def hello():
+        """Hello Docstring"""
+        pass
 
 :Ouput:
     .. code-block:: python
 
-        Function: hello
-        Doctring: Some documentation
+        print('Function:', hello.__name__)
+        # Function: hello
+
+        print('Doctring:', hello.__doc__)
+        # Doctring: Hello Docstring
 
 Decorator Functools Cls
 -----------------------
@@ -209,23 +209,27 @@ Decorator Functools Cls
     #. Zmodyfikuj kod aby przywrócić doctring oraz nazwę z dekorowanej klasy
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
-.. code-block:: python
+:Input:
+    .. code-block:: python
 
-    def mydecorator(cls):
-        class Wrapper(cls):
-            attribute = 'some value...'
-        return Wrapper
+        def mydecorator(cls):
+            class Wrapper(cls):
+                pass
+            return Wrapper
 
 
-    @mydecorator
-    class Hello:
-        """Some documentation"""
+        @mydecorator
+        class Hello:
+            """Hello Docstring"""
 
-    hello = Hello()
-    print('Class:', hello.__name__)
-    print('Doctring:', hello.__doc__)
 
-.. code-block:: python
+        hello = Hello()
 
-    Class: Hello
-    Doctring: Some documentation
+:Output:
+    .. code-block:: python
+
+        print('Class:', hello.__name__)
+        # Class: Hello
+
+        print('Doctring:', hello.__doc__)
+        # Doctring: Hello Docstring

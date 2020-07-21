@@ -1,13 +1,10 @@
-from timeit import timeit
 import sys
-
+from timeit import timeit
 sys.setrecursionlimit(5000)
 
 
-_cache = {}
-
-
 def cache(func):
+    _cache = {}
     def wrapper(n):
         if n not in _cache:
             _cache[n] = func(n)
