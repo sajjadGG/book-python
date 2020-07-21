@@ -38,16 +38,7 @@ Definition
             attribute = 'some value...'
         return Wrapper
 
-
-Usage
-=====
 .. code-block:: python
-
-    def decorator(cls):
-        class Wrapper(cls):
-            attribute = 'some value...'
-        return Wrapper
-
 
     @decorator
     class MyClass:

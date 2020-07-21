@@ -39,8 +39,6 @@ Definition
             return func(*args, **kwargs)
         return wrapper
 
-Usage
-=====
 .. code-block:: python
 
     @mydecorator
@@ -363,8 +361,8 @@ Decorator Function Allowed
 Decorator Function All
 ----------------------
 * Complexity level: easy
-* Lines of code to write: 5 lines
-* Estimated time of completion: 13 min
+* Lines of code to write: 7 lines
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/decorator_func_all.py`
 
 :English:
@@ -379,23 +377,29 @@ Decorator Function All
     .. code-block:: python
 
         CREW_PRIMARY = [
-            {'is_astronaut': False, 'name': 'Jan Twardowski'},
+            {'is_astronaut': True, 'name': 'Jan Twardowski'},
             {'is_astronaut': True, 'name': 'Mark Watney'},
             {'is_astronaut': True, 'name': 'Melissa Lewis'}]
 
         CREW_BACKUP = [
             {'is_astronaut': True, 'name': 'Melissa Lewis'},
             {'is_astronaut': True, 'name': 'Mark Watney'},
-            {'is_astronaut': True, 'name': 'Alex Vogel'}]
+            {'is_astronaut': False, 'name': 'Alex Vogel'}]
 
 
         @check_astronauts
         def launch(crew):
-            print('Launch')
+            crew = ', '.join(astro['name'] for astro in crew)
+            print(f'Launching {crew}')
 
 
         launch(CREW_PRIMARY)
+        # Launching Jan Twardowski, Mark Watney, Melissa Lewis
+
         launch(CREW_BACKUP)
+        # Traceback (most recent call last):
+        #     ...
+        # PermissionError: Alex Vogel is not an astronaut
 
 Decorator Function Memoization
 ------------------------------
@@ -435,7 +439,6 @@ Decorator Function Memoization
         * jeżeli nie, to oblicza, aktualizuje ``_cache``, a następnie zwraca wartość
 
     #. Wykorzystując ``timeit`` porównaj prędkość działania z obliczaniem na bieżąco dla parametru 100
-
 
 :Input:
     .. code-block:: python

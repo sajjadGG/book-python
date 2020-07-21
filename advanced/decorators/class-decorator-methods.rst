@@ -11,10 +11,6 @@ Definition
 ==========
 
 
-Usage
-=====
-
-
 Examples
 ========
 

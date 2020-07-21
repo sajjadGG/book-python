@@ -32,18 +32,7 @@ Definition
         def __call__(self, *args, **kwargs):
             return self._func(*args, **kwargs)
 
-
-Usage
-=====
 .. code-block:: python
-
-    class Decorator:
-        def __init__(self, func):
-            self._func = func
-
-        def __call__(self, *args, **kwargs):
-            return self._func(*args, **kwargs)
-
 
     @Decorator
     def echo(name):
@@ -153,10 +142,9 @@ Decorator Class Abspath
     #. Dekorator zamienia ścieżkę na bezwzględną (``path`` + ``filename``), jeżeli nazwa pliku podana jako argument jest względna
 
 :Hint:
-    * ``__file__``
-    * ``os.path.dirname()``
-    * ``os.path.basename()``
-    * ``os.path.join()``
+    * ``from pathlib import Path``
+    * ``current_directory = Path.cwd()``
+    * ``path = Path(current_directory, filename)``
 
 Decorator Class Type Check
 --------------------------

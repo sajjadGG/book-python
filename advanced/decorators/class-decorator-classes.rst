@@ -11,9 +11,6 @@ Definition
 ==========
 
 
-Usage
-=====
-
 
 Examples
 ========

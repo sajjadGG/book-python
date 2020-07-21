@@ -55,24 +55,24 @@ Usage
 =====
 .. code-block:: python
 
-    def if_permitted(method):
+    def if_allowed(method):
         def wrapper(instance, *args, **kwargs):
-            if instance.can_something:
+            if instance._is_allowed:
                 return method(instance, *args, **kwargs)
             else:
-                print('Sorry, you cannot do anything')
+                print('Sorry, Permission Denied')
         return wrapper
 
 
     class MyClass:
         def __init__(self):
-            self.can_something = True
+            self._is_allowed = True
 
-        @if_permitted
+        @if_allowed
         def do_something(self):
             print('Doing...')
 
-        @if_permitted
+        @if_allowed
         def do_something_else(self):
             print('Doing something else...')
 
@@ -82,7 +82,7 @@ Usage
     my.do_something()           # Doing...
     my.do_something_else()      # Doing something else...
 
-    my.can_something = False
+    my._is_allowed = False
 
     my.do_something()           # Sorry, you cannot do anything
     my.do_something_else()      # Sorry, you cannot do anything

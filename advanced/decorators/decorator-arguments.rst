@@ -31,19 +31,6 @@ Definition
 
         return decorator
 
-Usage
-=====
-.. code-block:: python
-
-    def mydecorator(a=1, b=2):
-        def decorator(func):
-
-            def wrapper(*args, **kwargs):
-                return func(*args, **kwargs)
-            return wrapper
-
-        return decorator
-
 
     @mydecorator(a=0)
     def echo(name):
