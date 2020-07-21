@@ -160,7 +160,7 @@ Assignments
 Decorator Arguments Astronauts
 ------------------------------
 * Complexity level: easy
-* Lines of code to write: 5 lines
+* Lines of code to write: 9 lines
 * Estimated time of completion: 13 min
 * Solution: :download:`solution/decorator_arguments_astronauts.py`
 

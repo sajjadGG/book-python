@@ -277,33 +277,33 @@ OOP Attribute Access Dict
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Create classes ``Virginica``, ``Versicolor``, ``Setosa`` identical to ``Iris``
     #. Create ``result: list[Iris]``
-    #. Iterate over input data
+    #. Iterate over ``DATA`` skipping header
+    #. Separate ``features`` from ``species`` in each row
+    #. Append to ``result``:
 
-        #. Create object of a class based on last element of a tuple (Species column)
-        #. Initialize objects with data from measurements
-        #. To ``species`` field add class name that you are instantiating
-        #. Use ``*args`` notation while passing arguments
-        #. Add instances to ``result``
+        * if ``species`` is "setosa" append instance of a class ``Setosa``
+        * if ``species`` is "versicolor" append instance of a class ``Versicolor``
+        * if ``spceies`` is "virginica" append instance of a class ``Virginica``
 
-    #. Print instance class name (from species field) and then both sum and mean of the measurements
+    #. Initialize instances with ``features`` using ``*args`` notation
+    #. Print instance class name and then both sum and mean
     #. Format output to receive a table as shown in output data
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Stwórz klasy ``Virginica``, ``Versicolor``, ``Setosa``, które będą identyczne do ``Iris``
     #. Stwórz ``result: list[Iris]``
-    #. Iterując po danych wejściowych
+    #. Iterując po ``DATA`` pomijając header
+    #. Odseparuj ``features`` od ``species`` w każdym wierszu
+    #. Dodaj do ``result``:
 
-        #. Twórz obiekty klasy odpowiedniej dla nazwy gatunku (ostatni rekord każdej z krotek)
-        #. Obiekt inicjalizuj danymi z pomiarów
-        #. Do pola ``species`` w klasie zapisz nazwę klasy, której instancję tworzysz
-        #. Wykorzystaj notację ``*args`` przy podawaniu argumentów
-        #. Dodaj instancje do ``result``
+        * jeżeli ``species`` jest "setosa" to dodaj instancję klasy ``Setosa``
+        * jeżeli ``species`` jest "versicolor" to dodaj instancję klasy ``Versicolor``
+        * jeżeli ``species`` jest "virginica" to dodaj instancję klasy ``Virginica``
 
-    #. Wypisz nazwę stworzonej klasy (z pola species) oraz sumę i średnią z pomiarów
+    #. Instancje inicjalizuj danymi z ``features`` używając notacji ``*args``
+    #. Wypisz nazwę stworzonej klasy oraz sumę i średnią z pomiarów
     #. Wynik sformatuj aby wyglądał jak tabelka z danych wyjściowych
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
@@ -357,36 +357,53 @@ OOP Attribute Access Dict
                 raise NotImplementedError
 
 
-:Output:
-    .. code-block:: text
+        class Setosa(Iris):
+            pass
 
-        Species    Total   Avg
-        ----------------------
-        [
-         Virginica  15.5  3.88,
-            Setosa  10.2  2.55,
-        Versicolor  13.9  3.48,
-         Virginica  16.6  4.15,
-        Versicolor  15.6  3.90,
-            Setosa   9.4  2.35,
-        Versicolor  16.3  4.07,
-         Virginica  19.3  4.83,
-            Setosa   9.5  2.38,
-         Virginica  13.6  3.40,
-         Virginica  18.1  4.53,
-            Setosa   9.7  2.43,
-            Setosa  11.4  2.85,
-        Versicolor  14.3  3.58,
-            Setosa  10.3  2.58,
-        Versicolor  13.1  3.28,
-         Virginica  17.5  4.38,
-        Versicolor  15.4  3.85,
-         Virginica  18.1  4.53,
-        Versicolor  16.4  4.10,
-            Setosa   9.4  2.35]
+        class Versicolor(Iris):
+            pass
+
+        class Virginica(Iris):
+            pass
+
+
+:Output:
+    .. code-block:: python
+
+        print('Species    Total   Avg')
+        print('-' * 22)
+
+        print(result)
+        # Species    Total   Avg
+        # ----------------------
+        # [
+        #  Virginica  15.5  3.88,
+        #     Setosa  10.2  2.55,
+        # Versicolor  13.9  3.48,
+        #  Virginica  16.6  4.15,
+        # Versicolor  15.6  3.90,
+        #     Setosa   9.4  2.35,
+        # Versicolor  16.3  4.07,
+        #  Virginica  19.3  4.83,
+        #     Setosa   9.5  2.38,
+        #  Virginica  13.6  3.40,
+        #  Virginica  18.1  4.53,
+        #     Setosa   9.7  2.43,
+        #     Setosa  11.4  2.85,
+        # Versicolor  14.3  3.58,
+        #     Setosa  10.3  2.58,
+        # Versicolor  13.1  3.28,
+        #  Virginica  17.5  4.38,
+        # Versicolor  15.4  3.85,
+        #  Virginica  18.1  4.53,
+        # Versicolor  16.4  4.10,
+        #     Setosa   9.4  2.35]
 
 
 :Hint:
     * ``self.__class__.__name__``
     * ``self.__dict__.values()``
     * ``f'\n{name:>10} {total:>5.1f} {avg:>5.2f}'``
+    * ``locals()[classname]``
+    * ``globals()[classname]``
+    * ``getattr(sys.modules[__name__], classname)``

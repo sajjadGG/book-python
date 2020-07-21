@@ -44,8 +44,7 @@ Rationale
         def __add__(self, other):
             return Vector(
                 self.x + other.x,
-                self.y + other.y
-            )
+                self.y + other.y)
 
     vector1 = Vector(x=1, y=2)
     vector2 = Vector(x=3, y=4)
@@ -291,7 +290,7 @@ OOP Operator Overload
 ---------------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/oop_operator_overload.py`
 
 :English:

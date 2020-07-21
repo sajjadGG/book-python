@@ -1,5 +1,3 @@
-import sys
-
 DATA = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -52,23 +50,19 @@ class Iris:
 class Setosa(Iris):
     pass
 
+
 class Versicolor(Iris):
     pass
+
 
 class Virginica(Iris):
     pass
 
 
-CURRENT_MODULE = sys.modules[__name__]
-
-header, *data = DATA
-*header, _ = tuple(x.replace(' ', '_').lower() for x in header)
-result = []
-
-result = [cls(**row)
-          for *features, species in data
-          if (cls := getattr(CURRENT_MODULE, species.capitalize()))
-          and (row := dict(zip(header, features)))]
+result = [cls(*features)
+          for *features, species in DATA[1:]
+          if (clsname := species.capitalize())
+          and (cls := globals()[clsname])]
 
 
 print('Species    Total   Avg')
@@ -76,11 +70,11 @@ print('-' * 22)
 print(result)
 
 
+# current_module = sys.modules[__name__]
+#
 # for *features, species in data:
-#     row = dict(zip(header, features))
-#     species = species.capitalize()
-#     current_module = sys.modules[__name__]
-#     cls = getattr(current_module, species)
-#     result.append(cls(**row))
+#     clsname = species.capitalize()
+#     cls = globals()[clsname]
+#     result.append(cls(*features))
 #
 # print(result)
