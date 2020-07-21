@@ -126,12 +126,12 @@ Examples
 Assignments
 ===========
 
-Function Arguments Example
---------------------------
+Function Arguments Sequence
+---------------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 3 min
-* Solution: :download:`solution/function_args_example.py`
+* Solution: :download:`solution/function_args_sequence.py`
 
 :English:
     #. Define function which takes sequence of integers as an argument
@@ -142,10 +142,6 @@ Function Arguments Example
     #. Zdefiniuj funkcję biorącą sekwencję liczb całkowitych jako argument
     #. Zsumuj tylko parzyste liczby
     #. Wypisz zwróconą wartość
-
-:Solution:
-    .. literalinclude:: solution/function_args_example.py
-        :language: python
 
 Function Arguments Divide
 -------------------------

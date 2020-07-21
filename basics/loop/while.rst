@@ -169,12 +169,12 @@ Force Skip Iteration
 Assignments
 ===========
 
-Loop While Example
-------------------
+Loop While Cast
+---------------
 * Complexity level: easy
 * Lines of code to write: 8 lines
 * Estimated time of completion: 3 min
-* Solution: :download:`solution/loop_while_example.py`
+* Solution: :download:`solution/loop_while_cast.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -202,10 +202,6 @@ Loop While Example
 
         result: List[int]
         # [1, 2, 3]
-
-:Solution:
-    .. literalinclude:: solution/loop_while_example.py
-        :language: python
 
 Loop While Convert
 ------------------

@@ -197,12 +197,12 @@ Enumerate
 Assignments
 ===========
 
-Loop For Example
-----------------
+Loop For Count
+--------------
 * Complexity level: easy
-* Lines of code to write: 6 lines
+* Lines of code to write: 14 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/loop_for_example.py`
+* Solution: :download:`solution/loop_for_count.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -220,14 +220,11 @@ Loop For Example
         DATA = ['red', 'green', 'blue', 'red', 'green', 'red', 'blue']
 
 :Output:
-    .. code-block:: python
+    .. code-block:: text
 
-        result: Dict[str, int]
-        # {'red': 3, 'green': 2, 'blue': 2}
-
-:Solution:
-    .. literalinclude:: solution/loop_for_example.py
-        :language: python
+        red: 3
+        green: 2
+        blue: 2
 
 Loop For Counter
 ----------------
@@ -339,8 +336,6 @@ Loop For Segmentation
 :Output:
     .. code-block:: python
 
-        from typing import Dict
-
         result: Dict[str, int]
         # {'small': 16, 'medium': 19, 'large': 15}
 
@@ -372,7 +367,7 @@ Loop For Newline
     #. Nie używaj ``str.join()``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
-:Innput:
+:Input:
     .. code-block:: python
 
         DATA = [

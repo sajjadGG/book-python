@@ -155,3 +155,7 @@ Missing
 
     'commander' not in crew         # False
     'pilot' not in crew             # True
+
+Assignments
+===========
+.. todo:: Create Assignments

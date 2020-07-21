@@ -181,7 +181,6 @@ Conditional Expression
 
     #. Wypisz status wprowadzonego ciśnienia krwi
     #. Gdy wartości ciśnienia skurczowego i rozkurczowego należą do różnych kategorii, przyjmij gorszy przypadek
-    #. (z gwiazdką)
 
 .. csv-table:: Classification of blood pressure in adults :cite:`Whelton2018`
     :header-rows: 1

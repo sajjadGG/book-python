@@ -175,12 +175,12 @@ Examples
 Assignments
 ===========
 
-Function Parameters Example
----------------------------
+Function Parameters Sequence
+----------------------------
 * Complexity level: easy
 * Lines of code to write: 2 lines
 * Estimated time of completion: 3 min
-* Solution: :download:`solution/function_parameters_example.py`
+* Solution: :download:`solution/function_parameters_sequence.py`
 
 :English:
     #. Define function ``add``
@@ -191,10 +191,6 @@ Function Parameters Example
     #. Zdefiniuj funkcję ``add``
     #. Parametrem do funkcji ma być sekwencja liczb całkowitych
     #. Wypisz sumę wszystkich wartości sekwencji
-
-:Solution:
-    .. literalinclude:: solution/function_parameters_example.py
-        :language: python
 
 Function Parameters Echo
 ------------------------

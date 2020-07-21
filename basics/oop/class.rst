@@ -204,12 +204,12 @@ Convention
 Assignments
 ===========
 
-OOP Class Example
------------------
+OOP Class Iris
+--------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/oop_class_example.py`
+* Solution: :download:`solution/oop_class_iris.py`
 
 :English:
     #. Define class ``Iris``
@@ -222,10 +222,6 @@ OOP Class Example
     #. Stwórz instancję ``setosa`` klasy ``Iris``
     #. Stwórz instancję ``virginica`` klasy ``Iris``
     #. Stwórz instancję ``versicolor`` klasy ``Iris``
-
-:Solution:
-    .. literalinclude:: solution/oop_class_example.py
-        :language: python
 
 :The whys and wherefores:
     * :ref:`OOP Classes and Instances`

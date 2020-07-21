@@ -207,6 +207,12 @@ Loop Nested Mean
             (4.6, 3.1, 1.5, 0.2, 'setosa'),
         ]
 
+:Output:
+    .. code-block:: python
+
+        result: float
+        # 5.911111111111111
+
 :The whys and wherefores:
     * Iterating over nested structure
 
@@ -260,5 +266,5 @@ Loop Nested Unique Keys
     * Updating ``set``
 
 :Hint:
-    * ``for key in row.keys()``
+    * ``row.keys()``
     * Compare solutions with :ref:`Micro-benchmarking use case`
