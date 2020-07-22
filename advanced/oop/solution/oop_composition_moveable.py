@@ -1,48 +1,52 @@
+"""
+>>> class Astronaut(Moveable):
+...     pass
+
+>>> astro = Astronaut()
+>>> astro.get_position()
+Point(x=0, y=0)
+
+>>> astro.change_position(right=10)
+>>> astro.get_position()
+Point(x=10, y=0)
+
+>>> astro.change_position(left=5)
+>>> astro.get_position()
+Point(x=5, y=0)
+
+>>> astro.change_position(down=10)
+>>> astro.get_position()
+Point(x=5, y=10)
+
+>>> astro.change_position(up=5)
+>>> astro.get_position()
+Point(x=5, y=5)
+
+>>> astro.set_position(x=0, y=0)
+>>> astro.get_position()
+Point(x=0, y=0)
+"""
 from dataclasses import dataclass
-
-
-# class Point:
-#     def __init__(self, x: int, y: int) -> None:
-#         self.x: int = x
-#         self.y: int = y
-#
-#     def __setattr__(self, attribute_name, new_value):
-#         if hasattr(self, attribute_name):
-#             raise PermissionError
-#         elif attribute_name not in ('x', 'y'):
-#             raise PermissionError
-#         else:
-#             object.__setattr__(self, attribute_name, new_value)
 
 
 @dataclass(frozen=True)
 class Point:
-    x: int
-    y: int
+    x: int = 0
+    y: int = 0
+
 
 @dataclass
 class Moveable:
-    position: Point
+    _position: Point = Point()
 
-    def get_position(self) -> Point:
-        return self.position
+    def get_position(self):
+        return self._position
 
-    def print_position(self) -> None:
-        print(self.position)
+    def set_position(self, x, y):
+        self._position = Point(x, y)
 
-    def change_position(self, position: Point) -> None:
-        return self.set_position(position)
-
-    def change_coordinates(self, x: int, y: int) -> None:
-        return self.set_position(Point(x, y))
-
-    def set_position(self, position: Point):
-        self.position = position
-
-    def set_coordinates(self, x, y):
-        self.position = Point(x, y)
-
-
-p = Point(1,2)
-print(p.x)
-p.x = 3
+    def change_position(self, left=0, right=0, up=0, down=0):
+        current = self._position
+        x = current.x + right - left
+        y = current.y + down - up
+        self.set_position(x, y)

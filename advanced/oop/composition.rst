@@ -101,19 +101,19 @@ Multi level inheritance problem
 .. code-block:: python
     :caption: Multi level inheritance is a bad pattern here
 
-    class JSONSerializable:
+    class ToJSON:
         def to_json(self):
             import json
             return json.dumps(self.__dict__)
 
 
-    class PickleSerializable(JSONSerializable):
+    class ToPickle(ToJSON):
         def to_pickle(self):
             import pickle
             return pickle.dumps(self)
 
 
-    class User(PickleSerializable):
+    class User(ToPickle):
         def __init__(self, firstname, lastname):
             self.firstname = firstname
             self.lastname = lastname
@@ -137,19 +137,19 @@ Composition using Mixin classes
 .. code-block:: python
     :caption: Mixin classes - multiple inheritance.
 
-    class JSONSerializable:
+    class JSONMixin:
         def to_json(self):
             import json
             return json.dumps(self.__dict__)
 
 
-    class PickleSerializable:
+    class PickleMixin:
         def to_pickle(self):
             import pickle
             return pickle.dumps(self)
 
 
-    class User(JSONSerializable, PickleSerializable):
+    class User(JSONMixin, PickleMixin):
         def __init__(self, firstname, lastname):
             self.firstname = firstname
             self.lastname = lastname
@@ -198,13 +198,56 @@ OOP Composition Moveable
 * Solution: :download:`solution/oop_composition_moveable.py`
 
 :English:
-    #. Create immutable class ``Point``
-    #. Create class ``Movable``
-    #. Add methods ``get_position()``, ``set_position()``, ``print_position()``, ``change_position()`` to ``Movable``
-    #. Each method creates new ``Point`` and stores it in ``Movable`` class
+    .. todo:: English Translation
 
 :Polish:
     #. Stwórz niemutowalną klasę ``Point``
+    #. Klasa ``Point`` ma ``x: int`` oraz ``y: int``
+    #. Gdy ``x`` lub ``y`` są ujemne (podnieś ``ValueError``)
     #. Stwórz klasę ``Movable``
-    #. Dodaj metody ``get_position()``, ``set_position()``, ``print_position()``, ``change_position()`` do ``Movable``
-    #. Każda metoda generuje nowy ``Point`` i zapamiętuje go w klasie ``Movable``
+    #. W klasie ``Movable`` zdefiniuj metodę ``get_position() -> Point``
+    #. W klasie ``Movable`` zdefiniuj metodę ``set_position(x: int, y: int) -> NoReturn``
+    #. W klasie ``Movable`` zdefiniuj metodę ``change_position(left: int = 0, right: int = 0, up: int = 0, down: int = 0)``
+    #. Przyjmij górny lewy róg ekranu za punkt początkowy:
+
+        #. idąc w prawo dodajesz ``x``
+        #. idąc w lewo odejmujesz ``x``
+        #. idąc w górę odejmujesz ``y``
+        #. idąc w dół dodajesz ``y``
+
+    #. Testy muszą przechodzić
+
+:Tests:
+    .. code-block:: python
+
+        """
+        >>> class Astronaut(Moveable):
+        ...     pass
+
+        >>> astro = Astronaut()
+        >>> astro.get_position()
+        Point(x=0, y=0)
+
+        >>> astro.change_position(right=10)
+        >>> astro.get_position()
+        Point(x=10, y=0)
+
+        >>> astro.change_position(left=5)
+        >>> astro.get_position()
+        Point(x=5, y=0)
+
+        >>> astro.change_position(down=10)
+        >>> astro.get_position()
+        Point(x=5, y=10)
+
+        >>> astro.change_position(up=5)
+        >>> astro.get_position()
+        Point(x=5, y=5)
+
+        >>> astro.set_position(x=0, y=0)
+        >>> astro.get_position()
+        Point(x=0, y=0)
+        """
+
+:Hint:
+    * ``@dataclass(frozen=True)``

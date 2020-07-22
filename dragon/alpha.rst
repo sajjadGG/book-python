@@ -44,7 +44,6 @@ Dragon (version alpha)
     #. When dragon receives damage:
 
         * print name of the Dragon
-        * how many damage was taken
         * health points which left
 
     #. When health points drop to, and below zero:
@@ -53,8 +52,8 @@ Dragon (version alpha)
         #. Set object status to dead
         #. Print ``XXX is dead``, where XXX is the name of the dragon
         #. Change texture file name to  ``img/dragon/dead.png``
-        #. Print how much gold Dragon dropped (random in range from 1 to 100)
         #. Print position where dragon died
+        #. Return gold dropped by Dragon (random in range from 1 to 100)
         #. Dragon cannot take any more damage
         #. Dragon cannot make any more damage
         #. Dragon cannot move or have position set
@@ -67,6 +66,7 @@ Dragon (version alpha)
         #. Move dragon left by 10 and right by 15
         #. Move dragon right by 15 and up by 5
         #. Move dragon down by 5
+        #. Dragon makes damage
         #. Make 10 points damage to the dragon
         #. Make 5 points damage to the dragon
         #. Make 3 points damage to the dragon
@@ -116,7 +116,6 @@ Dragon (version alpha)
     #. Gdy smok otrzymuje obrażenia:
 
         * wypisz nazwę smoka,
-        * ilość obrażeń, które otrzymał
         * pozostałe punkty życia
 
     #. Kiedy punkty życia Smoka spadną do, lub poniżej zera:
@@ -125,11 +124,11 @@ Dragon (version alpha)
         #. Ustaw status obiektu na dead
         #. Wypisz napis ``XXX is dead`` gdzie XXX to nazwa smoka
         #. Zmień nazwę pliku tekstury na ``img/dragon/dead.png``
-        #. Wypisz ile złota smok wyrzucił (losowa 1-100)
         #. Wypisz pozycję gdzie smok zginął
+        #. Zwróć ile złota smok wyrzucił (losowa 1-100)
         #. Nie można zadawać mu obrażeń
         #. Smok nie może zadawać obrażeń
-        #. Smok nie może się poruszać
+        #. Smok nie może się poruszać
 
     #. Przeprowadź grę:
 
@@ -139,6 +138,7 @@ Dragon (version alpha)
         #. Przesuń smoka w lewo o 10 i w prawo o 15
         #. Przesuń smoka w prawo o 15 i w górę o 5
         #. Przesuń smoka w dół o 5
+        #. Smok zadaje obrażenia
         #. Zadaj 10 obrażeń smokowi
         #. Zadaj 5 obrażeń smokowi
         #. Zadaj 3 obrażeń smokowi
