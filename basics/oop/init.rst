@@ -273,9 +273,9 @@ OOP Init Print
     #. Values must be passed at the initialization
     #. At initialization instances print:
 
-        #. Instance ``celsius`` prints temperature 36.6
-        #. Instance ``fahrenheit`` prints temperature 97.88
-        #. Instance ``kelvin`` prints temperature 309.75
+        * Instance ``celsius`` prints temperature 36.6
+        * Instance ``fahrenheit`` prints temperature 97.88
+        * Instance ``kelvin`` prints temperature 309.75
 
     #. Do not convert units (print only given numbers)
     #. Do not store values in the instances (only print on instance creation)
@@ -288,9 +288,9 @@ OOP Init Print
     #. Wartości mają być podawane przy inicjalizacji
     #. Przy inicjalizacji instancje wypisują:
 
-        #. Instancja ``celsius`` wyświetla temperaturę 36.6
-        #. Instancja ``fahrenheit`` wyświetla temperaturę 97.88
-        #. Instancja ``kelvin`` wyświetla temperaturę 309.75
+        * Instancja ``celsius`` wyświetla temperaturę 36.6
+        * Instancja ``fahrenheit`` wyświetla temperaturę 97.88
+        * Instancja ``kelvin`` wyświetla temperaturę 309.75
 
     #. Nie konwertuj jednostek (użyj tylko podanych numerów)
     #. Nie przechowuj informacji w instancjach (tylko wypisz przy inicjalizacji)

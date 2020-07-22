@@ -210,10 +210,10 @@ OOP Composition Moveable
     #. W klasie ``Movable`` zdefiniuj metodę ``change_position(left: int = 0, right: int = 0, up: int = 0, down: int = 0)``
     #. Przyjmij górny lewy róg ekranu za punkt początkowy:
 
-        #. idąc w prawo dodajesz ``x``
-        #. idąc w lewo odejmujesz ``x``
-        #. idąc w górę odejmujesz ``y``
-        #. idąc w dół dodajesz ``y``
+        * idąc w prawo dodajesz ``x``
+        * idąc w lewo odejmujesz ``x``
+        * idąc w górę odejmujesz ``y``
+        * idąc w dół dodajesz ``y``
 
     #. Testy muszą przechodzić
 

@@ -130,13 +130,13 @@ Entry Test File
     #. Using ``file.write()`` save input data from listing below to file ``hosts-advanced.txt``
     #. Read file and for each line:
 
-        #. Skip line if it's empty, is whitespace or starts with comment ``#``
-        #. Remove leading and trailing whitespaces
-        #. Split line by whitespace
-        #. Separate IP address and hosts names
-        #. Use one line ``if`` to check whether dot ``.`` is in the IP address
-        #. If is present then protocol is IPv4 otherwise IPv6
-        #. Append IP address and hosts names to ``result``
+        * Skip line if it's empty, is whitespace or starts with comment ``#``
+        * Remove leading and trailing whitespaces
+        * Split line by whitespace
+        * Separate IP address and hosts names
+        * Use one line ``if`` to check whether dot ``.`` is in the IP address
+        * If is present then protocol is IPv4 otherwise IPv6
+        * Append IP address and hosts names to ``result``
 
     #. Merge hostnames for the same IP
     #. ``result`` must be list of dicts (``List[dict]``)
@@ -147,13 +147,13 @@ Entry Test File
     #. Używając ``file.write()`` zapisz dane wejściowe z listingu poniżej do pliku ``hosts-advanced.txt``
     #. Przeczytaj plik i dla każdej lini:
 
-        #. Pomiń linię jeżeli jest pusta, jest białym znakiem lub zaczyna się od komentarza ``#``
-        #. Usuń białe znaki na początku i końcu linii
-        #. Podziel linię po białych znakach
-        #. Odseparuj adres IP i nazwy hostów
-        #. Wykorzystaj jednolinikowego ``if`` do sprawdzenia czy jest kropka ``.`` w adresie IP
-        #. Jeżeli jest obecna to protokół  jest IPv4, w przeciwnym przypadku IPv6
-        #. Dodaj adres IP i nazwy hostów do ``result``
+        * Pomiń linię jeżeli jest pusta, jest białym znakiem lub zaczyna się od komentarza ``#``
+        * Usuń białe znaki na początku i końcu linii
+        * Podziel linię po białych znakach
+        * Odseparuj adres IP i nazwy hostów
+        * Wykorzystaj jednolinikowego ``if`` do sprawdzenia czy jest kropka ``.`` w adresie IP
+        * Jeżeli jest obecna to protokół  jest IPv4, w przeciwnym przypadku IPv6
+        * Dodaj adres IP i nazwy hostów do ``result``
 
     #. Scal nazwy hostów dla tego samego IP
     #. ``result`` ma być listą dictów (``List[dict]``)

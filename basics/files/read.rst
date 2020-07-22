@@ -193,15 +193,15 @@ File Read CSV
     #. Write header (first line) to ``header: list``
     #. Define:
 
-            * ``features: List[tuple]`` - list of measurements (each row is a tuple)
-            * ``labels: List[str]`` - list of species names
+        * ``features: List[tuple]`` - list of measurements (each row is a tuple)
+        * ``labels: List[str]`` - list of species names
 
     #. Read file and for each line:
 
-        #. Remove whitespaces
-        #. Split line by coma ``,``
-        #. Append measurements to ``features``
-        #. Append species name to ``labels``
+        * Remove whitespaces
+        * Split line by coma ``,``
+        * Append measurements to ``features``
+        * Append species name to ``labels``
 
     #. Print ``header``, ``features`` and ``labels``
     #. Compare result with "Output" section (see below)
@@ -212,15 +212,15 @@ File Read CSV
     #. Zapisz nagłówek (pierwsza linia) do ``header: list``
     #. Zdefiniuj:
 
-            * ``features: List[tuple]`` - lista pomiarów (każdy wiersz to tuple)
-            * ``labels: List[str]`` - lista nazw gatunków
+        * ``features: List[tuple]`` - lista pomiarów (każdy wiersz to tuple)
+        * ``labels: List[str]`` - lista nazw gatunków
 
     #. Zaczytaj plik i dla każdej linii:
 
-        #. Usuń białe znaki
-        #. Podziel linię po przecinku ``,``
-        #. Dodaj pomiary do ``features``
-        #. Dodaj gatunek do ``labels``
+        * Usuń białe znaki
+        * Podziel linię po przecinku ``,``
+        * Dodaj pomiary do ``features``
+        * Dodaj gatunek do ``labels``
 
     #. Wyświetl ``header``, ``features`` i ``labels``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
@@ -260,11 +260,11 @@ File Read Parsing Dict
     #. Using ``file.write()`` save input data from listing below to file ``hosts-simple.txt``
     #. Read file and for each line:
 
-        #. Skip line if contains only whitespaces (``str.isspace()``)
-        #. Remove leading and trailing whitespaces
-        #. Split line by whitespace
-        #. Separate IP address and hosts names
-        #. Append IP address and hosts names to ``result``
+        * Skip line if contains only whitespaces (``str.isspace()``)
+        * Remove leading and trailing whitespaces
+        * Split line by whitespace
+        * Separate IP address and hosts names
+        * Append IP address and hosts names to ``result``
 
     #. Merge hostnames for the same IP
     #. Compare result with "Output" section (see below)
@@ -274,11 +274,11 @@ File Read Parsing Dict
     #. Używając ``file.write()`` zapisz dane wejściowe z listingu poniżej do pliku ``hosts-simple.txt``
     #. Zaczytaj plik i dla każdej lini:
 
-        #. Pomiń linię, jeżeli zawiera tylko białe znaki (``str.isspace()``)
-        #. Usuń białe znaki na początku i końcu linii
-        #. Podziel linię po białych znakach
-        #. Odseparuj adres IP i nazwy hostów
-        #. Dodaj adres IP i nazwy hostów do ``result``
+        * Pomiń linię, jeżeli zawiera tylko białe znaki (``str.isspace()``)
+        * Usuń białe znaki na początku i końcu linii
+        * Podziel linię po białych znakach
+        * Odseparuj adres IP i nazwy hostów
+        * Dodaj adres IP i nazwy hostów do ``result``
 
     #. Scal nazwy hostów dla tego samego IP
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
@@ -325,13 +325,13 @@ File Read Parsing List of Dicts
     #. Using ``file.write()`` save input data from listing below to file ``hosts-advanced.txt``
     #. Read file and for each line:
 
-        #. Skip line if it's empty, is whitespace or starts with comment ``#``
-        #. Remove leading and trailing whitespaces
-        #. Split line by whitespace
-        #. Separate IP address and hosts names
-        #. Use one line ``if`` to check whether dot ``.`` is in the IP address
-        #. If is present then protocol is IPv4 otherwise IPv6
-        #. Append IP address and hosts names to ``result``
+        * Skip line if it's empty, is whitespace or starts with comment ``#``
+        * Remove leading and trailing whitespaces
+        * Split line by whitespace
+        * Separate IP address and hosts names
+        * Use one line ``if`` to check whether dot ``.`` is in the IP address
+        * If is present then protocol is IPv4 otherwise IPv6
+        * Append IP address and hosts names to ``result``
 
     #. Merge hostnames for the same IP
     #. ``result`` must be list of dicts (``List[dict]``)
@@ -342,13 +342,13 @@ File Read Parsing List of Dicts
     #. Używając ``file.write()`` zapisz dane wejściowe z listingu poniżej do pliku ``hosts-advanced.txt``
     #. Przeczytaj plik i dla każdej lini:
 
-        #. Pomiń linię jeżeli jest pusta, jest białym znakiem lub zaczyna się od komentarza ``#``
-        #. Usuń białe znaki na początku i końcu linii
-        #. Podziel linię po białych znakach
-        #. Odseparuj adres IP i nazwy hostów
-        #. Wykorzystaj jednolinikowego ``if`` do sprawdzenia czy jest kropka ``.`` w adresie IP
-        #. Jeżeli jest obecna to protokół  jest IPv4, w przeciwnym przypadku IPv6
-        #. Dodaj adres IP i nazwy hostów do ``result``
+        * Pomiń linię jeżeli jest pusta, jest białym znakiem lub zaczyna się od komentarza ``#``
+        * Usuń białe znaki na początku i końcu linii
+        * Podziel linię po białych znakach
+        * Odseparuj adres IP i nazwy hostów
+        * Wykorzystaj jednolinikowego ``if`` do sprawdzenia czy jest kropka ``.`` w adresie IP
+        * Jeżeli jest obecna to protokół  jest IPv4, w przeciwnym przypadku IPv6
+        * Dodaj adres IP i nazwy hostów do ``result``
 
     #. Scal nazwy hostów dla tego samego IP
     #. ``result`` ma być listą dictów (``List[dict]``)

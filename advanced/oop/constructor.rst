@@ -356,8 +356,8 @@ OOP Constructor Passwd
     #. Odrzuć puste linie i komentarze
     #. Stwórz klasę ``Parser``, która:
 
-        #. Podzieli linię po dwukropku
-        #. Klasa ``Parser`` zwraca instancje klas ``UserAccount`` lub ``SystemAccount`` w zależności od wartości pola UID
+        * Podzieli linię po dwukropku
+        * Klasa ``Parser`` zwraca instancje klas ``UserAccount`` lub ``SystemAccount`` w zależności od wartości pola UID
 
     #. User ID (UID) to trzecie pole, np. "root:x:0:0:root:/root:/bin/bash" to UID jest równy ``0``
     #. Konta systemowe (``SystemAccount``) to takie, które w polu UID mają wartość poniżej 1000
