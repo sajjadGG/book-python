@@ -464,7 +464,7 @@ Function Doctest Distance
     #. Distance cannot be negative
     #. Returned value must by float
     #. Write doctests
-    #. Compare result with "Output" section (see below)
+    #. All tests must pass
 
 :Polish:
     #. Napisz funkcję, która przeliczy dystans podany w kilometrach na metry
@@ -472,7 +472,7 @@ Function Doctest Distance
     #. Dystans nie może być ujemny
     #. Zwracany dystans musi być float
     #. Napisz doctesty
-    #. Compare result with "Output" section (see below)
+    #. Wszystkie testy muszą przechodzić
 
 :Output:
     * Test arguments:
