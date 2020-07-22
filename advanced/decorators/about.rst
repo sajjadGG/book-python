@@ -5,6 +5,7 @@ About Decorators
 
 What are decorators?
 ====================
+* Introduced in :pep:`318` - Decorators for Functions and Methods in 2003 for Python 2.4
 * Decorator is an object, which takes another object as it's argument
 * Decorators can:
 
@@ -23,6 +24,12 @@ By type:
 
     * Function Decorators
     * Class Decorators
+
+By wrapper type:
+
+    * Wrapper function
+    * Wrapper class
+    * Wrapper method (``__call__``)
 
 By decorated object:
 
