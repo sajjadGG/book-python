@@ -1,13 +1,13 @@
 #. powtarzanie rekordów (user pozostaje ten sam) z innymi danymi adresowymi
 
     .. csv-table::
-        :header: "id", "First Name", "Last Name", "Location", "City"
+        :header: "uid", "First Name", "Last Name", "Location", "City"
 
         "1", "Jan", "Twardowski", "Johnson Space Center", "Houston, TX"
-        "2", "Jan", "Twardowski", "Kennedy Space Center", "Merritt Island, FL"
-        "3", "Jan", "Twardowski", "Jet Propulsion Laboratory", "Pasadena, CA"
-        "4", "Mark", "Watney", "", ""
-        "5", "Melissa", "Lewis", "", ""
+        "1", "Jan", "Twardowski", "Kennedy Space Center", "Merritt Island, FL"
+        "1", "Jan", "Twardowski", "Jet Propulsion Laboratory", "Pasadena, CA"
+        "2", "Mark", "Watney", "", ""
+        "3", "Melissa", "Lewis", "", ""
 
 #. powtarzanie rekordów (bez usera - user to rekord z góry) z innymi danymi adresowymi
 
