@@ -326,10 +326,10 @@ Protocol Context Manager File
             file.append_line('Five')
             file.append_line('Six')
 
-Protocol Context Manager File
------------------------------
+Protocol Context Manager Buffer
+-------------------------------
 * Complexity level: easy
-* Lines of code to write: 15 lines
+* Lines of code to write: 32 lines
 * Estimated time of completion: 13 min
 * Solution: :download:`solution/protocol_contextmanager_buffer.py`
 
