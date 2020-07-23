@@ -61,12 +61,12 @@ Errors
 
     from abc import ABC
 
-
     class Astronaut(ABC):
         pass
 
     astro = Astronaut()
     print('ok')
+    # ok
 
 .. code-block:: python
     :caption: Must implement all abstract methods
@@ -129,9 +129,10 @@ Examples
     class Document(ABC):
         def __init__(self, filename):
             self.filename = filename
+            self.content = self.open(filename)
 
         def open(self):
-            with open(self.filename) as file:
+            with open(self.filename, mode='rb') as file:
                 return file.read()
 
         @abstractmethod
@@ -141,13 +142,11 @@ Examples
 
     class PDFDocument(Document):
         def display(self):
-            content = super().display()
-            # display ``content`` as PDF Document
+            # display "self.content" as PDF Document
 
     class WordDocument(Document):
         def display(self):
-            content = self.display()
-            # display ``content`` as Word Document
+            # display "self.content" as Word Document
 
 
     file1 = PDFDocument('filename.pdf')

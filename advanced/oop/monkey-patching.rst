@@ -238,6 +238,85 @@ Dynamic Methods
     # My name... José Jiménez
 
 
+Backups
+=======
+.. code-block:: python
+
+    class User:
+        def hello(self):
+            print('Old version')
+
+
+    def my_function():
+        print('New version')
+
+
+    User._old_hello = User.hello
+    User.hello = my_function
+    User.hello()
+    # New version
+
+    User.hello = User._old_hello
+    User.hello()
+    # TypeError: hello() missing 1 required positional argument: 'self'
+
+
+Create Missing Method
+=====================
+.. code-block:: python
+
+    class User:
+        def hello(self):
+            print('hello')
+
+        def __getattr__(self, name):
+            print(f'Attribute "{name}" not found')
+            setattr(self, name, lambda: print(f'Now I have "{name}"'))
+            return super().__getattribute__(name)
+
+        def __getattribute__(self, name):
+            print(f'Accessing: "{name}"')
+            return super().__getattribute__(name)
+
+
+    u = User()
+    u.x()
+    u.x()
+
+    # Accessing: x
+    # Attribute "x" not found
+    # Now I have "x"
+
+
+Object Initialization
+=====================
+.. code-block:: python
+
+    class User:
+        def __init__(self):
+            self.name = 'Jan'
+
+        def hello(self):
+            print('hello')
+
+    u = User()
+    u.hello()
+    # hello
+
+.. code-block:: python
+
+    class User:
+        pass
+
+
+    u = User()
+    u.name = 'Jan'
+    u.hello = lambda: print('hello')
+
+    u.hello()
+    # hello
+
+
 Examples
 ========
 .. code-block:: python

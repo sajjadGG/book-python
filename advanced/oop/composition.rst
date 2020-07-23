@@ -37,36 +37,36 @@ Problem with inheritance
 .. code-block:: python
     :caption: Problem with inheritance
 
-    class Vehicle:
-        def run(self):
-            pass
+     class Vehicle:
+         def run(self):
+             pass
 
-        def drive(self):
-            pass
+         def drive(self):
+             pass
 
-        def window_open(self):
-            pass
+         def window_open(self):
+             pass
 
-        def window_close(self):
-            pass
-
-
-    class Car(Vehicle):
-        pass
+         def window_close(self):
+             pass
 
 
-    class Truck(Vehicle):
-        pass
+     class Car(Vehicle):
+         pass
 
 
-    class Motorbike(Vehicle):
-        """Motorbike is a vehicle, but doesn't have windows."""
+     class Truck(Vehicle):
+         pass
 
-        def window_open(self):
-            raise NotImplementedError
 
-        def window_close(self):
-            raise NotImplementedError
+     class Motorbike(Vehicle):
+         """Motorbike is a vehicle, but doesn't have windows."""
+
+         def window_open(self):
+             raise NotImplementedError
+
+         def window_close(self):
+             raise NotImplementedError
 
 .. code-block:: python
 

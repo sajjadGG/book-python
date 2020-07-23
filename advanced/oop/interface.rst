@@ -18,7 +18,12 @@ What it is?
 .. code-block:: python
     :caption: Interfaces
 
+    from datetime import timedelta
+
+
     class CacheInterface:
+        timeout: timedelta
+
         def get(self, key: str) -> str:
             raise NotImplementedError
 
@@ -38,7 +43,12 @@ Examples
 .. code-block:: python
     :caption: Interfaces
 
-    class CacheInterface:
+    from datetime import timedelta
+
+
+    class Cache:
+        timeout: timedelta
+
         def get(self, key: str) -> str:
             raise NotImplementedError
 
@@ -49,7 +59,9 @@ Examples
             raise NotImplementedError
 
 
-    class CacheDatabase(CacheInterface):
+    class CacheDatabase(Cache):
+        timeout: timedelta
+
         def is_valid(self, key: str) -> bool:
             ...
 
@@ -60,7 +72,9 @@ Examples
             ...
 
 
-    class CacheRAM(CacheInterface):
+    class CacheRAM(Cache):
+        timeout: timedelta
+
         def is_valid(self, key: str) -> bool:
             ...
 
@@ -71,7 +85,9 @@ Examples
             ...
 
 
-    class CacheFilesystem(CacheInterface):
+    class CacheFilesystem(Cache):
+        timeout: timedelta
+
         def is_valid(self, key: str) -> bool:
             ...
 
@@ -82,20 +98,21 @@ Examples
             ...
 
 
-    fs = CacheFilesystem()
+    fs: Cache = CacheFilesystem()
     fs.set('name', 'Jan Twardowski')
     fs.is_valid('name')
     fs.get('name')
 
-    ram = CacheRAM()
+    ram: Cache = CacheRAM()
     ram.set('name', 'Jan Twardowski')
     ram.is_valid('name')
     ram.get('name')
 
-    db = CacheDatabase()
+    db: Cache = CacheDatabase()
     db.set('name', 'Jan Twardowski')
     db.is_valid('name')
     db.get('name')
+
 
 
 Assignments
@@ -110,9 +127,8 @@ OOP Interface Iris
 
 :English:
     #. Use code from "Input" section (see below)
-    #. Create interface ``IrisInterface``
-    #. Create methods ``sum()``, ``avg()``, ``len()`` in ``IrisInterface``
-    #. Method ``avg()`` returns ``self.sum()`` divided by ``self.len()``
+    #. Define interface ``IrisInterface``
+    #. Define methods ``sum()``, ``avg()``, ``len()`` in ``IrisInterface``
     #. Methods must raise exception ``NotImplementedError``
     #. Create class ``Setosa`` inheriting from ``IrisInterface``
     #. Create instance of a class ``Setosa`` and call ``avg()`` method
@@ -120,9 +136,8 @@ OOP Interface Iris
 
 :Polish:
     #. Użyj kodu z sekcji "Input" (patrz poniżej)
-    #. Stwórz interfejs ``IrisInterface``
-    #. Stwórz metody ``sum()``, ``avg()``, ``len()`` w ``IrisInterface``
-    #. Metoda ``avg()`` zwraca ``self.sum()`` dzielony przez ``self.len()``
+    #. Zdefiniuj interfejs ``IrisInterface``
+    #. Zdefiniuj metody ``sum()``, ``avg()``, ``len()`` w ``IrisInterface``
     #. Metody muszą podnosić wyjątek ``NotImplementedError``
     #. Stwórz klasę ``Setosa`` dziedziczące po ``IrisInterface``
     #. Stwórz instancje klasy ``Setosa`` i wywołaj metodę ``avg()``
@@ -131,11 +146,9 @@ OOP Interface Iris
 :Input:
     .. code-block:: python
 
-        def __init__(self, sepal_length, sepal_width, petal_length, petal_width):
-            self.sepal_length = sepal_length
-            self.sepal_width = sepal_width
-            self.petal_length = petal_length
-            self.petal_width = petal_width
+        class IrisInterface:
+            def __init__(self, sepal_length, sepal_width, petal_length, petal_width):
+                raise NotImplementedError
 
     .. code-block:: python
 
@@ -145,14 +158,11 @@ OOP Interface Iris
 :Output:
     .. code-block:: python
 
-        setosa.avg()
-        # Setosa 2.55
+        setosa = Setosa(5.1, 3.5, 1.4, 0.2)
+        print(setosa.avg())
+        # 2.55
 
-    .. code-block:: python
-
-        iris.avg()
-        # Traceback (most recent call last):
-        #    ...
+        iris = IrisInterface(5.8, 2.7, 5.1, 1.9)
         # NotImplementedError
 
 :Hint:

@@ -145,22 +145,24 @@ Proxy methods
     # Point3D(x=1, y=2, z=3)
 
 
-Placeholder class
-=================
+Container Class
+===============
+* A.K.A. Placeholder class
+
 .. code-block:: python
     :caption: Dynamically creating fields
 
-    class MyClass:
+    class Container:
         def __init__(self, **kwargs):
             for key, value in kwargs.items():
                 setattr(self, key, value)
 
 
-    a = MyClass(firstname='Jan', lastname='Twardowski')
+    a = Container(firstname='Jan', lastname='Twardowski')
     a.firstname          # Jan
     a.lastname           # 'Twardowski'
 
-    b = MyClass(species='Setosa')
+    b = Container(species='Setosa')
     b.species            # 'Setosa'
 
 .. code-block:: python
@@ -185,19 +187,81 @@ Placeholder class
 
 .. code-block:: python
 
-    class MyClass:
+    class Container:
         def __init__(self, **kwargs):
             self.__dict__ = kwargs
 
 
-    a = MyClass(firstname='Jan', lastname='Twardowski')
+    a = Container(firstname='Jan', lastname='Twardowski')
     print(a.firstname)          # Jan
     print(a.lastname)           # 'Twardowski'
 
-    b = MyClass(species='Setosa')
+    b = Container(species='Setosa')
     print(b.species)             # 'Setosa'
-    print(b.firstname)          # AttributeError: 'MyClass' object has no attribute 'firstname'
-    print(b.lastname)           # AttributeError: 'MyClass' object has no attribute 'lastname'
+    print(b.firstname)           # AttributeError: 'Container' object has no attribute 'firstname'
+    print(b.lastname)            # AttributeError: 'Container' object has no attribute 'lastname'
+
+
+Example
+=======
+.. code-block:: python
+    DATA = [
+        {"firstname": "Jan", "lastname": "Twardowski", "addresses": [
+            {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków", "postcode": "31-008", "region": "Małopolskie", "country": "Poland"}]},
+
+        {"firstname": "José", "lastname": "Jiménez", "addresses": [
+            {"street": "2101 E NASA Pkwy", "city": "Houston", "postcode": 77058, "region": "Texas", "country": "USA"},
+            {"street": "", "city": "Kennedy Space Center", "postcode": 32899, "region": "Florida", "country": "USA"}]},
+
+        {"firstname": "Mark", "lastname": "Watney", "addresses": [
+            {"street": "4800 Oak Grove Dr", "city": "Pasadena", "postcode": 91109, "region": "California", "country": "USA"},
+            {"street": "2825 E Ave P", "city": "Palmdale", "postcode": 93550, "region": "California", "country": "USA"}]},
+
+        {"firstname": "Иван", "lastname": "Иванович", "addresses": [
+            {"street": "", "city": "Космодро́м Байкону́р", "postcode": "", "region": "Кызылординская область", "country": "Қазақстан"},
+            {"street": "", "city": "Звёздный городо́к", "postcode": 141160, "region": "Московская область", "country": "Россия"}]},
+
+        {"firstname": "Melissa", "lastname": "Lewis", "addresses": []},
+
+        {"firstname": "Alex", "lastname": "Vogel", "addresses": [
+            {"street": "Linder Hoehe", "city": "Köln", "postcode": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}
+    ]
+
+
+    class Container:
+        def __init__(self, *args, **kwargs):
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+        def __repr__(self):
+            name = self.__class__.__name__
+            # arguments = tuple(f'{k}="{v}"' for k,v in self.__dict__.items())
+            arguments = tuple(self.__dict__.values())
+            return f'\n\n{name}{arguments}'
+
+    result = [Container(**data)
+              for data in DATA]
+
+    print(result)
+    # [Container('Jan', 'Twardowski', [{'street': 'Kamienica Pod św. Janem Kapistranem', 'city': 'Kraków', 'postcode': '31-008',
+    # 'region': 'Małopolskie', 'country': 'Poland'}]),
+    #
+    # Container('José', 'Jiménez', [{'street': '2101 E NASA Pkwy', 'city': 'Houston', 'postcode': 77058, 'region': 'Texas',
+    # 'country': 'USA'}, {'street': '', 'city': 'Kennedy Space Center', 'postcode': 32899, 'region': 'Florida', 'country': 'USA'}]),
+    #
+    # Container('Mark', 'Watney', [{'street': '4800 Oak Grove Dr', 'city': 'Pasadena', 'postcode': 91109, 'region': 'California',
+    # 'country': 'USA'}, {'street': '2825 E Ave P', 'city': 'Palmdale', 'postcode': 93550, 'region': 'California',
+    # 'country': 'USA'}]),
+    #
+    # Container('Иван', 'Иванович', [{'street': '', 'city': 'Космодро́м Байкону́р', 'postcode': '', 'region': 'Кызылординская
+    # область', 'country': 'Қазақстан'}, {'street': '', 'city': 'Звёздный городо́к', 'postcode': 141160, 'region': 'Московская
+    # область', 'country': 'Россия'}]),
+    #
+    # Container('Melissa', 'Lewis', []),
+    #
+    # Container('Alex', 'Vogel', [{'street': 'Linder Hoehe', 'city': 'Köln', 'postcode': 51147, 'region': 'North Rhine-Westphalia',
+    # 'country': 'Germany'}])]
+
 
 
 Assignments
