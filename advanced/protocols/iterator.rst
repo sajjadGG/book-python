@@ -186,7 +186,111 @@ Standard Library Itertools
 * ``import itertools``
 
 .. code-block:: python
-    :caption: ``itertools.chain()``
+    :caption: ``itertools.count(start [, step])``
+
+    from itertools import count
+
+
+    data = count(3, 2)
+
+    next(data)
+    # 3
+
+    next(data)
+    # 5
+
+    next(data)
+    # 7
+
+.. code-block:: python
+    :caption: ``itertools.cycle()``
+
+    from itertools import cycle
+
+    DATA = ['even', 'odd']
+
+    for x in cycle(DATA):
+        print(x)
+
+    # even
+    # odd
+    # even
+    # odd
+    # even
+    # ...
+
+.. code-block:: python
+    :caption: ``itertools.cycle()``
+
+    from itertools import cycle
+
+    DATA = ['even', 'odd']
+
+    for i, status in enumerate(cycle(DATA)):
+        print(i, status)
+
+        if i == 3:
+            break
+
+    # 0, even
+    # 1, odd
+    # 2, even
+    # 3, odd
+
+.. code-block:: python
+    :caption: ``itertools.repeat(obj [,n])``
+
+    from itertools import repeat
+
+    data = repeat(10, 3)
+
+    data
+    # repeat(10, 3)
+
+    next(data)
+    # 10
+
+    next(data)
+    # 10
+
+    next(data)
+    # 10
+
+    next(data)
+    # Traceback (most recent call last):
+    #   ...
+    # StopIteration
+
+.. code-block:: python
+    :caption: ``itertools.accumulate(p [,func])``
+
+    from itertools import accumulate
+
+    data = accumulate([1, 2, 3, 4])
+
+    next(data)
+    # 1
+
+    next(data)
+    # 3
+
+    next(data)
+    # 6
+
+    next(data)
+    # 10
+
+    next(data)
+    # Traceback (most recent call last):
+    #   ...
+    # StopIteration
+
+
+.. code-block:: python
+    :caption: ``itertools.chain(p, q)``
+
+    from itertools import chain
+
 
     keys = ['a', 'b', 'c']
     values = [1, 2, 3]
@@ -202,7 +306,7 @@ Standard Library Itertools
     # 3
 
 .. code-block:: python
-    :caption: ``itertools.chain()``
+    :caption: ``itertools.chain(p, q)``
 
     from itertools import chain
 
@@ -251,39 +355,194 @@ Standard Library Itertools
     # 3
 
 .. code-block:: python
-    :caption: ``itertools.cycle()``
+    :caption: ``itertools.compress(data, selectors)``
 
-    from itertools import cycle
+    from itertools import compress
 
-    DATA = ['even', 'odd']
 
-    for x in cycle(DATA):
-        print(x)
+    data = compress('ABCDEF', [1,0,1,0,1,1])
 
-    # even
-    # odd
-    # even
-    # odd
-    # even
-    # ...
+    next(data)
+    # 'A'
+
+    next(data)
+    # 'C'
+
+    next(data)
+    # 'E'
+
+    next(data)
+    # 'F'
+
+    next(data)
+    # Traceback (most recent call last):
+    #   ...
+    # StopIteration
 
 .. code-block:: python
-    :caption: ``itertools.cycle()``
+    :caption: ``itertools.islice(seq, [start,] stop [, step])``
 
-    from itertools import cycle
+    from itertools import islice
 
-    DATA = ['even', 'odd']
 
-    for i, status in enumerate(cycle(DATA)):
-        print(i, status)
+    data = islice('ABCDEFG', 2, 6, 2 )
 
-        if i == 3:
-            break
+    next(data)
+    # 'C'
 
-    # 0, even
-    # 1, odd
-    # 2, even
-    # 3, odd
+    next(data)
+    # 'E'
+
+    next(data)
+    # Traceback (most recent call last):
+    #   File "<input>", line 1, in <module>
+    # StopIteration
+
+.. code-block:: python
+    :caption: ``itertools.starmap(func, seq)``
+
+    from itertools import starmap
+
+
+    data = starmap(pow, [(2,5), (3,2), (10,3)])
+
+    next(data)
+    # 32
+
+    next(data)
+    # 9
+
+    next(data)
+    # 1000
+
+    next(data)
+    # Traceback (most recent call last):
+    #   File "<input>", line 1, in <module>
+    # StopIteration
+
+.. code-block:: python
+    :caption: ``itertools.product(p, q, ..., [repeat=1])``
+
+    from itertools import product
+
+
+    data = product(['a', 'b', 'c'], [1,2])
+
+    next(data)
+    # ('a', 1)
+
+    next(data)
+    # ('a', 2)
+
+    next(data)
+    # ('b', 1)
+
+    next(data)
+    # ('b', 2)
+
+    next(data)
+    # ('c', 1)
+
+    next(data)
+    # ('c', 2)
+
+    next(data)
+    # Traceback (most recent call last):
+    #   ...
+    # StopIteration
+
+.. code-block:: python
+    :caption: ``itertools.permutations(p [,r])``
+
+    from itertools import permutations
+
+
+    data = permutations([1,2,3])
+
+    next(data)
+    # (1, 2, 3)
+
+    next(data)
+    # (1, 3, 2)
+
+    next(data)
+    # (2, 1, 3)
+
+    next(data)
+    # (2, 3, 1)
+
+    next(data)
+    # (3, 1, 2)
+
+    next(data)
+    # (3, 2, 1)
+
+    next(data)
+    # Traceback (most recent call last):
+    #   File "<input>", line 1, in <module>
+    # StopIteration
+
+.. code-block:: python
+    :caption: ``itertools.combinations(p, r)``
+
+    from itertools import combinations
+
+
+    data = combinations([1, 2, 3, 4], 2)
+
+    next(data)
+    # (1, 2)
+
+    next(data)
+    # (1, 3)
+
+    next(data)
+    # (1, 4)
+
+    next(data)
+    # (2, 3)
+
+    next(data)
+    # (2, 4)
+
+    next(data)
+    # (3, 4)
+
+    next(data)
+    # Traceback (most recent call last):
+    #   ...
+    # StopIteration
+
+.. code-block:: python
+    :caption: ``itertools.combinations_with_replacement(p, r)``
+
+    from itertools import combinations_with_replacement
+
+
+    data = combinations_with_replacement([1,2,3], 2)
+
+    next(data)
+    # (1, 1)
+
+    next(data)
+    # (1, 2)
+
+    next(data)
+    # (1, 3)
+
+    next(data)
+    # (2, 2)
+
+    next(data)
+    # (2, 3)
+
+    next(data)
+    # (3, 3)
+
+    next(data)
+    # Traceback (most recent call last):
+    #   File "<input>", line 1, in <module>
+    # StopIteration
 
 
 Assignments
