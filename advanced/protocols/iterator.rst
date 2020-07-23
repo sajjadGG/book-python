@@ -186,7 +186,7 @@ Standard Library Itertools
 * ``import itertools``
 
 .. code-block:: python
-    :caption: ``itertools.count(start [, step])``
+    :caption: ``itertools.count(start=0, step=1)``
 
     from itertools import count
 
@@ -203,7 +203,7 @@ Standard Library Itertools
     # 7
 
 .. code-block:: python
-    :caption: ``itertools.cycle()``
+    :caption: ``itertools.cycle(iterable)``
 
     from itertools import cycle
 
@@ -220,7 +220,7 @@ Standard Library Itertools
     # ...
 
 .. code-block:: python
-    :caption: ``itertools.cycle()``
+    :caption: ``itertools.cycle(iterable)``
 
     from itertools import cycle
 
@@ -238,7 +238,7 @@ Standard Library Itertools
     # 3, odd
 
 .. code-block:: python
-    :caption: ``itertools.repeat(obj [,n])``
+    :caption: ``itertools.repeat(object[, times])``
 
     from itertools import repeat
 
@@ -262,7 +262,7 @@ Standard Library Itertools
     # StopIteration
 
 .. code-block:: python
-    :caption: ``itertools.accumulate(p [,func])``
+    :caption: ``itertools.accumulate(iterable[, func, *, initial=None])``
 
     from itertools import accumulate
 
@@ -287,7 +287,7 @@ Standard Library Itertools
 
 
 .. code-block:: python
-    :caption: ``itertools.chain(p, q)``
+    :caption: ``itertools.chain(*iterables)``
 
     from itertools import chain
 
@@ -306,7 +306,7 @@ Standard Library Itertools
     # 3
 
 .. code-block:: python
-    :caption: ``itertools.chain(p, q)``
+    :caption: ``itertools.chain(*iterables)``
 
     from itertools import chain
 
@@ -380,7 +380,7 @@ Standard Library Itertools
     # StopIteration
 
 .. code-block:: python
-    :caption: ``itertools.islice(seq, [start,] stop [, step])``
+    :caption: ``itertools.islice(iterable, start, stop[, step])``
 
     from itertools import islice
 
@@ -399,7 +399,7 @@ Standard Library Itertools
     # StopIteration
 
 .. code-block:: python
-    :caption: ``itertools.starmap(func, seq)``
+    :caption: ``itertools.starmap(function, iterable)``
 
     from itertools import starmap
 
@@ -421,7 +421,7 @@ Standard Library Itertools
     # StopIteration
 
 .. code-block:: python
-    :caption: ``itertools.product(p, q, ..., [repeat=1])``
+    :caption: ``itertools.product(*iterables, repeat=1)``
 
     from itertools import product
 
@@ -452,7 +452,7 @@ Standard Library Itertools
     # StopIteration
 
 .. code-block:: python
-    :caption: ``itertools.permutations(p [,r])``
+    :caption: ``itertools.permutations(iterable, r=None)``
 
     from itertools import permutations
 
@@ -483,7 +483,7 @@ Standard Library Itertools
     # StopIteration
 
 .. code-block:: python
-    :caption: ``itertools.combinations(p, r)``
+    :caption: ``itertools.combinations(iterable, r)``
 
     from itertools import combinations
 
@@ -514,7 +514,7 @@ Standard Library Itertools
     # StopIteration
 
 .. code-block:: python
-    :caption: ``itertools.combinations_with_replacement(p, r)``
+    :caption: ``itertools.combinations_with_replacement(iterable, r)``
 
     from itertools import combinations_with_replacement
 
@@ -543,6 +543,42 @@ Standard Library Itertools
     # Traceback (most recent call last):
     #   File "<input>", line 1, in <module>
     # StopIteration
+
+.. code-block:: python
+    :caption: ``itertools.groupby(iterable, key=None)``. Make an iterator that returns consecutive keys and groups from the iterable. Generally, the iterable needs to already be sorted on the same key function. The operation of groupby() is similar to the uniq filter in Unix. It generates a break or new group every time the value of the key function changes. That behavior differs from SQL’s GROUP BY which aggregates common elements regardless of their input order.
+
+    from itertools import groupby
+
+    data = groupby('AAAABBBCCDAABBB')
+
+    next(data)
+    # ('A', <itertools._grouper object at 0x1215f5c70>)
+
+    next(data)
+    # ('B', <itertools._grouper object at 0x12157b4f0>)
+
+    next(data)
+    # ('C', <itertools._grouper object at 0x120e16ee0>)
+
+    next(data)
+    # ('D', <itertools._grouper object at 0x1215ef4c0>)
+
+    next(data)
+    # ('A', <itertools._grouper object at 0x12157b3a0>)
+
+    next(data)
+    # ('B', <itertools._grouper object at 0x12157b790>)
+
+    next(data)
+    # Traceback (most recent call last):
+    #   ...
+    # StopIteration
+
+    [k for k, g in groupby('AAAABBBCCDAABBB')]
+    # A B C D A B
+
+    [list(g) for k, g in groupby('AAAABBBCCD')]
+    # AAAA BBB CC D
 
 
 Assignments
