@@ -129,9 +129,9 @@ Examples
     class Document(ABC):
         def __init__(self, filename):
             self.filename = filename
-            self.content = self.open(filename)
+            self.content = self._read_file_content(filename)
 
-        def open(self):
+        def _read_file_content(self):
             with open(self.filename, mode='rb') as file:
                 return file.read()
 

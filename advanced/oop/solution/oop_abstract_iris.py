@@ -9,8 +9,14 @@ class Iris(ABC):
 
 class Setosa(Iris):
     def get_name(self):
-        print('Setosa')
+        pass
 
+
+# iris = Iris()
+# TypeError: Can't instantiate abstract class Iris with abstract methods get_name
+
+# setosa = Setosa()
+# TypeError: Can't instantiate abstract class Setosa with abstract methods get_name
 
 setosa = Setosa()
-# iris = Iris()
+print('ok')
