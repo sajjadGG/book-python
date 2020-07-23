@@ -89,6 +89,23 @@ Monkey patching
 
     jan.say_hello()
 
+
+Function Passing
+================
+.. code-block:: python
+
+    print(
+        tuple(
+            filter(lambda x: x[1]<100,
+                   enumerate(
+                       filter(lambda x: x%2==0,
+                              map(lambda x: pow(x, 2),
+                                  map(float,
+                                      (x for x in range(0, 34) if x % 3 == 0
+    ))))))))
+
+
+
 Built-in functions
 ==================
 

@@ -334,6 +334,47 @@ Do not trigger methods for user
 
     localhost.connect()
 
+.. code-block:: python
+    :caption: However... it is better to use ``self.set_position(position_x, position_y)`` than to set those values one by one and duplicate code. Imagine if there will be a condition boundary checking (for example for negative values)
+
+    class Bad:
+        def __init__(self, position_x=0, position_y=0):
+            self.position_x = position_x
+            self.position_y = position_y
+
+        def set_position(self, x, y):
+            self.position_x = x
+            self.position_y = y
+
+
+    class Good:
+        def __init__(self, position_x=0, position_y=0):
+            self.set_position(position_x, position_y)
+
+        def set_position(self, x, y):
+            self.position_x = x
+            self.position_y = y
+
+.. code-block:: python
+
+    class Bad:
+        def __init__(self, position_x=0, position_y=0):
+            self.position_x = min(1024, max(0, position_x))
+            self.position_y = min(1024, max(0, position_y))
+
+        def set_position(self, x, y):
+            self.position_x = min(1024, max(0, x))
+            self.position_y = min(1024, max(0, y))
+
+
+    class Good:
+        def __init__(self, position_x=0, position_y=0):
+            self.set_position(position_x, position_y)
+
+        def set_position(self, x, y):
+            self.position_x = min(1024, max(0, x))
+            self.position_y = min(1024, max(0, y))
+
 
 Assignments
 ===========
@@ -359,9 +400,9 @@ OOP Constructor Passwd
         * Podzieli linię po dwukropku
         * Klasa ``Parser`` zwraca instancje klas ``UserAccount`` lub ``SystemAccount`` w zależności od wartości pola UID
 
-    #. User ID (UID) to trzecie pole, np. "root:x:0:0:root:/root:/bin/bash" to UID jest równy ``0``
-    #. Konta systemowe (``SystemAccount``) to takie, które w polu UID mają wartość poniżej 1000
-    #. Konta użytkowników (``UserAccount``) to takie, które w polu UID mają wartość 1000 lub więcej
+    #. User ID (UID) to trzecie pole, np. ``root:x:0:0:root:/root:/bin/bash`` to UID jest równy ``0``
+    #. Konta systemowe (``SystemAccount``) to takie, które w polu UID mają wartość poniżej ``1000``
+    #. Konta użytkowników (``UserAccount``) to takie, które w polu UID mają wartość ``1000`` lub więcej
 
 :Input:
     .. code-block:: python

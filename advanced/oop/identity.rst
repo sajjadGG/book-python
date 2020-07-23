@@ -8,20 +8,17 @@ Identity
 .. highlights::
     * ``id()`` will change every time you execute script
     * An integer which is guaranteed to be unique and constant for this object during its lifetime
-    * Two objects with non-overlapping lifetimes may have the same id() value.
+    * Two objects with non-overlapping lifetimes may have the same ``id()`` value.
     * In CPython it's also the memory address of the corresponding C object
 
 .. code-block:: python
     :caption: Note, that ``id()`` will change every time you execute script
 
-    a = 'str'
-
-    id(a)
+    id('Watney')
     # 4499664048
 
-    hex(id(a))
+    hex(id('Watney'))
     # '0x10c336cb0'
-
 
 
 .. _String interning:
@@ -100,14 +97,28 @@ Using ``is`` in script
 
 .. code-block:: python
 
-    print(a)        # Jan Twardowski
-    print(b)        # Jan Twardowski
+    print('==', a == b)
+    print('is', a is b)
 
-    print(a == b)   # True
-    print(a is b)   # True
+    print('id(a)', id(a))
+    print('id(b)', id(b))
 
-    print(id(a))    # 4430933296
-    print(id(b))    # 4430933296
+    print('memory(a)', hex(id(a)))
+    print('memory(b)', hex(id(b)))
+
+    print('hash(a)', hash(a))
+    print('hash(b)', hash(b))
+
+.. code-block:: text
+
+    == True
+    is False
+    id(a) 4851919024
+    id(b) 4851920112
+    memory(a) 0x1213268b0
+    memory(b) 0x121326cf0
+    hash(a) 2589808896583376772
+    hash(b) 2589808896583376772
 
 Using ``is`` in REPL (evaluated line by line)
 ---------------------------------------------
@@ -121,14 +132,28 @@ Using ``is`` in REPL (evaluated line by line)
 
 .. code-block:: python
 
-    print(a)        # Jan Twardowski
-    print(b)        # Jan Twardowski
+    print('==', a == b)
+    print('is', a is b)
 
-    print(a == b)   # True
-    print(a is b)   # False
+    print('id(a)', id(a))
+    print('id(b)', id(b))
 
-    print(id(a))    # 4784790960
-    print(id(b))    # 4784791408
+    print('memory(a)', hex(id(a)))
+    print('memory(b)', hex(id(b)))
+
+    print('hash(a)', hash(a))
+    print('hash(b)', hash(b))
+
+.. code-block:: text
+
+    == True
+    is True
+    id(a) 4814965616
+    id(b) 4814965616
+    memory(a) 0x11efe8b70
+    memory(b) 0x11efe8b70
+    hash(a) -65752624953756666
+    hash(b) -65752624953756666
 
 Using ``is`` in REPL (evaluated at once)
 ----------------------------------------
@@ -139,14 +164,28 @@ Using ``is`` in REPL (evaluated at once)
 
 .. code-block:: python
 
-    print(a)        # Jan Twardowski
-    print(b)        # Jan Twardowski
+    print('==', a == b)
+    print('is', a is b)
 
-    print(a == b)   # True
-    print(a is b)   # True
+    print('id(a)', id(a))
+    print('id(b)', id(b))
 
-    print(id(a))    # 4784833072
-    print(id(b))    # 4784833072
+    print('memory(a)', hex(id(a)))
+    print('memory(b)', hex(id(b)))
+
+    print('hash(a)', hash(a))
+    print('hash(b)', hash(b))
+
+.. code-block:: text
+
+    == True
+    is False
+    id(a) 4851919024
+    id(b) 4851920112
+    memory(a) 0x1213268b0
+    memory(b) 0x121326cf0
+    hash(a) 2589808896583376772
+    hash(b) 2589808896583376772
 
 
 Assignments
