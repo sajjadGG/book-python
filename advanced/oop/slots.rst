@@ -103,19 +103,23 @@ Examples
 
 
     astro = Astronaut()
-
     astro.firstname = 'Mark'
     astro.lastname = 'Watney'
 
     print(astro.firstname)
+    # Mark
+
     print(astro.lastname)
+    # Watney
 
     print(astro.__slots__)
+    # ('firstname', 'lastname')
 
     result = {attr: getattr(astro, attr)
               for attr in astro.__slots__}
 
     print(result)
+    # {'firstname': 'Mark', 'lastname': 'Watney'}
 
 .. code-block:: python
 
