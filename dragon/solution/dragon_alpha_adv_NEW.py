@@ -268,8 +268,7 @@ class DestructableTest(TestCase):
         self.assertEqual(self.alive._status, Status.ALIVE)
 
     def test_dead(self):
-        dragon = self.dead
-        self.assertEqual(dragon._status, Status.DEAD)
+        self.assertEqual(self.dead._status, Status.DEAD)
 
     def test_is_dead(self):
         self.assertEqual(self.dead.is_dead(), True)
@@ -295,8 +294,8 @@ class DestructableTest(TestCase):
 
 class DragonTest(TestCase):
     def setUp(self):
-        self.alive = Dragon(name='Alive', position_x=0, position_y=0)
-        self.dead = Dragon(name='Dead', position_x=0, position_y=0)
+        self.alive = Dragon('Alive')
+        self.dead = Dragon('Dead')
         self.dead._make_dead()
 
     def test_name(self):
