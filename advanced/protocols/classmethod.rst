@@ -84,12 +84,39 @@ Protocol Classmethod CSV
     #. Stwórz klasę ``CSVMixin`` z metodami ``.to_csv()`` i ``.from_csv()``
     #. Użyj dekoratora ``@classmethod``
     #. Stwórz instancje obu klas wejściowych
-    #. Zrzuć dane instancji do CSV
+    #. Zrzuć dane obu instancji do pliku CSV ``protocol-classmethod.csv``
+    #. Pierwszą linią ma być Astronaut Mark Watney
+    #. Drugą linią ma być Cosmonaut Jan Twardowski
     #. Przywróć instancje z CSV
     #. Zatroszcz się tylko danymi, nie przejmuj się nagłówkiem
 
-:Input Data:
-    .. code-block:: text
+:Input:
+    .. code-block:: python
 
-        Mark, Watney, Astronaut
-        Jan, Twardowski, Cosmonaut
+        FILE = r'protocol-classmethod.csv'
+
+        watney = Astronaut('Mark', 'Watney')
+        twardowski = Cosmonaut('Jan', 'Twardowski')
+
+        with open(FILE, mode='wt') as file:
+            file.write(line1 + '\n')
+            file.write(line2 + '\n')
+
+        del watney
+        del twardowski
+
+        result = []
+
+        with open(FILE, mode='rt') as file:
+            line1 = file.readline().strip()
+            line2 = file.readline().strip()
+            ...
+
+:Output:
+    .. code-block:: python
+
+        from pprint import pprint
+
+        pprint(result)
+        # [Astronaut(firstname='Mark', lastname='Watney'),
+        #  Cosmonaut(firstname='Jan', lastname='Twardowski')]

@@ -422,4 +422,3 @@ Protocol Property
                 ...
             PermissionError: Cannot modify values
             """
-            raise NotImplementedError

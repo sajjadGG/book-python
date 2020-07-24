@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from pprint import pprint
 
 
 class CSVMixin:
@@ -24,14 +25,30 @@ class Cosmonaut(Person, CSVMixin):
     pass
 
 
+
+
+FILE = r'/tmp/protocol-classmethod.csv'
+
 watney = Astronaut('Mark', 'Watney')
-lewis = Astronaut('Melissa', 'Lewis')
-twardowski = Astronaut('Jan', 'Twardowski')
-ivanovic = Astronaut('Ivan', 'Ivanovic')
+twardowski = Cosmonaut('Jan', 'Twardowski')
+
+with open(FILE, mode='wt') as file:
+    file.write(watney.to_csv() + '\n')
+    file.write(twardowski.to_csv() + '\n')
+
+del watney
+del twardowski
+
+result = []
+
+with open(FILE, mode='rt') as file:
+    line1 = file.readline().strip()
+    line2 = file.readline().strip()
+
+    result.append(Astronaut.from_csv(line1))
+    result.append(Cosmonaut.from_csv(line2))
 
 
-csv = watney.to_csv()
-print(csv)
-
-watney = Astronaut.from_csv(csv)
-print(watney)
+pprint(result)
+# [Astronaut(firstname='Mark', lastname='Watney'),
+#  Cosmonaut(firstname='Jan', lastname='Twardowski')]
