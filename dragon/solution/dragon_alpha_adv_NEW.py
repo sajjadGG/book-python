@@ -1,25 +1,25 @@
-"""
->>> dragon = Dragon(name='Wawelski', position_x=50, position_y=120)
->>> dragon.position_set(x=10, y=20)
->>> dragon.position_change(left=10, down=20)
->>> dragon.position_change(left=10, right=15)
->>> dragon.position_change(right=15, up=5)
->>> dragon.position_change(down=5)
->>> dragon.make_damage() in range(5, 21)
-True
->>> try:
-...     dragon.take_damage(10)
-...     dragon.take_damage(5)
-...     dragon.take_damage(3)
-...     dragon.take_damage(2)
-...     dragon.take_damage(15)
-...     dragon.take_damage(25)
-...     dragon.take_damage(75)
-... except IsDead:
-...     drop = dragon.get_drop()
-...     print(f'{dragon:name} is dead at position {dragon:position}')
-Wawelski is dead at position x=20, y=40
-"""
+# """
+# >>> dragon = Dragon(name='Wawelski', position_x=50, position_y=120)
+# >>> dragon.position_set(x=10, y=20)
+# >>> dragon.position_change(left=10, down=20)
+# >>> dragon.position_change(left=10, right=15)
+# >>> dragon.position_change(right=15, up=5)
+# >>> dragon.position_change(down=5)
+# >>> dragon.make_damage() in range(5, 21)
+# True
+# >>> try:
+# ...     dragon.take_damage(10)
+# ...     dragon.take_damage(5)
+# ...     dragon.take_damage(3)
+# ...     dragon.take_damage(2)
+# ...     dragon.take_damage(15)
+# ...     dragon.take_damage(25)
+# ...     dragon.take_damage(75)
+# ... except IsDead:
+# ...     drop = dragon.get_drop()
+# ...     print(f'{dragon:name} is dead at position {dragon:position}')
+# Wawelski is dead at position x=20, y=40
+# """
 import logging
 from dataclasses import dataclass
 from enum import Enum
@@ -168,7 +168,7 @@ class Dragon(Moveable, Destructable):
     def take_damage(self, damage):
         self._current_health -= damage
         self._update_status()
-        logging.warn(self)
+        logging.warning(self)
 
         if self.is_dead():
             self._make_dead()
