@@ -250,7 +250,7 @@ Protocol Descriptor Simple
 --------------------------
 * Complexity level: easy
 * Lines of code to write: 9 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/protocol_descriptor_simple.py`
 
 :English:
@@ -293,7 +293,7 @@ Protocol Descriptor Inheritance
 -------------------------------
 * Complexity level: medium
 * Lines of code to write: 25 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 21 min
 * Solution: :download:`solution/protocol_descriptor_inheritance.py`
 
 :English:
