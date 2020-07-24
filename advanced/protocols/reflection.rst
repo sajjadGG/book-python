@@ -306,6 +306,7 @@ Protocol Reflection
     #. Prevent deleting attributes
     #. Prevent changing attributes
     #. Allow to set attributes only at the initialization
+    #. All tests must pass
 
 :Polish:
     #. Stwórz klasę ``Point`` z atrybutami ``x``, ``y``, ``z``
@@ -313,10 +314,38 @@ Protocol Reflection
     #. Zablokuj możliwość usuwania atrybutów
     #. Zablokuj edycję atrybutów
     #. Pozwól na ustawianie atrybutów tylko przy inicjalizacji klasy
+    #. Wszystkie testy muszą przejść
 
 :Input:
     .. code-block:: python
 
         class Point:
-            def __str__(self):
-                return f'Point(x={self.x}, y={self.y}, z={self.z}')
+            """
+            >>> pt = Point(1, 2, 3)
+            >>> pt.x
+            1
+            >>> pt.y
+            2
+            >>> pt.z
+            3
+
+            >>> del pt.x
+            Traceback (most recent call last):
+                ...
+            PermissionError: Cannot delete attibutes
+
+            >>> del pt.notexisting
+            Traceback (most recent call last):
+                ...
+            PermissionError: Cannot delete attibutes
+
+            >>> pt.x = 10
+            Traceback (most recent call last):
+                ...
+            PermissionError: Cannot modify existing attributes
+
+            >>> pt.notexisting = 10
+            Traceback (most recent call last):
+                ...
+            PermissionError: Cannot set other attributes than x,y,z
+            """
