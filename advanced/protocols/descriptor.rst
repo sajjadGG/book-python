@@ -7,17 +7,18 @@ Rationale
 =========
 * Add managed attributes to objects
 * Outsource functionality into specialized classes
+* ``__del__(self)`` is reserved when object is being deleted by garbage collector (destructor)
 
 
 Protocol
 ========
 * ``__get__(self, parent, parent_type=None) -> self``
-* ``__set__(self, parent, new_value) -> None``
+* ``__set__(self, parent, value) -> None``
 * ``__delete__(self, parent) -> None``
 
 
-Builtin Descriptors
-===================
+Use Cases
+=========
 * ``@classmethod``
 * ``@staticmethod``
 * ``@property``
@@ -27,60 +28,103 @@ Builtin Descriptors
 Syntax
 ======
 .. code-block:: python
-    :caption: Outside class
+    :caption: Definition
 
-    class Kelvin:
+    class MyField:
         def __get__(self, parent, parent_type):
-            print('Calling Kelvin.__get__()')
-            return round(parent._current_value, 2)
+            return ...
 
-        def __set__(self, parent, new_value):
-            print('Calling Kelvin.__set__()')
-            parent._current_value = new_value
+        def __set__(self, parent, value):
+            ...
 
         def __delete__(self, parent):
-            print('Calling Kelvin.__del__()')
-            parent._current_value = 0.0
+            ...
+
+.. code-block:: python
+    :caption: Usage
+
+    class MyField:
+        def __get__(self, parent, parent_type):
+            print('Getter')
+
+        def __set__(self, parent, value):
+            print('Setter')
+
+        def __delete__(self, parent):
+            print('Deleter')
 
 
-    class Temperature:
-        kelvin = Kelvin()
+    class MyClass:
+        value = MyField()
 
         def __init__(self):
-            self._current_value = 0.0
+            self._currentvalue = 0.0
 
 
-    t = Temperature()
+    my = MyClass()
 
-    t.kelvin = 10
-    # Calling Kelvin.__set__()
+    my.value = 'something'
+    # Getter
 
-    print(t.kelvin)
-    # Calling Kelvin.__get__()
-    # 10
+    my.value
+    # Setter
 
-    del t.kelvin
-    # Calling Kelvin.__del__()
+    del my.value
+    # Deleter
+
 
 .. code-block:: python
     :caption: Inside class
 
-    class Temperature:
-
-        class Kelvin:
+    class MyClass:
+        class MyField:
             def __get__(self, parent, parent_type):
-                print('Calling Kelvin.__get__()')
-                return round(parent._current_value, 2)
+                print('Calling MyField.__get__()')
 
-            def __set__(self, parent, new_value):
-                print('Calling Kelvin.__set__()')
-                parent._current_value = new_value
+            def __set__(self, parent, value):
+                print('Calling MyField.__set__()')
 
             def __delete__(self, parent):
-                print('Calling Kelvin.__del__()')
-                parent._current_value = 0.0
+                print('Calling MyField.__delete__()')
 
-        kelvin = Kelvin()
+        value = MyField()
+
+        def __init__(self):
+            self._currentvalue = 0.0
+
+
+    my = MyClass()
+
+    my.value = 'something'
+    # Calling MyField.__set__()
+
+    my.value
+    # Calling MyField.__get__()
+
+    del my.value
+    # Calling MyField.__delete__()
+
+
+Examples
+========
+.. code-block:: python
+    :caption: Kelvin Temperature Validator
+
+    class KelvinValidator:
+        def __get__(self, parent, parent_type):
+            return round(parent._current_value, 2)
+
+        def __set__(self, parent, value):
+            if value < 0.0:
+                raise ValueError('Cannot set negative Kelvin')
+            parent._current_value = value
+
+        def __delete__(self, parent):
+            parent._current_value = 0.0
+
+
+    class Temperature:
+        kelvin = KelvinValidator()
 
         def __init__(self):
             self._current_value = 0.0
@@ -88,30 +132,29 @@ Syntax
 
     t = Temperature()
 
+    t.kelvin = -1
+    # Traceback (most recent call last):
+    # ValueError: Cannot set negative Kelvin
+
     t.kelvin = 10
-    # Calling Kelvin.__set__()
 
     print(t.kelvin)
-    # Calling Kelvin.__get__()
     # 10
 
     del t.kelvin
-    # Calling Kelvin.__del__()
 
+    print(t.kelvin)
+    # 0.0
 
-Examples
-========
-
-Temperature Conversion
-----------------------
 .. code-block:: python
+    :caption: Temperature Conversion
 
     class Kelvin:
         def __get__(self, parent, parent_type):
             return round(parent._current_value, 2)
 
-        def __set__(self, parent, new_value):
-            parent._current_value = new_value
+        def __set__(self, parent, value):
+            parent._current_value = value
 
         def __delete__(self, parent):
             parent._current_value = 0
@@ -122,8 +165,8 @@ Temperature Conversion
             temp = parent._current_value - 273.15
             return round(temp, 2)
 
-        def __set__(self, parent, new_value):
-            temp = new_value + 273.15
+        def __set__(self, parent, value):
+            temp = value + 273.15
             parent._current_value = temp
 
         def __delete__(self, parent):
@@ -187,12 +230,9 @@ Temperature Conversion
     print(f'C: {t.celsius}')        # -17.78
     print(f'F: {t.fahrenheit}')     # 0
 
-
-.. _Timezone Conversion:
-
-Timezone Conversion
--------------------
 .. code-block:: python
+    :caption: Timezone Conversion
+    :name: Timezone Conversion
 
     from dataclasses import dataclass
     from datetime import datetime
@@ -204,24 +244,13 @@ Timezone Conversion
             self.timezone = timezone(name)
 
         def __get__(self, parent, *args, **kwargs):
-            """
-            Converts absolute time to desired timezone.
-            """
             return parent.utc.astimezone(self.timezone)
 
         def __set__(self, parent, new_datetime):
-            """
-            First localize timezone naive datetime,
-            this will add information about timezone,
-            next convert to UTC (shift time by UTC offset).
-            """
             local_time = self.timezone.localize(new_datetime)
             parent.utc = local_time.astimezone(timezone('UTC'))
 
         def __delete__(self, parent):
-            """
-            Set to the not existent date
-            """
             parent.utc = datetime(1, 1, 1)
 
 
@@ -236,8 +265,18 @@ Timezone Conversion
 
     t = Time()
 
+    print('Launch of a first man to space:')
+    t.moscow = datetime(1961, 4, 12, 9, 6, 59)
+    print(t.utc)        # 1961-04-12 06:06:59+00:00
+    print(t.warsaw)     # 1961-04-12 07:06:59+01:00
+    print(t.moscow)     # 1961-04-12 09:06:59+03:00
+    print(t.est)        # 1961-04-12 01:06:59-05:00
+    print(t.pdt)        # 1961-04-11 22:06:59-08:00
+
+    print('First man set foot on a Moon:')
     t.warsaw = datetime(1969, 7, 21, 3, 56, 15)
     print(t.utc)        # 1969-07-21 02:56:15+00:00
+    print(t.warsaw)     # 1969-07-21 03:56:15+01:00
     print(t.moscow)     # 1969-07-21 05:56:15+03:00
     print(t.est)        # 1969-07-20 22:56:15-04:00
     print(t.pdt)        # 1969-07-20 19:56:15-07:00
@@ -325,6 +364,36 @@ Protocol Descriptor Inheritance
 
         class GeographicCoordinate:
             """
+            >>> GeographicCoordinate(-91, 0, 0)
+            Traceback (most recent call last):
+              ...
+            ValueError: Out of bounds
+
+            >>> GeographicCoordinate(+91, 0, 0)
+            Traceback (most recent call last):
+              ...
+            ValueError: Out of bounds
+
+            >>> GeographicCoordinate(0, -181, 0)
+            Traceback (most recent call last):
+              ...
+            ValueError: Out of bounds
+
+            >>> GeographicCoordinate(0, +181, 0)
+            Traceback (most recent call last):
+              ...
+            ValueError: Out of bounds
+
+            >>> GeographicCoordinate(0, 0, -10995)
+            Traceback (most recent call last):
+              ...
+            ValueError: Out of bounds
+
+            >>> GeographicCoordinate(0, 0, +8849)
+            Traceback (most recent call last):
+              ...
+            ValueError: Out of bounds
+
             >>> place1 = GeographicCoordinate(50, 120, 8000)
             >>> str(place1)
             'Latitude: 50, Longitude: 120, Elevation: 8000'
