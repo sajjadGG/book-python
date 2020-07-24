@@ -9,8 +9,8 @@ Rationale
 
 Django
 ======
-* django.utils.timezone
-* from django.conf.locale.en import formats as en_formats
+* ``django.utils.timezone``
+* ``from django.conf.locale.en import formats as en_formats``
 
 
 Examples
@@ -113,6 +113,7 @@ Examples
         '%m/%d/%y %H:%M:%S.%f',  # '10/25/06 14:30:59.000200'
         '%m/%d/%y %H:%M',        # '10/25/06 14:30'
     ]
+
 
 Further Reading
 ===============

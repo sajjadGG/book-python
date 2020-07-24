@@ -6,7 +6,6 @@ Locale i18n
 Rationale
 =========
 * i18n = internationalization
-l10n = localization
 
 
 Examples
