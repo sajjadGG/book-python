@@ -7,10 +7,16 @@ Rationale
 * l10n = localization
 
 
+Django
+======
+* django.utils.timezone
+* from django.conf.locale.en import formats as en_formats
+
+
 Examples
 ========
 .. code-block:: python
-    :caption: pl
+    :caption: pl_PL
 
     DECIMAL_SEPARATOR = ','
     THOUSAND_SEPARATOR = ' '
@@ -38,6 +44,7 @@ Examples
     ]
 
 .. code-block:: python
+    :caption: en_GB
 
     DECIMAL_SEPARATOR = '.'
     THOUSAND_SEPARATOR = ','
@@ -72,7 +79,7 @@ Examples
     ]
 
 .. code-block:: python
-    :caption: en
+    :caption: en_US
 
     DECIMAL_SEPARATOR = '.'
     THOUSAND_SEPARATOR = ','
