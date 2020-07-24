@@ -1,0 +1,38 @@
+***********
+Locale i18n
+***********
+
+
+Rationale
+=========
+* i18n = internationalization
+l10n = localization
+
+
+Examples
+========
+.. code-block:: text
+    :caption: pl_PL.UTF-8
+
+    hello = 'witaj'
+
+.. code-block:: text
+    :caption: en_US.UTF-8
+
+    hello = 'hello'
+
+.. code-block:: text
+    :caption: en_GB.UTF-8
+
+    hello = 'good morning'
+
+
+Gettext
+=======
+* ``.po`` files
+* ``.mo`` files
+* Using ``gettext`` in code
+* Generating translation files
+* Compiling translation files
+* Updateting translation files
+* Transifex (``tx push`` and ``tx pull``)

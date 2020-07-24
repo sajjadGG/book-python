@@ -106,6 +106,18 @@ Builtins
     builtin/operator.rst
     builtin/print.rst
 
+******
+Locale
+******
+.. toctree::
+    :maxdepth: 1
+    :caption: Locale
+    :name: Stdlib Locale
+
+    locale/about.rst
+    locale/i18n.rst
+    locale/l10n.rst
+
 *******
 Looping
 *******
