@@ -322,7 +322,6 @@ Protocol Descriptor Simple
                 ...
             ValueError: Negative temperature
             """
-            raise NotImplementedError
 
 :The whys and wherefores:
     * Using descriptors
@@ -364,6 +363,43 @@ Protocol Descriptor Inheritance
 
         class GeographicCoordinate:
             """
+            >>> GeographicCoordinate(90, 0, 0)
+            Latitude: 90, Longitude: 0, Elevation: 0
+            >>> GeographicCoordinate(-90, 0, 0)
+            Latitude: -90, Longitude: 0, Elevation: 0
+            >>> GeographicCoordinate(0, +180, 0)
+            Latitude: 0, Longitude: 180, Elevation: 0
+            >>> GeographicCoordinate(0, -180, 0)
+            Latitude: 0, Longitude: -180, Elevation: 0
+            >>> GeographicCoordinate(0, 0, +8848)
+            Latitude: 0, Longitude: 0, Elevation: 8848
+            >>> GeographicCoordinate(0, 0, -10994)
+            Latitude: 0, Longitude: 0, Elevation: -10994
+
+            >>> place1 = GeographicCoordinate(50, 120, 8000)
+            >>> str(place1)
+            'Latitude: 50, Longitude: 120, Elevation: 8000'
+
+            >>> place2 = GeographicCoordinate(22, 33, 44)
+            >>> str(place2)
+            'Latitude: 22, Longitude: 33, Elevation: 44'
+
+            >>> place1.longitude = 0
+            >>> place1.latitude = 0
+            >>> place1.elevation = 0
+            Traceback (most recent call last):
+              ...
+            PermissionError: Changing value is prohibited.
+
+            >>> place1.latitude = 1
+            >>> place1.longitude = 2
+            >>> str(place1)
+            'Latitude: 1, Longitude: 2, Elevation: 8000'
+
+            >>> str(place2)
+            'Latitude: 22, Longitude: 33, Elevation: 44'
+
+
             >>> GeographicCoordinate(-91, 0, 0)
             Traceback (most recent call last):
               ...
@@ -393,30 +429,12 @@ Protocol Descriptor Inheritance
             Traceback (most recent call last):
               ...
             ValueError: Out of bounds
-
-            >>> place1 = GeographicCoordinate(50, 120, 8000)
-            >>> str(place1)
-            'Latitude: 50, Longitude: 120, Elevation: 8000'
-
-            >>> place2 = GeographicCoordinate(22, 33, 44)
-            >>> str(place2)
-            'Latitude: 22, Longitude: 33, Elevation: 44'
-
-            >>> place1.latitude = 1
-            >>> place1.longitude = 11
-            >>> str(place1)
-            'Latitude: 1, Longitude: 11, Elevation: 8000'
-
-            >>> str(place2)
-            'Latitude: 22, Longitude: 33, Elevation: 44'
-
-            >>> place1.elevation = 999
-            Traceback (most recent call last):
-              ...
-            PermissionError: Changing value is prohibited.
             """
             def __str__(self):
                 return f'Latitude: {self.latitude}, Longitude: {self.longitude}, Elevation: {self.elevation}'
+
+            def __repr__(self):
+                return self.__str__()
 
 
 :The whys and wherefores:
