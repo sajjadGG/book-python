@@ -8,6 +8,7 @@ Rationale
 * A profile is a set of statistics that describes how often and for how long various parts of the program executed
 * The profiler modules are designed to provide an execution profile for a given program, not for benchmarking purposes (for that, there is timeit for reasonably accurate results). This particularly applies to benchmarking Python code against C code: the profilers introduce overhead for Python code, but not for C-level functions, and so the C code would seem faster than any Python one.
 
+
 Profilers
 =========
 * cProfile (CPython built-in)
