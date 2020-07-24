@@ -46,13 +46,13 @@ Set Attribute
                 return super().__setattr__(name, value)
 
 
-    watney = Astronaut()
+    astro = Astronaut()
 
-    watney.fullname = 'Mark Watney'
-    print(watney.fullname)
+    astro.name = 'Mark Watney'
+    print(astro.name)
     # Mark Watney
 
-    watney._salary = 100
+    astro._salary = 100
     # PermissionError: Field "_salary" is protected, cannot "set" value.
 
 
@@ -77,21 +77,21 @@ Delete Attribute
                 return super().__delattr__(name)
 
 
-    watney = Astronaut()
+    astro = Astronaut()
 
-    watney.fullname = 'Mark Watney'
-    watney._salary = 100
+    astro.name = 'Mark Watney'
+    astro._salary = 100
 
-    del watney.fullname
-    del watney._salary
+    del astro.name
+    del astro._salary
     # PermissionError: Field "_salary" is protected, cannot "delete" value.
 
 
 Get Attribute
 =============
 * Called for every time, when you want to access any attribute
-* ``getattr(astro, 'name')`` is equivalent to ``astro.name``
 * Before even checking if this attribute exists
+* ``getattr(astro, 'name')`` is equivalent to ``astro.name``
 * if ``__getattribute__()`` raises ``AttributeError`` it calls ``__getattr__()``
 * Call stack:
 
@@ -113,21 +113,22 @@ Get Attribute
                 return super().__getattribute__(name)
 
 
-    watney = Astronaut()
+    astro = Astronaut()
 
-    watney.fullname = 'Mark Watney'
-    print(watney.fullname)
+    astro.name = 'Mark Watney'
+    print(astro.name)
     # Mark Watney
 
-    print(watney._salary)
+    print(astro._salary)
     # PermissionError: Field "_salary" is protected, cannot "get" value.
 
 
 Get Attribute if Does Not Exist
 ===============================
 * Called whenever you request an attribute that hasn't already been defined
-* if ``__getattribute__()`` raises ``AttributeError`` it calls ``__getattr__()``
+* It will not execute, when attribute already exist
 * Implementing a fallback for missing attributes
+* If ``__getattribute__()`` raises ``AttributeError`` it calls ``__getattr__()``
 
 .. code-block:: python
     :caption: Example ``__getattr__()``
@@ -137,23 +138,51 @@ Get Attribute if Does Not Exist
             self.fullname = None
 
         def __getattr__(self, name):
-            print('Getattr called')
-
-            if name.startswith('_'):
-                raise PermissionError(f'Field "{name}" is protected, cannot "get" value.')
-            else:
-                return super().__getattr__(name)
+            return 'Sorry, field does not exist'
 
 
-    watney = Astronaut()
+    astro = Astronaut()
+    astro.name = 'Mark Watney'
 
-    watney.fullname = 'Mark Watney'
-    print(watney.fullname)
+    print(astro.name)
     # Mark Watney
 
-    print(watney._salary)
-    # Getattr called
-    # PermissionError: Field "_salary" is protected, cannot "get" value.
+    print(astro._salary)
+    # Sorry, field does not exist
+
+.. code-block:: python
+
+    class Astronaut:
+        def __init__(self):
+            self.fullname = None
+
+        def __getattribute__(self, name):
+            print('Getattribute called... ')
+            result = super().__getattribute__(name)
+            print(f'Result was: "{result}"')
+            return result
+
+        def __getattr__(self, name):
+            print('Not found. Getattr called...')
+            print(f'Creating attibute {name} with `None` value')
+            super().__setattr__(name, None)
+
+
+    astro = Astronaut()
+    astro.name = 'Mark Watney'
+
+    astro.name
+    # Getattribute called...
+    # Result was: "Mark Watney"
+
+    astro._salary
+    # Getattribute called...
+    # Not found. Getattr called...
+    # Creating attibute _salary with `None` value
+
+    astro._salary
+    # Getattribute called...
+    # Result was: "None"
 
 
 Has Attribute
@@ -170,15 +199,15 @@ Has Attribute
             self.lastname = lastname
 
 
-    watney = Astronaut('Mark', 'Watney')
+    astro = Astronaut('Mark', 'Watney')
 
-    print(hasattr(watney, 'firstname'))     # True
-    print(hasattr(watney, 'lastname'))      # True
-    print(hasattr(watney, 'fullname'))      # False
+    print(hasattr(astro, 'firstname'))     # True
+    print(hasattr(astro, 'lastname'))      # True
+    print(hasattr(astro, 'fullname'))      # False
 
-    watney.fullname = 'Mark Watney'
+    astro.fullname = 'Mark Watney'
 
-    print(hasattr(watney, 'fullname'))
+    print(hasattr(astro, 'fullname'))
     # True
 
 
@@ -201,16 +230,16 @@ Examples
                 return super().__setattr__(name, value)
 
 
-    watney = Astronaut()
+    astro = Astronaut()
 
-    watney.fullname = 'Mark Watney'
-    print(watney.fullname)
+    astro.name = 'Mark Watney'
+    print(astro.name)
     # Mark Watney
 
-    watney._salary = 100
+    astro._salary = 100
     # PermissionError: Field "_salary" is protected, cannot "set" value.
 
-    print(watney._salary)
+    print(astro._salary)
     # PermissionError: Field "_salary" is protected, cannot "get" value.
 
 .. code-block:: python
@@ -245,7 +274,6 @@ Examples
             super().__setattr__(name, value)
 
             if name == 'kelvin':
-                super().__setattr__(name, value)
                 self.celsius = 273.15 + self.kelvin
                 self.fahrenheit = (self.kelvin-273.15) * 1.8 + 32
 
