@@ -1,14 +1,13 @@
-import pickle
 from dataclasses import dataclass
 
 
-class PickleSerializable:
-    def to_pickle(self):
-        return pickle.dumps(self)
+class CSVMixin:
+    def to_csv(self):
+        return ','.join(self.__dict__.values())
 
     @classmethod
-    def from_pickle(cls, data):
-        return pickle.loads(data)
+    def from_csv(cls, data):
+        return cls(*data.split(','))
 
 
 @dataclass
@@ -17,11 +16,11 @@ class Person:
     lastname: str
 
 
-class Astronaut(Person, PickleSerializable):
+class Astronaut(Person, CSVMixin):
     pass
 
 
-class Cosmonaut(Person, PickleSerializable):
+class Cosmonaut(Person, CSVMixin):
     pass
 
 
@@ -30,8 +29,9 @@ lewis = Astronaut('Melissa', 'Lewis')
 twardowski = Astronaut('Jan', 'Twardowski')
 ivanovic = Astronaut('Ivan', 'Ivanovic')
 
-print(watney.to_pickle())
-# b'\x80\x03c__main__\nAstronaut\nq\x00)\x81q\x01}q\x02(X\n\x00\x00\x00firstnameq\x03X\x04\x00\x00\x00Markq\x04X\t\x00\x00\x00lastnameq\x05X\x06\x00\x00\x00Watneyq\x06ub.'
 
-watney = Astronaut.from_pickle(b'\x80\x03c__main__\nAstronaut\nq\x00)\x81q\x01}q\x02(X\n\x00\x00\x00firstnameq\x03X\x04\x00\x00\x00Markq\x04X\t\x00\x00\x00lastnameq\x05X\x06\x00\x00\x00Watneyq\x06ub.')
+csv = watney.to_csv()
+print(csv)
+
+watney = Astronaut.from_csv(csv)
 print(watney)
