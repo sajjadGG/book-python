@@ -16,6 +16,23 @@ Rationale
     * ``cp1252`` or ``windows-1252`` - Western European encoding on Windows
     * ``ASCII`` - ASCII characters only
 
+.. figure:: img/files-windows2000-notepad-saveas.png
+    :width: 33%
+    :align: center
+
+    Windows 2000 Notepad "Save As" window with possibility to select encoding. UTF-8 is not selected by default... Source: [redhotwords]_
+
+.. figure:: img/files-windows10-notepad-saveas.png
+    :width: 33%
+    :align: center
+
+    Windows 10 Notepad "Save As" window with possibility to select encoding. Still in 2020 the UTF-8 is not selected by default... Source: [digitalcitizen]_
+
+.. figure:: img/files-encoding-ascii2.png
+    :width: 33%
+    :align: center
+
+    ASCII table. Source: [Spinall2015]_
 
 UTF-8
 =====
@@ -100,3 +117,14 @@ Escape Characters
 .. code-block:: python
 
     print('\U0001F680')     # 🚀
+
+
+
+References
+==========
+
+.. [redhotwords] redhotwords.com. Windows 2000 Notepad. http://redhotwords.com/assets/Uninotepadunicode.png
+
+.. [digitalcitizen] digitalcitizen.life. Windows 10 Notepad. https://www.digitalcitizen.life/sites/default/files/gdrive/windows_notepad/notepad_10.png
+
+.. [Spinall2015] Briana Spinall. Better Ascii Table. 2015. http://brianaspinall.com/wp-content/uploads/2015/11/better_ascii_table.jpg

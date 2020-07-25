@@ -4,75 +4,179 @@
 File Access Modes
 *****************
 
-Text and Binary
-===============
+Rationale
+=========
 * Text - easy to read and write
 * Binary - Fast and efficient
-
-
-Write
-=====
-.. highlights::
-    * ``mode='wt'`` - write in text mode
-    * ``mode='wb'`` - write in binary mode
-    * ``mode='w'`` - write in text mode (alias to "wt")
-    * ``mode='wt+'`` - open for updating (reading and writing)
-    * ``mode='wb+'`` - open for updating (reading and writing)
-    * ``mode='w+'`` - open for updating (reading and writing) (alias to "wt+")
-
-.. code-block:: python
-
-    FILE = r'/tmp/myfile.txt'
-    data = 'We choose to go to the Moon...'
-
-    with open(FILE, mode='w') as file:
-        file.write(data)
-
-
-Append
-======
-.. highlights::
-    * ``mode='at'`` - append in text mode
-    * ``mode='ab'`` - append in binary mode
-    * ``mode='a'`` - append in text mode (alias to "at")
-    * ``mode='at+'`` - open for updating (reading and writing)
-    * ``mode='ab+'`` - open for updating (reading and writing)
-    * ``mode='a+'`` - open for updating (reading and writing) (alias to "at+")
-
-.. code-block:: python
-
-    FILE = r'/tmp/myfile.txt'
-    data = 'We choose to go to the Moon...'
-
-    with open(FILE, mode='a') as file:
-        file.write(data)
-
-
-Read
-====
-.. highlights::
-    * file must exists prior reading
-    * ``mode='rt'`` - read in text mode (default)
-    * ``mode='rb'`` - read in binary mode
-    * ``mode='r'`` - read in text mode (alias to "wt")
-    * ``mode='rt+'`` - open for updating (reading and writing)
-    * ``mode='rb+'`` - open for updating (reading and writing)
-    * ``mode='r+'`` - open for updating (reading and writing) (alias to "rt+")
-    * If no mode is specified, the default mode is "rt"
+* Read - Get data from file
+* Write - Save data to file (overwrite existing data)
+* Append - Add line to file
+* Update - Read and Write
+* If mode is not specified it will read in text mode (``mode='rt'``)
 
 .. code-block:: python
 
     FILE = r'/tmp/myfile.txt'
 
     with open(FILE) as file:
-        data = file.read()
+        ...
+
+
+Text Mode
+=========
+.. highlights::
+    * Text - easy to read and write
+    * ``mode='rt'`` - read in text mode (default)
+    * ``mode='wt'`` - write in text mode
+    * ``mode='at'`` - append in text mode
+
+.. code-block:: python
+
+    FILE = r'/tmp/myfile.txt'
+
+    with open(FILE, mode='rt') as file:
+        ...
+
+    with open(FILE, mode='wt') as file:
+        ...
+
+    with open(FILE, mode='at') as file:
+        ...
+
+
+Binary Mode
+===========
+.. highlights::
+    * Binary - Fast and efficient
+    * ``mode='rb'`` - read in binary mode
+    * ``mode='wb'`` - write in binary mode
+    * ``mode='ab'`` - append in binary mode
+
+.. code-block:: python
+
+    FILE = r'/tmp/myfile.txt'
+
+    with open(FILE, mode='rb') as file:
+        ...
+
+    with open(FILE, mode='wb') as file:
+        ...
+
+    with open(FILE, mode='ab') as file:
+        ...
+
+Update in Text Mode
+===================
+.. highlights::
+    * Reading and Writing
+    * ``mode='rt+'`` - update in binary mode
+    * ``mode='wt+'`` - update in binary mode
+    * ``mode='at+'`` - update in binary mode
+
+.. code-block:: python
+
+    FILE = r'/tmp/myfile.txt'
+
+    with open(FILE, mode='rt+') as file:
+        ...
+
+    with open(FILE, mode='wt+') as file:
+        ...
+
+    with open(FILE, mode='at+') as file:
+        ...
+
+
+Update in Binary Mode
+===================
+.. highlights::
+    * Reading and Writing
+    * ``mode='rb+'`` - update in binary mode
+    * ``mode='wb+'`` - update in binary mode
+    * ``mode='ab+'`` - update in binary mode
+
+.. code-block:: python
+
+    FILE = r'/tmp/myfile.txt'
+
+    with open(FILE, mode='rb+') as file:
+        ...
+
+    with open(FILE, mode='wb+') as file:
+        ...
+
+    with open(FILE, mode='ab+') as file:
+        ...
+
+
+Short Notation
+==============
+.. highlights::
+    * By default text mode is used
+    * Most commonly used
+    * ``mode='r'`` - read in text mode
+    * ``mode='w'`` - write in text mode
+    * ``mode='a'`` - append in text mode
 
 .. code-block:: python
 
     FILE = r'/tmp/myfile.txt'
 
     with open(FILE, mode='r') as file:
-        data = file.read()
+        ...
+
+    with open(FILE, mode='w') as file:
+        ...
+
+    with open(FILE, mode='a') as file:
+        ...
+
+
+Short Notation Update Mode
+==========================
+.. highlights::
+    * By default text mode is used
+    * ``mode='r+'`` - read in text mode
+    * ``mode='w+'`` - write in text mode
+    * ``mode='a+'`` - append in text mode
+
+.. code-block:: python
+
+    FILE = r'/tmp/myfile.txt'
+
+    with open(FILE, mode='r+') as file:
+        ...
+
+    with open(FILE, mode='w+') as file:
+        ...
+
+    with open(FILE, mode='a+') as file:
+        ...
+
+
+Recap
+=====
+* ``mode='r'`` - read in text mode
+* ``mode='w'`` - write in text mode
+* ``mode='a'`` - append in text mode
+
+* ``mode='rt'`` - read in text mode (default)
+* ``mode='wt'`` - write in text mode
+* ``mode='at'`` - append in text mode
+
+* ``mode='rb'`` - read in binary mode
+* ``mode='wb'`` - write in binary mode
+* ``mode='ab'`` - append in binary mode
+
+* ``mode='rb+'`` - update in binary mode
+* ``mode='wb+'`` - update in binary mode
+* ``mode='ab+'`` - update in binary mode
+
+* ``mode='r+'`` - read in text mode
+* ``mode='w+'`` - write in text mode
+* ``mode='a+'`` - append in text mode
+
+* If mode is not specified it will read in text mode (``mode='rt'``)
 
 
 Exception Handling

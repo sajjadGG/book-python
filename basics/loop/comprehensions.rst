@@ -287,6 +287,11 @@ Indent
 
 .. code-block:: python
 
+    result = [pow(x,2)
+              for x in range(0,5)]
+
+.. code-block:: python
+
     result = [pow(x,2) for x in range(0,5) if x%2==0]
 
 .. code-block:: python
@@ -294,6 +299,12 @@ Indent
     result = [pow(x,2)
                 for x in range(0,5)
                     if x % 2 == 0]
+
+.. code-block:: python
+
+    result = [pow(x,2)
+              for x in range(0,5)
+              if x % 2 == 0]
 
 
 Examples
@@ -535,14 +546,15 @@ All and Any
 
     all(observation > 1.0
         for *features, label in DATA[1:]
-            for observation in features
-                if isinstance(observation, float))
+        for observation in features
+        if isinstance(observation, float))
     # False
 
 
     all(x > 1.0
         for *X,y in DATA[1:]
-            for x in X if isinstance(x, float))
+        for x in X
+        if isinstance(x, float))
     # False
 
 
@@ -550,6 +562,48 @@ Assignment Expressions
 ======================
 .. versionadded:: Python 3.8
     :pep:`572` Assignment Expressions (walrus operator)
+
+.. code-block:: python
+
+    DATA = [
+        {'is_astronaut': True,  'name': 'JaN TwarDOwski'},
+        {'is_astronaut': True,  'name': 'Mark Jim WaTNey'},
+        {'is_astronaut': False, 'name': 'José Maria Jiménez'},
+        {'is_astronaut': True,  'name': 'Melissa Lewis'},
+        {'is_astronaut': False, 'name': 'Alex Vogel'},
+    ]
+
+    astronauts = [{'firstname': name[0], 'lastname': name[-1]}
+                  for person in DATA
+                  if person['is_astronaut']
+                  and (name := person['name'].title().split())]
+
+    print(astronauts)
+    # [{'firstname': 'Jan', 'lastname': 'Twardowski'},
+    #  {'firstname': 'Mark', 'lastname': 'Watney'},
+    #  {'firstname': 'Melissa', 'lastname': 'Lewis'}]
+
+.. code-block:: python
+
+    DATA = [
+        {'is_astronaut': True,  'name': 'JaN TwarDOwski'},
+        {'is_astronaut': True,  'name': 'Mark Jim WaTNey'},
+        {'is_astronaut': False, 'name': 'José Maria Jiménez'},
+        {'is_astronaut': True,  'name': 'Melissa Lewis'},
+        {'is_astronaut': False, 'name': 'Alex Vogel'},
+    ]
+
+    astronauts = [{'firstname': fname, 'lastname': lname}
+                  for person in DATA
+                  if person['is_astronaut']
+                  and (name := person['name'].title().split())
+                  and (fname := name[0])
+                  and (lname := name[1])]
+
+    print(astronauts)
+    # [{'firstname': 'Jan', 'lastname': 'Twardowski'},
+    #  {'firstname': 'Mark', 'lastname': 'Watney'},
+    #  {'firstname': 'Melissa', 'lastname': 'Lewis'}]
 
 .. code-block:: python
 
@@ -566,6 +620,24 @@ Assignment Expressions
             if (y := x**2) > 0]
 
     # [(1, 1, 1.0), (2, 4, 0.5), (3, 9, 0.3333333333333333), (4, 16, 0.25)]
+
+.. code-block:: python
+
+    DATA = [
+        ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+        (5.8, 2.7, 5.1, 1.9, 'virginica'),
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+        (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+        (4.7, 3.2, 1.3, 0.2, 'setosa'),
+        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+    ]
+
+    result = [cls(*features)
+              for *features, species in DATA[1:]
+              if (clsname := species.capitalize())
+              and (cls := globals()[clsname])]
 
 
 Assignments
@@ -636,7 +708,7 @@ Comprehensions Split
 :English:
     #. Use data from "Input" section (see below)
     #. Separate header from data
-    #. Calculate pivot point: length of data times given percent
+    #. Calculate pivot point: length of data times given percent (60%/40%, see below)
     #. Using List Comprehension split data to:
 
         * ``features: List[tuple]`` - list of measurements (each measurement row is a tuple)
@@ -654,7 +726,7 @@ Comprehensions Split
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Odseparuj nagłówek od danych
-    #. Wylicz punkt podziału: długość danych razy zadany procent
+    #. Wylicz punkt podziału: długość danych razy zadany procent (60%/40%, patrz poniżej)
     #. Używając List Comprehension podziel dane na:
 
         * ``features: List[tuple]`` - lista pomiarów (każdy wiersz z pomiarami ma być tuple)

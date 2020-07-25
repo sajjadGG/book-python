@@ -297,8 +297,55 @@ Conditional Alternative
     # Witaj
 
 
+Shorthand Expressions
+=====================
+.. code-block:: python
+
+    number = 3
+    is_even = (number % 2 == 0 )
+
+    print(is_even)
+    # True
+
+.. code-block:: python
+
+    number = 3
+    is_digit = (number in range(0,10))
+
+    print(is_digit)
+    # True
+
+
 Conditional Expression
 ======================
+.. code-block:: python
+
+    number = 3
+
+    if number in range(0,10):
+        is_digit = True
+    else:
+        is_digit = False
+
+    print(is_digit)
+    # True
+
+.. code-block:: python
+
+    number = 3
+    is_digit = True if number in range(0,10) else False
+
+    print(is_digit)
+    # True
+
+.. code-block:: python
+
+    ip = '127.0.0.1'
+    protocol = 'IPv4' if '.' in ip else 'IPv6'
+
+    print(protocol)
+    # IPv4
+
 .. code-block:: python
     :caption: Normal ``if``
 
@@ -327,7 +374,6 @@ Conditional Expression
     age = input('What is your age?: ')
     age = float(age) if age.isnumeric() else None
     print(age)
-
 
 Switch
 ======

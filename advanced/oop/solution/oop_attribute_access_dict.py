@@ -69,8 +69,7 @@ print('Species    Total   Avg')
 print('-' * 22)
 print(result)
 
-
-# current_module = sys.modules[__name__]
+# result = []
 #
 # for *features, species in data:
 #     clsname = species.capitalize()

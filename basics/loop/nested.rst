@@ -8,16 +8,55 @@ Loop Nested Sequences
 Syntax
 ======
 .. code-block:: python
-    :caption: Iterating over nested sequence
+    :caption: Iterating over sequence
 
-    DATA = [<obj>, <obj>, <obj>]
+    DATA = [
+        'a',
+        'b',
+        'c'
+    ]
 
     for obj in DATA:
         print(obj)
 
-    # <obj>
-    # <obj>
-    # <obj>
+    # a
+    # b
+    # c
+
+.. code-block:: python
+    :caption: Iterating over nested sequence
+
+    DATA = [
+        ('a1', 'a2'),
+        ('b1', 'b2'),
+        ('c1', 'c2'),
+    ]
+
+    for obj in DATA:
+        key = obj[0]
+        value = obj[1]
+        print(f'{key} -> {value}')
+
+    # a1 -> a2
+    # b1 -> b2
+    # c1 -> c2
+
+.. code-block:: python
+    :caption: Iterating over nested sequence
+
+    DATA = [
+        ('a1', 'a2'),
+        ('b1', 'b2'),
+        ('c1', 'c2'),
+    ]
+
+    for key, value in DATA:
+        print(f'{key} -> {value}')
+
+    # a1 -> a2
+    # b1 -> b2
+    # c1 -> c2
+
 
 Convention
 ==========
