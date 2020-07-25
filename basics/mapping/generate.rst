@@ -52,7 +52,7 @@ Enumerate
 
     next(astronaut)
     # Traceback (most recent call last):
-    #   File "<input>", line 1, in <module>
+    #   ...
     # StopIteration
 
 .. code-block:: python
@@ -94,7 +94,7 @@ Zip
 
     next(astronaut)
     # Traceback (most recent call last):
-    #   File "<input>", line 1, in <module>
+    #   ...
     # StopIteration
 
 .. code-block:: python
@@ -111,6 +111,44 @@ Zip
     # {'commander': 'Melissa Lewis',
     #  'botanist': 'Mark Watney',
     #  'chemist': 'Alex Vogel'}
+
+.. code-block:: python
+
+    roles = ['commander', 'botanist', 'chemist']
+    crew = [('Melissa', 'Lewis'), ('Mark', 'Watney'), ('Alex', 'Vogel')]
+
+    astronauts = zip(roles, crew)
+    astronauts
+    # <zip object at 0x120c487c0>
+
+    next(astronauts)
+    # ('commander', ('Melissa', 'Lewis'))
+
+    next(astronauts)
+    # ('botanist', ('Mark', 'Watney'))
+
+    next(astronauts)
+    # ('chemist', ('Alex', 'Vogel'))
+
+    next(astronauts)
+    # Traceback (most recent call last):
+    #   ...
+    # StopIteration
+
+.. code-block:: python
+
+    roles = ['commander', 'botanist', 'chemist']
+    crew = [('Melissa', 'Lewis'), ('Mark', 'Watney'), ('Alex', 'Vogel')]
+
+    list(zip(roles, crew))
+    # [('commander', ('Melissa', 'Lewis')),
+    #  ('botanist', ('Mark', 'Watney')),
+    #  ('chemist', ('Alex', 'Vogel'))]
+
+    dict(zip(roles, crew))
+    # {'commander': ('Melissa', 'Lewis'),
+    #  'botanist': ('Mark', 'Watney'),
+    #  'chemist': ('Alex', 'Vogel')}
 
 
 Assignments

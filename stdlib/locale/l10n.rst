@@ -13,6 +13,11 @@ Django
 * ``from django.conf.locale.en import formats as en_formats``
 
 
+Numbers
+=======
+* https://github.com/arthurdejong/python-stdnum/tree/master/stdnum
+
+
 Examples
 ========
 .. code-block:: python
@@ -120,3 +125,4 @@ Further Reading
 * https://github.com/django/django/blob/master/django/conf/locale/pl/formats.py
 * https://github.com/django/django/blob/master/django/conf/locale/en/formats.py
 * https://github.com/django/django/blob/master/django/conf/locale/en_GB/formats.py
+* https://github.com/arthurdejong/python-stdnum/tree/master/stdnum
