@@ -267,7 +267,7 @@ OOP Method Sequence
 -------------------
 * Complexity level: easy
 * Lines of code to write: 18 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/oop_method_sequence.py`
 
 :English:
@@ -306,7 +306,7 @@ OOP Method Nested
 -----------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 21 min
 * Solution: :download:`solution/oop_method_nested.py`
 
 :English:
@@ -376,8 +376,8 @@ OOP Method Nested
         setosa = Iris(5.1, 3.5, 1.4, 0.2, 'setosa')
         virginica = Iris(5.8, 2.7, 5.1, 1.9, 'virginica')
 
-        print(f'{setosa.show()}')
-        print(f'{virginica.show()}')
+        print(setosa.show())
+        print(virginica.show())
 
 :Output:
     .. code-block:: text

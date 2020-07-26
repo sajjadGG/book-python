@@ -21,14 +21,6 @@ Rationale
     object
         Object created from class.
 
-.. code-block:: text
-
-    class <name>:
-        pass
-
-
-    <instance> = <name>()
-
 .. code-block:: python
 
     class MyClass:
@@ -121,6 +113,18 @@ Class vs Instance
 
     Intuition definition: Class is a blueprint, instances are homes made from this plan. Image source: :cite:`FigureBlueprintHouse`
 
+.. image:: img/oop-classes-class.jpg
+    :width: 30%
+    :class: inline
+
+    Class [classes]_
+
+.. image:: img/oop-classes-instances.jpg
+    :width: 30%
+    :class: inline
+
+    Instances [instances]_
+
 
 Convention
 ==========
@@ -160,6 +164,11 @@ Convention
     mark = Astronaut()
     jose = Astronaut()
 
+
+References
+==========
+.. [class] http://makieta.pl/12344-thickbox_default/faller-130803-blok-z-wielkiej-plyty-skala-h0.jpg
+.. [instances] https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Os_Rusa_Poznań_RB1.jpg/1200px-Os_Rusa_Poznań_RB1.jpg
 
 Assignments
 ===========

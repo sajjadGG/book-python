@@ -209,7 +209,7 @@ OOP Attribute Model
 -------------------
 * Complexity level: easy
 * Lines of code to write: 15 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/oop_attribute_model.py`
 
 :English:
@@ -224,8 +224,8 @@ OOP Attribute Model
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zamodeluj dane za pomocą klas
     #. Stwórz instancje dla każdego wpisu
-    #. Jak wiele klas możemy wyróżnić?
-    #. Jak wiele instancji możemy wyróżnić?
+    #. Ile jest klas?
+    #. Ile jest instancji?
     #. Wypisz wszystkie pola każdej z instancji
 
 :Input:

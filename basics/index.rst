@@ -137,8 +137,8 @@ Object Oriented Programming
     oop/attribute.rst
     oop/init.rst
     oop/method.rst
-    oop/stringify.rst
     oop/inheritance.rst
+    oop/stringify.rst
     oop/architecture.rst
     oop/type-annotation.rst
 

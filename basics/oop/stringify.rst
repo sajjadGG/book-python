@@ -253,7 +253,7 @@ OOP Stringify Str
 * Solution: :download:`solution/oop_stringify_str.py`
 
 :English:
-    #. Use code from "Input" section (see below)
+    #. Use code from "Input" section (see below)
     #. While printing object show: species name and a sum method result
     #. Result of sum round to one decimal place
     #. Compare result with "Output" section (see below)
