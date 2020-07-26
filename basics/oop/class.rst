@@ -121,46 +121,6 @@ Class vs Instance
 
     Intuition definition: Class is a blueprint, instances are homes made from this plan. Image source: :cite:`FigureBlueprintHouse`
 
-.. image:: img/uml-class-diagram-1.jpg
-    :width: 20%
-    :class: inline
-
-.. image:: img/uml-class-diagram-2.png
-    :width: 20%
-    :class: inline
-
-.. image:: img/uml-class-diagram-3.png
-    :width: 20%
-    :class: inline
-
-.. image:: img/uml-class-diagram-4.png
-    :width: 20%
-    :class: inline
-
-.. image:: img/uml-class-diagram-5.png
-    :width: 20%
-    :class: inline
-
-.. image:: img/uml-class-diagram-6.png
-    :width: 20%
-    :class: inline
-
-.. image:: img/uml-class-diagram-7.png
-    :width: 20%
-    :class: inline
-
-.. image:: img/uml-class-diagram-8.jpg
-    :width: 20%
-    :class: inline
-
-.. image:: img/uml-class-diagram-9.jpg
-    :width: 20%
-    :class: inline
-
-.. image:: img/uml-class-diagram-10.png
-    :width: 20%
-    :class: inline
-
 
 Convention
 ==========
@@ -208,7 +168,7 @@ OOP Class Iris
 --------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/oop_class_iris.py`
 
 :English:
@@ -230,7 +190,7 @@ OOP Class Instance
 ------------------
 * Complexity level: easy
 * Lines of code to write: 9 lines
-* Estimated time of completion: 3 min
+* Estimated time of completion: 5 min
 * Solution: :download:`solution/oop_class_instance.py`
 
 :English:
@@ -245,10 +205,9 @@ OOP Class Instance
 :Polish:
     #. Zdefiniuj klasę ``Astronaut``
     #. Zdefiniuj klasę ``SpaceAgency``
-    #. Stwórz instancję ``twardowski`` klasy ``Astronaut``
     #. Stwórz instancję ``watney`` klasy ``Astronaut``
+    #. Stwórz instancję ``twardowski`` klasy ``Astronaut``
     #. Stwórz instancję ``nasa`` klasy ``SpaceAgency``
-    #. Stwórz instancję ``esa`` klasy ``SpaceAgency``
     #. Stwórz instancję ``polsa`` klasy ``SpaceAgency``
 
 :The whys and wherefores:

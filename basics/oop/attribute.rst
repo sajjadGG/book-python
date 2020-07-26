@@ -15,30 +15,6 @@ Rationale
     * Attributes should be defined only in ``__init__()`` method
     * More information in :ref:`OOP Init Method`
 
-.. code-block:: python
-
-    point_x = 1
-    point_y = 2
-    point_z = 3
-
-    print(point_x)
-    print(point_y)
-    print(point_z)
-
-.. code-block:: python
-
-    class Point:
-        pass
-
-    point = Point()
-    point.x = 1
-    point.y = 2
-    point.z = 3
-
-    print(point.x)
-    print(point.y)
-    print(point.z)
-
 .. glossary::
 
     attribute
@@ -77,21 +53,25 @@ Rationale
     :align: center
 
 
-Dynamic Attributes
-==================
+Syntax
+======
 .. code-block:: python
-    :caption: Dynamic attributes
 
-    class Temperature:
+    class Astronaut:
         pass
 
 
-    temp = Temperature()
-    temp.kelvin = 10
+    astro = Astronaut()
 
-    print(temp.kelvin)
-    # 10
+    astro.firstname = 'Mark'
+    astro.lastname = 'Watney'
 
+    print(astro.firstname)
+    print(astro.lastname)
+
+
+Dynamic Attributes
+==================
 .. code-block:: python
     :caption: Dynamic attributes
 
@@ -105,23 +85,6 @@ Dynamic Attributes
 
     print(f'My name... {jose.firstname} {jose.lastname}')
     # My name... José Jiménez
-
-.. code-block:: python
-    :caption: Dynamic attributes
-
-    class Iris:
-        pass
-
-
-    setosa = Iris()
-    setosa.features = [5.1, 3.5, 1.4, 0.2]
-    setosa.label = 'setosa'
-
-    print(setosa.label)
-    # setosa
-
-    sum(setosa.features)
-    # 10.2
 
 .. code-block:: python
     :caption: Accessing not existing attributes
@@ -151,6 +114,66 @@ Dynamic Attributes
 
     print(f'My name... {mark.name}')
     # AttributeError: 'Astronaut' object has no attribute 'name'
+
+Namespace
+=========
+.. code-block:: python
+
+    point_x = 1
+    point_y = 2
+    point_z = 3
+
+    print(point_x)
+    print(point_y)
+    print(point_z)
+
+.. code-block:: python
+
+    class Point:
+        pass
+
+    point = Point()
+    point.x = 1
+    point.y = 2
+    point.z = 3
+
+    print(point.x)
+    print(point.y)
+    print(point.z)
+
+Different Types
+===============
+.. code-block:: python
+    :caption: Dynamic attributes
+
+    class Iris:
+        pass
+
+
+    setosa = Iris()
+    setosa.features = [5.1, 3.5, 1.4, 0.2]
+    setosa.label = 'setosa'
+
+    print(setosa.label)
+    # setosa
+
+    print(setosa.features)
+    # [5.1, 3.5, 1.4, 0.2]
+
+    sum(setosa.features)
+    # 10.2
+
+.. code-block:: python
+
+    class Astronaut:
+        pass
+
+
+    jose = Astronaut()
+    jose.age = 36
+
+    mark = Astronaut()
+    mark.age = 42.1
 
 
 Get All Dynamic Attributes and Values
@@ -208,10 +231,10 @@ OOP Attribute Model
 :Input:
     .. code-block:: text
 
-        Jan Twardowski, Poland, 1961-04-12
         Mark Watney, USA, 1969-07-21
-        European Space Agency, Europe, 1975-05-30
         National Aeronautics and Space Administration, USA, 1958-07-29
+
+        Jan Twardowski, Poland, 1961-04-12
         Polish Space Agency, Poland, 2014-09-26
 
 :The whys and wherefores:

@@ -5,10 +5,28 @@ Init Method
 ***********
 
 
+Rationale
+=========
 .. highlights::
     * It's a first method run after object is initiated
     * All classes has default ``__init__()``
     * ``__init__()`` is not a constructor!
+
+
+Syntax
+======
+.. code-block:: python
+
+    class Astronaut:
+        def __init__(self, firstname, lastname):
+            astro.firstname = firstname
+            astro.lastname = lastname
+
+
+    astro = Astronaut('Mark', 'Watney')
+
+    print(astro.firstname)
+    print(astro.lastname)
 
 
 Initializer Method Without Arguments
@@ -41,36 +59,21 @@ Initializer Method With Arguments
     jose = Astronaut('José', 'Jiménez')
     # My name... José Jiménez
 
+    melissa = Astronaut('Melissa', lastname='Lewis')
+    # My name... Melissa Lewis
+
     mark = Astronaut(firstname='José', lastname='Jiménez')
     # My name... José Jiménez
 
-    melissa = Astronaut('Melissa', lastname='Lewis')
-    # My name... José Jiménez
-
     ryan = Astronaut(lastname='Stone', firstname='Ryan')
-    # My name... José Jiménez
+    # My name... Ryan Stone
 
     ivan = Astronaut()
     # TypeError: __init__() missing 1 required positional argument: 'firstname'
 
 
-Initializing Attributes
-=======================
-.. code-block:: python
-    :caption: Init time attributes
-
-    class Astronaut:
-        def __init__(self):
-            self.firstname = 'Mark'
-            self.lastname = 'Watney'
-
-
-    mark = Astronaut()
-
-    print(mark.firstname)       # Mark
-    print(mark.lastname)        # Watney
-    print(mark.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
-
+Constant Attributes
+===================
 .. code-block:: python
     :caption: Init time attributes
 
@@ -90,6 +93,9 @@ Initializing Attributes
     print(ivan.lastname)        # Watney
     print(ivan.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
 
+
+Variable Attributes
+===================
 .. code-block:: python
     :caption: Init time attributes
 
@@ -334,10 +340,10 @@ OOP Init Model
 :Input:
     .. code-block:: text
 
-        Jan Twardowski, Poland, 1961-04-12
         Mark Watney, USA, 1969-07-21
-        European Space Agency, Europe, 1975-05-30
         National Aeronautics and Space Administration, USA, 1958-07-29
+
+        Jan Twardowski, Poland, 1961-04-12
         Polish Space Agency, Poland, 2014-09-26
 
 :The whys and wherefores:

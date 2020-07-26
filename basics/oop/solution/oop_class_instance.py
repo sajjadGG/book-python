@@ -6,9 +6,8 @@ class SpaceAgency:
     pass
 
 
-twardowski = Astronaut()
 watney = Astronaut()
+twardowski = Astronaut()
 
 nasa = SpaceAgency()
-esa = SpaceAgency()
 polsa = SpaceAgency()

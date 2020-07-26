@@ -12,16 +12,11 @@ class SpaceAgency:
         self.formation = formation
 
 
-twardowski = Astronaut('Jan', 'Twardowski', '1961-04-12')
 watney = Astronaut('Mark', 'Watney', '1969-07-21')
-
-esa = SpaceAgency(
-    name='European Space Agency',
-    location='Europe',
-    formation='1975-05-30')
+twardowski = Astronaut('Jan', 'Twardowski', '1961-04-12')
 
 nasa = SpaceAgency(
-     name='National Aeronautics and Space Administration',
+    name='National Aeronautics and Space Administration',
     location='USA',
     formation='1958-07-29')
 
@@ -33,7 +28,6 @@ polsa = SpaceAgency(
 
 print(twardowski.__dict__)
 print(watney.__dict__)
-print(esa.__dict__)
 print(nasa.__dict__)
 print(polsa.__dict__)
 
