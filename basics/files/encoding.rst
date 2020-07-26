@@ -65,13 +65,13 @@ UTF-8
     :width: 50%
     :align: center
 
-    UTF-8. Source: [unicode3]_
+    UTF-8. Source: [utf]_
 
 .. figure:: img/files-encoding-utf2.jpg
     :width: 50%
     :align: center
 
-    UTF-8. Source: [unicode3]_
+    UTF-8. Source: [utf2]_
 
 
 Unicode Encode Error

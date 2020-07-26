@@ -206,10 +206,10 @@ File Read Str
 
     FILE = r'file_write_hello.txt'
     DATA = 'hello'
-    result = ''
 
-.. code-block:: text
+.. code-block:: python
 
+    result: str
     hello
 
 File Read Multiline
@@ -238,10 +238,10 @@ File Read Multiline
     FILE = r'file_write_hello.txt'
     DATA = 'hello\nworld\n'
 
-.. code-block:: text
+.. code-block:: python
 
-    hello
-    world
+    result: List[str]
+    # ['hello', 'world']
 
 File Read CSV
 -------------

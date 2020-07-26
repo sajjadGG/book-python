@@ -80,38 +80,6 @@ Example
         pass
 
 
-Overload
-========
-.. code-block:: python
-
-    class A:
-        def show(self):
-            return 'a'
-
-    class B(A):
-        pass
-
-
-    obj = B()
-    obj.show()
-    # 'a'
-
-.. code-block:: python
-
-    class A:
-        def show(self):
-            return 'a'
-
-    class B(A):
-        def show(self):
-            return 'b'
-
-
-    obj = B()
-    obj.show()
-    # 'b'
-
-
 Simple Inheritance
 ==================
 .. code-block:: python
@@ -278,8 +246,40 @@ Multiple Inheritance
         pass
 
 
-Calling Parent Methods
-======================
+Overload
+========
+.. code-block:: python
+
+    class A:
+        def show(self):
+            return 'a'
+
+    class B(A):
+        pass
+
+
+    obj = B()
+    obj.show()
+    # 'a'
+
+.. code-block:: python
+
+    class A:
+        def show(self):
+            return 'a'
+
+    class B(A):
+        def show(self):
+            return 'b'
+
+
+    obj = B()
+    obj.show()
+    # 'b'
+
+
+Super Function
+==============
 .. code-block:: python
 
     class A:

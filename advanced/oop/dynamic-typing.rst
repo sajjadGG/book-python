@@ -205,6 +205,7 @@ Container Class
 Example
 =======
 .. code-block:: python
+
     DATA = [
         {"firstname": "Jan", "lastname": "Twardowski", "addresses": [
             {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków", "postcode": "31-008", "region": "Małopolskie", "country": "Poland"}]},

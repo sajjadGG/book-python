@@ -3,7 +3,7 @@ sphinx_rtd_theme
 sphinxcontrib-bibtex
 
 ## Profiling
-yappi
+# yappi
 
 
 # sphinxcontrib-book

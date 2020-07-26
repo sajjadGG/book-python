@@ -88,7 +88,7 @@ Update in Text Mode
 
 
 Update in Binary Mode
-===================
+=====================
 .. highlights::
     * Reading and Writing
     * ``mode='rb+'`` - update in binary mode

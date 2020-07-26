@@ -113,17 +113,17 @@ Class vs Instance
 
     Intuition definition: Class is a blueprint, instances are homes made from this plan. Image source: :cite:`FigureBlueprintHouse`
 
-.. image:: img/oop-classes-class.jpg
+.. figure:: img/oop-classes-class.jpg
     :width: 30%
     :class: inline
 
-    Class [classes]_
+    Class. Source: [class]_
 
-.. image:: img/oop-classes-instances.jpg
+.. figure:: img/oop-classes-instances.jpg
     :width: 30%
     :class: inline
 
-    Instances [instances]_
+    Instances. Source: [instance]_
 
 
 Convention
