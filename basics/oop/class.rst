@@ -123,7 +123,7 @@ Class vs Instance
     :width: 30%
     :class: inline
 
-    Instances. Source: [instance]_
+    Instances. Source: [instances]_
 
 
 Convention
