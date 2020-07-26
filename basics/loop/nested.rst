@@ -5,59 +5,6 @@ Loop Nested Sequences
 *********************
 
 
-Syntax
-======
-.. code-block:: python
-    :caption: Iterating over sequence
-
-    DATA = [
-        'a',
-        'b',
-        'c'
-    ]
-
-    for obj in DATA:
-        print(obj)
-
-    # a
-    # b
-    # c
-
-.. code-block:: python
-    :caption: Iterating over nested sequence
-
-    DATA = [
-        ('a1', 'a2'),
-        ('b1', 'b2'),
-        ('c1', 'c2'),
-    ]
-
-    for obj in DATA:
-        key = obj[0]
-        value = obj[1]
-        print(f'{key} -> {value}')
-
-    # a1 -> a2
-    # b1 -> b2
-    # c1 -> c2
-
-.. code-block:: python
-    :caption: Iterating over nested sequence
-
-    DATA = [
-        ('a1', 'a2'),
-        ('b1', 'b2'),
-        ('c1', 'c2'),
-    ]
-
-    for key, value in DATA:
-        print(f'{key} -> {value}')
-
-    # a1 -> a2
-    # b1 -> b2
-    # c1 -> c2
-
-
 Convention
 ==========
 * ``row`` - best for nested loops with sequence inside
@@ -75,10 +22,33 @@ Convention
 * Note that ``i`` may interfere with ``i`` used as loop counter
 
 
-Nested Sequence with One Type
-=============================
+Vector
+======
+.. highlights::
+    * Suggested variable name: ``value``
+
 .. code-block:: python
-    :caption: Iterating over nested sequence
+
+    DATA = [
+        'a',
+        'b',
+        'c',
+    ]
+
+    for obj in DATA:
+        print(obj)
+
+    # a
+    # b
+    # c
+
+
+List of Pairs
+=============
+.. highlights::
+    * Suggested variable name: ``pair``
+
+.. code-block:: python
 
     DATA = [
         ('a', 1),
@@ -87,14 +57,44 @@ Nested Sequence with One Type
     ]
 
     for obj in DATA:
-        print(obj)
+        first = obj[0]
+        second = obj[1]
 
-    # ('a', 1)
-    # ('b', 2)
-    # ('c', 3)
+        print(first, '->', second)
+
+    # a -> 1
+    # b -> 2
+    # c -> 3
+
+
+List of Sequence
+================
+.. highlights::
+    * Suggested variable name: ``row`` or ``line``
 
 .. code-block:: python
-    :caption: Iterating over nested sequence
+
+    DATA = [
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+    ]
+
+    for obj in DATA:
+        sepal_length = obj[0]
+        sepal_width = obj[1]
+        petal_length = obj[2]
+        petal_width = obj[3]
+        species = obj[4]
+
+        total = sepal_length + sepal_width + petal_length + petal_width
+        print(species, '->', sepal_length)
+
+    # setosa -> 10.2
+    # versicolor -> 13.9
+    # virginica -> 16.599999999999998
+
+.. code-block:: python
 
     DATA = [
         (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -103,15 +103,20 @@ Nested Sequence with One Type
     ]
 
     for row in DATA:
-        print(row)
+        features = row[0:4]
+        label = row[4]
+        print(f'{label} -> {sum(features)}')
 
-    # (5.1, 3.5, 1.4, 0.2, 'setosa')
-    # (5.7, 2.8, 4.1, 1.3, 'versicolor')
-    # (6.3, 2.9, 5.6, 1.8, 'virginica')
+    # setosa -> (5.1, 3.5, 1.4, 0.2)
+    # versicolor -> (5.7, 2.8, 4.1, 1.3)
+    # virginica -> (6.3, 2.9, 5.6, 1.8)
 
 
-Nested Loop
-===========
+Matrix
+======
+.. highlights::
+    * Suggested variable name: ``row``
+
 .. code-block:: python
 
     DATA = [
@@ -120,19 +125,23 @@ Nested Loop
         [7, 8, 9],
     ]
 
-    for row in DATA:
-        for column in row:
-            print(column, end=', ')
+    for obj in DATA:
+        col1 = obj[0]
+        col2 = obj[1]
+        col3 = obj[2]
 
-        print()
+        print(col1, '->', col2, '->', col3)
 
-    # 1, 2, 3,
-    # 4, 5, 6,
-    # 7, 8, 9,
+    # 1 -> 2 -> 3
+    # 4 -> 5 -> 6
+    # 7 -> 8 -> 9
 
 
-Nested Sequence with Many Types
-===============================
+Mixed
+=====
+.. highlights::
+    * Suggested variable name: ``outer`` and ``inner``
+
 .. code-block:: python
     :caption: Iterating over ``list`` with scalar and vector values - simple loop
 
@@ -175,7 +184,7 @@ Nested Sequence with Many Types
 
 
     for obj in DATA:
-        if isinstance(obj, (list, set, tuple)):
+        if isinstance(obj, (list, tuple, set, frozenset)):
             for inner in obj:
                 print(inner)
         else:
@@ -189,25 +198,6 @@ Nested Sequence with Many Types
     # False
     # True
     # None
-
-
-Enumerate
-=========
-.. code-block:: python
-    :caption: Enumerating and item index
-
-    DATA = [
-        (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-        (6.3, 2.9, 5.6, 1.8, 'virginica'),
-    ]
-
-    for i, row in enumerate(DATA):
-        print(f'{i} -> {row}')
-
-    # 0 -> (5.1, 3.5, 1.4, 0.2, 'setosa')
-    # 1 -> (5.7, 2.8, 4.1, 1.3, 'versicolor')
-    # 2 -> (6.3, 2.9, 5.6, 1.8, 'virginica')
 
 
 Assignments

@@ -11,13 +11,15 @@ Rationale
     * Since Python 3.7 ``dict`` keeps order
     * Before Python 3.7 ``dict`` order is not ensured!!
 
-
 Iterate
 =======
-.. code-block:: python
-    :caption: By default ``dict`` iterates over keys
+.. highlights::
+    * By default ``dict`` iterates over keys
+    * Suggested variable name: ``key``
 
-    iris = {
+.. code-block:: python
+
+    DATA = {
         'Sepal length': 5.1,
         'Sepal width': 3.5,
         'Petal length': 1.4,
@@ -25,7 +27,7 @@ Iterate
         'Species': 'setosa',
     }
 
-    for obj in iris:
+    for obj in DATA:
         print(obj)
 
     # 'Sepal length'
@@ -37,10 +39,12 @@ Iterate
 
 Iterate Keys
 ============
-.. code-block:: python
-    :caption: Iterating over ``dict`` items
+.. highlights::
+    * Suggested variable name: ``key``
 
-    iris = {
+.. code-block:: python
+
+    DATA = {
         'Sepal length': 5.1,
         'Sepal width': 3.5,
         'Petal length': 1.4,
@@ -48,10 +52,10 @@ Iterate Keys
         'Species': 'setosa',
     }
 
-    list(iris.keys())
+    list(DATA.keys())
     # ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
 
-    for obj in iris.keys():
+    for obj in DATA.keys():
         print(obj)
 
     # 'Sepal length'
@@ -63,10 +67,12 @@ Iterate Keys
 
 Iterate Values
 ==============
-.. code-block:: python
-    :caption: Iterating over ``dict`` items
+.. highlights::
+    * Suggested variable name: ``value``
 
-    iris = {
+.. code-block:: python
+
+    DATA = {
         'Sepal length': 5.1,
         'Sepal width': 3.5,
         'Petal length': 1.4,
@@ -74,10 +80,10 @@ Iterate Values
         'Species': 'setosa',
     }
 
-    list(iris.values())
+    list(DATA.values())
     # [5.1, 3.5, 1.4, 0.2, 'setosa']
 
-    for obj in iris.values():
+    for obj in DATA.values():
         print(obj)
 
     # 5.1
@@ -90,12 +96,12 @@ Iterate Values
 Iterate Key-Value Pairs
 =======================
 .. highlights::
-    * list of pairs ``key``, ``value``
+    * Suggested variable name: ``key``, ``value``
 
 .. code-block:: python
     :caption: Getting pair: ``key``, ``value`` from ``dict`` items
 
-    iris = {
+    DATA = {
         'Sepal length': 5.1,
         'Sepal width': 3.5,
         'Petal length': 1.4,
@@ -103,7 +109,7 @@ Iterate Key-Value Pairs
         'Species': 'setosa',
     }
 
-    list(iris.items())
+    list(DATA.items())
     # [
     #   ('Sepal length', 5.1),
     #   ('Sepal width', 3.5),
@@ -113,7 +119,7 @@ Iterate Key-Value Pairs
     # ]
 
 
-    for key, value in iris.items():
+    for key, value in DATA.items():
         print(key, '->', value)
 
     # Sepal length -> 5.1
@@ -121,6 +127,27 @@ Iterate Key-Value Pairs
     # Petal length -> 1.4
     # Petal width -> 0.2
     # Species -> setosa
+
+
+List of Dicts
+=============
+.. code-block:: python
+    :caption: Unpacking ``list`` of ``dict``
+
+    DATA = [
+        {'Sepal length': 5.1, 'Sepal width': 3.5, 'Petal length': 1.4, 'Petal width': 0.2, 'Species': 'setosa'},
+        {'Sepal length': 5.7, 'Sepal width': 2.8, 'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
+        {'Sepal length': 6.3, 'Sepal width': 2.9, 'Petal length': 5.6, 'Petal width': 1.8, 'Species': 'virginica'},
+    ]
+
+    for row in DATA:
+        sepal_length = row['Sepal length']
+        species = row['Species']
+        print(f'{species} -> {sepal_length}')
+
+    # setosa -> 5.1
+    # versicolor -> 5.7
+    # virginica -> 6.3
 
 
 Generate with Range

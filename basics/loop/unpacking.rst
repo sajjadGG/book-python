@@ -8,7 +8,6 @@ Loop Unpacking Sequences
 Recap
 =====
 .. code-block:: python
-    :caption: Recap information about unpacking
 
     a, b = 1, 2
     a, b = (1, 2)
@@ -19,7 +18,6 @@ Recap
 List of Pairs
 =============
 .. code-block:: python
-    :caption: Unpacking values in loop
 
     DATA = [
         ('a', 1),
@@ -45,111 +43,26 @@ List of Sequence
         (6.3, 2.9, 5.6, 1.8, 'virginica'),
     ]
 
-    for sepal_len, sepal_wid, petal_len, petal_wid, species in DATA:
-        print(f'{species} -> {sepal_len}')
-
-    # setosa -> 5.1
-    # versicolor -> 5.7
-    # virginica -> 6.3
-
-.. code-block:: python
-
-    DATA = [
-        (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-        (6.3, 2.9, 5.6, 1.8, 'virginica'),
-    ]
+    for sepal_length, sepal_width, petal_length, petal_width, species in DATA:
+        print(species, '->', sepal_length)
 
     for sl, sw, pl, pw, s in DATA:
-        print(f'{s} -> {sl}')
-
-    # setosa -> 5.1
-    # versicolor -> 5.7
-    # virginica -> 6.3
-
-.. code-block:: python
-
-    DATA = [
-        (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-        (6.3, 2.9, 5.6, 1.8, 'virginica'),
-    ]
-
-    for row in DATA:
-        features = row[0:4]
-        label = row[4]
-        print(f'{label} -> {features}')
-
-    # setosa -> (5.1, 3.5, 1.4, 0.2)
-    # versicolor -> (5.7, 2.8, 4.1, 1.3)
-    # virginica -> (6.3, 2.9, 5.6, 1.8)
-
-.. code-block:: python
-
-    DATA = [
-        (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-        (6.3, 2.9, 5.6, 1.8, 'virginica'),
-    ]
-
-    for row in DATA:
-        *features, label = row
-        print(f'{label} -> {features}')
-
-    # setosa -> [5.1, 3.5, 1.4, 0.2]
-    # versicolor -> [5.7, 2.8, 4.1, 1.3]
-    # virginica -> [6.3, 2.9, 5.6, 1.8]
-
-.. code-block:: python
-
-    DATA = [
-        (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-        (6.3, 2.9, 5.6, 1.8, 'virginica'),
-    ]
+        print(s, '->', sl)
 
     for *features, label in DATA:
-        print(f'{label} -> {features}')
-
-    # setosa -> [5.1, 3.5, 1.4, 0.2]
-    # versicolor -> [5.7, 2.8, 4.1, 1.3]
-    # virginica -> [6.3, 2.9, 5.6, 1.8]
-
-.. code-block:: python
-
-    DATA = [
-        (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-        (6.3, 2.9, 5.6, 1.8, 'virginica'),
-    ]
+        print(label, '->', sum(features))
 
     for *X,y in DATA:
-        print(f'{y} -> {X}')
+        print(y, '->', sum(X))
 
     # setosa -> [5.1, 3.5, 1.4, 0.2]
     # versicolor -> [5.7, 2.8, 4.1, 1.3]
     # virginica -> [6.3, 2.9, 5.6, 1.8]
 
+
+Mixed
+=====
 .. code-block:: python
-
-    DATA = [
-        (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-        (6.3, 2.9, 5.6, 1.8, 'virginica'),
-    ]
-
-    for sepal_length, *_, species in DATA:
-        print(f'{species} -> {sepal_length}')
-
-    # setosa -> 5.1
-    # versicolor -> 5.7
-    # virginica -> 6.3
-
-
-Nested
-======
-.. code-block:: python
-    :caption: Unpacking nested sequence
 
     DATA = [
         (1, 2),
@@ -169,25 +82,22 @@ Nested
     # ['NASA', 'ESA', 'Roscosmos'] -> 1
 
 
-List of Dicts
-=============
+Enumerate
+=========
 .. code-block:: python
-    :caption: Unpacking ``list`` of ``dict``
 
     DATA = [
-        {'Sepal length': 5.1, 'Sepal width': 3.5, 'Petal length': 1.4, 'Petal width': 0.2, 'Species': 'setosa'},
-        {'Sepal length': 5.7, 'Sepal width': 2.8, 'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
-        {'Sepal length': 6.3, 'Sepal width': 2.9, 'Petal length': 5.6, 'Petal width': 1.8, 'Species': 'virginica'},
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
     ]
 
-    for row in DATA:
-        sepal_length = row['Sepal length']
-        species = row['Species']
-        print(f'{species} -> {sepal_length}')
+    for i, row in enumerate(DATA):
+        print(f'{i} -> {row}')
 
-    # setosa -> 5.1
-    # versicolor -> 5.7
-    # virginica -> 6.3
+    # 0 -> (5.1, 3.5, 1.4, 0.2, 'setosa')
+    # 1 -> (5.7, 2.8, 4.1, 1.3, 'versicolor')
+    # 2 -> (6.3, 2.9, 5.6, 1.8, 'virginica')
 
 
 Assignments
