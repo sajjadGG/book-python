@@ -180,6 +180,68 @@ Examples
 Assignments
 ===========
 
+File Read Str
+-------------
+* Complexity level: easy
+* Lines of code to write: 3 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/file_read_str.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Write ``DATA`` to file ``FILE``
+    #. Read ``FILE`` to ``result: str``
+    #. Print ``result``
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Zapisz ``DATA`` do pliku ``FILE``
+    #. Wczytaj ``FILE`` do ``result: str``
+    #. Wypisz ``result``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+.. code-block:: python
+
+    FILE = r'file_write_hello.txt'
+    DATA = 'hello'
+    result = ''
+
+.. code-block:: text
+
+    hello
+
+File Read Multiline
+-------------------
+* Complexity level: easy
+* Lines of code to write: 3 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/file_read_multiline.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Write ``DATA`` to file ``FILE``
+    #. Read ``FILE`` to ``result: List[str]``
+    #. Print ``result``
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Zapisz ``DATA`` do pliku ``FILE``
+    #. Wczytaj ``FILE`` do ``result: List[str]``
+    #. Wypisz ``result``
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+.. code-block:: python
+
+    FILE = r'file_write_hello.txt'
+    DATA = 'hello\nworld\n'
+
+.. code-block:: text
+
+    hello
+    world
+
 File Read CSV
 -------------
 * Complexity level: easy
@@ -188,18 +250,16 @@ File Read CSV
 * Solution: :download:`solution/file_read_csv.py`
 
 :English:
-    #. Download :download:`data/iris.csv` save as ``iris.csv``
+    #. Use data from "Input" section (see below)
+    #. Write ``DATA`` to file ``FILE``
+    #. Read ``FILE``
     #. Separate header from data
-    #. Write header (first line) to ``header: list``
-    #. Define:
-
-        * ``features: List[tuple]`` - list of measurements (each row is a tuple)
-        * ``labels: List[str]`` - list of species names
-
+    #. Write header (first line) to ``header``
     #. Read file and for each line:
 
-        * Remove whitespaces
+        * Strip whitespaces
         * Split line by coma ``,``
+        * Convert measurements do ``Tuple[float]``
         * Append measurements to ``features``
         * Append species name to ``labels``
 
@@ -207,23 +267,44 @@ File Read CSV
     #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Ściągnij :download:`data/iris.csv` i zapisz jako ``iris.csv``
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Zapisz ``DATA`` do pliku ``FILE``
+    #. Wczytaj ``FILE``
     #. Odseparuj nagłówek od danych
-    #. Zapisz nagłówek (pierwsza linia) do ``header: list``
-    #. Zdefiniuj:
-
-        * ``features: List[tuple]`` - lista pomiarów (każdy wiersz to tuple)
-        * ``labels: List[str]`` - lista nazw gatunków
-
+    #. Zapisz nagłówek (pierwsza linia) do ``header``
     #. Zaczytaj plik i dla każdej linii:
 
-        * Usuń białe znaki
+        * Usuń białe znaki z początku i końca linii
         * Podziel linię po przecinku ``,``
+        * Przekonwertuj pomiary do ``Tuple[float]``
         * Dodaj pomiary do ``features``
         * Dodaj gatunek do ``labels``
 
     #. Wyświetl ``header``, ``features`` i ``labels``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        FILE = r'file_read_csv.csv'
+        DATA = """sepal_length,sepal_width,petal_length,petal_width,species
+        5.4,3.9,1.3,0.4,setosa
+        5.9,3.0,5.1,1.8,virginica
+        6.0,3.4,4.5,1.6,versicolor
+        7.3,2.9,6.3,1.8,virginica
+        5.6,2.5,3.9,1.1,versicolor
+        5.4,3.9,1.3,0.4,setosa
+        5.5,2.6,4.4,1.2,versicolor
+        5.7,2.9,4.2,1.3,versicolor
+        4.9,3.1,1.5,0.1,setosa
+        6.7,2.5,5.8,1.8,virginica
+        6.5,3.0,5.2,2.0,virginica
+        5.1,3.3,1.7,0.5,setosa
+        """
+
+        header = []
+        features = []
+        labels = []
 
 :Output:
     .. code-block:: python
@@ -231,16 +312,15 @@ File Read CSV
         header: List[str]
         # ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
 
-        features: List[tuple]
+        features: List[Tuple[float]]
         # [(5.4, 3.9, 1.3, 0.4), (5.9, 3.0, 5.1, 1.8), (6.0, 3.4, 4.5, 1.6),
         #  (7.3, 2.9, 6.3, 1.8), (5.6, 2.5, 3.9, 1.1), (5.4, 3.9, 1.3, 0.4),
         #  (5.5, 2.6, 4.4, 1.2), (5.7, 2.9, 4.2, 1.3), (4.9, 3.1, 1.5, 0.1), ...]
 
-        labels: list
+        labels: List[str]
         # ['setosa', 'virginica', 'versicolor', 'virginica', 'versicolor',
         #  'setosa', 'versicolor', 'versicolor', 'setosa', 'virginica',
         #  'virginica', 'setosa', 'setosa', ...]
-
 
 :The whys and wherefores:
     * Reading file
@@ -257,8 +337,8 @@ File Read Parsing Dict
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Using ``file.write()`` save input data from listing below to file ``hosts-simple.txt``
-    #. Read file and for each line:
+    #. Write ``DATA`` to file ``FILE``
+    #. Read ``FILE`` and for each line:
 
         * Skip line if contains only whitespaces (``str.isspace()``)
         * Remove leading and trailing whitespaces
@@ -266,13 +346,12 @@ File Read Parsing Dict
         * Separate IP address and hosts names
         * Append IP address and hosts names to ``result``
 
-    #. Merge hostnames for the same IP
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Używając ``file.write()`` zapisz dane wejściowe z listingu poniżej do pliku ``hosts-simple.txt``
-    #. Zaczytaj plik i dla każdej lini:
+    #. Zapisz ``DATA`` do pliku ``FILE``
+    #. Wczytaj ``FILE`` i dla każdej lini:
 
         * Pomiń linię, jeżeli zawiera tylko białe znaki (``str.isspace()``)
         * Usuń białe znaki na początku i końcu linii
@@ -280,15 +359,13 @@ File Read Parsing Dict
         * Odseparuj adres IP i nazwy hostów
         * Dodaj adres IP i nazwy hostów do ``result``
 
-    #. Scal nazwy hostów dla tego samego IP
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
 
-        DATA = """
-        127.0.0.1       localhost
-        127.0.0.1       astromatt
+        FILE = r'file_read_parsing_dict.txt'
+        DATA = """127.0.0.1       localhost
         10.13.37.1      nasa.gov esa.int roscosmos.ru
         255.255.255.255 broadcasthost
         ::1             localhost
@@ -298,7 +375,7 @@ File Read Parsing Dict
     .. code-block:: python
 
         result: dict
-        # {'127.0.0.1': ['localhost', 'astromatt'],
+        # {'127.0.0.1': ['localhost'],
         #  '10.13.37.1': ['nasa.gov', 'esa.int', 'roscosmos.ru'],
         #  '255.255.255.255': ['broadcasthost'],
         #  '::1': ['localhost']}

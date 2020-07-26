@@ -56,10 +56,10 @@ Write Multiple Lines
         'We choose to go to the Moon in this decade and do the other things.',
         'Not because they are easy, but because they are hard.']
 
-    data = '\n'.join(DATA)
+    result = '\n'.join(DATA)
 
     with open(FILE, mode='w') as file:
-        file.write(data)
+        file.write(result)
 
 .. code-block:: python
 
@@ -69,23 +69,10 @@ Write Multiple Lines
         'We choose to go to the Moon in this decade and do the other things.',
         'Not because they are easy, but because they are hard.']
 
-    data = [line+'\n' for line in DATA]
+    result = [line+'\n' for line in DATA]
 
     with open(FILE, mode='w') as file:
-        file.writelines(data)
-
-.. code-block:: python
-
-    FILE = r'/tmp/myfile.txt'
-    DATA = [
-        'We choose to go to the Moon.',
-        'We choose to go to the Moon in this decade and do the other things.',
-        'Not because they are easy, but because they are hard.']
-
-    data = map(lambda line: line+'\n', DATA)
-
-    with open(FILE, mode='w') as file:
-        file.writelines(data)
+        file.writelines(result)
 
 
 Write Non-Str Data
@@ -99,28 +86,12 @@ Write Non-Str Data
     FILE = r'/tmp/myfile.txt'
     DATA = [1, 2, 3]
 
-    data = ','.join(str(x) for x in DATA)
+    result = ','.join(str(x) for x in DATA) + '\n'
 
     with open(FILE, mode='w') as file:
-        file.write(data)
+        file.write(result)
 
     # 1,2,3
-
-.. code-block:: python
-
-    FILE = r'/tmp/myfile.txt'
-    DATA = [1, 2, 3]
-
-    data = ','.join(map(str, DATA))
-
-    with open(FILE, mode='w') as file:
-        file.writelines(data)
-
-    # 1,2,3
-
-.. code-block:: python
-
-
 
 .. note:: When writing output to the stream, if newline is ``None``, any ``'\n'`` characters written are translated to the system default line separator, ``os.linesep``. If newline is ``''`` or ``'\n'``, no translation takes place. If newline is any of the other legal values, any ``'\n'`` characters written are translated to the given string. Source: https://docs.python.org/3/library/io.html#io.TextIOWrapper
 
@@ -142,17 +113,144 @@ Reading From One File and Writing to Another
 Assignments
 ===========
 
-File Write CSV
+File Write Str
 --------------
 * Complexity level: easy
-* Lines of code to write: 5 lines
-* Estimated time of completion: 10 min
+* Lines of code to write: 3 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/file_write_str.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Write ``DATA`` to file ``FILE``
+    #. Check in your operating system if data was written correctly
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Zapisz ``DATA`` do pliku ``FILE``
+    #. Sprawdź w systemie operacyjnym czy dane zapisały się poprawnie
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+.. code-block:: python
+
+    FILE = r'file_write_hello.txt'
+    DATA = 'hello'
+
+File Write Multiline
+--------------------
+* Complexity level: easy
+* Lines of code to write: 3 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/file_write_multiline.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Write ``DATA`` to file ``FILE``
+    #. Check in your operating system if data was written correctly
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Zapisz ``DATA`` do pliku ``FILE``
+    #. Sprawdź w systemie operacyjnym czy dane zapisały się poprawnie
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+.. code-block:: python
+
+    FILE = r'file_write_multiline.txt'
+    DATA = """127.0.0.1       localhostt
+    10.13.37.1      nasa.gov esa.int roscosmos.ru
+    255.255.255.255 broadcasthost
+    ::1             localhost
+    """
+
+File Write List
+---------------
+* Complexity level: easy
+* Lines of code to write: 3 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/file_write_list.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Write ``DATA`` to file ``FILE``
+    #. Check in your operating system if data was written correctly
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Zapisz ``DATA`` do pliku ``FILE``
+    #. Sprawdź w systemie operacyjnym czy dane zapisały się poprawnie
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+.. code-block:: python
+
+    FILE = r'file_write_newline.txt'
+    DATA = ['hello', 'world']
+
+File Write Non-Str
+------------------
+* Complexity level: easy
+* Lines of code to write: 3 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/file_write_nonstr.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Write ``DATA`` to file ``FILE``
+    #. Check in your operating system if data was written correctly
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Zapisz ``DATA`` do pliku ``FILE``
+    #. Sprawdź w systemie operacyjnym czy dane zapisały się poprawnie
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+.. code-block:: python
+
+    FILE = r'file_write_nonstr.txt'
+    DATA = (5.1, 3.5, 1.4, 0.2, 'setosa')
+
+File Write Iris
+---------------
+* Complexity level: easy
+* Lines of code to write: 3 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/file_write_iris.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Write ``DATA`` to file ``FILE``
+    #. Check in your operating system if data was written correctly
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Zapisz ``DATA`` do pliku ``FILE``
+    #. Sprawdź w systemie operacyjnym czy dane zapisały się poprawnie
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+.. code-block:: python
+
+    FILE = r'file_write_iris.txt'
+    DATA = [
+        (5.8, 2.7, 5.1, 1.9, 'virginica'),
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor')]
+
+File Write CSV
+--------------
+* Complexity level: medium
+* Lines of code to write: 6 lines
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/file_write_csv.py`
 
 :English:
     #. Use data from "Input" section (see below)
     #. Separate header from data
-    #. Write data to file: ``iris.csv``
+    #. Write data to file: ``FILE``
     #. First line in file must be a header (first line of ``DATA``)
     #. For each row, convert it's values to ``str``
     #. Use coma (``,``) as a value separator
@@ -162,7 +260,7 @@ File Write CSV
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Odseparuj nagłówek od danych
-    #. Zapisz dane do pliku: ``iris.csv``
+    #. Zapisz dane do pliku: ``FILE``
     #. Pierwsza linia w pliku musi być nagłówkiem (pierwsza linia ``DATA``)
     #. Dla każdego wiersza przekonwertuj jego wartości do ``str``
     #. Użyj przecinka (``,``) jako separatora wartości
@@ -172,6 +270,7 @@ File Write CSV
 :Input:
     .. code-block:: python
 
+        FILE = r'file_write_csv.csv'
         DATA = [
             ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -198,4 +297,4 @@ File Write CSV
         ]
 
 :Hint:
-    * ``map(str, row)``
+    * ``[str(x) for x in ...]``
