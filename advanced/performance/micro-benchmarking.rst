@@ -367,6 +367,22 @@ Get from cache
 
     # 153 µs ± 9.64 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 
+.. code-block:: python
+
+    _cache = {}
+
+
+    def factorial(n):
+        if n == 0:
+            return 1
+
+        if (result := _cache.get(n)):
+            return result
+
+        result = n * factorial(n-1)
+        _cache[n] = result
+        return result
+
 
 References
 ==========

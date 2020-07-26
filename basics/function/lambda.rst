@@ -11,6 +11,7 @@ Rationale
     * Lambda - Anonymous functions
     * When function is used once
     * When function is short
+    * You don't need to name it (hence it is anonymous)
 
 
 Syntax
@@ -19,20 +20,18 @@ Syntax
 
     lambda <arguments>: <expression>
 
-
-Definition
-==========
 .. code-block:: python
 
-    lambda x: x**2
-
-.. code-block:: python
-
-    lambda x: x%2==0
-
-.. code-block:: python
-
+    lambda x: x+1
     lambda x,y: x+y
+
+.. code-block:: python
+
+    def _(x):
+        return x+1
+
+    def _(x,y):
+        return x+y
 
 
 Convention
@@ -41,6 +40,8 @@ Convention
     * Usually parameters are named ``x`` and ``y``
     * Use shortest code possible
     * Do not assign ``lambda`` to variable
+    * Lambda is anonymous function and it should stay anonymous. Do not name it
+    * :pep:`8` states: "Always use a def statement instead of an assignment statement that binds a lambda expression directly to an identifier". Lambda is anonymous function and it should stay anonymous. Do not name it.
     * Usually there are no spaces in lambda expressions (to make code shorter)
 
 .. code-block:: python
@@ -48,96 +49,107 @@ Convention
     lambda x,y: x+y
 
 .. code-block:: python
-    :caption: Lambda is anonymous function and it should stay anonymous. Do not name it.
 
     square = lambda x: x**2
     square(4)
     # 16
 
-Use Case
-========
-.. code-block:: python
 
-    DATA = [1, 2, 3, 4]
+    def square(x):
+        return x**2
 
-    def is_even(x):
-        if x % 2 == 0:
-            return True
-        else:
-            return False
-
-    list(filter(is_even, DATA))
-    # [2, 4]
+    square(4)
+    # 16
 
 .. code-block:: python
+    :caption: :pep:`8` states: "Always use a def statement instead of an assignment statement that binds a lambda expression directly to an identifier".
 
-    DATA = [1, 2, 3, 4]
+    # Correct:
+    def f(x): return 2*x
 
-    def is_even(x):
-        return x % 2 == 0
+    # Wrong:
+    f = lambda x: 2*x
 
-    list(filter(is_even, DATA))
-    # [2, 4]
 
+Lambda with Map
+===============
 .. code-block:: python
-
-    DATA = [1, 2, 3, 4]
-
-    list(filter(lambda x: x%2==0, DATA))
-    # [2, 4]
-
-
-Examples
-========
-.. code-block:: python
-    :caption: Example 1
+    :caption: Increment
 
     data = [1, 2, 3, 4]
 
-    def increment(x):
-        return x + 1
-
-
-    list(map(increment, data))
-    # [2, 3, 4, 5]
-
-    list(map(lambda x: x+1, data))
+    result = map(lambda x: x+1, data)
+    list(result)
     # [2, 3, 4, 5]
 
 .. code-block:: python
-    :caption: Example 2
+    :caption: Square
+
+    data = [1, 2, 3, 4]
+
+    result = map(lambda x: x**2, data)
+    list(result)
+    # [1, 4, 9, 16]
+
+.. code-block:: python
+    :caption: Translate
+
+    PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
+          'ł': 'l', 'ń': 'n', 'ó': 'o',
+          'ś': 's', 'ż': 'z', 'ź': 'z'}
+
+    text = 'zażółć gęślą jaźń'
+
+    result = map(lambda x: PL.get(x,x), text)
+    ''.join(result)
+
+
+Lambda with Filter
+==================
+.. code-block:: python
+    :caption: Even numbers
+
+    DATA = [1, 2, 3, 4]
+
+    result = filter(lambda x: x%2==0, DATA)
+    list(result)
+    # [2, 4]
+
+.. code-block:: python
+    :caption: Adult people
 
     people = [
         {'age': 21, 'name': 'Jan Twardowski'},
         {'age': 25, 'name': 'Mark Watney'},
         {'age': 18, 'name': 'Melissa Lewis'}]
 
-    def adult(person):
-        if person['age'] >= 21:
-            return True
-        else:
-            return False
-
-
-    list(filter(lambda x: x['age'] >= 21, people))
+    result = filter(lambda x: x['age'] >= 21, people)
+    list(result)
     # [{'age': 21, 'name': 'Jan Twardowski'},
     #  {'age': 25, 'name': 'Mark Watney'}]
 
 .. code-block:: python
-    :caption: ``filter()`` example
+    :caption: Astronauts
 
     people = [
         {'is_astronaut': False, 'name': 'Jan Twardowski'},
         {'is_astronaut': True, 'name': 'Mark Watney'},
         {'is_astronaut': True, 'name': 'Melissa Lewis'}]
 
-    def astronaut(person):
-        return person['is_astronaut']
-
-    list(filter(lambda x: x['is_astronaut'], people))
+    result = filter(lambda x: x['is_astronaut'], people)
+    list(result)
     # [{'is_astronaut': True, 'name': 'Mark Watney'},
     #  {'is_astronaut': True, 'name': 'Melissa Lewis'}]
 
+.. code-block:: python
+
+    astronauts = ['Mark Watney', 'Melissa Lewis']
+
+    people = ['Jan Twardowski', 'Mark Watney',
+              'Melissa Lewis', 'Jimenez']
+
+    result = filter(lambda x: x in astronauts, people)
+    list(result)
 
 Assignments
 ===========

@@ -149,6 +149,7 @@ Recap
     :caption: Recap
     :name: Basic Recap
 
+    about/good-practices.rst
     about/recap.rst
     about/certificate.rst
 

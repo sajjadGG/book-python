@@ -201,21 +201,6 @@ Map
     list(result)
     # [1, 4, 9]
 
-.. code-block:: python
-
-    PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
-          'ł': 'l', 'ń': 'n', 'ó': 'o',
-          'ś': 's', 'ż': 'z', 'ź': 'z'}
-
-    def translate(letter):
-        return PL.get(letter, letter)
-
-    text = 'zażółć gęślą jaźń'
-
-    result = map(translate, text)
-    ''.join(result)
-    # 'zazolc gesla jazn'
-
 Filter
 ======
 .. code-block:: python
@@ -258,38 +243,6 @@ Filter
     list(result)
     # [2, 4, 6]
 
-.. code-block:: python
-    :caption: ``filter()`` example
-
-    def adult(person):
-        return person['age'] >= 21:
-
-    people = [
-        {'age': 21, 'name': 'Jan Twardowski'},
-        {'age': 25, 'name': 'Mark Watney'},
-        {'age': 18, 'name': 'Melissa Lewis'}]
-
-    result = filter(adult, people)
-    list(result)
-    # [{'age': 21, 'name': 'Jan Twardowski'},
-    #  {'age': 25, 'name': 'Mark Watney'}]
-
-.. code-block:: python
-    :caption: ``filter()`` example
-
-    def astronaut(person):
-        return person['is_astronaut']
-
-    people = [
-        {'is_astronaut': False, 'name': 'Jan Twardowski'},
-        {'is_astronaut': True, 'name': 'Mark Watney'},
-        {'is_astronaut': True, 'name': 'Melissa Lewis'}]
-
-    result = filter(astronaut, people)
-    list(result)
-    # [{'is_astronaut': True, 'name': 'Mark Watney'},
-    #  {'is_astronaut': True, 'name': 'Melissa Lewis'}]
-
 
 Functools
 =========
@@ -323,6 +276,81 @@ Itertools
     combinations(iterable, r)
     combinations_with_replacement(iterable, r)
     groupby(iterable, key=None)
+
+
+Examples
+========
+.. code-block:: python
+
+    data = [1, 2, 3, 4]
+
+    def increment(x):
+        return x + 1
+
+    result = map(increment, data)
+    list(result)
+    # [2, 3, 4, 5]
+
+.. code-block:: python
+
+    PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
+          'ł': 'l', 'ń': 'n', 'ó': 'o',
+          'ś': 's', 'ż': 'z', 'ź': 'z'}
+
+    text = 'zażółć gęślą jaźń'
+
+    def translate(letter):
+        return PL.get(letter, letter)
+
+    result = map(translate, text)
+    ''.join(result)
+    # 'zazolc gesla jazn'
+
+.. code-block:: python
+    :caption: ``filter()`` example
+
+    def adult(person):
+        return person['age'] >= 21:
+
+    people = [
+        {'age': 21, 'name': 'Jan Twardowski'},
+        {'age': 25, 'name': 'Mark Watney'},
+        {'age': 18, 'name': 'Melissa Lewis'}]
+
+    result = filter(adult, people)
+    list(result)
+    # [{'age': 21, 'name': 'Jan Twardowski'},
+    #  {'age': 25, 'name': 'Mark Watney'}]
+
+.. code-block:: python
+    :caption: ``filter()`` example
+
+    def astronaut(person):
+        return person['is_astronaut']
+
+    people = [
+        {'is_astronaut': False, 'name': 'Jan Twardowski'},
+        {'is_astronaut': True, 'name': 'Mark Watney'},
+        {'is_astronaut': True, 'name': 'Melissa Lewis'}]
+
+    result = filter(astronaut, people)
+    list(result)
+    # [{'is_astronaut': True, 'name': 'Mark Watney'},
+    #  {'is_astronaut': True, 'name': 'Melissa Lewis'}]
+
+.. code-block:: python
+
+    astronauts = ['Mark Watney', 'Melissa Lewis']
+
+    people = ['Jan Twardowski', 'Mark Watney',
+              'Melissa Lewis', 'Jimenez']
+
+    def is_astronaut(person):
+        return person in astronauts
+
+    result = filter(is_astronaut, people)
+    list(result)
+    # ['Mark Watney', 'Melissa Lewis']
 
 
 Assignments

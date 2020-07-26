@@ -154,7 +154,7 @@ Examples
     total = 0
 
     with open(FILE) as file:
-        for line in file;
+        for line in file:
             total += sum(line)
 
     print(total)
@@ -162,6 +162,7 @@ Examples
 .. code-block:: python
 
     moving_average = 0
+    window = 10
     tmp = []
 
     with open(FILE) as file:
@@ -170,7 +171,7 @@ Examples
             values = [x for x in line if x.isnumeric()]
             tmp.append(sum(values) / len(values))
 
-            if i % 100_000 == 0:
+            if i % window == 0:
                 moving_average += sum(tmp) / len(tmp)
                 tmp = []
 
