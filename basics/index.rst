@@ -134,9 +134,10 @@ Object Oriented Programming
     :name: Basic Object Oriented Programming
 
     oop/class.rst
+    oop/method.rst
     oop/attribute.rst
     oop/init.rst
-    oop/method.rst
+    oop/methods-attributes.rst
     oop/inheritance.rst
     oop/stringify.rst
     oop/architecture.rst

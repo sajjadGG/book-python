@@ -347,6 +347,7 @@ File Read Parsing Dict
         * Separate IP address and hosts names
         * Append IP address and hosts names to ``result``
 
+    #. Merge hostnames for the same IP
     #. Compare result with "Output" section (see below)
 
 :Polish:
@@ -360,6 +361,7 @@ File Read Parsing Dict
         * Odseparuj adres IP i nazwy hostów
         * Dodaj adres IP i nazwy hostów do ``result``
 
+    #. Scal nazwy hostów dla tego samego IP
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
@@ -369,14 +371,13 @@ File Read Parsing Dict
         DATA = """127.0.0.1       localhost
         10.13.37.1      nasa.gov esa.int roscosmos.ru
         255.255.255.255 broadcasthost
-        ::1             localhost
-        """
+        ::1             localhost"""
 
 :Output:
     .. code-block:: python
 
         result: dict
-        # {'127.0.0.1': ['localhost'],
+        # {'127.0.0.1': ['localhost', 'astromatt'],
         #  '10.13.37.1': ['nasa.gov', 'esa.int', 'roscosmos.ru'],
         #  '255.255.255.255': ['broadcasthost'],
         #  '::1': ['localhost']}
