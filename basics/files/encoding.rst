@@ -20,19 +20,32 @@ Rationale
     :width: 33%
     :align: center
 
-    Windows 2000 Notepad "Save As" window with possibility to select encoding. UTF-8 is not selected by default... Source: [redhotwords]_
+    Windows 2000 Notepad "Save As" window with possibility to select encoding. UTF-8 is not selected by default... Source: [windows2000]_
 
 .. figure:: img/files-windows10-notepad-saveas.png
-    :width: 33%
+    :width: 50%
     :align: center
 
-    Windows 10 Notepad "Save As" window with possibility to select encoding. Still in 2020 the UTF-8 is not selected by default... Source: [digitalcitizen]_
+    Windows 10 Notepad "Save As" window with possibility to select encoding. Still in 2020 the UTF-8 is not selected by default... Source: [windows10]_
 
-.. figure:: img/files-encoding-ascii2.png
-    :width: 33%
+.. figure:: img/files-encoding-ascii2.jpg
+    :width: 50%
     :align: center
 
-    ASCII table. Source: [Spinall2015]_
+    ASCII table. Source: [ascii2]_
+
+.. figure:: img/files-encoding-unicode2.png
+    :width: 50%
+    :align: center
+
+    Unicode. Source: [unicode2]_
+
+.. figure:: img/files-encoding-unicode3.png
+    :width: 50%
+    :align: center
+
+    Unicode. Source: [unicode3]_
+
 
 UTF-8
 =====
@@ -46,6 +59,19 @@ UTF-8
     with open(FILE, encoding='utf-8') as file:
         print(file.read())
     # Иван Иванович
+
+
+.. figure:: img/files-encoding-utf.png
+    :width: 50%
+    :align: center
+
+    UTF-8. Source: [unicode3]_
+
+.. figure:: img/files-encoding-utf2.jpg
+    :width: 50%
+    :align: center
+
+    UTF-8. Source: [unicode3]_
 
 
 Unicode Encode Error
@@ -123,8 +149,16 @@ Escape Characters
 References
 ==========
 
-.. [redhotwords] redhotwords.com. Windows 2000 Notepad. http://redhotwords.com/assets/Uninotepadunicode.png
+.. [windows2000] redhotwords.com. Windows 2000 Notepad. http://redhotwords.com/assets/Uninotepadunicode.png
 
-.. [digitalcitizen] digitalcitizen.life. Windows 10 Notepad. https://www.digitalcitizen.life/sites/default/files/gdrive/windows_notepad/notepad_10.png
+.. [windows10] digitalcitizen.life. Windows 10 Notepad. https://www.digitalcitizen.life/sites/default/files/gdrive/windows_notepad/notepad_10.png
 
-.. [Spinall2015] Briana Spinall. Better Ascii Table. 2015. http://brianaspinall.com/wp-content/uploads/2015/11/better_ascii_table.jpg
+.. [ascii2] Briana Spinall. Better Ascii Table. 2015. http://brianaspinall.com/wp-content/uploads/2015/11/better_ascii_table.jpg
+
+.. [unicode2] http://www.gammon.com.au/unicode/gbk.svg.png
+
+.. [unicode3] http://cdn.ilovefreesoftware.com/wp-content/uploads/2016/10/unicode-Character-list-1.png
+
+.. [utf] https://camo.githubusercontent.com/7806142e30089cac76da9fe9fb1c5bbd0521cde6/68747470733a2f2f692e696d6775722e636f6d2f7a414d74436a622e706e67
+
+.. [utf2] https://i.pinimg.com/736x/12/e2/37/12e237271c063313762fcafa1cf58e39--web-development-tools.jpg
