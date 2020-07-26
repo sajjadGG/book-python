@@ -195,13 +195,26 @@ Map
     def square(x):
         return x ** 2
 
-
     data = [1, 2, 3]
-    result = map(square, data)
 
+    result = map(square, data)
     list(result)
     # [1, 4, 9]
 
+.. code-block:: python
+
+    PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
+          'ł': 'l', 'ń': 'n', 'ó': 'o',
+          'ś': 's', 'ż': 'z', 'ź': 'z'}
+
+    def translate(letter):
+        return PL.get(letter, letter)
+
+    text = 'zażółć gęślą jaźń'
+
+    result = map(translate, text)
+    ''.join(result)
+    # 'zazolc gesla jazn'
 
 Filter
 ======
@@ -209,6 +222,17 @@ Filter
     :caption: ``filter()`` syntax
 
     filter(<callable>, <sequence>)
+
+.. code-block:: python
+
+    data = [True, False, True]
+
+    filter(bool, data)
+    # <filter object at 0x11d182990>
+
+    result = filter(bool, data)
+    list(result)
+    # [True, True]
 
 .. code-block:: python
     :caption: ``filter()`` example
@@ -219,12 +243,6 @@ Filter
         else:
             return False
 
-
-    data = [1, 2, 3, 4, 5, 6]
-
-    filter(is_even, data)
-    # <filter object at 0x11d182990>
-
     result = filter(is_even, data)
     list(result)
     # [2, 4, 6]
@@ -234,23 +252,17 @@ Filter
     def is_even(x):
         return x % 2 == 0
 
-
     data = [1, 2, 3, 4, 5, 6]
-    result = filter(is_even, data)
 
+    result = filter(is_even, data)
     list(result)
     # [2, 4, 6]
 
 .. code-block:: python
     :caption: ``filter()`` example
 
-
     def adult(person):
-        if person['age'] >= 21:
-            return True
-        else:
-            return False
-
+        return person['age'] >= 21:
 
     people = [
         {'age': 21, 'name': 'Jan Twardowski'},
@@ -258,8 +270,7 @@ Filter
         {'age': 18, 'name': 'Melissa Lewis'}]
 
     result = filter(adult, people)
-
-    print(list(result))
+    list(result)
     # [{'age': 21, 'name': 'Jan Twardowski'},
     #  {'age': 25, 'name': 'Mark Watney'}]
 
@@ -269,17 +280,49 @@ Filter
     def astronaut(person):
         return person['is_astronaut']
 
-
     people = [
         {'is_astronaut': False, 'name': 'Jan Twardowski'},
         {'is_astronaut': True, 'name': 'Mark Watney'},
         {'is_astronaut': True, 'name': 'Melissa Lewis'}]
 
     result = filter(astronaut, people)
-
-    print(list(result))
+    list(result)
     # [{'is_astronaut': True, 'name': 'Mark Watney'},
     #  {'is_astronaut': True, 'name': 'Melissa Lewis'}]
+
+
+Functools
+=========
+* https://docs.python.org/3/library/functools.html
+
+.. code-block:: python
+
+    from functools import *
+
+    reduce(function, iterable[, initializer])
+
+Itertools
+=========
+* https://docs.python.org/3/library/itertools.html
+* :ref:`Itertools`
+
+.. code-block:: python
+
+    from itertools import *
+
+    count(start=0, step=1)
+    cycle(iterable)
+    repeat(object[, times])
+    accumulate(iterable[, func, *, initial=None])
+    chain(*iterables)
+    compress(data, selectors)
+    islice(iterable, start, stop[, step])
+    starmap(function, iterable)
+    product(*iterables, repeat=1)
+    permutations(iterable, r=None)
+    combinations(iterable, r)
+    combinations_with_replacement(iterable, r)
+    groupby(iterable, key=None)
 
 
 Assignments
@@ -289,7 +332,7 @@ Function Generator Chain
 ------------------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/function_generators_chain.py`
 
 :English:

@@ -180,6 +180,7 @@ Implementation
     # Maluch
     # Toyota
 
+.. _Itertools:
 
 Standard Library Itertools
 ==========================

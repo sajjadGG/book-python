@@ -19,6 +19,12 @@ Rationale
     * Unbridled recursion causes stack overflows!
     * Rewriting the algorithm iteratively, is generally a better idea
 
+.. figure:: img/function-recurrence-hanoi.jpg
+    :width: 50%
+    :align: center
+
+    Hanoi Tower as a standard example of a recurrence. Source: [hanoi]_
+
 
 Example
 =======
@@ -119,3 +125,7 @@ Function Recurrence Brackets
         """
         pass
 
+
+References
+==========
+.. [hanoi] https://dyermath.files.wordpress.com/2015/06/hanoi-13.jpg

@@ -5,8 +5,24 @@ Function Scope
 **************
 
 
-Access Scope
-============
+.. code-block:: python
+    :caption: Functions has access to global values
+
+    def add(a, b=1):
+        c = 0
+
+    print(a)        # NameError: name 'a' is not defined
+    print(b)        # NameError: name 'b' is not defined
+    print(c)        # NameError: name 'c' is not defined
+
+    add(1)
+    print(a)        # NameError: name 'a' is not defined
+    print(b)        # NameError: name 'b' is not defined
+    print(c)        # NameError: name 'c' is not defined
+
+
+Outer Scope
+===========
 .. code-block:: python
     :caption: Functions has access to global values
 
@@ -21,6 +37,9 @@ Access Scope
     print(data)
     # [1, 2, 3]
 
+
+Shadowing
+=========
 .. code-block:: python
     :caption: Shadowing
 
@@ -36,6 +55,9 @@ Access Scope
     print(data)
     # [1, 2, 3]
 
+
+Global
+======
 .. code-block:: python
     :caption: Modify global, BAD PRACTICE!!
 
@@ -272,7 +294,7 @@ Function Scope Filter
 ---------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/function_scope_filter.py`
 
 :English:
