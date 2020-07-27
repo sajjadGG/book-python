@@ -478,8 +478,8 @@ Loop For Text
 
         Sentences: 7
         Words: 71
-        Characters: 347
-        Letters: 283
+        Characters: 345
+        Letters: 281
         Commas: 1
         Adverbs: 0
 
