@@ -14,9 +14,13 @@ Syntax
 .. code-block:: text
     :caption: ``for`` loop syntax
 
-    for <variable> in <iterable> :
+    for <variable> in <iterable>:
         <do something>
 
+.. code-block:: python
+
+    for digit in [1, 2, 3]:
+        pass
 
 Convention
 ==========
@@ -149,49 +153,6 @@ Range
     # 6
     # 8
     # 10
-
-
-Enumerate
-=========
-.. highlights::
-    * Pythonic way
-    * Preferred over ``i=0`` and ``i+=1`` for every iteration
-    * ``enumerate()`` will return ``counter`` and ``value`` for every iteration
-
-.. code-block:: python
-
-    DATA = ['a', 'b', 'c']
-
-    for letter in DATA:
-        print(letter)
-
-    # a
-    # b
-    # c
-
-.. code-block:: python
-    :caption: ``enumerate()`` will return ``counter`` and ``value`` for every iteration
-
-    DATA = ['a', 'b', 'c']
-
-    for i, letter in enumerate(DATA):
-        print(i, letter)
-
-    # 0 a
-    # 1 b
-    # 2 c
-
-.. code-block:: python
-    :caption: ``enumerate()`` can start with custom number
-
-    DATA = ['a', 'b', 'c']
-
-    for i, letter in enumerate(DATA, start=5):
-        print(i, letter)
-
-    # 5 a
-    # 6 b
-    # 7 c
 
 
 Assignments

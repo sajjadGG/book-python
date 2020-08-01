@@ -17,6 +17,11 @@ Syntax
     while <condition>:
         <do something>
 
+.. code-block:: python
+
+    while True:
+        pass
+
 
 Convention
 ==========

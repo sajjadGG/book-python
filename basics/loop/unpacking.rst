@@ -84,6 +84,35 @@ Mixed
 
 Enumerate
 =========
+.. highlights::
+    * Pythonic way
+    * Preferred over ``i=0`` and ``i+=1`` for every iteration
+    * ``enumerate()`` will return ``counter`` and ``value`` for every iteration
+
+.. code-block:: python
+    :caption: ``enumerate()`` will return ``counter`` and ``value`` for every iteration
+
+    DATA = ['a', 'b', 'c']
+
+    for i, letter in enumerate(DATA):
+        print(i, letter)
+
+    # 0 a
+    # 1 b
+    # 2 c
+
+.. code-block:: python
+    :caption: ``enumerate()`` can start with custom number
+
+    DATA = ['a', 'b', 'c']
+
+    for i, letter in enumerate(DATA, start=5):
+        print(i, letter)
+
+    # 5 a
+    # 6 b
+    # 7 c
+
 .. code-block:: python
 
     DATA = [
