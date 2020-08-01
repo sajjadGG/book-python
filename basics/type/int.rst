@@ -15,8 +15,8 @@ Type Definition
 .. code-block:: python
     :caption: ``int`` Type Definition
 
-    data = 1337                 # 133
-    data = -1337                # -30
+    data = 1337                 # 1337
+    data = -1337                # -1337
 
 .. code-block:: python
 
@@ -33,18 +33,22 @@ Type Casting
 .. code-block:: python
     :caption: ``int()`` converts argument to ``int``
 
-    int(10)                     # 10
-    int(10.0)                   # 10
-    int(10.9)                   # 10
+    int(13)                     # 13
+    int(13.0)                   # 13
+    int(13.3)                   # 13
     int(13.37)                  # 13
+
     int(-13.37)                 # -13
 
     int('1')                    # 1
     int('+1')                   # 1
     int('-1')                   # -1
     int('1_000_000')            # 1000000
-    int('13.37')                # ValueError: invalid literal for int() with base 10: '1.23'
-    int('-13.37')               # ValueError: invalid literal for int() with base 10: '-1.23'
+
+    int('13.37')                # ValueError: invalid literal for int() with base 10: '13.37'
+    int('13,37')                # ValueError: invalid literal for int() with base 10: '13,37'
+    int('-13.37')               # ValueError: invalid literal for int() with base 10: '-13.37'
+    int('-13,37')               # ValueError: invalid literal for int() with base 10: '-13,37'
 
 
 Type Checking
@@ -71,15 +75,15 @@ Type Int Time
 * Solution: :download:`solution/type_int_time.py`
 
 :English:
-    #. Calculate how many seconds is five minutes
-    #. Calculate how many seconds is one hour
+    #. Calculate how many seconds is one day
+    #. Calculate how many minutes is one day
     #. Calculate how many seconds is work day (8 hours)
     #. Calculate how many hours is work month (22 work days)
     #. Calculate how many minutes is work week (5 work days)
 
 :Polish:
-    #. Oblicz ile sekund to pięć minut
-    #. Oblicz ile sekund to jedna godzina
+    #. Oblicz ile sekund to jedna doba
+    #. Oblicz ile minut to je jedna doba
     #. Oblicz ile sekund to dzień pracy (8 godzin)
     #. Oblicz ile godzin to miesiąc pracy (22 dni pracy)
     #. Oblicz ile minut to tydzień pracy (5 dni pracy)
