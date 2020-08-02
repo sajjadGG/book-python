@@ -329,6 +329,9 @@ File Read CSV
     * String methods
     * Working with nested sequences
 
+:Hint:
+    * ``[float(x) for x in X]``
+
 File Read Parsing Dict
 ----------------------
 * Complexity level: medium

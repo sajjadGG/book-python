@@ -708,7 +708,7 @@ Comprehensions Split
 --------------------
 * Complexity level: medium
 * Lines of code to write: 8 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/loop_comprehension_split.py`
 
 :English:

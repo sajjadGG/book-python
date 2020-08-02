@@ -283,7 +283,7 @@ Loop Dict from List to Dict
 ---------------------------
 * Complexity level: medium
 * Lines of code to write: 6 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/loop_dict_to_list.py`
 
 :English:
@@ -358,7 +358,7 @@ Loop Dict Label Encoder
 -----------------------
 * Complexity level: hard
 * Lines of code to write: 13 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/loop_dict_label_encoder.py`
 
 :English:

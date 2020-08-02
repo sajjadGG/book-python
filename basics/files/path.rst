@@ -133,17 +133,42 @@ Exists and is Directory or File
 ===============================
 .. code-block:: python
 
-    from os.path import isfile, isdir, exists
+    from pathlib import Path
 
 
-    exists('/tmp/')
+    path = Path(r'/tmp/myfile.txt')
+
+    path.exists()
     # True
 
-    isfile('/tmp/')
+    path.is_dir()
     # False
 
-    isdir('/tmp/')
+    path.is_file()
     # True
+
+Current Working Directory
+=========================
+.. highlights::
+    * Returns an absolute path to current working directory
+
+.. code-block:: python
+
+    from pathlib import Path
+
+    Path.cwd()
+    # PosixPath('/home/python/')
+
+
+Convert Relative Path to Absolute
+=================================
+.. code-block:: python
+
+    from pathlib import Path
+
+
+    Path(Path.cwd(), 'myfile.txt')
+    # PosixPath('/home/python/myfile.txt')
 
 
 Script Path
@@ -157,20 +182,23 @@ Script Path
     # /home/python/myscript.py
 
 
-Convert Relative Path to Absolute
-=================================
-.. highlights::
-    * ``os.path.join()`` - adds OS dependent directory separator
-    * ``os.path.dirname()`` - gets the absolute path of the argument
+Assignments
+===========
 
-.. code-block:: python
+File Path Error
+---------------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/file_path_abspath.py`
 
-    from os.path import dirname, join
+:English:
+    #. Using ``input()`` ask user for a file path
+    #. Convert path to absolute
+    #. Print if path exists and leads to file or directory
 
-
-    dirname(__file__)
-    # /home/python/
-
-    join(dirname(__file__), 'myfile.txt')
-    # /home/python/myfile.txt
+:Polish:
+    #. Używając ``input()`` zapytaj użytkownika o ścieżkę do pliku
+    #. Przekonwertuj ścieżkę do bezwzględnej
+    #. Wypisz czy ścieżka istnieje i czy prowadzi do pliku czy katalogu
 

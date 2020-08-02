@@ -26,7 +26,7 @@ Rationale
     :width: 50%
     :align: center
 
-    Windows 10 Notepad "Save As" window with possibility to select encoding. Still in 2020 the UTF-8 is not selected by default... Source: [windows10]_
+    Windows 10 Notepad "Save As" window with possibility to select encoding. Since Windows 10.1903 (May 2019) notepad writes files in UTF-8 by default! Source: [windows10]_ [windows101903]_
 
 .. figure:: img/files-encoding-ascii2.jpg
     :width: 50%
@@ -162,3 +162,5 @@ References
 .. [utf] https://camo.githubusercontent.com/7806142e30089cac76da9fe9fb1c5bbd0521cde6/68747470733a2f2f692e696d6775722e636f6d2f7a414d74436a622e706e67
 
 .. [utf2] https://i.pinimg.com/736x/12/e2/37/12e237271c063313762fcafa1cf58e39--web-development-tools.jpg
+
+.. [windows101903] https://docs.microsoft.com/en-us/windows/whats-new/whats-new-windows-10-version-1903
