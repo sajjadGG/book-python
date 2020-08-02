@@ -1,6 +1,3 @@
-from typing import List, Tuple, Dict
-
-
 DATA = [
     ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
     (5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -26,41 +23,33 @@ DATA = [
     (4.6, 3.1, 1.5, 0.2, 'setosa'),
 ]
 
-## Alternative solution
-header, *data = DATA
-
 features = []
 labels = []
 label_encoder = {}
-label_encoder_reversed = {}
+lookup = {}
 
-for *measurements, kind in data:
-    if kind not in label_encoder_reversed:
-        label_encoder_reversed[kind] = len(label_encoder_reversed)
+header, *data = DATA
+i = 0
 
-    features.append(tuple(measurements))
-    labels.append(label_encoder_reversed[kind])
+for *X,y in data:
+    if y not in lookup:
+        label_encoder[i] = y
+        lookup[y] = i
+        i += 1
 
-for key, value in label_encoder_reversed.items():
-    label_encoder[value] = key
+    labels.append(lookup[y])
+    features.append(tuple(X))
 
 
 print(features)
 print(labels)
 print(label_encoder)
 
-## Alternative solution
-# label_encoder = {v:k for k,v in label_encoder.items()}
 
 ## Alternative solution
 # s = set(x[-1] for x in DATA[1:])
 # label_encoder = dict(zip(s, range(0, len(s))))
 
-
 ## Alternative solution
 # In numerical analysis you can find this
 # label_encoder = dict(enumerate(set(x[-1] for x in DATA[1:])))
-
-
-## Alternative solution
-# label_encoder = dict(zip(label_encoder.values(), label_encoder.keys()))

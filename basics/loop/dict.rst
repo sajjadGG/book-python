@@ -359,7 +359,7 @@ Loop Dict Label Encoder
 * Complexity level: hard
 * Lines of code to write: 13 lines
 * Estimated time of completion: 15 min
-* Solution: :download:`solution/loop_label_encoder.py`
+* Solution: :download:`solution/loop_dict_label_encoder.py`
 
 :English:
     #. Use data from "Input" section (see below)
@@ -450,3 +450,6 @@ Loop Dict Label Encoder
     * ``dict`` lookups
     * Dynamic ``dict`` generating
     * ``dict`` reversal
+
+:Hint:
+    * Create reversed lookup dict
