@@ -67,7 +67,7 @@ Function Recurrence Brackets
 ----------------------------
 * Complexity level: medium
 * Lines of code to write: 10 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 21 min
 * Solution: :download:`solution/function_recurrence_brackets.py`
 
 :English:

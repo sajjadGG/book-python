@@ -185,8 +185,8 @@ Script Path
 Assignments
 ===========
 
-File Path Error
----------------
+File Path Abspath
+-----------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min

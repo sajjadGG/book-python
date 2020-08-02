@@ -414,7 +414,7 @@ Function Doctest Temperature
 ----------------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/function_doctest_temperature.py`
 
 :English:
@@ -455,7 +455,7 @@ Function Doctest Distance
 -------------------------
 * Complexity level: easy
 * Lines of code to write: 21 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/function_doctest_distance.py`
 
 :English:

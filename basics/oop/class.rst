@@ -107,21 +107,15 @@ Instances
 
 Class vs Instance
 =================
-.. figure:: img/blueprint.png
-    :width: 50%
-    :align: center
-
-    Intuition definition: Class is a blueprint, instances are homes made from this plan. Image source: :cite:`FigureBlueprintHouse`
-
 .. figure:: img/oop-classes-class.jpg
     :width: 30%
-    :class: inline
+    :align: center
 
     Class. Source: [class]_
 
 .. figure:: img/oop-classes-instances.jpg
     :width: 30%
-    :class: inline
+    :align: center
 
     Instances. Source: [instances]_
 
@@ -165,11 +159,6 @@ Convention
     jose = Astronaut()
 
 
-References
-==========
-.. [class] http://makieta.pl/12344-thickbox_default/faller-130803-blok-z-wielkiej-plyty-skala-h0.jpg
-.. [instances] https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Os_Rusa_Poznań_RB1.jpg/1200px-Os_Rusa_Poznań_RB1.jpg
-
 Assignments
 ===========
 
@@ -208,7 +197,6 @@ OOP Class Instance
     #. Create instance ``twardowski`` of a class ``Astronaut``
     #. Create instance ``watney`` of a class ``Astronaut``
     #. Create instance ``nasa`` of a class ``SpaceAgency``
-    #. Create instance ``esa`` of a class ``SpaceAgency``
     #. Create instance ``polsa`` of a class ``SpaceAgency``
 
 :Polish:
@@ -221,3 +209,9 @@ OOP Class Instance
 
 :The whys and wherefores:
     * :ref:`OOP Classes and Instances`
+
+
+References
+==========
+.. [class] http://makieta.pl/12344-thickbox_default/faller-130803-blok-z-wielkiej-plyty-skala-h0.jpg
+.. [instances] https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Os_Rusa_Poznań_RB1.jpg/1200px-Os_Rusa_Poznań_RB1.jpg

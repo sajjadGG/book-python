@@ -31,6 +31,9 @@ Rationale
         Changes during lifetime of an object.
         Represents current state of an object.
 
+    namespace
+        Container for storing related data
+
 .. code-block:: text
     :caption: Class example with distinction of properties and state attributes
 
@@ -209,7 +212,7 @@ OOP Attribute Model
 -------------------
 * Complexity level: easy
 * Lines of code to write: 15 lines
-* Estimated time of completion: 13 min
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/oop_attribute_model.py`
 
 :English:

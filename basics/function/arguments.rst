@@ -5,11 +5,18 @@ Function Arguments
 ******************
 
 
-Arguments vs Parameters
-=======================
-.. highlights::
-    * argument is the value/variable/reference being passed to the function
-    * parameter is the receiving variable used within the function/block
+Rationale
+=========
+.. glossary::
+
+    argument
+        Value/variable/reference being passed to the function
+
+    positional argument
+        Value passed to function - order is important
+
+    keyword argument
+        Value passed to function resolved by name - order is not important
 
 
 Syntax
@@ -266,7 +273,7 @@ Function Arguments Clean
 ------------------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/function_args_clean.py`
 
 :English:
@@ -345,7 +352,7 @@ Function Arguments Numbers to Str
 ---------------------------------
 * Complexity level: medium
 * Lines of code to write: 5 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/function_args_numstr_simple.py`
 
 :English:
@@ -428,7 +435,7 @@ Function Arguments Numbers to Human
 -----------------------------------
 * Complexity level: hard
 * Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 21 min
 * Solution: :download:`solution/function_args_numstr_human.py`
 
 :English:

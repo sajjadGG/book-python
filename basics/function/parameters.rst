@@ -5,12 +5,18 @@ Function Parameters
 *******************
 
 
-Arguments vs Parameters
-=======================
-.. highlights::
-    * argument is the value/variable/reference being passed to the function
-    * parameter is the receiving variable used within the function/block
+Rationale
+=========
+.. glossary::
 
+    parameter
+        Receiving variable used within the function/block
+
+    default parameter
+        Parameter which is optional and has default value (if not specified at call time)
+
+    required parameter
+        Parameter which is necessary to call function
 
 Syntax
 ======
@@ -50,10 +56,10 @@ Required Parameters
     # TypeError: add() takes 2 positional arguments but 3 were given
 
 
-Optional Parameters
-===================
+Default Parameters
+==================
 .. highlights::
-    * Optional parameters has default value
+    * Default parameters has default value
     * Function will use default value if not overwritten by user
     * Parameters with default values can be omitted while executing
 
@@ -76,11 +82,11 @@ Optional Parameters
     # TypeError: add() takes from 0 to 2 positional arguments but 3 were given
 
 
-Required and Optional Parameters
-================================
+Required and Default Parameters
+===============================
 .. highlights::
     * Required parameters must be at the left side
-    * Optional parameters must be at the right side
+    * Default parameters must be at the right side
     * There cannot be required parameter after optional
 
 .. code-block:: python

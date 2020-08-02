@@ -16,6 +16,11 @@ Rationale
     * Improves refactoring
     * Decomposes bigger problem into smaller chunks
 
+.. glossary::
+
+    method
+        Functions in the class which takes instance as first argument (``self``)
+
 .. code-block:: python
     :caption: Syntax
 

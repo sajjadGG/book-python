@@ -13,6 +13,10 @@ Rationale
     * When function is short
     * You don't need to name it (hence it is anonymous)
 
+.. glossary::
+
+    lambda
+        Anonymous function
 
 Syntax
 ======
@@ -157,8 +161,8 @@ Assignments
 Function Lambda Chain
 ---------------------
 * Complexity level: easy
-* Lines of code to write: 6 lines
-* Estimated time of completion: 5 min
+* Lines of code to write: 2 lines
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/function_lambda_chain.py`
 
 :English:

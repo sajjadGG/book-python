@@ -10,8 +10,14 @@ Rationale
 .. highlights::
     * It's a first method run after object is initiated
     * All classes has default ``__init__()``
-    * ``__init__()`` is not a constructor!
 
+.. glossary::
+
+    constructor
+        Method called at object instantiation used to create object. Constructor is called on not fully initialized object and hence do not have access to object methods. Constructor should return ``None``.
+
+    initializer
+        Method called at object instantiation used to fill empty object with values. Initializer is called upon object initialization and hence can modify object and use its methods. Initializer should return ``None``.
 
 Syntax
 ======

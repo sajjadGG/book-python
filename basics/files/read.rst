@@ -247,7 +247,7 @@ File Read CSV
 -------------
 * Complexity level: easy
 * Lines of code to write: 15 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/file_read_csv.py`
 
 :English:
@@ -336,7 +336,7 @@ File Read Parsing Dict
 ----------------------
 * Complexity level: medium
 * Lines of code to write: 10 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/file_read_parsing_dict.py`
 
 :English:
@@ -399,7 +399,7 @@ File Read Parsing List of Dicts
 -------------------------------
 * Complexity level: hard
 * Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/file_read_parsing_listdict.py`
 
 :English:

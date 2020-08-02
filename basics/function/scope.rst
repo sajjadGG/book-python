@@ -345,7 +345,7 @@ Function Scope Roman to Int
 ---------------------------
 * Complexity level: hard
 * Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 21 min
 * Solution: :download:`solution/function_scope_romanint.py`
 
 :English:
@@ -394,7 +394,7 @@ Function Scope Int To Roman
 ---------------------------
 * Complexity level: hard
 * Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 21 min
 * Solution: :download:`solution/function_scope_introman.py`
 
 :English:
