@@ -12,10 +12,10 @@ Recap
     result = []
 
     for x in range(0,5):
-        result.append(x+10)
+        result.append(x)
 
     print(result)
-    # [10, 11, 12, 13, 14]
+    # [0, 1, 2, 3, 4]
 
 
 Syntax
@@ -24,26 +24,17 @@ Syntax
 
     result = [<RETURN> for <VARIABLE> in <ITERABLE>]
 
+.. code-block:: python
+
+    [x for x in range(0,5)]
+    # [0, 1, 2, 3, 4]
+
 
 Convention
 ==========
 .. highlights::
     * Use shorter variable names
     * ``x`` is common name
-
-
-Comprehension
-=============
-.. code-block:: python
-
-    [x for x in (0,1,2,3,4)]
-    # [0, 1, 2, 3, 4]
-
-    [x for x in range(0,5)]
-    # [0, 1, 2, 3, 4]
-
-    [x**2 for x in range(0,5)]
-    # [0, 1, 4, 9, 16]
 
 
 Comprehensions and Generator Expression
@@ -196,8 +187,8 @@ Tuple Comprehension?!
 .. code-block:: python
     :caption: Tuple Comprehension
 
-    tuple(x for x in range(0,5))
-    # (0, 1, 2, 3, 4)
+    tuple(x+10 for x in range(0,5))
+    # (10, 11, 12, 13, 14)
 
 .. code-block:: python
     :caption: Generator Expression
@@ -241,16 +232,12 @@ Conditional Comprehension
     ]
 
     [features for *features,label in DATA if label == 'setosa']
-    # [
-    #   [5.1, 3.5, 1.4, 0.2],
-    #   [4.7, 3.2, 1.3, 0.2],
-    # ]
+    # [[5.1, 3.5, 1.4, 0.2],
+    #  [4.7, 3.2, 1.3, 0.2]]
 
     [X for *X,y in DATA if y=='setosa']
-    # [
-    #   [5.1, 3.5, 1.4, 0.2],
-    #   [4.7, 3.2, 1.3, 0.2],
-    # ]
+    # [[5.1, 3.5, 1.4, 0.2],
+    #  [4.7, 3.2, 1.3, 0.2]]
 
 
 Apply Function
@@ -273,17 +260,34 @@ Apply Function
     [pow(2,x) for x in range(0,5) if x%2==0]
     # [1, 4, 16]
 
+.. code-block:: python
+    :caption: Using ``list`` comprehension for filtering
+
+    DATA = [
+        ('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+        (5.8, 2.7, 5.1, 1.9, 'virginica'),
+        (5.1, 3.5, 1.4, 0.2, 'setosa'),
+        (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+        (6.3, 2.9, 5.6, 1.8, 'virginica'),
+        (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+        (4.7, 3.2, 1.3, 0.2, 'setosa'),
+        (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+    ]
+
+    [tuple(features) for *features,label in DATA if label == 'setosa']
+    # [(5.1, 3.5, 1.4, 0.2),
+    #  (4.7, 3.2, 1.3, 0.2)]
+
+    [tuple(X) for *X,y in DATA if y=='setosa']
+    # [(5.1, 3.5, 1.4, 0.2),
+    #  (4.7, 3.2, 1.3, 0.2)]
+
 
 Indent
 ======
 .. code-block:: python
 
     result = [pow(x,2) for x in range(0,5)]
-
-.. code-block:: python
-
-    result = [pow(x,2)
-                for x in range(0,5)]
 
 .. code-block:: python
 
@@ -297,8 +301,8 @@ Indent
 .. code-block:: python
 
     result = [pow(x,2)
-                for x in range(0,5)
-                    if x % 2 == 0]
+              for x in range(0,5)
+                  if x % 2 == 0]
 
 .. code-block:: python
 
@@ -307,19 +311,74 @@ Indent
               if x % 2 == 0]
 
 
+Nested
+======
+.. code-block:: python
+
+    DATA = {
+        6: ['Doctorate', 'Prof-school'],
+        5: ['Masters', 'Bachelor', 'Engineer'],
+        4: ['HS-grad'],
+        3: ['Junior High'],
+        2: ['Primary School'],
+        1: ['Kindergarten'],
+    }
+
+    result = {title: str(i)
+              for i, titles in DATA.items()
+                 for title in titles}
+
+    print(result)
+    # {
+    #   'Doctorate': '6',
+    #   'Prof-school': '6',
+    #   'Masters': '5',
+    #   'Bachelor': '5',
+    #   'Engineer': '5',
+    #   'HS-grad': '4',
+    #   'Junior High': '3',
+    #   'Primary School': '2',
+    #   'Kindergarten': '1'
+    # }
+
+
 Examples
 ========
+.. code-block:: python
+    :caption: Increment and decrement
+
+    [x+1 for x in range(0,5)]
+    # [1, 2, 3, 4, 5]
+
+    [x-1 for x in range(0,5)]
+    # [-1, 0, 1, 2, 3]
+
 .. code-block:: python
     :caption: Sum
 
     sum(x for x in range(0,5))
     # 10
 
+    sum(x for x in range(0,5) if x%2==0)
+    # 6
+
 .. code-block:: python
     :caption: Power
 
+    [pow(2,x) for x in range(0,5)]
+    # [1, 2, 4, 8, 16]
+
     [2**x for x in range(0,5)]
     # [1, 2, 4, 8, 16]
+
+.. code-block:: python
+    :caption: Even or Odd
+
+    [x for x in range(0,5)]
+    # [0, 1, 2, 3, 4]
+
+    [x%2==0 for x in range(0,5)]
+    # [True, False, True, False, True]
 
 .. code-block:: python
     :caption: Even or Odd
@@ -392,11 +451,9 @@ Examples
             return False
 
 
-    [X for *X,y in DATA if is_setosa(y)]
-    # [
-    #   [5.1, 3.5, 1.4, 0.2],
-    #   [4.7, 3.2, 1.3, 0.2],
-    # ]
+    [tuple(X) for *X,y in DATA if is_setosa(y)]
+    # [(5.1, 3.5, 1.4, 0.2),
+    #  (4.7, 3.2, 1.3, 0.2)]
 
 .. code-block:: python
     :caption: Quick parsing lines
@@ -414,19 +471,15 @@ Examples
         result.append(row)
 
     print(result)
-    # [
-    #   ['5.8', '2.7', '5.1', '1.9', 'virginica'],
-    #   ['5.1', '3.5', '1.4', '0.2', 'setosa'],
-    #   ['5.7', '2.8', '4.1', '1.3', 'versicolor']
-    # ]
+    # [['5.8', '2.7', '5.1', '1.9', 'virginica'],
+    #  ['5.1', '3.5', '1.4', '0.2', 'setosa'],
+    #  ['5.7', '2.8', '4.1', '1.3', 'versicolor']]
 
 
     [row.split(',') for row in DATA]
-    # [
-    #   ['5.8', '2.7', '5.1', '1.9', 'virginica'],
-    #   ['5.1', '3.5', '1.4', '0.2', 'setosa'],
-    #   ['5.7', '2.8', '4.1', '1.3', 'versicolor']
-    # ]
+    # [['5.8', '2.7', '5.1', '1.9', 'virginica'],
+    #  ['5.1', '3.5', '1.4', '0.2', 'setosa'],
+    #  ['5.7', '2.8', '4.1', '1.3', 'versicolor']]
 
 .. code-block:: python
     :caption: Reversing ``dict`` keys with values
@@ -461,37 +514,6 @@ Examples
 
     {v:k for k,v in DATA.items()}
     # {1:'a', 2:'c'}
-
-
-Nested
-======
-.. code-block:: python
-
-    DATA = {
-        6: ['Doctorate', 'Prof-school'],
-        5: ['Masters', 'Bachelor', 'Engineer'],
-        4: ['HS-grad'],
-        3: ['Junior High'],
-        2: ['Primary School'],
-        1: ['Kindergarten'],
-    }
-
-    result = {title: str(i)
-              for i, titles in DATA.items()
-                 for title in titles}
-
-    print(result)
-    # {
-    #   'Doctorate': '6',
-    #   'Prof-school': '6',
-    #   'Masters': '5',
-    #   'Bachelor': '5',
-    #   'Engineer': '5',
-    #   'HS-grad': '4',
-    #   'Junior High': '3',
-    #   'Primary School': '2',
-    #   'Kindergarten': '1'
-    # }
 
 
 All and Any
@@ -598,28 +620,12 @@ Assignment Expressions
                   if person['is_astronaut']
                   and (name := person['name'].title().split())
                   and (fname := name[0])
-                  and (lname := name[1])]
+                  and (lname := name[-1])]
 
     print(astronauts)
     # [{'firstname': 'Jan', 'lastname': 'Twardowski'},
     #  {'firstname': 'Mark', 'lastname': 'Watney'},
     #  {'firstname': 'Melissa', 'lastname': 'Lewis'}]
-
-.. code-block:: python
-
-    [ (x, x**2, x/(x**2))
-        for x in range(0,5)
-            if x**2 > 0]
-
-    # [(1, 1, 1.0), (2, 4, 0.5), (3, 9, 0.3333333333333333), (4, 16, 0.25)]
-
-.. code-block:: python
-
-    [ (x, y, x/y)
-        for x in range(0,5)
-            if (y := x**2) > 0]
-
-    # [(1, 1, 1.0), (2, 4, 0.5), (3, 9, 0.3333333333333333), (4, 16, 0.25)]
 
 .. code-block:: python
 
@@ -772,16 +778,13 @@ Comprehensions Split
 :Output:
     .. code-block:: python
 
-        from typing import List, Dict
-
-
-        features_train: List[tuple]
+        features_train: List[Tuple[float, ...]]
         # [(5.8, 2.7, 5.1, 1.9), (5.1, 3.5, 1.4, 0.2), (5.7, 2.8, 4.1, 1.3),
         #  (6.3, 2.9, 5.6, 1.8), (6.4, 3.2, 4.5, 1.5), (4.7, 3.2, 1.3, 0.2),
         #  (7.0, 3.2, 4.7, 1.4), (7.6, 3.0, 6.6, 2.1), (4.9, 3.0, 1.4, 0.2),
         #  (4.9, 2.5, 4.5, 1.7), (7.1, 3.0, 5.9, 2.1), (4.6, 3.4, 1.4, 0.3)]
 
-        features_test: List[tuple]
+        features_test: List[Tuple[float, ...]]
         # [(5.4, 3.9, 1.7, 0.4), (5.7, 2.8, 4.5, 1.3), (5.0, 3.6, 1.4, 0.3),
         #  (5.5, 2.3, 4.0, 1.3), (6.5, 3.0, 5.8, 2.2), (6.5, 2.8, 4.6, 1.5),
         #  (6.3, 3.3, 6.0, 2.5), (6.9, 3.1, 4.9, 1.5), (4.6, 3.1, 1.5, 0.2)]
