@@ -11,6 +11,7 @@ Rationale
     * Since Python 3.7 ``dict`` keeps order
     * Before Python 3.7 ``dict`` order is not ensured!!
 
+
 Iterate
 =======
 .. highlights::
@@ -110,14 +111,11 @@ Iterate Key-Value Pairs
     }
 
     list(DATA.items())
-    # [
-    #   ('Sepal length', 5.1),
-    #   ('Sepal width', 3.5),
-    #   ('Petal length', 1.4),
-    #   ('Petal width', 0.2),
-    #   ('Species', 'setosa'),
-    # ]
-
+    # [('Sepal length', 5.1),
+    #  ('Sepal width', 3.5),
+    #  ('Petal length', 1.4),
+    #  ('Petal width', 0.2),
+    #  ('Species', 'setosa')]
 
     for key, value in DATA.items():
         print(key, '->', value)
@@ -170,13 +168,11 @@ Generate with Range
         result[key] = value
 
     print(result)
-    # {
-    #   'Sepal length': 5.1,
-    #   'Sepal width': 3.5,
-    #   'Petal length': 1.4,
-    #   'Petal width': 0.2,
-    #   'Species': 'setosa',
-    # }
+    # {'Sepal length': 5.1,
+    #  'Sepal width': 3.5,
+    #  'Petal length': 1.4,
+    #  'Petal width': 0.2,
+    #  'Species': 'setosa'}
 
 Generate with Enumerate
 =======================
@@ -196,13 +192,11 @@ Generate with Enumerate
         result[key] = data[i]
 
     print(result)
-    # {
-    #   'Sepal length': 5.1,
-    #   'Sepal width': 3.5,
-    #   'Petal length': 1.4,
-    #   'Petal width': 0.2,
-    #   'Species': 'setosa',
-    # }
+    # {'Sepal length': 5.1,
+    #  'Sepal width': 3.5,
+    #  'Petal length': 1.4,
+    #  'Petal width': 0.2,
+    #  'Species': 'setosa'}
 
 
 Generate with Zip
@@ -215,17 +209,31 @@ Generate with Zip
 
     header = ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
     data = [5.1, 3.5, 1.4, 0.2, 'setosa']
+    result = {}
+
+    for key, value in zip(header, data):
+        result[key] = value
+
+    print(result)
+    # {'Sepal length': 5.1,
+    #  'Sepal width': 3.5,
+    #  'Petal length': 1.4,
+    #  'Petal width': 0.2,
+    #  'Species': 'setosa'}
+
+.. code-block:: python
+
+    header = ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
+    data = [5.1, 3.5, 1.4, 0.2, 'setosa']
 
     result = dict(zip(header, data))
 
     print(result)
-    # {
-    #   'Sepal length': 5.1,
-    #   'Sepal width': 3.5,
-    #   'Petal length': 1.4,
-    #   'Petal width': 0.2,
-    #   'Species': 'setosa',
-    # }
+    # {'Sepal length': 5.1,
+    #  'Sepal width': 3.5,
+    #  'Petal length': 1.4,
+    #  'Petal width': 0.2,
+    #  'Species': 'setosa'}
 
 
 Assignments

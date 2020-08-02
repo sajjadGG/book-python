@@ -126,15 +126,15 @@ Matrix
     ]
 
     for obj in DATA:
-        col1 = obj[0]
-        col2 = obj[1]
-        col3 = obj[2]
+        column_A = obj[0]
+        column_B = obj[1]
+        column_C = obj[2]
 
-        print(col1, '->', col2, '->', col3)
+        print(f'{column_A=} {column_B=} {column_C=}')
 
-    # 1 -> 2 -> 3
-    # 4 -> 5 -> 6
-    # 7 -> 8 -> 9
+    # column_A=1 column_B=2 column_C=3
+    # column_A=4 column_B=5 column_C=6
+    # column_A=7 column_B=8 column_C=9
 
 
 Mixed
@@ -148,33 +148,33 @@ Mixed
     DATA = [('Jan', 'Twardowski'), 'Watney', 42, 13.37, {True, None, False}]
 
     for obj in DATA:
-        print(obj)
+        print(f'{obj=}')
 
-    # ('Jan', 'Twardowski')
-    # Watney
-    # 42
-    # 13.37
-    # {False, True, None}
+    # obj=('Jan', 'Twardowski')
+    # obj='Watney'
+    # obj=42
+    # obj=13.37
+    # obj={False, True, None}
 
 .. code-block:: python
     :caption: Iterating over ``list`` with scalar and vector values - nested loop
 
     DATA = [('Jan', 'Twardowski'), 'Watney', 42, 13.37, {True, None, False}]
 
-    for obj in DATA:
-        for inner in obj:
-            print(inner)
+    for sequence in DATA:
+        for obj in sequence:
+            print(f'{obj=}')
 
-    # Jan
-    # Twardowski
-    # W
-    # a
-    # t
-    # n
-    # e
-    # y
+    # obj='Jan'
+    # obj='Twardowski'
+    # obj='W'
+    # obj='a'
+    # obj='t'
+    # obj='n'
+    # obj='e'
+    # obj='y'
     # Traceback (most recent call last):
-    #   File "<input>", line 4, in <module>
+    #   ...
     # TypeError: 'int' object is not iterable
 
 .. code-block:: python
@@ -185,8 +185,8 @@ Mixed
 
     for obj in DATA:
         if isinstance(obj, (list, tuple, set, frozenset)):
-            for inner in obj:
-                print(inner)
+            for element in obj:
+                print(element)
         else:
             print(obj)
 

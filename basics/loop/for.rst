@@ -22,6 +22,7 @@ Syntax
     for digit in [1, 2, 3]:
         pass
 
+
 Convention
 ==========
 * The longer the loop scope, the longer the variable name should be
