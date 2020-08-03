@@ -132,10 +132,11 @@ File Write Str
     #. Sprawdź w systemie operacyjnym czy dane zapisały się poprawnie
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
-.. code-block:: python
+:Input:
+    .. code-block:: python
 
-    FILE = r'file_write_hello.txt'
-    DATA = 'hello'
+        FILE = r'file_write_hello.txt'
+        DATA = 'hello'
 
 File Write Multiline
 --------------------
@@ -156,14 +157,15 @@ File Write Multiline
     #. Sprawdź w systemie operacyjnym czy dane zapisały się poprawnie
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
-.. code-block:: python
+:Input:
+    .. code-block:: python
 
-    FILE = r'file_write_multiline.txt'
-    DATA = """127.0.0.1       localhostt
-    10.13.37.1      nasa.gov esa.int roscosmos.ru
-    255.255.255.255 broadcasthost
-    ::1             localhost
-    """
+        FILE = r'file_write_multiline.txt'
+        DATA = """127.0.0.1       localhostt
+        10.13.37.1      nasa.gov esa.int roscosmos.ru
+        255.255.255.255 broadcasthost
+        ::1             localhost
+        """
 
 File Write List
 ---------------
@@ -184,10 +186,11 @@ File Write List
     #. Sprawdź w systemie operacyjnym czy dane zapisały się poprawnie
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
-.. code-block:: python
+:Input:
+    .. code-block:: python
 
-    FILE = r'file_write_newline.txt'
-    DATA = ['hello', 'world']
+        FILE = r'file_write_newline.txt'
+        DATA = ['hello', 'world']
 
 File Write Non-Str
 ------------------
@@ -208,10 +211,11 @@ File Write Non-Str
     #. Sprawdź w systemie operacyjnym czy dane zapisały się poprawnie
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
-.. code-block:: python
+:Input:
+    .. code-block:: python
 
-    FILE = r'file_write_nonstr.txt'
-    DATA = (5.1, 3.5, 1.4, 0.2, 'setosa')
+        FILE = r'file_write_nonstr.txt'
+        DATA = (5.1, 3.5, 1.4, 0.2, 'setosa')
 
 File Write Iris
 ---------------
@@ -232,7 +236,8 @@ File Write Iris
     #. Sprawdź w systemie operacyjnym czy dane zapisały się poprawnie
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
-.. code-block:: python
+:Input:
+    .. code-block:: python
 
     FILE = r'file_write_iris.txt'
     DATA = [

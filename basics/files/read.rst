@@ -202,15 +202,17 @@ File Read Str
     #. Wypisz ``result``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
-.. code-block:: python
+:Input:
+    .. code-block:: python
 
-    FILE = r'file_write_hello.txt'
-    DATA = 'hello'
+        FILE = r'file_write_hello.txt'
+        DATA = 'hello'
 
-.. code-block:: python
+:Output:
+    .. code-block:: python
 
-    result: str
-    hello
+        result: str
+        # hello
 
 File Read Multiline
 -------------------
@@ -233,15 +235,17 @@ File Read Multiline
     #. Wypisz ``result``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
-.. code-block:: python
+:Input:
+    .. code-block:: python
 
-    FILE = r'file_write_hello.txt'
-    DATA = 'hello\nworld\n'
+        FILE = r'file_write_hello.txt'
+        DATA = 'hello\nworld\n'
 
-.. code-block:: python
+:Output:
+    .. code-block:: python
 
-    result: List[str]
-    # ['hello', 'world']
+        result: List[str]
+        # ['hello', 'world']
 
 File Read CSV
 -------------
