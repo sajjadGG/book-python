@@ -48,13 +48,13 @@ Regexp Find Dates
 * References: :cite:`RegexpWikipediaApollo11`
 
 :English:
-    #. Download :download:`data/apollo11-content.txt` and save as ``regex_dates.txt``
+    #. Use data from "Input" section (see below)
     #. Using regular expressions find dates in US format (example: "April 12, 1961")
     #. Print all dates
     #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Pobierz :download:`data/apollo11-content.txt` i zapisz jako ``regex_dates.txt``
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Używając wyrażeń regularnych wyszukaj dat w formacie US (przykład: "April 12, 1961")
     #. Wyświetl wszystkie daty
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
