@@ -206,13 +206,13 @@ File Read Str
     .. code-block:: python
 
         FILE = r'file_write_hello.txt'
-        DATA = 'hello'
+        DATA = 'hello world'
 
 :Output:
     .. code-block:: python
 
         result: str
-        # hello
+        # hello world
 
 File Read Multiline
 -------------------
@@ -239,13 +239,13 @@ File Read Multiline
     .. code-block:: python
 
         FILE = r'file_write_hello.txt'
-        DATA = 'hello\nworld\n'
+        DATA = 'sepal_length\nsepal_width\npetal_length\npetal_width\nspecies\n'
 
 :Output:
     .. code-block:: python
 
         result: List[str]
-        # ['hello', 'world']
+        # ['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
 
 File Read CSV
 -------------
@@ -334,7 +334,7 @@ File Read CSV
     * Working with nested sequences
 
 :Hint:
-    * ``[float(x) for x in X]``
+    * ``tuple(float(x) for x in X)``
 
 File Read Parsing Dict
 ----------------------
@@ -348,8 +348,8 @@ File Read Parsing Dict
     #. Write ``DATA`` to file ``FILE``
     #. Read ``FILE`` and for each line:
 
-        * Skip line if contains only whitespaces (``str.isspace()``)
         * Remove leading and trailing whitespaces
+        * Skip line if it is empty
         * Split line by whitespace
         * Separate IP address and hosts names
         * Append IP address and hosts names to ``result``
@@ -362,8 +362,8 @@ File Read Parsing Dict
     #. Zapisz ``DATA`` do pliku ``FILE``
     #. Wczytaj ``FILE`` i dla każdej lini:
 
-        * Pomiń linię, jeżeli zawiera tylko białe znaki (``str.isspace()``)
         * Usuń białe znaki na początku i końcu linii
+        * Pomiń linię, jeżeli jest pusta
         * Podziel linię po białych znakach
         * Odseparuj adres IP i nazwy hostów
         * Dodaj adres IP i nazwy hostów do ``result``
@@ -375,7 +375,8 @@ File Read Parsing Dict
     .. code-block:: python
 
         FILE = r'file_read_parsing_dict.txt'
-        DATA = """127.0.0.1       localhost
+        DATA = """
+        127.0.0.1       localhost
         10.13.37.1      nasa.gov esa.int roscosmos.ru
         255.255.255.255 broadcasthost
         ::1             localhost"""
@@ -384,7 +385,7 @@ File Read Parsing Dict
     .. code-block:: python
 
         result: dict
-        # {'127.0.0.1': ['localhost', 'astromatt'],
+        # {'127.0.0.1': ['localhost'],
         #  '10.13.37.1': ['nasa.gov', 'esa.int', 'roscosmos.ru'],
         #  '255.255.255.255': ['broadcasthost'],
         #  '::1': ['localhost']}

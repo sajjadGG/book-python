@@ -161,7 +161,8 @@ File Write Multiline
     .. code-block:: python
 
         FILE = r'file_write_multiline.txt'
-        DATA = """127.0.0.1       localhostt
+        DATA = """
+        127.0.0.1       localhost
         10.13.37.1      nasa.gov esa.int roscosmos.ru
         255.255.255.255 broadcasthost
         ::1             localhost

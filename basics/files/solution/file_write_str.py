@@ -1,5 +1,5 @@
 FILE = r'/tmp/file_write_hello.txt'
-DATA = 'hello'
+DATA = 'hello world'
 result = DATA + '\n'
 
 with open(FILE, mode='wt') as file:
