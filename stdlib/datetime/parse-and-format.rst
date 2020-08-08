@@ -329,7 +329,7 @@ Datetime Parse ISO
 ------------------
 * Complexity level: easy
 * Lines of code to write: 1 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/datetime_parse_iso.py`
 
 :English:
@@ -351,7 +351,7 @@ Datetime Parse Local
 --------------------
 * Complexity level: easy
 * Lines of code to write: 3 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/datetime_parse_local.py`
 
 :Enlish:
@@ -387,7 +387,7 @@ Datetime Parse US
 -----------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/datetime_parse_us.py`
 
 :English:
@@ -429,7 +429,7 @@ Datetime Parse Logs
 -------------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/datetime_parse_logs.py`
 
 :English:
@@ -486,18 +486,14 @@ Datetime Parse Logs
 :Output:
     .. code-block:: python
 
-        result: List[dict] = [
-
-             {'date': datetime.datetime(1969, 7, 14, 21, 0),
-              'level': 'INFO',
-              'message': 'Terminal countdown started'},
-
-             {'date': datetime.datetime(1969, 7, 16, 13, 31, 53),
-              'level': 'WARNING',
-              'message': 'S-IC engine ignition (#5)'},
-
-             {'date': datetime.datetime(1969, 7, 16, 13, 33, 23),
-              'level': 'DEBUG',
-              'message': 'Maximum dynamic pressure (735.17 lb/ft^2)'},
-
-        ...]
+        result: List[dict]
+        # [{'date': datetime.datetime(1969, 7, 14, 21, 0),
+        #   'level': 'INFO',
+        #   'message': 'Terminal countdown started'},
+        #  {'date': datetime.datetime(1969, 7, 16, 13, 31, 53),
+        #   'level': 'WARNING',
+        #   'message': 'S-IC engine ignition (#5)'},
+        #  {'date': datetime.datetime(1969, 7, 16, 13, 33, 23),
+        #   'level': 'DEBUG',
+        #   'message': 'Maximum dynamic pressure (735.17 lb/ft^2)'},
+        #  ...]

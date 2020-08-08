@@ -84,7 +84,7 @@ Regexp Search Moon Speech
 -------------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/regexp_search_moon_speech.py`
 * References: "Moon Speech" by John F. Kennedy at Rice Stadium, Houston, TX on 1962-09-12 :cite:`RegexpKennedy1962`
 
@@ -144,7 +144,7 @@ Regexp Search Datetime
 ----------------------
 * Complexity level: hard
 * Lines of code to write: 4 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/regexp_search_datetime.py`
 * References: (modified) First paragraph from Apollo 11 Wikipedia entry :cite:`RegexpWikipediaApollo11`
 

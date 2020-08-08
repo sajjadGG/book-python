@@ -75,7 +75,7 @@ Regexp Match Phones
 -------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/regexp_match_phones.py`
 
 :English:
@@ -131,12 +131,12 @@ Regexp Match Phones
         False	123 555 678
         True	+48 12 355 5678
         False	+48 123-555-678
-        True	+48 123 555 6789
+        False	+48 123 555 6789
         False	+1 (123) 555-6789
         False	+1 (123).555.6789
         False	+1 800-python
         False	+48123555678
-        True	+48 123 555 678 wew. 1337
+        False	+48 123 555 678 wew. 1337
         False	+48 123555678,1
         False	+48 123555678,1,2,3
 
@@ -144,7 +144,7 @@ Regexp Match Git Flow
 ---------------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
-* Estimated time of completion: 20 min
+* Estimated time of completion: 21 min
 * Solution: :download:`solution/regexp_match_gitflow.py`
 
 :English:
