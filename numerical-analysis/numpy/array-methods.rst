@@ -238,6 +238,26 @@ Two dimensional
     #        [3, 6, 9]])
 
 
+.. _Numpy signum:
+
+Signum
+======
+.. figure:: img/numpy-methods-signum.png
+    :width: 75%
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[-2, -1, 0],
+                  [0, 1, 2]])
+
+    np.sign(a)
+    # array([[-1, -1,  0],
+    #        [ 0,  1,  1]])
+
+
 Assignments
 ===========
 

@@ -10,26 +10,19 @@ DATA = [
     (3.0, 7.0)
 ]
 
+data = np.array(DATA[1:])
+x = data[:, 0]
+y = data[:, 1]
+
+np.polyfit(x, y, deg=3)
+
+
+## Alternative solution
 header, *data = DATA
 
-x = [x for x, y in data]
-y = [y for x, y in data]
-a = np.polyfit(x, y, deg=3)
+x = [x for x,y in data]
+y = [y for x,y in data]
+result = np.polyfit(x, y, deg=3)
 
-print(a)
-# [ 0.25  0.75 -1.5  -2.  ]
-
-
-## Alternative
-header, *data = DATA
-x = []
-y = []
-
-for coord_x, coord_y in data:
-    x.append(coord_x)
-    y.append(coord_y)
-
-a = np.polyfit(x, y, deg=3)
-
-print(a)
+print(result)
 # [ 0.25  0.75 -1.5  -2.  ]

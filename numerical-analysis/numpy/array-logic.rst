@@ -28,6 +28,9 @@ Contains
     [3, 4] in a
     # False
 
+
+Is In
+=====
 .. code-block:: python
 
     import numpy as np
@@ -35,18 +38,16 @@ Contains
 
     a = np.array([[1, 2, 3],
                   [4, 5, 6]])
-    b = np.array([1, 2, 3])
+
+    b = np.array([1, 5, 9])
 
     np.isin(a, b)
-    # array([[ True,  True,  True],
-    #        [False, False, False]])
+    # array([[ True, False, False],
+    #        [False,  True, False]])
 
 
-Value Comparison
-================
-
-Comparision with Scalar
------------------------
+Scalar Comparison
+=================
 .. code-block:: python
 
     import numpy as np
@@ -79,8 +80,9 @@ Comparision with Scalar
     # array([[ True,  True, False],
     #        [False, False, False]])
 
-Comparison with Array
----------------------
+
+Broadcasting Comparison
+=======================
 .. code-block:: python
 
     import numpy as np
@@ -108,11 +110,8 @@ Comparison with Array
     # array([True, True, False])
 
 
-Boolean Logic
-=============
-
 Any
----
+===
 .. code-block:: python
 
     import numpy as np
@@ -120,9 +119,6 @@ Any
 
     a = np.array([True, False, False])
     # array([True, False, False])
-
-    any(a)
-    # True
 
     a.any()
     # True
@@ -134,9 +130,6 @@ Any
 
     a = np.array([[True, False, False],
                   [True, True, True]])
-
-    any(a)
-    # ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
 
     a.any()
     # True
@@ -147,17 +140,15 @@ Any
     a.any(axis=1)
     # array([ True,  True])
 
+
 All
----
+===
 .. code-block:: python
 
     import numpy as np
 
 
     a = np.array([True, False, False])
-
-    all(a)
-    # False
 
     a.all()
     # False
@@ -170,9 +161,6 @@ All
     a = np.array([[True, False, False],
                   [True, True, True]])
 
-    all(a)
-    # ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
-
     a.all()
     # False
 
@@ -182,8 +170,9 @@ All
     a.all(axis=1)
     # array([False,  True])
 
+
 Logical NOT
------------
+===========
 * ``np.logical_not(...)``
 * ``~(...)``
 
@@ -221,7 +210,7 @@ Logical NOT
 
 
 Logical AND
------------
+===========
 * Meets first and second condition at the same time
 * ``np.logical_and(..., ...)``
 * ``(...) & (...)``
@@ -258,7 +247,7 @@ Logical AND
 
 
 Logical OR
-----------
+==========
 * Meets first or second condition at the same time
 * ``np.logical_or(..., ...)``
 * ``(...) | (...)``
@@ -293,8 +282,9 @@ Logical OR
     # array([[ True, False, False],
     #        [False,  True,  True]])
 
+
 Logical XOR
------------
+===========
 * Meets first or second condition, but not both at the same time
 * ``np.logical_xor(..., ...)``
 * ``(...) ^ (...)``
@@ -316,24 +306,49 @@ Logical XOR
     #        [False,  True,  True]])
 
 
-.. _Numpy signum:
+Readability Counts
+==================
+.. code-block:: python
 
-Signum
-======
-.. figure:: img/logic-signum.png
-    :width: 75%
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6]])
+
+
+    (a < 2) & (a > 4) | (a == 3)
+    # array([[False, False,  True],
+    #        [False, False, False]])
 
 .. code-block:: python
 
     import numpy as np
 
 
-    a = np.array([[-2, -1, 0],
-                  [0, 1, 2]])
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
 
-    np.sign(a)
-    # array([[-1, -1,  0],
-    #        [ 0,  1,  1]])
+    lower = (a > 2)
+    upper = (a < 6)
+    nine = (a == 9)
+    range = lower & upper
+
+    lower & upper
+    # array([[False, False,  True],
+    #        [ True,  True, False],
+    #        [False, False, False]])
+
+    range | nine
+    # array([[False, False,  True],
+    #        [ True,  True, False],
+    #        [False, False,  True]])
+
+    lower & upper | nine
+    # array([[False, False,  True],
+    #        [ True,  True, False],
+    #        [False, False,  True]])
 
 
 Assignments
@@ -364,7 +379,7 @@ Numpy Isin
 ----------
 * Complexity level: easy
 * Lines of code to write: 9 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/numpy_isin.py`
 
 :English:

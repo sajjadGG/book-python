@@ -89,6 +89,7 @@ Nonzero
     a[a.nonzero()]
     # array([1, 2, 3, 4])
 
+
 Where
 =====
 
@@ -102,17 +103,16 @@ Single argument
     import numpy as np
 
 
-    a = np.array([1, 2, 3])
+    a = np.array([1, 2, 3, 4, 5, 6])
 
     np.where(a != 2)
-    # (array([0, 2]),)
+    # (array([0, 2, 3, 4, 5]),)
 
-    np.where(a > 1)
-    # (array([1, 2]),)
+    np.where(a % 2 == 0)
+    # (array([1, 3, 5]),)
 
-    np.where(a % 2 != 0)
-    # (array([0, 2]),)
-
+    np.where( (a>2) & (a<5) )
+    # (array([2, 3]),)
 
 .. code-block:: python
 
@@ -120,15 +120,16 @@ Single argument
 
 
     a = np.array([[1, 2, 3],
-                  [4, 5, 6]])
+                  [4, 5, 6],
+                  [7, 8, 9]])
 
-    np.where(a != 3)
-    # (array([0, 0, 1, 1, 1]),
-    #  array([0, 1, 0, 1, 2]))
-
-    np.where(a % 2 != 0)
+    np.where(a % 2 == 0)
     # (array([0, 0, 1]),
     #  array([0, 2, 1]))
+
+    np.where( (a>2) & (a<5) )
+    # (array([0, 1]),
+    #  array([2, 0]))
 
 Multiple argument
 -----------------
@@ -140,11 +141,27 @@ Multiple argument
 
 
     a = np.array([[1, 2, 3],
-                  [4, 5, 6]])
+                  [4, 5, 6],
+                  [7, 8, 9]])
 
-    np.where(a % 2, 'odd', 'even')
+    np.where(a < 5, 'small', 'large')
+    # array([['small', 'small', 'small'],
+    #        ['small', 'large', 'large'],
+    #        ['large', 'large', 'large']], dtype='<U5')
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
+
+    np.where(a % 2 == 0, 'even', 'odd')
     # array([['odd', 'even', 'odd'],
-    #        ['even', 'odd', 'even']], dtype='<U4')
+    #        ['even', 'odd', 'even'],
+    #        ['odd', 'even', 'odd']], dtype='<U4')
 
 .. code-block:: python
 
@@ -152,23 +169,27 @@ Multiple argument
 
 
     a = np.array([[1, 2, 3],
-                  [4, 5, 6]])
+                  [4, 5, 6],
+                  [7, 8, 9]])
 
-    np.where(a > 4, 99, 77)
-    # array([[77, 77, 77],
-    #        [77, 99, 99]])
+    np.where(a % 2 == 0, np.nan, a)
+    # array([[ 1., nan,  3.],
+    #        [nan,  5., nan],
+    #        [ 7., nan,  9.]])
 
+
+Take
+====
 .. code-block:: python
 
     import numpy as np
 
 
-    a = np.array([[1., 2., 3.],
-                  [4., 5., 6.]])
+    a = np.array([1, 2, 3])
+    at_index = np.array([0, 0, 1, 2, 2, 1])
 
-    np.where(a != 3, a, np.nan)       # if ``a != 3`` return element, otherwise ``np.nan``
-    # array([[ 1.,  2., nan],
-    #        [ 4.,  5.,  6.]])
+    a.take(at_index)
+    # array([1, 1, 2, 3, 3, 2])
 
 .. code-block:: python
 
@@ -176,14 +197,20 @@ Multiple argument
 
 
     a = np.array([[1, 2, 3],
-                  [4, 5, 6]])
+                  [4, 5, 6],
+                  [7, 8, 9]])
 
-    b = np.logical_and(a > 0, a % 3 == 0)
-    # array([[False, False,  True],
-    #        [False, False,  True]])
+    at_index = np.array([0, 0, 1])
 
-    a[b]
-    # array([3, 6])
+    a.take(at_index, axis=0)
+    # array([[1, 2, 3],
+    #        [1, 2, 3],
+    #        [4, 5, 6]])
+
+    a.take(at_index, axis=1)
+    # array([[1, 1, 2],
+    #        [4, 4, 5],
+    #        [7, 7, 8]])
 
 
 Advanced indexing
@@ -304,35 +331,31 @@ Advanced indexing
 
     import numpy as np
 
-
-    date = np.array([
-        '1970-01-01',
-        '1970-01-02',
-        '1970-01-03'])
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
-    # Intuitive understanding:
     # '1970-01-01' -> [1, 2, 3]
     # '1970-01-02' -> [4, 5, 6]
     # '1970-01-03' -> [7, 8, 9]
 
+    date = np.array([
+        '2000-01-01',
+        '2000-01-02',
+        '2000-01-03'])
 
-    date == '1970-01-02'
+    values = np.array([[1, 2, 3],
+                       [4, 5, 6],
+                       [7, 8, 9]])
+
+
+    date == '2000-01-02'
     # array([False,  True, False])
 
-    a[date == '1970-01-02']
-
-    a[date == '1970-01-02']
+    values[date == '2000-01-02']
     # array([[4, 5, 6]])
 
-    a[date != '1970-01-02']
+    values[date != '2000-01-02']
     # array([[1, 2, 3],
     #        [7, 8, 9]])
 
-    a[ (date=='1970-01-01') | (date=='1970-01-03') ]
+    values[ (date=='2000-01-01') | (date=='2000-01-03') ]
     # array([[1, 2, 3],
     #        [7, 8, 9]])
 
@@ -341,27 +364,31 @@ Advanced indexing
     import numpy as np
 
 
-    index = np.array(['1970-01-01', '1970-01-02', '1970-01-03'])
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
+    index = np.array([
+        '2000-01-01',
+        '2000-01-02',
+        '2000-01-03'])
 
-    jan01 = (index == '1970-01-01')
-    jan03 = (index == '1970-01-03')
+    data = np.array([[1, 2, 3],
+                     [4, 5, 6],
+                     [7, 8, 9]])
 
-    a[ jan01 | jan03 ]
+    jan01 = (index == '2000-01-01')
+    jan03 = (index == '2000-01-03')
+
+    data[ jan01 | jan03 ]
     # array([[1, 2, 3],
     #        [7, 8, 9]])
 
-    a[ jan01 | jan03, 0 ]
+    data[ jan01 | jan03, 0 ]
     # array([1, 7])s
 
-    a[ jan01 | jan03, :2 ]
+    data[ jan01 | jan03, :2 ]
     # array([[1, 2],
     #        [7, 8]])
 
-    a[ jan01 | jan03, :2 ] = 0
-    a
+    data[ jan01 | jan03, :2 ] = 0
+    data
     # array([[0, 0, 3],
     #        [4, 5, 6],
     #        [0, 0, 9]])
@@ -370,6 +397,12 @@ Advanced indexing
 .. code-block:: python
 
     import numpy as np
+
+    #                Morning         Noon      Evening
+    # 1999-12-30  1.76405235,  0.40015721,  0.97873798,
+    # 1999-12-31  2.2408932 ,  1.86755799, -0.97727788,
+    # 2000-01-01  0.95008842, -0.15135721, -0.10321885,
+    # 2000-01-02  0.4105985 ,  0.14404357,  1.45427351,
 
     index = np.array([
         '1999-12-30',
@@ -384,13 +417,6 @@ Advanced indexing
                      [ 0.95008842, -0.15135721, -0.10321885],
                      [ 0.4105985 ,  0.14404357,  1.45427351]])
 
-    ## Intuitive understanding
-    #                Morning         Noon      Evening
-    # 1999-12-30  1.76405235,  0.40015721,  0.97873798,
-    # 1999-12-31  2.2408932 ,  1.86755799, -0.97727788,
-    # 2000-01-01  0.95008842, -0.15135721, -0.10321885,
-    # 2000-01-02  0.4105985 ,  0.14404357,  1.45427351,
-
 
     dec31 = (index == '1999-12-31')   # array([False,  True, False, False])
     jan01 = (index == '2000-01-01')   # array([False, False,  True, False])
@@ -402,6 +428,9 @@ Advanced indexing
     #        [ 0.95008842, -0.15135721, -0.10321885]])
 
     data[dec31 | jan01, (columns == 'Morning')]
+    # array([2.2408932 , 0.95008842])
+
+    data[dec31 | jan01, morning]
     # array([2.2408932 , 0.95008842])
 
     data[days]
@@ -464,40 +493,6 @@ Diagonal problem
     #        [ 0.95008842, -0.10321885]])
 
 
-Take
-====
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([1, 2, 3])
-
-    at_index = np.array([0, 0, 1, 2, 2, 1])
-
-    a.take(at_index)
-    # array([1, 1, 2, 3, 3, 2])
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6]])
-
-    at_index = np.array([0, 0, 1])
-
-    a.take(at_index, axis=0)
-    # array([[1, 2, 3],
-    #        [1, 2, 3],
-    #        [4, 5, 6]])
-
-    a.take(at_index, axis=1)
-    # array([[1, 1, 2],
-    #        [4, 4, 5]])
-
-
 Assignments
 ===========
 
@@ -505,7 +500,7 @@ Numpy Select
 ------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/numpy_select.py`
 
 :English:

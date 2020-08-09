@@ -260,7 +260,7 @@ Numpy Algebra Euclidean 2D
 --------------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 7 min
+* Estimated time of completion: 5 min
 * Solution: :download:`solution/numpy_algebra_euclidean_2d.py`
 
 :English:
@@ -305,7 +305,6 @@ Numpy Algebra Euclidean 2D
             y1 = ...
             x2 = ...
             y2 = ...
-            return ...
 
 .. figure:: img/euclidean-distance.png
     :width: 75%
@@ -320,7 +319,7 @@ Numpy Algebra Euclidean Ndim
 ----------------------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
-* Estimated time of completion: 7 min
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/numpy_algebra_euclidean_ndim.py`
 
 :English:
@@ -368,8 +367,8 @@ Numpy Algebra Euclidean Ndim
             >>> euclidean_distance((0,0,1,0,1), (1,1,0,0,1))
             1.7320508075688772
             """
-            return ...
 
 :Hint:
+    * ``import doctest``
     * :math:`distance(a, b) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + ... + (n_2 - n_1)^2}`
     * ``for n1, n2 in zip(A, B)``

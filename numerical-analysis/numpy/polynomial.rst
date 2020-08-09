@@ -105,8 +105,14 @@ Derivative of a polynomial
     import numpy as np
 
 
-    np.polyder([1./4., 1./3., 1./2., 1., 0.])
-    # array([ 1., 1., 1., 1.])
+    np.polyder([1/4, 1/3, 1/2, 1, 0])
+    # array([1., 1., 1., 1.])
+
+    np.polyder([0.25, 0.33333333, 0.5, 1, 0])
+    # array([1., 0.99999999, 1., 1.])
+
+    np.polyder([1, 2, 3, 4])
+    # array([3, 4, 3])
 
 Antiderivative (indefinite integral) of a polynomial
 ----------------------------------------------------
@@ -118,7 +124,10 @@ Antiderivative (indefinite integral) of a polynomial
 
 
     np.polyint([1, 1, 1, 1])
-    # array([ 0.25 , 0.33333333, 0.5 , 1. , 0. ])
+    # array([0.25, 0.33333333, 0.5, 1., 0.])
+
+    np.polyint([16, 9, 4, 2])
+    # array([4., 3., 2., 2., 0.])
 
 
 Evaluation
@@ -127,6 +136,7 @@ Evaluation
 Evaluate a polynomial at specific values
 ----------------------------------------
 * Compute polynomial values
+* Horner's scheme is used to evaluate the polynomial
 
 .. code-block:: python
 
