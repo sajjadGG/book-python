@@ -238,21 +238,6 @@ Two dimensional
     #        [3, 6, 9]])
 
 
-To list
-=======
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6]])
-
-    a.tolist()
-    # [[1, 2, 3], [4, 5, 6]]
-
-
 Assignments
 ===========
 
@@ -260,7 +245,7 @@ Numpy Methods
 -------------
 * Complexity level: easy
 * Lines of code to write: 6 lines
-* Estimated time of completion: 3 min
+* Estimated time of completion: 5 min
 * Solution: :download:`solution/numpy_methods.py`
 
 :English:

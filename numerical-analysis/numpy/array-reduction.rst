@@ -1,30 +1,95 @@
-****************
-Array Statistics
-****************
+***************
+Array Reduction
+***************
 
 
 Sum
 ===
+* ``a.sum()``
+* ``np.sum()``
+* ``np.nansum()``
+
 .. code-block:: python
 
     import numpy as np
 
 
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6]])
+    a = np.array([[1.1, 2.2, 3.3],
+                  [4.4, 5.5, 6.6]])
 
     a.sum()
-    # 21
+    # 23.1
 
     a.sum(axis=0)
-    # array([5, 7, 9])
+    # array([5.5, 7.7, 9.9])
 
     a.sum(axis=1)
-    # array([ 6, 15])
+    # array([ 6.6, 16.5])
+
+    np.sum(a)
+    # 23.1
+
+.. code-block:: python
+
+    import numpy as np
+
+
+     a = np.array([[1.1, 2.2, 3.3],
+                   [4.4, np.nan, 6.6]])
+
+    a.sum()
+    # nan
+
+    np.sum(a)
+    # nan
+
+    np.nansum(a)
+    # 17.6
+
+
+Cumulative Sum
+==============
+* ``a.cumsum()``
+* ``np.cumsum()``
+* ``np.nancumsum()``
+
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[1.1, 2.2, 3.3],
+                  [4.4, 5.5, 6.6]])
+
+    a.cumsum()
+    # array([ 1.1,  3.3,  6.6, 11. , 16.5, 23.1])
+
+    np.cumsum(a)
+    # array([ 1.1,  3.3,  6.6, 11. , 16.5, 23.1])
+
+.. code-block:: python
+
+    import numpy as np
+
+
+     a = np.array([[1.1, 2.2, 3.3],
+                   [4.4, np.nan, 6.6]])
+
+    a.cumsum()
+    # array([ 1.1,  3.3,  6.6, 11. ,  nan,  nan])
+
+    np.cumsum(a)
+    # array([ 1.1,  3.3,  6.6, 11. ,  nan,  nan])
+
+    np.nancumsum(a)
+    # array([ 1.1,  3.3,  6.6, 11. , 11. , 17.6])
 
 
 Product
 =======
+* ``a.prod()``
+* ``np.prod()``
+* ``np.nanprod()``
 .. code-block:: python
 
     import numpy as np
@@ -37,8 +102,19 @@ Product
     # 720
 
 
+Cumulative Product
+==================
+* ``a.cumprod()``
+* ``np.cumprod()``
+* ``np.nancumprod()``
+
+
 Mean
 ====
+* ``a.mean()``
+* ``np.mean()``
+* ``np.nanmean()``
+
 .. code-block:: python
 
     import numpy as np
@@ -57,8 +133,18 @@ Mean
     # array([2., 5.])
 
 
+Cumulative Mean
+===============
+* ``a.cummean()``
+* ``np.cummean()``
+* ``np.nancummean()``
+
 Variance
 ========
+* ``a.var()``
+* ``np.var()``
+* ``np.nanvar()``
+
 .. code-block:: python
 
     import numpy as np
@@ -79,6 +165,10 @@ Variance
 
 Standard Deviation
 ==================
+* ``a.std()``
+* ``np.std()``
+* ``np.nanstd()``
+
 .. code-block:: python
 
     import numpy as np
@@ -99,7 +189,9 @@ Standard Deviation
 
 Minimal Value
 =============
- * ``ndarray.argmin()`` index of an ``a.min()`` element in array
+* ``ndarray.argmin()`` index of an ``a.min()`` element in array
+* ``np.nanmin()``
+* ``np.nanargmin()``
 
 .. code-block:: python
 
@@ -182,7 +274,9 @@ Minimal Value
 
 Maximal Value
 =============
- * ``ndarray.argmax()`` index of an ``a.max()`` element in array
+* ``ndarray.argmax()`` index of an ``a.max()`` element in array
+* ``np.nanmax()``
+* ``np.nanargmax()``
 
 .. code-block:: python
 
@@ -263,6 +357,23 @@ Maximal Value
     # array([[False, False, False],
     #        [False, False,  True]])
 
+
+Median
+======
+* ``np.median()``
+* ``np.nanmedian()``
+
+
+Quantile
+========
+* ``np.quantile()``
+* ``np.nanquantile()``
+
+
+Percentile
+==========
+* ``np.percentile()``
+* ``np.nanpercentile()``
 
 
 Assignments

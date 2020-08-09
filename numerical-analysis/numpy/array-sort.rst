@@ -127,21 +127,21 @@ Numpy Sort
 ----------
 * Complexity level: easy
 * Lines of code to write: 4 lines
-* Estimated time of completion: 3 min
+* Estimated time of completion: 5 min
 * Solution: :download:`solution/numpy_sort.py`
 
 :English:
     #. Set random seed to zero
     #. Generate ``result: ndarray`` of 12 random integers from 0 to 100 (exclusive)
     #. Reshape ``result`` to 3x4
-    #. Sort ``result`` in columns
-    #. Flip ``result`` in rows
+    #. Sort ``result`` columns
+    #. Flip ``result`` rows
     #. Print ``result``
 
 :Polish:
     #. Ustaw ziarno losowości na zero
     #. Wygeneruj ``result: ndarray`` z 12 losowymi liczbami całkowitymi od 0 do 100 (rozłącznie)
     #. Zmień kształt na 3x4
-    #. Posortuj ``result`` w kolumnach
-    #. Flipnij ``result`` w wierszach
+    #. Posortuj kolumny ``result``
+    #. Flipnij wiersze ``result``
     #. Wypisz ``result``

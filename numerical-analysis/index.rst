@@ -70,9 +70,10 @@ Numpy
     numpy/array-sort.rst
     numpy/array-methods.rst
     numpy/array-arithmetic.rst
+    numpy/array-broadcasting.rst
     numpy/array-concatenation.rst
     numpy/array-serialize.rst
-    numpy/array-statistics.rst
+    numpy/array-reduction.rst
     numpy/array-logic.rst
     numpy/array-inf-nan.rst
     numpy/array-select.rst
