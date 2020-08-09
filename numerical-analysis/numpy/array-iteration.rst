@@ -10,10 +10,10 @@ Array Iteration
     import numpy as np
 
 
-    a = np.array([1, 2, 3])
+    data = np.array([1, 2, 3])
 
-    for obj in a:
-        print(obj)
+    for value in data:
+        print(value)
 
     # 1
     # 2
@@ -27,12 +27,12 @@ Array Iteration
     import numpy as np
 
 
-    a = np.array([[1, 2, 3],
+    data = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    for obj in a:
-        print(obj)
+    for value in data:
+        print(value)
 
     # [1 2 3]
     # [4 5 6]
@@ -43,13 +43,13 @@ Array Iteration
     import numpy as np
 
 
-    a = np.array([[1, 2, 3],
+    data = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    for row in a:
-        for obj in row:
-            print(obj)
+    for row in data:
+        for value in row:
+            print(value)
 
     # 1
     # 2
@@ -71,12 +71,12 @@ Flatten
     import numpy as np
 
 
-    a = np.array([[1, 2, 3],
+    data = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    for obj in a.flatten():
-        print(obj)
+    for value in data.flatten():
+        print(value)
 
     # 1
     # 2
@@ -95,12 +95,12 @@ Ravel
     import numpy as np
 
 
-    a = np.array([[1, 2, 3],
+    data = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    for obj in a.ravel():
-        print(obj)
+    for value in data.ravel():
+        print(value)
 
     # 1
     # 2
@@ -116,16 +116,60 @@ Enumerate
 =========
 .. code-block:: python
 
-    a = np.array([[1, 2, 3],
+    import numpy as np
+
+    data = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    for i, obj in enumerate(a):
-        print(i, obj)
+    for i, value in enumerate(data):
+        print(i, value)
 
     # 0 [1 2 3]
     # 1 [4 5 6]
     # 2 [7 8 9]
+
+.. code-block:: python
+
+    import numpy as np
+
+    data = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
+
+    for i, value in enumerate(data.ravel()):
+        print(i, value)
+    # 0 1
+    # 1 2
+    # 2 3
+    # 3 4
+    # 4 5
+    # 5 6
+    # 6 7
+    # 7 8
+    # 8 9
+
+.. code-block:: python
+
+    import numpy as np
+
+    data = np.array([[1, 2, 3],
+                  [4, 5, 6],
+                  [7, 8, 9]])
+
+    for i, row in enumerate(data):
+        for j, value in enumerate(row):
+            print(i, j, value)
+
+    # 0 0 1
+    # 0 1 2
+    # 0 2 3
+    # 1 0 4
+    # 1 1 5
+    # 1 2 6
+    # 2 0 7
+    # 2 1 8
+    # 2 2 9
 
 
 Assignments
@@ -140,7 +184,7 @@ Numpy Iteration
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Use ``for`` to iterate over ``a``
+    #. Use ``for`` to iterate over ``DATA``
     #. Print even numbers
 
 :Polish:
@@ -152,8 +196,8 @@ Numpy Iteration
     .. code-block:: python
 
         DATA = np.array([[1, 2, 3],
-                          [4, 5, 6],
-                          [7, 8, 9]])
+                         [4, 5, 6],
+                         [7, 8, 9]])
 
 :The whys and wherefores:
     * Iterating 2-dimensional ``ndarray``

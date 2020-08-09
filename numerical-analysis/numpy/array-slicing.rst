@@ -205,60 +205,6 @@ Rows and Columns
     # array([[5]])
 
 
-Newaxis
-=======
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([1, 2, 3])
-
-    a[:, np.newaxis]
-    # array([[1],
-    #        [2],
-    #        [3]])
-
-    a[np.newaxis, :]
-    # array([[1, 2, 3]])
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6]])
-
-    a[:, np.newaxis]
-    # array([[[1, 2, 3]],
-    #        [[4, 5, 6]]])
-
-    a[np.newaxis, :]
-    # array([[[1, 2, 3],
-    #         [4, 5, 6]]])
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
-    a[:, np.newaxis, 1]
-    # array([[2],
-    #        [5],
-    #        [8]])
-
-    a[np.newaxis, :, 1]
-    # array([[2, 5, 8]])
-
-    a[1, np.newaxis, :]
-    # array([[4, 5, 6]])
-
-
 Assignments
 ===========
 

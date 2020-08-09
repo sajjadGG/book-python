@@ -8,7 +8,7 @@ selection = 2 ** np.arange(11)
 mask = np.isin(a, selection)
 result = a[mask]
 result.sort()
-result = np.flip(b)
+result = np.flip(result)
 
 print(result)
 # [1024 1024 1024 1024 1024 1024  512  512  512  512  256  256  256  256

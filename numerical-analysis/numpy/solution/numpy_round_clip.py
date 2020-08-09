@@ -2,7 +2,7 @@ import numpy as np
 np.random.seed(0)
 
 
-a = np.random.randint(0, 100, size=(7,3))
+data = np.random.randint(0, 100, size=(7,3))
 # array([[44, 47, 64],
 #        [67, 67,  9],
 #        [83, 21, 36],
@@ -11,9 +11,9 @@ a = np.random.randint(0, 100, size=(7,3))
 #        [65, 39, 87],
 #        [46, 88, 81]])
 
-a[:, 0] = a[:, 0].clip(50, 80)
+data[:, 0] = data[:, 0].clip(50, 80)
 
-print(a)
+print(data)
 # [[50 47 64]
 #  [67 67  9]
 #  [79 21 36]

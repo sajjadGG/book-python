@@ -7,6 +7,19 @@ DATA = np.array([
     [7, 8, 9]
 ])
 
+## Alternative Solution
+result = np.empty(shape=(2,2), dtype=float)
+result[0,0] = DATA[0,2]
+result[0,1] = DATA[2,2]
+result[1,0] = DATA[0,0]
+result[1,1] = DATA[1,0]
+
+print(result)
+# array([[3., 9.],
+#        [1., 6.]])
+
+
+## Alternative Solution
 np.array([
     DATA[0][2],
     DATA[2][2],
@@ -17,6 +30,7 @@ np.array([
 #        [1., 6.]])
 
 
+## Alternative Solution
 np.array([
     [DATA[0,2], DATA[2,2]],
     [DATA[0,0], DATA[1,0]],
@@ -24,13 +38,3 @@ np.array([
 # array([[3., 9.],
 #        [1., 6.]])
 
-
-result = np.zeros(shape=(2,2), dtype=float)
-result[0,0] = DATA[0,2]
-result[0,1] = DATA[2,2]
-result[1,0] = DATA[0,0]
-result[1,1] = DATA[1,0]
-
-print(result)
-# array([[3., 9.],
-#        [1., 6.]])

@@ -78,20 +78,6 @@ Clip
     import numpy as np
 
 
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
-    a.clip(2, 5)
-    # array([[2, 2, 3],
-    #        [4, 5, 5],
-    #        [5, 5, 5]])
-
-.. code-block:: python
-
-    import numpy as np
-
-
     a = np.array([[-2, -1, 0],
                   [0, 1, 2]])
 
@@ -112,12 +98,21 @@ Clip
 Assignments
 ===========
 
+Numpy Round
+-----------
+* Complexity level: medium
+* Lines of code to write: 3 lines
+* Estimated time of completion: 8 min
+* Solution: :download:`solution/numpy_round_rint.py`
+
+
+
 Numpy Clip
 ----------
 * Complexity level: medium
 * Lines of code to write: 3 lines
-* Estimated time of completion: 5 min
-* Solution: :download:`solution/numpy_clip.py`
+* Estimated time of completion: 8 min
+* Solution: :download:`solution/numpy_round_clip.py`
 
 :English:
     #. Set random seed to zero

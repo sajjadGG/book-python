@@ -63,6 +63,7 @@ Numpy
     numpy/array-shape.rst
     numpy/array-indexing.rst
     numpy/array-slicing.rst
+    numpy/array-newaxis.rst
     numpy/array-iteration.rst
     numpy/array-rounding.rst
     numpy/array-axis.rst
