@@ -61,6 +61,7 @@ Diagonal
     a.diagonal()
     # array([1, 5, 9])
 
+
 Nonzero
 =======
 * Each element of the tuple contains one of the indices for each nonzero value.
@@ -232,6 +233,12 @@ Advanced indexing
 
     a[a > 2]
     # array([3, 4, 5, 6])
+
+    a[a > a.mean()]
+    # array([4, 5, 6])
+
+    a[a >= a.mean()+1]
+    # array([5, 6])
 
 .. code-block:: python
 

@@ -10,6 +10,7 @@ What it is?
 * Cannot instantiate
 * Inheriting class must implement all methods
 * Only method declaration
+* :pep:`544` Protocols: Structural subtyping (static duck typing)
 
 .. glossary::
     interface

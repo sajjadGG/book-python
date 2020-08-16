@@ -52,7 +52,7 @@ Numpy
     :caption: Numpy
     :name: Numerical Analysis Numpy
 
-    numpy/index.rst
+    numpy/about.rst
     numpy/builtin.rst
     numpy/import-export.rst
 

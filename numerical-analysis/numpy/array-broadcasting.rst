@@ -1,6 +1,6 @@
-****************
-Array Arithmetic
-****************
+******************
+Array Broadcasting
+******************
 
 .. glossary::
 

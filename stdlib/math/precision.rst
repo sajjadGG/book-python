@@ -5,37 +5,37 @@ Math Precision
 **************
 
 
-``float`` min and max
-=====================
-
-Maximal and minimal ``float`` values
-------------------------------------
+Minimal and Maximal Values
+==========================
 .. code-block:: python
+    :caption: Maximal and minimal ``float`` values
 
     import sys
 
     sys.float_info.min      # 2.2250738585072014e-308
     sys.float_info.max      # 1.7976931348623157e+308
 
-Infinity representation
------------------------
+
+Infinity
+========
 .. code-block:: python
+    :caption: Infinity representation
 
     1e308                   # 1e+308
-    1e309                   # inf
+    -1e308                  # -1e+308
 
-.. code-block:: python
+    1e309                   # inf
+    -1e309                  # -inf
 
     float('inf')            # inf
-    float('Infinity')       # inf
-
-.. code-block:: python
-
     float('-inf')           # -inf
+
+    float('Infinity')       # inf
     float('-Infinity')      # -inf
 
+
 Not-a-Number
-------------
+============
 .. code-block:: python
 
     float('nan')
@@ -44,8 +44,9 @@ Not-a-Number
     float('-nan')
     # nan
 
+
 NaN vs Inf
-----------
+==========
 .. code-block:: python
 
     float('inf') + float('inf')     # inf
@@ -69,55 +70,48 @@ NaN vs Inf
     float('-inf') / float('-inf')   # nan
 
 
-Precision
-=========
+Floating Numbers Precision
+==========================
+* Solution: Store values as ``int``, do operation and then divide. For example instead of 1.99 USD, store price as 199 US cents
+* Solution: Use ``Decimal`` type
 
-Problem
--------
 .. code-block:: python
+    :caption: Problem
 
     0.1 + 0.2
     # 0.30000000000000004
 
-.. code-block:: python
-
     0.1 + 0.2 == 0.3
     # False
 
-What is ``float``
------------------
+
+IEEE 754 standard
+=================
 .. figure:: img/float-anatomy.png
     :width: 75%
     :align: center
 
-    What is ``float``
+    What is ``float`` as defined by IEEE 754 standard
 
-Points chart
-------------
 .. figure:: img/float-expression.png
     :width: 75%
     :align: center
 
     Points chart
 
-How computer store ``float``?
------------------------------
 .. figure:: img/float-mantissa-1.png
     :width: 75%
     :align: center
 
     How computer store ``float``?
+    As defined by IEEE 754 standard
 
-How to read/write ``float`` from/to memory?
--------------------------------------------
 .. figure:: img/float-mantissa-2.png
     :width: 75%
     :align: center
 
     How to read/write ``float`` from/to memory?
 
-Normalized Line
----------------
 .. figure:: img/float-normalized.png
     :width: 75%
     :align: center
@@ -125,8 +119,8 @@ Normalized Line
     Normalized Line
 
 
-doctests
-========
+Floats in Doctest
+=================
 .. code-block:: python
 
     def add_numbers(a, b):
@@ -142,8 +136,9 @@ doctests
         """
         return a + b
 
-``decimal``
-===========
+
+Decimal Type
+============
 .. code-block:: python
 
     from decimal import Decimal
@@ -164,3 +159,4 @@ doctests
 
     float(a)
     # 0.3
+
