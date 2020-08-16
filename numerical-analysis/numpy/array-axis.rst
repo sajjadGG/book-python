@@ -15,10 +15,13 @@ Rationale
 
     Visualizing Multi-Dimensional Arrays :cite:`NumpyMultidimArrays`
 
+Axis
+====
+* New dimensions are added at the beginning of ``shape``
+* Old axes numbers are pushed to the right
 
-One Dimensions
-==============
 .. code-block:: python
+    :caption: One Dimensions
 
     a = np.array([1,2,3])
 
@@ -28,10 +31,8 @@ One Dimensions
     axis=0   # columns
     axis=-0  # columns
 
-
-Two Dimensions
-==============
 .. code-block:: python
+    :caption: Two Dimensions
 
     a = np.array([[1,2,3],
                   [4,5,6]])
@@ -45,10 +46,8 @@ Two Dimensions
     axis=-0  # rows
     axis=-1  # columns
 
-
-Three Dimensions
-================
 .. code-block:: python
+    :caption: Three Dimensions
 
     a = np.array([[[1,2,3],
                    [4,5,6]],
@@ -67,10 +66,8 @@ Three Dimensions
     axis=-1  # columns
     axis=-2  # rows
 
-
-Four Dimensions
-===============
 .. code-block:: python
+    :caption: Four Dimensions
 
     a = np.array([[[[1,2,3],
                    [4,5,6]],
@@ -94,12 +91,6 @@ Four Dimensions
     axis=-0  # depth
     axis=-1  # columns
     axis=-2  # rows
-
-
-``n`` Dimensions
-================
-* New dimensions are added at the beginning of ``shape``
-* Old axes numbers are pushed to the right
 
 
 Take

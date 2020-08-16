@@ -1,11 +1,11 @@
 import numpy as np
 
+a = np.array([[-1.1, 0.0, 1.1],
+              [2.2, 3.3, 4.4]])
 
-data = np.random.randint(0, 10, size=(16, 16))
-
-print('Ndim:', data.ndim)
-print('Size:', data.size)
-print('Dtype:', data.dtype)
-print('Itemsize:', data.itemsize)
-print('Shape:', data.shape)
-print('Strides:', data.strides)
+print('Ndim:', a.ndim)
+print('Size:', a.size)
+print('Dtype:', a.dtype)
+print('Itemsize:', a.itemsize)
+print('Shape:', a.shape)
+print('Strides:', a.strides)

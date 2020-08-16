@@ -5,8 +5,8 @@ Array Shape
 
 * Any shape operation changes only ``ndarray.shape`` and ``ndarray.strides`` and does not touch data
 
-Get shape
-=========
+Shape
+=====
 .. code-block:: python
 
     import numpy as np

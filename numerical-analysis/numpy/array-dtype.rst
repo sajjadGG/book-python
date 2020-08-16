@@ -220,7 +220,6 @@ Numpy Astype
 * Solution: :download:`solution/numpy_astype.py`
 
 :English:
-    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Use data from "Input" section (see below)
     #. Given ``a: ndarray`` (see below)
     #. Convert to ``int`` type
@@ -228,6 +227,7 @@ Numpy Astype
     #. What happened in each of those steps?
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Dany ``a: ndarray`` (patrz sekcja input)
     #. Przekonwertuj do typu ``int``
     #. Rezultat rzutuj na typ ``bool``

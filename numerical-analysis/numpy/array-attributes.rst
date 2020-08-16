@@ -116,9 +116,7 @@ Numpy Attributes
 * Solution: :download:`solution/numpy_attributes.py`
 
 :English:
-    #. Set random seed to zero.
-    #. Create ``a: ndarray`` with size 16x16.
-    #. Structure must contains random digits 0-9 (inclusive).
+    #. Use data from "Input" section (see below)
     #. Print:
 
         * number of dimensions;
@@ -129,9 +127,7 @@ Numpy Attributes
         * strides.
 
 :Polish:
-    #. Ustaw ziarno losowości na zero.
-    #. Stwórz ``a: ndarray`` o rozmiarze 16x16.
-    #. Struktura musi zawierać losowe cyfry 0-9 (włącznie).
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Wypisz:
 
         * liczbę wymiarów,
@@ -140,6 +136,12 @@ Numpy Attributes
         * rozmiar elementu,
         * kształt,
         * przeskoki (strides).
+
+:Input:
+    .. code-block:: python
+
+        a = np.array([[-1.1, 0.0, 1.1],
+                      [ 2.2, 3.3, 4.4]])
 
 :The whys and wherefores:
     * Defining ``ndarray``

@@ -189,7 +189,7 @@ Standard Deviation
 
 Minimal Value
 =============
-* ``ndarray.argmin()`` index of an ``a.min()`` element in array
+* ``ndarray.argmin()`` index of an ``ndarray.min()`` element in array
 * ``np.nanmin()``
 * ``np.nanargmin()``
 

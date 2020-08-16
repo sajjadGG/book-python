@@ -53,30 +53,31 @@ Numpy
     :name: Numerical Analysis Numpy
 
     numpy/about.rst
-    numpy/builtin.rst
-    numpy/import-export.rst
+    numpy/constants.rst
 
     numpy/array-create.rst
-    numpy/array-random.rst
     numpy/array-dtype.rst
     numpy/array-attributes.rst
     numpy/array-shape.rst
+    numpy/array-random.rst
     numpy/array-indexing.rst
     numpy/array-slicing.rst
-    numpy/array-newaxis.rst
     numpy/array-iteration.rst
     numpy/array-rounding.rst
     numpy/array-axis.rst
+    numpy/array-newaxis.rst
     numpy/array-sort.rst
     numpy/array-methods.rst
+    numpy/array-concatenation.rst
+
     numpy/array-arithmetic.rst
     numpy/array-broadcasting.rst
-    numpy/array-concatenation.rst
-    numpy/array-serialize.rst
     numpy/array-reduction.rst
     numpy/array-logic.rst
-    numpy/array-inf-nan.rst
     numpy/array-select.rst
+
+    numpy/array-serialize.rst
+    numpy/import-export.rst
 
     numpy/statistics.rst
     numpy/trigonometry.rst

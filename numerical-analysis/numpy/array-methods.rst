@@ -170,22 +170,6 @@ Fill NaN
     #        [nan,  8.,  9.]])
 
 
-Full
-====
-.. code-block:: python
-
-    import numpy as np
-
-
-    np.full((2, 2), np.inf)
-    # array([[inf, inf],
-    #        [inf, inf]])
-
-    np.full((2, 2), 10)
-    # array([[10, 10],
-    #        [10, 10]])
-
-
 Transpose
 =========
 * ``a.transpose()`` or ``a.T``
