@@ -129,18 +129,25 @@ Numpy Round Rint
 * Solution: :download:`solution/numpy_round_rint.py`
 
 :English:
-    #. Set random seed to zero
-    #. Generate ``result: ndarray`` of 21 random numbers from range ``<0.0; 1.1)``
+    #. Use data from "Input" section (see below)
     #. Round values to integers
     #. Convert data type to ``np.int8``
     #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Ustaw ziarno losowości na zero
-    #. Wygeneruj ``result: ndarray`` z 21 losowymi liczbami z przedziału ``<0.0; 1.1)``
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zaokrąglij wartości do pełnych liczb całkowitych
     #. Przekonwertuj typ danych do ``np.int8``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        DATA = np.array([0.5488135 , 0.71518937, 0.60276338, 0.54488318, 0.4236548 ,
+                         0.64589411, 0.43758721, 0.891773  , 0.96366276, 0.38344152,
+                         0.79172504, 0.52889492, 0.56804456, 0.92559664, 0.07103606,
+                         0.0871293 , 0.0202184 , 0.83261985, 0.77815675, 0.87001215,
+                         0.97861834])
 
 :Output:
     .. code-block:: python
@@ -156,20 +163,27 @@ Numpy Round Floor and Ceil
 * Solution: :download:`solution/numpy_round_ceilfloor.py`
 
 :English:
-    #. Set random seed to zero
-    #. Generate ``data: ndarray`` of 21 random numbers from range ``<0.0; 1.1)``
+    #. Use data from "Input" section (see below)
     #. Ceil round ``data`` values and print them
     #. Floor round ``data`` values and print them
     #. Round ``data`` values and print them
     #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Ustaw ziarno losowości na zero
-    #. Wygeneruj ``data: ndarray`` z 21 losowymi liczbami z przedziału ``<0.0; 1.1)``
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zaokrąglij wartości ``data`` w górę (ceil) i je wypisz
     #. Zaokrąglij wartości ``data`` w dół (floor) i je wypisz
     #. Zaokrąglij wartości ``data`` i je wypisz
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        DATA = np.array([0.5488135 , 0.71518937, 0.60276338, 0.54488318, 0.4236548 ,
+                         0.64589411, 0.43758721, 0.891773  , 0.96366276, 0.38344152,
+                         0.79172504, 0.52889492, 0.56804456, 0.92559664, 0.07103606,
+                         0.0871293 , 0.0202184 , 0.83261985, 0.77815675, 0.87001215,
+                         0.97861834])
 
 :Output:
     .. code-block:: python
@@ -194,25 +208,34 @@ Numpy Round Clip
 * Solution: :download:`solution/numpy_round_clip.py`
 
 :English:
-    #. Set random seed to zero
-    #. Generate ``result: ndarray`` of 21 random integers from 0 to 100 (exclusive)
-    #. Change shape to 7x3
+    #. Use data from "Input" section (see below)
+    #. Create ``result: ndarray`` copy of ``DATA``
     #. Clip numbers only in first column to 50 (inclusive) to 80 (exclusive)
     #. Print ``result``
     #. Compare result with "Output" section (see below)
 
 :Polish:
-    #. Ustaw ziarno losowości na zero
-    #. Wygeneruj ``result: ndarray`` z 21 losowymi liczbami całkowitymi od 0 do 100 (rozłącznie)
-    #. Zmień kształt na 7x3
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Stwórz ``result: ndarray`` z kopią danych z ``DATA``
     #. Przytnij liczby w pierwszej kolumnie od 50 (włącznie) do 80 (rozłącznie)
     #. Wypisz ``result``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
+:Input:
+    .. code-block:: python
+
+        DATA = np.array([[44, 47, 64],
+                         [67, 67,  9],
+                         [83, 21, 36],
+                         [87, 70, 88],
+                         [88, 12, 58],
+                         [65, 39, 87],
+                         [46, 88, 81]])
+
 :Output:
     .. code-block:: python
 
-        a: ndarray
+        result: ndarray
         # array([[50, 47, 64],
         #        [67, 67,  9],
         #        [79, 21, 36],

@@ -253,8 +253,7 @@ Numpy Methods
 * Solution: :download:`solution/numpy_methods.py`
 
 :English:
-    #. Set random seed to zero
-    #. Generate ``result: ndarray`` of 12 random integers from 0 to 100 (exclusive)
+    #. Use data from "Input" section (see below)
     #. Reshape ``result`` to 3x4
     #. Fill last column with zeros (0)
     #. Transpose ``result``
@@ -263,11 +262,26 @@ Numpy Methods
     #. Print ``result``
 
 :Polish:
-    #. Ustaw ziarno losowości na zero
-    #. Wygeneruj ``result: ndarray`` z 12 losowymi liczbami całkowitymi od 0 do 100 (rozłącznie)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Zmień kształt na 3x4
     #. Wypełnij ostatnią kolumnę zerami (0)
     #. Transponuj ``result``
     #. Przekonwertuj ``result`` do float
     #. Wypełnij pierwszy wiersz ``np.nan``
     #. Wypisz ``result``
+
+:Input:
+    .. code-block:: python
+
+        DATA = np.array([[44, 47, 64, 67],
+                         [67,  9, 83, 21],
+                         [36, 87, 70, 88]])
+
+:Output:
+    .. code-block:: python
+
+        result: ndarray
+        # array([[nan, nan, nan],
+        #        [47.,  9., 87.],
+        #        [64., 83., 70.],
+        #        [ 0.,  0.,  0.]])

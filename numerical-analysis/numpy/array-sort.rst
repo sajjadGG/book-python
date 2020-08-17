@@ -131,17 +131,28 @@ Numpy Sort
 * Solution: :download:`solution/numpy_sort.py`
 
 :English:
-    #. Set random seed to zero
-    #. Generate ``result: ndarray`` of 12 random integers from 0 to 100 (exclusive)
-    #. Reshape ``result`` to 3x4
+    #. Use data from "Input" section (see below)
     #. Sort ``result`` columns
     #. Flip ``result`` rows
     #. Print ``result``
 
 :Polish:
-    #. Ustaw ziarno losowości na zero
-    #. Wygeneruj ``result: ndarray`` z 12 losowymi liczbami całkowitymi od 0 do 100 (rozłącznie)
-    #. Zmień kształt na 3x4
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Posortuj kolumny ``result``
     #. Flipnij wiersze ``result``
     #. Wypisz ``result``
+
+:Input:
+    .. code-block:: python
+
+        DATA = np.array([[44, 47, 64, 67],
+                         [67,  9, 83, 21],
+                         [36, 87, 70, 88]])
+
+:Output:
+    .. code-block:: python
+
+        result: ndarray
+        # array([[36, 70, 87, 88],
+        #        [ 9, 21, 67, 83],
+        #        [44, 47, 64, 67]])
