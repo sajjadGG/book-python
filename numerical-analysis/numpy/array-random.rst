@@ -329,7 +329,3 @@ Numpy Random Sample
     #. Ustaw ziarno losowości na zero
     #. Wyświetl 6 losowych i nie powtarzających się liczb całkowitych z zakresu od 1 do 49.
 
-:Hint:
-    * ``np.append(a, ELEMENT)``
-    * ``np.array.size``
-    * ``NUMBER in np.array``
