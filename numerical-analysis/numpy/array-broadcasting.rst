@@ -406,9 +406,8 @@ Numpy Broadcasting Type Cast
     #. Dodaj ``b`` i ``a``
     #. Co się stało?
 
-.. code-block:: python
-
-        import numpy as np
+:Input:
+    .. code-block:: python
 
         a = np.array([[1, 0], [0, 1]])
         b = [[4, 1], [2, 2]]
@@ -436,9 +435,8 @@ Numpy Broadcasting Matmul
     #. Przemnóż ``b`` i ``a`` używając mnożenia macierzowego
     #. Omów wyniki
 
-.. code-block:: python
-
-        import numpy as np
+:Input:
+    .. code-block:: python
 
         a = np.array([[1,0,1,0],
                       [0,1,1,0],

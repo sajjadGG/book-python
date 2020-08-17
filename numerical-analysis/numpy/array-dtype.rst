@@ -212,8 +212,8 @@ str
 Assignments
 ===========
 
-Numpy Astype
-------------
+Numpy Dtype Astype
+------------------
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 3 min
