@@ -90,6 +90,7 @@ Product
 * ``a.prod()``
 * ``np.prod()``
 * ``np.nanprod()``
+
 .. code-block:: python
 
     import numpy as np

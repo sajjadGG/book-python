@@ -23,3 +23,12 @@ Performance
     TPU
     Tensor Processing Unit
         A tensor processing unit (TPU) is an AI accelerator application-specific integrated circuit (ASIC) developed by Google specifically for neural network machine learning, particularly using Google's own TensorFlow software. [TPU]_
+
+
+References
+==========
+.. [CPU] https://en.wikipedia.org/wiki/Central_processing_unit
+.. [GPU] https://en.wikipedia.org/wiki/Graphics_processing_unit
+.. [ALU] https://en.wikipedia.org/wiki/Arithmetic_logic_unit
+.. [FPU] https://en.wikipedia.org/wiki/Floating-point_unit
+.. [TPU] https://en.wikipedia.org/wiki/Tensor_processing_unit

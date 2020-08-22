@@ -120,12 +120,3 @@ Solutions
     result = candy + cookie
     print(result)
     # 0.30
-
-
-References
-==========
-.. [CPU] https://en.wikipedia.org/wiki/Central_processing_unit
-.. [GPU] https://en.wikipedia.org/wiki/Graphics_processing_unit
-.. [ALU] https://en.wikipedia.org/wiki/Arithmetic_logic_unit
-.. [FPU] https://en.wikipedia.org/wiki/Floating-point_unit
-.. [TPU] https://en.wikipedia.org/wiki/Tensor_processing_unit

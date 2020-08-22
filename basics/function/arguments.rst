@@ -267,7 +267,7 @@ Function Arguments Translate
         'jazn'
 
 
-.. _Cleaning text input:
+.. _Function Arguments Clean:
 
 Function Arguments Clean
 ------------------------

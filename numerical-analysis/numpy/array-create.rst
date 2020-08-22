@@ -33,13 +33,9 @@ Declare
 
 
     np.array([[1, 2, 3],
-              [4, 5, 6]])
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
-
-    np.array([[1, 2, 3],
               [4, 5, 6],
               [7, 8, 9]])
+
     # array([[1, 2, 3],
     #        [4, 5, 6],
     #        [7, 8, 9]])
@@ -50,17 +46,24 @@ Declare
     np.array([[[1, 2, 3],
                [4, 5, 6],
                [7, 8, 9]],
+
               [[1, 2, 3],
                [4, 5, 6],
                [7, 8, 9]]])
-    # array([[[1, 2, 3],
-    #      [4, 5, 6],
-    #      [7, 8, 9]],
-    #
-    #     [[1, 2, 3],
-    #      [4, 5, 6],
-    #      [7, 8, 9]]])
 
+    # array([[[1, 2, 3],
+    #         [4, 5, 6],
+    #         [7, 8, 9]],
+    #
+    #        [[1, 2, 3],
+    #         [4, 5, 6],
+    #         [7, 8, 9]]])
+
+.. figure:: img/numpy-create-cake.png
+    :scale: 50%
+    :align: center
+
+    Multi layer cake as an analog for n-dim array [CAKE]_
 
 Range
 =====
@@ -380,3 +383,8 @@ Numpy Create Arange
 
 :The whys and wherefores:
     * Defining ``np.ndarray``
+
+
+References
+==========
+.. [CAKE] https://i.ytimg.com/vi/iCOhz07Ng6g/maxresdefault.jpg

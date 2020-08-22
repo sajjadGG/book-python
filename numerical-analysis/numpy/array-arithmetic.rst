@@ -5,6 +5,7 @@ Array Arithmetic
 .. glossary::
 
     Scalar
+        Single Value
 
     Vectorized Operations
         Single statement without a loop that explains a looping concept.

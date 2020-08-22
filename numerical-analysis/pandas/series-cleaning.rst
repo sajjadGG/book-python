@@ -196,6 +196,6 @@ Series Cleaning
     * Cleaning data from user input
 
 :Hint:
-    * :ref:`Cleaning text input`
+    * :ref:`Function Arguments Clean`
 
 .. todo:: Translate input data to English

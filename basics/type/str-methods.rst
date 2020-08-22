@@ -538,7 +538,7 @@ Type String Clean
     #. Expected value is ``Jana III Sobieskiego``
     #. Use only ``str`` methods to clean each variable
     #. Discuss how to create generic solution which fit all cases
-    #. Implementation of such generic function will be in :ref:`Cleaning text input` chapter
+    #. Implementation of such generic function will be in :ref:`Function Arguments Clean` chapter
     #. Compare result with "Output" section (see below)
 
 :Polish:
@@ -546,7 +546,7 @@ Type String Clean
     #. Oczekiwana wartość ``Jana III Sobieskiego``
     #. Wykorzystaj tylko metody ``str`` do oczyszczenia każdej zmiennej
     #. Przeprowadź dyskusję jak zrobić rozwiązanie generyczne pasujące do wszystkich przypadków
-    #. Implementacja takiej generycznej funkcji będzie w rozdziale :ref:`Cleaning text input`
+    #. Implementacja takiej generycznej funkcji będzie w rozdziale :ref:`Function Arguments Clean`
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
