@@ -1,28 +1,31 @@
 import sqlite3
 
+DATABASE = ':memory:'
+DATA = [
+    {'pesel': '61041212345', 'firstname': 'José', 'lastname': 'Jiménez'},
+    {'pesel': '61041212346', 'firstname': 'Jan', 'lastname': 'Twardowski'},
+    {'pesel': '61041212347', 'firstname': 'Melissa', 'lastname': 'Lewis'},
+    {'pesel': '61041212348', 'firstname': 'Alex', 'lastname': 'Vogel'},
+    {'pesel': '61041212349', 'firstname': 'Ryan', 'lastname': 'Stone'},
+]
 
 SQL_CREATE_TABLE = """
     CREATE TABLE IF NOT EXISTS astronauts (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         pesel INTEGER UNIQUE,
-        first_name TEXT,
-        last_name TEXT)"""
-SQL_INSERT = 'INSERT INTO astronauts VALUES (NULL, :pesel, :first_name, :last_name)'
+        firstname TEXT,
+        lastname TEXT)"""
+
+SQL_INSERT = """
+    INSERT INTO astronauts
+    VALUES (NULL, :pesel, :firstname, :lastname)"""
+
 SQL_SELECT = 'SELECT * FROM astronauts'
 
 
-astronauts = [
-    {'pesel': '61041212345', 'first_name': 'José', 'last_name': 'Jiménez'},
-    {'pesel': '61041212346', 'first_name': 'Jan', 'last_name': 'Twardowski'},
-    {'pesel': '61041212347', 'first_name': 'Melissa', 'last_name': 'Lewis'},
-    {'pesel': '61041212348', 'first_name': 'Alex', 'last_name': 'Vogel'},
-    {'pesel': '61041212349', 'first_name': 'Ryan', 'last_name': 'Stone'},
-]
-
-
-with sqlite3.connect(':memory:') as db:
+with sqlite3.connect(DATABASE) as db:
     db.execute(SQL_CREATE_TABLE)
-    db.executemany(SQL_INSERT, astronauts)
+    db.executemany(SQL_INSERT, DATA)
 
     db.row_factory = sqlite3.Row
 

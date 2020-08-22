@@ -53,6 +53,7 @@ Numpy
     :name: Numerical Analysis Numpy
 
     numpy/about.rst
+    numpy/precision.rst
     numpy/constants.rst
 
     numpy/array-create.rst
@@ -83,6 +84,7 @@ Numpy
     numpy/trigonometry.rst
     numpy/polynomial.rst
     numpy/algebra.rst
+    numpy/performance.rst
 
 ******
 Pandas

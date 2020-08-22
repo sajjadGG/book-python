@@ -1,15 +1,31 @@
 import sqlite3
 from datetime import datetime, timezone
 
-# DATABASE = r':memory:'
-DATABASE = r'/tmp/db.sqlite3'
-FILE = r'../data/database-sqlite-iris.csv'
+DATABASE = r'/tmp/database-sqlite-iris.sqlite3'
+FILE = r'/tmp/database-sqlite-iris.csv'
 
 SPECIES = {
     0: 'setosa',
     1: 'versicolor',
-    2: 'virginica',
-}
+    2: 'virginica'}
+
+DATA = """4.3,3.0,1.1,0.1,0
+5.8,4.0,1.2,0.2,0
+5.7,4.4,1.5,0.4,1
+5.4,3.9,1.3,0.4,2
+5.1,3.5,1.4,0.3,1
+5.7,3.8,1.7,0.3,0
+5.1,3.8,1.5,0.3,0
+5.4,3.4,1.7,0.2,1
+5.1,3.7,1.5,0.4,0
+4.6,3.6,1.0,0.2,0
+5.1,3.3,1.7,0.5,2
+4.8,3.4,1.9,0.2,0
+5.0,3.0,1.6,0.2,1
+5.0,3.4,1.6,0.4,2
+5.2,3.5,1.5,0.2,1
+5.2,3.4,1.4,0.2,2
+4.7,3.2,1.6,0.2,0"""
 
 SQL_CREATE_TABLE = """
     CREATE TABLE IF NOT EXISTS iris (
@@ -19,13 +35,11 @@ SQL_CREATE_TABLE = """
         sepal_length REAL,
         sepal_width REAL,
         petal_length REAL,
-        petal_width REAL
-    );"""
+        petal_width REAL);"""
 
 SQL_CREATE_INDEX = """
     CREATE INDEX IF NOT EXISTS
-        iris_datetime_index ON iris (datetime);
-"""
+        iris_datetime_index ON iris (datetime);"""
 
 SQL_INSERT = """
     INSERT INTO iris VALUES (
@@ -35,17 +49,20 @@ SQL_INSERT = """
         :sepal_length,
         :sepal_width,
         :petal_length,
-        :petal_width
-    );"""
+        :petal_width);"""
 
 SQL_SELECT = 'SELECT * FROM iris ORDER BY datetime DESC'
 
-DATA = []
+data = []
+
+with open(FILE, mode='w') as file:
+    file.write(DATA)
 
 with open(FILE) as file:
     for line in file:
         line = line.strip().split(',')
-        DATA.append({
+
+        data.append({
             'datetime': datetime.now(tz=timezone.utc),
             'sepal_length': float(line[0]),
             'sepal_width': float(line[1]),
@@ -58,9 +75,13 @@ with open(FILE) as file:
 with sqlite3.connect(DATABASE) as db:
     db.execute(SQL_CREATE_TABLE)
     db.execute(SQL_CREATE_INDEX)
-    db.executemany(SQL_INSERT, DATA)
-
+    db.executemany(SQL_INSERT, data)
     db.row_factory = sqlite3.Row
 
     for row in db.execute(SQL_SELECT):
         print(dict(row))
+
+# {'id': 17, 'datetime': '1961-04-12 06:07:00.952431+00:00', 'species': 'setosa', 'sepal_length': 4.7, 'sepal_width': 3.2, 'petal_length': 1.6, 'petal_width': 0.2}
+# {'id': 16, 'datetime': '1961-04-12 06:07:00.952414+00:00', 'species': 'virginica', 'sepal_length': 5.2, 'sepal_width': 3.4, 'petal_length': 1.4, 'petal_width': 0.2}
+# {'id': 15, 'datetime': '1961-04-12 06:07:00.952411+00:00', 'species': 'versicolor', 'sepal_length': 5.2, 'sepal_width': 3.5, 'petal_length': 1.5, 'petal_width': 0.2}
+# ...

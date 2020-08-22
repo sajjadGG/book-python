@@ -88,6 +88,15 @@ Examples
     # 2           6.0          3.4           4.5          1.6        versicolor
 
 
+Compressed
+==========
+* If the extension is ``.gz``, ``.bz2``, ``.zip``, and ``.xz``, the corresponding compression method is automatically selected
+
+.. code-block:: python
+
+    df = pd.read_json('sample_file.gz', compression= 'infer')
+
+
 Assignments
 ===========
 
