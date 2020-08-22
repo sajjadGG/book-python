@@ -62,35 +62,35 @@ Data Types
     :widths: 50, 50
     :header: "SQLite Type", "SQLite Alias"
 
-    ``INTEGER``, ``INT``
-    ``INTEGER``, ``INTEGER``
-    ``INTEGER``, ``TINYINT``
-    ``INTEGER``, ``SMALLINT``
-    ``INTEGER``, ``MEDIUMINT``
-    ``INTEGER``, ``BIGINT``
-    ``INTEGER``, ``UNSIGNED BIG INT``
-    ``INTEGER``, ``INT2``
-    ``INTEGER``, ``INT8``
+    "``INTEGER``", "``INT``"
+    "``INTEGER``", "``INTEGER``"
+    "``INTEGER``", "``TINYINT``"
+    "``INTEGER``", "``SMALLINT``"
+    "``INTEGER``", "``MEDIUMINT``"
+    "``INTEGER``", "``BIGINT``"
+    "``INTEGER``", "``UNSIGNED BIG INT``"
+    "``INTEGER``", "``INT2``"
+    "``INTEGER``", "``INT8``"
 
-    ``TEXT``, ``CHARACTER(20)``
-    ``TEXT``, ``VARCHAR(255)``
-    ``TEXT``, ``VARYING CHARACTER(255)``
-    ``TEXT``, ``NCHAR(55)``
-    ``TEXT``, ``NATIVE CHARACTER(70)``
-    ``TEXT``, ``NVARCHAR(100)``
-    ``TEXT``, ``TEXT``
-    ``TEXT``, ``CLOB``
+    "``TEXT``", "``CHARACTER(20)``"
+    "``TEXT``", "``VARCHAR(255)``"
+    "``TEXT``", "``VARYING CHARACTER(255)``"
+    "``TEXT``", "``NCHAR(55)``"
+    "``TEXT``", "``NATIVE CHARACTER(70)``"
+    "``TEXT``", "``NVARCHAR(100)``"
+    "``TEXT``", "``TEXT``"
+    "``TEXT``", "``CLOB``"
 
-    ``REAL``, ``REAL``
-    ``REAL``, ``DOUBLE``
-    ``REAL``, ``DOUBLE PRECISION``
-    ``REAL``, ``FLOAT``
+    "``REAL``", "``REAL``"
+    "``REAL``", "``DOUBLE``"
+    "``REAL``", "``DOUBLE PRECISION``"
+    "``REAL``", "``FLOAT``"
 
-    ``NUMERIC``, ``NUMERIC``
-    ``NUMERIC``, ``DECIMAL(10,5)``
-    ``NUMERIC``, ``BOOLEAN``
-    ``NUMERIC``, ``DATE``
-    ``NUMERIC``, ``DATETIME``
+    "``NUMERIC``", "``NUMERIC``"
+    "``NUMERIC``", "``DECIMAL(10,5)``"
+    "``NUMERIC``", "``BOOLEAN``"
+    "``NUMERIC``", "``DATE``"
+    "``NUMERIC``", "``DATETIME``"
 
 Numeric
 -------
