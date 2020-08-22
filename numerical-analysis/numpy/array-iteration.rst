@@ -200,7 +200,7 @@ Numpy Iteration
                          [7, 8, 9]])
 
 :The whys and wherefores:
-    * Iterating 2-dimensional ``ndarray``
+    * Iterating 2-dimensional ``np.ndarray``
 
 :Hint:
     * ``number % 2 == 0``

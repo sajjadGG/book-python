@@ -132,11 +132,11 @@ Numpy Loadtext
 :English:
     #. Use data from "Input" section (see below)
     #. Load text from ``URL``
-    #. From the first line select Iris species names and save as str to ``species: ndarray``
+    #. From the first line select Iris species names and save as str to ``species: np.ndarray``
     #. For other lines:
 
-        #. Read columns with data and save as float to ``features: ndarray``
-        #. Read last column with species numbers and save as int to ``labels: ndarray``
+        #. Read columns with data and save as float to ``features: np.ndarray``
+        #. Read last column with species numbers and save as int to ``labels: np.ndarray``
 
     #. Print ``species``, ``labels`` and ``features``
     #. Compare result with "Output" section (see below)
@@ -144,11 +144,11 @@ Numpy Loadtext
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Wczytaj tekst z ``URL``
-    #. Z pierwszej linii wybierz nazwy gatunków Irysów i zapisz rezultat jako str do ``species: ndarray``
+    #. Z pierwszej linii wybierz nazwy gatunków Irysów i zapisz rezultat jako str do ``species: np.ndarray``
     #. W pozostałych linii:
 
-        * Wczytaj kolumny z danymi i zapisz jako float do ``features: ndarray``
-        * Wczytaj ostatnią kolumnę z numerami gatunków i zapisz jako int do ``labels: ndarray``
+        * Wczytaj kolumny z danymi i zapisz jako float do ``features: np.ndarray``
+        * Wczytaj ostatnią kolumnę z numerami gatunków i zapisz jako int do ``labels: np.ndarray``
 
     #. Wyświetl ``species``, ``labels`` i ``features``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
@@ -161,10 +161,10 @@ Numpy Loadtext
 :Output:
     .. code-block:: python
 
-        species: ndarray
+        species: np.ndarray
         # array(['setosa', 'versicolor', 'virginica'], dtype='<U10')
 
-        features: ndarray
+        features: np.ndarray
         # array([[5.4, 3.9, 1.3, 0.4],
         #        [5.9, 3. , 5.1, 1.8],
         #        [6. , 3.4, 4.5, 1.6],
@@ -172,6 +172,6 @@ Numpy Loadtext
         #        ...
         #        [6.8, 3.2, 5.9, 2.3]])
 
-        labels: ndarray
+        labels: np.ndarray
         # array([0, 2, 1, 2, ..., 0, 2, 2, 2])
 

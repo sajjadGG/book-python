@@ -144,6 +144,6 @@ Numpy Attributes
                       [ 2.2, 3.3, 4.4]])
 
 :The whys and wherefores:
-    * Defining ``ndarray``
+    * Defining ``np.ndarray``
     * Using ``np.random.seed()``
     * Generating random ``np.array``

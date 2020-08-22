@@ -82,16 +82,16 @@ Numpy Concatenation
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Given are one-dimensional: ``a: ndarray``, ``b: ndarray``
+    #. Given are one-dimensional: ``a: np.ndarray``, ``b: np.ndarray``
     #. Concatenate them
-    #. Represent the result as ``ndarray``: two rows and three columns
+    #. Represent the result as ``np.ndarray``: two rows and three columns
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Dane są jednowymiarowe: ``a: ndarray``, ``b: ndarray``
+    #. Dane są jednowymiarowe: ``a: np.ndarray``, ``b: np.ndarray``
     #. Połącz je ze sobą
-    #. Przedstaw wynik jako ``ndarray``: dwa wiersze na trzy kolumny
+    #. Przedstaw wynik jako ``np.ndarray``: dwa wiersze na trzy kolumny
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:

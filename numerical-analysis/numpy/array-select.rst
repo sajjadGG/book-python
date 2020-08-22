@@ -512,17 +512,17 @@ Numpy Select
 
 :English:
     #. Set random seed to 0
-    #. Generate ``a: ndarray`` of size 50x50
+    #. Generate ``a: np.ndarray`` of size 50x50
     #. ``a`` must contains random integers from 0 to 1024 inclusive
-    #. Create ``result: ndarray`` with elements selected from ``a`` which are power of two
+    #. Create ``result: np.ndarray`` with elements selected from ``a`` which are power of two
     #. Sort ``result`` in descending order
     #. Print ``result``
 
 :Polish:
     #. Ustaw ziarno losowości na 0
-    #. Wygeneruj ``a: ndarray`` rozmiaru 50x50
+    #. Wygeneruj ``a: np.ndarray`` rozmiaru 50x50
     #. ``a`` musi zawierać losowe liczby całkowite z zakresu od 0 do 1024 włącznie
-    #. Stwórz ``result: ndarray`` z elementami wybranymi z ``a``, które są potęgami dwójki
+    #. Stwórz ``result: np.ndarray`` z elementami wybranymi z ``a``, które są potęgami dwójki
     #. Posortuj ``result`` w kolejności malejącej
     #. Wypisz ``result``
 

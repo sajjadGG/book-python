@@ -288,11 +288,11 @@ Numpy Random Float
 
 :English:
     #. Set random seed to zero
-    #. Print ``ndarray`` of 10 random floats
+    #. Print ``np.ndarray`` of 10 random floats
 
 :Polish:
     #. Ustaw ziarno losowości na zero
-    #. Wypisz ``ndarray`` z 10 losowymi liczbami zmiennoprzecinkowymi
+    #. Wypisz ``np.ndarray`` z 10 losowymi liczbami zmiennoprzecinkowymi
 
 Numpy Random Int
 ----------------
@@ -303,14 +303,14 @@ Numpy Random Int
 
 :English:
     #. Set random seed to zero
-    #. Print ``ndarray`` of size 16x16 with random integers ``[0;9]`` (inclusive)
+    #. Print ``np.ndarray`` of size 16x16 with random integers ``[0;9]`` (inclusive)
 
 :Polish:
     #. Ustaw ziarno losowości na zero
-    #. Print ``ndarray`` o rozmiarze 16x16 z losowymi liczbami całkowitymi ``<0,9>`` (włącznie)
+    #. Print ``np.ndarray`` o rozmiarze 16x16 z losowymi liczbami całkowitymi ``<0,9>`` (włącznie)
 
 :The whys and wherefores:
-    * Defining ``ndarray``
+    * Defining ``np.ndarray``
     * Using ``np.random.seed()``
     * Generating random ``np.array``
 

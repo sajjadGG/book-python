@@ -189,7 +189,7 @@ Standard Deviation
 
 Minimal Value
 =============
-* ``ndarray.argmin()`` index of an ``ndarray.min()`` element in array
+* ``np.ndarray.argmin()`` index of an ``np.ndarray.min()`` element in array
 * ``np.nanmin()``
 * ``np.nanargmin()``
 
@@ -274,7 +274,7 @@ Minimal Value
 
 Maximal Value
 =============
-* ``ndarray.argmax()`` index of an ``a.max()`` element in array
+* ``np.ndarray.argmax()`` index of an ``a.max()`` element in array
 * ``np.nanmax()``
 * ``np.nanargmax()``
 

@@ -238,7 +238,7 @@ Numpy Slice 1
 :Output:
     .. code-block:: python
 
-        result: ndarray
+        result: np.ndarray
         # array([[8, 4],
         #        [5, 2]])
 
@@ -286,7 +286,7 @@ Numpy Slice 2
 :Output:
     .. code-block:: python
 
-        result: ndarray
+        result: np.ndarray
         # array([[2, 0, 7, 5],
         #        [1, 2, 9, 1],
         #        [8, 8, 8, 2],

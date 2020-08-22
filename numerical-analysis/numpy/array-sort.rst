@@ -85,7 +85,7 @@ Two dimensional - Rows
 Flip
 ====
 * Does not modify inplace
-* Returns new ``ndarray``
+* Returns new ``np.ndarray``
 * Reverse the order of elements in an array along the given axis
 
 .. code-block:: python
@@ -152,7 +152,7 @@ Numpy Sort
 :Output:
     .. code-block:: python
 
-        result: ndarray
+        result: np.ndarray
         # array([[36, 70, 87, 88],
         #        [ 9, 21, 67, 83],
         #        [44, 47, 64, 67]])

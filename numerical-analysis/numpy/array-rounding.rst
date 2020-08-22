@@ -152,7 +152,7 @@ Numpy Round Rint
 :Output:
     .. code-block:: python
 
-        result: ndarray
+        result: np.ndarray
         # array([1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1], dtype=int8)
 
 Numpy Round Floor and Ceil
@@ -188,15 +188,15 @@ Numpy Round Floor and Ceil
 :Output:
     .. code-block:: python
 
-        ceil: ndarray
+        ceil: np.ndarray
         # array([1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
         #        1., 1., 1., 1.])
 
-        floor: ndarray
+        floor: np.ndarray
         # array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
         #        0., 0., 0., 0.])
 
-        round: ndarray
+        round: np.ndarray
         # array([1., 1., 1., 1., 0., 1., 0., 1., 1., 0., 1., 1., 1., 1., 0., 0., 0.,
         #        1., 1., 1., 1.])
 
@@ -209,14 +209,14 @@ Numpy Round Clip
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Create ``result: ndarray`` copy of ``DATA``
+    #. Create ``result: np.ndarray`` copy of ``DATA``
     #. Clip numbers only in first column to 50 (inclusive) to 80 (exclusive)
     #. Print ``result``
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Stwórz ``result: ndarray`` z kopią danych z ``DATA``
+    #. Stwórz ``result: np.ndarray`` z kopią danych z ``DATA``
     #. Przytnij liczby w pierwszej kolumnie od 50 (włącznie) do 80 (rozłącznie)
     #. Wypisz ``result``
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
@@ -235,7 +235,7 @@ Numpy Round Clip
 :Output:
     .. code-block:: python
 
-        result: ndarray
+        result: np.ndarray
         # array([[50, 47, 64],
         #        [67, 67,  9],
         #        [79, 21, 36],

@@ -1,6 +1,8 @@
 import sqlite3
 
 
+DATABASE = ':memory:'
+
 SQL_CREATE_TABLE = """
     CREATE TABLE IF NOT EXISTS astronauts (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -20,7 +22,7 @@ astronauts = [
 ]
 
 
-with sqlite3.connect(':memory:') as db:
+with sqlite3.connect(DATABASE) as db:
     db.execute(SQL_CREATE_TABLE)
     db.executemany(SQL_INSERT, astronauts)
     cursor = db.cursor()

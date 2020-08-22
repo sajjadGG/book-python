@@ -25,7 +25,7 @@ Signed int
     a = np.array([1, 2, 3])
 
     type(a)
-    # <class 'numpy.ndarray'>
+    # <class 'numpy.np.ndarray'>
 
     a.dtype
     # dtype('int64')
@@ -68,7 +68,7 @@ Unsigned int
     a = np.array([-1, 0, 1])
 
     type(a)
-    # <class 'numpy.ndarray'>
+    # <class 'numpy.np.ndarray'>
 
     a.dtype
     # dtype('int64')
@@ -106,7 +106,7 @@ float
     a = np.array([1., 2., 3.])
 
     type(a)
-    # <class 'numpy.ndarray'>
+    # <class 'numpy.np.ndarray'>
 
     a.dtype
     # dtype('float64')
@@ -221,14 +221,14 @@ Numpy Dtype Astype
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Given ``a: ndarray`` (see below)
+    #. Given ``a: np.ndarray`` (see below)
     #. Convert to ``int`` type
     #. The result convert to ``bool`` type
     #. What happened in each of those steps?
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Dany ``a: ndarray`` (patrz sekcja input)
+    #. Dany ``a: np.ndarray`` (patrz sekcja input)
     #. Przekonwertuj do typu ``int``
     #. Rezultat rzutuj na typ ``bool``
     #. Co się stało w każdym z tych kroków?

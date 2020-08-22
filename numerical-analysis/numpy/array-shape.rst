@@ -3,7 +3,7 @@ Array Shape
 ***********
 
 
-* Any shape operation changes only ``ndarray.shape`` and ``ndarray.strides`` and does not touch data
+* Any shape operation changes only ``np.ndarray.shape`` and ``np.ndarray.strides`` and does not touch data
 
 Shape
 =====
@@ -246,7 +246,7 @@ Numpy Shape
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Given ``a: ndarray`` (see below)
+    #. Given ``a: np.ndarray`` (see below)
     #. Flatten using method ``.ravel()``
     #. Print ``a``
     #. Change shape back to 3x3
@@ -254,7 +254,7 @@ Numpy Shape
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Dany ``a: ndarray`` (patrz sekcja input)
+    #. Dany ``a: np.ndarray`` (patrz sekcja input)
     #. Spłaszcz używając metody ``.ravel()``
     #. Wypisz ``a``
     #. Zmień kształt na powrót na 3x3

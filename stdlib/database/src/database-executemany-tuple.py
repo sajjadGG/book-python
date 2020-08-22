@@ -1,6 +1,8 @@
 import sqlite3
 
 
+DATABASE = ':memory:'
+
 SQL_CREATE_TABLE = """
     CREATE TABLE IF NOT EXISTS astronauts (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -11,7 +13,7 @@ SQL_CREATE_TABLE = """
 SQL_INSERT_TUPLE = 'INSERT INTO astronauts VALUES (NULL, ?, ?, ?)'
 
 
-list_of_tuples = [
+DATA = [
     (61041212345, 'José', 'Jiménez'),
     (61041212346, 'Jan', 'Twardowski'),
     (61041212347, 'Melissa', 'Lewis'),
@@ -20,10 +22,10 @@ list_of_tuples = [
 ]
 
 
-with sqlite3.connect(':memory:') as db:
+with sqlite3.connect(DATABASE) as db:
     db.execute(SQL_CREATE_TABLE)
 
     try:
-        db.executemany(SQL_INSERT_TUPLE, list_of_tuples)
+        db.executemany(SQL_INSERT_TUPLE, DATA)
     except sqlite3.IntegrityError:
         print('Pesel need to be UNIQUE')

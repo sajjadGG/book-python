@@ -358,7 +358,7 @@ Numpy Broadcasting Arithmetic
 
 :English:
     #. Use data from "Input" section (see below)
-    #. For given: ``a: ndarray``, ``b: ndarray``, ``c: ndarray``
+    #. For given: ``a: np.ndarray``, ``b: np.ndarray``, ``c: np.ndarray``
     #. Calculate square root of each element in ``a`` and ``b``
     #. Calculate second power (square) of each element in ``c``
     #. Add elements from ``a`` to ``b``
@@ -367,7 +367,7 @@ Numpy Broadcasting Arithmetic
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Dla danych: ``a: ndarray``, ``b: ndarray``, ``c: ndarray``
+    #. Dla danych: ``a: np.ndarray``, ``b: np.ndarray``, ``c: np.ndarray``
     #. Oblicz pierwiastek kwadratowy każdego z elementu w ``a`` i ``b``
     #. Oblicz drugą potęgę (kwadrat) każdego z elementu w ``c``
     #. Dodaj elementy z ``a`` do ``b``
@@ -395,13 +395,13 @@ Numpy Broadcasting Type Cast
 * Solution: :download:`solution/numpy_broadcasting_typecast.py`
 
 :English:
-    #. For given: ``a: ndarray``, ``b: ndarray`` (see below)
+    #. For given: ``a: np.ndarray``, ``b: np.ndarray`` (see below)
     #. Add ``a`` and ``b``
     #. Add ``b`` and ``a``
     #. What happened?
 
 :Polish:
-    #. Dla danych: ``a: ndarray``, ``b: ndarray`` (patrz sekcja input)
+    #. Dla danych: ``a: np.ndarray``, ``b: np.ndarray`` (patrz sekcja input)
     #. Dodaj ``a`` i ``b``
     #. Dodaj ``b`` i ``a``
     #. Co się stało?
@@ -420,7 +420,7 @@ Numpy Broadcasting Matmul
 * Solution: :download:`solution/numpy_broadcasting_matmul.py`
 
 :English:
-    #. For given: ``a: ndarray``, ``b: ndarray`` (see below)
+    #. For given: ``a: np.ndarray``, ``b: np.ndarray`` (see below)
     #. Multiply ``a`` and ``b`` using scalar multiplication
     #. Multiply ``a`` and ``b`` using matrix multiplication
     #. Multiply ``b`` and ``a`` using scalar multiplication
@@ -428,7 +428,7 @@ Numpy Broadcasting Matmul
     #. Discuss results
 
 :Polish:
-    #. Dla danych: ``a: ndarray``, ``b: ndarray`` (patrz sekcja input)
+    #. Dla danych: ``a: np.ndarray``, ``b: np.ndarray`` (patrz sekcja input)
     #. Przemnóż ``a`` i ``b`` używając mnożenia skalarnego
     #. Przemnóż ``a`` i ``b`` używając mnożenia macierzowego
     #. Przemnóż ``b`` i ``a`` używając mnożenia skalarnego

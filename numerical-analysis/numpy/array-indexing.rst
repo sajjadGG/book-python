@@ -157,7 +157,7 @@ Substituting items
 
 1-dimensional Array
 -------------------
-* Will type cast values to ``ndarray.dtype``
+* Will type cast values to ``np.ndarray.dtype``
 
 .. code-block:: python
 
@@ -269,7 +269,7 @@ Numpy Indexing
 
 :English:
     #. Use data from "Input" section (see below)
-    #. Create ``result: ndarray``
+    #. Create ``result: np.ndarray``
     #. Add to ``result`` elements from ``DATA`` at indexes:
 
         * row 0, column 2
@@ -283,7 +283,7 @@ Numpy Indexing
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
-    #. Stwórz ``result: ndarray``
+    #. Stwórz ``result: np.ndarray``
     #. Dodaj do ``result`` elementy z ``DATA`` o indeksach:
 
         * wiersz 0, kolumna 2
@@ -307,13 +307,13 @@ Numpy Indexing
 :Output:
     .. code-block:: python
 
-        result: ndarray
+        result: np.ndarray
         # array([[3., 9.],
         #        [1., 4.]])
 
 :The whys and wherefores:
-    * Defining ``ndarray``
-    * Indexing ``ndarray``
+    * Defining ``np.ndarray``
+    * Indexing ``np.ndarray``
 
 :Hint:
     * ``np.zeros(shape, dtype)``

@@ -280,7 +280,7 @@ Numpy Methods
 :Output:
     .. code-block:: python
 
-        result: ndarray
+        result: np.ndarray
         # array([[nan, nan, nan],
         #        [47.,  9., 87.],
         #        [64., 83., 70.],
