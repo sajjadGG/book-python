@@ -5,6 +5,175 @@ Serialization CSV
 *****************
 
 
+Rationale
+=========
+* CSV - Comma Separated Values
+* CSV - Character Separated Values
+
+.. code-block:: text
+    :caption: CSV file with numeric values.
+
+    5.4,3.9,1.3,0.4,0
+    5.9,3.0,5.1,1.8,1
+    6.0,3.4,4.5,1.6,2
+
+.. code-block:: text
+    :caption: CSV file with text values. First line is a header.
+
+    "First Name", "Last Name"
+    "Mark", "Watney"
+    "Jan", "Twardowski"
+    "Melissa", "Lewis"
+    "Alex", "Vogel"
+
+.. code-block:: text
+    :caption: CSV file with mixed values (numeric and strings). First line is a header.
+
+    sepal_length,sepal_width,petal_length,petal_width,species
+    5.4,3.9,1.3,0.4,setosa
+    5.9,3.0,5.1,1.8,virginica
+    6.0,3.4,4.5,1.6,versicolor
+    7.3,2.9,6.3,1.8,virginica
+    5.6,2.5,3.9,1.1,versicolor
+    5.4,3.9,1.3,0.4,setosa
+
+
+Encoding
+========
+* ``utf-8`` - international standard (should be always used!)
+* ``iso-8859-1`` - ISO standard for Western Europe and USA
+* ``iso-8859-2`` - ISO standard for Central Europe (including Poland)
+* ``cp1250`` or ``windows-1250`` - Polish encoding on Windows
+* ``cp1251`` or ``windows-1251`` - Russian encoding on Windows
+* ``cp1252`` or ``windows-1252`` - Western European encoding on Windows
+* ``ASCII`` - ASCII characters only
+
+.. code-block:: python
+
+    with open(FILE, encoding='utf-8') as file:
+        ...
+
+
+Quoting
+=======
+* ``csv.QUOTE_ALL`` (safest)
+* ``csv.QUOTE_MINIMAL``
+* ``csv.QUOTE_NONE``
+* ``csv.QUOTE_NONNUMERIC``
+
+.. code-block:: text
+    :caption: ``quoting=csv.QUOTE_ALL``
+
+    "Sepal length","Sepal width","Petal length","Petal width","Species"
+    "5.8","2.7","5.1","1.9","virginica"
+    "5.1","3.5","1.4","0.2","setosa"
+    "5.7","2.8","4.1","1.3","versicolor"
+
+.. code-block:: text
+    :caption: ``quoting=csv.QUOTE_MINIMAL``
+
+    Sepal length,Sepal width,Petal length,Petal width,Species
+    5.8,2.7,5.1,1.9,virginica
+    5.1,3.5,1.4,0.2,setosa
+    5.7,2.8,4.1,1.3,versicolor
+
+.. code-block:: text
+    :caption: ``quoting=csv.QUOTE_NONE``
+
+    Sepal length,Sepal width,Petal length,Petal width,Species
+    5.8,2.7,5.1,1.9,virginica
+    5.1,3.5,1.4,0.2,setosa
+    5.7,2.8,4.1,1.3,versicolor
+
+.. code-block:: text
+    :caption: ``quoting=csv.QUOTE_NONNUMERIC``
+
+    "Sepal length","Sepal width","Petal length","Petal width","Species"
+    5.8,2.7,5.1,1.9,"virginica"
+    5.1,3.5,1.4,0.2,"setosa"
+    5.7,2.8,4.1,1.3,"versicolor"
+
+
+Quotechar
+=========
+* ``"`` - quote char (best)
+* ``'`` - apostrophe
+
+.. code-block:: text
+    :caption: ``quotechar='"'``
+
+    "Sepal length","Sepal width","Petal length","Petal width","Species"
+    "5.8","2.7","5.1","1.9","virginica"
+    "5.1","3.5","1.4","0.2","setosa"
+    "5.7","2.8","4.1","1.3","versicolor"
+
+.. code-block:: text
+    :caption: ``quotechar="'"``
+
+    'Sepal length','Sepal width','Petal length','Petal width','Species'
+    '5.8','2.7','5.1','1.9','virginica'
+    '5.1','3.5','1.4','0.2','setosa'
+    '5.7','2.8','4.1','1.3','versicolor'
+
+.. code-block:: text
+    :caption: ``quotechar='|'``
+
+    |Sepal length|,|Sepal width|,|Petal length|,|Petal width|,|Species|
+    |5.8|,|2.7|,|5.1|,|1.9|,|virginica|
+    |5.1|,|3.5|,|1.4|,|0.2|,|setosa|
+    |5.7|,|2.8|,|4.1|,|1.3|,|versicolor|
+
+
+.. code-block:: text
+    :caption: ``quotechar='/'``
+
+    /Sepal length/,/Sepal width/,/Petal length/,/Petal width/,/Species/
+    /5.8/,/2.7/,/5.1/,/1.9/,/virginica/
+    /5.1/,/3.5/,/1.4/,/0.2/,/setosa/
+    /5.7/,/2.8/,/4.1/,/1.3/,/versicolor/
+
+Delimiter
+=========
+.. code-block:: text
+    :caption: ``delimiter=','``
+
+    Sepal length,Sepal width,Petal length,Petal width,Species
+    5.8,2.7,5.1,1.9,virginica
+    5.1,3.5,1.4,0.2,setosa
+    5.7,2.8,4.1,1.3,versicolor
+
+.. code-block:: text
+    :caption: ``delimiter=';'``
+
+    Sepal length;Sepal width;Petal length;Petal width;Species
+    5.8;2.7;5.1;1.9;virginica
+    5.1;3.5;1.4;0.2;setosa
+    5.7;2.8;4.1;1.3;versicolor
+
+.. code-block:: text
+    :caption: ``delimiter='|'``
+
+    Sepal length|Sepal width|Petal length|Petal width|Species
+    5.8|2.7|5.1|1.9|virginica
+    5.1|3.5|1.4|0.2|setosa
+    5.7|2.8|4.1|1.3|versicolor
+
+.. code-block:: text
+    :caption: ``delimiter='\t'``
+
+    Sepal length	Sepal width	Petal length	Petal width	Species
+    5.8	2.7	5.1	1.9	virginica
+    5.1	3.5	1.4	0.2	setosa
+    5.7	2.8	4.1	1.3	versicolor
+
+
+Lineterminator
+==============
+* ``\r\n`` - New line on Windows
+* ``\n`` - New line on ``*nix``
+* ``*nix`` operating systems: Linux, macOS, BSD and other POSIX compliant OSes (excluding Windows)
+
+
 Dialects
 ========
 .. code-block:: python
@@ -13,36 +182,6 @@ Dialects
 
     csv.list_dialects()
     # ['excel', 'excel-tab', 'unix']
-
-* ``quoting`` options:
-
-    * ``csv.QUOTE_ALL`` (safest)
-    * ``csv.QUOTE_MINIMAL`` (best)
-    * ``csv.QUOTE_NONE``
-    * ``csv.QUOTE_NONNUMERIC``
-
-* ``quotechar`` options:
-
-    * ``'`` - apostrophe
-    * ``"`` - quote char (best)
-    * ``|`` - pipe
-    * None - no delimeter
-
-* ``lineterminator`` options:
-
-    * ``\r\n`` - New line on Windows
-    * ``\n`` - New line on ``*nix``
-    * ``*nix`` operating systems: Linux, macOS, BSD and other POSIX compliant OSes (excluding Windows)
-
-* ``encoding`` options:
-
-    * ``utf-8`` - international standard (should be always used!)
-    * ``iso-8859-1`` - ISO standard for Western Europe and USA
-    * ``iso-8859-2`` - ISO standard for Central Europe (including Poland)
-    * ``cp1250`` or ``windows-1250`` - Polish encoding on Windows
-    * ``cp1251`` or ``windows-1251`` - Russian encoding on Windows
-    * ``cp1252`` or ``windows-1252`` - Western European encoding on Windows
-    * ``ASCII`` - ASCII characters only
 
 * Microsoft Excel 2016 uses:
 
@@ -97,7 +236,6 @@ Writer Object
     with open(FILE, mode='w') as file:
         result = csv.writer(file)
         result.writerows(DATA)
-
 
     # Sepal length,Sepal width,Petal length,Petal width,Species
     # 5.8,2.7,5.1,1.9,virginica
@@ -453,6 +591,7 @@ Serialization CSV List of Tuples
 
 :English:
     #. Use data from "Input" section (see below)
+    #. Convert ``DATA`` to ``List[dict]``
     #. Using ``csv.DictWriter()`` save ``DATA`` to file
     #. Compare result with "Output" section (see below)
     #. Non functional requirements:
@@ -464,6 +603,7 @@ Serialization CSV List of Tuples
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Przekonwertuj ``DATA`` do ``List[dict]``
     #. Za pomocą ``csv.DictWriter()`` zapisz ``DATA`` do pliku
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
     #. Wymagania niefunkcjonalne:

@@ -166,7 +166,7 @@ Write JSON File
     import json
 
 
-    FILE = '/tmp/json-dump.json'
+    FILE = r'/tmp/json-dump.json'
     DATA = {
         'firstname': 'Jan',
         'lastname': 'Twardowski'}
@@ -188,7 +188,7 @@ Read JSON File
     import json
 
 
-    FILE = '/tmp/json-loads.json'
+    FILE = r'/tmp/json-loads.json'
 
 
     with open(FILE) as file:
@@ -231,10 +231,8 @@ Datetime to JSON
 
     class JSONDatetimeEncoder(json.JSONEncoder):
         def default(self, value):
-
             if isinstance(value, datetime):
                 return value.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
-
             if isinstance(value, date):
                 return value.strftime('%Y-%m-%d')
 
