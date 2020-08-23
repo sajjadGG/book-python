@@ -294,6 +294,10 @@ Numpy Random Float
     #. Ustaw ziarno losowości na zero
     #. Wypisz ``np.ndarray`` z 10 losowymi liczbami zmiennoprzecinkowymi
 
+:The whys and wherefores:
+    * Using ``np.random.seed()``
+    * Generating random ``np.ndarray``
+
 Numpy Random Int
 ----------------
 * Complexity level: easy
@@ -310,15 +314,14 @@ Numpy Random Int
     #. Print ``np.ndarray`` o rozmiarze 16x16 z losowymi liczbami całkowitymi ``<0,9>`` (włącznie)
 
 :The whys and wherefores:
-    * Defining ``np.ndarray``
     * Using ``np.random.seed()``
-    * Generating random ``np.array``
+    * Generating random ``np.ndarray``
 
 Numpy Random Sample
 -------------------
 * Complexity level: medium
 * Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/numpy_random_sample.py`
 
 :English:
@@ -329,3 +332,6 @@ Numpy Random Sample
     #. Ustaw ziarno losowości na zero
     #. Wyświetl 6 losowych i nie powtarzających się liczb całkowitych z zakresu od 1 do 49.
 
+:The whys and wherefores:
+    * Using ``np.random.seed()``
+    * Generating random ``np.ndarray``

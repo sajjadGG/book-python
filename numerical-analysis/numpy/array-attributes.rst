@@ -12,9 +12,9 @@ Dimensions
 
     a = np.array([1, 2, 3])
 
+    a.shape         # (3,)
     a.ndim          # 1
     a.size          # 3
-    a.shape         # (3,)
     len(a)          # 3
 
 .. code-block:: python
@@ -25,8 +25,8 @@ Dimensions
     a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    a.ndim          # 2
     a.shape         # (2, 3)
+    a.ndim          # 2
     a.size          # 6
     len(a)          # 2
 
@@ -39,8 +39,8 @@ Dimensions
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    a.ndim          # 2
     a.shape         # (3, 3)
+    a.ndim          # 2
     a.size          # 9
     len(a)          # 3
 
@@ -52,12 +52,13 @@ Dimensions
     a = np.array([[[ 1,  2,  3],
                    [ 4,  5,  6],
                    [ 5,  6,  7]],
+
                   [[11, 22, 33],
                    [44, 55, 66],
                    [77, 88, 99]]])
 
-    a.ndim          # 3
     a.shape         # (2, 3, 3)
+    a.ndim          # 3
     a.size          # 18
     len(a)          # 2
 
@@ -74,6 +75,7 @@ Data
 
     a = np.array([1, 2, 3])
 
+    a.shape         # (3,)
     a.itemsize      # 8
     a.strides       # (8,)
     a.data          # <memory at 0x10cdfaa10>
@@ -87,6 +89,7 @@ Data
     a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
+    a.shape         # (2, 3)
     a.itemsize      # 8
     a.strides       # (24, 8)
     a.data          # <memory at 0x10caefbb0>
@@ -100,10 +103,28 @@ Data
                   [4, 5, 6],
                   [7, 8, 9]])
 
+    a.shape         # (3, 3)
     a.itemsize      # 8
     a.strides       # (24, 8)
     a.data          # <memory at 0x10cf92210>
 
+.. code-block:: python
+
+    import numpy as np
+
+
+    a = np.array([[[ 1,  2,  3],
+                   [ 4,  5,  6],
+                   [ 5,  6,  7]],
+
+                  [[11, 22, 33],
+                   [44, 55, 66],
+                   [77, 88, 99]]])
+
+    a.shape         # (2, 3, 3)
+    a.itemsize      # 8
+    a.strides       # (72, 24, 8)
+    a.data          # <memory at 0x107933c70>
 
 Assignments
 ===========
@@ -145,5 +166,3 @@ Numpy Attributes
 
 :The whys and wherefores:
     * Defining ``np.ndarray``
-    * Using ``np.random.seed()``
-    * Generating random ``np.array``

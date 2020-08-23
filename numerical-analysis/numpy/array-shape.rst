@@ -177,22 +177,26 @@ Flatten
 
 
     a = np.array([[1, 2, 3],
-                  [4, 5, 6]])
-
-    a.flatten()
-    # array([1, 2, 3, 4, 5, 6])
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
     a.flatten()
     # array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+.. code-block:: python
+
+    import numpy as np
+
+    a = np.array([[[ 1,  2,  3],
+                   [ 4,  5,  6],
+                   [ 5,  6,  7]],
+
+                  [[11, 22, 33],
+                   [44, 55, 66],
+                   [77, 88, 99]]])
+
+    a.flatten()
+    # array([ 1,  2,  3,  4,  5,  6,  5,  6,  7, 11, 22, 33, 44, 55, 66, 77, 88, 99])
 
 
 Ravel
@@ -216,22 +220,27 @@ Ravel
 
 
     a = np.array([[1, 2, 3],
-                  [4, 5, 6]])
-
-    a.ravel()
-    # array([1, 2, 3, 4, 5, 6])
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
                   [4, 5, 6],
                   [7, 8, 9]])
 
     a.ravel()
     # array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+.. code-block:: python
+
+    import numpy as np
+
+    a = np.array([[[ 1,  2,  3],
+                   [ 4,  5,  6],
+                   [ 5,  6,  7]],
+
+                  [[11, 22, 33],
+                   [44, 55, 66],
+                   [77, 88, 99]]])
+
+
+    a.ravel()
+    # array([ 1,  2,  3,  4,  5,  6,  5,  6,  7, 11, 22, 33, 44, 55, 66, 77, 88, 99])
 
 
 Assignments
@@ -241,7 +250,7 @@ Numpy Shape
 -----------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/numpy_shape.py`
 
 :English:

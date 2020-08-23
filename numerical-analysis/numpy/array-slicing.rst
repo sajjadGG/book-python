@@ -6,44 +6,41 @@ Array Slicing
 1-dimensional Array
 ===================
 .. code-block:: python
+    :caption: 1-dimensional Array
 
     import numpy as np
 
 
-    a = np.array([1, 2, 3])
+    a = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9])
 
-    a[0:2]
-    # array([1, 2])
+    a[1:5]          # array([2, 3, 4, 5])
+    a[3:8]          # array([4, 5, 6, 7, 8])
 
-    a[:2]
-    # array([1, 2])
+    a[0:5]          # array([1, 2, 3, 4, 5])
+    a[:5]           # array([1, 2, 3, 4, 5])
+    a[5:9]          # array([6, 7, 8, 9])
 
-    a[1:3]
-    # array([2, 3])
+    a[5:len(a)]     # array([6, 7, 8, 9])
+    a[5:]           # array([6, 7, 8, 9])
+    a[-2:]          # array([8, 9])
+    a[-5:]          # array([5, 6, 7, 8, 9])
+    a[-6:-2]        # array([4, 5, 6, 7])
 
-    a[-2:]
-    # array([2, 3])
+    a[3:8:2]        # array([4, 6, 8])
+    a[-8:-3:2]      # array([2, 4, 6])
+    a[::2]          # array([1, 3, 5, 7, 9])
+    a[1::2]         # array([2, 4, 6, 8])
 
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([1, 2, 3])
-
-    a[::2]
-    # array([1, 3])
-
-    a[1::2]
-    # array([2])
+    a[0:len(a)]     # array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+    a[0:]           # array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+    a[:len(a)]      # array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+    a[:]            # array([1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 
 2-dimensional Array
 ===================
-
-All
----
 .. code-block:: python
+    :caption: Rows
 
     import numpy as np
 
@@ -57,17 +54,6 @@ All
     #        [4, 5, 6],
     #        [7, 8, 9]])
 
-Rows
-----
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
     a[1:]
     # array([[4, 5, 6],
     #        [7, 8, 9]])
@@ -79,15 +65,6 @@ Rows
     # array([[4, 5, 6],
     #        [7, 8, 9]])
 
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
     a[::2]
     # array([[1, 2, 3],
     #        [7, 8, 9]])
@@ -95,9 +72,8 @@ Rows
     a[1::2]
     # array([[4, 5, 6]])
 
-Columns
--------
 .. code-block:: python
+    :caption: Columns
 
     import numpy as np
 
@@ -118,15 +94,6 @@ Columns
     a[:, -1]
     # array([3, 6, 9])
 
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
     a[:, 0:1]
     # array([[1],
     #        [4],
@@ -142,15 +109,6 @@ Columns
     #        [4, 5],
     #        [7, 8]])
 
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
     a[:, ::2]
     # array([[1, 3],
     #        [4, 6],
@@ -161,9 +119,8 @@ Columns
     #        [5],
     #        [8]])
 
-Rows and Columns
-----------------
 .. code-block:: python
+    :caption: Rows and Columns
 
     import numpy as np
 
@@ -188,21 +145,16 @@ Rows and Columns
     a[-1:, -2:]
     # array([[8, 9]])
 
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
-
     a[::2, ::2]
     # array([[1, 3],
     #        [7, 9]])
 
     a[1::2, 1::2]
     # array([[5]])
+
+    a[[2,1], ::2]
+    # array([[7, 9],
+    #        [4, 6]])
 
 
 Assignments
@@ -249,8 +201,8 @@ Numpy Slice 1
 Numpy Slice 2
 -------------
 * Complexity level: easy
-* Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
+* Lines of code to write: 3 lines
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/numpy_slice_2.py`
 
 :English:
