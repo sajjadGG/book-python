@@ -338,9 +338,9 @@ Advanced indexing
 
     import numpy as np
 
-    # '1970-01-01' -> [1, 2, 3]
-    # '1970-01-02' -> [4, 5, 6]
-    # '1970-01-03' -> [7, 8, 9]
+    # '2000-01-01' -> [1, 2, 3]
+    # '2000-01-02' -> [4, 5, 6]
+    # '2000-01-03' -> [7, 8, 9]
 
     date = np.array([
         '2000-01-01',
@@ -383,18 +383,18 @@ Advanced indexing
     jan01 = (index == '2000-01-01')
     jan03 = (index == '2000-01-03')
 
-    data[ jan01 | jan03 ]
+    data[jan01|jan03]
     # array([[1, 2, 3],
     #        [7, 8, 9]])
 
-    data[ jan01 | jan03, 0 ]
+    data[jan01|jan03, 0]
     # array([1, 7])s
 
-    data[ jan01 | jan03, :2 ]
+    data[jan01|jan03, :2]
     # array([[1, 2],
     #        [7, 8]])
 
-    data[ jan01 | jan03, :2 ] = 0
+    data[jan01|jan03, :2] = 0
     data
     # array([[0, 0, 3],
     #        [4, 5, 6],
@@ -424,20 +424,19 @@ Advanced indexing
                      [ 0.95008842, -0.15135721, -0.10321885],
                      [ 0.4105985 ,  0.14404357,  1.45427351]])
 
-
     dec31 = (index == '1999-12-31')   # array([False,  True, False, False])
     jan01 = (index == '2000-01-01')   # array([False, False,  True, False])
     days = (dec31 | jan01)            # array([False,  True,  True, False])
     morning = (columns == 'Morning')  # array([ True, False, False])
 
-    data[dec31 | jan01]
+    data[dec31|jan01]
     # array([[ 2.2408932 ,  1.86755799, -0.97727788],
     #        [ 0.95008842, -0.15135721, -0.10321885]])
 
-    data[dec31 | jan01, (columns == 'Morning')]
+    data[dec31|jan01, (columns == 'Morning')]
     # array([2.2408932 , 0.95008842])
 
-    data[dec31 | jan01, morning]
+    data[dec31|jan01, morning]
     # array([2.2408932 , 0.95008842])
 
     data[days]
@@ -455,6 +454,12 @@ Diagonal problem
 
     import numpy as np
 
+    #                Morning         Noon      Evening
+    # 1999-12-30  1.76405235,  0.40015721,  0.97873798,
+    # 1999-12-31  2.2408932 ,  1.86755799, -0.97727788,
+    # 2000-01-01  0.95008842, -0.15135721, -0.10321885,
+    # 2000-01-02  0.4105985 ,  0.14404357,  1.45427351,
+
     index = np.array([
         '1999-12-30',
         '1999-12-31',
@@ -468,25 +473,10 @@ Diagonal problem
                      [ 0.95008842, -0.15135721, -0.10321885],
                      [ 0.4105985 ,  0.14404357,  1.45427351]])
 
-    ## Intuitive understanding
-    #                Morning         Noon      Evening
-    # 1999-12-30  1.76405235,  0.40015721,  0.97873798,
-    # 1999-12-31  2.2408932 ,  1.86755799, -0.97727788,
-    # 2000-01-01  0.95008842, -0.15135721, -0.10321885,
-    # 2000-01-02  0.4105985 ,  0.14404357,  1.45427351,
-
-
     dec31 = (index == '1999-12-31')     # array([False,  True, False, False])
     jan01 = (index == '2000-01-01')     # array([False, False,  True, False])
-
     morning = (columns == 'Morning')    # array([ True, False, False])
     evening = (columns == 'Evening')    # array([False, False,  True])
-
-    data
-    # array([[ 1.76405235,  0.40015721,  0.97873798],
-    #        [ 2.2408932 ,  1.86755799, -0.97727788],
-    #        [ 0.95008842, -0.15135721, -0.10321885],
-    #        [ 0.4105985 ,  0.14404357,  1.45427351]])
 
     data[dec31|jan01]
     # array([[ 2.2408932 ,  1.86755799, -0.97727788],
@@ -503,12 +493,12 @@ Diagonal problem
 Assignments
 ===========
 
-Numpy Select
-------------
+Numpy Select Isin
+-----------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
-* Estimated time of completion: 8 min
-* Solution: :download:`solution/numpy_select.py`
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/numpy_select_isin.py`
 
 :English:
     #. Set random seed to 0

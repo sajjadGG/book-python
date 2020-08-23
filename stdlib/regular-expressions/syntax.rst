@@ -5,14 +5,12 @@ Regexp Syntax
 
 Rationale
 =========
-* Also known as ``regexp``
-* Also known as ``regex``
-* Also known as ``re``
+* Regular Expressions are also known as ``regexp``, ``regex`` or ``re``
 * Identifiers - what to find
 * Qualifiers - range to find
 * Quantifiers - how many occurrences of preceding qualifier or identifier
 
-* Recall information about raw strings
+* Recall information about raw strings ``r'...'``
 * Recall information about escape characters, i.e.:
 
     * ``\n`` - newline,
@@ -25,7 +23,7 @@ Rationale
 
 Identifiers
 ===========
-* what to find
+* What to find
 
 * ``\s`` - whitespace (space, tab, newline)
 * ``\S`` - anything but whitespace
@@ -61,13 +59,13 @@ Qualifier
 
 Examples:
 
-    - ``[d-m]`` - dowolna mała litera z przedziału: d-m
-    - ``[3-7]`` - dowlna cyfra z przedziału 3-7
-    - ``[d-mK-P3-8]`` - dowolna mała litera z przedziału d-m oraz dowolna duża litera K-P oraz dowolna cyfra 3-8
-    - ``[xz2]`` - x lub z lub 2
-    - ``d|x`` - d lub x
-    - ``[d-k]|[ABC]|[3-8]`` - dowolna mała litera d-k lub duża A,B,C lub cyfra 3-8
-    - ``[A-Z][a-z]+`` - jedna duża litera, a później mała minimum raz
+    * ``[d-m]`` - dowolna mała litera z przedziału: d-m
+    * ``[3-7]`` - dowlna cyfra z przedziału 3-7
+    * ``[d-mK-P3-8]`` - dowolna mała litera z przedziału d-m oraz dowolna duża litera K-P oraz dowolna cyfra 3-8
+    * ``[xz2]`` - x lub z lub 2
+    * ``d|x`` - d lub x
+    * ``[d-k]|[ABC]|[3-8]`` - dowolna mała litera d-k lub duża A,B,C lub cyfra 3-8
+    * ``[A-Z][a-z]+`` - jedna duża litera, a później mała minimum raz
 
 
 Quantifier
@@ -75,59 +73,65 @@ Quantifier
 * How many occurrences of preceding qualifier or identifier
 
 Greedy (prefer longest matches):
-- `{n}` - coś dokładnie `n` razy
-- `{,n}` - coś maksymalnie `n` razy
-- `{n,}` - coś minimalnie `n` razy
-- `{n,m}` - coś minimalnie `n` razy, maksymalnie `m` razy
-- `*` - coś minimum 0, maksimum nieskończoność
-- `+` - coś minimum 1, maksimum nieskończoność
-- `?` - coś minimum 0, maksimum 1 raz (może być lub nie)
+
+    * `{n}` - exactly `n` times
+    * `{,n}` - maximum `n` times
+    * `{n,}` - minimum `n` times
+    * `{n,m}` - minimum `n` times, maximum `m` times
+    * `*` - minimum 0 times, no maximum
+    * `+` - minimum 1 time, no maximum
+    * `?` - minimum 0 times, maximum 1 time (could be)
 
 Non-Greedy (prefer shortest matches):
-- `{,n}?` - coś maksymalnie `n` razy
-- `{n,}?` - coś minimalnie `n` razy
-- `{n,m}?` - coś minimalnie `n` razy, maksymalnie `m` razy
-- `*?` - coś minimum 0, maksimum nieskończoność
-- `+?` - coś minimum 1, maksimum nieskończoność
-- `??` - coś minimum 0, maksimum 1 raz (może być lub nie)
+
+    * `{,n}?` - maximum `n` times, but prefer shorter
+    * `{n,}?` - minimum `n` times, but prefer shorter
+    * `{n,m}?` - minimum `n` times, maximum `m` times, but prefer shorter
+    * `*?` - minimum 0 times, no maximum, but prefer shorter
+    * `+?` - minimum 1 time, no maximum, but prefer shorter
+    * `??` - minimum 0 times, maximum 1 time (could be), but prefer shorter
 
 
 Examples:
-- `[0-9]{2}` - dokładnie dwie cyfry 0-9
-- `\d{2}` - dokładnie dwie cyfry 0-9
-- `[A-Z]{2,10}` - duża litera A-Z minimalnie 2, maksymalnie 10
-- `[A-Z]{2-10}-[0-9]{,5}` - duża litera A-Z minimalnie 2, maksymalnie 10 później myślnik `-` później maksymalnie 5 cyfr
-- `[a-z]+` - minimalnie jedna litera, ale staraj się dopasowywać jak najwięcej liter
-- `\d+` - liczba
-- `\d+\.\d+` - ułamek dziesiętny
+
+    * `[0-9]{2}` - exactly two digits from `0` to `9`
+    * `\d{2}` - exactly two digits from `0` to `9`
+    * `[A-Z]{2,10}` - duża litera A-Z minimalnie 2, maksymalnie 10
+    * `[A-Z]{2-10}-[0-9]{,5}` - duża litera A-Z minimalnie 2, maksymalnie 10 później myślnik `-` później maksymalnie 5 cyfr
+    * `[a-z]+` - minimalnie jedna litera, ale staraj się dopasowywać jak najwięcej liter
+    * `\d+` - liczba
+    * `\d+\.\d+` - ułamek dziesiętny
 
 Negation
 ========
-- Logically inverts qualifier
-- `[^abc]` - anything but letter `a` or `b` or `c`
+* Logically inverts qualifier
+* `[^abc]` - anything but letter `a` or `b` or `c`
 
 Groups
 ======
-- złap wyrażenia
-- grupy mogą być nazwane albo nie nazwane
-- można się odwoływać pozycyjnie oraz keyword
+* Catch expression results
+* Can be named or positional
+* można się odwoływać pozycyjnie oraz keyword
 
-- `()` - group
+* `()` - group
 
 Define:
-- `(...)` - grupa nie nazwana
-- `(?P<nazwa>...)` - grupa nazwana
+
+    * `(...)` - grupa nie nazwana
+    * `(?P<nazwa>...)` - grupa nazwana
 
 Backreference:
-- `\1` - odwołaj się pozycyjnie do pierwszej grupy
-- `$1` - odwołaj się pozycyjnie do pierwszej grupy (niektóre języki programwania)
-- `(?P=nazwa)` - odwołaj się do grupy nazwanej `nazwa`
+
+    * `\1` - odwołaj się pozycyjnie do pierwszej grupy
+    * `$1` - odwołaj się pozycyjnie do pierwszej grupy (niektóre języki programwania)
+    * `(?P=nazwa)` - odwołaj się do grupy nazwanej `nazwa`
 
 Examples:
-- `(\w+)` - słowa lub całe cyfry
-- `\d+(\.\d+)?` - liczba z częścią ułamka dziesiętnego lub bez
-- `\d+(,\d+)?` - liczba wraz z separatorem tysięcznym (US) - czyli przecinek `,`
-- `(?P<slowo>\w+)` - grupa nazwana `slowo` składająca się z `\w+` (dowolny unicode minimum raz)
+
+    * `(\w+)` - słowa lub całe cyfry
+    * `\d+(\.\d+)?` - liczba z częścią ułamka dziesiętnego lub bez
+    * `\d+(,\d+)?` - liczba wraz z separatorem tysięcznym (US) - czyli przecinek `,`
+    * `(?P<slowo>\w+)` - grupa nazwana `slowo` składająca się z `\w+` (dowolny unicode minimum raz)
 
 .. code-block:: python
 
@@ -140,19 +144,19 @@ Examples:
 
 Flags
 =====
-- `re.IGNORECASE` - bez względu na wielkość liter
-- `re.MULTILINE` - wyrażenie może zacząć się w jednej linii i skończyć w innej; zmienia znaczenie: `^` - początek linii, `$` - koniec linii
-- `re.DOTALL` - `.` również łapie końce linii
+* `re.IGNORECASE` - bez względu na wielkość liter
+* `re.MULTILINE` - wyrażenie może zacząć się w jednej linii i skończyć w innej; zmienia znaczenie: `^` - początek linii, `$` - koniec linii
+* `re.DOTALL` - `.` również łapie końce linii
 
 
 Extensions
 ==========
 * In other programming languages
 
-- `[:allnum:]` == `[a-zA-Z0-9]`
-- `[:alpha:]` == `[a-zA-Z]`
-- `[a-Z]` == `[a-zA-Z]`
-- `[a-9]` == `[a-zA-Z0-9]`
+* `[:allnum:]` == `[a-zA-Z0-9]`
+* `[:alpha:]` == `[a-zA-Z]`
+* `[a-Z]` == `[a-zA-Z]`
+* `[a-9]` == `[a-zA-Z0-9]`
 
 
 
