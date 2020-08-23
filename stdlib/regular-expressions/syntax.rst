@@ -3,11 +3,158 @@ Regexp Syntax
 *************
 
 
-About
-=====
+Rationale
+=========
 * Also known as ``regexp``
 * Also known as ``regex``
 * Also known as ``re``
+* Recall information about raw strings
+* Recall information about escape characters, i.e.:
+
+    * ``\n`` - newline,
+    * ``\\n`` - string of characters with ``\`` and then ``n``
+    * ``.`` - in regexp means any character
+    * ``\.`` - just a dot
+    * ``*`` - in regexp means any times
+    * ``\*`` - just asterisk character
+
+Identifiers
+===========
+* What to find
+
+* ``\s`` - whitespace (space, tab, newline)
+* ``\S`` - anything but whitespace
+* ``\d`` - digit
+* ``\D`` - anything but digit
+* ``\b`` - whitespace around words
+* ``\B`` - anything but whitespace around words
+* ``\w`` - any unicode alphabet character (lower or upper, also with diactitics (i.e. ąśćłź...)
+* ``\W`` - anything but any unicode alphabet character (i.e. whitespace, dots, comas, dashes)
+
+* ``\t`` - tab
+* ``\n`` - newline
+* ``\v`` - vertical space
+* ``\f`` - form feed
+
+
+Qualifier
+=========
+* What to find
+
+* ``[a-z]`` - any lowercase ASCII letter from `a` to `z`
+* ``[A-Z]`` - any uppercase ASCII letter from `A` to `Z`
+* ``[0-9]`` - any digit from `0` to `9`
+* ``[a-zA-Z]`` - any ASCII letter from: `a` to `z` or from `A` to `Z`
+* ``[a-zA-Z0-9]`` - any ASCII letter from `a` to `z` or from `A` to `Z` or digit from `0` to `9`
+* ``[abc]`` - letter `a` or `b` or `c`
+* ``a|b`` - letter `a` or `b` (also works with expressions)
+* ``[a-z]|[0-9]`` - any lowercase ASCII letter from `a` to `z` or digit from `0` to `9`
+
+* ``.`` - any character besides newline
+* ``^`` - start of a string
+* ``$`` - end of a string
+
+Examples:
+
+    - ``[d-m]`` - dowolna mała litera z przedziału: d-m
+    - ``[3-7]`` - dowlna cyfra z przedziału 3-7
+    - ``[d-mK-P3-8]`` - dowolna mała litera z przedziału d-m oraz dowolna duża litera K-P oraz dowolna cyfra 3-8
+    - ``[xz2]`` - x lub z lub 2
+    - ``d|x`` - d lub x
+    - ``[d-k]|[ABC]|[3-8]`` - dowolna mała litera d-k lub duża A,B,C lub cyfra 3-8
+    - ``[A-Z][a-z]+`` - jedna duża litera, a później mała minimum raz
+
+
+Quantifier
+==========
+
+* Number of occurrences
+* Quantifier is always preceded by qualifier
+
+Greedy (prefer longest matches):
+- `{n}` - coś dokładnie `n` razy
+- `{,n}` - coś maksymalnie `n` razy
+- `{n,}` - coś minimalnie `n` razy
+- `{n,m}` - coś minimalnie `n` razy, maksymalnie `m` razy
+- `*` - coś minimum 0, maksimum nieskończoność
+- `+` - coś minimum 1, maksimum nieskończoność
+- `?` - coś minimum 0, maksimum 1 raz (może być lub nie)
+
+Non-Greedy (prefer shortest matches):
+- `{,n}?` - coś maksymalnie `n` razy
+- `{n,}?` - coś minimalnie `n` razy
+- `{n,m}?` - coś minimalnie `n` razy, maksymalnie `m` razy
+- `*?` - coś minimum 0, maksimum nieskończoność
+- `+?` - coś minimum 1, maksimum nieskończoność
+- `??` - coś minimum 0, maksimum 1 raz (może być lub nie)
+
+
+Examples:
+- `[0-9]{2}` - dokładnie dwie cyfry 0-9
+- `\d{2}` - dokładnie dwie cyfry 0-9
+- `[A-Z]{2,10}` - duża litera A-Z minimalnie 2, maksymalnie 10
+- `[A-Z]{2-10}-[0-9]{,5}` - duża litera A-Z minimalnie 2, maksymalnie 10 później myślnik `-` później maksymalnie 5 cyfr
+- `[a-z]+` - minimalnie jedna litera, ale staraj się dopasowywać jak najwięcej liter
+- `\d+` - liczba
+- `\d+\.\d+` - ułamek dziesiętny
+
+Negation
+========
+- Logically inverts qualifier
+- `[^abc]` - anything but letter `a` or `b` or `c`
+
+Groups
+======
+- złap wyrażenia
+- grupy mogą być nazwane albo nie nazwane
+- można się odwoływać pozycyjnie oraz keyword
+
+- `()` - group
+
+Define:
+- `(...)` - grupa nie nazwana
+- `(?P<nazwa>...)` - grupa nazwana
+
+Backreference:
+- `\1` - odwołaj się pozycyjnie do pierwszej grupy
+- `$1` - odwołaj się pozycyjnie do pierwszej grupy (niektóre języki programwania)
+- `(?P=nazwa)` - odwołaj się do grupy nazwanej `nazwa`
+
+Examples:
+- `(\w+)` - słowa lub całe cyfry
+- `\d+(\.\d+)?` - liczba z częścią ułamka dziesiętnego lub bez
+- `\d+(,\d+)?` - liczba wraz z separatorem tysięcznym (US) - czyli przecinek `,`
+- `(?P<slowo>\w+)` - grupa nazwana `slowo` składająca się z `\w+` (dowolny unicode minimum raz)
+
+.. code-block:: python
+
+    DATA = 'Mark Watney'
+    result = re.search(r'(?P<firstname>\w+) (?P<lastname>\w+)', DATA)
+
+    result.groupdict()
+    # {'firstname': 'Mark', 'lastname': 'Watney'}
+
+
+Flags
+=====
+- `re.IGNORECASE` - bez względu na wielkość liter
+- `re.MULTILINE` - wyrażenie może zacząć się w jednej linii i skończyć w innej; zmienia znaczenie: `^` - początek linii, `$` - koniec linii
+- `re.DOTALL` - `.` również łapie końce linii
+
+
+Extensions
+==========
+* In other programming languages
+
+- `[:allnum:]` == `[a-zA-Z0-9]`
+- `[:alpha:]` == `[a-zA-Z]`
+- `[a-Z]` == `[a-zA-Z]`
+- `[a-9]` == `[a-zA-Z0-9]`
+
+
+
+
+
 
 
 Matching
