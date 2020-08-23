@@ -28,8 +28,8 @@ Array Iteration
 
 
     data = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
+                     [4, 5, 6],
+                     [7, 8, 9]])
 
     for value in data:
         print(value)
@@ -44,8 +44,8 @@ Array Iteration
 
 
     data = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
+                     [4, 5, 6],
+                     [7, 8, 9]])
 
     for row in data:
         for value in row:
@@ -61,19 +61,18 @@ Array Iteration
     # 8
     # 9
 
+
 Flat
 ====
-
-Flatten
--------
 .. code-block:: python
+    :caption: Flatten
 
     import numpy as np
 
 
     data = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
+                     [4, 5, 6],
+                     [7, 8, 9]])
 
     for value in data.flatten():
         print(value)
@@ -88,16 +87,15 @@ Flatten
     # 8
     # 9
 
-Ravel
------
 .. code-block:: python
+    :caption: Ravel
 
     import numpy as np
 
 
     data = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
+                     [4, 5, 6],
+                     [7, 8, 9]])
 
     for value in data.ravel():
         print(value)
@@ -119,8 +117,8 @@ Enumerate
     import numpy as np
 
     data = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
+                     [4, 5, 6],
+                     [7, 8, 9]])
 
     for i, value in enumerate(data):
         print(i, value)
@@ -134,8 +132,8 @@ Enumerate
     import numpy as np
 
     data = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
+                     [4, 5, 6],
+                     [7, 8, 9]])
 
     for i, value in enumerate(data.ravel()):
         print(i, value)
@@ -154,8 +152,8 @@ Enumerate
     import numpy as np
 
     data = np.array([[1, 2, 3],
-                  [4, 5, 6],
-                  [7, 8, 9]])
+                     [4, 5, 6],
+                     [7, 8, 9]])
 
     for i, row in enumerate(data):
         for j, value in enumerate(row):
