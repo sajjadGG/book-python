@@ -2,6 +2,9 @@
 Array Broadcasting
 ******************
 
+
+Rationale
+=========
 .. glossary::
 
     Vector

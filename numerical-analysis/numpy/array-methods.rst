@@ -98,33 +98,23 @@ Fill
 ====
 * Modifies inplace
 
-Fill all
---------
 .. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([1, 2, 3])
-
-    a.fill(0)
-    # array([0, 0, 0])
-
-.. code-block:: python
+    :caption: Fill all
 
     import numpy as np
 
 
     a = np.array([[1, 2, 3],
-                  [4, 5, 6]])
+                  [4, 5, 6],
+                  [7, 8, 9]])
 
     a.fill(0)
     # array([[0, 0, 0],
+    #        [0, 0, 0],
     #        [0, 0, 0]])
 
-Fill slice
-----------
 .. code-block:: python
+    :caption: Fill slice
 
     import numpy as np
 
@@ -138,16 +128,15 @@ Fill slice
     #        [0, 5, 6],
     #        [0, 8, 9]])
 
-Fill NaN
---------
 .. code-block:: python
+    :caption: Fill NaN (dtype=np.int)
 
     import numpy as np
 
 
     a = np.array([[1, 2, 3],
                   [4, 5, 6],
-                  [7, 8, 9]])
+                  [7, 8, 9]], dtype=np.float)
 
     a[:, 0].fill(np.nan)
 
@@ -157,10 +146,14 @@ Fill NaN
     #        [-9223372036854775808, 8, 9]])
 
 .. code-block:: python
+    :caption: Fill NaN (dtype=np.float)
+
+    import numpy as np
+
 
     a = np.array([[1, 2, 3],
                   [4, 5, 6],
-                  [7, 8, 9]], dtype=float)
+                  [7, 8, 9]], dtype=np.float)
 
     a[:, 0].fill(np.nan)
 
@@ -175,20 +168,25 @@ Transpose
 * ``a.transpose()`` or ``a.T``
 * ``a.transpose()`` is preferred
 
-One dimensional
----------------
-.. code-block:: python
+.. note:: In Pandas you can select columns by either ``df.A`` or ``df['A']``
+    .. code-block:: python
 
-    import numpy as np
+        df.columns = ['A', 'B', 'C']
 
+        df['A']         # will select column A
+        df.A            # will select column A
 
-    a = np.array([1, 2, 3])
+        df.T            # will transpose data
+        df.transpose()  # will transpose data
 
-    a.transpose()
-    # array([1, 2, 3])
+    .. code-block:: python
 
-Two dimensional
----------------
+        df.columns = ['R', 'S', 'T', 'U']
+
+        df['T']         # will select column T
+        df.T            # will select column T
+        df.transpose()  # will transpose data
+
 .. code-block:: python
 
     import numpy as np
@@ -240,6 +238,24 @@ Signum
     np.sign(a)
     # array([[-1, -1,  0],
     #        [ 0,  1,  1]])
+
+.. code-block:: python
+
+    import numpy as np
+
+    # t1 = 230 lux
+    # t2 = 218 lux
+    # t3 = 230 lux
+    # t4 = 2 lux
+    # t5 = 0 lux
+    # t6 = 0 lux
+    # t7 = 10 lux
+    # t8 = 0 lux
+
+    a = np.array([230, 218, 230, 2, 0, 0, 10, 0])
+
+    np.sign(a)
+    # array([1, 1, 1, 1, 0, 0, 1, 0])
 
 
 Assignments

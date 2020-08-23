@@ -2,6 +2,9 @@
 Array Arithmetic
 ****************
 
+
+Rationale
+=========
 .. glossary::
 
     Scalar

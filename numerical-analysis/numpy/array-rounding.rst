@@ -3,6 +3,15 @@ Array Rounding
 **************
 
 
+Rationale
+=========
+* ``np.ceil(n)`` - rounds `n` up to nearest ``int``
+* ``np.floor(n)`` - rounds `n` down to nearest ``int``
+* ``np.rint(n)`` - rounds `n` to nearest ``int``
+* ``np.round(n, [prec])`` - rounds `n` with precision `prec`
+* ``np.clip(low, high)`` - trims values to `low` and `high`
+
+
 Floor
 =====
 .. code-block:: python
@@ -67,6 +76,36 @@ Round
 
     np.round(a, 3)
     # array([1.23 , 1.456, 1.789])
+
+.. code-block:: python
+
+    import numpy as np
+
+    data = 3.1415
+
+    np.round(data, 2)
+    # 3.14
+
+.. code-block:: python
+
+    import numpy as np
+
+    data = np.array([[3.1415, 2.7182],
+                     [3.1415, 2.7182]])
+
+    np.round(data, 2)
+    # array([3.14, 2.72])
+
+.. code-block:: python
+
+    import numpy as np
+
+    data = np.array([[3.1415, 2.7182],
+                     [3.1415, 2.7182]])
+
+    np.round(data, 2)
+    # array([[3.14, 2.72],
+    #        [3.14, 2.72]])
 
 
 Clip
@@ -204,7 +243,7 @@ Numpy Round Clip
 ----------------
 * Complexity level: medium
 * Lines of code to write: 3 lines
-* Estimated time of completion: 8 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/numpy_round_clip.py`
 
 :English:

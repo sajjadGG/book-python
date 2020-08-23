@@ -13,11 +13,9 @@ One dimensional
 
 
     a = np.array([2, 3, 1])
-
-    sorted(a)
-    # [1, 2, 3]
-
     a.sort()
+
+    a
     # array([1, 2, 3])
 
 Two dimensional - Default axis
@@ -29,11 +27,9 @@ Two dimensional - Default axis
 
     a = np.array([[2, 3, 1],
                   [5, 6, 4]])
-
-    sorted(a)
-    # ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
-
     a.sort()
+
+    a
     # array([[1, 2, 3],
     #        [4, 5, 6]])
 

@@ -126,6 +126,7 @@ Data
     a.strides       # (72, 24, 8)
     a.data          # <memory at 0x107933c70>
 
+
 Assignments
 ===========
 

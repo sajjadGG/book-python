@@ -15,6 +15,7 @@ Rationale
 
     Visualizing Multi-Dimensional Arrays :cite:`NumpyMultidimArrays`
 
+
 Axis
 ====
 * New dimensions are added at the beginning of ``shape``

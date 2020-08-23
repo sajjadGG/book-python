@@ -8,6 +8,10 @@ Rationale
 * Also known as ``regexp``
 * Also known as ``regex``
 * Also known as ``re``
+* Identifiers - what to find
+* Qualifiers - range to find
+* Quantifiers - how many occurrences of preceding qualifier or identifier
+
 * Recall information about raw strings
 * Recall information about escape characters, i.e.:
 
@@ -18,9 +22,10 @@ Rationale
     * ``*`` - in regexp means any times
     * ``\*`` - just asterisk character
 
+
 Identifiers
 ===========
-* What to find
+* what to find
 
 * ``\s`` - whitespace (space, tab, newline)
 * ``\S`` - anything but whitespace
@@ -39,7 +44,7 @@ Identifiers
 
 Qualifier
 =========
-* What to find
+* Range to find
 
 * ``[a-z]`` - any lowercase ASCII letter from `a` to `z`
 * ``[A-Z]`` - any uppercase ASCII letter from `A` to `Z`
@@ -67,9 +72,7 @@ Examples:
 
 Quantifier
 ==========
-
-* Number of occurrences
-* Quantifier is always preceded by qualifier
+* How many occurrences of preceding qualifier or identifier
 
 Greedy (prefer longest matches):
 - `{n}` - coś dokładnie `n` razy

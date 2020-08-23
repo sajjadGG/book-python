@@ -354,12 +354,12 @@ Readability Counts
 Assignments
 ===========
 
-Numpy Logic
------------
+Numpy Logic Even
+----------------
 * Complexity level: easy
 * Lines of code to write: 4 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/numpy_logic.py`
+* Solution: :download:`solution/numpy_logic_even.py`
 
 :English:
     #. Set random seed to zero
@@ -375,12 +375,12 @@ Numpy Logic
     #. Sprawdź czy wszystkie liczby spełniają ten warunek
     #. Sprawdź czy jakakolwiek liczba spełnia ten warunek
 
-Numpy Isin
-----------
+Numpy Logic Isin
+----------------
 * Complexity level: easy
 * Lines of code to write: 9 lines
-* Estimated time of completion: 8 min
-* Solution: :download:`solution/numpy_isin.py`
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/numpy_logic_isin.py`
 
 :English:
     #. Set random seed to zero

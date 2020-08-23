@@ -83,15 +83,15 @@ Numpy Concatenation
 :English:
     #. Use data from "Input" section (see below)
     #. Given are one-dimensional: ``a: np.ndarray``, ``b: np.ndarray``
-    #. Concatenate them
-    #. Represent the result as ``np.ndarray``: two rows and three columns
+    #. Concatenate them as ``result: np.ndarray``
+    #. Reshape ``result`` into two rows and three columns
     #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Dane są jednowymiarowe: ``a: np.ndarray``, ``b: np.ndarray``
-    #. Połącz je ze sobą
-    #. Przedstaw wynik jako ``np.ndarray``: dwa wiersze na trzy kolumny
+    #. Połącz je ze sobą jako ``result: np.ndarray``
+    #. Przekształć ``result`` w dwa wiersze na trzy kolumny
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
@@ -103,5 +103,6 @@ Numpy Concatenation
 :Output:
     .. code-block:: python
 
-        array([[1, 2, 3],
-               [4, 5, 6]])
+        result: np.ndarray
+        # array([[1, 2, 3],
+        #        [4, 5, 6]])

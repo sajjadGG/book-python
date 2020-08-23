@@ -5,10 +5,8 @@ Array Indexing
 
 Index
 =====
-
-Flat
-----
 .. code-block:: python
+    :caption: Flat
 
     import numpy as np
 
@@ -23,9 +21,8 @@ Flat
     a.flat[4]   # 5
     a.flat[5]   # 6
 
-Multidimensional
-----------------
 .. code-block:: python
+    :caption: Multidimensional
 
     import numpy as np
 
@@ -43,14 +40,6 @@ Multidimensional
 
     a[-1][-1]    # 6
     a[-3]        # IndexError: index -3 is out of bounds for axis 0 with size 2
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[1, 2, 3],
-                  [4, 5, 6]])
 
     a[0,0]      # 1
     a[0,1]      # 2
@@ -256,6 +245,7 @@ Multi-indexing
     a[[True, False, True]]
     # array([[1, 2, 3],
     #        [7, 8, 9]])
+
 
 Assignments
 ===========
