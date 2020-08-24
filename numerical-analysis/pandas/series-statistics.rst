@@ -121,6 +121,17 @@ Average
 
     s.mode()
 
+.. code-block:: python
+    :caption: Rolling Average
+
+    s.rolling(window=30)
+
+.. figure:: img/stats-rolling.png
+    :width: 75%
+    :align: center
+
+    Rolling Average
+
 
 Distribution
 ============
@@ -150,6 +161,12 @@ Distribution
     :caption: Standard Error of the Mean (SEM)
 
     s.sem()
+
+.. figure:: img/stats-sem.png
+    :width: 75%
+    :align: center
+
+    Standard Error of the Mean (SEM)
 
 .. code-block:: python
     :caption: Skewness (3rd moment)
