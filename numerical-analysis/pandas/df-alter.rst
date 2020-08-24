@@ -219,7 +219,7 @@ Transpose
         'T': [30, 31, 32]})
 
     df['T']         # will select column T
-    df.T            # will select column T
+    df.T            # will transpose data
     df.transpose()  # will transpose data
 
 
