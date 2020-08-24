@@ -3,8 +3,8 @@ Series Alter
 ************
 
 
-Drop
-====
+Drop Rows
+=========
 * Drop element at index
 * Works with ``inplace=True``
 
@@ -28,7 +28,7 @@ Drop
     # dtype: float64
 
 
-Drop duplicates
+Drop Duplicates
 ===============
 * Works with ``inplace=True``
 
@@ -43,25 +43,6 @@ Drop duplicates
     # 0    1.0
     # 1    2.0
     # 3    NaN
-    # 4    5.0
-    # dtype: float64
-
-
-Drop NaN
-========
-* Works with ``inplace=True``
-
-.. code-block:: python
-
-    import pandas as pd
-    import numpy as np
-
-    s = pd.Series([1.0, 2.0, 3.0, np.nan, 5.0])
-
-    s.dropna()
-    # 0    1.0
-    # 1    2.0
-    # 2    2.0
     # 4    5.0
     # dtype: float64
 

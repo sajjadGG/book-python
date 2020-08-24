@@ -168,25 +168,6 @@ Transpose
 * ``a.transpose()`` or ``a.T``
 * ``a.transpose()`` is preferred
 
-.. note:: In Pandas you can select columns by either ``df.A`` or ``df['A']``
-    .. code-block:: python
-
-        df.columns = ['A', 'B', 'C']
-
-        df['A']         # will select column A
-        df.A            # will select column A
-
-        df.T            # will transpose data
-        df.transpose()  # will transpose data
-
-    .. code-block:: python
-
-        df.columns = ['R', 'S', 'T', 'U']
-
-        df['T']         # will select column T
-        df.T            # will select column T
-        df.transpose()  # will transpose data
-
 .. code-block:: python
 
     import numpy as np

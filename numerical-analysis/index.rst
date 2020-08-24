@@ -61,8 +61,8 @@ Numpy
     numpy/array-shape.rst
     numpy/array-attributes.rst
     numpy/array-random.rst
-    numpy/array-indexing.rst
-    numpy/array-slicing.rst
+    numpy/array-getitem.rst
+    numpy/array-slice.rst
     numpy/array-iteration.rst
     numpy/array-rounding.rst
     numpy/array-axis.rst
@@ -98,32 +98,36 @@ Pandas
 
     pandas/types-data.rst
     pandas/types-advanced.rst
+    pandas/import.rst
 
     pandas/series-create.rst
     pandas/series-attributes.rst
     pandas/series-index.rst
-    pandas/series-indexing.rst
-    pandas/series-slicing.rst
-    pandas/series-update.rst
+    pandas/series-sample.rst
+    pandas/series-getitem.rst
+    pandas/series-slice.rst
+    pandas/series-na.rst
     pandas/series-alter.rst
+
     pandas/series-arithmetic.rst
     pandas/series-statistics.rst
     pandas/series-mapping.rst
     pandas/series-cleaning.rst
 
+
+
     pandas/df-create.rst
-    pandas/df-import.rst
-    pandas/df-index.rst
     pandas/df-attributes.rst
-    pandas/df-select.rst
-    pandas/df-indexing.rst
-    pandas/df-at.rst
-    pandas/df-slicing.rst
-    pandas/df-loc.rst
-    pandas/df-alter.rst
-    pandas/df-nan.rst
+    pandas/df-index.rst
     pandas/df-sample.rst
-    pandas/df-plot.rst
+    pandas/df-getitem.rst
+    pandas/df-slice.rst
+
+    pandas/df-at.rst
+    pandas/df-loc.rst
+    pandas/df-select.rst
+    pandas/df-alter.rst
+    pandas/df-na.rst
     pandas/df-sort.rst
     pandas/df-statistics.rst
     pandas/df-mapping.rst
@@ -132,6 +136,7 @@ Pandas
     pandas/df-aggregations.rst
     pandas/df-join.rst
     pandas/df-export.rst
+    pandas/df-plot.rst
 
     pandas/date-types.rst
     pandas/date-timezone.rst

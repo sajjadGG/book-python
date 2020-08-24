@@ -7,9 +7,11 @@ DataFrame At
 * Use iat if you only need to get or set a single value in a DataFrame or Series
 * ``iat`` integer at (no fancy indexing)
 
-.. figure:: img/pandas-iat-iloc.png
+.. figure:: img/pandas-select-cell.png
     :width: 75%
     :align: center
+
+    Pandas Select Cell
 
 .. code-block:: python
 

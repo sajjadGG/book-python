@@ -1,6 +1,6 @@
-******************
-DataFrame Indexing
-******************
+*****************
+DataFrame Getitem
+*****************
 
 
 .. code-block:: python

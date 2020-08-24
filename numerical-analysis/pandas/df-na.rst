@@ -1,6 +1,6 @@
-*************
-DataFrame NaN
-*************
+************
+DataFrame NA
+************
 
 
 .. code-block:: python
@@ -26,12 +26,10 @@ DataFrame NaN
     # 6  4.0  4.4    d  NaN
 
 
-Find NaN
-========
-
-Any
----
+Select
+======
 .. code-block:: python
+    :caption: Any
 
     df.any()
     # A     True
@@ -40,9 +38,8 @@ Any
     # D    False
     # dtype: bool
 
-All
----
 .. code-block:: python
+    :caption: All
 
     df.all()
     # A    True
@@ -51,9 +48,8 @@ All
     # D    True
     # dtype: bool
 
-Is Null
--------
 .. code-block:: python
+    :caption: Is Null
 
     df.isnull()
     #        A      B      C     D
@@ -65,9 +61,8 @@ Is Null
     # 5   True   True   True  True
     # 6  False  False  False  True
 
-Is NA
------
 .. code-block:: python
+    :caption: Is NA
 
     df.isna()
     #        A      B      C     D
@@ -80,15 +75,13 @@ Is NA
     # 6  False  False  False  True
 
 
-Fill NaN
-========
-
-With scalar value
------------------
+Update
+======
 * ``axis=0`` - rows
 * ``axis=1`` - columns
 
 .. code-block:: python
+    :caption: Fill NA with scalar value
 
     df.fillna(0.0)
     #      A    B  C    D
@@ -100,12 +93,8 @@ With scalar value
     # 5  0.0  0.0  0  0.0
     # 6  4.0  4.4  d  0.0
 
-With dict values
-----------------
-* ``axis=0`` - rows
-* ``axis=1`` - columns
-
 .. code-block:: python
+    :caption: Fill NA with dict values
 
     df.fillna({
         'A': 99,
@@ -121,12 +110,8 @@ With dict values
     # 5  99.0  88.0  77  NaN
     # 6   4.0   4.4   d  NaN
 
-Forward Fill
-------------
-* Values from previous row
-* ``ffill``: propagate last valid observation forward
-
 .. code-block:: python
+    :caption: Forward Fill. ``ffill``: propagate last valid observation forward.
 
     df.fillna(method='ffill')
     #      A    B  C    D
@@ -138,12 +123,8 @@ Forward Fill
     # 5  3.0  3.3  c  NaN
     # 6  4.0  4.4  d  NaN
 
-Backward Fill
--------------
-* Values from next row
-* ``bfill``: use NEXT valid observation to fill gap
-
 .. code-block:: python
+    :caption: Backward Fill. ``bfill``: use NEXT valid observation to fill gap
 
     df.fillna(method='bfill')
     #      A    B  C    D
@@ -155,9 +136,8 @@ Backward Fill
     # 5  4.0  4.4  d  NaN
     # 6  4.0  4.4  d  NaN
 
-Interpolate
------------
 .. code-block:: python
+    :caption: Interpolate
 
     df.interpolate()
     #           A         B    C    D
@@ -169,15 +149,42 @@ Interpolate
     # 5  3.500000  3.850000  NaN  NaN
     # 6  4.000000  4.400000    d  NaN
 
+.. list-table:: Interpolation techniques
+    :widths: 25, 75
+    :header-rows: 1
 
-Drop NaN
-========
+    * - Method
+      - Description
 
-Drop Rows
----------
+    * - ``linear``
+      - Ignore the index and treat the values as equally spaced. This is the only method supported on MultiIndexes
+
+    * - ``time``
+      - Works on daily and higher resolution data to interpolate given length of interval
+
+    * - ``index``, ``values``
+      - use the actual numerical values of the index.
+
+    * - ``pad``
+      - Fill in NA using existing values
+
+    * - ``nearest``, ``zero``, ``slinear``, ``quadratic``, ``cubic``, ``spline``, ``barycentric``, ``polynomial``
+      - Passed to ``scipy.interpolate.interp1d``. These methods use the numerical values of the index.  Both ``polynomial`` and ``spline`` require that you also specify an ``order`` (int), e.g. ``df.interpolate(method='polynomial', order=5)``
+
+    * - ``krogh``, ``piecewise_polynomial``, ``spline``, ``pchip``, ``akima``
+      - Wrappers around the SciPy interpolation methods of similar names
+
+    * - ``from_derivatives``
+      - Refers to ``scipy.interpolate.BPoly.from_derivatives`` which replaces ``piecewise_polynomial`` interpolation method in scipy 0.18.
+
+
+Drop
+====
 * ``axis=0`` - rows
+* ``axis=1`` - columns
 
 .. code-block:: python
+    :caption: Drop Rows
 
     df.dropna(how='all')
     #      A    B  C    D
@@ -200,8 +207,6 @@ Drop Rows
     # 4  3.0  3.3  c  NaN
     # 6  4.0  4.4  d  NaN
 
-.. code-block:: python
-
     df.dropna(how='any')
     # Empty DataFrame
     # Columns: [A, B, C, D]
@@ -217,11 +222,8 @@ Drop Rows
     # Columns: [A, B, C, D]
     # Index: []
 
-Drop Column
------------
-* ``axis=1`` - columns
-
 .. code-block:: python
+    :caption: Drop Columns
 
     df.dropna(how='all', axis='columns')
     #      A    B    C
@@ -245,8 +247,6 @@ Drop Column
 
     df.dropna(how='all', axis=-1)
     # ValueError: No axis named -1 for object type <class 'pandas.core.frame.DataFrame'>
-
-.. code-block:: python
 
     df.dropna(how='any', axis='columns')
     # Empty DataFrame

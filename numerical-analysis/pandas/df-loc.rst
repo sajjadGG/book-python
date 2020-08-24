@@ -8,9 +8,17 @@ DataFrame Loc
 * ``df.loc`` - start and stop are included!!
 * ``df.iloc`` - behaves like Python slices
 
-.. figure:: img/pandas-iat-iloc.png
+.. figure:: img/pandas-select-row.png
     :width: 75%
     :align: center
+
+    Pandas Select Row
+
+.. figure:: img/pandas-select-column.png
+    :width: 75%
+    :align: center
+
+    Pandas Select Cell
 
 .. code-block:: python
 

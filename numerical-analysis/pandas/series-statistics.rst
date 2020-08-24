@@ -24,18 +24,30 @@ Series Statistics
 Count
 =====
 .. code-block:: python
+    :caption: Number of non-null observations
 
     s.count()
     # 4
 
+.. code-block:: python
+
+    s.values_count()
+
+.. code-block:: python
+
+    s.nunique()
+
+
 Sum
 ===
 .. code-block:: python
+    :caption: Sum of values
 
     s.sum()
     # 11.0
 
 .. code-block:: python
+    :caption: Cumulative sum
 
     s.cumsum()
     # a    1.0
@@ -49,11 +61,13 @@ Sum
 Product
 =======
 .. code-block:: python
+    :caption: Product of values
 
     s.prod()
     # 30.0
 
 .. code-block:: python
+    :caption: Cumulative product
 
     s.cumprod()
     # a    1.0
@@ -66,65 +80,101 @@ Product
 
 Extremes
 ========
-
-Minimum
--------
 .. code-block:: python
+    :caption: Minimum, index of minimum and cumulative minimum
 
     s.min()
     # 1.0
 
-.. code-block:: python
-
     s.idxmin()
     # 'a'
 
-Maximum
--------
+    s.cummin()
+
 .. code-block:: python
+    :caption: Maximum, index of maximum and cumulative maximum
 
     s.max()
     # 5.0
 
-.. code-block:: python
-
     s.idxmax()
     # 'e'
 
+    s.cummax()
 
 Average
 =======
-
-Mean
-----
 .. code-block:: python
+    :caption: Arithmetic mean of values
 
     s.mean()
     # 2.75
 
-Median
-------
 .. code-block:: python
+    :caption: Arithmetic median of values
 
     s.median()
     # 2.5
 
-Standard Deviation
-------------------
 .. code-block:: python
+    :caption: Mode
 
-    s.std()
-    # 1.707825127659933
+    s.mode()
 
 
 Distribution
 ============
+.. code-block:: python
+    :caption: Absolute value
 
-Quantile
---------
-* A.K.A. Percentile
+    s.abs()
 
 .. code-block:: python
+    :caption: Standard deviation
+
+    s.std()
+    # 1.707825127659933
+
+.. figure:: img/stats-stdev.png
+    :width: 75%
+    :align: center
+
+    Standard Deviation
+
+.. code-block:: python
+    :caption: Mean absolute deviation
+
+    s.mad()
+
+.. code-block:: python
+    :caption: Standard Error of the Mean (SEM)
+
+    s.sem()
+
+.. code-block:: python
+    :caption: Skewness (3rd moment)
+
+    s.skew()
+
+.. figure:: img/stats-skew.png
+    :width: 75%
+    :align: center
+
+    Skewness
+
+.. code-block:: python
+    :caption: Kurtosis (4th moment)
+
+    s.kurt()
+
+.. figure:: img/stats-kurt.png
+    :width: 75%
+    :align: center
+
+    Kurtosis
+
+.. code-block:: python
+    :caption: Sample quantile (value at %). Quantile also known as Percentile.
 
     s.quantile(.3)
     # 1.9
@@ -135,20 +185,23 @@ Quantile
     # 0.75    3.50
     # dtype: float64
 
-Variance
---------
 .. code-block:: python
+    :caption: Variance
 
     s.var()
     # 2.9166666666666665
 
-Correlation Coefficient
------------------------
 .. code-block:: python
+    :caption: Correlation Coefficient
 
     s.corr(s)
     # 1.0
 
+.. figure:: img/stats-corr.png
+    :width: 75%
+    :align: center
+
+    Correlation Coefficient
 
 Describe
 ========
@@ -164,34 +217,6 @@ Describe
     # 75%      3.500000
     # max      5.000000
     # dtype: float64
-
-
-Other methods
-=============
-.. csv-table:: Descriptive statistics
-    :header: "Function", "Description"
-    :widths: 10, 90
-
-    "``count``", "Number of non-null observations"
-    "``sum``", "Sum of values"
-    "``mean``", "Mean of values"
-    "``mad``", "Mean absolute deviation"
-    "``median``", "Arithmetic median of values"
-    "``min``", "Minimum"
-    "``max``", "Maximum"
-    "``mode``", "Mode"
-    "``abs``", "Absolute Value"
-    "``prod``", "Product of values"
-    "``std``", "Unbiased standard deviation"
-    "``var``", "Unbiased variance"
-    "``sem``", "Unbiased standard error of the mean"
-    "``skew``", "Unbiased skewness (3rd moment)"
-    "``kurt``", "Unbiased kurtosis (4th moment)"
-    "``quantile``", "Sample quantile (value at %)"
-    "``cumsum``", "Cumulative sum"
-    "``cumprod``", "Cumulative product"
-    "``cummax``", "Cumulative maximum"
-    "``cummin``", "Cumulative minimum"
 
 
 Assignments

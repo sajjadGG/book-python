@@ -23,12 +23,28 @@ Install
 
     $ pip install pandas
 
+.. code-block:: console
+
+    $ pip install --upgrade pandas
 
 Import
 ======
 .. code-block:: python
 
     import pandas as pd
+
+    pd.__version__
+    # '1.11.1'
+
+
+Workflow
+========
+
+.. figure:: img/pandas-workflow.png
+    :scale: 80%
+    :align: center
+
+     Pandas workflow
 
 
 Read More

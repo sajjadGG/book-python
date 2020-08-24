@@ -27,6 +27,7 @@ DataFrame Statistics
 Count
 =====
 .. code-block:: python
+    :caption: Number of non-null observations
 
     df.count()
     # Morning     7
@@ -35,10 +36,19 @@ Count
     # Midnight    7
     # dtype: int64
 
+.. code-block:: python
+
+    df.values_count()
+
+.. code-block:: python
+
+    df[...].nunique()
+
 
 Sum
 ===
 .. code-block:: python
+    :caption: Sum of values
 
     df.sum()
     # Morning     5.500273
@@ -48,6 +58,7 @@ Sum
     # dtype: float64
 
 .. code-block:: python
+    :caption: Cumulative sum
 
     df.cumsum()
     #              Morning      Noon   Evening  Midnight
@@ -63,6 +74,7 @@ Sum
 Product
 =======
 .. code-block:: python
+    :caption: Product of values
 
     df.prod()
     # Morning     2.240538
@@ -72,6 +84,7 @@ Product
     # dtype: float64
 
 .. code-block:: python
+    :caption: Cumulative product
 
     df.cumprod()
     #              Morning      Noon   Evening  Midnight
@@ -86,10 +99,8 @@ Product
 
 Extremes
 ========
-
-Minimum
--------
 .. code-block:: python
+    :caption: Minimum, index of minimum and cumulative minimum
 
     df.min()
     # Morning    -2.552990
@@ -98,8 +109,6 @@ Minimum
     # Midnight   -0.854096
     # dtype: float64
 
-.. code-block:: python
-
     df.idxmin()
     # Morning    2000-01-04
     # Noon       2000-01-05
@@ -107,9 +116,10 @@ Minimum
     # Midnight   2000-01-03
     # dtype: datetime64[ns]
 
-Maximum
--------
+    df.cummin()
+
 .. code-block:: python
+    :caption: Maximum, index of maximum and cumulative maximum
 
     df.max()
     # Morning     2.269755
@@ -127,13 +137,13 @@ Maximum
     # Midnight   1999-12-30
     # dtype: datetime64[ns]
 
+    df.cummax()
+
 
 Average
 =======
-
-Mean
-----
 .. code-block:: python
+    :caption: Arithmetic mean of values
 
     df.mean()
     # Morning     0.785753
@@ -142,9 +152,8 @@ Mean
     # Midnight    0.299148
     # dtype: float64
 
-Median
-------
 .. code-block:: python
+    :caption: Arithmetic median of values
 
     df.median()
     # Morning     1.494079
@@ -153,9 +162,21 @@ Median
     # Midnight   -0.151357
     # dtype: float64
 
-Standard Deviation
-------------------
 .. code-block:: python
+    :caption: Mode
+
+    df.mode()
+
+
+Distribution
+============
+.. code-block:: python
+    :caption: Absolute value
+
+    df.abs()
+
+.. code-block:: python
+    :caption: Standard deviation
 
     df.std()
     # Morning     1.671798
@@ -164,15 +185,46 @@ Standard Deviation
     # Midnight    1.151785
     # dtype: float64
 
+.. figure:: img/stats-stdev.png
+    :width: 75%
+    :align: center
 
-Distribution
-============
-
-Quantile
---------
-* A.K.A. Percentile
+    Standard Deviation
 
 .. code-block:: python
+    :caption: Mean absolute deviation
+
+    df.mad()
+
+.. code-block:: python
+    :caption: Standard Error of the Mean (SEM)
+
+    df.sem()
+
+.. code-block:: python
+    :caption: Skewness (3rd moment)
+
+    df.skew()
+
+.. figure:: img/stats-skew.png
+    :width: 75%
+    :align: center
+
+    Skewness
+
+.. code-block:: python
+    :caption: Kurtosis (4th moment)
+
+    df.kurt()
+
+.. figure:: img/stats-kurt.png
+    :width: 75%
+    :align: center
+
+    Kurtosis
+
+.. code-block:: python
+    :caption: Sample quantile (value at %). Quantile also known as Percentile.
 
     df.quantile(.33)
     # Morning     0.743753
@@ -181,17 +233,14 @@ Quantile
     # Midnight   -0.198283
     # Name: 0.33, dtype: float64
 
-.. code-block:: python
-
     df.quantile([.25, .5, .75])
     #        Morning      Noon   Evening  Midnight
     # 0.25  0.328909 -0.591218  0.228556 -0.464674
     # 0.50  1.494079  0.121675  0.443863 -0.151357
     # 0.75  1.815805  0.405378  0.907262  0.893974
 
-Variance
---------
 .. code-block:: python
+    :caption: Variance
 
     df.var()
     # Morning     2.794907
@@ -200,9 +249,8 @@ Variance
     # Midnight    1.326610
     # dtype: float64
 
-Correlation Coefficient
------------------------
 .. code-block:: python
+    :caption: Correlation Coefficient
 
     df.corr()
     #            Morning      Noon   Evening  Midnight
@@ -210,6 +258,12 @@ Correlation Coefficient
     # Noon     -0.698340  1.000000  0.307686  0.359761
     # Evening  -0.190219  0.307686  1.000000  0.136436
     # Midnight  0.201034  0.359761  0.136436  1.000000
+
+.. figure:: img/stats-corr.png
+    :width: 75%
+    :align: center
+
+    Correlation Coefficient
 
 
 Describe
@@ -226,34 +280,6 @@ Describe
     # 50%    1.494079  0.121675  0.443863 -0.151357
     # 75%    1.815805  0.405378  0.907262  0.893974
     # max    2.269755  0.653619  0.978738  2.240893
-
-
-Other methods
-=============
-.. csv-table:: Descriptive statistics
-    :header: "Function", "Description"
-    :widths: 10, 90
-
-    "``count``", "Number of non-null observations"
-    "``sum``", "Sum of values"
-    "``mean``", "Mean of values"
-    "``mad``", "Mean absolute deviation"
-    "``median``", "Arithmetic median of values"
-    "``min``", "Minimum"
-    "``max``", "Maximum"
-    "``mode``", "Mode"
-    "``abs``", "Absolute Value"
-    "``prod``", "Product of values"
-    "``std``", "Unbiased standard deviation"
-    "``var``", "Unbiased variance"
-    "``sem``", "Unbiased standard error of the mean"
-    "``skew``", "Unbiased skewness (3rd moment)"
-    "``kurt``", "Unbiased kurtosis (4th moment)"
-    "``quantile``", "Sample quantile (value at %)"
-    "``cumsum``", "Cumulative sum"
-    "``cumprod``", "Cumulative product"
-    "``cummax``", "Cumulative maximum"
-    "``cummin``", "Cumulative minimum"
 
 
 Examples

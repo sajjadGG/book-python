@@ -166,11 +166,11 @@ Join
 * ``rfuffix`` - If two columns has the same name, add suffix to right
 * ``lfuffix`` - If two columns has the same name, add suffix to left
 
-.. figure:: img/sql-joins.png
+.. figure:: img/pandas-df-join.png
     :width: 75%
     :align: center
 
-    Joins
+    Pandas DataFrame Joins
 
 .. code-block:: python
 

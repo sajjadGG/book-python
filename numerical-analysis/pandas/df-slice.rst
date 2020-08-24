@@ -1,6 +1,6 @@
-*****************
-DataFrame Slicing
-*****************
+***************
+DataFrame Slice
+***************
 
 
 .. code-block:: python

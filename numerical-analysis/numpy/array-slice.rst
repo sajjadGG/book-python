@@ -1,6 +1,6 @@
-*************
-Array Slicing
-*************
+***********
+Array Slice
+***********
 
 
 1-dimensional Array
