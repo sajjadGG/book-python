@@ -96,8 +96,7 @@ Pandas
 
     pandas/index.rst
 
-    pandas/types-basic.rst
-    pandas/types-advanced.rst
+    pandas/pd-types.rst
     pandas/pd-read.rst
 
     pandas/series-create.rst

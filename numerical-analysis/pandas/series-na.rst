@@ -329,6 +329,47 @@ Drop
     # dtype: float64
 
 
+Conversion
+==========
+* If you have a DataFrame or Series using traditional types that have missing data represented using np.nan
+* There are convenience methods convert_dtypes() in Series and convert_dtypes() in DataFrame that can convert data to use the newer dtypes for integers, strings and booleans
+* This is especially helpful after reading in data sets when letting the readers such as read_csv() and read_excel() infer default dtypes.
+
+.. code-block:: python
+
+    data = pd.read_csv('data/baseball.csv', index_col='id')
+    data[data.columns[:10]].dtypes
+    # player    object
+    # year       int64
+    # stint      int64
+    # team      object
+    # lg        object
+    # g          int64
+    # ab         int64
+    # r          int64
+    # h          int64
+    # X2b        int64
+    # dtype: object
+
+.. code-block:: python
+    :emphasize-lines: 2
+
+    data = pd.read_csv('data/baseball.csv', index_col='id')
+    data = data.convert_dtypes()
+    data[data.columns[:10]].dtypes
+    # player    string
+    # year       Int64
+    # stint      Int64
+    # team      string
+    # lg        string
+    # g          Int64
+    # ab         Int64
+    # r          Int64
+    # h          Int64
+    # X2b        Int64
+    # dtype: object
+
+
 Assignments
 ===========
 .. todo:: Create Assignments
