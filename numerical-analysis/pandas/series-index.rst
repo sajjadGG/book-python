@@ -12,6 +12,27 @@ Index Types
 
 .. code-block:: python
 
+    RangeIndex(start=0, stop=5, step=1)
+
+.. code-block:: python
+
+    Int64Index([0, 1, 2, 3, 4], dtype='int64')
+
+.. code-block:: python
+
+    Float64Index([0.0, 1.1, 2.2, 3.3, 4.4], dtype='float64')
+
+.. code-block:: python
+
+    Index(['a', 'b', 'c', 'd', 'e'], dtype='object')
+
+.. code-block:: python
+
+    DatetimeIndex(['1999-01-28', '1999-01-29', '1999-01-30',
+                   '1999-01-31', '1999-02-01'], dtype='datetime64[ns]', freq='D')
+
+.. code-block:: python
+
     import pandas as pd
 
 
@@ -23,7 +44,7 @@ Index Types
 
     # Integer Index
     i1 = pd.Series(DATA, index=[0, 1, 2, 3, 4])
-    i2 = pd.Series(DATA, index=np.arange(4))
+    i2 = pd.Series(DATA, index=np.arange(5))
     i3 = pd.Series(DATA, index=[99, 3, -5, 0, 77])
 
     # Float Index
@@ -37,8 +58,9 @@ Index Types
     o3 = pd.Series(DATA, index=['aaa', 'baba', 'cac', 'do or not', 'e,c,h,o'])
 
     # Datetime Index
-    d1 = pd.series(DATA, index=pd.date_range('1999-01-28', periods=len(data), freq='D'))
-    d2 = pd.series(DATA, index=[
+    d1 = pd.Series(DATA, index=pd.date_range('1999-01-28', periods=len(data)))
+    d2 = pd.Series(DATA, index=pd.date_range('1999-01-28', periods=len(data), freq='D'))
+    d3 = pd.Series(DATA, index=[
         pd.Timestamp('1999-01-28'),
         pd.Timestamp('2000-01-01'),
         pd.Timestamp('1961-04-12'),
@@ -50,6 +72,19 @@ Index Types
 Range Index
 ===========
 * Default
+
+.. code-block:: python
+    :caption: Define Range Index
+
+    import pandas as pd
+
+
+    DATA = [11, 22, 33, 44, 55]
+
+    r1 = pd.Series(DATA)
+    r2 = pd.Series(DATA, index=range(5))
+
+    r1.index
 
 .. code-block:: python
 
@@ -105,6 +140,29 @@ Numeric Index
 String Index
 ============
 * Also has ``RangeIndex``
+
+.. code-block:: python
+
+    import pandas as pd
+    import string
+
+    string.ascii_lowercase
+    # 'abcdefghijklmnopqrstuvwxyz'
+
+    s = pd.Series(
+        data = [1.0, 2.0, 3.0, 4.0, 5.0]
+        index = list(string.ascii_lowercase)[:5])
+
+    s.index
+    # Index(['a', 'b', 'c', 'd', 'e'], dtype='object')
+
+    s
+    # a    1.0
+    # b    2.0
+    # c    3.0
+    # d    4.0
+    # e    5.0
+    # dtype: float64
 
 .. code-block:: python
 

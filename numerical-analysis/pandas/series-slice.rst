@@ -254,12 +254,12 @@ Date Index
 Assignments
 ===========
 
-Series Slicing
---------------
+Series Slice Datetime
+---------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 10 min
-* Solution: :download:`solution/series_slicing_dates.py`
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/series_slice_datetime.py`
 
 :English:
     #. Set random seed to zero
@@ -279,32 +279,29 @@ Series Slicing
     * ``np.random.seed(0)``
     * ``np.random.randn(10)``
 
-Slicing Alphabet
-----------------
+Slicing Slice Str
+-----------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
-* Estimated time of completion: 15 min
-* Solution: :download:`solution/series_slicing_string.py`
+* Estimated time of completion: 13 min
+* Solution: :download:`solution/series_slice_str.py`
 
 :English:
     #. Use data from "Input" section (see below)
     #. Create ``pd.Series`` with 26 random integers in range ``[10, 100)``
     #. Name indexes like letters from english alphabet
-    #. Using ``statistics`` library find median of alphabet
-    #. How to find median for even number of elements? (Use lower of pair)
+    #. Find middle letter of alphabet (use lower letter from middle pair)
     #. How to find index of element on the list?
     #. Slice from series 3 elements up and down from middle
-    #. Sum results
+    #. Print results
 
 :Polish:
-    #. Użyj data z sekcji "Input" (patrz poniżej)
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Stwórz ``pd.Series`` z 26 losowymi liczbami całkowitymi z przedziału ``<10; 100)``
     #. Nazwij indeksy jak kolejne litery alfabetu angielskiego
-    #. Za pomocą biblioteki ``statistics`` znajdź medianę alfabetu
-    #. Jak znaleźć medianę dla parzystej długości listy? (Użyj dolnego elementu)
-    #. Jak znaleźć element w liście o zadanym indeksie?
+    #. Znajdź środkową literę alfabetu (użyj wcześniejszej litery ze pary środkowych)
     #. Wytnij z serii po 3 elementy w górę i w dół od wyszukanego środka
-    #. Zsumuj wyniki
+    #. Wypisz wyniki
 
 :Input:
     .. code-block:: python
@@ -313,6 +310,3 @@ Slicing Alphabet
 
 :Hint:
     * ``np.random.randint(..., ..., size=...)``
-    * ``from string import ascii_lowercase``
-    * ``from statistics import median_low``
-    * ``list.index(...)``

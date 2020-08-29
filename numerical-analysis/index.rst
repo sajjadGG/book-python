@@ -109,11 +109,13 @@ Pandas
     pandas/series-na.rst
     pandas/series-alter.rst
 
+    pandas/series-sort.rst
     pandas/series-arithmetic.rst
     pandas/series-statistics.rst
     pandas/series-mapping.rst
     pandas/series-cleaning.rst
 
+    pandas/technique-chaining.rst
 
 
     pandas/df-create.rst

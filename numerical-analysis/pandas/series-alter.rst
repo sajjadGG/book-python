@@ -81,12 +81,12 @@ Reset Index
 Assignments
 ===========
 
-Series Update
--------------
+Series Alter
+------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
 * Estimated time of completion: 5 min
-* Solution: :download:`solution/series_update.py`
+* Solution: :download:`solution/series_alter.py`
 
 :English:
     #. Use data from "Input" section (see below)
