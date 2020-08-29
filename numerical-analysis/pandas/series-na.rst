@@ -2,32 +2,129 @@
 Series NA
 *********
 
+Rationale
+=========
+* ``pd.NA``
+* ``np.nan``
+* ``None``
+
+.. code-block:: python
+
+    pd.NA == np.nan
+    # <NA>
+
+    pd.NA is np.nan
+    # False
+
+    pd.NA is None
+    # False
+
+    float('nan') is np.nan
+    # False
+
+    float('nan') is None
+    # False
+
+.. code-block:: python
+
+    bool(None)
+    # False
+
+    bool(np.nan)
+    # True
+
+    bool(pd.NA)
+    # Traceback (most recent call last):
+    #   ...
+    # TypeError: boolean value of NA is ambiguous
+
+.. code-block:: python
+    :caption: ``pd.NA``
+
+    import pandas as pd
+
+    pd.Series([1.0, pd.NA, 3.0])
+    # 0       1
+    # 1    <NA>
+    # 2       3
+    # dtype: object
+
+.. code-block:: python
+    :caption: ``np.nan``
+
+    import pandas as pd
+    import numpy as np
+
+    pd.Series([1.0, np.nan, 3.0])
+    # 0    1.0
+    # 1    NaN
+    # 2    3.0
+    # dtype: float64
+
+.. code-block:: python
+    :caption: ``None``
+
+    import pandas as pd
+
+    pd.Series([1.0, None, 3.0])
+    # 0    1.0
+    # 1    NaN
+    # 2    3.0
+    # dtype: float64
+
+
+Select
+======
+* ``s.any()``
+* ``s.all()``
+* ``s.isnull()``
+* ``s.isna()``
+* ``s.notna()``
+* ``s.notnull()``
+* Negated ``~`` versions of all above methods
 
 .. code-block:: python
 
     import pandas as pd
     import numpy as np
 
-    s = pd.Series([1.0, np.nan, np.nan, 4.0, np.nan, 6.0])
-
-    s
-    # 0    1.0
-    # 1    NaN
-    # 2    NaN
-    # 3    4.0
-    # 4    NaN
-    # 5    6.0
-    # dtype: float64
-
-
-Select
-======
-.. code-block:: python
+    s = pd.Series([1.0, np.nan, 3.0])
 
     s.any()
+    # True
+
     s.all()
+    # True
+
     s.isnull()
+    # 0    False
+    # 1     True
+    # 2    False
+    # dtype: bool
+
     s.isna()
+    # 0    False
+    # 1     True
+    # 2    False
+    # dtype: bool
+
+    s.notna()
+    # 0     True
+    # 1    False
+    # 2     True
+    # dtype: bool
+
+    s.notnull()
+    # 0     True
+    # 1    False
+    # 2     True
+    # dtype: bool
+
+    ~s.isnull()
+    # 0     True
+    # 1    False
+    # 2     True
+    # dtype: bool
 
 
 Update
