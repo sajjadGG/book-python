@@ -137,6 +137,29 @@ Interval
     year_1970.length
     # Timedelta('365 days 00:00:00')
 
+.. code-block:: python
+
+    import pandas as pd
+
+    fiscalyear2020 = pd.Interval(
+        left=pd.Timestamp('2020-01-01'),
+        right=pd.Timestamp('2021-01-01'),
+        closed='left')
+
+    fiscalyear2021 = pd.Interval(
+        left=pd.Timestamp('2021-01-01'),
+        right=pd.Timestamp('2022-01-01'),
+        closed='left')
+
+
+    event1 = pd.Timestamp('2020-04-12')
+    event2 = pd.Timestamp('2021-07-21')
+
+    event1 in fiscalyear2020    # True
+    event1 in fiscalyear2021    # False
+    event2 in fiscalyear2020    # False
+    event2 in fiscalyear2021    # True
+
 
 Categorical
 ===========
