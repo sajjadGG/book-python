@@ -98,7 +98,7 @@ Pandas
 
     pandas/types-data.rst
     pandas/types-advanced.rst
-    pandas/import.rst
+    pandas/read.rst
 
     pandas/series-create.rst
     pandas/series-attributes.rst

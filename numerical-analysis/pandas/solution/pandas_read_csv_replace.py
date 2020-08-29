@@ -14,11 +14,15 @@ column_names = ['mean radius', 'mean texture', 'mean perimeter', 'mean area',
                 'worst compactness', 'worst concavity', 'worst concave points',
                 'worst symmetry', 'worst fractal dimension', 'label']
 
-labels = ['malignant', 'benign']
+header = pd.read_csv(DATA, nrows=0)
+labels = dict(enumerate(header.columns[2:]))
+# {0: 'malignant', 1: 'benign'}
 
-df = pd.read_csv(DATA, skiprows=1, names=column_names)
+df = pd.read_csv(
+    filepath_or_buffer=DATA,
+    skiprows=1,
+    names=column_names)
 
 df['label'].replace(
-    to_replace=dict(enumerate(labels)),  # {0: 'malignant', 1: 'benign'}
-    inplace=True
-)
+    to_replace=labels,
+    inplace=True)

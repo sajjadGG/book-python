@@ -1,6 +1,6 @@
-***************
-Series Indexing
-***************
+**************
+Series Getitem
+**************
 
 
 Numeric Index
@@ -106,23 +106,25 @@ Date Index
 Assignments
 ===========
 
-Series Indexing
----------------
+Series Getitem
+--------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 10 min
-* Solution: :download:`solution/series_index.py`
+* Estimated time of completion: 8 min
+* Solution: :download:`solution/series_getitem.py`
 
 :English:
     #. Set random seed to zero
-    #. Create ``pd.Series`` with 100 random numbers from standard distribution
+    #. Create ``pd.Series`` with 100 random numbers from standard normal distribution
     #. Series Index are following dates since 2000
     #. Print values:
 
-        * at 2000-01-05,
         * at 2000-02-29,
         * first in the series,
-        * last in the series,
+        * last 5 elements in the series,
+        * first two weeks in the series,
+        * last month in the series,
+        * three random elements,
         * middle value in the series.
 
 :Polish:
@@ -131,10 +133,12 @@ Series Indexing
     #. Indeksem w serii mają być kolejne dni od 2000 roku
     #. Wypisz wartości:
 
-        * dnia 2000-01-05,
         * dnia 2000-02-29,
         * pierwszy w serii,
-        * ostatni w serii,
+        * ostatnie 5 elementów w serii,
+        * dwa pierwsze tygodnie w serii,
+        * ostatni miesiąc w serii,
+        * trzy losowe element,
         * środkowa wartość serii.
 
 :Hint:

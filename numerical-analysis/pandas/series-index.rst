@@ -8,7 +8,43 @@ Index Types
 * Range Index
 * Numeric Index
 * String Index
-* Date Index
+* Datetime Index
+
+.. code-block:: python
+
+    import pandas as pd
+
+
+    DATA = [11, 22, 33, 44, 55]
+
+    # Range Index
+    r1 = pd.Series(DATA)
+    r2 = pd.Series(DATA, index=range(4))
+
+    # Integer Index
+    i1 = pd.Series(DATA, index=[0, 1, 2, 3, 4])
+    i2 = pd.Series(DATA, index=np.arange(4))
+    i3 = pd.Series(DATA, index=[99, 3, -5, 0, 77])
+
+    # Float Index
+    f1 = pd.Series(DATA, index=[0.0, 1.1, 2.2, 3.3, 4.4])
+    f2 = pd.Series(DATA, index=np.arange(0.0, 5.5, 1.1)
+    f3 = pd.Series(DATA, index=[99.9, 3.14, -5.99, 0.0, 77.1])
+
+    # Object Index
+    o1 = pd.Series(DATA, index=['a', 'b', 'c', 'd', 'e'])
+    o2 = pd.Series(DATA, index=list('abcde'))
+    o3 = pd.Series(DATA, index=['aaa', 'baba', 'cac', 'do or not', 'e,c,h,o'])
+
+    # Datetime Index
+    d1 = pd.series(DATA, index=pd.date_range('1999-01-28', periods=len(data), freq='D'))
+    d2 = pd.series(DATA, index=[
+        pd.Timestamp('1999-01-28'),
+        pd.Timestamp('2000-01-01'),
+        pd.Timestamp('1961-04-12'),
+        pd.Timestamp('1969-07-21'),
+        pd.Timestamp('1970-01-01'),
+    ])
 
 
 Range Index
@@ -21,14 +57,14 @@ Range Index
 
     s = pd.Series([1.0, 2.0, 3.0])
 
+    s.index
+    # RangeIndex(start=0, stop=3, step=1)
+
     s
     # 0    1.0
     # 1    2.0
     # 2    3.0
     # dtype: float64
-
-    s.index
-    # RangeIndex(start=0, stop=3, step=1)
 
 .. code-block:: python
 
@@ -36,14 +72,14 @@ Range Index
 
     s = pd.Series(['a', 'b', 'c'])
 
+    s.index
+    # RangeIndex(start=0, stop=3, step=1)
+
     s
     # 0    a
     # 1    b
     # 2    c
     # dtype: object
-
-    s.index
-    # RangeIndex(start=0, stop=3, step=1)
 
 
 Numeric Index
@@ -56,14 +92,14 @@ Numeric Index
         data = [1.0, 2.0, 3.0],
         index = [99, 88, 77])
 
+    s.index
+    # Int64Index([99, 88, 77], dtype='int64')
+
     s
     # 99    1.0
     # 88    2.0
     # 77    3.0
     # dtype: float64
-
-    s.index
-    # Int64Index([99, 88, 77], dtype='int64')
 
 
 String Index
@@ -78,6 +114,9 @@ String Index
         data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = ['a', 'b', 'c', 'd', 'e'])
 
+    s.index
+    # Index(['a', 'b', 'c', 'd', 'e'], dtype='object')
+
     s
     # a    1.0
     # b    2.0
@@ -85,9 +124,6 @@ String Index
     # d    4.0
     # e    5.0
     # dtype: float64
-
-    s.index
-    # Index(['a', 'b', 'c', 'd', 'e'], dtype='object')
 
 .. code-block:: python
 
@@ -99,14 +135,14 @@ String Index
         data = np.random.randn(3),
         index = list('abc'))
 
+    s.index
+    # Index(['a', 'b', 'c'], dtype='object')
+
     s
     # a    1.764052
     # b    0.400157
     # c    0.978738
     # dtype: float64
-
-    s.index
-    # Index(['a', 'b', 'c'], dtype='object')
 
 .. code-block:: python
 
@@ -116,6 +152,9 @@ String Index
         data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = ['aaa', 'bbb', 'ccc', 'ddd', 'eee'])
 
+    s.index
+    # Index(['aaa', 'bbb', 'ccc', 'ddd', 'eee'], dtype='object')
+
     s
     # aaa    1.0
     # bbb    2.0
@@ -123,9 +162,6 @@ String Index
     # ddd    4.0
     # eee    5.0
     # dtype: float64
-
-    s.index
-    # Index(['aaa', 'bbb', 'ccc', 'ddd', 'eee'], dtype='object')
 
 
 Date Index
@@ -143,6 +179,11 @@ Date Index
         data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = pd.date_range('1999-12-30', periods=5))
 
+    s.index
+    # DatetimeIndex(['1999-12-30', '1999-12-31', '2000-01-01',
+    #                '2000-01-02', '2000-01-03'],
+    #               dtype='datetime64[ns]', freq='D')
+
     s
     # 1999-12-30    1.0
     # 1999-12-31    2.0
@@ -150,11 +191,6 @@ Date Index
     # 2000-01-02    4.0
     # 2000-01-03    5.0
     # Freq: D, dtype: float64
-
-    s.index
-    # DatetimeIndex(['1999-12-30', '1999-12-31', '2000-01-01',
-    #                '2000-01-02', '2000-01-03'],
-    #               dtype='datetime64[ns]', freq='D')
 
 .. code-block:: python
     :caption: Every year
@@ -165,6 +201,11 @@ Date Index
         data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = pd.date_range('1999-12-30', periods=5, freq='Y'))
 
+    s.index
+    # DatetimeIndex(['1999-12-31', '2000-12-31', '2001-12-31',
+    #                '2002-12-31', '2003-12-31'],
+    #               dtype='datetime64[ns]', freq='A-DEC')
+
     s
     # 1999-12-31    1.0
     # 2000-12-31    2.0
@@ -172,11 +213,6 @@ Date Index
     # 2002-12-31    4.0
     # 2003-12-31    5.0
     # Freq: A-DEC, dtype: float64
-
-    s.index
-    # DatetimeIndex(['1999-12-31', '2000-12-31', '2001-12-31',
-    #                '2002-12-31', '2003-12-31'],
-    #               dtype='datetime64[ns]', freq='A-DEC')
 
 .. code-block:: python
     :caption: Every quarter
@@ -187,6 +223,11 @@ Date Index
         data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = pd.date_range('1999-12-30', periods=5, freq='Q'))
 
+    s.index
+    # DatetimeIndex(['1999-12-31', '2000-03-31', '2000-06-30',
+    #                '2000-09-30', '2000-12-31'],
+    #               dtype='datetime64[ns]', freq='Q-DEC')
+
     s
     # 1999-12-31    1.0
     # 2000-03-31    2.0
@@ -194,11 +235,6 @@ Date Index
     # 2000-09-30    4.0
     # 2000-12-31    5.0
     # Freq: Q-DEC, dtype: float64
-
-    s.index
-    # DatetimeIndex(['1999-12-31', '2000-03-31', '2000-06-30',
-    #                '2000-09-30', '2000-12-31'],
-    #               dtype='datetime64[ns]', freq='Q-DEC')
 
 .. code-block:: python
     :caption: Every month
@@ -209,6 +245,11 @@ Date Index
         data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = pd.date_range('1999-12-30', periods=5, freq='M'))
 
+    s.index
+    # DatetimeIndex(['1999-12-31', '2000-01-31', '2000-02-29',
+    #                '2000-03-31', '2000-04-30'],
+    #               dtype='datetime64[ns]', freq='M')
+
     s
     # 1999-12-31    1.0
     # 2000-01-31    2.0
@@ -216,11 +257,6 @@ Date Index
     # 2000-03-31    4.0
     # 2000-04-30    5.0
     # Freq: M, dtype: float64
-
-    s.index
-    # DatetimeIndex(['1999-12-31', '2000-01-31', '2000-02-29',
-    #                '2000-03-31', '2000-04-30'],
-    #               dtype='datetime64[ns]', freq='M')
 
 .. code-block:: python
     :caption: Every day
@@ -231,6 +267,11 @@ Date Index
         data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = pd.date_range('1999-12-30', periods=5, freq='D'))
 
+    s.index
+    # DatetimeIndex(['1999-12-30', '1999-12-31', '2000-01-01',
+    #                '2000-01-02', '2000-01-03'],
+    #               dtype='datetime64[ns]', freq='D')
+
     s
     # 1999-12-30    1.0
     # 1999-12-31    2.0
@@ -238,11 +279,6 @@ Date Index
     # 2000-01-02    4.0
     # 2000-01-03    5.0
     # Freq: D, dtype: float64
-
-    s.index
-    # DatetimeIndex(['1999-12-30', '1999-12-31', '2000-01-01',
-    #                '2000-01-02', '2000-01-03'],
-    #               dtype='datetime64[ns]', freq='D')
 
 .. code-block:: python
     :caption: Every two days
@@ -253,6 +289,11 @@ Date Index
         data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = pd.date_range('1999-12-30', periods=5, freq='2D'))
 
+    s.index
+    # DatetimeIndex(['1999-12-30', '2000-01-01', '2000-01-03',
+    #                '2000-01-05', '2000-01-07'],
+    #               dtype='datetime64[ns]', freq='2D')
+
     s
     # 1999-12-30    1.0
     # 2000-01-01    2.0
@@ -260,11 +301,6 @@ Date Index
     # 2000-01-05    4.0
     # 2000-01-07    5.0
     # Freq: 2D, dtype: float64
-
-    s.index
-    # DatetimeIndex(['1999-12-30', '2000-01-01', '2000-01-03',
-    #                '2000-01-05', '2000-01-07'],
-    #               dtype='datetime64[ns]', freq='2D')
 
 .. code-block:: python
     :caption: Every hour
@@ -275,6 +311,12 @@ Date Index
         data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = pd.date_range('1999-12-30', periods=5, freq='H'))
 
+    s.index
+    # DatetimeIndex(['1999-12-30 00:00:00', '1999-12-30 01:00:00',
+    #                '1999-12-30 02:00:00', '1999-12-30 03:00:00',
+    #                '1999-12-30 04:00:00'],
+    #               dtype='datetime64[ns]', freq='H')
+
     s
     # 1999-12-30 00:00:00    1.0
     # 1999-12-30 01:00:00    2.0
@@ -282,12 +324,6 @@ Date Index
     # 1999-12-30 03:00:00    4.0
     # 1999-12-30 04:00:00    5.0
     # Freq: H, dtype: float64
-
-    s.index
-    # DatetimeIndex(['1999-12-30 00:00:00', '1999-12-30 01:00:00',
-    #                '1999-12-30 02:00:00', '1999-12-30 03:00:00',
-    #                '1999-12-30 04:00:00'],
-    #               dtype='datetime64[ns]', freq='H')
 
 .. code-block:: python
     :caption: Every minute
@@ -298,6 +334,12 @@ Date Index
         data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = pd.date_range('1999-12-30', periods=5, freq='T'))
 
+    s.index
+    # DatetimeIndex(['1999-12-30 00:00:00', '1999-12-30 00:01:00',
+    #                '1999-12-30 00:02:00', '1999-12-30 00:03:00',
+    #                '1999-12-30 00:04:00'],
+    #               dtype='datetime64[ns]', freq='T')
+
     s
     # 1999-12-30 00:00:00    1.0
     # 1999-12-30 00:01:00    2.0
@@ -305,12 +347,6 @@ Date Index
     # 1999-12-30 00:03:00    4.0
     # 1999-12-30 00:04:00    5.0
     # Freq: T, dtype: float64
-
-    s.index
-    # DatetimeIndex(['1999-12-30 00:00:00', '1999-12-30 00:01:00',
-    #                '1999-12-30 00:02:00', '1999-12-30 00:03:00',
-    #                '1999-12-30 00:04:00'],
-    #               dtype='datetime64[ns]', freq='T')
 
 .. code-block:: python
     :caption: Every second
@@ -321,6 +357,12 @@ Date Index
         data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = pd.date_range('1999-12-30', periods=5, freq='S'))
 
+    s.index
+    # DatetimeIndex(['1999-12-30 00:00:00', '1999-12-30 00:00:01',
+    #                '1999-12-30 00:00:02', '1999-12-30 00:00:03',
+    #                '1999-12-30 00:00:04'],
+    #               dtype='datetime64[ns]', freq='S')
+
     s
     # 1999-12-30 00:00:00    1.0
     # 1999-12-30 00:00:01    2.0
@@ -328,12 +370,6 @@ Date Index
     # 1999-12-30 00:00:03    4.0
     # 1999-12-30 00:00:04    5.0
     # Freq: S, dtype: float64
-
-    s.index
-    # DatetimeIndex(['1999-12-30 00:00:00', '1999-12-30 00:00:01',
-    #                '1999-12-30 00:00:02', '1999-12-30 00:00:03',
-    #                '1999-12-30 00:00:04'],
-    #               dtype='datetime64[ns]', freq='S')
 
 .. code-block:: python
     :caption: Every business day. More in :ref:`Date and Time Frequency` and :ref:`Date and Time Calendar`
@@ -344,6 +380,11 @@ Date Index
         data = [1.0, 2.0, 3.0, 4.0, 5.0],
         index = pd.date_range('1999-12-30', periods=5, freq='B'))
 
+    s.index
+    # DatetimeIndex(['1999-12-30', '1999-12-31', '2000-01-03',
+    #                '2000-01-04', '2000-01-05'],
+    #               dtype='datetime64[ns]', freq='B')
+
     s
     # 1999-12-30    1.0
     # 1999-12-31    2.0
@@ -351,11 +392,6 @@ Date Index
     # 2000-01-04    4.0
     # 2000-01-05    5.0
     # Freq: B, dtype: float64
-
-    s.index
-    # DatetimeIndex(['1999-12-30', '1999-12-31', '2000-01-03',
-    #                '2000-01-04', '2000-01-05'],
-    #               dtype='datetime64[ns]', freq='B')
 
 
 Assignments

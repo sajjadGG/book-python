@@ -161,32 +161,60 @@ dates
 Assignments
 ===========
 
-Series Create
--------------
+Series Create Float
+-------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
-* Solution: :download:`solution/series_create_int.py`
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/series_create_float.py`
+
+:English:
+    #. Create ``pd.Series`` with 5 float numbers
+    #. One of those values must be ``pd.NA``
+
+:Polish:
+    #. Stwórz ``pd.Series`` z 5 liczbami zmiennoprzecinkowymi
+    #. Jedną z tych wartości musi być ``pd.NA``
+
+Series Create Randint
+---------------------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/series_create_randint.py`
 
 :English:
     #. Set random seed to zero
-    #. Create ``pd.Series`` with 10 even numbers in range ``[0,9]`` (inclusive)
+    #. Create ``pd.Series`` with 10 random digits (``int`` from ``0` to ``9``)
 
 :Polish:
     #. Ustaw ziarno losowości na zero
-    #. Stwórz ``pd.Series`` z 10 liczbami parzystymi z zakresu ``<0;9>`` (włącznie)
+    #. Stwórz ``pd.Series`` z 10 losowymi cyframi  (``int`` from ``0` to ``9``)
 
-:Hint:
-    * ``np.random.seed(0)``
-    * ``np.random.randint(0, 9, size=10)``
-    * ``a[a % 2 == 0]``
-
-Series Create Timeseries
-------------------------
+Series Create Even
+------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 5 min
-* Solution: :download:`solution/series_create_date.py`
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/series_create_even.py`
+
+:English:
+    #. Set random seed to zero
+    #. Create ``pd.Series`` with 10 even numbers
+
+:Polish:
+    #. Ustaw ziarno losowości na zero
+    #. Stwórz ``pd.Series`` z 10 liczbami parzystymi
+
+:Hint:
+    * ``a[a % 2 == 0]``
+
+Series Create Dates
+-------------------
+* Complexity level: easy
+* Lines of code to write: 5 lines
+* Estimated time of completion: 3 min
+* Solution: :download:`solution/series_create_dates.py`
 
 :English:
     #. Gagarin flown to space on 1961-04-12
@@ -199,6 +227,3 @@ Series Create Timeseries
     #. Armstrong postawił stopę na Księżycu w 1969-07-21
     #. Stwórz ``pd.Series`` z dniami pomiędzy startem Gagarina a pierwszym krokiem Armstronga
     #. Jak wiele dni upłynęło?
-
-:Hint:
-    * ``len(s)``
