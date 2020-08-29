@@ -24,6 +24,11 @@ Series Statistics
 Count
 =====
 .. code-block:: python
+
+    s.size
+    # 5
+
+.. code-block:: python
     :caption: Number of non-null observations
 
     s.count()
@@ -32,10 +37,16 @@ Count
 .. code-block:: python
 
     s.values_count()
+    # 5.0    1
+    # 3.0    1
+    # 2.0    1
+    # 1.0    1
+    # dtype: int64
 
 .. code-block:: python
 
     s.nunique()
+    # 4
 
 
 Sum
@@ -89,7 +100,16 @@ Extremes
     s.idxmin()
     # 'a'
 
+    s.argmin()
+    # 0
+
     s.cummin()
+    # a    1.0
+    # b    1.0
+    # c    1.0
+    # d    NaN
+    # e    1.0
+    # dtype: float64
 
 .. code-block:: python
     :caption: Maximum, index of maximum and cumulative maximum
@@ -100,7 +120,17 @@ Extremes
     s.idxmax()
     # 'e'
 
+    s.argmax()
+    # 4
+
     s.cummax()
+    # a    1.0
+    # b    2.0
+    # c    3.0
+    # d    NaN
+    # e    5.0
+    # dtype: float64
+
 
 Average
 =======
@@ -120,11 +150,22 @@ Average
     :caption: Mode
 
     s.mode()
+    # 0    1.0
+    # 1    2.0
+    # 2    3.0
+    # 3    5.0
+    # dtype: float64
 
 .. code-block:: python
     :caption: Rolling Average
 
-    s.rolling(window=30)
+    s.rolling(window=2).mean()
+    # a    NaN
+    # b    1.5
+    # c    2.5
+    # d    NaN
+    # e    NaN
+    # dtype: float64
 
 .. figure:: img/stats-rolling.png
     :width: 75%
@@ -139,6 +180,12 @@ Distribution
     :caption: Absolute value
 
     s.abs()
+    # a    1.0
+    # b    2.0
+    # c    3.0
+    # d    NaN
+    # e    5.0
+    # dtype: float64
 
 .. code-block:: python
     :caption: Standard deviation
@@ -156,11 +203,13 @@ Distribution
     :caption: Mean absolute deviation
 
     s.mad()
+    # 1.25
 
 .. code-block:: python
     :caption: Standard Error of the Mean (SEM)
 
     s.sem()
+    # 0.8539125638299665
 
 .. figure:: img/stats-sem.png
     :width: 75%

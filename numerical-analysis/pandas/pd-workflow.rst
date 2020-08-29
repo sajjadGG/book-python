@@ -1,6 +1,6 @@
-****************
-Example Workflow
-****************
+***************
+Pandas Workflow
+***************
 
 
 Working with Excel file

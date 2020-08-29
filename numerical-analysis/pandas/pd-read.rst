@@ -1,6 +1,6 @@
-****************
-DataFrame Import
-****************
+***********
+Pandas Read
+***********
 
 
 Import data
@@ -202,7 +202,7 @@ Pandas Read JSON
         URL = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/iris.json'
 
 Pandas Read HTML
----------------
+----------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 5 min
@@ -227,12 +227,12 @@ Pandas Read HTML
     * Might require ``lxml``: ``pip install lxml``
     * 3rd table
 
-XSLT Transformation
--------------------
+Pandas Read XML XSLT
+--------------------
 * Complexity level: medium
 * Lines of code to write: 5 lines
 * Estimated time of completion: 10 min
-* Solution: :download:`solution/df_import_xml_xslt.py`
+* Solution: :download:`solution/pandas_read_xml_xslt.py`
 
 :English:
     #. Download :download:`data/plants.xml`

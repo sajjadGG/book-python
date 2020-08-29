@@ -5,9 +5,16 @@ Series Arithmetic
 
 Vectorized Operations
 =====================
+* ``a + 2``,  ``s.add(2)``
+* ``s - 2``,  ``s.sub(2)``, ``s.subtract(2)``
+* ``s * 2``,  ``s.mul(2)``, ``s.multiply(2)``
+* ``s / 2``,  ``s.div(2)``, ``s.divide()``
+* ``s // 2``, ``s.truediv(2)``
+* ``s % 2``,  ``s.mod(2)``
+* ``s ** 2``, ``s.pow(2)``
+* ``s ** (1/2)``, ``s.pow(1/2)``
+* ``divmod(s, /)``, ``s.divmod(2)``
 
-Scalar Arithmetic
------------------
 .. code-block:: python
 
     import pandas as pd
@@ -56,8 +63,8 @@ Scalar Arithmetic
     # dtype: float64
 
 
-Series Arithmetic
-=================
+Broadcasting
+============
 * Uses inner join
 * ``fill_value``: If data in both corresponding ``Series`` locations is missing the result will be missing
 
@@ -131,8 +138,8 @@ Series Arithmetic
     #. Multiply ``s`` by original ``s`` values (before multiplying by 10)
 
 :Polish:
-    #. Ustaw random seed na zero
-    #. Wygeneruj ``data: ndarray`` z 5 losowymi cyframi <0, 9>
+    #. Ustaw random ziarno losowości na zero
+    #. Wygeneruj ``data: np.ndarray`` z 5 losowymi cyframi <0, 9>
     #. Stwórz ``index: list`` z indeksami jak kolejne listery alfabetu angielskiego
     #. Stwórz ``s: pd.Series`` z ``data`` oraz ``index``
     #. Pomnóż ``s`` przez 10

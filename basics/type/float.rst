@@ -418,8 +418,7 @@ Type Float Gradient
     #. Na jakiej wysokości nad poziomem morza panuje ciśnienie równe ciśnieniu parcjalnemu tlenu?
     #. Wypisz rezultat w metrach zaokrąglając do dwóch miejsc po przecinku
     #. Aby policzyć ciśnienie parcialne skorzystaj z proporcji (100% to 1013.25 hPa, 20.946% to ile hPa?)
-    #. Wyliczona wysokość to ciśnienie atmosferyczne na poziomie morza minus ciśnienie parcialne tlenu podzielone przez
-gradient
+    #. Wyliczona wysokość to ciśnienie atmosferyczne na poziomie morza minus ciśnienie parcialne tlenu podzielone przez gradient
     #. Zwróć uwagę na kolejność wykonywania działań
     #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 

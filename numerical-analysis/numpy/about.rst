@@ -20,26 +20,6 @@ Besides its obvious scientific uses, NumPy can also be used as an efficient mult
 * http://www.numpy.org/
 
 
-Convention
-==========
-.. glossary::
-
-    Scalar
-        one dimensional
-
-    Vector
-        two dimensional
-
-    Tensor
-        three dimensional
-
-    Array
-        four dimensional
-
-    Matrix
-        n-dimensional
-
-
 Installation
 ============
 .. code-block:: console

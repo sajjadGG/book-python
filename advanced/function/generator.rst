@@ -507,8 +507,8 @@ Is Generator
     # False
 
 
-Introspection
-=============
+Generator Introspection
+=======================
 .. code-block:: python
 
     a = (x for x in range(0,10))

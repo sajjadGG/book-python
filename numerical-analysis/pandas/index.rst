@@ -39,12 +39,11 @@ Import
 
 Workflow
 ========
-
 .. figure:: img/pandas-workflow.png
     :scale: 80%
     :align: center
 
-     Pandas workflow
+    Pandas workflow
 
 
 Read More

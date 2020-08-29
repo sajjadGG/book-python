@@ -96,9 +96,9 @@ Pandas
 
     pandas/index.rst
 
-    pandas/types-data.rst
+    pandas/types-basic.rst
     pandas/types-advanced.rst
-    pandas/read.rst
+    pandas/pd-read.rst
 
     pandas/series-create.rst
     pandas/series-attributes.rst
@@ -108,15 +108,10 @@ Pandas
     pandas/series-slice.rst
     pandas/series-na.rst
     pandas/series-alter.rst
-
     pandas/series-sort.rst
     pandas/series-arithmetic.rst
     pandas/series-statistics.rst
     pandas/series-mapping.rst
-    pandas/series-cleaning.rst
-
-    pandas/technique-chaining.rst
-
 
     pandas/df-create.rst
     pandas/df-attributes.rst
@@ -124,10 +119,10 @@ Pandas
     pandas/df-sample.rst
     pandas/df-getitem.rst
     pandas/df-slice.rst
-
     pandas/df-at.rst
     pandas/df-loc.rst
     pandas/df-select.rst
+    pandas/df-update.rst
     pandas/df-alter.rst
     pandas/df-na.rst
     pandas/df-sort.rst
@@ -146,9 +141,11 @@ Pandas
     pandas/date-frequency.rst
     pandas/date-calendar.rst
 
-    pandas/config.rst
-    pandas/example-workflows.rst
+    pandas/pd-methodchaining.rst
+    pandas/pd-setoption.rst
+    pandas/pd-workflow.rst
     pandas/references/index.rst
+
 
 **********
 Matplotlib

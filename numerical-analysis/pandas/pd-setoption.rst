@@ -1,6 +1,6 @@
-*************
-Configuration
-*************
+*****************
+Pandas Set Option
+*****************
 
 
 Display Output

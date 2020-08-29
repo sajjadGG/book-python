@@ -28,7 +28,7 @@ DataFrame Select
     :scale: 80%
     :align: center
 
-     Pandas Select Methods
+    Pandas Select Methods
 
 
 Rationale
