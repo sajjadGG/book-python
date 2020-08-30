@@ -1,8 +1,14 @@
 import pandas as pd
 
+DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/phones.csv'
+MONTHS_EN = ['January', 'February', 'March', 'April',
+             'May', 'June', 'July', 'August', 'September',
+             'October', 'November', 'December']
+
+MONTHS = dict(enumerate(MONTHS_EN, start=1))
 
 # Read data
-df = pd.read_csv('../numerical-analysis/pandas/data/phones.csv')
+df = pd.read_csv(DATA)
 
 # Split data into two columns
 df[['year', 'month_name']] = df['month'].str.split('-', expand=True)
@@ -30,7 +36,7 @@ print(df)
 ## Alternative Solution
 import pandas as pd
 
-df = pd.read_csv('../numerical-analysis/pandas/data/phones.csv')
+df = pd.read_csv(DATA)
 
 df['year'] = df['month'].str[:4]
 df['month_name'] = df['month'].str[-2:]

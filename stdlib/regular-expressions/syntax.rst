@@ -292,6 +292,37 @@ Example:
     * ``(.+) \1`` not matches ``thethe`` (note the space after the group)
 
 
+.. code-block:: python
+
+    import string
+
+    string.punctuation
+    # '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+
+    string.whitespace
+    # ' \t\n\r\x0b\x0c'
+
+    string.ascii_lowercase
+    # 'abcdefghijklmnopqrstuvwxyz'
+
+    string.ascii_uppercase
+    # 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+    string.ascii_letters
+    # 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+    string.digits
+    # '0123456789'
+
+    string.hexdigits
+    # '0123456789abcdefABCDEF'
+
+    string.octdigits
+    # '01234567'
+
+    string.printable
+    # '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\r\x0b\x0c'
+
 Examples
 ========
 * ``r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,20}$'``

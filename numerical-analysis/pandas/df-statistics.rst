@@ -38,7 +38,7 @@ Count
 
 .. code-block:: python
 
-    df.values_count()
+    df.value_counts()
 
 .. code-block:: python
 

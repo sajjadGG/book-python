@@ -269,7 +269,7 @@ DataFrame NaN
 -------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/df_nan.py`
 
 :English:
@@ -277,7 +277,7 @@ DataFrame NaN
 
 :Polish:
     #. Pobierz dane Irysów: :download:`data/iris-dirty.csv`
-    #. Mając dane Irysów przekonwertuj je na ``DataFrame``
+    #. Zaczytaj dane do ``iris: pd.DataFrame``
     #. Pomiń pierwszą linię z metadanymi
     #. Zmień nazwy kolumn na:
 

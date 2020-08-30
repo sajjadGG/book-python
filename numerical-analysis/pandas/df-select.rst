@@ -200,7 +200,7 @@ DataFrame Select
 ----------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 8 min
 * Solution: :download:`solution/df_select.py`
 
 :English:

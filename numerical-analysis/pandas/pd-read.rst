@@ -103,6 +103,139 @@ Compressed
     df = pd.read_json('sample_file.gz', compression='infer')
 
 
+Read HTML
+=========
+.. code-block:: python
+
+    URL = 'https://python.astrotech.io/numerical-analysis/pandas/df-create.html'
+
+    pd.read_html(URL)
+    # Traceback (most recent call last):
+    #   ...
+    # urllib.error.HTTPError: HTTP Error 403: Forbidden
+
+.. code-block:: python
+
+    import requests
+
+    resp = requests.get(URL, headers={
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36'})
+
+    pd.read_html(resp.content)[0]
+    #      Crew Role        Astronaut
+    # 0   Prime  CDR   Neil Armstrong
+    # 1   Prime  LMP      Buzz Aldrin
+    # 2   Prime  CMP  Michael Collins
+    # 3  Backup  CDR     James Lovell
+    # 4  Backup  LMP   William Anders
+    # 5  Backup  CMP       Fred Haise
+
+
+StringIO
+========
+* Converts ``str`` to File-like object
+
+.. code-block:: python
+
+    from io import StringIO
+
+
+    DATA = """
+    "Crew", "Role", "Astronaut"
+    "Prime", "CDR", "Neil Armstrong"
+    "Prime", "LMP", "Buzz Aldrin"
+    "Prime", "CMP", "Michael Collins"
+    "Backup", "CDR", "James Lovell"
+    "Backup", "LMP", "William Anders"
+    "Backup", "CMP", "Fred Haise"
+    """
+
+    data = StringIO(DATA)
+    pd.read_csv(data)
+    #      Crew  "Role"         "Astronaut"
+    # 0   Prime   "CDR"    "Neil Armstrong"
+    # 1   Prime   "LMP"       "Buzz Aldrin"
+    # 2   Prime   "CMP"   "Michael Collins"
+    # 3  Backup   "CDR"      "James Lovell"
+    # 4  Backup   "LMP"    "William Anders"
+    # 5  Backup   "CMP"        "Fred Haise"
+
+.. code-block:: python
+
+    from io import StringIO
+
+
+    URL = 'https://python.astrotech.io/_downloads/ede733e2c8b6e3b26609bda93263410e/astronauts.csv'
+    resp = requests.get(URL)
+    data = StringIO(resp.text)
+
+    pd.read_csv(data)
+    #      Order           Astronaut         Date       Mission
+    # 0      1.0        Yuri Gagarin   1961-04-12        Vostok
+    # 1      2.0       Gherman Titov   1961-08-06      Vostok 2
+    # 2      3.0   Andrian Nikolayev   1962-08-11      Vostok 3
+    # 3      4.0      Pavel Popovich   1962-08-12      Vostok 4
+    # 4      5.0     Valeri Bykovsky   1963-06-14      Vostok 5
+    # ..     ...                 ...          ...           ...
+    # 530  531.0      Thomas Pesquet   2016-11-17   Soyuz MS-03
+    # 531  532.0        Jack Fischer   2017-04-20   Soyuz MS-04
+    # 532  533.0      Mark Vande Hei   2017-09-12   Soyuz MS-06
+    # 533  534.0     Norishige Kanai   2017-12-17   Soyuz MS-07
+    # 534    NaN        Scott Tingle   2017-12-17   Soyuz MS-07
+    # [535 rows x 4 columns]
+
+
+Read SQL
+========
+.. code-block:: python
+
+    import sqlite3
+    import requests
+
+    DATABASE = r'/tmp/apollo-timeline.sqlite3'
+    URL = r'https://github.com/AstroMatt/book-python/raw/master/numerical-analysis/pandas/data/apollo-timeline.sqlite3'
+    SQL = r'SELECT * FROM logs'
+
+    with open(DATABASE, mode='wb') as db:
+        resp = requests.get(URL)
+        db.write(resp.content)
+
+    with sqlite3.connect(DATABASE) as db:
+        df = pd.read_sql(SQL, db)
+
+    df
+    #     id  ...                                            message
+    # 0    1  ...                         Terminal countdown started
+    # 1    2  ...                          S-IC engine ignition (#5)
+    # 2    3  ...          Maximum dynamic pressure (735.17 lb/ft^2)
+    # 3    4  ...                                      S-II ignition
+    # 4    5  ...                     Launch escape tower jettisoned
+    # 5    6  ...                          S-II center engine cutoff
+    # 6    7  ...                               Translunar injection
+    # 7    8  ...                           CSM docked with LM/S-IVB
+    # 8    9  ...                     Lunar orbit insertion ignition
+    # 9   10  ...               Lunar orbit circularization ignition
+    # 10  11  ...                                    CSM/LM undocked
+    # 11  12  ...                 LM powered descent engine ignition
+    # 12  13  ...                                      LM 1202 alarm
+    # 13  14  ...                                      LM 1201 alarm
+    # 14  15  ...                                   LM lunar landing
+    # 15  16  ...                           EVA started (hatch open)
+    # 16  17  ...                 1st step taken lunar surface (CDR)
+    # 17  18  ...  That's one small step for [a] man... one giant...
+    # 18  19  ...        Contingency sample collection started (CDR)
+    # 19  20  ...                               LMP on lunar surface
+    # 20  21  ...                           EVA ended (hatch closed)
+    # 21  22  ...                 LM lunar liftoff ignition (LM APS)
+    # 22  23  ...                                      CSM/LM docked
+    # 23  24  ...                Transearth injection ignition (SPS)
+    # 24  25  ...                                   CM/SM separation
+    # 25  26  ...                                              Entry
+    # 26  27  ...                     Splashdown (went to apex-down)
+    # 27  28  ...                                        Crew egress
+    # [28 rows x 4 columns]
+
+
 Assignments
 ===========
 

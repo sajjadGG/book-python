@@ -1,26 +1,34 @@
 import pandas as pd
 
-MONTH = {
-    "01": "January",
-    "02": "February",
-    "03": "March",
-    "04": "April",
-    "05": "May",
-    "06": "June",
-    "07": "July",
-    "08": "August",
-    "09": "September",
-    "10": "October",
-    "11": "November",
-    "12": "December",
-}
+DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/phones.csv'
 
-df = pd.read_csv('../numerical-analysis/pandas/data/phones.csv', index_col=0)
 
-df[ ['year', 'month_name'] ] = df['month'].str.split('-', expand=True)
+## Solution 1
+phones = pd.read_csv(DATA, parse_dates=['date'])
+phones['datetime'] = phones['date']
+phones['date'] = phones['datetime'].dt.date
+phones['time'] = phones['datetime'].dt.time
+phones
 
-print(df)
 
-## Alternative Solution
-df['year'] = df['month'].str[:4]
-df['month_name'] = df['month'].str[-2:]
+## Solution 2
+phones = pd.read_csv(DATA, parse_dates=['date'])
+phones['datetime'] = phones['date']
+phones['date'] = phones['datetime'].map(lambda dt: dt.date())
+phones['time'] = phones['datetime'].map(lambda dt: dt.time())
+phones
+
+
+## Solution 3
+phones = pd.read_csv(DATA, parse_dates=['date'])
+phones['datetime'] = phones['date']
+phones['date'] = phones['datetime'].dt.date
+phones['time'] = phones['datetime'].dt.time
+phones
+
+
+## Solution 4
+phones = pd.read_csv(DATA, parse_dates=['date'])
+phones['datetime'] = phones['date'].map(str)
+phones[['date', 'time']] = phones['datetime'].str.split(expand=True)
+phones
