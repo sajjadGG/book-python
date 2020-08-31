@@ -704,6 +704,59 @@ Comprehensions Translate
         result: str
         # 'zazolc gesla jazn'
 
+Comprehension Dict
+------------------
+* Complexity level: easy
+* Lines of code to write: 2 lines
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/loop_comprehension_months.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Use dict comprehension
+    #. Convert ``MONTH`` into dict:
+
+        * Keys: month number
+        * Values: month name
+
+    #. Month number must be two letter string (zero padded)
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Użyj rozwinięcia słownikowego
+    #. Przekonwertuj ``MONTH`` w słownik:
+
+        * klucz: numer miesiąca
+        * wartość: nazwa miesiąca
+
+    #. Numer miesiąca ma być dwyznakowym stringiem (wypełnij zerem)
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        MONTHS = ['January', 'February', 'March', 'April',
+                  'May', 'June', 'July', 'August', 'September',
+                  'October', 'November', 'December']
+
+:Output:
+    .. code-block:: python
+
+        result: dict
+        # {'01': 'January',
+        #  '02': 'February',
+        #  '03': 'March',
+        #  '04': 'April',
+        #  '05': 'May',
+        #  '06': 'June',
+        #  '07': 'July',
+        #  '08': 'August',
+        #  '09': 'September',
+        #  '10': 'October',
+        #  '11': 'November',
+        #  '12': 'December'}
+
 Comprehensions Split
 --------------------
 * Complexity level: medium

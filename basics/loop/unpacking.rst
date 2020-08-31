@@ -132,6 +132,55 @@ Enumerate
 Assignments
 ===========
 
+Loop Unpacking Months
+---------------------
+* Complexity level: easy
+* Lines of code to write: 2 lines
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/loop_unpacking_months.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Use ``enumerate()`` to convert ``MONTH`` into dict:
+
+        * Keys: month number
+        * Values: month name
+
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Użyj ``enumerate()`` do konwersji ``MONTH`` w słownik:
+
+        * klucz: numer miesiąca
+        * wartość: nazwa miesiąca
+
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        MONTHS = ['January', 'February', 'March', 'April',
+                  'May', 'June', 'July', 'August', 'September',
+                  'October', 'November', 'December']
+
+:Output:
+    .. code-block:: python
+
+        result: dict
+        # {1: 'January',
+        #  2: 'February',
+        #  3: 'March',
+        #  4: 'April',
+        #  5: 'May',
+        #  6: 'June',
+        #  7: 'July',
+        #  8: 'August',
+        #  9: 'September',
+        #  10: 'October',
+        #  11: 'November',
+        #  12: 'December'}
+
 Loop Unpacking Endswith
 -----------------------
 * Complexity level: medium

@@ -297,7 +297,5 @@ DataFrame NaN
     #. Wybrane wartości ustaw na ``NaN``
     #. Interpoluj liniowo wszystkie wartości ``NaN``
     #. Usuń wiersze z pozostałymi wartościami ``NaN``
-    #. Wyświetl pierwsze dwa wiersze
-    #. Wyświetl jeden ostatni wiersz
-    #. Wyświetl podstawowe statystyki opisowe
-
+    #. Wypisz dwa pierwsze wiersze
+    #. Wypisz liczbę wierszy

@@ -273,6 +273,7 @@ Conversion
 
     LETTERS_EN = 'abcdefghijklmnopqrstuvwxyz'
     LETTERS_PL = 'aąbcćdeęfghijklłmnńoóprsśtuwyzżź'
+
     LETTERS_PLEN = {'ą': 'a', 'ć': 'c', 'ę': 'e',
                     'ł': 'l', 'ń': 'n', 'ó': 'o',
                     'ś': 's', 'ż': 'z', 'ź': 'z'}
@@ -283,35 +284,35 @@ Conversion
                  'May', 'June', 'July', 'August', 'September',
                  'October', 'November', 'December']
 
-    MONTHS_PL = ['Styczeń', 'Luty', 'Marzec', 'Kwiecień',
-                 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień',
-                 'Wrzesień', 'Październik', 'Listopad', 'Grudzień']
+    MONTHS_PL = ['styczeń', 'luty', 'marzec', 'kwiecień',
+                 'maj', 'czerwiec', 'lipiec', 'sierpień',
+                 'wrzesień', 'październik', 'listopad', 'grudzień']
 
-    MONTHS_PLEN = {'Styczeń': 'January',
-                   'Luty': 'February',
-                   'Marzec': 'March',
-                   'Kwiecień': 'April',
-                   'Maj': 'May',
-                   'Czerwiec': 'June',
-                   'Lipiec': 'July',
-                   'Sierpień': 'August',
-                   'Wrzesień': 'September',
-                   'Październik': 'October',
-                   'Listopad': 'November',
-                   'Grudzień': 'December'}
+    MONTHS_PLEN = {'styczeń': 'January',
+                   'luty': 'February',
+                   'marzec': 'March',
+                   'kwiecień': 'April',
+                   'maj': 'May',
+                   'czerwiec': 'June',
+                   'lipiec': 'July',
+                   'sierpień': 'August',
+                   'wrzesień': 'September',
+                   'październik': 'October',
+                   'listopad': 'November',
+                   'grudzień': 'December'}
 
-    MONTHS_ENPL = {'January': 'Styczeń',
-                   'February': 'Luty',
-                   'March': 'Marzec',
-                   'April': 'Kwiecień',
-                   'May': 'Maj',
-                   'June': 'Czerwiec',
-                   'July': 'Lipiec',
-                   'August': 'Sierpień',
-                   'September': 'Wrzesień',
-                   'October': 'Październik',
-                   'November': 'Listopad',
-                   'December': 'Grudzień'}
+    MONTHS_ENPL = {'January': 'styczeń',
+                   'February': 'luty',
+                   'March': 'marzec',
+                   'April': 'kwiecień',
+                   'May': 'maj',
+                   'June': 'czerwiec',
+                   'July': 'lipiec',
+                   'August': 'sierpień',
+                   'September': 'wrzesień',
+                   'October': 'październik',
+                   'November': 'listopad',
+                   'December': 'grudzień'}
 
 
 Assignments

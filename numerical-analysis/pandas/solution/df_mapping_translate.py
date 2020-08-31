@@ -1,60 +1,39 @@
 import pandas as pd
 
+DATA = '../data/astro-dates.csv'
 
-# Read data
-df = pd.read_csv('../numerical-analysis/pandas/data/astro-dates.csv')
-
-df['Mission Date'].replace({
-    'styczeń': 'January',
-    'luty': 'February',
-    'marzec': 'March',
-    'kwiecień': 'April',
-    'maj': 'May',
-    'czerwiec': 'June',
-    'lipiec': 'July',
-    'sierpień': 'August',
-    'wrzesień': 'September',
-    'październik': 'October',
-    'listopad': 'November',
-    'grudzień': 'December',
-}, regex=True, inplace=True)
-
-df['Mission Date'] = df['Mission Date'].apply(pd.Timestamp)
-
-print(df)
+MONTHS_PLEN = {'styczeń': 'January',
+               'luty': 'February',
+               'marzec': 'March',
+               'kwiecień': 'April',
+               'maj': 'May',
+               'czerwiec': 'June',
+               'lipiec': 'July',
+               'sierpień': 'August',
+               'wrzesień': 'September',
+               'październik': 'October',
+               'listopad': 'November',
+               'grudzień': 'December'}
 
 
-## Alternative solution
-import pandas as pd
+## Solution 1
+astro = pd.read_csv(DATA)
+astro['Mission Date']\
+     .replace(MONTHS_PLEN, regex=True, inplace=True)\
+     .apply(pd.Timestamp)
+astro
 
 
-MONTHS = {
-    'styczeń': 'January',
-    'luty': 'February',
-    'marzec': 'March',
-    'kwiecień': 'April',
-    'maj': 'May',
-    'czerwiec': 'June',
-    'lipiec': 'July',
-    'sierpień': 'August',
-    'wrzesień': 'September',
-    'październik': 'October',
-    'listopad': 'November',
-    'grudzień': 'December',
-}
-
-
+## Solution 2
 def substitute(original):
-    for pl, en in MONTHS.items():
+    for pl, en in MONTHS_PLEN.items():
         translated = original.replace(pl, en)
         if original != translated:
             return translated
 
 
-# Read data
-df = pd.read_csv('../numerical-analysis/pandas/data/astro-dates.csv')
-
-df['Mission Date'] = df['Mission Date'].apply(substitute)
-df['Mission Date'] = df['Mission Date'].apply(pd.Timestamp)
-
-print(df)
+astro = pd.read_csv(DATA)
+astro['Mission Date'] = astro['Mission Date']\
+                             .apply(substitute)\
+                             .apply(pd.Timestamp)
+astro
