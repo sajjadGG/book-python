@@ -75,6 +75,7 @@ Line Plot
     import numpy as np
     np.random.seed(0)
 
+
     noise = np.random.normal(0.0, 0.1, size=1000)
 
     x1 = np.linspace(0, 2*np.pi, 1000)
@@ -297,6 +298,7 @@ Histogram
     import matplotlib.pyplot as plt
     import numpy as np
     np.random.seed(0)
+
 
     mu = 0
     sigma = 1

@@ -9,6 +9,7 @@ Multiple Plots on one Figure
 
     import matplotlib.pyplot as plt
     import numpy as np
+    np.random.seed(0)
 
 
     x1 = [x * 0.01 for x in range(0, 628)]

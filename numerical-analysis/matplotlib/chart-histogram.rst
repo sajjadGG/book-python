@@ -70,12 +70,15 @@ Simple
 ------
 .. code-block:: python
 
+    import matplotlib.pyplot as plt
+    import numpy as np
+    np.random.seed(0)
+
+
     ages = np.random.randint(size=50, low=0, high=130)
+    age_groups = [0, 10, 20, 30, 40, 50, 60, 70, 80, 100, 110, 120, 130]
 
-    # age groups
-    bins = [0, 10, 20, 30, 40, 50, 60, 70, 80, 100, 110, 120, 130]
-
-    plt.hist(ages, bins, histtype='bar', rwidth=0.8)
+    plt.hist(ages, age_groups, histtype='bar', rwidth=0.8)
 
 .. figure:: img/matplotlib-plt-hist.png
     :width: 75%

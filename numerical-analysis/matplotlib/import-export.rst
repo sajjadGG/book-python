@@ -19,6 +19,11 @@ Reading data
 
     .. code-block:: python
 
+        import matplotlib.pyplot as plt
+        import pandas as pd
+        import numpy as np
+        np.random.seed(0)
+
         a = pandas.DataFrame(np.random.rand(4,5), columns = list('abcde'))
         a_asndarray = a.values
 
