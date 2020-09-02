@@ -344,18 +344,18 @@ Donut Chart
                      [29., 10.]])
 
     cmap = plt.get_cmap("tab20c")
-    outer_colors = cmap(np.arange(3)*4)
-    inner_colors = cmap(np.array([1, 2, 5, 6, 9, 10]))
+    outer_colors = cmap([0, 4, 8])
+    inner_colors = cmap([1, 2, 5, 6, 9, 10])
 
     ax.pie(vals.sum(axis=1),
            radius=1,
            colors=outer_colors,
-           wedgeprops={'width': size, 'edgecolor': 'w'})
+           wedgeprops={'width': size, 'edgecolor': 'white'})
 
     ax.pie(vals.flatten(),
            radius=1-size,
            colors=inner_colors,
-           wedgeprops={'width': size, 'edgecolor': 'w'})
+           wedgeprops={'width': size, 'edgecolor': 'white'})
 
     plt.show()
 
