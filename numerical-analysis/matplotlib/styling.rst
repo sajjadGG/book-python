@@ -1,6 +1,6 @@
-******************
-Matplotlib Styling
-******************
+****************
+Matplotlib Style
+****************
 
 
 .. code-block:: python
@@ -25,13 +25,31 @@ Figure Anatomy
     Matplotlib Figure Anatomy
 
 
+Line Styles
+===========
+.. figure:: img/matplotlib-style-line.png
+    :width: 75%
+    :align: center
+
+
+Markers
+=======
+.. figure:: img/matplotlib-style-markers-filled.png
+    :width: 75%
+    :align: center
+
+.. figure:: img/matplotlib-style-markers-unfilled.png
+    :width: 75%
+    :align: center
+
+
 Annotations
 ===========
-* Tytuł wykresu
-* Podpis osi X
-* Podpis osi Y
-* Tekst na wykresie
-* Anotacje
+* Title
+* X Axis Label
+* Y Axis Label
+* Text
+* Annotations
 * LaTeX
 * BBox (https://matplotlib.org/devdocs/api/_as_gen/matplotlib.patches.FancyBboxPatch.html)
 
@@ -371,4 +389,33 @@ Trend Line
 
     plt.plot(x, y, label='sin(x)')
     plt.plot(x, trend(x), color='red', linestyle='--', label='trend')
+    plt.show()
+
+
+
+Styles
+======
+.. code-block:: python
+
+    import matplotlib.pyplot as plt
+
+
+    print(plt.style.available)
+    # ['Solarize_Light2', '_classic_test_patch', 'bmh', 'classic', 'dark_background', 'fast', 'fivethirtyeight',
+    #  'ggplot', 'grayscale', 'seaborn', 'seaborn-bright', 'seaborn-colorblind', 'seaborn-dark',
+    #  'seaborn-dark-palette', 'seaborn-darkgrid', 'seaborn-deep', 'seaborn-muted', 'seaborn-notebook',
+    #  'seaborn-paper', 'seaborn-pastel', 'seaborn-poster', 'seaborn-talk', 'seaborn-ticks', 'seaborn-white',
+    #  'seaborn-whitegrid', 'tableau-colorblind10']
+
+.. code-block:: python
+
+    import matplotlib.pyplot as plt
+
+
+    x = np.linspace(0, 10, 1000)
+    y = np.sin(x)
+
+    plt.style.use('fivethirtyeight')
+
+    plt.plot(x, y, label='sin(x)')
     plt.show()

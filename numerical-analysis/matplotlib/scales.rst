@@ -10,7 +10,7 @@ Rationale
 * Symmetrical log (można ustawić fragmentami liniowo ``linthreshx: int``)
 * Logit - odwrotność logistycznej
 
-* `` - x.mean()`` is used to better highlight the function
+* Subtracting ``x.mean()`` is used to better highlight the function
 
 
 Linear Scale
