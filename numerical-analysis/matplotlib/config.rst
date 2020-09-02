@@ -3,7 +3,16 @@ Matplotlib Config
 *****************
 
 
+Size
+====
+* In Inches
 
+.. code-block:: python
+
+    plt.figure(figsize=(12, 6))
+
+RC Parameters
+=============
 .. code-block:: python
     :caption: Matplotlib Config Available Options
 
@@ -363,19 +372,16 @@ Matplotlib Config
     #       'ytick.right': False})
 
 
-Get Config
-==========
 .. code-block:: python
+    :caption: Get Config
 
     import matplotlib.pyplot as plt
 
 
     plt.rcParams['font.size']
 
-
-Set Config
-==========
 .. code-block:: python
+    :caption: Set Config
 
     import matplotlib.pyplot as plt
 

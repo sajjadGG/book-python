@@ -31,6 +31,9 @@ Multiple Figures with single Plots
 ==================================
 .. code-block:: python
 
+    import numpy as np
+    import matplotlib.pyplot as plt
+
     x = np.linspace(0.0, 10.0, 1000)
     y = np.sin(x)
 

@@ -155,6 +155,19 @@ Ticks
 
 .. code-block:: python
 
+    import matplotlib.pyplot as plt
+
+
+    x = [1, 2, 3, 4, 5]
+    y = [1, 4, 9, 6, 8]
+    labels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+
+    plt.xticks(x, labels, rotation='vertical')
+    plt.plot(x, y, marker='o')
+    plt.show()
+
+.. code-block:: python
+
     import numpy as np
     import matplotlib.pyplot as plt
 
@@ -202,13 +215,14 @@ Ticks
 
     x = np.linspace(0, 10, 1000)
     y = np.sin(x)
+    labels = [0, '$\pi$', '$2\pi$', '$3\pi$']
     major_ticks = np.arange(0, 10, np.pi)
     minor_ticks = np.arange(0, 10, 1)
 
     ax = plt.gca() # get current axes
     ax.set_xticks(major_ticks)
     ax.set_xticks(minor_ticks, minor=True)
-    ax.set_xticklabels([0, '$\pi$', '$2\pi$', '$3\pi$'])
+    ax.set_xticklabels(labels)
     ax.set_yticks(major_ticks)
     ax.set_yticks(minor_ticks, minor=True)
     ax.tick_params(which='major', width=2, length=8, color='red')
