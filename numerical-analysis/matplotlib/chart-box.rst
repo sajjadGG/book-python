@@ -5,10 +5,8 @@ Simple Box Charts
 -----------------
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
-
-    # Fixing random state for reproducibility
+    import numpy as np
     np.random.seed(0)
 
     # fake up some data
@@ -31,11 +29,9 @@ Hide Outliers
 -------------
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
-
-    # Fixing random state for reproducibility
-    np.random.seed(19680801)
+    import numpy as np
+    np.random.seed(0)
 
     # fake up some data
     spread = np.random.rand(50) * 100
@@ -60,11 +56,9 @@ Multiple Box Charts
 -------------------
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
-
-    # Fixing random state for reproducibility
-    np.random.seed(19680801)
+    import numpy as np
+    np.random.seed(0)
 
     # fake up some data
     spread = np.random.rand(50) * 100

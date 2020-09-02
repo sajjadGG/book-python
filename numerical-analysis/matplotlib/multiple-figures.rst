@@ -31,8 +31,8 @@ Multiple Figures with single Plots
 ==================================
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
     x = np.linspace(0.0, 10.0, 1000)
     y = np.sin(x)
@@ -55,8 +55,8 @@ Multiple Figures with single Plots
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
     def damp(t):
         return np.exp(-t) * np.cos(2*np.pi*t)

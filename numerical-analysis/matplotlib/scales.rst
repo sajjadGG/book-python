@@ -17,8 +17,8 @@ Linear Scale
 ============
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 10, 1000)
@@ -34,8 +34,8 @@ Logarithmic Scale
 =================
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 10, 1000)
@@ -51,8 +51,8 @@ Symmetrical Logarithmic Scale
 =============================
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 10, 1000)
@@ -68,8 +68,8 @@ Logit Scale
 ===========
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 10, 1000)

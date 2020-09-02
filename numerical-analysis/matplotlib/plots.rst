@@ -7,8 +7,8 @@ Line Plot
 =========
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = [1, 2, 3, 4]
@@ -19,8 +19,8 @@ Line Plot
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 10, 1000)
@@ -31,8 +31,8 @@ Line Plot
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 10, 1000)
@@ -45,8 +45,8 @@ Line Plot
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 10, 1000)
@@ -57,8 +57,8 @@ Line Plot
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 2, 100)
@@ -69,13 +69,31 @@ Line Plot
 
     plt.show()
 
+.. code-block:: python
+
+    import matplotlib.pyplot as plt
+    import numpy as np
+    np.random.seed(0)
+
+    noise = np.random.normal(0.0, 0.1, size=1000)
+
+    x1 = np.linspace(0, 2*np.pi, 1000)
+    y1 = np.sin(x1) + noise
+
+    x2 = np.linspace(0, 2*np.pi, 20)
+    y2 = np.cos(x2)
+
+    plt.plot(x1, y1)
+    plt.plot(x2, y2, 'o-')
+    plt.show()
+
 
 Scatter Plot
 ============
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = [1, 2, 3, 4]
@@ -86,8 +104,8 @@ Scatter Plot
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = [1, 2, 3, 4, 5, 6, 7, 8]
@@ -98,8 +116,8 @@ Scatter Plot
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = [1, 2, 3, 4, 5, 6, 7, 8]
@@ -116,8 +134,8 @@ Scatter Plot
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = [1, 2, 3, 4, 5, 6, 7, 8]
@@ -134,8 +152,8 @@ Scatter Plot
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = [1,2,3,4,5,6,7,8]
@@ -148,8 +166,8 @@ Scatter Plot
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = x = np.linspace(0, 10, 50)
@@ -276,10 +294,8 @@ Histogram
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
-
-
+    import numpy as np
     np.random.seed(0)
 
     mu = 0
@@ -291,11 +307,10 @@ Histogram
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
-
-
+    import numpy as np
     np.random.seed(0)
+
 
     x = np.random.normal(size=10000)
 
@@ -332,8 +347,8 @@ Donut Chart
 ===========
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     fig, ax = plt.subplots()
@@ -402,6 +417,7 @@ Box Plot
     import numpy as np
     np.random.seed(0)
 
+
     x = np.random.normal(size=1000)
 
     plt.boxplot(x)
@@ -412,6 +428,7 @@ Box Plot
     import matplotlib.pyplot as plt
     import numpy as np
     np.random.seed(0)
+
 
     a = np.random.normal(size=1000)
     b = np.random.normal(size=1000)
@@ -441,8 +458,8 @@ Error
 =====
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = [1, 2, 3, 4]
@@ -454,8 +471,8 @@ Error
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
     x = [1, 2, 3, 4]
     y = [1, 4, 9, 16]

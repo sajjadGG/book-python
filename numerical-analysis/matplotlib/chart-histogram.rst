@@ -87,11 +87,10 @@ Normal Distribution
 -------------------
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
+    np.random.seed(0)
 
-    # Fixing random state for reproducibility
-    np.random.seed(19680801)
 
     mu, sigma = 100, 15
     x = mu + sigma * np.random.randn(10000)

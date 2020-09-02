@@ -47,8 +47,8 @@ It contains sales information for a number of companies.
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
     from matplotlib.ticker import FuncFormatter
 
     data = {'Barton LLC': 109438.50,

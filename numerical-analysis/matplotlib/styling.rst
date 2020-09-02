@@ -5,8 +5,8 @@ Matplotlib Style
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 10, 1000)
@@ -55,8 +55,8 @@ Annotations
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 10, 1000)
@@ -71,8 +71,8 @@ Annotations
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 10, 1000)
@@ -85,8 +85,8 @@ Annotations
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 10, 1000)
@@ -106,8 +106,8 @@ Axis Limits
 ===========
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 10, 1000)
@@ -126,8 +126,9 @@ Legend
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
+
 
     x = np.linspace(0, 10, 1000)
     y = np.sin(x)
@@ -138,8 +139,8 @@ Legend
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 10, 1000)
@@ -158,8 +159,8 @@ Ticks
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 10, 1000)
@@ -186,8 +187,8 @@ Ticks
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 10, 1000)
@@ -203,8 +204,8 @@ Ticks
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 10, 1000)
@@ -227,8 +228,8 @@ Ticks
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 10, 1000)
@@ -255,8 +256,8 @@ Spines
 ======
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 10, 1000)
@@ -273,8 +274,8 @@ Spines
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 10, 1000)
@@ -302,8 +303,8 @@ Grid
 ====
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 10, 1000)
@@ -316,8 +317,8 @@ Grid
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 10, 1000)
@@ -330,8 +331,8 @@ Grid
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 10, 1000)
@@ -360,8 +361,8 @@ Trend Line
 ==========
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = [1, 3, 5, 7, 9]
@@ -377,8 +378,8 @@ Trend Line
 
 .. code-block:: python
 
-    import numpy as np
     import matplotlib.pyplot as plt
+    import numpy as np
 
 
     x = np.linspace(0, 10, 1000)
