@@ -2,11 +2,17 @@
 Example COVID-19 plot
 *********************
 
+
+Rationale
+=========
+* Data Source: https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series
+
+
+
 .. code-block:: python
 
     import matplotlib.pyplot as plt
     import pandas as pd
-
 
     CONFIRMED = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv'
     DEATHS = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv'
@@ -73,3 +79,12 @@ Example COVID-19 plot
     plot('France')
     plot('Spain')
     plot('Italy')
+
+
+Further Reading
+===============
+* https://www.youtube.com/watch?v=54XLXg4fYsc
+* https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series
+* https://aatishb.com/covidtrends/?location=Poland
+* https://aatishb.com/covidtrends/?location=Brazil&location=China&location=India&location=Poland&location=Russia&location=US
+* https://youtu.be/xtZYKcOdJp0?t=168

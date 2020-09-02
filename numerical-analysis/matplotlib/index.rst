@@ -35,10 +35,6 @@ Import
 
     import matplotlib.pyplot as plt
 
-Embedding charts in Jupyter
----------------------------
-* ``%matplotlib inline``
-
 Running matplotlib in PyCharm
 -----------------------------
 * Scientific Mode

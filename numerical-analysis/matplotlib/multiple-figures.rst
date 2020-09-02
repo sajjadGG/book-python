@@ -31,21 +31,48 @@ Multiple Figures with single Plots
 ==================================
 .. code-block:: python
 
+    x = np.linspace(0.0, 10.0, 1000)
+    y = np.sin(x)
+
+    fig, ax = plt.subplots(nrows=2, ncols=2, figsize=(18, 5))
+
+    ax[0,0].plot(x, y, label='a')
+    ax[0,1].plot(x, y, label='b')
+    ax[1,0].plot(x, y, label='c')
+    ax[1,1].plot(x, y, label='d')
+
+    plt.show()
+
+.. figure:: img/matplotlib-subplots-a.png
+    :scale: 100%
+    :align: center
+
+    Multiple Figures with single Plots
+
+
+.. code-block:: python
+
     import numpy as np
     import matplotlib.pyplot as plt
 
-    def func(t):
+    def damp(t):
         return np.exp(-t) * np.cos(2*np.pi*t)
 
-    t1 = np.arange(0.0, 5.0, 0.1)
-    t2 = np.arange(0.0, 5.0, 0.02)
 
-    plt.figure(1)
+    x1 = np.arange(0.0, 5.0, 0.1)
+    x2 = np.arange(0.0, 5.0, 0.02)
+    y2 = np.cos(2*np.pi*x2)
+
+
+    plt.figure(1, figsize=(15, 5))
+
     plt.subplot(211)
-    plt.plot(t1, func(t1), 'bo', t2, func(t2), 'k')
+    plt.plot(x1, damp(x1), color='blue', marker='o', label='data')
+    plt.plot(x2, damp(x2), color='black', label='datapoints')
 
     plt.subplot(212)
-    plt.plot(t2, np.cos(2*np.pi*t2), 'r--')
+    plt.plot(x2, y2, color='red', linestyle='--', label='signal')
+
     plt.show()
 
 .. figure:: img/matplotlib-plt-subplot.png

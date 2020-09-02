@@ -154,6 +154,12 @@ Matplotlib
     :name: Numerical Analysis Matplotlib
 
     matplotlib/index.rst
+    matplotlib/plots.rst
+    matplotlib/styling.rst
+    matplotlib/scales.rst
+
+
+
     matplotlib/import-export.rst
     matplotlib/style-intro.rst
     matplotlib/style-basic.rst
