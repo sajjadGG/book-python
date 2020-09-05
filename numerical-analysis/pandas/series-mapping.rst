@@ -3,6 +3,12 @@ Series Mapping
 **************
 
 
+Rationale
+=========
+* ``Series.apply`` - apply function to data, function can have args and/or kwargs
+* ``Series.map`` - convert data from one to another using function or dict
+
+
 Apply
 =====
 * Signature: ``Series.apply(func, convert_dtype=True, args=(), **kwds)``
@@ -115,8 +121,8 @@ Map
 * Signature: ``Series.map(arg, na_action=None)``
 * Parameters:
 
-    * arg: Union[Callable, collections.abc.Mapping, Series]
-    * na_action: Optional[Literal['ignore']]; default ``None``
+    * arg: ``Union[Callable, collections.abc.Mapping, Series]``
+    * na_action: ``Optional[Literal['ignore']]``; default ``None``
 
 * Returns: ``Series``
 
@@ -372,6 +378,16 @@ Example
     # dtype: object
 
     s.map(pl_to_latin)
+    # 0      Poznan
+    # 1    Swarzedz
+    # 2      Krakow
+    # 3        Lodz
+    # 4      Gdansk
+    # 5        Kolo
+    # 6      Deblin
+    # dtype: object
+
+    s.apply(pl_to_latin)
     # 0      Poznan
     # 1    Swarzedz
     # 2      Krakow
