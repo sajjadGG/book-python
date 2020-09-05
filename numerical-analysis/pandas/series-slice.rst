@@ -178,17 +178,56 @@ Date Index
     # 2000-01-03    5.0
     # Freq: D, dtype: float64
 
-    s['2000-01-02':'2000-01-04':2]
-    # 2000-01-02    4.0
+    s['1999-12-30':'2000-01-04':2]
+    # 1999-12-30    1.0
+    # 2000-01-01    3.0
+    # 2000-01-03    5.0
     # Freq: 2D, dtype: float64
 
-    s['2000-01-02':'2000-01-04':-1]
+    s['1999-12-30':'2000-01-04':-1]
     # Series([], Freq: -1D, dtype: float64)
 
-    s['2000-01-04':'2000-01-02':-1]
+    s['2000-01-04':'1999-12-30':-1]
     # 2000-01-03    5.0
     # 2000-01-02    4.0
+    # 2000-01-01    3.0
+    # 1999-12-31    2.0
+    # 1999-12-30    1.0
     # Freq: -1D, dtype: float64
+
+    s[:'1999']
+    # 1999-12-30    1.0
+    # 1999-12-31    2.0
+    # Freq: D, dtype: float64
+
+    s['2000':]
+    # 2000-01-01    3.0
+    # 2000-01-02    4.0
+    # 2000-01-03    5.0
+    # Freq: D, dtype: float64
+
+    s[:'1999-12']
+    # 1999-12-30    1.0
+    # 1999-12-31    2.0
+    # Freq: D, dtype: float64
+
+    s['2000-01':]
+    # 2000-01-01    3.0
+    # 2000-01-02    4.0
+    # 2000-01-03    5.0
+    # Freq: D, dtype: float64
+
+    s[:'2000-01-02']
+    # 1999-12-30    1.0
+    # 1999-12-31    2.0
+    # 2000-01-01    3.0
+    # 2000-01-02    4.0
+    # Freq: D, dtype: float64
+
+    s['2000-01-02':]
+    # 2000-01-02    4.0
+    # 2000-01-03    5.0
+    # Freq: D, dtype: float64
 
     s['1999-12':'1999-12']
     # 1999-12-30    1.0
@@ -266,14 +305,36 @@ Series Slice Datetime
     #. Create ``pd.Series`` with 100 random numbers from standard distribution
     #. Series Index are following dates since 2000
     #. Slice dates from 2000-02-14 to end of February 2000
-    #. Print results
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Ustaw ziarno losowości na zero
     #. Stwórz ``pd.Series`` z 100 losowymi liczbami z rozkładu normalnego
     #. Indeksem w serii mają być kolejne dni od 2000 roku
     #. Wytnij daty od 2000-02-14 do końca lutego 2000
-    #. Wypisz wyniki
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Output:
+    .. code-block:: python
+
+        s: pd.Series
+        # 2000-02-14   -0.509652
+        # 2000-02-15   -0.438074
+        # 2000-02-16   -1.252795
+        # 2000-02-17    0.777490
+        # 2000-02-18   -1.613898
+        # 2000-02-19   -0.212740
+        # 2000-02-20   -0.895467
+        # 2000-02-21    0.386902
+        # 2000-02-22   -0.510805
+        # 2000-02-23   -1.180632
+        # 2000-02-24   -0.028182
+        # 2000-02-25    0.428332
+        # 2000-02-26    0.066517
+        # 2000-02-27    0.302472
+        # 2000-02-28   -0.634322
+        # 2000-02-29   -0.362741
+        # Freq: D, dtype: float64
 
 :Hint:
     * ``np.random.seed(0)``
@@ -289,24 +350,36 @@ Slicing Slice Str
 :English:
     #. Use data from "Input" section (see below)
     #. Create ``pd.Series`` with 26 random integers in range ``[10, 100)``
-    #. Name indexes like letters from english alphabet
-    #. Find middle letter of alphabet (use lower letter from middle pair)
-    #. How to find index of element on the list?
+    #. Name indexes like letters from ASCII alphabet (``ascii_lowercase: str``)
+    #. Find middle letter of alphabet
     #. Slice from series 3 elements up and down from middle
-    #. Print results
+    #. Compare result with "Output" section (see below)
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Stwórz ``pd.Series`` z 26 losowymi liczbami całkowitymi z przedziału ``<10; 100)``
-    #. Nazwij indeksy jak kolejne litery alfabetu angielskiego
-    #. Znajdź środkową literę alfabetu (użyj wcześniejszej litery ze pary środkowych)
+    #. Nazwij indeksy jak kolejne litery alfabetu ASCII (``ascii_lowercase: str``)
+    #. Znajdź środkową literę alfabetu
     #. Wytnij z serii po 3 elementy w górę i w dół od wyszukanego środka
-    #. Wypisz wyniki
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
 
 :Input:
     .. code-block:: python
 
         ascii_lowercase = 'abcdefghijklmnopqrstuvwxyz'
+
+:Output:
+    .. code-block:: python
+
+        s: pd.Series
+        # j    97
+        # k    80
+        # l    98
+        # m    98
+        # n    22
+        # o    68
+        # p    75
+        # dtype: int64
 
 :Hint:
     * ``np.random.randint(..., ..., size=...)``

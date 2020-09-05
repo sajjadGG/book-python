@@ -3,30 +3,62 @@ Series Getitem
 **************
 
 
-Numeric Index
-=============
+Range Index
+===========
 .. code-block:: python
 
     import pandas as pd
-    import numpy as np
 
 
-    s = pd.Series([1.0, 2.0, 3.0, np.nan, 5.0])
+    s = pd.Series([1.1, 2.2, 3.3, None, 5.5])
 
     s
-    # 0    1.0
-    # 1    2.0
-    # 2    3.0
+    # 0    1.1
+    # 1    2.2
+    # 2    3.3
     # 3    NaN
-    # 4    5.0
+    # 4    5.5
     # dtype: float64
 
-    s[0]        # 1.0
-    s[3]        # nan
-    s[100]      # IndexError: index out of bounds
+    s.index
+    # RangeIndex(start=0, stop=5, step=1)
 
-    s[-1]       # 5.0
-    s[-100]     # IndexError: index out of bounds
+    s[0]        # 1.1
+    s[3]        # nan
+    s[100]      # KeyError: 100
+
+    s[-1]       # KeyError: -1
+    s[-100]     # KeyError: -100
+
+
+Float and Int Index
+===================
+.. code-block:: python
+
+    import pandas as pd
+
+
+    s = pd.Series(
+        data = [1.1, 2.2, 3.3, None, 5.5],
+        index = [1, 0, 3.3, 99, -1])
+
+    s
+    #  1.0     1.1
+    #  0.0     2.2
+    #  3.3     3.3
+    #  99.0    NaN
+    # -1.0     5.5
+    # dtype: float64
+
+    s.index
+    # Float64Index([1.0, 0.0, 3.3, 99.0, -1.0], dtype='float64')
+
+    s[0]        # 2.2
+    s[3]        # KeyError: 3
+    s[100]      # KeyError: 100
+
+    s[-1]       # 5.5
+    s[-100]     # KeyError: -100
 
 
 String Index
@@ -34,31 +66,33 @@ String Index
 .. code-block:: python
 
     import pandas as pd
-    import numpy as np
 
 
     s = pd.Series(
-        data = [1.0, 2.0, 3.0, np.nan, 5.0],
+        data = [1.1, 2.2, 3.3, None, 5.5],
         index = ['a', 'b', 'c', 'd', 'e'])
 
     s
-    # a    1.0
-    # b    2.0
-    # c    3.0
+    # a    1.1
+    # b    2.2
+    # c    3.3
     # d    NaN
-    # e    5.0
+    # e    5.5
     # dtype: float64
 
-    s['a']      # 1.0
+    s.index
+    # Index(['a', 'b', 'c', 'd', 'e'], dtype='object')
+
+    s['a']      # 1.1
     s['d']      # nan
-    s['e']      # 5.0
+    s['e']      # 5.5
     s['x']      # KeyError: 'x'
 
-    s[0]        # 1.0
+    s[0]        # 1.1
     s[3]        # nan
-    s[100]      # IndexError: index out of bounds
-    s[-1]       # 5.0
-    s[-100]     # IndexError: index out of bounds
+    s[100]      # IndexError: index 100 is out of bounds for axis 0 with size 5
+    s[-1]       # 5.5
+    s[-100]     # IndexError: index -100 is out of bounds for axis 0 with size 5
 
 
 Date Index
@@ -66,42 +100,45 @@ Date Index
 .. code-block:: python
 
     import pandas as pd
-    import numpy as np
 
 
     s = pd.Series(
-        data = [1.0, 2.0, 3.0, np.nan, 5.0],
+        data = [1.1, 2.2, 3.3, None, 5.5],
         index = pd.date_range('1999-12-30', periods=5))
 
     s
-    # 1999-12-30    1.0
-    # 1999-12-31    2.0
-    # 2000-01-01    3.0
+    # 1999-12-30    1.1
+    # 1999-12-31    2.2
+    # 2000-01-01    3.3
     # 2000-01-02    NaN
-    # 2000-01-03    5.0
+    # 2000-01-03    5.5
     # Freq: D, dtype: float64
 
-    s[0]        # 1.0
-    s[3]        # nan
-    s[100]      # IndexError: index out of bounds
-    s[-1]       # 5.0
-    s[-100]     # IndexError: index out of bounds
-
-    s['a']      # KeyError: 'a'
+    s.index
+    # DatetimeIndex(['1999-12-30', '1999-12-31', '2000-01-01', '2000-01-02', '2000-01-03'],
+    #               dtype='datetime64[ns]', freq='D')
 
     s['2000-01-03']
-    # 5.0
+    # 5.5
 
     s['2000-01']
-    # 2000-01-01    3.0
+    # 2000-01-01    3.3
     # 2000-01-02    NaN
-    # 2000-01-03    5.0
+    # 2000-01-03    5.5
     # Freq: D, dtype: float64
 
     s['1999']
-    # 1999-12-30    1.0
-    # 1999-12-31    2.0
+    # 1999-12-30    1.1
+    # 1999-12-31    2.2
     # Freq: D, dtype: float64
+
+    s[0]        # 1.1
+    s[3]        # nan
+    s[100]      # IndexError: index 100 is out of bounds for axis 0 with size 5
+    s[-1]       # 5.5
+    s[-100]     # IndexError: index -100 is out of bounds for axis 0 with size 5
+
+    s['a']      # KeyError: 'a'
 
 
 Assignments
@@ -121,11 +158,8 @@ Series Getitem
     #. Print values:
 
         * at 2000-02-29,
-        * first in the series,
-        * last 5 elements in the series,
-        * first two weeks in the series,
-        * last month in the series,
-        * three random elements,
+        * first value in the series (without using ``.head()``),
+        * last value in the series (without using ``.tail()``),
         * middle value in the series.
 
 :Polish:
@@ -135,11 +169,8 @@ Series Getitem
     #. Wypisz wartości:
 
         * dnia 2000-02-29,
-        * pierwszy w serii,
-        * ostatnie 5 elementów w serii,
-        * dwa pierwsze tygodnie w serii,
-        * ostatni miesiąc w serii,
-        * trzy losowe element,
+        * pierwszą wartość w serii (nie używając ``.head()``),
+        * ostatnią wartość w serii (nie używając ``.tail()``),
         * środkowa wartość serii.
 
 :Hint:
