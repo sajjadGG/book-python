@@ -216,14 +216,15 @@ Select
 
 Update
 ======
+* Works with ``inplace=True`` parameter.
+
 .. code-block:: python
-    :caption: Fill NA - Scalar value. Has ``inplace=True`` parameter.
+    :caption: Fill NA - Scalar value.
 
     import pandas as pd
-    import numpy as np
 
 
-    s = pd.Series([1.0, np.nan, np.nan 4.0, np.nan, 6.0])
+    s = pd.Series([1.0, None, None, 4.0, None, 6.0])
 
     s.fillna(0.0)
     # 0    1.0
@@ -235,13 +236,12 @@ Update
     # dtype: float64
 
 .. code-block:: python
-    :caption: Forward Fill. ``ffill``: propagate last valid observation forward. Has ``inplace=True`` parameter.
+    :caption: Forward Fill. ``ffill``: propagate last valid observation forward.
 
     import pandas as pd
-    import numpy as np
 
 
-    s = pd.Series([1.0, np.nan, np.nan 4.0, np.nan, 6.0])
+    s = pd.Series([1.0, None, None, 4.0, None, 6.0])
 
     s.ffill()
     # 0    1.0
@@ -253,13 +253,12 @@ Update
     # dtype: float64
 
 .. code-block:: python
-    :caption: Backward Fill. ``bfill``: use NEXT valid observation to fill gap.  Has ``inplace=True`` parameter.
+    :caption: Backward Fill. ``bfill``: use NEXT valid observation to fill gap.
 
     import pandas as pd
-    import numpy as np
 
 
-    s = pd.Series([1.0, np.nan, np.nan 4.0, np.nan, 6.0])
+    s = pd.Series([1.0, None, None, 4.0, None, 6.0])
     s.bfill()
     # 0    1.0
     # 1    4.0
@@ -270,12 +269,12 @@ Update
     # dtype: float64
 
 .. code-block:: python
-    :caption: Interpolate. ``method: str``, default ``linear``
+    :caption: Interpolate. ``method: str``, default ``linear``. Does not have ``inplace=True``
 
     import pandas as pd
-    import numpy as np
 
-    s = pd.Series([1.0, np.nan, np.nan 4.0, np.nan, 6.0])
+
+    s = pd.Series([1.0, None, None, 4.0, None, 6.0])
 
     s.interpolate()
     # 0    1.0
@@ -286,7 +285,7 @@ Update
     # 5    6.0
     # dtype: float64
 
-    s.interpolate('nearest')
+    s.interpolate('nearest')   # requires installation of ``scipy`` library
     # 0    1.0
     # 1    1.0
     # 2    4.0
@@ -295,7 +294,7 @@ Update
     # 5    6.0
     # dtype: float64
 
-    s.interpolate('polynomial', order=2)
+    s.interpolate('polynomial', order=2)  # requires installation of ``scipy`` library
     # 0    1.0
     # 1    2.0
     # 2    3.0
@@ -339,9 +338,9 @@ Drop
     :caption: Drop Rows. Has ``inplace=True`` parameter.
 
     import pandas as pd
-    import numpy as np
 
-    s = pd.Series([1.0, 2.0, 3.0, np.nan, 5.0])
+
+    s = pd.Series([1.0, None, None, 4.0, None, 6.0])
 
     s.dropna()
     # 0    1.0
@@ -353,9 +352,9 @@ Drop
 
 Conversion
 ==========
-* If you have a DataFrame or Series using traditional types that have missing data represented using np.nan
-* There are convenience methods convert_dtypes() in Series and convert_dtypes() in DataFrame that can convert data to use the newer dtypes for integers, strings and booleans
-* This is especially helpful after reading in data sets when letting the readers such as read_csv() and read_excel() infer default dtypes.
+* If you have a ``DataFrame`` or ``Series`` using traditional types that have missing data represented using ``np.nan``
+* There are convenience methods ``convert_dtypes()`` in ``Series`` and ``DataFrame`` that can convert data to use the newer dtypes for integers, strings and booleans
+* This is especially helpful after reading in data sets when letting the readers such as ``read_csv()`` and ``read_excel()`` infer default dtypes.
 
 .. code-block:: python
 
@@ -394,4 +393,44 @@ Conversion
 
 Assignments
 ===========
-.. todo:: Create Assignments
+
+Series NA
+---------
+* Complexity level: easy
+* Lines of code to write: 10 lines
+* Estimated time of completion: 5 min
+* Solution: :download:`solution/series_na.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. From input data create ``pd.Series``
+    #. Fill first missing value with zero
+    #. Drop missing values
+    #. Reindex series (without old copy)
+    #. Compare result with "Output" section (see below)
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Z danych wejściowych stwórz ``pd.Series``
+    #. Wypełnij pierwszą brakującą wartość zerem
+    #. Usuń brakujące wartości
+    #. Zresetuj indeks (bez kopii starego)
+    #. Porównaj wyniki z sekcją "Output" (patrz poniżej)
+
+:Input:
+    .. code-block:: python
+
+        DATA = [1, None, 5, None, 1, 2, 1]
+
+:Output:
+    .. code-block:: python
+
+        s: pd.Series
+        # 0    1.0
+        # 1    0.0
+        # 2    5.0
+        # 3    1.0
+        # 4    2.0
+        # 5    1.0
+        # dtype: float64
+

@@ -3,10 +3,9 @@ import numpy as np
 np.random.seed(0)
 
 
-data = [np.random.randint(0, 9) for n in range(0, 5)]
-index = list('abcde')
-
-s = pd.Series(data, index)
+s = pd.Series(
+    data = np.random.randint(0, 9, size=5),
+    index = list('abcde'))
 # a    5
 # b    0
 # c    3
@@ -22,7 +21,7 @@ s * 10
 # e    70
 # dtype: int64
 
-s * 10 * s
+(s*10) * s
 # a    250
 # b      0
 # c     90
