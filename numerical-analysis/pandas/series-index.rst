@@ -6,7 +6,8 @@ Series Index
 Index Types
 ===========
 * Range Index
-* Numeric Index
+* Int64 Index
+* Float64 Index
 * String Index
 * Datetime Index
 
@@ -28,8 +29,8 @@ Index Types
 
 .. code-block:: python
 
-    DatetimeIndex(['1999-01-28', '1999-01-29', '1999-01-30',
-                   '1999-01-31', '1999-02-01'], dtype='datetime64[ns]', freq='D')
+    DatetimeIndex(['1999-01-28', '1999-01-29', '1999-01-30', '1999-01-31', '1999-02-01'],
+                  dtype='datetime64[ns]', freq='D')
 
 .. code-block:: python
 
@@ -117,23 +118,49 @@ Range Index
     # dtype: object
 
 
-Numeric Index
+Int64 Index
 =============
+* Int64 Index
+
 .. code-block:: python
 
     import pandas as pd
 
     s = pd.Series(
-        data = [1.0, 2.0, 3.0],
-        index = [99, 88, 77])
+        data = [1.1, 2.2, 3.3, 4.4],
+        index = [9, 1337, -2, 0])
 
     s.index
-    # Int64Index([99, 88, 77], dtype='int64')
+    # Int64Index([9, 1337, -2, 0], dtype='int64')
 
     s
-    # 99    1.0
-    # 88    2.0
-    # 77    3.0
+    #  9      1.1
+    #  1337   2.2
+    # -2      3.3
+    #  0      4.4
+    # dtype: float64
+
+
+Float64 Index
+=============
+* Int64 Index
+
+.. code-block:: python
+
+    import pandas as pd
+
+    s = pd.Series(
+        data = [1.1, 2.2, 3.3, 4.4],
+        index = [9.9, 133.7, -2.7, 0.0])
+
+    s.index
+    # Float64Index([9.9, 133.7, -2.7, 0.0], dtype='float64')
+
+    s
+    #  9.9      1.1
+    #  133.7    2.2
+    # -2.7      3.3
+    #  0.0      4.4
     # dtype: float64
 
 
@@ -150,18 +177,17 @@ String Index
     # 'abcdefghijklmnopqrstuvwxyz'
 
     s = pd.Series(
-        data = [1.0, 2.0, 3.0, 4.0, 5.0]
-        index = list(string.ascii_lowercase)[:5])
+        data = [1.1, 2.2, 3.3, 4.4]
+        index = list(string.ascii_lowercase)[:4])
 
     s.index
-    # Index(['a', 'b', 'c', 'd', 'e'], dtype='object')
+    # Index(['a', 'b', 'c', 'd'], dtype='object')
 
     s
-    # a    1.0
-    # b    2.0
-    # c    3.0
-    # d    4.0
-    # e    5.0
+    # a    1.1
+    # b    2.2
+    # c    3.3
+    # d    4.4
     # dtype: float64
 
 .. code-block:: python
