@@ -146,6 +146,23 @@ Named Aggregations
     # 2015-02        1863.0           1.0         14416.0        25
     # 2015-03       10528.0           2.0         21727.0        19
 
+.. code-block:: python
+
+    DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/phones.csv'
+
+    df = pd.read_csv(DATA, parse_dates=['date'])
+    df.drop(columns='index', inplace=True)
+
+    df.groupby(['month', 'item']).agg(
+        duration_count=('duration', 'count'),
+        duration_sum=('duration', 'sum'),
+        duration_min=('duration', 'min'),
+        duration_max=('duration', 'max'),
+        duration_mean=('duration', 'mean'),
+        duration_median=('duration', 'median'),
+        first=('date', 'first'),
+        last=('date', 'last'),
+    )
 
 Renaming index
 ==============
