@@ -26,3 +26,5 @@ df = pd.read_csv(
 df['label'].replace(
     to_replace=labels,
     inplace=True)
+
+df.head(5)

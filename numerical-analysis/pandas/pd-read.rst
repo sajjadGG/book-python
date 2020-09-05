@@ -201,7 +201,7 @@ Read SQL
         db.write(resp.content)
 
     with sqlite3.connect(DATABASE) as db:
-        df = pd.read_sql(SQL, db)
+        df = pd.read_sql(SQL, db, parse_dates=['datetime'])
 
     df
     #     id  ...                                            message
@@ -239,11 +239,11 @@ Read SQL
 Assignments
 ===========
 
-Pandas Read CSV
----------------
+Pandas Read CSV Dates
+---------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
-* Estimated time of completion: 8 min
+* Estimated time of completion: 3 min
 * Solution: :download:`solution/pandas_read_csv_dates.py`
 
 :English:
@@ -264,8 +264,8 @@ Pandas Read CSV
 :Hint:
     * ``parse_dates`` argument
 
-Pandas Read CSV
----------------
+Pandas Read CSV Replace
+-----------------------
 * Complexity level: easy
 * Lines of code to write: 5 lines
 * Estimated time of completion: 3 min
@@ -278,7 +278,7 @@ Pandas Read CSV
     #. Read labels from the first row
     #. Replace data in ``label`` column with values extracted above
     #. Print ``DataFrame``
-    #. Print first 5 and last 10 rows from ``df: pd.DataFrame``
+    #. Print first 5 rows from ``df: pd.DataFrame``
 
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
@@ -286,7 +286,7 @@ Pandas Read CSV
     #. Użyj podanych w ``COLUMNS`` nazw kolumn
     #. Wczytaj nazwy labeli z pierwszego wiersza
     #. Podmień dane w kolumnie ``label`` na wartości wyciągnięte powyżej
-    #. Wypisz pierwsze 5 i ostatnie 10 wierszy z ``df: pd.DataFrame``
+    #. Wypisz pierwsze 5 wierszy z ``df: pd.DataFrame``
 
 :Input:
     .. code-block:: python
@@ -310,7 +310,6 @@ Pandas Read CSV
 :Hint:
     * ``pd.read_csv(url, nrows=0).columns``
     * ``df['label'].replace({'from': 'to'}, inplace=True)``
-    * ``df.last()``
 
 Pandas Read JSON
 ----------------

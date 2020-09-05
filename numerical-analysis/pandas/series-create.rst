@@ -3,15 +3,18 @@ Series Create
 *************
 
 
-``int``
-=======
-* From Python sequence (``list``, ``tuple``, ``set``)
-* From Python range
-* From Numpy ``ndarray`` - most efficient
+From Python sequence
+====================
+* ``list``
+* ``tuple``
+* ``set``
+* ``frozenset``
 
 .. code-block:: python
 
     import pandas as pd
+    import numpy as np
+
 
     pd.Series([1, 2, 3, 4])
     # 0    1
@@ -20,39 +23,6 @@ Series Create
     # 3    4
     # dtype: int64
 
-.. code-block:: python
-
-    import pandas as pd
-
-    pd.Series(range(4))
-    # 0    0
-    # 1    1
-    # 2    2
-    # 3    3
-    # dtype: int64
-
-.. code-block:: python
-
-    import pandas as pd
-    import numpy as np
-
-    pd.Series(np.arange(4))
-    # 0    0
-    # 1    1
-    # 2    2
-    # 3    3
-    # dtype: int64
-
-
-``float``
-=========
-* From Python sequence (``list``, ``tuple``, ``set``)
-* From Numpy ``ndarray`` - most efficient
-
-.. code-block:: python
-
-    import pandas as pd
-
     pd.Series([1., 2., 3., 4.])
     # 0    1.0
     # 1    2.0
@@ -60,52 +30,12 @@ Series Create
     # 3    4.0
     # dtype: float64
 
-.. code-block:: python
-
-    import pandas as pd
-    import numpy as np
-
-    pd.Series(np.arange(4.0))
-    # 0    0.0
-    # 1    1.0
-    # 2    2.0
-    # 3    3.0
-    # dtype: float64
-
-.. code-block:: python
-
-    import pandas as pd
-    import numpy as np
-
-    pd.Series([1, 2, np.nan, 4])
+    pd.Series([1, 2, None, 4])
     # 0    1.0
     # 1    2.0
     # 2    NaN
     # 3    4.0
     # dtype: float64
-
-.. code-block:: python
-
-    import pandas as pd
-    import numpy as np
-
-    pd.Series([1, 2, np.inf, 4])
-    # 0    1.0
-    # 1    2.0
-    # 2    inf
-    # 3    4.0
-    # dtype: float64
-
-
-``str``
-=======
-* From Python sequence (``list``, ``tuple``, ``set``)
-* From Numpy ``ndarray`` - most efficient
-* From ``list(str)``
-
-.. code-block:: python
-
-    import pandas as pd
 
     pd.Series(['a', 'b', 'c', 'd'])
     # 0    a
@@ -118,6 +48,9 @@ Series Create
 
     import pandas as pd
 
+    list('abcd')
+    # ['a', 'b', 'c', 'd']
+
     pd.Series(list('abcd'))
     # 0    a
     # 1    b
@@ -126,8 +59,37 @@ Series Create
     # dtype: object
 
 
-dates
-=====
+From Python range
+=================
+.. code-block:: python
+
+    import pandas as pd
+
+    pd.Series(range(4))
+    # 0    0
+    # 1    1
+    # 2    2
+    # 3    3
+    # dtype: int64
+
+
+From Numpy ``ndarray``
+======================
+.. code-block:: python
+
+    import pandas as pd
+    import numpy as np
+
+    pd.Series(np.arange(4.0))
+    # 0    0.0
+    # 1    1.0
+    # 2    2.0
+    # 3    3.0
+    # dtype: float64
+
+
+From Date Range
+===============
 * From ``pd.Timestamp``
 * From ``pd.date_range()``
 * Read more in :ref:`Date and Time Types`
@@ -136,10 +98,8 @@ dates
 
     import pandas as pd
 
-    apollo11 = pd.date_range(start='1969-07-16', end='1969-07-24')
-    s = pd.Series(apollo11)
 
-    s
+    pd.Series(pd.date_range(start='1969-07-16', end='1969-07-24'))
     # 0   1969-07-16
     # 1   1969-07-17
     # 2   1969-07-18
@@ -151,8 +111,14 @@ dates
     # 8   1969-07-24
     # dtype: datetime64[ns]
 
-    len(apollo11)
-    # 9
+
+Length
+======
+.. code-block:: python
+
+    import pandas as pd
+
+    s = pd.Series([1, 2, 3, 4])
 
     len(s)
     # 9
@@ -170,11 +136,11 @@ Series Create Float
 
 :English:
     #. Create ``pd.Series`` with 5 float numbers
-    #. One of those values must be ``pd.NA``
+    #. One of those values must be ``None``
 
 :Polish:
     #. Stwórz ``pd.Series`` z 5 liczbami zmiennoprzecinkowymi
-    #. Jedną z tych wartości musi być ``pd.NA``
+    #. Jedną z tych wartości musi być ``None``
 
 Series Create Randint
 ---------------------
@@ -185,11 +151,11 @@ Series Create Randint
 
 :English:
     #. Set random seed to zero
-    #. Create ``pd.Series`` with 10 random digits (``int`` from ``0` to ``9``)
+    #. Create ``pd.Series`` with 10 random digits (``int`` from ``0`` to ``9``)
 
 :Polish:
     #. Ustaw ziarno losowości na zero
-    #. Stwórz ``pd.Series`` z 10 losowymi cyframi  (``int`` from ``0` to ``9``)
+    #. Stwórz ``pd.Series`` z 10 losowymi cyframi  (``int`` from ``0`` to ``9``)
 
 Series Create Even
 ------------------
