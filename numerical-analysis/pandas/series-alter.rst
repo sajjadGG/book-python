@@ -11,9 +11,8 @@ Drop Rows
 .. code-block:: python
 
     import pandas as pd
-    import numpy as np
 
-    s = pd.Series([1.0, 2.0, 3.0, np.nan, 5.0])
+    s = pd.Series([1.0, 2.0, 3.0, None, 5.0])
 
     s.drop(1)
     # 0    1.0
@@ -35,9 +34,8 @@ Drop Duplicates
 .. code-block:: python
 
     import pandas as pd
-    import numpy as np
 
-    s = pd.Series([1.0, 2.0, 2.0, np.nan, 5.0])
+    s = pd.Series([1.0, 2.0, 2.0, None, 5.0])
 
     s.drop_duplicates()
     # 0    1.0
@@ -55,9 +53,8 @@ Reset Index
 .. code-block:: python
 
     import pandas as pd
-    import numpy as np
 
-    s = pd.Series([1.0, 2.0, 3.0, np.nan, 5.0])
+    s = pd.Series([1.0, 2.0, 3.0, None, 5.0])
 
     s.drop([0,1], inplace=True)
     # 2    3.0
@@ -71,7 +68,7 @@ Reset Index
     # 1      3  NaN
     # 2      4  5.0
 
-    s.reset_index(drop=True)
+    s.reset_index(drop=True, inplace=True)
     # 0    3.0
     # 1    NaN
     # 2    5.0
@@ -109,4 +106,13 @@ Series Alter
 :Input:
     .. code-block:: python
 
-        DATA = [1, np.nan, 5, np.nan, 1, 2, 1, np.inf]
+        DATA = [1, None, 5, None, 1, 2, 1]
+
+:Output:
+    .. code-block:: python
+
+        s: pd.Series
+        # 0    1.0
+        # 1    0.0
+        # 2    2.0
+        # dtype: float64
