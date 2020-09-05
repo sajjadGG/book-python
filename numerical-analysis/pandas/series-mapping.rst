@@ -405,7 +405,7 @@ Series Cleaning
 ---------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
+* Estimated time of completion: 21 min
 * Solution: :download:`solution/series_mapping_clean.py`
 
 :English:

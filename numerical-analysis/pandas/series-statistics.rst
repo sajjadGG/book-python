@@ -23,16 +23,13 @@ Series Statistics
 
 Count
 =====
+* ``Series.count()`` - Number of non-null observations
 .. code-block:: python
 
-    s.size
-    # 5
-
-.. code-block:: python
-    :caption: Number of non-null observations
-
-    s.count()
-    # 4
+    len(s)          # 5
+    s.size          # 5
+    s.count()       # 4
+    s.nunique()     # 4
 
 .. code-block:: python
 
@@ -43,22 +40,16 @@ Count
     # 1.0    1
     # dtype: int64
 
-.. code-block:: python
-
-    s.nunique()
-    # 4
-
 
 Sum
 ===
+* ``Series.sum()`` - Sum of values
+* ``Series.cumsum()`` - Cumulative sum
+
 .. code-block:: python
-    :caption: Sum of values
 
     s.sum()
     # 11.0
-
-.. code-block:: python
-    :caption: Cumulative sum
 
     s.cumsum()
     # a    1.0
@@ -71,14 +62,13 @@ Sum
 
 Product
 =======
+* ``Series.prod()`` - Product of values
+* ``Series.cumprod()`` - Cumulative product
+
 .. code-block:: python
-    :caption: Product of values
 
     s.prod()
     # 30.0
-
-.. code-block:: python
-    :caption: Cumulative product
 
     s.cumprod()
     # a    1.0
@@ -91,6 +81,15 @@ Product
 
 Extremes
 ========
+* ``Series.min()`` - Minimum value
+* ``Series.idxmin()`` - Index of minimum value (Float, Int, Object, Datetime, Index)
+* ``Series.argmin()`` - Range index of minimum value
+* ``Series.cummin()`` - Cumulative minimum
+* ``Series.max()`` - Maximum value
+* ``Series.idxmax()``  - Index of maximum value (Float, Int, Object, Datetime, Index)
+* ``Series.argmax()``  - Range index of maximum value
+* ``Series.cummax()``  - Cumulative maximum
+
 .. code-block:: python
     :caption: Minimum, index of minimum and cumulative minimum
 

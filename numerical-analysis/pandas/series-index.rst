@@ -35,18 +35,21 @@ Index Types
 .. code-block:: python
 
     import pandas as pd
+    import numpy as np
 
 
     DATA = [11, 22, 33, 44, 55]
 
     # Range Index
     r1 = pd.Series(DATA)
-    r2 = pd.Series(DATA, index=range(4))
+    r2 = pd.Series(DATA, index=range(5))
+    r2 = pd.Series(DATA, index=range(len(DATA)))
 
     # Integer Index
     i1 = pd.Series(DATA, index=[0, 1, 2, 3, 4])
     i2 = pd.Series(DATA, index=np.arange(5))
-    i3 = pd.Series(DATA, index=[99, 3, -5, 0, 77])
+    i3 = pd.Series(DATA, index=np.arange(len(DATA)))
+    i4 = pd.Series(DATA, index=[99, 3, -5, 0, 77])
 
     # Float Index
     f1 = pd.Series(DATA, index=[0.0, 1.1, 2.2, 3.3, 4.4])
@@ -56,18 +59,18 @@ Index Types
     # Object Index
     o1 = pd.Series(DATA, index=['a', 'b', 'c', 'd', 'e'])
     o2 = pd.Series(DATA, index=list('abcde'))
-    o3 = pd.Series(DATA, index=['aaa', 'baba', 'cac', 'do or not', 'e,c,h,o'])
+    o3 = pd.Series(DATA, index=list('abcdefghijklmnopqrstuvwz')[:len(DATA)])
+    o4 = pd.Series(DATA, index=['aaa', 'baba', 'cac', 'do or not', 'e,c,h,o'])
 
     # Datetime Index
-    d1 = pd.Series(DATA, index=pd.date_range('1999-01-28', periods=len(data)))
-    d2 = pd.Series(DATA, index=pd.date_range('1999-01-28', periods=len(data), freq='D'))
+    d1 = pd.Series(DATA, index=pd.date_range('1999-01-28', periods=len(DATA)))
+    d2 = pd.Series(DATA, index=pd.date_range('1999-01-28', periods=len(DATA), freq='D'))
     d3 = pd.Series(DATA, index=[
         pd.Timestamp('1999-01-28'),
         pd.Timestamp('2000-01-01'),
         pd.Timestamp('1961-04-12'),
         pd.Timestamp('1969-07-21'),
-        pd.Timestamp('1970-01-01'),
-    ])
+        pd.Timestamp('1970-01-01')])
 
 
 Range Index

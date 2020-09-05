@@ -219,6 +219,12 @@ Update
 .. code-block:: python
     :caption: Fill NA - Scalar value. Has ``inplace=True`` parameter.
 
+    import pandas as pd
+    import numpy as np
+
+
+    s = pd.Series([1.0, np.nan, np.nan 4.0, np.nan, 6.0])
+
     s.fillna(0.0)
     # 0    1.0
     # 1    0.0
@@ -230,6 +236,12 @@ Update
 
 .. code-block:: python
     :caption: Forward Fill. ``ffill``: propagate last valid observation forward. Has ``inplace=True`` parameter.
+
+    import pandas as pd
+    import numpy as np
+
+
+    s = pd.Series([1.0, np.nan, np.nan 4.0, np.nan, 6.0])
 
     s.ffill()
     # 0    1.0
@@ -243,6 +255,11 @@ Update
 .. code-block:: python
     :caption: Backward Fill. ``bfill``: use NEXT valid observation to fill gap.  Has ``inplace=True`` parameter.
 
+    import pandas as pd
+    import numpy as np
+
+
+    s = pd.Series([1.0, np.nan, np.nan 4.0, np.nan, 6.0])
     s.bfill()
     # 0    1.0
     # 1    4.0
@@ -254,6 +271,11 @@ Update
 
 .. code-block:: python
     :caption: Interpolate. ``method: str``, default ``linear``
+
+    import pandas as pd
+    import numpy as np
+
+    s = pd.Series([1.0, np.nan, np.nan 4.0, np.nan, 6.0])
 
     s.interpolate()
     # 0    1.0

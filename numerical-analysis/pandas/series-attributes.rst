@@ -9,6 +9,12 @@ Series Attributes
 
     s = pd.Series(['a', 'b', 'c'])
 
+    s
+    # 0    a
+    # 1    b
+    # 2    c
+    # dtype: object
+
 
 Shape
 =====
@@ -16,6 +22,14 @@ Shape
 
     s.shape
     # (3,)
+
+
+Size
+====
+.. code-block:: python
+
+    s.size
+    # 3
 
 
 Number of Dimensions
