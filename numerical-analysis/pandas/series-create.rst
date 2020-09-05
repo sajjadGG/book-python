@@ -165,15 +165,10 @@ Series Create Even
 * Solution: :download:`solution/series_create_even.py`
 
 :English:
-    #. Set random seed to zero
     #. Create ``pd.Series`` with 10 even numbers
 
 :Polish:
-    #. Ustaw ziarno losowości na zero
     #. Stwórz ``pd.Series`` z 10 liczbami parzystymi
-
-:Hint:
-    * ``a[a % 2 == 0]``
 
 Series Create Dates
 -------------------

@@ -10,6 +10,7 @@ Numeric Index
     import pandas as pd
     import numpy as np
 
+
     s = pd.Series([1.0, 2.0, 3.0, np.nan, 5.0])
 
     s
@@ -35,6 +36,7 @@ String Index
     import pandas as pd
     import numpy as np
 
+
     s = pd.Series(
         data = [1.0, 2.0, 3.0, np.nan, 5.0],
         index = ['a', 'b', 'c', 'd', 'e'])
@@ -55,7 +57,6 @@ String Index
     s[0]        # 1.0
     s[3]        # nan
     s[100]      # IndexError: index out of bounds
-
     s[-1]       # 5.0
     s[-100]     # IndexError: index out of bounds
 
@@ -66,6 +67,7 @@ Date Index
 
     import pandas as pd
     import numpy as np
+
 
     s = pd.Series(
         data = [1.0, 2.0, 3.0, np.nan, 5.0],
@@ -82,7 +84,6 @@ Date Index
     s[0]        # 1.0
     s[3]        # nan
     s[100]      # IndexError: index out of bounds
-
     s[-1]       # 5.0
     s[-100]     # IndexError: index out of bounds
 
