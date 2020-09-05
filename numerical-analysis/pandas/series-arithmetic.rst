@@ -13,7 +13,7 @@ Vectorized Operations
 * ``s / 2``,  ``s.div(2)``, ``s.divide()``, ``s.__div__(2)``
 * ``s // 2``, ``s.truediv(2)``, ``s.__truediv__(2)``
 * ``s % 2``,  ``s.mod(2)``, ``s.__mod__(2)``
-* ``divmod(s, 2)``, ``s.divmod(2)``, ``s.__divmod__(2)``
+* ``divmod(s, 2)``, ``s.divmod(2)``, ``s.__divmod__(2)``, ``(s//2, s%2)``
 
 .. code-block:: python
 

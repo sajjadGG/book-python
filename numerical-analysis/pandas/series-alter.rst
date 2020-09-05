@@ -88,7 +88,6 @@ Series Alter
 :English:
     #. Use data from "Input" section (see below)
     #. From input data create ``pd.Series``
-    #. Fill empty values with zero
     #. Drop values at index 2, 4, 6
     #. Drop duplicates
     #. Reindex series (without old copy)
@@ -97,7 +96,6 @@ Series Alter
 :Polish:
     #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Z danych wejściowych stwórz ``pd.Series``
-    #. Wypełnij puste wartości zerami
     #. Usuń wartości na indeksach 2, 4, 6
     #. Usuń duplikujące się wartości
     #. Zresetuj indeks (bez kopii starego)
@@ -113,6 +111,6 @@ Series Alter
 
         s: pd.Series
         # 0    1.0
-        # 1    0.0
+        # 1    NaN
         # 2    2.0
         # dtype: float64
