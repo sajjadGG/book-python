@@ -36,13 +36,13 @@ Create from List of Dicts
     import pandas as pd
 
     pd.DataFrame([
-        {'first_name': 'Mark', 'last_name': 'Watney'},
-        {'first_name': 'Jan', 'last_name': 'Twardowski'},
-        {'first_name': 'Ivan', 'last_name': 'Ivanovic'},
-        {'first_name': 'Melissa', 'last_name': 'Lewis'},
+        {'firstname': 'Mark', 'lastname': 'Watney'},
+        {'firstname': 'Jan', 'lastname': 'Twardowski'},
+        {'firstname': 'Ivan', 'lastname': 'Ivanovic'},
+        {'firstname': 'Melissa', 'lastname': 'Lewis'},
     ])
 
-    #   first_name   last_name
+    #    firstname    lastname
     # 0       Mark      Watney
     # 1        Jan  Twardowski
     # 2       Ivan    Ivanovic
@@ -71,11 +71,11 @@ Create from Dict
     import pandas as pd
 
     pd.DataFrame({
-        'first_name': ['Mark', 'Jan', 'Ivan', 'Melissa'],
-        'last_name': ['Watney', 'Twardowski', 'Ivanovic', 'Lewis'],
+        'firstname': ['Mark', 'Jan', 'Ivan', 'Melissa'],
+        'lastname': ['Watney', 'Twardowski', 'Ivanovic', 'Lewis'],
     })
 
-    #   first_name   last_name
+    #    firstname    lastname
     # 0       Mark      Watney
     # 1        Jan  Twardowski
     # 2       Ivan    Ivanovic
@@ -93,13 +93,35 @@ Create from Dict
         'D': np.array([3] * 4, dtype='int32'),
         'E': pd.Categorical(["test", "train", "test", "train"]),
         'F': 'foo',
+        'G': [1,2,3,4],
     })
 
-    #      A           B    C  D      E    F
-    # 0  1.0  1961-04-12  1.0  3   test  foo
-    # 1  1.0  1961-04-12  1.0  3  train  foo
-    # 2  1.0  1961-04-12  1.0  3   test  foo
-    # 3  1.0  1961-04-12  1.0  3  train  foo
+    #      A           B    C  D      E    F  G
+    # 0  1.0  1961-04-12  1.0  3   test  foo  1
+    # 1  1.0  1961-04-12  1.0  3  train  foo  2
+    # 2  1.0  1961-04-12  1.0  3   test  foo  3
+    # 3  1.0  1961-04-12  1.0  3  train  foo  4
+
+
+Create from NDArray
+===================
+.. code-block:: python
+
+    import pandas as pd
+    import numpy as np
+    np.random.seed(0)
+
+    df = pd.DataFrame(np.random.randn(7, 4))
+
+    df
+    #           0         1         2         3
+    # 0  1.764052  0.400157  0.978738  2.240893
+    # 1  1.867558 -0.977278  0.950088 -0.151357
+    # 2 -0.103219  0.410599  0.144044  1.454274
+    # 3  0.761038  0.121675  0.443863  0.333674
+    # 4  1.494079 -0.205158  0.313068 -0.854096
+    # 5 -2.552990  0.653619  0.864436 -0.742165
+    # 6  2.269755 -1.454366  0.045759 -0.187184
 
 
 Assignments

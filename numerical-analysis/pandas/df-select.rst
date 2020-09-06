@@ -104,6 +104,13 @@ Logical AND
 ===========
 * In first and in second query
 
+.. code-block:: text
+
+    1 & 1 -> 1
+    1 & 0 -> 0
+    0 & 1 -> 0
+    0 & 0 -> 0
+
 .. code-block:: python
 
     df[ (df['Morning']<0.0) & (df['Midnight']<0.0) ]
@@ -142,6 +149,13 @@ Logical OR
 ==========
 * In first or in second query
 
+.. code-block:: text
+
+    1 | 1 -> 1
+    1 | 0 -> 1
+    0 | 1 -> 1
+    0 | 0 -> 0
+
 .. code-block:: python
 
     query1 = df['Morning'] < 0.0
@@ -169,6 +183,13 @@ Logical OR
 Logical XOR
 ===========
 * In first or in second, but not in both queries
+
+.. code-block:: text
+
+    1 ^ 1 -> 0
+    1 ^ 0 -> 1
+    0 ^ 1 -> 1
+    0 ^ 0 -> 0
 
 .. code-block:: python
 
@@ -210,14 +231,6 @@ DataFrame Select
     #. Pobierz zbiór danych Iris Dataset :download:`data/iris.csv`
     #. Korzystając z Pandas i kodowania UTF-8 wczytaj plik
     #. Przekonwertuj dane na ``pd.DataFrame``
-    #. Zmień nazwy kolejnych kolumn na:
-
-        * Sepal length
-        * Sepal width
-        * Petal length
-        * Petal width
-        * Species
-
     #. Przefiltruj ``inplace`` kolumnę 'Petal length' i pozostaw wartości powyżej 2.0
     #. Wyświetl 5 pierwszych wierszy
 

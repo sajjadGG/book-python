@@ -164,7 +164,14 @@ Reset Index
 
     import pandas as pd
 
-    DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/numerical-analysis/pandas/data/iris.csv'
+    DATA = [
+        {'sepal_length': 5.4, 'sepal_width': 3.9, 'petal_length': 1.3, 'petal_width': 0.4, 'species': 'setosa'},
+        {'sepal_length': 5.9, 'sepal_width': 3.0, 'petal_length': 5.1, 'petal_width': 1.8, 'species': 'virginica'},
+        {'sepal_length': 6.0, 'sepal_width': 3.4, 'petal_length': 4.5, 'petal_width': 1.6, 'species': 'versicolor'},
+        {'sepal_length': 7.3, 'sepal_width': 2.9, 'petal_length': 6.3, 'petal_width': 1.8, 'species': 'virginica'},
+        {'sepal_length': 5.6, 'sepal_width': 2.5, 'petal_length': 3.9, 'petal_width': 1.1, 'species': 'versicolor'},
+        {'sepal_length': 5.4, 'sepal_width': 3.9, 'petal_length': 1.3, 'petal_width': 0.4, 'species': 'setosa'}
+    ]
 
     df = pd.read_csv(DATA)
 
@@ -202,9 +209,17 @@ DataFrame Sample
     .. todo:: English translation
 
 :Polish:
-    #. Pobierz zbiór danych Iris Dataset :download:`data/astronauts.csv`
+    #. Pobierz zbiór danych Astronautów :download:`data/astronauts.csv`
     #. Korzystając z Pandas wczytaj go do ``pd.DataFrame``
-    #. W danych kolumna "Order" kolejność astronauty/kosmonauty w kosmosie (czasami kilka osób leciało tym samym statkiem i ich numery powinny być takie same, a w danych jest ``pd.Na``).
-    #. Wypełnij brakujące indeksy (kolumna "Order") stosując ``ffill``
+    #. W danych kolumna "Order":
+
+        - określa kolejność astronauty/kosmonauty w kosmosie
+        - Czasami kilka osób leciało tym samym statkiem i ich numery powinny być takie same, a w danych jest ``NaN``.
+        - Wypełnij brakujące indeksy stosując ``df.ffill()``
+
     #. Ustaw wszystkie wiersze w losowej kolejności
     #. Zresetuj index nie pozostawiając kopii zapasowej starego
+    #. Wypisz
+
+        * Pierwsze trzy wiersze
+        * Ostatnie 10% wierszy

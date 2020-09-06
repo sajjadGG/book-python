@@ -102,22 +102,23 @@ Set Index
 
     import pandas as pd
 
+
     df = pd.DataFrame([
-        {'id': 1, 'first_name': 'Mark', 'last_name': 'Watney'},
-        {'id': 2, 'first_name': 'Jan', 'last_name': 'Twardowski'},
-        {'id': 3, 'first_name': 'Ivan', 'last_name': 'Ivanovic'},
-        {'id': 4, 'first_name': 'Melissa', 'last_name': 'Lewis'},
+        {'id': 1, 'firstname': 'Mark', 'lastname': 'Watney'},
+        {'id': 2, 'firstname': 'Jan', 'lastname': 'Twardowski'},
+        {'id': 3, 'firstname': 'Ivan', 'lastname': 'Ivanovic'},
+        {'id': 4, 'firstname': 'Melissa', 'lastname': 'Lewis'},
     ])
 
     df
-    #    id first_name   last_name
+    #    id  firstname    lastname
     # 0   1       Mark      Watney
     # 1   2        Jan  Twardowski
     # 2   3       Ivan    Ivanovic
     # 3   4    Melissa       Lewis
 
     df.set_index('id')
-    #    first_name   last_name
+    #     firstname    lastname
     # id
     # 1        Mark      Watney
     # 2         Jan  Twardowski
