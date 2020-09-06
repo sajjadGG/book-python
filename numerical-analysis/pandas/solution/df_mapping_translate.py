@@ -18,9 +18,11 @@ MONTHS_PLEN = {'styczeń': 'January',
 
 ## Solution 1
 astro = pd.read_csv(DATA)
-astro['Mission Date']\
-     .replace(MONTHS_PLEN, regex=True, inplace=True)\
+
+astro['Mission Date'] = astro['Mission Date'] \
+     .replace(MONTHS_PLEN, regex=True) \
      .apply(pd.Timestamp)
+
 astro
 
 
