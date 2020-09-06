@@ -177,6 +177,7 @@ Matplotlib
     matplotlib/customization.rst
     matplotlib/multiple-figures.rst
     matplotlib/non-linear-axes.rst
+    matplotlib/animation.rst
     matplotlib/example.rst
     matplotlib/lifecycle.rst
     matplotlib/examples.rst
