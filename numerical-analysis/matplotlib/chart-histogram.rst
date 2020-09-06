@@ -1,40 +1,107 @@
+*********
 Histogram
-=========
+*********
 
+
+Rationale
+=========
 * used to display number of elements in specific groups
 
-Using bar chart for histogram data
-----------------------------------
-* Not effective
+
+Syntax
+======
+.. code-block:: python
+
+    import matplotlib.pyplot as plt
+
+
+    x = [1, 2, 3, 4, 2, 3, 2]
+
+    plt.hist(x)
+    plt.show()
+
+
+Histogram
+=========
+* ``rwidth`` - width of a bar in percentage
+* ``bins`` are groups (segments)
 
 .. code-block:: python
 
     import matplotlib.pyplot as plt
 
-    # Population Ages
-    y = [22, 55, 62, 45, 21, 22, 34, 42, 42, 4, 99, 102,
-         110, 120, 121, 122, 130, 111, 115, 112, 80, 75,
-         65, 54, 44, 43, 42, 48]
 
-    x = [x for x,y in enumerate(y)]
+    age = [44, 57, 74, 83, 101, 25, 73, 40, 41, 47, 49, 35, 67, 39, 66,
+           48, 58, 55, 23, 38, 54, 19, 31, 64, 91, 22, 1, 46, 19, 31]
 
-    plt.bar(x, y, label='Population Ages')
-
-    plt.xlabel('Person number')
-    plt.ylabel('Age')
-    plt.title('Bar Chart')
-    plt.legend()
-
+    plt.hist(age, bins=4)
     plt.show()
 
-.. figure:: img/simple-bar-3.png
-    :align: center
-    :width: 50%
+.. code-block:: python
+
+    import matplotlib.pyplot as plt
+
+
+    age = [44, 57, 74, 83, 101, 25, 73, 40, 41, 47, 49, 35, 67, 39, 66,
+           48, 58, 55, 23, 38, 54, 19, 31, 64, 91, 22, 1, 46, 19, 31]
+
+    plt.hist(age, bins=10, rwidth=0.8)
+    plt.show()
+
+.. code-block:: python
+
+    import matplotlib.pyplot as plt
+
+
+    age = [44, 57, 74, 83, 101, 25, 73, 40, 41, 47, 49, 35, 67, 39, 66,
+           48, 58, 55, 23, 38, 54, 19, 31, 64, 91, 22, 1, 46, 19, 31]
+
+    bins = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]
+
+    plt.hist(age, bins, rwidth=0.8)
+    plt.show()
+
+.. code-block:: python
+
+    import matplotlib.pyplot as plt
+
+
+    age = [44, 57, 74, 83, 101, 25, 73, 40, 41, 47, 49, 35, 67, 39, 66,
+           48, 58, 55, 23, 38, 54, 19, 31, 64, 91, 22, 1, 46, 19, 31]
+
+    bins=[0, 6, 18, 25, 65, max(age)]
+
+    plt.hist(age, bins, rwidth=0.8)
+    plt.show()
+
+.. code-block:: python
+
+    import matplotlib.pyplot as plt
+    import numpy as np
+    np.random.seed(0)
+
+
+    mu = 0
+    sigma = 1
+    x = mu + sigma * np.random.randn(10000)
+
+    plt.hist(x, bins=50, rwidth=0.9)
+    plt.show()
+
+.. code-block:: python
+
+    import matplotlib.pyplot as plt
+    import numpy as np
+    np.random.seed(0)
+
+
+    x = np.random.normal(size=10000)
+
+    plt.hist(x, bins=50)
+    plt.show()
 
 Histogram chart
 ---------------
-* Bins are groups (segments)
-
 .. code-block:: python
 
     import matplotlib.pyplot as plt
@@ -62,6 +129,7 @@ Histogram chart
 .. figure:: img/simple-hist-1.png
     :align: center
     :width: 50%
+
 
 Examples
 ========

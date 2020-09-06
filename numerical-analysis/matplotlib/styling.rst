@@ -25,24 +25,6 @@ Figure Anatomy
     Matplotlib Figure Anatomy
 
 
-Line Styles
-===========
-.. figure:: img/matplotlib-style-line.png
-    :width: 75%
-    :align: center
-
-
-Markers
-=======
-.. figure:: img/matplotlib-style-markers-filled.png
-    :width: 75%
-    :align: center
-
-.. figure:: img/matplotlib-style-markers-unfilled.png
-    :width: 75%
-    :align: center
-
-
 Annotations
 ===========
 * Title

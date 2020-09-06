@@ -164,11 +164,11 @@ Matplotlib
     matplotlib/style-intro.rst
     matplotlib/style-basic.rst
 
-    matplotlib/chart-line.rst
-    matplotlib/chart-bar.rst
-    matplotlib/chart-box.rst
-    matplotlib/chart-histogram.rst
+    matplotlib/chart-plot.rst
     matplotlib/chart-scatter.rst
+    matplotlib/chart-bar.rst
+    matplotlib/chart-histogram.rst
+    matplotlib/chart-box.rst
     matplotlib/chart-stacked.rst
     matplotlib/chart-pie.rst
     matplotlib/chart-3d.rst
