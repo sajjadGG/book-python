@@ -364,33 +364,38 @@ DataFrame Statistics
 --------------------
 * Complexity level: medium
 * Lines of code to write: 15 lines
-* Estimated time of completion: 45 min
-* Solution: :download:`solution/df_cars.py`
+* Estimated time of completion: 21 min
+* Solution: :download:`solution/df_statistics_cars.py`
 
 :English:
     .. todo:: English Translation
 
 :Polish:
-    #. Stwórz ``DataFrame`` samochody z:
+    #. Ustaw ziarno losowości na zero
+    #. Stwórz ``cars: pd.DataFrame`` z 50 wierszami:
 
-        * losową kolumną liczb całkowitych przebieg z przedziału [0, 200 000]
-        * losową kolumną spalanie z przedziału [2, 20]
+        * kolumna ``mileage`` - losowe ``int`` [0, 200_000)
+        * kolumna ``consumption`` - losowe ``int`` [0, 20)
 
-    #. Dodaj kolumnę marka:
+    #. Dodaj kolumnę ``status`` o wartościach:
 
-        * jeżeli samochód ma spalanie [0, 5] marka to VW
-        * jeżeli samochód ma spalanie [6, 10] marka to Ford
-        * jeżeli samochód ma spalanie 11 i więcej, marka to UAZ
+        * ``old`` jeżeli ``mileage`` powyżej 100_000 km
+        * ``young`` jeżeli ``mileage`` od 10_000 km do 50_000 km
+        * ``new`` jeżeli ``mileage`` od 0 do 10_000 km
 
-    #. Dodaj kolumnę pochodzenie:
+    #. Używając ``pd.cut`` dodaj kolumnę ``type``:
 
-        * jeżeli przebieg poniżej 100 km, pochodzenie nowy
-        * jeżeli przebieg powyżej 100 km, pochodzenie uzywany
-        * jeżeli przebieg powyżej 100 000 km, pochodzenie z niemiec
+        * jeżeli ``consumption`` [0, 1] ``type`` to ``electric``
+        * jeżeli ``consumption`` [2, 10] ``type`` to ``car``
+        * jeżeli ``consumption`` 11 i więcej, ``type`` to ``truck``
 
-    #. Przeanalizuj dane statystycznie
+    #. Przeanalizuj dane statystycznie:
 
-        * sprawdź liczność grup
-        * wykonaj analizę statystyczną
+        * Wypisz podstawowe statystyki opisowe (``DataFrame.describe()``)
+        * Sprawdź liczność grup (``DataFrame.count()``, ``Series.value_counts()``)
 
-    #. Pogrupuj dane po marce i po pochodzenie
+:Zadanie nadobowiązkowe:
+    #. (wymaga wiedzy z przyszłych rozdziałów)
+    #. Narysuj histogram dla ``consumption``
+    #. Pogrupuj dane po ``type`` i ``status`` a następnie wypisz statystyki opisowe
+    #. Pogrupuj dane po ``type`` i ``status``, wypisz statystyki opisowe a następnie je transponuj

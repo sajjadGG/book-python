@@ -318,97 +318,74 @@ Conversion
 Assignments
 ===========
 
-DataFrame Mapping
------------------
+DataFrame Mapping Split
+-----------------------
 * Complexity level: easy
-* Lines of code to write: 10 lines
-* Estimated time of completion: 15 min
+* Lines of code to write: 5 lines
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/df_mapping_split.py`
 
 :English:
     #. Download :download:`data/phones.csv`
-    #. Use ``parse_dates=['date']`` on reading file
-    #. Split column with datetime into two separate: date and time columns
+    #. Read data as ``phones: pd.DataFrame``
+    #. Parse data in ``date`` column as ``datetime`` object
+    #. Split column ``date`` with into two separate: date and time columns
 
 :Polish:
     #. Pobierz :download:`data/phones.csv`
-    #. Użyj ``parse_dates=['date']`` przy wczytywaniu pliku
-    #. Podziel kolumnę z datetime na dwie osobne: datę i czas
+    #. Wczytaj dane jako ``phones: pd.DataFrame``
+    #. Sparsuj dane w kolumnie ``date`` jako obiekty ``datetime``
+    #. Podziel kolumnę z ``date`` na dwie osobne: datę i czas
 
 :Hint:
-    * ``phones['date'].dt``
+    * ``help(phones['date'].dt)``
 
-DataFrame Cleaning Translate
-----------------------------
+DataFrame Mapping Translate
+---------------------------
 * Complexity level: easy
-* Lines of code to write: 10-15 lines
+* Lines of code to write: 5 lines
 * Estimated time of completion: 13 min
-* Solution: :download:`solution/df_mapping_substitute.py`
+* Solution: :download:`solution/df_mapping_translate.py`
 
 :English:
+    #. Use data from "Input" section (see below)
     #. Download :download:`data/astro-dates.csv`
     #. Set header and index to data from file
     #. Convert Polish month names to English
     #. Parse dates to ``datetime`` objects
 
 :Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
     #. Pobierz :download:`data/astro-dates.csv`
     #. Ustaw nagłówek i index na dane zaczytane z pliku
     #. Przekonwertuj polskie nazwy miesięcy na angielskie
     #. Sparsuj daty do obiektów ``datetime``
 
+:Input:
+    .. code-block:: python
+
+        MONTHS_PLEN = {'styczeń': 'January',
+                       'luty': 'February',
+                       'marzec': 'March',
+                       'kwiecień': 'April',
+                       'maj': 'May',
+                       'czerwiec': 'June',
+                       'lipiec': 'July',
+                       'sierpień': 'August',
+                       'wrzesień': 'September',
+                       'październik': 'October',
+                       'listopad': 'November',
+                       'grudzień': 'December'}
+
 :Hint:
     * ``df['column'].replace(regex=True)``
-    * ``df['column'].apply()``
     * ``pd.Timestamp``
 
-DataFrame Cleaning Substitute
------------------------------
-* Complexity level: easy
-* Lines of code to write: 15 lines
-* Estimated time of completion: 15 min
-* Solution: :download:`solution/df_mapping_translate.py`
-
-:English:
-    #. Download :download:`data/trl.xlsx`
-    #. Select ``Polish`` spreadsheet
-    #. Set header and index to data from file
-    #. Mind the encoding
-    #. Substitute Polish Diacritics to English alphabet letters
-    #. Compare ``df.replace(regex=True)`` with ``df.applymap()``
-
-:Polish:
-    #. Pobierz :download:`data/trl.xlsx`
-    #. Wybierz arkusz ``Polish``
-    #. Ustaw nagłówek i index na dane zaczytane z pliku
-    #. Zwróć uwagę na encoding
-    #. Podmień polskie znaki diakrytyczne na litery z alfabetu angielskiego
-    #. Porównaj ``df.replace(regex=True)`` z ``df.applymap()``
-
-:Example:
-    .. code-block:: text
-        :caption: Polish -> English conversion table
-
-        ą: a
-        ć: c
-        ę: e
-        ł: l
-        ń: n
-        ó: o
-        ś: s
-        ż: z
-        ź: z
-
-:Hint:
-        * ``df.set_index()``
-        * ``df.applymap()``
-        * ``s.map()``
-
-DataFrame Cleaning Month number to text
----------------------------------------
+DataFrame Mapping Month
+-----------------------
 * Complexity level: easy
 * Lines of code to write: 10 lines
-* Estimated time of completion: 10 min
+* Estimated time of completion: 13 min
 * Solution: :download:`solution/df_mapping_month.py`
 
 :English:
@@ -429,21 +406,44 @@ DataFrame Cleaning Month number to text
     #. ``month_name``: January
 
 :Input:
-    .. code-block:: text
+    .. code-block:: python
 
-        1, January
-        2, February
-        3, March
-        4, April
-        5, May
-        6, June
-        7, July
-        8, August
-        9, September
-        10, October
-        11, November
-        12, December
+        MONTHS_EN = ['January', 'February', 'March', 'April',
+                     'May', 'June', 'July', 'August', 'September',
+                     'October', 'November', 'December']
 
 :Hint:
-    * ``Series.str.split()``
-    * ``df[ ['A', 'b'] ]``
+    * ``Series.str.split(expand=True)``
+    * ``df[ ['A', 'B'] ] = ...``
+
+DataFrame Mapping Substitute
+----------------------------
+* Complexity level: medium
+* Lines of code to write: 10 lines
+* Estimated time of completion: 13 min
+* Solution: :download:`solution/df_mapping_substitute.py`
+
+:English:
+    #. Use data from "Input" section (see below)
+    #. Download :download:`data/trl.xlsx`
+    #. Select ``Polish`` spreadsheet
+    #. Set header and index to data from file
+    #. Mind the encoding
+    #. Substitute Polish Diacritics to English alphabet letters
+    #. Compare ``df.replace(regex=True)`` with ``df.applymap()``
+
+:Polish:
+    #. Użyj danych z sekcji "Input" (patrz poniżej)
+    #. Pobierz :download:`data/trl.xlsx`
+    #. Wybierz arkusz ``Polish``
+    #. Ustaw nagłówek i index na dane zaczytane z pliku
+    #. Zwróć uwagę na encoding
+    #. Podmień polskie znaki diakrytyczne na litery z alfabetu angielskiego
+    #. Porównaj ``df.replace(regex=True)`` z ``df.applymap()``
+
+:Example:
+    .. code-block:: python
+
+        LETTERS_PLEN = {'ą': 'a', 'ć': 'c', 'ę': 'e',
+                        'ł': 'l', 'ń': 'n', 'ó': 'o',
+                        'ś': 's', 'ż': 'z', 'ź': 'z'}
