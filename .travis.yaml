@@ -1,0 +1,15 @@
+language: python
+
+cache:
+  directories:
+  - "$HOME/.cache/pip"
+  - "$HOME/.pyenv"
+
+python:
+  - "3.9"
+
+install:
+  - pip install -r requirements.txt
+
+script:
+  - sphinx-build -a -E -j auto --color -b doctest . /tmp/

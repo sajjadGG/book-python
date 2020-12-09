@@ -366,7 +366,7 @@ Conditional Expression
     # astronaut
 
 .. code-block:: python
-    :caption: :ref:`Type Str Methods is Numeric`
+    :caption: Type Str Methods is Numeric
 
     age = input('What is your age?: ')
     # What is your age?: 10<ENTER>

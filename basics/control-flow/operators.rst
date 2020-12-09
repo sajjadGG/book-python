@@ -1,8 +1,5 @@
-.. _Conditional Operators:
-
-*********************
 Conditional Operators
-*********************
+=====================
 
 
 Equals
@@ -74,7 +71,7 @@ Not-Equals
 Greater Than
 ============
 * ``>`` - ``gt`` (greater than)
-* Set uses ``>`` for ``set.issuperset()``. More information in :ref:`Sequence Set`
+* Set uses ``>`` for ``set.issuperset()``
 
 .. code-block:: python
 
