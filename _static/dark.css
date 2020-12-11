@@ -29,10 +29,10 @@
     --hover: #22242A; /* also for left menu*/
     --active: #12141A; /* also for left menu*/
 
-    --todo: #121212;
+    --todo: #bdc7d0;
     --warning: #cf6679;
-    --tip: #03dac6;
-    --note: #111;
+    --tip: #45C587;
+    --note: #bdc7d0;
 
 }
 
