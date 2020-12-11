@@ -1,33 +1,33 @@
 :root {
-    --menu-background: #111;
-    --menu-header: #aaa;
-    --menu-text: #aaa;
+    --menu-background: #12141A;
+    --menu-header: #bdc7d0;
+    --menu-text: #bdc7d0;
 
-    --body-background: #000;
-    --body-header: #aaa;
-    --body-text: #aaa;
+    --body-background: #0c0e12;
+    --body-header: #bdc7d0;
+    --body-text: #bdc7d0;
 
-    --selection-background: #888;
+    --selection-background: #12141A;
     --selection-text: #eee;
 
-    --code-background: #111;
+    --code-background: #12141A;
     --code-border: none;
-    --code-text: #aaa;
-    --code-highlight: #111;
+    --code-text: #bdc7d0;
+    --code-highlight: #12141A;
     --code-output: #444;
 
     --table-background: none;
-    --table-border: #000;
+    --table-border: #24282e;
     --table-header: #aaa;
     --table-text: #aaa;
 
-    --search-text: #aaa;
-    --search-border: #aaa;
+    --search-text: #bdc7d0;
+    --search-border: #bdc7d0;
     --search-background: none;
 
     --links: #eee;
-    --hover: #1e1e1e;
-    --active: #151515;
+    --hover: #22242A; /* also for left menu*/
+    --active: #12141A; /* also for left menu*/
 
     --todo: #121212;
     --warning: #cf6679;
