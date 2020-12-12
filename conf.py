@@ -166,6 +166,7 @@ today = date.today().strftime('%Y-%m-%d')
 trim_doctest_flags = False
 # doctest_global_cleanup = """"""
 # doctest_default_flags = doctest.ELLIPSIS | doctest.IGNORE_EXCEPTION_DETAIL | doctest.NORMALIZE_WHITESPACE
+# doctest_default_flags = doctest.FAIL_FAST | doctest.IGNORE_EXCEPTION_DETAIL
 
 version = f'#{sha1}, {today}'
 release = f'#{sha1}, {today}'

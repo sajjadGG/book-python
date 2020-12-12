@@ -80,10 +80,11 @@ Dates and Timezones
 * ``1961-04-12 06:07:00 UTC`` - Yuri Gagarin's launch
 * ``1969-07-21 02:56:15 UTC`` - Apollo 11 Neil Armstrong's first step on the Moon
 
+    >>> from datetime import datetime, date, timezone
     >>> DATA = {"mission": "Ares 3",
-    ...         "launch_date": date(2035, 6, 29),
+    ...         "launch_date": datetime(2035, 6, 29, tzinfo=timezone.utc),
     ...         "destination": 'Mars',
-    ...         "destination_landing": date(2035, 11, 7),
+    ...         "destination_landing": datetime(2035, 11, 7, tzinfo=timezone.utc),
     ...         "destination_location": "Acidalia Planitia",
     ...         "crew": [{"astronaut": 'Melissa Lewis', "date_of_birth": date(1995, 7, 15)},
     ...                  {"astronaut": 'Rick Martinez', "date_of_birth": date(1996, 1, 21)},
@@ -91,6 +92,20 @@ Dates and Timezones
     ...                  {"astronaut": 'Chris Beck', "date_of_birth": date(1999, 8, 2)},
     ...                  {"astronaut": 'Beth Johansen', "date_of_birth": date(2006, 5, 9)},
     ...                  {"astronaut": 'Mark Watney', "date_of_birth": date(1994, 10, 12)}]}
+
+.. code-block:: json
+
+    {"mission": "Ares 3",
+     "launch_date": "2035-06-29T00:00:00+00:00",
+     "destination": "Mars",
+     "destination_landing": "2035-11-07T00:00:00+00:00",
+     "destination_location": "Acidalia Planitia",
+     "crew": [{"astronaut": "Melissa Lewis", "date_of_birth": "1995-07-15"},
+              {"astronaut": "Rick Martinez", "date_of_birth": "1996-01-21"},
+              {"astronaut": "Alex Vogel", "date_of_birth": "1994-11-15"},
+              {"astronaut": "Chris Beck", "date_of_birth": "1999-08-02"},
+              {"astronaut": "Beth Johansen", "date_of_birth": "2006-05-09"},
+              {"astronaut": "Mark Watney", "date_of_birth": "1994-10-12"}]}
 
 
 Characters

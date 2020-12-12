@@ -46,6 +46,37 @@ JSON Syntax
         {"street": "Linder Hoehe", "city": "Köln", "post_code": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}]
 
 
+.. code-block:: json
+    :caption: JSON or Python ``list[dict]``?
+
+    {"mission": "Ares 3",
+     "launch_date": datetime(2035, 6, 29, tzinfo=timezone.utc),
+     "destination": 'Mars',
+     "destination_landing": datetime(2035, 11, 7, tzinfo=timezone.utc),
+     "destination_location": "Acidalia Planitia",
+     "crew": [{"astronaut": 'Melissa Lewis', "date_of_birth": date(1995, 7, 15)},
+              {"astronaut": 'Rick Martinez', "date_of_birth": date(1996, 1, 21)},
+              {"astronaut": 'Alex Vogel', "date_of_birth": date(1994, 11, 15)},
+              {"astronaut": 'Chris Beck', "date_of_birth": date(1999, 8, 2)},
+              {"astronaut": 'Beth Johansen', "date_of_birth": date(2006, 5, 9)},
+             {"astronaut": 'Mark Watney', "date_of_birth": date(1994, 10, 12)}]}
+
+.. code-block:: json
+    :caption: JSON or Python ``list[dict]``?
+
+    {"mission": "Ares 3",
+     "launch_date": "2035-06-29T00:00:00+00:00",
+     "destination": "Mars",
+     "destination_landing": "2035-11-07T00:00:00+00:00",
+     "destination_location": "Acidalia Planitia",
+     "crew": [{"astronaut": "Melissa Lewis", "date_of_birth": "1995-07-15"},
+              {"astronaut": "Rick Martinez", "date_of_birth": "1996-01-21"},
+              {"astronaut": "Alex Vogel", "date_of_birth": "1994-11-15"},
+              {"astronaut": "Chris Beck", "date_of_birth": "1999-08-02"},
+              {"astronaut": "Beth Johansen", "date_of_birth": "2006-05-09"},
+              {"astronaut": "Mark Watney", "date_of_birth": "1994-10-12"}]}
+
+
 Mapping to JSON
 ===============
 * ``json.dumps(DATA: dict) -> str``
@@ -57,11 +88,15 @@ Mapping to JSON
     import json
 
 
-    DATA = {'firstname': 'Jan',
-            'lastname': 'Twardowski'}
+    DATA = {'firstname': 'Mark',
+            'lastname': 'Watney'}
 
-    json.dumps(DATA)
-    # '{"firstname": "Jan", "lastname": "Twardowski"}'
+    result = json.dumps(DATA)
+
+    type(result)
+    # <class 'str'>
+    print(result)
+    # {"firstname": "Mark", "lastname": "Watney"}
 
 .. code-block:: python
     :caption: Deserializing mapping from JSON
@@ -69,17 +104,20 @@ Mapping to JSON
     import json
 
 
-    DATA = '{"firstname": "Jan", "lastname": "Twardowski"}'
+    DATA = '{"firstname": "Mark", "lastname": "Watney"}'
 
-    json.loads(DATA)
-    # {'firstname': 'Jan',
-    #  'lastname': 'Twardowski'}
+    result = json.loads(DATA)
+
+    type(result)
+    # <class 'dict'>
+    print(result)
+    # {'firstname': 'Mark', 'lastname': 'Watney'}
 
 
 Sequence to JSON
 ================
-* ``json.dumps(DATA: Sequence[dict]) -> str``
-* ``json.loads(DATA: str) -> list[dict]``
+* ``json.dumps(data: Sequence[dict]) -> str``
+* ``json.loads(data: str) -> list[dict]``
 
 .. code-block:: python
     :caption: Serializing sequence to JSON
@@ -87,26 +125,33 @@ Sequence to JSON
     import json
 
 
-    DATA = [{'firstname': 'Jan', 'lastname': 'Twardowski'},
-            {'firstname': 'Melissa', 'lastname': 'Lewis'},
+    DATA = [{'firstname': 'Melissa', 'lastname': 'Lewis'},
+            {'firstname': 'Rick', 'lastname': 'Martinez'},
             {'firstname': 'Mark', 'lastname': 'Watney'}]
 
-    json.dumps(DATA)
-    # [{"firstname": "Jan", "lastname": "Twardowski"},
-    #  {"firstname": "Melissa", "lastname": "Lewis"},
+    result = json.dumps(DATA)
+
+    type(result)
+    # <class 'str'>
+    print(result)
+    # [{"firstname": "Melissa", "lastname": "Lewis"},
+    #  {"firstname": "Rick", "lastname": "Martinez"},
     #  {"firstname": "Mark", "lastname": "Watney"}]
 
 .. code-block:: python
 
     import json
-    from pprint import pprint
 
 
-    DATA = '[{"firstname": "Jan", "lastname": "Twardowski"}, {"firstname": "Melissa", "lastname": "Lewis"}, {"firstname": "Mark", "lastname": "Watney"}]'
+    DATA = '[{"firstname": "Melissa", "lastname": "Lewis"}, {"firstname": "Rick", "lastname": "Martinez"}, {"firstname": "Mark", "lastname": "Watney"}]'
 
-    json.loads(DATA)
-    # [{'firstname': 'Jan', 'lastname': 'Twardowski'},
-    #  {'firstname': 'Melissa', 'lastname': 'Lewis'},
+    result = json.loads(DATA)
+
+    type(result)
+    # <class 'list'>
+    print(result)
+    # [{'firstname': 'Melissa', 'lastname': 'Lewis'},
+    #  {'firstname': 'Rick', 'lastname': 'Martinez'},
     #  {'firstname': 'Mark', 'lastname': 'Watney'}]
 
 
@@ -142,7 +187,7 @@ Sequence to JSON
 
 Write JSON File
 ===============
-* ``json.dump(DATA: dict, file: TextIOWrapper) -> None``
+* ``json.dump(data: dict, file: TextIOWrapper) -> None``
 * file extension ``.json``
 
 .. code-block:: python
@@ -150,15 +195,18 @@ Write JSON File
 
     import json
 
-
     FILE = r'_temporary.json'
-    DATA = {'firstname': 'Jan',
-            'lastname': 'Twardowski'}
+
+    DATA = {'firstname': 'Mark',
+            'lastname': 'Watney'}
 
     with open(FILE, mode='w') as file:
         json.dump(DATA, file)
 
-    # {"firstname": "Jan", "lastname": "Twardowski"}
+
+    print(open(FILE).read())
+    # {"firstname": "Mark", "lastname": "Watney"}
+
 
 
 Read JSON File
@@ -173,55 +221,95 @@ Read JSON File
 
 
     FILE = r'_temporary.json'
+    DATA = '{"firstname": "Mark", "lastname": "Watney"}'
+    open(FILE, mode='w').write(DATA)
 
 
     with open(FILE) as file:
         result = json.load(file)
 
-    result
-    # {'firstname': 'Jan', 'lastname': 'Twardowski'}
+
+    type(result)
+    # <class 'dict'>
+    print(result)
+    # {'firstname': 'Mark', 'lastname': 'Watney'}
+
 
 
 Datetime to JSON
 ================
-.. code-block:: python
-    :caption: Exception during encoding datetime
+* problem with ``date``, ``datetime``, ``time``
 
-    from datetime import datetime, date
+Exception during encoding datetime:
+
+.. code-block:: python
+
+    from datetime import date
     import json
 
+    DATA = {'firstname': 'Mark',
+            'lastname': 'Watney',
+            'date_of_birth': date(1994, 10, 12)}
 
-    DATA = {'name': 'Jan Twardowski',
-            'date': date(1961, 4, 12),
-            'datetime': datetime(1969, 7, 21, 2, 56, 15)}
-
-    json.dumps(DATA)
+    result = json.dumps(DATA)
     # Traceback (most recent call last):
     # TypeError: Object of type date is not JSON serializable
 
-.. code-block:: python
-    :caption: Encoding ``datetime`` and ``date``. Encoder will be used, when standard procedure fails
-
-    from datetime import datetime, date
+    from datetime import date
     import json
 
+    DATA = {'firstname': 'Mark',
+            'lastname': 'Watney',
+            'date_of_birth': date(1994, 10, 12)}
 
-    DATA = {'name': 'Jan Twardowski',
-            'date': date(1961, 4, 12),
-            'datetime': datetime(1969, 7, 21, 2, 56, 15)}
+.. code-block:: python
+
+    from datetime import date
+    import json
+
+    DATA = {'firstname': 'Mark',
+            'lastname': 'Watney',
+            'date_of_birth': date(1994, 10, 12)}
+
+    json.JSONEncoder.default = lambda self, date: date.isoformat()
+    result = json.dumps(DATA)
+
+    type(result)
+    # <class 'str'>
+    print(result)
+    # {"firstname": "Mark", "lastname": "Watney", "date_of_birth": "1994-10-12"}
+
+Encoder will be used, when standard procedure fails:
+
+.. code-block:: python
+
+    from datetime import date
+    import json
+
+    DATA = {'firstname': 'Mark',
+            'lastname': 'Watney',
+            'date_of_birth': date(1994, 10, 12),
+            'first_mission': datetime(1969, 7, 21, 2, 56, 15)}
 
 
-    class JSONDatetimeEncoder(json.JSONEncoder):
+    class MyEncoder(json.JSONEncoder):
         def default(self, value):
             if isinstance(value, datetime):
-                return value.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
+                return value.strftime('%Y-%m-%dT%H:%M:%S.%f+00:00')
             if isinstance(value, date):
                 return value.strftime('%Y-%m-%d')
 
 
-    result = json.dumps(DATA, cls=JSONDatetimeEncoder)
+    result = json.dumps(DATA, cls=MyEncoder)
+
+    type(result)
+    # <class 'str'>
     print(result)
-    # '{"name": "Jan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T02:56:15.000Z"}'
+    # {"firstname": "Mark",
+    #  "lastname": "Watney",
+    #  "date_of_birth": "1994-10-12",
+    #  "first_mission": "1969-07-21T02:56:15.000000+00:00"}
+
 
 JSON to Datetime
 ================
@@ -229,53 +317,152 @@ JSON to Datetime
     :caption: Simple loading returns ``str`` not ``datetime`` or ``date``
 
     import json
-    from pprint import pprint
 
 
-    DATA = '{"name": "Jan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T02:56:15.000Z"}'
+    DATA = '{"firstname": "Mark", "lastname": "Watney", "date_of_birth": "1994-10-12"}'
 
     result = json.loads(DATA)
-    pprint(result)
-    # {'date': '1961-04-12',
-    #  'datetime': '1969-07-21T02:56:15.000Z',
-    #  'name': 'Jan Twardowski'}
+    print(result)
+    # {'firstname': 'Mark',
+    #  'lastname': 'Watney',
+    #  'date_of_birth': '1994-10-12'}
+
+.. code-block:: python
+    :caption: Simple loading returns ``str`` not ``datetime`` or ``date``
+
+    import json
+    from datetime import date
+
+
+    DATA = '{"firstname": "Mark", "lastname": "Watney", "date_of_birth": "1994-10-12"}'
+
+    def mydecoder(data: dict) -> dict:
+        for field, value in data.items():
+            if field == 'date_of_birth':
+                data[field] = date.fromisoformat(value)
+        return data
+
+    result = json.loads(DATA, object_hook=mydecoder)
+
+    type(result)
+    # <class 'dict'>
+    print(result)
+    # {'firstname': 'Mark', 'lastname': 'Watney', 'date_of_birth': datetime.date(1994, 10, 12)}
 
 .. code-block:: python
     :caption: Decoding ``datetime`` and ``date``
 
     from datetime import datetime, timezone
     import json
-    from pprint import pprint
 
 
     DATA = '{"name": "Jan Twardowski", "date": "1961-04-12", "datetime": "1969-07-21T02:56:15.000Z"}'
 
 
-    class JSONDatetimeDecoder(json.JSONDecoder):
-        DATE_FIELDS = ['date', 'date_of_birth']
-        DATETIME_FIELDS = ['datetime']
-
+    class MyDecoder(json.JSONDecoder):
         def __init__(self):
             super().__init__(object_hook=self.default)
 
         def default(self, result: dict) -> dict:
             for field, value in result.items():
-
-                if field in self.DATE_FIELDS:
+                if field in ['date', 'date_of_birth']:
                     value = datetime.strptime(value, '%Y-%m-%d').date()
-
-                if field in self.DATETIME_FIELDS:
+                if field in ['datetime']:
                     value = datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%fZ').replace(tzinfo=timezone.utc)
-
                 result[field] = value
             return result
 
 
-    result = json.loads(DATA, cls=JSONDatetimeDecoder)
+    result = json.loads(DATA, cls=MyDecoder)
     pprint(result)
-    # {'date': datetime.date(1961, 4, 12),
-    #  'datetime': datetime.datetime(1969, 7, 21, 2, 56, 15, tzinfo=datetime.timezone.utc),
-    #  'name': 'Jan Twardowski'}
+    # {'name': 'Jan Twardowski',
+    #  'date': datetime.date(1961, 4, 12),
+    #  'datetime': datetime.datetime(1969, 7, 21, 2, 56, 15, tzinfo=datetime.timezone.utc)}
+
+.. code-block:: python
+
+    from datetime import datetime, date, timezone
+    import json
+
+    FILE = '_temporary.json'
+
+    DATA = {"mission": "Ares 3",
+            "launch_date": datetime(2035, 6, 29, tzinfo=timezone.utc),
+            "destination": 'Mars',
+            "destination_landing": datetime(2035, 11, 7, tzinfo=timezone.utc),
+            "destination_location": "Acidalia Planitia",
+            "crew": [{"astronaut": 'Melissa Lewis',
+                      "date_of_birth": date(1995, 7, 15)},
+                     {"astronaut": 'Rick Martinez',
+                      "date_of_birth": date(1996, 1, 21)},
+                     {"astronaut": 'Alex Vogel',
+                      "date_of_birth": date(1994, 11, 15)},
+                     {"astronaut": 'Chris Beck',
+                      "date_of_birth": date(1999, 8, 2)},
+                     {"astronaut": 'Beth Johansen',
+                      "date_of_birth": date(2006, 5, 9)},
+                     {"astronaut": 'Mark Watney',
+                      "date_of_birth": date(1994, 10, 12)}]}
+
+
+    class MyEncoder(json.JSONEncoder):
+        def default(self, value: datetime) -> str:
+            return value.isoformat()
+
+
+    class MyDecoder(json.JSONDecoder):
+        date_of_birth: date
+        launch_date: datetime
+        destination_landing: datetime
+
+        def __init__(self) -> None:
+            super().__init__(object_hook=lambda data: {
+                    field: getattr(self, method)(value)
+                    for field, value in data.items()
+                    if (method := self.__annotations__.get(field, str).__name__)})
+
+        def datetime(self, value: str) -> date:
+            return datetime.fromisoformat(value)
+
+        def date(self, value: str) -> date:
+            return datetime.fromisoformat(value).date()
+
+        def str(self, value: str) -> str:
+            return value
+
+
+    result = json.dumps(DATA, cls=MyEncoder)
+    type(result)
+    # <class 'str'>
+    print(result)
+    # {"mission": "Ares 3",
+    #  "launch_date": "2035-06-29T00:00:00+00:00",
+    #  "destination": "Mars",
+    #  "destination_landing": "2035-11-07T00:00:00+00:00",
+    #  "destination_location": "Acidalia Planitia",
+    #  "crew": [{"astronaut": "Melissa Lewis", "date_of_birth": "1995-07-15"},
+    #           {"astronaut": "Rick Martinez", "date_of_birth": "1996-01-21"},
+    #           {"astronaut": "Alex Vogel", "date_of_birth": "1994-11-15"},
+    #           {"astronaut": "Chris Beck", "date_of_birth": "1999-08-02"},
+    #           {"astronaut": "Beth Johansen", "date_of_birth": "2006-05-09"},
+    #           {"astronaut": "Mark Watney", "date_of_birth": "1994-10-12"}]}
+
+
+    result = json.loads(result, cls=MyDecoder)
+    type(result)
+    # <class 'dict'>
+    print(result)
+    # {'mission': 'Ares 3',
+    #  'launch_date': datetime.datetime(2035, 6, 29, 0, 0, tzinfo=datetime.timezone.utc),
+    #  'destination': 'Mars',
+    #  'destination_landing': datetime.datetime(2035, 11, 7, 0, 0, tzinfo=datetime.timezone.utc),
+    #  'destination_location': 'Acidalia Planitia',
+    #  'crew': [{'astronaut': 'Melissa Lewis', 'date_of_birth': datetime.date(1995, 7, 15)},
+    #           {'astronaut': 'Rick Martinez', 'date_of_birth': datetime.date(1996, 1, 21)},
+    #           {'astronaut': 'Alex Vogel', 'date_of_birth': datetime.date(1994, 11, 15)},
+    #           {'astronaut': 'Chris Beck', 'date_of_birth': datetime.date(1999, 8, 2)},
+    #           {'astronaut': 'Beth Johansen', 'date_of_birth': datetime.date(2006, 5, 9)},
+    #           {'astronaut': 'Mark Watney', 'date_of_birth': datetime.date(1994, 10, 12)}]}
 
 
 Python Object to JSON
@@ -284,44 +471,77 @@ Python Object to JSON
     :caption: Encoding nested objects with relations to JSON
 
     import json
+    from dataclasses import dataclass
 
 
-    class Astronaut:
-        def __init__(self, name, missions=()):
-            self.name = name
-            self.missions = missions
-
-
+    @dataclass
     class Mission:
-        def __init__(self, year, name):
-            self.year = year
-            self.name = name
+        year: int
+        name: str
+
+
+    @dataclass
+    class Astronaut:
+        name: str
+        missions: list[Mission]
+
 
 
     CREW = [
-        Astronaut('Melissa Lewis'),
-        Astronaut('Mark Watney', missions=(
-            Mission(2035, 'Ares 3'))),
-        Astronaut('Jan Twardowski', missions=(
-            Mission(1969, 'Apollo 18'),
-            Mission(2024, 'Artemis 3'))),
+        Astronaut('Melissa Lewis', []),
+        Astronaut('Mark Watney', missions=[
+                Mission(2035, 'Ares 3')]),
+        Astronaut('Jan Twardowski', missions=[
+                Mission(1969, 'Apollo 18'),
+                Mission(2024, 'Artemis 3')]),
     ]
 
 
-    class JSONObjectEncoder(json.JSONEncoder):
+    class MyEncoder(json.JSONEncoder):
         def default(self, obj):
             result = obj.__dict__
             result['__class_name__'] = obj.__class__.__name__
             return result
 
 
-    json.dumps(CREW, cls=JSONObjectEncoder, sort_keys=True, indent=2)
-    # [{"__class_name__": "Astronaut", "name": "Melissa Lewis", "missions": []},
-    #  {"__class_name__": "Astronaut", "name": "Mark Watney", "missions": [
-    #       {"__class_name__": "Mission", "name": "Ares 3", "year": 2035}]},
-    #  {"__class_name__": "Astronaut", "name": "Jan Twardowski", "missions": [
-    #       {"__class_name__": "Mission", "name": "Apollo 18", "year": 1969},
-    #       {"__class_name__": "Mission", "name": "Artemis 3", "year": 2024}]}]
+    result = json.dumps(CREW, cls=MyEncoder, sort_keys=True, indent=2)
+    print(type(result))
+    # <class 'str'>
+    print(result)
+    # [
+    #   {
+    #     "__class_name__": "Astronaut",
+    #     "missions": [],
+    #     "name": "Melissa Lewis"
+    #   },
+    #   {
+    #     "__class_name__": "Astronaut",
+    #     "missions": [
+    #       {
+    #         "__class_name__": "Mission",
+    #         "name": "Ares 3",
+    #         "year": 2035
+    #       }
+    #     ],
+    #     "name": "Mark Watney"
+    #   },
+    #   {
+    #     "__class_name__": "Astronaut",
+    #     "missions": [
+    #       {
+    #         "__class_name__": "Mission",
+    #         "name": "Apollo 18",
+    #         "year": 1969
+    #       },
+    #       {
+    #         "__class_name__": "Mission",
+    #         "name": "Artemis 3",
+    #         "year": 2024
+    #       }
+    #     ],
+    #     "name": "Jan Twardowski"
+    #   }
+    # ]
 
 
 JSON to Python Object
@@ -329,51 +549,51 @@ JSON to Python Object
 .. code-block:: python
     :caption:  Encoding nested objects with relations to JSON
 
+    from dataclasses import dataclass
     import json
-    import sys
-
-    DATA = """[{"__class_name__": "Astronaut", "missions": [], "name": "Melissa Lewis"}, {"__class_name__": "Astronaut",
-    "missions": {"__class_name__": "Mission", "name": "Ares 3", "year": 2035}, "name": "Mark Watney"}, {"__class_name__":
-    "Astronaut", "missions": [{"__class_name__": "Mission", "name": "Apollo 18", "year": 1969}, {"__class_name__": "Mission",
-    "name": "Artemis 3", "year": 2024}], "name": "Jan Twardowski"}]"""
 
 
-    class Astronaut:
-        def __init__(self, name, missions=()):
-            self.name = name
-            self.missions = missions
+    DATA = """[
+        {"__class_name__": "Astronaut", "name": "Melissa Lewis", "missions": []},
+        {"__class_name__": "Astronaut", "name": "Mark Watney", "missions": [{"__class_name__": "Mission", "name": "Ares 3", "year": 2035}]},
+        {"__class_name__": "Astronaut", "name": "Jan Twardowski", "missions": [
+            {"__class_name__": "Mission", "name": "Apollo 18", "year": 1969},
+            {"__class_name__": "Mission", "name": "Artemis 3", "year": 2024}]}]"""
 
-        def __repr__(self):
-            return f'\nAstronaut(name="{self.name}", missions={self.missions})'
 
-
+    @dataclass
     class Mission:
-        def __init__(self, year, name):
-            self.year = year
-            self.name = name
-
-        def __repr__(self):
-            return f'\n\tMission(year={self.year}, name="{self.name}")'
+        year: int
+        name: str
 
 
-    class JSONObjectDecoder(json.JSONDecoder):
+    @dataclass
+    class Astronaut:
+        name: str
+        missions: list[Mission]
+
+
+    class MyDecoder(json.JSONDecoder):
         def __init__(self):
             super().__init__(object_hook=self.default)
 
         def default(self, obj):
             class_name = obj.pop('__class_name__')
-            cls = getattr(sys.modules[__name__], class_name)
+            cls = globals()[class_name]
             return cls(**obj)
 
 
-    json.loads(DATA, cls=JSONObjectDecoder)
-    # [
-    # Astronaut(name="Melissa Lewis", missions=[]),
-    # Astronaut(name="Mark Watney", missions=
-    #     Mission(year=2035, name="Ares 3")),
-    # Astronaut(name="Jan Twardowski", missions=[
-    #     Mission(year=1969, name="Apollo 18"),
-    #     Mission(year=2024, name="Artemis 3")])]
+    result = json.loads(DATA, cls=MyDecoder)
+    print(type(result))
+    # <class 'list'>
+    print(result)
+    # [Astronaut(name='Melissa Lewis', missions=[]),
+    #  Astronaut(name='Mark Watney', missions=[
+    #       Mission(year=2035, name='Ares 3')]),
+    #  Astronaut(name='Jan Twardowski', missions=[
+    #       Mission(year=1969, name='Apollo 18'),
+    #       Mission(year=2024, name='Artemis 3')])]
+
 
 
 Pretty Printing JSON
