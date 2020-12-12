@@ -6,7 +6,7 @@ language = 'en'
 html_theme = 'sphinx_rtd_theme'
 html_baseurl = 'https://python.astrotech.io'
 
-todo_emit_warnings = True
+todo_emit_warnings = False
 todo_include_todos = False
 
 extensions = [
@@ -133,6 +133,17 @@ highlight_language = 'python3'
 pygments_style = 'stata-dark'
 autodoc_typehints = "description"
 autosectionlabel_maxdepth = 4
+
+bibtex_bibliography_header = ".. rubric:: References"
+bibtex_footbibliography_header = bibtex_bibliography_header
+bibtex_default_style = 'alpha'
+bibtex_bibfiles = [
+    '_references/bibliography.bib',
+    '_references/images.bib',
+    '_references/video.bib',
+    'numpy/_references/bibliography.bib',
+    'stdlib/_references/bibliography.bib',
+]
 
 source_suffix = {
     '.rst': 'restructuredtext',

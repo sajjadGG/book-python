@@ -46,7 +46,7 @@ JSON Syntax
         {"street": "Linder Hoehe", "city": "Köln", "post_code": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}]
 
 
-.. code-block:: json
+.. code-block:: python
     :caption: JSON or Python ``list[dict]``?
 
     {"mission": "Ares 3",
