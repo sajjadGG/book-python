@@ -347,10 +347,10 @@ Assignments
 DataFrame Join
 --------------
 * Assignment: DataFrame Join
+* Filename: :download:`assignments/df_join_eva.py`
 * Complexity: medium
 * Lines of code: 25 lines
 * Time: 21 min
-* Filename: :download:`assignments/df_join_eva.py`
 
 English:
     .. todo:: Translate to English

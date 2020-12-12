@@ -406,10 +406,10 @@ Assignments
 Series Mapping Clean
 --------------------
 * Assignment: Series Mapping Clean
+* Filename: :download:`assignments/series_mapping_clean.py`
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 21 min
-* Filename: :download:`assignments/series_mapping_clean.py`
 
 English:
     #. Use data from "Given" section (see below)

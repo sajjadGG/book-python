@@ -299,10 +299,10 @@ Assignments
 Series Slice Datetime
 ---------------------
 * Assignment: Series Slice Datetime
+* Filename: :download:`assignments/series_slice_datetime.py`
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 3 min
-* Filename: :download:`assignments/series_slice_datetime.py`
 
 English:
     #. Set random seed to zero
@@ -347,10 +347,10 @@ Hints:
 Slicing Slice Str
 -----------------
 * Assignment: Slicing Slice Str
+* Filename: :download:`assignments/series_slice_str.py`
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 13 min
-* Filename: :download:`assignments/series_slice_str.py`
 
 English:
     #. Use data from "Given" section (see below)

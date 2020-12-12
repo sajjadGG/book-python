@@ -45,7 +45,6 @@ JSON Syntax
      {"firstname": "Alex", "lastname": "Vogel", "addresses": [
         {"street": "Linder Hoehe", "city": "Köln", "post_code": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}]
 
-
 .. code-block:: python
     :caption: JSON or Python ``list[dict]``?
 

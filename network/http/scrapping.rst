@@ -163,13 +163,13 @@ Assignments
 
 .. todo:: Convert assignments to literalinclude
 
-Iris
-----
-* Assignment: Iris
+Scrapping Iris
+--------------
+* Assignment: Scrapping Iris
+* Filename: :download:`assignments/scrapping_iris.py`
 * Complexity: medium
 * Lines of code: 20 lines
 * Time: 21 min
-* Filename: :download:`assignments/scrapping_iris.py`
 
 English:
     .. todo:: English Translation
@@ -181,13 +181,13 @@ Polish:
     #. Kolumny nazwij: ``Sepal length``, ``Sepal width``, ``Petal length``, ``Petal width``, ``Species``
     #. Wyświetl dane w formacie listy dictów, kluczami mają być nazwy kolumn.
 
-EVA
----
-* Assignment: EVA
+Scrapping EVA
+-------------
+* Assignment: Scrapping EVA
+* Filename: :download:`assignments/scrapping_eva.py`
 * Complexity: medium
 * Lines of code: 100 lines
 * Time: 21 min
-* Filename: :download:`assignments/scrapping_eva.py`
 
 English:
     .. todo:: English Translation

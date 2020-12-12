@@ -256,10 +256,10 @@ Assignments
 Least square regression 3 points
 --------------------------------
 * Assignment: Least square regression 3 points
+* Filename: :download:`assignments/linreg_least_square_3pts.py`
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 13 min
-* Filename: :download:`assignments/linreg_least_square_3pts.py`
 
 English:
     #. Consider the following set of points: :math:`{(-2 , -1) , (1 , 1) , (3 , 2)}`
@@ -273,10 +273,10 @@ Polish:
 Least square regression 4 points
 --------------------------------
 * Assignment: Least square regression 4 points
+* Filename: :download:`assignments/linreg_least_square_4pts.py`
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 13 min
-* Filename: :download:`assignments/linreg_least_square_4pts.py`
 
 English:
     #. Find the least square regression line for the following set of data: :math:`{(-1 , 0),(0 , 2),(1 , 4),(2 , 5)}`
@@ -289,10 +289,10 @@ Polish:
 Company sales
 -------------
 * Assignment: Company sales
+* Filename: :download:`assignments/linreg_company_sales.py`
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 13 min
-* Filename: :download:`assignments/linreg_company_sales.py`
 
 English:
     #. The sales of a company (in million dollars) for each year are shown in the table below.

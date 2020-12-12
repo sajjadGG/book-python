@@ -149,10 +149,10 @@ Assignments
 Series Getitem
 --------------
 * Assignment: Series Getitem
+* Filename: :download:`assignments/series_getitem.py`
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min
-* Filename: :download:`assignments/series_getitem.py`
 
 English:
     #. Set random seed to zero

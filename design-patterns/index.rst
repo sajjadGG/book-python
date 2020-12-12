@@ -8,6 +8,7 @@ Entry Test
     :caption: Entry Test
     :name: Design Patterns Entry Test
 
+    about/setup.rst
     about/entry-test.rst
 
 *****

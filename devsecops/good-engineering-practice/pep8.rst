@@ -846,10 +846,10 @@ Assignments
 Cleanup your file
 -----------------
 * Assignment: Cleanup your file
+* Filename: :download:`assignments/cleanup.py`
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 5 min
-* Filename: :download:`assignments/cleanup.py`
 
 English:
     .. todo:: English Translation

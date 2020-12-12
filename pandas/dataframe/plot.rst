@@ -442,10 +442,10 @@ Assignments
 DataFrame Plot
 --------------
 * Assignment: DataFrame Plot
+* Filename: :download:`assignments/df_plot.py`
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 21 min
-* Filename: :download:`assignments/df_plot.py`
 
 English:
     #. Use data from "Given" section (see below)

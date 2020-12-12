@@ -25,8 +25,13 @@ Polish:
     7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
-    >>> assert type(result) is list
-    >>> assert all(type(row) is dict for row in result)
+    >>> type(result)
+    <class 'list'>
+    >>> len(result) > 0
+    True
+    >>> all(type(row) is dict
+    ...     for row in result)
+    True
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     [{'ip': '127.0.0.1', 'hosts': ['localhost', 'astromatt'], 'protocol': 'ipv4'},
      {'ip': '10.13.37.1', 'hosts': ['nasa.gov', 'esa.int', 'roscosmos.ru'], 'protocol': 'ipv4'},

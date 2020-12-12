@@ -220,10 +220,10 @@ Assignments
 DataFrame Select
 ----------------
 * Assignment: DataFrame Select
+* Filename: :download:`assignments/df_select.py`
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min
-* Filename: :download:`assignments/df_select.py`
 
 English:
     .. todo:: Translate to English

@@ -353,10 +353,10 @@ Assignments
 DataFrame Statistics
 --------------------
 * Assignment: DataFrame Statistics
+* Filename: :download:`assignments/df_statistics_cars.py`
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 21 min
-* Filename: :download:`assignments/df_statistics_cars.py`
 
 English:
     .. todo:: English Translation

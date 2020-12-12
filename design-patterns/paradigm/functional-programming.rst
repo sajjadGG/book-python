@@ -529,10 +529,10 @@ Assignments
 ``map()``, ``filter()`` and ``lambda``
 --------------------------------------
 * Assignment: ``map()``, ``filter()`` and ``lambda``
+* Filename: :download:`assignments/functional_map_filter_lambda.py`
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 13 min
-* Filename: :download:`assignments/functional_map_filter_lambda.py`
 
 English:
     .. todo:: English Translation
@@ -546,10 +546,10 @@ Polish:
 Balanced Brackets
 -----------------
 * Assignment: Balanced Brackets
+* Filename: :download:`assignments/functional_brackets.py`
 * Complexity: medium
 * Lines of code: 10 lines
 * Time: 13 min
-* Filename: :download:`assignments/functional_brackets.py`
 
 English:
     #. Create function which checks if brackets are balanced

@@ -169,10 +169,10 @@ Assignments
 Series Arithmetic
 -----------------
 * Assignment: Series Arithmetic
+* Filename: :download:`assignments/series_arithmetic.py`
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min
-* Filename: :download:`assignments/series_arithmetic.py`
 
 English:
     #. Set random seed to zero

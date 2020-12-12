@@ -131,10 +131,10 @@ Assignments
 PCA dla zbioru Pima Indian Diabetes
 -----------------------------------
 * Assignment: PCA dla zbioru Pima Indian Diabetes
+* Filename: :download:`assignments/pca_pima.py`
 * Complexity: medium
 * Lines of code: 30 lines
 * Time: 21 min
-* Filename: :download:`assignments/pca_pima.py`
 
 English:
     .. todo:: English Translation

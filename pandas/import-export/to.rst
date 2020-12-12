@@ -51,10 +51,10 @@ Assignments
 DataFrame Export CSV
 --------------------
 * Assignment: DataFrame Export CSV
+* Filename: :download:`assignments/pandas_to_csv.py`
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min
-* Filename: :download:`assignments/pandas_to_csv.py`
 
 English:
     #. Use data from "Given" section (see below)
@@ -75,10 +75,10 @@ Given:
 DataFrame Export JSON
 ---------------------
 * Assignment: DataFrame Export JSON
+* Filename: :download:`assignments/pandas_to_json.py`
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min
-* Filename: :download:`assignments/pandas_to_json.py`
 
 English:
     #. Use data from "Given" section (see below)
@@ -99,10 +99,10 @@ Given:
 DataFrame Export Pickle
 -----------------------
 * Assignment: DataFrame Export Pickle
+* Filename: :download:`assignments/pandas_to_pickle.py`
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min
-* Filename: :download:`assignments/pandas_to_pickle.py`
 
 English:
     #. Use data from "Given" section (see below)
@@ -123,10 +123,10 @@ Given:
 DataFrame Export Pickle
 -----------------------
 * Assignment: DataFrame Export Pickle
+* Filename: :download:`assignments/pandas_to_sql.py`
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min
-* Filename: :download:`assignments/pandas_to_sql.py`
 
 English:
     #. Use data from "Given" section (see below)

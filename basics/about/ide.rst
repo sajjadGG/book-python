@@ -73,10 +73,10 @@ Assignments
 About IDE Usage
 ---------------
 * Assignment: About IDE Usage
+* Filename: None
 * Complexity: easy
 * Lines of code: 0 lines
 * Time: 8 min
-* Filename: TODO
 
 English:
     .. todo:: English Translation
@@ -103,10 +103,10 @@ Polish:
 About IDE Spellchecker
 ----------------------
 * Assignment: About IDE Spellchecker
+* Filename: None
 * Complexity: easy
 * Lines of code: 0 lines
 * Time: 5 min
-* Filename: TODO
 
 English:
     .. todo:: English Translation

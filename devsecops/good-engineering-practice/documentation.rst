@@ -136,10 +136,10 @@ Assignments
 Dokumentacja
 ------------
 * Assignment: Dokumentacja
+* Filename: None
 * Complexity: easy
 * Lines of code: 30 lines
 * Time: 13 min
-* Filename: TODO
 
 English:
     .. todo:: English Translation

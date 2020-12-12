@@ -124,22 +124,22 @@ Assignments
 Numpy Sort
 ----------
 * Assignment: Numpy Sort
+* Filename: :download:`assignments/numpy_sort.py`
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min
-* Filename: :download:`assignments/numpy_sort.py`
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Sort ``result`` columns
-    #. Flip ``result`` rows
-    #. Print ``result``
+    1. Use data from "Given" section (see below)
+    2. Sort ``result`` columns
+    3. Flip ``result`` rows
+    4. Print ``result``
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Posortuj kolumny ``result``
-    #. Flipnij wiersze ``result``
-    #. Wypisz ``result``
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Posortuj kolumny ``result``
+    3. Flipnij wiersze ``result``
+    4. Wypisz ``result``
 
 Given:
     .. code-block:: python

@@ -398,10 +398,10 @@ Assignments
 Series NA
 ---------
 * Assignment: Series NA
+* Filename: :download:`assignments/series_na.py`
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 5 min
-* Filename: :download:`assignments/series_na.py`
 
 English:
     #. Use data from "Given" section (see below)

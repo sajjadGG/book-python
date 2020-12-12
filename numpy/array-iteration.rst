@@ -178,20 +178,20 @@ Assignments
 Numpy Iteration
 ---------------
 * Assignment: Numpy Iteration
+* Filename: :download:`assignments/numpy_iteration.py`
 * Complexity: easy
 * Lines of code: 9 lines
 * Time: 3 min
-* Filename: :download:`assignments/numpy_iteration.py`
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Use ``for`` to iterate over ``DATA``
-    #. Print even numbers
+    1. Use data from "Given" section (see below)
+    2. Use ``for`` to iterate over ``DATA``
+    3. Print even numbers
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Używając ``for`` iteruj po ``DATA``
-    #. Wypisz liczby parzyste
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Używając ``for`` iteruj po ``DATA``
+    3. Wypisz liczby parzyste
 
 Hints:
     * ``number % 2 == 0``

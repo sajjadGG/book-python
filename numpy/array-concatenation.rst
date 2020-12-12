@@ -79,24 +79,24 @@ Assignments
 Numpy Concatenation
 -------------------
 * Assignment: Numpy Concatenation
+* Filename: :download:`assignments/numpy_concatenation.py`
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 3 min
-* Filename: :download:`assignments/numpy_concatenation.py`
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Given are one-dimensional: ``a: np.ndarray``, ``b: np.ndarray``
-    #. Concatenate them as ``result: np.ndarray``
-    #. Reshape ``result`` into two rows and three columns
-    #. Compare result with "Tests" section (see below)
+    1. Use data from "Given" section (see below)
+    2. Given are one-dimensional: ``a: np.ndarray``, ``b: np.ndarray``
+    3. Concatenate them as ``result: np.ndarray``
+    4. Reshape ``result`` into two rows and three columns
+    5. Compare result with "Tests" section (see below)
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Dane są jednowymiarowe: ``a: np.ndarray``, ``b: np.ndarray``
-    #. Połącz je ze sobą jako ``result: np.ndarray``
-    #. Przekształć ``result`` w dwa wiersze na trzy kolumny
-    #. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Dane są jednowymiarowe: ``a: np.ndarray``, ``b: np.ndarray``
+    3. Połącz je ze sobą jako ``result: np.ndarray``
+    4. Przekształć ``result`` w dwa wiersze na trzy kolumny
+    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Given:
     .. code-block:: python

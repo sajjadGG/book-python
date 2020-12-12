@@ -272,10 +272,10 @@ Assignments
 DataFrame NaN
 -------------
 * Assignment: DataFrame NaN
+* Filename: :download:`assignments/df_nan.py`
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 8 min
-* Filename: :download:`assignments/df_nan.py`
 
 English:
     .. todo:: English Translation

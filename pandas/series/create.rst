@@ -132,10 +132,10 @@ Assignments
 Series Create Float
 -------------------
 * Assignment: Series Create Float
+* Filename: :download:`assignments/series_create_float.py`
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 3 min
-* Filename: :download:`assignments/series_create_float.py`
 
 English:
     #. Create ``pd.Series`` with 5 float numbers
@@ -148,10 +148,10 @@ Polish:
 Series Create Randint
 ---------------------
 * Assignment: Series Create Randint
+* Filename: :download:`assignments/series_create_randint.py`
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 3 min
-* Filename: :download:`assignments/series_create_randint.py`
 
 English:
     #. Set random seed to zero
@@ -164,10 +164,10 @@ Polish:
 Series Create Even
 ------------------
 * Assignment: Series Create Even
+* Filename: :download:`assignments/series_create_even.py`
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 3 min
-* Filename: :download:`assignments/series_create_even.py`
 
 English:
     #. Create ``pd.Series`` with 10 even numbers
@@ -178,10 +178,10 @@ Polish:
 Series Create Dates
 -------------------
 * Assignment: Series Create Dates
+* Filename: :download:`assignments/series_create_dates.py`
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 3 min
-* Filename: :download:`assignments/series_create_dates.py`
 
 English:
     #. Gagarin flown to space on 1961-04-12

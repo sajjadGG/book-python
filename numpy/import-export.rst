@@ -145,34 +145,34 @@ Assignments
 Numpy Loadtext
 --------------
 * Assignment: Numpy Loadtext
+* Filename: :download:`assignments/numpy_loadtext.py`
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min
-* Filename: :download:`assignments/numpy_loadtext.py`
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Load text from ``URL``
-    #. From the first line select Iris species names and save as str to ``species: np.ndarray``
-    #. For other lines:
+    1. Use data from "Given" section (see below)
+    2. Load text from ``URL``
+    3. From the first line select Iris species names and save as str to ``species: np.ndarray``
+    4. For other lines:
 
-        #. Read columns with data and save as float to ``features: np.ndarray``
-        #. Read last column with species numbers and save as int to ``labels: np.ndarray``
+        a. Read columns with data and save as float to ``features: np.ndarray``
+        b. Read last column with species numbers and save as int to ``labels: np.ndarray``
 
-    #. Print ``species``, ``labels`` and ``features``
-    #. Compare result with "Tests" section (see below)
+    5. Print ``species``, ``labels`` and ``features``
+    6. Compare result with "Tests" section (see below)
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Wczytaj tekst z ``URL``
-    #. Z pierwszej linii wybierz nazwy gatunków Irysów i zapisz rezultat jako str do ``species: np.ndarray``
-    #. W pozostałych linii:
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Wczytaj tekst z ``URL``
+    3. Z pierwszej linii wybierz nazwy gatunków Irysów i zapisz rezultat jako str do ``species: np.ndarray``
+    4. W pozostałych linii:
 
-        * Wczytaj kolumny z danymi i zapisz jako float do ``features: np.ndarray``
-        * Wczytaj ostatnią kolumnę z numerami gatunków i zapisz jako int do ``labels: np.ndarray``
+        a Wczytaj kolumny z danymi i zapisz jako float do ``features: np.ndarray``
+        b Wczytaj ostatnią kolumnę z numerami gatunków i zapisz jako int do ``labels: np.ndarray``
 
-    #. Wyświetl ``species``, ``labels`` i ``features``
-    #. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Wyświetl ``species``, ``labels`` i ``features``
+    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Given:
     .. code-block:: python

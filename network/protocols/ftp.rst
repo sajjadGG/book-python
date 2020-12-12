@@ -40,10 +40,10 @@ Assignments
 FTP Download
 ------------
 * Assignment: FTP Download
+* Filename: :download:`assignments/ftp_download.py`
 * Complexity: easy
 * Lines of code: 20 lines
 * Time: 21 min
-* Filename: :download:`assignments/ftp_download.py`
 
 English:
     .. todo:: English Translation
@@ -63,10 +63,10 @@ Polish:
 FTP Upload
 ----------
 * Assignment: FTP Upload
+* Filename: :download:`assignments/ftp_upload.py`
 * Complexity: easy
 * Lines of code: 20 lines
 * Time: 21 min
-* Filename: :download:`assignments/ftp_upload.py`
 
 English:
     .. todo:: English Translation

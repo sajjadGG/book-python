@@ -341,105 +341,14 @@ Dot
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
+.. literalinclude:: assignments/numpy_broadcasting_arithmetic.py
+    :caption: :download:`Solution <assignments/numpy_broadcasting_arithmetic.py>`
+    :end-before: # Solution
 
-Numpy Broadcasting Arithmetic
------------------------------
-* Assignment: Numpy Broadcasting Arithmetic
-* Complexity: easy
-* Lines of code: 10 lines
-* Time: 3 min
-* Filename: :download:`assignments/numpy_broadcasting_arithmetic.py`
+.. literalinclude:: assignments/numpy_broadcasting_typecast.py
+    :caption: :download:`Solution <assignments/numpy_broadcasting_typecast.py>`
+    :end-before: # Solution
 
-English:
-    #. Use data from "Given" section (see below)
-    #. For given: ``a: np.ndarray``, ``b: np.ndarray``, ``c: np.ndarray``
-    #. Calculate square root of each element in ``a`` and ``b``
-    #. Calculate second power (square) of each element in ``c``
-    #. Add elements from ``a`` to ``b``
-    #. Multiply the result by ``c``
-    #. Compare result with "Tests" section (see below)
-
-Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Dla danych: ``a: np.ndarray``, ``b: np.ndarray``, ``c: np.ndarray``
-    #. Oblicz pierwiastek kwadratowy każdego z elementu w ``a`` i ``b``
-    #. Oblicz drugą potęgę (kwadrat) każdego z elementu w ``c``
-    #. Dodaj elementy z ``a`` do ``b``
-    #. Przemnóż wynik przez ``c``
-    #. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
-
-Given:
-    .. code-block:: python
-
-        a = np.array([[0, 1], [2, 3]], float)
-        b = np.array([2, 3], float)
-        c = np.array([[1, 1], [4, 0]], float)
-
-Tests:
-    >>> result
-    array([[ 1.41421356,  2.73205081],
-           [45.254834  ,  0.        ]])
-
-Numpy Broadcasting Type Cast
-----------------------------
-* Assignment: Numpy Broadcasting Type Cast
-* Complexity: easy
-* Lines of code: 2 lines
-* Time: 3 min
-* Filename: :download:`assignments/numpy_broadcasting_typecast.py`
-
-English:
-    #. For given: ``a: np.ndarray``, ``b: np.ndarray`` (see below)
-    #. Add ``a`` and ``b``
-    #. Add ``b`` and ``a``
-    #. What happened?
-
-Polish:
-    #. Dla danych: ``a: np.ndarray``, ``b: np.ndarray`` (patrz sekcja input)
-    #. Dodaj ``a`` i ``b``
-    #. Dodaj ``b`` i ``a``
-    #. Co się stało?
-
-Given:
-    .. code-block:: python
-
-        a = np.array([[1, 0], [0, 1]])
-        b = [[4, 1], [2, 2]]
-
-Numpy Broadcasting Matmul
--------------------------
-* Assignment: Numpy Broadcasting Matmul
-* Complexity: easy
-* Lines of code: 4 lines
-* Time: 3 min
-* Filename: :download:`assignments/numpy_broadcasting_matmul.py`
-
-English:
-    #. For given: ``a: np.ndarray``, ``b: np.ndarray`` (see below)
-    #. Multiply ``a`` and ``b`` using scalar multiplication
-    #. Multiply ``a`` and ``b`` using matrix multiplication
-    #. Multiply ``b`` and ``a`` using scalar multiplication
-    #. Multiply ``b`` and ``a`` using matrix multiplication
-    #. Discuss results
-
-Polish:
-    #. Dla danych: ``a: np.ndarray``, ``b: np.ndarray`` (patrz sekcja input)
-    #. Przemnóż ``a`` i ``b`` używając mnożenia skalarnego
-    #. Przemnóż ``a`` i ``b`` używając mnożenia macierzowego
-    #. Przemnóż ``b`` i ``a`` używając mnożenia skalarnego
-    #. Przemnóż ``b`` i ``a`` używając mnożenia macierzowego
-    #. Omów wyniki
-
-Given:
-    .. code-block:: python
-
-        a = np.array([[1,0,1,0],
-                      [0,1,1,0],
-                      [3,2,1,0],
-                      [4,1,2,0]])
-
-        b = np.array([[4,1],
-                      [2,2],
-                      [5,1],
-                      [2,3]])
+.. literalinclude:: assignments/numpy_broadcasting_matmul.py
+    :caption: :download:`Solution <assignments/numpy_broadcasting_matmul.py>`
+    :end-before: # Solution

@@ -331,10 +331,10 @@ Assignments
 Klastrowanie zbioru Iris
 ------------------------
 * Assignment: Klastrowanie zbioru Iris
+* Filename: :download:`assignments/clustering_iris.py`
 * Complexity: medium
 * Lines of code: 30 lines
 * Time: 13 min
-* Filename: :download:`assignments/clustering_iris.py`
 
 English:
     .. todo:: English Translation

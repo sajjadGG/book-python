@@ -261,26 +261,26 @@ Assignments
 Numpy Algebra Euclidean 2D
 --------------------------
 * Assignment: Numpy Algebra Euclidean 2D
+* Filename: :download:`assignments/numpy_algebra_euclidean_2d.py`
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min
-* Filename: :download:`assignments/numpy_algebra_euclidean_2d.py`
 
 English:
-    #. Use code from "Input" section (see below)
-    #. Given are two points ``A: tuple[int, int]`` and ``B: tuple[int, int]``
-    #. Coordinates are in cartesian system
-    #. Points ``A`` and ``B`` are in two dimensional space
-    #. Calculate distance between points using Euclidean algorithm
-    #. Function must pass ``doctest``
+    1. Use code from "Input" section (see below)
+    2. Given are two points ``A: tuple[int, int]`` and ``B: tuple[int, int]``
+    3. Coordinates are in cartesian system
+    4. Points ``A`` and ``B`` are in two dimensional space
+    5. Calculate distance between points using Euclidean algorithm
+    6. Function must pass ``doctest``
 
 Polish:
-    #. Użyj kodu z sekcji "Input" (patrz poniżej)
-    #. Dane są dwa punkty ``A: tuple[int, int]`` i ``B: tuple[int, int]``
-    #. Koordynaty są w systemie kartezjańskim
-    #. Punkty ``A`` i ``B`` są w dwuwymiarowej przestrzeni
-    #. Oblicz odległość między nimi wykorzystując algorytm Euklidesa
-    #. Funkcja musi przechodzić ``doctest``
+    1. Użyj kodu z sekcji "Input" (patrz poniżej)
+    2. Dane są dwa punkty ``A: tuple[int, int]`` i ``B: tuple[int, int]``
+    3. Koordynaty są w systemie kartezjańskim
+    4. Punkty ``A`` i ``B`` są w dwuwymiarowej przestrzeni
+    5. Oblicz odległość między nimi wykorzystując algorytm Euklidesa
+    6. Funkcja musi przechodzić ``doctest``
 
 Given:
     .. code-block:: python
@@ -319,28 +319,28 @@ Hints:
 Numpy Algebra Euclidean Ndim
 ----------------------------
 * Assignment: Numpy Algebra Euclidean Ndim
+* Filename: :download:`assignments/numpy_algebra_euclidean_ndim.py`
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 8 min
-* Filename: :download:`assignments/numpy_algebra_euclidean_ndim.py`
 
 English:
-    #. Use code from "Input" section (see below)
-    #. Given are two points ``A: Sequence[int]`` and ``B: Sequence[int]``
-    #. Coordinates are in cartesian system
-    #. Points ``A`` and ``B`` are in ``N``-dimensional space
-    #. Points ``A`` and ``B`` must be in the same space
-    #. Calculate distance between points using Euclidean algorithm
-    #. Function must pass ``doctest``
+    1. Use code from "Input" section (see below)
+    2. Given are two points ``A: Sequence[int]`` and ``B: Sequence[int]``
+    3. Coordinates are in cartesian system
+    4. Points ``A`` and ``B`` are in ``N``-dimensional space
+    5. Points ``A`` and ``B`` must be in the same space
+    6. Calculate distance between points using Euclidean algorithm
+    7. Function must pass ``doctest``
 
 Polish:
-    #. Użyj kodu z sekcji "Input" (patrz poniżej)
-    #. Dane są dwa punkty ``A: Sequence[int]`` i ``B: Sequence[int]``
-    #. Koordynaty są w systemie kartezjańskim
-    #. Punkty ``A`` i ``B`` są w ``N``-wymiarowej przestrzeni
-    #. Punkty ``A`` i ``B`` muszą być w tej samej przestrzeni
-    #. Oblicz odległość między nimi wykorzystując algorytm Euklidesa
-    #. Funkcja musi przechodzić ``doctest``
+    1. Użyj kodu z sekcji "Input" (patrz poniżej)
+    2. Dane są dwa punkty ``A: Sequence[int]`` i ``B: Sequence[int]``
+    3. Koordynaty są w systemie kartezjańskim
+    4. Punkty ``A`` i ``B`` są w ``N``-wymiarowej przestrzeni
+    5. Punkty ``A`` i ``B`` muszą być w tej samej przestrzeni
+    6. Oblicz odległość między nimi wykorzystując algorytm Euklidesa
+    7. Funkcja musi przechodzić ``doctest``
 
 Given:
     .. code-block:: python

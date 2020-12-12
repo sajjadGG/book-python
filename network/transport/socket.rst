@@ -130,10 +130,10 @@ Assignments
 Heartbeat
 ---------
 * Assignment: Heartbeat
+* Filename: :download:`assignments/socket_heartbeat_client.py` and :download:`assignments/socket_heartbeat_server.py`
 * Complexity: medium
 * Lines of code: 20 lines
 * Time: 21 min
-* Filename: :download:`assignments/socket_heartbeat_client.py` and :download:`assignments/socket_heartbeat_server.py`
 
 English:
     .. todo:: English Translation
@@ -158,10 +158,10 @@ Hints:
 Backdoor
 --------
 * Assignment: Backdoor
+* Filename: :download:`assignments/socket_backdoor.py`
 * Complexity: medium
 * Lines of code: 150 lines
 * Time: 34 min
-* Filename: :download:`assignments/socket_backdoor.py`
 
 English:
     .. todo:: English Translation

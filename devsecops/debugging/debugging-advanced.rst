@@ -215,10 +215,10 @@ Assignments
 Own ``doctest``
 ---------------
 * Assignment: Own ``doctest``
+* Filename: :download:`assignments/debugging_doctest.py`
 * Complexity: easy
 * Lines of code: 60 lines
 * Time: 21 min
-* Filename: :download:`assignments/debugging_doctest.py`
 
 English:
     .. todo:: English Translation

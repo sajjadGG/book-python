@@ -321,10 +321,10 @@ Assignments
 DataFrame Mapping Split
 -----------------------
 * Assignment: DataFrame Mapping Split
+* Filename: :download:`assignments/df_mapping_split.py`
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 13 min
-* Filename: :download:`assignments/df_mapping_split.py`
 
 English:
     #. Use data from "Given" section (see below)
@@ -349,10 +349,10 @@ Hints:
 DataFrame Mapping Translate
 ---------------------------
 * Assignment: DataFrame Mapping Translate
+* Filename: :download:`assignments/df_mapping_translate.py`
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 13 min
-* Filename: :download:`assignments/df_mapping_translate.py`
 
 English:
     #. Use data from "Given" section (see below)
@@ -393,10 +393,10 @@ Hints:
 DataFrame Mapping Month
 -----------------------
 * Assignment: DataFrame Mapping Month
+* Filename: :download:`assignments/df_mapping_month.py`
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 13 min
-* Filename: :download:`assignments/df_mapping_month.py`
 
 English:
     #. Use data from "Given" section (see below)
@@ -431,10 +431,10 @@ Hints:
 DataFrame Mapping Substitute
 ----------------------------
 * Assignment: DataFrame Mapping Substitute
+* Filename: :download:`assignments/df_mapping_substitute.py`
 * Complexity: medium
 * Lines of code: 10 lines
 * Time: 13 min
-* Filename: :download:`assignments/df_mapping_substitute.py`
 
 English:
     #. Use data from "Given" section (see below)

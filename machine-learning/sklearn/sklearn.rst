@@ -136,10 +136,10 @@ Zadania praktyczne
 Nearest Neighbor Classifier
 ---------------------------
 * Assignment: Nearest Neighbor Classifier
+* Filename: :download:`assignments/sklearn_classifier.py`
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 21 min
-* Filename: :download:`assignments/sklearn_classifier.py`
 
 English:
     .. todo:: English Translation
@@ -197,10 +197,10 @@ Hints:
 Sklearn Classifier Compare
 --------------------------
 * Assignment: Sklearn Classifier Compare
+* Filename: :download:`assignments/sklearn_classifier_compare.py`
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 21 min
-* Filename: :download:`assignments/sklearn_classifier_compare.py`
 
 English:
     .. todo:: English Translation

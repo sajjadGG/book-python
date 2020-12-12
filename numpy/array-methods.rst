@@ -246,28 +246,28 @@ Assignments
 Numpy Methods
 -------------
 * Assignment: Numpy Methods
+* Filename: :download:`assignments/numpy_methods.py`
 * Complexity: easy
 * Lines of code: 6 lines
 * Time: 5 min
-* Filename: :download:`assignments/numpy_methods.py`
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Reshape ``result`` to 3x4
-    #. Fill last column with zeros (0)
-    #. Transpose ``result``
-    #. Convert ``result`` to float
-    #. Fill first row with ``np.nan``
-    #. Print ``result``
+    1. Use data from "Given" section (see below)
+    2. Reshape ``result`` to 3x4
+    3. Fill last column with zeros (0)
+    4. Transpose ``result``
+    5. Convert ``result`` to float
+    6. Fill first row with ``np.nan``
+    7. Print ``result``
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Zmień kształt na 3x4
-    #. Wypełnij ostatnią kolumnę zerami (0)
-    #. Transponuj ``result``
-    #. Przekonwertuj ``result`` do float
-    #. Wypełnij pierwszy wiersz ``np.nan``
-    #. Wypisz ``result``
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Zmień kształt na 3x4
+    3. Wypełnij ostatnią kolumnę zerami (0)
+    4. Transponuj ``result``
+    5. Przekonwertuj ``result`` do float
+    6. Wypełnij pierwszy wiersz ``np.nan``
+    7. Wypisz ``result``
 
 Given:
     .. code-block:: python

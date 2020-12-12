@@ -6,10 +6,10 @@ Assignments
 Trigonometry
 ------------
 * Assignment: Trigonometry
+* Filename: :download:`assignments/matplotlib_trigonometry.py`
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 21 min
-* Filename: :download:`assignments/matplotlib_trigonometry.py`
 
 English:
     .. todo:: English Translation
@@ -33,13 +33,13 @@ Hints:
     * ``np.sin()``
     * ``np.cos()``
 
-Iris scatter
+Iris Scatter
 ------------
-* Assignment: Iris scatter
+* Assignment: Iris Scatter
+* Filename: :download:`assignments/matplotlib_iris.py`
 * Complexity: medium
 * Lines of code: 20 lines
 * Time: 21 min
-* Filename: :download:`assignments/matplotlib_iris.py`
 
 English:
     .. todo:: English Translation
@@ -58,13 +58,13 @@ Given:
 Hints:
     * ``pd.groupby()``
 
-Random points
+Random Points
 -------------
-* Assignment: Random points
+* Assignment: Random Points
+* Filename: :download:`assignments/matplotlib_random_points.py`
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 21 min
-* Filename: :download:`assignments/matplotlib_random_points.py`
 
 English:
     .. todo:: English Translation
@@ -118,13 +118,13 @@ Polish:
 Hints:
     * argument ``color='red'`` w funkcji ``plt.plot``
 
-Color graph
+Color Graph
 -----------
-* Assignment: Color graph
+* Assignment: Color Graph
+* Filename: TODO
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 21 min
-* Filename: TODO
 
 English:
     .. todo:: English Translation

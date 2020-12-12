@@ -165,20 +165,20 @@ Assignments
 Numpy Slice 1
 -------------
 * Assignment: Numpy Slice 1
+* Filename: :download:`assignments/numpy_slice_1.py`
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min
-* Filename: :download:`assignments/numpy_slice_1.py`
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Print inner 2x2 elements
-    #. Compare result with "Tests" section (see below)
+    1. Use data from "Given" section (see below)
+    2. Print inner 2x2 elements
+    3. Compare result with "Tests" section (see below)
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Wybierz wewnętrzne 2x2 elementy
-    #. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Wybierz wewnętrzne 2x2 elementy
+    3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Given:
     .. code-block:: python
@@ -201,20 +201,20 @@ Tests:
 Numpy Slice 2
 -------------
 * Assignment: Numpy Slice 2
+* Filename: :download:`assignments/numpy_slice_2.py`
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min
-* Filename: :download:`assignments/numpy_slice_2.py`
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Print inner 4x4 elements
-    #. Inner matrix is exactly in the middle of outer
+    1. Use data from "Given" section (see below)
+    2. Print inner 4x4 elements
+    3. Inner matrix is exactly in the middle of outer
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Wypisz środkowe 4x4 elementy
-    #. Środkowa macierz jest dokładnie w środku większej
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Wypisz środkowe 4x4 elementy
+    3. Środkowa macierz jest dokładnie w środku większej
 
 Given:
     .. code-block:: python

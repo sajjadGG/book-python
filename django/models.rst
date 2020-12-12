@@ -126,10 +126,10 @@ Assignments
 Address Book
 ------------
 * Assignment: Address Book
+* Filename: None
 * Complexity: medium
 * Lines of code: 50 lines
 * Time: 21 min
-* Filename: TODO
 
 English:
     .. todo:: English Translation

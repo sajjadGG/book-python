@@ -42,10 +42,10 @@ Converting to ``int``
 Assignments
 -----------
 * Assignment: Assignments
+* Filename: :download:`assignments/types_int.py`
 * Complexity: easy
 * Lines of code: 12 lines
 * Time: 5 min
-* Filename: :download:`assignments/types_int.py`
 
 English:
     #. Calculate how many seconds is five minutes
@@ -115,10 +115,10 @@ Converting to ``float``
 Assignments
 -----------
 * Assignment: Assignments
+* Filename: :download:`assignments/types_float.py`
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min
-* Filename: :download:`assignments/types_float.py`
 
 English:
     #. Use code from "Input" section (see below)
@@ -323,10 +323,10 @@ Methods
 Assignments
 -----------
 * Assignment: Assignments
+* Filename: :download:`assignments/types_str.py`
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min
-* Filename: :download:`assignments/types_str.py`
 
 English:
     * Ask user to input text
@@ -467,10 +467,10 @@ Assignments
 To ``bool`` or not to ``bool``
 ------------------------------
 * Assignment: To ``bool`` or not to ``bool``
+* Filename: :download:`assignments/types_bool.py`
 * Complexity: easy
 * Lines of code: 15 lines
 * Time: 13 min
-* Filename: :download:`assignments/types_bool.py`
 
 English:
     #. Use data from "Given" section (see below)

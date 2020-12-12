@@ -317,13 +317,13 @@ Assignments
 
 .. todo:: Convert assignments to literalinclude
 
-Iris transformations
+Matplotlib Lifecycle
 --------------------
-* Assignment: Iris transformations
+* Assignment: Matplotlib Lifecycle
+* Filename: :download:`assignments/matplotlib_lifecycle.py`
 * Complexity: medium
 * Lines of code: 20 lines
 * Time: 21 min
-* Filename: :download:`assignments/matplotlib_lifecycle.py`
 
 English:
     .. todo:: English Translation

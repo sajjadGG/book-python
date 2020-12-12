@@ -83,10 +83,10 @@ Assignments
 Series Alter
 ------------
 * Assignment: Series Alter
+* Filename: :download:`assignments/series_alter.py`
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 5 min
-* Filename: :download:`assignments/series_alter.py`
 
 English:
     #. Use data from "Given" section (see below)

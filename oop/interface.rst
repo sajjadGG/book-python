@@ -129,10 +129,10 @@ Assignments
 OOP Interface Define
 --------------------
 * Assignment: OOP Interface Define
+* Filename: :download:`assignments/oop_interface_define.py`
 * Complexity: easy
 * Lines of code: 13 lines
 * Time: 13 min
-* Filename: :download:`assignments/oop_interface_define.py`
 
 English:
     #. Define interface ``IrisInterface``
@@ -165,10 +165,10 @@ Tests:
 OOP Interface Implement
 -----------------------
 * Assignment: OOP Interface Implement
+* Filename: :download:`assignments/oop_interface_implement.py`
 * Complexity: easy
 * Lines of code: 12 lines
 * Time: 13 min
-* Filename: :download:`assignments/oop_interface_implement.py`
 
 English:
     #. Use data from "Given" section (see below)

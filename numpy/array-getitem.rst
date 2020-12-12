@@ -255,38 +255,38 @@ Assignments
 Numpy Indexing
 --------------
 * Assignment: Numpy Indexing
+* Filename: :download:`assignments/numpy_indexing.py`
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min
-* Filename: :download:`assignments/numpy_indexing.py`
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Create ``result: np.ndarray``
-    #. Add to ``result`` elements from ``DATA`` at indexes:
+    1. Use data from "Given" section (see below)
+    2. Create ``result: np.ndarray``
+    3. Add to ``result`` elements from ``DATA`` at indexes:
 
-        * row 0, column 2
-        * row 2, column 2
-        * row 0, column 0
-        * row 1, column 0
+        a. row 0, column 2
+        b. row 2, column 2
+        c. row 0, column 0
+        d. row 1, column 0
 
-    #. ``result`` size must be 2x2
-    #. ``result`` type must be float
-    #. Compare result with "Tests" section (see below)
+    4. ``result`` size must be 2x2
+    5. ``result`` type must be float
+    6. Compare result with "Tests" section (see below)
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Stwórz ``result: np.ndarray``
-    #. Dodaj do ``result`` elementy z ``DATA`` o indeksach:
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Stwórz ``result: np.ndarray``
+    3. Dodaj do ``result`` elementy z ``DATA`` o indeksach:
 
-        * wiersz 0, kolumna 2
-        * wiersz 2, kolumna 2
-        * wiersz 0, kolumna 0
-        * wiersz 1, kolumna 0
+        a. wiersz 0, kolumna 2
+        b. wiersz 2, kolumna 2
+        c. wiersz 0, kolumna 0
+        d. wiersz 1, kolumna 0
 
-    #. Rozmiar ``result`` musi być 2x2
-    #. Typ ``result`` musi być float
-    #. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Rozmiar ``result`` musi być 2x2
+    5. Typ ``result`` musi być float
+    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Given:
     .. code-block:: python

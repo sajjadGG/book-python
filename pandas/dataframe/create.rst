@@ -132,10 +132,10 @@ Assignments
 DataFrame Create
 ----------------
 * Assignment: DataFrame Create
+* Filename: :download:`assignments/df_create.py`
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 5 min
-* Filename: :download:`assignments/df_create.py`
 
 English:
     #. Use data from "Given" section (see below)

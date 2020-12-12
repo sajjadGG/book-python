@@ -392,10 +392,10 @@ Assignments
 REST API
 --------
 * Assignment: REST API
+* Filename: :download:`assignments/http_github.py`
 * Complexity: medium
 * Lines of code: 60 lines
 * Time: 21 min
-* Filename: :download:`assignments/http_github.py`
 
 English:
     .. todo:: English Translation

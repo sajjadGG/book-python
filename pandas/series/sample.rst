@@ -71,10 +71,10 @@ Assignments
 Series Sample
 --------------
 * Assignment: Series Sample
+* Filename: :download:`assignments/series_sample.py`
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min
-* Filename: :download:`assignments/series_sample.py`
 
 English:
     #. Set random seed to zero

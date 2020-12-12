@@ -246,10 +246,10 @@ Assignments
 Pandas Read CSV Dates
 ---------------------
 * Assignment: Pandas Read CSV Dates
+* Filename: :download:`assignments/pandas_read_csv_dates.py`
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 3 min
-* Filename: :download:`assignments/pandas_read_csv_dates.py`
 
 English:
     #. Use data from "Given" section (see below)
@@ -274,10 +274,10 @@ Hints:
 Pandas Read CSV Replace
 -----------------------
 * Assignment: Pandas Read CSV Replace
+* Filename: :download:`assignments/pandas_read_csv_replace.py`
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 3 min
-* Filename: :download:`assignments/pandas_read_csv_replace.py`
 
 English:
     #. Use data from "Given" section (see below)
@@ -319,10 +319,10 @@ Hints:
 Pandas Read JSON
 ----------------
 * Assignment: Pandas Read JSON
+* Filename: :download:`assignments/pandas_read_json_iris.py`
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min
-* Filename: :download:`assignments/pandas_read_json_iris.py`
 
 English:
     #. Use data from "Given" section (see below)
@@ -342,10 +342,10 @@ Given:
 Pandas Read JSON OpenAPI
 ------------------------
 * Assignment: Pandas Read JSON OpenAPI
+* Filename: :download:`assignments/pandas_read_json_openapi.py`
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min
-* Filename: :download:`assignments/pandas_read_json_openapi.py`
 
 English:
     #. Use data from "Given" section (see below)
@@ -367,10 +367,10 @@ Given:
 Pandas Read HTML
 ----------------
 * Assignment: Pandas Read HTML
+* Filename: :download:`assignments/pandas_read_html.py`
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min
-* Filename: :download:`assignments/pandas_read_html.py`
 
 English:
     #. Use data from "Given" section (see below)
@@ -394,10 +394,10 @@ Hints:
 Pandas Read XSLT Books
 ----------------------
 * Assignment: Pandas Read XSLT Books
+* Filename: :download:`assignments/pandas_read_xslt_books.py`
 * Complexity: medium
 * Lines of code: 5 lines
 * Time: 13 min
-* Filename: :download:`assignments/pandas_read_xslt_books.py`
 
 English:
     #. Use data from "Given" section (see below)
@@ -422,10 +422,10 @@ Hints:
 Pandas Read XSLT Plants
 -----------------------
 * Assignment: Pandas Read XSLT Plants
+* Filename: :download:`assignments/pandas_read_xslt_plants.py`
 * Complexity: medium
 * Lines of code: 5 lines
 * Time: 13 min
-* Filename: :download:`assignments/pandas_read_xslt_plants.py`
 
 English:
     #. Use data from "Given" section (see below)

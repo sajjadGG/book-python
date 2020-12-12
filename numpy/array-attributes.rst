@@ -135,32 +135,32 @@ Assignments
 Numpy Attributes
 ----------------
 * Assignment: Numpy Attributes
+* Filename: :download:`assignments/numpy_attributes.py`
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min
-* Filename: :download:`assignments/numpy_attributes.py`
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Print:
+    1. Use data from "Given" section (see below)
+    2. Print:
 
-        * number of dimensions;
-        * number of elements;
-        * data type;
-        * element size;
-        * shape;
-        * strides.
+        a. number of dimensions;
+        b. number of elements;
+        c. data type;
+        d. element size;
+        d. shape;
+        e. strides.
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Wypisz:
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Wypisz:
 
-        * liczbę wymiarów,
-        * liczbę elementów,
-        * typ danych,
-        * rozmiar elementu,
-        * kształt,
-        * przeskoki (strides).
+        a. liczbę wymiarów,
+        b. liczbę elementów,
+        c. typ danych,
+        d. rozmiar elementu,
+        d. kształt,
+        e. przeskoki (strides).
 
 Given:
     .. code-block:: python

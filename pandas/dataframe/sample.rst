@@ -201,10 +201,10 @@ Assignments
 DataFrame Sample
 ----------------
 * Assignment: DataFrame Sample
+* Filename: :download:`assignments/df_sample.py`
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min
-* Filename: :download:`assignments/df_sample.py`
 
 English:
     .. todo:: English translation

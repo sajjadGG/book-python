@@ -331,24 +331,24 @@ Assignments
 Numpy Dtype Astype
 ------------------
 * Assignment: Numpy Dtype Astype
+* Filename: :download:`assignments/numpy_astype.py`
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min
-* Filename: :download:`assignments/numpy_astype.py`
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Given ``a: np.ndarray`` (see below)
-    #. Convert to ``int`` type
-    #. The result convert to ``bool`` type
-    #. What happened in each of those steps?
+    1. Use data from "Given" section (see below)
+    2. Given ``a: np.ndarray`` (see below)
+    3. Convert to ``int`` type
+    4. The result convert to ``bool`` type
+    5. What happened in each of those steps?
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Dany ``a: np.ndarray`` (patrz sekcja input)
-    #. Przekonwertuj do typu ``int``
-    #. Rezultat rzutuj na typ ``bool``
-    #. Co się stało w każdym z tych kroków?
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Dany ``a: np.ndarray`` (patrz sekcja input)
+    3. Przekonwertuj do typu ``int``
+    4. Rezultat rzutuj na typ ``bool``
+    5. Co się stało w każdym z tych kroków?
 
 Given:
     .. code-block:: python

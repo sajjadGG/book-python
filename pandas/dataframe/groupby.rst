@@ -486,10 +486,10 @@ Assignments
 DataFrame Groupby Phones
 ------------------------
 * Assignment: DataFrame Groupby Phones
+* Filename: :download:`assignments/df_groupby_phones.py`
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min
-* Filename: :download:`assignments/df_groupby_phones.py`
 
 English:
     #. Use data from "Given" section (see below)
@@ -509,10 +509,10 @@ Given:
 DataFrame Groupby Astro Female
 ------------------------------
 * Assignment: DataFrame Groupby Astro Female
+* Filename: :download:`assignments/df_groupby_astro_female.py`
 * Complexity: medium
 * Lines of code: 5 lines
 * Time: 8 min
-* Filename: :download:`assignments/df_groupby_astro_female.py`
 
 English:
     #. Use data from "Given" section (see below)
@@ -532,10 +532,10 @@ Given:
 DataFrame Groupby Astro Flights
 -------------------------------
 * Assignment: DataFrame Groupby Astro Flights
+* Filename: :download:`assignments/df_groupby_astro_flights.py`
 * Complexity: medium
 * Lines of code: 5 lines
 * Time: 13 min
-* Filename: :download:`assignments/df_groupby_astro_flights.py`
 
 English:
     #. Use data from "Given" section (see below)
@@ -555,10 +555,10 @@ Given:
 DataFrame Groupby Astro EVA
 ---------------------------
 * Assignment: DataFrame Groupby Astro EVA
+* Filename: :download:`assignments/df_groupby_astro_eva.py`
 * Complexity: medium
 * Lines of code: 13 lines
 * Time: 21 min
-* Filename: :download:`assignments/df_groupby_astro_eva.py`
 
 English:
     #. Use data from "Given" section (see below)

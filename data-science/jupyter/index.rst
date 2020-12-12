@@ -542,10 +542,10 @@ Assignments
 Jupyter First
 -------------
 * Assignment: Jupyter First
+* Filename: :download:`assignments/jupyter_first.ipynb`
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 13 min
-* Filename: :download:`assignments/jupyter_first.ipynb`
 
 English:
     .. todo:: English Translation
@@ -561,10 +561,10 @@ Polish:
 Jupyter Slides
 --------------
 * Assignment: Jupyter Slides
+* Filename: :download:`assignments/jupyter_slides.py`
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 5 min
-* Filename: :download:`assignments/jupyter_slides.py`
 
 English:
     .. todo:: English Translation
