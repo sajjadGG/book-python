@@ -14,7 +14,7 @@
     --code-border: none;
     --code-text: #bdc7d0;
     --code-highlight: #12141A;
-    --code-output: #777777;
+    --code-output: #b92424;
 
     --table-background: none;
     --table-border: #24282e;
@@ -29,8 +29,8 @@
     --hover: #22242A; /* also for left menu*/
     --active: #12141A; /* also for left menu*/
 
-    --todo: #6371AC;
-    --warning: #9b2424;
+    --todo: #12141A;
+    --warning: #CF6679;
     --tip: #45C587;
     --note: #6371AC;
 
