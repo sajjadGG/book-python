@@ -26,6 +26,11 @@ Polish:
 Tests:
     >>> type(result)
     <class 'list'>
+    >>> len(result) > 0
+    True
+    >>> all(type(row) is User
+    ...     for row in result)
+    True
     >>> result[0]  # doctest: +NORMALIZE_WHITESPACE
     User(login='mojombo',
          id=1, url='https://api.github.com/users/mojombo',
@@ -51,6 +56,13 @@ from dataclasses import dataclass
 import requests
 
 
+class User:
+    pass
+
+
+DATA = requests.get('https://api.github.com/users').json()
+
+
 # Solution
 @dataclass
 class User:
@@ -74,6 +86,6 @@ class User:
     site_admin: bool
 
 
-data = requests.get('https://api.github.com/users').json()
-result = [User(**user) for user in data]
+result = [User(**user)
+          for user in DATA]
 

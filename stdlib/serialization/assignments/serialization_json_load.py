@@ -20,6 +20,13 @@ Polish:
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> type(result)
+    <class 'list'>
+    >>> len(result) > 0
+    True
+    >>> all(type(row) is tuple
+    ...     for row in result)
+    True
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     [(5.8, 2.7, 5.1, 1.9, 'virginica'),
      (5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -30,8 +37,8 @@ Tests:
      (7.0, 3.2, 4.7, 1.4, 'versicolor'),
      (7.6, 3.0, 6.6, 2.1, 'virginica'),
      (4.9, 3.0, 1.4, 0.2, 'setosa')]
-    >>> from os import remove
-    >>> remove(FILE)
+     >>> from os import remove
+     >>> remove(FILE)
 """
 
 

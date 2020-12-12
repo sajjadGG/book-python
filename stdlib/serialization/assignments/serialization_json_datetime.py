@@ -20,6 +20,13 @@ Polish:
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> type(result)
+    <class 'list'>
+    >>> len(result) > 0
+    True
+    >>> all(type(row) is dict
+    ...     for row in result)
+    True
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     {'astronaut': {'date': datetime.date(1961, 4, 12), 'person': 'mark.watney@nasa.gov'},
      'flight': [{'datetime': datetime.datetime(1969, 7, 21, 2, 56, 15), 'action': 'landing'}]}
@@ -33,8 +40,18 @@ from datetime import datetime, date
 import json
 
 FILE = '_temporary.json'
-DATA = {"astronaut": {"date": date(1961, 4, 12), "person": "mark.watney@nasa.gov"},
-        "flight": [{"datetime": datetime(1969, 7, 21, 2, 56, 15), "action": "landing"}]}
+
+DATA = {"mission": "Ares 3",
+        "launch_date": date(2035, 6, 29),
+        "destination": 'Mars',
+        "destination_landing": date(2035, 11, 7),
+        "destination_location": "Acidalia Planitia",
+        "crew": [{"astronaut": 'Melissa Lewis', "date_of_birth": date(1995, 7, 15)},
+                 {"astronaut": 'Rick Martinez', "date_of_birth": date(1996, 1, 21)},
+                 {"astronaut": 'Alex Vogel', "date_of_birth": date(1994, 11, 15)},
+                 {"astronaut": 'Chris Beck', "date_of_birth": date(1999, 8, 2)},
+                 {"astronaut": 'Beth Johansen', "date_of_birth": date(2006, 5, 9)},
+                 {"astronaut": 'Mark Watney', "date_of_birth": date(1994, 10, 12)}]}
 
 
 # Solution
@@ -60,9 +77,9 @@ class JSONDatetimeDecoder(json.JSONDecoder):
         return obj
 
 
-with open(FILE, mode='w', encoding='utf-8') as file:
+with open(FILE, mode='w') as file:
     json.dump(DATA, file, cls=JSONDatetimeEncoder)
 
 
-with open(FILE, encoding='utf-8') as file:
+with open(FILE) as file:
     result = json.load(file, cls=JSONDatetimeDecoder)

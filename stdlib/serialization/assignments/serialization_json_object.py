@@ -20,6 +20,13 @@ Polish:
     4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> type(result)
+    <class 'list'>
+    >>> len(result) > 0
+    True
+    >>> all(type(row) in (Setosa, Virginica, Versicolor)
+    ...     for row in result)
+    True
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     [Virginica(sepalLength=5.8, sepalWidth=2.7, petalLength=5.1, petalWidth=1.9),
      Setosa(sepalLength=5.1, sepalWidth=3.5, petalLength=1.4, petalWidth=0.2),
@@ -30,8 +37,6 @@ Tests:
      Versicolor(sepalLength=7.0, sepalWidth=3.2, petalLength=4.7, petalWidth=1.4),
      Virginica(sepalLength=7.6, sepalWidth=3.0, petalLength=6.6, petalWidth=2.1),
      Setosa(sepalLength=4.9, sepalWidth=3.0, petalLength=1.4, petalWidth=0.2)]
-    >>> from os import remove
-    >>> remove(FILE)
 """
 
 # Given

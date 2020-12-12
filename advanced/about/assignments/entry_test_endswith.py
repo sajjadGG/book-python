@@ -22,6 +22,8 @@ Polish:
 Tests:
     >>> type(result)
     <class 'set'>
+    >>> len(result) > 0
+    True
     >>> 'virginica' in result
     True
     >>> 'setosa' in result
