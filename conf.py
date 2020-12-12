@@ -7,7 +7,7 @@ html_theme = 'sphinx_rtd_theme'
 html_baseurl = 'https://python.astrotech.io'
 
 todo_emit_warnings = False
-todo_include_todos = False
+todo_include_todos = True
 
 extensions = [
     # 'sphinx.ext.autosectionlabel',
@@ -89,7 +89,7 @@ import sys
 from datetime import date
 import doctest
 
-needs_sphinx = '3.0'
+needs_sphinx = '3.3'
 
 imgmath_image_format = 'png'
 imgmath_latex = 'latex'
@@ -196,12 +196,12 @@ html_copy_source = False
 
 if html_theme == 'sphinx_rtd_theme':
     html_context.update({
-        'css_files': ['_static/dark.css', '_static/print.css'],
-        'script_files': [
-                '_static/jquery.min.js',
-                '_static/onload.js',
-                '_static/copybutton.js',
-                mathjax_path]})
+        'css_files': ['_static/dark.css',
+                      '_static/print.css'],
+        'script_files': ['_static/jquery.min.js',
+                         '_static/onload.js',
+                         '_static/copybutton.js',
+                         mathjax_path]})
 
 if html_theme == 'thesis':
     html_context.update({
