@@ -73,7 +73,7 @@ Polish:
         b. ``host: str``,
         c. ``port: int``,
         d. ``stdout: str``,
-        e ``stderr: str``.
+        e. ``stderr: str``.
 
     6. Stwórz dekorator ``is_valid_xml``, który sprawdzi czy XML się waliduje (czy ma poprawną strukturę) i tylko wtedy wykona polecenia
     7. Stwórz dekorator ``log_incoming_requests``, który zapisze do pliku ``botnet.log`` logi w formacie ``Request from IP:PORT to execute COMMAND ARGUMENTS`` dla każdego polecenia wykonywanego na systemie ofiary

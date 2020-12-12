@@ -146,7 +146,7 @@ Polish:
         e. Kod pocztowy
         f. Miasto
         g. Region
-        * Kraj
+        h. Kraj
 
     4. Stwórz model ``Person`` z polami:
 

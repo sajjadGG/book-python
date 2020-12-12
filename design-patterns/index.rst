@@ -64,13 +64,3 @@ Paradigms
     paradigm/callback.rst
     paradigm/functional-programming.rst
     paradigm/event-programming.rst
-
-*********
-Exit Test
-*********
-.. toctree::
-    :maxdepth: 2
-    :caption: Exit Test
-    :name: Design Patterns Exit Test
-
-    about/exit-test.rst

@@ -148,8 +148,8 @@ English:
         b. number of elements;
         c. data type;
         d. element size;
-        d. shape;
-        e. strides.
+        e. shape;
+        f. strides.
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -159,8 +159,8 @@ Polish:
         b. liczbę elementów,
         c. typ danych,
         d. rozmiar elementu,
-        d. kształt,
-        e. przeskoki (strides).
+        e. kształt,
+        f. przeskoki (strides).
 
 Given:
     .. code-block:: python
