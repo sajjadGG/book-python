@@ -411,9 +411,9 @@ Polish:
     4. Nazwa miesiąca musi być ciągiem znaków, a nie liczbą (i.e. 'January', 'May')
 
 :Example:
-    #. if ``period`` column is "2015-01"
-    #. ``year``: 2015
-    #. ``month``: January
+    * if ``period`` column is "2015-01"
+    * ``year``: 2015
+    * ``month``: January
 
 Given:
     .. code-block:: python

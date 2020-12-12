@@ -175,7 +175,7 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Dla Pima Indians Diabetes wykonaj analizę algorytmem KNN z biblioteki ``sklearn``.
+    1. Dla Pima Indians Diabetes wykonaj analizę algorytmem KNN z biblioteki ``sklearn``.
 
 Płeć
 ----
@@ -189,7 +189,7 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Napisz własną implementacje k Nearest Neighbors, która dla danych:
+    1. Napisz własną implementacje k Nearest Neighbors, która dla danych:
 
         .. csv-table::
             :header: "Gender", "Height", "Weight", "Foot Size"
@@ -203,20 +203,20 @@ Polish:
             female,5.42,130,7
             female,5.75,150,9
 
-    #. Odpowie na pytanie jaką płeć ma osoba o parametrach:
+    2. Odpowie na pytanie jaką płeć ma osoba o parametrach:
 
-        * Height: 6
-        * Weight: 130
-        * Foot Size: 8
+        a. Height: 6
+        b. Weight: 130
+        c. Foot Size: 8
 
-    #. Jaki jest najlepszy parametr :math:`k` dla tego zadania?
-    #. Która z cech ma największy wpływ?
-    #. Czy algorytm lepiej działa z:
+    3. Jaki jest najlepszy parametr :math:`k` dla tego zadania?
+    4. Która z cech ma największy wpływ?
+    5. Czy algorytm lepiej działa z:
 
-        * normalizacją i skalowaniem?
-        * bez normalizacji i skalowania?
-        * tylko z normalizacją?
-        * tylko skalowaniem?
+        a. normalizacją i skalowaniem?
+        b. bez normalizacji i skalowania?
+        c. tylko z normalizacją?
+        d. tylko skalowaniem?
 
 Hints:
     * ``preprocessing.LabelEncoder()``

@@ -340,6 +340,6 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Dla zbioru Iris dokonaj klastrowania za pomocą algorytmu ``KMeans`` z biblioteki ``sklearn``.
-    #. Dla jakiego hiperparametru ``n_clusters`` osiągniemy największe accuracy?
-    #. Zwizualizuj graficznie rozwiązanie problemu
+    1. Dla zbioru Iris dokonaj klastrowania za pomocą algorytmu ``KMeans`` z biblioteki ``sklearn``.
+    2. Dla jakiego hiperparametru ``n_clusters`` osiągniemy największe accuracy?
+    3. Zwizualizuj graficznie rozwiązanie problemu

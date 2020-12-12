@@ -228,44 +228,40 @@ Column Stats
 * Time: 21 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. For columns:
+    1.. Use data from "Given" section (see below)
+    2. For columns:
 
-        * Sepal length,
-        * Sepal width,
-        * Petal length,
-        * Petal width.
+        a. Sepal length,
+        b. Sepal width,
+        c. Petal length,
+        d. Petal width.
 
-    #. Print calculated values:
+    3. Print calculated values:
 
-        * mean,
-        * median,
-        * standard deviation,
-        * variance.
+        a. mean,
+        b. median,
+        c. standard deviation,
+        d. variance.
 
-    #. Non-functional requirements:
-
-        * Use ``statistics`` module from Python standard library
+    4. Use ``statistics`` module from Python standard library
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Dla kolumn:
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Dla kolumn:
 
-        * Sepal length,
-        * Sepal width,
-        * Petal length,
-        * Petal width.
+        a. Sepal length,
+        b. Sepal width,
+        c. Petal length,
+        d. Petal width.
 
-    #. Wypisz wyliczone wartości:
+    3. Wypisz wyliczone wartości:
 
-        * średnią,
-        * medianę,
-        * odchylenie standardowe,
-        * wariancję.
+        a. średnią,
+        b. medianę,
+        c. odchylenie standardowe,
+        d. wariancję.
 
-    #. Wymagania niefunkcjonalne:
-
-        * Użyj modułu ``statistics`` z biblioteki standardowej Python
+    4. Użyj modułu ``statistics`` z biblioteki standardowej Python
 
 Given:
     .. code-block:: python
@@ -302,34 +298,34 @@ Iris Stats
 * Time: 21 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Create dict ``result: dict[str, dict]``
-    #. For each species calculate for numerical values:
+    1. Use data from "Given" section (see below)
+    2. Create dict ``result: dict[str, dict]``
+    3. For each species calculate for numerical values:
 
-            * mean,
-            * median,
-            * standard deviation,
-            * variance.
+            a. mean,
+            b. median,
+            c. standard deviation,
+            d. variance.
 
-    #. Save data to ``result`` dict
-    #. Compare result with "Tests" section (see below)
-    #. Non-functional requirements:
+    4. Save data to ``result`` dict
+    5. Compare result with "Tests" section (see below)
+    6. Non-functional requirements:
 
         * Use ``statistics`` module from Python standard library
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Stwórz słownik ``result: dict[str, dict]``
-    #. Dla każdego gatunku wylicz dla wartości numerycznych:
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Stwórz słownik ``result: dict[str, dict]``
+    3. Dla każdego gatunku wylicz dla wartości numerycznych:
 
-            * średnią,
-            * medianę,
-            * odchylenie standardowe,
-            * wariancję.
+            a. średnią,
+            b. medianę,
+            c. odchylenie standardowe,
+            d. wariancję.
 
-    #. Dane zapisz w słowniku ``result``
-    #. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
-    #. Wymagania niefunkcjonalne:
+    4. Dane zapisz w słowniku ``result``
+    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Wymagania niefunkcjonalne:
 
         * Użyj modułu ``statistics`` z biblioteki standardowej Python
 

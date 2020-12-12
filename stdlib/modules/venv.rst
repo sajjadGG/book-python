@@ -165,9 +165,9 @@ Virtualenv
 * Time: 2 min
 
 English:
-    #. Create ``venv``
-    #. Add ``venv`` as a Python interpreter in your IDE
+    1. Create ``venv``
+    2. Add ``venv`` as a Python interpreter in your IDE
 
 Polish:
-    #. Stwórz ``venv``
-    #. Dodaj ``venv`` jako interpreter Python w Twoim IDE
+    1. Stwórz ``venv``
+    2. Dodaj ``venv`` jako interpreter Python w Twoim IDE

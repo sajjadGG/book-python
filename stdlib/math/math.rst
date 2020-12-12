@@ -237,16 +237,16 @@ Trigonometry
 * Time: 13 min
 
 English:
-    #. Read input (angle in degrees) from user
-    #. User will type ``int`` or ``float``
-    #. Print all trigonometric functions (sin, cos, tg, ctg)
-    #. If there is no value for this angle, raise an exception
+    1. Read input (angle in degrees) from user
+    2. User will type ``int`` or ``float``
+    3. Print all trigonometric functions (sin, cos, tg, ctg)
+    4. If there is no value for this angle, raise an exception
 
 Polish:
-    #. Program wczytuje od użytkownika wielkość kąta w stopniach
-    #. Użytkownik zawsze podaje ``int`` albo ``float``
-    #. Wyświetl wartość funkcji trygonometrycznych (sin, cos, tg, ctg)
-    #. Jeżeli funkcja trygonometryczna nie istnieje dla danego kąta podnieś stosowny wyjątek
+    1. Program wczytuje od użytkownika wielkość kąta w stopniach
+    2. Użytkownik zawsze podaje ``int`` albo ``float``
+    3. Wyświetl wartość funkcji trygonometrycznych (sin, cos, tg, ctg)
+    4. Jeżeli funkcja trygonometryczna nie istnieje dla danego kąta podnieś stosowny wyjątek
 
 Hints:
     * ``input('Type angle [deg]: ')``
@@ -260,20 +260,20 @@ Euclidean distance 2D
 * Time: 13 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Given are two points ``A: tuple[int, int]`` and ``B: tuple[int, int]``
-    #. Coordinates are in cartesian system
-    #. Points ``A`` and ``B`` are in two dimensional space
-    #. Calculate distance between points using Euclidean algorithm
-    #. Function must pass ``doctest``
+    1. Use data from "Given" section (see below)
+    2. Given are two points ``A: tuple[int, int]`` and ``B: tuple[int, int]``
+    3. Coordinates are in cartesian system
+    4. Points ``A`` and ``B`` are in two dimensional space
+    5. Calculate distance between points using Euclidean algorithm
+    6. Function must pass ``doctest``
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Dane są dwa punkty ``A: tuple[int, int]`` i ``B: tuple[int, int]``
-    #. Koordynaty są w systemie kartezjańskim
-    #. Punkty ``A`` i ``B`` są w dwuwymiarowej przestrzeni
-    #. Oblicz odległość między nimi wykorzystując algorytm Euklidesa
-    #. Funkcja musi przechodzić ``doctest``
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Dane są dwa punkty ``A: tuple[int, int]`` i ``B: tuple[int, int]``
+    3. Koordynaty są w systemie kartezjańskim
+    4. Punkty ``A`` i ``B`` są w dwuwymiarowej przestrzeni
+    5. Oblicz odległość między nimi wykorzystując algorytm Euklidesa
+    6. Funkcja musi przechodzić ``doctest``
 
 Given:
     .. code-block:: python
@@ -319,22 +319,22 @@ Euclidean distance ``n`` dimensions
 * Time: 13 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Given are two points ``A: Sequence[int]`` and ``B: Sequence[int]``
-    #. Coordinates are in cartesian system
-    #. Points ``A`` and ``B`` are in ``N``-dimensional space
-    #. Points ``A` and ``B`` must be in the same space
-    #. Calculate distance between points using Euclidean algorithm
-    #. Function must pass ``doctest``
+    1. Use data from "Given" section (see below)
+    2. Given are two points ``A: Sequence[int]`` and ``B: Sequence[int]``
+    3. Coordinates are in cartesian system
+    4. Points ``A`` and ``B`` are in ``N``-dimensional space
+    5. Points ``A` and ``B`` must be in the same space
+    6. Calculate distance between points using Euclidean algorithm
+    7. Function must pass ``doctest``
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Dane są dwa punkty ``A: Sequence[int]`` i ``B: Sequence[int]``
-    #. Koordynaty są w systemie kartezjańskim
-    #. Punkty ``A`` i ``B`` są w ``N``-wymiarowej przestrzeni
-    #. Punkty ``A`` i ``B`` muszą być w tej samej przestrzeni
-    #. Oblicz odległość między nimi wykorzystując algorytm Euklidesa
-    #. Funkcja musi przechodzić ``doctest``
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Dane są dwa punkty ``A: Sequence[int]`` i ``B: Sequence[int]``
+    3. Koordynaty są w systemie kartezjańskim
+    4. Punkty ``A`` i ``B`` są w ``N``-wymiarowej przestrzeni
+    5. Punkty ``A`` i ``B`` muszą być w tej samej przestrzeni
+    6. Oblicz odległość między nimi wykorzystując algorytm Euklidesa
+    7. Funkcja musi przechodzić ``doctest``
 
 Given:
     .. code-block:: python
@@ -377,14 +377,14 @@ Matrix multiplication
 * Time: 21 min
 
 English:
-    #. Use code from "Input" section (see below)
-    #. Multiply matrices using nested ``for`` loops
-    #. Function must pass ``doctest``
+    1. Use code from "Input" section (see below)
+    2. Multiply matrices using nested ``for`` loops
+    3. Function must pass ``doctest``
 
 Polish:
-    #. Użyj code z sekcji "Input" (patrz poniżej)
-    #. Pomnóż macierze wykorzystując zagnieżdżone pętle ``for``
-    #. Funkcja musi przechodzić ``doctest``
+    1. Użyj code z sekcji "Input" (patrz poniżej)
+    2. Pomnóż macierze wykorzystując zagnieżdżone pętle ``for``
+    3. Funkcja musi przechodzić ``doctest``
 
 Given:
     .. code-block:: python
@@ -416,13 +416,13 @@ Triangle
 * Time: 13 min
 
 English:
-    #. Calculate triangle area
-    #. User will input base and height
-    #. Input numbers will be only ``int`` and ``float``
-    #. Function must pass ``doctest``
+    1. Calculate triangle area
+    2. User will input base and height
+    3. Input numbers will be only ``int`` and ``float``
+    4. Function must pass ``doctest``
 
 Polish:
-    #. Obliczy pole trójkąta
-    #. Użytkownik poda wysokość i długość podstawy
-    #. Wprowadzone dane będą tylko ``int`` lub ``float``
-    #. Funkcja musi przechodzić ``doctest``
+    1. Obliczy pole trójkąta
+    2. Użytkownik poda wysokość i długość podstawy
+    3. Wprowadzone dane będą tylko ``int`` lub ``float``
+    4. Funkcja musi przechodzić ``doctest``

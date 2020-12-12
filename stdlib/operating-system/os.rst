@@ -657,19 +657,19 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Sprawdź czy katalog "Python" już istnieje na pulpicie w Twoim systemie
-    #. Jeżeli nie istnieje to za pomocą ``os.mkdir()`` stwórz go w tym miejscu
-    #. Za pomocą ``subprocess.call()`` w tym katalogu stwórz plik ``README.rst`` i dodaj do niego tekst "Ehlo World"
-    #. Przeszukaj rekurencyjnie wszystkie katalogi na pulpicie
-    #. Znajdź wszystkie pliki ``README`` (z dowolnym rozszerzeniem)
-    #. Wyświetl ich zawartość za pomocą polecenia:
+    1. Sprawdź czy katalog "Python" już istnieje na pulpicie w Twoim systemie
+    2. Jeżeli nie istnieje to za pomocą ``os.mkdir()`` stwórz go w tym miejscu
+    3. Za pomocą ``subprocess.call()`` w tym katalogu stwórz plik ``README.rst`` i dodaj do niego tekst "Ehlo World"
+    4. Przeszukaj rekurencyjnie wszystkie katalogi na pulpicie
+    5. Znajdź wszystkie pliki ``README`` (z dowolnym rozszerzeniem)
+    6. Wyświetl ich zawartość za pomocą polecenia:
 
-        * ``cat`` (macOS, Linux)
-        * ``type`` (Windows)
+        a. ``cat`` (macOS, Linux)
+        b. ``type`` (Windows)
 
-    #. Ścieżkę do powyższego pliku ``README`` skonstruuj za pomocą ``os.path.join()``
-    #. Ścieżka ma być względna w stosunku do pliku, który aktualnie jest uruchamiany
-    #. Jeżeli po przeszukaniu całego Pulpitu rekurencyjnie skrypt nie znajdzie pliku ``LICENSE.rst``, to ma rzucić informację ``logging.critical()`` i wyjść z kodem błędu ``1``.
+    7. Ścieżkę do powyższego pliku ``README`` skonstruuj za pomocą ``os.path.join()``
+    8. Ścieżka ma być względna w stosunku do pliku, który aktualnie jest uruchamiany
+    9. Jeżeli po przeszukaniu całego Pulpitu rekurencyjnie skrypt nie znajdzie pliku ``LICENSE.rst``, to ma rzucić informację ``logging.critical()`` i wyjść z kodem błędu ``1``.
 
 Hints:
     * Gdyby był problem ze znalezieniem pliku, a ścieżka jest poprawna to zastosuj ``shell=True``
@@ -699,8 +699,8 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Za pomocą znaków unicode: "┣━", "┗━" , "┃  "
-    #. Wygeneruj wynik przypominający wynik polecenia ``tree``.
+    1. Za pomocą znaków unicode: "┣━", "┗━" , "┃  "
+    2. Wygeneruj wynik przypominający wynik polecenia ``tree``.
 
 Tests:
     .. code-block:: text

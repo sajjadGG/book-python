@@ -14,42 +14,42 @@ Exit Test Encoder
 * Time: 13 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Define:
+    1. Use data from "Given" section (see below)
+    2. Define:
 
-        * ``features: list[tuple]`` - measurements
-        * ``labels: list[int]`` - species
-        * ``label_encoder: dict[int, str]`` - species name encoder
+        a. ``features: list[tuple]`` - measurements
+        b. ``labels: list[int]`` - species
+        c. ``label_encoder: dict[int, str]`` - species name encoder
 
-    #. Separate header from data
-    #. To encode and decode ``labels`` (species) we need ``label_encoder: dict[int, str]``:
+    3. Separate header from data
+    4. To encode and decode ``labels`` (species) we need ``label_encoder: dict[int, str]``:
 
-        * key - id (incremented integer value)
-        * value - species name
+        a. key - id (incremented integer value)
+        b. value - species name
 
-    #. ``label_encoder`` must be generated from ``DATA``
-    #. For each row add appropriate data to ``features``, ``labels`` and ``label_encoder``
-    #. Print ``features``, ``labels`` and ``label_encoder``
-    #. Compare result with "Tests" section (see below)
+    5. ``label_encoder`` must be generated from ``DATA``
+    6. For each row add appropriate data to ``features``, ``labels`` and ``label_encoder``
+    7. Print ``features``, ``labels`` and ``label_encoder``
+    8. Compare result with "Tests" section (see below)
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Zdefiniuj:
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Zdefiniuj:
 
-        * ``features: list[tuple]`` - pomiary
-        * ``labels: list[int]`` - gatunki
-        * ``label_encoder: dict[int, str]`` - słownik podmiany nazw gatunków
+        a. ``features: list[tuple]`` - pomiary
+        b. ``labels: list[int]`` - gatunki
+        c. ``label_encoder: dict[int, str]`` - słownik podmiany nazw gatunków
 
-    #. Odseparuj nagłówek od danych
-    #. Aby móc zakodować i odkodować ``labels`` (gatunki) potrzebny jest ``label_encoder: dict[int, str]``:
+    3. Odseparuj nagłówek od danych
+    4. Aby móc zakodować i odkodować ``labels`` (gatunki) potrzebny jest ``label_encoder: dict[int, str]``:
 
-        * key - identyfikator (kolejna liczba rzeczywista)
-        * value - nazwa gatunku
+        a. key - identyfikator (kolejna liczba rzeczywista)
+        b. value - nazwa gatunku
 
-    #. ``label_encoder`` musi być wygenerowany z ``DATA``
-    #. Dla każdego wiersza dodawaj odpowiednie dane do ``feature``, ``labels`` i ``label_encoder``
-    #. Wypisz ``feature``, ``labels`` i ``label_encoder``
-    #. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. ``label_encoder`` musi być wygenerowany z ``DATA``
+    6. Dla każdego wiersza dodawaj odpowiednie dane do ``feature``, ``labels`` i ``label_encoder``
+    7. Wypisz ``feature``, ``labels`` i ``label_encoder``
+    8. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Given:
     .. code-block:: python
@@ -104,32 +104,32 @@ Exit Test Passwd
 * Time: 21 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Save listings content to files:
+    1. Use data from "Given" section (see below)
+    2. Save listings content to files:
 
-        * ``etc_passwd.txt``
-        * ``etc_shadow.txt``
-        * ``etc_group.txt``
+        a. ``etc_passwd.txt``
+        b. ``etc_shadow.txt``
+        c. ``etc_group.txt``
 
-    #. Copy also comments and empty lines
-    #. Parse files and convert it to ``result: list[dict]``
-    #. Return list of users with ``UID`` greater than 1000
-    #. User dict should contains data collected from all files
-    #. Compare result with "Tests" section (see below)
+    3. Copy also comments and empty lines
+    4. Parse files and convert it to ``result: list[dict]``
+    5. Return list of users with ``UID`` greater than 1000
+    6. User dict should contains data collected from all files
+    7. Compare result with "Tests" section (see below)
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Zapisz treści listingów do plików:
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Zapisz treści listingów do plików:
 
-        * ``etc_passwd.txt``
-        * ``etc_shadow.txt``
-        * ``etc_group.txt``
+        a. ``etc_passwd.txt``
+        b. ``etc_shadow.txt``
+        c. ``etc_group.txt``
 
-    #. Skopiuj również komentarze i puste linie
-    #. Sparsuj plik i przedstaw go w formacie ``result: list[dict]``
-    #. Zwróć listę użytkowników, których ``UID`` jest większy niż 1000
-    #. Dict użytkownika powinien zawierać dane z wszystkich plików
-    #. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    3. Skopiuj również komentarze i puste linie
+    4. Sparsuj plik i przedstaw go w formacie ``result: list[dict]``
+    5. Zwróć listę użytkowników, których ``UID`` jest większy niż 1000
+    6. Dict użytkownika powinien zawierać dane z wszystkich plików
+    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Given:
     .. literalinclude:: data/etc-passwd.txt

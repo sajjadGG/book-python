@@ -51,16 +51,16 @@ Regexp Find Dates
 * References: :cite:`RegexpWikipediaApollo11`
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Using regular expressions find dates in US format (example: "April 12, 1961")
-    #. Print all dates
-    #. Compare result with "Tests" section (see below)
+    1. Use data from "Given" section (see below)
+    2. Using regular expressions find dates in US format (example: "April 12, 1961")
+    3. Print all dates
+    4. Compare result with "Tests" section (see below)
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Używając wyrażeń regularnych wyszukaj dat w formacie US (przykład: "April 12, 1961")
-    #. Wyświetl wszystkie daty
-    #. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Używając wyrażeń regularnych wyszukaj dat w formacie US (przykład: "April 12, 1961")
+    3. Wyświetl wszystkie daty
+    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
     >>> result  # doctest: +NORMALIZE_WHITESPACE

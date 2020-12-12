@@ -49,16 +49,16 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Stwórz na swoim komputerze plik o nazwie ``imie-nazwisko.txt``, gdzie:
+    1. Stwórz na swoim komputerze plik o nazwie ``imie-nazwisko.txt``, gdzie:
 
-        * zamiast ``imie`` wpisz swoje imię
-        * zamiast ``nazwisko`` wpisz swoje nazwisko
+        a. zamiast ``imie`` wpisz swoje imię
+        b. zamiast ``nazwisko`` wpisz swoje nazwisko
 
-    #. Do pliku wklej treść tekstu :pep:`20` -- The Zen of Python (wynik polecenia ``import this``)
-    #. Połącz się z serwerem podanym przez prowadzącego
-    #. Pobierz plik ``README.txt`` z głównego folderu
-    #. Do katalogu ``files`` uploaduj plik ``imie-nazwisko.txt``
-    #. Skorzystaj z Context Managera do połączenia
+    2. Do pliku wklej treść tekstu :pep:`20` -- The Zen of Python (wynik polecenia ``import this``)
+    3. Połącz się z serwerem podanym przez prowadzącego
+    4. Pobierz plik ``README.txt`` z głównego folderu
+    5. Do katalogu ``files`` uploaduj plik ``imie-nazwisko.txt``
+    6. Skorzystaj z Context Managera do połączenia
 
 FTP Upload
 ----------
@@ -72,13 +72,13 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Pobierz na swój komputer plik :download:`http://python.astrotech.io/_static/favicon.png`
-    #. Nazwij plik ``imie-nazwisko.png``, gdzie:
+    1. Pobierz na swój komputer plik :download:`http://python.astrotech.io/_static/favicon.png`
+    2. Nazwij plik ``imie-nazwisko.png``, gdzie:
 
-        * zamiast ``imie`` wpisz swoje imię
-        * zamiast ``nazwisko`` wpisz swoje nazwisko
+        a. zamiast ``imie`` wpisz swoje imię
+        b. zamiast ``nazwisko`` wpisz swoje nazwisko
 
-    #. Połącz się z serwerem podanym przez prowadzącego
-    #. Do katalogu ``img`` uploaduj plik pobrany w poprzednim kroku
-    #. Skorzystaj z Context Managera do połączenia
-    #. Przesyłanie danych ma odbywać się w trybie binarnym
+    3. Połącz się z serwerem podanym przez prowadzącego
+    4. Do katalogu ``img`` uploaduj plik pobrany w poprzednim kroku
+    5. Skorzystaj z Context Managera do połączenia
+    6. Przesyłanie danych ma odbywać się w trybie binarnym

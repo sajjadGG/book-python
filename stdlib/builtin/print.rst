@@ -621,16 +621,16 @@ English:
     .. todo:: English translation
 
 Polish:
-    #. Dany jest ciąg znaków: ``text = 'Lorem Ipsum'``
-    #. Napisz trzy funkcje:
+    1. Dany jest ciąg znaków: ``text = 'Lorem Ipsum'``
+    2. Napisz trzy funkcje:
 
-        * ``print_1(text)`` wykorzystującą ``range()``
-        * ``print_2(text)`` wykorzystującą pętlę ``while``
-        * ``print_3(text)`` wykorzystującą mnożenie stringów
+        a. ``print_1(text)`` wykorzystującą ``range()``
+        b. ``print_2(text)`` wykorzystującą pętlę ``while``
+        c. ``print_3(text)`` wykorzystującą mnożenie stringów
 
-    #. Każda funkcja ma wyświetlić 5 kopii tego ciągu znaków
-    #. Każdy ciąg znaków w osobnej linii
-    #. Napisz doctest do wszystkich funkcji
+    3. Każda funkcja ma wyświetlić 5 kopii tego ciągu znaków
+    4. Każdy ciąg znaków w osobnej linii
+    5. Napisz doctest do wszystkich funkcji
 
 Przeliczanie temperatury
 ------------------------
@@ -644,12 +644,12 @@ English:
     .. todo:: English translation
 
 Polish:
-    #. Napisz program, który wyświetli tabelę przeliczeń stopni Celsjusza na stopnie Fahrenheita w zakresie od –20 do +40 stopni Celsjusza (co 5 stopni).
-    #. Wynik musi być taki jak na listingu poniżej
-    #. Znak ma być zawsze wyświetlany
-    #. Zwróć uwagę na wyjustowanie tekstu
-    #. Zwróć uwagę na wypełnienie miejsca niezajętego przez cyfry
-    #. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Napisz program, który wyświetli tabelę przeliczeń stopni Celsjusza na stopnie Fahrenheita w zakresie od –20 do +40 stopni Celsjusza (co 5 stopni).
+    2. Wynik musi być taki jak na listingu poniżej
+    3. Znak ma być zawsze wyświetlany
+    4. Zwróć uwagę na wyjustowanie tekstu
+    5. Zwróć uwagę na wypełnienie miejsca niezajętego przez cyfry
+    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
     .. code-block:: text

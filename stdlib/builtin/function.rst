@@ -357,26 +357,26 @@ Average
 * Time: 13 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Separate header and data
-    #. Define dict ``result: dict[str, list]``, keys are column names from header
-    #. For each row in data, add values to proper lists in ``result``
-    #. Define function ``mean()``, calculating mean for arbitrary number of arguments
-    #. Return ``None`` if any argument to the function is not ``float`` or ``int``
-    #. To calculate mean use built-in functions
-    #. Iterating over ``result`` print column name and calculated average
-    #. Compare result with "Tests" section (see below)
+    1. Use data from "Given" section (see below)
+    2. Separate header and data
+    3. Define dict ``result: dict[str, list]``, keys are column names from header
+    4. For each row in data, add values to proper lists in ``result``
+    5. Define function ``mean()``, calculating mean for arbitrary number of arguments
+    6. Return ``None`` if any argument to the function is not ``float`` or ``int``
+    7. To calculate mean use built-in functions
+    8. Iterating over ``result`` print column name and calculated average
+    9. Compare result with "Tests" section (see below)
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Odseparuj nagłówek od danych
-    #. Zdefiniuj słownik ``result: dict[str, list]``, klucze to nazwy kolumn z nagłówka
-    #. Dla każdego wiersza w danych, dodawaj wartości do odpowiednich list w ``result``
-    #. Zdefiniuj funkcję ``mean()``, liczącą średnią dla dowolnej ilości argumentów
-    #. Zwróć ``None`` jeżeli którykolwiek z argumentów do funkcji nie jest ``float`` lub ``int``
-    #. Do wyliczenia średniej wykorzystaj wbudowane funkcje
-    #. Iterując po ``result`` wypisz nazwę kolumny oraz wyliczoną średnią
-    #. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Odseparuj nagłówek od danych
+    3. Zdefiniuj słownik ``result: dict[str, list]``, klucze to nazwy kolumn z nagłówka
+    4. Dla każdego wiersza w danych, dodawaj wartości do odpowiednich list w ``result``
+    5. Zdefiniuj funkcję ``mean()``, liczącą średnią dla dowolnej ilości argumentów
+    6. Zwróć ``None`` jeżeli którykolwiek z argumentów do funkcji nie jest ``float`` lub ``int``
+    7. Do wyliczenia średniej wykorzystaj wbudowane funkcje
+    8. Iterując po ``result`` wypisz nazwę kolumny oraz wyliczoną średnią
+    9. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Given:
     .. code-block:: python

@@ -6,16 +6,16 @@
 * Time: 5 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Convert given dates to `datetime` objects
-    #. Print timestamp for each date
-    #. What is special about those dates?
+    1. Use data from "Given" section (see below)
+    2. Convert given dates to `datetime` objects
+    3. Print timestamp for each date
+    4. What is special about those dates?
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Przekonwertuj podane daty do obiektów `datetime`
-    #. Wypisz timestamp każdej daty
-    #. Co to za daty?
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Przekonwertuj podane daty do obiektów `datetime`
+    3. Wypisz timestamp każdej daty
+    4. Co to za daty?
 """
 
 

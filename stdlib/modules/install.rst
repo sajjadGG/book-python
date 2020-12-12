@@ -40,13 +40,13 @@ Installing from requirements.txt
 * Time: 5 min
 
 English:
-    #. Create ``requirements.txt`` file
-    #. Add line ``mypy``
-    #. Let your IDE install package automatically (click in yellow banner)
-    #. Run ``mypy`` on last edited Python script
+    1. Create ``requirements.txt`` file
+    2. Add line ``mypy``
+    3. Let your IDE install package automatically (click in yellow banner)
+    4. Run ``mypy`` on last edited Python script
 
 Polish:
-    #. Stwórz plik ``requirements.txt``
-    #. Dopisz linię ``mypy``
-    #. Niech Twoje IDE zainstaluje package automatycznie (kliknięcie w żółty banner)
-    #. Uruchom ``mypy`` na ostatnio edytowanym skrypcie Python
+    1. Stwórz plik ``requirements.txt``
+    2. Dopisz linię ``mypy``
+    3. Niech Twoje IDE zainstaluje package automatycznie (kliknięcie w żółty banner)
+    4. Uruchom ``mypy`` na ostatnio edytowanym skrypcie Python

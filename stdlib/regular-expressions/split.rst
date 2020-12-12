@@ -69,14 +69,14 @@ Regexp Split Moon Speech
 * References: "Moon Speech" by John F. Kennedy at Rice Stadium, Houston, TX on 1962-09-12 :cite:`RegexpKennedy1962`
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Using ``re.split()`` split text by paragraphs
-    #. Print paragraph starting with "We choose to go to the moon"
+    1. Use data from "Given" section (see below)
+    2. Using ``re.split()`` split text by paragraphs
+    3. Print paragraph starting with "We choose to go to the moon"
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Za pomocą ``re.split()`` podziel tekst na paragrafy
-    #. Wyświetl paragraf zaczynający się od słów "We choose to go to the moon"
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Za pomocą ``re.split()`` podziel tekst na paragrafy
+    3. Wyświetl paragraf zaczynający się od słów "We choose to go to the moon"
 
 Given:
     .. code-block:: python

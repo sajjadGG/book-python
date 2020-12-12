@@ -247,28 +247,28 @@ Database SQLite Logs
 * Time: 21 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Save input data to file ``FILE``
-    #. Extract ``datetime`` object, level name and message from each line
-    #. Collect data to ``DATA: list[dict]`` (see below)
-    #. Create database schema for logs
-    #. Add all logs to database
-    #. Select only ``WARNING`` logs between 1969-07-20 and 1969-07-21
-    #. Order logs by datetime descending
-    #. Print ``result: list[dict]``
-    #. Compare result with "Tests" section (see below)
+    1. Use data from "Given" section (see below)
+    2. Save input data to file ``FILE``
+    3. Extract ``datetime`` object, level name and message from each line
+    4. Collect data to ``DATA: list[dict]`` (see below)
+    5. Create database schema for logs
+    6. Add all logs to database
+    7. Select only ``WARNING`` logs between 1969-07-20 and 1969-07-21
+    8. Order logs by datetime descending
+    9. Print ``result: list[dict]``
+    10. Compare result with "Tests" section (see below)
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Zapisz dane wejściowe do pliku ``FILE``
-    #. Wyciągnij obiekt ``datetime``, poziom logowania oraz wiadomość z każdej linii
-    #. Zbierz dane do ``DATA: list[dict]`` (patrz sekcja input)
-    #. Stwórz schemat bazy danych dla logów
-    #. Dodaj wszystkie linie do bazy danych
-    #. Wybierz tylko logi ``WARNING`` z przedziału 1969-07-20 i 1969-07-21
-    #. Posortuj logi w kolejności datetime malejąco
-    #. Wyświetl ``result: list[dict]``
-    #. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Zapisz dane wejściowe do pliku ``FILE``
+    3. Wyciągnij obiekt ``datetime``, poziom logowania oraz wiadomość z każdej linii
+    4. Zbierz dane do ``DATA: list[dict]`` (patrz sekcja input)
+    5. Stwórz schemat bazy danych dla logów
+    6. Dodaj wszystkie linie do bazy danych
+    7. Wybierz tylko logi ``WARNING`` z przedziału 1969-07-20 i 1969-07-21
+    8. Posortuj logi w kolejności datetime malejąco
+    9. Wyświetl ``result: list[dict]``
+    10. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Given:
     .. code-block:: python
@@ -333,22 +333,22 @@ Database SQLite CSV
 * Time: 21 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Save ``DATA`` to ``FILE``
-    #. Read data from ``FILE`` (don't use ``csv`` or ``pandas`` library)
-    #. Replace species from ``int`` to ``str`` according to ``SPECIES`` conversion table
-    #. Connect to the ``sqlite3`` using context manager (``with``)
-    #. Create table ``iris`` and write data to it
-    #. Print all rows as dicts
+    1. Use data from "Given" section (see below)
+    2. Save ``DATA`` to ``FILE``
+    3. Read data from ``FILE`` (don't use ``csv`` or ``pandas`` library)
+    4. Replace species from ``int`` to ``str`` according to ``SPECIES`` conversion table
+    5. Connect to the ``sqlite3`` using context manager (``with``)
+    6. Create table ``iris`` and write data to it
+    7. Print all rows as dicts
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Zapisz ``DATA`` do ``FILE``
-    #. Wczytaj dane z ``FILE`` (nie używaj biblioteki ``csv`` lub ``pandas``)
-    #. Podmień gatunki z ``int`` na ``str`` zgodnie z tabelą podstawień ``SPECIES``
-    #. Połącz się do bazy danych ``sqlite3`` używając context managera (``with``)
-    #. Stwórz tabelę ``iris`` i zapisz do niej dane
-    #. Wypisz wszystkie wiersze jako słowniki
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Zapisz ``DATA`` do ``FILE``
+    3. Wczytaj dane z ``FILE`` (nie używaj biblioteki ``csv`` lub ``pandas``)
+    4. Podmień gatunki z ``int`` na ``str`` zgodnie z tabelą podstawień ``SPECIES``
+    5. Połącz się do bazy danych ``sqlite3`` używając context managera (``with``)
+    6. Stwórz tabelę ``iris`` i zapisz do niej dane
+    7. Wypisz wszystkie wiersze jako słowniki
 
 Given:
     .. code-block:: python
@@ -418,16 +418,16 @@ Database SQLite JSON
 * Time: 21 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Create database and two tables ``astronaut`` and ``address``
-    #. Insert data to separate tables
-    #. Print data joining information from both tables
+    1. Use data from "Given" section (see below)
+    2. Create database and two tables ``astronaut`` and ``address``
+    3. Insert data to separate tables
+    4. Print data joining information from both tables
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Stwórz bazę danych i dwie tabele ``astronaut`` i ``address``
-    #. Zapisz dane do osobnych tabel
-    #. Wypisz dane łącząc informacje z obu tabel
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Stwórz bazę danych i dwie tabele ``astronaut`` i ``address``
+    3. Zapisz dane do osobnych tabel
+    4. Wypisz dane łącząc informacje z obu tabel
 
 Given:
     .. code-block:: python

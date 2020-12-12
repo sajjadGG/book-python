@@ -163,19 +163,19 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Celem zadania będzie opracowanie tabeli, cech osób, które czynią z niego astronautę.
-    #. Istotne jest dobranie odpowiednich kolumn cech oraz wpisanie wartości
-    #. Dane kontrargumentowe możesz dobrać dowolnie
-    #. Na podstawie danych wybranych astronautów:
+    1. Celem zadania będzie opracowanie tabeli, cech osób, które czynią z niego astronautę.
+    2. Istotne jest dobranie odpowiednich kolumn cech oraz wpisanie wartości
+    3. Dane kontrargumentowe możesz dobrać dowolnie
+    4. Na podstawie danych wybranych astronautów:
 
-        * https://github.com/AstroMatt/astroBio/tree/master/raw
-        * https://github.com/AstroMatt/astroBio/tree/master/dat
+        a. https://github.com/AstroMatt/astroBio/tree/master/raw
+        b. https://github.com/AstroMatt/astroBio/tree/master/dat
 
-    #. Stwórz listę features dla kilkunastu cech osób
-    #. Stwórz CSV z wybranych przez Ciebie danych i załaduj za pomocą biblioteki ``pandas``
-    #. Do
-    #. Uruchom test wagi parametrów
-    #. Czy Twoje features mają wysokie znaczenie?
+    5. Stwórz listę features dla kilkunastu cech osób
+    6. Stwórz CSV z wybranych przez Ciebie danych i załaduj za pomocą biblioteki ``pandas``
+    7. Do
+    8. Uruchom test wagi parametrów
+    9. Czy Twoje features mają wysokie znaczenie?
 
 Hints:
     * ``np.genfromtxt()``

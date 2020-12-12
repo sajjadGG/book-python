@@ -329,13 +329,13 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Napisz parser parametrów linii poleceń
-    #. Ma przyjmować tylko ``int`` i ``float``
-    #. Dla parametrów ma uruchomić funkcje ``avg()`` z listingu poniżej:
+    1. Napisz parser parametrów linii poleceń
+    2. Ma przyjmować tylko ``int`` i ``float``
+    3. Dla parametrów ma uruchomić funkcje ``avg()`` z listingu poniżej:
 
         .. code-block:: python
 
             def avg(*args):
                 return sum(args) / len(args)
 
-    #. Uruchamianie ``python argparse_avg.py --numbers 5 10 100 32 -90 27.5``
+    4. Uruchamianie ``python argparse_avg.py --numbers 5 10 100 32 -90 27.5``

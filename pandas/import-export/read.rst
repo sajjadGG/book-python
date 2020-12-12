@@ -285,8 +285,7 @@ English:
     3. Use provided column names in ``COLUMNS``
     4. Read labels from the first row
     5. Replace data in ``label`` column with values extracted above
-    6. Print ``DataFrame``
-    #. Print first 5 rows from ``result``
+    6. Print first 5 rows from ``result``
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)

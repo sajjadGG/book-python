@@ -135,33 +135,33 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Stwórz projekt ``addressbook``
-    #. Stwórz apkę ``contact``
-    #. Stwórz model ``Address`` z polami:
+    1. Stwórz projekt ``addressbook``
+    2. Stwórz apkę ``contact``
+    3. Stwórz model ``Address`` z polami:
 
-        * Typ (do wyboru typ: domowy, praca, komórka)
-        * Ulica
-        * Numer bloku
-        * Numer mieszkania
-        * Kod pocztowy
-        * Miasto
-        * Region
+        a. Typ (do wyboru typ: domowy, praca, komórka)
+        b. Ulica
+        c. Numer bloku
+        d. Numer mieszkania
+        e. Kod pocztowy
+        f. Miasto
+        g. Region
         * Kraj
 
-    #. Stwórz model ``Person`` z polami:
+    4. Stwórz model ``Person`` z polami:
 
-        * Imię
-        * Nazwisko
-        * Data Urodzenia
-        * Zdjęcie
-        * Telefon (do wyboru typ: domowy, praca, komórka)
-        * Email (do wyboru typ: domowy, praca, komórka)
-        * Adres
+        a. Imię
+        b. Nazwisko
+        c. Data Urodzenia
+        d. Zdjęcie
+        e. Telefon (do wyboru typ: domowy, praca, komórka)
+        f. Email (do wyboru typ: domowy, praca, komórka)
+        g. Adres
 
-    #. Osoba może mieć wiele adresów, telefonów i e-maili
-    #. Wygeneruj panel administracyjny
-    #. Można wypisać kontakty i na głównym ekranie widoczne są podstawowe pola osoby
-    #. Dodaj wyszukiwarkę po nazwisku
-    #. Dodaj filtrowanie po dacie urodzenia
+    5. Osoba może mieć wiele adresów, telefonów i e-maili
+    6. Wygeneruj panel administracyjny
+    7. Można wypisać kontakty i na głównym ekranie widoczne są podstawowe pola osoby
+    8. Dodaj wyszukiwarkę po nazwisku
+    9. Dodaj filtrowanie po dacie urodzenia
 
 

@@ -145,15 +145,15 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Napisz klasyfikator najbliższego sąsiada
-    #. Podziel dane treningowe i testowe pół-na-pół
-    #. Dla zbioru Iris ma osiągać accuracy na poziomie powyżej 90%
-    #. Klasa ``NearestNeighborClassifier`` powinna mieć interfejs zgodny z ``scikit-learn``:
+    1. Napisz klasyfikator najbliższego sąsiada
+    2. Podziel dane treningowe i testowe pół-na-pół
+    3. Dla zbioru Iris ma osiągać accuracy na poziomie powyżej 90%
+    4. Klasa ``NearestNeighborClassifier`` powinna mieć interfejs zgodny z ``scikit-learn``:
 
-        * ``.fit()`` - do uczenia funkcji
-        * ``.predict()`` - do predykcji
+        a. ``.fit()`` - do uczenia funkcji
+        b. ``.predict()`` - do predykcji
 
-    #. Do porównania użyj ``accuracy = metrics.accuracy_score(labels_test, labels_predicted)``
+    5. Do porównania użyj ``accuracy = metrics.accuracy_score(labels_test, labels_predicted)``
 
 Hints:
     * Dla każdego feature sprawdzasz jaka jest najmniejsza odległość
@@ -206,10 +206,10 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Pobierz dane Brest Cancer Dataset (``datasets.load_breast_cancer()``)
-    #. Podziel zestaw na dane testowe (15%) i dane treningowe (85%) i ustaw ``random_state=0``
-    #. Dla danych przeprowadź analizę wykorzystując różne modele danych
-    #. Wyświetl nazwę, dokładność oraz odchylenie standardowe modelu
+    1. Pobierz dane Brest Cancer Dataset (``datasets.load_breast_cancer()``)
+    2. Podziel zestaw na dane testowe (15%) i dane treningowe (85%) i ustaw ``random_state=0``
+    3. Dla danych przeprowadź analizę wykorzystując różne modele danych
+    4. Wyświetl nazwę, dokładność oraz odchylenie standardowe modelu
 
 .. code-block:: text
 

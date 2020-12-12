@@ -41,6 +41,6 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Połącz się z serwerem podanym przez prowadzącego
-    #. Wyślij wiadomość email na podany przez prowadzącego adres
-    #. Do wiadomości załącz plik ``pep20.txt``, który będzie wynikiem polecenia ``import this`` :pep:`20` -- The Zen of Python
+    1. Połącz się z serwerem podanym przez prowadzącego
+    2. Wyślij wiadomość email na podany przez prowadzącego adres
+    3. Do wiadomości załącz plik ``pep20.txt``, który będzie wynikiem polecenia ``import this`` :pep:`20` -- The Zen of Python

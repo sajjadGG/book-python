@@ -175,11 +175,11 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Za pomocą beautifulsoup4 ze strony https://github.com/AstroMatt/book-python/blob/master/numerical-analysis/data/iris-dirty.csv pobierz dane zbioru Irysów.
-    #. Parsując kod HTML oczyść dane.
-    #. Skasuj pierwszy wiersz nagłówkowy.
-    #. Kolumny nazwij: ``Sepal length``, ``Sepal width``, ``Petal length``, ``Petal width``, ``Species``
-    #. Wyświetl dane w formacie listy dictów, kluczami mają być nazwy kolumn.
+    1. Za pomocą beautifulsoup4 ze strony https://github.com/AstroMatt/book-python/blob/master/numerical-analysis/data/iris-dirty.csv pobierz dane zbioru Irysów.
+    2. Parsując kod HTML oczyść dane.
+    3. Skasuj pierwszy wiersz nagłówkowy.
+    4. Kolumny nazwij: ``Sepal length``, ``Sepal width``, ``Petal length``, ``Petal width``, ``Species``
+    5. Wyświetl dane w formacie listy dictów, kluczami mają być nazwy kolumn.
 
 Scrapping EVA
 -------------
@@ -193,17 +193,17 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Na podstawie podanych URL:
+    1. Na podstawie podanych URL:
 
-        * https://www.worldspaceflight.com/bios/eva/eva.php
-        * https://www.worldspaceflight.com/bios/eva/eva2.php
-        * https://www.worldspaceflight.com/bios/eva/eva3.php
-        * https://www.worldspaceflight.com/bios/eva/eva4.php
+        a. https://www.worldspaceflight.com/bios/eva/eva.php
+        b. https://www.worldspaceflight.com/bios/eva/eva2.php
+        c. https://www.worldspaceflight.com/bios/eva/eva3.php
+        d. https://www.worldspaceflight.com/bios/eva/eva4.php
 
-    #. Skrapuj stronę wykorzystując ``beautifulsoup4``
-    #. Przygotuj plik CSV z danymi dotyczącymi spacerów kosmicznych
-    #. Spróbuj to samo zrobić za pomocą ``pandas.read_html()``:
+    2. Skrapuj stronę wykorzystując ``beautifulsoup4``
+    3. Przygotuj plik CSV z danymi dotyczącymi spacerów kosmicznych
+    4. Spróbuj to samo zrobić za pomocą ``pandas.read_html()``:
 
-        * Podając jako parametr czwarty URL
-        * Dla częściowo sparsowanej strony, np. wyciągniętej tabelki
+        a. Podając jako parametr czwarty URL
+        b. Dla częściowo sparsowanej strony, np. wyciągniętej tabelki
 

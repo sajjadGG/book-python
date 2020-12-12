@@ -262,10 +262,10 @@ Least square regression 3 points
 * Time: 13 min
 
 English:
-    #. Consider the following set of points: :math:`{(-2 , -1) , (1 , 1) , (3 , 2)}`
-    #. Find the least square regression line for the given data points.
-    #. Plot the given points and the regression line in the same rectangular system of axes.
-    #. Napisz własny kod implementujący rozwiązanie
+    1. Consider the following set of points: :math:`{(-2 , -1) , (1 , 1) , (3 , 2)}`
+    2. Find the least square regression line for the given data points.
+    3. Plot the given points and the regression line in the same rectangular system of axes.
+    4. Napisz własny kod implementujący rozwiązanie
 
 Polish:
     .. todo:: Polish Translation
@@ -279,9 +279,9 @@ Least square regression 4 points
 * Time: 13 min
 
 English:
-    #. Find the least square regression line for the following set of data: :math:`{(-1 , 0),(0 , 2),(1 , 4),(2 , 5)}`
-    #. Plot the given points and the regression line in the same rectangular system of axes.
-    #. Użyj kodu z przykładu własnej implementacji do rozwiązania
+    1. Find the least square regression line for the following set of data: :math:`{(-1 , 0),(0 , 2),(1 , 4),(2 , 5)}`
+    2. Plot the given points and the regression line in the same rectangular system of axes.
+    3. Użyj kodu z przykładu własnej implementacji do rozwiązania
 
 Polish:
     .. todo:: Polish Translation
@@ -295,16 +295,16 @@ Company sales
 * Time: 13 min
 
 English:
-    #. The sales of a company (in million dollars) for each year are shown in the table below.
+    1. The sales of a company (in million dollars) for each year are shown in the table below.
 
         .. code-block:: text
 
             x (year)    2005    2006    2007    2008    2009
             y (sales)   12      19      29      37      45
 
-    #. Find the least square regression line :math:`y = ax + b` .
-    #. Use the least squares regression line as a model to estimate the sales of the company in 2012.
-    #. Use ``sklearn``
+    2. Find the least square regression line :math:`y = ax + b` .
+    3. Use the least squares regression line as a model to estimate the sales of the company in 2012.
+    4. Use ``sklearn``
 
 Polish:
     .. todo:: Polish Translation

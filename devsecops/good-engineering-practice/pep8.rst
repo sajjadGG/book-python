@@ -855,8 +855,8 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Install ``pycodestyle``
-    #. Run ``pycodestyle`` on your last script
-    #. Fix all errors
-    #. Run ``pycodestyle`` on directory with all of your scripts
-    #. Fix all errors
+    1. Install ``pycodestyle``
+    2. Run ``pycodestyle`` on your last script
+    3. Fix all errors
+    4. Run ``pycodestyle`` on directory with all of your scripts
+    5. Fix all errors

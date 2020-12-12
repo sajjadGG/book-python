@@ -401,16 +401,16 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Załóż darmowe konto na Github i potwierdź email
-    #. Wejdź na stronę internetową https://github.com/settings/tokens
-    #. Wygeneruj w swoim profilu token (scope ``public_repo`` - Access public repositories)
-    #. Używając biblioteki standardowej w Pythonie
-    #. Zaciągnij informacje o repozytoriach użytkownika Django na https://github.com
-    #. Każdy request uwierzytelnij za pomocą Basic Auth i swojego Access Tokena
-    #. Następnie przeglądnij listę z poziomu Pythona i znajdź URL dla repozytorium ``django``
-    #. Przeglądnij to repozytorium i jego listę komitów
-    #. Podaj datę i opis ostatniego komita
-    #. Znajdź numery ID zadań (``Fixed #...``) z issue trackera, które zostały rozwiązane w ostatnim miesiącu
+    1. Załóż darmowe konto na Github i potwierdź email
+    2. Wejdź na stronę internetową https://github.com/settings/tokens
+    3. Wygeneruj w swoim profilu token (scope ``public_repo`` - Access public repositories)
+    4. Używając biblioteki standardowej w Pythonie
+    5. Zaciągnij informacje o repozytoriach użytkownika Django na https://github.com
+    6. Każdy request uwierzytelnij za pomocą Basic Auth i swojego Access Tokena
+    7. Następnie przeglądnij listę z poziomu Pythona i znajdź URL dla repozytorium ``django``
+    8. Przeglądnij to repozytorium i jego listę komitów
+    9. Podaj datę i opis ostatniego komita
+    10. Znajdź numery ID zadań (``Fixed #...``) z issue trackera, które zostały rozwiązane w ostatnim miesiącu
 
 Hints:
     .. code-block:: console

@@ -202,26 +202,26 @@ Regexp Match Phones
 * Time: 8 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Use regular expressions to validate phone numbers
-    #. Check all given numbers (see input section)
-    #. Valid phone number formats:
+    1. Use data from "Given" section (see below)
+    2. Use regular expressions to validate phone numbers
+    3. Check all given numbers (see input section)
+    4. Valid phone number formats:
 
-        * Easy version: ``+## ### ### ###``
-        * Harder version: ``+## ### ### ###`` or ``+## ## ### ####``
+        a. Easy version: ``+## ### ### ###``
+        b. Harder version: ``+## ### ### ###`` or ``+## ## ### ####``
 
-    #. Compare result with "Tests" section (see below)
+    5. Compare result with "Tests" section (see below)
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Użyj wyrażeń regularnych do walidacji numeru telefonu
-    #. Sprawdź wszystkie podane numery (patrz sekcja input)
-    #. Poprawne formaty numeru:
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Użyj wyrażeń regularnych do walidacji numeru telefonu
+    3. Sprawdź wszystkie podane numery (patrz sekcja input)
+    4. Poprawne formaty numeru:
 
-        * Wersja łatwa: ``+## ### ### ###``
-        * Wersja trudniejsza: ``+## ### ### ###`` lub ``+## ## ### ####``
+        a. Wersja łatwa: ``+## ### ### ###``
+        b. Wersja trudniejsza: ``+## ### ### ###`` lub ``+## ## ### ####``
 
-    #. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
     >>> is_valid_phone('+48 (12) 355 5678')
@@ -260,51 +260,49 @@ Regexp Match Git Flow
 * Time: 21 min
 
 English:
-    #. Use regular expressions to validate Git branch names
-    #. Check all given branch names (see input section)
-    #. Branch names should comply with Git Flow convention:
+    1. Use regular expressions to validate Git branch names
+    2. Check all given branch names (see input section)
+    3. Branch names should comply with Git Flow convention:
 
-    #. Where:
+        a. ``release/major.minor`` - major and minor are unsigned integers
+        b. ``feature/``, ``bugfix/``, ``hotfix/`` - branch prefixes
+        c. ``prefix/ISSUEKEY-NUMBER-summary``
+        d. ``ISSUEKEY`` - uppercase, only ASCII letters, minimum 2 characters, not longer than 10
+        e. ``NUMBER`` - positive integer, maximal 5 digits
+        f. ``summary`` - lowercase, ASCII letters and numbers, dashes instead whitespaces, not longer than 30
+        g. ``pull-request/NUMBER`` - positive integer, maximal 5 digits
 
-        * ``release/major.minor`` - major and minor are unsigned integers
-        * ``feature/``, ``bugfix/``, ``hotfix/`` - branch prefixes
-        * ``prefix/ISSUEKEY-NUMBER-summary``
-        * ``ISSUEKEY`` - uppercase, only ASCII letters, minimum 2 characters, not longer than 10
-        * ``NUMBER`` - positive integer, maximal 5 digits
-        * ``summary`` - lowercase, ASCII letters and numbers, dashes instead whitespaces, not longer than 30
-        * ``pull-request/NUMBER`` - positive integer, maximal 5 digits
+    4. Example of valid branches:
 
-    #. Example of valid branches:
-
-        * ``master``
-        * ``develop``
-        * ``release/1.0``
-        * ``feature/ID-1337-some-new-feature``
-        * ``bugfix/ID-1337-fixing-old-bug``
-        * ``hotfix/ID-1337-bug-on-production``
-        * ``pull-request/42``
+        a. ``master``
+        b. ``develop``
+        c. ``release/1.0``
+        d. ``feature/ID-1337-some-new-feature``
+        e. ``bugfix/ID-1337-fixing-old-bug``
+        f. ``hotfix/ID-1337-bug-on-production``
+        g. ``pull-request/42``
 
 
 Polish:
-    #. Użyj wyrażeń regularnych do walidacji nazwy gałęzi w Git
-    #. Sprawdź wszystkie dane nazwy gałęzi (patrz sekcja input)
-    #. Nazwy gałęzi powinny stosować się do konwencji Git Flow:
+    1. Użyj wyrażeń regularnych do walidacji nazwy gałęzi w Git
+    2. Sprawdź wszystkie dane nazwy gałęzi (patrz sekcja input)
+    3. Nazwy gałęzi powinny stosować się do konwencji Git Flow:
 
-        * ``release/major.minor`` - major i minor nieujemne liczby całkowite
-        * ``feature/``, ``bugfix/``, ``hotfix/`` - prefiks nazwy gałęzi
-        * ``prefix/ISSUEKEY-NUMBER-summary``
-        * ``ISSUEKEY`` - duże litery, tylko litery ASCII, minimum 2 znaki, nie więcej niż 10
-        * ``NUMBER`` - dodatnia liczba całkowita, maksymalnie 5 cyfr
-        * ``summary`` - małe litery, litery ASCII i liczby, myślniki zamiast białych spacji, nie dłuższa niż 30
-        * ``pull-request/NUMBER`` - dodatnia liczba całkowita, maksymalnie 5 cyfr
+        a. ``release/major.minor`` - major i minor nieujemne liczby całkowite
+        b. ``feature/``, ``bugfix/``, ``hotfix/`` - prefiks nazwy gałęzi
+        c. ``prefix/ISSUEKEY-NUMBER-summary``
+        d. ``ISSUEKEY`` - duże litery, tylko litery ASCII, minimum 2 znaki, nie więcej niż 10
+        e. ``NUMBER`` - dodatnia liczba całkowita, maksymalnie 5 cyfr
+        f. ``summary`` - małe litery, litery ASCII i liczby, myślniki zamiast białych spacji, nie dłuższa niż 30
+        g. ``pull-request/NUMBER`` - dodatnia liczba całkowita, maksymalnie 5 cyfr
 
-    #. Przykład poprawnych gałęzi:
+    4. Przykład poprawnych gałęzi:
 
-        * ``master``
-        * ``develop``
-        * ``release/1.0``
-        * ``feature/ID-1337-some-new-feature``
-        * ``bugfix/ID-1337-fixing-old-bug``
-        * ``hotfix/ID-1337-bug-on-production``
-        * ``pull-request/42``
+        a. ``master``
+        b. ``develop``
+        c. ``release/1.0``
+        d. ``feature/ID-1337-some-new-feature``
+        e. ``bugfix/ID-1337-fixing-old-bug``
+        f. ``hotfix/ID-1337-bug-on-production``
+        g. ``pull-request/42``
 

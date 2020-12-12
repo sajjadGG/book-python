@@ -12,32 +12,32 @@ Entry Test Select
 * Time: 5 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Write header (first line) to ``header`` variable
-    #. Convert to ``list`` data from row 2, 6, 9 and add to ``result``
-    #. Convert to ``tuple`` data from row 12, 15, 16 and add to ``result``
-    #. Convert to ``dict`` data from row 18, 21 and add to ``result``:
+    1. Use data from "Given" section (see below)
+    2. Write header (first line) to ``header`` variable
+    3. Convert to ``list`` data from row 2, 6, 9 and add to ``result``
+    4. Convert to ``tuple`` data from row 12, 15, 16 and add to ``result``
+    5. Convert to ``dict`` data from row 18, 21 and add to ``result``:
 
-        * key -> index number (18 or 21)
-        * value -> species name
+        a. key -> index number (18 or 21)
+        b. value -> species name
 
-    #. Add empty ``set`` to ``result``
-    #. Use only indexes
-    #. Do not use ``for``, ``while`` or ``slice()``
+    6. Add empty ``set`` to ``result``
+    7. Use only indexes
+    8. Do not use ``for``, ``while`` or ``slice()``
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Zapisz nagłówek (pierwsza linia) do zmiennej ``header``
-    #. Przekonwertuj do ``list`` dane z wierszy 2, 6, 9 i dodaj do ``result``
-    #. Przekonwertuj do ``tuple`` dane z wierszy 12, 15, 16 i dodaj do ``result``
-    #. Przekonwertuj do ``dict`` dane z wierszy 18, 21 i dodaj do ``result``:
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Zapisz nagłówek (pierwsza linia) do zmiennej ``header``
+    3. Przekonwertuj do ``list`` dane z wierszy 2, 6, 9 i dodaj do ``result``
+    4. Przekonwertuj do ``tuple`` dane z wierszy 12, 15, 16 i dodaj do ``result``
+    5. Przekonwertuj do ``dict`` dane z wierszy 18, 21 i dodaj do ``result``:
 
-        * klucz -> numer indeksu (18 or 21)
-        * wartość -> nazwa gatunku
+        a. klucz -> numer indeksu (18 or 21)
+        b. wartość -> nazwa gatunku
 
-     #. Dodaj pusty ``set`` do ``result``
-     #. Użyj tylko indeksów
-     #. Nie używaj ``for``, ``while`` lub ``slice()``
+    6. Dodaj pusty ``set`` do ``result``
+    7. Użyj tylko indeksów
+    8. Nie używaj ``for``, ``while`` lub ``slice()``
 
 Given:
     .. code-block:: python
@@ -75,20 +75,20 @@ Entry Test Slice
 * Time: 13 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Use only ``slice``
-    #. Extract list ``features`` with measurements (every row must be tuple)
-    #. Extract species name (every fifth element) and write to ``labels`` list
-    #. Write unique species names to ``species`` set
-    #. Compare result with "Tests" section (see below)
+    1. Use data from "Given" section (see below)
+    2. Use only ``slice``
+    3. Extract list ``features`` with measurements (every row must be tuple)
+    4. Extract species name (every fifth element) and write to ``labels`` list
+    5. Write unique species names to ``species`` set
+    6. Compare result with "Tests" section (see below)
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Użyj tylko ``slice``
-    #. Wyodrębnij listę ``features`` w pomiarami (każdy wiersz ma być krotką)
-    #. Wyodrębnij nazwę gatunku (co piąty element) i zapisz do listy ``labels``
-    #. Zapisz unikalne nazwy gatunków do zbioru ``species``
-    #. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Użyj tylko ``slice``
+    3. Wyodrębnij listę ``features`` w pomiarami (każdy wiersz ma być krotką)
+    4. Wyodrębnij nazwę gatunku (co piąty element) i zapisz do listy ``labels``
+    5. Zapisz unikalne nazwy gatunków do zbioru ``species``
+    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Given:
     .. code-block:: python
@@ -139,24 +139,24 @@ Entry Test Listdict
 * Time: 13 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Separate header and data
-    #. Print ``result: list[dict]``
+    1. Use data from "Given" section (see below)
+    2. Separate header and data
+    3. Print ``result: list[dict]``
 
-        * key - name from the header
-        * value - measurement or species
+        a. key - name from the header
+        b. value - measurement or species
 
-    #. Compare result with "Tests" section (see below)
+    4. Compare result with "Tests" section (see below)
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Odseparuj nagłówek i dane
-    #. Wypisz ``result: list[dict]``
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Odseparuj nagłówek i dane
+    3. Wypisz ``result: list[dict]``
 
-        * klucz: nazwa z nagłówka
-        * wartość: wyniki pomiarów lub gatunek
+        a. klucz: nazwa z nagłówka
+        b. wartość: wyniki pomiarów lub gatunek
 
-    #. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Given:
     .. code-block:: python
@@ -201,16 +201,16 @@ Entry Test Nested
 * Time: 13 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Separate header from data
-    #. Iterate over data
-    #. Print species names ending with "ca" or "osa"
+    1. Use data from "Given" section (see below)
+    2. Separate header from data
+    3. Iterate over data
+    4. Print species names ending with "ca" or "osa"
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Oddziel nagłówek od danych
-    #. Iteruj po danych
-    #. Wypisz nazwy gatunków kończące się na "ca" lub "osa"
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Oddziel nagłówek od danych
+    3. Iteruj po danych
+    4. Wypisz nazwy gatunków kończące się na "ca" lub "osa"
 
 Given:
     .. code-block:: python

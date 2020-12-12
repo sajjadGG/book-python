@@ -47,26 +47,26 @@ Regexp Search Astronauts
 * References: First paragraph from Apollo 11 Wikipedia entry :cite:`RegexpWikipediaApollo11`
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Use ``re.search()`` to check if Astronaut first and last names are in the text
-    #. Astronauts to find:
+    1. Use data from "Given" section (see below)
+    2. Use ``re.search()`` to check if Astronaut first and last names are in the text
+    3. Astronauts to find:
 
-        * Neil Armstrong
-        * Buzz Aldrin
-        * Michael Collins
-        * Jan Twardowski
-        * Mark Watney
+        a. Neil Armstrong
+        b. Buzz Aldrin
+        c. Michael Collins
+        d. Jan Twardowski
+        e. Mark Watney
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Użyj ``re.search()`` do sprawdzenia czy imiona i nazwiska Astronautów występują w tekście
-    #. Astronauci do znalezienia:
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Użyj ``re.search()`` do sprawdzenia czy imiona i nazwiska Astronautów występują w tekście
+    3. Astronauci do znalezienia:
 
-        * Neil Armstrong
-        * Buzz Aldrin
-        * Michael Collins
-        * Jan Twardowski
-        * Mark Watney
+        a. Neil Armstrong
+        b. Buzz Aldrin
+        c. Michael Collins
+        d. Jan Twardowski
+        e. Mark Watney
 
 Given:
     .. code-block:: python
@@ -93,16 +93,16 @@ Regexp Search Moon Speech
 * References: "Moon Speech" by John F. Kennedy at Rice Stadium, Houston, TX on 1962-09-12 :cite:`RegexpKennedy1962`
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Save as ``moon_speech.html``
-    #. Using ``re.search()`` split text by paragraphs
-    #. Print paragraph starting with "We choose to go to the moon"
+    1. Use data from "Given" section (see below)
+    2. Save as ``moon_speech.html``
+    3. Using ``re.search()`` split text by paragraphs
+    4. Print paragraph starting with "We choose to go to the moon"
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Zapisz jako ``moon_speech.html``
-    #. Za pomocą ``re.search()`` podziel tekst na paragrafy
-    #. Wyświetl paragraf zaczynający się od słów "We choose to go to the moon"
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Zapisz jako ``moon_speech.html``
+    3. Za pomocą ``re.search()`` podziel tekst na paragrafy
+    4. Wyświetl paragraf zaczynający się od słów "We choose to go to the moon"
 
 .. code-block:: python
 
@@ -118,16 +118,16 @@ Regexp Search Time
 * References: First paragraph from Apollo 11 Wikipedia entry :cite:`RegexpWikipediaApollo11`
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Use regular expressions to check text contains time in UTC (format: ``%H:%M UTC``)
-    #. Use simplified checking: ``##:## UTC``, where ``#`` is a digit
-    #. Print found time
+    1. Use data from "Given" section (see below)
+    2. Use regular expressions to check text contains time in UTC (format: ``%H:%M UTC``)
+    3. Use simplified checking: ``##:## UTC``, where ``#`` is a digit
+    4. Print found time
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Użyj wyrażeń regularnych do sprawdzenia czy tekst zawiera godzinę w UTC (format: ``%H:%M UTC``)
-    #. Użyj uproszczonego sprawdzania: ``##:## UTC``, gdzie ``#`` to dowolna cyfra
-    #. Print found time
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Użyj wyrażeń regularnych do sprawdzenia czy tekst zawiera godzinę w UTC (format: ``%H:%M UTC``)
+    3. Użyj uproszczonego sprawdzania: ``##:## UTC``, gdzie ``#`` to dowolna cyfra
+    4. Print found time
 
 Given:
     .. code-block:: python
@@ -155,20 +155,20 @@ Regexp Search Datetime
 * References: (modified) First paragraph from Apollo 11 Wikipedia entry :cite:`RegexpWikipediaApollo11`
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Use regular expressions to check text contains time in UTC (format: ``%H:%M UTC``)
-    #. Note, that this is slightly modified text than previously
-    #. Check if text contains time in UTC (format: ``%H:%M UTC``)
-    #. Found match must be a valid time
-    #. Print found time
+    1. Use data from "Given" section (see below)
+    2. Use regular expressions to check text contains time in UTC (format: ``%H:%M UTC``)
+    3. Note, that this is slightly modified text than previously
+    4. Check if text contains time in UTC (format: ``%H:%M UTC``)
+    5. Found match must be a valid time
+    6. Print found time
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Użyj wyrażeń regularnych do sprawdzenia czy tekst zawiera godzinę w UTC (format: ``%H:%M UTC``)
-    #. Zwróć uwagę, że to lekko zmodyfikowany tekst niż poprzednio
-    #. Sprawdź czy tekst zawiera godzinę w UTC (format: ``%H:%M UTC``)
-    #. Znalezisko musi być poprawnym czasem
-    #. Wyświetl znaleziony czas
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Użyj wyrażeń regularnych do sprawdzenia czy tekst zawiera godzinę w UTC (format: ``%H:%M UTC``)
+    3. Zwróć uwagę, że to lekko zmodyfikowany tekst niż poprzednio
+    4. Sprawdź czy tekst zawiera godzinę w UTC (format: ``%H:%M UTC``)
+    5. Znalezisko musi być poprawnym czasem
+    6. Wyświetl znaleziony czas
 
 Given:
     .. code-block:: text

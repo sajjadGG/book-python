@@ -139,16 +139,16 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Stwórz klienta i serwer Heart Beat
-    #. Zarówno klient jak i serwer ma być uruchamiany w wątkach
-    #. Serwer ma przyjmować komunikaty UDP/IPv4 na porcie 1337
-    #. Komunikacja ma odbywać się za pomocą protokołu JSON
-    #. Klient ma mieć informację o swoim adresie IP i PORT
-    #. Klient ma co 5 sekund wysyłać informację do serwera o swoim IP i PORT
-    #. Wypisz:
+    1. Stwórz klienta i serwer Heart Beat
+    2. Zarówno klient jak i serwer ma być uruchamiany w wątkach
+    3. Serwer ma przyjmować komunikaty UDP/IPv4 na porcie 1337
+    4. Komunikacja ma odbywać się za pomocą protokołu JSON
+    5. Klient ma mieć informację o swoim adresie IP i PORT
+    6. Klient ma co 5 sekund wysyłać informację do serwera o swoim IP i PORT
+    7. Wypisz:
 
-        * datę UTC przyjścia pakietu,
-        * IP i PORT przesłany przez klienta.
+        a. datę UTC przyjścia pakietu,
+        b. IP i PORT przesłany przez klienta.
 
 Hints:
     * ``threading.Timer(frequency: int, fn: Callable).start()``
@@ -167,24 +167,24 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Stwórz uruchamiany w wątku serwer TCP
-    #. Serwer ma być uruchamiany na losowym porcie z przedziału 1025-65535 (dlaczego taki zakres portów?)
-    #. Wyciągnij informację o adresie IP i PORT na którym nasłuchuje serwer
-    #. Serwer oczekuje na komunikaty w formacie JSON:
+    1. Stwórz uruchamiany w wątku serwer TCP
+    2. Serwer ma być uruchamiany na losowym porcie z przedziału 1025-65535 (dlaczego taki zakres portów?)
+    3. Wyciągnij informację o adresie IP i PORT na którym nasłuchuje serwer
+    4. Serwer oczekuje na komunikaty w formacie JSON:
 
-        * ``date: datetime`` (UTC),
-        * ``command: str``,
-        * ``timeout: int``.
+        a. ``date: datetime`` (UTC),
+        b. ``command: str``,
+        c. ``timeout: int``.
 
-    #. Serwer wykonuje polecenie zapisane w ``command`` w systemie operacyjnym uwzględniając ``timeout``
-    #. Prześlij nadawcy JSON z wynikiem wykonania polecenia, tj.:
+    5. Serwer wykonuje polecenie zapisane w ``command`` w systemie operacyjnym uwzględniając ``timeout``
+    6. Prześlij nadawcy JSON z wynikiem wykonania polecenia, tj.:
 
-        * ``date: datetime`` (UTC),
-        * ``host: str``,
-        * ``port: int``,
-        * ``stdout: str``,
-        * ``stderr: str``,
-        * ``exit_code: int``
+        a. ``date: datetime`` (UTC),
+        b. ``host: str``,
+        c. ``port: int``,
+        d. ``stdout: str``,
+        e. ``stderr: str``,
+        f. ``exit_code: int``
 
 Hints:
     * ``random.randint()``

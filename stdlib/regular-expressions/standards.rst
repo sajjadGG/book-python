@@ -98,29 +98,29 @@ English:
     .. todo:: English translation
 
 Polish:
-    #. Przeprowadź eksperyment myślowy (**tylko dyskusja**)
-    #. Jak sprawdzić za pomocą wyrażeń regularnych czy:
+    1. Przeprowadź eksperyment myślowy (**tylko dyskusja**)
+    2. Jak sprawdzić za pomocą wyrażeń regularnych czy:
 
-        * czy pesel jest poprawny?
-        * jaka jest data urodzenia? (podaj obiekt ``datetime.date``)
-        * płeć użytkownika który podał PESEL
+        a. czy pesel jest poprawny?
+        b. jaka jest data urodzenia? (podaj obiekt ``datetime.date``)
+        c. płeć użytkownika który podał PESEL
 
-    #. Mając PESEL "69072101234"
+    3. Mając PESEL "69072101234"
 
-        #. Jakie wyrażenie może być na pierwszym miejscu w PESEL?
-        #. Jakie wyrażenie może być na drugim miejscu w PESEL?
-        #. Jakie wyrażenie może być na trzecim miejscu w PESEL?
-        #. Jakie wyrażenie może być na czwartym miejscu w PESEL?
-        #. Jakie wyrażenie może być na piątym miejscu w PESEL?
-        #. Jakie wyrażenie może być na szóstym miejscu w PESEL?
+        a. Jakie wyrażenie może być na pierwszym miejscu w PESEL?
+        b. Jakie wyrażenie może być na drugim miejscu w PESEL?
+        c. Jakie wyrażenie może być na trzecim miejscu w PESEL?
+        d. Jakie wyrażenie może być na czwartym miejscu w PESEL?
+        e. Jakie wyrażenie może być na piątym miejscu w PESEL?
+        f. Jakie wyrażenie może być na szóstym miejscu w PESEL?
 
-    #. Mając PESEL "18220801234"
+    4. Mając PESEL "18220801234"
 
-        #. Jakie wyrażenie może być na pierwszym miejscu w PESEL?
-        #. Jakie wyrażenie może być na drugim miejscu w PESEL?
-        #. Jakie wyrażenie może być na trzecim miejscu w PESEL?
-        #. Jakie wyrażenie może być na czwartym miejscu w PESEL?
-        #. Jakie wyrażenie może być na piątym miejscu w PESEL?
-        #. Jakie wyrażenie może być na szóstym miejscu w PESEL?
+        a. Jakie wyrażenie może być na pierwszym miejscu w PESEL?
+        b. Jakie wyrażenie może być na drugim miejscu w PESEL?
+        c. Jakie wyrażenie może być na trzecim miejscu w PESEL?
+        d. Jakie wyrażenie może być na czwartym miejscu w PESEL?
+        e. Jakie wyrażenie może być na piątym miejscu w PESEL?
+        f. Jakie wyrażenie może być na szóstym miejscu w PESEL?
 
-    #. Sprawdź sumę kontrolną
+    5. Sprawdź sumę kontrolną

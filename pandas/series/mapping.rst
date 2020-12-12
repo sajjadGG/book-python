@@ -414,12 +414,11 @@ Series Mapping Clean
 English:
     1. Use data from "Given" section (see below)
     2. Convert ``DATA`` (see input section) to ``pd.Series``
-    3. Create ``pd.Series``
-    4. Write function to clean up data
-    5. Function takes one ``str`` argument
-    6. Function returns cleaned text
-    7. Apply function to all elements of ``pd.Series``
-    #. Compare result with "Tests" section (see below)
+    3. Write function to clean up data
+    4. Function takes one ``str`` argument
+    5. Function returns cleaned text
+    6. Apply function to all elements of ``pd.Series``
+    7. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)

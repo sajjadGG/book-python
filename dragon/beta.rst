@@ -19,32 +19,32 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Zaimportuj smoka z poprzedniej części zadania ("Part 1")
-    #. Wykorzystaj mechanizm dziedziczenia dla Smoka
-    #. Nie modyfikuj klasy smoka z poprzedniej części
-    #. Smok nie może wyjść poza obszar ekranu (1024x768) + napisz ``doctest``
-    #. Jeżeli dojdzie do granicy ekranu, to przesuwając dalej, pozycja będzie ustawiona na maks
-    #. Zmień smokowi punkty życia na losowy ``int`` z zakresu 100 do 150
-    #. Stwórz bohatera "Jan Twardowski":
+    1. Zaimportuj smoka z poprzedniej części zadania ("Part 1")
+    2. Wykorzystaj mechanizm dziedziczenia dla Smoka
+    3. Nie modyfikuj klasy smoka z poprzedniej części
+    4. Smok nie może wyjść poza obszar ekranu (1024x768) + napisz ``doctest``
+    5. Jeżeli dojdzie do granicy ekranu, to przesuwając dalej, pozycja będzie ustawiona na maks
+    6. Zmień smokowi punkty życia na losowy ``int`` z zakresu 100 do 150
+    7. Stwórz bohatera "Jan Twardowski":
 
-        * losowe punkty życia (200-250)
-        * zadaje losowe obrażenia (1-15)
-        * klasa postaci (domyślnie "Warrior")
-        * Bohater może przyjmować obrażenia
-        * Bohater może zginąć
-        * Bohater może poruszać się po planszy
+        a. losowe punkty życia (200-250)
+        b. zadaje losowe obrażenia (1-15)
+        c. klasa postaci (domyślnie "Warrior")
+        d. Bohater może przyjmować obrażenia
+        e. Bohater może zginąć
+        f. Bohater może poruszać się po planszy
 
-    #. Wszystkie istoty mają statusy:
+    8. Wszystkie istoty mają statusy:
 
-        * "Full Health" - gdy punkty życia 100% (zastąp status "alive")
-        * "Injured" - gdy punkty życia 99% - 75%
-        * "Badly Wounded" - gdy punkty życia 74% - 25%
-        * "Near Death" - gdy punkty życia 24% - 1%
-        * "Dead" - gdy punkty życia poniżej lub równe 0%
+        a. "Full Health" - gdy punkty życia 100% (zastąp status "alive")
+        b. "Injured" - gdy punkty życia 99% - 75%
+        c. "Badly Wounded" - gdy punkty życia 74% - 25%
+        d. "Near Death" - gdy punkty życia 24% - 1%
+        e. "Dead" - gdy punkty życia poniżej lub równe 0%
 
-    #. Bohater przejmuje złoto smoka, jeżeli go zabije
-    #. Przeprowadź walkę, tak długo aż ktoś pierwszy nie zginie
-    #. Jeżeli konieczne jest wprowadzenie nowej metody, klasy lub pól to należy to zrobić
+    9. Bohater przejmuje złoto smoka, jeżeli go zabije
+    10. Przeprowadź walkę, tak długo aż ktoś pierwszy nie zginie
+    11. Jeżeli konieczne jest wprowadzenie nowej metody, klasy lub pól to należy to zrobić
 
 Hints:
     * Aby zaimportować trzeba najpierw w katalogu stworzyć pusty plik ``__init__.py``

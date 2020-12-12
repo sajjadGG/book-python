@@ -176,7 +176,7 @@ Dragon
 * Time: 21 min
 
 English:
-    #. Write unittest for the dragon from :ref:`Dragon Alpha`
+    1. Write unittest for the dragon from :ref:`Dragon Alpha`
 
 Polish:
-    #. Napisz testy jednostkowe dla Smoka z :ref:`Dragon Alpha`
+    1. Napisz testy jednostkowe dla Smoka z :ref:`Dragon Alpha`

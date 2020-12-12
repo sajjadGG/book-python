@@ -405,7 +405,7 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Naucz algorytm rozpoznawania danych wykorzystując algorytm Support Vector Machines.
+    1. Naucz algorytm rozpoznawania danych wykorzystując algorytm Support Vector Machines.
 
 Given:
     .. code-block:: python

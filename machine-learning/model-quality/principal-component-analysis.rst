@@ -140,4 +140,4 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Przeprowadź analizę PCA dla zbioru Indian Pima
+    1. Przeprowadź analizę PCA dla zbioru Indian Pima

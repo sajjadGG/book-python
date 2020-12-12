@@ -41,10 +41,10 @@ Random numbers
 * Time: 13 min
 
 English:
-    #. Print 6 random integers without repetition in range from 1 to 49
+    1. Print 6 random integers without repetition in range from 1 to 49
 
 Polish:
-    #. Wyświetl 6 losowych i nie powtarzających się liczb całkowitych z zakresu od 1 do 49.
+    1. Wyświetl 6 losowych i nie powtarzających się liczb całkowitych z zakresu od 1 do 49.
 
 Sum of inner elements
 ---------------------
@@ -55,18 +55,18 @@ Sum of inner elements
 * Time: 13 min
 
 English:
-    #. Use only ``random`` module
-    #. Set ``random.seed(0)``
-    #. Generate ``outer: list[list[int]]`` with 16x16 random digits (0-9 inclusive)
-    #. Calculate sum of inner 4x4 elements
-    #. Inner matrix is exactly in the middle of outer
+    1. Use only ``random`` module
+    2. Set ``random.seed(0)``
+    3. Generate ``outer: list[list[int]]`` with 16x16 random digits (0-9 inclusive)
+    4. Calculate sum of inner 4x4 elements
+    5. Inner matrix is exactly in the middle of outer
 
 Polish:
-    #. Używaj tylko modułu ``random``
-    #. Ustaw ``random.seed(0)``
-    #. Wygeneruj ``outer: list[list[int]]`` z 16x16 losowych cyfr (0-9 włącznie)
-    #. Policz sumę środkowych 4x4 elementów
-    #. Środkowa macierz jest dokładnie w środku większej
+    1. Używaj tylko modułu ``random``
+    2. Ustaw ``random.seed(0)``
+    3. Wygeneruj ``outer: list[list[int]]`` z 16x16 losowych cyfr (0-9 włącznie)
+    4. Policz sumę środkowych 4x4 elementów
+    5. Środkowa macierz jest dokładnie w środku większej
 
 .. figure:: img/random-inner-sum.png
 

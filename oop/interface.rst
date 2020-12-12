@@ -135,17 +135,19 @@ OOP Interface Define
 * Time: 13 min
 
 English:
-    #. Define interface ``IrisInterface``
-    #. Attributes: ``sepal_length, sepal_width, petal_length, petal_width``
-    #. Methods: ``sum()``, ``len()``, ``mean()`` in ``IrisInterface``
-    #. All methods and constructor must raise exception ``NotImplementedError``
-    #. Compare result with "Tests" section (see below)
+    1. Define interface ``IrisInterface``
+    2. Attributes: ``sepal_length, sepal_width, petal_length, petal_width``
+    3. Methods: ``sum()``, ``len()``, ``mean()`` in ``IrisInterface``
+    4. All methods and constructor must raise exception ``NotImplementedError``
+    5. Compare result with "Tests" section (see below)
 
 Polish:
-    #. Zdefiniuj interfejs ``IrisInterface``
-    #. Attributes: ``sepal_length, sepal_width, petal_length, petal_width``
-    #. Metody: ``sum()``, ``len()``, ``mean()`` w ``IrisInterface``
-    #. Wszystkie metody oraz konstruktor muszą podnosić wyjątek ``NotImplementedError``
+    1. Zdefiniuj interfejs ``IrisInterface``
+    2. Attributes: ``sepal_length, sepal_width, petal_length, petal_width``
+    3. Metody: ``sum()``, ``len()``, ``mean()`` w ``IrisInterface``
+    4. Wszystkie metody oraz konstruktor muszą podnosić wyjątek ``NotImplementedError``
+
+.. todo:: Zweryfikowa
 
 Tests:
     >>> assert hasattr(IrisInterface, 'mean')
@@ -171,16 +173,16 @@ OOP Interface Implement
 * Time: 13 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Define class ``Setosa`` implementing ``IrisInterface``
-    #. Implement interface
-    #. Compare result with "Tests" section (see below)
+    1. Use data from "Given" section (see below)
+    2. Define class ``Setosa`` implementing ``IrisInterface``
+    3. Implement interface
+    4. Compare result with "Tests" section (see below)
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Stwórz klasę ``Setosa`` implementującą ``IrisInterface``
-    #. Zaimplementuj interfejs
-    #. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Stwórz klasę ``Setosa`` implementującą ``IrisInterface``
+    3. Zaimplementuj interfejs
+    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Given:
     .. code-block:: python
