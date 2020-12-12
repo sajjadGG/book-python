@@ -448,26 +448,26 @@ DataFrame Plot
 * Time: 21 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Read data from ``DATA`` as ``sensors: pd.DataFrame``
-    #. Select ``Luminance`` stylesheet
-    #. Parse column with dates
-    #. Select desired date and location, then resample by hour
-    #. Display chart (line) with activity hours in "Sleeping Quarters upper" location
-    #. Active is when ``Luminance`` is not zero
-    #. Easy: for day 2019-09-28
-    #. Advanced: for each day, as subplots
+    1. Use data from "Given" section (see below)
+    2. Read data from ``DATA`` as ``sensors: pd.DataFrame``
+    3. Select ``Luminance`` stylesheet
+    4. Parse column with dates
+    5. Select desired date and location, then resample by hour
+    6. Display chart (line) with activity hours in "Sleeping Quarters upper" location
+    7. Active is when ``Luminance`` is not zero
+    8. Easy: for day 2019-09-28
+    9. Advanced: for each day, as subplots
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Wczytaj dane z ``DATA`` jako ``sensors: pd.DataFrame``
-    #. Wybierz arkusz ``Luminance``
-    #. Sparsuj kolumny z datami
-    #. Wybierz pożądaną datę i lokację, następnie próbkuj co godzinę
-    #. Aktywność jest gdy ``Luminance`` jest różna od zera
-    #. Wyświetl wykres (line) z godzinami aktywności w dla lokacji "Sleeping Quarters upper"
-    #. Łatwe: dla dnia 2019-09-28
-    #. Zaawansowane: dla wszystkich dni, jako subplot
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Wczytaj dane z ``DATA`` jako ``sensors: pd.DataFrame``
+    3. Wybierz arkusz ``Luminance``
+    4. Sparsuj kolumny z datami
+    5. Wybierz pożądaną datę i lokację, następnie próbkuj co godzinę
+    6. Aktywność jest gdy ``Luminance`` jest różna od zera
+    7. Wyświetl wykres (line) z godzinami aktywności w dla lokacji "Sleeping Quarters upper"
+    8. Łatwe: dla dnia 2019-09-28
+    9. Zaawansowane: dla wszystkich dni, jako subplot
 
 Given:
     .. code-block:: python

@@ -138,12 +138,12 @@ Series Create Float
 * Time: 3 min
 
 English:
-    #. Create ``pd.Series`` with 5 float numbers
-    #. One of those values must be ``None``
+    1. Create ``pd.Series`` with 5 float numbers
+    2. One of those values must be ``None``
 
 Polish:
-    #. Stwórz ``pd.Series`` z 5 liczbami zmiennoprzecinkowymi
-    #. Jedną z tych wartości musi być ``None``
+    1. Stwórz ``pd.Series`` z 5 liczbami zmiennoprzecinkowymi
+    2. Jedną z tych wartości musi być ``None``
 
 Series Create Randint
 ---------------------
@@ -154,12 +154,12 @@ Series Create Randint
 * Time: 3 min
 
 English:
-    #. Set random seed to zero
-    #. Create ``pd.Series`` with 10 random digits (``int`` from ``0`` to ``9``)
+    1. Set random seed to zero
+    2. Create ``pd.Series`` with 10 random digits (``int`` from ``0`` to ``9``)
 
 Polish:
-    #. Ustaw ziarno losowości na zero
-    #. Stwórz ``pd.Series`` z 10 losowymi cyframi  (``int`` from ``0`` to ``9``)
+    1. Ustaw ziarno losowości na zero
+    2. Stwórz ``pd.Series`` z 10 losowymi cyframi  (``int`` from ``0`` to ``9``)
 
 Series Create Even
 ------------------
@@ -170,10 +170,10 @@ Series Create Even
 * Time: 3 min
 
 English:
-    #. Create ``pd.Series`` with 10 even numbers
+    1. Create ``pd.Series`` with 10 even numbers
 
 Polish:
-    #. Stwórz ``pd.Series`` z 10 liczbami parzystymi
+    1. Stwórz ``pd.Series`` z 10 liczbami parzystymi
 
 Series Create Dates
 -------------------
@@ -184,13 +184,13 @@ Series Create Dates
 * Time: 3 min
 
 English:
-    #. Gagarin flown to space on 1961-04-12
-    #. Armstrong set foot on the Moon on 1969-07-21
-    #. Create ``pd.Series`` with days between Gagarin's launch and Armstrong's first step
-    #. How many days passed?
+    1. Gagarin flown to space on 1961-04-12
+    2. Armstrong set foot on the Moon on 1969-07-21
+    3. Create ``pd.Series`` with days between Gagarin's launch and Armstrong's first step
+    4. How many days passed?
 
 Polish:
-    #. Gagarin poleciał w kosmos w 1961-04-12
-    #. Armstrong postawił stopę na Księżycu w 1969-07-21
-    #. Stwórz ``pd.Series`` z dniami pomiędzy startem Gagarina a pierwszym krokiem Armstronga
-    #. Jak wiele dni upłynęło?
+    1. Gagarin poleciał w kosmos w 1961-04-12
+    2. Armstrong postawił stopę na Księżycu w 1969-07-21
+    3. Stwórz ``pd.Series`` z dniami pomiędzy startem Gagarina a pierwszym krokiem Armstronga
+    4. Jak wiele dni upłynęło?

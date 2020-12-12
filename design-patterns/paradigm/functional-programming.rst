@@ -538,10 +538,10 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Używając generatora zbuduj listę zawierającą wszystkie liczby podzielne przez 3 z zakresu od 1 do 33:
-    #. Używając funkcji ``filter()`` usuń z niej wszystkie liczby parzyste
-    #. Używając wyrażenia ``lambda`` i funkcji ``map()`` podnieś wszystkie elementy tak otrzymanej listy do sześcianu
-    #. Odpowiednio używając funkcji ``sum()``  i ``len()`` oblicz średnią arytmetyczną z elementów tak otrzymanej listy.
+    1. Używając generatora zbuduj listę zawierającą wszystkie liczby podzielne przez 3 z zakresu od 1 do 33:
+    2. Używając funkcji ``filter()`` usuń z niej wszystkie liczby parzyste
+    3. Używając wyrażenia ``lambda`` i funkcji ``map()`` podnieś wszystkie elementy tak otrzymanej listy do sześcianu
+    4. Odpowiednio używając funkcji ``sum()``  i ``len()`` oblicz średnią arytmetyczną z elementów tak otrzymanej listy.
 
 Balanced Brackets
 -----------------
@@ -552,26 +552,26 @@ Balanced Brackets
 * Time: 13 min
 
 English:
-    #. Create function which checks if brackets are balanced
-    #. Brackets are balanced, when each opening bracket has closing pair
-    #. Use recursion
-    #. Types of brackets:
+    1. Create function which checks if brackets are balanced
+    2. Brackets are balanced, when each opening bracket has closing pair
+    3. Use recursion
+    4. Types of brackets:
 
-        * round: ``(`` i ``)``
-        * square: ``[`` i ``]``
-        * curly ``{`` i ``}``
-        * angle ``<`` i ``>``
+        a. round: ``(`` i ``)``
+        b. square: ``[`` i ``]``
+        c. curly ``{`` i ``}``
+        d. angle ``<`` i ``>``
 
 Polish:
-    #. Stwórz funkcję, która sprawdzi czy nawiasy są zbalansowane
-    #. Nawiasy są zbalansowane, gdy każdy otwierany nawias ma zamykającą parę
-    #. Użyj rekurencji
-    #. Typy nawiasów:
+    1. Stwórz funkcję, która sprawdzi czy nawiasy są zbalansowane
+    2. Nawiasy są zbalansowane, gdy każdy otwierany nawias ma zamykającą parę
+    3. Użyj rekurencji
+    4. Typy nawiasów:
 
-        * okrągłe: ``(`` i ``)``
-        * kwadratowe: ``[`` i ``]``
-        * klamrowe ``{`` i ``}``
-        * trójkątne ``<`` i ``>``
+        a. okrągłe: ``(`` i ``)``
+        b. kwadratowe: ``[`` i ``]``
+        c. klamrowe ``{`` i ``}``
+        d. trójkątne ``<`` i ``>``
 
 .. code-block:: python
 

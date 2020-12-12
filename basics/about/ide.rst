@@ -82,23 +82,23 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Jak zrobić w Twoim IDE:
+    1. Jak zrobić w Twoim IDE:
 
-        * Run...
-        * Run in console
-        * Debug...
-        * Python Console
-        * Terminal
-        * Full Screen
-        * Distraction Free Mode
-        * Reformat Code
-        * Scope
+        a. Run...
+        b. Run in console
+        c. Debug...
+        d. Python Console
+        e. Terminal
+        f. Full Screen
+        g. Distraction Free Mode
+        h. Reformat Code
+        i. Scope
 
-    #. Jakie są skróty klawiszowe do poszczególnych opcji?
-    #. Czym się różni ``Run...`` od ``Debug...``?
-    #. Czym się różni ``Python Console`` od ``Terminal``
-    #. Czym się różni ``Distraction Free Mode`` od ``Full Screen``
-    #. Ustaw Scope tak, aby ukryć katalog z Virtualenv
+    2. Jakie są skróty klawiszowe do poszczególnych opcji?
+    3. Czym się różni ``Run...`` od ``Debug...``?
+    4. Czym się różni ``Python Console`` od ``Terminal``
+    5. Czym się różni ``Distraction Free Mode`` od ``Full Screen``
+    6. Ustaw Scope tak, aby ukryć katalog z Virtualenv
 
 About IDE Spellchecker
 ----------------------
@@ -112,11 +112,11 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Zainstaluj w PyCharm plugin 'Hunspell' (File -> Settings -> Plugins -> Marketplace -> 'Hunspell')
-    #. Pobierz z https://github.com/LibreOffice/dictionaries/tree/master/pl_PL słownik ``.dic`` oraz ``.aff`` dla języka polskiego
+    1. Zainstaluj w PyCharm plugin 'Hunspell' (File -> Settings -> Plugins -> Marketplace -> 'Hunspell')
+    2. Pobierz z https://github.com/LibreOffice/dictionaries/tree/master/pl_PL słownik ``.dic`` oraz ``.aff`` dla języka polskiego
 
-        * https://raw.githubusercontent.com/LibreOffice/dictionaries/master/pl_PL/pl_PL.aff
-        * https://raw.githubusercontent.com/LibreOffice/dictionaries/master/pl_PL/pl_PL.dic
+        a. https://raw.githubusercontent.com/LibreOffice/dictionaries/master/pl_PL/pl_PL.aff
+        b. https://raw.githubusercontent.com/LibreOffice/dictionaries/master/pl_PL/pl_PL.dic
 
-    #. Skonfiguruj IDE do korzystania z tego słownika (File -> Settings -> Editor -> Spelling -> Add custom dictionary)
+    3. Skonfiguruj IDE do korzystania z tego słownika (File -> Settings -> Editor -> Spelling -> Add custom dictionary)
 

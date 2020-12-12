@@ -224,9 +224,9 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Dla kodu z listingu
-    #. Napisz własną uproszczoną implementację ``doctest``
-    #. Dla uproszczenia przyjmij, że zwracana zawsze będzie tylko jedna linia (bezpośrednio poniżej testu)
+    1. Dla kodu z listingu
+    2. Napisz własną uproszczoną implementację ``doctest``
+    3. Dla uproszczenia przyjmij, że zwracana zawsze będzie tylko jedna linia (bezpośrednio poniżej testu)
 
 Given:
     .. code-block:: python

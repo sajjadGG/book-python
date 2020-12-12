@@ -172,12 +172,12 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Stwórz plik o nazwie ``about_env.py``
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Uruchom plik w swoim IDE (menu ``Run -> Run... -> nazwa Twojego skryptu``)
-    #. Gdzie Python jest zainstalowany?
-    #. Czy korzystasz z "Virtualenv"?
-    #. Upewnij się, że w linijce z "Virtualenv" nie masz ``None``
+    1. Stwórz plik o nazwie ``about_env.py``
+    2. Użyj danych z sekcji "Given" (patrz poniżej)
+    3. Uruchom plik w swoim IDE (menu ``Run -> Run... -> nazwa Twojego skryptu``)
+    4. Gdzie Python jest zainstalowany?
+    5. Czy korzystasz z "Virtualenv"?
+    6. Upewnij się, że w linijce z "Virtualenv" nie masz ``None``
 
 Given:
     .. code-block:: python

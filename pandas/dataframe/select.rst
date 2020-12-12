@@ -229,10 +229,10 @@ English:
     .. todo:: Translate to English
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Wczytaj dane z ``DATA`` jako ``iris: pd.DataFrame``
-    #. Przefiltruj ``inplace`` kolumnę 'Petal length' i pozostaw wartości powyżej 2.0
-    #. Wyświetl 5 pierwszych wierszy
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Wczytaj dane z ``DATA`` jako ``iris: pd.DataFrame``
+    3. Przefiltruj ``inplace`` kolumnę 'Petal length' i pozostaw wartości powyżej 2.0
+    4. Wyświetl 5 pierwszych wierszy
 
 Given:
     .. code-block:: python

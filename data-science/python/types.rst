@@ -48,18 +48,18 @@ Assignments
 * Time: 5 min
 
 English:
-    #. Calculate how many seconds is five minutes
-    #. Calculate how many seconds is one hour
-    #. Calculate how many seconds is work day (8 hours)
-    #. Calculate how many seconds is work month (22 days per 8 hours)
-    #. Calculate how many minutes is work week (40 hours)
+    1. Calculate how many seconds is five minutes
+    2. Calculate how many seconds is one hour
+    3. Calculate how many seconds is work day (8 hours)
+    4. Calculate how many seconds is work month (22 days per 8 hours)
+    5. Calculate how many minutes is work week (40 hours)
 
 Polish:
-    #. Oblicz ile sekund to pięć minut
-    #. Oblicz ile sekund to jedna godzina
-    #. Oblicz ile sekund to dzień pracy (8 godzin)
-    #. Oblicz ile sekund to miesiąc pracy (22 dni po 8 godzin)
-    #. Oblicz ile minut to tydzień pracy (40 godzin)
+    1. Oblicz ile sekund to pięć minut
+    2. Oblicz ile sekund to jedna godzina
+    3. Oblicz ile sekund to dzień pracy (8 godzin)
+    4. Oblicz ile sekund to miesiąc pracy (22 dni po 8 godzin)
+    5. Oblicz ile minut to tydzień pracy (40 godzin)
 
 Hints:
     * 1 h = 60 min
@@ -121,22 +121,22 @@ Assignments
 * Time: 5 min
 
 English:
-    #. Use code from "Input" section (see below)
-    #. Declare variable for holding value of 1337 meters
-    #. Print values in other units
-    #. Convert data to types shown in comments at the right side
-    #. Instead ``...`` substitute calculated and converted values
-    #. Non-functional requirements:
+    1. Use code from "Input" section (see below)
+    2. Declare variable for holding value of 1337 meters
+    3. Print values in other units
+    4. Convert data to types shown in comments at the right side
+    5. Instead ``...`` substitute calculated and converted values
+    6. Non-functional requirements:
 
         * Do not use ``input()``
 
 Polish:
-    #. Użyj kodu z sekcji "Input" (patrz poniżej)
-    #. Zdefiniuj zmienną dla przechowywania wartości 1337 metrów
-    #. Wypisz wartość w różnych jednostkach
-    #. Przekonwertuj dane do typów podanych w komentarzu po prawej stronie
-    #. Zamiast ``...`` podstaw wyliczone i przekonwertowane wartości
-    #. Wymagania niefunkcjonalne:
+    1. Użyj kodu z sekcji "Input" (patrz poniżej)
+    2. Zdefiniuj zmienną dla przechowywania wartości 1337 metrów
+    3. Wypisz wartość w różnych jednostkach
+    4. Przekonwertuj dane do typów podanych w komentarzu po prawej stronie
+    5. Zamiast ``...`` podstaw wyliczone i przekonwertowane wartości
+    6. Wymagania niefunkcjonalne:
 
         * Nie używaj ``input()``
 
@@ -473,14 +473,14 @@ To ``bool`` or not to ``bool``
 * Time: 13 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Which variables are ``True``?
-    #. Which variables are ``False``?
+    1. Use data from "Given" section (see below)
+    2. Which variables are ``True``?
+    3. Which variables are ``False``?
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Które zmienne są ``True``?
-    #. Które zmienne są ``False``?
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Które zmienne są ``True``?
+    3. Które zmienne są ``False``?
 
 Given:
     .. code-block:: python

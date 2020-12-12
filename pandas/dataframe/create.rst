@@ -138,12 +138,12 @@ DataFrame Create
 * Time: 5 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Create ``DataFrame`` for input data
+    1. Use data from "Given" section (see below)
+    2. Create ``DataFrame`` for input data
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Stwórz ``DataFrame`` dla danych wejściowych
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Stwórz ``DataFrame`` dla danych wejściowych
 
 Given:
     .. csv-table::

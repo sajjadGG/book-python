@@ -77,30 +77,30 @@ Series Sample
 * Time: 5 min
 
 English:
-    #. Set random seed to zero
-    #. Create ``pd.Series`` with 100 random numbers from standard normal distribution
-    #. Series Index are following dates since 2000
-    #. Print values:
+    1. Set random seed to zero
+    2. Create ``pd.Series`` with 100 random numbers from standard normal distribution
+    3. Series Index are following dates since 2000
+    4. Print values:
 
-        * first in the series,
-        * last 5 elements in the series,
-        * first two weeks in the series,
-        * last month in the series,
-        * three random elements,
-        * 125% of random elements with replacement.
+        a. first in the series,
+        b. last 5 elements in the series,
+        c. first two weeks in the series,
+        d. last month in the series,
+        e. three random elements,
+        f. 125% of random elements with replacement.
 
 Polish:
-    #. Ustaw ziarno losowości na zero
-    #. Stwórz ``pd.Series`` z 100 losowymi liczbami z rozkładu normalnego
-    #. Indeksem w serii mają być kolejne dni od 2000 roku
-    #. Wypisz wartości:
+    1. Ustaw ziarno losowości na zero
+    2. Stwórz ``pd.Series`` z 100 losowymi liczbami z rozkładu normalnego
+    3. Indeksem w serii mają być kolejne dni od 2000 roku
+    4. Wypisz wartości:
 
-        * pierwszy w serii,
-        * ostatnie 5 elementów w serii,
-        * dwa pierwsze tygodnie w serii,
-        * ostatni miesiąc w serii,
-        * trzy losowe element,
-        * 125% losowych elementów z powtórzeniami.
+        a. pierwszy w serii,
+        b. ostatnie 5 elementów w serii,
+        c. dwa pierwsze tygodnie w serii,
+        d. ostatni miesiąc w serii,
+        e. trzy losowe element,
+        f. 125% losowych elementów z powtórzeniami.
 
 Hints:
     * ``np.random.seed(0)``

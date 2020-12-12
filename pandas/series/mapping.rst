@@ -412,23 +412,23 @@ Series Mapping Clean
 * Time: 21 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Convert ``DATA`` (see input section) to ``pd.Series``
-    #. Create ``pd.Series``
-    #. Write function to clean up data
-    #. Function takes one ``str`` argument
-    #. Function returns cleaned text
-    #. Apply function to all elements of ``pd.Series``
+    1. Use data from "Given" section (see below)
+    2. Convert ``DATA`` (see input section) to ``pd.Series``
+    3. Create ``pd.Series``
+    4. Write function to clean up data
+    5. Function takes one ``str`` argument
+    6. Function returns cleaned text
+    7. Apply function to all elements of ``pd.Series``
     #. Compare result with "Tests" section (see below)
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Przekonwertuj ``DATA`` (patrz sekcja input) do ``pd.Series``
-    #. Napisz funkcję czyszczącą dane
-    #. Funkcja przyjmuje jeden argument typu ``str``
-    #. Funkcja zwraca oczyszczony tekst
-    #. Zaaplikuj funkcję na wszystkich elementach ``pd.Series``
-    #. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Przekonwertuj ``DATA`` (patrz sekcja input) do ``pd.Series``
+    3. Napisz funkcję czyszczącą dane
+    4. Funkcja przyjmuje jeden argument typu ``str``
+    5. Funkcja zwraca oczyszczony tekst
+    6. Zaaplikuj funkcję na wszystkich elementach ``pd.Series``
+    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Given:
     .. code-block:: python

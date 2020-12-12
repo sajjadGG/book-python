@@ -57,14 +57,14 @@ DataFrame Export CSV
 * Time: 3 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Read data from ``DATA`` as ``astro_eva1: pd.DataFrame``
-    #. Export to file ``FILE`` data in ``CSV`` format
+    1. Use data from "Given" section (see below)
+    2. Read data from ``DATA`` as ``astro_eva1: pd.DataFrame``
+    3. Export to file ``FILE`` data in ``CSV`` format
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Wczytaj dane z ``DATA`` jako ``astro_eva1: pd.DataFrame``
-    #. Wyeksportuj do pliku ``FILE`` dane w formacie ``CSV``
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Wczytaj dane z ``DATA`` jako ``astro_eva1: pd.DataFrame``
+    3. Wyeksportuj do pliku ``FILE`` dane w formacie ``CSV``
 
 Given:
     .. code-block:: python
@@ -81,14 +81,14 @@ DataFrame Export JSON
 * Time: 3 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Read data from ``DATA`` as ``astro_eva2: pd.DataFrame``
-    #. Export to file ``FILE`` data in ``JSON`` format
+    1. Use data from "Given" section (see below)
+    2. Read data from ``DATA`` as ``astro_eva2: pd.DataFrame``
+    3. Export to file ``FILE`` data in ``JSON`` format
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Wczytaj dane z ``DATA`` jako ``astro_eva2: pd.DataFrame``
-    #. Wyeksportuj do pliku ``FILE`` dane w formacie ``JSON``
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Wczytaj dane z ``DATA`` jako ``astro_eva2: pd.DataFrame``
+    3. Wyeksportuj do pliku ``FILE`` dane w formacie ``JSON``
 
 Given:
     .. code-block:: python
@@ -105,14 +105,14 @@ DataFrame Export Pickle
 * Time: 3 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Read data from ``DATA`` as ``astro_eva3: pd.DataFrame``
-    #. Export to file ``FILE`` data in ``JSON`` format
+    1. Use data from "Given" section (see below)
+    2. Read data from ``DATA`` as ``astro_eva3: pd.DataFrame``
+    3. Export to file ``FILE`` data in ``JSON`` format
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Wczytaj dane z ``DATA`` jako ``astro_eva3: pd.DataFrame``
-    #. Wyeksportuj do pliku ``FILE`` dane w formacie ``JSON``
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Wczytaj dane z ``DATA`` jako ``astro_eva3: pd.DataFrame``
+    3. Wyeksportuj do pliku ``FILE`` dane w formacie ``JSON``
 
 Given:
     .. code-block:: python
@@ -129,16 +129,16 @@ DataFrame Export Pickle
 * Time: 5 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Read data from ``DATA`` as ``astro_eva4: pd.DataFrame``
-    #. Export to file ``FILE`` data in ``SQL`` format
-    #. Use table ``astro_eva``
+    1. Use data from "Given" section (see below)
+    2. Read data from ``DATA`` as ``astro_eva4: pd.DataFrame``
+    3. Export to file ``FILE`` data in ``SQL`` format
+    4. Use table ``astro_eva``
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Wczytaj dane z ``DATA`` jako ``astro_eva4: pd.DataFrame``
-    #. Wyeksportuj do pliku ``FILE`` dane w formacie ``SQL``
-    #. Użyj tabeli ``astro_eva``
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Wczytaj dane z ``DATA`` jako ``astro_eva4: pd.DataFrame``
+    3. Wyeksportuj do pliku ``FILE`` dane w formacie ``SQL``
+    4. Użyj tabeli ``astro_eva``
 
 Given:
     .. code-block:: python

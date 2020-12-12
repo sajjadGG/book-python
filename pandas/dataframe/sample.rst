@@ -210,20 +210,20 @@ English:
     .. todo:: English translation
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Wczytaj dane z ``DATA`` jako ``astro_flights: pd.DataFrame``
-    #. W danych kolumna "Order":
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Wczytaj dane z ``DATA`` jako ``astro_flights: pd.DataFrame``
+    3. W danych kolumna "Order":
 
-        - określa kolejność astronauty/kosmonauty w kosmosie
-        - Czasami kilka osób leciało tym samym statkiem i ich numery powinny być takie same, a w danych jest ``NaN``.
-        - Wypełnij brakujące indeksy stosując ``df.ffill()``
+        a. określa kolejność astronauty/kosmonauty w kosmosie
+        b. Czasami kilka osób leciało tym samym statkiem i ich numery powinny być takie same, a w danych jest ``NaN``.
+        c. Wypełnij brakujące indeksy stosując ``df.ffill()``
 
-    #. Ustaw wszystkie wiersze w losowej kolejności
-    #. Zresetuj index nie pozostawiając kopii zapasowej starego
-    #. Wypisz
+    4. Ustaw wszystkie wiersze w losowej kolejności
+    5. Zresetuj index nie pozostawiając kopii zapasowej starego
+    6. Wypisz
 
-        * Pierwsze trzy wiersze
-        * Ostatnie 10% wierszy
+        a. Pierwsze trzy wiersze
+        b. Ostatnie 10% wierszy
 
 Given:
     .. code-block:: python

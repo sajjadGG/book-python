@@ -492,14 +492,14 @@ DataFrame Groupby Phones
 * Time: 8 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Read data from ``DATA`` as ``phones: pd.DataFrame``
-    #. Give information about total number of all phone calls for each calendar month
+    1. Use data from "Given" section (see below)
+    2. Read data from ``DATA`` as ``phones: pd.DataFrame``
+    3. Give information about total number of all phone calls for each calendar month
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Wczytaj dane z ``DATA`` jako ``phones: pd.DataFrame``
-    #. Podaj informacje o łącznej liczbie wszystkich połączeń telefonicznych dla każdego miesiąca kalendarzowego
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Wczytaj dane z ``DATA`` jako ``phones: pd.DataFrame``
+    3. Podaj informacje o łącznej liczbie wszystkich połączeń telefonicznych dla każdego miesiąca kalendarzowego
 
 Given:
     .. code-block:: python
@@ -515,14 +515,14 @@ DataFrame Groupby Astro Female
 * Time: 8 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Read data from ``DATA`` as ``astro_female: pd.DataFrame``
-    #. Which nationality has the most flight time of a female in space?
+    1. Use data from "Given" section (see below)
+    2. Read data from ``DATA`` as ``astro_female: pd.DataFrame``
+    3. Which nationality has the most flight time of a female in space?
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Wczytaj dane z ``DATA`` jako ``astro_eva_all: pd.DataFrame``
-    #. Który kraj ma największy nalot kobiet w kosmosie?
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Wczytaj dane z ``DATA`` jako ``astro_eva_all: pd.DataFrame``
+    3. Który kraj ma największy nalot kobiet w kosmosie?
 
 Given:
     .. code-block:: python
@@ -538,14 +538,14 @@ DataFrame Groupby Astro Flights
 * Time: 13 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Read data from ``DATA`` as ``astro_flights: pd.DataFrame``
-    #. Create ranking of the most experienced astronauts (number of flights)
+    1. Use data from "Given" section (see below)
+    2. Read data from ``DATA`` as ``astro_flights: pd.DataFrame``
+    3. Create ranking of the most experienced astronauts (number of flights)
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Wczytaj dane z ``DATA`` jako ``astro_flights: pd.DataFrame``
-    #. Stwórz ranking najbardziej doświadczonych astronautów (liczba lotów)
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Wczytaj dane z ``DATA`` jako ``astro_flights: pd.DataFrame``
+    3. Stwórz ranking najbardziej doświadczonych astronautów (liczba lotów)
 
 Given:
     .. code-block:: python
@@ -561,14 +561,14 @@ DataFrame Groupby Astro EVA
 * Time: 21 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Read data from ``DATA`` as ``astro_eva_all: pd.DataFrame``
-    #. Create ranking of astronauts with the most time spent on EVA (ExtraVehicular Activity)
+    1. Use data from "Given" section (see below)
+    2. Read data from ``DATA`` as ``astro_eva_all: pd.DataFrame``
+    3. Create ranking of astronauts with the most time spent on EVA (ExtraVehicular Activity)
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Wczytaj dane z ``DATA`` jako ``astro_eva_all: pd.DataFrame``
-    #. Stwórz ranking astronautów z największym czasem EVA (Spacerów kosmicznych)
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Wczytaj dane z ``DATA`` jako ``astro_eva_all: pd.DataFrame``
+    3. Stwórz ranking astronautów z największym czasem EVA (Spacerów kosmicznych)
 
 Given:
     .. code-block:: python

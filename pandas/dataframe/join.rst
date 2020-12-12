@@ -356,14 +356,14 @@ English:
     .. todo:: Translate to English
 
 Polish:
-    #. Na podstawie podanych URL:
+    1. Na podstawie podanych URL:
 
-        * https://www.worldspaceflight.com/bios/eva/eva.php
-        * https://www.worldspaceflight.com/bios/eva/eva2.php
-        * https://www.worldspaceflight.com/bios/eva/eva3.php
-        * https://www.worldspaceflight.com/bios/eva/eva4.php
+        a. https://www.worldspaceflight.com/bios/eva/eva.php
+        b. https://www.worldspaceflight.com/bios/eva/eva2.php
+        c. https://www.worldspaceflight.com/bios/eva/eva3.php
+        d. https://www.worldspaceflight.com/bios/eva/eva4.php
 
-    #. Scrapuj stronę wykorzystując ``pandas.read_html()``
-    #. Połącz dane wykorzystując ``pd.concat``
-    #. Przygotuj plik ``CSV`` z danymi dotyczącymi spacerów kosmicznych
-    #. Zapisz dane do pliku
+    2. Scrapuj stronę wykorzystując ``pandas.read_html()``
+    3. Połącz dane wykorzystując ``pd.concat``
+    4. Przygotuj plik ``CSV`` z danymi dotyczącymi spacerów kosmicznych
+    5. Zapisz dane do pliku

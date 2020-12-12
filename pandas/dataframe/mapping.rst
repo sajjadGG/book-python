@@ -327,16 +327,16 @@ DataFrame Mapping Split
 * Time: 13 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Read data from ``DATA`` as ``phones: pd.DataFrame``
-    #. Parse data in ``date`` column as ``datetime`` object
-    #. Split column ``date`` with into two separate: date and time columns
+    1. Use data from "Given" section (see below)
+    2. Read data from ``DATA`` as ``phones: pd.DataFrame``
+    3. Parse data in ``date`` column as ``datetime`` object
+    4. Split column ``date`` with into two separate: date and time columns
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Wczytaj dane z ``DATA`` jako ``phones: pd.DataFrame``
-    #. Sparsuj dane w kolumnie ``date`` jako obiekty ``datetime``
-    #. Podziel kolumnę z ``date`` na dwie osobne: datę i czas
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Wczytaj dane z ``DATA`` jako ``phones: pd.DataFrame``
+    3. Sparsuj dane w kolumnie ``date`` jako obiekty ``datetime``
+    4. Podziel kolumnę z ``date`` na dwie osobne: datę i czas
 
 Given:
     .. code-block:: python
@@ -355,18 +355,18 @@ DataFrame Mapping Translate
 * Time: 13 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Read data from ``DATA`` as ``martian: pd.DataFrame``
-    #. Set header and index to data from file
-    #. Convert Polish month names to English
-    #. Parse dates to ``datetime`` objects
+    1. Use data from "Given" section (see below)
+    2. Read data from ``DATA`` as ``martian: pd.DataFrame``
+    3. Set header and index to data from file
+    4. Convert Polish month names to English
+    5. Parse dates to ``datetime`` objects
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Wczytaj dane z ``DATA`` jako ``martian: pd.DataFrame``
-    #. Ustaw nagłówek i index na dane zaczytane z pliku
-    #. Przekonwertuj polskie nazwy miesięcy na angielskie
-    #. Sparsuj daty do obiektów ``datetime``
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Wczytaj dane z ``DATA`` jako ``martian: pd.DataFrame``
+    3. Ustaw nagłówek i index na dane zaczytane z pliku
+    4. Przekonwertuj polskie nazwy miesięcy na angielskie
+    5. Sparsuj daty do obiektów ``datetime``
 
 Given:
     .. code-block:: python
@@ -399,16 +399,16 @@ DataFrame Mapping Month
 * Time: 13 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Read data from ``DATA`` as ``phones: pd.DataFrame``
-    #. Add column ``year`` and ``month`` by parsing ``period`` column
-    #. Month name must be a string month name, not a number (i.e.: 'January', 'May')
+    1. Use data from "Given" section (see below)
+    2. Read data from ``DATA`` as ``phones: pd.DataFrame``
+    3. Add column ``year`` and ``month`` by parsing ``period`` column
+    4. Month name must be a string month name, not a number (i.e.: 'January', 'May')
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Wczytaj dane z ``DATA`` jako ``phones: pd.DataFrame``
-    #. Dodaj kolumnę ``year`` i ``month`` poprzez sparsowanie kolumny ``period``
-    #. Nazwa miesiąca musi być ciągiem znaków, a nie liczbą (i.e. 'January', 'May')
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Wczytaj dane z ``DATA`` jako ``phones: pd.DataFrame``
+    3. Dodaj kolumnę ``year`` i ``month`` poprzez sparsowanie kolumny ``period``
+    4. Nazwa miesiąca musi być ciągiem znaków, a nie liczbą (i.e. 'January', 'May')
 
 :Example:
     #. if ``period`` column is "2015-01"
@@ -437,22 +437,22 @@ DataFrame Mapping Substitute
 * Time: 13 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Read data from ``DATA`` as ``astro_trl: pd.DataFrame``
-    #. Select ``Polish`` spreadsheet
-    #. Set header and index to data from file
-    #. Mind the encoding
-    #. Substitute Polish Diacritics to English alphabet letters
-    #. Compare ``df.replace(regex=True)`` with ``df.applymap()``
+    1. Use data from "Given" section (see below)
+    2. Read data from ``DATA`` as ``astro_trl: pd.DataFrame``
+    3. Select ``Polish`` spreadsheet
+    4. Set header and index to data from file
+    5. Mind the encoding
+    6. Substitute Polish Diacritics to English alphabet letters
+    7. Compare ``df.replace(regex=True)`` with ``df.applymap()``
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Wczytaj dane z ``DATA`` jako ``astro_trl: pd.DataFrame``
-    #. Wybierz arkusz ``Polish``
-    #. Ustaw nagłówek i index na dane zaczytane z pliku
-    #. Zwróć uwagę na encoding
-    #. Podmień polskie znaki diakrytyczne na litery z alfabetu angielskiego
-    #. Porównaj ``df.replace(regex=True)`` z ``df.applymap()``
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Wczytaj dane z ``DATA`` jako ``astro_trl: pd.DataFrame``
+    3. Wybierz arkusz ``Polish``
+    4. Ustaw nagłówek i index na dane zaczytane z pliku
+    5. Zwróć uwagę na encoding
+    6. Podmień polskie znaki diakrytyczne na litery z alfabetu angielskiego
+    7. Porównaj ``df.replace(regex=True)`` z ``df.applymap()``
 
 Given:
     .. code-block:: python

@@ -404,20 +404,20 @@ Series NA
 * Time: 5 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. From input data create ``pd.Series``
-    #. Fill first missing value with zero
-    #. Drop missing values
-    #. Reindex series (without old copy)
-    #. Compare result with "Tests" section (see below)
+    1. Use data from "Given" section (see below)
+    2. From input data create ``pd.Series``
+    3. Fill first missing value with zero
+    4. Drop missing values
+    5. Reindex series (without old copy)
+    6. Compare result with "Tests" section (see below)
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Z danych wejściowych stwórz ``pd.Series``
-    #. Wypełnij pierwszą brakującą wartość zerem
-    #. Usuń brakujące wartości
-    #. Zresetuj indeks (bez kopii starego)
-    #. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Z danych wejściowych stwórz ``pd.Series``
+    3. Wypełnij pierwszą brakującą wartość zerem
+    4. Usuń brakujące wartości
+    5. Zresetuj indeks (bez kopii starego)
+    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Given:
     .. code-block:: python

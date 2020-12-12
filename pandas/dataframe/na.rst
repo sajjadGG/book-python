@@ -281,29 +281,29 @@ English:
     .. todo:: English Translation
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Wczytaj dane z ``DATA`` jako ``iris: pd.DataFrame``
-    #. Pomiń pierwszą linię z metadanymi
-    #. Zmień nazwy kolumn na:
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Wczytaj dane z ``DATA`` jako ``iris: pd.DataFrame``
+    3. Pomiń pierwszą linię z metadanymi
+    4. Zmień nazwy kolumn na:
 
-        * Sepal length
-        * Sepal width
-        * Petal length
-        * Petal width
-        * Species
+        a. Sepal length
+        b. Sepal width
+        c. Petal length
+        d. Petal width
+        e. Species
 
-    #. Podmień wartości w kolumnie species
+    5. Podmień wartości w kolumnie species
 
-        * 0 -> 'setosa',
-        * 1 -> 'versicolor',
-        * 2 -> 'virginica'
+        a. 0 -> 'setosa',
+        b. 1 -> 'versicolor',
+        c. 2 -> 'virginica'
 
-    #. Wybierz wartości w kolumnie 'Petal length' mniejsze od 4
-    #. Wybrane wartości ustaw na ``NaN``
-    #. Interpoluj liniowo wszystkie wartości ``NaN``
-    #. Usuń wiersze z pozostałymi wartościami ``NaN``
-    #. Wypisz dwa pierwsze wiersze
-    #. Wypisz liczbę wierszy
+    6. Wybierz wartości w kolumnie 'Petal length' mniejsze od 4
+    7. Wybrane wartości ustaw na ``NaN``
+    8. Interpoluj liniowo wszystkie wartości ``NaN``
+    9. Usuń wiersze z pozostałymi wartościami ``NaN``
+    10. Wypisz dwa pierwsze wiersze
+    11. Wypisz liczbę wierszy
 
 Given:
     .. code-block:: python

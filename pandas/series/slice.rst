@@ -305,18 +305,18 @@ Series Slice Datetime
 * Time: 3 min
 
 English:
-    #. Set random seed to zero
-    #. Create ``pd.Series`` with 100 random numbers from standard distribution
-    #. Series Index are following dates since 2000
-    #. Slice dates from 2000-02-14 to end of February 2000
-    #. Compare result with "Tests" section (see below)
+    1. Set random seed to zero
+    2. Create ``pd.Series`` with 100 random numbers from standard distribution
+    3. Series Index are following dates since 2000
+    4. Slice dates from 2000-02-14 to end of February 2000
+    5. Compare result with "Tests" section (see below)
 
 Polish:
-    #. Ustaw ziarno losowości na zero
-    #. Stwórz ``pd.Series`` z 100 losowymi liczbami z rozkładu normalnego
-    #. Indeksem w serii mają być kolejne dni od 2000 roku
-    #. Wytnij daty od 2000-02-14 do końca lutego 2000
-    #. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Ustaw ziarno losowości na zero
+    2. Stwórz ``pd.Series`` z 100 losowymi liczbami z rozkładu normalnego
+    3. Indeksem w serii mają być kolejne dni od 2000 roku
+    4. Wytnij daty od 2000-02-14 do końca lutego 2000
+    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
     .. code-block:: python
@@ -353,20 +353,20 @@ Slicing Slice Str
 * Time: 13 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. Create ``pd.Series`` with 26 random integers in range ``[10, 100)``
-    #. Name indexes like letters from ASCII alphabet (``ascii_lowercase: str``)
-    #. Find middle letter of alphabet
-    #. Slice from series 3 elements up and down from middle
-    #. Compare result with "Tests" section (see below)
+    1. Use data from "Given" section (see below)
+    2. Create ``pd.Series`` with 26 random integers in range ``[10, 100)``
+    3. Name indexes like letters from ASCII alphabet (``ascii_lowercase: str``)
+    4. Find middle letter of alphabet
+    5. Slice from series 3 elements up and down from middle
+    6. Compare result with "Tests" section (see below)
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Stwórz ``pd.Series`` z 26 losowymi liczbami całkowitymi z przedziału ``<10; 100)``
-    #. Nazwij indeksy jak kolejne litery alfabetu ASCII (``ascii_lowercase: str``)
-    #. Znajdź środkową literę alfabetu
-    #. Wytnij z serii po 3 elementy w górę i w dół od wyszukanego środka
-    #. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Stwórz ``pd.Series`` z 26 losowymi liczbami całkowitymi z przedziału ``<10; 100)``
+    3. Nazwij indeksy jak kolejne litery alfabetu ASCII (``ascii_lowercase: str``)
+    4. Znajdź środkową literę alfabetu
+    5. Wytnij z serii po 3 elementy w górę i w dół od wyszukanego środka
+    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Given:
     .. code-block:: python

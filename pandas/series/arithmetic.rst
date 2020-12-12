@@ -175,17 +175,17 @@ Series Arithmetic
 * Time: 5 min
 
 English:
-    #. Set random seed to zero
-    #. Generate ``data: ndarray`` with 5 random digits [0, 9]
-    #. Create ``index: list`` with index names as sequential letters in english alphabet
-    #. Create ``s: pd.Series`` from ``data`` and ``index``
-    #. Multiply ``s`` by 10
-    #. Multiply ``s`` by original ``s`` values (before multiplying by 10)
+    1. Set random seed to zero
+    2. Generate ``data: ndarray`` with 5 random digits [0, 9]
+    3. Create ``index: list`` with index names as sequential letters in english alphabet
+    4. Create ``s: pd.Series`` from ``data`` and ``index``
+    5. Multiply ``s`` by 10
+    6. Multiply ``s`` by original ``s`` values (before multiplying by 10)
 
 Polish:
-    #. Ustaw random ziarno losowości na zero
-    #. Wygeneruj ``data: np.ndarray`` z 5 losowymi cyframi <0, 9>
-    #. Stwórz ``index: list`` z indeksami jak kolejne listery alfabetu angielskiego
-    #. Stwórz ``s: pd.Series`` z ``data`` oraz ``index``
-    #. Pomnóż ``s`` przez 10
-    #. Pomnóż ``s`` przez oryginalne wartości ``s`` (przed mnożeniem przez 10)
+    1. Ustaw random ziarno losowości na zero
+    2. Wygeneruj ``data: np.ndarray`` z 5 losowymi cyframi <0, 9>
+    3. Stwórz ``index: list`` z indeksami jak kolejne listery alfabetu angielskiego
+    4. Stwórz ``s: pd.Series`` z ``data`` oraz ``index``
+    5. Pomnóż ``s`` przez 10
+    6. Pomnóż ``s`` przez oryginalne wartości ``s`` (przed mnożeniem przez 10)

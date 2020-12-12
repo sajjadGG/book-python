@@ -89,20 +89,20 @@ Series Alter
 * Time: 5 min
 
 English:
-    #. Use data from "Given" section (see below)
-    #. From input data create ``pd.Series``
-    #. Drop values at index 2, 4, 6
-    #. Drop duplicates
-    #. Reindex series (without old copy)
-    #. Print series
+    1. Use data from "Given" section (see below)
+    2. From input data create ``pd.Series``
+    3. Drop values at index 2, 4, 6
+    4. Drop duplicates
+    5. Reindex series (without old copy)
+    6. Print series
 
 Polish:
-    #. Użyj danych z sekcji "Given" (patrz poniżej)
-    #. Z danych wejściowych stwórz ``pd.Series``
-    #. Usuń wartości na indeksach 2, 4, 6
-    #. Usuń duplikujące się wartości
-    #. Zresetuj indeks (bez kopii starego)
-    #. Wypisz serię
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Z danych wejściowych stwórz ``pd.Series``
+    3. Usuń wartości na indeksach 2, 4, 6
+    4. Usuń duplikujące się wartości
+    5. Zresetuj indeks (bez kopii starego)
+    6. Wypisz serię
 
 Given:
     .. code-block:: python
