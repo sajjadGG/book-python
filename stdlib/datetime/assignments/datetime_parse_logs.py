@@ -22,6 +22,11 @@ Polish:
 References:
     * Apollo 11 timeline https://history.nasa.gov/SP-4029/Apollo_11i_Timeline.htm
 
+Hints:
+    * `str.splitlines()`
+    * `str.split(maxsplit)`
+    * ` try ... except ValueError: ...`
+
 Tests:
     >>> result  # doctest: +NORMALIZE_WHITESPACE
     [{'date': datetime.datetime(1969, 7, 14, 21, 0), 'level': 'INFO', 'message': 'Terminal countdown started'},

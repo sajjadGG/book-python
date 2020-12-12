@@ -23,6 +23,7 @@ Polish:
 
 Hints:
     * Add quote sign `"` like normal text to `fmt` parameter of `.strptime()`
+    * `%dst`
     * Use `%-I` or `%_I` on \*nix systems (macOS, BSD, Linux) to remove leading zero
     * Use `%#I` on Windows to remove leading zero
 
@@ -40,9 +41,8 @@ from datetime import datetime
 DATA = '"July 21st, 1969 2:56:15 AM UTC"'
 result = ''
 
-# Result
+# Solution
 dt = datetime.strptime(DATA, '"%B %dst, %Y %I:%M:%S %p %Z"')
-# datetime.datetime(1969, 7, 21, 2, 56, 15)
 
 result = dt.strftime('%m/%d/%y %#I:%M %p')  # Windows
 result = dt.strftime('%m/%d/%y %-I:%M %p')  # *nix

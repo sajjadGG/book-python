@@ -103,7 +103,7 @@ Escape Characters
     >>> a = '\U0001F9D1'  # 🧑
     >>> b = '\U0000200D'  # ''
     >>> c = '\U0001F680'  # 🚀
-
+    >>>
     >>> astronaut = a + b + c
     >>> print(astronaut)
     🧑‍🚀
@@ -116,11 +116,13 @@ Format String
 * Used for ``str`` concatenation
 
     >>> name = 'José Jiménez'
+    >>>
     >>> print(f'My name... {name}')
     My name... José Jiménez
 
     >>> firstname = 'José'
     >>> lastname = 'Jiménez'
+    >>>
     >>> result = f'My name... {firstname} {lastname}'
     >>> print(result)
     My name... José Jiménez
