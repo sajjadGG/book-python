@@ -6,21 +6,18 @@ References
 Bibliography
 ============
 .. bibliography:: bibliography.bib
-    :style: alpha
-    :all:
+    :cited:
 
 
 Images
 ======
 .. bibliography:: images.bib
-    :style: alpha
     :labelprefix: Img
-    :all:
+    :cited:
 
 
 Video
 =====
 .. bibliography:: video.bib
-    :style: alpha
     :labelprefix: Video
-    :all:
+    :cited:

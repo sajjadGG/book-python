@@ -77,6 +77,5 @@ Performance
 References
 ==========
 .. bibliography:: _references/bibliography.bib
-    :style: plain
-    :labelprefix: NP
-    :all:
+    :labelprefix: Numpy
+    :cited:
