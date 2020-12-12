@@ -32,4 +32,3 @@ result = (
         .title()
         .replace('3', 'III')
 )
-
