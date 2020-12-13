@@ -38,6 +38,7 @@ Tests:
     120.7
 """
 
+
 # Given
 SECOND = 1
 MINUTE = 60 * SECOND
@@ -46,6 +47,7 @@ HOUR = 60 * MINUTE
 m = 1
 km = 1000 * m
 mi = 1609.344 * m
+
 
 # Solution
 kph = km / HOUR

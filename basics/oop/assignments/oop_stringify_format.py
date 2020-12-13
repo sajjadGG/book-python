@@ -29,6 +29,7 @@ Tests:
     '1337'
 """
 
+
 # Given
 class Distance:
     def __init__(self, meters):

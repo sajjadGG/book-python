@@ -17,10 +17,13 @@ Polish:
 
 Tests:
     TODO: Doctests
+    TODO: Input Stub
 """
+
 
 # Given
 temperature = input('Type temperature: ')
+
 
 # Solution
 try:

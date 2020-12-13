@@ -30,12 +30,14 @@ Tests:
     2
 """
 
+
 # Given
 DATA = ['red', 'green', 'blue', 'red', 'green', 'red', 'blue']
 
 red: int = 0
 green: int = 0
 blue: int = 0
+
 
 # Solution
 for color in DATA:

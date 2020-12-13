@@ -39,6 +39,7 @@ Tests:
      Setosa(sepalLength=4.9, sepalWidth=3.0, petalLength=1.4, petalWidth=0.2)]
 """
 
+
 # Given
 import json
 from dataclasses import dataclass
@@ -78,6 +79,7 @@ class Versicolor(Iris):
 
 
 result = []
+
 
 # Solution
 for iris in json.loads(DATA):

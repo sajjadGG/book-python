@@ -26,6 +26,7 @@ Tests:
     Position(x=1, y=2)
 """
 
+
 # Given
 from dataclasses import dataclass
 

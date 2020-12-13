@@ -29,6 +29,7 @@ Tests:
     TODO: Doctests
 """
 
+
 # Given
 TIMEOUT = 2.0
 DELAY = 5.0
@@ -36,6 +37,7 @@ TODO = ['ping python.astrotech.io',
         'ls -la',
         'echo "hello world"',
         'cat /etc/passwd']
+
 
 # Solution
 import subprocess

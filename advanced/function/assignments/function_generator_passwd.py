@@ -43,6 +43,7 @@ Tests:
     112
 """
 
+
 # Given
 DATA = """root:x:0:0:root:/root:/bin/bash
 bin:x:1:1:bin:/bin:/sbin/nologin

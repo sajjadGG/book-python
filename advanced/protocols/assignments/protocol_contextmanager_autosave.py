@@ -52,6 +52,7 @@ Tests:
     >>> remove('_temporary.txt')
 """
 
+
 # Given
 from threading import Timer
 

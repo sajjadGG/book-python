@@ -17,16 +17,19 @@ Polish:
 
 Tests:
     TODO: Doctests
+    TODO: Input Stub
     >>> type(temperature)
     <class 'float'>
     >>> import sys
     >>> sys.modules[__name__]
 """
 
+
 # Given
 # temperature = input('Type temperature: ')
 temperature = 10
 temperature = float(temperature)
+
 
 # Solution
 if temperature < 0:

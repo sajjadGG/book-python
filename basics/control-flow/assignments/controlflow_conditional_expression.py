@@ -67,6 +67,7 @@ Tests:
     >>> assert blood_pressure == '180/120' and result == ['Hypertension stage 2', 'Hypertensive Crisis'] or True
 """
 
+
 # Given
 STATUS_NORMAL = 'Normal'
 STATUS_ELEVATED = 'Elevated'
@@ -90,6 +91,7 @@ result = []
 | Hypertension stage 2    | 140 or higher    | or       | 90 or higher      |
 | Hypertensive Crisis     | Higher than 180  | and/or   | Higher than 120   |
 """
+
 
 # Solution
 if 180 <= systolic or 120 <= diastolic:

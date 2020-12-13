@@ -42,6 +42,7 @@ Tests:
     >>> remove(FILE)
 """
 
+
 # Given
 from csv import DictWriter, QUOTE_ALL
 

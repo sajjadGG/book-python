@@ -39,9 +39,11 @@ Tests:
     250
 """
 
+
 # Given
 m = 1
 km = 1000 * m
+
 
 # Solution
 karman_line_earth = 100000 // km

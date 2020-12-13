@@ -45,8 +45,10 @@ Tests:
     210
 """
 
+
 # Given
 Kelvin = 273
+
 
 # Solution
 mars_max = 20 + Kelvin

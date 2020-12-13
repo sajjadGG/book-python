@@ -51,6 +51,7 @@ Tests:
          site_admin=False)
 """
 
+
 # Given
 from dataclasses import dataclass
 import requests

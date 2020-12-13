@@ -27,7 +27,9 @@ Polish:
 
 Tests:
     TODO doctests
+    TODO: Input Stub
 """
+
 
 # Given
 ALPHABET = {
@@ -57,6 +59,7 @@ ALPHABET = {
     'X': 'X-Ray',
     'Z': 'Zulu',
 }
+
 
 # Solution
 letter = input('Type letter: ')

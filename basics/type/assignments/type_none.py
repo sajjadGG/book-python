@@ -28,12 +28,14 @@ Tests:
     False
 """
 
+
 # Given
 a = ... is None
 b = ... is not None
 c = bool(bool(...) is not bool(...)) == False
 d = (bool(bool(...) is not bool(...)) == False and bool(...))
 e = (bool(bool(...) is not bool(...)) == False and bool(...)) and (... is not None)
+
 
 # Solution
 a = None is None

@@ -28,9 +28,11 @@ Tests:
     3048.0
 """
 
+
 # Given
 m = 1
 ft = 0.3048 * m
+
 
 # Solution
 result = 10_000 * ft

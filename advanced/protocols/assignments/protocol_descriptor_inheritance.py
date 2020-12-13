@@ -74,6 +74,7 @@ Tests:
     ValueError: Out of bounds
 """
 
+
 # Given
 class GeographicCoordinate:
     def __str__(self):

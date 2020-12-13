@@ -29,6 +29,7 @@ Tests:
     'zazolc gesla jazn'
 """
 
+
 # Given
 PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
       'ł': 'l', 'ń': 'n', 'ó': 'o',
@@ -36,6 +37,7 @@ PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
 
 DATA = 'zażółć gęślą jaźń'
 result: str = ''
+
 
 # Solution
 i = 0

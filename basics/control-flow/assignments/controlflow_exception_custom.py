@@ -23,7 +23,10 @@ Tests:
     True
     >>> issubclass(NegativeKelvin, Exception)
     True
+
+TODO: Input Stub
 """
+
 
 # Given
 temperature = input('Type temperature: ')

@@ -40,12 +40,14 @@ Tests:
     21.22
 """
 
+
 # Given
 Pa = 1
 hPa = 100 * Pa
 kPa = 1000 * Pa
 ata = 1013.25 * hPa
 O2 = 20.946
+
 
 # Solution
 pO2 = O2/100 * ata

@@ -38,6 +38,7 @@ Tests:
     'minus fower niner and tree fife'
 """
 
+
 # Given
 DATA = {
     0: 'zero',
@@ -51,6 +52,7 @@ DATA = {
     8: 'ait',
     9: 'niner',
 }
+
 
 # Solution
 data = {str(k):v for k,v in DATA.items()}

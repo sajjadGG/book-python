@@ -31,6 +31,7 @@ Tests:
      {'firstname': 'Melissa', 'lastname': 'Lewis', 'missions': ''}]
 """
 
+
 # Given
 class Astronaut:
     def __init__(self, firstname, lastname, missions=()):

@@ -38,9 +38,11 @@ Tests:
     123.0
 """
 
+
 # Given
 PLN = 1
 VAT = 23 / 100
+
 
 # Solution
 net = 100.00 * PLN

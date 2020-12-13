@@ -30,8 +30,10 @@ Tests:
      2: 'virginica'}
 """
 
+
 # Given
 DATA = ['setosa', 'versicolor', 'virginica']
+
 
 # Solution
 result = dict(enumerate(DATA))

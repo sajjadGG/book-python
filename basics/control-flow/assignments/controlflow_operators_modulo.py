@@ -27,14 +27,17 @@ Hints:
     * `%` on `int` is overloaded as a modulo division
 
 Tests:
+    TODO: Input Stub
     >>> type(result)
     <class 'bool'>
     >>> result in (True, False)
     True
 """
 
+
 # Given
 number = input('What is your number?: ')
+
 
 # Solution
 result = float(number) % 2 == 0

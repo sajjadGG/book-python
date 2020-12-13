@@ -42,12 +42,14 @@ Tests:
     True
 """
 
+
 # Given
 DATA = """
     First Name: Jan
     Last Name: Twardowski
     Missions: Apollo, Artemis
 """
+
 
 # Solution
 result = {

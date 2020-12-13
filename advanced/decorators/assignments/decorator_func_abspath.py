@@ -41,6 +41,7 @@ Tests:
 # Given
 from pathlib import Path
 
+
 CURRENT_DIR = Path().cwd()
 
 

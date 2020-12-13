@@ -35,6 +35,7 @@ Tests:
      UserAccount(username='lewis')]
 """
 
+
 # Given
 DATA = """root:x:0:0:root:/root:/bin/bash
 bin:x:1:1:bin:/bin:/sbin/nologin
@@ -48,6 +49,7 @@ twardowski:x:1000:1000:Jan Twardowski:/home/twardowski:/bin/bash
 jimenez:x:1001:1001:José Jiménez:/home/jimenez:/bin/bash
 ivanovic:x:1002:1002:Иван Иванович:/home/ivanovic:/bin/bash
 lewis:x:1002:1002:Melissa Lewis:/home/lewis:/bin/bash"""
+
 
 # Solution
 from dataclasses import dataclass

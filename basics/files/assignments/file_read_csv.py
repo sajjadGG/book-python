@@ -54,6 +54,7 @@ Tests:
     >>> remove(FILE)
 """
 
+
 # Given
 FILE = r'_temporary.csv'
 
@@ -73,6 +74,7 @@ labels = []
 with open(FILE, mode='w') as file:
     file.write(DATA)
 
+
 # Solution
 with open(FILE) as file:
     header = file.readline().strip().split(',')
@@ -80,7 +82,5 @@ with open(FILE) as file:
     for line in file:
         *X,y = line.strip().split(',')
         X = [float(x) for x in X]
-        # X = map(float, X)
-
         features.append(tuple(X))
         labels.append(y)

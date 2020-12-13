@@ -18,6 +18,7 @@ Polish:
     4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    TODO: Input Stub
     >>> isinstance(result, Path)
     True
     >>> current_directory = Path.cwd()
@@ -25,8 +26,10 @@ Tests:
     True
 """
 
+
 # Given
 filename = input('Type filename: ')
+
 
 # Solution
 from pathlib import Path

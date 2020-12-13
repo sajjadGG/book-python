@@ -32,9 +32,11 @@ Tests:
     [2.0, 3.0, 3.5, 4.0, 4.5, 5.0]
 """
 
+
 # Given
 DATA = (2, 3, 3.5, 4, 4.5, 5)
 result: list = []
+
 
 # Solution
 i = 0

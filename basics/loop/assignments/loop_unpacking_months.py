@@ -45,12 +45,14 @@ Tests:
      12: 'December'}
 """
 
+
 # Given
 MONTHS = ['January', 'February', 'March', 'April',
           'May', 'June', 'July', 'August', 'September',
           'October', 'November', 'December']
 
 result: dict = {}
+
 
 # Solution
 for i, month in enumerate(MONTHS, start=1):

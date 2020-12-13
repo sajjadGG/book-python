@@ -30,6 +30,7 @@ Tests:
     'zazolc gesla jazn'
 """
 
+
 # Given
 PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
       'ł': 'l', 'ń': 'n', 'ó': 'o',

@@ -54,6 +54,7 @@ Tests:
                addresses=[Address(street='Linder Hoehe', city='Köln', postcode=51147, region='North Rhine-Westphalia', country='Germany')])]
 """
 
+
 # Given
 from dataclasses import dataclass
 from typing import Optional, Union
@@ -75,6 +76,7 @@ DATA = [
     {"firstname": "Alex", "lastname": "Vogel", "addresses": [
         {"street": "Linder Hoehe", "city": "Köln", "postcode": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}
 ]
+
 
 # Solution
 @dataclass

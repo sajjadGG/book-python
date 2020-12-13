@@ -50,12 +50,14 @@ Tests:
      '12': 'December'}
 """
 
+
 # Given
 MONTHS = ['January', 'February', 'March', 'April',
           'May', 'June', 'July', 'August',
           'September', 'October', 'November', 'December']
 
 result: dict
+
 
 # Solution
 result = {f'{k:02}':v for k,v in enumerate(MONTHS, start=1)}

@@ -28,6 +28,7 @@ Tests:
     >>> assert issubclass(MarsMission, Rocket)
 """
 
+
 # Given
 class Habitat:
     pass

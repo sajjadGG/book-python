@@ -34,6 +34,7 @@ Tests:
     False
 """
 
+
 # Given
 DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
         (5.8, 2.7, 5.1, 1.9, {'virginica'}),
@@ -48,6 +49,7 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
 
 SUFFIXES = ('ca', 'osa')
 result: set = set()
+
 
 # Solution
 for *features, label in DATA[1:]:

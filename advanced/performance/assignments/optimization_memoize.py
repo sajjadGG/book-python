@@ -24,6 +24,7 @@ Tests:
     TODO: Doctests
 """
 
+
 # Given
 from timeit import timeit
 import sys

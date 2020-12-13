@@ -26,9 +26,11 @@ Tests:
     0.5914688
 """
 
+
 # Given
 liter = 1
 floz = 0.02957344 * liter
+
 
 # Solution
 result = 20 * floz

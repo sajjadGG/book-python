@@ -27,12 +27,14 @@ Tests:
     >>> remove(FILE)
 """
 
+
 # Given
 FILE = r'_temporary.txt'
 DATA = 'hello'
 
 with open(FILE, mode='wt') as file:
     file.write(DATA)
+
 
 # Solution
 with open(FILE, mode='rt') as file:

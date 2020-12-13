@@ -42,9 +42,11 @@ Tests:
      'Species': 'virginica'}
 """
 
+
 # Given
 KEYS = ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
 VALUES = [5.8, 2.7, 5.1, 1.9, 'virginica']
+
 
 # Solution
 result = dict(zip(KEYS, VALUES))

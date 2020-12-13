@@ -17,11 +17,14 @@ Polish:
 
 Tests:
     TODO: Doctests
+    TODO: Input Stub
 """
+
 
 # Given
 ADULT = 18
 age = input('Type age: ')
+
 
 # Solution
 if float(age) < ADULT:

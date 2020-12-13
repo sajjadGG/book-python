@@ -24,9 +24,11 @@ Tests:
     >>> remove(FILE)
 """
 
+
 # Given
 FILE = r'_temporary.txt'
 DATA = (5.1, 3.5, 1.4, 0.2, 'setosa')
+
 
 # Solution
 result = ','.join(str(x) for x in DATA) + '\n'

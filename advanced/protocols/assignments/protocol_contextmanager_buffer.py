@@ -48,6 +48,7 @@ Tests:
     >>> remove('_temporary.txt')
 """
 
+
 # Given
 from sys import getsizeof
 

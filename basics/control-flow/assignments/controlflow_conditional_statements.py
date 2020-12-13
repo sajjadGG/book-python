@@ -24,9 +24,11 @@ Tests:
     True
 """
 
+
 # Given
 ADULT = 18
 age = input('What is your age?: ')
+
 
 # Solution
 if int(age) >= ADULT:

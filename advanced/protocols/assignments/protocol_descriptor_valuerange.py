@@ -41,6 +41,7 @@ Tests:
     ValueError: Height is not between 150 and 200
 """
 
+
 # Given
 class ValueRange:
     name: str

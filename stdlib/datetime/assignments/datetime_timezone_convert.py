@@ -40,6 +40,7 @@ Tests:
     TODO: Make solution to the new assignment description
 """
 
+
 # Given
 from datetime import datetime
 from pytz import timezone

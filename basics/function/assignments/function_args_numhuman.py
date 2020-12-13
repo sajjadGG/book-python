@@ -36,6 +36,7 @@ Tests:
     'minus forty nine and thirty five hundreds'
 """
 
+
 # Given
 NUMBER = {
     '0': 'zero',
@@ -53,6 +54,7 @@ NUMBER = {
 
 def number_to_str(number):
     """TODO"""
+
 
 # Solution
 def number_to_str(number):

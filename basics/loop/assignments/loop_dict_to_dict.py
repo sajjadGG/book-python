@@ -30,6 +30,7 @@ Tests:
      'Kindergarten': '1'}
 """
 
+
 # Given
 DATA = {
     6: ['Doctorate', 'Prof-school'],
@@ -41,6 +42,7 @@ DATA = {
 }
 
 result: dict = {}
+
 
 # Solution
 for idx, titles in DATA.items():

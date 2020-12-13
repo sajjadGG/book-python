@@ -34,12 +34,14 @@ Tests:
     '07/21/69 2:56 AM'
 """
 
+
 # Given
 from datetime import datetime
 
 
 DATA = '"July 21st, 1969 2:56:15 AM UTC"'
 result = ''
+
 
 # Solution
 dt = datetime.strptime(DATA, '"%B %dst, %Y %I:%M:%S %p %Z"')

@@ -24,6 +24,7 @@ Tests:
     5.911111111111111
 """
 
+
 # Given
 DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
         (5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -37,6 +38,7 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
         (4.6, 3.1, 1.5, 0.2, 'setosa')]
 
 result: float = ...
+
 
 # Solution
 sepal_length = []

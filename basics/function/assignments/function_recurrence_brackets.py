@@ -54,6 +54,7 @@ Tests:
     False
 """
 
+
 # Given
 BRACKET_OPEN = ('(', '{', '[', '<')
 BRACKET_CLOSE = (')', '}', ']', '>')

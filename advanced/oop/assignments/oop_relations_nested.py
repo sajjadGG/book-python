@@ -57,6 +57,7 @@ DATA = """[
 
 result = []
 
+
 # Solution
 for astronaut in json.loads(DATA):
     for i, address in enumerate(astronaut.pop('addresses'), start=1):

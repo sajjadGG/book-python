@@ -44,6 +44,7 @@ SUFFIXES = ('ca', 'osa')
 
 result: list
 
+
 # Solution
 result = [label
           for *features, label in DATA[1:]

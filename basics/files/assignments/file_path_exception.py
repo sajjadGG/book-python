@@ -17,10 +17,13 @@ Polish:
 
 Tests:
     TODO: Doctests
+    TODO: Input Stub
 """
+
 
 # Given
 filename = input('Type filename: ')
+
 
 # Solution
 try:

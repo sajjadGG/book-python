@@ -21,7 +21,9 @@ Polish:
 
 Tests:
     TODO: Doctests
+    TODO: Input Stub
 """
+
 
 # Given
 degrees = input('Type angle [deg]: ')

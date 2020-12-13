@@ -34,6 +34,7 @@ Tests:
     >>> remove(FILE)
 """
 
+
 # Given
 from csv import DictReader, QUOTE_NONE
 
@@ -52,6 +53,7 @@ with open(FILE, mode='w') as file:
 
 
 result = []
+
 
 # Solution
 with open(FILE) as file:

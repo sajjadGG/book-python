@@ -39,6 +39,7 @@ Tests:
      {'ip': '::1', 'hosts': ['localhost'], 'protocol': 'ipv6'}]
 """
 
+
 # Given
 DATA = """
 ##
@@ -55,6 +56,7 @@ DATA = """
 """
 
 result = []
+
 
 # Solution
 for line in DATA.splitlines():

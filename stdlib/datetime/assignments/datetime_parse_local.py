@@ -27,11 +27,13 @@ Tests:
     '1961-04-12T06:07:00.000000Z'
 """
 
+
 # Given
 from datetime import datetime
 
 
 DATA = 'April 12, 1961 6:07 local time'
+
 
 # Solution
 format = '%B %d, %Y %H:%M local time'

@@ -44,6 +44,7 @@ Tests:
 
 """
 
+
 # Given
 DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
         (5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -56,6 +57,7 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
 
 def mean(*args):
     return sum(args) / len(args)
+
 
 # Solution
 result = [(label, mean(*features))

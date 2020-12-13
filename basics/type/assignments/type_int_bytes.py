@@ -39,9 +39,11 @@ Tests:
     800
 """
 
+
 # Given
 b = 1
 B = 8 * b
+
 
 # Solution
 kb = 1024 * b

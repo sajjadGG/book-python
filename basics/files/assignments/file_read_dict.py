@@ -43,6 +43,7 @@ Tests:
     >>> remove(FILE)
 """
 
+
 # Given
 FILE = r'_temporary.txt'
 
@@ -57,6 +58,7 @@ with open(FILE, mode='w') as file:
 
 
 result = {}
+
 
 # Solution
 with open(FILE) as file:

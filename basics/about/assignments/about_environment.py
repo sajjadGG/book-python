@@ -17,6 +17,7 @@ Polish:
     6. Upewnij się, że w linijce z "Virtualenv" nie masz `None`
 """
 
+
 # Given
 import sys
 import os
@@ -25,5 +26,6 @@ import os
 print(f'Python Executable: {sys.executable}')
 print(f'Python Version: {sys.version}')
 print(f'Virtualenv: {os.getenv("VIRTUAL_ENV")}')
+
 
 # Solution

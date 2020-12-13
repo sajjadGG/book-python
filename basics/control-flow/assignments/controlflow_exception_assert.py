@@ -28,10 +28,12 @@ Tests:
     (3, 7)
 """
 
+
 # Given
 import sys
 current_version = sys.version_info
 required = (3, 7)
+
 
 # Solution
 assert current_version >= required, 'Python 3.7+ required'

@@ -55,6 +55,7 @@ Tests:
     (1, 2)
 """
 
+
 # Given
 from dataclasses import dataclass
 from random import randint

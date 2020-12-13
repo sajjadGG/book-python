@@ -58,6 +58,7 @@ Tests:
     ['versicolor', 'virginica', 'setosa', 'virginica']
 """
 
+
 # Given
 DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
         (5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -75,6 +76,7 @@ features_train: list
 features_test: list
 labels_train: list
 labels_test: list
+
 
 # Solution
 RATIO = 0.6

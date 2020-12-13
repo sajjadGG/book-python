@@ -31,6 +31,7 @@ Tests:
     True
 """
 
+
 # Given
 import sys
 print(sys.version[:6])

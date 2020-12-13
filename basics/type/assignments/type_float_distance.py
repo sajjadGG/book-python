@@ -30,6 +30,7 @@ Tests:
     All: km: 1, mi: 0.8, nm: 0.72
 """
 
+
 # Given
 m = 1
 km = 1000 * m
@@ -43,6 +44,7 @@ Kilometers: {...}
 Miles: {...}
 Nautical Miles: {...}
 All: km: {...}, mi: {...}, nm: {...}"""
+
 
 # Solution
 distance_m = distance / m

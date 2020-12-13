@@ -49,12 +49,14 @@ Tests:
     7088.63
 """
 
+
 # Given
 m = 1
 Pa = 1
 hPa = 100 * Pa
 ata = 1013.25 * hPa
 O2 = 20.946
+
 
 # Solution
 pO2 = O2/100 * ata

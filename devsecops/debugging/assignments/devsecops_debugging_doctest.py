@@ -14,6 +14,7 @@ Polish:
     3. Dla uproszczenia przyjmij, że zwracana zawsze będzie tylko jedna linia (bezpośrednio poniżej testu)
 """
 
+
 # Given
 class Astronaut:
     """

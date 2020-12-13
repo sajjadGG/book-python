@@ -22,8 +22,10 @@ Tests:
     'Jana Twardowskiego III'
 """
 
+
 # Given
 DATA = 'UL. jana \tTWArdoWskIEGO 3'
+
 
 # Solution
 result = (

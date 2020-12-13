@@ -24,6 +24,7 @@ Tests:
     >>> remove(FILE)
 """
 
+
 # Given
 FILE = r'_temporary.txt'
 DATA = """127.0.0.1       localhost
@@ -31,6 +32,7 @@ DATA = """127.0.0.1       localhost
 255.255.255.255 broadcasthost
 ::1             localhost
 """
+
 
 # Solution
 with open(FILE, mode='wt') as file:

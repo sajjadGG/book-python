@@ -68,6 +68,7 @@ Tests:
     >>> remove('_temporary.txt')
 """
 
+
 # Given
 from typing import Union
 

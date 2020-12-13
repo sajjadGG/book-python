@@ -42,8 +42,10 @@ Tests:
     1337
 """
 
+
 # Given
 b = 1
+
 
 # Solution
 kb = 1024 * b

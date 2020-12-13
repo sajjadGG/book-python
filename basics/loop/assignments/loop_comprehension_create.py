@@ -22,8 +22,10 @@ Tests:
     [6, 8, 10, 12, 14, 16, 18]
 """
 
+
 # Given
 result: list
+
 
 # Solution
 result = [x for x in range(5,20) if x % 2 == 0]

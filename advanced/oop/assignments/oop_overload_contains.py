@@ -31,6 +31,7 @@ Tests:
     True
 """
 
+
 # Given
 class Astronaut:
     def __init__(self, name, missions):

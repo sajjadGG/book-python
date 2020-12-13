@@ -47,6 +47,7 @@ Tests:
     >>> remove(DATABASE)
 """
 
+
 # Given
 import sqlite3
 

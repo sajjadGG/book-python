@@ -35,6 +35,7 @@ Tests:
     >>> remove(FILE)
 """
 
+
 # Given
 FILE = r'_temporary.csv'
 DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
@@ -44,6 +45,7 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
         (6.3, 2.9, 5.6, 1.8, 'virginica'),
         (6.4, 3.2, 4.5, 1.5, 'versicolor'),
         (4.7, 3.2, 1.3, 0.2, 'setosa')]
+
 
 # Solution
 header, *data = DATA

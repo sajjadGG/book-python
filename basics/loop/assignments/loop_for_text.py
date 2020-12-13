@@ -50,6 +50,7 @@ Tests:
     'adverbs': 0}
 """
 
+
 # Given
 TEXT = """
     We choose to go to the Moon.
@@ -69,6 +70,7 @@ result: dict = {
     'commas': 0,
     'adverbs': 0,
 }
+
 
 # Solution
 for sentence in TEXT.split('.'):

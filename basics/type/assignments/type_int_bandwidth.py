@@ -45,6 +45,7 @@ Tests:
     8
 """
 
+
 # Given
 SECOND = 1
 b = 1
