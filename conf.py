@@ -143,6 +143,7 @@ bibtex_bibfiles = [
     '_references/video.bib',
     'numpy/_references/bibliography.bib',
     'stdlib/_references/bibliography.bib',
+    'stdlib/regular-expressions/references/bibliography.bib'
 ]
 
 source_suffix = {

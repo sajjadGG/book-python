@@ -5,6 +5,6 @@ References
 
 Bibliography
 ============
-.. bibliography:: bibliography.bib
+.. bibliography::
     :labelprefix: Regex
     :cited:

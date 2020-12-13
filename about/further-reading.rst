@@ -56,36 +56,36 @@ Python:
 
     * Łukasz Langa
 
-        * `PyVideo <https://pyvideo.org/speaker/lukasz-langa.html>`_
-        * `YouTube <https://www.youtube.com/results?search_query=Łukasz+Langa>`_
+        * https://pyvideo.org/speaker/lukasz-langa.html
+        * https://www.youtube.com/results?search_query=Łukasz+Langa
 
     * Raymond Hettinger:
 
-        * `PyVideo <https://pyvideo.org/speaker/raymond-hettinger.html>`_
-        * `YouTube <https://www.youtube.com/results?search_query=Raymond+Hettinger>`_
+        * https://pyvideo.org/speaker/raymond-hettinger.html
+        * https://www.youtube.com/results?search_query=Raymond+Hettinger
 
     * Dustin Ingram:
 
-        * `PyVideo <https://pyvideo.org/speaker/dustin-ingram.html>`_
+        * https://pyvideo.org/speaker/dustin-ingram.html
 
     * Guido van Rossum:
 
-        * `PyVideo <https://pyvideo.org/speaker/guido-van-rossum.html>`_
+        * https://pyvideo.org/speaker/guido-van-rossum.html
 
     * Larry Hastings (Python):
 
-        * `PyVideo <https://pyvideo.org/speaker/larry-hastings.html>`_
+        * https://pyvideo.org/speaker/larry-hastings.html
 
 Django:
 
     * Russell Keith-Magee:
 
-        * `PyVideo <https://pyvideo.org/speaker/russell-keith-magee.html>`_
-        * `YouTube <https://www.youtube.com/results?search_query=Russel+Keith-Magee>`_
+        * https://pyvideo.org/speaker/russell-keith-magee.html
+        * https://www.youtube.com/results?search_query=Russel+Keith-Magee
 
     * Andrew Godwin:
 
-        * `PyVideo <https://pyvideo.org/speaker/andrew-godwin.html`
+        * https://pyvideo.org/speaker/andrew-godwin.html
 
 
 Talks

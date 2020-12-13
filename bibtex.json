@@ -1,0 +1,64 @@
+{
+    "cited": {
+        "network/http/protocol": [
+            "URIvsURL"
+        ],
+        "network/http/soap-wsdl": [
+            "DefinitionWSDL",
+            "DefinitionWADL"
+        ],
+        "network/transport/routing": [
+            "DefinitionRouting",
+            "DefinitionUnicast",
+            "RoutingUnicast",
+            "DefinitionBroadcast",
+            "RoutingBroadcast",
+            "DefinitionMulticast",
+            "RoutingMulticast",
+            "DefinitionAnycast",
+            "RoutingAnycast",
+            "DefinitionGeocast",
+            "RoutingGeocast"
+        ],
+        "numpy/array-axis": [
+            "NumpyMultidimArrays"
+        ],
+        "numpy/array-broadcasting": [
+            "NumpyBroadcastingRules"
+        ],
+        "numpy/array-random": [
+            "NumpyUniformDistribution",
+            "NumpyNormalDistribution",
+            "NumpyPoissonDistribution"
+        ],
+        "numpy/polynomial": [
+            "NumpyPolynomial"
+        ],
+        "numpy/statistics": [
+            "NumpyPearsonCorrelationCoefficient"
+        ],
+        "stdlib/datetime/parse-and-format": [
+            "DateFormatUS",
+            "DateFormatJapan"
+        ],
+        "stdlib/datetime/timezones": [
+            "VideoComputerphileTimeZones"
+        ],
+        "stdlib/regular-expressions/find": [
+            "RegexpWikipediaApollo11"
+        ],
+        "stdlib/regular-expressions/greedy": [
+            "RegexpKennedy1962"
+        ],
+        "stdlib/regular-expressions/search": [
+            "RegexpWikipediaApollo11",
+            "RegexpKennedy1962"
+        ],
+        "stdlib/regular-expressions/split": [
+            "RegexpKennedy1962"
+        ],
+        "stdlib/regular-expressions/standards": [
+            "W3CParsingURLs"
+        ]
+    }
+}
