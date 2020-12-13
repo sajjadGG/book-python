@@ -2,6 +2,7 @@
 Array Sort
 **********
 
+
 Sort
 ====
 
@@ -119,40 +120,6 @@ Flip
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
-
-Numpy Sort
-----------
-* Assignment: Numpy Sort
-* Filename: :download:`assignments/numpy_sort.py`
-* Complexity: easy
-* Lines of code: 4 lines
-* Time: 5 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Sort ``result`` columns
-    3. Flip ``result`` rows
-    4. Print ``result``
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Posortuj kolumny ``result``
-    3. Flipnij wiersze ``result``
-    4. Wypisz ``result``
-
-Given:
-    .. code-block:: python
-
-        DATA = np.array([[44, 47, 64, 67],
-                         [67,  9, 83, 21],
-                         [36, 87, 70, 88]])
-
-Tests:
-
-    >>> type(result)
-    np.ndarray
-    >>> result
-    array([[36, 70, 87, 88],
-           [ 9, 21, 67, 83],
-           [44, 47, 64, 67]])
+.. literalinclude:: assignments/numpy_sort.py
+    :caption: :download:`Solution <assignments/numpy_sort.py>`
+    :end-before: # Solution

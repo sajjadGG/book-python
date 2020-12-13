@@ -130,41 +130,6 @@ Data
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
-
-Numpy Attributes
-----------------
-* Assignment: Numpy Attributes
-* Filename: :download:`assignments/numpy_attributes.py`
-* Complexity: easy
-* Lines of code: 4 lines
-* Time: 3 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Print:
-
-        a. number of dimensions;
-        b. number of elements;
-        c. data type;
-        d. element size;
-        e. shape;
-        f. strides.
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wypisz:
-
-        a. liczbę wymiarów,
-        b. liczbę elementów,
-        c. typ danych,
-        d. rozmiar elementu,
-        e. kształt,
-        f. przeskoki (strides).
-
-Given:
-    .. code-block:: python
-
-        a = np.array([[-1.1, 0.0, 1.1],
-                      [ 2.2, 3.3, 4.4]])
-
+.. literalinclude:: assignments/numpy_attributes.py
+    :caption: :download:`Solution <assignments/numpy_attributes.py>`
+    :end-before: # Solution

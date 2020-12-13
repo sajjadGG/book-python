@@ -273,53 +273,14 @@ Shuffle
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
+.. literalinclude:: assignments/numpy_random_float.py
+    :caption: :download:`Solution <assignments/numpy_random_float.py>`
+    :end-before: # Solution
 
-Numpy Random Float
-------------------
-* Assignment: Numpy Random Float
-* Filename: :download:`assignments/numpy_random_float.py`
-* Complexity: medium
-* Lines of code: 3 lines
-* Time: 3 min
+.. literalinclude:: assignments/numpy_random_int.py
+    :caption: :download:`Solution <assignments/numpy_random_int.py>`
+    :end-before: # Solution
 
-English:
-    1. Set random seed to zero
-    2. Print ``np.ndarray`` of 10 random floats
-
-Polish:
-    1. Ustaw ziarno losowości na zero
-    2. Wypisz ``np.ndarray`` z 10 losowymi liczbami zmiennoprzecinkowymi
-
-Numpy Random Int
-----------------
-* Assignment: Numpy Random Int
-* Filename: :download:`assignments/numpy_random_int.py`
-* Complexity: easy
-* Lines of code: 4 lines
-* Time: 3 min
-
-English:
-    1. Set random seed to zero
-    2. Print ``np.ndarray`` of size 16x16 with random integers ``[0;9]`` (inclusive)
-
-Polish:
-    1. Ustaw ziarno losowości na zero
-    2. Print ``np.ndarray`` o rozmiarze 16x16 z losowymi liczbami całkowitymi ``<0,9>`` (włącznie)
-
-Numpy Random Sample
--------------------
-* Assignment: Numpy Random Sample
-* Filename: :download:`assignments/numpy_random_sample.py`
-* Complexity: medium
-* Lines of code: 5 lines
-* Time: 3 min
-
-English:
-    1. Set random seed to zero
-    2. Print 6 random integers without repetition in range from 1 to 49
-
-Polish:
-    1. Ustaw ziarno losowości na zero
-    2. Wyświetl 6 losowych i nie powtarzających się liczb całkowitych z zakresu od 1 do 49.
-
+.. literalinclude:: assignments/numpy_random_sample.py
+    :caption: :download:`Solution <assignments/numpy_random_sample.py>`
+    :end-before: # Solution

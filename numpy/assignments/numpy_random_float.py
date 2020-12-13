@@ -1,7 +1,31 @@
+"""
+* Assignment: Numpy Random Float
+* Filename: numpy_random_float.py
+* Complexity: medium
+* Lines of code: 1 lines
+* Time: 3 min
+
+English:
+    1. Set random seed to zero
+    2. Define ``result: np.ndarray`` of 10 random floats
+
+Polish:
+    1. Ustaw ziarno losowości na zero
+    2. Zdefiniuj ``result: np.ndarray`` z 10 losowymi liczbami zmiennoprzecinkowymi
+
+Tests:
+    >>> type(result) is np.ndarray
+    True
+    >>> result
+    array([0.5488135 , 0.71518937, 0.60276338, 0.54488318, 0.4236548 ,
+           0.64589411, 0.43758721, 0.891773  , 0.96366276, 0.38344152])
+"""
+
+
+# Given
 import numpy as np
 np.random.seed(0)
 
 
-np.random.rand(10)
-# array([0.94437239, 0.7395508 , 0.49045881, 0.22741463, 0.25435648,
-#        0.05802916, 0.43441663, 0.31179588, 0.69634349, 0.37775184])
+# Solution
+result = np.random.rand(10)

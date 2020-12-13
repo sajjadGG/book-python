@@ -1,31 +1,43 @@
+"""
+* Assignment: Numpy Logic Isin
+* Filename: numpy_logic_isin.py
+* Complexity: easy
+* Lines of code: 3 lines
+* Time: 5 min
+
+English:
+    1. Set random seed to zero
+    2. Generate ``a: np.ndarray`` of 50 random integers from 0 to 100 (exclusive)
+    3. Generate ``b: np.ndarray`` with sequential powers of 2 and exponential from 0 to 6 (inclusive)
+    4. Check which elements from ``a`` are present in ``b``
+    5. Result assign to ``result``
+
+Polish:
+    1. Ustaw ziarno losowości na zero
+    2. Wygeneruj ``a: np.ndarray`` z 50 losowymi liczbami całkowitymi od 0 do 100 (rozłącznie)
+    3. Wygeneruj ``b: np.ndarray`` z kolejnymi potęgami liczby 2, wykładnik od 0 do 6 (włącznie)
+    4. Sprawdź, które elementy z ``a`` są obecne w ``b``
+    5. Wynik przypisz do ``result``
+
+Tests:
+    >>> type(result) is np.ndarray
+    True
+    >>> result
+    array([False, False,  True, False, False, False, False, False, False,
+           False, False, False, False, False, False, False, False, False,
+           False, False, False, False, False, False, False, False, False,
+           False, False, False, False,  True, False, False, False, False,
+           False, False, False, False, False,  True, False, False, False,
+            True, False, False, False, False])
+"""
+
+
+# Given
 import numpy as np
 np.random.seed(0)
 
 
+# Solution
 a = np.random.randint(0, 100, size=50)
-
-# %%timeit -r 10 -n 1_000_000
 b = 2 ** np.arange(7)
-# 1.73 µs ± 36.4 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
-
-
-# Alternative solution
-# %%timeit -r 10 -n 1_000_000
-b = np.array([np.power(2, x) for x in range(0, 7)])
-# 10 µs ± 122 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
-
-print(np.isin(a, b))
-# [False False  True False False False False False False False False False
-#  False False False False False False False False False False False False
-#  False False False False False False False  True False False False False
-#  False False False False False  True False False False  True False False
-#  False False]
-
-print(np.isin(b, a))
-# [False False False False False  True  True]
-
-a[np.isin(a, b)]
-# array([64, 64, 32, 32])
-
-b[np.isin(b, a)]
-# array([32, 64])
+result = np.isin(a, b)

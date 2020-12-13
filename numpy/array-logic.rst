@@ -354,47 +354,10 @@ Readability Counts
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
+.. literalinclude:: assignments/numpy_logic_even.py
+    :caption: :download:`Solution <assignments/numpy_logic_even.py>`
+    :end-before: # Solution
 
-Numpy Logic Even
-----------------
-* Assignment: Numpy Logic Even
-* Filename: :download:`assignments/numpy_logic_even.py`
-* Complexity: easy
-* Lines of code: 4 lines
-* Time: 5 min
-
-English:
-    1. Set random seed to zero
-    2. Generate ``a: np.ndarray`` of 9 random integers from 0 to 100 (exclusive)
-    3. Check for even numbers which are less than 50
-    4. Check if all numbers matches this condition
-    5. Check if any number matches this condition
-
-Polish:
-    1. Ustaw ziarno losowości na zero
-    2. Wygeneruj ``a: np.ndarray`` z 9 losowymi liczbami całkowitymi od 0 do 100 (rozłącznie)
-    3. Sprawdź parzyste elementy, które są mniejsze od 50
-    4. Sprawdź czy wszystkie liczby spełniają ten warunek
-    5. Sprawdź czy jakakolwiek liczba spełnia ten warunek
-
-Numpy Logic Isin
-----------------
-* Assignment: Numpy Logic Isin
-* Filename: :download:`assignments/numpy_logic_isin.py`
-* Complexity: easy
-* Lines of code: 9 lines
-* Time: 5 min
-
-English:
-    1. Set random seed to zero
-    2. Generate ``a: np.ndarray`` of 50 random integers from 0 to 100 (exclusive)
-    3. Generate ``b: np.ndarray`` with sequential powers of 2 and exponential from 0 to 6 (inclusive)
-    4. Check which elements from ``a`` are present in ``b``
-
-Polish:
-    1. Ustaw ziarno losowości na zero
-    2. Wygeneruj ``a: np.ndarray`` z 50 losowymi liczbami całkowitymi od 0 do 100 (rozłącznie)
-    3. Wygeneruj ``b: np.ndarray`` z kolejnymi potęgami liczby 2, wykładnik od 0 do 6 (włącznie)
-    4. Sprawdź, które elementy z ``a`` są obecne w ``b``
-
+.. literalinclude:: assignments/numpy_logic_isin.py
+    :caption: :download:`Solution <assignments/numpy_logic_isin.py>`
+    :end-before: # Solution

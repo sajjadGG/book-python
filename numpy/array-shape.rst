@@ -248,35 +248,6 @@ Ravel
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
-
-Numpy Shape
------------
-* Assignment: Numpy Shape
-* Filename: :download:`assignments/numpy_shape.py`
-* Complexity: easy
-* Lines of code: 5 lines
-* Time: 3 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Given ``a: np.ndarray`` (see below)
-    3. Flatten using method ``.ravel()``
-    4. Print ``a``
-    5. Change shape back to 3x3
-    6. Print ``a``
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Dany ``a: np.ndarray`` (patrz sekcja input)
-    3. Spłaszcz używając metody ``.ravel()``
-    4. Wypisz ``a``
-    5. Zmień kształt na powrót na 3x3
-    6. Wypisz ``a``
-
-Given:
-    .. code-block:: python
-
-        a = np.array([[1, 2, 3],
-                      [4, 5, 6],
-                      [7, 8, 9]])
+.. literalinclude:: assignments/numpy_shape.py
+    :caption: :download:`Solution <assignments/numpy_shape.py>`
+    :end-before: # Solution

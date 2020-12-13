@@ -326,33 +326,6 @@ str
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
-
-Numpy Dtype Astype
-------------------
-* Assignment: Numpy Dtype Astype
-* Filename: :download:`assignments/numpy_astype.py`
-* Complexity: easy
-* Lines of code: 4 lines
-* Time: 3 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Given ``a: np.ndarray`` (see below)
-    3. Convert to ``int`` type
-    4. The result convert to ``bool`` type
-    5. What happened in each of those steps?
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Dany ``a: np.ndarray`` (patrz sekcja input)
-    3. Przekonwertuj do typu ``int``
-    4. Rezultat rzutuj na typ ``bool``
-    5. Co się stało w każdym z tych kroków?
-
-Given:
-    .. code-block:: python
-
-        a = np.array([[-1.1, 0.0, 1.1],
-                      [ 2.2, 3.3, 4.4]])
-
+.. literalinclude:: assignments/numpy_astype.py
+    :caption: :download:`Solution <assignments/numpy_astype.py>`
+    :end-before: # Solution

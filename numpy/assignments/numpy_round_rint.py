@@ -1,3 +1,32 @@
+"""
+* Assignment: Numpy Round Rint
+* Filename: numpy_round_rint.py
+* Complexity: easy
+* Lines of code: 1 lines
+* Time: 3 min
+
+English:
+    1. Use data from "Given" section (see below)
+    2. Round values to integers
+    3. Convert data type to ``np.int8``
+    4. Compare result with "Tests" section (see below)
+
+Polish:
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Zaokrąglij wartości do pełnych liczb całkowitych
+    3. Przekonwertuj typ danych do ``np.int8``
+    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+
+Tests:
+    >>> type(result) is np.ndarray
+    True
+    >>> result
+    array([1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1],
+          dtype=int8)
+"""
+
+
+# Given
 import numpy as np
 
 
@@ -7,10 +36,6 @@ DATA = np.array([0.5488135 , 0.71518937, 0.60276338, 0.54488318, 0.4236548 ,
                  0.0871293 , 0.0202184 , 0.83261985, 0.77815675, 0.87001215,
                  0.97861834])
 
-result = np.rint(DATA)
-# array([1., 1., 1., 1., 0., 1., 0., 1., 1., 0., 1., 1., 1., 1., 0., 0., 0.,
-#        1., 1., 1., 1.])
 
-result = result.astype(np.int8)
-# array([1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1],
-#       dtype=int8)
+# Solution
+result = np.rint(DATA).astype(np.int8)

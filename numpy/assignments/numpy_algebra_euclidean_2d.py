@@ -1,37 +1,58 @@
 """
->>> A = (1, 0)
->>> B = (0, 1)
->>> euclidean_distance(A, B)
-1.4142135623730951
+* Assignment: Numpy Algebra Euclidean 2D
+* Filename: numpy_algebra_euclidean_2d.py
+* Complexity: easy
+* Lines of code: 6 lines
+* Time: 5 min
 
->>> euclidean_distance((0,0), (1,0))
-1.0
+English:
+    1. Use code from "Input" section (see below)
+    2. Given are two points ``a: tuple[int, int]`` and ``b: tuple[int, int]``
+    3. Coordinates are in cartesian system
+    4. Points ``a`` and ``b`` are in two dimensional space
+    5. Calculate distance between points using Euclidean algorithm
+    6. Function must pass ``doctest``
 
->>> euclidean_distance((0,0), (1,1))
-1.4142135623730951
+Polish:
+    1. Użyj kodu z sekcji "Input" (patrz poniżej)
+    2. Dane są dwa punkty ``a: tuple[int, int]`` i ``b: tuple[int, int]``
+    3. Koordynaty są w systemie kartezjańskim
+    4. Punkty ``a`` i ``b`` są w dwuwymiarowej przestrzeni
+    5. Oblicz odległość między nimi wykorzystując algorytm Euklidesa
+    6. Funkcja musi przechodzić ``doctest``
 
->>> euclidean_distance((0,1), (1,1))
-1.0
+Tests:
+    >>> a = (1, 0)
+    >>> b = (0, 1)
+    >>> euclidean_distance(a, b)
+    1.4142135623730951
 
->>> euclidean_distance((0,10), (1,1))
-9.055385138137417
+    >>> euclidean_distance((0,0), (1,0))
+    1.0
+
+    >>> euclidean_distance((0,0), (1,1))
+    1.4142135623730951
+
+    >>> euclidean_distance((0,1), (1,1))
+    1.0
+
+    >>> euclidean_distance((0,10), (1,1))
+    9.055385138137417
 """
 
+
+# Given
 from math import sqrt
 
 
-def euclidean_distance(A, B):
-    x1 = A[0]
-    y1 = A[1]
-    x2 = B[0]
-    y2 = B[1]
+def euclidean_distance(a, b):
+    pass
 
+
+# Solution
+def euclidean_distance(a, b):
+    x1 = a[0]
+    y1 = a[1]
+    x2 = b[0]
+    y2 = b[1]
     return sqrt((x2-x1)**2 + (y2-y1)**2)
-
-    ## Alternative solution
-    # dx = (x2-x1)
-    # dy = (y2-y1)
-    # return sqrt(dx**2 + dy**2)
-
-    ## Alternative solution
-    # return sqrt(pow(B[1]-A[1],2)+pow(B[0]-A[0],2))

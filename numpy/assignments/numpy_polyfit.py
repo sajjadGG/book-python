@@ -1,3 +1,31 @@
+"""
+* Assignment: Numpy Polyfit
+* Filename: numpy_polyfit.py
+* Complexity: easy
+* Lines of code: 4 lines
+* Time: 8 min
+
+English:
+    1. Use data from "Given" section (see below)
+    2. Given are points coordinates in Cartesian system
+    3. Separate first row (header) from data
+    4. Calculate coefficients of best approximating polynomial of 3rd degree
+
+Polish:
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Dane są koordynaty punktów w układzie kartezjańskim
+    3. Odseparuj pierwszy wiersz (nagłówek) do danych
+    4. Oblicz współczynniki najlepiej dopasowanego wielomianu 3 stopnia
+
+Tests:
+    >>> type(result) is np.ndarray
+    True
+    >>> result
+    array([ 0.25,  0.75, -1.5 , -2.  ])
+"""
+
+
+# Given
 import numpy as np
 
 DATA = [('x', 'y'),
@@ -8,19 +36,10 @@ DATA = [('x', 'y'),
         (2.0, 0.0),
         (3.0, 7.0)]
 
+
+# Solution
 data = np.array(DATA[1:])
 x = data[:, 0]
 y = data[:, 1]
 
-np.polyfit(x, y, deg=3)
-
-
-## Alternative solution
-header, *data = DATA
-
-x = [x for x,y in data]
-y = [y for x,y in data]
 result = np.polyfit(x, y, deg=3)
-
-print(result)
-# [ 0.25  0.75 -1.5  -2.  ]

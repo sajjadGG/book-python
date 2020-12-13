@@ -493,31 +493,6 @@ Diagonal problem
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
-
-Numpy Select Isin
------------------
-* Assignment: Numpy Select Isin
-* Complexity: easy
-* Lines of code: 10 lines
-* Time: 5 min
-
-English:
-    1. Set random seed to 0
-    2. Generate ``a: np.ndarray`` of size 50x50
-    3. ``a`` must contains random integers from 0 to 1024 inclusive
-    4. Create ``result: np.ndarray`` with elements selected from ``a`` which are power of two
-    5. Sort ``result`` in descending order
-    6. Print ``result``
-
-Polish:
-    1. Ustaw ziarno losowości na 0
-    2. Wygeneruj ``a: np.ndarray`` rozmiaru 50x50
-    3. ``a`` musi zawierać losowe liczby całkowite z zakresu od 0 do 1024 włącznie
-    4. Stwórz ``result: np.ndarray`` z elementami wybranymi z ``a``, które są potęgami dwójki
-    5. Posortuj ``result`` w kolejności malejącej
-    6. Wypisz ``result``
-
-Hints:
-    * ``np.isin(a, b)``
-    * ``np.flip(a)``
+.. literalinclude:: assignments/numpy_select_isin.py
+    :caption: :download:`Solution <assignments/numpy_select_isin.py>`
+    :end-before: # Solution

@@ -361,26 +361,40 @@ Stringify
     #        [7, 8, 9]])
 
 
+Performance
+===========
+* Results with `%%timeit -n 1_000_000 -r 10`
+
+.. code-block:: python
+
+    import numpy as np
+
+    result = np.arange(0, 100, step=2, dtype=float)
+    # 756 ns ± 10.3 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
+
+    result = np.array(range(0, 100, 2), dtype=float)
+    # 8.28 µs ± 364 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
+
+    result = np.array([x for x in range(0, 100) if x % 2 == 0], dtype=float)
+    # 9.76 µs ± 324 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
+
+    result = np.array([float(x) for x in range(0, 100) if x % 2 == 0])
+    # 12.7 µs ± 195 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
+
+    result = np.array([float(x) for x in range(0, 100, 2)])
+    # 8.35 µs ± 196 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
+
+    result = np.array([x for x in range(0, 100, 2)], dtype=float)
+    # 5.89 µs ± 77 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
+
+
+
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
-
-Numpy Create Arange
--------------------
-* Assignment: Numpy Create Arange
-* Filename: :download:`assignments/numpy_create_arange.py`
-* Complexity: easy
-* Lines of code: 1 lines
-* Time: 3 min
-
-English:
-    1. Create ``a: np.ndarray`` with even numbers from 0 to 100 (without 100)
-    2. Numbers must be ``float`` type
-
-Polish:
-    1. Stwórz ``a: np.ndarray`` z liczbami parzystymi od 0 do 100 (bez 100)
-    2. Liczby muszą być typu ``float``
+.. literalinclude:: assignments/numpy_create_arange.py
+    :caption: :download:`Solution <assignments/numpy_create_arange.py>`
+    :end-before: # Solution
 
 
 References

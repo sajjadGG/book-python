@@ -173,33 +173,6 @@ Enumerate
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
-
-Numpy Iteration
----------------
-* Assignment: Numpy Iteration
-* Filename: :download:`assignments/numpy_iteration.py`
-* Complexity: easy
-* Lines of code: 9 lines
-* Time: 3 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Use ``for`` to iterate over ``DATA``
-    3. Print even numbers
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Używając ``for`` iteruj po ``DATA``
-    3. Wypisz liczby parzyste
-
-Hints:
-    * ``number % 2 == 0``
-
-Given:
-    .. code-block:: python
-
-        DATA = np.array([[1, 2, 3],
-                         [4, 5, 6],
-                         [7, 8, 9]])
-
+.. literalinclude:: assignments/numpy_iteration.py
+    :caption: :download:`Solution <assignments/numpy_iteration.py>`
+    :end-before: # Solution

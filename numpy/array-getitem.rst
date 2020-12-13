@@ -250,57 +250,6 @@ Multi-indexing
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
-
-Numpy Indexing
---------------
-* Assignment: Numpy Indexing
-* Filename: :download:`assignments/numpy_indexing.py`
-* Complexity: easy
-* Lines of code: 4 lines
-* Time: 3 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Create ``result: np.ndarray``
-    3. Add to ``result`` elements from ``DATA`` at indexes:
-
-        a. row 0, column 2
-        b. row 2, column 2
-        c. row 0, column 0
-        d. row 1, column 0
-
-    4. ``result`` size must be 2x2
-    5. ``result`` type must be float
-    6. Compare result with "Tests" section (see below)
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Stwórz ``result: np.ndarray``
-    3. Dodaj do ``result`` elementy z ``DATA`` o indeksach:
-
-        a. wiersz 0, kolumna 2
-        b. wiersz 2, kolumna 2
-        c. wiersz 0, kolumna 0
-        d. wiersz 1, kolumna 0
-
-    4. Rozmiar ``result`` musi być 2x2
-    5. Typ ``result`` musi być float
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
-
-Given:
-    .. code-block:: python
-
-        DATA = np.array([
-            [1, 2, 3],
-            [4, 5, 6],
-            [7, 8, 9]
-        ])
-
-Tests:
-    >>> result
-    array([[3., 9.],
-           [1., 4.]])
-
-Hints:
-    * ``np.zeros(shape, dtype)``
+.. literalinclude:: assignments/numpy_indexing.py
+    :caption: :download:`Solution <assignments/numpy_indexing.py>`
+    :end-before: # Solution

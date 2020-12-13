@@ -256,120 +256,17 @@ Linear Algebra
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
-
-Numpy Algebra Euclidean 2D
---------------------------
-* Assignment: Numpy Algebra Euclidean 2D
-* Filename: :download:`assignments/numpy_algebra_euclidean_2d.py`
-* Complexity: easy
-* Lines of code: 5 lines
-* Time: 5 min
-
-English:
-    1. Use code from "Input" section (see below)
-    2. Given are two points ``A: tuple[int, int]`` and ``B: tuple[int, int]``
-    3. Coordinates are in cartesian system
-    4. Points ``A`` and ``B`` are in two dimensional space
-    5. Calculate distance between points using Euclidean algorithm
-    6. Function must pass ``doctest``
-
-Polish:
-    1. Użyj kodu z sekcji "Input" (patrz poniżej)
-    2. Dane są dwa punkty ``A: tuple[int, int]`` i ``B: tuple[int, int]``
-    3. Koordynaty są w systemie kartezjańskim
-    4. Punkty ``A`` i ``B`` są w dwuwymiarowej przestrzeni
-    5. Oblicz odległość między nimi wykorzystując algorytm Euklidesa
-    6. Funkcja musi przechodzić ``doctest``
-
-Given:
-    .. code-block:: python
-
-        def euclidean_distance(A, B):
-            """
-            >>> A = (1, 0)
-            >>> B = (0, 1)
-            >>> euclidean_distance(A, B)
-            1.4142135623730951
-
-            >>> euclidean_distance((0,0), (1,0))
-            1.0
-
-            >>> euclidean_distance((0,0), (1,1))
-            1.4142135623730951
-
-            >>> euclidean_distance((0,1), (1,1))
-            1.0
-
-            >>> euclidean_distance((0,10), (1,1))
-            9.055385138137417
-            """
-            x1 = ...
-            y1 = ...
-            x2 = ...
-            y2 = ...
-
 .. figure:: img/euclidean-distance.png
 
     Calculate Euclidean distance in Cartesian coordinate system
 
-Hints:
-    * :math:`distance(a, b) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}`
+* :math:`distance(a, b) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}`
+* :math:`distance(a, b) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + ... + (n_2 - n_1)^2}`
 
-Numpy Algebra Euclidean Ndim
-----------------------------
-* Assignment: Numpy Algebra Euclidean Ndim
-* Filename: :download:`assignments/numpy_algebra_euclidean_ndim.py`
-* Complexity: easy
-* Lines of code: 10 lines
-* Time: 8 min
+.. literalinclude:: assignments/numpy_algebra_euclidean_2d.py
+    :caption: :download:`Solution <assignments/numpy_algebra_euclidean_2d.py>`
+    :end-before: # Solution
 
-English:
-    1. Use code from "Input" section (see below)
-    2. Given are two points ``A: Sequence[int]`` and ``B: Sequence[int]``
-    3. Coordinates are in cartesian system
-    4. Points ``A`` and ``B`` are in ``N``-dimensional space
-    5. Points ``A`` and ``B`` must be in the same space
-    6. Calculate distance between points using Euclidean algorithm
-    7. Function must pass ``doctest``
-
-Polish:
-    1. Użyj kodu z sekcji "Input" (patrz poniżej)
-    2. Dane są dwa punkty ``A: Sequence[int]`` i ``B: Sequence[int]``
-    3. Koordynaty są w systemie kartezjańskim
-    4. Punkty ``A`` i ``B`` są w ``N``-wymiarowej przestrzeni
-    5. Punkty ``A`` i ``B`` muszą być w tej samej przestrzeni
-    6. Oblicz odległość między nimi wykorzystując algorytm Euklidesa
-    7. Funkcja musi przechodzić ``doctest``
-
-Given:
-    .. code-block:: python
-
-        def euclidean_distance(A, B):
-            """
-            >>> euclidean_distance((0,0,1,0,1), (1,1))
-            Traceback (most recent call last):
-            ValueError: Points must be in the same dimensions
-
-            >>> A = (0,1,0,1)
-            >>> B = (1,1,0,0)
-            >>> euclidean_distance(A, B)
-            1.4142135623730951
-
-            >>> euclidean_distance((0,0,0), (0,0,0))
-            0.0
-
-            >>> euclidean_distance((0,0,0), (1,1,1))
-            1.7320508075688772
-
-            >>> euclidean_distance((0,1,0,1), (1,1,0,0))
-            1.4142135623730951
-
-            >>> euclidean_distance((0,0,1,0,1), (1,1,0,0,1))
-            1.7320508075688772
-            """
-
-Hints:
-    * ``import doctest``
-    * :math:`distance(a, b) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2 + ... + (n_2 - n_1)^2}`
-    * ``for n1, n2 in zip(A, B)``
+.. literalinclude:: assignments/numpy_algebra_euclidean_ndim.py
+    :caption: :download:`Solution <assignments/numpy_algebra_euclidean_ndim.py>`
+    :end-before: # Solution

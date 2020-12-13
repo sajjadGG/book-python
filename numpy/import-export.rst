@@ -140,59 +140,6 @@ Other
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
-
-Numpy Loadtext
---------------
-* Assignment: Numpy Loadtext
-* Filename: :download:`assignments/numpy_loadtext.py`
-* Complexity: easy
-* Lines of code: 4 lines
-* Time: 5 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Load text from ``URL``
-    3. From the first line select Iris species names and save as str to ``species: np.ndarray``
-    4. For other lines:
-
-        a. Read columns with data and save as float to ``features: np.ndarray``
-        b. Read last column with species numbers and save as int to ``labels: np.ndarray``
-
-    5. Print ``species``, ``labels`` and ``features``
-    6. Compare result with "Tests" section (see below)
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj tekst z ``URL``
-    3. Z pierwszej linii wybierz nazwy gatunków Irysów i zapisz rezultat jako str do ``species: np.ndarray``
-    4. W pozostałych linii:
-
-        a Wczytaj kolumny z danymi i zapisz jako float do ``features: np.ndarray``
-        b Wczytaj ostatnią kolumnę z numerami gatunków i zapisz jako int do ``labels: np.ndarray``
-
-    5. Wyświetl ``species``, ``labels`` i ``features``
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
-
-Given:
-    .. code-block:: python
-
-        URL = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris-dirty.csv'
-
-Tests:
-    .. code-block:: python
-
-        species: np.ndarray
-        # array(['setosa', 'versicolor', 'virginica'], dtype='<U10')
-
-        features: np.ndarray
-        # array([[5.4, 3.9, 1.3, 0.4],
-        #        [5.9, 3. , 5.1, 1.8],
-        #        [6. , 3.4, 4.5, 1.6],
-        #        [7.3, 2.9, 6.3, 1.8],
-        #        ...
-        #        [6.8, 3.2, 5.9, 2.3]])
-
-        labels: np.ndarray
-        # array([0, 2, 1, 2, ..., 0, 2, 2, 2])
-
+.. literalinclude:: assignments/numpy_loadtext.py
+    :caption: :download:`Solution <assignments/numpy_loadtext.py>`
+    :end-before: # Solution
