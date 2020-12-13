@@ -1,3 +1,43 @@
+"""
+* Assignment: Database SQLite JSON
+* Filename: database_sqlite_json.py
+* Complexity: medium
+* Lines of code: 15 lines
+* Time: 21 min
+
+English:
+    1. Use data from "Given" section (see below)
+    2. Create database and two tables `astronaut` and `address`
+    3. Insert data to separate tables
+    4. Print data joining information from both tables
+
+Polish:
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Stwórz bazę danych i dwie tabele `astronaut` i `address`
+    3. Zapisz dane do osobnych tabel
+    4. Wypisz dane łącząc informacje z obu tabel
+
+Tests:
+    >>> type(result)
+    <class 'list'>
+    >>> len(result) > 0
+    True
+    >>> all(type(row) is dict
+    ...     for row in result)
+    True
+    >>> result  # doctest: +NORMALIZE_WHITESPACE
+    [{'id': 1, 'firstname': 'José', 'lastname': 'Jiménez', 'astronaut_id': 1, 'street': '2101 E NASA Pkwy', 'city': 'Houston', 'state': 'Texas', 'code': 77058, 'country': 'USA'},
+     {'id': 1, 'firstname': 'José', 'lastname': 'Jiménez', 'astronaut_id': 1, 'street': None, 'city': 'Kennedy Space Center', 'state': 'Florida', 'code': 32899, 'country': 'USA'},
+     {'id': 2, 'firstname': 'Mark', 'lastname': 'Watney', 'astronaut_id': 2, 'street': '4800 Oak Grove Dr', 'city': 'Pasadena', 'state': 'California', 'code': 91109, 'country': 'USA'},
+     {'id': 2, 'firstname': 'Mark', 'lastname': 'Watney', 'astronaut_id': 2, 'street': '2825 E Ave P', 'city': 'Palmdale', 'state': 'California', 'code': 93550, 'country': 'USA'},
+     {'id': 3, 'firstname': 'Иван', 'lastname': 'Иванович', 'astronaut_id': 3, 'street': '', 'city': 'Космодро́м Байкону́р', 'state': 'Кызылординская область', 'code': None, 'country': 'Қазақстан'},
+     {'id': 5, 'firstname': 'Alex', 'lastname': 'Vogel', 'astronaut_id': 5, 'street': 'Linder Hoehe', 'city': 'Köln', 'state': None, 'code': 51147, 'country': 'Germany'}]
+    >>> from os import remove
+    >>> remove(DATABASE)
+"""
+
+
+# Given
 import sqlite3
 
 DATABASE = r'_temporary.sqlite3'
@@ -5,14 +45,12 @@ DATABASE = r'_temporary.sqlite3'
 SQL_CREATE_TABLE_ASTRONAUT = """
     CREATE TABLE IF NOT EXISTS astronaut (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        created DATETIME DEFAULT CURRENT_TIMESTAMP,
         firstname TEXT,
         lastname TEXT);"""
 
 SQL_CREATE_TABLE_ADDRESS = """
     CREATE TABLE IF NOT EXISTS address (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        created DATETIME DEFAULT CURRENT_TIMESTAMP,
         astronaut_id INTEGER,
         street TEXT,
         city TEXT,
@@ -26,14 +64,12 @@ SQL_CREATE_INDEX_ASTRONAUT_LASTNAME = """
 SQL_INSERT_ASTRONAUT = """
     INSERT INTO astronaut VALUES (
         NULL,
-        CURRENT_TIMESTAMP,
         :firstname,
         :lastname);"""
 
 SQL_INSERT_ADDRESS = """
     INSERT INTO address VALUES (
         NULL,
-        CURRENT_TIMESTAMP,
         :astronaut_id,
         :street,
         :city,
@@ -66,7 +102,9 @@ DATA = [
         {"street": "Linder Hoehe", "city": "Köln", "code": 51147, "state": None, "country": "Germany"}]}
 ]
 
+result = []
 
+# Solution
 with sqlite3.connect(DATABASE) as connection:
     db = connection.cursor()
     db.row_factory = sqlite3.Row
@@ -85,4 +123,4 @@ with sqlite3.connect(DATABASE) as connection:
             db.execute(SQL_INSERT_ADDRESS, addr)
 
     for row in db.execute(SQL_SELECT):
-        print(dict(row))
+        result.append(dict(row))
