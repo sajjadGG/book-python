@@ -1,16 +1,25 @@
-#!/usr/bin/env python3
+"""
+* Assignment: DevSecOps Unittest Rectangle
+* Filename: devsecops_unittest_dragon.py
+* Complexity: medium
+* Lines of code: 100 lines
+* Time: 21 min
 
+English:
+    1. Write unittest for `Rectangle`
+
+Polish:
+    1. Napisz testy jednostkowe dla `Rectangle`
+"""
+
+
+# Given
 import unittest
 
 
 class Rectangle:
 
     def __init__(self, a, b):
-        """
-        >>> Rectangle(0, 1)
-        Traceback (most recent call last):
-        ValueError: Side length must be positive
-        """
         self.side_a = a
         self.side_b = b
 
@@ -18,22 +27,16 @@ class Rectangle:
             raise ValueError('Side length must be positive')
 
     def area(self) -> int:
-        """
-        Show figure area
-        """
         return self.side_a * self.side_b
 
     def circumference(self) -> int:
-        """
-        Show figure circumference
-        """
         return (self.side_a + self.side_b) * 2
 
     def __str__(self):
-        # return 'Rectangle({a}, {b})'.format(**self.__dict__)
-        return 'Rectangle({a}, {b})'.format(**vars(self))
+        return f'Rectangle({self.a}, {self.b})'
 
 
+# Solution
 class RectangleTest(unittest.TestCase):
 
     def setUp(self):

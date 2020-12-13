@@ -210,61 +210,6 @@ Wyciszanie logowania
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
-
-Own ``doctest``
----------------
-* Assignment: Own ``doctest``
-* Filename: :download:`assignments/debugging_doctest.py`
-* Complexity: easy
-* Lines of code: 60 lines
-* Time: 21 min
-
-English:
-    TODO: English Translation
-
-Polish:
-    1. Dla kodu z listingu
-    2. Napisz własną uproszczoną implementację ``doctest``
-    3. Dla uproszczenia przyjmij, że zwracana zawsze będzie tylko jedna linia (bezpośrednio poniżej testu)
-
-Given:
-    .. code-block:: python
-        :caption: Debugging with docstring
-
-        class Astronaut:
-            """
-            Nowy astronauta
-
-            >>> astro = Astronaut(name='Jan Twardowski')
-            >>> astro.say_hello()
-            'hello Jan Twardowski'
-            """
-
-            def __init__(self, name):
-                """
-                Initial metod
-                """
-                self.name = name
-
-            def say_hello(self, lang='en'):
-                """
-                wyświetla przywitanie w zależności od języka
-
-                >>> Astronaut(name='José Jiménez').say_hello(lang='es')
-                ¡hola José Jiménez!
-
-                >>> Astronaut(name='Иван Иванович').say_hello(lang='ru')
-                здраствуйте Иван Иванович!
-                """
-                if lang == 'en':
-                    print(f'hello {self.firstname}')
-                elif lang == 'es':
-                    print(f'¡hola {self.firstname}!')
-                elif lang == 'ru':
-                    print(f'здраствуйте {self.firstname}!')
-                else:
-                    print(f'witaj {self.firstname}!')
-
-
-        astronaut = Astronaut(name='José Jiménez')
+.. literalinclude:: assignments/devsecops_debugging_doctest.py
+    :caption: :download:`Solution <assignments/devsecops_debugging_doctest.py>`
+    :end-before: # Solution

@@ -131,6 +131,6 @@ Read the docs
 Assignments
 ===========
 
-.. literalinclude:: assignments/debugging_docs.py
-    :caption: :download:`Solution <assignments/debugging_docs.py>`
+.. literalinclude:: assignments/devsecops_gep_sphinx.py
+    :caption: :download:`Solution <assignments/devsecops_gep_sphinx.py>`
     :end-before: # Solution

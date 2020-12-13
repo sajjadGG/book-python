@@ -1,3 +1,17 @@
+"""
+* Assignment: DevSecOps Unittest Dragon
+* Filename: devsecops_unittest_dragon.py
+* Complexity: medium
+* Lines of code: 100 lines
+* Time: 21 min
+
+English:
+    1. Write unittest for the dragon from :ref:`Dragon Alpha`
+
+Polish:
+    1. Napisz testy jednostkowe dla Smoka z :ref:`Dragon Alpha`
+"""
+
 from unittest import TestCase
 
 BORDER_X_MAX = 1024

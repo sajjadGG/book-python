@@ -1,5 +1,20 @@
+"""
+* Assignment: Own ``doctest``
+* Filename: debugging_doctest.py
+* Complexity: easy
+* Lines of code: 60 lines
+* Time: 21 min
 
+English:
+    TODO: English Translation
 
+Polish:
+    1. Dla kodu z listingu
+    2. Napisz własną uproszczoną implementację ``doctest``
+    3. Dla uproszczenia przyjmij, że zwracana zawsze będzie tylko jedna linia (bezpośrednio poniżej testu)
+"""
+
+# Given
 class Astronaut:
     """
     New Astronaut
@@ -28,6 +43,7 @@ class Astronaut:
             return f'witaj {self.name}!'
 
 
+# Solution
 def doctest(docstring):
     if not docstring:
         return None

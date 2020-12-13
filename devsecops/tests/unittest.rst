@@ -165,18 +165,10 @@ Stub
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
+.. literalinclude:: assignments/devsecops_unittest_rectangle.py
+    :caption: :download:`Solution <assignments/devsecops_unittest_rectangle.py>`
+    :end-before: # Solution
 
-Dragon
-------
-* Assignment: Dragon
-* Filename: TODO
-* Complexity: medium
-* Lines of code: 100 lines
-* Time: 21 min
-
-English:
-    1. Write unittest for the dragon from :ref:`Dragon Alpha`
-
-Polish:
-    1. Napisz testy jednostkowe dla Smoka z :ref:`Dragon Alpha`
+.. literalinclude:: assignments/devsecops_unittest_dragon.py
+    :caption: :download:`Solution <assignments/devsecops_unittest_dragon.py>`
+    :end-before: # Solution

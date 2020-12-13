@@ -1,10 +1,32 @@
+"""
+* Assignment: Matplotlib Lifecycle
+* Filename: matplotlib_lifecycle.py
+* Complexity: medium
+* Lines of code: 20 lines
+* Time: 21 min
+
+English:
+    TODO: English Translation
+
+Polish:
+    1. Opracuj podobny wykres dla danych ``DATA``
+    2. Weź pod uwagę jedynie ``sepal_length`` oraz ``species``
+    3. Species ma być w osi ``y``
+    4. Na osi ``x`` ma być ``sepal_length``
+    5. Czerwony marker opisuje średnią długość ``sepal_length`` dla wszystkich gatunków
+"""
+
+# Given
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
 
-url = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris.csv'
-iris = pd.read_csv(url)
+DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris.csv'
+
+
+# Solution
+iris = pd.read_csv(DATA)
 
 means = iris.groupby('species').mean()
 data = dict(means['sepal_length'])

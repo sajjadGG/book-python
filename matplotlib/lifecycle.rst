@@ -315,27 +315,6 @@ to disk. Note that there are several useful flags we'll show below:
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
-
-Matplotlib Lifecycle
---------------------
-* Assignment: Matplotlib Lifecycle
-* Filename: :download:`assignments/matplotlib_lifecycle.py`
-* Complexity: medium
-* Lines of code: 20 lines
-* Time: 21 min
-
-English:
-    TODO: English Translation
-
-Polish:
-    1. Opracuj podobny wykres dla danych Irysów
-    2. Weź pod uwagę jedynie ``sepal_length`` oraz ``species``
-    3. Species ma być w osi ``y``
-    4. Na osi ``x`` ma być ``sepal_length``
-    5. Czerwony marker opisuje średnią długość ``sepal_length`` dla wszystkich gatunków
-
-Given:
-    .. code-block:: python
-
-        DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris.csv'
+.. literalinclude:: assignments/matplotlib_lifecycle.py
+    :caption: :download:`Solution <assignments/matplotlib_lifecycle.py>`
+    :end-before: # Solution

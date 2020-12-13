@@ -1,6 +1,6 @@
 """
-* Assignment: Dokumentacja
-* Filename: debugging_docs.py
+* Assignment: DevSecOps Documentation Sphinx
+* Filename: devsecops_documentation_sphinx.py
 * Complexity: easy
 * Lines of code: 30 lines
 * Time: 13 min
