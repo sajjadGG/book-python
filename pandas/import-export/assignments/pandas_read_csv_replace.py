@@ -7,23 +7,23 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` to ``result: pd.DataFrame``
-    3. Use provided column names in ``COLUMNS``
+    2. Read data from `DATA` to `result: pd.DataFrame`
+    3. Use provided column names in `COLUMNS`
     4. Read labels from the first row
-    5. Replace data in ``label`` column with values extracted above
+    5. Replace data in `label` column with values extracted above
     6. Store in `result` only 20 first rows
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` do ``result: pd.DataFrame``
-    3. Użyj podanych w ``COLUMNS`` nazw kolumn
+    2. Wczytaj dane z `DATA` do `result: pd.DataFrame`
+    3. Użyj podanych w `COLUMNS` nazw kolumn
     4. Wczytaj nazwy labeli z pierwszego wiersza
-    5. Podmień dane w kolumnie ``label`` na wartości wyciągnięte powyżej
+    5. Podmień dane w kolumnie `label` na wartości wyciągnięte powyżej
     6. Zachowaj w `result` tylko 20 pierwszych wierszy
 
 Hints:
-    * ``pd.read_csv(url, nrows=0).columns``
-    * ``df['label'].replace({'from': 'to'}, inplace=True)``
+    * `pd.read_csv(url, nrows=0).columns`
+    * `df['label'].replace({'from': 'to'}, inplace=True)`
 
 Tests:
     >>> type(result) is pd.DataFrame

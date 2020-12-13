@@ -7,15 +7,15 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``result: pd.DataFrame``
+    2. Read data from `DATA` as `result: pd.DataFrame`
     3. Select 146 head rows, and last 11 from it
-    4. Export data from column ``Event`` to database ``FILE`` to table ``apollo11``
+    4. Export data from column `Event` to database `FILE` to table `apollo11`
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``result: pd.DataFrame``
+    2. Wczytaj dane z `DATA` jako `result: pd.DataFrame`
     3. Wybierz pierwszych 146 wierszy, a z nich ostatnie 11
-    4. Wyeksportuj dane z kolumny ``Event`` do bazy danych ``FILE`` do tabeli ``apollo11``
+    4. Wyeksportuj dane z kolumny `Event` do bazy danych `FILE` do tabeli `apollo11`
 
 Tests:
     >>> db = sqlite3.connect(FILE)

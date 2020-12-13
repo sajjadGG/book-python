@@ -7,16 +7,16 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Ceil round ``data`` values and assign to `ceil`
-    3. Floor round ``data`` values and assign to `floor`
-    4. Round ``data`` values and assign to `round`
+    2. Ceil round `data` values and assign to `ceil`
+    3. Floor round `data` values and assign to `floor`
+    4. Round `data` values and assign to `round`
     5. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Zaokrąglij wartości ``data`` w górę (ceil) i przypisz do `ceil`
-    3. Zaokrąglij wartości ``data`` w dół (floor) i przypisz do `floor`
-    4. Zaokrąglij wartości ``data`` i przypisz do `round`
+    2. Zaokrąglij wartości `data` w górę (ceil) i przypisz do `ceil`
+    3. Zaokrąglij wartości `data` w dół (floor) i przypisz do `floor`
+    4. Zaokrąglij wartości `data` i przypisz do `round`
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:

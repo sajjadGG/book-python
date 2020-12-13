@@ -7,11 +7,11 @@
 
 English:
     1. Set random seed to zero
-    2. Define ``result: np.ndarray`` of 10 random floats
+    2. Define `result: np.ndarray` of 10 random floats
 
 Polish:
     1. Ustaw ziarno losowości na zero
-    2. Zdefiniuj ``result: np.ndarray`` z 10 losowymi liczbami zmiennoprzecinkowymi
+    2. Zdefiniuj `result: np.ndarray` z 10 losowymi liczbami zmiennoprzecinkowymi
 
 Tests:
     >>> type(result) is np.ndarray

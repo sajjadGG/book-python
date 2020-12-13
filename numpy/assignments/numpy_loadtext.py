@@ -7,20 +7,20 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Load text from ``URL``
-    3. From the first line select Iris species names and save as str to ``species: np.ndarray``
+    2. Load text from `URL`
+    3. From the first line select Iris species names and save as str to `species: np.ndarray`
     4. For other lines:
-        a. Read columns with data and save as float to ``features: np.ndarray``
-        b. Read last column with species numbers and save as `int` to ``labels: np.ndarray``
+        a. Read columns with data and save as float to `features: np.ndarray`
+        b. Read last column with species numbers and save as `int` to `labels: np.ndarray`
     5. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj tekst z ``URL``
-    3. Z pierwszej linii wybierz nazwy gatunków Irysów i zapisz rezultat jako str do ``species: np.ndarray``
+    2. Wczytaj tekst z `URL`
+    3. Z pierwszej linii wybierz nazwy gatunków Irysów i zapisz rezultat jako str do `species: np.ndarray`
     4. W pozostałych linii:
-        a Wczytaj kolumny z danymi i zapisz jako float do ``features: np.ndarray``
-        b Wczytaj ostatnią kolumnę z numerami gatunków i zapisz jako `int` do ``labels: np.ndarray``
+        a Wczytaj kolumny z danymi i zapisz jako float do `features: np.ndarray`
+        b Wczytaj ostatnią kolumnę z numerami gatunków i zapisz jako `int` do `labels: np.ndarray`
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:

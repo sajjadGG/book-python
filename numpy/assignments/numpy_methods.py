@@ -7,21 +7,21 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Reshape ``result`` to 3x4
+    2. Reshape `result` to 3x4
     3. Fill last column with zeros (0)
-    4. Transpose ``result``
-    5. Convert ``result`` to float
-    6. Fill first row with ``np.nan``
-    7. Print ``result``
+    4. Transpose `result`
+    5. Convert `result` to float
+    6. Fill first row with `np.nan`
+    7. Print `result`
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Zmień kształt na 3x4
     3. Wypełnij ostatnią kolumnę zerami (0)
-    4. Transponuj ``result``
-    5. Przekonwertuj ``result`` do float
-    6. Wypełnij pierwszy wiersz ``np.nan``
-    7. Wypisz ``result``
+    4. Transponuj `result`
+    5. Przekonwertuj `result` do float
+    6. Wypełnij pierwszy wiersz `np.nan`
+    7. Wypisz `result`
 
 Tests:
     >>> type(result) is np.ndarray

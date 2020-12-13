@@ -8,24 +8,24 @@
 
 English:
     1. Use code from "Input" section (see below)
-    2. Given are two points ``a: Sequence[int]`` and ``b: Sequence[int]``
+    2. Given are two points `a: Sequence[int]` and `b: Sequence[int]`
     3. Coordinates are in cartesian system
-    4. Points ``a`` and ``b`` are in n-dimensional space
-    5. Points ``a`` and ``b`` must be in the same space
+    4. Points `a` and `b` are in n-dimensional space
+    5. Points `a` and `b` must be in the same space
     6. Calculate distance between points using Euclidean algorithm
-    7. Function must pass ``doctest``
+    7. Function must pass `doctest`
 
 Polish:
     1. Użyj kodu z sekcji "Input" (patrz poniżej)
-    2. Dane są dwa punkty ``a: Sequence[int]`` i ``b: Sequence[int]``
+    2. Dane są dwa punkty `a: Sequence[int]` i `b: Sequence[int]`
     3. Koordynaty są w systemie kartezjańskim
-    4. Punkty ``a`` i ``b`` są w n-wymiarowej przestrzeni
-    5. Punkty ``b`` i ``b`` muszą być w tej samej przestrzeni
+    4. Punkty `a` i `b` są w n-wymiarowej przestrzeni
+    5. Punkty `b` i `b` muszą być w tej samej przestrzeni
     6. Oblicz odległość między nimi wykorzystując algorytm Euklidesa
-    7. Funkcja musi przechodzić ``doctest``
+    7. Funkcja musi przechodzić `doctest`
 
 Hints:
-    * ``for n1,n2 in zip(a,b)``
+    * `for n1,n2 in zip(a,b)`
 
 Tests:
     >>> euclidean_distance((0,0,1,0,1), (1,1))

@@ -7,19 +7,19 @@
 
 English:
     1. Use code from "Input" section (see below)
-    2. Given are two points ``a: tuple[int, int]`` and ``b: tuple[int, int]``
+    2. Given are two points `a: tuple[int, int]` and `b: tuple[int, int]`
     3. Coordinates are in cartesian system
-    4. Points ``a`` and ``b`` are in two dimensional space
+    4. Points `a` and `b` are in two dimensional space
     5. Calculate distance between points using Euclidean algorithm
-    6. Function must pass ``doctest``
+    6. Function must pass `doctest`
 
 Polish:
     1. Użyj kodu z sekcji "Input" (patrz poniżej)
-    2. Dane są dwa punkty ``a: tuple[int, int]`` i ``b: tuple[int, int]``
+    2. Dane są dwa punkty `a: tuple[int, int]` i `b: tuple[int, int]`
     3. Koordynaty są w systemie kartezjańskim
-    4. Punkty ``a`` i ``b`` są w dwuwymiarowej przestrzeni
+    4. Punkty `a` i `b` są w dwuwymiarowej przestrzeni
     5. Oblicz odległość między nimi wykorzystując algorytm Euklidesa
-    6. Funkcja musi przechodzić ``doctest``
+    6. Funkcja musi przechodzić `doctest`
 
 Tests:
     >>> a = (1, 0)

@@ -7,16 +7,16 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``result: pd.DataFrame``
-    3. Use ``requests`` library
+    2. Read data from `DATA` as `result: pd.DataFrame`
+    3. Use `requests` library
     4. Transpose data
     5. If cell is a `dict`, then extract value for `summary`
     6. If cell is empty, leave `pd.NA`
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``result: pd.DataFrame``
-    3. Użyj biblioteki ``requests``
+    2. Wczytaj dane z `DATA` jako `result: pd.DataFrame`
+    3. Użyj biblioteki `requests`
     4. Transponuj dane
     5. Jeżeli komórka jest `dict`, to wyciągnij wartość dla `summary`
     6. Jeżeli komórka jest pusta, pozostaw `pd.NA`

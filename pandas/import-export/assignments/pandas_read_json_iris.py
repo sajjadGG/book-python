@@ -7,7 +7,7 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``result: pd.DataFrame``
+    2. Read data from `DATA` as `result: pd.DataFrame`
     3. Print `result`
 
 Polish:

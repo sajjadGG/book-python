@@ -8,13 +8,13 @@
 English:
     1. Use data from "Given" section (see below)
     2. Round values to integers
-    3. Convert data type to ``np.int8``
+    3. Convert data type to `np.int8`
     4. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Zaokrąglij wartości do pełnych liczb całkowitych
-    3. Przekonwertuj typ danych do ``np.int8``
+    3. Przekonwertuj typ danych do `np.int8`
     4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:

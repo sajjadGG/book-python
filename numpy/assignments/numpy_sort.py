@@ -7,13 +7,13 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Define ``result_sort`` with sorted ``DATA`` by columns
-    3. Define `result_flip` with flipped ``DATA`` by rows
+    2. Define `result_sort` with sorted `DATA` by columns
+    3. Define `result_flip` with flipped `DATA` by rows
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Zdefiniuj ``result_sort`` z posortowanym ``DATA`` po kolumnach
-    3. Zdefiniuj ``result_flip`` z flipniętym ``DATA`` po wierszach
+    2. Zdefiniuj `result_sort` z posortowanym `DATA` po kolumnach
+    3. Zdefiniuj `result_flip` z flipniętym `DATA` po wierszach
 
 Tests:
     >>> type(result_sort) is np.ndarray

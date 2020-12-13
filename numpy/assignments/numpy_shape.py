@@ -12,8 +12,8 @@ English:
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Zdefiniuj `result_ravel` z wynikiem spłaszczenia ``DATA`` używając metody ``.ravel()``
-    3. Zdefiniuj `result_reshape` z wynikiem zmiany kształtu ``result_ravel`` na 3x3
+    2. Zdefiniuj `result_ravel` z wynikiem spłaszczenia `DATA` używając metody `.ravel()`
+    3. Zdefiniuj `result_reshape` z wynikiem zmiany kształtu `result_ravel` na 3x3
 
 Tests:
     >>> type(result_ravel) is np.ndarray

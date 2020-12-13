@@ -7,11 +7,11 @@
 
 English:
     1. Set random seed to zero
-    2. Define ``result: np.ndarray`` of size 16x16 with random integers ``[0;9]`` (inclusive)
+    2. Define `result: np.ndarray` of size 16x16 with random integers `[0;9]` (inclusive)
 
 Polish:
     1. Ustaw ziarno losowości na zero
-    2. Zdefiniuj ``result: np.ndarray`` o rozmiarze 16x16 z losowymi liczbami całkowitymi ``<0,9>`` (włącznie)
+    2. Zdefiniuj `result: np.ndarray` o rozmiarze 16x16 z losowymi liczbami całkowitymi `<0,9>` (włącznie)
 
 Tests:
     >>> type(result) is np.ndarray

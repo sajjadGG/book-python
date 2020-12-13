@@ -7,17 +7,17 @@
 
 English:
     1. Set random seed to zero
-    2. Generate ``a: np.ndarray`` of 50 random integers from 0 to 100 (exclusive)
-    3. Generate ``b: np.ndarray`` with sequential powers of 2 and exponential from 0 to 6 (inclusive)
-    4. Check which elements from ``a`` are present in ``b``
-    5. Result assign to ``result``
+    2. Generate `a: np.ndarray` of 50 random integers from 0 to 100 (exclusive)
+    3. Generate `b: np.ndarray` with sequential powers of 2 and exponential from 0 to 6 (inclusive)
+    4. Check which elements from `a` are present in `b`
+    5. Result assign to `result`
 
 Polish:
     1. Ustaw ziarno losowości na zero
-    2. Wygeneruj ``a: np.ndarray`` z 50 losowymi liczbami całkowitymi od 0 do 100 (rozłącznie)
-    3. Wygeneruj ``b: np.ndarray`` z kolejnymi potęgami liczby 2, wykładnik od 0 do 6 (włącznie)
-    4. Sprawdź, które elementy z ``a`` są obecne w ``b``
-    5. Wynik przypisz do ``result``
+    2. Wygeneruj `a: np.ndarray` z 50 losowymi liczbami całkowitymi od 0 do 100 (rozłącznie)
+    3. Wygeneruj `b: np.ndarray` z kolejnymi potęgami liczby 2, wykładnik od 0 do 6 (włącznie)
+    4. Sprawdź, które elementy z `a` są obecne w `b`
+    5. Wynik przypisz do `result`
 
 Tests:
     >>> type(result) is np.ndarray

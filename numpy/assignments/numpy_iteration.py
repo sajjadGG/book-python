@@ -7,16 +7,16 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Use ``for`` to iterate over ``DATA``
-    3. Define ``result: list[int]`` with even numbers from ``DATA``
+    2. Use `for` to iterate over `DATA`
+    3. Define `result: list[int]` with even numbers from `DATA`
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Używając ``for`` iteruj po ``DATA``
-    3. Zdefiniuj ``result: list[int]`` z liczbami parzystymi z ``DATA``
+    2. Używając `for` iteruj po `DATA`
+    3. Zdefiniuj `result: list[int]` z liczbami parzystymi z `DATA`
 
 Hints:
-    * ``number % 2 == 0``
+    * `number % 2 == 0`
 
 Tests:
     >>> type(result) is list

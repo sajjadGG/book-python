@@ -7,16 +7,16 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``result: pd.DataFrame``
-    3. Print ``result`` with active European Space Agency astronauts
+    2. Read data from `DATA` as `result: pd.DataFrame`
+    3. Print `result` with active European Space Agency astronauts
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``result: pd.DataFrame``
-    3. Wypisz ``result`` z aktywnymi astronautami Europejskiej Agencji Kosmicznej
+    2. Wczytaj dane z `DATA` jako `result: pd.DataFrame`
+    3. Wypisz `result` z aktywnymi astronautami Europejskiej Agencji Kosmicznej
 
 Hints:
-    * Might require ``lxml`` and ``html5lib``: ``pip install --upgrade lxml html5lib``
+    * Might require `lxml` and `html5lib`: `pip install --upgrade lxml html5lib`
     * 3rd table
 
 Tests:

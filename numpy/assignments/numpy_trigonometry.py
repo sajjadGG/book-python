@@ -6,14 +6,14 @@
 * Time: 13 min
 
 English:
-    1. Define function ``trigonometry(angle_deg: int|float) -> dict``
+    1. Define function `trigonometry(angle_deg: int|float) -> dict`
     2. Return angle in radians and trigonometric function values (sin, cos, tg, ctg)
-    3. Ctg for angle 180 and Tan for 90 degrees has infinite value, return ``np.inf``
+    3. Ctg for angle 180 and Tan for 90 degrees has infinite value, return `np.inf`
 
 Polish:
-    1. Zdefiniuj funkcję ``trigonometry(angle_deg: int|float) -> dict``
+    1. Zdefiniuj funkcję `trigonometry(angle_deg: int|float) -> dict`
     2. Zwróć kąt w radianach oraz wartości funkcji trygonometrycznych (sin, cos, tg, ctg)
-    3. Ctg dla angle 180 oraz Tan dla 0 i 90 stopni ma wartość nieskończoną, zwróć ``np.inf``
+    3. Ctg dla angle 180 oraz Tan dla 0 i 90 stopni ma wartość nieskończoną, zwróć `np.inf`
 
 Tests:
     >>> trigonometry(180)  # doctest: +NORMALIZE_WHITESPACE

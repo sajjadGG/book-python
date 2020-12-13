@@ -7,18 +7,18 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` to ``result: pd.DataFrame``
+    2. Read data from `DATA` to `result: pd.DataFrame`
     3. Parse dates in "Mission Date" column
-    4. Print ``result``
+    4. Print `result`
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` do ``result: pd.DataFrame``
+    2. Wczytaj dane z `DATA` do `result: pd.DataFrame`
     3. Sparsuj daty w kolumnie "Mission Date"
-    4. Wypisz ``result``
+    4. Wypisz `result`
 
 Hints:
-    * ``parse_dates``
+    * `parse_dates`
 
 Tests:
     >>> type(result) is pd.DataFrame
