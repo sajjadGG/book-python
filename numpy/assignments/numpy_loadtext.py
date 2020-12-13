@@ -52,11 +52,15 @@ Tests:
            0, 0, 2, 0, 2, 1, 1, 1, 0, 1, 1, 2, 0, 1, 1, 0, 2, 2, 2])
 """
 
+
+# Given
 import numpy as np
 
 
 DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris-dirty.csv'
 
+
+# Solution
 species = np.loadtxt(DATA, max_rows=1, delimiter=',', dtype=str, usecols=(2,3,4))
 features = np.loadtxt(DATA, skiprows=1, delimiter=',', usecols=(0,1,2,3))
 labels = np.loadtxt(DATA, skiprows=1, delimiter=',', usecols=4, dtype=int)

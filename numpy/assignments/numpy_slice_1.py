@@ -23,6 +23,7 @@ Tests:
            [5, 2]])
 """
 
+
 # Given
 import numpy as np
 

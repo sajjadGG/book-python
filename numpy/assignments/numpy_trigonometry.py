@@ -51,6 +51,7 @@ def trigonometry(angle_deg):
         'ctg': ...,
     }
 
+
 # Solution
 def trigonometry(angle_deg):
     angle_rad = np.deg2rad(angle_deg)

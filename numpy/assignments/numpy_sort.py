@@ -30,6 +30,7 @@ Tests:
            [44, 47, 64, 67]])
 """
 
+
 # Given
 import numpy as np
 
