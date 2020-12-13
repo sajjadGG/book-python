@@ -398,7 +398,7 @@ REST API
 * Time: 21 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Załóż darmowe konto na Github i potwierdź email

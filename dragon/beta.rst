@@ -16,7 +16,7 @@ Dragon (version beta)
 * Warning: Don't delete code, assignment will be continued
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Zaimportuj smoka z poprzedniej części zadania ("Part 1")

@@ -278,7 +278,7 @@ DataFrame NaN
 * Time: 8 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)

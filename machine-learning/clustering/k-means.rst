@@ -337,7 +337,7 @@ Klastrowanie zbioru Iris
 * Time: 13 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Dla zbioru Iris dokonaj klastrowania za pomocą algorytmu ``KMeans`` z biblioteki ``sklearn``.

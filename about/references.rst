@@ -21,27 +21,27 @@ W tej książce znajdziesz kilka żartów informatycznych i nawiązań do staryc
 Datasets
 ========
     >>> DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-    ...     (5.8, 2.7, 5.1, 1.9, 'virginica'),
-    ...     (5.1, 3.5, 1.4, 0.2, 'setosa'),
-    ...     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-    ...     (6.3, 2.9, 5.6, 1.8, 'virginica'),
-    ...     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-    ...     (4.7, 3.2, 1.3, 0.2, 'setosa'),
-    ...     (7.0, 3.2, 4.7, 1.4, 'versicolor'),
-    ...     (7.6, 3.0, 6.6, 2.1, 'virginica'),
-    ...     (4.9, 3.0, 1.4, 0.2, 'setosa'),
-    ...     (4.9, 2.5, 4.5, 1.7, 'virginica'),
-    ...     (7.1, 3.0, 5.9, 2.1, 'virginica'),
-    ...     (4.6, 3.4, 1.4, 0.3, 'setosa'),
-    ...     (5.4, 3.9, 1.7, 0.4, 'setosa'),
-    ...     (5.7, 2.8, 4.5, 1.3, 'versicolor'),
-    ...     (5.0, 3.6, 1.4, 0.3, 'setosa'),
-    ...     (5.5, 2.3, 4.0, 1.3, 'versicolor'),
-    ...     (6.5, 3.0, 5.8, 2.2, 'virginica'),
-    ...     (6.5, 2.8, 4.6, 1.5, 'versicolor'),
-    ...     (6.3, 3.3, 6.0, 2.5, 'virginica'),
-    ...     (6.9, 3.1, 4.9, 1.5, 'versicolor'),
-    ...     (4.6, 3.1, 1.5, 0.2, 'setosa')]
+    ...         (5.8, 2.7, 5.1, 1.9, 'virginica'),
+    ...         (5.1, 3.5, 1.4, 0.2, 'setosa'),
+    ...         (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+    ...         (6.3, 2.9, 5.6, 1.8, 'virginica'),
+    ...         (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+    ...         (4.7, 3.2, 1.3, 0.2, 'setosa'),
+    ...         (7.0, 3.2, 4.7, 1.4, 'versicolor'),
+    ...         (7.6, 3.0, 6.6, 2.1, 'virginica'),
+    ...         (4.9, 3.0, 1.4, 0.2, 'setosa'),
+    ...         (4.9, 2.5, 4.5, 1.7, 'virginica'),
+    ...         (7.1, 3.0, 5.9, 2.1, 'virginica'),
+    ...         (4.6, 3.4, 1.4, 0.3, 'setosa'),
+    ...         (5.4, 3.9, 1.7, 0.4, 'setosa'),
+    ...         (5.7, 2.8, 4.5, 1.3, 'versicolor'),
+    ...         (5.0, 3.6, 1.4, 0.3, 'setosa'),
+    ...         (5.5, 2.3, 4.0, 1.3, 'versicolor'),
+    ...         (6.5, 3.0, 5.8, 2.2, 'virginica'),
+    ...         (6.5, 2.8, 4.6, 1.5, 'versicolor'),
+    ...         (6.3, 3.3, 6.0, 2.5, 'virginica'),
+    ...         (6.9, 3.1, 4.9, 1.5, 'versicolor'),
+    ...         (4.6, 3.1, 1.5, 0.2, 'setosa')]
 
 .. figure:: img/iris-species.jpg
 
@@ -81,17 +81,17 @@ Dates and Timezones
 * ``1969-07-21 02:56:15 UTC`` - Apollo 11 Neil Armstrong's first step on the Moon
 
     >>> from datetime import datetime, date, timezone
-    >>> DATA = {"mission": "Ares 3",
-    ...         "launch_date": datetime(2035, 6, 29, tzinfo=timezone.utc),
-    ...         "destination": 'Mars',
-    ...         "destination_landing": datetime(2035, 11, 7, tzinfo=timezone.utc),
-    ...         "destination_location": "Acidalia Planitia",
-    ...         "crew": [{"astronaut": 'Melissa Lewis', "date_of_birth": date(1995, 7, 15)},
-    ...                  {"astronaut": 'Rick Martinez', "date_of_birth": date(1996, 1, 21)},
-    ...                  {"astronaut": 'Alex Vogel', "date_of_birth": date(1994, 11, 15)},
-    ...                  {"astronaut": 'Chris Beck', "date_of_birth": date(1999, 8, 2)},
-    ...                  {"astronaut": 'Beth Johansen', "date_of_birth": date(2006, 5, 9)},
-    ...                  {"astronaut": 'Mark Watney', "date_of_birth": date(1994, 10, 12)}]}
+    >>> DATA = {'mission': 'Ares 3',
+    ...         'launch_date': datetime(2035, 6, 29, tzinfo=timezone.utc),
+    ...         'destination': 'Mars',
+    ...         'destination_landing': datetime(2035, 11, 7, tzinfo=timezone.utc),
+    ...         'destination_location': 'Acidalia Planitia',
+    ...         'crew': [{'astronaut': 'Melissa Lewis', 'date_of_birth': date(1995, 7, 15)},
+    ...                  {'astronaut': 'Rick Martinez', 'date_of_birth': date(1996, 1, 21)},
+    ...                  {'astronaut': 'Alex Vogel', 'date_of_birth': date(1994, 11, 15)},
+    ...                  {'astronaut': 'Chris Beck', 'date_of_birth': date(1999, 8, 2)},
+    ...                  {'astronaut': 'Beth Johansen', 'date_of_birth': date(2006, 5, 9)},
+    ...                  {'astronaut': 'Mark Watney', 'date_of_birth': date(1994, 10, 12)}]}
 
 .. code-block:: json
 

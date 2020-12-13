@@ -172,7 +172,7 @@ Scrapping Iris
 * Time: 21 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Za pomocą beautifulsoup4 ze strony https://github.com/AstroMatt/book-python/blob/master/numerical-analysis/data/iris-dirty.csv pobierz dane zbioru Irysów.
@@ -190,7 +190,7 @@ Scrapping EVA
 * Time: 21 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Na podstawie podanych URL:

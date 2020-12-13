@@ -136,7 +136,7 @@ Heartbeat
 * Time: 21 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Stwórz klienta i serwer Heart Beat
@@ -164,7 +164,7 @@ Backdoor
 * Time: 34 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Stwórz uruchamiany w wątku serwer TCP

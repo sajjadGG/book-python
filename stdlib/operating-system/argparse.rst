@@ -326,7 +326,7 @@ Argument parsing
 * Time: 13 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Napisz parser parametrów linii poleceń

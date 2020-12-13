@@ -359,7 +359,7 @@ DataFrame Statistics
 * Time: 21 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Ustaw ziarno losowości na zero

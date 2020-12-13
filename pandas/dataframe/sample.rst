@@ -207,7 +207,7 @@ DataFrame Sample
 * Time: 8 min
 
 English:
-    .. todo:: English translation
+    TODO: English Translation
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)

@@ -238,212 +238,138 @@ Read SQL
     # [28 rows x 4 columns]
 
 
+XML and XSLT
+============
+.. code-block:: python
+
+    from io import StringIO
+    from lxml.etree import XML, XSLT, parse
+    import pandas as pd
+
+    DATA = """<?xml version="1.0"?>
+    <catalog>
+       <book id="bk101">
+          <author>Gambardella, Matthew</author>
+          <title>XML Developer's Guide</title>
+          <genre>Computer</genre>
+          <price>44.95</price>
+          <publish_date>2000-10-01</publish_date>
+          <description>An in-depth look at creating applications
+          with XML.</description>
+       </book>
+       <book id="bk102">
+          <author>Ralls, Kim</author>
+          <title>Midnight Rain</title>
+          <genre>Fantasy</genre>
+          <price>5.95</price>
+          <publish_date>2000-12-16</publish_date>
+          <description>A former architect battles corporate zombies,
+          an evil sorceress, and her own childhood to become queen
+          of the world.</description>
+       </book>
+       <book id="bk103">
+          <author>Corets, Eva</author>
+          <title>Maeve Ascendant</title>
+          <genre>Fantasy</genre>
+          <price>5.95</price>
+          <publish_date>2000-11-17</publish_date>
+          <description>After the collapse of a nanotechnology
+          society in England, the young survivors lay the
+          foundation for a new society.</description>
+       </book>
+    </catalog>
+    """
+
+    TEMPLATE = """
+        <html xsl:version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Author</th>
+                        <th>Title</th>
+                        <th>Genre</th>
+                        <th>Price</th>
+                        <th>Publish Date</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <xsl:for-each select="catalog/book">
+                        <tr>
+                            <td><xsl:value-of select="@id"/></td>
+                            <td><xsl:value-of select="author"/></td>
+                            <td><xsl:value-of select="title"/></td>
+                            <td><xsl:value-of select="genre"/></td>
+                            <td><xsl:value-of select="price"/></td>
+                            <td><xsl:value-of select="publish_date"/></td>
+                            <td><xsl:value-of select="description"/></td>
+                        </tr>
+                    </xsl:for-each>
+
+                </tbody>
+            </table>
+        </html>
+    """
+
+    transform = XSLT(XML(TEMPLATE))
+    data = parse(StringIO(DATA))
+    html = transform(data)
+
+    result = pd.read_html(str(html))[0]
+    # result
+    #       Id  ...                                        Description
+    # 0  bk101  ...  An in-depth look at creating applications  wit...
+    # 1  bk102  ...  A former architect battles corporate zombies, ...
+    # 2  bk103  ...  After the collapse of a nanotechnology  societ...
+    # [3 rows x 7 columns]
+
+    type(result) is pd.DataFrame
+    # True
+
+    len(result) > 0
+    # True
+
+    result.columns
+    # Index(['Id', 'Author', 'Title', 'Genre', 'Price', 'Publish Date',
+    #        'Description'],
+    #       dtype='object')
+
+    result['Title']
+    # 0    XML Developer's Guide
+    # 1            Midnight Rain
+    # 2          Maeve Ascendant
+    # Name: Title, dtype: object
+
+
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
+.. literalinclude:: assignments/pandas_read_csv_dates.py
+    :caption: :download:`Solution <assignments/pandas_read_csv_dates.py>`
+    :end-before: # Solution
 
-Pandas Read CSV Dates
----------------------
-* Assignment: Pandas Read CSV Dates
-* Filename: :download:`assignments/pandas_read_csv_dates.py`
-* Complexity: easy
-* Lines of code: 5 lines
-* Time: 3 min
+.. literalinclude:: assignments/pandas_read_csv_replace.py
+    :caption: :download:`Solution <assignments/pandas_read_csv_replace.py>`
+    :end-before: # Solution
 
-English:
-    1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` to ``result: pd.DataFrame``
-    3. Parse dates in "Mission Date" column
-    4. Print ``result``
+.. literalinclude:: assignments/pandas_read_json_iris.py
+    :caption: :download:`Solution <assignments/pandas_read_json_iris.py>`
+    :end-before: # Solution
 
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` do ``result: pd.DataFrame``
-    3. Sparsuj daty w kolumnie "Mission Date"
-    4. Wypisz ``result``
+.. literalinclude:: assignments/pandas_read_json_openapi.py
+    :caption: :download:`Solution <assignments/pandas_read_json_openapi.py>`
+    :end-before: # Solution
 
-Given:
-    .. code-block:: python
+.. literalinclude:: assignments/pandas_read_html.py
+    :caption: :download:`Solution <assignments/pandas_read_html.py>`
+    :end-before: # Solution
 
-        DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/martian-en.csv'
+.. literalinclude:: assignments/pandas_read_xslt_books.py.py
+    :caption: :download:`Solution <assignments/pandas_read_xslt_books.py>`
+    :end-before: # Solution
 
-Hints:
-    * ``parse_dates`` argument
-
-Pandas Read CSV Replace
------------------------
-* Assignment: Pandas Read CSV Replace
-* Filename: :download:`assignments/pandas_read_csv_replace.py`
-* Complexity: easy
-* Lines of code: 5 lines
-* Time: 3 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` to ``result: pd.DataFrame``
-    3. Use provided column names in ``COLUMNS``
-    4. Read labels from the first row
-    5. Replace data in ``label`` column with values extracted above
-    6. Print first 5 rows from ``result``
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` do ``result: pd.DataFrame``
-    3. Użyj podanych w ``COLUMNS`` nazw kolumn
-    4. Wczytaj nazwy labeli z pierwszego wiersza
-    5. Podmień dane w kolumnie ``label`` na wartości wyciągnięte powyżej
-    6. Wypisz pierwsze 5 wierszy z ``result``
-
-Given:
-    .. code-block:: python
-
-        DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/breast-cancer.csv'
-
-        COLUMNS = ['mean radius', 'mean texture', 'mean perimeter', 'mean area',
-                   'mean smoothness', 'mean compactness', 'mean concavity',
-                   'mean concave points', 'mean symmetry', 'mean fractal dimension',
-                   'radius error', 'texture error', 'perimeter error', 'area error',
-                   'smoothness error', 'compactness error', 'concavity error',
-                   'concave points error', 'symmetry error',
-                   'fractal dimension error', 'worst radius', 'worst texture',
-                   'worst perimeter', 'worst area', 'worst smoothness',
-                   'worst compactness', 'worst concavity', 'worst concave points',
-                   'worst symmetry', 'worst fractal dimension', 'label']
-
-Hints:
-    * ``pd.read_csv(url, nrows=0).columns``
-    * ``df['label'].replace({'from': 'to'}, inplace=True)``
-
-Pandas Read JSON
-----------------
-* Assignment: Pandas Read JSON
-* Filename: :download:`assignments/pandas_read_json_iris.py`
-* Complexity: easy
-* Lines of code: 5 lines
-* Time: 5 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``result: pd.DataFrame``
-    3. Print ``result: pd.DataFrame``
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``result: pd.DataFrame``
-    3. Wypisz ``result``
-
-Given:
-    .. code-block:: python
-
-        DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/json/iris.json'
-
-Pandas Read JSON OpenAPI
-------------------------
-* Assignment: Pandas Read JSON OpenAPI
-* Filename: :download:`assignments/pandas_read_json_openapi.py`
-* Complexity: easy
-* Lines of code: 5 lines
-* Time: 5 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``result: pd.DataFrame``
-    3. Use ``requests`` library
-    4. Print ``result``
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``result: pd.DataFrame``
-    3. Użyj biblioteki ``requests``
-    4. Wypisz ``result``
-
-Given:
-    .. code-block:: python
-
-        DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/json/openapi.json'
-
-Pandas Read HTML
-----------------
-* Assignment: Pandas Read HTML
-* Filename: :download:`assignments/pandas_read_html.py`
-* Complexity: easy
-* Lines of code: 5 lines
-* Time: 5 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``result: pd.DataFrame``
-    3. Print ``result`` with active European Space Agency astronauts
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``result: pd.DataFrame``
-    3. Wypisz ``result`` z aktywnymi astronautami Europejskiej Agencji Kosmicznej
-
-Given:
-    .. code-block:: python
-
-        DATA = 'https://en.wikipedia.org/wiki/European_Astronaut_Corps'
-
-Hints:
-    * Might require ``lxml`` and ``html5lib``: ``pip install --upgrade lxml html5lib``
-    * 3rd table
-
-Pandas Read XSLT Books
-----------------------
-* Assignment: Pandas Read XSLT Books
-* Filename: :download:`assignments/pandas_read_xslt_books.py`
-* Complexity: medium
-* Lines of code: 5 lines
-* Time: 13 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``result: pd.DataFrame``
-    3. Use XSLT transformation
-    4. Print ``result``
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``result: pd.DataFrame``
-    3. Użyj transformaty XSLT
-    4. Print ``result``
-
-Given:
-    .. code-block:: python
-
-        DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/xml/plants.xml'
-
-Hints:
-    * Require ``lxml``: ``pip install lxml``
-
-Pandas Read XSLT Plants
------------------------
-* Assignment: Pandas Read XSLT Plants
-* Filename: :download:`assignments/pandas_read_xslt_plants.py`
-* Complexity: medium
-* Lines of code: 5 lines
-* Time: 13 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``result: pd.DataFrame``
-    3. Use XSLT transformation
-    4. Make sure that columns and indexes are named properly
-    5. Calculate average cost of flower
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``result: pd.DataFrame``
-    3. Użyj transformaty XSLT
-    4. Upewnij się, że nazwy kolumn i indeks są dobrze ustawione
-    5. Wylicz średni koszt kwiatów
-
-Given:
-    .. code-block:: python
-
-        DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/xml/plants.xml'
-
-Hints:
-    * Require ``lxml``: ``pip install lxml``
+.. literalinclude:: assignments/pandas_read_xslt_plants.py
+    :caption: :download:`Solution <assignments/pandas_read_xslt_plants.py>`
+    :end-before: # Solution

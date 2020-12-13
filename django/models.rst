@@ -132,7 +132,7 @@ Address Book
 * Time: 21 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Stwórz projekt ``addressbook``

@@ -462,49 +462,9 @@ Logic operators
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
-
-To ``bool`` or not to ``bool``
-------------------------------
-* Assignment: To ``bool`` or not to ``bool``
-* Filename: :download:`assignments/types_bool.py`
-* Complexity: easy
-* Lines of code: 15 lines
-* Time: 13 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Which variables are ``True``?
-    3. Which variables are ``False``?
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Które zmienne są ``True``?
-    3. Które zmienne są ``False``?
-
-Given:
-    .. code-block:: python
-
-        a = bool(False)
-        b = bool(True)
-
-        c = bool('a')
-        d = bool('.')
-        e = bool('0')
-        f = bool('0.0')
-        g = bool('')
-        h = bool(' ')
-
-        i = bool(0)
-        j = bool(0.0)
-        k = bool(-0)
-        l = bool(-0.0)
-
-        m = bool(int('0'))
-        n = bool(float('-0'))
-
-        o = bool(-0.0+0.0j)
-        p = bool('-0.0+0.0j')
+.. literalinclude:: assignments/types_bool.py
+    :caption: :download:`Solution <assignments/types_bool.py>`
+    :end-before: # Solution
 
 
 Operators

@@ -46,103 +46,18 @@ Export data
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
+.. literalinclude:: assignments/pandas_to_csv.py
+    :caption: :download:`Solution <assignments/pandas_to_csv.py>`
+    :end-before: # Solution
 
-DataFrame Export CSV
---------------------
-* Assignment: DataFrame Export CSV
-* Filename: :download:`assignments/pandas_to_csv.py`
-* Complexity: easy
-* Lines of code: 3 lines
-* Time: 3 min
+.. literalinclude:: assignments/pandas_to_json.py
+    :caption: :download:`Solution <assignments/pandas_to_json.py>`
+    :end-before: # Solution
 
-English:
-    1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``astro_eva1: pd.DataFrame``
-    3. Export to file ``FILE`` data in ``CSV`` format
+.. literalinclude:: assignments/pandas_to_pickle.py
+    :caption: :download:`Solution <assignments/pandas_to_pickle.py>`
+    :end-before: # Solution
 
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``astro_eva1: pd.DataFrame``
-    3. Wyeksportuj do pliku ``FILE`` dane w formacie ``CSV``
-
-Given:
-    .. code-block:: python
-
-        DATA = 'https://www.worldspaceflight.com/bios/eva/eva.php'
-        FILE = r'_temporary.csv'
-
-DataFrame Export JSON
----------------------
-* Assignment: DataFrame Export JSON
-* Filename: :download:`assignments/pandas_to_json.py`
-* Complexity: easy
-* Lines of code: 3 lines
-* Time: 3 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``astro_eva2: pd.DataFrame``
-    3. Export to file ``FILE`` data in ``JSON`` format
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``astro_eva2: pd.DataFrame``
-    3. Wyeksportuj do pliku ``FILE`` dane w formacie ``JSON``
-
-Given:
-    .. code-block:: python
-
-        DATA = r'https://www.worldspaceflight.com/bios/eva/eva2.php'
-        FILE = r'_temporary.json'
-
-DataFrame Export Pickle
------------------------
-* Assignment: DataFrame Export Pickle
-* Filename: :download:`assignments/pandas_to_pickle.py`
-* Complexity: easy
-* Lines of code: 3 lines
-* Time: 3 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``astro_eva3: pd.DataFrame``
-    3. Export to file ``FILE`` data in ``JSON`` format
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``astro_eva3: pd.DataFrame``
-    3. Wyeksportuj do pliku ``FILE`` dane w formacie ``JSON``
-
-Given:
-    .. code-block:: python
-
-        DATA = r'https://www.worldspaceflight.com/bios/eva/eva3.php'
-        FILE = r'_temporary.pkl'
-
-DataFrame Export Pickle
------------------------
-* Assignment: DataFrame Export Pickle
-* Filename: :download:`assignments/pandas_to_sql.py`
-* Complexity: easy
-* Lines of code: 4 lines
-* Time: 5 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``astro_eva4: pd.DataFrame``
-    3. Export to file ``FILE`` data in ``SQL`` format
-    4. Use table ``astro_eva``
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``astro_eva4: pd.DataFrame``
-    3. Wyeksportuj do pliku ``FILE`` dane w formacie ``SQL``
-    4. Użyj tabeli ``astro_eva``
-
-Given:
-    .. code-block:: python
-
-        DATA = r'https://www.worldspaceflight.com/bios/eva/eva4.php'
-        FILE = r'_temporary.sqlite3'
-
+.. literalinclude:: assignments/pandas_to_sql.py
+    :caption: :download:`Solution <assignments/pandas_to_sql.py>`
+    :end-before: # Solution

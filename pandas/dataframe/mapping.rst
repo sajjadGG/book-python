@@ -462,3 +462,7 @@ Given:
         LETTERS_PLEN = {'ą': 'a', 'ć': 'c', 'ę': 'e',
                         'ł': 'l', 'ń': 'n', 'ó': 'o',
                         'ś': 's', 'ż': 'z', 'ź': 'z'}
+
+.. literalinclude:: assignments/pandas_read_json_openapi.py
+    :caption: :download:`Solution <assignments/pandas_read_json_openapi.py>`
+    :end-before: # Solution

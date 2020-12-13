@@ -536,38 +536,15 @@ Github pages with Jupyter Slides
         --SlidesExporter.reveal_scroll=True \
         --SlidesExporter.reveal_transition=none
 
+
 Assignments
 ===========
 
-Jupyter First
--------------
-* Assignment: Jupyter First
-* Filename: :download:`assignments/jupyter_first.ipynb`
-* Complexity: easy
-* Lines of code: 10 lines
-* Time: 13 min
+.. literalinclude:: assignments/jupyter_first.py
+    :caption: :download:`Solution <assignments/jupyter_first.py>`
+    :end-before: # Solution
 
-English:
-    .. todo:: English Translation
+.. literalinclude:: assignments/jupyter_slides.py
+    :caption: :download:`Solution <assignments/jupyter_slides.py>`
+    :end-before: # Solution
 
-Polish:
-    1. Stwórz notebook jupyter o nazwie ``jupyter_first.ipynb``
-    2. dodaj tekst opisujący następne polecenia
-    3. dodaj trzy różne 'code cell'
-    4. uruchom code cell z wynikiem wszystkich powyżej
-    5. dodaj code cell, który pokaże czas wykonywania instrukcji
-    6. dodaj Code Cell, który wyświetli wykres funkcji ``sin()`` inplace
-
-Jupyter Slides
---------------
-* Assignment: Jupyter Slides
-* Filename: :download:`assignments/jupyter_slides.py`
-* Complexity: easy
-* Lines of code: 1 lines
-* Time: 5 min
-
-English:
-    .. todo:: English Translation
-
-Polish:
-    1. Poprzedni skrypt przekonwertuj na slajdy i uruchom prezentację w przeglądarce

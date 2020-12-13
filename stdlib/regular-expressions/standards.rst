@@ -95,7 +95,7 @@ Regexp Standards PESEL
 * Warning: Do no write any code - **discussion only**
 
 English:
-    .. todo:: English translation
+    TODO: English Translation
 
 Polish:
     1. Przeprowadź eksperyment myślowy (**tylko dyskusja**)

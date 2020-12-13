@@ -12,7 +12,7 @@ Trigonometry
 * Time: 21 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Dla ``x`` z przedziału od 0.0 do 1.0 z próbkowaniem co 0.01 przedstaw przebiegi funkcji ``sin``, ``cos`` dla parametrów ``2 * np.pi * x``
@@ -42,7 +42,7 @@ Iris Scatter
 * Time: 21 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Z podanego powyżej adresu URL pobierz dane
@@ -67,7 +67,7 @@ Random Points
 * Time: 21 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Wygeneruj 100 losowych punktów:
@@ -127,7 +127,7 @@ Color Graph
 * Time: 21 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Dokonano pomiarów z urządzeń temperatury

@@ -46,7 +46,7 @@ FTP Download
 * Time: 21 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Stwórz na swoim komputerze plik o nazwie ``imie-nazwisko.txt``, gdzie:
@@ -69,7 +69,7 @@ FTP Upload
 * Time: 21 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Pobierz na swój komputer plik :download:`http://python.astrotech.io/_static/favicon.png`

@@ -38,7 +38,7 @@ Send email
 * Time: 21 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Połącz się z serwerem podanym przez prowadzącego

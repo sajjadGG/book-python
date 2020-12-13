@@ -160,7 +160,7 @@ Feature Engineering
 * Time: 13 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Celem zadania będzie opracowanie tabeli, cech osób, które czynią z niego astronautę.

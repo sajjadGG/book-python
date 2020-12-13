@@ -524,85 +524,10 @@ Callback
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
+.. literalinclude:: assignments/functional_map_filter_lambda.py
+    :caption: :download:`Solution <assignments/functional_map_filter_lambda.py>`
+    :end-before: # Solution
 
-``map()``, ``filter()`` and ``lambda``
---------------------------------------
-* Assignment: ``map()``, ``filter()`` and ``lambda``
-* Filename: :download:`assignments/functional_map_filter_lambda.py`
-* Complexity: easy
-* Lines of code: 10 lines
-* Time: 13 min
-
-English:
-    .. todo:: English Translation
-
-Polish:
-    1. Używając generatora zbuduj listę zawierającą wszystkie liczby podzielne przez 3 z zakresu od 1 do 33:
-    2. Używając funkcji ``filter()`` usuń z niej wszystkie liczby parzyste
-    3. Używając wyrażenia ``lambda`` i funkcji ``map()`` podnieś wszystkie elementy tak otrzymanej listy do sześcianu
-    4. Odpowiednio używając funkcji ``sum()``  i ``len()`` oblicz średnią arytmetyczną z elementów tak otrzymanej listy.
-
-Balanced Brackets
------------------
-* Assignment: Balanced Brackets
-* Filename: :download:`assignments/functional_brackets.py`
-* Complexity: medium
-* Lines of code: 10 lines
-* Time: 13 min
-
-English:
-    1. Create function which checks if brackets are balanced
-    2. Brackets are balanced, when each opening bracket has closing pair
-    3. Use recursion
-    4. Types of brackets:
-
-        a. round: ``(`` i ``)``
-        b. square: ``[`` i ``]``
-        c. curly ``{`` i ``}``
-        d. angle ``<`` i ``>``
-
-Polish:
-    1. Stwórz funkcję, która sprawdzi czy nawiasy są zbalansowane
-    2. Nawiasy są zbalansowane, gdy każdy otwierany nawias ma zamykającą parę
-    3. Użyj rekurencji
-    4. Typy nawiasów:
-
-        a. okrągłe: ``(`` i ``)``
-        b. kwadratowe: ``[`` i ``]``
-        c. klamrowe ``{`` i ``}``
-        d. trójkątne ``<`` i ``>``
-
-.. code-block:: python
-
-    def is_bracket_balanced(text: str) -> bool:
-        """
-        >>> is_bracket_balanced('{}')
-        True
-        >>> is_bracket_balanced('()')
-        True
-        >>> is_bracket_balanced('[]')
-        True
-        >>> is_bracket_balanced('<>')
-        True
-        >>> is_bracket_balanced('')
-        True
-        >>> is_bracket_balanced('(')
-        False
-        >>> is_bracket_balanced('}')
-        False
-        >>> is_bracket_balanced('(]')
-        False
-        >>> is_bracket_balanced('([)')
-        False
-        >>> is_bracket_balanced('[()')
-        False
-        >>> is_bracket_balanced('{()[]}')
-        True
-        >>> is_bracket_balanced('() [] () ([]()[])')
-        True
-        >>> is_bracket_balanced("( (] ([)]")
-        False
-        """
-        pass
-
+.. literalinclude:: assignments/functional_brackets.py
+    :caption: :download:`Solution <assignments/functional_brackets.py>`
+    :end-before: # Solution

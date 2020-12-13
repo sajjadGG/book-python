@@ -15,7 +15,7 @@ Dragon (version release candidate)
 * Time: 21 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Dodaj możliwość poruszania się smoka i bohatera w 3 wymiarach

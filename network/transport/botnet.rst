@@ -38,7 +38,7 @@ Heartbeat Receiver
 * Time: 21 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Server ma przyjmować komunikaty UDP na porcie 1337
@@ -60,7 +60,7 @@ Victim
 * Time: 34 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Po zainfekowaniu otwiera randomowy port TCP (backdoor) z przedziału 1025-65535 na którym nasłuchuje komunikatów
@@ -96,7 +96,7 @@ Attacker
 * Time: 34 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Skopiuj zawartość listingu z sekcji "Given" do pliku ``botnet-commands.xml``

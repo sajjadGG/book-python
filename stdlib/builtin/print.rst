@@ -618,7 +618,7 @@ Powielanie napisów
 * Time: 5 min
 
 English:
-    .. todo:: English translation
+    TODO: English Translation
 
 Polish:
     1. Dany jest ciąg znaków: ``text = 'Lorem Ipsum'``
@@ -641,7 +641,7 @@ Przeliczanie temperatury
 * Time: 13 min
 
 English:
-    .. todo:: English translation
+    TODO: English Translation
 
 Polish:
     1. Napisz program, który wyświetli tabelę przeliczeń stopni Celsjusza na stopnie Fahrenheita w zakresie od –20 do +40 stopni Celsjusza (co 5 stopni).

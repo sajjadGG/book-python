@@ -172,7 +172,7 @@ Pima Indians Diabetes problem
 * Time: 13 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Dla Pima Indians Diabetes wykonaj analizę algorytmem KNN z biblioteki ``sklearn``.
@@ -186,7 +186,7 @@ Płeć
 * Time: 13 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Napisz własną implementacje k Nearest Neighbors, która dla danych:

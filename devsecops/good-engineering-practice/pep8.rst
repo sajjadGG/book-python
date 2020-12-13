@@ -852,7 +852,7 @@ Cleanup your file
 * Time: 5 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Install ``pycodestyle``

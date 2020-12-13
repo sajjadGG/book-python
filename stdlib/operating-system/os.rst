@@ -654,7 +654,7 @@ Recursive folders walking
 * Time: 21 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Sprawdź czy katalog "Python" już istnieje na pulpicie w Twoim systemie
@@ -696,7 +696,7 @@ Tree
 * Time: 21 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Za pomocą znaków unicode: "┣━", "┗━" , "┃  "

@@ -142,7 +142,7 @@ Nearest Neighbor Classifier
 * Time: 21 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Napisz klasyfikator najbliższego sąsiada
@@ -203,7 +203,7 @@ Sklearn Classifier Compare
 * Time: 21 min
 
 English:
-    .. todo:: English Translation
+    TODO: English Translation
 
 Polish:
     1. Pobierz dane Brest Cancer Dataset (``datasets.load_breast_cancer()``)
