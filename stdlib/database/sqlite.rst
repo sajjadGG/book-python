@@ -240,8 +240,8 @@ Assignments
     :caption: :download:`Solution <assignments/database_sqlite_logs.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/assignments/database_sqlite_csv.py
-    :caption: :download:`Solution <assignments/assignments/database_sqlite_csv.py>`
+.. literalinclude:: assignments/database_sqlite_csv.py
+    :caption: :download:`Solution <assignments/database_sqlite_csv.py>`
     :end-before: # Solution
 
 .. literalinclude:: assignments/database_sqlite_relations.py
