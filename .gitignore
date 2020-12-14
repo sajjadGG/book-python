@@ -5,6 +5,7 @@ _temporary.txt
 _temporary.*
 */_temporary.txt
 **/_temporary.txt
+raw.githubusercontent.com
 
 ## Compiled and environmental
 __pycache__/
