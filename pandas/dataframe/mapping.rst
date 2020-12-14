@@ -316,153 +316,22 @@ Conversion
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
+.. literalinclude:: assignments/pandas_df_mapping_split.py
+    :caption: :download:`Solution <assignments/pandas_df_mapping_split.py>`
+    :end-before: # Solution
 
-DataFrame Mapping Split
------------------------
-* Assignment: DataFrame Mapping Split
-* Filename: :download:`assignments/df_mapping_split.py`
-* Complexity: easy
-* Lines of code: 5 lines
-* Time: 13 min
+.. literalinclude:: assignments/pandas_df_mapping_translate.py
+    :caption: :download:`Solution <assignments/pandas_df_mapping_translate.py>`
+    :end-before: # Solution
 
-English:
-    1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``phones: pd.DataFrame``
-    3. Parse data in ``date`` column as ``datetime`` object
-    4. Split column ``date`` with into two separate: date and time columns
+.. literalinclude:: assignments/pandas_df_mapping_month.py
+    :caption: :download:`Solution <assignments/>`
+    :end-before: # Solution
 
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``phones: pd.DataFrame``
-    3. Sparsuj dane w kolumnie ``date`` jako obiekty ``datetime``
-    4. Podziel kolumnę z ``date`` na dwie osobne: datę i czas
+.. literalinclude:: assignments/pandas_df_mapping_substitute.py
+    :caption: :download:`Solution <assignments/pandas_df_mapping_substitute.py>`
+    :end-before: # Solution
 
-Given:
-    .. code-block:: python
-
-        DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/phones-pl.csv'
-
-Hints:
-    * ``help(phones['date'].dt)``
-
-DataFrame Mapping Translate
----------------------------
-* Assignment: DataFrame Mapping Translate
-* Filename: :download:`assignments/df_mapping_translate.py`
-* Complexity: easy
-* Lines of code: 5 lines
-* Time: 13 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``martian: pd.DataFrame``
-    3. Set header and index to data from file
-    4. Convert Polish month names to English
-    5. Parse dates to ``datetime`` objects
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``martian: pd.DataFrame``
-    3. Ustaw nagłówek i index na dane zaczytane z pliku
-    4. Przekonwertuj polskie nazwy miesięcy na angielskie
-    5. Sparsuj daty do obiektów ``datetime``
-
-Given:
-    .. code-block:: python
-
-        DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/martian-pl.csv'
-
-        MONTHS_PLEN = {'styczeń': 'January',
-                       'luty': 'February',
-                       'marzec': 'March',
-                       'kwiecień': 'April',
-                       'maj': 'May',
-                       'czerwiec': 'June',
-                       'lipiec': 'July',
-                       'sierpień': 'August',
-                       'wrzesień': 'September',
-                       'październik': 'October',
-                       'listopad': 'November',
-                       'grudzień': 'December'}
-
-Hints:
-    * ``df['column'].replace(regex=True)``
-    * ``pd.Timestamp``
-
-DataFrame Mapping Month
------------------------
-* Assignment: DataFrame Mapping Month
-* Filename: :download:`assignments/df_mapping_month.py`
-* Complexity: easy
-* Lines of code: 10 lines
-* Time: 13 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``phones: pd.DataFrame``
-    3. Add column ``year`` and ``month`` by parsing ``period`` column
-    4. Month name must be a string month name, not a number (i.e.: 'January', 'May')
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``phones: pd.DataFrame``
-    3. Dodaj kolumnę ``year`` i ``month`` poprzez sparsowanie kolumny ``period``
-    4. Nazwa miesiąca musi być ciągiem znaków, a nie liczbą (i.e. 'January', 'May')
-
-:Example:
-    * if ``period`` column is "2015-01"
-    * ``year``: 2015
-    * ``month``: January
-
-Given:
-    .. code-block:: python
-
-        DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/phones-pl.csv'
-
-        MONTHS_EN = ['January', 'February', 'March', 'April',
-                     'May', 'June', 'July', 'August', 'September',
-                     'October', 'November', 'December']
-
-Hints:
-    * ``Series.str.split(expand=True)``
-    * ``df[ ['A', 'B'] ] = ...``
-
-DataFrame Mapping Substitute
-----------------------------
-* Assignment: DataFrame Mapping Substitute
-* Filename: :download:`assignments/df_mapping_substitute.py`
-* Complexity: medium
-* Lines of code: 10 lines
-* Time: 13 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``astro_trl: pd.DataFrame``
-    3. Select ``Polish`` spreadsheet
-    4. Set header and index to data from file
-    5. Mind the encoding
-    6. Substitute Polish Diacritics to English alphabet letters
-    7. Compare ``df.replace(regex=True)`` with ``df.applymap()``
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``astro_trl: pd.DataFrame``
-    3. Wybierz arkusz ``Polish``
-    4. Ustaw nagłówek i index na dane zaczytane z pliku
-    5. Zwróć uwagę na encoding
-    6. Podmień polskie znaki diakrytyczne na litery z alfabetu angielskiego
-    7. Porównaj ``df.replace(regex=True)`` z ``df.applymap()``
-
-Given:
-    .. code-block:: python
-
-        DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/xlsx/astro-trl.xlsx'
-
-        LETTERS_PLEN = {'ą': 'a', 'ć': 'c', 'ę': 'e',
-                        'ł': 'l', 'ń': 'n', 'ó': 'o',
-                        'ś': 's', 'ż': 'z', 'ź': 'z'}
-
-.. literalinclude:: assignments/pandas_read_json_openapi.py
-    :caption: :download:`Solution <assignments/pandas_read_json_openapi.py>`
+.. literalinclude:: assignments/pandas_df_mapping_openapi.py
+    :caption: :download:`Solution <assignments/pandas_df_mapping_openapi.py>`
     :end-before: # Solution

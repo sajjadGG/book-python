@@ -78,42 +78,6 @@ Reset Index
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
-
-Series Alter
-------------
-* Assignment: Series Alter
-* Filename: :download:`assignments/series_alter.py`
-* Complexity: easy
-* Lines of code: 10 lines
-* Time: 5 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. From input data create ``pd.Series``
-    3. Drop values at index 2, 4, 6
-    4. Drop duplicates
-    5. Reindex series (without old copy)
-    6. Print series
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Z danych wejściowych stwórz ``pd.Series``
-    3. Usuń wartości na indeksach 2, 4, 6
-    4. Usuń duplikujące się wartości
-    5. Zresetuj indeks (bez kopii starego)
-    6. Wypisz serię
-
-Given:
-    .. code-block:: python
-
-        DATA = [1, None, 5, None, 1, 2, 1]
-
-Tests:
-    .. code-block:: python
-
-        s: pd.Series
-        # 0    1.0
-        # 1    NaN
-        # 2    2.0
-        # dtype: float64
+.. literalinclude:: assignments/pandas_series_alter.py
+    :caption: :download:`Solution <assignments/pandas_series_alter.py>`
+    :end-before: # Solution

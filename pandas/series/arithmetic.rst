@@ -164,28 +164,6 @@ Broadcasting
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
-
-Series Arithmetic
------------------
-* Assignment: Series Arithmetic
-* Filename: :download:`assignments/series_arithmetic.py`
-* Complexity: easy
-* Lines of code: 5 lines
-* Time: 5 min
-
-English:
-    1. Set random seed to zero
-    2. Generate ``data: ndarray`` with 5 random digits [0, 9]
-    3. Create ``index: list`` with index names as sequential letters in english alphabet
-    4. Create ``s: pd.Series`` from ``data`` and ``index``
-    5. Multiply ``s`` by 10
-    6. Multiply ``s`` by original ``s`` values (before multiplying by 10)
-
-Polish:
-    1. Ustaw random ziarno losowości na zero
-    2. Wygeneruj ``data: np.ndarray`` z 5 losowymi cyframi <0, 9>
-    3. Stwórz ``index: list`` z indeksami jak kolejne listery alfabetu angielskiego
-    4. Stwórz ``s: pd.Series`` z ``data`` oraz ``index``
-    5. Pomnóż ``s`` przez 10
-    6. Pomnóż ``s`` przez oryginalne wartości ``s`` (przed mnożeniem przez 10)
+.. literalinclude:: assignments/pandas_series_arithmetic.py
+    :caption: :download:`Solution <assignments/pandas_series_arithmetic.py>`
+    :end-before: # Solution

@@ -393,46 +393,6 @@ Conversion
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
-
-Series NA
----------
-* Assignment: Series NA
-* Filename: :download:`assignments/series_na.py`
-* Complexity: easy
-* Lines of code: 10 lines
-* Time: 5 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. From input data create ``pd.Series``
-    3. Fill first missing value with zero
-    4. Drop missing values
-    5. Reindex series (without old copy)
-    6. Compare result with "Tests" section (see below)
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Z danych wejściowych stwórz ``pd.Series``
-    3. Wypełnij pierwszą brakującą wartość zerem
-    4. Usuń brakujące wartości
-    5. Zresetuj indeks (bez kopii starego)
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
-
-Given:
-    .. code-block:: python
-
-        DATA = [1, None, 5, None, 1, 2, 1]
-
-Tests:
-    .. code-block:: python
-
-        s: pd.Series
-        # 0    1.0
-        # 1    0.0
-        # 2    5.0
-        # 3    1.0
-        # 4    2.0
-        # 5    1.0
-        # dtype: float64
-
+.. literalinclude:: assignments/pandas_series_na.py
+    :caption: :download:`Solution <assignments/pandas_series_na.py>`
+    :end-before: # Solution

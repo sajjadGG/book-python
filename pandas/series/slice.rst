@@ -294,97 +294,10 @@ Date Index
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
+.. literalinclude:: assignments/pandas_series_slice_datetime.py
+    :caption: :download:`Solution <assignments/pandas_series_slice_datetime.py>`
+    :end-before: # Solution
 
-Series Slice Datetime
----------------------
-* Assignment: Series Slice Datetime
-* Filename: :download:`assignments/series_slice_datetime.py`
-* Complexity: easy
-* Lines of code: 5 lines
-* Time: 3 min
-
-English:
-    1. Set random seed to zero
-    2. Create ``pd.Series`` with 100 random numbers from standard distribution
-    3. Series Index are following dates since 2000
-    4. Slice dates from 2000-02-14 to end of February 2000
-    5. Compare result with "Tests" section (see below)
-
-Polish:
-    1. Ustaw ziarno losowości na zero
-    2. Stwórz ``pd.Series`` z 100 losowymi liczbami z rozkładu normalnego
-    3. Indeksem w serii mają być kolejne dni od 2000 roku
-    4. Wytnij daty od 2000-02-14 do końca lutego 2000
-    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
-
-Tests:
-    .. code-block:: python
-
-        s: pd.Series
-        # 2000-02-14   -0.509652
-        # 2000-02-15   -0.438074
-        # 2000-02-16   -1.252795
-        # 2000-02-17    0.777490
-        # 2000-02-18   -1.613898
-        # 2000-02-19   -0.212740
-        # 2000-02-20   -0.895467
-        # 2000-02-21    0.386902
-        # 2000-02-22   -0.510805
-        # 2000-02-23   -1.180632
-        # 2000-02-24   -0.028182
-        # 2000-02-25    0.428332
-        # 2000-02-26    0.066517
-        # 2000-02-27    0.302472
-        # 2000-02-28   -0.634322
-        # 2000-02-29   -0.362741
-        # Freq: D, dtype: float64
-
-Hints:
-    * ``np.random.seed(0)``
-    * ``np.random.randn(10)``
-
-Slicing Slice Str
------------------
-* Assignment: Slicing Slice Str
-* Filename: :download:`assignments/series_slice_str.py`
-* Complexity: easy
-* Lines of code: 10 lines
-* Time: 13 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Create ``pd.Series`` with 26 random integers in range ``[10, 100)``
-    3. Name indexes like letters from ASCII alphabet (``ascii_lowercase: str``)
-    4. Find middle letter of alphabet
-    5. Slice from series 3 elements up and down from middle
-    6. Compare result with "Tests" section (see below)
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Stwórz ``pd.Series`` z 26 losowymi liczbami całkowitymi z przedziału ``<10; 100)``
-    3. Nazwij indeksy jak kolejne litery alfabetu ASCII (``ascii_lowercase: str``)
-    4. Znajdź środkową literę alfabetu
-    5. Wytnij z serii po 3 elementy w górę i w dół od wyszukanego środka
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
-
-Given:
-    .. code-block:: python
-
-        ascii_lowercase = 'abcdefghijklmnopqrstuvwxyz'
-
-Tests:
-    .. code-block:: python
-
-        s: pd.Series
-        # j    97
-        # k    80
-        # l    98
-        # m    98
-        # n    22
-        # o    68
-        # p    75
-        # dtype: int64
-
-Hints:
-    * ``np.random.randint(..., ..., size=...)``
+.. literalinclude:: assignments/pandas_series_slice_str.py
+    :caption: :download:`Solution <assignments/pandas_series_slice_str.py>`
+    :end-before: # Solution

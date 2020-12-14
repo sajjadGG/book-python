@@ -144,38 +144,6 @@ Date Index
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
-
-Series Getitem
---------------
-* Assignment: Series Getitem
-* Filename: :download:`assignments/series_getitem.py`
-* Complexity: easy
-* Lines of code: 5 lines
-* Time: 8 min
-
-English:
-    1. Set random seed to zero
-    2. Create ``pd.Series`` with 100 random numbers from standard normal distribution
-    3. Series Index are following dates since 2000
-    4. Print values:
-
-        a. at 2000-02-29,
-        b. first value in the series (without using ``.head()``),
-        c. last value in the series (without using ``.tail()``),
-        d. middle value in the series.
-
-Polish:
-    1. Ustaw ziarno losowości na zero
-    2. Stwórz ``pd.Series`` z 100 losowymi liczbami z rozkładu normalnego
-    3. Indeksem w serii mają być kolejne dni od 2000 roku
-    4. Wypisz wartości:
-
-        a. dnia 2000-02-29,
-        b. pierwszą wartość w serii (nie używając ``.head()``),
-        c. ostatnią wartość w serii (nie używając ``.tail()``),
-        d. środkowa wartość serii.
-
-Hints:
-    * ``np.random.seed(0)``
-    * ``np.random.randn(10)``
+.. literalinclude:: assignments/pandas_series_getitem.py
+    :caption: :download:`Solution <assignments/pandas_series_getitem.py>`
+    :end-before: # Solution

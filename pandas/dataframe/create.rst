@@ -127,46 +127,6 @@ Create from NDArray
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
-
-DataFrame Create
-----------------
-* Assignment: DataFrame Create
-* Filename: :download:`assignments/df_create.py`
-* Complexity: easy
-* Lines of code: 10 lines
-* Time: 5 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Create ``DataFrame`` for input data
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Stwórz ``DataFrame`` dla danych wejściowych
-
-Given:
-    .. csv-table::
-        :header: "Crew", "Role", "Astronaut"
-
-        "Prime", "CDR", "Neil Armstrong"
-        "Prime", "LMP", "Buzz Aldrin"
-        "Prime", "CMP", "Michael Collins"
-        "Backup", "CDR", "James Lovell"
-        "Backup", "LMP", "William Anders"
-        "Backup", "CMP", "Fred Haise"
-
-Hints:
-    * Use selection with ``alt`` key in your IDE
-    * If it's not working use CSV:
-
-        .. code-block:: text
-
-            "Crew", "Role", "Astronaut"
-            "Prime", "CDR", "Neil Armstrong"
-            "Prime", "LMP", "Buzz Aldrin"
-            "Prime", "CMP", "Michael Collins"
-            "Backup", "CDR", "James Lovell"
-            "Backup", "LMP", "William Anders"
-            "Backup", "CMP", "Fred Haise"
-
+.. literalinclude:: assignments/pandas_df_create.py
+    :caption: :download:`Solution <assignments/pandas_df_create.py>`
+    :end-before: # Solution

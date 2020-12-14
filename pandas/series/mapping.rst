@@ -401,65 +401,6 @@ Example
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
-
-Series Mapping Clean
---------------------
-* Assignment: Series Mapping Clean
-* Filename: :download:`assignments/series_mapping_clean.py`
-* Complexity: medium
-* Lines of code: 15 lines
-* Time: 21 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Convert ``DATA`` (see input section) to ``pd.Series``
-    3. Write function to clean up data
-    4. Function takes one ``str`` argument
-    5. Function returns cleaned text
-    6. Apply function to all elements of ``pd.Series``
-    7. Compare result with "Tests" section (see below)
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Przekonwertuj ``DATA`` (patrz sekcja input) do ``pd.Series``
-    3. Napisz funkcję czyszczącą dane
-    4. Funkcja przyjmuje jeden argument typu ``str``
-    5. Funkcja zwraca oczyszczony tekst
-    6. Zaaplikuj funkcję na wszystkich elementach ``pd.Series``
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
-
-Given:
-    .. code-block:: python
-
-        DATA = ['ul.Mieszka II',
-                'UL. Zygmunta III WaZY',
-                '  bolesława chrobrego ',
-                'ul Jana III SobIESkiego',
-                '\tul. Jana trzeciego Sobieskiego',
-                'ulicaJana III Sobieskiego',
-                'UL. JA    NA 3 SOBIES  KIEGO',
-                'ULICA JANA III SOBIESKIEGO  ',
-                'ULICA. JANA III SOBIeskieGO',
-                ' Jana 3 Sobieskiego  ',
-                'Jana III Sobi  eskiego ']
-
-Tests:
-    .. code-block:: python
-
-        s: pd.Series
-        # 0               Mieszka II
-        # 1        Zygmunta III Wazy
-        # 2      Bolesława Chrobrego
-        # 3     Jana III Sobieskiego
-        # 4     Jana III Sobieskiego
-        # 5     Jana III Sobieskiego
-        # 6     Jana III Sobieskiego
-        # 7     Jana III Sobieskiego
-        # 8     Jana III Sobieskiego
-        # 9     Jana III Sobieskiego
-        # 10    Jana III Sobieskiego
-        # dtype: object
-
-.. todo:: Translate input data to English
-
+.. literalinclude:: assignments/pandas_series_mapping_clean.py
+    :caption: :download:`Solution <assignments/pandas_series_mapping_clean.py>`
+    :end-before: # Solution

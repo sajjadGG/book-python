@@ -127,70 +127,18 @@ Length
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
+.. literalinclude:: assignments/pandas_series_create_float.py
+    :caption: :download:`Solution <assignments/pandas_series_create_float.py>`
+    :end-before: # Solution
 
-Series Create Float
--------------------
-* Assignment: Series Create Float
-* Filename: :download:`assignments/series_create_float.py`
-* Complexity: easy
-* Lines of code: 5 lines
-* Time: 3 min
+.. literalinclude:: assignments/
+    :caption: :download:`Solution <assignments/>`
+    :end-before: # Solution
 
-English:
-    1. Create ``pd.Series`` with 5 float numbers
-    2. One of those values must be ``None``
+.. literalinclude:: assignments/
+    :caption: :download:`Solution <assignments/>`
+    :end-before: # Solution
 
-Polish:
-    1. Stwórz ``pd.Series`` z 5 liczbami zmiennoprzecinkowymi
-    2. Jedną z tych wartości musi być ``None``
-
-Series Create Randint
----------------------
-* Assignment: Series Create Randint
-* Filename: :download:`assignments/series_create_randint.py`
-* Complexity: easy
-* Lines of code: 5 lines
-* Time: 3 min
-
-English:
-    1. Set random seed to zero
-    2. Create ``pd.Series`` with 10 random digits (``int`` from ``0`` to ``9``)
-
-Polish:
-    1. Ustaw ziarno losowości na zero
-    2. Stwórz ``pd.Series`` z 10 losowymi cyframi  (``int`` from ``0`` to ``9``)
-
-Series Create Even
-------------------
-* Assignment: Series Create Even
-* Filename: :download:`assignments/series_create_even.py`
-* Complexity: easy
-* Lines of code: 5 lines
-* Time: 3 min
-
-English:
-    1. Create ``pd.Series`` with 10 even numbers
-
-Polish:
-    1. Stwórz ``pd.Series`` z 10 liczbami parzystymi
-
-Series Create Dates
--------------------
-* Assignment: Series Create Dates
-* Filename: :download:`assignments/series_create_dates.py`
-* Complexity: easy
-* Lines of code: 5 lines
-* Time: 3 min
-
-English:
-    1. Gagarin flown to space on 1961-04-12
-    2. Armstrong set foot on the Moon on 1969-07-21
-    3. Create ``pd.Series`` with days between Gagarin's launch and Armstrong's first step
-    4. How many days passed?
-
-Polish:
-    1. Gagarin poleciał w kosmos w 1961-04-12
-    2. Armstrong postawił stopę na Księżycu w 1969-07-21
-    3. Stwórz ``pd.Series`` z dniami pomiędzy startem Gagarina a pierwszym krokiem Armstronga
-    4. Jak wiele dni upłynęło?
+.. literalinclude:: assignments/
+    :caption: :download:`Solution <assignments/>`
+    :end-before: # Solution

@@ -1,13 +1,13 @@
 """
 * Assignment: Pandas Read JSON OpenAPI
-* Filename: :download:`assignments/pandas_read_json_openapi.py`
+* Filename: pandas_read_json_openapi.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min
 
 English:
     1. Use data from "Given" section (see below)
-    2. Read data from `DATA` as `result: pd.DataFrame`
+    2. Read data from `DATA` as `df: pd.DataFrame`
     3. Use `requests` library
     4. Transpose data
     5. If cell is a `dict`, then extract value for `summary`
@@ -15,7 +15,7 @@ English:
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z `DATA` jako `result: pd.DataFrame`
+    2. Wczytaj dane z `DATA` jako `df: pd.DataFrame`
     3. Użyj biblioteki `requests`
     4. Transponuj dane
     5. Jeżeli komórka jest `dict`, to wyciągnij wartość dla `summary`
@@ -24,6 +24,9 @@ Polish:
 Tests:
     >>> type(result) is pd.DataFrame
     True
+    >>> pd.set_option('display.width', 500)
+    >>> pd.set_option('display.max_columns', 10)
+    >>> pd.set_option('display.max_rows', 10)
     >>> len(result) > 0
     True
     >>> list(result.columns)
@@ -42,9 +45,11 @@ import requests
 
 DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/json/openapi.json'
 
+result = ...
+
 
 # Solution
-data = requests.get(DATA).json()
-result = (pd.DataFrame(data['paths'])
+df = requests.get(DATA).json()
+result = (pd.DataFrame(df['paths'])
             .transpose()
             .applymap(lambda x: x['summary'] if type(x) == dict else pd.NA))

@@ -215,26 +215,6 @@ Logical XOR
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
-
-DataFrame Select
-----------------
-* Assignment: DataFrame Select
-* Filename: :download:`assignments/df_select.py`
-* Complexity: easy
-* Lines of code: 5 lines
-* Time: 8 min
-
-English:
-    .. todo:: Translate to English
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``iris: pd.DataFrame``
-    3. Przefiltruj ``inplace`` kolumnę 'Petal length' i pozostaw wartości powyżej 2.0
-    4. Wyświetl 5 pierwszych wierszy
-
-Given:
-    .. code-block:: python
-
-        DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris-clean.csv'
+.. literalinclude:: assignments/
+    :caption: :download:`Solution <assignments/>`
+    :end-before: # Solution

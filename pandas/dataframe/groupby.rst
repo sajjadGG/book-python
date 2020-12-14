@@ -481,105 +481,21 @@ Output format
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
+.. literalinclude:: assignments/pandas_df_groupby_phones.py
+    :caption: :download:`Solution <assignments/pandas_df_groupby_phones.py>`
+    :end-before: # Solution
 
-DataFrame Groupby Phones
-------------------------
-* Assignment: DataFrame Groupby Phones
-* Filename: :download:`assignments/df_groupby_phones.py`
-* Complexity: easy
-* Lines of code: 5 lines
-* Time: 8 min
+.. literalinclude:: assignments/pandas_df_groupby_astro_female.py
+    :caption: :download:`Solution <assignments/pandas_df_groupby_astro_female.py>`
+    :end-before: # Solution
 
-English:
-    1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``phones: pd.DataFrame``
-    3. Give information about total number of all phone calls for each calendar month
+.. literalinclude:: assignments/pandas_df_groupby_astro_flights.py
+    :caption: :download:`Solution <assignments/pandas_df_groupby_astro_flights.py>`
+    :end-before: # Solution
 
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``phones: pd.DataFrame``
-    3. Podaj informacje o łącznej liczbie wszystkich połączeń telefonicznych dla każdego miesiąca kalendarzowego
-
-Given:
-    .. code-block:: python
-
-        DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/phones-pl.csv'
-
-DataFrame Groupby Astro Female
-------------------------------
-* Assignment: DataFrame Groupby Astro Female
-* Filename: :download:`assignments/df_groupby_astro_female.py`
-* Complexity: medium
-* Lines of code: 5 lines
-* Time: 8 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``astro_female: pd.DataFrame``
-    3. Which nationality has the most flight time of a female in space?
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``astro_eva_all: pd.DataFrame``
-    3. Który kraj ma największy nalot kobiet w kosmosie?
-
-Given:
-    .. code-block:: python
-
-        DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/astro-gender.csv'
-
-DataFrame Groupby Astro Flights
--------------------------------
-* Assignment: DataFrame Groupby Astro Flights
-* Filename: :download:`assignments/df_groupby_astro_flights.py`
-* Complexity: medium
-* Lines of code: 5 lines
-* Time: 13 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``astro_flights: pd.DataFrame``
-    3. Create ranking of the most experienced astronauts (number of flights)
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``astro_flights: pd.DataFrame``
-    3. Stwórz ranking najbardziej doświadczonych astronautów (liczba lotów)
-
-Given:
-    .. code-block:: python
-
-        DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/astro-order.csv'
-
-DataFrame Groupby Astro EVA
----------------------------
-* Assignment: DataFrame Groupby Astro EVA
-* Filename: :download:`assignments/df_groupby_astro_eva.py`
-* Complexity: medium
-* Lines of code: 13 lines
-* Time: 21 min
-
-English:
-    1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``astro_eva_all: pd.DataFrame``
-    3. Create ranking of astronauts with the most time spent on EVA (ExtraVehicular Activity)
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``astro_eva_all: pd.DataFrame``
-    3. Stwórz ranking astronautów z największym czasem EVA (Spacerów kosmicznych)
-
-Given:
-    .. code-block:: python
-
-        DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/astro-eva.csv'
-
-Hints:
-    * Parse CSV and replace newlines inside fields with ``","``
-    * Split names into separate columns for each spacewalker (first, second, third)
-    * Split names into separate rows for each spacewalker (use ffill)
-    * Split times into separate columns (hours, minutes)
+.. literalinclude:: assignments/pandas_df_groupby_astro_eva.py
+    :caption: :download:`Solution <assignments/pandas_df_groupby_astro_eva.py>`
+    :end-before: # Solution
 
 
 References

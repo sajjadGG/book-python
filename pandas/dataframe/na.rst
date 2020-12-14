@@ -267,45 +267,6 @@ Drop
 Assignments
 ===========
 
-.. todo:: Convert assignments to literalinclude
-
-DataFrame NaN
--------------
-* Assignment: DataFrame NaN
-* Filename: :download:`assignments/df_nan.py`
-* Complexity: easy
-* Lines of code: 10 lines
-* Time: 8 min
-
-English:
-    TODO: English Translation
-
-Polish:
-    1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``iris: pd.DataFrame``
-    3. Pomiń pierwszą linię z metadanymi
-    4. Zmień nazwy kolumn na:
-
-        a. Sepal length
-        b. Sepal width
-        c. Petal length
-        d. Petal width
-        e. Species
-
-    5. Podmień wartości w kolumnie species
-
-        a. 0 -> 'setosa',
-        b. 1 -> 'versicolor',
-        c. 2 -> 'virginica'
-
-    6. Wybierz wartości w kolumnie 'Petal length' mniejsze od 4
-    7. Wybrane wartości ustaw na ``NaN``
-    8. Interpoluj liniowo wszystkie wartości ``NaN``
-    9. Usuń wiersze z pozostałymi wartościami ``NaN``
-    10. Wypisz dwa pierwsze wiersze
-    11. Wypisz liczbę wierszy
-
-Given:
-    .. code-block:: python
-
-        DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris-dirty.csv'
+.. literalinclude:: assignments/pandas_df_nan.py
+    :caption: :download:`Solution <assignments/pandas_df_nan.py>`
+    :end-before: # Solution

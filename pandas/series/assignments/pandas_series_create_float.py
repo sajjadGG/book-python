@@ -1,0 +1,38 @@
+"""
+* Assignment: Series Create Float
+* Filename: pandas_series_create_float.py
+* Complexity: easy
+* Lines of code: 5 lines
+* Time: 3 min
+
+English:
+    1. Create ``result: pd.Series`` with 5 float numbers
+    2. One of those values must be ``None``
+
+Polish:
+    1. Stwórz ``result: pd.Series`` z 5 liczbami zmiennoprzecinkowymi
+    2. Jedną z tych wartości musi być ``None``
+
+Tests:
+    >>> type(result) is pd.Series
+    True
+    >>> result
+    0    1.1
+    1    2.2
+    2    NaN
+    3    4.4
+    4    5.5
+    dtype: float64
+"""
+
+
+# Given
+import pandas as pd
+
+
+result = ...
+
+
+# Solution
+result = pd.Series([1.1, 2.2, None, 4.4, 5.5])
+
