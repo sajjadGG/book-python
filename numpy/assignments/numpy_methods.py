@@ -42,6 +42,9 @@ DATA = np.array([[44, 47, 64, 67],
                  [36, 87, 70, 88]])
 
 
+result = ...
+
+
 # Solution
 DATA[:, -1].fill(0)
 result = DATA.transpose()

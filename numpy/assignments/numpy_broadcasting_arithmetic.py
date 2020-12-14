@@ -40,6 +40,8 @@ a = np.array([[0, 1], [2, 3]], float)
 b = np.array([2, 3], float)
 c = np.array([[1, 1], [4, 0]], float)
 
+result = ...
+
 
 # Solution
 a = np.sqrt(a)

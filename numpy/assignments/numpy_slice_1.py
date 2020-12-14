@@ -36,5 +36,8 @@ DATA = np.array([
 ])
 
 
+result = ...
+
+
 # Solution
 result = DATA[1:3, 1:3]

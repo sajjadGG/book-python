@@ -37,6 +37,9 @@ DATA = [('x', 'y'),
         (3.0, 7.0)]
 
 
+result = ...
+
+
 # Solution
 data = np.array(DATA[1:])
 x = data[:, 0]

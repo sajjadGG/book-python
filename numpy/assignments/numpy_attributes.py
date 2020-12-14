@@ -41,8 +41,8 @@ Tests:
 # Given
 import numpy as np
 
-a = np.array([[-1.1, 0.0, 1.1],
-              [2.2, 3.3, 4.4]])
+DATA = np.array([[-1.1, 0.0, 1.1],
+                 [2.2, 3.3, 4.4]])
 
 result = {
     'number of dimensions': ...,
@@ -56,10 +56,10 @@ result = {
 
 # Solution
 result = {
-    'number of dimensions': a.ndim,
-    'number of elements': a.size,
-    'data type': a.dtype,
-    'element size': a.itemsize,
-    'shape': a.shape,
-    'strides': a.strides,
+    'number of dimensions': DATA.ndim,
+    'number of elements': DATA.size,
+    'data type': DATA.dtype,
+    'element size': DATA.itemsize,
+    'shape': DATA.shape,
+    'strides': DATA.strides,
 }

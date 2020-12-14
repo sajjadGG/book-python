@@ -7,27 +7,27 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Given `a: np.ndarray` (see below)
-    3. Convert to `int` and save result as `a`
-    4. Convert to `bool` and save result as `b`
+    2. Given `DATA: np.ndarray` (see below)
+    3. Convert to `int` and save result as `result_int`
+    4. Convert to `bool` and save result as `result_bool`
     5. What happened in each of those steps?
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Dany `a: np.ndarray` (patrz sekcja input)
-    3. Przekonwertuj do typu `int` i wynik zapisz jako `a`
-    4. Przekonwertuj do typu `bool` i wynik zapisz jako `b`
+    2. Dany `DATA: np.ndarray` (patrz sekcja input)
+    3. Przekonwertuj do typu `int` i wynik zapisz jako `result_int`
+    4. Przekonwertuj do typu `bool` i wynik zapisz jako `result_bool`
     5. Co się stało w każdym z tych kroków?
 
 Tests:
-    >>> type(a) is np.ndarray
+    >>> type(result_int) is np.ndarray
     True
-    >>> type(b) is np.ndarray
+    >>> type(result_bool) is np.ndarray
     True
-    >>> a
+    >>> result_int
     array([[-1,  0,  1],
            [ 2,  3,  4]])
-    >>> b
+    >>> result_bool
     array([[ True, False,  True],
            [ True,  True,  True]])
 """
@@ -37,11 +37,14 @@ Tests:
 import numpy as np
 
 
-data = np.array([[-1.1, 0.0, 1.1],
+DATA = np.array([[-1.1, 0.0, 1.1],
                  [2.2, 3.3, 4.4]])
 
 
+result_int = ...
+result_bool = ...
+
 # Solution
-a = data.astype(int)
-b = data.astype(bool)
+result_int = DATA.astype(int)
+result_bool = DATA.astype(bool)
 

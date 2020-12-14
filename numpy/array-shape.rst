@@ -3,7 +3,41 @@ Array Shape
 ***********
 
 
+Recap
+=====
+    >>> obj = [1, 2, 3]
+    >>>
+    >>> len(obj)
+    3
+
+    >>> obj1 = [1, 2, 3]
+    >>> obj2 = [4, 5, 6]
+    >>>
+    >>> len([obj1, obj2])
+    2
+    >>> len([ [1,2,3], [4,5,6] ])
+    2
+    >>> len([[1,2,3],
+    ...      [4,5,6]])
+    2
+
+    >>> obj1 = [1, 2, 3]
+    >>> obj2 = [4, 5, 6]
+    >>> obj3 = [7, 8, 9]
+    >>> obj4 = [10, 11, 12]
+    >>>
+    >>> len([ [obj1, obj2], [obj3, obj4] ])
+    2
+    >>> len([[obj1, obj2],
+    ...      [obj3, obj4]])
+    2
+
+
+Rationale
+=========
 * Any shape operation changes only ``np.ndarray.shape`` and ``np.ndarray.strides`` and does not touch data
+
+
 
 Shape
 =====
@@ -248,6 +282,6 @@ Ravel
 Assignments
 ===========
 
-.. literalinclude:: assignments/numpy_shape.py
-    :caption: :download:`Solution <assignments/numpy_shape.py>`
+.. literalinclude:: assignments/numpy_shape_1d.py
+    :caption: :download:`Solution <assignments/numpy_shape_1d.py>`
     :end-before: # Solution

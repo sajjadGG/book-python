@@ -363,7 +363,7 @@ Stringify
 
 Performance
 ===========
-* Results with `%%timeit -n 1_000_000 -r 10`
+* Results with ``%%timeit -n 1_000_000 -r 10``
 
 .. code-block:: python
 

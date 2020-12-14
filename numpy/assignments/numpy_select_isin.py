@@ -41,6 +41,9 @@ import numpy as np
 np.random.seed(0)
 
 
+result = ...
+
+
 # Solution
 a = np.random.randint(0, 1025, size=(50, 50))
 selection = 2 ** np.arange(11)

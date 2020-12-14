@@ -45,6 +45,8 @@ DATA = np.array([[44, 47, 64],
                  [65, 39, 87],
                  [46, 88, 81]])
 
+result = ...
+
 
 # Solution
 result = DATA

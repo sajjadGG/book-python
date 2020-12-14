@@ -28,6 +28,9 @@ Tests:
 import numpy as np
 
 
+result = ...
+
+
 # Solution
 result = np.arange(0, 100, step=2, dtype=float)
 

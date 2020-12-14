@@ -51,6 +51,8 @@ DATA = np.array([
     [7, 8, 9]
 ])
 
+result = ...
+
 
 # Solution
 result = np.empty(shape=(2,2), dtype=float)

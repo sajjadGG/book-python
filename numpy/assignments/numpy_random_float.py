@@ -27,5 +27,8 @@ import numpy as np
 np.random.seed(0)
 
 
+result = ...
+
+
 # Solution
 result = np.random.rand(10)

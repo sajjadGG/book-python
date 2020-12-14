@@ -59,6 +59,10 @@ import numpy as np
 
 DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris-dirty.csv'
 
+species = ...
+features = ...
+labels = ...
+
 
 # Solution
 species = np.loadtxt(DATA, max_rows=1, delimiter=',', dtype=str, usecols=(2,3,4))

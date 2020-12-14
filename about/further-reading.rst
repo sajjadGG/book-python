@@ -49,7 +49,6 @@ Django:
     * DjangoCon EU: https://pyvideo.org/events/djangocon-europe-2019.html
 
 
-
 Speakers
 ========
 Python:
@@ -72,7 +71,7 @@ Python:
 
         * https://pyvideo.org/speaker/guido-van-rossum.html
 
-    * Larry Hastings (Python):
+    * Larry Hastings:
 
         * https://pyvideo.org/speaker/larry-hastings.html
 
