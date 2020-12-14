@@ -22,7 +22,7 @@ Tests:
     >>> type(result) is list
     True
     >>> result
-    [2, 4, 6, 8, 2, 4, 6, 8]
+    [2, 4, 6, 8]
 """
 
 
@@ -44,10 +44,10 @@ for value in DATA.ravel():
         result.append(value)
 
 
-## Alternative solution
-for row in DATA:
-    for value in row:
-        if value % 2 == 0:
-            result.append(value)
+# ## Alternative solution
+# for row in DATA:
+#     for value in row:
+#         if value % 2 == 0:
+#             result.append(value)
 
 

@@ -24,13 +24,12 @@ Array
     array-dtype.rst
     array-shape.rst
     array-attributes.rst
-    array-random.rst
     array-getitem.rst
     array-slice.rst
-    array-iteration.rst
-    array-rounding.rst
     array-axis.rst
     array-newaxis.rst
+    array-random.rst
+    array-rounding.rst
     array-sort.rst
     array-methods.rst
     array-concatenation.rst
@@ -43,6 +42,7 @@ Select
     :caption: Select
     :name: Numpy Select
 
+    array-iteration.rst
     array-arithmetic.rst
     array-broadcasting.rst
     array-reduction.rst

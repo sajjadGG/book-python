@@ -37,10 +37,10 @@ Bits and Bytes
 .. code-block:: text
     :caption: 3 bit signed integers. Values: 8, minimal: -4, maximal: 3
 
-    0       000
-    1       001
-    2       010
-    3       011
+    +0      000
+    +1      001
+    +2      010
+    +3      011
     −4      100
     −3      101
     −2      110
@@ -49,11 +49,11 @@ Bits and Bytes
 .. code-block:: text
     :caption: 8 bit signed integers. Values: 256, minimal: -128, maximal: 127
 
-    0       00000000
-    1       00000001
-    2       00000010
-    126     01111110
-    127     01111111
+    +0      00000000
+    +1      00000001
+    +2      00000010
+    +126    01111110
+    +127    01111111
     −128    10000000
     −127    10000001
     −126    10000010
@@ -108,7 +108,7 @@ Signed int
 * ``np.int64``
 
 .. csv-table:: Number of values is calculated with ``2 ** bytes``
-    :header: "Type", "Bytes", "Number of Values", "Minimal", "Maximal"
+    :header: "Type", "Bits", "Number of Values", "Minimal", "Maximal"
 
     "``np.int8``", "8", "256", "-128", "127"
     "``np.int16``", "16", "65,536", "-32,768", "32,767"
@@ -159,7 +159,7 @@ Unsigned int
 * ``np.uint64``
 
 .. csv-table:: Number of values is calculated with ``2 ** bytes``
-    :header: "Type", "Bytes", "Number of Values", "Minimal", "Maximal"
+    :header: "Type", "Bits", "Number of Values", "Minimal", "Maximal"
 
     "``np.uint8``", "8", "256", "0", "255"
     "``np.uint16``", "16", "65,536", "0", "65,535"
@@ -205,7 +205,7 @@ float
 * ``np.float128``
 
 .. csv-table:: Number of values is calculated with ``2 ** bytes``
-    :header: "Type", "Bytes", "Minimal", "Maximal"
+    :header: "Type", "Bits", "Minimal", "Maximal"
 
     "``np.float16``", "16", "-65,504", "65,504"
     "``np.float32``", "32", "±0.000000×10−95", "±9.999999×1096"

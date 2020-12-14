@@ -63,6 +63,19 @@ Comprehensions and Generator Expression
     # Generator Expression
     (x for x in range(0,5))            # <generator object <genexpr> at 0x118c1aed0>
 
+.. code-block:: python
+
+    _ = list(x for x in range(0,5))     # list comprehension
+    _ = tuple(x for x in range(0,5))    # tuple comprehension
+    _ = set(x for x in range(0,5))      # set comprehension
+    _ = dict((x,x) for x in range(0,5)) # dict comprehension
+
+.. code-block:: python
+
+    _ = [x for x in range(0,5)]         # list comprehension
+    _ = (x for x in range(0,5))         # generator expression
+    _ = {x for x in range(0,5)}         # set comprehension
+    _ = {x:x for x in range(0,5)}       # dict comprehension
 
 Comprehensions or Generator Expression
 ======================================

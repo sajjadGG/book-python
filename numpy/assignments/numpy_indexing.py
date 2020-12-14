@@ -61,14 +61,6 @@ result[0,1] = DATA[2,2]
 result[1,0] = DATA[0,0]
 result[1,1] = DATA[1,0]
 
-
-# ## Alternative Solution
-# result = np.empty(shape=(2,2), dtype=float)
-# result[0,0] = DATA[0,2]
-# result[0,1] = DATA[2,2]
-# result[1,0] = DATA[0,0]
-# result[1,1] = DATA[1,0]
-#
 # ## Alternative Solution
 # result = np.array([
 #     DATA[0][2],

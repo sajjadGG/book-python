@@ -15,6 +15,9 @@ Polish:
     2. Zdefiniuj `result_sort` z posortowanym `DATA` po kolumnach
     3. Zdefiniuj `result_flip` z flipniętym `DATA` po wierszach
 
+Hints:
+    * `.sort()` returns `None`
+
 Tests:
     >>> type(result_sort) is np.ndarray
     True

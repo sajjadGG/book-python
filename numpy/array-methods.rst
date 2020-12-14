@@ -39,20 +39,6 @@ One dimensional
     a = np.array([1, 2, 3, 4, 5, 6])
 
     a.put([0, 2, 5], 99)
-
-    a
-    # array([99,  2, 99,  4,  5, 99])
-
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([1, 2, 3, 4, 5, 6])
-    at_index = [0, 2, 5]
-
-    a.put(at_index, 99)
-
     a
     # array([99,  2, 99,  4,  5, 99])
 
@@ -63,10 +49,8 @@ One dimensional
 
     a = np.array([1, 2, 3, 4, 5, 6])
     b = np.array([99, 88, 77, 66, 55, 44, 33, 22])
-    at_index = [0, 2, 5]
 
-    a.put(at_index, b)
-
+    a.put([0, 2, 5], b)
     a
     # array([99,  2, 88,  4,  5, 77])
 
@@ -84,10 +68,8 @@ Two dimensional
                   [7, 8, 9]])
 
     b = np.array([99, 88, 77, 66, 55, 44, 33, 22])
-    at_index = [0, 2, 5]
 
-    a.put(at_index, b)
-
+    a.put([0, 2, 5], b)
     a
     # array([[99,  2, 88],
     #        [ 4,  5, 77],
@@ -109,6 +91,7 @@ Fill
                   [7, 8, 9]])
 
     a.fill(0)
+    a
     # array([[0, 0, 0],
     #        [0, 0, 0],
     #        [0, 0, 0]])
@@ -124,6 +107,7 @@ Fill
                   [7, 8, 9]])
 
     a[:, 0].fill(0)
+    a
     # array([[0, 2, 3],
     #        [0, 5, 6],
     #        [0, 8, 9]])
@@ -136,10 +120,9 @@ Fill
 
     a = np.array([[1, 2, 3],
                   [4, 5, 6],
-                  [7, 8, 9]], dtype=np.float)
+                  [7, 8, 9]], dtype=np.int)
 
     a[:, 0].fill(np.nan)
-
     a
     # array([[-9223372036854775808, 2, 3],
     #        [-9223372036854775808, 5, 6],
@@ -232,10 +215,13 @@ Signum
     # t7 = 10 lux
     # t8 = 0 lux
 
-    a = np.array([230, 218, 230, 2, 0, 0, 10, 0])
-
-    np.sign(a)
+    data = np.array([230, 218, 230, 2, 0, 0, 10, 0])
+    np.sign(data)
     # array([1, 1, 1, 1, 0, 0, 1, 0])
+
+    data[data<50] = 0
+    np.sign(data)
+    # array([1, 1, 1, 0, 0, 0, 0, 0])
 
 
 Assignments

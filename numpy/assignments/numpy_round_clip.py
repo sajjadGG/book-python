@@ -19,6 +19,9 @@ Polish:
     4. Wypisz `result`
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
+Hints:
+    * `result[:, 0]`
+
 Tests:
     >>> type(result) is np.ndarray
     True
@@ -50,5 +53,5 @@ result = ...
 
 # Solution
 result = DATA
-result[:, 0] = DATA[:, 0].clip(50, 80)
+result[:, 0] = result[:, 0].clip(50, 80)
 

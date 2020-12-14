@@ -48,7 +48,8 @@ Shape
 
     a = np.array([1, 2, 3])
 
-    a.shape     # (3,)
+    a.shape
+    # (3,)
 
 .. code-block:: python
 
@@ -58,7 +59,8 @@ Shape
     a = np.array([[1, 2, 3],
                   [4, 5, 6]])
 
-    a.shape     # (2, 3)
+    a.shape
+    # (2, 3)
 
 .. code-block:: python
 
@@ -69,7 +71,8 @@ Shape
                   [4, 5, 6],
                   [7, 8, 9]])
 
-    a.shape     # (3, 3)
+    a.shape
+    # (3, 3)
 
 .. code-block:: python
 
@@ -83,7 +86,8 @@ Shape
                    [44, 55, 66],
                    [77, 88, 99]]])
 
-    a.shape         # (2, 3, 3)
+    a.shape
+    # (2, 3, 3)
 
 
 Reshape

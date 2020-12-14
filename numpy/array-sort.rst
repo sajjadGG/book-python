@@ -5,9 +5,6 @@ Array Sort
 
 Sort
 ====
-
-One dimensional
----------------
 .. code-block:: python
 
     import numpy as np
@@ -19,62 +16,32 @@ One dimensional
     a
     # array([1, 2, 3])
 
-Two dimensional - Default axis
-------------------------------
 .. code-block:: python
 
     import numpy as np
 
 
-    a = np.array([[2, 3, 1],
-                  [5, 6, 4]])
-    a.sort()
-
-    a
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
-
-Two dimensional - Columns
--------------------------
-.. code-block:: python
-
-    import numpy as np
-
-
-    a = np.array([[2, 3, 1],
-                  [5, 6, 4]])
-
-    a.shape
-    # (2, 3)
-
-    a.sort(axis=0)
-    # array([[2, 3, 1],
-    #        [5, 6, 4]])
-
-    a.sort(axis=1)
-    # array([[1, 2, 3],
-    #        [4, 5, 6]])
-
-Two dimensional - Rows
-----------------------
-.. code-block:: python
-
-    import numpy as np
-
-    a = np.array([[9, 1, 8],
+    a = np.array([[9, 7, 8],
                   [2, 3, 1],
                   [5, 6, 4]])
+    b = a.copy()
+    c = a.copy()
 
-    a.shape
-    # (3,3)
+    a.sort()
+    a
+    # array([[7, 8, 9],
+    #        [1, 2, 3],
+    #        [4, 5, 6]])
 
-    a.sort(axis=0)
-    # array([[2, 1, 1],
-    #        [5, 3, 4],
-    #        [9, 6, 8]])
+    b.sort(axis=0)
+    b
+    # array([[2, 3, 1],
+    #        [5, 6, 4],
+    #        [9, 7, 8]])
 
-    a.sort(axis=1)
-    # array([[1, 8, 9],
+    c.sort(axis=1)
+    c
+    # array([[7, 8, 9],
     #        [1, 2, 3],
     #        [4, 5, 6]])
 
