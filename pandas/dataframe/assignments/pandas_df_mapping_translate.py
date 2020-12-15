@@ -7,21 +7,21 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``df: pd.DataFrame``
+    2. Read data from `DATA` as `df: pd.DataFrame`
     3. Set header and index to data from file
     4. Convert Polish month names to English
-    5. Parse dates to ``datetime`` objects
+    5. Parse dates to `datetime` objects
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``df: pd.DataFrame``
+    2. Wczytaj dane z `DATA` jako `df: pd.DataFrame`
     3. Ustaw nagłówek i index na dane zaczytane z pliku
     4. Przekonwertuj polskie nazwy miesięcy na angielskie
-    5. Sparsuj daty do obiektów ``datetime``
+    5. Sparsuj daty do obiektów `datetime`
 
 Hints:
-    * ``pd.Series.replace(regex=True)``
-    * ``pd.to_datetime()``
+    * `pd.Series.replace(regex=True)`
+    * `pd.to_datetime()`
 
 Tests:
     >>> type(result) is pd.DataFrame

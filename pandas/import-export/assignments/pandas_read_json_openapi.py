@@ -2,20 +2,23 @@
 * Assignment: Pandas Read JSON OpenAPI
 * Filename: pandas_read_json_openapi.py
 * Complexity: easy
-* Lines of code: 2 lines
+* Lines of code: 3 lines
 * Time: 5 min
 
 English:
     1. Use data from "Given" section (see below)
-    2. Read data from `DATA` as `result: pd.DataFrame`
-    3. Use `requests` library
-    4. Print `result`
+    2. Define `resp` with result of `requests.get()` for `DATA`
+    3. Define `data` with conversion of `resp` from JSON to Python dict by calling `.json()` on `resp`
+    5. Define `result: pd.DataFrame` from value for key `paths` in `data` dict
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z `DATA` jako `result: pd.DataFrame`
-    3. Użyj biblioteki `requests`
-    4. Wypisz `result`
+    2. Zdefiniuj `resp` z resultatem `requests.get()` dla `DATA`
+    3. Zdefiniuj `data` z przekształceniem `resp` z JSON do Python dict wywołując `.json()` na `resp`
+    4. Zdefiniuj `result: pd.DataFrame` dla wartości z klucza `paths` w słowniku `data`
+
+Hints:
+    * ``pd.DataFrame(data)``
 
 Tests:
     >>> type(result) is pd.DataFrame
@@ -38,6 +41,11 @@ import requests
 DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/json/openapi.json'
 
 
+resp = ...
+data = ...
+result = ...
+
 # Solution
-data = requests.get(DATA).json()
-result = pd.DataFrame(data['paths'])
+resp = requests.get(DATA)
+data = resp.json()['paths']
+result = pd.DataFrame(data)

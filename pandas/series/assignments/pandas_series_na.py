@@ -7,7 +7,7 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. From input data create ``pd.Series``
+    2. From input data create `pd.Series`
     3. Fill first missing value with zero
     4. Drop missing values
     5. Reindex series (without old copy)
@@ -15,7 +15,7 @@ English:
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Z danych wejściowych stwórz ``pd.Series``
+    2. Z danych wejściowych stwórz `pd.Series`
     3. Wypełnij pierwszą brakującą wartość zerem
     4. Usuń brakujące wartości
     5. Zresetuj indeks (bez kopii starego)

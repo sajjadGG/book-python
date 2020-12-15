@@ -43,6 +43,7 @@ Examples
 
     import pandas as pd
 
+
     DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris-clean.csv'
     header = pd.read_csv(DATA, nrows=0).columns
 
@@ -107,9 +108,9 @@ Read HTML
 =========
 .. code-block:: python
 
-    URL = 'https://python.astrotech.io/numerical-analysis/pandas/df-create.html'
+    DATA = 'https://python.astrotech.io/numerical-analysis/pandas/df-create.html'
 
-    pd.read_html(URL)
+    pd.read_html(DATA)
     # Traceback (most recent call last):
     # urllib.error.HTTPError: HTTP Error 403: Forbidden
 
@@ -117,12 +118,13 @@ Read HTML
 
     import requests
 
-    URL = 'https://python.astrotech.io/numerical-analysis/pandas/df-create.html'
+    DATA = 'https://python.astrotech.io/numerical-analysis/pandas/df-create.html'
+    USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36'
 
-    resp = requests.get(URL, headers={
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36'})
+    resp = requests.get(DATA, headers={'User-Agent': USER_AGENT})
+    dfs = pd.read_html(resp.content)
 
-    pd.read_html(resp.content)[0]
+    dfs[0]
     #      Crew Role        Astronaut
     # 0   Prime  CDR   Neil Armstrong
     # 1   Prime  LMP      Buzz Aldrin
@@ -152,7 +154,9 @@ StringIO
     """
 
     data = StringIO(DATA)
-    pd.read_csv(data)
+    df = pd.read_csv(data)
+
+    df
     #      Crew  "Role"         "Astronaut"
     # 0   Prime   "CDR"    "Neil Armstrong"
     # 1   Prime   "LMP"       "Buzz Aldrin"
@@ -170,8 +174,9 @@ StringIO
 
     resp = requests.get(DATA)
     data = StringIO(resp.text)
+    df = pd.read_csv(data)
 
-    pd.read_csv(data)
+    df
     #      Order           Astronaut         Date       Mission
     # 0      1.0        Yuri Gagarin   1961-04-12        Vostok
     # 1      2.0       Gherman Titov   1961-08-06      Vostok 2
@@ -194,12 +199,15 @@ Read SQL
     import sqlite3
     import requests
 
+    DATA = r'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/sqlite3/astro-timeline.sqlite3'
     DATABASE = r'/tmp/astro-timeline.sqlite3'
-    URL = r'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/sqlite3/astro-timeline.sqlite3'
-    SQL = r'SELECT * FROM logs'
+    SQL = """
+        SELECT *
+        FROM logs
+    """
 
     with open(DATABASE, mode='wb') as db:
-        resp = requests.get(URL)
+        resp = requests.get(DATA)
         db.write(resp.content)
 
     with sqlite3.connect(DATABASE) as db:
@@ -315,15 +323,16 @@ XML and XSLT
 
     transform = XSLT(XML(TEMPLATE))
     data = parse(StringIO(DATA))
-    html = transform(data)
+    html = str(transform(data))
+    dfs = pd.read_html(html)
+    result = dfs[0]
 
-    result = pd.read_html(str(html))[0]
-    # result
-    #       Id  ...                                        Description
+    result
+    # [      Id  ...                                        Description
     # 0  bk101  ...  An in-depth look at creating applications  wit...
     # 1  bk102  ...  A former architect battles corporate zombies, ...
     # 2  bk103  ...  After the collapse of a nanotechnology  societ...
-    # [3 rows x 7 columns]
+    # [3 rows x 7 columns]]
 
     type(result) is pd.DataFrame
     # True

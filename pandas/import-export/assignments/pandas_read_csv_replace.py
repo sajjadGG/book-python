@@ -3,7 +3,7 @@
 * Filename: pandas_read_csv_replace.py
 * Complexity: easy
 * Lines of code: 5 lines
-* Time: 5 min
+* Time: 8 min
 
 English:
     1. Use data from "Given" section (see below)
@@ -11,7 +11,7 @@ English:
     3. Use provided column names in `COLUMNS`
     4. Read labels from the first row
     5. Replace data in `label` column with values extracted above
-    6. Store in `result` only 20 first rows
+    6. Define `result: pd.DataFrame` with 20 first rows
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -19,10 +19,11 @@ Polish:
     3. Użyj podanych w `COLUMNS` nazw kolumn
     4. Wczytaj nazwy labeli z pierwszego wiersza
     5. Podmień dane w kolumnie `label` na wartości wyciągnięte powyżej
-    6. Zachowaj w `result` tylko 20 pierwszych wierszy
+    6. Zdefiniuj `result: pd.DataFrame` z 20stoma pierwszymi wierszami
 
 Hints:
-    * `pd.read_csv(url, nrows=0).columns`
+    * `hader = pd.read_csv(url, nrows=0).columns`
+    * `cancer_types = dict(enumerate(header[2:]))`
     * `df['label'].replace({'from': 'to'}, inplace=True)`
 
 Tests:
@@ -57,9 +58,9 @@ COLUMNS = ['mean radius', 'mean texture', 'mean perimeter', 'mean area',
 
 
 # Solution
-header = pd.read_csv(DATA, nrows=0)
-labels = dict(enumerate(header.columns[2:]))
+header = pd.read_csv(DATA, nrows=0).columns
+cancer_types = dict(enumerate(header[2:]))
 
 df = pd.read_csv(DATA, skiprows=1, names=COLUMNS)
-df['label'].replace(to_replace=labels, inplace=True)
+df['label'].replace(to_replace=cancer_types, inplace=True)
 result = df.head(20)

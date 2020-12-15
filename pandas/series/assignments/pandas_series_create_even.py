@@ -6,10 +6,10 @@
 * Time: 3 min
 
 English:
-    1. Create ``result: pd.Series`` with 10 even numbers
+    1. Create `result: pd.Series` with 10 even numbers
 
 Polish:
-    1. Stwórz ``result: pd.Series`` z 10 liczbami parzystymi
+    1. Stwórz `result: pd.Series` z 10 liczbami parzystymi
 
 Tests:
     >>> type(result) is pd.Series

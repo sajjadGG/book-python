@@ -10,7 +10,7 @@ English:
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``df: pd.DataFrame``
+    2. Wczytaj dane z `DATA` jako `df: pd.DataFrame`
     3. Pomiń pierwszą linię z metadanymi
     4. Zmień nazwy kolumn na:
         a. Sepal length
@@ -23,10 +23,10 @@ Polish:
         b. 1 -> 'versicolor',
         c. 2 -> 'virginica'
     6. Wybierz wartości w kolumnie 'Petal length' mniejsze od 4
-    7. Wybrane wartości ustaw na ``NaN``
-    8. Interpoluj liniowo wszystkie wartości ``NaN``
-    9. Usuń wiersze z pozostałymi wartościami ``NaN``
-    10. Zdefiniuj ``result`` jako dwa pierwsze wiersze
+    7. Wybrane wartości ustaw na `NaN`
+    8. Interpoluj liniowo wszystkie wartości `NaN`
+    9. Usuń wiersze z pozostałymi wartościami `NaN`
+    10. Zdefiniuj `result` jako dwa pierwsze wiersze
 
 Tests:
     >>> type(result) is pd.DataFrame

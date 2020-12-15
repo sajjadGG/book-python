@@ -7,7 +7,7 @@
 
 English:
     1. Set random seed to zero
-    2. Create ``pd.Series`` with 100 random numbers from standard normal distribution
+    2. Create `pd.Series` with 100 random numbers from standard normal distribution
     3. Series Index are following dates since 2000
     4. Print values:
 
@@ -20,7 +20,7 @@ English:
 
 Polish:
     1. Ustaw ziarno losowości na zero
-    2. Stwórz ``pd.Series`` z 100 losowymi liczbami z rozkładu normalnego
+    2. Stwórz `pd.Series` z 100 losowymi liczbami z rozkładu normalnego
     3. Indeksem w serii mają być kolejne dni od 2000 roku
     4. Wypisz wartości:
 
@@ -32,8 +32,8 @@ Polish:
         f. 125% losowych elementów z powtórzeniami.
 
 Hints:
-    * ``np.random.seed(0)``
-    * ``np.random.randn(n)``
+    * `np.random.seed(0)`
+    * `np.random.randn(n)`
 
 Tests:
     >>> type(result) is dict

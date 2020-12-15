@@ -10,26 +10,26 @@ English:
 
 Polish:
     1. Ustaw ziarno losowości na zero
-    2. Stwórz ``df: pd.DataFrame`` z 50 wierszami:
-        a. kolumna ``mileage`` - losowe ``int`` [0, 200_000)
-        b. kolumna ``consumption`` - losowe ``int`` [0, 20)
-    3. Dodaj kolumnę ``status`` o wartościach:
-        a. ``old`` jeżeli ``mileage`` powyżej 100_000 km
-        b. ``young`` jeżeli ``mileage`` od 10_000 km do 50_000 km
-        c. ``new`` jeżeli ``mileage`` od 0 do 10_000 km
-    4. Używając ``pd.cut`` dodaj kolumnę ``type``:
-        a. jeżeli ``consumption`` [0, 1] ``type`` to ``electric``
-        b. jeżeli ``consumption`` [2, 10] ``type`` to ``car``
-        c. jeżeli ``consumption`` 11 i więcej, ``type`` to ``truck``
+    2. Stwórz `df: pd.DataFrame` z 50 wierszami:
+        a. kolumna `mileage` - losowe `int` [0, 200_000)
+        b. kolumna `consumption` - losowe `int` [0, 20)
+    3. Dodaj kolumnę `status` o wartościach:
+        a. `old` jeżeli `mileage` powyżej 100_000 km
+        b. `young` jeżeli `mileage` od 10_000 km do 50_000 km
+        c. `new` jeżeli `mileage` od 0 do 10_000 km
+    4. Używając `pd.cut` dodaj kolumnę `type`:
+        a. jeżeli `consumption` [0, 1] `type` to `electric`
+        b. jeżeli `consumption` [2, 10] `type` to `car`
+        c. jeżeli `consumption` 11 i więcej, `type` to `truck`
     5. Przeanalizuj dane statystycznie:
-        a. Zapisz podstawowe statystyki opisowe (``DataFrame.describe()``) do `result: pd.DataFrame`
-        b. Sprawdź liczność grup (``DataFrame.count()``, ``Series.value_counts()``)
+        a. Zapisz podstawowe statystyki opisowe (`DataFrame.describe()`) do `result: pd.DataFrame`
+        b. Sprawdź liczność grup (`DataFrame.count()`, `Series.value_counts()`)
 
 Extra Task:
     1. (wymaga wiedzy z przyszłych rozdziałów)
-    2. Narysuj histogram dla ``consumption``
-    3. Pogrupuj dane po ``type`` i ``status`` a następnie wypisz statystyki opisowe
-    4. Pogrupuj dane po ``type`` i ``status``, wypisz statystyki opisowe a następnie je transponuj
+    2. Narysuj histogram dla `consumption`
+    3. Pogrupuj dane po `type` i `status` a następnie wypisz statystyki opisowe
+    4. Pogrupuj dane po `type` i `status`, wypisz statystyki opisowe a następnie je transponuj
 
 Tests:
     >>> type(result) is pd.DataFrame

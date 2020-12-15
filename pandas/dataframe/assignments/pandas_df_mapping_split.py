@@ -7,19 +7,19 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``df: pd.DataFrame``
-    3. Parse data in ``date`` column as ``datetime`` object
-    4. Split column ``date`` with into two separate: date and time columns
+    2. Read data from `DATA` as `df: pd.DataFrame`
+    3. Parse data in `date` column as `datetime` object
+    4. Split column `date` with into two separate: date and time columns
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``df: pd.DataFrame``
-    3. Sparsuj dane w kolumnie ``date`` jako obiekty ``datetime``
-    4. Podziel kolumnę z ``date`` na dwie osobne: datę i czas
+    2. Wczytaj dane z `DATA` jako `df: pd.DataFrame`
+    3. Sparsuj dane w kolumnie `date` jako obiekty `datetime`
+    4. Podziel kolumnę z `date` na dwie osobne: datę i czas
 
 Hints:
-    * ``pd.Series.dt.date``
-    * ``pd.Series.dt.time``
+    * `pd.Series.dt.date`
+    * `pd.Series.dt.time`
 
 Tests:
     >>> type(result) is pd.DataFrame

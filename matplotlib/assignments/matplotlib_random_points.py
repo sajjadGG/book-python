@@ -12,12 +12,12 @@ Polish:
     1. Wygeneruj 100 losowych punktów:
         a. rozkład gaussa o średniej 0
         b. o odchyleniu standardowym równym 0.2
-    2. Punkty muszą być wylosowane wokół dwóch wybranych punktów (``A = (0, 1)``, `B = (2, 4)``).
-    3. Funkcja musi przechodzić ``doctest``
-    4. Wyrysuj te punkty na wykresie (możesz użyć funkcji ``plt.axis('equal')`` żeby osie wykresu były w tej samej skali).
+    2. Punkty muszą być wylosowane wokół dwóch wybranych punktów (`A = (0, 1)`, `B = (2, 4)`).
+    3. Funkcja musi przechodzić `doctest`
+    4. Wyrysuj te punkty na wykresie (możesz użyć funkcji `plt.axis('equal')` żeby osie wykresu były w tej samej skali).
     5. Punkt A i punkty wygenerowane na jego podstawie wyrysuj kolorem czerwonym
     6. punkt B i punkty wygenerowane na jego podstawie wyrysuj kolorem niebieskim
-    7. Możesz do tego celu napisać funkcję ``plot_point(point, color)``, która przyjmuje punkt (dwuelementowy tuple, lub listę, z czego pierwszy element to współrzędna x, a druga to y), i kolor i doda ten punkt do aktualnie aktywnego rysunku.
+    7. Możesz do tego celu napisać funkcję `plot_point(point, color)`, która przyjmuje punkt (dwuelementowy tuple, lub listę, z czego pierwszy element to współrzędna x, a druga to y), i kolor i doda ten punkt do aktualnie aktywnego rysunku.
     8. Korzystając z funkcji napisanej w ćwiczeniu powyżej oblicz odległość od każdego z punktów do punktów A i B
     9. Na podstawie tej odległości zaklasyfikuj te punkty
         a. jeżeli punkt jest bliżej punktu A to należy do zbioru A
@@ -30,7 +30,7 @@ Polish:
     13. Albo przybliżymy do siebie punkty A i B?
 
 Hints:
-    * argument ``color='red'`` w funkcji ``plt.plot``
+    * argument `color='red'` w funkcji `plt.plot`
 
 Tests:
     >>> random.seed(1); random_point((0,0), std=0.2)

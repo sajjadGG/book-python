@@ -11,11 +11,11 @@ English:
 Polish:
     1. Z podanego powyżej adresu URL pobierz dane
     2. Dla każdego gatunku
-    3. Dane stosunku ``sepal_length`` do ``sepal_width`` zwizualizuj w formie ``scatter`` za pomocą ``matplotlib``
+    3. Dane stosunku `sepal_length` do `sepal_width` zwizualizuj w formie `scatter` za pomocą `matplotlib`
     4. Każdy gatunek powinien mieć inny kolor
 
 Hints:
-    * ``pd.groupby()``
+    * `pd.groupby()`
 """
 
 

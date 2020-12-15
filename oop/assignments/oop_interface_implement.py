@@ -7,19 +7,19 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Define class ``Setosa`` implementing ``IrisInterface``
+    2. Define class `Setosa` implementing `IrisInterface`
     3. Implement interface
     4. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Stwórz klasę ``Setosa`` implementującą ``IrisInterface``
+    2. Stwórz klasę `Setosa` implementującą `IrisInterface`
     3. Zaimplementuj interfejs
     4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Hints:
-    * ``self.__dict__.values()``
-    * ``mean = sum() / len()``
+    * `self.__dict__.values()`
+    * `mean = sum() / len()`
 
 Tests:
     >>> assert issubclass(Setosa, IrisInterface)

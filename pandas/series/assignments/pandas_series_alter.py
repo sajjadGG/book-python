@@ -7,7 +7,7 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. From input data create ``s: pd.Series``
+    2. From input data create `s: pd.Series`
     3. Drop values at index 2, 4, 6
     4. Drop duplicates
     5. Reindex series (without old copy)
@@ -15,7 +15,7 @@ English:
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Z danych wejściowych stwórz ``s: pd.Series``
+    2. Z danych wejściowych stwórz `s: pd.Series`
     3. Usuń wartości na indeksach 2, 4, 6
     4. Usuń duplikujące się wartości
     5. Zresetuj indeks (bez kopii starego)

@@ -6,12 +6,12 @@
 * Time: 3 min
 
 English:
-    1. Create ``result: pd.Series`` with 5 float numbers
-    2. One of those values must be ``None``
+    1. Create `result: pd.Series` with 5 float numbers
+    2. One of those values must be `None`
 
 Polish:
-    1. Stwórz ``result: pd.Series`` z 5 liczbami zmiennoprzecinkowymi
-    2. Jedną z tych wartości musi być ``None``
+    1. Stwórz `result: pd.Series` z 5 liczbami zmiennoprzecinkowymi
+    2. Jedną z tych wartości musi być `None`
 
 Tests:
     >>> type(result) is pd.Series

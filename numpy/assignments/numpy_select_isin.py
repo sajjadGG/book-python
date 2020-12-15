@@ -3,7 +3,7 @@
 * Filename: numpy_select_isin.py
 * Complexity: easy
 * Lines of code: 6 lines
-* Time: 8 min
+* Time: 5 min
 
 English:
     1. Set random seed to 0

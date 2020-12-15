@@ -29,7 +29,7 @@ Index Types
 
 .. code-block:: python
 
-    DatetimeIndex(['1999-01-28', '1999-01-29', '1999-01-30', '1999-01-31', '1999-02-01'],
+    DatetimeIndex(['2000-01-01', '2000-01-02', '2000-01-03', '2000-01-04', '2000-01-05'],
                   dtype='datetime64[ns]', freq='D')
 
 .. code-block:: python
@@ -43,7 +43,7 @@ Index Types
     # Range Index
     r1 = pd.Series(DATA)
     r2 = pd.Series(DATA, index=range(5))
-    r2 = pd.Series(DATA, index=range(len(DATA)))
+    r3 = pd.Series(DATA, index=range(len(DATA)))
 
     # Integer Index
     i1 = pd.Series(DATA, index=[0, 1, 2, 3, 4])
@@ -63,11 +63,11 @@ Index Types
     o4 = pd.Series(DATA, index=['aaa', 'baba', 'cac', 'do or not', 'e,c,h,o'])
 
     # Datetime Index
-    d1 = pd.Series(DATA, index=pd.date_range('1999-01-28', periods=len(DATA)))
-    d2 = pd.Series(DATA, index=pd.date_range('1999-01-28', periods=len(DATA), freq='D'))
+    d1 = pd.Series(DATA, index=pd.date_range('2000-01-01', periods=len(DATA)))
+    d2 = pd.Series(DATA, index=pd.date_range('2000-01-01', periods=len(DATA), freq='D'))
     d3 = pd.Series(DATA, index=[
-        pd.Timestamp('1999-01-28'),
         pd.Timestamp('2000-01-01'),
+        pd.Timestamp('1999-01-28'),
         pd.Timestamp('1961-04-12'),
         pd.Timestamp('1969-07-21'),
         pd.Timestamp('1970-01-01')])
@@ -170,14 +170,47 @@ Float64 Index
 String Index
 ============
 * Also has ``RangeIndex``
+* ``string.ascii_lowercase``
+* ``string.ascii_uppercase``
+* ``string.ascii_letters``
+* ``string.hexdigits``
+* ``string.digits``
+
+.. code-block:: python
+
+    import string
+
+    string.punctuation
+    # '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+
+    string.whitespace
+    # ' \t\n\r\x0b\x0c'
+
+    string.ascii_lowercase
+    # 'abcdefghijklmnopqrstuvwxyz'
+
+    string.ascii_uppercase
+    # 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+    string.ascii_letters
+    # 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+    string.digits
+    # '0123456789'
+
+    string.hexdigits
+    # '0123456789abcdefABCDEF'
+
+    string.octdigits
+    # '01234567'
+
+    string.printable
+    # '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\r\x0b\x0c'
 
 .. code-block:: python
 
     import pandas as pd
     import string
-
-    string.ascii_lowercase
-    # 'abcdefghijklmnopqrstuvwxyz'
 
     s = pd.Series(
         data = [1.1, 2.2, 3.3, 4.4]

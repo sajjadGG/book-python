@@ -6,17 +6,17 @@
 * Time: 13 min
 
 English:
-    1. Define interface ``IrisInterface``
-    2. Attributes: ``sepal_length, sepal_width, petal_length, petal_width``
-    3. Methods: ``sum()``, ``len()``, ``mean()`` in ``IrisInterface``
-    4. All methods and constructor must raise exception ``NotImplementedError``
+    1. Define interface `IrisInterface`
+    2. Attributes: `sepal_length, sepal_width, petal_length, petal_width`
+    3. Methods: `sum()`, `len()`, `mean()` in `IrisInterface`
+    4. All methods and constructor must raise exception `NotImplementedError`
     5. Compare result with "Tests" section (see below)
 
 Polish:
-    1. Zdefiniuj interfejs ``IrisInterface``
-    2. Attributes: ``sepal_length, sepal_width, petal_length, petal_width``
-    3. Metody: ``sum()``, ``len()``, ``mean()`` w ``IrisInterface``
-    4. Wszystkie metody oraz konstruktor muszą podnosić wyjątek ``NotImplementedError``
+    1. Zdefiniuj interfejs `IrisInterface`
+    2. Attributes: `sepal_length, sepal_width, petal_length, petal_width`
+    3. Metody: `sum()`, `len()`, `mean()` w `IrisInterface`
+    4. Wszystkie metody oraz konstruktor muszą podnosić wyjątek `NotImplementedError`
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:

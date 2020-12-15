@@ -105,6 +105,6 @@ TEMPLATE = """
 # Solution
 transform = XSLT(XML(TEMPLATE))
 data = parse(StringIO(DATA))
-html = transform(data)
-
-result = pd.read_html(str(html))[0]
+html = str(transform(data))
+dfs = pd.read_html(html)
+result = dfs[0]

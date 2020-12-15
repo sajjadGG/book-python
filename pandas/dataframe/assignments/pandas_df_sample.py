@@ -10,11 +10,11 @@ English:
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``df: pd.DataFrame``
+    2. Wczytaj dane z `DATA` jako `df: pd.DataFrame`
     3. W danych kolumna "Order":
         a. określa kolejność astronauty/kosmonauty w kosmosie
-        b. Czasami kilka osób leciało tym samym statkiem i ich numery powinny być takie same, a w danych jest ``NaN``.
-        c. Wypełnij brakujące indeksy stosując ``df.ffill()``
+        b. Czasami kilka osób leciało tym samym statkiem i ich numery powinny być takie same, a w danych jest `NaN`.
+        c. Wypełnij brakujące indeksy stosując `df.ffill()`
     4. Ustaw wszystkie wiersze w losowej kolejności
     5. Zresetuj index nie pozostawiając kopii zapasowej starego
     6. Wypisz

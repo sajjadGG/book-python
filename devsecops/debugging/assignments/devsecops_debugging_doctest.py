@@ -1,5 +1,5 @@
 """
-* Assignment: Own ``doctest``
+* Assignment: Own `doctest`
 * Filename: debugging_doctest.py
 * Complexity: easy
 * Lines of code: 60 lines
@@ -10,7 +10,7 @@ English:
 
 Polish:
     1. Dla kodu z listingu
-    2. Napisz własną uproszczoną implementację ``doctest``
+    2. Napisz własną uproszczoną implementację `doctest`
     3. Dla uproszczenia przyjmij, że zwracana zawsze będzie tylko jedna linia (bezpośrednio poniżej testu)
 """
 

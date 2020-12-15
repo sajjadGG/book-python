@@ -7,21 +7,21 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``df: pd.DataFrame``
-    3. Select ``Polish`` spreadsheet
+    2. Read data from `DATA` as `df: pd.DataFrame`
+    3. Select `Polish` spreadsheet
     4. Set header and index to data from file
     5. Mind the encoding
     6. Substitute Polish Diacritics to English alphabet letters
-    7. Compare ``df.replace(regex=True)`` with ``df.applymap()``
+    7. Compare `df.replace(regex=True)` with `df.applymap()`
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``df: pd.DataFrame``
-    3. Wybierz arkusz ``Polish``
+    2. Wczytaj dane z `DATA` jako `df: pd.DataFrame`
+    3. Wybierz arkusz `Polish`
     4. Ustaw nagłówek i index na dane zaczytane z pliku
     5. Zwróć uwagę na encoding
     6. Podmień polskie znaki diakrytyczne na litery z alfabetu angielskiego
-    7. Porównaj ``df.replace(regex=True)`` z ``df.applymap()``
+    7. Porównaj `df.replace(regex=True)` z `df.applymap()`
 
 Tests:
     >>> type(result) is pd.DataFrame

@@ -7,14 +7,14 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Create ``result: pd.DataFrame`` for input data
+    2. Create `result: pd.DataFrame` for input data
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Stwórz ``result: pd.DataFrame`` dla danych wejściowych
+    2. Stwórz `result: pd.DataFrame` dla danych wejściowych
 
 Hints:
-    * Use selection with ``alt`` key in your IDE
+    * Use selection with `alt` key in your IDE
 
 Tests:
     >>> type(result) is pd.DataFrame

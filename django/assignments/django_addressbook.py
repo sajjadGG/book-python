@@ -9,9 +9,9 @@ English:
     TODO: English Translation
 
 Polish:
-    1. Stwórz projekt ``addressbook``
-    2. Stwórz apkę ``contact``
-    3. Stwórz model ``Address`` z polami:
+    1. Stwórz projekt `addressbook`
+    2. Stwórz apkę `contact`
+    3. Stwórz model `Address` z polami:
         a. Typ (do wyboru typ: domowy, praca, komórka)
         b. Ulica
         c. Numer bloku
@@ -20,7 +20,7 @@ Polish:
         f. Miasto
         g. Region
         h. Kraj
-    4. Stwórz model ``Person`` z polami:
+    4. Stwórz model `Person` z polami:
         a. Imię
         b. Nazwisko
         c. Data Urodzenia

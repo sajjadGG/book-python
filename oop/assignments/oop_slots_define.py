@@ -8,16 +8,16 @@
 
 English:
     1. Use code from "Input" section (see below)
-    2. Define class ``Iris`` with attributes: ``sepal_length, sepal_width, petal_length, petal_width, species``
-    3. All attributes must be in ``__slots__``
-    4. Define method ``__repr__`` which prints class name and all values positionally, ie. ``Iris(5.8, 2.7, 5.1, 1.9, 'virginica')``
+    2. Define class `Iris` with attributes: `sepal_length, sepal_width, petal_length, petal_width, species`
+    3. All attributes must be in `__slots__`
+    4. Define method `__repr__` which prints class name and all values positionally, ie. `Iris(5.8, 2.7, 5.1, 1.9, 'virginica')`
     5. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj kodu z sekcji "Input" (patrz poniżej)
-    2. Zdefiniuj klasę ``Iris`` z atrybutami: ``sepal_length, sepal_width, petal_length, petal_width, species``
-    3. Wszystkie atrybuty muszą być w ``__slots__``
-    4. Zdefiniuj metodę ``__repr__`` wypisującą nazwę klasy i wszystkie wartości atrybutów pozycyjnie, np. ``Iris(5.8, 2.7, 5.1, 1.9, 'virginica')``
+    2. Zdefiniuj klasę `Iris` z atrybutami: `sepal_length, sepal_width, petal_length, petal_width, species`
+    3. Wszystkie atrybuty muszą być w `__slots__`
+    4. Zdefiniuj metodę `__repr__` wypisującą nazwę klasy i wszystkie wartości atrybutów pozycyjnie, np. `Iris(5.8, 2.7, 5.1, 1.9, 'virginica')`
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
@@ -52,7 +52,7 @@ Tests:
     Iris(5.8, 2.7, 5.1, 1.9, 'virginica')
 
 Hint:
-    * In ``__repr__()`` use tuple comprehension to get ``self.__slots__`` values
+    * In `__repr__()` use tuple comprehension to get `self.__slots__` values
 """
 
 

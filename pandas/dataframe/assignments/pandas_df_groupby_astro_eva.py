@@ -7,16 +7,16 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``df: pd.DataFrame``
+    2. Read data from `DATA` as `df: pd.DataFrame`
     3. Create ranking of astronauts with the most time spent on EVA (ExtraVehicular Activity)
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``df: pd.DataFrame``
+    2. Wczytaj dane z `DATA` jako `df: pd.DataFrame`
     3. Stwórz ranking astronautów z największym czasem EVA (Spacerów kosmicznych)
 
 Hints:
-    * Parse CSV and replace newlines inside fields with ``","``
+    * Parse CSV and replace newlines inside fields with `","`
     * Split names into separate columns for each spacewalker (first, second, third)
     * Split names into separate rows for each spacewalker (use ffill)
     * Split times into separate columns (hours, minutes)

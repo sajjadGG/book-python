@@ -7,24 +7,24 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Read data from ``DATA`` as ``df: pd.DataFrame``
-    3. Add column ``year`` and ``month`` by parsing ``period`` column
+    2. Read data from `DATA` as `df: pd.DataFrame`
+    3. Add column `year` and `month` by parsing `period` column
     4. Month name must be a string month name, not a number (i.e.: 'January', 'May')
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wczytaj dane z ``DATA`` jako ``df: pd.DataFrame``
-    3. Dodaj kolumnę ``year`` i ``month`` poprzez sparsowanie kolumny ``period``
+    2. Wczytaj dane z `DATA` jako `df: pd.DataFrame`
+    3. Dodaj kolumnę `year` i `month` poprzez sparsowanie kolumny `period`
     4. Nazwa miesiąca musi być ciągiem znaków, a nie liczbą (i.e. 'January', 'May')
 
 :Example:
-    * if ``period`` column is "2015-01"
-    * ``year``: 2015
-    * ``month``: January
+    * if `period` column is "2015-01"
+    * `year`: 2015
+    * `month`: January
 
 Hints:
-    * ``Series.str.split(expand=True)``
-    * ``df[ ['A', 'B'] ] = ...``
+    * `Series.str.split(expand=True)`
+    * `df[ ['A', 'B'] ] = ...`
 
 Tests:
     >>> type(result) is pd.DataFrame
