@@ -1,6 +1,6 @@
-********
-Examples
-********
+************
+Case Studies
+************
 
 
 ISS Ground Track
