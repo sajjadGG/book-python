@@ -51,16 +51,16 @@ import numpy as np
 np.random.seed(0)
 
 
-DATA = r'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/astro-database.csv'
+DATA = r'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/astro-order.csv'
 
 result = ...
 
 
 # Solution
 df = pd.read_csv(DATA)
-# df['Order'].ffill(inplace=True)
-# df['Order'] = df['Order'].astype(int)
-# df = df.sample(frac=1.0)
-# df.reset_index(drop=True, inplace=True)
-# 
+df['Order'].ffill(inplace=True)
+df['Order'] = df['Order'].astype(int)
+df = df.sample(frac=1.0)
+df.reset_index(drop=True, inplace=True)
+
 result = df

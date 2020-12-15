@@ -176,3 +176,19 @@ Assignments
 .. literalinclude:: assignments/file_read_listdict.py
     :caption: :download:`Solution <assignments/file_read_listdict.py>`
     :end-before: # Solution
+
+.. literalinclude:: assignments/file_read_passwd.py
+    :caption: :download:`Solution <assignments/file_read_passwd.py>`
+    :end-before: # Solution
+
+.. literalinclude:: data/etc-passwd.txt
+    :language: text
+    :caption: ``/etc/passwd``
+
+.. literalinclude:: data/etc-shadow.txt
+    :language: text
+    :caption: ``/etc/shadow``
+
+.. literalinclude:: data/etc-group.txt
+    :language: text
+    :caption: ``/etc/group``

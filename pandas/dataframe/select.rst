@@ -29,15 +29,10 @@ DataFrame Select
     Pandas Select Methods
 
 
-Rationale
-=========
-* ``df.where()`` Works with ``inplace=True``
-* Use ``df.dropna()`` to remove ``NaN``
-* Use ``df.fillna()`` to substitute value for ``NaN``
-
-
 Query Data
 ==========
+* ``df.where()`` Works with ``inplace=True``
+
 .. code-block:: python
 
     df[df['Morning'] > 0.0]

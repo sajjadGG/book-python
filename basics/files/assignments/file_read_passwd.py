@@ -1,6 +1,6 @@
 """
-* Assignment: File Passwd
-* Filename: file_passwd.py
+* Assignment: File Read Passwd
+* Filename: file_read_passwd.py
 * Complexity: medium
 * Lines of code: 100 lines
 * Time: 21 min
@@ -8,42 +8,26 @@
 English:
     1. Use data from "Given" section (see below)
     2. Save listings content to files:
-        a. ``etc_passwd.txt``
-        b. ``etc_shadow.txt``
-        c. ``etc_group.txt``
+        a. `etc_passwd.txt`
+        b. `etc_shadow.txt`
+        c. `etc_group.txt`
     3. Copy also comments and empty lines
-    4. Parse files and convert it to ``result: list[dict]``
-    5. Return list of users with ``UID`` greater than 1000
+    4. Parse files and convert it to `result: list[dict]`
+    5. Return list of users with `UID` greater than 1000
     6. User dict should contains data collected from all files
     7. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Zapisz treści listingów do plików:
-        a. ``etc_passwd.txt``
-        b. ``etc_shadow.txt``
-        c. ``etc_group.txt``
+        a. `etc_passwd.txt`
+        b. `etc_shadow.txt`
+        c. `etc_group.txt`
     3. Skopiuj również komentarze i puste linie
-    4. Sparsuj plik i przedstaw go w formacie ``result: list[dict]``
-    5. Zwróć listę użytkowników, których ``UID`` jest większy niż 1000
+    4. Sparsuj plik i przedstaw go w formacie `result: list[dict]`
+    5. Zwróć listę użytkowników, których `UID` jest większy niż 1000
     6. Dict użytkownika powinien zawierać dane z wszystkich plików
     7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
-
-Given:
-    .. literalinclude:: data/etc-passwd.txt
-        :name: code-exam-etc-passwd
-        :language: text
-        :caption: Przykładowa zawartość pliku ``/etc/passwd``
-
-    .. literalinclude:: data/etc-shadow.txt
-        :name: code-exam-etc-shadow
-        :language: text
-        :caption: Przykładowa zawartość pliku ``/etc/shadow``
-
-    .. literalinclude:: data/etc-group.txt
-        :name: code-exam-etc-group
-        :language: text
-        :caption: Przykładowa zawartość pliku ``/etc/group``
 
 Tests:
     >>> result  # doctest: +NORMALIZE_WHITESPACE +ELLIPSIS

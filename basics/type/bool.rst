@@ -124,13 +124,14 @@ Comparison
 
 Conjunction
 -----------
-    >>> firstname = 'Mark'
-    >>> lastname = 'Watney'
-    >>>
-    >>> firstname == 'Mark' and lastname == 'Watney'
-    True
-    >>> firstname == 'Mark' and lastname == 'Twardowski'
-    False
+Definition:
+
+    1 & 1 -> 1
+    1 & 0 -> 0
+    0 & 1 -> 0
+    0 & 0 -> 0
+
+Example:
 
     >>> True and True
     True
@@ -139,6 +140,16 @@ Conjunction
     >>> False and True
     False
     >>> False and False
+    False
+
+Use Cases:
+
+    >>> firstname = 'Mark'
+    >>> lastname = 'Watney'
+    >>>
+    >>> firstname == 'Mark' and lastname == 'Watney'
+    True
+    >>> firstname == 'Mark' and lastname == 'Twardowski'
     False
 
     >>> bool(1 and 1)
@@ -171,6 +182,15 @@ Conjunction
 
 Disjunction
 -----------
+Definition:
+
+    1 | 1 -> 1
+    1 | 0 -> 1
+    0 | 1 -> 1
+    0 | 0 -> 0
+
+Example:
+
     >>> True or True
     True
     >>> True or False
@@ -179,6 +199,8 @@ Disjunction
     True
     >>> False or False
     False
+
+Use Cases:
 
     >>> bool(1 or 1)
     True
@@ -210,13 +232,7 @@ Disjunction
 
 Boolean Algebra
 ---------------
-    >>> firstname = 'Mark'
-    >>> lastname = 'Twardowski'
-    >>>
-    >>> (firstname == 'Mark' and lastname == 'Watney') \
-    ...  or (firstname == 'Jan' and lastname == 'Twardowski') \
-    ...  or (firstname == 'Melissa' and lastname == 'Lewis')
-    False
+Example:
 
     >>> True and True or False
     True
@@ -231,6 +247,16 @@ Boolean Algebra
     >>> True and False or False
     False
     >>> True and (False or False)
+    False
+
+Use Case:
+
+    >>> firstname = 'Mark'
+    >>> lastname = 'Twardowski'
+    >>>
+    >>> (firstname == 'Mark' and lastname == 'Watney') \
+    ...  or (firstname == 'Jan' and lastname == 'Twardowski') \
+    ...  or (firstname == 'Melissa' and lastname == 'Lewis')
     False
 
 

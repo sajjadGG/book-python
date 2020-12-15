@@ -86,17 +86,16 @@ Range of dates
 
 Values in Selected Columns
 ==========================
+* Note that both the start and stop of the slice are included
 
-Single row and single column
-----------------------------
+Single row and single column:
+
 .. code-block:: python
 
     df.loc['2000-01-05', 'Morning']
     # 2.2697546239876076
 
-Range of rows and single column
--------------------------------
-* Note that both the start and stop of the slice are included
+Range of rows and single column:
 
 .. code-block:: python
 
@@ -106,29 +105,17 @@ Range of rows and single column
     # 2000-01-02    0.121675
     # Freq: D, Name: Noon, dtype: float64
 
-Range of rows and single column
--------------------------------
-* For Numeric Index, Range Index and String Index works without conversion
-* For Datetime index, conversion to ``pd.Timestamp()`` is needed
+Range of rows and single column:
 
 .. code-block:: python
 
     df.loc[['2000-01-02','2000-01-04'], 'Noon']
-    # Traceback (most recent call last):
-    # KeyError: "None of [Index(['2000-01-02', '2000-01-04'], dtype='object')] are in the [index]"
-
-.. code-block:: python
-
-    date1 = pd.Timestamp('2000-01-02')
-    date2 = pd.Timestamp('2000-01-05')
-
-    df.loc[[date1,date2], 'Noon']
     # 2000-01-02    0.121675
-    # 2000-01-05   -1.454366
+    # 2000-01-04    0.653619
     # Name: Noon, dtype: float64
 
-Single row and selected columns
--------------------------------
+Single row and selected columns:
+
 .. code-block:: python
 
     df.loc['2000-01-05', ['Noon', 'Midnight']]
@@ -136,8 +123,8 @@ Single row and selected columns
     # Midnight   -0.187184
     # Name: 2000-01-05 00:00:00, dtype: float64
 
-Single row and column range
----------------------------
+Single row and column range:
+
 .. code-block:: python
 
     df.loc['2000-01-05', 'Noon':'Midnight']
@@ -149,10 +136,9 @@ Single row and column range
 
 Fancy Indexing
 ==============
+* Return row for given index is ``True``
 
-Boolean list with the same length as the row axis
--------------------------------------------------
-* Print row for given index is ``True``
+Boolean list with the same length as the row axis:
 
 .. code-block:: python
 
@@ -162,8 +148,8 @@ Boolean list with the same length as the row axis
     # 2000-01-01 -0.103219  0.410599  0.144044  1.454274
     # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
 
-Conditional that returns a boolean Series
------------------------------------------
+Conditional that returns a boolean Series:
+
 .. code-block:: python
 
     df.loc[df['Morning'] < 0]
@@ -171,8 +157,8 @@ Conditional that returns a boolean Series
     # 2000-01-01 -0.103219  0.410599  0.144044  1.454274
     # 2000-01-04 -2.552990  0.653619  0.864436 -0.742165
 
-Conditional that returns a boolean Series with column labels specified
-----------------------------------------------------------------------
+Conditional that returns a boolean Series with column labels specified:
+
 .. code-block:: python
 
     df.loc[df['Morning'] < 0, 'Evening']
@@ -210,8 +196,8 @@ Conditional that returns a boolean Series with column labels specified
 Callable
 ========
 
-Filtering with callable
------------------------
+Filtering with callable:
+
 .. code-block:: python
 
     def morning_below_zero(df):
@@ -233,8 +219,8 @@ Filtering with callable
 Setting Values
 ==============
 
-Set value for all items matching the list of labels
----------------------------------------------------
+Set value for all items matching the list of labels:
+
 .. code-block:: python
 
     df.loc[df['Morning'] < 0, 'Evening'] = np.inf
@@ -247,8 +233,8 @@ Set value for all items matching the list of labels
     # 2000-01-04 -2.552990  0.653619       inf -0.742165
     # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
 
-Set value for an entire row
----------------------------
+Set value for an entire row:
+
 .. code-block:: python
 
     df.loc['2000-01-01'] = np.nan
@@ -261,8 +247,8 @@ Set value for an entire row
     # 2000-01-04 -2.552990  0.653619       inf -0.742165
     # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
 
-Set value for an entire column
-------------------------------
+Set value for an entire column:
+
 .. code-block:: python
 
     df.loc[:, 'Evening'] = 0.0
@@ -275,8 +261,8 @@ Set value for an entire column
     # 2000-01-04 -2.552990  0.653619      0.0 -0.742165
     # 2000-01-05  2.269755 -1.454366      0.0 -0.187184
 
-Set value for rows matching callable condition
-----------------------------------------------
+Set value for rows matching callable condition:
+
 .. code-block:: python
 
     df[df < 0] = -np.inf

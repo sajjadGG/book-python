@@ -97,3 +97,13 @@ Recap
     about/methodchaining.rst
     about/setoption.rst
     about/workflow.rst
+
+************
+Case Studies
+************
+.. toctree::
+    :maxdepth: 2
+    :caption: Case Studies
+    :name: Pandas Case Studies
+
+    case-studies/covid19.rst

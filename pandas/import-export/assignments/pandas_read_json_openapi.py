@@ -18,7 +18,7 @@ Polish:
     4. Zdefiniuj `result: pd.DataFrame` dla wartości z klucza `paths` w słowniku `data`
 
 Hints:
-    * ``pd.DataFrame(data)``
+    * `pd.DataFrame(data)`
 
 Tests:
     >>> type(result) is pd.DataFrame

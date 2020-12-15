@@ -77,5 +77,5 @@ Recap
 
     example.rst
     lifecycle.rst
-    examples.rst
+    case-studies.rst
     assignments.rst

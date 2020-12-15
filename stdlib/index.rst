@@ -202,16 +202,6 @@ GUI
 
     gui/tkinter.rst
 
-*****
-Recap
-*****
-.. toctree::
-    :maxdepth: 1
-    :caption: Recap
-    :name: Stdlib Recap
-
-    about/exit-test.rst
-
 **********
 References
 **********
