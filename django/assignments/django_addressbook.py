@@ -34,3 +34,6 @@ Polish:
     8. Dodaj wyszukiwarkę po nazwisku
     9. Dodaj filtrowanie po dacie urodzenia
 """
+
+
+# Solution

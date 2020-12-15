@@ -11,3 +11,6 @@ English:
 Polish:
     1. Poprzedni skrypt przekonwertuj na slajdy i uruchom prezentację w przeglądarce
 """
+
+
+# Solution

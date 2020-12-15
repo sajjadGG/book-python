@@ -16,3 +16,6 @@ Polish:
     5. dodaj code cell, który pokaże czas wykonywania instrukcji
     6. dodaj Code Cell, który wyświetli wykres funkcji `sin()` inplace
 """
+
+
+# Solution

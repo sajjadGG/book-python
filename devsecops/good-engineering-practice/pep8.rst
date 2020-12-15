@@ -842,5 +842,5 @@ Assignments
 ===========
 
 .. literalinclude:: assignments/devsecops_gep_pycodestyle.py
-    :caption: :download:`Solution <assignments/devsecops_gep_pycodestyle>`
+    :caption: :download:`Solution <assignments/devsecops_gep_pycodestyle.py>`
     :end-before: # Solution

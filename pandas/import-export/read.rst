@@ -375,10 +375,6 @@ Assignments
     :caption: :download:`Solution <assignments/pandas_read_html.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/pandas_read_xslt_books.py.py
-    :caption: :download:`Solution <assignments/pandas_read_xslt_books.py>`
-    :end-before: # Solution
-
 .. literalinclude:: assignments/pandas_read_xslt_plants.py
     :caption: :download:`Solution <assignments/pandas_read_xslt_plants.py>`
     :end-before: # Solution

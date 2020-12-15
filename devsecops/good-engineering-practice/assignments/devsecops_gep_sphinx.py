@@ -23,4 +23,9 @@ Polish:
     7. Tekst lorem ipsum oznacz jako cytowanie cycerona wykorzystując bibtext
 """
 
+
+# Given
 DATA = 'https://raw.githubusercontent.com/AstroMatt/book-python/master/_data/csv/iris.csv'
+
+
+# Solution

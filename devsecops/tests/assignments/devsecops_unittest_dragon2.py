@@ -12,6 +12,8 @@ Polish:
     1. Napisz testy jednostkowe dla Smoka z :ref:`Dragon Alpha`
 """
 
+
+# Given
 from unittest import TestCase
 
 BORDER_X_MAX = 1024
@@ -49,6 +51,7 @@ class Dragon:
         self.set_position(x, y)
 
 
+# Solution
 class DragonTest(TestCase):
 
     def setUp(self) -> None:

@@ -12,6 +12,8 @@ Polish:
     1. Napisz testy jednostkowe dla Smoka z :ref:`Dragon Alpha`
 """
 
+
+# Given
 from random import randint
 from unittest import TestCase
 
@@ -76,6 +78,7 @@ class Dragon:
             return False
 
 
+# Solution
 class DragonTest(TestCase):
     def setUp(self) -> None:
         self.wawelski = Dragon(name='Wawelski', x=0, y=0)

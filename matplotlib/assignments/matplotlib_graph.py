@@ -19,3 +19,6 @@ Polish:
     8. Użyj kolorów niebieski (zimno), czerwony (ciepło)
     9. Wykres ma mieć grid
 """
+
+
+# Solution
