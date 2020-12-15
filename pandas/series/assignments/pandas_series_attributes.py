@@ -1,6 +1,6 @@
 """
-* Assignment: Numpy Attributes
-* Filename: numpy_attributes.py
+* Assignment: Pandas Series Attributes
+* Filename: pandas_series_attributes.py
 * Complexity: easy
 * Lines of code: 7 lines
 * Time: 5 min
@@ -11,9 +11,7 @@ English:
         a. number of dimensions;
         b. number of elements;
         c. data type;
-        d. element size;
-        e. shape;
-        f. strides.
+        e. shape.
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -21,36 +19,29 @@ Polish:
         a. liczbę wymiarów,
         b. liczbę elementów,
         c. typ danych,
-        d. rozmiar elementu,
-        e. kształt,
-        f. przeskoki (strides).
+        e. kształt.
 
 Tests:
     >>> type(result) is dict
     True
     >>> result  # doctest: +NORMALIZE_WHITESPACE
-    {'number of dimensions': 2,
-     'number of elements': 6,
-     'data type': dtype('float64'),
-     'element size': 8,
-     'shape': (2, 3),
-     'strides': (24, 8)}
+    {'number of dimensions': 1,
+     'number of elements': 3,
+     'data type': dtype('O'),
+     'shape': (3,)}
 """
 
 
 # Given
-import numpy as np
+import pandas as pd
 
-DATA = np.array([[-1.1, 0.0, 1.1],
-                 [2.2, 3.3, 4.4]])
+DATA = pd.Series(['a', 'b', 'c'])
 
 result = {
     'number of dimensions': ...,
     'number of elements': ...,
     'data type': ...,
-    'element size': ...,
     'shape': ...,
-    'strides': ...,
 }
 
 
@@ -59,7 +50,5 @@ result = {
     'number of dimensions': DATA.ndim,
     'number of elements': DATA.size,
     'data type': DATA.dtype,
-    'element size': DATA.itemsize,
     'shape': DATA.shape,
-    'strides': DATA.strides,
 }

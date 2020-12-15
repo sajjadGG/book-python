@@ -2,7 +2,7 @@
 * Assignment: Series Create Float
 * Filename: pandas_series_create_float.py
 * Complexity: easy
-* Lines of code: 5 lines
+* Lines of code: 2 lines
 * Time: 3 min
 
 English:
@@ -34,5 +34,6 @@ result = ...
 
 
 # Solution
-result = pd.Series([1.1, 2.2, None, 4.4, 5.5])
+data = [1.1, 2.2, None, 4.4, 5.5]
+result = pd.Series(data)
 

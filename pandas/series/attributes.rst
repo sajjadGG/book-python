@@ -3,6 +3,49 @@ Series Attributes
 *****************
 
 
+Size
+====
+.. code-block:: python
+
+    import pandas as pd
+
+    s = pd.Series(['a', 'b', 'c'])
+
+    s.size
+    # 3
+
+
+NDim
+====
+* Number of Dimensions
+
+.. code-block:: python
+
+    import pandas as pd
+
+    s = pd.Series(['a', 'b', 'c'])
+
+    s.ndim
+    # 1
+
+
+Shape
+=====
+.. code-block:: python
+
+    import pandas as pd
+
+    s = pd.Series(['a', 'b', 'c'])
+
+    s.shape
+    # (3,)
+
+
+
+Index
+=====
+* More information in :ref:`Pandas Series Index`.
+
 .. code-block:: python
 
     import pandas as pd
@@ -15,37 +58,6 @@ Series Attributes
     # 2    c
     # dtype: object
 
-
-Shape
-=====
-.. code-block:: python
-
-    s.shape
-    # (3,)
-
-
-Size
-====
-.. code-block:: python
-
-    s.size
-    # 3
-
-
-Number of Dimensions
-====================
-.. code-block:: python
-
-    s.ndim
-    # 1
-
-
-Index
-=====
-* More information in :ref:`Pandas Series Index`.
-
-.. code-block:: python
-
     s.index
     # RangeIndex(start=0, stop=3, step=1)
 
@@ -54,10 +66,17 @@ Values
 ======
 .. code-block:: python
 
+    import pandas as pd
+
+    s = pd.Series(['a', 'b', 'c'])
+
     s.values
     # array(['a', 'b', 'c'], dtype=object)
 
 
 Assignments
 ===========
-.. todo:: Create assignments
+
+.. literalinclude:: assignments/pandas_series_attributes.py
+    :caption: :download:`Solution <assignments/pandas_series_attributes.py>`
+    :end-before: # Solution

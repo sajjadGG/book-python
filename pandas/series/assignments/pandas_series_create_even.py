@@ -2,7 +2,7 @@
 * Assignment: Series Create Even
 * Filename: pandas_series_create_even.py
 * Complexity: easy
-* Lines of code: 5 lines
+* Lines of code: 2 lines
 * Time: 3 min
 
 English:
@@ -36,7 +36,8 @@ np.random.seed(0)
 
 
 # Solution
-result = pd.Series(np.arange(0, 20, 2))
+data = np.arange(0, 20, 2)
+result = pd.Series(data)
 
 
 # Alternative Solution

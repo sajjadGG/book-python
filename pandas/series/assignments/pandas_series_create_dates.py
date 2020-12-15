@@ -2,7 +2,7 @@
 * Assignment: Series Create Dates
 * Filename: pandas_series_create_dates.py
 * Complexity: easy
-* Lines of code: 5 lines
+* Lines of code: 2 lines
 * Time: 3 min
 
 English:
