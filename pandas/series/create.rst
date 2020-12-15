@@ -131,14 +131,14 @@ Assignments
     :caption: :download:`Solution <assignments/pandas_series_create_float.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/
-    :caption: :download:`Solution <assignments/>`
+.. literalinclude:: assignments/pandas_series_create_randint.py
+    :caption: :download:`Solution <assignments/pandas_series_create_randint.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/
-    :caption: :download:`Solution <assignments/>`
+.. literalinclude:: assignments/pandas_series_create_even.py
+    :caption: :download:`Solution <assignments/pandas_series_create_even.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/
-    :caption: :download:`Solution <assignments/>`
+.. literalinclude:: assignments/pandas_series_create_dates.py
+    :caption: :download:`Solution <assignments/pandas_series_create_dates.py>`
     :end-before: # Solution
