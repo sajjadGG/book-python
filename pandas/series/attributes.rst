@@ -42,6 +42,8 @@ Number of Dimensions
 
 Index
 =====
+* More information in :ref:`Pandas Series Index`.
+
 .. code-block:: python
 
     s.index
