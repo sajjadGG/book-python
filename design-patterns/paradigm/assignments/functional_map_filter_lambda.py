@@ -16,8 +16,12 @@ Polish:
 """
 
 
+# Given
 NUMBERS = range(1, 34)
 
+
+
+# Solution
 div3 = [x for x in NUMBERS if x % 3 == 0]
 # [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33]
 

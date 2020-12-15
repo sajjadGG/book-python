@@ -54,11 +54,14 @@ Tests:
     False
 """
 
+
+# Given
 BRACKET_OPEN = ('(', '{', '[', '<')
 BRACKET_CLOSE = (')', '}', ']', '>')
 PAIRS = dict(zip(BRACKET_OPEN, BRACKET_CLOSE))
 
 
+# Solution
 def matches(opened_brackets, bracket):
     if not opened_brackets:
         return False

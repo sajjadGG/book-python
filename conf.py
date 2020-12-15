@@ -31,7 +31,7 @@ suppress_warnings = [
     # 'download.not_readable',
     # 'image.not_readable',
     # 'ref.term',
-    # 'ref.ref',
+    'ref.ref',
     # 'ref.numref',
     # 'ref.keyword',
     # 'ref.option',

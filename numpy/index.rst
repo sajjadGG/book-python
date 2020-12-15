@@ -48,6 +48,7 @@ Select
     array-reduction.rst
     array-logic.rst
     array-select.rst
+    array-advancedindexing.rst
 
 ***************
 Import & Export
