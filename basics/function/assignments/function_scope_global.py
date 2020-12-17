@@ -1,6 +1,6 @@
 """
-* Assignment: Function Scope Filter
-* Filename: function_scope_filter.py
+* Assignment: Function Scope Global
+* Filename: function_scope_global.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min
@@ -39,10 +39,11 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
         (6.4, 3.2, 4.5, 1.5, 'versicolor'),
         (4.7, 3.2, 1.3, 0.2, 'setosa')]
 
+
+# Solution
 SELECT = {'setosa', 'versicolor'}
 
 
-# Solution
 def sumif(features, label):
     if label in SELECT:
         return sum(features)

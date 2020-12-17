@@ -353,8 +353,8 @@ Local Scope
 Assignments
 ===========
 
-.. literalinclude:: assignments/function_scope_filter.py
-    :caption: :download:`Solution <assignments/function_scope_filter.py>`
+.. literalinclude:: assignments/function_scope_global.py
+    :caption: :download:`Solution <assignments/function_scope_global.py>`
     :end-before: # Solution
 
 .. literalinclude:: assignments/function_scope_romanint.py
