@@ -8,14 +8,14 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Use regular expressions to check text contains time in UTC (format: ``%H:%M UTC``)
-    3. Use simplified checking: ``##:## UTC``, where ``#`` is a digit
+    2. Use regular expressions to check text contains time in UTC (format: `%H:%M UTC`)
+    3. Use simplified checking: `##:## UTC`, where `#` is a digit
     4. Define `result: str` with matched time
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Użyj wyrażeń regularnych do sprawdzenia czy tekst zawiera godzinę w UTC (format: ``%H:%M UTC``)
-    3. Użyj uproszczonego sprawdzania: ``##:## UTC``, gdzie ``#`` to dowolna cyfra
+    2. Użyj wyrażeń regularnych do sprawdzenia czy tekst zawiera godzinę w UTC (format: `%H:%M UTC`)
+    3. Użyj uproszczonego sprawdzania: `##:## UTC`, gdzie `#` to dowolna cyfra
     4. Zdefiniuj `result: str` ze znalezionym czasem
 
 Tests:

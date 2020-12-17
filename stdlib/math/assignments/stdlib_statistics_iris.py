@@ -7,29 +7,29 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Create dict ``result: dict[str, dict]``
+    2. Create dict `result: dict[str, dict]`
     3. For each species calculate for numerical values:
         a. mean,
         b. median,
         c. standard deviation,
         d. variance.
-    4. Save data to ``result`` dict
+    4. Save data to `result` dict
     5. Compare result with "Tests" section (see below)
     6. Non-functional requirements:
-        a. Use ``statistics`` module from Python standard library
+        a. Use `statistics` module from Python standard library
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Stwórz słownik ``result: dict[str, dict]``
+    2. Stwórz słownik `result: dict[str, dict]`
     3. Dla każdego gatunku wylicz dla wartości numerycznych:
         a. średnią,
         b. medianę,
         c. odchylenie standardowe,
         d. wariancję.
-    4. Dane zapisz w słowniku ``result``
+    4. Dane zapisz w słowniku `result`
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
     6. Wymagania niefunkcjonalne:
-        a. Użyj modułu ``statistics`` z biblioteki standardowej Python
+        a. Użyj modułu `statistics` z biblioteki standardowej Python
 
 Given:
     .. code-block:: python

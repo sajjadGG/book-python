@@ -9,14 +9,14 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Save as ``moon_speech.html``
-    3. Using ``re.search()`` split text by paragraphs
+    2. Save as `moon_speech.html`
+    3. Using `re.search()` split text by paragraphs
     4. Define `result: str` containing paragraph starting with 'We choose to go to the moon'
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Zapisz jako ``moon_speech.html``
-    3. Za pomocą ``re.search()`` podziel tekst na paragrafy
+    2. Zapisz jako `moon_speech.html`
+    3. Za pomocą `re.search()` podziel tekst na paragrafy
     4. Zdefiniuj `result: str` zawierający tekst paragrafu zaczynający się od słów "We choose to go to the moon"
 
 Tests:

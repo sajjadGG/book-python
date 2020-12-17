@@ -8,7 +8,7 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Use ``re.search()`` to check if Astronaut first and last names are in the text
+    2. Use `re.search()` to check if Astronaut first and last names are in the text
     3. Astronauts to find:
         a. Neil Armstrong
         b. Buzz Aldrin
@@ -18,7 +18,7 @@ English:
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Użyj ``re.search()`` do sprawdzenia czy imiona i nazwiska Astronautów występują w tekście
+    2. Użyj `re.search()` do sprawdzenia czy imiona i nazwiska Astronautów występują w tekście
     3. Astronauci do znalezienia:
         a. Neil Armstrong
         b. Buzz Aldrin

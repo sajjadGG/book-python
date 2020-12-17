@@ -10,8 +10,8 @@ English:
     2. Use regular expressions to validate phone numbers
     3. Check all given numbers (see input section)
     4. Valid phone number formats:
-        a. Easy version: ``+## ### ### ###``
-        b. Harder version: ``+## ### ### ###`` or ``+## ## ### ####``
+        a. Easy version: `+## ### ### ###`
+        b. Harder version: `+## ### ### ###` or `+## ## ### ####`
     5. Compare result with "Tests" section (see below)
 
 Polish:
@@ -19,8 +19,8 @@ Polish:
     2. Użyj wyrażeń regularnych do walidacji numeru telefonu
     3. Sprawdź wszystkie podane numery (patrz sekcja input)
     4. Poprawne formaty numeru:
-        a. Wersja łatwa: ``+## ### ### ###``
-        b. Wersja trudniejsza: ``+## ### ### ###`` lub ``+## ## ### ####``
+        a. Wersja łatwa: `+## ### ### ###`
+        b. Wersja trudniejsza: `+## ### ### ###` lub `+## ## ### ####`
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:

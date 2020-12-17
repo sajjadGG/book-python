@@ -13,7 +13,7 @@ Polish:
     1. Przeprowadź eksperyment myślowy (**tylko dyskusja**)
     2. Jak sprawdzić za pomocą wyrażeń regularnych czy:
         a. czy pesel jest poprawny?
-        b. jaka jest data urodzenia? (podaj obiekt ``datetime.date``)
+        b. jaka jest data urodzenia? (podaj obiekt `datetime.date`)
         c. płeć użytkownika który podał PESEL
     3. Mając PESEL "69072101234"
         a. Jakie wyrażenie może być na pierwszym miejscu w PESEL?

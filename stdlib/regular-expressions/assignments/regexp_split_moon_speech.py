@@ -8,12 +8,12 @@
 
 English:
     1. Use data from "Given" section (see below)
-    2. Using ``re.split()`` split text by paragraphs
+    2. Using `re.split()` split text by paragraphs
     4. Define `result: str` containing paragraph starting with 'We choose to go to the moon'
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Za pomocą ``re.split()`` podziel tekst na paragrafy
+    2. Za pomocą `re.split()` podziel tekst na paragrafy
     4. Zdefiniuj `result: str` zawierający tekst paragrafu zaczynający się od słów "We choose to go to the moon"
 
 Tests:

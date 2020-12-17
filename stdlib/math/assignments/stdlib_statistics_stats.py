@@ -17,7 +17,7 @@ English:
         b. median,
         c. standard deviation,
         d. variance.
-    4. Use ``statistics`` module from Python standard library
+    4. Use `statistics` module from Python standard library
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -31,7 +31,7 @@ Polish:
         b. medianę,
         c. odchylenie standardowe,
         d. wariancję.
-    4. Użyj modułu ``statistics`` z biblioteki standardowej Python
+    4. Użyj modułu `statistics` z biblioteki standardowej Python
 
 Tests:
     >>> stats(sepal_length)
