@@ -23,7 +23,7 @@ Syntax
 .. code-block:: python
     :caption: Function definition with parameters
 
-    def my_function(<parameters>):
+    def myfunction(<parameters>):
         <do something>
 
 .. code-block:: python

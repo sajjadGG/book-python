@@ -24,13 +24,14 @@ Syntax
 .. code-block:: python
     :caption: Function definition with parameters
 
-    my_function(<arguments>)
+    myfunction(<arguments>)
 
 .. code-block:: python
 
     add(1, 2)
     add(a=1, b=2)
     add(1, b=2)
+
 
 Positional Arguments
 ====================
