@@ -26,6 +26,9 @@ Polish:
         d. trójkątne `<` i `>`
 
 Tests:
+    >>> from inspect import isfunction
+    >>> isfunction(is_bracket_balanced)
+    True
     >>> is_bracket_balanced('{}')
     True
     >>> is_bracket_balanced('()')

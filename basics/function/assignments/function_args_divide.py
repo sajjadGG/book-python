@@ -2,29 +2,28 @@
 * Assignment: Function Arguments Divide
 * Filename: function_args_divide.py
 * Complexity: easy
-* Lines of code: 3 lines
+* Lines of code: 4 lines
 * Time: 3 min
 
 English:
     1. Define function `divide`
     2. Function takes two arguments
-    3. Function divides its arguments and returns the result
-    4. Call function with `divide(4, 2)`
-    5. Call function with `divide(4, 0)`
-    6. Print returned values
-    7. What to do in case of error?
+    3. Function returns result of the division of both arguments
+    4. If division cannot be made, raise `ValueError` with "Argument `b` cannot be negative"
 
 Polish:
     1. Zdefiniuj funkcję `divide`
     2. Funkcja przyjmuje dwa argumenty
-    3. Funkcja dzieli oba argumenty przez siebie i zwraca wynik dzielenia
-    4. Wywołaj funkcję z `divide(4, 2)`
-    5. Wywołaj funkcję z `divide(4, 0)`
-    6. Wypisz zwracane wartości
-    7. Co zrobić w przypadku błędu?
+    3. Funkcja zwraca wynik dzielenia dwóch argumentów
+    4. Jeżeli nie można podzielić, podnieś `ValueError` z "Argument `b` cannot be negative"
 
 Tests:
+    >>> from inspect import isfunction
+    >>> isfunction(divide)
+    True
     >>> divide(4, 0)
+    Traceback (most recent call last):
+    ValueError: Argument `b` cannot be negative
     >>> divide(4, 2)
     2.0
 """
@@ -32,5 +31,6 @@ Tests:
 
 # Solution
 def divide(a, b):
-    if b != 0:
-        return a / b
+    if b == 0:
+        raise ValueError('Argument `b` cannot be negative')
+    return a / b

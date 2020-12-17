@@ -11,9 +11,7 @@ English:
     3. Define function `sumif(features, label)`
     4. Function sums `features`, only when `label` is in `SELECT`
     5. When `label` is not in `select` return `0` (zero)
-    6. Iterate over data and split row to `features` and `label` (last)
-    7. Define `result: float` with sum of all features from species mentioned in `SELECT`
-    8. Compare result with "Tests" section (see below)
+    6. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
@@ -21,12 +19,13 @@ Polish:
     3. Zdefiniuj funkcję `sumif(features, label)`
     4. Funkcja sumuje `features`, tylko gdy `label` jest w `SELECT`
     5. Gdy `label` nie występuje w `select` zwróć `0` (zero)
-    6. Iterując po danych rozdziel wiersz na `features` i `label` (ostatni)
-    7. Zdefiniuj `result: float` z sumą wszystkich cech gatunków wymienionych w `SELECT`
-    8. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
-    >>> result
+    >>> from inspect import isfunction
+    >>> isfunction(sumif)
+    True
+    >>> sum(sumif(X,y) for *X, y in DATA[1:])
     49.1
 """
 
@@ -49,6 +48,3 @@ def sumif(features, label):
         return sum(features)
     else:
         return 0
-
-
-result = sum(sumif(X, y) for *X, y in DATA[1:])

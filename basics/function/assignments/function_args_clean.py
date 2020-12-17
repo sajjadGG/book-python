@@ -18,6 +18,9 @@ Polish:
     4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> from inspect import isfunction
+    >>> isfunction(clean)
+    True
     >>> clean('ul.Mieszka II')
     'Mieszka II'
     >>> clean('UL. Zygmunta III WaZY')

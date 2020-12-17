@@ -2,7 +2,7 @@
 * Assignment: Function Arguments Sequence
 * Filename: function_args_sequence.py
 * Complexity: easy
-* Lines of code: 5 lines
+* Lines of code: 2 lines
 * Time: 3 min
 
 English:
@@ -16,20 +16,18 @@ Polish:
     3. Wypisz zwróconą wartość
 
 Tests:
-    TODO: Doctests
+    >>> from inspect import isfunction
+    >>> isfunction(total)
+    True
+    >>> total([1,2,3,4])
+    6
+    >>> total([2,-1,0,2])
+    4
+    >>> total(range(0,101))
+    2550
 """
 
 
 # Solution
 def total(sequence):
     return sum(x for x in sequence if x % 2 == 0)
-
-
-print(total([1, 2, 3, 4]))
-# 6
-
-print(total([1, 1, 2]))
-# 2
-
-print(total([0, 2, 4, 9]))
-# 6

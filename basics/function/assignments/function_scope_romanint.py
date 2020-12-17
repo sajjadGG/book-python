@@ -14,6 +14,9 @@ Polish:
     2. Zdefiniuj funkcję przeliczającą liczbę rzymską na całkowitą
 
 Tests:
+    >>> from inspect import isfunction
+    >>> isfunction(roman_to_int)
+    True
     >>> int_to_roman(1)
     'I'
     >>> int_to_roman(9)
@@ -58,4 +61,4 @@ def int_to_roman(number):
 
 # Solution
 def int_to_roman(number):
-    """TODO"""
+    ...

@@ -22,6 +22,9 @@ Polish:
     6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> from inspect import isfunction
+    >>> isfunction(pilot_say)
+    True
     >>> pilot_say(1969)
     'one niner six niner'
     >>> pilot_say(31337)

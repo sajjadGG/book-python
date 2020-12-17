@@ -20,6 +20,9 @@ Polish:
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> from inspect import isfunction
+    >>> isfunction(translate)
+    True
     >>> translate('zażółć')
     'zazolc'
     >>> translate('gęślą')

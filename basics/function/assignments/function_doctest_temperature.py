@@ -16,6 +16,9 @@ Polish:
     3. Wszystkie testy muszą przechodzić
 
 Tests:
+    >>> from inspect import isfunction
+    >>> isfunction(celsius_to_kelvin)
+    True
     >>> celsius_to_kelvin(0)
     273.15
     >>> celsius_to_kelvin(1)

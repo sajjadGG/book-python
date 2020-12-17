@@ -2,7 +2,7 @@
 * Assignment: Function Scope Int To Roman
 * Filename: function_scope_introman.py
 * Complexity: hard
-* Lines of code: 15 lines
+* Lines of code: 13 lines
 * Time: 21 min
 
 English:
@@ -14,6 +14,9 @@ Polish:
     2. Zdefiniuj funkcję przeliczającą liczbę całkowitą na rzymską
 
 Tests:
+    >>> from inspect import isfunction
+    >>> isfunction(roman_to_int)
+    True
     >>> roman_to_int('I')
     1
     >>> roman_to_int('IX')
@@ -51,6 +54,10 @@ ROMAN = {
     'D': 500,
     'M': 1000,
 }
+
+
+def roman_to_int(roman: str) -> int:
+    ...
 
 
 # Solution

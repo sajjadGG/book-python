@@ -10,7 +10,7 @@ English:
     2. Parameter `a` is required
     3. Parameter `b` is optional and has default value `None`
     4. If only one argument was passed, consider second equal to the first one
-    5. Print `a` i `b`
+    5. Return `a` and `b` as a `dict`
     6. Compare result with "Tests" section (see below)
 
 Polish:
@@ -18,14 +18,19 @@ Polish:
     2. Parametr `a` jest wymagany
     3. Parametr `b` jest opcjonalny i ma domyślną wartość `None`
     4. Jeżeli tylko jeden argument był podany, przyjmij drugi równy pierwszemu
-    5. Wypisz `a` i `b`
+    5. Zwróć `a` i `b` jako `dict`
     6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> from inspect import isfunction
+    >>> isfunction(default)
+    True
+    >>> type(default(0,0)) is dict
+    True
     >>> default(1)
-    a=1 b=1
+    {'a': 1, 'b': 1}
     >>> default(2, 3)
-    a=2 b=3
+    {'a': 2, 'b': 3}
 """
 
 
@@ -33,4 +38,4 @@ Tests:
 def default(a, b=None):
     if b is None:
         b = a
-    print(f'{a=} {b=}')
+    return {'a': a, 'b': b}

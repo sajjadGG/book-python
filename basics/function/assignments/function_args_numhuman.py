@@ -20,6 +20,9 @@ Polish:
     5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> from inspect import isfunction
+    >>> isfunction(number_to_str)
+    True
     >>> number_to_str(1969)
     'one thousand nine hundred sixty nine'
     >>> number_to_str(31337)
@@ -52,10 +55,11 @@ NUMBER = {
     '.': 'and',
     '-': 'minus'}
 
+
 def number_to_str(number):
-    """TODO"""
+    return
 
 
 # Solution
 def number_to_str(number):
-    """TODO"""
+    return

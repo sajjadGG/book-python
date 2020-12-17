@@ -140,10 +140,6 @@ Assignments
     :caption: :download:`Solution <assignments/function_args_power.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/function_args_power.py
-    :caption: :download:`Solution <assignments/function_args_power.py>`
-    :end-before: # Solution
-
 .. literalinclude:: assignments/function_args_translate.py
     :caption: :download:`Solution <assignments/function_args_translate.py>`
     :end-before: # Solution

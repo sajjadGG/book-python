@@ -2,7 +2,7 @@
 * Assignment: Function Generator Chain
 * Filename: function_generators_chain.py
 * Complexity: easy
-* Lines of code: 10 lines
+* Lines of code: 9 lines
 * Time: 13 min
 
 English:
@@ -28,6 +28,11 @@ Hints:
     * `mean = sum(...) / len(...)`
 
 Tests:
+    >>> from inspect import isfunction
+    >>> isfunction(odd)
+    True
+    >>> isfunction(cube)
+    True
     >>> type(result) is float
     True
     >>> result

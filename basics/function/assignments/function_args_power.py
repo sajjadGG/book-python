@@ -2,7 +2,7 @@
 * Assignment: Function Arguments Power
 * Filename: function_args_power.py
 * Complexity: easy
-* Lines of code: 6 lines
+* Lines of code: 4 lines
 * Time: 3 min
 
 English:
@@ -24,6 +24,9 @@ Polish:
     7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
+    >>> from inspect import isfunction
+    >>> isfunction(power)
+    True
     >>> power(4, 3)
     64
     >>> power(3)

@@ -20,6 +20,11 @@ Hints:
     * type cast to `list()` before calculating mean to expand generator
 
 Tests:
+    >>> from inspect import isfunction
+    >>> isfunction(odd)
+    True
+    >>> isfunction(cube)
+    True
     >>> type(result) is float
     True
     >>> result
