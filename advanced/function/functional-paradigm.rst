@@ -69,55 +69,126 @@ Pure Functions
 * If there is no data dependency between two pure expressions, their order can be reversed, or they can be performed in parallel and they cannot interfere with one another (the evaluation of any pure expression is thread-safe)
 * Source: [WikipediaFunc]_
 
-.. code-block:: python
-    :caption: Pure functions
+Definition:
+    .. code-block:: python
 
-    def add(a, b):
-        return a + b
-
-
-    def odd(x):
-        return x % 2
+        def add(a, b):
+            return a + b
 
 
-    def cube(x):
-        return x ** 3
+        add(1, 2)
+        # 3
+        add(1, 2)
+        # 3
+        add(1, 2)
+        # 3
 
-.. code-block:: python
-    :caption: Pure functions
+Impure Function:
 
-    DATA = [(5.8, 2.7, 5.1, 1.9, 'virginica'),
-            (5.1, 3.5, 1.4, 0.2, 'setosa'),
-            (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-            (6.3, 2.9, 5.6, 1.8, 'virginica'),
-            (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-            (4.7, 3.2, 1.3, 0.2, 'setosa')]
+    .. code-block:: python
 
-
-    def function(data, species):
-        result = []
-        for *features, label in data:
-            if label == species:
-                result.append(features)
-        return result
-
-.. code-block:: python
-    :caption: Impure functions
-
-    DATA = [(5.8, 2.7, 5.1, 1.9, 'virginica'),
-            (5.1, 3.5, 1.4, 0.2, 'setosa'),
-            (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-            (6.3, 2.9, 5.6, 1.8, 'virginica'),
-            (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-            (4.7, 3.2, 1.3, 0.2, 'setosa')]
+        def add(a, b):
+            return a + b + c
 
 
-    def function(species):
-        result = []
-        for *features, label in DATA:
-            if label == species:
-                result.append(features)
-        return result
+        c = 3
+
+        add(1, 2)
+        # 6
+        add(1, 2)
+        # 6
+        add(1, 2)
+        # 6
+
+        c = 4
+
+        add(1, 2)
+        # 7
+        add(1, 2)
+        # 7
+        add(1, 2)
+        # 7
+
+Pure Function:
+
+    .. code-block:: python
+
+        def add(a, b, c):
+            return a + b
+
+
+        c = 3
+
+        add(1, 2, c)
+        # 6
+        add(1, 2, c)
+        # 6
+        add(1, 2, c)
+        # 6
+
+        c = 4
+
+        add(1, 2, c)
+        # 7
+        add(1, 2, c)
+        # 7
+        add(1, 2, c)
+        # 7
+
+Example:
+
+    .. code-block:: python
+
+        def add(a, b):
+            return a + b
+
+    .. code-block:: python
+
+        def odd(x):
+            return x % 2
+
+    .. code-block:: python
+
+        def cube(x):
+            return x ** 3
+
+Use Case [pure]:
+
+    .. code-block:: python
+
+        DATA = [(5.8, 2.7, 5.1, 1.9, 'virginica'),
+                (5.1, 3.5, 1.4, 0.2, 'setosa'),
+                (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+                (6.3, 2.9, 5.6, 1.8, 'virginica'),
+                (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+                (4.7, 3.2, 1.3, 0.2, 'setosa')]
+
+
+        def function(data, species):
+            result = []
+            for *features, label in data:
+                if label == species:
+                    result.append(features)
+            return result
+
+Use Case [impure]:
+
+    .. code-block:: python
+
+        DATA = [(5.8, 2.7, 5.1, 1.9, 'virginica'),
+                (5.1, 3.5, 1.4, 0.2, 'setosa'),
+                (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+                (6.3, 2.9, 5.6, 1.8, 'virginica'),
+                (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+                (4.7, 3.2, 1.3, 0.2, 'setosa')]
+
+
+        def function(species):
+            result = []
+            for *features, label in DATA:
+                if label == species:
+                    result.append(features)
+            return result
 
 
 Recursion

@@ -11,6 +11,7 @@ Function Scope
     def add(a, b=1):
         c = 0
 
+
     print(a)
     # Traceback (most recent call last):
     # NameError: name 'a' is not defined
@@ -45,8 +46,10 @@ Outer Scope
 
     data = [1, 2, 3]
 
+
     def add():
         return sum(data)
+
 
     print(add())
     # 6
@@ -62,9 +65,11 @@ Shadowing
 
     data = [1, 2, 3]
 
+
     def add():
         data = [10, 20, 30]
         return sum(data)
+
 
     print(add())
     # 60
@@ -90,6 +95,49 @@ Global
 
     print(data)
     # [10, 20, 30]
+
+
+Pure Function
+=============
+.. code-block:: python
+
+    def add(a, b):
+        return a + b
+
+
+    add(1, 2)
+    # 3
+    add(1, 2)
+    # 3
+    add(1, 2)
+    # 3
+
+
+Impure Function
+===============
+.. code-block:: python
+
+    c = 3
+
+    def add(a, b):
+        return a + b + c
+
+
+    add(1, 2)
+    # 6
+    add(1, 2)
+    # 6
+    add(1, 2)
+    # 6
+
+    c = 4
+
+    add(1, 2)
+    # 7
+    add(1, 2)
+    # 7
+    add(1, 2)
+    # 7
 
 
 Global Scope

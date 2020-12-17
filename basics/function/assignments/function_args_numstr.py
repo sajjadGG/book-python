@@ -25,6 +25,16 @@ Tests:
     >>> from inspect import isfunction
     >>> isfunction(pilot_say)
     True
+    >>> pilot_say(1)
+    'one'
+    >>> pilot_say(+1)
+    'one'
+    >>> pilot_say(-1)
+    'minus one'
+    >>> pilot_say(1+1)
+    'two'
+    >>> pilot_say(1-1)
+    'zero'
     >>> pilot_say(1969)
     'one niner six niner'
     >>> pilot_say(31337)
@@ -39,6 +49,19 @@ Tests:
     'minus tree one and tree tree seven'
     >>> pilot_say(-49.35)
     'minus fower niner and tree fife'
+    >>> pilot_say(1.0)
+    'one and zero'
+    >>> pilot_say(1.)
+    'one and zero'
+    >>> pilot_say(123.)
+    'one two tree and zero'
+    >>> pilot_say(123.0)
+    'one two tree and zero'
+    >>> pilot_say(.44)
+    'zero and fower fower'
+    >>> pilot_say(1-)
+    Traceback (most recent call last):
+    SyntaxError: invalid syntax
 """
 
 
