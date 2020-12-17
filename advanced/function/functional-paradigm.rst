@@ -193,6 +193,10 @@ Use Case [impure]:
 
 Recursion
 =========
+.. epigraph::
+
+    Aby zrozumieć rekurencję – musisz najpierw zrozumieć rekurencję.
+
 * Also known as recurrence
 * Recursive functions invoke themselves, operation is repeated until it reaches the base case
 * Iteration (looping) in functional languages is usually accomplished via recursion
@@ -202,25 +206,14 @@ Recursion
 * Rewriting the algorithm iteratively, is generally a better idea
 * Unconstrained recursion causes stack overflows!
 
-.. code-block:: python
-    :caption: Recap information about factorial (``n!``)
+Recap information about factorial (``n!``):
 
-    """
     5! = 5 * 4!
     4! = 4 * 3!
     3! = 3 * 2!
     2! = 2 * 1!
     1! = 1 * 0!
     0! = 1
-    """
-
-    factorial(5)                                    # = 120
-        return 5 * factorial(4)                     # 5 * 24 = 120
-            return 4 * factorial(3)                 # 4 * 6 = 24
-                return 3 * factorial(2)             # 3 * 2 = 6
-                    return 2 * factorial(1)         # 2 * 1 = 2
-                        return 1 * factorial(0)     # 1 * 1 = 1
-                            return 1                # 1
 
 .. code-block:: python
     :caption: Cache with global scope
@@ -230,6 +223,16 @@ Recursion
             return 1
         else:
             return n * factorial(n-1)
+
+.. code-block:: python
+
+    factorial(5)                                    # = 120
+        return 5 * factorial(4)                     # 5 * 24 = 120
+            return 4 * factorial(3)                 # 4 * 6 = 24
+                return 3 * factorial(2)             # 3 * 2 = 6
+                    return 2 * factorial(1)         # 2 * 1 = 2
+                        return 1 * factorial(0)     # 1 * 1 = 1
+                            return 1                # 1
 
 
 Data Structures
@@ -341,6 +344,15 @@ First-class Function
         'cube': cube,
         'square': square,
     }
+
+
+Assignments
+===========
+
+.. literalinclude:: assignments/function_recurrence_fibonacci.py
+    :caption: :download:`Solution <assignments/function_recurrence_fibonacci.py>`
+    :end-before: # Solution
+
 
 
 References

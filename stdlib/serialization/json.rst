@@ -35,7 +35,7 @@ JSON Syntax
               {'astronaut': 'Alex Vogel', 'date_of_birth': date(1994, 11, 15)},
               {'astronaut': 'Chris Beck', 'date_of_birth': date(1999, 8, 2)},
               {'astronaut': 'Beth Johansen', 'date_of_birth': date(2006, 5, 9)},
-             {'astronaut': 'Mark Watney', 'date_of_birth': date(1994, 10, 12)}]}
+              {'astronaut': 'Mark Watney', 'date_of_birth': date(1994, 10, 12)}]}
 
 .. code-block:: json
     :caption: JSON or Python ``list[dict]``?

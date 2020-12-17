@@ -5,8 +5,12 @@ Function Scope
 **************
 
 
+
+Rationale
+=========
+* Functions has access to global values
+
 .. code-block:: python
-    :caption: Functions has access to global values
 
     def add(a, b=1):
         c = 0
@@ -15,11 +19,9 @@ Function Scope
     print(a)
     # Traceback (most recent call last):
     # NameError: name 'a' is not defined
-
     print(b)
     # Traceback (most recent call last):
     # NameError: name 'b' is not defined
-
     print(c)
     # Traceback (most recent call last):
     # NameError: name 'c' is not defined
@@ -29,11 +31,9 @@ Function Scope
     print(a)
     # Traceback (most recent call last):
     # NameError: name 'a' is not defined
-
     print(b)
     # Traceback (most recent call last):
     # NameError: name 'b' is not defined
-
     print(c)
     # Traceback (most recent call last):
     # NameError: name 'c' is not defined
@@ -41,8 +41,9 @@ Function Scope
 
 Outer Scope
 ===========
+* Functions has access to global values
+
 .. code-block:: python
-    :caption: Functions has access to global values
 
     data = [1, 2, 3]
 
@@ -51,9 +52,8 @@ Outer Scope
         return sum(data)
 
 
-    print(add())
+    add()
     # 6
-
     print(data)
     # [1, 2, 3]
 
@@ -61,19 +61,17 @@ Outer Scope
 Shadowing
 =========
 .. code-block:: python
-    :caption: Shadowing
 
     data = [1, 2, 3]
 
 
     def add():
-        data = [10, 20, 30]
+        data = [10, 20, 30]  # Shadows name 'data' from outer scope
         return sum(data)
 
 
-    print(add())
+    add()
     # 60
-
     print(data)
     # [1, 2, 3]
 
@@ -85,14 +83,15 @@ Global
 
     data = [1, 2, 3]
 
+
     def add():
         global data
         data = [10, 20, 30]
         return sum(data)
 
-    print(add())
-    # 60
 
+    add()
+    # 60
     print(data)
     # [10, 20, 30]
 
@@ -119,6 +118,7 @@ Impure Function
 
     c = 3
 
+
     def add(a, b):
         return a + b + c
 
@@ -140,184 +140,88 @@ Impure Function
     # 7
 
 
+Impure to Pure Function
+=======================
+.. code-block:: python
+
+    c = 3
+
+
+    def add(a, b, c):
+        return a + b + c
+
+
+    add(1, 2, c)
+    # 6
+    add(1, 2, c)
+    # 6
+    add(1, 2, c)
+    # 6
+
+    c = 4
+
+    add(1, 2, c)
+    # 7
+    add(1, 2, c)
+    # 7
+    add(1, 2, c)
+    # 7
+
+
 Global Scope
 ============
-* All variables in main program
-* Variables are available inside all functions
+.. code-block:: python
+
+    globals()
+    # {'__name__': '__main__',
+    #  '__doc__': None,
+    #  '__package__': None,
+    #  '__loader__': <class '_frozen_importlib.BuiltinImporter'>,
+    #  '__spec__': None,
+    #  '__annotations__': {},
+    #  '__builtins__': <module 'builtins' (built-in)>}
 
 .. code-block:: python
 
-    print(globals())
-    # {'__builtins__': {'ArithmeticError': <class 'ArithmeticError'>,
-    #                   'AssertionError': <class 'AssertionError'>,
-    #                   'AttributeError': <class 'AttributeError'>,
-    #                   'BaseException': <class 'BaseException'>,
-    #                   'BlockingIOError': <class 'BlockingIOError'>,
-    #                   'BrokenPipeError': <class 'BrokenPipeError'>,
-    #                   'BufferError': <class 'BufferError'>,
-    #                   'BytesWarning': <class 'BytesWarning'>,
-    #                   'ChildProcessError': <class 'ChildProcessError'>,
-    #                   'ConnectionAbortedError': <class 'ConnectionAbortedError'>,
-    #                   'ConnectionError': <class 'ConnectionError'>,
-    #                   'ConnectionRefusedError': <class 'ConnectionRefusedError'>,
-    #                   'ConnectionResetError': <class 'ConnectionResetError'>,
-    #                   'DeprecationWarning': <class 'DeprecationWarning'>,
-    #                   'EOFError': <class 'EOFError'>,
-    #                   'Ellipsis': Ellipsis,
-    #                   'EnvironmentError': <class 'OSError'>,
-    #                   'Exception': <class 'Exception'>,
-    #                   'False': False,
-    #                   'FileExistsError': <class 'FileExistsError'>,
-    #                   'FileNotFoundError': <class 'FileNotFoundError'>,
-    #                   'FloatingPointError': <class 'FloatingPointError'>,
-    #                   'FutureWarning': <class 'FutureWarning'>,
-    #                   'GeneratorExit': <class 'GeneratorExit'>,
-    #                   'IOError': <class 'OSError'>,
-    #                   'ImportError': <class 'ImportError'>,
-    #                   'ImportWarning': <class 'ImportWarning'>,
-    #                   'IndentationError': <class 'IndentationError'>,
-    #                   'IndexError': <class 'IndexError'>,
-    #                   'InterruptedError': <class 'InterruptedError'>,
-    #                   'IsADirectoryError': <class 'IsADirectoryError'>,
-    #                   'KeyError': <class 'KeyError'>,
-    #                   'KeyboardInterrupt': <class 'KeyboardInterrupt'>,
-    #                   'LookupError': <class 'LookupError'>,
-    #                   'MemoryError': <class 'MemoryError'>,
-    #                   'ModuleNotFoundError': <class 'ModuleNotFoundError'>,
-    #                   'NameError': <class 'NameError'>,
-    #                   'None': None,
-    #                   'NotADirectoryError': <class 'NotADirectoryError'>,
-    #                   'NotImplemented': NotImplemented,
-    #                   'NotImplementedError': <class 'NotImplementedError'>,
-    #                   'OSError': <class 'OSError'>,
-    #                   'OverflowError': <class 'OverflowError'>,
-    #                   'PendingDeprecationWarning': <class
-    #                   'PendingDeprecationWarning'>,
-    #                   'PermissionError': <class 'PermissionError'>,
-    #                   'ProcessLookupError': <class 'ProcessLookupError'>,
-    #                   'RecursionError': <class 'RecursionError'>,
-    #                   'ReferenceError': <class 'ReferenceError'>,
-    #                   'ResourceWarning': <class 'ResourceWarning'>,
-    #                   'RuntimeError': <class 'RuntimeError'>,
-    #                   'RuntimeWarning': <class 'RuntimeWarning'>,
-    #                   'StopAsyncIteration': <class 'StopAsyncIteration'>,
-    #                   'StopIteration': <class 'StopIteration'>,
-    #                   'SyntaxError': <class 'SyntaxError'>,
-    #                   'SyntaxWarning': <class 'SyntaxWarning'>,
-    #                   'SystemError': <class 'SystemError'>,
-    #                   'SystemExit': <class 'SystemExit'>,
-    #                   'TabError': <class 'TabError'>,
-    #                   'TimeoutError': <class 'TimeoutError'>,
-    #                   'True': True,
-    #                   'TypeError': <class 'TypeError'>,
-    #                   'UnboundLocalError': <class 'UnboundLocalError'>,
-    #                   'UnicodeDecodeError': <class 'UnicodeDecodeError'>,
-    #                   'UnicodeEncodeError': <class 'UnicodeEncodeError'>,
-    #                   'UnicodeError': <class 'UnicodeError'>,
-    #                   'UnicodeTranslateError': <class 'UnicodeTranslateError'>,
-    #                   'UnicodeWarning': <class 'UnicodeWarning'>,
-    #                   'UserWarning': <class 'UserWarning'>,
-    #                   'ValueError': <class 'ValueError'>,
-    #                   'Warning': <class 'Warning'>,
-    #                   'ZeroDivisionError': <class 'ZeroDivisionError'>,
-    #                   '_': <Recursion on dict with id=4575702144>,
-    #                   '__build_class__': <built-in function __build_class__>,
-    #                   '__debug__': True,
-    #                   '__doc__': 'Built-in functions, exceptions, and other '
-    #                              'objects.\n'
-    #                              '\n'
-    #                              "Noteworthy: None is the `nil' object;
-    #                              Ellipsis "
-    #                              "represents `...' in slices.",
-    #                   '__import__': <bound method ImportHookManager.do_import
-    #                   of <module '_pydev_bundle.pydev_import_hook.import_hook'>>,
-    #                   '__loader__': <class '_frozen_importlib.BuiltinImporter'>,
-    #                   '__name__': 'builtins',
-    #                   '__package__': '',
-    #                   '__spec__': ModuleSpec(name='builtins', loader=<class
-    #                   '_frozen_importlib.BuiltinImporter'>),
-    #                   'abs': <built-in function abs>,
-    #                   'all': <built-in function all>,
-    #                   'any': <built-in function any>,
-    #                   'ascii': <built-in function ascii>,
-    #                   'bin': <built-in function bin>,
-    #                   'bool': <class 'bool'>,
-    #                   'breakpoint': <built-in function breakpoint>,
-    #                   'bytearray': <class 'bytearray'>,
-    #                   'bytes': <class 'bytes'>,
-    #                   'callable': <built-in function callable>,
-    #                   'chr': <built-in function chr>,
-    #                   'classmethod': <class 'classmethod'>,
-    #                   'compile': <built-in function compile>,
-    #                   'complex': <class 'complex'>,
-    #                   'copyright': Copyright (c) 2001-2019 Python Software Foundation.,
-    #                   'delattr': <built-in function delattr>,
-    #                   'dict': <class 'dict'>,
-    #                   'dir': <built-in function dir>,
-    #                   'divmod': <built-in function divmod>,
-    #                   'enumerate': <class 'enumerate'>,
-    #                   'eval': <built-in function eval>,
-    #                   'exec': <built-in function exec>,
-    #                   'execfile': <function execfile at 0x1107e93b0>,
-    #                   'exit': Use exit() or Ctrl-D (i.e. EOF) to exit,
-    #                   'filter': <class 'filter'>,
-    #                   'float': <class 'float'>,
-    #                   'format': <built-in function format>,
-    #                   'frozenset': <class 'frozenset'>,
-    #                   'getattr': <built-in function getattr>,
-    #                   'globals': <built-in function globals>,
-    #                   'hasattr': <built-in function hasattr>,
-    #                   'hash': <built-in function hash>,
-    #                   'help': Type help() for interactive help, or help(
-    #                   object) for help about object.,
-    #                   'hex': <built-in function hex>,
-    #                   'id': <built-in function id>,
-    #                   'input': <built-in function input>,
-    #                   'int': <class 'int'>,
-    #                   'isinstance': <built-in function isinstance>,
-    #                   'issubclass': <built-in function issubclass>,
-    #                   'iter': <built-in function iter>,
-    #                   'len': <built-in function len>,
-    #                   'license': Type license() to see the full license text,
-    #                   'list': <class 'list'>,
-    #                   'locals': <built-in function locals>,
-    #                   'map': <class 'map'>,
-    #                   'max': <built-in function max>,
-    #                   'memoryview': <class 'memoryview'>,
-    #                   'min': <built-in function min>,
-    #                   'next': <built-in function next>,
-    #                   'object': <class 'object'>,
-    #                   'oct': <built-in function oct>,
-    #                   'open': <built-in function open>,
-    #                   'ord': <built-in function ord>,
-    #                   'pow': <built-in function pow>,
-    #                   'print': <built-in function print>,
-    #                   'property': <class 'property'>,
-    #                   'quit': Use quit() or Ctrl-D (i.e. EOF) to exit,
-    #                   'range': <class 'range'>,
-    #                   'repr': <built-in function repr>,
-    #                   'reversed': <class 'reversed'>,
-    #                   'round': <built-in function round>,
-    #                   'runfile': <function runfile at 0x110bb24d0>,
-    #                   'set': <class 'set'>,
-    #                   'setattr': <built-in function setattr>,
-    #                   'slice': <class 'slice'>,
-    #                   'sorted': <built-in function sorted>,
-    #                   'staticmethod': <class 'staticmethod'>,
-    #                   'str': <class 'str'>,
-    #                   'sum': <built-in function sum>,
-    #                   'super': <class 'super'>,
-    #                   'tuple': <class 'tuple'>,
-    #                   'type': <class 'type'>,
-    #                   'vars': <built-in function vars>,
-    #                   'zip': <class 'zip'>},
+    dir(globals()['__builtins__'])
+    # ['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException', 'BlockingIOError',
+    #  'BrokenPipeError', 'BufferError', 'BytesWarning', 'ChildProcessError', 'ConnectionAbortedError',
+    #  'ConnectionError', 'ConnectionRefusedError', 'ConnectionResetError', 'DeprecationWarning',
+    #  'EOFError', 'Ellipsis', 'EnvironmentError', 'Exception', 'False', 'FileExistsError',
+    #  'FileNotFoundError', 'FloatingPointError', 'FutureWarning', 'GeneratorExit', 'IOError',
+    #  'ImportError', 'ImportWarning', 'IndentationError', 'IndexError', 'InterruptedError',
+    #  'IsADirectoryError', 'KeyError', 'KeyboardInterrupt', 'LookupError', 'MemoryError',
+    #  'ModuleNotFoundError', 'NameError', 'None', 'NotADirectoryError', 'NotImplemented',
+    #  'NotImplementedError', 'OSError', 'OverflowError', 'PendingDeprecationWarning', 'PermissionError',
+    #  'ProcessLookupError', 'RecursionError', 'ReferenceError', 'ResourceWarning', 'RuntimeError',
+    #  'RuntimeWarning', 'StopAsyncIteration', 'StopIteration', 'SyntaxError', 'SyntaxWarning', 'SystemError',
+    #  'SystemExit', 'TabError', 'TimeoutError', 'True', 'TypeError', 'UnboundLocalError', 'UnicodeDecodeError',
+    #  'UnicodeEncodeError', 'UnicodeError', 'UnicodeTranslateError', 'UnicodeWarning', 'UserWarning',
+    #  'ValueError', 'Warning', 'ZeroDivisionError', '_', '__build_class__', '__debug__', '__doc__',
+    #  '__import__', '__loader__', '__name__', '__package__', '__spec__', 'abs', 'all', 'any', 'ascii',
+    #  'bin', 'bool', 'breakpoint', 'bytearray', 'bytes', 'callable', 'chr', 'classmethod', 'compile',
+    #  'complex', 'copyright', 'credits', 'delattr', 'dict', 'dir', 'divmod', 'enumerate', 'eval', 'exec',
+    #  'exit', 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr', 'hash', 'help',
+    #  'hex', 'id', 'input', 'int', 'isinstance', 'issubclass', 'iter', 'len', 'license', 'list', 'locals',
+    #  'map', 'max', 'memoryview', 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property',
+    #  'quit', 'range', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod',
+    #  'str', 'sum', 'super', 'tuple', 'type', 'vars', 'zip']
+
+.. code-block:: python
+
+    firstname = 'Mark'
+    lastname = 'Watney'
+
+    globals()
+    # {'__name__': '__main__',
     #  '__doc__': None,
-    #  '__file__': '<input>',
-    #  '__loader__': <_frozen_importlib_external.SourceFileLoader object at
-    #  0x100dea9d0>,
-    #  '__name__': '__main__',
     #  '__package__': None,
-    #  '__spec__': None}
+    #  '__loader__': <class '_frozen_importlib.BuiltinImporter'>,
+    #  '__spec__': None,
+    #  '__annotations__': {},
+    #  '__builtins__': <module 'builtins' (built-in)>,
+    #  'firstname': 'Mark',
+    #  'lastname': 'Watney'}
 
 
 Local Scope
@@ -328,14 +232,21 @@ Local Scope
 
 .. code-block:: python
 
-    print(locals())
-    # {...}
+    locals()
+    # {'__name__': '__main__',
+    #  '__doc__': None,
+    #  '__package__': None,
+    #  '__loader__': <class '_frozen_importlib.BuiltinImporter'>,
+    #  '__spec__': None,
+    #  '__annotations__': {},
+    #  '__builtins__': <module 'builtins' (built-in)>}
 
 .. code-block:: python
 
     def echo():
         a = 1
         print(locals())
+
 
     echo()
     # {'a': 1}
@@ -345,6 +256,7 @@ Local Scope
     def echo(a, b=2):
         c = 3
         print(locals())
+
 
     echo(1)
     # {'a':1, 'b':2, 'c':3}

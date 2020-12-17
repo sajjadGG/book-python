@@ -1,12 +1,11 @@
-.. _Function Recurrence:
-
 *******************
 Function Recurrence
 *******************
 
+
 .. epigraph::
-    * Aby zrozumieć rekurencję – musisz najpierw zrozumieć rekursję.
-    * Aby zrozumieć rekursję - musisz najpierw zrozumieć rekurencję.
+
+    Aby zrozumieć rekurencję – musisz najpierw zrozumieć rekurencję.
 
 
 Rationale
@@ -15,16 +14,21 @@ Rationale
 * Python isn't a functional language
 * CPython implementation doesn't optimize tail recursion
 * Tail recursion is not a particularly efficient technique in Python
-* Unbridled recursion causes stack overflows!
+* Uncontrolled recursion causes stack overflows!
 * Rewriting the algorithm iteratively, is generally a better idea
-
-.. figure:: img/function-recurrence-hanoi.jpg
-
-    Hanoi Tower as a standard example of a recurrence. Source: [hanoi]_
 
 
 Example
 =======
+Recap information about factorial (``n!``):
+
+    5! = 5 * 4!
+    4! = 4 * 3!
+    3! = 3 * 2!
+    2! = 2 * 1!
+    1! = 1 * 0!
+    0! = 1
+
 .. code-block:: python
 
     def factorial(n):
@@ -34,16 +38,6 @@ Example
             return n * factorial(n-1)
 
 .. code-block:: python
-    :caption: Recap information about factorial (``n!``)
-
-    """
-    5! = 5 * 4!
-    4! = 4 * 3!
-    3! = 3 * 2!
-    2! = 2 * 1!
-    1! = 1 * 0!
-    0! = 1
-    """
 
     factorial(5)                                    # = 120
         return 5 * factorial(4)                     # 5 * 24 = 120
@@ -52,6 +46,13 @@ Example
                     return 2 * factorial(1)         # 2 * 1 = 2
                         return 1 * factorial(0)     # 1 * 1 = 1
                             return 1                # 1
+
+
+Use Case
+========
+.. figure:: img/function-recurrence-hanoi.jpg
+
+    Hanoi Tower as a standard example of a recurrence. Source: [1]_
 
 
 Recursion Depth Limit
@@ -66,14 +67,18 @@ Recursion Depth Limit
     sys.setrecursionlimit(3000)
 
 
-References
-==========
-.. [hanoi] https://dyermath.files.wordpress.com/2015/06/hanoi-13.jpg
-
-
 Assignments
 ===========
+
+.. literalinclude:: assignments/function_recurrence_fibonacci.py
+    :caption: :download:`Solution <assignments/function_recurrence_fibonacci.py>`
+    :end-before: # Solution
 
 .. literalinclude:: assignments/function_recurrence_brackets.py
     :caption: :download:`Solution <assignments/function_recurrence_brackets.py>`
     :end-before: # Solution
+
+
+References
+==========
+.. [1] https://dyermath.files.wordpress.com/2015/06/hanoi-13.jpg

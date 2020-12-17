@@ -76,12 +76,48 @@ Floating Numbers Precision
 * Filename: Use ``Decimal`` type
 
 .. code-block:: python
-    :caption: Problem
+
+    0.1
+    # 0.1
+
+    0.2
+    # 0.2
+
+    0.3
+    # 0.3
+
+.. code-block:: python
+
+    0.1 + 0.2 == 0.3
+    # False
+
+.. code-block:: python
 
     0.1 + 0.2
     # 0.30000000000000004
 
-    0.1 + 0.2 == 0.3
+.. code-block:: python
+
+    0.1 + 0.1
+    # 0.2
+
+    0.1 + 0.1 + 0.1
+    # 0.30000000000000004
+
+.. code-block:: python
+
+    round(0.1+0.2, 16)
+    # 0.3
+
+    round(0.1+0.2, 17)
+    # 0.30000000000000004
+
+.. code-block:: python
+
+    round(0.1+0.2, 16)
+    # True
+
+    round(0.1+0.2, 17) == 0.3
     # False
 
 
@@ -113,16 +149,16 @@ Floats in Doctest
 =================
 .. code-block:: python
 
-    def add_numbers(a, b):
+    def add(a, b):
         """
-        >>> add_numbers(2.5, 1.2)
-        3.7
+        >>> add(1.0, 2.0)
+        3.0
 
-        >>> add_numbers(0.1, 0.2)
+        >>> add(0.1, 0.2)
         0.30000000000000004
 
-        >>> add_numbers(0.1, 0.2)   # doctest: +ELLIPSIS
-        0.1 + 0.2 == 0.3000...
+        >>> add(0.1, 0.2)   # doctest: +ELLIPSIS
+        0.3000...
         """
         return a + b
 

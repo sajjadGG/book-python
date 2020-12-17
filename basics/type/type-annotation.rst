@@ -6,6 +6,11 @@ Type Annotation
     Types are not required, and never will be.
     -- Guido van Rossum, Python initiator, core developer, former BDFL
 
+.. epigraph::
+
+    It should be emphasized that Python will remain a dynamically typed language, and the authors have no desire to ever make type hints mandatory, even by convention.
+    -- Python Software Foundation
+
 
 Rationale
 ---------
@@ -20,7 +25,7 @@ Rationale
 * To type check use: ``mypy``, ``pyre-check``, ``pytypes``
 * More information in :ref:`cicd-tools`
 * https://www.infoq.com/presentations/dynamic-static-typing/
-* Example: https://github.com/pandas-dev/pandas/blob/master/pandas/core/frame.py#L458
+* Example: https://github.com/pandas-dev/pandas/blob/8fd2d0c1eea04d56ec0a63fae084a66dd482003e/pandas/core/frame.py#L505
 
 
 Int

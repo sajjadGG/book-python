@@ -11,6 +11,11 @@ Annotation Type
 
     -- Guido van Rossum, Python initiator, core developer, former BDFL
 
+.. epigraph::
+
+    It should be emphasized that Python will remain a dynamically typed language, and the authors have no desire to ever make type hints mandatory, even by convention.
+    -- Python Software Foundation
+
 
 Rationale
 =========

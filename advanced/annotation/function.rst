@@ -1,17 +1,16 @@
-.. _Advanced Annotation Function:
+.. _Function Type Annotation:
 
-*******************
-Annotation Function
-*******************
+************************
+Function Type Annotation
+************************
 
 
 Rationale
 =========
-.. highlights::
-    * Before Python 3.9 you need ``from typing import List, Set, Tuple, Dict``
+* Before Python 3.9 you need ``from typing import List, Set, Tuple, Dict``
 
-    .. versionadded:: 3.9
-        :pep:`585` -- Type Hinting Generics In Standard Collections
+.. versionadded:: 3.9
+    :pep:`585` -- Type Hinting Generics In Standard Collections
 
 
 Return
@@ -40,8 +39,8 @@ Union
     from typing import Union
 
 
-    def add_numbers(a: Union[int, float], b: Union[int, float]) -> int:
-        return int(a + b)
+    def add_numbers(a: Union[int,float], b: Union[int,float]) -> Union[int,float]:
+        return a + b
 
 
     add_numbers(1, 2)       # 'Ok'
@@ -59,12 +58,61 @@ Union
     add_numbers(1, 2)       # 'Ok'
     add_numbers(1.5, 2.5)   # 'Ok'
 
+Since Python 3.10:
+
+.. code-block:: python
+    :force:
+
+    def add_numbers(a: int|float, b: int|float) -> int|float:
+        return a + b
+
+
+    add_numbers(1, 2)       # 'Ok'
+    add_numbers(1.5, 2.5)   # 'Ok'
+
 
 Optional
 ========
 .. code-block:: python
 
+    from typing import Union
+
+
+    def find(text: str, what: str) -> Union[int,None]:
+        position = text.find(what)
+
+        if position == -1:
+            return None
+        else:
+            return position
+
+
+    find('Python', 'o')      # 4
+    find('Python', 'x')      # None
+
+.. code-block:: python
+
+    from typing import Optional
+
+
     def find(text: str, what: str) -> Optional[int]:
+        position = text.find(what)
+
+        if position == -1:
+            return None
+        else:
+            return position
+
+
+    find('Python', 'o')      # 4
+    find('Python', 'x')      # None
+
+Since Python 3.10:
+
+.. code-block:: python
+    :force:
+
+    def find(text: str, what: str) -> int?:
         position = text.find(what)
 
         if position == -1:
@@ -130,20 +178,33 @@ Annotations
 ===========
 .. code-block:: python
 
-    def add_numbers(a: int, b: int) -> int:
+    def add(a: int, b: int) -> int:
         return a + b
 
-    add_numbers.__annotations__
+
+    add.__annotations__
     # {'a': <class 'int'>,
     #  'b': <class 'int'>,
     #  'return': <class 'int'>}
 
+Since Python 3.10:
+
+.. code-block:: python
+
+    def add(a: int, b: int) -> int:
+        return a + b
+
+
+    add.__annotations__
+    # {'a': 'int',
+    #  'b': 'int',
+    #  'return': 'int'}
+
 
 Errors
 ======
-.. highlights::
-    * Python will execute without even warning
-    * Your IDE and ``mypy`` et. al. will yield errors
+* Python will execute without even warning
+* Your IDE and ``mypy`` et. al. will yield errors
 
 .. code-block:: python
 
@@ -151,8 +212,8 @@ Errors
         return a + b
 
 
-    add_numbers('Jan', 'Twardowski')
-    # 'JanTwardowski'
+    add_numbers('Mark', 'Watney')
+    # 'MarkWatney'
 
 
 Good Engineering Practices
@@ -172,6 +233,6 @@ Good Engineering Practices
 
 More Information
 ================
-* Example: https://github.com/pandas-dev/pandas/blob/master/pandas/core/frame.py#L458
+* Example: https://github.com/pandas-dev/pandas/blob/8fd2d0c1eea04d56ec0a63fae084a66dd482003e/pandas/core/frame.py#L505
 
 .. note:: More information in :ref:`Type Annotations` and :ref:`CI/CD Type Checking`
