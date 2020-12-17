@@ -44,19 +44,6 @@
         "stdlib/datetime/timezones": [
             "VideoComputerphileTimeZones"
         ],
-        "stdlib/regular-expressions/find": [
-            "RegexpWikipediaApollo11"
-        ],
-        "stdlib/regular-expressions/greedy": [
-            "RegexpKennedy1962"
-        ],
-        "stdlib/regular-expressions/search": [
-            "RegexpWikipediaApollo11",
-            "RegexpKennedy1962"
-        ],
-        "stdlib/regular-expressions/split": [
-            "RegexpKennedy1962"
-        ],
         "stdlib/regular-expressions/standards": [
             "W3CParsingURLs"
         ]

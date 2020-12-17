@@ -44,6 +44,8 @@ Tests:
     {'mean': 1.2333333333333334, 'stdev': 0.7741662181555931, 'median': 1.4, 'variance': 0.5993333333333334}
 """
 
+
+# Given
 from statistics import mean, stdev, variance, median
 
 
@@ -70,6 +72,8 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
         (6.9, 3.1, 4.9, 1.5, 'versicolor'),
         (4.6, 3.1, 1.5, 0.2, 'setosa')]
 
+
+# Solution
 header, *data = DATA
 sepal_length = [row[0] for row in data]
 sepal_width = [row[1] for row in data]

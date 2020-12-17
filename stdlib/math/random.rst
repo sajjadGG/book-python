@@ -35,7 +35,7 @@ Assignments
 Random numbers
 --------------
 * Assignment: Random numbers
-* Filename: :download:`assignments/random_sample.py`
+* Filename: random_sample.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 13 min
@@ -49,7 +49,7 @@ Polish:
 Sum of inner elements
 ---------------------
 * Assignment: Sum of inner elements
-* Filename: :download:`assignments/random_matrix.py`
+* Filename: random_matrix.py
 * Complexity: medium
 * Lines of code: 5 lines
 * Time: 13 min
