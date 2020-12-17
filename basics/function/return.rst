@@ -9,7 +9,7 @@ Syntax
 ======
 .. code-block:: python
 
-    def my_function():
+    def myfunction():
         return <expression>
 
 .. code-block:: python
@@ -33,7 +33,8 @@ Return Keyword
 .. code-block:: python
 
     def hello():
-        return 'ehlo world'
+        return 'hello world'
+
 
     print(hello())
     # 'ehlo world'
@@ -41,8 +42,9 @@ Return Keyword
 .. code-block:: python
 
     def hello():
-        return 'ehlo world'
+        return 'hello world'
         print('This will not be executed')
+
 
     print(hello())
     # 'ehlo world'
@@ -52,22 +54,22 @@ Return Basic Type
 =================
 .. code-block:: python
 
-    def my_function():
+    def myfunction():
         return 42
 
 .. code-block:: python
 
-    def my_function():
+    def myfunction():
         return 13.37
 
 .. code-block:: python
 
-    def my_function():
+    def myfunction():
         return 'Mark Watney'
 
 .. code-block:: python
 
-    def my_function():
+    def myfunction():
         return True
 
 
@@ -75,34 +77,34 @@ Return Sequence
 ===============
 .. code-block:: python
 
-    def my_function():
+    def myfunction():
         return list([42, 13.37, 'Mark Watney'])
 
-    def my_function():
+    def myfunction():
         return [42, 13.37, 'Mark Watney']
 
 .. code-block:: python
 
-    def my_function():
+    def myfunction():
         return tuple((42, 13.37, 'Mark Watney'))
 
-    def my_function():
+    def myfunction():
         return (42, 13.37, 'Mark Watney')
 
-    def my_function():
+    def myfunction():
         return 42, 13.37, 'Mark Watney'
 
 .. code-block:: python
 
-    def my_function():
+    def myfunction():
         return set({42, 13.37, 'Mark Watney'})
 
-    def my_function():
+    def myfunction():
         return {42, 13.37, 'Mark Watney'}
 
 .. code-block:: python
 
-    def my_function():
+    def myfunction():
         return frozenset({42, 13.37, 'Mark Watney'})
 
 
@@ -110,10 +112,10 @@ Return Mapping
 ==============
 .. code-block:: python
 
-    def my_function():
+    def myfunction():
         return dict(firstname='Mark', lastname='Watney')
 
-    def my_function():
+    def myfunction():
         return {'firstname': 'Mark', 'lastname': 'Watney'}
 
 
@@ -121,7 +123,7 @@ Return Nested Sequence
 ======================
 .. code-block:: python
 
-    def my_function():
+    def myfunction():
         return [
             ('Mark', 'Watney'),
             {'Jan Twardowski', 'Melissa Lewis'},
@@ -137,22 +139,22 @@ Return None
 
 .. code-block:: python
 
-    def my_function():
+    def myfunction():
         return None
 
 .. code-block:: python
 
-    def my_function():
-        print('ehlo world')
+    def myfunction():
+        print('hello')
 
 .. code-block:: python
 
-    def my_function():
+    def myfunction():
         pass
 
 .. code-block:: python
 
-    def my_function():
+    def myfunction():
         """My function"""
 
 
@@ -160,11 +162,11 @@ Intercept returned value
 ========================
 .. code-block:: python
 
-    def my_function():
+    def myfunction():
         return 1
 
 
-    result = my_function()
+    result = myfunction()
     print(result)
     # 1
 

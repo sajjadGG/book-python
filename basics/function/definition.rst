@@ -28,9 +28,15 @@ Definition
     def say_hello():
         print('My name... José Jiménez')
 
-    say_hello()     # My name... José Jiménez
-    say_hello()     # My name... José Jiménez
-    say_hello()     # My name... José Jiménez
+
+    say_hello()
+    # My name... José Jiménez
+
+    say_hello()
+    # My name... José Jiménez
+
+    say_hello()
+    # My name... José Jiménez
 
 
 Convention
@@ -48,6 +54,7 @@ Convention
         print('This is camelCase() name')
         print('It is c/c++/Java/JavaScript convention')
 
+
     def say_hello():
         print('This is snake_case() name')
         print('It is Pythonic way')
@@ -59,6 +66,7 @@ Convention
         # Calculate variance
         return sum((Xi-m) ** 2 for Xi in data) / len(data)
 
+
     def calculate_variance(data, m):
         return sum((Xi-m) ** 2 for Xi in data) / len(data)
 
@@ -68,6 +76,7 @@ Convention
     def print_(text):
         # Add underscore (``_``) at the end of name when name collide.
         print(f'<strong>{text}</strong>')
+
 
     def print_html(text):
         # Although prefer naming it differently.
