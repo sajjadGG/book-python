@@ -58,7 +58,7 @@ Union
     add_numbers(1, 2)       # 'Ok'
     add_numbers(1.5, 2.5)   # 'Ok'
 
-Since Python 3.10:
+Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 
 .. code-block:: python
     :force:
@@ -107,7 +107,24 @@ Optional
     find('Python', 'o')      # 4
     find('Python', 'x')      # None
 
-Since Python 3.10:
+Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
+
+.. code-block:: python
+    :force:
+
+    def find(text: str, what: str) -> int|None:
+        position = text.find(what)
+
+        if position == -1:
+            return None
+        else:
+            return position
+
+
+    find('Python', 'o')      # 4
+    find('Python', 'x')      # None
+
+Since Python 3.10: :pep:`645` -- Allow writing optional types as x?
 
 .. code-block:: python
     :force:
@@ -187,7 +204,7 @@ Annotations
     #  'b': <class 'int'>,
     #  'return': <class 'int'>}
 
-Since Python 3.10:
+Since Python 3.10: :pep:`563` -- Postponed Evaluation of Annotations
 
 .. code-block:: python
 

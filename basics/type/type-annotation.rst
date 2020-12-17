@@ -105,6 +105,18 @@ Aliases
     >>> age: Number = 10
     >>> age: Number = 10.5
 
+Since Python 3.10 :pep:`613` -- TypeAlias Annotation
+
+    PEP 484 introduced the concept of type aliases, only requiring them to be top-level unannotated assignments. This simplicity sometimes made it difficult for type checkers to distinguish between type aliases and ordinary assignments, especially when forward references or invalid types were involved. Compare:
+
+    >>> StrCache = 'Cache[str]'  # a type alias                 # doctest: +SKIP
+    >>> LOG_PREFIX = 'LOG[DEBUG]'  # a module constant          # doctest: +SKIP
+
+    Now the typing module has a special annotation TypeAlias to declare type aliases more explicitly:
+
+    >>> StrCache: TypeAlias = 'Cache[str]'  # a type alias      # doctest: +SKIP
+    >>> LOG_PREFIX = 'LOG[DEBUG]'  # a module constant          # doctest: +SKIP
+
 
 Final
 -----
