@@ -14,7 +14,6 @@ Rationale
 * ``cp1251`` or ``windows-1251`` - Russian encoding on Windows
 * ``cp1252`` or ``windows-1252`` - Western European encoding on Windows
 * ``ASCII`` - ASCII characters only
-* https://en.wikipedia.org/wiki/List_of_Unicode_characters
 
 .. figure:: img/files-windows2000-notepad-saveas.png
 
@@ -92,7 +91,6 @@ Escape Characters
 * ``\r\n`` - is used on windows
 * ``\n`` - is used everywhere else
 
-
 .. figure:: img/type-machine.jpg
 
     Why we have '\\r\\n' on Windows?
@@ -129,8 +127,7 @@ Emoticons:
     >>> print(astronaut)
     🧑‍🚀
 
-More information in :ref:`Builtin Printing`
-https://en.wikipedia.org/wiki/List_of_Unicode_characters
+More information in :ref:`Builtin Printing` and https://en.wikipedia.org/wiki/List_of_Unicode_characters
 
 
 References
