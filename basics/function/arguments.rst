@@ -43,8 +43,10 @@ Positional Arguments
         return a - b
 
 
-    subtract(2, 1)          # 1
-    subtract(1, 2)          # -1
+    subtract(2, 1)
+    # 1
+    subtract(1, 2)
+    # -1
 
 
 Keyword Arguments
@@ -57,8 +59,10 @@ Keyword Arguments
         return a - b
 
 
-    subtract(a=2, b=1)      # 1
-    subtract(b=1, a=2)      # 1
+    subtract(a=2, b=1)
+    # 1
+    subtract(b=1, a=2)
+    # 1
 
 
 Positional and Keyword Arguments
@@ -72,9 +76,14 @@ Positional and Keyword Arguments
         return a - b
 
 
-    subtract(2, b=1)        # 1
-    subtract(a=2, 1)        # SyntaxError: positional argument follows keyword argument
-    subtract(2, a=1)        # TypeError: subtract() got multiple values for argument 'a'
+    subtract(2, b=1)
+    # 1
+    subtract(a=2, 1)
+    # Traceback (most recent call last):
+    # SyntaxError: positional argument follows keyword argument
+    subtract(2, a=1)
+    # Traceback (most recent call last):
+    # TypeError: subtract() got multiple values for argument 'a'
 
 
 Examples
@@ -86,9 +95,12 @@ Examples
          print(f'My name... {name}')
 
 
-    hello('Mark Watney')          # My name... Mark Watney
-    hello(name='Mark Watney')     # My name... Mark Watney
-    hello()                       # My name... José Jiménez
+    hello('Mark Watney')
+    # My name... Mark Watney
+    hello(name='Mark Watney')
+    # My name... Mark Watney
+    hello()
+    # My name... José Jiménez
 
 .. code-block:: python
     :caption: Example 2

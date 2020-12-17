@@ -11,14 +11,31 @@ Function Scope
     def add(a, b=1):
         c = 0
 
-    print(a)        # NameError: name 'a' is not defined
-    print(b)        # NameError: name 'b' is not defined
-    print(c)        # NameError: name 'c' is not defined
+    print(a)
+    # Traceback (most recent call last):
+    # NameError: name 'a' is not defined
+
+    print(b)
+    # Traceback (most recent call last):
+    # NameError: name 'b' is not defined
+
+    print(c)
+    # Traceback (most recent call last):
+    # NameError: name 'c' is not defined
 
     add(1)
-    print(a)        # NameError: name 'a' is not defined
-    print(b)        # NameError: name 'b' is not defined
-    print(c)        # NameError: name 'c' is not defined
+
+    print(a)
+    # Traceback (most recent call last):
+    # NameError: name 'a' is not defined
+
+    print(b)
+    # Traceback (most recent call last):
+    # NameError: name 'b' is not defined
+
+    print(c)
+    # Traceback (most recent call last):
+    # NameError: name 'c' is not defined
 
 
 Outer Scope
