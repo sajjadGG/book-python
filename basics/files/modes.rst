@@ -41,7 +41,7 @@ Modes
 * `ab+` - Opens a file for both appending and reading in binary format. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.
 * `x` - Open for exclusive creation, failing if the file already exists (Python 3)
 
-Source: [1]_
+Source: [#ROHIT2020]_
 
 
 Short Notation
@@ -148,12 +148,11 @@ Update (rarely used):
 * If mode is not specified it will read in text mode (``mode='rt'``)
 
 
-References
-==========
-.. [1] Rohit. Python file modes | Open, Write, append (r, r+, w, w+, x, etc). Year: 2020. URL: https://tutorial.eyehunts.com/python/python-file-modes-open-write-append-r-r-w-w-x-etc/
-
-
 Assignments
 ===========
-
 .. todo:: Create assignments
+
+
+References
+==========
+.. [#ROHIT2020] Rohit. Python file modes | Open, Write, append (r, r+, w, w+, x, etc). Year: 2020. URL: https://tutorial.eyehunts.com/python/python-file-modes-open-write-append-r-r-w-w-x-etc/
