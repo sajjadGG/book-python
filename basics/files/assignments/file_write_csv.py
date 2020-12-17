@@ -3,7 +3,7 @@
 * Filename: file_write_csv.py
 * Complexity: medium
 * Lines of code: 6 lines
-* Time: 13 min
+* Time: 5 min
 
 English:
     1. Use data from "Given" section (see below)
@@ -26,11 +26,21 @@ Polish:
     8. Zapisz do pliku wartości z wiersza
 
 Hints:
+    * `','.join(...)`
     * `[str(x) for x in ...]`
+    * Add newline `\n` at the end of line and file
 
 Tests:
-    >>> open(FILE).read()
-    'Sepal length,Sepal width,Petal length,Petal width,Species\\n5.8,2.7,5.1,1.9,virginica\\n5.1,3.5,1.4,0.2,setosa\\n5.7,2.8,4.1,1.3,versicolor\\n6.3,2.9,5.6,1.8,virginica\\n6.4,3.2,4.5,1.5,versicolor\\n4.7,3.2,1.3,0.2,setosa\\n'
+    >>> result = open(FILE).read()
+    >>> print(result)
+    Sepal length,Sepal width,Petal length,Petal width,Species
+    5.8,2.7,5.1,1.9,virginica
+    5.1,3.5,1.4,0.2,setosa
+    5.7,2.8,4.1,1.3,versicolor
+    6.3,2.9,5.6,1.8,virginica
+    6.4,3.2,4.5,1.5,versicolor
+    4.7,3.2,1.3,0.2,setosa
+    <BLANKLINE>
     >>> from os import remove
     >>> remove(FILE)
 """
@@ -49,9 +59,11 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
 
 # Solution
 header, *data = DATA
-header = ','.join(header) + '\n'
-data = [','.join(map(str, row))+'\n' for row in data]
+
+data = []
+for row in DATA:
+    row = ','.join(str(x) for x in row)
+    data.append(row+'\n')
 
 with open(FILE, mode='w') as file:
-    file.write(header)
     file.writelines(data)

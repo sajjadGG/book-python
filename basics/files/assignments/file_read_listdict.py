@@ -2,14 +2,12 @@
 * Assignment: File Read List of Dicts
 * Filename: file_read_listdict.py
 * Complexity: hard
-* Lines of code: 15 lines
-* Time: 13 min
+* Lines of code: 19 lines
+* Time: 21 min
 
 English:
     1. Use data from "Given" section (see below)
-    2. Define `result: list[dict]`
-    3. Using `file.write()` save input data from listing below to file `hosts-advanced.txt`
-    4. Read file and for each line:
+    2. Read file and for each line:
         a. Skip line if it's empty, is whitespace or starts with comment `#`
         b. Remove leading and trailing whitespaces
         c. Split line by whitespace
@@ -17,14 +15,12 @@ English:
         e. Use one line `if` to check whether dot `.` is in the IP address
         f. If is present then protocol is IPv4 otherwise IPv6
         g. Append IP address and hosts names to `result`
-    5. Merge hostnames for the same IP
-    6. Compare result with "Tests" section (see below)
+    3. Merge hostnames for the same IP
+    4. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Zdefiniuj `result: list[dict]`
-    3. Używając `file.write()` zapisz dane wejściowe z listingu poniżej do pliku `hosts-advanced.txt`
-    4. Przeczytaj plik i dla każdej linii:
+    2. Przeczytaj plik i dla każdej linii:
         a. Pomiń linię jeżeli jest pusta, jest białym znakiem lub zaczyna się od komentarza `#`
         b. Usuń białe znaki na początku i końcu linii
         c. Podziel linię po białych znakach
@@ -32,17 +28,18 @@ Polish:
         e. Wykorzystaj jednolinikowego `if` do sprawdzenia czy jest kropka `.` w adresie IP
         f. Jeżeli jest obecna to protokół  jest IPv4, w przeciwnym przypadku IPv6
         g. Dodaj adres IP i nazwy hostów do `result`
-    5. Scal nazwy hostów dla tego samego IP
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    3. Scal nazwy hostów dla tego samego IP
+    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Hints:
-    * `str.split()`
-    * `str.isspace()`
-    * `value = True if ... else False`
+    * `str.split()` - without an argument
+    * `len(line) == 0`
+    * `line.startswith('#')`
+    * `ip = 'IPv4' if '.' in ip else 'IPv6'`
 
 Tests:
     >>> result  # doctest: +NORMALIZE_WHITESPACE
-    [{'ip': '127.0.0.1', 'hostnames': ['localhost', ['astromatt']], 'protocol': 'IPv4'},
+    [{'ip': '127.0.0.1', 'hostnames': ['localhost', 'astromatt'], 'protocol': 'IPv4'},
      {'ip': '10.13.37.1', 'hostnames': ['nasa.gov', 'esa.int', 'roscosmos.ru'], 'protocol': 'IPv4'},
      {'ip': '255.255.255.255', 'hostnames': ['broadcasthost'], 'protocol': 'IPv4'},
      {'ip': '::1', 'hostnames': ['localhost'], 'protocol': 'IPv6'}]
@@ -76,36 +73,30 @@ result = []
 
 
 # Solution
-try:
-    with open(FILE) as file:
-        hosts_file = file.readlines()
-except FileNotFoundError:
-    print('File does not exist')
-except PermissionError:
-    print('Permission denied')
+with open(FILE) as file:
+    for line in file:
+        line = line.strip()
 
+        if len(line) == 0:
+            continue
+        elif line.startswith('#'):
+            continue
 
-for line in hosts_file:
-    line = line.strip()
+        ip, *hostnames = line.split()
+        found = False
 
-    if len(line) == 0 or line.startswith('#'):
-        continue
+        for host in result:
+            if host['ip'] == ip:
+                host['hostnames'] += hostnames
+                found = True
+                break
 
-    ip, *hostnames = line.split()
-    found = False
-
-    for host in result:
-        if host['ip'] == ip:
-            host['hostnames'].append(hostnames)
-            found = True
-            break
-
-    if not found:
-        result.append({
-            'ip': ip,
-            'hostnames': list(hostnames),
-            'protocol': 'IPv4' if '.' in ip else 'IPv6'
-        })
+        if not found:
+            result.append({
+                'ip': ip,
+                'hostnames': list(hostnames),
+                'protocol': 'IPv4' if '.' in ip else 'IPv6'
+            })
 
 
 ## Alternative solution

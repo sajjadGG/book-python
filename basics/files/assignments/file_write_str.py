@@ -17,6 +17,9 @@ Polish:
     3. Sprawdź w systemie operacyjnym czy dane zapisały się poprawnie
     4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
+Hints:
+    * Add newline `\n` at the end of line and file
+
 Tests:
     >>> open(FILE).read()
     'hello world\\n'
@@ -31,7 +34,5 @@ DATA = 'hello world'
 
 
 # Solution
-result = DATA + '\n'
-
 with open(FILE, mode='wt') as file:
-    file.write(result)
+    file.write(DATA+'\n')

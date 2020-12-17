@@ -14,6 +14,26 @@ Rationale
 * ``mode`` parameter to ``open()`` function is required
 
 
+Line
+====
+* File must end with a newline ``\n`` character
+
+.. epigraph::
+
+    Line: A sequence of zero or more non- <newline> characters plus a terminating <newline> character. [1]_
+
+.. epigraph::
+
+    The C language standard says: "A source file that is not empty shall end in a new-line character, which shall not be immediately preceded by a backslash character." [2]_ [3]_ [4]_
+
+References:
+
+    * [1] Section 3.206 IEEE Std 1003.1-2017 (Revision of IEEE Std 1003.1-2008). Open Group Base Specifications Issue 7, 2018 edition. URL: https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_206 Accessed Date: 2020-12-17s
+    * [2] Section 2.1.1.2 of the ANSI C 1989 standard
+    * [3] Section 5.1.1.2 of the ISO C 1999 standard
+    * [4] https://gcc.gnu.org/legacy-ml/gcc/2003-11/msg01568.html
+
+
 Write to File
 =============
 * Always remember to close file

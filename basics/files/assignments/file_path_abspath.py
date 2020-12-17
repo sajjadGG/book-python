@@ -3,19 +3,17 @@
 * Filename: file_path_abspath.py
 * Complexity: easy
 * Lines of code: 3 lines
-* Time: 2 min
+* Time: 5 min
 
 English:
-    1. Using `input()` ask user for a file path
-    2. Convert path to absolute
-    3. Print if path exists and leads to file or directory
-    4. Compare result with "Tests" section (see below)
+    1. Define `path` with converted `filename` to absolute path
+    2. Print if path exists and leads to file or directory
+    3. Compare result with "Tests" section (see below)
 
 Polish:
-    1. Używając `input()` zapytaj użytkownika o ścieżkę do pliku
-    2. Przekonwertuj ścieżkę do bezwzględnej
-    3. Wypisz czy ścieżka istnieje i czy prowadzi do pliku czy katalogu
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Zdefiniuj `path` z przekonwertowym `filename` do ścieżki bezwzględnej
+    2. Wypisz czy ścieżka istnieje i czy prowadzi do pliku czy katalogu
+    3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
     TODO: Input Stub
@@ -28,9 +26,21 @@ Tests:
 
 
 # Given
-filename = input('Type filename: ')
+from pathlib import Path
 
+
+filename = 'myfile.txt'
+path = ...
+result = ...
 
 # Solution
-from pathlib import Path
-result = Path(Path.cwd(), filename)
+file = Path(Path.cwd(), filename)
+
+if not file.exists():
+    result = 'not exist'
+
+if file.is_dir():
+    result = 'directory'
+
+if file.is_file():
+    result = 'file'

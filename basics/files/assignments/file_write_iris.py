@@ -3,7 +3,7 @@
 * Filename: file_write_iris.py
 * Complexity: easy
 * Lines of code: 3 lines
-* Time: 3 min
+* Time: 5 min
 
 English:
     1. Use data from "Given" section (see below)
@@ -17,9 +17,13 @@ Polish:
     3. Sprawdź w systemie operacyjnym czy dane zapisały się poprawnie
     4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
+Hints:
+    * `','.join(...)`
+    * Add newline `\n` at the end of line and file
+
 Tests:
     >>> open(FILE).read()
-    '5.8,2.7,5.1,1.9,virginica\\n5.1,3.5,1.4,0.2,setosa\\n5.7,2.8,4.1,1.3,versicolor\\n'
+    '5.8,2.7,5.1,1.9\\n5.1,3.5,1.4,0.2\\n5.7,2.8,4.1,1.3\\n'
     >>> from os import remove
     >>> remove(FILE)
 """
@@ -27,17 +31,17 @@ Tests:
 
 # Given
 FILE = r'_temporary.txt'
-DATA = [(5.8, 2.7, 5.1, 1.9, 'virginica'),
-        (5.1, 3.5, 1.4, 0.2, 'setosa'),
-        (5.7, 2.8, 4.1, 1.3, 'versicolor')]
+DATA = [('5.8', '2.7', '5.1', '1.9'),
+        ('5.1', '3.5', '1.4', '0.2'),
+        ('5.7', '2.8', '4.1', '1.3')]
 
 
 # Solution
-result = []
+data = []
 
 for row in DATA:
-    line = ','.join(str(x) for x in row) + '\n'
-    result.append(line)
+    line = ','.join(row) + '\n'
+    data.append(line)
 
 with open(FILE, mode='wt') as file:
-    file.writelines(result)
+    file.writelines(data)

@@ -17,6 +17,11 @@ Polish:
     3. Sprawdź w systemie operacyjnym czy dane zapisały się poprawnie
     4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
+Hints:
+    * `[str(x) for x in ...]`
+    * `','.join(...)`
+    * Add newline `\n` at the end of line and file
+
 Tests:
     >>> open(FILE).read()
     '5.1,3.5,1.4,0.2,setosa\\n'
@@ -31,7 +36,7 @@ DATA = (5.1, 3.5, 1.4, 0.2, 'setosa')
 
 
 # Solution
-result = ','.join(str(x) for x in DATA) + '\n'
+data = ','.join(str(x) for x in DATA) + '\n'
 
 with open(FILE, mode='wt') as file:
-    file.write(result)
+    file.write(data)

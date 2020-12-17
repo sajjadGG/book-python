@@ -17,6 +17,10 @@ Polish:
     3. Sprawdź w systemie operacyjnym czy dane zapisały się poprawnie
     4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
+Hints:
+    * `','.join(...)`
+    * Add newline `\n` at the end of line and file
+
 Tests:
     >>> open(FILE).read()
     'hello\\nworld\\n'
@@ -31,7 +35,7 @@ DATA = ['hello', 'world']
 
 
 # Solution
-result = '\n'.join(DATA) + '\n'
+data = '\n'.join(DATA) + '\n'
 
 with open(FILE, mode='wt') as file:
-    file.write(result)
+    file.write(data)
