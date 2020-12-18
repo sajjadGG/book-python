@@ -2,8 +2,8 @@
 * Assignment: OOP Inheritance Super
 * Filename: oop_inheritance_super.py
 * Complexity: easy
-* Lines of code: 8 lines
-* Time: 8 min
+* Lines of code: 6 lines
+* Time: 5 min
 
 English:
     1. Use data from "Given" section (see below)
