@@ -7,6 +7,11 @@ Stringify Objects
 
 Rationale
 =========
+* ``str(obj)`` -> ``obj.__str__()``
+* ``repr(obj)`` -> ``obj.__repr__()``
+* ``format(obj, name)`` -> ``obj.__format__(name)``
+* ``print(obj)`` -> ``str(obj)`` -> ``obj.__str__()``
+
 .. code-block:: python
 
     import datetime
@@ -20,6 +25,9 @@ Rationale
 
     format(date, '%Y-%m-%d')
     # '1961-04-12'
+
+    print(date)
+    # 1961-04-12 06:07:00
 
 
 String

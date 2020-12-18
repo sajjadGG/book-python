@@ -2,8 +2,8 @@
 * Assignment: OOP Method Sequence
 * Filename: oop_method_sequence.py
 * Complexity: easy
-* Lines of code: 18 lines
-* Time: 13 min
+* Lines of code: 9 lines
+* Time: 8 min
 
 English:
     1. Use data from "Given" section (see below)

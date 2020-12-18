@@ -8,26 +8,28 @@
 English:
     1. Use data from "Given" section (see below)
     2. Create class `Astronaut` which inherits from `Person`
-    3. Using positional arguments at the initialization set astronaut first name and last name
-    4. All astronauts must have name inherited from `Person`
-    5. Return first name, last name and mission name from `__str__()`
+    3. Class `Astronaut` takes two arguments `name` and `mission`
+    4. Set attribute `mission` in `Astronaut` inicializer method
+    5. Call initializer method of `Person` passing `name` as an argument
+    6. Define method `show()` returning name and after coma - a mission name
     6. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Stwórz klasę `Astronaut` dziedziczącą po `Person`
-    3. Używając parametrów pozycyjnych podanych przy inicjalizacji ustaw imię i nazwisko astronauty
-    4. Każdy astronauta musi mieć imię i nazwisko odziedziczone z `Person`
-    5. Zwróć imię, nazwisko i nazwę misji from `__str__()`
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    3. Klasa `Astronaut` przyjmuje dwa argumenty `name` i `mission`
+    4. Ustaw atrybut `mission` w metodzie inicjalizacyjnej w `Astronaut`
+    5. Wywołaj metodę inicjalizacyjną z `Person` podając `name` jako argument
+    6. Zdefiniuj metodę `show()` zwracającą imię i po przecinku - nazwę misji
+    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
-    >>> mark = Astronaut('Mark Watney', 'Ares 3')
-    >>> str(mark)
-    'Mark Watney (Ares 3)'
-    >>> melissa = Astronaut('Melissa Lewis', 'Ares 3')
-    >>> str(melissa)
-    'Melissa Lewis (Ares 3)'
+    >>> watney = Astronaut('Watney', 'Ares 3')
+    >>> watney.show()
+    'Watney, Ares 3'
+    >>> lewis = Astronaut('Lewis', 'Ares 3')
+    >>> lewis.show()
+    'Lewis, Ares 3'
 """
 
 
@@ -43,5 +45,5 @@ class Astronaut(Person):
         super().__init__(name)
         self.mission = mission
 
-    def __str__(self):
-        return f'{self.name} ({self.mission})'
+    def show(self):
+        return f'{self.name}, {self.mission}'

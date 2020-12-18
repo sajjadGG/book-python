@@ -251,6 +251,24 @@ Use Cases
         day: int
 
 
+    gagarin_launch = Date()
+    gagarin_launch.year = 1961
+    gagarin_launch.month = 4
+    gagarin_launch.day = 12
+
+    armstrong_first_moon_step = Date()
+    armstrong_first_moon_step.year = 1969
+    armstrong_first_moon_step.month = 7
+    armstrong_first_moon_step.day = 21
+
+.. code-block:: python
+
+    class Date:
+        year: int
+        month: int
+        day: int
+
+
     class Person:
         firstname: str
         lastname: str
@@ -258,39 +276,73 @@ Use Cases
         height: float
         weight: float
 
-
-    matt = Person()
-    marcin = Person()
-    kasia = Person()
-
-    matt.firstname = 'Matt'
-    matt.lastname = 'Harasymczuk'
-
-    marcin.firstname = 'Marcin'
-    marcin.lastname = 'Nowak'
-    marcin.address = 'ćwiartki 3/4'
-
-    print(matt.address)
-    # AttributeError:
-
-    print(kasia.firstname)
-    # AttributeError
-
 .. code-block:: python
 
-    matt_firstname = 'Matt'
-    matt_lastname = 'Harasymczuk'
-
-
-    class Matt:
+    class Astronaut:
         firstname: str
         lastname: str
 
 
-    matt = Matt()
-    matt.firstname = 'Matt'
-    matt.lastname = 'Harasymczuk'
+    watney = Astronaut()
+    watney.firstname = 'Mark'
+    watney.lastname = 'Watney'
 
+    lewis = Astronaut()
+    lewis.firstname = 'Melissa'
+    lewis.lastname = 'Lewis'
+    lewis.address = 'Ćwiartki 3/4'
+
+    print(watney.address)
+    # Traceback (most recent call last):
+    # AttributeError: 'Astronaut' object has no attribute 'address'
+
+    print(lewis.address)
+    # Ćwiartki 3/4
+
+.. code-block:: python
+
+    watney_firstname = 'Mark'
+    watney_lastname = 'Watney'
+    watney_mission = 'Ares 3'
+    watney_agency = 'NASA'
+
+    lewis_firstname = 'Melissa'
+    lewis_lastname = 'Lewis'
+    lewis_mission = 'Ares 3'
+    lewis_agency = 'NASA'
+
+.. code-block:: python
+
+    class Astronaut:
+        firstname: str
+        lastname: str
+        mission: str
+        agency: str
+
+
+    watney = Astronaut()
+    watney.firstname = 'Mark'
+    watney.lastname = 'Watney'
+    watney.mission = 'Ares 3'
+    watney.agency = 'NASA'
+
+    lewis = Astronaut()
+    lewis.firstname = 'Melissa'
+    lewis.lastname = 'Lewis'
+    lewis.mission = 'Ares 3'
+    lewis.agency = 'NASA'
+
+    watney.__dict__
+    # {'firstname': 'Mark',
+    #  'lastname': 'Watney',
+    #  'mission': 'Ares 3',
+    #  'agency': 'NASA'}
+
+    lewis.__dict__
+    # {'firstname': 'Melissa',
+    #  'lastname': 'Lewis',
+    #  'mission': 'Ares 3',
+    #  'agency': 'NASA'}
 
 
 

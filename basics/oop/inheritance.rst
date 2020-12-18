@@ -43,57 +43,8 @@ Syntax
     # 'Hello'
 
 
-Example
-=======
-.. code-block:: python
-
-    class Car:
-        def engine_start():
-            print('Starting engine...')
-
-        def engine_stop():
-            print('Stopping engine...')
-
-
-    class Truck:
-        def engine_start():
-            print('Starting engine...')
-
-        def engine_stop():
-            print('Stopping engine...')
-
-.. code-block:: python
-
-    class Vehicle:
-        def engine_start():
-            print('Starting engine...')
-
-        def engine_stop():
-            print('Stopping engine...')
-
-
-    class Car(Vehicle):
-        pass
-
-    class Truck(Vehicle):
-        pass
-
-
 Simple Inheritance
 ==================
-.. code-block:: python
-
-    class Vehicle:
-        pass
-
-
-    class Car(Vehicle):
-        pass
-
-    class Truck(Vehicle):
-        pass
-
-
 .. code-block:: python
 
     class Engineer:
@@ -111,107 +62,40 @@ Simple Inheritance
     mark = Astronaut('Mark', 'Watney')
     ivan = Cosmonaut('Ivan', 'Ivanovic')
 
-.. code-block:: python
-
-    class Iris:
-        def __init__(self, sepal_length, sepal_width,
-                     petal_length, petal_width, species):
-
-            self.sepal_length = sepal_length
-            self.sepal_width = sepal_width
-            self.petal_length = petal_length
-            self.petal_width = petal_width
-            self.species = species
-
-
-    class Setosa(Iris):
-        pass
-
-    class Versicolor(Iris):
-        pass
-
-    class Virginica(Iris):
-        pass
-
-
-    setosa = Setosa(
-        sepal_length=5.1,
-        sepal_width=3.5,
-        petal_length=1.4,
-        petal_width=0.2,
-        species='setosa'
-    )
-
 
 Multilevel Inheritance
 ======================
 .. code-block:: python
-    :caption: Multilevel Inheritance
 
-    class Scientist:
+    class Engineer:
         pass
 
-    class Engineer(Scientist):
+    class Pilot(Engineer):
         pass
 
-    class Astronaut(Engineer):
+    class Astronaut(Pilot):
         pass
 
 
     watney = Astronaut()
-
-    isinstance(watney, Scientist)   # True
-    isinstance(watney, Engineer)    # True
-    isinstance(watney, Astronaut)   # True
-
-    type(watney)                    # <class '__main__.Astronaut'>
-
-.. code-block:: python
-
-    class Vehicle:
-        pass
-
-
-    class Car(Vehicle):
-        def windows_open():
-            print('Opening windows...')
-
-
-    class Truck(Vehicle):
-        def windows_open():
-            print('Opening windows...')
-
-
-    class Motorcycle(Vehicle):
-        pass
-
-.. code-block:: python
-
-    class Vehicle:
-        def windows_open():
-            print('Opening windows...')
-
-
-    class Car(Vehicle):
-        pass
-
-    class Truck(Vehicle):
-        pass
-
-    class Motorcycle(Vehicle):
-        def windows_open():
-            raise NotImplementedError('Has no windows')
+    type(watney)
+    # <class '__main__.Astronaut'>
+    isinstance(watney, Engineer)
+    # True
+    isinstance(watney, Pilot)
+    # True
+    isinstance(watney, Astronaut)
+    # True
 
 
 Multiple Inheritance
 ====================
 .. code-block:: python
-    :caption: Multiple Inheritance
-
-    class Scientist:
-        pass
 
     class Engineer:
+        pass
+
+    class Pilot:
         pass
 
     class Astronaut(Scientist, Engineer):
@@ -219,30 +103,14 @@ Multiple Inheritance
 
 
     watney = Astronaut()
-
-    isinstance(watney, Scientist)   # True
-    isinstance(watney, Engineer)    # True
-    isinstance(watney, Astronaut)   # True
-
-    type(watney)                    # <class '__main__.Astronaut'>
-
-.. code-block:: python
-
-    class Vehicle:
-        pass
-
-    class HasWindows:
-        pass
-
-
-    class Car(Vehicle, HasWindows):
-        pass
-
-    class Truck(Vehicle, HasWindows):
-        pass
-
-    class Motorcycle(Vehicle):
-        pass
+    type(watney)
+    # <class '__main__.Astronaut'>
+    isinstance(watney, Engineer)
+    # True
+    isinstance(watney, Pilot)
+    # True
+    isinstance(watney, Astronaut)
+    # True
 
 
 Overload
@@ -355,6 +223,141 @@ Super Function
     #  'lastname': 'Watney',
     #  'education': 'Engineer',
     #  'profession': 'Astronaut'}
+
+
+Inheritance vs Composition
+==========================
+.. code-block:: python
+
+    class Car:
+        def engine_start():
+            print('Starting engine...')
+
+
+    class Truck:
+        def engine_start():
+            print('Starting engine...')
+
+
+Simple Inheritance:
+
+.. code-block:: python
+
+    class Vehicle:
+        def engine_start():
+            print('Starting engine...')
+
+
+    class Car(Vehicle):
+        pass
+
+    class Truck(Vehicle):
+        pass
+
+Inheritance Problem:
+
+.. code-block:: python
+
+    class Vehicle:
+        def engine_start():
+            print('Starting engine...')
+
+
+    class Car(Vehicle):
+        def windows_open():
+            print('Opening windows...')
+
+
+    class Truck(Vehicle):
+        def windows_open():
+            print('Opening windows...')
+
+
+    class Motorcycle(Vehicle):
+        pass
+
+Not Implemented Error:
+
+.. code-block:: python
+
+    class Vehicle:
+        def engine_start():
+            print('Starting engine...')
+
+        def windows_open():
+            print('Opening windows...')
+
+
+    class Car(Vehicle):
+        pass
+
+    class Truck(Vehicle):
+        pass
+
+    class Motorcycle(Vehicle):
+        def windows_open():
+            raise NotImplementedError('Has no windows')
+
+Composition:
+
+.. code-block:: python
+
+    class Vehicle:
+        def engine_start():
+            print('Starting engine...')
+
+        def engine_stop():
+            print('Stopping engine...')
+
+
+    class HasWindows:
+        def windows_open():
+            print('Opening windows...')
+
+
+    class Car(Vehicle, HasWindows):
+        pass
+
+    class Truck(Vehicle, HasWindows):
+        pass
+
+    class Motorcycle(Vehicle):
+        pass
+
+
+Use Cases
+=========
+.. code-block:: python
+
+    class Iris:
+        def __init__(self, sepal_length, sepal_width,
+                     petal_length, petal_width, species):
+
+            self.sepal_length = sepal_length
+            self.sepal_width = sepal_width
+            self.petal_length = petal_length
+            self.petal_width = petal_width
+            self.species = species
+
+
+    class Setosa(Iris):
+        pass
+
+    class Versicolor(Iris):
+        pass
+
+    class Virginica(Iris):
+        pass
+
+
+    setosa = Setosa(
+        sepal_length=5.1,
+        sepal_width=3.5,
+        petal_length=1.4,
+        petal_width=0.2,
+        species='setosa'
+    )
+
 
 
 Assignments
