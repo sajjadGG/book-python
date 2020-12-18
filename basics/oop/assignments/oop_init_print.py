@@ -22,10 +22,14 @@ Polish:
     6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
-    >>> hello = Echo('hello')
+    >>> _ = Echo('hello')
     hello
-    >>> world = Echo('world')
+    >>> _ = Echo('world')
     world
+    >>> result = Echo('Test')
+    Test
+    >>> result.__dict__
+    {}
 """
 
 

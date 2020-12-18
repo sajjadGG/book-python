@@ -151,10 +151,20 @@ Convention
     jose = Astronaut()
 
 
-References
-==========
-.. [class] http://makieta.pl/12344-thickbox_default/faller-130803-blok-z-wielkiej-plyty-skala-h0.jpg
-.. [instances] https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Os_Rusa_Poznań_RB1.jpg/1200px-Os_Rusa_Poznań_RB1.jpg
+Use Cases
+=========
+.. code-block:: python
+
+    a = int()
+    b = float()
+    c = bool()
+    d = str()
+    e = list()
+    f = tuple()
+    g = set()
+    h = frozenset()
+    i = dict()
+    j = range()
 
 
 Assignments
@@ -167,4 +177,10 @@ Assignments
 .. literalinclude:: assignments/oop_class_instance.py
     :caption: :download:`Solution <assignments/oop_class_instance.py>`
     :end-before: # Solution
+
+
+References
+==========
+.. [class] http://makieta.pl/12344-thickbox_default/faller-130803-blok-z-wielkiej-plyty-skala-h0.jpg
+.. [instances] https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Os_Rusa_Poznań_RB1.jpg/1200px-Os_Rusa_Poznań_RB1.jpg
 

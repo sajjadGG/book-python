@@ -28,10 +28,10 @@ Polish:
 Tests:
     >>> assert isinstance(watney, Astronaut)
     >>> assert isinstance(nasa, SpaceAgency)
-    >>> assert 'Mark Watney' in watney.__dict__.values()
+    >>> assert 'Watney' in watney.__dict__.values()
     >>> assert 'USA' in watney.__dict__.values()
     >>> assert '1969-07-21' in watney.__dict__.values()
-    >>> assert 'National Aeronautics and Space Administration' in nasa.__dict__.values()
+    >>> assert 'NASA' in nasa.__dict__.values()
     >>> assert 'USA' in nasa.__dict__.values()
     >>> assert '1958-07-29' in nasa.__dict__.values()
 """
@@ -39,8 +39,8 @@ Tests:
 
 # Given
 """
-Mark Watney, USA, 1969-07-21
-National Aeronautics and Space Administration, USA, 1958-07-29
+Watney, USA, 1969-07-21
+NASA, USA, 1958-07-29
 """
 
 
@@ -59,9 +59,9 @@ class SpaceAgency:
         self.date = date
 
 
-watney = Astronaut('Mark Watney', 'USA', '1969-07-21')
+watney = Astronaut('Watney', 'USA', '1969-07-21')
 
 nasa = SpaceAgency(
-    name='National Aeronautics and Space Administration',
+    name='NASA',
     country='USA',
     date='1958-07-29')

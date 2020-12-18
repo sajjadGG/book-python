@@ -2,8 +2,8 @@
 * Assignment: OOP Class Instance
 * Filename: oop_class_instance.py
 * Complexity: easy
-* Lines of code: 9 lines
-* Time: 5 min
+* Lines of code: 6 lines
+* Time: 3 min
 
 English:
     1. Define class `Astronaut`

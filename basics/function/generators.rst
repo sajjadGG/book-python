@@ -12,8 +12,9 @@ Range
 * required ``stop``, exclusive,
 * optional ``step``, default: ``1``
 
+``range()`` syntax:
+
 .. code-block:: python
-    :caption: ``range()`` syntax
 
     range([start], <stop>, [step])
 
@@ -154,8 +155,9 @@ Zip
     #  'commander': 'Melissa Lewis',
     #  'chemist': 'Alex Vogel'}
 
+``zip()`` adjusts to the shortest:
+
 .. code-block:: python
-    :caption: ``zip()`` adjusts to the shortest
 
     firstnames = ['Mark', 'Melissa']
     lastnames = ['Watney', 'Lewis', 'Vogel']
@@ -396,7 +398,6 @@ Use Cases
     # 'zazolc gesla jazn'
 
 .. code-block:: python
-    :caption: ``filter()`` example
 
     people = [
         {'age': 21, 'name': 'Jan Twardowski'},
@@ -414,7 +415,6 @@ Use Cases
     #  {'age': 25, 'name': 'Mark Watney'}]
 
 .. code-block:: python
-    :caption: ``filter()`` example
 
     people = [
         {'is_astronaut': False, 'name': 'Jan Twardowski'},

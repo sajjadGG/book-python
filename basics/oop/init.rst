@@ -23,9 +23,12 @@ Syntax
 .. code-block:: python
 
     class Astronaut:
+        firstname: str
+        lastname: str
+
         def __init__(self, firstname, lastname):
-            astro.firstname = firstname
-            astro.lastname = lastname
+            self.firstname = firstname
+            self.lastname = lastname
 
 
     astro = Astronaut('Mark', 'Watney')
@@ -59,7 +62,7 @@ Initializer Method With Arguments
 
 
     jan = Astronaut('Jan')
-    # My name... Jan
+    # My name... Jan Unknown
 
     jose = Astronaut('José', 'Jiménez')
     # My name... José Jiménez
@@ -90,20 +93,25 @@ Constant Attributes
 
 
     mark = Astronaut()
-    print(mark.firstname)       # Mark
-    print(mark.lastname)        # Watney
-    print(mark.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
+    print(mark.firstname)
+    # Mark
+    print(mark.lastname)
+    # Watney
+    print(mark.missions)
+    # AttributeError: 'Astronaut' object has no attribute 'mission'
 
     ivan = Astronaut()
-    print(ivan.firstname)       # Mark
-    print(ivan.lastname)        # Watney
-    print(ivan.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
+    print(ivan.firstname)
+    # Mark
+    print(ivan.lastname)
+    # Watney
+    print(ivan.missions)
+    # AttributeError: 'Astronaut' object has no attribute 'mission'
 
 
 Variable Attributes
 ===================
 .. code-block:: python
-    :caption: Init time attributes
 
     class Astronaut:
         def __init__(self, a, b):
@@ -112,14 +120,16 @@ Variable Attributes
 
 
     mark = Astronaut('Mark', 'Watney')
-    print(mark.firstname)       # Mark
-    print(mark.lastname)        # Watney
-    print(mark.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
+    print(mark.firstname)
+    # Mark
+    print(mark.lastname)
+    # Watney
 
     ivan = Astronaut(a='Ivan', b='Ivanovich')
-    print(ivan.firstname)       # Ivan
-    print(ivan.lastname)        # Ivanovich
-    print(ivan.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
+    print(ivan.firstname)
+    # Ivan
+    print(ivan.lastname)
+    # Ivanovich
 
 .. code-block:: python
     :caption: Init time attributes
@@ -131,14 +141,16 @@ Variable Attributes
 
 
     mark = Astronaut('Mark', 'Watney')
-    print(mark.firstname)       # Mark
-    print(mark.lastname)        # Watney
-    print(mark.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
+    print(mark.firstname)
+    # Mark
+    print(mark.lastname)
+    # Watney
 
     ivan = Astronaut(firstname='Ivan', lastname='Ivanovich')
-    print(ivan.firstname)       # Ivan
-    print(ivan.lastname)        # Ivanovich
-    print(ivan.missions)        # AttributeError: 'Astronaut' object has no attribute 'mission'
+    print(ivan.firstname)
+    # Ivan
+    print(ivan.lastname)
+    # Ivanovich
 
 .. code-block:: python
     :caption: Init time attributes
@@ -150,9 +162,12 @@ Variable Attributes
 
     mark = Astronaut('Mark', 'Watney')
 
-    print(mark.name)           # Mark Watney
-    print(mark.firstname)      # AttributeError: 'Astronaut' object has no attribute 'firstname'
-    print(mark.lastname)       # AttributeError: 'Astronaut' object has no attribute 'lastname'
+    print(mark.name)
+    # Mark Watney
+    print(mark.firstname)
+    # AttributeError: 'Astronaut' object has no attribute 'firstname'
+    print(mark.lastname)
+    # AttributeError: 'Astronaut' object has no attribute 'lastname'
 
 .. code-block:: python
     :caption: Init time attributes
@@ -186,11 +201,16 @@ Variable Attributes
 
     setosa = Iris(5.1, 3.5, 1.4, 0.2, 'setosa')
 
-    print(setosa.sepal_length)      # 5.1
-    print(setosa.sepal_width)       # 3.5
-    print(setosa.petal_length)      # 1.4
-    print(setosa.petal_width)       # 0.2
-    print(setosa.species)           # setosa
+    print(setosa.sepal_length)
+    # 5.1
+    print(setosa.sepal_width)
+    # 3.5
+    print(setosa.petal_length)
+    # 1.4
+    print(setosa.petal_width)
+    # 0.2
+    print(setosa.species)
+    # setosa
 
 
     virginica = Iris(
@@ -225,11 +245,16 @@ Since Python 3.7: there is a ``@dataclass`` decorator, which automatically gener
 
     setosa = Iris(5.1, 3.5, 1.4, 0.2, 'setosa')
 
-    print(setosa.sepal_length)      # 5.1
-    print(setosa.sepal_width)       # 3.5
-    print(setosa.petal_length)      # 1.4
-    print(setosa.petal_width)       # 0.2
-    print(setosa.species)           # setosa
+    print(setosa.sepal_length)
+    # 5.1
+    print(setosa.sepal_width)
+    # 3.5
+    print(setosa.petal_length)
+    # 1.4
+    print(setosa.petal_width)
+    # 0.2
+    print(setosa.species)
+    # setosa
 
 
     virginica = Iris(
@@ -255,18 +280,16 @@ Checking Values
         MINIMAL_VALUE = 0.0
 
         def __init__(self, value):
-            if type(value) not in (float, int):
-                raise TypeError('Temperature must be int or float')
             if value < self.MINIMAL_VALUE:
                 raise ValueError('Temperature must be greater than 0')
             self.value = value
 
 
-    a = Kelvin(273.15)
-    print(a.value)
+    t1 = Kelvin(273.15)
+    print(t1.value)
     # 273.15
 
-    b = Kelvin(-300)
+    t2 = Kelvin(-300)
     # Traceback (most recent call last):
     # ValueError: Temperature must be greater than 0
 

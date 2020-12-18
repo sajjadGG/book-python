@@ -43,6 +43,24 @@ Datasets
     ...         (6.9, 3.1, 4.9, 1.5, 'versicolor'),
     ...         (4.6, 3.1, 1.5, 0.2, 'setosa')]
 
+
+    >>> X = [5.8, 2.7, 5.1, 1.9]
+    >>> y = 'virginica'
+    >>>
+    >>> X = [5.8, 2.7, 5.1, 1.9]
+    >>> x1 = 5.8
+    >>> x2 = 2.7
+    >>> x3 = 5.1
+    >>> x4 = 1.9
+    >>>
+    >>> for x in X:
+    ...     pass
+    >>>
+    >>> for *X,y in DATA[1:]:
+    ...     pass
+
+
+
 .. figure:: img/iris-species.jpg
 
     Iris flower species

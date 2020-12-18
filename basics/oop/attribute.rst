@@ -58,7 +58,8 @@ Syntax
 .. code-block:: python
 
     class Astronaut:
-        pass
+        firstname: str
+        lastname: str
 
 
     astro = Astronaut()
@@ -76,7 +77,8 @@ Dynamic Attributes
     :caption: Dynamic attributes
 
     class Astronaut:
-        pass
+        firstname: str
+        lastname: str
 
 
     jose = Astronaut()
@@ -90,7 +92,8 @@ Dynamic Attributes
     :caption: Accessing not existing attributes
 
     class Astronaut:
-        pass
+        firstname: str
+        lastname: str
 
 
     astro = Astronaut()
@@ -102,7 +105,7 @@ Dynamic Attributes
 .. code-block:: python
 
     class Astronaut:
-        pass
+        name: str
 
 
     jose = Astronaut()
@@ -132,7 +135,10 @@ Namespace
 .. code-block:: python
 
     class Point:
-        pass
+        x: int
+        y: int
+        z: int
+
 
     point = Point()
     point.x = 1
@@ -143,13 +149,14 @@ Namespace
     print(point.y)
     print(point.z)
 
+
 Different Types
 ===============
 .. code-block:: python
-    :caption: Dynamic attributes
 
     class Iris:
-        pass
+        features: list[float]
+        label: str
 
 
     setosa = Iris()
@@ -164,6 +171,20 @@ Different Types
 
     sum(setosa.features)
     # 10.2
+
+.. code-block:: python
+
+    from typing import Union
+
+    class Astronaut:
+        age: Union[float,int]
+
+
+    jose = Astronaut()
+    jose.age = 36
+
+    mark = Astronaut()
+    mark.age = 42.1
 
 .. code-block:: python
 
@@ -186,7 +207,11 @@ Get All Dynamic Attributes and Values
     :caption: ``__dict__`` - Getting dynamic fields and values
 
     class Iris:
-        pass
+        sepal_length: float
+        sepal_width: float
+        petal_length: float
+        petal_width: float
+        species: str
 
 
     flower = Iris()
@@ -202,6 +227,71 @@ Get All Dynamic Attributes and Values
     #  'petal_length': 1.4,
     #  'petal_width': 0.2,
     #  'species': 'setosa'}
+
+Use Cases
+=========
+.. code-block:: python
+
+    class Laptop:
+        cpu: float
+        ram: int
+        ssd: int
+
+
+    macbook = Laptop()
+    lenovo = Laptop()
+    hp = Laptop()
+    asus = Laptop()
+
+.. code-block:: python
+
+    class Date:
+        year: int
+        month: int
+        day: int
+
+
+    class Person:
+        firstname: str
+        lastname: str
+        date_of_birth: Date
+        height: float
+        weight: float
+
+
+    matt = Person()
+    marcin = Person()
+    kasia = Person()
+
+    matt.firstname = 'Matt'
+    matt.lastname = 'Harasymczuk'
+
+    marcin.firstname = 'Marcin'
+    marcin.lastname = 'Nowak'
+    marcin.address = 'ćwiartki 3/4'
+
+    print(matt.address)
+    # AttributeError:
+
+    print(kasia.firstname)
+    # AttributeError
+
+.. code-block:: python
+
+    matt_firstname = 'Matt'
+    matt_lastname = 'Harasymczuk'
+
+
+    class Matt:
+        firstname: str
+        lastname: str
+
+
+    matt = Matt()
+    matt.firstname = 'Matt'
+    matt.lastname = 'Harasymczuk'
+
+
 
 
 Assignments

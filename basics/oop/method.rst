@@ -94,6 +94,14 @@ Methods With Optional Argument
 Assignments
 ===========
 
+.. literalinclude:: assignments/oop_method_syntax.py
+    :caption: :download:`Solution <assignments/oop_method_syntax.py>`
+    :end-before: # Solution
+
+.. literalinclude:: assignments/oop_method_mean.py
+    :caption: :download:`Solution <assignments/oop_method_mean.py>`
+    :end-before: # Solution
+
 .. literalinclude:: assignments/oop_method_call.py
     :caption: :download:`Solution <assignments/oop_method_call.py>`
     :end-before: # Solution
