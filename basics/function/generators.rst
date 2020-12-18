@@ -305,23 +305,6 @@ Filter
     list(result)
     # [2, 4, 6]
 
-.. code-block:: python
-
-    PEOPLE = [{'age': 21, 'name': 'Jan Twardowski'},
-              {'age': 25, 'name': 'Mark Watney'},
-              {'age': 18, 'name': 'Melissa Lewis'}]
-
-
-    def adult(person):
-        return person['age'] >= 21:
-
-
-    result = filter(adult, PEOPLE)
-
-    list(result)
-    # [{'age': 21, 'name': 'Jan Twardowski'},
-    #  {'age': 25, 'name': 'Mark Watney'}]
-
 
 Functools
 =========
@@ -333,11 +316,33 @@ Functools
 
     reduce(callable, iterable[, initializer])
 
+.. code-block:: python
+
+    1 + 2
+    # 3
+
+    1 + 2 + 3 + 4
+    # 10
+
+.. code-block:: python
+
+    from functools import reduce
+
+
+    def add(x, y):
+        return x + y
+
+
+    reduce(add, [1, 2])
+    # 3
+    reduce(add, [1, 2, 3, 4])
+    # 10
+
 
 Itertools
 =========
-* https://docs.python.org/3/library/itertools.html
-* :ref:`Itertools`
+* More information https://docs.python.org/3/library/itertools.html
+* More information :ref:`Itertools`
 
 .. code-block:: python
 
@@ -358,14 +363,16 @@ Itertools
     groupby(iterable, key=None)
 
 
-Examples
-========
+Use Cases
+=========
 .. code-block:: python
 
     data = [1, 2, 3, 4]
 
+
     def increment(x):
         return x + 1
+
 
     result = map(increment, data)
     list(result)
@@ -379,8 +386,10 @@ Examples
 
     text = 'zażółć gęślą jaźń'
 
+
     def translate(letter):
         return PL.get(letter, letter)
+
 
     result = map(translate, text)
     ''.join(result)
@@ -389,13 +398,15 @@ Examples
 .. code-block:: python
     :caption: ``filter()`` example
 
-    def adult(person):
-        return person['age'] >= 21:
-
     people = [
         {'age': 21, 'name': 'Jan Twardowski'},
         {'age': 25, 'name': 'Mark Watney'},
         {'age': 18, 'name': 'Melissa Lewis'}]
+
+
+    def adult(person):
+        return person['age'] >= 21:
+
 
     result = filter(adult, people)
     list(result)
@@ -405,13 +416,15 @@ Examples
 .. code-block:: python
     :caption: ``filter()`` example
 
-    def astronaut(person):
-        return person['is_astronaut']
-
     people = [
         {'is_astronaut': False, 'name': 'Jan Twardowski'},
         {'is_astronaut': True, 'name': 'Mark Watney'},
         {'is_astronaut': True, 'name': 'Melissa Lewis'}]
+
+
+    def astronaut(person):
+        return person['is_astronaut']
+
 
     result = filter(astronaut, people)
     list(result)
@@ -425,8 +438,10 @@ Examples
     people = ['Jan Twardowski', 'Mark Watney',
               'Melissa Lewis', 'Jimenez']
 
+
     def is_astronaut(person):
         return person in astronauts
+
 
     result = filter(is_astronaut, people)
     list(result)

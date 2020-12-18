@@ -319,7 +319,6 @@ Standard Library Itertools
     # Traceback (most recent call last):
     # StopIteration
 
-
 .. code-block:: python
     :caption: ``itertools.chain(*iterables)``
 

@@ -457,6 +457,7 @@ Map
     def square(x):
         return x ** 2
 
+
     data = [1, 2, 3]
 
     result = map(square, data)
@@ -529,10 +530,32 @@ Functools
 
     reduce(callable, iterable[, initializer])
 
+.. code-block:: python
+
+    1 + 2
+    # 3
+
+    1 + 2 + 3 + 4
+    # 10
+
+.. code-block:: python
+
+    from functools import reduce
+
+
+    def add(a,b):
+        return a+b
+
+
+    reduce(add, [1,2])
+    # 3
+    reduce(add, [1,2,3,4])
+    # 10
+
 Itertools
 ---------
-* https://docs.python.org/3/library/itertools.html
-* :ref:`Itertools`
+* More information https://docs.python.org/3/library/itertools.html
+* More information :ref:`Itertools`
 
 .. code-block:: python
 
