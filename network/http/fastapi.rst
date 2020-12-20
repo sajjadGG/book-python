@@ -15,22 +15,34 @@ Install
     pip install fastapi uvicorn
 
 
+Minimal
+=======
+.. code-block:: python
+
+    from fastapi import FastAPI
+    api = FastAPI()
+
+
+    @api.get('/')
+    async def index():
+        return {"message": "Hello World"}
+
+
 Example
 =======
 .. code-block:: python
 
     from typing import Optional
     from fastapi import FastAPI
+    api = FastAPI()
 
-    app = FastAPI()
 
-
-    @app.get("/")
+    @api.get("/")
     async def read_root():
         return {"Hello": "World"}
 
 
-    @app.get("/items/{item_id}")
+    @api.get("/items/{item_id}")
     async def read_item(item_id: int, q: Optional[str] = None):
         return {"item_id": item_id, "q": q}
 
@@ -39,11 +51,10 @@ Example
 
     from typing import Optional
     from fastapi import FastAPI, Header
+    api = FastAPI()
 
-    app = FastAPI()
 
-
-    @app.get("/")
+    @api.get("/")
     async def info(user_agent: Optional[str] = Header(None)):
         return [{"User-Agent": user_agent}]
 
@@ -53,8 +64,7 @@ Example
     from typing import Optional
     from fastapi import FastAPI
     from pydantic import BaseModel
-
-    app = FastAPI()
+    api = FastAPI()
 
 
     class Item(BaseModel):
@@ -63,17 +73,17 @@ Example
         is_offer: Optional[bool] = None
 
 
-    @app.get("/")
+    @api.get("/")
     def read_root():
         return {"Hello": "World"}
 
 
-    @app.get("/items/{item_id}")
+    @api.get("/items/{item_id}")
     def read_item(item_id: int, q: Optional[str] = None):
         return {"item_id": item_id, "q": q}
 
 
-    @app.put("/items/{item_id}")
+    @api.put("/items/{item_id}")
     def update_item(item_id: int, item: Item):
         return {"item_name": item.name, "item_id": item_id}
 
