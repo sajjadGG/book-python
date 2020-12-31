@@ -2,6 +2,7 @@ sphinx==3.4.*
 sphinx_rtd_theme
 sphinxcontrib-bibtex==2.0.*
 recommonmark
+nbsphinx
 
 # sphinxcontrib-book
 # sphinxjp.themes.revealjs
@@ -10,3 +11,4 @@ recommonmark
 # Required by doctests for code listings
 numpy
 pandas
+matplotlib
