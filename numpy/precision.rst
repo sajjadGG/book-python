@@ -68,8 +68,9 @@ Solutions
 * Use ``Decimal`` type
 * ``Decimal`` type is much slower
 
- .. code-block:: python
-    :caption: Problem
+ Problem:
+
+.. code-block:: python
 
     candy = 0.10      # price in dollars
     cookie = 0.20     # price in dollars
@@ -78,8 +79,9 @@ Solutions
     print(result)
     # 0.30000000000000004
 
- .. code-block:: python
-    :caption: Round values to 4 decimal places (generally acceptable)
+ Round values to 4 decimal places (generally acceptable):
+
+.. code-block:: python
 
     candy = 0.10      # price in dollars
     cookie = 0.20     # price in dollars
@@ -88,8 +90,9 @@ Solutions
     print(result)
     # 0.3
 
- .. code-block:: python
-    :caption: Store values as ``int``, do operation and then divide.
+ Store values as ``int``, do operation and then divide.:
+
+.. code-block:: python
 
     candy = 10        # price in cents
     cookie = 20       # price in cents
@@ -98,8 +101,9 @@ Solutions
     print(result)
     # 0.30
 
+Use ``Decimal`` type:
+
 .. code-block:: python
-    :caption: Use ``Decimal`` type
 
     from decimal import Decimal
 

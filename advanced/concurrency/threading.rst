@@ -26,8 +26,9 @@ Delay execution
 * dlaczego nie ``time.sleep()``
 * rekurencyjny timer
 
+Delay execution:
+
 .. code-block:: python
-    :caption: Delay execution
 
     from threading import Timer
 
@@ -43,8 +44,9 @@ Delay execution
 
     print('Main Thread')
 
+Recurrent timer:
+
 .. code-block:: python
-    :caption: Recurrent timer
 
     from threading import Timer
 
@@ -150,8 +152,9 @@ Thread Synchronisation
 
 Joining Threads
 ===============
+Joining Threads:
+
 .. code-block:: python
-    :caption: Joining Threads
 
     from queue import Queue
     from threading import Thread, Lock
@@ -212,8 +215,9 @@ Joining Threads
 
 Workers
 =======
+Worker model:
+
 .. code-block:: python
-    :caption: Worker model
 
     from queue import Queue
     from threading import Thread

@@ -152,8 +152,9 @@ Jeżeli masz listę w której sprawdzasz czy element występuje, to zamień list
 
 String Concatenation
 ====================
+How many string are there in a memory?:
+
 .. code-block:: python
-    :caption: How many string are there in a memory?
 
     firstname = 'Jan'
     lastname = 'Twardowski'
@@ -161,8 +162,9 @@ String Concatenation
     firstname + ' ' + lastname
     # Jan Twardowski
 
+How many string are there in a memory?:
+
 .. code-block:: python
-    :caption: How many string are there in a memory?
 
     firstname = 'Jan'
     lastname = 'Twardowski'
@@ -170,8 +172,9 @@ String Concatenation
     f'{firstname} {lastname}'
     # Jan Twardowski
 
+How many string are there in a memory?:
+
 .. code-block:: python
-    :caption: How many string are there in a memory?
 
     firstname = 'Jan'
     lastname = 'Twardowski'
@@ -180,8 +183,9 @@ String Concatenation
     'Hello ' + firstname + ' ' + lastname + ' ' + str(age) + '!'
     # 'Hello Jan Twardowski 42!'
 
+How many string are there in a memory?:
+
 .. code-block:: python
-    :caption: How many string are there in a memory?
 
     firstname = 'Jan'
     lastname = 'Twardowski'
@@ -191,8 +195,9 @@ String Concatenation
     # 'Hello Jan Twardowski 42!'
 
 
+Use ``list.append()`` instead of ``str + str``:
+
 .. code-block:: python
-    :caption: Use ``list.append()`` instead of ``str + str``
 
     # Performance - Method concatenates strings using + in a loop
     html = '<table>'

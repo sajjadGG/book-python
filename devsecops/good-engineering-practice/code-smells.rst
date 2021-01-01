@@ -37,8 +37,9 @@ Bad practice
 * ``DATA[i]`` lookups has ``O(n)`` complexity!!
 * Does not use generator at all!
 
+Bad practice:
+
 .. code-block:: python
-    :caption: Bad practice
 
     DATA = ['a', 'b', 'c']
 
@@ -49,8 +50,9 @@ Bad practice
     # b
     # c
 
+Better solution:
+
 .. code-block:: python
-    :caption: Better solution
 
     DATA = ['a', 'b', 'c']
 
@@ -254,8 +256,9 @@ Example 6
 * Does not use generator at all!
 * Use ``.startswith()`` to check not ``str[0]``
 
+Bad practice:
+
 .. code-block:: python
-    :caption: Bad practice
 
     DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, {'species': 'virginica'}),
@@ -272,8 +275,9 @@ Example 6
         if DATA[i][-1]['species'][0] == 'v':
             print(DATA[i][-1]['species'])
 
+Pythonic way:
+
 .. code-block:: python
-    :caption: Pythonic way
 
     DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, {'species': 'virginica'}),

@@ -341,8 +341,9 @@ Examples
     logging.getLogger('_tmp').setLevel('ERROR')
 
 
+Decorators:
+
 .. code-block:: python
-    :caption: Decorators
 
     from datetime import datetime
     import logging

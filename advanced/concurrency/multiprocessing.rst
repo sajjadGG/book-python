@@ -34,8 +34,9 @@ Aby ``pickle`` mógł odtworzyć obiekt, musi posiadać jego definicję - klasę
 
 Define payload
 --------------
+``iris.py``:
+
 .. code-block:: python
-    :caption: ``iris.py``
 
     from dataclasses import dataclass
 
@@ -58,8 +59,9 @@ Define payload
 
 Client
 ------
+Obiekt wysyłający dane ``multiprocessing-client.py``:
+
 .. code-block:: python
-    :caption: Obiekt wysyłający dane ``multiprocessing-client.py``
 
     import pickle
     from multiprocessing.connection import Client
@@ -87,8 +89,9 @@ Client
 
 Listener
 --------
+Obiekt nasłuchujący na połączenia ``multiprocessing-listener.py``:
+
 .. code-block:: python
-    :caption: Obiekt nasłuchujący na połączenia ``multiprocessing-listener.py``
 
     import pickle
     from multiprocessing.connection import Listener

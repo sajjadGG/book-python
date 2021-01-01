@@ -20,8 +20,9 @@ Rationale
     method
         Functions in the class which takes instance as first argument (``self``)
 
+Syntax:
+
 .. code-block:: python
-    :caption: Syntax
 
     class MyClass:
         def mymethod(self):
@@ -33,8 +34,9 @@ Rationale
 
 Methods Without Arguments
 =========================
+Methods without arguments:
+
 .. code-block:: python
-    :caption: Methods without arguments
 
     class Astronaut:
         def say_hello(self):
@@ -48,8 +50,9 @@ Methods Without Arguments
 
 Methods With Required Argument
 ==============================
+Methods with required argument:
+
 .. code-block:: python
-    :caption: Methods with required argument
 
     class Astronaut:
         def say_hello(self, name):
@@ -71,8 +74,9 @@ Methods With Required Argument
 
 Methods With Optional Argument
 ==============================
+Methods with arguments with default value:
+
 .. code-block:: python
-    :caption: Methods with arguments with default value
 
     class Astronaut:
         def say_hello(self, name='Unknown'):

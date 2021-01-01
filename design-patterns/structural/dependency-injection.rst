@@ -14,8 +14,9 @@ Dependency injection, as a software design pattern, has number of advantages tha
     * Dependency injection allows a client to remove all knowledge of a concrete implementation that it needs to use. This helps isolate the client from the impact of design changes and defects. It promotes reusability, testability and maintainability.
     * Dependency injection allows a client the flexibility of being configurable. Only the client’s behavior is fixed. The client may act on anything that supports the intrinsic interface the client expects.
 
+Dependency injection:
+
 .. code-block:: python
-    :caption: Dependency injection
 
     from dataclasses import dataclass
     from datetime import timedelta

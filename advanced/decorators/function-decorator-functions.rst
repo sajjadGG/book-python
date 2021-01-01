@@ -27,23 +27,26 @@ Syntax
 * ``wrapper`` name is a convention, but you can name it anyhow
 * ``wrapper`` gets arguments passed to ``function``
 
+Definition:
+
 .. code-block:: python
-    :caption: Definition
 
     def mydecorator(func):
         def wrapper(*args, **kwargs):
             return func(*args, **kwargs)
         return wrapper
 
+Decoration:
+
 .. code-block:: python
-    :caption: Decoration
 
     @mydecorator
     def myfunction():
         ...
 
+Usage:
+
 .. code-block:: python
-    :caption: Usage
 
     myfunction()
 
@@ -69,8 +72,9 @@ Example
 
 Use Cases
 =========
+File exists:
+
 .. code-block:: python
-    :caption: File exists
 
     import os
 
@@ -95,8 +99,9 @@ Use Cases
     display('/tmp/passwd')
     # File /tmp/passwd does not exist
 
+Timeit:
+
 .. code-block:: python
-    :caption: Timeit
 
     from datetime import datetime
 
@@ -128,8 +133,9 @@ Use Cases
     # Duration: 0:00:00.000008
     # 3
 
+Debug:
+
 .. code-block:: python
-    :caption: Debug
 
     def debug(func):
         def wrapper(*args, **kwargs):
@@ -161,8 +167,9 @@ Use Cases
     # Result: 3
     # 3
 
+Stacked decorators:
+
 .. code-block:: python
-    :caption: Stacked decorators
 
     from datetime import datetime
     import logging
@@ -220,8 +227,9 @@ Use Cases
 
 Scope
 =====
+Recap information about factorial (``n!``):
+
 .. code-block:: python
-    :caption: Recap information about factorial (``n!``)
 
     """
     5! = 5 * 4!
@@ -248,8 +256,9 @@ Scope
         else:
             return n * factorial(n-1)
 
+Cache with global scope:
+
 .. code-block:: python
-    :caption: Cache with global scope
 
     _cache = {}
 
@@ -281,8 +290,9 @@ Scope
     #  5: 120}
 
 
+Cache with local scope:
+
 .. code-block:: python
-    :caption: Cache with local scope
 
     def cache(func):
         _cache = {}
@@ -304,8 +314,9 @@ Scope
     factorial(5)
     # 120
 
+Cache with embedded scope:
+
 .. code-block:: python
-    :caption: Cache with embedded scope
 
     def cache(func):
         def wrapper(n):
@@ -401,8 +412,9 @@ Examples
     print(_cache)
     # {'mwatney': 'Mark Watney'}
 
+Flask URL Routing:
+
 .. code-block:: python
-    :caption: Flask URL Routing
 
     from flask import json
     from flask import Response
@@ -432,8 +444,9 @@ Examples
     def hello(name=None):
         return render_template('hello.html', name=name)
 
+FastAPI URL routing:
+
 .. code-block:: python
-    :caption: FastAPI URL routing
 
     from typing import Optional
     from fastapi import FastAPI
@@ -455,8 +468,9 @@ Examples
     async def items(q: Optional[str] = None):
         return {'q': q}
 
+Django Login Required. Decorator checks whether user is_authenticated. If not, user will be redirected to login page.:
+
 .. code-block:: python
-    :caption: Django Login Required. Decorator checks whether user is_authenticated. If not, user will be redirected to login page.
 
     from django.shortcuts import render
 

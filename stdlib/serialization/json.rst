@@ -22,8 +22,9 @@ JSON Syntax
      {"sepalLength": 4.9, "sepalWidth": 3.0, "petalLength": 1.4, "petalWidth": 0.2, "species": "setosa"},
      {"sepalLength": false, "sepalWidth": true, "petalLength": null, "petalWidth": 0.2, "species": null}]
 
+JSON or Python ``list[dict]``?:
+
 .. code-block:: python
-    :caption: JSON or Python ``list[dict]``?
 
     {'mission': 'Ares 3',
      'launch_date': datetime(2035, 6, 29, tzinfo=timezone.utc),
@@ -81,8 +82,9 @@ Mapping to JSON
 * ``json.dumps(DATA: dict) -> str``
 * ``json.loads(DATA: str) -> dict``
 
+Serializing mapping to JSON:
+
 .. code-block:: python
-    :caption: Serializing mapping to JSON
 
     import json
 
@@ -97,8 +99,9 @@ Mapping to JSON
     print(result)
     # {"firstname": "Mark", "lastname": "Watney"}
 
+Deserializing mapping from JSON:
+
 .. code-block:: python
-    :caption: Deserializing mapping from JSON
 
     import json
 
@@ -118,8 +121,9 @@ Sequence to JSON
 * ``json.dumps(data: Sequence[dict]) -> str``
 * ``json.loads(data: str) -> list[dict]``
 
+Serializing sequence to JSON:
+
 .. code-block:: python
-    :caption: Serializing sequence to JSON
 
     import json
 
@@ -189,8 +193,9 @@ Write JSON File
 * ``json.dump(data: dict, file: TextIOWrapper) -> None``
 * file extension ``.json``
 
+Serialize to JSON:
+
 .. code-block:: python
-    :caption: Serialize to JSON
 
     import json
 
@@ -213,8 +218,9 @@ Read JSON File
 * ``json.load(file: TextIOWrapper) -> dict``
 * file extension ``.json``
 
+Serialize to JSON:
+
 .. code-block:: python
-    :caption: Serialize to JSON
 
     import json
 
@@ -312,8 +318,9 @@ Encoder will be used, when standard procedure fails:
 
 JSON to Datetime
 ================
+Simple loading returns ``str`` not ``datetime`` or ``date``:
+
 .. code-block:: python
-    :caption: Simple loading returns ``str`` not ``datetime`` or ``date``
 
     import json
 
@@ -326,8 +333,9 @@ JSON to Datetime
     #  'lastname': 'Watney',
     #  'date_of_birth': '1994-10-12'}
 
+Simple loading returns ``str`` not ``datetime`` or ``date``:
+
 .. code-block:: python
-    :caption: Simple loading returns ``str`` not ``datetime`` or ``date``
 
     import json
     from datetime import date
@@ -348,8 +356,9 @@ JSON to Datetime
     print(result)
     # {'firstname': 'Mark', 'lastname': 'Watney', 'date_of_birth': datetime.date(1994, 10, 12)}
 
+Decoding ``datetime`` and ``date``:
+
 .. code-block:: python
-    :caption: Decoding ``datetime`` and ``date``
 
     from datetime import datetime, timezone
     import json
@@ -466,8 +475,9 @@ JSON to Datetime
 
 Python Object to JSON
 =====================
+Encoding nested objects with relations to JSON:
+
 .. code-block:: python
-    :caption: Encoding nested objects with relations to JSON
 
     import json
     from dataclasses import dataclass
@@ -545,8 +555,9 @@ Python Object to JSON
 
 JSON to Python Object
 =====================
+ Encoding nested objects with relations to JSON:
+
 .. code-block:: python
-    :caption:  Encoding nested objects with relations to JSON
 
     from dataclasses import dataclass
     import json

@@ -17,8 +17,9 @@ Rationale
 
     Comparing datetime works only when all has the same timezone (UTC)
 
+Timezone naive datetimes.:
+
 .. code-block:: python
-    :caption: Timezone naive datetimes.
 
     from datetime import datetime
 
@@ -32,8 +33,9 @@ Rationale
     datetime.utcnow()
     # datetime.datetime(1957, 10, 4, 17, 28, 34)
 
+Timezone aware datetime:
+
 .. code-block:: python
-    :caption: Timezone aware datetime
 
     from datetime import datetime, timezone
 
@@ -90,8 +92,9 @@ Standard Library
 
 ``pytz``
 ========
+``pytz`` brings the Olson tz database into Python.:
+
 .. code-block:: python
-    :caption: ``pytz`` brings the Olson tz database into Python.
 
     from pytz import timezone
 
@@ -101,8 +104,9 @@ Standard Library
     timezone('Europe/Warsaw')
     timezone('Asia/Almaty')
 
+From naive to local time:
+
 .. code-block:: python
-    :caption: From naive to local time
 
     from datetime import datetime
     from pytz import timezone
@@ -113,8 +117,9 @@ Standard Library
     timezone('UTC').localize(my_date)
     # datetime.datetime(1969, 7, 21, 2, 56, 15, tzinfo=<UTC>)
 
+From naive to local time:
+
 .. code-block:: python
-    :caption: From naive to local time
 
     from datetime import datetime
     from pytz import timezone
@@ -125,8 +130,9 @@ Standard Library
     timezone('Asia/Almaty').localize(my_date)
     # datetime.datetime(1961, 4, 12, 6, 7, tzinfo=<DstTzInfo 'Asia/Almaty' +06+6:00:00 STD>)
 
+From UTC to local time:
+
 .. code-block:: python
-    :caption: From UTC to local time
 
     from datetime import datetime
     from pytz import timezone
@@ -137,8 +143,9 @@ Standard Library
     my_date.astimezone(timezone('Europe/Warsaw'))
     # datetime.datetime(1969, 7, 21, 3, 56, 15, tzinfo=<DstTzInfo 'Europe/Warsaw' CET+1:00:00 STD>)
 
+Between timezones:
+
 .. code-block:: python
-    :caption: Between timezones
 
     from datetime import datetime
     from pytz import timezone

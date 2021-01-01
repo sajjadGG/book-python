@@ -26,8 +26,9 @@ DataFrame Statistics
 
 Count
 =====
+Number of non-null observations:
+
 .. code-block:: python
-    :caption: Number of non-null observations
 
     df.count()
     # Morning     7
@@ -47,8 +48,9 @@ Count
 
 Sum
 ===
+Sum of values:
+
 .. code-block:: python
-    :caption: Sum of values
 
     df.sum()
     # Morning     5.500273
@@ -57,8 +59,9 @@ Sum
     # Midnight    2.094039
     # dtype: float64
 
+Cumulative sum:
+
 .. code-block:: python
-    :caption: Cumulative sum
 
     df.cumsum()
     #              Morning      Noon   Evening  Midnight
@@ -73,8 +76,9 @@ Sum
 
 Product
 =======
+Product of values:
+
 .. code-block:: python
-    :caption: Product of values
 
     df.prod()
     # Morning     2.240538
@@ -83,8 +87,9 @@ Product
     # Midnight    0.019528
     # dtype: float64
 
+Cumulative product:
+
 .. code-block:: python
-    :caption: Cumulative product
 
     df.cumprod()
     #              Morning      Noon   Evening  Midnight
@@ -99,8 +104,9 @@ Product
 
 Extremes
 ========
+Minimum, index of minimum and cumulative minimum:
+
 .. code-block:: python
-    :caption: Minimum, index of minimum and cumulative minimum
 
     df.min()
     # Morning    -2.552990
@@ -118,8 +124,9 @@ Extremes
 
     df.cummin()
 
+Maximum, index of maximum and cumulative maximum:
+
 .. code-block:: python
-    :caption: Maximum, index of maximum and cumulative maximum
 
     df.max()
     # Morning     2.269755
@@ -142,8 +149,9 @@ Extremes
 
 Average
 =======
+Arithmetic mean of values:
+
 .. code-block:: python
-    :caption: Arithmetic mean of values
 
     df.mean()
     # Morning     0.785753
@@ -152,8 +160,9 @@ Average
     # Midnight    0.299148
     # dtype: float64
 
+Arithmetic median of values:
+
 .. code-block:: python
-    :caption: Arithmetic median of values
 
     df.median()
     # Morning     1.494079
@@ -162,13 +171,15 @@ Average
     # Midnight   -0.151357
     # dtype: float64
 
+Mode:
+
 .. code-block:: python
-    :caption: Mode
 
     df.mode()
 
+Rolling Average:
+
 .. code-block:: python
-    :caption: Rolling Average
 
     df.rolling(window=30)
 
@@ -178,13 +189,15 @@ Average
 
 Distribution
 ============
+Absolute value:
+
 .. code-block:: python
-    :caption: Absolute value
 
     df.abs()
 
+Standard deviation:
+
 .. code-block:: python
-    :caption: Standard deviation
 
     df.std()
     # Morning     1.671798
@@ -197,13 +210,15 @@ Distribution
 
     Standard Deviation
 
+Mean absolute deviation:
+
 .. code-block:: python
-    :caption: Mean absolute deviation
 
     df.mad()
 
+Standard Error of the Mean (SEM):
+
 .. code-block:: python
-    :caption: Standard Error of the Mean (SEM)
 
     df.sem()
 
@@ -211,8 +226,9 @@ Distribution
 
     Standard Error of the Mean (SEM)
 
+Skewness (3rd moment):
+
 .. code-block:: python
-    :caption: Skewness (3rd moment)
 
     df.skew()
 
@@ -220,8 +236,9 @@ Distribution
 
     Skewness
 
+Kurtosis (4th moment):
+
 .. code-block:: python
-    :caption: Kurtosis (4th moment)
 
     df.kurt()
 
@@ -229,8 +246,9 @@ Distribution
 
     Kurtosis
 
+Sample quantile (value at %). Quantile also known as Percentile.:
+
 .. code-block:: python
-    :caption: Sample quantile (value at %). Quantile also known as Percentile.
 
     df.quantile(.33)
     # Morning     0.743753
@@ -245,8 +263,9 @@ Distribution
     # 0.50  1.494079  0.121675  0.443863 -0.151357
     # 0.75  1.815805  0.405378  0.907262  0.893974
 
+Variance:
+
 .. code-block:: python
-    :caption: Variance
 
     df.var()
     # Morning     2.794907
@@ -255,8 +274,9 @@ Distribution
     # Midnight    1.326610
     # dtype: float64
 
+Correlation Coefficient:
+
 .. code-block:: python
-    :caption: Correlation Coefficient
 
     df.corr()
     #            Morning      Noon   Evening  Midnight
@@ -309,26 +329,30 @@ Examples
     "network", "The mobile network that was called/texted for each entry"
     "network_type", "Whether the number being called was a mobile, international ('world'), voicemail, landline, or other ('special') number."
 
+How many rows the dataset:
+
 .. code-block:: python
-    :caption: How many rows the dataset
 
     df['item'].count()
     # 830
 
+What was the longest phone call / data entry?:
+
 .. code-block:: python
-    :caption: What was the longest phone call / data entry?
 
     df['duration'].max()
     # 10528.0
 
+How many seconds of phone calls are recorded in total?:
+
 .. code-block:: python
-    :caption: How many seconds of phone calls are recorded in total?
 
     df.loc[ df['item'] == 'call' ]['duration'].sum()
     # 92321.0
 
+How many entries are there for each month?:
+
 .. code-block:: python
-    :caption: How many entries are there for each month?
 
     df['month'].value_counts()
     # 2014-11  230
@@ -338,8 +362,9 @@ Examples
     # 2015-03  101
     # dtype: int64
 
+Number of non-null unique network entries:
+
 .. code-block:: python
-    :caption: Number of non-null unique network entries
 
     df['network'].nunique()
     # 9

@@ -46,8 +46,9 @@ Sample
 * 0.5 is 50%
 * 1.0 is 100%
 
+`n` number or fraction random rows with and without repetition:
+
 .. code-block:: python
-    :caption: `n` number or fraction random rows with and without repetition
 
     s.sample()
     s.sample(2)

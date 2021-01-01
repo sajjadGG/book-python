@@ -15,16 +15,18 @@ What is timestamp?
 
 Get current timestamp
 =====================
+Get current timestamp using ``datetime`` module:
+
 .. code-block:: python
-    :caption: Get current timestamp using ``datetime`` module
 
     from datetime import datetime
 
     datetime.now().timestamp()
     # 1567298992.679585
 
+Get current timestamp using ``time`` module:
+
 .. code-block:: python
-    :caption: Get current timestamp using ``time`` module
 
     import time
 
@@ -34,8 +36,9 @@ Get current timestamp
 
 Convert timestamp to ``datetime``
 =================================
+Convert timestamp to ``datetime``:
+
 .. code-block:: python
-    :caption: Convert timestamp to ``datetime``
 
     from datetime import datetime
 
@@ -45,8 +48,9 @@ Convert timestamp to ``datetime``
 * JavaScript has timestamp in milliseconds
 * To convert from milliseconds we have to divide by 1000
 
+Convert JavaScript timestamp to ``datetime``:
+
 .. code-block:: python
-    :caption: Convert JavaScript timestamp to ``datetime``
 
     from datetime import datetime
 

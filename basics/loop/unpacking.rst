@@ -171,8 +171,9 @@ Enumerate
     # Traceback (most recent call last):
     # StopIteration
 
+``enumerate()`` will return ``counter`` and ``value`` for every iteration:
+
 .. code-block:: python
-    :caption: ``enumerate()`` will return ``counter`` and ``value`` for every iteration
 
     DATA = ['a', 'b', 'c']
 
@@ -183,8 +184,9 @@ Enumerate
     # 1 -> b
     # 2 -> c
 
+``enumerate()`` can start with custom number:
+
 .. code-block:: python
-    :caption: ``enumerate()`` can start with custom number
 
     DATA = ['a', 'b', 'c']
 

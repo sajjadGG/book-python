@@ -50,8 +50,9 @@ TypedDict
 
     record_movie({'name': 'Blade Runner', 'year': 1982})
 
+The code below should be rejected, since 'title' is not a valid key, and the 'name' key is missing:
+
 .. code-block:: python
-    :caption: The code below should be rejected, since 'title' is not a valid key, and the 'name' key is missing
 
     from typing import TypedDict
 

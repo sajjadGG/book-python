@@ -71,8 +71,9 @@ Append
     # 4  1.494079 -0.205158  0.313068 -0.854096
     # 5 -2.552990  0.653619  0.864436 -0.742165
 
+Add Row:
+
 .. code-block:: python
-    :caption: Add Row
 
     import pandas as pd
 
@@ -289,8 +290,9 @@ Join
     # 2   3    Ivanovic
     # 3   4       Lewis
 
+Join DataFrames using their indexes.:
+
 .. code-block:: python
-    :caption: Join DataFrames using their indexes.
 
     firstnames.join(lastnames, lsuffix='_fname', rsuffix='_lname')
     #    id_fname firstname  id_lname   lastname
@@ -309,8 +311,9 @@ Join
     # 3        Ivan    Ivanovic
     # 4     Melissa       Lewis
 
+This method preserves the original DataFrame's index in the result.:
+
 .. code-block:: python
-    :caption: This method preserves the original DataFrame's index in the result.
 
     firstnames.join(lastnames.set_index('id'), on='id')
     #    id firstname   lastname

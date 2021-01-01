@@ -250,8 +250,9 @@ Minimal Value
     np.unravel_index(4, (3, 3))             # (1, 1)
     np.unravel_index(a.argmin(), a.shape)   # (1, 1)
 
+Shows the coordinates of ``argmin`` value:
+
 .. code-block:: python
-    :caption: Shows the coordinates of ``argmin`` value
 
     import numpy as np
 
@@ -336,8 +337,9 @@ Maximal Value
     np.unravel_index(7, (3, 3))             # (2, 1)
     np.unravel_index(a.argmax(), a.shape)   # (2, 1)
 
+Shows the coordinates of ``argmax`` value:
+
 .. code-block:: python
-    :caption: Shows the coordinates of ``argmax`` value
 
     import numpy as np
 

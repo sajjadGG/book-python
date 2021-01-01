@@ -273,20 +273,23 @@ Single or double quotes?
 
 Trailing Commas
 ---------------
+Yes:
+
 .. code-block:: python
-    :caption: Yes
 
     FILES = ('setup.cfg',)
 
+OK, but confusing:
+
 .. code-block:: python
-    :caption: OK, but confusing
 
     FILES = 'setup.cfg',
 
 Indents
 -------
+Good:
+
 .. code-block:: python
-    :caption: Good
 
     # More indentation included to distinguish this from the rest.
     def server(
@@ -313,8 +316,9 @@ Indents
         secure=True,
     )
 
+Bad:
+
 .. code-block:: python
-    :caption: Bad
 
     # Further indentation required as indentation is not distinguishable.
     def Connection(
@@ -383,8 +387,9 @@ Linie możemy łamać poprzez stawianie znaku ukośnika ``\`` na końcu:
         content = file1.read()
         file2.write(content)
 
+Easy to match operators with operands:
+
 .. code-block:: python
-    :caption: Easy to match operators with operands
 
     income = (gross_wages
               + taxable_interest

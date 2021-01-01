@@ -63,8 +63,9 @@ Keyword Arguments
 * there is no convention, but you can use any name
 * ``**`` unpacks from ``dict``
 
+Keyword arguments passed directly:
+
 .. code-block:: python
-    :caption: Keyword arguments passed directly
 
     def echo(a, b, c=0):
         print(f'{a=}, {b=}, {c=}')
@@ -228,8 +229,9 @@ Objects From Mappings
 
 Examples
 ========
+Defining complex number by passing keyword arguments directly:
+
 .. code-block:: python
-    :caption: Defining complex number by passing keyword arguments directly
 
     complex(real=3, imag=5)
     # (3+5j)
@@ -240,8 +242,9 @@ Examples
     # (3+5j)
 
 
+Passing vector to the function:
+
 .. code-block:: python
-    :caption: Passing vector to the function
 
     def cartesian_coordinates(x, y, z):
         print(x)    # 1
@@ -252,8 +255,9 @@ Examples
     vector = (1, 0, 1)
     cartesian_coordinates(*vector)
 
+Passing point to the function:
+
 .. code-block:: python
-    :caption: Passing point to the function
 
     def cartesian_coordinates(x, y, z):
         print(x)    # 1
@@ -264,8 +268,9 @@ Examples
     point = {'x': 1, 'y': 0, 'z': 1}
     cartesian_coordinates(**point)
 
+``str.format()`` expects keyword arguments, which keys are used in string. It is cumbersome to pass ``format(name=name, agency=agency)`` for every variable in the code. Since Python 3.6 f-string formatting are preferred.:
+
 .. code-block:: python
-    :caption: ``str.format()`` expects keyword arguments, which keys are used in string. It is cumbersome to pass ``format(name=name, agency=agency)`` for every variable in the code. Since Python 3.6 f-string formatting are preferred.
 
     firstname = 'Jan'
     lastname = 'Twardowski'
@@ -275,8 +280,9 @@ Examples
     print(result)
     # Astronaut Jan Twardowski on the Moon
 
+Calling a function which has similar parameters. Passing configuration to the function, which sets parameters from the config:
+
 .. code-block:: python
-    :caption: Calling a function which has similar parameters. Passing configuration to the function, which sets parameters from the config
 
     def draw_line(x, y, color, type, width, markers):
         ...
@@ -296,8 +302,9 @@ Examples
     draw_line(x=3, y=4, **style)
     draw_line(x=5, y=6, **style)
 
+Database connection configuration read from config file:
+
 .. code-block:: python
-    :caption: Database connection configuration read from config file
 
     config = {
         'host': 'example.com',
@@ -313,8 +320,9 @@ Examples
 
     connection = database_connect(**config)
 
+Calling function with all variables from higher order function. ``locals()`` will return a ``dict`` with all the variables in local scope of the function.:
+
 .. code-block:: python
-    :caption: Calling function with all variables from higher order function. ``locals()`` will return a ``dict`` with all the variables in local scope of the function.
 
     def template(template, **user_data):
         print('Template:', template)
@@ -342,8 +350,9 @@ Examples
     #        'groups': ['admins', 'astronauts'],
     #        'permission': ['all', 'everywhere']}
 
+Proxy functions. One of the most common use of ``*args``, ``**kwargs``.:
+
 .. code-block:: python
-    :caption: Proxy functions. One of the most common use of ``*args``, ``**kwargs``.
 
     def read_csv(filepath_or_buffer, sep=', ', delimiter=None, header='infer',
                  names=None, index_col=None, usecols=None, squeeze=False, prefix=None,
@@ -376,8 +385,9 @@ Examples
     mycsv('iris3.csv', encoding='cp1250', verbose=True)
     mycsv('iris4.csv', verbose=True, usecols=['Sepal Length', 'Species'])
 
+Decorators. Decorators are functions, which get pointer to the decorated function as it's argument, and has closure which gets original function arguments as positional and keyword arguments.:
+
 .. code-block:: python
-    :caption: Decorators. Decorators are functions, which get pointer to the decorated function as it's argument, and has closure which gets original function arguments as positional and keyword arguments.
 
     def login_required(func):
         def wrapper(request, *args, **kwargs):

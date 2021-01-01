@@ -99,8 +99,9 @@ Function definition
 
 Intuitive implementation
 ------------------------
+Intuitive implementation of ``print`` function:
+
 .. code-block:: python
-    :caption: Intuitive implementation of ``print`` function
 
     def print(*values, sep=' ', end='\n', ...):
         return sep.join(values) + end
@@ -141,8 +142,9 @@ String concatenation
     'My name... ' + name
     # 'My name... José Jiménez'
 
+``+`` Operator side effect:
+
 .. code-block:: python
-    :caption: ``+`` Operator side effect
 
     name = 'José Jiménez'
     age = 42

@@ -5,8 +5,9 @@ Datetime Time Utils
 
 Sleep
 =====
+Time sleep function:
+
 .. code-block:: python
-    :caption: Time sleep function
 
     import time
 
@@ -15,8 +16,9 @@ Sleep
 
 ``calendar``
 ============
+HTML Calendar:
+
 .. code-block:: python
-    :caption: HTML Calendar
 
     from calendar import HTMLCalendar
 

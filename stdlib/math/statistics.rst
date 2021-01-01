@@ -19,8 +19,9 @@ Mean
     "``statistics.harmonic_mean()``", "Harmonic mean of data"
     "``statistics.geometric_mean()``", " .. versionadded:: Python 3.8"
 
+Arithmetic mean ('average') of data:
+
 .. code-block:: python
-    :caption: Arithmetic mean ('average') of data
 
     from statistics import mean
 
@@ -30,8 +31,9 @@ Mean
     mean([-1.0, 2.5, 3.25, 5.75])
     # 2.625
 
+Harmonic mean of data:
+
 .. code-block:: python
-    :caption: Harmonic mean of data
 
     from statistics import harmonic_mean
 
@@ -51,8 +53,9 @@ Median
     "``statistics.median_high()``", "High median of data"
     "``statistics.median_grouped()``", "Median, or 50th percentile, of grouped data"
 
+Median (middle value) of data:
+
 .. code-block:: python
-    :caption: Median (middle value) of data
 
     from statistics import median
 
@@ -66,8 +69,9 @@ Median
 * When the number of data points is odd, the middle value is returned.
 * When it is even, the smaller of the two middle values is returned.
 
+Low median of data:
+
 .. code-block:: python
-    :caption: Low median of data
 
     from statistics import median_low
 
@@ -81,8 +85,9 @@ Median
 * When the number of data points is odd, the middle value is returned.
 * When it is even, the larger of the two middle values is returned.
 
+High median of data:
+
 .. code-block:: python
-    :caption: High median of data
 
     from statistics import median_high
 
@@ -95,8 +100,9 @@ Median
 * Median of grouped continuous data.
 * Calculated using interpolation as the 50th percentile.
 
+Median, or 50th percentile, of grouped data:
+
 .. code-block:: python
-    :caption: Median, or 50th percentile, of grouped data
 
     from statistics import median_grouped
 
@@ -119,8 +125,9 @@ Mode
     "``statistics.multimode()``", "returns a list of the most common values, .. versionadded:: Python 3.8"
     "``statistics.quantiles()``", "divides data or a distribution in to equiprobable intervals (e.g. quartiles, deciles, or percentiles), .. versionadded:: Python 3.8"
 
+Mode (most common value) of discrete data:
+
 .. code-block:: python
-    :caption: Mode (most common value) of discrete data
 
     from statistics import mode
 
@@ -149,8 +156,9 @@ Standard Deviation
     "``statistics.pstdev()``", "Population standard deviation of data"
     "``statistics.stdev()``", "Sample standard deviation of data"
 
+Sample standard deviation of data:
+
 .. code-block:: python
-    :caption: Sample standard deviation of data
 
     from statistics import stdev
 
@@ -161,8 +169,9 @@ Standard Deviation
 * Population standard deviation
 * Is the square root of the population variance
 
+Population standard deviation:
+
 .. code-block:: python
-    :caption: Population standard deviation
 
     from statistics import pstdev
 
@@ -180,8 +189,9 @@ Variance
     "``statistics.pvariance()``", "Population variance of data"
     "``statistics.variance()``", "Sample variance of data"
 
+Sample variance of data:
+
 .. code-block:: python
-    :caption: Sample variance of data
 
     from statistics import variance
 
@@ -189,8 +199,9 @@ Variance
     variance([2.75, 1.75, 1.25, 0.25, 0.5, 1.25, 3.5])
     # 1.3720238095238095
 
+Population variance of data:
+
 .. code-block:: python
-    :caption: Population variance of data
 
     from statistics import pvariance
 

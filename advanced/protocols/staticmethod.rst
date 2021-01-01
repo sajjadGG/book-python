@@ -66,8 +66,9 @@ Instances
 
 Namespace
 =========
+Functions on a high level of a module lack namespace:
+
 .. code-block:: python
-    :caption: Functions on a high level of a module lack namespace
 
 
     def add(a, b):
@@ -80,8 +81,9 @@ Namespace
     add(1, 2)
     sub(8, 4)
 
+When ``add`` and ``sub`` are in ``Calculator`` class (namespace) they get instance (``self``) as a first argument. Instantiating Calculator is not needed, as of functions do not read or write to instance variables.:
+
 .. code-block:: python
-    :caption: When ``add`` and ``sub`` are in ``Calculator`` class (namespace) they get instance (``self``) as a first argument. Instantiating Calculator is not needed, as of functions do not read or write to instance variables.
 
     class Calculator:
 
@@ -106,8 +108,9 @@ Namespace
     calc.sub(8, 4)
     # 4
 
+Class ``Calculator`` is a namespace for functions. ``@staticmethod`` remove instance (``self``) argument to method.:
+
 .. code-block:: python
-    :caption: Class ``Calculator`` is a namespace for functions. ``@staticmethod`` remove instance (``self``) argument to method.
 
     class Calculator:
 
@@ -216,8 +219,9 @@ Astronaut Hello
 
 Helper
 ------
+`HabitatOS <https://www.habitatos.space>`_ Z-Wave sensor model:
+
 .. code-block:: python
-    :caption: `HabitatOS <https://www.habitatos.space>`_ Z-Wave sensor model
 
     from datetime import datetime, timezone
     from decimal import Decimal, InvalidOperation

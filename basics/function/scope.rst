@@ -78,8 +78,9 @@ Shadowing
 
 Global
 ======
+Modify global, BAD PRACTICE!!:
+
 .. code-block:: python
-    :caption: Modify global, BAD PRACTICE!!
 
     data = [1, 2, 3]
 

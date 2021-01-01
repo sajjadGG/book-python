@@ -32,8 +32,9 @@ Installation
 
     $ pip install --upgrade numpy
 
+Check version:
+
 .. code-block:: python
-    :caption: Check version
 
     import numpy as np
 

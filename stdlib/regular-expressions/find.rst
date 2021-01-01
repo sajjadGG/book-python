@@ -11,8 +11,9 @@ About
 
 Examples
 ========
+Usage of ``re.findall()`` and ``re.finditer()``:
+
 .. code-block:: python
-    :caption: Usage of ``re.findall()`` and ``re.finditer()``
 
     import re
 
@@ -23,8 +24,9 @@ Examples
     re.findall(PATTERN, DATA)
     # ['MYPROJ-1337', 'MYPROJ-997']
 
+Finding All Adverbs:
+
 .. code-block:: python
-    :caption: Finding All Adverbs
 
     import re
 

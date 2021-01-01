@@ -89,8 +89,9 @@ Comprehensions or Generator Expression
     print(data)
     # <generator object <genexpr> at 0x10ef1d040>
 
+Comprehension:
+
 .. code-block:: python
-    :caption: Comprehension
 
     data = [x for x in range(0,10)]
 
@@ -112,8 +113,9 @@ Comprehensions or Generator Expression
     print(list(data))
     # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+Generator:
+
 .. code-block:: python
-    :caption: Generator
 
     data = (x for x in range(0,10))
 
@@ -169,8 +171,9 @@ List Comprehension
 
 Set Comprehension
 =================
+``set`` comprehension approach to applying function to elements:
+
 .. code-block:: python
-    :caption: ``set`` comprehension approach to applying function to elements
 
     {x+10 for x in range(0, 5)}
     # {10, 11, 12, 13, 14}
@@ -181,8 +184,9 @@ Set Comprehension
 
 Dict Comprehension
 ==================
+``dict`` comprehension approach to applying function to elements:
+
 .. code-block:: python
-    :caption: ``dict`` comprehension approach to applying function to elements
 
     {x+10:x for x in range(0,5)}
     # {10: 0, 11: 1, 12: 2, 13: 3, 14: 4}
@@ -190,8 +194,9 @@ Dict Comprehension
     dict((x+10,x) for x in range(0,5))
     # {10: 0, 11: 1, 12: 2, 13: 3, 14: 4}
 
+``dict`` comprehension approach to applying function to elements:
+
 .. code-block:: python
-    :caption: ``dict`` comprehension approach to applying function to elements
 
     {x:x+10 for x in range(0,5)}
     # {0: 10, 1: 11, 2: 12, 3: 13, 4: 14}
@@ -199,8 +204,9 @@ Dict Comprehension
     dict((x,x+10) for x in range(0,5))
     # {0: 10, 1: 11, 2: 12, 3: 13, 4: 14}
 
+``dict`` Comprehension approach to applying function to elements:
+
 .. code-block:: python
-    :caption: ``dict`` Comprehension approach to applying function to elements
 
     {x+10:x+10 for x in range(0,5)}
     # {10:10, 11:11, 12:12, 13:13, 14:14}
@@ -214,14 +220,16 @@ Tuple Comprehension?!
 * Tuple Comprehension vs. Generator Expression
 * More information in :ref:`Generators`
 
+Tuple Comprehension:
+
 .. code-block:: python
-    :caption: Tuple Comprehension
 
     tuple(x+10 for x in range(0,5))
     # (10, 11, 12, 13, 14)
 
+Generator Expression:
+
 .. code-block:: python
-    :caption: Generator Expression
 
     (x+10 for x in range(0,5))
     # <generator object <genexpr> at 0x11eaef570>
@@ -269,8 +277,9 @@ Filter
 
 Map
 ===
+Applying function to each output element:
+
 .. code-block:: python
-    :caption: Applying function to each output element
 
     [float(x) for x in range(0,5)]
     # [0.0, 1.0, 2.0, 3.0, 4.0]
@@ -278,8 +287,9 @@ Map
     [float(x) for x in range(0,5) if x%2==0]
     # [0.0, 2.0, 4.0]
 
+Applying function to each output element:
+
 .. code-block:: python
-    :caption: Applying function to each output element
 
     [pow(2,x) for x in range(0,5)]
     # [1, 2, 4, 8, 16]
@@ -287,8 +297,9 @@ Map
     [pow(2,x) for x in range(0,5) if x%2==0]
     # [1, 4, 16]
 
+Using ``list`` comprehension for filtering:
+
 .. code-block:: python
-    :caption: Using ``list`` comprehension for filtering
 
     DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -443,8 +454,9 @@ Nested
 
 Examples
 ========
+Increment and decrement:
+
 .. code-block:: python
-    :caption: Increment and decrement
 
     [x+1 for x in range(0,5)]
     # [1, 2, 3, 4, 5]
@@ -452,8 +464,9 @@ Examples
     [x-1 for x in range(0,5)]
     # [-1, 0, 1, 2, 3]
 
+Sum:
+
 .. code-block:: python
-    :caption: Sum
 
     sum(x for x in range(0,5))
     # 10
@@ -461,8 +474,9 @@ Examples
     sum(x for x in range(0,5) if x%2==0)
     # 6
 
+Power:
+
 .. code-block:: python
-    :caption: Power
 
     [pow(x,2) for x in range(0,5)]
     # [0, 1, 4, 9, 16]
@@ -476,8 +490,9 @@ Examples
     [2**x for x in range(0,5)]
     # [1, 2, 4, 8, 16]
 
+Even or Odd:
+
 .. code-block:: python
-    :caption: Even or Odd
 
     [x for x in range(0,5)]
     # [0, 1, 2, 3, 4]
@@ -485,8 +500,9 @@ Examples
     [x%2==0 for x in range(0,5)]
     # [True, False, True, False, True]
 
+Even or Odd:
+
 .. code-block:: python
-    :caption: Even or Odd
 
     result = {}
 
@@ -501,8 +517,9 @@ Examples
     {x: (x%2==0) for x in range(0,5)}
     # {0: True, 1: False, 2: True, 3: False, 4: True}
 
+Filtering:
+
 .. code-block:: python
-    :caption: Filtering
 
     DATA = [{'is_astronaut': True,  'name': 'Jan Twardowski'},
             {'is_astronaut': True,  'name': 'Mark Watney'},
@@ -575,8 +592,9 @@ Examples
 
 More information in :ref:`Assignment Expression`
 
+Using ``list`` comprehension for filtering with more complex expression:
+
 .. code-block:: python
-    :caption: Using ``list`` comprehension for filtering with more complex expression
 
     DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
             (5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -599,8 +617,9 @@ More information in :ref:`Assignment Expression`
     # [(5.1, 3.5, 1.4, 0.2),
     #  (4.7, 3.2, 1.3, 0.2)]
 
+Quick parsing lines:
+
 .. code-block:: python
-    :caption: Quick parsing lines
 
     DATA = ['5.8,2.7,5.1,1.9,virginica',
             '5.1,3.5,1.4,0.2,setosa',
@@ -623,8 +642,9 @@ More information in :ref:`Assignment Expression`
     #  ['5.1', '3.5', '1.4', '0.2', 'setosa'],
     #  ['5.7', '2.8', '4.1', '1.3', 'versicolor']]
 
+Reversing ``dict`` keys with values:
+
 .. code-block:: python
-    :caption: Reversing ``dict`` keys with values
 
     DATA = {'a': 1, 'b': 2}
 
@@ -649,8 +669,9 @@ More information in :ref:`Assignment Expression`
     {v:k for k,v in DATA.items()}
     # {1:'a', 2:'b'}
 
+Value collision while reversing ``dict``:
+
 .. code-block:: python
-    :caption: Value collision while reversing ``dict``
 
     DATA = {'a': 1, 'b': 2, 'c': 2}
 

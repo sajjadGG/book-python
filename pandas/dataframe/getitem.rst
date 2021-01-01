@@ -36,8 +36,9 @@ Rationale
 
 Columns
 =======
+Single Column:
+
 .. code-block:: python
-    :caption: Single Column
 
     df.Morning
     # 1999-12-30    1.764052
@@ -79,8 +80,9 @@ Columns
     # 2000-01-05    2.269755
     # Freq: D, Name: Morning, dtype: float64
 
+Multiple columns:
+
 .. code-block:: python
-    :caption: Multiple columns
 
     df[['Morning', 'Evening']]
     #              Morning   Evening
@@ -95,8 +97,9 @@ Columns
 
 Rows
 ====
+``df['2000-01-05']`` will imply to take column with name ``2000-01-05``, hence ``KeyError``:
+
 .. code-block:: python
-    :caption: ``df['2000-01-05']`` will imply to take column with name ``2000-01-05``, hence ``KeyError``
 
     df['2000-01-05']
     # Traceback (most recent call last):

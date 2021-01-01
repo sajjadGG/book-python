@@ -148,8 +148,9 @@ Importing variable or constant from module
     from game.config import RESOLUTION_X
     from game.config import RESOLUTION_Y
 
+Preferred:
+
 .. code-block:: python
-    :caption: Preferred
 
     from game.config import RESOLUTION_X, RESOLUTION_Y
 

@@ -37,8 +37,9 @@ Rationale
 
 Tuple
 =====
+Generic type annotation:
+
 .. code-block:: python
-    :caption: Generic type annotation
 
     data: tuple = ()
     data: tuple = tuple()
@@ -51,8 +52,9 @@ Tuple
     data: tuple[int, ...] = (1, 2, 3)
     data: tuple[str, ...] = ('setosa', 'virginica', 'versicolor')
 
+Before Python 3.9:
+
 .. code-block:: python
-    :caption: Before Python 3.9
 
     from typing import Tuple
 
@@ -80,8 +82,9 @@ List
     data: list[float] = [5.8, 2.7, 5.1, 1.9]
     data: list[str] = ['a', 'b', 'c', 'd']
 
+Before Python 3.9:
+
 .. code-block:: python
-    :caption: Before Python 3.9
 
     from typing import List
 
@@ -105,8 +108,9 @@ Set
     data: set[float] = {0.0, 1.1, 2.2}
     data: set[str] = {'a', 'b', 'c'}
 
+Before Python 3.9:
+
 .. code-block:: python
-    :caption: Before Python 3.9
 
     from typing import Set
 
@@ -129,8 +133,9 @@ Frozenset
     data: frozenset[float] = {0.0, 1.1, 2.2}
     data: frozenset[str] = {'a', 'b', 'c'}
 
+Before Python 3.9:
+
 .. code-block:: python
-    :caption: Before Python 3.9
 
     from typing import FrozenSet
 
@@ -165,8 +170,9 @@ List of Tuples
         (7.6, 3.0, 6.6, 2.1, 'virginica'),
     ]
 
+Before Python 3.9:
+
 .. code-block:: python
-    :caption: Before Python 3.9
 
     from typing import List, Tuple
 
@@ -206,8 +212,9 @@ List of Lists
         [7, 8, 9],
     ]
 
+Before Python 3.9:
+
 .. code-block:: python
-    :caption: Before Python 3.9
 
     from typing import List
 
@@ -249,8 +256,9 @@ Aliases
         (7.6, 3.0, 6.6, 2.1, 'virginica'),
     ]
 
+Before Python 3.9:
+
 .. code-block:: python
-    :caption: Before Python 3.9
 
     from typing import List, Tuple
 
@@ -296,8 +304,9 @@ Unions
         {7, 8, 9},
     ]
 
+Before Python 3.9:
+
 .. code-block:: python
-    :caption: Before Python 3.9
 
     from typing import Union, List, Tuple, Set
 

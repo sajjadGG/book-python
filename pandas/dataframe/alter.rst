@@ -5,8 +5,9 @@ DataFrame Alter
 
 Add Rows and Columns
 ====================
+Add Column:
+
 .. code-block:: python
-    :caption: Add Column
 
     import pandas as pd
 
@@ -46,8 +47,9 @@ Drop Rows and Columns
 =====================
 * Works with ``inplace=True``
 
+Drop Column:
+
 .. code-block:: python
-    :caption: Drop Column
 
     import pandas as pd
 
@@ -80,8 +82,9 @@ Drop Rows and Columns
     # 1  31
     # 2  32
 
+Drop Row:
+
 .. code-block:: python
-    :caption: Drop Row
 
     import pandas as pd
 
@@ -110,8 +113,9 @@ Drop Rows and Columns
     #     A   B   C
     # 2  12  22  32
 
+Drop from Timeseries:
+
 .. code-block:: python
-    :caption: Drop from Timeseries
 
     import pandas as pd
     import numpy as np

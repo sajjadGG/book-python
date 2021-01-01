@@ -26,8 +26,9 @@ Rationale
 
 Example
 =======
+Interfaces:
+
 .. code-block:: python
-    :caption: Interfaces
 
     from datetime import timedelta
 
@@ -47,8 +48,9 @@ Example
 
 Use Cases
 =========
+Interfaces:
+
 .. code-block:: python
-    :caption: Interfaces
 
     from datetime import timedelta
 

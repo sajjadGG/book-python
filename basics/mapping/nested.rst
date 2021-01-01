@@ -92,8 +92,9 @@ Dict Values
 
 List of Dicts
 -------------
+GetItem:
+
 .. code-block:: python
-    :caption: GetItem
 
     data = [{'measurements': [4.7, 3.2, 1.3, 0.2], 'species': 'setosa'},
             {'measurements': [7.0, 3.2, 4.7, 1.4], 'species': 'versicolor'},
@@ -123,8 +124,9 @@ List of Dicts
     data[2].get('measurements')[1]
     # 3.0
 
+Length:
+
 .. code-block:: python
-    :caption: Length
 
     data = [{'measurements': [4.7, 3.2, 1.3, 0.2], 'species': 'setosa'},
             {'measurements': [7.0, 3.2, 4.7, 1.4], 'species': 'versicolor'},

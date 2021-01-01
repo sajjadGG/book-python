@@ -19,8 +19,9 @@ Rationale
 
 Example
 =======
+CPython 3.7, 3.8, 3.9:
+
 .. code-block:: python
-    :caption: CPython 3.7, 3.8, 3.9
 
     ('a' * 4096) is ('a' * 4096)
     # True

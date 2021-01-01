@@ -32,8 +32,9 @@ Tell - don't ask
 * It reminds us that rather than asking an object for data and acting on that data, we should instead tell an object what to do.
 * This encourages to move behavior into an object to go with the data.
 
+Bad:
+
 .. code-block:: python
-    :caption: Bad
 
     class Light:
         status = 'off'
@@ -43,8 +44,9 @@ Tell - don't ask
     light.status = 'on'
     light.status = 'off'
 
+Good:
+
 .. code-block:: python
-    :caption: Good
 
     class Light:
         status = 'off'
@@ -60,8 +62,9 @@ Tell - don't ask
     light.turn_on()
     light.turn_off()
 
+Bad:
+
 .. code-block:: python
-    :caption: Bad
 
     class Hero:
         health: int = 10
@@ -72,8 +75,9 @@ Tell - don't ask
     while hero.health > 0:
         ...
 
+Good:
+
 .. code-block:: python
-    :caption: Good
 
     class Hero:
         health: int = 10
@@ -94,8 +98,9 @@ Setters, Getters, Deleters
 * Python way: :ref:`properties <Protocol Property>`, :ref:`reflection <Protocol Reflection>` or :ref:`descriptors <Protocol Descriptor>`
 * In Python you prefer direct attribute access
 
+Accessing class fields using setter and getter:
+
 .. code-block:: python
-    :caption: Accessing class fields using setter and getter
 
     class Astronaut:
         _name: str
@@ -112,8 +117,9 @@ Setters, Getters, Deleters
     print(astro.get_name())
     # Mark Watney
 
+Problem with setters and getters:
+
 .. code-block:: python
-    :caption: Problem with setters and getters
 
     class Point:
         _x: int
@@ -137,8 +143,9 @@ Setters, Getters, Deleters
         def del_y(self):
             del self._y
 
+Rationale for Setters and Getters:
+
 .. code-block:: python
-    :caption: Rationale for Setters and Getters
 
     class Temperature:
         kelvin: int
@@ -155,8 +162,9 @@ Setters, Getters, Deleters
     # Traceback (most recent call last):
     # ValueError: Kelvin cannot be negative
 
+Rationale for Setters and Getters:
+
 .. code-block:: python
-    :caption: Rationale for Setters and Getters
 
     class Astronaut:
         _name: str
@@ -173,9 +181,9 @@ Setters, Getters, Deleters
     print(astro.get_name())
     # Jan Twardowski
 
+Rationale for Setters and Getters `HabitatOS <https://www.habitatos.space>`_ Z-Wave sensor admin:
+
 .. code-block:: python
-    :caption: Rationale for Setters and Getters `HabitatOS <https://www.habitatos.space>`_ Z-Wave sensor admin
-    :emphasize-lines: 9,14-20
 
     from django.contrib import admin
     from habitat._common.admin import HabitatAdmin

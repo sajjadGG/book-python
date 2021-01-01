@@ -5,8 +5,9 @@ Serialization XML, XSLT, XPath
 
 ``xml`` module from standard library
 ====================================
+``xml`` module from standard library:
+
 .. code-block:: python
-    :caption: ``xml`` module from standard library
 
     from xml.etree.ElementTree import parse
 
@@ -51,8 +52,9 @@ Serialization XML, XSLT, XPath
 
 Creating elements
 -----------------
+Creating elements:
+
 .. code-block:: python
-    :caption: Creating elements
 
     from lxml.etree import tostring, Element
 
@@ -62,8 +64,9 @@ Creating elements
     print(tostring(root))
     # b'<iris/>'
 
+Adding elements using list interface:
+
 .. code-block:: python
-    :caption: Adding elements using list interface
 
     from lxml.etree import tostring, Element
 
@@ -78,8 +81,9 @@ Creating elements
 
 Length of a subtree
 -------------------
+Length of a subtree:
+
 .. code-block:: python
-    :caption: Length of a subtree
 
     from lxml.etree import Element
 
@@ -94,8 +98,9 @@ Length of a subtree
 
 Selecting subtree
 -----------------
+Selecting subtree:
+
 .. code-block:: python
-    :caption: Selecting subtree
 
     from lxml.etree import Element
 
@@ -109,8 +114,9 @@ Selecting subtree
     print(selected.tag)
     # virginica
 
+Where is selected element:
+
 .. code-block:: python
-    :caption: Where is selected element
 
     from lxml.etree import Element
 
@@ -130,8 +136,9 @@ Selecting subtree
 
 Element tree as a lists
 -----------------------
+Elements are lists:
+
 .. code-block:: python
-    :caption: Elements are lists
 
     from lxml.etree import tostring, Element
 
@@ -149,8 +156,9 @@ Element tree as a lists
     #     <Element virginica at 0x113cd41c8>
     # ]
 
+Iterating over elements:
+
 .. code-block:: python
-    :caption: Iterating over elements
 
     from lxml.etree import Element
 
@@ -167,8 +175,9 @@ Element tree as a lists
     # versicolor
     # virginica
 
+Slicing elements:
+
 .. code-block:: python
-    :caption: Slicing elements
 
     from lxml.etree import Element
 
@@ -188,8 +197,9 @@ Element tree as a lists
 
 Elements as a dict
 ------------------
+Create element using ``dict`` interface:
+
 .. code-block:: python
-    :caption: Create element using ``dict`` interface
 
     from lxml.etree import tostring, Element
 
@@ -199,8 +209,9 @@ Elements as a dict
     print(tostring(tag))
     # b'<iris kingdom="plantae"/>'
 
+Get element attributes and values:
+
 .. code-block:: python
-    :caption: Get element attributes and values
 
     from lxml.etree import tostring, Element
 
@@ -210,8 +221,9 @@ Elements as a dict
     print(tag.get("kingdom"))          # plantae
     print(tag.get("not-existing"))     # None
 
+Set element attributes and values:
+
 .. code-block:: python
-    :caption: Set element attributes and values
 
     from lxml.etree import tostring, Element
 
@@ -225,8 +237,9 @@ Elements as a dict
     print(tostring(tag))
     # b'<iris kingdom="plantae" kind="flower"/>'
 
+Elements carry attributes as a dict:
+
 .. code-block:: python
-    :caption: Elements carry attributes as a dict
 
     from lxml.etree import Element
 
@@ -243,8 +256,9 @@ Elements as a dict
     tag.items()
     # [('kingdom', 'plantae'), ('kind', 'flower')]
 
+Iterating over element attributes and values:
+
 .. code-block:: python
-    :caption: Iterating over element attributes and values
 
     from lxml.etree import Element
 
@@ -258,8 +272,9 @@ Elements as a dict
     # kingdom -> plantae
     # kind -> flower
 
+Elements carry attributes as a dict:
+
 .. code-block:: python
-    :caption: Elements carry attributes as a dict
 
     from lxml.etree import Element
 

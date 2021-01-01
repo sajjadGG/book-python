@@ -114,8 +114,9 @@ Example
 
 Use Cases
 =========
+Kelvin Temperature Validator:
+
 .. code-block:: python
-    :caption: Kelvin Temperature Validator
 
     class KelvinValidator:
         def __set__(self, parent, value):
@@ -141,8 +142,9 @@ Use Cases
     # Traceback (most recent call last):
     # ValueError: Cannot set negative Kelvin
 
+Temperature Conversion:
+
 .. code-block:: python
-    :caption: Temperature Conversion
 
     class Kelvin:
         def __get__(self, parent, *args):
@@ -251,9 +253,11 @@ Use Cases
 
     Comparing datetime works only when all has the same timezone (UTC). More information in :ref:`Stdlib Datetime Timezone`
 
+.. _Descriptor Timezone Converter:
+
+Descriptor Timezone Converter:
+
 .. code-block:: python
-    :caption: Descriptor Timezone Converter
-    :name: Descriptor Timezone Converter
 
     from dataclasses import dataclass
     from datetime import datetime

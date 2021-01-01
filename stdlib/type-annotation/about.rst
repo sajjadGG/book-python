@@ -125,8 +125,9 @@ New Features
         for name in names:
             print("Hello", name)
 
+You can try this feature since Python 3.7 with ``from __future__ import annotations``:
+
 .. code-block:: python
-    :caption: You can try this feature since Python 3.7 with ``from __future__ import annotations``
 
     from __future__ import annotations
 

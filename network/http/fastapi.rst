@@ -46,8 +46,9 @@ Example
     async def read_item(item_id: int, q: Optional[str] = None):
         return {"item_id": item_id, "q": q}
 
+User Agent:
+
 .. code-block:: python
-    :caption: User Agent
 
     from typing import Optional
     from fastapi import FastAPI, Header
@@ -58,8 +59,9 @@ Example
     async def info(user_agent: Optional[str] = Header(None)):
         return [{"User-Agent": user_agent}]
 
+Pydantic:
+
 .. code-block:: python
-    :caption: Pydantic
 
     from typing import Optional
     from fastapi import FastAPI

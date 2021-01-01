@@ -45,16 +45,18 @@ Syntax
 * ``args`` arbitrary number of positional arguments
 * ``kwargs`` arbitrary number of keyword arguments
 
+Definition:
+
 .. code-block:: python
-    :caption: Definition
 
     def mydecorator(method):
         def wrapper(self, *args, **kwargs):
             return method(self, *args, **kwargs)
         return wrapper
 
+Decoration:
+
 .. code-block:: python
-    :caption: Decoration
 
     class MyClass:
 
@@ -62,8 +64,9 @@ Syntax
         def mymethod(self):
             ...
 
+Usage:
+
 .. code-block:: python
-    :caption: Usage
 
     my = MyClass()
     my.mymethod()

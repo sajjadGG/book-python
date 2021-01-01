@@ -65,16 +65,18 @@ Read File as List of Lines
     with open(FILE) as file:
         data = file.readlines()
 
+Read selected (1-30) lines from file:
+
 .. code-block:: python
-    :caption: Read selected (1-30) lines from file
 
     FILE = r'/tmp/myfile.txt'
 
     with open(FILE) as file:
         lines = file.readlines()[1:30]
 
+Read selected (1-30) lines from file:
+
 .. code-block:: python
-    :caption: Read selected (1-30) lines from file
 
     FILE = r'/tmp/myfile.txt'
 
@@ -82,8 +84,9 @@ Read File as List of Lines
         for line in file.readlines()[1:30]:
             print(line)
 
+Read whole file and split by lines, separate header from content:
+
 .. code-block:: python
-    :caption: Read whole file and split by lines, separate header from content
 
     FILE = r'/tmp/myfile.txt'
 

@@ -24,8 +24,9 @@ Points
 
     Points chart
 
+Matplotlib example:
+
 .. code-block:: python
-    :caption: Matplotlib example
 
     import matplotlib.pyplot as plt
 
@@ -40,8 +41,9 @@ Sinusoid on grid
 
     Sinusoid on grid
 
+Matplotlib example:
+
 .. code-block:: python
-    :caption: Matplotlib example
 
     import matplotlib.pyplot as plt
     import numpy as np
@@ -67,8 +69,9 @@ Multiple charts
 
     Multiple charts
 
+Matplotlib example:
+
 .. code-block:: python
-    :caption: Matplotlib example
 
     import numpy as np
     import matplotlib.pyplot as plt

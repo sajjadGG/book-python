@@ -28,8 +28,9 @@ Example:
 
 Examples
 ========
+Usage of group in ``re.match()``:
+
 .. code-block:: python
-    :caption: Usage of group in ``re.match()``
 
     import re
 

@@ -27,8 +27,9 @@ Python WAT?!
     # Traceback (most recent call last):
     # TypeError: list expected at most 1 arguments, got 2
 
+CPython 3.7.4:
+
 .. code-block:: python
-    :caption: CPython 3.7.4
 
     ('a' * 4096) is ('a' * 4096)
     # True

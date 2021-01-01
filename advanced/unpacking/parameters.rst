@@ -120,8 +120,9 @@ Positional and Keyword Parameters
 
 Examples
 ========
+Sum:
+
 .. code-block:: python
-    :caption: Sum
 
     def sum(*values):
         total = 0
@@ -136,8 +137,9 @@ Examples
     sum(3, 1)        # 4
     sum(1, 2, 3, 4)  # 10
 
+Kelvin to Celsius:
+
 .. code-block:: python
-    :caption: Kelvin to Celsius
 
     def kelvin_to_celsius(*degrees):
         return [x+273.15 for x in degrees]
@@ -149,8 +151,9 @@ Examples
     kelvin_to_celsius(1, 2, 3, 4, 5)
     # [274.15, 275.15, 276.15, 277.15, 278.15]
 
+Generate HTML list:
+
 .. code-block:: python
-    :caption: Generate HTML list
 
     def html_list(*fruits):
         print('<ul>')
@@ -166,8 +169,9 @@ Examples
     # <li>orange</li>
     # </ul>
 
+Intuitive definition of ``print`` function:
+
 .. code-block:: python
-    :caption: Intuitive definition of ``print`` function
 
     def print(*values, sep=' ', end='\n', ...):
         return sep.join(values) + end

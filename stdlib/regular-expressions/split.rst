@@ -11,8 +11,9 @@ About
 
 Examples
 ========
+Usage of ``re.split()``:
+
 .. code-block:: python
-    :caption: Usage of ``re.split()``
 
     import re
 
@@ -22,8 +23,9 @@ Examples
     re.split(PATTERN, DATA, flags=re.IGNORECASE)
     # ['Baked Beans', 'Spam']
 
+Making a Phonebook:
+
 .. code-block:: python
-    :caption: Making a Phonebook
 
     import re
 

@@ -11,8 +11,9 @@ About
 
 Examples
 ========
+Usage of ``re.sub()``:
+
 .. code-block:: python
-    :caption: Usage of ``re.sub()``
 
     import re
 

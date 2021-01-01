@@ -34,8 +34,9 @@ Mutable Types
 
 Argument Mutability
 ===================
+Bad:
+
 .. code-block:: python
-    :caption: Bad
 
     class Astronaut:
         def __init__(self, name, missions=[]):
@@ -52,8 +53,9 @@ Argument Mutability
     print('Twardowski:', twardowski.missions)
     # 'Twardowski:' ['Ares 3']
 
+Good:
+
 .. code-block:: python
-    :caption: Good
 
     class Astronaut:
         def __init__(self, name, missions=()):

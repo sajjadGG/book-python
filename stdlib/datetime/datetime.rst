@@ -5,8 +5,9 @@ Datetime Dates and Time
 
 Creating ``date`` objects
 =========================
+Create ``date`` object with custom date:
+
 .. code-block:: python
-    :caption: Create ``date`` object with custom date
 
     from datetime import date
 
@@ -18,8 +19,9 @@ Creating ``date`` objects
     d.month             # 4
     d.day               # 12
 
+Create ``date`` object with current date:
+
 .. code-block:: python
-    :caption: Create ``date`` object with current date
 
     from datetime import date
 
@@ -36,8 +38,9 @@ Creating ``date`` objects
 * Python defines Monday as zero
 * ISO defines Monday as one
 
+``date`` object methods. Python defines Monday as zero. ISO defines Monday as one:
+
 .. code-block:: python
-    :caption: ``date`` object methods. Python defines Monday as zero. ISO defines Monday as one
 
     from datetime import date
 
@@ -53,8 +56,9 @@ Creating ``date`` objects
 
 Creating ``time`` objects
 =========================
+Create ``time`` object with custom time:
+
 .. code-block:: python
-    :caption: Create ``time`` object with custom time
 
     from datetime import time
 
@@ -67,8 +71,9 @@ Creating ``time`` objects
     t.second            # 15
     t.microsecond       # 0
 
+Create ``time`` object representing midnight and noon:
+
 .. code-block:: python
-    :caption: Create ``time`` object representing midnight and noon
 
     from datetime import time
 
@@ -86,8 +91,9 @@ Creating ``time`` objects
 
 Creating ``datetime`` objects
 =============================
+Create ``datetime`` object:
+
 .. code-block:: python
-    :caption: Create ``datetime`` object
 
     from datetime import datetime
 
@@ -103,8 +109,9 @@ Creating ``datetime`` objects
     dt.second           # 15
     dt.microsecond      # 0
 
+Create ``datetime`` with empty time (representing midnight):
+
 .. code-block:: python
-    :caption: Create ``datetime`` with empty time (representing midnight)
 
     from datetime import datetime
 
@@ -120,8 +127,9 @@ Creating ``datetime`` objects
     dt.second           # 0
     dt.microsecond      # 0
 
+Create ``datetime`` from ``date`` and ``time`` objects:
+
 .. code-block:: python
-    :caption: Create ``datetime`` from ``date`` and ``time`` objects
 
     from datetime import datetime, date, time
 
@@ -149,8 +157,9 @@ Creating ``datetime`` objects
 * Python defines Monday as zero
 * ISO defines Monday as one
 
+``datetime`` methods:
+
 .. code-block:: python
-    :caption: ``datetime`` methods
 
     from datetime import datetime
 
@@ -166,8 +175,9 @@ Creating ``datetime`` objects
 
 Current ``datetime`` in local time
 ----------------------------------
+Current ``datetime`` in local timezone:
+
 .. code-block:: python
-    :caption: Current ``datetime`` in local timezone
 
     from datetime import datetime
 

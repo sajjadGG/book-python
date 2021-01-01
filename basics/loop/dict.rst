@@ -94,8 +94,9 @@ Iterate Key-Value Pairs
 =======================
 * Suggested variable name: ``key``, ``value``
 
+Getting pair: ``key``, ``value`` from ``dict`` items:
+
 .. code-block:: python
-    :caption: Getting pair: ``key``, ``value`` from ``dict`` items
 
     DATA = {
         'Sepal length': 5.1,
@@ -124,8 +125,9 @@ Iterate Key-Value Pairs
 
 List of Dicts
 =============
+Unpacking ``list`` of ``dict``:
+
 .. code-block:: python
-    :caption: Unpacking ``list`` of ``dict``
 
     DATA = [{'Sepal length': 5.1, 'Sepal width': 3.5, 'Petal length': 1.4, 'Petal width': 0.2, 'Species': 'setosa'},
             {'Sepal length': 5.7, 'Sepal width': 2.8, 'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
@@ -147,8 +149,9 @@ Generate with Range
 * Pythonic way is to use ``zip()``
 * Don't use ``len(range(...))`` - it evaluates generator
 
+Create ``dict`` from two ``list``:
+
 .. code-block:: python
-    :caption: Create ``dict`` from two ``list``
 
     header = ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
     data = [5.1, 3.5, 1.4, 0.2, 'setosa']
@@ -172,8 +175,9 @@ Generate with Enumerate
 * ``_`` regular variable name (not a special syntax)
 * ``_`` by convention is used when variable will not be referenced
 
+Create ``dict`` from two ``list``:
+
 .. code-block:: python
-    :caption: Create ``dict`` from two ``list``
 
     header = ['Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species']
     data = [5.1, 3.5, 1.4, 0.2, 'setosa']

@@ -64,8 +64,9 @@ Array Iteration
 
 Flat
 ====
+Flatten:
+
 .. code-block:: python
-    :caption: Flatten
 
     import numpy as np
 
@@ -87,8 +88,9 @@ Flat
     # 8
     # 9
 
+Ravel:
+
 .. code-block:: python
-    :caption: Ravel
 
     import numpy as np
 

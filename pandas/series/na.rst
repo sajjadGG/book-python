@@ -217,8 +217,9 @@ Update
 ======
 * Works with ``inplace=True`` parameter.
 
+Fill NA - Scalar value.:
+
 .. code-block:: python
-    :caption: Fill NA - Scalar value.
 
     import pandas as pd
 
@@ -234,8 +235,9 @@ Update
     # 5    6.0
     # dtype: float64
 
+Forward Fill. ``ffill``: propagate last valid observation forward.:
+
 .. code-block:: python
-    :caption: Forward Fill. ``ffill``: propagate last valid observation forward.
 
     import pandas as pd
 
@@ -251,8 +253,9 @@ Update
     # 5    6.0
     # dtype: float64
 
+Backward Fill. ``bfill``: use NEXT valid observation to fill gap.:
+
 .. code-block:: python
-    :caption: Backward Fill. ``bfill``: use NEXT valid observation to fill gap.
 
     import pandas as pd
 
@@ -267,8 +270,9 @@ Update
     # 5    6.0
     # dtype: float64
 
+Interpolate. ``method: str``, default ``linear``. Does not have ``inplace=True``:
+
 .. code-block:: python
-    :caption: Interpolate. ``method: str``, default ``linear``. Does not have ``inplace=True``
 
     import pandas as pd
 
@@ -333,8 +337,9 @@ Update
 
 Drop
 ====
+Drop Rows. Has ``inplace=True`` parameter.:
+
 .. code-block:: python
-    :caption: Drop Rows. Has ``inplace=True`` parameter.
 
     import pandas as pd
 
@@ -372,7 +377,6 @@ Conversion
     # dtype: object
 
 .. code-block:: python
-    :emphasize-lines: 2
 
     data = pd.read_csv('data/baseball.csv', index_col='id')
     data = data.convert_dtypes()

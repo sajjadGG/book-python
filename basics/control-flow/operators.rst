@@ -6,29 +6,33 @@ Equals
 ======
 * ``==`` - ``eq`` (equals)
 
+Comparing ``str``:
+
 .. code-block:: python
-    :caption: Comparing ``str``
 
     'Monty Python' == 'Python'      # False
     'Python' == 'Python'            # True
     'python' == 'Python'            # False
 
+Comparing ``tuple``:
+
 .. code-block:: python
-    :caption: Comparing ``tuple``
 
     (1, 2, 3) == (1, 2)             # False
     (1, 2) == (1, 2)                # True
     (1, 2) == (2, 1)                # False
 
+Comparing ``list``:
+
 .. code-block:: python
-    :caption: Comparing ``list``
 
     [1, 2, 3] == [1, 2]             # False
     [1, 2] == [1, 2]                # True
     [1, 2] == [2, 1]                # False
 
+Comparing ``set``:
+
 .. code-block:: python
-    :caption: Comparing ``set``
 
     {1, 2, 3} == {1, 2}             # False
     {1, 2} == {1, 2}                # True
@@ -45,25 +49,29 @@ Not-Equals
 ==========
 * ``!=`` - ``ne`` (not-equals)
 
+Comparing ``str``:
+
 .. code-block:: python
-    :caption: Comparing ``str``
 
     'Monty Python' != 'Python'      # True
     'Python' != 'Python'            # False
     'python' != 'Python'            # True
 
+Comparing ``tuple``:
+
 .. code-block:: python
-    :caption: Comparing ``tuple``
 
     (1, 2, 3) != (1, 2)             # True
 
+Comparing ``list``:
+
 .. code-block:: python
-    :caption: Comparing ``list``
 
     [1, 2, 3] != [1, 2]             # True
 
+Comparing ``set``:
+
 .. code-block:: python
-    :caption: Comparing ``set``
 
     {1, 2, 3} != {1, 2}             # True
 

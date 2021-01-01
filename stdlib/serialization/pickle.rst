@@ -148,8 +148,9 @@ Serialize and deserialize to file
 
 Dump to file
 ------------
+Dump to file:
+
 .. code-block:: python
-    :caption: Dump to file
 
     import pickle
 
@@ -161,8 +162,9 @@ Dump to file
 
 Load from file
 --------------
+Load from file:
+
 .. code-block:: python
-    :caption: Load from file
 
     import pickle
 
@@ -175,8 +177,9 @@ Load from file
 
 Examples
 ========
+Advanced Example:
+
 .. code-block:: python
-    :caption: Advanced Example
 
     import pickle
     from datetime import datetime, timezone, timedelta

@@ -107,8 +107,9 @@ Profiling with yappi
     # ..hon3.7/threading.py:859 Thread.run  1      0.000010  0.000043  0.000043
     # doc3.py:8 _work                       1      0.000006  0.000033  0.000033
 
+Async application:
+
 .. code-block:: python
-    :caption: Async application
 
     import asyncio
     import yappi

@@ -89,8 +89,9 @@ Injecting methods
 
 Static Methods
 --------------
+Note, that there is no ``self`` as a first argument to ``function``:
+
 .. code-block:: python
-    :caption: Note, that there is no ``self`` as a first argument to ``function``
 
     class User:
         def hello(self):
@@ -149,8 +150,9 @@ Static Methods
     u1.hello()      # New version
     u2.hello()      # Old version
 
+Injecting static and dynamic methods to class:
+
 .. code-block:: python
-    :caption: Injecting static and dynamic methods to class
 
     class User:
         pass
@@ -180,8 +182,9 @@ Static Methods
     u.my_staticlambda()         # TypeError: <lambda>() takes 0 positional arguments but 1 was given
     u.my_dynamiclambda()        # My Dynamic Lambda
 
+Injecting static methods with parameters:
+
 .. code-block:: python
-    :caption: Injecting static methods with parameters
 
     class User:
         pass
@@ -208,8 +211,9 @@ Static Methods
 
 Dynamic Methods
 ---------------
+Note, that there is no ``self`` as a first argument to ``lambda``:
+
 .. code-block:: python
-    :caption: Note, that there is no ``self`` as a first argument to ``lambda``
 
     class User:
         pass
@@ -221,8 +225,9 @@ Dynamic Methods
     u.hello('José Jiménez')
     # My name... José Jiménez
 
+Note, although there is ``self`` in ``lambda``, it is not passed as an argument:
+
 .. code-block:: python
-    :caption: Note, although there is ``self`` in ``lambda``, it is not passed as an argument
 
     class User:
         def __init__(self):
@@ -240,8 +245,9 @@ Dynamic Methods
     # Traceback (most recent call last):
     # AttributeError: 'str' object has no attribute 'name'
 
+Note, the ``self`` argument to ``lambda``:
+
 .. code-block:: python
-    :caption: Note, the ``self`` argument to ``lambda``
 
     class User:
         pass

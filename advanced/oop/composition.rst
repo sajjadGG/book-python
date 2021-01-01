@@ -122,8 +122,9 @@ Composition
 
 Case Study
 ==========
+Multi level inheritance is a bad pattern here:
+
 .. code-block:: python
-    :caption: Multi level inheritance is a bad pattern here
 
     class ToJSON:
         def to_json(self):
@@ -153,8 +154,9 @@ Case Study
     # b'\x94\x93\x94)\x81\x94}\x94(\x8c\tfirstname\x94\x8c\x04Mark' \
     # b'\x94\x8c\x08lastname\x94\x8c\x06Watney\x94ub.'
 
+Mixin classes - multiple inheritance.:
+
 .. code-block:: python
-    :caption: Mixin classes - multiple inheritance.
 
     class ToJSON:
         def to_json(self):

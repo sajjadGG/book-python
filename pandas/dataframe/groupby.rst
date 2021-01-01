@@ -348,8 +348,9 @@ Examples
     len(df.groupby(['month']).groups['2014-11'])
     # 230
 
+Get the first entry for each month:
+
 .. code-block:: python
-    :caption: Get the first entry for each month
 
     df.groupby('month').first()
     #   month  date                 duration  item   network  network_type
@@ -359,8 +360,9 @@ Examples
     # 2015-02  2015-01-13 06:58:00    34.429  data      data          data
     # 2015-03  2015-02-12 20:15:00    69.000  call  landline      landline
 
+Get the sum of the durations per month:
+
 .. code-block:: python
-    :caption: Get the sum of the durations per month
 
     df.groupby('month')['duration'].sum()
     # month
@@ -371,8 +373,9 @@ Examples
     # 2015-03  22750.441
     # Name: duration, dtype: float64
 
+Get the number of dates / entries in each month:
+
 .. code-block:: python
-    :caption: Get the number of dates / entries in each month
 
     df.groupby('month')['date'].count()
     # month
@@ -383,8 +386,9 @@ Examples
     # 2015-03  101
     # Name: date, dtype: int64
 
+What is the sum of durations, for calls only, to each network:
+
 .. code-block:: python
-    :caption: What is the sum of durations, for calls only, to each network
 
     df.loc[df['item'] == 'call'].groupby('network')['duration'].sum()
     # network
@@ -396,8 +400,9 @@ Examples
     # voicemail  1775.0
     # Name: duration, dtype: float64
 
+How many calls, sms, and data entries are in each month?:
+
 .. code-block:: python
-    :caption: How many calls, sms, and data entries are in each month?
 
     df.groupby(['month', 'item'])['date'].count()
     # month    item
@@ -418,8 +423,9 @@ Examples
     #          sms     25
     # Name: date, dtype: int64
 
+How many calls, texts, and data are sent per month, split by network_type?:
+
 .. code-block:: python
-    :caption: How many calls, texts, and data are sent per month, split by network_type?
 
     df.groupby(['month', 'network_type'])['date'].count()
     # month    network_type
@@ -454,8 +460,9 @@ Output format
 =============
 * Series or DataFrame?
 
+produces Pandas Series:
+
 .. code-block:: python
-    :caption: produces Pandas Series
 
     df.groupby('month')['duration'].sum()
     # month
@@ -466,8 +473,9 @@ Output format
     # 2015-03  22750.441
     # Name: duration, dtype: float64
 
+Produces Pandas DataFrame:
+
 .. code-block:: python
-    :caption: Produces Pandas DataFrame
 
     df.groupby('month')[['duration']].sum()
     #   month   duration

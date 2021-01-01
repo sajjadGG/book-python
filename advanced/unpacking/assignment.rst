@@ -33,22 +33,25 @@ Rationale
 
 Errors
 ======
+Note, that ``set`` is unordered collection:
+
 .. code-block:: python
-    :caption: Note, that ``set`` is unordered collection
 
     {a, b, c} = {1, 2, 3}
     # Traceback (most recent call last):
     # SyntaxError: can't assign to literal
 
+Too many values to unpack:
+
 .. code-block:: python
-    :caption: Too many values to unpack
 
     a, b, c = [1, 2, 3, 4]
     # Traceback (most recent call last):
     # ValueError: too many values to unpack (expected 3)
 
+Not enough values to unpack:
+
 .. code-block:: python
-    :caption: Not enough values to unpack
 
     a, b, c, d = [1, 2, 3]
     # Traceback (most recent call last):
@@ -57,8 +60,9 @@ Errors
 
 Arbitrary Number of Arguments
 =============================
+Unpacking values at the right side:
+
 .. code-block:: python
-    :caption: Unpacking values at the right side
 
     a, b, *c = [1, 2, 3, 4]
 
@@ -66,8 +70,9 @@ Arbitrary Number of Arguments
     b               # 2
     c               # [3, 4]
 
+Unpacking values at the left side:
+
 .. code-block:: python
-    :caption: Unpacking values at the left side
 
     *a, b, c = [1, 2, 3, 4]
 
@@ -75,8 +80,9 @@ Arbitrary Number of Arguments
     b               # 3
     c               # 4
 
+Unpacking values from both sides at once:
+
 .. code-block:: python
-    :caption: Unpacking values from both sides at once
 
     a, *b, c = [1, 2, 3, 4]
 
@@ -84,8 +90,9 @@ Arbitrary Number of Arguments
     b               # [2, 3]
     c               # 4
 
+Unpacking from variable length:
+
 .. code-block:: python
-    :caption: Unpacking from variable length
 
     a, *b, c = [1, 2]
 
@@ -93,15 +100,17 @@ Arbitrary Number of Arguments
     b               # []
     c               # 2
 
+Cannot unpack from both sides at once:
+
 .. code-block:: python
-    :caption: Cannot unpack from both sides at once
 
     *a, b, *c = [1, 2, 3, 4]
     # Traceback (most recent call last):
     # SyntaxError: two starred expressions in assignment
 
+Unpacking requires values for required arguments:
+
 .. code-block:: python
-    :caption: Unpacking requires values for required arguments
 
     a, *b, c = [1]
     # Traceback (most recent call last):

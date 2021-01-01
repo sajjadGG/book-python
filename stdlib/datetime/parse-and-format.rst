@@ -215,8 +215,9 @@ Date formatting
 
 ISO Format
 ----------
+Datetime formatting to ISO format:
+
 .. code-block:: python
-    :caption: Datetime formatting to ISO format
 
     from datetime import datetime
 
@@ -225,8 +226,9 @@ ISO Format
     dt.isoformat()
     # 1969-07-21T02:56:15
 
+Date formatting to ISO format:
+
 .. code-block:: python
-    :caption: Date formatting to ISO format
 
     from datetime import date
 
@@ -237,8 +239,9 @@ ISO Format
 
 ``f-string`` formatting
 -----------------------
+Datetime formatting as string with ``f'...'``:
+
 .. code-block:: python
-    :caption: Datetime formatting as string with ``f'...'``
 
     from datetime import datetime
 
@@ -247,8 +250,9 @@ ISO Format
     print(f'Gagarin launched on {gagarin:%Y-%m-%d}')
     # Gagarin launched on 1961-04-12
 
+Datetime formatting as string with ``f'...'``:
+
 .. code-block:: python
-    :caption: Datetime formatting as string with ``f'...'``
 
     from datetime import datetime
 
@@ -257,8 +261,9 @@ ISO Format
     print(f'Gagarin launched on {gagarin:%Y-%m-%d %H:%M}')
     # Gagarin launched on 1961-04-12 06:07
 
+Datetime formatting as string with ``f'...'``:
+
 .. code-block:: python
-    :caption: Datetime formatting as string with ``f'...'``
 
     from datetime import datetime
 
@@ -270,8 +275,9 @@ ISO Format
 
 Format to string
 ----------------
+Datetime formatting as string with ``.strftime()``:
+
 .. code-block:: python
-    :caption: Datetime formatting as string with ``.strftime()``
 
     from datetime import datetime
 
@@ -286,8 +292,9 @@ Parsing dates
 =============
 * Parsing - analyze (a sentence) into its parts and describe their syntactic roles.
 
+Datetime parsing from string:
+
 .. code-block:: python
-    :caption: Datetime parsing from string
 
     from datetime import datetime
 

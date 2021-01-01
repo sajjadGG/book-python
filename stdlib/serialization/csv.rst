@@ -204,8 +204,9 @@ Dialects
 
 Reader Object
 =============
+Read data from CSV file using ``csv.reader()``:
+
 .. code-block:: python
-    :caption: Read data from CSV file using ``csv.reader()``
 
     import csv
 
@@ -230,8 +231,9 @@ Reader Object
 
 Writer Object
 =============
+Writing data to CSV file using ``csv.writer()``:
+
 .. code-block:: python
-    :caption: Writing data to CSV file using ``csv.writer()``
 
     import csv
 
@@ -254,8 +256,9 @@ Writer Object
 
 DictReader
 ==========
+Read data from CSV file using ``csv.DictReader()``:
+
 .. code-block:: python
-    :caption: Read data from CSV file using ``csv.DictReader()``
 
     import csv
 
@@ -276,8 +279,9 @@ DictReader
     # {'sepal_length': '5.9', 'sepal_width': '3.0', 'petal_length': '5.1', 'petal_width': '1.8', 'species': 'virginica'}
     # {'sepal_length': '6.0', 'sepal_width': '3.4', 'petal_length': '4.5', 'petal_width': '1.6', 'species': 'versicolor'}
 
+Read data from CSV file using ``csv.DictReader()``:
+
 .. code-block:: python
-    :caption: Read data from CSV file using ``csv.DictReader()``
 
     import csv
 
@@ -314,8 +318,9 @@ DictReader
     # {'sepal_length': 6.0, 'sepal_width': 3.4, 'petal_length': 4.5, 'petal_width': 1.6, 'species': 'versicolor'}
 
 
+Read data from CSV file using ``csv.DictReader()``. While giving custom names note, that first line (typically a header) will be treated like normal data. Therefore we skip it using ``header = file.readline()``:
+
 .. code-block:: python
-    :caption: Read data from CSV file using ``csv.DictReader()``. While giving custom names note, that first line (typically a header) will be treated like normal data. Therefore we skip it using ``header = file.readline()``
 
     import csv
 
@@ -375,8 +380,9 @@ DictWriter
     # 6.0,3.4,4.5,1.6,versicolor
 
 
+Write data to CSV file using ``csv.DictWriter()``:
+
 .. code-block:: python
-    :caption: Write data to CSV file using ``csv.DictWriter()``
 
     import csv
 
@@ -409,8 +415,9 @@ DictWriter
 
 Parsing Non-CSV Files
 =====================
+Parsing ``/etc/passwd`` file with ``csv.DictReader()``:
+
 .. code-block:: python
-    :caption: Parsing ``/etc/passwd`` file with ``csv.DictReader()``
 
     import csv
 
@@ -437,8 +444,9 @@ Parsing Non-CSV Files
     # {'username': 'lewis', 'password': 'x', 'uid': '1001',...}
     # {'username': 'twardowski', 'password': 'x', 'uid': '1002',...}
 
+Parsing Java properties file with ``csv.DictReader()``:
+
 .. code-block:: python
-    :caption: Parsing Java properties file with ``csv.DictReader()``
 
     import csv
 

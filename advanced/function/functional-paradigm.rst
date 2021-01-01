@@ -215,8 +215,9 @@ Recap information about factorial (``n!``):
     1! = 1 * 0!
     0! = 1
 
+Cache with global scope:
+
 .. code-block:: python
-    :caption: Cache with global scope
 
     def factorial(n):
         if n == 0:
@@ -258,8 +259,9 @@ First-class Function
 * Function can be assigned to variable
 * Function can be stored in data structures such as hash tables, lists, ...
 
+Function can be returned:
+
 .. code-block:: python
-    :caption: Function can be returned
 
     def lower():
         return 'My name... José Jiménez'
@@ -299,8 +301,9 @@ First-class Function
     b()
     # 'My name... José Jiménez'
 
+Function can be user as a parameter:
+
 .. code-block:: python
-    :caption: Function can be user as a parameter
 
     def http_request(url, on_success, on_error):
         try:
@@ -316,8 +319,9 @@ First-class Function
         on_success = lambda result: print(result),
         on_error = lambda error: print(error))
 
+Function can be assigned to variable:
+
 .. code-block:: python
-    :caption: Function can be assigned to variable
 
     from datetime import datetime
     from time import sleep
@@ -329,8 +333,9 @@ First-class Function
     sleep(10)
     print(now())          # 1969-07-21 02:56:25
 
+Function can be stored in data structures such as hash tables, lists, ...:
+
 .. code-block:: python
-    :caption: Function can be stored in data structures such as hash tables, lists, ...
 
     def square(x):
         return x ** 2

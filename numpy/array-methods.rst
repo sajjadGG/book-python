@@ -80,8 +80,9 @@ Fill
 ====
 * Modifies inplace
 
+Fill all:
+
 .. code-block:: python
-    :caption: Fill all
 
     import numpy as np
 
@@ -96,8 +97,9 @@ Fill
     #        [0, 0, 0],
     #        [0, 0, 0]])
 
+Fill slice:
+
 .. code-block:: python
-    :caption: Fill slice
 
     import numpy as np
 
@@ -112,8 +114,9 @@ Fill
     #        [0, 5, 6],
     #        [0, 8, 9]])
 
+Fill NaN (dtype=np.int):
+
 .. code-block:: python
-    :caption: Fill NaN (dtype=np.int)
 
     import numpy as np
 
@@ -128,8 +131,9 @@ Fill
     #        [-9223372036854775808, 5, 6],
     #        [-9223372036854775808, 8, 9]])
 
+Fill NaN (dtype=np.float):
+
 .. code-block:: python
-    :caption: Fill NaN (dtype=np.float)
 
     import numpy as np
 

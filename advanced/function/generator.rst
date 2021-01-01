@@ -100,8 +100,9 @@ Lazy Evaluation
     # Traceback (most recent call last):
     # StopIteration
 
+None of those lines will generate any numbers (util executed)!:
+
 .. code-block:: python
-    :caption: None of those lines will generate any numbers (util executed)!
 
     a = (x for x in range(0,5))
     b = (x for x in range(0,5))
@@ -125,8 +126,9 @@ Iterative Evaluation
     print(data)
     # <generator object <genexpr> at 0x10ef1d040>
 
+Comprehension:
+
 .. code-block:: python
-    :caption: Comprehension
 
     data = [x for x in range(0,10)]
 
@@ -148,8 +150,9 @@ Iterative Evaluation
     print(list(data))
     # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
+Generator:
+
 .. code-block:: python
-    :caption: Generator
 
     data = (x for x in range(0,10))
 
@@ -351,8 +354,9 @@ Zip
     #  'commander': 'Melissa Lewis',
     #  'chemist': 'Alex Vogel'}
 
+``zip()`` adjusts to the shortest:
+
 .. code-block:: python
-    :caption: ``zip()`` adjusts to the shortest
 
     firstnames = ['Mark', 'Melissa']
     lastnames = ['Watney', 'Lewis', 'Vogel']

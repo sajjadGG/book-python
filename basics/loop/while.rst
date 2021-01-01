@@ -35,14 +35,16 @@ Convention
 
 Use Cases
 =========
+Never ending loop. Used in servers to wait forever for incoming connections:
+
 .. code-block:: python
-    :caption: Never ending loop. Used in servers to wait forever for incoming connections
 
     while True:
         print('hello')
 
+Stop conditions:
+
 .. code-block:: python
-    :caption: Stop conditions
 
     i = 0
 
@@ -54,8 +56,9 @@ Use Cases
     # 1
     # 2
 
+Iterating over sequence. Better idea for this is to use ``for`` loop. ``for`` loop supports Iterators. ``len()`` must write all ``numbers`` to memory, to calculate its length:
+
 .. code-block:: python
-    :caption: Iterating over sequence. Better idea for this is to use ``for`` loop. ``for`` loop supports Iterators. ``len()`` must write all ``numbers`` to memory, to calculate its length
 
     i = 0
     data = ['a', 'b', 'c']
@@ -68,8 +71,9 @@ Use Cases
     # 1 'b'
     # 2 'c'
 
+Exit flag. Exit flag pattern is useful if you have for example multi-threaded application:
+
 .. code-block:: python
-    :caption: Exit flag. Exit flag pattern is useful if you have for example multi-threaded application
 
     print('Ignition sequence started')
     abort = False
@@ -93,8 +97,9 @@ Use Cases
 
 Force Exit the Loop
 ===================
+Force exit the loop using ``break`` keyword:
+
 .. code-block:: python
-    :caption: Force exit the loop using ``break`` keyword
 
     print('Ignition sequence started')
     i = 10
@@ -114,8 +119,9 @@ Force Exit the Loop
     # 7
     # Fuel leak detected. Abort, Abort, Abort!
 
+Exiting the loop using ``break`` keyword:
+
 .. code-block:: python
-    :caption: Exiting the loop using ``break`` keyword
 
     while True:
         number = input('Type number: ')
@@ -167,8 +173,9 @@ Force Skip Iteration
     # One we are unwilling to postpone.
     # And one we intend to win
 
+Force skip iteration using ``continue`` keyword:
+
 .. code-block:: python
-    :caption: Force skip iteration using ``continue`` keyword
 
     all_astronauts = ['Mark Watney', 'Jan Twardowski', 'Melissa Lewis', 'José Jiménez']
     assigned_to_mission = ['Mark Watney', 'Melissa Lewis']
@@ -186,8 +193,9 @@ Force Skip Iteration
     # Mark Watney
     # Melissa Lewis
 
+Force skip iteration using ``continue`` keyword:
+
 .. code-block:: python
-    :caption: Force skip iteration using ``continue`` keyword
 
     i = 0
 

@@ -167,8 +167,9 @@ Attribute Access
 * Java way: Setter and Getter
 * Pythonic way: Properties, Reflection, Descriptors
 
+Accessing class fields using setter and getter:
+
 .. code-block:: python
-    :caption: Accessing class fields using setter and getter
 
     class Astronaut:
         def __init__(self, name=None):
@@ -186,8 +187,9 @@ Attribute Access
     print(astro.get_name())
     # Mark Watney
 
+Accessing class fields. Either put ``name`` as an argument for ``__init__()`` or create dynamic field in runtime:
+
 .. code-block:: python
-    :caption: Accessing class fields. Either put ``name`` as an argument for ``__init__()`` or create dynamic field in runtime
 
     class Astronaut:
         def __init__(self, name=None):

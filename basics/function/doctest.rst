@@ -476,7 +476,6 @@ Using python statements in ``doctest``:
         return text
 
 .. code-block:: python
-    :emphasize-lines: 3-5
 
     def when(date):
         """
@@ -506,8 +505,9 @@ Flags
 
 Case Studies
 ============
+Docstring used for doctest:
+
 .. code-block:: python
-    :caption: Docstring used for doctest
 
     def apollo_dsky(noun, verb):
         """

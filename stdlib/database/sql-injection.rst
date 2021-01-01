@@ -5,8 +5,9 @@ Database SQL Injection
 
 Prepare query
 =============
+Query with SQL injection possibility:
+
 .. code-block:: python
-    :caption: Query with SQL injection possibility
 
     SQL_QUERY = f"""
 
@@ -28,8 +29,9 @@ Get user input
 
 Execute query
 =============
+Exploited SQL injection, will Select all users and then Drop all data from table users:
+
 .. code-block:: python
-    :caption: Exploited SQL injection, will Select all users and then Drop all data from table users
 
     print(query)
     # SELECT id, username, email

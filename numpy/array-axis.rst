@@ -19,8 +19,9 @@ Axis
 * New dimensions are added at the beginning of ``shape``
 * Old axes numbers are pushed to the right
 
+One Dimensions:
+
 .. code-block:: python
-    :caption: One Dimensions
 
     a = np.array([1,2,3])
 
@@ -30,8 +31,9 @@ Axis
     axis=0   # columns
     axis=-0  # columns
 
+Two Dimensions:
+
 .. code-block:: python
-    :caption: Two Dimensions
 
     a = np.array([[1,2,3],
                   [4,5,6]])
@@ -45,8 +47,9 @@ Axis
     axis=-0  # rows
     axis=-1  # columns
 
+Three Dimensions:
+
 .. code-block:: python
-    :caption: Three Dimensions
 
     a = np.array([[[1,2,3],
                    [4,5,6]],
@@ -65,8 +68,9 @@ Axis
     axis=-1  # columns
     axis=-2  # rows
 
+Four Dimensions:
+
 .. code-block:: python
-    :caption: Four Dimensions
 
     a = np.array([[[[1,2,3],
                    [4,5,6]],
@@ -94,8 +98,9 @@ Axis
 
 Take
 ====
+One Dimensional:
+
 .. code-block:: python
-    :caption: One Dimensional
 
     import numpy
 
@@ -118,8 +123,9 @@ Take
     a[:, 1]                 # IndexError: too many indices for array
     a.take(0, axis=1)       # AxisError: axis 1 is out of bounds for array of dimension 1
 
+Two Dimensional - Rows:
+
 .. code-block:: python
-    :caption: Two Dimensional - Rows
 
     import numpy
 
@@ -138,8 +144,9 @@ Take
     a.take(1, axis=0)       # array([4, 5, 6])
     a.take(2, axis=0)       # array([7, 8, 9])
 
+Two Dimensional - Columns:
+
 .. code-block:: python
-    :caption: Two Dimensional - Columns
 
     import numpy
 
@@ -163,8 +170,9 @@ Take
     a.take(2, axis=-1)      # array([3, 6, 9])
 
 
+Three Dimensional - Depth:
+
 .. code-block:: python
-    :caption: Three Dimensional - Depth
 
     import numpy
 
@@ -207,8 +215,9 @@ Take
     # Traceback (most recent call last):
     # IndexError: index 2 is out of bounds for size 2
 
+Three Dimensional - Rows:
+
 .. code-block:: python
-    :caption: Three Dimensional - Rows
 
     import numpy
 
@@ -247,8 +256,9 @@ Take
     # array([[ 5,  6,  7],
     #        [77, 88, 99]])
 
+Three Dimensional - Columns:
+
 .. code-block:: python
-    :caption: Three Dimensional - Columns
 
     import numpy
 

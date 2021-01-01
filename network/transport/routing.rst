@@ -74,8 +74,9 @@ Multicast is often employed in Internet Protocol (IP) applications of streaming 
 
     Multicast routing delivery scheme :cite:`RoutingMulticast`
 
+Receive multicast package:
+
 .. code-block:: python
-    :caption: Receive multicast package
 
     import socket
     import struct
@@ -94,8 +95,9 @@ Multicast is often employed in Internet Protocol (IP) applications of streaming 
     while True:
         print(sock.recv(10240))
 
+Send multicast package:
+
 .. code-block:: python
-    :caption: Send multicast package
 
     import socket
 

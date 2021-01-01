@@ -88,8 +88,9 @@ Docstring
     * Used for generating ``help()`` documentation
     * Used for ``doctest``
 
+Docstring used for documentation:
+
 .. code-block:: python
-    :caption: Docstring used for documentation
 
     def apollo_dsky(noun, verb):
         """
@@ -98,8 +99,9 @@ Docstring
         """
         print(f'Program selected. Noun: {noun}, verb: {verb}')
 
+Docstring used for doctest:
+
 .. code-block:: python
-    :caption: Docstring used for doctest
 
     def add(a, b):
         """

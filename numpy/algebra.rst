@@ -44,8 +44,9 @@ Inner product
 * Ordinary inner product of vectors for 1-D arrays (without complex conjugation)
 * In higher dimensions a sum product over the last axes
 
+Ordinary inner product for vectors:
+
 .. code-block:: python
-    :caption: Ordinary inner product for vectors
 
     import numpy as np
 
@@ -56,8 +57,9 @@ Inner product
     np.inner(a, b)
     # 2
 
+Multidimensional example:
+
 .. code-block:: python
-    :caption: Multidimensional example
 
     import numpy as np
 
@@ -87,8 +89,9 @@ Outer product
     #        [ 8., 8., 4.],
     #        [ 0., 0., 0.]])
 
+An example using a "vector" of letters:
+
 .. code-block:: python
-    :caption: An example using a "vector" of letters
 
     import numpy as np
 
@@ -105,8 +108,9 @@ Cross product
 * The cross product of a and b in R^3 is a vector perpendicular to both a and b
 * ``np.cross()``
 
+Vector cross-product:
+
 .. code-block:: python
-    :caption: Vector cross-product
 
     import numpy as np
 
@@ -117,8 +121,9 @@ Cross product
     np.cross(x, y)
     # array([-3,  6, -3])
 
+One vector with dimension 2:
+
 .. code-block:: python
-    :caption: One vector with dimension 2
 
     import numpy as np
 

@@ -79,8 +79,9 @@ Range Index
 ===========
 * Default
 
+Define Range Index:
+
 .. code-block:: python
-    :caption: Define Range Index
 
     import pandas as pd
 
@@ -314,8 +315,9 @@ Date Index
     # 2000-01-03    5.0
     # Freq: D, dtype: float64
 
+Every year:
+
 .. code-block:: python
-    :caption: Every year
 
     import pandas as pd
 
@@ -336,8 +338,9 @@ Date Index
     # 2003-12-31    5.0
     # Freq: A-DEC, dtype: float64
 
+Every quarter:
+
 .. code-block:: python
-    :caption: Every quarter
 
     import pandas as pd
 
@@ -358,8 +361,9 @@ Date Index
     # 2000-12-31    5.0
     # Freq: Q-DEC, dtype: float64
 
+Every month:
+
 .. code-block:: python
-    :caption: Every month
 
     import pandas as pd
 
@@ -380,8 +384,9 @@ Date Index
     # 2000-04-30    5.0
     # Freq: M, dtype: float64
 
+Every day:
+
 .. code-block:: python
-    :caption: Every day
 
     import pandas as pd
 
@@ -402,8 +407,9 @@ Date Index
     # 2000-01-03    5.0
     # Freq: D, dtype: float64
 
+Every two days:
+
 .. code-block:: python
-    :caption: Every two days
 
     import pandas as pd
 
@@ -424,8 +430,9 @@ Date Index
     # 2000-01-07    5.0
     # Freq: 2D, dtype: float64
 
+Every hour:
+
 .. code-block:: python
-    :caption: Every hour
 
     import pandas as pd
 
@@ -447,8 +454,9 @@ Date Index
     # 1999-12-30 04:00:00    5.0
     # Freq: H, dtype: float64
 
+Every minute:
+
 .. code-block:: python
-    :caption: Every minute
 
     import pandas as pd
 
@@ -470,8 +478,9 @@ Date Index
     # 1999-12-30 00:04:00    5.0
     # Freq: T, dtype: float64
 
+Every second:
+
 .. code-block:: python
-    :caption: Every second
 
     import pandas as pd
 
@@ -493,8 +502,9 @@ Date Index
     # 1999-12-30 00:00:04    5.0
     # Freq: S, dtype: float64
 
+Every business day. More in :ref:`Date and Time Frequency` and :ref:`Date and Time Calendar`:
+
 .. code-block:: python
-    :caption: Every business day. More in :ref:`Date and Time Frequency` and :ref:`Date and Time Calendar`
 
     import pandas as pd
 

@@ -5,8 +5,9 @@ Case Studies
 
 ISS Ground Track
 ================
+Source: https://beyond.readthedocs.io/en/latest/examples.html:
+
 .. code-block:: python
-    :caption: Source: https://beyond.readthedocs.io/en/latest/examples.html
 
     #!/usr/bin/env python
 
@@ -104,8 +105,9 @@ ISS Ground Track
 
 ISS Hohmann transfer
 ====================
+https://beyond.readthedocs.io/en/latest/examples.html:
+
 .. code-block:: python
-    :caption: https://beyond.readthedocs.io/en/latest/examples.html
 
     """Example of Hohmann transfer
 

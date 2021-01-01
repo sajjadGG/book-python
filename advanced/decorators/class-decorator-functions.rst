@@ -31,8 +31,9 @@ Syntax
 * ``Wrapper`` can inherit from ``MyClass``
 * Decorator must return pointer to ``Wrapper``
 
+Definition:
+
 .. code-block:: python
-    :caption: Definition
 
     class MyDecorator:
         def __init__(self, func):
@@ -41,15 +42,17 @@ Syntax
         def __call__(self, *args, **kwargs):
             return self._func(*args, **kwargs)
 
+Decoration:
+
 .. code-block:: python
-    :caption: Decoration
 
     @MyDecorator
     def myfunction():
         ...
 
+Usage:
+
 .. code-block:: python
-    :caption: Usage
 
     myfunction()
 
@@ -77,8 +80,9 @@ Example
 
 Use Cases
 =========
+Login Check:
+
 .. code-block:: python
-    :caption: Login Check
 
     class User:
         def __init__(self):
@@ -114,8 +118,9 @@ Use Cases
     edit_profile()
     # Editing profile...
 
+Dict Cache:
+
 .. code-block:: python
-    :caption: Dict Cache
 
     class Cache(dict):
         def __init__(self, func):

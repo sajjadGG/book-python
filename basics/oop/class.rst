@@ -34,14 +34,16 @@ Classes
 * Capitalized ``CamelCase`` name convention
 * Classes are templates for objects
 
+Defining class. Classes should have capitalized name:
+
 .. code-block:: python
-    :caption: Defining class. Classes should have capitalized name
 
     class Astronaut:
         pass
 
+Multi-word class names should use ``CamelCase``:
+
 .. code-block:: python
-    :caption: Multi-word class names should use ``CamelCase``
 
     class AstronautPilot:
         pass
@@ -53,8 +55,9 @@ Instances
 * Two newlines between class and code
 * ``snake_case`` names
 
+One class and one instance:
+
 .. code-block:: python
-    :caption: One class and one instance
 
     class Astronaut:
         pass
@@ -62,8 +65,9 @@ Instances
 
     watney = Astronaut()
 
+One class and three instances:
+
 .. code-block:: python
-    :caption: One class and three instances
 
     class Astronaut:
         pass
@@ -73,8 +77,9 @@ Instances
     twardowski = Astronaut()
     jimenez = Astronaut()
 
+Two classes and two instances:
+
 .. code-block:: python
-    :caption: Two classes and two instances
 
     class Astronaut:
         pass
@@ -86,8 +91,9 @@ Instances
     mark = Astronaut()
     ivan = Cosmonaut()
 
+Two classes and four instances (two instances of an ``Astronaut`` class, and two of a ``Cosmonaut`` class):
+
 .. code-block:: python
-    :caption: Two classes and four instances (two instances of an ``Astronaut`` class, and two of a ``Cosmonaut`` class)
 
     class AstronautPilot:
         pass
@@ -120,8 +126,9 @@ Convention
 * All classes in one file - when classes are short
 * You can mix classes and functions in one file
 
+Classes and Objects:
+
 .. code-block:: python
-    :caption: Classes and Objects
 
     class AstronautEngineer:
         pass

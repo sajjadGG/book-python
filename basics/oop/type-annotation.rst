@@ -183,8 +183,9 @@ Final Class
     class Astronaut:
         pass
 
+Error: Cannot inherit from final class "Base":
+
 .. code-block:: python
-    :caption: Error: Cannot inherit from final class "Base"
 
     from typing import final
 
@@ -214,8 +215,9 @@ Final Method
             pass
 
 
+Error: Cannot override final attribute "foo" (previously declared in base class "Base"):
+
 .. code-block:: python
-    :caption: Error: Cannot override final attribute "foo" (previously declared in base class "Base")
 
     from typing import final
 
@@ -245,8 +247,9 @@ Final Attribute
             self.x = 1
             self.y = 2
 
+Error: final attribute (``y``) without an initializer:
+
 .. code-block:: python
-    :caption: Error: final attribute (``y``) without an initializer
 
     from typing import Final
 
@@ -258,8 +261,9 @@ Final Attribute
         def __init__(self) -> None:
             self.x = 1
 
+Error: can't override a final attribute:
+
 .. code-block:: python
-    :caption: Error: can't override a final attribute
 
     from typing import Final
 
@@ -274,8 +278,9 @@ Final Attribute
     class Game(Settings):
         RESOLUTION_X_MIN = 3        # Error: can't override a final attribute
 
+Error: can't override a final attribute:
+
 .. code-block:: python
-    :caption: Error: can't override a final attribute
 
     from typing import Final
 

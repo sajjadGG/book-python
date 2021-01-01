@@ -139,8 +139,9 @@ Abstract Property
 
 Errors
 ======
+In order to use Abstract Base Class you must create abstract method. Otherwise it won't prevent from instantiating.:
+
 .. code-block:: python
-    :caption: In order to use Abstract Base Class you must create abstract method. Otherwise it won't prevent from instantiating.
 
     from abc import ABC
 
@@ -153,8 +154,9 @@ Errors
     print('no errors')
     # no errors
 
+In order to use Abstract Base Class you must create abstract method. Otherwise it won't prevent from instantiating.:
+
 .. code-block:: python
-    :caption: In order to use Abstract Base Class you must create abstract method. Otherwise it won't prevent from instantiating.
 
     from abc import ABCMeta
 
@@ -167,8 +169,9 @@ Errors
     print('no errors')
     # no errors
 
+Must implement all abstract methods:
+
 .. code-block:: python
-    :caption: Must implement all abstract methods
 
     from abc import ABCMeta, abstractmethod
 
@@ -187,8 +190,9 @@ Errors
     # Traceback (most recent call last):
     # TypeError: Can't instantiate abstract class Astronaut with abstract method say_hello
 
+``abc`` is common name and it is very easy to create file, variable lub module with the same name as the library, hence overwrite it. In case of error. Check all entries in ``sys.path`` or ``sys.modules['abc']`` to find what is overwriting it.:
+
 .. code-block:: python
-    :caption: ``abc`` is common name and it is very easy to create file, variable lub module with the same name as the library, hence overwrite it. In case of error. Check all entries in ``sys.path`` or ``sys.modules['abc']`` to find what is overwriting it.
 
     from pprint import pprint
     import sys
@@ -214,8 +218,9 @@ Errors
 
 Use Cases
 =========
+Abstract Class:
+
 .. code-block:: python
-    :caption: Abstract Class
 
     from abc import ABC, abstractmethod
 

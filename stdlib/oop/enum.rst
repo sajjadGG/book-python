@@ -17,8 +17,9 @@ Rationale
 
 Definition
 ==========
+Defining ``enum``:
+
 .. code-block:: python
-    :caption: Defining ``enum``
 
     from enum import Enum
 
@@ -31,8 +32,9 @@ Definition
 
     color = Color.RED
 
+Defining ``enum``:
+
 .. code-block:: python
-    :caption: Defining ``enum``
 
     from enum import Enum
 
@@ -43,8 +45,9 @@ Definition
 
 Accessing names and values
 ==========================
+Accessing names and values:
+
 .. code-block:: python
-    :caption: Accessing names and values
 
     from enum import Enum
 
@@ -82,8 +85,9 @@ Accessing names and values
 
 Iterating over ``Enum``
 =======================
+Iterating over ``Enum``:
+
 .. code-block:: python
-    :caption: Iterating over ``Enum``
 
     from enum import Enum
 
@@ -102,8 +106,9 @@ Iterating over ``Enum``
 
 Identity check
 ==============
+Identity check:
+
 .. code-block:: python
-    :caption: Identity check
 
     color = Color('#00FF00')     # <Color.GREEN: '#00FF00'>
     color is Color.RED           # False
@@ -115,8 +120,9 @@ Use cases
 =========
 * https://docs.python.org/3/library/os.html#os.stat
 
+``enum`` - Example usage:
+
 .. code-block:: python
-    :caption: ``enum`` - Example usage
 
     from enum import Enum
 
@@ -178,8 +184,9 @@ Use cases
     Permission(int(others))
     # <Permission.READ: 4>
 
+``enum`` - Example usage:
+
 .. code-block:: python
-    :caption: ``enum`` - Example usage
 
     from enum import IntEnum
 

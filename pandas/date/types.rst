@@ -38,8 +38,9 @@ Timestamp
     pd.Timestamp('12/4/69, 6:07 pm')
     # Timestamp('1969-12-04 18:07:00')
 
+2016-12-31 23:59:60 is a valid date (UTC leap second):
+
 .. code-block:: python
-    :caption: 2016-12-31 23:59:60 is a valid date (UTC leap second)
 
     import pandas as pd
 

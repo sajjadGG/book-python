@@ -73,16 +73,18 @@ Example
 
 Loop and Iterators
 ==================
+For loop:
+
 .. code-block:: python
-    :caption: For loop
 
     DATA = [1, 2, 3]
 
     for current in DATA:
         print(current)
 
+Intuitive implementation of the ``for`` loop:
+
 .. code-block:: python
-    :caption: Intuitive implementation of the ``for`` loop
 
     DATA = [1, 2, 3]
     iterator = iter(DATA)
@@ -102,8 +104,9 @@ Loop and Iterators
     except StopIteration:
         pass
 
+Intuitive implementation of the ``for`` loop:
+
 .. code-block:: python
-    :caption: Intuitive implementation of the ``for`` loop
 
     DATA = [1, 2, 3]
     iterator = DATA.__iter__()
@@ -126,8 +129,9 @@ Loop and Iterators
 
 Built-in Type Iteration
 =======================
+Iterating ``str``:
+
 .. code-block:: python
-    :caption: Iterating ``str``
 
     for character in 'hello':
         print(character)
@@ -138,8 +142,9 @@ Built-in Type Iteration
     # l
     # o
 
+Iterating sequences:
+
 .. code-block:: python
-    :caption: Iterating sequences
 
     for number in [1, 2, 3]:
         print(number)
@@ -148,8 +153,9 @@ Built-in Type Iteration
     # 2
     # 3
 
+Iterating ``dict``:
+
 .. code-block:: python
-    :caption: Iterating ``dict``
 
     DATA = {'a': 1, 'b': 2, 'c': 3}
 
@@ -160,8 +166,9 @@ Built-in Type Iteration
     # b
     # c
 
+Iterating ``dict``:
+
 .. code-block:: python
-    :caption: Iterating ``dict``
 
     for key, value in DATA.items():
         print(f'{key} -> {value}')
@@ -170,8 +177,9 @@ Built-in Type Iteration
     # b -> 2
     # c -> 3
 
+Iterating nested sequences:
+
 .. code-block:: python
-    :caption: Iterating nested sequences
 
     for key, value in [('a',1), ('b',2), ('c',3)]:
         print(f'{key} -> {value}')
@@ -183,8 +191,9 @@ Built-in Type Iteration
 
 Use Cases
 =========
+Iterator implementation:
+
 .. code-block:: python
-    :caption: Iterator implementation
 
     class Parking:
         def __init__(self):
@@ -225,8 +234,9 @@ Standard Library Itertools
 ==========================
 * ``import itertools``
 
+``itertools.count(start=0, step=1)``:
+
 .. code-block:: python
-    :caption: ``itertools.count(start=0, step=1)``
 
     from itertools import count
 
@@ -242,8 +252,9 @@ Standard Library Itertools
     next(data)
     # 7
 
+``itertools.cycle(iterable)``:
+
 .. code-block:: python
-    :caption: ``itertools.cycle(iterable)``
 
     from itertools import cycle
 
@@ -258,8 +269,9 @@ Standard Library Itertools
     # gray
     # ...
 
+``itertools.cycle(iterable)``:
+
 .. code-block:: python
-    :caption: ``itertools.cycle(iterable)``
 
     from itertools import cycle
 
@@ -274,8 +286,9 @@ Standard Library Itertools
     # 3, odd
     # ...
 
+``itertools.repeat(object[, times])``:
+
 .. code-block:: python
-    :caption: ``itertools.repeat(object[, times])``
 
     from itertools import repeat
 
@@ -296,8 +309,9 @@ Standard Library Itertools
     # Traceback (most recent call last):
     # StopIteration
 
+``itertools.accumulate(iterable[, func, *, initial=None])``:
+
 .. code-block:: python
-    :caption: ``itertools.accumulate(iterable[, func, *, initial=None])``
 
     from itertools import accumulate
 
@@ -319,8 +333,9 @@ Standard Library Itertools
     # Traceback (most recent call last):
     # StopIteration
 
+``itertools.chain(*iterables)``:
+
 .. code-block:: python
-    :caption: ``itertools.chain(*iterables)``
 
     from itertools import chain
 
@@ -338,8 +353,9 @@ Standard Library Itertools
     # 2
     # 3
 
+``itertools.chain(*iterables)``:
+
 .. code-block:: python
-    :caption: ``itertools.chain(*iterables)``
 
     from itertools import chain
 
@@ -387,8 +403,9 @@ Standard Library Itertools
     # 2
     # 3
 
+``itertools.compress(data, selectors)``:
+
 .. code-block:: python
-    :caption: ``itertools.compress(data, selectors)``
 
     from itertools import compress
 
@@ -411,8 +428,9 @@ Standard Library Itertools
     # Traceback (most recent call last):
     # StopIteration
 
+``itertools.islice(iterable, start, stop[, step])``:
+
 .. code-block:: python
-    :caption: ``itertools.islice(iterable, start, stop[, step])``
 
     from itertools import islice
 
@@ -429,8 +447,9 @@ Standard Library Itertools
     # Traceback (most recent call last):
     # StopIteration
 
+``itertools.starmap(function, iterable)``:
+
 .. code-block:: python
-    :caption: ``itertools.starmap(function, iterable)``
 
     from itertools import starmap
 
@@ -450,8 +469,9 @@ Standard Library Itertools
     # Traceback (most recent call last):
     # StopIteration
 
+``itertools.product(*iterables, repeat=1)``:
+
 .. code-block:: python
-    :caption: ``itertools.product(*iterables, repeat=1)``
 
     from itertools import product
 
@@ -480,8 +500,9 @@ Standard Library Itertools
     # Traceback (most recent call last):
     # StopIteration
 
+``itertools.permutations(iterable, r=None)``:
+
 .. code-block:: python
-    :caption: ``itertools.permutations(iterable, r=None)``
 
     from itertools import permutations
 
@@ -510,8 +531,9 @@ Standard Library Itertools
     # Traceback (most recent call last):
     # StopIteration
 
+``itertools.combinations(iterable, r)``:
+
 .. code-block:: python
-    :caption: ``itertools.combinations(iterable, r)``
 
     from itertools import combinations
 
@@ -540,8 +562,9 @@ Standard Library Itertools
     # Traceback (most recent call last):
     # StopIteration
 
+``itertools.combinations_with_replacement(iterable, r)``:
+
 .. code-block:: python
-    :caption: ``itertools.combinations_with_replacement(iterable, r)``
 
     from itertools import combinations_with_replacement
 
@@ -570,8 +593,9 @@ Standard Library Itertools
     # Traceback (most recent call last):
     # StopIteration
 
+``itertools.groupby(iterable, key=None)``. Make an iterator that returns consecutive keys and groups from the iterable. Generally, the iterable needs to already be sorted on the same key function. The operation of groupby() is similar to the uniq filter in Unix. It generates a break or new group every time the value of the key function changes. That behavior differs from SQL’s GROUP BY which aggregates common elements regardless of their input order.:
+
 .. code-block:: python
-    :caption: ``itertools.groupby(iterable, key=None)``. Make an iterator that returns consecutive keys and groups from the iterable. Generally, the iterable needs to already be sorted on the same key function. The operation of groupby() is similar to the uniq filter in Unix. It generates a break or new group every time the value of the key function changes. That behavior differs from SQL’s GROUP BY which aggregates common elements regardless of their input order.
 
     from itertools import groupby
 

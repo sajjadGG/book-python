@@ -31,8 +31,9 @@ Line Styles
 
 Single Plot
 ===========
+Vectorized Operations:
+
 .. code-block:: python
-    :caption: Vectorized Operations
 
     import matplotlib.pyplot as plt
     import numpy as np
@@ -44,8 +45,9 @@ Single Plot
     plt.plot(x, y)
     plt.show()
 
+Universal Function:
+
 .. code-block:: python
-    :caption: Universal Function
 
     import matplotlib.pyplot as plt
     import numpy as np
@@ -75,8 +77,9 @@ Multiple Plots
     plt.plot(x2, y2)
     plt.show()
 
+Universal Function:
+
 .. code-block:: python
-    :caption: Universal Function
 
     import matplotlib.pyplot as plt
     import numpy as np
@@ -90,8 +93,9 @@ Multiple Plots
     plt.plot(x, y2)
     plt.show()
 
+Inlined Universal Function:
+
 .. code-block:: python
-    :caption: Inlined Universal Function
 
     import matplotlib.pyplot as plt
     import numpy as np
@@ -103,8 +107,9 @@ Multiple Plots
     plt.plot(x, np.cos(x))
     plt.show()
 
+Vectorized Operation:
+
 .. code-block:: python
-    :caption: Vectorized Operation
 
     import matplotlib.pyplot as plt
     import numpy as np
@@ -117,8 +122,9 @@ Multiple Plots
     plt.plot(x, x**3)
     plt.show()
 
+Universal Function and Vectorized Operation:
+
 .. code-block:: python
-    :caption: Universal Function and Vectorized Operation
 
     import matplotlib.pyplot as plt
     import numpy as np

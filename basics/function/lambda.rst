@@ -63,8 +63,9 @@ Convention
     square(4)
     # 16
 
+:pep:`8` -- Style Guide for Python Code: "Always use a def statement instead of an assignment statement that binds a lambda expression directly to an identifier".:
+
 .. code-block:: python
-    :caption: :pep:`8` -- Style Guide for Python Code: "Always use a def statement instead of an assignment statement that binds a lambda expression directly to an identifier".
 
     # Correct:
     def f(x): return 2*x
@@ -75,8 +76,9 @@ Convention
 
 Lambda with Map
 ===============
+Increment:
+
 .. code-block:: python
-    :caption: Increment
 
     data = [1, 2, 3, 4]
 
@@ -84,8 +86,9 @@ Lambda with Map
     list(result)
     # [2, 3, 4, 5]
 
+Square:
+
 .. code-block:: python
-    :caption: Square
 
     data = [1, 2, 3, 4]
 
@@ -93,8 +96,9 @@ Lambda with Map
     list(result)
     # [1, 4, 9, 16]
 
+Translate:
+
 .. code-block:: python
-    :caption: Translate
 
     PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
           'ł': 'l', 'ń': 'n', 'ó': 'o',
@@ -108,8 +112,9 @@ Lambda with Map
 
 Lambda with Filter
 ==================
+Even numbers:
+
 .. code-block:: python
-    :caption: Even numbers
 
     DATA = [1, 2, 3, 4]
 
@@ -117,8 +122,9 @@ Lambda with Filter
     list(result)
     # [2, 4]
 
+Adult people:
+
 .. code-block:: python
-    :caption: Adult people
 
     people = [
         {'age': 21, 'name': 'Jan Twardowski'},
@@ -130,8 +136,9 @@ Lambda with Filter
     # [{'age': 21, 'name': 'Jan Twardowski'},
     #  {'age': 25, 'name': 'Mark Watney'}]
 
+Astronauts:
+
 .. code-block:: python
-    :caption: Astronauts
 
     people = [
         {'is_astronaut': False, 'name': 'Jan Twardowski'},

@@ -67,8 +67,9 @@ Generate
 * Random ``int`` from low (inclusive) to high (exclusive)
 * Random ``float`` in the half-open interval ``[0.0, 1.0)``
 
+Generate pseudorandom ``int``:
+
 .. code-block:: python
-    :caption: Generate pseudorandom ``int``
 
     import numpy as np
 
@@ -83,8 +84,9 @@ Generate
     # array([[8, 8, 3],
     #        [8, 2, 8]])
 
+Generate pseudorandom ``float``:
+
 .. code-block:: python
-    :caption: Generate pseudorandom ``float``
 
     import numpy as np
 
@@ -201,8 +203,9 @@ Poisson Distribution
 
 Drawing and Sampling
 ====================
+Choice:
+
 .. code-block:: python
-    :caption: Choice
 
     import numpy as np
 
@@ -219,8 +222,9 @@ Drawing and Sampling
     np.random.choice([1, 2, 3], 2, replace=False)
     # array([1, 3])
 
+Sample:
+
 .. code-block:: python
-    :caption: Sample
 
     import numpy as np
 
@@ -243,8 +247,9 @@ Shuffle
 * Modify sequence in-place (!!)
 * Multi-dimensional arrays are only shuffled along the first axis
 
+1-dimensional Array:
+
 .. code-block:: python
-    :caption: 1-dimensional Array
 
     import numpy as np
 
@@ -254,8 +259,9 @@ Shuffle
     np.random.shuffle(a)
     # array([3, 1, 2])
 
+2-dimensional Array:
+
 .. code-block:: python
-    :caption: 2-dimensional Array
 
     import numpy as np
 

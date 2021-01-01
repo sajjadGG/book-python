@@ -137,8 +137,9 @@ Case Studies - Unique Keys
 ==========================
 * Runtime: Jupyter ``%%timeit``
 
+Setup code used for all examples:
+
 .. code-block:: python
-    :caption: Setup code used for all examples
 
     DATA = [{'Sepal length': 5.1, 'Sepal width': 3.5, 'Species': 'setosa'},
             {'Petal length': 4.1, 'Petal width': 1.3, 'Species': 'versicolor'},
@@ -147,8 +148,9 @@ Case Studies - Unique Keys
             {'Sepal width': 2.8, 'Petal length': 4.1, 'Species': 'versicolor'},
             {'Sepal width': 2.9, 'Petal width': 1.8, 'Species': 'virginica'}]
 
+Append if object not in the list:
+
 .. code-block:: python
-    :caption: Append if object not in the list
 
     %%timeit -r 10 -n 1000000
 
@@ -161,8 +163,9 @@ Case Studies - Unique Keys
 
     # 2.16 µs ± 26.5 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
 
+Append to list and deduplicate at the end:
+
 .. code-block:: python
-    :caption: Append to list and deduplicate at the end
 
     %%timeit -r 10 -n 1000000
 
@@ -176,8 +179,9 @@ Case Studies - Unique Keys
 
     # 2.5 µs ± 32.9 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
 
+Add to set:
+
 .. code-block:: python
-    :caption: Add to set
 
     %%timeit -r 10 -n 1000000
 
@@ -189,8 +193,9 @@ Case Studies - Unique Keys
 
     # 2.12 µs ± 32.4 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
 
+Update set:
+
 .. code-block:: python
-    :caption: Update set
 
     %%timeit -r 10 -n 1000000
 
@@ -201,8 +206,9 @@ Case Studies - Unique Keys
 
     # 1.57 µs ± 26.7 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
 
+Set Comprehension:
+
 .. code-block:: python
-    :caption: Set Comprehension
 
     %%timeit -r 10 -n 1000000
 
@@ -212,8 +218,9 @@ Case Studies - Unique Keys
 
     # 2.06 µs ± 79.7 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
 
+Add to Set Comprehension. Code appends generator object not values, this is why it is so fast!:
+
 .. code-block:: python
-    :caption: Add to Set Comprehension. Code appends generator object not values, this is why it is so fast!
 
     %%timeit -r 10 -n 1000000
 
@@ -225,8 +232,9 @@ Case Studies - Unique Keys
 
     # 447 ns ± 9.52 ns per loop (mean ± std. dev. of 10 runs, 1000000 loops each)
 
+Update Set Comprehension:
+
 .. code-block:: python
-    :caption: Update Set Comprehension
 
     %%timeit -r 10 -n 1000000
 
@@ -271,8 +279,9 @@ Case Studies - Unique Keys
 
 Case Study - Factorial
 ======================
+Recap information about factorial (``n!``):
+
 .. code-block:: python
-    :caption: Recap information about factorial (``n!``)
 
     """
     5! = 5 * 4!
@@ -291,8 +300,9 @@ Case Study - Factorial
                         return 1 * factorial(0)     # 1 * 1 = 1
                             return 1                # 1
 
+Cache with global scope:
+
 .. code-block:: python
-    :caption: Cache with global scope
 
     _cache = {}
 
@@ -316,8 +326,9 @@ Case Study - Factorial
     factorial(400)
     factorial(450)
 
+Cache with local scope:
+
 .. code-block:: python
-    :caption: Cache with local scope
 
     def cache(func):
         _cache = {}
@@ -340,8 +351,9 @@ Case Study - Factorial
     factorial(400)
     factorial(450)
 
+Cache with embedded scope:
+
 .. code-block:: python
-    :caption: Cache with embedded scope
 
     def cache(func):
         def wrapper(n):
@@ -365,8 +377,9 @@ Case Study - Factorial
     factorial(400)
     factorial(450)
 
+Without cache:
+
 .. code-block:: python
-    :caption: Without cache
 
     %%timeit
 
@@ -383,8 +396,9 @@ Case Study - Factorial
 
     # 283 µs ± 6.63 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 
+Cache contains:
+
 .. code-block:: python
-    :caption: Cache contains
 
     %%timeit
 
@@ -407,8 +421,9 @@ Case Study - Factorial
 
     # 153 µs ± 2.49 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 
+Cache get:
+
 .. code-block:: python
-    :caption: Cache get
 
     %%timeit
 
@@ -433,8 +448,9 @@ Case Study - Factorial
 
     # 181 µs ± 10.3 µs per loop (mean ± std. dev. of 7 runs, 10000 loops each)
 
+Cache contains with exceptions:
+
 .. code-block:: python
-    :caption: Cache contains with exceptions
 
     %%timeit
 
@@ -457,8 +473,9 @@ Case Study - Factorial
 
     # 618 µs ± 6.6 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 
+Adding cache layer:
+
 .. code-block:: python
-    :caption: Adding cache layer
 
     %%timeit
 
@@ -483,8 +500,9 @@ Case Study - Factorial
 
     # 283 µs ± 6.44 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 
+Get from cache:
+
 .. code-block:: python
-    :caption: Get from cache
 
     %%timeit
 

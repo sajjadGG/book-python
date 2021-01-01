@@ -20,8 +20,9 @@ Numbers
 
 Examples
 ========
+pl_PL:
+
 .. code-block:: python
-    :caption: pl_PL
 
     DECIMAL_SEPARATOR = ','
     THOUSAND_SEPARATOR = ' '
@@ -48,8 +49,9 @@ Examples
         '%d.%m.%Y %H:%M',        # '25.10.2006 14:30'
     ]
 
+en_GB:
+
 .. code-block:: python
-    :caption: en_GB
 
     DECIMAL_SEPARATOR = '.'
     THOUSAND_SEPARATOR = ','
@@ -83,8 +85,9 @@ Examples
         '%d/%m/%y %H:%M',                   # '25/10/06 14:30'
     ]
 
+en_US:
+
 .. code-block:: python
-    :caption: en_US
 
     DECIMAL_SEPARATOR = '.'
     THOUSAND_SEPARATOR = ','

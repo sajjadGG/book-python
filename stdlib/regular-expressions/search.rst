@@ -11,8 +11,9 @@ About
 
 Examples
 ========
+Usage of ``re.search()``:
+
 .. code-block:: python
-    :caption: Usage of ``re.search()``
 
     import re
 

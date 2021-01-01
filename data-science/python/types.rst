@@ -14,8 +14,9 @@ Types
     value = 30              # 30
     value = -30             # -30
 
+You can use ``_`` for easier read especially with big numbers:
+
 .. code-block:: python
-    :caption: You can use ``_`` for easier read especially with big numbers
 
     million = 1000000        # 1000000
     million = 1_000_000      # 1000000
@@ -73,14 +74,16 @@ Hints:
     value = 13.37           # 13.37
     value = -13.37          # -13.37
 
+Notation without leading or trailing zero. Used by ``numpy``:
+
 .. code-block:: python
-    :caption: Notation without leading or trailing zero. Used by ``numpy``
 
     value = 10.             # 10.0
     value = .44             # 0.44
 
+Engineering notation:
+
 .. code-block:: python
-    :caption: Engineering notation
 
     million = 1e6           # 1000000.0
     million = 1E6           # 1000000.0
@@ -162,8 +165,9 @@ Hints:
     data = ''
     data = 'Jan Twardowski'
 
+:pep:`257` -- Docstring Conventions: For multiline ``str`` always use three double quote (``"""``) characters:
+
 .. code-block:: python
-    :caption: :pep:`257` -- Docstring Conventions: For multiline ``str`` always use three double quote (``"""``) characters
 
     data = """First line
     Second line
@@ -194,8 +198,9 @@ Single or double quote?
     data = """My name's "José Jiménez""""
     data = '''My name's "José Jiménez"'''
 
+When to use single or double quotes?:
+
 .. code-block:: python
-    :caption: When to use single or double quotes?
 
     data = 'It\'s Twardowski\'s Moon.'
     data = "It's Twardowski's Moon."
@@ -209,8 +214,9 @@ Type casting to ``str``
     str(1969)           # '1969'
     str(13.37)          # '13.37'
 
+Print converts argument to ``str`` before printing:
+
 .. code-block:: python
-    :caption: Print converts argument to ``str`` before printing
 
     print('hello')      # str('hello') -> 'hello'
     # hello
@@ -255,8 +261,9 @@ Characters before strings
     * ``b'string'`` - Bytes literals
     * ``r'string'`` - Raw string
 
+Format string (string interpolation):
+
 .. code-block:: python
-    :caption: Format string (string interpolation)
 
     firstname = 'Jan'
     lastname = 'Twardowski'
@@ -268,18 +275,21 @@ Characters before strings
     print(name)
     # Jan Twardowski
 
+Unicode literals. In Python 3 ``u'...'`` is only for compatibility with Python 2:
+
 .. code-block:: python
-    :caption: Unicode literals. In Python 3 ``u'...'`` is only for compatibility with Python 2
 
     u'zażółć gęślą jaźń'
 
+Bytes literals. Used in sockets and HTTP connections. Use ``bytes.decode()`` or ``str.encode()`` for conversion.:
+
 .. code-block:: python
-    :caption: Bytes literals. Used in sockets and HTTP connections. Use ``bytes.decode()`` or ``str.encode()`` for conversion.
 
     b'this is bytes literals'
 
+Raw String. Escapes does not matters:
+
 .. code-block:: python
-    :caption: Raw String. Escapes does not matters
 
     pattern = r'[a-z0-9]\n'
 
@@ -314,8 +324,9 @@ Reading user input
 
 Methods
 -------
+Length of a ``str``:
+
 .. code-block:: python
-    :caption: Length of a ``str``
 
     len('Jan')      # 3
     len('')         # 0
@@ -346,8 +357,9 @@ Polish:
 
 Converting to ``bool``
 ----------------------
+Negative values:
+
 .. code-block:: python
-    :caption: Negative values
 
     bool(False)                 # False
     bool(None)                  # False
@@ -364,8 +376,9 @@ Converting to ``bool``
     bool([])                    # False
     bool({})                    # False
 
+Positive values:
+
 .. code-block:: python
-    :caption: Positive values
 
     bool(1)                     # True
     bool(1.0)                   # True
@@ -472,8 +485,9 @@ Operators
 
 Numerical Operators
 -------------------
+Addition:
+
 .. code-block:: python
-    :caption: Addition
 
     value = 10 + 2
     print(value)
@@ -484,8 +498,9 @@ Numerical Operators
     print(value)
     # 12
 
+Subtraction:
+
 .. code-block:: python
-    :caption: Subtraction
 
     value = 10 - 2
     print(value)
@@ -496,8 +511,9 @@ Numerical Operators
     print(value)
     # 8
 
+Multiplication:
+
 .. code-block:: python
-    :caption: Multiplication
 
     value = 10 * 2
     print(value)
@@ -508,8 +524,9 @@ Numerical Operators
     print(value)
     # 20
 
+Number to the ``n-th`` power:
+
 .. code-block:: python
-    :caption: Number to the ``n-th`` power
 
     10 ** 2         # 100
     3 ** 4          # 81
@@ -519,8 +536,9 @@ Numerical Operators
     4 ** 0.5        # 2.0
     2 ** 0.5        # 1.4142135623730951
 
+Division:
+
 .. code-block:: python
-    :caption: Division
 
     value = 10 / 2
     print(value)
@@ -531,16 +549,18 @@ Numerical Operators
     print(value)
     # 5
 
+Quotient of division:
+
 .. code-block:: python
-    :caption: Quotient of division
 
     10 // 2         # 5
     10 // 3         # 3
     4 // 2          # 2
     5 // 2          # 2
 
+Modulo. Reminder of division.:
+
 .. code-block:: python
-    :caption: Modulo. Reminder of division.
 
     10 % 2          # 0
     10 % 3          # 1
@@ -549,8 +569,9 @@ Numerical Operators
 
 Numeric Functions
 -----------------
+Rounding numbers:
+
 .. code-block:: python
-    :caption: Rounding numbers
 
     pi = 3.14159265359
 
@@ -561,26 +582,30 @@ Numeric Functions
     print(f'{pi:.2f}')      # 3.14
     print(f'{pi:.4f}')      # 3.1416
 
+Minimal value:
+
 .. code-block:: python
-    :caption: Minimal value
 
     min(3, 1, 5)    # 1
 
+Maximal value:
+
 .. code-block:: python
-    :caption: Maximal value
 
     max(3, 1, 5)    # 5
 
+Absolute value:
+
 .. code-block:: python
-    :caption: Absolute value
 
     abs(1)          # 1
     abs(-1)         # 1
     abs(13.37)      # 13.37
     abs(-13.37)     # 13.37
 
+Number to the ``n-th`` power:
+
 .. code-block:: python
-    :caption: Number to the ``n-th`` power
 
     pow(10, 2)      # 100
     pow(3, 4)       # 81

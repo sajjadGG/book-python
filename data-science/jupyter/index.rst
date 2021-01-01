@@ -488,7 +488,8 @@ Execute terminal commands
 * ``!``
 * ``!pwd``
 * ``!ls``
-* .. code-block:: python
+
+.. code-block:: python
     :force:
 
     dirs = !ls

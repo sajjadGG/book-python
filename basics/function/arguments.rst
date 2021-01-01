@@ -21,8 +21,9 @@ Rationale
 
 Syntax
 ======
+Function definition with parameters:
+
 .. code-block:: python
-    :caption: Function definition with parameters
 
     myfunction(<arguments>)
 
@@ -88,8 +89,9 @@ Positional and Keyword Arguments
 
 Examples
 ========
+Example 1:
+
 .. code-block:: python
-    :caption: Example 1
 
     def hello(name='José Jiménez'):
          print(f'My name... {name}')
@@ -102,8 +104,9 @@ Examples
     hello()
     # My name... José Jiménez
 
+Example 2:
+
 .. code-block:: python
-    :caption: Example 2
 
     connect('myusername', 'mypassword')
 
@@ -119,8 +122,9 @@ Examples
         ssl=True,
         persistent=True)
 
+Example 3:
+
 .. code-block:: python
-    :caption: Example 3
 
     read_csv('iris.csv')
 

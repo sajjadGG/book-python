@@ -120,8 +120,9 @@ Trigonometry
     math.atan(x)
     math.atan2(x)
 
+Hyperbolic functions:
+
 .. code-block:: python
-    :caption: Hyperbolic functions
 
     import math
 

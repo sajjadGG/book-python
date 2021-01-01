@@ -11,9 +11,9 @@ About
 
 Examples
 ========
+Compiles at every loop iteration, and then matches:
+
 .. code-block:: python
-    :caption: Compiles at every loop iteration, and then matches
-    :emphasize-lines: 15
 
     import re
 
@@ -31,9 +31,9 @@ Examples
     for email in DATA:
         re.match(PATTERN, email)
 
+Compiling before loop, hence matching only inside:
+
 .. code-block:: python
-    :caption: Compiling before loop, hence matching only inside
-    :emphasize-lines: 15
 
     import re
 

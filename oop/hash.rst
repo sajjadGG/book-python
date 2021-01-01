@@ -50,8 +50,9 @@ Hash Method
 
 Examples
 ========
+``dict()`` keys has to be hashable:
+
 .. code-block:: python
-    :caption: ``dict()`` keys has to be hashable
 
     data = {}
 
@@ -78,8 +79,9 @@ Examples
     # Traceback (most recent call last):
     # TypeError: unhashable type: 'dict'
 
+``set()`` elements must be hashable:
+
 .. code-block:: python
-    :caption: ``set()`` elements must be hashable
 
     {1, 1, 2}
     # {1, 2}

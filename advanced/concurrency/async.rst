@@ -975,8 +975,9 @@ Trio
 
     trio.run(parent)
 
+Client:
+
 .. code-block:: python
-    :caption: Client
 
     import sys
     import trio
@@ -1020,8 +1021,9 @@ Trio
 
     trio.run(parent)
 
+Server:
+
 .. code-block:: python
-    :caption: Server
 
     import trio
     from itertools import count

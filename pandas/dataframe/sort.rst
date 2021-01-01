@@ -109,8 +109,9 @@ Sort Values
 
 Sorting Rows by Column Value
 ----------------------------
+Sorting values by column:
+
 .. code-block:: python
-    :caption: Sorting values by column
 
     df.sort_values(by='Morning', ascending=True)
     #              Morning      Noon   Evening  Midnight
@@ -122,8 +123,9 @@ Sorting Rows by Column Value
     # 1999-12-31  1.867558 -0.977278  0.950088 -0.151357
     # 2000-01-05  2.269755 -1.454366  0.045759 -0.187184
 
+Sorting values by multiple columns (if values are equal in first column, than compare second):
+
 .. code-block:: python
-    :caption: Sorting values by multiple columns (if values are equal in first column, than compare second)
 
     df.sort_values(by=['Morning', 'Evening'], ascending=True)
     #              Morning      Noon   Evening  Midnight
@@ -137,8 +139,9 @@ Sorting Rows by Column Value
 
 Sorting Columns by Row Values
 -----------------------------
+Sorting whole DataFrame, according to values by in row (change column order):
+
 .. code-block:: python
-    :caption: Sorting whole DataFrame, according to values by in row (change column order)
 
     df.sort_values(by='2000-01-05', ascending=True, axis='columns')
     #                 Noon  Midnight   Evening   Morning

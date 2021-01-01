@@ -34,16 +34,18 @@ Conditional Statement
     if <condition>:
         <do something>
 
+Single line statements:
+
 .. code-block:: python
-    :caption: Single line statements
 
     if True:
         print('First line of the true statement')
 
     # First line of the true statement
 
+Multiline blocks:
+
 .. code-block:: python
-    :caption: Multiline blocks
 
     if True:
         print('First line of the true statement')
@@ -54,8 +56,9 @@ Conditional Statement
     # Second line of the true statement
     # Third line of the true statement
 
+Multiline blocks:
+
 .. code-block:: python
-    :caption: Multiline blocks
 
     if True:
         print('First line of the true statement')
@@ -68,8 +71,9 @@ Conditional Statement
     # Second line of the true statement
     # First line of inner true statement
 
+Checking for simple value:
+
 .. code-block:: python
-    :caption: Checking for simple value
 
     age = 7
 
@@ -78,8 +82,9 @@ Conditional Statement
 
     # Go to school
 
+Checking for simple value.:
+
 .. code-block:: python
-    :caption: Checking for simple value.
 
     country = 'USA'
 
@@ -89,8 +94,9 @@ Conditional Statement
     print(job)
     # astronaut
 
+Checking for simple value:
+
 .. code-block:: python
-    :caption: Checking for simple value
 
     number = 4
 
@@ -99,8 +105,9 @@ Conditional Statement
 
     # Even
 
+Checking if value is in range:
+
 .. code-block:: python
-    :caption: Checking if value is in range
 
     age = 7
 
@@ -109,8 +116,9 @@ Conditional Statement
 
     # Age is between [0, 18)
 
+Checking if value is in range:
+
 .. code-block:: python
-    :caption: Checking if value is in range
 
     a = 10
     b = 100
@@ -120,8 +128,9 @@ Conditional Statement
 
     # Yes
 
+Checking if has value:
+
 .. code-block:: python
-    :caption: Checking if has value
 
     name = input('What is your name?: ')
     # What is your name?: Jan Twardowski<ENTER>
@@ -131,8 +140,9 @@ Conditional Statement
 
     # My name is Jan Twardowski
 
+Checking if has value:
+
 .. code-block:: python
-    :caption: Checking if has value
 
     name = input('What is your name?: ')
     # What is your name?: <ENTER>
@@ -154,8 +164,9 @@ Unconditional Alternative
     else:
         <do something>
 
+Single line statements:
+
 .. code-block:: python
-    :caption: Single line statements
 
     if True:
         print('True statement')
@@ -164,8 +175,9 @@ Unconditional Alternative
 
     # True statement
 
+Multiline blocks:
+
 .. code-block:: python
-    :caption: Multiline blocks
 
     if True:
         print('True statement, first line')
@@ -177,8 +189,9 @@ Unconditional Alternative
     # True statement, first line
     # True statement, second line
 
+Nested multiline blocks:
+
 .. code-block:: python
-    :caption: Nested multiline blocks
 
     if True:
         print('Outer block, true statement, first line')
@@ -211,8 +224,9 @@ Unconditional Alternative
 
     # Odd
 
+Checking if variable is certain value:
+
 .. code-block:: python
-    :caption: Checking if variable is certain value
 
     country = 'Russia'
 
@@ -224,8 +238,9 @@ Unconditional Alternative
     print(job)
     # cosmonaut
 
+Checking if variable is certain value:
+
 .. code-block:: python
-    :caption: Checking if variable is certain value
 
     name = input('What is your name?: ')
     # What is your name?: <ENTER>
@@ -343,8 +358,9 @@ Conditional Expression
     print(protocol)
     # IPv4
 
+Normal ``if``:
+
 .. code-block:: python
-    :caption: Normal ``if``
 
     country = 'Russia'
 
@@ -356,8 +372,9 @@ Conditional Expression
     print(job)
     # cosmonaut
 
+Inline ``if``:
+
 .. code-block:: python
-    :caption: Inline ``if``
 
     country = 'Russia'
     job = 'astronaut' if country == 'USA' else 'cosmonaut'
@@ -365,8 +382,9 @@ Conditional Expression
     print(job)
     # astronaut
 
+Type Str Methods is Numeric:
+
 .. code-block:: python
-    :caption: Type Str Methods is Numeric
 
     age = input('What is your age?: ')
     # What is your age?: 10<ENTER>

@@ -12,8 +12,9 @@ About
 
 Examples
 ========
+Usage of ``re.match()``:
+
 .. code-block:: python
-    :caption: Usage of ``re.match()``
 
     import re
 
@@ -109,8 +110,9 @@ Good Engineering Practices
         else:
             return False
 
+Doctests:
+
 .. code-block:: python
-    :caption: Doctests
 
     """
     >>> is_valid_email('mark.watney@nasa.gov')

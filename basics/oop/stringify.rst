@@ -46,8 +46,9 @@ String
     str(astro)
     # '<__main__.Astronaut object at 0x10ba3d760>'
 
+Object without ``__str__()`` method overloaded prints their memory address:
+
 .. code-block:: python
-    :caption: Object without ``__str__()`` method overloaded prints their memory address
 
     class Astronaut:
         def __init__(self, name):
@@ -60,8 +61,9 @@ String
     str(astro)          # '<__main__.Astronaut object at 0x114175dd0>'
     astro.__str__()     # '<__main__.Astronaut object at 0x114175dd0>'
 
+Objects can verbose print if ``__str__()`` method is present:
+
 .. code-block:: python
-    :caption: Objects can verbose print if ``__str__()`` method is present
 
     class Astronaut:
         def __init__(self, name):
@@ -98,8 +100,9 @@ Representation
     # '<__main__.Astronaut object at 0x10ba3d760>'
 
 
+Using ``__repr__()`` on a class:
+
 .. code-block:: python
-    :caption: Using ``__repr__()`` on a class
 
     class Astronaut:
         def __init__(self, name):
@@ -114,8 +117,9 @@ Representation
      repr(astro)        # 'Astronaut(name="José Jiménez")'
      astro              # Astronaut(name="José Jiménez")
 
+Printing ``list`` will call ``__repr__()`` method on each element:
+
 .. code-block:: python
-    :caption: Printing ``list`` will call ``__repr__()`` method on each element
 
     class Astronaut:
         def __init__(self, name):
@@ -134,8 +138,9 @@ Representation
     #   <__main__.Astronaut object at 0x108156be0>
     # ]
 
+Printing ``list`` will call ``__repr__()`` method on each element:
+
 .. code-block:: python
-    :caption: Printing ``list`` will call ``__repr__()`` method on each element
 
     class Astronaut:
         def __init__(self, name):

@@ -72,8 +72,9 @@ Bits and Bytes
     6       0000000000000000000000000000000110
     7       0000000000000000000000000000000111
 
+Calculates a two's complement integer from the given input value's bits.:
+
 .. code-block:: python
-    :caption: Calculates a two's complement integer from the given input value's bits.
 
     def twos_complement(value: int, num_bits: int) -> int:
         mask = 2 ** (num_bits - 1)

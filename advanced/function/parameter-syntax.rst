@@ -80,13 +80,15 @@ Positional and Keyword Parameters
 
 Examples
 ========
+https://docs.python.org/3/library/functions.html#sorted:
+
 .. code-block:: python
-    :caption: https://docs.python.org/3/library/functions.html#sorted
 
     sorted(iterable, *, key=None, reverse=False)
 
+https://docs.python.org/3/library/functions.html#sum:
+
 .. code-block:: python
-    :caption: https://docs.python.org/3/library/functions.html#sum
 
     sum(iterable, /, start=0)
 

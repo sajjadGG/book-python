@@ -7,8 +7,9 @@ Math Precision
 
 Minimal and Maximal Values
 ==========================
+Maximal and minimal ``float`` values:
+
 .. code-block:: python
-    :caption: Maximal and minimal ``float`` values
 
     import sys
 
@@ -18,8 +19,9 @@ Minimal and Maximal Values
 
 Infinity
 ========
+Infinity representation:
+
 .. code-block:: python
-    :caption: Infinity representation
 
     1e308                   # 1e+308
     -1e308                  # -1e+308

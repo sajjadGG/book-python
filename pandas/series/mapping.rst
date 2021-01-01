@@ -70,8 +70,9 @@ Apply
     # 2000-01-04    2.24
     # Freq: D, dtype: float64
 
+``functools.partial(func, *args, **keywords)``:
+
 .. code-block:: python
-    :caption: ``functools.partial(func, *args, **keywords)``
 
     from functools import partial
     import pandas as pd
@@ -324,8 +325,9 @@ Phone Numbers
 
 Example
 =======
+String cleaning:
+
 .. code-block:: python
-    :caption: String cleaning
 
     expected = 'Jana Twardowskiego III'
     text = 'UL. jana \tTWArdoWskIEGO 3'
@@ -354,8 +356,9 @@ Example
     print(text)
     # Jana Twardowskiego III
 
+Remove Polish diacritics:
+
 .. code-block:: python
-    :caption: Remove Polish diacritics
 
     def pl_to_latin(text):
         PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',

@@ -28,8 +28,9 @@ DataFrame NA
 
 Select
 ======
+Any:
+
 .. code-block:: python
-    :caption: Any
 
     df.any()
     # A     True
@@ -38,8 +39,9 @@ Select
     # D    False
     # dtype: bool
 
+All:
+
 .. code-block:: python
-    :caption: All
 
     df.all()
     # A    True
@@ -48,8 +50,9 @@ Select
     # D    True
     # dtype: bool
 
+Is Null:
+
 .. code-block:: python
-    :caption: Is Null
 
     df.isnull()
     #        A      B      C     D
@@ -61,8 +64,9 @@ Select
     # 5   True   True   True  True
     # 6  False  False  False  True
 
+Is NA:
+
 .. code-block:: python
-    :caption: Is NA
 
     df.isna()
     #        A      B      C     D
@@ -80,8 +84,9 @@ Update
 * ``axis=0`` - rows
 * ``axis=1`` - columns
 
+Fill NA with scalar value:
+
 .. code-block:: python
-    :caption: Fill NA with scalar value
 
     df.fillna(0.0)
     #      A    B  C    D
@@ -93,8 +98,9 @@ Update
     # 5  0.0  0.0  0  0.0
     # 6  4.0  4.4  d  0.0
 
+Fill NA with dict values:
+
 .. code-block:: python
-    :caption: Fill NA with dict values
 
     df.fillna({
         'A': 99,
@@ -110,8 +116,9 @@ Update
     # 5  99.0  88.0  77  NaN
     # 6   4.0   4.4   d  NaN
 
+Forward Fill. ``ffill``: propagate last valid observation forward.:
+
 .. code-block:: python
-    :caption: Forward Fill. ``ffill``: propagate last valid observation forward.
 
     df.fillna(method='ffill')
     #      A    B  C    D
@@ -123,8 +130,9 @@ Update
     # 5  3.0  3.3  c  NaN
     # 6  4.0  4.4  d  NaN
 
+Backward Fill. ``bfill``: use NEXT valid observation to fill gap:
+
 .. code-block:: python
-    :caption: Backward Fill. ``bfill``: use NEXT valid observation to fill gap
 
     df.fillna(method='bfill')
     #      A    B  C    D
@@ -136,8 +144,9 @@ Update
     # 5  4.0  4.4  d  NaN
     # 6  4.0  4.4  d  NaN
 
+Interpolate:
+
 .. code-block:: python
-    :caption: Interpolate
 
     df.interpolate()
     #           A         B    C    D
@@ -183,8 +192,9 @@ Drop
 * ``axis=0`` - rows
 * ``axis=1`` - columns
 
+Drop Rows:
+
 .. code-block:: python
-    :caption: Drop Rows
 
     df.dropna(how='all')
     #      A    B  C    D
@@ -222,8 +232,9 @@ Drop
     # Columns: [A, B, C, D]
     # Index: []
 
+Drop Columns:
+
 .. code-block:: python
-    :caption: Drop Columns
 
     df.dropna(how='all', axis='columns')
     #      A    B    C

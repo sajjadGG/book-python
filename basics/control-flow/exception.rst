@@ -23,7 +23,6 @@ Most Common Exceptions
 ``AttributeError`` - Attribute reference or assignment fails:
 
 .. code-block:: python
-    :emphasize-lines: 4
 
     name = 'Jan'
     name.append('Twardowski')
@@ -33,7 +32,6 @@ Most Common Exceptions
 ``ImportError``, ``ModuleNotFoundError`` - Module could not be located:
 
 .. code-block:: python
-    :emphasize-lines: 4
 
     import math
     import match
@@ -43,7 +41,6 @@ Most Common Exceptions
 ``IndexError`` - Sequence subscript is out of range:
 
 .. code-block:: python
-    :emphasize-lines: 4
 
     DATA = ['a', 'b', 'c']
     DATA[100]
@@ -53,7 +50,6 @@ Most Common Exceptions
 ``KeyError`` - Dictionary key is not found:
 
 .. code-block:: python
-    :emphasize-lines: 4
 
     DATA = {'a': 1, 'b': 2}
     DATA['x']
@@ -63,7 +59,6 @@ Most Common Exceptions
 ``NameError`` - Local or global name is not found:
 
 .. code-block:: python
-    :emphasize-lines: 3
 
     print(firstname)
     # Traceback (most recent call last):
@@ -72,7 +67,6 @@ Most Common Exceptions
 ``SyntaxError`` - Parser encounters a syntax error:
 
 .. code-block:: python
-    :emphasize-lines: 6
 
     if True
         print('Yes')
@@ -85,7 +79,6 @@ Most Common Exceptions
 ``IndentationError`` - Syntax errors related to incorrect indentation:
 
 .. code-block:: python
-    :emphasize-lines: 8
 
     if True:
        print('Hello!')
@@ -100,7 +93,6 @@ Most Common Exceptions
 ``TypeError`` - Operation or function is applied to an object of inappropriate type:
 
 .. code-block:: python
-    :emphasize-lines: 3,7,11,15
 
     42 + 'a'
     # Traceback (most recent call last):
@@ -121,7 +113,6 @@ Most Common Exceptions
 ``ValueError`` Argument has an invalid value:
 
 .. code-block:: python
-    :emphasize-lines: 3,7,11,15
 
     a, b, c = 1, 2
     # Traceback (most recent call last):
@@ -214,7 +205,6 @@ Raising Exceptions
 Raise Exception without message:
 
 .. code-block:: python
-    :emphasize-lines: 3
 
     raise RuntimeError
     # Traceback (most recent call last):
@@ -223,7 +213,6 @@ Raise Exception without message:
 Exception with additional message:
 
 .. code-block:: python
-    :emphasize-lines: 3
 
     raise RuntimeError('Some message')
     # Traceback (most recent call last):
@@ -233,7 +222,6 @@ Exception with additional message:
 Use Case
 ========
 .. code-block:: python
-    :emphasize-lines: 5
 
     temperature = input('Type temperature [Kelvin]: ')
     # Type temperature [Kelvin]: -10<ENTER>
@@ -253,7 +241,6 @@ Use Case
         return temperature
 
 .. code-block:: python
-    :emphasize-lines: 2
 
     def apollo13():
         raise RuntimeError('Oxygen tank explosion')
@@ -264,7 +251,6 @@ Use Case
     # RuntimeError: Oxygen tank explosion
 
 .. code-block:: python
-    :emphasize-lines: 2
 
     def apollo18():
         raise NotImplementedError('Mission dropped due to budget cuts')
@@ -289,7 +275,6 @@ Assertion
     assert all(type(x) is tuple for x in test)
 
 .. code-block:: python
-    :emphasize-lines: 3,8
 
     import sys
 
@@ -307,7 +292,6 @@ Traceback Analysis
 * Stacktrace is 8 levels deep, it's not Java's 200 ;)
 
 .. code-block:: python
-    :emphasize-lines: 3
 
     raise RuntimeError
     # Traceback (most recent call last):
@@ -315,7 +299,6 @@ Traceback Analysis
     # RuntimeError
 
 .. code-block:: python
-    :emphasize-lines: 3
 
     raise RuntimeError('Huston we have a problem')
     # Traceback (most recent call last):
@@ -323,7 +306,6 @@ Traceback Analysis
     # RuntimeError: Huston we have a problem
 
 .. code-block:: python
-    :emphasize-lines: 6-7
 
     def apollo13():
         raise RuntimeError('Oxygen tank explosion')
@@ -336,7 +318,6 @@ Traceback Analysis
     # RuntimeError: Oxygen tank explosion
 
 .. code-block:: python
-    :emphasize-lines: 6-9
 
     def apollo13():
         raise RuntimeError('Oxygen tank explosion')
@@ -351,7 +332,6 @@ Traceback Analysis
     # RuntimeError: Oxygen tank explosion
 
 .. code-block:: python
-    :emphasize-lines: 11-14
 
     def apollo13():
         raise RuntimeError('Oxygen tank explosion')
@@ -378,7 +358,6 @@ Change Verbosity Level
 * Last lines are the most important, in most cases error is there
 
 .. code-block:: python
-    :emphasize-lines: 1,2
 
     import sys
     sys.tracebacklimit = 2
@@ -418,7 +397,6 @@ Catching Exceptions
 Catch single exception:
 
 .. code-block:: python
-    :emphasize-lines: 7-8
 
     def apollo13():
         raise RuntimeError('Oxygen tank explosion')
@@ -431,9 +409,9 @@ Catch single exception:
 
     # Houston we have a problem!
 
+Catch many exceptions with the same handling:
+
 .. code-block:: python
-    :caption: Catch many exceptions with the same handling
-    :emphasize-lines: 7-8
 
     def apollo13():
         raise RuntimeError('Oxygen tank explosion')
@@ -446,9 +424,9 @@ Catch single exception:
 
     # Houston we have a problem!
 
+Catch many exceptions with different handling:
+
 .. code-block:: python
-    :caption: Catch many exceptions with different handling
-    :emphasize-lines: 4-7
 
     try:
         with open(r'/tmp/my-file.txt') as file:
@@ -460,9 +438,9 @@ Catch single exception:
 
     # File does not exist
 
+Exceptions logging:
+
 .. code-block:: python
-    :caption: Exceptions logging
-    :emphasize-lines: 9,10
 
     import logging
 
@@ -493,9 +471,9 @@ Else and Finally
     finally:
         file.close()
 
+``else`` is executed when no exception occurred:
+
 .. code-block:: python
-    :caption: ``else`` is executed when no exception occurred
-    :emphasize-lines: 8,9
 
     def apollo11():
         print('Try landing on the Moon')
@@ -510,9 +488,9 @@ Else and Finally
     # Try landing on the Moon
     # Landing a man on the Moon
 
+``finally`` is executed always (even if there was exception):
+
 .. code-block:: python
-    :caption: ``finally`` is executed always (even if there was exception)
-    :emphasize-lines: 8,9
 
     def apollo11():
         print('Try landing on the Moon')
@@ -528,7 +506,6 @@ Else and Finally
     # Returning safely to the Earth
 
 .. code-block:: python
-    :emphasize-lines: 11-18
 
     def apollo11():
         print('Program P63 - Landing Manoeuvre Approach Phase')
@@ -559,9 +536,9 @@ Pokemon Exception Handling
 * "Gotta catch 'em all"
 * ``Ctrl-C`` raises ``KeyboardInterrupt``
 
+User cannot simply kill program with ``Ctrl-C``:
+
 .. code-block:: python
-    :caption: User cannot simply kill program with ``Ctrl-C``
-    :emphasize-lines: 4
 
     while True:
         try:
@@ -569,9 +546,9 @@ Pokemon Exception Handling
         except:
             continue
 
+User can kill program with ``Ctrl-C``:
+
 .. code-block:: python
-    :caption: User can kill program with ``Ctrl-C``
-    :emphasize-lines: 4
 
     while True:
         try:
@@ -585,7 +562,6 @@ Defining Own Exceptions
 * class which inherits from ``Exception``
 
 .. code-block:: python
-    :emphasize-lines: 1,2
 
     class MyError(Exception):
         pass
@@ -599,9 +575,9 @@ Defining Own Exceptions
     # Traceback (most recent call last):
     # MyError: More verbose description
 
+Django Framework Use-case of Custom Exceptions:
+
 .. code-block:: python
-    :caption: Django Framework Use-case of Custom Exceptions
-    :emphasize-lines: 10
 
     from django.contrib.auth.models import User
 
@@ -615,9 +591,9 @@ Defining Own Exceptions
         except User.DoesNotExist:
             print('Sorry, no such user in database')
 
+Django Framework Use-case of Custom Exceptions:
+
 .. code-block:: python
-    :caption: Django Framework Use-case of Custom Exceptions
-    :emphasize-lines: 13
 
     class Dragon:
         def take_damage(self, damage):
@@ -642,7 +618,6 @@ Exit Status Code
 * This will not work in Jupyter
 
 .. code-block:: python
-    :emphasize-lines: 5
 
     try:
         float('hello')

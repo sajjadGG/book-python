@@ -22,8 +22,9 @@ Is equivalent to:
 
 Syntax
 ======
+Definition:
+
 .. code-block:: python
-    :caption: Definition
 
     def mydecorator(a=1, b=2):
         def decorator(func):
@@ -32,15 +33,17 @@ Syntax
             return wrapper
         return mydecorator
 
+Decoration:
+
 .. code-block:: python
-    :caption: Decoration
 
     @mydecorator(a=0)
     def myfunction():
         ...
 
+Usage:
+
 .. code-block:: python
-    :caption: Usage
 
     myfunction()
 
@@ -68,8 +71,9 @@ Example
 
 Use Cases
 =========
+Deprecated:
+
 .. code-block:: python
-    :caption: Deprecated
 
     import warnings
 
@@ -97,8 +101,9 @@ Use Cases
     # /home/python/myscript.py:11: DeprecationWarning: Call to deprecated function myfunction in /home/python/myscript.py at line 19
     # It will be removed in 2.0
 
+Timeout using ``signal(SIGALRM)``:
+
 .. code-block:: python
-    :caption: Timeout using ``signal(SIGALRM)``
 
     from signal import signal, alarm, SIGALRM
     from time import sleep
@@ -135,8 +140,9 @@ Use Cases
     # 2
     # Sorry, timeout
 
+Timeout using ``threading.Timer``:
+
 .. code-block:: python
-    :caption: Timeout using ``threading.Timer``
 
     from _thread import interrupt_main
     from threading import Timer

@@ -5,8 +5,9 @@ Array Create
 
 Declare
 =======
+1-dimensional Array:
+
 .. code-block:: python
-    :caption: 1-dimensional Array
 
     import numpy as np
 
@@ -26,8 +27,9 @@ Declare
     np.array([1, 2, 3], dtype=float)
     # array([ 1., 2., 3.])
 
+2-dimensional Array:
+
 .. code-block:: python
-    :caption: 2-dimensional Array
 
     import numpy as np
 
@@ -40,8 +42,9 @@ Declare
     #        [4, 5, 6],
     #        [7, 8, 9]])
 
+3-dimensional Array:
+
 .. code-block:: python
-    :caption: 3-dimensional Array
 
     np.array([[[1, 2, 3],
                [4, 5, 6],
@@ -65,8 +68,9 @@ Declare
 
 Range
 =====
+Array from Python ``range()``:
+
 .. code-block:: python
-    :caption: Array from Python ``range()``
 
     import numpy as np
 
@@ -89,8 +93,9 @@ Range
     np.array(range(5, 10, 2), float)
     # array([5., 7., 9.])
 
+Array from Python comprehension:
+
 .. code-block:: python
-    :caption: Array from Python comprehension
 
     import numpy as np
 
@@ -113,8 +118,9 @@ Range
     np.array([x for x in range(5, 10, 2)], float)
     # array([5., 7., 9.])
 
+Array from ``np.arange()``:
+
 .. code-block:: python
-    :caption: Array from ``np.arange()``
 
     import numpy as np
 

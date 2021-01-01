@@ -116,8 +116,9 @@ Matrix
 
 Mixed
 =====
+Iterating over ``list`` with scalar and vector values - simple loop:
+
 .. code-block:: python
-    :caption: Iterating over ``list`` with scalar and vector values - simple loop
 
     DATA = [('Jan', 'Twardowski'), 'Watney', 42, 13.37, {True, None, False}]
 
@@ -130,8 +131,9 @@ Mixed
     # 13.37
     # {False, True, None}
 
+Iterating over ``list`` with scalar and vector values - nested loop:
+
 .. code-block:: python
-    :caption: Iterating over ``list`` with scalar and vector values - nested loop
 
     DATA = [('Jan', 'Twardowski'), 'Watney', 42, 13.37, {True, None, False}]
 
@@ -150,8 +152,9 @@ Mixed
     # Traceback (most recent call last):
     # TypeError: 'int' object is not iterable
 
+Iterating over ``list`` with scalar and vector values - smart loop:
+
 .. code-block:: python
-    :caption: Iterating over ``list`` with scalar and vector values - smart loop
 
     DATA = [('Jan', 'Twardowski'), 'Watney', 42, 13.37, {True, None, False}]
 

@@ -104,8 +104,9 @@ Rationale
 
 1-dimensional Array
 ===================
+1-dimensional Array:
+
 .. code-block:: python
-    :caption: 1-dimensional Array
 
     import numpy as np
 
@@ -156,8 +157,9 @@ Rationale
 
 2-dimensional Array
 ===================
+Rows:
+
 .. code-block:: python
-    :caption: Rows
 
     import numpy as np
 
@@ -189,8 +191,9 @@ Rationale
     a[1::2]
     # array([[4, 5, 6]])
 
+Columns:
+
 .. code-block:: python
-    :caption: Columns
 
     import numpy as np
 
@@ -236,8 +239,9 @@ Rationale
     #        [5],
     #        [8]])
 
+Rows and Columns:
+
 .. code-block:: python
-    :caption: Rows and Columns
 
     import numpy as np
 

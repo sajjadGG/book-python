@@ -75,8 +75,9 @@ Inheritance Diamond
 
     Inheritance Diamond
 
+Inheritance Diamond:
+
 .. code-block:: python
-    :caption: Inheritance Diamond
 
     class A:
         def show(self):
@@ -109,8 +110,9 @@ Inheritance Diamond
     #  <class '__main__.A'>,
     #  <class 'object'>)
 
+Inheritance Diamond:
+
 .. code-block:: python
-    :caption: Inheritance Diamond
 
     class A:
         def show(self):

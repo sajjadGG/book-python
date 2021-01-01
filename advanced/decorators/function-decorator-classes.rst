@@ -28,8 +28,9 @@ Syntax
 * ``mydecorator`` is a decorator name
 * ``MyClass`` is a class name
 
+Definition:
+
 .. code-block:: python
-    :caption: Definition
 
     def decorator(cls):
         class Wrapper(cls):
@@ -44,15 +45,17 @@ Syntax
             return instance
         return wrapper
 
+Decoration:
+
 .. code-block:: python
-    :caption: Decoration
 
     @decorator
     class MyClass:
         ...
 
+Usage:
+
 .. code-block:: python
-    :caption: Usage
 
     my = MyClass()
 
@@ -124,8 +127,9 @@ Object Birthday
 
 Singleton with Function Wrapper
 -------------------------------
+Singleton using functional wrapper:
+
 .. code-block:: python
-    :caption: Singleton using functional wrapper
 
     def singleton(cls):
         def wrapper(*args, **kwargs):
@@ -152,8 +156,9 @@ Singleton with Function Wrapper
 
 Singleton with Class Wrapper
 ----------------------------
+Singleton using class wrapper:
+
 .. code-block:: python
-    :caption: Singleton using class wrapper
 
     def singleton(cls):
         class Wrapper(cls):

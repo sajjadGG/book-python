@@ -61,8 +61,9 @@ Pickle
 * Works with any Python object (variables, functions, classes, nested objects)
 * More information in :ref:`Serialization Pickle`
 
+Write binary data to file:
+
 .. code-block:: python
-    :caption: Write binary data to file
 
     import pickle
 
@@ -72,8 +73,9 @@ Pickle
     with open(FILE, mode='wb') as file:
         pickle.dump(data, file)
 
+Load binary data from file:
+
 .. code-block:: python
-    :caption: Load binary data from file
 
     import pickle
 

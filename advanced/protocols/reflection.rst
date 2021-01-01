@@ -193,8 +193,9 @@ Get Attribute if Missing
 * It will not execute, when attribute already exist
 * Implementing a fallback for missing attributes
 
+Example ``__getattr__()``:
+
 .. code-block:: python
-    :caption: Example ``__getattr__()``
 
     class Astronaut:
         def __init__(self):

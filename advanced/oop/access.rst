@@ -30,8 +30,9 @@ Protected Attribute
 ===================
 * ``_name`` - protected attribute (by convention)
 
+Access modifiers:
+
 .. code-block:: python
-    :caption: Access modifiers
 
     class Temperature:
         pass
@@ -43,8 +44,9 @@ Protected Attribute
     print(temp._value)  # IDE should warn, that you access protected member
     # 10
 
+Access modifiers:
+
 .. code-block:: python
-    :caption: Access modifiers
 
     class Astronaut:
         def __init__(self, firstname, lastname):
@@ -109,8 +111,9 @@ System Attributes
 =================
 * ``__name__`` - system attribute
 
+``obj.__dict__`` - Getting dynamic fields and values:
+
 .. code-block:: python
-    :caption: ``obj.__dict__`` - Getting dynamic fields and values
 
     class Astronaut:
         def __init__(self, firstname, lastname):
@@ -124,8 +127,9 @@ System Attributes
     # {'firstname': 'Mark',
     #  'lastname': 'Watney'}
 
+``obj.__dict__`` - Getting dynamic fields and values:
+
 .. code-block:: python
-    :caption: ``obj.__dict__`` - Getting dynamic fields and values
 
     class Astronaut:
         def __init__(self, firstname, lastname):

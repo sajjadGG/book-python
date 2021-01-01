@@ -90,8 +90,9 @@ Return
     # Astronaut.__init__() called
 
 
+Missing ``return`` from constructor. The instantiation is evaluated to ``None`` since we don't return anything from the constructor.:
+
 .. code-block:: python
-    :caption: Missing ``return`` from constructor. The instantiation is evaluated to ``None`` since we don't return anything from the constructor.
 
     class Astronaut:
         def __new__(cls):
@@ -104,8 +105,9 @@ Return
     Astronaut()
     # Astronaut.__new__() called
 
+Return invalid from constructor:
+
 .. code-block:: python
-    :caption: Return invalid from constructor
 
     class Astronaut:
         def __new__(cls):
@@ -116,8 +118,9 @@ Return
     # Astronaut.__new__() called
     # 1337
 
+Return invalid from initializer:
+
 .. code-block:: python
-    :caption: Return invalid from initializer
 
     class Astronaut:
         def __init__(self):
@@ -225,8 +228,9 @@ Do not trigger methods for user
 ===============================
 * It is better when user can choose a moment when call ``.connect()`` method
 
+Let user to call method:
+
 .. code-block:: python
-    :caption: Let user to call method
 
     class Server:
         def __init__(self, host, username, password=None):
@@ -244,8 +248,9 @@ Do not trigger methods for user
         username='myusername',
         password='mypassword')
 
+Let user to call method:
+
 .. code-block:: python
-    :caption: Let user to call method
 
     class Server:
         def __init__(self, host, username, password=None):
@@ -264,8 +269,9 @@ Do not trigger methods for user
 
     connection.connect()
 
+However... it is better to use ``self.set_position(position_x, position_y)`` than to set those values one by one and duplicate code. Imagine if there will be a condition boundary checking (for example for negative values):
+
 .. code-block:: python
-    :caption: However... it is better to use ``self.set_position(position_x, position_y)`` than to set those values one by one and duplicate code. Imagine if there will be a condition boundary checking (for example for negative values)
 
     class Bad:
         def __init__(self, position_x=0, position_y=0):
@@ -307,8 +313,9 @@ Do not trigger methods for user
 
 Use Cases
 =========
+Note, that this unfortunately does not work this way. ``Path()`` always returns ``PosixPath``:
+
 .. code-block:: python
-    :caption: Note, that this unfortunately does not work this way. ``Path()`` always returns ``PosixPath``
 
     from pathlib import Path
 

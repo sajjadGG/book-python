@@ -28,9 +28,9 @@ List of keywords
 ========
 * Avoid error when you don't specify the body of a block
 
+Exceptions has all the content needed inherited from ``Exception`` class. You need something to avoid ``IndentationError``:
+
 .. code-block:: python
-    :caption: Exceptions has all the content needed inherited from ``Exception`` class. You need something to avoid ``IndentationError``
-    :emphasize-lines: 2
 
     class MyError(Exception):
 
@@ -40,7 +40,6 @@ List of keywords
     # IndentationError: expected an indented block
 
 .. code-block:: python
-    :emphasize-lines: 2
 
     class MyError(Exception):
         pass

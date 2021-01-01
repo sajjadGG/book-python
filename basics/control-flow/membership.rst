@@ -23,8 +23,9 @@ Contains
 ========
 * ``in`` - Contains
 
+``str``:
+
 .. code-block:: python
-    :caption: ``str``
 
     'x' in 'Python'                 # False
     'P' in 'Python'                 # True
@@ -41,8 +42,9 @@ Contains
     'Python' in 'Python'            # True
     'Py' in 'Python'                # True
 
+``list``:
+
 .. code-block:: python
-    :caption: ``list``
 
     1 in [1, 2]               # True
     2 in [1, 2]               # True
@@ -59,8 +61,9 @@ Contains
     [1, 2] in [1, 2]          # False
     [3, 4] in [1, 2, [3, 4]]  # True
 
+``tuple``:
+
 .. code-block:: python
-    :caption: ``tuple``
 
     1 in (1, 2)               # True
     2 in (1, 2)               # True
@@ -77,8 +80,9 @@ Contains
     (1, 2) in (1, 2)          # False
     (3, 4) in (1, 2, (3, 4))  # True
 
+``set``:
+
 .. code-block:: python
-    :caption: ``set``
 
     1 in {1, 2}               # True
     2 in {1, 2}               # True
@@ -110,16 +114,18 @@ Missing
 =======
 * ``not in`` - Missing
 
+``str``:
+
 .. code-block:: python
-    :caption: ``str``
 
     'P' not in 'Python'             # False
     'p' not in 'Python'             # True
     'py' not in 'Python'            # True
     'Py' not in 'Python'            # False
 
+``list``:
+
 .. code-block:: python
-    :caption: ``list``
 
     1 not in [1, 2]           # False
     3 not in [1, 2]           # True
@@ -127,8 +133,9 @@ Missing
     [2] not in [1, 2]         # True
     [1, 2] not in [1, 2]      # True
 
+``tuple``:
+
 .. code-block:: python
-    :caption: ``tuple``
 
     1 not in (1, 2)           # False
     3 not in (1, 2)           # True
@@ -136,8 +143,9 @@ Missing
     (2) not in (1, 2)        # False
     (1, 2) not in (1, 2)     # True
 
+``set``:
+
 .. code-block:: python
-    :caption: ``set``
 
     1 not in {1, 2}           # False
     3 not in {1, 2}           # True

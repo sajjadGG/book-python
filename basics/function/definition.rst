@@ -47,8 +47,9 @@ Convention
 * Add underscore (``_``) at the end of name when name collide
 * System functions names starts and ends with 'dunder' - double underscore: ``__``
 
+Do not use ``camelCase``, CamelCase is reserved for class names. Use ``snake_case``:
+
 .. code-block:: python
-    :caption: Do not use ``camelCase``, CamelCase is reserved for class names. Use ``snake_case``
 
     def sayHello():
         print('This is camelCase() name')
@@ -59,8 +60,9 @@ Convention
         print('This is snake_case() name')
         print('It is Pythonic way')
 
+Use better names, rather than comments:
+
 .. code-block:: python
-    :caption: Use better names, rather than comments
 
     def cal_var(data, m):
         # Calculate variance
@@ -70,8 +72,9 @@ Convention
     def calculate_variance(data, m):
         return sum((Xi-m) ** 2 for Xi in data) / len(data)
 
+Add underscore (``_``) at the end of name when name collide. Although prefer naming it differently.:
+
 .. code-block:: python
-    :caption: Add underscore (``_``) at the end of name when name collide. Although prefer naming it differently.
 
     def print_(text):
         # Add underscore (``_``) at the end of name when name collide.
@@ -82,8 +85,9 @@ Convention
         # Although prefer naming it differently.
         print(f'<strong>{text}</strong>')
 
+System functions names starts and ends with 'dunder' - double underscore: ``__``:
+
 .. code-block:: python
-    :caption: System functions names starts and ends with 'dunder' - double underscore: ``__``
 
     def __import__(module_name):
         ...
@@ -98,8 +102,9 @@ Docstring
 * :pep:`257` -- Docstring Conventions: For multiline ``str`` always use three double quote (``"""``) characters
 * More information in :ref:`Function Doctest`
 
+Docstring used for documentation:
+
 .. code-block:: python
-    :caption: Docstring used for documentation
 
     def say_hello():
         """This is the say_hello function"""
@@ -115,8 +120,9 @@ Docstring
     print(say_hello.__doc__)
     # This is the say_hello function
 
+Docstring used for documentation:
+
 .. code-block:: python
-    :caption: Docstring used for documentation
 
     def say_hello():
         """

@@ -150,8 +150,9 @@ Overloading Call Method
 
 Callbacks
 =========
+Callback Design Pattern:
+
 .. code-block:: python
-    :caption: Callback Design Pattern
 
     from http import HTTPStatus
     import requests

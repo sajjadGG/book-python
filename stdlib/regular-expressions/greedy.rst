@@ -23,8 +23,9 @@ About
 
 Examples
 ========
+Usage of greedy and non-greedy search in ``re.findall()``:
+
 .. code-block:: python
-    :caption: Usage of greedy and non-greedy search in ``re.findall()``
 
     import re
 
@@ -33,8 +34,9 @@ Examples
     re.findall(r'<.*>', TEXT)         # ['<strong>Ehlo World</strong>']
     re.findall(r'<.*?>', TEXT)        # ['<strong>', '</strong>']
 
+Usage of greedy and non-greedy search with groups:
+
 .. code-block:: python
-    :caption: Usage of greedy and non-greedy search with groups
 
     re.findall(r'<(.*)>', TEXT)       # ['strong>Ehlo World</strong']
     re.findall(r'<(.*?)>', TEXT)      # ['strong', '/strong']

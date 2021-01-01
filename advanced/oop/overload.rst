@@ -70,8 +70,9 @@ Numerical Operators
     "``obj % other``",     "``obj.__mod__(other)``"
     "``obj @ other``",     "``obj.__matmul__(other)``"
 
+``%`` (``__mod__``) operator behavior for ``int`` and ``str``:
+
 .. code-block:: python
-    :caption: ``%`` (``__mod__``) operator behavior for ``int`` and ``str``
 
     3 % 2                         # 1
     4 % 2                         # 0
@@ -270,8 +271,9 @@ Accessors Overload
     data()
     # data.__call__() -> TypeError: 'dict' object is not callable
 
+Contains in ``numpy``:
+
 .. code-block:: python
-    :caption: Contains in ``numpy``
 
     import numpy as np
 
@@ -295,8 +297,9 @@ Accessors Overload
     data[1:2, 1:]
     # array([[5,6]])
 
+Intuitive implementation of numpy ``array[row,col]`` accessor:
+
 .. code-block:: python
-    :caption: Intuitive implementation of numpy ``array[row,col]`` accessor
 
     class array(list):
         def __getitem__(key):

@@ -18,8 +18,9 @@ Examples
 
 Example 1
 ---------
+``class``:
+
 .. code-block:: python
-    :caption: ``class``
 
     class Point:
         def __init__(self, x, y, z=0):
@@ -42,8 +43,9 @@ Example 1
     p5 = Point(10, 20, z=30)
     p6 = Point(x=10, y=20, z=30)
 
+``dataclass``:
+
 .. code-block:: python
-    :caption: ``dataclass``
 
     from dataclasses import dataclass
 
@@ -71,8 +73,9 @@ Example 1
 
 Example 2
 ---------
+``class``:
+
 .. code-block:: python
-    :caption: ``class``
 
     class Astronaut:
         firstname: str
@@ -90,8 +93,9 @@ Example 2
     print(twardowski.lastname)    # Twardowski
     print(twardowski.agency)       # POLSA
 
+``dataclass``:
+
 .. code-block:: python
-    :caption: ``dataclass``
 
     from dataclasses import dataclass
 
@@ -111,8 +115,9 @@ Example 2
 
 Example 3
 ---------
+``class``:
+
 .. code-block:: python
-    :caption: ``class``
 
     from datetime import datetime
 
@@ -154,8 +159,9 @@ Example 3
             self.edited = edited
             self.url = url
 
+``dataclass``:
+
 .. code-block:: python
-    :caption: ``dataclass``
 
     from dataclasses import dataclass
     from datetime import datetime
@@ -181,8 +187,9 @@ Example 3
 
 ``__init__`` vs. ``__post_init__``
 ==================================
+``class``:
+
 .. code-block:: python
-    :caption: ``class``
 
     class Kelvin:
         def __init__(self, value):
@@ -201,8 +208,9 @@ Example 3
     # Traceback (most recent call last):
     # ValueError: Temperature must be greater than 0
 
+``dataclass``:
+
 .. code-block:: python
-    :caption: ``dataclass``
 
     from dataclasses import dataclass
 
@@ -268,7 +276,6 @@ List attributes
         # [Ares 3]
 
 .. code-block:: python
-    :emphasize-lines: 7
 
     from dataclasses import dataclass, field
 
@@ -438,8 +445,9 @@ other flags
 
 Under the hood
 ==============
+Your code:
+
 .. code-block:: python
-    :caption: Your code
 
     from dataclasses import dataclass
 
@@ -453,9 +461,9 @@ Under the hood
         def total_cost(self) -> float:
             return self.unit_price * self.quantity
 
+Dataclass will generate:
+
 .. code-block:: python
-    :caption: Dataclass will generate
-    :emphasize-lines: 6-
 
     class ShoppingCartItem:
 

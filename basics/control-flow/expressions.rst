@@ -7,8 +7,9 @@ Conditional Expressions
 
 Conjunction
 ===========
+Inside joke (see :ref:`José Jiménez`):
+
 .. code-block:: python
-    :caption: Inside joke (see :ref:`José Jiménez`)
 
     firstname = 'Mark'
     lastname = 'Watney'
@@ -52,8 +53,9 @@ Boolean Algebra
 
     # Sorry, astronauts only
 
+Complex conditions:
+
 .. code-block:: python
-    :caption: Complex conditions
 
     for line in file:
         if line and (not line.startswith('#') or not line.isspace()):

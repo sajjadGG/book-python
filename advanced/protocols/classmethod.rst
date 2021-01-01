@@ -65,8 +65,9 @@ Example
     User(None, None).from_json(DATA)
     # User(firstname='Jan', lastname='Twardowski')
 
+Trying to use method with ``self``:
+
 .. code-block:: python
-    :caption: Trying to use method with ``self``
 
     import json
     from dataclasses import dataclass
@@ -98,8 +99,9 @@ Example
     # Traceback (most recent call last):
     # TypeError: 'User' object is not callable
 
+Trying to use method with ``self.__init__()``:
+
 .. code-block:: python
-    :caption: Trying to use method with ``self.__init__()``
 
     import json
     from dataclasses import dataclass
@@ -131,8 +133,9 @@ Example
     type(result)
     # <class 'NoneType'>
 
+Trying to use methods ``self.__new__()`` and ``self.__init__()``:
+
 .. code-block:: python
-    :caption: Trying to use methods ``self.__new__()`` and ``self.__init__()``
 
     import json
     from dataclasses import dataclass
@@ -166,8 +169,9 @@ Example
     # User(firstname='Jan', lastname='Twardowski')
 
 
+Trying to use staticmethod:
+
 .. code-block:: python
-    :caption: Trying to use staticmethod
 
     import json
     from dataclasses import dataclass

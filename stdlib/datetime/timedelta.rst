@@ -5,8 +5,9 @@ Datetime Time Deltas
 
 Timedelta object
 ================
+Shifting datetime objects:
+
 .. code-block:: python
-    :caption: Shifting datetime objects
 
     from datetime import datetime
 
@@ -28,8 +29,9 @@ Time Shift
 
 Simple Shifts
 -------------
+Simple ``timedelta`` shifts:
+
 .. code-block:: python
-    :caption: Simple ``timedelta`` shifts
 
     from datetime import timedelta, datetime
 
@@ -43,8 +45,9 @@ Simple Shifts
     # datetime.datetime(1961, 4, 12, 0, 10)
 
 
+Simple ``timedelta`` shifts:
+
 .. code-block:: python
-    :caption: Simple ``timedelta`` shifts
 
     from datetime import timedelta, datetime
 
@@ -57,8 +60,9 @@ Simple Shifts
     armstrong + timedelta(hours=5)
     # datetime.datetime(1969, 7, 21, 7, 56, 15)
 
+Simple ``timedelta`` shifts:
+
 .. code-block:: python
-    :caption: Simple ``timedelta`` shifts
 
     from datetime import timedelta, date
 
@@ -71,8 +75,9 @@ Simple Shifts
     sputnik - timedelta(days=3)
     # datetime.date(1957, 10, 1)
 
+Simple ``timedelta`` shifts:
+
 .. code-block:: python
-    :caption: Simple ``timedelta`` shifts
 
     from datetime import datetime, timedelta
 
@@ -87,8 +92,9 @@ Simple Shifts
 
 Complex Shifts
 --------------
+Complex ``timedelta`` shifts:
+
 .. code-block:: python
-    :caption: Complex ``timedelta`` shifts
 
     from datetime import timedelta, datetime
 
@@ -98,8 +104,9 @@ Complex Shifts
     armstrong - timedelta(days=2, hours=21)
     # datetime.datetime(1969, 7, 18, 5, 56, 15)
 
+Complex ``timedelta`` shifts:
+
 .. code-block:: python
-    :caption: Complex ``timedelta`` shifts
 
     from datetime import timedelta, datetime
 
@@ -121,8 +128,9 @@ Complex Shifts
 
 Month Shifts
 ------------
+Subtract month from ``datetime``:
+
 .. code-block:: python
-    :caption: Subtract month from ``datetime``
 
     from datetime import timedelta, date
 
@@ -133,8 +141,9 @@ Month Shifts
     gagarin - MONTH
     # datetime.date(1961, 3, 13)
 
+Subtract month from ``datetime``:
+
 .. code-block:: python
-    :caption: Subtract month from ``datetime``
 
     from calendar import monthlen
     from datetime import timedelta, date
@@ -152,8 +161,9 @@ Month Shifts
 
 Duration
 ========
+Duration between two datetimes:
+
 .. code-block:: python
-    :caption: Duration between two datetimes
 
     from datetime import datetime
 

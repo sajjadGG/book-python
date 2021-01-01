@@ -30,8 +30,9 @@ DataFrame Aggregations
 
 Single Statistic
 ================
+The groupby output will have an index or multi-index on rows corresponding to your chosen grouping variables. To avoid setting this index, pass ``as_index=False`` to the groupby operation.:
+
 .. code-block:: python
-    :caption: The groupby output will have an index or multi-index on rows corresponding to your chosen grouping variables. To avoid setting this index, pass ``as_index=False`` to the groupby operation.
 
     df.groupby('month', as_index=False).agg({'duration': 'sum'})
     #      month   duration
@@ -44,8 +45,9 @@ Single Statistic
 
 Multiple Statistics per Group
 =============================
+Group the data frame by month and item and extract a number of stats from each group:
+
 .. code-block:: python
-    :caption: Group the data frame by month and item and extract a number of stats from each group
 
     df.groupby(['month', 'item']).agg({
 
@@ -75,8 +77,9 @@ Multiple Statistics per Group
     #          data    998.441            29  2015-02-13 06:58:00
     #          sms      25.000            25  2015-02-19 18:46:00
 
+Define the aggregation procedure outside of the groupby operation:
+
 .. code-block:: python
-    :caption: Define the aggregation procedure outside of the groupby operation
 
     df.groupby('month').agg({
         'duration': 'sum',
@@ -88,8 +91,9 @@ Multiple Statistics per Group
 
 Applying multiple functions to columns in groups
 ================================================
+Group the data frame by month and item and extract a number of stats from each group:
+
 .. code-block:: python
-    :caption: Group the data frame by month and item and extract a number of stats from each group
 
     df.groupby(['month', 'item']).agg({
 
@@ -123,8 +127,9 @@ Applying multiple functions to columns in groups
 
 Named Aggregations
 ==================
+Named Aggregations:
+
 .. code-block:: python
-    :caption: Named Aggregations
 
     df[df['item'] == 'call'].groupby('month').agg(
 
@@ -170,8 +175,9 @@ Renaming index
 * using ``droplevel`` and ``ravel``
 * Dictionary ``groupby`` format is deprecated
 
+Drop the top level (using ``.droplevel()``) of the newly created multi-index on columns using:
+
 .. code-block:: python
-    :caption: Drop the top level (using ``.droplevel()``) of the newly created multi-index on columns using
 
     grouped = df.groupby('month').agg({'duration': ['min', 'max', 'mean']})
     # duration
@@ -204,8 +210,9 @@ Renaming index
 
     grouped.head()
 
+Quick renaming of grouped columns from the groupby() multi-index can be achieved using the ravel() function.:
+
 .. code-block:: python
-    :caption: Quick renaming of grouped columns from the groupby() multi-index can be achieved using the ravel() function.
 
     grouped = df.groupby('month').agg({'duration': ['min', 'max', 'mean']})
     # duration
@@ -216,8 +223,9 @@ Renaming index
     # 2015-02  1.0   1863.0  113.301453
     # 2015-03  1.0  10528.0  225.251891
 
+Using ravel, and a string join, we can create better names for the columns::
+
 .. code-block:: python
-    :caption: Using ravel, and a string join, we can create better names for the columns:
 
     grouped.columns = ['_'.join(x) for x in grouped.columns.ravel()]
     #   month  min_duration  max_duration  mean_duration

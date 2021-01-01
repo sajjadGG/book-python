@@ -47,8 +47,9 @@ Every module or class should have responsibility over a single part of the funct
 
     S.O.L.I.D. - Single Responsibility Principle
 
+Bad:
+
 .. code-block:: python
-    :caption: Bad
 
     from dataclasses import dataclass
 
@@ -83,8 +84,9 @@ Every module or class should have responsibility over a single part of the funct
             return self._position_x, self._position_y
 
 
+Good:
+
 .. code-block:: python
-    :caption: Good
 
     from dataclasses import dataclass
 
@@ -237,8 +239,9 @@ The interface-segregation principle (ISP) states that no client should be forced
 
     S.O.L.I.D. Principles - Interface Segregation Principle
 
+Bad:
+
 .. code-block:: python
-    :caption: Bad
 
     class Mixin:
         def json_loads(self):
@@ -266,8 +269,9 @@ The interface-segregation principle (ISP) states that no client should be forced
             self.lastname = lastname
 
 
+Good:
+
 .. code-block:: python
-    :caption: Good
 
     class JSONMixin:
         def json_loads(self):
@@ -327,8 +331,9 @@ When following this principle, the conventional dependency relationships establi
 
 By dictating that both high-level and low-level objects must depend on the same abstraction this design principle inverts the way some people may think about object-oriented programming.
 
+Bad:
+
 .. code-block:: python
-    :caption: Bad
 
     watney = 'Astronaut'
 
@@ -341,8 +346,9 @@ By dictating that both high-level and low-level objects must depend on the same 
     else:
         print('Default Value')
 
+Good:
+
 .. code-block:: python
-    :caption: Good
 
     class Astronaut:
         def say_hello():
@@ -363,7 +369,6 @@ By dictating that both high-level and low-level objects must depend on the same 
     watney.say_hello()
 
 .. code-block:: python
-    :emphasize-lines: 23
 
     class CacheInterface:
         def get(self, key: str) -> str:

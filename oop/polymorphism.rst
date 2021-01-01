@@ -7,8 +7,9 @@ Polymorphism
 
 Switch
 ======
+Switch moves business logic to the execution place:
+
 .. code-block:: python
-    :caption: Switch moves business logic to the execution place
 
     watney = 'Astronaut'
 
@@ -49,8 +50,9 @@ Switch
 
 Polymorphism in a Function
 ==========================
+Polymorphism on Function:
+
 .. code-block:: python
-    :caption: Polymorphism on Function
 
     class Sorcerer:
         pass
@@ -87,8 +89,9 @@ Polymorphism in a Function
 
 Polymorphism on a Class
 =======================
+Polymorphism on Classes:
+
 .. code-block:: python
-    :caption: Polymorphism on Classes
 
     class Astronaut:
         def __init__(self, name):

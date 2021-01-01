@@ -73,8 +73,9 @@ Syntax
 
 Dynamic Attributes
 ==================
+Dynamic attributes:
+
 .. code-block:: python
-    :caption: Dynamic attributes
 
     class Astronaut:
         firstname: str
@@ -88,8 +89,9 @@ Dynamic Attributes
     print(f'My name... {jose.firstname} {jose.lastname}')
     # My name... José Jiménez
 
+Accessing not existing attributes:
+
 .. code-block:: python
-    :caption: Accessing not existing attributes
 
     class Astronaut:
         firstname: str
@@ -203,8 +205,9 @@ Get All Dynamic Attributes and Values
 =====================================
 * ``obj.__dict__``
 
+``__dict__`` - Getting dynamic fields and values:
+
 .. code-block:: python
-    :caption: ``__dict__`` - Getting dynamic fields and values
 
     class Iris:
         sepal_length: float

@@ -102,8 +102,9 @@ Indexing
     # array([[2, 3],
     #        [5, 6]])
 
+``rows,cols`` creates coordinate system for selecting values (like ``zip()``). For example: ``(0,0); (0,1); (1,0); (1,1); (0,1)``, as in this example.:
+
 .. code-block:: python
-    :caption: ``rows,cols`` creates coordinate system for selecting values (like ``zip()``). For example: ``(0,0); (0,1); (1,0); (1,1); (0,1)``, as in this example.
 
     import numpy as np
 

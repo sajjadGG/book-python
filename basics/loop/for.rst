@@ -138,8 +138,9 @@ Range
     list(range(0, 5, 2))
     # [0, 2, 4]
 
+Loops with ``range``:
+
 .. code-block:: python
-    :caption: Loops with ``range``
 
     for i in range(0, 3):
         print(i)
@@ -148,8 +149,9 @@ Range
     # 1
     # 2
 
+Loops with ``range``:
+
 .. code-block:: python
-    :caption: Loops with ``range``
 
     for number in range(4, 11, 2):
         print(number)

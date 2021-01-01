@@ -137,8 +137,9 @@ DB API v2
 
 Connection
 ==========
+Connection to in-memory database:
+
 .. code-block:: python
-    :caption: Connection to in-memory database
 
     import sqlite3
 
@@ -147,8 +148,9 @@ Connection
     with sqlite3.connect(DATABASE) as db:
         ...
 
+Connection to database file:
+
 .. code-block:: python
-    :caption: Connection to database file
 
     import sqlite3
 
@@ -160,8 +162,9 @@ Connection
 
 Execute
 =======
+Execute:
+
 .. code-block:: python
-    :caption: Execute
 
     import sqlite3
 

@@ -27,8 +27,9 @@ Basic usage
 
 Displays all available protocols
 --------------------------------
+Displays all available protocols:
+
 .. code-block:: python
-    :caption: Displays all available protocols
 
     ls()
     # ARP        : ARP
@@ -185,22 +186,25 @@ IP packages
 
 Create package
 --------------
+Create package:
+
 .. code-block:: python
-    :caption: Create package
 
     ip = IP(src="192.168.0.1")
     # <IP  src=192.168.0.1 |>
 
+Create package:
+
 .. code-block:: python
-    :caption: Create package
 
     ip = IP(src="192.168.0.1", dst="192.168.0.2")
     # <IP  src=192.168.0.1 dst=192.168.0.2 |>
 
 Modify package
 --------------
+Modify package:
+
 .. code-block:: python
-    :caption: Modify package
 
     ip = IP(src="192.168.0.1")
     ip.dst = "192.168.0.2"
@@ -208,8 +212,9 @@ Modify package
 
 Show package
 ------------
+ Use the ``show()`` method of an object to display all of its fields.:
+
 .. code-block:: python
-    :caption:  Use the ``show()`` method of an object to display all of its fields.
 
     ip = IP(src="192.168.0.1")
     ip.show()
@@ -236,8 +241,9 @@ Add TCP layer to IP package
 ---------------------------
 * Add a layer for protocol by using the division operator
 
+Add a layer for protocol by using the division operator:
+
 .. code-block:: python
-    :caption: Add a layer for protocol by using the division operator
 
     ip = IP(src="192.168.0.1", dst="192.168.0.2")
     tcp = TCP(sport=1025, dport=80)
@@ -245,8 +251,9 @@ Add TCP layer to IP package
     ip / tcp
     # <IP  frag=0 proto=tcp src=192.168.0.1 dst=192.168.0.2 |<TCP  sport=blackjack dport=http |>>
 
+Manipulate the TCP header fields just as IP header.:
+
 .. code-block:: python
-    :caption: Manipulate the TCP header fields just as IP header.
 
     ip = IP(src="192.168.0.1", dst="192.168.0.2")
     tcp = TCP(sport=1025, dport=80)
@@ -282,14 +289,16 @@ Add TCP layer to IP package
 
 Ethernet frames
 ===============
+``scapy`` also supports Ethernet and IEEE 802.11 at layer two:
+
 .. code-block:: python
-    :caption: ``scapy`` also supports Ethernet and IEEE 802.11 at layer two
 
     Ether() / Dot1Q() / IP()
     # <Ether  type=0x8100 |<Dot1Q  type=0x800 |<IP  |>>>
 
+``scapy`` also supports Ethernet and IEEE 802.11 at layer two:
+
 .. code-block:: python
-    :caption: ``scapy`` also supports Ethernet and IEEE 802.11 at layer two
 
     Dot11() / IP()
     # <Dot11  |<IP  |>>
@@ -374,8 +383,9 @@ SYN Scans
 
 Scan one port
 -------------
+Scan one port:
+
 .. code-block:: python
-    :caption: Scan one port
 
     ip = IP(dst="python.astrotech.io")
     tcp = TCP(dport=80, flags="S")
@@ -387,8 +397,9 @@ Scan one port
     # Received 4 packets, got 1 answers, remaining 0 packets
     # <IP  version=4 ihl=5 tos=0x0 len=44 id=0 flags= frag=0 ttl=58 proto=tcp chksum=0x7e29 src=104.18.228.122 dst=172.20.10.2 |<TCP  sport=http dport=ftp_data seq=19296319 ack=1 dataofs=6 reserved=0 flags=SA window=29200 chksum=0xb1cc urgptr=0 options=[('MSS', 1408)] |<Padding  load='z*\xc2f\x87\xad\x93\xc5' |>>>
 
+Scan one port:
+
 .. code-block:: python
-    :caption: Scan one port
 
     ip = IP(dst='35.158.227.45')
     tcp = TCP(dport=21, flags="S")
@@ -410,8 +421,9 @@ Scan one port
 
 Scan port range
 ---------------
+Scan port range:
+
 .. code-block:: python
-    :caption: Scan port range
 
     ip = IP(dst="python.astrotech.io")
     tcp = TCP(sport=666, dport=(440,443), flags="S")

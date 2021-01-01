@@ -41,8 +41,9 @@ Query
     # 9     Anika   East  65000     44000
     # 10    Paulo  South  67000     45000
 
+Subset a pandas dataframe based on a numeric variable:
+
 .. code-block:: python
-    :caption: Subset a pandas dataframe based on a numeric variable
 
     df.query('sales > 60000')
     #       name region  sales  expenses
@@ -52,8 +53,9 @@ Query
     # 9    Anika   East  65000     44000
     # 10   Paulo  South  67000     45000
 
+Select rows based on a categorical variable:
+
 .. code-block:: python
-    :caption: Select rows based on a categorical variable
 
     df.query('region == "East"')
     #       name region  sales
@@ -61,8 +63,9 @@ Query
     # 2    Sofia   East  90000
     # 9    Anika   East  65000
 
+Subset a dataframe by index:
+
 .. code-block:: python
-    :caption: Subset a dataframe by index
 
     df.query('index < 3')
     #       name region  sales  expenses
@@ -70,8 +73,9 @@ Query
     # 1     Emma  North  52000     43000
     # 2    Sofia   East  90000     50000
 
+Every odd index:
+
 .. code-block:: python
-    :caption: Every odd index
 
     df.query('index%2 == 1')
     #          name region  sales  expenses
@@ -81,16 +85,18 @@ Query
     # 7  Olivia   West  55000     60000
     # 9   Anika   East  65000     44000
 
+Subset a pandas dataframe by comparing two columns:
+
 .. code-block:: python
-    :caption: Subset a pandas dataframe by comparing two columns
 
     df.query('sales < expenses')
     #      name region  sales  expenses
     # 3  Markus  South  34000     44000
     # 7  Olivia   West  55000     60000
 
+Subset a pandas dataframe with multiple conditions:
+
 .. code-block:: python
-    :caption: Subset a pandas dataframe with multiple conditions
 
     df.query('(sales > 50000) and (region in ["East", "West"])')
     #          name region  sales  expenses
@@ -100,8 +106,9 @@ Query
     # 8    Arun   West  67000     39000
     # 9   Anika   East  65000     44000
 
+Reference local variables inside of query:
+
 .. code-block:: python
-    :caption: Reference local variables inside of query
 
     mean = df['sales'].mean()
 
@@ -116,8 +123,9 @@ Query
     # 9    Anika   East  65000     44000
     # 10   Paulo  South  67000     45000
 
+Modify a dataframe in place:
+
 .. code-block:: python
-    :caption: Modify a dataframe in place
 
     df2 = df.copy()
     df2.query('index < 5', inplace = True)

@@ -24,9 +24,9 @@ Run in the console
 
 Use cases
 ---------
+One element tuple (``ADMINISTRATORS``) has comma at the end:
+
 .. code-block:: python
-    :caption: One element tuple (``ADMINISTRATORS``) has comma at the end
-    :emphasize-lines: 2
 
     ## Content of the ``settings.py`` file
     ADMINISTRATORS = 'jan.twardowski@polsa.gov.pl',
@@ -40,9 +40,9 @@ Use cases
 
     # jan.twardowski@polsa.gov.pl
 
+Problem with missing coma for ``ADMINISTRATORS`` tuple:
+
 .. code-block:: python
-    :caption: Problem with missing coma for ``ADMINISTRATORS`` tuple
-    :emphasize-lines: 3
 
     ## Content of the ``settings.py`` file
     ADMINISTRATORS = 'jan.twardowski@polsa.gov.pl'

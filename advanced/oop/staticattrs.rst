@@ -11,8 +11,9 @@ Static Fields
 * Must have default values
 * Share state
 
+Static Fields:
+
 .. code-block:: python
-    :caption: Static Fields
 
     class Astronaut:
         agency = 'NASA'
@@ -38,8 +39,9 @@ Dynamic Fields
 * By convention initialized in ``__init__()``
 * You can also initialize on living object directly
 
+Dynamic fields:
+
 .. code-block:: python
-    :caption: Dynamic fields
 
     class Astronaut:
         def __init__(self, agency='NASA'):
@@ -62,8 +64,9 @@ Dynamic Fields
 
 Static vs. Dynamic Fields
 =========================
+Static vs. Dynamic fields:
+
 .. code-block:: python
-    :caption: Static vs. Dynamic fields
 
     class Astronaut:
         agency = 'NASA'
@@ -109,23 +112,26 @@ Static vs. Dynamic Fields
 
 Static or Dynamic?
 ==================
+Static Fields:
+
 .. code-block:: python
-    :caption: Static Fields
 
     class Astronaut:
         firstname = ...
         lastname = ...
 
+Dynamic Fields:
+
 .. code-block:: python
-    :caption: Dynamic Fields
 
     class Cosmonaut:
         def __init__(self):
             self.firstname = ...
             self.lastname = ...
 
+Dynamic Fields:
+
 .. code-block:: python
-    :caption: Dynamic Fields
 
     from dataclasses import dataclass
 
@@ -135,8 +141,9 @@ Static or Dynamic?
         firstname: str = ...
         lastname: list = ...
 
+Dynamic Fields:
+
 .. code-block:: python
-    :caption: Dynamic Fields
 
     class Taikonaut:
         pass
@@ -145,8 +152,9 @@ Static or Dynamic?
     t.firstname = ...
     t.lastname = ...
 
+Static Fields:
+
 .. code-block:: python
-    :caption: Static Fields
 
     class Taikonaut:
         pass
@@ -154,8 +162,9 @@ Static or Dynamic?
     Taikonaut.firstname = ...
     Taikonaut.lastname = ...
 
+Static Fields:
+
 .. code-block:: python
-    :caption: Static Fields
 
     class Taikonaut:
         pass

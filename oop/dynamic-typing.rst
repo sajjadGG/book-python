@@ -9,8 +9,9 @@ Duck typing
 ===========
 * `The Unreasonable Effectiveness of Dynamic Typing for Practical Programs by Robert Smallshire <http://www.infoq.com/presentations/dynamic-static-typing>`_
 
+Syntax similarities:
+
 .. code-block:: python
-    :caption: Syntax similarities
 
     data = {1}
     isinstance(data, set)   # True
@@ -136,8 +137,9 @@ Injecting methods
 
 Proxy methods
 =============
+One of the most common use of ``*args``, ``**kwargs`` is for proxy methods.:
+
 .. code-block:: python
-    :caption: One of the most common use of ``*args``, ``**kwargs`` is for proxy methods.
 
     class Point2D:
         def __init__(self, x, y):
@@ -177,8 +179,9 @@ Container Class
 ===============
 * A.K.A. Placeholder class
 
+Dynamically creating fields:
+
 .. code-block:: python
-    :caption: Dynamically creating fields
 
     class Container:
         def __init__(self, **kwargs):
@@ -193,8 +196,9 @@ Container Class
     b = Container(species='Setosa')
     b.species            # 'Setosa'
 
+Dynamically creating fields:
+
 .. code-block:: python
-    :caption: Dynamically creating fields
 
     class Astronaut:
         def __init__(self, lastname, **kwargs):

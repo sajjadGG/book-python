@@ -500,8 +500,9 @@ Example
 
 Use Case
 ========
+Injecting logger instance:
+
 .. code-block:: python
-    :caption: Injecting logger instance
 
     import logging
 
@@ -526,8 +527,9 @@ Use Case
     print(Cosmonaut._logger)
     # <Logger Cosmonaut (WARNING)>
 
+Abstract Base Class:
+
 .. code-block:: python
-    :caption: Abstract Base Class
 
     from abc import ABCMeta, abstractmethod
 
@@ -582,8 +584,9 @@ Metaclass replacements
 .. highlights::
     * Effectively accomplish the same thing
 
+Inheritance and ``__init__()`` method:
+
 .. code-block:: python
-    :caption: Inheritance and ``__init__()`` method
 
     import logging
 
@@ -601,8 +604,9 @@ Metaclass replacements
     print(astro._logger)
     # <Logger Astronaut (WARNING)>
 
+Inheritance and ``__new__()`` method:
+
 .. code-block:: python
-    :caption: Inheritance and ``__new__()`` method
 
     import logging
 
@@ -622,8 +626,9 @@ Metaclass replacements
     print(astro._logger)
     # <Logger Astronaut (WARNING)>
 
+Inheritance for abstract base class validation:
+
 .. code-block:: python
-    :caption: Inheritance for abstract base class validation
 
     from abc import ABC, abstractmethod
 
@@ -639,8 +644,9 @@ Metaclass replacements
     # Traceback (most recent call last):
     # TypeError: Can't instantiate abstract class Astronaut with abstract methods hello
 
+Class Decorator:
+
 .. code-block:: python
-    :caption: Class Decorator
 
     import logging
 

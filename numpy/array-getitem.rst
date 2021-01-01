@@ -45,8 +45,9 @@ Index
     # Traceback (most recent call last):
     # IndexError: index 4 is out of bounds for axis 0 with size 3
 
+Flat:
+
 .. code-block:: python
-    :caption: Flat
 
     import numpy as np
 
@@ -67,8 +68,9 @@ Index
     a.flat[5]
     # 6
 
+Multidimensional:
+
 .. code-block:: python
-    :caption: Multidimensional
 
     import numpy as np
 

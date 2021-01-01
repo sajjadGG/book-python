@@ -147,8 +147,9 @@ Broadcasting
     # x    NaN
     # dtype: float64
 
+``fill_value``: If data in both corresponding ``Series`` locations is missing the result will be missing:
+
 .. code-block:: python
-    :caption: ``fill_value``: If data in both corresponding ``Series`` locations is missing the result will be missing
 
     a = pd.Series(data=[1, 2, 3], index=['a', 'b', 'c'])
     b = pd.Series(data=[4, 5, 6], index=['a', 'b', 'x'])

@@ -11,7 +11,6 @@ Wraps
 * ``@wraps(func)``
 
 .. code-block:: python
-    :emphasize-lines: 15,18
 
     def mydecorator(func):
         def wrapper(*args, **kwargs):
@@ -33,7 +32,6 @@ Wraps
     # wrapper docstring
 
 .. code-block:: python
-    :emphasize-lines: 1,5,19,22
 
     from functools import wraps
 

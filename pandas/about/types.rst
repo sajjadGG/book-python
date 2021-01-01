@@ -51,8 +51,9 @@ SparseArray
 ===========
 * Data where a single value is repeated many times (e.g. ``0`` or ``NaN``) may be stored efficiently as a ``SparseArray``
 
+Sparse data with Series:
+
 .. code-block:: python
-    :caption: Sparse data with Series
 
     import pandas as pd
 
@@ -63,8 +64,9 @@ SparseArray
     # IntIndex
     # Indices: array([0, 4], dtype=int32)
 
+Sparse data with DataFrame:
+
 .. code-block:: python
-    :caption: Sparse data with DataFrame
 
     import pandas as pd
 
@@ -86,8 +88,9 @@ SparseArray
 
 Interval
 ========
+Definition:
+
 .. code-block:: python
-    :caption: Definition
 
     import pandas as pd
 
@@ -101,8 +104,9 @@ Interval
     pd.Interval(left=0, right=5, closed='both')
     # Interval(0, 5, closed='both')
 
+Contains:
+
 .. code-block:: python
-    :caption: Contains
 
     import pandas as pd
 
@@ -115,8 +119,9 @@ Interval
     5.0 in interval
     # False
 
+Interval between Timestamps:
+
 .. code-block:: python
-    :caption: Interval between Timestamps
 
     import pandas as pd
 

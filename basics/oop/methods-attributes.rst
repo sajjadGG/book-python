@@ -13,8 +13,9 @@ Rationale
 * Improves refactoring
 * Decomposes bigger problem into smaller chunks
 
+Syntax:
+
 .. code-block:: python
-    :caption: Syntax
 
     class MyClass:
         def __init__(self)
@@ -31,8 +32,9 @@ Rationale
 
 Methods Accessing Fields
 ========================
+Methods Accessing Fields:
+
 .. code-block:: python
-    :caption: Methods Accessing Fields
 
     class Astronaut:
         def __init__(self, name):
@@ -46,8 +48,9 @@ Methods Accessing Fields
     jose.say_hello()
     # My name... José Jiménez
 
+``self.name`` must be defined before accessing.:
+
 .. code-block:: python
-    :caption: ``self.name`` must be defined before accessing.
 
     class Astronaut:
         def say_hello(self):
@@ -62,8 +65,9 @@ Methods Accessing Fields
 
 Methods Calling Other Methods
 =============================
+Methods Calling Other Methods:
+
 .. code-block:: python
-    :caption: Methods Calling Other Methods
 
     class Astronaut:
         def get_name(self):
@@ -78,8 +82,9 @@ Methods Calling Other Methods
     jose.say_hello()
     # My name... José Jiménez
 
+Methods calling other methods:
+
 .. code-block:: python
-    :caption: Methods calling other methods
 
     class Iris:
         def __init__(self):

@@ -91,8 +91,9 @@ Extremes
 * ``Series.argmax()``  - Range index of maximum value
 * ``Series.cummax()``  - Cumulative maximum
 
+Minimum, index of minimum and cumulative minimum:
+
 .. code-block:: python
-    :caption: Minimum, index of minimum and cumulative minimum
 
     s.min()
     # 1.0
@@ -111,8 +112,9 @@ Extremes
     # e    1.0
     # dtype: float64
 
+Maximum, index of maximum and cumulative maximum:
+
 .. code-block:: python
-    :caption: Maximum, index of maximum and cumulative maximum
 
     s.max()
     # 5.0
@@ -134,20 +136,23 @@ Extremes
 
 Average
 =======
+Arithmetic mean of values:
+
 .. code-block:: python
-    :caption: Arithmetic mean of values
 
     s.mean()
     # 2.75
 
+Arithmetic median of values:
+
 .. code-block:: python
-    :caption: Arithmetic median of values
 
     s.median()
     # 2.5
 
+Mode:
+
 .. code-block:: python
-    :caption: Mode
 
     s.mode()
     # 0    1.0
@@ -156,8 +161,9 @@ Average
     # 3    5.0
     # dtype: float64
 
+Rolling Average:
+
 .. code-block:: python
-    :caption: Rolling Average
 
     s.rolling(window=2).mean()
     # a    NaN
@@ -174,8 +180,9 @@ Average
 
 Distribution
 ============
+Absolute value:
+
 .. code-block:: python
-    :caption: Absolute value
 
     s.abs()
     # a    1.0
@@ -185,8 +192,9 @@ Distribution
     # e    5.0
     # dtype: float64
 
+Standard deviation:
+
 .. code-block:: python
-    :caption: Standard deviation
 
     s.std()
     # 1.707825127659933
@@ -195,14 +203,16 @@ Distribution
 
     Standard Deviation
 
+Mean absolute deviation:
+
 .. code-block:: python
-    :caption: Mean absolute deviation
 
     s.mad()
     # 1.25
 
+Standard Error of the Mean (SEM):
+
 .. code-block:: python
-    :caption: Standard Error of the Mean (SEM)
 
     s.sem()
     # 0.8539125638299665
@@ -211,8 +221,9 @@ Distribution
 
     Standard Error of the Mean (SEM)
 
+Skewness (3rd moment):
+
 .. code-block:: python
-    :caption: Skewness (3rd moment)
 
     s.skew()
 
@@ -220,8 +231,9 @@ Distribution
 
     Skewness
 
+Kurtosis (4th moment):
+
 .. code-block:: python
-    :caption: Kurtosis (4th moment)
 
     s.kurt()
 
@@ -229,8 +241,9 @@ Distribution
 
     Kurtosis
 
+Sample quantile (value at %). Quantile also known as Percentile.:
+
 .. code-block:: python
-    :caption: Sample quantile (value at %). Quantile also known as Percentile.
 
     s.quantile(.3)
     # 1.9
@@ -241,14 +254,16 @@ Distribution
     # 0.75    3.50
     # dtype: float64
 
+Variance:
+
 .. code-block:: python
-    :caption: Variance
 
     s.var()
     # 2.9166666666666665
 
+Correlation Coefficient:
+
 .. code-block:: python
-    :caption: Correlation Coefficient
 
     s.corr(s)
     # 1.0

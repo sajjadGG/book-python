@@ -39,8 +39,9 @@ Syntax
 
 Initializer Method Without Arguments
 ====================================
+Initializer method without arguments:
+
 .. code-block:: python
-    :caption: Initializer method without arguments
 
     class Astronaut:
         def __init__(self):
@@ -53,8 +54,9 @@ Initializer Method Without Arguments
 
 Initializer Method With Arguments
 =================================
+Initializer method with arguments:
+
 .. code-block:: python
-    :caption: Initializer method with arguments
 
     class Astronaut:
         def __init__(self, firstname, lastname='Unknown'):
@@ -83,8 +85,9 @@ Initializer Method With Arguments
 
 Constant Attributes
 ===================
+Init time attributes:
+
 .. code-block:: python
-    :caption: Init time attributes
 
     class Astronaut:
         def __init__(self):
@@ -131,8 +134,9 @@ Variable Attributes
     print(ivan.lastname)
     # Ivanovich
 
+Init time attributes:
+
 .. code-block:: python
-    :caption: Init time attributes
 
     class Astronaut:
         def __init__(self, firstname, lastname):
@@ -152,8 +156,9 @@ Variable Attributes
     print(ivan.lastname)
     # Ivanovich
 
+Init time attributes:
+
 .. code-block:: python
-    :caption: Init time attributes
 
     class Astronaut:
         def __init__(self, firstname, lastname):
@@ -169,8 +174,9 @@ Variable Attributes
     print(mark.lastname)
     # AttributeError: 'Astronaut' object has no attribute 'lastname'
 
+Init time attributes:
+
 .. code-block:: python
-    :caption: Init time attributes
 
     class Point:
         def __init__(self, x, y, z=0):
@@ -185,8 +191,9 @@ Variable Attributes
     p4 = Point(10, 20, z=30)
     p5 = Point(x=10, y=20, z=30)
 
+Init time attributes:
+
 .. code-block:: python
-    :caption: Init time attributes
 
     class Iris:
         def __init__(self, sepal_length, sepal_width,

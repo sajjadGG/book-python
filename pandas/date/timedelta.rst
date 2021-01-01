@@ -53,8 +53,9 @@ Timedelta
     mar - pd.Timedelta(days=1)
     # Timestamp('2000-02-29 00:00:00')
 
+Leap second has not been added:
+
 .. code-block:: python
-    :caption: Leap second has not been added
 
     import pandas as pd
 

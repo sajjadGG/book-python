@@ -20,8 +20,9 @@ About
 
 Examples
 ========
+Usage of regexp:
+
 .. code-block:: python
-    :caption: Usage of regexp
 
     import re
 
@@ -38,8 +39,9 @@ Examples
     re.findall(PATTERN, TEXT, flags=re.MULTILINE)
     # ['MYPROJ-1337', 'MYPROJ-997']
 
+Usage of regexp:
+
 .. code-block:: python
-    :caption: Usage of regexp
 
     PATTERN = r'[A-Z]{2,10}-[0-9]{1,6}'
     TEXT = """
