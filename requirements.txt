@@ -12,3 +12,4 @@ nbsphinx
 numpy
 pandas
 matplotlib
+django

@@ -18,12 +18,8 @@ Definition
 * Before Python 3.7: ``dict`` order is not ensured!!
 * https://mail.python.org/pipermail/python-dev/2017-December/151283.html
 
-.. code-block:: python
-
     >>> data = {}
     >>> data = dict()
-
-.. code-block:: python
 
     >>> data = {
     ...    1961: 'First Human Space Flight',
