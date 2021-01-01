@@ -177,4 +177,10 @@
     form#search {text-align: center}
     form#search input#search-submit {overflow: hidden; margin: 0; padding: 0.5em; width: 1px; height: 30px; color: var(--search-text); background: var(--search-background); border: 0; display: inline; box-shadow: none;}
     form#search input#search-input {overflow: hidden; margin: 0; padding: 0.5em; height: 30px; width: 200px; color: var(--search-text); background: var(--search-background); border: 0; border-bottom: 1px solid var(--search-border); display: inline; box-shadow: none}
+
+    /* nbsphinx */
+    .nbinput .input_area {border: 0 !important;}
+    .nbinput .prompt pre {display: none;}
+    .nboutput .prompt {display: none;}
+    .nboutput .output_area {color: var(--code-output); }
 }

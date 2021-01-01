@@ -20,6 +20,7 @@ extensions = [
     # 'sphinx.ext.viewcode',
     'sphinxcontrib.bibtex',
     # 'recommonmark',
+    # 'nbsphinx'
 ]
 
 suppress_warnings = [
@@ -71,13 +72,13 @@ html_static_path = [
 # beamer  - For writing presentations (see LaTeX/Presentations).
 latex_documentclass = 'report'
 
-
-def setup(app):
-    from recommonmark.transform import AutoStructify
-    app.add_config_value('recommonmark_config', {
-        'enable_eval_rst': True,
-    }, True)
-    app.add_transform(AutoStructify)
+if 'recommonmark' in extensions:
+    def setup(app):
+        from recommonmark.transform import AutoStructify
+        app.add_config_value('recommonmark_config', {
+            'enable_eval_rst': True,
+        }, True)
+        app.add_transform(AutoStructify)
 
 
 # -- Standard book config -----------------------------------------------------
@@ -115,14 +116,12 @@ exclude_patterns = [
     '_static',
     '_themes',
     '_tmp',
-    '**/contrib/*',
-    '**/assignments/*',
-    '**/solutions/*',
+    '_contrib',
     '**/_template.rst',
+    '**/assignments',
     '**.ipynb_checkpoints',
     'README.rst',
     'TODO.rst',
-    '**/_TODO.rst',
     'Thumbs.db',
     '.DS_Store',
 ]
@@ -133,6 +132,23 @@ highlight_language = 'python3'
 pygments_style = 'stata-dark'
 autodoc_typehints = "description"
 autosectionlabel_maxdepth = 4
+
+## https://nbsphinx.readthedocs.io/en/latest/usage.html
+if 'nbsphinx' in extensions:
+    nbsphinx_input_prompt = 'In [%s]:'
+    nbsphinx_output_prompt = 'Out [%s]:'
+    nbsphinx_execute = 'always'
+    nbsphinx_allow_errors = True
+    nbsphinx_timeout = 5
+    nbsphinx_execute_arguments = [
+        "--InlineBackend.figure_formats={'svg'}",  # 'pdf'
+        "--InlineBackend.rc={'figure.dpi': 96}"]
+    suppress_warnings += ['nbsphinx',
+                          'nbsphinx.localfile',
+                          'nbsphinx.gallery',
+                          'nbsphinx.thumbnail',
+                          'nbsphinx.notebooktitle',
+                          'nbsphinx.ipywidgets']
 
 bibtex_bibliography_header = ".. rubric:: References"
 bibtex_footbibliography_header = bibtex_bibliography_header
