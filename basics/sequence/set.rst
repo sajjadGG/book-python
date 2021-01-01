@@ -177,16 +177,10 @@ Pop
 ---
 Gets and remove items
 
-.. code-block:: python
-
     >>> data = {1, 2, 3}
     >>> value = data.pop()
-    >>>
-    >>> data == {1, 2}
+    >>> value in [1, 2, 3]
     True
-    >>>
-    >>> print(value)
-    3
 
 
 Membership

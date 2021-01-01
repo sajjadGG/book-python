@@ -26,12 +26,12 @@ Comma after last element of a one element frozenset is optional:
 
 Brackets inside are required:
 
-    data = frozenset({1})
-    data = frozenset({1, 2, 3})
-    data = frozenset({1.1, 2.2, 3.3})
-    data = frozenset({True, False})
-    data = frozenset({'a', 'b', 'c'})
-    data = frozenset({'a', 1, 2.2, True, None})
+    >>> data = frozenset({1})
+    >>> data = frozenset({1, 2, 3})
+    >>> data = frozenset({1.1, 2.2, 3.3})
+    >>> data = frozenset({True, False})
+    >>> data = frozenset({'a', 'b', 'c'})
+    >>> data = frozenset({'a', 1, 2.2, True, None})
 
 
 Type Casting

@@ -20,8 +20,9 @@ Rationale
 
 Most Common Exceptions
 ======================
+``AttributeError`` - Attribute reference or assignment fails:
+
 .. code-block:: python
-    :caption: ``AttributeError`` - Attribute reference or assignment fails
     :emphasize-lines: 4
 
     name = 'Jan'
@@ -29,8 +30,9 @@ Most Common Exceptions
     # Traceback (most recent call last):
     # AttributeError: 'str' object has no attribute 'append'
 
+``ImportError``, ``ModuleNotFoundError`` - Module could not be located:
+
 .. code-block:: python
-    :caption: ``ImportError``, ``ModuleNotFoundError`` - Module could not be located
     :emphasize-lines: 4
 
     import math
@@ -38,8 +40,9 @@ Most Common Exceptions
     # Traceback (most recent call last):
     # ModuleNotFoundError: No module named 'match'
 
+``IndexError`` - Sequence subscript is out of range:
+
 .. code-block:: python
-    :caption: ``IndexError`` - Sequence subscript is out of range
     :emphasize-lines: 4
 
     DATA = ['a', 'b', 'c']
@@ -47,8 +50,9 @@ Most Common Exceptions
     # Traceback (most recent call last):
     # IndexError: list index out of range
 
+``KeyError`` - Dictionary key is not found:
+
 .. code-block:: python
-    :caption: ``KeyError`` - Dictionary key is not found
     :emphasize-lines: 4
 
     DATA = {'a': 1, 'b': 2}
@@ -56,16 +60,18 @@ Most Common Exceptions
     # Traceback (most recent call last):
     # KeyError: 'x'
 
+``NameError`` - Local or global name is not found:
+
 .. code-block:: python
-    :caption: ``NameError`` - Local or global name is not found
     :emphasize-lines: 3
 
     print(firstname)
     # Traceback (most recent call last):
     # NameError: name 'firstname' is not defined
 
+``SyntaxError`` - Parser encounters a syntax error:
+
 .. code-block:: python
-    :caption: ``SyntaxError`` - Parser encounters a syntax error
     :emphasize-lines: 6
 
     if True
@@ -76,8 +82,9 @@ Most Common Exceptions
     #           ^
     # SyntaxError: invalid syntax
 
+``IndentationError`` - Syntax errors related to incorrect indentation:
+
 .. code-block:: python
-    :caption: ``IndentationError`` - Syntax errors related to incorrect indentation
     :emphasize-lines: 8
 
     if True:
@@ -90,8 +97,9 @@ Most Common Exceptions
     #     ^
     # IndentationError: unexpected indent
 
+``TypeError`` - Operation or function is applied to an object of inappropriate type:
+
 .. code-block:: python
-    :caption: ``TypeError`` - Operation or function is applied to an object of inappropriate type
     :emphasize-lines: 3,7,11,15
 
     42 + 'a'
@@ -110,8 +118,9 @@ Most Common Exceptions
     # Traceback (most recent call last):
     # TypeError: cannot unpack non-iterable int object
 
+``ValueError`` Argument has an invalid value:
+
 .. code-block:: python
-    :caption: ``ValueError`` Argument has an invalid value
     :emphasize-lines: 3,7,11,15
 
     a, b, c = 1, 2
@@ -202,16 +211,18 @@ Exception Hierarchy
 
 Raising Exceptions
 ==================
+Raise Exception without message:
+
 .. code-block:: python
-    :caption: Raise Exception without message
     :emphasize-lines: 3
 
     raise RuntimeError
     # Traceback (most recent call last):
     # RuntimeError
 
+Exception with additional message:
+
 .. code-block:: python
-    :caption: Exception with additional message
     :emphasize-lines: 3
 
     raise RuntimeError('Some message')
@@ -404,8 +415,9 @@ Catching Exceptions
     finally:
         # What to do either if exception occurs or not
 
+Catch single exception:
+
 .. code-block:: python
-    :caption: Catch single exception
     :emphasize-lines: 7-8
 
     def apollo13():

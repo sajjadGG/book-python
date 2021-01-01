@@ -1,10 +1,9 @@
-****************
 Mapping Generate
-****************
+================
 
 
 Pair
-====
+----
 .. code-block:: python
 
     pair = [
@@ -16,7 +15,7 @@ Pair
 
 
 List of Pairs
-=============
+-------------
 .. code-block:: python
 
     pairs = [
@@ -32,7 +31,7 @@ List of Pairs
 
 
 Enumerate
-=========
+---------
 .. code-block:: python
 
     crew = ['Melissa Lewis', 'Mark Watney', 'Alex Vogel']
@@ -68,7 +67,7 @@ Enumerate
 
 
 Zip
-===
+---
 * ``zip`` is a generator
 * ``zip`` will create a list of pairs (like ``dict.items()``)
 
@@ -146,8 +145,7 @@ Zip
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/mapping_generate_pairs.py
     :caption: :download:`Solution <assignments/mapping_generate_pairs.py>`
     :end-before: # Solution
