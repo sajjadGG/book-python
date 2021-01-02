@@ -297,8 +297,9 @@ Artifactory
 
     $ docker run --name artifactory -d -p 8081:8081 docker.bintray.io/jfrog/artifactory-oss:latest
 
+~/.pypirc:
+
 .. code-block:: ini
-    :caption: ~/.pypirc
 
     [distutils]
     index-servers =
@@ -321,8 +322,9 @@ Artifactory
     $ python setup.py bdist_wheel upload -r local
     $ python setup.py sdist bdist_wheel upload -r local
 
+Search:
+
 .. code-block:: console
-    :caption: Search
 
     $ pip search myapp --index http://example.com:8081/artifactory/api/pypi/pypi-local/
     myapp                   - My Simple App

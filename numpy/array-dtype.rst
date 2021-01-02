@@ -22,8 +22,9 @@ Bits and Bytes
     +1      # signed
     -1      # signed
 
+3 bit unsigned integers. Values: 8, minimal: 0, maximal: 8:
+
 .. code-block:: text
-    :caption: 3 bit unsigned integers. Values: 8, minimal: 0, maximal: 8
 
     0       000
     1       001
@@ -34,8 +35,9 @@ Bits and Bytes
     6       110
     7       111
 
+3 bit signed integers. Values: 8, minimal: -4, maximal: 3:
+
 .. code-block:: text
-    :caption: 3 bit signed integers. Values: 8, minimal: -4, maximal: 3
 
     +0      000
     +1      001
@@ -46,8 +48,9 @@ Bits and Bytes
     −2      110
     −1      111
 
+8 bit signed integers. Values: 256, minimal: -128, maximal: 127:
+
 .. code-block:: text
-    :caption: 8 bit signed integers. Values: 256, minimal: -128, maximal: 127
 
     +0      00000000
     +1      00000001
@@ -60,8 +63,9 @@ Bits and Bytes
     −2      11111110
     −1      11111111
 
+32 bit unsigned int. Values: 2,147,483,647, minimal: 0, maximal: 2,147,483,647:
+
 .. code-block:: text
-    :caption: 32 bit unsigned int. Values: 2,147,483,647, minimal: 0, maximal: 2,147,483,647
 
     0       0000000000000000000000000000000000
     1       0000000000000000000000000000000001

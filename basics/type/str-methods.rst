@@ -354,7 +354,7 @@ Count Occurrences
 
 Remove Prefix or Suffix
 -----------------------
-* Since Python 3.9: :pep:`616` -- String methods to remove prefixes and suffixes
+Since Python 3.9: :pep:`616` -- String methods to remove prefixes and suffixes
 
     >>> filename = '1969-apollo11.txt'
     >>>

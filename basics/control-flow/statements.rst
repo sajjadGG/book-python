@@ -25,8 +25,9 @@ Positive values:
 
 Conditional Statement
 ---------------------
+``if`` generic syntax:
+
 .. code-block:: text
-    :caption: ``if`` generic syntax
 
     if <condition>:
         <do something>
@@ -153,8 +154,9 @@ Unconditional Alternative
 * Optional
 * Executed when condition is not met
 
+``else`` generic syntax:
+
 .. code-block:: text
-    :caption: ``else`` generic syntax
 
     if <condition>:
         <do something>
@@ -277,8 +279,9 @@ Conditional Alternative
 * Used to check for additional condition if first is not met
 * In other languages is known as ``else if``
 
+``elif`` generic syntax:
+
 .. code-block:: text
-    :caption: ``elif`` generic syntax
 
     if <condition>:
         <do something>

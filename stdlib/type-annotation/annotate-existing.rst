@@ -7,8 +7,9 @@ Annotating Existing Code
 ==============
 * http://mypy-lang.blogspot.com/2017/11/dropbox-releases-pyannotate-auto.html
 
+The -w flag means "go ahead, update the file":
+
 .. code-block:: console
-    :caption: the -w flag means "go ahead, update the file"
 
     $ pip install pyannotate
     $ pyannotate -w FILE

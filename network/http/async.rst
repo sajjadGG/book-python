@@ -181,22 +181,26 @@ Change this:
 
 Manage RabbitMQ
 ---------------
+Start the service:
+
 .. code-block:: console
-    :caption: Start the service
 
     $ service rabbitmq-server start
 
+Stop the service:
+
 .. code-block:: console
-    :caption: Stop the service
 
     $ service rabbitmq-server stop
 
+Restart the service:
+
 .. code-block:: console
-    :caption: Restart the service
 
     $ service rabbitmq-server restart
 
+Check the status:
+
 .. code-block:: console
-    :caption: Check the status
 
     $ service rabbitmq-server status

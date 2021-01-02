@@ -23,13 +23,15 @@ Each Python version is installed into its own directory under ``$(pyenv root)/ve
     * ``$(pyenv root)/versions/3.4.2/``
     * ``$(pyenv root)/versions/pypy-2.4.0/``
 
+Installation:
+
 .. code-block:: console
-    :caption: Installation
 
     curl https://pyenv.run | bash
 
+Upgrade:
+
 .. code-block:: console
-    :caption: Upgrade
 
     pyenv update
 
@@ -38,8 +40,9 @@ Cookiecutter
 ============
 * template for a Python package
 
+Installation:
+
 .. code-block:: console
-    :caption: Installation
 
     pip install cookiecutter
 
@@ -77,8 +80,9 @@ The problems that Pipenv seeks to solve are multi-faceted:
     #. Give you insight into your dependency graph (e.g. ``pipenv graph``).
     #. Streamline development workflow by loading ``.env`` files.
 
+Installation:
+
 .. code-block:: console
-    :caption: Installation
 
     brew install pipenv
 
@@ -98,8 +102,9 @@ pip-tools
 
 Examples
 --------
+requirements.in:
+
 .. code-block:: text
-    :caption: requirements.in
 
     Flask
 

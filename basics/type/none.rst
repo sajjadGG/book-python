@@ -14,7 +14,7 @@ Definition
 
 Comparison
 ----------
-* Do not use ``==`` or ``!=`` to check ``None`` values (it works, but you shouldn't)
+* Do not use ``==`` or ``!=`` to check ``None`` values
 * ``x is None`` - ``x`` is the same object as ``y``
 * ``x is not None`` - ``x`` is not the same object as ``y``
 

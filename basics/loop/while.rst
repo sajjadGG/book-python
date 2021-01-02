@@ -7,8 +7,9 @@ Syntax
 * Continue execution when argument is ``True``
 * Stops if argument is ``False``
 
+``while`` loop generic syntax:
+
 .. code-block:: text
-    :caption: ``while`` loop generic syntax
 
     while <condition>:
         <do something>

@@ -25,8 +25,9 @@ Create
     $ cd PROJECT
     $ python3.9 -m venv DIRECTORY
 
+Example:
+
 .. code-block:: console
-    :caption: Example
 
     $ cd PROJECT
     $ python3.9 -m venv venv-3.9.0
@@ -38,14 +39,16 @@ Activate
 * ``bin`` for macOS, Linux, BSD
 * Note the direction of slash and backslash (OS dependent)
 
+Windows:
+
 .. code-block:: console
-    :caption: Windows
 
     $ cd PROJECT
     $ venv-3.9.0\Scripts\activate.bat
 
+macOS, Linux, BSD:
+
 .. code-block:: console
-    :caption: macOS, Linux, BSD
 
     $ cd PROJECT
     $ venv-3.9.0/bin/activate
@@ -121,8 +124,9 @@ Directory Naming Convention
     venv-python39-django33
     venv-python310alpha1-django40a1
 
+This convention is from ``virtualenv-wrapper`` module (mostly used in Python 2):
+
 .. code-block:: text
-    :caption: This convention is from ``virtualenv-wrapper`` module (mostly used in Python 2)
 
     ~/.virtualenv/PROJECT_NAME/
 

@@ -4,7 +4,8 @@ Type Int
 
 Definition
 ----------
-Python 3 dynamically extends ``int`` when it's too big, hence there is no maximal or minimal ``int`` value:
+Python 3 dynamically extends ``int`` when it's too big, hence there is no
+maximal or minimal ``int`` value:
 
     >>> data = 1337
     >>> data = +1337
@@ -51,7 +52,8 @@ Builtin function ``int()`` does not round numbers:
     >>> int('1_000_000')
     1000000
 
-Builtin function ``int()`` fails when in argument there are parameters other than a digit, ``+`` or ``-`` sign and ``_``
+Builtin function ``int()`` fails when in argument there are parameters
+other than a digit, ``+`` or ``-`` sign and ``_``
 
     >>> int('1.337')
     Traceback (most recent call last):

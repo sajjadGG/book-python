@@ -8,8 +8,9 @@ Defining
 
 Polynomial of degree three
 --------------------------
+Polynomial of degree three:
+
 .. code-block:: text
-    :caption: Polynomial of degree three
 
     Ax^3 + Bx^2 + Cx^1 + D = 0
     1x^3 + 2x^2 + 3x^1 + 4 = 0
@@ -28,8 +29,9 @@ Polynomial of degree three
 
 Polynomial of degree six
 ------------------------
+Polynomial of degree six:
+
 .. code-block:: text
-    :caption: Polynomial of degree six
 
     Ax^6 + Bx^5 + Cx^4 + Dx^3 + Ex^2 + Fx + G = 0
     1x^6 + 2x^5 + 3x^4 + 4x^3 + 5x^2 + 6x + 7 = 0

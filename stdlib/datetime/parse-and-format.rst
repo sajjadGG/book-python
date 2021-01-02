@@ -9,23 +9,26 @@ Date formats
 
 Date format in USA
 ------------------
+Formal date format in USA :cite:`DateFormatUS`:
+
 .. code-block:: text
-    :caption: Formal date format in USA :cite:`DateFormatUS`
 
     4/12/61
     April 12, 1961
 
 Date format in Japan
 --------------------
+Formal date format in Japan :cite:`DateFormatJapan`:
+
 .. code-block:: text
-    :caption: Formal date format in Japan :cite:`DateFormatJapan`
 
     20/12/31
 
 Date format in Germany
 ----------------------
+Formal date format in Germany:
+
 .. code-block:: text
-    :caption: Formal date format in Germany
 
     12.04.1961
 
@@ -123,8 +126,9 @@ Date and time
 * "Z" (Zulu) means UTC
 * "T" separates date and time
 
+Date and time:
+
 .. code-block:: text
-    :caption: Date and time
 
     1961-04-12T06:07:00Z
     1961-04-12T06:07:00.123Z
@@ -138,8 +142,9 @@ Noon and Midnight
 
 Weeks
 -----
+Note year/month changes during the week:
+
 .. code-block:: text
-    :caption: Note year/month changes during the week
 
     2009-W01            # First week of 2009
     2009-W01-1          # Monday 29 December 2008
@@ -149,8 +154,9 @@ Timezone
 --------
 * "Z" (Zulu) means UTC
 
+Time zone notation:
+
 .. code-block:: text
-    :caption: Time zone notation
     :emphasize-lines: 1-3
 
     <time>UTC
@@ -177,8 +183,9 @@ Duration
     "``M``", "minute",  "number of minutes"
     "``S``", "second",  "number of seconds"
 
+Example:
+
 .. code-block:: text
-    :caption: Example
     :emphasize-lines: 1
 
     P8Y3M8DT20H49M15S

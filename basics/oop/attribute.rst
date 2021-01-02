@@ -29,8 +29,9 @@ Rationale
     namespace
         Container for storing related data
 
+Class example with distinction of properties and state attributes:
+
 .. code-block:: text
-    :caption: Class example with distinction of properties and state attributes
 
     Bucket with Water
 

@@ -10,15 +10,17 @@ Rationale
 * CSV - Comma Separated Values
 * CSV - Character Separated Values
 
+CSV file with numeric values.:
+
 .. code-block:: text
-    :caption: CSV file with numeric values.
 
     5.4,3.9,1.3,0.4,0
     5.9,3.0,5.1,1.8,1
     6.0,3.4,4.5,1.6,2
 
+CSV file with text values. First line is a header.:
+
 .. code-block:: text
-    :caption: CSV file with text values. First line is a header.
 
     "First Name", "Last Name"
     "Mark", "Watney"
@@ -26,8 +28,9 @@ Rationale
     "Melissa", "Lewis"
     "Alex", "Vogel"
 
+CSV file with mixed values (numeric and strings). First line is a header.:
+
 .. code-block:: text
-    :caption: CSV file with mixed values (numeric and strings). First line is a header.
 
     sepal_length,sepal_width,petal_length,petal_width,species
     5.4,3.9,1.3,0.4,setosa
@@ -61,32 +64,36 @@ Quoting
 * ``csv.QUOTE_NONE``
 * ``csv.QUOTE_NONNUMERIC``
 
+``quoting=csv.QUOTE_ALL``:
+
 .. code-block:: text
-    :caption: ``quoting=csv.QUOTE_ALL``
 
     "Sepal length","Sepal width","Petal length","Petal width","Species"
     "5.8","2.7","5.1","1.9","virginica"
     "5.1","3.5","1.4","0.2","setosa"
     "5.7","2.8","4.1","1.3","versicolor"
 
+``quoting=csv.QUOTE_MINIMAL``:
+
 .. code-block:: text
-    :caption: ``quoting=csv.QUOTE_MINIMAL``
 
     Sepal length,Sepal width,Petal length,Petal width,Species
     5.8,2.7,5.1,1.9,virginica
     5.1,3.5,1.4,0.2,setosa
     5.7,2.8,4.1,1.3,versicolor
 
+``quoting=csv.QUOTE_NONE``:
+
 .. code-block:: text
-    :caption: ``quoting=csv.QUOTE_NONE``
 
     Sepal length,Sepal width,Petal length,Petal width,Species
     5.8,2.7,5.1,1.9,virginica
     5.1,3.5,1.4,0.2,setosa
     5.7,2.8,4.1,1.3,versicolor
 
+``quoting=csv.QUOTE_NONNUMERIC``:
+
 .. code-block:: text
-    :caption: ``quoting=csv.QUOTE_NONNUMERIC``
 
     "Sepal length","Sepal width","Petal length","Petal width","Species"
     5.8,2.7,5.1,1.9,"virginica"
@@ -99,24 +106,27 @@ Quotechar
 * ``"`` - quote char (best)
 * ``'`` - apostrophe
 
+``quotechar='"'``:
+
 .. code-block:: text
-    :caption: ``quotechar='"'``
 
     "Sepal length","Sepal width","Petal length","Petal width","Species"
     "5.8","2.7","5.1","1.9","virginica"
     "5.1","3.5","1.4","0.2","setosa"
     "5.7","2.8","4.1","1.3","versicolor"
 
+``quotechar="'"``:
+
 .. code-block:: text
-    :caption: ``quotechar="'"``
 
     'Sepal length','Sepal width','Petal length','Petal width','Species'
     '5.8','2.7','5.1','1.9','virginica'
     '5.1','3.5','1.4','0.2','setosa'
     '5.7','2.8','4.1','1.3','versicolor'
 
+``quotechar='|'``:
+
 .. code-block:: text
-    :caption: ``quotechar='|'``
 
     |Sepal length|,|Sepal width|,|Petal length|,|Petal width|,|Species|
     |5.8|,|2.7|,|5.1|,|1.9|,|virginica|
@@ -124,8 +134,9 @@ Quotechar
     |5.7|,|2.8|,|4.1|,|1.3|,|versicolor|
 
 
+``quotechar='/'``:
+
 .. code-block:: text
-    :caption: ``quotechar='/'``
 
     /Sepal length/,/Sepal width/,/Petal length/,/Petal width/,/Species/
     /5.8/,/2.7/,/5.1/,/1.9/,/virginica/
@@ -134,32 +145,36 @@ Quotechar
 
 Delimiter
 =========
+``delimiter=','``:
+
 .. code-block:: text
-    :caption: ``delimiter=','``
 
     Sepal length,Sepal width,Petal length,Petal width,Species
     5.8,2.7,5.1,1.9,virginica
     5.1,3.5,1.4,0.2,setosa
     5.7,2.8,4.1,1.3,versicolor
 
+``delimiter=';'``:
+
 .. code-block:: text
-    :caption: ``delimiter=';'``
 
     Sepal length;Sepal width;Petal length;Petal width;Species
     5.8;2.7;5.1;1.9;virginica
     5.1;3.5;1.4;0.2;setosa
     5.7;2.8;4.1;1.3;versicolor
 
+``delimiter='|'``:
+
 .. code-block:: text
-    :caption: ``delimiter='|'``
 
     Sepal length|Sepal width|Petal length|Petal width|Species
     5.8|2.7|5.1|1.9|virginica
     5.1|3.5|1.4|0.2|setosa
     5.7|2.8|4.1|1.3|versicolor
 
+``delimiter='\t'``:
+
 .. code-block:: text
-    :caption: ``delimiter='\t'``
 
     Sepal length	Sepal width	Petal length	Petal width	Species
     5.8	2.7	5.1	1.9	virginica

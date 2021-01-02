@@ -48,8 +48,9 @@ Typer
     if __name__ == "__main__":
         app()
 
+You have 2 subcommands (the 2 functions): goodbye and hello:
+
 .. code-block:: console
-    :caption: You have 2 subcommands (the 2 functions): goodbye and hello
 
     $ python main.py --help
     Usage: main.py [OPTIONS] COMMAND [ARGS]...
@@ -63,8 +64,9 @@ Typer
       goodbye
       hello
 
+Now get the --help for hello:
+
 .. code-block:: console
-    :caption: Now get the --help for hello
 
     $ python main.py hello --help
 
@@ -73,8 +75,9 @@ Typer
     Options:
       --help  Show this message and exit.
 
+And now get the --help for goodbye. Automatic --formal and --no-formal for the bool option:
+
 .. code-block:: console
-    :caption: And now get the --help for goodbye. Automatic --formal and --no-formal for the bool option
 
     $ python main.py goodbye --help
 
@@ -84,8 +87,9 @@ Typer
       --formal / --no-formal
       --help                  Show this message and exit.
 
+And if you use it with the hello command:
+
 .. code-block:: console
-    :caption: And if you use it with the hello command
 
     $ python main.py hello Camila
     Hello Camila

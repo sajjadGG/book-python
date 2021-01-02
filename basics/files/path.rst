@@ -9,18 +9,21 @@ Rationale
 * Path separator ``/`` (slash) is used on ``*nix`` operating systems: Linux, macOS, BSD and other POSIX compliant OSes (excluding Windows)
 * In newer Windows versions both ``\`` and ``/`` works the same
 
+Absolute path on Windows:
+
 .. code-block:: text
-    :caption: Absolute path on Windows
 
     C:\Users\Watney\myfile.txt
 
+Absolute path on ``*nix`` (Linux, macOS, BSD, etc.):
+
 .. code-block:: text
-    :caption: Absolute path on ``*nix`` (Linux, macOS, BSD, etc.)
 
     /tmp/myfile.txt
 
+Relative paths works the same on Windows and ``*nix`` (Linux, macOS, BSD, etc.):
+
 .. code-block:: text
-    :caption: Relative paths works the same on Windows and ``*nix`` (Linux, macOS, BSD, etc.)
 
     myfile.txt
     tmp/myfile.txt

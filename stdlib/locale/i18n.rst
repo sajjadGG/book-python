@@ -10,18 +10,21 @@ Rationale
 
 Examples
 ========
+pl_PL.UTF-8:
+
 .. code-block:: text
-    :caption: pl_PL.UTF-8
 
     hello = 'witaj'
 
+en_US.UTF-8:
+
 .. code-block:: text
-    :caption: en_US.UTF-8
 
     hello = 'hello'
 
+en_GB.UTF-8:
+
 .. code-block:: text
-    :caption: en_GB.UTF-8
 
     hello = 'good morning'
 

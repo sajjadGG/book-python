@@ -26,10 +26,12 @@ Builtin function  ``str()`` converts argument to ``str``
     >>> str(1.337)
     '1.337'
 
-Builtin function ``print()`` before printing on the screen runs ``str()`` on its arguments
+Builtin function ``print()`` before printing on the screen
+runs ``str()`` on its arguments:
 
     >>> print(1969)
     1969
+
 
 Single and Double Quotes
 ------------------------
@@ -37,7 +39,8 @@ Single and Double Quotes
 * Choose one and keep consistency in code
 * Python console prefers single quote (``'``) character
 * It matters for ``doctest``, which compares two outputs character by character
-* :pep:`257` -- Docstring Conventions: For multiline ``str`` always use three double quote (``"""``) characters
+* :pep:`257` -- Docstring Conventions: For multiline ``str`` always use three
+  double quote (``"""``) characters
 
 
 Python console prefers single quote (``'``):
@@ -52,19 +55,22 @@ Python console prefers single quote (``'``):
     >>> data
     'My name is José Jiménez'
 
-It's better to use double quotes, when text has apostrophes. This is the behavior of Python console:
+It's better to use double quotes, when text has apostrophes.
+This is the behavior of Python console:
 
     >>> data = 'My name\'s José Jiménez'
     >>> data
     "My name's José Jiménez"
 
-HTML and XML uses double quotes to enclose attribute values, hence it's better to use single quotes for the string:
+HTML and XML uses double quotes to enclose attribute values, hence it's better
+to use single quotes for the string:
 
     >>> data = '<a href="http://python.astrotech.io">Python and Machine Learning</a>'
     >>> data
     '<a href="http://python.astrotech.io">Python and Machine Learning</a>'
 
-:pep:`257` -- Docstring Conventions: For multiline ``str`` always use three double quote (``"""``) characters
+:pep:`257` -- Docstring Conventions: For multiline ``str`` always use three
+double quote (``"""``) characters
 
     >>> data = """My name's \"José Jiménez\""""
     >>> data = '''My name\'s "José Jiménez"'''
@@ -72,10 +78,12 @@ HTML and XML uses double quotes to enclose attribute values, hence it's better t
 
 Docstring
 ---------
-* :pep:`257` -- Docstring Conventions: For multiline ``str`` always use three double quote (``"""``) characters
+* :pep:`257` -- Docstring Conventions: For multiline ``str`` always use three
+  double quote (``"""``) characters
 * More information in :ref:`Function Doctest`
 
-If assigned to variable, it serves as multiline ``str`` otherwise it's a docstring.
+If assigned to variable, it serves as multiline ``str`` otherwise
+it's a docstring:
 
     >>> TEXT = """
     ... We choose to go to the Moon!
@@ -185,7 +193,8 @@ In Regular Expressions:
     SyntaxError: (unicode error) 'unicodeescape' codec can't decode bytes in position 2-3: truncated \UXXXXXXXX escape
 
 * Problem: ``\Users``
-* after ``\U...`` python expects Unicode codepoint in hex i.e. '\\U0001F680' which is 🚀 emoticon
+* after ``\U...`` python expects Unicode codepoint in hex
+  i.e. '\\U0001F680' which is 🚀 emoticon
 * ``s`` is invalid hexadecimal character
 * Only valid characters are ``0123456789abcdefABCDEF``
 
@@ -245,9 +254,13 @@ Reading Input
 * Good practice: always ``.strip()`` text from user input
 * Good practice: always sanitize values from user prompt
 
-``input()`` function argument is prompt text, which "invites" user to enter specific information. Note colon space (": ") at the end. Space is needed to separate user input from prompt.
+``input()`` function argument is prompt text, which "invites" user to enter
+specific information. Note colon space (": ") at the end. Space is needed
+to separate user input from prompt.
 
-Note, that the line ``input = lambda x: 'Mark Watney'`` is only for testing purposes (it is called "Stub"), and you should not do that in your programs! This assumes, that user will input str ``Mark Watney``
+Note, that the line ``input = lambda x: 'Mark Watney'`` is only for testing
+purposes (it is called "Stub"), and you should not do that in your programs!
+This assumes, that user will input str ``Mark Watney``:
 
     >>> # Assume user will input 'Mark Watney' and then hit ENTER key
     >>> input = lambda x: 'Mark Watney'  # Don't do this in your code
@@ -259,7 +272,8 @@ Note, that the line ``input = lambda x: 'Mark Watney'`` is only for testing purp
     >>> type(name)
     <class 'str'>
 
-``input()`` always returns a ``str``. To get numeric value type casting to ``int`` is needed.
+``input()`` always returns a ``str``.
+To get numeric value type casting to ``int`` is needed.
 
     >>> # Assume user will input '42' and then hit ENTER key
     >>> input = lambda x: '42'  # Don't do this in your code

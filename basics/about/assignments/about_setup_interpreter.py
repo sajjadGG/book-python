@@ -38,5 +38,4 @@ print(sys.version[:6])
 
 
 # Solution
-import sys
 print(sys.version[:6])

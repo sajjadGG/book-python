@@ -22,13 +22,15 @@ Besides its obvious scientific uses, NumPy can also be used as an efficient mult
 
 Installation
 ============
+Installation:
+
 .. code-block:: console
-    :caption: Installation
 
     $ pip install numpy
 
+Upgrade:
+
 .. code-block:: console
-    :caption: Upgrade
 
     $ pip install --upgrade numpy
 

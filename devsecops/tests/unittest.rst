@@ -41,8 +41,9 @@ From code
 
 From command line
 -----------------
+Display only errors. With ``-v`` display progress:
+
 .. code-block:: console
-    :caption: Display only errors. With ``-v`` display progress
 
     $ python -m unittest myfile.py
     $ python -m unittest -v myfile.py

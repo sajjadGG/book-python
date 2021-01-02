@@ -154,8 +154,9 @@ Image Classification using ``TensorFlow for Poets``
 ---------------------------------------------------
 * https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#1
 
+download around 218MB of data:
+
 .. code-block:: console
-    :caption: download around 218MB of data
 
     $ curl -O http://download.tensorflow.org/example_images/flower_photos.tgz
     $ tar xzf flower_photos.tgz

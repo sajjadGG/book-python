@@ -42,8 +42,9 @@ Displays all available protocols:
 
 Lists all command functions
 ---------------------------
+Lists all command functions:
+
 .. code-block:: console
-    :caption: Lists all command functions
 
     $ lsc()
 
