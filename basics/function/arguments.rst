@@ -32,7 +32,7 @@ Syntax
 ------
 Function definition with parameters:
 
-.. code-block:: text
+.. code-block:: python
 
     myfunction(<arguments>)
 

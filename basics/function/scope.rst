@@ -154,7 +154,6 @@ Impure to Pure Function
 
 Global Scope
 ------------
-
 >>> globals()  # doctest: +SKIP
 {'__name__': '__main__',
  '__doc__': None,
@@ -164,7 +163,7 @@ Global Scope
  '__annotations__': {},
  '__builtins__': <module 'builtins' (built-in)>}
 
->>>> dir(globals()['__builtins__'])  # doctest: +NORMALIZE_WHITESPACE
+>>> dir(globals()['__builtins__'])  # doctest: +SKIP
 ['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException',
  'BlockingIOError', 'BrokenPipeError', 'BufferError', 'BytesWarning',
  'ChildProcessError', 'ConnectionAbortedError', 'ConnectionError',

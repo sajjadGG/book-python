@@ -19,7 +19,7 @@ Syntax
 ------
 Function definition with parameters:
 
-.. code-block:: text
+.. code-block:: python
 
     def myfunction(<parameters>):
         <do something>

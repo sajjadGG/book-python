@@ -25,32 +25,29 @@ Syntax
 * Used for ``doctest``
 * :pep:`257` -- Docstring Conventions: For multiline ``str`` always use three double quote (``"""``) characters
 
-.. code-block:: python
+>>> def add(a, b):
+...     """
+...     >>> add(1, 2)
+...     3
+...     >>> add(-1, 1)
+...     0
+...     >>> add(0, 0)
+...     0
+...     """
+...     return a + b
 
-    def add(a, b):
-        """
-        >>> add(1, 2)
-        3
-        >>> add(-1, 1)
-        0
-        >>> add(0, 0)
-        0
-        """
-        return a + b
-
-.. code-block:: python
-
-    """
-    >>> add(1, 2)
-    3
-    >>> add(-1, 1)
-    0
-    >>> add(0, 0)
-    0
-    """
-
-    def add(a, b):
-        return a + b
+>>> # doctest: +SKIP
+... """
+... >>> add(1, 2)
+... 3
+... >>> add(-1, 1)
+... 0
+... >>> add(0, 0)
+... 0
+... """
+>>>
+>>> def add(a, b):
+...     return a + b
 
 
 Running Tests
@@ -63,99 +60,95 @@ Running tests in Pycharm IDE (either option):
 
 Running Tests from Python Code:
 
-    .. code-block:: python
-
-        if __name__ == "__main__":
-            from doctest import testmod
-            testmod()
+>>> if __name__ == "__main__":
+...     from doctest import testmod
+...     testmod()
 
 Running tests from command line (displays errors only):
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ python -m doctest myfile.py
+    $ python -m doctest myfile.py
 
 Add ``-v`` to display more verbose output.
 
-    .. code-block:: console
+.. code-block:: console
 
-        $ python -m doctest -v myfile.py
+    $ python -m doctest -v myfile.py
 
 
 Test Int, Float
 ---------------
 ``int`` values:
 
-.. code-block:: python
-
-    """
-    >>> add(1, 2)
-    3
-    >>> add(-1, 1)
-    0
-    >>> add(0, 0)
-    0
-    """
-
-    def add(a, b):
-        return a + b
+    >>> # doctest: +SKIP
+    ... """
+    ... >>> add(1, 2)
+    ... 3
+    ... >>> add(-1, 1)
+    ... 0
+    ... >>> add(0, 0)
+    ... 0
+    ... """
+    >>>
+    >>> def add(a, b):
+    ...     return a + b
 
 ``float`` values:
 
-.. code-block:: python
-
-    """
-    >>> add(1.0, 2.0)
-    3.0
-
-    >>> add(0.1, 0.2)
-    0.30000000000000004
-
-    >>> add(0.1, 0.2)   # doctest: +ELLIPSIS
-    0.3000...
-    """
-
-    def add(a, b):
-        return a + b
+    >>> # doctest: +SKIP
+    ... """
+    ... >>> add(1.0, 2.0)
+    ... 3.0
+    ...
+    ... >>> add(0.1, 0.2)
+    ... 0.30000000000000004
+    ...
+    ... >>> add(0.1, 0.2)   # doctest: +ELLIPSIS
+    ... 0.3000...
+    ... """
+    >>>
+    >>> def add(a, b):
+    ...     return a + b
 
 This is due to the floating point arithmetic in IEEE 754 standard:
 
-.. code-block:: python
+    >>> 0.1 + 0.2
+    0.30000000000000004
 
-    0.1 + 0.2
-    # 0.30000000000000004
+    >>> 0.1 + 0.2  # doctest: +ELLIPSIS
+    0.3000...
 
-    round(0.1+0.2, 16)
-    # 0.3
+    >>> round(0.1+0.2, 16)
+    0.3
 
-    round(0.1+0.2, 17)
-    # 0.30000000000000004
+    >>> round(0.1+0.2, 17)
+    0.30000000000000004
 
 More information in :ref:`Math Precision`.
 
 
 Test Bool
 ---------
-.. code-block:: python
-
-    """
-    Function checks if person is adult.
-    Adult person is over 18 years old.
-
-    >>> is_adult(18)
-    True
-
-    >>> is_adult(17.9)
-    False
-    """
-
-    AGE_ADULT = 18
-
-    def is_adult(age):
-        if age >= AGE_ADULT:
-            return True
-        else:
-            return False
+    >>> # doctest: +SKIP
+    ... """
+    ... Function checks if person is adult.
+    ... Adult person is over 18 years old.
+    ...
+    ... >>> is_adult(18)
+    ... True
+    ...
+    ... >>> is_adult(17.9)
+    ... False
+    ... """
+    >>>
+    >>> AGE_ADULT = 18
+    >>>
+    >>> def is_adult(age):
+    ...     if age >= AGE_ADULT:
+    ...         return True
+    ...     else:
+    ...         return False
 
 
 Test Str
@@ -166,252 +159,258 @@ Test Str
 
 Returning ``str``. Python will change to single quotes in most cases:
 
-.. code-block:: python
-
-    """
-    >>> echo('hello')
-    'hello'
-
-    # Python will change to single quotes in most cases
-    >>> echo("hello")
-    'hello'
-
-    Following test will fail
-    >>> echo('hello')
-    "hello"
-
-    Python will change to double quotes to avoid escapes
-    >>> echo('It\\'s Twardowski\\'s Moon')
-    "It's Twardowski's Moon"
-    """
-
-    def echo(data):
-        return data
+    >>> # doctest: +SKIP
+    ... """
+    ... >>> echo('hello')
+    ... 'hello'
+    ...
+    ... # Python will change to single quotes in most cases
+    ... >>> echo("hello")
+    ... 'hello'
+    ...
+    ... Following test will fail
+    ... >>> echo('hello')
+    ... "hello"
+    ...
+    ... Python will change to double quotes to avoid escapes
+    ... >>> echo('It\\'s Twardowski\\'s Moon')
+    ... "It's Twardowski's Moon"
+    ... """
+    >>>
+    >>> def echo(data):
+    ...     return data
 
 There are no quotes in ``print()`` function output:
 
-.. code-block:: python
-
-    """
-    >>> echo('hello')
-    hello
-    """
-
-    def echo(data):
-        print(data)
+    >>> # doctest: +SKIP
+    ... """
+    ... >>> echo('hello')
+    ... hello
+    ... """
+    >>>
+    >>> def echo(data):
+    ...     print(data)
 
 Testing ``print(str)`` with newlines:
 
-.. code-block:: python
-
-    """
-    >>> echo('hello')
-    hello
-    hello
-    hello
-    <BLANKLINE>
-    """
-
-    def echo(data):
-        print(f'{data}\n' * 3)
+    >>> # doctest: +SKIP
+    ... """
+    ... >>> echo('hello')
+    ... hello
+    ... hello
+    ... hello
+    ... <BLANKLINE>
+    ... """
+    >>>
+    >>> def echo(data):
+    ...     print(f'{data}\n' * 3)
 
 
 Test Ordered Sequence
 ---------------------
-.. code-block:: python
+    >>> # doctest: +SKIP
+    ... """
+    ... >>> echo([1,2,3])
+    ... [1, 2, 3]
+    ...
+    ... >>> echo((1,2,3))
+    ... (1, 2, 3)
+    ... """
+    >>>
+    >>> def echo(data):
+    ...     return data
 
-    """
-    >>> echo([1,2,3])
-    [1, 2, 3]
+    >>> # doctest: +SKIP
+    ... """
+    ... >>> echo([1,2,3])
+    ... [1, 2, 3]
+    ...
+    ... >>> echo((1,2,3))
+    ... [1, 2, 3]
+    ... """
+    >>>
+    >>> def echo(data):
+    ...     return [x for x in data]
 
-    >>> echo((1,2,3))
-    (1, 2, 3)
-    """
-
-    def echo(data):
-        return data
-
-.. code-block:: python
-
-    """
-    >>> echo([1,2,3])
-    [1, 2, 3]
-
-    >>> echo((1,2,3))
-    [1, 2, 3]
-    """
-
-    def echo(data):
-        return [x for x in data]
-
-.. code-block:: python
-
-    """
-    >>> echo([1,2,3])
-    [274.15, 275.15, 276.15]
-
-    >>> echo((1,2,3))
-    (274.15, 275.15, 276.15)
-    """
-
-    def echo(data):
-        cls = type(data)
-        return cls(x+273.15 for x in data)
+    >>> # doctest: +SKIP
+    ... """
+    ... >>> echo([1,2,3])
+    ... [274.15, 275.15, 276.15]
+    ...
+    ... >>> echo((1,2,3))
+    ... (274.15, 275.15, 276.15)
+    ... """
+    >>>
+    >>> def echo(data):
+    ...     cls = type(data)
+    ...     return cls(x+273.15 for x in data)
 
 
 Test Unordered Sequence
 -----------------------
 Hash from numbers are constant:
 
-.. code-block:: python
-
-    """
-    >>> echo({1})
-    {1}
-    >>> echo({1,2})
-    {1, 2}
-    """
-
-    def echo(data):
-        return data
+    >>> # doctest: +SKIP
+    ... """
+    ... >>> echo({1})
+    ... {1}
+    ... >>> echo({1,2})
+    ... {1, 2}
+    ... """
+    >>>
+    >>> def echo(data):
+    ...     return data
 
 However hash from `str` elements changes at every run:
 
-.. code-block:: python
-
-    """
-    >>> echo({'a', 'b'})
-    {'b', 'a'}
-    """
-
-    def echo(data):
-        return data
+    >>> # doctest: +SKIP
+    ... """
+    ... >>> echo({'a', 'b'})
+    ... {'b', 'a'}
+    ... """
+    >>>
+    >>> def echo(data):
+    ...     return data
 
 Therefore you should test if element is in the result, rather than comparing output:
 
-.. code-block:: python
-
-    """
-    >>> result = echo({'a', 'b'})
-    >>> 'a' in result
-    True
-    >>> 'b' in result
-    True
-    """
-
-    def echo(data):
-        return data
+    >>> # doctest: +SKIP
+    ... """
+    ... >>> result = echo({'a', 'b'})
+    ... >>> 'a' in result
+    ... True
+    ... >>> 'b' in result
+    ... True
+    ... """
+    >>>
+    >>> def echo(data):
+    ...     return data
 
 
 Test Mapping
 ------------
-.. code-block:: python
-
-    """
-    >>> result = echo({'a': 1, 'b': 2})
-    >>> result
-    {'a': 1, 'b': 2}
-    >>> 'a' in result.keys()
-    True
-    >>> 1 in result.values()
-    True
-    >>> ('a', 1) in result.items()
-    True
-    >>> result['a']
-    1
-    """
-
-    def echo(data):
-        return data
+    >>> # doctest: +SKIP
+    ... """
+    ... >>> result = echo({'a': 1, 'b': 2})
+    ... >>> result
+    ... {'a': 1, 'b': 2}
+    ... >>> 'a' in result.keys()
+    ... True
+    ... >>> 1 in result.values()
+    ... True
+    ... >>> ('a', 1) in result.items()
+    ... True
+    ... >>> result['a']
+    ... 1
+    ... """
+    >>>
+    >>> def echo(data):
+    ...     return data
 
 
 Test Nested
 -----------
-.. code-block:: python
-
-    """
-    >>> DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-    ...         (5.8, 2.7, 5.1, 1.9, 'virginica'),
-    ...         (5.1, 3.5, 1.4, 0.2, 'setosa'),
-    ...         (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-    ...         (6.3, 2.9, 5.6, 1.8, 'virginica'),
-    ...         (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-    ...         (4.7, 3.2, 1.3, 0.2, 'setosa')]
-
-    >>> echo(DATA)
-    [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'), (5.8, 2.7, 5.1, 1.9, 'virginica'), (5.1, 3.5, 1.4, 0.2, 'setosa'), (5.7, 2.8, 4.1, 1.3, 'versicolor'), (6.3, 2.9, 5.6, 1.8, 'virginica'), (6.4, 3.2, 4.5, 1.5, 'versicolor'), (4.7, 3.2, 1.3, 0.2, 'setosa')]
-
-    >>> echo(DATA)  # doctest: +NORMALIZE_WHITESPACE
-    [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-     (5.8, 2.7, 5.1, 1.9, 'virginica'),
-     (5.1, 3.5, 1.4, 0.2, 'setosa'),
-     (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-     (6.3, 2.9, 5.6, 1.8, 'virginica'),
-     (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-     (4.7, 3.2, 1.3, 0.2, 'setosa')]
-    """
-
-    def echo(data):
-        return data
+    >>> # doctest: +SKIP
+    ... """
+    ... >>> DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+    ... ...         (5.8, 2.7, 5.1, 1.9, 'virginica'),
+    ... ...         (5.1, 3.5, 1.4, 0.2, 'setosa'),
+    ... ...         (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+    ... ...         (6.3, 2.9, 5.6, 1.8, 'virginica'),
+    ... ...         (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+    ... ...         (4.7, 3.2, 1.3, 0.2, 'setosa')]
+    ...
+    ... >>> echo(DATA)
+    ... [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'), (5.8, 2.7, 5.1, 1.9, 'virginica'), (5.1, 3.5, 1.4, 0.2, 'setosa'), (5.7, 2.8, 4.1, 1.3, 'versicolor'), (6.3, 2.9, 5.6, 1.8, 'virginica'), (6.4, 3.2, 4.5, 1.5, 'versicolor'), (4.7, 3.2, 1.3, 0.2, 'setosa')]
+    ...
+    ... >>> echo(DATA)  # doctest: +NORMALIZE_WHITESPACE
+    ... [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+    ...  (5.8, 2.7, 5.1, 1.9, 'virginica'),
+    ...  (5.1, 3.5, 1.4, 0.2, 'setosa'),
+    ...  (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+    ...  (6.3, 2.9, 5.6, 1.8, 'virginica'),
+    ...  (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+    ...  (4.7, 3.2, 1.3, 0.2, 'setosa')]
+    ... """
+    >>>
+    >>> def echo(data):
+    ...     return data
 
 
 Test Exceptions
 ---------------
-.. code-block:: python
+    >>> # doctest: +SKIP
+    ... """
+    ... >>> echo()
+    ... Traceback (most recent call last):
+    ... NotImplementedError
+    ... """
+    >>>
+    >>> def echo():
+    ...     raise NotImplementedError
 
-    """
-    >>> echo()
-    Traceback (most recent call last):
-    NotImplementedError
-    """
-
-    def echo():
-        raise NotImplementedError
-
-.. code-block:: python
-
-    """
-    >>> echo()
-    Traceback (most recent call last):
-    NotImplementedError: This will work in future
-    """
-
-    def echo():
-        raise NotImplementedError('This will work in future')
+    >>> # doctest: +SKIP
+    ... """
+    ... >>> echo()
+    ... Traceback (most recent call last):
+    ... NotImplementedError: This will work in future
+    ... """
+    >>>
+    >>> def echo():
+    ...     raise NotImplementedError('This will work in future')
 
 
 Test Type
 ---------
-.. code-block:: python
+    >>> # doctest: +SKIP
+    ... """
+    ... >>> result = echo(1)
+    ... >>> type(result)
+    ... <class 'int'>
+    ...
+    ... >>> result = echo(1.1)
+    ... >>> type(result)
+    ... <class 'float'>
+    ...
+    ... >>> result = echo(True)
+    ... >>> type(result)
+    ... <class 'bool'>
+    ...
+    ... >>> result = echo([1, 2])
+    ... >>> type(result)
+    ... <class 'list'>
+    ...
+    ... >>> result = echo([1, 2])
+    ... >>> any(type(x) is int
+    ... ...     for x in result)
+    ... True
+    ... """
+    >>>
+    >>> def echo(data):
+    ...     return data
 
-    """
-    >>> result = echo(1)
-    >>> type(result)
-    <class 'int'>
 
-    >>> result = echo(1.1)
-    >>> type(result)
-    <class 'float'>
+The following doctest will fail:
 
-    >>> result = echo(True)
-    >>> type(result)
-    <class 'bool'>
+    >>> # doctest: +SKIP
+    ... """
+    ... >>> add_numbers('one', 'two')
+    ... Traceback (most recent call last):
+    ... TypeError: not a number
+    ...
+    ... >>> add_numbers(True, 1)
+    ... Traceback (most recent call last):
+    ... ValueError: not a number
+    ... """
+    >>>
+    >>> def add_numbers(a, b):
+    ...     if not isinstance(a, (int, float)):
+    ...         raise ValueError('c')
+    ...     if not isinstance(b, (int, float)):
+    ...         raise ValueError('not a number')
+    ...     return a + b
 
-    >>> result = echo([1, 2])
-    >>> type(result)
-    <class 'list'>
-
-    >>> result = echo([1, 2])
-    >>> any(type(x) is int
-    ...     for x in result)
-    True
-    """
-
-    def echo(data):
-        return data
-
-
-The following doctest will fail. Expected exception, got 2.0:
+Expected exception, got 2.0:
 
     Expected:
         Traceback (most recent call last):
@@ -419,70 +418,47 @@ The following doctest will fail. Expected exception, got 2.0:
     Got:
         2.0
 
-.. code-block:: python
-
-    """
-    >>> add_numbers('one', 'two')
-    Traceback (most recent call last):
-    TypeError: not a number
-
-    >>> add_numbers(True, 1)
-    Traceback (most recent call last):
-    ValueError: not a number
-    """
-    def add_numbers(a, b):
-        if not isinstance(a, (int, float)):
-            raise ValueError('c')
-        if not isinstance(b, (int, float)):
-            raise ValueError('not a number')
-        return a + b
-
 This test will pass:
 
-.. code-block:: python
-
-    """
-    >>> add_numbers('one', 'two')
-    Traceback (most recent call last):
-    TypeError: not a number
-
-    >>> add_numbers(True, 1)
-    Traceback (most recent call last):
-    ValueError: not a number
-    """
-
-    def add_numbers(a, b):
-        if type(a) not in (int, float):
-            raise ValueError('not a number')
-        if type(b) not in (int, float):
-            raise ValueError('not a number')
-        return a + b
+    >>> # doctest: +SKIP
+    ... """
+    ... >>> add_numbers('one', 'two')
+    ... Traceback (most recent call last):
+    ... TypeError: not a number
+    ...
+    ... >>> add_numbers(True, 1)
+    ... Traceback (most recent call last):
+    ... ValueError: not a number
+    ... """
+    >>>
+    >>> def add_numbers(a, b):
+    ...     if type(a) not in (int, float):
+    ...         raise ValueError('not a number')
+    ...     if type(b) not in (int, float):
+    ...         raise ValueError('not a number')
+    ...     return a + b
 
 
 Test Python Expressions
 -----------------------
 Using python statements in ``doctest``:
 
-.. code-block:: python
+    >>> def echo(text):
+    ...     """
+    ...     >>> name = 'Mark Watney'
+    ...     >>> print(name)
+    ...     Mark Watney
+    ...     """
+    ...     return text
 
-    def echo(text):
-        """
-        >>> name = 'Mark Watney'
-        >>> print(name)
-        Mark Watney
-        """
-        return text
-
-.. code-block:: python
-
-    def when(date):
-        """
-        >>> from datetime import datetime, timezone
-        >>> moon = datetime(1969, 7, 21, 17, 54, tzinfo=timezone.utc)
-        >>> when(moon)
-        1969-07-21 17:54 UTC
-        """
-        print(f'{date:%Y-%m-%d %H:%M %Z}')
+    >>> def when(date):
+    ...     """
+    ...     >>> from datetime import datetime, timezone
+    ...     >>> moon = datetime(1969, 7, 21, 17, 54, tzinfo=timezone.utc)
+    ...     >>> when(moon)
+    ...     1969-07-21 17:54 UTC
+    ...     """
+    ...     print(f'{date:%Y-%m-%d %H:%M %Z}')
 
 Flags
 -----
@@ -505,146 +481,136 @@ Case Studies
 ------------
 Docstring used for doctest:
 
-.. code-block:: python
-
-    def apollo_dsky(noun, verb):
-        """
-        This is the Apollo Display Keyboard
-        It takes noun and verb
-
-        >>> apollo_dsky(6, 61)
-        Program selected. Noun: 06, verb: 61
-
-        >>> apollo_dsky(16, 68)
-        Program selected. Noun: 16, verb: 68
-        """
-        print(f'Program selected. Noun: {noun:02}, verb: {verb:02}')
+    >>> def apollo_dsky(noun, verb):
+    ...     """
+    ...     This is the Apollo Display Keyboard
+    ...     It takes noun and verb
+    ...
+    ...     >>> apollo_dsky(6, 61)
+    ...     Program selected. Noun: 06, verb: 61
+    ...
+    ...     >>> apollo_dsky(16, 68)
+    ...     Program selected. Noun: 16, verb: 68
+    ...     """
+    ...     print(f'Program selected. Noun: {noun:02}, verb: {verb:02}')
 
 Celsius to Kelvin conversion:
 
-.. code-block:: python
+    >>> def celsius_to_kelvin(data):
+    ...     """
+    ...     >>> celsius_to_kelvin([1,2,3])
+    ...     [274.15, 275.15, 276.15]
+    ...
+    ...     >>> celsius_to_kelvin((1,2,3))
+    ...     [274.15, 275.15, 276.15]
+    ...     """
+    ...     return [x+273.15 for x in data]
 
-    def celsius_to_kelvin(data):
-        """
-        >>> celsius_to_kelvin([1,2,3])
-        [274.15, 275.15, 276.15]
-
-        >>> celsius_to_kelvin((1,2,3))
-        [274.15, 275.15, 276.15]
-        """
-        return [x+273.15 for x in data]
-
-.. code-block:: python
-
-    def celsius_to_kelvin(data):
-        """
-        >>> celsius_to_kelvin([1,2,3])
-        [274.15, 275.15, 276.15]
-
-        >>> celsius_to_kelvin((1,2,3))
-        (274.15, 275.15, 276.15)
-        """
-        cls = type(data)
-        return cls(x+273.15 for x in data)
+    >>> def celsius_to_kelvin(data):
+    ...     """
+    ...     >>> celsius_to_kelvin([1,2,3])
+    ...     [274.15, 275.15, 276.15]
+    ...
+    ...     >>> celsius_to_kelvin((1,2,3))
+    ...     (274.15, 275.15, 276.15)
+    ...     """
+    ...     cls = type(data)
+    ...     return cls(x+273.15 for x in data)
 
 
 Adding two numbers:
 
-.. code-block:: python
-
-    def add_numbers(a, b):
-        """
-        >>> add_numbers(1, 2)
-        3.0
-        >>> add_numbers(-1, 1)
-        0.0
-        >>> add_numbers(0.1, 0.2)  # doctest: +ELLIPSIS
-        0.3000...
-        >>> add_numbers(1.5, 2.5)
-        4.0
-        >>> add_numbers(1, 1.5)
-        2.5
-        >>> add_numbers([1, 2], 3)
-        Traceback (most recent call last):
-        ValueError: not a number
-
-        >>> add_numbers(0, [1, 2])
-        Traceback (most recent call last):
-        ValueError: not a number
-
-        >>> add_numbers('one', 'two')
-        Traceback (most recent call last):
-        ValueError: not a number
-
-        >>> add_numbers(True, 1)
-        Traceback (most recent call last):
-        ValueError: not a number
-        """
-        if type(a) not in (int, float):
-            raise ValueError('not a number')
-
-        if type(b) not in (int, float):
-            raise ValueError('not a number')
-
-        return float(a + b)
+    >>> def add_numbers(a, b):
+    ...     """
+    ...     >>> add_numbers(1, 2)
+    ...     3.0
+    ...     >>> add_numbers(-1, 1)
+    ...     0.0
+    ...     >>> add_numbers(0.1, 0.2)  # doctest: +ELLIPSIS
+    ...     0.3000...
+    ...     >>> add_numbers(1.5, 2.5)
+    ...     4.0
+    ...     >>> add_numbers(1, 1.5)
+    ...     2.5
+    ...     >>> add_numbers([1, 2], 3)
+    ...     Traceback (most recent call last):
+    ...     ValueError: not a number
+    ...
+    ...     >>> add_numbers(0, [1, 2])
+    ...     Traceback (most recent call last):
+    ...     ValueError: not a number
+    ...
+    ...     >>> add_numbers('one', 'two')
+    ...     Traceback (most recent call last):
+    ...     ValueError: not a number
+    ...
+    ...     >>> add_numbers(True, 1)
+    ...     Traceback (most recent call last):
+    ...     ValueError: not a number
+    ...     """
+    ...     if type(a) not in (int, float):
+    ...         raise ValueError('not a number')
+    ...
+    ...     if type(b) not in (int, float):
+    ...         raise ValueError('not a number')
+    ...
+    ...     return float(a + b)
 
 Celsius to Kelvin temperature conversion:
 
-.. code-block:: python
-
-    def celsius_to_kelvin(celsius):
-        """
-        >>> celsius_to_kelvin(0)
-        273.15
-
-        >>> celsius_to_kelvin(1)
-        274.15
-
-        >>> celsius_to_kelvin(-1)
-        272.15
-
-        >>> celsius_to_kelvin(-273.15)
-        0.0
-
-        >>> celsius_to_kelvin(-273.16)
-        Traceback (most recent call last):
-        ValueError: Negative Kelvin
-
-        >>> celsius_to_kelvin(-300)
-        Traceback (most recent call last):
-        ValueError: Negative Kelvin
-
-        >>> celsius_to_kelvin(True)
-        Traceback (most recent call last):
-        TypeError: Argument must be: int, float or Sequence[int, float]
-
-        >>> celsius_to_kelvin([0, 1, 2, 3])
-        [273.15, 274.15, 275.15, 276.15]
-
-        >>> celsius_to_kelvin({0, 1, 2, 3})
-        {273.15, 274.15, 275.15, 276.15}
-
-        >>> celsius_to_kelvin([0, 1, 2, -300])
-        Traceback (most recent call last):
-        ValueError: Negative Kelvin
-
-        >>> celsius_to_kelvin([0, 1, [2, 3], 3])
-        [273.15, 274.15, [275.15, 276.15], 276.15]
-        """
-        datatype = type(celsius)
-
-        if type(celsius) in {list, tuple, set, frozenset}:
-            return datatype(celsius_to_kelvin(x) for x in celsius)
-
-        if datatype not in {int, float}:
-            raise TypeError('Argument must be: int, float or Sequence[int, float]')
-
-        kelvin = celsius + 273.15
-
-        if kelvin < 0.0:
-            raise ValueError('Negative Kelvin')
-
-        return float(kelvin)
+    >>> def celsius_to_kelvin(celsius):
+    ...     """
+    ...     >>> celsius_to_kelvin(0)
+    ...     273.15
+    ...
+    ...     >>> celsius_to_kelvin(1)
+    ...     274.15
+    ...
+    ...     >>> celsius_to_kelvin(-1)
+    ...     272.15
+    ...
+    ...     >>> celsius_to_kelvin(-273.15)
+    ...     0.0
+    ...
+    ...     >>> celsius_to_kelvin(-273.16)
+    ...     Traceback (most recent call last):
+    ...     ValueError: Negative Kelvin
+    ...
+    ...     >>> celsius_to_kelvin(-300)
+    ...     Traceback (most recent call last):
+    ...     ValueError: Negative Kelvin
+    ...
+    ...     >>> celsius_to_kelvin(True)
+    ...     Traceback (most recent call last):
+    ...     TypeError: Argument must be: int, float or Sequence[int, float]
+    ...
+    ...     >>> celsius_to_kelvin([0, 1, 2, 3])
+    ...     [273.15, 274.15, 275.15, 276.15]
+    ...
+    ...     >>> celsius_to_kelvin({0, 1, 2, 3})
+    ...     {273.15, 274.15, 275.15, 276.15}
+    ...
+    ...     >>> celsius_to_kelvin([0, 1, 2, -300])
+    ...     Traceback (most recent call last):
+    ...     ValueError: Negative Kelvin
+    ...
+    ...     >>> celsius_to_kelvin([0, 1, [2, 3], 3])
+    ...     [273.15, 274.15, [275.15, 276.15], 276.15]
+    ...     """
+    ...     datatype = type(celsius)
+    ...
+    ...     if type(celsius) in {list, tuple, set, frozenset}:
+    ...         return datatype(celsius_to_kelvin(x) for x in celsius)
+    ...
+    ...     if datatype not in {int, float}:
+    ...         raise TypeError('Argument must be: int, float or Sequence[int, float]')
+    ...
+    ...     kelvin = celsius + 273.15
+    ...
+    ...     if kelvin < 0.0:
+    ...         raise ValueError('Negative Kelvin')
+    ...
+    ...     return float(kelvin)
 
 
 Assignments

@@ -69,6 +69,8 @@ $(document).ready(function() {
         button.parent().find('.go').each((i, line) => {
             if (line.innerText === '>>>')
                 line.style.visibility = 'hidden';
+            else if (line.innerText === '<BLANKLINE>')
+                line.innerHTML = '';
         })
     });
 
