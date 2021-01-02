@@ -1,12 +1,9 @@
-.. _Loop Nested Sequences:
-
-*********************
 Loop Nested Sequences
-*********************
+=====================
 
 
 Convention
-==========
+----------
 * ``row`` - best for nested loops with sequence inside
 * Conventions for rows and columns:
 
@@ -23,7 +20,7 @@ Convention
 
 
 List of Pairs
-=============
+-------------
 .. code-block:: python
 
     DATA = [('commander', 'Melissa Lewis'),
@@ -41,7 +38,7 @@ List of Pairs
 
 
 List of Sequence
-================
+----------------
 .. code-block:: python
 
     DATA = [(5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -78,7 +75,7 @@ List of Sequence
 
 
 Matrix
-======
+------
 * Suggested variable name: ``row``
 
 .. code-block:: python
@@ -115,7 +112,7 @@ Matrix
 
 
 Mixed
-=====
+-----
 Iterating over ``list`` with scalar and vector values - simple loop:
 
 .. code-block:: python
@@ -177,8 +174,7 @@ Iterating over ``list`` with scalar and vector values - smart loop:
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/loop_nested_mean.py
     :caption: :download:`Solution <assignments/loop_nested_mean.py>`
     :end-before: # Solution

@@ -1,12 +1,9 @@
-.. _OOP Methods:
-
-*******
-Methods
-*******
+OOP Methods
+===========
 
 
 Rationale
-=========
+---------
 * Methods are functions in the class
 * First argument is always instance (``self``)
 * While calling function you never pass ``self``
@@ -33,7 +30,7 @@ Syntax:
 
 
 Methods Without Arguments
-=========================
+-------------------------
 Methods without arguments:
 
 .. code-block:: python
@@ -49,7 +46,7 @@ Methods without arguments:
 
 
 Methods With Required Argument
-==============================
+------------------------------
 Methods with required argument:
 
 .. code-block:: python
@@ -73,7 +70,7 @@ Methods with required argument:
 
 
 Methods With Optional Argument
-==============================
+------------------------------
 Methods with arguments with default value:
 
 .. code-block:: python
@@ -96,8 +93,7 @@ Methods with arguments with default value:
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/oop_method_syntax.py
     :caption: :download:`Solution <assignments/oop_method_syntax.py>`
     :end-before: # Solution

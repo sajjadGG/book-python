@@ -1,12 +1,11 @@
 .. _OOP Init Method:
 
-***********
-Init Method
-***********
+OOP Init Method
+===============
 
 
 Rationale
-=========
+---------
 * It's a first method run after object is initiated
 * All classes has default ``__init__()``
 
@@ -19,7 +18,7 @@ Rationale
         Method called at object instantiation used to fill empty object with values. Initializer is called upon object initialization and hence can modify object and use its methods. Initializer should return ``None``.
 
 Syntax
-======
+------
 .. code-block:: python
 
     class Astronaut:
@@ -38,7 +37,7 @@ Syntax
 
 
 Initializer Method Without Arguments
-====================================
+------------------------------------
 Initializer method without arguments:
 
 .. code-block:: python
@@ -53,7 +52,7 @@ Initializer method without arguments:
 
 
 Initializer Method With Arguments
-=================================
+---------------------------------
 Initializer method with arguments:
 
 .. code-block:: python
@@ -84,7 +83,7 @@ Initializer method with arguments:
 
 
 Constant Attributes
-===================
+-------------------
 Init time attributes:
 
 .. code-block:: python
@@ -101,6 +100,7 @@ Init time attributes:
     print(mark.lastname)
     # Watney
     print(mark.missions)
+    # Traceback (most recent call last):
     # AttributeError: 'Astronaut' object has no attribute 'mission'
 
     ivan = Astronaut()
@@ -109,11 +109,12 @@ Init time attributes:
     print(ivan.lastname)
     # Watney
     print(ivan.missions)
+    # Traceback (most recent call last):
     # AttributeError: 'Astronaut' object has no attribute 'mission'
 
 
 Variable Attributes
-===================
+-------------------
 .. code-block:: python
 
     class Astronaut:
@@ -170,8 +171,10 @@ Init time attributes:
     print(mark.name)
     # Mark Watney
     print(mark.firstname)
+    # Traceback (most recent call last):
     # AttributeError: 'Astronaut' object has no attribute 'firstname'
     print(mark.lastname)
+    # Traceback (most recent call last):
     # AttributeError: 'Astronaut' object has no attribute 'lastname'
 
 Init time attributes:
@@ -280,7 +283,7 @@ Since Python 3.7: there is a ``@dataclass`` decorator, which automatically gener
 
 
 Checking Values
-===============
+---------------
 .. code-block:: python
 
     class Kelvin:
@@ -302,8 +305,7 @@ Checking Values
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/oop_init_print.py
     :caption: :download:`Solution <assignments/oop_init_print.py>`
     :end-before: # Solution

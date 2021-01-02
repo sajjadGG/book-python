@@ -275,7 +275,7 @@ Downsides of train/test split
 #. :math:`K` - fold **cross-validation** overcomes the limitation
 #. Train/test split is still used because of its flexibility and speed
 
-.. note:: Source: https://www.dataschool.io
+Source: https://www.dataschool.io
 
 Regularyzacja
 =============

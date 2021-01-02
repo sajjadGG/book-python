@@ -1,12 +1,9 @@
-.. _Function Generators:
-
-*******************
 Function Generators
-*******************
+===================
 
 
 Range
-=====
+-----
 * It is not a generator
 * optional ``start``, inclusive, default: ``0``
 * required ``stop``, exclusive,
@@ -39,7 +36,7 @@ Range
 
 
 Enumerate
-=========
+---------
 * ``enumerate(*iterables)``
 
 .. code-block:: python
@@ -105,7 +102,7 @@ Enumerate
 
 
 Zip
-===
+---
 * ``zip(*iterables)``
 
 .. code-block:: python
@@ -200,7 +197,7 @@ Zip
 
 
 Map
-===
+---
 * ``map(callable, *iterables)``
 
 .. code-block:: python
@@ -270,7 +267,7 @@ Map
 
 
 Filter
-======
+------
 * ``filter(callable, *iterables)``
 
 .. code-block:: python
@@ -309,7 +306,7 @@ Filter
 
 
 Functools
-=========
+---------
 * https://docs.python.org/3/library/functools.html
 
 .. code-block:: python
@@ -342,7 +339,7 @@ Functools
 
 
 Itertools
-=========
+---------
 * More information https://docs.python.org/3/library/itertools.html
 * More information :ref:`Itertools`
 
@@ -366,7 +363,7 @@ Itertools
 
 
 Use Cases
-=========
+---------
 .. code-block:: python
 
     data = [1, 2, 3, 4]
@@ -459,8 +456,7 @@ Use Cases
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/function_generators_chain.py
     :caption: :download:`Solution <assignments/function_generators_chain.py>`
     :end-before: # Solution

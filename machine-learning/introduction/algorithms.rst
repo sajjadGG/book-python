@@ -254,5 +254,4 @@ I also did not cover algorithms from specialty subfields of machine learning, su
 * Graphical Models
 * And more...
 
-
-.. note:: Source: http://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/
+Source: http://machinelearningmastery.com/a-tour-of-machine-learning-algorithms/

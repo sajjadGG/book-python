@@ -1,12 +1,11 @@
 .. _Function Doctest:
 
-****************
 Function Doctest
-****************
+================
 
 
 Rationale
-=========
+---------
 * Tests are always the most up-to-date code documentation
 * Tests cannot get out of sync from code
 * Checks if function output is exactly as expected
@@ -19,13 +18,12 @@ Rationale
 
 
 Syntax
-======
+------
 * Docstring is a first multiline comment in: File/Module, Class, Method/Function
 * Used for generating ``help()`` documentation
 * It is accessible in ``__doc__`` property of an object
 * Used for ``doctest``
 * :pep:`257` -- Docstring Conventions: For multiline ``str`` always use three double quote (``"""``) characters
-* More information in :ref:`Function Doctest`
 
 .. code-block:: python
 
@@ -56,7 +54,7 @@ Syntax
 
 
 Running Tests
-=============
+-------------
 Running tests in Pycharm IDE (either option):
 
     * Right click on source code with doctests -> Run 'Doctest for ...'
@@ -85,7 +83,7 @@ Add ``-v`` to display more verbose output.
 
 
 Test Int, Float
-===============
+---------------
 ``int`` values:
 
 .. code-block:: python
@@ -137,7 +135,7 @@ More information in :ref:`Math Precision`.
 
 
 Test Bool
-=========
+---------
 .. code-block:: python
 
     """
@@ -161,7 +159,7 @@ Test Bool
 
 
 Test Str
-========
+--------
 * Python will change to single quotes in most cases
 * Python will change to double quotes to avoid escapes
 * ``print()`` function output, don't have quotes
@@ -219,7 +217,7 @@ Testing ``print(str)`` with newlines:
 
 
 Test Ordered Sequence
-=====================
+---------------------
 .. code-block:: python
 
     """
@@ -262,7 +260,7 @@ Test Ordered Sequence
 
 
 Test Unordered Sequence
-=======================
+-----------------------
 Hash from numbers are constant:
 
 .. code-block:: python
@@ -306,7 +304,7 @@ Therefore you should test if element is in the result, rather than comparing out
 
 
 Test Mapping
-============
+------------
 .. code-block:: python
 
     """
@@ -328,7 +326,7 @@ Test Mapping
 
 
 Test Nested
-===========
+-----------
 .. code-block:: python
 
     """
@@ -358,7 +356,7 @@ Test Nested
 
 
 Test Exceptions
-===============
+---------------
 .. code-block:: python
 
     """
@@ -383,7 +381,7 @@ Test Exceptions
 
 
 Test Type
-=========
+---------
 .. code-block:: python
 
     """
@@ -462,7 +460,7 @@ This test will pass:
 
 
 Test Python Expressions
-=======================
+-----------------------
 Using python statements in ``doctest``:
 
 .. code-block:: python
@@ -487,7 +485,7 @@ Using python statements in ``doctest``:
         print(f'{date:%Y-%m-%d %H:%M %Z}')
 
 Flags
-=====
+-----
 * ``DONT_ACCEPT_TRUE_FOR_1``
 * ``DONT_ACCEPT_BLANKLINE``
 * ``NORMALIZE_WHITESPACE``
@@ -504,7 +502,7 @@ Flags
 
 
 Case Studies
-============
+------------
 Docstring used for doctest:
 
 .. code-block:: python
@@ -650,8 +648,7 @@ Celsius to Kelvin temperature conversion:
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/function_doctest_temperature.py
     :caption: :download:`Solution <assignments/function_doctest_temperature.py>`
     :end-before: # Solution

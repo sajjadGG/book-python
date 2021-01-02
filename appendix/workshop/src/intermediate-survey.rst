@@ -1,8 +1,8 @@
 #. Jakie masz doświadczenie z programowaniem:
 
-    * żadnego (wymagane szkolenie :ref:`Python Basics Agenda` przed zapisem)
-    * tworzyłem pomniejsze programy / skrypty (wymagane szkolenie :ref:`Python Basics Agenda` przed zapisem)
-    * mam na koncie kilka aplikacji, ale raczej nic dużego (wymagane szkolenie :ref:`Python Basics Agenda` przed zapisem)
+    * żadnego (wymagane szkolenie :ref:`Basics` przed zapisem)
+    * tworzyłem pomniejsze programy / skrypty (wymagane szkolenie :ref:`Basics` przed zapisem)
+    * mam na koncie kilka aplikacji, ale raczej nic dużego (wymagane szkolenie :ref:`Basics` przed zapisem)
     * w ciągu ostatnich dwóch lat byłem współautorem większego systemu (ponad 500k LOC)
     * programuję na co dzień
     * jestem zaawansowanym programistą i programuję systemy rozproszone

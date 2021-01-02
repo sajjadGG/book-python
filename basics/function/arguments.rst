@@ -1,12 +1,9 @@
-.. _Function Arguments:
-
-******************
 Function Arguments
-******************
+==================
 
 
 Rationale
-=========
+---------
 .. glossary::
 
     argument
@@ -20,7 +17,7 @@ Rationale
 
 
 Syntax
-======
+------
 Function definition with parameters:
 
 .. code-block:: python
@@ -35,7 +32,7 @@ Function definition with parameters:
 
 
 Positional Arguments
-====================
+--------------------
 * Order of positional arguments has significance
 
 .. code-block:: python
@@ -51,7 +48,7 @@ Positional Arguments
 
 
 Keyword Arguments
-=================
+-----------------
 * Order of keyword arguments has no significance
 
 .. code-block:: python
@@ -67,7 +64,7 @@ Keyword Arguments
 
 
 Positional and Keyword Arguments
-================================
+--------------------------------
 * Positional arguments must be at the left side
 * Keyword arguments must be at the right side
 
@@ -88,7 +85,7 @@ Positional and Keyword Arguments
 
 
 Examples
-========
+--------
 Example 1:
 
 .. code-block:: python
@@ -143,8 +140,7 @@ Example 3:
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/function_args_sequence.py
     :caption: :download:`Solution <assignments/function_args_sequence.py>`
     :end-before: # Solution

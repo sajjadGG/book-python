@@ -21,5 +21,5 @@ Po wydaniu wersji 1.6 i opuszczeniu CNRI przez Guido, który zajął się progra
 
 Po wydaniu Pythona 2.0 przez BeOpen.com Guido van Rossum i inni programiści z PythonLabs przeszli do Digital Creations. Cała własność intelektualna dodana od tego momentu, począwszy od Pythona 2.1 (wraz z wersjami alpha i beta), jest własnością Python Software Foundation (PSF), niedochodowej organizacji wzorowanej na Apache Software Foundation.
 
-.. note:: Fragment pochodzi z serwisu `Wikipedia <https://pl.wikipedia.org/wiki/Python>`_.
+Source: https://pl.wikipedia.org/wiki/Python
 

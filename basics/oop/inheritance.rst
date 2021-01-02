@@ -1,12 +1,9 @@
-.. _OOP Inheritance:
-
-***********
-Inheritance
-***********
+OOP Inheritance
+===============
 
 
 Rationale
-=========
+---------
 * Child inherits all fields and methods from parent
 * Used to avoid code duplication
 
@@ -27,7 +24,7 @@ Rationale
 
 
 Syntax
-======
+------
 .. code-block:: python
 
     class Parent:
@@ -44,7 +41,7 @@ Syntax
 
 
 Simple Inheritance
-==================
+------------------
 .. code-block:: python
 
     class Engineer:
@@ -64,7 +61,7 @@ Simple Inheritance
 
 
 Multilevel Inheritance
-======================
+----------------------
 .. code-block:: python
 
     class Engineer:
@@ -89,7 +86,7 @@ Multilevel Inheritance
 
 
 Multiple Inheritance
-====================
+--------------------
 .. code-block:: python
 
     class Engineer:
@@ -114,7 +111,7 @@ Multiple Inheritance
 
 
 Overload
-========
+--------
 .. code-block:: python
 
     class A:
@@ -146,7 +143,7 @@ Overload
 
 
 Super Function
-==============
+--------------
 .. code-block:: python
 
     class A:
@@ -226,7 +223,7 @@ Super Function
 
 
 Inheritance vs Composition
-==========================
+--------------------------
 .. code-block:: python
 
     class Car:
@@ -326,7 +323,7 @@ Composition:
 
 
 Use Cases
-=========
+---------
 .. code-block:: python
 
     class Iris:
@@ -355,14 +352,11 @@ Use Cases
         sepal_width=3.5,
         petal_length=1.4,
         petal_width=0.2,
-        species='setosa'
-    )
-
+        species='setosa')
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/oop_inheritance_simple.py
     :caption: :download:`Solution <assignments/oop_inheritance_simple.py>`
     :end-before: # Solution

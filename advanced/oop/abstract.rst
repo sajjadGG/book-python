@@ -7,9 +7,7 @@ Abstract Class
 
 Rationale
 =========
-.. versionadded:: 3.0
-    :pep:`3119` -- Introducing Abstract Base Classes
-
+* Since Python 3.0: :pep:`3119` -- Introducing Abstract Base Classes
 * Cannot instantiate
 * Possible to indicate which method must be implemented by child
 * Inheriting class must implement all methods
@@ -139,7 +137,7 @@ Abstract Property
 
 Errors
 ======
-In order to use Abstract Base Class you must create abstract method. Otherwise it won't prevent from instantiating.:
+In order to use Abstract Base Class you must create abstract method. Otherwise it won't prevent from instantiating:
 
 .. code-block:: python
 
@@ -154,7 +152,7 @@ In order to use Abstract Base Class you must create abstract method. Otherwise i
     print('no errors')
     # no errors
 
-In order to use Abstract Base Class you must create abstract method. Otherwise it won't prevent from instantiating.:
+In order to use Abstract Base Class you must create abstract method. Otherwise it won't prevent from instantiating:
 
 .. code-block:: python
 
@@ -190,7 +188,7 @@ Must implement all abstract methods:
     # Traceback (most recent call last):
     # TypeError: Can't instantiate abstract class Astronaut with abstract method say_hello
 
-``abc`` is common name and it is very easy to create file, variable lub module with the same name as the library, hence overwrite it. In case of error. Check all entries in ``sys.path`` or ``sys.modules['abc']`` to find what is overwriting it.:
+``abc`` is common name and it is very easy to create file, variable lub module with the same name as the library, hence overwrite it. In case of error. Check all entries in ``sys.path`` or ``sys.modules['abc']`` to find what is overwriting it:
 
 .. code-block:: python
 

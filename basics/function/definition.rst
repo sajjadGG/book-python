@@ -1,12 +1,9 @@
-.. _Function Basics:
-
-*******************
 Function Definition
-*******************
+===================
 
 
 Rationale
-=========
+---------
 * Reuse code
 * Improves code readability
 * Clean-up code
@@ -14,7 +11,7 @@ Rationale
 
 
 Syntax
-======
+------
 .. code-block:: python
 
     def <name>():
@@ -22,7 +19,7 @@ Syntax
 
 
 Definition
-==========
+----------
 .. code-block:: python
 
     def say_hello():
@@ -40,7 +37,7 @@ Definition
 
 
 Convention
-==========
+----------
 * Do not use ``camelCase`` names
 * ``CamelCase`` is reserved for class names
 * Use ``snake_case`` names # Python - snake ;)
@@ -72,7 +69,7 @@ Use better names, rather than comments:
     def calculate_variance(data, m):
         return sum((Xi-m) ** 2 for Xi in data) / len(data)
 
-Add underscore (``_``) at the end of name when name collide. Although prefer naming it differently.:
+Add underscore (``_``) at the end of name when name collide. Although prefer naming it differently:
 
 .. code-block:: python
 
@@ -94,7 +91,7 @@ System functions names starts and ends with 'dunder' - double underscore: ``__``
 
 
 Docstring
-=========
+---------
 * Docstring is a first multiline comment in: File/Module, Class, Method/Function
 * Used for generating ``help()`` documentation
 * It is accessible in ``__doc__`` property of an object
@@ -145,8 +142,7 @@ Docstring used for documentation:
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/function_definition_print.py
     :caption: :download:`Solution <assignments/function_definition_print.py>`
     :end-before: # Solution

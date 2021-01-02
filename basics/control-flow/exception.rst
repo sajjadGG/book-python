@@ -528,6 +528,7 @@ Django Framework Use-case of Custom Exceptions:
     ...     print('Dragon is dead')
     Dragon is dead
 
+
 Exit Status Code
 ----------------
 * exit status ``0`` - no error

@@ -137,7 +137,7 @@ Injecting methods
 
 Proxy methods
 =============
-One of the most common use of ``*args``, ``**kwargs`` is for proxy methods.:
+One of the most common use of ``*args``, ``**kwargs`` is for proxy methods:
 
 .. code-block:: python
 

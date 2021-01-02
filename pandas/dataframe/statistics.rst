@@ -246,7 +246,7 @@ Kurtosis (4th moment):
 
     Kurtosis
 
-Sample quantile (value at %). Quantile also known as Percentile.:
+Sample quantile (value at %). Quantile also known as Percentile:
 
 .. code-block:: python
 

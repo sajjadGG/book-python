@@ -49,8 +49,7 @@ Any
 
 Literal
 =======
-.. versionadded:: Python 3.8
-    :pep:`586` -- Literal Types
+* Since Python 3.8: :pep:`586` -- Literal Types
 
 .. code-block:: python
 

@@ -26,7 +26,7 @@ Installation
 
 SQL Syntax
 ==========
-.. note:: For SQL Syntax refer to :ref:`Database SQL`
+* For SQL Syntax refer to :ref:`Database SQL`
 
 Data Types
 ----------

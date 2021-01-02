@@ -20,7 +20,7 @@ Requirements
     * Vim
     * any other
 
-.. note:: Trainer will use PyCharm. If you choose any other IDE, make sure you know how to use refactoring options.
+Trainer will use PyCharm. If you choose any other IDE, make sure you know how to use refactoring options.
 
 
 Assignments

@@ -1,12 +1,9 @@
-.. _Files Path:
-
-*********
 File Path
-*********
+=========
 
 
 Rationale
-=========
+---------
 * Python works with both relative and absolute path
 * Path separator ``\`` (backslash) is used on Windows
 * Path separator ``/`` (slash) is used on ``*nix`` operating systems: Linux, macOS, BSD and other POSIX compliant OSes (excluding Windows)
@@ -31,7 +28,7 @@ Rationale
 
 
 Good Engineering Practices
-==========================
+--------------------------
 * Never hardcode paths, use constant as a file name or file path
 * Convention (singular form): ``FILE``, ``FILENAME``, ``FILEPATH``, ``PATH``
 * Convention (plural form): ``FILES``, ``FILENAMES``, ``FILEPATHS``, ``PATHS``
@@ -49,7 +46,7 @@ Good Engineering Practices
 
 
 Raw Strings
-===========
+-----------
 * Always use raw-strings (``r"..."``) for paths
 * Escapes does not matters
 
@@ -80,7 +77,7 @@ Raw Strings
 
 
 Absolute Path
-=============
+-------------
 * Absolute path on Windows starts with drive letter
 * Absolute path on ``*nix`` starts with root ``/`` dir
 * Absolute path include all entries in the directories hierarchy
@@ -95,7 +92,7 @@ Absolute Path
 
 
 Relative Path
-=============
+-------------
 * Path is relative to currently running script
 * ``.`` - Current directory
 * ``..`` - Parent directory
@@ -116,7 +113,7 @@ Relative Path
 
 
 Escaping Characters in Path
-===========================
+---------------------------
 * "\\ " (backslash space) - escapes space
 * Note that in Python escapes in paths are not required
 
@@ -152,7 +149,7 @@ Escaping Characters in Path
 
 
 Exception Handling
-==================
+------------------
 .. code-block:: python
 
     try:
@@ -164,7 +161,7 @@ Exception Handling
 
 
 Create Directories
-==================
+------------------
 .. code-block:: python
 
     from os import mkdir
@@ -197,7 +194,7 @@ Create Directories
 
 
 Exists and is Directory or File
-===============================
+-------------------------------
 .. code-block:: python
 
     from pathlib import Path
@@ -216,7 +213,7 @@ Exists and is Directory or File
 
 
 Current Working Directory
-=========================
+-------------------------
 * Returns an absolute path to current working directory
 
 .. code-block:: python
@@ -228,7 +225,7 @@ Current Working Directory
 
 
 Convert Relative Path to Absolute
-=================================
+---------------------------------
 .. code-block:: python
 
     from pathlib import Path
@@ -239,7 +236,7 @@ Convert Relative Path to Absolute
 
 
 Script Path
-===========
+-----------
 * Returns an absolute path to currently running script
 
 .. code-block:: python
@@ -249,8 +246,7 @@ Script Path
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/file_path_exception.py
     :caption: :download:`Solution <assignments/file_path_exception.py>`
     :end-before: # Solution

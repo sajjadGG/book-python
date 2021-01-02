@@ -279,8 +279,7 @@ f-strings - Python >= 3.6
 
 Advanced String Formatting
 ==========================
-.. versionadded:: 3.0
-    :pep:`3101` -- Advanced String Formatting
+* Since Python 3.0: :pep:`3101` -- Advanced String Formatting
 
 Basic formatting
 ----------------
@@ -554,9 +553,7 @@ Custom object formatting
 
 Quick and easy debugging
 ------------------------
-.. versionadded:: Python 3.8
-    See https://bugs.python.org/issue36817
-
+* Since Python 3.8: See https://bugs.python.org/issue36817
 * ``f'{expr=}'`` expands to the text of the expression, an equal sign, then the repr of the evaluated expression
 
 .. code-block:: python

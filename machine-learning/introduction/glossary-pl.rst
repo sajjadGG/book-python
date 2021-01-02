@@ -103,4 +103,4 @@ Glossary PL
         Jej zmienność chcemy wyjaśnić wpływem innej zmiennej (zmiennej niezależnej). Np. w równaniu Y=aX+b, Y jest zmienną zależną.
 
 
-.. note:: Źródło: http://www.eko.uj.edu.pl/stat/slowniczek.pdf
+Source: http://www.eko.uj.edu.pl/stat/slowniczek.pdf

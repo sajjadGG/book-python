@@ -1,12 +1,9 @@
-.. _Files Append:
-
-***********
 File Append
-***********
+===========
 
 
 Rationale
-=========
+---------
 * Appends data at the end of file
 * Creates file if not exists
 * Works with both relative and absolute path
@@ -16,7 +13,7 @@ Rationale
 
 
 Appending to File
-=================
+-----------------
 * Append to the end of file
 
 .. code-block:: python

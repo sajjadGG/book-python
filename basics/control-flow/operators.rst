@@ -3,7 +3,7 @@ Conditional Operators
 
 
 Equals
-======
+------
 * ``==`` - ``eq`` (equals)
 
 Comparing ``str``:
@@ -46,7 +46,7 @@ Comparing ``set``:
 
 
 Not-Equals
-==========
+----------
 * ``!=`` - ``ne`` (not-equals)
 
 Comparing ``str``:
@@ -77,7 +77,7 @@ Comparing ``set``:
 
 
 Greater Than
-============
+------------
 * ``>`` - ``gt`` (greater than)
 * Set uses ``>`` for ``set.issuperset()``
 
@@ -114,7 +114,7 @@ Greater Than
 
 
 Examples
-========
+--------
 .. code-block:: python
 
     import sys
@@ -132,7 +132,7 @@ Examples
 
 
 Operator Precedence
-===================
+-------------------
 .. csv-table:: Operator precedence
     :header-rows: 1
     :widths: 25, 75
@@ -164,8 +164,7 @@ Operator Precedence
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/controlflow_operators_modulo.py
     :caption: :download:`Solution <assignments/controlflow_operators_modulo.py>`
     :end-before: # Solution

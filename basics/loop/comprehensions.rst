@@ -1,12 +1,9 @@
-.. _Loop Comprehension:
-
-******************
 Loop Comprehension
-******************
+==================
 
 
 Recap
-=====
+-----
 .. code-block:: python
 
     result = []
@@ -19,7 +16,7 @@ Recap
 
 
 Syntax
-======
+------
 .. code-block:: text
 
     result = [<RETURN> for <VARIABLE> in <ITERABLE>]
@@ -33,13 +30,13 @@ Syntax
 
 
 Convention
-==========
+----------
 * Use shorter variable names
 * ``x`` is common name
 
 
 Comprehensions and Generator Expression
-=======================================
+---------------------------------------
 * Comprehensions executes instantly
 * Generator expression executes lazily
 
@@ -77,8 +74,9 @@ Comprehensions and Generator Expression
     _ = {x for x in range(0,5)}         # set comprehension
     _ = {x:x for x in range(0,5)}       # dict comprehension
 
+
 Comprehensions or Generator Expression
-======================================
+--------------------------------------
 .. code-block:: python
 
     data = [x for x in range(0,10)]
@@ -139,7 +137,7 @@ Generator:
 
 
 List Comprehension
-==================
+------------------
 .. code-block:: python
 
     [x+1 for x in range(0,5)]
@@ -170,7 +168,7 @@ List Comprehension
 
 
 Set Comprehension
-=================
+-----------------
 ``set`` comprehension approach to applying function to elements:
 
 .. code-block:: python
@@ -183,7 +181,7 @@ Set Comprehension
 
 
 Dict Comprehension
-==================
+------------------
 ``dict`` comprehension approach to applying function to elements:
 
 .. code-block:: python
@@ -216,7 +214,7 @@ Dict Comprehension
 
 
 Tuple Comprehension?!
-=====================
+---------------------
 * Tuple Comprehension vs. Generator Expression
 * More information in :ref:`Generators`
 
@@ -236,7 +234,7 @@ Generator Expression:
 
 
 Filter
-======
+------
 .. code-block:: python
 
     result = []
@@ -276,7 +274,7 @@ Filter
 
 
 Map
-===
+---
 Applying function to each output element:
 
 .. code-block:: python
@@ -320,7 +318,7 @@ Using ``list`` comprehension for filtering:
 
 
 Indent and Whitespaces
-======================
+----------------------
 .. code-block:: python
 
     result = [pow(x,2) for x in range(0,5)]
@@ -375,7 +373,7 @@ Indent and Whitespaces
 
 
 Nested
-======
+------
 .. code-block:: python
 
     DATA = {
@@ -453,7 +451,7 @@ Nested
 
 
 Examples
-========
+--------
 Increment and decrement:
 
 .. code-block:: python
@@ -680,7 +678,7 @@ Value collision while reversing ``dict``:
 
 
 All and Any
-===========
+-----------
 .. code-block:: python
 
     all(x for x in range(0,5))         # False
@@ -738,8 +736,7 @@ All and Any
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/loop_comprehension_create.py
     :caption: :download:`Solution <assignments/loop_comprehension_create.py>`
     :end-before: # Solution

@@ -385,7 +385,7 @@ Here there are effectively :math:`N` basis functions: one centered at each point
 
 We'll leave SVMs for the time being and take a look at another classification algorithm: Random Forests.
 
-.. note:: Source: https://github.com/jakevdp/sklearn_pycon2015/blob/master/notebooks/03.1-Classification-SVMs.ipynb
+Source: https://github.com/jakevdp/sklearn_pycon2015/blob/master/notebooks/03.1-Classification-SVMs.ipynb
 
 
 Assignments

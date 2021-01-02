@@ -1,13 +1,9 @@
-.. _OOP Classes and Instances:
-
-*********************
-Classes and Instances
-*********************
-
+OOP Classes and Instances
+=========================
 
 
 Rationale
-=========
+---------
 * Object Oriented Paradigm
 * Model world as objects that interacts with each other
 
@@ -30,7 +26,7 @@ Rationale
 
 
 Classes
-=======
+-------
 * Capitalized ``CamelCase`` name convention
 * Classes are templates for objects
 
@@ -50,7 +46,7 @@ Multi-word class names should use ``CamelCase``:
 
 
 Instances
-=========
+---------
 * Instances are also known as Objects
 * Two newlines between class and code
 * ``snake_case`` names
@@ -109,7 +105,7 @@ Two classes and four instances (two instances of an ``Astronaut`` class, and two
 
 
 Class vs Instance
-=================
+-----------------
 .. figure:: img/oop-classes-class.jpg
 
     Class. Source: [class]_
@@ -120,7 +116,7 @@ Class vs Instance
 
 
 Convention
-==========
+----------
 * Never print in a class
 * One class per file - when classes are long
 * All classes in one file - when classes are short
@@ -159,7 +155,7 @@ Classes and Objects:
 
 
 Use Cases
-=========
+---------
 .. code-block:: python
 
     a = int()
@@ -175,8 +171,7 @@ Use Cases
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/oop_class_iris.py
     :caption: :download:`Solution <assignments/oop_class_iris.py>`
     :end-before: # Solution
@@ -187,7 +182,7 @@ Assignments
 
 
 References
-==========
+----------
 .. [class] http://makieta.pl/12344-thickbox_default/faller-130803-blok-z-wielkiej-plyty-skala-h0.jpg
 .. [instances] https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Os_Rusa_Poznań_RB1.jpg/1200px-Os_Rusa_Poznań_RB1.jpg
 

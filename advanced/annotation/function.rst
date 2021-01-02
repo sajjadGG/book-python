@@ -6,9 +6,7 @@ Function Type Annotation
 Rationale
 =========
 * Before Python 3.9 you need ``from typing import List, Set, Tuple, Dict``
-
-.. versionadded:: 3.9
-    :pep:`585` -- Type Hinting Generics In Standard Collections
+* Since Python 3.9: :pep:`585` -- Type Hinting Generics In Standard Collections
 
 
 Return
@@ -172,8 +170,7 @@ NoReturn
 
 Literal
 =======
-.. versionadded:: Python 3.8
-    :pep:`586` -- Literal Types
+* Since Python 3.8: :pep:`586` -- Literal Types
 
 .. code-block:: python
 
@@ -249,5 +246,4 @@ Good Engineering Practices
 More Information
 ================
 * Example: https://github.com/pandas-dev/pandas/blob/8fd2d0c1eea04d56ec0a63fae084a66dd482003e/pandas/core/frame.py#L505
-
-.. note:: More information in :ref:`Type Annotations` and :ref:`CI/CD Type Checking`
+* More information in :ref:`Type Annotations` and :ref:`CI/CD Type Checking`

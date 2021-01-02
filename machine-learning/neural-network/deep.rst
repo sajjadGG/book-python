@@ -161,7 +161,7 @@ Image Classification using ``TensorFlow for Poets``
     $ tar xzf flower_photos.tgz
     $ ls flower_photos
 
-.. warning:: Training on this much data can take 30+ minutes on a small computer. If you want to reduce data:
+Training on this much data can take 30+ minutes on a small computer. If you want to reduce data:
 
     .. code-block:: console
 

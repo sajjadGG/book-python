@@ -291,9 +291,8 @@ Most commonly used methods
 
 ``shell=True``
 --------------
-Setting the shell argument to a true value causes subprocess to spawn an intermediate shell process, and tell it to run the command. In other words, using an intermediate shell means that variables, glob patterns, and other special shell features in the command string are processed before the command is run. Here, in the example, ``$HOME`` was processed before the echo command. Actually, this is the case of command with shell expansion while the command ``ls -l`` considered as a simple command.
-
-.. note:: source: `Subprocess Module <https://stackoverflow.com/a/36299483/228517>`
+* Setting the shell argument to a true value causes subprocess to spawn an intermediate shell process, and tell it to run the command. In other words, using an intermediate shell means that variables, glob patterns, and other special shell features in the command string are processed before the command is run. Here, in the example, ``$HOME`` was processed before the echo command. Actually, this is the case of command with shell expansion while the command ``ls -l`` considered as a simple command.
+* Source: `Subprocess Module <https://stackoverflow.com/a/36299483/228517>`
 
 .. code-block:: python
 

@@ -1,12 +1,9 @@
-.. _Conditional Expressions:
-
-***********************
 Conditional Expressions
-***********************
+=======================
 
 
 Conjunction
-===========
+-----------
 Inside joke (see :ref:`José Jiménez`):
 
 .. code-block:: python
@@ -22,7 +19,7 @@ Inside joke (see :ref:`José Jiménez`):
 
 
 Disjunction
-===========
+-----------
 .. code-block:: python
 
     name = 'Watney'
@@ -35,7 +32,7 @@ Disjunction
 
 
 Boolean Algebra
-===============
+---------------
 * Use parenthesis for explicit order
 
 .. code-block:: python
@@ -76,7 +73,7 @@ Complex conditions:
 
 
 Contains
-========
+--------
 .. code-block:: python
 
     text = 'Monty Python'
@@ -109,7 +106,7 @@ Contains
 
 
 Identity
-========
+--------
 .. code-block:: python
 
     name = None
@@ -119,7 +116,7 @@ Identity
 
 
 Negation
-========
+--------
 * ``not`` negates (logically inverts) condition
 
 .. code-block:: python
@@ -146,8 +143,7 @@ Negation
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/controlflow_conditional_expression.py
     :caption: :download:`Solution <assignments/controlflow_conditional_expression.py>`
     :end-before: # Solution

@@ -1,18 +1,15 @@
-.. _Loop Dict:
-
-**************
 Loop over Dict
-**************
+==============
 
 
 Rationale
-=========
+---------
 * Since Python 3.7: ``dict`` keeps order
 * Before Python 3.7: ``dict`` order is not ensured!!
 
 
 Iterate
-=======
+-------
 * By default ``dict`` iterates over keys
 * Suggested variable name: ``key``
 
@@ -37,7 +34,7 @@ Iterate
 
 
 Iterate Keys
-============
+------------
 * Suggested variable name: ``key``
 
 .. code-block:: python
@@ -64,7 +61,7 @@ Iterate Keys
 
 
 Iterate Values
-==============
+--------------
 * Suggested variable name: ``value``
 
 .. code-block:: python
@@ -91,7 +88,7 @@ Iterate Values
 
 
 Iterate Key-Value Pairs
-=======================
+-----------------------
 * Suggested variable name: ``key``, ``value``
 
 Getting pair: ``key``, ``value`` from ``dict`` items:
@@ -124,7 +121,7 @@ Getting pair: ``key``, ``value`` from ``dict`` items:
 
 
 List of Dicts
-=============
+-------------
 Unpacking ``list`` of ``dict``:
 
 .. code-block:: python
@@ -144,7 +141,7 @@ Unpacking ``list`` of ``dict``:
 
 
 Generate with Range
-===================
+-------------------
 * ``range()``
 * Pythonic way is to use ``zip()``
 * Don't use ``len(range(...))`` - it evaluates generator
@@ -170,7 +167,7 @@ Create ``dict`` from two ``list``:
     #  'Species': 'setosa'}
 
 Generate with Enumerate
-=======================
+-----------------------
 * ``enumerate()``
 * ``_`` regular variable name (not a special syntax)
 * ``_`` by convention is used when variable will not be referenced
@@ -195,7 +192,7 @@ Create ``dict`` from two ``list``:
 
 
 Generate with Zip
-=================
+-----------------
 * ``zip()``
 * The most Pythonic way
 
@@ -231,8 +228,7 @@ Generate with Zip
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/loop_dict_to_dict.py
     :caption: :download:`Solution <assignments/loop_dict_to_dict.py>`
     :end-before: # Solution

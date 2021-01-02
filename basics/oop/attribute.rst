@@ -1,18 +1,14 @@
-.. _OOP Attributes:
-
-**********
-Attributes
-**********
+OOP Attributes
+==============
 
 
 Rationale
-=========
+---------
 * Attributes are also known as "Properties" or "Fields"
 * ``snake_case`` name convention
 * Attributes store information (state) for instances
 * Access field values using dot (``.``) notation
-* Attributes should be defined only in ``__init__()`` method
-* More information in :ref:`OOP Init Method`
+* Attributes should be defined only in ``__init__()`` method (More information in :ref:`OOP Init Method`)
 
 .. glossary::
 
@@ -54,7 +50,7 @@ Rationale
 
 
 Syntax
-======
+------
 .. code-block:: python
 
     class Astronaut:
@@ -72,7 +68,7 @@ Syntax
 
 
 Dynamic Attributes
-==================
+------------------
 Dynamic attributes:
 
 .. code-block:: python
@@ -123,7 +119,7 @@ Accessing not existing attributes:
     # AttributeError: 'Astronaut' object has no attribute 'name'
 
 Namespace
-=========
+---------
 .. code-block:: python
 
     point_x = 1
@@ -153,7 +149,7 @@ Namespace
 
 
 Different Types
-===============
+---------------
 .. code-block:: python
 
     class Iris:
@@ -202,7 +198,7 @@ Different Types
 
 
 Get All Dynamic Attributes and Values
-=====================================
+-------------------------------------
 * ``obj.__dict__``
 
 ``__dict__`` - Getting dynamic fields and values:
@@ -231,8 +227,9 @@ Get All Dynamic Attributes and Values
     #  'petal_width': 0.2,
     #  'species': 'setosa'}
 
+
 Use Cases
-=========
+---------
 .. code-block:: python
 
     class Laptop:
@@ -348,10 +345,8 @@ Use Cases
     #  'agency': 'NASA'}
 
 
-
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/oop_attribute_model.py
     :caption: :download:`Solution <assignments/oop_attribute_model.py>`
     :end-before: # Solution

@@ -268,7 +268,7 @@ Passing point to the function:
     point = {'x': 1, 'y': 0, 'z': 1}
     cartesian_coordinates(**point)
 
-``str.format()`` expects keyword arguments, which keys are used in string. It is cumbersome to pass ``format(name=name, agency=agency)`` for every variable in the code. Since Python 3.6 f-string formatting are preferred.:
+``str.format()`` expects keyword arguments, which keys are used in string. It is cumbersome to pass ``format(name=name, agency=agency)`` for every variable in the code. Since Python 3.6 f-string formatting are preferred:
 
 .. code-block:: python
 
@@ -320,7 +320,7 @@ Database connection configuration read from config file:
 
     connection = database_connect(**config)
 
-Calling function with all variables from higher order function. ``locals()`` will return a ``dict`` with all the variables in local scope of the function.:
+Calling function with all variables from higher order function. ``locals()`` will return a ``dict`` with all the variables in local scope of the function:
 
 .. code-block:: python
 
@@ -350,7 +350,7 @@ Calling function with all variables from higher order function. ``locals()`` wil
     #        'groups': ['admins', 'astronauts'],
     #        'permission': ['all', 'everywhere']}
 
-Proxy functions. One of the most common use of ``*args``, ``**kwargs``.:
+Proxy functions. One of the most common use of ``*args``, ``**kwargs``:
 
 .. code-block:: python
 
@@ -385,7 +385,7 @@ Proxy functions. One of the most common use of ``*args``, ``**kwargs``.:
     mycsv('iris3.csv', encoding='cp1250', verbose=True)
     mycsv('iris4.csv', verbose=True, usecols=['Sepal Length', 'Species'])
 
-Decorators. Decorators are functions, which get pointer to the decorated function as it's argument, and has closure which gets original function arguments as positional and keyword arguments.:
+Decorators. Decorators are functions, which get pointer to the decorated function as it's argument, and has closure which gets original function arguments as positional and keyword arguments:
 
 .. code-block:: python
 

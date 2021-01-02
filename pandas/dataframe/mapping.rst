@@ -136,7 +136,7 @@ Footnotes:
 
 .. figure:: img/pandas-dataframe-mapping.png
 
-.. note:: Source: https://stackoverflow.com/questions/19798153/difference-between-map-applymap-and-apply-methods-in-pandas
+Source: https://stackoverflow.com/questions/19798153/difference-between-map-applymap-and-apply-methods-in-pandas
 
 
 Cleaning User Input
@@ -325,7 +325,7 @@ Assignments
     :end-before: # Solution
 
 .. literalinclude:: assignments/pandas_df_mapping_month.py
-    :caption: :download:`Solution <assignments/>`
+    :caption: :download:`Solution <assignments/pandas_df_mapping_month.py>`
     :end-before: # Solution
 
 .. literalinclude:: assignments/pandas_df_mapping_substitute.py

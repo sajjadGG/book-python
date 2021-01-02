@@ -1,12 +1,9 @@
-.. _Files Encoding:
-
-*************
 File Encoding
-*************
+=============
 
 
 Rationale
-=========
+---------
 * ``utf-8`` - a.k.a. Unicode - international standard (should be always used!)
 * ``iso-8859-1`` - ISO standard for Western Europe and USA
 * ``iso-8859-2`` - ISO standard for Central Europe (including Poland)
@@ -37,7 +34,7 @@ Rationale
 
 
 UTF-8
-=====
+-----
 .. code-block:: python
 
     FILE = r'/tmp/myfile.txt'
@@ -60,7 +57,7 @@ UTF-8
 
 
 Unicode Encode Error
-====================
+--------------------
 .. code-block:: python
 
     FILE = r'/tmp/myfile.txt'
@@ -72,7 +69,7 @@ Unicode Encode Error
 
 
 Unicode Decode Error
-====================
+--------------------
 .. code-block:: python
 
     FILE = r'/tmp/myfile.txt'
@@ -87,7 +84,7 @@ Unicode Decode Error
 
 
 Escape Characters
-=================
+-----------------
 * ``\r\n`` - is used on windows
 * ``\n`` - is used everywhere else
 
@@ -131,7 +128,7 @@ More information in :ref:`Builtin Printing` and https://en.wikipedia.org/wiki/Li
 
 
 References
-==========
+----------
 .. [#Windows2000] redhotwords.com. Windows 2000 Notepad. http://redhotwords.com/assets/Uninotepadunicode.png
 
 .. [#Windows10] digitalcitizen.life. Windows 10 Notepad. https://www.digitalcitizen.life/sites/default/files/gdrive/windows_notepad/notepad_10.png

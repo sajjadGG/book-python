@@ -115,8 +115,7 @@ All statuses
 
 ``http.server``
 ===============
-.. warning:: ``http.server`` is not recommended for production. It only implements basic security checks.
-
+* ``http.server`` is not recommended for production. It only implements basic security checks.
 * https://docs.python.org/3.7/library/http.server.html#module-http.server
 
 

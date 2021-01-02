@@ -55,8 +55,6 @@ Konfiguracja:
     #. Ustaw "PyLint jako domyślny"
     #. Uruchom analizę
 
-.. warning:: Po uruchomieniu ``SonarQube`` z obrazu ``Docker`` instalacja pluginów, a następnie restart ``SonarQube`` niszczy możliwość przeprowadzania analizy
-
 #. Administration -> Marketplace
 
     * Zainstalować plugin HTML

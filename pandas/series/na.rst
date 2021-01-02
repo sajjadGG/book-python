@@ -217,7 +217,7 @@ Update
 ======
 * Works with ``inplace=True`` parameter.
 
-Fill NA - Scalar value.:
+Fill NA - Scalar value:
 
 .. code-block:: python
 
@@ -235,7 +235,7 @@ Fill NA - Scalar value.:
     # 5    6.0
     # dtype: float64
 
-Forward Fill. ``ffill``: propagate last valid observation forward.:
+Forward Fill. ``ffill``: propagate last valid observation forward:
 
 .. code-block:: python
 
@@ -253,7 +253,7 @@ Forward Fill. ``ffill``: propagate last valid observation forward.:
     # 5    6.0
     # dtype: float64
 
-Backward Fill. ``bfill``: use NEXT valid observation to fill gap.:
+Backward Fill. ``bfill``: use NEXT valid observation to fill gap:
 
 .. code-block:: python
 
@@ -337,7 +337,7 @@ Interpolate. ``method: str``, default ``linear``. Does not have ``inplace=True``
 
 Drop
 ====
-Drop Rows. Has ``inplace=True`` parameter.:
+Drop Rows. Has ``inplace=True`` parameter:
 
 .. code-block:: python
 

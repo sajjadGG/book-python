@@ -1,12 +1,9 @@
-.. _OOP Stringify Objects:
-
-*****************
-Stringify Objects
-*****************
+OOP Stringify Objects
+=====================
 
 
 Rationale
-=========
+---------
 * ``str(obj)`` -> ``obj.__str__()``
 * ``repr(obj)`` -> ``obj.__repr__()``
 * ``format(obj, name)`` -> ``obj.__format__(name)``
@@ -31,7 +28,7 @@ Rationale
 
 
 String
-======
+------
 * Calling function ``str(obj)`` calls ``obj.__str__()``
 * Calling function ``print(obj)`` calls ``str(obj)``, which calls ``obj.__str__()``
 * Method ``obj.__str__()`` must return ``str``
@@ -81,7 +78,7 @@ Objects can verbose print if ``__str__()`` method is present:
 
 
 Representation
-==============
+--------------
 * Calling function ``repr(obj)`` calls ``obj.__repr__()``
 * Method ``obj.__repr__()`` must return ``str``
 * for developers
@@ -160,7 +157,7 @@ Printing ``list`` will call ``__repr__()`` method on each element:
 
 
 Format
-======
+------
 * Calling function ``format(obj, fmt)`` calls ``obj.__format__(fmt)``
 * Method ``obj.__format__()`` must return ``str``
 * Used for advanced formatting
@@ -306,8 +303,7 @@ Format
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/oop_stringify_str.py
     :caption: :download:`Solution <assignments/oop_stringify_str.py>`
     :end-before: # Solution

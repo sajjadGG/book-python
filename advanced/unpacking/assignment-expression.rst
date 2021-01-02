@@ -15,9 +15,7 @@ Recap
 
 Rationale
 =========
-.. versionadded:: 3.8
-    :pep:`572` -- Assignment Expressions
-
+* Since Python 3.8: :pep:`572` -- Assignment Expressions
 * A.K.A. "the walrus operator"
 * A.K.A. "Named Expressions"
 

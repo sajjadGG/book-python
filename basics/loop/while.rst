@@ -1,12 +1,9 @@
-.. _Loop While:
-
-**********
 Loop While
-**********
+==========
 
 
 Syntax
-======
+------
 * Continue execution when argument is ``True``
 * Stops if argument is ``False``
 
@@ -23,7 +20,7 @@ Syntax
 
 
 Convention
-==========
+----------
 * The longer the loop scope, the longer the variable name should be
 * Avoid one letters if scope is longer than one line
 * Generic names:
@@ -34,7 +31,7 @@ Convention
 
 
 Use Cases
-=========
+---------
 Never ending loop. Used in servers to wait forever for incoming connections:
 
 .. code-block:: python
@@ -96,7 +93,7 @@ Exit flag. Exit flag pattern is useful if you have for example multi-threaded ap
 
 
 Force Exit the Loop
-===================
+-------------------
 Force exit the loop using ``break`` keyword:
 
 .. code-block:: python
@@ -133,7 +130,7 @@ Exiting the loop using ``break`` keyword:
 
 
 Force Skip Iteration
-====================
+--------------------
 * if ``continue`` is encountered, it will jump to next loop iteration
 
 .. code-block:: python
@@ -215,8 +212,7 @@ Force skip iteration using ``continue`` keyword:
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/loop_while_float.py
     :caption: :download:`Solution <assignments/loop_while_float.py>`
     :end-before: # Solution

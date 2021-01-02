@@ -4,7 +4,7 @@
 About
 *****
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: About
     :name: Basics About
 
@@ -19,7 +19,7 @@ About
 Types
 *****
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Types
     :name: Basic Types
 
@@ -35,7 +35,7 @@ Types
 Sequences
 *********
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Sequences
     :name: Basic Sequences
 
@@ -53,7 +53,7 @@ Sequences
 Mappings
 ********
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Mappings
     :name: Basic Mappings
 
@@ -66,7 +66,7 @@ Mappings
 Control Flow
 ************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Control Flow
     :name: Basic Control Flow
 
@@ -80,7 +80,7 @@ Control Flow
 Loops
 *****
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Loops
     :name: Basic Loops
 
@@ -95,7 +95,7 @@ Loops
 Files
 *****
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Files
     :name: Basic Files
 
@@ -111,7 +111,7 @@ Files
 Functions
 *********
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Functions
     :name: Basic Functions
 
@@ -130,7 +130,7 @@ Functions
 Object Oriented Programming
 ***************************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Object Oriented Programming
     :name: Basic Object Oriented Programming
 
@@ -144,15 +144,15 @@ Object Oriented Programming
     oop/architecture.rst
     oop/type-annotation.rst
 
+
 *****
 Recap
 *****
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Recap
     :name: Basic Recap
 
-    ../about/further-reading.rst
     about/good-practices.rst
-    about/recap.rst
+    ../about/further-reading.rst
     about/certificate.rst

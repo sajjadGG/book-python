@@ -100,4 +100,4 @@ Since Python 3.8: :pep:`589` -- TypedDict: Type Hints for Dictionaries with a Fi
 
 More Information
 ----------------
-.. note:: More information in :ref:`Type Annotations` and :ref:`CI/CD Type Checking`
+* More information in :ref:`Type Annotations` and :ref:`CI/CD Type Checking`

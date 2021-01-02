@@ -1,12 +1,11 @@
 .. _Python Syntax:
 
-*************
 Python Syntax
-*************
+=============
 
 
 Variables
-=========
+---------
 * Names are case sensitive
 * Lowercase letters for variable names
 * Underscore ``_`` is used for multi-word names
@@ -26,7 +25,7 @@ Variables
 
 
 Constants
-=========
+---------
 * Names are case sensitive
 * Underscore ``_`` is used for multi-word names
 * Uppercase letters for "constant" names
@@ -42,7 +41,7 @@ Constants
 
 
 Variables vs. Constants
-=======================
+-----------------------
 * Variables vs. constants - Names are case sensitive
 
 >>> name = 'Mark Watney'        # variable
@@ -69,7 +68,7 @@ For physical units it is ok to use proper cased names. It is better to be compli
 
 
 Printing Values
-===============
+---------------
 * Prints on the screen
 * f-string formatting for variable substitution
 * More information in :ref:`Builtin Printing`
@@ -91,7 +90,7 @@ My name... José Jiménez
 
 
 End of Lines
-============
+------------
 * No semicolon (``;``) at the end of lines
 * :pep:`8` -- Style Guide for Python Code: Use ``\n`` for newline
 
@@ -101,7 +100,7 @@ How are you?
 
 
 Line Length
-===========
+-----------
 * Most controversial rule
 * :pep:`8` -- Style Guide for Python Code: 79 for line with code
 * :pep:`8` -- Style Guide for Python Code: 72 for line with comment
@@ -110,7 +109,7 @@ Line Length
 
 
 Comments
-========
+--------
 * :pep:`8` -- Style Guide for Python Code: for line comments: Hash (``#``), space and then comment
 * :pep:`8` -- Style Guide for Python Code: for inline comments: code, two spaces, hash (``#``), space and then comment
 * Commented out code: Never!
@@ -130,7 +129,7 @@ Inline comments:
 
 
 Docstring and Doctests
-======================
+----------------------
 * Docstring is a first multiline comment in: File/Module, Class, Method/Function
 * Used for ``doctest``. More information in :ref:`Function Doctest`
 * :pep:`257` -- Docstring Conventions: For multiline ``str`` always use three double quote (``"""``) characters
@@ -148,7 +147,7 @@ Docstring and Doctests
 
 
 Indentation
-===========
+-----------
 * Python uses indentation instead of braces
 * Code indented on the same level belongs to block
 * :pep:`8` -- Style Guide for Python Code: 4 spaces indentation, `no tabs <https://youtu.be/SsoOG6ZeyUI>`_
@@ -211,7 +210,7 @@ Inner block, true statement, third line
 
 
 Good practices
-==============
+--------------
 * :pep:`8` -- Style Guide for Python Code
 * :pep:`20` -- The Zen of Python
 
@@ -241,8 +240,7 @@ Namespaces are one honking great idea -- let's do more of those!
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/about_print.py
     :caption: :download:`assignments/about_print.py`
     :end-before: # Solution

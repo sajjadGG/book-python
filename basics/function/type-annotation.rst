@@ -1,20 +1,15 @@
-.. _Function Type Annotation:
-
-************************
 Function Type Annotation
-************************
+========================
 
 
 Rationale
-=========
+---------
 * Before Python 3.9 you need ``from typing import List, Set, Tuple, Dict``
-
-.. versionadded:: 3.9
-    :pep:`585` -- Type Hinting Generics In Standard Collections
+* Since Python 3.9: :pep:`585` -- Type Hinting Generics In Standard Collections
 
 
 Return
-======
+------
 .. code-block:: python
 
     def say_hello() -> str:
@@ -22,7 +17,7 @@ Return
 
 
 Parameters
-==========
+----------
 .. code-block:: python
 
     def add_numbers(a: int, b: int) -> int:
@@ -33,7 +28,7 @@ Parameters
 
 
 Union
-=====
+-----
 .. code-block:: python
 
     from typing import Union
@@ -72,7 +67,7 @@ Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 
 
 Optional
-========
+--------
 .. code-block:: python
 
     from typing import Union
@@ -143,7 +138,7 @@ Since Python 3.10: :pep:`645` -- Allow writing optional types as x?
 
 
 NoReturn
-========
+--------
 .. code-block:: python
 
     from typing import NoReturn
@@ -173,9 +168,8 @@ NoReturn
 
 
 Literal
-=======
-.. versionadded:: Python 3.8
-    :pep:`586` -- Literal Types
+-------
+* Since Python 3.8: :pep:`586` -- Literal Types
 
 .. code-block:: python
 
@@ -192,7 +186,7 @@ Literal
 
 
 Annotations
-===========
+-----------
 .. code-block:: python
 
     def add(a: int, b: int) -> int:
@@ -219,7 +213,7 @@ Since Python 3.10: :pep:`563` -- Postponed Evaluation of Annotations
 
 
 Errors
-======
+------
 * Python will execute without even warning
 * Your IDE and ``mypy`` et. al. will yield errors
 
@@ -234,7 +228,7 @@ Errors
 
 
 Good Engineering Practices
-==========================
+--------------------------
 .. code-block:: python
 
     from typing import Union
@@ -249,7 +243,6 @@ Good Engineering Practices
 
 
 More Information
-================
+----------------
 * Example: https://github.com/pandas-dev/pandas/blob/8fd2d0c1eea04d56ec0a63fae084a66dd482003e/pandas/core/frame.py#L505
-
-.. note:: More information in :ref:`Type Annotations` and :ref:`CI/CD Type Checking`
+* More information in :ref:`Type Annotations` and :ref:`CI/CD Type Checking`

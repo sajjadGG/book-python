@@ -804,7 +804,7 @@ PEP 8, but...
 
 Static Code Analysis
 ====================
-.. note:: Topic is covered in details in chapters: :ref:`cicd-tools` and :ref:`cicd-pipelines`.
+* Topic is covered in details in chapters: :ref:`cicd-tools` and :ref:`cicd-pipelines`.
 
 ``pycodestyle``
 ---------------

@@ -1,12 +1,9 @@
-.. _Conditional Statements:
-
-**********************
 Conditional Statements
-**********************
+======================
 
 
 Positive and Negative Values
-============================
+----------------------------
 Negative values:
 
     * empty ``bool()`` or ``False``
@@ -27,7 +24,7 @@ Positive values:
 
 
 Conditional Statement
-=====================
+---------------------
 .. code-block:: text
     :caption: ``if`` generic syntax
 
@@ -82,7 +79,7 @@ Checking for simple value:
 
     # Go to school
 
-Checking for simple value.:
+Checking for simple value:
 
 .. code-block:: python
 
@@ -152,7 +149,7 @@ Checking if has value:
 
 
 Unconditional Alternative
-=========================
+-------------------------
 * Optional
 * Executed when condition is not met
 
@@ -276,7 +273,7 @@ Checking if variable is certain value:
 
 
 Conditional Alternative
-=======================
+-----------------------
 * Used to check for additional condition if first is not met
 * In other languages is known as ``else if``
 
@@ -310,7 +307,7 @@ Conditional Alternative
 
 
 Shorthand Expressions
-=====================
+---------------------
 .. code-block:: python
 
     number = 3
@@ -329,7 +326,7 @@ Shorthand Expressions
 
 
 Conditional Expression
-======================
+----------------------
 .. code-block:: python
 
     number = 3
@@ -395,7 +392,7 @@ Type Str Methods is Numeric:
 
 
 Switch
-======
+------
 * No ``switch`` statement in Python!
 * ``switch`` in Object Oriented Programming is considered a bad practise
 * :pep:`275` -- Switching on Multiple Values [Rejected]
@@ -436,9 +433,8 @@ Switch
 
 
 Pattern Matching
-================
-.. versionadded:: Python 3.10
-    :pep:`636` -- Structural Pattern Matching: Tutorial
+----------------
+* Since Python 3.10: :pep:`636` -- Structural Pattern Matching: Tutorial
 
 .. code-block:: python
     :force:
@@ -552,8 +548,7 @@ Pattern Matching
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/controlflow_conditional_statements.py
     :caption: :download:`Solution <assignments/controlflow_conditional_statements.py>`
     :end-before: # Solution

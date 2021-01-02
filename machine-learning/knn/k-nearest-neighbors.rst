@@ -68,7 +68,7 @@ Wykorzystanie ``sklearn.neighbors.KNeighborsClassifier``
     print(result)
     # Output: 0.947368421053
 
-.. note:: Because of some variation for each run, it might give different results.
+Because of some variation for each run, it might give different results.
 
 Własna implementacja
 --------------------
@@ -127,7 +127,7 @@ Własna implementacja
     # Output: 0.96
 
 
-.. note:: Because of some variation for each run, it might give different results.
+Because of some variation for each run, it might give different results.
 
 
 Określanie przynależności do zbioru

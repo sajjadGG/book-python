@@ -1,10 +1,9 @@
-**********************
-Methods and Attributes
-**********************
+OOP Methods and Attributes
+==========================
 
 
 Rationale
-=========
+---------
 * Methods are functions in the class
 * First argument is always instance (``self``)
 * While calling function you never pass ``self``
@@ -31,7 +30,7 @@ Syntax:
 
 
 Methods Accessing Fields
-========================
+------------------------
 Methods Accessing Fields:
 
 .. code-block:: python
@@ -48,7 +47,7 @@ Methods Accessing Fields:
     jose.say_hello()
     # My name... José Jiménez
 
-``self.name`` must be defined before accessing.:
+``self.name`` must be defined before accessing:
 
 .. code-block:: python
 
@@ -64,7 +63,7 @@ Methods Accessing Fields:
 
 
 Methods Calling Other Methods
-=============================
+-----------------------------
 Methods Calling Other Methods:
 
 .. code-block:: python
@@ -138,7 +137,7 @@ Since Python 3.7 there is a ``@dataclass`` decorator, which automatically genera
 
 
 Examples
-========
+--------
 * Documentation: https://atlassian-python-api.readthedocs.io
 * Source Code: https://github.com/atlassian-api/atlassian-python-api
 * Examples: https://github.com/atlassian-api/atlassian-python-api/tree/master/examples
@@ -206,8 +205,7 @@ Examples
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/oop_method_sequence.py
     :caption: :download:`Solution <assignments/oop_method_sequence.py>`
     :end-before: # Solution

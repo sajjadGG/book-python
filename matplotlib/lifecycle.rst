@@ -2,12 +2,13 @@
 Matplotlib Plot Lifecycle
 *************************
 
+
 This tutorial aims to show the beginning, middle, and end of a single
 visualization using Matplotlib. We'll begin with some raw data and
 end by saving a figure of a customized visualization. Along the way we'll try
 to highlight some neat features and best-practices using Matplotlib.
 
-.. note::
+.. warning::
 
     This tutorial is based off of
     `this excellent blog post <http://pbpython.com/effective-matplotlib.html>`_
@@ -34,10 +35,7 @@ is that:
 We call methods that do the plotting directly from the Axes, which gives
 us much more flexibility and power in customizing our plot.
 
-.. note::
-
-   In general, try to use the object-oriented interface over the pyplot
-   interface.
+In general, try to use the object-oriented interface over the pyplot interface.
 
 
 Our data
@@ -191,10 +189,9 @@ Axes object.
 We can also adjust the size of this plot using the ``pyplot.subplots``
 function. We can do this with the ``figsize`` kwarg.
 
-.. note:: While indexing in NumPy follows the form (row, column), the figsize
-   kwarg follows the form (width, height). This follows conventions in
-   visualization, which unfortunately are different from those of linear
-   algebra.
+While indexing in NumPy follows the form (row, column), the figsize kwarg
+follows the form (width, height). This follows conventions in visualization,
+which unfortunately are different from those of linear algebra.
 
 .. code-block:: python
 

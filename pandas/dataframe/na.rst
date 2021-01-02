@@ -116,7 +116,7 @@ Fill NA with dict values:
     # 5  99.0  88.0  77  NaN
     # 6   4.0   4.4   d  NaN
 
-Forward Fill. ``ffill``: propagate last valid observation forward.:
+Forward Fill. ``ffill``: propagate last valid observation forward:
 
 .. code-block:: python
 

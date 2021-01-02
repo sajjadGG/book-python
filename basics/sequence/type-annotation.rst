@@ -1,5 +1,3 @@
-.. _Sequence Type Annotation:
-
 Sequence Type Annotation
 ========================
 

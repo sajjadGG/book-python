@@ -468,7 +468,7 @@ FastAPI URL routing:
     async def items(q: Optional[str] = None):
         return {'q': q}
 
-Django Login Required. Decorator checks whether user is_authenticated. If not, user will be redirected to login page.:
+Django Login Required. Decorator checks whether user is_authenticated. If not, user will be redirected to login page:
 
 .. code-block:: python
 

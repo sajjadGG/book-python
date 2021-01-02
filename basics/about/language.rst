@@ -1,6 +1,5 @@
-***************
 Python Language
-***************
+===============
 
 
 .. figure:: img/python-logo.png
@@ -9,7 +8,7 @@ Python Language
 
 
 Rationale
-=========
+---------
 * Turing complete, general purpose language
 * Multi platform
 * Dynamic typing with automatic memory allocation and GC
@@ -23,7 +22,7 @@ Rationale
 
 
 Which Version?
-==============
+--------------
 * You should use newest official Python version
 * Source: https://devguide.python.org/#status-of-python-branches
 * Source: https://www.python.org/downloads/
@@ -56,7 +55,7 @@ Which Version?
 
 
 Why not Python 2?
-=================
+-----------------
 * :pep:`373` -- Python 2.7 Release Schedule
 * :pep:`404` -- Python 2.8 Un-release Schedule
 * 2020-04-20 - end of Life for Python 2.7
@@ -66,7 +65,7 @@ Why not Python 2?
 
 
 Changes in Python 3
-===================
+-------------------
 * All strings are Unicode
 * In Python 3 ``print()`` is a function, not a keyword
 * Changes in standard library modules naming and location
@@ -74,10 +73,8 @@ Changes in Python 3
 
 
 Python Release Cycle
-====================
-.. versionadded:: Python 3.9
-    :pep:`602` -- Annual Release Cycle for Python
-
+--------------------
+* Since Python 3.9: :pep:`602` -- Annual Release Cycle for Python
 * 12 months (1 year) release cycle
 * 18 months (1.5 year) of bugfix updates
 * 42 months (3.5 year) of security updates
@@ -88,7 +85,7 @@ Python Release Cycle
 
 
 Scripts
-=======
+-------
 * Python files use ``.py`` as an extension
 * Compiled files are in ``__pycache__`` directory
 * Python also uses other extensions
@@ -106,7 +103,7 @@ Scripts
 
 
 Python Console (REPL)
-=====================
+---------------------
 * Read–Eval–Print Loop
 * Quickly test and evaluate code
 * Lines starts with ``>>>``
@@ -124,7 +121,7 @@ Python Console (REPL)
     >>> print('Ehlo World!')
     Ehlo World!
 
-.. note:: In documentation and books you may find ``>>>`` and ``...`` at the beginning of code listing lines
+In documentation and books you may find ``>>>`` and ``...`` at the beginning of code listing lines
 
 .. doctest::
 
@@ -136,7 +133,7 @@ Python Console (REPL)
 
 
 Jupyter
-=======
+-------
 * Open Source web application REPL
 * Very popular in Machine Learning and Data Science world
 * Create and share documents that contain live code, equations, visualizations and narrative text
@@ -144,7 +141,7 @@ Jupyter
 
 
 Python Developer Survey
-=======================
+-----------------------
 * Annual survey
 * https://www.jetbrains.com/lp/devecosystem-2020/python/
 * https://www.jetbrains.com/lp/python-developers-survey-2019/
@@ -156,8 +153,7 @@ Python Developer Survey
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/about_environment.py
     :caption: :download:`Solution <assignments/about_environment.py>`
     :end-before: # Solution

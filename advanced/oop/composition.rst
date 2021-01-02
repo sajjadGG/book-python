@@ -154,7 +154,7 @@ Multi level inheritance is a bad pattern here:
     # b'\x94\x93\x94)\x81\x94}\x94(\x8c\tfirstname\x94\x8c\x04Mark' \
     # b'\x94\x8c\x08lastname\x94\x8c\x06Watney\x94ub.'
 
-Mixin classes - multiple inheritance.:
+Mixin classes - multiple inheritance:
 
 .. code-block:: python
 

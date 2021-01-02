@@ -1,12 +1,9 @@
-.. _Loop Unpacking Assignment:
-
-*************************
 Loop Unpacking Assignment
-*************************
+-------------------------
 
 
 Recap
-=====
+-----
 .. code-block:: python
 
     a, b = 1, 2
@@ -17,7 +14,7 @@ Recap
 
 
 List of Pairs
-=============
+-------------
 .. code-block:: python
 
     DATA = [('commander', 'Melissa Lewis'),
@@ -33,7 +30,7 @@ List of Pairs
 
 
 List of Tuples
-==============
+--------------
 .. code-block:: python
 
     DATA = [(5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -62,7 +59,7 @@ List of Tuples
 
 
 Unpacking Assignment
-====================
+--------------------
 .. code-block:: python
 
     *features, label = (5.8, 2.7, 5.1, 1.9, 'virginica')
@@ -100,7 +97,7 @@ Unpacking Assignment
 
 
 Unused Values
-=============
+-------------
 .. code-block:: python
 
     DATA = [(5.1, 3.5, 1.4, 0.2, 'setosa'),
@@ -129,7 +126,7 @@ Unused Values
 
 
 Mixed
-=====
+-----
 .. code-block:: python
 
     DATA = [(1, 2),
@@ -149,7 +146,7 @@ Mixed
 
 
 Enumerate
-=========
+---------
 * Pythonic way
 * Preferred over ``i=0`` and ``i+=1`` for every iteration
 * ``enumerate()`` will return ``counter`` and ``value`` for every iteration
@@ -212,7 +209,7 @@ Enumerate
 
 
 Zip
-===
+---
 .. code-block:: python
 
     roles = ['commander', 'botanist', 'chemist']
@@ -246,8 +243,7 @@ Zip
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/loop_unpacking_months.py
     :caption: :download:`Solution <assignments/loop_unpacking_months.py>`
     :end-before: # Solution

@@ -172,8 +172,7 @@ Nested
 
 Final Class
 ===========
-.. versionadded:: Python 3.8
-    :pep:`591` -- Adding a final qualifier to typing
+* Since Python 3.8: :pep:`591` -- Adding a final qualifier to typing
 
 .. code-block:: python
 
@@ -201,8 +200,7 @@ Error: Cannot inherit from final class "Base":
 
 Final Method
 ============
-.. versionadded:: Python 3.8
-    :pep:`591` -- Adding a final qualifier to typing
+* Since Python 3.8: :pep:`591` -- Adding a final qualifier to typing
 
 .. code-block:: python
 
@@ -296,4 +294,4 @@ Error: can't override a final attribute:
 
 More Information
 ================
-.. note:: More information in :ref:`Type Annotations` and :ref:`CI/CD Type Checking`
+* More information in :ref:`Type Annotations` and :ref:`CI/CD Type Checking`

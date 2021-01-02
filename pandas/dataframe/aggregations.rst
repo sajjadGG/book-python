@@ -25,12 +25,12 @@ DataFrame Aggregations
     "network_type", "Whether the number being called was a mobile, international ('world'), voicemail, landline, or other ('special') number."
 
 
-.. note:: Source [PandasAggregations]_
+Source [PandasAggregations]_
 
 
 Single Statistic
 ================
-The groupby output will have an index or multi-index on rows corresponding to your chosen grouping variables. To avoid setting this index, pass ``as_index=False`` to the groupby operation.:
+The groupby output will have an index or multi-index on rows corresponding to your chosen grouping variables. To avoid setting this index, pass ``as_index=False`` to the groupby operation:
 
 .. code-block:: python
 
@@ -210,7 +210,7 @@ Drop the top level (using ``.droplevel()``) of the newly created multi-index on 
 
     grouped.head()
 
-Quick renaming of grouped columns from the groupby() multi-index can be achieved using the ravel() function.:
+Quick renaming of grouped columns from the groupby() multi-index can be achieved using the ravel() function:
 
 .. code-block:: python
 

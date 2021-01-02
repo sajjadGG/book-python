@@ -1,12 +1,9 @@
-.. _Function Lambda:
-
-***************
 Function Lambda
-***************
+===============
 
 
 Rationale
-=========
+---------
 * Lambda - Anonymous functions
 * When function is used once
 * When function is short
@@ -17,8 +14,9 @@ Rationale
     lambda
         Anonymous function
 
+
 Syntax
-======
+------
 .. code-block:: python
 
     lambda <arguments>: <expression>
@@ -38,7 +36,7 @@ Syntax
 
 
 Convention
-==========
+----------
 * Usually parameters are named ``x`` and ``y``
 * Use shortest code possible
 * Do not assign ``lambda`` to variable
@@ -63,7 +61,7 @@ Convention
     square(4)
     # 16
 
-:pep:`8` -- Style Guide for Python Code: "Always use a def statement instead of an assignment statement that binds a lambda expression directly to an identifier".:
+:pep:`8` -- Style Guide for Python Code: "Always use a def statement instead of an assignment statement that binds a lambda expression directly to an identifier":
 
 .. code-block:: python
 
@@ -75,7 +73,7 @@ Convention
 
 
 Lambda with Map
-===============
+---------------
 Increment:
 
 .. code-block:: python
@@ -111,7 +109,7 @@ Translate:
 
 
 Lambda with Filter
-==================
+------------------
 Even numbers:
 
 .. code-block:: python
@@ -162,8 +160,7 @@ Astronauts:
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/function_lambda_chain.py
     :caption: :download:`Solution <assignments/function_lambda_chain.py>`
     :end-before: # Solution

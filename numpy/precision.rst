@@ -68,7 +68,7 @@ Solutions
 * Use ``Decimal`` type
 * ``Decimal`` type is much slower
 
- Problem:
+Problem:
 
 .. code-block:: python
 
@@ -79,7 +79,7 @@ Solutions
     print(result)
     # 0.30000000000000004
 
- Round values to 4 decimal places (generally acceptable):
+Round values to 4 decimal places (generally acceptable):
 
 .. code-block:: python
 
@@ -90,7 +90,7 @@ Solutions
     print(result)
     # 0.3
 
- Store values as ``int``, do operation and then divide.:
+Store values as ``int``, do operation and then divide:
 
 .. code-block:: python
 

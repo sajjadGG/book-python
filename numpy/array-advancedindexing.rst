@@ -102,7 +102,7 @@ Indexing
     # array([[2, 3],
     #        [5, 6]])
 
-``rows,cols`` creates coordinate system for selecting values (like ``zip()``). For example: ``(0,0); (0,1); (1,0); (1,1); (0,1)``, as in this example.:
+``rows,cols`` creates coordinate system for selecting values (like ``zip()``). For example: ``(0,0); (0,1); (1,0); (1,1); (0,1)``, as in this example:
 
 .. code-block:: python
 
@@ -234,7 +234,7 @@ Use Cases
 
 Diagonal problem
 ================
-.. warning:: Without the ``np.ix_`` call, only the diagonal elements would be selected. This difference is the most important thing to remember about indexing with multiple advanced indexes.
+* .. warning:: Without the ``np.ix_`` call, only the diagonal elements would be selected. This difference is the most important thing to remember about indexing with multiple advanced indexes.
 
 .. code-block:: python
 

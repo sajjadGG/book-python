@@ -1,12 +1,9 @@
-.. _Function Return:
-
-***************
 Function Return
-***************
+===============
 
 
 Syntax
-======
+------
 .. code-block:: python
 
     def myfunction():
@@ -26,7 +23,7 @@ Syntax
 
 
 Return Keyword
-==============
+--------------
 * ``return`` keyword indicates outcome of the function
 * Code after ``return`` will not execute
 
@@ -51,7 +48,7 @@ Return Keyword
 
 
 Return Basic Type
-=================
+-----------------
 .. code-block:: python
 
     def myfunction():
@@ -74,7 +71,7 @@ Return Basic Type
 
 
 Return Sequence
-===============
+---------------
 .. code-block:: python
 
     def myfunction():
@@ -109,7 +106,7 @@ Return Sequence
 
 
 Return Mapping
-==============
+--------------
 .. code-block:: python
 
     def myfunction():
@@ -120,7 +117,7 @@ Return Mapping
 
 
 Return Nested Sequence
-======================
+----------------------
 .. code-block:: python
 
     def myfunction():
@@ -134,7 +131,7 @@ Return Nested Sequence
 
 
 Return None
-===========
+-----------
 * Python will ``return None`` if no explicit return is specified
 
 .. code-block:: python
@@ -159,7 +156,7 @@ Return None
 
 
 Intercept returned value
-========================
+------------------------
 .. code-block:: python
 
     def myfunction():
@@ -172,8 +169,7 @@ Intercept returned value
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/function_return_numbers.py
     :caption: :download:`Solution <assignments/function_return_numbers.py>`
     :end-before: # Solution

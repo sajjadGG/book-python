@@ -1,5 +1,3 @@
-.. _Sequence Unpacking Assignment:
-
 Unpacking Assignment
 ====================
 

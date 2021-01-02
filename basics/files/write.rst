@@ -1,12 +1,9 @@
-.. _Files Write:
-
-**********
 File Write
-**********
+==========
 
 
 Rationale
-=========
+---------
 * Creates file if not exists
 * Truncate the file before writing
 * Works with both relative and absolute path
@@ -15,7 +12,7 @@ Rationale
 
 
 Line
-====
+----
 * File must end with a newline ``\n`` character
 
 Line Definition by POSIX [#POSIX]_:
@@ -28,7 +25,7 @@ Line definition by ANSI C89 and ISO C99 language standards [#C89]_, [#C99]_, [#G
 
 
 Write to File
-=============
+-------------
 * Always remember to close file
 
 .. code-block:: python
@@ -42,7 +39,7 @@ Write to File
 
 
 Write One Line
-==============
+--------------
 .. code-block:: python
 
     FILE = r'/tmp/myfile.txt'
@@ -53,7 +50,7 @@ Write One Line
 
 
 Write Multiple Lines
-====================
+--------------------
 * Write a list of lines to the file.
 * ``.writelines()`` does not add a line separator (``\n``)!!
 *  Each line must add a separator at the end.
@@ -84,7 +81,7 @@ Write Multiple Lines
 
 
 Write Non-Str Data
-==================
+------------------
 * Join works only for strings
 * Conversion to ``str`` must be performed before adding a separator and writing to file.
 
@@ -100,11 +97,11 @@ Write Non-Str Data
 
     # 1,2,3
 
-.. note:: When writing output to the stream, if newline is ``None``, any ``'\n'`` characters written are translated to the system default line separator, ``os.linesep``. If newline is ``''`` or ``'\n'``, no translation takes place. If newline is any of the other legal values, any ``'\n'`` characters written are translated to the given string. Source: https://docs.python.org/3/library/io.html#io.TextIOWrapper
+When writing output to the stream, if newline is ``None``, any ``'\n'`` characters written are translated to the system default line separator, ``os.linesep``. If newline is ``''`` or ``'\n'``, no translation takes place. If newline is any of the other legal values, any ``'\n'`` characters written are translated to the given string. Source: https://docs.python.org/3/library/io.html#io.TextIOWrapper
 
 
 Reading From One File and Writing to Another
-============================================
+--------------------------------------------
 .. code-block:: python
 
     FILE_READ = r'/tmp/my-infile.txt'
@@ -116,9 +113,9 @@ Reading From One File and Writing to Another
         for line in infile:
             outfile.write(line)
 
-Assignments
-===========
 
+Assignments
+-----------
 .. literalinclude:: assignments/file_write_str.py
     :caption: :download:`Solution <assignments/file_write_str.py>`
     :end-before: # Solution
@@ -145,7 +142,7 @@ Assignments
 
 
 References
-==========
+----------
 .. [#POSIX] Section 3.206 IEEE Std 1003.1-2017 (Revision of IEEE Std 1003.1-2008). Open Group Base Specifications Issue 7, 2018 edition. URL: https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_206 Accessed Date: 2020-12-17s
 .. [#C89] Section 2.1.1.2 of the ANSI C 1989 standard
 .. [#C99] Section 5.1.1.2 of the ISO C 1999 standard

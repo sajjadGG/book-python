@@ -415,8 +415,7 @@ Roughly equivalent to:
 
 singledispatch
 --------------
-.. versionadded:: Python 3.4
-
+* Since Python 3.4
 * Overload a method
 * Python will choose function to run based on argument type
 
@@ -450,8 +449,7 @@ singledispatch
 
 singledispatchmethod
 --------------------
-.. versionadded:: Python 3.8
-
+* Since Python 3.8
 * Overload a method
 * Python will choose method to run based on argument type
 

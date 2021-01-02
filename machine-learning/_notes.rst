@@ -729,7 +729,7 @@ Modele strumieniowe:
     * uczone raz, tzw. offline'owe
     * douczane w trakcie, tzw. online (adaptują się do naszych danych) - ciężej nad nimi panować. Jeżeli się doucza sam, to ciężko panować nad jakością tego, więc trzeba monitorować.
 
-.. note:: ``KNeighborsClassifier()`` i ``n_neighbors`` - pisownia amerykańska, bo angielska ma u w środku
+``KNeighborsClassifier()`` i ``n_neighbors`` - pisownia amerykańska, bo angielska ma u w środku
 
 Duży model SVM może być wolniejszy
 

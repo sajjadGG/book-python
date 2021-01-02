@@ -17,7 +17,7 @@ Rationale
 
     Comparing datetime works only when all has the same timezone (UTC)
 
-Timezone naive datetimes.:
+Timezone naive datetimes:
 
 .. code-block:: python
 
@@ -67,8 +67,7 @@ IANA Time Zone Database
 
 Standard Library
 ================
-.. versionadded:: 3.9
-    :pep:`615` -- Support for the IANA Time Zone Database in the Standard Library
+* Since Python 3.9: :pep:`615` -- Support for the IANA Time Zone Database in the Standard Library
 
 .. code-block:: python
 
@@ -92,7 +91,7 @@ Standard Library
 
 ``pytz``
 ========
-``pytz`` brings the Olson tz database into Python.:
+``pytz`` brings the Olson tz database into Python:
 
 .. code-block:: python
 

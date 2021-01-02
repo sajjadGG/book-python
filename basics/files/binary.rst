@@ -1,12 +1,9 @@
-.. _Files Binary:
-
-************
 Files Binary
-************
+============
 
 
 Rationale
-=========
+---------
 * Text I/O over a binary storage (such as a file) is significantly slower than binary I/O over the same storage
 * It requires conversions between unicode and binary data using a character codec
 * This can become noticeable handling huge amounts of text data like large log files
@@ -14,7 +11,7 @@ Rationale
 
 
 Write Binary
-============
+------------
 * ``mode='wb'`` - write in binary mode
 
 .. code-block:: python
@@ -28,7 +25,7 @@ Write Binary
 
 
 Append Binary
-=============
+-------------
 * ``mode='ab'`` - append in binary mode
 
 .. code-block:: python
@@ -42,7 +39,7 @@ Append Binary
 
 
 Read Binary
-===========
+-----------
 * ``mode='rb'`` - read in binary mode
 
 .. code-block:: python
@@ -57,7 +54,7 @@ Read Binary
 
 
 Pickle
-======
+------
 * Works with any Python object (variables, functions, classes, nested objects)
 * More information in :ref:`Serialization Pickle`
 
@@ -87,9 +84,8 @@ Load binary data from file:
     print(result)
 
 
-
 Seek
-====
+----
 * Go to the n-th byte in the file
 * Supports negative index (from end of file)
 

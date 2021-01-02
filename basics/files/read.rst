@@ -1,12 +1,9 @@
-.. _Files Read:
-
-*********
 File Read
-*********
+=========
 
 
 Rationale
-=========
+---------
 * Works with both relative and absolute path
 * Fails when directory with file cannot be accessed
 * Fails when file cannot be accessed
@@ -15,7 +12,7 @@ Rationale
 
 
 Read From File
-==============
+--------------
 * Always remember to close file
 
 .. code-block:: python
@@ -28,7 +25,7 @@ Read From File
 
 
 Read Using Context Manager
-==========================
+--------------------------
 * Context managers use ``with ... as ...:`` syntax
 * It closes file automatically upon block exit (dedent)
 * Using context manager is best practice
@@ -43,7 +40,7 @@ Read Using Context Manager
 
 
 Read File at Once
-=================
+-----------------
 * Note, that whole file must fit into memory
 
 .. code-block:: python
@@ -55,7 +52,7 @@ Read File at Once
 
 
 Read File as List of Lines
-==========================
+--------------------------
  * Note, that whole file must fit into memory
 
 .. code-block:: python
@@ -98,7 +95,7 @@ Read whole file and split by lines, separate header from content:
 
 
 Reading File as Generator
-=========================
+-------------------------
 * Use generator to iterate over other lines
 * In those examples, ``file`` is a generator
 
@@ -122,7 +119,7 @@ Reading File as Generator
 
 
 Examples
-========
+--------
 .. code-block:: python
 
     def isnumeric(x):
@@ -158,8 +155,7 @@ Examples
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/file_read_str.py
     :caption: :download:`Solution <assignments/file_read_str.py>`
     :end-before: # Solution

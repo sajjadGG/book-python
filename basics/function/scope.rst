@@ -1,13 +1,9 @@
-.. _Function Scope:
-
-**************
 Function Scope
-**************
-
+==============
 
 
 Rationale
-=========
+---------
 * Functions has access to global values
 
 .. code-block:: python
@@ -40,7 +36,7 @@ Rationale
 
 
 Outer Scope
-===========
+-----------
 * Functions has access to global values
 
 .. code-block:: python
@@ -59,7 +55,7 @@ Outer Scope
 
 
 Shadowing
-=========
+---------
 .. code-block:: python
 
     data = [1, 2, 3]
@@ -77,8 +73,9 @@ Shadowing
 
 
 Global
-======
-Modify global, BAD PRACTICE!!:
+------
+* Allows modification of global variable
+* BAD PRACTICE!!
 
 .. code-block:: python
 
@@ -98,7 +95,7 @@ Modify global, BAD PRACTICE!!:
 
 
 Pure Function
-=============
+-------------
 .. code-block:: python
 
     def add(a, b):
@@ -114,7 +111,7 @@ Pure Function
 
 
 Impure Function
-===============
+---------------
 .. code-block:: python
 
     c = 3
@@ -142,7 +139,7 @@ Impure Function
 
 
 Impure to Pure Function
-=======================
+-----------------------
 .. code-block:: python
 
     c = 3
@@ -170,7 +167,7 @@ Impure to Pure Function
 
 
 Global Scope
-============
+------------
 .. code-block:: python
 
     globals()
@@ -226,7 +223,7 @@ Global Scope
 
 
 Local Scope
-===========
+-----------
 * Variables defined inside function
 * Variables are not available from outside
 * If outside the function, will return the same as ``globals()``
@@ -264,8 +261,7 @@ Local Scope
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/function_scope_global.py
     :caption: :download:`Solution <assignments/function_scope_global.py>`
     :end-before: # Solution

@@ -1,12 +1,9 @@
-.. _Basic Setup:
-
-*****
 Setup
-*****
+=====
 
 
 Requirements
-============
+------------
 * Python 3.7, 3.8, 3.9 (preferred)
 * Free `Github <https://github.com/join>`_ account
 * Any IDE:
@@ -20,12 +17,11 @@ Requirements
     * Vim
     * any other
 
-.. note:: Trainer will use PyCharm. If you choose any other IDE, make sure you know how to use refactoring options.
+Trainer will use PyCharm. If you choose any other IDE, make sure you know how to use refactoring options.
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/about_setup_vcs.py
     :caption: :download:`Solution <assignments/about_setup_vcs.py>`
     :end-before: # Solution

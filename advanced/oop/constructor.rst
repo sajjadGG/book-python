@@ -90,7 +90,7 @@ Return
     # Astronaut.__init__() called
 
 
-Missing ``return`` from constructor. The instantiation is evaluated to ``None`` since we don't return anything from the constructor.:
+Missing ``return`` from constructor. The instantiation is evaluated to ``None`` since we don't return anything from the constructor:
 
 .. code-block:: python
 

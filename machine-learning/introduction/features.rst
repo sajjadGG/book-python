@@ -75,7 +75,7 @@ Weight  Texture  Label
     # Output that we want from classifier
     labels = ['orange', 'orange', 'apple', 'apple']
 
-.. warning:: Scikit-learn uses real-valued features
+Scikit-learn uses real-valued features:
 
     .. code-block:: python
 

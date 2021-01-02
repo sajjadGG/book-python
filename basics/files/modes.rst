@@ -1,12 +1,9 @@
-.. _Files Modes:
-
-**********
 File Modes
-**********
+==========
 
 
 Rationale
-=========
+---------
 By type:
 
     * Text - easy to read and write
@@ -27,7 +24,7 @@ If mode is not specified it will read in text mode (``mode='rt'``)
 
 
 Modes
-=====
+-----
 * `r` - For reading – The file pointer is placed at the beginning of the file. This is the default mode.
 * `r+` - Opens a file for both reading and writing. The file pointer will be at the beginning of the file.
 * `w` - Opens a file for writing only. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.
@@ -45,7 +42,7 @@ Source: [#ROHIT2020]_
 
 
 Short Notation
-==============
+--------------
 * Most commonly used
 * By default text mode is used
 * ``mode='r'`` - read in text mode
@@ -60,7 +57,7 @@ Short Notation
 
 
 Text Mode
-=========
+---------
 * Text - easy to read and write
 * ``mode='rt'`` - read in text mode (default)
 * ``mode='wt'`` - write in text mode
@@ -74,7 +71,7 @@ Text Mode
 
 
 Binary Mode
-===========
+-----------
 * Binary - Fast and efficient
 * ``mode='rb'`` - read in binary mode
 * ``mode='wb'`` - write in binary mode
@@ -88,7 +85,7 @@ Binary Mode
 
 
 Update Mode
-===========
+-----------
 * Reading and Writing
 * Text mode is used if not specified otherwise
 * ``mode='r+'`` - read in text mode
@@ -117,7 +114,7 @@ Update Mode
 
 
 Recap
-=====
+-----
 Most common (90% of time):
 
     * ``mode='r'`` - read in text mode
@@ -149,10 +146,10 @@ Update (rarely used):
 
 
 Assignments
-===========
+-----------
 .. todo:: Create assignments
 
 
 References
-==========
+----------
 .. [#ROHIT2020] Rohit. Python file modes | Open, Write, append (r, r+, w, w+, x, etc). Year: 2020. URL: https://tutorial.eyehunts.com/python/python-file-modes-open-write-append-r-r-w-w-x-etc/

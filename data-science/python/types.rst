@@ -281,7 +281,7 @@ Unicode literals. In Python 3 ``u'...'`` is only for compatibility with Python 2
 
     u'zażółć gęślą jaźń'
 
-Bytes literals. Used in sockets and HTTP connections. Use ``bytes.decode()`` or ``str.encode()`` for conversion.:
+Bytes literals. Used in sockets and HTTP connections. Use ``bytes.decode()`` or ``str.encode()`` for conversion:
 
 .. code-block:: python
 
@@ -558,7 +558,7 @@ Quotient of division:
     4 // 2          # 2
     5 // 2          # 2
 
-Modulo. Reminder of division.:
+Modulo. Reminder of division:
 
 .. code-block:: python
 

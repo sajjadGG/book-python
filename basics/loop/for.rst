@@ -1,17 +1,15 @@
-.. _Loop For:
-
-********
 Loop For
-********
+========
 
 
 Syntax
-======
+------
 * ``ITERABLE`` must implement ``iterator`` interface
 * More information in :ref:`Protocol Iterator`
 
+For loop syntax:
+
 .. code-block:: text
-    :caption: ``for`` loop syntax
 
     for <variable> in <iterable>:
         <do something>
@@ -23,7 +21,7 @@ Syntax
 
 
 Convention
-==========
+----------
 * The longer the loop scope, the longer the variable name should be
 * Avoid one letters if scope is longer than one line
 * Prefer locally meaningful name over generic names
@@ -75,7 +73,7 @@ Convention
 
 
 Iterating Sequences
-===================
+-------------------
 * Iterating works for builtin sequences:
 
     * ``str``
@@ -84,7 +82,7 @@ Iterating Sequences
     * ``tuple``
     * ``set``
     * ``frozenset``
-    * ``dict`` (More information :ref:`Loop Dict`)
+    * ``dict``
 
 .. code-block:: python
 
@@ -113,7 +111,7 @@ Iterating Sequences
 
 
 Range
-=====
+-----
 * ``range(start, stop, step)``
 * ``start`` is inclusive, default: ``0``
 * ``stop`` is exclusive, required
@@ -170,7 +168,7 @@ Loops with ``range``:
 
 
 Nested Loops
-============
+------------
 .. code-block:: python
 
     for row in [1, 2, 3]:
@@ -185,8 +183,7 @@ Nested Loops
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/loop_for_count.py
     :caption: :download:`Solution <assignments/loop_for_count.py>`
     :end-before: # Solution

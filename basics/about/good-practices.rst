@@ -1,17 +1,16 @@
-**************
 Good Practices
-**************
+==============
 
 
 Rationale
-=========
+---------
 .. figure:: img/goodpractices-programmer-exp.png
 
     Code Complexity vs. Programmer Experience
 
 
 Range
-=====
+-----
 >>> i = 0
 >>>
 >>> while i < 5:
@@ -22,7 +21,7 @@ Range
 
 
 ForEach
-=======
+-------
 >>> DATA = ['a', 'b', 'c']
 >>>
 >>> for i in range(len(DATA)):
@@ -34,7 +33,7 @@ ForEach
 
 
 Sum
-===
+---
 >>> DATA = [1, 2, 3]
 >>> total = 0
 >>>
@@ -47,7 +46,7 @@ Sum
 
 
 Enumerate
-=========
+---------
 >>> DATA = ['a', 'b', 'c']
 >>> i = 0
 >>>
@@ -62,7 +61,7 @@ Enumerate
 
 
 Zip
-===
+---
 >>> header = ['a', 'b', 'c']
 >>> values = [1, 2, 3]
 >>> result = {}
@@ -81,7 +80,7 @@ Zip
 
 
 List Comprehension
-==================
+------------------
 >>> DATA = ['a', 'b', 'c']
 >>> result = list()
 >>>
@@ -98,7 +97,7 @@ List Comprehension
 
 
 Set Comprehension
-=================
+-----------------
 >>> DATA = ['a', 'b', 'c']
 >>> result = set()
 >>>
@@ -110,7 +109,7 @@ Set Comprehension
 
 
 Dict Comprehension
-==================
+------------------
 >>> DATA = {'a': 1, 'b': 2, 'c': 3}
 >>> result = dict()
 >>>
@@ -122,7 +121,7 @@ Dict Comprehension
 
 
 Map
-===
+---
 >>> def func(x):
 ...     return float()
 ...
@@ -137,7 +136,7 @@ Map
 
 
 Filter
-======
+------
 >>> def func(x):
 ...     return x % 2 == 0
 ...
@@ -152,7 +151,7 @@ Filter
 
 
 For Else
-========
+--------
 >>> DATA = [1, 2, 3]
 >>> FIND = 10
 >>> found = False
@@ -180,8 +179,7 @@ Not Found
 
 
 While Else
-==========
-
+----------
 >>> DATA = [1, 2, 3]
 >>> FIND = 10
 >>> found = False
@@ -213,7 +211,7 @@ Not Found
 
 
 Str Startswith
-==============
+--------------
 >>> data = 'virginica'
 >>> data[:1] == 'v'
 True
@@ -228,7 +226,7 @@ True
 
 
 Str Endswith
-============
+------------
 >>> data = 'virginica'
 >>> data[-3:] == 'osa'
 False
@@ -243,7 +241,7 @@ True
 
 
 Str Join Newline
-================
+----------------
 >>> data = ['line1', 'line2', 'line3']
 >>> result = [line+'\n' for line in data]
 
@@ -252,7 +250,7 @@ Str Join Newline
 
 
 Others
-======
+------
 * ``all()``
 * ``any()``
 * ``iter()``
@@ -260,7 +258,7 @@ Others
 
 
 Functools
-=========
+---------
 * https://docs.python.org/3/library/functools.html
 * ``reduce(function, iterable[, initializer])``
 
@@ -268,7 +266,7 @@ Functools
 
 
 Itertools
-=========
+---------
 * https://docs.python.org/3/library/itertools.html
 * :ref:`Itertools`
 * ``count(start=0, step=1)``
@@ -289,7 +287,7 @@ Itertools
 
 
 The Zen of Python
-=================
+-----------------
 * :pep:`20` -- The Zen of Python
 
 >>> import this
@@ -339,7 +337,7 @@ Polish:
 
 
 Style Guide for Python Code
-===========================
+---------------------------
 * :pep:`8` -- Style Guide for Python Code
 * ``black``:
 

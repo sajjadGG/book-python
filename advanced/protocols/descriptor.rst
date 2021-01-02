@@ -253,9 +253,9 @@ Temperature Conversion:
 
     Comparing datetime works only when all has the same timezone (UTC). More information in :ref:`Stdlib Datetime Timezone`
 
-.. _Descriptor Timezone Converter:
-
 Descriptor Timezone Converter:
+
+.. _Descriptor Timezone Converter:
 
 .. code-block:: python
 

@@ -248,4 +248,4 @@ Podstawowe pojęcia
         A pictorial way of showing the relations among sets or events. The universal set or outcome space is usually drawn as a rectangle; sets are regions within the rectangle. The overlap of the regions corresponds to the intersection of the sets. If the regions do not overlap, the sets are disjoint. The part of the rectangle included in one or more of the regions corresponds to the union of the sets. This page contains a tool that illustrates Venn diagrams; the tool represents the probability of an event by the area of the event.
 
 
-.. note:: Source: https://www.stat.berkeley.edu/~stark/SticiGui/Text/gloss.htm
+Source: https://www.stat.berkeley.edu/~stark/SticiGui/Text/gloss.htm

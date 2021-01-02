@@ -7,9 +7,7 @@ Type Annotations
 
 Rationale
 =========
-.. versionadded:: Python 3.5
-    :pep:`484` -- Type Hints
-
+* Since Python 3.5: :pep:`484` -- Type Hints
 * Also known as Type Hinting
 * Accessed by ``__annotations__`` attribute
 * No type checking happens at runtime
@@ -20,7 +18,10 @@ Rationale
 * :pep:`483` -- The Theory of Type Hints
 * https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html
 
-.. warning:: It should also be emphasized that Python will remain a dynamically typed language, and the authors have no desire to ever make type hints mandatory, even by convention.
+.. epigraph::
+
+    It should also be emphasized that Python will remain a dynamically typed language,
+    and the authors have no desire to ever make type hints mandatory, even by convention.
 
 
 Glossary
@@ -50,8 +51,7 @@ Data types
 
 Final
 =====
-.. versionadded:: Python 3.8
-    :pep:`591` -- Adding a final qualifier to typing
+* Since Python 3.8: :pep:`591` -- Adding a final qualifier to typing
 
 .. code-block:: python
 
@@ -108,9 +108,7 @@ Final
 
 New Features
 ============
-.. versionadded:: Python 3.9
-    :pep:`585` -- Type Hinting Generics In Standard Collections
-
+* Since Python 3.9: :pep:`585` -- Type Hinting Generics In Standard Collections
 * In type annotations you can now use built-in collection types such as list and dict as generic types instead of importing the corresponding capitalized types (e.g. List or Dict) from typing.
 * Some other types in the standard library are also now generic, for example ``queue.Queue``.
 * Importing those from typing is deprecated.

@@ -290,7 +290,7 @@ Join
     # 2   3    Ivanovic
     # 3   4       Lewis
 
-Join DataFrames using their indexes.:
+Join DataFrames using their indexes:
 
 .. code-block:: python
 
@@ -311,7 +311,7 @@ Join DataFrames using their indexes.:
     # 3        Ivan    Ivanovic
     # 4     Melissa       Lewis
 
-This method preserves the original DataFrame's index in the result.:
+This method preserves the original DataFrame's index in the result:
 
 .. code-block:: python
 

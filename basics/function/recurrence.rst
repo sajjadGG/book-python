@@ -1,6 +1,5 @@
-*******************
 Function Recurrence
-*******************
+===================
 
 
 .. epigraph::
@@ -9,7 +8,7 @@ Function Recurrence
 
 
 Rationale
-=========
+---------
 * Also known as recursion
 * Python isn't a functional language
 * CPython implementation doesn't optimize tail recursion
@@ -19,7 +18,7 @@ Rationale
 
 
 Example
-=======
+-------
 Recap information about factorial (``n!``):
 
     5! = 5 * 4!
@@ -49,14 +48,14 @@ Recap information about factorial (``n!``):
 
 
 Use Case
-========
+--------
 .. figure:: img/function-recurrence-hanoi.jpg
 
     Hanoi Tower as a standard example of a recurrence. Source: [1]_
 
 
 Recursion Depth Limit
-=====================
+---------------------
 * Default recursion depth limit is 1000
 * Warning: Anaconda sets default recursion depth limit to 2000
 
@@ -68,8 +67,7 @@ Recursion Depth Limit
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/function_recurrence_fibonacci.py
     :caption: :download:`Solution <assignments/function_recurrence_fibonacci.py>`
     :end-before: # Solution
@@ -80,5 +78,5 @@ Assignments
 
 
 References
-==========
+----------
 .. [1] https://dyermath.files.wordpress.com/2015/06/hanoi-13.jpg

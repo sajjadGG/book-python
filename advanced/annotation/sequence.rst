@@ -8,9 +8,7 @@ Annotation Sequence
 Rationale
 =========
 * Before Python 3.9 you need ``from typing import List, Set, Tuple, Dict``
-
-.. versionadded:: 3.9
-    :pep:`585` -- Type Hinting Generics In Standard Collections
+* Since Python 3.9: :pep:`585` -- Type Hinting Generics In Standard Collections
 
 .. code-block:: python
 
@@ -339,5 +337,4 @@ Before Python 3.9:
 More Information
 ================
 * Example: https://github.com/pandas-dev/pandas/blob/master/pandas/core/frame.py#L458
-
-.. note:: More information in :ref:`Type Annotations` and :ref:`CI/CD Type Checking`
+* More information in :ref:`Type Annotations` and :ref:`CI/CD Type Checking`

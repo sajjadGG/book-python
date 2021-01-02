@@ -212,7 +212,7 @@ Modify package:
 
 Show package
 ------------
- Use the ``show()`` method of an object to display all of its fields.:
+ Use the ``show()`` method of an object to display all of its fields:
 
 .. code-block:: python
 
@@ -251,7 +251,7 @@ Add a layer for protocol by using the division operator:
     ip / tcp
     # <IP  frag=0 proto=tcp src=192.168.0.1 dst=192.168.0.2 |<TCP  sport=blackjack dport=http |>>
 
-Manipulate the TCP header fields just as IP header.:
+Manipulate the TCP header fields just as IP header:
 
 .. code-block:: python
 

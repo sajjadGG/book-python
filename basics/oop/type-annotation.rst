@@ -1,12 +1,9 @@
-.. _OOP Type Annotation:
-
-*******************
 OOP Type Annotation
-*******************
+===================
 
 
 Rationale
-=========
+---------
 * All classes are types
 * Always depend upon abstraction not an implementation (SOLID Dependency Inversion Principle). More information in :ref:`OOP SOLID`
 
@@ -39,7 +36,7 @@ Rationale
 
 
 Attributes
-==========
+----------
 .. code-block:: python
 
     class Point:
@@ -59,7 +56,7 @@ Attributes
 
 
 Method Return Types
-===================
+-------------------
 .. code-block:: python
 
     class Astronaut:
@@ -84,7 +81,7 @@ Method Return Types
 
 
 Required Method Arguments
-=========================
+-------------------------
 .. code-block:: python
 
     class Point:
@@ -101,7 +98,7 @@ Required Method Arguments
 
 
 Optional Method Arguments
-=========================
+-------------------------
 .. code-block:: python
 
     class Point:
@@ -124,7 +121,7 @@ Optional Method Arguments
 
 
 Classes
-=======
+-------
 .. code-block:: python
 
     class Point:
@@ -154,7 +151,7 @@ Classes
 
 
 Nested
-======
+------
 .. code-block:: python
 
     class Iris:
@@ -170,9 +167,8 @@ Nested
 
 
 Final Class
-===========
-.. versionadded:: Python 3.8
-    :pep:`591` -- Adding a final qualifier to typing
+-----------
+* Since Python 3.8: :pep:`591` -- Adding a final qualifier to typing
 
 .. code-block:: python
 
@@ -199,9 +195,8 @@ Error: Cannot inherit from final class "Base":
 
 
 Final Method
-============
-.. versionadded:: Python 3.8
-    :pep:`591` -- Adding a final qualifier to typing
+------------
+* Since Python 3.8: :pep:`591` -- Adding a final qualifier to typing
 
 .. code-block:: python
 
@@ -233,7 +228,7 @@ Error: Cannot override final attribute "foo" (previously declared in base class 
 
 
 Final Attribute
-===============
+---------------
 .. code-block:: python
 
     from typing import Final
@@ -294,5 +289,5 @@ Error: can't override a final attribute:
 
 
 More Information
-================
-.. note:: More information in :ref:`Type Annotations` and :ref:`CI/CD Type Checking`
+----------------
+* More information in :ref:`Type Annotations` and :ref:`CI/CD Type Checking`

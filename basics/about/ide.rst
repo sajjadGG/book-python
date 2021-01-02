@@ -1,10 +1,9 @@
-***********************
 Development Environment
-***********************
+=======================
 
 
 What is IDE?
-============
+------------
 * Integrated Development Environment
 * Refactoring
 * Syntax autocompletion and highlighting
@@ -21,7 +20,7 @@ What is IDE?
 
 
 How to Choose?
-==============
+--------------
 * Nie ma znaczenia z jakiego IDE skorzystasz!
 * Do edycji skryptów Pythona wystarczy sam Notatnik lub Jupyter
 * W miarę rośnięcia złożoności projektu oraz ilości plików przyda nam się coś co ułatwi nam pracę
@@ -31,7 +30,7 @@ How to Choose?
 
 
 Which One is the Best?
-======================
+----------------------
 #. `PyCharm Professional <https://www.jetbrains.com/pycharm/download/>`_ (Not-free)
 #. `PyCharm Community <https://www.jetbrains.com/pycharm/download/>`_
 #. Jupyter Notebook
@@ -41,11 +40,11 @@ Which One is the Best?
 #. Atom
 #. Vim
 
-.. note:: This are my preferences. Choosing best IDE is very opinionated.
+This are my preferences. Choosing best IDE is very opinionated.
 
 
 Keyboard Shortcuts
-==================
+------------------
 .. csv-table:: PyCharm Keyboard shortcuts
     :header-rows: 1
     :widths: 25, 75
@@ -66,8 +65,7 @@ Keyboard Shortcuts
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/about_ide_usage.py
     :caption: :download:`Solution <assignments/about_ide_usage.py>`
     :end-before: # Solution

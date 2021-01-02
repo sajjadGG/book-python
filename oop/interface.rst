@@ -11,9 +11,7 @@ Rationale
 * Cannot instantiate
 * Inheriting class must implement all methods
 * Only method declaration
-
-.. versionadded:: 3.8
-    :pep:`544` -- Protocols: Structural subtyping (static duck typing)
+* Since Python 3.8: :pep:`544` -- Protocols: Structural subtyping (static duck typing)
 
 .. glossary::
 

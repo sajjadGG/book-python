@@ -53,7 +53,7 @@ Install on Linux
 #. Wykonaj w terminalu ``python3 --version`` - powinno wyświetlić wersję Python zgodną z wymaganiami kursu
 #. Wykonaj w terminalu ``pip3 --version`` - wersja ``pip`` w nie ma większego znaczenia, ale ważne aby polecenie nie wyrzuciło błędu (tzn. ``pip`` by był poprawnie zainstalowany)
 
-.. note:: W Ubuntu może nie być ``pip`` wtedy trzeba uruchomić ``sudo apt update; sudo apt install --yes python3-pip``
+W Ubuntu może nie być ``pip`` wtedy trzeba uruchomić ``sudo apt update; sudo apt install --yes python3-pip``
 
 
 Install on Windows
@@ -68,7 +68,7 @@ Install on Windows
 #. Wykonaj w terminalu ``python --version`` - powinno wyświetlić wersję Python zgodną z wymaganiami kursu
 #. Wykonaj w terminalu ``pip --version`` - wersja ``pip`` w nie ma większego znaczenia, ale ważne aby polecenie nie wyrzuciło błędu (tzn. ``pip`` by był poprawnie zainstalowany)
 
-.. note:: Uwaga, jeżeli opcja "Add Python to ``PATH``" nie została zaznaczona podczas instalacji:
+.. warning:: Uwaga, jeżeli opcja "Add Python to ``PATH``" nie została zaznaczona podczas instalacji:
 
     * ``cmd`` nie wykryje polecenia ``python`` oraz ``pip``
     * Trzeba będzie to dodać Python do ``PATH`` ręcznie:

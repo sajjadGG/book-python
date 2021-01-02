@@ -1,12 +1,9 @@
-.. _Function Parameters:
-
-*******************
 Function Parameters
-*******************
+===================
 
 
 Rationale
-=========
+---------
 .. glossary::
 
     parameter
@@ -19,7 +16,7 @@ Rationale
         Parameter which is necessary to call function
 
 Syntax
-======
+------
 Function definition with parameters:
 
 .. code-block:: python
@@ -34,7 +31,7 @@ Function definition with parameters:
 
 
 Required Parameters
-===================
+-------------------
 * Parameters without default values are required
 
 .. code-block:: python
@@ -60,7 +57,7 @@ Required Parameters
 
 
 Default Parameters
-==================
+------------------
 * Default parameters has default value
 * Function will use default value if not overwritten by user
 * Parameters with default values can be omitted while executing
@@ -86,7 +83,7 @@ Default Parameters
 
 
 Required and Default Parameters
-===============================
+-------------------------------
 * Required parameters must be at the left side
 * Default parameters must be at the right side
 * There cannot be required parameter after optional
@@ -129,7 +126,7 @@ Required and Default Parameters
 
 
 Examples
-========
+--------
 Example 1:
 
 .. code-block:: python
@@ -189,8 +186,7 @@ Example 4. Definition of pandas.read_csv() function. Source:  https://pandas.pyd
 
 
 Assignments
-===========
-
+-----------
 .. literalinclude:: assignments/function_parameters_sequence.py
     :caption: :download:`Solution <assignments/function_parameters_sequence.py>`
     :end-before: # Solution

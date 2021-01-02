@@ -1,10 +1,9 @@
-**********
 Membership
-**********
+==========
 
 
 Rationale
-=========
+---------
 * ``in`` checks whether value is in sequence
 * works with ``str``, ``list``, ``tuple``, ``set``, ``frozenset``, ``dict``
 * Computational complexity for checking if sequence "contains":
@@ -20,7 +19,7 @@ Rationale
 
 
 Contains
-========
+--------
 * ``in`` - Contains
 
 ``str``:
@@ -111,7 +110,7 @@ Contains
 
 
 Missing
-=======
+-------
 * ``not in`` - Missing
 
 ``str``:
@@ -165,5 +164,5 @@ Missing
 
 
 Assignments
-===========
+-----------
 .. todo:: Create assignments

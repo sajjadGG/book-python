@@ -90,7 +90,7 @@ Numerical Operators
     'Echo %(name)s %(age)d' % {'name': 'Mark Watney', 'age': 44}
     # 'Echo Mark Watney 44'
 
-.. note:: ``%s``, ``%d``, ``%f`` is currently deprecated in favor of ``f'...'`` string formatting. More information in :ref:`Builtin Printing`.
+``%s``, ``%d``, ``%f`` is currently deprecated in favor of ``f'...'`` string formatting. More information in :ref:`Builtin Printing`.
 
 
 Comparison Operators

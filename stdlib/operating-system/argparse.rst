@@ -7,7 +7,7 @@ Commandline Arguments
 
 Alternatives
 ============
-.. note:: Check ``colorama`` - coloring terminal output
+* Check ``colorama`` - coloring terminal output
 
 Typer
 -----

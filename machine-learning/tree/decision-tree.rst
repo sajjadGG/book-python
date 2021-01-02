@@ -87,7 +87,7 @@ Decision Tree
     print(result)
     # Output: 0.96
 
-.. note:: Note identical API for classifiers!
+Note identical API for classifiers!
 
 
 Visualizing a Decision Tree

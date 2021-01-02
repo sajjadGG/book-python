@@ -5,14 +5,14 @@ Python in Machine Learning
 **************************
 
 
-.. warning:: Przed szkoleniem proszę o instalację i konfigurację środowiska zgodnie z :ref:`Install`
+Przed szkoleniem proszę o instalację i konfigurację środowiska zgodnie z :ref:`Install`
 
 
 Description
 ===========
 .. include:: src/ml-description.rst
 
-.. tip:: If you're interested in this training course, please email me at book-python@astronaut.center
+If you're interested in this training course, please email me at book-python@astronaut.center
 
 
 Agenda
