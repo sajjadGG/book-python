@@ -91,16 +91,36 @@ from datetime import date
 import doctest
 
 needs_sphinx = '3.3'
-
-imgmath_image_format = 'png'
-imgmath_latex = 'latex'
-
-# mathjax_path = '_static/mathjax.js'
-mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
-mathjax_config = {
-    'extensions': ['tex2jax.js'],
-    'jax': ['input/TeX', 'output/HTML-CSS'],
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.md': 'markdown',
 }
+
+sys.path.insert(0, os.path.abspath('_extensions'))
+
+# 0 - sequence number of image in whole document
+# 1 - sequence number of image in header level 1 (only if :numbered: option is present at toctree directive)
+# 2 - sequence number of image in header level 2
+#       will use x.1, x.2, … if located directly under a header level 1,
+#       will use 1, 2, … if at the document level
+# etc...
+numfig_secnum_depth = 1
+numfig = True
+smartquotes = False
+numfig_format = {
+    'section': 'Section %s.',
+    'figure': 'Figure %s.',
+    'table': 'Table %s.',
+    'code-block': 'Code %s.'}
+
+project_slug = re.sub(r'[\W]+', '', project)
+sha1 = subprocess.run('git log -1 --format="%h"', stdout=subprocess.PIPE, shell=True, encoding='utf-8').stdout.strip()
+year = date.today().year
+today = date.today().strftime('%Y-%m-%d')
+
+version = f'#{sha1}, {today}'
+release = f'#{sha1}, {today}'
+copyright = f'{year}, CC-BY-SA-4.0, {author} <{email}>, last update: {today}'
 
 exclude_patterns = [
     '.*',
@@ -133,8 +153,19 @@ pygments_style = 'stata-dark'
 autodoc_typehints = "description"
 autosectionlabel_maxdepth = 4
 
-## https://nbsphinx.readthedocs.io/en/latest/usage.html
+
+if 'sphinx.ext.mathjax' in extensions:
+    imgmath_image_format = 'png'
+    imgmath_latex = 'latex'
+    # mathjax_path = '_static/mathjax.js'
+    mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+    mathjax_config = {
+        'extensions': ['tex2jax.js'],
+        'jax': ['input/TeX', 'output/HTML-CSS']}
+
+
 if 'nbsphinx' in extensions:
+    # https://nbsphinx.readthedocs.io/en/latest/usage.html
     nbsphinx_input_prompt = 'In [%s]:'
     nbsphinx_output_prompt = 'Out [%s]:'
     nbsphinx_execute = 'always'
@@ -150,6 +181,7 @@ if 'nbsphinx' in extensions:
                           'nbsphinx.notebooktitle',
                           'nbsphinx.ipywidgets']
 
+
 if 'sphinxcontrib.bibtex' in extensions:
     bibtex_bibliography_header = ".. rubric:: References"
     bibtex_footbibliography_header = bibtex_bibliography_header
@@ -160,46 +192,18 @@ if 'sphinxcontrib.bibtex' in extensions:
         '_references/video.bib',
         'numpy/_references/bibliography.bib',
         'stdlib/_references/bibliography.bib',
-        'stdlib/regular-expressions/references/bibliography.bib'
-    ]
+        'stdlib/regular-expressions/references/bibliography.bib']
 
-source_suffix = {
-    '.rst': 'restructuredtext',
-    '.md': 'markdown',
-}
 
-sys.path.insert(0, os.path.abspath('_extensions'))
+if 'sphinx.ext.extlinks' in extensions:
+    extlinks = {'isbn': ('https://e-isbn.pl/IsbnWeb/start/search.html?szukaj_fraza=%s', 'ISBN: ')}
 
-extlinks = {'isbn': ('https://e-isbn.pl/IsbnWeb/start/search.html?szukaj_fraza=%s', 'ISBN: ')}
 
-# 0 - sequence number of image in whole document
-# 1 - sequence number of image in header level 1 (only if :numbered: option is present at toctree directive)
-# 2 - sequence number of image in header level 2
-#       will use x.1, x.2, … if located directly under a header level 1,
-#       will use 1, 2, … if at the document level
-# etc...
-numfig_secnum_depth = 1
-numfig = True
-smartquotes = False
-numfig_format = {
-    'section': 'Section %s.',
-    'figure': 'Figure %s.',
-    'table': 'Table %s.',
-    'code-block': 'Code %s.'}
-
-project_slug = re.sub(r'[\W]+', '', project)
-sha1 = subprocess.run('git log -1 --format="%h"', stdout=subprocess.PIPE, shell=True, encoding='utf-8').stdout.strip()
-year = date.today().year
-today = date.today().strftime('%Y-%m-%d')
-
-trim_doctest_flags = False
-# doctest_global_cleanup = """"""
-# doctest_default_flags = doctest.ELLIPSIS | doctest.IGNORE_EXCEPTION_DETAIL | doctest.NORMALIZE_WHITESPACE
-# doctest_default_flags = doctest.FAIL_FAST | doctest.IGNORE_EXCEPTION_DETAIL
-
-version = f'#{sha1}, {today}'
-release = f'#{sha1}, {today}'
-copyright = f'{year}, CC-BY-SA-4.0, {author} <{email}>, last update: {today}'
+if 'sphinx.ext.doctest' in extensions:
+    trim_doctest_flags = False
+    # doctest_global_cleanup = """"""
+    # doctest_default_flags = doctest.ELLIPSIS | doctest.IGNORE_EXCEPTION_DETAIL | doctest.NORMALIZE_WHITESPACE
+    # doctest_default_flags = doctest.FAIL_FAST | doctest.IGNORE_EXCEPTION_DETAIL
 
 html_show_sphinx = False
 html_use_smartypants = False
