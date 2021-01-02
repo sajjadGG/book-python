@@ -98,8 +98,6 @@ Relative Path
 * ``.`` - Current directory
 * ``..`` - Parent directory
 
-.. code-block:: python
-
     >>> FILE = r'myfile.txt'
     >>> FILE = r'./myfile.txt'
 
