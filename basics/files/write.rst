@@ -1,6 +1,11 @@
 File Write
 ==========
 
+.. testsetup::
+
+    from pathlib import Path
+    Path('/tmp/myfile.txt').unlink(missing_ok=True)
+
 
 Rationale
 ---------
@@ -10,6 +15,10 @@ Rationale
 * Fails when directory with file cannot be accessed
 * ``mode`` parameter to ``open()`` function is required
 
+>>> file = open(r'/tmp/myfile.txt', mode='w')
+>>> file.write('hello')
+5
+>>> file.close()
 
 Line
 ----
@@ -28,25 +37,23 @@ Write to File
 -------------
 * Always remember to close file
 
-.. code-block:: python
-
-    FILE = r'/tmp/myfile.txt'
-    DATA = 'We choose to go to the Moon...'
-
-    file = open(FILE, mode='w')
-    file.write(DATA)
-    file.close()
+    >>> FILE = r'/tmp/myfile.txt'
+    >>> DATA = 'We choose to go to the Moon...'
+    >>>
+    >>> file = open(FILE, mode='w')
+    >>> file.write(DATA)
+    30
+    >>> file.close()
 
 
 Write One Line
 --------------
-.. code-block:: python
-
-    FILE = r'/tmp/myfile.txt'
-    DATA = 'We choose to go to the Moon...'
-
-    with open(FILE, mode='w') as file:
-        file.write(DATA)
+    >>> FILE = r'/tmp/myfile.txt'
+    >>> DATA = 'We choose to go to the Moon...'
+    >>>
+    >>> with open(FILE, mode='w') as file:
+    ...     file.write(DATA)
+    30
 
 
 Write Multiple Lines
@@ -55,29 +62,26 @@ Write Multiple Lines
 * ``.writelines()`` does not add a line separator (``\n``)!!
 *  Each line must add a separator at the end.
 
-.. code-block:: python
+    >>> FILE = r'/tmp/myfile.txt'
+    >>> DATA = ['We choose to go to the Moon.',
+    ...        'We choose to go to the Moon in this decade and do the other things.',
+    ...        'Not because they are easy, but because they are hard.']
+    >>>
+    >>> result = '\n'.join(DATA)
+    >>>
+    >>> with open(FILE, mode='w') as file:
+    ...    file.write(result)
+    150
 
-    FILE = r'/tmp/myfile.txt'
-    DATA = ['We choose to go to the Moon.',
-            'We choose to go to the Moon in this decade and do the other things.',
-            'Not because they are easy, but because they are hard.']
-
-    result = '\n'.join(DATA)
-
-    with open(FILE, mode='w') as file:
-        file.write(result)
-
-.. code-block:: python
-
-    FILE = r'/tmp/myfile.txt'
-    DATA = ['We choose to go to the Moon.',
-            'We choose to go to the Moon in this decade and do the other things.',
-            'Not because they are easy, but because they are hard.']
-
-    result = [line+'\n' for line in DATA]
-
-    with open(FILE, mode='w') as file:
-        file.writelines(result)
+    >>> FILE = r'/tmp/myfile.txt'
+    >>> DATA = ['We choose to go to the Moon.',
+    ...        'We choose to go to the Moon in this decade and do the other things.',
+    ...        'Not because they are easy, but because they are hard.']
+    >>>
+    >>> result = [line+'\n' for line in DATA]
+    >>>
+    >>> with open(FILE, mode='w') as file:
+    ...    file.writelines(result)
 
 
 Write Non-Str Data
@@ -85,33 +89,28 @@ Write Non-Str Data
 * Join works only for strings
 * Conversion to ``str`` must be performed before adding a separator and writing to file.
 
-.. code-block:: python
-
-    FILE = r'/tmp/myfile.txt'
-    DATA = [1, 2, 3]
-
-    result = ','.join(str(x) for x in DATA) + '\n'
-
-    with open(FILE, mode='w') as file:
-        file.write(result)
-
-    # 1,2,3
+    >>> FILE = r'/tmp/myfile.txt'
+    >>> DATA = [1, 2, 3]
+    >>>
+    >>> result = ','.join(str(x) for x in DATA) + '\n'
+    >>>
+    >>> with open(FILE, mode='w') as file:
+    ...    file.write(result)
+    6
 
 When writing output to the stream, if newline is ``None``, any ``'\n'`` characters written are translated to the system default line separator, ``os.linesep``. If newline is ``''`` or ``'\n'``, no translation takes place. If newline is any of the other legal values, any ``'\n'`` characters written are translated to the given string. Source: https://docs.python.org/3/library/io.html#io.TextIOWrapper
 
 
 Reading From One File and Writing to Another
 --------------------------------------------
-.. code-block:: python
-
-    FILE_READ = r'/tmp/my-infile.txt'
-    FILE_WRITE = r'/tmp/my-outfile.txt'
-
-    with open(FILE_READ) as infile, \
-         open(FILE_WRITE, mode='w') as outfile:
-
-        for line in infile:
-            outfile.write(line)
+    >>> FILE_READ = r'/tmp/my-infile.txt'
+    >>> FILE_WRITE = r'/tmp/my-outfile.txt'
+    >>>
+    >>> with open(FILE_READ) as infile, \
+    ...     open(FILE_WRITE, mode='w') as outfile:  # doctest: +SKIP
+    ...
+    ...     for line in infile:
+    ...         outfile.write(line)
 
 
 Assignments

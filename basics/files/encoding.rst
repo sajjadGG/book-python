@@ -1,6 +1,10 @@
 File Encoding
 =============
 
+.. testsetup::
+
+    from pathlib import Path
+    Path('/tmp/myfile.txt').unlink(missing_ok=True)
 
 Rationale
 ---------
@@ -35,16 +39,15 @@ Rationale
 
 UTF-8
 -----
-.. code-block:: python
-
-    FILE = r'/tmp/myfile.txt'
-
-    with open(FILE, mode='w', encoding='utf-8') as file:
-        file.write('Иван Иванович')
-
-    with open(FILE, encoding='utf-8') as file:
-        print(file.read())
-    # Иван Иванович
+    >>> FILE = r'/tmp/myfile.txt'
+    >>>
+    >>> with open(FILE, mode='w', encoding='utf-8') as file:
+    ...     file.write('Иван Иванович')
+    13
+    >>>
+    >>> with open(FILE, encoding='utf-8') as file:
+    ...     print(file.read())
+    Иван Иванович
 
 
 .. figure:: img/files-encoding-utf.png
@@ -58,29 +61,26 @@ UTF-8
 
 Unicode Encode Error
 --------------------
-.. code-block:: python
-
-    FILE = r'/tmp/myfile.txt'
-
-    with open(FILE, mode='w', encoding='cp1250') as file:
-        file.write('Иван Иванович')
-    # Traceback (most recent call last):
-    # UnicodeEncodeError: 'charmap' codec can't encode characters in position 0-3: character maps to <undefined>
+    >>> FILE = r'/tmp/myfile.txt'
+    >>>
+    >>> with open(FILE, mode='w', encoding='cp1250') as file:
+    ...     file.write('Иван Иванович')
+    Traceback (most recent call last):
+    UnicodeEncodeError: 'charmap' codec can't encode characters in position 0-3: character maps to <undefined>
 
 
 Unicode Decode Error
 --------------------
-.. code-block:: python
-
-    FILE = r'/tmp/myfile.txt'
-
-    with open(FILE, mode='w', encoding='utf-8') as file:
-        file.write('Иван Иванович')
-
-    with open(FILE, encoding='cp1250') as file:
-        print(file.read())
-    # Traceback (most recent call last):
-    # UnicodeDecodeError: 'charmap' codec can't decode byte 0x98 in position 1: character maps to <undefined>
+    >>> FILE = r'/tmp/myfile.txt'
+    >>>
+    >>> with open(FILE, mode='w', encoding='utf-8') as file:
+    ...     file.write('Иван Иванович')
+    13
+    >>>
+    >>> with open(FILE, encoding='cp1250') as file:
+    ...     print(file.read())
+    Traceback (most recent call last):
+    UnicodeDecodeError: 'charmap' codec can't decode byte 0x98 in position 1: character maps to <undefined>
 
 
 Escape Characters

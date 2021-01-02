@@ -1,6 +1,12 @@
 File Modes
 ==========
 
+.. testsetup::
+
+    from pathlib import Path
+    Path('/tmp/myfile.txt').unlink(missing_ok=True)
+    Path('/tmp/myfile.txt').touch()
+
 
 Rationale
 ---------
@@ -18,9 +24,8 @@ By operation:
 
 If mode is not specified it will read in text mode (``mode='rt'``)
 
-.. code-block:: python
-
-    open('myfile.txt')
+    >>> open('/tmp/myfile.txt')
+    <_io.TextIOWrapper name='/tmp/myfile.txt' mode='r' encoding='UTF-8'>
 
 
 Modes
@@ -49,11 +54,12 @@ Short Notation
 * ``mode='w'`` - write in text mode
 * ``mode='a'`` - append in text mode
 
-.. code-block:: python
-
-    open('myfile.txt', mode='r')
-    open('myfile.txt', mode='w')
-    open('myfile.txt', mode='a')
+    >>> open('/tmp/myfile.txt', mode='r')
+    <_io.TextIOWrapper name='/tmp/myfile.txt' mode='r' encoding='UTF-8'>
+    >>> open('/tmp/myfile.txt', mode='w')
+    <_io.TextIOWrapper name='/tmp/myfile.txt' mode='w' encoding='UTF-8'>
+    >>> open('/tmp/myfile.txt', mode='a')
+    <_io.TextIOWrapper name='/tmp/myfile.txt' mode='a' encoding='UTF-8'>
 
 
 Text Mode
@@ -63,11 +69,12 @@ Text Mode
 * ``mode='wt'`` - write in text mode
 * ``mode='at'`` - append in text mode
 
-.. code-block:: python
-
-    open('myfile.txt', mode='rt')
-    open('myfile.txt', mode='wt')
-    open('myfile.txt', mode='at')
+    >>> open('/tmp/myfile.txt', mode='rt')
+    <_io.TextIOWrapper name='/tmp/myfile.txt' mode='rt' encoding='UTF-8'>
+    >>> open('/tmp/myfile.txt', mode='wt')
+    <_io.TextIOWrapper name='/tmp/myfile.txt' mode='wt' encoding='UTF-8'>
+    >>> open('/tmp/myfile.txt', mode='at')
+    <_io.TextIOWrapper name='/tmp/myfile.txt' mode='at' encoding='UTF-8'>
 
 
 Binary Mode
@@ -77,11 +84,12 @@ Binary Mode
 * ``mode='wb'`` - write in binary mode
 * ``mode='ab'`` - append in binary mode
 
-.. code-block:: python
-
-    open('myfile.txt', mode='rb')
-    open('myfile.txt', mode='wb')
-    open('myfile.txt', mode='ab')
+    >>> open('/tmp/myfile.txt', mode='rb')
+    <_io.BufferedReader name='/tmp/myfile.txt'>
+    >>> open('/tmp/myfile.txt', mode='wb')
+    <_io.BufferedWriter name='/tmp/myfile.txt'>
+    >>> open('/tmp/myfile.txt', mode='ab')
+    <_io.BufferedWriter name='/tmp/myfile.txt'>
 
 
 Update Mode
@@ -98,19 +106,26 @@ Update Mode
 * ``mode='wb+'`` - update in binary mode
 * ``mode='ab+'`` - update in binary mode
 
-.. code-block:: python
+    >>> open('/tmp/myfile.txt', mode='r+')
+    <_io.TextIOWrapper name='/tmp/myfile.txt' mode='r+' encoding='UTF-8'>
+    >>> open('/tmp/myfile.txt', mode='w+')
+    <_io.TextIOWrapper name='/tmp/myfile.txt' mode='w+' encoding='UTF-8'>
+    >>> open('/tmp/myfile.txt', mode='a+')
+    <_io.TextIOWrapper name='/tmp/myfile.txt' mode='a+' encoding='UTF-8'>
 
-    open('myfile.txt', mode='r+')
-    open('myfile.txt', mode='w+')
-    open('myfile.txt', mode='a+')
+    >>> open('/tmp/myfile.txt', mode='rt+')
+    <_io.TextIOWrapper name='/tmp/myfile.txt' mode='rt+' encoding='UTF-8'>
+    >>> open('/tmp/myfile.txt', mode='wt+')
+    <_io.TextIOWrapper name='/tmp/myfile.txt' mode='wt+' encoding='UTF-8'>
+    >>> open('/tmp/myfile.txt', mode='at+')
+    <_io.TextIOWrapper name='/tmp/myfile.txt' mode='at+' encoding='UTF-8'>
 
-    open('myfile.txt', mode='rt+')
-    open('myfile.txt', mode='wt+')
-    open('myfile.txt', mode='at+')
-
-    open('myfile.txt', mode='rb+')
-    open('myfile.txt', mode='wb+')
-    open('myfile.txt', mode='ab+')
+    >>> open('/tmp/myfile.txt', mode='rb+')
+    <_io.BufferedRandom name='/tmp/myfile.txt'>
+    >>> open('/tmp/myfile.txt', mode='wb+')
+    <_io.BufferedRandom name='/tmp/myfile.txt'>
+    >>> open('/tmp/myfile.txt', mode='ab+')
+    <_io.BufferedRandom name='/tmp/myfile.txt'>
 
 
 Recap
