@@ -255,8 +255,6 @@ Temperature Conversion:
 
 Descriptor Timezone Converter:
 
-.. _Descriptor Timezone Converter:
-
 .. code-block:: python
 
     from dataclasses import dataclass
