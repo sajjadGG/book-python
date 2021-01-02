@@ -13,15 +13,17 @@ $(document).ready(function() {
 
     // get the styles from the current theme
     pre.parent().parent().css('position', 'relative');
-    var hide_text = 'Hide the prompts and output';
-    var show_text = 'Show the prompts and output';
+    var show_text = '▶';
+    var show_title = 'Show the output';
+    var hide_text = '✘';
+    var hide_title = 'Clear the output';
     var border_width = pre.css('border-top-width');
     var border_style = pre.css('border-top-style');
     var border_color = pre.css('border-top-color');
     var button_styles = {
-        'cursor':'pointer', 'position': 'absolute', 'top': '0', 'right': '0',
+        'cursor':'pointer', 'position': 'absolute', 'top': '5px', 'left': '-30px',
         'border-color': border_color, 'border-style': border_style,
-        'border-width': border_width, 'color': border_color, 'text-size': '75%',
+        'border-width': border_width, 'color': border_color, 'text-size': '50%',
         'font-family': 'monospace', 'padding-left': '0.2em', 'padding-right': '0.2em',
         'border-radius': '0 3px 0 0'
     }
@@ -30,9 +32,9 @@ $(document).ready(function() {
     div.each(function(index) {
         var jthis = $(this);
         if (jthis.find('.gp').length > 0) {
-            var button = $('<span class="copybutton">show output</span>');
+            var button = $(`<span class="copybutton">${hide_text}</span>`);
             button.css(button_styles)
-            button.attr('title', hide_text);
+            button.attr('title', hide_title);
             button.data('hidden', 'false');
             jthis.prepend(button);
         }
@@ -47,22 +49,21 @@ $(document).ready(function() {
     $('.copybutton').click(function(e){
         e.preventDefault();
         var button = $(this);
+
         if (button.data('hidden') === 'false') {
             // hide the code output
             button.parent().find('.go, .gp, .gt').hide();
             button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'hidden');
-            // button.css('text-decoration', 'line-through');
-            button.attr('title', show_text);
+            button.attr('title', show_title);
             button.data('hidden', 'true');
-            button.text('show output');
+            button.text(show_text);
         } else {
             // show the code output
-            button.parent().find('.go').show();
+            button.parent().find('.go, .gt').show();
             button.next('pre').find('.gt').nextUntil('.gp, .go').css('visibility', 'visible');
-            // button.css('text-decoration', 'none');
-            button.attr('title', hide_text);
+            button.attr('title', hide_title);
             button.data('hidden', 'false');
-            button.text('hide output');
+            button.text(hide_text);
         }
 
         button.parent().find('.go').each((i, line) => {

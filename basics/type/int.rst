@@ -8,13 +8,31 @@ Python 3 dynamically extends ``int`` when it's too big, hence there is no
 maximal or minimal ``int`` value:
 
     >>> data = 1337
+    >>>
+    >>> print(data)
+    1337
+
     >>> data = +1337
+    >>>
+    >>> print(data)
+    1337
+
     >>> data = -1337
+    >>>
+    >>> print(data)
+    -1337
 
 You can use ``_`` for easier read especially with big numbers:
 
     >>> million = 1000000
+    >>>
+    >>> print(million)
+    1000000
+
     >>> million = 1_000_000
+    >>>
+    >>> print(million)
+    1000000
 
 
 Type Casting

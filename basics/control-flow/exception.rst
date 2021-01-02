@@ -77,7 +77,7 @@ Most Common Exceptions
     Traceback (most recent call last):
     TypeError: can only concatenate str (not "int") to str
 
-    >>> a = []
+    >>> a = ['a', 'b', 'c']
     >>> a[1.5]
     Traceback (most recent call last):
     TypeError: list indices must be integers or slices, not float

@@ -167,8 +167,12 @@
     .highlight {background: var(--code-background); border: var(--code-border)}
     .highlight .hll {background-color: var(--code-highlight)}
     .rst-content div[class^=highlight], .rst-content pre.literal-block {border: var(--code-border)}
-    .highlight .go {color: var(--code-output)}
-    .highlight .go:before {content: '# '}
+    .highlight .go {color: var(--code-output)} /* Stdout */
+    .highlight .gt {color: var(--code-output)}  /* Traceback */
+    .highlight .gr {color: var(--code-output)}  /* Exception Name */
+    .highlight .gr + span {color: var(--code-output)} /* Exception : (colon) */
+    .highlight .gr + span + .n {color: var(--code-output)} /* Exception Text */
+    .highlight .go:before, .highlight .gt:before, .highlight .gr:before {content: '# '}
 
     /* assignments */
     .highlight .sd {color: var(--code-text) !important; background: var(--code-background) !important; border: 1px solid var(--code-border);}
