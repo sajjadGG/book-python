@@ -150,17 +150,18 @@ if 'nbsphinx' in extensions:
                           'nbsphinx.notebooktitle',
                           'nbsphinx.ipywidgets']
 
-bibtex_bibliography_header = ".. rubric:: References"
-bibtex_footbibliography_header = bibtex_bibliography_header
-bibtex_default_style = 'alpha'
-bibtex_bibfiles = [
-    '_references/bibliography.bib',
-    '_references/images.bib',
-    '_references/video.bib',
-    'numpy/_references/bibliography.bib',
-    'stdlib/_references/bibliography.bib',
-    'stdlib/regular-expressions/references/bibliography.bib'
-]
+if 'sphinxcontrib.bibtex' in extensions:
+    bibtex_bibliography_header = ".. rubric:: References"
+    bibtex_footbibliography_header = bibtex_bibliography_header
+    bibtex_default_style = 'alpha'
+    bibtex_bibfiles = [
+        '_references/bibliography.bib',
+        '_references/images.bib',
+        '_references/video.bib',
+        'numpy/_references/bibliography.bib',
+        'stdlib/_references/bibliography.bib',
+        'stdlib/regular-expressions/references/bibliography.bib'
+    ]
 
 source_suffix = {
     '.rst': 'restructuredtext',

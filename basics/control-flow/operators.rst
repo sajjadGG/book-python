@@ -8,41 +8,46 @@ Equals
 
 Comparing ``str``:
 
-.. code-block:: python
-
-    'Monty Python' == 'Python'      # False
-    'Python' == 'Python'            # True
-    'python' == 'Python'            # False
+    >>> 'Monty Python' == 'Python'
+    False
+    >>> 'Python' == 'Python'
+    True
+    >>> 'python' == 'Python'
+    False
 
 Comparing ``tuple``:
 
-.. code-block:: python
-
-    (1, 2, 3) == (1, 2)             # False
-    (1, 2) == (1, 2)                # True
-    (1, 2) == (2, 1)                # False
+    >>> (1, 2, 3) == (1, 2)
+    False
+    >>> (1, 2) == (1, 2)
+    True
+    >>> (1, 2) == (2, 1)
+    False
 
 Comparing ``list``:
 
-.. code-block:: python
-
-    [1, 2, 3] == [1, 2]             # False
-    [1, 2] == [1, 2]                # True
-    [1, 2] == [2, 1]                # False
+    >>> [1, 2, 3] == [1, 2]
+    False
+    >>> [1, 2] == [1, 2]
+    True
+    >>> [1, 2] == [2, 1]
+    False
 
 Comparing ``set``:
 
-.. code-block:: python
+    >>> {1, 2, 3} == {1, 2}
+    False
+    >>> {1, 2} == {1, 2}
+    True
+    >>> {1, 2} == {2, 1}
+    True
 
-    {1, 2, 3} == {1, 2}             # False
-    {1, 2} == {1, 2}                # True
-    {1, 2} == {2, 1}                # True
-
-.. code-block:: python
-
-    (1,2) == [1,2]                  # False
-    (1,2) == {1,2}                  # False
-    1,2 == {1,2}                    # (1, False)
+    >>> (1,2) == [1,2]
+    False
+    >>> (1,2) == {1,2}
+    False
+    >>> 1,2 == {1,2}
+    (1, False)
 
 
 Not-Equals
@@ -51,29 +56,27 @@ Not-Equals
 
 Comparing ``str``:
 
-.. code-block:: python
-
-    'Monty Python' != 'Python'      # True
-    'Python' != 'Python'            # False
-    'python' != 'Python'            # True
+    >>> 'Monty Python' != 'Python'
+    True
+    >>> 'Python' != 'Python'
+    False
+    >>> 'python' != 'Python'
+    True
 
 Comparing ``tuple``:
 
-.. code-block:: python
-
-    (1, 2, 3) != (1, 2)             # True
+    >>> (1, 2, 3) != (1, 2)
+    True
 
 Comparing ``list``:
 
-.. code-block:: python
-
-    [1, 2, 3] != [1, 2]             # True
+    >>> [1, 2, 3] != [1, 2]
+    True
 
 Comparing ``set``:
 
-.. code-block:: python
-
-    {1, 2, 3} != {1, 2}             # True
+    >>> {1, 2, 3} != {1, 2}
+    True
 
 
 Greater Than
@@ -81,54 +84,70 @@ Greater Than
 * ``>`` - ``gt`` (greater than)
 * Set uses ``>`` for ``set.issuperset()``
 
-.. code-block:: python
+    >>> 'a' > 'b'
+    False
+    >>> 'b' > 'a'
+    True
 
-    'a' > 'b'       # False
-    'b' > 'a'       # True
+    >>> 'abc' > 'ab'
+    True
+    >>> 'abc' > 'abc'
+    False
+    >>> 'abc' > 'abcd'
+    False
 
-    'abc' > 'ab'    # True
-    'abc' > 'abc'   # False
-    'abc' > 'abcd'  # False
+    >>> 'def' > 'abc'
+    True
+    >>> 'abc' > 'xy'
+    False
+    >>> 'abc' > 'xyz'
+    False
 
-    'def' > 'abc'   # True
-    'abc' > 'xy'    # False
-    'abc' > 'xyz'   # False
+    >>> (3, 9) > (3, 8)
+    True
+    >>> (3, 8, 3) > (3, 7, 6)
+    True
+    >>> (3, 8) > (3, 9)
+    False
 
-.. code-block:: python
+    >>> (2, 7) > (3, 6)
+    False
+    >>> (3, 6) > (2, 7)
+    True
 
-    (3, 9) > (3, 8)         # True
-    (3, 8, 3) > (3, 7, 6)   # True
-    (3, 8) > (3, 9)         # False
+    >>> [3, 9] > [3, 8]
+    True
+    >>> [3, 8, 3] > [3, 7, 6]
+    True
+    >>> [3, 8] > [3, 9]
+    False
 
-    (2, 7) > (3, 6)         # False
-    (3, 6) > (2, 7)         # True
-
-.. code-block:: python
-
-    [3, 9] > [3, 8]         # True
-    [3, 8, 3] > [3, 7, 6]   # True
-    [3, 8] > [3, 9]         # False
-
-    [2, 7] > [3, 6]         # False
-    [3, 6] > [2, 7]         # True
+    >>> [2, 7] > [3, 6]
+    False
+    >>> [3, 6] > [2, 7]
+    True
 
 
 Examples
 --------
-.. code-block:: python
-
-    import sys
-
-    print(sys.version_info)
-    # sys.version_info(major=3, minor=8, micro=3, releaselevel='final', serial=0)
-
-    sys.version_info > (3, 7)       # True
-    sys.version_info > (3, 8)       # True
-    sys.version_info > (3, 9)       # False
-
-    sys.version_info > (3, 8, 2)    # True
-    sys.version_info > (3, 8, 3)    # True
-    sys.version_info > (3, 8, 4)    # False
+    >>> import sys
+    >>>
+    >>> print(sys.version_info)
+    sys.version_info(major=3, minor=9, micro=1, releaselevel='final', serial=0)
+    >>>
+    >>> sys.version_info > (3, 8)
+    True
+    >>> sys.version_info > (3, 9)
+    True
+    >>> sys.version_info > (3, 10)
+    False
+    >>>
+    >>> sys.version_info > (3, 9, 0)
+    True
+    >>> sys.version_info > (3, 9, 1)
+    True
+    >>> sys.version_info > (3, 9, 2)
+    False
 
 
 Operator Precedence

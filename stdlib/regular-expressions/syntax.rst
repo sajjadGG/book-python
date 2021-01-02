@@ -336,3 +336,9 @@ Visualization
 .. figure:: img/regexp-visualization.png
 
     Visualization for pattern ``r'^[a-zA-Z0-9][\w.+-]*@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]{2,20}$'``
+
+
+Further Reading
+===============
+* https://www.informit.com/articles/article.aspx?p=1278986
+* https://www.rexegg.com/regex-trick-conditional-replacement.html

@@ -134,16 +134,16 @@ Docstring and Doctests
 * Used for ``doctest``. More information in :ref:`Function Doctest`
 * :pep:`257` -- Docstring Conventions: For multiline ``str`` always use three double quote (``"""``) characters
 
-.. code-block:: python
-
-    """
-    This is my first Python script
-
-    >>> result
-    12
-    """
-
-    result = 10 + 2
+>>> # doctest: +SKIP
+...
+... """
+... This is my first Python script
+...
+... >>> result
+... 12
+... """
+>>>
+>>> result = 10 + 2
 
 
 Indentation
