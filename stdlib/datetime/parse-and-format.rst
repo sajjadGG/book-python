@@ -157,7 +157,6 @@ Timezone
 Time zone notation:
 
 .. code-block:: text
-    :emphasize-lines: 1-3
 
     <time>UTC
     <time>Z
@@ -186,17 +185,17 @@ Duration
 Example:
 
 .. code-block:: text
-    :emphasize-lines: 1
 
     P8Y3M8DT20H49M15S
 
-    # Period of:
-    #   8 years
-    #   3 months
-    #   8 days
-    #   20 hours
-    #   49 minutes
-    #   15 seconds
+Period of:
+
+    * 8 years
+    * 3 months
+    * 8 days
+    * 20 hours
+    * 49 minutes
+    * 15 seconds
 
 
 Date and time parsing and formatting parameters

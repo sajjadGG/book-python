@@ -5,9 +5,9 @@ C Modules
 
 Code
 ====
+Przykład kodu w C wykorzystującego *C modules*:
+
 .. code-block:: C
-    :name: listing-c-modules
-    :caption: Przykład kodu w C wykorzystującego *C modules*
 
     #include <Python.h>
 

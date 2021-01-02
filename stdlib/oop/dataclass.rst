@@ -258,7 +258,6 @@ List attributes
 .. warning:: Note, You should not set mutable objects as a default function argument. More information: :ref:`Argument Mutability <OOP Mutability Argument>`.
 
     .. code-block:: python
-        :emphasize-lines: 2,10,14
 
         class Astronaut:
             def __init__(self, name, missions=[]):
