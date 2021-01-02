@@ -21,6 +21,8 @@ Example
 -------
 Recap information about factorial (``n!``):
 
+.. code-block:: text
+
     5! = 5 * 4!
     4! = 4 * 3!
     3! = 3 * 2!
@@ -28,13 +30,11 @@ Recap information about factorial (``n!``):
     1! = 1 * 0!
     0! = 1
 
-.. code-block:: python
-
-    def factorial(n):
-        if n == 0:
-            return 1
-        else:
-            return n * factorial(n-1)
+>>> def factorial(n):
+...     if n == 0:
+...         return 1
+...     else:
+...         return n * factorial(n-1)
 
 .. code-block:: python
 
@@ -59,11 +59,9 @@ Recursion Depth Limit
 * Default recursion depth limit is 1000
 * Warning: Anaconda sets default recursion depth limit to 2000
 
-.. code-block:: python
-
-    import sys
-
-    sys.setrecursionlimit(3000)
+>>> import sys
+>>>
+>>> sys.setrecursionlimit(3000)
 
 
 Assignments

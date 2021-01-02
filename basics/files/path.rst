@@ -21,23 +21,17 @@ Rationale
 
 Absolute path on Windows:
 
-.. code-block:: text
-
-    C:\Users\Watney\myfile.txt
+    >>> FILE = r'C:\Users\Watney\myfile.txt'
 
 Absolute path on ``*nix`` (Linux, macOS, BSD, etc.):
 
-.. code-block:: text
-
-    /tmp/myfile.txt
+    >>> FILE = '/tmp/myfile.txt'
 
 Relative paths works the same on Windows and ``*nix`` (Linux, macOS, BSD, etc.):
 
-.. code-block:: text
-
-    myfile.txt
-    tmp/myfile.txt
-    ../myfile.txt
+    >>> FILE = 'myfile.txt'
+    >>> FILE = 'tmp/myfile.txt'
+    >>> FILE = '../myfile.txt'
 
 
 Good Engineering Practices
@@ -98,17 +92,17 @@ Relative Path
 * ``.`` - Current directory
 * ``..`` - Parent directory
 
-    >>> FILE = r'myfile.txt'
-    >>> FILE = r'./myfile.txt'
+>>> FILE = r'myfile.txt'
+>>> FILE = r'./myfile.txt'
 
-    >>> FILE = r'tmp/myfile.txt'
-    >>> FILE = r'./tmp/myfile.txt'
+>>> FILE = r'tmp/myfile.txt'
+>>> FILE = r'./tmp/myfile.txt'
 
-    >>> FILE = r'../myfile.txt'
-    >>> FILE = r'../tmp/myfile.txt'
+>>> FILE = r'../myfile.txt'
+>>> FILE = r'../tmp/myfile.txt'
 
-    >>> FILE = r'../../myfile.txt'
-    >>> FILE = r'../../tmp/myfile.txt'
+>>> FILE = r'../../myfile.txt'
+>>> FILE = r'../../tmp/myfile.txt'
 
 
 Escaping Characters in Path
@@ -121,6 +115,7 @@ Escaping Characters in Path
     >>> FILE = r'/tmp/my file.txt'
 
     >>> FILE = r'C:\Users\Admin\myfile.txt'
+    >>>
     >>>
     >>> repr(FILE)
     "'C:\\\\Users\\\\Admin\\\\myfile.txt'"
@@ -150,14 +145,19 @@ Create Directories
 ------------------
     >>> from pathlib import Path
     >>>
-    >>>
     >>> Path('/tmp/a').mkdir()
+
+    >>> from pathlib import Path
     >>>
     >>> Path('/tmp/a').mkdir()
     Traceback (most recent call last):
     FileExistsError: [Errno 17] File exists: '/tmp/a'
+
+    >>> from pathlib import Path
     >>>
     >>> Path('/tmp/a').mkdir(exist_ok=True)
+
+    >>> from pathlib import Path
     >>>
     >>> Path('/tmp/a/b/c').mkdir(parents=True, exist_ok=True)
 
@@ -173,11 +173,16 @@ Exists and is Directory or File
 -------------------------------
     >>> from pathlib import Path
     >>>
-    >>>
     >>> Path('/tmp/myfile.txt').exists()
     True
+
+    >>> from pathlib import Path
+    >>>
     >>> Path('/tmp/myfile.txt').is_dir()
     False
+
+    >>> from pathlib import Path
+    >>>
     >>> Path('/tmp/myfile.txt').is_file()
     True
 
@@ -188,7 +193,6 @@ Works only with empty directories:
 
     >>> from pathlib import Path
     >>>
-    >>>
     >>> Path('/tmp/a').rmdir()
     Traceback (most recent call last):
     OSError: [Errno 66] Directory not empty: '/tmp/a'
@@ -196,7 +200,6 @@ Works only with empty directories:
 Remove directories with files:
 
     >>> from shutil import rmtree
-    >>>
     >>>
     >>> rmtree('/tmp/a', ignore_errors=True)
 
@@ -207,7 +210,6 @@ Current Working Directory
 
     >>> from pathlib import Path
     >>>
-    >>>
     >>> Path.cwd()  # doctest: +SKIP
     PosixPath('/home/python/')
 
@@ -215,7 +217,6 @@ Current Working Directory
 Convert Relative Path to Absolute
 ---------------------------------
     >>> from pathlib import Path
-    >>>
     >>>
     >>> Path(Path.cwd(), 'myfile.txt')  # doctest: +SKIP
     PosixPath('/home/python/myfile.txt')
