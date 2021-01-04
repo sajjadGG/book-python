@@ -30,6 +30,8 @@ UML Class Diagram
 
 Mermaid
 -------
+* ``mermaid`` - Markdown extension
+
 .. code-block:: text
 
     ```mermaid
