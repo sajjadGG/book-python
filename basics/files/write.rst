@@ -106,8 +106,9 @@ Reading From One File and Writing to Another
     >>> FILE_READ = r'/tmp/my-infile.txt'
     >>> FILE_WRITE = r'/tmp/my-outfile.txt'
     >>>
-    >>> with open(FILE_READ) as infile, \
-    ...     open(FILE_WRITE, mode='w') as outfile:  # doctest: +SKIP
+    >>> # doctest: +SKIP
+    ... with open(FILE_READ) as infile, \
+    ...     open(FILE_WRITE, mode='w') as outfile:
     ...
     ...     for line in infile:
     ...         outfile.write(line)

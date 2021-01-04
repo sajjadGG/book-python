@@ -368,7 +368,6 @@ Pattern Matching
 * Since Python 3.10: :pep:`636` -- Structural Pattern Matching: Tutorial
 
     >>> # doctest: +SKIP
-    ...
     ... def http_error(status):
     ...     match status:
     ...         case 400:
@@ -385,7 +384,6 @@ Pattern Matching
     >>> request = 'GET /index.html HTTP/2.0'
     >>>
     >>> # doctest: +SKIP
-    ...
     ... match request.split():
     ...     case ['GET', uri, version]:
     ...         server.get(uri)
@@ -397,7 +395,6 @@ Pattern Matching
     ...         server.delete(uri)
 
     >>> # doctest: +SKIP
-    ...
     ... match hero.action():
     ...    case ['move', ('up'|'down'|'left'|'right') as direction, value]:
     ...        hero.move(direction, value)
@@ -416,7 +413,6 @@ Pattern Matching
     ...     ARROW_DOWN = 40
     >>>
     >>> # doctest: +SKIP
-    ...
     ... match keyboard.on_key_press():
     ...     case Key.ESC:
     ...         game.quit()
@@ -439,7 +435,6 @@ Pattern Matching
     ...     BLACK = 2
     >>>
     >>> # doctest: +SKIP
-    ...
     ... match color:
     ...     case Color.RED:
     ...         print('Soviet')
@@ -458,7 +453,6 @@ Pattern Matching
     ...     ISRO = 'GaganYatri'
     >>>
     >>> # doctest: +SKIP
-    ...
     ... match agency:
     ...     case SpaceMan.NASA:
     ...         print('USA')

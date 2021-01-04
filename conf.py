@@ -152,6 +152,7 @@ highlight_language = 'python3'
 pygments_style = 'stata-dark'
 autodoc_typehints = "description"
 autosectionlabel_maxdepth = 4
+autosectionlabel_prefix_document = True
 
 
 if 'sphinx.ext.mathjax' in extensions:

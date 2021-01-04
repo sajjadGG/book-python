@@ -91,7 +91,8 @@ Docstring used for documentation:
 ...     print('Hello')
 >>>
 >>>
->>> help(say_hello)  # doctest: +SKIP
+>>> # doctest: +SKIP
+... help(say_hello)
 Help on function say_hello in module __main__:
 <BLANKLINE>
 say_hello()

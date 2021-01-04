@@ -1,6 +1,11 @@
 Loop For
 ========
 
+.. testsetup::
+
+    def spawn_thread():
+        pass
+
 
 Syntax
 ------
@@ -9,15 +14,13 @@ Syntax
 
 For loop syntax:
 
-.. code-block:: text
+.. code-block:: python
 
     for <variable> in <iterable>:
         <do something>
 
-.. code-block:: python
-
-    for digit in [1, 2, 3]:
-        pass
+>>> for digit in [1, 2, 3]:
+...     pass
 
 
 Convention
@@ -51,25 +54,26 @@ Convention
     * ``i`` - for loop counter
     * ``_`` - if value is not used
 
-.. code-block:: python
+>>> for digit in [1, 2, 3]:
+...     print(digit)
+1
+2
+3
 
-    for digit in [1, 2, 3]:
-        print(digit)
+>>> for x in [1, 2, 3]:
+...     print(x)
+1
+2
+3
 
-.. code-block:: python
+>>> for i in range(0,3):
+...     print(i)
+0
+1
+2
 
-    for x in [1, 2, 3]:
-        print(x)
-
-.. code-block:: python
-
-    for i in range(0,5):
-        print(i)
-
-.. code-block:: python
-
-    for _ in range(10):
-        spawn_thread()
+>>> for _ in range(3):
+...     spawn_thread()
 
 
 Iterating Sequences
@@ -84,30 +88,24 @@ Iterating Sequences
     * ``frozenset``
     * ``dict``
 
-.. code-block:: python
+>>> for letter in 'setosa':
+...     print(letter)
+s
+e
+t
+o
+s
+a
 
-    for letter in 'setosa':
-        print(letter)
-
-    # s
-    # e
-    # t
-    # o
-    # s
-    # a
-
-.. code-block:: python
-
-    DATA = [5.1, 3.5, 1.4, 0.2, 'setosa']
-
-    for value in DATA:
-        print(value)
-
-    # 5.1
-    # 3.5
-    # 1.4
-    # 0.2
-    # 'setosa'
+>>> DATA = [5.1, 3.5, 1.4, 0.2, 'setosa']
+>>>
+>>> for value in DATA:
+...     print(value)
+5.1
+3.5
+1.4
+0.2
+setosa
 
 
 Range
@@ -117,69 +115,49 @@ Range
 * ``stop`` is exclusive, required
 * ``step`` default: ``1``
 
-.. code-block:: python
+>>> range(0, 5)
+range(0, 5)
 
-    range(0, 5)
-    # range(0, 5)
+>>> list(range(5))
+[0, 1, 2, 3, 4]
 
-.. code-block:: python
+>>> list(range(0, 5))
+[0, 1, 2, 3, 4]
 
-    list(range(5))
-    # [0, 1, 2, 3, 4]
+>>> list(range(0, 5, 1))
+[0, 1, 2, 3, 4]
 
-    list(range(0, 5))
-    # [0, 1, 2, 3, 4]
-
-    list(range(0, 5, 1))
-    # [0, 1, 2, 3, 4]
-
-    list(range(0, 5, 2))
-    # [0, 2, 4]
+>>> list(range(0, 5, 2))
+[0, 2, 4]
 
 Loops with ``range``:
 
-.. code-block:: python
-
-    for i in range(0, 3):
-        print(i)
-
-    # 0
-    # 1
-    # 2
+>>> for i in range(0, 3):
+...     print(i)
+0
+1
+2
 
 Loops with ``range``:
 
-.. code-block:: python
-
-    for number in range(4, 11, 2):
-        print(number)
-
-    # 4
-    # 6
-    # 8
-    # 10
-
-.. code-block:: python
-
-    for _ in range(10):
-        print('-', end='')
-
-    # ----------
+>>> for number in range(4, 11, 2):
+...     print(number)
+4
+6
+8
+10
 
 
 Nested Loops
 ------------
-.. code-block:: python
-
-    for row in [1, 2, 3]:
-        print()
-
-        for column in ['A', 'B', 'C']:
-            print(f'{column}{row}', end=' ')
-
-    # A1 B1 C1
-    # A2 B2 C2
-    # A3 B3 C3
+>>> for row in [1, 2, 3]:  # doctest: +NORMALIZE_WHITESPACE
+...     print()
+...
+...     for column in ['A', 'B', 'C']:
+...         print(f'{column}{row}', end=' ')
+A1 B1 C1
+A2 B2 C2
+A3 B3 C3
 
 
 Assignments

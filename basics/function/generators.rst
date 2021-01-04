@@ -351,7 +351,8 @@ Use Cases
 
 >>> import sys
 >>>
->>> print(sum(map(int, sys.stdin)))  # doctest: +SKIP
+>>> # doctest: +SKIP
+... print(sum(map(int, sys.stdin)))
 
 .. code-block:: console
 

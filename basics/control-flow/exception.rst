@@ -471,7 +471,6 @@ Pokemon Exception Handling
 User cannot simply kill program with ``Ctrl-C``:
 
     >>> # doctest: +SKIP
-    ...
     ... while True:
     ...    try:
     ...        number = float(input('Type number: '))
@@ -481,7 +480,6 @@ User cannot simply kill program with ``Ctrl-C``:
 User can kill program with ``Ctrl-C``:
 
     >>> # doctest: +SKIP
-    ...
     ... while True:
     ...     try:
     ...         number = float(input('Type number: '))
@@ -508,7 +506,6 @@ Defining Own Exceptions
 Django Framework Use-case of Custom Exceptions:
 
     >>> # doctest: +SKIP
-    ...
     ... from django.contrib.auth.models import User
     >>>
     >>>

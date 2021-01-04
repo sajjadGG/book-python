@@ -79,8 +79,9 @@ Read whole file and split by lines, separate header from content:
 
     >>> FILE = r'/tmp/myfile.txt'
     >>>
-    >>> with open(FILE) as file:
-    ...     header, *content = file.readlines()  # doctest: +SKIP
+    >>> # doctest: +SKIP
+    ... with open(FILE) as file:
+    ...     header, *content = file.readlines()
     ...
     ...     for line in content:
     ...         print(line)

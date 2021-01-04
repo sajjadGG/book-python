@@ -37,7 +37,8 @@ Union
 
 Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 
->>> def add_numbers(a: int|float, b: int|float) -> int|float:  # doctest: +SKIP
+>>> # doctest: +SKIP
+... def add_numbers(a: int|float, b: int|float) -> int|float:
 ...     return a + b
 
 
@@ -75,7 +76,8 @@ Optional
 
 Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 
->>> def find(text: str, what: str) -> int|None:  # doctest: +SKIP
+>>> # doctest: +SKIP
+... def find(text: str, what: str) -> int|None:
 ...     position = text.find(what)
 ...     if position == -1:
 ...         return None
@@ -89,7 +91,8 @@ Since Python 3.10: :pep:`604` -- Allow writing union types as X | Y
 
 Since Python 3.10: :pep:`645` -- Allow writing optional types as x?
 
->>> def find(text: str, what: str) -> int?:  # doctest: +SKIP
+>>> # doctest: +SKIP
+... def find(text: str, what: str) -> int?:
 ...     position = text.find(what)
 ...     if position == -1:
 ...         return None
@@ -158,8 +161,8 @@ Since Python 3.10: :pep:`563` -- Postponed Evaluation of Annotations
 >>> def add(a: int, b: int) -> int:
 ...     return a + b
 >>>
->>>
->>> add.__annotations__  # doctest: +SKIP
+>>> # doctest: +SKIP
+... add.__annotations__
 {'a': 'int', 'b': 'int', 'return': 'int'}
 
 

@@ -154,7 +154,8 @@ Impure to Pure Function
 
 Global Scope
 ------------
->>> globals()  # doctest: +SKIP
+>>> # doctest: +SKIP
+... globals()
 {'__name__': '__main__',
  '__doc__': None,
  '__package__': None,
@@ -163,7 +164,8 @@ Global Scope
  '__annotations__': {},
  '__builtins__': <module 'builtins' (built-in)>}
 
->>> dir(globals()['__builtins__'])  # doctest: +SKIP
+>>> # doctest: +SKIP
+... dir(globals()['__builtins__'])
 ['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException',
  'BlockingIOError', 'BrokenPipeError', 'BufferError', 'BytesWarning',
  'ChildProcessError', 'ConnectionAbortedError', 'ConnectionError',
@@ -197,7 +199,8 @@ Global Scope
 >>> firstname = 'Mark'
 >>> lastname = 'Watney'
 >>>
->>> globals()  # doctest: +SKIP
+>>> # doctest: +SKIP
+... globals()
 {'__name__': '__main__',
  '__doc__': None,
  '__package__': None,
@@ -215,7 +218,8 @@ Local Scope
 * Variables are not available from outside
 * If outside the function, will return the same as ``globals()``
 
->>> locals()  # doctest: +SKIP
+>>> # doctest: +SKIP
+... locals()
 {'__name__': '__main__',
  '__doc__': None,
  '__package__': None,

@@ -327,14 +327,15 @@ Indent and Whitespaces
 ...           for key, value in row.items()]
 >>>
 
->>> result = [astronaut | dict(addresses)  # doctest: +SKIP
+>>> # doctest: +SKIP
+... result = [astronaut | dict(addresses)
 ...           for astronaut in json.loads(DATA)
 ...             for i, address in enumerate(astronaut.pop('addresses'), start=1)
 ...                 if (columns := [f'{key}{i}' for key in address.keys()])
 ...                     and (addresses := zip(columns, address.values()))]
 >>>
->>>
->>> result = [astronaut | dict(addresses)  # doctest: +SKIP
+>>> # doctest: +SKIP
+... result = [astronaut | dict(addresses)
 ...           for astronaut in json.loads(DATA)
 ...           for i, address in enumerate(astronaut.pop('addresses'), start=1)
 ...           if (columns := [f'{key}{i}' for key in address.keys()])
@@ -399,15 +400,18 @@ Kindergarten
  'Primary School': '2',
  'Kindergarten': '1'}
 >>>
->>> print(i)  # doctest: +SKIP
+>>> # doctest: +SKIP
+... print(i)
 Traceback (most recent call last):
 NameError: name 'i' is not defined
 >>>
->>> print(title)  # doctest: +SKIP
+>>> # doctest: +SKIP
+... print(title)
 Traceback (most recent call last):
 NameError: name 'title' is not defined
 >>>
->>> print(titles)  # doctest: +SKIP
+>>> # doctest: +SKIP
+... print(titles)
 Traceback (most recent call last):
 NameError: name 'titles' is not defined
 

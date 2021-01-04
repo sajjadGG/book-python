@@ -210,7 +210,8 @@ Current Working Directory
 
     >>> from pathlib import Path
     >>>
-    >>> Path.cwd()  # doctest: +SKIP
+    >>> # doctest: +SKIP
+    ... Path.cwd()
     PosixPath('/home/python/')
 
 
@@ -218,7 +219,8 @@ Convert Relative Path to Absolute
 ---------------------------------
     >>> from pathlib import Path
     >>>
-    >>> Path(Path.cwd(), 'myfile.txt')  # doctest: +SKIP
+    >>> # doctest: +SKIP
+    ... Path(Path.cwd(), 'myfile.txt')
     PosixPath('/home/python/myfile.txt')
 
 

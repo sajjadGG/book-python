@@ -46,13 +46,11 @@ Boolean Algebra
 Complex conditions:
 
     >>> # doctest: +SKIP
-    ...
     ... for line in file:
     ...    if line and (not line.startswith('#') or not line.isspace()):
     ...        ...
 
     >>> # doctest: +SKIP
-    ...
     ... for line in file:
     ...   if len(line) == 0:
     ...       continue
