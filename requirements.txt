@@ -4,6 +4,7 @@ sphinxcontrib-bibtex==2.0.*
 recommonmark
 nbsphinx
 
+# pydata-sphinx-theme
 # sphinxcontrib-book
 # sphinxjp.themes.revealjs
 
