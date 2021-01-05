@@ -100,7 +100,7 @@ Mixed
 -----
 Iterating over ``list`` with scalar and vector values - simple loop:
 
->>> DATA = [('Jan', 'Twardowski'), 'Watney', 69, 13.37, {True, None, False}]
+>>> DATA = [('Jan', 'Twardowski'), 'Watney', 69, 13.37, [True, None, False]]
 >>>
 >>> for obj in DATA:
 ...     print(obj)
@@ -112,7 +112,7 @@ Watney
 
 Iterating over ``list`` with scalar and vector values - nested loop:
 
->>> DATA = [('Jan', 'Twardowski'), 'Watney', 69, 13.37, {True, None, False}]
+>>> DATA = [('Jan', 'Twardowski'), 'Watney', 69, 13.37, [True, None, False]]
 >>>
 >>> # doctest: +SKIP
 ... for obj in DATA:
