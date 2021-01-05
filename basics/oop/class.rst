@@ -16,13 +16,11 @@ Rationale
     object
         Object created from class.
 
-.. code-block:: python
-
-    class MyClass:
-        pass
-
-
-    my = MyClass()
+>>> class MyClass:
+...     pass
+>>>
+>>>
+>>> my = MyClass()
 
 
 Classes
@@ -32,17 +30,13 @@ Classes
 
 Defining class. Classes should have capitalized name:
 
-.. code-block:: python
-
-    class Astronaut:
-        pass
+>>> class Astronaut:
+...     pass
 
 Multi-word class names should use ``CamelCase``:
 
-.. code-block:: python
-
-    class AstronautPilot:
-        pass
+>>> class AstronautPilot:
+...     pass
 
 
 Instances
@@ -53,55 +47,47 @@ Instances
 
 One class and one instance:
 
-.. code-block:: python
-
-    class Astronaut:
-        pass
-
-
-    watney = Astronaut()
+>>> class Astronaut:
+...     pass
+>>>
+>>>
+>>> watney = Astronaut()
 
 One class and three instances:
 
-.. code-block:: python
-
-    class Astronaut:
-        pass
-
-
-    watney = Astronaut()
-    twardowski = Astronaut()
-    jimenez = Astronaut()
+>>> class Astronaut:
+...     pass
+>>>
+>>>
+>>> watney = Astronaut()
+>>> twardowski = Astronaut()
+>>> jimenez = Astronaut()
 
 Two classes and two instances:
 
-.. code-block:: python
-
-    class Astronaut:
-        pass
-
-    class Cosmonaut:
-        pass
-
-
-    mark = Astronaut()
-    ivan = Cosmonaut()
+>>> class Astronaut:
+...     pass
+>>>
+>>> class Cosmonaut:
+...     pass
+>>>
+>>>
+>>> mark = Astronaut()
+>>> ivan = Cosmonaut()
 
 Two classes and four instances (two instances of an ``Astronaut`` class, and two of a ``Cosmonaut`` class):
 
-.. code-block:: python
-
-    class AstronautPilot:
-        pass
-
-    class CosmonautPilot:
-        pass
-
-
-    mark_watney = AstronautPilot()
-    melissa_lewis = AstronautPilot()
-    ivan_ivanovich = CosmonautPilot()
-    jan_twardowski = CosmonautPilot()
+>>> class AstronautPilot:
+...     pass
+>>>
+>>> class CosmonautPilot:
+...     pass
+>>>
+>>>
+>>> mark_watney = AstronautPilot()
+>>> melissa_lewis = AstronautPilot()
+>>> ivan_ivanovich = CosmonautPilot()
+>>> jan_twardowski = CosmonautPilot()
 
 
 Class vs Instance
@@ -124,50 +110,44 @@ Convention
 
 Classes and Objects:
 
-.. code-block:: python
+>>> class AstronautEngineer:
+...     pass
+>>>
+>>> class AstronautScientist:
+...     pass
+>>>
+>>> class AstronautPilot:
+...     pass
+>>>
+>>>
+>>> mark_watney = AstronautScientist()
+>>> melissa_lewis = AstronautScientist()
+>>> jose_jimenez = AstronautEngineer()
+>>> jan_twardowski = AstronautPilot()
 
-    class AstronautEngineer:
-        pass
-
-    class AstronautScientist:
-        pass
-
-    class AstronautPilot:
-        pass
-
-
-    mark_watney = AstronautScientist()
-    melissa_lewis = AstronautScientist()
-    jose_jimenez = AstronautEngineer()
-    jan_twardowski = AstronautPilot()
-
-.. code-block:: python
-
-    def hello():
-        pass
-
-    class Astronaut:
-        pass
-
-
-    mark = Astronaut()
-    jose = Astronaut()
+>>> def hello():
+...     pass
+>>>
+>>> class Astronaut:
+...     pass
+>>>
+>>>
+>>> mark = Astronaut()
+>>> jose = Astronaut()
 
 
 Use Cases
 ---------
-.. code-block:: python
-
-    a = int()
-    b = float()
-    c = bool()
-    d = str()
-    e = list()
-    f = tuple()
-    g = set()
-    h = frozenset()
-    i = dict()
-    j = range()
+>>> a = int()
+>>> b = float()
+>>> c = bool()
+>>> d = str()
+>>> e = list()
+>>> f = tuple()
+>>> g = set()
+>>> h = frozenset()
+>>> i = dict()
+>>> j = range(1)
 
 
 Assignments

@@ -32,7 +32,7 @@ Mermaid
 -------
 * ``mermaid`` - Markdown extension
 
-.. code-block:: text
+.. code-block:: markdown
 
     ```mermaid
     classDiagram
