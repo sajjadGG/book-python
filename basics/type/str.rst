@@ -42,7 +42,6 @@ Single and Double Quotes
 * :pep:`257` -- Docstring Conventions: For multiline ``str`` always use three
   double quote (``"""``) characters
 
-
 Python console prefers single quote (``'``):
 
     >>> data = 'My name is José Jiménez'
