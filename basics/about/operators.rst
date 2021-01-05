@@ -115,35 +115,25 @@ Increment Operators
 * ``*=`` - Incremental multiplication
 * ``/=`` - Incremental division
 
-.. doctest::
-
     >>> x = 10
     >>> x = x + 1
     >>> print(x)
     11
-
-.. doctest::
 
     >>> x = 10
     >>> x += 1
     >>> print(x)
     11
 
-.. doctest::
-
     >>> x = 10
     >>> x -= 1
     >>> print(x)
     9
 
-.. doctest::
-
     >>> x = 1
     >>> x++
     Traceback (most recent call last):
     SyntaxError: invalid syntax
-
-.. doctest::
 
     >>> x = 1
     >>> ++x

@@ -27,7 +27,7 @@ Conditional Statement
 ---------------------
 ``if`` generic syntax:
 
-.. code-block:: text
+.. code-block:: python
 
     if <condition>:
         <do something>
@@ -130,7 +130,7 @@ Unconditional Alternative
 
 ``else`` generic syntax:
 
-.. code-block:: text
+.. code-block:: python
 
     if <condition>:
         <do something>
@@ -233,7 +233,7 @@ Conditional Alternative
 
 ``elif`` generic syntax:
 
-.. code-block:: text
+.. code-block:: python
 
     if <condition>:
         <do something>
@@ -242,21 +242,21 @@ Conditional Alternative
     else:
         <do something>
 
-    >>> input = lambda _: 'Polish'  # Stub user input, for testing purpose only
-    >>>
-    >>> language = input('What is your language?: ')
-    >>>
-    >>> if language == 'English':
-    ...     print('Hello')
-    ... elif language == 'Russian':
-    ...     print('Здравствуйте')
-    ... elif language == 'German':
-    ...     print('Guten Tag')
-    ... elif language == 'Polish':
-    ...     print('Witaj')
-    ... else:
-    ...     print("I don't speak this language")
-    Witaj
+>>> input = lambda _: 'Polish'  # Stub user input, for testing purpose only
+>>>
+>>> language = input('What is your language?: ')
+>>>
+>>> if language == 'English':
+...     print('Hello')
+... elif language == 'Russian':
+...     print('Здравствуйте')
+... elif language == 'German':
+...     print('Guten Tag')
+... elif language == 'Polish':
+...     print('Witaj')
+... else:
+...     print("I don't speak this language")
+Witaj
 
 
 Shorthand Expressions

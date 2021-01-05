@@ -123,8 +123,6 @@ Python Console (REPL)
 
 In documentation and books you may find ``>>>`` and ``...`` at the beginning of code listing lines
 
-.. doctest::
-
     >>> if True:
     ...     print('yes')
     ... else:

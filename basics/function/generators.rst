@@ -11,7 +11,7 @@ Range
 
 ``range()`` syntax:
 
-.. code-block:: text
+.. code-block:: python
 
     range([start], <stop>, [step])
 

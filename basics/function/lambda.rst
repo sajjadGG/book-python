@@ -17,7 +17,7 @@ Rationale
 
 Syntax
 ------
-.. code-block:: text
+.. code-block:: python
 
     lambda <arguments>: <expression>
 
