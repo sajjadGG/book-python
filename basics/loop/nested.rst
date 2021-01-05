@@ -108,7 +108,7 @@ Iterating over ``list`` with scalar and vector values - simple loop:
 Watney
 69
 13.37
-{False, True, None}
+[True, None, False]
 
 Iterating over ``list`` with scalar and vector values - nested loop:
 
@@ -131,7 +131,7 @@ TypeError: 'int' object is not iterable
 
 Iterating over ``list`` with scalar and vector values - smart loop:
 
->>> DATA = [('Jan', 'Twardowski'), 'Watney', 69, 13.37, {True, None, False}]
+>>> DATA = [('Jan', 'Twardowski'), 'Watney', 69, 13.37, [True, None, False]]
 >>>
 >>> for obj in DATA:
 ...     if type(obj) in (list, tuple, set, frozenset):
@@ -144,9 +144,9 @@ Twardowski
 Watney
 69
 13.37
-False
 True
 None
+False
 
 
 Assignments
