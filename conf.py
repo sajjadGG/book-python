@@ -204,7 +204,6 @@ exclude_patterns = [
     'TODO.rst',
     'Thumbs.db',
     '.DS_Store',
-    '*/index.rst'
 ]
 
 html_show_sphinx = False
