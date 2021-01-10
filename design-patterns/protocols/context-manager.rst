@@ -316,13 +316,13 @@ Assignments
 ===========
 
 .. literalinclude:: ../_assignments/protocol_contextmanager_file.py
-    :caption: :download:`Solution <assignments/protocol_contextmanager_file.py>`
+    :caption: :download:`Solution <../_assignments/protocol_contextmanager_file.py>`
     :end-before: # Solution
 
 .. literalinclude:: ../_assignments/protocol_contextmanager_buffer.py
-    :caption: :download:`Solution <assignments/protocol_contextmanager_buffer.py>`
+    :caption: :download:`Solution <../_assignments/protocol_contextmanager_buffer.py>`
     :end-before: # Solution
 
 .. literalinclude:: ../_assignments/protocol_contextmanager_autosave.py
-    :caption: :download:`Solution <assignments/protocol_contextmanager_autosave.py>`
+    :caption: :download:`Solution <../_assignments/protocol_contextmanager_autosave.py>`
     :end-before: # Solution

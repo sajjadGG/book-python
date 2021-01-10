@@ -112,13 +112,13 @@ Assignments
 ===========
 
 .. literalinclude:: ../_assignments/decorator_functools_func.py
-    :caption: :download:`Solution <assignments/decorator_functools_func.py>`
+    :caption: :download:`Solution <../_assignments/decorator_functools_func.py>`
     :end-before: # Solution
 
 .. literalinclude:: ../_assignments/decorator_functools_args.py
-    :caption: :download:`Solution <assignments/decorator_functools_args.py>`
+    :caption: :download:`Solution <../_assignments/decorator_functools_args.py>`
     :end-before: # Solution
 
 .. literalinclude:: ../_assignments/decorator_functools_cls.py
-    :caption: :download:`Solution <assignments/decorator_functools_cls.py>`
+    :caption: :download:`Solution <../_assignments/decorator_functools_cls.py>`
     :end-before: # Solution

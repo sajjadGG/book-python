@@ -404,13 +404,13 @@ Assignments
 ===========
 
 .. literalinclude:: ../_assignments/protocol_property_getter.py
-    :caption: :download:`Solution <assignments/protocol_property_getter.py>`
+    :caption: :download:`Solution <../_assignments/protocol_property_getter.py>`
     :end-before: # Solution
 
 .. literalinclude:: ../_assignments/protocol_property_setter.py
-    :caption: :download:`Solution <assignments/protocol_property_setter.py>`
+    :caption: :download:`Solution <../_assignments/protocol_property_setter.py>`
     :end-before: # Solution
 
 .. literalinclude:: ../_assignments/protocol_property_deleter.py
-    :caption: :download:`Solution <assignments/protocol_property_deleter.py>`
+    :caption: :download:`Solution <../_assignments/protocol_property_deleter.py>`
     :end-before: # Solution

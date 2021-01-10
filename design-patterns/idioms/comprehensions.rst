@@ -695,17 +695,17 @@ False
 Assignments
 -----------
 .. literalinclude:: ../_assignments/loop_comprehension_create.py
-    :caption: :download:`Solution <assignments/loop_comprehension_create.py>`
+    :caption: :download:`Solution <../_assignments/loop_comprehension_create.py>`
     :end-before: # Solution
 
 .. literalinclude:: ../_assignments/loop_comprehension_months.py
-    :caption: :download:`Solution <assignments/loop_comprehension_months.py>`
+    :caption: :download:`Solution <../_assignments/loop_comprehension_months.py>`
     :end-before: # Solution
 
 .. literalinclude:: ../_assignments/loop_comprehension_translate.py
-    :caption: :download:`Solution <assignments/loop_comprehension_translate.py>`
+    :caption: :download:`Solution <../_assignments/loop_comprehension_translate.py>`
     :end-before: # Solution
 
 .. literalinclude:: ../_assignments/loop_comprehension_split.py
-    :caption: :download:`Solution <assignments/loop_comprehension_split.py>`
+    :caption: :download:`Solution <../_assignments/loop_comprehension_split.py>`
     :end-before: # Solution

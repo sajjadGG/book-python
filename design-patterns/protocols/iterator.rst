@@ -630,11 +630,10 @@ Standard Library Itertools
 
 Assignments
 ===========
-
 .. literalinclude:: ../_assignments/protocol_iterator_implementation.py
-    :caption: :download:`Solution <assignments/protocol_iterator_implementation.py>`
+    :caption: :download:`Solution <../_assignments/protocol_iterator_implementation.py>`
     :end-before: # Solution
 
 .. literalinclude:: ../_assignments/protocol_iterator_range.py
-    :caption: :download:`Solution <assignments/protocol_iterator_range.py>`
+    :caption: :download:`Solution <../_assignments/protocol_iterator_range.py>`
     :end-before: # Solution

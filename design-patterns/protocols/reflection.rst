@@ -365,13 +365,13 @@ Assignments
 ===========
 
 .. literalinclude:: ../_assignments/protocol_reflection_delattr.py
-    :caption: :download:`Solution <assignments/protocol_reflection_delattr.py>`
+    :caption: :download:`Solution <../_assignments/protocol_reflection_delattr.py>`
     :end-before: # Solution
 
 .. literalinclude:: ../_assignments/protocol_reflection_setattr.py
-    :caption: :download:`Solution <assignments/protocol_reflection_setattr.py>`
+    :caption: :download:`Solution <../_assignments/protocol_reflection_setattr.py>`
     :end-before: # Solution
 
 .. literalinclude:: ../_assignments/protocol_reflection_frozen.py
-    :caption: :download:`Solution <assignments/protocol_reflection_frozen.py>`
+    :caption: :download:`Solution <../_assignments/protocol_reflection_frozen.py>`
     :end-before: # Solution

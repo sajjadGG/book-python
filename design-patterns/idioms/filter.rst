@@ -82,5 +82,5 @@ Use Cases
 Assignments
 -----------
 .. literalinclude:: ../_assignments/function_generators_chain.py
-    :caption: :download:`Solution <assignments/function_generators_chain.py>`
+    :caption: :download:`Solution <../_assignments/function_generators_chain.py>`
     :end-before: # Solution

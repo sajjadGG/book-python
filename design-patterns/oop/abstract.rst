@@ -250,9 +250,9 @@ Abstract Class:
 Assignments
 -----------
 .. literalinclude:: ../_assignments/oop_abstract_syntax.py
-    :caption: :download:`Solution <assignments/oop_abstract_syntax.py>`
+    :caption: :download:`Solution <../_assignments/oop_abstract_syntax.py>`
     :end-before: # Solution
 
 .. literalinclude:: ../_assignments/oop_abstract_interface.py
-    :caption: :download:`Solution <assignments/oop_abstract_interface.py>`
+    :caption: :download:`Solution <../_assignments/oop_abstract_interface.py>`
     :end-before: # Solution

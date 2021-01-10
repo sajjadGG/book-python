@@ -205,13 +205,13 @@ Assignments
 ===========
 
 .. literalinclude:: ../_assignments/decorator_cls_syntax.py
-    :caption: :download:`Solution <assignments/decorator_cls_syntax.py>`
+    :caption: :download:`Solution <../_assignments/decorator_cls_syntax.py>`
     :end-before: # Solution
 
 .. literalinclude:: ../_assignments/decorator_cls_abspath.py
-    :caption: :download:`Solution <assignments/decorator_cls_abspath.py>`
+    :caption: :download:`Solution <../_assignments/decorator_cls_abspath.py>`
     :end-before: # Solution
 
 .. literalinclude:: ../_assignments/decorator_cls_typecheck.py
-    :caption: :download:`Solution <assignments/decorator_cls_typecheck.py>`
+    :caption: :download:`Solution <../_assignments/decorator_cls_typecheck.py>`
     :end-before: # Solution

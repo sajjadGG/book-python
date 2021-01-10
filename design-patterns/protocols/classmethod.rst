@@ -289,5 +289,5 @@ Assignments
 ===========
 
 .. literalinclude:: ../_assignments/protocol_classmethod_csv.py
-    :caption: :download:`Solution <assignments/protocol_classmethod_csv.py>`
+    :caption: :download:`Solution <../_assignments/protocol_classmethod_csv.py>`
     :end-before: # Solution

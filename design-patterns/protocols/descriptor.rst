@@ -344,13 +344,13 @@ Assignments
 ===========
 
 .. literalinclude:: ../_assignments/protocol_descriptor_simple.py
-    :caption: :download:`Solution <assignments/protocol_descriptor_simple.py>`
+    :caption: :download:`Solution <../_assignments/protocol_descriptor_simple.py>`
     :end-before: # Solution
 
 .. literalinclude:: ../_assignments/protocol_descriptor_valuerange.py
-    :caption: :download:`Solution <assignments/protocol_descriptor_valuerange.py>`
+    :caption: :download:`Solution <../_assignments/protocol_descriptor_valuerange.py>`
     :end-before: # Solution
 
 .. literalinclude:: ../_assignments/protocol_descriptor_inheritance.py
-    :caption: :download:`Solution <assignments/protocol_descriptor_inheritance.py>`
+    :caption: :download:`Solution <../_assignments/protocol_descriptor_inheritance.py>`
     :end-before: # Solution

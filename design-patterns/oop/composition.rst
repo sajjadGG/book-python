@@ -187,9 +187,9 @@ Mixin classes - multiple inheritance:
 Assignments
 -----------
 .. literalinclude:: ../_assignments/oop_composition_syntax.py
-    :caption: :download:`Solution <assignments/oop_composition_syntax.py>`
+    :caption: :download:`Solution <../_assignments/oop_composition_syntax.py>`
     :end-before: # Solution
 
 .. literalinclude:: ../_assignments/oop_composition_decompose.py
-    :caption: :download:`Solution <assignments/oop_composition_decompose.py>`
+    :caption: :download:`Solution <../_assignments/oop_composition_decompose.py>`
     :end-before: # Solution

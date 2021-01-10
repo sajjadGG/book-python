@@ -522,9 +522,9 @@ Callback
 Assignments
 ===========
 .. literalinclude:: ../_assignments/functional_map_filter_lambda.py
-    :caption: :download:`Solution <assignments/functional_map_filter_lambda.py>`
+    :caption: :download:`Solution <../_assignments/functional_map_filter_lambda.py>`
     :end-before: # Solution
 
 .. literalinclude:: ../_assignments/functional_brackets.py
-    :caption: :download:`Solution <assignments/functional_brackets.py>`
+    :caption: :download:`Solution <../_assignments/functional_brackets.py>`
     :end-before: # Solution

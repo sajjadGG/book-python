@@ -160,5 +160,5 @@ Assignments
 ===========
 
 .. literalinclude:: ../_assignments/decorator_method_alive.py
-    :caption: :download:`Solution <assignments/decorator_method_alive.py>`
+    :caption: :download:`Solution <../_assignments/decorator_method_alive.py>`
     :end-before: # Solution

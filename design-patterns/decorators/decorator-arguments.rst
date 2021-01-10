@@ -182,13 +182,13 @@ Assignments
 ===========
 
 .. literalinclude:: ../_assignments/decorator_arguments_syntax.py
-    :caption: :download:`Solution <assignments/decorator_arguments_syntax.py>`
+    :caption: :download:`Solution <../_assignments/decorator_arguments_syntax.py>`
     :end-before: # Solution
 
 .. literalinclude:: ../_assignments/decorator_arguments_astronauts.py
-    :caption: :download:`Solution <assignments/decorator_arguments_astronauts.py>`
+    :caption: :download:`Solution <../_assignments/decorator_arguments_astronauts.py>`
     :end-before: # Solution
 
 .. literalinclude:: ../_assignments/decorator_arguments_typecheck.py
-    :caption: :download:`Solution <assignments/decorator_arguments_typecheck.py>`
+    :caption: :download:`Solution <../_assignments/decorator_arguments_typecheck.py>`
     :end-before: # Solution
