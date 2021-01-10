@@ -1,6 +1,5 @@
-********
 Callback
-********
+========
 
 Callback Design Pattern:
 

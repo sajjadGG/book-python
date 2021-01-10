@@ -8,6 +8,7 @@ About
     :caption: About
     :name: Stdlib About
 
+    about/setup.rst
     about/agenda.rst
     about/entry-test.rst
 

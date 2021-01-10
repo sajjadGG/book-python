@@ -88,7 +88,6 @@ import re
 import subprocess
 import sys
 from datetime import date
-import doctest
 
 needs_sphinx = '3.3'
 source_suffix = {
@@ -122,6 +121,15 @@ version = f'#{sha1}, {today}'
 release = f'#{sha1}, {today}'
 copyright = f'{year}, CC-BY-SA-4.0, {author} <{email}>, last update: {today}'
 
+if 'sphinx.ext.mathjax' in extensions:
+    imgmath_image_format = 'png'
+    imgmath_latex = 'latex'
+    # mathjax_path = '_static/mathjax.js'
+    mathjax_path = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+    mathjax_config = {
+        'extensions': ['tex2jax.js'],
+        'jax': ['input/TeX', 'output/HTML-CSS']}
+
 exclude_patterns = [
     '.*',
     'venv*',
@@ -137,8 +145,8 @@ exclude_patterns = [
     '_themes',
     '_tmp',
     '_contrib',
-    '**/_template.rst',
     '**/assignments',
+    '**/_template.rst',
     '**.ipynb_checkpoints',
     'README.rst',
     'TODO.rst',
@@ -201,6 +209,7 @@ if 'sphinx.ext.extlinks' in extensions:
 
 
 if 'sphinx.ext.doctest' in extensions:
+    import doctest
     trim_doctest_flags = False
     # doctest_global_cleanup = """"""
     # doctest_default_flags = doctest.ELLIPSIS | doctest.IGNORE_EXCEPTION_DETAIL | doctest.NORMALIZE_WHITESPACE

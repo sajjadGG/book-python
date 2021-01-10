@@ -1,10 +1,9 @@
-*****
 Setup
-*****
+=====
 
 
 Requirements
-============
+------------
 * Python 3.7, 3.8, 3.9 (preferred)
 * Free `Github <https://github.com/join>`_ account
 * Any IDE:
@@ -22,31 +21,30 @@ Trainer will use PyCharm. If you choose any other IDE, make sure you know how to
 
 
 Assignments
-===========
-
-.. literalinclude:: assignments/about_setup_vcs.py
+-----------
+.. literalinclude:: ../_assignments/about_setup_vcs.py
     :caption: :download:`Solution <assignments/about_setup_vcs.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/about_setup_ide.py
+.. literalinclude:: ../_assignments/about_setup_ide.py
     :caption: :download:`Solution <assignments/about_setup_ide.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/about_setup_project.py
+.. literalinclude:: ../_assignments/about_setup_project.py
     :caption: :download:`Solution <assignments/about_setup_project.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/about_setup_interpreter.py
+.. literalinclude:: ../_assignments/about_setup_interpreter.py
     :caption: :download:`Solution <assignments/about_setup_interpreter.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/about_setup_doctest.py
+.. literalinclude:: ../_assignments/about_setup_doctest.py
     :caption: :download:`Solution <assignments/about_setup_doctest.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/about_setup_push.py
+.. literalinclude:: ../_assignments/about_setup_push.py
     :caption: :download:`Solution <assignments/about_setup_push.py>`
     :end-before: # Solution
 
-.. figure:: img/pycharm-vsc-merge-rebase.png
+.. figure:: ../_img/pycharm-vsc-merge-rebase.png
 

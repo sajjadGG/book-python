@@ -1,0 +1,94 @@
+"""
+* Assignment: OOP Interface Implement
+* Filename: oop_interface_implement.py
+* Complexity: easy
+* Lines of code: 12 lines
+* Time: 13 min
+
+English:
+    1. Use data from "Given" section (see below)
+    2. Define class `Setosa` implementing `IrisInterface`
+    3. Implement interface
+    4. Compare result with "Tests" section (see below)
+
+Polish:
+    1. Użyj danych z sekcji "Given" (patrz poniżej)
+    2. Stwórz klasę `Setosa` implementującą `IrisInterface`
+    3. Zaimplementuj interfejs
+    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+
+Hints:
+    * `self.__dict__.values()`
+    * `mean = sum() / len()`
+
+Tests:
+    >>> assert issubclass(Setosa, IrisInterface)
+    >>> assert hasattr(Setosa, 'mean')
+    >>> assert hasattr(Setosa, 'sum')
+    >>> assert hasattr(Setosa, 'len')
+
+    >>> Setosa.__annotations__  # doctest: +NORMALIZE_WHITESPACE
+    {'sepal_length': <class 'float'>,
+     'sepal_width': <class 'float'>,
+     'petal_length': <class 'float'>,
+     'petal_width': <class 'float'>}
+
+    >>> setosa = Setosa(5.1, 3.5, 1.4, 0.2)
+    >>> setosa.len()
+    4
+    >>> setosa.sum()
+    10.2
+    >>> setosa.mean()
+    2.55
+"""
+
+
+# Given
+class IrisInterface:
+    sepal_length: float
+    sepal_width: float
+    petal_length: float
+    petal_width: float
+
+    def __init__(self,
+                 sepal_length: float,
+                 sepal_width: float,
+                 petal_length: float,
+                 petal_width: float) -> None:
+        raise NotImplementedError
+
+    def mean(self) -> float:
+        raise NotImplementedError
+
+    def sum(self) -> float:
+        raise NotImplementedError
+
+    def len(self) -> int:
+        raise NotImplementedError
+
+
+# Solution
+class Setosa(IrisInterface):
+    sepal_length: float
+    sepal_width: float
+    petal_length: float
+    petal_width: float
+
+    def __init__(self,
+                 sepal_length: float,
+                 sepal_width: float,
+                 petal_length: float,
+                 petal_width: float) -> None:
+        self.sepal_length = sepal_length
+        self.sepal_width = sepal_width
+        self.petal_length = petal_length
+        self.petal_width = petal_width
+
+    def mean(self) -> float:
+        return self.sum() / self.len()
+
+    def sum(self) -> float:
+        return sum(self.__dict__.values())
+
+    def len(self) -> int:
+        return len(self.__dict__)

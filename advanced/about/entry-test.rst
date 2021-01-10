@@ -1,10 +1,9 @@
-**********
 Entry Test
-**********
+==========
 
 
 Assignments
-===========
+-----------
 .. literalinclude:: assignments/entry_test_listdict.py
     :caption: Entry Test List of Dict
     :end-before: # Solution

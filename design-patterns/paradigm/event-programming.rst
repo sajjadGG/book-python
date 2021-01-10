@@ -1,10 +1,9 @@
-*****************
 Event Programming
-*****************
+=================
 
 
 Implementation
-==============
+--------------
 .. code-block:: python
 
     class event:
@@ -36,8 +35,8 @@ Implementation
             return getattr(EventManager, name).register
 
 
-Przykład użycia
-===============
+Use Case
+--------
 .. code-block:: python
 
     @EventManager.register('on_foo')
@@ -56,8 +55,8 @@ Przykład użycia
 
     EventManager.on_bar()
 
-Użycie
-======
+Use
+---
 .. code-block:: python
 
     EventManager.on_bar + funkcja
