@@ -1,34 +1,44 @@
-.. _Django:
+.. include:: ../README.rst
 
+*****
+About
+*****
+.. toctree::
+    :maxdepth: 1
+
+    ../LICENSE.rst
+    ../PROGRESS.rst
+    ../install.rst
+    ../survey.rst
+    ../about/references.rst
+
+******
+Django
+******
 .. toctree::
     :maxdepth: 2
+    :numbered:
     :caption: Django
 
-    http-protocol.rst
-    introduction.rst
-    architecture.rst
-    installation-and-usage.rst
-    settings.rst
-    apps.rst
-    models.rst
-    urls.rst
-    orm.rst
-    views.rst
-    forms.rst
-    rest.rst
-    staticfiles.rst
-    templates.rst
-    templatetags.rst
-    admin.rst
-    management-commands.rst
-    internationalization.rst
-    database.rst
-    cache.rst
-    signals.rst
-    auth-and-permissions.rst
-    api-cors.rst
-    standalone-scripts.rst
-    tests-and-quality.rst
-    tests.rst
-    ci-cd.rst
-    deployment.rst
+    _index.rst
+
+**********
+Appendixes
+**********
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Appendixes
+
+    ../about/history.rst
+    ../about/further-reading.rst
+    ../about/books.rst
+    ../about/video.rst
+    ../about/python-2vs3.rst
+    ../appendix/workshop/intermediate.rst
+    ../appendix/workshop/network.rst
+    ../appendix/workshop/django.rst
+    ../appendix/workshop/testing.rst
+    ../appendix/workshop/scientific.rst
+    ../appendix/workshop/machine-learning.rst
+    ../_references/references.rst

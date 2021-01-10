@@ -1,40 +1,44 @@
-.. _Object Oriented Programming:
+.. include:: ../README.rst
 
-********
-Paradigm
-********
+*****
+About
+*****
+.. toctree::
+    :maxdepth: 1
+
+    ../LICENSE.rst
+    ../PROGRESS.rst
+    ../install.rst
+    ../survey.rst
+    ../about/references.rst
+
+***************************
+Object Oriented Programming
+***************************
 .. toctree::
     :maxdepth: 2
-    :caption: Paradigm
-    :name: Object Oriented Programming Paradigm
+    :numbered:
+    :caption: Object Oriented Programming
 
-    polymorphism.rst
-    interface.rst
-    str-interning.rst
-    good-practices.rst
+    _index.rst
 
-******
-Python
-******
+**********
+Appendixes
+**********
 .. toctree::
     :maxdepth: 2
-    :caption: Python
-    :name: Object Oriented Programming Python
+    :numbered:
+    :caption: Appendixes
 
-    method-resolution-order.rst
-    namespace.rst
-    new-style-classes.rst
-    hash.rst
-    slots.rst
-    metaclass.rst
-
-**************
-Dynamic Typing
-**************
-.. toctree::
-    :maxdepth: 2
-    :caption: Dynamic Typing
-    :name: Object Oriented Programming Dynamic Typing
-
-    dynamic-typing.rst
-    monkey-patching.rst
+    ../about/history.rst
+    ../about/further-reading.rst
+    ../about/books.rst
+    ../about/video.rst
+    ../about/python-2vs3.rst
+    ../appendix/workshop/intermediate.rst
+    ../appendix/workshop/network.rst
+    ../appendix/workshop/django.rst
+    ../appendix/workshop/testing.rst
+    ../appendix/workshop/scientific.rst
+    ../appendix/workshop/machine-learning.rst
+    ../_references/references.rst

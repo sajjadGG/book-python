@@ -1,70 +1,44 @@
-.. _Data Science:
-
-************
-Introduction
-************
-.. toctree::
-    :maxdepth: 2
-    :caption: Introduction
-    :name: Data Science Introduction
-
-    introduction/description.rst
-    introduction/program.rst
-    introduction/agenda.rst
-    introduction/survey.rst
-
-*******
-Jupyter
-*******
-.. toctree::
-    :maxdepth: 2
-    :caption: Jupyter
-    :name: Data Science Jupyter
-
-    jupyter/index.rst
-
-******
-Python
-******
-.. toctree::
-    :maxdepth: 2
-    :caption: Introduction
-    :name: Data Science Python
-
-    python/index.rst
-    python/syntax.rst
-    python/types.rst
-    python/sequences.rst
-    python/mappings.rst
-    python/conditionals.rst
-    python/looping.rst
-    python/control-flow.rst
-    python/functions.rst
-    python/oop.rst
-    python/packages.rst
-    python/math.rst
-    python/serialization.rst
-    python/performance.rst
-
-******************
-Data Visualization
-******************
-.. toctree::
-    :maxdepth: 2
-    :caption: Data Visualization
-    :name: Data Science Visualization
-
-    visualization/plotly.rst
-    visualization/bokeh.rst
-    visualization/seaborn.rst
-    visualization/graphs.rst
+.. include:: ../README.rst
 
 *****
-Scipy
+About
 *****
 .. toctree::
-    :maxdepth: 2
-    :caption: Scipy
-    :name: Data Science Scipy
+    :maxdepth: 1
 
-    scipy/index.rst
+    ../LICENSE.rst
+    ../PROGRESS.rst
+    ../install.rst
+    ../survey.rst
+    ../about/references.rst
+
+************
+Data Science
+************
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Data Science
+
+    _index.rst
+
+**********
+Appendixes
+**********
+.. toctree::
+    :maxdepth: 2
+    :numbered:
+    :caption: Appendixes
+
+    ../about/history.rst
+    ../about/further-reading.rst
+    ../about/books.rst
+    ../about/video.rst
+    ../about/python-2vs3.rst
+    ../appendix/workshop/intermediate.rst
+    ../appendix/workshop/network.rst
+    ../appendix/workshop/django.rst
+    ../appendix/workshop/testing.rst
+    ../appendix/workshop/scientific.rst
+    ../appendix/workshop/machine-learning.rst
+    ../_references/references.rst

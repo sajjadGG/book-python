@@ -10,17 +10,9 @@ pygments_style = 'stata-dark'
 
 todo_emit_warnings = False
 todo_include_todos = True
+html_menu_autohide = False
 
-html_static_path = [
-    '_static',
-    '_data/csv',
-    '_data/json',
-    '_data/sas',
-    '_data/sqlite3',
-    '_data/xml',
-    '_data/xlsx',
-]
-
+bibtex_bibfiles = []
 
 # -- Standard book config -----------------------------------------------------
 import os
@@ -116,13 +108,6 @@ if 'sphinxcontrib.bibtex' in extensions:
     bibtex_bibliography_header = ".. rubric:: References"
     bibtex_footbibliography_header = bibtex_bibliography_header
     bibtex_default_style = 'alpha'
-    bibtex_bibfiles = [
-        '_references/bibliography.bib',
-        '_references/images.bib',
-        '_references/video.bib',
-        'numpy/_references/bibliography.bib',
-        'stdlib/_references/bibliography.bib',
-        'stdlib/regular-expressions/references/bibliography.bib']
 
 
 if 'sphinx.ext.extlinks' in extensions:
@@ -213,18 +198,35 @@ html_add_permalinks = '¶'
 html_theme_path = ['_themes']
 html_secnumber_suffix = '. '
 html_title = project
-html_favicon = '_static/favicon.png'
-html_context = {}
 html_copy_source = False
+
+html_context = globals().get('html_context', {})
+html_static_path = globals().get('html_static_path', [])
+
+if os.path.isfile('_static/img/favicon.png'):
+    html_favicon = '_static/img/favicon.png'
+elif os.path.isfile('../_static/img/favicon.png'):
+    html_favicon = '../_static/img/favicon.png'
+
+if os.path.isdir('_static'):
+    html_static_path += ['_static']
+elif os.path.isdir('../_static'):
+    html_static_path += ['../_static']
 
 if html_theme == 'sphinx_rtd_theme':
     html_context.update({
-        'css_files': ['_static/dark.css',
-                      '_static/print.css'],
-        'script_files': ['_static/jquery.min.js',
-                         '_static/onload.js',
-                         '_static/copybutton.js',
-                         mathjax_path]})
+        'css_files': [
+                '_static/css/dark.css',
+                '_static/css/print.css'],
+        'script_files': [
+                '_static/js/jquery.min.js',
+                '_static/js/assignment-numbers.js',
+                '_static/js/menu-search.js',
+                '_static/js/copybutton.js',
+                mathjax_path]})
+
+if 'html_menu_autohide' in globals() and html_menu_autohide is True:
+    html_context['script_files'].append('_static/js/menu-autohide.js')
 
 if html_theme == 'thesis':
     html_context.update({
@@ -253,3 +255,4 @@ man_pages = [
     (master_doc, project_slug, project, [author], 1)]
 texinfo_documents = [
     (master_doc, project_slug, project, author, project, '', 'Miscellaneous')]
+

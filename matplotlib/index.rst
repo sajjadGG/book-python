@@ -1,81 +1,44 @@
-.. _Matplotlib:
+.. include:: ../README.rst
 
 *****
 About
 *****
 .. toctree::
-    :maxdepth: 2
-    :caption: Matplotlib
-    :name: Matplotlib About
+    :maxdepth: 1
 
-    about.rst
+    ../LICENSE.rst
+    ../PROGRESS.rst
+    ../install.rst
+    ../survey.rst
+    ../about/references.rst
 
-******
-Figure
-******
+**********
+Matplotlib
+**********
 .. toctree::
     :maxdepth: 2
+    :numbered:
     :caption: Matplotlib
-    :name: Matplotlib Figure
 
-    plots.rst
-    subplots.rst
-    styling.rst
-    scales.rst
-    config.rst
-    interactive.rst
-    import-export.rst
+    _index.rst
 
-*****
-Style
-*****
+**********
+Appendixes
+**********
 .. toctree::
     :maxdepth: 2
-    :caption: Matplotlib
-    :name: Matplotlib Style
+    :numbered:
+    :caption: Appendixes
 
-    style-intro.rst
-    style-basic.rst
-
-*****
-Chart
-*****
-.. toctree::
-    :maxdepth: 2
-    :caption: Matplotlib
-    :name: Matplotlib Chart
-
-    chart-plot.rst
-    chart-scatter.rst
-    chart-bar.rst
-    chart-histogram.rst
-    chart-box.rst
-    chart-stacked.rst
-    chart-pie.rst
-    chart-3d.rst
-
-********
-Advanced
-********
-.. toctree::
-    :maxdepth: 2
-    :caption: Matplotlib
-    :name: Matplotlib Advanced
-
-    style-advanced.rst
-    customization.rst
-    multiple-figures.rst
-    animation.rst
-
-*****
-Recap
-*****
-.. toctree::
-    :maxdepth: 2
-    :caption: Matplotlib
-    :name: Matplotlib Recap
-
-    example.rst
-    lifecycle.rst
-    case-studies.rst
-    assignments.rst
+    ../about/history.rst
+    ../about/further-reading.rst
+    ../about/books.rst
+    ../about/video.rst
+    ../about/python-2vs3.rst
+    ../appendix/workshop/intermediate.rst
+    ../appendix/workshop/network.rst
+    ../appendix/workshop/django.rst
+    ../appendix/workshop/testing.rst
+    ../appendix/workshop/scientific.rst
+    ../appendix/workshop/machine-learning.rst
+    ../_references/references.rst

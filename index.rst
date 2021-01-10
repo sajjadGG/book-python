@@ -20,7 +20,7 @@ Python Basics
     :numbered:
     :caption: Python Basics
 
-    basics/index.rst
+    basics/_index.rst
 
 ***********************
 Python Standard Library
@@ -30,7 +30,7 @@ Python Standard Library
     :numbered:
     :caption: Python Standard Library
 
-    stdlib/index.rst
+    stdlib/_index.rst
 
 ***************
 Python Advanced
@@ -40,7 +40,7 @@ Python Advanced
     :numbered:
     :caption: Python Advanced
 
-    advanced/index.rst
+    advanced/_index.rst
 
 ******
 Dragon
@@ -62,7 +62,7 @@ Numpy
     :numbered:
     :caption: Numpy
 
-    numpy/index.rst
+    numpy/_index.rst
 
 ******
 Pandas
@@ -72,7 +72,7 @@ Pandas
     :numbered:
     :caption: Pandas
 
-    pandas/index.rst
+    pandas/_index.rst
 
 **********
 Matplotlib
@@ -82,7 +82,7 @@ Matplotlib
     :numbered:
     :caption: Matplotlib
 
-    matplotlib/index.rst
+    matplotlib/_index.rst
 
 ***************************
 Object Oriented Programming
@@ -92,7 +92,7 @@ Object Oriented Programming
     :numbered:
     :caption: Object Oriented Programming
 
-    oop/index.rst
+    oop/_index.rst
 
 ***************
 Design Patterns
@@ -102,7 +102,7 @@ Design Patterns
     :numbered:
     :caption: Design Patterns
 
-    design-patterns/index.rst
+    design-patterns/_index.rst
 
 *********
 DevSecOps
@@ -112,7 +112,7 @@ DevSecOps
     :numbered:
     :caption: DevSecOps
 
-    devsecops/index.rst
+    devsecops/_index.rst
 
 ****************
 Network and HTTP
@@ -122,7 +122,7 @@ Network and HTTP
     :numbered:
     :caption: Network and HTTP
 
-    network/index.rst
+    network/_index.rst
 
 ******
 Django
@@ -132,7 +132,7 @@ Django
     :numbered:
     :caption: Django
 
-    django/index.rst
+    django/_index.rst
 
 ************
 Data Science
@@ -142,7 +142,7 @@ Data Science
     :numbered:
     :caption: Data Science
 
-    data-science/index.rst
+    data-science/_index.rst
 
 ****************
 Machine Learning
@@ -152,7 +152,7 @@ Machine Learning
     :numbered:
     :caption: Machine Learning
 
-    machine-learning/index.rst
+    machine-learning/_index.rst
 
 *********
 Blogposts

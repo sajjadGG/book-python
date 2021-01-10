@@ -1,76 +1,44 @@
-.. _Numpy:
+.. include:: ../README.rst
 
 *****
 About
 *****
 .. toctree::
-    :maxdepth: 2
-    :caption: About
-    :name: Numpy About
+    :maxdepth: 1
 
-    about.rst
-    precision.rst
-    constants.rst
+    ../LICENSE.rst
+    ../PROGRESS.rst
+    ../install.rst
+    ../survey.rst
+    ../about/references.rst
 
 *****
-Array
+Numpy
 *****
 .. toctree::
     :maxdepth: 2
-    :caption: Array
-    :name: Numpy Array
+    :numbered:
+    :caption: Numpy
 
-    array-create.rst
-    array-dtype.rst
-    array-shape.rst
-    array-attributes.rst
-    array-getitem.rst
-    array-slice.rst
-    array-axis.rst
-    array-newaxis.rst
-    array-random.rst
-    array-rounding.rst
-    array-sort.rst
-    array-methods.rst
-    array-concatenation.rst
+    _index.rst
 
-******
-Select
-******
+**********
+Appendixes
+**********
 .. toctree::
     :maxdepth: 2
-    :caption: Select
-    :name: Numpy Select
+    :numbered:
+    :caption: Appendixes
 
-    array-iteration.rst
-    array-arithmetic.rst
-    array-broadcasting.rst
-    array-reduction.rst
-    array-logic.rst
-    array-select.rst
-    array-advancedindexing.rst
-
-***************
-Import & Export
-***************
-.. toctree::
-    :maxdepth: 2
-    :caption: Import & Export
-    :name: Numpy Import & Export
-
-    array-serialize.rst
-    import-export.rst
-
-****
-Math
-****
-.. toctree::
-    :maxdepth: 2
-    :caption: Math
-    :name: Numpy Math
-
-    statistics.rst
-    trigonometry.rst
-    polynomial.rst
-    algebra.rst
-    performance.rst
+    ../about/history.rst
+    ../about/further-reading.rst
+    ../about/books.rst
+    ../about/video.rst
+    ../about/python-2vs3.rst
+    ../appendix/workshop/intermediate.rst
+    ../appendix/workshop/network.rst
+    ../appendix/workshop/django.rst
+    ../appendix/workshop/testing.rst
+    ../appendix/workshop/scientific.rst
+    ../appendix/workshop/machine-learning.rst
+    ../_references/references.rst

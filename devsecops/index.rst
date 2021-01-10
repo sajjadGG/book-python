@@ -1,62 +1,44 @@
-.. _DevSecOps:
-
-**************************
-Good Engineering Practices
-**************************
-.. toctree::
-    :maxdepth: 2
-    :caption: Good Engineering Practices
-    :name: DevSecOps Good Engineering Practices
-
-    good-engineering-practice/pep8.rst
-    good-engineering-practice/pep20.rst
-    good-engineering-practice/code-smells.rst
-    good-engineering-practice/documentation.rst
+.. include:: ../README.rst
 
 *****
-Tests
+About
 *****
 .. toctree::
-    :maxdepth: 2
-    :caption: Tests
-    :name: DevSecOps Tests
+    :maxdepth: 1
 
-    tests/unittest.rst
-    tests/pytest.rst
+    ../LICENSE.rst
+    ../PROGRESS.rst
+    ../install.rst
+    ../survey.rst
+    ../about/references.rst
 
 *********
-Debugging
+DevSecOps
 *********
 .. toctree::
     :maxdepth: 2
-    :caption: Debugging
-    :name: DevSecOps Debugging
+    :numbered:
+    :caption: DevSecOps
 
-    debugging/python-wat.rst
-    debugging/logging.rst
-    debugging/warnings.rst
-    debugging/debugging-basic.rst
-    debugging/debugging-advanced.rst
-    debugging/introspection.rst
+    _index.rst
 
-***************
-Type Annotation
-***************
+**********
+Appendixes
+**********
 .. toctree::
     :maxdepth: 2
-    :caption: Type Annotation
-    :name: DevSecOps Type Annotation
+    :numbered:
+    :caption: Appendixes
 
-    type-annotation/checking.rst
-    type-annotation/annotating.rst
-    type-annotation/introspection.rst
-
-*****
-CI/CD
-*****
-.. toctree::
-    :maxdepth: 2
-    :caption: CI/CD
-    :name: DevSecOps CI/CD
-
-    ci-cd/index.rst
+    ../about/history.rst
+    ../about/further-reading.rst
+    ../about/books.rst
+    ../about/video.rst
+    ../about/python-2vs3.rst
+    ../appendix/workshop/intermediate.rst
+    ../appendix/workshop/network.rst
+    ../appendix/workshop/django.rst
+    ../appendix/workshop/testing.rst
+    ../appendix/workshop/scientific.rst
+    ../appendix/workshop/machine-learning.rst
+    ../_references/references.rst

@@ -1,121 +1,44 @@
-.. _Machine Learning:
+.. include:: ../README.rst
 
 *****
 About
 *****
 .. toctree::
-    :maxdepth: 2
-    :caption: Introduction
+    :maxdepth: 1
 
-    introduction/data.rst
-    introduction/statistics.rst
-    introduction/machine-learning.rst
-    introduction/glossary-pl.rst
-    introduction/glossary.rst
+    ../LICENSE.rst
+    ../PROGRESS.rst
+    ../install.rst
+    ../survey.rst
+    ../about/references.rst
 
-************
-Introduction
-************
+****************
+Machine Learning
+****************
 .. toctree::
     :maxdepth: 2
-    :caption: Introduction
+    :numbered:
+    :caption: Machine Learning
 
-    introduction/datasets.rst
-    introduction/algorithms.rst
-    introduction/features.rst
-    introduction/classifiers.rst
-
-*******
-Sklearn
-*******
-.. toctree::
-    :maxdepth: 2
-    :caption: Sklearn
-
-    sklearn/sklearn.rst
-
-*************
-Model Quality
-*************
-.. toctree::
-    :maxdepth: 2
-    :caption: Model Quality
-
-    model-quality/model-quality.rst
-    model-quality/principal-component-analysis.rst
-
-
-**************
-Decision Trees
-**************
-.. toctree::
-    :maxdepth: 2
-    :caption: Decision Trees
-
-    tree/decision-tree.rst
-
-***********
-Regressions
-***********
-.. toctree::
-    :maxdepth: 2
-    :caption: Regressions
-
-    regression/linear.rst
-    regression/logistics.rst
-
-*******************
-K-Nearest Neighbors
-*******************
-.. toctree::
-    :maxdepth: 2
-    :caption: K-Nearest Neighbors
-
-    knn/k-nearest-neighbors.rst
-
-*****
-Bayes
-*****
-.. toctree::
-    :maxdepth: 2
-    :caption: Bayes
-
-    bayes/naive.rst
-
-***********************
-Support Vector Machines
-***********************
-.. toctree::
-    :maxdepth: 2
-    :caption: Support Vector Machines
-
-    svm/support-vector-machines.rst
+    _index.rst
 
 **********
-Clustering
+Appendixes
 **********
 .. toctree::
     :maxdepth: 2
-    :caption: Clustering
+    :numbered:
+    :caption: Appendixes
 
-    clustering/k-means.rst
-
-***************
-Neural Networks
-***************
-.. toctree::
-    :maxdepth: 2
-    :caption: Neural Networks
-
-    neural-network/deep.rst
-    neural-network/convolutional.rst
-
-**********
-References
-**********
-.. toctree::
-    :maxdepth: 2
-    :caption: References
-
-    introduction/references.rst
-    _notes.rst
+    ../about/history.rst
+    ../about/further-reading.rst
+    ../about/books.rst
+    ../about/video.rst
+    ../about/python-2vs3.rst
+    ../appendix/workshop/intermediate.rst
+    ../appendix/workshop/network.rst
+    ../appendix/workshop/django.rst
+    ../appendix/workshop/testing.rst
+    ../appendix/workshop/scientific.rst
+    ../appendix/workshop/machine-learning.rst
+    ../_references/references.rst

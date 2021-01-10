@@ -15,7 +15,7 @@ Python 3: From None to Machine Learning
 
 Author
 ======
-.. figure:: /_static/AstroMatt.jpg
+.. figure:: _static/img/AstroMatt.jpg
 
 .. csv-table::
     :widths: 15, 65
