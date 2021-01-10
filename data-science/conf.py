@@ -217,6 +217,7 @@ if html_theme == 'sphinx_rtd_theme':
     html_context.update({
         'css_files': [
                 '_static/css/dark.css',
+                '_static/css/pygments.css',
                 '_static/css/print.css'],
         'script_files': [
                 '_static/js/jquery.min.js',
