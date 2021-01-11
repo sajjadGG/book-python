@@ -4,7 +4,14 @@
 CI/CD Tools
 ***********
 
+
+Rationale
+=========
 * https://pre-commit.com/
+
+.. figure:: .._/_img/ecosystem-bigpicture.png
+.. figure:: .._/_img/ecosystem-alternatives.png
+
 
 Static Analysis
 ===============

@@ -56,6 +56,7 @@ CI/CD
     :maxdepth: 1
     :caption: CI/CD
 
+    ci-cd/ecosystem.rst
     ci-cd/tools.rst
     ci-cd/pipelines.rst
     ci-cd/lint.rst
