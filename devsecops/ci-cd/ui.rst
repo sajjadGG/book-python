@@ -28,5 +28,5 @@ WebDriver is the name of the key interface against which tests should be written
     * RemoteWebDriver,
     * SafariDriver.
 
-.. figure:: ../_img/selenium-ide.png
+.. figure:: ../_img/qa-selenium-ide.png
 

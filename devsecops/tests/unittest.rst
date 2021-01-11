@@ -2,7 +2,7 @@
 Unit Testing
 ************
 
-.. figure:: ../_img/geek-and-poke-development-driven-tests.jpg
+.. figure:: ../_img/fun-geekandpoke-development-driven-tests.jpg
 
     Development driven tests
 

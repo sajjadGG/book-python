@@ -9,8 +9,8 @@ Rationale
 =========
 * https://pre-commit.com/
 
-.. figure:: .._/_img/ecosystem-bigpicture.png
-.. figure:: .._/_img/ecosystem-alternatives.png
+.. figure:: ../_img/ecosystem-bigpicture.png
+.. figure:: ../_img/ecosystem-alternatives.png
 
 
 Static Analysis
