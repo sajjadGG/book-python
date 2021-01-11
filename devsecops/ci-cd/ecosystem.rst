@@ -4,12 +4,16 @@ CI/CD Devtools Ecosystem
 
 Agility
 -------
+* Further Reading: https://agility.astrotech.io
+
 .. figure:: ../_img/agility-bigpicture-v1.png
 .. figure:: ../_img/agility-bigpicture-v2.png
 
 
-Big Picture
------------
+Ecosystem
+---------
+* Further Reading: https://ecosystem.astrotech.io
+
 .. figure:: ../_img/ecosystem-bigpicture.png
 .. figure:: ../_img/ecosystem-alternatives.png
 
@@ -21,6 +25,8 @@ Version Control System
 * Github
 * Bitbucket
 * GitLab
+* Further Reading: https://vcs.astrotech.io
+* Further Reading: https://git.astrotech.io
 
 .. figure:: ../_img/vcs-gitflow-01-feature.png
 .. figure:: ../_img/vcs-gitflow-02-feature-pr.png
@@ -39,6 +45,8 @@ Version Control System
 Virtualization
 --------------
 * Docker
+* Further Reading: https://virt.astrotech.io
+* Further Reading: https://docker.astrotech.io
 
 .. figure:: ../_img/virt-docker-stack-01-baremetal.png
 .. figure:: ../_img/virt-docker-stack-02-virtualization-1.png
@@ -61,6 +69,8 @@ Continuous Integration / Delivery
 * CircleCI
 * Travis
 * GitLab
+* Further Reading: https://cicd.astrotech.io
+* Further Reading: https://jenkins.astrotech.io
 
 .. figure:: ../_img/cicd-jenkins-docker-1.png
 .. figure:: ../_img/cicd-jenkins-docker-2-build.png
@@ -80,6 +90,21 @@ Quality Assurance
 * SonarLint
 * SonarScanner
 * SonarCloud
+* Further Reading: https://qa.astrotech.io
+* Further Reading: https://quality.astrotech.io
+* Further Reading: https://sonarqube.astrotech.io
+* Further Reading: https://sonar.astrotech.io
+
+.. image:: _img/sonarlint-a.jpg
+    :class: hidden
+
+.. image:: _img/sonarlint-b.mp4
+    :class: hidden
+
+.. raw:: html
+
+    <video autoplay="" loop="" muted="" playsinline="" src="../_images/sonarlint-b.mp4" poster="../_images/sonarlint-a.jpg" width="100%" height="100%" alt="SonarLint is an IDE extension that helps you detect and fix quality issues as you write code. [officialpage]_"></video>
+
 
 .. figure:: ../_img/qa-sonarlint-a.jpg
 .. figure:: ../_img/qa-sonarlint-b.mp4
@@ -103,6 +128,9 @@ Quality Assurance
 
 Issue Tracker
 -------------
+* Further Reading: https://issue.astrotech.io
+* Further Reading: https://jira.astrotech.io
+
 .. figure:: ../_img/jira-backlog.jpg
 .. figure:: ../_img/jira-backlog-kanban.png
 .. figure:: ../_img/jira-backlog-scrum.png
@@ -126,6 +154,8 @@ SSH
 
 Testing
 -------
+* Further Reading: https://test.astrotech.io
+
 .. figure:: ../_img/cicd-strategy.png
 
 
@@ -143,6 +173,8 @@ Testing UI
 
 Testing microservices
 ---------------------
+* Further Reading: https://arch.astrotech.io
+
 .. figure:: ../_img/testing-microservices-01.png
 .. figure:: ../_img/testing-microservices-02.png
 .. figure:: ../_img/testing-microservices-03.png
@@ -156,3 +188,9 @@ Testing microservices
 .. figure:: ../_img/testing-microservices-11.png
 .. figure:: ../_img/testing-microservices-12.png
 .. figure:: ../_img/testing-microservices-13.png
+
+
+
+References
+----------
+.. [officialpage] https://www.sonarlint.org
