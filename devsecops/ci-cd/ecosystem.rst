@@ -4,7 +4,8 @@ CI/CD Devtools Ecosystem
 
 Agility
 -------
-* Further Reading: https://agility.astrotech.io
+* Further Reading: https://dev.astrotech.io/agile/index.html
+.. todo:: Further Reading: https://agility.astrotech.io
 
 .. figure:: ../_img/agility-bigpicture-v1.png
 .. figure:: ../_img/agility-bigpicture-v2.png
@@ -12,7 +13,8 @@ Agility
 
 Ecosystem
 ---------
-* Further Reading: https://ecosystem.astrotech.io
+* Further Reading: https://dev.astrotech.io/summary/index.html
+.. todo:: Further Reading: https://ecosystem.astrotech.io
 
 .. figure:: ../_img/ecosystem-bigpicture.png
 .. figure:: ../_img/ecosystem-alternatives.png
@@ -25,8 +27,10 @@ Version Control System
 * Github
 * Bitbucket
 * GitLab
-* Further Reading: https://vcs.astrotech.io
-* Further Reading: https://git.astrotech.io
+* Further Reading: https://dev.astrotech.io/git/index.html
+.. todo:: Further Reading: https://dev.astrotech.io/git/index.html
+.. todo:: Further Reading: https://vcs.astrotech.io
+.. todo:: Further Reading: https://git.astrotech.io
 
 .. figure:: ../_img/vcs-gitflow-01-feature.png
 .. figure:: ../_img/vcs-gitflow-02-feature-pr.png
@@ -45,8 +49,16 @@ Version Control System
 Virtualization
 --------------
 * Docker
-* Further Reading: https://virt.astrotech.io
-* Further Reading: https://docker.astrotech.io
+* LXC - Linux Containers
+* OCI - Open Container Initiative
+* Kubernetes
+* Containerd
+* OpenShift
+* Open Stack
+* Amazon EKS, ECS
+* Further Reading: https://dev.astrotech.io/docker/index.html
+.. todo:: Further Reading: https://virt.astrotech.io
+.. todo:: Further Reading: https://docker.astrotech.io
 
 .. figure:: ../_img/virt-docker-stack-01-baremetal.png
 .. figure:: ../_img/virt-docker-stack-02-virtualization-1.png
@@ -69,8 +81,9 @@ Continuous Integration / Delivery
 * CircleCI
 * Travis
 * GitLab
-* Further Reading: https://cicd.astrotech.io
-* Further Reading: https://jenkins.astrotech.io
+* Further Reading: https://dev.astrotech.io/jenkins/index.html
+.. todo:: Further Reading: https://cicd.astrotech.io
+.. todo:: Further Reading: https://jenkins.astrotech.io
 
 .. figure:: ../_img/cicd-jenkins-docker-1.png
 .. figure:: ../_img/cicd-jenkins-docker-2-build.png
@@ -90,10 +103,19 @@ Quality Assurance
 * SonarLint
 * SonarScanner
 * SonarCloud
-* Further Reading: https://qa.astrotech.io
-* Further Reading: https://quality.astrotech.io
-* Further Reading: https://sonarqube.astrotech.io
-* Further Reading: https://sonar.astrotech.io
+* Coverage
+* PEP-8
+* PyLint
+* Black
+* Further Reading: https://dev.astrotech.io/sonarqube/index.html
+* Further Reading: https://python.astrotech.io/devsecops/ci-cd/tools.html#static-analysis
+* Further Reading: https://python.astrotech.io/devsecops/ci-cd/code-style.html
+* Further Reading: https://python.astrotech.io/devsecops/ci-cd/coverage.html
+* Further Reading: https://python.astrotech.io/devsecops/ci-cd/static-analysis.html
+.. todo:: Further Reading: https://qa.astrotech.io
+.. todo:: Further Reading: https://quality.astrotech.io
+.. todo:: Further Reading: https://sonarqube.astrotech.io
+.. todo:: Further Reading: https://sonar.astrotech.io
 
 .. image:: _img/sonarlint-a.jpg
     :class: hidden
@@ -104,7 +126,6 @@ Quality Assurance
 .. raw:: html
 
     <video autoplay="" loop="" muted="" playsinline="" src="../_images/sonarlint-b.mp4" poster="../_images/sonarlint-a.jpg" width="100%" height="100%" alt="SonarLint is an IDE extension that helps you detect and fix quality issues as you write code. [officialpage]_"></video>
-
 
 .. figure:: ../_img/qa-sonarlint-a.jpg
 .. figure:: ../_img/qa-sonarlint-b.mp4
@@ -128,8 +149,13 @@ Quality Assurance
 
 Issue Tracker
 -------------
-* Further Reading: https://issue.astrotech.io
-* Further Reading: https://jira.astrotech.io
+* Jira
+* Gitlab
+* Github issues
+* Further Reading: https://dev.astrotech.io/jira/index.html
+.. todo:: https://dev.astrotech.io/jira/index.html
+.. todo:: https://issue.astrotech.io
+.. todo:: https://jira.astrotech.io
 
 .. figure:: ../_img/jira-backlog.jpg
 .. figure:: ../_img/jira-backlog-kanban.png
@@ -189,6 +215,17 @@ Testing microservices
 .. figure:: ../_img/testing-microservices-12.png
 .. figure:: ../_img/testing-microservices-13.png
 
+
+Provisioning
+------------
+* Ansible
+* Puppet
+* Chef
+* Saltstack
+* Vagrant
+* Further Reading: https://dev.astrotech.io/puppet/index.html
+* Further Reading: https://dev.astrotech.io/ansible/index.html
+* Further Reading: https://dev.astrotech.io/vagrant/index.html
 
 
 References
