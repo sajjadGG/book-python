@@ -25,18 +25,18 @@ Ecosystem
 
 .. figure:: ../_img/ecosystem-bigpicture.png
 .. figure:: ../_img/ecosystem-alternatives.png
-.. figure:: ../_img/ecosystem-ecosystem-bigpicture-01.png
-.. figure:: ../_img/ecosystem-ecosystem-bigpicture-02.png
-.. figure:: ../_img/ecosystem-ecosystem-bigpicture-03.png
-.. figure:: ../_img/ecosystem-ecosystem-bigpicture-04.png
-.. figure:: ../_img/ecosystem-ecosystem-bigpicture-05.png
-.. figure:: ../_img/ecosystem-ecosystem-bigpicture-06.png
-.. figure:: ../_img/ecosystem-ecosystem-bigpicture-07.png
-.. figure:: ../_img/ecosystem-ecosystem-bigpicture-08.png
-.. figure:: ../_img/ecosystem-ecosystem-bigpicture-09.png
-.. figure:: ../_img/ecosystem-ecosystem-bigpicture-10.png
-.. figure:: ../_img/ecosystem-ecosystem-bigpicture-11.png
-.. figure:: ../_img/ecosystem-ecosystem-bigpicture-12.png
+.. figure:: ../_img/ecosystem-bigpicture-01.png
+.. figure:: ../_img/ecosystem-bigpicture-02.png
+.. figure:: ../_img/ecosystem-bigpicture-03.png
+.. figure:: ../_img/ecosystem-bigpicture-04.png
+.. figure:: ../_img/ecosystem-bigpicture-05.png
+.. figure:: ../_img/ecosystem-bigpicture-06.png
+.. figure:: ../_img/ecosystem-bigpicture-07.png
+.. figure:: ../_img/ecosystem-bigpicture-08.png
+.. figure:: ../_img/ecosystem-bigpicture-09.png
+.. figure:: ../_img/ecosystem-bigpicture-10.png
+.. figure:: ../_img/ecosystem-bigpicture-11.png
+.. figure:: ../_img/ecosystem-bigpicture-12.png
 
 
 Version Control System
