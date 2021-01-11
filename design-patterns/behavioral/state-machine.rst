@@ -1,6 +1,8 @@
 State Machine
 =============
 
+Rationale
+---------
 * EN: State Machine
 * PL: Maszyna Stanów
 * Type: class
@@ -15,6 +17,7 @@ State Machine
 * Each State object has its own little State table
 * There is a single master state transition table for the whole system
 
+
 .. code-block:: text
 
     statemachine TrafficLight:
@@ -28,6 +31,17 @@ State Machine
     Amber.wait = sleep(1)
     Green.wait = sleep(2)
 
+
+Use Cases
+---------
+
+
+Design
+------
+
+
+Example
+-------
 .. code-block:: python
 
     from time import sleep
@@ -104,3 +118,10 @@ State Machine
 
     for light in TrafficLights(max_changes=10):
         pass
+
+
+Assignments
+-----------
+.. todo:: Create assignments
+
+

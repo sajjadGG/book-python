@@ -7,25 +7,27 @@ Boxes and Arrows
 .. figure:: img/uml-class-diagram-1.jpg
 
 
+UML
+---
+* Unified Modeling Language
+
+
 UML Class Diagram
 -----------------
 .. figure:: img/uml-class-diagram-2.png
-
 .. figure:: img/uml-class-diagram-3.png
-
 .. figure:: img/uml-class-diagram-4.png
-
 .. figure:: img/uml-class-diagram-5.png
-
 .. figure:: img/uml-class-diagram-6.png
-
 .. figure:: img/uml-class-diagram-7.png
-
 .. figure:: img/uml-class-diagram-8.jpg
-
 .. figure:: img/uml-class-diagram-9.jpg
-
 .. figure:: img/uml-class-diagram-10.png
+
+
+UML Sequence Diagram
+--------------------
+.. figure:: img/uml-sequence-diagram.jpg
 
 
 Mermaid

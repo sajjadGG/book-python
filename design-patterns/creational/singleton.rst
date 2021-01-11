@@ -1,10 +1,24 @@
 Singleton
 =========
 
+
+Rationale
+---------
 * EN: Singleton
 * PL: Singleton
 * Type: object
 
+
+Use Cases
+---------
+
+
+Design
+------
+
+
+Example
+-------
 .. code-block:: python
 
     class DB:
@@ -27,3 +41,9 @@ Singleton
     # Will use existing connection to the DB
     # The same handle as `first`
     second = DB().connect()
+
+
+Assignments
+-----------
+.. todo:: Create assignments
+

@@ -7,6 +7,8 @@ Examples
 ========
 * https://www.toptal.com/python/python-design-patterns
 
+.. figure:: ../_img/designpatterns-categories.png
+
 
 Structural Design Patterns
 ==========================

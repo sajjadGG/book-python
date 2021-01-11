@@ -1,9 +1,24 @@
 Factory Method
 ==============
 
+
+Rationale
+---------
 * EN: Factory Method
 * PL: Metoda wytwórcza
 * Type: class
+
+
+Use Cases
+---------
+
+
+Design
+------
+
+
+Example
+-------
 
 .. code-block:: python
 
@@ -231,3 +246,9 @@ Factory Method
     iris = factory('setosa')
     print(iris)
     # <class '__main__.Setosa'>
+
+
+Assignments
+-----------
+.. todo:: Create assignments
+

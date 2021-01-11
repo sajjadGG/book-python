@@ -1,10 +1,24 @@
 Gateway
 =======
 
+
+Rationale
+---------
 * EN: Gateway
 * PL: Bramka
 * Type: class
 
+
+Use Cases
+---------
+
+
+Design
+------
+
+
+Example
+-------
 .. code-block:: python
 
     import logging
@@ -108,3 +122,12 @@ Gateway
         html = http.get('http://python.astrotech.io')
 
         print(html)
+
+
+Example
+-------
+
+
+Assignments
+-----------
+.. todo:: Create assignments

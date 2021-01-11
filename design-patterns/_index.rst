@@ -28,6 +28,8 @@ UML
     :maxdepth: 1
     :caption: UML
 
+    uml/about.rst
+    uml/relations.rst
     uml/class-diagram.rst
     uml/sequence-diagram.rst
 
