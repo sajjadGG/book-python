@@ -10,6 +10,11 @@ Agility
 
 .. figure:: ../_img/agility-bigpicture-v1.png
 .. figure:: ../_img/agility-bigpicture-v2.png
+.. figure:: ../_img/agility-scrum-userstory.png
+.. figure:: ../_img/agility-scrum-capacity-backlog.png
+.. figure:: ../_img/agility-scrum-capacity-sprint.png
+.. figure:: ../_img/agility-scrum-daily-timer.png
+.. figure:: ../_img/agility-scrum-sprint-week-continuous.png
 
 
 Ecosystem
@@ -20,6 +25,18 @@ Ecosystem
 
 .. figure:: ../_img/ecosystem-bigpicture.png
 .. figure:: ../_img/ecosystem-alternatives.png
+.. figure:: ../_img/ecosystem-ecosystem-bigpicture-01.png
+.. figure:: ../_img/ecosystem-ecosystem-bigpicture-02.png
+.. figure:: ../_img/ecosystem-ecosystem-bigpicture-03.png
+.. figure:: ../_img/ecosystem-ecosystem-bigpicture-04.png
+.. figure:: ../_img/ecosystem-ecosystem-bigpicture-05.png
+.. figure:: ../_img/ecosystem-ecosystem-bigpicture-06.png
+.. figure:: ../_img/ecosystem-ecosystem-bigpicture-07.png
+.. figure:: ../_img/ecosystem-ecosystem-bigpicture-08.png
+.. figure:: ../_img/ecosystem-ecosystem-bigpicture-09.png
+.. figure:: ../_img/ecosystem-ecosystem-bigpicture-10.png
+.. figure:: ../_img/ecosystem-ecosystem-bigpicture-11.png
+.. figure:: ../_img/ecosystem-ecosystem-bigpicture-12.png
 
 
 Version Control System
@@ -236,6 +253,7 @@ Provisioning
 * Further Reading: https://dev.astrotech.io/ansible/index.html
 * Further Reading: https://dev.astrotech.io/vagrant/index.html
 
+.. figure:: ../_img/provision-ansible.png
 
 References
 ----------
