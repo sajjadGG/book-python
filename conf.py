@@ -9,7 +9,7 @@ html_theme = 'sphinx_rtd_theme'
 pygments_style = 'stata-dark'
 
 todo_emit_warnings = False
-todo_include_todos = True
+todo_include_todos = False
 html_menu_autohide = True
 
 html_static_path = [
