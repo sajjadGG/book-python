@@ -5,6 +5,7 @@ CI/CD Devtools Ecosystem
 Agility
 -------
 * Further Reading: https://dev.astrotech.io/agile/index.html
+
 .. todo:: Further Reading: https://agility.astrotech.io
 
 .. figure:: ../_img/agility-bigpicture-v1.png
@@ -14,6 +15,7 @@ Agility
 Ecosystem
 ---------
 * Further Reading: https://dev.astrotech.io/summary/index.html
+
 .. todo:: Further Reading: https://ecosystem.astrotech.io
 
 .. figure:: ../_img/ecosystem-bigpicture.png
@@ -28,6 +30,7 @@ Version Control System
 * Bitbucket
 * GitLab
 * Further Reading: https://dev.astrotech.io/git/index.html
+
 .. todo:: Further Reading: https://dev.astrotech.io/git/index.html
 .. todo:: Further Reading: https://vcs.astrotech.io
 .. todo:: Further Reading: https://git.astrotech.io
@@ -57,6 +60,7 @@ Virtualization
 * Open Stack
 * Amazon EKS, ECS
 * Further Reading: https://dev.astrotech.io/docker/index.html
+
 .. todo:: Further Reading: https://virt.astrotech.io
 .. todo:: Further Reading: https://docker.astrotech.io
 
@@ -82,6 +86,7 @@ Continuous Integration / Delivery
 * Travis
 * GitLab
 * Further Reading: https://dev.astrotech.io/jenkins/index.html
+
 .. todo:: Further Reading: https://cicd.astrotech.io
 .. todo:: Further Reading: https://jenkins.astrotech.io
 
@@ -112,20 +117,21 @@ Quality Assurance
 * Further Reading: https://python.astrotech.io/devsecops/ci-cd/code-style.html
 * Further Reading: https://python.astrotech.io/devsecops/ci-cd/coverage.html
 * Further Reading: https://python.astrotech.io/devsecops/ci-cd/static-analysis.html
+
 .. todo:: Further Reading: https://qa.astrotech.io
 .. todo:: Further Reading: https://quality.astrotech.io
 .. todo:: Further Reading: https://sonarqube.astrotech.io
 .. todo:: Further Reading: https://sonar.astrotech.io
 
-.. image:: _img/sonarlint-a.jpg
+.. image:: _img/qa-sonarlint-a.jpg
     :class: hidden
 
-.. image:: _img/sonarlint-b.mp4
+.. image:: _img/qa-sonarlint-b.mp4
     :class: hidden
 
 .. raw:: html
 
-    <video autoplay="" loop="" muted="" playsinline="" src="../_images/sonarlint-b.mp4" poster="../_images/sonarlint-a.jpg" width="100%" height="100%" alt="SonarLint is an IDE extension that helps you detect and fix quality issues as you write code. [officialpage]_"></video>
+    <video autoplay="" loop="" muted="" playsinline="" src="../_img/qa-sonarlint-b.mp4" poster="../_img/qa-sonarlint-a.jpg" width="100%" height="100%" alt="SonarLint is an IDE extension that helps you detect and fix quality issues as you write code. [officialpage]_"></video>
 
 .. figure:: ../_img/qa-sonarlint-a.jpg
 .. figure:: ../_img/qa-sonarlint-b.mp4
@@ -153,6 +159,7 @@ Issue Tracker
 * Gitlab
 * Github issues
 * Further Reading: https://dev.astrotech.io/jira/index.html
+
 .. todo:: https://dev.astrotech.io/jira/index.html
 .. todo:: https://issue.astrotech.io
 .. todo:: https://jira.astrotech.io
@@ -173,6 +180,8 @@ Issue Tracker
 
 SSH
 ---
+* Further Reading: https://dev.astrotech.io/linux/index.html
+
 .. figure:: ../_img/ssh-pssh-1.jpg
 .. figure:: ../_img/ssh-pssh-2.png
 .. figure:: ../_img/ssh-pssh-3.png
@@ -221,7 +230,7 @@ Provisioning
 * Ansible
 * Puppet
 * Chef
-* Saltstack
+* Salt, SaltStack
 * Vagrant
 * Further Reading: https://dev.astrotech.io/puppet/index.html
 * Further Reading: https://dev.astrotech.io/ansible/index.html
