@@ -36,7 +36,6 @@ Line length
         vitamins_d = models.DecimalField(verbose_name=_('Vitamin D'), help_text=_('µg/100g'), decimal_places=2, max_digits=5, blank=True, null=True, default=None)
         vitamins_e = models.DecimalField(verbose_name=_('Vitamin E'), help_text=_('mg/100g'), decimal_places=2, max_digits=5, blank=True, null=True, default=None)
         vitamins_pp = models.DecimalField(verbose_name=_('Vitamin PP'), help_text=_('mg/100g'), decimal_places=2, max_digits=5, blank=True, null=True, default=None)
-
         minerals_zinc = models.DecimalField(verbose_name=_('Zinc'), help_text=_('mg/100g'), decimal_places=2, max_digits=5, blank=True, null=True, default=None)
         minerals_phosphorus = models.DecimalField(verbose_name=_('Phosphorus'), help_text=_('mg/100g'), decimal_places=2, max_digits=5, blank=True, null=True, default=None)
         minerals_iodine = models.DecimalField(verbose_name=_('Iodine'), help_text=_('µg/100g'), decimal_places=2, max_digits=5, blank=True, null=True, default=None)
@@ -846,6 +845,6 @@ Configuration
 Assignments
 ===========
 
-.. literalinclude:: assignments/devsecops_gep_pycodestyle.py
-    :caption: :download:`Solution <assignments/devsecops_gep_pycodestyle.py>`
+.. literalinclude:: ../_assignments/devsecops_gep_pycodestyle.py
+    :caption: :download:`Solution <../_assignments/devsecops_gep_pycodestyle.py>`
     :end-before: # Solution

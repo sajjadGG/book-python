@@ -4,7 +4,7 @@
 Introduction
 ************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Introduction
     :name: Data Science Introduction
 
@@ -17,7 +17,7 @@ Introduction
 Jupyter
 *******
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Jupyter
     :name: Data Science Jupyter
 
@@ -27,7 +27,7 @@ Jupyter
 Python
 ******
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Introduction
     :name: Data Science Python
 
@@ -50,7 +50,7 @@ Python
 Data Visualization
 ******************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Data Visualization
     :name: Data Science Visualization
 
@@ -63,7 +63,7 @@ Data Visualization
 Scipy
 *****
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Scipy
     :name: Data Science Scipy
 

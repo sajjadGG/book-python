@@ -4,7 +4,7 @@
 About
 *****
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: About
     :name: Numpy About
 
@@ -16,7 +16,7 @@ About
 Array
 *****
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Array
     :name: Numpy Array
 
@@ -38,7 +38,7 @@ Array
 Select
 ******
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Select
     :name: Numpy Select
 
@@ -54,7 +54,7 @@ Select
 Import & Export
 ***************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Import & Export
     :name: Numpy Import & Export
 
@@ -65,7 +65,7 @@ Import & Export
 Math
 ****
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Math
     :name: Numpy Math
 

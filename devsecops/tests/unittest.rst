@@ -2,7 +2,7 @@
 Unit Testing
 ************
 
-.. figure:: img/geek-and-poke-development-driven-tests.jpg
+.. figure:: ../_img/geek-and-poke-development-driven-tests.jpg
 
     Development driven tests
 
@@ -54,31 +54,31 @@ Examples
 
 Example 1
 ---------
-.. literalinclude:: src/unittest-example-1.py
+.. literalinclude:: ../_src/unittest-example-1.py
     :language: python
     :caption: Example ``unittest`` code coverage
 
 Example 2
 ---------
-.. literalinclude:: src/unittest-example-2.py
+.. literalinclude:: ../_src/unittest-example-2.py
     :language: python
     :caption: Example ``unittest`` code coverage
 
 Example 3
 ---------
-.. literalinclude:: src/unittest-example-3.py
+.. literalinclude:: ../_src/unittest-example-3.py
     :language: python
     :caption: Example ``unittest`` code coverage
 
 Example 4
 ---------
-.. literalinclude:: src/unittest-example-4.py
+.. literalinclude:: ../_src/unittest-example-4.py
     :language: python
     :caption: Example ``unittest`` code coverage
 
 Example 5
 ---------
-.. literalinclude:: src/unittest-example-5.py
+.. literalinclude:: ../_src/unittest-example-5.py
     :language: python
     :caption: Example ``unittest`` code coverage
 
@@ -166,10 +166,10 @@ Stub
 Assignments
 ===========
 
-.. literalinclude:: assignments/devsecops_unittest_rectangle.py
-    :caption: :download:`Solution <assignments/devsecops_unittest_rectangle.py>`
+.. literalinclude:: ../_assignments/devsecops_unittest_rectangle.py
+    :caption: :download:`Solution <../_assignments/devsecops_unittest_rectangle.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/devsecops_unittest_dragon.py
-    :caption: :download:`Solution <assignments/devsecops_unittest_dragon.py>`
+.. literalinclude:: ../_assignments/devsecops_unittest_dragon.py
+    :caption: :download:`Solution <../_assignments/devsecops_unittest_dragon.py>`
     :end-before: # Solution

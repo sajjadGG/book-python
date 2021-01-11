@@ -4,7 +4,7 @@
 Paradigm
 ********
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Paradigm
     :name: Object Oriented Programming Paradigm
 
@@ -17,7 +17,7 @@ Paradigm
 Python
 ******
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Python
     :name: Object Oriented Programming Python
 
@@ -32,7 +32,7 @@ Python
 Dynamic Typing
 **************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Dynamic Typing
     :name: Object Oriented Programming Dynamic Typing
 

@@ -4,7 +4,7 @@
 Good Engineering Practices
 **************************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Good Engineering Practices
     :name: DevSecOps Good Engineering Practices
 
@@ -17,7 +17,7 @@ Good Engineering Practices
 Tests
 *****
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Tests
     :name: DevSecOps Tests
 
@@ -28,9 +28,8 @@ Tests
 Debugging
 *********
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Debugging
-    :name: DevSecOps Debugging
 
     debugging/python-wat.rst
     debugging/logging.rst
@@ -43,9 +42,8 @@ Debugging
 Type Annotation
 ***************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Type Annotation
-    :name: DevSecOps Type Annotation
 
     type-annotation/checking.rst
     type-annotation/annotating.rst
@@ -55,8 +53,22 @@ Type Annotation
 CI/CD
 *****
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: CI/CD
-    :name: DevSecOps CI/CD
 
-    ci-cd/index.rst
+    ci-cd/tools.rst
+    ci-cd/pipelines.rst
+    ci-cd/lint.rst
+    ci-cd/behavioral.rst
+    ci-cd/code-style.rst
+    ci-cd/coverage.rst
+    ci-cd/i18n.rst
+    ci-cd/db-schema-migration.rst
+    ci-cd/distributing.rst
+    ci-cd/security.rst
+    ci-cd/smoke-tests.rst
+    ci-cd/static-analysis.rst
+    ci-cd/test-automation.rst
+    ci-cd/type-checking.rst
+    ci-cd/ui.rst
+    ci-cd/mutation-testing.rst

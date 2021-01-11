@@ -61,25 +61,25 @@ Konfiguracja:
 
 Python
 ------
-.. literalinclude:: src/sonar-python.properties
+.. literalinclude:: ../_src/sonar-python.properties
     :language: properties
     :caption: SonarScanner config for static analysis of Python code
 
 CSS
 ---
-.. literalinclude:: src/sonar-css.properties
+.. literalinclude:: ../_src/sonar-css.properties
     :language: properties
     :caption: SonarScanner config for static analysis of CSS code
 
 JavaScript
 ----------
-.. literalinclude:: src/sonar-javascript.properties
+.. literalinclude:: ../_src/sonar-javascript.properties
     :language: properties
     :caption: SonarScanner config for static analysis of JavaScript code
 
 Multi-language
 --------------
-.. literalinclude:: src/sonar-multilanguage.properties
+.. literalinclude:: ../_src/sonar-multilanguage.properties
     :language: properties
     :caption: SonarScanner config for static analysis of Multilanguage code
 
@@ -141,7 +141,7 @@ Multi-language
 
     $ pylama --linters pylint --skip='*/migrations/*' --abspath /src
 
-.. literalinclude:: src/pylama.ini
+.. literalinclude:: ../_src/pylama.ini
     :language: ini
     :caption: setup.cfg
 

@@ -4,7 +4,7 @@
 About
 *****
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Matplotlib
     :name: Matplotlib About
 
@@ -14,7 +14,7 @@ About
 Figure
 ******
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Matplotlib
     :name: Matplotlib Figure
 
@@ -30,7 +30,7 @@ Figure
 Style
 *****
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Matplotlib
     :name: Matplotlib Style
 
@@ -41,7 +41,7 @@ Style
 Chart
 *****
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Matplotlib
     :name: Matplotlib Chart
 
@@ -58,7 +58,7 @@ Chart
 Advanced
 ********
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Matplotlib
     :name: Matplotlib Advanced
 
@@ -71,7 +71,7 @@ Advanced
 Recap
 *****
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Matplotlib
     :name: Matplotlib Recap
 

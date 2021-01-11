@@ -131,6 +131,6 @@ Read the docs
 Assignments
 ===========
 
-.. literalinclude:: assignments/devsecops_gep_sphinx.py
-    :caption: :download:`Solution <assignments/devsecops_gep_sphinx.py>`
+.. literalinclude:: ../_assignments/devsecops_gep_sphinx.py
+    :caption: :download:`Solution <../_assignments/devsecops_gep_sphinx.py>`
     :end-before: # Solution

@@ -4,7 +4,7 @@
 About
 *****
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: About
     :name: Pandas About
 
@@ -15,7 +15,7 @@ About
 Import & Export
 ***************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Import & Export
     :name: Pandas Import & Export
 
@@ -26,7 +26,7 @@ Import & Export
 Series
 ******
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Series
     :name: Pandas Series
 
@@ -47,7 +47,7 @@ Series
 DataFrame
 *********
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: DataFrame
     :name: Pandas DataFrame
 
@@ -76,7 +76,7 @@ DataFrame
 Date
 ****
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Date
     :name: Pandas Date
 
@@ -90,7 +90,7 @@ Date
 Recap
 *****
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Recap
     :name: Pandas Recap
 
@@ -102,7 +102,7 @@ Recap
 Case Studies
 ************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Case Studies
     :name: Pandas Case Studies
 

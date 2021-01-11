@@ -4,7 +4,7 @@
 About
 *****
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Introduction
 
     introduction/data.rst
@@ -17,7 +17,7 @@ About
 Introduction
 ************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Introduction
 
     introduction/datasets.rst
@@ -29,7 +29,7 @@ Introduction
 Sklearn
 *******
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Sklearn
 
     sklearn/sklearn.rst
@@ -38,7 +38,7 @@ Sklearn
 Model Quality
 *************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Model Quality
 
     model-quality/model-quality.rst
@@ -49,7 +49,7 @@ Model Quality
 Decision Trees
 **************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Decision Trees
 
     tree/decision-tree.rst
@@ -58,7 +58,7 @@ Decision Trees
 Regressions
 ***********
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Regressions
 
     regression/linear.rst
@@ -68,7 +68,7 @@ Regressions
 K-Nearest Neighbors
 *******************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: K-Nearest Neighbors
 
     knn/k-nearest-neighbors.rst
@@ -77,7 +77,7 @@ K-Nearest Neighbors
 Bayes
 *****
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Bayes
 
     bayes/naive.rst
@@ -86,7 +86,7 @@ Bayes
 Support Vector Machines
 ***********************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Support Vector Machines
 
     svm/support-vector-machines.rst
@@ -95,7 +95,7 @@ Support Vector Machines
 Clustering
 **********
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Clustering
 
     clustering/k-means.rst
@@ -104,7 +104,7 @@ Clustering
 Neural Networks
 ***************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Neural Networks
 
     neural-network/deep.rst
@@ -114,7 +114,7 @@ Neural Networks
 References
 **********
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: References
 
     introduction/references.rst

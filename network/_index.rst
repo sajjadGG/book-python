@@ -4,7 +4,7 @@
 HTTP and Web
 ************
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: HTTP and Web
     :name: Network HTTP and Web
 
@@ -23,7 +23,7 @@ HTTP and Web
 Protocols
 *********
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Protocols
     :name: Network Protocols
 
@@ -39,7 +39,7 @@ Protocols
 Transport
 *********
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Transport
     :name: Network Transport
 

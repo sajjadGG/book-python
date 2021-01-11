@@ -1,7 +1,7 @@
 .. _Django:
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :caption: Django
 
     http-protocol.rst

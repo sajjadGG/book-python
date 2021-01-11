@@ -49,7 +49,7 @@ Linters
 ==========
 Simply speaking flake8 is "the wrapper which verifies ``pycodestyle``, ``pyflakes`` and circular complexity". For other functions, it can control the warnings for specific line (impossible by a simple pyflakes)by # flake8: noqa or it can customize warnings happening by configuration file such as ``pycodestyle``.
 
-.. literalinclude:: src/flake8.ini
+.. literalinclude:: ../_src/flake8.ini
     :language: ini
     :caption: Flake8 config in ``setup.cfg``
 
@@ -86,7 +86,7 @@ Error detection:
     * https://pypi.python.org/pypi/pylint/
 
 :Config:
-    .. literalinclude:: src/pylintrc.ini
+    .. literalinclude:: ../_src/pylintrc.ini
         :language: ini
         :caption: PyLama
 
