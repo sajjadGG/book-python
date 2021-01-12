@@ -14,10 +14,31 @@ Syntax
 * required ``*iterables`` - 1 or many sequences or iterator object
 
 
+Problem
+-------
+>>> months = ['January', 'February', 'March']
+>>> result = []
+>>>
+>>> i = 0
+>>> for month in months:
+...     result.append((i, month))
+...     i += 1
+>>>
+>>> result
+[(0, 'January'), (1, 'February'), (2, 'March')]
+
+
 Solution
 --------
-Lazy Evaluation:
+>>> months = ['January', 'February', 'March']
+>>> result = enumerate(months)
+>>>
+>>> list(result)
+[(0, 'January'), (1, 'February'), (2, 'March')]
 
+
+Lazy Evaluation
+---------------
 >>> months = ['January', 'February', 'March']
 >>> result = enumerate(months)
 >>>
@@ -30,14 +51,6 @@ Lazy Evaluation:
 >>> next(result)
 Traceback (most recent call last):
 StopIteration
-
-Instant Evaluation:
-
->>> months = ['January', 'February', 'March']
->>> result = enumerate(months)
->>>
->>> list(result)
-[(0, 'January'), (1, 'February'), (2, 'March')]
 
 
 Dict Conversion
@@ -59,6 +72,7 @@ Dict Conversion
 >>>
 >>> print(result)
 {'01': 'January', '02': 'February', '03': 'March'}
+
 
 Using in a loop
 ---------------

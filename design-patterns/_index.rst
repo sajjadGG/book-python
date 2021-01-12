@@ -124,6 +124,7 @@ Creational
     creational/factory-method.rst
     creational/prototype.rst
     creational/singleton.rst
+    creational/borg.rst
 
 **********
 Structural
@@ -150,7 +151,6 @@ Practices
     practices/kiss.rst
     practices/yagni.rst
     practices/efap.rst
-    practices/borg.rst
 
 *********
 Paradigms

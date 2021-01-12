@@ -20,23 +20,30 @@ Syntax
 
 Problem
 -------
+>>> i = 0
+>>> result = []
+>>> while i < 3:
+...     result.append(i)
+...     i += 1
+>>>
+>>> result
+[0, 1, 2]
 
 
 Solution
 --------
-Lazy Evaluation:
+>>> result = range(0,3)
+>>> list(result)
+[0, 1, 2]
 
+
+Lazy Evaluation
+---------------
 >>> for i in range(0,3):
 ...     print(i)
 0
 1
 2
-
-Instant Evaluation:
-
->>> data = range(0,3)
->>> list(data)
-[0, 1, 2]
 
 
 Use Cases
@@ -57,18 +64,21 @@ Itertools
 * More information :ref:`Itertools`
 * ``itertools.count(start=0, step=1)``
 
-.. code-block:: python
+>>> from itertools import count
+>>>
+>>>
+>>> result = count(3, 2)
+>>>
+>>> next(result)
+3
+>>> next(result)
+5
+>>> next(result)
+7
 
-    from itertools import count
+Assignments
+-----------
+.. literalinclude:: ../_assignments/designpatterns_idioms_range.py
+    :caption: :download:`Solution <../_assignments/designpatterns_idioms_range.py>`
+    :end-before: # Solution
 
-
-    data = count(3, 2)
-
-    next(data)
-    # 3
-
-    next(data)
-    # 5
-
-    next(data)
-    # 7

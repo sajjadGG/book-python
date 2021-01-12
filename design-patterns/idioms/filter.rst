@@ -18,12 +18,36 @@ Syntax
 
 Problem
 -------
+>>> def even(x):
+...     return x % 2 == 0
+>>>
+>>>
+>>> data = [1, 2, 3, 4, 5, 6]
+>>> result = []
+>>>
+>>> for x in data:
+...     if even(x):
+...         result.append(x)
+>>>
+>>> result
+[2, 4, 6]
 
 
 Solution
 --------
-Lazy Evaluation:
+>>> def even(x):
+...     return x % 2 == 0
+>>>
+>>>
+>>> data = [1, 2, 3, 4, 5, 6]
+>>> result = filter(even, data)
+>>>
+>>> list(result)
+[2, 4, 6]
 
+
+Lazy Evaluation
+---------------
 >>> def even(x):
 ...     return x % 2 == 0
 >>>
@@ -40,18 +64,6 @@ Lazy Evaluation:
 >>> next(result)
 Traceback (most recent call last):
 StopIteration
-
-Instant Evaluation:
-
->>> def even(x):
-...     return x % 2 == 0
->>>
->>>
->>> data = [1, 2, 3, 4, 5, 6]
->>> result = filter(even, data)
->>>
->>> list(result)
-[2, 4, 6]
 
 
 Use Cases

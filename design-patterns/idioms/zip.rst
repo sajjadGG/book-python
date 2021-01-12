@@ -19,9 +19,9 @@ Problem
 -------
 >>> firstnames = ['Mark', 'Melissa', 'Alex']
 >>> lastnames = ['Watney', 'Lewis', 'Vogel']
+>>> result = []
 >>>
 >>> i = 0
->>> result = []
 >>>
 >>> while i < min(len(firstnames), len(lastnames)):
 ...     pair = (firstnames[i], lastnames[i])
@@ -33,7 +33,6 @@ Problem
 
 >>> firstnames = ['Mark', 'Melissa', 'Alex']
 >>> lastnames = ['Watney', 'Lewis', 'Vogel']
->>>
 >>> result = []
 >>>
 >>> for i in range(min(len(firstnames), len(lastnames))):
@@ -46,8 +45,16 @@ Problem
 
 Solution
 --------
-Lazy Evaluation:
+>>> firstnames = ['Mark', 'Melissa', 'Alex']
+>>> lastnames = ['Watney', 'Lewis', 'Vogel']
+>>> result = zip(firstnames, lastnames)
+>>>
+>>> list(result)
+[('Mark', 'Watney'), ('Melissa', 'Lewis'), ('Alex', 'Vogel')]
 
+
+Lazy Evaluation
+---------------
 >>> firstnames = ['Mark', 'Melissa', 'Alex']
 >>> lastnames = ['Watney', 'Lewis', 'Vogel']
 >>> result = zip(firstnames, lastnames)
@@ -61,16 +68,6 @@ Lazy Evaluation:
 >>> next(result)
 Traceback (most recent call last):
 StopIteration
-
-
-Instant Evaluation:
-
->>> firstnames = ['Mark', 'Melissa', 'Alex']
->>> lastnames = ['Watney', 'Lewis', 'Vogel']
->>> result = zip(firstnames, lastnames)
->>>
->>> list(result)
-[('Mark', 'Watney'), ('Melissa', 'Lewis'), ('Alex', 'Vogel')]
 
 
 Generate Dict
@@ -107,6 +104,7 @@ Adjust to the Longest
 * ``itertools.zip_longest(iter1 [,iter2 [...]], [fillvalue=None]) --> zip_longest object``
 
 >>> from itertools import zip_longest
+>>>
 >>>
 >>> firstnames = ['Mark', 'Melissa']
 >>> lastnames = ['Watney', 'Lewis', 'Vogel']

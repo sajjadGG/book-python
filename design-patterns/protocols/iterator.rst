@@ -634,10 +634,6 @@ Assignments
     :caption: :download:`Solution <../_assignments/protocol_iterator_implementation.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/protocol_iterator_range_simple.py
-    :caption: :download:`Solution <../_assignments/protocol_iterator_range_simple.py>`
-    :end-before: # Solution
-
-.. literalinclude:: ../_assignments/protocol_iterator_range_adv.py
-    :caption: :download:`Solution <../_assignments/protocol_iterator_range_adv.py>`
+.. literalinclude:: ../_assignments/protocol_iterator_range.py
+    :caption: :download:`Solution <../_assignments/protocol_iterator_range.py>`
     :end-before: # Solution

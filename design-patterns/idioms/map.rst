@@ -18,12 +18,27 @@ Syntax
 
 Problem
 -------
+>>> data = [1, 2, 3]
+>>> result = []
+>>>
+>>> for x in data:
+...     result.append(float(x))
+>>>
+>>> result
+[1.0, 2.0, 3.0]
 
 
 Solution
 --------
-Lazy Evaluation:
+>>> data = [1, 2, 3]
+>>> result = map(float, data)
+>>>
+>>> list(result)
+[1.0, 2.0, 3.0]
 
+
+Lazy Evaluation
+---------------
 >>> data = [1, 2, 3]
 >>> result = map(float, data)
 >>>
@@ -36,14 +51,6 @@ Lazy Evaluation:
 >>> next(result)
 Traceback (most recent call last):
 StopIteration
-
-Instant Evaluation:
-
->>> data = [1, 2, 3]
->>> result = map(float, data)
->>>
->>> list(result)
-[1.0, 2.0, 3.0]
 
 
 Use Cases

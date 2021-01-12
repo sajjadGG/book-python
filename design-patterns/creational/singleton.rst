@@ -11,10 +11,30 @@ Rationale
 
 Use Cases
 ---------
+* Database connection pool
+* HTTP Gateway
 
 
 Design
 ------
+.. code-block:: python
+
+    class Singleton:
+        _instance = None
+
+        @classmethod
+        def get_instance(cls):
+            if not cls._instance:
+                cls._instance = ...
+            return cls._instance
+
+
+    # Creating first instance for the first time
+    first = Singleton.get_instance()
+
+    # Connecting for the second time
+    # Will use existing instance
+    second = Singleton.get_instance()
 
 
 Example
@@ -24,23 +44,22 @@ Example
     class DB:
         _connection = None
 
-        @staticmethod
-        def connect():
-            if not DB._connection:
+        @classmethod
+        def connect(cls):
+            if not cls._connection:
                 print('Establishing connection...')
-                DB._connection = ...
-
-            return DB._connection
+                cls._connection = ...
+            return cls._connection
 
 
     # Connecting for the first time
     # Will establish new connection
-    first = DB().connect()
+    first = DB.connect()
 
     # Connecting for the second time
     # Will use existing connection to the DB
     # The same handle as `first`
-    second = DB().connect()
+    second = DB.connect()
 
 
 Assignments

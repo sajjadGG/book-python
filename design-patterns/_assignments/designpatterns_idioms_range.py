@@ -9,19 +9,17 @@ English:
     1. Use data from "Given" section (see below)
     2. Define class `Range` with parameters: `start`, `stop`, `step`
     3. Write own implementation of a built-in `range(start, stop, step)` function
-    4. Use Iterator protocol
-    5. How to implement passing only stop argument (`range(start=0, stop=???, step=1)`)?
-    6. All tests must pass
-    7. Compare result with "Tests" section (see below)
+    4. How to implement passing only stop argument (`range(start=0, stop=???, step=1)`)?
+    5. All tests must pass
+    6. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Zdefiniuj klasę `Range` z parametrami: `start`, `stop`, `step`
     3. Zaimplementuj własne rozwiązanie wbudowanej funkcji `range(start, stop, step)`
-    4. Użyj protokołu Iterator
-    5. Jak zaimplementować możliwość podawania tylko końca (`range(start=0, stop=???, step=1)`)?
-    6. Wszystkie testy muszą przejść
-    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Jak zaimplementować możliwość podawania tylko końca (`range(start=0, stop=???, step=1)`)?
+    5. Wszystkie testy muszą przejść
+    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Hint:
     * use `*args`
