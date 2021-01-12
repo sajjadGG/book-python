@@ -149,18 +149,18 @@ Future
 ------
 * ``zip(*iterables, strict=False)``
 * Since Python 3.10: :pep:`618` -- Add Optional Length-Checking To zip [pep618]_
-* Surce [py310doc]_
+* Source [py310doc]_
 
 ``zip()`` is often used in cases where the iterables are assumed to be of equal length.
 In such cases, it’s recommended to use the ``strict=True`` option.
 Its output is the same as regular ``zip()``
 
->>> list(zip(('a', 'b', 'c'), (1, 2, 3), strict=True))
+>>> list(zip(('a', 'b', 'c'), (1, 2, 3), strict=True))  # doctest: +SKIP
 [('a', 1), ('b', 2), ('c', 3)]
 
 Unlike the default behavior, it checks that the lengths of iterables are identical, raising a ``ValueError`` if they aren’t:
 
->>> list(zip(['a', 'b', 'c'], [1, 2, 3, 4], strict=True))
+>>> list(zip(['a', 'b', 'c'], [1, 2, 3, 4], strict=True))  # doctest: +SKIP
 Traceback (most recent call last):
 ValueError: zip() argument 2 is longer than argument 1
 
