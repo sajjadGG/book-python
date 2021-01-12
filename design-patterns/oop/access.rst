@@ -251,10 +251,10 @@ System Method
 Assignments
 ===========
 
-.. literalinclude:: assignments/oop_access_protected.py
-    :caption: :download:`Solution <assignments/oop_access_protected.py>`
+.. literalinclude:: ../_assignments/oop_access_protected.py
+    :caption: :download:`Solution <../_assignments/oop_access_protected.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_access_dict.py
-    :caption: :download:`Solution <assignments/oop_access_dict.py>`
+.. literalinclude:: ../_assignments/oop_access_dict.py
+    :caption: :download:`Solution <../_assignments/oop_access_dict.py>`
     :end-before: # Solution

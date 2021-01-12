@@ -2,9 +2,21 @@ Enumerate
 =========
 
 
-Built-in
---------
+Rationale
+---------
+* Enumerate sequences
+* Generator (lazy evaluated)
+* Built-in
+
+Syntax
+------
 * ``enumerate(*iterables)``
+* required ``*iterables`` - 1 or many sequences or iterator object
+
+
+Solution
+--------
+Lazy Evaluation:
 
 >>> months = ['January', 'February', 'March']
 >>> result = enumerate(months)
@@ -19,12 +31,17 @@ Built-in
 Traceback (most recent call last):
 StopIteration
 
+Instant Evaluation:
+
 >>> months = ['January', 'February', 'March']
 >>> result = enumerate(months)
 >>>
 >>> list(result)
 [(0, 'January'), (1, 'February'), (2, 'March')]
 
+
+Dict Conversion
+---------------
 >>> months = ['January', 'February', 'March']
 >>> result = enumerate(months)
 >>>
@@ -43,6 +60,8 @@ StopIteration
 >>> print(result)
 {'01': 'January', '02': 'February', '03': 'March'}
 
+Using in a loop
+---------------
 >>> months = ['January', 'February', 'March']
 >>>
 >>> for i, month in enumerate(months, start=1):

@@ -1,6 +1,20 @@
 Reduce
 ======
 
+Rationale
+---------
+* Reduce sequence using function
+* Generator (lazy evaluated)
+* Built-in
+
+
+Syntax
+------
+* ``functools.reduce(callable, iterable)``
+* required ``callable`` - Function
+* required ``iterable`` - Sequence or iterator object
+
+
 Built-in
 --------
 * https://docs.python.org/3/library/functools.html

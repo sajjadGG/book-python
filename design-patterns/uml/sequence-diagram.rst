@@ -7,29 +7,53 @@ Rationale
 * https://mermaid-js.github.io/mermaid/#/sequenceDiagram
 
 
-Example
--------
+Connections
+-----------
+* ``->`` - Solid line without arrow
+* ``-->`` - Dotted line without arrow
+* ``->>`` - Solid line with arrowhead
+* ``-->>`` - Dotted line with arrowhead
+* ``-x`` - Solid line with a cross at the end (async)
+* ``--x`` - Dotted line with a cross at the end (async)
+
+
+Conversation
+------------
 .. code-block:: md
 
     ```mermaid
     sequenceDiagram
-        Alice ->> John: Hello John, how are you?
-        activate John
-        John -->> Alice: Great!
-        deactivate John
+
+        participant Alice
+        participant Bob
+
+        Alice ->> Bob: Hello, how are you?
+        Bob ->> Alice: Great!
     ```
 
-There is also a shortcut notation by appending +/- suffix to the message arrow:
+.. figure:: ../_img/uml-mermaid-sequencediagram-alicebob.png
 
+
+Nested
+------
 .. code-block:: md
 
     ```mermaid
     sequenceDiagram
-        Alice ->> +John: Hello John, how are you?
-        John -->> -Alice: Great!
+
+        participant Client
+        participant Server
+        participant Database
+
+        activate Client
+        Client ->> +Server: HTTP Request
+        Server ->> +Database: SQL Query
+        Database ->> -Server: Result
+        Server ->> -Client: HTTP Response
+        deactivate Client
     ```
 
-.. figure:: ../_img/uml-mermaid-sequencediagram.png
+.. figure:: ../_img/uml-mermaid-sequencediagram-web.png
 
 
 Use Cases

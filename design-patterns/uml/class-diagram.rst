@@ -4,69 +4,154 @@ UML Class Diagram
 
 Attributes
 ----------
+.. code-block:: python
+
+    class Astronaut:
+        firstname: str
+        lastname: str
+
 .. code-block:: md
 
     ```mermaid
-    class Astronaut {
-        firstname
-        lastname
-    }
-    ```
+    classDiagram
 
-Methods
--------
-Without parameters:
-
-    .. code-block:: md
-
-        ```mermaid
-        class Astronaut {
-            say_hello()
-        }
-        ```
-
-With parameters:
-
-    .. code-block:: md
-
-        ```mermaid
-        class Astronaut {
-            say_hello(firstname, lastname)
-        }
-        ```
-
-Abstract Methods:
-
-    .. code-block:: md
-
-        ```mermaid
-        class Astronaut {
-            say_hello()*
-        }
-        ```
-
-Static Method:
-
-    .. code-block:: md
-
-        ```mermaid
-        class Astronaut {
-            say_hello()$
-        }
-        ```
-
-
-Types
------
-.. code-block:: md
-
-    ```mermaid
     class Astronaut {
         firstname: str
         lastname: str
-        say_hello(firstname: str, lastname: str): str
     }
     ```
+
+.. figure:: ../_img/uml-classdiagram-attributes.png
+
+Methods Without Parameters
+--------------------------
+.. code-block:: python
+
+    class Astronaut:
+        def say_hello():
+            pass
+
+.. code-block:: md
+
+    ```mermaid
+    classDiagram
+
+    class Astronaut {
+        say_hello()
+    }
+    ```
+
+.. figure:: ../_img/uml-classdiagram-method-noparams.png
+
+Methods With Parameters
+-----------------------
+.. code-block:: python
+
+    class Astronaut:
+        def say_hello(firstname: str, lastname: str):
+            pass
+
+.. code-block:: md
+
+    ```mermaid
+    classDiagram
+
+    class Astronaut {
+        say_hello(firstname: str, lastname: str)
+    }
+    ```
+
+.. figure:: ../_img/uml-classdiagram-method-params.png
+
+Method Return Type
+------------------
+.. code-block:: python
+
+    class Astronaut:
+        def say_hello() -> str:
+            pass
+
+.. code-block:: md
+
+    ```mermaid
+    classDiagram
+
+    class Astronaut {
+        say_hello() str
+    }
+    ```
+
+.. figure:: ../_img/uml-classdiagram-method-return.png
+
+Abstract Methods
+----------------
+.. code-block:: python
+
+    from abc import abstractmethod, ABCMeta
+
+    class Astronaut(metaclass=ABCMeta):
+        @abstractmethod
+        def say_hello():
+            pass
+
+.. code-block:: md
+
+    ```mermaid
+    classDiagram
+
+    class Astronaut {
+        say_hello()*
+    }
+    ```
+
+.. figure:: ../_img/uml-classdiagram-method-abstract.png
+
+Static Methods
+--------------
+.. code-block:: python
+
+    class Astronaut:
+        @staticmethod
+        def say_hello():
+            pass
+
+.. code-block:: md
+
+    ```mermaid
+    classDiagram
+
+    class Astronaut {
+        say_hello()$
+    }
+    ```
+
+.. figure:: ../_img/uml-classdiagram-method-static.png
+
+Types
+-----
+.. code-block:: python
+
+    class Astronaut:
+        firstname: str
+        lastname: str
+
+        def say_hello(name: str) -> str:
+            pass
+
+.. code-block:: md
+
+    ```mermaid
+    classDiagram
+
+    class Astronaut {
+        firstname: str
+        lastname: str
+
+        say_hello(name: str) str
+    }
+    ```
+
+.. figure:: ../_img/uml-classdiagram-types.png
 
 
 Access Modifiers
@@ -76,88 +161,79 @@ Access Modifiers
 * ``#`` - Protected
 * ``~`` - Package/Internal
 
-Public:
 
-    .. code-block:: md
-
-        ```mermaid
-        class Astronaut {
-            + firstname: str
-            + lastname: str
-        }
-        ```
-
-Protected:
-
-    .. code-block:: md
-
-        ```mermaid
-        class Astronaut {
-            # firstname: str
-            # lastname: str
-        }
-        ```
-
-Private:
-
-    .. code-block:: md
-
-        ```mermaid
-        class Astronaut {
-            - firstname: str
-            - lastname: str
-        }
-        ```
-
-
-Access Modifiers in Python
+Access Modifiers - Public
 -------------------------
-* Python code
+.. code-block:: python
 
-Public:
+    class Astronaut:
+        firstname: str
+        lastname: str
 
-    .. code-block:: python
+        def say_hello() -> str:
+            pass
 
-        class Astronaut:
-            firstname: str
-            lastname: str
+.. code-block:: md
 
-Protected:
+    ```mermaid
+    classDiagram
 
-    .. code-block:: python
+    class Astronaut {
+        +firstname: str
+        +lastname: str
+        +say_hello() str
+    }
+    ```
+.. figure:: ../_img/uml-classdiagram-accessmodifiers-public.png
 
-        class Astronaut:
-            _firstname: str
-            _lastname: str
+Access Modifiers - Protected
+----------------------------
+.. code-block:: python
 
-Private:
+    class Astronaut:
+        _firstname: str
+        _lastname: str
 
-    .. code-block:: python
+        def _say_hello() -> str:
+            pass
 
-        class Astronaut:
-            __firstname: str
-            __lastname: str
+.. code-block:: md
 
+    ```mermaid
+    classDiagram
 
-Use Case
---------
-.. figure:: ../_img/uml-classdiagram-syntax.png
+    class Astronaut {
+        #firstname: str
+        #lastname: str
+        #say_hello() str
+    }
+    ```
+.. figure:: ../_img/uml-classdiagram-accessmodifiers-protected.png
 
+Access Modifiers - Private
+--------------------------
+.. code-block:: python
 
-Relationship
-------------
-* Arrow with empty triangle (but on picture is filled)
-* ``<|--`` - Inheritance
-* ``*--`` - Composition
-* ``o--`` - Aggregation
-* ``-->`` - Association
-* ``--``  - Link (Solid)
-* ``..>`` - Dependency
-* ``..|>`` - Realization
-* ``..`` - Link (Dashed)
+    class Astronaut:
+        __firstname: str
+        __lastname: str
 
-.. figure:: ../_img/uml-mermaid-classdiagram-relations.png
-.. figure:: ../_img/uml-classdiagram-inheritance.jpg
+        def __say_hello() -> str:
+            pass
+
+.. code-block:: md
+
+    ```mermaid
+    classDiagram
+
+    class Astronaut {
+        -firstname: str
+        -lastname: str
+        -say_hello() str
+    }
+    ```
+
+.. figure:: ../_img/uml-classdiagram-accessmodifiers-private.png
 
 
 Cardinality
@@ -173,23 +249,26 @@ Cardinality
 
 Boxes and Arrows
 ----------------
-.. figure:: ../_img/uml-classdiagram-1.jpg
-
-
-UML Class Diagram
------------------
-.. figure:: ../_img/uml-classdiagram-2.png
-.. figure:: ../_img/uml-classdiagram-3.png
-.. figure:: ../_img/uml-classdiagram-4.png
-.. figure:: ../_img/uml-classdiagram-5.png
-.. figure:: ../_img/uml-classdiagram-6.png
-.. figure:: ../_img/uml-classdiagram-7.png
-.. figure:: ../_img/uml-classdiagram-8.jpg
-.. figure:: ../_img/uml-classdiagram-9.jpg
-.. figure:: ../_img/uml-classdiagram-10.png
+.. figure:: ../_img/uml-classdiagram-usecase-01.jpg
 
 
 Use Cases
 ---------
+.. figure:: ../_img/uml-classdiagram-usecase-02.png
+.. figure:: ../_img/uml-classdiagram-usecase-03.png
+.. figure:: ../_img/uml-classdiagram-usecase-04.png
+.. figure:: ../_img/uml-classdiagram-usecase-05.png
+.. figure:: ../_img/uml-classdiagram-usecase-06.png
+.. figure:: ../_img/uml-classdiagram-usecase-07.png
+.. figure:: ../_img/uml-classdiagram-usecase-08.jpg
+.. figure:: ../_img/uml-classdiagram-usecase-09.jpg
+.. figure:: ../_img/uml-classdiagram-usecase-10.png
+
+
+Django
+------
+* GraphViz + Dot
+* Django Extensions: https://django-extensions.readthedocs.io/en/latest/graph_models.html
+
 .. figure:: ../_img/uml-django.png
 .. figure:: ../_img/uml-django-models.png

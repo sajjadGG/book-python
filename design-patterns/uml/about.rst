@@ -7,42 +7,23 @@ Rationale
 * Unified Modeling Language
 
 
+Class Diagram
+-------------
+* Class relationship
 
-Mermaid
--------
-* ``mermaid`` - Markdown extension
-* https://mermaid-js.github.io/mermaid/#/classDiagram
+.. figure:: ../_img/uml-mermaid-classdiagram.png
 
-.. code-block:: md
 
-    ```mermaid
-    classDiagram
-          Animal <|-- Duck
-          Animal <|--* Fish
-          Animal <|-- Zebra
+Sequence Diagram
+----------------
+* Conversation over time
 
-          class Animal {
-              +int age
-              +String gender
-              +isMammal()
-              +mate()
-          }
+.. figure:: ../_img/uml-mermaid-sequencediagram-web.png
 
-          class Duck{
-              +String beakColor
-              +swim()
-              +quack()
-          }
 
-          class Fish{
-              -int sizeInFeet
-              -canEat()
-          }
+Entity Relationship Diagram
+---------------------------
+* Entity Relationship
+* Database
 
-          class Zebra{
-              +bool is_wild
-              +run()
-          }
-    ```
-
-.. figure:: ../_img/uml-mermaid-classdiagram-example.png
+.. figure:: ../_img/uml-mermaid-erd.png

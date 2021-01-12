@@ -1,9 +1,28 @@
 Filter
 ======
 
-Built-in
---------
+
+Rationale
+---------
+* Select elements from sequence
+* Generator (lazy evaluated)
+* Built-in
+
+
+Syntax
+------
 * ``filter(callable, *iterables)``
+* required ``callable`` - Function
+* required ``iterables`` - 1 or many sequence or iterator objects
+
+
+Problem
+-------
+
+
+Solution
+--------
+Lazy Evaluation:
 
 >>> def even(x):
 ...     return x % 2 == 0
@@ -22,6 +41,8 @@ Built-in
 Traceback (most recent call last):
 StopIteration
 
+Instant Evaluation:
+
 >>> def even(x):
 ...     return x % 2 == 0
 >>>
@@ -31,6 +52,7 @@ StopIteration
 >>>
 >>> list(result)
 [2, 4, 6]
+
 
 Use Cases
 ---------

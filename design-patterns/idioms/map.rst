@@ -1,9 +1,28 @@
 Map
 ===
 
-Built-in
---------
+
+Rationale
+---------
+* Map (convert) elements in sequence
+* Generator (lazy evaluated)
+* Built-in
+
+
+Syntax
+------
 * ``map(callable, *iterables)``
+* required ``callable`` - Function
+* required ``iterables`` - 1 or many sequence or iterator objects
+
+
+Problem
+-------
+
+
+Solution
+--------
+Lazy Evaluation:
 
 >>> data = [1, 2, 3]
 >>> result = map(float, data)
@@ -18,11 +37,18 @@ Built-in
 Traceback (most recent call last):
 StopIteration
 
+Instant Evaluation:
+
 >>> data = [1, 2, 3]
 >>> result = map(float, data)
 >>>
 >>> list(result)
 [1.0, 2.0, 3.0]
+
+
+Use Cases
+---------
+Built-in functions:
 
 >>> data = [1, 2, 3]
 >>> result = map(float, data)
@@ -47,6 +73,8 @@ StopIteration
 >>> list(result)
 [1, 2, 3]
 
+Custom functions:
+
 >>> def square(x):
 ...     return x ** 2
 ...
@@ -56,9 +84,6 @@ StopIteration
 >>> list(result)
 [1, 4, 9]
 
-
-Use Cases
----------
 >>> def increment(x):
 ...     return x + 1
 >>>
@@ -81,6 +106,8 @@ Use Cases
 >>> result = map(translate, text)
 >>> ''.join(result)
 'zazolc gesla jazn'
+
+Standard input:
 
 >>> import sys
 >>>

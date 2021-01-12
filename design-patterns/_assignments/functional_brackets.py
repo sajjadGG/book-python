@@ -1,6 +1,6 @@
 """
 * Assignment: Balanced Brackets
-* Filename: :download:`assignments/functional_brackets.py`
+* Filename: functional_brackets.py
 * Complexity: medium
 * Lines of code: 10 lines
 * Time: 13 min
