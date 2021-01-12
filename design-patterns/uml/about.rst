@@ -11,18 +11,22 @@ Rationale
 Mermaid
 -------
 * ``mermaid`` - Markdown extension
+* https://mermaid-js.github.io/mermaid/#/classDiagram
 
 .. code-block:: md
 
     ```mermaid
     classDiagram
           Animal <|-- Duck
-          Animal <|-- Fish
+          Animal <|--* Fish
           Animal <|-- Zebra
-          Animal : +int age
-          Animal : +String gender
-          Animal: +isMammal()
-          Animal: +mate()
+
+          class Animal {
+              +int age
+              +String gender
+              +isMammal()
+              +mate()
+          }
 
           class Duck{
               +String beakColor
@@ -40,3 +44,5 @@ Mermaid
               +run()
           }
     ```
+
+.. figure:: ../_img/uml-mermaid-classdiagram-example.png

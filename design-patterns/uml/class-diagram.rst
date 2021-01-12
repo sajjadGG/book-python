@@ -4,18 +4,44 @@ UML Class Diagram
 
 Syntax
 ------
-* ``+`` - public
-* ``-`` - private
-* Field ``- name: int`` - private field ``name`` of type ``int``
-* Method ``+ render(): int`` - public method ``render()`` which returns ``int``
+Before:
+
+    * ``+`` Public
+    * ``-`` Private
+    * ``#`` Protected
+    * ``~`` Package/Internal
+
+After:
+    * Field ``- name: int`` - private field ``name`` of type ``int``
+    * Method ``+ render(): int`` - public method ``render()`` which returns ``int``
+    * ``*`` Abstract e.g.: ``someAbstractMethod()*``
+    * ``$`` Static e.g.: ``someStaticMethod()$``
 
 .. figure:: ../_img/uml-classdiagram-syntax.png
-
 
 Relationship
 ------------
 * Arrow with empty triangle (but on picture is filled)
+* ``<|--`` - Inheritance
+* ``*--`` - Composition
+* ``o--`` - Aggregation
+* ``-->`` - Association
+* ``--``  - Link (Solid)
+* ``..>`` - Dependency
+* ``..|>`` - Realization
+* ``..`` - Link (Dashed)
 
+.. figure:: ../_img/uml-mermaid-classdiagram-relations.png
+
+Cardinality
+-----------
+* ``1`` - Only 1
+* ``0..1`` - Zero or One
+* ``1..*`` - One or more
+* ``*`` - Many
+* ``n n`` - {where n>1}
+* ``0..n`` - zero to n {where n>1}
+* ``1..n`` - one to n {where n>1}
 
 Boxes and Arrows
 ----------------
