@@ -2,22 +2,147 @@ UML Class Diagram
 =================
 
 
-Syntax
-------
-Before:
+Attributes
+----------
+.. code-block:: md
 
-    * ``+`` Public
-    * ``-`` Private
-    * ``#`` Protected
-    * ``~`` Package/Internal
+    ```mermaid
+    class Astronaut {
+        firstname
+        lastname
+    }
+    ```
 
-After:
-    * Field ``- name: int`` - private field ``name`` of type ``int``
-    * Method ``+ render(): int`` - public method ``render()`` which returns ``int``
-    * ``*`` Abstract e.g.: ``someAbstractMethod()*``
-    * ``$`` Static e.g.: ``someStaticMethod()$``
+Methods
+-------
+Without parameters:
 
+    .. code-block:: md
+
+        ```mermaid
+        class Astronaut {
+            say_hello()
+        }
+        ```
+
+With parameters:
+
+    .. code-block:: md
+
+        ```mermaid
+        class Astronaut {
+            say_hello(firstname, lastname)
+        }
+        ```
+
+Abstract Methods:
+
+    .. code-block:: md
+
+        ```mermaid
+        class Astronaut {
+            say_hello()*
+        }
+        ```
+
+Static Method:
+
+    .. code-block:: md
+
+        ```mermaid
+        class Astronaut {
+            say_hello()$
+        }
+        ```
+
+
+Types
+-----
+.. code-block:: md
+
+    ```mermaid
+    class Astronaut {
+        firstname: str
+        lastname: str
+        say_hello(firstname: str, lastname: str): str
+    }
+    ```
+
+
+Access Modifiers
+----------------
+* ``+`` - Public
+* ``-`` - Private
+* ``#`` - Protected
+* ``~`` - Package/Internal
+
+Public:
+
+    .. code-block:: md
+
+        ```mermaid
+        class Astronaut {
+            + firstname: str
+            + lastname: str
+        }
+        ```
+
+Protected:
+
+    .. code-block:: md
+
+        ```mermaid
+        class Astronaut {
+            # firstname: str
+            # lastname: str
+        }
+        ```
+
+Private:
+
+    .. code-block:: md
+
+        ```mermaid
+        class Astronaut {
+            - firstname: str
+            - lastname: str
+        }
+        ```
+
+
+Access Modifiers in Python
+-------------------------
+* Python code
+
+Public:
+
+    .. code-block:: python
+
+        class Astronaut:
+            firstname: str
+            lastname: str
+
+Protected:
+
+    .. code-block:: python
+
+        class Astronaut:
+            _firstname: str
+            _lastname: str
+
+Private:
+
+    .. code-block:: python
+
+        class Astronaut:
+            __firstname: str
+            __lastname: str
+
+
+Use Case
+--------
 .. figure:: ../_img/uml-classdiagram-syntax.png
+
 
 Relationship
 ------------
@@ -32,6 +157,8 @@ Relationship
 * ``..`` - Link (Dashed)
 
 .. figure:: ../_img/uml-mermaid-classdiagram-relations.png
+.. figure:: ../_img/uml-classdiagram-inheritance.jpg
+
 
 Cardinality
 -----------
@@ -42,6 +169,7 @@ Cardinality
 * ``n n`` - {where n>1}
 * ``0..n`` - zero to n {where n>1}
 * ``1..n`` - one to n {where n>1}
+
 
 Boxes and Arrows
 ----------------
@@ -59,3 +187,9 @@ UML Class Diagram
 .. figure:: ../_img/uml-classdiagram-8.jpg
 .. figure:: ../_img/uml-classdiagram-9.jpg
 .. figure:: ../_img/uml-classdiagram-10.png
+
+
+Use Cases
+---------
+.. figure:: ../_img/uml-django.png
+.. figure:: ../_img/uml-django-models.png
