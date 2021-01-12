@@ -76,6 +76,7 @@ Itertools
 >>> next(result)
 7
 
+
 Assignments
 -----------
 .. literalinclude:: ../_assignments/designpatterns_idioms_range.py

@@ -31,8 +31,8 @@ OOP
     :maxdepth: 1
     :caption: OOP
 
-    oop/access.rst
     oop/dataclass.rst
+    oop/access.rst
     oop/overload.rst
     oop/composition.rst
     oop/interface.rst

@@ -218,3 +218,8 @@ Dependency injection:
 
         http3 = HTTPGateway(_cache=memory)
         http3.get('http://python.astrotech.io')
+
+
+Assignments
+===========
+.. todo:: Create assignments

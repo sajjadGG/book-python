@@ -394,3 +394,7 @@ Good:
     db.is_valid('name')
     db.get('name')
 
+
+Assignments
+===========
+.. todo:: Create assignments

@@ -66,3 +66,8 @@ Use Cases
 1
 >>> reduce(max, data)
 4
+
+
+Assignments
+-----------
+.. todo:: Create assignments
