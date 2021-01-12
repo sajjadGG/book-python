@@ -43,6 +43,15 @@ Tests:
     >>> [firstname] + [lastname] # doctest: +NORMALIZE_WHITESPACE
     ['Mark',
      'Watney']
+    >>> name = 'Mark Watney'
+    >>> print(name)
+    Mark Watney
+    >>> if True:
+    ...     print('ok')
+    ... else:
+    ...     print('not ok')
+    ...
+    ok
 """
 
 
