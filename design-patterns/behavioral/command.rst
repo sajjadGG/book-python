@@ -58,8 +58,17 @@ Design
 
 Implementation
 --------------
+Command pattern:
+
 .. literalinclude:: ../_src/designpatterns-command-1.py
     :language: python
+
+Composite commands (Macros):
+
+.. literalinclude:: ../_src/designpatterns-command-2.py
+    :language: python
+
+Undoable commands:
 
 .. literalinclude:: ../_src/designpatterns-command-2.py
     :language: python
