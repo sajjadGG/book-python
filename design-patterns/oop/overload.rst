@@ -333,6 +333,77 @@ Intuitive implementation of numpy ``array[row,col]`` accessor:
     # data.__getitem__((slice(), 2))
 
 
+Eq Works at Both Sides
+======================
+.. code-block::
+
+    class Astronaut:
+        def __init__(self, firstname, lastname):
+            self.firstname = firstname
+            self.lastname = lastname
+
+
+    class Cosmonaut:
+        def __init__(self, firstname, lastname):
+            self.firstname = firstname
+            self.lastname = lastname
+
+
+    a = Astronaut('Mark', 'Watney')
+    c = Cosmonaut('Mark', 'Watney')
+
+    print(a == c)
+    # False
+
+.. code-block::
+
+    class Astronaut:
+        def __init__(self, firstname, lastname):
+            self.firstname = firstname
+            self.lastname = lastname
+
+        def __eq__(self, other):
+            return (self.firstname == other.firstname
+                    and self.lastname == other.lastname)
+
+
+    class Cosmonaut:
+        def __init__(self, firstname, lastname):
+            self.firstname = firstname
+            self.lastname = lastname
+
+
+    a = Astronaut('Mark', 'Watney')
+    c = Cosmonaut('Mark', 'Watney')
+
+    print(a == c)
+    # True
+
+.. code-block::
+
+    class Astronaut:
+        def __init__(self, firstname, lastname):
+            self.firstname = firstname
+            self.lastname = lastname
+
+
+    class Cosmonaut:
+        def __init__(self, firstname, lastname):
+            self.firstname = firstname
+            self.lastname = lastname
+
+        def __eq__(self, other):
+            return (self.firstname == other.firstname
+                    and self.lastname == other.lastname)
+
+
+    a = Astronaut('Mark', 'Watney')
+    c = Cosmonaut('Mark', 'Watney')
+
+    print(a == c)
+    # True
+
+
 Use Case
 ========
 .. code-block:: python

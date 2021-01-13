@@ -2,8 +2,8 @@
 * Assignment: OOP Overload Contains
 * Filename: oop_overload_contains.py
 * Complexity: easy
-* Lines of code: 10 lines
-* Time: 13 min
+* Lines of code: 5 lines
+* Time: 8 min
 
 English:
     1. Use code from "Given" section (see below)
@@ -16,6 +16,9 @@ Polish:
     2. Nadpisz operatory aby poniższy kod zadziałał poprawnie
     3. Nie używaj `dataclasses`
     4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+
+Hint:
+    * Define `__eq__()` in `Mission`
 
 Tests:
     >>> astro = Astronaut('Jan Twardowski', missions=[
