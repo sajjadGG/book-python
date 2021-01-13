@@ -20,8 +20,8 @@ Design
 .. figure:: ../_img/designpatterns-bridge-usecase3.png
 
 
-Example
--------
+Implementation
+--------------
 .. literalinclude:: ../_src/designpatterns-bridge.py
     :language: python
 

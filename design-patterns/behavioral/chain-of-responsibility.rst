@@ -20,8 +20,8 @@ Design
 .. figure:: ../_img/designpatterns-chainofresponsibility-usecase.png
 
 
-Example
--------
+Implementation
+--------------
 .. literalinclude:: ../_src/designpatterns-chainofresponsibility.py
     :language: python
 

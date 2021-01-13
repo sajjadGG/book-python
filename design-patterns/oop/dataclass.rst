@@ -13,8 +13,8 @@ Syntax
 * Backported to Python 3.6 via ``python3 -m pip install dataclasses``
 
 
-Examples
-========
+Example
+=======
 
 Example 1
 ---------
@@ -517,8 +517,8 @@ Dataclass will generate:
                 return (self.name, self.unit_price, self.quantity) >= (other.name, other.unit_price, other.quantity)
             return NotImplemented
 
-Examples
-========
+Example
+=======
 .. code-block:: python
 
     from dataclasses import dataclass

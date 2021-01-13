@@ -43,11 +43,18 @@ if __name__ == '__main__':
 
     editor.set_content('a')
     history.push(editor.create_state())
+    print(editor.get_content())
+    # a
 
     editor.set_content('b')
     history.push(editor.create_state())
+    print(editor.get_content())
+    # b
 
     editor.set_content('c')
-    editor.restore_state(history.pop())
-
     print(editor.get_content())
+    # c
+
+    editor.restore_state(history.pop())
+    print(editor.get_content())
+    # b

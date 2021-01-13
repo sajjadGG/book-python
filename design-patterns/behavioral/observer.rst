@@ -19,8 +19,8 @@ Design
 .. figure:: ../_img/designpatterns-observer-gof.png
 
 
-Example
--------
+Implementation
+--------------
 .. literalinclude:: ../_src/designpatterns-observer.py
     :language: python
 

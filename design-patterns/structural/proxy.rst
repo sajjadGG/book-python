@@ -19,8 +19,8 @@ Design
 .. figure:: ../_img/designpatterns-proxy-gof.png
 
 
-Example
--------
+Implementation
+--------------
 .. literalinclude:: ../_src/designpatterns-proxy.py
     :language: python
 

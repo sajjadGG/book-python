@@ -24,8 +24,8 @@ Design
 .. figure:: ../_img/designpatterns-composite-gof.png
 
 
-Example
--------
+Implementation
+--------------
 .. literalinclude:: ../_src/designpatterns-composite.py
     :language: python
 

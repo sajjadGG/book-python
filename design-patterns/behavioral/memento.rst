@@ -21,8 +21,8 @@ Design
 .. figure:: ../_img/designpatterns-memento-gof.png
 
 
-Example
--------
+Implementation
+--------------
 .. literalinclude:: ../_src/designpatterns-memento.py
     :language: python
 

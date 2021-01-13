@@ -372,8 +372,8 @@ Cache with embedded scope:
     #  6: 720}
 
 
-Examples
-========
+Example
+=======
 .. code-block:: python
 
     DATABASE = {

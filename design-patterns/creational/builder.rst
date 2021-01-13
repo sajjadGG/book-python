@@ -17,8 +17,8 @@ Design
 ------
 
 
-Example
--------
+Implementation
+--------------
 .. literalinclude:: ../_src/designpatterns-builder.py
     :language: python
 

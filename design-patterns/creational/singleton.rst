@@ -19,8 +19,8 @@ Design
 ------
 
 
-Example
--------
+Implementation
+--------------
 .. literalinclude:: ../_src/designpatterns-singleton-1.py
     :language: python
 

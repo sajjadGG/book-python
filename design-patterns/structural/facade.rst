@@ -18,8 +18,8 @@ Design
 .. figure:: ../_img/designpatterns-facade-usecase.png
 
 
-Example
--------
+Implementation
+--------------
 .. literalinclude:: ../_src/designpatterns-facade.py
     :language: python
 

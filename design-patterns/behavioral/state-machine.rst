@@ -40,8 +40,8 @@ Design
 ------
 
 
-Example
--------
+Implementation
+--------------
 .. literalinclude:: ../_src/designpatterns-state.py
     :language: python
 

@@ -17,14 +17,10 @@ Design
 ------
 
 
-Example
--------
+Implementation
+--------------
 .. literalinclude:: ../_src/designpatterns-gateway.py
     :language: python
-
-
-Example
--------
 
 
 Assignments

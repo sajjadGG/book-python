@@ -17,8 +17,8 @@ Design
 ------
 
 
-Example
--------
+Implementation
+--------------
 .. literalinclude:: ../_src/designpatterns-interpreter.py
     :language: python
 

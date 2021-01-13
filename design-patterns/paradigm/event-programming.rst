@@ -3,7 +3,7 @@ Event Programming
 
 
 Implementation
---------------
+---------------------
 .. code-block:: python
 
     class event:

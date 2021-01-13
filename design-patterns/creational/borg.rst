@@ -8,8 +8,8 @@ Rationale
 * Type: object
 
 
-Example
--------
+Implementation
+--------------
 .. literalinclude:: ../_src/designpatterns-borg.py
     :language: python
 

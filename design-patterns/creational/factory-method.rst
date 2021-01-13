@@ -17,8 +17,8 @@ Design
 ------
 
 
-Example
--------
+Implementation
+--------------
 .. literalinclude:: ../_src/designpatterns-factorymethod-1.py
     :language: python
 

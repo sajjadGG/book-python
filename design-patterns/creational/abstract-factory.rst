@@ -19,8 +19,8 @@ Design
 ------
 
 
-Example
--------
+Implementation
+--------------
 .. literalinclude:: ../_src/designpatterns-abstractfactory.py
     :language: python
 

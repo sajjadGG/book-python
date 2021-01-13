@@ -1,33 +1,54 @@
-from enum import Enum
+from abc import ABCMeta, abstractmethod
 
 
-class ToolType(Enum):
-    SELECTION = 1
-    BRUSH = 2
-    ERASER = 3
+class Tool(metaclass=ABCMeta):
+    @abstractmethod
+    def mouse_down(self) -> None:
+        pass
+
+    @abstractmethod
+    def mouse_up(self) -> None:
+        pass
+
+
+class SelectionTool(Tool):
+    def mouse_down(self) -> None:
+        print('Selection icon')
+
+    def mouse_up(self) -> None:
+        print('Draw dashed rectangle')
+
+
+class BrushTool(Tool):
+    def mouse_down(self) -> None:
+        print('Brush icon')
+
+    def mouse_up(self) -> None:
+        print('Draw line')
 
 
 class Canvas:
-    _current_tool: ToolType
+    _current_tool: Tool
 
-    def get_current_tool(self) -> ToolType:
+    def mouse_down(self) -> None:
+        self._current_tool.mouse_down()
+
+    def mouse_up(self) -> None:
+        self._current_tool.mouse_up()
+
+    def get_current_tool(self):
         return self._current_tool
 
-    def set_current_tool(self, tool: ToolType) -> None:
-        self._current_tool = tool
+    def set_current_tool(self, newtool: Tool):
+        self._current_tool = newtool
 
-    def mouse_down(self) -> None:
-        if self._current_tool == ToolType.SELECTION:
-            print('Selection icon')
-        elif self._current_tool == ToolType.BRUSH:
-            print('Brush icon')
-        elif self._current_tool == ToolType.ERASER:
-            print('Eraser icon')
 
-    def mouse_down(self) -> None:
-        if self._current_tool == ToolType.SELECTION:
-            print('Draw dashed rectangle')
-        elif self._current_tool == ToolType.BRUSH:
-            print('Draw line')
-        elif self._current_tool == ToolType.ERASER:
-            print('Erase something')
+if __name__ == '__main__':
+    canvas = Canvas()
+    canvas.set_current_tool(SelectionTool())
+
+    canvas.mouse_down()
+    # Selection icon
+
+    canvas.mouse_up()
+    # Draw dashed rectangle

@@ -22,6 +22,29 @@ Use Cases
 * Source [medium]_
 
 
+Problem
+-------
+.. code-block:: python
+
+    class Button:
+        __label: str
+
+        def set_label(self, name):
+            self.__label = name
+
+        def get_label(self):
+            return self.__label
+
+        def click(self):
+            ...
+
+
+    if __name__ == '__main__':
+        button = Button()
+        button.set_label('My Button')
+        button.click()
+
+
 Design
 ------
 * Receiver — The Object that will receive and execute the command
@@ -33,9 +56,12 @@ Design
 .. figure:: ../_img/designpatterns-command-gof.png
 
 
-Example
--------
-.. literalinclude:: ../_src/designpatterns-command.py
+Implementation
+--------------
+.. literalinclude:: ../_src/designpatterns-command-1.py
+    :language: python
+
+.. literalinclude:: ../_src/designpatterns-command-2.py
     :language: python
 
 

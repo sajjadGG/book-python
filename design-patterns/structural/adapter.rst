@@ -18,8 +18,8 @@ Design
 .. figure:: ../_img/designpatterns-adapter-usecase.png
 
 
-Example
--------
+Implementation
+--------------
 .. literalinclude:: ../_src/designpatterns-adapter.py
     :language: python
 

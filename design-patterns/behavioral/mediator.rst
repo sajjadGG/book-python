@@ -19,8 +19,8 @@ Design
 .. figure:: ../_img/designpatterns-mediator-usecase.png
 
 
-Example
--------
+Implementation
+--------------
 .. literalinclude:: ../_src/designpatterns-mediator.py
     :language: python
 

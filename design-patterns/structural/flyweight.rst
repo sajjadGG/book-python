@@ -19,8 +19,8 @@ Design
 .. figure:: ../_img/designpatterns-flyweight-gof.png
 
 
-Example
--------
+Implementation
+--------------
 .. literalinclude:: ../_src/designpatterns-flyweight.py
     :language: python
 

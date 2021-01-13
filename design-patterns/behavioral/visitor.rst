@@ -18,8 +18,8 @@ Design
 .. figure:: ../_img/designpatterns-visitor-gof.png
 
 
-Example
--------
+Implementation
+--------------
 .. literalinclude:: ../_src/designpatterns-visitor.py
     :language: python
 
