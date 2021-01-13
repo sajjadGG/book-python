@@ -29,6 +29,8 @@ Design
 
 Example
 -------
+.. literalinclude:: ../_src/designpatterns-strategy.py
+    :language: python
 
 
 Assignments

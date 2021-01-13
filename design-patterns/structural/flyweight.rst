@@ -21,6 +21,8 @@ Design
 
 Example
 -------
+.. literalinclude:: ../_src/designpatterns-flyweight.py
+    :language: python
 
 
 Assignments

@@ -20,6 +20,8 @@ Design
 
 Example
 -------
+.. literalinclude:: ../_src/designpatterns-facade.py
+    :language: python
 
 
 Assignments

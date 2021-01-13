@@ -81,12 +81,14 @@ Object Oriented Programming
     :caption: Object Oriented Programming
     :name: Advanced Object Oriented Programming
 
+    oop/principles.rst
     oop/mutability.rst
     oop/dataclass.rst
     oop/staticattrs.rst
     oop/access.rst
     oop/overload.rst
     oop/composition.rst
+    oop/polymorphism.rst
     oop/relations.rst
     oop/abstract.rst
     oop/identity.rst

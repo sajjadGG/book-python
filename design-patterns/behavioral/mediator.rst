@@ -21,6 +21,8 @@ Design
 
 Example
 -------
+.. literalinclude:: ../_src/designpatterns-mediator.py
+    :language: python
 
 
 Assignments

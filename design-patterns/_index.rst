@@ -45,6 +45,7 @@ OOP
     :maxdepth: 1
     :caption: OOP
 
+    oop/principles.rst
     oop/dataclass.rst
     oop/access.rst
     oop/overload.rst
@@ -73,6 +74,7 @@ Idioms
     idioms/filter.rst
     idioms/reduce.rst
     idioms/generator.rst
+    idioms/recap.rst
 
 *********
 Protocols

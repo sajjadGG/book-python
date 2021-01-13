@@ -20,6 +20,8 @@ Design
 
 Example
 -------
+.. literalinclude:: ../_src/designpatterns-adapter.py
+    :language: python
 
 
 Assignments

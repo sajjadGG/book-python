@@ -21,6 +21,8 @@ Design
 
 Example
 -------
+.. literalinclude:: ../_src/designpatterns-decorator.py
+    :language: python
 
 
 Assignments

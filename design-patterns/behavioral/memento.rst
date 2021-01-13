@@ -23,6 +23,8 @@ Design
 
 Example
 -------
+.. literalinclude:: ../_src/designpatterns-memento.py
+    :language: python
 
 
 Assignments

@@ -10,20 +10,23 @@ Rationale
 .. highlights::
     * Attributes and methods are always public
     * No protected and private keywords
+    * Protecting is only by convention [privatevar]_
 
     Attributes:
 
-        * ``__name__`` - system attribute or method
-        * ``__name`` - private attribute
-        * ``_name`` - protected attribute (by convention)
-        * ``name_`` - used while name collision
+        * ``name`` - public attribute
+        * ``_name`` - protected attribute (non-public by convention)
+        * ``__name`` - private attribute (name mangling)
+        * ``__name__`` - system attribute
+        * ``name_`` - avoid name collision
 
     Methods:
 
+        * ``name(self)`` - public method
+        * ``_name(self)`` - protected method (non-public by convention)
+        * ``__name(self)`` - private method (name mangling)
         * ``__name__(self)`` - system method
-        * ``__name(self)`` - private method
-        * ``_name(self)`` - protected method (by convention)
-        * ``name_(self)`` - used while name collision
+        * ``name_(self)`` - avoid name collision
 
 
 Protected Attribute
@@ -251,10 +254,15 @@ System Method
 Assignments
 ===========
 
-.. literalinclude:: assignments/oop_access_protected.py
-    :caption: :download:`Solution <assignments/oop_access_protected.py>`
+.. literalinclude:: ../_assignments/oop_access_protected.py
+    :caption: :download:`Solution <../_assignments/oop_access_protected.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_access_dict.py
-    :caption: :download:`Solution <assignments/oop_access_dict.py>`
+.. literalinclude:: ../_assignments/oop_access_dict.py
+    :caption: :download:`Solution <../_assignments/oop_access_dict.py>`
     :end-before: # Solution
+
+
+References
+==========
+.. [privatevar] https://docs.python.org/3/tutorial/classes.html#private-variables

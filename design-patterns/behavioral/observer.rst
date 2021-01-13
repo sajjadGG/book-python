@@ -21,6 +21,8 @@ Design
 
 Example
 -------
+.. literalinclude:: ../_src/designpatterns-observer.py
+    :language: python
 
 
 Assignments

@@ -22,6 +22,8 @@ Design
 
 Example
 -------
+.. literalinclude:: ../_src/designpatterns-bridge.py
+    :language: python
 
 
 Assignments

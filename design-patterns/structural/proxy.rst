@@ -21,6 +21,8 @@ Design
 
 Example
 -------
+.. literalinclude:: ../_src/designpatterns-proxy.py
+    :language: python
 
 
 Assignments

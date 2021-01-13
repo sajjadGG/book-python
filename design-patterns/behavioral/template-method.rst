@@ -24,6 +24,8 @@ Design
 
 Example
 -------
+.. literalinclude:: ../_src/designpatterns-templatemethod.py
+    :language: python
 
 
 Assignments

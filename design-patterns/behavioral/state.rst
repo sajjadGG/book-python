@@ -11,6 +11,7 @@ Rationale
 
 Use Cases
 ---------
+* Changes based on class
 * Open/Close principle
 * Using polymorphism
 
@@ -26,6 +27,8 @@ Design
 
 Example
 -------
+.. literalinclude:: ../_src/designpatterns-state.py
+    :language: python
 
 
 Assignments

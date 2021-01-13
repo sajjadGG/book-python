@@ -21,6 +21,8 @@ Design
 
 Example
 -------
+.. literalinclude:: ../_src/designpatterns-iterator.py
+    :language: python
 
 
 Assignments

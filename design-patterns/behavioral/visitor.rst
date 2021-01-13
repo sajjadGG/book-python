@@ -20,6 +20,8 @@ Design
 
 Example
 -------
+.. literalinclude:: ../_src/designpatterns-visitor.py
+    :language: python
 
 
 Assignments

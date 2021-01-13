@@ -19,6 +19,8 @@ Design
 
 Example
 -------
+.. literalinclude:: ../_src/designpatterns-prototype.py
+    :language: python
 
 
 Assignments

@@ -8,15 +8,10 @@ Rationale
 * Type: object
 
 
-Solution
---------
-.. code-block:: python
-
-    class Borg:
-        __shared_state: dict = {}
-
-        def __init__(self):
-            self.__dict__ = self.__shared_state
+Example
+-------
+.. literalinclude:: ../_src/designpatterns-borg.py
+    :language: python
 
 
 Borg vs Singleton
