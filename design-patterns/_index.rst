@@ -11,6 +11,20 @@ About
     about/entry-test.rst
     about/classification.rst
 
+**********
+Annotation
+**********
+.. toctree::
+    :maxdepth: 1
+    :caption: Annotation
+    :name: Advanced Annotation
+
+    annotation/type.rst
+    annotation/sequence.rst
+    annotation/mapping.rst
+    annotation/function.rst
+    annotation/oop.rst
+
 ***
 UML
 ***
