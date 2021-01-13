@@ -4,7 +4,7 @@ Good Practices
 
 Rationale
 ---------
-.. figure:: img/goodpractices-programmer-exp.png
+.. figure:: ../_img/goodpractices-programmer-exp.png
 
     Code Complexity vs. Programmer Experience
 

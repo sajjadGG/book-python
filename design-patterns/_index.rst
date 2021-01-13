@@ -114,19 +114,34 @@ Behavioral
     :maxdepth: 1
     :caption: Behavioral
 
-    behavioral/chain-of-responsibility.rst
-    behavioral/command.rst
-    behavioral/gateway.rst
-    behavioral/interpreter.rst
-    behavioral/iterator.rst
-    behavioral/mediator.rst
     behavioral/memento.rst
-    behavioral/observer.rst
     behavioral/state.rst
-    behavioral/state-machine.rst
+    behavioral/iterator.rst
     behavioral/strategy.rst
     behavioral/template-method.rst
+    behavioral/command.rst
+    behavioral/observer.rst
+    behavioral/mediator.rst
+    behavioral/chain-of-responsibility.rst
     behavioral/visitor.rst
+    behavioral/gateway.rst
+    behavioral/interpreter.rst
+    behavioral/state-machine.rst
+
+**********
+Structural
+**********
+.. toctree::
+    :maxdepth: 1
+    :caption: Structural
+
+    structural/composite.rst
+    structural/adapter.rst
+    structural/decorator.rst
+    structural/facade.rst
+    structural/flyweight.rst
+    structural/bridge.rst
+    structural/proxy.rst
 
 **********
 Creational
@@ -141,21 +156,6 @@ Creational
     creational/prototype.rst
     creational/singleton.rst
     creational/borg.rst
-
-**********
-Structural
-**********
-.. toctree::
-    :maxdepth: 1
-    :caption: Structural
-
-    structural/adapter.rst
-    structural/bridge.rst
-    structural/composite.rst
-    structural/decorator.rst
-    structural/facade.rst
-    structural/flyweight.rst
-    structural/proxy.rst
 
 *********
 Practices
