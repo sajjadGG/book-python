@@ -87,7 +87,7 @@ class Hero:
         y = self._position_y + down - up
         self.position_set(x, y)
 
-    def position_get(self) -> tuple[int, int]:
+    def position_get(self) -> tuple:
         return self._position_x, self._position_y
 
 
@@ -122,7 +122,7 @@ class HasPosition:
         y = self._position_y + down - up
         self.position_set(x, y)
 
-    def position_get(self) -> tuple[int, int]:
+    def position_get(self) -> tuple:
         return self._position_x, self._position_y
 
 

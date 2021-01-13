@@ -123,6 +123,17 @@ Multi level inheritance is a bad pattern here:
 
 .. code-block:: python
 
+    class A:
+        pass
+
+    class B(A):
+        pass
+
+    class C(B):
+        pass
+
+.. code-block:: python
+
     class ToJSON:
         def to_json(self):
             import json

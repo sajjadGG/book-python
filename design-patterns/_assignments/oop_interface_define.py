@@ -3,7 +3,7 @@
 * Filename: oop_interface_define.py
 * Complexity: easy
 * Lines of code: 13 lines
-* Time: 13 min
+* Time: 8 min
 
 English:
     1. Define interface `IrisInterface`
@@ -23,6 +23,11 @@ Tests:
     >>> assert hasattr(IrisInterface, 'mean')
     >>> assert hasattr(IrisInterface, 'sum')
     >>> assert hasattr(IrisInterface, 'len')
+
+    >>> from inspect import isfunction
+    >>> assert isfunction(IrisInterface.mean)
+    >>> assert isfunction(IrisInterface.sum)
+    >>> assert isfunction(IrisInterface.len)
 
     >>> IrisInterface.__annotations__  # doctest: +NORMALIZE_WHITESPACE
     {'sepal_length': <class 'float'>,

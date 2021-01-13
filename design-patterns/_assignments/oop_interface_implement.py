@@ -3,7 +3,7 @@
 * Filename: oop_interface_implement.py
 * Complexity: easy
 * Lines of code: 12 lines
-* Time: 13 min
+* Time: 8 min
 
 English:
     1. Use data from "Given" section (see below)
@@ -26,6 +26,11 @@ Tests:
     >>> assert hasattr(Setosa, 'mean')
     >>> assert hasattr(Setosa, 'sum')
     >>> assert hasattr(Setosa, 'len')
+
+    >>> from inspect import isfunction
+    >>> assert isfunction(Setosa.mean)
+    >>> assert isfunction(Setosa.sum)
+    >>> assert isfunction(Setosa.len)
 
     >>> Setosa.__annotations__  # doctest: +NORMALIZE_WHITESPACE
     {'sepal_length': <class 'float'>,

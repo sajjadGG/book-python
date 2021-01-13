@@ -18,11 +18,17 @@ Rationale
     implement
         Class implements interface if has all public fields and methods from interface
 
+.. code-block:: python
+    :force:
+
+    interface Cache:
+        def get(self, key: str) -> str
+        def set(self, key: str, value: str) -> None
+        def is_valid(self, key: str) -> bool
+
 
 Example
 -------
-Interfaces:
-
 .. code-block:: python
 
     from datetime import timedelta
@@ -43,16 +49,12 @@ Interfaces:
 
 Use Cases
 ---------
-Interfaces:
-
 .. code-block:: python
 
     from datetime import timedelta
 
 
     class Cache:
-        timeout: timedelta
-
         def get(self, key: str) -> str:
             raise NotImplementedError
 
@@ -64,8 +66,6 @@ Interfaces:
 
 
     class CacheDatabase(Cache):
-        timeout: timedelta
-
         def is_valid(self, key: str) -> bool:
             ...
 
@@ -77,8 +77,6 @@ Interfaces:
 
 
     class CacheRAM(Cache):
-        timeout: timedelta
-
         def is_valid(self, key: str) -> bool:
             ...
 
@@ -90,8 +88,6 @@ Interfaces:
 
 
     class CacheFilesystem(Cache):
-        timeout: timedelta
-
         def is_valid(self, key: str) -> bool:
             ...
 
@@ -102,20 +98,20 @@ Interfaces:
             ...
 
 
-    fs: Cache = CacheFilesystem()
-    fs.set('name', 'Jan Twardowski')
-    fs.is_valid('name')
-    fs.get('name')
+    cache: Cache = CacheFilesystem()
+    cache.set('name', 'Jan Twardowski')
+    cache.is_valid('name')
+    cache.get('name')
 
-    ram: Cache = CacheRAM()
-    ram.set('name', 'Jan Twardowski')
-    ram.is_valid('name')
-    ram.get('name')
+    cache: Cache = CacheRAM()
+    cache.set('name', 'Jan Twardowski')
+    cache.is_valid('name')
+    cache.get('name')
 
-    db: Cache = CacheDatabase()
-    db.set('name', 'Jan Twardowski')
-    db.is_valid('name')
-    db.get('name')
+    cache: Cache = CacheDatabase()
+    cache.set('name', 'Jan Twardowski')
+    cache.is_valid('name')
+    cache.get('name')
 
 
 Assignments
