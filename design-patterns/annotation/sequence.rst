@@ -334,6 +334,25 @@ Before Python 3.9:
     ]
 
 
+NamedTuple
+==========
+.. code-block:: python
+
+    from typing import NamedTuple
+
+
+    class Astronaut(NamedTuple):
+        firstname: str
+        lastname: str
+        agency: str = 'NASA'
+
+
+    astro = Astronaut('Mark', lastname='Watney')
+
+    print(astro)
+    # Astronaut(firstname='Mark', lastname='Watney', agency='NASA')
+
+
 More Information
 ================
 * Example: https://github.com/pandas-dev/pandas/blob/master/pandas/core/frame.py#L458
