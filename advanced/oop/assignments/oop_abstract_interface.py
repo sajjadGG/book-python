@@ -14,7 +14,7 @@ English:
 Polish:
     1. Zdefiniuj klasę abstrakcyjną `IrisAbstract`
     2. Atrybuty: `sepal_length, sepal_width, petal_length, petal_width`
-    3. Metody absrakcyjne: `sum()`, `len()`, `mean()`
+    3. Metody abstrakcyjne: `sum()`, `len()`, `mean()`
     4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
