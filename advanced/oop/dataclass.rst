@@ -266,13 +266,18 @@ List attributes
 
 
         watney = Astronaut('Mark Watney')
+        watney.missions.append('Ares 1')
+        watney.missions.append('Ares 2')
         watney.missions.append('Ares 3')
-        print(watney.missions)
-        # [Ares 3]
+        watney.missions.append('Ares 4')
+        watney.missions.append('Ares 5')
+        print('Watney:', watney.missions)
+        # Watney: ['Ares 1', 'Ares 2', 'Ares 3', 'Ares 4', 'Ares 5']
 
         twardowski = Astronaut('Jan Twardowski')
-        print(twardowski.missions)
-        # [Ares 3]
+        print('Twardowski', twardowski.missions)
+        # Twardowski: ['Ares 1', 'Ares 2', 'Ares 3', 'Ares 4', 'Ares 5']
+
 
 .. code-block:: python
 
@@ -465,9 +470,14 @@ Dataclass will generate:
 .. code-block:: python
 
     class ShoppingCartItem:
+        name: str
+        unit_price: float
+        quantity: int
 
         def total_cost(self) -> float:
             return self.unit_price * self.quantity
+
+        ## All code below is added by dataclass
 
         def __init__(self, name: str, unit_price: float, quantity: int = 0) -> None:
             self.name = name
@@ -528,10 +538,10 @@ Examples
 
     @dataclass
     class Iris:
-        sepal_length: int
-        sepal_width: int
-        petal_length: int
-        petal_width: int
+        sepal_length: float
+        sepal_width: float
+        petal_length: float
+        petal_width: float
         species: str
 
 
@@ -553,14 +563,14 @@ Examples
 Assignments
 ===========
 
-.. literalinclude:: assignments/oop_dataclass_syntax.py
-    :caption: :download:`Solution <assignments/oop_dataclass_syntax.py>`
+.. literalinclude:: ../_assignments/oop_dataclass_syntax.py
+    :caption: :download:`Solution <../_assignments/oop_dataclass_syntax.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_dataclass_addressbook.py
-    :caption: :download:`Solution <assignments/oop_dataclass_addressbook.py>`
+.. literalinclude:: ../_assignments/oop_dataclass_addressbook.py
+    :caption: :download:`Solution <../_assignments/oop_dataclass_addressbook.py>`
     :end-before: # Solution
 
-.. literalinclude:: assignments/oop_dataclass_json.py
-    :caption: :download:`Solution <assignments/oop_dataclass_json.py>`
+.. literalinclude:: ../_assignments/oop_dataclass_json.py
+    :caption: :download:`Solution <../_assignments/oop_dataclass_json.py>`
     :end-before: # Solution

@@ -2,22 +2,24 @@
 * Assignment: OOP Dataclass Syntax
 * Filename: oop_dataclass_syntax.py
 * Complexity: easy
-* Lines of code: 2 lines
-* Time: 3 min
+* Lines of code: 7 lines
+* Time: 5 min
 
 English:
     1. Use Dataclass to define class `Point` with attributes:
         a. `x: int` with default value `0`
         b. `y: int` with default value `0`
     2. When `x` or `y` has negative value raise en exception `ValueError('Coordinate cannot be negative')`
-    3. Compare result with "Tests" section (see below)
+    3. Use `datalass` and validation in `__post_init__()`
+    4. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj Dataclass do zdefiniowania klasy `Point` z atrybutami:
         a. `x: int` z domyślną wartością `0`
         b. `y: int` z domyślną wartością `0`
     2. Gdy `x` lub `y` mają wartość ujemną podnieś wyjątek `ValueError('Coordinate cannot be negative')`
-    3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    3. Użyj `datalass` i walidacji w `__post_init__()`
+    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
     >>> from inspect import isclass

@@ -8,12 +8,16 @@
 English:
     1. Use data from "Given" section (see below)
     2. Model data using `dataclasses`
-    3. Compare result with "Tests" section (see below)
+    3. Create classes to represent `DATA`, but do not convert it
+    4. Fields should have deafault value set to empty `str`
+    5. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Zamodeluj dane wykorzystując `dataclass`
-    3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    3. Stwórz klasy do reprezentacji `DATA`, ale nie konwertuj tego
+    4. Pola mają mieć wartość domyślną pusty `str`
+    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
     >>> from inspect import isclass
