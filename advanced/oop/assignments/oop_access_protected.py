@@ -2,7 +2,7 @@
 * Assignment: OOP Access Protected
 * Filename: oop_access_protected.py
 * Complexity: easy
-* Lines of code: 11 lines
+* Lines of code: 7 lines
 * Time: 8 min
 
 English:

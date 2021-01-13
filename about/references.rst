@@ -91,6 +91,29 @@ Addresses
     "NASA Armstrong Research Center", "2825 E Ave P", "Palmdale", 93550, "California", "USA"
     "ESA EAC", "Linder Hoehe", "Köln", "51147", "North Rhine-Westphalia", "Germany"
 
+.. code-block:: python
+
+    DATA = [
+        {"firstname": "Jan", "lastname": "Twardowski", "addresses": [
+            {"street": "Kamienica Pod św. Janem Kapistranem", "city": "Kraków", "post_code": "31-008", "region": "Małopolskie", "country": "Poland"}]},
+
+        {"firstname": "José", "lastname": "Jiménez", "addresses": [
+            {"street": "2101 E NASA Pkwy", "city": "Houston", "post_code": 77058, "region": "Texas", "country": "USA"},
+            {"street": "", "city": "Kennedy Space Center", "post_code": 32899, "region": "Florida", "country": "USA"}]},
+
+        {"firstname": "Mark", "lastname": "Watney", "addresses": [
+            {"street": "4800 Oak Grove Dr", "city": "Pasadena", "post_code": 91109, "region": "California", "country": "USA"},
+            {"street": "2825 E Ave P", "city": "Palmdale", "post_code": 93550, "region": "California", "country": "USA"}]},
+
+        {"firstname": "Иван", "lastname": "Иванович", "addresses": [
+            {"street": "", "city": "Космодро́м Байкону́р", "post_code": "", "region": "Кызылординская область", "country": "Қазақстан"},
+            {"street": "", "city": "Звёздный городо́к", "post_code": 141160, "region": "Московская область", "country": "Россия"}]},
+
+        {"firstname": "Melissa", "lastname": "Lewis"},
+
+        {"firstname": "Alex", "lastname": "Vogel", "addresses": [
+            {"street": "Linder Hoehe", "city": "Köln", "post_code": 51147, "region": "North Rhine-Westphalia", "country": "Germany"}]}
+    ]
 
 Dates and Timezones
 ===================
@@ -125,6 +148,9 @@ Dates and Timezones
               {"astronaut": "Beth Johansen", "date_of_birth": "2006-05-09"},
               {"astronaut": "Mark Watney", "date_of_birth": "1994-10-12"}]}
 
+.. code-block:: json
+
+    [{"model":"authorization.user","pk":1,"fields":{"firstname":"Melissa","lastname":"Lewis","role":"commander","username":"mlewis","password":"pbkdf2_sha256$120000$gvEBNiCeTrYa0$5C+NiCeTrYsha1PHogqvXNiCeTrY0CRSLYYAA90=","email":"melissa.lewis@nasa.gov","date_of_birth":"1995-07-15","last_login":"1970-01-01T00:00:00.000Z","is_active":true,"is_staff":true,"is_superuser":false,"user_permissions":[{"eclss":["add","modify","view"]},{"communication":["add","modify","view"]},{"medical":["add","modify","view"]},{"science":["add","modify","view"]}]}},{"model":"authorization.user","pk":2,"fields":{"firstname":"Rick","lastname":"Martinez","role":"pilot","username":"rmartinez","password":"pbkdf2_sha256$120000$aXNiCeTrY$UfCJrBh/qhXohNiCeTrYH8nsdANiCeTrYnShs9M/c=","date_of_birth":"1996-01-21","last_login":null,"email":"rick.martinez@ansa.gov","is_active":true,"is_staff":true,"is_superuser":false,"user_permissions":[{"communication":["add","view"]},{"eclss":["add","modify","view"]},{"science":["add","modify","view"]}]}},{"model":"authorization.user","pk":3,"fields":{"firstname":"Alex","lastname":"Vogel","role":"chemist","username":"avogel","password":"pbkdf2_sha256$120000$eUNiCeTrYHoh$X32NiCeTrYZOWFdBcVT1l3NiCeTrY4WJVhr+cKg=","email":"alex.vogel@esa.int","date_of_birth":"1994-11-15","last_login":null,"is_active":true,"is_staff":true,"is_superuser":false,"user_permissions":[{"eclss":["add","modify","view"]},{"communication":["add","modify","view"]},{"medical":["add","modify","view"]},{"science":["add","modify","view"]}]}},{"model":"authorization.user","pk":4,"fields":{"firstname":"Chris","lastname":"Beck","role":"crew-medical-officer","username":"cbeck","password":"pbkdf2_sha256$120000$3G0RNiCeTrYlaV1$mVb62WNiCeTrYQ9aYzTsSh74NiCeTrY2+c9/M=","email":"chris.beck@nasa.gov","date_of_birth":"1999-08-02","last_login":"1970-01-01T00:00:00.000Z","is_active":true,"is_staff":true,"is_superuser":false,"user_permissions":[{"communication":["add","view"]},{"medical":["add","modify","view"]},{"science":["add","modify","view"]}]}},{"model":"authorization.user","pk":5,"fields":{"firstname":"Beth","lastname":"Johansen","role":"sysop","username":"bjohansen","password":"pbkdf2_sha256$120000$QmSNiCeTrYBv$Nt1jhVyacNiCeTrYSuKzJ//WdyjlNiCeTrYYZ3sB1r0g=","email":"","date_of_birth":"2006-05-09","last_login":null,"is_active":true,"is_staff":true,"is_superuser":false,"user_permissions":[{"communication":["add","view"]},{"science":["add","modify","view"]}]}},{"model":"authorization.user","pk":6,"fields":{"firstname":"Mark","lastname":"Watney","role":"botanist","username":"mwatney","password":"pbkdf2_sha256$120000$bxS4dNiCeTrY1n$Y8NiCeTrYRMa5bNJhTFjNiCeTrYp5swZni2RQbs=","email":"","date_of_birth":"1994-10-12","last_login":null,"is_active":true,"is_staff":true,"is_superuser":false,"user_permissions":[{"communication":["add","modify","view"]},{"science":["add","modify","view"]}]}}]
 
 Characters
 ==========

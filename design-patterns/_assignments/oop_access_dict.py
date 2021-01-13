@@ -2,8 +2,8 @@
 * Assignment: OOP Protected Dict
 * Filename: oop_protected_dict.py
 * Complexity: medium
-* Lines of code: 35 lines
-* Time: 21 min
+* Lines of code: 8 lines
+* Time: 8 min
 
 English:
     1. Use data from "Given" section (see below)
