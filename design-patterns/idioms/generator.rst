@@ -10,23 +10,27 @@ Recap
 * Comprehensions executes instantly
 * Generators are lazy evaluated
 
-.. code-block:: python
+>>> data = [x for x in range(0,5)]
+>>> list(data)
+[0, 1, 2, 3, 4]
+>>> print(data)
+[0, 1, 2, 3, 4]
 
-    list(x for x in range(0,5))        # [0, 1, 2, 3, 4]
-    [x for x in range(0,5)]            # [0, 1, 2, 3, 4]
+>>> data = (x for x in range(0,5))
+>>> list(data)
+[0, 1, 2, 3, 4]
+>>> print(data)  # doctest: +ELLIPSIS
+<generator object <genexpr> at 0x...>
 
-    set(x for x in range(0,5))         # {0, 1, 2, 3, 4}
-    {x for x in range(0,5)}            # {0, 1, 2, 3, 4}
-
-    dict((x,x) for x in range(0,5))    # {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
-    {x:x for x in range(0,5)}          # {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
-
-    tuple(x for x in range(0,5))       # (0, 1, 2, 3, 4)
-    (x for x in range(0,5))            # <generator object <genexpr> at 0x118c1aed0>
-
-    all(x for x in range(0,5))         # False
-    any(x for x in range(0,5))         # True
-    sum(x for x in range(0,5))         # 10
+>>> _ = list(x for x in range(0,5))      # list comprehension
+>>> _ = tuple(x for x in range(0,5))     # tuple comprehension
+>>> _ = set(x for x in range(0,5))       # set comprehension
+>>> _ = dict((x,x) for x in range(0,5))  # dict comprehension
+>>>
+>>> _ = [x for x in range(0,5)]          # list comprehension
+>>> _ = (x for x in range(0,5))          # generator expression
+>>> _ = {x for x in range(0,5)}          # set comprehension
+>>> _ = {x:x for x in range(0,5)}        # dict comprehension
 
 
 Rationale
@@ -234,298 +238,8 @@ Generator Function
     # (4.7, 3.2, 1.3, 0.2, 'setosa')
 
 
-Built-in generators
-===================
-
-Enumerate
----------
-* ``enumerate(*iterables)``
-
-.. code-block:: python
-
-    months = ['January', 'February', 'March']
-    result = enumerate(months)
-
-    next(result)
-    # (0, 'January')
-
-    next(result)
-    # (1, 'February')
-
-    next(result)
-    # (2, 'March')
-
-    next(result)
-    # Traceback (most recent call last):
-    # StopIteration
-
-.. code-block:: python
-
-    months = ['January', 'February', 'March']
-    result = enumerate(months)
-
-    list(result)
-    # [(0, 'January'), (1, 'February'), (2, 'March')]
-
-.. code-block:: python
-
-    months = ['January', 'February', 'March']
-    result = enumerate(months)
-
-    dict(result)
-    # {0: 'January', 1: 'February', 2: 'March'}
-
-.. code-block:: python
-
-    months = ['January', 'February', 'March']
-    result = enumerate(months, start=1)
-
-    dict(result)
-    # {1: 'January', 2: 'February', 3: 'March'}
-
-.. code-block:: python
-
-    months = ['January', 'February', 'March']
-    result = {f'{i:02}':month for i,month in enumerate(months, start=1)}
-
-    print(result)
-    # {'01': 'January', '02': 'February', '03': 'March'}
-
-.. code-block:: python
-
-    months = ['January', 'February', 'March']
-
-    for i, month in enumerate(months, start=1):
-        print(f'{i} -> {month}')
-
-    # 1 -> January
-    # 2 -> February
-    # 3 -> March
-
-
-Zip
----
-* ``zip(*iterables)``
-
-.. code-block:: python
-
-    firstnames = ['Mark', 'Melissa', 'Alex']
-    lastnames = ['Watney', 'Lewis', 'Vogel']
-    result = zip(firstnames, lastnames)
-
-    next(result)
-    # ('Mark', 'Watney')
-
-    next(result)
-    # ('Melissa', 'Lewis')
-
-    next(result)
-    # ('Alex', 'Vogel')
-
-    next(result)
-    # Traceback (most recent call last):
-    # StopIteration
-
-.. code-block:: python
-
-    firstnames = ['Mark', 'Melissa', 'Alex']
-    lastnames = ['Watney', 'Lewis', 'Vogel']
-    result = zip(firstnames, lastnames)
-
-    list(result)
-    # [('Mark', 'Watney'), ('Melissa', 'Lewis'), ('Alex', 'Vogel')]
-
-.. code-block:: python
-
-    firstnames = ['Mark', 'Melissa', 'Alex']
-    lastnames = ['Watney', 'Lewis', 'Vogel']
-    result = zip(firstnames, lastnames)
-
-    dict(result)
-    # {'Mark': 'Watney', 'Melissa': 'Lewis', 'Alex': 'Vogel'}
-
-.. code-block:: python
-
-    roles = ['botanist', 'commander', 'chemist']
-    names = ['Mark Watney', 'Melissa Lewis', 'Alex Vogel']
-
-    dict(zip(roles, names))
-    # {'botanist': 'Mark Watney',
-    #  'commander': 'Melissa Lewis',
-    #  'chemist': 'Alex Vogel'}
-
-``zip()`` adjusts to the shortest:
-
-.. code-block:: python
-
-    firstnames = ['Mark', 'Melissa']
-    lastnames = ['Watney', 'Lewis', 'Vogel']
-    result = zip(firstnames, lastnames)
-
-    list(result)
-    # [('Mark', 'Watney'), ('Melissa', 'Lewis')]
-
-.. code-block:: python
-
-    roles = ['botanist', 'commander', 'chemist']
-    firstnames = ['Mark', 'Melissa', 'Alex']
-    lastnames = ['Watney', 'Lewis', 'Vogel']
-    result = zip(roles, firstnames, lastnames)
-
-    next(result)
-    # ('botanist', 'Mark', 'Watney')
-
-    next(result)
-    # ('commander', 'Melissa', 'Lewis')
-
-    next(result)
-    # ('chemist', 'Alex', 'Vogel')
-
-    next(result)
-    # Traceback (most recent call last):
-    # StopIteration
-
-.. code-block:: python
-
-    roles = ['botanist', 'commander', 'chemist']
-    names = ['Mark Watney', 'Melissa Lewis', 'Alex Vogel']
-
-    for role, name in zip(roles, names):
-        print(f'{role} -> {name}')
-
-    # botanist -> Mark Watney
-    # commander -> Melissa Lewis
-    # chemist -> Alex Vogel
-
-
-Map
----
-* ``map(callable, *iterables)``
-
-.. code-block:: python
-
-    data = [1, 2, 3]
-    result = map(float, data)
-
-    next(result)
-    # 1.0
-
-    next(result)
-    # 2.0
-
-    next(result)
-    # 3.0
-
-    next(result)
-    # Traceback (most recent call last):
-    # StopIteration
-
-.. code-block:: python
-
-    data = [1, 2, 3]
-    result = map(float, data)
-
-    list(result)
-    # [1.0, 2.0, 3.0]
-
-.. code-block:: python
-
-    data = [1, 2, 3]
-    result = map(float, data)
-
-    tuple(map(float, data))
-    # (1.0, 2.0, 3.0)
-
-.. code-block:: python
-
-    data = [1, 2, 3]
-    result = map(float, data)
-
-    set(map(float, data))
-    # {1.0, 2.0, 3.0}
-
-.. code-block:: python
-
-    DATA = [1, 2, 3]
-
-    result = (float(x) for x in DATA)
-    list(result)
-    # [1.0, 2.0, 3.0]
-
-    result = map(round, DATA)
-    list(result)
-    # [1.0, 2.0, 3.0]
-
-.. code-block:: python
-
-    def square(x):
-        return x ** 2
-
-
-    data = [1, 2, 3]
-
-    result = map(square, data)
-    list(result)
-    # [1, 4, 9]
-
-
-Filter
-------
-* ``filter(callable, *iterables)``
-
-.. code-block:: python
-
-    def even(x):
-        return x % 2 == 0
-
-
-    data = [1, 2, 3, 4, 5, 6]
-    result = filter(even, data)
-
-    next(result)
-    # 2
-
-    next(result)
-    # 4
-
-    next(result)
-    # 6
-
-    next(result)
-    # Traceback (most recent call last):
-    # StopIteration
-
-.. code-block:: python
-
-    def even(x):
-        return x % 2 == 0
-
-
-    data = [1, 2, 3, 4, 5, 6]
-    result = filter(even, data)
-
-    list(result)
-    # [2, 4, 6]
-
-.. code-block:: python
-
-    PEOPLE = [{'age': 21, 'name': 'Jan Twardowski'},
-              {'age': 25, 'name': 'Mark Watney'},
-              {'age': 18, 'name': 'Melissa Lewis'}]
-
-
-    def adult(person):
-        return person['age'] >= 21:
-
-
-    result = filter(adult, PEOPLE)
-
-    list(result)
-    # [{'age': 21, 'name': 'Jan Twardowski'},
-    #  {'age': 25, 'name': 'Mark Watney'}]
-
 Functools
----------
+=========
 * https://docs.python.org/3/library/functools.html
 
 .. code-block:: python
@@ -556,8 +270,9 @@ Functools
     reduce(add, [1,2,3,4])
     # 10
 
+
 Itertools
----------
+=========
 * More information https://docs.python.org/3/library/itertools.html
 * More information :ref:`Itertools`
 

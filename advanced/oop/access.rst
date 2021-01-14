@@ -28,6 +28,65 @@ Rationale
         * ``__name__(self)`` - system method
         * ``name_(self)`` - avoid name collision
 
+.. code-block:: python
+
+    class Public:
+        firstname: str
+        lastname: str
+
+        def __init__(self):
+            self.firstname = 'Mark'
+            self.lastname = 'Watney'
+
+
+    class Protected:
+        _firstname: str
+        _lastname: str
+
+        def __init__(self):
+            self._firstname = 'Mark'
+            self._lastname = 'Watney'
+
+
+    class Private:
+        __firstname: str
+        __lastname: str
+
+        def __init__(self):
+            self.__firstname = 'Mark'
+            self.__lastname = 'Watney'
+
+
+    obj = Public()
+    print(obj.firstname)
+    # Mark
+    print(obj.lastname)
+    # Watney
+    print(obj.__dict__)
+    # {'firstname': 'Mark', 'lastname': 'Watney'}
+
+    obj = Protected()
+    print(obj._firstname)       # IDE should warn: "Access to a protected member _firstname of a class"
+    # Mark
+    print(obj._lastname)        # IDE should warn: "Access to a protected member _lastname of a class"
+    # Watney
+    print(obj.__dict__)
+    # {'_firstname': 'Mark', '_lastname': 'Watney'}
+
+    obj = Private()
+    print(obj.__firstname)
+    # Traceback (most recent call last):
+    # AttributeError: 'Private' object has no attribute '__firstname'
+    print(obj.__lastname)
+    # Traceback (most recent call last):
+    # AttributeError: 'Private' object has no attribute '__lastname'
+    print(obj.__dict__)
+    # {'_Private__firstname': 'Mark', '_Private__lastname': 'Watney'}
+    print(obj._Private__firstname)
+    # Mark
+    print(obj._Private__lastname)
+    # Watney
+
 
 Protected Attribute
 ===================
@@ -44,7 +103,7 @@ Access modifiers:
     temp = Temperature()
     temp._value = 10
 
-    print(temp._value)  # IDE should warn, that you access protected member
+    print(temp._value)  # IDE should warn: "Access to a protected member _value of a class"
     # 10
 
 Access modifiers:
@@ -60,10 +119,10 @@ Access modifiers:
 
     mark = Astronaut('Mark', 'Watney')
 
-    print(mark._firstname)  # IDE should warn: "Access to a protected member _firstname of a class "
+    print(mark._firstname)  # IDE should warn: "Access to a protected member _firstname of a class"
     # Mark
 
-    print(mark._lastname)  # IDE should warn: "Access to a protected member _lastname of a class "
+    print(mark._lastname)  # IDE should warn: "Access to a protected member _lastname of a class"
     # Watney
 
     print(mark.publicname)
