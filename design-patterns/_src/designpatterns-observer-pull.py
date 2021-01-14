@@ -4,16 +4,16 @@ from dataclasses import dataclass, field
 
 class Observer(metaclass=ABCMeta):
     @abstractmethod
-    def update(self) -> None:
+    def update(self, value: int) -> None:
         pass
 
 class Spreadsheet(Observer):
-    def update(self) -> None:
-        print('Spreadsheet got updated')
+    def update(self, value: int) -> None:
+        print(f'Spreadsheet got updated: {value}')
 
 class Chart(Observer):
-    def update(self) -> None:
-        print('Chart got updated')
+    def update(self, value: int) -> None:
+        print(f'Chart got updated: {value}')
 
 
 @dataclass
@@ -29,9 +29,9 @@ class Subject:
     def remove_observer(self, observer: Observer) -> None:
         self.__observers.remove(observer)
 
-    def notify_observers(self):
+    def notify_observers(self, value: int):
         for observer in self.__observers:
-            observer.update()
+            observer.update(value)
 
 
 class DataSource(Subject):
@@ -42,7 +42,7 @@ class DataSource(Subject):
 
     def set_value(self, value) -> None:
         self.__value = value
-        self.notify_observers()
+        self.notify_observers(value)
 
 
 if __name__ == '__main__':

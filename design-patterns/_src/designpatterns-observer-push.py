@@ -2,18 +2,11 @@ from abc import ABCMeta, abstractmethod
 from dataclasses import dataclass, field
 
 
+
 class Observer(metaclass=ABCMeta):
     @abstractmethod
     def update(self) -> None:
         pass
-
-class Spreadsheet(Observer):
-    def update(self) -> None:
-        print('Spreadsheet got updated')
-
-class Chart(Observer):
-    def update(self) -> None:
-        print('Chart got updated')
 
 
 @dataclass
@@ -45,11 +38,29 @@ class DataSource(Subject):
         self.notify_observers()
 
 
+@dataclass
+class Spreadsheet(Observer):
+    __datasource: DataSource
+
+    def update(self) -> None:
+        value = self.__datasource.get_value()
+        print(f'Spreadsheet got updated: {value}')
+
+
+@dataclass
+class Chart(Observer):
+    __datasource: DataSource
+
+    def update(self) -> None:
+        value = self.__datasource.get_value()
+        print(f'Chart got updated: {value}')
+
+
 if __name__ == '__main__':
     datasource = DataSource()
-    sheet1 = Spreadsheet()
-    sheet2 = Spreadsheet()
-    chart = Chart()
+    sheet1 = Spreadsheet(datasource)
+    sheet2 = Spreadsheet(datasource)
+    chart = Chart(datasource)
 
     datasource.add_observer(sheet1)
     datasource.add_observer(sheet2)
