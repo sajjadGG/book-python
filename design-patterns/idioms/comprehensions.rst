@@ -87,12 +87,30 @@ Generator Expression:
 Comprehensions or Generator Expression
 --------------------------------------
 >>> data = [x for x in range(0,10)]
+>>> list(data)
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 >>> print(data)
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 >>> data = (x for x in range(0,10))
+>>> list(data)
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 >>> print(data)  # doctest: +ELLIPSIS
 <generator object <genexpr> at 0x...>
+
+>>> from inspect import isgenerator
+>>>
+>>>
+>>> data = [x for x in range(0,5)]
+>>> isgenerator(data)
+False
+
+>>> from inspect import isgenerator
+>>>
+>>>
+>>> data = (x for x in range(0,5))
+>>> isgenerator(data)
+True
 
 Comprehension:
 
@@ -220,6 +238,59 @@ Generator Expression:
 <generator object <genexpr> at 0x...>
 
 
+Map
+---
+Applying function to each output element:
+
+>>> [float(x) for x in range(0,5)]
+[0.0, 1.0, 2.0, 3.0, 4.0]
+
+Applying function to each output element:
+
+>>> [pow(2,x) for x in range(0,5)]
+[1, 2, 4, 8, 16]
+
+Using ``list`` comprehension for filtering:
+
+>>> DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
+...         (5.8, 2.7, 5.1, 1.9, 'virginica'),
+...         (5.1, 3.5, 1.4, 0.2, 'setosa'),
+...         (5.7, 2.8, 4.1, 1.3, 'versicolor'),
+...         (6.3, 2.9, 5.6, 1.8, 'virginica'),
+...         (6.4, 3.2, 4.5, 1.5, 'versicolor'),
+...         (4.7, 3.2, 1.3, 0.2, 'setosa'),
+...         (7.0, 3.2, 4.7, 1.4, 'versicolor')]
+>>>
+>>> [features for *features,label in DATA]  # doctest: +NORMALIZE_WHITESPACE
+[['Sepal length', 'Sepal width', 'Petal length', 'Petal width'],
+ [5.8, 2.7, 5.1, 1.9],
+ [5.1, 3.5, 1.4, 0.2],
+ [5.7, 2.8, 4.1, 1.3],
+ [6.3, 2.9, 5.6, 1.8],
+ [6.4, 3.2, 4.5, 1.5],
+ [4.7, 3.2, 1.3, 0.2],
+ [7.0, 3.2, 4.7, 1.4]]
+>>> [tuple(features) for *features,label in DATA]  # doctest: +NORMALIZE_WHITESPACE
+[('Sepal length', 'Sepal width', 'Petal length', 'Petal width'),
+ (5.8, 2.7, 5.1, 1.9),
+ (5.1, 3.5, 1.4, 0.2),
+ (5.7, 2.8, 4.1, 1.3),
+ (6.3, 2.9, 5.6, 1.8),
+ (6.4, 3.2, 4.5, 1.5),
+ (4.7, 3.2, 1.3, 0.2),
+ (7.0, 3.2, 4.7, 1.4)]
+>>>
+>>> [tuple(X) for *X,y in DATA]  # doctest: +NORMALIZE_WHITESPACE
+[('Sepal length', 'Sepal width', 'Petal length', 'Petal width'),
+ (5.8, 2.7, 5.1, 1.9),
+ (5.1, 3.5, 1.4, 0.2),
+ (5.7, 2.8, 4.1, 1.3),
+ (6.3, 2.9, 5.6, 1.8),
+ (6.4, 3.2, 4.5, 1.5),
+ (4.7, 3.2, 1.3, 0.2),
+ (7.0, 3.2, 4.7, 1.4)]
+
+
 Filter
 ------
 Example 1:
@@ -248,7 +319,7 @@ Example 2:
 ...         (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ...         (7.0, 3.2, 4.7, 1.4, 'versicolor')]
 >>>
->>> [features for *features,label in DATA if label == 'setosa']  # doctest: +NORMALIZE_WHITESPACE
+>>> [features for *features,label in DATA if label=='setosa']  # doctest: +NORMALIZE_WHITESPACE
 [[5.1, 3.5, 1.4, 0.2],
  [4.7, 3.2, 1.3, 0.2]]
 >>>
@@ -256,26 +327,7 @@ Example 2:
 [[5.1, 3.5, 1.4, 0.2],
  [4.7, 3.2, 1.3, 0.2]]
 
-
-Map
----
-Applying function to each output element:
-
->>> [float(x) for x in range(0,5)]
-[0.0, 1.0, 2.0, 3.0, 4.0]
-
->>> [float(x) for x in range(0,5) if x%2==0]
-[0.0, 2.0, 4.0]
-
-Applying function to each output element:
-
->>> [pow(2,x) for x in range(0,5)]
-[1, 2, 4, 8, 16]
-
->>> [pow(2,x) for x in range(0,5) if x%2==0]
-[1, 4, 16]
-
-Using ``list`` comprehension for filtering:
+Using ``list`` comprehension for filtering with more complex expression:
 
 >>> DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
 ...         (5.8, 2.7, 5.1, 1.9, 'virginica'),
@@ -286,60 +338,17 @@ Using ``list`` comprehension for filtering:
 ...         (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ...         (7.0, 3.2, 4.7, 1.4, 'versicolor')]
 >>>
->>> [tuple(features) for *features,label in DATA if label == 'setosa']  # doctest: +NORMALIZE_WHITESPACE
+>>>
+>>> def is_setosa(species):
+...     if species == 'setosa':
+...         return True
+...     else:
+...         return False
+>>>
+>>>
+>>> [tuple(X) for *X,y in DATA if is_setosa(y)]  # doctest: +NORMALIZE_WHITESPACE
 [(5.1, 3.5, 1.4, 0.2),
  (4.7, 3.2, 1.3, 0.2)]
->>>
->>> [tuple(X) for *X,y in DATA if y=='setosa']  # doctest: +NORMALIZE_WHITESPACE
-[(5.1, 3.5, 1.4, 0.2),
- (4.7, 3.2, 1.3, 0.2)]
-
-
-Indent and Whitespaces
-----------------------
->>> result = [pow(x,2) for x in range(0,5)]
->>>
->>> result = [pow(x,2)
-...           for x in range(0,5)]
-
->>> result = [pow(x, 2) for x in range(0, 5) if x % 2 == 0]
->>>
->>> result = [pow(x,2) for x in range(0,5) if x%2==0]
-
->>> result = [pow(x,2)
-...           for x in range(0,5)
-...               if x % 2 == 0]
->>>
->>> result = [pow(x,2)
-...           for x in range(0,5)
-...           if x % 2 == 0]
-
->>> DATA = [{'a':1, 'b':2, 'c': 3},
-...         {'a':1, 'b':2, 'c': 3},
-...         {'a':1, 'b':2, 'c': 3}]
->>>
->>> result = [value
-...           for row in DATA
-...             for key, value in row.items()]
->>>
->>> result = [value
-...           for row in DATA
-...           for key, value in row.items()]
->>>
-
->>> # doctest: +SKIP
-... result = [astronaut | dict(addresses)
-...           for astronaut in json.loads(DATA)
-...             for i, address in enumerate(astronaut.pop('addresses'), start=1)
-...                 if (columns := [f'{key}{i}' for key in address.keys()])
-...                     and (addresses := zip(columns, address.values()))]
->>>
->>> # doctest: +SKIP
-... result = [astronaut | dict(addresses)
-...           for astronaut in json.loads(DATA)
-...           for i, address in enumerate(astronaut.pop('addresses'), start=1)
-...           if (columns := [f'{key}{i}' for key in address.keys()])
-...           and (addresses := zip(columns, address.values()))]
 
 
 Nested
@@ -385,9 +394,8 @@ Kindergarten
 ...     2: ['Primary School'],
 ...     1: ['Kindergarten']}
 >>>
->>> result = {title: str(i)
-...           for i, titles in DATA.items()
-...           for title in titles}
+>>> result = {t: str(i) for i, ts in DATA.items() for t in ts}
+>>> result = {title: str(i) for i, titles in DATA.items() for title in titles}
 >>>
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
 {'Doctorate': '6',
@@ -414,6 +422,57 @@ NameError: name 'title' is not defined
 ... print(titles)
 Traceback (most recent call last):
 NameError: name 'titles' is not defined
+
+
+Indent and Whitespaces
+----------------------
+>>> result = [pow(x,2) for x in range(0,5)]
+>>>
+>>> result = [pow(x,2)
+...           for x in range(0,5)]
+
+>>> result = [pow(x, 2) for x in range(0, 5) if x % 2 == 0]
+>>>
+>>> result = [pow(x,2) for x in range(0,5) if x%2==0]
+
+>>> result = [pow(x,2) for x in range(0,5) if x % 2 == 0]
+>>>
+>>> result = [pow(x,2)
+...           for x in range(0,5)
+...               if x % 2 == 0]
+>>>
+>>> result = [pow(x,2)
+...           for x in range(0,5)
+...           if x % 2 == 0]
+
+>>> DATA = [{'a':1, 'b':2, 'c': 3},
+...         {'a':1, 'b':2, 'c': 3},
+...         {'a':1, 'b':2, 'c': 3}]
+>>>
+>>> result = [value for row in DATA for key, value in row.items()]
+>>>
+>>> result = [value
+...           for row in DATA
+...             for key, value in row.items()]
+>>>
+>>> result = [value
+...           for row in DATA
+...           for key, value in row.items()]
+>>>
+
+>>> # doctest: +SKIP
+... result = [astronaut | dict(addresses)
+...           for astronaut in json.loads(DATA)
+...             for i, address in enumerate(astronaut.pop('addresses'), start=1)
+...                 if (columns := [f'{key}{i}' for key in address.keys()])
+...                     and (addresses := zip(columns, address.values()))]
+>>>
+>>> # doctest: +SKIP
+... result = [astronaut | dict(addresses)
+...           for astronaut in json.loads(DATA)
+...           for i, address in enumerate(astronaut.pop('addresses'), start=1)
+...           if (columns := [f'{key}{i}' for key in address.keys()])
+...           and (addresses := zip(columns, address.values()))]
 
 
 Examples
@@ -568,29 +627,6 @@ Filtering:
 ['Jan T.', 'Mark W.', 'Melissa L.']
 
 More information in :ref:`Assignment Expression`
-
-Using ``list`` comprehension for filtering with more complex expression:
-
->>> DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
-...         (5.8, 2.7, 5.1, 1.9, 'virginica'),
-...         (5.1, 3.5, 1.4, 0.2, 'setosa'),
-...         (5.7, 2.8, 4.1, 1.3, 'versicolor'),
-...         (6.3, 2.9, 5.6, 1.8, 'virginica'),
-...         (6.4, 3.2, 4.5, 1.5, 'versicolor'),
-...         (4.7, 3.2, 1.3, 0.2, 'setosa'),
-...         (7.0, 3.2, 4.7, 1.4, 'versicolor')]
->>>
->>>
->>> def is_setosa(species):
-...     if species == 'setosa':
-...         return True
-...     else:
-...         return False
->>>
->>>
->>> [tuple(X) for *X,y in DATA if is_setosa(y)]  # doctest: +NORMALIZE_WHITESPACE
-[(5.1, 3.5, 1.4, 0.2),
- (4.7, 3.2, 1.3, 0.2)]
 
 Quick parsing lines:
 

@@ -69,7 +69,8 @@ class ConfigFileXML(ConfigParser):
         print('Parsing XML file')
 
 
-# iris.csv or *.csv, *.json *.yaml...
-# filename = input('Type filename: ')
-config = ConfigParser('/tmp/myfile.json')
-config.show()
+if __name__ == '__main__':
+    # iris.csv or *.csv, *.json *.yaml...
+    # filename = input('Type filename: ')
+    config = ConfigParser('/tmp/myfile.json')
+    config.show()

@@ -145,22 +145,52 @@ commander -> Melissa Lewis
 chemist -> Alex Vogel
 
 
+Unzip
+-----
+>>> firstnames = ['Mark', 'Melissa', 'Alex']
+>>> lastnames = ['Watney', 'Lewis', 'Vogel']
+>>>
+>>> list(zip(firstnames, lastnames))
+[('Mark', 'Watney'), ('Melissa', 'Lewis'), ('Alex', 'Vogel')]
+>>>
+>>> fname, lname = zip(*zip(firstnames, lastnames))
+>>> fname
+('Mark', 'Melissa', 'Alex')
+>>> lname
+('Watney', 'Lewis', 'Vogel')
+
+
 Future
 ------
 * ``zip(*iterables, strict=False)``
 * Since Python 3.10: :pep:`618` -- Add Optional Length-Checking To zip [pep618]_
 * Source [py310doc]_
 
+``zip()`` adjusts to the shortest:
+
+>>> firstnames = ['Mark', 'Melissa']
+>>> lastnames = ['Watney', 'Lewis', 'Vogel']
+>>> result = zip(firstnames, lastnames)
+>>>
+>>> list(result)
+[('Mark', 'Watney'), ('Melissa', 'Lewis')]
+
 ``zip()`` is often used in cases where the iterables are assumed to be of equal length.
 In such cases, it’s recommended to use the ``strict=True`` option.
 Its output is the same as regular ``zip()``
 
->>> list(zip(('a', 'b', 'c'), (1, 2, 3), strict=True))  # doctest: +SKIP
-[('a', 1), ('b', 2), ('c', 3)]
+>>> firstnames = ['Mark', 'Melissa', 'Alex']
+>>> lastnames = ['Watney', 'Lewis', 'Vogel']
+>>> result = zip(firstnames, lastnames, strict=True)  # doctest: +SKIP
+>>>
+>>> list(result)  # doctest: +SKIP
+[('Mark', 'Watney'), ('Melissa', 'Lewis'), ('Alex', 'Vogel')]
 
 Unlike the default behavior, it checks that the lengths of iterables are identical, raising a ``ValueError`` if they aren’t:
 
->>> list(zip(['a', 'b', 'c'], [1, 2, 3, 4], strict=True))  # doctest: +SKIP
+>>> firstnames = ['Mark', 'Melissa']
+>>> lastnames = ['Watney', 'Lewis', 'Vogel']
+>>> result = zip(firstnames, lastnames, strict=True)  # doctest: +SKIP
 Traceback (most recent call last):
 ValueError: zip() argument 2 is longer than argument 1
 

@@ -16,59 +16,57 @@ class Path(metaclass=ABCMeta):
         self.filename = filename
 
     @abstractmethod
-    def dir_create(self):
-        pass
+    def dir_create(self): pass
 
     @abstractmethod
-    def dir_list(self):
-        pass
+    def dir_list(self): pass
 
     @abstractmethod
-    def dir_remove(self):
-        pass
+    def dir_remove(self): pass
 
 
 class WindowsPath(Path):
     def dir_create(self):
-        pass
+        print('create directory on ')
 
     def dir_list(self):
-        pass
+        print('list directory on ')
 
     def dir_remove(self):
-        pass
+        print('remove directory on ')
 
 
 class LinuxPath(Path):
     def dir_create(self):
-        pass
+        print('create directory on ')
 
     def dir_list(self):
-        pass
+        print('list directory on ')
 
     def dir_remove(self):
-        pass
+        print('remove directory on ')
 
 
 class macOSPath(Path):
     def dir_create(self):
-        pass
+        print('create directory on ')
 
     def dir_list(self):
-        pass
+        print('list directory on ')
 
     def dir_remove(self):
-        pass
+        print('remove directory on ')
 
 
-file = Path(r'C:\Users\MWatney\myfile.txt')
-print(type(file))
-# <class '__main__.WindowsPath'>
+if __name__ == '__main__':
+    file = Path(r'C:\Users\MWatney\myfile.txt')
+    print(type(file))
+    # <class '__main__.WindowsPath'>
 
-file = Path(r'/home/mwatney/myfile.txt')
-print(type(file))
-# <class '__main__.LinuxPath'>
+    file = Path(r'/home/mwatney/myfile.txt')
+    print(type(file))
+    # <class '__main__.LinuxPath'>
 
-file = Path(r'/Users/mwatney/myfile.txt')
-print(type(file))
-# <class '__main__.macOSPath'>
+    file = Path(r'/Users/mwatney/myfile.txt')
+    print(type(file))
+    # <class '__main__.macOSPath'>

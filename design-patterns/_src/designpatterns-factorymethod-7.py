@@ -37,18 +37,19 @@ class HttpGatewayFactory:
             return GatewayStub()
 
 
-os.environ['ENVIRONMENT'] = 'testing'
+if __name__ == '__main__':
+    os.environ['ENVIRONMENT'] = 'testing'
 
-client = HttpGatewayFactory()
-result = client.GET()
-# Returning stub GET
-result = client.POST()
-# Returning stub POST
+    client = HttpGatewayFactory()
+    result = client.GET()
+    # Returning stub GET
+    result = client.POST()
+    # Returning stub POST
 
-os.environ['ENVIRONMENT'] = 'production'
+    os.environ['ENVIRONMENT'] = 'production'
 
-client = HttpGatewayFactory()
-result = client.GET()
-# Execute GET request over network
-result = client.POST()
-# Execute POST request over network
+    client = HttpGatewayFactory()
+    result = client.GET()
+    # Execute GET request over network
+    result = client.POST()
+    # Execute POST request over network

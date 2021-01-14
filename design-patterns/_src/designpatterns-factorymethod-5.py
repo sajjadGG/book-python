@@ -26,10 +26,11 @@ class Word(Document):
     _extension = 'docx'
 
 
-file = Document('myfile.txt')
-print(type(file))
-# <class '__main__.Txt'>
+if __name__ == '__main__':
+    file = Document('myfile.txt')
+    print(type(file))
+    # <class '__main__.Txt'>
 
-file = Document('myfile.pdf')
-print(type(file))
-# <class '__main__.PDF'>
+    file = Document('myfile.pdf')
+    print(type(file))
+    # <class '__main__.PDF'>
