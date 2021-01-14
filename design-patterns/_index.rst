@@ -65,8 +65,8 @@ Idioms
     :maxdepth: 1
     :caption: Idioms
 
-    idioms/assignment-expression.rst
     idioms/comprehensions.rst
+    idioms/assignment-expression.rst
     idioms/range.rst
     idioms/enumerate.rst
     idioms/zip.rst
