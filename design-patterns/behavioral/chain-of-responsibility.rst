@@ -11,6 +11,9 @@ Rationale
 
 Use Cases
 ---------
+* Chain of objects
+* Create a pipeline of classes with different responsibilities
+* Open/Close Principle for adding new handlers
 
 
 Design
@@ -29,3 +32,6 @@ Implementation
 Assignments
 -----------
 .. todo:: Create assignments
+
+* Add Encryptor handler
+* Make pipeline: authenticator -> logger -> compressor -> encryptor
