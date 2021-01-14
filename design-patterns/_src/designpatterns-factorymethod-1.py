@@ -9,7 +9,6 @@ class Docx:
 class Document:
     def __new__(cls, *args, **kwargs):
         filename, extension = args[0].split('.')
-
         if extension == 'pdf':
             return PDF()
         elif extension == 'docx':

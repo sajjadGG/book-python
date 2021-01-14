@@ -28,19 +28,19 @@ class BrushTool(Tool):
 
 
 class Canvas:
-    _current_tool: Tool
+    __current_tool: Tool
 
     def mouse_down(self) -> None:
-        self._current_tool.mouse_down()
+        self.__current_tool.mouse_down()
 
     def mouse_up(self) -> None:
-        self._current_tool.mouse_up()
+        self.__current_tool.mouse_up()
 
     def get_current_tool(self):
-        return self._current_tool
+        return self.__current_tool
 
     def set_current_tool(self, newtool: Tool):
-        self._current_tool = newtool
+        self.__current_tool = newtool
 
 
 if __name__ == '__main__':

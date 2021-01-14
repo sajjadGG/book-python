@@ -12,15 +12,15 @@ class Virginica:
 
 def factory(species):
     cls = {
-            'setosa': Setosa,
-            'versicolor': Versicolor,
-            'virginica': Virginica,
+        'setosa': Setosa,
+        'versicolor': Versicolor,
+        'virginica': Virginica,
     }.get(species, None)
 
     if not cls:
         raise NotImplementedError
-
-    return cls
+    else:
+        return cls
 
 
 iris = factory('setosa')

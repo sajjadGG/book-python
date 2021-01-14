@@ -9,10 +9,10 @@ class AuditTrail:
 
 @dataclass
 class Task(metaclass=ABCMeta):
-    _audit_trail: AuditTrail = AuditTrail()
+    __audit_trail: AuditTrail = AuditTrail()
 
     def execute(self) -> None:
-        self._audit_trail.record()
+        self.__audit_trail.record()
         print('Transfer Money')
 
     @abstractmethod

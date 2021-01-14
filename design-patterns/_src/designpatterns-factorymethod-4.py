@@ -1,66 +1,76 @@
-class ConfigParserInterface:
-    extension = None
+from abc import ABCMeta, abstractproperty, abstractmethod
+from dataclasses import dataclass
 
-    def __init__(self, filename):
-        self.filename = filename
 
-    def read(self):
-        with open(self.filename) as file:
-            content = file.read()
-            return self.parse(content)
+@dataclass
+class ConfigParser(metaclass=ABCMeta):
+    _filename: str
 
-    def parse(self, content):
+    @abstractproperty
+    @property
+    def _extension(self):
+        pass
+
+    def __new__(cls, filename, *args, **kwargs):
+        _, extension = filename.split('.')
+        for parser in cls.__subclasses__():
+            if parser._extension == extension:
+                instance = super().__new__(parser)
+                instance.__init__(filename)
+                return instance
+        else:
+            raise NotImplementedError('Parser for given file type not found')
+
+    def __read(self):
+        with open(self._filename) as file:
+            return file.read()
+
+    @abstractmethod
+    def _parse(self, content):
         return NotImplementedError
 
+    def show(self):
+        content = self.__read()
+        return self._parse(content)
 
-class ConfigParserINI(ConfigParserInterface):
-    extension = '.ini'
 
-    def parse(self, content):
+class ConfigParserINI(ConfigParser):
+    _extension = 'ini'
+
+    def _parse(self, content):
         print('Parsing INI file')
 
 
-class ConfigParserCSV(ConfigParserInterface):
-    extension = '.csv'
+class ConfigParserCSV(ConfigParser):
+    _extension = 'csv'
 
-    def parse(self, content):
+    def _parse(self, content):
         print('Parsing CSV file')
 
 
-class ConfigParserYAML(ConfigParserInterface):
-    extension = '.yaml'
+class ConfigParserYAML(ConfigParser):
+    _extension = 'yaml'
 
-    def parse(self, content):
+    def _parse(self, content):
         print('Parsing YAML file')
 
 
-class ConfigFileJSON(ConfigParserInterface):
-    extension = '.json'
+class ConfigFileJSON(ConfigParser):
+    _extension = 'json'
 
-    def parse(self, content):
+    def _parse(self, content):
         print('Parsing JSON file')
 
 
-class ConfigFileXML(ConfigParserInterface):
-    extension = '.xml'
+class ConfigFileXML(ConfigParser):
+    _extension = 'xml'
 
-    def parse(self, content):
+    def _parse(self, content):
         print('Parsing XML file')
 
 
-def config_parser_factory(filename):
-    import os
-    parsers = {p.extension: p for p in ConfigParserInterface.__subclasses__()}
-    extension = os.path.splitext(filename)[1]
-
-    try:
-        return parsers[extension](filename)
-    except KeyError:
-        raise NotImplementedError
-
-
 # iris.csv or *.csv, *.json *.yaml...
-filename = input('Type filename: ')
+# filename = input('Type filename: ')
 
-config_parser = config_parser_factory(filename)
-config_parser.read()
+config = ConfigParser('/tmp/myfile.xml')
+config.show()

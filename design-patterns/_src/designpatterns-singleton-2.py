@@ -1,12 +1,12 @@
 class DB:
-    _connection = None
+    __connection = None
 
     @classmethod
     def connect(cls):
-        if not cls._connection:
+        if not cls.__connection:
             print('Establishing connection...')
-            cls._connection = ...
-        return cls._connection
+            cls.__connection = ...
+        return cls.__connection
 
 
 # Connecting for the first time

@@ -26,21 +26,21 @@ class BrowseHistory:
         return self._urls
 
     def create_iterator(self) -> Iterator:
-        return self.ListIterator(_history=self)
+        return self.ListIterator(self)
 
     @dataclass
     class ListIterator(Iterator):
-        _history: 'BrowseHistory'
-        _index: int = 0
+        __history: 'BrowseHistory'
+        __index: int = 0
 
         def has_next(self) -> bool:
-            return self._index < len(history._urls)
+            return self.__index < len(history._urls)
 
         def current(self) -> str:
-            return history._urls[self._index]
+            return history._urls[self.__index]
 
         def next(self) -> None:
-            self._index += 1
+            self.__index += 1
 
 
 if __name__ == '__main__':

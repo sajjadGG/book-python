@@ -1,11 +1,11 @@
 class Singleton:
-    _instance = None
+    __instance = None
 
     @classmethod
     def get_instance(cls):
-        if not cls._instance:
-            cls._instance = ...
-        return cls._instance
+        if not cls.__instance:
+            cls.__instance = ...
+        return cls.__instance
 
 
 # Creating first instance for the first time

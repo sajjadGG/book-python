@@ -11,11 +11,11 @@ class Virginica:
 
 
 def factory(species):
-    return {
-            'setosa': Setosa,
-            'versicolor': Versicolor,
-            'virginica': Virginica,
-    }.get(species, None)
+    try:
+        classname = species.capitalize()
+        return globals()[classname]
+    except AttributeError:
+        raise NotImplementedError
 
 
 iris = factory('setosa')

@@ -26,14 +26,14 @@ class GatewayStub(HttpClientInterface):
 
 
 class HttpClientFactory:
-    instance = None
+    __instance = None
 
     def __new__(cls, *args, **kwargs):
-        if not cls.instance:
+        if not cls.__instance:
             if os.getenv('ENVIRONMENT') == 'production':
-                cls.instance = GatewayLive()
+                cls.__instance = GatewayLive()
             else:
-                cls.instance = GatewayStub()
+                cls.__instance = GatewayStub()
 
         return cls.instance
 
