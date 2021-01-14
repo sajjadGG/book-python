@@ -70,8 +70,8 @@ Polymorphism in a Function
             print('Drawing check box')
 
 
-    def draw(control: UIElement):
-        control.draw()
+    def draw(element: UIElement):
+        element.draw()
 
 
     if __name__ == '__main__':
