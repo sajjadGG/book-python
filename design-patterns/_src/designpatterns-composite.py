@@ -1,42 +1,52 @@
 from abc import ABCMeta, abstractmethod
+from dataclasses import dataclass, field
 
-class IGraphic(metaclass=ABCMeta):
-    @staticmethod
+
+class Component(metaclass=ABCMeta):
     @abstractmethod
-    def print():
-        """print information"""
+    def render(self) -> None:
+        pass
 
-class Ellipse(IGraphic):
-    def print(self):
-        print("Ellipse")
-
-class Circle(IGraphic):
-    def print(self):
-        print("Circle")
-
-class CompositeGraphic(IGraphic):
-    def __init__(self):
-        self.child_graphics = []
-
-    def add(self, graphic):
-        self.child_graphics.append(graphic)
-
-    def print(self):
-        for g in self.child_graphics:
-            g.print()
+    @abstractmethod
+    def move(self) -> None:
+        pass
 
 
-ELLIPSE1 = Ellipse()
-CIRCLE1 = Circle()
+class Shape(Component):
+    def move(self) -> None:
+        print('Move Shape')
 
-COMPOSITE1 = CompositeGraphic()
-COMPOSITE1.add(ELLIPSE1)
+    def render(self) -> None:
+        print('Render Shape')
 
-COMPOSITE2 = CompositeGraphic()
-COMPOSITE2.add(CIRCLE1)
-COMPOSITE2.add(COMPOSITE1)
 
-COMPOSITE2.print()
+@dataclass
+class Group(Component):
+    __components: list[Component] = field(default_factory=list)
 
-# ELLIPSE1.print()
-# CIRCLE1.print()
+    def add(self, component: Component) -> None:
+        self.__components.append(component)
+
+    def render(self) -> None:
+        for component in self.__components:
+            component.render()
+
+    def move(self) -> None:
+        for component in self.__components:
+            component.move()
+
+
+if __name__ == '__main__':
+    group1 = Group()
+    group1.add(Shape())  # square
+    group1.add(Shape())  # square
+
+    group2 = Group()
+    group2.add(Shape())  # circle
+    group2.add(Shape())  # circle
+
+    group = Group()
+    group.add(group1)
+    group.add(group2)
+    group.render()
+    group.move()
