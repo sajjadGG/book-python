@@ -72,10 +72,8 @@ Implementation
 .. literalinclude:: ../_src/designpatterns-composite.py
     :language: python
 
-.. literalinclude:: ../_src/designpatterns-composite-2.py
-    :language: python
-
 
 Assignments
 -----------
-.. todo:: Create assignments
+.. literalinclude:: ../_assignments/designpatterns-composite.py
+    :language: python
