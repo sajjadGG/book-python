@@ -1,53 +1,75 @@
-**************
 Classification
-**************
+==============
 
 
-Examples
-========
-* https://www.toptal.com/python/python-design-patterns
+Rationale
+---------
+* Structural - Relationships between objects
+* Behavioral - Communication and interaction between objects
+* Creational - Creating new objects
 
 .. figure:: ../_img/designpatterns-categories.png
 
 
-Structural Design Patterns
-==========================
-* Adapter (klasowy i obiektowy)
-* Most (ang. Bridge) (obiektowy)
-* Kompozyt (ang. Composite) (obiektowy)
-* Dekorator (ang. Decorator) (obiektowy)
-* Fasada (ang. Façade) (obiektowy)
-* Pyłek (ang. Flyweight) (obiektowy)
-* Pełnomocnik (ang. Proxy) (obiektowy)
+Behavioral Design Patterns
+--------------------------
+Object patterns:
 
+    * Chain of Responsibility (polish: Łańcuch zobowiązań)
+    * Command (polish: Polecenie)
+    * Interactor (polish: Interactor)
+    * Mediator (polish: Mediator)
+    * Memento (polish: Pamiątka)
+    * Observer (polish: Obserwator)
+    * State (polish: Stan)
+    * Strategy (polish: Strategia)
+    * Visitor (polish: Odwiedzający)
+
+Class Patterns:
+
+    * Interpreter (polish: Interpreter)
+    * Template Method (polish: Metoda szablonowa)
+
+Structural Design Patterns
+--------------------------
+Object:
+
+    * Bridge (polish: Most)
+    * Composite (polish: Kompozyt)
+    * Decorator (polish: Dekorator)
+    * Façade (polish: Fasada)
+    * Flyweight (polish: Pyłek)
+    * Proxy (polish: Pełnomocnik)
+
+Class and Object Patterns:
+
+    * Adapter (polish: Adapter)
 
 Creational Design Patterns
-==========================
-* Metoda wytwórcza (ang. Factory Method) (klasowy)
-* Fabryka Abstrakcyjna (ang. Abstract Factory) (obiektowy)
-* Budowniczy (ang. Builder) (obiektowy)
-* Prototyp (ang. Prototype) (obiektowy)
-* Singleton (obiektowy)
+--------------------------
+Object Patterns:
 
+    * Abstract Factory (polish: Fabryka Abstrakcyjna)
+    * Builder (polish: Budowniczy)
+    * Prototype (polish: Prototyp)
+    * Singleton (polish: Singleton)
 
-Behavioral Design Patterns
-==========================
-* Łańcuch zobowiązań (ang. Chain of Responsibility) (obiektowy)
-* Polecenie (ang. Command) (obiektowy)
-* Interpreter (ang. Interpreter) (klasowy)
-* Interactor (obiektowy)
-* Mediator (ang. Mediator) (obiektowy)
-* Pamiątka (ang. Memento) (obiektowy)
-* Obserwator (ang. Observer) (obiektowy)
-* Stan (ang. State) (obiektowy)
-* Strategia (ang. Strategy) (obiektowy)
-* Metoda szablonowa (ang. Template Method) (klasowy)
-* Odwiedzający (ang. Visitor) (obiektowy)
+Class Patterns:
+
+    * Factory Method (polish: Metoda wytwórcza)
 
 
 Paradigm
-========
-* Wzorzec EFAP (ang. It's easier to ask for forgiveness than permission)
+--------
+* EFAP (Easier to ask for forgiveness than permission)
 * Metaclasses
 * Borg
 * Mixin
+
+
+Further Reading
+---------------
+* https://www.toptal.com/python/python-design-patterns
+* https://codewithmosh.com/courses/733596/bundled_courses
+* https://codewithmosh.com/courses/enrolled/759570
+* https://codewithmosh.com/courses/enrolled/760032
