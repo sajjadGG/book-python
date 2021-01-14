@@ -1,6 +1,7 @@
 Reduce
 ======
 
+
 Rationale
 ---------
 * Reduce sequence using function
@@ -8,6 +9,7 @@ Rationale
 
 >>> 1 + 2
 3
+
 >>> 1 + 2 + 3 + 4
 10
 
@@ -17,8 +19,7 @@ Syntax
 * ``functools.reduce(function, iterable[, initializer])``
 * required ``callable`` - Function
 * required ``iterable`` - Sequence or iterator object
-* https://docs.python.org/3/library/functools.html
-
+* https://docs.python.org/library/functools.html
 
 Problem
 -------
@@ -44,6 +45,7 @@ Solution
 >>> def add(x, y):
 ...     return x + y
 >>>
+>>>
 >>> data = [1, 2, 3, 4]
 >>> reduce(add, data)
 10
@@ -51,6 +53,8 @@ Solution
 
 Use Cases
 ---------
+* https://docs.python.org/library/operator.html
+
 >>> from functools import reduce
 >>> from operator import mul
 >>>
@@ -62,10 +66,19 @@ Use Cases
 >>> from functools import reduce
 >>>
 >>>
+>>> data = [1, 2, 3, 4]
+>>>
 >>> reduce(min, data)
 1
 >>> reduce(max, data)
 4
+
+
+Map Reduce
+----------
+* https://dask.org
+
+.. figure:: ../_img/designpatterns-idioms-mapreduce.gif
 
 
 Assignments
