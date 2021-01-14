@@ -35,6 +35,7 @@ Mediator with Observer Pattern:
 .. literalinclude:: ../_src/designpatterns-mediator-observer.py
     :language: python
 
+
 Assignments
 -----------
 .. todo:: Create assignments
