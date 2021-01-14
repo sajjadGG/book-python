@@ -1,28 +1,35 @@
-class Setosa:
-    pass
+from abc import ABCMeta, abstractproperty
 
 
-class Versicolor:
-    pass
+class Document(metaclass=ABCMeta):
+    @abstractproperty
+    @property
+    def _extension(self):
+        return
+
+    def __new__(cls, filename, *args, **kwargs):
+        name, extension = filename.split('.')
+        for cls in Document.__subclasses__():
+            if cls._extension == extension:
+                return super().__new__(cls)
+        else:
+            raise NotImplementedError('File format unknown')
 
 
-class Virginica:
-    pass
+class PDF(Document):
+    _extension = 'pdf'
+
+class Txt(Document):
+    _extension = 'txt'
+
+class Word(Document):
+    _extension = 'docx'
 
 
-def factory(species):
-    cls = {
-        'setosa': Setosa,
-        'versicolor': Versicolor,
-        'virginica': Virginica,
-    }.get(species, None)
+file = Document('myfile.txt')
+print(type(file))
+# <class '__main__.Txt'>
 
-    if not cls:
-        raise NotImplementedError
-    else:
-        return cls
-
-
-iris = factory('setosa')
-print(iris)
-# <class '__main__.Setosa'>
+file = Document('myfile.pdf')
+print(type(file))
+# <class '__main__.PDF'>

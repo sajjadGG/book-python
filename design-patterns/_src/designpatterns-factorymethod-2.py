@@ -1,50 +1,36 @@
-import os
+class Setosa:
+    pass
+
+class Versicolor:
+    pass
+
+class Virginica:
+    pass
 
 
-class HttpClientInterface:
-    def GET(self):
+def iris_factory(species):
+    cls = {
+        'setosa': Setosa,
+        'versicolor': Versicolor,
+        'virginica': Virginica,
+    }.get(species, None)
+
+    if not cls:
         raise NotImplementedError
-
-    def POST(self):
-        raise NotImplementedError
-
-
-class GatewayLive(HttpClientInterface):
-    def GET(self):
-        """execute GET request over network"""
-
-    def POST(self):
-        """execute POST request over network"""
+    else:
+        return cls
 
 
-class GatewayStub(HttpClientInterface):
-    def GET(self):
-        return {'firstname': 'José', 'lastname': 'Jiménez'}
+if __name__ == '__main__':
+    iris = iris_factory('setosa')
+    print(iris)
+    # <class '__main__.Setosa'>
 
-    def POST(self):
-        return {'status': 200, 'reason': 'OK'}
+    iris = iris_factory('virginica')
+    print(iris)
+    # <class '__main__.Virginica'>
 
-
-class HttpClientFactory:
-    __instance = None
-
-    def __new__(cls, *args, **kwargs):
-        if not cls.__instance:
-            if os.getenv('ENVIRONMENT') == 'production':
-                cls.__instance = GatewayLive()
-            else:
-                cls.__instance = GatewayStub()
-
-        return cls.instance
-
-
-client = HttpClientFactory()
-result = client.GET()
-print(result)
-
-client2 = HttpClientFactory()
-result1 = client2.GET()
-result2 = client2.POST()
-
-print(result1)
-print(result2)
+    iris = iris_factory('arctica')
+    print(iris)
+    # Traceback (most recent call last):
+    # NotImplementedError

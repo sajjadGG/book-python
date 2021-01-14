@@ -140,6 +140,61 @@ Open/Closed Principle
 
 .. code-block:: python
 
+    class PDF:
+        pass
+
+
+    class Docx:
+        pass
+
+
+    class Document:
+        def __new__(cls, *args, **kwargs):
+            filename, extension = args[0].split('.')
+            if extension == 'pdf':
+                return PDF()
+            elif extension == 'docx':
+                return Docx()
+
+
+    file1 = Document('myfile.pdf')
+    file2 = Document('myfile.docx')
+
+    print(file1)
+    # <__main__.PDF object at 0x...>
+
+    print(file2)
+    # <__main__.Docx object at 0x...>
+
+.. code-block:: python
+
+    class Setosa:
+        pass
+
+
+    class Versicolor:
+        pass
+
+
+    class Virginica:
+        pass
+
+
+    def factory(species):
+        try:
+            classname = species.capitalize()
+            return globals()[classname]
+        except KeyError:
+            raise NotImplementedError
+
+
+    iris = factory('setosa')
+    print(iris)
+    # <class '__main__.Setosa'>
+
+
+.. code-block:: python
+
     from random import randint
 
 

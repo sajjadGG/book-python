@@ -1,35 +1,31 @@
-from abc import ABCMeta, abstractproperty
+class Setosa:
+    pass
+
+class Virginica:
+    pass
+
+class Versicolor:
+    pass
 
 
-class Document(metaclass=ABCMeta):
-    @abstractproperty
-    @property
-    def _extension(self):
-        return
-
-    def __new__(cls, filename, *args, **kwargs):
-        name, extension = filename.split('.')
-        for cls in Document.__subclasses__():
-            if cls._extension == extension:
-                return super().__new__(cls)
-        else:
-            raise NotImplementedError('File format unknown')
+def iris_factory(species):
+    try:
+        classname = species.capitalize()
+        return globals()[classname]
+    except KeyError:
+        raise NotImplementedError
 
 
-class PDF(Document):
-    _extension = 'pdf'
+if __name__ == '__main__':
+    iris = iris_factory('setosa')
+    print(iris)
+    # <class '__main__.Setosa'>
 
-class Txt(Document):
-    _extension = 'txt'
+    iris = iris_factory('virginica')
+    print(iris)
+    # <class '__main__.Virginica'>
 
-class Word(Document):
-    _extension = 'docx'
-
-
-file = Document('myfile.txt')
-print(type(file))
-# <class '__main__.Txt'>
-
-file = Document('myfile.pdf')
-print(type(file))
-# <class '__main__.PDF'>
+    iris = iris_factory('arctica')
+    print(iris)
+    # Traceback (most recent call last):
+    # NotImplementedError

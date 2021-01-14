@@ -40,6 +40,8 @@ Implementation
 .. literalinclude:: ../_src/designpatterns-factorymethod-7.py
     :language: python
 
+.. literalinclude:: ../_src/designpatterns-factorymethod-8.py
+    :language: python
 
 Assignments
 -----------

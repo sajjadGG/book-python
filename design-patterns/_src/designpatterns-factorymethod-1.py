@@ -1,25 +1,34 @@
-class PDF:
+class Setosa:
+    pass
+
+class Versicolor:
+    pass
+
+class Virginica:
     pass
 
 
-class Docx:
-    pass
+def iris_factory(species):
+    if species == 'setosa':
+        return Setosa
+    elif species == 'versicolor':
+        return Versicolor
+    elif species == 'virginica':
+        return Virginica
+    else:
+        raise NotImplementedError
 
 
-class Document:
-    def __new__(cls, *args, **kwargs):
-        filename, extension = args[0].split('.')
-        if extension == 'pdf':
-            return PDF()
-        elif extension == 'docx':
-            return Docx()
+if __name__ == '__main__':
+    iris = iris_factory('setosa')
+    print(iris)
+    # <class '__main__.Setosa'>
 
+    iris = iris_factory('virginica')
+    print(iris)
+    # <class '__main__.Virginica'>
 
-file1 = Document('myfile.pdf')
-file2 = Document('myfile.docx')
-
-print(file1)
-# <__main__.PDF object at 0x10f89afa0>
-
-print(file2)
-# <__main__.Docx object at 0x10f6fe9a0>
+    iris = iris_factory('arctica')
+    print(iris)
+    # Traceback (most recent call last):
+    # NotImplementedError

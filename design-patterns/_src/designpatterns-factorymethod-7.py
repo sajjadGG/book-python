@@ -1,74 +1,52 @@
-from abc import ABCMeta, abstractmethod
+import os
 
 
-class Path(metaclass=ABCMeta):
-    def __new__(cls, path, *args, **kwargs):
-        if path.startswith(r'C:\Users'):
-            instance = object.__new__(WindowsPath)
-        if path.startswith('/home'):
-            return object.__new__(LinuxPath)
-        if path.startswith('/Users'):
-            return object.__new__(macOSPath)
-        instance.__init__(path)
-        return instance
+class HttpClientInterface:
+    def GET(self):
+        raise NotImplementedError
 
-    def __init__(self, filename):
-        self.filename = filename
-
-    @abstractmethod
-    def dir_create(self):
-        pass
-
-    @abstractmethod
-    def dir_list(self):
-        pass
-
-    @abstractmethod
-    def dir_remove(self):
-        pass
+    def POST(self):
+        raise NotImplementedError
 
 
-class WindowsPath(Path):
-    def dir_create(self):
-        pass
+class GatewayLive(HttpClientInterface):
+    def GET(self):
+        print('Execute GET request over network')
+        return ...
 
-    def dir_list(self):
-        pass
-
-    def dir_remove(self):
-        pass
-
-
-class LinuxPath(Path):
-    def dir_create(self):
-        pass
-
-    def dir_list(self):
-        pass
-
-    def dir_remove(self):
-        pass
+    def POST(self):
+        print('Execute POST request over network')
+        return ...
 
 
-class macOSPath(Path):
-    def dir_create(self):
-        pass
+class GatewayStub(HttpClientInterface):
+    def GET(self):
+        print('Returning stub GET')
+        return {'firstname': 'Mark', 'lastname': 'Watney'}
 
-    def dir_list(self):
-        pass
-
-    def dir_remove(self):
-        pass
+    def POST(self):
+        print('Returning stub POST')
+        return {'status': 200, 'reason': 'OK'}
 
 
-file = Path(r'C:\Users\MWatney\myfile.txt')
-print(type(file))
-# <class '__main__.WindowsPath'>
+class HttpGatewayFactory:
+    def __new__(cls, *args, **kwargs):
+        if os.getenv('ENVIRONMENT') == 'production':
+            return GatewayLive()
+        else:
+            return GatewayStub()
 
-file = Path(r'/home/mwatney/myfile.txt')
-print(type(file))
-# <class '__main__.LinuxPath'>
 
-file = Path(r'/Users/mwatney/myfile.txt')
-print(type(file))
-# <class '__main__.macOSPath'>
+client = HttpGatewayFactory()
+result = client.GET()
+# Returning stub GET
+result = client.POST()
+# Returning stub POST
+
+os.environ['ENVIRONMENT'] = 'production'
+
+client = HttpGatewayFactory()
+result = client.GET()
+# Execute GET request over network
+result = client.POST()
+# Execute POST request over network
