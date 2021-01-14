@@ -16,7 +16,7 @@ Implementation
 
 Borg vs Singleton
 -----------------
-* Source [borg]
+* Source [borg]_
 
 The real reason that borg is different comes down to subclassing.
 
