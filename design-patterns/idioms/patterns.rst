@@ -1,9 +1,39 @@
-Good Practices
-==============
+Patterns
+========
 
 
 Rationale
 ---------
+* Python ``for`` loop is equivalent to ``forEach`` in other languages
+* Other languages ``for`` loop is Python's ``while`` (sic!)
+
+For:
+
+    .. code-block:: text
+
+        for (int i = 0; i <= 10; i++)  # C/C++/Java
+        for (var i = 0; i <= 10; i++)  # JavaScript
+
+        i = 0
+        while i <= 10:  #  Python
+            i += 1
+
+ForEach Index:
+
+    .. code-block:: text
+
+        for (let idx in collection)         # JavaScript
+        for idx in range(len(collection))   # Python
+
+ForEach Element:
+
+    .. code-block:: text
+
+        for (var element : collection)   # Java
+        for (let element of collection)  # JavaScript
+        for element in collection        # Python
+        for i in range(0,10)             # Python
+
 .. figure:: ../_img/goodpractices-programmer-exp.png
 
     Code Complexity vs. Programmer Experience
@@ -22,39 +52,13 @@ Range
 
 ForEach
 -------
-For:
-
-    .. code-block:: text
-
-        for (int i = 0; i <= 10; i++)  # C/C++/Java
-        for (var i = 0; i <= 10; i++)  # JavaScript
-
-        i = 0
-        while i <= 10:  #  Python
-            i += 1
-
-ForEach Element:
-
-    .. code-block:: text
-
-        for (var element : collection)   # Java
-        for (let element of collection)  # JavaScript
-        for element in collection        # Python
-        for i in range(0,10)             # Python
-
-ForEach Index:
-
-    .. code-block:: text
-
-        for (let idx in collection)         # JavaScript
-        for idx in range(len(collection))   # Python
-
 >>> DATA = ['a', 'b', 'c']
 >>>
 >>> for i in range(len(DATA)):
 ...    value = DATA[i]
 
 >>> DATA = ['a', 'b', 'c']
+>>>
 >>> for value in DATA:
 ...    pass
 
@@ -62,14 +66,13 @@ ForEach Index:
 Sum
 ---
 >>> DATA = [1, 2, 3]
->>> total = 0
+>>> result = 0
 >>>
 >>> for i in range(len(DATA)):
-...    total += DATA[i]
+...    result += DATA[i]
 
 >>> DATA = [1, 2, 3]
->>> sum(DATA)
-6
+>>> result = sum(DATA)
 
 
 Enumerate
@@ -118,6 +121,7 @@ List Comprehension
 ['a', 'b', 'c']
 
 >>> DATA = ['a', 'b', 'c']
+>>>
 >>> result = [x for x in DATA]
 >>> result
 ['a', 'b', 'c']
@@ -242,13 +246,13 @@ Str Startswith
 >>> data = 'virginica'
 >>> data[:1] == 'v'
 True
->>> data[:1] == 'v' or data[:1] == 's'
+>>> data[:3] == 'vir' or data[:2] == 've'
 True
 
 >>> data = 'virginica'
 >>> data.startswith('v')
 True
->>> data.startswith(('v', 's'))
+>>> data.startswith(('vir', 've'))
 True
 
 

@@ -16,7 +16,7 @@ English:
        different values for getsizeof generator and function:
         a. 112 for generator in Python 3.9
         b. 112 for generator in Python 3.8
-        c. 128 for generator in Python 3.7
+        c. 120 for generator in Python 3.7
     8. Compare result with "Tests" section (see below)
 
 Polish:
@@ -30,7 +30,7 @@ Polish:
        dla funkcji i generatora mogą się nieznaczenie różnić:
         a. 112 dla generator w Python 3.9
         b. 112 dla generator w Python 3.8
-        c. 128 dla generator w Python 3.7
+        c. 120 dla generator w Python 3.7
     8. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
@@ -89,3 +89,7 @@ def generator(data: list, species: str):
     for *features, label in data:
         if label == species:
             yield features
+
+
+# def comprehension(data: list, species: str):
+#     return [X for *X,y in data if y==species]

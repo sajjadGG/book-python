@@ -77,7 +77,7 @@ Generator Expression:
 >>> _ = tuple(x for x in range(0,5))     # tuple comprehension
 >>> _ = set(x for x in range(0,5))       # set comprehension
 >>> _ = dict((x,x) for x in range(0,5))  # dict comprehension
->>>
+
 >>> _ = [x for x in range(0,5)]          # list comprehension
 >>> _ = (x for x in range(0,5))          # generator expression
 >>> _ = {x for x in range(0,5)}          # set comprehension

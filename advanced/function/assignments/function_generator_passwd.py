@@ -83,3 +83,11 @@ def generator(data):
         if int(uid) < 1000:
             yield username
 
+
+# def comprehension(data: str):
+#     return [username
+#             for row in data.splitlines()
+#             if (values := row.strip().split(':'))
+#             and (username := values[0])
+#             and (uid := values[2])
+#             and int(uid) < 1000]

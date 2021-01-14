@@ -11,22 +11,24 @@ Recap
 * Generators are lazy evaluated
 
 >>> data = [x for x in range(0,5)]
->>> list(data)
-[0, 1, 2, 3, 4]
+>>>
 >>> print(data)
+[0, 1, 2, 3, 4]
+>>> list(data)
 [0, 1, 2, 3, 4]
 
 >>> data = (x for x in range(0,5))
->>> list(data)
-[0, 1, 2, 3, 4]
+>>>
 >>> print(data)  # doctest: +ELLIPSIS
 <generator object <genexpr> at 0x...>
+>>> list(data)
+[0, 1, 2, 3, 4]
 
 >>> _ = list(x for x in range(0,5))      # list comprehension
 >>> _ = tuple(x for x in range(0,5))     # tuple comprehension
 >>> _ = set(x for x in range(0,5))       # set comprehension
 >>> _ = dict((x,x) for x in range(0,5))  # dict comprehension
->>>
+
 >>> _ = [x for x in range(0,5)]          # list comprehension
 >>> _ = (x for x in range(0,5))          # generator expression
 >>> _ = {x for x in range(0,5)}          # set comprehension
@@ -41,142 +43,14 @@ Rationale
 * Comprehensions - Using values more than one
 * Generators - Using values once (for example in the loop iterator)
 
-.. code-block:: python
+* Generator will calculate next number for every loop iteration
+* Generator forgets previous number
+* Generator doesn't know the next number
 
-    data = [x for x in range(0, 5)]
+* Code do not execute instantly
+* Sometimes code is not executed at all!
 
-    list(data)
-    # [0, 1, 2, 3, 4]
-
-    list(data)
-    # [0, 1, 2, 3, 4]
-
-    print(data)
-    # [0, 1, 2, 3, 4]
-
-.. code-block:: python
-
-    data = (x for x in range(0, 5))
-
-    list(data)
-    # [0, 1, 2, 3, 4]
-
-    list(data)
-    # []
-
-    print(data)
-    # <generator object <genexpr> at 0x11cb45950>
-
-
-Instant Evaluation
-==================
-.. highlights::
-    * If you need values evaluated instantly, there is no point in using generators
-
-.. code-block:: python
-
-    data = (x for x in range(0,5))
-
-    list(data)
-    # [0, 1, 2, 3, 4]
-
-
-Lazy Evaluation
-===============
-.. highlights::
-    * Code do not execute instantly
-    * Sometimes code is not executed at all!
-
-.. code-block:: python
-
-    data = (x for x in range(0,3))
-
-    next(data)
-    # 0
-
-    next(data)
-    # 1
-
-    next(data)
-    # 2
-
-    next(data)
-    # Traceback (most recent call last):
-    # StopIteration
-
-None of those lines will generate any numbers (util executed)!:
-
-.. code-block:: python
-
-    a = (x for x in range(0,5))
-    b = (x for x in range(0,5))
-    c = (x for x in range(0,5))
-
-
-Iterative Evaluation
-====================
-.. highlights::
-    * Generator will calculate next number for every loop iteration
-    * Generator forgets previous number
-    * Generator doesn't know the next number
-
-.. code-block:: python
-
-    data = [x for x in range(0,10)]
-    print(data)
-    # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-    data = (x for x in range(0,10))
-    print(data)
-    # <generator object <genexpr> at 0x10ef1d040>
-
-Comprehension:
-
-.. code-block:: python
-
-    data = [x for x in range(0,10)]
-
-    for x in data:
-        print(x, end=' ')
-        if x == 3:
-            break
-    # 0 1 2 3
-
-    for x in data:
-        print(x, end=' ')
-        if x == 6:
-            break
-    # 0 1 2 3 4 5 6
-
-    print(list(data))
-    # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-    print(list(data))
-    # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-Generator:
-
-.. code-block:: python
-
-    data = (x for x in range(0,10))
-
-    for x in data:
-        print(x, end=' ')
-        if x == 3:
-            break
-    # 0 1 2 3
-
-    for x in data:
-        print(x, end=' ')
-        if x == 6:
-            break
-    # 4 5 6
-
-    print(list(data))
-    # [7, 8, 9]
-
-    print(list(data))
-    # []
+* If you need values evaluated instantly, there is no point in using generators
 
 
 Generator Function
@@ -238,42 +112,9 @@ Generator Function
     # (4.7, 3.2, 1.3, 0.2, 'setosa')
 
 
-Functools
-=========
-* https://docs.python.org/3/library/functools.html
-
-.. code-block:: python
-
-    from functools import *
-
-    reduce(callable, iterable[, initializer])
-
-.. code-block:: python
-
-    1 + 2
-    # 3
-
-    1 + 2 + 3 + 4
-    # 10
-
-.. code-block:: python
-
-    from functools import reduce
-
-
-    def add(a,b):
-        return a+b
-
-
-    reduce(add, [1,2])
-    # 3
-    reduce(add, [1,2,3,4])
-    # 10
-
-
 Itertools
 =========
-* More information https://docs.python.org/3/library/itertools.html
+* More information https://docs.python.org/library/itertools.html
 * More information :ref:`Itertools`
 
 .. code-block:: python
@@ -306,15 +147,10 @@ Memory Footprint
     from sys import getsizeof
 
 
-    gen1 = (x for x in range(0,10))
+    gen1 = (x for x in range(0,1))
     gen10 = (x for x in range(0,10))
     gen100 = (x for x in range(0,100))
     gen1000 = (x for x in range(0,1000))
-
-    com1 = [x for x in range(0,1)]
-    com10 = [x for x in range(0,10)]
-    com100 = [x for x in range(0,100)]
-    com1000 = [x for x in range(0,1000)]
 
     getsizeof(gen1)
     # 112
@@ -327,6 +163,17 @@ Memory Footprint
 
     getsizeof(gen1000)
     # 112
+
+.. code-block:: python
+
+    from sys import getsizeof
+
+
+    com1 = [x for x in range(0,1)]
+    com10 = [x for x in range(0,10)]
+    com100 = [x for x in range(0,100)]
+    com1000 = [x for x in range(0,1000)]
+
 
     getsizeof(com1)
     # 88

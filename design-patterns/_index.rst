@@ -74,7 +74,7 @@ Idioms
     idioms/filter.rst
     idioms/reduce.rst
     idioms/generator.rst
-    idioms/recap.rst
+    idioms/patterns.rst
 
 *********
 Protocols
