@@ -37,6 +37,8 @@ class HttpGatewayFactory:
             return GatewayStub()
 
 
+os.environ['ENVIRONMENT'] = 'testing'
+
 client = HttpGatewayFactory()
 result = client.GET()
 # Returning stub GET
