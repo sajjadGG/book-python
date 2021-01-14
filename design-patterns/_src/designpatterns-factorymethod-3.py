@@ -7,7 +7,6 @@ class Document(metaclass=ABCMeta):
     def _extension(self):
         return
 
-
     def __new__(cls, filename, *args, **kwargs):
         name, extension = filename.split('.')
         for cls in Document.__subclasses__():

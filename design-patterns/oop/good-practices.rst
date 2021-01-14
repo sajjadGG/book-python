@@ -48,16 +48,16 @@ Good:
     class Light:
         status = 'off'
 
-        def turn_on(self):
+        def switch_on(self):
             self.status = 'on'
 
-        def turn_off(self):
+        def switch_off(self):
             self.status = 'off'
 
 
     light = Light()
-    light.turn_on()
-    light.turn_off()
+    light.switch_on()
+    light.switch_off()
 
 Bad:
 

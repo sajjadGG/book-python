@@ -37,7 +37,7 @@ class ConfigParser(metaclass=ABCMeta):
 class ConfigParserINI(ConfigParser):
     _extension = 'ini'
 
-    def _parse(self, content):
+    def _parse(self, content: str) -> dict:
         print('Parsing INI file')
 
 
