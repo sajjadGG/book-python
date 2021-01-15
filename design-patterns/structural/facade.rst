@@ -29,11 +29,12 @@ Problem
 
 Design
 ------
-.. figure:: ../_img/designpatterns-facade-usecase.png
 
 
 Implementation
 --------------
+.. figure:: ../_img/designpatterns-facade-usecase.png
+
 .. literalinclude:: ../_src/designpatterns-facade-impl.py
     :language: python
 

@@ -15,16 +15,22 @@ Use Cases
 * Create a pipeline of classes with different responsibilities
 * Open/Close Principle for adding new handlers
 
+.. figure:: ../_img/designpatterns-chainofresponsibility-flow.png
+
+
+Problem
+-------
+.. figure:: ../_img/designpatterns-chainofresponsibility-problem.png
+
 
 Design
 ------
-.. figure:: ../_img/designpatterns-chainofresponsibility-bad.png
-.. figure:: ../_img/designpatterns-chainofresponsibility-flow.png
-.. figure:: ../_img/designpatterns-chainofresponsibility-usecase.png
 
 
 Implementation
 --------------
+.. figure:: ../_img/designpatterns-chainofresponsibility-usecase.png
+
 .. literalinclude:: ../_src/designpatterns-chainofresponsibility.py
     :language: python
 

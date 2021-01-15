@@ -17,14 +17,16 @@ Use Cases
 
 Design
 ------
-.. figure:: ../_img/designpatterns-visitor-usecase.png
 .. figure:: ../_img/designpatterns-visitor-gof.png
 
 
 Implementation
 --------------
+.. figure:: ../_img/designpatterns-visitor-usecase.png
+
 .. literalinclude:: ../_src/designpatterns-visitor.py
     :language: python
+
 
 
 Assignments

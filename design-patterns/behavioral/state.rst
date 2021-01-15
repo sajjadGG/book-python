@@ -17,6 +17,9 @@ Use Cases
 
 Problem
 -------
+* Canvas object can behave differently depending on selected Tool
+* All behaviors are represented by subclass of the tool interface
+
 .. code-block:: python
 
     from enum import Enum
@@ -56,15 +59,13 @@ Problem
 
 Design
 ------
-* Canvas object can behave differently depending on selected Tool
-* All behaviors are represented by subclass of the tool interface
-
-.. figure:: ../_img/designpatterns-state-usecase.png
 .. figure:: ../_img/designpatterns-state-gof.png
 
 
 Implementation
----------------------
+--------------
+.. figure:: ../_img/designpatterns-state-usecase.png
+
 .. literalinclude:: ../_src/designpatterns-state.py
     :language: python
 

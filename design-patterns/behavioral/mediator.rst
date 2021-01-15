@@ -19,14 +19,18 @@ Use Cases
 
 Design
 ------
-.. figure:: ../_img/designpatterns-mediator-bad.png
 .. figure:: ../_img/designpatterns-mediator-gof.png
-.. figure:: ../_img/designpatterns-mediator-usecase-1.png
-.. figure:: ../_img/designpatterns-mediator-usecase-2.png
+
+Problem
+-------
+.. figure:: ../_img/designpatterns-mediator-problem.png
 
 
 Implementation
 --------------
+.. figure:: ../_img/designpatterns-mediator-usecase-1.png
+.. figure:: ../_img/designpatterns-mediator-usecase-2.png
+
 .. literalinclude:: ../_src/designpatterns-mediator.py
     :language: python
 

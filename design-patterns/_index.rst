@@ -150,12 +150,12 @@ Creational
     :maxdepth: 1
     :caption: Creational
 
-    creational/abstract-factory.rst
-    creational/builder.rst
-    creational/factory-method.rst
-    creational/prototype.rst
     creational/singleton.rst
     creational/borg.rst
+    creational/factory-method.rst
+    #creational/abstract-factory.rst
+    #creational/builder.rst
+    #creational/prototype.rst
 
 *********
 Practices
@@ -164,9 +164,9 @@ Practices
     :maxdepth: 1
     :caption: Practices
 
-    practices/kiss.rst
-    practices/yagni.rst
-    practices/efap.rst
+    #practices/kiss.rst
+    #practices/yagni.rst
+    #practices/efap.rst
 
 *********
 Paradigms
@@ -176,5 +176,5 @@ Paradigms
     :caption: Paradigms
 
     paradigm/callback.rst
-    paradigm/functional-programming.rst
-    paradigm/event-programming.rst
+    #paradigm/functional-programming.rst
+    #paradigm/event-programming.rst

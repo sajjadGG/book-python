@@ -29,7 +29,6 @@ Problem
 
 Design
 ------
-.. figure:: ../_img/designpatterns-flyweight-usecase.png
 .. figure:: ../_img/designpatterns-flyweight-gof.png
 
 
@@ -39,6 +38,8 @@ Implementation
 * Pattern will create a dict with point type and its icon
 * It will reuse icon for each type
 * So it will prevent from storing duplicated data in memory
+
+.. figure:: ../_img/designpatterns-flyweight-usecase.png
 
 .. literalinclude:: ../_src/designpatterns-flyweight-impl.py
     :language: python

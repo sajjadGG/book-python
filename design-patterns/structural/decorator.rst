@@ -25,12 +25,13 @@ Problem
 
 Design
 ------
-.. figure:: ../_img/designpatterns-decorator-usecase.png
 .. figure:: ../_img/designpatterns-decorator-gof.png
 
 
 Implementation
 --------------
+.. figure:: ../_img/designpatterns-decorator-usecase.png
+
 .. literalinclude:: ../_src/designpatterns-decorator-impl.py
     :language: python
 

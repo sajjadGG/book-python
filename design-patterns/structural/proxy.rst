@@ -29,7 +29,6 @@ Problem
 
 Design
 ------
-.. figure:: ../_img/designpatterns-proxy-usecase.png
 .. figure:: ../_img/designpatterns-proxy-gof.png
 
 
@@ -37,6 +36,8 @@ Implementation
 --------------
 * Lazy evaluation
 * Open/Close Principle
+
+.. figure:: ../_img/designpatterns-proxy-usecase.png
 
 .. literalinclude:: ../_src/designpatterns-proxy-impl-1.py
     :language: python

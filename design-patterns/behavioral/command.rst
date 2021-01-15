@@ -52,12 +52,13 @@ Design
 * Command Object — Itself, which implements an execute, or action method, and contains all required information
 * Client — The main application or module which is aware of the Receiver, Invoker and Commands
 
-.. figure:: ../_img/designpatterns-command-usecase.png
 .. figure:: ../_img/designpatterns-command-gof.png
 
 
 Implementation
 --------------
+.. figure:: ../_img/designpatterns-command-usecase.png
+
 Command pattern:
 
 .. literalinclude:: ../_src/designpatterns-command-1.py
@@ -72,6 +73,7 @@ Undoable commands:
 
 .. literalinclude:: ../_src/designpatterns-command-2.py
     :language: python
+
 
 
 Assignments

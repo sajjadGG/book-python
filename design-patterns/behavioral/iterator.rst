@@ -22,11 +22,12 @@ Problem
 
 Design
 ------
-.. figure:: ../_img/designpatterns-iterator-usecase.png
 
 
 Implementation
 --------------
+.. figure:: ../_img/designpatterns-iterator-usecase.png
+
 .. literalinclude:: ../_src/designpatterns-iterator-impl.py
     :language: python
 
