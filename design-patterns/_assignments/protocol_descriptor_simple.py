@@ -6,20 +6,18 @@
 * Time: 13 min
 
 English:
-    1. Define class `Temperature`
-    2. Class stores values in Kelvins using descriptor
-    3. Temperature must always be positive
-    4. Use descriptors to check boundaries at each value modification
-    5. All tests must pass
-    6. Compare result with "Tests" section (see below)
+    1. Define descriptor class `Kelvin`
+    2. Temperature must always be positive
+    3. Use descriptors to check boundaries at each value modification
+    4. All tests must pass
+    5. Compare result with "Tests" section (see below)
 
 Polish:
-    1. Zdefiniuj klasę `Temperature`
-    2. Klasa przetrzymuje wartości jako Kelwiny używając deskryptora
-    3. Temperatura musi być zawsze być dodatnia
-    4. Użyj deskryptorów do sprawdzania wartości granicznych przy każdej modyfikacji
-    5. Wszystkie testy muszą przejść
-    6. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    1. Zdefiniuj klasę deskryptor `Kelvin`
+    2. Temperatura musi być zawsze być dodatnia
+    3. Użyj deskryptorów do sprawdzania wartości granicznych przy każdej modyfikacji
+    4. Wszystkie testy muszą przejść
+    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
     >>> class Temperature:

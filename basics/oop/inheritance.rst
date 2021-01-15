@@ -130,6 +130,21 @@ Overload
 >>> obj.show()
 'b'
 
+>>> class Person:
+...     lastname = 'Watney'
+...
+...     def hello(self):
+...         print(f'Hello {self.firstname} {self.lastname}')
+>>>
+>>>
+>>> class Astronaut(Person):
+...     firstname = 'Mark'
+>>>
+>>>
+>>> a = Astronaut()
+>>> a.hello()
+Hello Mark Watney
+
 
 Super Function
 --------------

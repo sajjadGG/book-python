@@ -14,40 +14,30 @@ Rationale
 
 Protocol
 ========
-* ``value = property()`` - creates property
-* ``@value.getter`` - getter for attribute (``value`` has to be ``property``)
-* ``@value.setter`` - setter for attribute (``value`` has to be ``property``)
-* ``@value.deleter`` - deleter for attribute (``value`` has to be ``property``)
+* ``myattribute = property()`` - creates property
+* ``@myattribute.getter`` - getter for attribute
+* ``@myattribute.setter`` - setter for attribute
+* ``@myattribute.deleter`` - deleter for attribute
+* Method name must be the same as attribute name
+* ``myattribute`` has to be ``property``
 * ``@property`` - creates property and a getter
 
-Syntax:
-    .. code-block:: python
+.. code-block:: python
 
-        class MyClass:
+    class MyClass:
+        myattribute = property()
 
-            @property
-            def myattribute(self):
-                return ...
+        @myattribute.getter
+        def myattribute(self):
+            return ...
 
-Alternative:
-    .. code-block:: python
+        @myattribute.setter
+        def myattribute(self):
+            ...
 
-        class MyClass:
-            myattribute = property()
-
-            @myattribute.getter
-            def myattribute(self):
-                return ...
-
-Are equivalent to:
-    .. code-block:: python
-
-        class MyClass:
-
-            def myattribute(self):
-                return ...
-
-            myattribute = property(myattribute)
+        @myattribute.deleter
+        def myattribute(self):
+            ...
 
 
 Example
@@ -57,32 +47,47 @@ Example
     class KelvinTemperature:
         value: float
 
-        def __init__(self, value):
-            self.value = value
-
+    t = KelvinTemperature()
+    t.value = -2               # Should raise ValueError('Kelvin cannot be negative')
 
 .. code-block:: python
 
     class KelvinTemperature:
         value: float
 
-        def __init__(self, value):
-            if value < 0:
+        def __init__(self, initialvalue):
+            self.value = initialvalue
+
+    t = KelvinTemperature(-1)   # Should raise ValueError('Kelvin cannot be negative')
+    t.value = -2                # Should raise ValueError('Kelvin cannot be negative')
+
+.. code-block:: python
+
+    class KelvinTemperature:
+        value: float
+
+        def __init__(self, initialvalue):
+            if initialvalue < 0:
                 raise ValueError('Negative Kelvin Temperature')
-            self.value = value
+            self.value = initialvalue
+
+
+    t = KelvinTemperature()
+    t.value = -1
+
 
 .. code-block:: python
 
     class KelvinTemperature:
         _value: float
 
-        def __init__(self, value):
-            self.set_value(value)
+        def __init__(self, initialvalue):
+            self.set_value(initialvalue)
 
-        def set_value(self, new_value):
-            if new_value < 0:
+        def set_value(self, newvalue):
+            if newvalue < 0:
                 raise ValueError('Negative Kelvin Temperature')
-            self._value = new_value
+            self._value = newvalue
 
 .. code-block:: python
 
@@ -90,14 +95,14 @@ Example
         _value: float
         value = property()
 
-        def __init__(self, value):
-            self.value = value
+        def __init__(self, initialvalue):
+            self.value = initialvalue
 
         @value.setter
-        def value(self, new_value):
-            if new_value < 0:
+        def value(self, newvalue):
+            if newvalue < 0:
                 raise ValueError('Negative Kelvin Temperature')
-            self._value = new_value
+            self._value = newvalue
 
 
 Use Cases
