@@ -563,14 +563,14 @@ Examples
 Assignments
 ===========
 
-.. literalinclude:: ../_assignments/oop_dataclass_syntax.py
-    :caption: :download:`Solution <../_assignments/oop_dataclass_syntax.py>`
+.. literalinclude:: assignments/oop_dataclass_syntax.py
+    :caption: :download:`Solution <assignments/oop_dataclass_syntax.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/oop_dataclass_addressbook.py
-    :caption: :download:`Solution <../_assignments/oop_dataclass_addressbook.py>`
+.. literalinclude:: assignments/oop_dataclass_addressbook.py
+    :caption: :download:`Solution <assignments/oop_dataclass_addressbook.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/oop_dataclass_json.py
-    :caption: :download:`Solution <../_assignments/oop_dataclass_json.py>`
+.. literalinclude:: assignments/oop_dataclass_json.py
+    :caption: :download:`Solution <assignments/oop_dataclass_json.py>`
     :end-before: # Solution
