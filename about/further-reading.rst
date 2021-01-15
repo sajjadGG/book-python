@@ -108,9 +108,11 @@ Programming Language Trends
 * https://surveys.jetbrains.com/s3/c12-python-developers-survey-2020
 * https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-and-markup-languages-professional-developers
 
+
 Experiments
 -----------
 * https://blog.jetbrains.com/datalore/2020/12/17/we-downloaded-10-000-000-jupyter-notebooks-from-github-this-is-what-we-learned/
+
 
 Python Developer Survey
 -----------------------
@@ -130,3 +132,7 @@ Technology Trends
 * https://www.infoq.com/ai-ml-data-eng/
 * https://www.youtube.com/c/PatoArchitekci/videos
 
+
+Testing
+-------
+* https://martinfowler.com/articles/microservice-testing/#testing-component-in-process-diagram
