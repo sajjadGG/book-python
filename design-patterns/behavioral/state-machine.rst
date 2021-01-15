@@ -1,12 +1,16 @@
 State Machine
 =============
 
+
 Rationale
 ---------
 * EN: State Machine
 * PL: Maszyna Stanów
 * Type: class
 
+
+Use Cases
+---------
 * StateMachine imposes a structure to automatically change the implementation from one object to the next
 * The current implementation represents the state that a system is in
 * System behaves differently from one state to the next
@@ -18,6 +22,8 @@ Rationale
 * There is a single master state transition table for the whole system
 
 
+Design
+------
 .. code-block:: text
 
     statemachine TrafficLight:
@@ -30,14 +36,6 @@ Rationale
     Red.wait = sleep(2)
     Amber.wait = sleep(1)
     Green.wait = sleep(2)
-
-
-Use Cases
----------
-
-
-Design
-------
 
 
 Implementation
