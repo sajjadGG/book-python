@@ -1,12 +1,9 @@
-.. _Advanced Annotation OOP:
-
-**************
 Annotation OOP
-**************
+==============
 
 
 Rationale
-=========
+---------
 .. highlights::
     * All classes are types
     * Always depend upon abstraction not an implementation (SOLID Dependency Inversion Principle). More information in :ref:`OOP SOLID`
@@ -40,27 +37,30 @@ Rationale
 
 
 Attributes
-==========
+----------
 .. code-block:: python
 
     class Point:
         x: int
         y: int
 
-        def __init__(self, x, y):
-            self.x = x
-            self.y = y
-
 .. code-block:: python
 
-    class Point:
-        def __init__(self, x, y):
-            self.x: int = x
-            self.y: int = y
+    class Astronaut:
+        firstname: str
+        lastname: str
+
+Warning! - Do not confuse this with static fields:
+
+    .. code-block:: python
+
+        class Astronaut:
+            firstname: str = 'Mark'
+            lastname: str = 'Watney'
 
 
 Method Return Types
-===================
+-------------------
 .. code-block:: python
 
     class Astronaut:
@@ -85,10 +85,13 @@ Method Return Types
 
 
 Required Method Arguments
-=========================
+-------------------------
 .. code-block:: python
 
     class Point:
+        x: int
+        y: int
+
         def __init__(self, x: int, y: int) -> None:
             self.x = x
             self.y = y
@@ -96,16 +99,22 @@ Required Method Arguments
 .. code-block:: python
 
     class Astronaut:
+        firstname: str
+        lastname: str
+
         def __init__(self, firstname: str, lastname: str) -> None:
             self.firstname: str = firstname
             self.lastname: str = lastname
 
 
 Optional Method Arguments
-=========================
+-------------------------
 .. code-block:: python
 
     class Point:
+        x: int
+        y: int
+
         def __init__(self, x: int = 0, y: int = 0) -> None:
             self.x = x
             self.y = y
@@ -123,12 +132,28 @@ Optional Method Arguments
     pt.get_coordinates()
     # (1, 2)
 
-
-Classes
-=======
 .. code-block:: python
 
     class Point:
+        x: int
+        y: int
+
+        def __init__(self, x: int = 0, y: int = 0) -> None:
+            self.x = x
+            self.y = y
+
+        def __str__(self) -> str:
+            return f'Point(x={self.x}, y={self.y})'
+
+
+Classes as Method Arguments
+---------------------------
+.. code-block:: python
+
+    class Point:
+        x: int
+        y: int
+
         def __init__(self, x: int = 0, y: int = 0) -> None:
             self.x = x
             self.y = y
@@ -138,6 +163,8 @@ Classes
 
 
     class Position:
+        position: Point
+
         def __init__(self, initial_position: Point = Point()) -> None:
             self.position = initial_position
 
@@ -154,14 +181,32 @@ Classes
     # Point(x=0, y=0)
 
 
+Aggregation
+-----------
+.. code-block:: python
+
+    class Mission:
+        year: int
+        name: str
+
+
+    class Astronaut:
+        firstname: str
+        lastname: str
+        mission: list[Mission]
+
+
 Nested
-======
+------
 .. code-block:: python
 
     class Iris:
+        features: list[float]
+        label: str
+
         def __init__(self, features: list[float], label: str) -> None:
-            self.features: list[float] = features
-            self.label: str = label
+            self.features = features
+            self.label = label
 
     data: list[Iris] = [
         Iris([4.7, 3.2, 1.3, 0.2], 'setosa'),
@@ -171,7 +216,7 @@ Nested
 
 
 Final Class
-===========
+-----------
 * Since Python 3.8: :pep:`591` -- Adding a final qualifier to typing
 
 .. code-block:: python
@@ -199,7 +244,7 @@ Error: Cannot inherit from final class "Base":
 
 
 Final Method
-============
+------------
 * Since Python 3.8: :pep:`591` -- Adding a final qualifier to typing
 
 .. code-block:: python
@@ -232,7 +277,7 @@ Error: Cannot override final attribute "foo" (previously declared in base class 
 
 
 Final Attribute
-===============
+---------------
 .. code-block:: python
 
     from typing import Final
@@ -293,5 +338,5 @@ Error: can't override a final attribute:
 
 
 More Information
-================
+----------------
 * More information in :ref:`Type Annotations` and :ref:`CI/CD Type Checking`
