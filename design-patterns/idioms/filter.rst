@@ -115,6 +115,6 @@ Use Cases
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/idioms_filter_a.py.py
+.. literalinclude:: ../_assignments/idioms_filter_a.py
     :caption: :download:`Solution <../_assignments/idioms_filter_a.py>`
     :end-before: # Solution
