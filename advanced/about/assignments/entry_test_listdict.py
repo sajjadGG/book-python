@@ -7,16 +7,18 @@
 English:
     1. Use data from "Given" section (see below)
     2. Define `result: list[dict]`:
+    3. Convert `DATA` from `list[tuple]` to `list[dict]`
         a. key - name from the header
-        b. value - measurement or species
-    3. Compare result with "Tests" section (see below)
+        b. value - numerical value or species name
+    4. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Zdefiniuj `result: list[dict]`:
         a. klucz: nazwa z nagłówka
-        b. wartość: wyniki pomiarów lub gatunek
-    3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+        b. wartość: wartość numeryczna lub nazwa gatunku
+    3. Przekonwertuj `DATA` z `list[tuple]` do `list[dict]`
+    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
     >>> assert type(result) is list

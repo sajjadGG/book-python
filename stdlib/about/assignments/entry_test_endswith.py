@@ -46,7 +46,7 @@ DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'
 
 SUFFIXES = ('ca', 'osa')
 
-result: set = set()
+result = set()
 
 
 # Solution
