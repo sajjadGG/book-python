@@ -1,11 +1,11 @@
 """
-* Assignment: About Setup Interpreter
+* Assignment: About Setup Python
 * Complexity: easy
 * Lines of code: 0 lines
 * Time: 3 min
 
 English:
-    1. In your directory create file `about_interpreter.py`
+    1. In your directory create file `about_python.py`
     2. If question about adding file to GIT repository pops-up, mark checkbox "Always add" and click "Yes"
     3. Use code from "Given" section (see below)
     4. Run code in your IDE (right click on code -> "Run File in Python Console")
@@ -15,7 +15,7 @@ English:
     8. Write `100%` in assignment spreadsheet in row with this assignment
 
 Polish:
-    1. W swoim katalogu stwórz plik `about_interpreter.py`
+    1. W swoim katalogu stwórz plik `about_python.py`
     2. Jeżeli wyskoczy pytanie czy dodać plik do repozytorium GIT, zaznacz checkbox "Always add" i wybierz "Yes"
     3. Użyj kodu z sekcji "Given" (patrz poniżej)
     4. Uruchom kod swoim IDE (prawy klawisz myszy na kodzie -> "Run File in Python Console")

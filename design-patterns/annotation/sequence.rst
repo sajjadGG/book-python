@@ -1,5 +1,3 @@
-.. _Advanced Annotation Sequence:
-
 *******************
 Annotation Sequence
 *******************

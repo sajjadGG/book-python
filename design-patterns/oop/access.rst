@@ -1,8 +1,6 @@
-.. _OOP Access:
-
-******
-Access
-******
+****************
+Access Modifiers
+****************
 
 
 Rationale
@@ -28,168 +26,152 @@ Rationale
         * ``__name__(self)`` - system method
         * ``name_(self)`` - avoid name collision
 
+Example
+-------
 .. code-block:: python
 
     class Public:
         firstname: str
         lastname: str
 
-        def __init__(self):
-            self.firstname = 'Mark'
-            self.lastname = 'Watney'
-
-
     class Protected:
         _firstname: str
         _lastname: str
-
-        def __init__(self):
-            self._firstname = 'Mark'
-            self._lastname = 'Watney'
-
 
     class Private:
         __firstname: str
         __lastname: str
 
-        def __init__(self):
-            self.__firstname = 'Mark'
-            self.__lastname = 'Watney'
+
+DataClasses
+-----------
+.. code-block:: python
+
+    from dataclasses import dataclass
 
 
-    obj = Public()
-    print(obj.firstname)
-    # Mark
-    print(obj.lastname)
-    # Watney
-    print(obj.__dict__)
+    @dataclass
+    class Public:
+        firstname: str
+        lastname: str
+
+
+    @dataclass
+    class Protected:
+        _firstname: str
+        _lastname: str
+
+
+    @dataclass
+    class Private:
+        __firstname: str
+        __lastname: str
+
+
+Public Attribute
+================
+* ``name`` - public attribute
+
+.. code-block:: python
+
+    from dataclasses import dataclass
+
+
+    @dataclass
+    class Astronaut:
+        firstname: str
+        lastname: str
+
+
+    obj = Astronaut('Mark', 'Watney')
+    vars(astro)
     # {'firstname': 'Mark', 'lastname': 'Watney'}
-
-    obj = Protected()
-    print(obj._firstname)       # IDE should warn: "Access to a protected member _firstname of a class"
+    print(astro.firstname)
     # Mark
-    print(obj._lastname)        # IDE should warn: "Access to a protected member _lastname of a class"
-    # Watney
-    print(obj.__dict__)
-    # {'_firstname': 'Mark', '_lastname': 'Watney'}
-
-    obj = Private()
-    print(obj.__firstname)
-    # Traceback (most recent call last):
-    # AttributeError: 'Private' object has no attribute '__firstname'
-    print(obj.__lastname)
-    # Traceback (most recent call last):
-    # AttributeError: 'Private' object has no attribute '__lastname'
-    print(obj.__dict__)
-    # {'_Private__firstname': 'Mark', '_Private__lastname': 'Watney'}
-    print(obj._Private__firstname)
-    # Mark
-    print(obj._Private__lastname)
+    print(astro.lastname)
     # Watney
 
 
 Protected Attribute
 ===================
-* ``_name`` - protected attribute (by convention)
-
-Access modifiers:
-
-.. code-block:: python
-
-    class Temperature:
-        pass
-
-
-    temp = Temperature()
-    temp._value = 10
-
-    print(temp._value)  # IDE should warn: "Access to a protected member _value of a class"
-    # 10
-
-Access modifiers:
+* ``_name`` - protected attribute (non-public by convention)
+* IDE should warn: "Access to a protected member _firstname of a class"
 
 .. code-block:: python
 
+    from dataclasses import dataclass
+
+
+    @dataclass
     class Astronaut:
-        def __init__(self, firstname, lastname):
-            self._firstname = firstname
-            self._lastname = lastname
-            self.publicname = f'{firstname} {lastname[0]}.'
+        _firstname: str
+        _lastname: str
 
 
-    mark = Astronaut('Mark', 'Watney')
-
-    print(mark._firstname)  # IDE should warn: "Access to a protected member _firstname of a class"
+    astro = Protected('Mark', 'Watney')
+    vars(astro)
+    # {'_firstname': 'Mark', '_lastname': 'Watney'}
+    print(astro._firstname)       # IDE should warn: "Access to a protected member _firstname of a class"
     # Mark
-
-    print(mark._lastname)  # IDE should warn: "Access to a protected member _lastname of a class"
+    print(astro._lastname)        # IDE should warn: "Access to a protected member _lastname of a class"
     # Watney
-
-    print(mark.publicname)
-    # Mark W.
-
-    print(mark.firstname)
-    # Traceback (most recent call last):
-    # AttributeError: 'Astronaut' object has no attribute 'firstname'
-
-    print(mark.lastname)
-    # Traceback (most recent call last):
-    # AttributeError: 'Astronaut' object has no attribute 'lastname'
 
 
 Private Attribute
 =================
-* ``__name`` - private attribute
+* ``__name`` - private attribute (name mangling)
 
 .. code-block:: python
 
+    from dataclasses import dataclass
+
+
+    @dataclass
     class Astronaut:
-        def __init__(self, firstname, lastname):
-            self.__firstname = firstname
-            self.__lastname = lastname
-            self.publicname = f'{firstname} {lastname[0]}.'
+        __firstname: str
+        __lastname: str
 
 
     astro = Astronaut('Mark', 'Watney')
-
-    print(astro.publicname)
-    # Mark W.
-
+    vars(astro
+    # {'_Private__firstname': 'Mark', '_Private__lastname': 'Watney'}
+    print(astro._Private__firstname)
+    # Mark
+    print(astro._Private__lastname)
+    # Watney
     print(astro.__firstname)
     # Traceback (most recent call last):
-    # AttributeError: 'Astronaut' object has no attribute '__firstname'
-
+    # AttributeError: 'Private' object has no attribute '__firstname'
     print(astro.__lastname)
     # Traceback (most recent call last):
-    # AttributeError: 'Astronaut' object has no attribute '__firstname'
-
-    print(astro.__dict__)
-    # {'_Astronaut__firstname': 'Mark',
-    #  '_Astronaut__lastname': 'Watney',
-    #  'publicname': 'Mark W.'}
+    # AttributeError: 'Private' object has no attribute '__lastname'
 
 
 System Attributes
 =================
 * ``__name__`` - system attribute
-
-``obj.__dict__`` - Getting dynamic fields and values:
+* ``obj.__dict__`` - Getting dynamic fields and values:
 
 .. code-block:: python
 
+    from dataclasses import dataclass
+
+
+    @dataclass
     class Astronaut:
-        def __init__(self, firstname, lastname):
-            self.firstname = firstname
-            self.lastname = lastname
+        firstname: str
+        lastname: str
 
 
     astro = Astronaut('Mark', 'Watney')
 
-    print(astro.__dict__)
+    vars(astro)
     # {'firstname': 'Mark',
     #  'lastname': 'Watney'}
 
-``obj.__dict__`` - Getting dynamic fields and values:
+    print(astro.__dict__)
+    # {'firstname': 'Mark',
+    #  'lastname': 'Watney'}
 
 .. code-block:: python
 
@@ -219,10 +201,13 @@ Protected Method
 ================
 .. code-block:: python
 
+    from dataclasses import dataclass
+
+
+    @dataclass
     class Astronaut:
-        def __init__(self, firstname, lastname):
-            self._firstname = firstname
-            self._lastname = lastname
+        _firstname: str
+        _lastname: str
 
         def _get_fullname(self):
             return f'{self._firstname} {self._lastname}'

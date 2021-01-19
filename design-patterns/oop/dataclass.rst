@@ -1,5 +1,3 @@
-.. _OOP Dataclass:
-
 *************
 OOP Dataclass
 *************
@@ -275,7 +273,7 @@ List attributes
         # Watney: ['Ares 1', 'Ares 2', 'Ares 3', 'Ares 4', 'Ares 5']
 
         twardowski = Astronaut('Jan Twardowski')
-        print('Twardowski', twardowski.missions)
+        print('Twardowski:', twardowski.missions)
         # Twardowski: ['Ares 1', 'Ares 2', 'Ares 3', 'Ares 4', 'Ares 5']
 
 

@@ -226,8 +226,6 @@ Iterator implementation:
     # Toyota
 
 
-.. _Itertools:
-
 Standard Library Itertools
 ==========================
 * ``import itertools``
