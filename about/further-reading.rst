@@ -5,7 +5,7 @@ Further reading
 Video
 -----
 * https://pyvideo.org/
-* https://www.infoq.com/python/presentations/
+* https://www.infoq.com/python/
 
 
 Documentation
@@ -105,8 +105,24 @@ Programming Language Trends
 ---------------------------
 * https://www.tiobe.com/tiobe-index/
 * https://pypl.github.io/PYPL.html
-* https://surveys.jetbrains.com/s3/c12-python-developers-survey-2020
-* https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-and-markup-languages-professional-developers
+
+
+Python Developer Survey
+-----------------------
+* Annual survey:
+
+    * https://surveys.jetbrains.com/s3/c12-python-developers-survey-2020
+    * https://insights.stackoverflow.com/survey/2020#technology-programming-scripting-and-markup-languages-professional-developers
+
+Results:
+
+    * https://www.jetbrains.com/lp/devecosystem-2020/python/
+    * https://www.jetbrains.com/lp/python-developers-survey-2019/
+    * https://www.jetbrains.com/research/python-developers-survey-2018/
+    * https://www.jetbrains.com/research/python-developers-survey-2017/
+    * https://insights.stackoverflow.com/survey/2020
+    * https://insights.stackoverflow.com/survey/2019
+    * https://insights.stackoverflow.com/survey/2018
 
 
 Experiments
@@ -114,23 +130,11 @@ Experiments
 * https://blog.jetbrains.com/datalore/2020/12/17/we-downloaded-10-000-000-jupyter-notebooks-from-github-this-is-what-we-learned/
 
 
-Python Developer Survey
------------------------
-* Annual survey
-* https://www.jetbrains.com/lp/devecosystem-2020/python/
-* https://www.jetbrains.com/lp/python-developers-survey-2019/
-* https://www.jetbrains.com/research/python-developers-survey-2018/
-* https://www.jetbrains.com/research/python-developers-survey-2017/
-* https://insights.stackoverflow.com/survey/2020
-* https://insights.stackoverflow.com/survey/2019
-* https://insights.stackoverflow.com/survey/2018
-
-
 Technology Trends
 -----------------
 * https://www.thoughtworks.com/radar
-* https://www.infoq.com/ai-ml-data-eng/
 * https://www.youtube.com/c/PatoArchitekci/videos
+* https://www.infoq.com/ai-ml-data-eng/
 
 
 Testing

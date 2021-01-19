@@ -30,6 +30,7 @@ Class Patterns:
     * Interpreter (polish: Interpreter)
     * Template Method (polish: Metoda szablonowa)
 
+
 Structural Design Patterns
 --------------------------
 Object:
@@ -44,6 +45,7 @@ Object:
 Class and Object Patterns:
 
     * Adapter (polish: Adapter)
+
 
 Creational Design Patterns
 --------------------------
@@ -70,6 +72,7 @@ Paradigm
 Further Reading
 ---------------
 * https://www.toptal.com/python/python-design-patterns
+* https://www.youtube.com/watch?v=NU_1StN5Tkk
 * https://codewithmosh.com/courses/733596/bundled_courses
 * https://codewithmosh.com/courses/enrolled/759570
 * https://codewithmosh.com/courses/enrolled/760032
