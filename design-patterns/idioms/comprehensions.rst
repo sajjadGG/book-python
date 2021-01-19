@@ -744,18 +744,18 @@ Conditional Expression
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/loop_comprehension_create.py
-    :caption: :download:`Solution <../_assignments/loop_comprehension_create.py>`
+.. literalinclude:: ../_assignments/idioms_comprehension_a.py
+    :caption: :download:`Solution <../_assignments/idioms_comprehension_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/loop_comprehension_months.py
-    :caption: :download:`Solution <../_assignments/loop_comprehension_months.py>`
+.. literalinclude:: ../_assignments/idioms_comprehension_b.py
+    :caption: :download:`Solution <../_assignments/idioms_comprehension_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/loop_comprehension_translate.py
-    :caption: :download:`Solution <../_assignments/loop_comprehension_translate.py>`
+.. literalinclude:: ../_assignments/idioms_comprehension_c.py
+    :caption: :download:`Solution <../_assignments/idioms_comprehension_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/loop_comprehension_split.py
-    :caption: :download:`Solution <../_assignments/loop_comprehension_split.py>`
+.. literalinclude:: ../_assignments/idioms_comprehension_d.py
+    :caption: :download:`Solution <../_assignments/idioms_comprehension_d.py>`
     :end-before: # Solution

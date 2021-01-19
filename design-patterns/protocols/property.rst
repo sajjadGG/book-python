@@ -408,14 +408,14 @@ Temperature
 Assignments
 ===========
 
-.. literalinclude:: ../_assignments/protocol_property_getter.py
-    :caption: :download:`Solution <../_assignments/protocol_property_getter.py>`
+.. literalinclude:: ../_assignments/protocol_property_a.py
+    :caption: :download:`Solution <../_assignments/protocol_property_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/protocol_property_setter.py
-    :caption: :download:`Solution <../_assignments/protocol_property_setter.py>`
+.. literalinclude:: ../_assignments/protocol_property_b.py
+    :caption: :download:`Solution <../_assignments/protocol_property_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/protocol_property_deleter.py
-    :caption: :download:`Solution <../_assignments/protocol_property_deleter.py>`
+.. literalinclude:: ../_assignments/protocol_property_c.py
+    :caption: :download:`Solution <../_assignments/protocol_property_c.py>`
     :end-before: # Solution

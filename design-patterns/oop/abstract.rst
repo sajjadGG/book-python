@@ -1,6 +1,7 @@
 Abstract Class
 ==============
 
+
 Rationale
 ---------
 * Since Python 3.0: :pep:`3119` -- Introducing Abstract Base Classes
@@ -249,10 +250,10 @@ Abstract Class:
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/oop_abstract_easy1.py
-    :caption: :download:`Solution <../_assignments/oop_abstract_easy1.py>`
+.. literalinclude:: ../_assignments/oop_abstract_a.py
+    :caption: :download:`Solution <../_assignments/oop_abstract_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/oop_abstract_easy2.py
-    :caption: :download:`Solution <../_assignments/oop_abstract_easy2.py>`
+.. literalinclude:: ../_assignments/oop_abstract_b.py
+    :caption: :download:`Solution <../_assignments/oop_abstract_b.py>`
     :end-before: # Solution

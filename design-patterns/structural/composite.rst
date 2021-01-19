@@ -76,5 +76,5 @@ Implementation
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/designpatterns-composite.py
+.. literalinclude:: ../_assignments/structural_composite_a.py
     :language: python

@@ -181,14 +181,14 @@ Timeout using ``threading.Timer``:
 Assignments
 ===========
 
-.. literalinclude:: ../_assignments/decorator_arguments_syntax.py
-    :caption: :download:`Solution <../_assignments/decorator_arguments_syntax.py>`
+.. literalinclude:: ../_assignments/decorator_arguments_a.py
+    :caption: :download:`Solution <../_assignments/decorator_arguments_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/decorator_arguments_astronauts.py
-    :caption: :download:`Solution <../_assignments/decorator_arguments_astronauts.py>`
+.. literalinclude:: ../_assignments/decorator_arguments_b.py
+    :caption: :download:`Solution <../_assignments/decorator_arguments_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/decorator_arguments_typecheck.py
-    :caption: :download:`Solution <../_assignments/decorator_arguments_typecheck.py>`
+.. literalinclude:: ../_assignments/decorator_arguments_c.py
+    :caption: :download:`Solution <../_assignments/decorator_arguments_c.py>`
     :end-before: # Solution

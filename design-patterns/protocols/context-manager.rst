@@ -315,14 +315,14 @@ String Microbenchmark
 Assignments
 ===========
 
-.. literalinclude:: ../_assignments/protocol_contextmanager_file.py
-    :caption: :download:`Solution <../_assignments/protocol_contextmanager_file.py>`
+.. literalinclude:: ../_assignments/protocol_contextmanager_a.py
+    :caption: :download:`Solution <../_assignments/protocol_contextmanager_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/protocol_contextmanager_buffer.py
-    :caption: :download:`Solution <../_assignments/protocol_contextmanager_buffer.py>`
+.. literalinclude:: ../_assignments/protocol_contextmanager_b.py
+    :caption: :download:`Solution <../_assignments/protocol_contextmanager_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/protocol_contextmanager_autosave.py
-    :caption: :download:`Solution <../_assignments/protocol_contextmanager_autosave.py>`
+.. literalinclude:: ../_assignments/protocol_contextmanager_c.py
+    :caption: :download:`Solution <../_assignments/protocol_contextmanager_c.py>`
     :end-before: # Solution

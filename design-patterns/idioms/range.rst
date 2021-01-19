@@ -79,7 +79,7 @@ Itertools
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/designpatterns_idioms_range.py
-    :caption: :download:`Solution <../_assignments/designpatterns_idioms_range.py>`
+.. literalinclude:: ../_assignments/idioms_range_a.py
+    :caption: :download:`Solution <../_assignments/idioms_range_a.py>`
     :end-before: # Solution
 

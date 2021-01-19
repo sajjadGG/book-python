@@ -1,5 +1,5 @@
 """
-* Assignment: Loop Comprehension Translate
+* Assignment: Idioms Comprehension Translate
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

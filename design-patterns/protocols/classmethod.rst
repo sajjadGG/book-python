@@ -363,6 +363,6 @@ Use Cases
 Assignments
 ===========
 
-.. literalinclude:: ../_assignments/protocol_classmethod_csv.py
-    :caption: :download:`Solution <../_assignments/protocol_classmethod_csv.py>`
+.. literalinclude:: ../_assignments/protocol_classmethod_a.py
+    :caption: :download:`Solution <../_assignments/protocol_classmethod_a.py>`
     :end-before: # Solution

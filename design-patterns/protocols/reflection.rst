@@ -364,14 +364,14 @@ Use Cases
 Assignments
 ===========
 
-.. literalinclude:: ../_assignments/protocol_reflection_delattr.py
-    :caption: :download:`Solution <../_assignments/protocol_reflection_delattr.py>`
+.. literalinclude:: ../_assignments/protocol_reflection_a.py
+    :caption: :download:`Solution <../_assignments/protocol_reflection_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/protocol_reflection_setattr.py
-    :caption: :download:`Solution <../_assignments/protocol_reflection_setattr.py>`
+.. literalinclude:: ../_assignments/protocol_reflection_b.py
+    :caption: :download:`Solution <../_assignments/protocol_reflection_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/protocol_reflection_frozen.py
-    :caption: :download:`Solution <../_assignments/protocol_reflection_frozen.py>`
+.. literalinclude:: ../_assignments/protocol_reflection_c.py
+    :caption: :download:`Solution <../_assignments/protocol_reflection_c.py>`
     :end-before: # Solution

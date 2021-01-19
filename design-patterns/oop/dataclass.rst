@@ -563,14 +563,14 @@ Example
 Assignments
 ===========
 
-.. literalinclude:: ../_assignments/oop_dataclass_easy1.py
-    :caption: :download:`Solution <../_assignments/oop_dataclass_easy1.py>`
+.. literalinclude:: ../_assignments/oop_dataclass_a.py
+    :caption: :download:`Solution <../_assignments/oop_dataclass_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/oop_dataclass_easy2.py
-    :caption: :download:`Solution <../_assignments/oop_dataclass_easy2.py>`
+.. literalinclude:: ../_assignments/oop_dataclass_b.py
+    :caption: :download:`Solution <../_assignments/oop_dataclass_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/oop_dataclass_medium1.py
-    :caption: :download:`Solution <../_assignments/oop_dataclass_medium1.py>`
+.. literalinclude:: ../_assignments/oop_dataclass_c.py
+    :caption: :download:`Solution <../_assignments/oop_dataclass_c.py>`
     :end-before: # Solution

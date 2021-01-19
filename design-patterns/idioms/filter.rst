@@ -115,6 +115,6 @@ Use Cases
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/function_generators_chain.py
-    :caption: :download:`Solution <../_assignments/function_generators_chain.py>`
+.. literalinclude:: ../_assignments/idioms_filter_a.py.py
+    :caption: :download:`Solution <../_assignments/idioms_filter_a.py>`
     :end-before: # Solution

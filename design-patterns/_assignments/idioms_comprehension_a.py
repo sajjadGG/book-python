@@ -1,5 +1,5 @@
 """
-* Assignment: Loop Comprehension Create
+* Assignment: Idioms Comprehension Create
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 3 min

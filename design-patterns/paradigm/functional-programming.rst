@@ -521,10 +521,10 @@ Callback
 
 Assignments
 ===========
-.. literalinclude:: ../_assignments/functional_map_filter_lambda.py
-    :caption: :download:`Solution <../_assignments/functional_map_filter_lambda.py>`
+.. literalinclude:: ../_assignments/paradigm_functional_a.py
+    :caption: :download:`Solution <../_assignments/paradigm_functional_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/functional_brackets.py
-    :caption: :download:`Solution <../_assignments/functional_brackets.py>`
+.. literalinclude:: ../_assignments/paradigm_functional_b.py
+    :caption: :download:`Solution <../_assignments/paradigm_functional_b.py>`
     :end-before: # Solution

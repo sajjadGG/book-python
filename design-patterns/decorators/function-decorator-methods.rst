@@ -159,6 +159,10 @@ Use Cases
 Assignments
 ===========
 
-.. literalinclude:: ../_assignments/decorator_method_alive.py
-    :caption: :download:`Solution <../_assignments/decorator_method_alive.py>`
+.. literalinclude:: ../_assignments/decorator_method_a.py
+    :caption: :download:`Solution <../_assignments/decorator_method_a.py>`
+    :end-before: # Solution
+
+.. literalinclude:: ../_assignments/decorator_method_b.py
+    :caption: :download:`Solution <../_assignments/decorator_method_b.py>`
     :end-before: # Solution

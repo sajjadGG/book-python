@@ -430,14 +430,14 @@ Function Descriptor
 
 Assignments
 ===========
-.. literalinclude:: ../_assignments/protocol_descriptor_simple.py
-    :caption: :download:`Solution <../_assignments/protocol_descriptor_simple.py>`
+.. literalinclude:: ../_assignments/protocol_descriptor_a.py
+    :caption: :download:`Solution <../_assignments/protocol_descriptor_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/protocol_descriptor_valuerange.py
-    :caption: :download:`Solution <../_assignments/protocol_descriptor_valuerange.py>`
+.. literalinclude:: ../_assignments/protocol_descriptor_b.py
+    :caption: :download:`Solution <../_assignments/protocol_descriptor_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/protocol_descriptor_inheritance.py
-    :caption: :download:`Solution <../_assignments/protocol_descriptor_inheritance.py>`
+.. literalinclude:: ../_assignments/protocol_descriptor_c.py
+    :caption: :download:`Solution <../_assignments/protocol_descriptor_c.py>`
     :end-before: # Solution

@@ -505,35 +505,35 @@ Django Login Required. Decorator checks whether user is_authenticated. If not, u
 Assignments
 ===========
 
-.. literalinclude:: ../_assignments/decorator_func_syntax.py
-    :caption: :download:`Solution <../_assignments/decorator_func_syntax.py>`
+.. literalinclude:: ../_assignments/decorator_func_a.py
+    :caption: :download:`Solution <../_assignments/decorator_func_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/decorator_func_disable.py
-    :caption: :download:`Solution <../_assignments/decorator_func_disable.py>`
+.. literalinclude:: ../_assignments/decorator_func_b.py
+    :caption: :download:`Solution <../_assignments/decorator_func_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/decorator_func_check.py
-    :caption: :download:`Solution <../_assignments/decorator_func_check.py>`
+.. literalinclude:: ../_assignments/decorator_func_c.py
+    :caption: :download:`Solution <../_assignments/decorator_func_c.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/decorator_func_astronauts.py
-    :caption: :download:`Solution <../_assignments/decorator_func_astronauts.py>`
+.. literalinclude:: ../_assignments/decorator_func_d.py
+    :caption: :download:`Solution <../_assignments/decorator_func_d.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/decorator_func_memoization.py
-    :caption: :download:`Solution <../_assignments/decorator_func_memoization.py>`
+.. literalinclude:: ../_assignments/decorator_func_e.py
+    :caption: :download:`Solution <../_assignments/decorator_func_e.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/decorator_func_abspath.py
-    :caption: :download:`Solution <../_assignments/decorator_func_abspath.py>`
+.. literalinclude:: ../_assignments/decorator_func_f.py
+    :caption: :download:`Solution <../_assignments/decorator_func_f.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/decorator_func_numeric.py
-    :caption: :download:`Solution <../_assignments/decorator_func_numeric.py>`
+.. literalinclude:: ../_assignments/decorator_func_g.py
+    :caption: :download:`Solution <../_assignments/decorator_func_g.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/decorator_func_typecheck.py
-    :caption: :download:`Solution <../_assignments/decorator_func_typecheck.py>`
+.. literalinclude:: ../_assignments/decorator_func_h.py
+    :caption: :download:`Solution <../_assignments/decorator_func_h.py>`
     :end-before: # Solution
 

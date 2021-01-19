@@ -313,12 +313,12 @@ System Method
 Assignments
 ===========
 
-.. literalinclude:: ../_assignments/oop_access_easy1.py
-    :caption: :download:`Solution <../_assignments/oop_access_easy1.py>`
+.. literalinclude:: ../_assignments/oop_access_a.py
+    :caption: :download:`Solution <../_assignments/oop_access_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/oop_access_medium1.py
-    :caption: :download:`Solution <../_assignments/oop_access_medium1.py>`
+.. literalinclude:: ../_assignments/oop_access_b.py
+    :caption: :download:`Solution <../_assignments/oop_access_b.py>`
     :end-before: # Solution
 
 

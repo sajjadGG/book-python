@@ -249,14 +249,14 @@ Introspection
 Assignments
 ===========
 
-.. literalinclude:: ../_assignments/function_generators_chain.py
-    :caption: :download:`Solution <../_assignments/function_generators_chain.py>`
+.. literalinclude:: ../_assignments/idioms_generator_a.py
+    :caption: :download:`Solution <../_assignments/idioms_generator_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/function_generator_iris.py
-    :caption: :download:`Solution <../_assignments/function_generator_iris.py>`
+.. literalinclude:: ../_assignments/idioms_generator_b.py
+    :caption: :download:`Solution <../_assignments/idioms_generator_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/function_generator_passwd.py
-    :caption: :download:`Solution <../_assignments/function_generator_passwd.py>`
+.. literalinclude:: ../_assignments/idioms_generator_c.py
+    :caption: :download:`Solution <../_assignments/idioms_generator_c.py>`
     :end-before: # Solution

@@ -64,3 +64,10 @@ Use
 .. code-block:: python
 
     EventManager.on_bar += funkcja
+
+
+Assignments
+-----------
+.. literalinclude:: ../_assignments/paradigm_event_a.py
+    :caption: :download:`Solution <../_assignments/paradigm_event_a.py>`
+    :end-before: # Solution
