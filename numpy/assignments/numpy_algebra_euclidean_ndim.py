@@ -1,7 +1,6 @@
 """
 
 * Assignment: Numpy Algebra Euclidean Ndim
-* Filename: numpy_algebra_euclidean_ndim.py
 * Complexity: easy
 * Lines of code: 7 lines
 * Time: 8 min

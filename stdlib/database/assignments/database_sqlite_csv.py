@@ -1,6 +1,5 @@
 """
 * Assignment: Database SQLite CSV
-* Filename: database_sqlite_csv.py
 * Complexity: easy
 * Lines of code: 30 lines
 * Time: 21 min

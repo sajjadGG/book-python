@@ -647,7 +647,6 @@ Assignments
 Recursive folders walking
 -------------------------
 * Assignment: Recursive folders walking
-* Filename: system_walk.py
 * Complexity: easy
 * Lines of code: 30 lines
 * Time: 21 min
@@ -689,7 +688,6 @@ Hints:
 Tree
 ----
 * Assignment: Tree
-* Filename: system_tree.py
 * Complexity: hard
 * Lines of code: 60 lines
 * Time: 21 min

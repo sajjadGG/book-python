@@ -1,6 +1,5 @@
 """
 * Assignment: Decorator Functools Func
-* Filename: decorator_functools_func.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 2 min

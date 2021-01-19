@@ -1,6 +1,5 @@
 """
 * Assignment: Type Bool True or False
-* Filename: type_bool_true_or_false.py
 * Complexity: easy
 * Lines of code: 16 lines
 * Time: 5 min

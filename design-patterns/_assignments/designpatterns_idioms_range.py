@@ -1,6 +1,5 @@
 """
 * Assignment: Designaptterns Idiom Range
-* Filename: designpatterns_idioms_range.py
 * Complexity: medium
 * Lines of code: 25 lines
 * Time: 21 min

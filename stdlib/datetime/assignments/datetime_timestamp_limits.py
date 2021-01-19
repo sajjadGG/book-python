@@ -1,6 +1,5 @@
 """
 * Assignment: Datetime Timestamp Limits
-* Filename: :download:`assignments/datetime_timestamp_limits.py`
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 5 min

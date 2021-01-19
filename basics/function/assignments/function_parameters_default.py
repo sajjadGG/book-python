@@ -1,6 +1,5 @@
 """
 * Assignment: Function Parameters Default
-* Filename: function_parameters_default.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min

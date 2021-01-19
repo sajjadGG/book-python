@@ -1,6 +1,5 @@
 """
 * Assignment: Serialization CSV Schemaless
-* Filename: serialization_csv_schemaless.py
 * Complexity: medium
 * Lines of code: 7 lines
 * Time: 8 min

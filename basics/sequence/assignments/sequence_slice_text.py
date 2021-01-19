@@ -1,6 +1,5 @@
 """
 * Assignment: Sequence Slice Text
-* Filename: sequence_slice_text.py
 * Complexity: easy
 * Lines of code: 8 lines
 * Time: 8 min

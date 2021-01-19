@@ -1,6 +1,5 @@
 """
 * Assignment: Conditional Statements
-* Filename: controlflow_conditional_statements.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min

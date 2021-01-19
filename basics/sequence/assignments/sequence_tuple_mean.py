@@ -1,6 +1,5 @@
 """
 * Assignment: Sequence Tuple Mean
-* Filename: sequence_tuple_mean.py
 * Complexity: medium
 * Lines of code: 8 lines
 * Time: 8 min

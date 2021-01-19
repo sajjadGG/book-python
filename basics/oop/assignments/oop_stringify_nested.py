@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Stringify Nested
-* Filename: oop_stringify_nested.py
 * Complexity: medium
 * Lines of code: 9 lines
 * Time: 21 min

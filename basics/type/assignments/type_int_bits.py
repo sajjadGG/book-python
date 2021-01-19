@@ -1,6 +1,5 @@
 """
 * Assignment: Type Int Bits
-* Filename: type_int_bits.py
 * Complexity: medium
 * Lines of code: 4 lines
 * Time: 3 min

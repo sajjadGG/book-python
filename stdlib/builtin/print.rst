@@ -611,7 +611,6 @@ Assignments
 Powielanie napisów
 ------------------
 * Assignment: Powielanie napisów
-* Filename: print_lines.py
 * Complexity: easy
 * Lines of code: 8 lines
 * Time: 5 min
@@ -634,7 +633,6 @@ Polish:
 Przeliczanie temperatury
 ------------------------
 * Assignment: Przeliczanie temperatury
-* Filename: print_formatting.py
 * Complexity: easy
 * Lines of code: 8 lines
 * Time: 13 min

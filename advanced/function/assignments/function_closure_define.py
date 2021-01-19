@@ -1,6 +1,5 @@
 """
 * Assignment: Function Closure Define
-* Filename: function_closure_define.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min

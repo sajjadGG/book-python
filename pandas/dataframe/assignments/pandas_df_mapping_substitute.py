@@ -1,6 +1,5 @@
 """
 * Assignment: DataFrame Mapping Substitute
-* Filename: pandas_df_mapping_substitute.py
 * Complexity: medium
 * Lines of code: 10 lines
 * Time: 13 min

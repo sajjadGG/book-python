@@ -1,6 +1,5 @@
 """
 * Assignment: DataFrame Export JSON
-* Filename: pandas_to_json.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min

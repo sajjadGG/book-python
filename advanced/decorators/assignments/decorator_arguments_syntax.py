@@ -1,6 +1,5 @@
 """
 * Assignment: Decorator Arguments Syntax
-* Filename: decorator_arguments_syntax.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min

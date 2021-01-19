@@ -1,6 +1,5 @@
 """
 * Assignment: Sequence Tuple Select
-* Filename: sequence_tuple_select.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 5 min

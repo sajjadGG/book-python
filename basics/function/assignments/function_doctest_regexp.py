@@ -1,6 +1,5 @@
 """
 * Assignment: Function Doctest Regexp
-* Filename: discussion
 * Complexity: almost impossible
 * Lines of code: 0 lines
 * Time: 5 min

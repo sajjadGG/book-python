@@ -1,6 +1,5 @@
 """
 * Assignment: Loop Comprehension Translate
-* Filename: loop_comprehension_translate.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

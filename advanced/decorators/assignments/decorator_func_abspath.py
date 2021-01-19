@@ -1,6 +1,5 @@
 """"
 * Assignment: Decorator Function Abspath
-* Filename: decorator_func_abspath.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min

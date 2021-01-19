@@ -1,6 +1,5 @@
 """
 * Assignment: Type Float Percent
-* Filename: type_float_percent.py
 * Complexity: medium
 * Lines of code: 2 lines
 * Time: 3 min

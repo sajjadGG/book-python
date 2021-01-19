@@ -1,6 +1,5 @@
 """
 * Assignment: Series NA
-* Filename: pandas_series_na.py
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 5 min

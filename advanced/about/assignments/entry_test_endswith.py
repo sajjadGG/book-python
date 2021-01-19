@@ -1,6 +1,5 @@
 """
 * Assignment: Entry Test Endswith
-* Filename: entry_test_endswith.py
 * Complexity: medium
 * Lines of code: 4 lines
 * Time: 13 min

@@ -1,6 +1,5 @@
 """
 * Assignment: Protocol Property Setter
-* Filename: protocol_property_setter.py
 * Complexity: easy
 * Lines of code: 9 lines
 * Time: 5 min

@@ -1,6 +1,5 @@
 """
 * Assignment: Regexp Search Time
-* Filename: regexp_search_time.py
 * Complexity: medium
 * Lines of code: 4 lines
 * Time: 5 min

@@ -1,6 +1,5 @@
 """
 * Assignment: Decorator Function Disable
-* Filename: decorator_func_disable.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 5 min

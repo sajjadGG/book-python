@@ -1,6 +1,5 @@
 """
 * Assignment: Trigonometry
-* Filename: matplotlib_trigonometry.py
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 21 min

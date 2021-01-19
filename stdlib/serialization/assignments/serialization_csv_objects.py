@@ -1,6 +1,5 @@
 """
 * Assignment: Serialization CSV Objects
-* Filename: serialization_csv_objects.py
 * Complexity: medium
 * Lines of code: 6 lines
 * Time: 8 min

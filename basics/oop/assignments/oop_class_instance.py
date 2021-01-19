@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Class Instance
-* Filename: oop_class_instance.py
 * Complexity: easy
 * Lines of code: 6 lines
 * Time: 3 min

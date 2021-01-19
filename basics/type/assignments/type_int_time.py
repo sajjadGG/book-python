@@ -1,6 +1,5 @@
 """
 * Assignment: Type Int Time
-* Filename: type_int_time.py
 * Complexity: easy
 * Lines of code: 12 lines
 * Time: 8 min

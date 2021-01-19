@@ -1,6 +1,5 @@
 """
 * Assignment: Decorator Method Syntax
-* Filename: decorator_method_syntax.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min

@@ -1,6 +1,5 @@
 """
 * Assignment: Sequence Frozenset Create
-* Filename: sequence_frozenset_create.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 2 min

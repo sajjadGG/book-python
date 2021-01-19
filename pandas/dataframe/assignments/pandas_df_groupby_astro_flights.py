@@ -1,6 +1,5 @@
 """
 * Assignment: DataFrame Groupby Astro Flights
-* Filename: pandas_df_groupby_astro_flights.py
 * Complexity: medium
 * Lines of code: 5 lines
 * Time: 13 min

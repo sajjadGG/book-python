@@ -1,6 +1,5 @@
 """
 * Assignment: Type Int Mul
-* Filename: type_int_mul.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min

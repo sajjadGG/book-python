@@ -154,7 +154,6 @@ Assignments
 Feature Engineering
 -------------------
 * Assignment: Feature Engineering
-* Filename: :download:`assignments/features_engineering.py`
 * Complexity: easy
 * Lines of code: 15 lines
 * Time: 13 min

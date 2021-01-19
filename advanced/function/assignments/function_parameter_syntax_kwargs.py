@@ -1,6 +1,5 @@
 """
 * Assignment: Function Parameter Syntax Kwargs
-* Filename: function_parameter_syntax_kwargs.py
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 3 min

@@ -1,6 +1,5 @@
 """
 * Assignment: Regexp Search Astronauts
-* Filename: regexp_search_astronauts.py
 * Complexity: easy
 * Lines of code: 6 lines
 * Time: 5 min

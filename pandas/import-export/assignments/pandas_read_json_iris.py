@@ -1,6 +1,5 @@
 """
 * Assignment: Pandas Read JSON
-* Filename: pandas_read_json_iris.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

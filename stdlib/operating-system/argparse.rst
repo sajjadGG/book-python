@@ -324,7 +324,6 @@ Assignments
 Argument parsing
 ----------------
 * Assignment: Argument parsing
-* Filename: argparse_avg.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 13 min

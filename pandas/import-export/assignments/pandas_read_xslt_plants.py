@@ -1,6 +1,5 @@
 """
 * Assignment: Pandas Read XSLT Plants
-* Filename: pandas_read_xslt_plants.py
 * Complexity: medium
 * Lines of code: 4 lines
 * Time: 5 min

@@ -1,6 +1,5 @@
 """
 * Assignment: Wielowątkowość
-* Filename: threading_timer.py
 * Complexity: easy
 * Lines of code: 20 lines
 * Time: 21 min

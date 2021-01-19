@@ -1,6 +1,5 @@
 """
 * Assignment: Function Closure Call
-* Filename: function_closure_call.py
 * Complexity: easy
 * Lines of code: 9 lines
 * Time: 5 min

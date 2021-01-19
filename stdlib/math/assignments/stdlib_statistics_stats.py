@@ -1,6 +1,5 @@
 """
 * Assignment: Stdlib Statistics Stats
-* Filename: stdlib_statistics_stats.py
 * Complexity: easy
 * Lines of code: 30 lines
 * Time: 21 min

@@ -1,6 +1,5 @@
 """
 * Assignment: Exception Else
-* Filename: controlflow_exception_else.py
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 2 min

@@ -1,6 +1,5 @@
 """
 * Assignment: Type String Normalize
-* Filename: type_str_normalize.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 8 min

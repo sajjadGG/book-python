@@ -1,6 +1,5 @@
 """
 * Assignment: Type Float Velocity
-* Filename: type_float_velocity.py
 * Complexity: easy
 * Lines of code: 9 lines
 * Time: 3 min

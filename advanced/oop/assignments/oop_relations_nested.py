@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Relations Nested
-* Filename: oop_relations_nested.py
 * Complexity: medium
 * Lines of code: 7 lines
 * Time: 21 min

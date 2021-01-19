@@ -1,6 +1,5 @@
 """
 * Assignment: Sequence Nested Create
-* Filename: sequence_nested_create.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min

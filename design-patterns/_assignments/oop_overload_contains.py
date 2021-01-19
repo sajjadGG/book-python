@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Overload Contains
-* Filename: oop_overload_contains.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min

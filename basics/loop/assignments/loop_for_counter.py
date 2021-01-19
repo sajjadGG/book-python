@@ -1,6 +1,5 @@
 """
 * Assignment: Loop For Counter
-* Filename: loop_for_counter.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min

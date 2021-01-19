@@ -396,7 +396,6 @@ Assignments
 Wykorzystanie biblioteki ``sklearn``
 ------------------------------------
 * Assignment: Wykorzystanie biblioteki ``sklearn``
-* Filename: :download:`assignments/svm_sklearn.py`
 * Complexity: medium
 * Lines of code: 30 lines
 * Time: 21 min

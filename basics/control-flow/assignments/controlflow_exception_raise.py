@@ -1,6 +1,5 @@
 """
 * Assignment: Exception Raise
-* Filename: controlflow_exception_raise.py
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 3 min

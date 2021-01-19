@@ -1,6 +1,5 @@
 """
 * Assignment: Type Int Sub
-* Filename: type_int_sub.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min

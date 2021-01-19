@@ -1,6 +1,5 @@
 """
 * Assignment: Numpy Round Rint
-* Filename: numpy_round_rint.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

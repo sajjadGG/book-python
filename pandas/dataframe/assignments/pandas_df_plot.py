@@ -1,6 +1,5 @@
 """
 * Assignment: DataFrame Plot
-* Filename: pandas_df_plot.py
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 21 min

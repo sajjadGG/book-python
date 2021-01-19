@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Overload Matmul
-* Filename: oop_overload_matmul.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min

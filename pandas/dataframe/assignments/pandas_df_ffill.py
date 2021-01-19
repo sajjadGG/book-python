@@ -1,6 +1,5 @@
 """
 * Assignment: DataFrame Sample
-* Filename: pandas_df_sample.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min

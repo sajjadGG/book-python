@@ -1,6 +1,5 @@
 """
 * Assignment: File Path Abspath
-* Filename: file_path_abspath.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 5 min

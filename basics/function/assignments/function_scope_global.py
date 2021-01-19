@@ -1,6 +1,5 @@
 """
 * Assignment: Function Scope Global
-* Filename: function_scope_global.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min

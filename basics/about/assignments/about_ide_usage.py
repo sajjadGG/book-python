@@ -1,6 +1,5 @@
 """
 * Assignment: About IDE Usage
-* Filename: about_ide_usage.py
 * Complexity: easy
 * Lines of code: 0 lines
 * Time: 8 min

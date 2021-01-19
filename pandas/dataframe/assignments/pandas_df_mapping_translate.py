@@ -1,6 +1,5 @@
 """
 * Assignment: DataFrame Mapping Translate
-* Filename: pandas_df_mapping_translate.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 13 min

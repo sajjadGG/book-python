@@ -1,7 +1,6 @@
 """
 
 * Assignment: OOP Relations Model
-* Filename: oop_relations_model.py
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 13 min

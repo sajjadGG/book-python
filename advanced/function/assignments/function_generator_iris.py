@@ -1,6 +1,5 @@
 """
 * Assignment: Function Generator Iris
-* Filename: function_generator_iris.py
 * Complexity: easy
 * Lines of code: 8 lines
 * Time: 8 min

@@ -1,6 +1,5 @@
 """
 * Assignment: About Setup Push
-* Filename: about_setup_push.py
 * Complexity: easy
 * Lines of code: 0 lines
 * Time: 3 min

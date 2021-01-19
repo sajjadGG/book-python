@@ -1,6 +1,5 @@
 """
 * Assignment: Function Unpack Split
-* Filename: sequence_unpack_split.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

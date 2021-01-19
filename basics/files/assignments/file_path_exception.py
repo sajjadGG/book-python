@@ -1,6 +1,5 @@
 """
 * Assignment: File Path Exception
-* Filename: file_path_exception.py
 * Complexity: easy
 * Lines of code: 6 lines
 * Time: 3 min

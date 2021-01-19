@@ -1,6 +1,5 @@
 """
 * Assignment: Decorator Function Numeric
-* Filename: decorator_func_numeric.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min

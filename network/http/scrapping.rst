@@ -166,7 +166,6 @@ Assignments
 Scrapping Iris
 --------------
 * Assignment: Scrapping Iris
-* Filename: :download:`assignments/scrapping_iris.py`
 * Complexity: medium
 * Lines of code: 20 lines
 * Time: 21 min
@@ -184,7 +183,6 @@ Polish:
 Scrapping EVA
 -------------
 * Assignment: Scrapping EVA
-* Filename: :download:`assignments/scrapping_eva.py`
 * Complexity: medium
 * Lines of code: 100 lines
 * Time: 21 min

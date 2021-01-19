@@ -1,6 +1,5 @@
 """
 * Assignment: Dragon (version alpha)
-* Filename: dragon_alpha.py
 * Complexity: medium
 * Lines of code: 100 lines
 * Time: 60 min, then 90 min live coding with instructor

@@ -1,6 +1,5 @@
 """
 * Assignment: Numpy Broadcasting Matmul
-* Filename: numpy_broadcasting_matmul.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min

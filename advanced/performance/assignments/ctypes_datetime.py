@@ -1,6 +1,5 @@
 """
 * Assignment: C Types
-* Filename: ctypes_datetime.py
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 13 min

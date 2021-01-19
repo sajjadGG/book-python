@@ -1,6 +1,5 @@
 """
 * Assignment: Serialization JSON Load
-* Filename: serialization_json_load.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 8 min

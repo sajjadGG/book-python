@@ -1,6 +1,5 @@
 """
 * Assignment: Type Int Add
-* Filename: type_int_add.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min

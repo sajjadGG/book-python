@@ -1,6 +1,5 @@
 """
 * Assignment: Loop Unpacking Months
-* Filename: loop_unpacking_months.py
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 5 min

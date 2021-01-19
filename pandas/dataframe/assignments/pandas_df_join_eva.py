@@ -1,6 +1,5 @@
 """
 * Assignment: DataFrame Join
-* Filename: pandas_df_join_eva.py
 * Complexity: medium
 * Lines of code: 25 lines
 * Time: 21 min

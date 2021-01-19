@@ -1,6 +1,5 @@
 """
 * Assignment: Loop For Newline
-* Filename: loop_for_newline.py
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 5 min

@@ -1,6 +1,5 @@
 """
 * Assignment: Type String Input
-* Filename: type_str_input.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 2 min

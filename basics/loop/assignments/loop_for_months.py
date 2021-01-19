@@ -1,6 +1,5 @@
 """
 * Assignment: Loop For Months
-* Filename: loop_for_months.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min

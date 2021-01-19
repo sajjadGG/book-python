@@ -1,6 +1,5 @@
 """
 * Assignment: Regexp Search Datetime
-* Filename: regexp_search_datetime.py
 * Complexity: hard
 * Lines of code: 4 lines
 * Time: 13 min

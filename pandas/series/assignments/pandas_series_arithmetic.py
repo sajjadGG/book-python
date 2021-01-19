@@ -1,6 +1,5 @@
 """
 * Assignment: Series Arithmetic
-* Filename: pandas_series_arithmetic.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min

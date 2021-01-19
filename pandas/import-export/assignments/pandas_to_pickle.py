@@ -1,6 +1,5 @@
 """
 * Assignment: DataFrame Export Pickle
-* Filename: pandas_to_pickle.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min

@@ -1,6 +1,5 @@
 """
 * Assignment: Numpy Select Isin
-* Filename: numpy_select_isin.py
 * Complexity: easy
 * Lines of code: 6 lines
 * Time: 5 min

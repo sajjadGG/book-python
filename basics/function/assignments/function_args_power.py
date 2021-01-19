@@ -1,6 +1,5 @@
 """
 * Assignment: Function Arguments Power
-* Filename: function_args_power.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min

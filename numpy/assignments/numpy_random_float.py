@@ -1,6 +1,5 @@
 """
 * Assignment: Numpy Random Float
-* Filename: numpy_random_float.py
 * Complexity: medium
 * Lines of code: 1 lines
 * Time: 3 min

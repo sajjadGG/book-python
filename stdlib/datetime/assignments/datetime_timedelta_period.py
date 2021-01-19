@@ -1,6 +1,5 @@
 """
 * Assignment: Datetime Timedelta Period
-* Filename: assignments/datetime_timedelta_period.py
 * Complexity: easy
 * Lines of code: 15 lines
 * Time: 13 min

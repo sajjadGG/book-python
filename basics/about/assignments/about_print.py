@@ -1,6 +1,5 @@
 """
 * Assignment: About Print
-* Filename: about_print.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

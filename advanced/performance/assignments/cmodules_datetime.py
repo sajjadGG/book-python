@@ -1,6 +1,5 @@
 """
 * Assignment: C Modules
-* Filename: cmodules_datetime.py
 * Complexity: medium
 * Lines of code: 10 lines
 * Time: 13 min

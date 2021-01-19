@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Relations Flatten
-* Filename: oop_relations_flatten.py
 * Complexity: hard
 * Lines of code: 5 lines
 * Time: 21 min

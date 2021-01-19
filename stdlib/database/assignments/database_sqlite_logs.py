@@ -1,6 +1,5 @@
 """
 * Assignment: Database SQLite Logs
-* Filename: database_sqlite_logs.py
 * Complexity: easy
 * Lines of code: 17 lines
 * Time: 21 min

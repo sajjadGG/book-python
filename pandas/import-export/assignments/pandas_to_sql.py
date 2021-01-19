@@ -1,6 +1,5 @@
 """
 * Assignment: DataFrame Export SQL
-* Filename: pandas_to_sql.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min

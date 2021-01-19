@@ -163,7 +163,6 @@ Assignments
 Virtualenv
 ----------
 * Assignment: Virtualenv
-* Filename: venv.py
 * Complexity: easy
 * Lines of code: 0 lines
 * Time: 2 min

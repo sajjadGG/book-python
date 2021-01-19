@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Dataclass JSON
-* Filename: oop_dataclass_json.py
 * Complexity: easy
 * Lines of code: 30 lines
 * Time: 21 min

@@ -1,6 +1,5 @@
 """
 * Assignment: Unpacking Parameters Kwargs
-* Filename: unpacking_parameters_kwargs.py
 * Complexity: medium
 * Lines of code: 8 lines
 * Time: 5 min

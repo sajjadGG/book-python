@@ -1,6 +1,5 @@
 """
 * Assignment: Exception Assert
-* Filename: controlflow_exception_assert.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

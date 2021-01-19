@@ -1,6 +1,5 @@
 """
 * Assignment: Function Doctest Distance
-* Filename: function_doctest_distance.py
 * Complexity: easy
 * Lines of code: 21 lines
 * Time: 13 min

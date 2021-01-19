@@ -1,6 +1,5 @@
 """
 * Assignment: Sequence GetItem Select
-* Filename: sequence_getitem_select.py
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 8 min

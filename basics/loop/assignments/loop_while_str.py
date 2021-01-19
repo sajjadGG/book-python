@@ -1,6 +1,5 @@
 """
 * Assignment: Loop While to Str
-* Filename: loop_while_str.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min

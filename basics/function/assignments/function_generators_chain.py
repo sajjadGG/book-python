@@ -1,6 +1,5 @@
 """
 * Assignment: Function Generator Chain
-* Filename: function_generators_chain.py
 * Complexity: easy
 * Lines of code: 9 lines
 * Time: 13 min

@@ -1,6 +1,5 @@
 """
 * Assignment: Mapping Dict Define
-* Filename: mapping_dict_define.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min

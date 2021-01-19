@@ -1,6 +1,5 @@
 """
 * Assignment: Function Definition Print
-* Filename: function_definition_print.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 3 min

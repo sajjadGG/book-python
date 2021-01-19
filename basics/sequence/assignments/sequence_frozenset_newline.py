@@ -1,6 +1,5 @@
 """
 * Assignment: Sequence Frozenset Newline
-* Filename: sequence_frozenset_newline.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

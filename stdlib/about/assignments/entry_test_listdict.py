@@ -1,6 +1,5 @@
 """
 * Assignment: Entry Test List of Dict
-* Filename: entry_test_listdict.py
 * Complexity: easy
 * Lines of code: 6 lines
 * Time: 8 min

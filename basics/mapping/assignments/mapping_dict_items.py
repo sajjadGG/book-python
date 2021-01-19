@@ -1,6 +1,5 @@
 """
 * Assignment: Mapping Dict Items
-* Filename: mapping_dict_items.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min

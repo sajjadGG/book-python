@@ -1,6 +1,5 @@
 """
 * Assignment: Numpy Shape 1d
-* Filename: numpy_shape_1d.py
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 3 min

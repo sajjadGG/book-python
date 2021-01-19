@@ -1,6 +1,5 @@
 """
 * Assignment: File Write Non-Str
-* Filename: file_write_nonstr.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min

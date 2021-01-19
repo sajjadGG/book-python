@@ -1,6 +1,5 @@
 """
 * Assignment: Sequence List Create
-* Filename: sequence_list_create.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 2 min

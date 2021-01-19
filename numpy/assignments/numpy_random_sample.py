@@ -1,6 +1,5 @@
 """
 * Assignment: Numpy Random Sample
-* Filename: numpy_random_sample.py
 * Complexity: medium
 * Lines of code: 1 lines
 * Time: 3 min

@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Inheritance Simple
-* Filename: oop_inheritance_simple.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min

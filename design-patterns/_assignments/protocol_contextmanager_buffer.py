@@ -1,6 +1,5 @@
 """
 * Assignment: Protocol ContextManager Buffer
-* Filename: protocol_contextmanager_buffer.py
 * Complexity: medium
 * Lines of code: 21 lines
 * Time: 21 min

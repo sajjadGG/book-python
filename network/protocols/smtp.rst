@@ -32,7 +32,6 @@ Assignments
 Send email
 ----------
 * Assignment: Send email
-* Filename: :download:`assignments/smtp_ssl.py`
 * Complexity: medium
 * Lines of code: 20 lines
 * Time: 21 min

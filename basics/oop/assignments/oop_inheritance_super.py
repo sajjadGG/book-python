@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Inheritance Super
-* Filename: oop_inheritance_super.py
 * Complexity: easy
 * Lines of code: 6 lines
 * Time: 5 min

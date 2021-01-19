@@ -1,6 +1,5 @@
 """
 * Assignment: Type Int Bits
-* Filename: type_int_truediv.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min

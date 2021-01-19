@@ -1,6 +1,5 @@
 """
 * Assignment: Loop While Input
-* Filename: loop_while_input.py
 * Complexity: medium
 * Lines of code: 14 lines
 * Time: 13 min

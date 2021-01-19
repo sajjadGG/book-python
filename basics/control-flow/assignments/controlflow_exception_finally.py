@@ -1,6 +1,5 @@
 """
 * Assignment: Exception Finally
-* Filename: controlflow_exception_finally.py
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 2 min

@@ -1,6 +1,5 @@
 """
 * Assignment: Color Graph
-* Filename: matplotlib_graph.py
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 21 min

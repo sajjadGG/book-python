@@ -1,6 +1,5 @@
 """
 * Assignment: Memoization
-* Filename: optimization_memoize.py
 * Complexity: medium
 * Lines of code: 5 lines
 * Time: 13 min

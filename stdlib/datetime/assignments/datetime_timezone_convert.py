@@ -1,6 +1,5 @@
 """
 * Assignment: Datetime Timezone Convert
-* Filename: :download:`assignments/datetime_timezone_convert.py`
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 13 min

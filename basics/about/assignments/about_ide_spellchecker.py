@@ -1,6 +1,5 @@
 """
 * Assignment: About IDE Spellchecker
-* Filename: about_ide_spellchecker.py
 * Complexity: easy
 * Lines of code: 0 lines
 * Time: 5 min

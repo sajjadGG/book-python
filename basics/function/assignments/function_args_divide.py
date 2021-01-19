@@ -1,6 +1,5 @@
 """
 * Assignment: Function Arguments Divide
-* Filename: function_args_divide.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min

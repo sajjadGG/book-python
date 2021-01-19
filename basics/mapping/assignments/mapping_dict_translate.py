@@ -1,6 +1,5 @@
 """
 * Assignment: Mapping Dict Translate
-* Filename: mapping_dict_translate.py
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 5 min

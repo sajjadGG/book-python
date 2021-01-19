@@ -1,6 +1,5 @@
 """
 * Assignment: Numpy Slice 1
-* Filename: numpy_slice_1.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min

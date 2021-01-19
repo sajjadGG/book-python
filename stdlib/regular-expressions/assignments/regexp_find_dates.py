@@ -1,6 +1,5 @@
 """
 * Assignment: Regexp Find Dates
-* Filename: regexp_find_dates.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min

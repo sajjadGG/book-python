@@ -1,6 +1,5 @@
 """
 * Assignment: About Setup Project
-* Filename: about_setup_project.py
 * Complexity: easy
 * Lines of code: 0 lines
 * Time: 5 min

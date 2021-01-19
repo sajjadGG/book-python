@@ -1,6 +1,5 @@
 """
 * Assignment: Decorator Method Alive
-* Filename: decorator_method_alive.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 13 min

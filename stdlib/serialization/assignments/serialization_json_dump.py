@@ -1,6 +1,5 @@
 """
 * Assignment: Serialization JSON Dump
-* Filename: serialization_json_dump.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 8 min

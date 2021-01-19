@@ -1,6 +1,5 @@
 """
 * Assignment: Database SQLite JSON
-* Filename: database_sqlite_json.py
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 21 min

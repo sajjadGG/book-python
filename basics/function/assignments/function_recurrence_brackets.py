@@ -1,6 +1,5 @@
 """
 * Assignment: Function Recurrence Brackets
-* Filename: function_recurrence_brackets.py
 * Complexity: medium
 * Lines of code: 10 lines
 * Time: 21 min

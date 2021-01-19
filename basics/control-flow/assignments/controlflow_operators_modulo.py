@@ -1,6 +1,5 @@
 """
 * Assignment: Conditional Operators Modulo
-* Filename: controlflow_operators_modulo.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min

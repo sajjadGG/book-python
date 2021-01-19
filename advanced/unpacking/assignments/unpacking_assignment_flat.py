@@ -1,6 +1,5 @@
 """
 * Assignment: Unpacking Assignment Flat
-* Filename: unpacking_assignment_flat.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

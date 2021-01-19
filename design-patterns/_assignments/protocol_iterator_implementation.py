@@ -1,6 +1,5 @@
 """
 * Assignment: Protocol Iterator Implementation
-* Filename: protocol_iterator_implementation.py
 * Complexity: easy
 * Lines of code: 14 lines
 * Time: 13 min

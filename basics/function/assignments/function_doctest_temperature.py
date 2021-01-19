@@ -1,6 +1,5 @@
 """
 * Assignment: Function Doctest Temperature
-* Filename: function_doctest_temperature.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 13 min

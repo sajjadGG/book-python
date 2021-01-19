@@ -1,6 +1,5 @@
 """
 * Assignment: Function Arguments Translate
-* Filename: function_args_translate.py
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 5 min

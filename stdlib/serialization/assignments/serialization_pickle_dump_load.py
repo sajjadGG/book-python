@@ -1,6 +1,5 @@
 """
 * Assignment: Pickle Serialization
-* Filename: serialization_pickle_dump_load.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min

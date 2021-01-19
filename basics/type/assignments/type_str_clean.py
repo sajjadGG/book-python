@@ -1,6 +1,5 @@
 """
 * Assignment: Type String Clean
-* Filename: type_str_clean.py
 * Complexity: easy
 * Lines of code: 8 lines
 * Time: 13 min

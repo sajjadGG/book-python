@@ -1,6 +1,5 @@
 """
 * Assignment: Regexp Match Phones
-* Filename: regexp_match_phones.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min

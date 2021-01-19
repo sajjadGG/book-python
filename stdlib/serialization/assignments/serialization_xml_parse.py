@@ -1,6 +1,5 @@
 """
 * Assignment: Serialization XML Parsing
-* Filename: serialization_xml_parse.py
 * Complexity: easy
 * Lines of code: 20 lines
 * Time: 13 min

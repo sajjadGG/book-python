@@ -1,6 +1,5 @@
 """
 * Assignment: DataFrame Groupby Phones
-* Filename: pandas_df_groupby_phones.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min

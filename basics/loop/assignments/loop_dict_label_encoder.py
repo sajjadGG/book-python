@@ -1,6 +1,5 @@
 """
 * Assignment: Loop Dict Label Encoder
-* Filename: loop_dict_label_encoder.py
 * Complexity: hard
 * Lines of code: 9 lines
 * Time: 13 min

@@ -1,6 +1,5 @@
 """
 * Assignment: Protocol Reflection Frozen
-* Filename: protocol_reflection_frozen.py
 * Complexity: easy
 * Lines of code: 6 lines
 * Time: 13 min

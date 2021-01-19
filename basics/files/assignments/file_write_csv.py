@@ -1,6 +1,5 @@
 """
 * Assignment: File Write CSV
-* Filename: file_write_csv.py
 * Complexity: medium
 * Lines of code: 6 lines
 * Time: 5 min

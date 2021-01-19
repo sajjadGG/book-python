@@ -1,6 +1,5 @@
 """
 * Assignment: Unpacking Parameters Args
-* Filename: unpacking_parameters_args.py
 * Complexity: easy
 * Lines of code: 7 lines
 * Time: 5 min

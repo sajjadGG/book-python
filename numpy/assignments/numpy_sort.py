@@ -1,6 +1,5 @@
 """
 * Assignment: Numpy Sort
-* Filename: numpy_sort.py
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 3 min

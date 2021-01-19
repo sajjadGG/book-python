@@ -1,6 +1,5 @@
 """
 * Assignment: Mapping Generate Enumerate
-* Filename: mapping_generate_enumerate.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

@@ -136,7 +136,6 @@ Zadania praktyczne
 Nearest Neighbor Classifier
 ---------------------------
 * Assignment: Nearest Neighbor Classifier
-* Filename: :download:`assignments/sklearn_classifier.py`
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 21 min
@@ -197,7 +196,6 @@ Hints:
 Sklearn Classifier Compare
 --------------------------
 * Assignment: Sklearn Classifier Compare
-* Filename: :download:`assignments/sklearn_classifier_compare.py`
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 21 min

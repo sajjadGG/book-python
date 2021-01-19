@@ -1,6 +1,5 @@
 """
 * Assignment: Serialization JSON Object
-* Filename: serialization_json_object.py
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 13 min

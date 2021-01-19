@@ -1,6 +1,5 @@
 """
 * Assignment: Loop For Translate
-* Filename: loop_for_translate.py
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 5 min

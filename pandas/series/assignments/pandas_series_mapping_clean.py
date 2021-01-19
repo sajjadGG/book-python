@@ -1,7 +1,6 @@
 """
 
 * Assignment: Series Mapping Clean
-* Filename: pandas_series_mapping_clean.py
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 21 min

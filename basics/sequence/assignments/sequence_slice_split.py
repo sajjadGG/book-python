@@ -1,6 +1,5 @@
 """
 * Assignment: Sequence Slice Split
-* Filename: sequence_slice_split.py
 * Complexity: easy
 * Lines of code: 6 lines
 * Time: 8 min

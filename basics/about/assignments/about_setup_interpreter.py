@@ -1,6 +1,5 @@
 """
 * Assignment: About Setup Interpreter
-* Filename: about_setup_interpreter.py
 * Complexity: easy
 * Lines of code: 0 lines
 * Time: 3 min

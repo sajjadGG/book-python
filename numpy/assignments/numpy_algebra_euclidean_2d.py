@@ -1,6 +1,5 @@
 """
 * Assignment: Numpy Algebra Euclidean 2D
-* Filename: numpy_algebra_euclidean_2d.py
 * Complexity: easy
 * Lines of code: 6 lines
 * Time: 5 min

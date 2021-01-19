@@ -1,6 +1,5 @@
 """
 * Assignment: Sequence Slice Sequence
-* Filename: sequence_slice_sequence.py
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 3 min

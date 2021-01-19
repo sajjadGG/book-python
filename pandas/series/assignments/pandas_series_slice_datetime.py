@@ -1,6 +1,5 @@
 """
 * Assignment: Series Slice Datetime
-* Filename: pandas_series_slice_datetime.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 3 min

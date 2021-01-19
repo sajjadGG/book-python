@@ -1,6 +1,5 @@
 """
 * Assignment: Pandas Read HTML
-* Filename: pandas_read_html.py
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 5 min

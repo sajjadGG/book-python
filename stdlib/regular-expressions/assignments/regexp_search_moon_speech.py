@@ -1,7 +1,6 @@
 """
 
 * Assignment: Regexp Search Moon Speech
-* Filename: regexp_search_moon_speech.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min

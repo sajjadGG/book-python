@@ -1,6 +1,5 @@
 """
 * Assignment: Loop While to Float
-* Filename: loop_while_float.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min

@@ -1,6 +1,5 @@
 """
 * Assignment: Protocol Iterator Range
-* Filename: protocol_iterator_range.py
 * Complexity: medium
 * Lines of code: 14 lines
 * Time: 13 min

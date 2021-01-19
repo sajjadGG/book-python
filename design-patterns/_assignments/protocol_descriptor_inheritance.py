@@ -1,6 +1,5 @@
 """
 * Assignment: Protocol Descriptor Inheritance
-* Filename: protocol_descriptor_inheritance.py
 * Complexity: medium
 * Lines of code: 25 lines
 * Time: 21 min

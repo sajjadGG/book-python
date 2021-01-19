@@ -1,6 +1,5 @@
 """
 * Assignment: Mapping Generate Pairs
-* Filename: mapping_generate_pairs.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

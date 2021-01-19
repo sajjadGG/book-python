@@ -1,6 +1,5 @@
 """
 * Assignment: Numpy Create Arange
-* Filename: numpy_create_arange.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

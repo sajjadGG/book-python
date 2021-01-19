@@ -1,6 +1,5 @@
 """
 * Assignment: About Syntax
-* Filename: about_syntax.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min

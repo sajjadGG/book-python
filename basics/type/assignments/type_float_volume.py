@@ -1,6 +1,5 @@
 """
 * Assignment: Type Float Volume
-* Filename: type_float_volume.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min

@@ -1,6 +1,5 @@
 """
 * Assignment: Serialization JSON HTTP
-* Filename: :download:`assignments/serialization_json_http.py`
 * Complexity: hard
 * Lines of code: 15 lines
 * Time: 13 min

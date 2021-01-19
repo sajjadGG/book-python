@@ -1,6 +1,5 @@
 """
 * Assignment: Type Float Pressure
-* Filename: type_float_pressure.py
 * Complexity: medium
 * Lines of code: 2 lines
 * Time: 3 min

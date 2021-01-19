@@ -43,7 +43,6 @@ Converting to ``int``
 Assignments
 -----------
 * Assignment: Assignments
-* Filename: :download:`assignments/types_int.py`
 * Complexity: easy
 * Lines of code: 12 lines
 * Time: 5 min
@@ -118,7 +117,6 @@ Converting to ``float``
 Assignments
 -----------
 * Assignment: Assignments
-* Filename: :download:`assignments/types_float.py`
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min
@@ -334,7 +332,6 @@ Length of a ``str``:
 Assignments
 -----------
 * Assignment: Assignments
-* Filename: :download:`assignments/types_str.py`
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min

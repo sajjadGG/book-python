@@ -1,6 +1,5 @@
 """
 * Assignment: About Setup VCS
-* Filename: about_setup_vcs.py
 * Complexity: easy
 * Lines of code: 0 lines
 * Time: 5 min

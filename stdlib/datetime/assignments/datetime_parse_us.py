@@ -1,6 +1,5 @@
 """
 * Assignment: Datetime Parse US
-* Filename: datetime_parse_us.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 3 min

@@ -1,6 +1,5 @@
 """
 * Assignment: Pandas Read JSON OpenAPI
-* Filename: pandas_read_json_openapi.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 5 min

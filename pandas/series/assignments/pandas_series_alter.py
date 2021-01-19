@@ -1,6 +1,5 @@
 """
 * Assignment: Series Alter
-* Filename: pandas_series_alter.py
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 5 min

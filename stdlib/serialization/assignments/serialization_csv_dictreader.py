@@ -1,6 +1,5 @@
 """
 * Assignment: Serialization CSV DictReader
-* Filename: :download:`assignments/serialization_csv_dictreader.py`
 * Complexity: easy
 * Lines of code: 9 lines
 * Time: 8 min

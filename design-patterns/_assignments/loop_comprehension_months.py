@@ -1,6 +1,5 @@
 """
 * Assignment: Loop Comprehension Months
-* Filename: loop_comprehension_months.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

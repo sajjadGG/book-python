@@ -1,6 +1,5 @@
 """
 * Assignment: About Setup Doctest
-* Filename: about_setup_doctest.py
 * Complexity: easy
 * Lines of code: 0 lines
 * Time: 5 min

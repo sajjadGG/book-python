@@ -1,6 +1,5 @@
 """
 * Assignment: Mapping Dict Get
-* Filename: mapping_dict_get.py
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 5 min

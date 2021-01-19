@@ -11,7 +11,6 @@ Assignments
 Mini Botnet
 -----------
 * Assignment: Mini Botnet
-* Filename: None
 * Complexity: medium
 * Lines of code: 45 lines
 * Time: 21 min
@@ -32,7 +31,6 @@ Hints:
 Heartbeat Receiver
 ------------------
 * Assignment: Heartbeat Receiver
-* Filename: :download:`assignments/botnet_heartbeat_receiver.py`
 * Complexity: medium
 * Lines of code: 45 lines
 * Time: 21 min
@@ -54,7 +52,6 @@ Hints:
 Victim
 ------
 * Assignment: Victim
-* Filename: :download:`assignments/botnet_victim.py`
 * Complexity: medium
 * Lines of code: 150 lines
 * Time: 34 min
@@ -90,7 +87,6 @@ Hints:
 Attacker
 --------
 * Assignment: Attacker
-* Filename: :download:`assignments/botnet_attacker.py`
 * Complexity: medium
 * Lines of code: 150 lines
 * Time: 34 min

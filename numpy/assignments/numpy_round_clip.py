@@ -1,6 +1,5 @@
 """
 * Assignment: Numpy Round Clip
-* Filename: numpy_round_clip.py
 * Complexity: medium
 * Lines of code: 2 lines
 * Time: 5 min

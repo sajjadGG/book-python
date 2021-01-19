@@ -1,6 +1,5 @@
 """
 * Assignment: Numpy Logic Isin
-* Filename: numpy_logic_isin.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 5 min

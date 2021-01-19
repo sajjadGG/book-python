@@ -1,6 +1,5 @@
 """
 * Assignment: Pandas Series Attributes
-* Filename: pandas_series_attributes.py
 * Complexity: easy
 * Lines of code: 7 lines
 * Time: 5 min

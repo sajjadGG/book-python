@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Composition Syntax
-* Filename: oop_composition_syntax.py
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 3 min

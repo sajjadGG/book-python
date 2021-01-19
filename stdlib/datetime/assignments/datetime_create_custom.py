@@ -1,6 +1,5 @@
 """
 * Assignment: Datetime Create Custom
-* Filename: datetime_create_custom.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min

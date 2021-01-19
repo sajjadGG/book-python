@@ -1,6 +1,5 @@
 """
 * Assignment: Protocol Descriptor Simple
-* Filename: protocol_descriptor_simple.py
 * Complexity: easy
 * Lines of code: 9 lines
 * Time: 13 min

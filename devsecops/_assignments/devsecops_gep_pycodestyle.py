@@ -1,6 +1,5 @@
 """
 * Assignment: DevSecOps PEP8 Pycodestyle
-* Filename: devsecops_pep8_pycodestyle
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 5 min

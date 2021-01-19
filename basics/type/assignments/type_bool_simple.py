@@ -1,6 +1,5 @@
 """
 * Assignment: Type Bool Simple
-* Filename: type_bool_simple.py
 * Complexity: easy
 * Lines of code: 9 lines
 * Time: 5 min

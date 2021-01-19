@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Interface Implement
-* Filename: oop_interface_implement.py
 * Complexity: easy
 * Lines of code: 12 lines
 * Time: 8 min

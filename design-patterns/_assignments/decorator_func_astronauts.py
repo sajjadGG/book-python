@@ -1,6 +1,5 @@
 """
 * Assignment: Decorator Function Astronauts
-* Filename: decorator_func_astronauts.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 8 min

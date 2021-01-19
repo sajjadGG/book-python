@@ -1,6 +1,5 @@
 """
 * Assignment: Iris Scatter
-* Filename: matplotlib_iris.py
 * Complexity: medium
 * Lines of code: 20 lines
 * Time: 21 min

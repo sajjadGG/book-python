@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Relations Syntax
-* Filename: oop_relations_syntax.py
 * Complexity: easy
 * Lines of code: 7 lines
 * Time: 5 min

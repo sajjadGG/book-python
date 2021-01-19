@@ -1,6 +1,5 @@
 """
 * Assignment: Loop While Translate
-* Filename: loop_while_translate.py
 * Complexity: medium
 * Lines of code: 5 lines
 * Time: 5 min

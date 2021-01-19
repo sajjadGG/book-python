@@ -1,6 +1,5 @@
 """
 * Assignment: Regexp Match Git Flow
-* Filename: regexp_match_gitflow.py
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 21 min

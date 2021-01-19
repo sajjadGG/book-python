@@ -1,6 +1,5 @@
 """
 * Assignment: File Write Iris
-* Filename: file_write_iris.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 5 min

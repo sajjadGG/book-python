@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Relations Movable
-* Filename: oop_relations_movable.py
 * Complexity: medium
 * Lines of code: 18 lines
 * Time: 21 min

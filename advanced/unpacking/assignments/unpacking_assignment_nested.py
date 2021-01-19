@@ -1,6 +1,5 @@
 """
 * Assignment: Unpacking Assignment Nested
-* Filename: unpacking_assignment_nested.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Interface Define
-* Filename: oop_interface_define.py
 * Complexity: easy
 * Lines of code: 13 lines
 * Time: 8 min

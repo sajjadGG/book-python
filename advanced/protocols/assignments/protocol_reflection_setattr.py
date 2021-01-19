@@ -1,6 +1,5 @@
 """
 * Assignment: Protocol Reflection Setattr
-* Filename: protocol_reflection_setattr.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 8 min

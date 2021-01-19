@@ -1,6 +1,5 @@
 """
 * Assignment: DataFrame Groupby Astro Female
-* Filename: pandas_df_groupby_astro_female.py
 * Complexity: medium
 * Lines of code: 5 lines
 * Time: 8 min

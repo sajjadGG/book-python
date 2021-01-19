@@ -1,6 +1,5 @@
 """
 * Assignment: Protocol Property Getter
-* Filename: protocol_property_getter.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min

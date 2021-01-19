@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Abstract Interface
-* Filename: oop_abstract_interface.py
 * Complexity: easy
 * Lines of code: 13 lines
 * Time: 13 min

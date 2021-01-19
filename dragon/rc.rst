@@ -9,7 +9,6 @@ Dragon (version release candidate)
     Firkraag dragon from game Baldur's Gate II: Shadows of Amn
 
 * Assignment: Dragon (version release candidate)
-* Filename: :download:`assignments/dragon_rc.py`
 * Complexity: hard
 * Lines of code: 50 lines
 * Time: 21 min

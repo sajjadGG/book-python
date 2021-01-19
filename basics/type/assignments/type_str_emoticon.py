@@ -1,6 +1,5 @@
 """
 * Assignment: Type String Emoticon
-* Filename: type_str_emoticon.py
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 3 min

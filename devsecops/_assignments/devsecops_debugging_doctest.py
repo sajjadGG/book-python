@@ -1,6 +1,5 @@
 """
 * Assignment: Own `doctest`
-* Filename: debugging_doctest.py
 * Complexity: easy
 * Lines of code: 60 lines
 * Time: 21 min

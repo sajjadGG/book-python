@@ -1,7 +1,6 @@
 """
 
 * Assignment: OOP Slots Define
-* Filename: :download:`assignments/oop_slots_define.py`
 * Complexity: easy
 * Lines of code: 11 lines
 * Time: 13 min

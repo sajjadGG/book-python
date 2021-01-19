@@ -1,6 +1,5 @@
 """
 * Assignment: Type Float Altitude
-* Filename: type_float_tax.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min

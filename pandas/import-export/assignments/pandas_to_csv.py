@@ -1,6 +1,5 @@
 """
 * Assignment: DataFrame Export CSV
-* Filename: pandas_to_csv.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 5 min

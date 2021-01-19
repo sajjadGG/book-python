@@ -1,6 +1,5 @@
 """
 * Assignment: Jupyter First
-* Filename: jupyter_first.ipynb
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 13 min

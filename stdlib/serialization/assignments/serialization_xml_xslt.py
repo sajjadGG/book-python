@@ -1,6 +1,5 @@
 """
 * Assignment: Serialization XSLT Transformation
-* Filename: serialization_xml_xslt.py
 * Complexity: medium
 * Lines of code: 5 lines
 * Time: 13 min

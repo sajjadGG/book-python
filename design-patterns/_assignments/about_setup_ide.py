@@ -1,6 +1,5 @@
 """
 * Assignment: About Setup IDE
-* Filename: about_setup_ide.py
 * Complexity: easy
 * Lines of code: 0 lines
 * Time: 2 min

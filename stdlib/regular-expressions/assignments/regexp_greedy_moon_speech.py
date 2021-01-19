@@ -1,6 +1,5 @@
 """
 * Assignment: Regexp Greedy Moon Speech
-* Filename: regexp_greedy_moon_speech.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min

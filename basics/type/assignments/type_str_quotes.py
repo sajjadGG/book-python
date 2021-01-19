@@ -1,6 +1,5 @@
 """
 * Assignment: Type String Quotes
-* Filename: type_str_quotes.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 5 min

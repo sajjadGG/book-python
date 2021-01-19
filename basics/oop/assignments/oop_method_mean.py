@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Method Mean
-* Filename: oop_method_mean.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min

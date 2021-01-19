@@ -1,6 +1,5 @@
 """
 * Assignment: Unpacking Arguments Define
-* Filename: unpacking_arguments_define.py
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 13 min

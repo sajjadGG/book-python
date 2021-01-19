@@ -1,6 +1,5 @@
 """
 * Assignment: Function Arguments Clean
-* Filename: function_args_clean.py
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 13 min

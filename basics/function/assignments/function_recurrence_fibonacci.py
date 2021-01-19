@@ -1,6 +1,5 @@
 """
 * Assignment: Function Recurrence Fibonacci
-* Filename: function_recurrence_fibonacci.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min

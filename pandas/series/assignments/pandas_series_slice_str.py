@@ -1,6 +1,5 @@
 """
 * Assignment: Slicing Slice Str
-* Filename: pandas_series_slice_str.py
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 13 min

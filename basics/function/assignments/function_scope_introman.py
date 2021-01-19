@@ -1,6 +1,5 @@
 """"
 * Assignment: Function Scope Int To Roman
-* Filename: function_scope_introman.py
 * Complexity: hard
 * Lines of code: 13 lines
 * Time: 21 min

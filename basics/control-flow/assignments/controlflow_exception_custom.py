@@ -1,6 +1,5 @@
 """
 * Assignment: Exception Custom
-* Filename: controlflow_exception_custom.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min

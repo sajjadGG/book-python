@@ -1,6 +1,5 @@
 """
 * Assignment: Conditional Expression
-* Filename: controlflow_conditional_expression.py
 * Complexity: medium
 * Lines of code: 10 lines
 * Time: 13 min

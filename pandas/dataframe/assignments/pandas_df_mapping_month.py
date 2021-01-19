@@ -1,6 +1,5 @@
 """
 * Assignment: DataFrame Mapping Month
-* Filename: pandas_df_mapping_month.py
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 13 min

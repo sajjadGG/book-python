@@ -1,6 +1,5 @@
 """
 * Assignment: DevSecOps Unittest Rectangle
-* Filename: devsecops_unittest_dragon.py
 * Complexity: medium
 * Lines of code: 100 lines
 * Time: 21 min

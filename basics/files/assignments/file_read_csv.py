@@ -1,6 +1,5 @@
 """
 * Assignment: File Read CSV
-* Filename: file_read_csv.py
 * Complexity: easy
 * Lines of code: 15 lines
 * Time: 8 min

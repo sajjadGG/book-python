@@ -1,6 +1,5 @@
 """
 * Assignment: Type Int Bandwidth
-* Filename: type_int_bandwidth.py
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 3 min

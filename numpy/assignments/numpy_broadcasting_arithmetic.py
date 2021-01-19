@@ -1,6 +1,5 @@
 """
 * Assignment: Numpy Broadcasting Arithmetic
-* Filename: numpy_broadcasting_arithmetic.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 3 min

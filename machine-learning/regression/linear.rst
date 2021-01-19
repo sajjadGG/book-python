@@ -256,7 +256,6 @@ Assignments
 Least square regression 3 points
 --------------------------------
 * Assignment: Least square regression 3 points
-* Filename: :download:`assignments/linreg_least_square_3pts.py`
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 13 min
@@ -273,7 +272,6 @@ Polish:
 Least square regression 4 points
 --------------------------------
 * Assignment: Least square regression 4 points
-* Filename: :download:`assignments/linreg_least_square_4pts.py`
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 13 min
@@ -289,7 +287,6 @@ Polish:
 Company sales
 -------------
 * Assignment: Company sales
-* Filename: :download:`assignments/linreg_company_sales.py`
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 13 min

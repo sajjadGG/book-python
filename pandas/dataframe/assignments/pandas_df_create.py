@@ -1,6 +1,5 @@
 """
 * Assignment: DataFrame Create
-* Filename: pandas_df_create.py
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 5 min

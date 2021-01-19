@@ -1,6 +1,5 @@
 """
 * Assignment: File Read Str
-* Filename: file_read_str.py
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 3 min

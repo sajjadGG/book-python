@@ -1,6 +1,5 @@
 """
 * Assignment: Matplotlib Lifecycle
-* Filename: matplotlib_lifecycle.py
 * Complexity: medium
 * Lines of code: 20 lines
 * Time: 21 min

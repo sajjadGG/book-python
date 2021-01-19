@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Init Model
-* Filename: oop_init_model.py
 * Complexity: easy
 * Lines of code: 12 lines
 * Time: 8 min

@@ -1,6 +1,5 @@
 """
 * Assignment: Series Sample
-* Filename: pandas_series_sample.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min

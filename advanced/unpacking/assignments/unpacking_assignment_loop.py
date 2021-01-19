@@ -1,6 +1,5 @@
 """
 * Assignment: Unpacking Assignment Loop
-* Filename: unpacking_assignment_loop.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min

@@ -1,6 +1,5 @@
 """
 * Assignment: Type None
-* Filename: type_none.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 3 min

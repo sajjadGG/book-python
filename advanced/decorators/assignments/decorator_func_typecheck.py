@@ -1,6 +1,5 @@
 """
 * Assignment: Decorator Function Type Check
-* Filename: decorator_func_typecheck.py
 * Complexity: hard
 * Lines of code: 15 lines
 * Time: 21 min

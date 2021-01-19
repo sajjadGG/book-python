@@ -1,6 +1,5 @@
 """
 * Assignment: Function Return Numbers
-* Filename: function_return_numbers.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min

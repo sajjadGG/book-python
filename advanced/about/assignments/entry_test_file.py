@@ -1,6 +1,5 @@
 """
 * Assignment: Entry Test File
-* Filename: entry_test_file.py
 * Complexity: hard
 * Lines of code: 15 lines
 * Time: 13 min

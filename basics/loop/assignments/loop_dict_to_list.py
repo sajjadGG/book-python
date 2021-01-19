@@ -1,6 +1,5 @@
 """
 * Assignment: Loop Dict To List
-* Filename: loop_dict_to_list.py
 * Complexity: medium
 * Lines of code: 4 lines
 * Time: 5 min

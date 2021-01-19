@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Composition Decompose
-* Filename: oop_composition_decompose.py
 * Complexity: easy
 * Lines of code: 30 lines
 * Time: 13 min

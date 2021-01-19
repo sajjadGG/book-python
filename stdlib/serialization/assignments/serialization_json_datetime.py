@@ -1,6 +1,5 @@
 """
 * Assignment: Serialization JSON Datetime
-* Filename: serialization_json_datetime.py
 * Complexity: easy
 * Lines of code: 15 lines
 * Time: 13 min

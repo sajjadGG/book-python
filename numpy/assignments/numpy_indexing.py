@@ -1,6 +1,5 @@
 """
 * Assignment: Numpy Indexing
-* Filename: :download:`assignments/numpy_indexing.py`
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min

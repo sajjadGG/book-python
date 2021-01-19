@@ -1,6 +1,5 @@
 """
 * Assignment: Function First Class Define
-* Filename: function_firstclass_define.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min

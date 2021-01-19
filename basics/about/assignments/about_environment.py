@@ -1,6 +1,5 @@
 """
 * Assignment: About Environment
-* Filename: about_environment.py
 * Complexity: easy
 * Lines of code: 0 lines
 * Time: 3 min

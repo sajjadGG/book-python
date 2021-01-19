@@ -1,6 +1,5 @@
 """
 * Assignment: DataFrame Groupby Astro EVA
-* Filename: pandas_df_groupby_astro_eva.py
 * Complexity: medium
 * Lines of code: 13 lines
 * Time: 21 min

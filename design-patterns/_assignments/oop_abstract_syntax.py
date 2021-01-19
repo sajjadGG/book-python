@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Abstract Syntax
-* Filename: oop_abstract_syntax.py
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 5 min

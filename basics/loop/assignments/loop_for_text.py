@@ -1,6 +1,5 @@
 """
 * Assignment: Loop For Text
-* Filename: loop_for_text.py
 * Complexity: medium
 * Lines of code: 14 lines
 * Time: 13 min

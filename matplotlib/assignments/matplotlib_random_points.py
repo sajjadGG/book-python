@@ -1,6 +1,5 @@
 """
 * Assignment: Random Points
-* Filename: matplotlib_random_points.py
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 21 min

@@ -1,6 +1,5 @@
 """
 * Assignment: Decorator Class Type Check
-* Filename: decorator_cls_typecheck.py
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 21 min

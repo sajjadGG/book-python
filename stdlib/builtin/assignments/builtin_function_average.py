@@ -1,6 +1,5 @@
 """
 * Assignment: Builtin Function Average
-* Filename: assignments/builtin_function_average.py
 * Complexity: easy
 * Lines of code: 12 lines
 * Time: 13 min

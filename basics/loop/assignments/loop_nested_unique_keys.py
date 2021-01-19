@@ -1,6 +1,5 @@
 """
 * Assignment: Loop Nested Unique Keys
-* Filename: loop_nested_unique_keys.py
 * Complexity: medium
 * Lines of code: 3 lines
 * Time: 8 min

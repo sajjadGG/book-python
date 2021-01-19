@@ -1,6 +1,5 @@
 """
 * Assignment: Sequence Set Create
-* Filename: sequence_set_create.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 2 min

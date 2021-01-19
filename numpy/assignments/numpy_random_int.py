@@ -1,6 +1,5 @@
 """
 * Assignment: Numpy Random Int
-* Filename: numpy_random_int.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Method Call
-* Filename: oop_method_call.py
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 2 min

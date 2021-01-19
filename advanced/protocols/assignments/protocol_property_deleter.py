@@ -1,6 +1,5 @@
 """
 * Assignment: Protocol Property Deleter
-* Filename: protocol_property_deleter.py
 * Complexity: easy
 * Lines of code: 6 lines
 * Time: 5 min

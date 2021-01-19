@@ -1,6 +1,5 @@
 """
 * Assignment: Datetime Parse Logs
-* Filename: datetime_parse_logs.py
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 13 min

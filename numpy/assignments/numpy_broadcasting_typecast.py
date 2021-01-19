@@ -1,6 +1,5 @@
 """
 * Assignment: Numpy Broadcasting Type Cast
-* Filename: assignments/numpy_broadcasting_typecast.py
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 3 min

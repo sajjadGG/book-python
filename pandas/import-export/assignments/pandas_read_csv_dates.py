@@ -1,6 +1,5 @@
 """
 * Assignment: Pandas Read CSV Dates
-* Filename: pandas_read_csv_dates.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

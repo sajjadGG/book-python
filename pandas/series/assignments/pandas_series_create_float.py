@@ -1,6 +1,5 @@
 """
 * Assignment: Series Create Float
-* Filename: pandas_series_create_float.py
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 3 min

@@ -1,6 +1,5 @@
 """
 * Assignment: Loop Nested Mean
-* Filename: loop_nested_mean.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 5 min

@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Stringify Format
-* Filename: oop_stringify_format.py
 * Complexity: easy
 * Lines of code: 8 lines
 * Time: 5 min

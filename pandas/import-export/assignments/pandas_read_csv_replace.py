@@ -1,6 +1,5 @@
 """
 * Assignment: Pandas Read CSV Replace
-* Filename: pandas_read_csv_replace.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 8 min

@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Inheritance Multiple
-* Filename: oop_inheritance_multiple.py
 * Complexity: easy
 * Lines of code: 2 lines
 * Time: 2 min

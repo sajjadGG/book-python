@@ -1,6 +1,5 @@
 """
 * Assignment: Protocol Descriptor ValueRange
-* Filename: protocol_descriptor_valuerange.py
 * Complexity: easy
 * Lines of code: 9 lines
 * Time: 13 min

@@ -1,6 +1,5 @@
 """
 * Assignment: Function Arguments Numbers to Str
-* Filename: function_args_numstr.py
 * Complexity: medium
 * Lines of code: 5 lines
 * Time: 8 min

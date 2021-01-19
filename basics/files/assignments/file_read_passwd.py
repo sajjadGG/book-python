@@ -1,6 +1,5 @@
 """
 * Assignment: File Read Passwd
-* Filename: file_read_passwd.py
 * Complexity: hard
 * Lines of code: 100 lines
 * Time: 55 min

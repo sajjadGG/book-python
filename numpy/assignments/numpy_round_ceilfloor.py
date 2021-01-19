@@ -1,6 +1,5 @@
 """
 * Assignment: Numpy Round Floor and Ceil
-* Filename: numpy_round_ceilfloor.py
 * Complexity: medium
 * Lines of code: 3 lines
 * Time: 3 min

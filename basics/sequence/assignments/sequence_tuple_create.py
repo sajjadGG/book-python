@@ -1,6 +1,5 @@
 """
 * Assignment: Sequence Tuple Create
-* Filename: sequence_tuple_create.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 2 min

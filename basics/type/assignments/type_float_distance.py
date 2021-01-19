@@ -1,6 +1,5 @@
 """
 * Assignment: Type Float Distance
-* Filename: type_float_distance.py
 * Complexity: easy
 * Lines of code: 4 lines
 * Time: 5 min

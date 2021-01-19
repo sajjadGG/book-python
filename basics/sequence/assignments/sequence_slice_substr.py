@@ -1,6 +1,5 @@
 """
 * Assignment: Sequence Slice Substr
-* Filename: sequence_slice_substr.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 5 min

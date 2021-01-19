@@ -1,6 +1,5 @@
 """
 * Assignment: File Write Str
-* Filename: file_write_str.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 3 min

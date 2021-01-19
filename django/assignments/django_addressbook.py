@@ -1,6 +1,5 @@
 """
 * Assignment: Address Book
-* Filename: django_addressbook.py
 * Complexity: medium
 * Lines of code: 50 lines
 * Time: 21 min

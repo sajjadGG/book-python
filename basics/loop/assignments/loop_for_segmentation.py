@@ -1,6 +1,5 @@
 """
 * Assignment: Loop For Segmentation
-* Filename: loop_for_segmentation.py
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 8 min

@@ -1,6 +1,5 @@
 """
 * Assignment: Regexp Standards PESEL
-* Filename: regexp_standards_pesel.py (naive implementation)
 * Complexity: medium
 * Lines of code: 0 lines
 * Time: 5 min

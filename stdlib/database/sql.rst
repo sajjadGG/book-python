@@ -164,7 +164,6 @@ Assignments
 Database SQL Relations
 ----------------------
 * Assignment: Database SQL Relations
-* Filename: TODO
 * Complexity: medium
 * Lines of code: 0 lines
 * Time: 13 min

@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Attribute Model
-* Filename: oop_attribute_model.py
 * Complexity: easy
 * Lines of code: 15 lines
 * Time: 8 min

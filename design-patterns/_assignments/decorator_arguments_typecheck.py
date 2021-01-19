@@ -1,6 +1,5 @@
 """
 * Assignment: Decorator Arguments Type Check
-* Filename: decorator_arguments_typecheck.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 5 min

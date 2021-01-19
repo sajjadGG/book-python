@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Class Iris
-* Filename: oop_class_iris.py
 * Complexity: easy
 * Lines of code: 5 lines
 * Time: 2 min

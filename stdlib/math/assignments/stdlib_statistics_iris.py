@@ -1,6 +1,5 @@
 """
 * Assignment: Stdlib Statistics Iris
-* Filename: stdlib_statistics_iris.py
 * Complexity: easy
 * Lines of code: 30 lines
 * Time: 21 min

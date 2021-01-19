@@ -1,6 +1,5 @@
 """
 * Assignment: OOP Dataclass Syntax
-* Filename: oop_dataclass_syntax.py
 * Complexity: easy
 * Lines of code: 7 lines
 * Time: 5 min

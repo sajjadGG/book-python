@@ -1,6 +1,5 @@
 """
 * Assignment: Protocol Context Manager AutoSave
-* Filename: protocol_contextmanager_autosave.py
 * Complexity: hard
 * Lines of code: 28 lines
 * Time: 21 min

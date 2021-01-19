@@ -1,6 +1,5 @@
 """
 * Assignment: Function Unpack Nested
-* Filename: sequence_unpack_nested.py
 * Complexity: easy
 * Lines of code: 1 lines
 * Time: 3 min

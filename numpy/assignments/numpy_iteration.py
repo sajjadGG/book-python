@@ -1,6 +1,5 @@
 """
 * Assignment: Numpy Iteration
-* Filename: numpy_iteration.py
 * Complexity: easy
 * Lines of code: 3 lines
 * Time: 5 min

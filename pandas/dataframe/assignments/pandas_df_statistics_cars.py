@@ -1,6 +1,5 @@
 """
 * Assignment: DataFrame Statistics
-* Filename: pandas_df_statistics_cars.py
 * Complexity: medium
 * Lines of code: 15 lines
 * Time: 21 min

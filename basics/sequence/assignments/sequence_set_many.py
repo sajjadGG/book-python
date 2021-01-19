@@ -1,6 +1,5 @@
 """
 * Assignment: Sequence Set Many
-* Filename: sequence_set_many.py
 * Complexity: easy
 * Lines of code: 9 lines
 * Time: 8 min

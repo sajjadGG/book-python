@@ -1,6 +1,5 @@
 """
 * Assignment: DataFrame NaN
-* Filename: pandas_df_nan.py
 * Complexity: easy
 * Lines of code: 10 lines
 * Time: 8 min
