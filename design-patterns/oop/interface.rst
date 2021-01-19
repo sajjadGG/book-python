@@ -116,10 +116,10 @@ Use Cases
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/oop_interface_define.py
-    :caption: :download:`Solution <../_assignments/oop_interface_define.py>`
+.. literalinclude:: ../_assignments/oop_interface_easy1.py
+    :caption: :download:`Solution <../_assignments/oop_interface_easy1.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/oop_interface_implement.py
-    :caption: :download:`Solution <../_assignments/oop_interface_implement.py>`
+.. literalinclude:: ../_assignments/oop_interface_easy2.py
+    :caption: :download:`Solution <../_assignments/oop_interface_easy2.py>`
     :end-before: # Solution

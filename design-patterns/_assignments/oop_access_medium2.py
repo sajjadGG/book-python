@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Protected Dict
+* Assignment: OOP Access Dict
 * Complexity: medium
 * Lines of code: 8 lines
 * Time: 8 min

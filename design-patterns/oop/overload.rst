@@ -466,14 +466,14 @@ Further Reading
 Assignments
 ===========
 
-.. literalinclude:: ../_assignments/oop_overload_matmul.py
-    :caption: :download:`Solution <../_assignments/oop_overload_matmul.py>`
+.. literalinclude:: ../_assignments/oop_overload_easy1.py
+    :caption: :download:`Solution <../_assignments/oop_overload_easy1.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/oop_overload_iadd.py
-    :caption: :download:`Solution <../_assignments/oop_overload_iadd.py>`
+.. literalinclude:: ../_assignments/oop_overload_easy2.py
+    :caption: :download:`Solution <../_assignments/oop_overload_easy2.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/oop_overload_contains.py
-    :caption: :download:`Solution <../_assignments/oop_overload_contains.py>`
+.. literalinclude:: ../_assignments/oop_overload_medium1.py
+    :caption: :download:`Solution <../_assignments/oop_overload_medium1.py>`
     :end-before: # Solution

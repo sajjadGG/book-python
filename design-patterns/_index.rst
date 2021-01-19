@@ -8,7 +8,7 @@ About
     :caption: About
 
     about/setup.rst
-    about/entry-test.rst
+    about/entrytest.rst
     about/classification.rst
 
 **********

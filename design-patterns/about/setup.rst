@@ -22,28 +22,28 @@ Trainer will use PyCharm. If you choose any other IDE, make sure you know how to
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/about_setup_vcs.py
-    :caption: :download:`Solution <../_assignments/about_setup_vcs.py>`
+.. literalinclude:: ../_assignments/about_setup_easy1.py
+    :caption: :download:`Solution <../_assignments/about_setup_easy1.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/about_setup_ide.py
-    :caption: :download:`Solution <../_assignments/about_setup_ide.py>`
+.. literalinclude:: ../_assignments/about_setup_easy2.py
+    :caption: :download:`Solution <../_assignments/about_setup_easy2.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/about_setup_project.py
-    :caption: :download:`Solution <../_assignments/about_setup_project.py>`
+.. literalinclude:: ../_assignments/about_setup_easy3.py
+    :caption: :download:`Solution <../_assignments/about_setup_easy3.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/about_setup_interpreter.py
-    :caption: :download:`Solution <../_assignments/about_setup_interpreter.py>`
+.. literalinclude:: ../_assignments/about_setup_easy4.py
+    :caption: :download:`Solution <../_assignments/about_setup_easy4.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/about_setup_doctest.py
-    :caption: :download:`Solution <../_assignments/about_setup_doctest.py>`
+.. literalinclude:: ../_assignments/about_setup_easy5.py
+    :caption: :download:`Solution <../_assignments/about_setup_easy5.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/about_setup_push.py
-    :caption: :download:`Solution <../_assignments/about_setup_push.py>`
+.. literalinclude:: ../_assignments/about_setup_easy6.py
+    :caption: :download:`Solution <../_assignments/about_setup_easy6.py>`
     :end-before: # Solution
 
 .. figure:: ../_img/pycharm-vsc-merge-rebase.png

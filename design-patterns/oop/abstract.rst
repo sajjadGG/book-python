@@ -249,10 +249,10 @@ Abstract Class:
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/oop_abstract_syntax.py
-    :caption: :download:`Solution <../_assignments/oop_abstract_syntax.py>`
+.. literalinclude:: ../_assignments/oop_abstract_easy1.py
+    :caption: :download:`Solution <../_assignments/oop_abstract_easy1.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/oop_abstract_interface.py
-    :caption: :download:`Solution <../_assignments/oop_abstract_interface.py>`
+.. literalinclude:: ../_assignments/oop_abstract_easy2.py
+    :caption: :download:`Solution <../_assignments/oop_abstract_easy2.py>`
     :end-before: # Solution

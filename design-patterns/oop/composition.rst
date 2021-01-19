@@ -197,10 +197,10 @@ Mixin classes - multiple inheritance:
 
 Assignments
 -----------
-.. literalinclude:: ../_assignments/oop_composition_syntax.py
-    :caption: :download:`Solution <../_assignments/oop_composition_syntax.py>`
+.. literalinclude:: ../_assignments/oop_composition_easy1.py
+    :caption: :download:`Solution <../_assignments/oop_composition_easy1.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/oop_composition_decompose.py
-    :caption: :download:`Solution <../_assignments/oop_composition_decompose.py>`
+.. literalinclude:: ../_assignments/oop_composition_easy2.py
+    :caption: :download:`Solution <../_assignments/oop_composition_easy2.py>`
     :end-before: # Solution
