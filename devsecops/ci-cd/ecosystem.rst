@@ -143,10 +143,10 @@ Quality Assurance
 .. todo:: Further Reading: https://sonarqube.astrotech.io
 .. todo:: Further Reading: https://sonar.astrotech.io
 
-.. image:: ../_img/qa-sonarlint-a.jpg
+.. figure:: ../_img/qa-sonarlint-a.jpg
     :class: hidden
 
-.. image:: ../_img/qa-sonarlint-b.mp4
+.. figure:: ../_img/qa-sonarlint-b.mp4
     :class: hidden
 
 .. raw:: html

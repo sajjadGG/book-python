@@ -2,8 +2,6 @@ Metaclass
 =========
 
 
-Rationale
----------
 .. epigraph::
 
     Metaclasses are deeper magic than 99% of users should ever worry about.
@@ -13,9 +11,11 @@ Rationale
 
     -- Tim Peters
 
-.. highlights::
-    * Object is an instance of a class
-    * Class is an instance of a Metaclass
+
+Rationale
+---------
+* Object is an instance of a class
+* Class is an instance of a Metaclass
 
 .. figure:: ../_img/oop-metaclass-inheritance.png
 
@@ -576,8 +576,7 @@ Abstract Base Class:
 
 Metaclass replacements
 ----------------------
-.. highlights::
-    * Effectively accomplish the same thing
+* Effectively accomplish the same thing
 
 Inheritance and ``__init__()`` method:
 

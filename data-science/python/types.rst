@@ -5,9 +5,8 @@ Types
 
 ``int``
 =======
-.. highlights::
-    * In Python 3 there is not maximal ``int`` value
-    * Python 3 dynamically extends ``int``, when it's too big
+* In Python 3 there is not maximal ``int`` value
+* Python 3 dynamically extends ``int``, when it's too big
 
 .. code-block:: python
 
@@ -23,10 +22,9 @@ You can use ``_`` for easier read especially with big numbers:
 
 Converting to ``int``
 ---------------------
-.. highlights::
-    * Also known as "type casting"
-    * ``int()`` converts argument to ``int``
-    * ``int()`` does not round numbers, it returns integer value
+* Also known as "type casting"
+* ``int()`` converts argument to ``int``
+* ``int()`` does not round numbers, it returns integer value
 
 .. code-block:: python
 
@@ -97,9 +95,8 @@ Engineering notation:
 
 Converting to ``float``
 -----------------------
-.. highlights::
-    * Also known as "type casting"
-    * ``float()`` converts argument to ``float``
+* Also known as "type casting"
+* ``float()`` converts argument to ``float``
 
 .. code-block:: python
 
@@ -181,11 +178,10 @@ Hints:
 
 Single or double quote?
 -----------------------
-.. highlights::
-    * ``"`` and ``'`` works the same
-    * Choose one and keep consistency in code
-    * Python console uses ``'``
-    * it matters for ``doctest``, which compares two outputs character by character
+* ``"`` and ``'`` works the same
+* Choose one and keep consistency in code
+* Python console uses ``'``
+* it matters for ``doctest``, which compares two outputs character by character
 
 .. code-block:: python
 
@@ -224,9 +220,8 @@ Print converts argument to ``str`` before printing:
 
 Escape characters
 -----------------
-.. highlights::
-    * ``\r\n`` - is used on windows
-    * ``\n`` - is used everywhere else
+* ``\r\n`` - is used on windows
+* ``\n`` - is used everywhere else
 
 .. csv-table:: Escape characters
     :header: "Sequence", "Description"
@@ -253,11 +248,10 @@ Escape characters
 
 Characters before strings
 -------------------------
-.. highlights::
-    * ``f'string'`` - Format string
-    * ``u'string'`` - Unicode literals
-    * ``b'string'`` - Bytes literals
-    * ``r'string'`` - Raw string
+* ``f'string'`` - Format string
+* ``u'string'`` - Unicode literals
+* ``b'string'`` - Bytes literals
+* ``r'string'`` - Raw string
 
 Format string (string interpolation):
 
@@ -300,9 +294,8 @@ Raw String. Escapes does not matters:
 
 Reading user input
 ------------------
-.. highlights::
-    * ``input()`` returns ``str``
-    * Good practice: add space at the end of prompt
+* ``input()`` returns ``str``
+* Good practice: add space at the end of prompt
 
 .. code-block:: python
 

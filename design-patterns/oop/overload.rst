@@ -5,11 +5,10 @@ Overload
 
 Rationale
 =========
-.. highlights::
-    * Operator Overload
-    * Readable syntax
-    * Simpler operations
-    * Following examples uses ``dataclasses`` to focus on action code, not boilerplate
+* Operator Overload
+* Readable syntax
+* Simpler operations
+* Following examples uses ``dataclasses`` to focus on action code, not boilerplate
 
 .. code-block:: python
 

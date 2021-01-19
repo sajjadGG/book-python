@@ -59,9 +59,7 @@ Identity Check
 * ``is`` compares ``id()`` output for both objects
 * CPython: compares the memory address a object resides in
 * Testing strings with ``is`` only works when the strings are interned
-
-.. versionchanged:: Python 3.8
-    Compiler produces a ``SyntaxWarning`` when identity checks (``is`` and ``is not``) are used with certain types of literals (e.g. ``str``, ``int``). These can often work by accident in *CPython*, but are not guaranteed by the language spec. The warning advises users to use equality tests (``==`` and ``!=``) instead.
+* Since Python 3.8 - Compiler produces a ``SyntaxWarning`` when identity checks (``is`` and ``is not``) are used with certain types of literals (e.g. ``str``, ``int``). These can often work by accident in *CPython*, but are not guaranteed by the language spec. The warning advises users to use equality tests (``==`` and ``!=``) instead.
 
 .. code-block:: python
 

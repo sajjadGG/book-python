@@ -5,14 +5,16 @@ Principal Component Analysis
 ****************************
 
 
-.. highlights::
-    * Also known as PCA
+Rationale
+=========
+* Principal component analysis (PCA)
+* Technique used to emphasize variation and bring out strong patterns in a dataset.
+* It's often used to make data easy to explore and visualize.
+* Linear dimensionality reduction using Singular Value Decomposition of the data to project it to a lower dimensional space.
+
 
 What is Principal Component Analysis?
 =====================================
-Principal component analysis (PCA) is a technique used to emphasize variation and bring out strong patterns in a dataset. It's often used to make data easy to explore and visualize.
-
-Linear dimensionality reduction using Singular Value Decomposition of the data to project it to a lower dimensional space.
 
 2D example
 ==========

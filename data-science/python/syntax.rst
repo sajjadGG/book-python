@@ -5,11 +5,10 @@ Python Syntax
 
 Indentation instead of braces
 =============================
-.. highlights::
-    * Python uses indentation instead of braces
-    * `4 spaces indentation, no tabs <https://youtu.be/SsoOG6ZeyUI>`_
-    * Python throws ``IndentationError`` exception on problem
-    * Code indented on the same level belongs to block:
+* Python uses indentation instead of braces
+* `4 spaces indentation, no tabs <https://youtu.be/SsoOG6ZeyUI>`_
+* Python throws ``IndentationError`` exception on problem
+* Code indented on the same level belongs to block:
 
 .. code-block:: python
 
@@ -23,9 +22,8 @@ Indentation instead of braces
 
 End of lines
 ============
-.. highlights::
-    * No semicolon (``;``) at the end of lines
-    * ``\r\n`` and ``\n`` are good:
+* No semicolon (``;``) at the end of lines
+* ``\r\n`` and ``\n`` are good:
 
 .. code-block:: python
 
@@ -38,9 +36,8 @@ Comments
 
 Line comments
 ---------------
-.. highlights::
-    * Indent must be on the same level as block indent
-    * Hash (``#``), space and then comment:
+* Indent must be on the same level as block indent
+* Hash (``#``), space and then comment:
 
 .. code-block:: python
 
@@ -49,8 +46,7 @@ Line comments
 
 Inline comments
 ---------------
-.. highlights::
-    * Source code, two spaces, hash (``#``), space and then comment:
+* Source code, two spaces, hash (``#``), space and then comment:
 
 .. code-block:: python
 
@@ -58,11 +54,10 @@ Inline comments
 
 Multiline comments
 ------------------
-.. highlights::
-    * Triple single quotes ``'''``
-    * Triple double quotes ``"""`` (more common)
-    * Both ``'''`` and ``"""`` quotes works the same
-    * if assigned to variable, it serves as multiline ``str``
+* Triple single quotes ``'''``
+* Triple double quotes ``"""`` (more common)
+* Both ``'''`` and ``"""`` quotes works the same
+* if assigned to variable, it serves as multiline ``str``
 
 .. code-block:: python
 
@@ -77,16 +72,15 @@ Multiline comments
 
 Docstring
 ---------
-.. highlights::
-    * Docstring is a first multiline comment in:
+* Docstring is a first multiline comment in:
 
-        * File / Module
-        * Class
-        * Method / Function
+    * File / Module
+    * Class
+    * Method / Function
 
-    * It is accessible in ``__doc__`` property of an object
-    * Used for generating ``help()`` documentation
-    * Used for ``doctest``
+* It is accessible in ``__doc__`` property of an object
+* Used for generating ``help()`` documentation
+* Used for ``doctest``
 
 Docstring used for documentation:
 
@@ -117,10 +111,9 @@ Docstring used for doctest:
 
 Variables and constants
 =======================
-.. highlights::
-    * ``NameError`` when using not declared variable
-    * ``AttributeError`` when cannot assign to variables
-    * Names are case sensitive
+* ``NameError`` when using not declared variable
+* ``AttributeError`` when cannot assign to variables
+* Names are case sensitive
 
 .. code-block:: python
 
@@ -130,9 +123,8 @@ Variables and constants
 
 Variable declaration
 --------------------
-.. highlights::
-    * Lowercase letters for variable names
-    * Underscore ``_`` is used for multi-word names
+* Lowercase letters for variable names
+* Underscore ``_`` is used for multi-word names
 
 .. code-block:: python
 
@@ -145,9 +137,8 @@ Variable declaration
 
 Constant declaration
 --------------------
-.. highlights::
-    * Uppercase letters for constants names
-    * Underscore ``_`` is used for multi-word names
+* Uppercase letters for constants names
+* Underscore ``_`` is used for multi-word names
 
 .. code-block:: python
 
@@ -156,10 +147,9 @@ Constant declaration
 
 Variables vs. constants
 -----------------------
-.. highlights::
-    * Names are case sensitive
-    * Python do not distinguish between variables and constants
-    * Python allows you to change "constants" but it's a bad practice (good IDE will tell you)
+* Names are case sensitive
+* Python do not distinguish between variables and constants
+* Python allows you to change "constants" but it's a bad practice (good IDE will tell you)
 
 .. code-block:: python
 
@@ -175,12 +165,11 @@ Variables vs. constants
 
 ``print()``
 ===========
-.. highlights::
-    * ``print()`` adds ``'\n'`` at the end
-    * Prints on the screen
-    * Variable substitution
-    * Special characters
-    * More in :ref:`Builtin Printing`
+* ``print()`` adds ``'\n'`` at the end
+* Prints on the screen
+* Variable substitution
+* Special characters
+* More in :ref:`Builtin Printing`
 
 .. code-block:: python
 

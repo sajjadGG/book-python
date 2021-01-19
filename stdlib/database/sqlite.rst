@@ -30,33 +30,15 @@ SQL Syntax
 
 Data Types
 ----------
-.. list-table:: SQLite basic data types
+.. csv-table:: SQLite basic data types
     :widths: 10, 10, 80
-    :header-rows: 1
+    :header:  "SQLite Type", "Python Type", "Description"
 
-    * - SQLite Type
-      - Python Type
-      - Description
-
-    * - ``NULL``
-      - ``None``
-      - The value is a undefined value
-
-    * - ``INTEGER``
-      - ``int``
-      - The value is a signed integer, stored in 1, 2, 3, 4, 6, or 8 bytes depending on the magnitude of the value
-
-    * - ``REAL``
-      - ``float``
-      - The value is a floating point value, stored as an 8-byte IEEE floating point number
-
-    * - ``TEXT``
-      - ``str``
-      - The value is a text string, stored using the database encoding (ie. UTF-8)
-
-    * - ``BLOB``
-      - ``bytes``
-      - The value is a blob of data, stored exactly as it was input
+    "``NULL``", "``None``", "The value is a undefined value"
+    "``INTEGER``", "``int``", "The value is a signed integer, stored in 1, 2, 3, 4, 6, or 8 bytes depending on the magnitude of the value"
+    "``REAL``", "``float``", "The value is a floating point value, stored as an 8-byte IEEE floating point number"
+    "``TEXT``", "``str``", "The value is a text string, stored using the database encoding (ie. UTF-8)"
+    "``BLOB``", "``bytes``", "The value is a blob of data, stored exactly as it was input"
 
 .. csv-table:: SQLite extra data types
     :widths: 50, 50

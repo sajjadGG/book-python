@@ -66,8 +66,7 @@ Rationale
 
 Instant Evaluation
 ==================
-.. highlights::
-    * If you need values evaluated instantly, there is no point in using generators
+* If you need values evaluated instantly, there is no point in using generators
 
 .. code-block:: python
 
@@ -79,9 +78,8 @@ Instant Evaluation
 
 Lazy Evaluation
 ===============
-.. highlights::
-    * Code do not execute instantly
-    * Sometimes code is not executed at all!
+* Code do not execute instantly
+* Sometimes code is not executed at all!
 
 .. code-block:: python
 
@@ -111,10 +109,9 @@ None of those lines will generate any numbers (util executed)!:
 
 Iterative Evaluation
 ====================
-.. highlights::
-    * Generator will calculate next number for every loop iteration
-    * Generator forgets previous number
-    * Generator doesn't know the next number
+* Generator will calculate next number for every loop iteration
+* Generator forgets previous number
+* Generator doesn't know the next number
 
 .. code-block:: python
 

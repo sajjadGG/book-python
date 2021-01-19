@@ -9,7 +9,6 @@ Co to jest Naiwny klasyfikator Bayesowski?
 Naiwny klasyfikator Bayesowski, bazujący na twierdzeniu Bayesa, nadaje się szczególnie do problemów o bardzo wielu wymiarach na wejściu. Mimo prostoty metody, często działa ona lepiej od innych, bardzo skomplikowanych metod klasyfikujących.
 
 .. math::
-    :label: naive-bayes-formula
 
     P(A|B) = \frac{P(B|A)P(A)}{P(B)}
 
@@ -49,7 +48,6 @@ Przykłady praktyczne
 Przykład: Spam
 --------------
 .. math::
-    :label: formula-bayes-spam
 
     P(spam|words) = \frac{P(words|spam)P(spam)}{P(words)}
 

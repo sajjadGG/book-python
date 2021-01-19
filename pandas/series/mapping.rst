@@ -202,15 +202,13 @@ Map
 
 Cleaning User Input
 ===================
-.. highlights::
-    * 80% of machine learning and data science is cleaning data
+* 80% of machine learning and data science is cleaning data
 
 Addresses
 ---------
-.. highlights::
-    * Is This the Same Address?
-    * This is a dump of distinct records of a single address
-    * Which one of the below is a true address?
+* Is This the Same Address?
+* This is a dump of distinct records of a single address
+* Which one of the below is a true address?
 
 .. code-block:: text
 

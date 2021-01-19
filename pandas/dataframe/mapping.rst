@@ -141,14 +141,12 @@ Source: https://stackoverflow.com/questions/19798153/difference-between-map-appl
 
 Cleaning User Input
 ===================
-.. highlights::
-    * 80% of machine learning and data science is cleaning data
+* 80% of machine learning and data science is cleaning data
 
 Is This the Same Address?
 -------------------------
-.. highlights::
-    * This is a dump of distinct records of a single address
-    * Which one of the below is a true address?
+* This is a dump of distinct records of a single address
+* Which one of the below is a true address?
 
 .. code-block:: text
 

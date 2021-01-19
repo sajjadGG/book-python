@@ -149,9 +149,8 @@ Convention
 
 Skipping Values
 ===============
-.. highlights::
-    * ``_`` is regular variable name, not a special Python syntax
-    * ``_`` by convention is used for data we don't want to access in future
+* ``_`` is regular variable name, not a special Python syntax
+* ``_`` by convention is used for data we don't want to access in future
 
 .. code-block:: python
 

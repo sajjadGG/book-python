@@ -36,11 +36,10 @@ Example
 
 New Method
 ==========
-.. highlights::
-    * the constructor
-    * solely for creating the object
-    * ``cls`` as it's first parameter
-    * when calling ``__new__()`` you actually don't have an instance yet, therefore no ``self`` exists at that moment
+* the constructor
+* solely for creating the object
+* ``cls`` as it's first parameter
+* when calling ``__new__()`` you actually don't have an instance yet, therefore no ``self`` exists at that moment
 
 .. code-block:: python
 
@@ -55,12 +54,11 @@ New Method
 
 Init Method
 ===========
-.. highlights::
-    * the initializer
-    * for initializing object with data
-    * ``self`` as it's first parameter
-    * ``__init__()`` is called after ``__new__()`` and the instance is in place, so you can use ``self`` with it
-    * it's purpose is just to alter the fresh state of the newly created instance
+* the initializer
+* for initializing object with data
+* ``self`` as it's first parameter
+* ``__init__()`` is called after ``__new__()`` and the instance is in place, so you can use ``self`` with it
+* it's purpose is just to alter the fresh state of the newly created instance
 
 .. code-block:: python
 

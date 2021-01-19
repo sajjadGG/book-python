@@ -152,11 +152,10 @@ Działania na kolekcjach
 
 ``slice()``
 -----------
-.. highlights::
-    * ``slice()`` arguments must be ``int`` (positive, negative or zero)
-    * start (inclusive), default: 0
-    * stop (exclusive), default: len(...)
-    * step, default: 1
+* ``slice()`` arguments must be ``int`` (positive, negative or zero)
+* start (inclusive), default: 0
+* stop (exclusive), default: len(...)
+* step, default: 1
 
 .. code-block:: python
 

@@ -4,9 +4,6 @@
 Metaclass
 *********
 
-
-Rationale
-=========
 .. epigraph::
 
     Metaclasses are deeper magic than 99% of users should ever worry about.
@@ -16,9 +13,11 @@ Rationale
 
     -- Tim Peters
 
-.. highlights::
-    * Object is an instance of a class
-    * Class is an instance of a Metaclass
+
+Rationale
+=========
+* Object is an instance of a class
+* Class is an instance of a Metaclass
 
 .. figure:: img/oop-metaclass-inheritance.png
 
@@ -26,7 +25,6 @@ Rationale
     Class is an instance of a Metaclass.
     Metaclass is an instance of a type.
     Type is an instance of a type.
-
 
 When a class definition is executed, the following steps occur:
 
@@ -152,13 +150,12 @@ Syntax
 
 Metaclasses
 ===========
-.. highlights::
-    * Is a callable which returns a class
-    * Instances are created by calling the class
-    * Classes are created by calling the metaclass (when it executes the ``class`` statement)
-    * Combined with the normal ``__init__`` and ``__new__`` methods
-    * Class defines how an object behaves
-    * Metaclass defines how a class behaves
+* Is a callable which returns a class
+* Instances are created by calling the class
+* Classes are created by calling the metaclass (when it executes the ``class`` statement)
+* Combined with the normal ``__init__`` and ``__new__`` methods
+* Class defines how an object behaves
+* Metaclass defines how a class behaves
 
 .. code-block:: python
 
@@ -201,16 +198,15 @@ Metaclasses
 
 Usage
 =====
-.. highlights::
-    * Metaclasses allow you to do 'extra things' when creating a class
-    * Allow customization of class instantiation
-    * Most commonly used as a class-factory
-    * Registering the new class with some registry
-    * Replace the class with something else entirely
-    * Inject logger instance
-    * Injecting static fields
-    * Ensure subclass implementation
-    * Metaclasses run when Python defines class (even if no instance is created)
+* Metaclasses allow you to do 'extra things' when creating a class
+* Allow customization of class instantiation
+* Most commonly used as a class-factory
+* Registering the new class with some registry
+* Replace the class with something else entirely
+* Inject logger instance
+* Injecting static fields
+* Ensure subclass implementation
+* Metaclasses run when Python defines class (even if no instance is created)
 
 The potential uses for metaclasses are boundless. Some ideas that have been explored include enum, logging, interface checking, automatic delegation, automatic property creation, proxies, frameworks, and automatic resource locking/synchronization. [pydocclassobject]_
 
@@ -581,8 +577,7 @@ Abstract Base Class:
 
 Metaclass replacements
 ======================
-.. highlights::
-    * Effectively accomplish the same thing
+* Effectively accomplish the same thing
 
 Inheritance and ``__init__()`` method:
 
