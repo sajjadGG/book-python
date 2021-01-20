@@ -35,6 +35,7 @@ Tests:
     28  Minnesota Timberwolves   3   9  0.250  6.5  ...  107.7   117.8 -10.1   L2  2-8
     29         Detroit Pistons   3  10  0.231    7  ...  108.9   113.6  -4.7   L1  3-7
     <BLANKLINE>
+    [30 rows x 14 columns]
 """
 
 
