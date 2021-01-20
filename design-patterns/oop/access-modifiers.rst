@@ -82,11 +82,14 @@ Public Attribute
         lastname: str
 
 
-    obj = Astronaut('Mark', 'Watney')
+    astro = Astronaut('Mark', 'Watney')
+
     vars(astro)
     # {'firstname': 'Mark', 'lastname': 'Watney'}
+
     print(astro.firstname)
     # Mark
+
     print(astro.lastname)
     # Watney
 
@@ -107,11 +110,14 @@ Protected Attribute
         _lastname: str
 
 
-    astro = Protected('Mark', 'Watney')
+    astro = Astronaut('Mark', 'Watney')
+
     vars(astro)
     # {'_firstname': 'Mark', '_lastname': 'Watney'}
+
     print(astro._firstname)       # IDE should warn: "Access to a protected member _firstname of a class"
     # Mark
+
     print(astro._lastname)        # IDE should warn: "Access to a protected member _lastname of a class"
     # Watney
 
@@ -132,24 +138,70 @@ Private Attribute
 
 
     astro = Astronaut('Mark', 'Watney')
-    vars(astro
+
+    vars(astro)
     # {'_Private__firstname': 'Mark', '_Private__lastname': 'Watney'}
+
     print(astro._Private__firstname)
     # Mark
+
     print(astro._Private__lastname)
     # Watney
+
     print(astro.__firstname)
     # Traceback (most recent call last):
     # AttributeError: 'Private' object has no attribute '__firstname'
+
     print(astro.__lastname)
     # Traceback (most recent call last):
     # AttributeError: 'Private' object has no attribute '__lastname'
 
 
+Show Attributes
+===============
+* ``vars()`` display ``obj.__dict__``
+
+.. code-block:: python
+
+    class Astronaut:
+        def __init__(self, firstname, lastname):
+            self._firstname = firstname
+            self._lastname = lastname
+            self.publicname = f'{firstname} {lastname[0]}.'
+
+
+    astro = Astronaut('Mark', 'Watney')
+
+    vars(astro)
+    # {'_firstname': 'Mark',
+    #  '_lastname': 'Watney',
+    #  'publicname': 'Mark W.'}
+
+    public_attributes = {attribute: value
+                         for attribute, value in vars(astro).items()
+                         if not attribute.startswith('_')}
+
+    protected_attributes = {attribute: value
+                            for attribute, value in vars(astro).items()
+                            if not attribute.startswith('_')}
+
+
+    print(public_attributes)
+    # {'publicname': 'Mark W.'}
+
+    print(protected_attributes)
+    # {'_firstname': 'Mark',
+    #  '_lastname': 'Watney'}
+
+
 System Attributes
 =================
-* ``__name__`` - system attribute
-* ``obj.__dict__`` - Getting dynamic fields and values:
+* ``__name__`` - Current module
+* ``obj.__class__``
+* ``obj.__dict__`` - Getting dynamic fields and values
+* ``obj.__doc__`` - Docstring
+* ``obj.__annotations__`` - Type annotations of an object
+* ``obj.__module__``
 
 .. code-block:: python
 
@@ -171,29 +223,6 @@ System Attributes
     print(astro.__dict__)
     # {'firstname': 'Mark',
     #  'lastname': 'Watney'}
-
-.. code-block:: python
-
-    class Astronaut:
-        def __init__(self, firstname, lastname):
-            self._firstname = firstname
-            self._lastname = lastname
-            self.publicname = f'{firstname} {lastname[0]}.'
-
-
-    astro = Astronaut('Mark', 'Watney')
-
-    print(astro.__dict__)
-    # {'_firstname': 'Mark',
-    #  '_lastname': 'Watney',
-    #  'publicname': 'Mark W.'}
-
-    public_attributes = {attribute: value
-                         for attribute, value in astro.__dict__.items()
-                         if not attribute.startswith('_')}
-
-    print(public_attributes)
-    # {'publicname': 'Mark W.'}
 
 
 Protected Method
@@ -247,24 +276,9 @@ Private Method
             return f'{self._firstname} {self._lastname[0]}.'
 
 
-    mark = Astronaut('Mark', 'Watney')
+    astro = Astronaut('Mark', 'Watney')
 
-    print(dir(mark))
-    # ['_Astronaut__get_fullname', '__class__', '__delattr__', '__dict__',
-    #  '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__',
-    #  '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__',
-    #  '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__',
-    #  '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__',
-    #  '__weakref__', '_firstname', '_lastname', 'get_publicname']
-
-    public_methods = [method
-                      for method in dir(astro)
-                      if not method.startswith('_')]
-
-    print(public_methods)
-    # ['get_publicname']
-
-    mark.__get_fullname()
+    astro.__get_fullname()
     # Traceback (most recent call last):
     # AttributeError: 'Astronaut' object has no attribute '__get_fullname'
 
@@ -285,24 +299,60 @@ System Method
             return 'representation'
 
 
-    mark = Astronaut('Mark', 'Watney')
+    astro = Astronaut('Mark', 'Watney')
 
-    print(str(mark))
+    print(str(astro))
     # stringification
 
-    print(repr(mark))
+    print(repr(astro))
     # representation
+
+
+Show Methods
+============
+* ``dir()``
+
+.. code-block:: python
+
+    class Astronaut:
+        def __init__(self, firstname, lastname):
+            self._firstname = firstname
+            self._lastname = lastname
+
+        def __get_fullname(self):
+            return f'{self._firstname} {self._lastname}'
+
+        def get_publicname(self):
+            return f'{self._firstname} {self._lastname[0]}.'
+
+
+    astro = Astronaut('Mark', 'Watney')
+
+    print(dir(astro))
+    # ['_Astronaut__get_fullname', '__class__', '__delattr__', '__dict__',
+    #  '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__',
+    #  '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__',
+    #  '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__',
+    #  '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__',
+    #  '__weakref__', '_firstname', '_lastname', 'get_publicname']
+
+    public_methods = [method
+                      for method in dir(astro)
+                      if not method.startswith('_')]
+
+    print(public_methods)
+    # ['get_publicname']
+
 
 
 Assignments
 ===========
-
-.. literalinclude:: ../_assignments/oop_access_a.py
-    :caption: :download:`Solution <../_assignments/oop_access_a.py>`
+.. literalinclude:: ../_assignments/oop_accessmodifiers_a.py
+    :caption: :download:`Solution <../_assignments/oop_accessmodifiers_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/oop_access_b.py
-    :caption: :download:`Solution <../_assignments/oop_access_b.py>`
+.. literalinclude:: ../_assignments/oop_accessmodifiers_b.py
+    :caption: :download:`Solution <../_assignments/oop_accessmodifiers_b.py>`
     :end-before: # Solution
 
 

@@ -47,7 +47,7 @@ OOP
 
     oop/principles.rst
     oop/dataclass.rst
-    oop/access.rst
+    oop/access-modifiers.rst
     oop/overload.rst
     oop/composition.rst
     oop/interface.rst
