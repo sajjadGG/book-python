@@ -1,5 +1,5 @@
 """
-* Assignment: OOP Interface Implement
+* Assignment: OOP Interface Protected
 * Complexity: easy
 * Lines of code: 12 lines
 * Time: 8 min
@@ -8,16 +8,23 @@ English:
     1. Use data from "Given" section (see below)
     2. Define class `Setosa` implementing `IrisInterface`
     3. Implement interface
-    4. Compare result with "Tests" section (see below)
+    4. Note, that attibute `setosa` is a `str`, and you cannot add `str` and `float`
+    5. Create protected method `_get_values()` which returns only values of `int` and `float` type attibutes
+    6. Why this method is not in interface?
+    7. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Stwórz klasę `Setosa` implementującą `IrisInterface`
     3. Zaimplementuj interfejs
-    4. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Zwróć uwagę, że atrybut `setosa` jest `str`, i że nie możesz dodać `str` i `float`
+    5. Stwórz metodę chronioną `_get_values()`, która zwraca tylko wartości atrybutów typu `int` i `float`
+    6. Dlaczego ta metoda nie jest w interfejsie?
+    7. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Hints:
-    * `vars(self).values()`
+    * `var(self.values())`
+    * `instanceof()` or `type()`
     * `mean = sum() / len()`
 
 Tests:
@@ -35,9 +42,10 @@ Tests:
     {'sepal_length': <class 'float'>,
      'sepal_width': <class 'float'>,
      'petal_length': <class 'float'>,
-     'petal_width': <class 'float'>}
+     'petal_width': <class 'float'>,
+     'setosa': <class 'str'>}
 
-    >>> setosa = Setosa(5.1, 3.5, 1.4, 0.2)
+    >>> setosa = Setosa(5.1, 3.5, 1.4, 0.2, 'setosa')
     >>> setosa.len()
     4
     >>> setosa.sum()
@@ -53,12 +61,14 @@ class IrisInterface:
     sepal_width: float
     petal_length: float
     petal_width: float
+    setosa: str
 
     def __init__(self,
                  sepal_length: float,
                  sepal_width: float,
                  petal_length: float,
-                 petal_width: float) -> None:
+                 petal_width: float,
+                 setosa: str) -> None:
         raise NotImplementedError
 
     def mean(self) -> float:
@@ -77,22 +87,29 @@ class Setosa(IrisInterface):
     sepal_width: float
     petal_length: float
     petal_width: float
+    setosa: str
 
     def __init__(self,
                  sepal_length: float,
                  sepal_width: float,
                  petal_length: float,
-                 petal_width: float) -> None:
+                 petal_width: float,
+                 setosa: str) -> None:
         self.sepal_length = sepal_length
         self.sepal_width = sepal_width
         self.petal_length = petal_length
         self.petal_width = petal_width
+        self.setosa = setosa
+
+    def _get_values(self):
+        return [x for x in vars(self).values()
+                  if isinstance(x, (float,int))]
 
     def mean(self) -> float:
         return self.sum() / self.len()
 
     def sum(self) -> float:
-        return sum(vars(self).values())
+        return sum(self._get_values())
 
     def len(self) -> int:
-        return len(vars(self))
+        return len(self._get_values())
