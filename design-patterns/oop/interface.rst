@@ -82,9 +82,6 @@ Use Cases
 ---------
 .. code-block:: python
 
-    from datetime import timedelta
-
-
     class Cache:
         def get(self, key: str) -> str:
             raise NotImplementedError
