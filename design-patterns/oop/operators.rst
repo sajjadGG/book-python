@@ -1,6 +1,6 @@
-********
-Overload
-********
+*********
+Operators
+*********
 
 
 Rationale
@@ -56,16 +56,22 @@ Numerical Operators
     :header: "Operator", "Method"
 
     "``obj + other``",     "``obj.__add__(other)``"
-    "``obj += other``",    "``obj.__iadd__(other)``"
     "``obj - other``",     "``obj.__sub__(other)``"
-    "``obj -= other``",    "``obj.__isub__(other)``"
     "``obj * other``",     "``obj.__mul__(other)``"
-    "``obj *= other``",    "``obj.__imul__(other)``"
-    "``obj / other``",     "``obj.__div__(other)``"
-    "``obj /= other``",    "``obj.__idiv__(other)``"
+    "``obj / other``",     "``obj.__truediv__(other)``"
+    "``obj // other``",    "``obj.__floordiv__(other)``"
     "``obj ** other``",    "``obj.__pow__(other)``"
     "``obj % other``",     "``obj.__mod__(other)``"
     "``obj @ other``",     "``obj.__matmul__(other)``"
+
+    "``obj += other``",    "``obj.__iadd__(other)``"
+    "``obj -= other``",    "``obj.__isub__(other)``"
+    "``obj *= other``",    "``obj.__imul__(other)``"
+    "``obj /= other``",    "``obj.__idiv__(other)``"
+    "``obj //= other``",   "``obj.__itruediv__(other)``"
+    "``obj **= other``",   "``obj.__ipow__(other)``"
+    "``obj %= other``",    "``obj.__imod__(other)``"
+    "``obj @= other``",    "``obj.__imatmul__(other)``"
 
 ``%`` (``__mod__``) operator behavior for ``int`` and ``str``:
 
@@ -132,11 +138,39 @@ Boolean Operators
     "``-obj``",           "``obj.__neg__()``"
     "``+obj``",           "``obj.__pos__()``"
     "``~obj``",           "``obj.__invert__()``"
+
     "``obj & other``",    "``obj.__and__(other)``"
     "``obj | other``",    "``obj.__or__(other)``"
     "``obj ^ other``",    "``obj.__xor__(other)``"
     "``obj << other``",   "``obj.__lshift__(other)``"
     "``obj >> other``",   "``obj.__rshift__(other)``"
+
+    "``obj &= other``",    "``obj.__iand__(other)``"
+    "``obj |= other``",    "``obj.__ior__(other)``"
+    "``obj ^= other``",    "``obj.__ixor__(other)``"
+    "``obj <<= other``",   "``obj.__ilshift__(other)``"
+    "``obj >>= other``",   "``obj.__irshift__(other)``"
+
+.. code-block:: text
+
+    1 & 1 = 1
+    1 & 0 = 0
+    0 & 1 = 0
+    0 & 0 = 0
+
+.. code-block:: text
+
+    1 | 1 = 1
+    1 | 0 = 1
+    0 | 1 = 1
+    0 | 0 = 0
+
+.. code-block:: text
+
+    1 ^ 1 = 0
+    1 ^ 0 = 1
+    0 ^ 1 = 1
+    0 ^ 0 = 0
 
 .. code-block:: python
 
@@ -251,6 +285,27 @@ Accessors Overload
     "``obj[x] = 10``", "``obj.__setitem__(x, 10)``"
     "``del obj[x]``",  "``obj.__delitem__(x)``"
     "``x in obj``",    "``obj.__contains__(x)``"
+
+
+>>> data = slice(1, 2, 3)
+>>>
+>>> data.start
+1
+>>> data.stop
+2
+>>> data.step
+3
+
+.. code-block:: python
+
+    class MyClass:
+        def __getitem__(self, item):
+            print(item)
+
+
+    my = MyClass()
+    my[1:2]
+    # slice(1, 2, None)
 
 .. code-block:: python
 
@@ -420,7 +475,7 @@ Use Case
 .. code-block:: python
 
     class Cache(dict):
-        def __init__(self, func):s
+        def __init__(self, func):
             self._func = func
 
         def __call__(self, *args):
@@ -456,21 +511,20 @@ Use Case
 
 Further Reading
 ===============
-* :ref:`Operator Library`
 * https://docs.python.org/reference/datamodel.html#emulating-numeric-types
+* https://docs.python.org/library/operator.html
 
 
 Assignments
 ===========
-
-.. literalinclude:: ../_assignments/oop_overload_a.py
-    :caption: :download:`Solution <../_assignments/oop_overload_a.py>`
+.. literalinclude:: ../_assignments/oop_operators_a.py
+    :caption: :download:`Solution <../_assignments/oop_operators_a.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/oop_overload_b.py
-    :caption: :download:`Solution <../_assignments/oop_overload_b.py>`
+.. literalinclude:: ../_assignments/oop_operators_b.py
+    :caption: :download:`Solution <../_assignments/oop_operators_b.py>`
     :end-before: # Solution
 
-.. literalinclude:: ../_assignments/oop_overload_c.py
-    :caption: :download:`Solution <../_assignments/oop_overload_c.py>`
+.. literalinclude:: ../_assignments/oop_operators_c.py
+    :caption: :download:`Solution <../_assignments/oop_operators_c.py>`
     :end-before: # Solution
