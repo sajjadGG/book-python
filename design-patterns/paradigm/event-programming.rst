@@ -1,9 +1,65 @@
 Event Programming
 =================
 
+Metaclass
+---------
+.. code-block:: python
+
+    class EventListener(type):
+        listeners: dict[str, list[callable]] = {}
+
+        @classmethod
+        def register(cls, *clsnames):
+            def wrapper(func):
+                for clsname in clsnames:
+                    if clsname not in cls.listeners:
+                        cls.listeners[clsname] = []
+                    cls.listeners[clsname] += [func]
+            return wrapper
+
+        def __new__(mcs, classname, bases, attrs):
+            for listener in mcs.listeners.get(classname, []):
+                listener.__call__(classname, bases, attrs)
+            return type(classname, bases, attrs)
+
+
+    @EventListener.register('Astronaut')
+    def hello_class(clsname, bases, attrs):
+        print(f'\n\nHello new class {clsname}\n')
+
+
+    @EventListener.register('Astronaut', 'Person')
+    def print_name(clsname, bases, attrs):
+        print('\nNew class created')
+        print('Classname:', clsname)
+        print('Bases:', bases)
+        print('Attrs:', attrs)
+
+
+    class Person(metaclass=EventListener):
+        pass
+
+
+    class Astronaut(Person, metaclass=EventListener):
+        pass
+
+    # New class created
+    # Classname: Person
+    # Bases: ()
+    # Attrs: {'__module__': '__main__', '__qualname__': 'Person'}
+    #
+    #
+    # Hello new class Astronaut
+    #
+    #
+    # New class created
+    # Classname: Astronaut
+    # Bases: (<class '__main__.Person'>,)
+    # Attrs: {'__module__': '__main__', '__qualname__': 'Astronaut'}
+
 
 Implementation
----------------------
+--------------
 .. code-block:: python
 
     class event:

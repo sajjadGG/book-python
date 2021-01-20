@@ -323,3 +323,7 @@ Assignments
 .. literalinclude:: ../_assignments/oop_abstract_b.py
     :caption: :download:`Solution <../_assignments/oop_abstract_b.py>`
     :end-before: # Solution
+
+.. literalinclude:: ../_assignments/oop_abstract_c.py
+    :caption: :download:`Solution <../_assignments/oop_abstract_b.py>`
+    :end-before: # Solution
