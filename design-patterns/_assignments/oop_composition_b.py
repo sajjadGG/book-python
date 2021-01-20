@@ -8,13 +8,21 @@ English:
     1. Use data from "Given" section (see below)
     2. Refactor class `Hero` to use composition
     3. Name mixin classes: `HasHealth` and `HasPosition`
-    3. Compare result with "Tests" section (see below)
+    4. Note, that order of inheritance is important
+        a. Try to inherit from `HasPosition`, `HasHealth`
+        b. Then `HasHealth`, `HasPosition`
+        c. What changes?
+    5. Compare result with "Tests" section (see below)
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
     2. Zrefaktoruj klasę `Hero` aby użyć kompozycji
     3. Nazwij klasy domieszkowe: `HasHealth` i `HasPosition`
-    3. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
+    4. Zwróć uwagę, że kolejność dziedziczenia ma znaczenie
+        a. Spróbuj dziedziczyć po `HasPosition`, `HasHealth`
+        b. A później `HasHealth`, `HasPosition`
+        c. Co się zmieniło?
+    5. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
 Tests:
     >>> from random import seed; seed(0)
@@ -68,15 +76,6 @@ class Hero:
     _position_x: int = 0
     _position_y: int = 0
 
-    def __post_init__(self) -> None:
-        self._health = randint(self.HEALTH_MIN, self.HEALTH_MAX)
-
-    def is_alive(self) -> bool:
-        return self._health > 0
-
-    def is_dead(self) -> bool:
-        return self._health <= 0
-
     def position_set(self, x: int, y: int) -> None:
         self._position_x = x
         self._position_y = y
@@ -86,8 +85,17 @@ class Hero:
         y = self._position_y + down - up
         self.position_set(x, y)
 
-    def position_get(self) -> tuple[int, int]:
+    def position_get(self) -> tuple:
         return self._position_x, self._position_y
+
+    def __post_init__(self) -> None:
+        self._health = randint(self.HEALTH_MIN, self.HEALTH_MAX)
+
+    def is_alive(self) -> bool:
+        return self._health > 0
+
+    def is_dead(self) -> bool:
+        return self._health <= 0
 
 
 # Solution
@@ -121,7 +129,7 @@ class HasPosition:
         y = self._position_y + down - up
         self.position_set(x, y)
 
-    def position_get(self) -> tuple[int, int]:
+    def position_get(self) -> tuple:
         return self._position_x, self._position_y
 
 

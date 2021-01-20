@@ -77,6 +77,23 @@ Numerical Operators
 
 .. code-block:: python
 
+    class int:
+        def __mod__(self, other):
+            """modulo division"""
+
+
+    class str:
+        def __mod__(self, other):
+            """str substitute"""
+
+            if type(other) is str:
+                ...
+            if type(other) is tuple:
+                ...
+            if type(other) is dict:
+                ...
+
+
     3 % 2                         # 1
     4 % 2                         # 0
 
@@ -387,7 +404,7 @@ Intuitive implementation of numpy ``array[row,col]`` accessor:
 
 Eq Works at Both Sides
 ======================
-.. code-block::
+.. code-block:: python
 
     class Astronaut:
         def __init__(self, firstname, lastname):
@@ -407,7 +424,7 @@ Eq Works at Both Sides
     print(a == c)
     # False
 
-.. code-block::
+.. code-block:: python
 
     class Astronaut:
         def __init__(self, firstname, lastname):
@@ -415,8 +432,8 @@ Eq Works at Both Sides
             self.lastname = lastname
 
         def __eq__(self, other):
-            return (self.firstname == other.firstname
-                    and self.lastname == other.lastname)
+            return (self.firstname == other.firstname)
+               and (self.lastname == other.lastname)
 
 
     class Cosmonaut:
@@ -431,7 +448,7 @@ Eq Works at Both Sides
     print(a == c)
     # True
 
-.. code-block::
+.. code-block:: python
 
     class Astronaut:
         def __init__(self, firstname, lastname):
@@ -445,8 +462,8 @@ Eq Works at Both Sides
             self.lastname = lastname
 
         def __eq__(self, other):
-            return (self.firstname == other.firstname
-                    and self.lastname == other.lastname)
+            return (self.firstname == other.firstname)
+               and (self.lastname == other.lastname)
 
 
     a = Astronaut('Mark', 'Watney')
@@ -527,4 +544,8 @@ Assignments
 
 .. literalinclude:: ../_assignments/oop_operators_c.py
     :caption: :download:`Solution <../_assignments/oop_operators_c.py>`
+    :end-before: # Solution
+
+.. literalinclude:: ../_assignments/oop_operators_d.py
+    :caption: :download:`Solution <../_assignments/oop_operators_d.py>`
     :end-before: # Solution

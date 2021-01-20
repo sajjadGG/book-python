@@ -276,18 +276,25 @@ List attributes
         print('Twardowski:', twardowski.missions)
         # Twardowski: ['Ares 1', 'Ares 2', 'Ares 3', 'Ares 4', 'Ares 5']
 
-
 .. code-block:: python
 
     from dataclasses import dataclass, field
 
 
     @dataclass
-    class Container:
-        data: list[int] = field(default_factory=list)
+    class Mission:
+        year: int
+        name: str
 
-    c = Container([1, 2, 3])
-    c.data += [4, 5, 6]
+
+    @dataclass
+    class Astronaut:
+        firstname: str
+        lastname: str
+        missions: list[Mission] = field(default_factory=list)
+
+
+    astro = Astronaut('Mark', 'Watney')
 
 
 Dataclass parameters
