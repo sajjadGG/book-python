@@ -1,5 +1,5 @@
 """
-* Assignment: Designaptterns Idiom Range
+* Assignment: Idioms Range Impl
 * Complexity: medium
 * Lines of code: 25 lines
 * Time: 21 min

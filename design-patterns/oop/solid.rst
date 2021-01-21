@@ -459,5 +459,5 @@ Good:
 
 
 Assignments
-===========
+-----------
 .. todo:: Create assignments

@@ -1,6 +1,5 @@
 """
-
-* Assignment: Function Generator Passwd
+* Assignment: Idioms Generator Passwd
 * Complexity: medium
 * Lines of code: 10 lines
 * Time: 8 min

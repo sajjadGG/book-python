@@ -1,5 +1,5 @@
 """
-* Assignment: Idioms Comprehension Train/Test Split
+* Assignment: Idioms Comprehension Train/Test
 * Complexity: medium
 * Lines of code: 9 lines
 * Time: 13 min

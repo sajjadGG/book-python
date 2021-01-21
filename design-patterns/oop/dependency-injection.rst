@@ -191,7 +191,6 @@ Dependency injection:
         print(data)
 
 
-
 Assignments
-===========
+-----------
 .. todo:: Create assignments

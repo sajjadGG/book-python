@@ -8,39 +8,69 @@ Rationale
 * Generator (lazy evaluated)
 * Built-in
 
+Syntax:
 
-Syntax
-------
-* ``filter(callable, *iterables)``
-* required ``callable`` - Function
-* required ``iterables`` - 1 or many sequence or iterator objects
+    * ``filter(callable, *iterables)``
+    * required ``callable`` - Function
+    * required ``iterables`` - 1 or many sequence or iterator objects
+
+>>> def even(x):
+>>>     return x % 2 == 0
+>>>
+>>> DATA = [0, 1, 2, 3, 4, 5, 6]
+>>>
+>>> list(x for x in DATA if even(x))
+[0, 2, 4, 6]
+>>> list(filter(even, DATA))
+[0, 2, 4, 6]
+
+>>> DATA = [0, 1, 2, 3, 4, 5, 6]
+>>>
+>>> list(x for x in DATA if x%2==0)
+[0, 2, 4, 6]
+>>>
+>>> list(filter(lambda x: x%2==0, DATA))
+[0, 2, 4, 6]
 
 
-Problem
+Pattern
 -------
+Plain code:
+
 >>> def even(x):
 ...     return x % 2 == 0
 >>>
 >>>
->>> data = [1, 2, 3, 4, 5, 6]
+>>> DATA = [1, 2, 3, 4, 5, 6]
 >>> result = []
 >>>
->>> for x in data:
+>>> for x in DATA:
 ...     if even(x):
 ...         result.append(x)
 >>>
 >>> result
 [2, 4, 6]
 
+Comprehension:
 
-Solution
---------
 >>> def even(x):
 ...     return x % 2 == 0
 >>>
 >>>
->>> data = [1, 2, 3, 4, 5, 6]
->>> result = filter(even, data)
+>>> DATA = [1, 2, 3, 4, 5, 6]
+>>> result = [x for x in DATA if x%2==0]
+>>>
+>>> result
+[2, 4, 6]
+
+Filter:
+
+>>> def even(x):
+...     return x % 2 == 0
+>>>
+>>>
+>>> DATA = [1, 2, 3, 4, 5, 6]
+>>> result = filter(even, DATA)
 >>>
 >>> list(result)
 [2, 4, 6]
@@ -52,7 +82,7 @@ Lazy Evaluation
 ...     return x % 2 == 0
 >>>
 >>>
->>> data = [1, 2, 3, 4, 5, 6]
+>>> DATA = [1, 2, 3, 4, 5, 6]
 >>> result = filter(even, data)
 >>>
 >>> next(result)

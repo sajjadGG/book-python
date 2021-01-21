@@ -1,5 +1,5 @@
 """
-* Assignment: Function Generator Iris
+* Assignment: Idioms Generator Iris
 * Complexity: easy
 * Lines of code: 8 lines
 * Time: 8 min
