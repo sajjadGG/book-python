@@ -15,7 +15,7 @@ Syntax:
     * required ``iterables`` - 1 or many sequence or iterator objects
 
 >>> def even(x):
->>>     return x % 2 == 0
+...     return x % 2 == 0
 >>>
 >>> DATA = [0, 1, 2, 3, 4, 5, 6]
 >>>
@@ -83,7 +83,7 @@ Lazy Evaluation
 >>>
 >>>
 >>> DATA = [1, 2, 3, 4, 5, 6]
->>> result = filter(even, data)
+>>> result = filter(even, DATA)
 >>>
 >>> next(result)
 2

@@ -154,7 +154,7 @@ Patterns
     data = 'mark.watney@nasa.gov'
     pattern = r'([a-z]+)\.([a-z]+)@nasa.gov'
 
-    result = match.groups() if (match := re.match(pattern, data)) else None
+    result = x.groups() if (x := re.match(pattern, data)) else None
 
     print(result)
     # ('mark', 'watney')
