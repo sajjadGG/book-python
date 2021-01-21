@@ -3,14 +3,6 @@ Assignment Expression
 *********************
 
 
-Recap
-=====
-.. code-block:: python
-
-    result = [x for x in range(0,10)]
-    result = [x for x in range(0,10) if x%2 == 0]
-
-
 Rationale
 =========
 * Since Python 3.8: :pep:`572` -- Assignment Expressions
@@ -20,101 +12,54 @@ Rationale
 During discussion of this PEP, the operator became informally known as "the walrus operator". The construct's formal name is "Assignment Expressions" (as per the PEP title), but they may also be referred to as "Named Expressions" (e.g. the CPython reference implementation uses that name internally). [pep572]_
 
 
-.. code-block:: python
-
-    DATA = ['Jan Twardowski',
-            'Melissa Lewis',
-            'Mark Watney']
-
-
-    result = [(name.split()[0], name.split()[1])
-              for name in DATA]
-    # [('Jan', 'Twardowski'),
-    #  ('Melissa', 'Lewis'),
-    #  ('Mark', 'Watney')]
-
-    result = [{'firstname': name.split()[0],
-               'lastname': name.split()[1]}
-              for name in DATA]
-    # [{'firstname': 'Jan', 'lastname': 'Twardowski'},
-    #  {'firstname': 'Melissa', 'lastname': 'Lewis'},
-    #  {'firstname': 'Mark', 'lastname': 'Watney'}]
-
-    result = [{'firstname': astro[0],
-               'lastname': astro[1]}
-              for name in DATA
-              if (astro := name.split())]
-    # [{'firstname': 'Jan', 'lastname': 'Twardowski'},
-    #  {'firstname': 'Melissa', 'lastname': 'Lewis'},
-    #  {'firstname': 'Mark', 'lastname': 'Watney'}]
-
-
 Syntax
 ======
-.. code-block:: text
-
-    result = [<RETURN>
-              for <VARIABLE1> in <ITERABLE>
-              if (<VARIABLE2> := <EXPR>)]
-
-.. code-block:: text
-
-    result = [<RETURN>
-              for <VARIABLE1> in <ITERABLE>
-              if (<VARIABLE2> := <EXPR>)
-              and (<VARIABLE3> := <EXPR>)]
-
-.. code-block:: text
-
-    result = [<RETURN>
-              for <VARIABLE1> in <ITERABLE>
-              if (<VARIABLE2> := <EXPR>)
-              and (<VARIABLE3> := <EXPR>)
-              or (<VARIABLE4> := <EXPR>)]
-
 It's not substitution for equals:
 
-    .. code-block:: python
+>>> x = 1
+>>> x
+1
 
-        a = 1
+>>> x := 1
+Traceback (most recent call last):
+SyntaxError: invalid syntax
 
-        a := 1
-        # Traceback (most recent call last):
-        # SyntaxError: invalid syntax
+>>> (x := 1)
+1
+>>> x
+1
 
-    .. code-block:: python
+>>> x = 1, 2
+>>> x
+(1, 2)
 
-        result = {}
-        result['commander'] = 'Mark Watney'
 
-        result = {}
-        result['commander'] := 'Mark Watney'
-        # Traceback (most recent call last):
-        # SyntaxError: cannot use assignment expressions with subscript
+>>> (x := 1, 2)
+(1, 2)
+>>> x
+1
 
-    .. code-block:: python
+>>> result = (x := 1, 2)
+>>> print(result)
+(1, 2)
 
-        x = 1, 2
-        print(x)
-        # (1, 2)
+>>> x = 0
+>>> x += 1
+>>> x
+1
 
-        (x := 1, 2)
-        print(x)
-        # 1
+>>> x = 0
+>>> x +:= 1
+Traceback (most recent call last):
+SyntaxError: invalid syntax
 
-        result = (x := 1, 2)
-        print(result)
-        # (1, 2)
-
-    .. code-block:: python
-
-        x = 0
-        x += 1
-
-        x = 0
-        x +:= 1
-        # Traceback (most recent call last):
-        # SyntaxError: invalid syntax
+>>> result = {}
+>>> result['commander'] = 'Mark Watney'
+>>>
+>>> result = {}
+>>> result['commander'] := 'Mark Watney'
+Traceback (most recent call last):
+SyntaxError: cannot use assignment expressions with subscript
 
 .. figure:: ../_img/unpacking-assignmentexpr-bdfl.png
 
@@ -158,23 +103,22 @@ Checking Match
 
     import re
 
-    pattern = r'\w+naut$'
-    data = 'Astronaut'
-
-    result = re.search(pattern, data)
+    DATA = 'mark.watney@nasa.gov'
+    result = re.search(r'@nasa.gov', DATA)
 
     if result:
-        print(result.group())
+        print(result)
+    # <re.Match object; span=(11, 20), match='@nasa.gov'>
 
 .. code-block:: python
 
     import re
 
-    pattern = r'\w+naut$'
-    data = 'Astronaut'
+    DATA = 'mark.watney@nasa.gov'
 
-    if (result := re.search(pattern, data)):
+    if (result := re.search(r'@nasa.gov', DATA)):
         print(result)
+    # <re.Match object; span=(11, 20), match='@nasa.gov'>
 
 Patterns
 --------
@@ -182,32 +126,92 @@ Patterns
 
     import re
 
-    pattern = r'\w+naut$'
-    data = 'Astronaut'
+    data = 'mark.watney@nasa.gov'
+    pattern = r'([a-z]+)\.([a-z]+)@nasa.gov'
 
     match = re.match(pattern, data)
-    result = match.group() if match else None
+    result = match.groups() if match else None
+
+    print(result)
+    # ('mark', 'watney')
 
 .. code-block:: python
 
     import re
 
-    pattern = r'\w+naut$'
-    data = 'Astronaut'
+    data = 'mark.watney@nasa.gov'
+    pattern = r'([a-z]+)\.([a-z]+)@nasa.gov'
 
-    result = re.match(pattern, data).group() if re.match(pattern, data) else None
+    result = re.match(pattern, data).groups() if re.match(pattern, data) else None
+
+    print(result)
+    # ('mark', 'watney')
 
 .. code-block:: python
 
     import re
 
-    pattern = r'\w+naut$'
-    data = 'Astronaut'
+    data = 'mark.watney@nasa.gov'
+    pattern = r'([a-z]+)\.([a-z]+)@nasa.gov'
 
-    result = res.group() if (res := re.match(pattern, data)) else None
+    result = match.groups() if (match := re.match(pattern, data)) else None
+
+    print(result)
+    # ('mark', 'watney')
+
 
 Comprehensions
---------------
+==============
+.. code-block:: python
+
+    result = [x for x in range(0,10)]
+    result = [x for x in range(0,10) if x%2 == 0]
+
+.. code-block:: python
+
+    DATA = ['Jan Twardowski',
+            'Melissa Lewis',
+            'Mark Watney']
+
+
+    result = [{'firstname': name.split()[0],
+               'lastname': name.split()[1]}
+              for name in DATA]
+    # [{'firstname': 'Jan', 'lastname': 'Twardowski'},
+    #  {'firstname': 'Melissa', 'lastname': 'Lewis'},
+    #  {'firstname': 'Mark', 'lastname': 'Watney'}]
+
+    result = [{'firstname': astro[0],
+               'lastname': astro[1]}
+              for name in DATA
+              if (astro := name.split())]
+    # [{'firstname': 'Jan', 'lastname': 'Twardowski'},
+    #  {'firstname': 'Melissa', 'lastname': 'Lewis'},
+    #  {'firstname': 'Mark', 'lastname': 'Watney'}]
+
+
+.. code-block:: text
+
+    result = [<RETURN>
+              for <VARIABLE1> in <ITERABLE>
+              if (<VARIABLE2> := <EXPR>)]
+
+.. code-block:: text
+
+    result = [<RETURN>
+              for <VARIABLE1> in <ITERABLE>
+              if (<VARIABLE2> := <EXPR>)
+              and (<VARIABLE3> := <EXPR>)]
+
+.. code-block:: text
+
+    result = [<RETURN>
+              for <VARIABLE1> in <ITERABLE>
+              if (<VARIABLE2> := <EXPR>)
+              and (<VARIABLE3> := <EXPR>)
+              or (<VARIABLE4> := <EXPR>)]
+
+
 .. code-block:: python
 
     DATA = ['5.8,2.7,5.1,1.9,virginica',
@@ -339,6 +343,7 @@ Use Case
     #  Versicolor(sepal_length=6.4, sepal_width=3.2, petal_length=4.5, petal_width=1.5),
     #  Setosa(sepal_length=4.7, sepal_width=3.2, petal_length=1.3, petal_width=0.2),
     #  Versicolor(sepal_length=7.0, sepal_width=3.2, petal_length=4.7, petal_width=1.4)]
+
 
 References
 ==========

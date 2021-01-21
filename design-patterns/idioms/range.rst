@@ -22,6 +22,7 @@ Problem
 -------
 >>> i = 0
 >>> result = []
+>>>
 >>> while i < 3:
 ...     result.append(i)
 ...     i += 1
@@ -44,18 +45,6 @@ Lazy Evaluation
 0
 1
 2
-
-
-Use Cases
----------
->>> list(range(0,3))
-[0, 1, 2]
->>> tuple(range(0,3))
-(0, 1, 2)
->>> set(range(0,3))
-{0, 1, 2}
->>> list(range(4,11,2))
-[4, 6, 8, 10]
 
 
 Itertools
