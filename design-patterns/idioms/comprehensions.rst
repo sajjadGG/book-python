@@ -580,8 +580,8 @@ Nested Comprehensions
  ['5.1', '3.5', '1.4', '0.2'],
  ['5.7', '2.8', '4.1', '1.3']]
 >>>
->>> result = [line.split(',')[0:4] for line in DATA]  # doctest: +NORMALIZE_WHITESPACE
->>> print(result)
+>>> result = [line.split(',')[0:4] for line in DATA]
+>>> print(result)  # doctest: +NORMALIZE_WHITESPACE
 [['5.8', '2.7', '5.1', '1.9'],
  ['5.1', '3.5', '1.4', '0.2'],
  ['5.7', '2.8', '4.1', '1.3']]
