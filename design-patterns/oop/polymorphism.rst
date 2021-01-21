@@ -46,6 +46,109 @@ Switch moves business logic to the execution place:
     # 'Default Value'
 
 
+Pattern Matching
+================
+* Since Python 3.10: :pep:`636` -- Structural Pattern Matching: Tutorial
+
+    >>> # doctest: +SKIP
+    ... def http_error(status):
+    ...     match status:
+    ...         case 400:
+    ...             return 'Bad request'
+    ...         case 401 | 403 | 405:
+    ...             return 'Not allowed'
+    ...         case 404:
+    ...             return 'Not found'
+    ...         case 418:
+    ...             return "I'm a teapot"
+    ...         case _:
+    ...             return 'Unexpected status'
+
+    >>> request = 'GET /index.html HTTP/2.0'
+    >>>
+    >>> # doctest: +SKIP
+    ... match request.split():
+    ...     case ['GET', uri, version]:
+    ...         server.get(uri)
+    ...     case ['POST', uri, version]:
+    ...         server.post(uri)
+    ...     case ['PUT', uri, version]:
+    ...         server.put(uri)
+    ...     case ['DELETE', uri, version]:
+    ...         server.delete(uri)
+
+    >>> # doctest: +SKIP
+    ... match hero.action():
+    ...    case ['move', ('up'|'down'|'left'|'right') as direction, value]:
+    ...        hero.move(direction, value)
+    ...    case ['make_damage', value]:
+    ...        hero.make_damage(value)
+    ...    case ['take_damage', value]:
+    ...        hero.take_damage(value)
+
+    >>> from enum import Enum
+    >>>
+    >>> class Key(Enum):
+    ...     ESC = 27
+    ...     ARROW_LEFT = 37
+    ...     ARROW_UP = 38
+    ...     ARROW_RIGHT = 39
+    ...     ARROW_DOWN = 40
+    >>>
+    >>> # doctest: +SKIP
+    ... match keyboard.on_key_press():
+    ...     case Key.ESC:
+    ...         game.quit()
+    ...     case Key.ARROW_LEFT:
+    ...         game.move_left()
+    ...     case Key.ARROW_UP:
+    ...         game.move_up()
+    ...     case Key.ARROW_RIGHT:
+    ...         game.move_right()
+    ...     case Key.ARROW_DOWN:
+    ...         game.move_down()
+    ...     case _:
+    ...         raise ValueError(f'Unrecognized key')
+
+    >>> from enum import Enum
+    >>>
+    >>> class Color(Enum):
+    ...     RED = 0
+    ...     BLUE = 1
+    ...     BLACK = 2
+    >>>
+    >>> # doctest: +SKIP
+    ... match color:
+    ...     case Color.RED:
+    ...         print('Soviet')
+    ...     case Color.BLUE:
+    ...         print('Allies')
+    ...     case Color.BLACK:
+    ...         print('Axis')
+
+    >>> from enum import Enum
+    >>>
+    >>> class SpaceMan(Enum):
+    ...     NASA = 'Astronaut'
+    ...     ESA = 'Astronaut'
+    ...     ROSCOSMOS = 'Cosmonaut'
+    ...     CNSA = 'Taikonaut'
+    ...     ISRO = 'GaganYatri'
+    >>>
+    >>> # doctest: +SKIP
+    ... match agency:
+    ...     case SpaceMan.NASA:
+    ...         print('USA')
+    ...     case SpaceMan.ESA:
+    ...         print('Europe')
+    ...     case SpaceMan.ROSCOSMOS:
+    ...         print('Russia')
+    ...     case SpaceMan.CNSA:
+    ...         print('China')
+    ...     case SpaceMan.ISRO:
+    ...         print('India')
+
+
 Polymorphism in a Function
 ==========================
 .. code-block:: python
