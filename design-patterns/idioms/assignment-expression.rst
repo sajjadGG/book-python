@@ -174,21 +174,25 @@ Comprehensions
             'Mark Watney']
 
 
-    result = [{'firstname': name.split()[0],
-               'lastname': name.split()[1]}
-              for name in DATA]
+    result = [{'firstname': fullname.split()[0],
+               'lastname': fullname.split()[1]}
+              for fullname in DATA]
+
+    print(result)
     # [{'firstname': 'Jan', 'lastname': 'Twardowski'},
     #  {'firstname': 'Melissa', 'lastname': 'Lewis'},
     #  {'firstname': 'Mark', 'lastname': 'Watney'}]
 
-    result = [{'firstname': astro[0],
-               'lastname': astro[1]}
-              for name in DATA
-              if (astro := name.split())]
+    result = [{'firstname': name[0], 'lastname': name[1]}
+              for fullname in DATA
+              if (name := fullname.split())]
+
+    print(result)
     # [{'firstname': 'Jan', 'lastname': 'Twardowski'},
     #  {'firstname': 'Melissa', 'lastname': 'Lewis'},
     #  {'firstname': 'Mark', 'lastname': 'Watney'}]
 
+Syntax:
 
 .. code-block:: text
 
@@ -211,38 +215,56 @@ Comprehensions
               and (<VARIABLE3> := <EXPR>)
               or (<VARIABLE4> := <EXPR>)]
 
+>>> DATA = ['5.8,2.7,5.1,1.9,virginica',
+...         '5.1,3.5,1.4,0.2,setosa',
+...         '5.7,2.8,4.1,1.3,versicolor']
+>>>
+>>> result = []
+>>>
+>>> for line in DATA:
+...     line = line.split(',')
+...     result.append(line[0:4])
+>>>
+>>> print(result)  # doctest: +NORMALIZE_WHITESPACE
+[['5.8', '2.7', '5.1', '1.9'],
+ ['5.1', '3.5', '1.4', '0.2'],
+ ['5.7', '2.8', '4.1', '1.3']]
+>>>
+>>> result = [line.split(',')[0:4] for line in DATA]  # doctest: +NORMALIZE_WHITESPACE
+>>> print(result)
+[['5.8', '2.7', '5.1', '1.9'],
+ ['5.1', '3.5', '1.4', '0.2'],
+ ['5.7', '2.8', '4.1', '1.3']]
 
-.. code-block:: python
-
-    DATA = ['5.8,2.7,5.1,1.9,virginica',
-            '5.1,3.5,1.4,0.2,setosa',
-            '5.7,2.8,4.1,1.3,versicolor']
-
-    result = []
-
-    for line in DATA:
-        X = [float(x) for x in line.split(',')[0:4]]
-        result.append(X)
-
-    print(result)
-    # [[5.8, 2.7, 5.1, 1.9],
-    #  [5.1, 3.5, 1.4, 0.2],
-    #  [5.7, 2.8, 4.1, 1.3]]
-
-.. code-block:: python
-
-    DATA = ['5.8,2.7,5.1,1.9,virginica',
-            '5.1,3.5,1.4,0.2,setosa',
-            '5.7,2.8,4.1,1.3,versicolor']
-
-    result = [[float(x) for x in X]
-              for line in DATA
-              if (X := line.split(',')[0:4])]
-
-    print(result)
-    # [[5.8, 2.7, 5.1, 1.9],
-    #  [5.1, 3.5, 1.4, 0.2],
-    #  [5.7, 2.8, 4.1, 1.3]]
+>>> DATA = ['5.8,2.7,5.1,1.9,virginica',
+...         '5.1,3.5,1.4,0.2,setosa',
+...         '5.7,2.8,4.1,1.3,versicolor']
+>>>
+>>> result = []
+>>>
+>>> for line in DATA:
+...     X = [float(x) for x in line.split(',')[0:4]]
+...     result.append(X)
+>>>
+>>> print(result)  # doctest: +NORMALIZE_WHITESPACE
+[[5.8, 2.7, 5.1, 1.9],
+ [5.1, 3.5, 1.4, 0.2],
+ [5.7, 2.8, 4.1, 1.3]]
+>>>
+>>> result = [[float(x) for x in line.split(',')[0:4]]
+...           for line in DATA]
+>>> print(result)  # doctest: +NORMALIZE_WHITESPACE
+[[5.8, 2.7, 5.1, 1.9],
+ [5.1, 3.5, 1.4, 0.2],
+ [5.7, 2.8, 4.1, 1.3]]
+>>>
+>>> result = [[float(x) for x in X]
+...           for line in DATA
+...           if (X := line.split(',')[0:4])]
+>>> print(result)  # doctest: +NORMALIZE_WHITESPACE
+[[5.8, 2.7, 5.1, 1.9],
+ [5.1, 3.5, 1.4, 0.2],
+ [5.7, 2.8, 4.1, 1.3]]
 
 
 Use Case

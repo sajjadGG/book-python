@@ -96,12 +96,14 @@ Generator Expression:
 Comprehensions or Generator Expression
 --------------------------------------
 >>> data = [x for x in range(0,5)]
+>>>
 >>> list(data)
 [0, 1, 2, 3, 4]
 >>> print(data)
 [0, 1, 2, 3, 4]
 
 >>> data = (x for x in range(0,5))
+>>>
 >>> list(data)
 [0, 1, 2, 3, 4]
 >>> print(data)  # doctest: +ELLIPSIS
@@ -171,8 +173,10 @@ List Comprehension
 Pattern:
 
 >>> result = []
+>>>
 >>> for x in range(0,5):
 ...     result.append(x)
+>>>
 >>> print(result)
 [0, 1, 2, 3, 4]
 
@@ -180,6 +184,7 @@ List comprehension:
 
 >>> [x for x in range(0,5)]
 [0, 1, 2, 3, 4]
+>>>
 >>> list(x for x in range(0,5))
 [0, 1, 2, 3, 4]
 
@@ -215,8 +220,10 @@ Set Comprehension
 Pattern:
 
 >>> result = set()
+>>>
 >>> for x in range(0,5):
 ...     result.add(x)
+>>>
 >>> print(result)
 {0, 1, 2, 3, 4}
 
@@ -224,6 +231,7 @@ Set comprehension:
 
 >>> {x for x in range(0,5)}
 {0, 1, 2, 3, 4}
+>>>
 >>> set(x for x in range(0,5))
 {0, 1, 2, 3, 4}
 
@@ -231,7 +239,7 @@ Examples:
 
 >>> {x+10 for x in range(0, 5)}
 {10, 11, 12, 13, 14}
-
+>>>
 >>> set(x+10 for x in range(0, 5))
 {10, 11, 12, 13, 14}
 
@@ -252,6 +260,7 @@ Dict comprehension:
 
 >>> {x:x for x in range(0,5)}
 {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
+>>>
 >>> dict((x,x) for x in range(0,5))
 {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
 
@@ -259,7 +268,7 @@ Modify dict key:
 
 >>> {x+10:x for x in range(0,5)}
 {10: 0, 11: 1, 12: 2, 13: 3, 14: 4}
-
+>>>
 >>> dict((x+10,x) for x in range(0,5))
 {10: 0, 11: 1, 12: 2, 13: 3, 14: 4}
 
@@ -267,7 +276,7 @@ Modify dict value:
 
 >>> {x:x+10 for x in range(0,5)}
 {0: 10, 1: 11, 2: 12, 3: 13, 4: 14}
-
+>>>
 >>> dict((x,x+10) for x in range(0,5))
 {0: 10, 1: 11, 2: 12, 3: 13, 4: 14}
 
@@ -275,7 +284,7 @@ Modify dict key and value:
 
 >>> {x+10:x+10 for x in range(0,5)}
 {10: 10, 11: 11, 12: 12, 13: 13, 14: 14}
-
+>>>
 >>> dict((x+10,x+10) for x in range(0,5))
 {10: 10, 11: 11, 12: 12, 13: 13, 14: 14}
 
@@ -285,8 +294,10 @@ Tuple Comprehension
 Pattern:
 
 >>> result = tuple()
+>>>
 >>> for x in range(0,5):
 ...     result += (x,)
+>>>
 >>> print(result)
 (0, 1, 2, 3, 4)
 
@@ -307,6 +318,7 @@ Example:
 
 >>> (x+10 for x in range(0,5))  # doctest: +ELLIPSIS
 <generator object <genexpr> at 0x...>
+
 >>> result = (x+10 for x in range(0,5))
 >>> tuple(result)
 (10, 11, 12, 13, 14)
@@ -316,11 +328,13 @@ Appending
 ---------
 >>> result = [1, 2, 3]
 >>> result += [x for x in range(4,10)]
->>> result
+>>>
+>>> print(result)
 [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 >>> result = [1, 2, 3] + [x for x in range(4,10)]
->>> result
+>>>
+>>> print(result)
 [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 
@@ -347,6 +361,7 @@ Using ``list`` comprehension for filtering:
 ...         (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ...         (7.0, 3.2, 4.7, 1.4, 'versicolor')]
 >>>
+>>>
 >>> [features for *features,label in DATA]  # doctest: +NORMALIZE_WHITESPACE
 [['Sepal length', 'Sepal width', 'Petal length', 'Petal width'],
  [5.8, 2.7, 5.1, 1.9],
@@ -356,6 +371,7 @@ Using ``list`` comprehension for filtering:
  [6.4, 3.2, 4.5, 1.5],
  [4.7, 3.2, 1.3, 0.2],
  [7.0, 3.2, 4.7, 1.4]]
+>>>
 >>> [tuple(features) for *features,label in DATA]  # doctest: +NORMALIZE_WHITESPACE
 [('Sepal length', 'Sepal width', 'Petal length', 'Petal width'),
  (5.8, 2.7, 5.1, 1.9),
@@ -391,6 +407,7 @@ Example 1:
 [0, 2, 4]
 
 >>> result = [x for x in range(0,5) if x%2==0]
+>>>
 >>> print(result)
 [0, 2, 4]
 
@@ -404,6 +421,7 @@ Example 2:
 ...         (6.4, 3.2, 4.5, 1.5, 'versicolor'),
 ...         (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ...         (7.0, 3.2, 4.7, 1.4, 'versicolor')]
+>>>
 >>>
 >>> [features for *features,label in DATA if label=='setosa']  # doctest: +NORMALIZE_WHITESPACE
 [[5.1, 3.5, 1.4, 0.2],
@@ -446,10 +464,11 @@ Single value leaking:
 >>> for x in range(0,5):
 ...     result.append(x)
 >>>
->>> x
+>>> print(x)
 4
 
 >>> result = [x for x in range(0,5)]
+>>>
 >>> print(x)   # doctest: +SKIP
 Traceback (most recent call last):
 NameError: name 'x' is not defined
@@ -467,6 +486,7 @@ Multiple values leaking:
 >>>
 >>> print(role)
 botanist
+>>>
 >>> print(astronaut)
 Mark Watney
 
@@ -479,13 +499,14 @@ Mark Watney
 >>> print(role)  # doctest: +SKIP
 Traceback (most recent call last):
 NameError: name 'role' is not defined
+>>>
 >>> print(astronaut)  # doctest: +SKIP
 Traceback (most recent call last):
 NameError: name 'astronaut' is not defined
 
 
-Nested
-------
+Nested Loops
+------------
 >>> DATA = {
 ...     6: ['Doctorate', 'Prof-school'],
 ...     5: ['Masters', 'Bachelor', 'Engineer'],
@@ -494,7 +515,9 @@ Nested
 ...     2: ['Primary School'],
 ...     1: ['Kindergarten']}
 >>>
+>>>
 >>> result = {}
+>>>
 >>> for i, titles in DATA.items():
 ...       for title in titles:
 ...           result[title] = str(i)
@@ -518,8 +541,14 @@ Nested
 ...     2: ['Primary School'],
 ...     1: ['Kindergarten']}
 >>>
+>>>
 >>> result = {t: str(i) for i, ts in DATA.items() for t in ts}
+>>>
 >>> result = {title: str(i) for i, titles in DATA.items() for title in titles}
+>>>
+>>> result = {title: str(i)
+...           for i, titles in DATA.items()
+...           for title in titles}
 >>>
 >>> print(result)  # doctest: +NORMALIZE_WHITESPACE
 {'Doctorate': '6',
@@ -531,6 +560,54 @@ Nested
  'Junior High': '3',
  'Primary School': '2',
  'Kindergarten': '1'}
+
+
+Nested Comprehensions
+---------------------
+>>> DATA = ['5.8,2.7,5.1,1.9,virginica',
+...         '5.1,3.5,1.4,0.2,setosa',
+...         '5.7,2.8,4.1,1.3,versicolor']
+>>>
+>>>
+>>> result = []
+>>>
+>>> for line in DATA:
+...     line = line.split(',')
+...     result.append(line[0:4])
+>>>
+>>> print(result)  # doctest: +NORMALIZE_WHITESPACE
+[['5.8', '2.7', '5.1', '1.9'],
+ ['5.1', '3.5', '1.4', '0.2'],
+ ['5.7', '2.8', '4.1', '1.3']]
+>>>
+>>> result = [line.split(',')[0:4] for line in DATA]  # doctest: +NORMALIZE_WHITESPACE
+>>> print(result)
+[['5.8', '2.7', '5.1', '1.9'],
+ ['5.1', '3.5', '1.4', '0.2'],
+ ['5.7', '2.8', '4.1', '1.3']]
+
+>>> DATA = ['5.8,2.7,5.1,1.9,virginica',
+...         '5.1,3.5,1.4,0.2,setosa',
+...         '5.7,2.8,4.1,1.3,versicolor']
+>>>
+>>>
+>>> result = []
+>>>
+>>> for line in DATA:
+...     X = [float(x) for x in line.split(',')[0:4]]
+...     result.append(X)
+>>>
+>>> print(result)  # doctest: +NORMALIZE_WHITESPACE
+[[5.8, 2.7, 5.1, 1.9],
+ [5.1, 3.5, 1.4, 0.2],
+ [5.7, 2.8, 4.1, 1.3]]
+>>>
+>>> result = [[float(x) for x in line.split(',')[0:4]]
+...           for line in DATA]
+>>> print(result)  # doctest: +NORMALIZE_WHITESPACE
+[[5.8, 2.7, 5.1, 1.9],
+ [5.1, 3.5, 1.4, 0.2],
+ [5.7, 2.8, 4.1, 1.3]]
 
 
 Indent and Whitespaces
@@ -590,7 +667,7 @@ Increment and decrement:
 
 >>> [x+1 for x in range(0,5)]
 [1, 2, 3, 4, 5]
-
+>>>
 >>> [x-1 for x in range(0,5)]
 [-1, 0, 1, 2, 3]
 
@@ -598,7 +675,7 @@ Sum:
 
 >>> sum(x for x in range(0,5))
 10
-
+>>>
 >>> sum(x for x in range(0,5) if x%2==0)
 6
 
@@ -606,13 +683,13 @@ Power:
 
 >>> [pow(x,2) for x in range(0,5)]
 [0, 1, 4, 9, 16]
-
+>>>
 >>> [x**2 for x in range(0,5)]
 [0, 1, 4, 9, 16]
-
+>>>
 >>> [pow(2,x) for x in range(0,5)]
 [1, 2, 4, 8, 16]
-
+>>>
 >>> [2**x for x in range(0,5)]
 [1, 2, 4, 8, 16]
 
@@ -620,7 +697,7 @@ Even or Odd:
 
 >>> [x for x in range(0,5)]
 [0, 1, 2, 3, 4]
-
+>>>
 >>> [x%2==0 for x in range(0,5)]
 [True, False, True, False, True]
 
@@ -646,6 +723,7 @@ Filtering:
 ...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
 ...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
 >>>
+>>>
 >>> astronauts = [person
 ...               for person in DATA
 ...               if person['is_astronaut']]
@@ -661,6 +739,7 @@ Filtering:
 ...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
 ...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
 >>>
+>>>
 >>> astronauts = [person['name']
 ...               for person in DATA
 ...               if person['is_astronaut']]
@@ -673,6 +752,7 @@ Filtering:
 ...         {'is_astronaut': False, 'name': 'José Jiménez'},
 ...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
 ...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
+>>>
 >>>
 >>> astronauts = [{'firstname': person['name'].split()[0],
 ...                'lastname': person['name'].split()[1]}
@@ -690,6 +770,7 @@ Filtering:
 ...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
 ...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
 >>>
+>>>
 >>> astronauts = [{'firstname': person['name'].split()[0].capitalize(),
 ...                'lastname': person['name'].split()[1][0]+'.'}
 ...                for person in DATA
@@ -706,6 +787,7 @@ Filtering:
 ...         {'is_astronaut': False, 'name': 'José Jiménez'},
 ...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
 ...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
+>>>
 >>>
 >>> astronauts = [{'firstname': fname, 'lastname': lname}
 ...                for person in DATA
@@ -725,6 +807,7 @@ Filtering:
 ...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
 ...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
 >>>
+>>>
 >>> astronauts = [f'{fname} {lname[0]}.'
 ...               for person in DATA
 ...               if person['is_astronaut']
@@ -732,32 +815,11 @@ Filtering:
 ...               and (fname := fullname[0].capitalize())
 ...               and (lname := fullname[1].upper())]
 >>>
+>>>
 >>> print(astronauts)
 ['Jan T.', 'Mark W.', 'Melissa L.']
 
 More information in :ref:`Assignment Expression`
-
-Quick parsing lines:
-
->>> DATA = ['5.8,2.7,5.1,1.9,virginica',
-...         '5.1,3.5,1.4,0.2,setosa',
-...         '5.7,2.8,4.1,1.3,versicolor']
->>>
->>> result = []
->>>
->>> for row in DATA:
-...     row = row.split(',')
-...     result.append(row)
->>>
->>> print(result)  # doctest: +NORMALIZE_WHITESPACE
-[['5.8', '2.7', '5.1', '1.9', 'virginica'],
- ['5.1', '3.5', '1.4', '0.2', 'setosa'],
- ['5.7', '2.8', '4.1', '1.3', 'versicolor']]
->>>
->>> [row.split(',') for row in DATA]  # doctest: +NORMALIZE_WHITESPACE
-[['5.8', '2.7', '5.1', '1.9', 'virginica'],
- ['5.1', '3.5', '1.4', '0.2', 'setosa'],
- ['5.7', '2.8', '4.1', '1.3', 'versicolor']]
 
 Reversing ``dict`` keys with values:
 
@@ -766,9 +828,11 @@ Reversing ``dict`` keys with values:
 >>> list(DATA.items())  # doctest: +NORMALIZE_WHITESPACE
 [('a', 1),
  ('b', 2)]
+>>>
 >>> [(k,v) for k,v in DATA.items()]  # doctest: +NORMALIZE_WHITESPACE
 [('a', 1),
  ('b', 2)]
+>>>
 >>> [(v,k) for k,v in DATA.items()]  # doctest: +NORMALIZE_WHITESPACE
 [(1, 'a'),
  (2, 'b')]
@@ -788,6 +852,7 @@ All and Any
 -----------
 >>> all(x for x in range(0,5))
 False
+>>>
 >>> any(x for x in range(0,5))
 True
 
@@ -796,6 +861,7 @@ True
 ...         {'is_astronaut': False, 'name': 'José Jiménez'},
 ...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
 ...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
+>>>
 >>>
 >>> if all(person['is_astronaut'] for person in DATA):
 ...     print('Everyone is astronaut')
@@ -808,6 +874,7 @@ Not everyone is astronaut
 ...         {'is_astronaut': False, 'name': 'José Jiménez'},
 ...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
 ...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
+>>>
 >>>
 >>> if any(person['is_astronaut'] for person in DATA):
 ...     print('At least one person is astronaut')
@@ -823,6 +890,7 @@ At least one person is astronaut
 ...         (6.4, 3.2, 4.5, 1.5, 'versicolor'),
 ...         (4.7, 3.2, 1.3, 0.2, 'setosa'),
 ...         (7.0, 3.2, 4.7, 1.4, 'versicolor')]
+>>>
 >>>
 >>> all(observation > 1.0
 ...     for *features, label in DATA[1:]
@@ -841,13 +909,15 @@ Conditional Expression
 ----------------------
 >>> result = ['even' if x % 2 == 0 else 'odd'
 ...           for x in range(0,10)]
->>> result
+>>>
+>>> print(result)
 ['even', 'odd', 'even', 'odd', 'even', 'odd', 'even', 'odd', 'even', 'odd']
 
 >>> result = ['even' if x % 2 == 0 else 'odd'
 ...           for x in range(0,10)
 ...           if x % 3 == 0]
->>> result
+>>>
+>>> print(result)
 ['even', 'odd', 'even', 'odd']
 
 
