@@ -178,9 +178,9 @@ Pattern:
 
 List comprehension:
 
->>> [x for x in range(0,5) if x%2==0]
+>>> [x for x in range(0,5)]
 [0, 1, 2, 3, 4]
->>> list(x for x in range(0,5) if x%2==0)
+>>> list(x for x in range(0,5))
 [0, 1, 2, 3, 4]
 
 Examples:
@@ -241,17 +241,19 @@ Dict Comprehension
 Pattern:
 
 >>> result = dict()
+>>>
 >>> for x in range(0,5):
 ...     result.update({x:x})
+>>>
 >>> print(result)
-{0:0, 1:1, 2:2, 3:3, 4:4}
+{0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
 
 Dict comprehension:
 
->>> {x:x**2 for x in range(0,5)}
-{0:0, 1:1, 2:2, 3:3, 4:4}
->>> dict((x,x**2) for x in range(0,5))
-{0:0, 1:1, 2:2, 3:3, 4:4}
+>>> {x:x for x in range(0,5)}
+{0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
+>>> dict((x,x) for x in range(0,5))
+{0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
 
 Modify dict key:
 
@@ -312,11 +314,13 @@ Example:
 
 Appending
 ---------
->>> result = [1,2,3]
+>>> result = [1, 2, 3]
 >>> result += [x for x in range(4,10)]
+>>> result
 [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
->>> result = [1,2,3] + [x for x in range(4,10)]
+>>> result = [1, 2, 3] + [x for x in range(4,10)]
+>>> result
 [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 
@@ -428,9 +432,55 @@ Using ``list`` comprehension for filtering with more complex expression:
 ...         return False
 >>>
 >>>
->>> [tuple(X) for *X,y in DATA if is_setosa(y)]  # doctest: +NORMALIZE_WHITESPACE
-[(5.1, 3.5, 1.4, 0.2),
- (4.7, 3.2, 1.3, 0.2)]
+>>> [X for *X,y in DATA if is_setosa(y)]  # doctest: +NORMALIZE_WHITESPACE
+[[5.1, 3.5, 1.4, 0.2],
+ [4.7, 3.2, 1.3, 0.2]]
+
+Value Leaking
+-------------
+Single value leaking:
+
+>>> result = []
+>>>
+>>> for x in range(0,5):
+...     result.append(x)
+>>>
+>>> x
+4
+
+>>> result = [x for x in range(0,5)]
+>>> print(x)   # doctest: +SKIP
+Traceback (most recent call last):
+NameError: name 'x' is not defined
+
+Multiple values leaking:
+
+>>> DATA = {'commander': 'Melissa Lewis',
+...         'pilot': 'Rick Martinez',
+...         'botanist': 'Mark Watney'}
+>>>
+>>> result = []
+>>>
+>>> for role, astronaut in DATA.items():
+...     result.append((role, astronaut))
+>>>
+>>> print(role)
+botanist
+>>> print(astronaut)
+Mark Watney
+
+>>> DATA = {'commander': 'Melissa Lewis',
+...         'pilot': 'Rick Martinez',
+...         'botanist': 'Mark Watney'}
+>>>
+>>> result = [(role, astronaut) for role, astronaut in DATA.items()]
+>>>
+>>> print(role)  # doctest: +SKIP
+Traceback (most recent call last):
+NameError: name 'role' is not defined
+>>> print(astronaut)  # doctest: +SKIP
+Traceback (most recent call last):
+NameError: name 'astronaut' is not defined
 
 
 Nested
@@ -458,15 +508,6 @@ Nested
  'Junior High': '3',
  'Primary School': '2',
  'Kindergarten': '1'}
->>>
->>> print(i)
-1
->>>
->>> print(title)
-Kindergarten
->>>
->>> print(titles)
-['Kindergarten']
 
 >>> DATA = {
 ...     6: ['Doctorate', 'Prof-school'],
@@ -489,21 +530,6 @@ Kindergarten
  'Junior High': '3',
  'Primary School': '2',
  'Kindergarten': '1'}
->>>
->>> # doctest: +SKIP
-... print(i)
-Traceback (most recent call last):
-NameError: name 'i' is not defined
->>>
->>> # doctest: +SKIP
-... print(title)
-Traceback (most recent call last):
-NameError: name 'title' is not defined
->>>
->>> # doctest: +SKIP
-... print(titles)
-Traceback (most recent call last):
-NameError: name 'titles' is not defined
 
 
 Indent and Whitespaces

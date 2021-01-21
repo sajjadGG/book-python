@@ -53,6 +53,40 @@ Rationale
 
 Generator Function
 ==================
+Function:
+
+>>> def even(data):
+...     result = []
+...     for x in data:
+...         if x % 2 == 0:
+...             result.append(x)
+...     return result
+...
+...
+>>> DATA = [0, 1, 2, 3, 4, 5]
+>>>
+>>> result = even(DATA)
+>>> print(result)
+[0, 2, 4]
+
+Generator:
+
+>>> def even(data):
+...     for x in data:
+...         if x % 2 == 0:
+...             yield x
+...
+>>> DATA = [0, 1, 2, 3, 4, 5]
+>>>
+>>> result = even(DATA)
+>>> print(result)  # doctest: +ELLIPSIS
+<generator object even at 0x...>
+>>> list(result)
+[0, 2, 4]
+
+
+Generator Filter
+================
 .. code-block:: python
 
     DATA = [('Sepal length', 'Sepal width', 'Petal length', 'Petal width', 'Species'),
