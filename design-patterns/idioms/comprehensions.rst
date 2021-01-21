@@ -436,6 +436,7 @@ Using ``list`` comprehension for filtering with more complex expression:
 [[5.1, 3.5, 1.4, 0.2],
  [4.7, 3.2, 1.3, 0.2]]
 
+
 Value Leaking
 -------------
 Single value leaking:
