@@ -291,9 +291,8 @@ Others
 Functools
 ---------
 * https://docs.python.org/3/library/functools.html
-* ``reduce(function, iterable[, initializer])``
-
->>> from functools import *
+* ``from functools import *``
+* ``functools.reduce(function, iterable[, initializer])``
 
 
 Itertools
