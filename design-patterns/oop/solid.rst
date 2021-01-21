@@ -4,17 +4,25 @@ S.O.L.I.D.
 
 Recap
 -----
-* Rigidity - mixing higher level with low level implementation
-* Fragility - if you change something, some other thing will break
-* Reusability
-* Coupling - interdependencies a.k.a "spaghetti code"
-* K.I.S.S.
-* D.R.Y.
-* OOP:
+OOP Principles:
 
     * Encapsulation
-    * Polymorphism
+    * Abstraction
     * Inheritance
+    * Polymorphism
+
+Problems:
+
+    * Rigidity - mixing higher level with low level implementation
+    * Fragility - if you change something, some other thing will break
+    * Coupling - interdependencies a.k.a "spaghetti code"
+    * No Reusability - cannot reuse code, and need to implement from scratch
+
+Patterns:
+
+    * K.I.S.S. - Keep It Simple Stupid
+    * Y.A.G.N.I. - You Ain't Gonna Need It
+    * D.R.Y. - Do not Repeat Yourself
 
 
 Rationale

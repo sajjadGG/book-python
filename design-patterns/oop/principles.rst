@@ -18,22 +18,40 @@ Encapsulation
 
 .. code-block:: python
 
-    class KelvinTemperature:
-        _value: float
+    astro_firstname = 'Mark'
+    astro_lastname = 'Watney'
 
-        def set_value(self, value: float) -> None:
-            if value >= 0:
-                self._value = value
+.. code-block:: python
 
-        def get_value(self) -> float:
-            return self._value
+    astro = ('Mark', 'Watney')
+
+.. code-block:: python
+
+    astro = {'firstname': 'Mark', 'lastname': 'Watney'}
+
+.. code-block:: python
+
+    class Astronaut:
+        firstname: str
+        lastname: str
+
+.. code-block:: python
+
+    class Astronaut:
+        firstname: str
+        lastname: str
+
+        def __init__(self, firstname, lastname)
+            self.firstname = firstname
+            self.lastname = lastname
+
+        def get_name(self):
+            return f'{self.firstname} {self.lastname}'
 
 
-    t = KelvinTemperature()
-    t.set_value(1)
-    t.set_value(0)
-    t.set_value(-1)
-    t.get_value()
+    astro = Astronaut('Mark', 'Watney')
+    astro.get_name()
+    # 'Mark Watney'
 
 .. code-block:: python
 
@@ -52,6 +70,36 @@ Encapsulation
     astro = Astronaut()
     astro.set_name('Mark Watney')
     astro.get_name()
+
+.. code-block:: python
+
+    class KelvinTemperature:
+        kelvin: float
+
+
+    t = KelvinTemperature()
+    t.kelvin = -1
+    print(t.kelvin)
+    # -1
+
+.. code-block:: python
+
+    class KelvinTemperature:
+        _value: float
+
+        def set_value(self, value):
+            if value >= 0:
+                self._value = value
+            else:
+                raise ValueError('Negative Kelvin')
+
+
+    t = KelvinTemperature()
+
+    t.set_value(-1)
+    # Traceback (most recent call last):
+    # ValueError: Negative Kelvin
+
 
 
 Abstraction

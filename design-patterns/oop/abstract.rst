@@ -314,6 +314,11 @@ Abstract Class:
     # TypeError: Can't instantiate abstract class Document with abstract method display
 
 
+Further Reading
+---------------
+* https://docs.python.org/dev/library/collections.abc.html#collections-abstract-base-classes
+
+
 Assignments
 -----------
 .. literalinclude:: ../_assignments/oop_abstract_a.py
