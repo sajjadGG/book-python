@@ -1,6 +1,14 @@
 Loop Comprehension
 ==================
 
+
+Syntax
+------
+.. code-block:: python
+
+    result = [<RETURN> for <VARIABLE> in <ITERABLE>]
+
+
 Recap
 -----
 >>> result = []
@@ -11,16 +19,6 @@ Recap
 >>> print(result)
 [0, 1, 2, 3, 4]
 
-
-Syntax
-------
-.. code-block:: python
-
-    result = [<RETURN> for <VARIABLE> in <ITERABLE>]
-
-
-Example
--------
 >>> result = [x for x in range(0,5)]
 >>>
 >>> print(result)
