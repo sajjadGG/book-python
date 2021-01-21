@@ -25,7 +25,6 @@ Protocol
         def __next__(self):
             if self._current >= len(self.values):
                 raise StopIteration
-
             element = self.values[self._current]
             self._current += 1
             return element
@@ -50,7 +49,6 @@ Example
         def __next__(self):
             if self._current >= len(self.members):
                 raise StopIteration
-
             result = self.members[self._current]
             self._current += 1
             return result
@@ -207,7 +205,6 @@ Iterator implementation:
         def __next__(self):
             if self._current >= len(self._parked_cars):
                 raise StopIteration
-
             element = self._parked_cars[self._current]
             self._current += 1
             return element
@@ -364,7 +361,6 @@ Standard Library Itertools
         def __next__(self):
             if self._current >= len(self.values):
                 raise StopIteration
-
             element = self.values[self._current]
             self._current += 1
             return element
