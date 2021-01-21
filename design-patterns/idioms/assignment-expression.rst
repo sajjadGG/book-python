@@ -372,4 +372,6 @@ References
 
 Assignments
 ===========
-.. todo:: Create assignments
+.. literalinclude:: ../_assignments/idioms_assignmentexpr_a.py
+    :caption: :download:`Solution <../_assignments/idioms_assignmentexpr_a.py>`
+    :end-before: # Solution

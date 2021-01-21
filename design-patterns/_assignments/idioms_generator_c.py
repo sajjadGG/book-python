@@ -24,6 +24,11 @@ Polish:
     7. Porównaj wyniki obu używając `sys.getsizeof()`
     8. Porównaj wyniki z sekcją "Tests" (patrz poniżej)
 
+Hint:
+    * `str.splitlines()`
+    * `str.strip()`
+    * `str.split()`
+
 Tests:
     >>> from sys import getsizeof
     >>> from inspect import isfunction, isgeneratorfunction
@@ -80,12 +85,3 @@ def generator(data):
         username, _, uid, *_ = line.split(':')
         if int(uid) < 1000:
             yield username
-
-
-# def comprehension(data: str):
-#     return [username
-#             for row in data.splitlines()
-#             if (values := row.strip().split(':'))
-#             and (username := values[0])
-#             and (uid := values[2])
-#             and int(uid) < 1000]
