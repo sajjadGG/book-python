@@ -20,6 +20,7 @@ Problem
 >>> result = []
 >>>
 >>> i = 0
+>>>
 >>> for month in months:
 ...     result.append((i, month))
 ...     i += 1

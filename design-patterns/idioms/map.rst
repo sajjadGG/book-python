@@ -24,7 +24,7 @@ Problem
 >>> for x in data:
 ...     result.append(float(x))
 >>>
->>> result
+>>> print(result)
 [1.0, 2.0, 3.0]
 
 
@@ -57,26 +57,27 @@ Use Cases
 ---------
 Built-in functions:
 
->>> data = [1, 2, 3]
->>> result = map(float, data)
+>>> DATA = [1, 2, 3]
+>>> result = map(float, DATA)
 >>>
->>> tuple(map(float, data))
+>>> tuple(map(float, DATA))
 (1.0, 2.0, 3.0)
 
->>> data = [1, 2, 3]
->>> result = map(float, data)
+>>> DATA = [1, 2, 3]
+>>> result = map(float, DATA)
 >>>
->>> set(map(float, data))
+>>> set(map(float, DATA))
 {1.0, 2.0, 3.0}
 
 >>> DATA = [1, 2, 3]
->>>
 >>> result = (float(x) for x in DATA)
+>>>
 >>> list(result)
 [1.0, 2.0, 3.0]
 
 >>> DATA = [1.1, 2.2, 3.3]
 >>> result = map(round, DATA)
+>>>
 >>> list(result)
 [1, 2, 3]
 
@@ -84,9 +85,10 @@ Custom functions:
 
 >>> def square(x):
 ...     return x ** 2
-...
->>> data = [1, 2, 3]
->>> result = map(square, data)
+>>>
+>>>
+>>> DATA = [1, 2, 3]
+>>> result = map(square, DATA)
 >>>
 >>> list(result)
 [1, 4, 9]
@@ -95,22 +97,22 @@ Custom functions:
 ...     return x + 1
 >>>
 >>>
->>> data = [1, 2, 3, 4]
->>> result = map(increment, data)
+>>> DATA = [1, 2, 3, 4]
+>>> result = map(increment, DATA)
 >>>
 >>> list(result)
 [2, 3, 4, 5]
 
->>> PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
-...       'ł': 'l', 'ń': 'n', 'ó': 'o',
-...       'ś': 's', 'ż': 'z', 'ź': 'z'}
->>>
 >>> def translate(letter):
 ...     return PL.get(letter, letter)
 >>>
 >>>
->>> text = 'zażółć gęślą jaźń'
->>> result = map(translate, text)
+>>> DATA = 'zażółć gęślą jaźń'
+>>> PL = {'ą': 'a', 'ć': 'c', 'ę': 'e',
+...       'ł': 'l', 'ń': 'n', 'ó': 'o',
+...       'ś': 's', 'ż': 'z', 'ź': 'z'}
+>>>
+>>> result = map(translate, DATA)
 >>> ''.join(result)
 'zazolc gesla jazn'
 

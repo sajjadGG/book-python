@@ -14,6 +14,11 @@ During discussion of this PEP, the operator became informally known as "the walr
 
 Syntax
 ======
+.. code-block:: python
+
+    (x := <VALUE>)
+
+
 It's not substitution for equals:
 
 >>> x = 1
@@ -80,6 +85,7 @@ Reusing Results:
 >>> def f(x):
 ...     return 1
 >>>
+>>>
 >>> result = [f(x), f(x)+1, f(x)+2]
 >>>
 >>> result = [res := f(x), res+1, res+2]
@@ -87,6 +93,7 @@ Reusing Results:
 Processing Steams in Chunks:
 
 >>> # doctest: +SKIP
+...
 ... file = open('_temporary.txt')
 ... chunk = file.read(8192)
 ...
@@ -95,14 +102,17 @@ Processing Steams in Chunks:
 ...     chunk = file.read(8192)
 
 >>> # doctest: +SKIP
+...
 ... file = open('_temporary.txt')
 ...
 ... while chunk := file.read(8192):
 ...     print(chunk)
 
+
 Checking Match
 --------------
 >>> import re
+>>>
 >>>
 >>> DATA = 'mark.watney@nasa.gov'
 >>> result = re.search(r'@nasa.gov', DATA)
@@ -113,15 +123,18 @@ Checking Match
 
 >>> import re
 >>>
+>>>
 >>> DATA = 'mark.watney@nasa.gov'
 >>>
 >>> if (result := re.search(r'@nasa.gov', DATA)):
 ...     print(result)
 <re.Match object; span=(11, 20), match='@nasa.gov'>
 
+
 Patterns
 --------
 >>> import re
+>>>
 >>>
 >>> data = 'mark.watney@nasa.gov'
 >>> pattern = r'([a-z]+)\.([a-z]+)@nasa.gov'
@@ -134,6 +147,7 @@ Patterns
 
 >>> import re
 >>>
+>>>
 >>> data = 'mark.watney@nasa.gov'
 >>> pattern = r'([a-z]+)\.([a-z]+)@nasa.gov'
 >>>
@@ -143,6 +157,7 @@ Patterns
 ('mark', 'watney')
 
 >>> import re
+>>>
 >>>
 >>> data = 'mark.watney@nasa.gov'
 >>> pattern = r'([a-z]+)\.([a-z]+)@nasa.gov'
@@ -183,20 +198,20 @@ Comprehensions
 
 Syntax:
 
-.. code-block:: text
+.. code-block:: python
 
     result = [<RETURN>
               for <VARIABLE1> in <ITERABLE>
               if (<VARIABLE2> := <EXPR>)]
 
-.. code-block:: text
+.. code-block:: python
 
     result = [<RETURN>
               for <VARIABLE1> in <ITERABLE>
               if (<VARIABLE2> := <EXPR>)
               and (<VARIABLE3> := <EXPR>)]
 
-.. code-block:: text
+.. code-block:: python
 
     result = [<RETURN>
               for <VARIABLE1> in <ITERABLE>
@@ -278,6 +293,7 @@ Use Case
 ...         {'is_astronaut': False, 'name': 'José Maria Jiménez'},
 ...         {'is_astronaut': True,  'name': 'Melissa Lewis'},
 ...         {'is_astronaut': False, 'name': 'Alex Vogel'}]
+>>>
 >>>
 >>> result = [{'firstname': person['name'].title().split()[0],
 ...            'lastname': person['name'].title().split()[-1]}

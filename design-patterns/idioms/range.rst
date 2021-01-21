@@ -34,6 +34,7 @@ Problem
 Solution
 --------
 >>> result = range(0,3)
+>>>
 >>> list(result)
 [0, 1, 2]
 

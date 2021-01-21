@@ -17,6 +17,7 @@ Syntax:
 >>> def even(x):
 ...     return x % 2 == 0
 >>>
+>>>
 >>> DATA = [0, 1, 2, 3, 4, 5, 6]
 >>>
 >>> list(x for x in DATA if even(x))
@@ -48,7 +49,7 @@ Plain code:
 ...     if even(x):
 ...         result.append(x)
 >>>
->>> result
+>>> print(result)
 [2, 4, 6]
 
 Comprehension:
@@ -60,7 +61,7 @@ Comprehension:
 >>> DATA = [1, 2, 3, 4, 5, 6]
 >>> result = [x for x in DATA if x%2==0]
 >>>
->>> result
+>>> print(result)
 [2, 4, 6]
 
 Filter:

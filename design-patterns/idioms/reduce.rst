@@ -21,19 +21,20 @@ Syntax
 * required ``iterable`` - Sequence or iterator object
 * https://docs.python.org/library/functools.html
 
+
 Problem
 -------
 >>> def add(x, y):
 ...     return x + y
 >>>
 >>>
->>> data = [1, 2, 3, 4]
+>>> DATA = [1, 2, 3, 4]
 >>> result = 0
 >>>
->>> for element in data:
+>>> for element in DATA:
 ...     result = add(result, element)
 >>>
->>> result
+>>> print(result)
 10
 
 
@@ -46,8 +47,9 @@ Solution
 ...     return x + y
 >>>
 >>>
->>> data = [1, 2, 3, 4]
->>> reduce(add, data)
+>>> DATA = [1, 2, 3, 4]
+>>>
+>>> reduce(add, DATA)
 10
 
 
@@ -59,18 +61,19 @@ Use Cases
 >>> from operator import mul
 >>>
 >>>
->>> data = [1, 2, 3, 4]
->>> reduce(mul, data)
+>>> DATA = [1, 2, 3, 4]
+>>>
+>>> reduce(mul, DATA)
 24
 
 >>> from functools import reduce
 >>>
 >>>
->>> data = [1, 2, 3, 4]
+>>> DATA = [1, 2, 3, 4]
 >>>
->>> reduce(min, data)
+>>> reduce(min, DATA)
 1
->>> reduce(max, data)
+>>> reduce(max, DATA)
 4
 
 

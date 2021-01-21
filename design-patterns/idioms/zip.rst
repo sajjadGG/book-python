@@ -20,10 +20,10 @@ Problem
 >>> firstnames = ['Mark', 'Melissa', 'Alex']
 >>> lastnames = ['Watney', 'Lewis', 'Vogel']
 >>> result = []
->>>
+>>> length = min(len(firstnames), len(lastnames))
 >>> i = 0
 >>>
->>> while i < min(len(firstnames), len(lastnames)):
+>>> while i < length:
 ...     pair = (firstnames[i], lastnames[i])
 ...     result.append(pair)
 ...     i += 1
@@ -154,9 +154,10 @@ Unzip
 [('Mark', 'Watney'), ('Melissa', 'Lewis'), ('Alex', 'Vogel')]
 >>>
 >>> fname, lname = zip(*zip(firstnames, lastnames))
->>> fname
+>>>
+>>> print(fname)
 ('Mark', 'Melissa', 'Alex')
->>> lname
+>>> print(lname)
 ('Watney', 'Lewis', 'Vogel')
 
 
@@ -190,6 +191,7 @@ Unlike the default behavior, it checks that the lengths of iterables are identic
 
 >>> firstnames = ['Mark', 'Melissa']
 >>> lastnames = ['Watney', 'Lewis', 'Vogel']
+>>>
 >>> result = zip(firstnames, lastnames, strict=True)  # doctest: +SKIP
 Traceback (most recent call last):
 ValueError: zip() argument 2 is longer than argument 1
