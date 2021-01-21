@@ -2,15 +2,8 @@ Loop Comprehension
 ==================
 
 
-Syntax
-------
-.. code-block:: python
-
-    result = [<RETURN> for <VARIABLE> in <ITERABLE>]
-
-
-Recap
------
+Rationale
+---------
 >>> result = []
 >>>
 >>> for x in range(0,5):
@@ -24,11 +17,29 @@ Recap
 >>> print(result)
 [0, 1, 2, 3, 4]
 
+Syntax:
 
-Convention
-----------
-* Use shorter variable names
-* ``x`` is common name
+    .. code-block:: python
+
+        result = [<RETURN> for <VARIABLE> in <ITERABLE>]
+
+    .. code-block:: python
+
+        result = [<RETURN> for <VARIABLE> in <ITERABLE> if <CONDITION>]
+
+    .. code-block:: python
+
+        result = [<RETURN>
+                  for <VARIABLE> in <ITERABLE>
+                  for <VARIABLE> in <ITERABLE>
+                  if <CONDITION>
+                  and <CONDITION>
+                  or <CONDITION>]
+
+Convention:
+
+    * Use shorter variable names
+    * ``x`` is common name
 
 
 Comprehensions and Generator Expression
@@ -157,6 +168,23 @@ Generator:
 
 List Comprehension
 ------------------
+Pattern:
+
+>>> result = []
+>>> for x in range(0,5):
+...     result.append(x)
+>>> print(result)
+[0, 1, 2, 3, 4]
+
+List comprehension:
+
+>>> [x for x in range(0,10) if x%2==0]
+[0, 1, 2, 3, 4]
+>>> list(x for x in range(0,10) if x%2==0)
+[0, 1, 2, 3, 4]
+
+Examples:
+
 >>> [x+1 for x in range(0,5)]
 [1, 2, 3, 4, 5]
 >>>
@@ -184,7 +212,22 @@ List Comprehension
 
 Set Comprehension
 -----------------
-``set`` comprehension approach to applying function to elements:
+Pattern:
+
+>>> result = set()
+>>> for x in range(0,5):
+...     result.add(x)
+>>> print(result)
+{0, 1, 2, 3, 4}
+
+Set comprehension:
+
+>>> {x for x in range(0,5)}
+{0, 1, 2, 3, 4}
+>>> set(x for x in range(0,5))
+{0, 1, 2, 3, 4}
+
+Examples:
 
 >>> {x+10 for x in range(0, 5)}
 {10, 11, 12, 13, 14}
@@ -195,7 +238,22 @@ Set Comprehension
 
 Dict Comprehension
 ------------------
-``dict`` comprehension approach to applying function to elements:
+Pattern:
+
+>>> result = dict()
+>>> for x in range(0,5):
+...     result.update({x:x})
+>>> print(result)
+{0:0, 1:1, 2:2, 3:3, 4:4}
+
+Dict comprehension:
+
+>>> {x:x**2 for x in range(0,10)}
+{0:0, 1:1, 2:2, 3:3, 4:4}
+>>> dict((x,x**2) for x in range(0,10))
+{0:0, 1:1, 2:2, 3:3, 4:4}
+
+Modify dict key:
 
 >>> {x+10:x for x in range(0,5)}
 {10: 0, 11: 1, 12: 2, 13: 3, 14: 4}
@@ -203,7 +261,7 @@ Dict Comprehension
 >>> dict((x+10,x) for x in range(0,5))
 {10: 0, 11: 1, 12: 2, 13: 3, 14: 4}
 
-``dict`` comprehension approach to applying function to elements:
+Modify dict value:
 
 >>> {x:x+10 for x in range(0,5)}
 {0: 10, 1: 11, 2: 12, 3: 13, 4: 14}
@@ -211,7 +269,7 @@ Dict Comprehension
 >>> dict((x,x+10) for x in range(0,5))
 {0: 10, 1: 11, 2: 12, 3: 13, 4: 14}
 
-``dict`` Comprehension approach to applying function to elements:
+Modify dict key and value:
 
 >>> {x+10:x+10 for x in range(0,5)}
 {10: 10, 11: 11, 12: 12, 13: 13, 14: 14}
@@ -220,20 +278,46 @@ Dict Comprehension
 {10: 10, 11: 11, 12: 12, 13: 13, 14: 14}
 
 
-Tuple Comprehension?!
----------------------
-* Tuple Comprehension vs. Generator Expression
-* More information in :ref:`Generators`
+Tuple Comprehension
+-------------------
+Pattern:
 
-Tuple Comprehension:
+>>> result = tuple()
+>>> for x in range(0,5):
+...     result += (x,)
+>>> print(result)
+(0, 1, 2, 3, 4)
+
+Tuple comprehension:
+
+>>> tuple(x for x in range(0,5))
+(0, 1, 2, 3, 4)
+
+Generator Expression:
+
+>>> (x for x in range(0,5))  # doctest: +ELLIPSIS
+<generator object <genexpr> at 0x...>
+
+Example:
 
 >>> tuple(x+10 for x in range(0,5))
 (10, 11, 12, 13, 14)
 
-Generator Expression:
-
 >>> (x+10 for x in range(0,5))  # doctest: +ELLIPSIS
 <generator object <genexpr> at 0x...>
+>>> result = (x+10 for x in range(0,5))
+>>> tuple(result)
+(10, 11, 12, 13, 14)
+
+
+Appending
+---------
+>>> result = [1,2,3]
+>>> result += [x for x in range(4,10)]
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+>>> result = [1,2,3] + [x for x in range(4,10)]
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 
 Map
