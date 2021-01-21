@@ -69,6 +69,12 @@ Paradigm
 * Mixin
 
 
+Abusing Patterns
+----------------
+.. figure:: ../_img/java-problem-factory.jpg
+.. figure:: ../_img/goodpractices-programmer-exp.png
+
+
 Further Reading
 ---------------
 * https://www.toptal.com/python/python-design-patterns

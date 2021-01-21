@@ -137,7 +137,7 @@ Generator Filter
 <generator object get_values at 0x...>
 >>>
 >>> for row in data:
->>>     print(row)
+...     print(row)
 (5.1, 3.5, 1.4, 0.2, 'setosa')
 (4.7, 3.2, 1.3, 0.2, 'setosa')
 
@@ -240,30 +240,31 @@ Introspection
 -------------
 >>> data = (x for x in range(0,10))
 >>>
+>>>
 >>> next(data)
 0
 >>>
 >>> data.gi_code  # doctest: +ELLIPSIS
-<code object <genexpr> at 0x..., file "<input>", line 1>
+<code object <genexpr> at 0x..., file "<...>", line 1>
 >>>
 >>> data.gi_running
 False
 >>>
->>> data.gi_yieldfrom
->>>
 >>> data.gi_frame  # doctest: +ELLIPSIS
-<frame at 0x..., file '<input>', line 1, code <genexpr>>
+<frame at 0x..., file '<...>', line 1, code <genexpr>>
 >>>
 >>> data.gi_frame.f_locals  # doctest: +ELLIPSIS
 {'.0': <range_iterator object at 0x...>, 'x': 0}
 >>>
 >>> data.gi_frame.f_code  # doctest: +ELLIPSIS
-<code object <genexpr> at 0x...0, file "<input>", line 1>
+<code object <genexpr> at 0x...0, file "<...>", line 1>
 >>>
 >>> data.gi_frame.f_lineno
 1
+>>>
 >>> data.gi_frame.f_lasti
 8
+>>> data.gi_yieldfrom
 
 
 Multiple Yields
@@ -275,10 +276,10 @@ Multiple Yields
 ...         yield y
 >>>
 >>>
->>> run()  # doctest: +ELLIPSIS
-<generator object generator at 0x...>
->>>
 >>> result = run()
+>>>
+>>> type(result)
+<class 'generator'>
 >>>
 >>> next(result)
 0
@@ -320,10 +321,10 @@ Yield From
 ...     yield from generator2()
 >>>
 >>>
->>> run()  # doctest: +ELLIPSIS
-<generator object run at 0x...>
->>>
 >>> result = run()
+>>>
+>>> type(result)
+<class 'generator'>
 >>>
 >>> next(result)
 0
@@ -359,20 +360,21 @@ The code is equivalent to ``itertools.chain()``:
 ...         yield x
 >>>
 >>>
->>> run()  # doctest: +ELLIPSIS
-<generator object run at 0x...>
->>>
 >>> result = run()
+>>>
+>>> type(result)
+<class 'generator'>
+>>>
 >>> list(result)
->>> [0, 1, 2, 10, 11, 12]
+[0, 1, 2, 10, 11, 12]
 
 ``yield from`` turns ordinary function, into a delegation call:
 
->>> def myfunction():
+>>> def worker():
 ...     return [1, 2, 3]
 >>>
 >>> def run():
-...     yield from myfunction()
+...     yield from worker()
 >>>
 >>>
 >>> result = run()
@@ -387,11 +389,11 @@ The code is equivalent to ``itertools.chain()``:
 Traceback (most recent call last):
 StopIteration
 
->>> def myfunction():
->>>     return [x for x in range(0,3)]
+>>> def worker():
+...     return [x for x in range(0,3)]
 >>>
 >>> def run():
->>>     yield from myfunction()
+...     yield from worker()
 >>>
 >>>
 >>> result = run()
@@ -403,8 +405,8 @@ StopIteration
 >>> next(result)
 2
 >>> next(result)
->>> Traceback (most recent call last):
->>> StopIteration
+Traceback (most recent call last):
+StopIteration
 
 
 Send
@@ -415,9 +417,9 @@ Send
 * Sending anything other will raise ``TypeError``
 
 >>> def run():
->>>     while True:
->>>         data = yield
->>>         print(f'Processing {data}')
+...     while True:
+...         data = yield
+...         print(f'Processing {data}')
 >>>
 >>>
 >>> worker = run()
@@ -429,26 +431,25 @@ Send
 Traceback (most recent call last):
 TypeError: can't send non-None value to a just-started generator
 
-
 >>> def run():
->>>     while True:
->>>         data = yield
->>>         print(f'Processing {data}')
+...     while True:
+...         data = yield
+...         print(f'Processing {data}')
 >>>
 >>>
 >>> worker = run()
 >>> worker.send(None)
 >>>
 >>> for x in range(0,3):
->>>     worker.send(x)
+...     worker.send(x)
 Processing 0
 Processing 1
 Processing 2
 
 >>> def worker():
->>>     while True:
->>>         data = yield
->>>         print(f'Processing {data}')
+...     while True:
+...         data = yield
+...         print(f'Processing {data}')
 >>>
 >>> def run(gen):
 ...     gen.send(None)
