@@ -178,9 +178,9 @@ Pattern:
 
 List comprehension:
 
->>> [x for x in range(0,10) if x%2==0]
+>>> [x for x in range(0,5) if x%2==0]
 [0, 1, 2, 3, 4]
->>> list(x for x in range(0,10) if x%2==0)
+>>> list(x for x in range(0,5) if x%2==0)
 [0, 1, 2, 3, 4]
 
 Examples:
@@ -248,9 +248,9 @@ Pattern:
 
 Dict comprehension:
 
->>> {x:x**2 for x in range(0,10)}
+>>> {x:x**2 for x in range(0,5)}
 {0:0, 1:1, 2:2, 3:3, 4:4}
->>> dict((x,x**2) for x in range(0,10))
+>>> dict((x,x**2) for x in range(0,5))
 {0:0, 1:1, 2:2, 3:3, 4:4}
 
 Modify dict key:
