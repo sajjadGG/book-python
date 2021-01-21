@@ -1,34 +1,34 @@
 """
-* Assignment: Loop Comprehension Split
+* Assignment: Idioms Comprehension Train/Test Split
 * Complexity: medium
 * Lines of code: 9 lines
 * Time: 13 min
 
 English:
     1. Use data from "Given" section (see below)
-    2. Calculate pivot point: length of data times given percent (60%/40%, see below)
-    3. Using List Comprehension split data to:
-        a. `features: list[tuple]` - list of measurements (each measurement row is a tuple)
-        b. `labels: list[str]` - list of species names
-    4. Split those data structures with proportion:
-        a. `features_train: list[tuple]` - features to train - 60%
-        b. `features_test: list[tuple]` - features to test - 40%
-        c. `labels_train: list[str]` - labels to train - 60%
-        d. `labels_test: list[str]` - labels to test - 40%
-    5. Compare results with "Tests" section below
+    2. Using List Comprehension split `DATA` into:
+        a. `features_train: list[tuple]` - 60% of first features in `DATA`
+        b. `features_test: list[tuple]` - 40% of last features in `DATA`
+        c. `labels_train: list[str]` - 60% of first labels in `DATA`
+        d. `labels_test: list[str]` - 40% of last labels in `DATA`
+    3. In order to do so, calculate pivot point:
+        a. length of `DATA` times given percent (60% = 0.6)
+        b. remember, that slice indicies must be `int`, not `float`
+        c. for example: if dataset has 10 rows, then 6 rows will be for training, and 4 rows for test
+    4. Compare results with "Tests" section below
 
 Polish:
     1. Użyj danych z sekcji "Given" (patrz poniżej)
-    2. Wylicz punkt podziału: długość danych razy zadany procent (60%/40%, patrz poniżej)
-    3. Używając List Comprehension podziel dane na:
-        a. `features: list[tuple]` - lista pomiarów (każdy wiersz z pomiarami ma być tuple)
-        b. `labels: list[str]` - lista nazw gatunków
-    4. Podziel te struktury danych w proporcji:
-        a. `features_train: list[tuple]` - features do uczenia - 60%
-        b. `features_test: list[tuple]` - features do testów - 40%
-        c. `labels_train: list[str]` - labels do uczenia - 60%
-        d. `labels_test: list[str]` - labels do testów - 40%
-    5. Porównaj wynik z sekcją "Tests" poniżej
+    2. Używając List Comprehension podziel `DATA` na:
+        a. `features_train: list[tuple]` - 60% pierwszych features w `DATA`
+        b. `features_test: list[tuple]` - 40% ostatnich features w `DATA`
+        c. `labels_train: list[str]` - 60% pierwszych labels w `DATA`
+        d. `labels_test: list[str]` - 40% ostatnich labels w `DATA`
+    3. Aby to zrobić, wylicz punkt podziału:
+        a. długość `DATA` razy zadany procent (60% = 0.6)
+        b. pamiętaj, że indeksy slice muszą być `int` a nie `float`
+        c. na przykład: if zbiór danych ma 10 wierszy, to 6 wierszy będzie do treningu, a 4 do testów
+    4. Porównaj wynik z sekcją "Tests" poniżej
 
 Tests:
     >>> assert type(features_train) is list
