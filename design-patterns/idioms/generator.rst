@@ -409,6 +409,69 @@ StopIteration
 Traceback (most recent call last):
 StopIteration
 
+`yield from` with sequences:
+
+>>> def run():
+...     yield from [0, 1, 2]
+>>>
+>>>
+>>> result = run()
+>>>
+>>> type(result)
+<class 'generator'>
+>>>
+>>> next(result)
+0
+>>> next(result)
+1
+>>> next(result)
+2
+>>> next(result)
+Traceback (most recent call last):
+StopIteration
+
+`yield from` with comprehensions:
+
+>>> def run():
+...     yield from [x for x in range(0,3)]
+>>>
+>>>
+>>> result = run()
+>>>
+>>> type(result)
+<class 'generator'>
+>>>
+>>> next(result)
+0
+>>> next(result)
+1
+>>> next(result)
+2
+>>> next(result)
+Traceback (most recent call last):
+StopIteration
+
+`yield from` with generator expressions:
+
+>>> def run():
+...     yield from (x for x in range(0,3))
+>>>
+>>>
+>>> result = run()
+>>>
+>>> type(result)
+<class 'generator'>
+>>>
+>>> next(result)
+0
+>>> next(result)
+1
+>>> next(result)
+2
+>>> next(result)
+Traceback (most recent call last):
+StopIteration
+
 
 Send
 ----

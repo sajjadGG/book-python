@@ -191,29 +191,41 @@ Database
 
     import sqlite3
 
-
     SQL_CREATE_TABLE = """
         CREATE TABLE IF NOT EXISTS astronauts (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            pesel INTEGER UNIQUE,
-            firstname TEXT,
-            lastname TEXT)"""
-    SQL_INSERT = 'INSERT INTO astronauts VALUES (NULL, :pesel, :firstname, :lastname)'
-    SQL_SELECT = 'SELECT * from astronauts'
+            firstname TEXT NOT NULL,
+            lastname TEXT NOT NULL,
+            age INTEGER
+        )
+    """
 
-    DATA = [{'pesel': '61041212345', 'firstname': 'José', 'lastname': 'Jiménez'},
-            {'pesel': '61041212346', 'firstname': 'Jan', 'lastname': 'Twardowski'},
-            {'pesel': '61041212347', 'firstname': 'Melissa', 'lastname': 'Lewis'},
-            {'pesel': '61041212348', 'firstname': 'Alex', 'lastname': 'Vogel'},
-            {'pesel': '61041212349', 'firstname': 'Ryan', 'lastname': 'Stone'}]
+    SQL_INSERT = """
+        INSERT INTO astronauts VALUES(NULL, :firstname, :lastname, :age)
+    """
+
+    SQL_SELECT = """
+        SELECT * FROM astronauts
+    """
+
+    DATA = [
+        {'firstname': 'Jan', 'lastname': 'Twardowski', 'age': 44},
+        {'firstname': 'Mark', 'lastname': 'Watney', 'age': 33},
+        {'firstname': 'Melissa', 'lastname': 'Lewis', 'age': 36},
+    ]
 
 
-    with sqlite3.connect(':memory:') as db:
+    with sqlite3.connect('/tmp/mydatabase.db') as db:
         db.execute(SQL_CREATE_TABLE)
         db.executemany(SQL_INSERT, DATA)
-
+        db.row_factory = sqlite3.Row
         for row in db.execute(SQL_SELECT):
-            print(row)
+            print(dict(row))
+
+    # {'id': 1, 'firstname': 'Jan', 'lastname': 'Twardowski', 'age': 44}
+    # {'id': 2, 'firstname': 'Mark', 'lastname': 'Watney', 'age': 33}
+    # {'id': 3, 'firstname': 'Melissa', 'lastname': 'Lewis', 'age': 36}
+
 
 Lock
 ----
@@ -221,10 +233,8 @@ Lock
 
     from threading import Lock
 
-    # Make lock
-    lock = Lock()
 
-    # Use lock
+    lock = Lock()
     lock.acquire()
 
     try:
@@ -237,13 +247,12 @@ Lock
 
     from threading import Lock
 
-    # Make lock
     lock = Lock()
 
-    # Use lock
     with lock:
         print('Critical section 1')
         print('Critical section 2')
+
 
 String Microbenchmark
 ---------------------
@@ -311,10 +320,8 @@ String Microbenchmark
     # Duration of %-style is 4.02 second
 
 
-
 Assignments
 ===========
-
 .. literalinclude:: ../_assignments/protocol_contextmanager_a.py
     :caption: :download:`Solution <../_assignments/protocol_contextmanager_a.py>`
     :end-before: # Solution
