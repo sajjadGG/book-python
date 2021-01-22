@@ -2,25 +2,90 @@ Good Engineering Practises
 ==========================
 
 
+Code Language
+-------------
+* ``import this`` - The Zen of Python, by Tim Peters
+* Readability counts.
+* Special cases aren't special enough to break the rules.
+* Although practicality beats purity.
+* If the implementation is hard to explain, it's a bad idea.
+
+>>> class Obywatel:
+...     def get_wojewodztwo(self):
+...         pass
+...
+...     def get_powiat(self):
+...         pass
+...
+...     def get_gmina(self):
+...         pass
+...
+...     def get_PESEL(self):
+...         pass
+...
+...     def get_NIP(self):
+...         pass
+
+>>> class Citizen:
+...     def get_state(self):
+...         pass
+...
+...     def get_shire(self):
+...         pass
+...
+...     def get_county(self):
+...         pass
+...
+...     def get_voivodeship(self):
+...         pass
+...
+...     def get_SSN(self):
+...         ...
+
+
+
 Objects and instances
 ---------------------
-.. code-block:: python
+Creating string instance:
 
-    text = str('Jan,Twardowski')
-    text.split(',')
-    # ['Jan', 'Twardowski']
+``''`` is just a syntactic sugar:
 
-    text = str('Jan,Twardowski')
-    str.split(text, ',')
-    # ['Jan', 'Twardowski']
+>>> name1 = 'Mark Watney'
+>>> name2 = str('Mark Watney')
+>>> name1 == name2
+True
 
-.. code-block:: python
+>>> name = 'Mark Watney'
+>>> name.upper()
+'MARK WATNEY'
 
-    'Jan,Twardowski'.split(',')
-    # ['Jan', 'Twardowski']
+>>> str.upper('Mark Watney')
+'MARK WATNEY'
 
-    str.split('Jan,Twardowski', ',')
-    # ['Jan', 'Twardowski']
+Use case:
+
+>>> from dataclasses import dataclass
+>>>
+>>>
+>>> @dataclass
+... class Astronaut:
+...     firstname: str
+...     lastname: str
+...
+...     def say_hello(self):
+...         print(f'My name... {self.firstname} {self.lastname}')
+>>>
+>>>
+>>> astro = Astronaut('Jose', 'Jimenez')
+>>> astro.say_hello()
+My name... Jose Jimenez
+>>>
+>>> Astronaut.say_hello()
+Traceback (most recent call last):
+TypeError: say_hello() missing 1 required positional argument: 'self'
+>>>
+>>> Astronaut.say_hello(astro)
+My name... Jose Jimenez
 
 
 Tell - don't ask
@@ -31,62 +96,54 @@ Tell - don't ask
 
 Bad:
 
-.. code-block:: python
-
-    class Light:
-        status = 'off'
-
-
-    light = Light()
-    light.status = 'on'
-    light.status = 'off'
+>>> class Light:
+...     status = 'off'
+>>>
+>>>
+>>> light = Light()
+>>> light.status = 'on'
+>>> light.status = 'off'
 
 Good:
 
-.. code-block:: python
-
-    class Light:
-        status = 'off'
-
-        def switch_on(self):
-            self.status = 'on'
-
-        def switch_off(self):
-            self.status = 'off'
-
-
-    light = Light()
-    light.switch_on()
-    light.switch_off()
+>>> class Light:
+...     status = 'off'
+...
+...     def switch_on(self):
+...         self.status = 'on'
+...
+...     def switch_off(self):
+...         self.status = 'off'
+>>>
+>>>
+>>> light = Light()
+>>> light.switch_on()
+>>> light.switch_off()
 
 Bad:
 
-.. code-block:: python
-
-    class Hero:
-        health: int = 10
-
-
-    hero = Hero()
-
-    while hero.health > 0:
-        ...
+>>> class Hero:
+...     health: int = 10
+>>>
+>>>
+>>> hero = Hero()
+>>>
+>>> while hero.health > 0:
+...     ...
 
 Good:
 
-.. code-block:: python
-
-    class Hero:
-        health: int = 10
-
-        def is_alive(self):
-            return self.health > 0
-
-
-    hero = Hero()
-
-    while hero.is_alive():
-        ...
+>>> class Hero:
+...     health: int = 10
+...
+...     def is_alive(self):
+...         return self.health > 0
+>>>
+>>>
+>>> hero = Hero()
+>>>
+>>> while hero.is_alive():
+...     ...
 
 
 Setters, Getters, Deleters
@@ -97,111 +154,103 @@ Setters, Getters, Deleters
 
 Accessing class fields using setter and getter:
 
-.. code-block:: python
-
-    class Astronaut:
-        _name: str
-
-        def set_name(self, name):
-            self._name = name
-
-        def get_name(self):
-            return self._name
-
-
-    astro = Astronaut()
-    astro.set_name('Mark Watney')
-    print(astro.get_name())
-    # Mark Watney
+>>> class Astronaut:
+...     _name: str
+...
+...     def set_name(self, name):
+...         self._name = name
+...
+...     def get_name(self):
+...         return self._name
+>>>
+>>>
+>>> astro = Astronaut()
+>>> astro.set_name('Mark Watney')
+>>> print(astro.get_name())
+Mark Watney
 
 Problem with setters and getters:
 
-.. code-block:: python
-
-    class Point:
-        _x: int
-        _y: int
-
-        def get_x(self):
-            return self._x
-
-        def set_x(self, value):
-            self._x = value
-
-        def del_x(self):
-            del self._x
-
-        def get_y(self):
-            return self._y
-
-        def set_y(self, value):
-            self._x = value
-
-        def del_y(self):
-            del self._y
+>>> class Point:
+...     _x: int
+...     _y: int
+...
+...     def get_x(self):
+...         return self._x
+...
+...     def set_x(self, value):
+...         self._x = value
+...
+...     def del_x(self):
+...         del self._x
+...
+...     def get_y(self):
+...         return self._y
+...
+...     def set_y(self, value):
+...         self._x = value
+...
+...     def del_y(self):
+...         del self._y
 
 Rationale for Setters and Getters:
 
-.. code-block:: python
-
-    class Temperature:
-        kelvin: int
-
-        def set_kelvin(self, kelvin):
-            if kelvin < 0:
-                raise ValueError('Kelvin cannot be negative')
-            else:
-                self._kelvin = kelvin
-
-
-    t = Temperature()
-    t.set_kelvin(-1)
-    # Traceback (most recent call last):
-    # ValueError: Kelvin cannot be negative
+>>> class Temperature:
+...     kelvin: int
+...
+...     def set_kelvin(self, kelvin):
+...         if kelvin < 0:
+...             raise ValueError('Kelvin cannot be negative')
+...         else:
+...             self._kelvin = kelvin
+...
+>>>
+>>> t = Temperature()
+>>> t.set_kelvin(-1)
+Traceback (most recent call last):
+ValueError: Kelvin cannot be negative
 
 Rationale for Setters and Getters:
 
-.. code-block:: python
-
-    class Astronaut:
-        _name: str
-
-        def set_name(self, name):
-            self._name = name.title()
-
-        def get_name(self):
-            return self._name
-
-
-    astro = Astronaut()
-    astro.set_name('JaN TwARdoWskI')
-    print(astro.get_name())
-    # Jan Twardowski
+>>> class Astronaut:
+...     _name: str
+...
+...     def set_name(self, name):
+...         self._name = name.title()
+...
+...     def get_name(self):
+...         return self._name
+>>>
+>>>
+>>> astro = Astronaut()
+>>> astro.set_name('JaN TwARdoWskI')
+>>> print(astro.get_name())
+Jan Twardowski
 
 Rationale for Setters and Getters `HabitatOS <https://www.habitatos.space>`_ Z-Wave sensor admin:
 
-.. code-block:: python
-
-    from django.contrib import admin
-    from habitat._common.admin import HabitatAdmin
-    from habitat.sensors.models import ZWaveSensor
-
-
-    @admin.register(ZWaveSensor)
-    class ZWaveSensorAdmin(HabitatAdmin):
-        change_list_template = 'sensors/change_list_charts.html'
-        list_display = ['mission_date', 'mission_time', 'type', 'device', 'value', 'unit']
-        list_filter = ['created', 'type', 'unit', 'device']
-        search_fields = ['^date', 'device']
-        ordering = ['-datetime']
-
-        def get_list_display(self, request):
-            list_display = self.list_display
-
-            if request.user.is_superuser:
-                list_display = ['earth_datetime'] + list_display
-
-            return list_display
+>>> #doctest: +SKIP
+...
+... from django.contrib import admin
+... from habitat._common.admin import HabitatAdmin
+... from habitat.sensors.models import ZWaveSensor
+...
+...
+... @admin.register(ZWaveSensor)
+... class ZWaveSensorAdmin(HabitatAdmin):
+...     change_list_template = 'sensors/change_list_charts.html'
+...     list_display = ['mission_date', 'mission_time', 'type', 'device', 'value', 'unit']
+...     list_filter = ['created', 'type', 'unit', 'device']
+...     search_fields = ['^date', 'device']
+...     ordering = ['-datetime']
+...
+...     def get_list_display(self, request):
+...         list_display = self.list_display
+...
+...         if request.user.is_superuser:
+...             list_display = ['earth_datetime'] + list_display
+...
+...         return list_display
 
 
 Collections Abstract Base Classes
