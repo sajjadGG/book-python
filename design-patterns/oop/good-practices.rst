@@ -43,7 +43,6 @@ Code Language
 ...         ...
 
 
-
 Objects and instances
 ---------------------
 Creating string instance:
@@ -129,7 +128,7 @@ Bad:
 >>> hero = Hero()
 >>>
 >>> while hero.health > 0:
-...     ...
+...     hero.health -= 2
 
 Good:
 
@@ -138,12 +137,15 @@ Good:
 ...
 ...     def is_alive(self):
 ...         return self.health > 0
+...
+...     def take_damage(self, damage):
+...         self.health -= damage
 >>>
 >>>
 >>> hero = Hero()
 >>>
 >>> while hero.is_alive():
-...     ...
+...     hero.take_damage(2)
 
 
 Setters, Getters, Deleters
@@ -166,7 +168,8 @@ Accessing class fields using setter and getter:
 >>>
 >>> astro = Astronaut()
 >>> astro.set_name('Mark Watney')
->>> print(astro.get_name())
+>>> result = astro.get_name()
+>>> print(result)
 Mark Watney
 
 Problem with setters and getters:
