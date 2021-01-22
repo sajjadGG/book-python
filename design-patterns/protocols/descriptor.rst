@@ -210,6 +210,59 @@ Temperature Conversion:
     print(f'F: {t.fahrenheit}')     # 212.0
 
 Value Range Descriptor.
+
+.. code-block:: python
+
+    class Value:
+        MIN: int
+        MAX: int
+        name: str
+        value: float
+
+        def __init__(self, min, max):
+            self.MIN = min
+            self.MAX = max
+
+        def __set__(self, instance, value):
+            if self.MIN <= value < self.MAX:
+                self.value = value
+            else:
+                raise ValueError(f'{self.name} ({value}) is not in range({self.MIN}, {self.MAX})')
+
+        def __get__(self, instance, owner):
+            return self.value
+
+        def __delete__(self, instance):
+            raise PermissionError
+
+        def __set_name__(self, owner, name):
+            self.name = name
+
+
+    class KelvinTemperature:
+        kelvin = Value(min=0, max=99999)
+        celsius = Value(min=-273.15, max=99999)
+
+
+    t = KelvinTemperature()
+
+    t.kelvin = 10
+    t.kelvin = -1
+    # Traceback (most recent call last):
+    # ValueError: kelvin (-1) is not in range(0, 99999)
+
+    t.celsius = -273
+    t.celsius = -274
+    # Traceback (most recent call last):
+    # ValueError: celsius (-274) is not in range(-273.15, 99999)
+
+    print(t.kelvin)
+    # 10
+    print(t.celsius)
+    # -273
+
+
+
 Note ``__repr__()`` method and how to access Descriptor value.
 
 .. code-block:: python

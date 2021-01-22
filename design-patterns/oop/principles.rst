@@ -18,88 +18,39 @@ Encapsulation
 
 .. code-block:: python
 
-    astro_firstname = 'Mark'
-    astro_lastname = 'Watney'
+    position_x = 0
+    position_y = 0
+
+    def position_set(x, y):
+        global position_x
+        global position_y
+        position_x = x
+        position_y = y
+
+    def position_get():
+        return position_x, position_y
+
+    position_set(1, 2)
+    position_get()
+    # (1, 2)
 
 .. code-block:: python
 
-    astro = ('Mark', 'Watney')
+    class Position:
+        x: int = 0
+        y: int = 0
 
-.. code-block:: python
+        def set(self, x, y):
+            self.x = x
+            self.y = y
 
-    astro = {'firstname': 'Mark', 'lastname': 'Watney'}
+        def get(self):
+            return self.x, self.y
 
-.. code-block:: python
-
-    class Astronaut:
-        firstname: str
-        lastname: str
-
-.. code-block:: python
-
-    class Astronaut:
-        firstname: str
-        lastname: str
-
-        def __init__(self, firstname, lastname)
-            self.firstname = firstname
-            self.lastname = lastname
-
-        def get_name(self):
-            return f'{self.firstname} {self.lastname}'
-
-
-    astro = Astronaut('Mark', 'Watney')
-    astro.get_name()
-    # 'Mark Watney'
-
-.. code-block:: python
-
-    class Astronaut:
-        _firstname: str
-        _lastname: str
-
-        def set_name(self, name):
-            fname, lname = name.split()
-            self._firstname = fname
-            self._lastname = lname
-
-        def get_name(self):
-            return f'{self._firstname} {self._lastname}'
-
-    astro = Astronaut()
-    astro.set_name('Mark Watney')
-    astro.get_name()
-
-.. code-block:: python
-
-    class KelvinTemperature:
-        kelvin: float
-
-
-    t = KelvinTemperature()
-    t.kelvin = -1
-    print(t.kelvin)
-    # -1
-
-.. code-block:: python
-
-    class KelvinTemperature:
-        _value: float
-
-        def set_value(self, value):
-            if value >= 0:
-                self._value = value
-            else:
-                raise ValueError('Negative Kelvin')
-
-
-    t = KelvinTemperature()
-
-    t.set_value(-1)
-    # Traceback (most recent call last):
-    # ValueError: Negative Kelvin
-
+    position = Position()
+    position.set(1, 2)
+    position.get()
+    # (1, 2)
 
 
 Abstraction
@@ -113,6 +64,7 @@ Abstraction
         def send_email(sender, rcpt, subject, body):
             self._connect()
             self._authenticate()
+            self._send(sender, rcpt, subject, body)
             self._disconnect()
 
         def _connect(self, timeout=1):
@@ -120,6 +72,9 @@ Abstraction
 
         def _authenticate(self):
             print('Authenticate')
+
+        def _send(sender, rcpt, subject, body):
+            print('Sending')
 
         def _disconnect(self):
             print('Disconnect')
@@ -148,58 +103,34 @@ Polymorphism
 
 .. code-block:: python
 
-    from abc import ABCMeta, abstractmethod
+    class Astronaut:
+        def __init__(self, name):
+            self.name = name
+
+        def say_hello(self):
+            return f'Hello {self.name}'
 
 
-    class UIElement(metaclass=ABCMeta):
-        @abstractmethod
-        def draw(self):
-            pass
+    class Cosmonaut:
+        def __init__(self, name):
+            self.name = name
 
-    class TextBox(UIElement):
-        def draw(self):
-            print('Drawing text box')
-
-
-    class CheckBox(UIElement):
-        def draw(self):
-            print('Drawing check box')
-
-
-    def draw(element: UIElement):
-        element.draw()
+        def say_hello(self):
+            return f'Привет {self.name}!'
 
 
     if __name__ == '__main__':
-        draw(TextBox())
-        draw(CheckBox())
+        crew = [Astronaut('Mark Watney'),
+                Cosmonaut('Иван Иванович'),
+                Astronaut('Melissa Lewis'),
+                Cosmonaut('Jan Twardowski')]
 
-.. code-block:: python
-
-    class Cache:
-        def set(self, name: str, value: str) -> None: pass
-        def get(self, name: str) -> str: pass
-        def is_valid(self, name: str) -> bool: pass
-
-    class DatabaseCache(Cache):
-        pass
-
-    class MemoryCache(Cache):
-        pass
-
-    class FilesystemCache(Cache):
-        pass
-
-
-    def get(cache: Cache, key):
-        if not cache.is_valid(key):
-            cache.set(key, '...')
-        return cache.get(key)
-
-
-    get(DatabaseCache(), 'name')
-    get(FilesystemCache(), 'name')
-    get(MemoryCache(), 'name')
+        for member in crew:
+            print(member.say_hello())
+    # Hello Mark Watney
+    # Привет Иван Иванович
+    # Hello Melissa Lewis
+    # Привет Jan Twardowski
 
 
 Further Reading

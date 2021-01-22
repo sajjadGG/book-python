@@ -32,9 +32,12 @@ Implementation
     :language: python
 
 
-Example
--------
-.. literalinclude:: ../_src/designpatterns-iterator-pythonic.py
+Pythonic
+--------
+.. literalinclude:: ../_src/designpatterns-iterator-pythonic-1.py
+    :language: python
+
+.. literalinclude:: ../_src/designpatterns-iterator-pythonic-2.py
     :language: python
 
 

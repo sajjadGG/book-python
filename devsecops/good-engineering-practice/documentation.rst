@@ -10,6 +10,7 @@ reStructuredText vs. Markdown
 Format reStructuredText
 =======================
 * https://devguide.python.org/documenting/#rst-primer
+* https://devguide.python.org/documenting/#sections
 
 Po co?
 ------
@@ -25,6 +26,8 @@ Nagłówki
 * Nagłówek drugiego poziomu
 * Nagłówek trzeciego poziomu
 * Nagłówek czwartego poziomu (czy stosować?)
+
+* https://devguide.python.org/documenting/#sections
 
 Odnośniki
 ---------

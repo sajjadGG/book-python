@@ -91,97 +91,63 @@ elevation - min: -10994.0, max: 8848.0
 
 
 # Solution
-class RangeValidator:
-    NAME: str
-    MIN: float
-    MAX: float
+from abc import ABCMeta, abstractproperty
 
-    def __set__(self, parent, value):
-        if self.MIN <= value <= self.MAX:
-            setattr(parent, self.NAME, value)
+
+class GEOProperty(metaclass=ABCMeta):
+    _fieldname: str
+
+    @abstractproperty
+    def MIN(self) -> float:
+        pass
+
+    @abstractproperty
+    def MAX(self) -> float:
+        pass
+
+    def __set_name__(self, owner, attrname):
+        self._fieldname = f'__{attrname}'
+
+    def __set__(self, instance, newvalue):
+        if self.MIN <= newvalue <= self.MAX:
+            setattr(instance, self._fieldname, newvalue)
         else:
             raise ValueError('Out of bounds')
 
-    def __get__(self, parent, parent_type):
-        return getattr(parent, self.NAME)
+    def __get__(self, instance, *args):
+        return getattr(instance, self._fieldname)
 
 
-class Latitude(RangeValidator):
-    NAME = '_latitude'
-    MIN = -90
-    MAX = +90
+class Latitude(GEOProperty):
+    MIN: float = -90.0
+    MAX: float = +90.0
 
 
-class Longitude(RangeValidator):
-    NAME = '_longitude'
-    MIN = -180
-    MAX = +180
+class Longitude(GEOProperty):
+    MIN: float = -180.0
+    MAX: float = +180.0
 
 
-class Elevation(RangeValidator):
-    NAME = '_elevation'
-    MIN = -10994
-    MAX = +8848
+class Elevation(GEOProperty):
+    MIN: float = -10994.0
+    MAX: float = +8848.0
 
 
 class GeographicCoordinate:
     latitude = Latitude()
     longitude = Longitude()
     elevation = Elevation()
+    __latitude: float
+    __longitude: float
+    __elevation: float
 
     def __init__(self, latitude, longitude, elevation):
         self.latitude = latitude
         self.longitude = longitude
         self.elevation = elevation
 
-    def __repr__(self):
+    def __str__(self):
         return f'Latitude: {self.latitude}, Longitude: {self.longitude}, Elevation: {self.elevation}'
 
-
-# class GeoProperty:
-#     _fieldname: str
-#
-#     def __set_name__(self, owner, attrname):
-#         self._fieldname = f'_{attrname}'
-#
-#     def __get__(self, instance, owner):
-#         return getattr(instance, self._fieldname)
-#
-#     def __set__(self, instance, value):
-#         if self.MIN <= value <= self.MAX:
-#             setattr(instance, self._fieldname, value)
-#         else:
-#             raise ValueError('Out of bounds')
-#
-#
-# class Elevation(GeoProperty):
-#     MIN: float = -10994.0
-#     MAX: float = +8848.0
-#
-# class Latitude(GeoProperty):
-#     MIN: float = -90.0
-#     MAX: float = +90.0
-#
-# class Longitude(GeoProperty):
-#     MIN: float = -180.0
-#     MAX: float = +180.0
-#
-#
-# class GeographicCoordinate:
-#     latitude = Latitude()
-#     longitude = Longitude()
-#     elevation = Elevation()
-#     _latitude: float
-#     _longitude: float
-#     _elevation: float
-#
-#     def __init__(self, latitude, longitude, elevation):
-#         self.latitude = latitude
-#         self.longitude = longitude
-#         self.elevation = elevation
-#
-#     def __str__(self):
-#         return f'Latitude: {self.latitude}, Longitude: {self.longitude}, Elevation: {self.elevation}'
-#
-#     def __repr__(self):
-#         return self.__str__()
+    def __repr__(self):
+        return self.__str__()
