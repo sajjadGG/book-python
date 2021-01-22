@@ -213,23 +213,6 @@ Rationale for Setters and Getters:
 Traceback (most recent call last):
 ValueError: Kelvin cannot be negative
 
-Rationale for Setters and Getters:
-
->>> class Astronaut:
-...     _name: str
-...
-...     def set_name(self, name):
-...         self._name = name.title()
-...
-...     def get_name(self):
-...         return self._name
->>>
->>>
->>> astro = Astronaut()
->>> astro.set_name('JaN TwARdoWskI')
->>> print(astro.get_name())
-Jan Twardowski
-
 Rationale for Setters and Getters `HabitatOS <https://www.habitatos.space>`_ Z-Wave sensor admin:
 
 >>> #doctest: +SKIP
@@ -249,10 +232,8 @@ Rationale for Setters and Getters `HabitatOS <https://www.habitatos.space>`_ Z-W
 ...
 ...     def get_list_display(self, request):
 ...         list_display = self.list_display
-...
 ...         if request.user.is_superuser:
 ...             list_display = ['earth_datetime'] + list_display
-...
 ...         return list_display
 
 
