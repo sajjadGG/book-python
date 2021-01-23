@@ -1,3 +1,15 @@
+About
+*****
+.. toctree::
+    :maxdepth: 1
+    :caption: About
+
+    about/agenda.rst
+    about/certificate.rst
+    about/description.rst
+    about/survey.rst
+
+
 Good Engineering Practices
 **************************
 .. toctree::

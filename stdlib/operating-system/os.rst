@@ -596,7 +596,7 @@ Alternative syntax and using variables in config
 
 
 Running commands in parallel across many hosts
-------------------------------
+----------------------------------------------
 * https://linux.die.net/man/1/pssh
 
 .. figure:: img/system-pssh-1.jpg

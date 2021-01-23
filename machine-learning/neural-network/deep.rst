@@ -100,7 +100,7 @@ Retraining
 * Uses prior work
 
 Przetwarzanie obrazów na przykładzie rozpoznawania odręcznie napisanych cyfr (MNIST)
--------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
 .. figure:: img/deep-neural-networks-mnist-overview.png
 
     Handwritten digits recognition also known as MNIST is equivalent to "hello world" in visual Machine Learning world.
