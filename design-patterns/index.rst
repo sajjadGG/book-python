@@ -1,5 +1,6 @@
 .. include:: ../README.rst
 
+
 About
 *****
 .. toctree::
@@ -11,6 +12,7 @@ About
     ../survey.rst
     ../about/references.rst
 
+
 Design Patterns
 ***************
 .. toctree::
@@ -19,6 +21,7 @@ Design Patterns
     :caption: Design Patterns
 
     _index.rst
+
 
 Appendixes
 **********
@@ -29,10 +32,3 @@ Appendixes
 
     ../about/history.rst
     ../about/further-reading.rst
-    ../appendix/workshop/intermediate.rst
-    ../appendix/workshop/network.rst
-    ../appendix/workshop/django.rst
-    ../appendix/workshop/testing.rst
-    ../appendix/workshop/scientific.rst
-    ../appendix/workshop/machine-learning.rst
-    ../_references/references.rst

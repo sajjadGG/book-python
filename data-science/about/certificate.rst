@@ -1,3 +1,6 @@
+Certificate
+===========
+
 Szkolenie obejmowało 40 godzin wykładów oraz warsztatów. Zagadnienia poruszone na szkoleniu:
 
     * tworzenie aplikacji w języku Python,

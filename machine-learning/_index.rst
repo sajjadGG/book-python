@@ -2,13 +2,11 @@ About
 *****
 .. toctree::
     :maxdepth: 1
-    :caption: Introduction
+    :caption: About
 
-    introduction/data.rst
-    introduction/statistics.rst
-    introduction/machine-learning.rst
-    introduction/glossary-pl.rst
-    introduction/glossary.rst
+    about/certificate.rst
+    about/description.rst
+    about/survey.rst
 
 
 Introduction
@@ -17,6 +15,11 @@ Introduction
     :maxdepth: 1
     :caption: Introduction
 
+    introduction/data.rst
+    introduction/statistics.rst
+    introduction/machine-learning.rst
+    introduction/glossary-pl.rst
+    introduction/glossary.rst
     introduction/datasets.rst
     introduction/algorithms.rst
     introduction/features.rst

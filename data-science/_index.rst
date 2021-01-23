@@ -1,13 +1,14 @@
-Introduction
-************
+About
+*****
 .. toctree::
     :maxdepth: 1
-    :caption: Introduction
+    :caption: About
 
-    introduction/description.rst
-    introduction/program.rst
-    introduction/agenda.rst
-    introduction/survey.rst
+    about/description.rst
+    about/program.rst
+    about/agenda.rst
+    about/certificate.rst
+    about/survey.rst
 
 
 Jupyter

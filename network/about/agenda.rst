@@ -1,3 +1,6 @@
+Agenda
+======
+
 Day 1 (data and protocols)
 --------------------------
 * CSV

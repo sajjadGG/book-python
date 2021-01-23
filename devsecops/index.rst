@@ -10,6 +10,11 @@ About
     ../install.rst
     ../survey.rst
     ../about/references.rst
+    about/survey.rst
+    about/description.rst
+    about/agenda.rst
+    about/certificate.rst
+
 
 DevSecOps
 *********
@@ -20,6 +25,7 @@ DevSecOps
 
     _index.rst
 
+
 Appendixes
 **********
 .. toctree::
@@ -29,10 +35,3 @@ Appendixes
 
     ../about/history.rst
     ../about/further-reading.rst
-    ../appendix/workshop/intermediate.rst
-    ../appendix/workshop/network.rst
-    ../appendix/workshop/django.rst
-    ../appendix/workshop/testing.rst
-    ../appendix/workshop/scientific.rst
-    ../appendix/workshop/machine-learning.rst
-    ../_references/references.rst

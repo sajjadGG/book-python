@@ -6,6 +6,8 @@ About
 
     about/setup.rst
     about/entrytest.rst
+    about/agenda.rst
+    about/certificate.rst
 
 
 HTTP and Web

@@ -140,5 +140,5 @@ Recap
     :caption: Recap
 
     about/good-practices.rst
-    ../about/further-reading.rst
     about/certificate.rst
+    ../about/further-reading.rst

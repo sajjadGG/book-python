@@ -2,6 +2,7 @@
     :maxdepth: 1
     :caption: Django
 
+    about/certificate.rst
     http-protocol.rst
     introduction.rst
     architecture.rst

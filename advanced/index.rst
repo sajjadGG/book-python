@@ -29,10 +29,3 @@ Appendixes
 
     ../about/history.rst
     ../about/further-reading.rst
-    ../appendix/workshop/intermediate.rst
-    ../appendix/workshop/network.rst
-    ../appendix/workshop/django.rst
-    ../appendix/workshop/testing.rst
-    ../appendix/workshop/scientific.rst
-    ../appendix/workshop/machine-learning.rst
-    ../_references/references.rst

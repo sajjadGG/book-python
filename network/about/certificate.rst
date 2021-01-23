@@ -1,3 +1,6 @@
+Certificate
+===========
+
 Szkolenie obejmowało 28 godzin wykładów oraz warsztatów i pokrywało zagadnienia związane z:
 
     * tworzenie aplikacji sieciowych w języku Python,
